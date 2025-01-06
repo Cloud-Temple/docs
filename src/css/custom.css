@@ -1,0 +1,158 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour les titres principaux (non cliquables) */
+.sidebar-category-title > .menu__link {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  pointer-events: none; /* Empêche le clic */
+  cursor: default; /* Change le curseur */
+}
+
+/* Espacement entre les sous-éléments */
+.theme-doc-sidebar-item-category > ul {
+  padding-left: 20px; /* Indentation des sous-items */
+}
+
+/* Style général des sous-items */
+.menu__list-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Conteneur pour les cartes en grille */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+  gap: 20px; /* Espacement entre les cartes */
+  margin: 20px 0;
+}
+
+/* Style des cartes */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Titre des cartes */
+.card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Texte des cartes */
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Liens dans les cartes */
+.card-link {
+  color: #28a745; /* Vert pour les liens */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-link:hover {
+  color: #1c7430; /* Vert plus foncé au survol */
+}
+
+
+/* Style du séparateur */
+.sidebar-separator {
+  border: none;
+  border-top: 1px solid #ddd; /* Couleur grise claire */
+  margin: 15px 0; /* Espacement vertical */
+}
+
+/* Style du titre */
+.sidebar-title {
+  font-size: 1rem; /* Taille de la police */
+  font-weight: bold;
+  color: #444343; /* Gris foncé */
+  margin: 10px 0; /* Espacement au-dessus et en dessous */
+  text-align: left; /* Alignement à gauche */
+}
+
+.purchase-platforms {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: left;
+}
+
+.purchase-platforms h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.platform-card {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.platform-logo {
+  width: 60px;
+  height: auto;
+  margin-right: 16px;
+}
+
+.platform-card p {
+  margin: 0;
+}
+
+.learn-more-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.learn-more-link:hover {
+  text-decoration: underline;
+}
+
