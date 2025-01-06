@@ -5,7 +5,7 @@ export default function Home() {
   const history = useHistory();
 
   useEffect(() => {
-    history.push('/docs-content/docs/home'); // Redirige vers la documentation
+    history.push('/docs/docs/home'); // Redirige vers la documentation
   }, [history]);
 
   return null; // Rien n'est rendu sur la page d'accueil
