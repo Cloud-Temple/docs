@@ -63,7 +63,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./docker
+          dockerfile: ./docker/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: cloudtempleinfra/docs:main
@@ -92,7 +93,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./docker
+          dockerfile: ./docker/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: |
