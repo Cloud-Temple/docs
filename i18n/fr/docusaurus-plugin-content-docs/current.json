@@ -1,0 +1,62 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.Console": {
+    "message": "Console",
+    "description": "The label for category Console in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.iam": {
+    "message": "iam",
+    "description": "The label for category iam in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Bastion": {
+    "message": "Bastion",
+    "description": "The label for category Bastion in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.IaaS": {
+    "message": "IaaS",
+    "description": "The label for category IaaS in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Housing": {
+    "message": "Housing",
+    "description": "The label for category Housing in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.contract": {
+    "message": "contract",
+    "description": "The label for category contract in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.iaas": {
+    "message": "iaas",
+    "description": "The label for category iaas in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.network": {
+    "message": "network",
+    "description": "The label for category network in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.paas": {
+    "message": "paas",
+    "description": "The label for category paas in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.faq": {
+    "message": "faq",
+    "description": "The label for category faq in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.bastion": {
+    "message": "bastion",
+    "description": "The label for category bastion in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.install_guides": {
+    "message": "install_guides",
+    "description": "The label for category install_guides in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.fortinet": {
+    "message": "fortinet",
+    "description": "The label for category fortinet in sidebar docSidebar"
+  }
+}

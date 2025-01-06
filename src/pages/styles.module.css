@@ -1,0 +1,99 @@
+
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  flex: 1 1 calc(25% - 1.5rem); /* Ajustement pour flexibilité */
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.card a {
+  color: #3b7a57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linkButton {
+  color: #3b7a57; /* Texte vert */
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #3b7a57; /* Bordure verte */
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: transparent; /* Supprime le fond bleu */
+  transition: background-color 0.3s, color 0.3s; /* Animation fluide au survol */
+}
+
+.linkButton:hover {
+  background-color: #3b7a57; /* Fond vert au survol */
+  color: #fff; /* Texte blanc au survol */
+}
+
+.removed {
+  color: red;
+  font-weight: bold;
+}
+
+.linkText {
+  color: #3b7a57; /* Bleu similaire à votre capture */
+  text-decoration: underline; /* Soulignement des liens */
+  font-weight: bold; /* Texte en gras pour une meilleure lisibilité */
+  transition: color 0.2s ease; /* Animation fluide pour le survol */
+}
+
+.linkText:hover {
+  color: #1a3526; /* Bleu légèrement plus foncé au survol */
+  text-decoration: underline;
+}
+
+.link {
+  color: #008000; /* Vert */
+  text-decoration: none; /* Pas de soulignement */
+  font-weight: bold; /* Met en gras */
+}
+
+.link:visited {
+  color: #008000; /* Vert même si le lien a été visité */
+}
+
+.link:hover {
+  color: #006400; /* Vert plus sombre au survol */
+  text-decoration: underline; /* Optionnel */
+}
+
+.link:focus {
+  color: #006400; /* Vert plus sombre quand le lien est sélectionné */
+  outline: none; /* Supprime la bordure par défaut, optionnel */
+}
