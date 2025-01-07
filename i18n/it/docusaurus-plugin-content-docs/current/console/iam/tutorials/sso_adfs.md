@@ -1,102 +1,102 @@
 ---
-title: Example of Identity Federation with Microsoft ADFS 
+title: Exemple de fédération d'identité avec Microsoft ADFS 
 tags:
   - iam
   - tutorials
   - onboarding
 ---
-Here is an example of configuring the authentication repository of a Cloud Temple organization with __Microsoft ADFS__.
+Voici un exemple de configuration du référentiel d'authentification d'une organisation Cloud Temple avec __Microsoft ADFS__.
 
-Configuring your Microsoft repository at the Cloud Temple organization level facilitates user authentication on the Shiva console.
-This helps avoid multiplying authentication factors and reduces the attack surface.
-If your users are authenticated to their Microsoft account, authentication to Shiva console services will be seamless.
+La configuration de votre référentiel Microsoft au niveau d'une organisation Cloud Temple facilite l'authentification de vos utilisateurs sur la console Shiva.
+Cela permet d'éviter la multiplication des facteurs d'authentification et de diminuer la surface d'attaque.
+Si vos utilisateurs sont authentifiés à leur compte Microsoft, l'authentification aux services de la console Shiva sera transparente.
 
-Here are the various steps to perform this configuration:
+Voici les différentes étapes pour réaliser cette configuration :
 
 
-## Prerequisites
-Your Microsoft ADFS server must be able to access the following Cloud Temple URL: https://keycloak-shiva.cloud-temple.com/auth/.
+## Prérequis
+Votre serveur Microsoft ADFS doit pouvoir accéder à l'url Cloud Temple suivante : https://keycloak-shiva.cloud-temple.com/auth/.
 
-The ADFS must be accessible from Cloud Temple networks and __expose a TLS certificate from a public CA__.
+L'ADFS doit pouvoir être accessible depuis les réseaux de Cloud Temple et __exposer un certificat TLS d'une CA publique__.
 
-Users wishing to log in to the portal must have their email, first name, and last name filled in on the Active Directory.
+Les utilisateurs souhaitant se connecter sur le portail doivent avoir leur email, nom et prénom renseignés sur l'Active Directory.
 
-## Step 2: Request Single Sign-On (SSO) configuration for your organization
+## Etape 2 : Demander la configuration du SSO (Single Sign-On) de votre organisation
 
-This part of the configuration is done at the organization level by the Cloud Temple team.
+Cette partie de la configuration se fait au niveau de l'organisation par l'équipe Cloud temple.  
 
-To do this, make a __support request__ in the console indicating your desire to configure your authentication repository with Microsoft ADFS.
+Pour se faire, faites __une demande d'assistance__ dans la console indiquant votre souhait de configurer votre référentiel d'authentification Microsoft ADFS.  
 
-Please provide the following information in the support request:
+Veuillez donner les informations suivantes dans la demande d'assistance :
 ```
-    The name of your Organization
-    The name of a contact with their email and phone number to finalize the configuration
-    Public URL of the ADFS federation Metadata (<domain name of the adfs>/FederationMetadata/2007-06/FederationMetadata.xml)
-    (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
+    Le nom de votre Organisation
+    Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
+    URL publique des Metadata de la fédération de l'ADFS (<nom de domaine de l'adfs>/FederationMetadata/2007-06/FederationMetadata.xml)
+    (Exemple : https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
-As soon as the configuration is completed on the Shiva console side, the indicated contact will be informed.
+Dès que la configuration est réalisée coté console Shiva, le contact indiqué sera informé.
 
-The Cloud Temple support team will send you a URL similar to this one: https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
+L'équipe support Cloud Temple vous transmettra une URL qui ressemblera à celle-ci : https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
 
-*You can paste the URL into a browser to test it. If it works correctly, you should see an XML displayed*
+*Vous pouvez coller l'URL dans un navigateur afin de la tester. Si elle fonctionne correctement vous devriez voir s'afficher un XML*
 
-## Step 3: ADFS Configuration
-### Authentication Federation Configuration
+## Etape 3 : Réalisation de la configuration ADFS
+### Configuration de la fédération d'authentification
 
-#### Adding a Relying Party Trust
+#### Ajout d'une approbation de partie de confiance
 
-On your ADFS server, go to __"Add a Relying Party Trust"__.
+Sur votre serveur ADFS, aller dans __"Ajouter une approbation de partie de confiance"__.
 
 ![](images/sso_adfs_001.png)
 
-### Configure the "claims"
-Claims provide information to the token that will be sent to the Cloud Temple console.
+### Configurer les "claims"
+Les claims permettent de fournir des informations au token qui sera transmis à la console Cloud Temple. 
 
-They transmit the connected user's information necessary for the proper functioning of the various services, such as their email, first name, and last name.
+Ils transmettent les informations de l'utilisateur connecté qui sont nécessaires au bon fonctionnement des différents services, telles que son email, son nom et prénom.
 
 ![](images/sso_adfs_002.png)
 
-Select "Import data about the relying party published online or on a local network" and enter the URL provided by the Cloud Temple support.
+Sélectionnez "Importer les données, publiées en ligne ou sur un réseau local, concernant la partie de confiance" et renseignez l'URL fournie par le support Cloud Temple.
 
 ![](images/sso_adfs_003.png)
 
-You can provide a name and description for the relying party trust; this part is optional.
+Vous pouvez renseigner un nom et une description pour la partie de confiance, cette partie est optionnelle. 
 
 ![](images/sso_adfs_004.png)
 
-By default, we allow everyone but it is possible to select __"Permit only specific groups"__ to select the group(s) that will be allowed to access Shiva console services via ADFS.
+Par défaut, nous autorisons tout le monde mais il est possible de sélectionner __"Autoriser un groupe spécifique"__ pour sélectionner le ou les groupes qui seront autorisés à accéder aux services de la console Shiva via l'ADFS.
 
 ![](images/sso_adfs_005.png)
 
-Once all these steps are completed, you have finished configuring the relying party trust.
+Une fois toutes ces étapes effectuées, vous avez terminé la configuration de la partie de confiance.
 
 ![](images/sso_adfs_006.png)
 
-You will then need to edit the claim issuance policy for this new relying party trust.
+Il faudra ensuite éditer la stratégie d'émission de revendication de cette nouvelle partie de confiance. 
 
 ![](images/sso_adfs_007.png)
 
-Click on "Add Rule" and specify the template, which is "Transform an Incoming Claim".
+Cliquez sur "Ajouter une règle" et spécifiez le modèle, soit "Transformer une revendication entrante".
 
 ![](images/sso_adfs_008.png)
 
-You then just need to fill in the information as shown in the screenshot below.
+Vous n'aurez plus qu'à renseigner les informations telles qu'indiquées dans la capture d'écran ci-dessous.
 
 ![](images/sso_adfs_009.png)
 
-### Add the claims
-Add a second rule this time with the template "Send LDAP Attributes as Claims".
+### Ajouter les claims
+Ajoutez une seconde règle avec, cette fois-ci, le modèle "Envoyer les attributs LDAP en tant que revendications".
 
 ![](images/sso_adfs_010.png)
 
-Select the attribute store and add the attributes "E-Mail Addresses, Given-Name, Last Name, and SAM-Account-Name" as shown in the screenshot below.
+Sélectionnez le magasin d'attributs et ajoutez les attributs "E-Mail Addresses, Given-Name, Nom et SAM-Account-Name" comme indiqué sur la capture d'écran ci-dessous.
 
 ![](images/sso_adfs_011.png)
 
-You just need to apply the changes.
+Il vous suffit d'appliquer les changements.
 
-## Step 3: Finalization
+## Etape 3 : Finalisation
 
-You can now test by going to the Shiva console and clicking on the button corresponding to the ADFS client authentication; in this example, it is __"ADFS Test"__
+vous pouvez désormais tester en vous rendant sur la console Shiva et en cliquant sur le bouton correspondant à l'authentification  ADFS client; dans cet exemple, il s'agit ici de __"ADFS Test"__
 
 ![](images/sso_adfs_012.png)

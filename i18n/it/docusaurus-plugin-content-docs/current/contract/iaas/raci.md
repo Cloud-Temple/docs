@@ -1,218 +1,225 @@
 ---
-title: IaaS Responsibility Matrix
+title: Matrice di responsabilità IaaS
 ---
 
-Here is the **RACI** model defining the division of responsibilities between the client and Cloud Temple for using Cloud Temple's IaaS infrastructures.
+Ecco il modello **RACI** che definisce la distribuzione delle responsabilità tra il cliente e Cloud Temple per l'utilizzo delle infrastrutture IaaS di Cloud Temple.
 
-## Definition of Different Roles
+## Definizione dei vari ruoli
 
-We recall here the different roles of the RACI:
+Ricordiamo qui i diversi ruoli del RACI:
 
-| Role         | Description                                                                           |
+| Ruolo         | Descrizione                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Responsible  | __R__esponsible for executing the process                                           |
-| (A) Accountable  | __A__pproves the completion of the process                                          |
-| (C) Consulted    | __C__onsulted during the process                                                    |
-| (I) Informed     | __I__nformed of the process results (via tools, portal, or messaging)               |
+| (R) Realizza | __R__ealizza il processo                                                              |
+| (A) Approva  | __A__pprova la realizzazione del processo                                             |
+| (C) Consulta | __C__onsultato durante il processo                                                    |
+| (I) Informato| __I__nformato sui risultati del processo (tramite tool, portale o messaggistica)       |
 
-## Define Your Needs
+## Definire la vostra esigenza
 
+| Attività                                                                                       | Ruolo Cliente | Ruolo Cloud Temple |
+|------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Definire l'architettura globale della vostra piattaforma Cloud Temple                          | __RA__      | __CI__            | 
+| Definire il numero di tenants e il numero di zone di disponibilità per ogni tenant             | __RA__      | __CI__            | 
+| Definire la vostra strategia globale di ripresa o continuità operativa                         | __RA__      | __CI__            | 
+| Dimensionare correttamente la vostra piattaforma Cloud Temple (calcolo, storage, rete, backup,...) | __RA__      | __CI__            | 
+| Sottoscrivere ai servizi con le informazioni necessarie                                        | __RA__      | __I__             | 
 
-| Activity                                                                                        | Client Role | Cloud Temple Role |
-|-------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Define the overall architecture of your Cloud Temple platform                                  | __RA__      | __CI__            | 
-| Define the number of tenants and the number of availability zones for each tenant              | __RA__      | __CI__            | 
-| Define your overall disaster recovery or business continuity strategy                          | __RA__      | __CI__            | 
-| Properly size your Cloud Temple platform (compute, storage, network, backup, etc.)             | __RA__      | __CI__            | 
-| Subscribe to services with the necessary information                                           | __RA__      | __I__             | 
+## Implementazione iniziale dei vostri tenants Cloud Temple
 
-## Initial implementation of your Cloud Temple tenants
-| Activity                                                                                                    | Client Role | Cloud Temple Role |
+| Attività                                                                                                      | Ruolo Cliente | Ruolo Cloud Temple |
 |--------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Ensure the implementation of **physical datacenters**                                                        |             | __RA__            | 
-| Ensure the implementation of **compute** infrastructures                                                     | __I__       | __RA__            | 
-| Ensure the implementation of **storage** infrastructures                                                     | __I__       | __RA__            | 
-| Ensure the implementation of connectivity to the **backbone network(1)**                                     | __I__       | __RA__            | 
-| Acquire and maintain essential software licenses for the operation of the Cloud Temple platform |             | __RA__            | 
-| Implement the basic configuration of your Cloud Temple tenants                                     | __CI__      | __RA__            | 
-| Implement the initial configuration for the backup service                                         | __CI__      | __RA__            |
-| *If subscribed:* implement the initial network configuration for Internet and Firewall services     | __CI__      | __RA__            |
-| Provide the required assistance for the onboarding of your Cloud Temple environments                | __I__       | __RA__            | 
-| Make the final configuration adjustments to the service after its delivery                         | __RA__      | __C__             | 
+| Assicurare l'implementazione dei **datacenter fisici**                                                        |             | __RA__            | 
+| Assicurare l'implementazione delle infrastrutture **calcolo**                                                 | __I__       | __RA__            | 
+| Assicurare l'implementazione delle infrastrutture **storage**                                                 | __I__       | __RA__            | 
+| Assicurare l'implementazione della connettività alla **rete backbone(1)**                                     | __I__       | __RA__            | 
+| Acquistare e mantenere le licenze software essenziali per il funzionamento della piattaforma Cloud Temple     |             | __RA__            | 
+| Implementare la configurazione di base dei vostri tenants Cloud Temple                                        | __CI__      | __RA__            | 
+| Implementare la configurazione iniziale per il servizio di backup                                             | __CI__      | __RA__            |
+| *Se sottoscritti:* implementare la configurazione di rete iniziale per i servizi Internet e Firewall          | __CI__      | __RA__            |
+| Offrire l'assistenza necessaria per la gestione dei vostri ambienti Cloud Temple                              | __I__       | __RA__            | 
+| Effettuare gli aggiustamenti finali di configurazione del servizio dopo la sua consegna                      | __RA__      | __C__             | 
+| Configurare un archivio di autenticazione esterno per la console Cloud Temple                                 | __RA__      | __C__             | 
+| Creare gli utenti di ogni tenant nella console Cloud Temple e assegnare i diritti                             | __RA__      |                   | 
+| Validare la conformità della piattaforma consegnata con il framework SecNumCloud                              | __I__       | __RA__            |
+| Validare la conformità della piattaforma consegnata con le specifiche richieste                               | __RA__      | __CI__            |
 
-| Configure an external authentication repository for the Cloud Temple console                                | __RA__      | __C__             |
-| Create users for each tenant in the Cloud Temple console and assign permissions                              | __RA__      |                   |
-| Validate the compliance of the delivered platform with the SecNumCloud repository                            | __I__       | __RA__            |
-| Validate the compliance of the delivered platform with the required specifications                           | __RA__      | __CI__            |
+*(1) La rete backbone costituisce l'infrastruttura centrale di Cloud Temple, offrendo una spina dorsale su cui 
+si basano le reti specifiche dei clienti, che sono integrate e supportate da questa infrastruttura principale.*
 
-*(1) The backbone network constitutes the central infrastructure of Cloud Temple, providing a backbone on which
-specific client networks rest, which are integrated and supported by this main infrastructure.*
+## Integrare il vostro sistema informativo nei vostri ambienti Cloud Temple
 
-## Integrate your information system into your Cloud Temple environments
-| Activity                                                                                                                      | Client Role | Cloud Temple Role |
-|-------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------|
-| Create, install, update your virtual machines                                                                                 | __RA__      |                    | 
-| Install and configure software and middleware on your virtual machines                                                        | __RA__      |                    | 
-| Purchase and hold licenses and usage rights <br/>for the operating systems of your virtual machines                            | __RA__      |                    | 
-| Configure the network for each of your virtual machines                                                                       | __RA__      |                    |
-| Ensure that each virtual machine is associated with a coherent backup plan                                                     | __RA__      | __C__             | 
-| Ensure that each virtual machine is associated with a <br/>coherent disaster recovery or business continuity plan             | __RA__      | __C__             | 
-| Implement an antivirus protection strategy on your virtual machines                                                           | __RA__      |                   | 
-| Implement a metrology and monitoring solution on your virtual machines                                                        | __RA__      |                   | 
-| Define the TAG policy for your virtual machines                                                                               | __RA__      |                   | 
+| Attività                                                                                                                      | Ruolo Cliente | Ruolo Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Creare, installare, aggiornare le vostre macchine virtuali                                                                   | __RA__      |                   | 
+| Installare e configurare i software e i middleware sulle vostre macchine virtuali                                            | __RA__      |                   | 
+| Acquistare e mantenere le licenze e i diritti di utilizzo <br/> per i sistemi operativi delle vostre macchine virtuali       | __RA__      |                   | 
+| Configurare la rete per ciascuna delle vostre macchine virtuali                                                              | __RA__      |                   |
+| Assicurarsi che ogni macchina virtuale sia associata a un piano di backup coerente                                           | __RA__      | __C__             | 
+| Assicurarsi che ogni macchina virtuale sia associata a un <br/>piano di ripresa o continuità operativa coerente              | __RA__      | __C__             | 
+| Implementare una strategia di protezione antivirus sulle vostre macchine virtuali                                            | __RA__      |                   | 
+| Implementare una soluzione di metrologia e monitoraggio sulle vostre macchine virtuali                                       | __RA__      |                   | 
+| Definire la politica di tagging delle vostre macchine virtuali                                                               | __RA__      |                   | 
 
-## Recurring Operations
+## Operazioni ricorrenti
 
-### Access and Identity Management
-| Activity                                                                                                                             | Client Role | Cloud Temple Role |
+### Gestione degli accessi e delle identità
+
+| Attività                                                                                                                            | Ruolo Cliente | Ruolo Cloud Temple |
 |--------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Ensure accessibility of the Cloud Temple Console service and the associated API                                                      |             | __RA__            |
-| Ensure accessibility of the information system deployed on your virtual machines                                                     | __RA__      |                   |
-| Manage physical and logical authorizations for Cloud Temple teams on SecNumCloud infrastructures.                                    |             | __RA__            |
-| Administrer les accès et la politique de sécurité associée liés à l'interface de la console Cloud Temple et à son API                | __RA__      |                   |
-| Administrer les accès et la politique de sécurité associée au système d'information<br/> hébergé au sein de vos tenants Cloud Temple | __RA__      |                   |
+| Assicurare l'accessibilità del servizio Console Cloud Temple e dell'API associata                                                   |             | __RA__            |
+| Assicurare l'accessibilità del sistema informativo distribuito sulle vostre macchine virtuali                                       | __RA__      |                   |
+| Gestire le autorizzazioni fisiche e logiche delle squadre Cloud Temple alle infrastrutture SecNumCloud.                             |             | __RA__            |
+| Amministrare gli accessi e la politica di sicurezza associati all'interfaccia della console Cloud Temple e alla sua API             | __RA__      |                   |
+| Amministrare gli accessi e la politica di sicurezza associati al sistema informativo<br/> ospitato all'interno dei vostri tenants Cloud Temple | __RA__      |                   |
 
-### operational and security maintenance
+### Mantenimento in condizione operativa e di sicurezza
 
-Activities aimed at maintaining operational and secure conditions for the infrastructures and services 
-offered by Cloud Temple, as part of its IaaS offering, are carried out with the objective of compliance with SecNumCloud qualification.
+Le attività mirate a mantenere le infrastrutture e i servizi in condizioni operative e sicure 
+forniti da Cloud Temple, nel quadro della sua offerta IaaS, sono realizzate con l'obiettivo di conformità alla qualificazione SecNumCloud.
 
-| Activity                                                                                                          | Customer Role | Cloud Temple Role |
-|-------------------------------------------------------------------------------------------------------------------|---------------|--------------------|
-| Ensure the operational maintenance of **physical datacenter** infrastructures                       | __I__       | __RA__            | 
-| Ensure the security maintenance of **physical datacenter** infrastructures                          | __I__       | __RA__            | 
-| Ensure the operational maintenance of **compute** infrastructures                                   | __I__       | __RA__            | 
-| Ensure the security maintenance of **compute (2)** infrastructures                                  | __RA__      | __CI__            | 
-| Ensure the operational maintenance of **storage** infrastructures                                   | __I__       | __RA__            | 
-| Ensure the security maintenance of **storage** infrastructures                                      | __I__       | __RA__            |
-| Ensure the operational maintenance of **backbone network** infrastructures                                        | __I__       | __RA__            | 
-| Ensure the security maintenance of **backbone network** infrastructures                                           | __I__       | __RA__            |
-| Ensure the operational maintenance of virtual machines deployed in client tenants **(3)**                         | __RA__      |                   |
-| Ensure the security maintenance of virtual machines deployed in client tenants **(3)**                            | __RA__      |                   |
-| Ensure the operational maintenance of middleware deployed in client tenants                                        | __RA__      |                   |
-| Ensure the security maintenance of middleware deployed in client tenants                                           | __RA__      |                   |
+| Attività                                                                                                          | Ruolo Cliente | Ruolo Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Assicurare il mantenimento in condizione operativa delle infrastrutture **datacenter fisici**                     | __I__       | __RA__            | 
+| Assicurare il mantenimento in condizione di sicurezza delle infrastrutture **datacenter fisici**                  | __I__       | __RA__            | 
+| Assicurare il mantenimento in condizione operativa delle infrastrutture **calcolo**                               | __I__       | __RA__            | 
+| Assicurare il mantenimento in condizione di sicurezza delle infrastrutture **calcolo (2)**                        | __RA__      | __CI__            | 
+| Assicurare il mantenimento in condizione operativa delle infrastrutture **storage**                               | __I__       | __RA__            | 
+| Assicurare il mantenimento in condizione di sicurezza delle infrastrutture **storage**                            | __I__       | __RA__            | 
+| Assicurare il mantenimento in condizione operativa delle infrastrutture **reti backbone**                         | __I__       | __RA__            | 
+| Assicurare il mantenimento in condizione di sicurezza delle infrastrutture **reti backbone**                      | __I__       | __RA__            |
+| Assicurare il mantenimento in condizione operativa delle macchine virtuali distribuite nei tenants cliente **(3)**| __RA__      |                   |
+| Assicurare il mantenimento in condizione di sicurezza delle macchine virtuali distribuite nei tenants cliente **(3)**| __RA__      |                   |
+| Assurer le maintien en condition opérationnelle des middleswares déployées dans les tenants client                | __RA__      |                   |
+| Assurer le maintien en condition de sicurezza des middleswares déployées dans les tenants client                   | __RA__      |                   |
 
-*(2) Cloud Temple regularly provides the latest versions of the operating system for your hypervisors. 
-However, since Cloud Temple is not aware of the specifics of your production environments and the requirements related to your workloads, __the decision to update the operating system of your hypervisors, thus resulting in a restart, is up to you__. This operation can be performed via the Cloud Temple console or through the API. Professional services are available if you wish Cloud Temple to handle certain operations.*
+*(2) Cloud Temple fornisce regolarmente le versioni più recenti del sistema operativo per i vostri hypervisor. 
+Tuttavia, dato che Cloud Temple non è a conoscenza delle specificità dei vostri ambienti di produzione e delle esigenze 
+legate ai vostri carichi di lavoro, __la decisione di procedere con l'aggiornamento del sistema operativo dei vostri hypervisor, 
+portando quindi a un riavvio, spetta a voi__. Questa operazione può essere eseguita tramite la console Cloud Temple o l'API.
+Sono disponibili servizi professionali se desiderate che Cloud Temple si occupi di alcune operazioni.*
 
-*(3) Cloud Temple offers license packages for firewalls (Fortinet, Stormshield) and load balancers (HAProxy), and works in collaboration with your teams for the initial configuration during the implementation phase. However, the responsibility for maintaining operational and security conditions rests with you during the operational phase.*
+*(3) Cloud Temple offre pacchetti di licenze per firewall (Fortinet, Stormshield) e load balancer (HAProxy), e 
+collabora con le vostre squadre per la configurazione iniziale durante la fase di implementazione. Tuttavia, 
+la responsabilità del mantenimento in stato operativo e di sicurezza ricade su di voi durante la fase di gestione 
+corrente. Sono disponibili servizi professionali se desiderate che Cloud Temple si occupi di alcune operazioni.*
 
-courante. Des services professionnels sont disponibles si vous souhaitez que Cloud Temple prenne en charge certaines opérations.*
+### Gestione dei cambiamenti, degli incidenti, dei problemi e delle capacità
 
-### Change, Incident, Problem, and Capacity Management
+| Attività                                                                                                              | Ruolo Cliente | Ruolo Cloud Temple |
+|-----------------------------------------------------------------------------------------------------------------------|---------------|---------------------|
+| Gestire gli incidenti sulle infrastrutture **datacenter fisici**                                                      | __I__         | __RA__              |
+| Gestire i problemi sulle infrastrutture **datacenter fisici**                                                         |               | __RA__              |
+| Gestire le capacità sulle infrastrutture **datacenter fisici**                                                        |               | __RA__              |
+| Gestire gli incidenti sulle infrastrutture **calcolo**                                                                | __I__         | __RA__              |
+| Gestire i problemi sulle infrastrutture **calcolo**                                                                   |               | __RA__              |
+| Gestire le capacità sulle infrastrutture **calcolo**                                                                  | __RA__        | __CI__              |
+| Gestire gli incidenti sulle infrastrutture **storage**                                                                | __I__         | __RA__              |
+| Gestire i problemi sulle infrastrutture **storage**                                                                   |               | __RA__              |
+| Gestire le capacità sulle infrastrutture **storage**                                                                  | __RA__        | __CI__              |
+| Gestire gli incidenti sulle infrastrutture **rete backbone**                                                          | __I__         | __RA__              |
+| Gestire i problemi sulle infrastrutture **rete backbone**                                                             |               | __RA__              |
+| Gestire le capacità sulle infrastrutture **rete backbone**                                                            |               | __RA__              |
+| Mettere in atto una nuova macchina virtuale o creare un nuovo ambiente applicativo all'interno di un tenant cliente   | __RA__        |                     |
+| Modificare la configurazione delle macchine virtuali distribuite                                                      | __RA__        |                     |
+| Eliminare una macchina virtuale distribuita                                                                           | __RA__        |                     |
+| Prendere la decisione di aggiungere, modificare o rimuovere risorse sulla piattaforma Cloud Temple                    | __RA__        | __CI__              |
+| Eseguire la decisione di modifica delle risorse sulla piattaforma Cloud Temple                                        | __I__         | __RA__              |
+| Applicare i tag alle macchine virtuali in conformità alla politica definita                                           | __RA__        |                     |
 
-| Activity                                                                                                              | Client Role | Cloud Temple Role |
-|-----------------------------------------------------------------------------------------------------------------------|-------------|--------------------|
-| Manage incidents on **physical datacenter** infrastructures                                                          | __I__       | __RA__             |
-| Manage problems on **physical datacenter** infrastructures                                                           |             | __RA__             |
-| Manage capacities on **physical datacenter** infrastructures                                                         |             | __RA__             |
-| Manage incidents on **compute** infrastructures                                                                      | __I__       | __RA__            |
-| Manage problems on **compute** infrastructures                                                                      |             | __RA__            |
-| Manage capacities on **compute** infrastructures                                                                    | __RA__      | __CI__            |
-| Manage incidents on **storage** infrastructures                                                                     | __I__       | __RA__            |
-| Manage problems on **storage** infrastructures                                                                      |             | __RA__            |
-| Manage capacities on **storage** infrastructures                                                                    | __RA__      | __CI__            |
-| Managing incidents on **backbone network** infrastructures                                                             | __I__       | __RA__            |
-| Managing issues on **backbone network** infrastructures                                                                |             | __RA__            |
-| Managing capacities on **backbone network** infrastructures                                                            |             | __RA__            |
-| Setting up a new virtual machine or creating a new application environment within a client tenant                     | __RA__      |                   |
-| Modifying the configuration of deployed virtual machines                                                              | __RA__      |                   |
-| Deleting a deployed virtual machine                                                                                   | __RA__      |                   |
-| Prendre la décision d'ajouter, de modifier ou de retirer des ressources sur la plateforme Cloud Temple                | __RA__      | __CI__            |
-| Exécuter la décision de modification des ressources sur la plateforme Cloud Temple                                    | __I__       | __RA__            |
-| Appliquer les tags aux machines virtuelles conformément à la politique définie                                        | __RA__      |                   |
+### Gestione delle prestazioni
 
-### Performance Management
+| Attività                                                                                                                                              | Ruolo Cliente | Ruolo Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------------------|
+| Assicurare la sorveglianza del corretto funzionamento e dell'affidabilità di tutte le attrezzature coinvolte nella fornitura del servizio qualificato SecNumCloud | __I__         | __RA__              |
+| Assicurare il monitoraggio delle performance delle risorse fisiche di calcolo, storage e rete messe a disposizione dei vostri tenant __(4)__            | __RI__        | __A__               |
+| Monitorare le prestazioni delle macchine virtuali che supportano i vostri ambienti                                                                      | __RA__        | __I__               |
 
-| Activity                                                                                                                                              | Client Role | Cloud Temple Role |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Ensure the monitoring of the proper functioning and reliability of all equipment involved in the provision of the qualified SecNumCloud service | __I__       | __RA__            |
-| Monitor the performance of the physical resources for computing, storage, and network provided to your tenants __(4)__                         | __RI__      | __A__             |
-| Supervise the performance of virtual machines supporting your environments                                                                       | __RA__      | __I__             |
+*(4) La piattaforma Cloud Temple adotta una filosofia incentrata sulla __fornitura di infrastrutture dedicate__ per le esigenze di __calcolo__ (con lame fisiche), di __storage__ (tramite LUN dedicate su SAN) 
+e di __rete__ (inclusi firewall e load balancer). Queste risorse dedicate sono messe a disposizione del cliente, la cui 
+utilizzazione e il carico risultante dipendono direttamente dall'uso che ne fa. Spetta quindi al cliente implementare e gestire i sistemi di supervisione 
+e di metrologia necessari per monitorare il funzionamento ottimale del proprio sistema informativo.*
 
-*(4) The Cloud Temple platform adopts a philosophy focused on __providing dedicated infrastructure__ for __computing__ needs (with physical blades), __storage__ (via dedicated LUNs on SANs),
-and __network__ (including firewalls and load balancers). These dedicated resources are made available to the client, whose use
-et la charge résultante dépendent directement de l'usage qu'il en fait. Il incombe donc au client de mettre en place et de gérer les systèmes de supervision 
-et de métrologie nécessaires pour assurer le suivi du fonctionnement optimal de son système d'information.*
+### Gestione del backup e del ripristino delle attività sul backup integrato
 
-### Backup Management and Disaster Recovery on Integrated Backup
+| Attività                                                                                                                                  | Ruolo Cliente | Ruolo Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------------------|
+| Assicurare il mantenimento in condizione operativa sulle infrastrutture di **backup** integrate nella piattaforma Cloud Temple **(5)**     |               | __RA__              |
+| Assicurare il mantenimento in condizione di sicurezza delle infrastrutture di **backup** integrate nella piattaforma Cloud Temple          | __I__         | __RA__              |
+| Gestire gli incidenti sulle infrastrutture di **backup** integrate nella piattaforma Cloud Temple                                          | __I__         | __RA__              |
+| Gestire i problemi sulle infrastrutture di **backup** integrate nella piattaforma Cloud Temple                                             |               | __RA__              |
+| Gestire le capacità sulle infrastrutture di **backup** integrate nella piattaforma Cloud Temple                                            | __AI__        | __RC__              |
+| Assicurare il mantenimento in condizione operativa sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente **(6)**        | __RA__        |                     |
+| Assicurare il mantenimento in condizione di sicurezza sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente             | __RA__        |                     |
+| Gestire gli incidenti sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente                                             | __RA__        |                     |
+| Gestire i problemi sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente                                               | __RA__        |                     |
+| Gestire le capacità sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente                                               | __RA__        | __CI__              |
+| Gestire il ciclo di vita delle politiche di backup                                                                                        | __RA__        |                     |
+| Assicurarsi che le politiche di backup siano coerenti con il ciclo di vita dei dati                                                       | __RA__        |                     |
+| Assicurarsi che i piani di continuità operativa o di ripristino delle attività siano coerenti con il ciclo di vita dei dati               | __RA__        |                     |
+| Effettuare test periodici per valutare l'efficacia della strategia di backup                                                               | __RA__        |                     |
+| Effettuare test periodici per valutare l'efficacia della strategia<br/> di ripristino delle attività o di continuità operativa              | __RA__        | __CI__              |
 
-| Activity                                                                                                                                  | Client Role | Cloud Temple Role |
+*(5) Al 1° gennaio 2024, la soluzione di backup integrata nella piattaforma Cloud Temple è IBM Spectrum Protect Plus. 
+Questa soluzione è completamente automatizzata e può essere gestita tramite la console Cloud Temple o l'API Cloud Temple.*
+
+### Gestione del backup e del ripristino delle attività per piattaforme di terze parti all'interno di un tenant cliente
+
+| Attività                                                                                                                                  | Ruolo Cliente | Ruolo Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Ensure the operational condition of the **backup** infrastructures integrated into the Cloud Temple platform **(5)**                       |             | __RA__            |
-| Ensure the security maintenance of **backup** infrastructures integrated into the Cloud Temple platform                | __I__       | __RA__            |
-| Manage incidents on **backup** infrastructures integrated into the Cloud Temple platform                                | __I__       | __RA__            |
-| Manage problems on **backup** infrastructures integrated into the Cloud Temple platform                                 |             | __RA__            |
-| Manage capacities on **backup** infrastructures integrated into the Cloud Temple platform                               | __AI__      | __RC__            |
-| Ensure operational maintenance on the chosen backup solution within its tenants by the customer **(6)**                 | __RA__      |                   |
-| Ensure the security maintenance on the chosen backup solution within the client's tenants           | __RA__      |                   |
-| Manage incidents on the chosen backup solution within the client's tenants                           | __RA__      |                   |
-| Manage problems on the chosen backup solution within the client's tenants                            | __RA__      |                   |
-| Manage capacities on the chosen backup solution within the client's tenants                          | __RA__      | __CI__            |
-| Manage the lifecycle of backup policies                                                              | __RA__      |                   |
-| Ensure that backup policies are consistent with the data lifecycle                                                                   | __RA__      |                   |
-| Ensure that business continuity or disaster recovery plans are consistent with the data lifecycle                                    | __RA__      |                   |
-| Conduct periodic tests to evaluate the effectiveness of the backup strategy                                                          | __RA__      |                   |
-| Conduct periodic tests to evaluate the effectiveness of the disaster recovery or business continuity strategy                         | __RA__      | __CI__            |
+| Assicurarsi del mantenimento in condizioni operative sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente **(6)**     | __RA__      |                   |
+| Assicurarsi del mantenimento in condizioni di sicurezza sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente          | __RA__      |                   |
+| Gestire gli incidenti sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente                                            | __RA__      |                   |
+| Gestire i problemi sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente                                               | __RA__      |                   |
+| Gestire le capacità sulla soluzione di backup scelta all'interno dei suoi tenant dal cliente                                              | __RA__      | __CI__            |
+| Gestire il ciclo di vita delle politiche di backup                                                                                        | __RA__      |                   |
+| Assicurarsi che le politiche di backup siano coerenti con il ciclo di vita del dato                                                       | __RA__      |                   |
+| Assicurarsi che i piani di continuità operativa o di ripristino dell'attività siano coerenti con il ciclo di vita del dato                | __RA__      |                   |
+| Eseguire test periodici per valutare l'efficacia della strategia di backup                                                               | __RA__      |                   |
+| Eseguire test periodici per valutare l'efficacia della strategia<br/> di ripristino dell'attività o di continuità operativa              | __RA__      | __CI__            |
 
-*(5) As of January 1, 2024, the backup solution integrated into the Cloud Temple platform is IBM Spectrum Protect Plus. 
-This solution is fully automated and can be managed via the Cloud Temple console or the Cloud Temple API.*
-### Backup and Disaster Recovery Management for Third-Party Platforms within a Client Tenant
+*(6) Questo riguarda qualsiasi soluzione di backup aggiuntiva implementata negli ambienti del cliente e gestita da quest'ultimo.
+Cloud Temple offre servizi professionali per coloro che desiderano delegare alcune operazioni a Cloud Temple.*
 
-| Activity                                                                                                                                | Client Role | Cloud Temple Role |
-|----------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Ensure operational maintenance on the chosen backup solution within their tenants by the client **(6)**                                | __RA__      |                   |
-| Ensure security maintenance on the chosen backup solution within their tenants by the client                                            | __RA__      |                   |
-| Manage incidents on the chosen backup solution within their tenants by the client                                                       | __RA__      |                   |
-| Manage issues on the selected backup solution within the client's tenants                                                              | __RA__      |                   |
-| Manage capacities on the selected backup solution within the client's tenants                                                          | __RA__      | __CI__            |
-| Manage the lifecycle of backup policies                                                                                                 | __RA__      |                   |
-| Ensure that backup policies are consistent with the data lifecycle                                                                      | __RA__      |                   |
-| Ensure that business continuity or disaster recovery plans are consistent with the data lifecycle                                       | __RA__      |                   |
-| Perform periodic tests to evaluate the effectiveness of the backup strategy                                                  | __RA__      |                   |
-| Perform periodic tests to evaluate the effectiveness of the disaster recovery or business continuity strategy                | __RA__      | __CI__            |
+### Gestione della documentazione e del contratto
 
-*(6) This applies to any additional backup solution implemented in the client's environments and managed by the client. 
-Cloud Temple offers professional services for those who wish to delegate certain operations to Cloud Temple.* 
+| Attività                                                                                                                                                           | Ruolo Cliente | Ruolo Cloud Temple |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Assicurare la gestione commerciale e contrattuale del cliente, inclusa la redazione dei preventivi, la gestione degli ordini e la gestione della fatturazione         | __I__       | __RA__            |
+| Assicurarsi del monitoraggio contrattuale del servizio, inclusa la validazione dei preventivi, il monitoraggio delle consegne e la supervisione della fatturazione  | __RA__      | __I__             |
+| Assicurare la manutenzione e la disponibilità dell'inventario delle risorse fornite da Cloud Temple relative all'offerta SecNumCloud                                 | __I__       | __RA__            |
+| Assicurare la manutenzione e la disponibilità della documentazione tecnica relativa all'offerta SecNumCloud                                                         | __I__       | __RA__            |
+| Assicurare il monitoraggio del ciclo di vita delle macchine virtuali distribuite nei vostri ambienti Cloud Temple<br/> tramite la vostra CMDB (Configuration Management Database)    | __RA__      |                   | 
+| Mantenere aggiornata la politica di accesso all'interfaccia della console Cloud Temple o all'API Cloud Temple                                                       | __RA__      |                   |
 
-### Documentation and Contract Management
+### Gestione dei log
 
-| Activity                                                                                                                                                        | Client Role | Cloud Temple Role |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Ensure the commercial and contractual management of the client, including the preparation of quotes, order processing, and billing management                  | __I__       | __RA__            |
-| Ensure contractual follow-up of the service, including quote validation, delivery tracking, and billing monitoring                                             | __RA__      | __I__             |
-| Ensure maintenance and availability of the inventory of resources provided by Cloud Temple related to the SecNumCloud offer                                    | __I__       | __RA__            |
-| Ensure the maintenance and availability of technical documentation related to the SecNumCloud offer                                                              | __I__       | __RA__            |
+| Attività                                                                                                                             | Ruolo Cliente | Ruolo Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Conservare e rendere disponibili i log della piattaforma IaaS Cloud Temple **(7)**                                                  |             | __RA__            |
+| Conservare e rendere disponibili i log del sistema informatico<br/> ospitato all'interno dei vostri tenant Cloud Temple              | __RA__      |                   |
 
-| Track the lifecycle of virtual machines deployed in your Cloud Temple environments<br/> via your CMDB (Configuration Management Database) | __RA__      |                   | 
-| Keep the access policy to the Cloud Temple console interface or Cloud Temple API up to date                                                            | __RA__      |                   |
+*(7) Al primo gennaio 2024, la durata di conservazione dei log della piattaforma è di un anno.*
 
-### Log Management
+## Connettività alla rete cliente (mpls, fibra dedicata, ipsec, ...)
 
-| Activity                                                                                                                 | Client Role  | Cloud Temple Role |
-|--------------------------------------------------------------------------------------------------------------------------|--------------|-------------------|
-| Preserve and provide access to the logs of the Cloud Temple IaaS platform **(7)**                                    |              | __RA__            |
-| Retain and make available the logs of the information system<br/> hosted within your Cloud Temple tenants | __RA__      |                   |
+| Attività                                                                                          | Ruolo Cliente | Ruolo Cloud Temple |
+|---------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Abbonarsi a una connettività di rete operatore per accedere a un datacenter fisico Cloud Temple (8)| __RA__      | __CI__            |
+| Gestire il piano di indirizzamento IP                                                              | __RA__      | __I__             |
+| Gestire gli incidenti sui collegamenti di rete degli operatori cliente                             | __RA__      |                   |
+| Gestire i problemi sui collegamenti di rete degli operatori cliente                                | __RA__      | __CI__            |
+| Gestire le capacità sui collegamenti di rete degli operatori cliente                               | __RA__      | __CI__            |
 
-*(7) As of January 1, 2024, the retention period for platform logs is one year.*
+*(8) Cloud Temple assume la responsabilità della rete per quanto riguarda la propria infrastruttura backbone, i propri punti di raccolta e i punti di interconnessione datacenter, garantendo così la connettività tra questi punti e la propria rete backbone.
+Nell'offerta di hosting in rack fisico, Cloud Temple assume la responsabilità a partire dall'apparecchiatura situata in cima al rack, comunemente chiamata "top of rack".*
 
-## Client network connectivity (mpls, dedicated fiber, ipsec, ...)
+## Reversibilità
 
-| Activity                                                                                             | Client Role | Cloud Temple Role |
-|------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Subscribe to operator network connectivity to access a physical Cloud Temple datacenter (8)         | __RA__      | __CI__            |
-| Manage the IP addressing plan                                                                        | __RA__      | __I__             |
-| Manage incidents on client operator network links                                                    | __RA__      |                   |
-| Manage problems on client operator network links                                                     | __RA__      | __CI__            |
-| Manage capacities on client operator network links                                                   | __RA__      | __CI__            |
-
-*(8) Cloud Temple assumes responsibility for the network regarding its backbone infrastructure, its collection points as well as the datacenter interconnection points, thereby guaranteeing connectivity between these points and its backbone network. In the physical bay hosting offer, Cloud Temple assumes responsibility from the equipment located at the top of the rack, commonly referred to as "top of rack".*
-
-## Reversibility
-| Activity                                                                                                                                                                                      | Client Role | Cloud Temple Role |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Plan the reversibility project and choose the target infrastructures                                                                                                                           | __RA__      | __I__             |
-| Implement transition operations, whether they involve manual extraction, the use of APIs <br/>or any other third-party method compatible with the Cloud Temple platform.                      | __RA__      | __I__             |
-| Transfer data while controlling the impact of migration on the quality of service provided <br/>by the client's information system.                                      | __RA__      |                   | 
-| Proceed with the dismantling of Private Cloud configurations and associated options for the client, <br/>following contract termination.                                                  | __I__       | __RA__            |
-| Perform secure data deletion on storage media and provide certification                                                                                             | __I__       | __RA__            |
+| Attività                                                                                                                                                                                      | Ruolo Cliente | Ruolo Cloud Temple |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Pianificare il progetto di reversibilità e scegliere le infrastrutture di destinazione                                                                                                        | __RA__      | __I__             |
+| Implementare le operazioni di transizione, che esse implichino un'estrazione manuale, l'uso di API <br/>o qualsiasi altro metodo terzo compatibile con la piattaforma Cloud Temple.             | __RA__      | __I__             |
+| Trasferire i dati controllando le ripercussioni della migrazione sulla qualità del servizio fornito <br/>dal sistema informativo del cliente.                                                 | __RA__      |                   | 
+| Eseguire lo smantellamento delle configurazioni del Cloud Privato e delle opzioni associate al cliente, <br/>in seguito alla risoluzione del contratto.                                        | __I__       | __RA__            |
+| Effettuare la cancellazione sicura dei dati sui supporti di memorizzazione e fornire una certificazione                                                                                       | __I__       | __RA__            |

@@ -2,70 +2,72 @@
 title: Concepts
 ---
 
-The __IaaS (Infrastructure As A Service)__ offering from Cloud Temple is designed to meet critical needs for business continuity and disaster recovery, with a particular focus on demanding sectors such as industry, banking, and insurance. Based on cutting-edge technologies, this infrastructure ensures maximum availability and optimal performance for your critical workloads.
+La oferta __IaaS (Infrastructure As A Service)__ de Cloud Temple está diseñada para satisfacer las necesidades críticas de continuidad y recuperación ante desastres, con un enfoque particular en sectores exigentes como la industria, la banca y los seguros. Basada en tecnologías de punta, esta infraestructura garantiza una disponibilidad máxima y un rendimiento óptimo para tus cargas de trabajo críticas.
 
-## A reliable technological platform
+## Una plataforma tecnológica de confianza
 
-Cloud Temple's IaaS platform relies on internationally renowned technology partners:
+La plataforma IaaS de Cloud Temple se basa en socios tecnológicos de renombre internacional:
 
-- Compute: **CISCO UCS**.
-- Storage: **IBM Spectrum Virtualize**, **IBM FlashSystem** for block storage, and **DELL ECS** for object storage.
-- Network: **JUNIPER**.
-- Virtualization: **VMware**, providing a reliable and proven foundation for managing your cloud environments.
-Cette architecture repose sur le modèle **VersaStack**, une alliance entre Cisco et IBM, garantissant une compatibilité étendue avec les principaux éditeurs logiciels.
+- Cálculo: **CISCO UCS**.
+- Almacenamiento: **IBM Spectrum Virtualize**, **IBM FlashSystem** para almacenamiento de bloques, y **DELL ECS** para almacenamiento de objetos.
+- Red: **JUNIPER**.
+- Virtualización: **VMware**, ofreciendo una base confiable y probada para gestionar tus entornos cloud.
 
-## Une infrastructure dédiée et automatisée
+Esta arquitectura se basa en el modelo **VersaStack**, una alianza entre Cisco e IBM, garantizando una compatibilidad amplia con los principales editores de software.
 
-Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, l'offre IaaS de Cloud Temple propose une infrastructure unique :
+## Una infraestructura dedicada y automatizada
 
-- **Dedicated resources**: The compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared between clients.
-- **Maximum predictability**: You manage virtualization rates, storage IOPS pressure, and benefit from clear, monthly consumption-based billing.
+Aunque completamente automatizada gracias a APIs y un proveedor de Terraform, la oferta IaaS de Cloud Temple ofrece una infraestructura única:
 
-The platform is **SecNumCloud** certified by [ANSSI](https://www.ssi.gouv.fr/), ensuring a high level of automation and security.
+- **Recursos dedicados**: Las blades de cálculo, volúmenes de almacenamiento y stacks de software (virtualización, respaldo, firewalling, etc.) nunca se comparten entre los clientes.
+- **Máxima predictibilidad**: Controla las tasas de virtualización, la presión en IOPS en el almacenamiento y disfruta de una facturación clara, por consumo mensual.
 
-## Main features
+La plataforma está certificada **SecNumCloud** por [ANSSI](https://www.ssi.gouv.fr/), garantizando un alto nivel de automatización y seguridad.
 
-- Dedicated and on-demand compute resources (CPU, RAM).
-- On-demand storage (multiple classes available).
-- Network resources (Internet, private networks).
-- Cross-backups with configurable retention.
-- Asynchronous replication for storage or virtual machines.
-- Control via the [Shiva Console](../console/console.md) or in Infrastructure as Code mode through APIs and the Terraform provider.
+## Funcionalidades principales
 
-## Advantages
+- Recursos de cálculo (CPU, RAM) dedicados y bajo demanda.
+- Almacenamiento bajo demanda (varias clases disponibles).
+- Recursos de red (Internet, redes privadas).
+- Respaldo cruzado con retención configurable.
+- Replicación asíncrona para almacenamiento o máquinas virtuales.
+- Gestión mediante la [Consola Shiva](../console/console.md) o en modo Infrastructure as Code gracias a las APIs y al proveedor de Terraform.
 
-| Advantage           | Description                                                                                                                                    |   
+## Ventajas
+
+| Ventaja             | Descripción                                                                                                                                    |   
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Digital trust       | Data hosting in France and GDPR compliance.                                                                                                    |
-| Security            | Highly secure platform, qualified **SecNumCloud**, **HDS** (Health Data Hosting), **ISO 27001**, and **ISAE 3402 type II**. |  
-| High availability   | Platform availability rate of 99.99%, measured monthly, including maintenance windows.                            |   
-| Resilience          | Implementation of business continuity or disaster recovery plans as needed.                                       |
-| Automation          | Fully automated platform designed to integrate into a digital transformation program.                             |
-| On demand           | Resources available on demand.                                                                                      |
+| Confianza digital   | Alojamiento de datos en Francia y conformidad con RGPD.                                                                                        |   
+| Seguridad           | Plataforma altamente segura, certificada **SecNumCloud**, **HDS** (Alojamiento de Datos de Salud), **ISO 27001** y **ISAE 3402 tipo II**.       |  
+| Alta disponibilidad | Tasa de disponibilidad de la plataforma del 99,99%, medida mensualmente, períodos de mantenimiento incluidos.                                   |   
+| Resiliencia         | Implementación de planes de continuidad o recuperación según las necesidades.                                                                  |
+| Automatización      | Plataforma completamente automatizada pensada para integrarse en un programa de transformación digital.                                        |
+| On demand           | Recursos disponibles bajo demanda.                                                                                                            |
 
-## Purchase Platforms
+## Plataformas de compra
 
 <div class="purchase-platforms">
-<p>Are you a public sector actor? The <strong>IaaS Cloud Temple</strong> offer is accessible via:</p>
+  <p>¿Eres un actor del sector público? La oferta de <strong>IaaS Cloud Temple</strong> está disponible a través de:</p>
   
-<div class="platform-card">
-  <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
-  <p>
-    <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-      The UGAP public procurement platform
-    </a>
-  </p>
-</div>
+  <div class="platform-card">
+    <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
+    <p>
+      <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
+        La plataforma de compras públicas UGAP
+      </a>
+    </p>
+  </div>
+  
+  <div class="platform-card">
+      <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
+    <p>
+      <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
+        El mercado CAIH para el sector médico
+      </a>
+    </p>
+  </div>
 
-<div class="platform-card">
-  <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
-  <p>
-    <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-      The CAIH market for the medical sector
-    </a>
-  </p>
-</div>
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Learn more &rarr;
+    Saber más &rarr;
   </a>
 </div>

@@ -2,98 +2,104 @@
 title: Tutorials
 ---
 
-These tutorials help you deploy and manage a Temple Cloud Bastion from the Shiva portal.
+Estos tutoriales le ayudan a desplegar y gestionar un Bastión Cloud Temple desde el portal Shiva. 
 
-## Prerequisites
 
-1. Have subscribed to the Cloud Temple offer (Bastion Appliance subscription).
-2. Equipment to be administered must be accessible from the network where the Bastion Appliance is deployed.
-3. Have rights on the Bastion module.
-4. In the case of an on-premise Appliance deployment, the corresponding flows must be open.
+## Prerrequisitos
 
-## Interface
+1. Haber suscrito a la oferta Cloud Temple (suscripción Appliance Bastion).
+2. Los equipos a administrar deben ser accesibles desde la red donde se despliega el Appliance Bastion.
+3. Tener los derechos sobre el módulo Bastion.
+4. En el marco de un despliegue del Appliance on-premise, los flujos correspondientes deben estar abiertos.
 
-Once connected to the Shiva web portal, navigate to the "Bastion" tab in the left menu.
+## Interfaz
+
+Una vez conectado al portal web Shiva, diríjase a la pestaña "Bastion" del menú de la izquierda. 
 
 ![](images/sessions.png)
 
-The "Equipments" tab allows you to view the list of your equipment. An equipment corresponds to a connection configuration
-via a Bastion Appliance. For each equipment, its name, tags, description, associated Appliance, connection type (SSH or RDP), host IP, and keyboard configuration are indicated.
-You can filter the list of your devices according to the tags assigned to them, and a search engine allows you to search for a session by its name.
+La pestaña « Equipements » le permite consultar la lista de sus equipos. Un equipo corresponde a una configuración de
+conexión a través de un Appliance Bastion. Para cada equipo, se indica su nombre, sus etiquetas, su 
+descripción, el Appliance que le está asociado, el tipo de conexión (SSH o RDP), la IP del host y finalmente la configuración del teclado.
+
+Puede filtrar la lista de sus equipos según las etiquetas que les son asignadas, y un motor de búsqueda permite buscar una sesión por su nombre. 
 
 ![](images/sessions2.png)
 
-The "Appliances" tab gives you a list of your Bastion Appliances. For each Appliance, the name and description of the Appliance are specified.
+La pestaña « Appliances » le da la lista de sus Appliances Bastion. Para cada Appliance, el nombre del Appliance y su descripción están especificados. 
 
-A search engine is available to allow you to search for an Appliance by its name.
+Un motor de búsqueda está disponible para permitirle buscar un Appliance por su nombre.
 
 ![](images/appliances.png)
 
-## Deploy an Appliance
-Before you can deploy an Appliance, you must request a subscription for an Appliance via a support request.
+## Desplegar un Appliance
+Antes de poder desplegar un Appliance, debe hacer una solicitud de suscripción a un Appliance mediante una petición al soporte.
 
-## Open a flow to a device
-In the "Appliances" tab, click on the action bar of the Appliance you want to open. Then click the "Open" button.
+## Abrir un flujo hacia un equipo
+En la pestaña « Appliances », haga clic en la barra de acciones del Appliance que desea abrir. Luego haga clic en el botón « Ouvrir ».
 
 ![](images/ouvrir_appliance.png)
 
-Then enter the required information for the connection:
+Luego proporcione la información necesaria para la conexión:
 
-    - Choice of protocol (SSH or RDP);
-    - IP address of the host to be managed;
-    - Credentials;
-    - Keyboard configuration.
+    - Elección del protocolo (SSH o RDP);
+    - Dirección IP del host a administrar;
+    - Información de identificación;
+    - Configuración del teclado.
 
-Then click on "Connect" to open the Appliance. The console of the virtual machine to administer will then open.
+Luego haga clic en « Connecter » para abrir el Appliance. La consola de la máquina virtual a administrar se abrirá entonces. 
 
-## Register a Device
+## Registrar un equipo
 
-To regularly access a device to administer, it is more suitable to create a device configuration, which will only require your username and password for each connection.
+Para acceder regularmente a un equipo a administrar, es más adecuado crear una configuración de equipo, que solo requerirá su nombre de usuario y su contraseña en cada conexión. 
 
-To do this, go to the "Devices" tab in the "Bastion" menu, then click on the "New device" button.
+Para ello, diríjase a la pestaña « Equipements » del menú « Bastion », luego, haga clic en el botón « Nouveau équipement ».
 
 ![](images/creer_session.png)
 
-Then enter the necessary information to create your device:
 
-    - Device name;
-    - Description;
-    - Associated Appliance;
-    - Protocol type (SSH or RDP);
-    - Host IP address;
-    - Keyboard language.
+Luego proporcione la información necesaria para la creación de su equipo:
+
+    - Nombre del equipo;
+    - Descripción;
+    - Appliance asociado;
+    - Tipo de protocolo (SSH o RDP);
+    - Dirección IP del host;
+    - Idioma del teclado.
 
 ![](images/creer_session2.png)
 
-A notification indicating the creation of your equipment configuration should appear at the top right of the page. The configuration is then added to your list of equipment.
 
-To create a new connection, you can also go through the "Appliances" tab by clicking on the action bar of the Appliance to which you want to associate an equipment configuration.
+Una notificación indicando la creación de su configuración de equipo debería aparecer en la parte superior derecha de la página. La configuración se añadirá luego a la lista de sus equipos. 
+
+Para crear una nueva conexión, también puede pasar por la pestaña « Appliances » haciendo clic en la barra de acciones del Appliance al que desea asociar una configuración de equipo.
 
 ![](images/creer_session3.png)
 
-## Connecting to Equipment
+## Conectarse a un equipo
 
-Go to the "Equipments" tab of the "Bastion" tab. Click on the action bar of the equipment you want to open, and click on the "Open" button.
+Diríjase a la pestaña « Equipements » de la pestaña « Bastion ». Haga clic en la barra de acciones del equipo que desea abrir, y haga clic en el botón « Ouvrir ».
 
 ![](images/ouvrir_session.png)
 
-For each connection to the equipment, you only need to provide your authentication information.
+En cada conexión al equipo, solo necesitará proporcionar su información de autenticación.
 
 ![](images/ouvrir_session2.png)
 
-After entering your credentials, a notification confirming the start of the session appears, and the console to your virtual machine opens.
-## Modify Equipment Configuration
+Después de ingresar sus credenciales, aparecerá una notificación confirmando el inicio de la sesión y se abrirá la consola hacia su máquina virtual.
 
-Go to the "Equipment" tab in the "Bastion" section, click on the action bar of the equipment you want to modify, and click the "Modify" button.
+## Modificar una configuración de equipo
+
+Diríjase a la pestaña « Equipements » de la sección « Bastion », haga clic en la barra de acciones del equipo que desea modificar, y haga clic en el botón « Modifier ».
 
 ![](images/modifier_session.png)
 
-You can then modify the equipment's name, description, associated Appliance, protocol (SSH or RDP), host IP address, or keyboard language.
+Luego puede modificar el nombre del equipo, su descripción, el Appliance asociado, el protocolo (SSH o RDP), la dirección IP del host o el idioma del teclado. 
 
 ![](images/modifier_session2.png)
 
-## Delete Equipment Configuration
+## Eliminar una configuración de equipo
 
-Go to the "Equipment" tab in the "Bastion" section, click on the action bar of the equipment you want to delete, and click the "Delete" button.
+Diríjase a la pestaña « Equipements » de la sección « Bastion », haga clic en la barra de acciones del equipo que desea eliminar, y haga clic en el botón « Supprimer ».
 
 ![](images/supprimer_session.png)

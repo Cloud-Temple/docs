@@ -2,137 +2,137 @@
 title: Concepts
 ---
 
-## Two options are available:
+## Dos opciones son posibles: 
 
-- __physical hosting by 'U'__ in shared bays and shared space,
-- __dedicated hosting by rack__ of at least 42 'U' in shared space.
+- __alojamiento físico en 'U'__ en rack compartido y espacio compartido,
+- __alojamiento dedicado por rack__ de al menos 42 'U' en espacio compartido.
 
-The request for physical hosting is made through __a service request__ specifying:
+La solicitud de alojamiento físico se realiza mediante __una solicitud de servicio__ indicando:
 
-    The name of your Organization
-    The name of a contact with their email and phone number to finalize the configuration
-    The name of the tenant
-    The type of hosting desired (shared by 'U' or dedicated by rack)
-    The desired quantity
-    The type of equipment and its characteristics (size, weight, power consumption, heat dissipation, ...)
+    El nombre de su Organización
+    El nombre de un contacto con su correo y n.º de teléfono para finalizar la configuración
+    El nombre del tenant
+    el tipo de alojamiento deseado (compartido en 'U' o dedicado en rack)
+    La cantidad deseada
+    El tipo de equipo y sus características (tamaño, peso, consumo energético, disipación térmica, ...)
 
-The Cloud Temple support team will contact you to finalize the request.
+El equipo de soporte de Cloud Temple se pondrá en contacto con usted para finalizar la solicitud.
 
-## Shared Hosting
+## Alojamiento compartido
 
-### Hosting of appliances (network, firewall, ...)
+### Alojamiento de appliances (red, firewall, ...)
 
-Shared hosting is performed in a rack shared between different Cloud Temple clients. [The segmentation](https://en.wikipedia.org/wiki/Rack_unit) is done at the 'U' (rack unit) level.
-A rack unit measures 1.75 inches (or 44.45 mm) in height. Shared hosting racks have two distinct electrical chains. 
+El alojamiento compartido se realiza en un rack compartido entre diferentes clientes de Cloud Temple. [La segmentación](https://fr.wikipedia.org/wiki/Unit%C3%A9_de_rack) se hace en 'U' (unidad de rack).
+Una unidad de rack mide 1,75 pulgadas (es decir, 44,45 mm) de alto. Los racks de alojamiento compartidos disponen de dos cadenas eléctricas distintas.
 
-The maximum weight of the equipment for each 'U' unit is 25Kg. Beyond that, it is necessary to order the number of 'U' units required to support the total weight of your equipment.
+La masa máxima del equipo para cada unidad de 'U' es de 25Kg. Más allá de este peso, es necesario solicitar el número de 'U' que permita soportar la masa total de su equipo.
 
-For example, for equipment weighing 34 Kg, it is necessary to subscribe to 2 rack units.
+Por ejemplo, para un equipo de 34 Kg, es necesario suscribir 2 unidades de rack.
 
-It is possible for each rack unit to request to benefit from one or two C13 type electrical outlets according to your needs.
+Es posible para cada unidad de rack solicitar una o dos tomas eléctricas tipo C13 según sus necesidades.
 
-Each electrical outlet is limited to 150W at 220v for each 'U'.
+Cada toma eléctrica está limitada a 150W bajo 220v para cada 'U'. 
 
-If you want your equipment to benefit from 1500W power on two power supplies, it is necessary to request
-1500 W / 150 W = 10 'U', i.e., 5 'U' (or 750 W) per electrical chain.
+Si desea que su equipo tenga una potencia de 1500W, en dos alimentaciones, es necesario solicitar 
 
-Network connectivity should be subscribed to in parallel according to expected port type and desired bandwidth. Here are the possible options per network port:
+1500 W / 150 W = 10 'U', es decir, 5 'U' (o 750 W) por cadena eléctrica.
 
-- Copper 100MBps/1Gbps,
-- Fiber 1Gbps/10Gbps via an SFP module provided for connectivity on the Cloud Temple side.
+La conectividad de red debe suscribirse en paralelo según el tipo de puerto esperado y el ancho de banda deseado. Aquí están las opciones posibles por puerto de red:
 
-For these operational units, the cooling is necessarily from the front face of the rack to the rear face, and **the appliance takes its network connectivity from the front face of the rack.**
+- Cobre 100MBps/1Gbps,
+- Fibra 1Gbps/10Gbps a través de un módulo SFP proporcionado para la conectividad del lado de Cloud Temple.
 
-__*Note:*__ *the minimum commitment is 12 months.*
+Para estas unidades de obra, la refrigeración se realiza necesariamente desde la parte frontal del rack hacia la parte trasera, y **el appliance toma su conectividad de red desde la parte frontal del rack.**
 
-| Reference                                           | Unit | SKU                                    | Commitment |
-| --------------------------------------------------- | ---- | -------------------------------------- | ---------- |
-| RACK HOSTING - 1 U Shared - 150W (1 C13)            | 1 U  | csp:(region):hosting:shared:basic:v1   | 12 months  |
+__*Nota:*__ *el compromiso mínimo es de 12 meses.*
 
-| RENTAL IN RACK - Shared 1 U - 300W (2 C13) | 1 U   | csp:(region):hosting:shared:premium:v1 | 12 months  |
+| Referencia                                         | Unidad | SKU                                    | Compromiso |
+| -------------------------------------------------- | ------ | -------------------------------------- | ---------- |
+| ALOJAMIENTO EN RACK - 1 U Compartido - 150W (1 C13) | 1 U    | csp:(region):hosting:shared:basic:v1   | 12 meses   |
+| ALOJAMIENTO EN RACK - 1 U Compartido - 300W (2 C13) | 1 U    | csp:(region):hosting:shared:premium:v1 | 12 meses   |
 
-### Server Hosting
+### Alojamiento de servidores
 
-The **'Servers'** work units are designed to adapt to the thermal dissipation of servers and **provide rear-facing network connectivity**, simplifying maintenance operations and optimizing rack cooling.
+Las unidades de obra **'Servidores'** están diseñadas para adaptarse a la disipación de calor de los servidores y **proporcionar conectividad de red en la parte trasera**, simplificando las operaciones de mantenimiento y optimizando así la refrigeración del rack. 
 
-**They are mandatory for servers.**
+**Son obligatorias para los servidores.**
 
-| Reference                                                      | Unit  | SKU                                        | Commitment |
-| -------------------------------------------------------------  | ----- | ------------------------------------------ | ---------- |
-| RENTAL IN RACK - Shared 1 U - Server - 400 W (2 C19)           | 2 U   | csp:(region):hosting:shared:srv:basic:v1   | 12 months  |
-| RENTAL IN RACK - Shared 1 U - Server - 800 W (2 C19)           | 2 U   | csp:(region):hosting:shared:srv:premium:v1 | 12 months  |
-
-
-## Dedicated Hosting
+| Referencia                                                     | Unidad | SKU                                        | Compromiso |
+| -------------------------------------------------------------- | ------ | ------------------------------------------ | ---------- |
+| ALOJAMIENTO EN RACK - 1 U Compartido - Servidor - 400 W (2 C19) | 2 U    | csp:(region):hosting:shared:srv:basic:v1   | 12 meses   |
+| ALOJAMIENTO EN RACK - 1 U Compartido - Servidor - 800 W (2 C19) | 2 U    | csp:(region):hosting:shared:srv:premium:v1 | 12 meses   |
 
 
-Dedicated rack hosting is conducted in a shared hosting area outside of secnumcloud. The dedicated hosting rack has a minimum dimension of 42 'U' or 42 rack units.
-The depth is 1200 millimeters, with 1000 millimeters usable by the equipment. The width is 600 millimeters.
+## Alojamiento dedicado
 
-It is delivered with the necessary cooling, secure front and rear doors, and 3 Kw of power on 2 electrical chains of 16 amperes each.
+El alojamiento en rack dedicado se realiza en una zona de alojamiento compartido fuera de secnumcloud. El rack de alojamiento dedicado tiene unas dimensiones de al menos 42 'U' o 42 unidades de rack.
+La profundidad es de 1200 milímetros de los cuales 1000 milímetros son utilizables por los equipos. El ancho es de 600 milímetros.
 
-It is possible to request additional power levels in increments of 2Kw. __The maximum weight of the equipment that can be integrated into the dedicated rack is 1000kg__.
+Se entrega con la refrigeración necesaria, puertas seguras delanteras y traseras y 3 Kw de energía en 2 cadenas eléctricas de 16 amperios cada una.
 
-The bay is equipped with 'PDU' (Power Distribution Unit) suited to the subscribed power and monitored. There is one 'PDU' per electrical chain.
+Es posible pedir niveles adicionales de energía por 2Kw. __La masa máxima de los equipos integrables en el rack dedicado es de 1000kg__.
 
-| Reference                                                    | Unit       | SKU                                        | Commitment |
+El rack está equipado con 'PDU' (unidad de distribución de energía) adaptados a la potencia suscrita y monitorizados. Hay un 'PDU' por cadena eléctrica.
 
-| ------------------------------------------------------------ | ---------- | ------------------------------------------ | ---------- |
-| RACK HOUSING - Dedicated 42U Rack including 3Kw of energy    | 1 rack 42U | csp:(region):hosting:dedicated:rack:v1     | 12 months  |
-| ENERGY - Additional 2 Kw                                     | 2 Kw       | csp:(region):hosting:dedicated:rack:2kw:v1 | 12 months  |
+| Referencia                                                     | Unidad      | SKU                                        | Compromiso |
+| -------------------------------------------------------------- | ----------- | ------------------------------------------ | ---------- |
+| ALOJAMIENTO EN RACK - Rack 42 U Dedicado incluyendo 3Kw de energía | 1 rack 42U | csp:(region):hosting:dedicated:rack:v1     | 12 meses   |
+| ENERGÍA - 2 Kw complementarios                                 | 2 Kw        | csp:(region):hosting:dedicated:rack:2kw:v1 | 12 meses   |
 
-### Network Connectivity for Physical Hosting
+### Conectividad de red para el alojamiento físico
 
-Network connectivity must be subscribed in addition to physical hosting, depending on the type of port and desired bandwidth. Here are the possible options per network port:
+La conectividad de red debe suscribirse además del alojamiento físico según el tipo de puerto esperado y el ancho de banda deseado. Aquí están las opciones posibles por puerto de red:
 
-- Copper 1Gbps,
-- Fiber 1Gbps/10Gbps via an SFP module provided for connectivity on the Cloud Temple side.
+- Cobre 1Gbps,
+- Fibra 1Gbps/10Gbps a través de un módulo SFP proporcionado para la conectividad del lado de Cloud Temple.
 
-It is also possible to request connectivity in the meet me room zone of various data centers to receive your operator connectivity.
-This connectivity is necessarily fiber optic at speeds of 1Gbps or 10GBps.
-| Reference                                                              | Unit      | SKU                                    | Commitment |
-| ---------------------------------------------------------------------- | --------- | -------------------------------------- | ---------- |
-| NETWORK - 1 port - 1 Gbps - fiber or copper                            | 1 port    | csp:(region):hosting:shared:port1g:v1  | 36 months  |
-| NETWORK - 1 port - 10 Gbps - fiber                                     | 1 port    | csp:(region):hosting:shared:port10g:v1 | 36 months  |
-| NETWORK - Private link connection in meet me room of an AZ - 1 port 1Gbps | 1 package | csp:(region):hosting:mmr:v1:1g         | 36 months  |
-| NETWORK - Private link connection in meet me room of an AZ - 1 port 10Gbps | 1 package | csp:(region):hosting:mmr:v1:10g        | 36 months  |
+También es posible solicitar una conectividad en la zona meet me room de los diferentes centros de datos para recibir su conectividad de operador.
+Esta conectividad debe ser necesariamente en fibra óptica con velocidades de 1Gbps o 10GBps.
 
-### 'Hands & Eyes' Services
-In addition to physical hosting and network connectivity services, it is possible to request professional support services for your physical hosting.
+| Referencia                                                               | Unidad     | SKU                                    | Compromiso |
+| ------------------------------------------------------------------------ | ---------- | -------------------------------------- | ---------- |
+| RED - 1 puerto - 1 Gbps - fibra o cobre                                  | 1 puerto   | csp:(region):hosting:shared:port1g:v1  | 36 meses   |
+| RED - 1 puerto - 10 Gbps - fibra                                         | 1 puerto   | csp:(region):hosting:shared:port10g:v1 | 36 meses   |
+| RED - Conexión enlace privado en meet me room de una AZ - 1 puerto 1Gbps | 1 paquete  | csp:(region):hosting:mmr:v1:1g         | 36 meses   |
+| RED - Conexión enlace privado en meet me room de una AZ - 1 puerto 10Gbps | 1 paquete  | csp:(region):hosting:mmr:v1:10g        | 36 meses   |
 
-These services are operated by datacenter technicians or by Cloud Temple engineers specialized in datacenter operations.
+### Servicios 'Hands & Eyes'
 
-Here are the main 'Hands & Eyes' service units available. They aim to address the following tasks:
+Además de los servicios de alojamiento físico y conectividad de red, es posible solicitar servicios profesionales de asistencia para su alojamiento físico.
 
-- Assisting an identified external participant,
-- Checking the status of equipment (LED status, operational status, ...),
-- Taking photos of pre-identified client equipment,
-- Pressing a contactor,
-- Restarting the equipment,
-- Connecting an access terminal for remote control,
-- Replacing a connector without altering the wiring.
+Son operados por los técnicos del centro de datos o por los ingenieros especializados en centros de datos de Cloud Temple.
 
-| Reference                                                                               | Unit   | SKU                              | GTI        |
-| --------------------------------------------------------------------------------------- | ------- | -------------------------------- | ---------- |
-| Datacenter Hand's & Eyes - Business hours (8am - 7pm; Monday to Friday)                 | 1 hour  | csp:(region):hosting:ho:std:v1   | 2 hours    |
-| Datacenter Hand's & Eyes - Business hours (8am - 7pm; Monday to Friday) - URGENT        | 1 hour  | csp:(region):hosting:ho:fast:v1  | 30 minutes |
-| Datacenter Hand's & Eyes - Non-business hours (night, weekend, and holidays)            | 1 hour  | csp:(region):hosting:hno:std:v1  | 2 days     |
-| Datacenter Hand's & Eyes - Non-business hours (night, weekend, and holidays) - URGENT   | 1 hour  | csp:(region):hosting:hno:fast:v1 | 2 hours    |
+Aquí están las principales unidades de obra 'Hands & Eyes' disponibles. Están destinadas a tratar los siguientes temas:
 
-You can also benefit from a Cloud Temple datacenter engineer for handling the following topics:
+- Acompañamiento de un interventor externo previamente identificado,
+- Verificar el estado de un equipo (estado de los LEDS, estado de funcionamiento, ...),
+- Tomar fotos de un equipo del cliente previamente identificado,
+- Presionar un contacto,
+- Reiniciar el equipo,
+- Conectar un terminal de acceso para control remoto,
+- Reemplazar una conexión sin modificar el cableado.
 
-- Racking (with appropriate protective and lifting equipment),
-- Cabling (according to the previously provided cabling plan),
-- Wiring modification or relocation of existing equipment,
-- Assistance with operator network connectivity.
+| Referencia                                                                               | Unidad   | SKU                              | TMG        |
+| --------------------------------------------------------------------------------------- | -------- | -------------------------------- | ---------- |
+| Hand's & Eyes datacenter - Horas laborables (8h - 19h; Lunes a viernes)                  | 1 hora   | csp:(region):hosting:ho:std:v1   | 2 horas    |
+| Hand's & Eyes datacenter - Horas laborables (8h - 19h; Lunes a viernes) - URGENTE        | 1 hora   | csp:(region):hosting:ho:fast:v1  | 30 minutos |
+| Hand's & Eyes datacenter - Horas no laborables (noche, fin de semana y días festivos)    | 1 hora   | csp:(region):hosting:hno:std:v1  | 2 días     |
+| Hand's & Eyes datacenter - Horas no laborables (noche, fin de semana y días festivos) - URGENTE | 1 hora   | csp:(region):hosting:hno:fast:v1 | 2 horas    |
 
-| Reference                                                                    | Unit   | SKU                             | GTI      |
-| ---------------------------------------------------------------------------- | ------ | ------------------------------- | -------- |
-| Datacenter Engineer - Business hours (8 am - 7 pm; Monday to Friday)          | 1 act  | csp:(region):hosting:ho:std:v1  | 2 days   |
-| Datacenter Engineer - Business hours (8 am - 7 pm; Monday to Friday) - URGENT | 1 act  | csp:(region):hosting:ho:fast:v1 | 4 hours  |
+También puede solicitar un ingeniero de centro de datos de Cloud Temple para tratar los siguientes temas:
 
-__Note:__
+- Montaje en rack (con los equipos de protección y elevación adecuados),
+- Cableado (según el plan de cableado previamente entregado),
+- Modificación de cableado o desplazamiento de un equipo existente,
+- Asistencia con la conectividad de red del operador.
 
-- *All requests must be submitted by opening an intervention ticket in the Cloud Temple console*,
-- *For urgent requests, call the on-call team after opening the intervention ticket in the Cloud Temple console*,
-- *Any started hour is due.*
+| Referencia                                                                    | Unidad  | SKU                             | TMG      |
+| ----------------------------------------------------------------------------- | ------- | ------------------------------- | -------- |
+| Ingeniero de Centro de Datos - Horas laborables (8h - 19h; Lunes a viernes)   | 1 acto  | csp:(region):hosting:ho:std:v1  | 2 días   |
+| Ingeniero de Centro de Datos - Horas laborables (8h - 19h; Lunes a viernes) - URGENTE  | 1 acto  | csp:(region):hosting:ho:fast:v1 | 4 horas  |
+
+__Nota:__
+
+- *Toda solicitud debe hacerse mediante la apertura de un expediente de intervención en la consola de Cloud Temple*,
+- *En caso de solicitud urgente, llame al servicio de guardia después de abrir el expediente de intervención en la consola de Cloud Temple*,
+- *Toda hora iniciada se debe pagar.*

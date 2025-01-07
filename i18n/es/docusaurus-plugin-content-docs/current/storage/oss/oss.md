@@ -1,31 +1,28 @@
 ---
-title: Overview
+title: Vista general
 ---
 
-**S3 object storage** is a key solution for managing large-scale unstructured data, such as files, documents, or databases. Based on the standard AWS S3 protocol, this technology offers a resilient and scalable architecture, enabling efficient storage, security, and access to data via REST APIs. Each file, called an "object", is contained in a "bucket", a logical space allowing for data organization and access rule definition.
-The Cloud Temple object storage infrastructure is based on Dell's **Elastic Cloud Storage (ECS)** solution, renowned for its compatibility with the S3 protocol and high performance. This solution ensures exceptional availability and durability through advanced techniques such as **Erasure Coding** and replication across multiple availability zones. With a **97% compatibility with AWS S3**, it offers a smooth transition and standardized management for enterprises.
+El **almacenamiento de objetos S3** es una solución clave para gestionar datos no estructurados a gran escala, tales como archivos, documentos o bases de datos. Basada en el protocolo estándar AWS S3, esta tecnología ofrece una arquitectura resiliente y extensible, permitiendo almacenar, asegurar y acceder a los datos de manera eficaz a través de APIs REST. Cada archivo, llamado "objeto", se encuentra en un "bucket", un espacio lógico que permite organizar los datos y definir las reglas de acceso.
 
-To secure data, Cloud Temple provides advanced encryption options: **server-side** (with keys managed by Cloud Temple or by the client) or **client-side**, offering total control to the user. Certified **SecNumCloud**, **HDS**, and **ISO 27001**, this infrastructure ensures strict compliance with regulatory requirements and the highest security standards.
+La infraestructura de almacenamiento de objetos de Cloud Temple se basa en la solución **Elastic Cloud Storage (ECS)** de Dell, reconocida por su compatibilidad con el protocolo S3 y sus altas prestaciones. Esta solución garantiza una disponibilidad y durabilidad excepcionales gracias a técnicas avanzadas como el **Erasure Coding** y la replicación en varias zonas de disponibilidad. Con una compatibilidad del **97% con AWS S3**, ofrece una transición fluida y una gestión estandarizada para las empresas.
+
+Para asegurar los datos, Cloud Temple ofrece opciones de cifrado avanzadas: **del lado del servidor** (con claves gestionadas por Cloud Temple o por el cliente) o **del lado del cliente**, ofreciendo un control total al usuario. Certificada por **SecNumCloud**, **HDS**, e **ISO 27001**, esta infraestructura garantiza una conformidad estricta con los requisitos regulatorios y los estándares de seguridad más altos.
+
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-<p>Discover the essential basics and principles to understand and master our infrastructure.</p>
-<a href="concepts" class="card-link">Explore concepts &rarr;</a>
-</div>
-<div class="card">
-<h3>Quickstart</h3>
-<p>Get started quickly with our resources by following clear and simple instructions.</p>
-<a href="quickstart" class="card-link">Launch Quickstart &rarr;</a>
-</div>
-<div class="card">
-<h3>Tutorials</h3>
-<p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-<a href="tutorials" class="card-link">Discover tutorials &rarr;</a>
-</div>
-<div class="card">
-<h3>FAQ</h3>
-<p>Find answers to frequently asked questions to quickly solve your problems.</p>
-<a href="faq" class="card-link">Consult the FAQ &rarr;</a>
-</div>
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para entender y dominar nuestra infraestructura.</p>
+    <a href="concepts" class="card-link">Explorar los conceptos &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Quickstart</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+  </div>
+    <div class="card">
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
 </div>

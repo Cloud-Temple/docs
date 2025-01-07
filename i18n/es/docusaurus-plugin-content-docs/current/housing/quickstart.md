@@ -2,37 +2,38 @@
 title: Quickstart
 ---
 
-This **Quickstart Housing** guide helps you quickly get started with Cloud Temple's physical hosting offer. It covers the essential steps to request hosting, configure your equipment, and take advantage of complementary services.
+Ce guide **Quickstart Housing** vous accompagne pour démarrer rapidement avec l’offre d’hébergement physique Cloud Temple. Il couvre les étapes essentielles pour effectuer une demande d’hébergement, configurer vos équipements, et bénéficier des services complémentaires.
 
-## Step 1: Submit a Hosting Request
+## Étape 1 : Faire une demande d’hébergement
 
-1. Access the Cloud Temple console.
-2. Open a service ticket by providing:
-   - Your organization's name.
-   - Contact details (email and phone).
-   - Desired type of hosting (shared at 'U' level or dedicated per rack).
-   - Quantity and characteristics of the equipment (size, weight, power consumption, etc.).
+1. Accédez à la console Cloud Temple.
+2. Ouvrez un dossier de service en fournissant :
+   - Nom de votre organisation.
+   - Coordonnées d’un contact (email et téléphone).
+   - Type d’hébergement souhaité (mutualisé au 'U' ou dédié par rack).
+   - Quantité et caractéristiques des équipements (taille, poids, consommation, etc.).
 
-## Step 2: Prepare Your Equipment
+## Étape 2 : Préparer vos équipements
 
-- Ensure your equipment meets the technical constraints:
-  - Size in rack units (U).
-  - Maximum weight per 'U' (25kg for shared, up to 1000kg for a dedicated rack).
-  - Power consumption (150W to 3Kw depending on the subscribed option).
-## Step 3: Configure Network Connectivity
+- Vérifiez que vos équipements respectent les contraintes techniques :
+  - Taille en unités de rack (U).
+  - Poids maximal par 'U' (25kg pour mutualisé, jusqu'à 1000kg pour un rack dédié).
+  - Consommation électrique (150W à 3Kw selon l'option souscrite).
 
-1. Select the required port type:
-   - Copper 1Gbps.
-   - Fiber 1Gbps or 10Gbps.
-2. Add connectivity options in Meet Me Room if necessary for operator integration.
+## Étape 3 : Configurer la connectivité réseau
 
-## Step 4: Activate Hands & Eyes Services
+1. Sélectionnez le type de port requis :
+   - Cuivre 1Gbps.
+   - Fibre 1Gbps ou 10Gbps.
+2. Ajoutez des options de connectivité en Meet Me Room si nécessaire pour l’intégration opérateur.
 
-If needed, request technical assistance to:
-- Install your equipment.
-- Configure cabling.
-- Perform occasional actions (reboot, photos, etc.).
+## Étape 4 : Activer les services Hands & Eyes
 
-## Step 5: Validate the Installation
+Si besoin, demandez une assistance technique pour :
+- Installer vos équipements.
+- Configurer le câblage.
+- Effectuer des actions ponctuelles (redémarrage, photos, etc.).
 
-Once your equipment is installed, verify their connectivity and proper functioning directly through the Cloud Temple console or in coordination with support.
+## Étape 5 : Valider l'installation
+
+Une fois vos équipements installés, vérifiez leur connectivité et leur bon fonctionnement directement via la console Cloud Temple ou en coordination avec le support.

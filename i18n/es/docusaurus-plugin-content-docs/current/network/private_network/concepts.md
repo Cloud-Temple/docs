@@ -3,38 +3,31 @@ title: Concepts
 ---
 
 ### La technologie VPLS
-Le réseau global Cloud Temple utilise la technologie __[VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service)__.
-__VPLS__ est un VPN de couche 2 point-à-multipoint basé sur Ethernet. Il permet de connecter des sites géographiquement 
-dispersés les uns aux autres à travers un réseau MPLS. Pour les clients, tous les sites semblent être dans le même 
-LAN Ethernet, même si le trafic est transporté par le réseau Cloud Temple.
+El Red global de Cloud Temple utiliza la tecnología __[VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service)__.
+__VPLS__ es una VPN de capa 2 punto a multipunto basada en Ethernet. Permite conectar sitios geográficamente dispersos entre sí a través de una red MPLS. Para los clientes, todos los sitios parecen estar en el mismo LAN Ethernet, incluso si el tráfico es transportado por la red de Cloud Temple.
 
-__VPLS__, dans son implémentation et sa configuration, a beaucoup en commun avec un VPN de couche 2. Dans VPLS, un paquet qui provient 
-d'un réseau client est d'abord envoyé à un dispositif client (CE) (par exemple, un routeur ou un commutateur Ethernet).
-Il est ensuite envoyé à un routeur de bord de fournisseur (PE) au sein du réseau du fournisseur de services. 
-Le paquet traverse le réseau du fournisseur de services sur un chemin à commutation d'étiquettes MPLS (LSP). 
-Il arrive au routeur PE de sortie, qui transfère ensuite le trafic vers le dispositif CE sur le site client de destination.
-La différence réside dans le fait que, pour __VPLS__, les paquets peuvent traverser le réseau du fournisseur de 
-services de manière point-à-multipoint, ce qui signifie qu'un paquet provenant d'un dispositif CE peut être 
-diffusé à tous les routeurs PE participant à une instance de routage __VPLS__. 
+__VPLS__, en su implementación y configuración, tiene mucho en común con una VPN de capa 2. En VPLS, un paquete que proviene de una red de clientes es primero enviado a un dispositivo del cliente (CE) (por ejemplo, un enrutador o un conmutador Ethernet).
+Luego es enviado a un enrutador de borde de proveedor (PE) dentro de la red del proveedor de servicios. 
+El paquete atraviesa la red del proveedor de servicios a través de un camino conmutado por etiquetas MPLS (LSP). 
+Llega al enrutador PE de salida, que luego transfiere el tráfico al dispositivo CE en el sitio del cliente de destino.
+La diferencia radica en el hecho de que, para __VPLS__, los paquetes pueden atravesar la red del proveedor de servicios de manera punto a multipunto, lo que significa que un paquete proveniente de un dispositivo CE puede ser difundido a todos los enrutadores PE que participen en una instancia de enrutamiento __VPLS__. 
 
-Le circuit __VPLS__ d'un client peut être __étendu entre toutes les zones de disponibilité d'une région__.
+El circuito __VPLS__ de un cliente puede __extenderse entre todas las zonas de disponibilidad de una región__.
 
-Le protocole __VPLS__ est __totalement transparent__ pour les clients qui ne voient que les différents VLANs sur leurs zones de disponibilité.
+El protocolo __VPLS__ es __totalmente transparente__ para los clientes que solo ven los diferentes VLANs en sus zonas de disponibilidad.
 
-### Le réseau dans l'offre de virtualisation VMware
+### La red en la oferta de virtualización VMware
 
-Les réseaux virtuels (vlan) de l'offre de virtualisation VMware sont des réseaux de types __'DVPortgroup'__. Un __'dvPortGroup'__, 
-ou __'Distributed Virtual Port Group'__, est un concept spécifique à VMware. Un dvPortGroup est une entité qui 
-regroupe plusieurs ports virtuels (vPorts) dans un environnement de réseau virtuel distribué pour faciliter leur utilisation.
+Las redes virtuales (vlan) de la oferta de virtualización VMware son redes del tipo __'DVPortgroup'__. Un __'dvPortGroup'__, o __'Distributed Virtual Port Group'__, es un concepto específico de VMware. Un dvPortGroup es una entidad que agrupa varios puertos virtuales (vPorts) en un entorno de red virtual distribuido para facilitar su uso.
 
-Localisée au sein d'un __[tenant](../../console/tenants.md)__, ils peuvent être étendus entre les zones de disponibilité 
-vous permettant ainsi de construire des architectures "actif / actif" avec quorum.
+Localizado dentro de un __[Tenant](../../../console/iam/concepts/#tenant)__, pueden extenderse entre las zonas de disponibilidad 
+permitiéndole construir arquitecturas "activo/activo" con quórum.
 
-La bande passante maximale utilisable dépend principalement du modèle de lame utilisé (10Gbps convergés ou 25 Gbps convergés) et des capacités des machines virtuelles.
+El ancho de banda máximo utilizable depende principalmente del modelo de cuchilla utilizado (10Gbps convergidos o 25 Gbps convergidos) y de las capacidades de las máquinas virtuales.
 
-Il est possible d'attendre une bande passante de 10Gbps.
+Es posible alcanzar un ancho de banda de 10Gbps.
 
-Les configurations disponibles sur la console Cloud Temple dans le cadre de l'offre de virtualisation VMware sont les suivantes :
+Las configuraciones disponibles en la consola Cloud Temple en el marco de la oferta de virtualización VMware son las siguientes:
 
 - __Vlan tagging__
 - __Trunk__
@@ -42,74 +35,73 @@ Les configurations disponibles sur la console Cloud Temple dans le cadre de l'of
 
 *__Nota__* : 
 
-- *Le choix de l'adressage IP au sein de ces réseaux est __libre.__*
-- *__SRV-IO__ n'est pas disponible dans l'offre réseau associée à la virtualisation VMware.*
-- *__QinQ__ est supporté sur l'architecture Cloud Temple. QinQ, également connu sous le nom de "VLAN stacking" ou de 802.1ad, est 
-un protocole réseau qui permet l'encapsulation de plusieurs étiquettes VLAN (Virtual Local Area Network) dans une seule trame Ethernet.*
+- *La elección del direccionamiento IP dentro de estas redes es __libre.__*
+- *__SRV-IO__ no está disponible en la oferta de red asociada a la virtualización VMware.*
+- *__QinQ__ es compatible con la arquitectura Cloud Temple. QinQ, también conocido como "VLAN stacking" o 802.1ad, es un protocolo de red que permite la encapsulación de múltiples etiquetas VLAN (Red de Área Local Virtual) en una sola trama Ethernet.*
 
 
-## Réseaux privés régionaux
+## Redes privadas regionales
 
-La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple. 
+La petición de redes privadas dentro de una región se realiza directamente en la consola Cloud Temple.
 
-__*Remarque :*__ *Il n'est pas possible de choisir l'ID de vlan 802.1q.*
+__*Nota:*__ *No es posible elegir el ID de vlan 802.1q.*
 
-| Référence                                 | Unité  | SKU                          | 
-|-------------------------------------------|--------|------------------------------|
-| RESEAU - Région FR1 - VLAN privé inter AZ | 1 vlan | csp:(region):network:vlan:v1 |
+| Referencia                               | Unidad | SKU                          | 
+|------------------------------------------|--------|------------------------------|
+| RESEAU - Région FR1 - VLAN privé inter AZ| 1 vlan | csp:(region):network:vlan:v1 |
 
-## Partage de réseau entre tenants
+## Compartición de red entre tenants
 
-Par défaut, __les réseaux sont uniquement disponibles au sein d'un tenant__. Vous pouvez choisir de __partager un réseau entre plusieurs tenants__ pour des raisons techniques ou des raisons de connectivité.
-Il est ainsi possible de partager un réseau entre vos __[tenants](../../console/tenants.md)__ au sein d'une même organisation.
+Por defecto, __las redes están disponibles solo dentro de un tenant__. Puede optar por __compartir una red entre varios tenants__ por razones técnicas o de conectividad.
+Es posible compartir una red entre sus __[Tenant](../../../console/iam/concepts/#tenant)__ dentro de una misma organización.
 
-## Connectivité privé externe
+## Conectividad privada externa
 
-L'offre de réseau Cloud Temple permet aux clients de connecter leurs propres infrastructures IPSEC, MPLS ou Fibre à leurs tenants.
+La oferta de red de Cloud Temple permite a los clientes conectar sus propias infraestructuras IPSEC, MPLS o Fibra a sus tenants.
 
-Cloud Temple propose à cet effet : 
+Cloud Temple ofrece para este propósito:
 
-- La possibilité d'héberger un équipement réseau en zone commune (non qualifiée Secnumcloud),
-- Des ports de connectivité 1Gbps ou 10Gbps.
+- La posibilidad de alojar un equipo de red en una zona común (no calificada Secnumcloud),
+- Puertos de conectividad de 1Gbps o 10Gbps.
 
-La création d'une connectivité externe est réalisée par une demande de service indiquant :
+La creación de una conectividad externa se realiza mediante una solicitud de servicio indicando:
 
-    Le nom de votre Organisation
-    Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
-    Le nom du tenant
-    La zone de disponibilité ou à défaut le site physique souhaité pour cette connectivité
-    Le nombre et pour chacun, le type de port de connectivité attendu (fibre, cuivre, 1Gbps, 10Gbps, ...)
-    Le réseau de votre tenant devant accueillir cette connectivité
-    Le nombre de 'U' éventuelle d'hébergement souhaité
+    El nombre de su Organización
+    El nombre de un contacto con su correo y n° de teléfono para finalizar la configuración
+    El nombre del tenant
+    La zona de disponibilidad o en su defecto el sitio físico deseado para esta conectividad
+    El número y para cada uno, el tipo de puerto de conectividad esperado (fibra, cobre, 1Gbps, 10Gbps, ...)
+    La red de su tenant que debe albergar esta conectividad
+    El número de 'U' de alojamiento deseado, si corresponde
 
-## Circuits dédiés
+## Circuitos dedicados
 
-Cloud Temple offre la possibilité de bénéficier d'une fibre dédiée entre deux infrastructures d'hébergement dédié (rack).
+Cloud Temple ofrece la posibilidad de beneficiarse de una fibra dedicada entre dos infraestructuras de alojamiento dedicado (rack).
 
-Ce service est typiquement utilisé lorsque vous souhaitez héberger 2 infrastructures non-cloud (par exemple deux IBM AS/400), dans deux racks distincts sur deux datacenters physiques distincts.
-Vous pouvez souhaiter relier directement ces deux racks en privé sans passer par l'infrastructure backbone Cloud Temple et n'utiliser que le backbone de transmission optique.
+Este servicio se utiliza típicamente cuando desea alojar 2 infraestructuras no-cloud (por ejemplo, dos IBM AS/400), en dos racks distintos en dos centros de datos físicos distintos.
+Puede desear conectar directamente estos dos racks en privado sin pasar por la infraestructura backbone de Cloud Temple y utilizar solo el backbone de transmisión óptica.
 
-Dans ce contexte, nous pouvons livrer une connectivité fibre optique entre vos deux racks. La livraison est systématiquement sur deux chemins optiques diversifiés.
+En este contexto, podemos proporcionar una conectividad de fibra óptica entre sus dos racks. La entrega es siempre en dos caminos ópticos diversificados.
 
-Voici les différents types de livraison possibles :
+Aquí están los diferentes tipos de entrega posibles:
 
-- Ethernet fibre 1Gbps
-- Ethernet fibre 10Gbps
+- Ethernet fibra 1Gbps
+- Ethernet fibra 10Gbps
 - Fiber Channel 8Gbps
 - Fiber Channel 16Gbps
 
-La création d'une connectivité dédiée est réalisée par une demande de service indiquant :
+La creación de una conectividad dedicada se realiza mediante una solicitud de servicio indicando:
 
-    Le nom de votre Organisation
-    Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
-    Le nom du tenants
-    Les identifiants des deux rack dédiés 
-    La bande passante souhaitée
-    Le réseau de votre tenant devant accueillir cette connectivité
+    El nombre de su Organización
+    El nombre de un contacto con su correo y n° de teléfono para finalizar la configuración
+    El nombre de los tenants
+    Los identificadores de los dos racks dedicados
+    El ancho de banda deseado
+    La red de su tenant que debe albergar esta conectividad
 
-Vous serez contacté par le support pour affiner votre demande.
+Será contactado por el soporte para afinar su solicitud.
 
-| Référence                                                                                | Unité     | SKU                              | Engagement |
+| Referencia                                                                               | Unidad    | SKU                              | Compromiso |
 |------------------------------------------------------------------------------------------|-----------|----------------------------------|------------|
 | RESEAU - Lien dédié inter AZ 1G ethernet (deux liens via deux chemins diversifiés)       | 1 forfait | csp:(region):network:epl:1g:v1   | 36 mois    |
 | RESEAU - Lien dédié inter AZ 10G ethernet (deux liens via deux chemins diversifiés)      | 1 forfait | csp:(region):network:epl:10g:v1  | 36 mois    |

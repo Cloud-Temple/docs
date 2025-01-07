@@ -1,171 +1,175 @@
 ---
-title: Deploying Resources
+title: Desplegar recursos
 ---
 
-## Concept
+## Concepto
 
-Deployment tracking of new resources is done in the __'Orders'__ menu accessible from the green sidebar on the left side of the screen.
+El seguimiento del despliegue de nuevos recursos se realiza en el menú __'Comandos'__ accesible en la barra verde a la izquierda de la pantalla.
 
-It allows you to view the Cloud resources ordered, currently being deployed, and any potential errors within a [tenant](tenants.md) of your [Organization](organisations.md).
+Permite visualizar los recursos Cloud solicitados, en proceso de despliegue y los posibles errores dentro de un [Tenant](iam/concepts.md#tenant) de su [Organización](iam/concepts.md#organisations).
 
 ![](images/shiva_orders_list.png)
 
-*__Note: At this time, a global view at the organization level of all deployed resources across different tenants is not yet possible.__ This matter will be addressed in 2024 with the implementation of a dedicated portal for the sponsor (signatory) and the management of their organization.*
+*__Nota: En este momento, la vista global a nivel de una organización de todos los recursos desplegados en los diferentes tenants aún no es posible.__ Este tema será tratado en 2024 mediante la implementación de un portal dedicado al solicitante (en el sentido de firmante) y a la gestión de su organización.*
 
-The deployment or deletion of resources is done within each product in the __'IaaS'__ and __'Network'__ menus on the left side of the screen in the green sidebar.
-It is also possible to directly see deliveries within the notifications of the Cloud Temple console:
+El despliegue de recursos o su eliminación se realiza en cada uno de los productos en los menús __'IaaS'__ y __'Red'__ a la izquierda de la pantalla en la barra verde.
+
+También es posible ver directamente las entregas al nivel de las notificaciones de la consola Cloud Temple:
 
 ![](images/shiva_order_notif_001.png)
 
-From the orders page, you can see the progress of a delivery and possibly communicate with the team by providing comments or details:
+Desde la página de pedidos, puede ver el estado de avance de una entrega y eventualmente dialogar con el equipo aportando comentarios o precisiones:
 
 ![](images/shiva_order_status.png)
 
-**Note**: **It is not possible to launch multiple orders of the same type of resource simultaneously. Therefore, you must wait until the current order is processed and completed before placing a new one. This ensures efficient and orderly resource management within your environment.**
+**Nota**: **No es posible lanzar varios pedidos del mismo tipo de recurso simultáneamente. Tendrá que esperar a que el pedido en curso sea procesado y finalizado antes de poder realizar uno nuevo. Esto garantiza una gestión eficiente y ordenada de los recursos dentro de su entorno.**
 
-## Ordering a new availability zone
+## Solicitar una nueva zona de disponibilidad
 
-It is possible to add a new availability zone by accessing the "**Order**" menu. This option allows you to expand your resources and improve the availability and resilience of your applications in just a few clicks:
+Es posible agregar una nueva zona de disponibilidad accediendo al menú "**Pedido**". Esta opción le permite ampliar sus recursos y mejorar la disponibilidad y resiliencia de sus aplicaciones con solo unos pocos clics:
+
 ![](images/shiva_order_az_01.png)
 
-We start by selecting the desired location, first choosing the geographical region, then the corresponding availability zone (AZ) among the available ones. This step allows you to tailor the deployment of your resources based on location and the requirements of your infrastructure:
+Comience por seleccionar la ubicación deseada, eligiendo primero la región geográfica, luego la correspondiente zona de disponibilidad (AZ) entre las disponibles. Esta etapa permite adaptar el despliegue de sus recursos en función de la localización y de las exigencias de su infraestructura:
 
 ![](images/shiva_order_az_02.png)
 
-Next, proceed to select the desired type of hypervisor cluster, choosing the one that best meets the performance and management needs of your cloud infrastructure:
+Luego, proceda a seleccionar el tipo de clúster de hipervisor deseado, eligiendo el que mejor responda a las necesidades de rendimiento y gestión de su infraestructura cloud:
 
 ![](images/shiva_order_az_03.png)
 
-Then, select the number of hypervisors and the desired amount of memory to tailor the resources to the workload and the specific requirements of your cloud environment:
+Luego seleccione el número de hipervisores así como la cantidad de memoria deseada, para adaptar los recursos a la carga de trabajo y los requisitos específicos de su entorno cloud:
 
 ![](images/shiva_order_az_04.png)
 
-Select the number of datastores to provision in the cluster as well as their types. It is important to note that the maximum number of allowed datastores is 10, with a minimum of 2 datastores required. Each different datastore type will result in the creation of an additional datastoreCluster. For example, if you choose 2 "live" datastores and 1 "mass" datastore, this will lead to the formation of 2 distinct datastoreClusters:
+Luego seleccione el número de datastores a aprovisionar en el clúster así como sus tipos. Es importante notar que el número máximo de datastores permitido es 10, con un mínimo de 2 datastores requerido. Cada tipo de datastore diferente conllevará la creación de un datastoreCluster adicional. Por ejemplo, si elige 2 datastores de tipo "live" y 1 datastore de tipo "mass", esto resultará en la formación de 2 datastoreClusters distintos:
 
 ![](images/shiva_order_az_05.png)
 
-Define the necessary storage size for the backup, ensuring that a capacity equivalent to your production storage is planned. Consider an average compression rate of 2 to optimize the backup space and ensure effective data protection:
+Defina el tamaño de almacenamiento necesario para la copia de seguridad asegurándose de prever una capacidad equivalente a la de su almacenamiento de producción. Tenga en cuenta una tasa de compresión promedio de 2 para optimizar el espacio de respaldo y asegurar una protección efectiva de sus datos:
 
 ![](images/shiva_order_az_06.png)
 
-Select the networks to propagate according to your needs. You also have the option to enable "Internet access" if necessary by specifying the desired number of IP addresses, with a choice ranging from 1 to a maximum of 8:
+Seleccione las redes a propagar según sus necesidades. También tiene la opción de activar la opción "Acceso a Internet" si es necesario, definiendo el número de direcciones IP deseadas, con una opción comprendida entre 1 y un máximo de 8:
 
 ![](images/shiva_order_az_07.png)
 
-You will then get a summary of the selected options before confirming your order.
+Luego obtiene un resumen de las opciones seleccionadas antes de validar su pedido.
 
 ![](images/shiva_order_az_08.png)
 
-## Order additional storage resource
+## Solicitar recurso adicional de almacenamiento
 
-The allocation logic of block storage on compute clusters is TODO
+La lógica de asignación de almacenamiento en modo bloque en los clústeres de cálculo es TODO
 
-### Deploy a new compute cluster
+### Desplegar un nuevo clúster de cálculo
 
-Proceed with ordering a hypervisor cluster by selecting the options suited to your virtualization needs. Define key characteristics such as the number of hypervisors, the cluster type, the amount of memory, and the required compute resources:
+Proceda a la solicitud de un clúster de hipervisor seleccionando las opciones adecuadas a sus necesidades de virtualización. Defina las características clave tales como el número de hipervisores, el tipo de clúster, la cantidad de memoria, así como los recursos de cálculo requeridos:
 
 ![](images/shiva_order_clucalc_01.png)
 
-Select the availability zone:
+Seleccione la zona de disponibilidad:
+
 ![](images/shiva_order_clucalc_02.png)
 
-Choose the type of compute blade:
+Elija el tipo de blade de cálculo:
 
 ![](images/shiva_order_clucalc_03.png)
 
-You then have the option to select existing networks and propagate them, or create new ones directly at this stage, depending on the needs of your infrastructure. Note that the total number of configurable networks is limited to a maximum of 20:
+Luego tiene la opción de seleccionar redes ya existentes y propagarlas, o bien crear nuevas directamente en esta etapa, según las necesidades de su infraestructura. Note que el número total de redes configurables está limitado a un máximo de 20:
 
 ![](images/shiva_order_clucalc_04.png)
 
-You then receive a summary of the selected options before confirming your order, and you can subsequently view your order in progress:
+Luego obtiene un resumen de las opciones seleccionadas antes de validar su pedido y puede visualizar su pedido en curso:
 
 ![](images/shiva_order_clucalc_05.png)
 
-### Deploy a new storage cluster
+### Desplegar un nuevo clúster de almacenamiento
 
-In the "**order**" menu, proceed with ordering a **new storage cluster** for your environment by selecting the options that match your needs in terms of capacity, performance, and redundancy. Select the location:
+En el menú "**pedido**", proceda a la solicitud de un **nuevo clúster de almacenamiento** para su entorno seleccionando las opciones que correspondan a sus necesidades en términos de capacidad, rendimiento y redundancia. Seleccione la ubicación:
 
 ![](images/shiva_order_clusto_01.png)
-Define the number of datastores to provision in the cluster as well as their type, adhering to the following limits: a minimum of 2 datastores and a maximum of 10 can be configured. Choose the types of datastores that best meet your needs in terms of performance, capacity, and usage, to optimize the storage of your environment:
+
+Defina el número de datastores a aprovisionar en el clúster así como su tipo, respetando los límites siguientes: un mínimo de 2 datastores y un máximo de 10 pueden ser configurados. Elija los tipos de datastores que mejor respondan a sus necesidades en términos de rendimiento, capacidad y uso, para optimizar el almacenamiento de su entorno:
 
 ![](images/shiva_order_clusto_02.png)
 
-Select the desired storage type from the available options:
+Seleccione el tipo de almacenamiento deseado entre las diferentes opciones disponibles:
 
 ![](images/shiva_order_clusto_03.png)
 
-You will then access a complete summary of the options you have selected, allowing you to review all parameters before finalizing your order:
+Luego accede a un resumen completo de las opciones que ha seleccionado, permitiéndole verificar todos los parámetros antes de validar definitivamente su pedido:
 
 ![](images/shiva_order_clusto_04.png)
 
-### Deploy a new datastore within a VMware SDRS cluster
+### Desplegar un nuevo datastore dentro de un clúster SDRS VMware
 
-In this example, we will add block-mode storage for a VMware infrastructure.
-To add an additional datastore to your SDRS storage cluster, navigate to the __'Infrastructure'__ submenu and then to __'VMWare'__. 
-Then, select the vmware stack and the availability zone. Next, go to the __'Storage'__ submenu.
+En este ejemplo, vamos a agregar almacenamiento en modo bloque para una infraestructura VMware.
+Para agregar un datastore adicional en su clúster de almacenamiento SDRS, vaya al submenú __'Infraestructura'__ y luego __'VMWare'__. 
+Elija la stack vmware y la zona de disponibilidad. Luego vaya al submenú __'Almacenamiento'__.
 
-Choose the SDRS cluster that matches the performance characteristics you desire and click on the __'Add a datastore'__ button located in the table 
-listing the datastores.
+Elija el clúster SDRS que corresponda a las características de rendimiento que desea y haga clic en el botón __'Agregar un datastore'__ que se encuentra en la tabla 
+con la lista de los datastores. 
 
 ![](images/shiva_orders_iaas_spool_ds.png)
 
-__note__:  
-- *The smallest LUN size that can be activated on a cluster is __500 GiB__.*  
-- *A datastore's performance ranges from an average of 500 iops/TiB to an average of 15000 iops/TiB. __This is a software capping implemented at the storage controllers level__.*  
-- *The accounting of the disk volume consumed by your organization is the sum of all LUNs across all the AZs used.*
-- *The __'order'__ and __'compute'__ permissions are required for the account to perform this action.*
+__nota__:  
+- *El tamaño de la LUN más pequeña que se puede activar en un clúster es de __500 Gio__.*  
+- *El rendimiento de un datastore va desde 500 iops/Tio en promedio hasta 15000 iops/Tio en promedio. __Es una limitación de software realizada a nivel de los controladores de almacenamiento__.*  
+- *El volumen de disco consumido por su organización se calcula como la suma de todas las LUNs en todas las AZs utilizadas.*  
+- *Los derechos __'order'__ así como __'compute'__ son necesarios en la cuenta para llevar a cabo esta acción.*
 
-### Order new networks
+### Solicitar nuevas redes
 
-The network technology used on the Cloud Temple infrastructure is based on [VPLS](https://en.wikipedia.org/wiki/Virtual_Private_LAN_Service). It allows you to benefit from __Layer 2 networks spanning your availability zones within a region__. 
-It is also possible to share networks between your tenants and terminate them in the hosting zone.
-Basically, you can think of a Cloud Temple network as an 802.1q VLAN available at all points of your tenant.
+La tecnología de red utilizada en la infraestructura Cloud Temple está basada en [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). Le permite beneficiarse de __redes de nivel 2 continuas entre sus zonas de disponibilidad dentro de una región__. 
+También es posible compartir redes entre sus tenants y terminarlas en la zona de hosting.
+Básicamente, puede imaginar una red Cloud Temple como una vlan 802.1q disponible en cualquier punto de su tenant.
 
 TODO
-The command for a new network and the sharing decisions between your tenants are carried out in the __'Network'__ menu on the green sidebar to the left of the screen. Networks will first be created, and then a separate command will be generated to propagate them. You can track the progress of ongoing commands by accessing the "Order" tab in the menu or by clicking on the information labels that redirect you to active or in-progress commands.
+
+El pedido de una nueva red y las decisiones de compartirla entre sus tenants, se realizan en el menú __'Red'__ de la barra verde a la izquierda de la pantalla. Las redes serán primero creadas, luego se generará un pedido distinto para propagarlas. Puede seguir el avance de los pedidos en curso accediendo a la pestaña "Pedido" en el menú, o haciendo clic en las etiquetas de información que le redirigen a los pedidos activos o en proceso.
 
 ![](images/shiva_orders_net_002.png)
 
-It is also possible to propagate already existing networks or to separate the two steps by starting with the network creation and then proceeding with propagation later according to your needs. The propagation option is found in the options of the selected network:
+También es posible propagar redes ya existentes o separar ambos pasos, comenzando por la creación de la red, luego procediendo a la propagación posteriormente según sus necesidades. La opción de propagación se encuentra en las opciones de la red seleccionada:
 
 ![](images/shiva_orders_net_003.png)
 
-
-Click on the "Propagate" option for an already existing network, then select the desired propagation target. This step allows you to define the location or resources on which the network should be propagated:
+Haga clic en la opción "Propagar" para una red ya existente, luego seleccione el destino de propagación deseado. Esta etapa le permite definir la ubicación o los recursos sobre los cuales la red debe ser propagada:
 
 ![](images/shiva_orders_net_004.png)
 
-### Disabling a Network
+### Desactivación de una red
 
-A network can also be disabled if necessary. This option allows you to temporarily pause access or usage of the network without permanently deleting it, thus providing flexibility in managing your infrastructure based on your needs.
+Una red también puede ser desactivada si es necesario. Esta opción le permite pausar temporalmente el acceso o uso de la red sin eliminarla definitivamente, ofreciendo así una flexibilidad en la gestión de su infraestructura según sus necesidades.
 
-The disable option is found in the selected network options. 
+La opción de desactivación se encuentra en las opciones de la red seleccionada. '
 
-## Adding Additional Hypervisors to a Compute Cluster
+## Agregar hipervisores adicionales a un clúster de cálculo
 
-The operational logic of compute clusters is TODO
+La lógica de funcionamiento de los clústeres de cálculo es TODO
 
-Adding hypervisors to a compute cluster is done in the __'IaaS'__ menu in the green banner on the left side of the screen.
-In the following example, we will add compute resources to a hypervisor cluster using VMware technology.
+La adición de hipervisores a un clúster de cálculo se realiza en el menú __'IaaS'__ en la barra verde a la izquierda de la pantalla.
+En el siguiente ejemplo, vamos a agregar cálculo en un clúster de hipervisor utilizando la tecnología VMware.
+Allez dans le sous menu __'Infrastructure'__ puis __'VMWare'__. Choisissez alors la stack vmware et la zone de disponibilité et le cluster de calcul.
+Dans cet exemple, il s'agit du __'clu001-ucs12'__. Cliquez sur le bouton __'Ajouter un host'__ qui se situe dans le tableau avec la liste des hosts, en haut à droite.
 
-Go to the __'Infrastructure'__ submenu followed by __'VMWare'__. Then select the VMware stack, the availability zone, and the compute cluster.
-In this example, it is __'clu001-ucs12'__. Click on the __'Add a host'__ button located at the top right of the table listing the hosts.
+__nota__ : 
 
-__Note__:
-
-- *__The configuration of a cluster must be homogeneous__. Therefore, mixing hypervisor types within a cluster is not allowed. All blades must be of the same type.*
-- *__'order'__ and __'compute'__ rights are required for the account to perform this action.*
+- *__La configuración de un clúster debe ser homogénea__. Así, no se permite mezclar los tipos de hipervisor dentro de un clúster. Todas las blades deben ser del mismo tipo.*
+- *Se requieren los derechos __'order'__ así como __'compute'__ en la cuenta para realizar esta acción.*
 
 ![](images/shiva_orders_iaas_cpool_esx.png)
 
-## Adding Additional Memory Resources to a Compute Cluster
+## Añadir recursos de memoria adicionales a un clúster de cálculo
 
-The logic of memory allocation on compute clusters is TODO
-To add RAM to a cluster, simply go to the cluster configuration (as you would for adding a compute host as previously seen) and click on __'Modify memory'__.
+La lógica de asignación de memoria en los clústeres de cálculo es TODO
+
+Para añadir memoria RAM a un clúster, basta con ir a la configuración del clúster (como para añadir un host de cálculo mencionado anteriormente) y hacer clic en __'Modificar la memoria'__.
 
 ![](images/shiva_orders_iaas_cpool_memory.png)
 
-__note__:  
-- *__The machines are delivered with the full physical memory__. The unlocking of the memory resource is only a software activation at the cluster level.*  
-- *It is not possible to modify the amount of physical memory of a blade type. Be sure to consider the maximum capacity of a blade when creating a cluster.*  
-- *The rights __'order'__ as well as __'compute'__ are necessary for the account to perform this action.*
+__nota__ :  
+- *__Las máquinas se entregan con la totalidad de la memoria física__. La liberación de recursos de memoria es solo una activación de software a nivel de un clúster.*  
+- *No es posible modificar la cantidad de memoria física de un tipo de blade. Tenga en cuenta la capacidad máxima de una blade al crear un clúster.*  
+- *Se requieren los derechos __'order'__ así como __'compute'__ en la cuenta para realizar esta acción.*

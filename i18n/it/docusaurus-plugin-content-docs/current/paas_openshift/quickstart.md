@@ -3,26 +3,27 @@ title: Quickstart
 ---
 
 
-## Deploy a Redhat Openshift platform within your tenant
+## Distribuire una piattaforma Redhat Openshift all'interno del tuo tenant
 
-### Assigning access rights
+### Assegnazione dei diritti di accesso
 
-It is essential that the administrator of the [tenant](../console/tenants.md) grants the management right of the Openshift platform to the Openshift administrator user to be able to access it:
+È indispensabile che l'amministratore del [Tenant](../console/iam/concepts.md#tenants) conceda il diritto di gestione della piattaforma Openshift all'utente amministratore Openshift per potervi accedere :
+
 
 ![](images/oshift_rights.png)
 
-### Accessing the Openshift environment within a tenant
+### Accesso all'ambiente Openshift all'interno di un tenant
 
-After assigning the rights, the '__Openshift__' module then appears in the Cloud Temple console menu:
+Dopo l'assegnazione dei diritti, il modulo '__Openshift__' appare nel menu della console Cloud Temple :
 
 ![](images/oshift_menu_001.png)
 
-You will then see the Openshift clusters that are deployed within your tenant.
+Vedrete quindi apparire i cluster Openshift che sono distribuiti all'interno del vostro tenant.
 
-Click on the cluster you wish to administer. You will access the cluster administration environment:
+Clicca sul cluster che desideri amministrare. Accederai all'ambiente di amministrazione del cluster :
 
 ![](images/oshift_menu_002.png)
 
-After authentication, you can administer your cluster:
+Dopo l'autenticazione, puoi amministrare il tuo cluster :
 
 ![](images/oshift_menu_003.png)
