@@ -1,29 +1,24 @@
 ---
-title: Overview
+title: Vue d'ensemble
 ---
 
-Cloud Temple provides its clients with blocks of __public IP addresses__ of at least 1 IPv4, or 64 IPv6, declared to RIPE, to enable your Internet connectivity.
+Cloud Temple met à disposition de ses clients des blocs d'__adresses IP publiques__ d'au minimum 1 IPv4, ou 64 IPv6, déclarées au RIPE, pour permettre votre connectivité Internet.
 
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the essential principles and basics to understand and master our infrastructure.</p>
-    <a href="concepts" class="card-link">Explore the concepts &rarr;</a>
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <p>Iniziate velocemente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="tutorials" class="card-link">Discover the tutorials &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>FAQ</h3>
-    <p>Find answers to frequently asked questions to quickly resolve your issues.</p>
-    <a href="faq" class="card-link">Consult the FAQ &rarr;</a>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

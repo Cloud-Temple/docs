@@ -1,59 +1,60 @@
 ---
-title: Metrology
+title: Metrologie
 ---
 
 ## Concept
 
-The majority of __Cloud Temple__ clients have visualization, monitoring, and metrology tools for tracking their operations. 
+La mayoría de los clientes __Cloud Temple__ disponen de herramientas de visualización, monitoreo y metrología para el seguimiento de sus operaciones. 
 
-The philosophy of the Shiva console is to allow access to data to integrate into this tooling via an integrated prometheus proxy. 
+La filosofía de la consola Shiva es permitir el acceso a los datos para integrarse en este conjunto de herramientas a través de un proxy prometheus integrado.
 
-This proxy allows you to query and manipulate data from a visualization tool like [Grafana](https://grafana.com).
+Este proxy le permite consultar y manipular los datos desde una herramienta de visualización como [Grafana](https://grafana.com).
 
-However, it is possible to view some performance data of your Cloud resources in the Shiva console web interface.
+Es posible, sin embargo, visualizar algunos datos de rendimiento de sus recursos Cloud en la interfaz web de la consola Shiva.
 
-*__Note:__ The __Cloud Temple__ philosophy is not to integrate multiple graphs into the web interface, but to offer the maximum information accessible via the API.*
+*__Nota:__ La filosofía de __Cloud Temple__ no es integrar múltiples gráficos en la interfaz web, sino ofrecer la máxima información accesible a través de la API.*
 
-## Dashboard integrated into the web interface
+## Panel de control integrado a la interfaz web
 
-*__Note:__ To access these dashboards, it is necessary to have the __'metric_read'__ right.*
+*__Nota:__ Para acceder a estos paneles, es necesario tener el derecho __'metric_read'__*
 
-### Monitoring carbon emissions for computing
+### Seguimiento de emisiones de carbono para el cálculo
 
-The Shiva console dashboard by default includes a graph for monitoring the power consumption of your computing resources and the associated carbon emission estimate.
+El panel de control de la consola Shiva integra por defecto un gráfico de seguimiento del consumo eléctrico de su cálculo así como la estimación
+de la emisión de carbono asociada.
 
-It is directly accessible on the homepage of the Cloud Temple console web interface, by clicking on __'Metric'__:
+Es accesible directamente en la página de inicio de la interfaz web de la consola Cloud Temple, haciendo clic en __'Metric'__ :
 
 ![](images/metrics_hypervisors_co2.png)
 
-### Global view of the virtual machines' health
+### Vista global del estado de las máquinas virtuales
 
-The summary of the virtual machines' state is accessible in the __'IaaS'__ menu on the left of your screen, in the __'Health'__ submenu and then __'Virtual Machines'__
+La síntesis del estado de las máquinas virtuales es accesible en el menú __'IaaS'__ a la izquierda de su pantalla, en el submenú __'Santé'__ luego __'Machines virtuelles'__
 
-This summary provides, over the selected time range in __'Filters'__:
+Esta síntesis proporciona, en el intervalo de tiempo seleccionado en __'Filtres'__ :
 
-- the number of CPUs and the __average CPU usage__, 
-- the number of GB of memory and the __average memory usage__, 
-- The averages of __storage access latency__ for reading and writing,
-- The average __'CPU Ready'__ of the virtual machine (which corresponds to the average wait time for the availability of a physical core by the virtual machine).
+- el número de CPU y el __promedio de uso de CPU__,
+- la cantidad de GB de memoria y el __promedio de uso de memoria__,
+- Las medias de __latencia de acceso al almacenamiento__ en lectura y escritura,
+- El __'CPU Ready'__ promedio de la máquina virtual (lo que corresponde al tiempo promedio de espera de disponibilidad de un núcleo físico por la máquina virtual).
 
 ![](images/shiva_metric_000.png)
 
-For each VM, you can access its performance history by clicking on the green __'History'__ icon of the virtual machine in the action column.:
+Para cada VM, puede acceder al historial de sus rendimientos haciendo clic en el icono verde __'Historique'__ de la máquina virtual en la columna acción. :
 
 ![](images/shiva_metric_003.png)
 
-You will then have access to the graphical visualization page of the historical data, including an __environmental performance__ view:
+Luego accede a la página de visualización gráfica de datos históricos, incluyendo una vista de __rendimiento ambiental__:
 
 ![](images/shiva_metric_001.png)
 
 ![](images/shiva_metric_002.png)
 
-## Usage with __Grafana__
+## Uso con __Grafana__
 
-It is possible for the Shiva console to serve as a __datasource__ for your [Grafana](https://grafana.com) infrastructure.
+Es posible para la consola Shiva servir como __datasource__ para su infraestructura [Grafana](https://grafana.com).
 
-You will find a whole set of __Grafana configuration examples__ here:
+Podrá encontrar un conjunto completo de __ejemplos de configuración para Grafana__ aquí:
 
 https://github.com/Cloud-Temple/console-grafana-iaas
 

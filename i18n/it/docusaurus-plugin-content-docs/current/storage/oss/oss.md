@@ -1,31 +1,28 @@
 ---
-title: Overview
+title: Vue d'ensemble
 ---
 
-**S3 object storage** is a key solution for managing large-scale unstructured data, such as files, documents, or databases. Based on the standard AWS S3 protocol, this technology offers a resilient and scalable architecture, enabling efficient storage, security, and access to data via REST APIs. Each file, called an "object", is contained in a "bucket", a logical space allowing for data organization and access rule definition.
-The Cloud Temple object storage infrastructure is based on Dell's **Elastic Cloud Storage (ECS)** solution, renowned for its compatibility with the S3 protocol and high performance. This solution ensures exceptional availability and durability through advanced techniques such as **Erasure Coding** and replication across multiple availability zones. With a **97% compatibility with AWS S3**, it offers a smooth transition and standardized management for enterprises.
+Il **storage di oggetti S3** è una soluzione chiave per gestire dati non strutturati su larga scala, come file, documenti o basi di dati. Basata sul protocollo standard AWS S3, questa tecnologia offre un'architettura resiliente ed estensibile, permettendo di memorizzare, proteggere e accedere ai dati in modo efficiente tramite le API REST. Ogni file, chiamato "oggetto", è contenuto in un "bucket", uno spazio logico che consente di organizzare i dati e definire le regole di accesso.
 
-To secure data, Cloud Temple provides advanced encryption options: **server-side** (with keys managed by Cloud Temple or by the client) or **client-side**, offering total control to the user. Certified **SecNumCloud**, **HDS**, and **ISO 27001**, this infrastructure ensures strict compliance with regulatory requirements and the highest security standards.
+L'infrastruttura di storage di oggetti Cloud Temple si basa sulla soluzione **Elastic Cloud Storage (ECS)** di Dell, riconosciuta per la sua compatibilità con il protocollo S3 e le sue alte prestazioni. Questa soluzione garantisce un'eccezionale disponibilità e durabilità grazie a tecniche avanzate come l'**Erasure Coding** e la replicazione su più zone di disponibilità. Con una compatibilità del **97% con AWS S3**, offre una transizione fluida e una gestione standardizzata per le imprese.
+
+Per proteggere i dati, Cloud Temple propone opzioni di crittografia avanzate: **server-side** (con chiavi gestite da Cloud Temple o dal cliente) o **client-side**, offrendo un controllo totale all'utente. Certificata **SecNumCloud**, **HDS**, e **ISO 27001**, questa infrastruttura garantisce una conformità rigorosa ai requisiti normativi e agli standard di sicurezza più elevati.
+
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-<p>Discover the essential basics and principles to understand and master our infrastructure.</p>
-<a href="concepts" class="card-link">Explore concepts &rarr;</a>
-</div>
-<div class="card">
-<h3>Quickstart</h3>
-<p>Get started quickly with our resources by following clear and simple instructions.</p>
-<a href="quickstart" class="card-link">Launch Quickstart &rarr;</a>
-</div>
-<div class="card">
-<h3>Tutorials</h3>
-<p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-<a href="tutorials" class="card-link">Discover tutorials &rarr;</a>
-</div>
-<div class="card">
-<h3>FAQ</h3>
-<p>Find answers to frequently asked questions to quickly solve your problems.</p>
-<a href="faq" class="card-link">Consult the FAQ &rarr;</a>
-</div>
+    <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="concepts" class="card-link">Esplora i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Quickstart</h3>
+    <p>Inizia subito con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+  </div>
+    <div class="card">
+    <h3>Tutorials</h3>
+    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+  </div>
 </div>

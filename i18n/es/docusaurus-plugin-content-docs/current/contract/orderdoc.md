@@ -1,24 +1,25 @@
 ---
-title: Hierarchy of Contractual Documents
+title: Jerarquía de documentos contractuales
 ---
 
-|           | References                |
+|           | Referencias                |
 | --------- | -------------------------- |
-| Reference | CT.AM.JUR.HDC 20240403_2.0 |
-| Date      | September 24, 2024         |
+| Referencia| CT.AM.JUR.HDC 20240403_2.0 |
+| Fecha     | 24 septiembre 2024         |
 
-The hierarchy of contractual documents is established according to a defined order of priority:
+La jerarquía de documentos contractuales se establece según un orden de prioridad definido:
 
-1. [General Terms and Conditions of Sale and Use (GTCU)](cgvu.docx)
-2. [IaaS Service Agreement](iaas/sla_iaas.docx)
-3. [PaaS Service Agreement](paas/sla_paas.docx) (*)
-4. Specific Special Agreement (**)
-5. Security Assurance Plan (SAP) (***)
-6. Appendix: [Personal Data](dpa.docx) (DPA)
+1. [Términos y Condiciones Generales de Venta y Uso (TCGVU)](cgvu.docx)
+2. [Convenio de servicio IaaS](iaas/sla_iaas.docx)
+3. [Convenio de servicio PaaS](paas/sla_paas.docx) (*)
+4. Convenio específico particular (**)
+5. Plan de Aseguramiento de Seguridad (PAS) (***)
+6. Anexo: [Datos de Carácter Personal](dpa.docx) (DPA)
 
-(*) It is specified that this PaaS Service Agreement is valid only if the CLIENT has signed the Agreement concerning SecNumCloud IaaS services.
+(*) Se especifica que el presente Convenio de servicios PaaS es válido únicamente si el CLIENTE ha firmado el Convenio correspondiente a los servicios IaaS SecNumCloud.
 
-(**) Specific agreement, designed to align with the project’s particularities.
+(**) Convenio específico, diseñado para alinearse con las particularidades del proyecto.
 
-(***) Non-public document.
-_Note: The English, Italian, German, and Spanish translations are provided solely to facilitate the understanding of the offer._
+(***) Documento no público.
+
+_Nota: Las versiones traducidas al inglés, italiano, alemán y español se proporcionan únicamente para facilitar la comprensión de la oferta._

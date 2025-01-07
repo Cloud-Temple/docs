@@ -2,54 +2,78 @@
 title: Quickstart
 ---
 
-This quickstart guide shows you how to request the creation of an Appliance and how to register a new session and connect to it.
+Questa guida rapida ti presenta come richiedere la creazione di un Appliance e come registrare una nuova sessione e connettersi ad essa.
 
-## Prerequisites
+## Prerequisiti
 
-1. Have subscribed to the Cloud Temple offer (Appliance Bastion subscription).
-2. The equipment to be administered must be accessible from the network where the Bastion Appliance is deployed.
-3. Have the rights to the Bastion module.
-4. In the context of an on-premise deployment of the Appliance, the corresponding flows must be open.
+1. Aver sottoscritto l'offerta Cloud Temple (sottoscrizione Appliance Bastion).
+2. Le attrezzature da amministrare devono essere accessibili dalla rete dove è distribuito il Appliance Bastion.
+3. Avere i diritti sul modulo Bastion.
+4. Nel contesto di un'implementazione dell'Appliance on-premise, i flussi corrispondenti devono essere aperti.
 
-## Request Appliance Creation
-Before deploying an Appliance, you must make a subscription request for an Appliance via a support request.
-The support is accessible in the Shiva console from the lifebuoy icon on the top right bar of the window.
+## I flussi necessari al funzionamento del prodotto Bastion
+
+Diversi flussi sono necessari per il buon funzionamento del Appliance Bastion.
+
+### Il gateway bastion
+| Fonte                    | Destinazione                                  | Protocollo |
+|--------------------------|-----------------------------------------------|------------|
+| Appliance bastion client | 91.223.207.71 (botg.shiva.cloud-temple.com)   | UDP/4242   |
+
+### Flussi di amministrazione RDP
+
+| Fonte                    | Destinazione                 | Protocollo |
+|--------------------------|-----------------------------|------------|
+| Appliance bastion client | Le istanze da amministrare   | TCP/3389   |
+
+### Flussi di amministrazione SSH
+
+| Fonte                    | Destinazione                 | Protocollo |
+|--------------------------|-----------------------------|------------|
+| Appliance bastion client | Le istanze da amministrare   | TCP/22     |
+
+## Richiedere la creazione di un Appliance
+Prima di poter distribuire un Appliance, è necessario fare una richiesta di sottoscrizione a un Appliance tramite una richiesta al supporto.
+Il supporto è accessibile nella console Shiva dall'icona di salvagente sulla barra in alto a destra della finestra.
 
 ![](images/shiva_support.png)
 
-## Registering Equipment
 
+## Registrare un'attrezzatura
 
-To regularly access an equipment to administer, it is more suitable to create a session, which will only require your username and password at each connection.
+Per accedere regolarmente a un'attrezzatura da amministrare, è più adatto creare una sessione, che richiederà solo il tuo nome utente e la tua password a ogni connessione.
 
-To do this, go to the "Equipment" tab in the "Bastion" menu, then click on the "New equipment" button.
+A tal fine, vai alla scheda « Attrezzature » del menu « Bastion », quindi fai clic sul pulsante « Nuova attrezzatura ».
 
 ![](images/creer_session.png)
 
-Then provide the necessary information to create your equipment:
 
-    - Equipment name;
-    - Description;
-    - Associated appliance;
-    - Protocol type (SSH or RDP);
-    - Host IP address;
-    - Keyboard configuration.
+Inserisci quindi le informazioni necessarie alla creazione della tua attrezzatura:
+
+    - Nome dell'attrezzatura;
+    - Descrizione;
+    - Appliance associato;
+    - Tipo di protocollo (SSH o RDP);
+    - Indirizzo IP dell'host;
+    - Configurazione della tastiera.
 
 ![](images/creer_session2.png)
 
-A notification indicating the creation of the equipment should appear at the top right of the page. The session will then be added to your list of equipment.
 
-To create new equipment, you can also go through the "Appliances" tab by clicking on the action bar of the Appliance to which you wish to associate equipment.
+Una notifica che indica la creazione dell'attrezzatura dovrebbe apparire in alto a destra della pagina. La sessione viene quindi aggiunta alla lista delle tue attrezzature.
+
+Per creare una nuova attrezzatura, è anche possibile passare per la scheda « Appliances » facendo clic sulla barra delle azioni dell'Appliance a cui desideri associare un'attrezzatura.
+
 ![](images/creer_session3.png)
 
-## Connecting to Equipment
+## Connettersi a un'attrezzatura
 
-Go to the "Equipments" tab under the "Bastion" tab. Click on the action bar of the equipment you wish to open, and click the "Open" button.
+Vai alla scheda « Attrezzature » della scheda « Bastion ». Fai clic sulla barra delle azioni dell'attrezzatura che desideri aprire, quindi fai clic sul pulsante « Apri ».
 
 ![](images/ouvrir_session.png)
 
-During each connection to the equipment, you only need to provide your authentication details.
+A ogni connessione all'attrezzatura, dovrai solo inserire le tue informazioni di autenticazione.
 
 ![](images/ouvrir_session2.png)
 
-After entering your credentials, a notification confirming the start of the connection to your equipment appears, and the console to your virtual machine opens.
+Dopo aver inserito le tue credenziali, apparirà una notifica che confermerà l'inizio della connessione alla tua attrezzatura e si aprirà la console verso la tua macchina virtuale.

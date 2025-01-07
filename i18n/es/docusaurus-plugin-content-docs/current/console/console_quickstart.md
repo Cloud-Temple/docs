@@ -2,98 +2,98 @@
 title: Quickstart
 ---
 
-## Prerequisites
-- Subscribed to a Cloud Temple offer. To subscribe easily, you can [contact us](https://www.cloud-temple.com/contactez-nous/) or by email at __contact@cloud-temple.com__.
-- Have access to the Shiva console
-- Have your public IPv4 declared in the Cloud Temple trust zone (access to the Shiva console is limited to trusted identified addresses)
+## Prérequis
+- Haber suscrito a una oferta Cloud Temple. Para suscribirse simplemente, puede [contactarnos](https://www.cloud-temple.com/contactez-nous/) o por correo a la dirección __contact@cloud-temple.com__.
+- Tener acceso a la consola Shiva
+- Tener su IPv4 pública declarada en la zona de confianza Cloud Temple (el acceso a la consola Shiva está limitado a las direcciones de confianza identificadas)
 
-## Connecting to your Cloud Temple tenant
-Shiva is accessible via the URL below:
+## Conexión a su tenant Cloud Temple
+Shiva es accesible a través de la URL a continuación:
     https://shiva.cloud-temple.com
-    Or from the direct URL that was communicated to you by email.
+    O bien desde la URL directa que se le ha comunicado por correo.
 
-The first page allows you to select [the organization](iam/concepts.md#organisations) in which your user was created.
-Once the company is specified, please click on __'Connect'__.
+La primera página le permite seleccionar [la organización](iam/concepts.md#organisations) en la cual su usuario ha sido creado.
+Una vez que la empresa esté especificada, haga clic en __'Conectar'__.
 
 ![](images/shiva_login.png)
 
-You will then be redirected to a page asking you to authenticate.
-Once connected, you arrive on this page.
+Luego será redirigido a una página que le pedirá que se autentique.
+Una vez conectado, llegará a esta página.
 
 ![](images/shiva_home.png)
 
-## Language Management
-The console is available in __French__, __English__. You can change the operating language using the __language__ icon located at the top right of the screen.
+## Gestión del idioma
+La consola está disponible en __francés__, __inglés__. Puede cambiar el idioma de funcionamiento mediante el ícono __idioma__ situado en la parte superior derecha de la pantalla.
 
-Changing a user's language is to be done in their __'Profile'__, at the top right of the screen, in the __'User Settings'__.
+El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte superior derecha de la pantalla, en los __'Parámetros del usuario'__.
 
 ![](images/shiva_profil_006.png)
 
-The configuration is done for each tenant [Tenant](iam/concepts.md#tenant).
+La configuración se realiza para cada tenant [Tenant](iam/concepts.md#tenant).
 
-## Access to technical support
+## Acceso al soporte técnico
 
-At any time, you can contact the __Cloud Temple support team__ via the __'lifebuoy' icon__ located at the top right of the screen.
+En cualquier momento, puede contactar al __equipo de soporte Cloud Temple__ a través del __ícono 'boya'__ situado en la parte superior derecha de la pantalla.
 
 ![](images/shiva_support.png)
 
-You will be guided through the entire support request process.
+Se le guiará durante todo el proceso de solicitud de soporte.
 
-The first step is identifying the type of support request:
+El primer paso es la identificación del tipo de solicitud de soporte:
 
-- Requesting advice on using a product (outside of an incident),
-- Requesting assistance related to your customer account,
-- Reporting an incident or requesting technical support.
-- Requesting the assistance of a professional service (providing a Cloud Temple engineer for an issue).
+- Pedir un consejo sobre el uso de un producto (fuera de incidentes),
+- Pedir asistencia en relación con su cuenta de cliente,
+- Declarar un incidente o pedir soporte técnico.
+- Pedir la asistencia de un servicio profesional (disponibilidad de un ingeniero Cloud Temple para un problema).
 
 ![](images/shiva_support_01.png)
 
-You then have the possibility to provide details and include files (image or logs for example).
+Luego tiene la posibilidad de dar detalles e incluir archivos (imagen o registros por ejemplo).
 
 ![](images/shiva_support_02.png)
 
-Once your request is made, you can find your requests via the __'lifebuoy' icon__ located at the top right of the screen:
+Una vez realizada su solicitud, es posible encontrar sus solicitudes a través del __ícono 'boya'__ situado en la parte superior derecha de la pantalla:
 
 ![](images/shiva_support_03.png)
 
-## Accessing user features via the web interface
+## Acceso a las funcionalidades del usuario a través de la interfaz web
 
-All the features accessible to your user (depending on their rights) are located on the left of the screen, in the green banner.
-The features are grouped by module. This mainly includes:
+El conjunto de funcionalidades accesibles para su usuario (dependiendo de sus derechos) está situado a la izquierda de la pantalla, en la barra verde.
+Las funcionalidades están agrupadas por módulo. Esto agrupa principalmente:
 
-- The __inventory__ of your resources,
-- The __operation tracking__,
-- The __management of IaaS resources__ (Compute, storage, network, ...),
-- The __management of OpenIaaS resources__ (Compute, storage, network, ...),
-- Access to __ancillary services__ (Bastion, monitoring, ...),
-- The __administration of your organization__ (Management of tenants, rights, ...)
+- El __inventario__ de sus recursos,
+- El __seguimiento de las operaciones__,
+- El __control de los recursos IaaS__ (Cálculo, almacenamiento, red, ...)
+- El __control de los recursos OpenIaaS__ (Cálculo, almacenamiento, red, ...)
+- El acceso a los __servicios adicionales__ (Bastion, monitoreo, ...)
+- La __administración de su organización__ (Gestión de los tenants, derechos, ...)
 
-Enabling a module for a user depends on the user's rights. For example, the __'Order'__ module will not be available if the user does not have the __'ORDER'__ right.
+La activación de un módulo para un usuario depende de los derechos del usuario. Por ejemplo, el módulo __'Pedido'__ no estará disponible si el usuario no tiene el derecho __'ORDER'__.
 
-Here is a presentation of the different modules available. New modules are regularly added to the console:
+Aquí una presentación de los diferentes módulos disponibles. Nuevos módulos enriquecen la consola regularmente:
 
 ![](images/shiva_onboard_007.png)
 
-- __Dashboard__ : provides a quick view of the __total compute and storage resources__, __backup statistics__, and __support ticket summary__,
-- __Inventory__ : provides a view of all your __'virtual machines'__ resources. If __tags__ are used, it allows a view by __tag__ (for example, business view, application view, ...),
-- __Managed Services__ : provides access to follow up on your __support requests__ and __service metrics__,
-- __IaaS__ : allows the __management of VMware IaaS infrastructures__ (Virtual machines, clusters, hypervisors, replications, backup, ...),
-- __OpenIaaS__ : allows the __management of Xen Orchestra resources__ (Virtual machines, backup, ...),
-- __OpenShift__ : allows the management of your **RedHat OpenShift PaaS architecture** and the management of your containers across the platform's 3 availability zones.
-- __Bastion__ : Enables the deployment and management of SSH/RDP bastion appliances in your networks,
-- __Network__ : allows the management of __level 2 and 3 networks__, __public IPs__, and your __telecom circuits__,
-- __Colocation__ : Offers a view of the equipment located in a __shared or dedicated colocation area__,
-- __Order__ : Allows the ordering of resources and monitoring of deployments,
-- __Administration__ : Groups the administrative functions for users and tenants as well as access to global logging.
+- __Tablero de control__ : permite tener rápidamente una vista del __total de recursos de cálculo y almacenamiento__, las estadísticas del __respaldo__ y un __resumen de los expedientes de soporte__,
+- __Inventario__ : permite tener una vista de todos sus recursos del tipo __'máquinas virtuales'__. Si se utilizan los __etiquetas__, permite tener una vista por __etiqueta__ (por ejemplo, vista de negocio, vista aplicativa, ...),
+- __Infogestión__ : da acceso al seguimiento de sus __solicitudes de soporte__ y a la __metrología de los servicios__,
+- __IaaS__ : permite el __control de las infraestructuras IaaS VMware__ (Máquinas virtuales, clusters, hipervisores, réplicas, respaldo, ...),
+- __OpenIaaS__ : permite el __control de los recursos Xen Orchestra__ (Máquinas virtuales, respaldo, ...),
+- __OpenShift__ : permite el control de su **arquitectura PaaS RedHat Openshift** y el manejo de sus contenedores en las 3 zonas de disponibilidad de la plataforma.
+- __Bastion__ : permite desplegar y controlar dispositivos bastion SSH/RDP en sus redes,
+- __Red__ : permite el control de las __redes de nivel 2 y 3__, de las __IP públicas__ y de sus __circuitos de telecomunicaciones__,
+- __Colocación__ : ofrece la vista de los equipos ubicados en la zona de __colocación compartida o dedicada__,
+- __Pedido__ : permite ordenar recursos y seguir los despliegues,
+- __Administración__ : agrupa las funciones de administración de usuarios y de tenants así como el acceso a la jornalización global.
 
-## Accessing user features via the API
+## Acceso a las funcionalidades del usuario a través del API
 
-Access to all the features of the Shiva console is possible via the Shiva API. You can get the details of verbs and configurations via __'Profile'__ and __'APIs'__ :
+El acceso a todas las funcionalidades de la consola Shiva es posible a través del API Shiva. Puede tener el detalle de los verbos y las configuraciones a través de __'Perfil'__ y __'APIs'__:
 
 ![](images/shiva_onboard_008.png)
 
-## Terraform Provider
+## Proveedor Terraform
 
-Cloud Temple provides you with a Terraform provider to manage your Cloud platform "as code". It is accessible here:
+Cloud Temple pone a su disposición un proveedor Terraform para controlar *"as code"* su plataforma Cloud. Es accesible aquí:
 
 https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest

@@ -3,109 +3,118 @@ title: Quickstart
 ---
 
 
-## List all S3 buckets in your tenant
+## Listar todos los bucket S3 de su tenant
 
-You can access all your buckets via the '__Object Storage__' menu in the Cloud Temple console:
+Puede acceder a todos sus buckets a través del menú '__Almacenamiento de objetos__' de la consola Cloud Temple:
 
 ![](images/S3_list_bucket.png)
 
-You can see all the accounts created on your tenant and authorized to access the S3 service via the '__Storage Accounts__' tab.
+Puede ver todas las cuentas creadas en su tenant y autorizadas para acceder al servicio S3 a través de la pestaña '__Cuentas de almacenamiento__'.
 
 ![](images/S3_accounts.png)
 
-## Creating a new storage account
+## Creación de una nueva cuenta de almacenamiento
 
-Creating a storage account on your tenant is done by pressing the '__New Storage Account__' button at the top right, in the '__Storage Accounts__' tab:
+La creación de una cuenta de almacenamiento en su tenant se realiza presionando el botón '__Nueva cuenta de almacenamiento__' en la parte superior derecha, en la pestaña '__Cuentas de almacenamiento__' :
 
 ![](images/S3_create_account.png)
 
-The platform then provides you with the access key and the secret key for your bucket:
+La plataforma le proporciona entonces la clave de acceso y la clave secreta de su bucket:
 
 ![](images/S3_storage_keys.png)
 
+__ATENCIÓN:__ Las claves secreta y de acceso se presentan una sola vez. Después de esta primera aparición, se vuelve imposible consultar de nuevo la clave secreta. Es por lo tanto esencial anotar esta información inmediatamente; de lo contrario, será necesario generar un nuevo par de claves.
 
-__ATTENTION:__ The secret and access keys are presented only once. After this initial appearance, it becomes impossible to view the secret key again. Therefore, it is crucial to note this information immediately; otherwise, you will need to generate a new pair of keys.
-
-Key regeneration is done through the key options by selecting the "Reset access key" option.
+La regeneración se realiza a nivel de las opciones de la clave eligiendo la opción "Restablecer clave de acceso".
 
 ![](images/S3_keyregen.png)
 
 
-## Creating an S3 Bucket
+## Creación de un bucket S3 
 
-Creating a new bucket is done by clicking the '__New bucket__' button at the top right of the screen:
+La creación de un nuevo bucket se realiza haciendo clic en el botón '__Nuevo bucket__' en la parte superior derecha de la pantalla:
 
 ![](images/S3_create.png)
 
-A window then appears and you need to provide:
+Entonces se muestra una ventana y debe proporcionar:
 
-1. The **region** for creating your bucket,
-2. The **type** of bucket: performance or archival,
-3. The **name** of your bucket (it must be unique).
+1. La **región** de creación de su bucket,
+2. El **tipo** de bucket: rendimiento o archivado,
+3. El **nombre** de su bucket (debe ser único).
 
 ![](images/S3_create_popup_001.png)
 
-As of April 3, 2024, the available region is **FR1** (Paris) and only the performance type is available.
-You must also decide who can access your bucket:
+A partir del 3 de abril de 2024, la región disponible es **FR1** (París) y solo está disponible el tipo de rendimiento.
 
-- **Private** Access: By default, access is limited to specific Cloud Temple IP addresses.
-- **Public** Access: Access is open to all Internet addresses (notably via the rule 0.0.0.0/0). We discourage this configuration due to its security implications.
-- **Custom** Access: This option allows you to specify the IPv4 addresses or subnet ranges you wish to authorize.
+También debe elegir quién puede acceder a su bucket:
 
-## Associating a Storage Account to a Bucket
+- Acceso **Privado**: Por defecto, el acceso está limitado a direcciones IP específicas de Cloud Temple.
+- Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (en particular a través de la regla 0.0.0.0/0). Desaconsejamos esta configuración debido a sus implicaciones en términos de seguridad.
+- Acceso **Personalizado**: Esta opción le permite especificar las direcciones IPv4 o los rangos de subredes que desea autorizar.
 
-Account-to-bucket associations are performed in the '__Policies__' tab.
+## Asociar una cuenta de almacenamiento a un bucket
+
+Las asociaciones de cuentas a los buckets se realizan en la pestaña '__Políticas__'
 
 ![](images/S3_account_assign.png)
 
-This association allows the storage account to access the bucket. There are three roles:
+Esta asociación permite dar acceso de la cuenta de almacenamiento al bucket. Hay tres roles:
 
-1. **Maintainer**: Read, write, rights management, and policy management privileges.
-2. **Reader**: Read and download files in the buckets.
-3. **Writer**: Read, edit, modify, and delete files in the buckets.
+1. **Mantenedor**: Derechos de lectura, escritura, gestión de derechos y gestión de políticas.
+2. **Lector**: Leer los archivos en los buckets y descargarlos.
+3. **Escritor**: Leer y editar, modificar, eliminar los archivos en los buckets.
 
 ![](images/S3_account_access.png)
 
-## Browse an S3 bucket
+## Navegar por un bucket S3
 
-When you click on a bucket name, you first access the '__Files__' tab to see its content:
+Cuando hace clic en el nombre de un bucket, tiene acceso primero a la pestaña '__Archivos__' para ver su contenido:
 
 ![](images/S3_files.png)
 
-In the '__Settings__' tab you can view the details of your S3 bucket information:
+En la pestaña '__Configuraciones__' puede ver el detalle de la información de su bucket S3:
 
 ![](images/S3_params.png)
 
-You then have:
+Tiene entonces:
 
-1. The name of the S3 bucket,
-2. Its region,
-3. The number of objects it contains and the size of the bucket in bytes,
-4. Its endpoint,
-5. The lifecycle settings that define, among other things, the expiration of the bucket's objects. '__0__' corresponds to an infinite retention.
+1. El nombre del bucket S3,
+2. Su región
+3. La cantidad de objetos que contiene y el tamaño en bytes del bucket,
+4. Su punto de acceso,
+5. Los parámetros del ciclo de vida que definen en particular la expiración de los objetos del bucket. '__0__' corresponde a una retención infinita.
 
-You can modify the retention parameter via the '__Modify__' button in the lifecycle section:
+Puede modificar el parámetro de retención a través del botón '__Modificar__' del ciclo de vida:
 
 ![](images/S3_lifecycle.png)
 
-Finally, you can modify its access typology.
+Finalmente, puede modificar su tipología de acceso.
 
-## Limitations of access to your S3 buckets
-It is very simple to configure access restrictions for your S3 buckets. When creating a bucket, you have the choice of three access configurations:
+## Limitaciones de acceso a sus bucket S3
+
+Es muy sencillo configurar las restricciones de acceso a sus buckets S3. Al crear un bucket, tiene la opción de elegir entre tres configuraciones de acceso:
 
 ![](images/S3_create_popup_001.png)
 
-- **Private** Access: By default, access is limited to specific Cloud Temple IP addresses.
-- **Public** Access: Access is open to all Internet addresses (notably through the rule 0.0.0.0/0). We do not recommend this configuration due to its security implications.
-- **Custom** Access: This option allows you to specify the IPv4 addresses or subnet ranges that you wish to authorize:
+- Acceso **Privado**: Por defecto, el acceso está limitado a direcciones IP específicas de Cloud Temple.
+- Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (en particular a través de la regla 0.0.0.0/0). Desaconsejamos esta configuración debido a sus implicaciones en términos de seguridad.
+- Acceso **Personalizado**: Esta opción le permite especificar las direcciones IPv4 o los rangos de subredes que desea autorizar:
 
 ![](images/S3_create_popup_002.png)
 
-*IPv6 support is planned for the first half of 2025.*
+*El soporte IPv6 está previsto para el primer semestre de 2025.*
 
-## Deleting an S3 bucket
+## Eliminación de un bucket S3
 
-Deleting a bucket is done through the actions associated with the bucket by selecting the __'Delete'__ option.
+La eliminación de un bucket se realiza en las acciones asociadas al bucket eligiendo la opción __'Eliminar'__.
 
 ![](images/S3_delete.png)
-_**WARNING: Deletion is permanent and there is no way to recover the data.**_
+
+_**ATENCIÓN: La eliminación es definitiva y no existe ningún medio para recuperar los datos.**_
+
+
+## ¿Cómo se factura la oferta S3 de Cloud Temple?
+
+El precio es un precio mensual, por GiB de almacenamiento, facturado mensualmente. Sin embargo, la plataforma contabiliza el uso por hora y realiza la facturación en una base mensual de 720 horas.
+
+Por ejemplo, si consume en el mes 30 GiB durante 1 hora y luego nada, y luego unos días más tarde 30 GiB durante 2 horas, la factura mensual será de *( Precio (1 x 30 GiB) + 2 x Precio (30 GiB) ) / 720* en el mes considerado. La facturación es a término vencido.

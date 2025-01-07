@@ -1,24 +1,25 @@
 ---
-title: Hierarchy of Contractual Documents
+title: Gerarchia dei documenti contrattuali
 ---
 
-|           | References                |
+|           | Riferimenti                 |
 | --------- | -------------------------- |
-| Reference | CT.AM.JUR.HDC 20240403_2.0 |
-| Date      | September 24, 2024         |
+| Riferimento | CT.AM.JUR.HDC 20240403_2.0 |
+| Data      | 24 settembre 2024          |
 
-The hierarchy of contractual documents is established according to a defined order of priority:
+La gerarchia dei documenti contrattuali è stabilita secondo un ordine di priorità definito:
 
-1. [General Terms and Conditions of Sale and Use (GTCU)](cgvu.docx)
-2. [IaaS Service Agreement](iaas/sla_iaas.docx)
-3. [PaaS Service Agreement](paas/sla_paas.docx) (*)
-4. Specific Special Agreement (**)
-5. Security Assurance Plan (SAP) (***)
-6. Appendix: [Personal Data](dpa.docx) (DPA)
+1. [Condizioni Generali di Vendita e d'Uso (CGVU)](cgvu.docx)
+2. [Convenzione di servizio IaaS](iaas/sla_iaas.docx)
+3. [Convenzione di servizio PaaS](paas/sla_paas.docx) (*)
+4. Convenzione specifica particolare (**)
+5. Piano di Assicurazione della Sicurezza (PAS) (***)
+6. Allegato: [Dati a Carattere Personale](dpa.docx) (DPA)
 
-(*) It is specified that this PaaS Service Agreement is valid only if the CLIENT has signed the Agreement concerning SecNumCloud IaaS services.
+(*) È specificato che la presente Convenzione di servizi PaaS è valida solo se il CLIENTE ha firmato la Convenzione riguardante i servizi IaaS SecNumCloud.
 
-(**) Specific agreement, designed to align with the project’s particularities.
+(**) Convenzione specifica, progettata per allinearsi alle particolarità del progetto.
 
-(***) Non-public document.
-_Note: The English, Italian, German, and Spanish translations are provided solely to facilitate the understanding of the offer._
+(***) Documento non pubblico.
+
+_Nota: Le versioni tradotte in inglese, francese, tedesco e spagnolo sono fornite unicamente per facilitare la comprensione dell'offerta._

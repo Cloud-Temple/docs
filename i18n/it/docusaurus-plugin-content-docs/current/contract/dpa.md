@@ -1,106 +1,112 @@
 ---
-title: Contractual Appendix - Personal Data (DPA)
+title: Annexe Contractuelle - Données à Caractère Personnel (DPA)
 ---
 
-## Framework
+## Cadre
 
 |           |                        |
 | --------- | ---------------------- |
-| Reference | CT.AM.JUR.ANX_DPA v2.0 |
-| Date      | 24 September 2024      |
+| Référence | CT.AM.JUR.ANX_DPA v2.0 |
+| Date      | 24 septembre 2024      |
 
-# Article 1: Definitions
+# Article 1 : Définitions
 
-1. **Personal Data**: Any information relating to an identified or identifiable natural person ("data subject"), as defined by the General Data Protection Regulation (GDPR).
-2. **Data Controller**: The natural or legal person, public authority, agency, or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.
-3. **Data Processor**: The natural or legal person, public authority, agency, or other body which processes personal data on behalf of the Data Controller.
-4. **Processing**: Any operation or set of operations performed, whether or not by automated means, and applied to personal data or sets of personal data.
-5. **Data Breach**: A security breach leading accidentally or unlawfully to the destruction, loss, alteration, unauthorized disclosure of, or access to, personal data transmitted, stored, or otherwise processed.
-6. **Data Transfer**: Any transfer of personal data outside the European Economic Area (EEA), including to a third country or an international organization.
-7. **Cloud Service**: Any service of processing, storage, or management of personal data provided by the Processor via cloud infrastructures.
+1. **Données à caractère personnel** : Qualsiasi informazione riguardante una persona fisica identificata o identificabile (« persona interessata »), come definito dal Regolamento Generale sulla Protezione dei Dati (RGPD).
+2. **Responsabile del trattamento** : La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che, singolarmente o insieme ad altri, determina le finalità e i mezzi del trattamento dei dati a carattere personale.
+3. **Responsabile del trattamento dati** : La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che tratta dati a carattere personale per conto del Responsabile del trattamento.
+4. **Trattamento** : Qualsiasi operazione o insieme di operazioni effettuate o meno con l'ausilio di processi automatizzati e applicate a dati o insiemi di dati a carattere personale.
+5. **Violazione dei dati** : Una violazione della sicurezza che comporta accidentalmente o illecitamente la distruzione, la perdita, l'alterazione, la divulgazione non autorizzata di dati a carattere personale trasmessi, conservati o trattati diversamente, o l'accesso non autorizzato a tali dati.
+6. **Trasferimento di dati** : Qualsiasi trasferimento di dati a carattere personale al di fuori dello Spazio Economico Europeo (SEE), inclusi verso un paese terzo o un'organizzazione internazionale.
+7. **Servizio Cloud** : Qualsiasi servizio di trattamento, archiviazione o gestione di dati a carattere personale fornito dal Responsabile del trattamento dati tramite infrastrutture cloud.
 
-# Article 2: Purpose
-The purpose of this annex is to define the conditions and modalities for processing personal data within the framework of the main contract, including the use of cloud services. It aims to ensure the parties' compliance with obligations arising from the GDPR and French laws related to personal data protection.
+# Article 2 : Objet
 
-# Article 3: Obligations of the Data Controller
+La presente appendice ha lo scopo di definire le condizioni e le modalità di trattamento dei dati a carattere personale nell’ambito del contratto principale, inclusa l’utilizzazione di servizi cloud. Essa mira a garantire la conformità delle parti agli obblighi derivanti dal RGPD e dalle leggi francesi relative alla protezione dei dati personali.
 
-1. **Lawfulness of Processing**: The Data Controller commits to processing personal data lawfully, fairly, and transparently in accordance with Articles 5 and 6 of the GDPR.
-2. **Specified Purposes**: Personal data must only be collected for specified, explicit, and legitimate purposes and must not be further processed in a manner that is incompatible with those purposes.
-3. **Data Minimization**: The Data Controller must ensure that the collected data is adequate, relevant, and limited to what is necessary for the purposes for which it is processed.
-4. **Data Accuracy**: It is the responsibility of the Data Controller to ensure that personal data is accurate and, where necessary, kept up to date.
-5. **Data Security**: The Data Controller must implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, in accordance with Article 32 of the GDPR. This includes the regular assessment of the security measures of the cloud services used.
+# Article 3 : Obligations du Responsable de traitement
 
-# Article 4: Obligations of the Processor
-1. **Processing in Accordance with Instructions**: The Sub-processor commits to processing personal data only based on documented instructions from the Data Controller, including with regard to transfers of personal data to a third country or an international organization, unless a legal requirement obliges otherwise.
-2. **Confidentiality**: The Sub-processor must ensure that persons authorized to process personal data are committed to confidentiality or are under an appropriate statutory obligation of confidentiality.
-3. **Security of Processing**: The Sub-processor commits to implementing appropriate technical and organizational measures to ensure the security of the personal data it processes, including data processed via cloud services, in accordance with Article 32 of the GDPR.
-4. **Further subcontracting**: The Sub-processor must not engage another sub-processor without the prior written and specific authorization of the Data Controller. In the event of authorized further subcontracting, the Sub-processor must ensure that the subsequent sub-processor complies with the same data protection obligations.
-5. **Assistance to the Data Controller**: The Sub-processor must assist the Data Controller, to the extent possible, in fulfilling its obligations regarding data security, data breach notifications, conducting data protection impact assessments, and prior consultations with supervisory authorities.
-6. **Data Localization**: The Subcontractor must provide clear information about the storage and processing locations of data within cloud infrastructures and ensure that these locations comply with applicable data protection regulations.
+1. **Liceità del trattamento** : Il Responsabile del trattamento si impegna a trattare i dati a carattere personale in modo lecito, legittimo e trasparente, conformemente agli articoli 5 e 6 del RGPD.
+2. **Finalità determinate** : I dati a carattere personale devono essere raccolti solo per finalità determinate, esplicite e legittime e non devono essere trattati ulteriormente in modo incompatibile con tali finalità.
+3. **Minimizzazione dei dati** : Il Responsabile del trattamento deve garantire che i dati raccolti siano adeguati, pertinenti e limitati a quanto necessario rispetto alle finalità per le quali sono trattati.
+4. **Esattezza dei dati** : È responsabilità del Responsabile del trattamento garantire che i dati a carattere personale siano esatti e aggiornati, se necessario.
+5. **Sicurezza dei dati** : Il Responsabile del trattamento deve implementare misure tecniche e organizzative appropriate per garantire un livello di sicurezza adeguato al rischio, conformemente all'articolo 32 del RGPD. Ciò include la valutazione regolare delle misure di sicurezza dei servizi cloud utilizzati.
 
-# Article 5: Description of Processing Activities
+# Article 4 : Obligations du Sous-traitant
 
-The Subcontractor is authorized to process personal data on behalf of the Data Controller, as necessary to provide the Services.
-The nature and category of operations performed on personal data will be defined by the Data Controller according to the specific needs of each Service.
-The purposes of the processing are determined by the Data Controller and communicated to the Subcontractor.
-The nature and category of personal data processed are specified by the Data Controller.
-The categories of data subjects are identified by the Data Controller.
-For the execution of the Services, the Data Controller provides the Processor with the necessary information.
-The processing duration is set by the Data Controller based on the requirements of the Services provided.
+1. **Trattamento conforme alle istruzioni** : Il Responsabile del trattamento dati si impegna a trattare i dati a carattere personale solo su istruzione documentata del Responsabile del trattamento, inclusi i trasferimenti di dati a carattere personale verso un paese terzo o un'organizzazione internazionale, salvo esistenza di un obbligo legale.
+2. **Confidenzialità** : Il Responsabile del trattamento dati deve garantire che le persone autorizzate a trattare i dati a carattere personale siano impegnate a rispettare la confidenzialità o siano soggette a un obbligo legale appropriato di confidenzialità.
+3. **Sicurezza dei trattamenti** : Il Responsabile del trattamento dati si impegna a implementare misure tecniche e organizzative appropriate per garantire la sicurezza dei dati a carattere personale che tratta, inclusi quelli trattati tramite servizi cloud, conformemente all'articolo 32 del RGPD.
+4. **Subappalto** : Il Responsabile del trattamento dati non deve ricorrere a un altro subappaltatore senza l'autorizzazione preventiva scritta e specifica del Responsabile del trattamento. In caso di subappalto autorizzato, il Responsabile del trattamento dati deve garantire che il subappaltatore rispetti gli stessi obblighi di protezione dei dati.
+5. **Assistenza al Responsabile del trattamento** : Il Responsabile del trattamento dati deve assistere il Responsabile del trattamento, nella misura del possibile, per adempiere ai propri obblighi in materia di sicurezza dei dati, notifica delle violazioni dei dati, svolgimento di analisi d'impatto sulla protezione dei dati e consultazioni preventive presso le autorità di controllo.
+6. **Localizzazione dei dati** : Il Responsabile del trattamento dati deve fornire informazioni chiare sui luoghi di archiviazione e trattamento dei dati nelle infrastrutture cloud e garantire che tali luoghi rispettino le normative applicabili in materia di protezione dei dati.
 
-# Article 6: Rights of Data Subjects
+# Article 5 : Description des traitements
 
-1. **Access and Rectification**: The Data Controller and the Processor must enable data subjects to exercise their rights of access and rectification of their personal data, in accordance with Articles 15 and 16 of the GDPR.
-2. **Erasure and Restriction of Processing**: Data subjects must be able to exercise their rights to the erasure of their data (right to be forgotten) or to the restriction of processing, in accordance with Articles 17 and 18 of the GDPR.
+Il Responsabile del trattamento dati è autorizzato a trattare per conto del Responsabile del trattamento i dati a carattere personale necessari per fornire i Servizi.
+La natura e la categoria delle operazioni effettuate sui dati a carattere personale saranno definite dal Responsabile del trattamento in base alle esigenze specifiche di ciascun Servizio.
+Le finalità del trattamento sono determinate dal Responsabile del trattamento e comunicate al Responsabile del trattamento dati.
+La natura e la categoria dei dati a carattere personale trattati sono specificate dal Responsabile del trattamento.
+Le categorie di persone interessate sono identificate dal Responsabile del trattamento.
+Per l'esecuzione dei Servizi, il Responsabile del trattamento mette a disposizione del Responsabile del trattamento dati le informazioni necessarie.
+La durata del trattamento è stabilita dal Responsabile del trattamento in base alle esigenze dei Servizi forniti.
 
-3. **Data Portability**: The Data Controller must ensure, where applicable, the portability of the personal data of the data subjects, in accordance with Article 20 of the GDPR.
-4. **Right to Object**: Data subjects must be able to exercise their right to object to the processing of their personal data in accordance with Article 21 of the GDPR.
+# Article 6 : Droits des personnes concernées
 
-# Article 7: Security and Confidentiality Measures
+1. **Accesso e rettifica** : Il Responsabile del trattamento e il Responsabile del trattamento dati devono consentire alle persone interessate di esercitare i loro diritti di accesso e rettifica dei propri dati a carattere personale, conformemente agli articoli 15 e 16 del RGPD.
+2. **Cancellazione e limitazione del trattamento** : Le persone interessate devono poter esercitare i loro diritti alla cancellazione dei dati (diritto all'oblio) o alla limitazione del trattamento, conformemente agli articoli 17 e 18 del RGPD.
+3. **Portabilità dei dati** : Il Responsabile del trattamento deve garantire, laddove applicabile, la portabilità dei dati a carattere personale delle persone interessate, conformemente all'articolo 20 del RGPD.
+4. **Opposizione** : Le persone interessate devono poter esercitare il diritto di opposizione al trattamento dei propri dati personali, conformemente all'articolo 21 del RGPD.
 
-The Sub-Processor commits in particular to implement sufficient measures to ensure the security and confidentiality of the Personal Data entrusted and processed within the scope of the Services, namely:
+# Article 7 : Misure di sicurezza e di confidenzialità
+
+Il Responsabile del trattamento dati si impegna in particolare a implementare misure sufficienti per garantire la sicurezza e la confidenzialità dei Dati Personali affidati e trattati nell'ambito dei Servizi, ovvero in particolare:
+
+- Attuare misure tecniche e organizzative appropriate per proteggere i Dati a carattere personale dalla distruzione accidentale o illecita, dalla perdita accidentale, dall'alterazione, dall'uso improprio, dalla divulgazione o dall'accesso non autorizzati, nonché da qualsiasi altra forma di trattamento illecito;
+- Non utilizzare i Dati a carattere personale per proprio conto o per conto di terzi e non trasferirli senza previa autorizzazione scritta del Responsabile del trattamento o del cliente finale;
+- Garantire che le persone autorizzate a trattare i Dati a carattere personale siano soggette a obblighi di confidenzialità appropriati;
+- Non effettuare copie o duplicazioni dei Dati a carattere personale senza previa autorizzazione scritta del Responsabile del trattamento o del cliente finale (a meno che ciò non sia necessario per eseguire i Servizi forniti dal fornitore nell'ambito del Contratto);
+- Informare il Responsabile del trattamento di qualsiasi accesso accidentale o non autorizzato ai Dati a carattere personale, di qualsiasi violazione delle normative sui Dati a carattere personale o di qualsiasi sospetto di tale violazione, nel più breve tempo possibile e, se possibile, entro e non oltre 48 ore dopo averne avuto conoscenza;
+- Su scelta del Responsabile del trattamento, cancellare o restituire i Dati a carattere personale o restituirli alla fine del Contratto e distruggere le copie esistenti, salvo obbligo legale di conservarli;
+- Implementare una politica di sicurezza dei sistemi informativi e della gestione delle autorizzazioni di accesso logico e fisico, in particolare, che dovrà mantenere ed evolvere per tutta la durata del Contratto.
+
+# Article 8 : Notifica delle violazioni di dati
+
+In caso di violazione dei dati a carattere personale, il Responsabile del trattamento dati deve notificare tale violazione al Responsabile del trattamento senza ingiustificato ritardo dopo averne preso conoscenza. Tale notifica deve includere tutte le informazioni pertinenti che consentano al Responsabile del trattamento di notificare tale violazione all'autorità di controllo competente e, se del caso, alle persone interessate, conformemente all'articolo 33 del RGPD. La notifica deve precisare il potenziale impatto sui dati ospitati nel cloud e le misure adottate per rimediare.
+
+# Article 9 : Trasferimenti di dati fuori dall'Unione Europea
 
 
-- Implement appropriate technical and organizational measures to protect Personal Data against accidental or unlawful destruction, accidental loss, alteration, misuse, unauthorized dissemination or access, as well as any other form of unlawful processing;
-- Do not use Personal Data for personal purposes or for the benefit of third parties and do not transfer it without the prior written authorization of the Data Controller or the end client;
-- Ensure that individuals authorized to process Personal Data are subject to appropriate confidentiality obligations;
-- Do not make copies or duplicates of Personal Data without the prior written authorization of the Data Controller or the end client (unless necessary for the performance of Services provided by the provider under the Contract);
-- Inform the Data Controller of any accidental or unauthorized access to Personal Data, any breach of Personal Data regulations, or any suspicion of such a breach, as soon as possible and, if possible, no later than 48 hours after becoming aware of it.
-- According to the choice of the Data Controller, delete or return the Personal Data or return it at the end of the Contract, and destroy existing copies, unless legally required to retain them;
-- Implement an information systems security policy and a management policy for logical and physical access authorizations, which must be maintained and evolved throughout the duration of the Contract.
+Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
 
-# Article 8: Data Breach Notification
-In the event of a personal data breach, the Processor must notify the Controller without undue delay after becoming aware of the breach. This notification must include all relevant information enabling the Controller to notify this breach to the competent supervisory authority and, where applicable, to the affected individuals in accordance with Article 33 of the GDPR. The notification must specify the potential impact on the data hosted in the cloud and the measures taken to address it.
+# Article 10 : Durée et fin du traitement
 
-# Article 9: Data Transfers Outside the European Union
-Any transfer of personal data to a third country or an international organization can only be carried out subject to compliance with the conditions provided for by the GDPR, in particular in Articles 44 to 50. The Data Controller must ensure that appropriate safeguards are in place, such as the standard contractual clauses approved by the European Commission or the existence of an adequacy decision.
+À l'issue du contrat principal, le Sous-traitant s'engage, selon les instructions du Responsable de traitement, à supprimer toutes les données à caractère personnel ou à les retourner au Responsable de traitement, et à détruire les copies existantes sauf obligation légale contraire. Cette obligation inclut également les données stockées sur des supports de sauvegarde dans les infrastructures cloud, sauf si une obligation légale impose leur conservation.
 
-# Article 10: Duration and End of Processing
+# Article 11 : Documentation et audits
 
-At the end of the main contract, the Processor undertakes, according to the instructions of the Data Controller, to delete all personal data or to return it to the Data Controller, and to destroy any existing copies unless otherwise required by law. This obligation also includes data stored on backup media in cloud infrastructures, unless a legal obligation imposes their retention.
+Le Sous-traitant mettra à la disposition du Responsable de traitement toutes les informations nécessaires pour démontrer le respect des obligations prévues par la présente annexe et autorisera les audits, y compris les inspections, par le Responsable de traitement ou un autre auditeur mandaté par ce dernier, afin de vérifier la conformité avec cette annexe et le RGPD. Le Sous-traitant doit également tenir un registre des activités de traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées.
 
-# Article 11: Documentation and Audits
-The Subcontractor shall provide the Data Controller with all necessary information to demonstrate compliance with the obligations set out in this appendix and shall authorize audits, including inspections, by the Data Controller or another auditor mandated by the latter, in order to verify compliance with this appendix and the GDPR. The Subcontractor must also maintain a record of processing activities in accordance with Article 30 of the GDPR and provide compliance reports on the cloud infrastructures used.
+# Article 12 : Registre des activités de Traitement 
 
-# Article 12: Record of Processing Activities
+ Le Sous-traitant doit également tenir un registre des activités de Traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées. Ce registre contient à minima : 
+- Il nome e i contatti del responsabile del trattamento e, se del caso, del contitolare del trattamento, del rappresentante del responsabile del trattamento e del responsabile della protezione dei dati;
+- La descrizione delle categorie di persone interessate e delle categorie di dati personali;
+- Le finalità del trattamento;
+- Le categorie di destinatari a cui i dati personali sono stati o saranno comunicati, compresi i destinatari in paesi terzi o organizzazioni internazionali;
+- La durata della conservazione dei dati;
+- La descrizione generale delle misure tecniche e organizzative di sicurezza implementate.
 
-The Subcontractor must also maintain a record of Processing activities in accordance with Article 30 of the GDPR and provide compliance reports on the cloud infrastructures used. This record contains at a minimum:
-- The name and contact details of the data controller and, where applicable, the joint controller, the controller's representative, and the data protection officer;
-- The description of the categories of data subjects and categories of personal data;
-- The purposes of the Processing;
-- The categories of recipients to whom the personal data have been or will be disclosed, including recipients in third countries or international organizations;
-- The retention period of the data;
-- The general description of the technical and organizational security measures implemented.
+Su richiesta scritta del Responsabile del trattamento, del cliente finale o di qualsiasi autorità competente, il Subappaltatore avrà un periodo di 15 giorni lavorativi per fornire una copia del suddetto registro a partire dal ricevimento della richiesta.
 
-Upon written request from the Data Controller, the end client, or any competent authority, the Processor shall have a period of 15 business days to provide a copy of the said register from the receipt of the request.
+# Article 13 : Les sous-traitants ultérieurs
 
-# Article 13: Subsequent processors
-The Subcontractor may need to engage one or more external service providers/suppliers to handle specific services under the Contract. To this end, the Subcontractor may need to recruit, under its responsibility, one or more second-tier Subcontractors solely for the purpose of providing part of the necessary services for the managed system.
+Il Subappaltatore può ricorrere a uno (o più) fornitore(i) esterni per la gestione di specifici servizi previsti dal Contratto. A tale scopo, il Subappaltatore può reclutare, sotto la sua responsabilità, uno (o più) Subappaltatore(i) di secondo livello esclusivamente per fornire parte dei servizi necessari al sistema gestito.
 
-The Subcontractor commits to entering into a legally binding agreement with any subsequent subcontractor it engages for Data Processing, to impose the compliance with the GDPR requirements and the same obligations as those set forth in article 20.2. In particular, the Subcontractor must ensure that the subsequent subcontractor it has recruited provides sufficient guarantees for implementing the necessary security measures.
-In case of failure by the subsequent subcontractor to comply with its obligations regarding the protection of Personal Data, the Subcontractor shall remain fully liable to the Data Controller, without prejudice to the rights of Data Subjects provided under Articles 79 and 82 of the GDPR.
+Il Subappaltatore si impegna a concludere un atto giuridico vincolante con qualsiasi subappaltatore successivo che ingaggia per il trattamento dei dati, al fine di imporgli il rispetto dei requisiti del RGPD e degli stessi obblighi previsti dall'articolo 20.2. In particolare, il Subappaltatore deve assicurarsi che il subappaltatore successivo rappresenti garanzie sufficienti per l'implementazione delle misure di sicurezza necessarie.
 
-The list of authorized subsequent subcontractors is as follows:
+In caso di inadempienza del subappaltatore successivo nel rispetto dei suoi obblighi in materia di protezione dei dati personali, il Subappaltatore rimarrà pienamente responsabile nei confronti del Responsabile del trattamento, fatti salvi i diritti delle persone interessate previsti dagli articoli 79 e 82 del RGPD.
+
+L'elenco dei subappaltatori successivi autorizzati è il seguente:
 
 1. Interxion
 2. Data4
@@ -111,14 +117,16 @@ The list of authorized subsequent subcontractors is as follows:
 7. Colt
 8. Intrinsec
 
-During the execution of the Contract, the Data Controller may at any time request from the Subcontractor an updated version of the aforementioned list.
+Durante l'esecuzione del Contratto, il Responsabile del trattamento può accedere in qualsiasi momento all'aggiornamento di tale elenco presso il Subappaltatore.
 
-# Article 14: Liability
-The Data Controller and the Processor acknowledge that they may be held liable for damages caused by the processing of personal data that is not in compliance with the GDPR and applicable French laws. The Processor is liable for damages caused by the processing if it has not complied with the GDPR obligations specifically applicable to processors or if it has acted outside the lawful instructions of the Data Controller or contrary to them.
+# Article 14 : Responsabilité
 
-# Article 15: Amendments
+Il Responsabile del trattamento e il Subappaltatore riconoscono che possono essere ritenuti responsabili per i danni causati da un trattamento dei dati personali non conforme al RGPD e alle leggi francesi applicabili. Il Subappaltatore è responsabile dei danni causati dal trattamento se non ha rispettato gli obblighi del RGPD specificamente applicabili ai subappaltatori o se ha agito al di fuori delle istruzioni legali del Responsabile del trattamento o in contrasto con esse.
 
-Any modification of this appendix must be subject to a written amendment signed by both parties. The modifications must comply with the requirements of the GDPR and the French laws relating to the protection of personal data.
+# Article 15 : Modifications
 
-# Article 16: Governing Law and Jurisdiction
-This annex is governed by French law. Any dispute regarding its interpretation or execution will be subject to the exclusive jurisdiction of the French courts. In the event of a discrepancy between the language versions of this annex, the French version shall prevail.
+Qualsiasi modifica della presente appendice deve essere oggetto di un emendamento scritto firmato da entrambe le parti. Le modifiche devono essere conformi ai requisiti del RGPD e delle leggi francesi relative alla protezione dei dati personali.
+
+# Article 16 : Loi applicable et juridiction compétente
+
+La presente appendice è regolata dalla legge francese. Qualsiasi controversia relativa alla sua interpretazione o esecuzione sarà di competenza esclusiva dei tribunali francesi. In caso di differenze tra le versioni linguistiche della presente appendice, prevarrà la versione francese.

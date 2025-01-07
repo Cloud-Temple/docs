@@ -4,23 +4,23 @@ title: Identity Access Management
 
 # Identity Access Management
 
-The IAM (Identity Access Management) module of the Cloud Temple console offers a complete solution for identity and access management.
-It allows the administration of local accounts while supporting hybridization with external configurations, compatible with market-standard protocols such as OIDC and SAML, to meet the flexibility and security needs of modern environments.
+Il modulo IAM (Identity Access Management) della console Cloud Temple offre una soluzione completa per la gestione delle identità e degli accessi.
+Permette di amministrare account locali supportando allo stesso tempo un'ibridazione con configurazioni esterne, compatibili con i protocolli standard del mercato come OIDC e SAML, per rispondere alle esigenze di flessibilità e sicurezza degli ambienti moderni.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the essential foundations and principles to understand and master our infrastructure.</p>
-    <a href="concepts" class="card-link">Explore the concepts &rarr;</a>
+    <h3>Concetti</h3>
+    <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Start quickly with our resources by following clear and simple instructions.</p>
-    <a href="quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="tutorials" class="card-link">Discover the tutorials &rarr;</a>
+    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

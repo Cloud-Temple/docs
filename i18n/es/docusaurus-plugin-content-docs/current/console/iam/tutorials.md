@@ -2,11 +2,11 @@
 title: Tutorials
 ---
 
-These tutorials help you deploy and manage a Cloud Temple Bastion from the Shiva portal.
+Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Shiva. 
 
 
 <div class="card">
   <h3>Tutorials</h3>
-  <p>No tutorials are available at the moment, but we are actively working on it. Check back soon for more information!</p>
-  <a href="../" class="card-link">Go to the Home page &rarr;</a>
+  <p>Ningún Tutorial está disponible por el momento, pero estamos trabajando activamente en ello. ¡Vuelve pronto para saber más!</p>
+  <a href="../" class="card-link">Acceder a la página de inicio &rarr;</a>
 </div>

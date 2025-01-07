@@ -2,58 +2,58 @@
 title: Concepts
 ---
 
-The __IaaS (Infrastructure As A Service)__ offer from Cloud Temple is designed to meet critical continuity and disaster recovery needs, with a particular focus on demanding sectors such as industry, banking, and insurance. Based on cutting-edge technologies, this infrastructure guarantees maximum availability and optimal performance for your critical workloads.
+La oferta __IaaS (Infrastructure As A Service)__ de Cloud Temple está diseñada para satisfacer las necesidades críticas de continuidad y recuperación de actividad, con un enfoque particular en sectores exigentes como la industria, la banca y el seguro. Basada en tecnologías de punta, esta infraestructura garantiza una disponibilidad máxima y un rendimiento óptimo para sus cargas de trabajo críticas.
 
-## A Reliable Technological Platform
+## Una plataforma tecnológica de confianza
 
-Cloud Temple's IaaS platform relies on internationally renowned technological partners:
+La plataforma IaaS de Cloud Temple se apoya en socios tecnológicos de renombre internacional:
 
-- Compute: **CISCO UCS**.
-- Storage: **IBM Spectrum Virtualize**, **IBM FlashSystem** for block storage, and **DELL ECS** for object storage.
-- Network: **JUNIPER**.
-- Virtualization: **Open Source Stack**, providing a reliable and proven base to manage your cloud environments.
+- Cálculo: **CISCO UCS**.
+- Almacenamiento: **IBM Spectrum Virtualize**, **IBM FlashSystem** para almacenamiento de bloques, y **DELL ECS** para almacenamiento de objetos.
+- Red: **JUNIPER**.
+- Virtualización: **Stack Opensource**, ofreciendo una base confiable y probada para gestionar sus entornos en la nube.
 
-This architecture is based on the **VersaStack** model, an alliance between Cisco and IBM, ensuring extensive compatibility with major software vendors.
+Esta arquitectura se basa en el modelo **VersaStack**, una alianza entre Cisco e IBM, garantizando una compatibilidad extendida con los principales editores de software.
 
-## A Dedicated and Automated Infrastructure
+## Una infraestructura dedicada y automatizada
 
-Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offer provides a unique infrastructure:
+Aunque completamente automatizada gracias a APIs y un proveedor Terraform, la oferta IaaS de Cloud Temple propone una infraestructura única:
 
-- **Dedicated resources**: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared between clients.
-- **Maximum predictability**: You control the virtualization rates, IOPS pressure on storage, and benefit from clear, monthly usage-based billing.
+- **Recursos dedicados**: Las láminas de cálculo, volúmenes de almacenamiento y stacks de software (virtualización, respaldo, firewall, etc.) nunca se comparten entre clientes.
+- **Máxima predictibilidad**: Usted controla las tasas de virtualización, la presión en IOPS sobre el almacenamiento y se beneficia de una facturación clara, basada en el consumo mensual.
 
-The platform is **SecNumCloud** qualified by the [ANSSI](https://www.ssi.gouv.fr/), guaranteeing a high level of automation and security.
+La plataforma está calificada como **SecNumCloud** por la [ANSSI](https://www.ssi.gouv.fr/), garantizando un alto nivel de automatización y seguridad.
 
-## Key Features
+## Principales funcionalidades
 
-- On-demand dedicated compute resources (CPU, RAM).
-- On-demand storage (several classes available).
-- Network resources (Internet, private networks).
-- Cross-backups with configurable retention.
-- Asynchronous replication for storage or virtual machines.
-- Management via the [Shiva Console](../console/console.md) or in Infrastructure as Code mode thanks to APIs and the Terraform provider.
+- Recursos de cálculo (CPU, RAM) dedicados y bajo demanda.
+- Almacenamiento bajo demanda (varias clases disponibles).
+- Recursos de red (Internet, redes privadas).
+- Respaldo cruzado con retención configurable.
+- Replicación asíncrona para almacenamiento o máquinas virtuales.
+- Gestión a través de la [Console Shiva](../console/console.md) o en modo Infraestructura como Código gracias a las APIs y al proveedor Terraform.
 
-## Benefits
+## Ventajas
 
-| Benefit             | Description                                                                                                                                   |   
+| Ventaja             | Descripción                                                                                                                                   |   
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Digital Trust       | Data hosting in France and GDPR compliance.                                                                                                   |   
-| Security            | Highly secure platform, **SecNumCloud** qualified, **HDS** (Health Data Hosting), **ISO 27001** and **ISAE 3402 type II** certified.            |  
-| High Availability   | Platform availability rate of 99.99%, measured monthly, including maintenance windows.                                                         |   
-| Resilience          | Implementation of continuity or disaster recovery plans according to needs.                                                                   |
-| Automation          | Fully automated platform designed to integrate into a digital transformation program.                                                          |
-| On demand           | Resources available on demand.                                                                                                                |
+| Confianza digital   | Alojamiento de datos en Francia y conformidad con GDPR.                                                                                       |   
+| Seguridad           | Plataforma altamente segura, certificada **SecNumCloud**, **HDS** (Alojamiento de Datos de Salud), **ISO 27001** y **ISAE 3402 tipo II**.    |  
+| Alta disponibilidad | Tasa de disponibilidad de la plataforma del 99.99%, medida mensualmente, incluyendo periodos de mantenimiento.                                |   
+| Resiliencia         | Implementación de planes de continuidad o recuperación de actividad según las necesidades.                                                    |
+| Automatización      | Plataforma totalmente automatizada pensada para integrarse en un programa de transformación digital.                                         |
+| Bajo demanda        | Recursos disponibles bajo demanda.                                                                                                           |
 
-## Purchase Platforms
+## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>Are you a public sector actor? The <strong>Cloud Temple IaaS</strong> offer is accessible via:</p>
+  <p>¿Es usted un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está accesible a través de:</p>
   
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        The UGAP public procurement platform
+        La plataforma de compras públicas UGAP
       </a>
     </p>
   </div>
@@ -62,12 +62,12 @@ The platform is **SecNumCloud** qualified by the [ANSSI](https://www.ssi.gouv.fr
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        The CAIH market for the medical sector
+        El mercado CAIH para el sector médico
       </a>
     </p>
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Learn more &rarr;
+    Saber más &rarr;
   </a>
 </div>

@@ -2,170 +2,169 @@
 title: Quickstart
 ---
 
-## Tenant
+##  Tenant
 
-### Création d'un tenant
+### Creazione di un tenant
 
-Creating a tenant is done through a service request indicating:
+La creazione di un tenant viene effettuata tramite una richiesta di servizio che indica:
 
-    The name of your Organization
-    The name of a contact person with their email and phone number to finalize the configuration
-    The name of the tenant
-    The availability zone or the desired physical site for the tenant
+    Il nome della tua Organizzazione
+    Il nome di un contatto con la sua email e n. di telefono per finalizzare la configurazione
+    Il nome del tenant
+    La zona di disponibilità o, in mancanza di essa, il sito fisico desiderato per il tenant
 
 
-### Selection d'un tenant
+### Selezione di un tenant
 
-Selection of the tenant is done from the main page of the Shiva console:
+La selezione del tenant avviene dalla pagina principale della console Shiva:
 
 ![](images/shiva_tenant.png)
 
 
-*__Note:__ The resources of a tenant are specific to it and cannot be mixed with other tenants.*
+*__Nota:__ Le risorse di un tenant sono proprie e non possono essere mescolate con altri tenant.*
 
 
 
-## Comptes d'accès à la console Shiva
+## Account di accesso alla console Shiva
 
-Access accounts for the Shiva console are created by the master account of the commissioner through invitation (regardless of the authentication directory).
-The identification information is global to your [Organization](concepts.md#organisations).
+Gli account di accesso alla console Shiva sono creati dall'account principale del committente su invito (qualunque sia il sistema di autenticazione).
+Le informazioni di identificazione sono globali alla tua [Organizzazione](concepts.md#organisations).
 
-*__Note:__ Identity federation is managed at the organization level*
+*__Nota:__ La federazione dell'identità viene gestita a livello dell'organizzazione*
 
-### Création d'un compte utilisateur dans votre organisation
+### Creazione di un account utente nella tua organizzazione
 
-Creating a user account in your organization is done by invitation. To invite a user to an [Organization](concepts.md#organisations), go to the __'Administration'__ menu on the left of your screen in the green banner, then in the __'Users'__ submenu.  
+La creazione di un account utente nella tua organizzazione viene effettuata tramite invito. Per invitare un utente in una [Organizzazione](concepts.md#organisations), vai nel menu __'Amministrazione'__ a sinistra dello schermo sulla banda verde e poi nel sottomenu __'Utenti'__.  
 
-Click on the __'New User'__ button from the users page. 
+Clicca sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti. 
 
 ![](images/shiva_onboard_003.png)
 
-Then provide the user's email address 
+Indica poi l'indirizzo email dell'utente 
 
 ![](images/shiva_onboard_004.png)
 
-The user will then receive a verification email.  
+L'utente riceverà quindi un'email di verifica.  
 
 ![](images/shiva_onboard_001.png)
 
-Once verification is complete, the user will be able to log into the console.
+Una volta completata la verifica, l'utente potrà accedere alla console.
 
-### Affectation des permissions à un utilisateur
+### Assegnazione dei permessi a un utente
 
-User rights management is done from the user page.
+La gestione dei diritti degli utenti avviene dalla pagina dell'utente. 
 
 ![](images/shiva_onboard_003.png)
 
-By default, a user has no rights. Therefore, the administrator who sent the invitation needs to grant the necessary rights for the user's activity. Just click on the user's __'Actions'__ menu and choose the __'Modify'__ option.  
+Di default, un utente non ha diritti. È quindi necessario che l'amministratore che ha inviato l'invito gli conceda i diritti necessari per la sua attività. Basta cliccare sul menu __'Azioni'__ dell'utente e scegliere l'opzione __'Modifica'__.  
 
-The rights activation menu then appears:
+Il menu di attivazione dei diritti apparirà:
 
 ![](images/shiva_onboard_005.png)
 
-Permission configuration must be done for each [Tenant](concepts.md#tenants) of the
-[Organization](concepts.md#organisations).
+La configurazione dei permessi deve essere effettuata per ogni [Tenant](concepts.md#tenants) dell'
+[Organizzazione](concepts.md#organisations).
 
-The list of permissions and their definitions is accessible [here](#permissions).
+La lista dei permessi e la loro definizione è accessibile [qui](#permissions).
 
-### Changer la langue d'un utilisateur
+### Cambiare la lingua di un utente
 
-Changing a user's language is done in their __'Profile'__, at the top right of the screen, in the __'User Settings'__.
+Il cambio della lingua di un utente deve essere effettuato nel suo __'Profilo'__, in alto a destra dello schermo, nei __'Parametri utente'__.
 
 ![](images/shiva_profil_006.png)
 
-Configuration is done for each [Tenant](concepts.md#tenants).
+La configurazione è effettuata per ogni tenant [Tenant](concepts.md#tenants).
 
-### Abonnement aux notifications thématiques
+### Abbonamento alle notifiche tematiche
 
-Subscription management allows you to receive emails related to activated topics, which are automatically sent when corresponding events occur.
+La gestione degli abbonamenti consente di ricevere le email relative alle tematiche attivate che saranno automaticamente inviate in caso di eventi corrispondenti.
 
-It is accessible in the user profile, under the "My subscriptions" tab:
+È accessibile nel profilo utente, nella scheda "I miei abbonamenti":
 
 ![](images/shiva_profil_007.png)
 
- For example, in case of an incident, email notifications specific to this topic will be generated.
+ Ad esempio, in caso di incidente, saranno generate notifiche via email specifiche per quella tematica.
 
-The list of available topics is likely to evolve and expand progressively to adapt to needs and changes in our operational environment.
+La lista delle tematiche disponibili è suscettibile di evoluzione e arricchimento progressivo per adattarsi alle esigenze e ai cambiamenti nel nostro ambiente operativo.
 
 
-## Permissions
+## Permessi
 
-### Quelles sont les permissions disponibles pour les comptes utilisateur de la console Shiva ?
+### Quali sono i permessi disponibili per gli account utente della console Shiva?
 
-Here is the list of [available permissions](#permissions).
+Ecco la lista dei [permessi disponibili](#permissions).
 
-### Comment ajouter une permission ?
+### Come aggiungere un permesso?
 
-Here is the [procedure for assigning permission available here](#permissions)
+Ecco la [procedura di assegnazione del permesso disponibile qui](#permissions)
 
-### Pourquoi je ne peux pas ajouter une permission ?
+### Perché non posso aggiungere un permesso?
 
-To add a permission, you need to have the __'iam_write'__ permission as well as the __permission you wish to add__.
+Per aggiungere un permesso, è necessario possedere il permesso __'iam_write'__ oltre al __permesso che si desidera aggiungere__.
 
-### Comment ajouter un utilisateur ?
+### Come aggiungere un utente?
 
-*__Note__ : To add a user, you must have the __'iam_write'__ right.*
+*__Nota__ : Per aggiungere un utente, è necessario possedere il diritto __'iam_write'__.*
 
-### Comment auditer les accès/permissions des utilisateurs ?
+### Come auditare gli accessi/permessi degli utenti?
 
-Go to the users page and click on the __'Export csv'__ button:
+Vai alla pagina utenti e clicca sul pulsante __'Esporta csv'__:
 
-### Comment supprimer un utilisateur ?
+### Come eliminare un utente?
 
-In the __'Administration'__ menu on the green banner to the left of the screen, in the __'user'__ submenu, click on the user's __'Action'__ icon and choose __'Delete'__.
+Nel menu __'Amministrazione'__ sulla banda verde a sinistra dello schermo, nel sottomenu __'utente'__, clicca sull'icona __'Azione'__ dell'utente target e scegli __'Elimina'__.
 
-*__note__ :*
-- *To add a user, you must have the __'iam_write'__ right.*
-- *If it is a federated user, __ensure that the user has also been removed from the identity directory__.*
+*__nota__ :*
+- *Per aggiungere un utente, è necessario possedere il diritto __'iam_write'__.*
+- *Se si tratta di un utente federato, __assicurati che l'utente sia stato eliminato anche dal sistema di identità__.*
 
-### Comment réinitialiser son mot de passe ?
-It is possible to reset your password from the Shiva console login page by clicking on __'Forgot password?'__.
+### Come reimpostare la propria password?
+È possibile reimpostare la propria password dalla pagina di login della console Shiva cliccando su __'Password dimenticata?'__.
 
-### Pourquoi certains utilisateurs sont grisés ?
-Grayed-out users are those who have not validated their account. Upon account creation, the user received a verification email.  
+### Perché alcuni utenti sono grigiati?
+Gli utenti grigiati sono quelli che non hanno validato il loro account. Durante la creazione dell'account, l'utente ha ricevuto un'email di verifica.  
 
 ![](../../console/images/shiva_onboard_001.png)
 
-Once verification is complete, the user will be able to log into the console.  
+Una volta completata la verifica, l'utente potrà accedere alla console.  
 
-The account is grayed out as long as the verification has not been completed.
+L'account resta grigiato finché la verifica non è stata completata.
 
-### Qu'est-ce qu'un Personal Access Token (PAT) ?
+### Cos'è un Personal Access Token (PAT)?
 
-Generating an API key, also called __Personal Access Token (PAT)__, 
-is a secure way to connect to Shiva APIs without using a graphical interface. 
+La generazione di una chiave API, detta anche __Personal Access Token (PAT)__, è un modo sicuro di connettersi alle API Shiva senza passare per un'interfaccia grafica. 
 
-### Qu'est-ce que le MFA et est-il obligatoire ?
-MFA (multi-factor authentication) is a concept of verifying a user's identity in two steps, called __two-factor authentication__.
+### Cos'è il MFA ed è obbligatorio?
+Il MFA (autenticazione multi-fattore) è un concetto di verifica dell'identità di un utente in due fasi, detto __autenticazione a due fattori__.
 
-The user must provide two distinct proofs of identity. In the case of the Shiva console, two-factor authentication is mandatory and requires entering a one-time code after the user has entered their account password. 
+L'utente deve fornire due prove di identità distinte. Nel caso della console Shiva, l'autenticazione a due fattori è obbligatoria e richiede l'inserimento di un codice monouso una volta che l'utente ha inserito la password del suo account.
 
 
-## Gestion des accès et authentification
+## Gestione degli accessi e autenticazione
 
-### Autorisation d'accès à un tenant : IP autorisées
+### Autorizzazione di accesso a un tenant: IP autorizzate
 
-Access to the cloud management console is strictly limited to pre-authorized IP addresses, in compliance with SecNumCloud qualification requirements. This restriction ensures a higher level of security by allowing access only to users from specified IP ranges, thus minimizing the risks of unauthorized access and protecting the cloud infrastructure according to the highest security standards.
+L'accesso alla console di gestione cloud è strettamente limitato agli indirizzi IP preventivamente autorizzati, in conformità con i requisiti della qualificazione SecNumCloud. Questa restrizione assicura un livello di sicurezza rafforzato permettendo l'accesso solo agli utenti provenienti da intervalli di IP specificati, minimizzando così i rischi di accesso non autorizzato e proteggendo l'infrastruttura cloud secondo i più alti standard di sicurezza.
 
-It is now possible to display the list of authorized public IP addresses on the tenant and add a new public IP address to this list directly from the "Administration > Access" tab. 
+Ora è possibile visualizzare la lista degli indirizzi IP pubblici autorizzati sul tenant e aggiungere un nuovo indirizzo IP pubblico a questa lista direttamente dalla scheda "Amministrazione > Accessi". 
 
 ![](images/shiva_ip_access_management_01.png)
 
-For this, the user must have the `console_public_access_read` right to view authorized IPs, and the `console_public_access_write` right to add a public IP address to the list.
+Per farlo, l'utente deve avere il diritto `console_public_access_read` per consultare gli IP autorizzati, e il diritto `console_public_access_write` per aggiungere un indirizzo IP pubblico alla lista.
 
-It is then possible to add a new IP:
+È quindi possibile aggiungere un nuovo IP:
 
 ![](images/shiva_ip_access_management_02.png)
 
-Note: *Removal of an authorized IP is done by a support request in the Cloud Temple console.*
+Nota: *La rimozione di un IP autorizzato viene effettuata tramite una richiesta di supporto nella console Cloud Temple.*
 
-### Qu'est-ce que le captcha ? Pourquoi peut-il bloquer la connexion à l'application ?
-The __'Captcha'__ is a security measure to protect your account from spam and prevent any password decryption attempts.
+### Cos'è il captcha? Perché può bloccare l'accesso all'applicazione?
+Il __'Captcha'__ è una misura di sicurezza che protegge il tuo account dallo spam e impedisce qualsiasi tentativo di decifrazione della password.
 
-The __'Captcha'__ submits a simple test to verify that it is a human and not a bot attempting to access the account. 
+Il __'Captcha'__ presenta un semplice test per verificare che si tratta realmente di un essere umano e non di un robot che cerca di accedere all'account. 
 
-The Cloud Temple console uses a v3 Captcha. The v3 type is an invisible test that establishes a trust score based on user interactions. 
+La console Cloud Temple utilizza un Captcha di tipo v3. Il tipo v3 è un test invisibile che stabilisce un indice di fiducia basato sulle interazioni dell'utente. 
 
-The Cloud Temple console relies on this trust score to allow or disallow user login. 
+La console Cloud Temple si basa su questo punteggio di indice di fiducia per autorizzare o meno l'utente a connettersi. 
 
-If you encounter difficulties with the __'Captcha'__ test when trying to log into the Shiva console, please contact user support.
+Se incontri difficoltà con il test __'Captcha'__ per connetterti alla console Shiva, contatta il supporto utenti.

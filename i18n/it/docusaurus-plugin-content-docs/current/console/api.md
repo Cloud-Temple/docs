@@ -1,63 +1,65 @@
 ---
-title: API Documentation
+title: Documentation API 
 ---
 
-## API Keys
+## Clés API
 
-The __API key__ allows you to authenticate when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to Shiva APIs without using a graphical interface. Each of these tokens is linked to a tenant and the user who created it.
+La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__, est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
 
-The creation of this token is done from your account. It is possible to generate multiple keys and configure permissions for each within the limits of your rights.
+La création de ce token se fait depuis votre compte. Il est possible de générer plusieurs clés et de configurer pour chacune les autorisations dans la limite de vos droits.
 
-To create an API key, simply __click on your profile__:
+Pour créer une clef API, il suffit de __cliquer sur votre profil__ :
 
 ![](images/shiva_profil_001.png)
 
-In the profile menu, click on __'Personal Access Token'__
+Dans le menu du profil, cliquer sur __'Jeton d'accès personnel'__
 
 ![](images/shiva_profil_003.png)
 
-You will then see all the API keys that have been created for this user in this tenant. Click on __'New personal access token'__
+Vous avez alors à l'écran l'ensemble des clés API qui ont été créées pour cet utilisateur dans ce tenant. Cliquer sur __'Nouveau access token personnel'__
 
 ![](images/shiva_profil_002.png)
 
-You must then:
-- Specify the name of this new token,
-- Indicate an expiration date (maximum validity of 12 months),
-- Choose the [permissions associated with the token](permissions.md).
+Vous devez alors :
 
-The details regarding your token are then displayed. __Note that it is no longer possible to access them afterward.__
+- Indiquer le nom de ce nouveau jeton,
+- Indiquer une date d'expiration (maximum 12 mois de validité),
+- Choisir les permissions associées au jeton.
 
-If you do not note this information, you will need to destroy and recreate the token.
+Les détails concernant votre jeton sont alors affichés. __Attention, il n'est plus possible d'y accéder a posteriori.__
+
+Si vous ne notez pas ces informations, vous devrez détruire et recréer le jeton.
 
 ![](images/shiva_profil_004.png)
 
-For security reasons, it is recommended to create multiple tokens, each with a specific purpose (one token for each application or business process) rather than creating one token with all rights.
+Pour une question de sécurité, il est recommandé de créer plusieurs tokens ayant chacun une utilité spécifique (un token pour chaque application ou chaque processus métier) plutôt que de créer 1 token avec l'ensemble des droits.
 
-You then see the newly created token and its future expiration date.
+Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
 ![](images/shiva_profil_005.png)
 
-## Access to the API portal
+## Accesso al portale API
 
-The OpenAPI 3.0 (Swagger) documentation for the Cloud Temple console APIs is available directly in the application:
+La documentazione OpenAPI 3.0 (Swagger) delle API della console Cloud Temple è disponibile direttamente nell'applicazione:
 
 ![](images/shiva_api_001.png)
-Access to APIs requires authentication. Once authenticated, all operations must include the __'Authorization'__ header with the bearer access token obtained during the authentication phase.
 
-The URL for endpoint access is directly provided in __Swagger__ (in the "Servers" object of each API page).
+L'accesso alle API richiede l'autenticazione. Una volta autenticati, tutte le operazioni devono avere l'intestazione
+__'Authorization'__ con il bearer access token ottenuto nella fase di autenticazione.
 
-## Activities
+L'URL dei punti di accesso è direttamente fornito in __Swagger__ (nell'oggetto "Servers" di ciascuna pagina delle API).
 
-The tracking of write-type requests (POST, PUT, PATCH, DELETE) is managed via activity management. Each request of this type automatically generates an associated activity. An HTTP status code 201 confirms the successful creation of the activity. The unique identifier of this activity is returned in the response headers under the key 'Location'.
+## Le attività
+
+Il monitoraggio delle richieste di tipo scrittura (POST, PUT, PATCH, DELETE) è garantito attraverso la gestione delle attività. Ogni richiesta di questo tipo genera automaticamente un'attività associata. Un codice di stato HTTP 201 conferma la creazione riuscita dell'attività. L'identificativo unico di questa attività viene restituito nelle intestazioni della risposta, sotto la chiave 'Location'.
 
 ![](images/shiva_api_002.png)
 
-Once the identifier is retrieved, it is possible to access the details of the activity using the API of the Activity module:
+Una volta recuperato l'identificativo, è possibile accedere ai dettagli dell'attività utilizzando l'API del modulo Attività:
 
 ![](images/shiva_api_003.png)
 
-
-The activity's content includes all essential information to identify the operation, its execution date, and its progress status. Here is the model of an activity:
+Il contenuto dell'attività include tutte le informazioni essenziali per identificare l'operazione, la sua data di esecuzione, nonché il suo stato di avanzamento. Ecco il modello di un'attività:
 
 ```
     {
@@ -79,78 +81,83 @@ The activity's content includes all essential information to identify the operat
 }
 ```
 
-The **state** object can take different forms depending on the activity's state, namely:
+L'oggetto **state** può assumere diverse forme a seconda dello stato dell'attività, come segue:
 
-**waiting**, state before the operation has started:
+**waiting**, stato prima che l'operazione inizi:
 ```
     waiting: {}
 ```
-**running**, state when the operation is in progress:
-```json
+**running**, stato quando l'operazione è in corso:
+```
     running: {
     status: string;
     startDate: Date;
     progression: number;
     };
 ```
-**failed**, state if the operation failed:
-
-```json
+**failed**, stato se l'operazione è fallita:
+```
     failed: {
     startDate: Date;
     stopDate: Date;
     reason: string;
     };
 ```
-**completed**, state if the operation is completed:
-```json
+**completed**, stato se l'operazione è completata:
+```
     completed: {
     startDate: Date;
     stopDate: Date;
     result: string;
     };
 ```
-**Note: The Identifier (UUIDv4) of the created resource is available in the activity result once it is completed.**
+**Nota: l'Identificativo (UUIDv4) della risorsa creata è disponibile nel risultato dell'attività una volta completata.**
 
-## API Limits
+## Limiti API
 
-### Why limits?
+### Perché dei limiti?
 
-The Cloud Temple console defines __ceilings on the volume of requests__ that a user can send
-to the API over a given period. The establishment of these frequency ceilings is a common measure in API management, adopted for several essential reasons:
+La console Cloud Temple definisce __dei limiti sul volume di richieste__ che un utente può inviare 
+all'API in un periodo di tempo determinato. L'imposizione di questi limiti di frequenza è una misura comune nella gestione delle API, adottata per diversi motivi essenziali:
 
-- **Abuse prevention**: These limits help maintain the integrity of the API by preventing abusive or careless usage that could compromise its operation.
-- **Service Quality Assurance**: By regulating API access, we ensure an equitable distribution of resources, allowing all users to enjoy a stable and high-performance experience.
+- **Prevenzione degli abusi**: Questi limiti contribuiscono a mantenere l'integrità dell'API prevenendo usi
+abusivi o inopportuni che potrebbero compromettere il suo funzionamento.
+- **Garanzia della qualità del servizio**: Regolando l'accesso all'API, assicuriamo una distribuzione equa 
+delle risorse, permettendo a tutti gli utenti di beneficiare di un'esperienza stabile e performante.
 
-Take, for example, a poorly designed or inefficient script that attempts repetitive API calls, risking resource saturation and performance degradation. By establishing request thresholds, we prevent these situations and ensure the maintenance of __a seamless and uninterrupted service__ for all our clientele.
+Prendiamo l'esempio di uno script mal progettato o inefficace che tenta ripetutamente di chiamare l'API,
+rischiando di saturare le risorse e di degradare le prestazioni. Stabilendo dei limiti di richieste,
+preveniamo queste situazioni e assicuriamo il mantenimento di __un servizio fluido e ininterrotto__ per tutta la nostra clientela.
 
-### What are the rate limits for the Cloud Temple console API?
+### Quali sono i limiti di velocità per l'API della console Cloud Temple?
 
-We apply quantitative restrictions on user interactions with the console for each product.
+Applichiamo delle restrizioni quantitative sulle interazioni degli utenti con la console 
+per ogni prodotto.
 
-The limits are defined in __requests per second (r/s) and per source IP__. Beyond the threshold limit, the system will respond with an HTTP 429 error code, indicating that the allowed request limit has been exceeded.
-Here are the defined limits:
+I limiti sono definiti in __richieste al secondo (r/s) per IP di origine__. Al superamento del limite, il sistema risponderà
+con un codice errore HTTP 429, segnalando che è stato superato il limite di richieste consentite.
 
-| Product              | Rate Limit   |
+Ecco i limiti definiti:
+
+| Prodotto             | Soglia limite |
 |----------------------|--------------|
-| Cloud Temple Console | 60 req/s     |
-| Identity (IAM)       | 60 req/s     |
-| IaaS - Compute       | 60 req/s     |
-| IaaS - Storage       | 20 req/s     |
-| IaaS - Backup        | 60 req/s     |
-| PaaS - S3            | 60 req/s     |
-| PaaS - Openshift     | 60 req/s     |
-| Network              | 60 req/s     |
-| Hosting              | 60 req/s     |
+| Console Cloud Temple | 60 r/s       |
+| Identità (IAM)       | 60 r/s       |
+| IaaS - Calcolo       | 60 r/s       |
+| IaaS - Archiviazione | 20 r/s       |
+| IaaS - Backup        | 60 r/s       |
+| PaaS - S3            | 60 r/s       |
+| PaaS - Openshift     | 60 r/s       |
+| Rete                 | 60 r/s       |
+| Hosting              | 60 r/s       |
 
-### How do rate limits work?
+### Come funzionano i limiti di velocità?
 
-If the number of requests sent to an API endpoint exceeds the allowed limit, the API endpoint will respond
-__with an HTTP 429 response code__. This code indicates that the user has exceeded the number of allowed requests.
-When this occurs, the API endpoint will also provide a JSON object as a response,
-which will contain detailed information about the applied rate limit:
-
-```json
+Se il numero di richieste inviate a un punto d'API supera il limite consentito, il punto d'API reagirà restituendo 
+__un codice di risposta HTTP 429__. Questo codice indica che l'utente ha superato il numero di richieste permesse.
+Quando ciò avviene, il punto d'API fornirà anche un oggetto JSON come risposta,
+che conterrà informazioni dettagliate sulla limitazione applicata:
+```
     {
         "error": {
             "status": "429 Too Many Requests",
@@ -158,25 +165,28 @@ which will contain detailed information about the applied rate limit:
         }
     }
 ```
+### Come evitare di effettuare troppe richieste?
 
+Si raccomanda di limitare il numero di chiamate API effettuate dalla vostra automazione al fine di restare sotto 
+il limite di velocità fissato per il punto di applicazione.
 
-### How to avoid making too many requests?
+Questa situazione si verifica spesso quando più richieste sono eseguite in parallelo,
+utilizzando più processi o thread.
 
-It is recommended to limit the number of API calls made by your automation to stay below the rate limit set for the endpoint.
+Esistono diversi modi per migliorare l'efficienza della vostra automazione, tra cui l'uso di meccanismi
+di __caching__ e l'implementazione di __un sistema di retry con backoff progressivo__. Questo metodo consiste
+nell'effettuare una breve pausa quando si incontra un errore di limite di velocità, quindi riprovare la richiesta.
+Se la richiesta fallisce ancora, la durata della pausa aumenta progressivamente fino a quando la richiesta non riesce
+o fino a quando viene raggiunto un numero massimo di retry.
 
-This situation often occurs when multiple requests are executed in parallel,
-using multiple processes or threads.
+Questo approccio presenta molti vantaggi:
 
-There are several ways to improve the efficiency of your automation, including using __caching mechanisms__ and implementing a __progressive backoff retry system__. This method consists of taking a short pause when a rate limit error is encountered, and then retrying the request. If the request fails again, the pause duration is progressively increased until the request succeeds or until a maximum number of retries is reached.
+- __Il backoff progressivo__ garantisce che i primi tentativi siano eseguiti rapidamente, mentre prevede pause più lunghe in caso di errore ripetuto.
+- L'aggiunta di __una variazione casuale__ alla pausa contribuisce a evitare che tutti i tentativi avvengano contemporaneamente.
 
-This approach has many advantages:
+È importante notare che __le richieste fallite non influiscono sul vostro limite di velocità__.
+Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione sostenibile a lungo termine,
+poiché questo comportamento potrebbe essere modificato in futuro. Vi raccomandiamo quindi di non dipendere esclusivamente da questo meccanismo.
 
-- __Gradual backoff__ ensures that initial attempts are made quickly while longer delays are introduced in case of repeated failure.
-- Adding __random jitter__ to the pause helps prevent all attempts from occurring simultaneously.
-
-It is important to note that __unsuccessful requests do not affect your rate limit__.
-However, continuously resending a request may not be a viable long-term solution,
-as this behavior could be altered in the future. Therefore, we recommend not relying solely on this mechanism.
-
-The __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ libraries in Python
-are good starting points for implementing backoff strategies.
+Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python
+sono dei buoni punti di partenza per implementare strategie di backoff.

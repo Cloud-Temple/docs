@@ -4,23 +4,23 @@ title: Identity Access Management
 
 # Identity Access Management
 
-The IAM (Identity Access Management) module of the Cloud Temple console offers a complete solution for identity and access management.
-It allows the administration of local accounts while supporting hybridization with external configurations, compatible with market-standard protocols such as OIDC and SAML, to meet the flexibility and security needs of modern environments.
+El módulo IAM (Identity Access Management) de la consola Cloud Temple ofrece una solución completa para la gestión de identidades y accesos.
+Permite administrar cuentas locales mientras soporta una hibridación con configuraciones externas, compatibles con los protocolos estándar del mercado tales como OIDC y SAML, para responder a las necesidades de flexibilidad y seguridad de los entornos modernos.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the essential foundations and principles to understand and master our infrastructure.</p>
-    <a href="concepts" class="card-link">Explore the concepts &rarr;</a>
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Start quickly with our resources by following clear and simple instructions.</p>
-    <a href="quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y simples.</p>
+    <a href="quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="tutorials" class="card-link">Discover the tutorials &rarr;</a>
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>

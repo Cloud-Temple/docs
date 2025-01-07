@@ -2,69 +2,80 @@
 title: Concepts
 ---
 
-## Elastic Cloud Storage (ECS): A Benchmark Solution
+## Elastic Cloud Storage (ECS) : una solución de referencia
 
-Cloud Temple's object storage offering is based on Dell's __Elastic Cloud Storage (ECS)__ technology, renowned for its high performance and adherence to industry standards. With **97% compatibility with the AWS S3 protocol**, this solution ensures:
+La oferta de almacenamiento de objetos Cloud Temple se basa en la tecnología __Elastic Cloud Storage (ECS)__ de Dell, reconocida por su alto rendimiento y su cumplimiento con los estándares industriales. Con una compatibilidad del **97% con el protocolo AWS S3**, esta solución asegura:
 
-- Easy and standardized integration;
-- Increased flexibility for users;
-- Smooth transition to a modern storage infrastructure.
-
----
-
-## Security Commitments and Certifications
-
-Cloud Temple is committed to ensuring data security through recognized certifications:
-
-- **SecNumCloud**: Qualification granted by ANSSI, ensuring data sovereignty and security within a French and European framework.
-- **HDS (Health Data Hosting)**: Compliance with stringent requirements for sensitive medical data.
-- **ISO 27001**: Adherence to best practices in information security.
+- Una integración fácil y estandarizada;
+- Una mayor flexibilidad para los usuarios;
+- Una transición fluida hacia una infraestructura de almacenamiento moderna.
 
 ---
 
-## Advanced Encryption for Optimal Protection
+## Compromisos de seguridad y certificaciones
 
-Data encryption is systematically applied, ensuring their security at every stage:
+Cloud Temple se compromete a garantizar la seguridad de los datos gracias a certificaciones reconocidas:
 
-- **In transit**: Protection via the __TLS 1.3__ protocol.
-- **At rest**: Three options tailored to user needs:
-  - **SSE-ECS**: Keys managed by Cloud Temple for simplified management.
-  - **SSE-C**: Keys provided by the client for increased control.
-  - **CSE**: Encryption performed by the client for maximum security.
-
-| Encryption Model              | Advantages                              | Disadvantages                     |
-| ----------------------------- | --------------------------------------- | --------------------------------- |
-| **SSE-ECS**                   | Simplified and transparent management   | Less control over keys            |
-| **SSE-C**                    | Full control over the keys              | Key management required            |
-| **CSE**                      | Maximum security                       | Complexity and impact on performance |
+- **SecNumCloud**: Calificación otorgada por la ANSSI, asegurando soberanía y seguridad de los datos en un marco francés y europeo.
+- **HDS (Hébergement de Données de Santé)**: Conformidad con los estrictos requisitos para los datos médicos sensibles.
+- **ISO 27001**: Adherencia a las mejores prácticas en materia de seguridad de la información.
 
 ---
 
-## Guaranteed Service Levels
+## Cifrado avanzado para una protección óptima
 
-Cloud Temple offers a highly reliable infrastructure with clear commitments:
+El cifrado de los datos se aplica de manera sistemática, asegurando su seguridad en cada etapa:
 
-| Commitment                       | Target                         |
-| -------------------------------- | ------------------------------ |
-| Availability                     | 99.99% (includes maintenance)  |
-| Data durability                  | 99.99999999%                   |
-| Guaranteed network bandwidth     | 1 Gbps                         |
+- **En tránsito**: Protección a través del protocolo __TLS 1.3__.
+- **En almacenamiento**: Tres opciones adaptadas a las necesidades de los usuarios:
+  - **SSE-ECS**: Claves gestionadas por Cloud Temple para una gestión simplificada.
+  - **SSE-C**: Claves proporcionadas por el cliente para un mayor control.
+  - **CSE**: Cifrado realizado por el cliente para una máxima seguridad.
 
-## The Storage Account
+| Modelo de cifrado             | Ventajas                              | Inconvenientes                     |
+| ----------------------------- | ------------------------------------- | ---------------------------------- |
+| **SSE-ECS**                   | Gestión simplificada y transparente   | Menos control sobre las claves     |
+| **SSE-C**                     | Control total sobre las claves        | Gestión de claves necesaria        |
+| **CSE**                       | Máxima seguridad                      | Complejidad e impacto en el rendimiento |
 
-A **Storage Account** is a logical entity that possesses an **Access Key** and a **Secret Key** used to authenticate and secure interactions with a bucket.
+---
 
-It is on this account that the roles and permissions associated with the **buckets** are positioned, allowing precise control over access and authorized actions for each user or service.
+## Niveles de servicio garantizados
 
+Cloud Temple ofrece una infraestructura altamente fiable con compromisos claros:
 
-## The "bucket" in the object storage ecosystem
-An S3 bucket, popularized by the Amazon Simple Storage Service (Amazon S3), is **a public storage container** in the cloud designed to securely, reliably, and highly available store an unlimited amount of data. Each S3 bucket can store files (called "objects" in S3), ranging from documents and images to large databases or video files. Buckets are used to logically organize storage space within Cloud Temple object storage, and each bucket is identified by a unique name provided by the user. S3 buckets offer advanced features, such as versioning management, data securing via access control policies, and the possibility of immutability.
+| Compromiso                        | Objetivo                        |
+| --------------------------------- | ------------------------------- |
+| Disponibilidad                    | 99.99% (incluye el mantenimiento)|
+| Durabilidad de los datos          | 99,99999999%                    |
+| Ancho de banda de red garantizado | 1 Gbp/segundo                   |
 
-## Region deployment
-Cloud Temple S3 storage natively stores data across __three distinct availability zones__ within the same Cloud Temple region. This architecture is designed to offer high availability and maximum resilience against hardware or software failures:
-- Erasure Coding (EC): By default, we use a 12+4 EC scheme, which divides data into 12 data segments and 4 parity segments. This technique allows data to be reconstructed even in the event of multiple segment losses.
-- Data Distribution: EC segments are distributed across different nodes and racks, ensuring protection against disk, node, and even entire rack failures.
-- Geographic Replication: For additional protection, data is replicated across 3 availability zones, providing resilience against local disasters.
+## La cuenta de almacenamiento
 
-This replication ensures that even in the event of a zone failure, data remains accessible and intact,
-contributing to a highly resilient storage infrastructure.
+Un **Storage Account** es una entidad lógica que posee una **Access Key** y una **Secret Key** utilizadas para autenticar y asegurar las interacciones con un bucket. 
+Es en esta cuenta donde se asignan los roles y permisos asociados a los **buckets**, permitiendo controlar de manera precisa los accesos y las acciones autorizadas para cada usuario o servicio.
+
+## El "bucket" en el ecosistema del almacenamiento de objetos
+
+Un bucket S3, popularizado por el servicio Amazon Simple Storage Service (Amazon S3), es **un contenedor de almacenamiento público** en la nube diseñado para almacenar una cantidad ilimitada de datos de manera segura, fiable y altamente disponible. Cada bucket S3 puede almacenar archivos (llamados "objetos" en S3), que van desde documentos e imágenes hasta grandes bases de datos o archivos de vídeo. Los buckets se utilizan para organizar el espacio de almacenamiento de manera lógica dentro del almacenamiento de objetos Cloud Temple, y cada bucket es identificado por un nombre único proporcionado por el usuario. Los buckets S3 ofrecen funcionalidades avanzadas, como la gestión de versiones, la seguridad de los datos a través de políticas de control de acceso y la posibilidad de inmutabilidad.
+
+## Despliegue de tipo regional
+
+El almacenamiento S3 Cloud Temple almacena los datos de manera nativa en __tres zonas de disponibilidad distintas__ dentro de una misma región Cloud Temple. Esta arquitectura está diseñada para ofrecer una alta disponibilidad y una máxima resiliencia frente a fallas de hardware o software:
+- Erasure Coding (EC): Utilizamos por defecto un esquema EC 12+4, que divide los datos en 12 segmentos de datos y 4 segmentos de paridad. Esta técnica permite reconstruir los datos incluso en caso de pérdida de varios segmentos.
+- Distribución de los datos: Los segmentos EC se distribuyen en diferentes nodos y racks, asegurando una protección contra fallas de discos, nodos e incluso racks enteros.
+- Replicación geográfica: Para una protección adicional, los datos se replican en 3 zonas de disponibilidad, ofreciendo una resiliencia frente a desastres locales.
+
+Esta replicación asegura que incluso en caso de falla de una zona, los datos permanecen accesibles e intactos, contribuyendo así a una infraestructura de almacenamiento altamente resiliente.
+
+## Tamaño máximo de archivo que puede ser manejado con la consola web
+
+El límite en web es de 40MB por archivo. Más allá de eso, se debe usar un cliente S3 nativo con la API.
+
+## ¿Utiliza la oferta S3 Cloud Temple el método 'PathStyle'?
+
+Debido a las restricciones asociadas con la calificación SecNumCloud, en este momento, la oferta está prevista para utilizar el método '**PathStyle**'. Estamos trabajando para que el método '**UrlStyle**' esté disponible en S1 2025.
+
+## Número máximo de buckets por tenant
+
+El número máximo de buckets por tenant es de 999.

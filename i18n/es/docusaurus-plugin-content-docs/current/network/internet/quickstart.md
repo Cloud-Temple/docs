@@ -3,49 +3,49 @@ title: Quickstart
 ---
 
 
-## Managing Your Internet Connectivities
+## Gestión de sus conectividades a Internet
 
-Connectivity management is performed via the **'Network'** > **'Internet'** menu. This menu centralizes IP address management and offers two distinct categories:
+La gestión de la conectividad se realiza a través del menú **'Red'** > **'Internet'**. Este menú centraliza la gestión de las direcciones IP, ofreciendo dos categorías distintas:
 
-1. **Public IP Addresses**: These are used to expose your services on the Internet, facilitating incoming and outgoing data exchanges.
-2. **Interconnection IP Addresses**: These addresses allow your gateways to route traffic to the specific Cloud Temple network, ensuring a secure and efficient connection.
+1. **Direcciones IP Públicas**: se utilizan para exponer sus servicios en Internet, facilitando así los intercambios de datos entrantes y salientes.
+2. **Direcciones IP de Interconexión**: estas direcciones permiten que sus puertas de enlace dirijan el tráfico hacia la red específica de Cloud Temple, asegurando una conexión segura y eficiente.
 
-Public IP addresses enable Internet access, while interconnection IP addresses used with the BGP4 protocol ensure secure network connections. The latter facilitate reliable and secure exchanges between your tenant and the Cloud Temple network. The combined use of these addresses improves traffic management and strengthens network security and performance.
+Las direcciones IP públicas permiten el acceso a Internet, mientras que las direcciones IP de interconexión utilizadas con el protocolo BGP4 aseguran conexiones seguras entre redes. Estas últimas facilitan intercambios confiables y seguros entre su tenant y la red de Cloud Temple. El uso conjunto de estas direcciones mejora la gestión del tráfico y refuerza la seguridad y el rendimiento de la red.
 
-Here is the main interface for IP address management:
+Aquí está la interfaz principal para la gestión de las direcciones IP:
 
 ![](images/shiva_inet_001.png)
 
-The home tab corresponds to your internal ASN dedicated to your tenant. It indicates important information for configuring your BGP connectivity.
+La pestaña de inicio corresponde a su ASN interno dedicado a su tenant. Indica, especialmente, la información importante para la configuración de su conectividad BGP.
 
-### Public IP Addresses
+### Direcciones IP públicas
 
-It is possible to view and comment on the IP blocks and addresses associated with your tenant via the IPAM integrated into the Cloud Temple console:
+Es posible ver y comentar los bloques y direcciones de IP asociados a su tenant a través del IPAM integrado en la consola Cloud Temple:
 
 ![](images/shiva_inet_002.png)
 
-Public IP address ordering is done via the **'Order Public IPs'** button:
+La orden de direcciones IP públicas se realiza a través del botón **'Solicitar IPs públicas'** :
 
 ![](images/shiva_inet_003.png)
 
-Reservation and allocation of an IP address are done via the **'Reserve an Address'** button:
+La reserva y asignación de una dirección IP se realizan a través del botón **'Reservar una dirección'** :
 
 ![](images/shiva_inet_004.png)
 
-Modification or deletion of the reservation is done via the **'Actions'** buttons:
+La modificación o eliminación de la reserva mediante los botones **'Acciones'** :
 
 ![](images/shiva_inet_005.png)
 
-Deleting a reservation means that the resource becomes available for another use but remains allocated and billed to the client.
+Eliminar una reserva significa que el recurso se vuelve disponible para otro uso, pero sigue asignado y facturado al cliente.
 
-On some lines, the **'Action'** button is not available, indicating that the IP addresses are reserved and thus not available for use.
+En algunas líneas, el botón **'Acción'** no está disponible, indicando que las direcciones IP están reservadas y, por lo tanto, no disponibles para uso.
 
-### Interconnection IP Addresses
+### Direcciones IP de interconexión
 
-Similarly, you can view and comment on interconnection IP blocks. You can view the interconnection sub-networks with the Cloud Temple network and their usage:
+De la misma manera, usted puede ver y comentar los bloques de direcciones IP de interconexión. Puede visualizar las sub-redes de interconexión con la red Cloud Temple y su uso:
 
 ![](images/shiva_inet_008.png)
 
-You can easily modify, as with public addresses, their usage in the integrated IPAM management:
+Puede modificar fácilmente, como en el caso de las direcciones públicas, su uso en la gestión IPAM integrada:
 
 ![](images/shiva_inet_007.png)

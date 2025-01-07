@@ -3,7 +3,7 @@ title: Tutorials
 ---
 
 <div class="card">
-  <h3>FAQ</h3>
-  <p>No tutorials are available at the moment, but we are actively working on it. Check back soon to learn more!</p>
-  <a href="../" class="card-link">Access the FAQ page &rarr;</a>
+  <h3>Tutorials</h3>
+  <p>Ningún tutorial está disponible por el momento, pero estamos trabajando activamente en ello. ¡Vuelve pronto para saber más!</p>
+  <a href="../" class="card-link">Acceder a la página de inicio &rarr;</a>
 </div>

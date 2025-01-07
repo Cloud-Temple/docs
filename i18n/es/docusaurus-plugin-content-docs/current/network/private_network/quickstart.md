@@ -2,76 +2,73 @@
 title: Quickstart
 ---
 
-## Regional Private Networks
+## Redes privadas regionales
 
-The command for private networks within a region is executed directly in the Cloud Temple console.
+La administración de las redes privadas dentro de una región se realiza directamente en la consola Cloud Temple.
 
-### Within a tenant
+### Dentro de un tenant
 
-The creation of a virtual network is done in the __*Network*__ menu on the green banner to the left of the screen.
+La creación de una red virtual se realiza en el menú __*Network*__ en la barra verde a la izquierda de la pantalla.
 
 ![](images/shiva_network_001.jpg)
 
-Then click on the __*New Network*__ button.
+Luego, haga clic en el botón __*Nuevo red*__
 
-You need to specify the name of your network which will be displayed. By default, all of your clusters will access your new network.
-However, in the __*Advanced Options*__ submenu, you can more finely specify the scope of propagation within the tenant between your different clusters.
+Debe especificar el nombre de su red que se mostrará. Por defecto, todos sus clústeres accederán a su nueva red. Sin embargo, en el submenú __*Opciones Avanzadas*__, puede especificar más finamente el alcance de la propagación dentro del tenant entre sus diferentes clústeres.
 
 ![](images/shiva_network_002.jpg)
 
-All possible actions on your networks can be found in the __*Actions*__ menu of each of them:
+Todas las acciones posibles en sus redes se encuentran en el menú __*Acciones*__ de cada una de ellas:
 
-- Enabling the sharing of a network between tenants of the same organization.
-- Disabling the sharing of a network between tenants of the same organization.
-- Adding the sharing of a network between tenants of the same organization.
-- Removing the sharing of a network between tenants of the same organization.
-- Graphical visualization of the propagation of a network across all your clusters and hypervisors within a tenant.
-- Removing propagation within a tenant.
-- Modifying propagation within a tenant.
-- Removing a network.
+- La activación del compartir de una red entre tenant de una misma organización.
+- La desactivación del compartir de una red entre tenant de una misma organización.
+- La adición de un compartir de una red entre tenant de una misma organización.
+- La eliminación de un compartir de una red entre tenant de una misma organización.
+- La visualización gráfica de la propagación de una red en todos sus clústeres y sus hipervisores dentro de un tenant.
+- La eliminación de una propagación dentro de un tenant.
+- La modificación de una propagación dentro de un tenant.
+- La eliminación de una red.
 
 ![](images/shiva_network_003.jpg)
 
-#### Visualization of your networks' propagation
+#### Visualización de la propagación de sus redes
 
-You can easily visualize the propagation of a network to your different clusters within the same tenant in the __*Actions*__ menu:
-Choose the option *"Visualize Propagation"*:
+Puede visualizar fácilmente en el menú __*Acciones*__ la propagación de una red hacia sus diferentes clústeres dentro de un mismo tenant. Elija la opción *"Visualizar la propagación"*:
 
-![](images/shiva_network_004.jpg) 
+![](images/shiva_network_004.jpg)
 
-#### Modification of propagation
+#### Modificación de la propagación
 
-The modification of propagation within a tenant is done via the *"Propagate"* option:
-then choose the clusters to be included in this propagation.
+La modificación de una propagación dentro de un tenant se realiza mediante la opción *"Propagar"*:
+luego, elija los clústeres que deben ser integrados a esta propagación.
 
 ![](images/shiva_network_005.jpg)
 
-__*Note:*__ *Propagation modification is limited to 20 networks per action.*
+__*Nota:*__ *La modificación de la propagación está limitada a 20 redes por acción.*
 
-#### Deletion of a network
+#### Eliminación de una red
 
-The deletion of a network within a tenant is done via the *"Delete Network"* option:
+La eliminación de una red dentro de un tenant se realiza mediante la opción *"Eliminar la red"*:
 
 ![](images/shiva_network_006.jpg)
 
-### Network sharing between tenants
+### Compartir red entre tenants
 
-By default, __networks are only available within a tenant__. You can choose to __share a network between multiple tenants__ for technical or connectivity reasons.
-It is thus possible to share a network between your __[tenants](../../console/tenants.md)__ within the same organization.
+Por defecto, __las redes están disponibles solo dentro de un tenant__. Puede elegir __compartir una red entre varios tenants__ por razones técnicas o de conectividad.
+Es posible compartir una red entre sus __[Tenant](../../../console/iam/concepts/#tenant)__ dentro de una misma organización.
 
-Simply activate the sharing as shown below.
+Solo debe activar el compartir como se muestra a continuación.
 
 ![](images/shiva_network_vn_share_enabled.png)
 
-Once sharing activation is done, you just need to add a share as shown below.
+Una vez realizada la activación del compartir, simplemente añada un compartir como se muestra a continuación.
 
 ![](images/shiva_network_vn_shared.png)
 
-Then, select the target tenant. Note that the list of tenants is dynamic.
-It depends on your organization and your rights.
+Luego, seleccione el tenant objetivo. Tenga en cuenta que la lista de tenants es dinámica. Depende de su organización y de sus derechos.
 
 ![](images/shiva_network_vn_shared_tenant.png)
 
-Once the network is shared, it will be visible in the 'Shared Networks' tab from your second tenant.
+Una vez compartida la red, será visible en la pestaña 'Redes compartidas' desde su segundo tenant.
 
 ![](images/shiva_network_vn_shared_with_me.png)

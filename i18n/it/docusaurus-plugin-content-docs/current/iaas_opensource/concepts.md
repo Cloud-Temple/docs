@@ -2,58 +2,58 @@
 title: Concepts
 ---
 
-The __IaaS (Infrastructure As A Service)__ offer from Cloud Temple is designed to meet critical continuity and disaster recovery needs, with a particular focus on demanding sectors such as industry, banking, and insurance. Based on cutting-edge technologies, this infrastructure guarantees maximum availability and optimal performance for your critical workloads.
+L'offre __IaaS (Infrastructure As A Service)__ de Cloud Temple è progettata per rispondere alle esigenze critiche di continuità e ripristino dell'attività, con un'attenzione particolare ai settori esigenti come l'industria, la banca e l'assicurazione. Basata su tecnologie all'avanguardia, questa infrastruttura garantisce una disponibilità massima e una performance ottimale per i tuoi carichi di lavoro critici.
 
-## A Reliable Technological Platform
+## Una piattaforma tecnologica di fiducia
 
-Cloud Temple's IaaS platform relies on internationally renowned technological partners:
+La piattaforma IaaS di Cloud Temple si basa su partner tecnologici di fama internazionale:
 
-- Compute: **CISCO UCS**.
-- Storage: **IBM Spectrum Virtualize**, **IBM FlashSystem** for block storage, and **DELL ECS** for object storage.
-- Network: **JUNIPER**.
-- Virtualization: **Open Source Stack**, providing a reliable and proven base to manage your cloud environments.
+- Calcolo: **CISCO UCS**.
+- Storage: **IBM Spectrum Virtualize**, **IBM FlashSystem** per lo storage a blocchi, e **DELL ECS** per lo storage a oggetti.
+- Rete: **JUNIPER**.
+- Virtualizzazione: **Stack Opensource**, offrendo una base affidabile e collaudata per gestire i tuoi ambienti cloud.
 
-This architecture is based on the **VersaStack** model, an alliance between Cisco and IBM, ensuring extensive compatibility with major software vendors.
+Questa architettura si basa sul modello **VersaStack**, un'alleanza tra Cisco e IBM, garantendo una compatibilità estesa con i principali fornitori di software.
 
-## A Dedicated and Automated Infrastructure
+## Un'infrastruttura dedicata e automatizzata
 
-Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offer provides a unique infrastructure:
+Sebbene completamente automatizzata grazie ad API e un provider Terraform, l'offerta IaaS di Cloud Temple propone un'infrastruttura unica:
 
-- **Dedicated resources**: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared between clients.
-- **Maximum predictability**: You control the virtualization rates, IOPS pressure on storage, and benefit from clear, monthly usage-based billing.
+- **Risorse dedicate**: Le lame di calcolo, i volumi di storage e gli stack software (virtualizzazione, backup, firewalling, ecc.) non sono mai condivisi tra i clienti.
+- **Predicibilità massima**: Hai il controllo sui tassi di virtualizzazione, sulla pressione in IOPS sullo storage e beneficerai di una fatturazione chiara, a consumo mensile.
 
-The platform is **SecNumCloud** qualified by the [ANSSI](https://www.ssi.gouv.fr/), guaranteeing a high level of automation and security.
+La piattaforma è qualificata **SecNumCloud** da [ANSSI](https://www.ssi.gouv.fr/), garantendo un alto livello di automazione e sicurezza.
 
-## Key Features
+## Funzionalità principali
 
-- On-demand dedicated compute resources (CPU, RAM).
-- On-demand storage (several classes available).
-- Network resources (Internet, private networks).
-- Cross-backups with configurable retention.
-- Asynchronous replication for storage or virtual machines.
-- Management via the [Shiva Console](../console/console.md) or in Infrastructure as Code mode thanks to APIs and the Terraform provider.
+- Risorse di calcolo (CPU, RAM) dedicate e su richiesta.
+- Storage su richiesta (sono disponibili diverse classi).
+- Risorse di rete (Internet, reti private).
+- Backup incrociati con retention configurabile.
+- Replica asincrona per lo storage o le macchine virtuali.
+- Gestione tramite la [Console Shiva](../console/console.md) o in modalità Infrastructure as Code grazie alle API e al provider Terraform.
 
-## Benefits
+## Vantaggi
 
-| Benefit             | Description                                                                                                                                   |   
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Digital Trust       | Data hosting in France and GDPR compliance.                                                                                                   |   
-| Security            | Highly secure platform, **SecNumCloud** qualified, **HDS** (Health Data Hosting), **ISO 27001** and **ISAE 3402 type II** certified.            |  
-| High Availability   | Platform availability rate of 99.99%, measured monthly, including maintenance windows.                                                         |   
-| Resilience          | Implementation of continuity or disaster recovery plans according to needs.                                                                   |
-| Automation          | Fully automated platform designed to integrate into a digital transformation program.                                                          |
-| On demand           | Resources available on demand.                                                                                                                |
+| Vantaggio           | Descrizione                                                                                                                                    |   
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Fiducia digitale    | Hosting dei dati in Francia e conformità RGPD.                                                                                                 |   
+| Sicurezza           | Piattaforma altamente sicura, qualificata **SecNumCloud**, **HDS** (Hosting di Dati Sanitari), **ISO 27001** e **ISAE 3402 tipo II**.          |  
+| Alta disponibilità  | Tasso di disponibilità della piattaforma del 99,99%, misurato mensilmente, finestre di manutenzione incluse.                                   |   
+| Resilienza          | Implementazione di piani di continuità o di ripristino dell'attività in base alle esigenze.                                                    |
+| Automazione         | Piattaforma completamente automatizzata pensata per integrarsi in un programma di trasformazione digitale.                                     |
+| On demand           | Risorse disponibili su richiesta.                                                                                                              |
 
-## Purchase Platforms
+## Piattaforme d'acquisto
 
 <div class="purchase-platforms">
-  <p>Are you a public sector actor? The <strong>Cloud Temple IaaS</strong> offer is accessible via:</p>
+  <p>Sei un attore del settore pubblico? L'offerta <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
   
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        The UGAP public procurement platform
+        La piattaforma di acquisti pubblici UGAP
       </a>
     </p>
   </div>
@@ -62,12 +62,12 @@ The platform is **SecNumCloud** qualified by the [ANSSI](https://www.ssi.gouv.fr
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        The CAIH market for the medical sector
+        Il mercato CAIH per il settore medico
       </a>
     </p>
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Learn more &rarr;
+    Scopri di più &rarr;
   </a>
 </div>

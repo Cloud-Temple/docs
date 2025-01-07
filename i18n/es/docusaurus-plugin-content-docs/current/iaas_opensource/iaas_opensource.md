@@ -1,31 +1,26 @@
 ---
-title: Overview
+title: Vista general
 ---
 
-## The Open Source IaaS Product from Cloud Temple: A Unique Alliance of Performance, Security, and Transparency.
+## El producto IaaS de código abierto de Cloud Temple: una alianza única entre rendimiento, seguridad y transparencia.
 
-This offer guarantees complete control over your critical environments while ensuring security, continuity, and regulatory compliance.
-With scalable resources and automated management, you benefit from a high-performance infrastructure tailored to your needs. Embrace the power of Open Source with the reliability and support of Cloud Temple.
+Esta oferta garantiza un control total de sus entornos críticos, mientras asegura seguridad, continuidad y cumplimiento normativo.
+Con recursos escalables y una gestión automatizada, se beneficia de una infraestructura de alto rendimiento adaptada a sus necesidades. Adopte el poder del código abierto con la fiabilidad y soporte de Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the essential foundations and principles to understand and master our infrastructure.</p>
-    <a href="concepts" class="card-link">Explore the concepts &rarr;</a>
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="quickstart" class="card-link">Lanzar el Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="tutorials" class="card-link">Discover the tutorials &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>FAQ</h3>
-    <p>Find answers to frequently asked questions to quickly resolve your issues.</p>
-    <a href="faq" class="card-link">Consult the FAQ &rarr;</a>
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>
