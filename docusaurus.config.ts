@@ -21,7 +21,7 @@ const config: Config = {
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs',
+  baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -134,15 +134,15 @@ const config: Config = {
           items: [
             {
               label: 'Privacy',
-              to: '/docs/privacy/',
+              to: '/docs/docs/privacy/',
             },
             {
               label: 'UGAP',
-              to: '/docs/market_place_public',
+              to: '/docs/docs/market_place_public',
             },
             {
               label: 'CAIH',
-              to: '/docs/market_place_public',
+              to: '/docs/docs/market_place_public',
             },
           ],
         },
