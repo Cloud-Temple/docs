@@ -21,5 +21,23 @@ L’offre Red Hat OpenShift de Cloud Temple combine la puissance d’une platefo
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
+    </div>
+    <div class="card">
+    <h3>MCO/MCS</h3>
+    <p>Consultez nos politiques de maintien en conditions opérationnelles et de maintien en conditions de sécurité.</p>
+    <a href="mco_mcs" class="card-link">Consulter nos politques &rarr;</a>
+  </div>
+    </div>
+    <div class="card">
+    <h3>RACI</h3>
+    <p>Consultez les matrices de responsabilités.</p>
+    <a href="/governance/paas/service_agreement_paas" class="card-link">Consulter les responsabilités &rarr;</a>
+  </div>
+  </div>
+    <div class="card">
+    <h3>PaaS Service Agreement</h3>
+    <p>Accéder à nos conventions de services sur l'offre Plateform as a service.</p>
+    <a href="/governance/paas/service_agreement_paas" class="card-link">Consulter nos conventions &rarr;</a>
+  </div>
 </div>
 
