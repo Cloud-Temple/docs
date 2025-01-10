@@ -110,6 +110,17 @@ const sidebars: SidebarsConfig = {
         'paas_openshift/concepts',
         'paas_openshift/quickstart',
         'paas_openshift/tutorials',
+        'governance/paas/mco_mcs',
+        {
+          type: 'doc',
+          label:'RACI',
+          id:'governance/paas/raci'
+        },
+        {
+          type:'doc',
+          label:'Service Agreement',
+          id:'governance/paas/service_agreement_paas'
+        }
       ],
     },
     {
