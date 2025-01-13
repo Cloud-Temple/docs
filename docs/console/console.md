@@ -19,7 +19,7 @@ Grâce à la **Console**, vous pouvez superviser et exploiter vos infrastructure
 
   <div class="card">
     <h3>Support</h3>
-    <p>Visualisartion des opérations planifiées et gestion des Incidents</p>
+    <p>Visualisation des opérations planifiées et gestion des Incidents</p>
     <a href="status" class="card-link">C'est ici &rarr;</a>
   </div>
 
