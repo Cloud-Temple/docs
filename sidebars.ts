@@ -109,7 +109,16 @@ const sidebars: SidebarsConfig = {
         'paas_openshift/paas_openshift',
         'paas_openshift/concepts',
         'paas_openshift/quickstart',
-        'paas_openshift/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'paas_openshift/first_steps',
+            'paas_openshift/tutorials/deploy-through-helmfile',
+            'paas_openshift/tutorials/deploy-vm-with-kubevirt',
+            'paas_openshift/tutorials/using-kasten'
+          ]
+        },
         'governance/paas/mco_mcs',
         {
           type: 'doc',
