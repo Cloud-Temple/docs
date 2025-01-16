@@ -1,9 +1,9 @@
 ---
-title: Quickstart
+title: Guida introduttiva
 ---
 
 <div class="card">
   <h3>Quickstart</h3>
-  <p>Al momento non è disponibile alcun Quickstart, ma ci stiamo lavorando attivamente. Torna presto per saperne di più!</p>
-  <a href="../" class="card-link">Accedere alla pagina principale &rarr;</a>
+  <p>Nessun Quickstart è disponibile al momento, ma ci stiamo lavorando attivamente. Torna presto per saperne di più!</p>
+  <a href="../" class="card-link">Vai alla Home page &rarr;</a>
 </div>
