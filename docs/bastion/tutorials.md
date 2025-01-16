@@ -1,5 +1,5 @@
 ---
-title: Tutorials
+title: Tutoriels
 ---
 
 Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis le portail Shiva. 

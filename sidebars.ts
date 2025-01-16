@@ -64,6 +64,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Bare Metal',
+      items: [
+        'iaas_bare-metal/iaas_bare-metal',
+        'iaas_bare-metal/concepts',
+        'iaas_bare-metal/quickstart',
+        'iaas_bare-metal/tutorials',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Bastion',
       items: [
         'bastion/bastion',

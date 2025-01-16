@@ -1,5 +1,5 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
 
 ## Réseaux privés régionaux

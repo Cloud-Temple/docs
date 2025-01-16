@@ -44,30 +44,47 @@ La plateforme est qualifiée **SecNumCloud** par l'[ANSSI](https://www.ssi.gouv.
 | Automatisation      | Plateforme entièrement automatisée pensée pour s'intégrer dans un programme de transformation numérique.                                        |
 | On demand           | Ressources disponibles à la demande.                                                                                                          |
 
-## Plateformes d'achat
 
-<div class="purchase-platforms">
-  <p>Vous êtes un acteur du secteur public ? L’offre <strong>IaaS Cloud Temple</strong> est accessible via :</p>
-  
-  <div class="platform-card">
-    <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
-    <p>
-      <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        La plateforme d’achats publics UGAP
-      </a>
-    </p>
-  </div>
-  
-  <div class="platform-card">
-      <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
-    <p>
-      <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        Le marché CAIH pour le secteur médical
-      </a>
-    </p>
-  </div>
+## Classes de lames de calcul
 
-  <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    En savoir plus &rarr;
-  </a>
-</div>
+Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de performances pour répondre à divers besoins :
+
+| Référence             | RAM  __(1)__ | Fréquence __(2)__                         | Nombre de cœurs / threads | Connectivité __(3)__ | GPU __(4)__          | 
+|-----------------------|--------------|-------------------------------------------|---------------------------|----------------------|----------------------|
+| **ECO**              | 384 Go       | 2.20/3.0 GHz (Silver 4114 ou équivalent)  | 20 / 40 threads           | 2 X 10 Gbit/s        | -                    |
+| **STANDARD**         | 384 Go       | 2.40/3.4 GHz (Silver 4314 ou équivalent)  | 32 / 64 threads           | 2 X 25 Gbit/s        | -                    |
+| **ADVANCE**          | 768 Go       | 2.80/3.5 GHz (Gold 6342 ou équivalent)    | 48 / 96 threads           | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 1**    | 384 Go       | 3.20/3.6 GHz (Xeon E-53I5Y ou équivalent) | 16 / 32 threads           | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 2**    | 768 Go       | 3.00/3.6 GHz (Gold 6354 ou équivalent)    | 36 / 72 threads           | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 3**    | 1536 Go      | 2.60/3.5 GHz (Gold 6348 ou équivalent)    | 56 / 112 threads          | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 4**    | 512 Go       | 2.50/4.1 GHz (Intel 6426Y ou équivalent)  | 32 / 64 threads           | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48Go |
+
+### Notes :
+- __(1)__ La quantité de mémoire est celle physiquement disponible sur les lames et ne peut être modifiée.
+- __(2)__ Les fréquences indiquées correspondent à la fréquence de base minimum et à la fréquence turbo.
+- __(3)__ La connectivité physique est mutualisée pour l'accès réseau et l'accès stockage bloc, grâce à une architecture convergée Cisco UCS.
+- __(4)__ Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, l'offre inclut des GPU NVIDIA LOVELACE L40S.
+
+La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellement, plages de maintenance incluses. Toute demande liée au SLA doit être déclarée via un ticket incident.
+
+---
+
+## Classes de stockage en mode bloc
+
+Le stockage bloc distribué, basé sur **IBM Spectrum Virtualize**, offre une gamme de performances adaptées à divers cas d'utilisation :
+
+| Référence                         | IOPS/To                 | Usage principal                        | 
+|-----------------------------------|-------------------------|----------------------------------------|
+| **FLASH - Essentiel**             | 500                     | Charges de travail légères             |
+| **FLASH - Standard**              | 1500                    | Charges de travail standard            |
+| **FLASH - Premium**               | 3000                    | Charges intensives                     |
+| **FLASH - Enterprise**            | 7500                    | Charges critiques                      |
+| **FLASH - Ultra**                 | 15000                   | Charges ultra-intensives               |
+| **MASS STORAGE - Archivage**      | Non applicable          | Stockage économique pour l'archivage   |
+
+### Caractéristiques :
+- **Technologie** : Flash NVMe avec **Distributed RAID 6** pour une résilience accrue.
+- **Disponibilité** : 99.99%, mesurée mensuellement.
+- **Restrictions** : Pas de limitation sur les lectures ou écritures. Pas de compression ou de déduplication automatique, garantissant l'utilisation intégrale des volumes réservés.
+
+---
