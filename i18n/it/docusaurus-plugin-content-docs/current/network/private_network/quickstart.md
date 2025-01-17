@@ -1,78 +1,77 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
 
-## Reti privati regionali
+## Réseaux privés régionaux
 
-L'ordine delle reti private all'interno di una regione si realizza direttamente nella console Cloud Temple. 
+La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple.
 
-### All'interno di un tenant
+### Au sein d'un tenant
 
-La creazione di una rete virtuale avviene nel menu __*Network*__ sulla banda verde a sinistra dello schermo.
+La création d'un réseau virtuel se fait dans le menu __*Network*__ sur le bandeau vert à gauche de l'écran.
 
 ![](images/shiva_network_001.jpg)
 
-Clicca poi sul pulsante __*Nuova rete*__
+Cliquer ensuite sur le bouton __*Nouveau réseau*__
 
-Devi specificare il nome della tua rete che sarà visualizzato. Per impostazione predefinita, l'insieme dei tuoi cluster accederanno alla tua nuova rete.
-Tuttavia, nel sottomenu __*Opzioni Avanzate*__, puoi specificare più finemente l'estensione della propagazione all'interno del tenant tra i tuoi diversi cluster.
+Vous devez spécifier le nom de votre réseau qui sera affiché. Par défaut, l'ensemble de vos clusters accéderont à votre nouveau réseau.
+Cependant, dans le sous menu __*Options Avancées*__, vous pouvez spécifier plus finement l'étendue de propagation au sein du tenant entre vos différents clusters.
 
 ![](images/shiva_network_002.jpg)
 
-L'insieme delle azioni possibili sulle tue reti si trova nel menu __*Azioni*__ di ciascuno di esse:
+L'ensemble des actions possibles sur vos réseaux se trouve dans le menu __*Actions*__ de chacun d'eux :
 
-- L'attivazione della condivisione di una rete tra tenant della stessa organizzazione.
-- La disattivazione della condivisione di una rete tra tenant della stessa organizzazione.
-- L'aggiunta di una condivisione di una rete tra tenant della stessa organizzazione.
-- La rimozione di una condivisione di una rete tra tenant della stessa organizzazione.
-- La visualizzazione grafica della propagazione di una rete sull'insieme dei tuoi cluster e dei tuoi hypervisor all'interno di un tenant.
-- La rimozione di una propagazione all'interno di un tenant.
-- La modifica di una propagazione all'interno di un tenant.
-- La rimozione di una rete.
+- L'activation du partage d'un réseau entre tenant d'une meme organisation.
+- La désactivation du partage d'un réseau entre tenant d'une meme organisation.
+- L'ajout d'un partage d'un réseau entre tenant d'une meme organisation.
+- La suppression d'un partage d'un réseau entre tenant d'une meme organisation.
+- La visualisation graphique de la propagation d'un réseau sur l'ensemble de vos clusters et de vos hyperviseurs au sein d'un tenant.
+- La suppression d'une propagation au sein d'un tenant.
+- La modification d'une propagation au sein d'un tenant.
+- La suppression d'un réseau.
 
 ![](images/shiva_network_003.jpg)
 
-#### Visualizzazione della propagazione delle tue reti
+#### Visualisation de la propagation de vos réseaux
 
-Puoi facilmente nel menu __*Azioni*__ visualizzare per una rete la sua propagazione verso i tuoi diversi cluster all'interno di uno stesso tenant.
-Scegli l'opzione *"Visualizzare la propagazione"* :
+Vous pouvez facilement dans le menu __*Actions*__ visualiser pour un réseau sa propagation vers vos différents clusters au sein d'un même tenant. 
+Choisissez l'option *"Visualiser la propagation"* :
 
-![](images/shiva_network_004.jpg) 
+![](images/shiva_network_004.jpg)
 
-#### Modifica della propagazione
+#### Modification de la propagation
 
-La modifica di una propagazione all'interno di un tenant è realizzata tramite l'opzione *"Propagare"* :
-scegli poi i cluster che devono essere integrati in questa propagazione.
+La modification d'une propagation au sein d'un tenant est réalisée par l'option *"Propager"* :
+choisissez ensuite les clusters devant être intégrés à cette propagation.
 
 ![](images/shiva_network_005.jpg)
 
-__*Nota:*__ *La modifica della propagazione è limitata a 20 reti per azione.*
+__*Remarque :*__ *La modification de propagation est limitée à 20 réseaux par action.*
 
-#### Eliminazione di una rete
+#### Suppression d'un réseau
 
-L'eliminazione di una rete all'interno di un tenant è realizzata tramite l'opzione *"Eliminare la rete"* :
+La suppression d'un réseau au sein d'un tenant est réalisée par l'option *"Supprimer le réseau"* :
 
 ![](images/shiva_network_006.jpg)
 
-### Condivisione di rete tra tenants
+### Partage de réseau entre tenants
 
-Per impostazione predefinita, __le reti sono disponibili solo all'interno di un tenant__. Puoi scegliere di __condividere una rete tra più tenants__ per ragioni tecniche o di connettività.
-È possibile condividere una rete tra i tuoi __[Tenant](../../../console/iam/concepts/#tenant)__ all'interno della stessa organizzazione.
+Par défaut, __les réseaux sont uniquement disponibles au sein d'un tenant__. Vous pouvez choisir de __partager un réseau entre plusieurs tenants__ pour des raisons techniques ou des raisons de connectivité.
+Il est ainsi possible de partager un réseau entre vos __[Tenant](../../../console/iam/concepts/#tenant)__ au sein d'une même organisation.
 
-
-È sufficiente attivare la condivisione come mostrato di seguito.
+Il suffit pour cela d'activer le partage comme ci-dessous.
 
 ![](images/shiva_network_vn_share_enabled.png)
 
-Una volta attivata la condivisione, ti basta aggiungere una condivisione come mostrato di seguito.
+Une fois l'activation du partage effectué, il vous suffit d'ajouter un partage comme ci-dessous.
 
 ![](images/shiva_network_vn_shared.png)
 
-Poi, seleziona il tenant di destinazione. Attenzione, la lista dei tenants è dinamica. 
-Dipende dalla tua organizzazione e dai tuoi diritti.
+Puis, sélectionner le tenant cible. Attention, la liste des tenants est dynamique.
+Elle dépend de votre organisation et de vos droits.
 
 ![](images/shiva_network_vn_shared_tenant.png)
 
-Una volta condivisa la rete, sarà visibile nella scheda 'Reti condivise' dal tuo secondo tenant.
+Une fois le réseau partagé, il sera visible dans l'onglet 'Réseaux partagés' depuis votre second tenant.
 
 ![](images/shiva_network_vn_shared_with_me.png)

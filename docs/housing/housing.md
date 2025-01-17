@@ -1,5 +1,5 @@
 ---
-title: Housing
+title: Vue d'ensemble
 ---
 
 # Housing Cloud Temple

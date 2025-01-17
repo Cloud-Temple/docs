@@ -1,100 +1,103 @@
 ---
-title: Tutorials
+title: Tutoriels
 ---
 
-Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Shiva.
+Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Shiva. 
+
 
 ## Prerequisiti
 
 1. Avere sottoscritto all'offerta Cloud Temple (sottoscrizione Appliance Bastion).
-2. Gli equipaggiamenti da amministrare devono essere accessibili dalla rete dove è distribuita l'Appliance Bastion.
+2. Gli apparati da amministrare devono essere accessibili dalla rete dove è distribuito l'Appliance Bastion.
 3. Avere i diritti sul modulo Bastion.
-4. Nel contesto di una distribuzione del Appliance onpremise, i flussi corrispondenti devono essere aperti.
+4. Nel contesto di una distribuzione dell'Appliance onpremise, i flussi corrispondenti devono essere aperti.
 
 ## Interfaccia
 
-Una volta connesso al portale web Shiva, vai alla scheda "Bastion" del menu di sinistra.
+Una volta connesso al portale web Shiva, vai nella scheda "Bastion" del menu a sinistra. 
 
 ![](images/sessions.png)
 
-La scheda "Equipements" ti consente di consultare l'elenco dei tuoi equipaggiamenti. Un equipaggiamento corrisponde a una configurazione di connessione tramite un Appliance Bastion. Per ogni equipaggiamento sono indicati il nome, i tag, la descrizione, l'Appliance associata, il tipo di connessione (SSH o RDP), l'IP dell'host e infine la configurazione della tastiera.
+La scheda « Apparecchiature » ti permette di consultare l'elenco delle tue apparecchiature. Un'apparecchiatura corrisponde a una configurazione di
+connessione tramite un'Appliance Bastion. Per ogni apparecchiatura, viene indicato il suo nome, i suoi tag, la 
+descrizione, l'Appliance associato, il tipo di connessione (SSH o RDP), l'IP dell'host e infine la configurazione della tastiera.
 
-Puoi filtrare l'elenco dei tuoi equipaggiamenti in base ai tag assegnati, e un motore di ricerca consente di cercare una sessione con il suo nome.
+Puoi filtrare l'elenco delle tue apparecchiature in base ai tag assegnati, e un motore di ricerca consente di cercare una sessione con il suo nome. 
 
 ![](images/sessions2.png)
 
-La scheda "Appliances" ti fornisce l'elenco delle tue Appliance Bastion. Per ogni Appliance sono specificati il nome e la descrizione.
+La scheda « Appliances » ti dà l'elenco delle tue Appliances Bastion. Per ogni Appliance, vengono indicati il nome dell'Appliance e la sua descrizione. 
 
-Un motore di ricerca è disponibile per consentirti di cercare un'Appliance con il suo nome.
+È disponibile un motore di ricerca per cercare un'Appliance con il suo nome.
 
 ![](images/appliances.png)
 
 ## Distribuire un'Appliance
-Prima di poter distribuire un'Appliance, è necessario fare una richiesta di sottoscrizione a un'Appliance tramite una richiesta al supporto.
+Prima di poter distribuire un'Appliance, è necessario richiedere una sottoscrizione a un'Appliance tramite una richiesta al supporto.
 
-## Aprire un flusso verso un equipaggiamento
-Nella scheda "Appliances", clicca sulla barra di azione dell'Appliance che desideri aprire. Clicca poi sul bottone "Ouvrir".
+## Aprire un flusso verso un'apparecchiatura
+Nella scheda « Appliances », clicca sulla barra d'azione dell'Appliance che desideri aprire. Clicca quindi sul pulsante « Aprire ».
 
 ![](images/ouvrir_appliance.png)
 
-Inserisci poi le informazioni necessarie alla connessione:
+Inserisci quindi le informazioni necessarie alla connessione:
 
-    - Scelta del protocollo (SSH o RDP);
-    - Indirizzo IP dell'host da amministrare;
-    - Informazioni di identificazione;
+    - Scelta del protocollo (SSH o RDP) ;
+    - Indirizzo IP dell'host da amministrare ;
+    - Informazioni di identificazione ;
     - Configurazione della tastiera.
 
-Clicca poi su "Connecter" per aprire l'Appliance. La console della macchina virtuale da amministrare si apre.
+Clicca quindi su « Connettere » per aprire l'Appliance. Si aprirà la console della macchina virtuale da amministrare.
 
-## Registrare un equipaggiamento
+## Registrare un'apparecchiatura
 
-Per accedere regolarmente a un equipaggiamento da amministrare, è più adatto creare una configurazione di equipaggiamento, che richiederà solo il tuo nome utente e la tua password ad ogni connessione.
+Per accedere regolarmente a un'apparecchiatura da amministrare, è più appropriato creare una configurazione dell'apparecchiatura, che richiederà solo il tuo nome utente e la tua password per ogni connessione.
 
-Per fare questo, vai nella scheda "Equipements" del menu "Bastion", poi clicca sul bottone "Nouveau équipement".
+Per fare ciò, vai nella scheda « Apparecchiature » del menu « Bastion », quindi clicca sul pulsante « Nuovo apparecchio ».
 
 ![](images/creer_session.png)
 
-Inserisci poi le informazioni necessarie alla creazione del tuo equipaggiamento:
+Inserisci quindi le informazioni necessarie per creare la tua apparecchiatura:
 
-    - Nome dell'equipaggiamento;
-    - Descrizione;
-    - Appliance associata;
-    - Tipo di protocollo (SSH o RDP);
-    - Indirizzo IP dell'host;
+    - Nome dell'apparecchiatura ;
+    - Descrizione ;
+    - Appliance associato ;
+    - Tipo di protocollo (SSH o RDP) ;
+    - Indirizzo IP dell'host ;
     - Lingua della tastiera.
 
 ![](images/creer_session2.png)
 
-Dovrebbe apparire una notifica che indica la creazione della tua configurazione di equipaggiamento nella parte superiore destra della pagina. La configurazione viene poi aggiunta all'elenco dei tuoi equipaggiamenti.
+Una notifica che indica la creazione della configurazione della tua apparecchiatura dovrebbe apparire in alto a destra della pagina. La configurazione verrà quindi aggiunta all'elenco delle tue apparecchiature.
 
-Per creare una nuova connessione, puoi anche passare dalla scheda "Appliances" cliccando sulla barra di azione dell'Appliance a cui desideri associare una configurazione di equipaggiamento.
+Per creare una nuova connessione, puoi anche passare dalla scheda « Appliances » cliccando sulla barra d'azione dell'Appliance a cui desideri associare una configurazione dell'apparecchiatura.
 
 ![](images/creer_session3.png)
 
-## Connettersi a un equipaggiamento
+## Connettersi a un'apparecchiatura
 
-Vai nella scheda "Equipements" della scheda "Bastion". Clicca sulla barra di azione dell'equipaggiamento che desideri aprire, e clicca sul bottone "Ouvrir".
+Vai nella scheda « Apparecchiature » della scheda « Bastion ». Clicca sulla barra d'azione dell'apparecchiatura che desideri aprire, e clicca sul pulsante « Aprire ».
 
 ![](images/ouvrir_session.png)
 
-Ad ogni connessione all'equipaggiamento, devi solo inserire le tue informazioni di autenticazione.
+A ogni connessione all'apparecchiatura, devi solo inserire le tue informazioni di autenticazione.
 
 ![](images/ouvrir_session2.png)
 
-Dopo aver inserito le tue credenziali, appare una notifica che conferma l'inizio della sessione e si apre la console verso la tua macchina virtuale.
+Dopo aver inserito le tue credenziali, apparirà una notifica di conferma dell'inizio della sessione e la console per la tua macchina virtuale si aprirà.
 
-## Modificare una configurazione di equipaggiamento
+## Modificare una configurazione dell'apparecchiatura
 
-Vai nella scheda "Equipements" della sezione "Bastion", clicca sulla barra di azione dell'equipaggiamento che desideri modificare, e clicca sul bottone "Modifier".
+Vai nella scheda « Apparecchiature » della sezione « Bastion », clicca sulla barra d'azione dell'apparecchiatura che desideri modificare, e clicca sul pulsante « Modificare ».
 
 ![](images/modifier_session.png)
 
-Puoi poi modificare il nome dell'equipaggiamento, la descrizione, l'Appliance associata, il protocollo (SSH o RDP), l'indirizzo IP dell'host o la lingua della tastiera.
+Puoi quindi modificare il nome dell'apparecchiatura, la sua descrizione, l'Appliance associato, il protocollo (SSH o RDP), l'indirizzo IP dell'host o la lingua della tastiera.
 
 ![](images/modifier_session2.png)
 
-## Eliminare una configurazione di equipaggiamento
+## Eliminare una configurazione dell'apparecchiatura
 
-Vai nella scheda "Equipements" della sezione "Bastion", clicca sulla barra di azione dell'equipaggiamento che desideri eliminare, e clicca sul bottone "Supprimer".
+Vai nella scheda « Apparecchiature » della sezione « Bastion », clicca sulla barra d'azione dell'apparecchiatura che desideri eliminare, e clicca sul pulsante « Eliminare ».
 
 ![](images/supprimer_session.png)

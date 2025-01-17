@@ -1,5 +1,5 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
 
 Ce guide **Quickstart Housing** vous accompagne pour démarrer rapidement avec l’offre d’hébergement physique Cloud Temple. Il couvre les étapes essentielles pour effectuer une demande d’hébergement, configurer vos équipements, et bénéficier des services complémentaires.

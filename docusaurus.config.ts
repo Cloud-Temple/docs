@@ -126,6 +126,10 @@ const config: Config = {
             {
               label: 'Cloud Temple Web Site',
               href: 'https://cloud-temple.com',
+            },
+            {
+              label: 'Cloud Temple Roadmap',
+              href: 'https://github.com/orgs/Cloud-Temple/projects/2',
             }
           ],
         },
