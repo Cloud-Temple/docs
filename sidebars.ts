@@ -123,7 +123,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'paas_openshift/first_steps',
+            'paas_openshift/tutorials/tutorials',
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
