@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 ### Connectivité réseau client
 
 | Activité                                                                                             | Rôle Client | Rôle Cloud Temple |

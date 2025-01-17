@@ -134,7 +134,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Support',
+          title: 'Market Place',
           items: [
             {
               label: 'Privacy',
@@ -151,8 +151,15 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Cloud Temple Docs, Inc. Built with Docusaurus.`,
-    },
+      copyright: `
+      <div style="text-align: center;">
+        <a href="/docs/docs/governance/orderdoc">Contracts</a> |
+        <a href="/docs/docs/privacy">Privacy Policy</a>
+        <br />
+        Copyright © ${new Date().getFullYear()} Cloud Temple.
+      </div>
+    `,
+      },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
