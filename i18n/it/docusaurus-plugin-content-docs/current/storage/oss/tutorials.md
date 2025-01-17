@@ -61,7 +61,7 @@ Globalement, le HASH des fichiers est supporté sur notre stockage objet via les
             ╰─➤  md5 test.txt                       
             MD5 (test.txt) = 8b34b2754802a46e3475998dfcf76f83
             ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB
-            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  111 B/s 0s
+            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  111 B/s 0s
             ╰─➤  mc stat CLR-PUB/CLR-PUB/test.txt
             Name      : test.txt
             Date      : 2024-06-08 10:21:31 CEST 
@@ -79,7 +79,96 @@ Globalement, le HASH des fichiers est supporté sur notre stockage objet via les
             ╰─➤  shasum -a 256 test.txt                            
             2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
             ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB -attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"
-            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  141 B/s 0s
+            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  141 B/s 0s
+            ╰─➤  mc stat CLR-PUB/CLR-PUB/test.txt                                                                     
+            Name      : test.txt
+            Date      : 2024-06-08 10:41:17 CEST 
+            Size      : 18 B   
+            ETag      : 8b34b2754802a46e3475998dfcf76f83 
+            Type      : file 
+            Encryption: SSE-S3
+            Metadata  :
+                X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682 
+                Content-Type              : text/plain 
+
+## Utilizzo di MINIO
+
+È possibile utilizzare il client minio, ad esempio:
+
+https://min.io/docs/minio/linux/reference/minio-mc.html
+
+Per esempio: 
+```
+    mc alias set <alias_name> https://reks2ee2b1.s3.fr1.cloud-temple.com <access_key> <secret_key>
+```
+Caricare un file: 
+```
+    mc cp test.txt <alias_name>/<bucket_name>
+```
+Recuperare un file:
+```
+    mc ls <alias_name>/<bucket_name>
+```
+## Cloud Berry Explorer
+
+È possibile utilizzare anche [Cloud Berry Explorer](https://www.msp360.com/explorer/).
+
+1. Connettiti utilizzando il tuo endpoint e la tua chiave:
+
+![](images/S3_cloudberry_001.png)
+
+2. Una volta connesso, inserisci il nome del bucket nella barra di navigazione:
+
+![](images/S3_cloudberry_002.png)
+
+3. Potrai quindi utilizzare il bucket normalmente: 
+
+![](images/S3_cloudberry_003.png)
+
+## Utilizzo di WINSCP 6.3.x
+
+Si può utilizzare [Winscp](https://winscp.net/eng/download.php):
+
+1. Connettiti utilizzando il tuo endpoint, la tua chiave di accesso e la tua chiave segreta:
+
+![](images/S3_winscp_001.png)
+
+2. Una volta connesso, utilizza WINSCP normalmente come un sito FTP o SCP:
+
+![](images/S3_winscp_002.png)
+
+
+## Aggiungere l'HASH di un file durante il caricamento di un oggetto
+
+In generale, l'HASH dei file è supportato nel nostro storage di oggetti tramite i metadata. Alcuni client consentono di calcolare al volo un HASH e aggiungerlo come metadata (minio-mc con md5 ad esempio), per altri, è necessario specificare i dati direttamente nei metadata.
+
+1. Caso di aggiunta di un HASH con il client minio-mc: questo client supporta il calcolo al volo di un hash MD5 e la memorizzazione nei metadata
+
+
+            ╰─➤  cat test.txt                       
+            Ceci est un test 
+            ╰─➤  md5 test.txt                       
+            MD5 (test.txt) = 8b34b2754802a46e3475998dfcf76f83
+            ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB
+            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  111 B/s 0s
+            ╰─➤  mc stat CLR-PUB/CLR-PUB/test.txt
+            Name      : test.txt
+            Date      : 2024-06-08 10:21:31 CEST 
+            Size      : 18 B   
+            ETag      : 8b34b2754802a46e3475998dfcf76f83 
+            Type      : file 
+            Encryption: SSE-S3
+            Metadata  :
+                Content-Type: text/plain 
+
+2. Esempio di aggiunta di un sha256 "manualmente": per fare ciò utilizziamo gli attributi S3 del file.
+
+            ╰─➤  cat test.txt
+            Ceci est un test
+            ╰─➤  shasum -a 256 test.txt                            
+            2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
+            ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB -attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"
+            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  141 B/s 0s
             ╰─➤  mc stat CLR-PUB/CLR-PUB/test.txt                                                                     
             Name      : test.txt
             Date      : 2024-06-08 10:41:17 CEST 
