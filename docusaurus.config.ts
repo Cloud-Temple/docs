@@ -104,11 +104,11 @@ const config: Config = {
             },
             {
               label: 'Tutorial',
-              to: '/docs/tags/tutorials/',
+              to: '/docs/docs/tags/tutorials/',
             },
             {
               label: 'Onboarding',
-              to: '/docs/tags/onboarding/',
+              to: '/docs/docs/tags/onboarding/',
             },
           ],
         },
