@@ -16,15 +16,15 @@ Vous y trouverez des informations et des cas d'utilisation liés au déploiement
 
 Avant de débuter votre parcours sur notre plateforme, nous vous recommandons d'explorer les points suivants :
 
-1. [**Présentation de l'Architecture**](../paas_openshift/concepts.md#architecture-générale-de-la-plateforme)
+1. [**Présentation de l'Architecture**](../concepts.md#architecture-générale-de-la-plateforme)
    - Découvrez la structure fondamentale de la plateforme.
    - Comprenez comment OpenShift s'intègre avec les services de Cloud Temple.
 
-2. [**Limites et Contraintes Connues**](../paas_openshift/concepts.md#limites-actuelles-de-loffre-redhat-openshift-en-environnement-secnumcloud)
+2. [**Limites et Contraintes Connues**](../concepts.md#limites-actuelles-de-loffre-redhat-openshift-en-environnement-secnumcloud)
    - Informez-vous sur les limites de la plateforme pour mieux planifier vos implémentations.
    - Évitez les écueils courants et optimisez l'utilisation des ressources.
 
-3. [**Visite d'OpenShift par Cloud Temple**](../paas_openshift/quickstart.md)
+3. [**Visite d'OpenShift par Cloud Temple**](../quickstart.md)
    - Explorez en détail les fonctionnalités et caractéristiques adaptées à notre déploiement.
    - Découvrez des cas d'utilisation pratiques pour tirer pleinement parti des capacités de la plateforme.
 
@@ -35,16 +35,16 @@ Avant de débuter votre parcours sur notre plateforme, nous vous recommandons d'
   <div class="card">
     <h3>Déployez au travers de helmfile</h3>
     <p>Découvrez comment déployer vos applications avec helmfile.</p>
-    <a href="./tutorials/deploy-through-helmfile" class="card-link">Commencer &rarr;</a>
+    <a href="deploy-through-helmfile" class="card-link">Commencer &rarr;</a>
   </div>
   <div class="card">
     <h3>Explorez la virtualisation avec Kubevirt</h3>
     <p>Découvrez kubevirt et ses fonctionnalités dans le context **Cloud Temple**.</p>
-    <a href="./tutorials/deploy-vm-with-kubevirt" class="card-link">Commencer &rarr;</a>
+    <a href="deploy-vm-with-kubevirt" class="card-link">Commencer &rarr;</a>
   </div>
   <div class="card">
     <h3>Utilisez Kasten</h3>
     <p>Découvrez Kasten et configurez les sauvegardes de vos données.</p>
-    <a href="./tutorials/using-kasten" class="card-link">Commencer &rarr;</a>
+    <a href="using-kasten" class="card-link">Commencer &rarr;</a>
   </div>
 </div>

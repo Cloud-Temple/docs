@@ -198,7 +198,7 @@ Une gestion proactive de l'espace disque est essentielle pour assurer le bon fon
 
 ## Stockage en mode backup
 
-Le stockage dédié à la sauvegarde de vos machines virtuelles est auto-provisionné par la plateforme [IBM Spectrum Protect Plus](backup.md) dans la limite du quota commandé. 
+Le stockage dédié à la sauvegarde de vos machines virtuelles est auto-provisionné par la plateforme dans la limite du quota commandé. 
 
 | Référence                | Unité | SKU                                      | 
 |--------------------------|-------|------------------------------------------|

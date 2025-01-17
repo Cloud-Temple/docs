@@ -1,5 +1,5 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
 
 ## Déployer une plateforme Redhat Openshift au sein de votre tenant

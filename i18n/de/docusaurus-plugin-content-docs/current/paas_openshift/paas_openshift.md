@@ -1,38 +1,38 @@
 ---
-title: Übersicht
+title: Vue d'ensemble
 ---
 
-Das Red Hat OpenShift-Angebot von Cloud Temple kombiniert die Leistungsfähigkeit einer anerkannten PaaS-Plattform mit der Sicherheit einer SecNumCloud-zertifizierten Infrastruktur. Basierend auf einer dreizonen Architektur gewährleistet sie hohe Verfügbarkeit, Resilienz und Konformität für Ihre kritischen Projekte.
+L’offre Red Hat OpenShift de Cloud Temple combine la puissance d’une plateforme PaaS reconnue et la sécurité d’une infrastructure qualifiée SecNumCloud. Basée sur une architecture tri-zonale, elle garantit haute disponibilité, résilience et conformité pour vos projets critiques.
 
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Entdecken Sie die grundlegenden Prinzipien und die wesentlichen Grundlagen, um unsere OpenShift PaaS zu verstehen und zu meistern.</p>
+    <p>Entdecken Sie die grundlegenden Prinzipien, um unsere PaaS OpenShift zu verstehen und zu beherrschen.</p>
     <a href="concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Schnellstart</h3>
-    <p>Fangen Sie schnell an mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <p>Starten Sie schnell mit unseren Ressourcen durch klare und einfache Anweisungen.</p>
     <a href="quickstart" class="card-link">Schnellstart starten &rarr;</a>
   </div>
   <div class="card">
-    <h3>Tutorials</h3>
-    <p>Erlernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
-    <a href="first_steps" class="card-link">Tutorials entdecken &rarr;</a>
+    <h3>Anleitungen</h3>
+    <p>Erlernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Guides.</p>
+    <a href="tutorials" class="card-link">Anleitungen entdecken &rarr;</a>
   </div>
   <div class="card">
-    <h3>MCO/MCS</h3>
-    <p>Konsultieren Sie unsere Richtlinien zur Aufrechterhaltung des Betriebs und der Sicherheit.</p>
+    <h3>Betrieb/IT-Sicherheit</h3>
+    <p>Informieren Sie sich über unsere Richtlinien zur Aufrechterhaltung des Betriebs und der IT-Sicherheit.</p>
     <a href="../governance/paas/mco_mcs" class="card-link">Unsere Richtlinien einsehen &rarr;</a>
   </div>
   <div class="card">
     <h3>RACI</h3>
-    <p>Konsultieren Sie die Verantwortungsmatrix.</p>
+    <p>Sehen Sie sich die Verantwortlichkeitsmatrizen an.</p>
     <a href="../governance/paas/raci" class="card-link">Verantwortlichkeiten einsehen &rarr;</a>
   </div>
   <div class="card">
-    <h3>Servicevereinbarung</h3>
-    <p>Greifen Sie auf unsere Servicevereinbarungen für das OpenShift PaaS-Angebot zu.</p>
+    <h3>Dienstleistungsvereinbarung</h3>
+    <p>Greifen Sie auf unsere Dienstleistungsvereinbarungen für das PaaS OpenShift-Angebot zu</p>
     <a href="../governance/paas/service_agreement_paas" class="card-link">Unsere Vereinbarungen einsehen &rarr;</a>
   </div>
 </div>

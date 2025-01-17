@@ -153,7 +153,7 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/docs/docs/governance/orderdoc">Contracts</a> |
+        <a href="/docs/docs/governance">Contracts</a> |
         <a href="/docs/docs/privacy">Privacy Policy</a>
         <br />
         Copyright © ${new Date().getFullYear()} Cloud Temple.

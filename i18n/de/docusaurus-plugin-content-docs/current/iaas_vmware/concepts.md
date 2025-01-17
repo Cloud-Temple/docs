@@ -2,48 +2,48 @@
 title: Concepts
 ---
 
-Das __IaaS (Infrastructure As A Service)__ Angebot von Cloud Temple ist darauf ausgelegt, den kritischen Bedarf an Kontinuität und Disaster Recovery zu decken, mit besonderem Fokus auf anspruchsvolle Branchen wie Industrie, Banken und Versicherungen. Basierend auf modernsten Technologien gewährleistet diese Infrastruktur maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Workloads.
+Das __IaaS (Infrastructure As A Service)__-Angebot von Cloud Temple wurde entwickelt, um den kritischen Anforderungen an Kontinuität und Disaster Recovery gerecht zu werden, mit besonderem Fokus auf anspruchsvolle Branchen wie Industrie, Banken und Versicherungen. Basierend auf modernster Technologie garantiert diese Infrastruktur maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Arbeitslasten.
 
 ## Eine vertrauenswürdige technologische Plattform
 
-Die IaaS-Plattform von Cloud Temple stützt sich auf weltweit anerkannte Technologiepartner:
+Die IaaS-Plattform von Cloud Temple stützt sich auf international anerkannte Technologiepartner:
 
-- Rechenleistung: **CISCO UCS**.
-- Speicherung: **IBM Spectrum Virtualize**, **IBM FlashSystem** für Blockspeicher.
+- Berechnung: **CISCO UCS**.
+- Speicherung: **IBM Spectrum Virtualize**, **IBM FlashSystem** für Blockspeicherung.
 - Netzwerk: **JUNIPER**.
-- Virtualisierung: **VMware**, bietet eine zuverlässige und bewährte Basis zur Verwaltung Ihrer Cloud-Umgebungen.
-- Backup: **IBM Spectrum Protect Plus**, für die Orchestrierung und Speicherung der Backups.
+- Virtualisierung: **VMware**, bietet eine zuverlässige und erprobte Basis zur Verwaltung Ihrer Cloud-Umgebungen.
+- Sicherung: **IBM Spectrum Protect Plus**, für die Orchestrierung und Speicherung von Backups.
 
-Diese Architektur basiert auf dem Modell **VersaStack**, einer Allianz zwischen Cisco und IBM, die eine weitreichende Kompatibilität mit den wichtigsten Softwareanbietern sicherstellt.
+Diese Architektur basiert auf dem **VersaStack**-Modell, einer Allianz zwischen Cisco und IBM, die eine umfassende Kompatibilität mit den wichtigsten Softwareentwicklern gewährleistet.
 
 ## Eine dedizierte und automatisierte Infrastruktur
 
-Obwohl vollständig automatisiert durch APIs und einem Terraform Provider, bietet das IaaS-Angebot von Cloud Temple eine einzigartige Infrastruktur:
+Obwohl sie vollständig automatisiert durch APIs und einen Terraform-Provider ist, bietet das IaaS-Angebot von Cloud Temple eine einzigartige Infrastruktur:
 
-- **Dedizierte Ressourcen**: Die Rechenlames, Speicher-Volumes und Softwarestacks (Virtualisierung, Backup, Firewalling, etc.) werden niemals zwischen den Kunden geteilt.
-- **Maximale Vorhersagbarkeit**: Sie kontrollieren die Virtualisierungsraten, den IOPS-Druck auf den Speicher und profitieren von einer klaren monatlichen Verbrauchsabrechnung.
+- **Dedizierte Ressourcen**: Rechenblades, Speicher-Volumes und Software-Stacks (Virtualisierung, Sicherung, Firewalling usw.) werden niemals zwischen den Kunden geteilt.
+- **Maximale Vorhersehbarkeit**: Sie kontrollieren die Virtualisierungsraten, den IOPS-Druck auf dem Speicher und genießen eine klare, monatliche Verbrauchsabrechnung.
 
-Die Plattform ist **SecNumCloud**-zertifiziert von der [ANSSI](https://www.ssi.gouv.fr/), was ein hohes Maß an Automatisierung und Sicherheit gewährleistet.
+Die Plattform ist vom [ANSSI](https://www.ssi.gouv.fr/) als **SecNumCloud** zertifiziert und gewährleistet ein hohes Maß an Automatisierung und Sicherheit.
 
 ## Hauptfunktionen
 
-- Dedizierte und bedarfsgerechte Rechenressourcen (CPU, RAM).
-- Speicher auf Abruf (mehrere Klassen verfügbar).
+- Dedicated, on-demand Rechenressourcen (CPU, RAM).
+- On-demand Speicher (verschiedene Klassen verfügbar).
 - Netzwerkressourcen (Internet, private Netzwerke).
-- Gekreuzte Backups mit konfigurierbarer Aufbewahrung.
+- Übergreifende Backups mit konfigurierbarer Aufbewahrung.
 - Asynchrone Replikation für Speicher oder virtuelle Maschinen.
-- Steuerung über die [Console Shiva](../console/console.md) oder im Modus Infrastructure as Code dank APIs und dem Terraform Provider.
+- Steuerung über die [Shiva-Konsole](../console/console.md) oder im Infrastructure-as-Code-Modus dank APIs und dem Terraform-Provider.
 
 ## Vorteile
 
-| Vorteil              | Beschreibung                                                                                                                          |   
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Digitale Vertrauense | Datenhosting in Frankreich und DSGVO-Konformität.                                                                                     |   
-| Sicherheit           | Hochsichere Plattform, zertifiziert durch **SecNumCloud**, **HDS** (Hosting von Gesundheitsdaten), **ISO 27001** und **ISAE 3402 Type II**. |  
-| Hohe Verfügbarkeit   | Plattform-Verfügbarkeitsrate von 99,99%, monatlich gemessen, inklusive Wartungsfenstern.                                               |   
-| Resilienz            | Implementierung von Kontinuitäts- oder Disaster-Recovery-Plänen nach Bedarf.                                                          |
-| Automatisierung      | Vollständig automatisierte Plattform, die darauf ausgelegt ist, sich in ein digitales Transformationsprogramm zu integrieren.            |
-| Bedarfsgerecht       | Ressourcen sind bedarfsgerecht verfügbar.                                                                                             |
+| Vorteil              | Beschreibung                                                                                                                                |   
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Digitale Vertrauenswürdigkeit | Datenhosting in Frankreich und DSGVO-Konformität.                                                                                   |   
+| Sicherheit           | Hochsichere Plattform, zertifiziert nach **SecNumCloud**, **HDS** (Hosting von Gesundheitsdaten), **ISO 27001** und **ISAE 3402 Typ II**.   |  
+| Hohe Verfügbarkeit   | Plattformverfügbarkeit von 99,99 %, monatlich gemessen, Wartungsfenster eingeschlossen.                                                     |   
+| Widerstandsfähigkeit | Implementierung von Business Continuity- oder Disaster-Recovery-Plänen nach Bedarf.                                                         |
+| Automatisierung      | Vollständig automatisierte Plattform, die darauf ausgelegt ist, sich in ein digitales Transformationsprogramm zu integrieren.                |
+| Auf Abruf            | Ressourcen auf Abruf verfügbar.                                                                                                            |
 
 
 
@@ -57,35 +57,38 @@ Die Plattform ist **SecNumCloud**-zertifiziert von der [ANSSI](https://www.ssi.g
 
 
 
-## Rechenleistung
+## Berechnung
 
-Die von Cloud Temple bereitgestellten Lames sind vom Typ __CISCO UCS B200__ oder __CISCO UCS X210c__. Sie werden vollständig von Cloud Temple verwaltet (Firmware, OS-Version, ...) über die Cloud Temple-Konsole.
+Die von Cloud Temple bereitgestellten Blades sind vom Typ __CISCO UCS B200__ oder __CISCO UCS X210c__. Sie werden vollständig von Cloud Temple verwaltet (Firmware, OS-Version etc.) über die Cloud Temple-Konsole.
 
-Mehrere Kategorien von Rechenlames stehen im Katalog zur Verfügung, um Ihre Workloads (Virtualisierung, Containerisierung, ...) zu unterstützen. Diese weisen unterschiedliche Eigenschaften und Leistungen auf, um Ihren Anforderungen bestmöglich gerecht zu werden. Der Katalog der Rechenlames wird regelmäßig aktualisiert.
+Mehrere Kategorien von Rechenblades sind im Katalog verfügbar, um Ihre Arbeitslasten zu unterstützen (Virtualisierung, Containerisierung usw.).
+Diese weisen unterschiedliche Eigenschaften und Leistungen auf, um Ihren Bedürfnissen bestmöglich gerecht zu werden. Der Katalog der Rechenblades wird regelmäßig aktualisiert.
 
-Im Rahmen der Verwendung mit einem Virtualisierungsangebot besteht ein Hypervisor-Cluster ausschließlich aus Rechenlames desselben Typs (es ist nicht möglich, Lames unterschiedlicher Typen in einem einzigen Cluster zu mischen).
+Im Rahmen der Nutzung mit einem Virtualisierungsangebot besteht ein Hypervisor-Cluster ausschließlich aus Rechenblades desselben Typs (es ist nicht möglich, Blades verschiedener Typen in einem Cluster zu mischen).
 
-| Referenz             | RAM  __(1)__ | Frequenz __(2)__                           | Anzahl der Kerne / Threads | Konnektivität __(3)__ | GPU **(4)**          | SKU für das VMware-Angebot      |
-| ---------------------| ------------ | -------------------------------------------| --------------------------| ----------------------| ---------------------| ------------------------------- |
-| Lame ECO v3          | 384 GB       | 2.20/3.0 GHz (Silver 4114 oder Äquivalent)  | 20 / 40 Threads            | 2 X 10 Gbit/s         |                       | csp:fr1:iaas:vmware:eco:v3      |
-| Lame STANDARD v3     | 384 GB       | 2.40/3.4 GHz (Silver 4314 oder Äquivalent)  | 32 / 64 Threads            | 2 X 25 Gbit/s         |                       | csp:fr1:iaas:vmware:standard:v3 |
-| Lame ADVANCE v3      | 768 GB       | 2.80/3.5 GHz (Gold 6342 oder Äquivalent)    | 48 / 96 Threads            | 2 X 25 Gbit/s         |                       | csp:fr1:iaas:vmware:advance:v3  |
-| Lame PERFORMANCE 1 v3| 384 GB       | 3.20/3.6 GHz (Xeon E-53I5Y oder Äquivalent) | 16 / 32 Threads            | 2 X 25 Gbit/s         |                       | csp:fr1:iaas:vmware:perf1:v3    |
-| Lame PERFORMANCE 2 v3| 768 GB       | 3.00/3.6 GHz (Gold 6354 oder Äquivalent)    | 36 / 72 Threads            | 2 X 25 Gbit/s         |                       | csp:fr1:iaas:vmware:perf2:v3    |
-| Lame PERFORMANCE 3 v3| 1536 GB      | 2.60/3.5 GHz (Gold 6348 oder Äquivalent)    | 56 / 112 Threads           | 2 X 25 Gbit/s         |                       | csp:fr1:iaas:vmware:perf3:v3    |
-| Lame PERFORMANCE 4 v3| 512 GB       | 2.50/4.1 GHz (Intel 6426Y oder Äquivalent)  | 32 / 64 Threads            | 2 X 25 Gbit/s         | 2 x NVIDIA L40S 48GB | csp:fr1:iaas:vmware:perf4:v3    |
+| Referenz             | RAM  __(1)__ | Frequenz __(2)__                        | Anzahl der Kerne / Threads  | Konnektivität __(3)__  | GPU **(4)**           | SKU für das VMware-Angebot      |
+| -------------------- | ------------ | --------------------------------------- | -------------------------- | ---------------------- | --------------------- | ------------------------------- |
+| ECO-Blade v3         | 384 GB       | 2.20/3.0 GHz (Silver 4114 oder äquivalent) | 20 / 40 Threads             | 2 X 10 Gbit/s          |                       | csp:fr1:iaas:vmware:eco:v3      |
+| STANDARD-Blade v3    | 384 GB       | 2.40/3.4 GHz (Silver 4314 oder äquivalent) | 32 / 64 Threads             | 2 X 25 Gbit/s          |                       | csp:fr1:iaas:vmware:standard:v3 |
+| ADVANCE-Blade v3     | 768 GB       | 2.80/3.5 GHz (Gold 6342 oder äquivalent)   | 48 / 96 Threads             | 2 X 25 Gbit/s          |                       | csp:fr1:iaas:vmware:advance:v3  |
+| PERFORMANCE 1-Blade v3 | 384 GB     | 3.20/3.6 GHz (Xeon E-53I5Y oder äquivalent) | 16 / 32 Threads             | 2 X 25 Gbit/s          |                       | csp:fr1:iaas:vmware:perf1:v3    |
+| PERFORMANCE 2-Blade v3 | 768 GB     | 3.00/3.6 GHz (Gold 6354 oder äquivalent)   | 36 / 72 Threads             | 2 X 25 Gbit/s          |                       | csp:fr1:iaas:vmware:perf2:v3    |
+| PERFORMANCE 3-Blade v3 | 1536 GB    | 2.60/3.5 GHz (Gold 6348 oder äquivalent)   | 56 / 112 Threads            | 2 X 25 Gbit/s          |                       | csp:fr1:iaas:vmware:perf3:v3    |
+| PERFORMANCE 4-Blade v3 | 512 GB     | 2.50/4.1 GHz (Intel 6426Y oder äquivalent) | 32 / 64 Threads             | 2 X 25 Gbit/s          | 2 x NVIDIA L40S 48GB  | csp:fr1:iaas:vmware:perf4:v3    |
 
-__Anmerkungen__ :
+__Bemerkungen__ :
 
-- __(1)__ Die gelieferte Speichermenge entspricht der physisch auf den Lames verfügbaren. Es ist nicht möglich, die physische Speichermenge eines Lames zu ändern.
+- __(1)__ Die gelieferte Speichermenge entspricht der physisch verfügbaren Menge auf den Blades. Es ist nicht möglich, die physische Speichermenge eines Blades zu ändern.
 
-- __(2)__ Minimale Basistaktfrequenz / Turbo-Frequenz, ausgedrückt in Ghz. Standardmäßig sind die Prozessoren im BIOS auf maximale Leistung konfiguriert.
+- __(2)__ Mindestbasisfrequenz / Turbo-Frequenz, ausgedrückt in GHz. Standardmäßig sind die Prozessoren auf maximale Leistung im BIOS konfiguriert.
 
-- __(3)__ Die physische Konnektivität ist für den Netzwerk- und Blockspeicherzugang gemeinsam genutzt, da die Cisco-Plattform konvergiert ist.
+- __(3)__ Die physische Konnektivität ist für den Netzwerkspeicher- und Blockspeicherzugriff gemeinsam genutzt, da die CISCO-Plattform konvergiert ist.
 
-- __(4)__ Das tatsächlich verfügbare GPU-Angebot entwickelt sich ständig weiter. Ab dem 1. Mai 2024 basiert das Angebot auf den NVIDIA LOVELACE L40S GPUs. Standardmäßig wird das Perf4-Lame mit 2 L40S-Karten mit 48 GB RAM geliefert. Wenden Sie sich bei Bedarf an den Support für genauere Informationen.
+- __(4)__ Das tatsächlich verfügbare GPU-Angebot ändert sich ständig. Am 1. Mai 2024 basiert das Angebot auf NVIDIA LOVELACE L40S GPUs. Standardmäßig wird das PERFORMANCE 4-Blade mit 2 L40S-Karten mit 48 GB RAM geliefert. Kontaktieren Sie den Support für weitere Details, falls erforderlich.
 
-Die Verfügbarkeit des Rechenangebots beträgt 99.99%, berechnet monatlich, inklusive Wartungsfenster. Die Berechtigung im Falle der Nichteinhaltung des SLA unterliegt der Erstellung eines Incident-Tickets. Sie müssen auch mindestens zwei Hosts pro Cluster haben und die __High Availability__ (HA)-Funktion aktivieren. Diese Funktion ermöglicht es Ihrer Architektur, Ihre virtuellen Maschinen auf dem zweiten Hypervisor automatisch neu zu starten. Für den Fall, dass eine Verfügbarkeitszone nur einen Hypervisor enthält, ist ein automatischer Neustart nicht möglich.
+Die Verfügbarkeit des Rechenangebots liegt bei 99,99 %, monatlich berechnet, einschließlich Wartungsfenster. Die Anspruchsberechtigung bei Nichteinhaltung des SLA unterliegt der Erstellung eines Incident-Tickets. Sie müssen auch mindestens zwei Hosts pro Cluster besitzen und die __High Availability__ (HA)-Funktion aktivieren.
+Diese Funktion ermöglicht es Ihrer Architektur, Ihre virtuellen Maschinen automatisch auf dem zweiten Hypervisor neu zu starten.
+Für den Fall, dass eine Verfügbarkeitszone nur einen Hypervisor enthält, ist der automatische Neustart nicht möglich.
 
 
 
@@ -100,34 +103,33 @@ Die Verfügbarkeit des Rechenangebots beträgt 99.99%, berechnet monatlich, inkl
 
 
 ## Netzwerk
+Der Netzwerkdienst auf der IaaS-Plattform von Cloud Temple basiert auf einer Netzwerk-Infrastruktur basierend auf der VPLS-Technologie, die eine flexible und leistungsstarke Segmentierung bietet, um den Kundenbedürfnissen in Bezug auf Konnektivität und Netzwerktrennung gerecht zu werden.
 
-Der Netzwerkdienst auf der IaaS-Plattform von Cloud Temple basiert auf einer Netzwerkstruktur mit VPLS-Technologie, die eine flexible und leistungsstarke Segmentierung bietet, um die Anforderungen der Kunden hinsichtlich Konnektivität und Netzwerktrennung zu erfüllen.
+### VLANs der Stufe 2
 
-### VLANs der Ebene 2
-
-Die in dem IaaS-Angebot bereitgestellten VLANs sind vom Typ **Ebene 2** und bieten eine vollständige Netzwerktrennung und eine anpassbare Konfiguration je nach Bedarf.
+Die in dem IaaS-Angebot bereitgestellten VLANs sind vom Typ **Stufe 2**, bieten vollständige Netzwerktrennung und eine anpassbare Konfiguration je nach Bedarf.
 
 #### Hauptkonzepte:
 - **Teilen zwischen Clustern und Verfügbarkeitszonen (AZ)**: 
-  - Die VLANs können zwischen den verschiedenen AZs und Clustern, die zum selben Tenant gehören, geteilt werden.
-- **Propagation zwischen Tenants**: 
-  - Die VLANs können zwischen mehreren Tenants derselben Organisation propagiert werden, um die interne Kommunikation zu erleichtern.
+  - Die VLANs können zwischen den verschiedenen AZs und den verschiedenen Clustern, die zum gleichen Mandanten gehören, geteilt werden.
+- **Propagation zwischen Mandanten**: 
+  - Die VLANs können zwischen mehreren Mandanten, die zu derselben Organisation gehören, verbreitet werden und erleichtern so die interne Kommunikation.
 
 ---
 
-### Netzwerkausführung
+### Netzwerkleistung
 
-Die Netzwerkstruktur gewährleistet eine geringe Latenz für optimale Leistung:
-- **Latenz innerhalb der AZ**: Weniger als **3 ms**.
-- **Latenz zwischen den AZ**: Weniger als **5 ms**.
+Die Netzwerk-Infrastruktur garantiert geringe Latenz für optimale Leistung:
+- **Intra-AZ Latenz**: Weniger als **3 ms**.
+- **Inter-AZ Latenz**: Weniger als **5 ms**.
 
 ---
 
 ### Wichtige Punkte
 
-1. **Flexibilität**: Die VLANs können konfiguriert werden, um sich an Multi-Cluster- und Multi-Tenant-Umgebungen anzupassen.
-2. **Hohe Leistung**: Eine minimale Latenz sorgt für eine schnelle und effiziente Kommunikation zwischen den Verfügbarkeitszonen.
-3. **Trennung und Sicherheit**: Die VLANs der Ebene 2 bieten eine strenge Netzwerktrennung zum Schutz der Daten und Datenströme.
+1. **Flexibilität**: Die VLANs können konfiguriert werden, um sich an Multi-Cluster- und Multi-Mandanten-Umgebungen anzupassen.
+2. **Hohe Leistung**: Minimale Latenz gewährleistet eine schnelle und effiziente Kommunikation zwischen den Verfügbarkeitszonen.
+3. **Trennung und Sicherheit**: Die VLANs der Stufe 2 bieten eine strikte Netzwerktrennung zum Schutz der Daten und Ströme.
 
 ---
 
@@ -143,118 +145,132 @@ Die Netzwerkstruktur gewährleistet eine geringe Latenz für optimale Leistung:
 
 
 
-## Blockspeicher
+## Blockspeicherung
 
-Cloud Temple bietet mehrere Speicherklassen an, die auf der Technologie [IBM FlashSystem](https://www.ibm.com/flashsystem/) und [IBM SVC](https://www.ibm.com/products/san-volume-controller) basieren.
+Cloud Temple bietet mehrere Speicherklassen basierend auf der Technologie [IBM FlashSystem](https://www.ibm.com/flashsystem/) 
+und [IBM SVC](https://www.ibm.com/products/san-volume-controller).
 
-Die __IBM SVC__-Technologie ermöglicht es, das erforderliche Leistungsniveau für die Umgebungen unserer Kunden zu liefern, dank der großen Menge an eingebettetem Cache-Speicher in den Controllern und der Möglichkeit, die gesamten IOPS eines Servers auf mehrere SANs zu verteilen.
+Die __IBM SVC__-Technologie ermöglicht es, das erforderliche Leistungsniveau für die Umgebungen unserer Kunden zu liefern, dank der großen
+Menge an Cache-Speicher, der in den Controllern eingebaut ist, und der Möglichkeit, die gesamten IOPS
+eines Servers auf mehrere SANs zu verteilen.
 
-Sie wird auch verwendet, um die Replikation Ihrer Blockspeicher-LUNs zwischen den Verfügbarkeitszonen zu ermöglichen oder Eingriffe in die Speicherpools zu erleichtern.
+Es wird auch verwendet, um die Replikation Ihrer blockbasierten Speicher-LUNs zwischen
+Verfügbarkeitszonen zu ermöglichen oder Eingriffe auf den Speicherarrays zu erleichtern.
 
-Der Speicher ist hauptsächlich FLASH NVME-Speicher, der für professionelle Workloads bereitgestellt wird. Die verwendeten Laufwerke in den Speicher-Arrays sind in [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties) konfiguriert.
+Der Speicher ist hauptsächlich FLASH NVME-Speicher und auf professionelle Arbeitslasten ausgelegt.
+Die Festplatten werden von den Speicherarrays im [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties) betrieben.
 
-Der Speicherklasse __'Mass Storage'__ bietet mechanische Festplatten für Archivierungsanforderungen in einem wirtschaftlich effizienten Umfeld an. Es sind mehrere Leistungsstufen verfügbar:
 
-| Referenz                         | Einheit | SKU                                          | 
-|----------------------------------|---------|----------------------------------------------|
-| FLASH - Essentiell - 500 IOPS/To | 1 Gio   | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To  | 1 Gio   | csp:(region):iaas:storage:bloc:medium:v1     | 
-| FLASH - Premium - 3000 IOPS/To   | 1 Gio   | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To| 1 Gio   | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To    | 1 Gio   | csp:(region):iaas:storage:bloc:ultra:v1      | 
-| MASS STORAGE - Archivierung      | 1 Tio   | csp:(region):iaas:storage:bloc:mass:v1       |
+Le classe de stockage __'Mass Storage'__ propose des disques mécaniques pour les besoins d'archivages
+dans un contexte d'efficience économique. Plusieurs niveaux de performances sont disponibles :
 
-*__Hinweis__ :*
+| Référence                         | Unité | SKU                                          | 
+|-----------------------------------|-------|----------------------------------------------|
+| FLASH - Essentiel - 500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:live:v1       |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:medium:v1     | 
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | csp:(region):iaas:storage:bloc:ultra:v1      | 
+| MASS STORAGE - Archivage          | 1 Tio | csp:(region):iaas:storage:bloc:mass:v1       |
 
-- *Die Verfügbarkeit des Speichers beträgt 99,99 % monatlich gemessen, einschließlich Wartungsfenster,*
-- *Es gibt keine Einschränkungen oder Quoten für das Lesen oder Schreiben,*
-- *Es gibt keine Abrechnung nach IOPS,*
-- *Es gibt keine Leistungszusagen für die Klasse __'Mass Storage'__,*
-- *Die minimale Größe eines Speicher-LUN beträgt 500Gio,*
-- *Bei der Verwendung eines Speicherreplikationsmechanismus müssen die Leistungen in beiden Verfügbarkeitszonen identisch sein,*
-- *Es wird keine "intelligente" Optimierung wie Kompression oder Deduplizierung eingesetzt: Wenn Sie 10Tio Speicherplatz reservieren, haben Sie physisch 10Tio nutzbaren Speicherplatz auf den IBM-Maschinen.*
-- *Die Speicher-LUNs sind der Kundenumgebung vorbehalten.*
+*__Nota__ :*
 
-### Nutzung im Rahmen des VMware-Rechenangebots
+- *La disponibilité du stockage est de 99.99% mesuré mensuellement, plage de maintenance incluse,*
+- *Il n'y a pas de restriction ou de quota sur la lecture ou l'écriture,*
+- *Il n'y a pas de facturation à l'IOPS,*
+- *Il n'y a pas d'engagement de performance sur la classe __'Mass Storage'__,*
+- *La taille minimale d'une LUN de stockage est de 500Gio,*
+- *Lors de l'usage d'un mécanisme de réplication de stockage, les performances doivent être identiques sur les deux zones de disponibilité,*
+- *Aucun mécanisme d'optimisation "intelligent" de type compression ou déduplication n'est mis en œuvre : quand vous réservez 10Tio de stockage, vous avez physiquement 10Tio utile de stockage mis en œuvre sur les machines IBM.*
+- *Les LUNs de stockage sont dédiés à l'environnement client.*
 
-Im Rahmen der Nutzung des Blockspeichers als Datenspeicher im VMware-Rechenangebot von Cloud Temple, **müssen Sie mehrere wichtige Überlegungen beachten**:
+### Nutzung im Rahmen des VMware-Berechnungsangebots
 
-1. **Swap-Datei (.VSWP) beim Starten der virtuellen Maschinen**: Beim Starten einer virtuellen Maschine wird eine .VSWP-Datei in der Größe des Speichers auf der Festplatte erstellt. Daher müssen Sie in Ihrem Datenspeicher immer genügend freien Speicherplatz haben, um das Starten Ihrer virtuellen Maschinen zu ermöglichen. Wenn Ihr Datenspeicher beispielsweise 1 Tio Blockspeicher umfasst und Sie 10 virtuelle Maschinen mit jeweils 64 Gio Speicher starten möchten, sind 640 Gio Festplattenspeicher erforderlich. Ohne diesen Platz wird das Starten der Maschinen durch die verfügbare Kapazität zum Erstellen der Swap-Dateien begrenzt.
+Im Rahmen der Nutzung des Block-Speichers als Datastore im VMware-Berechnungsangebot von Cloud Temple **müssen Sie mehrere wichtige Überlegungen berücksichtigen**:
 
-2. **Freispeicherplatz für Sicherungssnapshots**: Der Sicherungsdienst verwendet Snapshots. Daher müssen Sie immer genügend freien Speicherplatz für die Erstellung eines Snapshots während der Sicherung einer virtuellen Maschine haben. Die Größe des Snapshots hängt vom Schreibvolumen der virtuellen Maschine und der Zeit ab, die für die Sicherung benötigt wird. Es wird allgemein empfohlen, mindestens 10 % freien Speicherplatz für diesen Vorgang zu bereithalten.
+1. **Swap-Datei (.VSWP) beim Starten der virtuellen Maschinen**: Wenn eine virtuelle Maschine startet, erstellt sie eine .VSWP-Datei in der Größe ihres Speichers auf der Festplatte. Daher müssen Sie zum Starten Ihrer virtuellen Maschinen immer genügend freien Speicherplatz in Ihrem Datastore haben, der der Summe der Speichergrößen Ihrer virtuellen Maschinen entspricht. Zum Beispiel, wenn Ihr Datastore über 1 Tio Block-Speicher verfügt und Sie 10 virtuelle Maschinen mit jeweils 64 Gio Speicher starten möchten, benötigen Sie 640 Gio Festplattenspeicher. Ohne diesen Speicherplatz wird der Start der Maschinen durch die verfügbare Kapazität zum Erstellen der Swap-Dateien begrenzt.
 
-3. **Verwaltung von dynamischen Festplatten**: Seien Sie vorsichtig beim Einsatz von dynamischen Festplatten. Wenn Sie deren Wachstum nicht beherrschen, kann ein Mangel an physischem Speicherplatz im besten Fall ein Einfrieren (Freeze) der virtuellen Maschine verursachen oder im schlimmsten Fall einen Absturz mit Beschädigung. Es ist entscheidend, den verfügbaren Speicherplatz auf Ihren Datenspeichern genau zu überwachen, wenn Sie diesen Festplattentyp verwenden.
+2. **Freier Speicherplatz für Backup-Snapshots**: Der Backup-Dienst nutzt Schnappschüsse (Snapshots). Sie müssen daher immer genügend freien Speicherplatz haben, um die Erstellung eines Schnappschusses beim Backup einer virtuellen Maschine zu ermöglichen. Die Größe des Schnappschusses hängt vom Schreibvolumen der virtuellen Maschine und der Zeit ab, die für das Backup benötigt wird. Es wird im Allgemeinen empfohlen, mindestens 10 % freien Speicherplatz für diesen Vorgang zu halten.
 
-Eine proaktive Verwaltung des Speicherplatzes ist wesentlich, um das reibungslose Funktionieren Ihrer virtuellen Maschinen und die Zuverlässigkeit der Sicherungen zu gewährleisten. Stellen Sie sicher, dass immer genügend Platz für Swap-Dateien, Snapshots und das Wachstum dynamischer Festplatten vorhanden ist.
+3. **Verwaltung dynamischer Festplatten**: Seien Sie vorsichtig beim Einsatz dynamischer Festplatten. Wenn Sie deren Wachstum nicht kontrollieren, kann ein Mangel an physischem Speicherplatz zu einem Einfrieren (Freeze) der virtuellen Maschine im besten Fall oder zu einem Absturz mit Korruption im schlimmsten Fall führen. Es ist zwingend erforderlich, den verfügbaren Speicherplatz auf Ihren Datastores genau zu überwachen, wenn Sie diesen Festplattentyp verwenden.
+
+Eine proaktive Verwaltung des Speicherplatzes ist entscheidend, um das einwandfreie Funktionieren Ihrer virtuellen Maschinen und die Zuverlässigkeit der Backups zu gewährleisten. Stellen Sie sicher, dass Sie stets über den notwendigen Speicherplatz für Swap-Dateien, Snapshots und das Wachstum dynamischer Festplatten verfügen.
 
 ## Speicher im Backup-Modus
 
-Der für die Sicherung Ihrer virtuellen Maschinen dedizierte Speicher wird von der Plattform [IBM Spectrum Protect Plus](backup.md) innerhalb der bestellten Quote automatisch bereitgestellt. 
+Der für das Backup Ihrer virtuellen Maschinen vorgesehene Speicher wird von der Plattform innerhalb des bestellten Kontingents automatisch bereitgestellt. 
 
 | Referenz                | Einheit | SKU                                      | 
 |-------------------------|---------|------------------------------------------|
-| MASS STORAGE - Archivierung | 1 Tio | csp:(region):iaas:storage:bloc:backup:v1 |
+| MASS STORAGE - Archivage | 1 Tio | csp:(region):iaas:storage:bloc:backup:v1 |
 
 
-### Blockspeicher-Replikation
+### Replikation des Block-Speichers
 
-#### Grundsätze
+#### Grundlagen
 
-Zur Ermöglichung der Durchführung Ihrer Wiederherstellungspläne, wenn es nicht möglich ist, eine betriebliche Kontinuität mit Applikationsmechanismen aufrechtzuerhalten und die Replikation der virtuellen Maschinen nicht geeignet ist, bietet Cloud Temple __Blockspeicher-Replikationsmechanismen zwischen Verfügbarkeitszonen einer Region__ an.
+Um die Umsetzung Ihrer Notfallwiederherstellungspläne zu ermöglichen, wenn es nicht möglich ist, mit Anwendungskontinuitätsmechanismen in einer kontinuitätsgefährdenden Situation zu sein und die Replikation virtueller Maschinen nicht geeignet ist, bietet Cloud Temple __Block-Speicher-Replikationsmechanismen zwischen den Verfügbarkeitszonen einer Region__ an.
 
-Diese Replikationsmechanismen werden in Ergänzung zu den Sicherungen auf die Speichervolumes Ihrer Umgebungen angewendet. Die Entscheidung für den Einsatz eines Replikationsmechanismus in einer Umgebung __hängt von vielen Faktoren ab, einschließlich deren Kritikalität, der tolerierten Datenverluste oder der angestrebten Leistung__ für die Anwendung.
+Diese Replikationsmechanismen werden ergänzend zu den Backups auf die Speicher-LUNs Ihrer Umgebungen angewendet. 
+Die Entscheidung für die Verwendung eines Replikationsmechanismus in einer Umgebung __hängt von vielen Faktoren ab, einschließlich seiner Kritikalität, des tolerierten Datenverlusts oder der angestrebten Leistung__ für die Anwendung.
 
-Cloud Temple bietet zwei Typen von Mechanismen in einer aktiv/passiv Konfiguration:
+Cloud Temple bietet zwei Arten von Mechanismen an, die in einer Aktiv/Passiv-Konfiguration bereitgestellt werden: 
 
-- Die __asynchrone__ Replikation (oder __'Global Mirror'__): *Die Funktion __'Global Mirror'__ bietet einen asynchronen Kopiervorgang. Wenn ein Host auf das primäre Volume schreibt, wird die Bestätigung des Abschlusses der I/O vor dem Abschluss des Kopiervorgangs auf das sekundäre Volume empfangen. Falls ein Umschaltvorgang initiiert wird, muss die Anwendung alle Aktualisierungen abrufen und anwenden, die auf dem sekundären Volume nicht bestätigt wurden. Wenn die I/O-Vorgänge auf dem primären Volume für eine kurze Zeit pausiert werden, kann das sekundäre Volume eine exakte Übereinstimmung des primären Volumes werden. Diese Funktion ist vergleichbar mit einem kontinuierlichen Backup-Prozess, bei dem die letzten Updates immer fehlen. Wenn Sie Global Mirror für Disaster Recovery verwenden, sollten Sie überlegen, wie Sie mit diesen fehlenden Updates umgehen möchten.*
+- Die __asynchrone__ Replikation (oder __'Global Mirror'__): *Die __'Global Mirror'__-Funktion bietet einen asynchronen Kopiervorgang. 
+Wenn ein Host auf das primäre Volume schreibt, wird die Bestätigung des Abschlusses des E/A-Vorgangs empfangen, bevor der Schreibvorgang für die Kopie auf das sekundäre Volume abgeschlossen ist. Wenn ein Failover-Vorgang initiiert wird, muss die Anwendung alle Updates wiederherstellen und anwenden, die auf dem sekundären Volume nicht bestätigt wurden. 
+Wenn die E/A-Vorgänge auf dem primären Volume für kurze Zeit angehalten werden, kann das sekundäre Volume ein exaktes Abbild des primären Volumes werden. Diese Funktion ähnelt einem kontinuierlichen Sicherungsprozess, bei dem die neuesten Updates immer fehlen. Wenn Sie Global Mirror für die Katastrophenwiederherstellung verwenden, sollten Sie darüber nachdenken, wie Sie diese fehlenden Updates verwalten möchten.*
 
-- Die __synchrone__ Replikation (oder __'Metro Mirror'__): *Die Funktion __'Metro Mirror'__ ist eine Fernkopieart, die eine synchrone Kopie der Daten von einem primären Volume auf ein sekundäres Volume erstellt. Bei synchronen Kopien schreiben die Host-Anwendungen auf das primäre Volume, erhalten jedoch keine Bestätigung, dass der Schreibvorgang abgeschlossen ist, bis die Daten auf das sekundäre Volume geschrieben wurden. Dies stellt sicher, dass beide Volumes identische Daten enthalten, wenn der Kopiervorgang abgeschlossen ist. Nachdem der anfängliche Kopiervorgang abgeschlossen ist, stellt die Metro Mirror-Funktion sicher, dass die Quelldaten fortlaufend synchron auf dem Zielort beibehalten werden. __Ab dem 1. Januar 2024 wird die Metro Mirror-Funktion nicht mehr vermarktet.__*
+- Die __synchrone__ Replikation (oder __'Metro Mirror'__): *Die __'Metro Mirror'__-Funktion ist eine Art der Fernkopie, die eine synchrone Kopie 
+der Daten von einem primären Volume auf ein sekundäres Volume erstellt. Bei synchronen Kopien schreiben Host-Anwendungen auf das primäre Volume, erhalten jedoch keine Bestätigung, 
+dass der Schreibvorgang abgeschlossen ist, bis die Daten auf das sekundäre Volume geschrieben wurden. Dies stellt sicher, dass beide Volumes identische Daten enthalten, wenn der Kopiervorgang abgeschlossen ist. Nachdem der anfängliche Kopiervorgang abgeschlossen ist, 
+hält die Metro Mirror-Funktion eine ständig vollständig synchronisierte Kopie der Quelldaten auf dem Zielsystem aufrecht. __Seit dem 1. Januar 2024 ist die 'Metro Mirror'-Funktion nicht mehr im Handel erhältlich.__*
 
-
-Es wird dann eine sogenannte "aktive" oder "primäre" Site und eine "passive" oder "standby" Site definiert. Der Wiederherstellungsplan tritt im Katastrophenfall oder im Rahmen einer Testanforderung für den Disaster Recovery Plan in Kraft. Die passive Site übernimmt dann die aktive Site.
+Man definiert dann einen sogenannten "aktiven" oder "primären" Standort und einen "passiven" oder "Standby"-Standort. 
+Der Wiederherstellungsplan wird im Notfall oder im Rahmen einer Testanforderung des DR-Plans aktiviert.
+Der passive Standort übernimmt dann die Rolle des aktiven Standorts.
 
 #### Asynchrone Replikation 
 
-Wenn Ihre Workloads kurze Wiederherstellungszeiten erfordern und es nicht akzeptabel oder angemessen ist, Applikationsreplikationsmechanismen / Replikation von virtuellen Maschinen zu verwenden, ist es möglich, ein SAN-Speicher-LUN zwischen zwei Verfügbarkeitszonen derselben Region zu replizieren.
+Wenn Ihre Workloads kurze Wiederherstellungszeiten erfordern und es nicht akzeptabel oder geeignet ist,
+Anwendungsreplikationsmechanismen / virtuelle Maschinen-Replikationen zu verwenden, 
+ist es möglich, eine SAN-Speicher-LUN zwischen zwei Verfügbarkeitszonen derselben Region zu replizieren.
 
-Dieses Angebot ermöglicht ein __RPO von 15 Minuten__ und ein __RTO von weniger als 4 Stunden__. Es ermöglicht eine viel schnellere Rückkehr zum Betrieb als die Umsetzung einer Sicherungswiederherstellung.
+Dieses Angebot ermöglicht ein __RPO von 15 Minuten__ und ein __RTO von weniger als 4 Stunden__. Es ermöglicht eine viel schnellere Wiederaufnahme der Arbeit als die Durchführung einer Backup-Wiederherstellung.
 
-In einem asynchron replizierten Speichervolumen (__Global Mirror__) arbeiten die SAN-Virtualisierungscontroller der beiden Verfügbarkeitszonen zusammen, um die Schreibvorgänge auf beiden Sites durchzuführen. Die Hauptsite wartet nicht auf die Schreibbestätigung der Sekundärsite.
+In einem asynchron replizierten Speichervolumen (__Global Mirror__) arbeiten die SAN-Virtualisierungscontroller der beiden Verfügbarkeitszonen zusammen, um die Schreibvorgänge auf beiden Standorten durchzuführen.
+Der Master-Site wartet nicht auf die Schreibbestätigung der Slave-Site.
 
 Die Schritte eines Schreibvorgangs sind wie folgt:
 
-1. Ein Hypervisor möchte __einen Schreibvorgang auf einem Global-Mirror-Volume__ ausführen: Er sendet seine Anfrage an den SAN-Controller seiner Verfügbarkeitszone,
-2. Der lokale SAN-Controller fordert den SAN-Controller der entfernten Zone auf, den Schreibvorgang auszuführen,
-3. der lokale SAN-Controller wartet nicht auf die Bestätigung des entfernten SAN und führt dann den Schreibvorgang lokal aus,
-4. Er gibt __Bestätigung__ an den anfragenden Hypervisor,
-5. __Die Hypervisoren der entfernten Site haben keinen direkten Zugriff auf das Global Mirror LUN__: Ein Serviceauftrag ist erforderlich.
+1. Ein Hypervisor möchte __einen Schreibvorgang auf einem Global-Mirror-Volume__ durchführen: Er sendet seine Anfrage an den SAN-Controller seiner Verfügbarkeitszone,
+2. Der lokale SAN-Controller fordert den SAN-Controller der entfernten Zone auf, den Schreibvorgang durchzuführen,
+3. der lokale SAN-Controller wartet nicht auf die Bestätigung des entfernten SAN und führt dann den Schreibvorgang lokal durch,
+4. Er gibt __Bestätigung__ an den anfordernden Hypervisor,
+5. __Die Hypervisoren des entfernten Standorts greifen nicht direkt auf die Global Mirror-LUN zu__: Dafür ist eine Serviceanfrage erforderlich.
+
+| SLA       | Beschreibung                                                                                                                                       |   
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| RPO 15mn  | Im Falle einer Katastrophe im Hauptzentrum entspricht die maximal verlorene Datenmenge den letzten 15 Minuten des Schreibvorgangs                  |
+| RTO < 4H  | Im Falle einer Katastrophe im Hauptzentrum ist die Wiederherstellung innerhalb von 4 Stunden je nach Komplexität der Umgebungen garantiert          |
+
+Im Falle der Aktivierung des DR-Plans führt das Cloud Temple-Team einen Vorgang zur Präsentation der __'Global Mirror'__-LUN an die entfernten Hypervisoren durch, damit diese auf die Daten zugreifen können. Die Implementierung dieser Lösung erfordert daher, dass auf dem 'Standby'-Standort Rechen- und RAM-Ressourcen reserviert werden, um den Betrieb im Katastrophenfall wieder aufzunehmen.
+
+Die Nutzung dieser Technologie erfordert ebenfalls eine Verdopplung des Plattenspeichers: Es ist notwendig, exakt denselben Speicherplatz auf dem entfernten Standort wie auf dem lokalen Standort zu haben.
 
 
-| SLA       | Beschreibung                                                                                                                                         |   
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 15mn  | Im Falle eines Ausfalls des primären Rechenzentrums entspricht die maximale Datenverlustmenge den letzten 15 Minuten Schreibvorgängen.                |
-| RTO < 4H  | Im Falle eines Ausfalls des primären Rechenzentrums ist die Wiederherstellung innerhalb von 4 Stunden je nach Komplexität der Umgebungen garantiert. |
-
-Im Falle der Aktivierung des Disaster Recovery Plans führt das Team von Cloud Temple eine Präsentation des __'Global Mirror'__ LUN an die entfernten Hypervisoren durch, damit sie auf die Daten zugreifen können. Die Implementierung dieser Lösung erfordert daher, dass auf der 'standby' Site Rechen- und RAM-Ressourcen reserviert sind, um im Falle eines Ausfalls den Betrieb wieder aufzunehmen.
-
-Die Nutzung dieser Technologie erfordert auch eine Verdopplung des Speicherplatzes: Es ist notwendig, dass derselbe Speicherplatz auf der entfernten Site wie auf der lokalen Site vorhanden ist.
-L'usage de ce mécanisme peut impacter la performance de l'application à hauteur de 10 %. __Seules les classes de stockage 500 Iops/To, 1500 Iops/To et 3000 Iops/TO sont compatibles.__
+L'utilisation de ce mécanisme peut affecter les performances de l'application jusqu'à 10 %. __Nur die Storage-Klassen 500 Iops/To, 1500 Iops/To und 3000 Iops/TO sind kompatibel.__
 
 
-| Référence                          | Unité  | SKU                                               |  
-|------------------------------------|--------|---------------------------------------------------|
-| STOCKAGE - Global Replication SAN  | 1 Tio  | csp:(region):iaas:storage:licence:globalmirror:v1 |
+| Referenz                          | Einheit  | SKU                                               |  
+|-----------------------------------|----------|---------------------------------------------------|
+| SPEICHER - Globale Replikation SAN| 1 Tio    | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
-*__Nota__* : 
+*__Hinweis__* : 
 
-- *L'offre étant asynchrone, il est possible lors d'un sinistre que certaines opérations disques n'est pas été écrite sur le site distant. Il peut donc y avoir un risque sur la cohérence des données, a mitigé dans l'analyse de risque du plan de reprise d'activité.*
-- *La réplication du stockage en mode bloc se fait de façon masquée pour les machines virtuelles et les applications,*
-- *À ce titre, il est important de privilégier les scénarios de réplication applicative ou éventuellement de réplication de machine virtuelle,*
-- *Le calcul et la mémoire, sur le site de reprise, peuvent être diminués pour optimiser les coûts si une situation dégradée est acceptable pour le métier lors de l'action du plan de reprise d'activité.*
-
-
-
-
+- *Da das Angebot asynchron ist, ist es möglich, dass bei einem Katastrophenfall einige Festplattenoperationen nicht auf die Remote-Site geschrieben wurden. Es kann daher ein Risiko für die Datenkonsistenz bestehen, das im Rahmen der Risikoanalyse des Notfallwiederherstellungsplans berücksichtigt werden sollte.*
+- *Die Replikation des Speichers im Blockmodus erfolgt für virtuelle Maschinen und Anwendungen transparent,*
+- *Es ist daher wichtig, Szenarien der anwendungsspezifischen Replikation oder gegebenenfalls der Replikation virtueller Maschinen zu bevorzugen,*
+- *Rechen- und Speicherkapazität können auf der Wiederherstellungsseite reduziert werden, um Kosten zu optimieren, sofern eine verschlechterte Situation während der Ausführung des Notfallwiederherstellungsplans akzeptabel ist.*
 
 
 
@@ -265,124 +281,134 @@ L'usage de ce mécanisme peut impacter la performance de l'application à hauteu
 
 
 
-## Virtualisation VMware
 
-L'offre de virtualisation VMware Cloud Temple qualifiée SecNumCloud est basée sur la technologie __VMware Vsphere__.
 
-Die Plattform wird von Cloud Temple automatisch verwaltet (Sicherheitsbedingungen aufrechterhalten, betriebsfähig halten, ...).
+
+
+## Virtualisierung VMware
+
+Das VMware-Cloud-Temple-Virtualisierungsangebot, das SecNumCloud-zertifiziert ist, basiert auf der Technologie __VMware Vsphere__.
+
+Die Plattform wird automatisch von Cloud Temple verwaltet (Sicherungsbetrieb, Betriebsführung etc.).
 Sie kann über die grafische Benutzeroberfläche der Shiva-Konsole oder über die zugehörigen APIs gesteuert werden.
 
-*__Remarque__* : *Aus Sicherheitsgründen im Zusammenhang mit der SecNumCloud-Qualifikation
-__ist es für den Auftraggeber nicht möglich, direkt auf die VMware-Virtualisierungsplattform zuzugreifen__ (insbesondere kein direkter Zugriff auf das vCenter).
-In der Tat, die SecNumCloud-Qualifikation erfordert __eine totale Trennung__ zwischen den Steuerungsschnittstellen der technischen Assets und der Auftraggeberschnittstelle (der Shiva-Konsole).*
+*__Hinweis__* : *Aus Sicherheitsgründen, die mit der SecNumCloud-Zertifizierung zusammenhängen,
+__ist es dem Auftraggeber nicht möglich, direkt auf die VMware-Virtualisierungsplattform zuzugreifen__ (kein direkter Zugriff auf das vCenter insbesondere).
+Tatsächlich erfordert die SecNumCloud-Zertifizierung __eine vollständige Trennung__ zwischen den Verwaltungsoberflächen der technischen Ressourcen und der Benutzeroberfläche des Auftraggebers (der Shiva-Konsole).*
 
-- Die eingesetzten Produkte sind VMware ESXi, VMware Vcenter und VMware Replication.
-- *Das Netzwerk des Virtualisierungsangebots verwendet nicht die VMware NSX-Technologie, sondern wird hardwareseitig durch die Juniper-Technologie und das VPLS-Protokoll gesteuert.*
-- *Das Speichern verwendet nicht die VMware vSan-Technologie, sondern nur IBM-SANs im 32G Fiber Channel.*
-- *Es wird keine Form von versteckter Optimierung implementiert (Komprimierung, Deduplizierung, ...).*
+- Die implementierten Produkte sind VMware ESXi, VMware Vcenter und VMware Replication.
+- *Das Netzwerk des Virtualisierungsangebots nutzt nicht die VMware NSX-Technologie, sondern wird hardwaremäßig durch die Juniper-Technologie und das VPLS-Protokoll gesteuert.*
+- *Der Speicher verwendet nicht die VMware vSan-Technologie, sondern ausschließlich 32G Fibre Channel IBM SANs.*
+- *Es wird keine Form von versteckter Optimierung implementiert (Kompression, Deduplikation, ...).*
 
-### Definition eines Rechenblades-Clusters ('Cpool')
+### Definition eines Clusters von Computing-Blades ('Cpool')
 
-Der __'Cpool'__ ist eine Gruppe von VMware ESXi-Hypervisors, auch bekannt als *'ESX-Cluster'*.
+Der __'Cpool'__ ist eine Gruppe von VMware ESXi-Hypervisoren, auch bekannt als *'ESX-Cluster'*.
 
-Die in einem __'Cpool'__ enthaltenen Hosts gehören alle __zum selben Mandanten und zur selben Verfügbarkeitszone__ (AZ). Sie müssen zwingend derselben Klasse angehören:
-__es ist nicht möglich, verschiedene Modelle von Rechenblades innerhalb desselben Clusters zu mischen__.
+Die Hosts in einem __'Cpool'__ gehören alle __zum selben Mandanten und zur selben Verfügbarkeitszone__ (AZ). Sie müssen notwendigerweise derselben Klasse angehören:
+__es ist nicht möglich, verschiedene Modelle von Computing-Blades innerhalb eines Clusters zu mischen__.
 
-Alle Rechenblades werden mit dem physischen Maximum an Speicher geliefert, eine Softwareeinschränkung der RAM-Nutzung wird auf Clusterebene angewendet, um sicherzustellen, dass sie der fakturierten RAM entspricht.
+Alle Computing-Blades werden mit dem maximal verfügbaren physischen Speicher geliefert, eine RAM-Nutzungseinschränkung wird jedoch softwaremäßig auf Clusterebene angewendet, um sicherzustellen, dass sie der berechneten RAM-Menge entspricht.
 
-Standardmäßig verfügt jede Klinge innerhalb des __'Cpool'__ über 128 GB aktivierten Speicher.
+Standardmäßig hat jedes Blade 128 GB aktivierten Speicher im __'Cpool'__.
 
-Ein __'Cpool'__ kann maximal 32 Hypervisors enthalten. Darüber hinaus ist es erforderlich, einen zweiten Cluster zu erstellen.
+Ein __'Cpool'__ kann maximal 32 Hypervisoren enthalten. Über diese Grenze hinaus muss ein zweiter Cluster erstellt werden.
 
 Der Speicher kann zwischen den __'Cpool'__ geteilt werden.
 
-### Speicherzuweisung für einen 'Cpool'
+### Speicherzuteilung für einen 'Cpool'
 
-Die RAM-Reservierung ist pro Cluster konfigurierbar. Sie können die Menge der RAM reduzieren oder erhöhen, um sie Ihren Anforderungen auf Clusterebene anzupassen.
+Die RAM-Reservierung ist clusterweise konfigurierbar. Sie können die RAM-Menge reduzieren oder erhöhen, um Ihren Bedürfnissen auf Clusterebene zu entsprechen.
 
-__Achten Sie darauf, 85 % durchschnittlicher Speichernutzung pro Rechenblade nicht zu überschreiten__.
-Die VMware-Technologie verwendet nämlich eine Komprimierungsoptimierungsmethode, die die Leistung Ihrer Arbeitslasten stark beeinträchtigen und die Diagnose erschweren kann.
-Ebenso wird bei einer zu hohen Speicherbelastung Ihre Rechenblades der Hypervisor gezwungen, einen Teil seines Speichers auf die Festplatte auszulagern, um den Anforderungen der virtuellen Maschinen gerecht zu werden.
+__Achten Sie darauf, eine durchschnittliche Speichernutzung von 85 % pro Computing-Blade nicht zu überschreiten__.
+Die VMware-Technologie verwendet eine Komprimierungsoptimierungsmethode, die Ihre Arbeitslasten stark beeinträchtigen und die Diagnose erschweren kann.
+Ebenso zwingt ein zu hoher Speicherdruck auf Ihren Computing-Blades den Hypervisor, einen Teil seines Speichers auf die Festplatte auszulagern, um den Bedürfnissen virtueller Maschinen gerecht zu werden.
 
-Dieser Fall, genannt __'Ballooning'__, beeinträchtigt die Gesamtleistung der auf dem betroffenen Speicher (Datenspeicher) befindlichen virtuellen Maschinen erheblich.
-__Die Diagnose ist in diesem Kontext schwierig__, da Ihre Metriken Auswirkungen auf die CPU und nicht auf den Speicher oder Speicherplatz feststellen werden.
-Behalten Sie auch im Hinterkopf, dass die erste Aktion des Hypervisors beim Start einer virtuellen Maschine darin besteht, __eine Auslagerungsdatei__ (.vswap) auf
-der Festplatte zu erstellen, die der Größe des Speichers der betreffenden virtuellen Maschine entspricht. Sie müssen dies __bei der Dimensionierung Ihres Speichers berücksichtigen__.
+Dieser Fall, der als __'Ballooning'__ bezeichnet wird, beeinträchtigt die Gesamtleistung der virtuellen Maschinen im betroffenen Speicher (Datenspeicher) erheblich.
+__Die Diagnose ist in diesem Kontext schwierig__, da Ihre Metrik Auswirkungen auf die CPU und nicht auf den Speicher oder den Speicherplatz feststellen wird.
+Beachten Sie auch, dass der Hypervisor beim Start einer virtuellen Maschine als erstes __eine Speicherswapdatei__ (.vswap) auf
+die Festplatte erstellt, die der Speichergröße der betreffenden virtuellen Maschine entspricht. Sie müssen dies __bei der Dimensionierung Ihres Speichers berücksichtigen__.
 
-Jedes Rechenblade wird mit 128 GB Speicher geliefert, der softwareseitig auf Clusterebene innerhalb des __'Cpool'__ aktiviert ist, verfügt jedoch physisch über den gesamten zuweisbaren Speicher.
+Jedes Computing-Blade wird softwaremäßig mit 128 GB aktiviertem Speicher im __'Cpool'__ geliefert, verfügt jedoch physisch über den gesamten zuweisbaren Speicher.
 
-Zum Beispiel, bei einem Cluster von drei Hosts des Typs ```vmware:standard:v2```, wird die RAM-Reservierung bei Aktivierung des __'Cpool'__ bei 3 x 128 GB = 384 GB RAM liegen.
-Sie können es bis maximal 3 x 384 GB = 1152 GB Speicher erweitern.
+Zum Beispiel, für einen Cluster mit drei Hosts vom Typ ```vmware:standard:v2```, beträgt die RAM-Reservierung bei der Aktivierung des __'Cpool'__ 3 x 128 GB = 384 GB RAM.
+Sie können sie maximal auf 3 x 384 GB = 1152 GB Speicher erweitern.
 
-    Minimum RAM für einen 'Cpool' = Anzahl der Hosts X 128 GB Speicher
-    Maximum RAM für einen 'Cpool' = Anzahl der Hosts X die Menge des physischen Speichers des Rechenblades
+    Minimalspeicher eines 'Cpool' = Anzahl der Hosts X 128 GB Speicher
+    Maximalspeicher eines 'Cpool' = Anzahl der Hosts X die physische Speichergröße des Computing-Blades
 
-### Kataloge für virtuelle Maschinen von Cloud Temple
+### Kataloge der virtuellen Maschinen von Cloud Temple
 
-Cloud Temple stellt Ihnen einen regelmäßig erweiterten und aktualisierten Katalog von `Templates` zur Verfügung, 
-der bis heute mehrere Dutzend `Templates` und Images umfasst, die Sie auf Ihren virtuellen Maschinen installieren können.
+Cloud Temple bietet Ihnen einen Katalog von `Templates`, der regelmäßig von unseren Teams erweitert und aktualisiert wird.
+Er umfasst derzeit mehrere Dutzend `Templates` und Bilder, die auf Ihren virtuellen Maschinen bereitgestellt werden können.
 
-### Updates der Hypervisors
-Cloud Temple liefert regelmäßig Builds für die Hypervisors, um die Anwendung von Sicherheitsupdates sicherzustellen. 
-Allerdings bleibt das Update der Hypervisors in Ihrer Verantwortung, da wir keine Sicht auf Ihre geschäftlichen Anforderungen haben.
+### Aktualisierung der Hypervisoren
+Cloud Temple stellt regelmäßig Builds für die Hypervisoren zur Verfügung, um die Anwendung von Sicherheitspatches zu gewährleisten. 
+Die Aktualisierung der Hypervisoren bleibt jedoch in Ihrer Verantwortung, da wir keine Sicht auf Ihre geschäftlichen Anforderungen haben.
 
-Der Aktualisierungsprozess ist vollständig automatisiert. Um einen kontinuierlichen Service zu gewährleisten, werden pro Cluster mindestens zwei Hypervisors während der Aktualisierung benötigt. Stellen Sie sicher, dass Sie über die erforderlichen Berechtigungen verfügen, um diese Aktionen durchzuführen.
+Der Aktualisierungsprozess ist vollständig automatisiert. Um eine Kontinuität des Dienstes zu gewährleisten, sind mindestens zwei Hypervisoren pro Cluster während der Aktualisierung erforderlich. Stellen Sie sicher, dass Sie über die erforderlichen Berechtigungen verfügen, um diese Aktionen durchzuführen.
 
 
 ### Verwaltung der Affinität Ihrer virtuellen Maschinen
 
-Die __Regeln für Affinität und Anti-Affinität__ ermöglichen es, den Standort der virtuellen Maschinen auf Ihren Hypervisors zu steuern.
+Die __Affinitäts- und Anti-Affinitätsregeln__ ermöglichen es Ihnen, den Standort der virtuellen Maschinen auf Ihren Hypervisoren zu kontrollieren.
 Sie können verwendet werden, um die Ressourcennutzung Ihres __'Cpool'__ zu verwalten.
-Zum Beispiel können sie helfen, die Arbeitslast zwischen den Servern auszugleichen oder ressourcenintensive Arbeitslasten zu isolieren.
-In einem __'Cpool'__ VMware werden diese Regeln oft verwendet, um das Verhalten von virtuellen Maschinen mit vMotion zu verwalten.
-vMotion ermöglicht das Verschieben virtueller Maschinen von einem Host zu einem anderen ohne Serviceunterbrechung.
+Beispielsweise können sie helfen, die Arbeitsbelastung zwischen den Servern auszugleichen oder ressourcenintensive Arbeitslasten zu isolieren.
+In einem __'Cpool'__ von VMware werden diese Regeln häufig verwendet, um das Verhalten der virtuellen Maschinen mit vMotion zu verwalten.
+vMotion ermöglicht es, virtuelle Maschinen ohne Dienstunterbrechung von einem Host auf einen anderen zu verschieben.
 
-Dank der Regelverwaltung können Sie Folgendes konfigurieren:
+Sie können Regeln festlegen zur Verwaltung der Regeln:
 
 - __Affinitätsregeln__ : Diese Regeln stellen sicher, dass bestimmte virtuelle Maschinen auf demselben physischen Host ausgeführt werden.
-Sie werden verwendet, um die Leistung zu verbessern, indem die häufig miteinander kommunizierenden virtuellen Maschinen auf demselben Server gehalten werden, um die Netzwerklatenz zu reduzieren. Affinitätsregeln sind nützlich in Szenarien, in denen die Leistung kritisch ist, z. B. im Fall von Datenbanken oder Anwendungen, die eine schnelle Kommunikation zwischen den Servern erfordern.
+Sie werden verwendet, um die Leistung zu verbessern, indem virtuelle Maschinen, die häufig miteinander kommunizieren,
+auf demselben Server gehalten werden, um die Netzwerklatenz zu reduzieren. Affinitätsregeln sind nützlich in Szenarien,
+in denen die Leistung entscheidend ist, wie bei Datenbanken oder Anwendungen, die eine schnelle Kommunikation zwischen den Servern erfordern.
 
-- __Anti-Affinitätsregeln__ : Im Gegensatz dazu stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen nicht auf demselben physischen Host ausgeführt werden.
-Sie sind wichtig für die Verfügbarkeit und die Ausfallsicherheit, z. B. um zu verhindern, dass kritische Maschinen alle von einem einzelnen Serverausfall betroffen sind.
-Anti-Affinitätsregeln sind wesentlich für Anwendungen, die eine hohe Verfügbarkeit erfordern, z. B. in Produktionsumgebungen, in denen Fehlertoleranz Priorität hat.
-Zum Beispiel möchten Sie nicht, dass Ihre beiden Active Directories auf demselben Hypervisor liegen.
+- __Anti-Affinitätsregeln__ : Umgekehrt stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen nicht auf demselben physischen Host ausgeführt werden.
+Sie sind wichtig für die Verfügbarkeit und Resilienz, beispielsweise,
+um zu verhindern, dass alle kritischen Maschinen bei einem Ausfall eines einzelnen Servers betroffen sind.
+Anti-Affinitätsregeln sind entscheidend für Anwendungen, die eine hohe Verfügbarkeit benötigen,
+wie in Produktionsumgebungen, in denen Ausfalltoleranz Priorität hat.
+Beispielsweise möchten Sie nicht, dass Ihre beiden Active Directories auf demselben Hypervisor liegen.
 
-Bei der Erstellung einer Regel definieren Sie den Regeltyp (Affinität / Anti-Affinität), den Namen der Regel,
-den Aktivierungsstatus ( __'Statut'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
+Beim Erstellen einer Regel definieren Sie den Regeltyp (Affinität / Anti-Affinität), den Namen der Regel,
+ihren Aktivierungsstatus (__'Status'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
 
-*Remarque : Die Affinitäts-/Anti-Affinitätsregeln, die in der Konsole angeboten werden, betreffen nur die virtuellen Maschinen untereinander (keine Regeln zwischen Hypervisors und virtuellen Maschinen).*
+*Hinweis: Die in der Konsole angebotenen Affinitäts-/Anti-Affinitätsregeln betreffen die virtuellen Maschinen untereinander (keine Regeln zwischen Hypervisoren und virtuellen Maschinen).*
 
-### Asynchrone Replikation Ihrer virtuellen Maschinen in einer VMware-Umgebung
 
-Die asynchrone Replikation Ihrer virtuellen Maschinen besteht darin, Schreiboperationen in regelmäßigen Abständen vom Quell-Hypervisor auf den Standby-Standort zu übertragen.
+### Asynchrone Replikation Ihrer virtuellen Maschinen in der VMware-Umgebung
 
-Nach einer anfänglichen Live-Kopie des gesamten aktiven Speichers auf den Standby-Standort werden nur die Schreibvorgänge in regelmäßigen Abständen auf den Standby-Standort übertragen.
-Dieses Intervall hängt vom Schreibvolumen ab (von stündlich bis zu alle 24 Stunden).
+Die asynchrone Replikation Ihrer virtuellen Maschinen ist ein Mechanismus, der die Schreibvorgänge in regelmäßigen Abständen vom Quell-Hypervisor auf die Standby-Site überträgt.
 
-Die Replikation der virtuellen Maschinen basiert auf dem Snapshot-Mechanismus des Hypervisors. In dieser Hinsicht hat hier diese Lösung die gleichen Nachteile,
-besonders die Empfindlichkeit gegenüber dem Schreibvolumen der virtuellen Maschine, da der Snapshot-Prozess ein rekursives Verfahren für den Abschluss des Snapshots ist.
+Nach einer anfänglichen Echtzeit-Kopie des gesamten aktiven Speichers auf die Standby-Site werden nur die Schreibvorgänge in regelmäßigen Abständen auf die schlafende Site übertragen.
+Dieses Intervall hängt vom Schreibvolumen ab (stündlich bis täglich).
 
-Ein typisches Beispiel für eine Maschine, die den Replikationsmechanismus für virtuelle Maschinen nicht unterstützt, ist ein
-FTP-Server, der Echtzeitdatenströme von Überwachungskameras empfängt. __Die Maschine verbringt ihre Zeit mit Schreiben und wird 
-nicht in der Lage sein, einen Snapshot abzuschließen, ohne das Betriebssystem für eine signifikante Zeitspanne
-(mehrere zehn Minuten) anzuhalten__. Wenn der Hypervisor den Snapshot nicht abschließen kann, wird er genau das tun,
-ohne Eingriffsmöglichkeit außer zur Korruption der virtuellen Maschine.
-| SLA             | Beschreibung                                                                                                                                             |   
+Die Replikation der virtuellen Maschinen basiert auf dem Snapshot-Mechanismus des Hypervisors. Aus diesem Grund
+weist diese Lösung die gleichen Nachteile auf, insbesondere die Anfälligkeit für das Schreibvolumen der virtuellen Maschine,
+da der Snapshot-Prozess ein rekursiver Mechanismus zum Abschluss des Snapshots ist.
+
+Das typische Beispiel einer Maschine, die den Mechanismus der virtuellen Maschinenreplikation nicht unterstützt, ist ein 
+FTP-Server, der Echtzeitstreams von Überwachungskameras empfängt. __Die Maschine schreibt ständig und wird nicht in der Lage sein,
+einen Snapshot abzuschließen, ohne das Betriebssystem für eine signifikante Zeitperiode anzuhalten (mehrere Dutzend Minuten)__.
+Wenn der Hypervisor nicht in der Lage ist, den Snapshot abzuschließen, wird genau dies geschehen,
+ohne die Möglichkeit einzugreifen, außer die virtuelle Maschine zu beschädigen.
+| SLA             | Description                                                                                                                                               |   
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO von 1H bis 24H | Im Falle eines Ausfalls des primären Rechenzentrums ist die maximale Datenmenge, die verloren gehen kann, die der letzten Schreibvorgänge auf dem Standby-Site. |
-| RTO  < 15 Minuten  | Betriebsstart der angehaltenen virtuellen Maschine auf dem Fernstandort                                                                                |
+| RPO de 1H à 24H | Im Falle eines Schadens am Primärrechenzentrum ist die maximal verlorene Datenmenge die der letzten Schreibvorgänge, die auf die Standby-Site übertragen wurden. |
+| RTO  < 15mn     | Betrieb des virtuellen Geräts, das auf der entfernten Site gestoppt wurde                                                                                 |
 
 
-Im Bedarfsfall oder bei einem Fehler an einer Maschine des primären Standorts wird die Spiegelmaschine am Standby-Standort aktiviert. 
-Für die Wiederaufnahme des Betriebs ist es notwendig, auf dem Standby-Standort Rechenleistung und RAM im Standby-Modus reserviert zu haben. Es 
-ist erforderlich, dass am passiven Standort derselbe Speicherplatz vorhanden ist wie am aktiven Standort.
+Im Bedarfsfall oder bei einem Defekt auf einer Maschine der Hauptseite wird die Spiegelmaschine auf der Standby-Site aktiviert.
+Die Wiederaufnahme der Aktivität erfordert, dass auf der Standby-Site Berechnungen und RAM im Standby-Modus reserviert werden. Es
+ist notwendig, auf der passiven Site den gleichen Speicherplatz wie auf der aktiven Site zu haben.
 
 
-| Referenz                          | Einheit | SKU                                             |  
+| Referenz                         | Einheit | SKU                                             |  
 |-----------------------------------|-------|-------------------------------------------------|
 | PRA - Replication VMware inter-AZ | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
 
-*__Hinweis__ : Die Berechnung des minimalen RPO muss in Abhängigkeit von der Änderungsrate auf der virtuellen Maschine definiert werden.*
+*__Hinweis__ : Die Berechnung des minimalen RPO muss basierend auf der Änderungsrate der virtuellen Maschine definiert werden.*
 
 
 
@@ -395,44 +421,45 @@ ist erforderlich, dass am passiven Standort derselbe Speicherplatz vorhanden ist
 
 
 
+## Sicherung von virtuellen Maschinen
+Cloud Temple bietet __eine native und nicht deaktivierbare Kreuzsicherungsarchitektur__ (sie ist im französischen Secnumcloud-Qualifikationsverfahren obligatorisch).
 
-## Backup von virtuellen Maschinen
-Cloud Temple bietet __eine native und nicht deaktivierbare, kreuzweise Sicherungsarchitektur__ (sie ist im französischen Secnumcloud-Qualifikationsverfahren obligatorisch).
+Die Backups werden in einer Verfügbarkeitszone und in einem anderen physischen Rechenzentrum als das, das die virtuelle Maschine hostet, gespeichert.
 
-Die Backups werden in einer Verfügbarkeitszone und in einem physischen Rechenzentrum gespeichert, das sich von dem unterscheidet, das die virtuelle Maschine hostet.
-
-Dies ermöglicht den Schutz im Falle eines größeren Ausfalls des Produktionsrechenzentrums und die Wiederherstellung auf einem sekundären Rechenzentrum (z.B. Brand).
+Dies ermöglicht den Schutz im Falle eines größeren Defekts im Produktionsrechenzentrum und die Wiederherstellung in einem sekundären Rechenzentrum (z.B. bei einem Brand).
 
 Diese Lösung umfasst:
 
-- Das Offsite-Hot-Backup aller Festplatten,
-- Die Präsentation und der sofortige Start einer virtuellen Maschine aus der Massenspeicherinfrastruktur und das Hot-Reload auf den Produktiv-SANs,
+- Das heiße Offsite-Backup aller Festplatten,
+- Die Präsentation und das sofortige Starten einer virtuellen Maschine von der Massenspeicherinfrastruktur und das Wiederladen auf die Produktions-SANs,
 - Die teilweise Wiederherstellung von Dateien aus dem Backup,
-- Eine auf die Zuweisung des Massenspeichers begrenzte Retention.
+- Eine begrenzte Aufbewahrung, die nur durch die Zuweisung von Massenspeicherplatz begrenzt ist.
 
-Diese Backup-Infrastruktur basiert auf der Lösung *IBM Spectrum Protect Plus*, einer agentenlosen Architektur, die einfach zu bedienen ist und die Automatisierung der Backup-Prozesse sowie eine Optimierung des Massenspeichers ermöglicht.
+Diese Backup-Infrastruktur basiert auf der Lösung *IBM Spectrum Protect Plus*, einer agentenlosen Architektur, die einfach zu bedienen ist und die Automatisierung von Backup-Prozessen sowie eine Optimierung des Massenspeicherraums ermöglicht.
 
 Die Backup- und Wiederherstellungsgeschwindigkeiten hängen von der Änderungsrate in den Umgebungen ab.
-Die Backup-Richtlinie ist über die [Cloud Temple Console](../console/console.md) für jede virtuelle Maschine konfigurierbar.
+Die Backup-Politik kann über [die Cloud Temple Console](../console/console.md) für jede virtuelle Maschine konfiguriert werden.
 
 *__Hinweis :__*
 
-*__Einige virtuelle Maschinen sind mit dieser Sicherungstechnologie__ , die die Snapshot-Mechanismen des Hypervisors verwendet, __nicht kompatibel__. Dies sind typischerweise Maschinen, deren Schreiblast auf Festplatten konstant ist. Es ist dem Hypervisor nicht möglich, den Snapshot zu schließen, was das Einfrieren der virtuellen Maschine erfordert, um den Abschlussvorgang durchzuführen. Dieses Einfrieren kann mehrere Stunden dauern und ist nicht zu stoppen.*
+*__Bestimmte virtuelle Maschinen sind nicht mit dieser Backup-Technologie kompatibel__, die die Snapshot-Mechanismen des Hypervisors verwendet.
+Typischerweise sind dies Maschinen mit konstanten Schreibladen auf die Festplatte. Es ist dem Hypervisor nicht möglich, den Snapshot abzuschließen, was
+dazu führt, dass die virtuelle Maschine eingefroren werden muss, um den Abschluss der Operation zu ermöglichen. Dieses Einfrieren kann mehrere Stunden dauern und kann nicht gestoppt werden.*
 
-*Die Lösung besteht dann darin, die Festplatte, die Ziel permanenter Schreibvorgänge ist, auszuschließen und die Daten mit einer anderen Methode zu sichern.*
+*Die Lösung besteht darin, die Festplatte, die permanenten Schreibvorgängen ausgesetzt ist, auszuschließen und die Daten mit einer anderen Methode zu sichern.*
 
 | Referenz                                               | Einheit | SKU                            |
 | ------------------------------------------------------- | ----- | ------------------------------ |
-| BACKUP - Zugriff auf den IBM Spectrum Protect Plus Service | 1 VM  | csp:(region):iaas:backup:vm:v1 |
+| BACKUP - Zugriff auf den IBM Spectrum Protect Plus-Dienst | 1 VM  | csp:(region):iaas:backup:vm:v1 |
 
 
 #### Erstellen einer Backup-Richtlinie
-Um eine neue Backup-Richtlinie hinzuzufügen, muss eine Anfrage an den Support gestellt werden. Der Support ist über das Rettungsring-Symbol oben rechts im Fenster erreichbar.
+Um eine neue Backup-Richtlinie hinzuzufügen, muss ein Antrag beim Support gestellt werden. Der Support ist über das Symbol der Rettungsboje oben rechts im Fenster zugänglich.
 
-Die Erstellung einer neuen Backup-Richtlinie erfolgt durch __eine Serviceanforderung__, die folgendes angibt:
+Die Erstellung einer neuen Backup-Richtlinie erfolgt durch __einen Serviceantrag__, der Folgendes anzeigt:
 
     Der Name Ihrer Organisation
-    Der Name eines Ansprechpartners mit seiner Mail und Telefonnummer zur abschließenden Konfiguration
-    Der Name des Tenants
+    Der Name eines Kontakts mit seiner E-Mail-Adresse und Telefonnummer zur abschließenden Konfiguration
+    Der Name des Mieters
     Der Name der Backup-Richtlinie
-    Die Merkmale (x Tage, y Wochen, z Monate, ...)
+    Die Eigenschaften (x Tage, y Wochen, z Monate, ...)
