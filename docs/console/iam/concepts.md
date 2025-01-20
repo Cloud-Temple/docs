@@ -46,9 +46,7 @@ La liste des permissions et leur définition est accessible [ici](#permissions).
 
 ### Réinscription d'un utilisateur
 
-Lorsqu'un utilisateur a été provisionné mais n'a validé le mail envoyé dans le délai d'expiration du lien de la Console Shiva, il ne peut plus confirmer son inscription sur la Console Shiva.
-
-Il est alors possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
+Lorsqu'un utilisateur a été provisionné mais n'a pas validé son inscription dans le délai d'expiration du mail envoyé par la Console, il ne peut plus confirmer son inscription. Il est alors possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
 
 La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
 
