@@ -44,6 +44,36 @@ La configuration des permissions est à faire pour chaque [Tenant](#tenants) de 
 
 La liste des permissions et leur définition est accessible [ici](#permissions).
 
+### Réinscription d'un utilisateur
+
+Lorsqu'un utilisateur a été provisionné mais n'a validé le mail envoyé dans le délai d'expiration du lien de la Console Shiva, il ne peut plus confirmer son inscription sur la Console Shiva.
+
+Il est alors possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
+
+La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
+
+Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
+
+![](images/shiva_profil_012.png)
+
+### Suppression d'un utilisateur
+
+La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
+
+Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquer sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
+
+![](images/shiva_profil_013.png)
+![](images/shiva_profil_010.png)
+
+Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
+
+### Se déconnecter
+
+La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, puis __'Déconnecter'__.
+
+![](images/shiva_profil_009.png)
+![](images/shiva_profil_011.png)
+
 ### Changer la langue d'un utilisateur
 
 Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
