@@ -61,7 +61,7 @@ El solicitante también puede especificar un nivel de criticidad (P1 a P4) en la
 - Comportamientos anómalos en datos sensibles
 - Violación de datos personales
 
-**ALTO (P2) - Notificación <2h**:
+**ALTO (P2) - Notificación < 2h**:
 
 - Mal funcionamiento de los accesos de usuarios
 - Anomalía en el cifrado de sus datos
@@ -69,14 +69,14 @@ El solicitante también puede especificar un nivel de criticidad (P1 a P4) en la
 - Incoherencia en los datos
 - Lentitud mayor que afecta la actividad
 
-**MEDIO (P3) - Notificación <4h**:
+**MEDIO (P3) - Notificación < 4h**:
 
 - Problema de rendimiento localizado
 - Incidente en una función no crítica
 - Error de configuración con impacto limitado
 - Dificultad de acceso puntual
 
-**BAJO (P4) - Notificación <24h**:
+**BAJO (P4) - Notificación < 24h**:
 
 - Solicitud de investigación
 - Anomalía sin impacto directo
