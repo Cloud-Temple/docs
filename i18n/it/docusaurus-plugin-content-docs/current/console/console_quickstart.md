@@ -3,97 +3,132 @@ title: Quickstart
 ---
 
 ## Prérequis
-- Avoir souscrit à une offre Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
-- Avoir un accès à la console Shiva
-- Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la console shiva est limité aux adresses de confiances identifiées)
+- Avoir souscrit à une offre Cloud Temple. Per sottoscrivere semplicemente, potete [contattarci](https://www.cloud-temple.com/contactez-nous/) o via mail all'indirizzo __contact@cloud-temple.com__.
+- Avere un accesso alla console Shiva
+- Avere il proprio IPv4 pubblico dichiarato nella zona di fiducia Cloud Temple (l'accesso alla console shiva è limitato agli indirizzi di fiducia identificati)
 
-## Connexion à votre tenant Cloud Temple
-Shiva est accessible via l'URL ci-dessous:
+## Connessione al vostro tenant Cloud Temple
+Shiva è accessibile tramite l'URL sotto riportato:
     https://shiva.cloud-temple.com
-    Ou bien depuis l'URL directe qui vous a été communiquée par mail.
+    Oppure dall'URL diretto che vi è stato comunicato via mail.
 
-La première page vous permet de sélectionner [l'organisation](iam/concepts.md#organisations) dans laquelle votre utilisateur a été créé.
-Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
+La prima pagina consente di selezionare [l'organizzazione](iam/concepts.md#organisations) in cui è stato creato il vostro utente.
+Una volta inserita l'azienda, fate clic su __'Se connecter'__.
 
 ![](images/shiva_login.png)
 
-Vous allez ensuite être redirigé vers une page vous demandant de vous authentifier.
-Une fois connecté, vous arrivez sur cette page.
+Sarete quindi reindirizzati a una pagina in cui vi viene chiesto di autenticarvi.
+Una volta connessi, arriverete su questa pagina.
 
 ![](images/shiva_home.png)
 
-## Gestion de la langue
-La console est disponible en __francais__, __anglais__. Vous pouvez changer la langue de fonctionnement grâce à l'icône __langue__ situé en haut à droite de l'écran.
+## Gestione della lingua
+La console è disponibile in __francese__, __inglese__. Potete cambiare la lingua di funzionamento tramite l'icona __langue__ situata in alto a destra dello schermo.
 
-Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
+Il cambio di lingua di un utente deve essere effettuato nel suo __'Profil'__, in alto a destra dello schermo, nei __'Paramètres utilisateur'__.
 
 ![](images/shiva_profil_006.png)
 
-La configuration est faite pour chaque tenant [Tenant](iam/concepts.md#tenant).
+La configurazione è fatta per ciascun tenant [Tenant](iam/concepts.md#tenant).
 
-## Accès au support technique
+## Accesso al supporto tecnico
 
-À tout moment, vous pouvez contacter __l'équipe de support Cloud Temple__ via __l'icône 'bouée'__ situé en haut à droite de l'écran.
+In qualsiasi momento, potete contattare __l'équipe di supporto Cloud Temple__ tramite l'icona __'bouée'__ situata in alto a destra dello schermo.
 
 ![](images/shiva_support.png)
 
-Vous serez guidé pendant tout le processus de demande de support.
+Sarete guidati durante tutto il processo di richiesta di supporto.
 
-La première étape est l'identification du type de demande de support :
+La prima fase è l'identificazione del tipo di richiesta di supporto:
 
-- Demander un conseil sur l'utilisation d'un produit (hors incident),
-- Demander une assistance en lien avec votre compte client,
-- Déclarer un incident ou demander un support technique.
-- Demander l'assistance d'un service professionnel (mise à disposition d'un ingénieur Cloud Temple sur une problématique).
+- Chiedere un consiglio sull'utilizzo di un prodotto (esclusi incidenti),
+- Chiedere assistenza in relazione al vostro account cliente,
+- Segnalare un incidente o chiedere supporto tecnico.
+- Chiedere l'assistenza di un servizio professionale (disponibilità di un ingegnere Cloud Temple per una problematica).
 
 ![](images/shiva_support_01.png)
 
-Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
+Avrete quindi la possibilità di fornire dettagli e includere file (immagini o registri ad esempio).
+
+Il richiedente può anche specificare un livello di criticità (P1 a P4) nella descrizione del ticket, in caso di un incidente, come:
+
+**CRITICO (P1) - Notifica immediata**:
+
+- Sospetto di fuga di dati sensibili
+- Rilevamento di un accesso non autorizzato ai vostri dati
+- Compromissione delle vostre credenziali di amministrazione
+- Indisponibilità totale dei vostri servizi critici
+- Comportamenti anomali sui dati sensibili
+- Violazione di dati personali
+
+**ALTA (P2) - Notifica < 2h**:
+
+- Malfunzionamento degli accessi utenti
+- Anomalia nella crittografia dei vostri dati
+- Perdita di accesso ad alcune funzionalità critiche
+- Incoerenza nei dati
+- Rallentamenti significativi che impattano l'attività
+
+**MEDIA (P3) - Notifica < 4h**:
+
+- Problema di performance localizzato
+- Incidente su una funzione non critica
+- Errore di configurazione con impatto limitato
+- Difficoltà di accesso occasionale
+
+**BASSA (P4) - Notifica < 24h**:
+
+- Richiesta di investigazione
+- Anomalia senza impatto diretto
+- Domanda di conformità
+- Necessità di chiarimento tecnico
 
 ![](images/shiva_support_02.png)
 
-Une fois votre demande effectuée, il est possible de retrouver vos demandes via __l'icône 'bouée'__ situé en haut à droite de l'écran :
+Una volta effettuata la vostra richiesta, è possibile ritrovare le vostre richieste tramite l'icona __'bouée'__ situata in alto a destra dello schermo:
 
 ![](images/shiva_support_03.png)
 
-## Accès aux fonctionnalités utilisateur via l'interface web
+## Accesso alle funzionalità utente tramite l'interfaccia web
 
-L'ensemble des fonctionnalités accessibles à votre utilisateur (en fonction de ses droits) est situé à gauche de l'écran, dans le bandeau vert.
-Les fonctionnalités sont regroupés par module. Cela regroupe principalement :
+Tutte le funzionalità accessibili al vostro utente (in base ai suoi diritti) si trovano a sinistra dello schermo, nel banner verde.
+Le funzionalità sono raggruppate per modulo. I principali raggruppamenti includono:
 
-- L'__inventaire__ de vos ressources,
-- Le __suivi des opérations__,
-- Le __pilotage des ressources IaaS__ (Calcul, stockage, réseau, ...)
-- Le __pilotage des ressources OpenIaaS__ (Calcul, stockage, réseau, ...)
-- L'accès aux __services annexes__ (Bastion, monitoring, ...)
-- L'__administration de votre organisation__ (Gestion des tenants, des droits, ...)
+- L'__inventario__ delle vostre risorse,
+- Il __monitoraggio delle operazioni__,
+- Il __controllo delle risorse IaaS__ (Calcolo, storage, rete, ...)
+- Il __controllo delle risorse OpenIaaS__ (Calcolo, storage, rete, ...)
+- L'accesso ai __servizi accessori__ (Bastion, monitoring, ...)
+- L'__amministrazione della vostra organizzazione__ (Gestione dei tenant, dei diritti, ...)
 
-L'activation d'un module pour un utilisateur dépend des droits de l'utilisateur. Par exemple le module __'Commande'__ ne sera pas disponible si l'utilisateur ne dispose pas du droit __'ORDER'__.
+L'attivazione di un modulo per un utente dipende dai diritti dell'utente. Ad esempio, il modulo __'Commande'__ non sarà disponibile se l'utente non dispone del diritto __'ORDER'__.
 
-Voici une présentation des différents modules disponibles. De nouveaux modules viennent enrichir la console régulièrement :
+Ecco una presentazione dei vari moduli disponibili. Nuovi moduli arricchiscono regolarmente la console:
 
 ![](images/shiva_onboard_007.png)
 
-- __Tableau de Bord__ : permet d'avoir rapidement une vue sur le __total des ressources de calcul et de stockage__, les statistiques de la __sauvegarde__ et une __synthèse des dossiers de support__,
-- __Inventaire__ : permet d'avoir une vue de l'ensemble de vos ressources de type __'machines virtuelles'__. Si les __tags__ sont utilisés, il permet d'avoir une vue par __tag__ (par exemple, vue métier, vue applicatif, ...),
-- __Infogérance__ : donne accès au suivi de vos __demandes de support__ et à la __métrologie des services__,
-- __IaaS__ : permet le __pilotage des infrastructures IaaS VMware__ (Machines virtuelles, clusters, hyperviseurs, réplications, sauvegarde, ...),
-- __OpenIaaS__ : permet le __pilotage des ressources Xen Orchestra__ (Machines virtuelles, sauvegarde, ...),
-- __OpenShift__ : permet le pilotage de votre **architecture PaaS RedHat Openshift** et le management de vos containers sur les 3 zones de disponibilité de la plateforme.
-- __Bastion__ : Permet de déployer et de piloter des appliances bastion SSH/RDP dans vos réseaux,
-- __Réseau__ : permet le pilotage des __réseaux de niveau 2 et 3__, des __IP publiques__ et de vos __circuits télécoms__,
-- __Colocation__ : Offre la vue sur les équipements situés en zone de __collocation mutualisée ou dédiée__,
-- __Commande__ : Permet la commande de ressources et le suivi des déploiements,
-- __Administration__ : Regroupe les fonctions d'administration des utilisateurs et des tenants ainsi que l'accès à la journalisation globale.
+- __Dashboard__ : permette di avere rapidamente una vista sul __totale delle risorse di calcolo e di storage__, le statistiche del __backup__ e una __sintesi delle pratiche di supporto__,
+- __Inventario__ : permette di avere una visione d'insieme delle vostre risorse di tipo __'macchine virtuali'__. Se vengono utilizzati i __tag__, permette di avere una vista per __tag__ (ad esempio, vista business, vista applicativa, ...),
+- __Gestione delegata__ : dà accesso al monitoraggio delle vostre __richieste di supporto__ e alla __metrologia dei servizi__,
+- __IaaS__ : permette il __controllo delle infrastrutture IaaS VMware__ (Macchine virtuali, cluster, hypervisor, repliche, backup, ...),
+- __OpenIaaS__ : permette il __controllo delle risorse Xen Orchestra__ (Macchine virtuali, backup, ...),
+- __OpenShift__ : permette il controllo della vostra **architettura PaaS RedHat Openshift** e la gestione dei vostri container nelle 3 zone di disponibilità della piattaforma.
+- __Bastion__ : Permette di distribuire e controllare appliance bastion SSH/RDP nelle vostre reti,
+- __Networking__ : permette il controllo delle __reti di livello 2 e 3__, degli __IP pubblici__ e dei vostri __circuiti di telecomunicazione__,
+- __Colocation__ : Offre una vista sugli apparati situati nella zona di __collocazione condivisa o dedicata__,
+- __Ordine__ : Permette l'ordine di risorse e il monitoraggio delle distribuzioni,
+- __Amministrazione__ : Raccoglie le funzioni di amministrazione degli utenti e dei tenant, nonché l'accesso alla registrazione globale.
 
-## Accès aux fonctionnalités utilisateur via l'API
+I pittogrammi __'NEW'__ significano che il prodotto in questione è stato fornito ma non è ancora qualificato come __offerta SecNumCloud__ e __'BETA'__ significano che il prodotto in questione è stato fornito ed è stato recentemente qualificato come __offerta SecNumCloud__.
 
-L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__ :
+## Accesso alle funzionalità utente tramite l'API
+
+L'accesso a tutte le funzionalità della console Shiva è possibile tramite l'API Shiva. Potete avere i dettagli dei verbi e delle configurazioni tramite __'Profil'__ e __'APIs'__:
 
 ![](images/shiva_onboard_008.png)
 
 ## Provider Terraform
 
-Cloud Temple met à votre disposition un provider Terraform pour piloter *"as code"* votre plateforme Cloud. Il est accessible ici :
+Cloud Temple vi mette a disposizione un provider Terraform per controllare *"as code"* la vostra piattaforma Cloud. È accessibile qui:
 
 https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest
