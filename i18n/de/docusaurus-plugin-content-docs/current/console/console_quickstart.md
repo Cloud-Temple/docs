@@ -3,29 +3,29 @@ title: Quickstart
 ---
 
 ## Voraussetzungen
-- Ein Abonnement bei einem Cloud Temple Angebot. Um einfach zu abonnieren, können Sie [uns kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an __contact@cloud-temple.com__.
-- Zugang zur Shiva-Konsole haben
-- Ihre öffentliche IPv4 in der Cloud Temple Vertrauenszone deklariert haben (der Zugang zur Shiva-Konsole ist auf identifizierte Vertrauensadressen beschränkt)
+- Ein Abonnement für ein Cloud Temple-Angebot haben. Um sich einfach anzumelden, können Sie [uns kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an __contact@cloud-temple.com__.
+- Zugang zur Shivakonsole haben.
+- Eigene öffentliche IPv4-Adresse im Cloud Temple Vertrauensbereich registrieren (der Zugang zur Shiva-Konsole ist auf identifizierte Vertrauensadressen beschränkt).
 
 ## Verbindung zu Ihrem Cloud Temple Tenant
-Shiva ist über die untenstehende URL erreichbar:
+Shiva ist über die folgende URL zugänglich:
     https://shiva.cloud-temple.com
     Oder über die direkte URL, die Ihnen per E-Mail mitgeteilt wurde.
 
-Die erste Seite ermöglicht es Ihnen, die [Organisation](iam/concepts.md#organisations) auszuwählen, in der Ihr Benutzer erstellt wurde.
-Sobald das Unternehmen angegeben wurde, klicken Sie bitte auf __'Anmelden'__.
+Auf der ersten Seite können Sie die [Organisation](iam/concepts.md#organisations) auswählen, in der Ihr Benutzer erstellt wurde.
+Nachdem das Unternehmen ausgewählt wurde, klicken Sie bitte auf __'Se connecter'__.
 
 ![](images/shiva_login.png)
 
-Sie werden dann zu einer Seite weitergeleitet, die Sie zur Authentifizierung auffordert.
-Nach dem Einloggen gelangen Sie zu dieser Seite.
+Sie werden dann auf eine Seite weitergeleitet, auf der Sie aufgefordert werden, sich zu authentifizieren.
+Nach dem Einloggen gelangen Sie auf diese Seite.
 
 ![](images/shiva_home.png)
 
 ## Sprachverwaltung
-Die Konsole ist in __Französisch__, __Englisch__ verfügbar. Sie können die Sprache über das __Sprach-Icon__ oben rechts auf dem Bildschirm ändern.
+Die Konsole ist in __französisch__, __englisch__ verfügbar. Sie können die Sprache über das __Sprach__-Symbol oben rechts auf dem Bildschirm ändern.
 
-Die Sprachauswahl eines Benutzers erfolgt in seinem __'Profil'__, oben rechts auf dem Bildschirm, in den __'Benutzereinstellungen'__.
+Die Sprachänderung eines Benutzers erfolgt in seinem __'Profil'__, oben rechts auf dem Bildschirm, in den __'Benutzereinstellungen'__.
 
 ![](images/shiva_profil_006.png)
 
@@ -33,102 +33,102 @@ Die Konfiguration erfolgt für jeden Tenant [Tenant](iam/concepts.md#tenant).
 
 ## Zugang zum technischen Support
 
-Sie können jederzeit das __Cloud Temple Supportteam__ über das __'Rettungsring-Icon'__ oben rechts auf dem Bildschirm kontaktieren.
+Sie können jederzeit das __Cloud Temple Support-Team__ über das __'Rettungsring'-Symbol__ oben rechts auf dem Bildschirm kontaktieren.
 
 ![](images/shiva_support.png)
 
-Sie werden durch den gesamten Supportanfrageprozess geführt.
+Sie werden während des gesamten Support-Anfrageprozesses geführt.
 
-Der erste Schritt ist die Identifikation des Supportanfragetypen:
+Der erste Schritt ist die Identifizierung des Typs der Support-Anfrage:
 
-- Beratung zur Nutzung eines Produkts (außerhalb von Vorfällen) anfordern,
-- Support in Bezug auf Ihr Kundenkonto anfordern,
-- Einen Vorfall melden oder technischen Support anfordern,
-- Unterstützung durch einen professionellen Service anfordern (Bereitstellung eines Cloud Temple Ingenieurs für ein Problem).
+- Beratung zur Nutzung eines Produkts anfordern (außerhalb eines Vorfalls),
+- Unterstützung im Zusammenhang mit Ihrem Kundenkonto anfordern,
+- Einen Vorfall melden oder technischen Support anfordern.
+- Unterstützung durch einen professionellen Service anfordern (Bereitstellung eines Cloud Temple-Ingenieurs für ein bestimmtes Problem).
 
 ![](images/shiva_support_01.png)
 
-Sie haben dann die Möglichkeit, Details anzugeben und Dateien (z. B. Bilder oder Protokolle) hinzuzufügen.
+Sie haben dann die Möglichkeit, Details anzugeben und Dateien hochzuladen (z.B. Bilder oder Protokolle).
 
-Der Auftraggeber kann auch den Kritikalitätsgrad (P1 bis P4) in der Beschreibung des Tickets angeben, im Falle eines Vorfalls, wie zum Beispiel:
+Der Anfragesteller kann auch einen Schweregrad (P1 bis P4) in der Ticketbeschreibung angeben, im Falle eines Vorfalls, wie:
 
-**KRITISCH (P1) - Sofortige Benachrichtigung**:
+**KRITISCH (P1)**:
 
-- Verdacht auf Datenleakage sensibler Daten
-- Erkennung eines unautorisierten Zugriffs auf Ihre Daten
-- Kompromittierung Ihrer Administrationsanmeldedaten
-- Totalausfall Ihrer kritischen Dienste
-- Anormales Verhalten bei sensiblen Daten
+- Verdacht auf Leckage sensibler Daten
+- Erkennung eines unbefugten Zugriffs auf Ihre Daten
+- Kompromittierung Ihrer Administrations-Anmeldedaten
+- Totale Unverfügbarkeit Ihrer kritischen Dienste
+- Ungewöhnliches Verhalten bei sensiblen Daten
 - Verletzung personenbezogener Daten
 
-**HOCH (P2) - Benachrichtigung < 2 Stunden**:
+**HOCH (P2)**:
 
-- Funktionsstörung der Benutzerzugriffe
+- Fehlfunktion der Benutzerzugänge
 - Anomalie bei der Verschlüsselung Ihrer Daten
 - Verlust des Zugangs zu bestimmten kritischen Funktionen
-- Inkonsistenzen in den Daten
-- Erhebliche Verzögerungen, die die Aktivität beeinträchtigen
+- Dateninkonsistenzen
+- Schwerwiegende Verlangsamungen, die die Aktivität beeinträchtigen
 
-**MITTEL (P3) - Benachrichtigung < 4 Stunden**:
+**MITTEL (P3)**:
 
-- Lokales Leistungsproblem
+- Lokalisierte Leistungsprobleme
 - Vorfall bei einer nicht kritischen Funktion
-- Konfigurationsfehler mit begrenztem Einfluss
-- Zeitweilige Zugangsprobleme
+- Konfigurationsfehler mit begrenzten Auswirkungen
+- Temporäre Zugangsschwierigkeiten
 
-**NIEDRIG (P4) - Benachrichtigung < 24 Stunden**:
+**NIEDRIG (P4)**:
 
-- Anfrage einer Untersuchung
-- Anomalie ohne direkten Einfluss
-- Frage zur Compliance
-- Bedarf an technischer Klarstellung
+- Untersuchungsanforderung
+- Anomalie ohne direkte Auswirkungen
+- Compliance-Frage
+- Bedarf an technischer Klärung
 
 ![](images/shiva_support_02.png)
 
-Sobald Ihre Anfrage gestellt ist, können Sie Ihre Anfragen über das __'Rettungsring-Icon'__ oben rechts auf dem Bildschirm abrufen:
+Nach Ihrer Anfrage können Sie Ihre Anfragen über das __'Rettungsring'-Symbol__ oben rechts auf dem Bildschirm verfolgen:
 
 ![](images/shiva_support_03.png)
 
-## Zugang zu Benutzerfunktionen über die Web-Oberfläche
+## Zugang zu Benutzerfunktionen über die Weboberfläche
 
-Alle für Ihren Benutzer zugänglichen Funktionen (je nach seinen Rechten) befinden sich links auf dem Bildschirm, im grünen Banner.
+Alle für Ihren Benutzer zugänglichen Funktionen (abhängig von seinen Rechten) befinden sich auf der linken Seite des Bildschirms im grünen Banner.
 Die Funktionen sind nach Modulen gruppiert. Dies umfasst hauptsächlich:
 
-- Die __Inventur__ Ihrer Ressourcen,
+- Das __Inventar__ Ihrer Ressourcen,
 - Die __Überwachung der Operationen__,
-- Das __Management der IaaS-Ressourcen__ (Rechnen, Speicher, Netzwerk, ...)
-- Das __Management der OpenIaaS-Ressourcen__ (Rechnen, Speicher, Netzwerk, ...)
-- Den Zugang zu __Nebendiensten__ (Bastion, Überwachung, ...)
-- Die __Verwaltung Ihrer Organisation__ (Tenant- und Rechteverwaltung, ...)
+- Das __Management der IaaS-Ressourcen__ (Rechen, Speicher, Netzwerk, ...),
+- Das __Management der OpenIaaS-Ressourcen__ (Rechen, Speicher, Netzwerk, ...),
+- Der Zugang zu __zusätzlichen Diensten__ (Bastion, Überwachung, ...),
+- Die __Verwaltung Ihrer Organisation__ (Management der Tenants, Rechte, ...).
 
-Die Aktivierung eines Moduls für einen Benutzer hängt von den Rechten des Benutzers ab. Zum Beispiel wird das Modul __'Bestellung'__ nicht verfügbar sein, wenn der Benutzer nicht das Recht __'ORDER'__ hat.
+Die Aktivierung eines Moduls für einen Benutzer hängt von den Rechten des Benutzers ab. Zum Beispiel wird das Modul __'Bestellung'__ nicht verfügbar sein, wenn der Benutzer nicht das Recht __'ORDER'__ besitzt.
 
-Hier ist eine Präsentation der verschiedenen verfügbaren Module. Neue Module erweitern regelmäßig die Konsole:
+Hier ist eine Präsentation der verschiedenen verfügbaren Module. Regelmäßig kommen neue Module hinzu:
 
 ![](images/shiva_onboard_007.png)
 
-- __Dashboard__ : bietet einen schnellen Überblick über die __Gesamtressourcen für Berechnung und Speicher__, die __Sicherungsstatistiken__ und eine __Zusammenfassung der Supportanfragen__,
-- __Inventar__ : bietet eine Übersicht über alle Ihre Ressourcen des Typs __'virtuelle Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z. B. Geschäftsansicht, Anwendungsansicht, ...),
-- __Managed Services__ : bietet Zugang zur Überwachung Ihrer __Supportanfragen__ und zur __Dienstmetrologie__,
-- __IaaS__ : erlaubt das __Management der VMware Infrastrukturen__ (Virtuelle Maschinen, Cluster, Hypervisoren, Replikationen, Sicherung, ...),
-- __OpenIaaS__ : erlaubt das __Management der Xen Orchestra Ressourcen__ (Virtuelle Maschinen, Sicherung, ...),
-- __OpenShift__ : erlaubt das Management Ihrer **RedHat Openshift PaaS-Architektur** und der Verwaltung Ihrer Container in den drei Verfügbarkeitszonen der Plattform.
-- __Bastion__ : ermöglicht das Bereitstellen und Management von Bastion SSH/RDP Appliances in Ihren Netzwerken,
-- __Netzwerk__ : erlaubt das Management der __Netzwerke der Ebenen 2 und 3__, der __öffentlichen IP-Adressen__ und Ihrer __Telekommunikationsstrecken__,
-- __Colocation__ : bietet einen Überblick über die in einer __gemeinsamen oder dedizierten Colocation-Zone__ befindlichen Geräte,
-- __Bestellung__ : ermöglicht die Bestellung von Ressourcen und die Überwachung der Bereitstellungen,
-- __Verwaltung__ : umfasst die Verwaltungsfunktionen der Benutzer und Tenant sowie den Zugang zur globalen Protokollierung.
+- __Dashboard__: bietet einen schnellen Überblick über __Gesamtrechen- und Speicherressourcen__, __Sicherung__-Statistiken und eine __Zusammenfassung der Support-Anfragen__,
+- __Inventar__: ermöglicht eine Übersicht über alle Ihre __'virtuellen Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z.B. Geschäftsansicht, Anwendungsansicht, ...),
+- __Outsourcing__: bietet Zugang zur Verfolgung Ihrer __Support-Anfragen__ und zur __Metrik der Dienste__,
+- __IaaS__: ermöglicht das __Management der VMware IaaS-Infrastrukturen__ (Virtuelle Maschinen, Cluster, Hypervisoren, Replikationen, Sicherung, ...),
+- __OpenIaaS__: ermöglicht das __Management der Xen Orchestra-Ressourcen__ (Virtuelle Maschinen, Sicherung, ...),
+- __OpenShift__: ermöglicht das Management Ihrer **RedHat Openshift PaaS-Architektur** und die Verwaltung Ihrer Container in den 3 Verfügbarkeitszonen der Plattform.
+- __Bastion__: Ermöglicht die Bereitstellung und das Management von SSH/RDP Bastion Appliances in Ihren Netzwerken,
+- __Netzwerk__: ermöglicht das Management von __Layer 2 und Layer 3 Netzwerken__, __öffentlichen IP-Adressen__ und Ihren __Telekommunikationsverbindungen__,
+- __Colocation__: bietet eine Übersicht über die Geräte in gemeinsamen oder dedizierten __Colocation-Bereichen__,
+- __Bestellung__: Ermöglicht die Bestellung von Ressourcen und die Verfolgung der Bereitstellungen,
+- __Verwaltung__: umfasst die Funktionen zur Verwaltung von Benutzern und Tenants sowie den Zugang zur globalen Protokollierung.
 
-Die Piktogramme __'NEU'__ bedeuten, dass das betreffende Produkt bereitgestellt, aber noch nicht als __SecNumCloud Angebot__ qualifiziert ist, und __'BETA'__ bedeuten, dass das betreffende Produkt bereitgestellt und gerade als __SecNumCloud Angebot__ qualifiziert wurde.
+Die Piktogramme __'NEW'__ bedeuten, dass das betreffende Produkt bereitgestellt wurde, aber noch nicht als __SecNumCloud-Angebot__ qualifiziert ist, und __'BETA'__ bedeuten, dass das betreffende Produkt bereitgestellt wurde und gerade als __SecNumCloud-Angebot__ qualifiziert wurde.
 
 ## Zugang zu Benutzerfunktionen über die API
 
-Der Zugang zu allen Funktionen der Shiva-Konsole ist über die Shiva-API möglich. Sie können die Details zu den Verben und Konfigurationen über __'Profil'__ und __'APIs'__ einsehen:
+Der Zugriff auf alle Funktionen der Shiva-Konsole ist über die Shiva-API möglich. Sie können die Details der Verben und Konfigurationen über __'Profil'__ und __'APIs'__ einsehen:
 
 ![](images/shiva_onboard_008.png)
 
 ## Terraform Provider
 
-Cloud Temple stellt Ihnen einen Terraform Provider zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu verwalten. Er ist hier zugänglich:
+Cloud Temple stellt Ihnen einen Terraform-Provider zur Verfügung, um Ihre Cloud-Plattform „as code“ zu steuern. Es ist hier zugänglich:
 
 https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest

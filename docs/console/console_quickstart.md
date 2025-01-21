@@ -52,7 +52,7 @@ Vous avez ensuite la possibilité de donner des précisions et d'inclure des fic
 
 Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
 
-**CRITIQUE (P1) - Notification immédiate**:
+**CRITIQUE (P1)**:
 
 - Suspicion de fuite de données sensibles
 - Détection d'un accès non autorisé à vos données
@@ -61,7 +61,7 @@ Le commanditaire peut également préciser un niveau de criticité (P1 à P4) da
 - Comportements anormaux sur des données sensibles
 - Violation de données à caractère personnel
 
-**HAUTE (P2) - Notification < 2h**:
+**HAUTE (P2)h**:
 
 - Dysfonctionnement des accès utilisateurs
 - Anomalie dans le chiffrement de vos données
@@ -69,14 +69,14 @@ Le commanditaire peut également préciser un niveau de criticité (P1 à P4) da
 - Incohérence dans les données
 - Lenteurs majeures impactant l'activité
 
-**MOYENNE (P3) - Notification < 4h**:
+**MOYENNE (P3)**:
 
 - Problème de performance localisé
 - Incident sur une fonction non critique
 - Erreur de configuration avec impact limité
 - Difficulté d'accès ponctuelle
 
-**BASSE (P4) - Notification < 24h**:
+**BASSE (P4)**:
 
 - Demande d'investigation
 - Anomalie sans impact direct
