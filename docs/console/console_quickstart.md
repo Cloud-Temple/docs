@@ -50,6 +50,39 @@ La première étape est l'identification du type de demande de support :
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
+Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
+
+**CRITIQUE (P1) - Notification immédiate**:
+
+- Suspicion de fuite de données sensibles
+- Détection d'un accès non autorisé à vos données
+- Compromission de vos identifiants d'administration
+- Indisponibilité totale de vos services critiques
+- Comportements anormaux sur des données sensibles
+- Violation de données à caractère personnel
+
+**HAUTE (P2) - Notification < 2h**:
+
+- Dysfonctionnement des accès utilisateurs
+- Anomalie dans le chiffrement de vos données
+- Perte d'accès à certaines fonctionnalités critiques
+- Incohérence dans les données
+- Lenteurs majeures impactant l'activité
+
+**MOYENNE (P3) - Notification < 4h**:
+
+- Problème de performance localisé
+- Incident sur une fonction non critique
+- Erreur de configuration avec impact limité
+- Difficulté d'accès ponctuelle
+
+**BASSE (P4) - Notification < 24h**:
+
+- Demande d'investigation
+- Anomalie sans impact direct
+- Question de conformité
+- Besoin de clarification technique
+
 ![](images/shiva_support_02.png)
 
 Une fois votre demande effectuée, il est possible de retrouver vos demandes via __l'icône 'bouée'__ situé en haut à droite de l'écran :
@@ -85,6 +118,8 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 - __Colocation__ : Offre la vue sur les équipements situés en zone de __collocation mutualisée ou dédiée__,
 - __Commande__ : Permet la commande de ressources et le suivi des déploiements,
 - __Administration__ : Regroupe les fonctions d'administration des utilisateurs et des tenants ainsi que l'accès à la journalisation globale.
+
+Les pictogrammes __'NEW'__ signifient que le produit en question a été provisionné mais n'est pas encore qualifié __offre SecNumCloud__ et __'BETA'__ signifient que le produit en question a été provisionné et vient d'être qualifié __offre SecNumCloud__.
 
 ## Accès aux fonctionnalités utilisateur via l'API
 
