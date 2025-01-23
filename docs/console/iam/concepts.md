@@ -208,23 +208,6 @@ Dernière mise à jour le: 23/01/2025
 | ticket_read                                   | Consultation des tickets                                                                                                       |
 | ticket_write                                  | Gestion des tickets                                                                                                            |
 
-### Permissions dépréciées
-
-Les permissions suivantes ne sont plus disponibles :
-
-| Nom de la permission                           | Date       | Description de la permission                                                                                   |
-| ---------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
-| backup_read  (**DEPRECATED**)                  | 07/10/2024 | Consultation des ressources de type backup                                                                     |
-| backup_write (**DEPRECATED**)                  | 07/10/2024 | Gestion des ressources de type backup - modification                                                           |
-| compute_console_access (**DEPRECATED**)        | 07/10/2024 | Ouverture de la console d'une machine virtuelle                                                                |
-| compute_infrastructure_read (**DEPRECATED**)   | 07/10/2024 | Consultation de données avancées des ressources VMware (règles affinité/anti-affinité, configuration drs, etc) |
-| compute_infrastructure_write (**DEPRECATED**)  | 07/10/2024 | Gestion avancée des ressources VMware                                                                          |
-| compute_read (**DEPRECATED**)                  | 07/10/2024 | Consultation des ressources de type Machines Virtuelles                                                        |
-| compute_management (**DEPRECATED**)            | 07/10/2024 | Gestion des ressources de type Machines Virtuelles                                                             |
-| compute_virtual_machine_power (**DEPRECATED**) | 07/10/2024 | Gestion de l'alimentation d'une machine virtuelle                                                              |
-| iam_manage_permissions (**DEPRECATED**)        | 07/10/2024 | Gestion des nouveaux droits pour soi-même                                                                      |
-
-
 ## Organisations
 
 L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud Temple associé__. Elle représente votre entité (société, département, équipe, ...) qui porte la relation contractuelle entre Cloud Temple et vous.
@@ -297,8 +280,6 @@ Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec
 
 
 ### Gestion des propriétaires sur un tenant
-
-#### Contexte
 Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
 
 #### Informations importantes sur la gestion des propriétaires
