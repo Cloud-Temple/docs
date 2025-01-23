@@ -1,120 +1,165 @@
 ---
-title: Guida di avviamento
+title: Guide de démarrage
 ---
 
+## Lister l'ensemble des bucket S3 de votre tenant
 
-## Elenco di tutti i bucket S3 del tuo tenant
-
-Puoi accedere a tutti i tuoi bucket tramite il menu '__Object Storage__' della console Cloud Temple:
+Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
 
 ![](images/S3_list_bucket.png)
 
-Puoi vedere tutti gli account creati sul tuo tenant e autorizzati ad accedere al servizio S3 tramite la scheda '__Account di archiviazione__'.
+Vous pouvez voir tous les comptes créés sur votre tenant et autorisé à accéder au service S3 via l'onglet '__Comptes de stockage__'.
 
 ![](images/S3_accounts.png)
 
-## Creazione di un nuovo account di archiviazione
+## Création d'un nouveau compte de stockage
 
-La creazione di un account di archiviazione sul tuo tenant avviene premendo il pulsante '__Nuovo account di archiviazione__' in alto a destra, nella scheda '__Account di archiviazione__':
+La création d'un compte de stockage sur votre tenant se fait en appuyant sur le bouton '__Nouveau compte de stockage__' en haut à droite, dans l'onglet '__Comptes de stockage__' :
 
 ![](images/S3_create_account.png)
 
-La piattaforma ti fornirà quindi la chiave di accesso e la chiave segreta del tuo bucket:
+La plateforme vous donne alors la clef d'accès et la clef secrète de votre bucket :
 
 ![](images/S3_storage_keys.png)
 
-__ATTENZIONE:__ Le chiavi segreta e di accesso vengono presentate una sola volta. Dopo questa prima apparizione, diventa impossibile consultare nuovamente la chiave segreta. È quindi essenziale annotare queste informazioni immediatamente; altrimenti, sarà necessario generare una nuova coppia di chiavi.
+__ATTENZIONE:__ Le chiavi segrete e di accesso sono presentate una sola volta. Dopo questa prima apparizione, diventa impossibile consultare di nuovo la chiave segreta. È quindi essenziale annotare queste informazioni immediatamente; altrimenti, sarà necessario generare una nuova coppia di chiavi.
 
-La rigenerazione avviene a livello delle opzioni delle chiavi scegliendo l'opzione "Reimposta chiave di accesso".
+La rigenerazione si fa al livello delle opzioni della chiave scegliendo l'opzione "Reimposta chiave di accesso".
 
 ![](images/S3_keyregen.png)
 
+## Création d'un bucket S3
 
-## Creazione di un bucket S3
-
-La creazione di un nuovo bucket avviene facendo clic sul pulsante '__Nuovo bucket__' in alto a destra dello schermo:
+La creation de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
 
 ![](images/S3_create.png)
 
-Apparirà quindi una finestra in cui dovrai fornire:
+Una finestra si apre e dovete inserire:
 
-1. La **regione** di creazione del tuo bucket,
-2. Il **tipo** di bucket: performante o archiviazione,
-3. Il **nome** del tuo bucket (deve essere unico).
+1. La **regione** di creazione del vostro bucket,
+2. Il **tipo** di bucket: performante o archivio,
+3. Il **nome** del vostro bucket (deve essere unico).
 
 ![](images/S3_create_popup_001.png)
 
-Al 3 Aprile 2024, la regione disponibile è **FR1** (Paris) e solo il tipo performante è disponibile.
+Al 3 aprile 2024, la regione disponibile è **FR1** (Parigi) e solo il tipo performante è disponibile.
 
-Devi anche scegliere chi può accedere al tuo bucket:
+Dovete anche scegliere chi può accedere al vostro bucket:
 
 - Accesso **Privato**: Per impostazione predefinita, l'accesso è limitato agli indirizzi IP specifici di Cloud Temple.
-- Accesso **Pubblico**: L'accesso è aperto a tutti gli indirizzi Internet (in particolare tramite la regola 0.0.0.0/0). Sconsigliamo questa configurazione a causa delle sue implicazioni in termini di sicurezza.
-- Accesso **Personalizzato**: Questa opzione ti permette di specificare gli indirizzi IPv4 o le gamme di sottoreti che desideri autorizzare.
+- Accesso **Pubblico**: L'accesso è aperto a tutti gli indirizzi Internet (in particolare tramite la regola 0.0.0.0/0). Sconsigliamo questa configurazione per le sue implicazioni in termini di sicurezza.
+- Accesso **Personalizzato**: Questa opzione vi permette di specificare gli indirizzi IPv4 o i range di subnet che desiderate autorizzare.
 
-## Associazione di un account di archiviazione a un bucket
+## Association d'un compte de stockage à un bucket
 
-Le associazioni di account ai bucket vengono effettuate nella scheda '__Politiche__'
+Les associations de compte aux buckets sont réalisées dans l'onglet '__Politiques__'
 
 ![](images/S3_account_assign.png)
 
-Questa associazione consente di dare accesso all'account di archiviazione al bucket. Ci sono tre ruoli:
+Questa associazione permette di concedere l'accesso del conto di archiviazione al bucket. Ci sono quattro ruoli:
 
-1. **Maintainer**: I diritti di lettura, scrittura, gestione dei diritti e gestione della politica
-2. **Lettore**: Leggere i file nei bucket e scaricarli.
-3. **Scrittore**: Leggere e modificare, modifica, cancellare i file nei bucket.
+1. **Gestore**: i diritti di lettura, scrittura, gestione dei diritti e gestione della politica
+
+Le autorizzazioni S3 dietro questo ruolo:
+```json
+{
+    "name": "maintainer",
+    "permissions": [
+        "s3:*"
+    ]
+}
+```
+
+2. **Scrittore e Lettore**: leggere, modificare, modificare, eliminare i file nei buckets.
+
+Le autorizzazioni S3 dietro questo ruolo:
+```json
+{
+    "name": "read_write",
+    "permissions": [
+        "s3:Get*"
+        "s3:List*"
+        "s3:*Object"
+    ]
+}
+```
+
+3. **Scrittore**: leggere, modificare, modificare, eliminare i file nei buckets.
+
+Le autorizzazioni S3 dietro questo ruolo:
+```json
+{
+    "name": "write_only",
+    "permissions": [
+        "s3:List*"
+        "s3:*Object"
+    ]
+}
+```
+
+4. **Lettore**: leggere i file nei buckets e scaricarli.
+
+Le autorizzazioni S3 dietro questo ruolo:
+```json
+{
+    "name": "read_only",
+    "permissions": [
+        "s3:Get*"
+        "s3:List*"
+    ]
+}
+```
 
 ![](images/S3_account_access.png)
 
-## Esplora un bucket S3
+## Parcourir un bucket S3
 
-Quando fai clic sul nome di un bucket, accedi per primo alla scheda '__File__' per vedere il suo contenuto:
+Quando cliccate sul nome di un bucket, avete accesso per primo alla scheda '__File__' per vedere il suo contenuto:
 
 ![](images/S3_files.png)
 
-Nella scheda '__Impostazioni__' puoi vedere i dettagli delle informazioni del tuo bucket S3:
+Nella scheda '__Parametri__' potete vedere i dettagli delle informazioni del vostro bucket S3:
 
 ![](images/S3_params.png)
 
-Avrai quindi:
+Vedrete quindi:
 
 1. Il nome del bucket S3,
-2. La sua regione,
+2. La sua regione
 3. Il numero di oggetti che contiene e la dimensione in byte del bucket,
 4. Il suo endpoint,
-5. I parametri del ciclo di vita che definiscono in particolare la scadenza degli oggetti del bucket. '__0__' corrisponde a un'archiviazione infinita.
+5. I parametri di ciclo di vita che definiscono in particolare la scadenza degli oggetti del bucket. '__0__' corrisponde a una ritenzione infinita.
 
-Puoi modificare il parametro di conservazione tramite il pulsante '__Modifica__' del ciclo di vita:
+Potete modificare il parametro di ritenzione tramite il pulsante '__Modifica__' del ciclo di vita:
 
 ![](images/S3_lifecycle.png)
 
-Infine, puoi modificare la sua tipologia di accesso.
+Infine, potete modificare la tipologia di accesso.
 
-## Limitazioni degli accessi ai tuoi bucket S3
+## Limitations des accès à vos bucket S3
 
-È molto semplice configurare le restrizioni di accesso ai tuoi bucket S3. Durante la creazione di un bucket, hai la scelta tra tre configurazioni di accesso:
+È molto semplice configurare le restrizioni di accesso ai vostri bucket S3. Durante la creazione di un bucket, avete la possibilità di scegliere tra tre configurazioni di accesso:
 
 ![](images/S3_create_popup_001.png)
 
 - Accesso **Privato**: Per impostazione predefinita, l'accesso è limitato agli indirizzi IP specifici di Cloud Temple.
-- Accesso **Pubblico**: L'accesso è aperto a tutti gli indirizzi Internet (in particolare tramite la regola 0.0.0.0/0). Sconsigliamo questa configurazione a causa delle sue implicazioni in termini di sicurezza.
-- Accesso **Personalizzato**: Questa opzione ti permette di specificare gli indirizzi IPv4 o le gamme di sottoreti che desideri autorizzare:
+- Accesso **Pubblico**: L'accesso è aperto a tutti gli indirizzi Internet (in particolare tramite la regola 0.0.0.0/0). Sconsigliamo questa configurazione per le sue implicazioni in termini di sicurezza.
+- Accesso **Personalizzato**: Questa opzione vi permette di specificare gli indirizzi IPv4 o i range di subnet che desiderate autorizzare:
 
 ![](images/S3_create_popup_002.png)
 
-*Il supporto per IPv6 è previsto per il primo semestre del 2025.*
+*Il supporto IPv6 è previsto per il primo semestre del 2025.*
 
-## Eliminazione di un bucket S3
+## Suppression d'un bucket S3
 
-L'eliminazione di un bucket avviene nelle azioni associate al bucket scegliendo l'opzione __'Elimina'__.
+La cancellazione di un bucket si fa nelle azioni associate al bucket scegliendo l'opzione '__Elimina__'.
 
 ![](images/S3_delete.png)
 
 _**ATTENZIONE: L'eliminazione è definitiva e non esiste alcun modo per recuperare i dati.**_
 
+## Comment est facturé l'offre S3 de Cloud Temple ?
 
-## Come viene fatturata l'offerta S3 di Cloud Temple?
+Il prezzo è mensile, al GiB di archiviazione, fatturato mensilmente. Tuttavia, la piattaforma calcola l'uso su base oraria e realizza la fatturazione su una base mensile di 720 ore.
 
-Il prezzo è un prezzo mensile, al Giga di archiviazione, fatturato mensilmente. Tuttavia, la piattaforma contabilizza l'uso all'ora e realizza la fatturazione su base mensile di 720 ore.
-
-Ad esempio, se consumi durante il mese 30 Giga per 1 ora poi nulla, poi qualche giorno dopo 30 Giga per 2 ore, la fattura mensile sarà di *( Prezzo (1 x 30 Giga) + 2 x Prezzo (30 Giga) ) / 720* sul mese considerato. La fatturazione è a termine scaduto.
+Ad esempio, se consumate nel mese 30 GiB per 1 ora e poi niente, e qualche giorno più tardi 30 GiB per 2 ore, la fattura mensile sarà di *( Prezzo (1 x 30GiB) + 2 x Prezzo (30GiB) ) / 720* nel mese considerato. La fatturazione è a termine scaduto.
