@@ -149,7 +149,7 @@ Les permissions suivantes sont configurables pour chaque utilisateur et pour cha
 
 - __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 
-__VERSION : 20250123__
+Dernière mise à jour le: 23/01/2025
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
