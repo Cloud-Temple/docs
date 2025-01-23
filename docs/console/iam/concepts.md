@@ -12,17 +12,17 @@ Les informations d'identification sont globales à votre [Organisation](#organis
 
 ### Création d'un compte utilisateur dans votre organisation
 
-La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.  
+La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
 
-Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs. 
+Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
 
 ![](images/shiva_onboard_003.png)
 
-Indiquer ensuite l'adresse de messagerie de l'utilisateur 
+Indiquer ensuite l'adresse de messagerie de l'utilisateur
 
 ![](images/shiva_onboard_004.png)
 
-L'utilisateur va alors recevoir un mail de vérification.  
+L'utilisateur va alors recevoir un mail de vérification.
 
 ![](images/shiva_onboard_001.png)
 
@@ -30,11 +30,11 @@ Une fois la vérification terminée, l'utilisateur pourra se connecter sur la co
 
 ### Affectation des permissions à un utilisateur
 
-La gestion des droits utilisateurs se fait depuis la page utilisateur. 
+La gestion des droits utilisateurs se fait depuis la page utilisateur.
 
 ![](images/shiva_onboard_003.png)
 
-Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.  
+Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
 
 Le menu d'activation des droits apparait alors :
 
@@ -131,8 +131,10 @@ __VERSION : 20241007__
 | compute_iaas_vmware_infrastructure_read       | Offre Vmware - Consultation de données avancées des ressources VMware (règles affinité/anti-affinité, configuration drs, etc)  |
 | compute_iaas_vmware_infrastructure_write      | Offre Vmware - Gestion avancée des ressources VMware                                                                           |
 | compute_iaas_vmware_read                      | Offre Vmware - Consultation des ressources de type Machines Virtuelles                                                         |
-| compute_iaas_vmware_management                | Offre Vmware - Gestion des ressources de type Machines Virtuelles                                                              |
+| compute_iaas_vmware_management                | Offre Vmware - Gestion des ressources de type Machines Virtuelles (permet le chiffrement d'une machine virtuelle)                                                              |
 | compute_iaas_vmware_virtual_machine_power     | Offre Vmware - Gestion de l'alimentation d'une machine virtuelle                                                               |
+| baremetal_read                                | Offre Bare Metal - Consultation des ressources de type Bare Metal                                                               |
+| baremetal_console_access                      | Offre Bare Metal - Ouverture de la console d'un Bare Metal                                                                  |
 | console_public_access_read                    | Consultation des IPs autorisées à accéder à la console                                                                         |
 | console_public_access_write                   | Ajout d'IPs autorisées à accéder à la console                                                                                  |
 | compute_virtual_machine_power                 | Gestion de l'alimentation d'une machine virtuelle                                                                              |
@@ -195,7 +197,7 @@ L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud
 
 ### Principe d'une organisation
 
-L'organisation a quatre grands rôles : 
+L'organisation a quatre grands rôles :
 
 - Elle représente __l'entité contractuelle__ pour les aspects de suivi et de facturation,
 - Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la console Shiva ou distante via un service de fédération d'identité,
@@ -206,9 +208,9 @@ Les rôles (droits/permissions) des utilisateurs sont configurables pour chaque 
 
 ### Mécanismes d'authentification
 
-La console Shiva permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez 
-utiliser le référentiel local d'authentification de la console Shiva ou bien accoster votre organisation à l'un 
-de vos référentiels d'authentification.  
+La console Shiva permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
+utiliser le référentiel local d'authentification de la console Shiva ou bien accoster votre organisation à l'un
+de vos référentiels d'authentification.
 
 Les référentiels externes suivants sont supportés :
 
@@ -233,7 +235,7 @@ Par exemple :
 - Un tenant __Recette__
 - Un tenant __Qualification__
 
-Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ : 
+Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ :
 
 - Un tenant __Application 1__ ou __Criticité 1__
 - Un tenant __Application 2__ ou __Criticité 2__
@@ -254,7 +256,7 @@ Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec
 - Un vlan réseau.
 
 
-| Référence de commande                                        | Unité    | SKU                     |  
+| Référence de commande                                        | Unité    | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
 | TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
 | TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
@@ -268,7 +270,7 @@ Note : *La suppression d'un IP autorisée se fait par une demande de support dan
 
 ### Consommation de ressource au sein d'un tenant
 
-Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins. 
+Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins.
 
 Dans le menu de la console, cliquez sur "Rapport de consommation" puis sélectionnez la période de temps souhaitée. Vous pourrez ainsi visualiser en détail la consommation des ressources cloud sur la période définie, ce qui vous permettra d’analyser l’utilisation des services et d’optimiser votre gestion en conséquence :
 
