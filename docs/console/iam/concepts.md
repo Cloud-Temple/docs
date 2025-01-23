@@ -140,10 +140,6 @@ Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les per
 
 ### Permissions disponibles pour les utilisateurs de votre organisation
 
-Les permissions suivantes sont configurables pour chaque [utilisateur](#utilisateurs) et pour chaque [tenant](#tenants#selection-dun-tenant) de votre organisation.
-
-Permissions disponibles pour les utilisateurs de votre organisation
-
 Lorsqu’un utilisateur est créé, il ne possède aucune permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
 
 Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
@@ -202,7 +198,6 @@ __VERSION : 20241007__
 | object-storage_read                           | Permet de voir les buckets et les configurations des buckets                                                                   |
 | object-storage_write                          | Permet d'éditer les buckets et les configurations des buckets                                                                  |
 | openshift_management                          | Permet de se connecter sur les plateforms Openshift (scopé au tenant)                                                          |
-| Owner                                         | L'utilisateur a les droits d'administration d'un tenant                                                                        |
 | support_management                            | consultation de l'ensemble des tickets support du tenant                                                                       |
 | support_read                                  | Consultation de ses tickets support du tenant                                                                                  |
 | support_write                                 | Création d'un ticket support sur le tenant                                                                                     |
