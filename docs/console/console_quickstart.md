@@ -121,6 +121,41 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 
 Les pictogrammes __'NEW'__ signifient que le produit en question a été provisionné mais n'est pas encore qualifié __offre SecNumCloud__ et __'BETA'__ signifient que le produit en question a été provisionné et vient d'être qualifié __offre SecNumCloud__.
 
+**Journalisation - Suivi des Activités**
+=====================================
+
+La page des activités est destinée à fournir une visibilité complète sur toutes les opérations de lecture et d'écriture réalisées au sein de la console, assurant ainsi une traçabilité et une sécurité accrues. Elle met en évidence les deux onglets principaux : Récents et Archivés.
+
+![](images/shiva_logs.png)
+
+### **Structure de la Page**
+
+#### **Onglets**
+	+ **Récents**
+		- Opérations récentes
+		- Suivi en temps réel
+	+ **Archivés**
+		- Opérations sur une période plus longue
+		- Opérations archivées pour traçabilité et conformité
+#### **Informations Affichées**
+	+ Date et Heure
+	+ Type d'opération
+    + L'état
+	+ Utilisateur
+	+ Description de l'opération
+#### **Fonctionnalité**
+	+ Recherche/Filtrage pour opérations spécifiques
+
+### **Utilisation**
+* **Accès :** permission `activity_read`
+* **Navigation :**
+	- Sélectionnez l'onglet "Récents" pour les opérations en temps réel.
+	- Choisissez "Archivés" pour consulter l'historique.
+	- Utilisez les fonctionnalités de recherche et de filtrage pour localiser des opérations spécifiques.
+
+#### **Note de Conformité**
+Conformément à la qualification SecNumCloud, le stockage des événements de la console Cloud Temple est d'une durée minimale de **6 mois**, garantissant ainsi le respect des exigences de sécurité et de traçabilité.
+
 ## Accès aux fonctionnalités utilisateur via l'API
 
 L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__ :
