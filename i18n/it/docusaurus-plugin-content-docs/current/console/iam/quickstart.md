@@ -157,14 +157,3 @@ Per farlo, l'utente deve avere il diritto `console_public_access_read` per consu
 ![](images/shiva_ip_access_management_02.png)
 
 Nota: *La rimozione di un IP autorizzato viene effettuata tramite una richiesta di supporto nella console Cloud Temple.*
-
-### Cos'è il captcha? Perché può bloccare l'accesso all'applicazione?
-Il __'Captcha'__ è una misura di sicurezza che protegge il tuo account dallo spam e impedisce qualsiasi tentativo di decifrazione della password.
-
-Il __'Captcha'__ presenta un semplice test per verificare che si tratta realmente di un essere umano e non di un robot che cerca di accedere all'account. 
-
-La console Cloud Temple utilizza un Captcha di tipo v3. Il tipo v3 è un test invisibile che stabilisce un indice di fiducia basato sulle interazioni dell'utente. 
-
-La console Cloud Temple si basa su questo punteggio di indice di fiducia per autorizzare o meno l'utente a connettersi. 
-
-Se incontri difficoltà con il test __'Captcha'__ per connetterti alla console Shiva, contatta il supporto utenti.

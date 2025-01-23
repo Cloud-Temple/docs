@@ -158,14 +158,3 @@ Es posible entonces añadir una nueva IP:
 ![](images/shiva_ip_access_management_02.png)
 
 Nota: *La eliminación de una IP autorizada se hace mediante una solicitud de soporte en la consola Cloud Temple.*
-
-### ¿Qué es el captcha? ¿Por qué puede bloquear el acceso a la aplicación?
-El __'Captcha'__ es una medida de seguridad que permite proteger su cuenta del spam y evitar cualquier intento de descifrado de contraseña.
-
-El __'Captcha'__ somete una prueba simple con el objetivo de verificar que se trata de un ser humano y no de un robot intentando acceder a la cuenta. 
-
-La consola Cloud Temple utiliza un Captcha de tipo v3. El tipo v3 es una prueba invisible que establece un índice de confianza basado en las interacciones del usuario. 
-
-La consola Cloud Temple se basa en este puntaje de índice de confianza para autorizar o no al usuario a conectarse. 
-
-Si tiene dificultades con la prueba __'Captcha'__ para conectarse a la consola Shiva, por favor contacte al soporte de usuario.
