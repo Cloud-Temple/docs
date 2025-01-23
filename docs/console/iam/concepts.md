@@ -142,8 +142,15 @@ Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les per
 
 Les permissions suivantes sont configurables pour chaque [utilisateur](#utilisateurs) et pour chaque [tenant](#tenants#selection-dun-tenant) de votre organisation.
 
-- Les permissions de type __'read'__ sont associés à la consultation sans possibilité de configuration
-- Les permissions de type __'write'__ sont associés à la modification de configuration.
+Permissions disponibles pour les utilisateurs de votre organisation
+
+Lorsqu’un utilisateur est créé, il ne possède aucune permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
+
+Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
+	•	Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
+	•	Permissions de type “write” : autorisent la modification des configurations.
+ 	•	Permissions de type “management“ : autorisent la gestion avancées des ressources.
+
 - __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 
 __VERSION : 20241007__
