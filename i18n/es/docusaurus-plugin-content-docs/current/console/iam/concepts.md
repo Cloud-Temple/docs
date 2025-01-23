@@ -2,257 +2,249 @@
 title: Concepts
 ---
 
+
 ## Utilisateurs
 
-Les comptes d'accès à la console Shiva sont créados por el cuenta maestro del cliente por invitación (sea cual sea el repositorio de autenticación).
-Las credenciales son globales para su [Organización](#organisations).
+Les comptes d'accès à la console Shiva sont créados por el compte maitre du commanditaire sur invitation (cualquiera sea el référentiel d'authentificación).
+Les informations d'identification sont globales à votre [Organisation](#organisations).
 
-*__Nota:__ [La federación de identidad se gestiona a nivel de la organización](#organisations#mecanismes-dauthentification)*
+*__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#organisations#mecanismes-dauthentification)*
 
-### Creación de una cuenta de usuario en su organización
+### Création d'un compte utilisateur dans votre organisation
 
-La creación de una cuenta de usuario en su organización se realiza por invitación. Para invitar a un usuario a una [Organización](#organisations), vaya al menú __'Administración'__ a la izquierda de su pantalla en el banner verde y luego al submenú __'Usuarios'__.
+La creación d'un compte utilisateur dans votre organisation se fait par invitación. Pour invitar un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
 
-Haga clic en el botón __'Nuevo Usuario'__ desde la página de usuarios.
+Cliquez sur le bouton __'Nouvel Utilisateur'__ desde la page des utilisateurs.
 
 ![](images/shiva_onboard_003.png)
 
-Luego indique la dirección de correo electrónico del usuario
+Indiquez ensuite l'adresse de messagerie del utilisateur
 
 ![](images/shiva_onboard_004.png)
 
-El usuario entonces recibirá un correo de verificación.
+L'utilisateur va entonces recevoir un mail de verificación.
 
 ![](images/shiva_onboard_001.png)
 
-Una vez finalizada la verificación, el usuario podrá acceder a la consola.
+Una vez la verificación terminée, l'utilisateur pourra se connecter sur la console.
 
-### Asignación de permisos a un usuario
+### Affectation des permissions à un utilisateur
 
-La gestión de los derechos de los usuarios se realiza desde la página de usuario.
+La gestion des droits utilisateurs se fait depuis la page utilisateur.
 
 ![](images/shiva_onboard_003.png)
 
-De manera predeterminada, un usuario no tiene derechos. Por lo tanto, es necesario que el administrador que realizó la invitación le otorgue los derechos necesarios para su actividad. Basta con hacer clic en el menú __'Acciones'__ del usuario y elegir la opción __'Modificar'__.
+Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
 
-A continuación aparece el menú de activación de derechos:
+Le menu d'activation des droits apparait alors :
 
 ![](images/shiva_onboard_005.png)
 
-La configuración de los permisos se realiza para cada [Tenant](#tenants) de la [Organización](#organisations).
+La configuración des permissions est à hacer pour chaque [Tenant](#tenants) de l'[Organisation](#organisations).
 
-La lista de permisos y su definición es accesible [aquí](#permissions).
+La liste des permissions et leur définition est accessible [ici](#permissions).
 
-### Reinscripción de un usuario
+### Réinscription d'un utilisateur
 
-Cuando un usuario ha sido aprovisionado pero no ha validado su inscripción dentro del plazo de expiración del correo enviado por la Consola, ya no puede confirmar su inscripción. Entonces es posible enviarle un enlace para que renueve su primera inscripción.
+Lorsqu'un utilisateur a été provisionné mais n'a pas validé son inscription dans le délai d'expiration du mail envoyé par la Console, il ne puede más confirmer son inscription. Il est entonces possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
 
-La reinscripción de un usuario se realiza en la pestaña __'Usuario'__ del panel de Administración, en la parte inferior izquierda de la pantalla.
+La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administración, en bas à gauche de l'écran.
 
-Seleccione el usuario que desea reinscribir, luego haga clic en el botón de acción al final de la línea y luego __'Reinscripción'__.
+Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
 
-**Advertencia**: Asegúrese de ser el solicitante de la reinscripción de su cuenta de usuario. Por favor, informe todas las solicitudes que no provengan de usted a través de un ticket de soporte.
+**Warning**: Asegúrese de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 ![](images/shiva_profil_012.png)
 
-### Actualizar su perfil
+### Mettre à jour son profil
 
-Esta acción solo está disponible para una cuenta local (no SSO).
+Cette action n'est disponible que pour un compte local (non SSO).
 
-Seleccione en su __'Perfil'__, en la parte superior derecha de la pantalla y luego en __'Configuración de usuario'__ y seleccione la acción __'Actualizar su perfil'__.
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Mettre à jour votre profil'__.
 
-Luego vaya a su bandeja de entrada y haga clic en el enlace generado por la Consola. Simplemente siga los pasos para actualizar su perfil.
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre profil.
 
-**Advertencia**: Asegúrese de ser el solicitante de la actualización del perfil. Por favor, informe todas las solicitudes que no provengan de usted a través de un ticket de soporte.
+**Warning**: Asegúrese de bien être à l'origine de la demande de mise à jour du profil. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 ![](images/shiva_profil_014.png)
 
-### Restablecimiento de contraseña
+### Réinitialisation du mot de passe
 
-Esta acción solo está disponible para una cuenta local (no SSO).
+Cette action n'est disponible que pour un compte local (non SSO).
 
-Seleccione en su __'Perfil'__, en la parte superior derecha de la pantalla y luego en __'Configuración de usuario'__ y seleccione la acción __'Restablecer contraseña'__.
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Réinitialiser mot de passe'__.
 
-Luego vaya a su bandeja de entrada y haga clic en el enlace generado por la Consola. Simplemente siga los pasos para actualizar su contraseña.
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre mot de passe.
 
-**Advertencia**: Asegúrese de ser el solicitante del restablecimiento de su contraseña. Por favor, informe todas las solicitudes que no provengan de usted a través de un ticket de soporte.
+**Warning**: Asegúrese de bien être à l'origine de la demande de réinitialisation de votre mot de passe. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 ![](images/shiva_profil_015.png)
 
-### Restablecimiento del doble factor de autenticación
+### Réinitialisation du double facteur d'authentification
 
-Esta acción solo está disponible para una cuenta local (no SSO).
+Cette action n'est disponible que pour un compte local (non SSO).
 
-Seleccione en su __'Perfil'__, en la parte superior derecha de la pantalla y luego en __'Configuración de usuario'__ y seleccione la acción __'Restablecer MFA'__.
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Réinitialiser MFA'__.
 
-Luego vaya a su bandeja de entrada y haga clic en el enlace generado por la Consola. Simplemente siga los pasos para actualizar su doble factor de autenticación.
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre double facteur d'authentification.
 
-**Advertencia**: Asegúrese de ser el solicitante del restablecimiento de su doble factor de autenticación. Por favor, informe todas las solicitudes que no provengan de usted a través de un ticket de soporte.
+**Warning**: Asegúrese de bien être à l'origine de la demande de réinitialiser de votre double facteur d'authentification. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 ![](images/shiva_profil_016.png)
 
-### Eliminación de un usuario
+### Suppression d'un utilisateur
 
-La eliminación de un usuario se realiza en la pestaña __'Usuario'__ del panel de Administración, en la parte inferior izquierda de la pantalla.
+La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administración, en bas à gauche de l'écran.
 
-Seleccione el usuario que desea eliminar, luego haga clic en el botón de acción al final de la línea y luego __'Eliminar'__.
+Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
 
 ![](images/shiva_profil_013.png)
 ![](images/shiva_profil_010.png)
 
-Nota: No puede eliminarse a sí mismo y no puede eliminar a un usuario __'Propietario'__.
+Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
 
-### Cerrar sesión
+### Se déconnecter
 
-La desconexión de un usuario se realiza en su __'Perfil'__, en la parte superior derecha de la pantalla, y luego en __'Desconectar'__.
+La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, puis __'Déconnecter'__.
 
 ![](images/shiva_profil_009.png)
 ![](images/shiva_profil_011.png)
 
-Una desconexión automática se realiza al expirar el token (JWT Token) de sesión.
+Una déconnexion automatique est réalisée lors de l'expiration du jeton (JWT Token) de session.
 
-### Cambiar el idioma de un usuario
+### Changer la langue d'un utilisateur
 
-El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte superior derecha de la pantalla, en los __'Configuración de usuario'__.
+Le cambio de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
 
 ![](images/shiva_profil_006.png)
 
-La configuración se realiza para cada tenant [Tenant](#tenants).
+La configuración est faite pour chaque tenant [Tenant](#tenants).
 
-### Suscripción a notificaciones temáticas
+### Abonnement aux notifications thématiques
 
-La gestión de suscripciones permite recibir correos electrónicos relacionados con los temas activados que se enviarán automáticamente cuando ocurran eventos correspondientes.
+La gestion des abonnements permet de recevoir les e-mails relatifs aux thématiques activées qui seront automatiquement envoyés lors de la survenue d'événements correspondants.
 
-Es accesible en el perfil del usuario, en la pestaña "Mis suscripciones":
+Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" :
 
 ![](images/shiva_profil_007.png)
 
-Por ejemplo, en caso de incidente, se generarán notificaciones por correo electrónico específicas para ese tema.
+Par ejemplo, en cas d'incident, des notifications par e-mail spécifiques à cette thématique seront générées.
 
-La lista de temas disponibles puede evolucionar y crecer progresivamente para adaptarse a las necesidades y cambios en nuestro entorno operativo.
+La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichir progressivement pour s'adapter aux besoins et aux changements dans notre environnement opérationnel.
 
-## Permisos
+## Permissions
 
-La consola Shiva permite una gestión precisa de los derechos de los usuarios de una organización, con una segregación por tenant.
-Inicialmente, es la cuenta principal del cliente la que permite la configuración inicial de las cuentas y permisos asociados.
-Posteriormente, el derecho __'iam_write'__ permite a una cuenta administrar los permisos de otros usuarios.
+La console Shiva permet une gestion fine des droits des utilisateurs d'une organisation, con una ségrégation por tenant.
+Initialement, c'est le compte principal du commanditaire qui permite la configuración initiale des comptes et des permissions associées.
+Par la suite, le droit __'iam_write'__ permite à un compte d'administrer les permissions des autres utilisateurs.
 
-### Permisos disponibles para los usuarios de su organización
+### Permissions disponibles pour les utilisateurs de votre organisation
 
-Cuando se crea un usuario, no posee ningún permiso por defecto. Cada permiso se asigna individualmente y funciona de manera unitaria, sin superposición con otros permisos. Se aplican en conjunto, lo que significa que un usuario debe tener todos los permisos necesarios para realizar una acción específica.
+Lorsqu’un utilisateur est créé, il ne posee ninguna permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
 
-Los siguientes permisos son configurables para cada usuario y para cada tenant de su organización:
-	•	Permisos de tipo “read”: permiten únicamente la consulta de recursos sin posibilidad de modificación.
-	•	Permisos de tipo “write”: autorizan la modificación de configuraciones.
- 	•	Permisos de tipo “management“: autorizan la gestión avanzada de recursos.
+Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
+	•	Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
+	•	Permissions de type “write” : autorizan la modification de las configuraciones.
+ 	•	Permissions de type “management“ : autorizan la gestión avanzadas de las ressources.
 
-- __Estos son permisos, no roles.__ Por lo tanto, es necesario tener el permiso READ y WRITE para modificar una configuración.
+- __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 
-Última actualización el: 23/01/2025
+Dernière mise à jour le: 23/01/2025
 
-| Nombre del permiso                            | Descripción del permiso                                                                                                        |
+| Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| activity_read                                 | Consulta de registros y actividades                                                                                            |
-| activity_write                                | Gestión de registros y actividades                                                                                             |
-| backup_iaas_opensource_read                   | Gestión de recursos de tipo backup - Oferta OpenIaaS - consulta                                                                |
-| backup_iaas_opensource_write                  | Gestión de recursos de tipo backup - Oferta OpenIaaS - modificación                                                            |
-| backup_iaas_spp_read                          | Gestión de recursos de tipo backup - Oferta Vmware - consulta                                                                  |
-| backup_iaas_spp_write                         | Gestión de recursos de tipo backup - Oferta Vmware - modificación                                                              |
-| bastion_read                                  | Consulta de recursos de tipo bastion                                                                                           |
-| bastion_write                                 | Gestión de recursos (appliances, sesiones,...) de tipo Bastion                                                                 |
-| bastion_console_access                        | Autorización de acceso a la consola (ssh/rdp) de un recurso protegido por un appliance Bastion                                 |
-| compute_iaas_opensource_console_access        | Oferta OpenIaaS - Apertura de la consola de una máquina virtual                                                                 |
+| activity_read                                 | Consultation des journaux logs et activités                                                                                    |
+| activity_write                                | Gestion des journaux logs et activités                                                                                         |
+| backup_iaas_opensource_read                   | Gestion des ressources de type backup - Offre OpenIaaS - consultation                                                          |
+| backup_iaas_opensource_write                  | Gestion des ressources de type backup - Offre OpenIaaS - modification                                                          |
+| backup_iaas_spp_read                          | Gestion des ressources de type backup - Offre Vmware - consultation                                                            |
+| backup_iaas_spp_write                         | Gestion des ressources de type backup - Offre Vmware - modification                                                            |
+| bastion_read                                  | Consultation des ressources de type bastion                                                                                    |
+| bastion_write                                 | Gestion des ressources (appliances, sessions,...)  de type Bastion                                                             |
+| bastion_console_access                        | Autorisation d'accès à la console (ssh/rdp) d'une ressource protégée par une appliance Bastion                                 |
+| compute_iaas_opensource_console_access        | Offre OpenIaaS -Ouverture de la console d'une machine virtuelle                                                                |
 
-| compute_iaas_opensource_infrastructure_read   | Oferta OpenIaaS -Consulta de datos avanzados de los recursos Xen Orchestra |
-| compute_iaas_opensource_infrastructure_write  | Oferta OpenIaaS -Gestión avanzada de los recursos Xen Orchestra                                                                          |
-| compute_iaas_opensource_read                  | Oferta OpenIaaS -Consulta de los recursos de tipo Máquinas Virtuales                                                        |
-| compute_iaas_opensource_management            | Oferta OpenIaaS -Gestión de los recursos de tipo Máquinas Virtuales                                                             |
-| compute_iaas_opensource_virtual_machine_power | Oferta OpenIaaS -Gestión de la alimentación de una máquina virtual                                                              |
+| compute_iaas_opensource_infrastructure_read   | Oferta OpenIaaS - Consulta de datos avanzados de recursos Xen Orchestra |
+| compute_iaas_opensource_infrastructure_write  | Oferta OpenIaaS - Gestión avanzada de recursos Xen Orchestra                                                                          |
+| compute_iaas_opensource_read                  | Oferta OpenIaaS - Consulta de recursos tipo Máquinas Virtuales                                                        |
+| compute_iaas_opensource_management            | Oferta OpenIaaS - Gestión de recursos tipo Máquinas Virtuales                                                             |
+| compute_iaas_opensource_virtual_machine_power | Oferta OpenIaaS - Gestión de la alimentación de una máquina virtual                                                              |
 | compute_iaas_vmware_console_access            | Oferta Vmware - Apertura de la consola de una máquina virtual                                                                 |
-| compute_iaas_vmware_infrastructure_read       | Oferta Vmware - Consulta de datos avanzados de los recursos VMware (reglas de afinidad/anti-afinidad, configuración drs, etc)  |
-| compute_iaas_vmware_infrastructure_write      | Oferta Vmware - Gestión avanzada de los recursos VMware                                                                           |
-| compute_iaas_vmware_read                      | Oferta Vmware - Consulta de los recursos de tipo Máquinas Virtuales                                                         |
-| compute_iaas_vmware_management                | Oferta Vmware - Gestión de los recursos de tipo Máquinas Virtuales (permite el cifrado de una máquina virtual)                                                              |
+| compute_iaas_vmware_infrastructure_read       | Oferta Vmware - Consulta de datos avanzados de recursos VMware (reglas afinidad/anti-afinidad, configuración drs, etc)  |
+| compute_iaas_vmware_infrastructure_write      | Oferta Vmware - Gestión avanzada de recursos VMware                                                                           |
+| compute_iaas_vmware_read                      | Oferta Vmware - Consulta de recursos tipo Máquinas Virtuales                                                         |
+| compute_iaas_vmware_management                | Oferta Vmware - Gestión de recursos tipo Máquinas Virtuales (permite el cifrado de una máquina virtual)                                                              |
 | compute_iaas_vmware_virtual_machine_power     | Oferta Vmware - Gestión de la alimentación de una máquina virtual                                                               |
-| baremetal_read                                | Oferta Bare Metal - Consulta de los recursos de tipo Bare Metal                                                               |
+| baremetal_read                                | Oferta Bare Metal - Consulta de recursos tipo Bare Metal                                                               |
 | baremetal_console_access                      | Oferta Bare Metal - Apertura de la consola de un Bare Metal                                                                  |
-| console_public_access_read                    | Consulta de las IPs autorizadas a acceder a la consola                                                                         |
-| console_public_access_write                   | Adición de IPs autorizadas a acceder a la consola                                                                                  |
+| console_public_access_read                    | Consulta de las IPs autorizadas para acceder a la consola                                                                         |
+| console_public_access_write                   | Adición de IPs autorizadas para acceder a la consola                                                                                  |
 | compute_virtual_machine_power                 | Gestión de la alimentación de una máquina virtual                                                                              |
-| documentation_read                            | Consulta de los recursos de documentación de confluence                                                                        |
-| housing_read                                  | Consulta de los recursos de tipo colocation                                                                                 |
+| documentation_read                            | Consulta de los recursos documentación de confluence                                                                        |
+| housing_read                                  | Consulta de recursos tipo colocación                                                                                 |
 | iam_offline_access                            | Creación y eliminación de Access Token Personales (PAT)                                                                        |
 | iam_read                                      | Consulta de los derechos de usuarios                                                                                           |
 | iam_write                                     | Gestión de los derechos de usuarios                                                                                                |
-| intervention_read                             | Consulta de los cambios y puestas en producción previstas en la plataforma                                                  |
-| inventory_read                                | Consulta de los recursos de tipo Inventario                                                                                 |
-| inventory_write                               | Gestión de los recursos de tipo Inventario                                                                                      |
+| intervention_read                             | Consulta de los cambios y despliegues planeados en la plataforma                                                  |
+| inventory_read                                | Consulta de recursos tipo Inventario                                                                                 |
+| inventory_write                               | Gestión de recursos tipo Inventario                                                                                      |
 | monitoring_read                               | Consulta del monitoreo                                                                                                     |
 | monitoring_write                              | Gestión del monitoreo                                                                                                          |
-| metric_read                                   | Consulta de los datos de estado sobre las máquinas virtuales y hosts                                                         |
-| network_read                                  | Consulta de los recursos de red                                                                                             |
-| network_write                                 | Gestión de los recursos de red                                                                                                  |
-| order_read                                    | Consulta de las órdenes de infraestructura                                                                                     |
-| order_write                                   | Creación de orden de infraestructura                                                                                            |
+| metric_read                                   | Consulta de datos de salud sobre las máquinas virtuales y hosts                                                         |
+| network_read                                  | Consulta de recursos de red                                                                                             |
+| network_write                                 | Gestión de recursos de red                                                                                                  |
+| order_read                                    | Consulta de pedidos de infraestructura                                                                                     |
+| order_write                                   | Creación de pedidos de infraestructura                                                                                            |
 | object-storage_iam_management                 | Permite gestionar las cuentas de almacenamiento en el producto S3                                                                       |
 | object-storage_read                           | Permite ver los buckets y las configuraciones de los buckets                                                                   |
 | object-storage_write                          | Permite editar los buckets y las configuraciones de los buckets                                                                  |
 | openshift_management                          | Permite conectarse a las plataformas Openshift (scopé al tenant)                                                          |
-| support_management                            | Consulta de todos los tickets de soporte del tenant                                                                       |
+| support_management                            | consulta de todos los tickets de soporte del tenant                                                                       |
 | support_read                                  | Consulta de sus tickets de soporte del tenant                                                                                  |
 | support_write                                 | Creación de un ticket de soporte en el tenant                                                                                     |
-| tag_read                                      | Consulta de las etiquetas, excepto las etiquetas RTMS                                                                                   |
-| tag_write                                     | Gestión de las etiquetas, excepto las etiquetas RTMS                                                                                        |
+| tag_read                                      | Consulta de los tags, excepto los tags RTMS                                                                                   |
+| tag_write                                     | Gestión de los tags, excepto los tags RTMS                                                                                        |
 | ticket_comment_read                           | Consulta de los comentarios                                                                                                  |
 | ticket_comment_write                          | Gestión de los comentarios                                                                                                       |
 | ticket_read                                   | Consulta de los tickets                                                                                                       |
 | ticket_write                                  | Gestión de los tickets                                                                                                            |
 
-**Notas** :
+### Permisos depreciados
 
-- *No hay límite en cuanto al número de propietarios (owners) que pueden definirse en el tenant. Sin embargo, la interfaz de gestión (IHM) emite una advertencia cuando hay más de 3 propietarios, con el fin de incentivar a limitar el número de propietarios por razones de seguridad y una gestión óptima de los accesos.*
-- *Al añadir un nuevo propietario (owner), la actualización de sus permisos puede requerir un plazo de hasta 60 minutos. Este tiempo de propagación es normal y permite asegurarse que los derechos de acceso se aplican correctamente a todos los servicios y recursos asociados.*
-- *Para retirar un propietario (owner) del tenant, el usuario debe enviar una solicitud al soporte. Este procedimiento garantiza que los cambios en los derechos de acceso se realicen de manera segura y conforme a las mejores prácticas de gestión de accesos.*
+Los siguientes permisos ya no están disponibles:
 
-### Permisos deprecados
-
-Los siguientes permisos ya no están disponibles :
-
-| Nombre del permiso                           | Fecha       | Descripción del permiso                                                                                   |
-| -------------------------------------------- | ----------  | --------------------------------------------------------------------------------------------------------- |
-| backup_read  (**DEPRECATED**)                | 07/10/2024  | Consulta de los recursos de tipo backup                                                                     |
-| backup_write (**DEPRECATED**)                | 07/10/2024  | Gestión de los recursos de tipo backup - modificación                                                           |
-| compute_console_access (**DEPRECATED**)      | 07/10/2024  | Apertura de la consola de una máquina virtual                                                                |
-| compute_infrastructure_read (**DEPRECATED**) | 07/10/2024  | Consulta de datos avanzados de los recursos VMware (reglas de afinidad/anti-afinidad, configuración drs, etc) |
-| compute_infrastructure_write (**DEPRECATED**)  | 07/10/2024 | Gestión avanzada de recursos VMware                                                                          |
-| compute_read (**DEPRECATED**)                  | 07/10/2024 | Consulta de recursos de tipo Máquinas Virtuales                                                        |
-| compute_management (**DEPRECATED**)            | 07/10/2024 | Gestión de recursos de tipo Máquinas Virtuales                                                             |
-| compute_virtual_machine_power (**DEPRECATED**) | 07/10/2024 | Gestión de la alimentación de una máquina virtual                                                              |
-| iam_manage_permissions (**DEPRECATED**)        | 07/10/2024 | Gestión de nuevos derechos para uno mismo                                                                      |
+| Nombre del permiso                            | Fecha      | Descripción del permiso                                                                                   |
+| --------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
+| backup_read  (**DEPRECATED**)                 | 07/10/2024 | Consulta de recursos tipo backup                                                                           |
+| backup_write (**DEPRECATED**)                 | 07/10/2024 | Gestión de recursos tipo backup - modificación                                                             |
+| compute_console_access (**DEPRECATED**)       | 07/10/2024 | Apertura de la consola de una máquina virtual                                                                |
+| compute_infrastructure_read (**DEPRECATED**)  | 07/10/2024 | Consulta de datos avanzados de recursos VMware (reglas afinidad/anti-afinidad, configuración drs, etc) |
+| compute_infrastructure_write (**DEPRECATED**) | 07/10/2024 | Gestión avanzada de recursos VMware                                                                          |
+| compute_read (**DEPRECATED**)                 | 07/10/2024 | Consulta de recursos tipo Máquinas Virtuales                                                                |
+| compute_management (**DEPRECATED**)           | 07/10/2024 | Gestión de recursos tipo Máquinas Virtuales                                                                 |
+| compute_virtual_machine_power (**DEPRECATED**)| 07/10/2024 | Gestión de la alimentación de una máquina virtual                                                            |
+| iam_manage_permissions (**DEPRECATED**)       | 07/10/2024 | Gestión de nuevos derechos para uno mismo                                                                    |
 
 
 ## Organizaciones
-
-La organización está vinculada a su __cuenta patrocinadora__ y al __contrato Cloud Temple asociado__. Representa su entidad (empresa, departamento, equipo, ...) que lleva la relación contractual entre Cloud Temple y usted.
+L'organisation está vinculada a su __cuenta patrocinadora__ y al __contrato Cloud Temple asociado__. Representa su entidad (compañía, departamento, equipo, ...) que lleva la relación contractual entre Cloud Temple y usted.
 
 ### Principio de una organización
 
-La organización tiene cuatro roles principales:
+La organización tiene cuatro grandes roles:
 
-- Representa la __entidad contractual__ para los aspectos de seguimiento y facturación,
+- Representa __la entidad contractual__ para los aspectos de seguimiento y facturación,
 - Define __la configuración global del mecanismo de autenticación__: la autenticación puede ser local a nivel de la consola Shiva o remota a través de un servicio de federación de identidad,
 - Lleva el conjunto de __cuentas de usuarios__,
-- __Federa los tenants__ (Producción, Preproducción, Dev, Aplicación 1, Aplicación 2, ...) que define para las necesidades de su arquitectura Cloud.
+- __Federa los tenants__ (Producción, Preproducción, Dev, Aplicación 1, Aplicación 2, ...) que usted define para las necesidades de su arquitectura Cloud.
 
-Los roles (derechos/permisos) de los usuarios son configurables para cada tenant definido en su organización. Por ejemplo, una cuenta puede estar autorizada a solicitar recursos en un tenant, pero no en otro.
+Los roles (derechos/permissions) de los usuarios son configurables para cada tenant definido en su organización. Por ejemplo, una cuenta puede tener permiso para ordenar recursos en un tenant, pero no en otro.
 
 ### Mecanismos de autenticación
 
-La consola Shiva permite a nivel de la organización __la configuración del mecanismo de autenticación__. Puede
-utilizar el repositorio local de autenticación de la consola Shiva o bien acoplar su organización a uno
-de sus repositorios de autenticación.
+La consola Shiva permite a nivel de la organización __la configuración del mecanismo de autenticación__. Puede usar el repositorio local de autenticación de la consola Shiva o conectar su organización a uno de sus repositorios de autenticación.
 
-Los siguientes repositorios externos son compatibles:
+Se soportan los siguientes repositorios externos:
 
 - Repositorios compatibles con __OpenID Connect__,
 - Repositorios compatibles con __SAML__,
@@ -266,29 +258,29 @@ Los siguientes repositorios externos son compatibles:
 
 ## Tenant
 
-El tenant es un __agrupamiento de recursos dentro de una organización__. Una [Organización](#organisations) tiene al menos un tenant (llamado __tenant predeterminado__, que puede ser renombrado). Generalmente, se utilizan varios tenants para segmentar responsabilidades o perímetros técnicos.
+El tenant es un __conjunto de recursos dentro de una organización__. Una [Organización](#organisations) tiene al menos un tenant (llamado __tenant por defecto__, que puede ser renombrado). Generalmente, se utilizan varios tenants para segmentar las responsabilidades o los perímetros técnicos.
 
 Por ejemplo:
 
 - Un tenant __Producción__
 - Un tenant __Preproducción__
-- Un tenant __Receta__
+- Un tenant __Pruebas__
 - Un tenant __Calificación__
 
-Pero también es posible organizar las cosas con una __visión aplicativa__ o por __criticidad__:
+Pero también es posible organizar las cosas con una __vista de aplicación__ o por __criticidad__:
 
 - Un tenant __Aplicación 1__ o __Criticidad 1__
 - Un tenant __Aplicación 2__ o __Criticidad 2__
 - ...
 
-Los recursos técnicos solicitados son asignados a un tenant específico y no se comparten con otros tenants. Por ejemplo, un clúster de hipervisor y las redes L2 asociadas solo están disponibles en un tenant.
-En cuanto a las redes, es posible solicitar redes __'cross tenant'__ para asegurar la continuidad de la red entre los tenants.
+Los recursos técnicos ordenados se asignan a un tenant específico y no se comparten con otros tenants. Por ejemplo, un clúster de Hipervisor y las redes L2 asociadas solo están disponibles en 1 tenant.
+En cuanto a las redes, es posible solicitar redes __'cross tenant'__ para garantizar la continuidad de la red entre los tenants.
 
-Las permisos de los usuarios deben definirse en cada tenant. Así, cada organización debe pensar bien en los tenants deseados. Este punto generalmente se aborda en el taller de inicialización, en el momento de la creación de la organización.
+Los permisos de los usuarios deben definirse en cada tenant. Por lo tanto, cada organización debe pensar cuidadosamente en los tenants deseados. Este punto generalmente se aborda en el taller de inicialización, en el momento de la creación de la organización.
 
 Es posible hacer evolucionar la arquitectura añadiendo o eliminando tenants.
 
-Un tenant no puede estar vacío. Debe ser inicializado necesariamente con un mínimo de recursos:
+Un tenant no puede estar vacío. Debe ser iniciado con un mínimo de recurso:
 
 - Una zona de disponibilidad (AZ, es decir, un datacenter físico),
 - Un clúster de cómputo,
@@ -296,22 +288,41 @@ Un tenant no puede estar vacío. Debe ser inicializado necesariamente con un mí
 - Un vlan de red.
 
 
-| Referencia de pedido                                        | Unidad  | SKU                     |
+| Referencia de pedido                                         | Unidad   | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
-| TENANT - *(REGIÓN)* - Activación de un tenant                 | 1 tenant | csp:tenant:v1           |
-| TENANT - *(REGIÓN)* - Activación de una zona de disponibilidad | 1 tenant | csp:(region):iaas:az:v1 |
+| TENANT - *(REGION)* - Activación de un tenant                | 1 tenant | csp:tenant:v1           |
+| TENANT - *(REGION)* - Activación de una zona de disponibilidad | 1 tenant | csp:(region):iaas:az:v1 |
 
+
+### Gestión de propietarios en un tenant
+
+#### Contexto
+Cada tenant tiene al menos un propietario, garantizando así una responsabilidad clara y una gestión eficiente de los recursos asociados. Además, es posible declarar varios propietarios en el mismo tenant, permitiendo una colaboración y toma de decisiones compartida. A continuación, encontrará información importante a tener en cuenta al gestionar estos propietarios.
+
+#### Información importante sobre la gestión de propietarios
+
+#### 1. Número de propietarios
+* No hay límite técnico en cuanto al número de propietarios que se pueden definir en el tenant.
+* La interfaz de gestión (IHM) emite una advertencia cuando hay más de 3 propietarios, para incentivar a limitar el número de propietarios por razones de seguridad y gestión óptima de accesos.
+
+#### 2. Adición de un nuevo propietario
+* Al añadir un nuevo propietario, la actualización de sus permisos puede requerir un tiempo de hasta 60 minutos.
+* Este tiempo de propagación es normal y asegura que los derechos de acceso se apliquen correctamente a todos los servicios y recursos asociados.
+
+#### 3. Retiro de un propietario
+* Para retirar un propietario del tenant, el usuario debe enviar una solicitud al soporte.
+* Este procedimiento garantiza que los cambios en los derechos de acceso se realicen de manera segura y conforme a las mejores prácticas de gestión de accesos.
 
 ### Autorización de acceso a un tenant: IP autorizadas
 
-El acceso a la consola de gestión cloud está estrictamente limitado a las direcciones IP autorizadas previamente, en conformidad con los requisitos de la calificación SecNumCloud. Esta restricción garantiza un nivel de seguridad reforzado al permitir el acceso solo a los usuarios provenientes de rangos de IP especificados, minimizando así los riesgos de acceso no autorizado y protegiendo la infraestructura cloud según los estándares de seguridad más altos.
+El acceso a la consola de gestión de la nube está estrictamente limitado a las direcciones IP previamente autorizadas, en conformidad con los requisitos de la calificación SecNumCloud. Esta restricción garantiza un nivel de seguridad reforzado al permitir el acceso solo a los usuarios provenientes de rangos de IP especificados, minimizando así los riesgos de acceso no autorizado y protegiendo la infraestructura cloud según los estándares de seguridad más altos.
 
 Nota: *La eliminación de una IP autorizada se realiza mediante una solicitud de soporte en la consola Cloud Temple.*
 
 ### Consumo de recursos dentro de un tenant
 
-Es posible visualizar los recursos cloud consumidos dentro de un tenant, ofreciendo así una vista detallada del uso de los diferentes servicios desplegados. Esta funcionalidad permite a los usuarios seguir en tiempo real el consumo de sus recursos, identificar los servicios más solicitados y optimizar su uso según las necesidades.
+Es posible visualizar los recursos cloud consumidos dentro de un tenant, ofreciendo así una vista detallada del uso de los distintos servicios desplegados. Esta funcionalidad permite a los usuarios seguir en tiempo real el consumo de sus recursos, identificar los servicios más solicitados y optimizar su uso según las necesidades.
 
-En el menú de la consola, haga clic en "Informe de consumo" y luego seleccione el período de tiempo deseado. Así podrá visualizar en detalle el consumo de los recursos cloud durante el período definido, permitiéndole analizar el uso de los servicios y optimizar su gestión en consecuencia:
+En el menú de la consola, haga clic en "Informe de consumo" y seleccione el periodo de tiempo deseado. Así podrá visualizar en detalle el consumo de recursos cloud en el periodo definido, lo que le permitirá analizar el uso de los servicios y optimizar su gestión en consecuencia:
 
 ![](images/shiva_tenant_ressources_01.png)

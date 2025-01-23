@@ -208,12 +208,6 @@ Dernière mise à jour le: 23/01/2025
 | ticket_read                                   | Consultation des tickets                                                                                                       |
 | ticket_write                                  | Gestion des tickets                                                                                                            |
 
-**Notes** :
-
-- *Il n'y a aucune limite quant au nombre d'owners (propriétaires) pouvant être définis sur le tenant. Cependant, l'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 owners, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.*
-- *Lors de l'ajout d'un nouveau propriétaire (owner), la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes. Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.*
-- *Pour retirer un propriétaire (owner) du tenant, l'utilisateur doit soumettre une demande au support. Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.*
-
 ### Permissions dépréciées
 
 Les permissions suivantes ne sont plus disponibles :
@@ -301,6 +295,25 @@ Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec
 | TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
 | TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
 
+
+### Gestion des propriétaires sur un tenant
+
+#### Contexte
+Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
+
+#### Informations importantes sur la gestion des propriétaires
+
+#### 1. Nombre de propriétaires
+* Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
+* L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
+
+#### 2. Ajout d'un nouveau propriétaire
+* Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
+* Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
+
+#### 3. Retrait d'un propriétaire
+* Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
+* Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
 
 ### Autorisation d'accès à un tenant : IP autorisées
 
