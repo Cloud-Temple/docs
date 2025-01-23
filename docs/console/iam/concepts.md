@@ -14,11 +14,11 @@ Les informations d'identification sont globales à votre [Organisation](#organis
 
 La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
 
-Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
+Cliquez sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
 
 ![](images/shiva_onboard_003.png)
 
-Indiquer ensuite l'adresse de messagerie de l'utilisateur
+Indiquez ensuite l'adresse de messagerie de l'utilisateur
 
 ![](images/shiva_onboard_004.png)
 
@@ -52,13 +52,51 @@ La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur
 
 Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
 
+**Warning**: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
 ![](images/shiva_profil_012.png)
+
+### Mettre à jour son profil
+
+Cette action n'est disponible que pour un compte local (non SSO).
+
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Mettre à jour votre profil'__.
+
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre profil.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de mise à jour du profil. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_014.png)
+
+### Réinitialisation du mot de passe
+
+Cette action n'est disponible que pour un compte local (non SSO).
+
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Réinitialiser mot de passe'__.
+
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre mot de passe.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de réinitialisation de votre mot de passe. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_015.png)
+
+### Réinitialisation du double facteur d'authentification
+
+Cette action n'est disponible que pour un compte local (non SSO).
+
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Réinitialiser MFA'__.
+
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre double facteur d'authentification.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de réinitialiser de votre double facteur d'authentification. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_016.png)
 
 ### Suppression d'un utilisateur
 
 La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
 
-Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquer sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
+Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
 
 ![](images/shiva_profil_013.png)
 ![](images/shiva_profil_010.png)
@@ -71,6 +109,8 @@ La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut
 
 ![](images/shiva_profil_009.png)
 ![](images/shiva_profil_011.png)
+
+Une déconnexion automatique est réalisée lors de l'expiration du jeton (JWT Token) de session.
 
 ### Changer la langue d'un utilisateur
 
@@ -91,8 +131,6 @@ Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" 
  Par exemple, en cas d'incident, des notifications par e-mail spécifiques à cette thématique seront générées.
 
 La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichir progressivement pour s'adapter aux besoins et aux changements dans notre environnement opérationnel.
-
-
 
 ## Permissions
 
