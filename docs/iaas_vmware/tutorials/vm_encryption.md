@@ -1,12 +1,13 @@
 ---
-title: Tutoriels
+title: Chiffrer une machine virtuelle VMware
+tags:
+  - iaas_vmware
+  - tutorials
 ---
 
-Ces tutoriels vous aident à utiliser et paramétrer la partie IaaS VMWare depuis le portail Shiva.
+Ce tutoriel vous aide à chiffrer une machine virtuelle IaaS VMWare depuis le portail Shiva.
 
-## Chiffrer une machine virtuelle VMWare
-
-## Prérequis
+### Prérequis
 
 1. **Fournisseur de clé (HSM/KMS)** :
    - Un fournisseur de clé doit être configuré sur la vStack. (Si aucun fournisseur de clé n'est configuré, veuillez contacter le service support au travers d'un ticket.)
@@ -16,8 +17,10 @@ Ces tutoriels vous aident à utiliser et paramétrer la partie IaaS VMWare depui
    - La machine virtuelle doit être éteinte.
    - La machine virtuelle ne doit pas être en spp mode 'test'.
    - La machine virtuelle ne doit pas être déjà chiffrée.
+   - La machine virtuelle ne doit pas avoir de snapshot.
+   - La machine virtuelle ne doit pas être répliquée.
 
-## Interface
+### Interface
 
 Une fois connecté au portail web Shiva, depuis le menu __'IaaS'__, sous-menu __'Configuration'__ puis l'onglet __'vCenters'__, vous trouverez l'information vous indiquant si le chiffrement est activé sur la vstack en question.
 
