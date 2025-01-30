@@ -109,7 +109,13 @@ const sidebars: SidebarsConfig = {
         'iaas_vmware/iaas_vmware',
         'iaas_vmware/concepts',
         'iaas_vmware/quickstart',
-        'iaas_vmware/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'iaas_vmware/tutorials/vm_encryption',
+          ],
+        },
       ],
     },
     {
