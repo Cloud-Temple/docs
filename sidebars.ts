@@ -138,13 +138,13 @@ const sidebars: SidebarsConfig = {
         'governance/paas/mco_mcs',
         {
           type: 'doc',
-          label:'RACI',
-          id:'governance/paas/raci'
+          label: 'RACI',
+          id: 'governance/paas/raci'
         },
         {
-          type:'doc',
-          label:'Service Agreement',
-          id:'governance/paas/service_agreement_paas'
+          type: 'doc',
+          label: 'Service Agreement',
+          id: 'governance/paas/service_agreement_paas'
         }
       ],
     },
@@ -188,6 +188,28 @@ const sidebars: SidebarsConfig = {
             'storage/oss/tutorials',
           ],
         },
+      ],
+    },
+    {
+      type: 'html', // Séparateur et titre
+      value: `
+        <hr class="sidebar-separator" />
+        <h3 class="sidebar-title">Contractuel</h3>
+      `,
+    },
+    {
+      type: 'category',
+      label: 'Documents contractuels',
+      items: [
+        'contractual/orderdoc',
+        'contractual/cgvu',
+        'contractual/iaas/sla_iaas',
+        'contractual/paas/sla_paas',
+        'contractual/paas/sla_paas',
+        'contractual/iaas/raci',
+        'contractual/iaas/raci_s3',
+        'contractual/paas/raci',
+        'contractual/dpa',
       ],
     },
   ],
