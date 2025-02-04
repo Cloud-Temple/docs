@@ -203,10 +203,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'contractual/orderdoc',
         'contractual/cgvu',
-        'contractual/iaas/sla_iaas',
-        'contractual/iaas/sla_openiaas',
         'contractual/paas/sla_paas',
-        'contractual/baremetal',
         'contractual/dpa',
         'contractual/iaas/raci',
         'contractual/iaas/raci_s3',

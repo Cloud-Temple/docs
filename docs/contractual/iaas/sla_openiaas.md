@@ -1,8 +1,6 @@
 ---
-title: Convention de Service OpenIaaS
+title: Convention de Service SecNumCloud OpenIaaS
 ---
-  
-![Logo Cloud Temple](images/ct.png)
 
 # 1. CONVENTION DE SERVICES OpenIaaS
 
