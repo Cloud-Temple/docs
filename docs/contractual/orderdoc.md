@@ -4,17 +4,20 @@ title: Hiérarchie des documents contractuels
 
 |           | Références                 |
 | --------- | -------------------------- |
-| Référence | CT.AM.JUR.HDC 20240403_2.0 |
-| Date      | 24 septembre 2024          |
+| Référence | CT.AM.JUR.HDC 20250502_3.0 |
+| Date      | 05 février 2025            |
 
 La hiérarchie des documents contractuels est établie selon un ordre de priorité défini :
 
-1. [Conditions Générales de Vente et d'Utilisation (CGVU)](cgvu.docx)
-2. [Convention de service IaaS](iaas/sla_iaas.docx)
-3. [Convention de service PaaS](paas/sla_paas.docx) (*)
-4. Convention spécifique particulière (**)
-5. Plan d'Assurance Sécurité (PAS) (***)
-6. Annexe : [Données à Caractère Personnel](dpa.docx) (DPA)
+1. [Conditions Générales de Vente et Utilisation (CGVU)](cgvu.docx)
+2. [Convention de Service SecNumCloud IaaS](iaas/sla_iaas.docx)
+3. [Convention de Service SecNumCloud OpenIaaS](iaas/sla_openiaas.docx)
+4. [Convention de Service SecNumCloud PaaS](paas/sla_paas.docx) (*)
+5. [Convention de Service spécifique - Bare Metal](baremetal.docx)
+6. Convention spécifique particulière (**)
+7. Plan d'Assurance Sécurité (PAS) (***)
+8. Conditions Particulières d’Utilisation (CPU) 
+9. [Data Protection Agreement](dpa.docx) (DPA)
 
 (*) Il est spécifié que la présente Convention de services PaaS est valide uniquement si le CLIENT a signé la Convention concernant les services IaaS SecNumCloud.
 
