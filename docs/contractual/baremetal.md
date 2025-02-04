@@ -1,8 +1,6 @@
 ---
 title: Convention de Service Bare Metal
 ---
-  
-![Logo Cloud Temple](images/ct.png)
 
 # 1. CONVENTION DE SERVICES Bare Metal
 
