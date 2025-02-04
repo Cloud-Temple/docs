@@ -206,7 +206,7 @@ const sidebars: SidebarsConfig = {
         'contractual/iaas/sla_iaas',
         'contractual/iaas/sla_openiaas',
         'contractual/paas/sla_paas',
-        'contractual/paas/baremetal',
+        'contractual/baremetal',
         'contractual/dpa',
         'contractual/iaas/raci',
         'contractual/iaas/raci_s3',
