@@ -4,13 +4,13 @@ alt="Logo Cloud Temple" />
 <figcaption aria-hidden="true"><p>Logo Cloud Temple</p></figcaption>
 </figure>
 
-# 1. CONVENTION DE SERVICES IaaS
+# 1. CONVENTION DE SERVICES OpenIaaS
 
   -----------------------------------------------------------------------
   **Destinataires :**            **COMMANDITAIRE**
   ------------------------------ ----------------------------------------
-  **Référence du documents**     CT.AM.JUR.ANX CdS-IaaS -
-                                 20251701_v3.0.docx_Jour JJ AAAA
+  **Référence du documents**     CT.AM.JUR.ANX OPENIaaS-
+                                 202530101_v3.0.docx_Jour JJ AAAA
 
   **Vos interlocuteurs**         *Prénom* *Nom*
 
@@ -204,10 +204,10 @@ alt="Logo Cloud Temple" />
 ## 3.1. Préliminaire
 
 Le présent document formalise la Convention de service associée au
-service IaaS qualifiée SecNumCloud sous l'appellation de « *Secure
-Temple *».
+service OpenIaaS en cours de qualification SecNumCloud.
 
-Le Service est qualifié SecNumCloud (voir attestation en Annexe).
+Le Service est en cours de qualification SecNumCloud (voir attestation
+qui sera en Annexe).
 
 La présente convention de service complète et est complémentaire aux
 conditions générales de vente et d'utilisation du Prestataire. Il est
@@ -322,20 +322,20 @@ attribuées ci-dessous :
     calcul et de stockage pour optimiser la latence, la performance et
     la conformité réglementaire locale.
 
--   **Service :** désigne le service IaaS qualifié SecNumCloud « Secure
-    Temple », délivré au COMMANDITAIRE par la Prestataire depuis des
+-   **Service OpenIaaS :** désigne le service IaaS basé sur une
+    technonologie opensource, en cours de qualification SecNumCloud ,
+    délivré au COMMANDITAIRE par la Prestataire depuis des
     infrastructures techniques maintenues par le Prestataire, tel que
     décrit dans la section « Description du Service » de la présente
     Convention de service.
 
--   **Secure Temple** : désigne le service IaaS qualifié SecNumCloud,
-    proposé par la société Cloud Temple, tel que défini dans
-    l'attestation consultable sur le site de l'ANSSI et fournie en
-    annexe de la présente Convention de service.
+<!-- -->
 
 -   **Sinistre :** désigne un événement grave d'origine naturelle ou
     humaine, accidentelle ou intentionnelle, occasionnant des pertes et
     des dommages importants à la Partie sinistrée.
+
+<!-- -->
 
 -   **Supervision :** Surveillance d'un Système d'Information ou d'un
     Service, impliquant la collecte de diverses données telles que
@@ -514,28 +514,30 @@ conformément aux exigences du référentiel SecNumCloud.
 
 ## 7.2. Présentation détaillée du périmètre du Service
 
-  -----------------------------------------------------------------------------
+  ------------------------------------------------------------------------
   Compute          Ressource de calcul du Tenant COMMANDITAIRE
-  ---------------- ------------------------------------------------------------
+  ---------------- -------------------------------------------------------
   Storage          Données de production du Tenant COMMANDITAIRE
 
-  Stockage objet   mise à disposition d'une infrastructure de stockage objet
-  S3               souverain multi AZ et compatible avec les API S3 standard.
+  Stockage objet   mise à disposition d'une infrastructure de stockage
+  S3               objet souverain multi AZ et compatible avec les API S3
+                   standard.
 
-  Sauvegarde       Modulo souscription au mass-storage adéquat
+  Sauvegarde       Modulo souscription au Stockage objet S3
 
   Infrastructure   Ressource réseau du Tenant COMMANDITAIRE
   réseau           
 
   Console          Le service permettant au COMMANDITAIRE d'accéder à son
-  COMMANDITAIRE    service IaaS et de l'administrer via l'interface Shiva
+  COMMANDITAIRE    service OpenIaaS et de l'administrer via l'interface
+                   Shiva
 
-  Support          Le service de support accompagnant les services précédents
-                   et uniquement ceux-ci (\*)
-  -----------------------------------------------------------------------------
+  Support          Le service de support accompagnant les services
+                   précédents et uniquement ceux-ci (\*)
+  ------------------------------------------------------------------------
 
-\_(\*) Dans la limite du périmètre du Service qualifié SNC et des
-responsabilités du Prestataire en la matière\_
+\_(\*) Dans la limite du périmètre du Service en cours de qualification
+SNC et des responsabilités du Prestataire en la matière\_
 
 ### 7.2.1. Infrastructures Datacenters
 
@@ -685,10 +687,10 @@ sauvegardées, sous réserve que le COMMANDITAIRE ait souscrit au Unités
 d'œuvre adéquates.
 
 Cette prestation de sauvegarde se limite à la sauvegarde des machines
-virtuelles et des configurations de topologie de l'environnement IaaS
-des Tenants du COMMANDITAIRE dans le cadre du Service. L'élaboration et
-l'application d'une politique de sauvegarde adéquate par le
-COMMANDITAIRE dépendent de la souscription à des unités d'œuvre
+virtuelles et des configurations de topologie de l'environnement
+OpenIaaS des Tenants du COMMANDITAIRE dans le cadre du Service.
+L'élaboration et l'application d'une politique de sauvegarde adéquate
+par le COMMANDITAIRE dépendent de la souscription à des unités d'œuvre
 spécifiques. Il incombe donc au COMMANDITAIRE de s'assurer de la
 disponibilité des ressources techniques nécessaires auprès du
 Prestataire pour mettre en œuvre sa politique de sauvegarde ou d'ajuster
@@ -710,7 +712,7 @@ COMMANDITAIRE la responsabilité de gérer efficacement cette distribution
 de ressources, pour laquelle il a la possibilité à exploiter les outils
 du Prestataire disponibles à cet usage.
 
-## 7.3. Limitations des services dans le modèle IaaS qualifié
+## 7.3. Limitations des services dans le modèle OpenIaaS en cours de qualification
 
 ### 7.3.1. Services managés en RUN
 
@@ -724,7 +726,7 @@ Il est important de noter que sont écartés du Service :
 -   Tout service de type managé, ou TMA;
 
 -   Toute assistance sur les machines virtuelles au niveau OS et
-    au-dessus dans la pile de responsabilités Iaa, même s'il s'agit de
+    au-dessus dans la pile de responsabilités IaaS, même s'il s'agit de
     simple supervision.
 
 Cela étant, il n'est absolument pas exclu que le COMMANDITAIRE ait
@@ -745,7 +747,7 @@ COMMANDITAIRE.
 
 La prestation de sauvegarde s'arrête à la sauvegarde des machines
 virtuelles et des configurations de topologie représentant
-l'environnement IaaS des Tenants du COMMANDITAIRE dans le cadre du
+l'environnement OpenIaaS des Tenants du COMMANDITAIRE dans le cadre du
 Service.
 
 La prestation de sauvegarde et la complétion de la politique de
@@ -807,7 +809,7 @@ Conventions de Service.
 Pour la mise en œuvre du Service, le COMMANDITAIRE reconnaît qu'il devra
 :
 
--   Fonctionner avec une virtualisation de type VMware dans les versions
+-   Fonctionner avec une virtualisation de type Xen dans les versions
     supportées par l'éditeur et fournies par le Prestataire dans le
     cadre du Service;
 
@@ -1342,7 +1344,7 @@ limitées ainsi :
     service, limite de fait l'implication du Prestataire dans les
     couches de fonctionnement allant "au-dessus" de la mise à
     disposition de ressources de calcul, de réseau, de stockage et de
-    sauvegarde. Ceci exclut en particulier sans s'y limiter :
+    sauvegarde. Ceci exclut en particulier et sans s'y limiter :
 
     -   La gestion de ce qui est installé sur les machines virtuelles
         (OS, middlewares, applicatifs, etc.);
@@ -1377,8 +1379,8 @@ limitées ainsi :
     physiques des clients ne fait pas partie du Service et est de fait
     hors du cadre de la présente Convention de service. Il incombe au
     COMMANDITAIRE d'évaluer le niveau d'adhérence ou de dépendance
-    qu'introduisent ces composants vis-à-vis du Service IaaS qualifié
-    SecNumCloud.
+    qu'introduisent ces composants vis-à-vis du Service OpenIaaS en
+    cours de qualification SecNumCloud.
 
 ## 9.3. Limitation d'accès
 
@@ -1404,7 +1406,7 @@ Cette mesure garantit le contrôle et la sécurité des données du
 COMMANDITAIRE, en s'assurant que toute exception à la règle est dûment
 autorisée et documentée.
 
-## 9.4. Responsabilités des tiers participant à la fourniture du service Secure Temple
+## 9.4. Responsabilités des tiers participant à la fourniture du service 
 
 Le Prestataire maîtrise la liste des tiers partenaires participant de la
 fourniture du Service. Ces tiers sont les éditeurs, prestataires (du
@@ -1513,7 +1515,7 @@ Les facteurs pouvant induire une révision de cette Convention de service
 incluent, sans s'y limiter :
 
 -   L'évolution de l'infrastructure technique délivrant le Service
-    IaaS ;
+    OpenIaaS ;
 -   Les ajustements apportés aux services déployés par le Prestataire
     pour fournir le Service ;
 -   Les variations des engagements pris et des sanctions applicables ;
@@ -1588,7 +1590,7 @@ cadre d'un contrat spécifique à négocier.
 #### 11.1.1.2. Traitement des incidents
 
 > Le Prestataire informe le COMMANDITAIRE dans les meilleurs délais, des
-> incidents et interruptions, au moyen d'une une notification dans la
+> incidents et interruptions, au moyen d'une notification dans la
 > console COMMANDITAIRE ou par courriel au contact COMMANDITAIRE. Le
 > Prestataire informe le COMMANDITAIRE du traitement de l'incident par
 > le canal utilisé pour notifier l'incident, ou par le canal indiqué
@@ -1734,7 +1736,7 @@ au sein d\'un État non membre de l\'Union Européenne ou appartenant ou
 Européenne, le Prestataire s\'engage :
 
 -   à ce que cette susdite société tierce ne disposera d\'aucun accès
-    aux données opérées par le service \'Secure Temple\' ;
+    aux données opérées ;
 
 -   à disposer d\'une autonomie d\'exploitation à travers la possibilité
     de faire appel à un autre sous-traitant ou de mettre rapidement en
