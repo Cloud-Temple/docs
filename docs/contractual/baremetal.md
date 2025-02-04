@@ -24,7 +24,7 @@ title: Convention de Service spécifique - Bare Metal
   **Version**   **Date**     **Action**                           **Auteur**
   ------------- ------------ ------------------------------------ -----------------
   v1.0          22/01/2025   Rédaction initiale                   Nicolas BODILIS
-
+  ------------- ------------ ------------------------------------ -----------------
                                                                   
 
                                                                   
