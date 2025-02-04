@@ -9,7 +9,7 @@ title: Hiérarchie des documents contractuels
 
 La hiérarchie des documents contractuels est établie selon un ordre de priorité défini :
 
-1. [Conditions Générales de Vente et Utilisation (CGVU)](/docs/contractual/cgvu.docx)
+1. [Conditions Générales de Vente et Utilisation (CGVU)](cgvu.docx)
 2. [Convention de Service SecNumCloud IaaS](iaas/sla_iaas.docx)
 3. [Convention de Service SecNumCloud OpenIaaS](iaas/sla_openiaas.docx)
 4. [Convention de Service SecNumCloud PaaS](paas/sla_paas.docx) (*)
