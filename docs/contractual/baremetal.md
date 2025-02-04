@@ -1,5 +1,5 @@
 ---
-title: Convention de Service Bare Metal
+title: Convention de Service spécifique - Bare Metal
 ---
 
 # 1. CONVENTION DE SERVICES Bare Metal

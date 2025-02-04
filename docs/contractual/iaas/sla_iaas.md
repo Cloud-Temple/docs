@@ -1,8 +1,6 @@
 ---
-title: Convention de Service IaaS
+title: Convention de Service SecNumCloud IaaS
 ---
-  
-![Logo Cloud Temple](images/ct.png)
 
 # 1. CONVENTION DE SERVICES IaaS
 
