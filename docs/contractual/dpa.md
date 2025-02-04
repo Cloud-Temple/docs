@@ -1,5 +1,9 @@
 # Annexe Contractuelle - Données à Caractère Personnel (DPA)
 
+**Reference : Annexe - Données à Caractère Personnel
+
+**V1 - 15/01/2025 - Modifié par Emeline Cazaux
+
 ## Article 1 : Définitions
 
 **Données à caractère personnel** : Toute information se rapportant à une personne physique identifiée ou identifiable (« personne concernée »), telle que définie par le Règlement Général sur la Protection des Données (RGPD).
