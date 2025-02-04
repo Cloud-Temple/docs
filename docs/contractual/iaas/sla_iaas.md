@@ -1,8 +1,6 @@
-<figure>
-<img src="media/image1.png" style="width:2.14155in;height:0.32877in"
-alt="Logo Cloud Temple" />
-<figcaption aria-hidden="true"><p>Logo Cloud Temple</p></figcaption>
-</figure>
+---
+title: Convention de Service SecNumCloud IaaS
+---
 
 # 1. CONVENTION DE SERVICES IaaS
 
