@@ -9,9 +9,6 @@ on:
     tags:
       - "*"
 
-env:
-  name: dev  # Remplacez 'dev' par le nom de votre environnement
-
 jobs:
   # Job pour la branche dev (déploiement GitHub Pages)
   deploy-dev:
@@ -21,6 +18,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    environment: dev # Ensure this matches your GitHub environment name
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,8 +39,6 @@ jobs:
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
           ALGOLIA_CROWLER_ID: ${{ secrets.ALGOLIA_CROWLER_ID }}
         run: |
-          echo ${{ secrets.ALGOLIA_INDEX_NAME }}
-          echo ${{ secrets.ALGOLIA_CROWLER_ID }}
           npm run build
 
       - name: Upload Build Artifact
