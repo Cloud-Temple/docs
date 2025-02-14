@@ -41,6 +41,8 @@ jobs:
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
           ALGOLIA_CROWLER_ID: ${{ secrets.ALGOLIA_CROWLER_ID }}
         run: |
+          echo ${{ secrets.ALGOLIA_INDEX_NAME }}
+          echo ${{ secrets.ALGOLIA_CROWLER_ID }}
           npm run build
 
       - name: Upload Build Artifact
