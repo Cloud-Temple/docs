@@ -55,6 +55,14 @@ const config: Config = {
       },
     },
   },
+  plugins: [
+    [
+      require.resolve('docusaurus-plugin-search-local'),
+      {
+        // Options are available there: https://github.com/gabrielcsapo/docusaurus-plugin-search-local
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -93,12 +101,6 @@ const config: Config = {
           position: 'right',
         },
       ],
-    },
-    algolia: {
-      appId: process.env.ALGOLIA_APP_ID,
-      apiKey: process.env.ALGOLIA_API_KEY,
-      indexName: process.env.ALGOLIA_INDEX_NAME,
-      contextualSearch: true,
     },
     footer: {
       style: 'dark',
