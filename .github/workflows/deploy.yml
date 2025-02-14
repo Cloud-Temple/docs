@@ -32,7 +32,13 @@ jobs:
         run: npm ci
 
       - name: Build documentation
-        run: npm run build
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_CROWLER_ID: ${{ secrets.ALGOLIA_CROWLER_ID }}
+        run: |
+          npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
@@ -100,3 +106,10 @@ jobs:
           tags: |
             cloudtempleinfra/docs:${{ env.TAG }}
             cloudtempleinfra/docs:latest
+
+      - name: Deploy Static Verification
+        env:
+          ALGOLIA_CROWLER_ID: ${{ secrets.ALGOLIA_CROWLER_ID }}
+        run: |
+          echo "Running deployment..."
+          sed -i 's/\${ALGOLIA_CROWLER_ID}/'"$ALGOLIA_CROWLER_ID"'/g' static/verification.html
