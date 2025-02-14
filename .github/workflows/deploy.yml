@@ -9,6 +9,9 @@ on:
     tags:
       - "*"
 
+env:
+  name: dev  # Remplacez 'dev' par le nom de votre environnement
+
 jobs:
   # Job pour la branche dev (déploiement GitHub Pages)
   deploy-dev:
