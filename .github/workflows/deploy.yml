@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build Documentation
+        run: npm run build
+
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
