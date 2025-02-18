@@ -10,7 +10,7 @@ WORKDIR /app
 
 RUN cd /app && yarn install
 
-RUN yarn add @docusaurus/faster dotenv
+RUN yarn add @docusaurus/faster dotenv docusaurus-plugin-search-local
 COPY . .
 
 CMD ["yarn", "start", "--host", "0.0.0.0"]

@@ -113,6 +113,13 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
+            {
+              type: 'category',
+              label: 'Sauvegardes',
+              items: [
+                'iaas_vmware/tutorials/backup/iaas_backup',
+              ],
+            },
             'iaas_vmware/tutorials/vm_encryption',
           ],
         },
