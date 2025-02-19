@@ -14,7 +14,6 @@ Dans la section __'Machines virtuelles'__, vous avez accès à la liste de vos m
 ![](images/shiva_vm_home.png)
 
 Vous avez accès aux informations suivantes, pour chaque machine virtuelle :
-
 - son nom,
 - les tags qui lui sont assignés,
 - son statut (éteinte, allumée, en traitement, host déconnecté ou invalid),

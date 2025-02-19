@@ -112,6 +112,7 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     result: string;
     };
 ```
+
 **Nota: l'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.**
 
 ## Limites API
