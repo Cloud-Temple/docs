@@ -33,7 +33,7 @@ Red Hat OpenShift Data Foundation (ODF) est une solution intégrée de stockage 
 
 #### Fonctionnalités Clés d'OpenShift Data Foundation :
 
-- **Stockage Persistant :** ODF fournit une couche de stockage persistant pour les conteneurs, essentielle pour les applications d'entreprise comme les bases de données, les systèmes de gestion de contenu, et les applications nécessitant un état persistant.
+- **Stockage Persistant :** ODF fournit une couche de stockage persistant pour les conteneurs, essentielle pour les applications d'entreprise comme les bases de données, les systèmes de gestion de contenu et les applications nécessitant un état persistant.
 
 - **Multicloud et Hybride :** Conçu pour le cloud hybride et multicloud, ODF permet une expérience de gestion des données cohérente à travers différents environnements cloud, facilitant la mobilité des applications et des données.
 

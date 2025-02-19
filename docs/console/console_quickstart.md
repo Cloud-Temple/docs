@@ -147,6 +147,7 @@ La page des activités est destinée à fournir une visibilité complète sur to
 	+ Recherche/Filtrage pour opérations spécifiques
 
 ### **Utilisation**
+
 * **Accès :** permission `activity_read`
 * **Navigation :**
 	- Sélectionnez l'onglet "Récents" pour les opérations en temps réel.
