@@ -82,11 +82,32 @@ Un onglet __'Avancé'__ permet de consulter des informations plus spécifiques c
 
 ![](images/shiva_vm_infos_avancees.png)
 
-### Modification du contrôleur disque d'une machine virtuelle
+### Édition de la RAM ou le CPU d'une machine virtuelle
+Allez dans l'onglet __'Machines Virtuelles'__, affichez les détails d'une machine virtuelle,
+sélectionnez l'onglet __'Infos générales'__ et cliquez sur le bouton d'édition de la variable à modifier :
 
-Vous pouvez modifier le type de contrôleur de disque pour votre machine virtuelle. Les types supportés sont __SCSI__ et __NVME__. Vous pouvez ajouter des contrôleurs avec un maximum de 4 contrôleurs de chaque type.
+![](images/shiva_edit_cpu_ram.png)
+
+### Les modes de disques
+
+Vous pouvez ajouter différents modes de disques:
+  - __Persistant__ : Les modifications sont immédiatement et définitivement écrites sur le disque virtuel. **C'est le mode recommandé.**
+  - __Indépendant non-persistant__ : Les modifications apportées au disque virtuel sont consignées dans un nouveau log et supprimées à la mise hors tension. Non affecté par les snapshots. **Il n'est pas pris en charge par la sauvegarde.**
+  - __Indépendant persistant__ : Les modifications sont immédiatement et définitivement écrites sur le disque virtuel. Non affecté par les snapshots. **Il n'est pas pris en charge par la sauvegarde.**
+
+### Gestion des contrôleurs de machine virtuelle
+
+Vous pouvez modifier le type de contrôleur de disque pour votre machine virtuelle.
 
 ![](images/shiva_vm_diskctrl_001.png)
+
+Les machines virtuelles peuvent être équipées de contrôleurs SCSI et NVME, avec une limite de 4 contrôleurs de chaque type. Chaque contrôleur peut gérer jusqu'à 15 disques.
+
+Un contrôleur SCSI peut être configuré avec différents sous-types : Para Virtual, Bus Logic, LSI Logic ou LSI Logic SAS.
+
+Le contrôleur Para Virtual se distingue par sa capacité étendue. Il peut supporter jusqu'à 64 disques lorsque la version hardware de la machine virtuelle est compatible avec un ESXi en version 6.7 ou supérieure.
+
+> **Important** : Si vous souhaitez modifier le type d'un contrôleur Para Virtual qui possède plus de 15 disques, vous devrez d'abord détacher les disques sur les slots concernés.
 
 ### Console d'une machine virtuelle
 
@@ -134,6 +155,33 @@ Cloud Temple met à votre disposition un catalogue de `Templates` régulièremen
 Il comprend à ce jour plusieurs dizaines de `Templates` et images à monter sur vos machines virtuelles.
 
 ![](images/shiva_catalogs.png)
+
+Pour publier un ISO/OVF, il faut aller dans la vue __'Catalogue'__ et cliquer sur le bouton __'publier des fichiers'__ en haut de la page :
+
+![](images/shiva_catalogs_002.png)
+
+Il est possible de transformer une VM en modèle et de l'exporter dans le catalogue. Pour ce faire, sélectionnez une machine virtuelle et utilisez le bouton d'action __'clone'__ :
+
+![](images/shiva_vm_template_002.png)
+
+Sélectionnez __'Exporter en vm-template'__ :
+
+![](images/shiva_vm_template_001.png)
+
+Renseignez ensuite les informations nécessaires. Il sera alors possible de déployer une nouvelle VM à partir du modèle depuis le bouton __'Nouvelle machine virtuelle'__ ou depuis la page __'Catalogues'__. Il est aussi possible d'exporter la VM au format OVF.
+
+**Bon à savoir**: il est possible de convertir un fichier OVA vers OVF et inversement.
+La méthode la plus courante utilisée est Vmware convertor mais il existe aussi une méthode simple en utilisant ```tar```
+
+Extraction du fichier ova:
+```
+$ tar -xvf vmName.ova
+```
+
+Créer un fichier OVA depuis un fichier OVF:
+```
+$ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
+```
 
 ### Paramétrage avancé des machines virtuelles : Extra Config
 

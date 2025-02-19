@@ -1,5 +1,5 @@
 ---
-title: Documentation API 
+title: Documentation API
 ---
 
 ## Clés API
@@ -191,3 +191,14 @@ car ce comportement pourrait être modifié à l'avenir. Nous vous recommandons 
 
 Les bibliothèques __[Backoff](https://pypi.org/project/backoff/)__ et __[Tenacity](https://pypi.org/project/tenacity/)__ en Python
 sont des bons points de départ pour implémenter des stratégies d'attenuation.
+
+## Cycle de vie d'un endpoint API
+
+Les informations d'évolution des endpoint de l'API est disponible dans les notes de mises à jour :
+
+![](images/shiva_api_004.jpg)
+
+Vous trouverez la liste des endpoints qui sont dépréciés activité par activité.
+
+Par ailleurs, les endpoints qui sont dépréciés apparaitrons de telle manière sur nos API :
+__~~this/is/an/endpoint~~__ ainsi qu'une date de suppression définitive en description.
