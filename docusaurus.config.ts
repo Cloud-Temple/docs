@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -15,13 +17,13 @@ const config: Config = {
     experimental_faster: true,
   },
   
-  trailingSlash: true,
+  trailingSlash: false,
 
   // Set the production url of your site here
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs',
+  baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -34,7 +36,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'fr',
-    locales: ['en', 'fr'],
+    locales: ['en', 'fr', 'es', 'it', 'de'],
     localeConfigs: {
       en: {
         htmlLang: 'en',
@@ -42,8 +44,25 @@ const config: Config = {
       fr: {
         htmlLang: 'fr',
       },
+      es: {
+        htmlLang: 'es',
+      },
+      it: {
+        htmlLang: 'it',
+      },
+      de: {
+        htmlLang: 'de',
+      },
     },
   },
+  plugins: [
+    [
+      require.resolve('docusaurus-plugin-search-local'),
+      {
+        // Options are available there: https://github.com/gabrielcsapo/docusaurus-plugin-search-local
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -95,11 +114,11 @@ const config: Config = {
             },
             {
               label: 'Tutorial',
-              to: '/docs/tags/tutorials/',
+              to: '/docs/docs/tags/tutorials/',
             },
             {
               label: 'Onboarding',
-              to: '/docs/tags/onboarding/',
+              to: '/docs/docs/tags/onboarding/',
             },
           ],
         },
@@ -117,29 +136,40 @@ const config: Config = {
             {
               label: 'Cloud Temple Web Site',
               href: 'https://cloud-temple.com',
+            },
+            {
+              label: 'Cloud Temple Roadmap',
+              href: 'https://github.com/orgs/Cloud-Temple/projects/2',
             }
           ],
         },
         {
-          title: 'Support',
+          title: 'Market Place',
           items: [
             {
               label: 'Privacy',
-              to: '/docs/privacy/',
+              to: '/docs/docs/privacy/',
             },
             {
               label: 'UGAP',
-              to: '/docs/market_place_public',
+              to: '/docs/docs/market_place_public',
             },
             {
               label: 'CAIH',
-              to: '/docs/market_place_public',
+              to: '/docs/docs/market_place_public',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Cloud Temple Docs, Inc. Built with Docusaurus.`,
-    },
+      copyright: `
+      <div style="text-align: center;">
+        <a href="/docs/docs/governance">Contracts</a> |
+        <a href="/docs/docs/privacy">Privacy Policy</a>
+        <br />
+        Copyright © ${new Date().getFullYear()} Cloud Temple.
+      </div>
+    `,
+      },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

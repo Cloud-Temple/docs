@@ -1,5 +1,5 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
 
 
@@ -58,11 +58,59 @@ Les associations de compte aux buckets sont réalisées dans l'onglet '__Politiq
 
 ![](images/S3_account_assign.png)
 
-Cette association permet de donner l'accès du compte de stockage au bucket. Il y trois rôle :
+Cette association permet de donner l'accès du compte de stockage au bucket. Il y quatres rôles :
 
-1. **Maintener** : Les droits lecture, ecriture, gestion des droits et gestion de la politique
-2. **Lecteur** : Lire les fichiers dans les buckets et les télécharger.
+1. **Mainteneur** : Les droits de lecture, ecriture, gestion des droits et gestion de la politique
+
+Les permissions S3 derrière ce rôle:
+```json
+{
+    "name": "maintainer",
+    "permissions": [
+        "s3:*"
+    ]
+}
+```
+
+2. **Ecrivain et Lecteur** : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
+
+Les permissions S3 derrière ce rôle:
+```json
+{
+    "name": "read_write",
+    "permissions": [
+        "s3:Get*"
+        "s3:List*"
+        "s3:*Object"
+    ]
+}
+```
+
 3. **Ecrivain** : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
+
+Les permissions S3 derrière ce rôle:
+```json
+{
+    "name": "write_only",
+    "permissions": [
+        "s3:List*"
+        "s3:*Object"
+    ]
+}
+```
+
+4. **Lecteur** : Lire les fichiers dans les buckets et les télécharger.
+
+Les permissions S3 derrière ce rôle:
+```json
+{
+    "name": "read_only",
+    "permissions": [
+        "s3:Get*"
+        "s3:List*"
+    ]
+}
+```
 
 ![](images/S3_account_access.png)
 

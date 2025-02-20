@@ -50,6 +50,39 @@ La première étape est l'identification du type de demande de support :
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
+Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
+
+**CRITIQUE (P1)**:
+
+- Suspicion de fuite de données sensibles
+- Détection d'un accès non autorisé à vos données
+- Compromission de vos identifiants d'administration
+- Indisponibilité totale de vos services critiques
+- Comportements anormaux sur des données sensibles
+- Violation de données à caractère personnel
+
+**HAUTE (P2)h**:
+
+- Dysfonctionnement des accès utilisateurs
+- Anomalie dans le chiffrement de vos données
+- Perte d'accès à certaines fonctionnalités critiques
+- Incohérence dans les données
+- Lenteurs majeures impactant l'activité
+
+**MOYENNE (P3)**:
+
+- Problème de performance localisé
+- Incident sur une fonction non critique
+- Erreur de configuration avec impact limité
+- Difficulté d'accès ponctuelle
+
+**BASSE (P4)**:
+
+- Demande d'investigation
+- Anomalie sans impact direct
+- Question de conformité
+- Besoin de clarification technique
+
 ![](images/shiva_support_02.png)
 
 Une fois votre demande effectuée, il est possible de retrouver vos demandes via __l'icône 'bouée'__ situé en haut à droite de l'écran :
@@ -85,6 +118,50 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 - __Colocation__ : Offre la vue sur les équipements situés en zone de __collocation mutualisée ou dédiée__,
 - __Commande__ : Permet la commande de ressources et le suivi des déploiements,
 - __Administration__ : Regroupe les fonctions d'administration des utilisateurs et des tenants ainsi que l'accès à la journalisation globale.
+
+Les pictogrammes __'NEW'__ signifient que le produit en question a été provisionné mais n'est pas encore qualifié __offre SecNumCloud__ et __'BETA'__ signifient que le produit en question a été provisionné et vient d'être qualifié __offre SecNumCloud__.
+
+**Journalisation - Suivi des Activités**
+=====================================
+
+La page des activités est destinée à fournir une visibilité complète sur toutes les opérations de lecture et d'écriture réalisées au sein de la console, assurant ainsi une traçabilité et une sécurité accrues. Elle met en évidence les deux onglets principaux : Récents et Archivés.
+
+![](images/shiva_logs.png)
+
+### **Structure de la Page**
+
+#### **Onglets**
+	+ **Récents**
+		- Opérations récentes
+		- Suivi en temps réel
+	+ **Archivés**
+		- Opérations sur une période plus longue
+		- Opérations archivées pour traçabilité et conformité
+#### **Informations Affichées**
+	+ Date et Heure
+	+ Type d'opération
+    + L'état
+	+ Utilisateur
+	+ Description de l'opération
+#### **Fonctionnalité**
+	+ Recherche/Filtrage pour opérations spécifiques
+
+### **Utilisation**
+
+* **Accès :** permission `activity_read`
+* **Navigation :**
+	- Sélectionnez l'onglet "Récents" pour les opérations en temps réel.
+	- Choisissez "Archivés" pour consulter l'historique.
+	- Utilisez les fonctionnalités de recherche et de filtrage pour localiser des opérations spécifiques.
+
+#### **Note de Conformité**
+Conformément à la qualification SecNumCloud, le stockage des événements de la console Cloud Temple est d'une durée minimale de **6 mois**, garantissant ainsi le respect des exigences de sécurité et de traçabilité.
+
+## Consultation des dernières mises à jour
+
+Cliquez en bas à gauche du bandeau vert sur l'icône __'Nouveautés'__. Vous aurez le détail des modifications pour chaque version de la console Cloud Temple.
+
+![](images/shiva_onboard_009.png)
 
 ## Accès aux fonctionnalités utilisateur via l'API
 

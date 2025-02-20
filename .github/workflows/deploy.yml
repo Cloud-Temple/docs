@@ -18,6 +18,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    environment: dev # Ensure this matches your GitHub environment name
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build documentation
+      - name: Build Documentation
         run: npm run build
 
       - name: Upload Build Artifact
