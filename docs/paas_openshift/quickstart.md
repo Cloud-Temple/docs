@@ -1,14 +1,12 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
-
 
 ## Déployer une plateforme Redhat Openshift au sein de votre tenant
 
 ### Affectation des droits d'accès
 
 Il est indispensable que l'administrateur du [Tenant](../console/iam/concepts.md#tenants) accorde le droit de gestion de la plateforme Openshift à l'utilisateur administrateur Openshift pour pouvoir y accéder :
-
 
 ![](images/oshift_rights.png)
 
@@ -27,3 +25,76 @@ Cliquez sur le cluster que vous souhaitez administrer. Vous accéder à l'enviro
 Après authentification, vous pouvez administrer votre cluster :
 
 ![](images/oshift_menu_003.png)
+
+### Ressources de votre environnement
+
+Voici les informations de connexion et de configuration propres à votre environnement OpenShift.
+
+#### Détails de connexion
+
+Pour accéder aux différents composants OpenShift, veillez à ce que votre locataire soit inscrit sur la liste blanche dans la console (consultez la documentation : [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+
+- __URL Shiva Tenant__ :  
+  [https://**votre-id-locataire**.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)  
+  
+- __OpenShift UI__ :  
+  [https://ui-ocp01-**votre-id**.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)  
+  
+- __API externe__ :  
+  [https://api-ocp01-**votre-id**.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)  
+  
+- __GitOps (ARGOCD)__ :  
+  [https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)  
+  
+#### Connexion au cluster via CLI
+
+Pour vous connecter via la ligne de commande (CLI), utilisez la commande suivante :
+
+```bash
+oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com/ --web
+```
+
+#### Accès au registre
+
+Pour accéder au registre, connectez-vous en utilisant les commandes suivantes :
+
+```bash
+oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com --web
+docker login -u {votre-utilisateur} -p $(oc whoami -t) registry-ocp01-{votre-id}.paas.cloud-temple.com
+```
+
+Ensuite, testez la construction et le téléversement d'une image Docker :
+
+```bash
+docker build -t <namespace>/temp:latest .
+docker tag <namespace>/temp:latest registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:latest
+```
+
+#### Configuration des routeurs et Load Balancers
+
+La plateforme propose des options flexibles pour le __roulage des flux__ et l’__équilibrage de charge__ :
+
+- Par défaut, des load balancers privés sont utilisés pour les routes et les ingresses.  
+- Domaines :  
+  - `*.apps-priv-ocp01-{votre-id}.paas.cloud-temple.com`  
+  - `*.apps-ocp01-{votre-id}.paas.cloud-temple.com`  
+
+Assurez-vous que vos routes ou ingresses sont configurés avec les étiquettes ou classes d’ingress appropriées pour garantir un routage correct. 
+
+Exemple :
+
+```yaml
+metadata:
+  labels:
+    ct-router-type: public
+```
+
+#### Interconnexion IaaS
+
+Les configurations réseau jouent un rôle crucial pour sécuriser les communications avec OpenShift.
+
+- __Réseau d’interconnexion__ : 100.67.0.0/28  
+- __VIP du load balancer privé__ : 100.67.0.3  
+
+Vérifiez que votre pare-feu dispose d’une interface dédiée et autorise le trafic entre les réseaux spécifiés.

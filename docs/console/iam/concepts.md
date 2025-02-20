@@ -12,17 +12,17 @@ Les informations d'identification sont globales à votre [Organisation](#organis
 
 ### Création d'un compte utilisateur dans votre organisation
 
-La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.  
+La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
 
-Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs. 
+Cliquez sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
 
 ![](images/shiva_onboard_003.png)
 
-Indiquer ensuite l'adresse de messagerie de l'utilisateur 
+Indiquez ensuite l'adresse de messagerie de l'utilisateur
 
 ![](images/shiva_onboard_004.png)
 
-L'utilisateur va alors recevoir un mail de vérification.  
+L'utilisateur va alors recevoir un mail de vérification.
 
 ![](images/shiva_onboard_001.png)
 
@@ -30,11 +30,11 @@ Une fois la vérification terminée, l'utilisateur pourra se connecter sur la co
 
 ### Affectation des permissions à un utilisateur
 
-La gestion des droits utilisateurs se fait depuis la page utilisateur. 
+La gestion des droits utilisateurs se fait depuis la page utilisateur.
 
 ![](images/shiva_onboard_003.png)
 
-Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.  
+Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
 
 Le menu d'activation des droits apparait alors :
 
@@ -43,6 +43,74 @@ Le menu d'activation des droits apparait alors :
 La configuration des permissions est à faire pour chaque [Tenant](#tenants) de l'[Organisation](#organisations).
 
 La liste des permissions et leur définition est accessible [ici](#permissions).
+
+### Réinscription d'un utilisateur
+
+Lorsqu'un utilisateur a été provisionné mais n'a pas validé son inscription dans le délai d'expiration du mail envoyé par la Console, il ne peut plus confirmer son inscription. Il est alors possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
+
+La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
+
+Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_012.png)
+
+### Mettre à jour son profil
+
+Cette action n'est disponible que pour un compte local (non SSO).
+
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Mettre à jour votre profil'__.
+
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre profil.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de mise à jour du profil. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_014.png)
+
+### Réinitialisation du mot de passe
+
+Cette action n'est disponible que pour un compte local (non SSO).
+
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Réinitialiser mot de passe'__.
+
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre mot de passe.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de réinitialisation de votre mot de passe. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_015.png)
+
+### Réinitialisation du double facteur d'authentification
+
+Cette action n'est disponible que pour un compte local (non SSO).
+
+Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Paramètre utilisateur'__ et sélectionnez l'action __'Réinitialiser MFA'__.
+
+Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre double facteur d'authentification.
+
+**Warning**: Assurez vous de bien être à l'origine de la demande de réinitialiser de votre double facteur d'authentification. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+![](images/shiva_profil_016.png)
+
+### Suppression d'un utilisateur
+
+La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
+
+Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
+
+![](images/shiva_profil_013.png)
+![](images/shiva_profil_010.png)
+
+Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
+
+### Se déconnecter
+
+La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, puis __'Déconnecter'__.
+
+![](images/shiva_profil_009.png)
+![](images/shiva_profil_011.png)
+
+Une déconnexion automatique est réalisée lors de l'expiration du jeton (JWT Token) de session.
 
 ### Changer la langue d'un utilisateur
 
@@ -64,8 +132,6 @@ Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" 
 
 La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichir progressivement pour s'adapter aux besoins et aux changements dans notre environnement opérationnel.
 
-
-
 ## Permissions
 
 La console Shiva permet une gestion fine des droits des utilisateurs d'une organisation, avec une ségrégation par tenant.
@@ -74,13 +140,16 @@ Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les per
 
 ### Permissions disponibles pour les utilisateurs de votre organisation
 
-Les permissions suivantes sont configurables pour chaque [utilisateur](#utilisateurs) et pour chaque [tenant](#tenants#selection-dun-tenant) de votre organisation.
+Lorsqu’un utilisateur est créé, il ne possède aucune permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
 
-- Les permissions de type __'read'__ sont associés à la consultation sans possibilité de configuration
-- Les permissions de type __'write'__ sont associés à la modification de configuration.
+Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
+	•	Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
+	•	Permissions de type “write” : autorisent la modification des configurations.
+ 	•	Permissions de type “management“ : autorisent la gestion avancées des ressources.
+
 - __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 
-__VERSION : 20241007__
+Dernière mise à jour le: 23/01/2025
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -103,8 +172,10 @@ __VERSION : 20241007__
 | compute_iaas_vmware_infrastructure_read       | Offre Vmware - Consultation de données avancées des ressources VMware (règles affinité/anti-affinité, configuration drs, etc)  |
 | compute_iaas_vmware_infrastructure_write      | Offre Vmware - Gestion avancée des ressources VMware                                                                           |
 | compute_iaas_vmware_read                      | Offre Vmware - Consultation des ressources de type Machines Virtuelles                                                         |
-| compute_iaas_vmware_management                | Offre Vmware - Gestion des ressources de type Machines Virtuelles                                                              |
+| compute_iaas_vmware_management                | Offre Vmware - Gestion des ressources de type Machines Virtuelles (permet le chiffrement d'une machine virtuelle)                                                              |
 | compute_iaas_vmware_virtual_machine_power     | Offre Vmware - Gestion de l'alimentation d'une machine virtuelle                                                               |
+| baremetal_read                                | Offre Bare Metal - Consultation des ressources de type Bare Metal                                                               |
+| baremetal_console_access                      | Offre Bare Metal - Ouverture de la console d'un Bare Metal                                                                  |
 | console_public_access_read                    | Consultation des IPs autorisées à accéder à la console                                                                         |
 | console_public_access_write                   | Ajout d'IPs autorisées à accéder à la console                                                                                  |
 | compute_virtual_machine_power                 | Gestion de l'alimentation d'une machine virtuelle                                                                              |
@@ -127,7 +198,6 @@ __VERSION : 20241007__
 | object-storage_read                           | Permet de voir les buckets et les configurations des buckets                                                                   |
 | object-storage_write                          | Permet d'éditer les buckets et les configurations des buckets                                                                  |
 | openshift_management                          | Permet de se connecter sur les plateforms Openshift (scopé au tenant)                                                          |
-| Owner                                         | L'utilisateur a les droits d'administration d'un tenant                                                                        |
 | support_management                            | consultation de l'ensemble des tickets support du tenant                                                                       |
 | support_read                                  | Consultation de ses tickets support du tenant                                                                                  |
 | support_write                                 | Création d'un ticket support sur le tenant                                                                                     |
@@ -138,36 +208,13 @@ __VERSION : 20241007__
 | ticket_read                                   | Consultation des tickets                                                                                                       |
 | ticket_write                                  | Gestion des tickets                                                                                                            |
 
-**Notes** :
-
-- *Il n'y a aucune limite quant au nombre d'owners (propriétaires) pouvant être définis sur le tenant. Cependant, l'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 owners, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.*
-- *Lors de l'ajout d'un nouveau propriétaire (owner), la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes. Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.*
-- *Pour retirer un propriétaire (owner) du tenant, l'utilisateur doit soumettre une demande au support. Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.*
-
-### Permissions dépréciées
-
-Les permissions suivantes ne sont plus disponibles :
-
-| Nom de la permission                           | Date       | Description de la permission                                                                                   |
-| ---------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
-| backup_read  (**DEPRECATED**)                  | 07/10/2024 | Consultation des ressources de type backup                                                                     |
-| backup_write (**DEPRECATED**)                  | 07/10/2024 | Gestion des ressources de type backup - modification                                                           |
-| compute_console_access (**DEPRECATED**)        | 07/10/2024 | Ouverture de la console d'une machine virtuelle                                                                |
-| compute_infrastructure_read (**DEPRECATED**)   | 07/10/2024 | Consultation de données avancées des ressources VMware (règles affinité/anti-affinité, configuration drs, etc) |
-| compute_infrastructure_write (**DEPRECATED**)  | 07/10/2024 | Gestion avancée des ressources VMware                                                                          |
-| compute_read (**DEPRECATED**)                  | 07/10/2024 | Consultation des ressources de type Machines Virtuelles                                                        |
-| compute_management (**DEPRECATED**)            | 07/10/2024 | Gestion des ressources de type Machines Virtuelles                                                             |
-| compute_virtual_machine_power (**DEPRECATED**) | 07/10/2024 | Gestion de l'alimentation d'une machine virtuelle                                                              |
-| iam_manage_permissions (**DEPRECATED**)        | 07/10/2024 | Gestion des nouveaux droits pour soi-même                                                                      |
-
-
 ## Organisations
 
 L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud Temple associé__. Elle représente votre entité (société, département, équipe, ...) qui porte la relation contractuelle entre Cloud Temple et vous.
 
 ### Principe d'une organisation
 
-L'organisation a quatre grands rôles : 
+L'organisation a quatre grands rôles :
 
 - Elle représente __l'entité contractuelle__ pour les aspects de suivi et de facturation,
 - Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la console Shiva ou distante via un service de fédération d'identité,
@@ -178,9 +225,9 @@ Les rôles (droits/permissions) des utilisateurs sont configurables pour chaque 
 
 ### Mécanismes d'authentification
 
-La console Shiva permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez 
-utiliser le référentiel local d'authentification de la console Shiva ou bien accoster votre organisation à l'un 
-de vos référentiels d'authentification.  
+La console Shiva permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
+utiliser le référentiel local d'authentification de la console Shiva ou bien accoster votre organisation à l'un
+de vos référentiels d'authentification.
 
 Les référentiels externes suivants sont supportés :
 
@@ -205,7 +252,7 @@ Par exemple :
 - Un tenant __Recette__
 - Un tenant __Qualification__
 
-Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ : 
+Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ :
 
 - Un tenant __Application 1__ ou __Criticité 1__
 - Un tenant __Application 2__ ou __Criticité 2__
@@ -226,11 +273,32 @@ Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec
 - Un vlan réseau.
 
 
-| Référence de commande                                        | Unité    | SKU                     |  
+| Référence de commande                                        | Unité    | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
 | TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
 | TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
 
+
+### Gestion des propriétaires sur un tenant
+Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
+
+#### Informations importantes sur la gestion des propriétaires
+
+#### 1. Nombre de propriétaires
+* Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
+* L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
+
+#### 2. Ajout d'un nouveau propriétaire
+* Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
+* Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
+
+#### 2. Permissions d'un propriétaire
+* Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
+* Il n'est pas possible de modifier les permissions d'un propriétaire.
+
+#### 3. Retrait d'un propriétaire
+* Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
+* Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
 
 ### Autorisation d'accès à un tenant : IP autorisées
 
@@ -240,7 +308,7 @@ Note : *La suppression d'un IP autorisée se fait par une demande de support dan
 
 ### Consommation de ressource au sein d'un tenant
 
-Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins. 
+Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins.
 
 Dans le menu de la console, cliquez sur "Rapport de consommation" puis sélectionnez la période de temps souhaitée. Vous pourrez ainsi visualiser en détail la consommation des ressources cloud sur la période définie, ce qui vous permettra d’analyser l’utilisation des services et d’optimiser votre gestion en conséquence :
 

@@ -64,6 +64,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Bare Metal',
+      items: [
+        'iaas_bare-metal/iaas_bare-metal',
+        'iaas_bare-metal/concepts',
+        'iaas_bare-metal/quickstart',
+        'iaas_bare-metal/tutorials',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Bastion',
       items: [
         'bastion/bastion',
@@ -99,7 +109,20 @@ const sidebars: SidebarsConfig = {
         'iaas_vmware/iaas_vmware',
         'iaas_vmware/concepts',
         'iaas_vmware/quickstart',
-        'iaas_vmware/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            {
+              type: 'category',
+              label: 'Sauvegardes',
+              items: [
+                'iaas_vmware/tutorials/backup/iaas_backup',
+              ],
+            },
+            'iaas_vmware/tutorials/vm_encryption',
+          ],
+        },
       ],
     },
     {
@@ -109,7 +132,27 @@ const sidebars: SidebarsConfig = {
         'paas_openshift/paas_openshift',
         'paas_openshift/concepts',
         'paas_openshift/quickstart',
-        'paas_openshift/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'paas_openshift/tutorials/tutorials',
+            'paas_openshift/tutorials/deploy-through-helmfile',
+            'paas_openshift/tutorials/deploy-vm-with-kubevirt',
+            'paas_openshift/tutorials/using-kasten'
+          ]
+        },
+        'governance/paas/mco_mcs',
+        {
+          type: 'doc',
+          label: 'RACI',
+          id: 'governance/paas/raci'
+        },
+        {
+          type: 'doc',
+          label: 'Service Agreement',
+          id: 'governance/paas/service_agreement_paas'
+        }
       ],
     },
     {
@@ -152,6 +195,29 @@ const sidebars: SidebarsConfig = {
             'storage/oss/tutorials',
           ],
         },
+      ],
+    },
+    {
+      type: 'html', // Séparateur et titre
+      value: `
+        <hr class="sidebar-separator" />
+        <h3 class="sidebar-title">Contractuel</h3>
+      `,
+    },
+    {
+      type: 'category',
+      label: 'Documents contractuels',
+      items: [
+        'contractual/orderdoc',
+        'contractual/cgvu',
+        'contractual/iaas/sla_iaas',
+        'contractual/iaas/sla_openiaas',
+        'contractual/paas/sla_paas',
+        'contractual/baremetal',
+        'contractual/dpa',
+        'contractual/iaas/raci',
+        'contractual/iaas/raci_s3',
+        'contractual/paas/raci',
       ],
     },
   ],

@@ -1,65 +1,69 @@
 ---
 title: Privacy
+tags:
+  - privacy
 ---
 
-## Context
+## Contexte
 
-The data protection policy exists to ensure an adequate level of security in terms of confidentiality, availability, and integrity of information and personal data against all threats that could affect them.
+The data protection policy exists to ensure an adequate level of security in terms of confidentiality, availability, and integrity of information resources and personal data against all threats that could affect them.
 
-Cloud Temple defines, applies, operates, monitors, reviews, maintains, and improves the processes and measures related to data processing and information security based on a risk-based approach.
+Cloud Temple defines, applies, operates, monitors, reviews, maintains, and improves the process and measures related to data processing and information security based on a risk approach.
 
-Thus, individuals' privacy will always be respected.
-
+The privacy of individuals will thus always be respected.
 
 ## Introduction
 
-All the information that we process, store, or transfer concerning individuals must be adequately protected against unauthorized access or modifications. When obtaining, storing for processing, or transferring information concerning individuals, we respect their wishes and their right to privacy at all times.
-Cloud Temple ensures the integrity, confidentiality, and availability of information generated during the processing of personal data: Cloud Temple must protect its information resources against internal or external, accidental or deliberate threats.
+All information that we process, store, or transfer concerning individuals must be adequately protected against unauthorized access or modifications. When obtaining, storing for processing, or transferring information concerning individuals, we respect their wishes and their right to privacy at all times.
 
-## Privacy Protection Objectives
+Cloud Temple ensures the integrity, confidentiality, and availability of the information generated in the processing of personal data: Cloud Temple must ensure the protection of its information resources against internal or external, accidental or deliberate threats.
+
+## Privacy protection objectives
 - Ensure the continuity of Cloud Temple's crucial activities
 - Ensure that all information processed, stored, exchanged, or published by Cloud Temple is of absolute integrity
-- Ensure that all information related to our clients is monitored and stored in accordance with procedures maintaining appropriate confidentiality
-- Ensure that information related to individuals is handled in a manner consistent with our privacy protection principles and respectful of individuals' rights.
+- Ensure that all information related to our clients will be monitored and stored in accordance with the procedures for maintaining appropriate confidentiality
+- Ensure that information related to individuals is handled consistently with our privacy protection principles and respectful of individuals' rights.
 
-## Privacy Protection Principles
-- All personnel will be informed of and responsible for adhering to privacy protection requirements relevant to their role.
-- Provisions will be made to finance privacy protection measures relevant to operational and management processes.
-- Risks during data processing will be monitored, and measures will be taken when changes lead to unacceptable risks.
-- The criteria for risk classification and acceptability are found in the organizational framework of the privacy protection policy.
+## Privacy protection principles
+- All personnel will be informed and responsible for complying with privacy protection requirements relevant to their role.
+- Provisions will be made to fund relevant privacy protection measures in operational and management processes.
+- The risks during data processing will be monitored, and measures will be taken when changes result in unacceptable risks.
+- Risk classification and acceptability criteria are found in the organizational framework of the privacy protection policy.
 - Situations that could place the organization in violation of laws and regulations will not be tolerated.
 
 ## Responsibilities
 
 The General Management is responsible for ensuring that privacy protection is adequately addressed within the company.
-Each director is responsible for ensuring that the people working under their supervision protect information in compliance with the organization's standards.
 
-All staff members have privacy protection responsibilities that are part of their work.
+Each director is responsible for ensuring that individuals working under their supervision protect information in compliance with the organization's standards.
 
-## Key Results
+All staff members have privacy protection responsibilities as part of their job.
 
-Appropriate and proportionate measures will be implemented to protect resources and provide confidence to interested parties.
+## Key outcomes
 
-Impacts of data breaches will be limited.
+Appropriate and proportionate measures will be implemented to protect resources and build trust with interested parties.
+
+The impacts of data breaches will be limited.
 
 Decisions on data protection issues will be based on a risk assessment faced by Cloud Temple.
 
-Cloud Temple's legal, regulatory, and contractual requirements will be fulfilled.
+Cloud Temple's legal, regulatory, and contractual requirements will be met.
 
-## Information Translation
+## Information translation
 
-The English, Spanish, Italian, and German translations of this documentation are done automatically.
-Despite reasonable efforts made to provide a quality translation, Cloud Temple is unable to guarantee the accuracy of the information it contains.
-For any related questions, please refer to the French version of the information.
+The English, Spanish, Italian, and German translations of this documentation are performed automatically.
 
-## Legal Notices
+Despite reasonable efforts to provide quality translation, Cloud Temple cannot guarantee the accuracy of the information contained therein.
+For any questions related to it, please refer to the French version of the information.
 
-### Publisher of this website
-Company name: __CLOUD TEMPLE__, Simplified Joint-Stock Company with a Single Shareholder
+## Legal notices
+
+### Person editing this website
+Company name: __CLOUD TEMPLE__, Simplified Joint Stock Company with Sole Shareholder
 
 Head office address: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
-Phone (main line): 01 41 91 77 77
+Phone (switchboard): 01 41 91 77 77
 
 RCS registration number: 825 400 336
 
@@ -73,31 +77,28 @@ Hosting: Cloud Temple
 
 Address: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
-Phone (main line): 01 41 91 77 77
+Phone (switchboard): 01 41 91 77 77
 
 ### Data collection
-Cloud Temple is committed to ensuring that the collection and processing of your data, carried out from the site __docs.cloud-temple.com__,
+Cloud Temple is committed to ensuring that the collection and processing of your data, carried out from the site __docs.cloud-temple.com__, comply with the General Data Protection Regulation (GDPR) and the French Data Protection Act.
 
-must comply with the General Data Protection Regulation (GDPR) and the Data Protection Act.
+For any information or exercise of your Data Protection rights regarding the processing of personal data managed by Cloud Temple, you can contact the Data Protection Officer (DPO):
 
-For any information or to exercise your Data Protection rights regarding the processing of personal data managed by Cloud Temple, you can contact the Data Protection Officer (DPO):
+by e-mail at: __contact@cloud-temple.com__
 
-by email at: __contact@cloud-temple.com__
-
-To exercise your rights concerning your data, you must attach a copy of a valid identification document (ID card or passport) in the following format: GIF, JPG, PNG, PDF, maximum 2MB.
+To exercise your rights relating to the data concerning you, you must insert a copy of a valid identity document (ID card or passport) as an attachment in the following format: GIF, JPG, PNG, PDF, maximum 2MB.
 
 by mail to the following address:
 
 *__Cloud Temple to the attention of Mr. Data Protection Officer (DPO) Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.__*
 
-To exercise your rights concerning your data, you must attach a copy of a valid identification document (ID card or passport).
+To exercise your rights relating to the data concerning you, you must insert a copy of a valid identity document (ID card or passport).
 
-### Personal Data and Cookies
-
+### Personal data and cookies
 ___This site does not collect any personal data. The audience measurement tool we use is configured 
-so that the information collected is anonymized.___
+in such a way that the information collected is anonymized.___
 
-The cookies placed on your computer when you visit allow us to know the number of visits and the most viewed pages, 
-without allowing us to personally identify you.
+The cookies placed on your computer when you visit allow us to know the number of visits and the most visited pages, 
+without being able to identify you personally.
 
-We are thus in compliance with the CNIL regulations and exempt from prior authorization.
+We thus comply with CNIL regulations and are exempt from prior authorization.
