@@ -147,6 +147,7 @@ La page des activités est destinée à fournir une visibilité complète sur to
 	+ Recherche/Filtrage pour opérations spécifiques
 
 ### **Utilisation**
+
 * **Accès :** permission `activity_read`
 * **Navigation :**
 	- Sélectionnez l'onglet "Récents" pour les opérations en temps réel.
@@ -155,6 +156,12 @@ La page des activités est destinée à fournir une visibilité complète sur to
 
 #### **Note de Conformité**
 Conformément à la qualification SecNumCloud, le stockage des événements de la console Cloud Temple est d'une durée minimale de **6 mois**, garantissant ainsi le respect des exigences de sécurité et de traçabilité.
+
+## Consultation des dernières mises à jour
+
+Cliquez en bas à gauche du bandeau vert sur l'icône __'Nouveautés'__. Vous aurez le détail des modifications pour chaque version de la console Cloud Temple.
+
+![](images/shiva_onboard_009.png)
 
 ## Accès aux fonctionnalités utilisateur via l'API
 

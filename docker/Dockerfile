@@ -1,6 +1,5 @@
 FROM node:21-alpine
 
-
 RUN npx create-docusaurus@latest /app classic --typescript && \
     chown -R node:node /app
 
