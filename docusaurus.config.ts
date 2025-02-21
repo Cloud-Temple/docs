@@ -1,8 +1,6 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import dotenv from 'dotenv';
-dotenv.config();
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -16,14 +14,14 @@ const config: Config = {
   future: {
     experimental_faster: true,
   },
-  
+
   trailingSlash: false,
 
   // Set the production url of your site here
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -69,10 +67,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Cloud-Temple/docs/edit/dev/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -114,11 +108,11 @@ const config: Config = {
             },
             {
               label: 'Tutorial',
-              to: '/docs/docs/tags/tutorials/',
+              to: '/docs/tags/tutorials/',
             },
             {
               label: 'Onboarding',
-              to: '/docs/docs/tags/onboarding/',
+              to: '/docs/tags/onboarding/',
             },
           ],
         },
@@ -148,28 +142,28 @@ const config: Config = {
           items: [
             {
               label: 'Privacy',
-              to: '/docs/docs/privacy/',
+              to: '/docs/privacy',
             },
             {
               label: 'UGAP',
-              to: '/docs/docs/market_place_public',
+              to: '/docs/market_place_public',
             },
             {
               label: 'CAIH',
-              to: '/docs/docs/market_place_public',
+              to: '/docs/market_place_public',
             },
           ],
         },
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/docs/docs/governance">Contracts</a> |
-        <a href="/docs/docs/privacy">Privacy Policy</a>
+        <a href="/docs/governance">Contracts</a> |
+        <a href="/docs/privacy">Privacy Policy</a>
         <br />
         Copyright © ${new Date().getFullYear()} Cloud Temple.
       </div>
     `,
-      },
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
