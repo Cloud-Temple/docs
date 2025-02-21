@@ -7,7 +7,7 @@ title: Gerarchia dei documenti contrattuali
 <div class="card-grid">
 
   <div class="card">
-    <h3>Condizioni Generali di Vendita e di Utilizzo (CGVU)</h3>
+    <h3>Condizioni Generali di Vendita e Utilizzo (CGVU)</h3>
     <p>Scopri le condizioni generali che regolano l'uso dei nostri servizi.</p>
     <a href="./cgvu" class="card-link">Consultare &rarr;</a>
     <a href="./cgvu.docx" download="governance/cgvu.docx" class="card-link">Scaricare &rarr;</a>
@@ -18,22 +18,23 @@ title: Gerarchia dei documenti contrattuali
     <p>Documento relativo alla gestione dei dati personali.</p>
     <a href="./dpa" class="card-link">Consultare &rarr;</a>
     <a href="./dpa.docx" download="governance/dpa.docx" class="card-link">Scaricare &rarr;</a>
+
   </div>
 </div>
 
-## Convenzione di Servizio Particolare
+## Convenzione di servizio specifica
 
-### Convenzione di Servizio IaaS
+### Convenzione di servizio IaaS
  <div class="card-grid">
   <div class="card">
-    <h3>Convenzione di Servizio IaaS</h3>
+    <h3>Convenzione di servizio IaaS</h3>
     <p>Dettagli sugli impegni di servizio relativi alla nostra offerta IaaS.</p>
     <a href="./iaas/sla_iaas" class="card-link">Consultare &rarr;</a>
     <a href="./iaas/sla_iaas.docx" download="governance/iaas/sla_iaas.docx" class="card-link">Scaricare &rarr;</a>
   </div>
 </div>
 
-### Convenzione di Servizio Object Storage
+### Convenzione di servizio Object Storage
  <div class="card-grid">
   <div class="card">
     <h3>Matrice di responsabilità Object Storage S3</h3>
@@ -43,7 +44,7 @@ title: Gerarchia dei documenti contrattuali
   </div>
 </div>
 
-### Convenzione di Servizio PaaS
+### Convenzione di servizio PaaS
  <div class="card-grid">
   <div class="card">
     <h3>MCO/MCS</h3>
@@ -65,7 +66,7 @@ title: Gerarchia dei documenti contrattuali
 
 ---
 
-## Note Importanti
+## Note importanti
 
 - **Versione tradotta:** Le versioni in inglese, italiano, tedesco e spagnolo sono fornite esclusivamente per facilitare la comprensione dell'offerta.
 - **Ordine di priorità:** La gerarchia dei documenti contrattuali è definita dall'ordine elencato sopra.

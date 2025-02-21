@@ -1,23 +1,23 @@
 ---
-title: Vue d'ensemble
+title: Panoramica
 ---
 
-Cloud Temple propose une offre Réseaux Privés conçue pour répondre aux besoins des entreprises en matière de connectivité sécurisée, performante et flexible. Basée sur une architecture innovante utilisant la technologie VPLS, cette solution offre un réseau de niveau 2 privé, transparent et extensible à travers toutes les zones de disponibilité.
+Cloud Temple offre una proposta di Reti Private progettata per soddisfare le esigenze delle aziende in termini di connettività sicura, performante e flessibile. Basata su un'architettura innovativa che utilizza la tecnologia VPLS, questa soluzione offre una rete di livello 2 privata, trasparente ed estendibile attraverso tutte le zone di disponibilità.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-    <p>Scoprite le basi e i principi essenziali per capire e padroneggiare la nostra infrastruttura.</p>
-    <a href="./concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <h3>Concetti</h3>
+    <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./private_network/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./private_network/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./private_network/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

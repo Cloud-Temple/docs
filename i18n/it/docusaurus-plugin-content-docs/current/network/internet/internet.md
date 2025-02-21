@@ -7,17 +7,17 @@ Cloud Temple mette a disposizione dei suoi clienti blocchi di __indirizzi IP pub
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./concepts" class="card-link">Esplorare i concetti &rarr;</a>
+    <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./internet/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
+    <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./internet/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorial</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./tutorials" class="card-link">Scoprire i tutorial &rarr;</a>
+    <h3>Esutorials</h3>
+    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./internet/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

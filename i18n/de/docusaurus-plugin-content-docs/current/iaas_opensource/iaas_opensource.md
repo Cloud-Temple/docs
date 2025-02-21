@@ -1,35 +1,34 @@
 ---
-title: Überblick
+title: Übersicht
 ---
 
 Das Open Source IaaS-Produkt von Cloud Temple: eine einzigartige Kombination aus Leistung, Sicherheit und Transparenz.
 
-Dieses Angebot gewährleistet die vollständige Kontrolle über Ihre kritischen Umgebungen und stellt gleichzeitig Sicherheit, Kontinuität und gesetzliche Konformität sicher.
-Mit skalierbaren Ressourcen und einer automatisierten Verwaltung profitieren Sie von einer leistungsfähigen Infrastruktur, die auf Ihre Bedürfnisse zugeschnitten ist. Nutzen Sie die Leistungsfähigkeit von Open Source mit der Zuverlässigkeit und dem Support von Cloud Temple.
+Dieses Angebot gewährleistet eine vollständige Kontrolle über Ihre kritischen Umgebungen und sorgt gleichzeitig für Sicherheit, Kontinuität und regulatorische Konformität.
+Mit skalierbaren Ressourcen und automatisiertem Management profitieren Sie von einer leistungsstarken und bedarfsgerechten Infrastruktur. Nutzen Sie die Kraft von Open Source mit der Zuverlässigkeit und dem Support von Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Erfahren Sie die grundlegenden und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
-    <a href="./concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <p>Entdecken Sie die grundlegenden Prinzipien und Konzepte, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="iaas_opensource/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Beginnen Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="iaas_opensource/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie schrittweise, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
-    <a href="./tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Services mit detaillierten Anleitungen konfigurieren und nutzen.</p>
+    <a href="iaas_opensource/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
 
-
-## Kaufplattformen
+## Einkaufsplattformen
 
 <div class="purchase-platforms">
-  <p>Sie sind im öffentlichen Sektor tätig? Das Angebot <strong>Cloud Temple IaaS</strong> ist zugänglich über:</p>
+  <p>Sie sind im öffentlichen Sektor tätig? Das <strong>IaaS-Cloud-Temple</strong>-Angebot ist über folgende Plattformen verfügbar:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
@@ -44,7 +43,7 @@ Mit skalierbaren Ressourcen und einer automatisierten Verwaltung profitieren Sie
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        Den CAIH-Markt für den medizinischen Sektor
+        Der CAIH-Markt für den Medizinsektor
       </a>
     </p>
   </div>

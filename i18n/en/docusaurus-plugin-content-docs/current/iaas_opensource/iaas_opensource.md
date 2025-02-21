@@ -2,29 +2,28 @@
 title: Overview
 ---
 
-The Open Source IaaS product from Cloud Temple: a unique alliance between performance, security, and transparency.
+The Open Source IaaS product from Cloud Temple: a unique alliance of performance, security, and transparency.
 
-This offer ensures total control over your critical environments while guaranteeing security, continuity, and regulatory compliance.
+This offer guarantees total control over your critical environments while ensuring security, continuity, and regulatory compliance.
 With scalable resources and automated management, you benefit from a high-performance infrastructure tailored to your needs. Embrace the power of Open Source with the reliability and support of Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the essential foundations and principles to understand and master our infrastructure.</p>
-    <a href="./concepts" class="card-link">Explore the concepts &rarr;</a>
+    <p>Discover the essential basics and principles to understand and master our infrastructure.</p>
+    <a href="iaas_opensource/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="iaas_opensource/quickstart" class="card-link">Launch Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="./tutorials" class="card-link">Discover the tutorials &rarr;</a>
+    <p>Learn step-by-step to configure and use our services with detailed guides.</p>
+    <a href="iaas_opensource/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
 </div>
-
 
 ## Purchase Platforms
 

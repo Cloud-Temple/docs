@@ -4,94 +4,93 @@ title: Concepts
 
 ## Assegnazione di un indirizzo internet pubblico Provider Aggregated (PA)
 
-In questo contesto, utilizzate indirizzi IP pubblici assegnati a Cloud Temple, che vi vengono noleggiati per i vostri utilizzi.
+In questo contesto, utilizzi degli indirizzi IP pubblici assegnati a Cloud Temple, che ti vengono noleggiati per i tuoi usi.
 
-La creazione di una connettività internet e l'assegnazione degli indirizzi IP pubblici associati viene eseguita tramite __una richiesta di servizio__ che indica:
+La creazione di una connettività internet e l'assegnazione degli indirizzi IP pubblici associati vengono realizzate tramite __una richiesta di servizio__ indicando:
 
-    Il nome della vostra Organizzazione
-    Il nome di un contatto con la sua mail e n. di telefono per finalizzare la configurazione
+    Il nome della tua Organizzazione
+    Il nome di un contatto con il suo email e n. di telefono per finalizzare la configurazione
     Il nome del tenant
-    La dimensione del subnet desiderato (minimo /29 in IPv4 e /64 in IPv6)
-    Se non sono già state fornite, le informazioni RIPE (contatto amministrativo in particolare) saranno richieste dal supporto
+    La dimensione della subnet desiderata (minimo /29 in IPv4 e /64 in IPv6)
+    Se non sono già state fornite, le informazioni RIPE (contatto amministrativo in particolare) verranno richieste dal supporto
 
-La consegna dell'accesso internet avviene tramite il protocollo BGP4 in seguito alla richiesta di supporto, che fornirà le seguenti informazioni:
+La consegna dell'accesso internet avviene tramite il protocollo BGP4 a seguito della richiesta di supporto, che fornirà le seguenti informazioni:
 
 - *prefisso pubblico*
-- *prefisso d'interconnessione*
+- *prefisso di interconnessione*
 - *gateway any-cast*
 - *Subnet IP*
 - *AS locale*
 - *AS di Cloud Temple*
-- *timer keepalive e hold-time timer*
-- *gli indirizzi dei route server associati al vostro tenant*.
+- *timer di keepalive e timer di hold-time*
+- *gli indirizzi dei route server associati al tuo tenant*.
 
-L'uso del protocollo BGP4 garantisce un routing efficace dei vostri flussi Internet verso il gateway attivo della vostra architettura, particolarmente negli scenari di distribuzione multi-zona di disponibilità, come nel caso di cluster di firewall distribuiti tra due zone di disponibilità.
+L'utilizzo del protocollo BGP4 garantisce un routing efficiente dei tuoi flussi Internet verso il gateway attivo della tua architettura, particolarmente negli scenari di distribuzione multi-zone di disponibilità, come nel caso di cluster di firewall distribuiti tra due zone di disponibilità.
 
-## Blocchi IPv4 
+## Blocchi IPv4
 
-### Offerta di indirizzo IPv4 in versione 1
+### Offerta di indirizzo IPv4 versione 1
 
 __*Questa offerta non è più commercializzata dal 2 maggio 2024*__
 
-La consegna degli IPv4 avviene entro __i limiti delle scorte disponibili__ per i nostri clienti, con un blocco minimo di 8 IPV4 (/29 o 255.255.255.248).
+La consegna degli IPv4 avviene nei __limiti delle scorte disponibili__ per i nostri clienti, con un blocco minimo di 8 IPv4 (/29 o 255.255.255.248).
 
-È possibile visualizzare i blocchi di indirizzi che vi sono assegnati nel menu __*'IP pubblici'*__ del menu Reti nella barra verde a sinistra.
+È possibile visualizzare i blocchi di indirizzi che ti sono assegnati nel menu __*'IPs pubbliche'*__ del menu Reti nella banda verde a sinistra.
 
 | Riferimento                             | Unità  | SKU                          |
-| ------------------------------------- | ------ | ---------------------------- |
-| Rete - Gamma IPv4 Pubblici dedicati | 8 IPv4 | csp:(region):network:ipv4:v1 |
+| --------------------------------------- | ------ | ---------------------------- |
+| Rete - Fascia IPv4 Pubbliche dedicate   | 8 IPv4 | csp:(region):network:ipv4:v1 |
 
-### Offerta di indirizzo IPv4 in versione 2
+### Offerta di indirizzo IPv4 versione 2
 
-La consegna di un IPv4 avviene entro __i limiti delle scorte disponibili__ per i nostri clienti, per indirizzo IP.
+La consegna di un IPv4 avviene nei __limiti delle scorte disponibili__ per i nostri clienti, per indirizzo IP.
 
-È possibile visualizzare i blocchi di indirizzi che vi sono assegnati nel menu __*'IP pubblici'*__ del menu Reti nella barra verde a sinistra.
+È possibile visualizzare i blocchi di indirizzi che ti sono assegnati nel menu __*'IPs pubbliche'*__ del menu Reti nella banda verde a sinistra.
 
 | Riferimento                     | Unità  | SKU                          |
-| ----------------------------- | ------ | ---------------------------- |
-| Rete - IPv4 Pubblico dedicato | 1 IPv4 | csp:(region):network:ipv4:v2 |
-
+| ------------------------------- | ------ | ---------------------------- |
+| Rete - IPv4 Pubblica dedicata   | 1 IPv4 | csp:(region):network:ipv4:v2 |
 
 ## Blocchi IPv6
 
-__All'1 maggio 2024, l'offerta di indirizzi IP Pubblici IPv6 non è ancora disponibile per la commercializzazione.__
+__Al 1° maggio 2024, l'offerta di indirizzi IP Pubblici IPv6 non è ancora disponibile per la commercializzazione.__
 
-L'obiettivo di commercializzazione è previsto per il secondo semestre del 2024.
+L'obiettivo di commercializzazione è previsto per il secondo semestre 2024.
 
 | Riferimento                             | Unità   | SKU                          |
-| ------------------------------------- | ------- | ---------------------------- |
-| Rete - Gamma IPv6 Pubblici dedicati | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| --------------------------------------- | ------- | ---------------------------- |
+| Rete - Fascia IPv6 Pubbliche dedicate   | 64 IPv6 | csp:(region):network:ipv6:v1 |
 
 ## Indirizzi IP pubblici Provider Independent (PI)
 
-Se avete il vostro proprio indirizzo Provider Independent, avete la possibilità di annunciarlo all'interno del Sistema Autonomo di Cloud Temple. Questo vi permette di continuare a utilizzare i vostri propri indirizzi IP all'interno dell'infrastruttura Cloud Temple e di facilitare le vostre migrazioni.
+Se disponi del tuo proprio indirizzo Provider Independent, hai la possibilità di annunciarlo all'interno del Sistema Autonomo di Cloud Temple. Questo ti consente di continuare a utilizzare i tuoi indirizzi IP all'interno dell'infrastruttura Cloud Temple e di facilitare le tue migrazioni.
 
-Per fare ciò, effettuate __una richiesta di servizio__ indicando:
+Per farlo, effettua __una richiesta di servizio__ indicando:
 
-    Il nome della vostra Organizzazione
-    Il nome di un contatto con la sua mail e n. di telefono per finalizzare la configurazione
+    Il nome della tua Organizzazione
+    Il nome di un contatto con il suo email e n. di telefono per finalizzare la configurazione
     Il nome del tenant
-    Il blocco di indirizzo IP PI che possedete e che desiderate annunciare
-    Se non sono già state fornite, le informazioni RIPE associate saranno richieste dal supporto 
+    Il blocco di indirizzi IP PI che detieni e che desideri annunciare
+    Se non sono già state fornite, le informazioni RIPE associate verranno richieste dal supporto
 
-Non ci sono costi specifici per i clienti che utilizzano indirizzi Provider Independent.
+Non c'è alcuna fatturazione specifica per i clienti che utilizzano indirizzi Provider Independent.
 
-### Prenotazione di banda passante internet
+### Prenotazione di banda Internet
 
-La banda passante internet è prenotabile a scaglioni di 100 Mbps. La capacità massima disponibile per un gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche del vostro gateway.
+La banda Internet è prenotabile per incrementi di 100 Mbps. La capacità massima disponibile per un gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche del tuo gateway.
 
-La fatturazione avviene al 95° percentile sul periodo di fatturazione, solitamente un mese. Potete quindi occasionalmente beneficiare di un burst oltre la vostra capacità prenotata.
+La fatturazione viene effettuata al 95° percentile sul periodo di fatturazione, solitamente un mese. Puoi quindi occasionalmente sfruttare un burst oltre la tua capacità prenotata.
 
-| Riferimento                                 | Unità    | SKU                                     |
-| ----------------------------------------- | -------- | --------------------------------------- |
-| Rete - Banda passante internet riservata | 100 Mbps | csp:(region):network:trafic:internet:v1 |
+| Riferimento                                 | Unità    | SKU                                 |
+| ------------------------------------------- | -------- | ----------------------------------- |
+| Rete - Banda Internet prenotata             | 100 Mbps | csp:(region):network:traffic:internet:v1 |
 
-__*Nota :*__
-*Non c'è __fatturazione volumetrica__ di tipo __'egress fees'. Pagate solo la prenotazione di banda passante.__*
+__*Notavi*__
+*Non c'è __fatturazione volumetrica__ di tipo __'egress fees'. Paghi solo la prenotazione della banda.__*
 
 
 ## Anti-DDoS
 
-Un attacco da negazione di servizio distribuito (DDoS) mira a degradare o mettere offline un servizio sovraccaricandolo tramite traffico illecito.
+Un attacco di tipo Denial-of-Service Distribuito (DDoS) mira a degradare o mettere offline un servizio sovraccaricandolo tramite traffico illecito.
 
-La protezione Anti-DDoS di Cloud Temple vi protegge contro gli attori malevoli e __è attiva senza costi aggiuntivi contro gli attacchi volumetrici__: il filtraggio è realizzato a monte dai nostri partner telecom.
+La protezione Anti-DDoS di Cloud Temple ti protegge contro gli attori dannosi ed è __attiva senza costi aggiuntivi contro gli attacchi volumetrici__: il filtraggio viene effettuato a monte dai nostri partner telecom.

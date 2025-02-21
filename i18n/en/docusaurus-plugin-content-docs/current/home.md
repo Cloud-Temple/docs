@@ -7,37 +7,36 @@ tags:
 
 # Welcome to the documentation space
 
-Welcome to the **Cloud Temple** documentation space! This space has been designed to assist you in managing your Cloud Temple services via our **Cloud Temple Console**, also known as **Shiva**.
+Welcome to the documentation space of **Cloud Temple**! This space has been designed to assist you in managing your Cloud Temple services via our **Cloud Temple Console**, also known as **Shiva**.
 
 ## Getting Started
 
 <div class="card-grid">
   <div class="card">
     <h3>Explore the console</h3>
-    <p>Learn how to use our console to manage your Cloud resources.</p>
-    <a href="../docs/console/console" class="card-link">Discover the console &rarr;</a>
+    <p>Learn how to use our console to manage your cloud resources.</p>
+    <a href="../docs/console" class="card-link">Discover the console &rarr;</a>
   </div>
     <div class="card">
     <h3>Getting started with Object Storage</h3>
-    <p>Learn how to use object storage</p>
-    <a href="../docs/storage/oss/oss" class="card-link">Setup a Bucket &rarr;</a>
+    <p>Learn how to use object storage.</p>
+    <a href="../docs/storage/oss" class="card-link">Configure a Bucket &rarr;</a>
   </div>
   <div class="card">
     <h3>Provision your resources</h3>
-    <p>Create your first Cloud resources quickly and efficiently.</p>
-    <a href="../docs/iaas_vmware/quickstart" class="card-link">Get Started &rarr;</a>
+    <p>Create your first cloud resources quickly and efficiently.</p>
+    <a href="../docs/iaas_vmware/quickstart" class="card-link">Get started &rarr;</a>
   </div>
   <div class="card">
     <h3>Deploy in a few clicks</h3>
-    <p>Set up your services with ease using our detailed guides.</p>
+    <p>Set up your services with ease thanks to our detailed guides.</p>
     <a href="../docs/iaas_vmware/quickstart" class="card-link">Deploy &rarr;</a>
   </div>
 </div>
 
-
 ## How to use this documentation?
-This documentation is your guide to unlocking the full potential of our Cloud products and **the console** Cloud Temple.
+This documentation is your guide to harnessing the full potential of our Cloud products and **the Cloud Temple console**.
 
 Here you will find tutorials, technical guides, and references to simplify the management of your cloud resources.
 
-We hope you find this documentation useful and that you fully leverage the possibilities offered by **Shiva**.
+We hope you find this documentation useful and that you fully benefit from the possibilities offered by **Shiva**.
