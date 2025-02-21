@@ -15,7 +15,7 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
   <div class="card">
     <h3>Concepts</h3>
     <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
-    <a href="../concepts/" class="card-link">Explorer les concepts &rarr;</a>
+    <a href="./concepts/" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
