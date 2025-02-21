@@ -1,37 +1,36 @@
 ---
-title: Vista generale
+title: Vue d'ensemble
 ---
 
 Il prodotto IaaS Open Source di Cloud Temple: un'alleanza unica tra prestazioni, sicurezza e trasparenza.
 
-Questa offerta garantisce un controllo totale dei tuoi ambienti critici, assicurando al contempo sicurezza, continuità e conformità normativa. 
-Con risorse scalabili e una gestione automatizzata, benefici di un'infrastruttura performante e adatta alle tue esigenze. Adotta la potenza dell'Open Source con l'affidabilità e il supporto di Cloud Temple.
+Quest'offerta garantisce un controllo totale dei vostri ambienti critici, assicurando sicurezza, continuità e conformità normativa.
+Con risorse scalabili e una gestione automatizzata, beneficiate di un'infrastruttura performante e adatta alle vostre esigenze. Adottate la potenza dell'Open Source con l'affidabilità e il supporto di Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./concepts" class="card-link">Esplorare i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Inizia velocemente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./tutorials" class="card-link">Scoprire i tutorial &rarr;</a>
   </div>
 </div>
-
 
 
 ## Piattaforme d'acquisto
 
 <div class="purchase-platforms">
-  <p>Sei un attore del settore pubblico? L'offerta <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
-  
+  <p>Siete un operatore del settore pubblico? L'offerta <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
+
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
@@ -40,7 +39,7 @@ Con risorse scalabili e una gestione automatizzata, benefici di un'infrastruttur
       </a>
     </p>
   </div>
-  
+
   <div class="platform-card">
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>
