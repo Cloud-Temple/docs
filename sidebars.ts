@@ -47,7 +47,7 @@ const sidebars: SidebarsConfig = {
         'console/iam/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'Tutoriels',
           items: [
             'console/iam/tutorials/sso_aad',
             'console/iam/tutorials/sso_adfs',
