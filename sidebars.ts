@@ -143,16 +143,6 @@ const sidebars: SidebarsConfig = {
           ]
         },
         'governance/paas/mco_mcs',
-        {
-          type: 'doc',
-          label: 'RACI',
-          id: 'governance/paas/raci'
-        },
-        {
-          type: 'doc',
-          label: 'Service Agreement',
-          id: 'governance/paas/service_agreement_paas'
-        }
       ],
     },
     {
