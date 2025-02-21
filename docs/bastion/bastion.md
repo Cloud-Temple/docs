@@ -2,12 +2,11 @@
 title: Vue d'ensemble
 ---
 
-Le **Bastion Cloud Temple** est un service sécurisé et managé qui simplifie l’administration de vos infrastructures via des connexions RDP ou SSH. 
+Le **Bastion Cloud Temple** est un service sécurisé et managé qui simplifie l’administration de vos infrastructures via des connexions RDP ou SSH.
 
-Accessible depuis la console Cloud Temple, il garantit une gestion centralisée tout en protégeant vos équipements de toute exposition à Internet. 
+Accessible depuis la console Cloud Temple, il garantit une gestion centralisée tout en protégeant vos équipements de toute exposition à Internet.
 
 Avec son approche orientée sécurité et ses fonctionnalités avancées telles que l’Infrastructure as Code, le Bastion répond aux besoins des environnements Cloud, hybrides et on-premises.
-
 
 <div class="card-grid">
   <div class="card">

@@ -8,7 +8,6 @@ L’infrastructure de stockage objet Cloud Temple repose sur la solution **Elast
 
 Pour sécuriser les données, Cloud Temple propose des options de chiffrement avancées : **côté serveur** (avec clés gérées par Cloud Temple ou par le client) ou **côté client**, offrant un contrôle total à l’utilisateur. Certifiée **SecNumCloud**, **HDS**, et **ISO 27001**, cette infrastructure garantit une conformité stricte aux exigences réglementaires et aux normes de sécurité les plus élevées.
 
-
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>

@@ -31,6 +31,7 @@ Avant de débuter votre parcours sur notre plateforme, nous vous recommandons d'
 4. **Suivez nos tutoriels pas à pas**
    - Utilisez les [**ressources**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) de notre repository de démonstration pour réaliser des déploiements pas à pas.
 
+
 <div class="card-grid">
   <div class="card">
     <h3>Déployez au travers de helmfile</h3>

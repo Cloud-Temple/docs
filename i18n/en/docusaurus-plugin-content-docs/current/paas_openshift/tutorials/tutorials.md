@@ -14,9 +14,9 @@ Here you will find information and use cases related to the deployment, manageme
 
 ## To get started
 
-Before starting your journey on our platform, we recommend exploring the following points:
+Before you start your journey on our platform, we recommend exploring the following points:
 
-1. [**Overview of the Architecture**](../concepts.md#architecture-générale-de-la-plateforme)
+1. [**Architecture Overview**](../concepts.md#architecture-générale-de-la-plateforme)
    - Discover the fundamental structure of the platform.
    - Understand how OpenShift integrates with Cloud Temple services.
 
@@ -24,27 +24,28 @@ Before starting your journey on our platform, we recommend exploring the followi
    - Inform yourself about the platform's limits to better plan your implementations.
    - Avoid common pitfalls and optimize resource usage.
 
-3. [**Tour of OpenShift by Cloud Temple**](../quickstart.md)
-   - Explore in detail the features and characteristics adapted to our deployment.
-   - Discover practical use cases to fully leverage the platform's capabilities.
+3. [**Visiting OpenShift by Cloud Temple**](../quickstart.md)
+   - Explore in detail features and characteristics tailored for our deployment.
+   - Discover practical use cases to fully leverage the platform’s capabilities.
 
 4. **Follow our step-by-step tutorials**
-   - Use the [**resources**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) from our demonstration repository to carry out deployments step-by-step.
+   - Use the [**resources**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) from our demonstration repository to perform step-by-step deployments.
+
 
 <div class="card-grid">
   <div class="card">
     <h3>Deploy through helmfile</h3>
     <p>Learn how to deploy your applications with helmfile.</p>
-    <a href="deploy-through-helmfile" class="card-link">Get started &rarr;</a>
+    <a href="./deploy-through-helmfile" class="card-link">Start &rarr;</a>
   </div>
   <div class="card">
     <h3>Explore virtualization with Kubevirt</h3>
     <p>Discover kubevirt and its features in the **Cloud Temple** context.</p>
-    <a href="deploy-vm-with-kubevirt" class="card-link">Get started &rarr;</a>
+    <a href="./deploy-vm-with-kubevirt" class="card-link">Start &rarr;</a>
   </div>
   <div class="card">
     <h3>Use Kasten</h3>
     <p>Discover Kasten and configure your data backups.</p>
-    <a href="using-kasten" class="card-link">Get started &rarr;</a>
+    <a href="./using-kasten" class="card-link">Start &rarr;</a>
   </div>
 </div>

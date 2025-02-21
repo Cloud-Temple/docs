@@ -4,7 +4,7 @@ title: Vue d'ensemble
 
 Le produit IaaS Open Source de Cloud Temple : une alliance unique entre performance, sécurité et transparence.
 
-Cette offre garantit une maîtrise totale de vos environnements critiques, tout en assurant sécurité, continuité et conformité réglementaire. 
+Cette offre garantit une maîtrise totale de vos environnements critiques, tout en assurant sécurité, continuité et conformité réglementaire.
 Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d’une infrastructure performante et adaptée à vos besoins. Adoptez la puissance de l’Open Source avec la fiabilité et le support de Cloud Temple.
 
 <div class="card-grid">
@@ -26,12 +26,11 @@ Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d
 </div>
 
 
-
 ## Plateformes d'achat
 
 <div class="purchase-platforms">
   <p>Vous êtes un acteur du secteur public ? L’offre <strong>IaaS Cloud Temple</strong> est accessible via :</p>
-  
+
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
@@ -40,7 +39,7 @@ Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d
       </a>
     </p>
   </div>
-  
+
   <div class="platform-card">
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>
