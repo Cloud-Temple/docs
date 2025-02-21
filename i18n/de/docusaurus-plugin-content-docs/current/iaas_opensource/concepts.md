@@ -2,88 +2,88 @@
 title: Concepts
 ---
 
-Das __IaaS (Infrastructure As A Service)__ Angebot von Cloud Temple ist darauf ausgelegt, kritischen Anforderungen an Kontinuität und Notfallwiederherstellung gerecht zu werden, mit besonderem Fokus auf anspruchsvolle Branchen wie Industrie, Bankwesen und Versicherungen. Basierend auf modernster Technologie gewährleistet diese Infrastruktur maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Arbeitslasten.
+Das __IaaS (Infrastructure As A Service)__-Angebot von Cloud Temple ist darauf ausgelegt, den kritischen Bedürfnissen der Betriebsfortführung und -wiederherstellung gerecht zu werden, mit besonderem Fokus auf anspruchsvolle Branchen wie Industrie, Banken und Versicherung. Basierend auf Spitzentechnologien gewährleistet diese Infrastruktur maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Workloads.
 
-## Eine vertrauenswürdige technologische Plattform
+## Eine vertrauenswürdige Technologieplattform
 
 Die IaaS-Plattform von Cloud Temple stützt sich auf international renommierte Technologiepartner:
 
-- Rechenleistung: **CISCO UCS**.
-- Speicher: **IBM Spectrum Virtualize**, **IBM FlashSystem** für Blockspeicher und **DELL ECS** für Objektspeicher.
+- Compute: **CISCO UCS**.
+- Storage: **IBM Spectrum Virtualize**, **IBM FlashSystem** für Blockstorage und **DELL ECS** für Objektspeicher.
 - Netzwerk: **JUNIPER**.
-- Virtualisierung: **Stack Opensource**, das eine zuverlässige und erprobte Grundlage für das Management Ihrer Cloud-Umgebungen bietet.
+- Virtualisierung: **Stack Opensource**, bietet eine zuverlässige und bewährte Basis zur Verwaltung Ihrer Cloud-Umgebungen.
 
-Diese Architektur basiert auf dem **VersaStack**-Modell, einer Allianz zwischen Cisco und IBM, die eine umfassende Kompatibilität mit den wichtigsten Softwareherstellern gewährleistet.
+Diese Architektur basiert auf dem Modell **VersaStack**, einer Allianz zwischen Cisco und IBM, die eine weitreichende Kompatibilität mit führenden Softwareanbietern garantiert.
 
 ## Eine dedizierte und automatisierte Infrastruktur
 
-Obwohl vollständig automatisiert durch APIs und einen Terraform-Provider, bietet das IaaS-Angebot von Cloud Temple eine einzigartige Infrastruktur:
+Obwohl vollständig durch APIs und einen Terraform-Provider automatisiert, bietet das IaaS-Angebot von Cloud Temple eine einzigartige Infrastruktur:
 
-- **Dedizierte Ressourcen**: Die Rechenklingen, Speichervolumen und Software-Stacks (Virtualisierung, Backup, Firewalling usw.) werden niemals zwischen den Kunden geteilt.
-- **Maximale Vorhersagbarkeit**: Sie kontrollieren die Virtualisierungsraten, den IOPS-Druck auf den Speicher und profitieren von einer klaren, auf monatlicher Nutzung basierenden Abrechnung.
+- **Dedizierte Ressourcen**: Recheneinheiten, Speicher-Volumes und Software-Stacks (Virtualisierung, Backup, Firewalling usw.) werden niemals zwischen Kunden geteilt.
+- **Maximale Vorhersehbarkeit**: Sie kontrollieren die Virtualisierungsraten, den IOPS-Druck auf dem Speicher und profitieren von einer klaren monatlichen Verbrauchsabrechnung.
 
-Die Plattform ist durch die [ANSSI](https://www.ssi.gouv.fr/) als **SecNumCloud** qualifiziert und garantiert ein hohes Maß an Automatisierung und Sicherheit.
+Die Plattform ist durch die [ANSSI](https://www.ssi.gouv.fr/) als **SecNumCloud** zertifiziert und garantiert ein hohes Maß an Automatisierung und Sicherheit.
 
 ## Hauptfunktionen
 
 - Dedizierte und bedarfsgerechte Rechenressourcen (CPU, RAM).
-- Speicher auf Abruf (mehrere Klassen verfügbar).
+- Bedarfsgerechter Speicher (verschiedene Klassen verfügbar).
 - Netzwerkressourcen (Internet, private Netzwerke).
-- Cross-Backups mit konfigurierbarer Retention.
+- Kreuz-Backups mit konfigurierbarer Aufbewahrung.
 - Asynchrone Replikation für Speicher oder virtuelle Maschinen.
-- Verwaltung über die [Console Shiva](../console/console.md) oder im Infrastructure as Code-Modus über API und Terraform-Provider.
+- Steuerung über die [Console Shiva](../console/console.md) oder im Infrastructure as Code-Modus dank APIs und Terraform-Provider.
 
 ## Vorteile
 
-| Vorteil              | Beschreibung                                                                                                                                    |   
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Digitale Vernetzung  | Datenhosting in Frankreich und Konformität mit der DSGVO.                                                                                      |   
-| Sicherheit           | Hochsichere Plattform, qualifiziert als **SecNumCloud**, **HDS** (Hosting von Gesundheitsdaten), **ISO 27001** und **ISAE 3402 Typ II**.        |  
-| Hohe Verfügbarkeit   | 99,99% Plattformverfügbarkeit, monatlich gemessen, inklusive Wartungsfenstern.                                                                |   
-| Resilienz            | Einrichtung von Kontinuitäts- oder Notfallwiederherstellungsplänen nach Bedarf.                                                                |
+| Vorteil              | Beschreibung                                                                                                                                    |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Digitale Vertrauenswürdigkeit | Datenhosting in Frankreich und DSGVO-Konformität.                                                                                                          |
+| Sicherheit           | Hochgradig sichere Plattform, zertifiziert als **SecNumCloud**, **HDS** (Hosting von Gesundheitsdaten), **ISO 27001** und **ISAE 3402 Typ II**.|
+| Hohe Verfügbarkeit   | Plattformverfügbarkeit von 99,99%, monatlich gemessen, inklusive Wartungsfenstern.                                                              |
+| Resilienz            | Implementierung von Kontinuitäts- oder Wiederherstellungsplänen nach Bedarf.                                                                     |
 | Automatisierung      | Vollständig automatisierte Plattform, die für die Integration in ein digitales Transformationsprogramm konzipiert ist.                           |
-| On Demand            | Ressourcen sind auf Abruf verfügbar.                                                                                                           |
+| On demand            | Ressourcen verfügbar auf Abruf.                                                                                                                |
 
-## Klassen der Rechenklingen
+## Klassen von Recheneinheiten
 
-Die für das Bare-Metal-Angebot verfügbaren Rechenklingen bieten eine Reihe von Leistungsstufen, um unterschiedlichen Anforderungen gerecht zu werden:
+Die verfügbaren Recheneinheiten für das Bare Metal-Angebot bieten eine Reihe von Leistungen, um verschiedenen Bedürfnissen gerecht zu werden:
 
-| Referenz             | RAM  __(1)__ | Frequenz __(2)__                         | Anzahl der Kerne / Threads | Konnektivität __(3)__ | GPU __(4)__          | 
-|----------------------|--------------|-------------------------------------------|---------------------------|-----------------------|----------------------|
-| **ECO**              | 384 Go       | 2,20/3,0 GHz (Silver 4114 oder gleichwertig)  | 20 / 40 Threads           | 2 X 10 Gbit/s         | -                    |
-| **STANDARD**         | 384 Go       | 2,40/3,4 GHz (Silver 4314 oder gleichwertig)  | 32 / 64 Threads           | 2 X 25 Gbit/s         | -                    |
-| **ADVANCE**          | 768 Go       | 2,80/3,5 GHz (Gold 6342 oder gleichwertig)    | 48 / 96 Threads           | 2 X 25 Gbit/s         | -                    |
-| **PERFORMANCE 1**    | 384 Go       | 3,20/3,6 GHz (Xeon E-53I5Y oder gleichwertig) | 16 / 32 Threads           | 2 X 25 Gbit/s         | -                    |
-| **PERFORMANCE 2**    | 768 Go       | 3,00/3,6 GHz (Gold 6354 oder gleichwertig)    | 36 / 72 Threads           | 2 X 25 Gbit/s         | -                    |
-| **PERFORMANCE 3**    | 1536 Go      | 2,60/3,5 GHz (Gold 6348 oder gleichwertig)    | 56 / 112 Threads          | 2 X 25 Gbit/s         | -                    |
-| **PERFORMANCE 4**    | 512 Go       | 2,50/4,1 GHz (Intel 6426Y oder gleichwertig)  | 32 / 64 Threads           | 2 X 25 Gbit/s         | 2 x NVIDIA L40S 48Go |
+| Referenz             | RAM  __(1)__ | Frequenz __(2)__                         | Anzahl der Kerne / Threads | Konnektivität __(3)__ | GPU __(4)__          |
+|----------------------|--------------|------------------------------------------|---------------------------|-----------------------|----------------------|
+| **ECO**              | 384 GB       | 2.20/3.0 GHz (Silver 4114 oder äquivalent)| 20 / 40 Threads           | 2 X 10 Gbit/s         | -                    |
+| **STANDARD**         | 384 GB       | 2.40/3.4 GHz (Silver 4314 oder äquivalent)| 32 / 64 Threads           | 2 X 25 Gbit/s         | -                    |
+| **ADVANCE**          | 768 GB       | 2.80/3.5 GHz (Gold 6342 oder äquivalent) | 48 / 96 Threads           | 2 X 25 Gbit/s         | -                    |
+| **PERFORMANCE 1**    | 384 GB       | 3.20/3.6 GHz (Xeon E-53I5Y oder äquivalent)| 16 / 32 Threads           | 2 X 25 Gbit/s         | -                    |
+| **PERFORMANCE 2**    | 768 GB       | 3.00/3.6 GHz (Gold 6354 oder äquivalent) | 36 / 72 Threads           | 2 X 25 Gbit/s         | -                    |
+| **PERFORMANCE 3**    | 1536 GB      | 2.60/3.5 GHz (Gold 6348 oder äquivalent) | 56 / 112 Threads          | 2 X 25 Gbit/s         | -                    |
+| **PERFORMANCE 4**    | 512 GB       | 2.50/4.1 GHz (Intel 6426Y oder äquivalent)| 32 / 64 Threads           | 2 X 25 Gbit/s         | 2 x NVIDIA L40S 48GB |
 
-### Hinweise:
-- __(1)__ Die verfügbare Speichermenge ist physisch auf den Klingen vorhanden und kann nicht geändert werden.
-- __(2)__ Die angegebenen Frequenzen entsprechen der minimalen Basistaktung und dem Turbo-Boost-Takt.
-- __(3)__ Die physische Konnektivität wird für den Netzwerkzugang und den Blockspeicherzugang dank einer konvergenten Cisco UCS-Architektur gemeinsam genutzt.
-- __(4)__ Die verfügbaren GPUs entwickeln sich mit den neuesten Technologien weiter. Ab dem 1. Mai 2024 umfasst das Angebot NVIDIA LOVELACE L40S GPUs.
+### Anmerkungen:
+- __(1)__ Die Menge des Speichers ist physisch auf den Blades verfügbar und kann nicht geändert werden.
+- __(2)__ Die angegebenen Frequenzen entsprechen der minimalen Basisfrequenz und der Turbo-Frequenz.
+- __(3)__ Die physische Konnektivität ist für den Netzwerkzugang und den Block Storage Zugriff aufgrund einer konvergenten Cisco UCS-Architektur geteilt.
+- __(4)__ Die verfügbaren GPUs entwickeln sich entsprechend den neuesten Technologien. Ab dem 1. Mai 2024 umfasst das Angebot GPUs NVIDIA LOVELACE L40S.
 
-Die Verfügbarkeit der Infrastruktur ist zu 99,9% garantiert, monatlich gemessen, inklusive Wartungsfenstern. Jegliche Anfragen im Zusammenhang mit dem SLA müssen über ein Incident-Ticket gemeldet werden.
+Die Verfügbarkeit der Infrastruktur ist mit 99.9% garantiert, monatlich gemessen, inklusive Wartungsfenstern. Alle Anfragen im Zusammenhang mit dem SLA müssen über ein Störungsticket gemeldet werden.
 
 ---
 
-## Klassen von Blockspeicher
+## Klassen von Block Storage
 
-Der verteilte Blockspeicher, der auf **IBM Spectrum Virtualize** basiert, bietet eine Reihe von Leistungsstufen, die für verschiedene Anwendungsfälle geeignet sind:
+Der verteilte Block Storage, basierend auf **IBM Spectrum Virtualize**, bietet eine Reihe von Leistungen, die an verschiedene Anwendungsfälle angepasst sind:
 
-| Referenz                         | IOPS/To                 | Hauptverwendung                        | 
-|----------------------------------|-------------------------|----------------------------------------|
-| **FLASH - Essentiel**            | 500                     | Leichte Arbeitslasten                  |
-| **FLASH - Standard**             | 1500                    | Standard-Arbeitslasten                 |
-| **FLASH - Premium**              | 3000                    | Intensive Arbeitslasten                |
-| **FLASH - Enterprise**           | 7500                    | Kritische Arbeitslasten                |
-| **FLASH - Ultra**                | 15000                   | Ultra-intensive Arbeitslasten          |
-| **MASS STORAGE - Archivage**     | Nicht zutreffend        | Kostengünstiger Speicher für Archivierung   |
+| Referenz                         | IOPS/TB                 | Hauptverwendung                     |
+|----------------------------------|-------------------------|-------------------------------------|
+| **FLASH - Essentiel**            | 500                     | Leichte Workloads                   |
+| **FLASH - Standard**             | 1500                    | Standard-Workloads                  |
+| **FLASH - Premium**              | 3000                    | Intensive Workloads                 |
+| **FLASH - Enterprise**           | 7500                    | Kritische Workloads                  |
+| **FLASH - Ultra**                | 15000                   | Ultra-intensive Workloads           |
+| **MASS STORAGE - Archivierung**  | Nicht anwendbar         | Wirtschaftliche Archivspeicherung   |
 
-### Merkmale:
-- **Technologie**: Flash NVMe mit **Distributed RAID 6** für erhöhte Ausfallsicherheit.
+### Eigenschaften:
+- **Technologie**: NVMe-Flash mit **Distributed RAID 6** für erhöhte Ausfallsicherheit.
 - **Verfügbarkeit**: 99.99%, monatlich gemessen.
-- **Einschränkungen**: Keine Begrenzung der Lese- oder Schreibvorgänge. Keine automatische Kompression oder Deduplizierung, wodurch die vollständige Nutzung der reservierten Volumen gewährleistet wird.
+- **Einschränkungen**: Keine Einschränkungen bei Lese- oder Schreibvorgängen. Keine automatische Kompression oder Deduplizierung, wodurch die vollständige Nutzung der reservierten Volumen gewährleistet ist.
 
 ---

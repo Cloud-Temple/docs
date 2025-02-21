@@ -1,5 +1,5 @@
 ---
-title: Hierarchy of Contractual Documents
+title: Document Hierarchy of Contracts
 ---
 
 ## General Contractual Documentation
@@ -7,14 +7,14 @@ title: Hierarchy of Contractual Documents
 <div class="card-grid">
 
   <div class="card">
-    <h3>General Terms and Conditions of Sale and Use (GTCU)</h3>
-    <p>Discover the general terms and conditions governing the use of our services.</p>
+    <h3>General Terms of Sale and Use (GTSU)</h3>
+    <p>Discover the general terms governing the use of our services.</p>
     <a href="./cgvu" class="card-link">Consult &rarr;</a>
     <a href="./cgvu.docx" download="governance/cgvu.docx" class="card-link">Download &rarr;</a>
   </div>
 
   <div class="card">
-    <h3>Annex: Personal Data (DPA)</h3>
+    <h3>Appendix: Personal Data (DPA)</h3>
     <p>Document related to the management of personal data.</p>
     <a href="./dpa" class="card-link">Consult &rarr;</a>
     <a href="./dpa.docx" download="governance/dpa.docx" class="card-link">Download &rarr;</a>
@@ -22,14 +22,13 @@ title: Hierarchy of Contractual Documents
   </div>
 </div>
 
-
-## Specific Service Agreement
+## Particular Service Agreement
 
 ### IaaS Service Agreement
  <div class="card-grid">
   <div class="card">
     <h3>IaaS Service Agreement</h3>
-    <p>Details on service commitments related to our IaaS offering.</p>
+    <p>Details on the service commitments related to our IaaS offer.</p>
     <a href="./iaas/sla_iaas" class="card-link">Consult &rarr;</a>
     <a href="./iaas/sla_iaas.docx" download="governance/iaas/sla_iaas.docx" class="card-link">Download &rarr;</a>
   </div>
@@ -48,7 +47,7 @@ title: Hierarchy of Contractual Documents
 ### PaaS Service Agreement
  <div class="card-grid">
   <div class="card">
-    <h3>MCO/MCS</h3>
+    <h3>O&M Policy</h3>
     <p>MCO and MCS Policy</p>
     <a href="./paas/mco_mcs" class="card-link">Consult &rarr;</a>
   </div>
@@ -59,7 +58,7 @@ title: Hierarchy of Contractual Documents
   </div>
   <div class="card">
     <h3>PaaS Service Agreement</h3>
-    <p>Details on service commitments related to our OpenShift PaaS offering.</p>
+    <p>Details on the service commitments related to our OpenShift PaaS offer.</p>
     <a href="./paas/service_agreement_paas" class="card-link">Consult &rarr;</a>
     <a href="./paas/service_agreement_paas.docx" download="governance/paas/service_agreement_paas.docx" class="card-link">Download &rarr;</a>
   </div>
@@ -69,5 +68,5 @@ title: Hierarchy of Contractual Documents
 
 ## Important Notes
 
-- **Translated Version:** The versions in English, Italian, German, and Spanish are provided solely to facilitate understanding of the offer.
-- **Order of Priority:** The hierarchy of contractual documents is defined by the order listed above.
+- **Translated Version:** The English, Italian, German, and Spanish versions are provided solely to facilitate understanding of the offer.
+- **Priority Order:** The hierarchy of contractual documents is defined by the order listed above.
