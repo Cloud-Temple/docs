@@ -8,7 +8,6 @@ La console Cloud Temple est la plateforme de gestion cloud (**Cloud Management P
 
 Grâce à la **Console**, vous pouvez superviser et exploiter vos infrastructures cloud avec une grande simplicité. Voici un aperçu de ses fonctionnalités principales :
 
-
 <div class="card-grid">
 
   <div class="card">
@@ -83,7 +82,7 @@ La console Cloud Temple Shiva permet notamment à vos équipes :
 
 ## Accès aux fonctionnalités utilisateur via l'API
 
-L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. 
+L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva.
 Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__
 
 ## Provider Terraform

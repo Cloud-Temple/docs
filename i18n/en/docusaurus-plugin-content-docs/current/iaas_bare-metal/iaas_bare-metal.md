@@ -2,25 +2,25 @@
 title: Overview
 ---
 
-Cloud Temple's __Bare Metal__ offering provides dedicated, fully customizable servers to meet the needs of clients seeking total autonomy over their infrastructure.
+Cloud Temple's __Bare Metal__ offering features fully customizable dedicated servers to meet the needs of clients seeking complete autonomy over their infrastructure.
 
-Designed around cutting-edge Cisco UCS technology for computing and IBM Spectrum Virtualize/FlashSystem for storage, this solution guarantees optimal performance and exemplary reliability.
+Designed around cutting-edge technologies Cisco UCS for computing and IBM Spectrum Virtualize/FlashSystem for storage, this solution ensures optimal performance and exemplary reliability.
 
-With __Bare Metal__, you benefit from exclusive hardware, with no sharing, allowing you to install and manage the software environment of your choice: hypervisor, Linux, Windows, or others.
+With __Bare Metal__, you benefit from exclusive hardware without sharing, allowing you to install and manage the software environment of your choice: hypervisor, Linux, Windows, or others.
 
-Direct access to your servers is provided via the Cloud Temple console, offering simplified management and immediate usability. Whether you are looking for an infrastructure for your critical applications or hardware resources for your specific projects, the Bare Metal offering ensures flexibility, total control, and unmatched performance.
+Direct access to your servers is provided through the Cloud Temple console, offering simplified management and immediate control. Whether you are looking for infrastructure for your critical applications or hardware resources for your specific projects, the Bare Metal offer ensures flexibility, total control, and unmatched performance.
 
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the essential bases and principles for understanding and mastering our infrastructure.</p>
+    <p>Discover the essential basics and principles to understand and master our infrastructure.</p>
     <a href="./concepts/" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./quickstart/" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="./quickstart/" class="card-link">Start the Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
