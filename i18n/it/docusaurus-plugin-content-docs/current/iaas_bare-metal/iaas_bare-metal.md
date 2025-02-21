@@ -2,13 +2,14 @@
 title: Panoramica
 ---
 
-L’offerta __Bare Metal__ di Cloud Temple propone server dedicati, completamente personalizzabili, per soddisfare le esigenze dei clienti in cerca di totale autonomia sulla loro infrastruttura.
+L'offerta __Bare Metal__ di Cloud Temple propone server dedicati, completamente personalizzabili, per rispondere alle esigenze dei clienti in cerca di totale autonomia sulla loro infrastruttura.
 
-Progettata attorno a tecnologie all'avanguardia come Cisco UCS per il calcolo e IBM Spectrum Virtualize/FlashSystem per lo storage, questa soluzione garantisce prestazioni ottimali e un’affidabilità esemplare.
+Progettata intorno alle tecnologie all'avanguardia Cisco UCS per il calcolo e IBM Spectrum Virtualize/FlashSystem per lo storage, questa soluzione garantisce prestazioni ottimali e un'affidabilità esemplare.
 
-Con __Bare Metal__, beneficiate di hardware esclusivo, senza condivisione, che vi consente di installare e gestire l’ambiente software di vostra scelta: hypervisor, Linux, Windows o altri.
+Con __Bare Metal__, si beneficia di un hardware esclusivo, non condiviso, che permette di installare e gestire l'ambiente software di propria scelta: hypervisor, Linux, Windows o altro.
 
-L’accesso diretto ai vostri server avviene tramite la console Cloud Temple, offrendo una gestione semplificata e una presa in mano immediata. Che cerchiate un’infrastruttura per le vostre applicazioni critiche o risorse hardware per i vostri progetti specifici, l’offerta Bare Metal vi assicura flessibilità, controllo totale e prestazioni ineguagliabili.
+L'accesso diretto ai server avviene tramite la console Cloud Temple, offrendo una gestione semplificata e un'immediata operatività. Che si cerchi un'infrastruttura per le applicazioni critiche o risorse hardware per progetti specifici, l'offerta Bare Metal assicura flessibilità, controllo totale e prestazioni impareggiabili.
+
 
 <div class="card-grid">
   <div class="card">
@@ -18,20 +19,21 @@ L’accesso diretto ai vostri server avviene tramite la console Cloud Temple, of
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
     <a href="./quickstart/" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="./tutorials/" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>
 
-## Piattaforme di acquisto
+
+## Piattaforme d'acquisto
 
 <div class="purchase-platforms">
-  <p>Siete un attore del settore pubblico? L'offerta <strong>Bare Metal</strong> è accessibile tramite:</p>
+  <p>Siete un attore del settore pubblico? L’offerta <strong>Bare Metal</strong> è accessibile tramite:</p>
   
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />

@@ -1,29 +1,29 @@
 ---
-title: Vista general
+title: Vue d'ensemble
 ---
 
-La oferta __Bare Metal__ de Cloud Temple propone servidores dedicados, completamente personalizables, para satisfacer las necesidades de los clientes en busca de autonomía total sobre su infraestructura.
+L’offre __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure. 
 
-Diseñada alrededor de las tecnologías de punta Cisco UCS para el cálculo e IBM Spectrum Virtualize/FlashSystem para el almacenamiento, esta solución garantiza un rendimiento óptimo y una fiabilidad ejemplar.
+Conçue autour des technologies de pointe Cisco UCS pour le calcul et IBM Spectrum Virtualize/FlashSystem pour le stockage, cette solution garantit des performances optimales et une fiabilité exemplaire.
 
-Con __Bare Metal__, se beneficia de un hardware exclusivo, sin mutualización, que le permite instalar y gestionar el entorno de software de su elección: hipervisor, Linux, Windows u otros.
+Avec __Bare Metal__, vous bénéficiez d’un matériel exclusif, sans mutualisation, vous permettant d’installer et de gérer l’environnement logiciel de votre choix : hyperviseur, Linux, Windows ou autres. 
 
-El acceso directo a sus servidores se realiza a través de la consola de Cloud Temple, ofreciendo una gestión simplificada y una toma de control inmediata. Ya sea que busque una infraestructura para sus aplicaciones críticas o recursos de hardware para sus proyectos específicos, la oferta Bare Metal le asegura flexibilidad, control total y un rendimiento inigualable.
+L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant une gestion simplifiée et une prise en main immédiate. Que vous cherchiez une infrastructure pour vos applications critiques ou des ressources matérielles pour vos projets spécifiques, l’offre Bare Metal vous assure flexibilité, contrôle total, et performances inégalées.
 
 
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para entender y dominar nuestra infraestructura.</p>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
     <a href="./concepts/" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Empiece rápidamente con nuestros recursos siguiendo instrucciones claras y simples.</p>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y simples.</p>
     <a href="./quickstart/" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./tutorials/" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
@@ -33,7 +33,7 @@ El acceso directo a sus servidores se realiza a través de la consola de Cloud T
 ## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>¿Es usted un actor del sector público? La oferta <strong>Bare Metal</strong> es accesible a través de:</p>
+  <p>¿Eres un actor del sector público? La oferta <strong>Bare Metal</strong> es accesible a través de :</p>
   
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
