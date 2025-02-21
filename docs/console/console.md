@@ -8,6 +8,7 @@ La console Cloud Temple est la plateforme de gestion cloud (**Cloud Management P
 
 Grâce à la **Console**, vous pouvez superviser et exploiter vos infrastructures cloud avec une grande simplicité. Voici un aperçu de ses fonctionnalités principales :
 
+
 <div class="card-grid">
 
   <div class="card">

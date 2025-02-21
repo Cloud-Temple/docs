@@ -2,7 +2,6 @@
 title: Concepts
 ---
 
-
 ## Affectation d'un adressage internet publique Provider Aggregated (PA)
 
 Dans ce contexte, vous utilisez des adresses IP publiques affectée à Cloud Temple, qui vous sont louées pour vos usages.
@@ -28,7 +27,7 @@ La livraison de l'accès internet se fait via le protocole BGP4 en retour de la 
 
 L'utilisation du protocole BGP4 garantit un routage efficace de vos flux Internet vers la passerelle active de votre architecture, particulièrement dans les scénarios de déploiement multi-zones de disponibilité, comme c'est le cas pour des clusters de firewalls répartis entre deux zones de disponibilité.
 
-## Blocs IPv4 
+## Blocs IPv4
 
 ### Offre d'adresse IPv4 en version 1
 
@@ -74,13 +73,13 @@ Pour ce faire, réalisez __une demande de service__ indiquant :
     Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
     Le nom du tenant
     Le bloque d'adresse IP PI que vous détenez et que vous souhaitez annoncer
-    Si elles n'ont pas déjà été fournies, les informations RIPE associée seront demandées par le support 
+    Si elles n'ont pas déjà été fournies, les informations RIPE associée seront demandées par le support
 
 Il n'y a pas de facturation spécifique pour les clients utilisant des adresses Provider Independant.
 
 ### Réservation de bande passante internet
 
-La bande passante Internet est réservable par paliers de 100 Mbps. La capacité maximale disponible pour une passerelle est de 10 Gbps, potentiellement limitée par les caractéristiques techniques de votre passerelle. 
+La bande passante Internet est réservable par paliers de 100 Mbps. La capacité maximale disponible pour une passerelle est de 10 Gbps, potentiellement limitée par les caractéristiques techniques de votre passerelle.
 
 La facturation s'effectue au 95e percentile sur la période de facturation, habituellement un mois. Vous pouvez donc occasionnellement profiter d'un burst au-delà de votre capacité réservée.
 

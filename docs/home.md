@@ -34,7 +34,6 @@ Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été
   </div>
 </div>
 
-
 ## Comment utiliser cette documentation ?
 Cette documentation est votre guide pour exploiter tout le potentiel de nos produits CLoud et de **la console** Cloud Temple.
 

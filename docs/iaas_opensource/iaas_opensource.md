@@ -25,7 +25,6 @@ Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d
   </div>
 </div>
 
-
 ## Plateformes d'achat
 
 <div class="purchase-platforms">

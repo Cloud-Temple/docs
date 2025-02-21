@@ -4,18 +4,18 @@ title: Concepts
 
 ### La technologie VPLS
 Le réseau global Cloud Temple utilise la technologie __[VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service)__.
-__VPLS__ est un VPN de couche 2 point-à-multipoint basé sur Ethernet. Il permet de connecter des sites géographiquement 
-dispersés les uns aux autres à travers un réseau MPLS. Pour les clients, tous les sites semblent être dans le même 
+__VPLS__ est un VPN de couche 2 point-à-multipoint basé sur Ethernet. Il permet de connecter des sites géographiquement
+dispersés les uns aux autres à travers un réseau MPLS. Pour les clients, tous les sites semblent être dans le même
 LAN Ethernet, même si le trafic est transporté par le réseau Cloud Temple.
 
-__VPLS__, dans son implémentation et sa configuration, a beaucoup en commun avec un VPN de couche 2. Dans VPLS, un paquet qui provient 
+__VPLS__, dans son implémentation et sa configuration, a beaucoup en commun avec un VPN de couche 2. Dans VPLS, un paquet qui provient
 d'un réseau client est d'abord envoyé à un dispositif client (CE) (par exemple, un routeur ou un commutateur Ethernet).
-Il est ensuite envoyé à un routeur de bord de fournisseur (PE) au sein du réseau du fournisseur de services. 
-Le paquet traverse le réseau du fournisseur de services sur un chemin à commutation d'étiquettes MPLS (LSP). 
+Il est ensuite envoyé à un routeur de bord de fournisseur (PE) au sein du réseau du fournisseur de services.
+Le paquet traverse le réseau du fournisseur de services sur un chemin à commutation d'étiquettes MPLS (LSP).
 Il arrive au routeur PE de sortie, qui transfère ensuite le trafic vers le dispositif CE sur le site client de destination.
-La différence réside dans le fait que, pour __VPLS__, les paquets peuvent traverser le réseau du fournisseur de 
-services de manière point-à-multipoint, ce qui signifie qu'un paquet provenant d'un dispositif CE peut être 
-diffusé à tous les routeurs PE participant à une instance de routage __VPLS__. 
+La différence réside dans le fait que, pour __VPLS__, les paquets peuvent traverser le réseau du fournisseur de
+services de manière point-à-multipoint, ce qui signifie qu'un paquet provenant d'un dispositif CE peut être
+diffusé à tous les routeurs PE participant à une instance de routage __VPLS__.
 
 Le circuit __VPLS__ d'un client peut être __étendu entre toutes les zones de disponibilité d'une région__.
 
@@ -23,11 +23,11 @@ Le protocole __VPLS__ est __totalement transparent__ pour les clients qui ne voi
 
 ### Le réseau dans l'offre de virtualisation VMware
 
-Les réseaux virtuels (vlan) de l'offre de virtualisation VMware sont des réseaux de types __'DVPortgroup'__. Un __'dvPortGroup'__, 
-ou __'Distributed Virtual Port Group'__, est un concept spécifique à VMware. Un dvPortGroup est une entité qui 
+Les réseaux virtuels (vlan) de l'offre de virtualisation VMware sont des réseaux de types __'DVPortgroup'__. Un __'dvPortGroup'__,
+ou __'Distributed Virtual Port Group'__, est un concept spécifique à VMware. Un dvPortGroup est une entité qui
 regroupe plusieurs ports virtuels (vPorts) dans un environnement de réseau virtuel distribué pour faciliter leur utilisation.
 
-Localisée au sein d'un __[Tenant](../../../console/iam/concepts/#tenant)__, ils peuvent être étendus entre les zones de disponibilités 
+Localisée au sein d'un __[Tenant](../../../console/iam/concepts/#tenant)__, ils peuvent être étendus entre les zones de disponibilités
 vous permettant ainsi de construire des architectures "actif / actif" avec quorum.
 
 La bande passante maximale utilisable dépend principalement du modèle de lame utilisé (10Gbps convergés ou 25 Gbps convergés) et des capacités des machines virtuelles.
@@ -40,21 +40,21 @@ Les configurations disponibles sur la console Cloud Temple dans le cadre de l'of
 - __Trunk__
 - __port mirror__
 
-*__Nota__* : 
+*__Nota__* :
 
 - *Le choix de l'adressage IP au sein de ces réseaux est __libre.__*
 - *__SRV-IO__ n'est pas disponible dans l'offre réseau associée à la virtualisation VMware.*
-- *__QinQ__ est supporté sur l'architecture Cloud Temple. QinQ, également connu sous le nom de "VLAN stacking" ou de 802.1ad, est 
+- *__QinQ__ est supporté sur l'architecture Cloud Temple. QinQ, également connu sous le nom de "VLAN stacking" ou de 802.1ad, est
 un protocole réseau qui permet l'encapsulation de plusieurs étiquettes VLAN (Virtual Local Area Network) dans une seule trame Ethernet.*
 
 
 ## Réseaux privés régionaux
 
-La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple. 
+La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple.
 
 __*Remarque :*__ *Il n'est pas possible de choisir l'ID de vlan 802.1q.*
 
-| Référence                                 | Unité  | SKU                          | 
+| Référence                                 | Unité  | SKU                          |
 |-------------------------------------------|--------|------------------------------|
 | RESEAU - Région FR1 - VLAN privé inter AZ | 1 vlan | csp:(region):network:vlan:v1 |
 
@@ -68,7 +68,7 @@ Il est ainsi possible de partager un réseau entre vos __[Tenant](../../../conso
 
 L'offre de réseau Cloud Temple permet aux clients de connecter leurs propres infrastructures IPSEC, MPLS ou Fibre à leurs tenants.
 
-Cloud Temple propose à cet effet : 
+Cloud Temple propose à cet effet :
 
 - La possibilité d'héberger un équipement réseau en zone commune (non qualifiée Secnumcloud),
 - Des ports de connectivité 1Gbps ou 10Gbps.
@@ -104,7 +104,7 @@ La création d'une connectivité dédiée est réalisée par une demande de serv
     Le nom de votre Organisation
     Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
     Le nom du tenants
-    Les identifiants des deux rack dédiés 
+    Les identifiants des deux rack dédiés
     La bande passante souhaitée
     Le réseau de votre tenant devant accueillir cette connectivité
 
