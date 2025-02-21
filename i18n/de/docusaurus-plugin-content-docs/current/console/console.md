@@ -4,89 +4,90 @@ title: Übersicht
 
 ## Die Cloud Temple-Konsole
 
-Die Cloud Temple-Konsole ist die integrierte Cloud Management Platform von Cloud Temple. Sie stellt den zentralen Punkt für die Verwaltung aller Ihrer Cloud-Ressourcen dar und bietet eine einzigartige und leistungsstarke Schnittstelle.
+Die Cloud Temple-Konsole ist die integrierte **Cloud Management Platform** von Cloud Temple. Sie stellt den zentralen Punkt zur Verwaltung Ihrer gesamten Cloud-Ressourcen dar und bietet Ihnen eine einzigartige und leistungsstarke Schnittstelle.
 
-Mit der **Konsole** können Sie Ihre Cloud-Infrastrukturen ganz einfach überwachen und nutzen. Hier ist ein Überblick über die Hauptfunktionen:
+Mit der **Konsole** können Sie Ihre Cloud-Infrastrukturen ganz einfach überwachen und betreiben. Hier ist ein Überblick über die Hauptfunktionen:
+
 
 <div class="card-grid">
 
   <div class="card">
     <h3>Das IAM-Modul</h3>
-    <p>Entdecken Sie das IAM-Modul (Identity Access Management) der Cloud Temple-Konsole.</p>
-    <a href="./iam" class="card-link">Hier geht es weiter &rarr;</a>
+    <p>Erkunden Sie das IAM-Modul (Identity Access Management) der Cloud Temple-Konsole.</p>
+    <a href="console/iam" class="card-link">Hier geht's weiter &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Support</h3>
-    <p>Visualisierung geplanter Operationen und Verwaltung von Vorfällen</p>
-    <a href="./status" class="card-link">Hier geht es weiter &rarr;</a>
+    <p>Visualisierung geplanter Operationen und Verwaltung von Vorfällen.</p>
+    <a href="console/status" class="card-link">Hier geht's weiter &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Infrastruktur bereitstellen</h3>
     <p>Bestellen und verfolgen Sie die Bereitstellung neuer Ressourcen.</p>
-    <a href="./orders" class="card-link">Die Menüs entdecken &rarr;</a>
+    <a href="console/orders" class="card-link">Menüs entdecken &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Metrics</h3>
     <p>Bestellen und verfolgen Sie die Bereitstellung neuer Ressourcen.</p>
-    <a href="./metrics/concepts" class="card-link">Die Menüs entdecken &rarr;</a>
+    <a href="console/metrics/concepts" class="card-link">Menüs entdecken &rarr;</a>
   </div>
 
 </div>
 
-### Verwaltung Ihrer Cloud Temple-Produkte und -Dienste
-Mit der Konsole können Sie Ihre virtuellen Server, Ihren Speicher, Ihre Netzwerke und Ihre Cloud-Dienste effizient über eine zentrale Schnittstelle steuern.
+### Verwaltung Ihrer Cloud Temple-Produkte und -Dienstleistungen
+Die Konsole ermöglicht es Ihnen, Ihre virtuellen Server, Ihren Speicher, Ihre Netzwerke und Ihre Cloud-Dienste über eine zentrale Schnittstelle effizient zu steuern.
 
 ### Überwachung und Berichterstattung
-Profitieren Sie von einer vollständigen Ansicht Ihrer Ressourcen dank integrierter Überwachungs- und Berichterstattungstools, um sicherzustellen, dass Ihre Umgebungen optimal funktionieren.
+Profitieren Sie von einem umfassenden Überblick über Ihre Ressourcen dank integrierter Überwachungs- und Berichtstools, um sicherzustellen, dass Ihre Umgebungen optimal funktionieren.
 
 ### Automatisierung und Orchestrierung
-Mit seiner **leistungsstarken API** vereinfacht die Konsole die Automatisierung wiederholbarer Aufgaben und die Orchestrierung komplexer Workflows. Stellen Sie Ihre Ressourcen bereit, verwalten und skalieren Sie sie in wenigen Klicks oder über benutzerdefinierte Skripte.
+Mit ihrer **leistungsstarken API** vereinfacht die Konsole die Automatisierung repetitiver Aufgaben und die Orchestrierung komplexer Workflows. Stellen Sie Ihre Ressourcen mit wenigen Klicks oder über benutzerdefinierte Skripte bereit, verwalten und skalieren Sie diese.
 
 ### Sicherheit und Compliance
-Die Konsole integriert fortschrittliche Funktionen zur:
-- Verwaltung von Identitäten und Zugriffsrechten,
-- Filterung von Zugriffen, um den regulatorischen Anforderungen gerecht zu werden,
+Die Konsole integriert erweiterte Funktionen zur:
+- Verwaltung von Identitäten und Zugriffen,
+- Zugriffskontrolle zur Einhaltung regulatorischer Anforderungen,
 - Verstärkung Ihrer Sicherheitsrichtlinien.
 
 ### Multi-Cloud-Integration
-Dank ihrer Hybridisierungskapazitäten erleichtert die Konsole das Management von Multi-Cloud-Umgebungen durch die Integration von Drittanbieter-Diensten wie **Microsoft Azure** und **Amazon AWS**, alles über eine einzige Schnittstelle.
+Dank ihrer Hybridisierungsfähigkeiten erleichtert die Konsole die Verwaltung von Multi-Cloud-Umgebungen durch die Integration von Drittanbieterdiensten wie **Microsoft Azure** und **Amazon AWS**, alles über eine einzige Schnittstelle.
 
 ### Technischer Support und Kundendienst
-Die Konsole bietet direkten Zugang zu Ihren technischen Supportfällen. Sie profitieren von:
+Die Konsole bietet direkten Zugriff auf Ihre technischen Support-Tickets. Sie profitieren von:
 - Einem dedizierten Kundensupport zur Lösung technischer Probleme,
-- Einer Unterstützung bei der anfänglichen Konfiguration Ihrer Dienste.
+- Unterstützung bei der Erstkonfiguration Ihrer Dienste.
 
 ### Professionelle Dienstleistungen
-Benötigen Sie Fachwissen? Profitieren Sie von der Unterstützung unserer Ingenieure für:
-- Persönliche Beratung,
+Benötigen Sie Expertise? Nutzen Sie die Unterstützung unserer Ingenieure für:
+- Individuelle Beratung,
 - Hilfe bei der Implementierung von Cloud-Architekturen,
-- Schulung für Ihre Teams.
+- Schulung Ihrer Teams.
 
-Die Cloud Temple-Konsole __'Shiva'__ ist __die integrierte Cloud Management Platform__ von __Cloud Temple__.
+Die Cloud Temple-Konsole __'Shiva'__ ist die __integrierte Cloud Management Plattform__ von __Cloud Temple__.
 
-Die Cloud Temple-Konsole Shiva ermöglicht es Ihnen, Cloud-Ressourcen wie virtuelle Server, Speicher, Netzwerke und Anwendungsdienste zu verwalten.
-Es ist eine zentrale Management-Schnittstelle, die es Ihnen ermöglicht, Ihre Cloud-Infrastruktur zu entwerfen und zu betreiben.
+Die Cloud Temple Shiva-Konsole ermöglicht es Ihnen, Cloud-Ressourcen wie virtuelle Server, Speicher, Netzwerke und Anwendungsdienste zu verwalten.
+Es ist eine zentralisierte Verwaltungsoberfläche, die es Ihnen ermöglicht, Ihre Cloud-Infrastruktur zu konzipieren und zu betreiben.
 
-Die Cloud Temple-Konsole Shiva ermöglicht es insbesondere Ihren Teams:
+Die Cloud Temple Shiva-Konsole ermöglicht es insbesondere Ihren Teams:
 
-- __Die Verwaltung Ihrer__ Cloud Temple-Produkte und -Dienste,
+- __Die Verwaltung Ihrer Produkte und Dienstleistungen__ von Cloud Temple,
 - __Die Überwachung und Berichterstattung__ des Betriebs Ihrer Cloud-Ressourcen,
-- __Die Automatisierung und Orchestrierung__: Shiva ermöglicht dank seiner API die Automatisierung wiederkehrender Aufgaben und die Orchestrierung komplexer Workflows, um Ihre Cloud-Ressourcen bereitzustellen, zu verwalten und zu skalieren,
-- __Die Sicherheit und Compliance__: Shiva ermöglicht die Identitätskontrolle und Zugriffskontrolle, um die regulatorische Compliance sicherzustellen und Ihre Sicherheitsrichtlinien einzuhalten,
-- __Die Integration von Cloud Adoption Frameworks__: Dank ihrer Hybridisierungsfunktionen können Sie die Betriebsfortsetzigkeit mit Drittanbieter-Cloud-Providern (Microsoft Azure und Amazon AWS) über eine einzige Schnittstelle sicherstellen, was die Integration und das Management Ihrer Multi-Cloud-Anwendungsumgebungen erleichtert.
-- __Den Zugang und die Verfolgung von technischen Supportfällen__: Ein dedizierter technischer Support steht Ihnen ebenfalls zur Verfügung. Dies umfasst den Kundensupport zur Lösung technischer Probleme sowie die Unterstützung bei der anfänglichen Konfiguration.
-- __Die Möglichkeit, professionelle Dienstleistungen zu abonnieren__: Um Ihre Cloud-Umgebungen effizient zu verwalten, können Ihre Teams von der Unterstützung unserer Ingenieure für Beratung, Hilfe bei der Implementierung von Architekturen oder Schulungen profitieren.
+- __Die Automatisierung und Orchestrierung__: Shiva ermöglicht es dank ihrer API, repetitive Aufgaben zu automatisieren und komplexe Workflows zu orchestrieren, um Ihre Cloud-Ressourcen bereitzustellen, zu verwalten und zu skalieren,
+- __Die Sicherheit und Compliance__: Shiva ermöglicht die Identitätskontrolle und Zugriffskontrolle, um die Einhaltung regulatorischer Anforderungen und die Einhaltung Ihrer Sicherheitsrichtlinien sicherzustellen,
+- __Die Integration von Cloud-Übernahme-Frameworks__ (Cloud Adoption Framework): Dank ihrer Hybridisierungsfunktionen können Sie den Betrieb mit Drittanbieter-Cloud-Anbietern (Microsoft Azure und Amazon AWS) aus einer einzigen Schnittstelle sicherstellen, was die Integration und Verwaltung Ihrer Multi-Cloud-Anwendungsumgebungen erleichtert,
+- __Zugang und Nachverfolgung technischer Support-Tickets__: Ein dedizierter technischer Support ist ebenfalls verfügbar. Dies umfasst den Kundensupport zur Lösung technischer Probleme sowie die Unterstützung bei der Erstkonfiguration.
+- __Die Möglichkeit, professionelle Dienstleistungen zu abonnieren__: Um Ihre Cloud-Umgebungen effizient zu verwalten, können Ihre Teams die Unterstützung unserer Ingenieure für Beratung, Hilfe bei der Implementierung von Architektur oder Schulung nutzen.
 
 ## Zugriff auf Benutzerfunktionen über die API
 
 Der Zugriff auf alle Funktionen der Shiva-Konsole ist über die Shiva-API möglich.
-Die Einzelheiten zu den Verben und Konfigurationen finden Sie unter __'Profil'__ und __'APIs'__
+Sie können die Details der Verben und Konfigurationen über __'Profil'__ und __'APIs'__ einsehen.
 
-## Terraform Provider
+## Terraform-Provider
 
-Cloud Temple stellt Ihnen einen Terraform Provider zur Verfügung, um Ihre Cloud-Plattform "as code" zu steuern. Er ist hier verfügbar:
+Cloud Temple stellt Ihnen einen Terraform-Provider zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu steuern. Er ist hier zugänglich:
 
 https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest

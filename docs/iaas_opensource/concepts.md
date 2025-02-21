@@ -35,21 +35,20 @@ La plateforme est qualifiée **SecNumCloud** par l'[ANSSI](https://www.ssi.gouv.
 
 ## Avantages
 
-| Avantage            | Description                                                                                                                                    |   
+| Avantage            | Description                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Confiance numérique | Hébergement des données en France et conformité RGPD.                                                                                          |   
-| Sécurité            | Plateforme hautement sécurisée, qualifiée **SecNumCloud**, **HDS** (Hébergement des Données de Santé), **ISO 27001** et **ISAE 3402 type II**. |  
-| Haute disponibilité | Taux de disponibilité de la plateforme de 99,99%, mesuré mensuellement, plages de maintenance incluses.                                        |   
+| Confiance numérique | Hébergement des données en France et conformité RGPD.                                                                                          |
+| Sécurité            | Plateforme hautement sécurisée, qualifiée **SecNumCloud**, **HDS** (Hébergement des Données de Santé), **ISO 27001** et **ISAE 3402 type II**. |
+| Haute disponibilité | Taux de disponibilité de la plateforme de 99,99%, mesuré mensuellement, plages de maintenance incluses.                                        |
 | Résilience          | Mise en place de plans de continuité ou de reprise d'activité selon les besoins.                                                               |
 | Automatisation      | Plateforme entièrement automatisée pensée pour s'intégrer dans un programme de transformation numérique.                                        |
 | On demand           | Ressources disponibles à la demande.                                                                                                          |
-
 
 ## Classes de lames de calcul
 
 Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de performances pour répondre à divers besoins :
 
-| Référence             | RAM  __(1)__ | Fréquence __(2)__                         | Nombre de cœurs / threads | Connectivité __(3)__ | GPU __(4)__          | 
+| Référence             | RAM  __(1)__ | Fréquence __(2)__                         | Nombre de cœurs / threads | Connectivité __(3)__ | GPU __(4)__          |
 |-----------------------|--------------|-------------------------------------------|---------------------------|----------------------|----------------------|
 | **ECO**              | 384 Go       | 2.20/3.0 GHz (Silver 4114 ou équivalent)  | 20 / 40 threads           | 2 X 10 Gbit/s        | -                    |
 | **STANDARD**         | 384 Go       | 2.40/3.4 GHz (Silver 4314 ou équivalent)  | 32 / 64 threads           | 2 X 25 Gbit/s        | -                    |
@@ -73,7 +72,7 @@ La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellem
 
 Le stockage bloc distribué, basé sur **IBM Spectrum Virtualize**, offre une gamme de performances adaptées à divers cas d'utilisation :
 
-| Référence                         | IOPS/To                 | Usage principal                        | 
+| Référence                         | IOPS/To                 | Usage principal                        |
 |-----------------------------------|-------------------------|----------------------------------------|
 | **FLASH - Essentiel**             | 500                     | Charges de travail légères             |
 | **FLASH - Standard**              | 1500                    | Charges de travail standard            |

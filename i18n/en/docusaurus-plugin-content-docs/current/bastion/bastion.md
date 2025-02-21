@@ -8,20 +8,21 @@ Accessible from the Cloud Temple console, it guarantees centralized management w
 
 With its security-oriented approach and advanced features such as Infrastructure as Code, the Bastion meets the needs of Cloud, hybrid, and on-premises environments.
 
+
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the essential concepts and principles to understand and master our infrastructure.</p>
-    <a href="./concepts" class="card-link">Explore the concepts &rarr;</a>
+    <p>Discover the essential bases and principles to understand and master our infrastructure.</p>
+    <a href="console/iam/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <p>Quickly get started with our resources by following clear and simple instructions.</p>
+    <a href="console/iam/quickstart" class="card-link">Start the Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="./tutorials" class="card-link">Discover the tutorials &rarr;</a>
+    <p>Learn step by step to configure and use our services with detailed guides.</p>
+    <a href="console/iam/tutorials/sso_aad.md" class="card-link">Discover the tutorials &rarr;</a>
   </div>
 </div>
