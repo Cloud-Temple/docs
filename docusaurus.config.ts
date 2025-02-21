@@ -17,7 +17,7 @@ const config: Config = {
     experimental_faster: true,
   },
   
-  trailingSlash: true,
+  trailingSlash: false,
 
   // Set the production url of your site here
   url: 'https://github.com',
