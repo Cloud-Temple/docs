@@ -10,8 +10,8 @@ const sidebars: SidebarsConfig = {
     {
       type: 'html', // Séparateur et titre
       value: `
-        <hr className="sidebar-separator" />
-        <h3 className="sidebar-title">Console</h3>
+        <hr class="sidebar-separator" />
+        <h3 class="sidebar-title">Console</h3>
       `,
     },
     {
@@ -59,7 +59,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: `
         <br>
-        <h3 className="sidebar-title">Products</h3>
+        <h3 class="sidebar-title">Products</h3>
       `,
     },
     {
@@ -200,8 +200,8 @@ const sidebars: SidebarsConfig = {
     {
       type: 'html', // Séparateur et titre
       value: `
-        <hr className="sidebar-separator" />
-        <h3 className="sidebar-title">Contractuel</h3>
+        <hr class="sidebar-separator" />
+        <h3 class="sidebar-title">Contractuel</h3>
       `,
     },
     {

@@ -8,30 +8,30 @@ La consola Cloud Temple es la plataforma de gestión en la nube (**Cloud Managem
 
 Gracias a la **Consola**, puede supervisar y operar sus infraestructuras en la nube con gran simplicidad. A continuación se presentan sus principales funcionalidades:
 
-<div className="card-grid">
+<div class="card-grid">
 
-  <div className="card">
+  <div class="card">
     <h3>El módulo IAM</h3>
     <p>Descubra el módulo IAM (Identity Access Management) de la consola Cloud Temple.</p>
-    <a href="console/iam" className="card-link">Está aquí &rarr;</a>
+    <a href="console/iam" class="card-link">Está aquí &rarr;</a>
   </div>
 
-  <div className="card">
+  <div class="card">
     <h3>Soporte</h3>
     <p>Visualización de operaciones planificadas y gestión de Incidentes</p>
-    <a href="console/status" className="card-link">Está aquí &rarr;</a>
+    <a href="console/status" class="card-link">Está aquí &rarr;</a>
   </div>
 
-  <div className="card">
+  <div class="card">
     <h3>Desplegar infraestructura</h3>
     <p>Ordenar y seguir el despliegue de nuevos recursos.</p>
-    <a href="console/orders" className="card-link">Descubrir los menús &rarr;</a>
+    <a href="console/orders" class="card-link">Descubrir los menús &rarr;</a>
   </div>
 
-  <div className="card">
+  <div class="card">
     <h3>Métricas</h3>
     <p>Ordenar y seguir el despliegue de nuevos recursos.</p>
-    <a href="console/metrics/concepts" className="card-link">Descubrir los menús &rarr;</a>
+    <a href="console/metrics/concepts" class="card-link">Descubrir los menús &rarr;</a>
   </div>
 
 </div>

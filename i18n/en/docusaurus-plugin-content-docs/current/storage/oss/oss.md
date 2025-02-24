@@ -9,20 +9,20 @@ Cloud Temple's object storage infrastructure relies on Dell's **Elastic Cloud St
 To secure the data, Cloud Temple offers advanced encryption options: **server-side** (with keys managed by Cloud Temple or by the client) or **client-side**, offering complete control to the user. Certified **SecNumCloud**, **HDS**, and **ISO 27001**, this infrastructure guarantees strict compliance with regulatory requirements and the highest security standards.
 
 
-<div className="card-grid">
-  <div className="card">
+<div class="card-grid">
+  <div class="card">
     <h3>Concepts</h3>
     <p>Discover the essential foundations and principles to understand and master our infrastructure.</p>
-    <a href="./oss/concepts" className="card-link">Explore the concepts &rarr;</a>
+    <a href="./oss/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Quickstart</h3>
     <p>Quickly get started with our resources by following clear and simple instructions.</p>
-    <a href="./oss/quickstart" className="card-link">Launch the Quickstart &rarr;</a>
+    <a href="./oss/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
-    <div className="card">
+    <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="./oss/tutorials" className="card-link">Discover the tutorials &rarr;</a>
+    <a href="./oss/tutorials" class="card-link">Discover the tutorials &rarr;</a>
   </div>
 </div>

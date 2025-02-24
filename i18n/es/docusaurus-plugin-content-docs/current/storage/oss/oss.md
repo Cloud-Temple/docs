@@ -9,20 +9,20 @@ La infraestructura de almacenamiento de objetos de Cloud Temple se basa en la so
 Para asegurar los datos, Cloud Temple ofrece opciones avanzadas de cifrado: **del lado del servidor** (con claves gestionadas por Cloud Temple o por el cliente) o **del lado del cliente**, ofreciendo un control total al usuario. Certificada **SecNumCloud**, **HDS**, y **ISO 27001**, esta infraestructura garantiza un cumplimiento estricto con los requisitos regulatorios y los estándares de seguridad más altos.
 
 
-<div className="card-grid">
-  <div className="card">
+<div class="card-grid">
+  <div class="card">
     <h3>Conceptos</h3>
     <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="./oss/concepts" className="card-link">Explorar los conceptos &rarr;</a>
+    <a href="./oss/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Quickstart</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y simples.</p>
-    <a href="./oss/quickstart" className="card-link">Lanzar el Quickstart &rarr;</a>
+    <a href="./oss/quickstart" class="card-link">Lanzar el Quickstart &rarr;</a>
   </div>
-    <div className="card">
+    <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y usar nuestros servicios con guías detalladas.</p>
-    <a href="./oss/tutorials" className="card-link">Descubrir los tutoriales &rarr;</a>
+    <a href="./oss/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>

@@ -31,20 +31,20 @@ Before starting your journey on our platform, we recommend exploring the followi
 4. **Follow Our Step-by-Step Tutorials**
    - Use the [**resources**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) from our demonstration repository to perform step-by-step deployments.
 
-<div className="card-grid">
-  <div className="card">
+<div class="card-grid">
+  <div class="card">
     <h3>Deploy through Helmfile</h3>
     <p>Learn how to deploy your applications with helmfile.</p>
-    <a href="./tutorials/deploy-through-helmfile" className="card-link">Start &rarr;</a>
+    <a href="./tutorials/deploy-through-helmfile" class="card-link">Start &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Explore Virtualization with Kubevirt</h3>
     <p>Discover kubevirt and its features in the **Cloud Temple** context.</p>
-    <a href="./tutorials/deploy-vm-with-kubevirt" className="card-link">Start &rarr;</a>
+    <a href="./tutorials/deploy-vm-with-kubevirt" class="card-link">Start &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Use Kasten</h3>
     <p>Discover Kasten and configure your data backups.</p>
-    <a href="./tutorials/using-kasten" className="card-link">Start &rarr;</a>
+    <a href="./tutorials/using-kasten" class="card-link">Start &rarr;</a>
   </div>
 </div>
