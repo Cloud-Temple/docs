@@ -57,9 +57,7 @@ const config: Config = {
     [
       require.resolve('docusaurus-plugin-search-local'),
       {
-        // Options disponibles ici : https://github.com/gabrielcsapo/docusaurus-plugin-search-local
-        indexDocs: true,
-        indexPages: true,
+        // Options are available there: https://github.com/gabrielcsapo/docusaurus-plugin-search-local
       },
     ],
   ],
@@ -109,7 +107,7 @@ const config: Config = {
               href: 'https://status.cloud-temple.com/',
             },
             {
-              label: 'Tutorials',
+              label: 'Tutorial',
               to: '/docs/tags/tutorials/',
             },
             {
@@ -159,8 +157,8 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="../docs/governance">Contracts</a> |
-        <a href="../docs/privacy">Privacy Policy</a>
+        <a href="/docs/governance">Contracts</a> |
+        <a href="/docs/privacy">Privacy Policy</a>
         <br />
         Copyright © ${new Date().getFullYear()} Cloud Temple.
       </div>

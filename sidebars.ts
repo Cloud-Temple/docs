@@ -47,7 +47,7 @@ const sidebars: SidebarsConfig = {
         'console/iam/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'Tutoriels',
           items: [
             'console/iam/tutorials/sso_aad',
             'console/iam/tutorials/sso_adfs',
@@ -115,7 +115,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Backup',
+              label: 'Sauvegardes',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
@@ -206,7 +206,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Contractual documents',
+      label: 'Documents contractuels',
       items: [
         'contractual/orderdoc',
         'contractual/cgvu',

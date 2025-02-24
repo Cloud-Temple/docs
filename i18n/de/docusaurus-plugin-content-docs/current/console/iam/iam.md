@@ -4,7 +4,7 @@ title: Identity Access Management
 
 # Identity Access Management
 
-Das IAM-Modul (Identity Access Management) der Cloud Temple-Konsole bietet eine umfassende Lösung für das Identitäts- und Zugriffsmanagement.
+Das IAM-Modul (Identity Access Management) der Cloud Temple-Konsole bietet eine umfassende Lösung für das Identitäts- und Zugriffsmanagement. 
 Es ermöglicht die Verwaltung lokaler Konten und unterstützt gleichzeitig eine Hybridisierung mit externen Konfigurationen, die mit den marktüblichen Standards wie OIDC und SAML kompatibel sind, um den Flexibilitäts- und Sicherheitsanforderungen moderner Umgebungen gerecht zu werden.
 
 <div class="card-grid">

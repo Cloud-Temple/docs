@@ -11,7 +11,7 @@ Pour sécuriser les données, Cloud Temple propose des options de chiffrement av
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
+    <h3>Concetti</h3>
     <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
     <a href="./oss/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
@@ -21,7 +21,7 @@ Pour sécuriser les données, Cloud Temple propose des options de chiffrement av
     <a href="./oss/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutorial</h3>
     <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="./oss/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
