@@ -11,26 +11,26 @@ Benvenuto nello spazio documentazione di **Cloud Temple**! Questo spazio è stat
 
 ## Primi passi
 
-<div class="card-grid">
-  <div class="card">
+<div className="card-grid">
+  <div className="card">
     <h3>Esplora la console</h3>
     <p>Impara a utilizzare la nostra console per gestire le tue risorse Cloud.</p>
-    <a href="../docs/console" class="card-link">Scopri la console &rarr;</a>
+    <a href="../docs/console" className="card-link">Scopri la console &rarr;</a>
   </div>
-    <div class="card">
+    <div className="card">
     <h3>Inizia con lo Storage Object</h3>
     <p>Impara a utilizzare lo storage object</p>
-    <a href="../docs/storage/oss" class="card-link">Configura un Bucket &rarr;</a>
+    <a href="../docs/storage/oss" className="card-link">Configura un Bucket &rarr;</a>
   </div>
-  <div class="card">
+  <div className="card">
     <h3>Provisiona le tue risorse</h3>
     <p>Crea rapidamente ed efficacemente le tue prime risorse Cloud.</p>
-    <a href="../docs/iaas_vmware/quickstart" class="card-link">Inizia &rarr;</a>
+    <a href="../docs/iaas_vmware/quickstart" className="card-link">Inizia &rarr;</a>
   </div>
-  <div class="card">
+  <div className="card">
     <h3>Distribuisci in pochi clic</h3>
     <p>Configura i tuoi servizi con semplicità grazie alle nostre guide dettagliate.</p>
-    <a href="../docs/iaas_vmware/quickstart" class="card-link">Distribuisci &rarr;</a>
+    <a href="../docs/iaas_vmware/quickstart" className="card-link">Distribuisci &rarr;</a>
   </div>
 </div>
 

@@ -9,20 +9,20 @@ Der **Housing Cloud Temple** bietet eine physische Hosting-Lösung für Ihre IT-
 Mit flexiblen Optionen und einem hohen Sicherheitsniveau garantiert der Housing Cloud Temple die Kontinuität und Zuverlässigkeit Ihrer Operationen, sei es beim Hosting von Appliances, Servern oder beim Nutzen von ergänzenden Dienstleistungen zur Optimierung Ihrer Infrastruktur.
 
 
-<div class="card-grid">
-  <div class="card">
+<div className="card-grid">
+  <div className="card">
     <h3>Konzepte</h3>
     <p>Erfahren Sie die grundlegenden Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
-    <a href="housing/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <a href="housing/concepts" className="card-link">Konzepte erkunden &rarr;</a>
   </div>
-  <div class="card">
+  <div className="card">
     <h3>Quickstart</h3>
     <p>Starten Sie schnell mit unseren Ressourcen und folgen Sie klaren und einfachen Anweisungen.</p>
-    <a href="housing/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="housing/quickstart" className="card-link">Quickstart starten &rarr;</a>
   </div>
-    <div class="card">
+    <div className="card">
     <h3>Tutorials</h3>
     <p>Erlernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
-    <a href="housing/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+    <a href="housing/tutorials" className="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>

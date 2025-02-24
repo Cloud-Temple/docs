@@ -10,8 +10,8 @@ const sidebars: SidebarsConfig = {
     {
       type: 'html', // Séparateur et titre
       value: `
-        <hr class="sidebar-separator" />
-        <h3 class="sidebar-title">Console</h3>
+        <hr className="sidebar-separator" />
+        <h3 className="sidebar-title">Console</h3>
       `,
     },
     {
@@ -47,7 +47,7 @@ const sidebars: SidebarsConfig = {
         'console/iam/quickstart',
         {
           type: 'category',
-          label: 'Tutoriels',
+          label: 'Tutorials',
           items: [
             'console/iam/tutorials/sso_aad',
             'console/iam/tutorials/sso_adfs',
@@ -59,7 +59,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: `
         <br>
-        <h3 class="sidebar-title">Products</h3>
+        <h3 className="sidebar-title">Products</h3>
       `,
     },
     {
@@ -115,7 +115,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Sauvegardes',
+              label: 'Backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
@@ -200,13 +200,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'html', // Séparateur et titre
       value: `
-        <hr class="sidebar-separator" />
-        <h3 class="sidebar-title">Contractuel</h3>
+        <hr className="sidebar-separator" />
+        <h3 className="sidebar-title">Contractuel</h3>
       `,
     },
     {
       type: 'category',
-      label: 'Documents contractuels',
+      label: 'Contractual documents',
       items: [
         'contractual/orderdoc',
         'contractual/cgvu',
