@@ -1,0 +1,58 @@
+{
+  "link.title.Tools": {
+    "message": "Outils",
+    "description": "The title of the footer links column with title=Tools in the footer"
+  },
+  "link.title.Community": {
+    "message": "Communauté",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.Market Place": {
+    "message": "Market Place",
+    "description": "The title of the footer links column with title=Market Place in the footer"
+  },
+  "link.item.label.Status page": {
+    "message": "Page d'état",
+    "description": "The label of footer link with label=Status page linking to https://status.cloud-temple.com/"
+  },
+  "link.item.label.Tutorials": {
+    "message": "Tutoriels",
+    "description": "The label of footer link with label=Tutorials linking to /docs/tags/tutorials/"
+  },
+  "link.item.label.Onboarding": {
+    "message": "Intégration",
+    "description": "The label of footer link with label=Onboarding linking to /docs/tags/onboarding/"
+  },
+  "link.item.label.Linkedin": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=Linkedin linking to https://www.linkedin.com/company/cloud-temple/"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/cloud-temple"
+  },
+  "link.item.label.Cloud Temple Web Site": {
+    "message": "Site web de Cloud Temple",
+    "description": "The label of footer link with label=Cloud Temple Web Site linking to https://cloud-temple.com"
+  },
+  "link.item.label.Cloud Temple Roadmap": {
+    "message": "Roadmap Cloud Temple",
+    "description": "The label of footer link with label=Cloud Temple Roadmap linking to https://github.com/orgs/Cloud-Temple/projects/2"
+  },
+  "link.item.label.Privacy": {
+    "message": "Confidentialité",
+    "description": "The label of footer link with label=Privacy linking to /docs/privacy"
+  },
+  "link.item.label.UGAP": {
+    "message": "UGAP",
+    "description": "The label of footer link with label=UGAP linking to /docs/market_place_public"
+  },
+  "link.item.label.CAIH": {
+    "message": "CAIH",
+    "description": "The label of footer link with label=CAIH linking to /docs/market_place_public"
+  },
+  "copyright": {
+    "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"../docs/governance\">Contrats</a> |\n        <a href=\"../docs/privacy\">Politique de confidentialité</a>\n        <br />\n        Copyright © 2025 Cloud Temple.\n      </div>\n    ",
+    "description": "The footer copyright"
+  }
+}
