@@ -9,20 +9,20 @@ Die Objektspeicher-Infrastruktur von Cloud Temple basiert auf der Lösung **Elas
 Zur Sicherung der Daten bietet Cloud Temple erweiterte Verschlüsselungsoptionen an: **serverseitig** (mit Schlüsseln, die von Cloud Temple oder vom Kunden verwaltet werden) oder **clientseitig**, wodurch dem Nutzer volle Kontrolle geboten wird. Zertifiziert nach **SecNumCloud**, **HDS** und **ISO 27001** garantiert diese Infrastruktur eine strenge Einhaltung der gesetzlichen Anforderungen und der höchsten Sicherheitsstandards.
 
 
-<div className="card-grid">
-  <div className="card">
+<div class="card-grid">
+  <div class="card">
     <h3>Grundlagen</h3>
     <p>Erlernen Sie die wesentlichen Grundlagen und Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
-    <a href="./oss/concepts" className="card-link">Erkunden Sie die Grundlagen &rarr;</a>
+    <a href="./oss/concepts" class="card-link">Erkunden Sie die Grundlagen &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Schnellstart</h3>
     <p>Beginnen Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./oss/quickstart" className="card-link">Schnellstart starten &rarr;</a>
+    <a href="./oss/quickstart" class="card-link">Schnellstart starten &rarr;</a>
   </div>
-    <div className="card">
+    <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste einrichten und nutzen, mit detaillierten Anleitungen.</p>
-    <a href="./oss/tutorials" className="card-link">Entdecken Sie die Tutorials &rarr;</a>
+    <a href="./oss/tutorials" class="card-link">Entdecken Sie die Tutorials &rarr;</a>
   </div>
 </div>

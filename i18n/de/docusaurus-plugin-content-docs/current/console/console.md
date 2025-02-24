@@ -9,30 +9,30 @@ Die Cloud Temple-Konsole ist die integrierte **Cloud Management Platform** von C
 Mit der **Konsole** können Sie Ihre Cloud-Infrastrukturen ganz einfach überwachen und betreiben. Hier ist ein Überblick über die Hauptfunktionen:
 
 
-<div className="card-grid">
+<div class="card-grid">
 
-  <div className="card">
+  <div class="card">
     <h3>Das IAM-Modul</h3>
     <p>Erkunden Sie das IAM-Modul (Identity Access Management) der Cloud Temple-Konsole.</p>
-    <a href="console/iam" className="card-link">Hier geht's weiter &rarr;</a>
+    <a href="console/iam" class="card-link">Hier geht's weiter &rarr;</a>
   </div>
 
-  <div className="card">
+  <div class="card">
     <h3>Support</h3>
     <p>Visualisierung geplanter Operationen und Verwaltung von Vorfällen.</p>
-    <a href="console/status" className="card-link">Hier geht's weiter &rarr;</a>
+    <a href="console/status" class="card-link">Hier geht's weiter &rarr;</a>
   </div>
 
-  <div className="card">
+  <div class="card">
     <h3>Infrastruktur bereitstellen</h3>
     <p>Bestellen und verfolgen Sie die Bereitstellung neuer Ressourcen.</p>
-    <a href="console/orders" className="card-link">Menüs entdecken &rarr;</a>
+    <a href="console/orders" class="card-link">Menüs entdecken &rarr;</a>
   </div>
 
-  <div className="card">
+  <div class="card">
     <h3>Metrics</h3>
     <p>Bestellen und verfolgen Sie die Bereitstellung neuer Ressourcen.</p>
-    <a href="console/metrics/concepts" className="card-link">Menüs entdecken &rarr;</a>
+    <a href="console/metrics/concepts" class="card-link">Menüs entdecken &rarr;</a>
   </div>
 
 </div>

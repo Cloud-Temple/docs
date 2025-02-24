@@ -11,26 +11,26 @@ Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été
 
 ## Premiers pas
 
-<div className="card-grid">
-  <div className="card">
+<div class="card-grid">
+  <div class="card">
     <h3>Explorez la console</h3>
     <p>Aprenda a usar nuestra consola para gestionar sus recursos en la nube.</p>
-    <a href="../docs/console" className="card-link">Descubrir la consola &rarr;</a>
+    <a href="../docs/console" class="card-link">Descubrir la consola &rarr;</a>
   </div>
-    <div className="card">
+    <div class="card">
     <h3>Comenzar con Almacenamiento de Objetos</h3>
     <p>Aprenda a utilizar el almacenamiento de objetos</p>
-    <a href="../docs/storage/oss" className="card-link">Configurar un Bucket &rarr;</a>
+    <a href="../docs/storage/oss" class="card-link">Configurar un Bucket &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Provisione sus recursos</h3>
     <p>Cree sus primeros recursos en la nube rápida y eficientemente.</p>
-    <a href="../docs/iaas_vmware/quickstart" className="card-link">Comenzar &rarr;</a>
+    <a href="../docs/iaas_vmware/quickstart" class="card-link">Comenzar &rarr;</a>
   </div>
-  <div className="card">
+  <div class="card">
     <h3>Despliegue en unos clics</h3>
     <p>Configure sus servicios con facilidad gracias a nuestras guías detalladas.</p>
-    <a href="../docs/iaas_vmware/quickstart" className="card-link">Desplegar &rarr;</a>
+    <a href="../docs/iaas_vmware/quickstart" class="card-link">Desplegar &rarr;</a>
   </div>
 </div>
 
