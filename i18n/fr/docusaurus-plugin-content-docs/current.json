@@ -1,0 +1,78 @@
+{
+  "version.label": {
+    "message": "Suivant",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.IAM": {
+    "message": "IAM",
+    "description": "The label for category IAM in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tutoriels": {
+    "message": "Tutoriels",
+    "description": "The label for category Tutoriels in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Bare Metal": {
+    "message": "Bare Metal",
+    "description": "The label for category Bare Metal in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Bastion": {
+    "message": "Bastion",
+    "description": "The label for category Bastion in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Housing": {
+    "message": "Hébergement",
+    "description": "The label for category Housing in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.IaaS OpenSource": {
+    "message": "IaaS OpenSource",
+    "description": "The label for category IaaS OpenSource in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.IaaS by VMware": {
+    "message": "IaaS by VMware",
+    "description": "The label for category IaaS by VMware in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tutorials": {
+    "message": "Tutoriels",
+    "description": "The label for category Tutorials in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Backup": {
+    "message": "Sauvegarde",
+    "description": "The label for category Backup in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.PaaS Openshift": {
+    "message": "PaaS Openshift",
+    "description": "The label for category PaaS Openshift in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Network": {
+    "message": "Réseau",
+    "description": "The label for category Network in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Privates Network": {
+    "message": "Réseaux privés",
+    "description": "The label for category Privates Network in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Internet": {
+    "message": "Internet",
+    "description": "The label for category Internet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Storage": {
+    "message": "Stockage",
+    "description": "The label for category Storage in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Object Storage": {
+    "message": "Stockage objet",
+    "description": "The label for category Object Storage in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Contractual documents": {
+    "message": "Documents contractuels",
+    "description": "The label for category Contractual documents in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.doc.RACI": {
+    "message": "RACI",
+    "description": "The label for the doc item RACI in sidebar docSidebar, linking to the doc governance/paas/raci"
+  },
+  "sidebar.docSidebar.doc.Service Agreement": {
+    "message": "Accord de service",
+    "description": "The label for the doc item Service Agreement in sidebar docSidebar, linking to the doc governance/paas/service_agreement_paas"
+  }
+}

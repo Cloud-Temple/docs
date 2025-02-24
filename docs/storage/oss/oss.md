@@ -9,20 +9,20 @@ L’infrastructure de stockage objet Cloud Temple repose sur la solution **Elast
 Pour sécuriser les données, Cloud Temple propose des options de chiffrement avancées : **côté serveur** (avec clés gérées par Cloud Temple ou par le client) ou **côté client**, offrant un contrôle total à l’utilisateur. Certifiée **SecNumCloud**, **HDS**, et **ISO 27001**, cette infrastructure garantit une conformité stricte aux exigences réglementaires et aux normes de sécurité les plus élevées.
 
 
-<div class="card-grid">
-  <div class="card">
+<div className="card-grid">
+  <div className="card">
     <h3>Concepts</h3>
     <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
-    <a href="./oss/concepts" class="card-link">Explorer les concepts &rarr;</a>
+    <a href="./oss/concepts" className="card-link">Explorer les concepts &rarr;</a>
   </div>
-  <div class="card">
+  <div className="card">
     <h3>Quickstart</h3>
     <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./oss/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./oss/quickstart" className="card-link">Lancer le Quickstart &rarr;</a>
   </div>
-    <div class="card">
+    <div className="card">
     <h3>Tutorials</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="./oss/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="./oss/tutorials" className="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
