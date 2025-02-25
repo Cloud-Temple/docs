@@ -52,7 +52,7 @@
     "description": "The label of footer link with label=CAIH linking to /docs/market_place_public"
   },
   "copyright": {
-    "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"../governance\">Contratti</a> |\n        <a href=\"../privacy\">Politica sulla privacy</a>\n        <br />\n        Copyright © 2025 Cloud Temple.\n      </div>\n    ",
+    "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"../it/governance\">Contratti</a> |\n        <a href=\"../it/privacy\">Politica sulla privacy</a>\n        <br />\n        Copyright © 2025 Cloud Temple.\n      </div>\n    ",
     "description": "The footer copyright"
   }
 }
