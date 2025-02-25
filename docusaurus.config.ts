@@ -21,7 +21,7 @@ const config: Config = {
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -65,15 +65,17 @@ const config: Config = {
   ],
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/', // Serve the docs at the site's root ("/docs/" by default)
           sidebarPath: './sidebars.ts',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
-      } satisfies Preset.Options,
+        blog: false, // Optional: disable the blog plugin
+      },
     ],
   ],
 
@@ -110,11 +112,11 @@ const config: Config = {
             },
             {
               label: 'Tutorials',
-              to: '/docs/tags/tutorials/',
+              to: '/tags/tutorials/',
             },
             {
               label: 'Onboarding',
-              to: '/docs/tags/onboarding/',
+              to: '/tags/onboarding/',
             },
           ],
         },
@@ -144,23 +146,23 @@ const config: Config = {
           items: [
             {
               label: 'Privacy',
-              to: '/docs/privacy',
+              to: '/privacy',
             },
             {
               label: 'UGAP',
-              to: '/docs/market_place_public',
+              to: '/market_place_public',
             },
             {
               label: 'CAIH',
-              to: '/docs/market_place_public',
+              to: '/market_place_public',
             },
           ],
         },
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="../docs/governance">Contracts</a> |
-        <a href="../docs/privacy">Privacy Policy</a>
+        <a href="../governance">Contracts</a> |
+        <a href="../privacy">Privacy Policy</a>
         <br />
         Copyright © ${new Date().getFullYear()} Cloud Temple.
       </div>
