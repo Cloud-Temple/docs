@@ -87,6 +87,7 @@ const config: Config = {
       logo: {
         alt: 'Cloud Temple Logo',
         src: 'img/logo.svg',
+        href: '/home'
       },
       items: [
         {
@@ -161,8 +162,8 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="../governance">Contracts</a> |
-        <a href="../privacy">Privacy Policy</a>
+        <a href="/governance">Contracts</a> |
+        <a href="/privacy">Privacy Policy</a>
         <br />
         Copyright © ${new Date().getFullYear()} Cloud Temple.
       </div>
