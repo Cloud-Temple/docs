@@ -1,42 +1,43 @@
 ---
-title: Privacy
+title: Confidentialidad
 tags:
-  - privacy
+  - privacidad
 ---
 
-## Contexte
 
-La politique de protection des données existe pour assurer un niveau de sécurité adéquat en termes de confidentialité, de disponibilité et d’intégrité des ressources en information et en données personnelles vis-à-vis de toutes les menaces qui pourraient les affecter. 
+## Contexto
 
-Cloud Temple définit, applique, opère, surveille, réalise des revues, maintient et améliore le processus et les mesures relatifs au traitement des données et à la sécurité de l’information en se basant sur une approche des risques.
+La política de protección de datos existe para asegurar un nivel de seguridad adecuado en términos de confidencialidad, disponibilidad e integridad de los recursos de información y datos personales frente a todas las amenazas que podrían afectarlos.
 
-La vie privée des personnes sera ainsi toujours respectée.
+Cloud Temple define, aplica, opera, supervisa, realiza revisiones, mantiene y mejora el proceso y las medidas relacionadas con el tratamiento de datos y la seguridad de la información basándose en un enfoque de riesgos.
+
+La privacidad de las personas será así siempre respetada.
 
 
 ## Introducción
 
-Toda la información que procesamos, conservamos o transferimos sobre las personas debe estar protegida de manera adecuada contra accesos no autorizados o modificaciones. Al obtener, conservar para el procesamiento o transferir la información sobre las personas, respetamos sus deseos y su derecho a la privacidad en todo momento.
+Toda la información que procesamos, conservamos o transferimos sobre las personas debe ser protegida de manera adecuada contra accesos no autorizados o modificaciones. Al obtener, conservar para el procesamiento o transferir información sobre las personas, respetamos sus deseos y su derecho a la privacidad en todo momento.
 
-Cloud Temple asegura el respeto de la integridad, la confidencialidad y la disponibilidad de la información generada en el procesamiento de datos personales: Cloud Temple debe asegurar la protección de sus recursos de información contra amenazas internas o externas, accidentales o deliberadas.
+Cloud Temple se asegura del respeto a la integridad, confidencialidad y disponibilidad de la información generada en el procesamiento de datos personales: Cloud Temple debe asegurar la protección de sus recursos de información frente a amenazas internas o externas, accidentales o deliberadas.
 
 ## Los objetivos de protección de la privacidad
 - Asegurar la continuidad de las actividades cruciales de Cloud Temple
-- Asegurar que toda la información procesada, conservada, intercambiada o publicada por Cloud Temple sea de una integridad absoluta
-- Asegurar que toda la información relacionada con nuestros clientes será supervisada y conservada conforme a los procedimientos para mantener una confidencialidad apropiada
-- Asegurar que la información relacionada con las personas se maneje de manera coherente con nuestros principios de protección de la privacidad y respetuosa con los derechos de los individuos.
+- Asegurar que toda la información procesada, conservada, intercambiada o publicada por Cloud Temple tenga una integridad absoluta
+- Asegurar que toda información relativa a nuestros clientes será supervisada y conservada conforme a los procedimientos de mantenimiento de una confidencialidad apropiada
+- Asegurar que la información relativa a las personas se maneje de manera coherente con nuestros principios de protección de la privacidad y respetuosa de los derechos de los individuos.
 
 ## Principios de protección de la privacidad
-- Todo el personal será informado y responsable del respeto de los requisitos en materia de protección de la privacidad pertinentes a su papel.
-- Se tomarán disposiciones para financiar medidas de protección de la privacidad pertinentes en los procesos operativos y de gestión.
-- Los riesgos durante el procesamiento de los datos serán supervisados y se tomarán medidas cuando los cambios resulten en riesgos que no sean aceptables.
-- Los criterios de clasificación de riesgo y aceptabilidad se encuentran en el marco organizacional de la política de protección de la privacidad.
-- No se tolerarán situaciones que puedan poner a la organización en violación de las leyes y regulaciones.
+- Todo el personal será informado y responsable del cumplimiento de los requisitos en materia de protección de la privacidad relevante a su rol.
+- Se tomarán disposiciones para financiar medidas de protección de la privacidad relevantes en los procesos operativos y de gestión.
+- Se supervisarán los riesgos durante el procesamiento de datos y se tomarán medidas cuando los cambios resulten en riesgos que no son aceptables.
+- Los criterios de clasificación de riesgos y aceptabilidad se encuentran en el marco organizacional de la política de protección de la privacidad.
+- Situaciones que podrían colocar a la organización en violación de leyes y regulaciones no serán toleradas.
 
 ## Responsabilidades
 
 La Dirección General es responsable de asegurar que el respeto a la privacidad se trate de manera adecuada dentro de la empresa.
 
-Cada director es responsable de asegurar que las personas que trabajan bajo su mando protejan la información en conformidad con las normas de la organización.
+Cada director es responsable de garantizar que las personas que trabajan bajo su mando protejan la información en conformidad con las normas de la organización.
 
 Todos los miembros del personal tienen responsabilidades de protección de la privacidad que forman parte de su trabajo.
 
@@ -52,17 +53,17 @@ Se cumplirán los requisitos legales, regulatorios y contractuales de Cloud Temp
 
 ## Traducción de la información
 
-Las traducciones al inglés, español, italiano y alemán de esta documentación se realizan de manera automática.
+Las traducciones en inglés, español, italiano y alemán de esta documentación se realizan de forma automática.
 
-A pesar de los esfuerzos razonables realizados para proporcionar una traducción de calidad, Cloud Temple no puede garantizar la exactitud de la información que contiene. 
-Para cualquier pregunta relacionada con esto, por favor refiérase a la versión francesa de la información.
+A pesar de los esfuerzos razonables para proporcionar una traducción de calidad, Cloud Temple no puede garantizar la exactitud de la información que contiene.
+Para cualquier consulta al respecto, por favor refiérase a la versión francesa de la información.
 
-## Avisos legales
+## Menciones legales
 
 ### Persona editora de este sitio web
-Razón social: __CLOUD TEMPLE__, Sociedad por Acciones Simplificadas de Accionista Único
+Razón social: __CLOUD TEMPLE__, Sociedad por Acciones Simplificadas con Accionista Único
 
-Dirección de la sede social: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux - SPACES.
+Dirección de la sede social: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
 Teléfono (central): 01 41 91 77 77
 
@@ -74,35 +75,34 @@ Capital social: 13 174 890 euros
 
 Director de la publicación: Franck DUBRAY
 
-Alojamiento: Cloud Temple
+Hosting: Cloud Temple
 
-Dirección: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux - SPACES.
+Dirección: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
 Teléfono (central): 01 41 91 77 77
 
-### Recopilación de datos
-Cloud Temple se compromete a que la recopilación y el procesamiento de sus datos, realizados a partir del sitio __docs.cloud-temple.com__, 
-sean conformes al Reglamento General de Protección de Datos (RGPD) y a la ley de Informática y Libertades.
+### Recogida de datos
+Cloud Temple se compromete a que la recogida y tratamiento de sus datos, realizados a partir del sitio __docs.cloud-temple.com__,
+sean conformes con el Reglamento General de Protección de Datos (RGPD) y con la ley Informática y Libertades.
 
-Para cualquier información o ejercicio de sus derechos Informática y Libertades sobre el procesamiento de datos personales 
-gestionados por Cloud Temple, puede contactar con el delegado de protección de datos (DPO):
+Para cualquier información o ejercicio de sus derechos Informática y Libertades sobre el tratamiento de datos personales
+gestionados por Cloud Temple, puede contactar al delegado de la protección de datos (DPO):
 
 por correo electrónico a: __contact@cloud-temple.com__
 
-Para ejercer sus derechos sobre los datos que le conciernen, debe insertar una copia de un documento de identidad en curso de validez (carnet de identidad o pasaporte) en archivo adjunto en el siguiente formato: GIF, JPG, PNG, PDF, máximo 2MB.
+Para ejercer sus derechos sobre los datos que le conciernen, debe adjuntar una copia de un documento de identidad válido (carnet de identidad o pasaporte) adjunto en el formato siguiente: GIF, JPG, PNG, PDF, máximo 2MB.
 
 por correo postal a la siguiente dirección:
 
-*__Cloud Temple a la atención del señor delegado de protección de datos (DPO) 
-Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux - SPACES.__*
+*__Cloud Temple a la atención de señor delegado de protección de datos (DPO) Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.__*
 
-Para ejercer sus derechos sobre los datos que le conciernen, debe insertar una copia de un documento de identidad en curso de validez (carnet de identidad o pasaporte).
+Para ejercer sus derechos sobre los datos que le conciernen, debe adjuntar una copia de un documento de identidad válido (carnet de identidad o pasaporte).
 
 ### Datos personales y cookies
-___Este sitio no recopila ningún dato de carácter personal. La herramienta de medición de audiencia que utilizamos está configurada 
-de manera que la información recopilada sea anonimizada.___
+___Este sitio no recopila ningún dato de carácter personal. La herramienta de medición de audiencia que utilizamos está configurada
+de manera que la información recopilada sea anónima.___
 
-Las cookies depositadas en su ordenador cuando lo consulta nos permiten conocer el número de visitas y las páginas más consultadas, 
-sin permitir identificarle personalmente.
+Las cookies depositadas en su computadora cuando lo consulta nos permiten conocer el número de visitas y las páginas más consultadas,
+sin permitir identificarlo personalmente.
 
-Por lo tanto, estamos en conformidad con la regulación de la CNIL y exentos de autorización previa.
+Así cumplimos con la regulación de la CNIL y estamos exentos de autorización previa.

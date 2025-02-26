@@ -4,6 +4,7 @@ tags:
   - privacy
 ---
 
+
 ## Contexte
 
 La politique de protection des données existe pour assurer un niveau de sécurité adéquat en termes de confidentialité, de disponibilité et d’intégrité des ressources en information et en données personnelles vis-à-vis de toutes les menaces qui pourraient les affecter.

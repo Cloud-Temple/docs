@@ -1,10 +1,10 @@
 ---
-title: Metrologie
+title: Metrología
 ---
 
 ## Concept
 
-La mayoría de los clientes __Cloud Temple__ disponen de herramientas de visualización, monitoreo y metrología para el seguimiento de sus operaciones. 
+La mayoría de los clientes __Cloud Temple__ disponen de herramientas de visualización, monitoreo y metrología para el seguimiento de sus operaciones.
 
 La filosofía de la consola Shiva es permitir el acceso a los datos para integrarse en este conjunto de herramientas a través de un proxy prometheus integrado.
 

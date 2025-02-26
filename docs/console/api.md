@@ -2,6 +2,7 @@
 title: Documentation API
 ---
 
+
 ## Clés API
 
 La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,

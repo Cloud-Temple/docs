@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: Quickstart
 ---
 
 ## Regionale private Netzwerke
@@ -37,7 +37,7 @@ Alle möglichen Aktionen für Ihre Netzwerke finden Sie im Menü __*Actions*__ f
 Im Menü __*Actions*__ können Sie einfach die Verbreitung eines Netzwerks auf Ihre verschiedenen Cluster innerhalb eines Tenants anzeigen lassen.
 Wählen Sie die Option *"Visualiser la propagation"*:
 
-![](images/shiva_network_004.jpg) 
+![](images/shiva_network_004.jpg)
 
 #### Änderung der Verbreitung
 

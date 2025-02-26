@@ -4,55 +4,54 @@ title: Documentation API
 
 ## Chiavi API
 
-La __chiave API__ consente di autenticarsi quando si desidera effettuare richieste all'API. La generazione di una chiave API, chiamata anche __Personal Access Token (PAT)__,
-è un modo sicuro per connettersi alle API Shiva senza passare attraverso un'interfaccia grafica. Ognuno di questi token è legato a un tenant e all'utente che l'ha creato.
+La __chiave API__ permette di autenticarsi quando si vogliono fare richieste all'API. La generazione di una chiave API, chiamata anche __Personal Access Token (PAT)__, è un modo sicuro di collegarsi alle API di Shiva senza passare attraverso un'interfaccia grafica. Ognuno di questi token è legato a un tenant e all'utente che lo ha creato.
 
-La creazione di questo token avviene dal tuo account. È possibile generare più chiavi e configurare per ciascuna le autorizzazioni entro il limite dei tuoi diritti.
+La creazione di questo token avviene dal proprio account. È possibile generare più chiavi e configurare le autorizzazioni per ciascuna nel limite dei propri diritti.
 
-Per creare una chiave API, è sufficiente __fare clic sul proprio profilo__:
+Per creare una chiave API, è sufficiente __cliccare sul proprio profilo__:
 
 ![](images/shiva_profil_001.png)
 
-Nel menu del profilo, cliccare su __'Jeton d'accès personnel'__
+Nel menu del profilo, cliccare su __'Token di accesso personale'__
 
 ![](images/shiva_profil_003.png)
 
-Apparirà quindi sullo schermo l'elenco di tutte le chiavi API create per questo utente in questo tenant. Cliccare su __'Nouveau access token personnel'__
+A questo punto, viene visualizzato l'insieme delle chiavi API create per quell'utente all'interno di quel tenant. Cliccare su __'Nuovo token di accesso personale'__
 
 ![](images/shiva_profil_002.png)
 
-A questo punto devi:
+Poi è necessario:
 
 - Indicare il nome di questo nuovo token,
-- Indicare una data di scadenza (validità massima di 12 mesi),
-- Scegliere le autorizzazioni associate al token.
+- Indicare una data di scadenza (massimo 12 mesi di validità),
+- Scegliere i permessi associati al token.
 
-I dettagli riguardanti il tuo token vengono quindi visualizzati. __Attenzione, non è più possibile accedervi successivamente.__
+I dettagli riguardanti il tuo token verranno quindi visualizzati. __Attenzione, non sarà più possibile accedervi successivamente.__
 
 Se non annoti queste informazioni, dovrai distruggere e ricreare il token.
 
 ![](images/shiva_profil_004.png)
 
-Per questioni di sicurezza, si consiglia di creare più token, ognuno con una specifica utilità (un token per ogni applicazione o processo aziendale), piuttosto che crearne uno con tutti i diritti.
+Per motivi di sicurezza, si raccomanda di creare più token, ciascuno con un'utilità specifica (un token per ogni applicazione o processo aziendale) piuttosto che creare un unico token con tutti i diritti.
 
-Successivamente vedrai il nuovo token creato e la sua futura data di scadenza.
+Vedi quindi il nuovo token creato e la sua futura data di scadenza.
 
 ![](images/shiva_profil_005.png)
 
 ## Accesso al portale API
 
-La documentazione OpenAPI 3.0 (Swagger) delle API della console Cloud Temple è disponibile direttamente nell'applicazione:
+La documentazione OpenAPI 3.0 (Swagger) delle API della console Cloud Temple è disponibile direttamente nell’applicazione:
 
 ![](images/shiva_api_001.png)
 
-L'accesso alle API richiede l'autenticazione. Una volta autenticati, tutte le operazioni devono avere l'header
-__'Authorization'__ con il bearer access token ottenuto durante la fase di autenticazione.
+L'accesso alle API richiede autenticazione. Una volta autenticati, tutte le operazioni devono avere l'header
+__'Authorization'__ con il bearer access token ottenuto nella fase di autenticazione.
 
-L'URL dei punti di accesso è fornito direttamente in __Swagger__ (nell'oggetto "Servers" di ogni pagina APIs).
+L'URL dei punti di accesso è fornito direttamente in __Swagger__ (nell'oggetto "Servers" di ciascuna pagina delle API).
 
 ## Le attività
 
-Il monitoraggio delle richieste di tipo scrittura (POST, PUT, PATCH, DELETE) è garantito tramite la gestione delle attività. Ogni richiesta di questo tipo genera automaticamente un'attività associata. Un codice di stato HTTP 201 conferma la creazione riuscita dell'attività. L'identificativo unico di questa attività è restituito nelle intestazioni della risposta, sotto la chiave 'Location'.
+Il monitoraggio delle richieste di tipo scrittura (POST, PUT, PATCH, DELETE) è garantito tramite la gestione delle attività. Ogni richiesta di questo tipo genera automaticamente un'attività associata. Un codice di stato HTTP 201 conferma la creazione avvenuta con successo dell'attività. L'identificativo unico di questa attività viene restituito negli header della risposta, sotto la chiave 'Location'.
 
 ![](images/shiva_api_002.png)
 
@@ -60,7 +59,7 @@ Una volta recuperato l'identificativo, è possibile accedere ai dettagli dell'at
 
 ![](images/shiva_api_003.png)
 
-Il contenuto dell'attività include tutte le informazioni essenziali per identificare l'operazione, la data di esecuzione e lo stato di avanzamento. Ecco il modello di un'attività:
+Il contenuto dell'attività include tutte le informazioni essenziali per identificare l'operazione, la sua data di esecuzione e il suo stato di avanzamento. Ecco il modello di un'attività:
 
 ```
     {
@@ -82,13 +81,13 @@ Il contenuto dell'attività include tutte le informazioni essenziali per identif
 }
 ```
 
-L'oggetto **state** può avere forme diverse a seconda dello stato dell'attività, ovvero:
+L'oggetto **state** può assumere diverse forme a seconda dello stato dell'attività, ovvero:
 
-**waiting**, stato prima che l'operazione abbia inizio:
+**waiting**, stato prima che l'operazione sia iniziata:
 ```
     waiting: {}
 ```
-**running**, stato durante l'esecuzione dell'operazione:
+**running**, stato quando l'operazione è in corso:
 ```
     running: {
     status: string;
@@ -119,46 +118,39 @@ L'oggetto **state** può avere forme diverse a seconda dello stato dell'attivit�
 
 ### Perché dei limiti?
 
-La console Cloud Temple definisce __dei limiti sul volume delle richieste__ che un utente può indirizzare
-all'API in un determinato arco di tempo. L'introduzione di questi limiti di frequenza è una misura comune nella gestione delle API, adottata per diversi motivi essenziali:
+La console Cloud Temple definisce __dei limiti sul volume di richieste__ che un utente può inviare
+all'API in un determinato periodo. L'istituzione di questi limiti di frequenza è una misura comune nella gestione delle API, adottata per molteplici motivi essenziali:
 
-- **Prevenzione degli abusi**: Questi limiti contribuiscono a preservare l'integrità dell'API prevenendo usi
-abusivi o malevoli che potrebbero comprometterne il funzionamento.
-- **Assicurazione della qualità del servizio**: Regolando l'accesso all'API, noi garantiamo una distribuzione equa
-delle risorse, permettendo così a tutti gli utenti di beneficiare di un'esperienza stabile e performante.
+- **Prevenzione degli abusi**: Questi limiti contribuiscono a salvaguardare l'integrità dell'API prevenendo usi abusivi o maldestri che potrebbero compromettere il suo funzionamento.
+- **Assicurazione della qualità del servizio**: Regolando l'accesso all'API, si garantisce una distribuzione equa delle risorse, permettendo così a tutti gli utenti di beneficiare di un'esperienza stabile e performante.
 
-Prendiamo l'esempio di uno script mal progettato o inefficiente che tenta ripetutamente chiamate all'API,
-rischiando di saturare le risorse e degradare le prestazioni. Stabilendo dei limiti sulle richieste,
-preveniamo queste situazioni e garantiamo il mantenimento di __un servizio fluido e ininterrotto__ per tutti i nostri clienti.
+Prendiamo l’esempio di uno script mal progettato o inefficiente che tenta chiamate ripetitive all’API,
+rischiando di saturare le risorse e degradare le prestazioni. Stabilendo dei limiti di richiesta,
+preveniamo queste situazioni e assicuriamo il mantenimento di un__servizio fluido e senza interruzioni__ per l'intera clientela.
 
-### Quali sono i limiti di frequenza per l'API della console Cloud Temple?
+### Quali sono i limiti di tasso per l'API della console Cloud Temple?
 
-Applichiamo restrizioni quantitative sulle interazioni degli utenti con la console
-per ogni prodotto.
+Applichiamo restrizioni quantitative sulle interazioni degli utenti con la console per ogni prodotto.
 
-I limiti sono definiti in __richieste per secondo (r/s) e per IP sorgente__. Oltre il limite, il sistema risponderà
-con un codice di errore HTTP 429, segnalando che il limite di richieste autorizzate è stato superato.
+I limiti sono definiti in __richieste per secondo (r/s) e per IP sorgente__. Oltre la soglia limite, il sistema risponderà con un codice errore HTTP 429, segnalando che il limite di richieste autorizzate è stato superato.
 
 Ecco i limiti definiti:
 
-| Prodotto             | Limite       |
-|----------------------|--------------|
-| Console Cloud Temple | 60 r/s       |
-| Identità (IAM)       | 60 r/s       |
-| IaaS - Calcolo       | 60 r/s       |
-| IaaS - Storage       | 20 r/s       |
-| IaaS - Backup        | 60 r/s       |
-| PaaS - S3            | 60 r/s       |
-| PaaS - Openshift     | 60 r/s       |
-| Rete                 | 60 r/s       |
-| Ospitalità           | 60 r/s       |
+| Prodotto                 | Soglia limite |
+|-------------------------|--------------|
+| Console Cloud Temple    | 60 r/s       |
+| Identità (IAM)          | 60 r/s       |
+| IaaS - Calcolo          | 60 r/s       |
+| IaaS - Archiviazione    | 20 r/s       |
+| IaaS - Backup           | 60 r/s       |
+| PaaS - S3               | 60 r/s       |
+| PaaS - Openshift        | 60 r/s       |
+| Rete                    | 60 r/s       |
+| Hosting                 | 60 r/s       |
 
-### Come funzionano i limiti di frequenza?
+### Come funzionano i limiti di tasso?
 
-Se il numero di richieste inviate a un punto API supera il limite autorizzato, il punto API reagirà restituendo
-__un codice di risposta HTTP 429__. Questo codice indica che l'utente ha superato il numero di richieste permesse.
-Quando ciò accade, il punto API fornirà anche un oggetto JSON come risposta,
-che conterrà informazioni dettagliate sul limite applicato:
+Se il numero di richieste inviate a un punto API supera il limite autorizzato, il punto API reagirà restituendo __un codice di risposta HTTP 429__. Questo codice indica che l'utente ha superato il numero di richieste consentite. Quando ciò si verifica, il punto API fornirà anche un oggetto JSON in risposta, che conterrà informazioni dettagliate sulla limitazione applicata:
 ```
     {
         "error": {
@@ -167,30 +159,22 @@ che conterrà informazioni dettagliate sul limite applicato:
         }
     }
 ```
-### Come evitare di effettuare troppe richieste?
+### Come evitare di fare troppe richieste?
 
-Si consiglia di limitare il numero di chiamate all'API effettuate dalla propria automazione per rimanere al di sotto
-del limite di frequenza stabilito per l'endpoint.
+Si raccomanda di limitare il numero di chiamate API effettuate dalla propria automazione in modo da rimanere al di sotto dei limiti di tasso fissati per il punto finale.
 
-Questo accade spesso quando più richieste vengono eseguite in parallelo,
-utilizzando più processi o thread.
+Questa situazione si verifica spesso quando più richieste vengono eseguite in parallelo, utilizzando più processi o thread.
 
-Esistono diversi modi per migliorare l'efficienza della tua automazione, inclusi l'uso di meccanismi
-di __caching__ e l'introduzione di __un sistema di ripetizione con attenuazione progressiva__. Questo metodo prevede una breve pausa quando si incontra un errore di limite di frequenza, quindi si riprova la richiesta.
-Se la richiesta fallisce di nuovo, la durata della pausa aumenta progressivamente fino a quando la richiesta non riesce
-o fino a quando non si raggiunge un massimo di tentativi.
+Esistono diversi modi per migliorare l'efficienza dell'automazione, incluso l'uso di meccanismi di __caching__ e l'implementazione di un __sistema di riprova con attenuazione progressiva__. Questo metodo implica una breve attesa quando si incontra un errore di limite di tasso, per poi riprovare la richiesta. Se la richiesta fallisce nuovamente, la durata dell'attesa viene aumentata progressivamente fino a quando la richiesta non riesce o fino a quando non viene raggiunto un numero massimo di tentativi.
 
 Questo approccio presenta numerosi vantaggi:
 
-- __L'attenuazione progressiva__ garantisce che i primi tentativi vengano ripetuti rapidamente, prevedendo pause più lunghe in caso di fallimenti ripetuti.
-- L'aggiunta di __una variazione casuale__ alla pausa aiuta a evitare che tutti i tentativi avvengano simultaneamente.
+- __L'attenuazione progressiva__ garantisce che i primi tentativi vengano riprodotti rapidamente, prevedendo tempi più lunghi in caso di fallimenti ripetuti.
+- L'aggiunta di una __variazione casuale__ all'attesa contribuisce a evitare che tutti i tentativi si verifichino simultaneamente.
 
-È importante notare che __le richieste infruttuose non influiscono sul limite di frequenza__.
-Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione praticabile a lungo termine,
-poiché questo comportamento potrebbe essere modificato in futuro. Pertanto, ti consigliamo di non dipendere esclusivamente da questo meccanismo.
+È importante notare che __le richieste infruttuose non influiscono sul proprio limite di tasso__. Tuttavia, inviare in modo continuo una richiesta potrebbe non essere una soluzione praticabile a lungo termine, poiché questo comportamento potrebbe essere modificato in futuro. Pertanto, si consiglia di non dipendere esclusivamente da questo meccanismo.
 
-Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python
-sono un buon punto di partenza per implementare strategie di attenuazione.
+Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python sono buoni punti di partenza per implementare strategie di attenuazione.
 
 ## Ciclo di vita di un endpoint API
 
@@ -198,7 +182,6 @@ Le informazioni sull'evoluzione degli endpoint dell'API sono disponibili nelle n
 
 ![](images/shiva_api_004.jpg)
 
-Troverai l'elenco degli endpoint che sono deprecati attività per attività.
+Troverai l'elenco di endpoint che sono deprecati attività per attività.
 
-Inoltre, gli endpoint che sono deprecati appariranno in questo modo sulle nostre API:
-__~~this/is/an/endpoint~~__ insieme a una data di rimozione definitiva nella descrizione.
+Inoltre, gli endpoint deprecati appariranno in questo modo sulle nostre API: __~~this/is/an/endpoint~~__ insieme a una data di rimozione definitiva nella descrizione.

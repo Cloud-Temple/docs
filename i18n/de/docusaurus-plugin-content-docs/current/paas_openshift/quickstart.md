@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: Quickstart
 ---
 
 ## Bereitstellen einer Redhat OpenShift-Plattform in Ihrem Tenant
@@ -36,13 +36,13 @@ Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, 
 
 - __URL Shiva Tenant__:
   [https://**Ihr-Tenant-ID**.shiva.cloud-temple.com/](https://**Ihr-Tenant-ID**.shiva.cloud-temple.com/)
-  
+
 - __OpenShift UI__:
   [https://ui-ocp01-**Ihr-ID**.paas.cloud-temple.com/](https://ui-ocp01-**Ihr-ID**.paas.cloud-temple.com/)
-  
+
 - __Externe API__:
   [https://api-ocp01-**Ihr-ID**.paas.cloud-temple.com](https://api-ocp01-**Ihr-ID**.paas.cloud-temple.com)
-  
+
 - __GitOps (ARGOCD)__:
   [https://gitops-ocp01-**Ihr-ID**.paas.cloud-temple.com/applications](https://gitops-ocp01-**Ihr-ID**.paas.cloud-temple.com/applications)
 

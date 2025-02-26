@@ -1,651 +1,635 @@
 ---
-title: Conditions Générales de Vente et d'Utilisation (CGVU)
+title: Allgemeine Verkaufs- und Nutzungsbedingungen
 ---
 
-**Table des matières**
+**Inhaltsverzeichnis**
 
-- [1. Cadre](#1-cadre)
-- [2. Préambule](#2-préambule)
-- [3. Définitions](#3-définitions)
-- [4. Objet](#4-objet)
-- [5. Disposition générale](#5-disposition-générale)
-- [6. Commande des services](#6-commande-des-services)
-  - [6.1. Compte CLIENT](#61-compte-client)
-  - [6.2. Activation du compte CLIENT](#62-activation-du-compte-client)
-  - [6.3. Commande](#63-commande)
-- [7. Durée du contrat](#7-durée-du-contrat)
-- [8. Périmètre des services](#8-périmètre-des-services)
-- [9. Services optionnels](#9-services-optionnels)
-- [10. Conditions d'utilisation des services](#10-conditions-dutilisation-des-services)
-  - [10.1. Respect des conditions de service](#101-respect-des-conditions-de-service)
-  - [10.2. Choix des services](#102-choix-des-services)
-  - [10.3. Connexion](#103-connexion)
-  - [10.4. Moyens d'authentification](#104-moyens-dauthentification)
-  - [10.5. Contenus](#105-contenus)
-  - [10.6. Respect des lois, réglementations et règles déontologiques](#106-respect-des-lois-réglementations-et-règles-déontologiques)
-  - [10.7. Suspension de service](#107-suspension-de-service)
-  - [10.8. Evolution des services](#108-evolution-des-services)
-  - [10.9. Propriété intellectuelle et droit d'utilisation](#109-propriété-intellectuelle-et-droit-dutilisation)
-  - [10.10. Contrôle à l'exportation](#1010-contrôle-à-lexportation)
-  - [10.11. Produits tiers](#1011-produits-tiers)
-  - [10.12. Continuité et réversibilité des services](#1012-continuité-et-réversibilité-des-services)
-  - [10.13. Test d'intrusion](#1013-test-dintrusion)
-- [11. Collaboration](#11-collaboration)
-- [12. Responsabilité](#12-responsabilité)
-  - [12.1. Capacité](#121-capacité)
-  - [12.2. Responsabilité du Prestataire](#122-responsabilité-du-prestataire)
-  - [12.3. Responsabilité du CLIENT](#123-responsabilité-du-client)
+- [1. Rahmen](#1-rahmen)
+- [2. Präambel](#2-präambel)
+- [3. Definitionen](#3-definitionen)
+- [4. Gegenstand](#4-gegenstand)
+- [5. Allgemeine Bestimmung](#5-allgemeine-bestimmung)
+- [6. Bestellung der Dienstleistungen](#6-bestellung-der-dienstleistungen)
+  - [6.1. KUNDEN-Konto](#61-kunden-konto)
+  - [6.2. Aktivierung des KUNDEN-Kontos](#62-aktivierung-des-kunden-kontos)
+  - [6.3. Bestellung](#63-bestellung)
+- [7. Vertragsdauer](#7-vertragsdauer)
+- [8. Leistungsumfang](#8-leistungsumfang)
+- [9. Optionale Dienstleistungen](#9-optionale-dienstleistungen)
+- [10. Nutzungsbedingungen der Dienstleistungen](#10-nutzungsbedingungen-der-dienstleistungen)
+  - [10.1. Einhaltung der Servicebedingungen](#101-einhaltung-der-servicebedingungen)
+  - [10.2. Auswahl der Dienstleistungen](#102-auswahl-der-dienstleistungen)
+  - [10.3. Verbindung](#103-verbindung)
+  - [10.4. Authentifizierungsmittel](#104-authentifizierungsmittel)
+  - [10.5. Inhalte](#105-inhalte)
+  - [10.6. Einhaltung von Gesetzen, Vorschriften und ethischen Regeln](#106-einhaltung-von-gesetzen-vorschriften-und-ethischen-regeln)
+  - [10.7. Dienstunterbrechung](#107-dienstunterbrechung)
+  - [10.8. Weiterentwicklung der Dienstleistungen](#108-weiterentwicklung-der-dienstleistungen)
+  - [10.9. Geistiges Eigentum und Nutzungsrecht](#109-geistiges-eigentum-und-nutzungsrecht)
+  - [10.10. Exportkontrolle](#1010-exportkontrolle)
+  - [10.11. Drittprodukte](#1011-drittprodukte)
+  - [10.12. Kontinuität und Umkehrbarkeit der Dienstleistungen](#1012-kontinuität-und-umkehrbarkeit-der-dienstleistungen)
+  - [10.13. Penetrationstests](#1013-penetrationstests)
+- [11. Zusammenarbeit](#11-zusammenarbeit)
+- [12. Haftung](#12-haftung)
+  - [12.1. Fähigkeit](#121-fähigkeit)
+  - [12.2. Haftung des Anbieters](#122-haftung-des-anbieters)
+  - [12.3. Haftung des KUNDEN](#123-haftung-des-kunden)
   - [12.4. Garantie](#124-garantie)
-  - [12.5. Tiers](#125-tiers)
-- [13. Force majeure](#13-force-majeure)
-- [14. Conditions financières](#14-conditions-financières)
-  - [14.1. Tarifs appliqués](#141-tarifs-appliqués)
-  - [14.2. Changement de prix](#142-changement-de-prix)
-  - [14.3. Facturation](#143-facturation)
-  - [14.4. Défaut et retard de paiement](#144-défaut-et-retard-de-paiement)
-  - [14.5. Contestation](#145-contestation)
-- [15. Pénalités](#15-pénalités)
-  - [15.1. Principe](#151-principe)
-  - [15.2. Calcul des pénalités](#152-calcul-des-pénalités)
-- [16. Résiliation](#16-résiliation)
-  - [16.1. Résiliation par convenance](#161-résiliation-par-convenance)
-  - [16.2. Résiliation pour manquement](#162-résiliation-pour-manquement)
-  - [16.3. Résiliation sans faute](#163-résiliation-sans-faute)
-- [17. Réversibilité](#17-réversibilité)
-- [18. Confidentialité](#18-confidentialité)
-- [19. Sous traitance](#19-sous-traitance)
-- [20. Cession du contrat](#20-cession-du-contrat)
-- [21. Réglementation en matière de droit du travail](#21-réglementation-en-matière-de-droit-du-travail)
-- [22. Ethique et responsabilité sociale](#22-ethique-et-responsabilité-sociale)
-- [23. Propriété intellectuelle](#23-propriété-intellectuelle)
-- [24. Non solicitation de personnel](#24-non-solicitation-de-personnel)
-- [25. Signes distinctifs des parties](#25-signes-distinctifs-des-parties)
-- [26. Données à caractère personnel](#26-données-à-caractère-personnel)
-- [27. Assurance](#27-assurance)
-- [28. Attribution de compétence et droit applicable](#28-attribution-de-compétence-et-droit-applicable)
+  - [12.5. Dritte](#125-dritte)
+- [13. Höhere Gewalt](#13-höhere-gewalt)
+- [14. Finanzielle Bedingungen](#14-finanzielle-bedingungen)
+  - [14.1. Angewandte Tarife](#141-angewandte-tarife)
+  - [14.2. Preisänderung](#142-preisänderung)
+  - [14.3. Rechnungsstellung](#143-rechnungsstellung)
+  - [14.4. Zahlungsverzug und Ausfall](#144-zahlungsverzug-und-ausfall)
+  - [14.5. Anfechtung](#145-anfechtung)
+- [15. Strafen](#15-strafen)
+  - [15.1. Prinzip](#151-prinzip)
+  - [15.2. Berechnung der Strafen](#152-berechnung-der-strafen)
+- [16. Kündigung](#16-kündigung)
+  - [16.1. Kündigung aus Zweckmäßigkeit](#161-kündigung-aus-zweckmäßigkeit)
+  - [16.2. Kündigung wegen Vertragsverletzung](#162-kündigung-wegen-vertragsverletzung)
+  - [16.3. Kündigung ohne Verschulden](#163-kündigung-ohne-verschulden)
+- [17. Umkehrbarkeit](#17-umkehrbarkeit)
+- [18. Vertraulichkeit](#18-vertraulichkeit)
+- [19. Unterauftragsvergabe](#19-unterauftragsvergabe)
+- [20. Vertragsabtretung](#20-vertragsabtretung)
+- [21. Arbeitsrechtliche Vorschriften](#21-arbeitsrechtliche-vorschriften)
+- [22. Ethik und soziale Verantwortung](#22-ethik-und-soziale-verantwortung)
+- [23. Geistiges Eigentum](#23-geistiges-eigentum)
+- [24. Keine Abwerbung von Personal](#24-keine-abwerbung-von-personal)
+- [25. Unterscheidungsmerkmale der Parteien](#25-unterscheidungsmerkmale-der-parteien)
+- [26. Personenbezogene Daten](#26-personenbezogene-daten)
+- [27. Versicherung](#27-versicherung)
+- [28. Gerichtsstand und anwendbares Recht](#28-gerichtsstand-und-anwendbares-recht)
 
 
-## 1. Cadre
+## 1. Rahmen
 
 |           |                    |
 | --------- | ------------------ |
-| Référence | CT.AM.JUR.CGVU 2.0 |
-| Date      | 13 mars 2024       |
+| Referenz | CT.AM.JUR.CGVU 2.0 |
+| Datum      | 13. März 2024       |
 
-## 2. Préambule
+## 2. Präambel
 
-Les présentes Conditions Générales de Vente et d'Utilisation (ci-après désignées par l'acronyme « CGVU »), conjointement avec l'annexe intitulée Convention de Services, 
-constituent un contrat (ci-après le « **Contrat** ») établi entre Cloud Temple, une Société par Actions Simplifiée réglementée par le droit français, 
-dotée d'un capital social de 13 425 850 euros, enregistrée au Registre du Commerce et des Sociétés de Nanterre sous le numéro 825 400 336, 
-dont le siège social est situé au *Belvédère 1 – 7 cours Valmy Spaces, 92800 Puteaux, France* (ci-après désignée le « **Prestataire** »), 
-et toute entité, qu'elle soit personne physique ou morale, agissant en qualité de consommateur ou de professionnel, 
-de droit privé ou de droit public, ayant souscrit à une offre de fourniture d'Infrastructure-as-a-Service 
-conforme au Référentiel SecNumCloud (ci-après désignée le « **CLIENT** »). 
+Die vorliegenden Allgemeinen Verkaufs- und Nutzungsbedingungen (im Folgenden als „AGB“ bezeichnet) stellen zusammen mit dem Anhang
+bezeichnet als Servicevereinbarung einen Vertrag (im Folgenden der „**Vertrag**“) zwischen Cloud Temple, einer als Société par Actions Simplifiée nach französischem Recht regulierten Gesellschaft
+mit einem Kapital von 13 425 850 Euro, eingetragen im Handels- und Gesellschaftsregister von Nanterre unter der Nummer 825 400 336,
+mit Geschäftssitz in *Belvédère 1 – 7 cours Valmy Spaces, 92800 Puteaux, Frankreich* (im Folgenden der „**Anbieter**“),
+und jeder juristischen Person, sei es natürliche oder juristische Person, die als Verbraucher oder Gewerbetreibender handelt,
+sowohl nach privatem als auch nach öffentlichem Recht, die ein Angebot zur Bereitstellung von Infrastructure-as-a-Service
+gemäß dem SecNumCloud-Framework abonniert hat (im Folgenden der „**KUNDE**“).
 
-Aux fins du présent Contrat, le CLIENT et le Prestataire sont respectivement qualifiés de « Partie » lorsqu'ils sont mentionnés séparément et de « Parties » lorsqu'ils sont mentionnés conjointement.
-Il est précisé que les termes utilisés avec une majuscule dans le cadre du présent Contrat sont définis conformément aux dispositions de l'article 1, intitulé « Définitions ».
+Für die Zwecke dieses Vertrages werden der KUNDE und der Anbieter jeweils einzeln als „Partei“ und gemeinsam als „Parteien“ bezeichnet.
+Es wird klargestellt, dass die im Rahmen dieses Vertrages verwendeten Begriffe, die mit einem Großbuchstaben beginnen, gemäß den Bestimmungen von Artikel 1, „Definitionen“, definiert sind.
 
-Cette reformulation vise à clarifier et formaliser la portée et les parties prenantes du Contrat, tout en respectant les conventions et la précision requises dans le langage juridique.
+Diese Neufassung zielt darauf ab, den Umfang und die Beteiligten des Vertrages klarzustellen und zu formalisieren, während die Konventionen und die im juristischen Sprachgebrauch erforderliche Präzision eingehalten werden.
 
-__IL EST PRÉALABLEMENT RAPPELÉ CE QUI SUIT__
+__ES WIRD ZUNÄCHST DURCH FOLGENDES ERINNERT__
 
-Le Prestataire se positionne en tant qu'opérateur spécialisé dans le domaine du Cloud Computing, offrant notamment des services d'Infrastructure 
-en tant que Service (IaaS), de plateforme en tant que Service (PaaS) ainsi que des prestations de services professionnels (Professional Services). 
+Der Anbieter positioniert sich als spezialisierter Betreiber im Bereich Cloud Computing und bietet insbesondere Infrastruktur
+als Dienstleistung (IaaS), Plattform als Dienstleistung (PaaS) sowie professionelle Dienstleistungen (Professional Services) an.
 
-L'ensemble des services proposés par Cloud Temple sont disponibles à l'échelle globale pour les clients qui souscrivent aux 
-offres présentées sur leur plateforme en ligne, accessible à l'adresse suivante : https://www.cloud-temple.com.
+Alle von Cloud Temple angebotenen Dienstleistungen stehen global für die Kunden zur Verfügung, die die
+auf ihrer Online-Plattform unter der folgenden Adresse präsentierten Angebote abonnieren: https://www.cloud-temple.com.
 
-En présence de discordances entre une ou plusieurs dispositions contenues dans les documents annexes, la primauté sera accordée au document hiérarchiquement supérieur.
-La version la plus récente et officiellement approuvée d'un document l'emporte sur toutes ses versions précédentes. Ainsi,
-en cas de divergence entre une ou plusieurs dispositions au sein d'un même document, c'est la version ultérieurement validée qui prévaudra.
+Im Falle von Unstimmigkeiten zwischen einer oder mehreren Bestimmungen in den beigefügten Dokumenten wird das hierarchisch übergeordnete Dokument Vorrang haben.
+Die neueste und offiziell genehmigte Version eines Dokuments hat Vorrang vor allen vorherigen Versionen. So,
+im Falle einer Abweichung zwischen einer oder mehreren Bestimmungen innerhalb desselben Dokuments gilt die später bestätigte Version.
 
-Le fait qu’une stipulation figurant dans un document de rang inférieur ne soit pas expressément mentionnée dans le document de rang supérieur ne lui fera pas perdre sa valeur juridique.
+Das Fehlen einer ausdrücklichen Erwähnung einer Bestimmung in einem nachrangigen Dokument im übergeordneten Dokument mindert nicht dessen rechtlichen Wert.
 
-## 3. Définitions
+## 3. Definitionen
 
-Les termes figurant ci-dessous auront pour les Parties les définitions suivantes. Chaque terme débutant par une majuscule ci-après a le sens qui lui est donné dans sa définition.  
+Die unten aufgeführten Begriffe haben für die Parteien die folgenden Definitionen. Jeder hiernach großgeschriebene Begriff hat die Bedeutung, die ihm in seiner Definition gegeben wird.
 
-- **Accès** : désigne l’ensemble d’identifiants (login, mot de passe, etc.), permettant au CLIENT de s’authentifier avant de pouvoir consommer et piloter des Prestations. Les Accès sont dédiés à un compte précis et ne doivent pas être partagées par le CLIENT.
-- **Annexe** : désigne tout document d’information complémentaire adjoint au Contrat.
-- **Bon de Commande** : désigne le document, pouvant être dématérialisé, signé ou validé lorsqu’il s’agit d’un formulaire dématérialisé, par le CLIENT aux termes duquel ce dernier accepte une proposition de service/un devis ou commande un produit ; il décrit les Conditions Particulières applicables s’il y a lieu. Aucune obligation d’aucune sorte ne saurait peser sur le Prestataire pour la réalisation de Services Professionnels ou la fourniture de Prestations sur devis sans un Bon de Commande formalisé signé par le CLIENT et ensuite accepté par le Prestataire.  
-- **Client** : désigne toute personne morale qui sera consommateur du service IAAS. Le CLIENT s’engage à fournir toutes les informations requises (notamment courriel, identité, coordonnées, informations bancaires, etc.) et s’engage à ce que l’ensemble des informations ainsi fournies soient exactes et mises à jour pendant toute la durée du Contrat. Lorsque le Compte CLIENT est utilisé par une personne agissant au nom et pour le compte du CLIENT, elle déclare et garantit au Prestataire le pouvoir et la capacité nécessaire pour représenter et engager le CLIENT dans les conditions prévues au Contrat.  
-- **Cloud Computing** (informatique dans les nuages) : désigne la mise à disposition du CLIENT de ressources mémoires, calculs, stockage et réseau fournies par des serveurs en réseaux. Lesdits serveurs, ainsi que l’Infrastructure sous-jacente, sont opérés et maintenus par le Prestataire de manière transparente pour le CLIENT. 
-- **Compte Client** : un Compte permet au CLIENT, une fois qu’il a accepté le Contrat associé à ce Compte (en acceptant les présentes CGVU), de consommer des Prestations. le Prestataire n’ouvre un Compte au CLIENT qu’après fourniture par ce dernier (i)de l’adresse email qui servira d’identifiant à ce Compte (c’est là que le Prestataire adressera les notifications relatives au Contrat associé à ce Compte), et (ii) de ses données d’identification (nom, numéro de TVA intracommunautaire ou équivalent dans le pays du CLIENT, adresse, etc.), enfin (iii) de ses informations bancaires exactes et à jour nécessaires à la facturation de ses consommations. 
-- **Convention de Services** : désigne le document décrivant, notamment, de manière technique et fonctionnelle les Services fournis par le Prestataire ; ainsi que la liste détaillée des Niveaux de Services, leur méthode de calcul et la périodicité de leur production.  
-- **Données du Client** : toutes les Données, quelle que soit leur nature, y compris les Données Personnelles, que le CLIENT stocke et Traite sur une Infrastructure mise à disposition par le Prestataire. De convention expresse, le Prestataire (i) s’interdit d’accéder aux Données du CLIENT, et (ii) conseille au CLIENT de les chiffrer sans lui remettre la clé de chiffrement ; étant précisé, enfin, (iii) que le Prestataire ne peut pas distinguer parmi les Données du CLIENT celles qui sont des Données Personnelles.  
-
-- **Données Personnelles** : jene der Daten des KUNDEN, die der Definition von „personenbezogenen Daten“ im Sinne der Datenschutzgesetzgebung entsprechen. Bei allen Fragen zu den personenbezogenen Daten (außer denjenigen, die die Systeme des KUNDEN betreffen und in seiner alleinigen Verantwortung liegen) können Sie sich an dpd@cloud-temple.com wenden.
-- **Ausrüstung** : bezeichnet jegliche Hard- oder Software, die von einer der Parteien bereitgestellt wird und Bestandteil des gehosteten und verwalteten Systems ist, das vom Anbieter im Rahmen des Vertrags betreut und Gegenstand der Dienstleistungen ist.
-- **Erweiterung des Leistungsumfangs** : bezeichnet zusätzliche nicht abonnierte Ressourcen.
-- **Iaas** : Abkürzung für Infrastructure as a Service, bezeichnet die Bereitstellung einer Infrastruktur als Service, der es ermöglicht, IT-Infrastrukturen (RAM, CPU…) zu mieten.
-- **Vorfall** : bezeichnet jedes Ereignis, das nicht Teil des Standardbetriebs einer Ausrüstung ist und das eine oder mehrere Service-Level-Verpflichtungen nicht einhält, eine Störung oder Unterbrechung eines Dienstes verursacht und/oder dem KUNDEN Schaden zufügt.
-- **Wartung** : bezeichnet alle präventiven, korrigierenden und weiterentwickelnden Wartungsdienste, die der Anbieter für das gehostete und verwaltete System übernimmt.
-- **Drittanbieter** : bezeichnet jede juristische oder natürliche Person, die Vertragspartner des KUNDEN oder des Anbieters ist und in irgendeiner Weise an der Bereitstellung eines Teils der Dienstleistungen beteiligt ist.
-- **Leistungen** : bezeichnet die Bereitstellung von Ressourcen (virtuelle Maschinen, Objekt-Speicherdienst usw.) durch den Anbieter an den KUNDEN innerhalb der Infrastruktur des Anbieters sowie gegebenenfalls damit verbundene Dienstleistungen.
-- **Produkte Dritter** : bezeichnet alle Produkte, die nicht zur Bereitstellung des Dienstes beitragen.
-- **Professionelle Dienstleistungen** (Professional Services) : bezeichnet jede vom Anbieter auf spezifischen Wunsch des KUNDEN erbrachte Leistung, um den KUNDEN-Teams Unterstützung zu bieten.
-- **Reversibilität** : bezeichnet alle Maßnahmen, die es dem KUNDEN ermöglichen, die Ausführung der im Vertrag vorgesehenen Dienstleistungen wieder aufzunehmen oder wieder aufnehmen zu lassen. Die Reversibilität umfasst auch die Rückgabe der betrieblichen Verantwortung und des Besitzes des gehosteten und verwalteten Systems und der dazugehörigen Ausrüstungen an den KUNDEN oder einen Drittanbieter.
-- **DSGVO** : bezeichnet die Verordnung (EU) 2016/679 vom 27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zum freien Datenverkehr.
-- **Dienstleistungen** : bezeichnet die vom Anbieter für den KUNDEN erbrachten Dienstleistungen, die in jedem der Vertragsdokumente detailliert sind.
-- **Service Level Agreement (oder SLA)** : bezeichnet die Verpflichtungen des Anbieters zur Servicequalität im Rahmen der Dienstleistungen.
-- **Souveränität** : bezeichnet die Verwaltungsrichtlinie sowohl der Daten als auch des Personals und der gesamten Infrastruktur des Anbieters. Die Souveränität gilt für ein Territorium. Der Anbieter garantiert dem KUNDEN, dass er sicherstellt, dass der Anbieter die geeigneten technischen und organisatorischen Maßnahmen ergreift, um unbefugten Zugriff auf die Daten zu verhindern und dass bei Verwendung einer oder mehrerer Regionen innerhalb eines Territoriums keine Daten das Territorium auf Initiative des Anbieters verlassen. Außerdem sind die Mitarbeiter des Anbieters in einem Territorium vertraglich an dieses Territorium gebunden und keine Personen aus einem anderen Territorium können ohne Genehmigung eines Mitarbeiters des betreffenden Territoriums auf die Ausrüstungen eines Territoriums zugreifen.
-- **Gehostetes und Verwaltetes System** : bezeichnet alle Ausrüstungen, auf die die Cloud-Dienste, die vom Anbieter im Rahmen des Vertrags betreut werden, angewendet werden.
-- **Benutzer** : bezeichnet eine natürliche Person, die nach einer Anfrage eines KUNDEN ein Benutzerkonto erhält und Zugang zur vom Anbieter bereitgestellten Konsole hat. Die auf diese Weise gewährten Zugriffe und Privilegien sind ausschließlich einer natürlichen Person vorbehalten und dürfen unter keinen Umständen zwischen mehreren Personen geteilt werden.
-- **Leistungseinheit** : bezeichnet eine standardisierte Messung, die zur Bewertung und Preisgestaltung der Nutzung von IT-Ressourcen auf Basis von Verbrauch oder Leistung verwendet wird.
+- **Zugang**: Bezeichnet alle Identifikationsdaten (Login, Passwort usw.), die es dem KUNDEN ermöglichen, sich zu authentifizieren, bevor er Dienstleistungen konsumieren und steuern kann. Der Zugang ist an ein bestimmtes Konto gebunden und darf vom KUNDEN nicht geteilt werden.
+- **Anhang**: Bezeichnet jedes dem Vertrag beigefügte zusätzliche Informationsdokument.
+- **Bestellschein**: Bezeichnet das Dokument, das digital oder, wenn es sich um ein digitales Formular handelt, vom KUNDEN unterzeichnet oder validiert wird, durch das dieser ein Serviceangebot/ einen Kostenvoranschlag akzeptiert oder ein Produkt bestellt; der Bestellschein beschreibt gegebenenfalls die anwendbaren Besonderen Bedingungen. Der Anbieter hat keine wie auch immer geartete Verpflichtung zur Erbringung professioneller Dienstleistungen oder zur Bereitstellung von Dienstleistungen auf Kostenvoranschlag ohne einen formalisierten Bestellschein, der vom KUNDEN unterzeichnet und anschließend vom Anbieter akzeptiert wurde.
+- **Kunde**: Bezeichnet jede juristische Person, die den IAAS-Dienst in Anspruch nehmen wird. Der KUNDE verpflichtet sich, alle erforderlichen Informationen bereitzustellen (insbesondere E-Mail, Identität, Kontaktdaten, Bankinformationen usw.) und verpflichtet sich, dass alle bereitgestellten Informationen während der gesamten Vertragsdauer korrekt und aktuell sind. Wenn das KUNDEN-Konto von einer Person im Namen und im Auftrag des KUNDEN verwendet wird, erklärt und garantiert diese gegenüber dem Anbieter, die notwendige Befugnis und Fähigkeit zu haben, den KUNDEN unter den im Vertrag vorgesehenen Bedingungen zu vertreten und zu binden.
+- **Cloud Computing**: Bezeichnet die Bereitstellung von Speicher-, Rechen-, Speicher- und Netzwerkressourcen für den KUNDEN durch vernetzte Server. Diese Server sowie die zugrunde liegende Infrastruktur werden vom Anbieter betrieben und gewartet, ohne dass der KUNDE davon betroffen ist.
+- **Kundeneinsicht**: Ein Konto ermöglicht es dem KUNDEN, nach Annahme des mit diesem Konto verbundenen Vertrags (durch Annahme dieser AGB) Dienstleistungen in Anspruch zu nehmen. Der Anbieter eröffnet ein Konto für den KUNDEN nur nach Bereitstellung von (i) der E-Mail-Adresse, die als Kennung für dieses Konto dient (dorthin sendet der Anbieter Benachrichtigungen in Bezug auf den mit diesem Konto verbundenen Vertrag), und (ii) seinen Identifikationsdaten (Name, innergemeinschaftliche Umsatzsteuer-Identifikationsnummer oder Äquivalent im Land des KUNDEN, Adresse usw.), schließlich (iii) seiner korrekten und aktuellen Bankdaten, die für die Rechnungsstellung seiner Verbrauchsdaten erforderlich sind.
+- **Servicevereinbarung**: Bezeichnet das Dokument, das unter anderem die von dem Anbieter bereitgestellten Dienstleistungen technisch und funktional beschreibt; sowie die detaillierte Liste der Service Levels, deren Berechnungsmethode und die Häufigkeit ihrer Erstellung.
+- **Kundendaten**: Alle Daten, unabhängig von ihrer Art, einschließlich personenbezogener Daten, die der KUNDE auf einer vom Anbieter bereitgestellten Infrastruktur speichert und verarbeitet. Der Anbieter verpflichtet sich ausdrücklich, (i) keine Zugriff auf Kundendaten zu haben und (ii) dem KUNDEN zu raten, sie ohne Bereitstellung des Entschlüsselungsschlüssels zu verschlüsseln; es wird auch klargestellt, dass (iii) der Anbieter nicht zwischen den Daten des KUNDEN und den personenbezogenen Daten unterscheiden kann.
+- **Personenbezogene Daten**: jene Daten des KUNDEN, die unter die Definition von „personenbezogenen Daten“ im Sinne der Datenschutzgesetzgebung fallen. Für alle Fragen im Zusammenhang mit den personenbezogenen Daten (mit Ausnahme derjenigen, die sich auf die Systeme des KUNDEN beziehen, die in seiner alleinigen Verantwortung liegen) können Sie dpd@cloud-temple.com kontaktieren.
+- **Geräte**: bezeichnet alle in der Natur von Software oder Hardware liegende Geräte, die von einer der beiden Parteien bereitgestellt werden, und die das gehostete und verwaltete System bilden, das vom Dienstleister gemäß dem Vertrag betreut und Gegenstand der Dienstleistungen ist.
+- **Erweiterung des Leistungsumfangs**: bezeichnet die nicht gebuchten zusätzlichen Ressourcen.
+- **IaaS**: Akronym für Infrastructure as a Service, es bezeichnet die Bereitstellung einer Infrastruktur als Service, die es ermöglicht, IT-Infrastrukturen (RAM, CPU usw.) zu mieten.
+- **Vorfall**: bezeichnet jedes Ereignis, das nicht Teil des normalen Betriebs eines Geräts ist und das dazu führt oder führen kann, dass eine oder mehrere Service Level Agreements nicht eingehalten werden, eine Unterbrechung oder Störung eines Dienstes und/oder einen Schaden am KUNDEN verursacht.
+- **Wartung**: bezeichnet alle vorbeugenden, korrektiven und evolutiven Wartungsdienste, die vom Dienstleister für das gehostete und verwaltete System erbracht werden.
+- **Drittanbieter**: bezeichnet jede juristische oder natürliche Person, die Vertragspartner des KUNDEN oder des Dienstleisters ist und unter irgendeinem Status an der Erbringung eines Teils der Dienstleistungen beteiligt ist.
+- **Leistungen**: bezeichnet die Bereitstellung von Ressourcen (virtuelle Maschinen, Object Storage Service usw.) durch den Dienstleister für den KUNDEN innerhalb der Infrastruktur des Dienstleisters sowie gegebenenfalls damit verbundene Dienstleistungen.
+- **Drittprodukte**: bezeichnet alle Produkte, die nicht an der Bereitstellung des Dienstes beteiligt sind.
+- **Professionelle Dienstleistungen** (Professional Services): bezeichnet alle vom Dienstleister auf spezifische Anfrage des KUNDEN erbrachten Leistungen, um eine Unterstützung der Kundenteams zu gewährleisten.
+- **Reversibilität**: bezeichnet den gesamten Prozess, der es dem KUNDEN ermöglicht, die Ausführung der im Vertrag vorgesehenen Dienstleistungen wiederaufzunehmen oder wiederaufnehmen zu lassen. Reversibilität bezeichnet auch die Rückgabe der operativen Verantwortung und des Besitzes des gehosteten und verwalteten Systems und seiner Komponenten an den KUNDEN oder einen Drittanbieter.
+- **DSGVO**: bezeichnet die Allgemeine Datenschutzverordnung (EU) 2016/679 vom 27. April 2016 zum Schutz von natürlichen Personen bei der Verarbeitung personenbezogener Daten und zum freien Datenverkehr.
+- **Dienstleistungen**: bezeichnet die vom Dienstleister für den KUNDEN erbrachten Leistungen, die in jedem der Vertragsdokumente detailliert sind.
+- **Service Level Agreement (SLA)**: bezeichnet die Qualitätsverpflichtungen des Dienstleisters im Rahmen der Leistungen.
+- **Souveränität**: bezeichnet die Verwaltungspolitik sowohl der Daten als auch des Personals und der gesamten Infrastruktur des Dienstleisters. Die Souveränität gilt für ein Gebiet. Der Dienstleister garantiert dem KUNDEN, dass er sicherstellt, dass der Dienstleister geeignete technische und organisatorische Maßnahmen umsetzt, um unbefugten Zugriff auf die Daten zu verhindern, und dass durch die Nutzung einer oder mehrerer Regionen in demselben Gebiet keine Daten auf Veranlassung des Dienstleisters dieses Gebiet verlassen. Darüber hinaus werden die Mitarbeiter des Dienstleisters in einem Gebiet vertraglich an dieses Gebiet gebunden sein, und keine Person aus einem anderen Gebiet wird ohne die Genehmigung eines Mitarbeiters des besagten Gebiets auf die Geräte eines Gebiets zugreifen können.
+- **Gehostetes und Verwaltetes System**: bezeichnet alle Geräte, auf die sich die Cloud-Dienstleistungen beziehen und die vom Dienstleister gemäß dem Vertrag betreut werden.
+- **Benutzer**: bezeichnet eine natürliche Person, die nach Anfrage eines KUNDEN ein Benutzerkonto erhält und auf die vom Dienstleister bereitgestellte Konsole zugreift. Die auf diese Weise erworbenen Zugriffsrechte und Privilegien sind ausschließlich für eine einzelne natürliche Person bestimmt und dürfen unter keinen Umständen zwischen mehreren Personen geteilt werden.
+- **Leistungseinheit**: bezeichnet eine standardisierte Messgröße zur Bewertung und Preisgestaltung der Nutzung von IT-Ressourcen, basierend auf Verbrauch oder Leistung.
 
 ## 4. Zweck
 
-Dieser Vertrag zielt darauf ab, die Bedingungen festzulegen, unter denen der Anbieter sich verpflichtet, dem KUNDEN die definierten Dienstleistungen zu erbringen, 
-wobei der Anwendungsbereich, die Ausführungsmodalitäten der Leistungen sowie die damit verbundenen finanziellen Modalitäten spezifiziert werden. 
-Der KUNDE verpflichtet sich in diesem Vertrag in eigenem Namen und für eigene Rechnung.
+Dieser Vertrag zielt darauf ab, die Bedingungen festzulegen, unter denen der Dienstleister sich verpflichtet, dem KUNDEN die definierten Dienstleistungen zu erbringen, wobei der Anwendungsbereich, die Modalitäten der Ausführung der Leistungen sowie die finanziellen Modalitäten angegeben werden. Der KUNDE verpflichtet sich zu diesem Vertrag in eigenem Namen und für eigene Rechnung.
 
-Die Zustimmung des KUNDEN zu diesem Vertrag impliziert eine vorbehaltlose Annahme der Allgemeinen Verkaufs- und Nutzungsbedingungen (AGB), 
-die der KUNDE zuvor eingesehen, verstanden und in ihrer Gesamtheit akzeptiert hat. Obwohl der KUNDE als Fachmann tätig ist, wird ihm dringend geraten, 
-die Expertise eines IT- und Netzwerkspezialisten in Anspruch zu nehmen, bevor er die vorliegenden Bedingungen akzeptiert. 
-Dieser Schritt ist unerlässlich, um eine fundierte Entscheidung bezüglich der technischen Aspekte des Vertrags zu gewährleisten, insbesondere in Bezug auf die Auswahl 
-der vorgeschlagenen Leistungseinheiten und die Bestimmung der Ressourcen, die erforderlich sind, um seine spezifischen Bedürfnisse zu erfüllen.
+Die Zustimmung des KUNDEN zu diesem Vertrag impliziert eine vorbehaltlose Annahme der Allgemeinen Verkaufs- und Nutzungsbedingungen (AGB), die der KUNDE erklärt, zuvor konsultiert, verstanden und in ihrer Gesamtheit akzeptiert zu haben. Obwohl der KUNDE als Fachmann agiert, wird ihm dringend empfohlen, die Expertise eines IT- und Netzwerkspezialisten einzuholen, bevor er die vorliegenden Bedingungen akzeptiert. Dieser Schritt ist unerlässlich, um eine fundierte Entscheidung in Bezug auf die technischen Aspekte des Vertrags zu gewährleisten, insbesondere in Bezug auf die Auswahl der angebotenen Leistungseinheiten und die Bestimmung der für die Deckung seiner spezifischen Bedürfnisse erforderlichen Ressourcen.
 
-## 5. Allgemeine Bestimmungen
+## 5. Allgemeine Bestimmung
 
-Jede Partei verpflichtet sich, keine Verpflichtungen im Namen und auf Rechnung der anderen Partei einzugehen. 
-Die Parteien haften jeweils für ihre eigenen Handlungen, Erklärungen, Verpflichtungen, Dienstleistungen, Produkte und die Handlungen ihres Personals.
+Jede Partei verpflichtet sich, keine Verpflichtungen im Namen und für Rechnung der anderen Partei einzugehen. Die Parteien bleiben einzeln verantwortlich für ihre Handlungen, Erklärungen, Verpflichtungen, Dienstleistungen, Produkte und die Handlungen ihres Personals.
 
-Falls eine Bestimmung des Vertrags aufgrund der geltenden Gesetzgebung oder einer unanfechtbaren Gerichtsentscheidung ungültig ist, 
-wird diese Bestimmung als nicht geschrieben betrachtet. Diese Ungültigkeit beeinträchtigt nicht die Gültigkeit des gesamten Vertrags und die Kraft der anderen Bestimmungen.
+Für den Fall, dass sich eine Bestimmung des Vertrags gemäß dem geltenden Recht oder einer endgültigen gerichtlichen Entscheidung als ungültig herausstellen sollte, wird diese Bestimmung als nicht geschrieben angesehen. Diese Ungültigkeit berührt nicht die allgemeine Gültigkeit des Vertrags noch die Wirksamkeit der anderen Bestimmungen.
 
-## 6. Dienstleistungsauftrag
+## 6. Dienstleistungsbestellung
 
 ### 6.1. KUNDENKonto
 
-Um auf die vom Anbieter angebotenen Dienstleistungen zuzugreifen und diese zu bestellen, muss der KUNDE über ein gültiges **KUNDENKonto** verfügen. 
-Im Rahmen der Erstellung und Verwaltung dieses Kontos verpflichtet sich der KUNDE, dem Anbieter alle notwendigen Daten für die ordnungsgemäße Ausführung des Vertrags 
-bereitzustellen. Diese Daten umfassen unter anderem die E-Mail-Adresse, Identifikations- und Kontaktdaten sowie relevante Bankverbindungen. Der KUNDE garantiert 
-die Richtigkeit, Zuverlässigkeit und Aktualisierung dieser Informationen während der gesamten Vertragsdauer.
+Um auf die vom Dienstleister angebotenen Dienstleistungen zuzugreifen und sie zu bestellen, muss der KUNDE ein gültiges **KUNDENKonto** besitzen. Im Rahmen der Erstellung und Verwaltung dieses Kontos verpflichtet sich der KUNDE, dem Dienstleister alle notwendigen Daten zur ordnungsgemäßen Vertragserfüllung bereitzustellen. Diese Daten umfassen unter anderem die E-Mail-Adresse, Identitäts- und Kontaktdaten sowie die relevanten Bankdaten. Der KUNDE garantiert die Genauigkeit, Zuverlässigkeit und Aktualität dieser Informationen für die gesamte Vertragsdauer.
 
-Falls das KUNDENKonto von einem Dritten im Namen des KUNDEN eingerichtet oder verwaltet wird, 
-muss dieser Dritte dem Anbieter bestätigen und versichern, dass er über die notwendige rechtliche Befugnis und Fähigkeit verfügt, im Namen des KUNDEN zu handeln und ihn gemäß den Bestimmungen eines Vertrags zu binden.
+Für den Fall, dass das KUNDENKonto von einem Dritten erstellt oder verwaltet wird, der im Namen des KUNDEN handelt, muss dieser Dritte gegenüber dem Dienstleister bestätigen und sicherstellen, dass er die notwendige rechtliche Fähigkeit und Autorität besitzt, im Namen des KUNDEN zu handeln und ihn gemäß den Vertragsbestimmungen zu binden.
 
 ### 6.2. Aktivierung des KUNDENKontos
 
-Vor der Aktivierung des KUNDENKontos sowie jederzeit während der Dienstleistung behält sich der Anbieter das Recht vor, 
-die Richtigkeit der vom KUNDEN oder in dessen Namen bereitgestellten Informationen zu überprüfen. Diese Überprüfung kann die Anforderung unterstützender Dokumente 
-zu den bereitgestellten Informationen umfassen. Der Anbieter hat auch das Recht, die Aktivierung zu verweigern oder die Deaktivierung 
-des KUNDENKontos vorzunehmen, wenn die Informationen als unvollständig, ungenau oder betrügerisch erachtet werden.
+Vor der Aktivierung des KUNDENKontos sowie jederzeit während der Dienstleistungserbringung behält sich der Dienstleister das Recht vor, die Richtigkeit der vom KUNDEN oder in dessen Namen bereitgestellten Informationen zu überprüfen. Diese Überprüfung kann die Anforderung von Nachweisdokumenten zur Unterstützung der bereitgestellten Informationen umfassen. Der Dienstleister hat auch das Recht, die Aktivierung zu verweigern oder das KUNDENKonto zu deaktivieren, wenn die Informationen als unvollständig, ungenau oder betrügerisch angesehen werden.
 
-### 6.3. Auftrag
+### 6.3. Bestellung
 
-Nach der Aktivierung seines KUNDENKontos durch den Anbieter erlangt der KUNDE die Möglichkeit, Dienstleistungen zu bestellen. Je nach Art der bestellten Dienstleistungen 
-können die Bestellungen über die dem KUNDEN gewidmete Verwaltungsoberfläche erfolgen. Der KUNDE übernimmt die volle Verantwortung für die Verwaltung seines KUNDENKontos, 
-einschließlich der Sicherung der damit verbundenen Authentifizierungsmittel (Benutzerkennungen, Passwörter usw.).
+Nach der Aktivierung seines KUNDENKontos durch den Dienstleister hat der KUNDE die Möglichkeit, Dienstleistungen zu bestellen. Je nach Art der angeforderten Dienstleistungen können die Bestellungen über die dem KUNDEN gewidmete Verwaltungsoberfläche erfolgen. Der KUNDE trägt die volle Verantwortung für die Verwaltung seines KUNDENKontos, einschließlich der Sicherung der Authentifizierungsdaten (Benutzernamen, Passwörter usw.), die ihm zugeordnet sind.
 
-Jede Bestellung, die über das KUNDENKonto aufgegeben wird, wird als vom KUNDEN selbst ausgeführt betrachtet und bringt seine vollständige und uneingeschränkte Zustimmung zu den Vertragsbedingungen mit sich.
-Die Modalitäten und Fristen für die Bereitstellung der bestellten Dienstleistungen variieren je nach Art des angeforderten Dienstes. Einige Dienstleistungen werden erst verfügbar sein, nachdem 
-der Anbieter die vollständige Zahlung des KUNDEN erhalten hat. Es liegt daher in der Verantwortung des KUNDEN, sicherzustellen, dass die Bedingungen der Dienstleistungsbereitstellung seinen Anforderungen entsprechen.
+Jede über das KUNDENKonto aufgegebene Bestellung wird als vom KUNDEN selbst getätigt betrachtet und beinhaltet dessen vollständige Zustimmung zu den Vertragsbedingungen. Die Modalitäten und Fristen für die Bereitstellung der bestellten Dienstleistungen variieren je nach Art der erforderlichen Dienstleistung. Einige Dienstleistungen stehen möglicherweise erst zur Verfügung, nachdem der Dienstleister die vollständige Zahlung vom KUNDEN erhalten hat. Es obliegt daher dem KUNDEN, sicherzustellen, dass die Bedingungen für die Bereitstellung der Dienstleistungen seinen Anforderungen entsprechen.
 
-Die konstituierenden Vertragsdokumente ergänzen sich und werden kohärent interpretiert. Im Falle von Widersprüchen oder Abweichungen zwischen ihnen wird den Dokumenten Vorrang eingeräumt, 
-wie sie in der Reihenfolge aufgeführt sind. Die Anhänge des Vertrags, die technisch die Leistungen detaillieren, dürfen die im Hauptteil des Vertrags festgelegten Grundsätze nicht widersprechen. Ihre Rolle besteht darin, technische Präzisierungen zu liefern, ohne die allgemeinen Bestimmungen des Dokuments in Frage zu stellen.
+Die Vertragsbestandteile ergänzen sich und sind kohärent auszulegen. Im Falle von Widersprüchen oder Abweichungen zwischen ihnen wird jedoch den Dokumenten in der Reihenfolge, in der sie aufgezählt wurden, Vorrang eingeräumt. Die Anlagen des Vertrags, die die Leistungen technisch detaillieren, dürfen die im Hauptteil des Vertrags festgelegten Grundsätze nicht widersprechen. Ihre Rolle besteht darin, technische Klarstellungen zu bieten, ohne die allgemeinen Bestimmungen des Dokuments in Frage zu stellen.
 
 ## 7. Vertragsdauer
 
-Die unter diesen Allgemeinen Verkaufs- und Nutzungsbedingungen (AGB) geschlossenen Verträge werden auf unbestimmte Zeit geschlossen, es sei denn, es wurde in den Besonderen Bedingungen 
-eine bestimmte Laufzeit vorgesehen.
+Die unter diesen Allgemeinen Verkaufs- und Nutzungsbedingungen (AGB) abgeschlossenen Verträge werden auf unbestimmte Zeit abgeschlossen, es sei denn, in den Besonderen Bedingungen ist eine bestimmte Dauer vorgesehen.
 
-Die Kündigung des Vertrags ist nur unter Einhaltung der im Artikel "Kündigung" festgelegten Modalitäten möglich. Vor jeder Kündigung muss der KUNDE sicherstellen, dass er alle Daten, 
-die im Rahmen der betroffenen Verträge gespeichert waren, vollständig wiederhergestellt hat, gemäß den Bestimmungen des Artikels über die « Wiederherstellung und Löschung von Daten ».
+Die Kündigung des Vertrags ist nur unter Einhaltung der im Artikel „Kündigung“ angegebenen Modalitäten möglich. Vor jeder Kündigung muss der KUNDE sicherstellen, dass er alle seine im Rahmen des betroffenen Vertrags gespeicherten Daten vollständig zurückerhält, gemäß den Bestimmungen des Artikels über die „Datenrückgewinnung und -löschung“.
 
-Die Beendigung des Vertrags, ob vom Anbieter oder vom KUNDEN initiiert, entbindet letzteren nicht von der Verpflichtung, die Kosten für bereits erbrachte Leistungen zu begleichen.
+Das Ende des Vertrags, ob es vom Dienstleister oder vom KUNDEN ausgeht, befreit den letzteren nicht von der Verpflichtung, die Kosten für bereits erbrachte Leistungen zu begleichen.
+
 ## 8. Leistungsumfang
 
-Der Leistungsumfang umfasst spezifisch:
 
-- Die Implementierung der Leistungen gemäß dem Bestellschein,
+Der Umfang der Dienstleistungen umfasst spezifisch:
+
+- Die Implementierung der Dienstleistungen gemäß dem Bestellschein,
 - Die Bereitstellung von Infrastrukturdiensten,
-- Die zusätzliche Bereitstellung von Umkehrdiensten.
+- Die zusätzliche Erbringung von Rückführbarkeitsdiensten.
 
-Der Zugang zu diesen Leistungen sowie deren Nutzung unterliegen den im vorliegenden Vertrag festgelegten Bedingungen und Konditionen, einschließlich aller zugehörigen Anlagen.
+Der Zugang zu diesen Dienstleistungen sowie deren Nutzung unterliegen den im vorliegenden Vertrag festgelegten Bedingungen, einschließlich aller dazugehörigen Anhänge.
 
 ## 9. Optionale Dienstleistungen
 
-Falls bestimmte Optionale Dienstleistungen nicht ursprünglich im Vertrag enthalten sind, hat der KUNDE die Möglichkeit, diese später zu abonnieren.
-Die Bereitstellung jeglicher Optionaler Dienstleistung durch den Anbieter unterliegt der vorherigen Zustimmung der Parteien nach einer gemeinsamen Bewertung.
+Für den Fall, dass bestimmte optionale Dienstleistungen nicht ursprünglich im Vertrag enthalten waren, hat der KUNDE die Möglichkeit, diese später zu abonnieren.
+Die Erbringung jeglicher optionaler Dienstleistungen durch den Anbieter setzt die vorherige Zustimmung der Parteien nach einer gemeinsamen Bewertung voraus.
 
-## 10. Nutzungsbedingungen
+## 10. Nutzungsbedingungen der Dienstleistungen
 
 ### 10.1. Einhaltung der Dienstleistungsbedingungen
 
-Der KUNDE verpflichtet sich, die Bestellung aufzugeben und die Dienste unter strikter Einhaltung der geltenden Nutzungsbedingungen zu nutzen.
-Die Nutzung der Dienste muss verantwortungsvoll erfolgen. Insbesondere verpflichtet sich der KUNDE, sich mit den geltenden Allgemeinen Verkaufs- und Nutzungsbedingungen (AGB) vertraut zu machen und alle ihm bei der Bestellung zur Verfügung gestellten Anweisungen zu befolgen.
+Der KUNDE verpflichtet sich, die Dienstleistung zu bestellen und zu nutzen, indem er die geltenden Nutzungsbedingungen strikt einhält.
+Die Nutzung der Dienstleistungen muss verantwortungsvoll erfolgen. Der KUNDE verpflichtet sich insbesondere, die Allgemeinen Verkaufs- und Nutzungsbedingungen (AGB) zur Kenntnis zu nehmen und alle zum Zeitpunkt der Bestellung gegebenen Anweisungen zu befolgen.
 
-Wenn der KUNDE die Dienste im Namen Dritter nutzt oder Dritten den Zugang zu den Diensten ermöglicht, ist er verpflichtet, diesen vor jeder Nutzung die aktuellen Nutzungsbedingungen zur Kenntnis zu bringen und deren Einhaltung sicherzustellen. Der KUNDE garantiert somit dem Anbieter die vollständige Einhaltung dieser Bedingungen durch die betreffenden Dritten.
+Wenn der KUNDE die Dienstleistungen im Namen von Dritten nutzt oder Dritten Zugang zu den Dienstleistungen gewährt, ist er verpflichtet, diese vor jeglicher Nutzung mit den geltenden Nutzungsbedingungen vertraut zu machen und deren Einhaltung sicherzustellen. Der KUNDE gewährleistet somit dem Anbieter, dass die betroffenen Dritten diese Bedingungen in vollem Umfang einhalten.
 
-### 10.2. Auswahl der Dienste
+### 10.2. Auswahl der Dienstleistungen
 
-Vor der Bestellung und Nutzung der Dienste verpflichtet sich der KUNDE, die aktuellen Nutzungsbedingungen sorgfältig zu prüfen sowie die gesamte Dokumentation, Konfigurationen, Optionen und angebotenen Leistungspakete detailliert zu analysieren, um Dienste und Merkmale auszuwählen, die genau seinen Bedürfnissen und denen der im Rahmen seiner Tätigkeiten die Dienste nutzenden Dritten entsprechen.
+Vor Bestellung und Nutzung der Dienstleistungen verpflichtet sich der KUNDE, die geltenden Nutzungsbedingungen sorgfältig zu prüfen sowie alle angebotenen Dokumentationen, Konfigurationen, Optionen und Dienstleistungspaletten eingehend zu analysieren, um Dienstleistungen und Eigenschaften auszuwählen, die genau seinen Bedürfnissen und den Bedürfnissen der Dritten entsprechen, die die Dienstleistungen in seinem Namen oder auf seine Rechnung nutzen.
 
-Besonders achtet der KUNDE darauf, dass die ausgewählten Dienste den gesetzlichen und regulatorischen Verpflichtungen entsprechen, die sich aus den über die Dienste ausgeführten Tätigkeiten ergeben. Für jede Anfrage bezüglich der Dienste wird der KUNDE aufgefordert, den Anbieter zu kontaktieren. Es liegt in der Verantwortung des KUNDEN, sich über etwaige Änderungen zu informieren, insbesondere bei der Ausgabe neuer Bestellungen.
+Der KUNDE sorgt insbesondere dafür, dass die ausgewählten Dienstleistungen den gesetzlichen und regulatorischen Anforderungen entsprechen, die mit den über die Dienstleistungen ausgeführten Tätigkeiten verbunden sind. Für alle Fragen zu den Dienstleistungen wird der KUNDE aufgefordert, sich an den Anbieter zu wenden. Der KUNDE ist dafür verantwortlich, über mögliche Änderungen, insbesondere bei der Ausgabe neuer Bestellungen, informiert zu bleiben.
 
 ### 10.3. Verbindung
-Der Zugang zu den Diensten erfordert, dass der KUNDE auf eigene Kosten und unter eigener Verantwortung über eine angemessene Fernverbindung verfügt (wie eine Internetverbindung oder ein privates Netzwerk). Dem KUNDEN ist bekannt, dass das Internet technische Unwägbarkeiten und Sicherheitsrisiken mit sich bringen kann, die den vom Anbieter im Rahmen der Dienste ergriffenen technischen Maßnahmen entzogen sind.
+Der Zugang zu den Dienstleistungen erfordert, dass der KUNDE auf eigene Kosten und Verantwortung über eine angemessene Fernverbindung (wie eine Internetverbindung oder ein privates Netzwerk) verfügt. Es wird dem KUNDEN mitgeteilt, dass das Internet technischen Schwankungen und Sicherheitsrisiken unterliegt, die außerhalb der von dem Anbieter im Rahmen der Dienstleistungen getroffenen technischen Maßnahmen liegen.
 
-Der Anbieter kann nicht für Fehlfunktionen verantwortlich gemacht werden, die auf Internetdienstanbieter oder andere Drittnetzbetreiber zurückzuführen sind (einschließlich, jedoch nicht beschränkt auf Zuverlässigkeitsprobleme der Verbindungen, Bandbreitenschwankungen, Dienstunterbrechungen usw.), noch für die möglichen Auswirkungen dieser Fehlfunktionen, insbesondere, wenn sie zu einer Nichtverfügbarkeit oder Unterbrechung der Dienste führen.
+Der Anbieter haftet nicht für Funktionsstörungen, die auf Internetdienstanbieter oder andere Netzbetreiber Dritter zurückzuführen sind (einschließlich, aber nicht beschränkt auf Verbindungszuverlässigkeitsprobleme, Bandbreitenschwankungen, Dienstausfälle etc.) noch für die möglichen Auswirkungen dieser Funktionsstörungen, insbesondere, wenn sie zu einer Nichtverfügbarkeit oder Unterbrechung der Dienstleistungen führen.
 
-### 10.4. Authentifizierungsmaßnahmen
+### 10.4. Authentifizierungsmittel
 
-Der KUNDE übernimmt die volle Verantwortung für die Verwaltung und Vertraulichkeit der Identifikations- und Passwortdaten, die für den Zugang und die Nutzung der Dienste notwendig sind. Er muss sicherstellen, dass berechtigte Nutzer vollständig informiert sind und die besten Sicherheitspraktiken einhalten, um die Vertraulichkeit ihrer Authentifizierungsmaßnahmen zu wahren. Der KUNDE ist allein verantwortlich für die Folgen des Verlusts, der Weitergabe oder des Missbrauchs oder unbefugten Gebrauchs der den Nutzern zugewiesenen Authentifizierungsmaßnahmen.
+Der KUNDE übernimmt die volle Verantwortung für die Verwaltung und die Wahrung der Vertraulichkeit der zur Nutzung und zum Zugang zu den Dienstleistungen erforderlichen Identifikationsmittel und Passwörter. Er muss sicherstellen, dass die autorisierten Nutzer vollständig informiert sind und die besten Sicherheitspraktiken einhalten, um die Vertraulichkeit ihrer Authentifizierungsmittel zu wahren. Der KUNDE ist allein verantwortlich für die Folgen des Verlusts, der Offenlegung oder der missbräuchlichen oder unbefugten Nutzung der den Benutzern zugewiesenen Authentifizierungsmittel.
 
-In keinem Fall kann der Anbieter für solche Vorfälle haftbar gemacht werden. Der KUNDE verpflichtet sich, den Anbieter unverzüglich zu benachrichtigen, wenn er von einem Verlust oder einer vermuteten Weitergabe der Authentifizierungsmaßnahmen erfährt, und sofortige Maßnahmen zur Ersetzung oder Rücksetzung dieser Maßnahmen zu ergreifen.
+Die Haftung des Anbieters kann unter keinen Umständen für solche Vorfälle in Anspruch genommen werden. Der KUNDE verpflichtet sich, den Anbieter unverzüglich im Falle des Verlusts oder des vermuteten Verlusts der Authentifizierungsmittel zu benachrichtigen und sofort die Verfahren zum Ersatz oder zur Zurücksetzung dieser Mittel einzuleiten.
 
 ### 10.5. Inhalte
 
-Unter Einhaltung der vom Anbieter zur Verfügung gestellten Bestimmungen nimmt dieser nicht aktiv an der Verwaltung der Inhalte des KUNDEN teil und verzichtet auf jeglichen Zugang zu diesen Inhalten, außer im streng notwendigen Rahmen für die Bereitstellung der Dienste. Der Anbieter überprüft, validiert oder aktualisiert diese Inhalte somit nicht.
+In Übereinstimmung mit den vom Anbieter vorgegebenen Bestimmungen nimmt dieser nicht aktiv an der Verwaltung der Inhalte des KUNDEN teil und verzichtet auf jeden Zugriff auf diese Inhalte, außer im strikt notwendigen Rahmen zur Erbringung der Dienstleistungen. Der Anbieter führt daher keine Überprüfung, Validierung oder Aktualisierung der genannten Inhalte durch.
 
-Ebenso gewährleistet er keine spezifische Sicherung der über die Dienste gespeicherten Inhalte. Es liegt daher in der Verantwortung des KUNDEN, angemessene Maßnahmen zur Sicherung seiner Inhalte zu ergreifen, um sich gegen jegliche Verlust- oder Beschädigungsrisiken zu schützen, unabhängig von deren Ursache, insbesondere durch die Nutzung der im Katalog des Anbieters verfügbaren Leistungen.
+Ebenso wird keine dedizierte Sicherung der über die Dienstleistungen gespeicherten Inhalte gewährleistet. Es obliegt daher dem KUNDEN, geeignete Maßnahmen zur Sicherung seiner Inhalte zu ergreifen, um sich gegen das Risiko eines Verlusts oder einer Beschädigung, gleich aus welchem Grund, zu schützen, insbesondere durch die Nutzung geeigneter Werkzeuge aus dem Katalog des Anbieters.
 
-Die verwalteten Inhalte müssen legal sein und in Übereinstimmung mit den Best Practices sowie den geltenden Gesetzen und Vorschriften genutzt werden. Die Nutzung illegaler Inhalte (wie die Verbreitung, Veröffentlichung, Speicherung oder Übertragung von Inhalten, die Straftaten verherrlichen, zu Hass oder Gewalt gegen Einzelpersonen aufgrund ihres Geschlechts, ihrer Religion, ihrer sexuellen Orientierung oder Identität oder Behinderung anstiften, oder die geistigen Eigentumsrechte anderer verletzen) ist strengstens verboten.
+Die verwalteten Inhalte müssen legal sein und in Übereinstimmung mit den geltenden Best Practices sowie den anwendbaren Gesetzen und Vorschriften verwendet werden. Die Nutzung illegaler Inhalte (wie z. B. die Verbreitung, Veröffentlichung, Speicherung oder Übermittlung von Inhalten, die Straftaten verherrlichen, zu Hass oder Gewalt gegen Personen aufgrund ihres Geschlechts, ihrer Religion, ihrer sexuellen Ausrichtung oder Identität oder ihres Handicaps aufrufen oder die geistigen Eigentumsrechte Dritter verletzen) ist streng verboten.
 
-Jeder Verstoß gegen diese Regeln kann nach Ermessen des Anbieters zur sofortigen Aussetzung der Dienste, zur Deaktivierung des KUNDEN-Kontos und sogar zur Kündigung des Vertrags auf ausschließliche Kosten des KUNDEN führen, unbeschadet des Rechts des Anbieters, rechtliche Schritte einzuleiten oder Schadensersatzansprüche geltend zu machen.
+Jede Verletzung dieser Regeln kann nach alleinigem Ermessen des Anbieters zur sofortigen Aussetzung der Dienstleistungen, zur Deaktivierung des Accounts des KUNDEN oder sogar zur Kündigung des Vertrags auf alleiniges Verschulden des KUNDEN führen, unbeschadet des Rechts des Anbieters auf rechtliche Schritte oder Schadenersatzforderungen für erlittenen Schaden.
 
-### 10.6. Einhaltung von Gesetzen, Vorschriften und ethischen Regeln
+### 10.6. Einhaltung von Gesetzen, Vorschriften und ethischen Richtlinien
 
-Die Dienste müssen verantwortungsvoll und in Übereinstimmung mit den geltenden Gesetzen und Vorschriften genutzt werden. Die Parteien verpflichten sich, aufmerksam auf gesetzliche und regulatorische Änderungen zu achten. Folgende Praktiken sind ausdrücklich verboten, wobei diese Aufzählung nicht erschöpfend ist:
+Die Dienstleistungen müssen verantwortungsvoll und in Übereinstimmung mit den geltenden Gesetzen und Vorschriften genutzt werden. Die Parteien verpflichten sich, auf legislative und regulatorische Änderungen zu achten. Folgende Praktiken sind ausdrücklich verboten, obwohl diese Auflistung nicht erschöpfend ist:
 
-1. Missbräuchliche oder betrügerische Nutzung der Dienste und der bereitgestellten Ressourcen, die die Stabilität und Sicherheit der Systeme des Anbieters gefährden und die Qualität der den anderen Nutzern angebotenen Dienste beeinträchtigen können;
-2. Versuchter Einbruch oder Angriff über die Dienste, einschließlich, aber nicht beschränkt auf Port-Scanning, unbefugtes Abhören, Spoofing sowie jegliche Angriffsmethoden, die von den bereitgestellten Ressourcen ausgehen, sofern nicht ausdrücklich vom Anbieter genehmigte Penetrationstests vorher genehmigt wurden;
-3. Jegliche Form von SPAM oder ähnliche „Spamming“-Praktiken;
-4. Nutzung von illegalen oder verbotenen Inhalten, wie zuvor in der Sektion „Inhalte“ beschrieben.
+1. Missbräuchliche oder betrügerische Nutzung der angebotenen Dienstleistungen und Ressourcen, die die Stabilität und Sicherheit der Systeme des Anbieters beeinträchtigen und die Qualität der Dienstleistungen für andere Nutzer beeinträchtigen können;
+2. Versuche, über die Dienste Intrusionen oder Angriffe auszuführen, einschließlich, aber nicht beschränkt auf Port-Scanning, unerlaubtes Mithören, Spoofing sowie jede Form von Angriffen, die von den angebotenen Ressourcen ausgehen, außer autorisierte Intrusionstests;
+3. Jede Art von SPAM oder spamming-ähnliche Praktiken;
+4. Die Nutzung illegaler oder verbotener Inhalte, wie zuvor im Abschnitt "Inhalte" beschrieben.
 
 ### 10.7. Dienstunterbrechung
 
-Der Anbieter behält sich das Recht vor, die Dienste vorübergehend oder vollständig auszusetzen im Falle von:
+Der Anbieter behält sich das Recht vor, die Dienstleistungen vorübergehend oder vollständig zu unterbrechen im Fall von:
 
-1. Einer tatsächlichen Bedrohung der Sicherheit oder Stabilität der Systeme des Anbieters, der Dienste oder der KUNDEN-Daten;
-2. Durchzuführender Wartungsarbeiten;
-3. Anfragen von Justiz- oder Verwaltungsbehörden;
-4. Alarmmeldungen gemäß Artikel 6 des Gesetzes für Vertrauen in die digitale Wirtschaft (LCEN);
+1. einer tatsächlichen Bedrohung für die Sicherheit oder Stabilität der Systeme des Anbieters, der Dienstleistungen oder der Daten des KUNDEN;
+2. der Durchführung geplanter Wartungsarbeiten;
+3. Anfragen gerichtlicher oder behördlicher Stellen;
+4. eingegangenen Warnungen gemäß Artikel 6 des Gesetzes über das Vertrauen in die digitale Wirtschaft (LCEN);
 5. Verstößen gegen die im Vertrag festgelegten Nutzungsbedingungen.
 
-Diese Aussetzung kann in kritischen Situationen sofort und ohne Vorankündigung erfolgen, um illegalen oder betrügerischen Gebrauch der Dienste, eine Verletzung der Rechte Dritter oder jegliche Maßnahmen zu verhindern, die eine Haftung des Anbieters zur Folge haben könnten. Der Anbieter bemüht sich, soweit möglich und außer in Fällen gesetzlicher Notwendigkeit oder bei Verstoß gegen die Nutzungsbedingungen, den Einfluss jeder Dienstunterbrechung auf den gewöhnlichen Dienst zu minimieren. Solche Unterbrechungen entbinden den KUNDEN jedoch nicht von seiner Zahlungspflicht gemäß dem Vertrag. Der KUNDE wird über geplante Wartungen über eine spezielle Schnittstelle informiert.
+Eine solche Unterbrechung kann sofort und ohne Vorankündigung erfolgen, wenn eine kritische Situation vorliegt oder um eine illegale oder betrügerische Nutzung der Dienstleistungen, eine Verletzung der Rechte Dritter oder jede Handlung zu verhindern, die den Anbieter haftbar machen könnte. Der Anbieter bemüht sich, soweit möglich und außer erforderlichen gesetzlichen Maßnahmen oder Verstößen gegen Nutzungsbedingungen, die Auswirkungen jeder Unterbrechung auf den üblichen Dienst zu minimieren. Solche Unterbrechungen entbinden jedoch den KUNDEN nicht von seiner Verpflichtung, die geschuldeten Beträge gemäß dem Vertrag zu zahlen. Der KUNDE wird über geplante Wartungen über eine dedizierte Schnittstelle informiert.
 
-Im Falle eines Verstoßes des KUNDEN gegen seine Verpflichtungen, erfolgt die Dienstunterbrechung unbeschadet des Rechts des Anbieters, den Vertrag zu kündigen oder Schadenersatz zu fordern. Außer im Falle von Kündigung oder Nichtverlängerung führt die Aussetzung nicht zur Löschung der KUNDEN-Daten. Sofern sie nicht ausschließlich auf einen Mangel des Anbieters zurückzuführen sind, werden diese Unterbrechungen nicht als Nichtverfügbarkeit der Dienste im Sinne der im Vertrag beschriebenen Service-Level-Verpflichtungen angesehen.
+Bei einem Versäumnis des KUNDEN, seine Verpflichtungen zu erfüllen, erfolgen diese Unterbrechungen unbeschadet des Rechts des Anbieters, den Vertrag zu kündigen oder Schadenersatz zu verlangen. Soweit nicht anders vereinbart oder erneuert, führen die Unterbrechungen nicht zur Löschung der Kundendaten. Solange sie nicht ausschließlich auf ein Verschulden des Anbieters zurückzuführen sind, werden diese Unterbrechungen nicht als Nichtverfügbarkeit der Dienstleistungen im Hinblick auf die im Vertrag festgelegten Service-Level-Vereinbarungen betrachtet.
 
-### 10.8. Weiterentwicklung der Dienste
+### 10.8. Weiterentwicklung der Dienstleistungen
 
-Der Anbieter behält sich das Recht vor, nach eigenem Ermessen Änderungen an den Diensten vorzunehmen, einschließlich der Hinzufügung, Änderung oder Entfernung von Leistungspaketen, Optionen, Funktionen sowie der Verbesserung ihrer Performance. Eine detaillierte Beschreibung der Dienste ist auf der Website des Anbieters verfügbar. Es liegt in der Verantwortung des KUNDEN, sich über Dienstaktualisierungen zu informieren, die sofort auf alle neuen Bestellungen angewendet werden. Änderungen können auch sofort aufgrund dringender Notwendigkeiten, wie Sicherheitsrisiken oder rechtliche oder regulatorische Anforderungen, oder aufgrund von Änderungen an Drittprodukten erfolgen.
+Der Anbieter behält sich das Recht vor, nach eigenem Ermessen jede Änderung an den Dienstleistungen vorzunehmen, einschließlich der Hinzufügung, Änderung oder Entfernung von Paletten, Optionen, Funktionen sowie der Verbesserung der Leistung. Die ausführliche Beschreibung der Dienstleistungen ist auf der Website des Anbieters verfügbar. Es liegt in der Verantwortung des KUNDEN, über Updates der Dienstleistungen informiert zu bleiben, die sofort auf alle neuen Bestellungen angewendet werden. Änderungen können auch sofort aufgrund dringender Notwendigkeiten eintreten, wie z. B. Sicherheitsrisiken oder Anforderungen zur rechtlichen oder regulatorischen Konformität, oder im Zusammenhang mit Änderungen von Drittprodukten.
 
-In Übereinstimmung mit dem Artikel „Bedingungen speziell für Verbraucher“, wenn eine Aktualisierung zu einer Verschlechterung eines vom KUNDEN genutzten Dienstes führt — beispielsweise durch Entfernen einer Funktion oder Reduzierung der Leistung —, hat der KUNDE das Recht, den betroffenen Dienst zu kündigen. Dazu muss er eine Benachrichtigung senden...
-de résiliation per Einschreiben mit Rückschein innerhalb von sechzig (60) Tagen nach Inkrafttreten der Änderung.
+In Übereinstimmung mit dem Artikel „Besondere Bedingungen für Verbraucher“, falls ein Update eine Verschlechterung einer genutzten Dienstleistung durch den KUNDEN verursacht — z. B. die Entfernung einer Funktion oder eine Leistungsverschlechterung —, hat der KUNDE das Recht, die betreffende Dienstleistung zu kündigen. Hierzu muss er eine Mitteilung senden
+de résiliation par courrier recommandé avec demande d'avis de réception, dans un délai de soixante (60) jours suivant l'application de la modification.
 
 ### 10.9. Geistiges Eigentum und Nutzungsrecht
 
-Alle dem KUNDEN vom Anbieter bereitgestellten Elemente – einschließlich Software, Infrastrukturen, Dokumentationen und andere – verbleiben im ausschließlichen Eigentum des Anbieters oder seiner Rechtsnachfolger. Der Anbieter gewährt dem KUNDEN ein nicht ausschließliches Nutzungsrecht an diesen Elementen, streng für die Nutzung der Dienste und in Übereinstimmung mit den vertraglichen Bedingungen, für die Dauer des Vertrags. Es ist wichtig zu betonen, dass der KUNDE, abgesehen von den bereitgestellten Elementen, vollständig dafür verantwortlich ist, alle erforderlichen Genehmigungen und Rechte für die Elemente und Inhalte (Daten, Software, Anwendungen, Systeme, Websites usw.) zu erhalten, die er im Rahmen der Dienste nutzen oder betreiben möchte.
+Alle vom Dienstleister dem KUNDEN zur Verfügung gestellten Elemente — einschließlich Software, Infrastrukturen, Dokumentationen und andere — bleiben
+das alleinige Eigentum des Dienstleisters oder seiner Rechtsnachfolger. Der Dienstleister gewährt dem KUNDEN ein nicht-ausschließliches Nutzungsrecht an diesen Elementen,
+ausschließlich für die Nutzung der Dienste und gemäß den vertraglichen Bestimmungen, für die Dauer der Vereinbarung. Es ist wichtig zu betonen, dass
+der KUNDE abgesehen von diesen bereitgestellten Elementen vollständig dafür verantwortlich ist, alle erforderlichen Genehmigungen und Rechte für die Elemente
+und Inhalte (Daten, Software, Anwendungen, Systeme, Websites usw.) zu erhalten, die er im Rahmen der Dienste zu verwenden oder zu betreiben wählt.
 
-Der KUNDE und seine Benutzer bleiben die Eigentümer ihrer Inhalte. Der Anbieter verpflichtet sich, diese Inhalte nicht für andere als die im Vertrag festgelegten Zwecke zu verwenden. Gemäß den geltenden Gesetzen ist der KUNDE verpflichtet, die im Rahmen der Dienste bereitgestellte Software, Codes und Algorithmen nicht zu dekompilieren, einschließlich für Versuche der Rückentwicklung, es sei denn, es besteht eine ausdrückliche gesetzliche Genehmigung zur Umgehung dieser Beschränkung.
+Der KUNDE sowie seine Benutzer bleiben Eigentümer ihrer Inhalte. Der Dienstleister verpflichtet sich, diese Inhalte nicht zu anderen als den im Vertrag festgelegten Zwecken zu nutzen.
+Gemäß geltendem Recht ist der KUNDE verpflichtet, die zur Verfügung gestellte Software, den Code und die Algorithmen im Rahmen der Dienste nicht zu dekompilieren,
+einschließlich für Rückentwicklung, es sei denn, eine gesetzliche Ausnahme erlaubt dies ausdrücklich.
 
 ### 10.10. Exportkontrolle
 
-Vorbehaltlich der im Vertrag festgelegten Beschränkungen und der auf den KUNDEN zugeschnittenen Aktivitäten garantiert der Anbieter, dass die Dienste innerhalb der Europäischen Union sowie in den gastgebenden Ländern der die Dienste bereitstellenden Rechenzentren vermarktbar und nutzbar sind.
+Vorbehaltlich der in den Vertragsbedingungen festgelegten Einschränkungen und der für die Tätigkeiten des KUNDEN geltenden Beschränkungen garantiert der Dienstleister,
+dass die Dienste innerhalb der Europäischen Union sowie in den Länder, die die Rechenzentren der Dienste beherbergen, vermarktbar und nutzbar sind.
 
-Es obliegt dem KUNDEN, der beabsichtigt, die Dienste außerhalb der europäischen Länder zu nutzen oder die Nutzung durch Dritte zu gestatten, sicherzustellen, dass diese Nutzung den geltenden Gesetzen und Vorschriften entspricht. Dies umfasst, ist jedoch nicht beschränkt auf die Einhaltung der Verordnung (EG) Nr. 428/2009 des Rates vom 5. Mai 2009 über die Kontrolle der Ausfuhr von Gütern mit doppeltem Verwendungszweck sowie amerikanische Regelungen wie die EAR (Export Administration Regulations) und die 'ITAR' (International Traffic In Arms Regulations), da der Anbieter Lösungen von Drittanbietern vertreibt, die amerikanischem Recht unterliegen.
+Wenn der KUNDE beabsichtigt, die Dienste über die Grenzen Europas hinaus zu nutzen oder die Nutzung durch Dritte zu erlauben, muss er sicherstellen, dass diese Nutzung
+den geltenden Gesetzen und Vorschriften entspricht. Dies umfasst, ist jedoch nicht darauf beschränkt, die Einhaltung der Verordnung (EG) Nr. 428/2009 des Rates vom 5. Mai 2009
+über die Ausfuhrkontrolle von Gütern mit doppeltem Verwendungszweck sowie amerikanische Vorschriften wie die EAR (Export Administration Regulations)
+und die 'ITAR' (International Traffic In Arms Regulations), da der Dienstleister Lösungen von Dritten vertreibt, die dem US-Recht unterliegen.
 
-Der Anbieter behält sich das Recht vor, Bestellungen aus Ländern, die Handelsbeschränkungen oder Sanktionen unterliegen, oder von betroffenen physischen oder juristischen Personen aus diesen Ländern oder unter Sanktionen abzulehnen. Überprüfungen, einschließlich der Bonität und der möglichen Präsenz des KUNDEN auf Sanktionslisten, wie der Liste der eingefrorenen Vermögenswerte des französischen Generaldirektorats des Schatzamtes, können durchgeführt werden. Nach diesen Überprüfungen kann der Anbieter den Vertrag nach vorheriger Mitteilung an den KUNDEN einseitig und sofort kündigen.
+Der Dienstleister behält sich das Recht vor, Bestellungen aus Ländern, die Handelsbeschränkungen oder Sanktionen unterliegen,
+oder von natürlichen oder juristischen Personen aus diesen Ländern oder unter Sanktionen abzulehnen. Überprüfungen, einschließlich Bonitätsprüfungen und der möglichen Anwesenheit des KUNDEN
+auf Sanktionslisten, wie der Liste der eingefrorenen Vermögenswerte der Generaldirektion Schatz, können durchgeführt werden. Nach diesen Überprüfungen
+kann der Dienstleister den Vertrag einseitig und sofort kündigen, nachdem er den KUNDEN informiert hat.
 
-### 10.11. Drittprodukte
+### 10.11. Dritte Produkte
 
-In Übereinstimmung mit den eingegangenen Verpflichtungen ist es wichtig zu beachten, dass:
+In Übereinstimmung mit den eingegangenen Verpflichtungen ist zu beachten, dass:
 
-1. der Anbieter jegliche Verantwortung für im Rahmen der Dienste bereitgestellte Drittprodukte ablehnt. Diese Produkte können technische Mängel, Sicherheitslücken, Kompatibilitäts- oder Stabilitätsprobleme aufweisen. Der Anbieter übernimmt keine Garantie für diese Drittprodukte, einschließlich, aber nicht beschränkt auf, jede zugehörige Information oder jedes zugehörige Element wie Software, Systeme, Anwendungen usw.,
-2. die Nutzung der Drittprodukte durch den KUNDEN streng auf den Rahmen der bereitgestellten Dienste beschränkt ist. Es ist dem KUNDEN insbesondere untersagt, die Drittprodukte zu dekompilieren, Zugang zu den Quellcodes zu erhalten oder die Software- oder System-Drittprodukte auf anderen Infrastrukturen neu zu installieren. Die Verantwortung für die Nutzung der Drittprodukte liegt vollständig beim KUNDEN, der sicherstellen muss, dass sie für seine spezifischen Bedürfnisse und Ziele geeignet sind und die Bedingungen des Vertrags einhält.
+1. der Dienstleister keine Verantwortung für die im Rahmen der Dienste gelieferten Drittprodukte übernimmt.
+Diese Produkte können technische Mängel, Sicherheitsanfälligkeiten, Kompatibilitäts- oder Stabilitätsprobleme aufweisen. Der Dienstleister bietet
+keinerlei Gewährleistung für diese Drittprodukte, einschließlich, aber nicht beschränkt auf, jegliche damit verbundene Informationen oder Elemente wie Software, Systeme, Anwendungen usw.,
+2. die Nutzung der Drittprodukte durch den KUNDEN streng auf den Rahmen der bereitgestellten Dienste begrenzt ist. Es ist dem KUNDEN insbesondere untersagt, diese Produkte zu dekompilieren,
+auf Quellcodes zuzugreifen oder die Drittprodukte auf anderen Infrastrukturen neu zu installieren.
+Die Verantwortung für die Nutzung der Drittprodukte liegt vollständig beim KUNDEN, der sicherstellen muss, dass sie seinen spezifischen Bedürfnissen und Zielen entsprechen,
+während er die Vertragsbedingungen einhält.
 
-### 10.12. Kontinuität und Reversibilität der Dienste
+### 10.12. Kontinuität und Umkehrbarkeit der Dienste
 
-Die Beendigung der Dienste aus jeglichem Grund (wie Kündigung des Vertrags, Nichtverlängerung, Unterbrechung der Dienste durch den KUNDEN, Verstoß gegen die Vertragsbestimmungen usw.) sowie bestimmte Aktualisierungs- oder Neuinstallationsmaßnahmen führen zur endgültigen und unwiederbringlichen Löschung aller Inhalte (einschließlich Informationen, Daten, Dateien, Systeme, Anwendungen, Websites und anderen Elemente), die der KUNDE im Rahmen der Dienste reproduziert, gespeichert, gehostet, gesammelt, übertragen, verbreitet, veröffentlicht oder auf andere Weise genutzt oder betrieben hat, einschließlich möglicher Backups.
+Das Ende der Dienste, aus welchem Grund auch immer (wie Kündigung des Vertrags, Nichtverlängerung,
+Unterbrechung der Dienste durch den KUNDEN, Verletzung der Vertragsbedingungen usw.), sowie bestimmte Aktualisierungs- oder Neuinstallationsvorgänge,
+führen zur endgültigen und irreversiblen Löschung aller Inhalte (einschließlich Informationen, Daten, Dateien, Systeme, Anwendungen, Websites und andere Elemente),
+die der KUNDE im Rahmen der Dienste reproduziert, gespeichert, gehostet, gesammelt, übertragen, verbreitet, veröffentlicht oder in irgendeiner Weise genutzt oder betrieben hat,
+einschließlich möglicher Sicherungskopien.
 
-### 10.13. Penetrationstests
+### 10.13. Penetrationstest
 
-Der KUNDE ist berechtigt, direkt oder über einen speziell beauftragten externen Prüfer Penetrationstests der bereitgestellten Dienste durchzuführen (hier „Penetrationstests“ genannt). Diese Tests dürfen nur nach Unterzeichnung einer Prüfvereinbarung durch alle an der Erbringung des Dienstes beteiligten Parteien durchgeführt werden, einschließlich des KUNDEN, des Prüfers, des Anbieters und gegebenenfalls ihrer Unterauftragnehmer. Diese Tests müssen die geltenden Gesetze einhalten und das vorherige Einverständnis der Benutzer und Rechteinhaber im getesteten Bereich einholen.
+Der KUNDE ist berechtigt, direkt oder über einen speziell beauftragten externen Prüfer, Penetrationstests auf die bereitgestellten Dienste
+(die hier als «Penetrationstests» bezeichnet werden) durchzuführen. Diese Tests dürfen nur nach Unterzeichnung einer Prüfungsvereinbarung durch alle am Dienst beteiligten Parteien
+einschließlich des KUNDEN, des Prüfers, des Dienstleisters und gegebenenfalls deren Unterauftragnehmer durchgeführt werden.
+Diese Tests müssen die geltenden Gesetze einhalten und erfordern die vorherige Zustimmung der Nutzer und der Rechteinhaber im geprüften Bereich.
 
-Die Bedingungen für die Durchführung dieser Penetrationstests durch einen externen Prüfer werden in einem separaten Vertrag zwischen dem KUNDEN und diesem Prüfer festgelegt, in dem die Verpflichtungen dieses Artikels wiederholt werden. Der KUNDE verpflichtet sich, die Einhaltung dieser Bedingungen durch den Prüfer zu gewährleisten, der im Auftrag des KUNDEN handelt. Die Penetrationstests dürfen keinesfalls:
+Die Bedingungen für die Durchführung dieser Penetrationstests durch einen externen Prüfer werden in einem separaten Vertrag zwischen dem KUNDEN und diesem Prüfer
+festgelegt, der die in diesem Artikel genannten Verpflichtungen enthält. Der KUNDE verpflichtet sich, die Einhaltung dieser Bedingungen durch den Prüfer sicherzustellen, der im Namen des KUNDEN handelt. Penetrationstests dürfen unter keinen Umständen:
 
-- Andere Infrastrukturen oder Dienste des Anbieters und/oder des Anbieters, die nicht ausschließlich vom KUNDEN genutzt werden, anvisieren,
-- Das optimale Funktionieren der Dienste, Infrastrukturen und Netzwerke des Anbieters stören,
-- Die von anderen Kunden genutzten Dienste, Ressourcen, Netzwerke und Infrastrukturen beeinträchtigen.
+- Andere Infrastrukturen oder Dienste des Dienstleisters und/oder des Dienstleisters, die nicht ausschließlich vom KUNDEN genutzt werden, anvisieren,
+- Den optimalen Betrieb der Dienste, Infrastrukturen und Netzwerke des Dienstleisters stören,
+- Die Dienste, Ressourcen, Netzwerke und Infrastrukturen beeinträchtigen, die der Dienstleister anderen Kunden zur Verfügung stellt.
 
-Jegliches Eindringen in die Systeme anderer Kunden ist streng verboten. Der KUNDE übernimmt die volle Verantwortung für die Folgen der Penetrationstests, einschließlich der Handlungen eines externen Prüfers. Es liegt in der Verantwortung des KUNDEN, vor den Tests alle notwendigen Backups zu erstellen, um die Wiederherstellung der Systeme im Falle eines Vorfalls sicherzustellen.
+Jegliches Eindringen in die von anderen Kunden genutzten Systeme ist strengstens untersagt. Der KUNDE übernimmt die volle Verantwortung für die aus den Penetrationstests resultierenden Konsequenzen,
+einschließlich der Maßnahmen eines externen Prüfers. Es ist die Verantwortung des KUNDEN, alle erforderlichen Sicherungskopien zu erstellen, bevor die Tests durchgeführt werden, um im Falle eines Vorfalls die Systeme wiederherzustellen.
 
-Es ist zu beachten, dass die Schutzmechanismen gegen Spam, DOS/DDOS und andere während der Tests aktiv bleiben, was zu einer vorübergehenden Nichtverfügbarkeit der Dienste führen kann. Der KUNDE muss alle betroffenen Parteien über diese Nichtverfügbarkeit informieren. Nach Abschluss der Penetrationstests wird ein Prüfbericht erstellt und dem Anbieter auf Anfrage oder bei Relevanz zur Verfügung gestellt (zum Beispiel bei Entdeckung von Schwachstellen).
+Es sei darauf hingewiesen, dass Spam-Schutzmechanismen, DOS/DDOS und andere während der Tests aktiv bleiben, was zu einer vorübergehenden
+Nichtverfügbarkeit der Dienste führen kann. Der KUNDE muss jede von dieser Nichtverfügbarkeit betroffene Partei informieren. Am Ende der Penetrationstests
+wird ein Prüfungsbericht erstellt und dem Dienstleister auf Anfrage oder sofern relevant (z. B. bei der Entdeckung von Sicherheitslücken) zur Verfügung gestellt.
 
-Dieser Prüfbericht, sein Inhalt und alle während der Prüfung erhaltenen oder offengelegten Informationen sind streng vertraulich und dürfen ohne schriftliche Genehmigung des Anbieters nicht veröffentlicht oder weitergegeben werden. Bei Verstoß gegen die festgelegten Bedingungen behält sich der Anbieter das Recht vor, den Zugang zu den Diensten sofort auszusetzen, unbeschadet möglicher Schadensersatzansprüche.
+Dieser Prüfungsbericht, sein Inhalt und alle während des Audits erhaltenen oder offengelegten Informationen sind streng vertraulich
+und dürfen ohne schriftliche Genehmigung des Dienstleisters nicht veröffentlicht oder weitergegeben werden. Im Falle eines Verstoßes gegen die festgelegten Bedingungen behält sich der Dienstleister
+das Recht vor, den Zugang zu den Diensten sofort zu sperren, unbeschadet möglicher Schadenersatzansprüche.
 
 ## 11. Zusammenarbeit
 
-Die Parteien erkennen an, dass sie einer Zusammenarbeitspflicht unterliegen. Folglich verpflichten sie sich, alle Informationen und Dokumente auszutauschen, die die Ausführung des Vertrags und insbesondere ihrer jeweiligen Verpflichtungen erleichtern können.
+Die Parteien erkennen an, einer Verpflichtung zur Zusammenarbeit unterworfen zu sein. Folglich verpflichten sie sich, alle Informationen und Dokumente auszutauschen,
+die die Erfüllung des Vertrags und insbesondere ihrer jeweiligen Verpflichtungen erleichtern.
 
 ## 12. Haftung
 
-### 12.1. Befugnis
+### 12.1. Fähigkeit
 
-Jede der Parteien erklärt und gewährleistet, die erforderliche Autorität und Fähigkeit zu besitzen, den Vertrag abzuschließen und ihre Verpflichtungen zu erfüllen. Der KUNDE und der Anbieter erklären und gewährleisten insbesondere, über alle Genehmigungen, Kompetenzen und Kenntnisse (insbesondere technischer Art) zu verfügen, die es ihnen ermöglichen, die Dienste gemäß den im Vertrag festgelegten Bedingungen zu nutzen bzw. bereitzustellen.
+Jede der Parteien erklärt und garantiert, die notwendige Autorität und Fähigkeit zu besitzen, den Vertrag abzuschließen und die ihr obliegenden Verpflichtungen zu erfüllen. Der KUNDE und der Dienstleister erklären und garantieren insbesondere, dass sie über alle Genehmigungen, Kompetenzen
+und Kenntnisse (insbesondere technische) verfügen, die es ihnen ermöglichen, die Dienste jeweils gemäß den im Vertrag festgelegten Bedingungen zu nutzen und bereitzustellen.
 
-### 12.2. Haftung des Anbieters
+### 12.2. Haftung des Dienstleisters
 
-Wenn der Vertrag Service Level Commitments vorsieht, dienen die vom Anbieter dem KUNDEN gewährten Strafen oder Gutschriften als pauschalen Ausgleich für jeglichen Schaden, der durch die Nichteinhaltung dieser Verpflichtungen entsteht. Folglich verzichtet der KUNDE auf jede andere Form von Forderung, Anspruch oder Aktion diesbezüglich. Wenn keine Service Level Commitments anwendbar sind, ist die maximale Haftung des Anbieters auf die vom KUNDEN für die betroffenen Dienste in den drei (3) Monaten vor dem Schadensersatzanspruch gezahlten Beträge begrenzt.
+Wenn der Vertrag Dienstgüteverpflichtungen festlegt, dienen die vom Dienstleister dem KUNDEN gewährten Strafen oder Gutschriften als pauschale Entschädigung für
+jeden durch die Nichterfüllung dieser Verpflichtungen entstandenen Schaden. Folglich verzichtet der KUNDE auf jegliche andere Form von Forderung, Anspruch oder Klage in diesem Zusammenhang.
+Wenn keine Dienstgüteverpflichtung anwendbar ist, ist die maximale Entschädigung, die dem Dienstleister auferlegt werden kann, auf die Gesamtsumme der vom KUNDEN geleisteten Zahlungen für
+die betroffenen Dienste in den drei (3) Monaten vor dem Entschädigungsantrag begrenzt.
 
-**Haftungsausschluss:** Die Haftung des Anbieters kann in den folgenden Fällen nicht geltend gemacht werden:
+**Haftungsausschluss:** Der Dienstleister haftet nicht in folgenden Fällen:
 
-- Unsachgemäße Nutzung der Dienste entgegen den Vertragsbestimmungen;
-- Nichterfüllung, Ausfall, Fehlfunktion oder Nichtverfügbarkeit der Dienste aufgrund von Dritten (außer den Unterauftragnehmern des Anbieters), dem KUNDEN, einem Drittprodukt oder Fahrlässigkeit des KUNDEN;
-- Indirekte Schäden wie Geschäftsschaden, Auftragsverluste, Aktivitätsrückgang, Rufschädigung, Gewinn- oder Kundenverlust, insbesondere durch versehentliche Offenlegung vertraulicher Informationen, Klage eines Dritten usw.;
-- Verlust, Offenlegung oder unsachgemäße oder betrügerische Nutzung der Benutzerzugangsdaten, die dem KUNDEN oder Dritten zuzuschreiben sind;
-- Aussetzung des Zugangs zu den Diensten oder vorübergehende oder endgültige Unterbrechung gemäß Artikel 6 "Nutzungsbedingungen", einschließlich auf Anfrage von Verwaltungs- oder Justizbehörden;
-- Verlust, Veränderung oder Zerstörung von Inhalten, die auf der Infrastruktur gehostet werden, soweit der Anbieter nicht für die Geschäftskontinuität des KUNDEN verantwortlich ist, einschließlich der Backups;
+- Falsche Nutzung der Dienste entgegen den Vertragsbestimmungen;
+- Nichterfüllung, Versagen, Fehlfunktion oder Nichtverfügbarkeit der Dienste aufgrund eines Dritten (außer den Unterauftragnehmern des Dienstleisters), des KUNDEN, eines Drittprodukts oder aufgrund von Fahrlässigkeit des KUNDEN;
+- Indirekte Schäden wie Geschäftsschaden, Bestellverlust, Geschäftsrückgang, Reputationsschaden, Gewinn- oder Kundenverlust, insbesondere aufgrund von versehentlicher Offenlegung vertraulicher Informationen, Klage eines Dritten usw.;
+- Verlust, Offenlegung oder missbräuchliche oder betrügerische Nutzung von Zugangsdaten durch den KUNDEN oder Dritte verursacht;
+- Aussetzung des Zugangs zu den Diensten oder vorübergehende oder endgültige Unterbrechung der Dienste gemäß Artikel 6 "Nutzungsbedingungen", einschließlich auf Anfrage von Verwaltungs- oder Justizbehörden;
+- Verlust, Veränderung oder Zerstörung von auf der Infrastruktur gehosteten Inhalten, insoweit der Dienstleister nicht für die Geschäftskontinuität des KUNDEN verantwortlich ist, einschließlich Sicherungskopien;
 
-- Unangemessenheit der Dienstleistungen in Bezug auf die Bedürfnisse des KUNDEN (insbesondere im Hinblick auf die Sensibilität der betreffenden Daten);
-- Sicherheitsvorfälle im Zusammenhang mit der Nutzung des Internets, insbesondere im Falle von Verlust, Veränderung, Zerstörung, Offenlegung oder unbefugtem Zugriff auf Daten oder Informationen des KUNDEN im Internet oder daraus;
-- Beschädigung der Systeme, Anwendungen und anderer Elemente, die der KUNDE auf der Infrastruktur installiert hat.
+- Fehlanpassung der Dienstleistungen an die Bedürfnisse des KUNDEN (insbesondere im Hinblick auf die Sensibilität der betroffenen Daten);
+- Sicherheitsvorfälle im Zusammenhang mit der Nutzung des Internets, insbesondere bei Verlust, Veränderung, Zerstörung, Offenlegung oder unbefugtem Zugriff auf Daten oder Informationen des KUNDEN im Internet oder über das Internet;
+- Beschädigung von Systemen, Anwendungen und anderen durch den KUNDEN auf der Infrastruktur installierten Elementen.
 
-### 12.3. Haftung des KUNDEN
+### 12.3. Verantwortung des KUNDEN
 
-Der KUNDE trägt die volle Verantwortung für die Risiken, die mit seinen Aktivitäten verbunden sind, einschließlich der Nutzung der vom Anbieter bereitgestellten Dienste und der vollständigen Einhaltung der Vertragsbedingungen.
+Der KUNDE trägt die volle Verantwortung für die Risiken im Zusammenhang mit seinen Aktivitäten, einschließlich der Nutzung der vom Dienstleister bereitgestellten Dienste und der vollständigen Einhaltung der Vertragsbedingungen.
 Diese Verantwortung erstreckt sich auf Fälle, in denen die Dienste direkt vom KUNDEN oder im Namen Dritter genutzt werden.
 
 Konkret ist der KUNDE verantwortlich:
 
-- dafür, dass die gewählten Dienste seinen Anforderungen und denen aller Dritten, die diese in seinem Namen verwenden, entsprechen;
-- für die Verwaltung der Inhalte - Informationen, Daten, Dateien, Systeme, Anwendungen, Software, Websites usw., die er im Rahmen der Dienste reproduziert, hostet, installiert, sammelt, übermittelt, verbreitet, veröffentlicht oder in sonstiger Weise verwendet. Dies umfasst die Kontrolle, Validierung, Aktualisierung, Eliminierung, Sicherung der Inhalte und die Implementierung von Maßnahmen, um deren Verlust oder Veränderung zu verhindern, selbst wenn diese Inhalte Dritten gehören oder in deren Auftrag verwaltet werden;
-- für die Einhaltung der geltenden Gesetze, Vorschriften sowie etwaiger geltender Ethikrichtlinien.
-- für die Einhaltung der PGSSI-S (allgemeine Sicherheitsrichtlinie für Gesundheitssysteme), wenn die Dienstleistung Gegenstand dieses Vertrags Gesundheitsdaten betrifft, gemäß den Anforderungen 4.5.2 des HDS-Referenzrahmens.
+- sicherzustellen, dass die gewählten Dienste seinen Anforderungen und denen aller Dritten, die diese in seinem Namen nutzen, entsprechen;
+- für die Verwaltung der Inhalte - Informationen, Daten, Dateien, Systeme, Anwendungen, Software, Websites usw., die er reproduziert, hostet, installiert, sammelt, überträgt, verbreitet, veröffentlicht oder auf andere Weise im Rahmen der Dienste verwendet. Dies umfasst die Kontrolle, Validierung, Aktualisierung, Löschung, Sicherung der Inhalte und die Umsetzung von Maßnahmen zur Verhinderung ihres Verlusts oder ihrer Veränderung, auch wenn diese Inhalte Dritten gehören oder in deren Auftrag verwaltet werden;
+- Gesetzgebung, geltende Vorschriften und alle anwendbaren Ethikrichtlinien einzuhalten;
+- die PGSSI-S (allgemeine Sicherheitsrichtlinie für Informationssysteme im Gesundheitswesen) einzuhalten, wenn die im Rahmen dieses Vertrags zu erbringende Dienstleistung Gesundheitsdaten betrifft, gemäß der Anforderung 4.5.2 des HDS-Referenzrahmens.
 
-Wenn der KUNDE die Dienste zu beruflichen Zwecken nutzt oder im Auftrag von Dritten handelt, verpflichtet er sich, eine Haftpflichtversicherung bei einem anerkannten Versicherer abzuschließen, die alle potenziellen Schäden abdeckt, die ihm zugerechnet werden könnten. Er verpflichtet sich auch, diese Versicherung oder eine andere Versicherung mit äquivalenter Deckung während der gesamten Vertragslaufzeit aufrechtzuerhalten.
+Wenn der KUNDE die Dienste zu beruflichen Zwecken nutzt oder im Namen Dritter handelt, verpflichtet er sich, eine Haftpflichtversicherung bei einem anerkannten Versicherer abzuschließen, die alle potenziellen Schäden abdeckt, die ihm zugeschrieben werden könnten. Er verpflichtet sich auch, diese Versicherung oder eine andere Versicherung mit gleichwertigem Schutz während der gesamten Vertragsdauer aufrechtzuerhalten.
 
 ### 12.4. Garantie
 
-Jede Partei verpflichtet sich, ihre Aktivitäten in Übereinstimmung mit den geltenden Gesetzen und Vorschriften durchzuführen. Der KUNDE entlastet
-den Anbieter von jeglicher Haftung und verpflichtet sich, ihn gegen jegliche Folgen zu schützen, die sich ergeben aus:
+Jede Partei verpflichtet sich, ihre Tätigkeiten in strikter Übereinstimmung mit den geltenden Gesetzen und Vorschriften auszuüben. Der KUNDE entlastet den Dienstleister von jeglicher Haftung und verpflichtet sich, ihn gegen alle Konsequenzen zu schützen, die sich ergeben aus:
 
-- der Nutzung oder Verarbeitung illegaler Inhalte über die Dienste;
-- einer betrügerischen oder nicht vorschriftsmäßigen Nutzung der Dienste;
-- einer Nutzung der Dienste, die die Rechte Dritter verletzt;
-- der Wahl von Diensten, die nicht den Bedürfnissen des KUNDEN oder Dritter entsprechen;
+- der Nutzung oder Verwertung illegaler Inhalte über die Dienste;
+- einer betrügerischen oder nicht konformen Nutzung der Dienste gemäß den geltenden Vorschriften;
+- einer Nutzung der Dienste unter Verstoß gegen die Rechte Dritter;
+- der Auswahl von Diensten, die nicht den Bedürfnissen des KUNDEN oder Dritter entsprechen;
 - dem Verlust, der unbefugten oder betrügerischen Nutzung der Benutzerkennungen.
 
-Der KUNDE verpflichtet sich auch, aktiv an der Bearbeitung von Anfragen, Beschwerden oder Klagen im Zusammenhang mit den Inhalten oder den Bedingungen des Vertrags teilzunehmen, einschließlich solcher, die von Verwaltungs- oder Justizbehörden ausgehen, und verpflichtet sich, den Anbieter für alle daraus resultierenden Schäden zu entschädigen, einschließlich etwaiger Verurteilungen und gerechtfertigter Verteidigungskosten.
+Der KUNDE verpflichtet sich auch, aktiv an der Bearbeitung von Anfragen, Beschwerden oder rechtlichen Schritten mitzuwirken, die die Inhalte oder die Vertragsbedingungen betreffen, einschließlich solcher, die von Verwaltungs- oder Justizbehörden ausgehen, und den Dienstleister für alle daraus resultierenden Schäden, einschließlich eventueller Verurteilungen sowie gerechtfertigter Verteidigungsausgaben, zu entschädigen.
 
 ### 12.5. Dritte
 
-Im Rahmen dieses Vertrags übernimmt der Anbieter keine Verpflichtung gegenüber Dritten, einschließlich der Benutzer, und keine Klausel darf so ausgelegt werden, dass Dritten Nutzungsrechte zuerkannt werden. Der KUNDE trägt die volle Verantwortung für seine Interaktionen mit Dritten,
-insbesondere mit den Benutzern der Dienste, und verpflichtet sich, den Anbieter für jegliche Forderung, Beschwerde oder Klage Dritter zu entschädigen, die die Qualität oder Konformität der vom Anbieter bereitgestellten Dienste infrage stellen könnte.
+Im Rahmen dieses Vertrags übernimmt der Dienstleister keine Verpflichtung gegenüber Dritten, einschließlich der Benutzer, und keine Klausel darf so ausgelegt werden, dass Dritten gewährte Rechte ableitet werden. Der KUNDE übernimmt die volle Verantwortung für seine Interaktionen mit Dritten, insbesondere mit den Benutzern der Dienste, und verpflichtet sich, den Dienstleister für alle Ansprüche, Beschwerden oder rechtlichen Schritte Dritter zu entschädigen, die die Qualität oder Konformität der vom Dienstleister bereitgestellten Dienste in Frage stellen könnten.
 
-Der KUNDE ist ebenfalls verpflichtet, den Anbieter schriftlich und unverzüglich über jegliche Forderung, Beschwerde oder Klage Dritter in Bezug auf die Dienstleistungen des Anbieters zu informieren und eine detaillierte Beschreibung der Forderung sowie alle relevanten Informationen bereitzustellen, die es dem Anbieter ermöglichen, dem KUNDEN die erforderlichen Antworten oder Dokumente zu liefern.
+Der KUNDE verpflichtet sich auch, den Dienstleister schriftlich und schnellstmöglich über jede Anfrage, Beschwerde oder rechtliche Schritte Dritter in Bezug auf die Dienste des Dienstleisters zu informieren, und einen detaillierten Bericht der Anfrage sowie alle relevanten Informationen bereitzustellen, die dem Dienstleister bei der Bereitstellung von Antwort- oder Dokumentationsmaterialien im Besitz des KUNDEN nützlich sind.
 
 ## 13. Höhere Gewalt
 
-Die Erfüllung einer Verpflichtung, gleich welcher Art, wird ausgesetzt, wenn die Erfüllung durch einen Fall höherer Gewalt gemäß Artikel 1218 des Zivilgesetzbuchs verhindert wird.
+Die Erfüllung einer Verpflichtung wird ausgesetzt, wenn ihre Erfüllung durch einen Fall höherer Gewalt im Sinne von Artikel 1218 des Bürgerlichen Gesetzbuches verhindert wird.
 
-Zunächst wird die Erfüllung des Vertrags im Falle höherer Gewalt ausgesetzt. Wenn höhere Gewalt den Anbieter daran hindert, seine Dienstleistungen zu erbringen:
+Im zunächst werden Fälle höherer Gewalt die Erfüllung des Vertrags aussetzen. Im Falle höherer Gewalt, die den Dienstleister daran hindert, seine Dienste auszuführen:
 
-- Bei Eintritt des Ereignisses, das höhere Gewalt darstellt, wird sich Cloud Tempe mit dem KUNDEN in Verbindung setzen, um gemeinsam Lösungen zu erarbeiten, die die Wiederaufnahme der Dienstleistungen sicherstellen, und sich einvernehmlich auf die Modalitäten zur Umsetzung dieser Lösungen zu einigen, die spätestens 48 Stunden nach dem Datum des Eintritts des Ereignisses, das höhere Gewalt darstellt, umgesetzt werden müssen;
-- Sollte die Dauer des letzteren 30 Kalendertage ab dem Datum des Ereignisses, das höhere Gewalt darstellt, überschreiten oder sollten sich die Parteien nicht spätestens zum Ablauf dieser Frist auf eine Ersatzlösung einigen können, könnte der KUNDE die im Vertrag beschriebenen Dienstleistungen an einen anderen Anbieter seiner Wahl übertragen, wodurch die Rückführungsphase eingeleitet wird, sofern die Natur, Schwere und Auswirkung des Falles höherer Gewalt dies zulassen;
-- Umgekehrt, wenn es dem Anbieter innerhalb von weniger als 30 Kalendertagen ab dem Datum des Eintritts des Ereignisses, das höhere Gewalt darstellt, gelingt, seine Verpflichtungen normal zu erfüllen, wird der Vertrag nach Beendigung des Falles höherer Gewalt normal fortgesetzt.
+- Ab dem Zeitpunkt des Ereignisses, das einen Fall höherer Gewalt begründet, wird Cloud Tempe den KUNDEN kontaktieren, um gemeinsam Lösungen zur Wiederaufnahme der Dienste zu prüfen und einvernehmlich die Durchführungsmodalitäten dieser Lösungen zu vereinbaren, die spätestens achtundvierzig (48) Stunden nach dem Datum des Ereignisses der höheren Gewalt umgesetzt werden müssen;
+- Sollte die Dauer des Ereignisses dreißig (30) Kalendertage ab dem Datum des Ereignisses überschreiten, oder wenn die Parteien sich nicht spätestens innerhalb dieser Frist auf eine Ersatzlösung einigen können, kann der KUNDE die im Vertrag festgelegten Dienste an einen anderen Dienstleister seiner Wahl übergeben, wodurch die Phase der Rückführung eintritt, soweit die Natur, Schwere und Auswirkungen des Falls höherer Gewalt dies zulassen;
+- Umgekehrt, wenn der Dienstleister innerhalb von weniger als dreißig (30) Tagen ab dem Datum des Ereignisses der höheren Gewalt seine Verpflichtungen normal erfüllen könnte und der Fall höherer Gewalt beendet ist, wird der Vertrag wieder normal ausgeführt.
 
-Dauert der Fall höherer Gewalt länger als 30 Kalendertage an, kann jede Partei den Vertrag durch Senden eines Einschreibens an die andere Partei kündigen.
+Wenn der Fall höherer Gewalt länger als dreißig (30) Kalendertage andauert, kann jede Partei den Vertrag nach dem Versand eines Einschreibens an die andere Partei kündigen.
 
-Alle mit der Umsetzung der oben genannten Lösungen verbundenen Kosten trägt die von dem Fall höherer Gewalt betroffene Partei.
+Alle mit der Umsetzung der oben genannten Lösungen verbundenen Kosten fallen der Partei zu, die vom Fall höherer Gewalt betroffen ist.
 
 ## 14. Finanzielle Bedingungen
 
-### 14.1. Angewandte Preise
+### 14.1. Angewendete Tarife
 
-Die für die dem KUNDEN bereitgestellten Dienstleistungen angewandten Preise entsprechen den zum Zeitpunkt der Rechnungsstellung geltenden Preisen gemäß den bei Vertragsschluss vereinbarten Bedingungen.
-Sofern nichts anderes angegeben ist, sind diese Preise in Euro angegeben. Der Anbieter bietet verschiedene Tarifmodelle für seine Dienstleistungen an, die je nach Fall eine Mindestlaufzeit und/oder eine spezifische Abrechnungsart beinhalten können. Für eine bestimmte Dienstleistung, die mehrere Preistarife anbietet, ist der KUNDE frei, die für ihn zum Zeitpunkt der Bestellung am besten geeignete Option zu wählen.
+Die für die dem KUNDEN erbrachten Dienstleistungen geltenden Tarife entsprechen den Preisen, die zum Zeitpunkt der Rechnungsausstellung gültig sind, gemäß den zum Zeitpunkt der Vertragsunterzeichnung vereinbarten Bedingungen. Sofern nicht anders angegeben, werden diese Preise in Euro angegeben. Der Dienstleister bietet verschiedene Tarifpläne für seine Dienste an, die je nach Fall eine Mindestbindung und/oder eine spezielle Abrechnungsmodalität umfassen können. Für einen bestimmten Dienst, der mehrere Tarifoptionen bietet, kann der KUNDE die Option wählen, die ihm bei der Bestellung am besten entspricht.
 
-Die angegebenen Preise verstehen sich netto für Dienstleistungen, die an Fachleute gerichtet sind, was bedeutet, dass die Mehrwertsteuer und jede andere relevante Steuer (außer den Einkommenssteuern des Anbieters) zum Rechnungsbetrag hinzukommen. Diese zusätzliche Besteuerung stellt keine Preisänderung im Sinne des Artikels zu den Bedingungen für Preisänderungen dar.
+Die genannten Preise verstehen sich ohne Steuern für Dienstleistungen an Fachleute, was bedeutet, dass die Mehrwertsteuer und alle anderen relevanten Steuern (außer den Einkommenssteuern des Dienstleisters) zum abgerechneten Betrag hinzukommen. Diese zusätzliche Besteuerung stellt keine Preisänderung im Sinne des Artikels über die Tarifänderung dar.
 
-Soweit nicht anders angegeben, umfassen die Kosten für die Dienstleistungen auch die Kosten im Zusammenhang mit dem Erwerb von Lizenzen und Nutzungsrechten für die vom Anbieter verwendeten Tools, Software und Betriebssysteme oder, gegebenenfalls, die dem KUNDEN im Rahmen der Dienstleistungen zur Verfügung gestellt werden.
-Es liegt in der Verantwortung des KUNDEN, alle notwendigen Lizenzen oder Nutzungsrechte zu erhalten und zu bezahlen, um die Inhalte zu nutzen, die er über die Dienstleistungen verwendet.
+Sofern keine spezifische Preisgestaltung angegeben ist, umfassen die Kosten der Dienste auch die Kosten für den Erwerb von Lizenzen und Nutzungsrechten für die Werkzeuge, Software und Betriebssysteme, die vom Dienstleister verwendet oder gegebenenfalls dem KUNDEN im Rahmen der Dienste zur Verfügung gestellt werden. Esliegt in der Verantwortung des KUNDEN, alle Lizenzen oder Nutzungsrechte zu erwerben und zu bezahlen, die für die Nutzung der Inhalte erforderlich sind, die er über die Dienste verwendet.
 
-Die Preisstruktur der Dienstleistungen und die für die Berechnung dieser Preise verwendeten Maßeinheiten sind auf der Website des Anbieters verfügbar. Es wird dem KUNDEN empfohlen, diese Informationen zu konsultieren, bevor er seine Bestellung bestätigt. Jede angefangene Maßeinheit ist vollständig zu bezahlen, auch wenn sie nicht vollständig konsumiert wird. Darüber hinaus können bestimmte Dienstleistungen zusätzliche Kosten für deren Installation oder Inbetriebnahme verursachen.
+Die Preisstruktur der Dienste und die für die Preisberechnung verwendeten Maßeinheiten sind auf der Website des Dienstleisters verfügbar. Es wird dem KUNDEN empfohlen, diese Informationen vor der Bestätigung seiner Bestellung zu konsultieren. Jedes angebrochene Maßeinheit ist in voller Höhe fällig, selbst wenn sie nicht vollständig verbraucht wird. Darüber hinaus können einige Dienste zusätzliche Kosten für deren Installation oder Inbetriebnahme verursachen.
 
-### 14.2. Preisänderungen
+### 14.2. Preisänderung
 
-Der Anbieter behält sich das Recht vor, seine Preise nach eigenem Ermessen zu überarbeiten. Jede Preisänderung gilt sofort für nach dieser Änderung aufgegebene Bestellungen. Für bereits abonnierte Dienstleistungen wird jede Preiserhöhung dem KUNDEN mit einer Frist von 30 Kalendertagen per E-Mail mitgeteilt.
+Der Dienstleister behält sich das Recht vor, seine Tarife nach eigenem Ermessen zu überarbeiten. Jede Tarifänderung gilt sofort für nach dieser Änderung eingegangene Bestellungen. Für bereits abonnierte Dienste wird jede Preiserhöhung dem KUNDEN mit einer Frist von dreißig (30) Kalendertagen per E-Mail mitgeteilt.
 
-Nach dieser Benachrichtigung hat der KUNDE die Möglichkeit, innerhalb von 30 Kalendertagen die betroffenen Dienstleistungen ohne Strafen zu kündigen. Diese Kündigung kann entweder durch das Senden eines Einschreibens mit Rückschein erfolgen oder über ein spezielles Formular in der Verwaltungsoberfläche des KUNDEN. Sollte innerhalb dieser Frist keine Kündigung erfolgen, gilt der KUNDE als mit den neuen Preisen einverstanden. Es ist zu beachten, dass die Option zur Kündigung ohne Strafen in Situationen, in denen die Preissteigerung durch unvorhergesehene Umstände gemäß Artikel 1195 des Zivilgesetzbuches bedingt ist, nicht angeboten wird. In solchen Fällen gelten die in dem genannten Artikel festgelegten Bedingungen.
+Nach dieser Mitteilung hat der KUNDE die Möglichkeit, die betroffenen Dienste innerhalb von dreißig (30) Kalendertagen ohne Strafgebühren zu kündigen. Diese Kündigung kann entweder durch Versand eines Einschreibens mit Rückschein oder über ein spezifisches Formular auf der Verwaltungsoberfläche des KUNDEN erfolgen. Im Falle der nicht erfolgten Kündigung innerhalb dieser Frist gilt der KUNDE als die neuen Preise akzeptiert. Es ist zu beachten, dass das Kündigungsrecht ohne Strafgebühren nicht in Fällen angeboten wird, in denen die Preiserhöhung auf unvorhergesehene Umstände zurückzuführen ist, wie sie in Artikel 1195 des Bürgerlichen Gesetzbuchs definiert sind. In solchen Umständen gelten die in diesem Artikel festgelegten Bedingungen.
 
-### 14.3. Abrechnung
+### 14.3. Rechnungsstellung
 
-Die Abrechnung der Dienstleistungen erfolgt auf Basis der tatsächlichen Nutzung und der vom KUNDEN aufgegebenen Bestellungen, wie sie im Informationssystem des Anbieters erfasst sind und das im Streitfall mit dem KUNDEN als zuverlässig und maßgeblich gilt. Die Abrechnungshäufigkeit (monatlich, jährlich oder in einem anderen Rhythmus) und der Zeitpunkt (bei Bestellung oder nach Lieferung) variieren je nach dem betreffenden Service. Die Abrechnungsmodalitäten werden gemäß dem technischen und kommerziellen Angebot festgelegt.
-validiert vom KUNDEN und dem Dienstleister. Jede angefangene Periode wird anteilig berechnet. Es liegt in der Verantwortung des KUNDEN, sich vor Auftragserteilung mit diesen Bedingungen vertraut zu machen.
-Nach Begleichung jeder Rechnung sendet der Dienstleister dem KUNDEN eine Zahlungsbestätigung.
+Die Abrechnung der Dienste erfolgt basierend auf der tatsächlichen Nutzung und den vom KUNDEN aufgegebenen Bestellungen, wie im Informationssystem des Dienstleisters erfasst, das im Streitfall mit dem KUNDEN als zuverlässig und maßgeblich angesehen wird. Die Abrechnungsfrequenz (monatlich, jährlich oder in anderer Periodizität) sowie der Zeitpunkt (bei Bestellung oder nach Lieferung) variieren je nach betreffendem Dienst. Die Abrechnungsmodalitäten werden entsprechend dem technischen und kommerziellen Angebotdetermine
+validiert durch den KUNDEN und den Dienstleister. Jeder angefangene Zeitraum wird anteilig für den Zeitraum berechnet. Es liegt in der Verantwortung des KUNDEN, sich mit diesen Bedingungen vertraut zu machen, bevor er eine Bestellung aufgibt. Nach Begleichung jeder Rechnung sendet der Dienstleister dem KUNDEN eine Zahlungsbestätigung.
 
-Der KUNDE akzeptiert ausdrücklich den Empfang der Rechnungen auf elektronischem Wege, welche an die vom KUNDEN angegebene E-Mail-Adresse gesendet werden.
-Es obliegt dem KUNDEN, eine Kopie jeder erhaltenen Rechnung aufzubewahren, in Übereinstimmung mit den geltenden gesetzlichen Anforderungen.
+Der KUNDE stimmt ausdrücklich zu, Rechnungen elektronisch zu erhalten, die an die vom KUNDEN angegebene E-Mail-Adresse gesendet werden.
+Der KUNDE ist dafür verantwortlich, eine Kopie jeder erhaltenen Rechnung zu speichern, gemäß den geltenden gesetzlichen Anforderungen.
 
 ### 14.4. Zahlungsverzug und -verspätung
 
-Sofern der KUNDE die Rechnung nicht in gutem Glauben ganz oder teilweise anfechten sollte, gelten im Falle eines Zahlungsverzugs oder Teilzahlung die folgenden Konsequenzen:
+Sofern der KUNDE nicht in gutem Glauben die gesamte oder einen Teil der Rechnung bestreitet, gelten im Falle eines Zahlungsverzugs oder einer verspäteten Zahlung, einschließlich einer Teilzahlung, die folgenden Konsequenzen:
 
-1. Verzugszinsen sind ab dem Tag nach dem Fälligkeitsdatum sofort fällig und werden auf Basis eines dreifachen gesetzlichen Zinssatzes berechnet.
-2. Jeder Zahlungsverzug oder Zahlungsunfähigkeit (auch teilweise) der vom KUNDEN geschuldeten Beträge gemäß dem Vertrag, die länger als sieben (7) Kalendertage nach Versand
-einer Mahnung per E-Mail andauert, führt automatisch ohne weitere Mitteilung oder Formalität zu:
+1. Verzugszinsen sind ab dem auf das Fälligkeitsdatum folgenden Tag sofort fällig und werden auf der Grundlage eines dreifachen gesetzlichen Zinssatzes berechnet,
+2. jede Verspätung oder Nichterfüllung der vom KUNDEN gemäß dem Vertrag geschuldeten Zahlungen, die mehr als sieben (7) Kalendertage nach dem Senden einer Zahlungsaufforderung per E-Mail andauert, führt automatisch und ohne weitere Benachrichtigung oder Formalitäten zu:
+   - die sofortige Fälligkeit aller vom KUNDEN ausstehenden Beträge gemäß dem Vertrag, unabhängig von der ursprünglich vereinbarten Zahlungsmethode,
+   - das Recht des Dienstleisters, alle oder einen Teil der dem KUNDEN bereitgestellten Dienstleistungen (einschließlich bereits bezahlter Dienstleistungen) sofort und ohne Vorankündigung auszusetzen, neue Bestellungen oder Verlängerungen von Dienstleistungen abzulehnen und den Vertrag ganz oder teilweise per E-Mail einseitig zu kündigen.
 
-- sofortiger Fälligkeit der gesamten ausstehenden Beträge, die der KUNDE im Rahmen des Vertrages schuldet, unabhängig von der ursprünglich vereinbarten Zahlungsmethode,
-- das Recht des Dienstleisters, alle oder einen Teil der dem KUNDEN bereitgestellten Dienstleistungen (einschließlich bereits bezahlter) sofort und ohne Vorankündigung auszusetzen, 
-neue Bestellungen oder Serviceverlängerungen abzulehnen und den Vertrag einseitig ganz oder teilweise per E-Mail zu kündigen.
+Darüber hinaus sind gewerbliche Kunden im Falle eines Zahlungsverzugs oder einer Nichtzahlung verpflichtet, eine Pauschalentschädigung von vierzig (40) Euro für Inkassokosten zu zahlen, unbeschadet des Rechts des Dienstleisters, eine zusätzliche Entschädigung zu verlangen, sofern die nachgewiesenen Inkassokosten diesen Pauschalbetrag übersteigen.
 
-Zudem sind gewerbliche Kunden im Falle eines Zahlungsverzugs oder -mangels verpflichtet, eine Pauschalentschädigung von vierzig (40) Euro für Inkassokosten zu zahlen,
-ohne das Recht des Dienstleisters abzuerkennen, eine zusätzliche Entschädigung zu verlangen, wenn die entstandenen Inkassokosten diesen Pauschalbetrag übersteigen und dies belegt werden kann.
+### 14.5. Streitigkeiten
 
-### 14.5. Anfechtung
+Etwaige Streitigkeiten über Rechnungen oder Spezifikationen der Dienstleistungen müssen innerhalb eines (1) Monats nach Rechnungsstellung an den Kundenservice des Dienstleisters über die Verwaltungsoberfläche des KUNDEN gemeldet werden. Nach Ablauf dieser Frist ist der KUNDE, trotz möglicher zukünftiger Streitigkeiten über die Rechnung, verpflichtet, die fälligen Beträge gemäß den Vertragsbedingungen zu bezahlen. Sollte ein Rechnungsfehler festgestellt werden, behält sich der Dienstleister das Recht vor, die entsprechenden Anpassungen an den betroffenen Rechnungen vorzunehmen, und zwar unter Einhaltung der geltenden Verjährungsfristen.
 
-Jeder Streitfall in Zusammenhang mit der Rechnungsstellung oder den Spezifikationen der Dienstleistungen muss innerhalb eines (1) Monats nach dem Ausstellungsdatum der Rechnung 
-über das Kundenservice des Dienstleisters über die KUNDEN-Verwaltungsoberfläche vorgebracht werden. Nach Ablauf dieser Frist ist der KUNDE, trotz späterer möglicher Anfechtung der Rechnung, 
-verpflichtet, die geschuldeten Beträge gemäß den Vertragsbedingungen zu bezahlen. Sollte ein Rechnungsfehler festgestellt werden, behält sich der Dienstleister das Recht vor, 
-die notwendigen Anpassungen innerhalb der geltenden Verjährungsfristen vorzunehmen.
-
-## 15. Strafgebühren
+## 15. Strafen
 
 ### 15.1. Grundsatz
 
-Die Nichteinhaltung der in der SecNumCloud-Servicevereinbarung genannten Service Level (SLAs) gibt dem KUNDEN das Recht, Strafgebühren anzuwenden.
-Der KUNDE muss die Anwendung der Strafgebühren per E-Mail innerhalb von maximal 90 (neunzig) Tagen nach dem auslösenden Ereignis beantragen.
-Im Falle eines Fehlers, der nicht auf den Dienstleister, sondern auf den KUNDEN oder einen Dritten zurückzuführen ist, sind keine Strafgebühren gegenüber dem Dienstleister anwendbar.
+Die Nichteinhaltung der in der Servicevereinbarung SecNumCloud angegebenen Service Levels gibt dem KUNDEN das Recht, Strafen anzuwenden. Die Anwendung der Strafen wird vom KUNDEN per E-Mail innerhalb von maximal 90 (neunzig) Tagen nach dem auslösenden Ereignis beantragt. Im Falle eines Verschuldens, das nicht dem Dienstleister, sondern dem KUNDEN oder einem Dritten anzulasten ist, sind keine Strafen gegen den Dienstleister anwendbar.
 
-Die Strafgebühren werden im Verhältnis zu dem nicht eingehaltenen Referenzindikator berechnet. Auf jeden Fall darf der Gesamtbetrag der monatlichen Strafgebühren 
-30 % (dreißig Prozent) des Betrags der betroffenen Dienstleistungen in der Monatsrechnung nicht überschreiten. Wenn der KUNDE die Anwendung der Strafgebühren verlangt,
-stellt die Zahlung dieser Strafgebühren durch den Dienstleister eine pauschale und endgültige Schadenersatzforderung für die Vorfälle dar, die zur Strafgebühr geführt haben.
+Die Strafen werden im Verhältnis zum nicht eingehaltenen Referenzindikator berechnet. In jedem Fall darf der Gesamtbetrag der monatlichen Strafen 30 % (dreißig Prozent) des Betrags der betreffenden Dienstleistungen der Rechnung des Monats nicht überschreiten. Wenn der KUNDE die Anwendung der Strafen beantragt, stellt die Zahlung dieser Strafen durch den Dienstleister eine pauschale und endgültige Entschädigung für die Vorfälle dar, die der Strafe zugrunde liegen.
 
-### 15.2. Berechnung der Strafgebühren
- 
-**Strafgebühren = Prozentsatzdifferenz zwischen der im SLA des betroffenen Dienstes für den Abrechnungszeitraum zugesagten Verfügbarkeit und der tatsächlichen Verfügbarkeit des betroffenen Dienstes im Abrechnungszeitraum.**
+### 15.2. Berechnung der Strafen
 
-_**Beispiel: Nichteinhaltung der SLAs 1 – 3 und 4**_
+**Strafen = Prozentsatzdifferenz zwischen der im SLA des betreffenden Dienstes für den Berechnungszeitraum versprochenen Verfügbarkeit und der tatsächlichen Verfügbarkeit des betreffenden Dienstes im Berechnungszeitraum.**
 
-- _SLA 1: IC-INFRA_SNC-01 – Verfügbarkeit Compute: 99,9%; aktueller Monatswert 90%; anzuwendender Strafprozentsatz **9,9%**_
-- _SLA 3: IC-INFRA_SNC-03 – Backup: 99,9%; aktueller Monatswert 80%; anzuwendender Strafprozentsatz **19,9%**_
-- _SLA 4: IC-INFRA-SNC-05 – Internetzugang 99,9%; aktueller Monatswert 90%; anzuwendender Strafprozentsatz **9,9%**_
+_**Beispiel: Nichteinhaltung der SLA 1 – 3 und 4**_
 
-In jedem Fall dürfen alle Strafgebühren im Rahmen der vorliegenden Allgemeinen Verkaufs- und Nutzungsbedingungen 30 % (dreißig Prozent)
-des Rechnungsbetrags der betroffenen Dienstleistungen des Monats nicht überschreiten. Darüber hinaus stellen die Strafgebühren stets eine pauschale und endgültige Schadenersatzforderung 
-für die Vorfälle dar, die zur Strafgebühr geführt haben, wobei diese Strafgebühren befreienden Charakter haben.
+- _SLA 1: IC-INFRA_SNC-01 – Compute-Verfügbarkeit: 99,9%; laufender Monatsstand 90%; anzuwendender Strafsatz **9,9%**_
+- _SLA 3: IC-INFRA_SNC-03 – Backup: 99,9%; laufender Monatsstand 80%; anzuwendender Strafsatz **19,9%**_
+- _SLA 4: IC-INFRA-SNC-05 – Internetzugang 99,9%; laufender Monatsstand 90%; anzuwendender Strafsatz **9,9%**_
 
-Die Strafgebühren werden im folgenden Monat in Form eines Guthabens auf den regulären Servicebetrag angewendet. Wenn Strafgebühren am Ende des Vertrags 
-unabhängig vom Grund noch ausstehen, zahlt der Dienstleister den Restbetrag per Banküberweisung an den KUNDEN.
+In jedem Fall dürfen alle Strafen gemäß diesen Allgemeinen Verkaufs- und Nutzungsbedingungen 30 % (dreißig Prozent) des Betrags der betreffenden Dienstleistungen der Rechnung des Monats nicht überschreiten. Darüber hinaus stellen die Strafen immer eine pauschale und endgültige Entschädigung für die Vorfälle dar, die den Strafen zugrunde liegen, wobei diese Strafen befreiende Wirkung haben.
+
+Die Strafen werden in Form einer Gutschrift des Betrags für den regulären Dienst im folgenden Monat angewendet. Sollte am Ende des Vertrags, unabhängig vom Grund, noch eine Strafe ausstehen, zahlt der Dienstleister den Restbetrag per Banküberweisung an den KUNDEN.
 
 ## 16. Kündigung
 
-### 16.1. Kündigung nach Belieben
+### 16.1. Kündigung aus Bequemlichkeit
 
-Der KUNDE ist berechtigt, den Vertrag zu beenden, ohne seine Entscheidung zu begründen oder Strafgebühren zu zahlen, einmal nach Ablauf eines Zeitraums von einem (1) Monat 
-nach der Aktivierung des Vertrages. Zu diesem Zweck muss er seine Entscheidung per Einschreiben mit Rückschein an den Dienstleister mitteilen.
+Der KUNDE ist berechtigt, den Vertrag zu beenden, ohne seine Entscheidung rechtfertigen zu müssen oder Strafgebühren zu zahlen, nachdem ein Zeitraum von einem (1) Monat nach Aktivierung des Vertrags verstrichen ist. Hierfür muss er seine Entscheidung per Einschreiben mit Rückschein an den Dienstleister mitteilen.
 
-Eine Kündigungsfrist von zwei (2) Monaten ist erforderlich. Die Kündigung tritt nach Ablauf dieser Frist in Kraft. Die bis zum tatsächlichen Kündigungsdatum 
-vom Dienstleister erbrachten Leistungen werden gemäß den Vertragsbedingungen in Rechnung gestellt, ohne zusätzliche Entschädigung. Der KUNDE bleibt jedoch verpflichtet, 
-die verbleibenden Beträge für die gesamte Vertragsdauer zu zahlen, einschließlich für Ausrüstungen und Lizenzen, die auf monatlicher Basis abgerechnet wurden.
+Eine Kündigungsfrist von zwei (2) Monaten ist erforderlich. Die Kündigung tritt nach Ablauf dieser Frist in Kraft. Die vom Dienstleister bis zum tatsächlichen Kündigungstermin erbrachten Dienstleistungen werden gemäß den Vertragsbedingungen in Rechnung gestellt, ohne dass zusätzliche Entschädigungen geleistet werden. Allerdings bleibt der KUNDE verpflichtet, die ausstehenden Beträge für die gesamte Vertragslaufzeit zu zahlen, einschließlich der auf monatlicher Basis berechneten Geräte und Lizenzen.
 
-### 16.2. Kündigung wegen Vertragsverletzung
+### 16.2. Kündigung wegen Verstoß
 
-Im Falle der Nichterfüllung der wesentlichen Pflichten des Vertrages durch eine der Parteien sendet die betroffene Partei der schuldigen Partei
-eine Abmahnung per Einschreiben mit Rückschein und gewährt ihr eine Frist von dreißig (30) Werktagen ab Eingang der Mitteilung zur Behebung der Situation.
+Im Falle einer Nichterfüllung wesentlicher Verpflichtungen durch eine der Parteien sendet die betroffene Partei an die säumige Partei eine Mahnung per Einschreiben mit Rückschein und gewährt ihr eine Frist von dreißig (30) Werktagen ab Erhalt der Benachrichtigung, um die Situation zu beheben.
 
-Wenn die schuldige Partei diesen Mangel nach Ablauf dieser Frist nicht behoben hat, ist die geschädigte Partei berechtigt, den Vertrag zu kündigen, 
-indem sie eine neue Mitteilung per Einschreiben mit Rückschein sendet. Diese Kündigung erfolgt ohne Entschädigung an die schuldige Partei, wobei das Recht 
-auf Schadenersatz für erlittene Verletzungen vorbehalten bleibt.
+Wenn die säumige Partei nach Ablauf dieser Frist den Verstoß nicht behoben hat, ist die betroffene Partei berechtigt, den Vertrag zu kündigen, indem sie eine weitere Benachrichtigung per Einschreiben mit Rückschein sendet. Diese Kündigung erfolgt ohne Entschädigung der schuldhaften Partei, wobei der Anspruch auf Schadensersatz für die erlittenen Schäden vorbehalten bleibt.
 
-Die Entscheidung, den Vertrag wegen Vertragsverletzung zu kündigen, setzt die Verantwortung der Partei, die diesen Schritt unternimmt, voraus. Im Falle,
-dass festgestellt wird, dass die betroffene Partei ihre Verpflichtungen nicht verletzt hat, ist die Partei, die das Kündigungsverfahren eingeleitet hat, 
-verpflichtet, die der anderen Partei entstandenen Schäden zu kompensieren.
+Die Entscheidung, den Vertrag aufgrund von Verstoß zu kündigen, trägt die Verantwortung der Partei, die diesen Schritt unternimmt. Sollte festgestellt werden, dass die von der Kündigung betroffene Partei ihren Verpflichtungen tatsächlich nicht nachgekommen ist, ist die Partei, die das Kündigungsverfahren eingeleitet hat, verpflichtet, die durch die andere Partei entstandenen Schäden zu ersetzen.
 
 ### 16.3. Kündigung ohne Verschulden
 
-Jede Partei behält sich das Recht vor, den Vertrag ohne Vorankündigung oder Entschädigung unter den folgenden Umständen durch Übergabe eines Einschreibens mit Rückschein zu kündigen:
+Jede Partei behält sich das Recht vor, den Vertrag ohne Vorankündigung oder Entschädigung unter den folgenden Umständen per Einschreiben mit Rückschein zu kündigen:
 
-1. Im Falle der Insolvenz der anderen Partei, es sei denn, der Insolvenzverwalter entscheidet sich innerhalb der gesetzlichen Frist für die Fortsetzung des Vertrages.
-2. Wenn ein Kontrollwechsel bei der anderen Partei gemäß Artikel L. 233-3 des Handelsgesetzbuches eintritt, was zu deren direktem oder 
-indirektem Besitz durch einen Konkurrenten der kündigenden Partei führt.
-3. Nichterfüllung des Vertrages durch die andere Partei für eine Dauer von mehr als dreißig (30) Kalendertagen aufgrund höherer Gewalt.
-4. Eine unvorhersehbare Änderung der Umstände zum Zeitpunkt des Vertragsabschlusses, die das wirtschaftliche Gleichgewicht des Vertrages erheblich verändert.
-5. Missbräuchliche und wiederholte Nutzung der Haftungsklausel durch den KUNDEN ohne Grundlage, die den Dienstleister in eine nachteilige finanzielle Lage versetzt oder den Vertrag unrentabel macht.
+1. Im Falle der Eröffnung eines Insolvenzverfahrens der anderen Partei, es sei denn, der Insolvenzverwalter entscheidet sich innerhalb der gesetzlichen Frist für die Fortführung des Vertrags.
+2. Wenn ein Kontrollwechsel bei der anderen Partei gemäß Artikel L. 233-3 des Handelsgesetzbuchs stattfindet, der eine direkte oder indirekte Inbesitznahme durch einen Mitbewerber der kündigenden Partei zur Folge hat.
+3. Die Nichterfüllung des Vertrags durch die andere Partei für einen Zeitraum von mehr als dreißig (30) Kalendertagen aufgrund von höherer Gewalt.
+4. Eine unvorhergesehene Änderung der Umstände zum Zeitpunkt der Vertragsunterzeichnung, die das wirtschaftliche Gleichgewicht des Vertrags erheblich verändert.
+5. Missbräuchlicher und wiederholter Gebrauch der Verantwortlichkeitsklausel durch den KUNDEN ohne Grundlage, wodurch der Dienstleister in eine finanzielle Notlage versetzt oder der Vertrag unrentabel gemacht wird.
 
-Nach Ablauf oder aus jedem anderen Grund der Vertragsbeendigung:
+Bei Ablauf oder aus anderen Gründen des Vertragsendes:
 
-- Der KUNDE ist berechtigt, die Phase der Umkehrbarkeit gemäß den im Artikel „Umkehrbarkeit“ beschriebenen Modalitäten einzuleiten;
-- Der Dienstleister ist verpflichtet, die sichere Löschung aller Endkunden-Daten sicherzustellen.
+- Der KUNDE ist berechtigt, die Reversibilitätsphase gemäß den im Artikel "Reversibilität" beschriebenen Modalitäten einzuleiten;
+- Der Dienstleister ist verpflichtet, die sichere Löschung aller Daten des Endkunden sicherzustellen.
 
-- Diese Löschung beinhaltet die sichere Löschung aller Medien, die diese Daten enthalten, gemäß den Bestimmungen der Dienstleistungsvereinbarung.
-Nach Abschluss eines Vertrages, unabhängig vom Grund, ist der Dienstleister auch verantwortlich für die Beseitigung der technischen Daten, die 
-mit dem Endkunden verbunden sind, einschließlich des Verzeichnisses, der Zertifikate und der Zugangskonfiguration.
+- Diese Löschung umfasst die sichere Entfernung aller Datenträger, die diese Daten enthalten haben, gemäß den Bestimmungen der Servicevereinbarung.
+Nach Abschluss eines Vertrags, unabhängig vom Grund, ist der Dienstleister auch für die Beseitigung der technischen Daten des Endkunden verantwortlich, einschließlich Verzeichnissen, Zertifikaten und Zugangskonfigurationen.
 
-## 17. Umkehrbarkeit
+## 17. Reversibilität
 
-Die Dienstleistungen beinhalten keine Verpflichtung zur Umkehrbarkeit (d.h. Unterstützung des Kunden bei der Migration seines Systems 
-zu einem anderen Dienstleister), mit Ausnahme der Bereitstellung der technischen Schnittstelle und APIs durch den Dienstleister, 
-die es dem KUNDEN ermöglichen, seine Daten einschließlich der Plattformkonfigurationsdaten über eine der wählbaren technischen Modalitäten zu sichern und wiederherzustellen:
-die Bereitstellung von Dateien in einem oder mehreren dokumentierten und außerhalb des vom Dienstleister bereitgestellten Dienstes verwertbaren Formaten oder 
-die Einrichtung technischer Schnittstellen, die den Zugang zu den Daten gemäß einem dokumentierten und verwertbaren Schema ermöglichen (API).
+Die Dienstleistungen umfassen keine Verpflichtung zur Reversibilität (d. h. die Unterstützung des Kunden bei der Migration seines Systems zu einem anderen Anbieter), mit Ausnahme der Bereitstellung der technischen Schnittstelle und der APIs durch den Dienstleister, die es dem KUNDEN ermöglichen, seine Daten einschließlich der Konfigurationsdaten der Plattformen zu sichern und wiederherzustellen, über eine der folgenden technischen Modalitäten nach Wahl des KUNDEN: die Bereitstellung von Dateien gemäß einem oder mehreren dokumentierten und außerhalb des vom Dienstleister bereitgestellten Dienstes nutzbaren Formaten oder durch die Implementierung technischer Schnittstellen, die den Zugriff auf die Daten gemäß einem dokumentierten und nutzbaren Schema (API) ermöglichen.
 
-Der KUNDE, alleiniger Eigentümer seines Systems, muss alles tun, um diesen Vorgang bei Bedarf zu erleichtern 
-(dies beinhaltet insbesondere die Erstellung einer strengen Dokumentation zu diesem Zweck) und die Erstellung von Umkehrplänen. 
-Falls der KUNDE eine zusätzliche Dienstleistung benötigt, kann der Dienstleister ein Angebot unterbreiten, um
-mission de conseil à cet égard dans le cadre d’un contrat spécifique à négocier.
+Der KUNDE, der alleinige Herr seines Systems ist, muss alles tun, um diese Operation nach Bedarf zu erleichtern (was insbesondere bedeutet, dass er hierfür eine umfassende Dokumentation erstellt) und Reversibilitätspläne aufstellt. Sollte der KUNDE zusätzliche Dienstleistungen benötigen, kann der Dienstleister ein Angebot unterbreiten.
+mission im Hinblick darauf im Rahmen eines spezifischen zu verhandelnden Vertrags.
 
-## 18. Confidentialité
+## 18. Vertraulichkeit
 
-Les Parties conviennent que toutes les informations échangées entre elles, que ce soit lors des négociations ou de l'exécution du Contrat,
-sont considérées comme des Informations Confidentielles, indépendamment de leur forme ou support.
+Die Parteien vereinbaren, dass alle zwischen ihnen ausgetauschten Informationen, sei es während der Verhandlungen oder der Ausführung des Vertrages,
+als Vertrauliche Informationen betrachtet werden, unabhängig von deren Form oder Medium.
 
-Cela inclut, mais sans s'y limiter, toute information relative au Contrat, ainsi que les données personnelles, scientifiques, techniques, technologiques,
-commerciales, sociales, financières, juridiques ou de tout autre domaine, qu'elles soient susceptibles de protection par brevet ou non.
-Parmi ces informations, on retrouve notamment des plans, dessins, spécifications, procédés, savoir-faire, designs, méthodes, études, rapports,
-prévisions de besoins, logiciels ou applications, ainsi que les informations concernant les prospects, les noms des clients ou des partenaires.
+Dies umfasst, aber ist nicht darauf beschränkt, alle Informationen in Bezug auf den Vertrag sowie persönliche, wissenschaftliche, technische, technologische,
+geschäftliche, soziale, finanzielle, rechtliche oder andere Daten, unabhängig davon, ob sie durch ein Patent geschützt sind oder nicht.
+Unter diesen Informationen befinden sich insbesondere Pläne, Zeichnungen, Spezifikationen, Verfahren, Know-how, Designs, Methoden, Studien, Berichte,
+Bedarfsprognosen, Software oder Anwendungen sowie Informationen über potenzielle Kunden, Namen von Kunden oder Partnern.
 
-Ces Informations Confidentielles peuvent être transmises directement ou indirectement à l'autre Partie, quelle que soit leur forme (orale, écrite),
-le type de documents (papier ou numérique), et par tout moyen de communication. Pour renforcer leur confidentialité :
+Diese Vertraulichen Informationen können direkt oder indirekt an die andere Partei übermittelt werden, unabhängig von deren Form (mündlich, schriftlich),
+Art der Dokumente (Papier oder digital) und jeglicher Kommunikationsmittel. Zur Stärkung ihrer Vertraulichkeit:
 
-- Des mentions spécifiques seront apposées sur les supports de communication.
-- Un rappel de la confidentialité sera systématiquement effectué lors de chaque échange, avec indication de la date et référence à cet engagement de confidentialité.
+- Es werden spezifische Hinweise auf die Kommunikationsmedien angebracht.
+- Bei jedem Austausch wird systematisch ein Vertraulichkeitshinweis gegeben, unter Angabe des Datums und des Bezugs zu dieser Vertraulichkeitsvereinbarung.
 
-Toutefois, l'absence de telles mentions ou rappels n'affecte en rien la nature confidentielle des informations ni les obligations de confidentialité des Parties.
+Das Fehlen solcher Hinweise oder Erinnerungen beeinflusst jedoch in keiner Weise die vertrauliche Natur der Informationen noch die Vertraulichkeitspflichten der Parteien.
 
-Les obligations de confidentialité ne s'appliquent pas aux informations qui :
-- Sont déjà du domaine public sans faute de la Partie réceptrice ;
-- Étaient connues de la Partie réceptrice avant la communication par l'émetteur, comme en attestent les archives de la Partie réceptrice ;
-- Sont reçues légitimement d'un tiers sans restriction de confidentialité ;
-- Sont développées indépendamment par la Partie réceptrice sans références aux Informations Confidentielles.
+Die Vertraulichkeitspflichten gelten nicht für Informationen, die:
+- Bereits öffentlich bekannt sind, ohne dass dies der empfangenden Partei zuzuschreiben ist;
+- Der empfangenden Partei vor der Mitteilung durch den Absender bekannt waren, wie durch die Aufzeichnungen der empfangenden Partei belegt;
+- Rechtmäßig von einem Dritten ohne Vertraulichkeitseinschränkungen erhalten werden;
+- Unabhängig von der empfangenden Partei ohne Bezugnahme auf die Vertraulichen Informationen entwickelt wurden.
 
-Les Informations Confidentielles doivent être strictement protégées par les Parties et uniquement utilisées pour l'exécution du Contrat. Les Parties s'engagent à :
+Die Vertraulichen Informationen müssen von den Parteien strikt geschützt und nur zur Ausführung des Vertrages verwendet werden. Die Parteien verpflichten sich:
 
-- Utiliser les Informations Confidentielles exclusivement dans le cadre du Contrat ;
-- Limiter la divulgation des Informations Confidentielles aux membres de leur équipe impliqués dans l'exécution du Contrat, en s'assurant de leur engagement à maintenir la confidentialité ;
-- Préserver la confidentialité du contenu du Contrat ;
-- Ne pas divulguer les Informations Confidentielles à des tiers sans consentement écrit préalable de l'autre Partie, sauf nécessité légale ou judiciaire ;
-- Protéger physiquement les Informations Confidentielles, en les conservant dans des lieux sécurisés et en prenant toutes mesures nécessaires pour leur sécurité.
+- Die Vertraulichen Informationen ausschließlich im Rahmen des Vertrages zu verwenden;
+- Die Offenlegung der Vertraulichen Informationen auf die Mitglieder ihres Teams zu beschränken, die an der Ausführung des Vertrages beteiligt sind, und sicherzustellen, dass diese die Vertraulichkeit wahren;
+- Die Vertraulichkeit des Inhalts des Vertrages zu wahren;
+- Keine Vertraulichen Informationen ohne vorherige schriftliche Zustimmung der anderen Partei an Dritte weiterzugeben, außer aus rechtlichen oder gerichtlichen Gründen;
+- Die Vertraulichen Informationen physisch zu schützen, indem sie an sicheren Orten aufbewahrt und alle notwendigen Maßnahmen zur Sicherheit ergriffen werden.
 
-Ces engagements de confidentialité restent en vigueur durant la durée du Contrat et pour cinq (5) années après sa conclusion ou résiliation.
-À la fin du Contrat, les Parties s'engagent à restituer ou détruire toutes les Informations Confidentielles, sans en conserver de copie, sauf instruction contraire de la Partie émettrice.
+Diese Vertraulichkeitsverpflichtungen bleiben während der Laufzeit des Vertrages und fünf (5) Jahre nach dessen Beendigung oder Kündigung in Kraft.
+Nach Beendigung des Vertrages verpflichten sich die Parteien, alle Vertraulichen Informationen zurückzugeben oder zu vernichten, ohne Kopien davon zu behalten, es sei denn, der Absender hat andere Anweisungen gegeben.
 
-Le Prestataire s'assure que ces principes de confidentialité soient respectés par tous ses sous-traitants durant le Contrat.
+Der Anbieter stellt sicher, dass diese Vertraulichkeitsprinzipien während der Vertragslaufzeit von allen seinen Unterauftragnehmern eingehalten werden.
 
-## 19. Subunternehmer
+## 19. Unterauftragsvergabe
 
-Der Dienstleister muss die zwingenden Bestimmungen des Gesetzes Nr. 75-1334 vom 31. Dezember 1975 über die Subunternehmer einhalten und haftet gegenüber dem KUNDEN für alle Verstöße gegen die in diesem Gesetz festgelegten Verpflichtungen.
-Die Heranziehung von Subunternehmern entbindet den Dienstleister in keiner Weise von der Verantwortung gegenüber dem KUNDEN im Rahmen des Vertrags, da der Dienstleister vollumfänglich für die von Subunternehmern erbrachten Leistungen und im Allgemeinen für die ordnungsgemäße Durchführung des Vertrags haftet.
+Der Anbieter muss die zwingenden Bestimmungen des Gesetzes Nr. 75-1334 vom 31. Dezember 1975 über die Unterauftragsvergabe einhalten
+und ist gegenüber dem KUNDEN für jede Missachtung der von diesem Gesetz festgelegten Pflichten verantwortlich.
+Die Inanspruchnahme von Unterauftragnehmern verringert in keiner Weise die Verantwortung des Anbieters gegenüber dem KUNDEN gemäß dem Vertrag,
+der Anbieter bleibt vollständig für die Erfüllung der an Unterauftragnehmer vergebenen Dienstleistungen gegenüber dem KUNDEN und allgemein für die ordnungsgemäße Ausführung des Vertrages verantwortlich.
 
 ## 20. Vertragsübertragung
 
-Die Parteien vereinbaren, dass der Vertrag intuitu personae abgeschlossen wurde. Daher darf keine der Parteien den Vertrag, weder ganz noch teilweise, ohne vorherige schriftliche Zustimmung der anderen Partei an Dritte abtreten, insbesondere im Falle einer Änderung der Kontrolle (im Sinne der Artikel L. 233-1 oder L. 233-3 des Handelsgesetzbuchs) oder einer Teilübertragung von Vermögenswerten. Abweichend von dem Vorstehenden ist jede Partei berechtigt, den Vertrag innerhalb ihrer Gruppe abzutreten oder zu übertragen, unter der Bedingung, dass sie die andere Partei mindestens 30 Tage vor der Abtretungs- oder Übertragungsoperation informiert.
+Die Parteien vereinbaren, dass der Vertrag intuitu personae abgeschlossen wurde. Daher darf keine der Parteien den Vertrag,
+ganz oder teilweise, ohne die vorherige schriftliche Zustimmung der anderen Partei an Dritte übertragen, insbesondere im Falle eines Kontrollwechsels
+(im Sinne der Artikel L. 233-1 oder L. 233-3 des Handelsgesetzbuches) oder einer Teilveräußerung von Vermögenswerten. Abweichend von dem Vorstehenden ist jede Partei berechtigt, den Vertrag innerhalb ihrer Gruppe zu übertragen, sofern sie die andere Partei mindestens 30 Tage im Voraus über die Übertragung informiert.
 
-## 21. Arbeitsrechtliche Vorschriften
+## 21. Arbeitsrechtliche Bestimmungen
 
-Der Dienstleister erklärt, dass er die Bestimmungen der Artikel L. 8211-1, L. 8221-1 und folgende, L. 8524-1 bis L. 8254-4 sowie die Bestimmungen der Artikel L. 8251-1 und folgende des Arbeitsgesetzbuchs in Bezug auf die von ihm beschäftigten Personen einhält.
+Der Anbieter erklärt, dass er die Bestimmungen der Artikel L. 8211-1, L. 8221-1 ff., L. 8524-1 bis L. 8254-4 sowie die Bestimmungen der Artikel L. 8251-1 ff. des Arbeitsgesetzbuches in Bezug auf die von ihm beschäftigten Personen einhält.
 
-Unter diesen Bedingungen und zur Einhaltung der Bestimmungen der Artikel L. 8221-1 und L. 8524-1 bis L. 8254-4 des Arbeitsgesetzbuchs übergibt der Dienstleister dem KUNDEN, nur auf dessen Verlangen, die folgenden Dokumente:
+Unter diesen Bedingungen und zur Einhaltung der Bestimmungen der Artikel L. 8221-1 und L. 8524-1 bis L. 8254-4 des Arbeitsgesetzbuches übergibt der Anbieter dem KUNDEN, auf dessen Antrag:
 
-- Alle von Artikel D. 8222-5 des Arbeitsgesetzbuchs geforderten Dokumente;
-- Eine Ehrenerklärung zur Bekämpfung der Schwarzarbeit.
+- Alle von Artikel D. 8222-5 des Arbeitsgesetzbuches geforderten Dokumente;
+- Eine ehrenwörtliche Erklärung zum Kampf gegen illegale Beschäftigung.
 
-Der Dienstleister verpflichtet sich außerdem, diese Verpflichtungen auf alle seine Subunternehmer anzuwenden, die während der Vertragslaufzeit tätig sind.
-Für Dienstleistungen, die in den Räumlichkeiten des KUNDEN erbracht werden, verpflichtet sich der Dienstleister, sicherzustellen, dass seine Mitarbeiter alle beim KUNDEN geltenden Hygiene- und Sicherheitsvorschriften einhalten. Insbesondere müssen der Dienstleister und seine Subunternehmer darauf achten, die Bestimmungen des Dekrets Nr. 92-158 vom 20. Februar 1992 über die besonderen Hygiene- und Sicherheitsvorschriften für Arbeiten in einem Betrieb durch ein externes Unternehmen (Artikel R. 4511-1 bis R. 4515-11 des Arbeitsgesetzbuchs) einzuhalten.
+Der Anbieter verpflichtet sich auch, diese Verpflichtungen auf alle seine Unterauftragnehmer während der Vertragslaufzeit anzuwenden.
+Für die in den Räumlichkeiten des KUNDEN erbrachten Dienstleistungen verpflichtet sich der Anbieter, sicherzustellen, dass seine Mitarbeiter alle geltenden Vorschriften zur Hygiene und Sicherheit beim KUNDEN einhalten. Insbesondere müssen der Anbieter und seine Unterauftragnehmer die Bestimmungen des
+Dekrets Nr. 92-158 vom 20. Februar 1992 zu den besonderen Hygiene- und Sicherheitsvorschriften für Arbeiten, die in einem Unternehmen von einem externen Unternehmen durchgeführt werden (Art. R. 4511-1 bis R. 4515-11 des Arbeitsgesetzbuches), einhalten.
 
-Die Parteien werden sich über etwaige Schwierigkeiten in diesem Zusammenhang und über Maßnahmen zu deren Behebung informieren. Der Vertrag schließt jegliche Überlassung von Personal gemäß den Vorschriften über Zeitarbeit aus.
+Die Parteien werden sich über etwaige Schwierigkeiten in diesem Zusammenhang und über die Mittel zu deren Behebung informieren. Der Vertrag schließt jede Vorstellung von Arbeitnehmerüberlassung im Rahmen der Zeitarbeitsvorschriften aus.
 
-Das Personal des Dienstleisters bleibt unter allen Umständen ausschließlich unter der rechtlichen Aufsicht des Dienstleisters, der allein die Befugnis zur Leitung und Kontrolle seiner Mitarbeiter hat.
-Der KUNDE darf weder dem Personal des Dienstleisters noch dem Personal etwaiger Subunternehmer des Dienstleisters direkt Anweisungen erteilen.
+Das Personal des Anbieters unterliegt in allen Fällen ausschließlich der alleinigen rechtlichen Unterordnung des Anbieters, der allein über Weisungsbefugnis und Aufsicht über seine Mitarbeiter verfügt.
+Der KUNDE darf keine Weisungen direkt an das Personal des Anbieters und/oder das Personal eventueller Unterauftragnehmer des Anbieters erteilen.
 
-Der Dienstleister übernimmt für sein Personal die Verantwortung für die Anmeldung bei allen Sozialversicherungsträgern sowie die volle Verantwortung gegenüber der Arbeitsgesetzgebung.
-In diesem Zusammenhang erklärt der Dienstleister, dass er alle von den Sozialversicherungsträgern geforderten Erklärungen abgegeben hat und keine Schwarzarbeit im Sinne der Artikel L. 8221-3 und 5 des Arbeitsgesetzbuchs durchführt. Für den Fall, dass der Dienstleister einen Subunternehmer heranzieht, verpflichtet er sich sicherzustellen, dass dieser die oben genannten gesetzlichen Bestimmungen strikt einhält.
+Der Anbieter gewährleistet für sein Personal die Verantwortung für seine Mitgliedschaft bei allen Sozialversicherungsträgern sowie seine volle Verantwortung im Sinne der Arbeitsgesetzgebung.
+In diesem Zusammenhang bestätigt der Anbieter, die erforderlichen Meldungen bei den Sozialversicherungsträgern eingereicht zu haben und keine illegale Beschäftigung gemäß den Artikeln L. 8221-3 und 5 des Arbeitsgesetzbuches zu betreiben. Für den Fall, dass der Anbieter einen Unterauftragnehmer einsetzt, verpflichtet er sich, sicherzustellen, dass dieser strikt die oben genannten gesetzlichen Bestimmungen einhält.
 
-Gemäß den gesetzlichen Bestimmungen zur Prävention und Bekämpfung der Schwarzarbeit verpflichtet sich der Dienstleister, dem KUNDEN zum Zeitpunkt der Vertragsunterzeichnung und alle sechs (6) Monate bis zum Vertragsende die folgenden Unterlagen zu übergeben:
+In Übereinstimmung mit den gesetzlichen Bestimmungen zur Prävention und Bekämpfung illegaler Beschäftigung verpflichtet sich der Anbieter, dem KUNDEN zum Zeitpunkt der Vertragsunterzeichnung und alle sechs (6) Monate bis zur Beendigung:
 
-- Eine Ehrenerklärung über die Einreichung aller obligatorischen Steuererklärungen beim Finanzamt zum Zeitpunkt der Erklärung sowie die Empfangsbestätigung der Einreichung der Erklärung;
-- Eine Bescheinigung über die Abgabe von Sozialerklärungen des für die Einziehung der Sozialbeiträge zuständigen Sozialversicherungsträgers, die nicht älter als sechs (6) Monate ist;
-- Einen Auszug aus dem Handelsregister (K oder K-bis des Dienstleisters) oder ein Dokument gemäß den Bestimmungen von Artikel D. 8222-5 des Arbeitsgesetzbuchs;
-- Eine vom Dienstleister ausgestellte Ehrenerklärung über die Erfüllung der Arbeit durch regelmäßig beschäftigte Mitarbeiter gemäß den Artikeln L. 1221-10, L. 3243-2 und R. 3243-1 des Arbeitsgesetzbuchs.
+- Eine ehrenwörtliche Erklärung über die Einreichung aller vorgeschriebenen Steuererklärungen bei der Steuerbehörde zum Zeitpunkt der Erklärung sowie die Empfangsbestätigung der Einreichung;
+- Eine Bescheinigung über die Abgabe von Sozialerklärungen, ausgestellt von der zuständigen Sozialversicherungsstelle, und die nicht älter als sechs (6) Monate ist;
+- Einen Auszug aus dem Handelsregister des Anbieters (K oder K-bis) oder ein Dokument, das den Bestimmungen des Artikels D. 8222-5 des Arbeitsgesetzbuches entspricht;
+- Eine ehrenwörtliche Erklärung des Anbieters, dass die Arbeiten von regelmäßig beschäftigten Arbeitnehmern im Sinne der Artikel L. 1221-10, L. 3243-2 und R. 3243-1 des Arbeitsgesetzbuches durchgeführt wurden.
 
 ## 22. Ethik und soziale Verantwortung
 
-Im Rahmen der Ausführung dieses Vertrags verpflichten sich die Parteien, die folgenden ethischen und rechtlichen Grundsätze strikt einzuhalten:
+Im Rahmen der Erfüllung dieses Vertrages verpflichten sich die Parteien, die folgenden ethischen und gesetzlichen Grundsätze strikt einzuhalten:
 
 - Absolutes Verbot der Beschäftigung von Minderjährigen, der Zwangsarbeit oder jeglicher Form von Pflichtarbeit, im Einklang mit den Richtlinien der Internationalen Arbeitsorganisation (ILO);
-- Beseitigung jeglicher Diskriminierung, sei es aufgrund des Geschlechts, der Rasse, der Hautfarbe, der sozialen Herkunft, der Religion, der politischen Meinung, der Zugehörigkeit zu einer nationalen Minderheit oder anderer Bedingungen, im Einklang mit den geltenden gesetzlichen Bestimmungen;
-- Bekämpfung der Korruption in jeglicher Form, um vollständige Integrität und Transparenz in allen Operationen zu gewährleisten.
+- Beseitigung jeglicher Diskriminierung, sei es aufgrund des Geschlechts, der Rasse, der Hautfarbe, der sozialen Herkunft, der Religion, der politischen Meinung, der Zugehörigkeit zu einer nationalen Minderheit oder anderer Umstände, gemäß den geltenden gesetzlichen Bestimmungen;
+- Bekämpfung der Korruption in jeder Form und Sicherstellung vollständiger Integrität und Transparenz in allen Geschäftsvorgängen.
 
-Der Dienstleister verpflichtet sich nachdrücklich, die Grundwerte der Europäischen Union, wie die Menschenwürde, die Freiheit, die Demokratie, die Gleichheit, die Achtung des Rechtsstaats sowie die Menschenrechte einschließlich der Rechte der Minderheiten, zu achten und zu fördern. Diese Verpflichtung zeigt sich in einer kontinuierlichen Wachsamkeit und Handlungsbereitschaft, um sicherzustellen, dass diese Grundsätze auf allen Ebenen ihrer Tätigkeit eingehalten werden.
+Der Anbieter verpflichtet sich fest, die grundlegenden Werte der Europäischen Union zu ehren und zu fördern, wie die menschliche Würde, die Freiheit, die Demokratie, die Gleichheit,
+die Achtung der Rechtsstaatlichkeit und die Menschenrechte, einschließlich der Rechte von Minderheiten. Diese Verpflichtung manifestiert sich in ständiger Wachsamkeit und Handeln, um sicherzustellen,
+dass diese Grundsätze auf allen Ebenen ihrer Tätigkeit respektiert werden.
 
 ## 23. Geistiges Eigentum
 
-Dieser Vertrag stellt in keinem Fall eine Übertragung oder Abtretung von Rechten an geistigem und/oder industriellem Eigentum, einschließlich Patenten, dar. Dem KUNDEN ist es ausdrücklich untersagt:
+Dieser Vertrag stellt keinesfalls eine Übertragung oder Abtretung von geistigen Eigentums- und/oder gewerblichen Schutzrechten, einschließlich Patenten, dar. Es ist dem KUNDEN ausdrücklich untersagt:
 
-- Die für die Erbringung der Dienstleistungen verwendeten Elemente, einschließlich, aber nicht beschränkt auf Computercodes, Texte, Bilder, Designs, grafische Charten, Ergonomie, Dokumentationen usw., in irgendeiner Weise zu kopieren oder zu reproduzieren;
-- Zu versuchen, proprietäre Technologien des Dienstleisters auseinanderzunehmen, zu dekompilieren oder jegliche Form von Reverse Engineering darauf anzuwenden.
-Trotz dieser Einschränkungen gewährt der Anbieter dem KUNDEN ein persönliches, nicht übertragbares und nicht ausschließliches Nutzungsrecht an den genannten Elementen, ausschließlich im Rahmen der notwendigen Nutzung der Leistungen und für deren Dauer. Diese Nutzungserlaubnis erlischt automatisch mit dem Ende der Dienstleistungserbringung.
+- Jegliche Elemente, die zur Erbringung der Dienstleistungen verwendet werden, in irgendeiner Weise zu kopieren oder zu reproduzieren, einschließlich, aber nicht beschränkt auf Computercode, Texte, Bilder, Designs, Grafikcharter, Ergonomie, Dokumentationen usw.
+- Zu versuchen, proprietäre Technologien des Anbieters zu dekompilieren, zu disassemblieren oder jeglicher Form von Reverse Engineering zu unterziehen.
+Malgré ces restrictions, le Prestataire accorde au CLIENT un droit d'usage personnel, non transférable et non exclusif sur lesdits éléments, uniquement dans le cadre nécessaire à l'utilisation des Prestations und für die Dauer derselben. Cette autorisation d'utilisation expire automatiquement avec la fin de la prestation des services.
 
 ## 24. Nicht-Abwerbung von Personal
 
-Ohne vorherige schriftliche Zustimmung verzichtet jede der Parteien darauf, direkt oder indirekt einen Mitarbeiter der anderen Partei einzustellen oder arbeiten zu lassen, während der Dauer des Vertrags zuzüglich einer Frist von einem (1) Jahr ab dem Beendigungsdatum.
+Sauf accord préalable et écrit, chacune des Parties renonce à engager ou à faire travailler directement ou indirectement tout membre du personnel de l’autre Partie pendant la durée du Contrat augmentée d’une durée d’un (1) an à compter de sa date de cessation.
 
-Jede Verletzung der oben genannten Verpflichtung durch eine der Parteien zieht automatisch die Zahlung einer Pauschalentschädigung durch die verletzende Partei nach sich, die auf zwölf (12) Bruttomonatsgehälter (Festgehalt und variabler Anteil) des betreffenden Mitarbeiters festgelegt ist.
+Toute violation par une des Parties de l’obligation ci-dessus entraîne de plein droit le paiement par la Partie contrevenante d’une indemnité forfaitaire et libératoire fixée à douze (12) mois de salaire bruts (salaire fixe et variable) du membre du personnel concerné.
 
-Das Durchschnittsgehalt zur Berechnung der Entschädigung ist das der letzten 3 Monate vor dem Datum der Beendigung des Arbeitsvertrags.
+Le salaire moyen de référence pour calculer le montant de l’indemnisation est celui des 3 derniers mois ayant précédé la date de rupture du contrat de travail.
 
-## 25. Unterscheidungssymbole der Parteien
+## 25. Unterscheidungsmerkmale der Parteien
 
-Jede Partei verpflichtet sich, keine Handlung oder Maßnahmen zu ergreifen, die direkt oder indirekt die Unterscheidungssymbole der anderen Partei, insbesondere ihre Marken, beeinträchtigen könnten. 
-Unbeschadet des Rechts des Anbieters, den KUNDEN als Referenz zu zitieren, und des Rechts des KUNDEN, zu erwähnen, dass er die Leistungen des Anbieters nutzt. Jede Partei kann jedoch der anderen Partei ohne Angabe von Gründen mitteilen, dass sie nicht mehr erwähnt werden möchte.
+Chaque Partie s’interdit tout agissement et tout acte susceptible de porter atteinte directement ou non aux signes distinctifs l’autre Partie, et en particulier ses marques. Sans préjudice pour le Prestataire de citer le CLIENT en référence et pour le CLIENT de mentionner qu’il utilise les Prestations du Prestataire. Toutefois, chaque Partie, sans avoir à le motiver, peut notifier à l’autre Partie de ne plus la citer.
 
-## 26. Persönliche Daten
+## 26. Personenbezogene Daten
 
-Der KUNDE verpflichtet sich, im Rahmen dieser Allgemeinen Verkaufs- und Nutzungsbedingungen die Datenschutzrichtlinie des Anbieters zu respektieren. 
-Der KUNDE kann diese Richtlinie auf Anfrage an die folgende Adresse anfordern: dpo@cloud-temple.fr.
+Le CLIENT s’engage à respecter, dans le cadre des présentes CGVU, la politique de protection des données personnelles du Prestataire. Le CLIENT peut solliciter cette politique sur demande à l’adresse suivante dpo@cloud-temple.fr.
 
-Der KUNDE und der Anbieter verpflichten sich, die geltenden Vorschriften zum Schutz personenbezogener Daten zu respektieren, insbesondere das Gesetz Nr.°78-17 vom 6. Januar 1978 über Informatik, Dateien und Freiheiten, in der geänderten Fassung, sowie die Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016, die ab dem 25. Mai 2018 gilt.
+Le CLIENT et le Prestataire s’engagent à respecter la réglementation en vigueur applicable au traitement des Données Personnelles et, en particulier, la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, modifiée et le règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 applicable à compter du 25 mai 2018.
 
 ## 27. Versicherung
 
-Falls der KUNDE beabsichtigt, kritische oder strategische Daten (wie Informationen zu Rechnungen, Gehältern, Forschung und Entwicklung usw.) mit Hilfe der bereitgestellten Dienste zu verarbeiten, ist es Aufgabe des KUNDEN, die notwendigen Maßnahmen zu ergreifen, um eine spezielle Versicherung zur Abdeckung von Datenverlusten abzuschließen.
+Dans le cas où le CLIENT prévoit de traiter des données critiques ou stratégiques (telles que des informations liées à la facturation, à la paie, à la recherche et développement, etc.) à l'aide des services fournis, il incombe au CLIENT de prendre les dispositions nécessaires pour souscrire à une assurance dédiée à la couverture des pertes de données.
 
 ## 28. Gerichtsstand und anwendbares Recht
 
-Der Vertrag unterliegt französischem Recht.
+Le Contrat est régi par le droit français.
 
-Bei Streitigkeiten zwischen den Parteien über die Ausführung oder Beendigung des Vertrags werden die Parteien zuerst versuchen, eine gütliche Einigung zu finden. 
-Im Falle eines Scheiterns wird die Streitigkeit dem Handelsgericht Nanterre vorgelegt, ungeachtet der Mehrzahl von Beklagten oder Ruf nach Gewährleistung, auch für einstweilige Verfügungen, im Eilverfahren oder auf Antrag.
+Pour tout différend survenant entre les Parties concernant l’exécution ou la résiliation du Contrat, les Parties se rapprocheront d’abord aux fins d’envisager de trouver une solution amiable. En cas d’échec, le différend sera soumis au Tribunal de Commerce de Nanterre, nonobstant pluralité de défendeurs ou appel en garantie, même pour les procédures conservatoires, en référé ou par requête.

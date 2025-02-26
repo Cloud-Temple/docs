@@ -22,33 +22,34 @@ La plateforme vous donne alors la clef d'accès et la clef secrète de votre buc
 
 ![](images/S3_storage_keys.png)
 
-__ATTENZIONE:__ Le chiavi segrete e di accesso sono presentate una sola volta. Dopo questa prima apparizione, diventa impossibile consultare di nuovo la chiave segreta. È quindi essenziale annotare queste informazioni immediatamente; altrimenti, sarà necessario generare una nuova coppia di chiavi.
+__ATTENTION :__ Les clés secrète et d'accès sont présentées une seule fois. Après cette première apparition, il devient impossible de consulter à nouveau la clé secrète. Il est donc essentiel de noter ces informations immédiatement ; faute de quoi, il vous sera nécessaire de générer une nouvelle paire de clés.
 
-La rigenerazione si fa al livello delle opzioni della chiave scegliendo l'opzione "Reimposta chiave di accesso".
+La regeneration se fait au niveau des options de la clefs en choisissant l'option "Réinitialiser clé d'accès".
 
 ![](images/S3_keyregen.png)
 
+
 ## Création d'un bucket S3
 
-La creation de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
+La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
 
 ![](images/S3_create.png)
 
-Una finestra si apre e dovete inserire:
+Une fenêtre s'affiche alors et vous devez renseigner :
 
-1. La **regione** di creazione del vostro bucket,
-2. Il **tipo** di bucket: performante o archivio,
-3. Il **nome** del vostro bucket (deve essere unico).
+1. La **région** de création de votre bucket,
+2. Le **type** de bucket : performant ou archivage,
+3. Le **nom** de votre bucket (il doit être unique).
 
 ![](images/S3_create_popup_001.png)
 
-Al 3 aprile 2024, la regione disponibile è **FR1** (Parigi) e solo il tipo performante è disponibile.
+Au 3 Avril 2024, la région disponible est **FR1** (Paris) et seul le type performant est disponible.
 
-Dovete anche scegliere chi può accedere al vostro bucket:
+Vous devez aussi choisir qui peut accéder à votre bucket :
 
-- Accesso **Privato**: Per impostazione predefinita, l'accesso è limitato agli indirizzi IP specifici di Cloud Temple.
-- Accesso **Pubblico**: L'accesso è aperto a tutti gli indirizzi Internet (in particolare tramite la regola 0.0.0.0/0). Sconsigliamo questa configurazione per le sue implicazioni in termini di sicurezza.
-- Accesso **Personalizzato**: Questa opzione vi permette di specificare gli indirizzi IPv4 o i range di subnet che desiderate autorizzare.
+- Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
+- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser.
 
 ## Association d'un compte de stockage à un bucket
 
@@ -56,11 +57,11 @@ Les associations de compte aux buckets sont réalisées dans l'onglet '__Politiq
 
 ![](images/S3_account_assign.png)
 
-Questa associazione permette di concedere l'accesso del conto di archiviazione al bucket. Ci sono quattro ruoli:
+Cette association permet de donner l'accès du compte de stockage au bucket. Il y quatres rôles :
 
-1. **Gestore**: i diritti di lettura, scrittura, gestione dei diritti e gestione della politica
+1. **Mainteneur** : Les droits de lecture, écriture, gestion des droits et gestion de la politique
 
-Le autorizzazioni S3 dietro questo ruolo:
+Les permissions S3 derrière ce rôle:
 ```json
 {
     "name": "maintainer",
@@ -70,9 +71,9 @@ Le autorizzazioni S3 dietro questo ruolo:
 }
 ```
 
-2. **Scrittore e Lettore**: leggere, modificare, modificare, eliminare i file nei buckets.
+2. **Scrittore e Lettore** : Leggere e modificare, modificare, eliminare i file nei buckets.
 
-Le autorizzazioni S3 dietro questo ruolo:
+Le permissions S3 dietro questo ruolo:
 ```json
 {
     "name": "read_write",
@@ -84,9 +85,9 @@ Le autorizzazioni S3 dietro questo ruolo:
 }
 ```
 
-3. **Scrittore**: leggere, modificare, modificare, eliminare i file nei buckets.
+3. **Scrittore** : Leggere e modificare, modificare, eliminare i file nei buckets.
 
-Le autorizzazioni S3 dietro questo ruolo:
+Le permissions S3 dietro questo ruolo:
 ```json
 {
     "name": "write_only",
@@ -97,9 +98,9 @@ Le autorizzazioni S3 dietro questo ruolo:
 }
 ```
 
-4. **Lettore**: leggere i file nei buckets e scaricarli.
+4. **Lettore** : Leggere i file nei buckets e scaricarli.
 
-Le autorizzazioni S3 dietro questo ruolo:
+Le permissions S3 dietro questo ruolo:
 ```json
 {
     "name": "read_only",
@@ -114,37 +115,37 @@ Le autorizzazioni S3 dietro questo ruolo:
 
 ## Parcourir un bucket S3
 
-Quando cliccate sul nome di un bucket, avete accesso per primo alla scheda '__File__' per vedere il suo contenuto:
+Lorsque vous cliquez sur le nom d'un bucket, vous avez accès en premier à l'onglet '__Fichiers__' pour voir son contenu :
 
 ![](images/S3_files.png)
 
-Nella scheda '__Parametri__' potete vedere i dettagli delle informazioni del vostro bucket S3:
+Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
 
 ![](images/S3_params.png)
 
-Vedrete quindi:
+Vous avez alors :
 
-1. Il nome del bucket S3,
-2. La sua regione
-3. Il numero di oggetti che contiene e la dimensione in byte del bucket,
-4. Il suo endpoint,
-5. I parametri di ciclo di vita che definiscono in particolare la scadenza degli oggetti del bucket. '__0__' corrisponde a una ritenzione infinita.
+1. Le nom du bucket S3,
+2. Sa région
+3. Le nombre d'objet qu'il contient et la taille en octets du bucket,
+4. Son point de terminaison,
+5. Les paramètres de cycle de vie qui définissent notamment l'expiration des objets du bucket. '__0__' correspond à une rétention infinie.
 
-Potete modificare il parametro di ritenzione tramite il pulsante '__Modifica__' del ciclo di vita:
+Vous pouvez modifier le paramètre de rétention via le bouton '__Modifier__' du cycle de vie :
 
 ![](images/S3_lifecycle.png)
 
-Infine, potete modificare la tipologia di accesso.
+Enfin, vous pouvez modifier sa typologie d'accès.
 
 ## Limitations des accès à vos bucket S3
 
-È molto semplice configurare le restrizioni di accesso ai vostri bucket S3. Durante la creazione di un bucket, avete la possibilità di scegliere tra tre configurazioni di accesso:
+Il est très simple de configurer les restrictions d'accès à vos buckets S3. Lors de la création d'un bucket, vous avez le choix entre trois configurations d'accès :
 
 ![](images/S3_create_popup_001.png)
 
-- Accesso **Privato**: Per impostazione predefinita, l'accesso è limitato agli indirizzi IP specifici di Cloud Temple.
-- Accesso **Pubblico**: L'accesso è aperto a tutti gli indirizzi Internet (in particolare tramite la regola 0.0.0.0/0). Sconsigliamo questa configurazione per le sue implicazioni in termini di sicurezza.
-- Accesso **Personalizzato**: Questa opzione vi permette di specificare gli indirizzi IPv4 o i range di subnet che desiderate autorizzare:
+- Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
+- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser:
 
 ![](images/S3_create_popup_002.png)
 
@@ -152,14 +153,15 @@ Infine, potete modificare la tipologia di accesso.
 
 ## Suppression d'un bucket S3
 
-La cancellazione di un bucket si fa nelle azioni associate al bucket scegliendo l'opzione '__Elimina__'.
+La suppression d'un bucket se fait dans les actions associées au bucket en choisissant l'option __'Supprimer'__.
 
 ![](images/S3_delete.png)
 
-_**ATTENZIONE: L'eliminazione è definitiva e non esiste alcun modo per recuperare i dati.**_
+_**ATTENTION : La suppression est définitive et il n'existe aucun moyen de récupérer les données.**_
+
 
 ## Comment est facturé l'offre S3 de Cloud Temple ?
 
-Il prezzo è mensile, al GiB di archiviazione, fatturato mensilmente. Tuttavia, la piattaforma calcola l'uso su base oraria e realizza la fatturazione su una base mensile di 720 ore.
+Il prezzo è un prezzo mensile, al Gio di storage, fatturato mensilmente. Tuttavia, la piattaforma Conta l'uso all'ora e realizza la fatturazione su una base mensile di 720 ore.
 
-Ad esempio, se consumate nel mese 30 GiB per 1 ora e poi niente, e qualche giorno più tardi 30 GiB per 2 ore, la fattura mensile sarà di *( Prezzo (1 x 30GiB) + 2 x Prezzo (30GiB) ) / 720* nel mese considerato. La fatturazione è a termine scaduto.
+Per esempio, se consumate nel mese 30 Gio per 1 ora poi niente, poi qualche giorno più tardi 30Gio per 2 ore, la fattura mensile sarà di *( Prezzo (1 x 30Gio) + 2 x Prezzo (30Gio) ) / 720* sul mese considerato. La fatturazione è a termine scaduto.

@@ -1,5 +1,5 @@
 ---
-title: Hiérarchie des documents contractuels
+title: Hierarchie der Vertragsdokumente
 ---
 
 ## Dokumentation Vertraglich Allgemein

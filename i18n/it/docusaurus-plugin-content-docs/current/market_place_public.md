@@ -1,14 +1,15 @@
 ---
-title: Plateformes d'achat
+title: Piattaforme di acquisto
 tags:
   - ugap
   - caih
   - marketplace
 ---
-## Plateformes d'achat
+
+## Piattaforme di acquisto
 
 <div class="purchase-platforms">
-  <p>Siete un attore del settore pubblico? L’offerta <strong>IaaS Cloud Temple</strong> è accessibile via:</p>
+  <p>Sei un attore del settore pubblico? L’offerta <strong>IaaS Cloud Temple</strong> è accessibile tramite :</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
@@ -29,6 +30,6 @@ tags:
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Per saperne di più &rarr;
+    Scopri di più &rarr;
   </a>
 </div>

@@ -2,6 +2,7 @@
 title: Guide de démarrage
 ---
 
+
 ##  Tenant
 
 ### Création d'un tenant
@@ -34,17 +35,17 @@ Les informations d'identification sont globales à votre [Organisation](concepts
 
 ### Création d'un compte utilisateur dans votre organisation
 
-La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](concepts.md#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.  
+La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](concepts.md#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
 
-Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs. 
+Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
 
 ![](images/shiva_onboard_003.png)
 
-Indiquer ensuite l'adresse de messagerie de l'utilisateur 
+Indiquer ensuite l'adresse de messagerie de l'utilisateur
 
 ![](images/shiva_onboard_004.png)
 
-L'utilisateur va alors recevoir un mail de vérification.  
+L'utilisateur va alors recevoir un mail de vérification.
 
 ![](images/shiva_onboard_001.png)
 
@@ -52,11 +53,11 @@ Une fois la vérification terminée, l'utilisateur pourra se connecter sur la co
 
 ### Affectation des permissions à un utilisateur
 
-La gestion des droits utilisateurs se fait depuis la page utilisateur. 
+La gestion des droits utilisateurs se fait depuis la page utilisateur.
 
 ![](images/shiva_onboard_003.png)
 
-Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.  
+Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
 
 Le menu d'activation des droits apparait alors :
 
@@ -122,23 +123,23 @@ Dans le menu __'Administration'__ sur le bandeau vert à gauche de l'écran, dan
 Il est possible de réinitialiser son mot de passe depuis la page de connexion de la console Shiva en cliquant sur __'Mot de passe oublié ?'__.
 
 ### Pourquoi certains utilisateurs sont grisés ?
-Les utilisateurs grisés sont ceux n'ayant pas validé leur compte. Lors de la création du compte, ;'utilisateur a recu un mail de vérification.  
+Les utilisateurs grisés sont ceux n'ayant pas validé leur compte. Lors de la création du compte, ;'utilisateur a recu un mail de vérification.
 
 ![](../../console/images/shiva_onboard_001.png)
 
-Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.  
+Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
 
 Le compte est grisé tant que la vérification n'a pas été finalisée.
 
 ### Qu'est-ce qu'un Personal Access Token (PAT) ?
 
-La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__, 
-est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique. 
+La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
+est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique.
 
 ### Qu'est-ce que le MFA et est-il obligatoire ?
 Le MFA (multi-factor authentication) est un concept de vérification de l'identité d'un utilisateur en deux étapes, appelée __authentification à double facteur__.
 
-L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de la console Shiva, l'authentification à double facteur est obligatoire et requiert de rentrer un code à usage unique une fois que l'utilisateur a entré le mot de passe de son compte. 
+L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de la console Shiva, l'authentification à double facteur est obligatoire et requiert de rentrer un code à usage unique une fois que l'utilisateur a entré le mot de passe de son compte.
 
 
 ## Gestion des accès et authentification
@@ -147,7 +148,7 @@ L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de l
 
 L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
 
-Il est désormais possible d'afficher la liste des adresses IP publiques autorisées sur le tenant et d’ajouter une nouvelle adresse IP publique à cette liste directement depuis l'onglet "Administration > Accès". 
+Il est désormais possible d'afficher la liste des adresses IP publiques autorisées sur le tenant et d’ajouter une nouvelle adresse IP publique à cette liste directement depuis l'onglet "Administration > Accès".
 
 ![](images/shiva_ip_access_management_01.png)
 
