@@ -2,7 +2,6 @@
 title: Guide de démarrage
 ---
 
-
 ## Lister l'ensemble des bucket S3 de votre tenant
 
 Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
@@ -30,7 +29,7 @@ La regeneration se fait au niveau des options de la clefs en choisissant l'optio
 ![](images/S3_keyregen.png)
 
 
-## Création d'un bucket S3 
+## Création d'un bucket S3
 
 La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
 

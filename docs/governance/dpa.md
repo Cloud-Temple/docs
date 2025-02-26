@@ -2,6 +2,7 @@
 title: Annexe Contractuelle - Données à Caractère Personnel (DPA)
 ---
 
+
 ## Cadre
 
 |           |                        |
@@ -57,17 +58,17 @@ La durée du traitement est fixée par le Responsable de Traitement en fonction 
 3. **Portabilité des données** : Le Responsable de traitement doit assurer, lorsque cela est applicable, la portabilité des données à caractère personnel des personnes concernées, conformément à l'article 20 du RGPD.
 4. **Opposition** : Les personnes concernées doivent pouvoir exercer leur droit d'opposition au traitement de leurs données personnelles conformément à l'article 21 du RGPD.
 
-# Article 7 : Mesure de sécurité et de confidentialité 
+# Article 7 : Mesure de sécurité et de confidentialité
 
 Le Sous-Traitant s’engage en particulier à mettre en place les mesures suffisantes pour assurer la sécurité et la confidentialité des Données Personnelles confiées et traitées dans le cadre des Services, à savoir notamment :
 
 - Mettre en œuvre les mesures techniques et d’organisation appropriées pour protéger les Données à caractère personnel contre la destruction accidentelle ou illicite, la perte accidentelle, l'altération, l’utilisation détournée, la diffusion ou l'accès non autorisés, ainsi que contre toute autre forme de traitement illicite ;
 - Ne pas utiliser les Données à caractère personnel pour son propre compte ou pour le compte de tiers et ne pas les transférer sans l’autorisation écrite et préalable du Responsable de Traitement ou du client final ;
-- Veiller à ce que les personnes autorisées à traiter les Données à caractère personnel soient soumises à des obligations appropriées de confidentialités ; 
+- Veiller à ce que les personnes autorisées à traiter les Données à caractère personnel soient soumises à des obligations appropriées de confidentialités ;
 - Ne pas réaliser de copies ou duplications des Données à caractère personnel sans l’autorisation écrite préalable du Responsable de Traitement ou du client final (à moins que cela soit nécessaire à l’accomplissement des Services fournis par le prestataire dans le cadre du Contrat) ;
-- Informer le Responsable de Traitement de tout accès accidentel ou non autorisé aux Données à caractère personnel, de tout manquement à la réglementation sur les Données à caractère personnel ou toute suspicion d’un tel manquement, dans les meilleurs délais et, si possible, 48 heures au plus tard après en avoir pris connaissance. 
+- Informer le Responsable de Traitement de tout accès accidentel ou non autorisé aux Données à caractère personnel, de tout manquement à la réglementation sur les Données à caractère personnel ou toute suspicion d’un tel manquement, dans les meilleurs délais et, si possible, 48 heures au plus tard après en avoir pris connaissance.
 - Selon le choix du Responsable de Traitement, supprimer ou renvoyer les Données à caractère personnel ou les renvoyer au terme du Contrat, et détruire les copies existantes, sauf obligation légale de les conserver ;
-- Mettre en œuvre une politique de sécurité des systèmes d’information et de gestion des autorisations d’accès logique et physique notamment, qu’il devra maintenir et faire évoluer pendant toute la durée du Contrat.  
+- Mettre en œuvre une politique de sécurité des systèmes d’information et de gestion des autorisations d’accès logique et physique notamment, qu’il devra maintenir et faire évoluer pendant toute la durée du Contrat.
 
 # Article 8 : Notification des violations de données
 
@@ -85,15 +86,15 @@ Tout transfert de données à caractère personnel vers un pays tiers ou une org
 
 Le Sous-traitant mettra à la disposition du Responsable de traitement toutes les informations nécessaires pour démontrer le respect des obligations prévues par la présente annexe et autorisera les audits, y compris les inspections, par le Responsable de traitement ou un autre auditeur mandaté par ce dernier, afin de vérifier la conformité avec cette annexe et le RGPD. Le Sous-traitant doit également tenir un registre des activités de traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées.
 
-# Article 12 : Registre des activités de Traitement 
+# Article 12 : Registre des activités de Traitement
 
- Le Sous-traitant doit également tenir un registre des activités de Traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées. Ce registre contient à minima : 
-- Le nom et coordonnées du responsable du traitement et, le cas échéant, du co-responsable du traitement, du représentant du responsable du traitement et du délégué à la protection des données ; 
-- La description des catégories de personnes concernées et des catégories de données personnelles ; 
-- Les finalités du Traitement ; 
+ Le Sous-traitant doit également tenir un registre des activités de Traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées. Ce registre contient à minima :
+- Le nom et coordonnées du responsable du traitement et, le cas échéant, du co-responsable du traitement, du représentant du responsable du traitement et du délégué à la protection des données ;
+- La description des catégories de personnes concernées et des catégories de données personnelles ;
+- Les finalités du Traitement ;
 - Les catégories de destinataires auxquels les données personnelles ont été ou seront communiquées, y compris les destinataires dans des pays tiers ou des organisations internationales ;
 - La durée de conservation des données ;
-- La description générale des mesures techniques et organisationnelles de sécurité mises en œuvre. 
+- La description générale des mesures techniques et organisationnelles de sécurité mises en œuvre.
 
 Sur demande écrite du Responsable de Traitement, du client final ou de toute autorité compétente, le Sous-Traitant disposera d'un délai de 15 jours ouvrés pour communiquer une copie dudit registre à compter de la réception delate demande.
 
@@ -105,7 +106,7 @@ Le Sous-Traitant s’engage à conclure un acte juridique contraignant avec tout
 
 En cas de défaillance du sous-traitant ultérieur dans le respect de ses obligations en matière de protection des Données personnelles, le Sous-traitant demeurera pleinement responsable à l’égard du Responsable de traitement, sans préjudice des droits des Personnes concernées prévus aux articles 79 et 82 du RGPD.
 
-La liste des sous-traitants subséquents autorisés est la suivante: 
+La liste des sous-traitants subséquents autorisés est la suivante:
 
 1. Interxion
 2. Data4
@@ -116,7 +117,7 @@ La liste des sous-traitants subséquents autorisés est la suivante:
 7. Colt
 8. Intrinsec
 
-En cours d’exécution du Contrat, le Responsable de traitement peut accéder à tout moment auprès du Sous-Traitant à l’actualisation de ladite liste. 
+En cours d’exécution du Contrat, le Responsable de traitement peut accéder à tout moment auprès du Sous-Traitant à l’actualisation de ladite liste.
 
 # Article 14 : Responsabilité
 

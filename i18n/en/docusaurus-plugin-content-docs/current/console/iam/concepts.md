@@ -3,7 +3,7 @@ title: Concepts
 ---
 
 
-## Utilisateurs
+## Users
 
 User accounts for Shiva console access are created by the master account of the contractor upon invitation (regardless of the authentication repository).
 Credentials are global to your [Organization](#organisations).

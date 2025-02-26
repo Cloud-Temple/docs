@@ -1,5 +1,5 @@
 ---
-title: Tutoriels
+title: Tutorials
 ---
 
 Diese Tutorien helfen Ihnen, die IaaS VMWare-Komponente über das Shiva-Portal zu nutzen und zu konfigurieren.

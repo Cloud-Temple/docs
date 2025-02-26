@@ -1,5 +1,5 @@
 ---
-title: Annexe Contractuelle - Données à Caractère Personnel (DPA)
+title: Vertragliche Anlage - Persönliche Daten
 ---
 
 ## Rahmen
@@ -57,7 +57,7 @@ Die Dauer der Verarbeitung wird vom Verantwortlichen in Abhängigkeit von den An
 3. **Datenübertragbarkeit**: Der Verantwortliche muss sicherstellen, dass, sofern anwendbar, die Datenübertragbarkeit der personenbezogenen Daten der betroffenen Personen gemäß Artikel 20 der DSGVO gewährleistet ist.
 4. **Widerspruch**: Die betroffenen Personen müssen ihr Widerspruchsrecht gegen die Verarbeitung ihrer personenbezogenen Daten gemäß Artikel 21 der DSGVO ausüben können.
 
-# Artikel 7: Sicherheits- und Vertraulichkeitsmaßnahmen 
+# Artikel 7: Sicherheits- und Vertraulichkeitsmaßnahmen
 
 Der Auftragsverarbeiter verpflichtet sich insbesondere, ausreichende Maßnahmen zu ergreifen, um die Sicherheit und Vertraulichkeit der anvertrauten und im Rahmen der Dienste verarbeiteten personenbezogenen Daten zu gewährleisten, insbesondere:
 
@@ -84,7 +84,7 @@ Am Ende des Hauptvertrags verpflichtet sich der Unterauftragnehmer, nach den Anw
 
 Der Unterauftragnehmer wird dem Datenverantwortlichen alle notwendigen Informationen zur Verfügung stellen, um die Einhaltung der in diesem Anhang festgelegten Verpflichtungen nachzuweisen, und Audits, einschließlich Inspektionen, durch den Datenverantwortlichen oder einen von ihm beauftragten Prüfer, zur Überprüfung der Konformität mit diesem Anhang und der DSGVO zulassen. Der Unterauftragnehmer muss auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO führen und Konformitätsberichte über die genutzten Cloud-Infrastrukturen bereitstellen.
 
-# Artikel 12 : Verzeichnis der Verarbeitungstätigkeiten 
+# Artikel 12 : Verzeichnis der Verarbeitungstätigkeiten
 
  Der Unterauftragnehmer muss auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO führen und Konformitätsberichte über die genutzten Cloud-Infrastrukturen bereitstellen. Dieses Verzeichnis enthält mindestens:
 - Den Namen und die Kontaktdaten des Datenverantwortlichen und gegebenenfalls des gemeinsamen Datenverantwortlichen, des Vertreters des Datenverantwortlichen und des Datenschutzbeauftragten;
