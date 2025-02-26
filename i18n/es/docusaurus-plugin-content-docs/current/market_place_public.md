@@ -5,10 +5,11 @@ tags:
   - caih
   - marketplace
 ---
+
 ## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está accesible a través de:</p>
+  <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> es accesible a través de:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />

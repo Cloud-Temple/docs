@@ -2,6 +2,7 @@
 title: Vue d'ensemble
 ---
 
+
 ## La Console Cloud Temple
 
 La console Cloud Temple est la plateforme de gestion cloud (**Cloud Management Platform**) intégrée de Cloud Temple. Elle constitue le point central pour gérer l’ensemble de vos ressources cloud, vous offrant une interface unique et performante.

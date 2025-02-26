@@ -1,107 +1,108 @@
 ---
-title: Privacy
+title: Confidentialité
 tags:
   - privacy
 ---
 
-## Contexte
 
-La politique de protection des données existe pour assurer un niveau de sécurité adéquat en termes de confidentialité, de disponibilité et d’intégrité des ressources en information et en données personnelles vis-à-vis de toutes les menaces qui pourraient les affecter. 
+## Contesto
 
-Cloud Temple définit, applique, opère, surveille, réalise des revues, maintient et améliore le processus et les mesures relatifs au traitement des données et à la sécurité de l’information en se basant sur une approche des risques.
+La politica di protezione dei dati esiste per garantire un adeguato livello di sicurezza in termini di riservatezza, disponibilità e integrità delle risorse informative e dei dati personali rispetto a tutte le minacce che potrebbero colpirli.
 
-La vie privée des personnes sera ainsi toujours respectée.
+Cloud Temple definisce, applica, opera, monitora, esegue revisioni, mantiene e migliora il processo e le misure relative al trattamento dei dati e alla sicurezza delle informazioni basandosi su un approccio basato sui rischi.
+
+La privacy delle persone sarà sempre rispettata.
 
 
-## Introduction
+## Introduzione
 
-Toute l’information que nous traitons, conservons ou transférons concernant les personnes doit être protégée de manière adéquate contre les accès non autorisés ou les modifications. Lors de l’obtention, la conservation pour le traitement ou le transfert de l’information concernant les personnes, nous respectons leurs vœux et leur droit à la vie privée en tout temps.
+Tutte le informazioni che trattiamo, conserviamo o trasferiamo riguardanti le persone devono essere protette adeguatamente contro l'accesso non autorizzato o le modifiche. Durante l'ottenimento, la conservazione per il trattamento o il trasferimento delle informazioni riguardanti le persone, rispettiamo i loro desideri e il loro diritto alla privacy in ogni momento.
 
-Cloud Temple s’assure du respect de l’intégrité, de la confidentialité et de la disponibilité de l’information générée dans le traitement des données personnelles : Cloud Temple doit assurer la protection de ses ressources en information vis-à-vis des menaces internes ou externes, accidentelles ou délibérées.
+Cloud Temple si assicura del rispetto dell'integrità, della riservatezza e della disponibilità delle informazioni generate nel trattamento dei dati personali: Cloud Temple deve garantire la protezione delle proprie risorse informative rispetto alle minacce interne o esterne, accidentali o deliberate.
 
-## Les objectifs de protection de la vie privée
-- Assurer la continuité des activités cruciales de Cloud Temple
-- Assurer que toute l’information traitée, conservée, échangée ou publiée par Cloud Temple est d’une intégrité absolue
-- Assurer que toute information relative à nos clients sera surveillée et conservée conformément aux procédures de maintien d’une confidentialité appropriée
-- Assurer que l’information relative aux personnes est manipulée de manière cohérente avec nos principes de protection de la vie privée et respectueuse des droits des individus.
+## Gli obiettivi di protezione della privacy
+- Garantire la continuità delle attività cruciali di Cloud Temple
+- Garantire che tutte le informazioni trattate, conservate, scambiate o pubblicate da Cloud Temple siano di assoluta integrità
+- Garantire che tutte le informazioni relative ai nostri clienti siano monitorate e conservate in conformità con le procedure di mantenimento di un'adeguata riservatezza
+- Garantire che le informazioni relative alle persone siano gestite in modo coerente con i nostri principi di protezione della privacy e rispettose dei diritti degli individui.
 
-## Principes de protection de la vie privée
-- Tout le personnel sera informé et responsable du respect des exigences en matière de protection de la vie privée pertinente à leur rôle.
-- Des dispositions seront prises pour financer des mesures de protection de la vie privée pertinentes dans les processus opérationnels et de gestion.
-- Les risques lors du traitement des données seront surveillés et les mesures seront prises lorsque des modifications entraîneront des risques qui ne sont pas acceptables.
-- Les critères de classification de risque et d’acceptabilité se retrouvent dans le cadre organisationnel de la politique de protection de la vie privée.
-- Des situations qui pourraient placer l’organisme en violation des lois et des règlements ne seront pas tolérées.
+## Principi di protezione della privacy
+- Tutto il personale sarà informato e responsabile del rispetto dei requisiti in materia di protezione della privacy pertinenti al loro ruolo.
+- Verranno adottate disposizioni per finanziare misure di protezione della privacy rilevanti nei processi operativi e di gestione.
+- I rischi durante il trattamento dei dati saranno monitorati e verranno adottate le misure necessarie quando le modifiche comporteranno rischi non accettabili.
+- I criteri di classificazione del rischio e di accettabilità si trovano nel quadro organizzativo della politica di protezione della privacy.
+- Situazioni che potrebbero mettere l'organizzazione in violazione delle leggi e dei regolamenti non saranno tollerate.
 
-## Responsabilités
+## Responsabilità
 
-La Direction Générale est responsable de s’assurer que le respect de la vie privée est traité de manière adéquate au sein de l’entreprise.
+La Direzione Generale è responsabile di assicurarsi che il rispetto della privacy sia trattato adeguatamente all'interno dell'azienda.
 
-Chaque directeur est responsable de s’assurer que les personnes qui travaillent sous sa gouverne protègent l’information en conformité avec les normes de l’organisme.
+Ogni direttore è responsabile di assicurarsi che le persone che lavorano sotto la sua supervisione proteggano le informazioni in conformità con gli standard dell'organizzazione.
 
-Tous les membres du personnel ont des responsabilités de protection de la vie privée qui font partie de leur travail.
+Tutti i membri del personale hanno responsabilità di protezione della privacy che fanno parte del loro lavoro.
 
-## Résultats principaux
+## Risultati principali
 
-Des mesures appropriées et proportionnées seront mises en œuvre pour protéger les ressources et donner confiance aux parties intéressées.
+Misure appropriate e proporzionate saranno implementate per proteggere le risorse e dare fiducia alle parti interessate.
 
-Les impacts de la violation de données seront limités.
+Gli impatti della violazione dei dati saranno limitati.
 
-Les décisions sur les sujets de protection des données seront basées sur une évaluation des risques auxquels fait face Cloud Temple.
+Le decisioni sugli argomenti di protezione dei dati saranno basate su una valutazione dei rischi affrontati da Cloud Temple.
 
-Les exigences légales, réglementaires et contractuelles de Cloud Temple seront remplies.
+Gli obblighi legali, regolamentari e contrattuali di Cloud Temple saranno soddisfatti.
 
-## Traduction des informations
+## Traduzione delle informazioni
 
-Les traductions anglaise, espagnole, italienne et allemande de cette documentation sont réalisées de façon automatique. 
+Le traduzioni inglese, spagnola, italiana e tedesca di questa documentazione sono realizzate in modo automatico.
 
-Malgré les efforts raisonnables déployés pour fournir une traduction de qualité, Cloud Temple n'est pas en mesure de garantir l'exactitude des informations qu'elle contient. 
-Pour toute question s'y rapportant, veuillez vous référer à la version française des informations.
+Nonostante gli sforzi ragionevoli per fornire una traduzione di qualità, Cloud Temple non è in grado di garantire l'accuratezza delle informazioni che contiene.
+Per qualsiasi domanda in merito, si prega di fare riferimento alla versione francese delle informazioni.
 
-## Mentions légales
+## Informazioni legali
 
-### Personne éditrice de ce site internet
-Raison sociale : __CLOUD TEMPLE__, Société par Actions Simplifiées à Associé Unique
+### Persona editrice di questo sito internet
+Ragione sociale: __CLOUD TEMPLE__, Società per Azioni Semplificate a Socio Unico
 
-Adresse du siège social : Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
+Indirizzo della sede legale: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
-Téléphone (standard) : 01 41 91 77 77
+Telefono (centralino): 01 41 91 77 77
 
-Numéro d’inscription au RCS : 825 400 336
+Numero di iscrizione al RCS: 825 400 336
 
-TVA : FR 55 825 400 336
+IVA: FR 55 825 400 336
 
-Capital social : 13 174 890 euros
+Capitale sociale: 13 174 890 euro
 
-Directeur de la publication : Franck DUBRAY
+Direttore della pubblicazione: Franck DUBRAY
 
-Hébergement : Cloud Temple
+Hosting: Cloud Temple
 
-Adresse : Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
+Indirizzo: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
-Téléphone (standard) : 01 41 91 77 77
+Telefono (centralino): 01 41 91 77 77
 
-### Collecte des données
-Cloud Temple s’engage à ce que la collecte et le traitement de vos données, effectués à partir du site __docs.cloud-temple.com__, 
-soient conformes au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés. 
+### Raccolta dei dati
+Cloud Temple si impegna a garantire che la raccolta e il trattamento dei tuoi dati, effettuati a partire dal sito __docs.cloud-temple.com__,
+siano conformi al Regolamento Generale sulla Protezione dei Dati (GDPR) e alla legge Informatica e Libertà.
 
-Pour toute information ou exercice de vos droits Informatique et Libertés sur les traitements de données personnelles 
-gérés par Cloud Temple, vous pouvez contacter le délégué à la protection des données (DPO) :
+Per qualsiasi informazione o esercizio dei tuoi diritti Informatica e Libertà sui trattamenti dei dati personali
+gestiti da Cloud Temple, puoi contattare il responsabile della protezione dei dati (DPO):
 
-par e-mail à : __contact@cloud-temple.com__
+via e-mail a: __contact@cloud-temple.com__
 
-Pour exercer vos droits sur les données vous concernant, vous devez insérer une copie d’une pièce d’identité en cours de validité (carte d’identité ou passeport) en pièce jointe au format suivant : GIF, JPG, PNG, PDF, maximum 2Mo.
+Per esercitare i tuoi diritti sui dati che ti riguardano, devi inserire una copia di un documento d'identità in corso di validità (carta d'identità o passaporto) come allegato nel seguente formato: GIF, JPG, PNG, PDF, massimo 2MB.
 
-par courrier à l’adresse suivante :
+via posta al seguente indirizzo:
 
-*__Cloud Temple à l’attention de monsieur le délégué à la protection des données (DPO) Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.__*
+*__Cloud Temple all'attenzione del signor delegato per la protezione dei dati (DPO) Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.__*
 
-Per esercitare i vostri diritti sui dati che vi riguardano, dovete allegare una copia di un documento d'identità valido (carta d'identità o passaporto).
+Per esercitare i tuoi diritti sui dati che ti riguardano, devi inserire una copia di un documento d'identità in corso di validità (carta d'identità o passaporto).
 
-### Données personnelles et cookies
-___Ce site ne prélève aucune donnée à caractère personnel. L’outil de mesure d’audience que nous utilisons est paramétré 
-de façon à ce que les informations recueillies soient anonymisées.___
+### Dati personali e cookie
+___Questo sito non preleva alcun dato di carattere personale. Lo strumento di misurazione dell'audience che utilizziamo è configurato
+in modo che le informazioni raccolte siano rese anonime.___
 
-Les cookies déposés sur votre ordinateur lorsque vous le consultez nous permet de connaître le nombre de visites et les pages les plus consultées, 
-sans pour autant permettre de vous identifier personnellement.
+I cookie depositati sul tuo computer quando lo consulti ci consentono di conoscere il numero di visite e le pagine più visitate,
+senza però consentire di identificarti personalmente.
 
-Nous sommes ainsi en conformité avec la réglementation de la CNIL et exemptés d’autorisation préalable
+Siamo così in conformità con la normativa della CNIL ed esenti da autorizzazione preventiva.

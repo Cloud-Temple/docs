@@ -1,5 +1,5 @@
 ---
-title: Conditions Générales de Vente et d'Utilisation (CGVU)
+title: Allgemeine Geschäfts- und Nutzungsbedingungen
 ---
 
 **Inhaltsverzeichnis**
@@ -132,13 +132,13 @@ Die nachfolgend aufgeführten Begriffe haben für die Parteien die folgenden Def
 
 ## 4. Zweck
 
-Dieser Vertrag soll die Bedingungen festlegen, unter denen der Dienstleister dem KUNDEN die definierten Dienstleistungen erbringt, 
+Dieser Vertrag soll die Bedingungen festlegen, unter denen der Dienstleister dem KUNDEN die definierten Dienstleistungen erbringt,
 unter Angabe des Anwendungsbereichs, der Modalitäten der Dienstleistungserbringung sowie der damit verbundenen finanziellen Modalitäten. Der KUNDE verpflichtet sich im eigenen Namen und auf eigene Rechnung zu diesem Vertrag.
 
-Die Zustimmung des KUNDEN zu diesem Vertrag impliziert eine uneingeschränkte Annahme der Allgemeinen Verkaufs- und Nutzungsbedingungen (GVNB), 
-die der KUNDE erklärt, zuvor gelesen, verstanden und in ihrer Gesamtheit akzeptiert zu haben. Obwohl der KUNDE in seiner Eigenschaft als Fachmann handelt, 
-wird ihm dringend empfohlen, vor der Annahme dieser Bedingungen die Expertise eines Spezialisten für Informatik und Netzwerke zu konsultieren. 
-Dieser Schritt ist wesentlich, um eine fundierte Entscheidung hinsichtlich der technischen Aspekte des Vertrags zu treffen, insbesondere hinsichtlich der Auswahl 
+Die Zustimmung des KUNDEN zu diesem Vertrag impliziert eine uneingeschränkte Annahme der Allgemeinen Verkaufs- und Nutzungsbedingungen (GVNB),
+die der KUNDE erklärt, zuvor gelesen, verstanden und in ihrer Gesamtheit akzeptiert zu haben. Obwohl der KUNDE in seiner Eigenschaft als Fachmann handelt,
+wird ihm dringend empfohlen, vor der Annahme dieser Bedingungen die Expertise eines Spezialisten für Informatik und Netzwerke zu konsultieren.
+Dieser Schritt ist wesentlich, um eine fundierte Entscheidung hinsichtlich der technischen Aspekte des Vertrags zu treffen, insbesondere hinsichtlich der Auswahl
 der vorgeschlagenen Leistungseinheiten und der Bestimmung der zur Deckung seiner spezifischen Bedürfnisse erforderlichen Ressourcen.
 
 ## 5. Allgemeine Bestimmungen
@@ -146,48 +146,48 @@ der vorgeschlagenen Leistungseinheiten und der Bestimmung der zur Deckung seiner
 Jede Partei verpflichtet sich, keine Verpflichtungen im Namen und im Auftrag der anderen Partei einzugehen.
 Die Parteien bleiben individuell verantwortlich für ihre Handlungen, Erklärungen, Verpflichtungen, Dienstleistungen, Produkte und die Handlungen ihres Personals.
 
-Für den Fall, dass eine Bestimmung des Vertrags aufgrund der geltenden Gesetzgebung oder einer rechtskräftigen Gerichtsentscheidung für ungültig erklärt wird, 
+Für den Fall, dass eine Bestimmung des Vertrags aufgrund der geltenden Gesetzgebung oder einer rechtskräftigen Gerichtsentscheidung für ungültig erklärt wird,
 wird diese Bestimmung als nicht geschrieben betrachtet. Diese Ungültigkeit beeinträchtigt nicht die allgemeine Gültigkeit des Vertrags noch die Kraft der übrigen Bestimmungen.
 
 ## 6. Bestellung der Dienstleistungen
 
 ### 6.1. KUNDENKONTO
 
-Um auf die vom Dienstleister angebotenen Dienstleistungen zugreifen und diese bestellen zu können, muss der KUNDE über ein gültiges **KUNDENKONTO** verfügen. 
-Im Rahmen der Erstellung und Verwaltung dieses Kontos verpflichtet sich der KUNDE, dem Dienstleister alle für die ordnungsgemäße Vertragserfüllung erforderlichen Daten 
+Um auf die vom Dienstleister angebotenen Dienstleistungen zugreifen und diese bestellen zu können, muss der KUNDE über ein gültiges **KUNDENKONTO** verfügen.
+Im Rahmen der Erstellung und Verwaltung dieses Kontos verpflichtet sich der KUNDE, dem Dienstleister alle für die ordnungsgemäße Vertragserfüllung erforderlichen Daten
 bereitzustellen. Diese Daten umfassen unter anderem die E-Mail-Adresse, Identitäts- und Kontaktdaten sowie relevante Bankdaten. Der KUNDE gewährleistet die Richtigkeit, Zuverlässigkeit und Aktualität dieser Informationen für die gesamte Dauer des Vertrags.
 
-Für den Fall, dass das KUNDENKONTO von einem Dritten im Namen des KUNDEN erstellt oder verwaltet wird, 
+Für den Fall, dass das KUNDENKONTO von einem Dritten im Namen des KUNDEN erstellt oder verwaltet wird,
 muss dieser Dritte gegenüber dem Dienstleister bestätigen und sicherstellen, dass er über die rechtliche Befugnis und Kapazität verfügt, im Namen des KUNDEN zu handeln und ihn gemäß den Vertragsbedingungen zu verpflichten.
 
 ### 6.2. Aktivierung des KUNDENKONTOS
 
-Vor der Aktivierung des KUNDENKONTOS sowie zu jedem Zeitpunkt während der Dienstleistungserbringung behält sich der Dienstleister das Recht vor, 
-die Richtigkeit der vom KUNDEN oder in dessen Namen bereitgestellten Informationen zu überprüfen. Diese Überprüfung kann die Anforderung von Nachweisdokumenten 
-zur Unterstützung der übermittelten Informationen umfassen. Der Dienstleister hat auch das Recht, die Aktivierung zu verweigern oder die Deaktivierung 
+Vor der Aktivierung des KUNDENKONTOS sowie zu jedem Zeitpunkt während der Dienstleistungserbringung behält sich der Dienstleister das Recht vor,
+die Richtigkeit der vom KUNDEN oder in dessen Namen bereitgestellten Informationen zu überprüfen. Diese Überprüfung kann die Anforderung von Nachweisdokumenten
+zur Unterstützung der übermittelten Informationen umfassen. Der Dienstleister hat auch das Recht, die Aktivierung zu verweigern oder die Deaktivierung
 des KUNDENKONTOS vorzunehmen, wenn die Informationen als unvollständig, ungenau oder betrügerisch angesehen werden.
 
 ### 6.3. Bestellung
 
-Nach der Aktivierung seines KUNDENKONTOS durch den Dienstleister kann der KUNDE Dienstleistungen bestellen. Je nach Art der angeforderten Dienstleistungen 
-können Bestellungen über die dem KUNDEN gewidmete Managementschnittstelle erfolgen. Der KUNDE übernimmt die volle Verantwortung für die Verwaltung seines KUNDENKONTOS, 
+Nach der Aktivierung seines KUNDENKONTOS durch den Dienstleister kann der KUNDE Dienstleistungen bestellen. Je nach Art der angeforderten Dienstleistungen
+können Bestellungen über die dem KUNDEN gewidmete Managementschnittstelle erfolgen. Der KUNDE übernimmt die volle Verantwortung für die Verwaltung seines KUNDENKONTOS,
 einschließlich der Sicherung der Authentifizierungsmethoden (Anmeldedaten, Passwörter usw.), die ihm zugeordnet sind.
 
 Jede Bestellung, die über das KUNDENKONTO aufgegeben wird, gilt als vom KUNDEN selbst getätigt und impliziert seine uneingeschränkte Zustimmung zu den Vertragsbedingungen.
-Die Modalitäten und Fristen für die Bereitstellung der bestellten Dienstleistungen variieren je nach Art des erforderlichen Dienstes. Einige Dienstleistungen sind erst verfügbar, 
+Die Modalitäten und Fristen für die Bereitstellung der bestellten Dienstleistungen variieren je nach Art des erforderlichen Dienstes. Einige Dienstleistungen sind erst verfügbar,
 nachdem der Dienstleister die vollständige Zahlung des KUNDEN erhalten hat. Es liegt daher in der Verantwortung des KUNDEN sicherzustellen, dass die Bedingungen der Dienstleistungserbringung seinen Anforderungen entsprechen.
 
-Die konstituierenden Dokumente des Vertrags ergänzen und interpretieren sich kohärent. Im Falle eines Widerspruchs oder von Abweichungen zwischen ihnen wird jedoch der Vorrang 
+Die konstituierenden Dokumente des Vertrags ergänzen und interpretieren sich kohärent. Im Falle eines Widerspruchs oder von Abweichungen zwischen ihnen wird jedoch der Vorrang
 den Dokumenten in der Reihenfolge ihres Auflistung eingeräumt. Die Anhänge des Vertrags, die die Dienstleistungen technisch detailliert beschreiben, dürfen die im Hauptteil des Vertrags festgelegten Grundsätze nicht widersprechen.
 Ihre Rolle besteht darin, technische Präzision zu bieten, ohne die allgemeinen Bestimmungen des Dokuments in Frage zu stellen.
 
 ## 7. Vertragsdauer
 
-Die unter diesen Allgemeinen Verkaufs- und Nutzungsbedingungen (GVNB) geschlossenen Verträge werden auf unbestimmte Zeit geschlossen, sofern in den Besonderen Bedingungen nichts anderes festgelegt ist, 
+Die unter diesen Allgemeinen Verkaufs- und Nutzungsbedingungen (GVNB) geschlossenen Verträge werden auf unbestimmte Zeit geschlossen, sofern in den Besonderen Bedingungen nichts anderes festgelegt ist,
 die eine bestimmte Dauer vorsehen.
 
-Die Kündigung des Vertrags ist nur unter Einhaltung der im Artikel "Kündigung" festgelegten Modalitäten möglich. Vor jeder Kündigung muss der KUNDE sicherstellen, 
-dass er alle seine Daten, die im Rahmen der betreffenden Verträge gespeichert wurden, vollständig wiedererlangt hat, gemäß den Bestimmungen 
+Die Kündigung des Vertrags ist nur unter Einhaltung der im Artikel "Kündigung" festgelegten Modalitäten möglich. Vor jeder Kündigung muss der KUNDE sicherstellen,
+dass er alle seine Daten, die im Rahmen der betreffenden Verträge gespeichert wurden, vollständig wiedererlangt hat, gemäß den Bestimmungen
 des Artikels über die "Wiederherstellung und Löschung von Daten".
 
 Das Ende des Vertrags, sei es auf Initiative des Dienstleisters oder des KUNDEN, entbindet den letzteren nicht von der Verpflichtung, die bereits erbrachten Dienstleistungen zu bezahlen.
@@ -275,61 +275,61 @@ de résiliation par courrier recommandé avec demande d'avis de réception, dans
 
 ### 10.9. Propriété intellectuelle et droit d'utilisation
 
-Tous les éléments fournis au CLIENT par le Prestataire — incluant logiciels, infrastructures, documentations, et autres — demeurent la propriété 
-exclusive du Prestataire ou de ses ayants droit. Le Prestataire accorde au CLIENT un droit d'utilisation non exclusif de ces éléments, 
-strictement pour l'usage des Services et conformément aux termes contractuels, pour la durée de l'accord. Il est important de souligner que, 
-en dehors de ces éléments fournis, le CLIENT est entièrement responsable d'obtenir toutes les autorisations et droits nécessaires pour les éléments 
+Tous les éléments fournis au CLIENT par le Prestataire — incluant logiciels, infrastructures, documentations, et autres — demeurent la propriété
+exclusive du Prestataire ou de ses ayants droit. Le Prestataire accorde au CLIENT un droit d'utilisation non exclusif de ces éléments,
+strictement pour l'usage des Services et conformément aux termes contractuels, pour la durée de l'accord. Il est important de souligner que,
+en dehors de ces éléments fournis, le CLIENT est entièrement responsable d'obtenir toutes les autorisations et droits nécessaires pour les éléments
 et contenus (données, logiciels, applications, systèmes, sites web, etc.) qu'il choisit d'utiliser ou d'exploiter dans le cadre des Services.
 
-Le CLIENT, ainsi que ses Utilisateurs, restent les propriétaires de leurs contenus. Le Prestataire s'engage à ne pas exploiter ces contenus 
-à d'autres fins que celles stipulées dans le contrat. Conformément aux lois en vigueur, le CLIENT est tenu de ne pas décompiler les logiciels, 
-codes et algorithmes mis à disposition dans le cadre des Services, y compris pour des tentatives de rétro-ingénierie, sauf autorisation légale 
+Le CLIENT, ainsi que ses Utilisateurs, restent les propriétaires de leurs contenus. Le Prestataire s'engage à ne pas exploiter ces contenus
+à d'autres fins que celles stipulées dans le contrat. Conformément aux lois en vigueur, le CLIENT est tenu de ne pas décompiler les logiciels,
+codes et algorithmes mis à disposition dans le cadre des Services, y compris pour des tentatives de rétro-ingénierie, sauf autorisation légale
 explicite permettant de contourner cette restriction.
 
 ### 10.10. Contrôle à l'exportation
 
-Sous réserve des limitations spécifiées dans les termes du Contrat et des restrictions liées aux activités propres au CLIENT, le Prestataire 
-garantit que les Services sont commercialisables et utilisables au sein de l'Union Européenne ainsi que dans les pays hôtes des Centres de données fournissant les Services. 
+Sous réserve des limitations spécifiées dans les termes du Contrat et des restrictions liées aux activités propres au CLIENT, le Prestataire
+garantit que les Services sont commercialisables et utilisables au sein de l'Union Européenne ainsi que dans les pays hôtes des Centres de données fournissant les Services.
 
-Il incombe au CLIENT, s'il envisage d'utiliser les Services ou d'autoriser leur utilisation par des tiers hors des frontières Européenne, de s'assurer que cette utilisation 
-respecte les lois et réglementations applicables. Ceci inclut, mais n'est pas limité à, le respect du Règlement (CE) n°428/2009 du Conseil du 5 mai 2009, 
-concernant le contrôle des exportations de biens à double usage, ainsi que les réglementations américaines telles que les EAR (Export Administration Regulations) 
+Il incombe au CLIENT, s'il envisage d'utiliser les Services ou d'autoriser leur utilisation par des tiers hors des frontières Européenne, de s'assurer que cette utilisation
+respecte les lois et réglementations applicables. Ceci inclut, mais n'est pas limité à, le respect du Règlement (CE) n°428/2009 du Conseil du 5 mai 2009,
+concernant le contrôle des exportations de biens à double usage, ainsi que les réglementations américaines telles que les EAR (Export Administration Regulations)
 et les 'ITAR' (International Traffic In Arms Regulations), étant donné que le Prestataire distribue des solutions de tiers régis par la législation américaine.
 
-Le Prestataire se réserve le droit de refuser toute commande émanant de pays faisant l'objet de restrictions commerciales ou de sanctions, 
+Le Prestataire se réserve le droit de refuser toute commande émanant de pays faisant l'objet de restrictions commerciales ou de sanctions,
 ou de personnes physiques ou morales de ces pays ou sous sanctions. Des vérifications, incluant la solvabilité et la présence éventuelle du CLIENT
-sur des listes de sanctions, telles que la liste de gels des avoirs de la Direction générale du Trésor, pourront être effectuées. Suite à ces vérifications, 
+sur des listes de sanctions, telles que la liste de gels des avoirs de la Direction générale du Trésor, pourront être effectuées. Suite à ces vérifications,
 le Prestataire peut résilier le contrat de manière unilatérale et immédiate après en avoir informé le CLIENT.
 
 ### 10.11. Produits tiers
 
 Conformément aux engagements pris, il est important de noter que :
 
-1. le Prestataire décline toute responsabilité quant aux Produits Tiers fournis dans le cadre des Services. 
-Ces produits peuvent présenter des défauts techniques, des vulnérabilités de sécurité, des problèmes de compatibilité ou de stabilité. Le Prestataire n'offre 
-aucune garantie relative à ces Produits Tiers, y compris mais sans s'y limiter, à toute information ou élément associé tel que logiciels, systèmes, applications, etc., 
-2. l'utilisation des Produits Tiers par le CLIENT est strictement limitée au cadre des Services fournis. Il est notamment interdit au CLIENT de décompiler, 
-d'obtenir l'accès aux codes sources, ou de réinstaller les Produits Tiers logiciels ou systèmes sur d'autres infrastructures. 
-La responsabilité de l'utilisation des Produits Tiers incombe entièrement au CLIENT, qui doit s'assurer de leur adéquation avec ses besoins spécifiques et les objectifs visés, 
+1. le Prestataire décline toute responsabilité quant aux Produits Tiers fournis dans le cadre des Services.
+Ces produits peuvent présenter des défauts techniques, des vulnérabilités de sécurité, des problèmes de compatibilité ou de stabilité. Le Prestataire n'offre
+aucune garantie relative à ces Produits Tiers, y compris mais sans s'y limiter, à toute information ou élément associé tel que logiciels, systèmes, applications, etc.,
+2. l'utilisation des Produits Tiers par le CLIENT est strictement limitée au cadre des Services fournis. Il est notamment interdit au CLIENT de décompiler,
+d'obtenir l'accès aux codes sources, ou de réinstaller les Produits Tiers logiciels ou systèmes sur d'autres infrastructures.
+La responsabilité de l'utilisation des Produits Tiers incombe entièrement au CLIENT, qui doit s'assurer de leur adéquation avec ses besoins spécifiques et les objectifs visés,
 tout en respectant les termes du Contrat.
 
 ### 10.12. Continuité et réversibilité des services
 
-La cessation des Services, pour toute raison (telle que la résiliation du Contrat, son non-renouvellement, 
-l'interruption des Services par le CLIENT, la violation des termes du Contrat, etc.), ainsi que certaines opérations de mise à jour ou de réinstallation, 
-entraînent la suppression définitive et irréversible de tous les Contenus (y compris les informations, données, fichiers, systèmes, applications, sites web, et autres éléments) 
-que le CLIENT a reproduits, stockés, hébergés, collectés, transmis, diffusés, publiés, ou de toute autre manière utilisés ou exploités dans le cadre des Services, 
+La cessation des Services, pour toute raison (telle que la résiliation du Contrat, son non-renouvellement,
+l'interruption des Services par le CLIENT, la violation des termes du Contrat, etc.), ainsi que certaines opérations de mise à jour ou de réinstallation,
+entraînent la suppression définitive et irréversible de tous les Contenus (y compris les informations, données, fichiers, systèmes, applications, sites web, et autres éléments)
+que le CLIENT a reproduits, stockés, hébergés, collectés, transmis, diffusés, publiés, ou de toute autre manière utilisés ou exploités dans le cadre des Services,
 incluant les sauvegardes éventuelles.
 
 ### 10.13. Test d'intrusion
 
-Le CLIENT est autorisé à conduire, directement ou via un auditeur externe spécifiquement mandaté, des tests d'intrusion sur les Services fournis 
+Le CLIENT est autorisé à conduire, directement ou via un auditeur externe spécifiquement mandaté, des tests d'intrusion sur les Services fournis
 (dénommés ici « Tests d'intrusion »). Ces tests ne peuvent être effectués qu'après la signature d'un accord d'audit par toutes les parties concernées
-par la fourniture du Service, y compris le CLIENT, l'auditeur, le Prestataire, ainsi que leurs sous-traitants le cas échéant. 
+par la fourniture du Service, y compris le CLIENT, l'auditeur, le Prestataire, ainsi que leurs sous-traitants le cas échéant.
 Ces tests doivent respecter la législation actuelle et nécessitent l'accord préalable des utilisateurs et des détenteurs de droits dans le domaine testé.
 
-Les modalités de réalisation de ces Tests d'intrusion par un auditeur externe seront définies dans un contrat distinct entre le CLIENT et cet auditeur, 
-reprenant les obligations énoncées dans cet article. Le CLIENT s'engage à garantir le respect de ces conditions par l'auditeur, qui agit sous la responsabilité 
+Les modalités de réalisation de ces Tests d'intrusion par un auditeur externe seront définies dans un contrat distinct entre le CLIENT et cet auditeur,
+reprenant les obligations énoncées dans cet article. Le CLIENT s'engage à garantir le respect de ces conditions par l'auditeur, qui agit sous la responsabilité
 du CLIENT. Les Tests d'intrusion ne doivent en aucun cas :
 
 - Cibler d'autres infrastructures ou services du Prestataire und/oder du Prestataire non exclusivement utilisés par le CLIENT,
@@ -337,34 +337,34 @@ du CLIENT. Les Tests d'intrusion ne doivent en aucun cas :
 - Affecter les services, ressources, réseaux et infrastructures mis à disposition par le Prestataire à d'autres clients.
 
 Toute intrusion dans les systèmes utilisés par d'autres clients est formellement interdite. Le CLIENT assume l'entière responsabilité des conséquences découlant
-des Tests d'intrusion, y compris celles résultant d'actions menées par un auditeur externe. Il est de la responsabilité du CLIENT de réaliser toutes les sauvegardes 
+des Tests d'intrusion, y compris celles résultant d'actions menées par un auditeur externe. Il est de la responsabilité du CLIENT de réaliser toutes les sauvegardes
 nécessaires avant les tests pour assurer la restauration des systèmes en cas d'incident.
 
-Il est à noter que les mécanismes de protection contre le spam, les DOS/DDOS, et autres, resteront actifs pendant les tests, pouvant entraîner 
-une indisponibilité temporaire des Services. Le CLIENT doit informer toute partie impactée par cette indisponibilité. À la fin des Tests d'intrusion, 
+Il est à noter que les mécanismes de protection contre le spam, les DOS/DDOS, et autres, resteront actifs pendant les tests, pouvant entraîner
+une indisponibilité temporaire des Services. Le CLIENT doit informer toute partie impactée par cette indisponibilité. À la fin des Tests d'intrusion,
 un rapport d'audit sera rédigé et mis à disposition du Prestataire sur demande ou si cela s'avère pertinent (par exemple, en cas de découverte de vulnérabilités).
 
-Ce rapport d'audit, son contenu, et toutes les informations obtenues ou divulguées au cours de l'audit sont strictement confidentiels 
-et ne doivent pas être publiés ou partagés sans l'autorisation écrite du Prestataire. En cas de violation des conditions établies, le Prestataire 
+Ce rapport d'audit, son contenu, et toutes les informations obtenues ou divulguées au cours de l'audit sont strictement confidentiels
+et ne doivent pas être publiés ou partagés sans l'autorisation écrite du Prestataire. En cas de violation des conditions établies, le Prestataire
 se réserve le droit de suspendre immédiatement l'accès aux Services, sans préjudice de tout dommage-intérêt potentiel.
 
 ## 11. Collaboration
 
-Les Parties reconnaissent être soumises à une obligation de collaboration. En conséquence, elles s’engagent à se communiquer 
-toute information et document de nature à faciliter l’exécution du Contrat, et plus particulièrement, de leurs obligations respectives.  
+Les Parties reconnaissent être soumises à une obligation de collaboration. En conséquence, elles s’engagent à se communiquer
+toute information et document de nature à faciliter l’exécution du Contrat, et plus particulièrement, de leurs obligations respectives.
 
 ## 12. Responsabilité
 
 ### 12.1. Capacité
 
-Chacune des Parties déclare et garantit posséder l’autorité et la capacité nécessaires à la conclusion du Contrat et à l’exécution des obligations lui incombant. Le CLIENT et le Prestataire déclarent et garantissent notamment disposer de toutes les autorisations, compétences 
-et connaissances (notamment techniques), leur permettant respectivement d’utiliser et de fournir les Services conformément aux conditions prévues au Contrat. 
+Chacune des Parties déclare et garantit posséder l’autorité et la capacité nécessaires à la conclusion du Contrat et à l’exécution des obligations lui incombant. Le CLIENT et le Prestataire déclarent et garantissent notamment disposer de toutes les autorisations, compétences
+et connaissances (notamment techniques), leur permettant respectivement d’utiliser et de fournir les Services conformément aux conditions prévues au Contrat.
 
 ### 12.2. Responsabilité du Prestataire
 
-Lorsque le Contrat stipule des engagements de niveau de service, les pénalités ou crédits octroyés par le Prestataire au CLIENT servent de compensation forfaitaire pour 
-tout préjudice découlant du non-respect de ces engagements. En conséquence, le CLIENT renonce à toute autre forme de demande, réclamation ou action à ce titre. 
-Si aucun engagement de niveau de service n'est applicable, la réparation maximale imputable au Prestataire est limitée au total des sommes versées par le CLIENT 
+Lorsque le Contrat stipule des engagements de niveau de service, les pénalités ou crédits octroyés par le Prestataire au CLIENT servent de compensation forfaitaire pour
+tout préjudice découlant du non-respect de ces engagements. En conséquence, le CLIENT renonce à toute autre forme de demande, réclamation ou action à ce titre.
+Si aucun engagement de niveau de service n'est applicable, la réparation maximale imputable au Prestataire est limitée au total des sommes versées par le CLIENT
 pour les services affectés durant les trois (3) mois précédant la demande d'indemnisation.
 
 **Clause d'exonération de responsabilité :** La responsabilité du Prestataire ne saurait être engagée dans les cas suivants :
@@ -461,7 +461,7 @@ Sofern der KUNDE die Rechnung nicht in gutem Glauben ganz oder teilweise anfecht
 einer Mahnung per E-Mail andauern, führt dies automatisch und ohne weitere Mitteilung oder Formalität zu:
 
 - der sofortigen Fälligkeit aller ausstehenden Beträge, die der KUNDE aus dem Vertrag schuldet, unabhängig von der ursprünglich vereinbarten Zahlungsweise,
-- dem Recht des Anbieters, alle oder einen Teil der an den KUNDEN bereitgestellten Dienste (einschließlich bereits bezahlter) sofort und ohne Vorankündigung auszusetzen, 
+- dem Recht des Anbieters, alle oder einen Teil der an den KUNDEN bereitgestellten Dienste (einschließlich bereits bezahlter) sofort und ohne Vorankündigung auszusetzen,
 neue Bestellungen oder Verlängerungen von Diensten abzulehnen und den Vertrag ganz oder teilweise per E-Mail einseitig zu kündigen.
 
 Darüber hinaus sind bei Zahlungsverzug oder -ausfall gewerbliche Kunden verpflichtet, eine pauschale Entschädigung von vierzig (40) Euro für Inkassokosten zu zahlen,
@@ -608,7 +608,7 @@ Unter diesen Umständen und zur Einhaltung der Bestimmungen der Artikel L. 8221-
 - Alle Dokumente, die in Artikel D. 8222-5 des Arbeitsgesetzbuchs verlangt werden;
 - Die Ehrenerklärung zur Bekämpfung der Schwarzarbeit.
 
-Der Dienstleister verpflichtet sich ebenfalls dazu, diese Verpflichtungen auf alle seine Unterauftragnehmer, die während der Vertragsdauer aktiv sind, anzuwenden. 
+Der Dienstleister verpflichtet sich ebenfalls dazu, diese Verpflichtungen auf alle seine Unterauftragnehmer, die während der Vertragsdauer aktiv sind, anzuwenden.
 
 Für Dienstleistungen, die in den Räumlichkeiten des KUNDEN erbracht werden, verpflichtet sich der Dienstleister, dass seine Mitarbeiter alle beim KUNDEN geltenden Hygiene- und Sicherheitsvorschriften einhalten. Insbesondere muss der Dienstleister mit seinen Unterauftragnehmern darauf achten, die Bestimmungen der Verordnung Nr. 92-158 vom 20. Februar 1992, die spezielle Hygiene- und Sicherheitsvorschriften für Arbeiten in einem Betrieb durch ein externes Unternehmen festlegt (Art. R. 4511-1 bis R. 4515-11 des Arbeitsgesetzbuchs), einzuhalten.
 
@@ -670,7 +670,7 @@ Der CLIENT und der Prestataire verpflichten sich, die für die Verarbeitung pers
 
 ## 27. Versicherung
 
-Falls der CLIENT beabsichtigt, kritische oder strategische Daten (wie z.B. Informationen zur Rechnungsstellung, zur Gehaltsabrechnung, zur Forschung und Entwicklung usw.) 
+Falls der CLIENT beabsichtigt, kritische oder strategische Daten (wie z.B. Informationen zur Rechnungsstellung, zur Gehaltsabrechnung, zur Forschung und Entwicklung usw.)
 mit den bereitgestellten Diensten zu bearbeiten, liegt es in der Verantwortung des CLIENT, die notwendigen Maßnahmen zu ergreifen, um eine spezielle Versicherung zur Deckung der Datenverluste abzuschließen.
 
 ## 28. Gerichtsstand und anwendbares Recht

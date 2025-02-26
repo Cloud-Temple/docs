@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: QuickStart
 ---
 
 # QuickStart für das Bare-Metal-Angebot
