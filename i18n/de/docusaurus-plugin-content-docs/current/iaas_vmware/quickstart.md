@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: Quickstart
 ---
 ## Berechnung
 
@@ -144,7 +144,7 @@ Hier ist eine Zusammenfassung der möglichen Situationen für die französische 
 __Hinweis__:
 
 - Wenn die Kombination __'AltGr'__ und __'@'__ auf der Tastatur nicht funktioniert, aktivieren Sie die Schaltfläche __'Taste erzwingen'__ im __'VNC'__-Menü der Konsole und versuchen Sie es erneut.
-- Wenn es weiterhin nicht funktioniert und das Betriebssystem der physischen Maschine __Windows_ ist, stellen Sie die Tastatur der physischen Maschine auf Englisch 
+- Wenn es weiterhin nicht funktioniert und das Betriebssystem der physischen Maschine __Windows_ ist, stellen Sie die Tastatur der physischen Maschine auf Englisch
 und versuchen Sie, das @-Zeichen auf die normale Weise einzugeben__ *(AZERTY-Ausgabe: AltGr + 0-Taste oder QWERTY-Ausgabe: 2-Taste)*.
 
 ### Kataloge von virtuellen Maschinen bei Cloud Temple

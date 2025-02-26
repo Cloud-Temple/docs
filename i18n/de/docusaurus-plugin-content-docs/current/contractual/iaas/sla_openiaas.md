@@ -1,8 +1,8 @@
 ---
-title: Service Convention SecNumCloud OpenIaaS
+title: Dienstleistungsvereinbarung SecNumCloud OpenIaaS
 ---
 
-# 1. SERVICE CONVENTION OpenIaaS
+# 1. DIENSTLEISTUNGSKONVENTION OpenIaaS
 
   -----------------------------------------------------------------------
   **Empfänger :**                **SPONSOR**
@@ -17,10 +17,10 @@ title: Service Convention SecNumCloud OpenIaaS
                                  e-mail : *vorname.nachname*\@cloud-temple.com
 
   **Datum der letzten            17/01/2025
-  Aktualisierung**               
+  Aktualisierung**
 
   **Vertragliches                Tag TT JJJJ
-  Validierungsdatum**            
+  Validierungsdatum**
   -----------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -41,7 +41,7 @@ title: Service Convention SecNumCloud OpenIaaS
   v1.3          29/06/2023   Erweiterung                          Lorena ALCALDE
 
   v1.4          06/11/2023   Kapitaländerung und                  Lorena ALCALDE
-                             Erweiterung                          
+                             Erweiterung
 
   v1.5          30/11/2023   Erweiterung                          Lorena ALCALDE
 
@@ -351,7 +351,7 @@ den unten angegebenen Definitionen interpretiert:
   **COPROJ**     Projektausschuss
 
   **DB**         Datenbank
-                 
+
   **DPA**        Datenschutzvereinbarung
 
   **DRP**        Disaster Recovery Plan (Notfallwiederherstellungsplan)
@@ -437,9 +437,9 @@ Anbieter dem AUFTRAGGEBER den Dienst bereitstellt. Ihr Zweck ist es:
 Es wird festgelegt, dass im Falle eines Entzugs der SecNumCloud-Qualifikation
 des Anbieters, der Vertrag von Rechts wegen ohne Strafen vom
 AUFTRAGGEBER gekündigt werden kann. In einer
-telle éventualité s'engage der Anbieters, BENACHRICHTIGUNG 
+telle éventualité s'engage der Anbieters, BENACHRICHTIGUNG
 
-< der a12der Engagementsflchieqiten annehmen oder dieser sowie anderen System \[bereitstellung\](https://beispiel.com) 
+< der a12der Engagementsflchieqiten annehmen oder dieser sowie anderen System \[bereitstellung\](https://beispiel.com)
 
 ```markdown
 Der Anbieter verpflichtet sich dem AUFTRAGGEBER über die Aberkennung dieser Qualifikation zu informieren. Dies erfolgt durch Versendung einer offiziellen Benachrichtigung per Einschreiben mit Rückschein.
@@ -485,7 +485,7 @@ Es wird davon ausgegangen, dass der Anbieter sein Fachwissen einsetzt, um die Di
 
   Backup           Modularer Zugriff auf den Objektspeicher S3
 
-  Netzwerkinfrastruktur Netzwerkressource des AUFTRAGGEBERS           
+  Netzwerkinfrastruktur Netzwerkressource des AUFTRAGGEBERS
 
   Konsole          Der Dienst, der dem AUFTRAGGEBER den Zugang zu seinem
   AUFTRAGGEBERS    OpenIaaS-Dienst ermöglicht und ihn über die Shiva-Oberfläche verwaltet
@@ -683,7 +683,7 @@ Die Bestimmung des Prioritätsniveaus eines Falls basiert auf einer Matrixanalys
 
   -----------------------------------------------------------------------
   Kritikalitäts-   Beschreibung
-  stufe            
+  stufe
   --------------- -------------------------------------------------------
   Kritikalität C1  Die Dienste des Dienstanbieters verschlechtern sich
                    besorgniserregend schnell
@@ -695,13 +695,13 @@ Die Bestimmung des Prioritätsniveaus eines Falls basiert auf einer Matrixanalys
                    Unannehmlichkeiten ohne wesentliche Folgen
   -----------------------------------------------------------------------
 
--   Basierend auf einer gründlichen Analyse der Situation, die die Elemente 
-    bestimmt, die die Auswirkung und die Kritikalität ausmachen, wird dem 
+-   Basierend auf einer gründlichen Analyse der Situation, die die Elemente
+    bestimmt, die die Auswirkung und die Kritikalität ausmachen, wird dem
     Ticket gemäß der folgenden Entscheidungsmatrix eine Priorität zugewiesen:
 
   -------------------------------------------------------------------------
   Wirkungsebenen  Kritikalitäts-     Impact I1      Impact I2       Impact I3
-  stufe                                                             
+  stufe
   ---------------------------------- ------------  ------------    ------------
   Kritikalität C1                     Priorität     Priorität       Priorität
                                        **P1**        **P2**          **P3**
@@ -735,32 +735,32 @@ Der Dienstanbieter verpflichtet sich, eine Verfügbarkeit und Leistung gemäß d
 
 Wenn diese Bedingungen vom AUFTRAGGEBER nicht erfüllt werden, kann er die Anwendung der betreffenden SLAs nicht in Anspruch nehmen, welche speziell durch ein Sternchen (*) gekennzeichnet sind. Der Zugriff auf die SLAs erfolgt über die AUFTRAGGEBER-Schnittstelle. Die Maßnahmen werden monatlich berechnet:
 
--   \*\*SLA 1 (\*) : IC-INFRA_SNC-01\*\* -- Verfügbarkeit der 
-    Rechenleistung (Compute): garantierte Verfügbarkeitsrate von 99,99%, 
+-   \*\*SLA 1 (\*) : IC-INFRA_SNC-01\*\* -- Verfügbarkeit der
+    Rechenleistung (Compute): garantierte Verfügbarkeitsrate von 99,99%,
     berechnet auf der Basis von 24h/24, 7t/7.
--   \*\*SLA 2 (\*) : IC-INFRA_SNC-02\*\* -- Verfügbarkeit des Speichers: 
-    garantierte Verfügbarkeitsrate von 99,99%, berechnet auf der Basis von 
+-   \*\*SLA 2 (\*) : IC-INFRA_SNC-02\*\* -- Verfügbarkeit des Speichers:
+    garantierte Verfügbarkeitsrate von 99,99%, berechnet auf der Basis von
     24h/24, 7t/7.
--   **SLA 3 : IC-INFRA_SNC-03** -- Zuverlässigkeit der Sicherung: 
-    garantierte Verfügbarkeitsrate von 99,99%, berechnet auf der Basis von 
+-   **SLA 3 : IC-INFRA_SNC-03** -- Zuverlässigkeit der Sicherung:
+    garantierte Verfügbarkeitsrate von 99,99%, berechnet auf der Basis von
     24h/24, 7t/7.
--   \*\*SLA 4 (\*) : IC-INFRA_SNC-04\*\* -- Verfügbarkeit der 
-    Netzwerkinfrastruktur: garantierte Verfügbarkeitsrate von 99,99%, 
+-   \*\*SLA 4 (\*) : IC-INFRA_SNC-04\*\* -- Verfügbarkeit der
+    Netzwerkinfrastruktur: garantierte Verfügbarkeitsrate von 99,99%,
     berechnet auf der Basis von 24h/24, 7t/7.
--   **SLA 5 : IC-INFRA_SNC-05** -- Internetzugang: garantierte 
+-   **SLA 5 : IC-INFRA_SNC-05** -- Internetzugang: garantierte
     Verfügbarkeitsrate von 99,99%, berechnet auf der Basis von 24h/24, 7t/7.
 
 ***Bemerkungen*** :
 
--   *Als Reaktion auf eine verteilte Denial-of-Service-Attacke (DDoS) 
+-   *Als Reaktion auf eine verteilte Denial-of-Service-Attacke (DDoS)
     behält sich der Dienstanbieter das Recht vor, seine Internet-Routing-
-    Konfiguration anzupassen, um die Auswirkungen dieser Attacke zu 
+    Konfiguration anzupassen, um die Auswirkungen dieser Attacke zu
     begrenzen und seine Infrastruktur zu schützen. Insbesondere wenn eine IP-
-    Adresse, die dem AUFTRAGGEBER gehört, das Ziel ist, kann der 
-    Dienstanbieter über die BGP-Community-Technik des Blackholing den 
-    gesamten Verkehr zur Ziel-IP-Adresse bei seinen Anbietern blockieren, um 
-    die Ressourcen des AUFTRAGGEBERS sowie die anderer AUFTRAGGEBER und des 
-    Dienstanbieters zu schützen. Der Dienstanbieter ermutigt stark, dass der 
+    Adresse, die dem AUFTRAGGEBER gehört, das Ziel ist, kann der
+    Dienstanbieter über die BGP-Community-Technik des Blackholing den
+    gesamten Verkehr zur Ziel-IP-Adresse bei seinen Anbietern blockieren, um
+    die Ressourcen des AUFTRAGGEBERS sowie die anderer AUFTRAGGEBER und des
+    Dienstanbieters zu schützen. Der Dienstanbieter ermutigt stark, dass der
     AUFTRAGGEBER ähnliche Maßnahmen ergreift, wie die Nutzung von Web-
     Anwendungsschutzsoftware*
     disponibles sur le marché, et à configurer soigneusement ses groupes
@@ -790,19 +790,19 @@ Wenn diese Bedingungen vom AUFTRAGGEBER nicht erfüllt werden, kann er die Anwen
   Priorität       Garantie für Eingreifzeit (GTI)         Leistungsziel
   -------------- ----------------------------------- ---------------------
   Priorität       30min                                95%
-  **P1**                                             
+  **P1**
 
   Priorität       2h                                  90%
-  **P2**                                             
+  **P2**
 
   Priorität       4h                                  90%
-  **P3**                                             
+  **P3**
 
   Priorität       24h                                 85%
-  **P4**                                             
+  **P4**
 
   Priorität       48h                                 85%
-  **P5**                                             
+  **P5**
   ------------------------------------------------------------------------
 
 -   **SLA 9: IC-INFRA_SNC-09** -- Hier sind die Leistungszusagen des technischen
@@ -812,7 +812,7 @@ Wenn diese Bedingungen vom AUFTRAGGEBER nicht erfüllt werden, kann er die Anwen
                    Garantie für Eingreifzeit (GTI)      Leistungsziel
   ---------------- ---------------------------------- --------------------
   Serviceanfrage    4h                                  90%
-                                                       
+
   ------------------------------------------------------------------------
 
 *Hinweis*:
@@ -837,13 +837,13 @@ Wenn diese Bedingungen vom AUFTRAGGEBER nicht erfüllt werden, kann er die Anwen
   Indikator          Verpflichtung                          Verfügbarkeitsziel
   ------------------ -------------------------------------- -------------------
   IC-INFRA-SNC-10.1  Haltbarkeit der Speicherung eines      99.9999999% / Jahr
-                     Objekts in einer Region               
+                     Objekts in einer Region
 
   IC-INFRA-SNC-10.2  Verfügbarkeit der S3-Objektspeicher-   99.99%
-                     API                                   
+                     API
 
   IC-INFRA-SNC-10.3  Maximale Latenz beim Zugriff auf ein   150 ms
-                     Objekt in einer Region                
+                     Objekt in einer Region
   ------------------------------------------------------------------------------
 
 Bemerkungen:
@@ -963,7 +963,7 @@ Der Dienstleister verpflichtet sich:
     und während der Anonymisierung deren Vertraulichkeit zu gewährleisten.
 
 -   die Daten und Technischen Daten des AUFTRAGGEBERS gemäß dem in dieser
-    Dienstleistungsvereinbarung beschriebenen „Verfahren zum Datenlöschen am Ende 
+    Dienstleistungsvereinbarung beschriebenen „Verfahren zum Datenlöschen am Ende
     des Vertrags“ bei Ablauf oder Kündigung des Vertrags zu löschen.
 
 -   eine sichere Löschung aller Daten des AUFTRAGGEBERS durch
@@ -987,7 +987,7 @@ der Dienstleister:
 
 4.  Dem AUFTRAGGEBER die Verfahren zugänglich zu machen, die erforderlich sind,
     um die gültigen gesetzlichen, regulatorischen und vertraglichen Anforderungen
-    an den Dienst sowie die im Vertrag festgelegten spezifischen Sicherheitsanforderungen 
+    an den Dienst sowie die im Vertrag festgelegten spezifischen Sicherheitsanforderungen
     des AUFTRAGGEBERS zu erfüllen;
 
 5.  Die Bewertungen der Risiken, die sich aus der Übermittlung der Daten des
@@ -1153,7 +1153,7 @@ Der AUFTRAGGEBER hat im Rahmen des Dienstes folgende Verpflichtungen:
 Der AUFTRAGGEBER kann jederzeit während der Vertragslaufzeit eine
 Beschwerde bezüglich des qualifizierten Dienstes bei der ANSSI einreichen.
 
-Der AUFTRAGGEBER kann jederzeit vom Dienstleister verlangen, ihm das 
+Der AUFTRAGGEBER kann jederzeit vom Dienstleister verlangen, ihm das
 interne Regelwerk und den Ethikkodex zugänglich zu machen.
 
 ## 9.7. Datenlöschung am Ende des Vertrages
@@ -1163,7 +1163,7 @@ irgendeinem Grund, verpflichtet sich der Dienstleister zur sicheren
 Löschung sämtlicher Daten des AUFTRAGGEBERS, einschließlich der
 Technischen Daten. Der Dienstleister wird dem AUFTRAGGEBER eine formelle
 Vorankündigung unter Einhaltung einer Frist von einundzwanzig (21)
-Kalendertagen übermitteln. Die Daten des AUFTRAGGEBERS werden dann 
+Kalendertagen übermitteln. Die Daten des AUFTRAGGEBERS werden dann
 innerhalb einer maximalen Frist von dreißig (30) Tagen nach dieser
 Benachrichtigung gelöscht.
 
@@ -1270,7 +1270,7 @@ Standardmäßig wird der Auftraggeber informiert:
 -   Über Datenschutzverletzungen, für die der Auftraggeber verantwortlich ist, gemäß Artikel
     8 des Anhangs DPA im Rahmen des Dienstes;
 
--   
+-
 
 ## 11.2. Wartung des Dienstes
 

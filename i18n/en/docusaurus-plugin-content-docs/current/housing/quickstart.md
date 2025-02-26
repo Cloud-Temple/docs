@@ -2,23 +2,24 @@
 title: Quickstart Guide
 ---
 
+
 This **Quickstart Housing** guide helps you get started quickly with Cloud Temple's physical hosting offer. It covers the essential steps to request hosting, configure your equipment, and benefit from additional services.
 
-## Step 1: Request Hosting
+## Step 1: Submit a Hosting Request
 
 1. Access the Cloud Temple console.
 2. Open a service ticket by providing:
    - Name of your organization.
    - Contact details (email and phone).
-   - Desired hosting type (shared by 'U' or dedicated by rack).
-   - Quantity and characteristics of equipment (size, weight, consumption, etc.).
+   - Desired type of hosting (shared at 'U' or dedicated by rack).
+   - Quantity and characteristics of the equipment (size, weight, power consumption, etc.).
 
 ## Step 2: Prepare Your Equipment
 
 - Ensure your equipment meets the technical constraints:
   - Size in rack units (U).
   - Maximum weight per 'U' (25kg for shared, up to 1000kg for a dedicated rack).
-  - Electrical consumption (150W to 3Kw depending on the subscribed option).
+  - Power consumption (150W to 3Kw depending on the subscribed option).
 
 ## Step 3: Configure Network Connectivity
 
@@ -29,10 +30,10 @@ This **Quickstart Housing** guide helps you get started quickly with Cloud Templ
 
 ## Step 4: Activate Hands & Eyes Services
 
-If needed, request technical assistance to:
-- Install your equipment.
-- Configure the cabling.
-- Perform occasional actions (reboot, photos, etc.).
+If needed, request technical assistance for:
+- Installing your equipment.
+- Configuring cabling.
+- Performing occasional actions (rebooting, photos, etc.).
 
 ## Step 5: Validate the Installation
 

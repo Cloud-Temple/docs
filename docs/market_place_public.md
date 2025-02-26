@@ -5,6 +5,7 @@ tags:
   - caih
   - marketplace
 ---
+
 ## Plateformes d'achat
 
 <div class="purchase-platforms">

@@ -1,8 +1,8 @@
 ---
-title: Tutoriels
+title: Tutoriales
 ---
 
-Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Shiva. 
+Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Shiva.
 
 
 ## Prerrequisitos
@@ -14,19 +14,19 @@ Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde
 
 ## Interfaz
 
-Una vez conectado al portal web Shiva, dirígete a la pestaña "Bastion" del menú izquierdo. 
+Una vez conectado al portal web Shiva, dirígete a la pestaña "Bastion" del menú izquierdo.
 
 ![](images/sessions.png)
 
 La pestaña « Equipements » te permite consultar la lista de tus equipos. Un equipo corresponde a una configuración de
-conexión vía un Appliance Bastion. Para cada equipo, se indica su nombre, sus etiquetas, su 
+conexión vía un Appliance Bastion. Para cada equipo, se indica su nombre, sus etiquetas, su
 descripción, el Appliance que le está asociado, el tipo de conexión (SSH o RDP), la IP del host y finalmente la configuración del teclado.
 
-Puedes filtrar la lista de tus equipos según las etiquetas que les están asignadas, y un motor de búsqueda permite buscar una sesión con su nombre. 
+Puedes filtrar la lista de tus equipos según las etiquetas que les están asignadas, y un motor de búsqueda permite buscar una sesión con su nombre.
 
 ![](images/sessions2.png)
 
-La pestaña « Appliances » te da la lista de tus Appliances Bastion. Para cada Appliance, se especifica el nombre del Appliance y su descripción. 
+La pestaña « Appliances » te da la lista de tus Appliances Bastion. Para cada Appliance, se especifica el nombre del Appliance y su descripción.
 
 Un motor de búsqueda está disponible para permitirte buscar un Appliance con su nombre.
 
@@ -47,11 +47,11 @@ Luego introduce la información necesaria para la conexión:
     - Información de identificación;
     - Configuración del teclado.
 
-Luego haz clic en « Connecter » para abrir el Appliance. La consola de la máquina virtual a administrar se abre entonces. 
+Luego haz clic en « Connecter » para abrir el Appliance. La consola de la máquina virtual a administrar se abre entonces.
 
 ## Registrar un equipo
 
-Para acceder regularmente a un equipo a administrar, es más adecuado crear una configuración de equipo, que solo requerirá tu nombre de usuario y tu contraseña en cada conexión. 
+Para acceder regularmente a un equipo a administrar, es más adecuado crear una configuración de equipo, que solo requerirá tu nombre de usuario y tu contraseña en cada conexión.
 
 Para ello, dirígete a la pestaña « Equipements » del menú « Bastion » y luego, haz clic en el botón « Nouveau équipement ».
 
@@ -70,7 +70,7 @@ Luego introduce la información necesaria para la creación de tu equipo:
 ![](images/creer_session2.png)
 
 
-Una notificación que indica la creación de tu configuración de equipo debería aparecer en la parte superior derecha de la página. La configuración se añade luego a la lista de tus equipos. 
+Una notificación que indica la creación de tu configuración de equipo debería aparecer en la parte superior derecha de la página. La configuración se añade luego a la lista de tus equipos.
 
 Para crear una nueva conexión, también puedes pasar por la pestaña « Appliances » haciendo clic en la barra de acción del Appliance al que deseas asociar una configuración de equipo.
 

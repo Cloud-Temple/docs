@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: Quickstart
 ---
 
 ## Berechnung
