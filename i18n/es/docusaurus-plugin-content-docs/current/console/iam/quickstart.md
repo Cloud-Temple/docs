@@ -1,13 +1,13 @@
 ---
-title: Guide de démarrage
+title: Guía de inicio
 ---
 
 
 ##  Tenant
 
-### Création d'un tenant
+### Creación de un tenant
 
-La création d'un tenant est réalisée par une demande de service indiquant :
+La creación de un tenant se realiza mediante una solicitud de servicio indicando:
 
     El nombre de su Organización
     El nombre de un contacto con su correo y número de teléfono para finalizar la configuración
@@ -15,14 +15,14 @@ La création d'un tenant est réalisée par une demande de service indiquant :
     La zona de disponibilidad o en su defecto el sitio físico deseado para el tenant
 
 
-### Selection d'un tenant
+### Selección de un tenant
 
-La selección del tenant se hace desde la página principal de la consola Shiva :
+La selección del tenant se hace desde la página principal de la consola Shiva:
 
 ![](images/shiva_tenant.png)
 
 
-*__Nota :__ Los recursos de un tenant le son propios y no son mezclables con otros tenants.*
+*__Nota:__ Los recursos de un tenant le son propios y no son mezclables con otros tenants.*
 
 
 
@@ -31,7 +31,7 @@ La selección del tenant se hace desde la página principal de la consola Shiva 
 Las cuentas de acceso a la consola Shiva son creadas por la cuenta maestra del patrocinador por invitación (cualquiera que sea el referente de autenticación).
 La información de identificación es global para su [Organización](concepts.md#organisations).
 
-*__Nota :__ La federación de identidad se gestiona a nivel de la organización*
+*__Nota:__ La federación de identidad se gestiona a nivel de la organización*
 
 ### Creación de una cuenta de usuario en su organización
 
@@ -63,7 +63,7 @@ El menú de activación de derechos entonces aparecerá:
 
 ![](images/shiva_onboard_005.png)
 
-La configuración de permisos debe hacerse para cada [Tenant](concepts.md#tenants) de la 
+La configuración de permisos debe hacerse para cada [Tenant](concepts.md#tenants) de la
 [Organización](concepts.md#organisations).
 
 La lista de los permisos y su definición está accesible [aquí](#permissions).
@@ -105,17 +105,17 @@ Para añadir un permiso, necesita poseer el permiso __'iam_write'__ así como el
 
 ### ¿Cómo añadir un usuario?
 
-*__Nota__ : Para añadir un usuario, debe poseer el derecho __'iam_write'__.*
+*__Nota:__ Para añadir un usuario, debe poseer el derecho __'iam_write'__.*
 
 ### ¿Cómo auditar los accesos/permisos de los usuarios?
 
-Vaya a la página de usuarios y haga clic en el botón __'Exportar csv'__ :
+Vaya a la página de usuarios y haga clic en el botón __'Exportar csv'__:
 
 ### ¿Cómo eliminar un usuario?
 
 En el menú __'Administración'__ en la barra verde a la izquierda de la pantalla, en el submenú __'Usuarios'__, haga clic en el icono __'Acción'__ del usuario objetivo y elija __'Eliminar'__.
 
-*__nota__ :*
+*__nota:__*
 - *Para añadir un usuario, debe poseer el derecho __'iam_write'__.*
 - *Si es un usuario federado, __asegúrese de que el usuario también haya sido eliminado desde el referente de identidad__.*
 
