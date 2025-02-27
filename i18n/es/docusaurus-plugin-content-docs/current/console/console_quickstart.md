@@ -1,8 +1,8 @@
 ---
-title: Quickstart
+title: Inicio rápido
 ---
 
-## Prérequis
+## Requisitos previos
 - Haber suscrito a una oferta Cloud Temple. Para suscribirse fácilmente, puede [contactarnos](https://www.cloud-temple.com/contactez-nous/) o por correo a la dirección __contact@cloud-temple.com__.
 - Tener acceso a la consola Shiva
 - Tener su IPv4 pública declarada en la zona de confianza Cloud Temple (el acceso a la consola Shiva está limitado a las direcciones de confianza identificadas)
@@ -13,7 +13,7 @@ Shiva es accesible a través de la siguiente URL:
     O desde la URL directa que se le haya proporcionado por correo.
 
 La primera página le permite seleccionar [la organización](iam/concepts.md#organisations) en la que se ha creado su usuario.
-Una vez ingresada la empresa, haga clic en __'Se connecter'__.
+Una vez ingresada la empresa, haga clic en __'Conectarse'__.
 
 ![](images/shiva_login.png)
 
@@ -96,8 +96,8 @@ Las funcionalidades están agrupadas por módulos. Principalmente agrupa:
 
 - El __inventario__ de sus recursos,
 - El __seguimiento de las operaciones__,
-- La __gestión de recursos IaaS__ (Calculo, almacenamiento, red, ...),
-- La __gestión de recursos OpenIaaS__ (Calculo, almacenamiento, red, ...),
+- La __gestión de recursos IaaS__ (Cálculo, almacenamiento, red, ...),
+- La __gestión de recursos OpenIaaS__ (Cálculo, almacenamiento, red, ...),
 - El acceso a los __servicios adicionales__ (Bastion, monitoreo, ...),
 - La __administración de su organización__ (Gestión de tenants, derechos, ...)
 

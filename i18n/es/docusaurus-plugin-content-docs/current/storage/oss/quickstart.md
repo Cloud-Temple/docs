@@ -1,51 +1,51 @@
 ---
-title: Guide de démarrage
+title: Guía de inicio rápido
 ---
 
-## Lister l'ensemble des bucket S3 de votre tenant
+## Listar todos los buckets S3 de tu tenant
 
-Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
+Puedes acceder a todos tus buckets a través del menú '__Almacenamiento de Objetos__' de la consola Cloud Temple:
 
 ![](images/S3_list_bucket.png)
 
-Vous pouvez voir tous les comptes créés sur votre tenant et autorisé à accéder au service S3 via l'onglet '__Comptes de stockage__'.
+Puedes ver todas las cuentas creadas en tu tenant y autorizadas a acceder al servicio S3 a través de la pestaña '__Cuentas de almacenamiento__'.
 
 ![](images/S3_accounts.png)
 
-## Création d'un nouveau compte de stockage
+## Creación de una nueva cuenta de almacenamiento
 
-La création d'un compte de stockage sur votre tenant se fait en appuyant sur le bouton '__Nouveau compte de stockage__' en haut à droite, dans l'onglet '__Comptes de stockage__' :
+La creación de una cuenta de almacenamiento en tu tenant se realiza pulsando el botón '__Nueva cuenta de almacenamiento__' en la parte superior derecha, en la pestaña '__Cuentas de almacenamiento__':
 
 ![](images/S3_create_account.png)
 
-La plateforme vous donne alors la clef d'accès et la clef secrète de votre bucket :
+La plataforma te proporciona entonces la clave de acceso y la clave secreta de tu bucket:
 
 ![](images/S3_storage_keys.png)
 
-__ATTENTION :__ Les clés secrète et d'accès sont présentées une seule fois. Après cette première apparition, il devient impossible de consulter à nouveau la clé secrète. Il est donc essentiel de noter ces informations immédiatement ; faute de quoi, il vous sera nécessaire de générer une nouvelle paire de clés.
+__ATENCIÓN:__ Las claves secreta y de acceso se presentan una sola vez. Después de esta primera aparición, se vuelve imposible consultar de nuevo la clave secreta. Por lo tanto, es esencial anotar esta información inmediatamente; de lo contrario, será necesario generar un nuevo par de claves.
 
-La regeneration se fait au niveau des options de la clefs en choisissant l'option "Réinitialiser clé d'accès".
+La regeneración se realiza a nivel de las opciones de la clave eligiendo la opción "Reiniciar clave de acceso".
 
 ![](images/S3_keyregen.png)
 
 
-## Création d'un bucket S3
+## Creación de un bucket S3
 
-La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
+La creación de un nuevo bucket se realiza haciendo clic en el botón '__Nuevo bucket__' en la parte superior derecha de la pantalla:
 
 ![](images/S3_create.png)
 
-Une fenêtre s'affiche alors et vous devez renseigner :
+Aparece una ventana y debes proporcionar:
 
-1. La **région** de création de votre bucket,
-2. Le **type** de bucket : performant ou archivage,
-3. Le **nom** de votre bucket (il doit être unique).
+1. La **región** de creación de tu bucket,
+2. El **tipo** de bucket: rendimiento o archivo,
+3. El **nombre** de tu bucket (debe ser único).
 
 ![](images/S3_create_popup_001.png)
 
-Au 3 Avril 2024, la région disponible est **FR1** (Paris) et seul le type performant est disponible.
+A 3 de abril de 2024, la región disponible es **FR1** (París) y solo está disponible el tipo de rendimiento.
 
-Vous devez aussi choisir qui peut accéder à votre bucket :
+Debes también elegir quién puede acceder a tu bucket:
 
 - Acceso **Privado**: Por defecto, el acceso está limitado a direcciones IP específicas de Cloud Temple.
 - Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (particularmente a través de la regla 0.0.0.0/0). Desaconsejamos esta configuración debido a sus implicaciones en términos de seguridad.

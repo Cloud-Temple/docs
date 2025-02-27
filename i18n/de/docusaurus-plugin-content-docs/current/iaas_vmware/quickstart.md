@@ -184,186 +184,188 @@ $ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 ### Erweiterte Einstellungen für virtuelle Maschinen: Extra Config
 
 Die Extra Config bietet eine flexible Möglichkeit, Schlüssel=Wert-Paare in die Konfiguration einer virtuellen Maschine aufzunehmen. Die Schlüssel und Werte werden vom System interpretiert, wenn die virtuelle Maschine bereitgestellt wird.
-Désormais, vous pouvez, vous même, modifier les propriétés de type __Extra Config__ dans les options avancées d'une machine virtuelle :
+
+Jetzt können Sie selbst die Eigenschaften vom Typ __Extra Config__ in den erweiterten Optionen einer virtuellen Maschine ändern:
 
 ![](images/shiva_vm_adv_001.png)
 
-Vous pouvez ajouter une propriété parmi une liste de clés. De plus, vous pouvez modifier la valeur d'une clé que vous avez vous-même ajouté. Les paires clé=valeur déjà existantes ne sont pas modifiables.
+Sie können eine Eigenschaft aus einer Liste von Schlüsseln hinzufügen. Außerdem können Sie den Wert eines Schlüssels ändern, den Sie selbst hinzugefügt haben. Bereits vorhandene Schlüssel=Wert-Paare können nicht geändert werden.
 
-Veuillez contacter le support pour toute demande d'ajout de nouvelles clés.
+Bitte kontaktieren Sie den Support für Anfragen zum Hinzufügen neuer Schlüssel.
 
 ![](images/shiva_vm_adv_002.png)
 
-__Note__ : *Pour l'utilisation de GPU par la machine virtuelle, il est obligatoire d'activer la clé 'pciPassthru.use64bitMMIO' et d'allouer la quantité d'espace MMIO (Memory-mapped I/O) nécessaire via 'pciPassthru.64bitMMIOSizeGB'. Il est fortement recommandé de vous référerer à la [documentation officielle Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Hinweis__ : *Für die Verwendung von GPU durch die virtuelle Maschine ist es obligatorisch, den Schlüssel 'pciPassthru.use64bitMMIO' zu aktivieren und die notwendige Menge an MMIO-Speicherplatz (Memory-mapped I/O) über 'pciPassthru.64bitMMIOSizeGB' zuzuweisen. Es wird dringend empfohlen, sich auf die [offizielle Nvidia-Dokumentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms) zu beziehen.*
 
-### Paramétrage avancé des machines virtuelles : vAPP
+### Erweiterte Einstellungen für virtuelle Maschinen: vAPP
 
-Vous pouvez, également, modifier les propriétés de type __vAPP__ dans les options avancées d'une machine virtuelle :
+Sie können auch Eigenschaften vom Typ __vAPP__ in den erweiterten Optionen einer virtuellen Maschine ändern:
 
 ![](images/shiva_vm_adv_003.png)
 
-Vous pouvez ajouter une propriété, la modifier ou la supprimer. Quatre types de propriétés sont proposées, String, Nombre, Booléen, Mot de passe:
+Sie können eine Eigenschaft hinzufügen, ändern oder löschen. Es werden vier Arten von Eigenschaften angeboten: String, Zahl, Boolean, Passwort:
 
 ![](images/shiva_vm_adv_004.png)
 
-__Note__ : *La machine virtuelle doit être stoppée pour modifier ses propriétés vAPP.*
+__Hinweis__ : *Die virtuelle Maschine muss gestoppt sein, um ihre vAPP-Eigenschaften zu ändern.*
 
-### Pilotage des __'hyperviseurs'__ et __'Cpool'__ (clusters d'hyperviseurs)
+### Verwaltung von __'Hypervisoren'__ und __'Cpool'__ (Hypervisor-Clustern)
 
-Le pilotage de vos hyperviseurs se fait dans le sous menu __'Calcul'__ du menu __'IaaS'__, situé dans le bandeau vert à gauche de votre écran.
+Die Verwaltung Ihrer Hypervisoren erfolgt im Untermenü __'Berechnung'__ des Menüs __'IaaS'__, das sich im grünen Banner auf der linken Seite Ihres Bildschirms befindet.
 
 ![](images/shiva_cpool_001.png)
 
-Dans ce sous menu, vous disposez d'une vue sur :
+In diesem Untermenü haben Sie eine Ansicht auf:
 
-- La stack logicielle d'hyperviseurs, leur AZ et leurs ressources,
-- La stack logicielle de sauvegarde.
+- Den Hypervisor-Software-Stack, ihre AZ und ihre Ressourcen,
+- Den Backup-Software-Stack.
 
-En janvier 2024, l'offre d'hyperviseur disponible sur l'infrastructure qualifiée Cloud Temple est basée sur VMware. Le logiciel de sauvegarde utilisé est IBM Spectrum Protect Plus.
+Im Januar 2024 basiert das auf der qualifizierten Cloud Temple-Infrastruktur verfügbare Hypervisor-Angebot auf VMware. Die verwendete Backup-Software ist IBM Spectrum Protect Plus.
 
-### Pilotage des clusters VMware
+### Verwaltung von VMware-Clustern
 
-Pour accéder au pilotage des clusters VMware, cliquez dans le sous menu __'Calcul'__ du menu __'IaaS'__ :
+Um auf die Verwaltung von VMware-Clustern zuzugreifen, klicken Sie im Untermenü __'Berechnung'__ des Menüs __'IaaS'__:
 
-Par défaut, le premier onglet liste tous les hyperviseurs (tous cluster confondus):
+Standardmäßig listet der erste Tab alle Hypervisoren auf (alle Cluster zusammen):
 
 ![](images/shiva_esx_001.png)
 
-Il est possible de visualiser les détails d'un hyperviseur en cliquant sur son nom:
+Sie können die Details eines Hypervisors anzeigen, indem Sie auf seinen Namen klicken:
 
 ![](images/shiva_esx_002.png)
 
-Il existe un onglet par cluster d'hyperviseur pour consulter les détails de chacun:
+Es gibt einen Tab für jeden Hypervisor-Cluster, um die Details jedes einzelnen einzusehen:
 
 ![](images/shiva_cpool_003.png)
 
-Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
+Wenn Sie auf einen Cluster klicken, sehen Sie eine Zusammenfassung seiner Zusammensetzung:
 
-- Le total de la puissance de calcul exprimé en Ghz,
-- Le total de la mémoire disponible et le ratio utilisé,
-- Le total de l'espace de stockage (tous types confondus) ainsi que la cote part utilisée,
-- Les mécanismes d'automatisation sur indisponibilité d'une lame de calcul (__'Vsphere DRS'__),
-- Le nombre de machines virtuelles,
-- Le nombre d'hyperviseurs.
+- Die gesamte Rechenleistung in Ghz,
+- Der gesamte verfügbare Speicher und das verwendete Verhältnis,
+- Der gesamte Speicherplatz (alle Typen zusammen) sowie der verwendete Anteil,
+- Automatisierungsmechanismen bei Nichtverfügbarkeit einer Recheneinheit (__'Vsphere DRS'__),
+- Die Anzahl der virtuellen Maschinen,
+- Die Anzahl der Hypervisoren.
 
 <!-- TODO: Add missing page. -->
-<!-- En consultant la page d'un cluster, plusieurs onglets sont disponibles. L'onglet __'Règles'__ vous permet de définir les [règles d'affinité / anti-affinité](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
+<!-- Wenn Sie die Seite eines Clusters aufrufen, stehen mehrere Tabs zur Verfügung. Der Tab __'Regeln'__ ermöglicht es Ihnen, die [Affinitäts-/Anti-Affinitätsregeln](compute.md#verwaltung-der-affinität-ihrer-virtuellen-maschinen) zu definieren. -->
 
 ![](images/shiva_cpool_004.png)
 
-Vous voyez apparaitre pour chaque hyperviseur dans l'onglet __'Hosts'__ :
+Für jeden Hypervisor im Tab __'Hosts'__ sehen Sie:
 
-- L'usage __CPU__ et __Mémoire__,
-- Le nombre de machines virtuelles affectées,
-- La disponibilité d'un nouveau build pour le système d'exploitation de l'hyperviseur le cas échéant,
-- Le statut de l'hyperviseur (connecté en production, en maintenance, éteint, ...),
-- Un menu action.
+- Die __CPU__- und __Speicher__-Nutzung,
+- Die Anzahl der zugewiesenen virtuellen Maschinen,
+- Die Verfügbarkeit eines neuen Builds für das Betriebssystem des Hypervisors, falls zutreffend,
+- Den Status des Hypervisors (verbunden in Produktion, in Wartung, ausgeschaltet, ...),
+- Ein Aktionsmenü.
 
 ![](images/shiva_cpool_005.png)
 
-Plusieurs actions sont possibles depsuis l'onglet __'Hosts'__ :
+Mehrere Aktionen sind vom Tab __'Hosts'__ aus möglich:
 
-- commander de nouveaux hyperviseurs via le bouton __'Ajouter un host'__ :
+- Neue Hypervisoren über die Schaltfläche __'Host hinzufügen'__ bestellen:
 
 ![](images/shiva_cpool_009.png)
 
-- possibilité de consulter __le détail d'un hyperviseur__ :
+- Möglichkeit, __die Details eines Hypervisors__ einzusehen:
 
 ![](images/shiva_cpool_007.jpg)
 
-- de rentrer ou de sortir de l'__état de maintenance__ un hyperviseur,
-- de __mettre à jour__ le cas échéant cet hyperviseur ; pour ce faire, __il doit impérativement être en maintenance__. Il existe deux types de mises à jours :
+- Einen Hypervisor in den __Wartungszustand__ zu versetzen oder aus diesem herauszunehmen,
+- Diesen Hypervisor gegebenenfalls __zu aktualisieren__; dazu __muss er unbedingt in Wartung sein__. Es gibt zwei Arten von Updates:
 
-1. Les builds VMware (les nouvelles versions de l'hyperviseur):
+1. VMware-Builds (neue Versionen des Hypervisors):
 
 ![](images/shiva_cpool_008_build.jpg)
 
-2. La mise à jour du firmware de votre lame de calcul (bios et firmware cartes filles):
+2. Aktualisierung der Firmware Ihrer Recheneinheit (BIOS und Firmware der Tochterkarten):
 
 ![](images/shiva_cpool_008_firm.png)
 
-*__Remarque__* :
+*__Anmerkung__* :
 
-- *Cloud Temple met à disposition les builds pour les hyperviseurs à intervalles réguliers.
-Il est important de mettre régulièrement à jour vos hyperviseurs, notamment pour permettre l'application des correctifs de sécurité.
-Cependant, __nous ne mettons pas de nous même à jour vos hyperviseurs__. Cloud Temple n'a pas de visibilité sur les engagements de disponibilité de vos workloads.
-Nous vous laissons donc mettre en œuvre votre gestion du changement et appliquer au meilleur moment les nouveaux builds.*
-- *Le processus de mise à jour est entièrement automatisé. Vous devez disposer d'au moins deux hyperviseurs dans votre cluster pour permettre une mise à jour sans interruption de service.*
+- *Cloud Temple stellt in regelmäßigen Abständen Builds für Hypervisoren zur Verfügung.
+Es ist wichtig, Ihre Hypervisoren regelmäßig zu aktualisieren, insbesondere um die Anwendung von Sicherheitspatches zu ermöglichen.
+Allerdings __aktualisieren wir Ihre Hypervisoren nicht selbst__. Cloud Temple hat keinen Einblick in die Verfügbarkeitsverpflichtungen Ihrer Workloads.
+Wir überlassen es Ihnen daher, Ihr Änderungsmanagement umzusetzen und die neuen Builds zum bestmöglichen Zeitpunkt anzuwenden.*
+- *Der Aktualisierungsprozess ist vollständig automatisiert. Sie müssen mindestens zwei Hypervisoren in Ihrem Cluster haben, um eine Aktualisierung ohne Serviceunterbrechung zu ermöglichen.*
 
 <!-- TODO: Add missing page. -->
-<!-- - *Il est nécessaire d'avoir [les permissions adéquates](../console/permissions.md) pour effectuer les différentes actions.* -->
+<!-- - *Es ist notwendig, [die entsprechenden Berechtigungen](../console/permissions.md) zu haben, um die verschiedenen Aktionen durchzuführen.* -->
 
-Vous voyez aussi l'ensemble des règles d'affinité/anti-affinité pour votre cluster d'hyperviseurs dans la partie __'Règles'__.
+Sie sehen auch alle Affinitäts-/Anti-Affinitätsregeln für Ihren Hypervisor-Cluster im Abschnitt __'Regeln'__.
 
-### Gestion de l'affinité de vos machines virtuelles
+### Verwaltung der Affinität Ihrer virtuellen Maschinen
 
-Les __règles d'affinité et d'anti-affinité__ permettent de contrôler l'emplacement des machines virtuelles sur vos hyperviseurs.
-Elles peuvent être utilisées pour gérer l'utilisation des ressources de votre __'Cpool'__.
-Par exemple, elles peuvent aider à équilibrer la charge de travail entre les serveurs ou à isoler les charges de travail gourmandes en ressources.
-Dans un __'Cpool'__ VMware, ces règles sont souvent utilisées pour gérer le comportement des machines virtuelles avec vMotion.
-vMotion permet de déplacer des machines virtuelles d'un hôte à un autre sans interruption de service.
+Die __Affinitäts- und Anti-Affinitätsregeln__ ermöglichen es Ihnen, die Platzierung von virtuellen Maschinen auf Ihren Hypervisoren zu kontrollieren.
+Sie können verwendet werden, um die Ressourcennutzung Ihres __'Cpool'__ zu verwalten.
+Zum Beispiel können sie helfen, die Arbeitslast zwischen Servern auszugleichen oder ressourcenhungrige Arbeitslasten zu isolieren.
+In einem __'Cpool'__ VMware werden diese Regeln oft verwendet, um das Verhalten von virtuellen Maschinen mit vMotion zu verwalten.
+vMotion ermöglicht das Verschieben von virtuellen Maschinen von einem Host zu einem anderen ohne Serviceunterbrechung.
 
-Vous pouvez configurer grâce à la gestion des règles :
+Mit der Regelverwaltung können Sie konfigurieren:
 
-- __Règles d'Affinité__ : Ces règles assurent que certaines machines virtuelles soient exécutées sur le même hôte physique.
-Elles sont utilisées pour améliorer les performances en maintenant les machines virtuelles qui communiquent fréquemment
-ensemble sur le même serveur pour réduire la latence réseau. Les règles d'affinité sont utiles dans des scénarios
-où la performance est critique, comme dans le cas de bases de données ou d'applications qui nécessitent une communication rapide entre les serveurs.
+- __Affinitätsregeln__: Diese Regeln stellen sicher, dass bestimmte virtuelle Maschinen auf demselben physischen Host ausgeführt werden.
+Sie werden verwendet, um die Leistung zu verbessern, indem virtuelle Maschinen, die häufig miteinander kommunizieren,
+auf demselben Server gehalten werden, um die Netzwerklatenz zu reduzieren. Affinitätsregeln sind nützlich in Szenarien,
+in denen die Leistung kritisch ist, wie im Fall von Datenbanken oder Anwendungen, die eine schnelle Kommunikation zwischen Servern erfordern.
 
-- __Règles d'Anti-affinité__ : À l'inverse, ces règles garantissent que certaines machines virtuelles ne soient pas exécutées
-sur le même hôte physique. Elles sont importantes pour la disponibilité et la résilience, par exemple,
-pour éviter que des machines critiques ne soient toutes affectées en cas de défaillance d'un serveur unique.
-Les règles d'anti-affinité sont cruciales pour les applications nécessitant une haute disponibilité,
-comme dans les environnements de production où la tolérance aux pannes est une priorité.
-Par exemple, vous ne souhaitez pas que vos deux Actives Directory soient sur le même hyperviseur.
+- __Anti-Affinitätsregeln__: Im Gegensatz dazu stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen nicht auf
+demselben physischen Host ausgeführt werden. Sie sind wichtig für die Verfügbarkeit und Resilienz, zum Beispiel,
+um zu vermeiden, dass alle kritischen Maschinen bei einem Ausfall eines einzelnen Servers betroffen sind.
+Anti-Affinitätsregeln sind entscheidend für Anwendungen, die eine hohe Verfügbarkeit erfordern,
+wie in Produktionsumgebungen, in denen die Fehlertoleranz eine Priorität ist.
+Zum Beispiel möchten Sie nicht, dass Ihre beiden Active Directories auf demselben Hypervisor sind.
 
-Lors de la création d'une règle, vous définissez le type de règle (affinité / anti-affinité), le nom de la règle,
-son état d'activation (__'Statut'__) et les machines concernées de votre cluster d'hyperviseurs.
+Bei der Erstellung einer Regel definieren Sie den Regeltyp (Affinität / Anti-Affinität), den Namen der Regel,
+ihren Aktivierungsstatus (__'Status'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
 
 ![](images/shiva_cpool_006.png)
 
-*Remarque : les règles affinité/aint-affinité proposées dans la console sont des règles concernant les machines virtuelles entre elles (pas de règles entre hyperviseurs et machines virtuelles).*
+*Anmerkung: Die in der Konsole angebotenen Affinitäts-/Anti-Affinitätsregeln sind Regeln, die virtuelle Maschinen untereinander betreffen (keine Regeln zwischen Hypervisoren und virtuellen Maschinen).*
 
-## Sauvegarde
+## Sicherung
 
-### Créer une politique de sauvegarde
+### Eine Sicherungskopie-Richtlinie erstellen
 
-Pour ajouter une nouvelle politique de sauvegarde, il faut faire une demande auprès du support. Le support est accessible depuis l'icône de bouée en haut à droite de la fenêtre.
+Um eine neue Sicherungskopie-Richtlinie hinzuzufügen, müssen Sie eine Anfrage an den Support stellen. Der Support ist über das Rettungsring-Symbol oben rechts im Fenster zugänglich.
 
-La création d'une nouvelle politique de sauvegarde est réalisée par __une demande de service__ indiquant :
+Die Erstellung einer neuen Sicherungskopie-Richtlinie erfolgt durch __eine Serviceanfrage__ mit Angabe von:
 
-    Le nom de votre Organisation
-    Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
-    Le nom du tenant
-    Le nom de la politique de sauvegarde
-    Les caractéristiques (x jours, y semaines, z mois, ...)
+    Der Name Ihrer Organisation
+    Der Name eines Kontakts mit seiner E-Mail und Telefonnummer zur Fertigstellung der Konfiguration
+    Der Name des Tenants
+    Der Name der Sicherungskopie-Richtlinie
+    Die Eigenschaften (x Tage, y Wochen, z Monate, ...)
 
 ![](../console/images/shiva_support.png)
 
-### Assigner une politique de sauvegarde à une machine virtuelle
+### Eine Sicherungskopie-Richtlinie einer virtuellen Maschine zuweisen
 
-Lorsqu'une SLA est assignée à une machine virtuelle (VM), tous les disques associés à cette VM héritent automatiquement de la même SLA. Par la suite, il est possible de lancer manuellement l'exécution de la sauvegarde via l'onglet "Politiques de sauvegarde". À défaut d'un lancement manuel, la sauvegarde s'exécutera automatiquement selon le planning configuré par la SLA.
+Wenn einer virtuellen Maschine (VM) eine SLA zugewiesen wird, erben alle mit dieser VM verbundenen Festplatten automatisch dieselbe SLA. Anschließend ist es möglich, die Ausführung der Sicherung manuell über den Tab "Sicherungskopie-Richtlinien" zu starten. Ohne manuellen Start wird die Sicherung automatisch gemäß dem von der SLA konfigurierten Zeitplan ausgeführt.
 
-SecNumCloud rend obligatoire l'assignation d'une politique de sauvegarde à une machine virtuelle avant son démarrage. Dans le cas contraire, vous aurez la notification suivante :
+SecNumCloud macht es obligatorisch, einer virtuellen Maschine vor ihrem Start eine Sicherungskopie-Richtlinie zuzuweisen. Andernfalls erhalten Sie die folgende Benachrichtigung:
 
 ![](images/shiva_vm_politiques_backup_assign_mandatory.png)
 
-Cliquez sur l’onglet __'Politiques de sauvegarde'__ du menu de votre machine virtuelle. Vous pouvez y visualiser la ou les politiques de sauvegardes assignée(s) à celle-ci.
+Klicken Sie auf den Tab __'Sicherungskopie-Richtlinien'__ im Menü Ihrer virtuellen Maschine. Sie können die der Maschine zugewiesene(n) Sicherungskopie-Richtlinie(n) einsehen.
 
-Pour assigner une nouvelle politique de sauvegarde à la machine virtuelle, cliquez sur le bouton __'Ajouter une politique'__ et sélectionnez la politique de sauvegarde voulue.
+Um der virtuellen Maschine eine neue Sicherungskopie-Richtlinie zuzuweisen, klicken Sie auf die Schaltfläche __'Richtlinie hinzufügen'__ und wählen Sie die gewünschte Sicherungskopie-Richtlinie aus.
 
 ![](images/shiva_vm_politiques_backup.png)
 
-### Assigner une politique de sauvegarde à un disque virtuel
+### Eine Sicherungskopie-Richtlinie einer virtuellen Festplatte zuweisen
 
-Il est également possible d'assigner une SLA directement à un disque virtuel spécifique d'une machine. Dans ce cas, la machine virtuelle ne hérite pas de cette SLA appliquée individuellement au disque. Cependant, il n'est pas possible de lancer manuellement l'exécution de la sauvegarde au niveau des disques, car cette fonctionnalité n'est pas prise en charge dans Spectrum Protect Plus.
-En revanche, il est possible d'exclure certains disques d'une ou plusieurs politiques de sauvegarde (SLA) de la VM, ce qui permet de désassigner une ou plusieurs SLA(s) sur une base disque par disque. Cette approche offre la flexibilité de lancer manuellement l'exécution de la sauvegarde d'une SLA sans affecter tous les disques de la machine virtuelle, permettant ainsi une gestion plus fine des sauvegardes.
+Es ist auch möglich, eine SLA direkt einer bestimmten virtuellen Festplatte einer Maschine zuzuweisen. In diesem Fall erbt die virtuelle Maschine nicht die individuell auf die Festplatte angewendete SLA. Es ist jedoch nicht möglich, die Ausführung der Sicherung auf Festplattenebene manuell zu starten, da diese Funktionalität in Spectrum Protect Plus nicht unterstützt wird.
 
-Cliquez sur la barre d'actions du disque auquel vous souhaitez assigner une politique de sauvegarde. Puis, cliquez sur __'Politiques'__ et sélectionnez la politique de sauvegarde souhaitée.
+Andererseits ist es möglich, bestimmte Festplatten von einer oder mehreren Sicherungskopie-Richtlinien (SLAs) der VM auszuschließen, was es ermöglicht, eine oder mehrere SLA(s) auf Festplatte-für-Festplatte-Basis abzumelden. Dieser Ansatz bietet die Flexibilität, die Ausführung der Sicherung einer SLA manuell zu starten, ohne alle Festplatten der virtuellen Maschine zu beeinflussen, was eine feinere Verwaltung der Sicherungen ermöglicht.
+
+Klicken Sie auf die Aktionsleiste der Festplatte, der Sie eine Sicherungskopie-Richtlinie zuweisen möchten. Klicken Sie dann auf __'Richtlinien'__ und wählen Sie die gewünschte Sicherungskopie-Richtlinie aus.
 
 ![](images/shiva_vm_disques_virtuels_politiques.png)
 
-*Nota* : La politique à ajouter doit se trouver sur une zone de disponibilité différente de la machine virtuelle.
+*Hinweis* : Die hinzuzufügende Richtlinie muss sich in einer anderen Verfügbarkeitszone als die virtuelle Maschine befinden.
 
 ### Ausführen einer Sicherheitskopie-Richtlinie
 
@@ -391,34 +393,4 @@ Wenn die letzte Ressource von einer SLA-Richtlinie dissiziert wird, erkennt das 
 
 Es muss überprüft werden, dass die betroffenen Arbeiten tatsächlich im Zustand "Gestoppt" sind. Nach dieser Überprüfung können diese Arbeiten gelöscht werden. Erst nach dem Löschen dieser abhängigen Arbeiten kann die SLA-Richtlinie endgültig aus dem System gelöscht werden.
 
-Ein spezieller Fall verdient besondere Aufmerksamkeit: das Hinzufügen einer neuen Ressource zu einer SLA-Richtlinie, deren abhängige Arbeiten nicht gelöscht wurden. In dieser Situation werden die Arbeits-IDs beibehalten. Es ist jedoch wichtig zu beachten, dass die Arbeiten im Zustand "Gestoppt" nicht automatisch wieder aufgenommen werden. Ein manuelles Eingreifen ist erforderlich, um sie wieder zu aktivieren und ihre Ausführung zu ermöglichen.
-
-Hinweis: Für Einzelheiten zu dieser Situation wenden Sie sich an den Cloud Temple-Support.
-
-Die Cloud Temple-Konsole verhindert die Zuordnung einer virtuellen Maschine zu einer gestoppten Sicherheitskopie-Richtlinie:
-
-![](images/shiva_backup_held_001.png)
-
-Ebenso ist es nicht möglich, eine virtuelle Maschine zu starten, die mit einer gestoppten Sicherheitskopie-Richtlinie verknüpft ist:
-
-![](images/shiva_backup_held_002.png)
-
-### Eine Sicherung wiederherstellen
-
-Der Tab __'Sicherungen'__ im Menü Ihrer virtuellen Maschinen ermöglicht Ihnen den Zugriff auf die Sicherungsliste dieser. Um eine Sicherung wiederherzustellen, klicken Sie auf die Schaltfläche __'Wiederherstellen'__ in der Zeile der Sicherung, die Sie wiederherstellen möchten.
-
-![](images/shiva_vm_backup_restaurer.png)
-
-1. __Produktionsmodus__ : Der Produktionsmodus ermöglicht die Wiederherstellung nach einem Vorfall vor Ort vom Primärspeicher oder einem entfernten Wiederherstellungsort, indem die Originalmaschinen-Images durch Wiederherstellungs-Images ersetzt werden. Alle Konfigurationen werden im Rahmen der Wiederherstellung übertragen, einschließlich Namen und Identifikatoren, und alle mit der virtuellen Maschine verbundenen Datenkopierarbeiten werden fortgesetzt. Im Rahmen einer Wiederherstellung im Produktionsmodus können Sie den Speicher in der virtuellen Maschine durch ein virtuelles Laufwerk aus einer früheren Sicherung der virtuellen Maschine ersetzen.
-
-2. __Testmodus__ : Der Testmodus erstellt temporäre virtuelle Maschinen für die Entwicklung, den Test, die Snapshots-Überprüfung und die Überprüfung der Wiederherstellung nach einem Vorfall basierend auf einem wiederholbaren Zeitplan, ohne die Produktionsumgebungen zu beeinträchtigen. Die Testmaschinen laufen so lange wie nötig, um den Test und die Überprüfung durchzuführen, und werden dann bereinigt. Über das isolierte Netzwerk können Sie eine sichere Umgebung schaffen, um Ihre Arbeiten zu testen, ohne die in der Produktion verwendeten virtuellen Maschinen zu beeinflussen. Die im Testmodus erstellten virtuellen Maschinen haben eindeutige Namen und Identifikatoren, um Konflikte in Ihrer Produktionsumgebung zu vermeiden.
-
-3. __Klone-Modus__ : Der Klone-Modus erstellt Kopien der virtuellen Maschinen für Anwendungsfälle, die permanente oder langlaufende Kopien für die Datenexploration oder die Duplizierung einer Testumgebung in einem isolierten Netzwerk erfordern. Die im Klone-Modus erstellten virtuellen Maschinen haben eindeutige Namen und Identifikatoren, um Konflikte in Ihrer Produktionsumgebung zu vermeiden. Im Klone-Modus sollten Sie auf den Ressourcenverbrauch achten, da der Klone-Modus permanente oder langfristige Maschinen erstellt.
-
-__Die Wiederherstellung erfolgt standardmäßig im "TEST"-Modus, um die Produktion zu schützen__ und Sie können den Namen der wiederhergestellten VM wählen:
-
-![](images/shiva_vm_backup_test.png)
-
-Beachten Sie, dass bei zufrieden stellenden Tests eine virtuelle Maschine vom Testmodus in den Produktionsmodus wechseln kann:
-
-![](images/shiva_vm_backup_2prod.png)
+Ein spezieller Fall verdient besondere Aufmerksamkeit: das Hinzufügen einer neuen Ressource zu einer SLA-Richtlinie, deren abhängige Arbeiten nicht gelöscht wurden. In dieser Situation werden die Arbeits-IDs beibehalten. Es ist jedoch wichtig zu beachten, dass die Arbeiten im Zustand "Gestoppt" nicht automatisch wieder aufgenommen werden. Ein manuelles Eingreifen ist erforderlich, um sie wieder zu aktivieren und ihre Ausführ

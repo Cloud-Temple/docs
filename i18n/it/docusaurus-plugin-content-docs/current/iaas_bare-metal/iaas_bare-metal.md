@@ -1,14 +1,14 @@
 ---
-title: Vue d'ensemble
+title: Panoramica
 ---
 
-L’offre __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure.
+L'offerta __Bare Metal__ di Cloud Temple propone server dedicati, completamente personalizzabili, per rispondere alle esigenze dei clienti in cerca di totale autonomia sulla propria infrastruttura.
 
-Conçue autour des technologies de pointe Cisco UCS pour le calcul et IBM Spectrum Virtualize/FlashSystem pour le stockage, cette solution garantit des performances optimales et une fiabilité exemplaire.
+Progettata intorno alle tecnologie all'avanguardia Cisco UCS per il calcolo e IBM Spectrum Virtualize/FlashSystem per lo storage, questa soluzione garantisce prestazioni ottimali e un'affidabilità esemplare.
 
-Avec __Bare Metal__, vous bénéficiez d’un matériel exclusif, sans mutualisation, vous permettant d’installer et de gérer l’environnement logiciel de votre choix : hyperviseur, Linux, Windows ou autres.
+Con __Bare Metal__, beneficiate di hardware esclusivo, senza mutualizzazione, che vi permette di installare e gestire l'ambiente software di vostra scelta: hypervisor, Linux, Windows o altri.
 
-L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant une gestion simplifiée et une prise en main immédiate. Que vous cherchiez une infrastructure pour vos applications critiques ou des ressources matérielles pour vos projets spécifiques, l’offre Bare Metal vous assure flexibilité, contrôle total, et performances inégalées.
+L'accesso diretto ai vostri server avviene tramite la console Cloud Temple, offrendo una gestione semplificata e un utilizzo immediato. Che stiate cercando un'infrastruttura per le vostre applicazioni critiche o risorse hardware per i vostri progetti specifici, l'offerta Bare Metal vi assicura flessibilità, controllo totale e prestazioni ineguagliabili.
 
 
 <div class="card-grid">
@@ -33,7 +33,7 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
 ## Piattaforme di acquisto
 
 <div class="purchase-platforms">
-  <p>Siete un attore del settore pubblico ? L’offerta <strong>Bare Metal</strong> è accessibile via :</p>
+  <p>Siete un attore del settore pubblico? L'offerta <strong>Bare Metal</strong> è accessibile via:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />

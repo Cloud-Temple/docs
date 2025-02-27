@@ -16,19 +16,19 @@ Questa guida di avvio presenta come richiedere la creazione di un'Appliance e co
 Diversi flussi sono necessari per il corretto funzionamento dell'Appliance Bastion.
 
 ### La passerella bastion
-| Source                   | Destination                                 | Protocollo |
+| Origine                  | Destinazione                               | Protocollo |
 |--------------------------|---------------------------------------------|------------|
 | Appliance bastion client | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242   |
 
 ### Flusso di amministrazione RDP
 
-| Source                   | Destination                 | Protocollo |
+| Origine                  | Destinazione                | Protocollo |
 |--------------------------|-----------------------------|------------|
 | Appliance bastion client | Le instanze da amministrare | TCP/3389   |
 
 ### Flusso di amministrazione SSH
 
-| Source                   | Destination                 | Protocollo |
+| Origine                  | Destinazione                | Protocollo |
 |--------------------------|-----------------------------|------------|
 | Appliance bastion client | Le instanze da amministrare | TCP/22     |
 
@@ -44,7 +44,7 @@ Il supporto è accessibile nella console Shiva dall'icona salvagente sulla barra
 
 Per accedere regolarmente a un apparato da amministrare, è più adatto creare una sessione, che richiederà solo il tuo nome utente e la password ad ogni connessione.
 
-Per fare ciò, vai alla scheda « Apparati » del menu « Bastion », quindi clicca sul pulsante « Nuovo apparato ».
+Per fare ciò, vai alla scheda "Apparati" del menu "Bastion", quindi clicca sul pulsante "Nuovo apparato".
 
 ![](images/creer_session.png)
 
@@ -55,25 +55,25 @@ Inserisci quindi le informazioni necessarie alla creazione del tuo apparato:
     - Descrizione;
     - Appliance associata;
     - Tipo di protocollo (SSH o RDP);
-    - Indirizzo IP dell’host;
+    - Indirizzo IP dell'host;
     - Configurazione della tastiera.
 
 ![](images/creer_session2.png)
 
 
-Una notifica che indica la creazione dell’apparato dovrebbe apparire in alto a destra della pagina. La sessione viene quindi aggiunta all'elenco dei tuoi apparati.
+Una notifica che indica la creazione dell'apparato dovrebbe apparire in alto a destra della pagina. La sessione viene quindi aggiunta all'elenco dei tuoi apparati.
 
-Per creare un nuovo apparato, puoi anche passare dalla scheda « Appliances » cliccando sulla barra d’azione dell’Appliance a cui desideri associare un apparato.
+Per creare un nuovo apparato, puoi anche passare dalla scheda "Appliances" cliccando sulla barra d'azione dell'Appliance a cui desideri associare un apparato.
 
 ![](images/creer_session3.png)
 
 ## Connettersi a un apparato
 
-Vai alla scheda « Apparati » della scheda « Bastion ». Clicca sulla barra d’azione dell’apparato che desideri aprire e clicca sul pulsante « Apri ».
+Vai alla scheda "Apparati" della scheda "Bastion". Clicca sulla barra d'azione dell'apparato che desideri aprire e clicca sul pulsante "Apri".
 
 ![](images/ouvrir_session.png)
 
-Ad ogni connessione all’apparato, devi solo inserire le informazioni di autenticazione.
+Ad ogni connessione all'apparato, devi solo inserire le informazioni di autenticazione.
 
 ![](images/ouvrir_session2.png)
 

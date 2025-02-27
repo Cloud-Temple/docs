@@ -1,15 +1,15 @@
 ---
-title: Guide de démarrage
+title: Guía de inicio rápido
 ---
-## Calcul
+## Cálculo
 
-### Pilotage des Machines virtuelles
+### Gestión de Máquinas Virtuales
 
 La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva en el menú __'IaaS'__ ubicado en la barra verde a la izquierda de la pantalla.
 
-### Liste des machines virtuelles
+### Lista de máquinas virtuales
 
-En la sección __'Machines virtuelles'__, tiene acceso a la lista de sus máquinas virtuales alojadas en su Cloud de confianza.
+En la sección __'Máquinas virtuales'__, tiene acceso a la lista de sus máquinas virtuales alojadas en su Cloud de confianza.
 
 ![](images/shiva_vm_home.png)
 
@@ -22,7 +22,7 @@ Tiene acceso a la siguiente información para cada máquina virtual:
 - La cantidad de CPU virtuales (vCPU),
 - La cantidad de memoria virtual (vRAM).
 
-### Actions sur les machines virtuelles
+### Acciones en las máquinas virtuales
 
 Las siguientes acciones son posibles desde esta interfaz:
 
@@ -35,7 +35,7 @@ Las siguientes acciones son posibles desde esta interfaz:
 ![](images/shiva_vm_home_desc.png)
 
 __Una barra de alertas puede estar presente en la parte superior de la lista__: indica que se han disparado alarmas críticas en una o varias de sus máquinas virtuales.
-El botón __'Voir'__ permite consultar las máquinas virtuales afectadas por esta notificación.
+El botón __'Ver'__ permite consultar las máquinas virtuales afectadas por esta notificación.
 
 ![](images/shiva_vm_home_alarme.png)
 
@@ -67,7 +67,7 @@ Una vista rápida ofrece una visualización del __almacenamiento__, del __CPU__ 
 
 ![](images/shiva_vm_vue_rapide.png)
 
-En la pestaña __'Informations générales'__, encuentra información detallada relacionada con su máquina virtual, como su SO, su ubicación física (centro de datos, datastore, etc.), la RAM, el CPU, las direcciones IP, los logs y más.
+En la pestaña __'Información general'__, encuentra información detallada relacionada con su máquina virtual, como su SO, su ubicación física (centro de datos, datastore, etc.), la RAM, el CPU, las direcciones IP, los logs y más.
 
 ![](images/shiva_vm_infos_generales.png)
 
@@ -77,23 +77,23 @@ Desde esta vista, puede realizar las siguientes acciones:
 - Actualizar la versión del hardware (la máquina virtual debe estar apagada),
 - Modificar la RAM o el CPU.
 
-Una pestaña __'Avancé'__ permite consultar información más específica como información de "VMware tools", la versión de hardware, el gestor, etc...
+Una pestaña __'Avanzado'__ permite consultar información más específica como información de "VMware tools", la versión de hardware, el gestor, etc...
 
 ![](images/shiva_vm_infos_avancees.png)
 
-### Édition de la RAM ou le CPU d'une machine virtuelle
-Vaya a la pestaña __'Machines Virtuelles'__, muestre los detalles de una máquina virtual, seleccione la pestaña __'Infos générales'__ y haga clic en el botón de edición de la variable a modificar:
+### Edición de la RAM o el CPU de una máquina virtual
+Vaya a la pestaña __'Máquinas Virtuales'__, muestre los detalles de una máquina virtual, seleccione la pestaña __'Información general'__ y haga clic en el botón de edición de la variable a modificar:
 
 ![](images/shiva_edit_cpu_ram.png)
 
-### Les modes de disques
+### Los modos de discos
 
 Puede agregar diferentes modos de discos:
-  - __Persistant__ : Las modificaciones se escriben inmediata y permanentemente en el disco virtual. **Es el modo recomendado.**
-  - __Indépendant non-persistant__ : Las modificaciones hechas en el disco virtual se registran en un nuevo log y se eliminan al apagar. No se ve afectado por los snapshots. **No es compatible con la copia de seguridad.**
-  - __Indépendant persistant__ : Las modificaciones se escriben inmediata y permanentemente en el disco virtual. No se ve afectado por los snapshots. **No es compatible con la copia de seguridad.**
+  - __Persistente__ : Las modificaciones se escriben inmediata y permanentemente en el disco virtual. **Es el modo recomendado.**
+  - __Independiente no persistente__ : Las modificaciones hechas en el disco virtual se registran en un nuevo log y se eliminan al apagar. No se ve afectado por los snapshots. **No es compatible con la copia de seguridad.**
+  - __Independiente persistente__ : Las modificaciones se escriben inmediata y permanentemente en el disco virtual. No se ve afectado por los snapshots. **No es compatible con la copia de seguridad.**
 
-### Gestion des contrôleurs de machine virtuelle
+### Gestión de controladores de máquina virtual
 
 Puede modificar el tipo de controlador de disco para su máquina virtual.
 
@@ -101,15 +101,15 @@ Puede modificar el tipo de controlador de disco para su máquina virtual.
 
 Las máquinas virtuales pueden estar equipadas con controladores SCSI y NVME, con un límite de 4 controladores de cada tipo. Cada controlador puede gestionar hasta 15 discos.
 
-Un controlador SCSI puede configurarse con diferentes subtipo: Para Virtual, Bus Logic, LSI Logic o LSI Logic SAS.
+Un controlador SCSI puede configurarse con diferentes subtipos: Para Virtual, Bus Logic, LSI Logic o LSI Logic SAS.
 
 El controlador Para Virtual se distingue por su capacidad extendida. Puede soportar hasta 64 discos cuando la versión de hardware de la máquina virtual es compatible con un ESXi en versión 6.7 o superior.
 
 > **Importante** : Si desea modificar el tipo de un controlador Para Virtual que posee más de 15 discos, primero deberá desanexar los discos en las ranuras correspondientes.
 
-### Console d'une machine virtuelle
+### Consola de una máquina virtual
 
-La consola de una máquina virtual es accesible desde la lista de máquinas virtuales haciendo clic en el ícono __'Console'__:
+La consola de una máquina virtual es accesible desde la lista de máquinas virtuales haciendo clic en el ícono __'Consola'__:
 
 ![](images/shiva_cpool_010.png)
 
@@ -146,26 +146,26 @@ __Nota__ :
 - Si la combinación __'AltGr'__ y __'@'__ en el teclado no funciona, active el botón __'enforce key'__ en el menú __'VNC'__ de la consola y vuelva a intentarlo.
 - Si aún no funciona y el SO de la máquina física es __Windows, configure el teclado de la máquina física en inglés y trate de ingresar @ de manera clásica__ *(salida azerty: AltGr + tecla de 0 o salida qwerty : tecla de 2)*.
 
-### Catalogues de machines virtuelles Cloud Temple
+### Catálogos de máquinas virtuales Cloud Temple
 
 Cloud Temple pone a su disposición un catálogo de `Templates` que regularmente es enriquecido y actualizado por nuestros equipos.
 Hoy en día incluye varias docenas de `Templates` e imágenes para montar en sus máquinas virtuales.
 
 ![](images/shiva_catalogs.png)
 
-Para publicar un ISO/OVF, vaya a la vista __'Catalogue'__ y haga clic en el botón __'publier des fichiers'__ en la parte superior de la página:
+Para publicar un ISO/OVF, vaya a la vista __'Catálogo'__ y haga clic en el botón __'publicar archivos'__ en la parte superior de la página:
 
 ![](images/shiva_catalogs_002.png)
 
-Es posible transformar una VM en un modelo y exportarla al catálogo. Para hacerlo, seleccione una máquina virtual y use el botón de acción __'clone'__:
+Es posible transformar una VM en un modelo y exportarla al catálogo. Para hacerlo, seleccione una máquina virtual y use el botón de acción __'clonar'__:
 
 ![](images/shiva_vm_template_002.png)
 
-Seleccione __'Exporter en vm-template'__:
+Seleccione __'Exportar como vm-template'__:
 
 ![](images/shiva_vm_template_001.png)
 
-Luego, proporcione la información requerida. Será posible desplegar una nueva VM desde el modelo usando el botón __'Nouvelle machine virtuelle'__ o desde la página __'Catalogues'__. También es posible exportar la VM en formato OVF.
+Luego, proporcione la información requerida. Será posible desplegar una nueva VM desde el modelo usando el botón __'Nueva máquina virtual'__ o desde la página __'Catálogos'__. También es posible exportar la VM en formato OVF.
 
 **Cabe destacar**: es posible convertir un archivo OVA a OVF y viceversa. El método más común utilizado es VMware converter, pero también existe un método simple usando ```tar```
 
@@ -179,22 +179,21 @@ Crear un archivo OVA desde un archivo OVF:
 $ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 ```
 
-### Paramétrage avancé des machines virtuelles : Extra Config
+### Configuración avanzada de máquinas virtuales: Extra Config
 
 Las Extra Config proporcionan un medio flexible para incluir pares clave=valor en la configuración de una máquina virtual. Las claves y los valores son interpretados por el sistema cuando la máquina virtual se despliega.
 
-
-Désormais, vous pouvez, vous même, modifier les propriétés de type __Extra Config__ dans les options avancées d'une machine virtuelle :
+Ahora, usted mismo puede modificar las propiedades de tipo __Extra Config__ en las opciones avanzadas de una máquina virtual:
 
 ![](images/shiva_vm_adv_001.png)
 
-Vous pouvez ajouter une propiedad entre une lista de claves. Además, puede modificar el valor de una clave que usted mismo haya agregado. Los pares clave=valor ya existentes no se pueden modificar.
+Puede agregar una propiedad de una lista de claves. Además, puede modificar el valor de una clave que usted mismo haya agregado. Los pares clave=valor ya existentes no se pueden modificar.
 
 Por favor, contacte con el soporte para cualquier solicitud de nuevas claves.
 
 ![](images/shiva_vm_adv_002.png)
 
-__Note__ : *Para el uso de GPU por la máquina virtual, es obligatorio activar la clave 'pciPassthru.use64bitMMIO' y asignar la cantidad de espacio MMIO (Memory-mapped I/O) necesario a través de 'pciPassthru.64bitMMIOSizeGB'. Se recomienda encarecidamente que consulte la [documentación oficial de Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Nota__ : *Para el uso de GPU por la máquina virtual, es obligatorio activar la clave 'pciPassthru.use64bitMMIO' y asignar la cantidad de espacio MMIO (Memory-mapped I/O) necesario a través de 'pciPassthru.64bitMMIOSizeGB'. Se recomienda encarecidamente que consulte la [documentación oficial de Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
 ### Configuración avanzada de máquinas virtuales: vAPP
 
@@ -206,7 +205,7 @@ Puede agregar una propiedad, modificarla o eliminarla. Se proponen cuatro tipos 
 
 ![](images/shiva_vm_adv_004.png)
 
-__Note__ : *La máquina virtual debe estar detenida para modificar sus propiedades vAPP.*
+__Nota__ : *La máquina virtual debe estar detenida para modificar sus propiedades vAPP.*
 
 ### Gestión de __'hipervisores'__ y __'Cpool'__ (grupos de hipervisores)
 
@@ -247,7 +246,7 @@ Si hace clic en un cluster, verá un resumen de su composición:
 - El número de hipervisores.
 
 <!-- TODO: Add missing page. -->
-<!-- En consultant la page d'un cluster, plusieurs onglets sont disponibles. L'onglet __'Règles'__ vous permet de définir les [règles d'affinité / anti-affinité](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
+<!-- Al consultar la página de un cluster, hay varias pestañas disponibles. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-la-afinidad-de-sus-maquinas-virtuales) -->
 
 ![](images/shiva_cpool_004.png)
 
@@ -293,7 +292,7 @@ Por lo tanto, le dejamos implementar su gestión de cambios y aplicar las nuevas
 <!-- TODO: Add missing page. -->
 <!-- - *Es necesario tener [los permisos adecuados](../console/permissions.md) para realizar las diferentes acciones.* -->
 
-También verá todas las reglas de afinidad/anti-afinidad para su cluster de hipervisores en la sección __'Règles'__.
+También verá todas las reglas de afinidad/anti-afinidad para su cluster de hipervisores en la sección __'Reglas'__.
 
 ### Gestión de la afinidad de sus máquinas virtuales
 
@@ -357,6 +356,7 @@ Para asignar una nueva política de respaldo a la máquina virtual, haga clic en
 ### Asignar una política de respaldo a un disco virtual
 
 También es posible asignar un SLA directamente a un disco virtual específico de una máquina. En este caso, la máquina virtual no hereda este SLA aplicado individualmente al disco. Sin embargo, no es posible iniciar manualmente la ejecución del respaldo a nivel de los discos, ya que esta funcionalidad no es compatible con Spectrum Protect Plus.
+
 En cambio, es posible excluir ciertos discos de una o varias políticas de respaldo (SLA) de la VM, lo que permite desasignar una o más SLA(s) en una base disco por disco. Este enfoque ofrece la flexibilidad de lanzar manualmente la ejecución del respaldo de una SLA sin afectar todos los discos de la máquina virtual, permitiendo así una gestión más fina de los respaldos.
 
 Haga clic en la barra de acciones del disco al cual desea asignar una política de respaldo. Luego, haga clic en __'Políticas'__ y seleccione la política de respaldo deseada.

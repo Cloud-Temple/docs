@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: Guida rapida
 ---
 ## Calcolo
 
@@ -183,120 +183,121 @@ $ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 ### Configurazione avanzata delle macchine virtuali: Extra Config
 
 Le Extra Config forniscono un modo flessibile per includere coppie chiave=valore nella configurazione di una macchina virtuale. Le chiavi e i valori vengono interpretati dal sistema quando la macchina virtuale viene distribuita.
-Désormais, vous pouvez, vous même, modifier les propriétés de type __Extra Config__ dans les options avancées d'une machine virtuelle :
+
+Ora, potete modificare voi stessi le proprietà di tipo __Extra Config__ nelle opzioni avanzate di una macchina virtuale:
 
 ![](images/shiva_vm_adv_001.png)
 
-Vous pouvez ajouter une propriété parmi une liste de clés. De plus, vous pouvez modifier la valeur d'une clé que vous avez vous-même ajouté. Les paires clé=valeur déjà existantes ne sont pas modifiables.
+Potete aggiungere una proprietà da un elenco di chiavi. Inoltre, potete modificare il valore di una chiave che avete aggiunto voi stessi. Le coppie chiave=valore già esistenti non sono modificabili.
 
-Veuillez contacter le support pour toute demande d'ajout de nouvelles clés.
+Contattate il supporto per qualsiasi richiesta di aggiunta di nuove chiavi.
 
 ![](images/shiva_vm_adv_002.png)
 
-__Note__ : *Pour l'utilisation de GPU par la machine virtuelle, il est obligatoire d'activer la clé 'pciPassthru.use64bitMMIO' et d'allouer la quantité d'espace MMIO (Memory-mapped I/O) nécessaire via 'pciPassthru.64bitMMIOSizeGB'. Il est fortement recommandé de vous référerer à la [documentation officielle Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Nota__ : *Per l'utilizzo della GPU da parte della macchina virtuale, è obbligatorio attivare la chiave 'pciPassthru.use64bitMMIO' e allocare la quantità di spazio MMIO (Memory-mapped I/O) necessaria tramite 'pciPassthru.64bitMMIOSizeGB'. Si consiglia vivamente di fare riferimento alla [documentazione ufficiale Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
-### Paramétrage avancé des machines virtuelles : vAPP
+### Configurazione avanzata delle macchine virtuali: vAPP
 
-Vous pouvez, également, modifier les propriétés de type __vAPP__ dans les options avancées d'une machine virtuelle :
+Potete anche modificare le proprietà di tipo __vAPP__ nelle opzioni avanzate di una macchina virtuale:
 
 ![](images/shiva_vm_adv_003.png)
 
-Vous pouvez ajouter une propriété, la modifier ou la supprimer. Quatre types de propriétés sont proposées, String, Nombre, Booléen, Mot de passe:
+Potete aggiungere una proprietà, modificarla o eliminarla. Sono proposti quattro tipi di proprietà: Stringa, Numero, Booleano, Password:
 
 ![](images/shiva_vm_adv_004.png)
 
-__Note__ : *La machine virtuelle doit être stoppée pour modifier ses propriétés vAPP.*
+__Nota__ : *La macchina virtuale deve essere fermata per modificare le sue proprietà vAPP.*
 
-### Pilotage des __'hyperviseurs'__ et __'Cpool'__ (clusters d'hyperviseurs)
+### Gestione degli __'hypervisor'__ e __'Cpool'__ (cluster di hypervisor)
 
-Le pilotage de vos hyperviseurs se fait dans le sous menu __'Calcul'__ du menu __'IaaS'__, situé dans le bandeau vert à gauche de votre écran.
+La gestione dei vostri hypervisor si effettua nel sottomenu __'Calcolo'__ del menu __'IaaS'__, situato nella banda verde a sinistra del vostro schermo.
 
 ![](images/shiva_cpool_001.png)
 
-Dans ce sous menu, vous disposez d'une vue sur :
+In questo sottomenu, avete una vista su:
 
-- La stack logicielle d'hyperviseurs, leur AZ et leurs ressources,
-- La stack logicielle de sauvegarde.
+- Lo stack software degli hypervisor, le loro AZ e le loro risorse,
+- Lo stack software di backup.
 
-En janvier 2024, l'offre d'hyperviseur disponible sur l'infrastructure qualifiée Cloud Temple est basée sur VMware. Le logiciel de sauvegarde utilisé est IBM Spectrum Protect Plus.
+A gennaio 2024, l'offerta di hypervisor disponibile sull'infrastruttura qualificata Cloud Temple è basata su VMware. Il software di backup utilizzato è IBM Spectrum Protect Plus.
 
-### Pilotage des clusters VMware
+### Gestione dei cluster VMware
 
-Pour accéder au pilotage des clusters VMware, cliquez dans le sous menu __'Calcul'__ du menu __'IaaS'__ :
+Per accedere alla gestione dei cluster VMware, cliccate nel sottomenu __'Calcolo'__ del menu __'IaaS'__:
 
-Par défaut, le premier onglet liste tous les hyperviseurs (tous cluster confondus):
+Per impostazione predefinita, la prima scheda elenca tutti gli hypervisor (tutti i cluster combinati):
 
 ![](images/shiva_esx_001.png)
 
-Il est possible de visualiser les détails d'un hyperviseur en cliquant sur son nom:
+È possibile visualizzare i dettagli di un hypervisor cliccando sul suo nome:
 
 ![](images/shiva_esx_002.png)
 
-Il existe un onglet par cluster d'hyperviseur pour consulter les détails de chacun:
+Esiste una scheda per ogni cluster di hypervisor per consultare i dettagli di ciascuno:
 
 ![](images/shiva_cpool_003.png)
 
-Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
+Se cliccate su un cluster, vedrete la sintesi della sua composizione:
 
-- Le total de la puissance de calcul exprimé en Ghz,
-- Le total de la mémoire disponible et le ratio utilisé,
-- Le total de l'espace de stockage (tous types confondus) ainsi que la cote part utilisée,
-- Les mécanismes d'automatisation sur indisponibilité d'une lame de calcul (__'Vsphere DRS'__),
-- Le nombre de machines virtuelles,
-- Le nombre d'hyperviseurs.
+- Il totale della potenza di calcolo espresso in Ghz,
+- Il totale della memoria disponibile e il rapporto utilizzato,
+- Il totale dello spazio di archiviazione (tutti i tipi combinati) e la quota parte utilizzata,
+- I meccanismi di automazione in caso di indisponibilità di una lama di calcolo (__'Vsphere DRS'__),
+- Il numero di macchine virtuali,
+- Il numero di hypervisor.
 
 <!-- TODO: Add missing page. -->
-<!-- En consultant la page d'un cluster, plusieurs onglets sont disponibles. L'onglet __'Règles'__ vous permet de définir les [règles d'affinité / anti-affinité](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
+<!-- Consultando la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ vi permette di definire le [regole di affinità / anti-affinità](compute.md#gestione-dell-affinita-delle-vostre-macchine-virtuali) -->
 
 ![](images/shiva_cpool_004.png)
 
-Vous voyez apparaitre pour chaque hyperviseur dans l'onglet __'Hosts'__ :
+Nella scheda __'Hosts'__ vedrete apparire per ogni hypervisor:
 
-- L'usage __CPU__ et __Mémoire__,
-- Le nombre de machines virtuelles affectées,
-- La disponibilité d'un nouveau build pour le système d'exploitation de l'hyperviseur le cas échéant,
-- Le statut de l'hyperviseur (connecté en production, en maintenance, éteint, ...),
-- Un menu action.
+- L'utilizzo di __CPU__ e __Memoria__,
+- Il numero di macchine virtuali assegnate,
+- La disponibilità di una nuova build per il sistema operativo dell'hypervisor, se applicabile,
+- Lo stato dell'hypervisor (connesso in produzione, in manutenzione, spento, ...),
+- Un menu di azioni.
 
 ![](images/shiva_cpool_005.png)
 
-Plusieurs actions sont possibles depuis l'onglet __'Hosts'__ :
+Diverse azioni sono possibili dalla scheda __'Hosts'__:
 
-- commander de nouveaux hyperviseurs via le bouton __'Ajouter un host'__ :
+- ordinare nuovi hypervisor tramite il pulsante __'Aggiungi un host'__:
 
 ![](images/shiva_cpool_009.png)
 
-- possibilité de consulter __le détail d'un hyperviseur__ :
+- possibilità di consultare __i dettagli di un hypervisor__:
 
 ![](images/shiva_cpool_007.jpg)
 
-- de rentrer ou de sortir de l'__état de maintenance__ un hyperviseur,
-- de __mettre à jour__ le cas échéant cet hyperviseur ; pour ce faire, __il doit impérativement être en maintenance__. Il existe deux types de mises à jours :
+- entrare o uscire dallo __stato di manutenzione__ di un hypervisor,
+- __aggiornare__ l'hypervisor se necessario; per fare ciò, __deve essere obbligatoriamente in manutenzione__. Esistono due tipi di aggiornamenti:
 
-1. Les builds VMware (les nouvelles versions de l'hyperviseur):
+1. Le build VMware (le nuove versioni dell'hypervisor):
 
 ![](images/shiva_cpool_008_build.jpg)
 
-2. La mise à jour du firmware de votre lame de calcul (bios et firmware cartes filles):
+2. L'aggiornamento del firmware della vostra lama di calcolo (bios e firmware delle schede figlie):
 
 ![](images/shiva_cpool_008_firm.png)
 
-*__Remarque__* :
+*__Nota__* :
 
-- *Cloud Temple met à disposition les builds pour les hyperviseurs à intervalles réguliers.
-Il est important de mettre régulièrement à jour vos hyperviseurs, notamment pour permettre l'application des correctifs de sécurité.
-Cependant, __nous ne mettons pas de nous même à jour vos hyperviseurs__. Cloud Temple n'a pas de visibilité sur les engagements de disponibilité de vos workloads.
-Nous vous laissons donc mettre en œuvre votre gestion du changement et appliquer au meilleur moment les nouveaux builds.*
+- *Cloud Temple mette a disposizione le build per gli hypervisor a intervalli regolari.
+È importante aggiornare regolarmente i vostri hypervisor, in particolare per consentire l'applicazione delle patch di sicurezza.
+Tuttavia, __non aggiorniamo i vostri hypervisor da soli__. Cloud Temple non ha visibilità sugli impegni di disponibilità dei vostri workload.
+Vi lasciamo quindi implementare la vostra gestione del cambiamento e applicare le nuove build al momento migliore.*
 - *Il processo di aggiornamento è completamente automatizzato. Devi avere almeno due hypervisors nel tuo cluster per permettere un aggiornamento senza interruzione del servizio.*
 
 <!-- TODO: Add missing page. -->
 <!-- - *È necessario avere [le autorizzazioni adeguate](../console/permissions.md) per effettuare le diverse azioni.* -->
 
-Vedi anche tutte le regole di affinità/anti-affinità per il tuo cluster di hypervisors nella sezione __'Règles'__.
+Vedi anche tutte le regole di affinità/anti-affinità per il tuo cluster di hypervisors nella sezione __'Regole'__.
 
 ### Gestione dell'affinità delle tue macchine virtuali
 
-Le __règles d'affinité et d'anti-affinité__ permettono di controllare la posizione delle macchine virtuali sui tuoi hypervisors.
+Le __regole di affinità e anti-affinità__ permettono di controllare la posizione delle macchine virtuali sui tuoi hypervisors.
 Possono essere utilizzate per gestire l'uso delle risorse del tuo __'Cpool'__.
 Ad esempio, possono aiutare a bilanciare il carico di lavoro tra i server o a isolare i carichi di lavoro intensivi di risorse.
 In un __'Cpool'__ VMware, queste regole sono spesso utilizzate per gestire il comportamento delle macchine virtuali con vMotion.
@@ -304,12 +305,12 @@ vMotion permette di spostare macchine virtuali da un host a un altro senza inter
 
 Puoi configurare grazie alla gestione delle regole:
 
-- __Règles d'Affinité__ : Queste regole assicurano che alcune macchine virtuali vengano eseguite sullo stesso host fisico.
+- __Regole di Affinità__ : Queste regole assicurano che alcune macchine virtuali vengano eseguite sullo stesso host fisico.
 Sono utilizzate per migliorare le prestazioni mantenendo le macchine virtuali che comunicano frequentemente
 insieme sullo stesso server per ridurre la latenza di rete. Le regole d'affinità sono utili in scenari
 dove la performance è critica, come nel caso di database o applicazioni che richiedono una comunicazione rapida tra i server.
 
-- __Règles d'Anti-affinité__ : Al contrario, queste regole assicurano che alcune macchine virtuali non vengano eseguite
+- __Regole di Anti-affinità__ : Al contrario, queste regole assicurano che alcune macchine virtuali non vengano eseguite
 sullo stesso host fisico. Sono importanti per la disponibilità e la resilienza, ad esempio,
 per evitare che macchine critiche siano tutte coinvolte in caso di guasto di un singolo server.
 Le regole d'anti-affinità sono cruciali per le applicazioni che necessitano di alta disponibilità,
@@ -317,7 +318,7 @@ come negli ambienti di produzione dove la tolleranza ai guasti è una priorità.
 Ad esempio, non desideri che i tuoi due Active Directory siano sullo stesso hypervisor.
 
 Durante la creazione di una regola, definisci il tipo di regola (affinità / anti-affinità), il nome della regola,
-il suo stato di attivazione (__'Statut'__) e le macchine interessate del tuo cluster di hypervisors.
+il suo stato di attivazione (__'Stato'__) e le macchine interessate del tuo cluster di hypervisors.
 
 ![](images/shiva_cpool_006.png)
 
@@ -341,22 +342,23 @@ La creazione di una nuova politica di backup viene effettuata tramite __una rich
 
 ### Assegnare una politica di backup a una macchina virtuale
 
-Quando una SLA è assegnata a una macchina virtuale (VM), tutti i dischi associati a questa VM ereditano automaticamente la stessa SLA. Successivamente, è possibile avviare manualmente l'esecuzione del backup tramite la scheda "Politiques de sauvegarde". In mancanza di un avvio manuale, il backup verrà eseguito automaticamente secondo il piano configurato dalla SLA.
+Quando una SLA è assegnata a una macchina virtuale (VM), tutti i dischi associati a questa VM ereditano automaticamente la stessa SLA. Successivamente, è possibile avviare manualmente l'esecuzione del backup tramite la scheda "Politiche di backup". In mancanza di un avvio manuale, il backup verrà eseguito automaticamente secondo il piano configurato dalla SLA.
 
 SecNumCloud rende obbligatoria l'assegnazione di una politica di backup a una macchina virtuale prima del suo avvio. In caso contrario, riceverai la seguente notifica:
 
 ![](images/shiva_vm_politiques_backup_assign_mandatory.png)
 
-Clicca sulla scheda __'Politiques de sauvegarde'__ del menu della tua macchina virtuale. Puoi visualizzare lì le politiche di backup assegnate a essa.
+Clicca sulla scheda __'Politiche di backup'__ del menu della tua macchina virtuale. Puoi visualizzare lì le politiche di backup assegnate a essa.
 
-Per assegnare una nuova politica di backup alla macchina virtuale, clicca sul pulsante __'Ajouter une politique'__ e seleziona la politica di backup desiderata.
+Per assegnare una nuova politica di backup alla macchina virtuale, clicca sul pulsante __'Aggiungi una politica'__ e seleziona la politica di backup desiderata.
 
 ![](images/shiva_vm_politiques_backup.png)
 
 ### Assegnare una politica di backup a un disco virtuale
 
 È anche possibile assegnare una SLA direttamente a un disco virtuale specifico di una macchina. In questo caso, la macchina virtuale non eredita questa SLA applicata individualmente al disco. Tuttavia, non è possibile avviare manualmente l'esecuzione del backup a livello dei dischi, poiché questa funzionalità non è supportata in Spectrum Protect Plus.
-Envece, è possibile escludere alcuni dischi da una o più politiche di backup (SLA) della VM, il che consente di deassegnare una o più SLA su base disco per disco. Questo approccio offre la flessibilità di avviare manualmente l'esecuzione del backup di una SLA senza influire su tutti i dischi della macchina virtuale, permettendo così una gestione più fine dei backup.
+
+Invece, è possibile escludere alcuni dischi da una o più politiche di backup (SLA) della VM, il che consente di deassegnare una o più SLA su base disco per disco. Questo approccio offre la flessibilità di avviare manualmente l'esecuzione del backup di una SLA senza influire su tutti i dischi della macchina virtuale, permettendo così una gestione più fine dei backup.
 
 Clicca sulla barra delle azioni del disco a cui desideri assegnare una politica di backup. Poi, clicca su __'Politiche'__ e seleziona la politica di backup desiderata.
 

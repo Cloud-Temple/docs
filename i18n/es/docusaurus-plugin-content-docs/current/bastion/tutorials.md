@@ -18,7 +18,7 @@ Una vez conectado al portal web Shiva, dirígete a la pestaña "Bastion" del men
 
 ![](images/sessions.png)
 
-La pestaña « Equipements » te permite consultar la lista de tus equipos. Un equipo corresponde a una configuración de
+La pestaña « Equipos » te permite consultar la lista de tus equipos. Un equipo corresponde a una configuración de
 conexión vía un Appliance Bastion. Para cada equipo, se indica su nombre, sus etiquetas, su
 descripción, el Appliance que le está asociado, el tipo de conexión (SSH o RDP), la IP del host y finalmente la configuración del teclado.
 
@@ -36,7 +36,7 @@ Un motor de búsqueda está disponible para permitirte buscar un Appliance con s
 Antes de poder desplegar un Appliance, se debe hacer una solicitud de suscripción a un Appliance a través de una solicitud al soporte.
 
 ## Abrir un flujo hacia un equipo
-En la pestaña « Appliances », haz clic en la barra de acción del Appliance que deseas abrir. Luego haz clic en el botón « Ouvrir ».
+En la pestaña « Appliances », haz clic en la barra de acción del Appliance que deseas abrir. Luego haz clic en el botón « Abrir ».
 
 ![](images/ouvrir_appliance.png)
 
@@ -47,13 +47,13 @@ Luego introduce la información necesaria para la conexión:
     - Información de identificación;
     - Configuración del teclado.
 
-Luego haz clic en « Connecter » para abrir el Appliance. La consola de la máquina virtual a administrar se abre entonces.
+Luego haz clic en « Conectar » para abrir el Appliance. La consola de la máquina virtual a administrar se abre entonces.
 
 ## Registrar un equipo
 
 Para acceder regularmente a un equipo a administrar, es más adecuado crear una configuración de equipo, que solo requerirá tu nombre de usuario y tu contraseña en cada conexión.
 
-Para ello, dirígete a la pestaña « Equipements » del menú « Bastion » y luego, haz clic en el botón « Nouveau équipement ».
+Para ello, dirígete a la pestaña « Equipos » del menú « Bastion » y luego, haz clic en el botón « Nuevo equipo ».
 
 ![](images/creer_session.png)
 
@@ -78,7 +78,7 @@ Para crear una nueva conexión, también puedes pasar por la pestaña « Applian
 
 ## Conectarse a un equipo
 
-Dirígete a la pestaña « Equipements » de la pestaña « Bastion ». Haz clic en la barra de acciones del equipo que deseas abrir, y haz clic en el botón « Ouvrir ».
+Dirígete a la pestaña « Equipos » de la pestaña « Bastion ». Haz clic en la barra de acciones del equipo que deseas abrir, y haz clic en el botón « Abrir ».
 
 ![](images/ouvrir_session.png)
 
@@ -90,7 +90,7 @@ Después de haber ingresado tus credenciales, aparecerá una notificación confi
 
 ## Modificar una configuración de equipo
 
-Dirígete a la pestaña « Equipements » de la sección « Bastion », haz clic en la barra de acción del equipo que deseas modificar, y haz clic en el botón « Modifier ».
+Dirígete a la pestaña « Equipos » de la sección « Bastion », haz clic en la barra de acción del equipo que deseas modificar, y haz clic en el botón « Modificar ».
 
 ![](images/modifier_session.png)
 
@@ -100,6 +100,6 @@ Luego puedes modificar el nombre del equipo, su descripción, el Appliance asoci
 
 ## Eliminar una configuración de equipo
 
-Dirígete a la pestaña « Equipements » de la sección « Bastion », haz clic en la barra de acción del equipo que deseas eliminar, y haz clic en el botón « Supprimer ».
+Dirígete a la pestaña « Equipos » de la sección « Bastion », haz clic en la barra de acción del equipo que deseas eliminar, y haz clic en el botón « Eliminar ».
 
 ![](images/supprimer_session.png)

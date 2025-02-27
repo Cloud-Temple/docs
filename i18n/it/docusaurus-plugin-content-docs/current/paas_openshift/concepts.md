@@ -162,7 +162,7 @@ Ecco i principali permessi implementati:
 |        CSI         |         Addons         |                                                           CSIAddonsNodes, NetworkFences Create, Get, List, Watch, Update, Patch, Delete                                                            |
 |      Metrics       |         Pods,          |                                                                                             Nodes Get                                                                                              |
 |      Security      |PodSecurityPolicyReviews|                                                                                               Create                                                                                               |
-|       Custom       |       Resources        |                                       Diverses ressources personnalisées liées à Kasten K10, Keycloak, etc. Create, Get, List, Watch, Update, Patch, Delete                                        |
+|       Custom       |       Resources        |                                       Diverse risorse personalizzate relative a Kasten K10, Keycloak, ecc. Create, Get, List, Watch, Update, Patch, Delete                                        |
 
 ## Limiti Attuali dell'Offerta Redhat Openshift nell'Ambiente SecNumCloud
 
@@ -205,9 +205,9 @@ Da un punto di vista tecnico, ciò può implicare una revisione dell'architettur
 Per conformarsi alla qualificazione SecNumCloud, una limitazione importante riguarda l'uso delle Custom Resource Definitions (CRD) e dei controller personalizzati. Questa misura, legata ai permessi sul cluster, mira a prevenire la distribuzione di risorse personalizzate potenzialmente instabili o non autorizzate.
 
 Questa limitazione si applica anche agli operatori e agli Helm Charts, con un impatto diretto sui permessi RBAC, poiché le CRD consentono di estendere l'API Kubernetes. Di conseguenza, gli operatori e Helm Charts devono passare attraverso una catena di certificazione presso i nostri servizi per garantire la loro conformità e sicurezza.
-Les CRD personalizzate, in particolare quelle che rispondono a esigenze aziendali specifiche, possono essere rifiutate nell'infrastruttura a causa dei rischi che presentano per la stabilità e la sicurezza della piattaforma. Questa politica, progettata per proteggere l'integrità e l'affidabilità del cluster, consente solo le CRD provenienti da operatori o Helm Charts ufficialmente certificati.
+Le CRD personalizzate, in particolare quelle che rispondono a esigenze aziendali specifiche, possono essere rifiutate nell'infrastruttura a causa dei rischi che presentano per la stabilità e la sicurezza della piattaforma. Questa politica, progettata per proteggere l'integrità e l'affidabilità del cluster, consente solo le CRD provenienti da operatori o Helm Charts ufficialmente certificati.
 
-Il nostro team di supporto è disponibile per guidarti e consigliarti sulle buone pratiche da adotare in questo contesto.
+Il nostro team di supporto è disponibile per guidarti e consigliarti sulle buone pratiche da adottare in questo contesto.
 
 ### Nessun supporto per IP dinamici per i runner
 
