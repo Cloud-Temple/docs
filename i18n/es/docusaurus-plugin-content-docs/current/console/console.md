@@ -1,11 +1,11 @@
 ---
-title: Vue d'ensemble
+title: Vista general
 ---
 
 
-## La Console Cloud Temple
+## La Consola Cloud Temple
 
-La console Cloud Temple est la plateforme de gestion cloud (**Cloud Management Platform**) intégrée de Cloud Temple. Elle constitue le point central pour gérer l’ensemble de vos ressources cloud, vous offrant une interface unique et performante.
+La consola Cloud Temple es la plataforma de gestión cloud (**Cloud Management Platform**) integrada de Cloud Temple. Constituye el punto central para gestionar el conjunto de sus recursos cloud, ofreciéndole una interfaz única y eficiente.
 
 Gracias a la **Console**, usted puede supervisar y explotar sus infraestructuras cloud con gran simplicidad. A continuación, un vistazo a sus principales funcionalidades:
 
@@ -67,7 +67,7 @@ La consola ofrece acceso directo a sus expedientes de asistencia técnica. Usted
 - Ayuda en la implementación de arquitecturas cloud,
 - Capacitación para sus equipos.
 
-La consola Cloud Temple __'Shiva'__ es __la plataforma de gestión cloud__ (Cloud Management Plateform) integrada de __Cloud Temple__.
+La consola Cloud Temple __'Shiva'__ es __la plataforma de gestión cloud__ (Cloud Management Platform) integrada de __Cloud Temple__.
 
 La consola Cloud Temple Shiva le permite gestionar recursos cloud como servidores virtuales, almacenamiento, redes y servicios aplicativos.
 Es una interfaz de gestión centralizada que le permite diseñar y explotar su infraestructura cloud.

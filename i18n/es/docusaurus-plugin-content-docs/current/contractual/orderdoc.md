@@ -1,25 +1,28 @@
 ---
-title: Jerarquía de documentos contractuales
+title: Jerarquía de los documentos contractuales
 ---
 
 |           | Referencias                |
 | --------- | -------------------------- |
-| Referencia| CT.AM.JUR.HDC 20240403_2.0 |
-| Fecha     | 24 de septiembre de 2024   |
+| Referencia| CT.AM.JUR.HDC 20250502_3.0 |
+| Fecha     | 5 de febrero de 2025       |
 
-La jerarquía de documentos contractuales se establece de acuerdo a un orden de prioridad definido:
+La jerarquía de los documentos contractuales se establece según un orden de prioridad definido:
 
-1. [Condiciones Generales de Venta y Uso (CGVU)](cgvu.docx)
-2. [Acuerdo de Servicio IaaS](iaas/sla_iaas.docx)
-3. [Acuerdo de Servicio PaaS](paas/sla_paas.docx) (*)
-4. Acuerdo específico particular (**)
-5. Plan de Seguridad de Garantía (PAS) (***)
-6. Anexo: [Datos de Carácter Personal](dpa.docx) (DPA)
+1. [Condiciones Generales de Venta y Uso (CGVU)](cgvu.docx).
+2. [Acuerdo de Servicio SecNumCloud IaaS](iaas/sla_iaas.docx).
+3. [Acuerdo de Servicio SecNumCloud OpenIaaS](iaas/sla_openiaas.docx).
+4. [Acuerdo de Servicio SecNumCloud PaaS](paas/sla_paas.docx). (*)
+5. [Acuerdo de Servicio Específico - Bare Metal](baremetal.docx).
+6. Acuerdo específico particular (**)
+7. Plan de Garantía de Seguridad (PGS) (***)
+8. Condiciones Particulares de Uso (CPU)
+9. [Acuerdo de Protección de Datos](dpa.docx). (APD)
 
-(*) Se especifica que el presente Acuerdo de Servicios PaaS es válido únicamente si el CLIENTE ha firmado el Acuerdo relativo a los servicios IaaS SecNumCloud.
+(*) Se especifica que este Acuerdo de Servicio PaaS es válido únicamente si el CLIENTE ha firmado el Acuerdo relativo a los servicios SecNumCloud IaaS.
 
 (**) Acuerdo específico, diseñado para alinearse con las particularidades del proyecto.
 
 (***) Documento no público.
 
-_Nota: Las versiones traducidas en inglés, italiano, alemán y francés se proporcionan únicamente para facilitar la comprensión de la oferta._
+_Nota: Las versiones traducidas al inglés, italiano, alemán y español se proporcionan únicamente para facilitar la comprensión de la oferta._

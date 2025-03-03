@@ -57,7 +57,7 @@ Die Dauer der Verarbeitung wird durch den Verantwortlichen in Abhängigkeit von 
 3. **Portabilité des données** : Der Verantwortliche muss, wenn zutreffend, die Übertragbarkeit der personenbezogenen Daten der betroffenen Personen gemäß Artikel 20 der GDPR sicherstellen.
 4. **Opposition** : Die betroffenen Personen müssen ihr Widerspruchsrecht gegen die Verarbeitung ihrer personenbezogenen Daten gemäß Artikel 21 der GDPR ausüben können.
 
-# Article 7 : Mesure de sécurité et de confidentialité 
+# Article 7 : Mesure de sécurité et de confidentialité
 
 Der Auftragsverarbeiter verpflichtet sich insbesondere dazu, ausreichende Maßnahmen zu ergreifen, um die Sicherheit und Vertraulichkeit der anvertrauten und im Rahmen der Dienste verarbeiteten personenbezogenen Daten zu gewährleisten, insbesondere:
 
@@ -67,14 +67,15 @@ Der Auftragsverarbeiter verpflichtet sich insbesondere dazu, ausreichende Maßna
 - Keine Kopien oder Duplikate personenbezogener Daten ohne vorherige schriftliche Genehmigung des Verantwortlichen oder des Endkunden anzufertigen (es sei denn, dies ist zur Erfüllung der vom Dienstleister im Rahmen des Vertrags erbrachten Dienste erforderlich);
 - Den Verantwortlichen über jeden versehentlichen oder unbefugten Zugriff auf personenbezogene Daten, jede Nichteinhaltung der Datenschutzbestimmungen oder jeden Verdacht einer solchen Nichteinhaltung unverzüglich zu informieren, und wenn möglich, spätestens 48 Stunden nach Kenntnisnahme.
 - Nach Wahl des Verantwortlichen personenbezogene Daten entweder zu löschen oder zurückzusenden und bestehende Kopien zu vernichten, es sei denn, eine gesetzliche Verpflichtung zur Aufbewahrung besteht;
-- Eine Informationssicherheitsrichtlinie und ein Management für logische und physische Zugriffsberechtigungen umzusetzen, die während der Vertragslaufzeit beibehalten und weiterentwickelt werden.  
+- Eine Informationssicherheitsrichtlinie und ein Management für logische und physische Zugriffsberechtigungen umzusetzen, die während der Vertragslaufzeit beibehalten und weiterentwickelt werden.
 
 # Article 8 : Notification des violations de données
 
 Im Falle einer Datenschutzverletzung muss der Auftragsverarbeiter den Verantwortlichen unverzüglich nach Kenntnisnahme darüber informieren. Diese Benachrichtigung muss alle relevanten Informationen enthalten, die es dem Verantwortlichen ermöglichen, diese Verletzung der zuständigen Aufsichtsbehörde und gegebenenfalls den betroffenen Personen gemäß Artikel 33 der GDPR zu melden. Die Benachrichtigung muss potenzielle Auswirkungen auf die im Cloud-Speicher gespeicherten Daten und die ergriffenen Maßnahmen zur Behebung des Vorfalls spezifizieren.
 
-# Article 9 : Transferts de données hors de l'Union Européenne
-Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
+# Article 9 : Datenübermittlungen außerhalb der Europäischen Union
+
+Jede Übermittlung personenbezogener Daten an ein Drittland oder eine internationale Organisation darf nur unter Einhaltung der in der DSGVO vorgesehenen Bedingungen, insbesondere in den Artikeln 44 bis 50, erfolgen. Der Verantwortliche muss sicherstellen, dass angemessene Garantien vorhanden sind, wie etwa von der Europäischen Kommission genehmigte Standardvertragsklauseln oder das Vorliegen eines Angemessenheitsbeschlusses.
 
 # Article 10 : Dauer und Beendigung der Verarbeitung
 
@@ -84,15 +85,15 @@ Nach Ablauf des Hauptvertrags verpflichtet sich der Auftragsverarbeiter, gemäß
 
 Der Auftragsverarbeiter stellt dem für die Verarbeitung Verantwortlichen alle erforderlichen Informationen zur Verfügung, um die Einhaltung der in diesem Anhang festgelegten Verpflichtungen nachzuweisen, und ermöglicht Audits, einschließlich Inspektionen, durch den für die Verarbeitung Verantwortlichen oder einen von diesem beauftragten Prüfer, um die Einhaltung dieses Anhangs und der DSGVO zu überprüfen. Der Auftragsverarbeiter führt auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO und stellt Konformitätsberichte über die genutzten Cloud-Infrastrukturen zur Verfügung.
 
-# Article 12 : Verzeichnis der Verarbeitungstätigkeiten 
+# Article 12 : Verzeichnis der Verarbeitungstätigkeiten
 
-Der Auftragsverarbeiter führt auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO und stellt Konformitätsberichte über die genutzten Cloud-Infrastrukturen zur Verfügung. Dieses Verzeichnis enthält mindestens: 
-- Den Namen und die Kontaktdaten des Verantwortlichen und gegebenenfalls des gemeinsam Verantwortlichen, des Vertreters des Verantwortlichen und des Datenschutzbeauftragten; 
-- Die Beschreibung der Kategorien betroffener Personen und der Kategorien personenbezogener Daten; 
-- Die Zwecke der Verarbeitung; 
+Der Auftragsverarbeiter führt auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO und stellt Konformitätsberichte über die genutzten Cloud-Infrastrukturen zur Verfügung. Dieses Verzeichnis enthält mindestens:
+- Den Namen und die Kontaktdaten des Verantwortlichen und gegebenenfalls des gemeinsam Verantwortlichen, des Vertreters des Verantwortlichen und des Datenschutzbeauftragten;
+- Die Beschreibung der Kategorien betroffener Personen und der Kategorien personenbezogener Daten;
+- Die Zwecke der Verarbeitung;
 - Die Kategorien von Empfängern, denen die personenbezogenen Daten mitgeteilt wurden oder werden, einschließlich der Empfänger in Drittländern oder internationalen Organisationen;
-- Die Aufbewahrungsdauer der Daten; 
-- Die allgemeine Beschreibung der technischen und organisatorischen Sicherheitsmaßnahmen. 
+- Die Aufbewahrungsdauer der Daten;
+- Die allgemeine Beschreibung der technischen und organisatorischen Sicherheitsmaßnahmen.
 
 Auf schriftliche Anfrage des für die Verarbeitung Verantwortlichen, des Endkunden oder einer zuständigen Behörde hat der Auftragsverarbeiter 15 Arbeitstage Zeit, um ab dem Empfang der Anfrage eine Kopie des genannten Verzeichnisses vorzulegen.
 
@@ -115,7 +116,7 @@ Die Liste der zugelassenen Nachunternehmer umfasst:
 7. Colt
 8. Intrinsec
 
-Während der Vertragslaufzeit kann der für die Verarbeitung Verantwortliche jederzeit auf die aktuelle Liste der Nachunternehmer beim Auftragsverarbeiter zugreifen. 
+Während der Vertragslaufzeit kann der für die Verarbeitung Verantwortliche jederzeit auf die aktuelle Liste der Nachunternehmer beim Auftragsverarbeiter zugreifen.
 
 # Article 14 : Haftung
 
