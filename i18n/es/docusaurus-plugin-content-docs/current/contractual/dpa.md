@@ -57,17 +57,17 @@ La duración del tratamiento es fijada por el Responsable de Tratamiento en func
 3. **Portabilidad de los datos** : El Responsable de tratamiento debe asegurar, cuando sea aplicable, la portabilidad de los datos de carácter personal de las personas concernidas, conforme al artículo 20 del RGPD.
 4. **Oposición** : Las personas concernidas deben poder ejercer su derecho de oposición al tratamiento de sus datos personales conforme al artículo 21 del RGPD.
 
-# Article 7 : Medidas de seguridad y confidencialidad 
+# Article 7 : Medidas de seguridad y confidencialidad
 
 El Subcontratista se compromete en particular a implementar las medidas suficientes para asegurar la seguridad y la confidencialidad de los Datos Personales confiados y tratados en el marco de los Servicios, a saber, en particular:
 
 - Implementar las medidas técnicas y organizativas adecuadas para proteger los Datos de carácter personal contra la destrucción accidental o ilícita, la pérdida accidental, la alteración, el uso indebido, la difusión o el acceso no autorizado, así como contra cualquier otra forma de tratamiento ilícito;
 - No utilizar los Datos de carácter personal para su propia cuenta o para cuenta de terceros y no transferirlos sin la autorización escrita y previa del Responsable de Tratamiento o del cliente final;
-- Garantizar que las personas autorizadas a tratar los Datos de carácter personal estén sometidas a obligaciones adecuadas de confidencialidad; 
+- Garantizar que las personas autorizadas a tratar los Datos de carácter personal estén sometidas a obligaciones adecuadas de confidencialidad;
 - No realizar copias o duplicaciones de los Datos de carácter personal sin la autorización escrita previa del Responsable de Tratamiento o del cliente final (a menos que sea necesario para el cumplimiento de los Servicios proporcionados por el proveedor en el marco del Contrato);
-- Informar al Responsable de Tratamiento de cualquier acceso accidental o no autorizado a los Datos de carácter personal, de cualquier incumplimiento de la normativa sobre Datos de carácter personal o cualquier sospecha de dicho incumplimiento, lo antes posible, y si es posible, a más tardar 48 horas después de haberlo conocido. 
+- Informar al Responsable de Tratamiento de cualquier acceso accidental o no autorizado a los Datos de carácter personal, de cualquier incumplimiento de la normativa sobre Datos de carácter personal o cualquier sospecha de dicho incumplimiento, lo antes posible, y si es posible, a más tardar 48 horas después de haberlo conocido.
 - Según la elección del Responsable de Tratamiento, suprimir o devolver los Datos de carácter personal al término del Contrato, y destruir las copias existentes, salvo obligación legal de conservarlas;
-- Implementar una política de seguridad de los sistemas de información y de gestión de las autorizaciones de acceso lógico y físico en particular, que deberá mantener y evolucionar durante toda la duración del Contrato.  
+- Implementar una política de seguridad de los sistemas de información y de gestión de las autorizaciones de acceso lógico y físico en particular, que deberá mantener y evolucionar durante toda la duración del Contrato.
 
 # Article 8 : Notificación de violaciones de datos
 
@@ -75,12 +75,11 @@ En caso de violación de datos de carácter personal, el Subcontratista debe not
 
 # Article 9 : Transferencias de datos fuera de la Unión Europea
 
+Cualquier transferencia de datos de carácter personal a un tercer país o a una organización internacional solo puede efectuarse con sujeción al cumplimiento de las condiciones previstas por el RGPD, en particular en los artículos 44 a 50. El Responsable de tratamiento debe asegurarse de que existen garantías adecuadas, como las cláusulas contractuales tipo aprobadas por la Comisión Europea o la existencia de una decisión de adecuación.
 
-Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
+# Article 10 : Duración y fin del tratamiento
 
-# Article 10 : Durée et fin du traitement
-
-À l'issue du contrat principal, le Sous-traitant s'engage, selon les instructions du Responsable de traitement, à supprimer toutes les données à caractère personnel ou à les retourner au Responsable de traitement, et à détruire les copies existantes sauf obligation légale contraire. Cette obligation inclut également les données stockées sur des supports de sauvegarde dans les infrastructures cloud, sauf si une obligation légale impose leur conservation.
+Al finalizar el contrato principal, el Subcontratista se compromete, según las instrucciones del Responsable del tratamiento, a eliminar todos los datos de carácter personal o a devolverlos al Responsable del tratamiento, y a destruir las copias existentes salvo obligación legal contraria. Esta obligación incluye también los datos almacenados en soportes de respaldo en las infraestructuras cloud, a menos que una obligación legal imponga su conservación.
 
 # Article 11 : Documentation et audits
 

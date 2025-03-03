@@ -46,7 +46,7 @@ Der Support ist in der Shiva-Konsole über das Rettungsring-Symbol in der Leiste
 
 Um regelmäßig auf ein zu verwaltendes Gerät zuzugreifen, ist es besser, eine Sitzung zu erstellen, die bei jeder Verbindung nur Ihren Benutzernamen und Ihr Passwort erfordert.
 
-Dazu gehen Sie auf die Registerkarte „Equipements“ im Menü „Bastion“ und klicken auf die Schaltfläche „Nouveau équipement“.
+Dazu gehen Sie auf die Registerkarte „Geräte" im Menü „Bastion" und klicken auf die Schaltfläche „Neues Gerät".
 
 ![](images/creer_session.png)
 
@@ -65,13 +65,13 @@ Geben Sie dann die erforderlichen Informationen zur Erstellung Ihres Geräts an:
 
 Eine Benachrichtigung, die die Erstellung des Geräts bestätigt, sollte oben rechts auf der Seite erscheinen. Die Sitzung wird dann in die Liste Ihrer Geräte aufgenommen.
 
-Um ein neues Gerät zu erstellen, können Sie auch über die Registerkarte „Appliances“ auf die Aktionsleiste der Appliance klicken, mit der Sie ein Gerät verbinden möchten.
+Um ein neues Gerät zu erstellen, können Sie auch über die Registerkarte „Appliances" auf die Aktionsleiste der Appliance klicken, mit der Sie ein Gerät verbinden möchten.
 
 ![](images/creer_session3.png)
 
 ## Verbindung zu einem Gerät herstellen
 
-Gehen Sie auf die Registerkarte „Equipements“ der Registerkarte „Bastion“. Klicken Sie auf die Aktionsleiste des Geräts, das Sie öffnen möchten, und klicken Sie auf die Schaltfläche „Ouvrir“.
+Gehen Sie auf die Registerkarte „Geräte" der Registerkarte „Bastion". Klicken Sie auf die Aktionsleiste des Geräts, das Sie öffnen möchten, und klicken Sie auf die Schaltfläche „Öffnen".
 
 ![](images/ouvrir_session.png)
 
