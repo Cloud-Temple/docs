@@ -1,8 +1,6 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import dotenv from 'dotenv';
-dotenv.config();
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -16,7 +14,7 @@ const config: Config = {
   future: {
     experimental_faster: true,
   },
-  
+
   trailingSlash: false,
 
   // Set the production url of your site here
@@ -59,25 +57,25 @@ const config: Config = {
     [
       require.resolve('docusaurus-plugin-search-local'),
       {
-        // Options are available there: https://github.com/gabrielcsapo/docusaurus-plugin-search-local
+        // Options disponibles ici : https://github.com/gabrielcsapo/docusaurus-plugin-search-local
+        indexDocs: true,
+        indexPages: true,
       },
     ],
   ],
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/', // Serve the docs at the site's root ("/docs/" by default)
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Cloud-Temple/docs/edit/dev/',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
-      } satisfies Preset.Options,
+        blog: false, // Optional: disable the blog plugin
+      },
     ],
   ],
 
@@ -89,6 +87,7 @@ const config: Config = {
       logo: {
         alt: 'Cloud Temple Logo',
         src: 'img/logo.svg',
+        href: '/home'
       },
       items: [
         {
@@ -113,12 +112,12 @@ const config: Config = {
               href: 'https://status.cloud-temple.com/',
             },
             {
-              label: 'Tutorial',
-              to: '/docs/docs/tags/tutorials/',
+              label: 'Tutorials',
+              to: '/tags/tutorials/',
             },
             {
               label: 'Onboarding',
-              to: '/docs/docs/tags/onboarding/',
+              to: '/tags/onboarding/',
             },
           ],
         },
@@ -148,28 +147,28 @@ const config: Config = {
           items: [
             {
               label: 'Privacy',
-              to: '/docs/docs/privacy/',
+              to: '/privacy',
             },
             {
               label: 'UGAP',
-              to: '/docs/docs/market_place_public',
+              to: '/market_place_public',
             },
             {
               label: 'CAIH',
-              to: '/docs/docs/market_place_public',
+              to: '/market_place_public',
             },
           ],
         },
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/docs/docs/governance">Contracts</a> |
-        <a href="/docs/docs/privacy">Privacy Policy</a>
+        <a href="/governance">Contracts</a> |
+        <a href="/privacy">Privacy Policy</a>
         <br />
         Copyright © ${new Date().getFullYear()} Cloud Temple.
       </div>
     `,
-      },
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

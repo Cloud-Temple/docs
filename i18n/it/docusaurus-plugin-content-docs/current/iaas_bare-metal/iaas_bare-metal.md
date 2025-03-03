@@ -1,38 +1,40 @@
 ---
-title: Panoramica
+title: Vue d'ensemble
 ---
 
-L’offerta __Bare Metal__ di Cloud Temple propone server dedicati, completamente personalizzabili, per soddisfare le esigenze dei clienti in cerca di totale autonomia sulla loro infrastruttura.
+L’offre __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure.
 
-Progettata attorno a tecnologie all'avanguardia come Cisco UCS per il calcolo e IBM Spectrum Virtualize/FlashSystem per lo storage, questa soluzione garantisce prestazioni ottimali e un’affidabilità esemplare.
+Conçue autour des technologies de pointe Cisco UCS pour le calcul et IBM Spectrum Virtualize/FlashSystem pour le stockage, cette solution garantit des performances optimales et une fiabilité exemplaire.
 
-Con __Bare Metal__, beneficiate di hardware esclusivo, senza condivisione, che vi consente di installare e gestire l’ambiente software di vostra scelta: hypervisor, Linux, Windows o altri.
+Avec __Bare Metal__, vous bénéficiez d’un matériel exclusif, sans mutualisation, vous permettant d’installer et de gérer l’environnement logiciel de votre choix : hyperviseur, Linux, Windows ou autres.
 
-L’accesso diretto ai vostri server avviene tramite la console Cloud Temple, offrendo una gestione semplificata e una presa in mano immediata. Che cerchiate un’infrastruttura per le vostre applicazioni critiche o risorse hardware per i vostri progetti specifici, l’offerta Bare Metal vi assicura flessibilità, controllo totale e prestazioni ineguagliabili.
+L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant une gestion simplifiée et une prise en main immédiate. Que vous cherchiez une infrastructure pour vos applications critiques ou des ressources matérielles pour vos projets spécifiques, l’offre Bare Metal vous assure flexibilité, contrôle total, et performances inégalées.
+
 
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
     <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./concepts/" class="card-link">Esplora i concetti &rarr;</a>
+    <a href="iaas_bare-metal/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./quickstart/" class="card-link">Avvia il Quickstart &rarr;</a>
+    <a href="iaas_bare-metal/quickstart" class="card-link">Inizia il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./tutorials/" class="card-link">Scopri i tutorial &rarr;</a>
+    <a href="iaas_bare-metal/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>
+
 
 ## Piattaforme di acquisto
 
 <div class="purchase-platforms">
-  <p>Siete un attore del settore pubblico? L'offerta <strong>Bare Metal</strong> è accessibile tramite:</p>
-  
+  <p>Siete un attore del settore pubblico ? L’offerta <strong>Bare Metal</strong> è accessibile via :</p>
+
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
@@ -41,7 +43,7 @@ L’accesso diretto ai vostri server avviene tramite la console Cloud Temple, of
       </a>
     </p>
   </div>
-  
+
   <div class="platform-card">
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="CAIH Logo" class="platform-logo" />
     <p>

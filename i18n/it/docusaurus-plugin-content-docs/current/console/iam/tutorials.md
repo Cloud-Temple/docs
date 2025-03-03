@@ -2,7 +2,7 @@
 title: Tutorials
 ---
 
-Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Shiva. 
+Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Shiva.
 
 
 <div class="card">

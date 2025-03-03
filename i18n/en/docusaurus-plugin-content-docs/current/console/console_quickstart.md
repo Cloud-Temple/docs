@@ -22,29 +22,29 @@ Once logged in, you will arrive on this page.
 
 ![](images/shiva_home.png)
 
-## Language Management
-The console is available in __French__, __English__. You can change the operating language using the __language__ icon located at the top right of the screen.
+## Language management
+The console is available in __French__, __English__. You can change the operating language through the __language__ icon located at the top right of the screen.
 
-The user's language change is done in their __'Profile'__, at the top right of the screen, in the __'User Settings'__.
+Changing a user's language is done in their __'Profile'__, at the top right of the screen, in the __'User Settings'__.
 
 ![](images/shiva_profil_006.png)
 
-The configuration is done for each tenant [Tenant](iam/concepts.md#tenant).
+The configuration is done for each [Tenant](iam/concepts.md#tenant).
 
-## Access to Technical Support
+## Access to technical support
 
 At any time, you can contact the __Cloud Temple support team__ via the __'lifebuoy' icon__ located at the top right of the screen.
 
 ![](images/shiva_support.png)
 
-You will be guided throughout the support request process.
+You will be guided through the entire support request process.
 
-The first step is to identify the type of support request:
+The first step is identifying the type of support request:
 
 - Request advice on using a product (non-incident),
-- Request assistance related to your client account,
-- Report an incident or request technical support.
-- Request assistance from a professional service (provision of a Cloud Temple engineer for an issue).
+- Request assistance related to your customer account,
+- Report an incident or request technical support,
+- Request the assistance of a professional service (provision of a Cloud Temple engineer for a specific issue).
 
 ![](images/shiva_support_01.png)
 
@@ -54,19 +54,20 @@ The requester can also specify a level of criticality (P1 to P4) in the ticket d
 
 **CRITICAL (P1)**:
 
-- Suspected leakage of sensitive data
+- Suspected leak of sensitive data
 - Detection of unauthorized access to your data
-- Compromise of your administration credentials
+- Compromise of your admin credentials
 - Total unavailability of your critical services
 - Abnormal behavior on sensitive data
 - Personal data breach
 
 **HIGH (P2)**:
+
 - User access malfunction
 - Anomaly in the encryption of your data
 - Loss of access to certain critical features
-- Data inconsistency
-- Major slowdowns impacting activity
+- Data inconsistencies
+- Major slowness impacting activity
 
 **MEDIUM (P3)**:
 
@@ -84,46 +85,46 @@ The requester can also specify a level of criticality (P1 to P4) in the ticket d
 
 ![](images/shiva_support_02.png)
 
-Once your request is made, you can find your requests via the __'lifebuoy' icon__ located at the top right of the screen:
+Once your request is made, it is possible to find your requests via the __'lifebuoy' icon__ located at the top right of the screen:
 
 ![](images/shiva_support_03.png)
 
-## Access to User Features via Web Interface
+## Accessing user features via the web interface
 
-All the features accessible to your user (depending on their rights) are located on the left of the screen, in the green band.
-The features are grouped by module. This mainly includes:
+All functionalities accessible to your user (depending on their rights) are located on the left of the screen, in the green banner.
+Functionalities are grouped by module. This mainly includes:
 
-- __inventory__ of your resources,
-- __operations tracking__,
-- __IaaS resource management__ (Compute, storage, network, ...)
-- __OpenIaaS resource management__ (Compute, storage, network, ...)
-- Access to __auxiliary services__ (Bastion, monitoring, ...)
-- __organization administration__ (Tenant management, rights management, ...)
+- The __inventory__ of your resources,
+- The __operations tracking__,
+- The __management of IaaS resources__ (Compute, storage, network, ...)
+- The __management of OpenIaaS resources__ (Compute, storage, network, ...)
+- Access to __additional services__ (Bastion, monitoring, ...)
+- The __administration of your organization__ (Management of tenants, rights, ...)
 
 Activating a module for a user depends on the user's rights. For example, the __'Order'__ module will not be available if the user does not have the __'ORDER'__ right.
 
-Here is an introduction to the various available modules. New modules are regularly added to the console:
+Here is an overview of the different available modules. New modules regularly enrich the console:
 
 ![](images/shiva_onboard_007.png)
 
-- __Dashboard__: provides a quick view of the __total compute and storage resources__, __backup__ statistics, and a __summary of support cases__,
-- __Inventory__: provides a view of all your __'virtual machines'__ resources. If __tags__ are used, it provides a view by __tag__ (for example, business view, application view, ...),
-- __Managed Services__: provides access to tracking your __support requests__ and __service metrology__,
+- __Dashboard__: provides a quick view of the __total compute and storage resources__, __backup__ statistics, and a __summary of support tickets__,
+- __Inventory__: provides a view of all your __'virtual machines'__ resources. If __tags__ are used, it provides a view by __tag__ (e.g., business view, application view, ...),
+- __Managed Services__: provides access to your __support requests__ tracking and __service metrics__,
 - __IaaS__: allows the __management of VMware IaaS infrastructure__ (Virtual machines, clusters, hypervisors, replication, backup, ...),
 - __OpenIaaS__: allows the __management of Xen Orchestra resources__ (Virtual machines, backup, ...),
-- __OpenShift__: allows management of your **RedHat OpenShift PaaS architecture** and the management of your containers on the platform's 3 availability zones,
-- __Bastion__: allows you to deploy and manage SSH/RDP bastion appliances in your networks,
-- __Network__: allows the management of __Level 2 and 3 networks__, __public IPs__ et of your __telecom circuits__,
-- __Colocation__: provides a view of equipment located in the __shared or dedicated colocation zone__,
-- __Order__: allows the ordering of resources and the tracking of deployments,
-- __Administration__: gathers user and tenant administration functions and access to global logging.
+- __OpenShift__: allows managing your **RedHat OpenShift PaaS architecture** and managing your containers across the three availability zones of the platform,
+- __Bastion__: allows deploying and managing SSH/RDP bastion appliances in your networks,
+- __Network__: allows managing __layer 2 and 3 networks__, __public IPs__, and your __telecom circuits__,
+- __Colocation__: provides a view of equipment located in a __shared or dedicated colocation area__,
+- __Order__: allows ordering resources and tracking deployments,
+- __Administration__: gathers the functions for user and tenant administration and access to global logging.
 
-The __'NEW'__ pictograms signify that the product in question has been provisioned but is not yet qualified as a __SecNumCloud offer__ and __'BETA'__ signify that the product in question has been provisioned and has just been qualified as __SecNumCloud offer__.
+The __'NEW'__ pictograms mean that the product in question has been provisioned but is not yet qualified with the __SecNumCloud offer__, and __'BETA'__ means that the product in question has been provisioned and has just been qualified with the __SecNumCloud offer__.
 
 **Logging - Activity Tracking**
 =====================================
 
-The activities page is intended to provide full visibility on all read and write operations conducted within the console, thus ensuring increased traceability and security. It highlights the two main tabs: Recent and Archived.
+The activity page is designed to provide complete visibility into all read and write operations performed within the console, ensuring enhanced traceability and security. It highlights the two main tabs: Recent and Archived.
 
 ![](images/shiva_logs.png)
 
@@ -138,38 +139,38 @@ The activities page is intended to provide full visibility on all read and write
 		- Archived operations for traceability and compliance
 #### **Displayed Information**
 	+ Date and Time
-	+ Operation Type
+	+ Operation type
     + Status
 	+ User
-	+ Operation Description
+	+ Operation description
 #### **Functionality**
 	+ Search/Filter for specific operations
 
 ### **Usage**
 
-* **Access:** permission `activity_read`
+* **Access:** `activity_read` permission
 * **Navigation:**
 	- Select the "Recent" tab for real-time operations.
-	- Choose "Archived" to consult the history.
-	- Use the search and filter features to locate specific operations.
+	- Choose "Archived" to view the history.
+	- Use search and filter features to locate specific operations.
 
 #### **Compliance Note**
-In accordance with the SecNumCloud qualification, the storage duration of Cloud Temple console events is a minimum of **6 months**, thereby ensuring adherence to security and traceability requirements.
+In accordance with SecNumCloud qualification, the storage duration of Cloud Temple console events is a minimum of **6 months**, ensuring compliance with security and traceability requirements.
 
 ## Viewing the latest updates
 
-Click on the __'New features'__ icon at the bottom left of the green band. You will get the details of the changes for each version of the Cloud Temple console.
+Click at the bottom left of the green banner on the __'News'__ icon. You will see details of changes for each version of the Cloud Temple console.
 
 ![](images/shiva_onboard_009.png)
 
-## Access to user features via the API
+## Accessing user features via the API
 
-Access to all the functionality of the Shiva console is possible via the Shiva API. You can get details of the verbs and configurations via __'Profile'__ and __'APIs'__:
+Accessing all the functionalities of the Shiva console is possible via the Shiva API. You can get the details of verbs and configurations through __'Profile'__ and __'APIs'__:
 
 ![](images/shiva_onboard_008.png)
 
 ## Terraform Provider
 
-Cloud Temple provides a Terraform provider to manage your Cloud platform *"as code"*. It is accessible here:
+Cloud Temple provides a Terraform provider to manage your Cloud platform "as code". It is accessible here:
 
 https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest

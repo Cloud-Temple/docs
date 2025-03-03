@@ -1,32 +1,32 @@
 ---
-title: Vue d'ensemble
+title: Vista general
 ---
 
-L'offre **IaaS Cloud Temple**, propulsée par VMware, est conçue pour répondre aux besoins critiques des entreprises en matière de performance, de sécurité et de continuité d'activité. Avec des ressources dédiées, une infrastructure qualifiée **SecNumCloud**, et des options entièrement automatisées, cette solution garantit une fiabilité optimale pour vos charges de travail sensibles.
+La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para satisfacer las necesidades críticas de las empresas en cuanto a rendimiento, seguridad y continuidad del negocio. Con recursos dedicados, una infraestructura calificada **SecNumCloud** y opciones completamente automatizadas, esta solución garantiza una fiabilidad óptima para sus cargas de trabajo sensibles.
 
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="concepts" class="card-link">Explorar los conceptos &rarr;</a>
+    <p>Descubra los fundamentos y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="iaas_vmware/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y simples.</p>
-    <a href="quickstart" class="card-link">Lanzar el Quickstart &rarr;</a>
+    <p>Empiece rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="iaas_vmware/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutoriales</h3>
-    <p>Aprenda paso a paso cómo configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+    <h3>Tutorials</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="iaas_vmware/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>
 
 ## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está disponible a través de:</p>
-  
+  <p>¿Es usted un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está disponible a través de:</p>
+
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
@@ -35,7 +35,7 @@ L'offre **IaaS Cloud Temple**, propulsée par VMware, est conçue pour répondre
       </a>
     </p>
   </div>
-  
+
   <div class="platform-card">
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>

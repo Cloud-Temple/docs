@@ -2,14 +2,15 @@
 title: Guide de démarrage
 ---
 
-Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter. 
+
+Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter.
 
 ## Prérequis
 
 1. Avoir souscrit à l'offre Cloud Temple (souscription Appliance Bastion).
 2. Les équipements à administrer doivent être accessibles depuis le réseau où est déployée l'Appliance Bastion.
-3. Avoir les droits sur le module Bastion. 
-4. Dans le cadre d'un déploiement de l'Appliance onpremise, les flux correspondants doivent être ouverts. 
+3. Avoir les droits sur le module Bastion.
+4. Dans le cadre d'un déploiement de l'Appliance onpremise, les flux correspondants doivent être ouverts.
 
 
 ## Les flux nécessaires au fonctionnement du produit Bastion
@@ -43,7 +44,7 @@ Le support est accessible dans la console Shiva depuis l'icône de bouée sur la
 
 ## Enregistrer un équipement
 
-Pour accéder régulièrement à un équipement à administrer, il est plus adapté de créer une session, qui ne demandera que votre nom d’utilisateur et votre mot de passe à chaque connexion. 
+Pour accéder régulièrement à un équipement à administrer, il est plus adapté de créer une session, qui ne demandera que votre nom d’utilisateur et votre mot de passe à chaque connexion.
 
 Pour cela, rendez-vous dans l’onglet « Equipements » du menu « Bastion », puis, cliquez sur le bouton « Nouveau équipement ».
 
@@ -62,7 +63,7 @@ Renseignez ensuite les informations nécessaires à la création de votre équip
 ![](images/creer_session2.png)
 
 
-Une notification vous indiquant la création de l'équipement devrait apparaître en haut à droite de la page. La session s’ajoute ensuite à la liste de vos équipements. 
+Une notification vous indiquant la création de l'équipement devrait apparaître en haut à droite de la page. La session s’ajoute ensuite à la liste de vos équipements.
 
 Pour créer un nouvel équipement, vous pouvez également passer par l’onglet « Appliances » en cliquant sur la barre d’action de l’Appliance à laquelle vous souhaitez associer un équipement.
 

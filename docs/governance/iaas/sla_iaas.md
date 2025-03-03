@@ -1,7 +1,7 @@
 ---
 title: Convention de Service IaaS
 ---
-  
+
 ![Logo Cloud Temple](images/ct.png)
 
 # 1. **CONVENTION DE SERVICES IaaS**
@@ -379,7 +379,7 @@ Cette prestation de sauvegarde se limite à la sauvegarde des machines virtuelle
 des Tenants du COMMANDITAIRE dans le cadre du Service. L'élaboration et l'application d'une politique de sauvegarde adéquate par le
 COMMANDITAIRE dépendent de la souscription à des unités d'œuvre spécifiques. Il incombe donc au COMMANDITAIRE de s'assurer de la
 disponibilité des ressources techniques nécessaires auprès du Prestataire pour mettre en œuvre sa politique de sauvegarde ou
-d'ajuster cette dernière en fonction des moyens disponibles. 
+d'ajuster cette dernière en fonction des moyens disponibles.
 
 Le Prestataire s'engage à notifier le COMMANDITAIRE en cas de contraintes de capacité et à fournir une assistance conseil pour
 l'optimisation des ressources. Les obligations du Prestataire se limiteront à la mise en œuvre des besoins exprimés par le COMMANDITAIRE
@@ -440,7 +440,7 @@ Pour la mise en œuvre du Service, le COMMANDITAIRE reconnaît qu'il devra :
 
 ## 7.5. Localisation du service en France
 
-Il est précisé qu'aucune des opérations et aucun des composants physiques impliqués dans la fourniture du Service , dont la présente Convention de service fait l'objet, n'est situé hors de l'Union Européenne. 
+Il est précisé qu'aucune des opérations et aucun des composants physiques impliqués dans la fourniture du Service , dont la présente Convention de service fait l'objet, n'est situé hors de l'Union Européenne.
 
 Cela inclut notamment le support, la supervision opérationnelle et la supervision de sécurité (SOC) de l'infrastructure technique délivrant le Service. De fait, tout le stockage, toutes les tâches d'administration, de supervision et tous les traitements sont réalisés en France.
 
@@ -461,7 +461,7 @@ Le COMMANDITAIRE est informé de la possibilité des salariés de Cloud Temple d
 
 Le Prestataire fournit un service de support technique visant à assister le COMMANDITAIRE dans la gestion, le dépannage et l'optimisation de
 leurs ressources déployées. Ce service couvre une gamme étendue d'activités, depuis l'aide à la configuration initiale des services
-jusqu'au soutien technique avancé pour résoudre des problèmes spécifiques. 
+jusqu'au soutien technique avancé pour résoudre des problèmes spécifiques.
 
 Voici une description des caractéristiques et fonctionnalités du service de support :
 
@@ -476,7 +476,7 @@ Le COMMANDITAIRE s'engage à utiliser le service de support technique de manièr
 
 Le niveau d'engagement du support est conditionné à la souscription des unités d'œuvre de support associées.
 
-### 7.6.2. Sollicitation du service support technique 
+### 7.6.2. Sollicitation du service support technique
 
 Le support technique est accessible par le biais d'un système de tickets via la console COMMANDITAIRE et est disponible durant les heures normales de bureau hors jours fériés (8h - 18h ; Lundi -- Vendredi ; calendrier et horaires français). Pour les urgences survenant en dehors des heures ouvrées, notamment les incidents affectant significativement la production, le service d'astreinte peut être joint via un numéro communiqué au COMMANDITAIRE à l'initialisation du Service.
 
@@ -488,7 +488,7 @@ rencontré. Cette démarche est cruciale pour permettre une évaluation adéquat
 Le Client reçoit alors une confirmation par courriel, indiquant la création du ticket et son numéro unique. Le COMMANDITAIRE peut consulter
 le statut et l'historique de ses demandes et déclarations d'Incidents directement depuis la console de gestion.
 
-### 7.6.3. Processus de gestion des Incidents 
+### 7.6.3. Processus de gestion des Incidents
 
 Lors d'une déclaration d'un Incident, l'équipe de support technique du Prestataire initie une investigation pour identifier la cause du problème et établir un diagnostic. Le Client doit collaborer activement avec le Prestataire en fournissant toutes les informations nécessaires et en effectuant les tests requis. Le Prestataire peut accéder au Service du Client pour diagnostiquer l'Incident.
 
@@ -496,7 +496,7 @@ Si les Services du Prestataire sont jugés fonctionnels et que l'Incident ne lui
 
 Dans le cas où l'Incident est de la responsabilité du Prestataire ou de l'un de ses sous-traitants, celui-ci complète le diagnostic et s'attèle à la restauration du Service sans frais supplémentaires. Le diagnostic s'appuie sur les échanges entre les Parties et les données du Prestataire, ces éléments étant considérés comme probants par accord des Parties.
 
-### 7.6.4. Processus de priorisation des traitements 
+### 7.6.4. Processus de priorisation des traitements
 
 La détermination du niveau de priorité d'un dossier repose sur une analyse matricielle qui évalue l'impact de l'Incident et son degré de
 criticité :
@@ -541,7 +541,7 @@ L'indisponibilité d'un service, faisant l'objet d'un indicateur de performance,
 
 La fin de l'indisponibilité est officiellement marquée par la restauration complète du service, confirmée soit par les outils de supervision du Prestataire, soit par un retour utilisateur, assurant ainsi une reprise effective des opérations et une mesure fidèle de la durée de l'interruption.
 
-## 8.1. Engagements de disponibilité de l'infrastructure 
+## 8.1. Engagements de disponibilité de l'infrastructure
 
 Le Prestataire s'engage à maintenir un niveau de disponibilité et de performance conforme aux standards définis pour chaque période spécifiée. Les engagements de niveau de service (Service Level Agreements, SLAs) s'appliquent sous réserve que le COMMANDITAIRE implémente ses systèmes à travers au moins deux des Zones de disponibilité  présentes dans la Région concernée.
 
@@ -557,15 +557,15 @@ COMMANDITAIRE. Les mesures s'entendent calculées mensuellement :
 - **SLA 4 (*) : IC-INFRA_SNC-04** – Disponibilité de l'infrastructure réseau : taux de disponibilité garanti de 99,99%, calculé sur une base 24h/24, 7j/7.
 - **SLA 5     : IC-INFRA_SNC-05** – Accès Internet : taux de disponibilité garanti de 99,99%, calculé sur une base 24h/24, 7j/7.
 
-_**Remarques**_ : 
+_**Remarques**_ :
 
-- *En réponse une attaque par déni de service distribué (DDoS), le Prestataire se réserve le droit d'ajuster sa configuration de routage internet pour 
-limiter l'impact de cette attaque et sauvegarder son infrastructure. En particulier, si une adresse IP appartenant au COMMANDITAIRE est ciblée, le Prestataire peut recourir à la technique de blackholing 
-via la communauté BGP pour bloquer tout le trafic vers l'adresse IP visée en amont chez ses fournisseurs, dans le but de protéger les ressources du COMMANDITAIRE ainsi que celles d'autres COMMANDITAIREs 
-et de l'infrastructure du Prestataire. Le Prestataire encourage vivement le COMMANDITAIRE à adopter des mesures similaires, telles que l'utilisation de logiciels de pare-feu 
+- *En réponse une attaque par déni de service distribué (DDoS), le Prestataire se réserve le droit d'ajuster sa configuration de routage internet pour
+limiter l'impact de cette attaque et sauvegarder son infrastructure. En particulier, si une adresse IP appartenant au COMMANDITAIRE est ciblée, le Prestataire peut recourir à la technique de blackholing
+via la communauté BGP pour bloquer tout le trafic vers l'adresse IP visée en amont chez ses fournisseurs, dans le but de protéger les ressources du COMMANDITAIRE ainsi que celles d'autres COMMANDITAIREs
+et de l'infrastructure du Prestataire. Le Prestataire encourage vivement le COMMANDITAIRE à adopter des mesures similaires, telles que l'utilisation de logiciels de pare-feu
 d'applications web disponibles sur le marché, et à configurer soigneusement ses groupes de sécurité via l'API de commande.*
 
-- *Le Prestataire insiste sur la nécessité pour le COMMANDITAIRE de minimiser les ouvertures de flux, en évitant notamment de rendre accessibles les ports 
+- *Le Prestataire insiste sur la nécessité pour le COMMANDITAIRE de minimiser les ouvertures de flux, en évitant notamment de rendre accessibles les ports
 d'administration **SSH** (port TCP 22) et **RDP** (port TCP 3389) depuis l'ensemble d'Internet (sous-réseau 0.0.0.0/0), ainsi que les protocoles internes tels que **SMB** (port TCP/UDP 445) ou **NFS** (port TCP/UDP 2049).*
 
 ## 8.2. Engagement de disponibilité de l'interface COMMANDITAIRE
@@ -573,7 +573,7 @@ d'administration **SSH** (port TCP 22) et **RDP** (port TCP 3389) depuis l'ensem
 -   SLA 6 : IC-INFRA_SNC-06 -- Accès à la console d'administration du  Service : une disponibilité garantie de 97%, assurée en continu, 24 heures sur 24 et 7 jours sur 7.
 -   SLA 7 : IC-INFRA_SNC-07 -- Accès aux APIs de pilotage du Service : une disponibilité de 99.9%, calculé sur une base 24h/24, 7j/7.
 
-## 8.3. Engagement de disponibilité du support 
+## 8.3. Engagement de disponibilité du support
 
 - **SLA 8      : IC-INFRA_SNC-08** – Voici les engagements de performance du support technique du Prestataire pour les incidents, hors maintenances programmées :
 
@@ -591,11 +591,11 @@ d'administration **SSH** (port TCP 22) et **RDP** (port TCP 3389) depuis l'ensem
 | ------------------ | -------------------------------------- | ----------------------- |
 | Demande de service | 4h                                     | 90%                     |
 
-*Remarque :* 
+*Remarque :*
 
 - *Le délai pour la Garantie de Temps d’Intervention (GTI) est calculé à partir de la différence entre le moment où le COMMANDITAIRE ouvre le ticket et la première intervention du support du Prestataire.*
-- *L'investigation d'incidents concernant les COMMANDITAIREs ne comprendra pas d'intervention à distance sur les serveurs hébergés du COMMANDITAIRE. Cette assistance se limitera à l'explication des métriques disponibles relatives 
-à l'environnement du COMMANDITAIRE, afin de faciliter la compréhension des incidents ou des problèmes de performance rencontrés. Sur la base des résultats de cette analyse, des recommandations pourront être suggérées.* 
+- *L'investigation d'incidents concernant les COMMANDITAIREs ne comprendra pas d'intervention à distance sur les serveurs hébergés du COMMANDITAIRE. Cette assistance se limitera à l'explication des métriques disponibles relatives
+à l'environnement du COMMANDITAIRE, afin de faciliter la compréhension des incidents ou des problèmes de performance rencontrés. Sur la base des résultats de cette analyse, des recommandations pourront être suggérées.*
 
 ## 8.4. Engagement de disponibilité du stockage objet S3
 
@@ -652,7 +652,7 @@ Le Prestataire s'engage :
 - à autoriser un prestataire d'audit de la sécurité des systèmes d'information (PASSI) qualifié, mandaté par le Prestataire, à auditer le service ainsi que son système d'information, conformément au plan de contrôle du SecNumCloud du Prestataire. De plus, le Prestataire s'engage à fournir toutes les informations nécessaires pour mener à bien les audits de conformité aux dispositions de l'article 28 du RGPD, menés par le commanditaire ou un tiers mandaté.
 
 - à fournir, en qualité de sous-traitant, conformément à l'article 28 du Règlement général sur la protection des données (RGPD), assistance et conseils au COMMANDITAIRE en l'alertant dès lors qu'une instruction émise par ce dernier est susceptible de constituer une violation des règles de protection des données.
- 
+
 - à notifier par écrit, lorsqu'un projet impacte ou est susceptible d'impacter le niveau de sécurité du Service, le COMMANDITAIRE des potentiels impacts, des mesures d'atténuation mises en place, ainsi que des risques résiduels qui le concernent.
 
 - à documenter et à mettre en œuvre l'ensemble des procédures nécessaires pour respecter les exigences légales, réglementaires et contractuelles applicables au service, ainsi que les besoins de sécurité spécifiques du COMMANDITAIRE, définis par ce dernier et prévus au Contrat. Sur demande du COMMANDITAIRE, le module Documentation de l'interface COMMANDITAIRE permettra un partage sécurisé de ces documents.
@@ -689,7 +689,7 @@ Du fait de l'ensemble des définitions et conditions mentionnées dans la prése
     -   La sécurité des programmes, logiciels et applicatifs installés sur les machines virtuelles;
 
     -   La mise à jour des machines virtuelles;
-  
+
     -   La sauvegarde des données au niveau applicatif.
 
 2.  Le Prestataire ne peut prendre d'engagements de sauvegarde des Tenants du COMMANDITAIRE sans que le COMMANDITAIRE n'ai au préalable souscrit aux unités d'oeuvres adéquates.
@@ -697,10 +697,10 @@ Du fait de l'ensemble des définitions et conditions mentionnées dans la prése
 3.  Le Prestataire ne peut se prévaloir de la propriété des données transmises et générées par le COMMANDITAIRE. En effet, celles-ci relèvent de la propriété du COMMANDITAIRE.
 
 4.  Le Prestataire souligne qu'il ne peut en aucun cas exploiter les données transmises et générées par le COMMANDITAIRE sans validation préalable de ce dernier.
-   
+
 5.  Le Prestataire dégage toute responsabilité sur les composants physiquement hébergés et infogéré par le Prestataire, mais étant la propriété directe du COMMANDITAIRE ou d'un tiers avec lequel le COMMANDITAIRE a contractualisé. L'hébergement de composants physiques des clients ne fait pas partie du Service et est de fait hors du cadre de la présente Convention de service. Il incombe au COMMANDITAIRE d'évaluer le niveau d'adhérence ou de dépendance qu'introduisent ces composants vis-à-vis du Service IaaS qualifié SecNumCloud.
 
-## 9.3. Limitation d'accès 
+## 9.3. Limitation d'accès
 
 Dans le cadre du Service, le Prestataire est formellement interdit d'accéder aux Tenants appartenant au COMMANDITAIRE sans autorisation préalable. Il est de la  responsabilité du COMMANDITAIRE de fournir les accès nécessaires au personnel du Prestataire, selon les besoins spécifiques de l'hébergement et, le cas échéant, des services
 professionnels de support, si cette option a été choisie par le COMMANDITAIRE.
@@ -732,7 +732,7 @@ Le COMMANDITAIRE autorise l'ANSSI et l'organisme de qualification SNC à auditer
 
 ## 9.6. Droits du COMMANDITAIRE
 
-À tout moment au cours de la relation contractuelle, le COMMANDITAIRE peut déposer une réclamation relative au service qualifié auprès de l'ANSSI. 
+À tout moment au cours de la relation contractuelle, le COMMANDITAIRE peut déposer une réclamation relative au service qualifié auprès de l'ANSSI.
 
 À tout moment, le COMMANDITAIRE peut demander au Prestataire de lui rendre accessible son règlement intérieur et sa charte d'éthique.
 
