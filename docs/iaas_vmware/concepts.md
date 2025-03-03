@@ -175,6 +175,10 @@ dans un contexte d'efficience économique. Plusieurs niveaux de performances son
 
 *__Nota__ :*
 
+- *La performance effective pour une classe de stockage étant liée à la volumétrie effectivement commandée, selon la notion "IOPS/To", s'entendant "limite d'IOPS par Tera alloué",* 
+> *Ainsi, un volume de 0,5To dans la classe de performance 'Standard' aura une limitation d'IOPS plafonnée à 750IOPS,*
+> *De même, un volume de 10To dans la classe de performance 'Ultra' aura lui une limitation d'IOPS à hauteur de 150000 IOPS,*
+- *La limitation d'IOPS est appliquée au volume, donc à la notion de Datastore pour un environnement VMware,*
 - *La disponibilité du stockage est de 99.99% mesuré mensuellement, plage de maintenance incluse,*
 - *Il n'y a pas de restriction ou de quota sur la lecture ou l'écriture,*
 - *Il n'y a pas de facturation à l'IOPS,*

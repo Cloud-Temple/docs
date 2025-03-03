@@ -1,93 +1,94 @@
 ---
-title: Vue d'ensemble
+title: Vista d'insieme
 ---
+
 
 ## La Console Cloud Temple
 
-La console Cloud Temple est la plateforme de gestion cloud (**Cloud Management Platform**) intégrée de Cloud Temple. Elle constitue le point central pour gérer l’ensemble de vos ressources cloud, vous offrant une interface unique et performante.
+La console Cloud Temple è la piattaforma di gestione cloud (**Cloud Management Platform**) integrata di Cloud Temple. Costituisce il punto centrale per gestire tutte le vostre risorse cloud, offrendovi un'interfaccia unica e performante.
 
-Grâce à la **Console**, vous pouvez superviser et exploiter vos infrastructures cloud avec une grande simplicité. Voici un aperçu de ses fonctionnalités principales :
+Grazie alla **Console**, potete supervisionare e sfruttare le vostre infrastrutture cloud con grande semplicità. Ecco una panoramica delle sue funzionalità principali :
 
 
 <div class="card-grid">
 
   <div class="card">
-    <h3>Le module IAM</h3>
+    <h3>Il modulo IAM</h3>
     <p>Scopri il modulo IAM (Identity Access Management) della console Cloud Temple.</p>
-    <a href="iam" class="card-link">È qui &rarr;</a>
+    <a href="console/iam" class="card-link">È qui &rarr;</a>
   </div>
 
   <div class="card">
-    <h3>Support</h3>
+    <h3>Supporto</h3>
     <p>Visualizzazione delle operazioni pianificate e gestione degli Incidenti</p>
-    <a href="status" class="card-link">È qui &rarr;</a>
+    <a href="console/status" class="card-link">È qui &rarr;</a>
   </div>
 
   <div class="card">
-    <h3>Déployer de l'infrastructure</h3>
-    <p>Ordinare e monitorare il deploy di nuove risorse.</p>
-    <a href="orders" class="card-link">Scopri i menu &rarr;</a>
+    <h3>Distribuire l'infrastruttura</h3>
+    <p>Ordinare e seguire il dispiegamento di nuove risorse.</p>
+    <a href="console/orders" class="card-link">Scopri i menù &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Metrics</h3>
-    <p>Ordinare e monitorare il deploy di nuove risorse.</p>
-    <a href="metrics/concepts" class="card-link">Scopri i menu &rarr;</a>
+    <p>Ordinare e seguire il dispiegamento di nuove risorse.</p>
+    <a href="console/metrics/concepts" class="card-link">Scopri i menù &rarr;</a>
   </div>
 
 </div>
 
-### Gestion de vos produits et services Cloud Temple
-La console vous permet de piloter efficacement vos serveurs virtuels, votre stockage, vos réseaux et vos services Cloud depuis une interface centralisée.
+### Gestione dei vostri prodotti e servizi Cloud Temple
+La console vi permette di pilotare efficacemente i vostri server virtuali, il vostro storage, le vostre reti e i vostri servizi Cloud da un'interfaccia centralizzata.
 
-### Surveillance et reporting
-Bénéficiez d’une vue complète sur vos ressources grâce à des outils de surveillance et de reporting intégrés, pour vous assurer que vos environnements fonctionnent de manière optimale.
+### Sorveglianza e reporting
+Beneficiate di una visione completa delle vostre risorse grazie a strumenti di sorveglianza e reporting integrati, per assicurarvi che i vostri ambienti funzionino in maniera ottimale.
 
-### Automatisation et orchestration
-Avec son **API puissante**, la console simplifie l’automatisation des tâches répétitives et l’orchestration de workflows complexes. Déployez, gérez et mettez à l'échelle vos ressources en quelques clics ou via des scripts personnalisés.
+### Automazione e orchestrazione
+Con la sua **API potente**, la console semplifica l'automazione dei compiti ripetitivi e l'orchestrazione di workflow complessi. Distribuite, gestite e scalate le vostre risorse con pochi clic o tramite script personalizzati.
 
-### Sécurité et conformité
-La console intègre des fonctionnalités avancées pour :
-- Gérer les identités et les accès,
-- Filtrer les accès pour répondre aux exigences réglementaires,
-- Renforcer vos politiques de sécurité.
+### Sicurezza e conformità
+La console integra funzionalità avanzate per:
+- Gestire le identità e gli accessi,
+- Filtrare gli accessi per rispondere alle esigenze normative,
+- Rafforzare le vostre politiche di sicurezza.
 
-### Intégration multi-cloud
-Grâce à ses capacités d’hybridation, La console facilite la gestion des environnements multi-cloud en intégrant des services tiers tels que **Microsoft Azure** et **Amazon AWS**, le tout via une interface unique.
+### Integrazione multi-cloud
+Grazie alle sue capacità di ibridazione, la console facilita la gestione degli ambienti multi-cloud integrando servizi di terzi come **Microsoft Azure** e **Amazon AWS**, il tutto tramite un'unica interfaccia.
 
-### Assistance technique et support client
-La console offre un accès direct à vos dossiers d’assistance technique. Vous bénéficiez :
-- D’un support client dédié pour résoudre vos problèmes techniques,
-- D’une assistance à la configuration initiale de vos services.
+### Assistenza tecnica e supporto clienti
+La console offre un accesso diretto ai vostri dossier di assistenza tecnica. Beneficiate di:
+- Un supporto clienti dedicato per risolvere i vostri problemi tecnici,
+- Un'assistenza alla configurazione iniziale dei vostri servizi.
 
-### Services professionnels
-Besoin d’expertise ? Profitez de l’accompagnement de nos ingénieurs pour :
-- Du conseil personnalisé,
-- De l’aide à l’implémentation d’architectures cloud,
-- De la formation pour vos équipes.
+### Servizi professionali
+Avete bisogno di competenze? Approfittate del supporto dei nostri ingegneri per:
+- Consulenze personalizzate,
+- Aiuto all'implementazione di architetture cloud,
+- Formazione per il vostro team.
 
-La console Cloud Temple __'Shiva'__ est __la plateforme de gestion cloud__ (Cloud Management Plateform) intégrée de __Cloud Temple__.
+La console Cloud Temple __'Shiva'__ è __la piattaforma di gestione cloud__ (Cloud Management Platform) integrata di __Cloud Temple__.
 
-La console Cloud Temple Shiva vous permet de gérer les ressources clouds telles que les serveurs virtuels, le stockage, les réseaux et les services applicatifs.
-C'est une interface de management centralisée qui vous permet de concevoir et d'exploiter votre infrastructure cloud.
+La console Cloud Temple Shiva vi permette di gestire le risorse cloud come i server virtuali, lo storage, le reti e i servizi applicativi.
+È un'interfaccia di gestione centralizzata che vi consente di progettare e gestire la vostra infrastruttura cloud.
 
-La console Cloud Temple Shiva permet notamment à vos équipes :
+La console Cloud Temple Shiva permette al vostro team di:
 
-- __La gestion de vos produits et services__ Cloud Temple,
-- __La surveillance et le reporting__ du fonctionnement de vos ressources cloud,
-- __L'automatisation et l'orchestration__ : Shiva, grâce à son API, permet d'automatiser des tâches répétitives et d'orchestrer des workflows complexes pour déployer, gérer et mettre à l'échelle vos ressources clouds,
-- __La sécurité et la conformité__ : Shiva permet le contrôle de l'identité et le filtrage des accès afin d'assurer la conformité réglementaire et le respect de vos politiques de sécurité,
-- __Intégration des référentiels d'adoption Cloud__ (Cloud Adoption Framework) : grazie alle sue funzioni di ibridazione, puoi garantire una continuità di funzionamento con i fornitori di cloud di terze parti (Microsoft Azure e Amazon AWS) da un'unica interfaccia, facilitando l'integrazione e la gestione dei tuoi ambienti applicativi multi-cloud,
-- __L'accès et le suivi des dossiers d'assistance technique__ : Una assistenza tecnica dedicata è anche disponibile. Questo include il supporto clienti per la risoluzione dei problemi tecnici e l'assistenza per la configurazione iniziale.
-- __La possibilité de souscrire à des services professionnels__ : al fine di gestire efficacemente i tuoi ambienti cloud, i tuoi team possono beneficiare dell'assistenza dei nostri ingegneri per consulenze, assistenza per l'implementazione di architetture o formazione.
+- __Gestire i vostri prodotti e servizi__ Cloud Temple,
+- __Sorvegliare e fare reporting__ del funzionamento delle vostre risorse cloud,
+- __Automazione e orchestrazione__: Shiva, grazie alla sua API, permette di automatizzare i compiti ripetitivi e orchestrare complessi flussi di lavoro per distribuire, gestire e scalare le vostre risorse cloud,
+- __Sicurezza e conformità__: Shiva permette il controllo dell'identità e il filtraggio degli accessi per garantire la conformità normativa e il rispetto delle vostre politiche di sicurezza,
+- __Integrazione dei framework di adozione del Cloud__ (Cloud Adoption Framework): grazie alle sue funzioni di ibridazione, potete garantire la continuità operativa con i fornitori di cloud di terze parti (Microsoft Azure e Amazon AWS) da un'unica interfaccia, facilitando l'integrazione e la gestione dei vostri ambienti applicativi multi-cloud.
+- __Accesso e monitoraggio dei dossier di assistenza tecnica__: È disponibile anche un'assistenza tecnica dedicata. Questo include il supporto clienti per la risoluzione dei problemi tecnici nonché l'assistenza alla configurazione iniziale.
+- __La possibilità di sottoscrivere servizi professionali__: per gestire efficacemente i vostri ambienti Cloud, il vostro team può beneficiare del supporto dei nostri ingegneri per consulenze, aiuto all'implementazione di architetture o formazione.
 
-## Accès aux fonctionnalités utilisateur via l'API
+## Accesso alle funzionalità utente tramite API
 
-L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. 
-Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__
+L'accesso a tutte le funzionalità della console Shiva è possibile tramite l'API Shiva.
+Potete avere il dettaglio dei comandi e delle configurazioni tramite __'Profilo'__ e __'API'__
 
 ## Provider Terraform
 
-Cloud Temple met à votre disposition un provider Terraform pour piloter *"as code"* votre plateforme Cloud. Il est accessible ici :
+Cloud Temple mette a vostra disposizione un provider Terraform per gestire *"as code"* la vostra piattaforma Cloud. È accessibile qui:
 
 https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest

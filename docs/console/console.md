@@ -2,6 +2,7 @@
 title: Vue d'ensemble
 ---
 
+
 ## La Console Cloud Temple
 
 La console Cloud Temple est la plateforme de gestion cloud (**Cloud Management Platform**) intégrée de Cloud Temple. Elle constitue le point central pour gérer l’ensemble de vos ressources cloud, vous offrant une interface unique et performante.
@@ -14,25 +15,25 @@ Grâce à la **Console**, vous pouvez superviser et exploiter vos infrastructure
   <div class="card">
     <h3>Le module IAM</h3>
     <p>Découvrez le module IAM (Identity Access Management) de la console Cloud Temple.</p>
-    <a href="iam" class="card-link">C'est ici &rarr;</a>
+    <a href="console/iam" class="card-link">C'est ici &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Support</h3>
     <p>Visualisation des opérations planifiées et gestion des Incidents</p>
-    <a href="status" class="card-link">C'est ici &rarr;</a>
+    <a href="console/status" class="card-link">C'est ici &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Déployer de l'infrastructure</h3>
     <p>Commander et suivre le déploiement de nouvelles ressources.</p>
-    <a href="orders" class="card-link">Découvrir les menus &rarr;</a>
+    <a href="console/orders" class="card-link">Découvrir les menus &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Metrics</h3>
     <p>Commander et suivre le déploiement de nouvelles ressources.</p>
-    <a href="metrics/concepts" class="card-link">Découvrir les menus &rarr;</a>
+    <a href="console/metrics/concepts" class="card-link">Découvrir les menus &rarr;</a>
   </div>
 
 </div>
@@ -83,7 +84,7 @@ La console Cloud Temple Shiva permet notamment à vos équipes :
 
 ## Accès aux fonctionnalités utilisateur via l'API
 
-L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. 
+L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva.
 Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__
 
 ## Provider Terraform

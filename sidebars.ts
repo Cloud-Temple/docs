@@ -115,7 +115,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Sauvegardes',
+              label: 'Backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
@@ -206,7 +206,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Documents contractuels',
+      label: 'Contractual documents',
       items: [
         'contractual/orderdoc',
         'contractual/cgvu',

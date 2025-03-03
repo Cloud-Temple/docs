@@ -2,6 +2,7 @@
 title: Convention de Service SecNumCloud IaaS
 ---
 
+
 # 1. CONVENTION DE SERVICES IaaS
 
   -----------------------------------------------------------------------
@@ -17,10 +18,10 @@ title: Convention de Service SecNumCloud IaaS
                                  e-mail : *prenom.nom*\@cloud-temple.com
 
   **Date de dernière mise à      17/01/2025
-  jour**                         
+  jour**
 
   **Date de validation           Jour JJ AAAA
-  contractuelle**                
+  contractuelle**
   -----------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -41,7 +42,7 @@ title: Convention de Service SecNumCloud IaaS
   v1.3          29/06/2023   Enrichissement                       Lorena ALCALDE
 
   v1.4          06/11/2023   Modification Capital et              Lorena ALCALDE
-                             Enrichissement                       
+                             Enrichissement
 
   v1.5          30/11/2023   Enrichissement                       Lorena ALCALDE
 
@@ -370,7 +371,7 @@ attribuées ci-dessous :
   **COPROJ**     Comité Projet
 
   **DB**         Database (base de données)
-                 
+
   **DPA**        Data Protection Agreement
 
   **DRP**        Disaster Recovery Plan (PRA) (Plan de reprise d'activité)
@@ -524,7 +525,7 @@ conformément aux exigences du référentiel SecNumCloud.
   Sauvegarde       Modulo souscription au mass-storage adéquat
 
   Infrastructure   Ressource réseau du Tenant COMMANDITAIRE
-  réseau           
+  réseau
 
   Console          Le service permettant au COMMANDITAIRE d'accéder à son
   COMMANDITAIRE    service IaaS et de l'administrer via l'interface Shiva
@@ -951,7 +952,7 @@ criticité :
 
   -------------------------------------------------------------------------
   Niveau     Description
-  d'impact   
+  d'impact
   ---------- --------------------------------------------------------------
   Impact I1  Le ou les services du Prestataire sont interrompus
 
@@ -965,7 +966,7 @@ criticité :
 
   -----------------------------------------------------------------------
   Niveau de   Description
-  criticité   
+  criticité
   ----------- -----------------------------------------------------------
   Criticité   Le ou les services du Prestataire se dégradent à une
   C1          vitesse préoccupante
@@ -984,7 +985,7 @@ criticité :
 
   -------------------------------------------------------------------------
   Niveau d'impact  Niveau de         Impact I1    Impact I2    Impact I3
-  criticité                                                    
+  criticité
   ---------------------------------- ------------ ------------ ------------
   Criticité C1                       Priorité     Priorité     Priorité
                                      **P1**       **P2**       **P3**
@@ -1100,19 +1101,19 @@ Les mesures s'entendent calculées mensuellement :
                  (GTI)                               performance
   -------------- ----------------------------------- ---------------------
   Priorité       30mn                                95%
-  **P1**                                             
+  **P1**
 
   Priorité       2h                                  90%
-  **P2**                                             
+  **P2**
 
   Priorité       4h                                  90%
-  **P3**                                             
+  **P3**
 
   Priorité       24h                                 85%
-  **P4**                                             
+  **P4**
 
   Priorité       48h                                 85%
-  **P5**                                             
+  **P5**
   ------------------------------------------------------------------------
 
 -   **SLA 9 : IC-INFRA_SNC-09** -- Voici les engagements de performance
@@ -1123,7 +1124,7 @@ Les mesures s'entendent calculées mensuellement :
                    (GTI)                              performance
   ---------------- ---------------------------------- --------------------
   Demande de       4h                                 90%
-  service                                             
+  service
 
   ------------------------------------------------------------------------
 
@@ -1150,13 +1151,13 @@ Les mesures s'entendent calculées mensuellement :
                                                              disponibilité
   ------------------- -------------------------------------- -------------------
   IC-INFRA-SNC-10.1   Durabilité du stockage d'un objet sur  99.9999999% / an
-                      une région                             
+                      une région
 
   IC-INFRA-SNC-10.2   Disponibilité de l'API Stockage Objet  99.99%
-                      S3                                     
+                      S3
 
   IC-INFRA-SNC-10.3   Latence maximale d'accès à un objet    150 ms
-                      sur une région                         
+                      sur une région
   ------------------------------------------------------------------------------
 
 Remarques :
@@ -1613,7 +1614,7 @@ Par défaut, le COMMANDITAIRE est informé :
     COMMANDITAIRE est responsable du traitement conformément à l'article
     8 de l'Annexe DPA dans le cadre du Service ;
 
--   
+-
 
 ## 11.2. Maintenance du Service
 

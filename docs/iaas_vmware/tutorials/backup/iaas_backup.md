@@ -101,8 +101,6 @@ Pour ce faire, dans la partie __'Sauvegardes'__ de votre machine, virtuelle, cli
 
 ![](images/backup_restore_iaas_002.png)
 
-Vous trouverez plus de détail dans [la documentation sur la sauvegarde](../../../iaas/backup.md).
-
 ### Comment restaurer et remplacer la machine virtuelle de production, sans conserver la machine virtuelle actuellement en production ?
 
 Choisissez le mode de restauration __'Production'__. L'option 'écraser la machine virtuelle' est par défaut.
