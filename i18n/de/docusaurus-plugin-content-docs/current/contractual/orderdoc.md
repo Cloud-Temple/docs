@@ -1,25 +1,28 @@
 ---
-title: Dokumenthierarchie der Verträge
+title: Hierarchie der Vertragsdokumente
 ---
 
 |           | Referenzen                 |
 | --------- | -------------------------- |
-| Referenz  | CT.AM.JUR.HDC 20240403_2.0 |
-| Datum     | 24. September 2024         |
+| Referenz  | CT.AM.JUR.HDC 20250502_3.0 |
+| Datum     | 5. Februar 2025            |
 
-Die Dokumenthierarchie der Verträge wird gemäß einer definierten Prioritätsreihenfolge festgelegt:
+Die Hierarchie der Vertragsdokumente ist nach einer definierten Prioritätsordnung festgelegt:
 
-1. [Allgemeine Verkaufs- und Nutzungsbedingungen (AGB)](cgvu.docx)
-2. [IaaS-Serviceverträge](iaas/sla_iaas.docx)
-3. [PaaS-Serviceverträge](paas/sla_paas.docx) (*)
-4. Spezifischer Sondervertrag (**)
-5. Sicherheitsplan (PAS) (***)
-6. Anhang: [Personenbezogene Daten](dpa.docx) (DPA)
+1. [Allgemeine Verkaufs- und Nutzungsbedingungen (AVNB)](cgvu.docx).
+2. [SecNumCloud IaaS-Dienstleistungsvereinbarung](iaas/sla_iaas.docx).
+3. [SecNumCloud OpenIaaS-Dienstleistungsvereinbarung](iaas/sla_openiaas.docx).
+4. [SecNumCloud PaaS-Dienstleistungsvereinbarung](paas/sla_paas.docx). (*)
+5. [Spezifische Dienstleistungsvereinbarung - Bare Metal](baremetal.docx).
+6. Besondere spezifische Vereinbarung (**)
+7. Sicherheitsgewährleistungsplan (SGP) (***)
+8. Besondere Nutzungsbedingungen (BNB)
+9. [Datenschutzvereinbarung](dpa.docx). (DSV)
 
-(*) Es wird angegeben, dass der vorliegende PaaS-Servicevertrag nur gültig ist, wenn der KUNDE den Vertrag über die IaaS-Dienste SecNumCloud unterzeichnet hat.
+(*) Es wird darauf hingewiesen, dass diese PaaS-Dienstleistungsvereinbarung nur gültig ist, wenn der KUNDE die Vereinbarung bezüglich der SecNumCloud IaaS-Dienste unterzeichnet hat.
 
-(**) Spezifischer Vertrag, der darauf ausgelegt ist, die Besonderheiten des Projekts zu berücksichtigen.
+(**) Spezifische Vereinbarung, die darauf ausgelegt ist, sich an die Besonderheiten des Projekts anzupassen.
 
-(***) Nicht öffentliches Dokument.
+(***) Nicht-öffentliches Dokument.
 
-_Hinweis: Die übersetzten Versionen in Englisch, Italienisch, Deutsch und Spanisch dienen ausschließlich dazu, das Verständnis des Angebots zu erleichtern._
+_Hinweis: Die ins Englische, Italienische, Deutsche und Spanische übersetzten Versionen dienen ausschließlich dem besseren Verständnis des Angebots._

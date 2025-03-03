@@ -57,7 +57,7 @@ La durata del trattamento è fissata dal Responsabile del Trattamento in base al
 3. **Portabilità dei dati** : Il Responsabile del trattamento deve garantire, se applicabile, la portabilità dei dati a carattere personale delle persone interessate, conformemente all'articolo 20 del GDPR.
 4. **Opposizione** : Le persone interessate devono poter esercitare il loro diritto di opposizione al trattamento dei loro dati personali in conformità con l'articolo 21 del GDPR.
 
-# Article 7 : Misure di sicurezza e riservatezza 
+# Article 7 : Misure di sicurezza e riservatezza
 
 L'Incaricato del Trattamento si impegna in particolare a implementare misure sufficienti per garantire la sicurezza e la riservatezza dei Dati Personali affidati e trattati nell'ambito dei Servizi, tra cui in particolare:
 
@@ -74,7 +74,8 @@ L'Incaricato del Trattamento si impegna in particolare a implementare misure suf
 In caso di violazione di dati a carattere personale, l'Incaricato del trattamento deve notificare tale violazione al Responsabile del trattamento senza indugio dopo esserne venuto a conoscenza. Tale notifica deve includere tutte le informazioni pertinenti che consentono al Responsabile del trattamento di notificare la violazione all'autorità di controllo competente e, se del caso, alle persone interessate conformemente all'articolo 33 del GDPR. La notifica deve specificare l'impatto potenziale sui dati ospitati nel cloud e le misure adottate per porvi rimedio.
 
 # Article 9 : Trasferimenti di dati fuori dall'Unione Europea
-Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
+
+Qualsiasi trasferimento di dati personali verso un paese terzo o un'organizzazione internazionale può essere effettuato solo nel rispetto delle condizioni previste dal GDPR, in particolare agli articoli da 44 a 50. Il Responsabile del trattamento deve assicurarsi che siano in atto garanzie adeguate, come le clausole contrattuali standard approvate dalla Commissione Europea o l'esistenza di una decisione di adeguatezza.
 
 # Articolo 10 : Durata e fine del trattamento
 

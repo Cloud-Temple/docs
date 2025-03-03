@@ -74,17 +74,18 @@ The Processor commits in particular to implementing sufficient measures to ensur
 In the event of a personal data breach, the Processor must notify this breach to the Data Controller without undue delay after becoming aware of it. This notification must include all relevant information enabling the Data Controller to notify the breach to the competent supervisory authority and, where applicable, to data subjects in accordance with Article 33 of the GDPR. The notification must specify the potential impact on the data hosted in the cloud and the measures taken to address it.
 
 # Article 9: Transfers of Data Outside the European Union
-Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
 
-# Article 10 : Durée et fin du traitement
+Any transfer of personal data to a third country or an international organization may only be carried out subject to compliance with the conditions provided by the GDPR, particularly in Articles 44 to 50. The Data Controller must ensure that appropriate safeguards are in place, such as standard contractual clauses approved by the European Commission or the existence of an adequacy decision.
+
+# Article 10: Duration and End of Processing
 
 At the end of the main contract, the Subprocessor commits, according to the instructions of the Data Controller, to delete all personal data or return it to the Data Controller, and to destroy existing copies unless legally obligated otherwise. This obligation also includes data stored on backup media in cloud infrastructures, unless a legal obligation mandates their retention.
 
-# Article 11 : Documentation and audits
+# Article 11: Documentation and Audits
 
 The Subprocessor will make available to the Data Controller all necessary information to demonstrate compliance with the obligations provided for by this appendix and will authorize audits, including inspections, by the Data Controller or another auditor mandated by the latter, to verify compliance with this appendix and the GDPR. The Subprocessor must also keep a record of processing activities in accordance with Article 30 of the GDPR and provide compliance reports on the cloud infrastructures used.
 
-# Article 12 : Record of Processing Activities
+# Article 12: Record of Processing Activities
 
 The Subprocessor must also keep a record of Processing Activities in accordance with Article 30 of the GDPR and provide compliance reports on the cloud infrastructures used. This record includes at least:
 - The name and contact details of the data controller and, if applicable, the joint-controller, the representative of the data controller, and the data protection officer;
@@ -96,7 +97,7 @@ The Subprocessor must also keep a record of Processing Activities in accordance 
 
 On written request from the Data Controller, the end customer, or any competent authority, the Subprocessor will have a period of 15 working days to provide a copy of the said record from the receipt of the request.
 
-# Article 13 : Subsequent subprocessors
+# Article 13: Subsequent Subprocessors
 
 The Subprocessor may employ one or more external service providers/vendors for specific services under the Contract. To this end, the Subprocessor may recruit, under its responsibility, one or more second-tier subprocessors solely to provide part of the necessary services for the managed system.
 
@@ -117,14 +118,14 @@ The list of authorized subsequent subprocessors is as follows:
 
 During the execution of the Contract, the Data Controller may, at any time, access the update of the said list from the Subprocessor.
 
-# Article 14 : Liability
+# Article 14: Liability
 
 The Data Controller and the Subprocessor acknowledge that they can be held accountable for damages caused by the processing of personal data that does not comply with the GDPR and applicable French laws. The Subprocessor is liable for damages caused by the processing if it has not complied with the GDPR obligations specifically applicable to subprocessors or if it has acted outside the legal instructions of the Data Controller or contrary to them.
 
-# Article 15 : Modifications
+# Article 15: Modifications
 
 Any modification of this appendix must be made in writing and signed by both parties. Modifications must comply with the GDPR requirements and French laws relating to personal data protection.
 
-# Article 16 : Applicable law and jurisdiction
+# Article 16: Applicable Law and Jurisdiction
 
 This appendix is governed by French law. Any dispute relating to its interpretation or execution will fall under the exclusive jurisdiction of the French courts. In case of discrepancy between the language versions of this appendix, the French version will prevail.
