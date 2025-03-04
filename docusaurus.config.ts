@@ -60,6 +60,8 @@ const config: Config = {
         // Options disponibles ici : https://github.com/gabrielcsapo/docusaurus-plugin-search-local
         indexDocs: true,
         indexPages: true,
+        highlightSearchTermsOnTargetPage: true,
+        docsRouteBasePath: '/',
       },
     ],
   ],

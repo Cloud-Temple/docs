@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* Import search highlighting styles */
+@import './search-highlighting.css';
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
@@ -155,4 +158,3 @@
 .learn-more-link:hover {
   text-decoration: underline;
 }
-
