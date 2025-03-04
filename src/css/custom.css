@@ -66,6 +66,10 @@
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 220px; /* Hauteur fixe pour toutes les cartes */
+  position: relative;
 }
 
 .card:hover {
@@ -76,14 +80,29 @@
 .card h3 {
   font-size: 1.2rem;
   color: #333;
-  margin-bottom: 10px;
+  margin: 0;
+  padding: 0;
+  height: 50px; /* Hauteur fixe pour tous les titres */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 /* Texte des cartes */
 .card p {
   font-size: 0.9rem;
   color: #666;
-  margin-bottom: 15px;
+  margin: 0;
+  padding: 0;
+  height: 80px; /* Hauteur fixe pour tous les paragraphes */
+  display: block; /* Utiliser block au lieu de flex pour un alignement naturel du texte */
+  text-align: center;
+  line-height: 1.5;
+  overflow-y: auto; /* Permet de scroller si le texte est trop long */
+  width: 100%;
+  padding-top: 10px; /* Espacement uniforme en haut pour aligner tous les textes */
 }
 
 /* Liens dans les cartes */
@@ -91,6 +110,13 @@
   color: #28a745; /* Vert pour les liens */
   text-decoration: none;
   font-weight: bold;
+  display: block;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .card-link:hover {
@@ -155,4 +181,3 @@
 .learn-more-link:hover {
   text-decoration: underline;
 }
-

@@ -1,11 +1,11 @@
 ---
-title: Exemple de fédération d'identité avec Microsoft ADFS 
+title: Ejemplo de federación de identidad con Microsoft ADFS
 tags:
   - iam
   - tutorials
   - onboarding
 ---
-Voici un exemple de configuración del repositorio de autenticación de una organización Cloud Temple con __Microsoft ADFS__.
+Aquí hay un ejemplo de configuración del repositorio de autenticación de una organización Cloud Temple con __Microsoft ADFS__.
 
 La configuración de su repositorio Microsoft a nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la consola Shiva.
 Esto permite evitar la multiplicación de factores de autenticación y reducir la superficie de ataque.
@@ -23,9 +23,9 @@ Los usuarios que deseen conectarse al portal deben tener su correo electrónico,
 
 ## Etapa 2: Solicitar la configuración del SSO (Single Sign-On) de su organización
 
-Esta parte de la configuración se realiza a nivel de la organización por el equipo Cloud Temple.  
+Esta parte de la configuración se realiza a nivel de la organización por el equipo Cloud Temple.
 
-Para hacerlo, haga __una solicitud de asistencia__ en la consola indicando su deseo de configurar su repositorio de autenticación Microsoft ADFS.  
+Para hacerlo, haga __una solicitud de asistencia__ en la consola indicando su deseo de configurar su repositorio de autenticación Microsoft ADFS.
 
 Por favor, proporcione la siguiente información en la solicitud de asistencia:
 ```
@@ -34,7 +34,7 @@ Por favor, proporcione la siguiente información en la solicitud de asistencia:
     URL pública de los Metadatos de la federación del ADFS (<nombre de dominio del adfs>/FederationMetadata/2007-06/FederationMetadata.xml)
     (Ejemplo: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
-Tan pronto como la configuración se realice en el lado de la consola Shiva, el contacto indicado será informado.
+Tan pronto como la configuración se realice del lado de la consola Shiva, se informará al contacto indicado.
 
 El equipo de soporte de Cloud Temple le proporcionará una URL que se parecerá a esta: https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
 
@@ -50,7 +50,7 @@ En su servidor ADFS, vaya a __"Agregar una confiar confiable"__.
 ![](images/sso_adfs_001.png)
 
 ### Configurar los "claims"
-Los claims permiten proporcionar información al token que se transmitirá a la consola Cloud Temple. 
+Los claims permiten proporcionar información al token que se transmitirá a la consola Cloud Temple.
 
 Transmiten la información del usuario conectado que es necesaria para el buen funcionamiento de los diferentes servicios, tales como su correo electrónico, su nombre y apellido.
 

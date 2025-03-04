@@ -46,7 +46,25 @@ docker compose up
 
 3. Access the documentation locally:
 
-Open your browser and go to: http://localhost:3000/docs/
+Open your browser and go to: <http://localhost:3000/docs/>
 
 
 🎉 Your local environment is ready!
+
+# Build and run locally in production mode
+
+To get started, follow these simple steps:
+
+1. Build the docker image:
+```bash
+docker build -t docs:v3 . -f docker/production/Dockerfile
+```
+
+2. Launch the services with Docker Compose:
+```bash
+docker run -it --rm -p 8080:80 --name docs docs:v3
+```
+
+3. Access the documentation locally (all pages and all langages should work):
+
+Open your browser and go to: <http://localhost:8080/docs/>

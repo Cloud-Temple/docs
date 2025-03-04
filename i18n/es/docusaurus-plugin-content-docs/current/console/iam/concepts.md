@@ -1,11 +1,11 @@
 ---
-title: Concepts
+title: Conceptos
 ---
 
 
-## Utilisateurs
+## Usuarios
 
-Les comptes d'accès à la consola Shiva son creados por la cuenta maestra del contratante por invitación (cualquiera que sea el repositorio de autenticación).
+Los cuentas de acceso a la consola Shiva son creadas por la cuenta maestra del contratante por invitación (cualquiera que sea el repositorio de autenticación).
 La información de identificación es global a su [Organización](#organisations).
 
 *__Nota:__ [La federación de identidad se gestiona a nivel de la organización](#organisations#mecanismes-dauthentification)*
@@ -143,9 +143,9 @@ Posteriormente, el derecho __'iam_write'__ permite a una cuenta administrar los 
 Cuando se crea un usuario, no tiene ningún permiso por defecto. Cada permiso se otorga individualmente y funciona de manera independiente, sin superposición con otros permisos. Se aplican en conjunto, lo que significa que un usuario debe tener todos los permisos requeridos para realizar una acción específica.
 
 Los siguientes permisos son configurables para cada usuario y para cada tenant de su organización:
-	•	Permisos de tipo “read”: solo permiten la consulta de los recursos sin posibilidad de modificación.
-	•	Permisos de tipo “write”: autorizan la modificación de las configuraciones.
- 	•	Permisos de tipo “management”: autorizan la gestión avanzada de los recursos.
+	•	Permisos de tipo "read": solo permiten la consulta de los recursos sin posibilidad de modificación.
+	•	Permisos de tipo "write": autorizan la modificación de las configuraciones.
+ 	•	Permisos de tipo "management": autorizan la gestión avanzada de los recursos.
 
 - __Estos son permisos, no roles.__ Como tal, es necesario tener el permiso READ y WRITE para modificar una configuración.
 
@@ -163,51 +163,50 @@ Los siguientes permisos son configurables para cada usuario y para cada tenant d
 | bastion_write                                 | Gestión de recursos (appliances, sesiones,...) de tipo Bastion                                                                 |
 | bastion_console_access                        | Autorización de acceso a la consola (ssh/rdp) de un recurso protegido por una appliance Bastion                                |
 | compute_iaas_opensource_console_access        | Oferta OpenIaaS - Apertura de la consola de una máquina virtual                                                                |
-
-| compute_iaas_opensource_infrastructure_read   | Oferta OpenIaaS - Consulta de datos avanzados de los recursos Xen Orchestra |
-| compute_iaas_opensource_infrastructure_write  | Oferta OpenIaaS - Gestión avanzada de los recursos Xen Orchestra                                                                          |
-| compute_iaas_opensource_read                  | Oferta OpenIaaS - Consulta de los recursos de tipo Máquinas Virtuales                                                        |
-| compute_iaas_opensource_management            | Oferta OpenIaaS - Gestión de los recursos de tipo Máquinas Virtuales                                                             |
-| compute_iaas_opensource_virtual_machine_power | Oferta OpenIaaS - Gestión de la alimentación de una máquina virtual                                                              |
-| compute_iaas_vmware_console_access            | Oferta Vmware - Apertura de la consola de una máquina virtual                                                                 |
+| compute_iaas_opensource_infrastructure_read   | Oferta OpenIaaS - Consulta de datos avanzados de los recursos Xen Orchestra                                                    |
+| compute_iaas_opensource_infrastructure_write  | Oferta OpenIaaS - Gestión avanzada de los recursos Xen Orchestra                                                               |
+| compute_iaas_opensource_read                  | Oferta OpenIaaS - Consulta de los recursos de tipo Máquinas Virtuales                                                          |
+| compute_iaas_opensource_management            | Oferta OpenIaaS - Gestión de los recursos de tipo Máquinas Virtuales                                                           |
+| compute_iaas_opensource_virtual_machine_power | Oferta OpenIaaS - Gestión de la alimentación de una máquina virtual                                                            |
+| compute_iaas_vmware_console_access            | Oferta Vmware - Apertura de la consola de una máquina virtual                                                                  |
 | compute_iaas_vmware_infrastructure_read       | Oferta Vmware - Consulta de datos avanzados de los recursos VMware (reglas de afinidad/anti-afinidad, configuración DRS, etc)  |
-| compute_iaas_vmware_infrastructure_write      | Oferta Vmware - Gestión avanzada de los recursos VMware                                                                           |
-| compute_iaas_vmware_read                      | Oferta Vmware - Consulta de los recursos de tipo Máquinas Virtuales                                                         |
-| compute_iaas_vmware_management                | Oferta Vmware - Gestión de los recursos de tipo Máquinas Virtuales (permite el cifrado de una máquina virtual)                                                              |
-| compute_iaas_vmware_virtual_machine_power     | Oferta Vmware - Gestión de la alimentación de una máquina virtual                                                               |
-| baremetal_read                                | Oferta Bare Metal - Consulta de los recursos de tipo Bare Metal                                                               |
-| baremetal_console_access                      | Oferta Bare Metal - Apertura de la consola de un Bare Metal                                                                  |
+| compute_iaas_vmware_infrastructure_write      | Oferta Vmware - Gestión avanzada de los recursos VMware                                                                        |
+| compute_iaas_vmware_read                      | Oferta Vmware - Consulta de los recursos de tipo Máquinas Virtuales                                                            |
+| compute_iaas_vmware_management                | Oferta Vmware - Gestión de los recursos de tipo Máquinas Virtuales (permite el cifrado de una máquina virtual)                 |
+| compute_iaas_vmware_virtual_machine_power     | Oferta Vmware - Gestión de la alimentación de una máquina virtual                                                              |
+| baremetal_read                                | Oferta Bare Metal - Consulta de los recursos de tipo Bare Metal                                                                |
+| baremetal_console_access                      | Oferta Bare Metal - Apertura de la consola de un Bare Metal                                                                    |
 | console_public_access_read                    | Consulta de las IPs autorizadas a acceder a la consola                                                                         |
 | console_public_access_write                   | Añadir IPs autorizadas a acceder a la consola                                                                                  |
 | compute_virtual_machine_power                 | Gestión de la alimentación de una máquina virtual                                                                              |
 | documentation_read                            | Consulta de los recursos de documentación de confluence                                                                        |
-| housing_read                                  | Consulta de los recursos de tipo colocation                                                                                 |
-| iam_offline_access                            | Creación y eliminación de Access Tokens Personales (PAT)                                                                        |
+| housing_read                                  | Consulta de los recursos de tipo colocation                                                                                    |
+| iam_offline_access                            | Creación y eliminación de Access Tokens Personales (PAT)                                                                       |
 | iam_read                                      | Consulta de los derechos de usuarios                                                                                           |
-| iam_write                                     | Gestión de los derechos de usuarios                                                                                                |
-| intervention_read                             | Consulta de los cambios y puestas en producción previstas en la plataforma                                                  |
-| inventory_read                                | Consulta de los recursos de tipo Inventario                                                                                 |
-| inventory_write                               | Gestión de los recursos de tipo Inventario                                                                                      |
-| monitoring_read                               | Consulta del monitoreo                                                                                                     |
+| iam_write                                     | Gestión de los derechos de usuarios                                                                                            |
+| intervention_read                             | Consulta de los cambios y puestas en producción previstas en la plataforma                                                     |
+| inventory_read                                | Consulta de los recursos de tipo Inventario                                                                                    |
+| inventory_write                               | Gestión de los recursos de tipo Inventario                                                                                     |
+| monitoring_read                               | Consulta del monitoreo                                                                                                         |
 | monitoring_write                              | Gestión del monitoreo                                                                                                          |
-| metric_read                                   | Consulta de los datos de salud en las máquinas virtuales y hosts                                                         |
-| network_read                                  | Consulta de los recursos de red                                                                                             |
-| network_write                                 | Gestión de los recursos de red                                                                                                  |
+| metric_read                                   | Consulta de los datos de salud en las máquinas virtuales y hosts                                                               |
+| network_read                                  | Consulta de los recursos de red                                                                                                |
+| network_write                                 | Gestión de los recursos de red                                                                                                 |
 | order_read                                    | Consulta de los pedidos de infraestructura                                                                                     |
-| order_write                                   | Creación de pedidos de infraestructura                                                                                            |
-| object-storage_iam_management                 | Permite gestionar las cuentas de almacenamiento en el producto S3                                                                       |
+| order_write                                   | Creación de pedidos de infraestructura                                                                                         |
+| object-storage_iam_management                 | Permite gestionar las cuentas de almacenamiento en el producto S3                                                              |
 | object-storage_read                           | Permite ver los buckets y las configuraciones de los buckets                                                                   |
-| object-storage_write                          | Permite editar los buckets y las configuraciones de los buckets                                                                  |
-| openshift_management                          | Permite conectarse a las plataformas Openshift (scopeado al tenant)                                                          |
-| support_management                            | Consulta de todos los tickets de soporte del tenant                                                                       |
+| object-storage_write                          | Permite editar los buckets y las configuraciones de los buckets                                                                |
+| openshift_management                          | Permite conectarse a las plataformas Openshift (scopeado al tenant)                                                            |
+| support_management                            | Consulta de todos los tickets de soporte del tenant                                                                            |
 | support_read                                  | Consulta de sus tickets de soporte del tenant                                                                                  |
-| support_write                                 | Creación de un ticket de soporte en el tenant                                                                                     |
-| tag_read                                      | Consulta de las etiquetas, excepto las etiquetas RTMS                                                                                   |
-| tag_write                                     | Gestión de las etiquetas, excepto las etiquetas RTMS                                                                                        |
-| ticket_comment_read                           | Consulta de los comentarios                                                                                                  |
-| ticket_comment_write                          | Gestión de los comentarios                                                                                                       |
-| ticket_read                                   | Consulta de los tickets                                                                                                       |
-| ticket_write                                  | Gestión de los tickets                                                                                                            |
+| support_write                                 | Creación de un ticket de soporte en el tenant                                                                                  |
+| tag_read                                      | Consulta de las etiquetas, excepto las etiquetas RTMS                                                                          |
+| tag_write                                     | Gestión de las etiquetas, excepto las etiquetas RTMS                                                                           |
+| ticket_comment_read                           | Consulta de los comentarios                                                                                                    |
+| ticket_comment_write                          | Gestión de los comentarios                                                                                                     |
+| ticket_read                                   | Consulta de los tickets                                                                                                        |
+| ticket_write                                  | Gestión de los tickets                                                                                                         |
 
 ## Organizaciones
 
@@ -252,7 +251,8 @@ Por ejemplo:
 - Un tenant __Preproducción__
 - Un tenant __Receta__
 - Un tenant __Calificación__
-Mais il est aussi possible d'organiser les choses avec une __vista aplicativa__ o por __criticidad__ :
+
+También es posible organizar las cosas con una __vista aplicativa__ o por __criticidad__:
 
 - Un tenant __Aplicación 1__ o __Criticidad 1__
 - Un tenant __Aplicación 2__ o __Criticidad 2__
