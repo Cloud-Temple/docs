@@ -4,7 +4,7 @@ services:
   blog:
     build: .
     ports:
-      - 3009:3000
+      - 3000:3000
     user: 1000:1000
     volumes:
       - ../../docusaurus.config.ts:/app/docusaurus.config.ts
