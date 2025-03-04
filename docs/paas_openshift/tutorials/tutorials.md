@@ -35,16 +35,16 @@ Avant de débuter votre parcours sur notre plateforme, nous vous recommandons d'
   <div class="card">
     <h3>Déployez au travers de helmfile</h3>
     <p>Découvrez comment déployer vos applications avec helmfile.</p>
-    <a href="./deploy-through-helmfile" class="card-link">Commencer &rarr;</a>
+    <a href="tutorials/deploy-through-helmfile" class="card-link">Commencer &rarr;</a>
   </div>
   <div class="card">
     <h3>Explorez la virtualisation avec Kubevirt</h3>
     <p>Découvrez kubevirt et ses fonctionnalités dans le context **Cloud Temple**.</p>
-    <a href="./deploy-vm-with-kubevirt" class="card-link">Commencer &rarr;</a>
+    <a href="tutorials/deploy-vm-with-kubevirt" class="card-link">Commencer &rarr;</a>
   </div>
   <div class="card">
     <h3>Utilisez Kasten</h3>
     <p>Découvrez Kasten et configurez les sauvegardes de vos données.</p>
-    <a href="./using-kasten" class="card-link">Commencer &rarr;</a>
+    <a href="tutorials/using-kasten" class="card-link">Commencer &rarr;</a>
   </div>
 </div>
