@@ -35,15 +35,4 @@ ADD docker/production/root /
 # Copy docusaurus static site
 COPY --from=prod /opt/docusaurus/build ${APP_FOLDER}
 
-# Run as non-root user
-RUN chown -R nginx:nginx ${APP_FOLDER} && \
-    chmod -R 755 ${APP_FOLDER} && \
-    chown -R nginx:nginx /var/cache/nginx && \
-    chown -R nginx:nginx /var/log/nginx && \
-    chown -R nginx:nginx /etc/nginx/conf.d && \
-    touch /var/run/nginx.pid && \
-    chown -R nginx:nginx /var/run/nginx.pid
-
-USER nginx
-
 CMD ["nginx", "-g", "daemon off;"]
