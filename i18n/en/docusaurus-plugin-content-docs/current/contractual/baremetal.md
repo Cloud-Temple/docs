@@ -25,11 +25,11 @@ title: Specific Service Agreement - Bare Metal
   ------------- ------------ ------------------------------------ -----------------
   v1.0          22/01/2025   Initial drafting                     Nicolas BODILIS
   ------------- ------------ ------------------------------------ -----------------
-                                                                  
 
-                                                                  
 
-                                                                  
+
+
+
   ---------------------------------------------------------------------------------
 
 # 2. TABLE OF CONTENTS
@@ -140,7 +140,7 @@ The expressions used below in this Service Agreement will be interpreted in acco
 
 -   **Change:** Any addition, modification, or deletion impacting the Service, which has been authorized, planned, or undertaken.
 
--   **Standard Change:** A change that is subject to a procedure, whose modalities of implementation and impacts (including financial) are known and accepted in advance by the Parties. It is then integrated into the catalog of standard changes and may in some cases have a GTI and a RTR.  
+-   **Standard Change:** A change that is subject to a procedure, whose modalities of implementation and impacts (including financial) are known and accepted in advance by the Parties. It is then integrated into the catalog of standard changes and may in some cases have a GTI and a RTR.
 
 -   **Contract:** refers to the contract entered into by the CLIENT with the Provider to allow the CLIENT to benefit from the Service, to which this Service Agreement is attached.
 
@@ -181,7 +181,7 @@ The expressions used below in this Service Agreement will be interpreted in acco
 -   **Tenant:** An isolated instance reserved for a user or group of users, sharing a common infrastructure while maintaining data and application independence and security.
 
 -   **Availability Zone (AZ):** A specific and isolated section of the cloud computing infrastructure, designed to ensure high availability and resilience of services through geographical resource distribution.
- 
+
 # 4. Acronyms
 
   --------------------------------------------------------------------------------------------------------
@@ -408,21 +408,21 @@ For the implementation of the Service, the SPONSOR recognizes that they will nee
 ## 7.5 Service Location in France
 
 It is specified that none of the operations and none of the physical components involved in providing the Service, which this Service Agreement covers, are located outside the European Union.
-Cela inclut notamment le support, la supervision opérationnelle et la supervision de sécurité (SOC) de l'infrastructure technique délivrant le Service. De fait, tout le stockage, toutes les tâches d'administration, de supervision et tous les traitements sont réalisés en France.
+This includes, in particular, support, operational monitoring, and security monitoring (SOC) of the technical infrastructure delivering the Service. In fact, all storage, all administration tasks, supervision, and all processing are carried out in France.
 
-### 7.5.1. Localisation des Datacenters hébergeant le Service
+### 7.5.1. Datacenter Locations Hosting the Service
 
-A défaut des opérations des collaborateurs et des agences du Prestataire, l'ensemble des opérations de production (comprenant le stockage et le traitement des données) et composants techniques délivrant le Service sont situés dans les Datacenters basés en France.
+Apart from the operations of the Provider's employees and agencies, all production operations (including data storage and processing) and technical components delivering the Service are located in datacenters based in France.
 
-### 7.5.2. Localisation des agences Cloud Temple opérant le service
+### 7.5.2. Cloud Temple Agency Locations Operating the Service
 
-Les collaborateurs de Cloud Temple intervenant sur le périmètre du Service opèrent depuis les agences de Cloud Temple toutes situées exclusivement en France. Ces agences sont situées en France, à Tours, Lyon, Caen et Paris La Défense.
+Cloud Temple employees working on the Service perimeter operate from Cloud Temple agencies all located exclusively in France. These agencies are located in France, in Tours, Lyon, Caen, and Paris La Défense.
 
 The CLIENT is informed of the possibility for Cloud Temple employees to work remotely. However, the Provider guarantees the same level of security regarding remote access, particularly regarding VPN access. These remote accesses are implemented in accordance with the requirements of the SecNumCloud reference framework.
 
 ## 7.6. Support
 
-### 7.6.1. Nature du support accompagnant le service
+### 7.6.1. Nature of Support Accompanying the Service
 
 The Provider provides technical support services aimed at assisting the CLIENT in managing, troubleshooting, and optimizing their deployed resources. This service covers a wide range of activities, from initial service configuration assistance to advanced technical support for resolving specific issues.
 
@@ -439,7 +439,7 @@ The CLIENT agrees to use the technical support service in a reasonable manner, r
 
 The support engagement level is conditioned on the subscription of the associated support work units.
 
-### 7.6.2. Sollicitation du service support technique
+### 7.6.2. Technical Support Service Request
 
 Technical support is accessible through a ticketing system via the CLIENT console and is available during regular office hours, excluding public holidays (8 AM - 6 PM; Monday — Friday; French calendar and hours). For emergencies occurring outside of business hours, particularly incidents significantly affecting production, the on-call service can be reached via a number provided to the CLIENT at the Service initialization.
 
@@ -449,7 +449,7 @@ As soon as the Provider receives a request or Incident notification, either thro
 
 The CLIENT then receives a confirmation email, indicating the ticket's creation and its unique number. The CLIENT can consult the status and history of their requests and Incident reports directly from the management console.
 
-### 7.6.3. Processus de gestion des Incidents
+### 7.6.3. Incident Management Process
 
 When reporting an Incident, the Provider's technical support team begins an investigation to identify the cause of the problem and establish a diagnosis. The CLIENT must actively collaborate with the Provider by providing all necessary information and performing the required tests. The Provider may access the CLIENT's Service to diagnose the Incident.
 
@@ -457,7 +457,7 @@ If the Provider's Services are deemed functional and the Incident is not attribu
 
 If the Incident is the responsibility of the Provider or one of its subcontractors, the Provider completes the diagnosis and works to restore the Service at no additional cost. The diagnosis relies on exchanges between the Parties and the Provider's data, these elements being considered as evidence by agreement of the Parties.
 
-### 7.6.4. Processus de priorisation des traitements
+### 7.6.4. Incident Handling Prioritization Process
 
 The determination of the priority level of a case is based on a matrix analysis evaluating the Incident's impact and its degree of criticality:
 
@@ -499,13 +499,13 @@ The determination of the priority level of a case is based on a matrix analysis 
 
 The service level commitments corresponding to each priority level are detailed in the following chapter.
 
-### 7.6.5. Langue et localisation du service de support
+### 7.6.5. Language and Location of Support Service
 
 Support is provided by the Provider to the CLIENT at a minimum in the French language. Support can also be provided in English.
 
 The Provider's support service operations for the Bare Metal service offer being qualified for SecNumCloud are located in the European Union.
 
-# 8. Engagements et niveaux de services
+# 8. Service Commitments and Levels
 
 The Provider is committed to ensuring continuous monitoring of the performance and security integrity of its technical infrastructure delivering the Service, ensuring their optimal functioning.
 
@@ -513,8 +513,8 @@ The unavailability of a service, subject to a performance indicator, is recogniz
 
 The end of the unavailability is officially marked by the complete restoration of the service, confirmed either by the Provider's monitoring tools or by user feedback, ensuring an effective resumption of operations and an accurate measurement of the interruption duration.
 
-## 8.1. Engagements de disponibilité de l'infrastructure
-Le Service Provider commits to maintaining an availability and performance level in accordance with the standards defined for each specified period. The Service Level Agreements (SLAs) apply provided that the CLIENT deploys its systems across at least two of the Availability Zones present in the relevant Region.
+## 8.1. Infrastructure Availability Commitments
+The Service Provider commits to maintaining an availability and performance level in accordance with the standards defined for each specified period. The Service Level Agreements (SLAs) apply provided that the CLIENT deploys its systems across at least two of the Availability Zones present in the relevant Region.
 
 In the absence of compliance with these conditions by the CLIENT, it will be unable to claim the application of the concerned SLAs, which are specifically identified by an asterisk (\*). Accessibility to the SLAs is made available via the CLIENT interface. The measurements are calculated monthly:
 
@@ -725,9 +725,10 @@ Any change to the Service Agreement is subject to the SPONSOR's acceptance. It i
 ## 10.3. Reversibility
 
 Cloud Temple commits to allowing a revision of this Service Agreement (including its termination) without penalty for the SPONSOR in case of loss of SecNumCloud qualification.
-Les Services ne comprennent pas d'obligation de réversibilité (à savoir, l'aide au COMMANDITAIRE pour qu'il puisse migrer son système vers un autre Prestataire) à l'exception de la mise à disposition du COMMANDITAIRE par le Prestataire de l'interface COMMANDITAIRE permettant au COMMANDITAIRE de sauvegarder et récupérer ses données y compris notamment les données de configuration de leur système d'information via l'une des modalités techniques suivantes au choix du COMMANDITAIRE : la mise à disposition de fichiers suivant un ou plusieurs formats documentés et exploitables en dehors du service fourni par le Prestataire ou bien via la mise en place d'interfaces techniques permettant l'accès aux données suivant un schéma documenté et exploitable (API).
 
-Le COMMANDITAIRE, seul maître de son système, doit tout mettre en œuvre pour faciliter cette opération en tant que de besoin (ce qui implique, notamment, qu'il mette en place une documentation rigoureuse à cet effet) et l'élaboration de plans de réversibilité. Dans le cas où le COMMANDITAIRE aurait besoin d'une prestation complémentaire, le Prestataire peut proposer une mission de conseil à cet égard dans le cadre d'un contrat spécifique à négocier.
+The Services do not include a reversibility obligation (i.e., assistance to the SPONSOR to migrate their system to another Provider) with the exception of the SPONSOR interface made available by the Provider to the SPONSOR, allowing the SPONSOR to save and retrieve their data, including in particular the configuration data of their information system, via one of the following technical methods at the SPONSOR's choice: the provision of files following one or more documented and exploitable formats outside the service provided by the Provider, or via the implementation of technical interfaces allowing access to data following a documented and exploitable schema (API).
+
+The SPONSOR, as the sole master of their system, must make every effort to facilitate this operation as needed (which implies, in particular, that they establish rigorous documentation for this purpose) and the development of reversibility plans. In the event that the SPONSOR would need an additional service, the Provider may propose a consulting mission in this regard within the framework of a specific contract to be negotiated.
 
 # 11. Availability, continuity, and service restoration
 

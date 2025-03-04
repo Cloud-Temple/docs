@@ -1,67 +1,67 @@
 ---
-title: Documentation API
+title: Documentación API
 ---
 
 
-## Clés API
+## Claves API
 
-La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
-est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
+La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también llamada __Personal Access Token (PAT)__,
+es una forma segura de conectarse a las API de Shiva sin pasar por una interfaz gráfica. Cada uno de estos tokens está vinculado a un tenant y al usuario que lo creó.
 
-La création de ce token se fait depuis votre compte. Il est possible de générer plusieurs clés et de configurer pour chacune les autorisations dans la limite de vos droits.
+La creación de este token se realiza desde su cuenta. Es posible generar varias claves y configurar para cada una los permisos dentro del límite de sus derechos.
 
-Pour créer une clef API, il suffit de __cliquer sur votre profil__ :
+Para crear una clave API, simplemente __haga clic en su perfil__ :
 
 ![](images/shiva_profil_001.png)
 
-Dans le menu du profil, cliquer sur __'Jeton d'accès personnel'__
+En el menú del perfil, haga clic en __'Token de acceso personal'__
 
 ![](images/shiva_profil_003.png)
 
-Vous avez alors à l'écran l'ensemble des clés API qui ont été créées pour cet utilisateur dans ce tenant. Cliquer sur __'Nuevo access token personal'__
+Entonces verá en la pantalla todas las claves API que se han creado para este usuario en este tenant. Haga clic en __'Nuevo token de acceso personal'__
 
 ![](images/shiva_profil_002.png)
 
-Vous devez alors :
+Entonces debe:
 
-- Indiquer le nom de ce nuevo jeton,
-- Indiquer une fecha de caducidad (máximo 12 meses de validez),
-- Elegir los permisos asociados al jeton.
+- Indicar el nombre de este nuevo token,
+- Indicar una fecha de caducidad (máximo 12 meses de validez),
+- Elegir los permisos asociados al token.
 
-Les détails concernant votre jeton sont alors affichés. __Attention, il n'est plus possible d'y accéder a posteriori.__
+Los detalles de su token se muestran entonces. __Atención, ya no será posible acceder a ellos posteriormente.__
 
-Si vous ne notez pas ces informations, vous devrez détruire et recréer le jeton.
+Si no anota esta información, deberá destruir y recrear el token.
 
 ![](images/shiva_profil_004.png)
 
-Pour una cuestión de seguridad, il est recommandé de créer plusieurs tokens ayant chacun une utilité spécifique (un token pour chaque aplicación ou chaque proceso empresarial) plutôt que de créer 1 token con todos los derechos.
+Por una cuestión de seguridad, se recomienda crear varios tokens, cada uno con un uso específico (un token para cada aplicación o cada proceso empresarial) en lugar de crear 1 token con todos los derechos.
 
-Vous voyez ensuite le nuevo jeton créé et sa future fecha de caducidad.
+Luego verá el nuevo token creado y su futura fecha de caducidad.
 
 ![](images/shiva_profil_005.png)
 
 ## Acceso al portal API
 
-La documentation OpenAPI 3.0 (Swagger) des APIs de la consola Cloud Temple est disponible directement dans l'application :
+La documentación OpenAPI 3.0 (Swagger) de las API de la consola Cloud Temple está disponible directamente en la aplicación:
 
 ![](images/shiva_api_001.png)
 
-L'accès aux APIs nécessite d'être authentifié. Une fois authentifié todas las operaciones doivent avoir el encabezado
-__'Authorization'__ con el bearer access token obtenu lors de la phase d'authentification.
+El acceso a las API requiere estar autenticado. Una vez autenticado, todas las operaciones deben tener el encabezado
+__'Authorization'__ con el bearer access token obtenido durante la fase de autenticación.
 
-L'URL des points d'accès est directement donnée dans __Swagger__ (dans l'objet "Servers" de chaque page APIs).
+La URL de los puntos de acceso se proporciona directamente en __Swagger__ (en el objeto "Servers" de cada página de API).
 
-## Les activités
+## Las actividades
 
-Le suivi des requêtes de type écriture (POST, PUT, PATCH, DELETE) est assuré via la gestion des activités. Chaque requête de ce type génère automatiquement une activité associée. Un code de statut HTTP 201 confirme la création réussie de l'activité. L'identifiant unique de cette activité est renvoyé dans les en-têtes de la réponse, sous la clé 'Location'.
+El seguimiento de las solicitudes de tipo escritura (POST, PUT, PATCH, DELETE) se asegura mediante la gestión de actividades. Cada solicitud de este tipo genera automáticamente una actividad asociada. Un código de estado HTTP 201 confirma la creación exitosa de la actividad. El identificador único de esta actividad se devuelve en los encabezados de la respuesta, bajo la clave 'Location'.
 
 ![](images/shiva_api_002.png)
 
-Une fois l'identifiant récupéré, il est possible d'accéder aux détails de l'activité en utilisant l'API du module Activity :
+Una vez recuperado el identificador, es posible acceder a los detalles de la actividad utilizando la API del módulo Activity:
 
 ![](images/shiva_api_003.png)
 
-Le contenu de l'activité inclut todas las informations essentielles pour identifier l'opération, sa fecha de ejecución, ainsi que son estado d'avancement. Voici le modèle d'une actividad :
+El contenido de la actividad incluye todas las informaciones esenciales para identificar la operación, su fecha de ejecución, así como su estado de avance. Aquí está el modelo de una actividad:
 
 ```
     {
@@ -83,13 +83,13 @@ Le contenu de l'activité inclut todas las informations essentielles pour identi
 }
 ```
 
-L'objet **state** peut prendre différentes formes selon l'état de l'activité, à savoir :
+El objeto **state** puede tomar diferentes formas según el estado de la actividad, a saber:
 
-**waiting**, estado avant que l'opération n'ait commencé :
+**waiting**, estado antes de que la operación haya comenzado:
 ```
     waiting: {}
 ```
-**running**, estado lorsque l'opération est en cours :
+**running**, estado cuando la operación está en curso:
 ```
     running: {
     status: string;
@@ -97,7 +97,7 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     progression: number;
     };
 ```
-**failed**, estado si l'opération a échoué :
+**failed**, estado si la operación ha fallado:
 ```
     failed: {
     startDate: Date;
@@ -105,7 +105,7 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     reason: string;
     };
 ```
-**completed**, estado si l'opération est terminée :
+**completed**, estado si la operación ha terminado:
 ```
     completed: {
     startDate: Date;
@@ -114,33 +114,33 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     };
 ```
 
-**Nota: l'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.**
+**Nota: el Identificador (UUIDv4) del recurso creado está disponible en el resultado de la actividad una vez que ésta se ha completado.**
 
 ## Límites API
 
 ### ¿Por qué límites?
 
-La consola Cloud Temple définit __des plafonds sur le volume de requêtes__ qu'un usuario puede adresser
-à l'API sur una durée déterminée. L'instauration de ces plafonds de fréquence est una mesure courante dans la gestión des API, adoptée pour plusieurs motifs essentiels :
+La consola Cloud Temple define __límites en el volumen de solicitudes__ que un usuario puede dirigir
+a la API en un período determinado. El establecimiento de estos límites de frecuencia es una medida común en la gestión de API, adoptada por varios motivos esenciales:
 
-- **Prevenir abusos** : Ces limites contribuent à la sauvegarde de l'intégrité de l'API en prévenant los usos
-abusifs ou maladroits susceptibles de compromettre son fonctionnement.
-- **Asegurar la calidad de servicio** : En régulant l'acceso à l'API, nous veillons à una distribution équitable
-des ressources, permettant ainsi à todos les utilisateurs de bénéficier d'une expérience stable et performante.
+- **Prevenir abusos**: Estos límites contribuyen a salvaguardar la integridad de la API previniendo los usos
+abusivos o inadecuados susceptibles de comprometer su funcionamiento.
+- **Asegurar la calidad de servicio**: Al regular el acceso a la API, nos aseguramos de una distribución equitativa
+de los recursos, permitiendo así a todos los usuarios beneficiarse de una experiencia estable y de alto rendimiento.
 
-Prenons l'exemple d'un script mal conçu ou ineficaz qui tente des appels répétitifs à l'API,
-risquant de saturar les ressources et de dégrader les performances. En établissant des seuils de requêtes,
-nous prévenons ces situations et assurons le maintien d'__un service fluide et sans interruption__ pour l'ensemble de notre clientèle.
+Tomemos el ejemplo de un script mal diseñado o ineficaz que intenta hacer llamadas repetitivas a la API,
+arriesgándose a saturar los recursos y degradar el rendimiento. Al establecer umbrales de solicitudes,
+prevenimos estas situaciones y aseguramos el mantenimiento de __un servicio fluido y sin interrupciones__ para todos nuestros clientes.
 
-### ¿Cuáles son los límites de tasa para el API de la consola Cloud Temple?
+### ¿Cuáles son los límites de tasa para la API de la consola Cloud Temple?
 
-Nous appliquons des restrictions quantitatives sur les interactions des utilisateurs avec la consola
-pour chaque produit.
+Aplicamos restricciones cuantitativas en las interacciones de los usuarios con la consola
+para cada producto.
 
-Les limites sont définies en __requêtes par secondes (r/s) et par IP source__. Au-delà du seuil limite, le système répondra
-par un code d'erreur HTTP 429, signalant que la limite de requêtes autorisées a été dépassée.
+Los límites se definen en __solicitudes por segundo (r/s) y por IP de origen__. Más allá del umbral límite, el sistema responderá
+con un código de error HTTP 429, señalando que se ha superado el límite de solicitudes autorizadas.
 
-Voici los límites définis :
+Aquí están los límites definidos:
 
 | Producto               | Umbral límite |
 |----------------------|--------------|
@@ -156,10 +156,10 @@ Voici los límites définis :
 
 ### ¿Cómo funcionan los límites de tasa?
 
-Si el número de requêtes envoyées à un point d'API excède la limite autorisée, le point d'API réagira en retournant
-__un code de réponse HTTP 429__. Ce code indique que l'utilisateur a dépassé le nombre de requêtes permises.
+Si el número de solicitudes enviadas a un punto de API excede el límite autorizado, el punto de API reaccionará devolviendo
+__un código de respuesta HTTP 429__. Este código indica que el usuario ha superado el número de solicitudes permitidas.
 Cuando esto se produce, el punto de API también proporcionará un objeto JSON como respuesta,
-el cual contendrá información detallada sobre la limitación appliquée :
+el cual contendrá información detallada sobre la limitación aplicada:
 ```
     {
         "error": {
@@ -170,37 +170,37 @@ el cual contendrá información detallada sobre la limitación appliquée :
 ```
 ### ¿Cómo evitar realizar demasiadas solicitudes?
 
-Il est recommandé de limiter le nombre d'appels d'API efectuados por votre automatización afin de rester en deçà
-de la limite de taux fixée pour el terminal.
+Se recomienda limitar el número de llamadas a la API efectuadas por su automatización para mantenerse por debajo
+del límite de tasa fijado para el terminal.
 
-Esta situación survient souvent lorsque plusieurs requêtes son ejecutadas en paralelo,
-à l'aide de plusieurs procesos ou threads.
+Esta situación ocurre a menudo cuando varias solicitudes son ejecutadas en paralelo,
+utilizando múltiples procesos o hilos.
 
-Existen varias formas de mejorar la eficiencia de su automatización, en particulier mediante el uso de mecanismos
-de __cache__ y implementando __un sistema de reintento con atenuación progresiva__. Esta metodología consiste
+Existen varias formas de mejorar la eficiencia de su automatización, en particular mediante el uso de mecanismos
+de __cache__ e implementando __un sistema de reintento con atenuación progresiva__. Esta metodología consiste
 en realizar una breve pausa cuando se encuentra un error de límite de tasa, y luego volver a intentar la solicitud.
 Si la solicitud falla nuevamente, la duración de la pausa se incrementa progresivamente hasta que la solicitud tenga éxito
 o hasta que se alcance un número máximo de reintentos.
 
-Este enfoque tiene muchos benefícios :
+Este enfoque tiene muchos beneficios:
 
 - __La atenuación progresiva__ garantiza que los primeros intentos se realicen rápidamente, mientras se prevén demoras más largas en caso de fallos repetidos.
 - La adición de __una variación aleatoria__ a la pausa ayuda a evitar que todos los intentos se realicen simultáneamente.
 
 Es importante señalar que __las solicitudes fallidas no afectan su límite de tasa__.
 Sin embargo, reciclar continuamente una solicitud podría no ser una solución viable a largo plazo,
-car ce comportement pourrait être modifié à l'avenir. Nous vous recommandons donc de ne pas dépendre exclusivement de ce mécanisme.
+ya que este comportamiento podría modificarse en el futuro. Por lo tanto, le recomendamos no depender exclusivamente de este mecanismo.
 
-Las bibliotecas __[Backoff](https://pypi.org/project/backoff/)__ et __[Tenacity](https://pypi.org/project/tenacity/)__ en Python
+Las bibliotecas __[Backoff](https://pypi.org/project/backoff/)__ y __[Tenacity](https://pypi.org/project/tenacity/)__ en Python
 son buenos puntos de partida para implementar estrategias de atenuación.
 
 ## Ciclo de vida de un endpoint API
 
-Les informations d'évolution des endpoint de l'API est disponible dans les notes de mises à jour :
+La información sobre la evolución de los endpoints de la API está disponible en las notas de actualización:
 
 ![](images/shiva_api_004.jpg)
 
-Vous trouverez la liste des endpoints qui sont dépréciés actividad par actividad.
+Encontrará la lista de endpoints que están obsoletos actividad por actividad.
 
-Par ailleurs, les endpoints qui sont dépréciés apparaitrons de telle manière sur nos API :
-__~~this/is/an/endpoint~~__ ainsi qu'une fecha de suppressión définitive en description.
+Además, los endpoints que están obsoletos aparecerán de esta manera en nuestras API:
+__~~this/is/an/endpoint~~__ así como una fecha de eliminación definitiva en la descripción.

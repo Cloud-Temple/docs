@@ -184,8 +184,7 @@ $ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 
 The Extra Config provides a flexible way to include key=value pairs in a virtual machine's configuration. The keys and values are interpreted by the system when the virtual machine is deployed.
 
-
-Désormais, vous pouvez, vous même, modifier les propriétés de type __Extra Config__ dans les options avancées d'une machine virtuelle :
+Now, you can modify __Extra Config__ properties yourself in the advanced options of a virtual machine:
 
 ![](images/shiva_vm_adv_001.png)
 
@@ -355,9 +354,10 @@ To assign a new backup policy to the virtual machine, click on the __'Add Policy
 ### Assign a Backup Policy to a Virtual Disk
 
 It is also possible to assign an SLA directly to a specific virtual disk of a machine. In this case, the virtual machine does not inherit the SLA applied individually to the disk. However, it is not possible to manually trigger the backup execution at the disk level, as this functionality is not supported in Spectrum Protect Plus.
-En revanche, il est possible d'exclure certains disques d'une ou plusieurs politiques de sauvegarde (SLA) de la VM, ce qui permet de désassigner une ou plusieurs SLA(s) sur une base disque par disque. Cette approche offre la flexibilité de lancer manuellement l'exécution de la sauvegarde d'une SLA sans affecter tous les disques de la machine virtuelle, permettant ainsi une gestion plus fine des sauvegardes.
 
-Cliquez sur la barre d'actions du disque auquel vous souhaitez assigner une politique de sauvegarde. Puis, cliquez sur __'Policies'__ et sélectionnez la politique de sauvegarde souhaitée.
+However, it is possible to exclude certain disks from one or more backup policies (SLAs) of the VM, which allows for unassigning one or more SLA(s) on a disk-by-disk basis. This approach offers the flexibility to manually trigger the execution of an SLA backup without affecting all disks of the virtual machine, thus allowing for more fine-grained backup management.
+
+Click on the action bar of the disk to which you want to assign a backup policy. Then, click on __'Policies'__ and select the desired backup policy.
 
 ![](images/shiva_vm_disques_virtuels_politiques.png)
 

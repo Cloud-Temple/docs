@@ -6,11 +6,11 @@ tags:
 ---
 
 
-# Bienvenue sur l'espace documentation
+# Bienvenido al espacio de documentación
 
-Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été conçu pour vous accompagner dans la gestion de vos services Cloud Temple via notre **Console Cloud Temple**, également connue sous le nom de **Shiva**.
+Bienvenido al espacio de documentación de **Cloud Temple**! Este espacio ha sido diseñado para acompañarte en la gestión de tus servicios Cloud Temple a través de nuestra **Consola Cloud Temple**, también conocida como **Shiva**.
 
-## Premiers pas
+## Primeros pasos
 
 <div class="card-grid">
   <div class="card">

@@ -163,51 +163,50 @@ Letztes Update am: 23/01/2025
 | bastion_write                                 | Verwaltung von Ressourcen (Appliances, Sitzungen,...) der Art Bastion                                                         |
 | bastion_console_access                        | Erlauben des Zugangs zur Konsole (ssh/rdp) einer durch eine Bastion-Appliance geschützten Ressource                           |
 | compute_iaas_opensource_console_access        | OpenIaaS-Angebot - Öffnen der Konsole einer virtuellen Maschine                                                               |
-
-| compute_iaas_opensource_infrastructure_read   | OpenIaaS Angebot - Erweiterte Datenansicht der Xen Orchestra-Ressourcen |
-| compute_iaas_opensource_infrastructure_write  | OpenIaaS Angebot - Erweiterte Verwaltung der Xen Orchestra-Ressourcen                                                                          |
-| compute_iaas_opensource_read                  | OpenIaaS Angebot - Ressourcenansicht von virtuellen Maschinen                                                         |
-| compute_iaas_opensource_management            | OpenIaaS Angebot - Verwaltung der Ressourcen von virtuellen Maschinen                                                             |
-| compute_iaas_opensource_virtual_machine_power | OpenIaaS Angebot - Verwaltung der Stromversorgung einer virtuellen Maschine                                                              |
-| compute_iaas_vmware_console_access            | Vmware Angebot - Öffnung der Konsole einer virtuellen Maschine                                                                 |
-| compute_iaas_vmware_infrastructure_read       | Vmware Angebot - Erweiterte Datenansicht der VMware-Ressourcen (Affinity-/Anti-Affinity-Regeln, DRS-Konfiguration, usw.)  |
-| compute_iaas_vmware_infrastructure_write      | Vmware Angebot - Erweiterte Verwaltung der VMware-Ressourcen                                                                           |
-| compute_iaas_vmware_read                      | Vmware Angebot - Ressourcenansicht von virtuellen Maschinen                                                         |
-| compute_iaas_vmware_management                | Vmware Angebot - Verwaltung der Ressourcen von virtuellen Maschinen (ermöglicht die Verschlüsselung einer virtuellen Maschine)                                                              |
-| compute_iaas_vmware_virtual_machine_power     | Vmware Angebot - Verwaltung der Stromversorgung einer virtuellen Maschine                                                               |
-| baremetal_read                                | Bare Metal Angebot - Ressourcenansicht von Bare Metal                                                               |
-| baremetal_console_access                      | Bare Metal Angebot - Öffnung der Konsole eines Bare Metal                                                                  |
-| console_public_access_read                    | Ansicht der IPs, die Zugriff auf die Konsole haben                                                                         |
-| console_public_access_write                   | Hinzufügen von IPs, die Zugriff auf die Konsole haben                                                                                  |
-| compute_virtual_machine_power                 | Verwaltung der Stromversorgung einer virtuellen Maschine                                                                              |
-| documentation_read                            | Ansicht der Confluence-Dokumentationsressourcen                                                                        |
-| housing_read                                  | Ressourcenansicht von Kollokation                                                                                 |
-| iam_offline_access                            | Erstellung und Löschung von Personal Access Tokens (PAT)                                                                        |
-| iam_read                                      | Ansicht der Benutzerberechtigungen                                                                                           |
-| iam_write                                     | Verwaltung der Benutzerberechtigungen                                                                                                |
-| intervention_read                             | Ansicht der geplanten Änderungen und Produktionsbereitstellungen auf der Plattform                                                  |
-| inventory_read                                | Ressourcenansicht von Inventar                                                                                 |
-| inventory_write                               | Verwaltung der Inventarressourcen                                                                                      |
-| monitoring_read                               | Ansicht des Monitorings                                                                                                     |
-| monitoring_write                              | Verwaltung des Monitorings                                                                                                          |
-| metric_read                                   | Ansicht der Gesundheitsdaten von virtuellen Maschinen und Hosts                                                         |
-| network_read                                  | Ressourcenansicht von Netzwerk                                                                                             |
-| network_write                                 | Verwaltung der Netzwerkressourcen                                                                                                  |
-| order_read                                    | Ansicht der Infrastruktur-Bestellungen                                                                                     |
-| order_write                                   | Erstellung von Infrastruktur-Bestellungen                                                                                            |
-| object-storage_iam_management                 | Verwaltung der Speicherkonten auf dem S3-Produkt                                                                       |
-| object-storage_read                           | Ansicht der Buckets und Bucket-Konfigurationen                                                                   |
-| object-storage_write                          | Bearbeiten der Buckets und Bucket-Konfigurationen                                                                  |
-| openshift_management                          | Verbindung zu Openshift-Plattformen (Mandant bezogen)                                                          |
-| support_management                            | Ansicht aller Support-Tickets des Mandanten                                                                       |
-| support_read                                  | Ansicht der eigenen Support-Tickets des Mandanten                                                                                  |
-| support_write                                 | Erstellung eines Support-Tickets auf dem Mandanten                                                                                     |
-| tag_read                                      | Ansicht der Tags, ausgenommen RTMS-Tags                                                                                   |
-| tag_write                                     | Verwaltung der Tags, ausgenommen RTMS-Tags                                                                                        |
-| ticket_comment_read                           | Ansicht der Kommentare                                                                                                  |
-| ticket_comment_write                          | Verwaltung der Kommentare                                                                                                       |
-| ticket_read                                   | Ansicht der Tickets                                                                                                       |
-| ticket_write                                  | Verwaltung der Tickets                                                                                                            |
+| compute_iaas_opensource_infrastructure_read   | OpenIaaS Angebot - Erweiterte Datenansicht der Xen Orchestra-Ressourcen                                                       |
+| compute_iaas_opensource_infrastructure_write  | OpenIaaS Angebot - Erweiterte Verwaltung der Xen Orchestra-Ressourcen                                                         |
+| compute_iaas_opensource_read                  | OpenIaaS Angebot - Ressourcenansicht von virtuellen Maschinen                                                                 |
+| compute_iaas_opensource_management            | OpenIaaS Angebot - Verwaltung der Ressourcen von virtuellen Maschinen                                                         |
+| compute_iaas_opensource_virtual_machine_power | OpenIaaS Angebot - Verwaltung der Stromversorgung einer virtuellen Maschine                                                   |
+| compute_iaas_vmware_console_access            | Vmware Angebot - Öffnung der Konsole einer virtuellen Maschine                                                                |
+| compute_iaas_vmware_infrastructure_read       | Vmware Angebot - Erweiterte Datenansicht der VMware-Ressourcen (Affinity-/Anti-Affinity-Regeln, DRS-Konfiguration, usw.)     |
+| compute_iaas_vmware_infrastructure_write      | Vmware Angebot - Erweiterte Verwaltung der VMware-Ressourcen                                                                  |
+| compute_iaas_vmware_read                      | Vmware Angebot - Ressourcenansicht von virtuellen Maschinen                                                                   |
+| compute_iaas_vmware_management                | Vmware Angebot - Verwaltung der Ressourcen von virtuellen Maschinen (ermöglicht die Verschlüsselung einer virtuellen Maschine)|
+| compute_iaas_vmware_virtual_machine_power     | Vmware Angebot - Verwaltung der Stromversorgung einer virtuellen Maschine                                                     |
+| baremetal_read                                | Bare Metal Angebot - Ressourcenansicht von Bare Metal                                                                         |
+| baremetal_console_access                      | Bare Metal Angebot - Öffnung der Konsole eines Bare Metal                                                                     |
+| console_public_access_read                    | Ansicht der IPs, die Zugriff auf die Konsole haben                                                                            |
+| console_public_access_write                   | Hinzufügen von IPs, die Zugriff auf die Konsole haben                                                                         |
+| compute_virtual_machine_power                 | Verwaltung der Stromversorgung einer virtuellen Maschine                                                                      |
+| documentation_read                            | Ansicht der Confluence-Dokumentationsressourcen                                                                               |
+| housing_read                                  | Ressourcenansicht von Kollokation                                                                                             |
+| iam_offline_access                            | Erstellung und Löschung von Personal Access Tokens (PAT)                                                                      |
+| iam_read                                      | Ansicht der Benutzerberechtigungen                                                                                            |
+| iam_write                                     | Verwaltung der Benutzerberechtigungen                                                                                         |
+| intervention_read                             | Ansicht der geplanten Änderungen und Produktionsbereitstellungen auf der Plattform                                            |
+| inventory_read                                | Ressourcenansicht von Inventar                                                                                                |
+| inventory_write                               | Verwaltung der Inventarressourcen                                                                                             |
+| monitoring_read                               | Ansicht des Monitorings                                                                                                       |
+| monitoring_write                              | Verwaltung des Monitorings                                                                                                    |
+| metric_read                                   | Ansicht der Gesundheitsdaten von virtuellen Maschinen und Hosts                                                               |
+| network_read                                  | Ressourcenansicht von Netzwerk                                                                                                |
+| network_write                                 | Verwaltung der Netzwerkressourcen                                                                                             |
+| order_read                                    | Ansicht der Infrastruktur-Bestellungen                                                                                        |
+| order_write                                   | Erstellung von Infrastruktur-Bestellungen                                                                                     |
+| object-storage_iam_management                 | Verwaltung der Speicherkonten auf dem S3-Produkt                                                                              |
+| object-storage_read                           | Ansicht der Buckets und Bucket-Konfigurationen                                                                                |
+| object-storage_write                          | Bearbeiten der Buckets und Bucket-Konfigurationen                                                                             |
+| openshift_management                          | Verbindung zu Openshift-Plattformen (Mandant bezogen)                                                                         |
+| support_management                            | Ansicht aller Support-Tickets des Mandanten                                                                                   |
+| support_read                                  | Ansicht der eigenen Support-Tickets des Mandanten                                                                             |
+| support_write                                 | Erstellung eines Support-Tickets auf dem Mandanten                                                                            |
+| tag_read                                      | Ansicht der Tags, ausgenommen RTMS-Tags                                                                                       |
+| tag_write                                     | Verwaltung der Tags, ausgenommen RTMS-Tags                                                                                    |
+| ticket_comment_read                           | Ansicht der Kommentare                                                                                                        |
+| ticket_comment_write                          | Verwaltung der Kommentare                                                                                                     |
+| ticket_read                                   | Ansicht der Tickets                                                                                                           |
+| ticket_write                                  | Verwaltung der Tickets                                                                                                        |
 
 ## Organisationen
 
@@ -252,30 +251,32 @@ Zum Beispiel:
 - Ein Mandant __Preproduktion__
 - Ein Mandant __Test__
 - Ein Mandant __Qualifizierung__
-Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ :
 
-- Un tenant __Application 1__ ou __Criticité 1__
-- Un tenant __Application 2__ ou __Criticité 2__
+Es ist auch möglich, die Dinge mit einer __Anwendungssicht__ oder nach __Kritikalität__ zu organisieren:
+
+- Ein Mandant __Anwendung 1__ oder __Kritikalität 1__
+- Ein Mandant __Anwendung 2__ oder __Kritikalität 2__
 - ...
 
-Les ressources techniques commandées sont affectées à un tenant précis et ne sont pas partagées avec les autres tenants. Par exemple, un cluster d'Hyperviseur et les réseaux L2 associées ne sont disponibles que dans 1 tenant. Concernant les réseaux, il est possible de demander des réseaux __'cross tenant'__ afin d'assurer la continuité réseau entre les tenants.
+Die bestellten technischen Ressourcen werden einem bestimmten Mandanten zugewiesen und nicht mit anderen Mandanten geteilt. Zum Beispiel sind ein Hypervisor-Cluster und die zugehörigen L2-Netzwerke nur in einem Mandanten verfügbar.
+Bezüglich der Netzwerke ist es möglich, __'mandantenübergreifende'__ Netzwerke anzufordern, um die Netzwerkkontinuität zwischen den Mandanten zu gewährleisten.
 
-Les permissions des utilisateurs sont à définir dans chaque tenant. Ainsi chaque organisation doit bien réfléchir aux tenants souhaités. Ce point est généralement abordé en atelier initialisation, au moment de la création de l'organisation.
+Die Berechtigungen der Benutzer müssen in jedem Mandanten definiert werden. Daher muss jede Organisation die gewünschten Mandanten sorgfältig überdenken. Dieser Punkt wird in der Regel in einem Initialisierungsworkshop zum Zeitpunkt der Erstellung der Organisation behandelt.
 
-Il est possible de faire évoluer l'architecture en ajoutant ou supprimant des tenants.
+Es ist möglich, die Architektur durch Hinzufügen oder Entfernen von Mandanten weiterzuentwickeln.
 
-Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec un minimum de ressource :
+Ein Mandant kann nicht leer sein. Er muss unbedingt mit einem Minimum an Ressourcen initialisiert werden:
 
-- Une zone de disponibilité (AZ, soit un datacenter physique),
-- Un cluster de calcul,
-- Un espace de stockage,
-- Un vlan réseau.
+- Eine Verfügbarkeitszone (AZ, d.h. ein physisches Rechenzentrum),
+- Ein Rechencluster,
+- Ein Speicherplatz,
+- Ein Netzwerk-VLAN.
 
 
-| Référence de commande                                        | Unité    | SKU                     |
+| Bestellreferenz                                             | Einheit  | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
-| TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
-| TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
+| TENANT - *(REGION)* - Aktivierung eines Mandanten            | 1 Mandant| csp:tenant:v1           |
+| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone   | 1 Mandant| csp:(region):iaas:az:v1 |
 
 
 ### Verwaltung der Eigentümer eines Tenants
@@ -309,6 +310,6 @@ Hinweis : *Das Entfernen einer zugelassenen IP erfolgt durch eine Support-Anfrag
 
 Es ist möglich, die innerhalb eines Tenants verbrauchten Cloud-Ressourcen anzuzeigen, wodurch eine detaillierte Ansicht der Nutzung der verschiedenen bereitgestellten Dienste geboten wird. Diese Funktion ermöglicht es den Benutzern, die Ressourcennutzung in Echtzeit zu verfolgen, die am meisten genutzten Dienste zu identifizieren und ihre Nutzung je nach Bedarf zu optimieren.
 
-Im Menü der Konsole klicken Sie auf „Nutzungsbericht“ und wählen Sie den gewünschten Zeitraum aus. Sie können dann die Ressourcennutzung der Cloud innerhalb des definierten Zeitraums im Detail anzeigen, was Ihnen ermöglicht, die Dienstnutzung zu analysieren und Ihre Verwaltung entsprechend zu optimieren:
+Im Menü der Konsole klicken Sie auf „Nutzungsbericht" und wählen Sie den gewünschten Zeitraum aus. Sie können dann die Ressourcennutzung der Cloud innerhalb des definierten Zeitraums im Detail anzeigen, was Ihnen ermöglicht, die Dienstnutzung zu analysieren und Ihre Verwaltung entsprechend zu optimieren:
 
 ![](images/shiva_tenant_ressources_01.png)

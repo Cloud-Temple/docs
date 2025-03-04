@@ -206,9 +206,9 @@ Technically, this may involve revising the architecture of applications and adap
 To comply with the SecNumCloud qualification, a significant restriction concerns the use of Custom Resource Definitions (CRDs) and custom controllers. This measure, related to cluster rights, aims to prevent the deployment of potentially unstable or unauthorized custom resources.
 
 This limitation also applies to operators and Helm Charts, with a direct impact on RBAC rights, as CRDs extend the Kubernetes API. Consequently, operators and Helm Charts must go through a certification process with our services to ensure their compliance and security.
-Les CRDs personnalisées, notamment celles répondant à des besoins métiers spécifiques, peuvent être refusées dans l'infrastructure en raison des risques qu'elles présentent pour la stabilité et la sécurité de la plateforme. Cette politique, conçue pour protéger l'intégrité et la fiabilité du cluster, n'autorise que les CRDs provenant d'opérateurs ou de Helm Charts officiellement certifiés.
+Custom CRDs, particularly those addressing specific business needs, may be rejected in the infrastructure due to the risks they pose to platform stability and security. This policy, designed to protect the integrity and reliability of the cluster, only authorizes CRDs from officially certified operators or Helm Charts.
 
-Notre équipe de support est disponible pour vous guider et vous conseiller sur les bonnes pratiques à adopter dans ce cadre.
+Our support team is available to guide and advise you on best practices to adopt in this context.
 
 ### No support for Dynamic IPs for runners
 
