@@ -69,10 +69,36 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: ./docker/production/Dockerfile
+          file: ./docker/production/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: cloudtempleinfra/docs:${{ env.BRANCH_NAME }}
+
+  # Job pour la branche main (construction et push d'une image Docker non versionnée)
+  build-main:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./docker/production/Dockerfile
+          push: true
+          platforms: linux/amd64,linux/arm64/v8
+          tags: cloudtempleinfra/docs:main
 
   # Job pour les tags (construction et push d'une image Docker versionnée)
   build-tag:
@@ -99,7 +125,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: ./docker/production/Dockerfile
+          file: ./docker/production/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: |
