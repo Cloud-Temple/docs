@@ -1,4 +1,4 @@
-FROM node:21-alpine
+FROM node:22-alpine
 
 RUN npx create-docusaurus@latest /app classic --typescript && \
     chown -R node:node /app
