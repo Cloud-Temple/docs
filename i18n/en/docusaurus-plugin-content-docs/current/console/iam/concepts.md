@@ -143,9 +143,9 @@ Thereafter, the __'iam_write'__ right allows an account to manage the permission
 When a user is created, they do not have any permissions by default. Each permission is individually assigned and operates on a unitary basis, without overlapping with other permissions. They apply in conjunction, meaning a user must have all required permissions to perform a specific action.
 
 The following permissions are configurable for each user and for each tenant of your organization:
-    • “read” type permissions: allow only viewing resources without modification.
-    • “write” type permissions: authorize configuration modifications.
-    • “management” type permissions: authorize advanced resource management.
+    • "read" type permissions: allow only viewing resources without modification.
+    • "write" type permissions: authorize configuration modifications.
+    • "management" type permissions: authorize advanced resource management.
 
 - __These are permissions, not roles.__ As such, it is necessary to have both READ and WRITE permissions to modify a configuration.
 
@@ -163,51 +163,50 @@ Last updated on: 01/23/2025
 | bastion_write                                 | Managing Bastion resources (appliances, sessions,...)                                                                         |
 | bastion_console_access                        | Authorizing console access (ssh/rdp) to a resource protected by a Bastion appliance                                            |
 | compute_iaas_opensource_console_access        | OpenIaaS Offer - Opening the console of a virtual machine                                                                      |
-
-| compute_iaas_opensource_infrastructure_read   | OpenIaaS Offer -Advanced data consultation of Xen Orchestra resources |
-| compute_iaas_opensource_infrastructure_write  | OpenIaaS Offer -Advanced management of Xen Orchestra resources                                                                          |
-| compute_iaas_opensource_read                  | OpenIaaS Offer -Consultation of Virtual Machine type resources                                                        |
-| compute_iaas_opensource_management            | OpenIaaS Offer -Management of Virtual Machine type resources                                                             |
-| compute_iaas_opensource_virtual_machine_power | OpenIaaS Offer -Management of virtual machine power                                                              |
-| compute_iaas_vmware_console_access            | Vmware Offer - Opening the console of a virtual machine                                                                 |
-| compute_iaas_vmware_infrastructure_read       | Vmware Offer - Consultation of advanced data of VMware resources (affinity/anti-affinity rules, drs configuration, etc)  |
-| compute_iaas_vmware_infrastructure_write      | Vmware Offer - Advanced management of VMware resources                                                                           |
-| compute_iaas_vmware_read                      | Vmware Offer - Consultation of Virtual Machine type resources                                                         |
-| compute_iaas_vmware_management                | Vmware Offer - Management of Virtual Machine type resources (allows the encryption of a virtual machine)                                                              |
-| compute_iaas_vmware_virtual_machine_power     | Vmware Offer - Management of virtual machine power                                                               |
-| baremetal_read                                | Bare Metal Offer - Consultation of Bare Metal type resources                                                               |
-| baremetal_console_access                      | Bare Metal Offer - Opening the console of a Bare Metal                                                                  |
-| console_public_access_read                    | Consultation of IPs authorized to access the console                                                                         |
-| console_public_access_write                   | Addition of IPs authorized to access the console                                                                                  |
-| compute_virtual_machine_power                 | Management of virtual machine power                                                                              |
-| documentation_read                            | Consultation of Confluence documentation resources                                                                        |
-| housing_read                                  | Consultation of colocation type resources                                                                                 |
-| iam_offline_access                            | Creation and deletion of Personal Access Tokens (PAT)                                                                        |
-| iam_read                                      | Consultation of user rights                                                                                           |
-| iam_write                                     | Management of user rights                                                                                                |
-| intervention_read                             | Consultation of planned changes and productions on the platform                                                  |
-| inventory_read                                | Consultation of Inventory type resources                                                                                 |
-| inventory_write                               | Management of Inventory type resources                                                                                      |
+| compute_iaas_opensource_infrastructure_read   | OpenIaaS Offer - Advanced data consultation of Xen Orchestra resources                                                         |
+| compute_iaas_opensource_infrastructure_write  | OpenIaaS Offer - Advanced management of Xen Orchestra resources                                                                |
+| compute_iaas_opensource_read                  | OpenIaaS Offer - Consultation of Virtual Machine type resources                                                                |
+| compute_iaas_opensource_management            | OpenIaaS Offer - Management of Virtual Machine type resources                                                                  |
+| compute_iaas_opensource_virtual_machine_power | OpenIaaS Offer - Management of virtual machine power                                                                           |
+| compute_iaas_vmware_console_access            | Vmware Offer - Opening the console of a virtual machine                                                                        |
+| compute_iaas_vmware_infrastructure_read       | Vmware Offer - Consultation of advanced data of VMware resources (affinity/anti-affinity rules, drs configuration, etc)        |
+| compute_iaas_vmware_infrastructure_write      | Vmware Offer - Advanced management of VMware resources                                                                         |
+| compute_iaas_vmware_read                      | Vmware Offer - Consultation of Virtual Machine type resources                                                                  |
+| compute_iaas_vmware_management                | Vmware Offer - Management of Virtual Machine type resources (allows the encryption of a virtual machine)                        |
+| compute_iaas_vmware_virtual_machine_power     | Vmware Offer - Management of virtual machine power                                                                             |
+| baremetal_read                                | Bare Metal Offer - Consultation of Bare Metal type resources                                                                   |
+| baremetal_console_access                      | Bare Metal Offer - Opening the console of a Bare Metal                                                                         |
+| console_public_access_read                    | Consultation of IPs authorized to access the console                                                                           |
+| console_public_access_write                   | Addition of IPs authorized to access the console                                                                               |
+| compute_virtual_machine_power                 | Management of virtual machine power                                                                                            |
+| documentation_read                            | Consultation of Confluence documentation resources                                                                             |
+| housing_read                                  | Consultation of colocation type resources                                                                                      |
+| iam_offline_access                            | Creation and deletion of Personal Access Tokens (PAT)                                                                          |
+| iam_read                                      | Consultation of user rights                                                                                                    |
+| iam_write                                     | Management of user rights                                                                                                      |
+| intervention_read                             | Consultation of planned changes and productions on the platform                                                                 |
+| inventory_read                                | Consultation of Inventory type resources                                                                                       |
+| inventory_write                               | Management of Inventory type resources                                                                                         |
 | monitoring_read                               | Consultation of monitoring                                                                                                     |
-| monitoring_write                              | Management of monitoring                                                                                                          |
-| metric_read                                   | Consultation of health data on virtual machines and hosts                                                         |
-| network_read                                  | Consultation of network resources                                                                                             |
-| network_write                                 | Management of network resources                                                                                                  |
-| order_read                                    | Consultation of infrastructure orders                                                                                     |
-| order_write                                   | Creation of infrastructure order                                                                                            |
-| object-storage_iam_management                 | Allows managing storage accounts on the S3 product                                                                       |
-| object-storage_read                           | Allows seeing buckets and bucket configurations                                                                   |
-| object-storage_write                          | Allows editing buckets and bucket configurations                                                                  |
-| openshift_management                          | Allows connecting to Openshift platforms (scoped to the tenant)                                                          |
-| support_management                            | Consultation of all support tickets of the tenant                                                                       |
-| support_read                                  | Consultation of tenant support tickets                                                                                  |
+| monitoring_write                              | Management of monitoring                                                                                                       |
+| metric_read                                   | Consultation of health data on virtual machines and hosts                                                                      |
+| network_read                                  | Consultation of network resources                                                                                              |
+| network_write                                 | Management of network resources                                                                                                |
+| order_read                                    | Consultation of infrastructure orders                                                                                          |
+| order_write                                   | Creation of infrastructure order                                                                                               |
+| object-storage_iam_management                 | Allows managing storage accounts on the S3 product                                                                             |
+| object-storage_read                           | Allows seeing buckets and bucket configurations                                                                                |
+| object-storage_write                          | Allows editing buckets and bucket configurations                                                                               |
+| openshift_management                          | Allows connecting to Openshift platforms (scoped to the tenant)                                                                |
+| support_management                            | Consultation of all support tickets of the tenant                                                                              |
+| support_read                                  | Consultation of tenant support tickets                                                                                         |
 | support_write                                 | Creation of a support ticket on the tenant                                                                                     |
-| tag_read                                      | Consultation of tags, except RTMS tags                                                                                   |
-| tag_write                                     | Management of tags, except RTMS tags                                                                                        |
-| ticket_comment_read                           | Consultation of comments                                                                                                  |
-| ticket_comment_write                          | Management of comments                                                                                                       |
-| ticket_read                                   | Consultation of tickets                                                                                                       |
-| ticket_write                                  | Management of tickets                                                                                                            |
+| tag_read                                      | Consultation of tags, except RTMS tags                                                                                         |
+| tag_write                                     | Management of tags, except RTMS tags                                                                                           |
+| ticket_comment_read                           | Consultation of comments                                                                                                       |
+| ticket_comment_write                          | Management of comments                                                                                                         |
+| ticket_read                                   | Consultation of tickets                                                                                                        |
+| ticket_write                                  | Management of tickets                                                                                                          |
 
 ## Organisations
 
@@ -251,64 +250,65 @@ For example:
 - A __Preproduction__ tenant
 - A __Testing__ tenant
 - A __Qualification__ tenant
-Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ :
 
-- Un tenant __Application 1__ ou __Criticité 1__
-- Un tenant __Application 2__ ou __Criticité 2__
+But it is also possible to organize things with an __application view__ or by __criticality__:
+
+- A tenant __Application 1__ or __Criticality 1__
+- A tenant __Application 2__ or __Criticality 2__
 - ...
 
-Les ressources techniques commandées sont affectées à un tenant précis et ne sont pas partagées avec les autres tenants. Par exemple, un cluster d'Hyperviseur et les réseaux L2 associées ne sont disponibles que dans 1 tenant.
-Concernant les réseaux, il est possible de demander des réseaux __'cross tenant'__ afin d'assurer la continuité réseau entre les tenants.
+The ordered technical resources are assigned to a specific tenant and are not shared with other tenants. For example, a Hypervisor cluster and the associated L2 networks are only available in 1 tenant.
+Regarding networks, it is possible to request __'cross tenant'__ networks to ensure network continuity between tenants.
 
-Les permissions des utilisateurs sont à définir dans chaque tenant. Ainsi chaque organisation doit bien réfléchir aux tenants souhaités. Ce point est généralement abordé en atelier initialisation, au moment de la création de l'organisation.
+User permissions must be defined in each tenant. Thus, each organization must carefully consider the desired tenants. This point is generally addressed in an initialization workshop, at the time of the organization's creation.
 
-Il est possible de faire évoluer l'architecture en ajoutant ou supprimant des tenants.
+It is possible to evolve the architecture by adding or removing tenants.
 
-Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec un minimum de ressource :
+A tenant cannot be empty. It must necessarily be initialized with a minimum of resources:
 
-- Une zone de disponibilité (AZ, soit un datacenter physique),
-- Un cluster de calcul,
-- Un espace de stockage,
-- Un vlan réseau.
+- An availability zone (AZ, i.e., a physical datacenter),
+- A compute cluster,
+- A storage space,
+- A network vlan.
 
 
-| Référence de commande                                        | Unité    | SKU                     |
+| Order Reference                                              | Unit     | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
-| TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
-| TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
+| TENANT - *(REGION)* - Activation of a tenant                 | 1 tenant | csp:tenant:v1           |
+| TENANT - *(REGION)* - Activation of an availability zone     | 1 tenant | csp:(region):iaas:az:v1 |
 
 
-### Gestion des propriétaires sur un tenant
-Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
+### Managing owners on a tenant
+Each tenant has at least one owner, thus ensuring clear responsibility and efficient management of associated resources. Additionally, it is possible to declare multiple owners on the same tenant, allowing for collaboration and shared decision-making. Below, you will find important information to consider when managing these owners.
 
-#### Informations importantes sur la gestion des propriétaires
+#### Important information on owner management
 
-#### 1. Nombre de propriétaires
-* Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
-* L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
+#### 1. Number of owners
+* There is no technical limit to the number of owners that can be defined on the tenant.
+* The management interface (IHM) issues a warning when there are more than 3 owners, to encourage limiting the number of owners for security reasons and optimal access management.
 
-#### 2. Ajout d'un nouveau propriétaire
-* Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
-* Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
+#### 2. Adding a new owner
+* When adding a new owner, updating their permissions may take up to 60 minutes.
+* This propagation time is normal and ensures that access rights are correctly applied to all associated services and resources.
 
-#### 2. Permissions d'un propriétaire
-* Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
-* Il n'est pas possible de modifier les permissions d'un propriétaire.
+#### 2. Owner permissions
+* An owner will be assigned all permissions related to the products activated on their tenant.
+* It is not possible to modify an owner's permissions.
 
-#### 3. Retrait d'un propriétaire
-* Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
-* Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
+#### 3. Removing an owner
+* To remove an owner from the tenant, the user must submit a request to support.
+* This procedure ensures that access rights modifications are performed securely and in accordance with access management best practices.
 
-### Autorisation d'accès à un tenant: IP autorisées
+### Tenant access authorization: Authorized IPs
 
-L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
+Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with SecNumCloud qualification requirements. This restriction ensures an enhanced level of security by allowing access only to users from specified IP ranges, thus minimizing the risks of unauthorized access and protecting the cloud infrastructure according to the highest security standards.
 
-Note: *La suppression d'un IP autorisée se fait par une demande de support dans la console Cloud Temple.*
+Note: *Removing an authorized IP is done through a support request in the Cloud Temple console.*
 
-### Consommation de ressource au sein d'un tenant
+### Resource consumption within a tenant
 
-Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins.
+It is possible to visualize the cloud resources consumed within a tenant, thus offering a detailed view of the usage of the various deployed services. This functionality allows users to track their resource consumption in real-time, identify the most solicited services, and optimize their usage according to needs.
 
-Dans le menu de la console, cliquez sur "Rapport de consommation" puis sélectionnez la période de temps souhaitée. Vous pourrez ainsi visualiser en détail la consommation des ressources cloud sur la période définie, ce qui vous permettra d’analyser l’utilisation des services et d’optimiser votre gestion en conséquence :
+In the console menu, click on "Consumption Report" and then select the desired time period. You will thus be able to visualize in detail the consumption of cloud resources over the defined period, which will allow you to analyze the usage of services and optimize your management accordingly:
 
 ![](images/shiva_tenant_ressources_01.png)

@@ -1,0 +1,16 @@
+name: my_docusaurus_blog
+
+services:
+  blog:
+    build: .
+    ports:
+      - 3000:3000
+    user: 1000:1000
+    volumes:
+      - ../../docusaurus.config.ts:/app/docusaurus.config.ts
+      - ../../sidebars.ts:/app/sidebars.ts
+      - ../../blog:/app/blog
+      - ../../docs:/app/docs
+      - ../../i18n:/app/i18n
+      - ../../static:/app/static
+      - ../../src:/app/src
