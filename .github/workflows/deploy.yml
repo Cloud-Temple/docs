@@ -9,7 +9,7 @@ on:
       - "*"
 
 jobs:
-  # Job pour la branche dev (déploiement GitHub Pages)
+  # Job for the dev branch (GitHub Pages deployment)
   deploy-dev:
     name: Deploy Documentation to GitHub Pages
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Job pour les branches de feature (construction et push d'une image Docker non versionnée)
+  # Job for feature branches (building and pushing an unversioned Docker image)
   build-branch:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
@@ -73,7 +73,7 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8
           tags: cloudtempleinfra/docs:${{ env.BRANCH_NAME }}
 
-  # Job pour la branche main (construction et push d'une image Docker non versionnée)
+  # Job for the main branch (building and pushing an unversioned Docker image)
   build-main:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
@@ -99,7 +99,7 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8
           tags: cloudtempleinfra/docs:main
 
-  # Job pour les tags (construction et push d'une image Docker versionnée)
+  # Job for tags (building and pushing a versioned Docker image)
   build-tag:
     name: Build and Push Versioned Docker Image
     runs-on: ubuntu-latest
