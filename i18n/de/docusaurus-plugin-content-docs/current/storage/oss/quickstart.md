@@ -1,66 +1,67 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
 
-## Auflistung aller S3-Buckets Ihres Tenants
+## Lister l'ensemble des bucket S3 de votre tenant
 
-Sie können auf alle Ihre Buckets über das Menü '__Object Storage__' der Cloud Temple-Konsole zugreifen:
+Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
 
 ![](images/S3_list_bucket.png)
 
-In der Registerkarte '__Speicherkonten__' können Sie alle auf Ihrem Tenant erstellten Konten sehen, die auf den S3-Dienst zugreifen dürfen.
+Vous pouvez voir tous les comptes créés sur votre tenant et autorisé à accéder au service S3 via l'onglet '__Comptes de stockage__'.
 
 ![](images/S3_accounts.png)
 
-## Erstellen eines neuen Speicherkontos
+## Création d'un nouveau compte de stockage
 
-Das Erstellen eines Speicherkontos in Ihrem Tenant erfolgt durch Klicken auf die Schaltfläche '__Neues Speicherkonto__' oben rechts in der Registerkarte '__Speicherkonten__':
+La création d'un compte de stockage sur votre tenant se fait en appuyant sur le bouton '__Nouveau compte de stockage__' en haut à droite, dans l'onglet '__Comptes de stockage__' :
 
 ![](images/S3_create_account.png)
 
-Die Plattform stellt Ihnen dann den Zugriffsschlüssel und den geheimen Schlüssel für Ihren Bucket zur Verfügung:
+La plateforme vous donne alors la clef d'accès et la clef secrète de votre bucket :
 
 ![](images/S3_storage_keys.png)
 
-__ACHTUNG:__ Die geheimen und Zugangsschlüssel werden nur einmal angezeigt. Nach diesem ersten Erscheinen ist es nicht mehr möglich, den geheimen Schlüssel erneut einzusehen. Es ist daher unerlässlich, diese Informationen sofort zu notieren; andernfalls müssen Sie ein neues Schlüsselpaar generieren.
+__ATTENTION :__ Les clés secrète et d'accès sont présentées une seule fois. Après cette première apparition, il devient impossible de consulter à nouveau la clé secrète. Il est donc essentiel de noter ces informations immédiatement ; faute de quoi, il vous sera nécessaire de générer une nouvelle paire de clés.
 
-Die Neugenerierung erfolgt über die Schlüsseloptionen, indem Sie die Option "Zugangsschlüssel zurücksetzen" wählen.
+La regeneration se fait au niveau des options de la clefs en choisissant l'option "Réinitialiser clé d'accès".
 
 ![](images/S3_keyregen.png)
 
-## Erstellen eines S3-Buckets
 
-Das Erstellen eines neuen Buckets erfolgt durch Klicken auf die Schaltfläche '__Neuer Bucket__' oben rechts auf dem Bildschirm:
+## Création d'un bucket S3
+
+La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
 
 ![](images/S3_create.png)
 
-Ein Fenster erscheint, in dem Sie folgende Informationen angeben müssen:
+Une fenêtre s'affiche alors et vous devez renseigner :
 
-1. Die **Region**, in der Ihr Bucket erstellt werden soll,
-2. Den **Bucket-Typ**: performant oder Archivierung,
-3. Den **Namen** Ihres Buckets (der eindeutig sein muss).
+1. La **région** de création de votre bucket,
+2. Le **type** de bucket : performant ou archivage,
+3. Le **nom** de votre bucket (il doit être unique).
 
 ![](images/S3_create_popup_001.png)
 
-Ab dem 3. April 2024 ist die verfügbare Region **FR1** (Paris) und nur der performante Typ verfügbar.
+Au 3 Avril 2024, la région disponible est **FR1** (Paris) et seul le type performant est disponible.
 
-Sie müssen auch wählen, wer auf Ihren Bucket zugreifen kann:
+Vous devez aussi choisir qui peut accéder à votre bucket :
 
-- **Privater Zugriff**: Standardmäßig ist der Zugriff auf spezifische IP-Adressen von Cloud Temple beschränkt.
-- **Öffentlicher Zugriff**: Der Zugriff ist für alle Internetadressen geöffnet (insbesondere über die Regel 0.0.0.0/0). Wir raten von dieser Konfiguration aus Sicherheitsgründen ab.
-- **Benutzerdefinierter Zugriff**: Diese Option ermöglicht es Ihnen, die IPv4-Adressen oder Subnetzbereiche anzugeben, die Sie zulassen möchten.
+- Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
+- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Cependant, une authentification est toujours requise. Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser.
 
-## Zuordnung eines Speicherkontos zu einem Bucket
+## Association d'un compte de stockage à un bucket
 
-Kontozuweisungen zu Buckets werden in der Registerkarte '__Richtlinien__' vorgenommen
+Les associations de compte aux buckets sont réalisées dans l'onglet '__Politiques__'
 
 ![](images/S3_account_assign.png)
 
-Diese Zuordnung ermöglicht es, dem Speicherkonto Zugriff auf den Bucket zu gewähren. Es gibt vier Rollen:
+Cette association permet de donner l'accès du compte de stockage au bucket. Il y quatres rôles :
 
-1. **Maintainer**: Leserechte, Schreibrechte, Verwaltungsrechte und Richtlinienverwaltung
+1. **Mainteneur** : Les droits de lecture, ecriture, gestion des droits et gestion de la politique
 
-Die S3-Berechtigungen hinter dieser Rolle:
+Les permissions S3 derrière ce rôle:
 ```json
 {
     "name": "maintainer",
@@ -70,41 +71,41 @@ Die S3-Berechtigungen hinter dieser Rolle:
 }
 ```
 
-2. **Schreiber und Leser**: Lesen und Bearbeiten, Ändern, Löschen von Dateien in den Buckets.
+2. **Ecrivain et Lecteur** : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
 
-Die S3-Berechtigungen hinter dieser Rolle:
+Les permissions S3 derrière ce rôle:
 ```json
 {
     "name": "read_write",
     "permissions": [
-        "s3:Get*",
-        "s3:List*",
+        "s3:Get*"
+        "s3:List*"
         "s3:*Object"
     ]
 }
 ```
 
-3. **Schreiber**: Lesen und Bearbeiten, Ändern, Löschen von Dateien in den Buckets.
+3. **Ecrivain** : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
 
-Die S3-Berechtigungen hinter dieser Rolle:
+Les permissions S3 derrière ce rôle:
 ```json
 {
     "name": "write_only",
     "permissions": [
-        "s3:List*",
+        "s3:List*"
         "s3:*Object"
     ]
 }
 ```
 
-4. **Leser**: Lesen und Herunterladen von Dateien in den Buckets.
+4. **Lecteur** : Lire les fichiers dans les buckets et les télécharger.
 
-Die S3-Berechtigungen hinter dieser Rolle:
+Les permissions S3 derrière ce rôle:
 ```json
 {
     "name": "read_only",
     "permissions": [
-        "s3:Get*",
+        "s3:Get*"
         "s3:List*"
     ]
 }
@@ -112,54 +113,55 @@ Die S3-Berechtigungen hinter dieser Rolle:
 
 ![](images/S3_account_access.png)
 
-## Durchsuchen eines S3-Buckets
+## Parcourir un bucket S3
 
-Wenn Sie auf den Namen eines Buckets klicken, haben Sie zunächst Zugriff auf die Registerkarte '__Dateien__', um deren Inhalt zu sehen:
+Lorsque vous cliquez sur le nom d'un bucket, vous avez accès en premier à l'onglet '__Fichiers__' pour voir son contenu :
 
 ![](images/S3_files.png)
 
-In der Registerkarte '__Einstellungen__' können Sie die Detailinformationen Ihres S3-Buckets sehen:
+Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
 
 ![](images/S3_params.png)
 
-Sie sehen dann:
+Vous avez alors :
 
-1. Den Namen des S3-Buckets,
-2. Seine Region,
-3. Die Anzahl der Objekte, die er enthält, und die Größe des Buckets in Bytes,
-4. Den Endpunkt,
-5. Die Lebenszykluseinstellungen, die insbesondere die Ablaufdaten der Bucket-Objekte definieren. '__0__' entspricht einer unendlichen Aufbewahrung.
+1. Le nom du bucket S3,
+2. Sa région
+3. Le nombre d'objet qu'il contient et la taille en octets du bucket,
+4. Son point de terminaison,
+5. Les paramètres de cycle de vie qui définissent notamment l'expiration des objets du bucket. '__0__' correspond à une rétention infinie.
 
-Sie können den Aufbewahrungsparameter über die Schaltfläche '__Bearbeiten__' des Lebenszyklus ändern:
+Vous pouvez modifier le paramètre de rétention via le bouton '__Modifier__' du cycle de vie :
 
 ![](images/S3_lifecycle.png)
 
-Schließlich können Sie die Zugriffstypologie ändern.
+Enfin, vous pouvez modifier sa typologie d'accès.
 
-## Zugriffsbeschränkungen für Ihre S3-Buckets
+## Limitations des accès à vos bucket S3
 
-Es ist sehr einfach, die Zugriffsrestriktionen für Ihre S3-Buckets zu konfigurieren. Beim Erstellen eines Buckets haben Sie die Wahl zwischen drei Zugriffskonfigurationen:
+Il est très simple de configurer les restrictions d'accès à vos buckets S3. Lors de la création d'un bucket, vous avez le choix entre trois configurations d'accès :
 
 ![](images/S3_create_popup_001.png)
 
-- **Privater Zugriff**: Standardmäßig ist der Zugriff auf spezifische IP-Adressen von Cloud Temple beschränkt.
-- **Öffentlicher Zugriff**: Der Zugriff ist für alle Internetadressen offen (insbesondere über die Regel 0.0.0.0/0). Wir raten von dieser Konfiguration aus Sicherheitsgründen ab.
-- **Benutzerdefinierter Zugriff**: Diese Option ermöglicht es Ihnen, die IPv4-Adressen oder Subnetzbereiche anzugeben, die Sie zulassen möchten:
+- Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
+- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser:
 
 ![](images/S3_create_popup_002.png)
 
-*Die Unterstützung von IPv6 ist für das erste Halbjahr 2025 vorgesehen.*
+*Le support IPv6 est prévu pour le premier semestre 2025.*
 
-## Löschen eines S3-Buckets
+## Suppression d'un bucket S3
 
-Das Löschen eines Buckets erfolgt über die zugehörigen Aktionen des Buckets, indem Sie die Option '__Löschen__' wählen.
+La suppression d'un bucket se fait dans les actions associées au bucket en choisissant l'option __'Supprimer'__.
 
 ![](images/S3_delete.png)
 
-_**ACHTUNG: Das Löschen ist endgültig und es gibt keine Möglichkeit, die Daten wiederherzustellen.**_
+_**ATTENTION : La suppression est définitive et il n'existe aucun moyen de récupérer les données.**_
 
-## Wie wird das S3-Angebot von Cloud Temple abgerechnet?
 
-Der Preis ist ein monatlicher Preis, pro GB Speicher, monatlich berechnet. Die Plattform zählt jedoch die Nutzung pro Stunde und stellt die Abrechnung auf einer monatlichen Basis von 720 Stunden in Rechnung.
+## Comment est facturé l'offre S3 de Cloud Temple ?
 
-Beispielsweise, wenn Sie im Monat 30 GB für 1 Stunde nutzen und dann nichts, und einige Tage später erneut 30 GB für 2 Stunden, wird die monatliche Rechnung *( Preis (1 x 30GB) + 2 x Preis (30GB) ) / 720* für den betrachteten Monat betragen. Die Abrechnung erfolgt nachschüssig.
+Le prix est un prix mensuel, au Gio de stockage, facturé mensuellement. Cependant, la plateforme comptabilise l'usage à l'heure et réalise la facturation sur une base mensuelle de 720 heures.
+
+Par exemple, si vous consommez dans le mois 30 Gio pendant 1h puis rien, puis quelques jours plus tard 30Gio pendants 2h, la facture mensuelle sera de *( Prix (1 x 30Gio) + 2 x Prix (30Gio) ) / 720* sur le mois considéré. La facturation est terme échue.
