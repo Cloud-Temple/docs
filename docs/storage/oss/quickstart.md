@@ -48,7 +48,7 @@ Au 3 Avril 2024, la région disponible est **FR1** (Paris) et seul le type perfo
 Vous devez aussi choisir qui peut accéder à votre bucket :
 
 - Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
-- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Cependant, une authentification est toujours requise. Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
 - Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser.
 
 ## Association d'un compte de stockage à un bucket
