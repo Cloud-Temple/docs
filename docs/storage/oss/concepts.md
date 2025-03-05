@@ -47,7 +47,7 @@ Le stockage S3 Cloud Temple stocke les données de manière native sur __trois z
 - Distribution des données : Les segments EC sont répartis sur différents nœuds et racks, assurant une protection contre les pannes de disques, de nœuds et même de racks entiers.
 - Réplication géographique : Pour une protection supplémentaire, les données sont répliquées sur 3 zones de disponibilités, offrant une résilience face aux sinistres locaux.
 
-Cette réplication assure que même en cas de défaillance d'une zone, les données restent accessibles et intactes, 
+Cette réplication assure que même en cas de défaillance d'une zone, les données restent accessibles et intactes,
 contribuant ainsi à une infrastructure de stockage hautement résiliente.
 
 ---
@@ -74,7 +74,7 @@ Cloud Temple propose une solution de stockage objet avec les caractéristiques t
 
 • **Nombre de connexions simultanées** : Aucune limite spécifique.
 
-• **Performance à l'upload** : 
+• **Performance à l'upload** :
   - Jusqu'à 100Gb/s en entrée
   - Jusqu'à 100Gb/s en sortie
 
@@ -84,7 +84,7 @@ Cloud Temple propose une solution de stockage objet avec les caractéristiques t
 
 ### Le compte de stockage
 
-Un **Storage Account** est une entité logique qui possède une **Access Key** et une **Secret Key** utilisées pour authentifier et sécuriser les interactions avec un bucket. 
+Un **Storage Account** est une entité logique qui possède une **Access Key** et une **Secret Key** utilisées pour authentifier et sécuriser les interactions avec un bucket.
 C'est sur ce compte que sont positionnés les rôles et permissions associés aux **buckets**, permettant de contrôler précisément les accès et les actions autorisées pour chaque utilisateur ou service.
 
 ### Le "bucket" dans l'écosystème du stockage objet

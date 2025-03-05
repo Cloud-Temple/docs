@@ -2,27 +2,27 @@
 title: Übersicht
 ---
 
-Der **S3-Objektspeicher** ist eine zentrale Lösung zur Verwaltung unstrukturierter Daten in großem Umfang, wie Dateien, Dokumente oder Datenbanken. Basierend auf dem Standardprotokoll AWS S3 bietet diese Technologie eine widerstandsfähige und skalierbare Architektur, die es ermöglicht, Daten effizient über REST-APIs zu speichern, zu sichern und darauf zuzugreifen. Jede Datei, ein sogenanntes "Objekt", befindet sich in einem "Bucket", einem logischen Raum, der es ermöglicht, die Daten zu organisieren und Zugriffsregeln festzulegen.
+Der **S3-Objektspeicher** ist eine Schlüssellösung zur Verwaltung unstrukturierter Daten im großen Maßstab, wie Dateien, Dokumente oder Datenbanken. Basierend auf dem standardisierten AWS S3-Protokoll bietet diese Technologie eine robuste und skalierbare Architektur, die es ermöglicht, Daten effizient über REST-APIs zu speichern, zu sichern und darauf zuzugreifen. Jede Datei, genannt "Objekt", befindet sich in einem "Bucket", einem logischen Raum zur Organisation von Daten und zur Definition von Zugriffsregeln.
 
-Die Objektspeicher-Infrastruktur von Cloud Temple basiert auf der Lösung **Elastic Cloud Storage (ECS)** von Dell, die für ihre Kompatibilität mit dem S3-Protokoll und ihre hohe Leistung bekannt ist. Diese Lösung gewährleistet durch fortschrittliche Techniken wie **Erasure Coding** und die Replikation in mehreren Verfügbarkeitszonen eine außergewöhnliche Verfügbarkeit und Haltbarkeit. Mit einer **97%igen Kompatibilität zu AWS S3** bietet sie einen reibungslosen Übergang und eine standardisierte Verwaltung für Unternehmen.
+Die Objektspeicherinfrastruktur von Cloud Temple basiert auf der Lösung **Elastic Cloud Storage (ECS)** von Dell, die für ihre Kompatibilität mit dem S3-Protokoll und ihre hohe Leistung bekannt ist. Diese Lösung gewährleistet außergewöhnliche Verfügbarkeit und Haltbarkeit durch fortschrittliche Techniken wie **Erasure Coding** und Replikation über mehrere Verfügbarkeitszonen. Mit einer **97% Kompatibilität mit AWS S3** bietet sie einen nahtlosen Übergang und standardisierte Verwaltung für Unternehmen.
 
-Zur Sicherung der Daten bietet Cloud Temple erweiterte Verschlüsselungsoptionen an: **serverseitig** (mit Schlüsseln, die von Cloud Temple oder vom Kunden verwaltet werden) oder **clientseitig**, wodurch dem Nutzer volle Kontrolle geboten wird. Zertifiziert nach **SecNumCloud**, **HDS** und **ISO 27001** garantiert diese Infrastruktur eine strenge Einhaltung der gesetzlichen Anforderungen und der höchsten Sicherheitsstandards.
+Um die Daten zu sichern, bietet Cloud Temple erweiterte Verschlüsslungsoptionen: **serverseitig** (mit von Cloud Temple oder dem Kunden verwalteten Schlüsseln) oder **clientseitig**, was dem Benutzer die vollständige Kontrolle ermöglicht. Zertifiziert nach **SecNumCloud**, **HDS**, und **ISO 27001**, gewährleistet diese Infrastruktur eine strikte Einhaltung der regulatorischen Anforderungen und der höchsten Sicherheitsstandards.
 
 
 <div class="card-grid">
   <div class="card">
     <h3>Grundlagen</h3>
-    <p>Erlernen Sie die wesentlichen Grundlagen und Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
-    <a href="./oss/concepts" class="card-link">Erkunden Sie die Grundlagen &rarr;</a>
+    <p>Erfahren Sie die wesentlichen Grundlagen und Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="./oss/concepts" class="card-link">Die Grundlagen erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
-    <p>Beginnen Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./oss/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <h3>Quickstart</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./oss/quickstart" class="card-link">Den Quickstart starten &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste einrichten und nutzen, mit detaillierten Anleitungen.</p>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen einrichten und nutzen.</p>
     <a href="./oss/tutorials" class="card-link">Entdecken Sie die Tutorials &rarr;</a>
   </div>
 </div>
