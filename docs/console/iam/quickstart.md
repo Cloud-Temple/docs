@@ -2,6 +2,15 @@
 title: Guide de démarrage
 ---
 
+import shivaTenant from './images/shiva_tenant.png'
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
 ##  Tenant
 
@@ -19,7 +28,7 @@ La création d'un tenant est réalisée par une demande de service indiquant :
 
 La selection du tenant se fait depuis la page principale de la console Shiva :
 
-![](images/shiva_tenant.png)
+<img src={shivaTenant} />
 
 
 *__Nota :__ Les ressources d'un tenant lui sont propres et ne sont pas mélangeable avec d'autres tenants.*
@@ -39,15 +48,15 @@ La création d'un compte utilisateur dans votre organisation se fait par invitat
 
 Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
 
-![](images/shiva_onboard_003.png)
+<img src={shivaOnboard_003} />
 
 Indiquer ensuite l'adresse de messagerie de l'utilisateur
 
-![](images/shiva_onboard_004.png)
+<img src={shivaOnboard_004} />
 
 L'utilisateur va alors recevoir un mail de vérification.
 
-![](images/shiva_onboard_001.png)
+<img src={shivaOnboard_001} />
 
 Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
 
@@ -55,13 +64,13 @@ Une fois la vérification terminée, l'utilisateur pourra se connecter sur la co
 
 La gestion des droits utilisateurs se fait depuis la page utilisateur.
 
-![](images/shiva_onboard_003.png)
+<img src={shivaOnboard_003} />
 
 Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
 
 Le menu d'activation des droits apparait alors :
 
-![](images/shiva_onboard_005.png)
+<img src={shivaOnboard_005} />
 
 La configuration des permissions est à faire pour chaque [Tenant](concepts.md#tenants) de l'
 [Organisation](concepts.md#organisations).
@@ -72,7 +81,7 @@ La liste des permissions et leur définition est accessible [ici](#permissions).
 
 Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
 
-![](images/shiva_profil_006.png)
+<img src={shivaProfil_006} />
 
 La configuration est faite pour chaque tenant [Tenant](concepts.md#tenants).
 
@@ -82,7 +91,7 @@ La gestion des abonnements permet de recevoir les e-mails relatifs aux thématiq
 
 Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" :
 
-![](images/shiva_profil_007.png)
+<img src={shivaProfil_007} />
 
  Par exemple, en cas d'incident, des notifications par e-mail spécifiques à cette thématique seront générées.
 
@@ -125,7 +134,7 @@ Il est possible de réinitialiser son mot de passe depuis la page de connexion d
 ### Pourquoi certains utilisateurs sont grisés ?
 Les utilisateurs grisés sont ceux n'ayant pas validé leur compte. Lors de la création du compte, ;'utilisateur a recu un mail de vérification.
 
-![](../../console/images/shiva_onboard_001.png)
+<img src={shivaOnboard_001} />
 
 Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
 
@@ -150,12 +159,12 @@ L'accès à la console de gestion cloud est strictement limité aux adresses IP 
 
 Il est désormais possible d'afficher la liste des adresses IP publiques autorisées sur le tenant et d’ajouter une nouvelle adresse IP publique à cette liste directement depuis l'onglet "Administration > Accès".
 
-![](images/shiva_ip_access_management_01.png)
+<img src={shivaIpAccessManagement_01} />
 
 Pour cela, l’utilisateur doit disposer du droit `console_public_access_read` pour consulter les IPs autorisées, et du droit `console_public_access_write` pour ajouter une adresse IP publique à la liste.
 
 Il est alors possible d'ajouter une nouvelle IP:
 
-![](images/shiva_ip_access_management_02.png)
+<img src={shivaIpAccessManagement_02} />
 
 Note : *La suppression d'un IP autorisée se fait par une demande de support dans la console Cloud Temple.*

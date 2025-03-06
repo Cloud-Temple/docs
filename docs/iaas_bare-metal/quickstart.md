@@ -1,6 +1,10 @@
 ---
 title: Guide de démarrage
 ---
+import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
+import shivaBareMetalList from './images/shiva_bare-metal_list.png'
+import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
+import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
 
 # QuickStart pour l'offre Bare Metal
 
@@ -19,7 +23,7 @@ Avant de commencer, assurez-vous des points suivants :
 
 Une fois la souscription activée et les permissions configurées, un nouveau menu intitulé **Bare Metal** apparaît dans la console Cloud Temple. Ce menu contient deux sous-menus principaux : **Bare Metal** et **Volumes**.
 
-![](images/shiva_bare-metal_menu.png)
+<img src={shivaBareMetalMenu} />
 
 ---
 
@@ -31,7 +35,7 @@ Le sous-menu **Bare Metal** vous présente un tableau listant toutes les instanc
 - **Configuration matérielle**
 - **Adresse IP**
 
-![](images/shiva_bare-metal_list.png)
+<img src={shivaBareMetalList} />
 
 #### Fonctionnalités principales
 - **Bouton Action** : Permet d'accéder directement à la console d'administration du Bare Metal.
@@ -40,7 +44,7 @@ Le sous-menu **Bare Metal** vous présente un tableau listant toutes les instanc
   - Configuration réseau (adresses IP associées).
   - Informations de connectivité pour la gestion.
 
-![](images/shiva_bare-metal_details.png)
+<img src={shivaBareMetalDetails} />
 
 
 ---
@@ -53,7 +57,7 @@ Le sous-menu **Volumes** affiche un tableau listant tous les volumes de stockage
 - **Classe de performance** (IOPS par To)
 - **État** (Disponible, En cours de déploiement, etc.)
 
-![](images/shiva_bare-metal_storagelist.png)
+<img src={shivaBareMetalStoragelist} />
 
 
 #### Fonctionnalités principales

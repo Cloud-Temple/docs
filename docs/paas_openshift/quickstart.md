@@ -1,6 +1,10 @@
 ---
 title: Guide de démarrage
 ---
+import oshiftRights from './images/oshift_rights.png'
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
 
 ## Déployer une plateforme Redhat Openshift au sein de votre tenant
 
@@ -8,23 +12,23 @@ title: Guide de démarrage
 
 Il est indispensable que l'administrateur du [Tenant](../console/iam/concepts.md#tenants) accorde le droit de gestion de la plateforme Openshift à l'utilisateur administrateur Openshift pour pouvoir y accéder :
 
-![](images/oshift_rights.png)
+<img src={oshiftRights} />
 
 ### Accès à l'environnement Openshift au sein d'un tenant
 
 Après l'affectation des droits, le module '__Openshift__' apparaît alors dans le menu de la console Cloud Temple :
 
-![](images/oshift_menu_001.png)
+<img src={oshiftMenu_001} />
 
 Vous voyez alors apparaître les clusters Openshift qui sont déployés au sein de votre tenant.
 
 Cliquez sur le cluster que vous souhaitez administrer. Vous accéder à l'environnement d'administration du cluster :
 
-![](images/oshift_menu_002.png)
+<img src={oshiftMenu_002} />
 
 Après authentification, vous pouvez administrer votre cluster :
 
-![](images/oshift_menu_003.png)
+<img src={oshiftMenu_003} />
 
 ### Ressources de votre environnement
 

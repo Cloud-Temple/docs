@@ -2,6 +2,15 @@
 title: Documentation API
 ---
 
+import ShivaProfil001 from './images/shiva_profil_001.png'
+import ShivaProfil002 from './images/shiva_profil_002.png'
+import ShivaProfil003 from './images/shiva_profil_003.png'
+import ShivaProfil004 from './images/shiva_profil_004.png'
+import ShivaProfil005 from './images/shiva_profil_005.png'
+import ShivaApi001 from './images/shiva_api_001.png'
+import ShivaApi002 from './images/shiva_api_002.png'
+import ShivaApi003 from './images/shiva_api_003.png'
+import ShivaApi004 from './images/shiva_api_004.jpg'
 
 ## Clés API
 
@@ -12,15 +21,15 @@ La création de ce token se fait depuis votre compte. Il est possible de génér
 
 Pour créer une clef API, il suffit de __cliquer sur votre profil__ :
 
-![](images/shiva_profil_001.png)
+<img src={ShivaProfil001} />
 
 Dans le menu du profil, cliquer sur __'Jeton d'accès personnel'__
 
-![](images/shiva_profil_003.png)
+<img src={ShivaProfil003} />
 
 Vous avez alors à l'écran l'ensemble des clés API qui ont été créées pour cet utilisateur dans ce tenant. Cliquer sur __'Nouveau access token personnel'__
 
-![](images/shiva_profil_002.png)
+<img src={ShivaProfil002} />
 
 Vous devez alors :
 
@@ -32,19 +41,19 @@ Les détails concernant votre jeton sont alors affichés. __Attention, il n'est 
 
 Si vous ne notez pas ces informations, vous devrez détruire et recréer le jeton.
 
-![](images/shiva_profil_004.png)
+<img src={ShivaProfil004} />
 
 Pour une question de sécurité, il est recommandé de créer plusieurs tokens ayant chacun une utilité spécifique (un token pour chaque application ou chaque processus métier) plutôt que de créer 1 token avec l'ensemble des droits.
 
 Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
-![](images/shiva_profil_005.png)
+<img src={ShivaProfil005} />
 
 ## Accès au portail API
 
 La documentation OpenAPI 3.0 (Swagger) des APIs de la console Cloud Temple est disponible directement dans l'application :
 
-![](images/shiva_api_001.png)
+<img src={ShivaApi001} className="img-large" />
 
 L'accès aux APIs nécessite d'être authentifié. Une fois authentifié toutes les opérations doivent avoir le header
 __'Authorization'__ avec le bearer access token obtenu lors de la phase d'authentification.
@@ -55,11 +64,11 @@ L'URL des points d'accès est directement donnée dans __Swagger__ (dans l'objet
 
 Le suivi des requêtes de type écriture (POST, PUT, PATCH, DELETE) est assuré via la gestion des activités. Chaque requête de ce type génère automatiquement une activité associée. Un code de statut HTTP 201 confirme la création réussie de l'activité. L'identifiant unique de cette activité est renvoyé dans les en-têtes de la réponse, sous la clé 'Location'.
 
-![](images/shiva_api_002.png)
+<img src={ShivaApi002} />
 
 Une fois l'identifiant récupéré, il est possible d'accéder aux détails de l'activité en utilisant l'API du module Activity :
 
-![](images/shiva_api_003.png)
+<img src={ShivaApi003} />
 
 Le contenu de l'activité inclut toutes les informations essentielles pour identifier l'opération, sa date d'exécution, ainsi que son état d'avancement. Voici le modèle d'une activité :
 
@@ -198,7 +207,7 @@ sont des bons points de départ pour implémenter des stratégies d'attenuation.
 
 Les informations d'évolution des endpoint de l'API est disponible dans les notes de mises à jour :
 
-![](images/shiva_api_004.jpg)
+<img src={ShivaApi004} className="img-large" />
 
 Vous trouverez la liste des endpoints qui sont dépréciés activité par activité.
 
