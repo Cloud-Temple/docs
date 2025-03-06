@@ -5,6 +5,9 @@
 FROM node:lts AS base
 ## Disable colour output from yarn to make logs easier to read.
 ENV FORCE_COLOR=0
+
+ENV BASE_URL="/"
+
 ## Enable corepack.
 RUN corepack enable
 ## Set the working directory to `/opt/docusaurus`.
@@ -26,7 +29,8 @@ RUN yarn build
 # Serve static site with a simple nginx
 FROM nginx:1.27.4-alpine AS deploy
 
-ARG APP_FOLDER=/var/www/docs
+ARG APP_FOLDER=/var/www
+
 WORKDIR ${APP_FOLDER}
 
 # Copy nginx configuration

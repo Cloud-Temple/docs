@@ -15,22 +15,22 @@ Benvenuto nello spazio di documentazione di **Cloud Temple**! Questo spazio è s
   <div class="card">
     <h3>Esplora la console</h3>
     <p>Impara a utilizzare la nostra console per gestire le tue risorse Cloud.</p>
-    <a href="/docs/console" class="card-link">Scopri la console &rarr;</a>
+    <a href="console" class="card-link">Scopri la console &rarr;</a>
   </div>
     <div class="card">
     <h3>Inizia con Object Storage</h3>
     <p>Impara a utilizzare l'object storage</p>
-    <a href="/docs/storage/oss" class="card-link">Configura un Bucket &rarr;</a>
+    <a href="storage/oss" class="card-link">Configura un Bucket &rarr;</a>
   </div>
   <div class="card">
     <h3>Approvvigionare le tue risorse</h3>
     <p>Crea rapidamente ed efficacemente le tue prime risorse Cloud.</p>
-    <a href="/docs/iaas_vmware/quickstart" class="card-link">Inizia &rarr;</a>
+    <a href="iaas_vmware/quickstart" class="card-link">Inizia &rarr;</a>
   </div>
   <div class="card">
     <h3>Distribuisci in pochi clic</h3>
     <p>Configura i tuoi servizi con semplicità grazie ai nostri dettagliati guide.</p>
-    <a href="/docs/iaas_vmware/quickstart" class="card-link">Distribuisci &rarr;</a>
+    <a href="iaas_vmware/quickstart" class="card-link">Distribuisci &rarr;</a>
   </div>
 </div>
 
