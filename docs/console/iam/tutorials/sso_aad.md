@@ -5,6 +5,23 @@ tags:
   - tutorials
   - onboarding
 ---
+import ssoEntra_001 from './images/sso_entra_001.png'
+import ssoEntra_002 from './images/sso_entra_002.png'
+import ssoAad_004 from './images/sso_aad_004.png'
+import ssoAad_005 from './images/sso_aad_005.png'
+import ssoAad_006 from './images/sso_aad_006.png'
+import ssoAad_007 from './images/sso_aad_007.png'
+import ssoAad_008 from './images/sso_aad_008.png'
+import ssoAad_009 from './images/sso_aad_009.png'
+import ssoAad_010 from './images/sso_aad_010.png'
+import ssoAad_011 from './images/sso_aad_011.png'
+import ssoAad_012 from './images/sso_aad_012.png'
+import ssoAad_013 from './images/sso_aad_013.png'
+import ssoAad_014 from './images/sso_aad_014.png'
+import ssoAad_015 from './images/sso_aad_015.png'
+import ssoAad_016 from './images/sso_aad_016.png'
+import ssoAad_017 from './images/sso_aad_017.png'
+import ssoAad_018 from './images/sso_aad_018.png'
 
 Voici un exemple de configuration du référentiel d'authentification d'une organisation Cloud Temple avec __Microsoft EntraID__ (Azure Active Directory).  
 
@@ -28,22 +45,22 @@ Dans la page "Register an application", veuillez indiquer :
 - __Redirect URL__ : A ne pas paramétrer dans un premier temps. L'URL sera fournie par le support Cloud Temple et sera à ajouter dans ce champ plus tard.
 ```
 
-![](images/sso_entra_001.png)
+<img src={ssoEntra_001} />
 
 Les informations **Application (client) ID** et **Directory (tenant) ID** sont les informations utiles à fournir dans la demande de support à l'équipe Cloud Temple pour activer l'authentification Microsoft EntraID au niveau de votre organisation.
 
-![](images/sso_entra_002.png)
+<img src={ssoEntra_002} />
 
 ### Définition d'un secret
 Dans l'onglet "Certificates & secrets", créer un nouveau secret.  
 
 *À noter : la date d'expiration du secret ne peut être supérieure à 24 mois, y compris avec une date d'expiration custom.*
 
-![](images/sso_aad_004.png)
+<img src={ssoAad_004} />
 
 Le secret généré sera à fournir dans la demande de support :
 
-![](images/sso_aad_005.png)
+<img src={ssoAad_005} />
 
 
 ### Définition du token EntraID 
@@ -52,15 +69,15 @@ Le token EntraID est nécessaire à la configuration de l'authentification.
 
 Dans le menu __"Token Configuration"__, cliquer sur __"Add optional claim"__. Vous devrez sélectionner "ID" en tant que type de token et cocher "email".
 
-![](images/sso_aad_006.png)
+<img src={ssoAad_006} />
 
 L'interface Azure va vous demander si vous souhaitez ajouter une permission qui vous permettra de lire l'email d'un utilisateur (Microsoft Graph email), cochez la case et validez.
 
-![](images/sso_aad_007.png)
+<img src={ssoAad_007} />
 
 Ensuite, rendez-vous sur "API permissions" et cliquez sur __"Grant admin consent for Cloud Temple"__.
 
-![](images/sso_aad_008.png)
+<img src={ssoAad_008} />
 
 ### Configurations de sécurité supplémentaires (optionel mais recommandé)
 
@@ -73,27 +90,27 @@ Voici la procédure à suivre ;
 ##### Option 1 
 Allez sur l'onglet "Overview" puis cliquez sur le nom de l'application (le lien situé à la suite de "Managed application").
 
-![](images/sso_aad_009.png)
+<img src={ssoAad_009} />
 
 ##### Option 2 
 Se rendre dans les "Enterprise applications" et chercher en utilisant le nom de l'application créée précédemment.
 
-![](images/sso_aad_010.png)
+<img src={ssoAad_010} />
 
 #### Restriction de l'authentification aux utilisateurs assignés à l'application
 
 Indiquer ici la nécessité d'un assignement de l'utilisateur à l'application pour autoriser son authentification :
 
-![](images/sso_aad_011.png)
+<img src={ssoAad_011} />
 
 #### Assignation des utilisateurs et groupes à l'application
 Seuls les groupes et utilisateurs assignés à l'application pourront se connecter à votre organisation Cloud Temple via l'app registration.
 
-![](images/sso_aad_012.png)
+<img src={ssoAad_012} />
 
 Enfin, vous n'aurez plus qu'à appliquer l'assignation en cliquant sur "Assign".
 
-![](images/sso_aad_013.png)
+<img src={ssoAad_013} />
 
 Désormais les utilisateurs assignés à l'application pourront se connecter à votre organisation Cloud Temple via l'application créée.
 
@@ -117,22 +134,22 @@ Dès que la configuration est réalisée coté console Shiva, le contact indiqu�
 
 Sur la page d’accueil de l’App Registration, dans le menu overview, cliquez sur "Add a Redirect URL".
 
-![](images/sso_aad_014.png)
+<img src={ssoAad_014} />
 
 Ensuite, dirigez-vous vers le "Add a platform" et ajoutez-en une de type Web.
 
-![](images/sso_aad_015.png)
+<img src={ssoAad_015} />
 
 Il vous suffit de renseigner la "Redirect URL" fournie par la Team Produit Applications.
 
-![](images/sso_aad_016.png)
+<img src={ssoAad_016} />
 
 Vous devriez obtenir ce résulat une fois la "Redirect URL" ajoutée.
 
-![](images/sso_aad_017.png)
+<img src={ssoAad_017} />
 
 La configuration de la "Redirect URL" peut mettre quelques minutes à être effective.
 Une fois toutes les étapes réalisées, vous pouvez vous authentifier à votre organisation Cloud Temple via votre SSO.
 
-![](images/sso_aad_018.png)
+<img src={ssoAad_018} />
 

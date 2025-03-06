@@ -1,7 +1,21 @@
 ---
 title: Concepts
 ---
-
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_012 from './images/shiva_profil_012.png'
+import shivaProfil_014 from './images/shiva_profil_014.png'
+import shivaProfil_015 from './images/shiva_profil_015.png'
+import shivaProfil_016 from './images/shiva_profil_016.png'
+import shivaProfil_013 from './images/shiva_profil_013.png'
+import shivaProfil_010 from './images/shiva_profil_010.png'
+import shivaProfil_009 from './images/shiva_profil_009.png'
+import shivaProfil_011 from './images/shiva_profil_011.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Utilisateurs
 
@@ -16,15 +30,15 @@ La création d'un compte utilisateur dans votre organisation se fait par invitat
 
 Cliquez sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
 
-![](images/shiva_onboard_003.png)
+<img src={shivaOnboard_003} />
 
 Indiquez ensuite l'adresse de messagerie de l'utilisateur
 
-![](images/shiva_onboard_004.png)
+<img src={shivaOnboard_004} />
 
 L'utilisateur va alors recevoir un mail de vérification.
 
-![](images/shiva_onboard_001.png)
+<img src={shivaOnboard_001} />
 
 Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
 
@@ -32,13 +46,13 @@ Une fois la vérification terminée, l'utilisateur pourra se connecter sur la co
 
 La gestion des droits utilisateurs se fait depuis la page utilisateur.
 
-![](images/shiva_onboard_003.png)
+<img src={shivaOnboard_003} />
 
 Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
 
 Le menu d'activation des droits apparait alors :
 
-![](images/shiva_onboard_005.png)
+<img src={shivaOnboard_005} />
 
 La configuration des permissions est à faire pour chaque [Tenant](#tenants) de l'[Organisation](#organisations).
 
@@ -54,7 +68,7 @@ Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le 
 
 **Warning**: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
-![](images/shiva_profil_012.png)
+<img src={shivaProfil_012} />
 
 ### Mettre à jour son profil
 
@@ -66,7 +80,7 @@ Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par l
 
 **Warning**: Assurez vous de bien être à l'origine de la demande de mise à jour du profil. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
-![](images/shiva_profil_014.png)
+<img src={shivaProfil_014} />
 
 ### Réinitialisation du mot de passe
 
@@ -78,7 +92,7 @@ Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par l
 
 **Warning**: Assurez vous de bien être à l'origine de la demande de réinitialisation de votre mot de passe. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
-![](images/shiva_profil_015.png)
+<img src={shivaProfil_015} />
 
 ### Réinitialisation du double facteur d'authentification
 
@@ -90,7 +104,7 @@ Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par l
 
 **Warning**: Assurez vous de bien être à l'origine de la demande de réinitialiser de votre double facteur d'authentification. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
-![](images/shiva_profil_016.png)
+<img src={shivaProfil_016} />
 
 ### Suppression d'un utilisateur
 
@@ -98,8 +112,8 @@ La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__
 
 Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
 
-![](images/shiva_profil_013.png)
-![](images/shiva_profil_010.png)
+<img src={shivaProfil_013} />
+<img src={shivaProfil_010} />
 
 Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
 
@@ -107,8 +121,8 @@ Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprim
 
 La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, puis __'Déconnecter'__.
 
-![](images/shiva_profil_009.png)
-![](images/shiva_profil_011.png)
+<img src={shivaProfil_009} />
+<img src={shivaProfil_011} />
 
 Une déconnexion automatique est réalisée lors de l'expiration du jeton (JWT Token) de session.
 
@@ -116,7 +130,7 @@ Une déconnexion automatique est réalisée lors de l'expiration du jeton (JWT T
 
 Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
 
-![](images/shiva_profil_006.png)
+<img src={shivaProfil_006} />
 
 La configuration est faite pour chaque tenant [Tenant](#tenants).
 
@@ -126,7 +140,7 @@ La gestion des abonnements permet de recevoir les e-mails relatifs aux thématiq
 
 Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" :
 
-![](images/shiva_profil_007.png)
+<img src={shivaProfil_007} />
 
  Par exemple, en cas d'incident, des notifications par e-mail spécifiques à cette thématique seront générées.
 
@@ -312,4 +326,4 @@ Il est possible de visualiser les ressources cloud consommées au sein d'un tena
 
 Dans le menu de la console, cliquez sur "Rapport de consommation" puis sélectionnez la période de temps souhaitée. Vous pourrez ainsi visualiser en détail la consommation des ressources cloud sur la période définie, ce qui vous permettra d’analyser l’utilisation des services et d’optimiser votre gestion en conséquence :
 
-![](images/shiva_tenant_ressources_01.png)
+<img src={shivaTenantRessources_01} />
