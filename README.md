@@ -36,7 +36,7 @@ To get started, follow these simple steps:
 
 1. Navigate to the Docker directory:
 ```bash
-cd docker
+cd docker/local
 ```
 
 2. Launch the services with Docker Compose:
@@ -48,6 +48,7 @@ docker compose up
 
 Open your browser and go to: <http://localhost:3000/docs/>
 
+> Base url is set to "/docs" when running on non production build (locally or deployed on github pages)
 
 🎉 Your local environment is ready!
 
@@ -67,4 +68,6 @@ docker run -it --rm -p 8080:80 --name docs docs:v3
 
 3. Access the documentation locally (all pages and all langages should work):
 
-Open your browser and go to: <http://localhost:8080/docs/>
+Open your browser and go to: <http://localhost:8080>
+
+> Base url is set to "/" on production build
