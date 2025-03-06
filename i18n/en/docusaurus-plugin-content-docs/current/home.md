@@ -15,22 +15,22 @@ Welcome to the **Cloud Temple** documentation space! This space has been designe
   <div class="card">
     <h3>Explore the console</h3>
     <p>Learn to use our console to manage your Cloud resources.</p>
-    <a href="/docs/console" class="card-link">Discover the console &rarr;</a>
+    <a href="console" class="card-link">Discover the console &rarr;</a>
   </div>
     <div class="card">
     <h3>Getting started with Object Storage</h3>
     <p>Learn how to use object storage.</p>
-    <a href="/docs/storage/oss" class="card-link">Set up a Bucket &rarr;</a>
+    <a href="storage/oss" class="card-link">Set up a Bucket &rarr;</a>
   </div>
   <div class="card">
     <h3>Provision your resources</h3>
     <p>Create your first Cloud resources quickly and efficiently.</p>
-    <a href="/docs/iaas_vmware/quickstart" class="card-link">Start &rarr;</a>
+    <a href="iaas_vmware/quickstart" class="card-link">Start &rarr;</a>
   </div>
   <div class="card">
     <h3>Deploy in a few clicks</h3>
     <p>Configure your services with ease using our detailed guides.</p>
-    <a href="/docs/iaas_vmware/quickstart" class="card-link">Deploy &rarr;</a>
+    <a href="iaas_vmware/quickstart" class="card-link">Deploy &rarr;</a>
   </div>
 </div>
 
