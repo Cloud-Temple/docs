@@ -8,6 +8,7 @@ import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_ac
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
 
+
 ## Calcul
 
 ### Pilotage des Machines virtuelles

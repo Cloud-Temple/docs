@@ -7,6 +7,7 @@ import S3Cloudberry_003 from './images/S3_cloudberry_003.png'
 import S3Winscp_001 from './images/S3_winscp_001.png'
 import S3Winscp_002 from './images/S3_winscp_002.png'
 
+
 ## Utiliser MINIO
 
 Vous pouvez utiliser le client minio par exemple :

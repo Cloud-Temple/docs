@@ -1,7 +1,6 @@
 ---
 title: Documentation API
 ---
-
 import ShivaProfil001 from './images/shiva_profil_001.png'
 import ShivaProfil002 from './images/shiva_profil_002.png'
 import ShivaProfil003 from './images/shiva_profil_003.png'

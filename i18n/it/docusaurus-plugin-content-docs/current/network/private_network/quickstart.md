@@ -1,77 +1,88 @@
 ---
-title: Guide de démarrage
+title: Guida di Avvio
 ---
+import shivaNetwork_001 from './images/shiva_network_001.jpg'
+import shivaNetwork_002 from './images/shiva_network_002.jpg'
+import shivaNetwork_003 from './images/shiva_network_003.jpg'
+import shivaNetwork_004 from './images/shiva_network_004.jpg'
+import shivaNetwork_005 from './images/shiva_network_005.jpg'
+import shivaNetwork_006 from './images/shiva_network_006.jpg'
+import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
+import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
+import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
+import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
 
-## Réseaux privés régionaux
 
-La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple.
+## Reti private regionali
 
-### Au sein d'un tenant
+L'ordine delle reti private all'interno di una regione avviene direttamente nella console Cloud Temple.
 
-La création d'un réseau virtuel se fait dans le menu __*Network*__ sur le bandeau vert à gauche de l'écran.
+### All'interno di un tenant
 
-![](images/shiva_network_001.jpg)
+La creazione di una rete virtuale avviene nel menu __*Network*__ sulla barra verde a sinistra dello schermo.
 
-Cliquer ensuite sur le bouton __*Nouveau réseau*__
+<img src={shivaNetwork_001} />
 
-Vous devez spécifier le nom de votre réseau qui sera affiché. Par défaut, l'ensemble de vos clusters accéderont à votre nouveau réseau.
-Cependant, dans le sous menu __*Options Avancées*__, vous pouvez spécifier plus finement l'étendue de propagation au sein du tenant entre vos différents clusters.
+Fare quindi clic sul pulsante __*Nuova rete*__
 
-![](images/shiva_network_002.jpg)
+È necessario specificare il nome della rete che verrà visualizzata. Per impostazione predefinita, tutti i cluster accederanno alla nuova rete.
+Tuttavia, nel sottomenu __*Opzioni avanzate*__, è possibile specificare più dettagliatamente l'estensione della propagazione all'interno del tenant tra i vari cluster.
 
-L'ensemble des actions possibles sur vos réseaux se trouve dans le menu __*Actions*__ de chacun d'eux :
+<img src={shivaNetwork_002} />
 
-- L'activation du partage d'un réseau entre tenant d'une meme organisation.
-- La désactivation du partage d'un réseau entre tenant d'une meme organisation.
-- L'ajout d'un partage d'un réseau entre tenant d'une meme organisation.
-- La suppression d'un partage d'un réseau entre tenant d'une meme organisation.
-- La visualisation graphique de la propagation d'un réseau sur l'ensemble de vos clusters et de vos hyperviseurs au sein d'un tenant.
-- La suppression d'une propagation au sein d'un tenant.
-- La modification d'une propagation au sein d'un tenant.
-- La suppression d'un réseau.
+Tutte le azioni possibili sulle reti si trovano nel menu __*Azioni*__ di ciascuna di esse:
 
-![](images/shiva_network_003.jpg)
+- L'attivazione della condivisione di una rete tra tenant della stessa organizzazione.
+- La disattivazione della condivisione di una rete tra tenant della stessa organizzazione.
+- L'aggiunta di una condivisione di una rete tra tenant della stessa organizzazione.
+- La rimozione di una condivisione di una rete tra tenant della stessa organizzazione.
+- La visualizzazione grafica della propagazione di una rete su tutti i cluster e gli hypervisor all'interno di un tenant.
+- La rimozione di una propagazione all'interno di un tenant.
+- La modifica di una propagazione all'interno di un tenant.
+- L'eliminazione di una rete.
 
-#### Visualisation de la propagation de vos réseaux
+<img src={shivaNetwork_003} />
 
-Vous pouvez facilement dans le menu __*Actions*__ visualiser pour un réseau sa propagation vers vos différents clusters au sein d'un même tenant. 
-Choisissez l'option *"Visualiser la propagation"* :
+#### Visualizzazione della propagazione delle reti
 
-![](images/shiva_network_004.jpg)
+Nel menu __*Azioni*__ è possibile visualizzare facilmente la propagazione di una rete sui vari cluster all'interno di uno stesso tenant.
+Scegliere l'opzione *"Visualizza propagazione"*:
 
-#### Modification de la propagation
+<img src={shivaNetwork_004} />
 
-La modification d'une propagation au sein d'un tenant est réalisée par l'option *"Propager"* :
-choisissez ensuite les clusters devant être intégrés à cette propagation.
+#### Modifica della propagazione
 
-![](images/shiva_network_005.jpg)
+La modifica di una propagazione all'interno di un tenant viene effettuata attraverso l'opzione *"Propaga"*:
+quindi selezionare i cluster che devono essere integrati in questa propagazione.
 
-__*Remarque :*__ *La modification de propagation est limitée à 20 réseaux par action.*
+<img src={shivaNetwork_005} />
 
-#### Suppression d'un réseau
+__*Nota:*__ *La modifica della propagazione è limitata a 20 reti per azione.*
 
-La suppression d'un réseau au sein d'un tenant est réalisée par l'option *"Supprimer le réseau"* :
+#### Eliminazione di una rete
 
-![](images/shiva_network_006.jpg)
+L'eliminazione di una rete all'interno di un tenant viene effettuata tramite l'opzione *"Elimina rete"*:
 
-### Partage de réseau entre tenants
+<img src={shivaNetwork_006} />
 
-Par défaut, __les réseaux sont uniquement disponibles au sein d'un tenant__. Vous pouvez choisir de __partager un réseau entre plusieurs tenants__ pour des raisons techniques ou des raisons de connectivité.
-Il est ainsi possible de partager un réseau entre vos __[Tenant](../../../console/iam/concepts/#tenant)__ au sein d'une même organisation.
+### Condivisione di rete tra tenant
 
-Il suffit pour cela d'activer le partage comme ci-dessous.
+Per impostazione predefinita, __le reti sono disponibili solo all'interno di un tenant__. È possibile scegliere di __condividere una rete tra più tenant__ per motivi tecnici o di connettività.
+È infatti possibile condividere una rete tra i propri __[Tenant](../../../console/iam/concepts/#tenant)__ all'interno della stessa organizzazione.
 
-![](images/shiva_network_vn_share_enabled.png)
+Basta attivare la condivisione come sotto indicato.
 
-Une fois l'activation du partage effectué, il vous suffit d'ajouter un partage comme ci-dessous.
+<img src={shivaNetworkVnShareEnabled} />
 
-![](images/shiva_network_vn_shared.png)
+Una volta attivata la condivisione, è sufficiente aggiungere una condivisione come sotto indicato.
 
-Puis, sélectionner le tenant cible. Attention, la liste des tenants est dynamique.
-Elle dépend de votre organisation et de vos droits.
+<img src={shivaNetworkVnShared} />
 
-![](images/shiva_network_vn_shared_tenant.png)
+Poi, selezionare il tenant di destinazione. Attenzione, l'elenco di tenant è dinamico.
+Dipende dalla tua organizzazione e dai tuoi diritti.
 
-Une fois le réseau partagé, il sera visible dans l'onglet 'Réseaux partagés' depuis votre second tenant.
+<img src={shivaNetworkVnSharedTenant} />
 
-![](images/shiva_network_vn_shared_with_me.png)
+Una volta condivisa la rete, sarà visibile nella scheda 'Reti condivise' dal secondo tenant.
+
+<img src={shivaNetworkVnSharedWithMe} />

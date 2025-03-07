@@ -6,6 +6,7 @@ import shivaBareMetalList from './images/shiva_bare-metal_list.png'
 import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
 import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
 
+
 # QuickStart pour l'offre Bare Metal
 
 Cette page vous guide à travers les étapes initiales pour utiliser l'offre **Bare Metal** depuis la console Cloud Temple. Suivez ces instructions pour découvrir les menus et fonctionnalités disponibles.

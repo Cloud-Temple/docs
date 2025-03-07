@@ -22,7 +22,6 @@ import backupRestoreIaas_003 from './images/backup_restore_iaas_003.png'
 import backupRestoreIaas_002 from './images/backup_restore_iaas_002.png'
 import backupInvIaas_001 from './images/backup_inv_iaas_001.png'
 
-
 #### Comment cloner une machine virtuelle ?
 
 Il existe 2 façons de cloner une machine virtuelle :

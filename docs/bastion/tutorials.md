@@ -14,8 +14,7 @@ import modifierSession from './images/modifier_session.png'
 import modifierSession2 from './images/modifier_session2.png'
 import supprimerSession from './images/supprimer_session.png'
 
-Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis le portail Shiva. 
-
+Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis le portail Shiva.
 
 ## Prérequis
 
@@ -26,19 +25,19 @@ Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis 
 
 ## Interface
 
-Une fois connecté au portail web Shiva, rendez-vous dans l'onglet "Bastion" du menu gauche. 
+Une fois connecté au portail web Shiva, rendez-vous dans l'onglet "Bastion" du menu gauche.
 
 <img src={sessions} />
 
 L’onglet « Equipements » vous permet de consulter la liste de vos equipements. Un équipement correspond à une configuration de
-connexion via une Appliance Bastion. Pour chaque équipement, est indiqué son nom, ses tags, sa 
+connexion via une Appliance Bastion. Pour chaque équipement, est indiqué son nom, ses tags, sa
 description, l’Appliance qui lui est associé, le type de connexion (SSH ou RDP), l’IP de l’host et enfin la configuration du clavier.
 
-Vous pouvez filtrer la liste de vos équipements selon les tags qui leur sont assignés, et un moteur de recherche permet de chercher une session avec son nom. 
+Vous pouvez filtrer la liste de vos équipements selon les tags qui leur sont assignés, et un moteur de recherche permet de chercher une session avec son nom.
 
 <img src={sessions2} />
 
-L’onglet « Appliances » vous donne la liste de vos Appliances Bastion. Pour chaque Appliance, le nom de l’Appliance et sa description sont précisés. 
+L’onglet « Appliances » vous donne la liste de vos Appliances Bastion. Pour chaque Appliance, le nom de l’Appliance et sa description sont précisés.
 
 Un moteur de recherche est disponible pour vous permettre de chercher une Appliance avec son nom.
 
@@ -59,11 +58,11 @@ Renseignez ensuite les informations nécessaires à la connexion :
     - Informations d'identification ;
     - Configuration du clavier.
 
-Cliquez ensuite sur « Connecter » pour ouvrir l’Appliance. La console de la machine virtuelle à administrer s’ouvre alors. 
+Cliquez ensuite sur « Connecter » pour ouvrir l’Appliance. La console de la machine virtuelle à administrer s’ouvre alors.
 
 ## Enregistrer un équipement
 
-Pour accéder régulièrement à un équipement à administrer, il est plus adapté de créer une configuration d'équipement, qui ne demandera que votre nom d’utilisateur et votre mot de passe à chaque connexion. 
+Pour accéder régulièrement à un équipement à administrer, il est plus adapté de créer une configuration d'équipement, qui ne demandera que votre nom d’utilisateur et votre mot de passe à chaque connexion.
 
 Pour cela, rendez-vous dans l’onglet « Equipements » du menu « Bastion », puis, cliquez sur le bouton « Nouveau équipement ».
 
@@ -82,7 +81,7 @@ Renseignez ensuite les informations nécessaires à la création de votre équip
 <img src={creerSession2} />
 
 
-Une notification vous indiquant la création de votre configuration d'équipement devrait apparaître en haut à droite de la page. La configuration s’ajoute ensuite à la liste de vos équipements. 
+Une notification vous indiquant la création de votre configuration d'équipement devrait apparaître en haut à droite de la page. La configuration s’ajoute ensuite à la liste de vos équipements.
 
 Pour créer une nouvelle connexion, vous pouvez également passer par l’onglet « Appliances » en cliquant sur la barre d’action de l’Appliance à laquelle vous souhaitez associer une configuration d'équipement.
 
@@ -106,7 +105,7 @@ Rendez-vous dans l’onglet « Equipements » de la section « Bastion », cliqu
 
 <img src={modifierSession} />
 
-Vous pouvez ensuite modifier le nom de l'équipement, sa description, l’Appliance associée, le protocole (SSH ou RDP), l’adresse IP de l’host ou la langue du clavier. 
+Vous pouvez ensuite modifier le nom de l'équipement, sa description, l’Appliance associée, le protocole (SSH ou RDP), l’adresse IP de l’host ou la langue du clavier.
 
 <img src={modifierSession2} />
 

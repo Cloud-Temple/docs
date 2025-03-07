@@ -12,9 +12,10 @@ import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
 import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
 import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
 
+
 ## Réseaux privés régionaux
 
-La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple. 
+La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple.
 
 ### Au sein d'un tenant
 
@@ -44,10 +45,10 @@ L'ensemble des actions possibles sur vos réseaux se trouve dans le menu __*Acti
 
 #### Visualisation de la propagation de vos réseaux
 
-Vous pouvez facilement dans le menu __*Actions*__ visualiser pour un réseau sa propagation vers vos différents clusters au sein d'un même tenant. 
+Vous pouvez facilement dans le menu __*Actions*__ visualiser pour un réseau sa propagation vers vos différents clusters au sein d'un même tenant.
 Choisissez l'option *"Visualiser la propagation"* :
 
-<img src={shivaNetwork_004} /> 
+<img src={shivaNetwork_004} />
 
 #### Modification de la propagation
 
@@ -80,11 +81,11 @@ Une fois l'activation du partage effectué, il vous suffit d'ajouter un partage 
 
 <img src={shivaNetworkVnShared} />
 
-Puis, sélectionner le tenant cible. Attention, la liste des tenants est dynamique. 
+Puis, sélectionner le tenant cible. Attention, la liste des tenants est dynamique.
 Elle dépend de votre organisation et de vos droits.
 
 <img src={shivaNetworkVnSharedTenant} />
 
 Une fois le réseau partagé, il sera visible dans l'onglet 'Réseaux partagés' depuis votre second tenant.
 
-<img src={shivaNetworkVnSharedWithMe} /> 
+<img src={shivaNetworkVnSharedWithMe} />

@@ -1,72 +1,79 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
+import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
+import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
+import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
+import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
+import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
+import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+
 
 ## Berechnung
 
-### Verwaltung der virtuellen Maschinen
+### Verwaltung von virtuellen Maschinen
 
-Die Verwaltungsoberfläche für Ihre virtuellen Maschinen ist in der Shiva-Konsole im Menü __'OpenIaaS'__ verfügbar, die sich auf dem grünen Banner links auf dem Bildschirm befindet.
+Die Verwaltungsoberfläche Ihrer virtuellen Maschinen ist in der Shiva-Konsole im Menü __'OpenIaaS'__ verfügbar, das sich auf dem grünen Balken links auf dem Bildschirm befindet.
 
 ### Liste der virtuellen Maschinen
 
-Im Abschnitt __'Virtuelle Maschinen'__ haben Sie Zugang zur Liste Ihrer auf Ihrem vertrauenswürdigen Cloud gehosteten virtuellen Maschinen.
+Im Abschnitt __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer auf Ihrem vertrauenswürdigen Cloud gehosteten virtuellen Maschinen.
 
-![](images/open_iaas_virtual_machines_list.png)
+<img src={openIaasVirtualMachinesList} />
 
 Sie haben Zugriff auf die folgenden Informationen für jede virtuelle Maschine:
 
-- Ihr Name.
-- Ihr Status (ausgeschaltet, eingeschaltet).
+- Ihren Namen.
+- Ihren Status (ausgeschaltet, eingeschaltet).
 - Ihre Verfügbarkeitszone (AZ).
 - Ihr Betriebssystem.
 - Die Anzahl der virtuellen CPUs (vCPU).
-- Die Menge des virtuellen Speichers (vRAM).
+- Die Menge an virtuellem Speicher (vRAM).
 
-### Aktionen auf den virtuellen Maschinen
+### Aktionen auf virtuellen Maschinen
 
-Die folgenden Aktionen sind von dieser Oberfläche aus möglich:
+Die folgenden Aktionen sind über diese Oberfläche möglich:
 
-- Die Liste der virtuellen Maschinen aktualisieren.
-- Die Liste filtern.
-- Eine virtuelle Maschine nach ihrem Namen suchen.
-- Eine neue virtuelle Maschine erstellen.
+- Aktualisieren der Liste der virtuellen Maschinen.
+- Filtern der Liste.
+- Suchen einer virtuellen Maschine nach ihrem Namen.
+- Erstellen einer neuen virtuellen Maschine.
 
-![](images/open_iaas_virtual_machines_list_actions.png)
+<img src={openIaasVirtualMachinesListActions} />
 
-Wenn Sie auf den grünen Dropdown-Pfeil auf der rechten Seite der Liste für eine virtuelle Maschine klicken, erhalten Sie Zugriff auf alle Informationen zu dieser.
+Wenn Sie in der Liste für eine virtuelle Maschine auf den grünen Dropdown-Pfeil rechts klicken, erhalten Sie Zugriff auf alle Informationen zu dieser Maschine.
 
-![](images/open_iaas_virtual_machine_overview.png)
+<img src={openIaasVirtualMachineOverview} />
 
-Ein Schnellzugriffsband ermöglicht die Durchführung der folgenden Aktionen:
+Ein Schnellzugriffsmenü ermöglicht die folgenden Aktionen:
 
-![](images/open_iaas_virtual_machine_actions.png)
+<img src={openIaasVirtualMachineActions} />
 
 - Die virtuelle Maschine einschalten.
 - Sie ausschalten.
 - Sie neu starten.
 - Die Konsole öffnen.
-- Ein ISO einbinden.
-- Ein ISO aushängen.
-- Die virtuelle Maschine in ein Template konvertieren.
+- Eine ISO einbinden.
+- Eine ISO ausbinden.
+- Die virtuelle Maschine in eine Vorlage umwandeln.
 - Sie verschieben.
 - Sie umbenennen.
 - Sie löschen.
 
-Im Informationsreiter '**Allgemein**' finden Sie detaillierte Informationen zu Ihrer virtuellen Maschine, wie z. B. ihren physischen Standort (AZ, Pool, Host), den RAM, die CPU, die IP-Adressen und andere.
+Im Informationsregister '**Allgemein**' finden Sie detaillierte Informationen zu Ihrer virtuellen Maschine, wie ihren physischen Standort (AZ, Pool, Host), den Arbeitsspeicher, die CPU, die IP-Adressen und andere.
 
-![](images/open_iaas_virtual_machine_overview_informations.png)
+<img src={openIaasVirtualMachineOverviewInformations} />
 
-Ein '**Erweitert**'-Reiter ermöglicht das Einsehen spezifischerer Informationen:
+Ein Register '**Erweitert**' ermöglicht das Abrufen spezifischerer Informationen:
 
 - UUID der virtuellen Maschine
-- Gasttools
-- Gast-OS
+- Gast-Tools
+- Gastbetriebssystem
 - DVD-Laufwerk
 
-Sowie das Ändern einiger Optionen wie:
+sowie das Ändern bestimmter Optionen wie:
 - Die Startreihenfolge
 - Secure Boot
-- Automatischer Start (nicht möglich, wenn keine Sicherungsrichtlinie mit der VM verknüpft ist)
+- Automatisches Starten (nicht möglich, wenn der VM keine Backup-Policy zugeordnet ist)
 
-![](images/open_iaas_virtual_machine_advanced_overview.png)
+<img src={openIaasVirtualMachineAdvancedOverview} />

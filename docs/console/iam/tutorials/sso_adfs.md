@@ -1,5 +1,5 @@
 ---
-title: Exemple de fédération d'identité avec Microsoft ADFS 
+title: Exemple de fédération d'identité avec Microsoft ADFS
 tags:
   - iam
   - tutorials
@@ -17,6 +17,7 @@ import ssoAdfs_009 from './images/sso_adfs_009.png'
 import ssoAdfs_010 from './images/sso_adfs_010.png'
 import ssoAdfs_011 from './images/sso_adfs_011.png'
 import ssoAdfs_012 from './images/sso_adfs_012.png'
+
 
 Voici un exemple de configuration du référentiel d'authentification d'une organisation Cloud Temple avec __Microsoft ADFS__.
 
@@ -36,9 +37,9 @@ Les utilisateurs souhaitant se connecter sur le portail doivent avoir leur email
 
 ## Etape 2 : Demander la configuration du SSO (Single Sign-On) de votre organisation
 
-Cette partie de la configuration se fait au niveau de l'organisation par l'équipe Cloud temple.  
+Cette partie de la configuration se fait au niveau de l'organisation par l'équipe Cloud temple.
 
-Pour se faire, faites __une demande d'assistance__ dans la console indiquant votre souhait de configurer votre référentiel d'authentification Microsoft ADFS.  
+Pour se faire, faites __une demande d'assistance__ dans la console indiquant votre souhait de configurer votre référentiel d'authentification Microsoft ADFS.
 
 Veuillez donner les informations suivantes dans la demande d'assistance :
 ```
@@ -63,7 +64,7 @@ Sur votre serveur ADFS, aller dans __"Ajouter une approbation de partie de confi
 <img src={ssoAdfs_001} />
 
 ### Configurer les "claims"
-Les claims permettent de fournir des informations au token qui sera transmis à la console Cloud Temple. 
+Les claims permettent de fournir des informations au token qui sera transmis à la console Cloud Temple.
 
 Ils transmettent les informations de l'utilisateur connecté qui sont nécessaires au bon fonctionnement des différents services, telles que son email, son nom et prénom.
 
@@ -73,7 +74,7 @@ Sélectionnez "Importer les données, publiées en ligne ou sur un réseau local
 
 <img src={ssoAdfs_003} />
 
-Vous pouvez renseigner un nom et une description pour la partie de confiance, cette partie est optionnelle. 
+Vous pouvez renseigner un nom et une description pour la partie de confiance, cette partie est optionnelle.
 
 <img src={ssoAdfs_004} />
 
@@ -85,7 +86,7 @@ Une fois toutes ces étapes effectuées, vous avez terminé la configuration de 
 
 <img src={ssoAdfs_006} />
 
-Il faudra ensuite éditer la stratégie d'émission de revendication de cette nouvelle partie de confiance. 
+Il faudra ensuite éditer la stratégie d'émission de revendication de cette nouvelle partie de confiance.
 
 <img src={ssoAdfs_007} />
 
