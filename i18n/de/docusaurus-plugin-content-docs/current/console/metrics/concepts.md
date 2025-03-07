@@ -1,64 +1,73 @@
 ---
 title: Metrologie
 ---
+import metricsHypervisorsCo2 from './images/metrics_hypervisors_co2.png'
+import shivaMetric_000 from './images/shiva_metric_000.png'
+import shivaMetric_003 from './images/shiva_metric_003.png'
+import shivaMetric_001 from './images/shiva_metric_001.png'
+import shivaMetric_002 from './images/shiva_metric_002.png'
+import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
+import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
+import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
 
-## Concept
 
-Die Mehrheit der __Cloud Temple__-Kunden verfügt über Visualisierungs-, Überwachungs- und Messwerkzeuge zur Verfolgung ihrer Operationen.
+## Konzept
 
-Das Konzept der Shiva-Konsole besteht darin, den Zugang zu Daten zu ermöglichen, um sich über einen integrierten Prometheus-Proxy in diese Werkzeuge zu integrieren.
+Die Mehrheit der __Cloud Temple__-Kunden verfügen über Visualisierungs-, Überwachungs- und Metrologie-Tools zur Überwachung ihrer Operationen.
 
-Dieser Proxy ermöglicht es Ihnen, Daten aus einem Visualisierungswerkzeug wie [Grafana](https://grafana.com) abzufragen und zu manipulieren.
+Die Philosophie der Shiva-Konsole ist es, den Zugang zu Daten zu ermöglichen, um sich über einen integrierten Prometheus-Proxy in diese Werkzeuge zu integrieren.
 
-Es ist jedoch möglich, bestimmte Leistungsdaten Ihrer Cloud-Ressourcen in der Weboberfläche der Shiva-Konsole anzuzeigen.
+Dieser Proxy ermöglicht es Ihnen, Daten von einem Visualisierungstool wie [Grafana](https://grafana.com) abzurufen und zu manipulieren.
 
-*__Hinweis:__ Die Philosophie von __Cloud Temple__ besteht nicht darin, mehrere Grafiken in die Weboberfläche zu integrieren, sondern möglichst viele Informationen über die API zugänglich zu machen.*
+Es ist jedoch möglich, bestimmte Leistungsdaten Ihrer Cloud-Ressourcen in der Webschnittstelle der Shiva-Konsole anzuzeigen.
 
-## In das Webinterface integriertes Dashboard
+*__Hinweis:__ Die Philosophie von __Cloud Temple__ besteht darin, nicht mehrere Grafiken in die Webschnittstelle zu integrieren, sondern die maximal über die API zugänglichen Informationen zu bieten*
 
-*__Hinweis:__ Um auf diese Dashboards zugreifen zu können, ist das Recht __'metric_read'__ erforderlich.*
+## In die Webschnittstelle integriertes Dashboard
 
-### Überwachung der Kohlenstoffemissionen für die Berechnung
+*__Hinweis:__ Um auf diese Dashboards zugreifen zu können, müssen Sie das Recht __'metric_read'__ besitzen*
 
-Das Dashboard der Shiva-Konsole enthält standardmäßig ein Diagramm zur Überwachung des Energieverbrauchs Ihrer Berechnungen sowie die geschätzten Kohlenstoffemissionen.
+### Verfolgung der Kohlenstoffemissionen für das Rechnen
 
-Es ist direkt auf der Startseite der Weboberfläche der Cloud Temple-Konsole zugänglich, indem Sie auf __'Metric'__ klicken:
+Das Dashboard der Shiva-Konsole integriert standardmäßig ein Diagramm zur Überwachung des Stromverbrauchs Ihres Rechnens sowie die Schätzung der damit verbundenen Kohlenstoffemissionen.
 
-![](images/metrics_hypervisors_co2.png)
+Es ist direkt auf der Startseite der Webschnittstelle der Cloud Temple-Konsole zugänglich, indem Sie auf __'Metric'__ klicken:
 
-### Gesamtsicht auf den Zustand der virtuellen Maschinen
+<img src={metricsHypervisorsCo2} />
 
-Die Zusammenfassung des Zustands der virtuellen Maschinen ist im Menü __'IaaS'__ links auf Ihrem Bildschirm, im Untermenü __'Gesundheit'__ und dann __'Virtuelle Maschinen'__ verfügbar.
+### Gesamtansicht der Gesundheit der virtuellen Maschinen
 
-Diese Zusammenfassung bietet, innerhalb des in __'Filter'__ ausgewählten Zeitraums:
+Die Zusammenfassung des Zustands der virtuellen Maschinen ist im Menü __'IaaS'__ auf der linken Seite Ihres Bildschirms im Untermenü __'Gesundheit'__ und dann __'Virtuelle Maschinen'__ zugänglich.
+
+Diese Zusammenfassung gibt für den in __'Filter'__ ausgewählten Zeitraum an:
 
 - die Anzahl der CPUs und die __durchschnittliche CPU-Auslastung__,
-- die Anzahl der GB an Speicher und die __durchschnittliche Speichernutzung__,
-- die Durchschnittswerte für die __Latenzzeiten beim Speicherzugriff__ beim Lesen und Schreiben,
-- Den __'CPU Ready'__-Durchschnitt der virtuellen Maschine (das entspricht der durchschnittlichen Wartezeit einer virtuellen Maschine auf die Verfügbarkeit eines physischen Kerns).
+- die Anzahl der GB Speicher und die __durchschnittliche Speichernutzung__,
+- Die Durchschnitte der __Latenzzeit des Speicherzugriffs__ beim Lesen und Schreiben,
+- Der __'CPU Ready'__-Durchschnitt der virtuellen Maschine (was der durchschnittlichen Wartezeit entspricht, bis ein physischer Kern der virtuellen Maschine zur Verfügung steht).
 
-![](images/shiva_metric_000.png)
+<img src={shivaMetric_000} />
 
-Für jede VM können Sie auf die Leistungsübersicht zugreifen, indem Sie auf das grüne Symbol __'Historique'__ in der Aktionsspalte der virtuellen Maschine klicken:
+Für jede VM können Sie auf die Leistungsdatenhistorie zugreifen, indem Sie auf das grüne __'Historie'__-Symbol der virtuellen Maschine in der Aktionsspalte klicken. :
 
-![](images/shiva_metric_003.png)
+<img src={shivaMetric_003} />
 
-Sie gelangen dann zur Seite mit der grafischen Anzeige der archivierten Daten, einschließlich einer __Umweltleistungsansicht__:
+Dann gelangen Sie zur Seite der grafischen Ansicht der historischen Daten, einschließlich einer Ansicht der __Umweltleistung__:
 
-![](images/shiva_metric_001.png)
+<img src={shivaMetric_001} />
 
-![](images/shiva_metric_002.png)
+<img src={shivaMetric_002} />
 
-## Verwendung mit __Grafana__
+## Nutzung mit __Grafana__
 
-Die Shiva-Konsole kann als __Datenquelle__ für Ihre [Grafana](https://grafana.com)-Infrastruktur dienen.
+Es ist möglich, dass die Shiva-Konsole als __Datasource__ für Ihre [Grafana](https://grafana.com)-Infrastruktur dient.
 
-Eine Reihe von __Beispielkonfigurationen für Grafana__ finden Sie hier:
+Sie finden hier eine Vielzahl an __Konfigurationsbeispielen für Grafana__:
 
 https://github.com/Cloud-Temple/console-grafana-iaas
 
-![](images/grafana_dashboards_003.png)
+<img src={grafanaDashboards_003} />
 
-![](images/grafana_dashboards_004.png)
+<img src={grafanaDashboards_004} />
 
-![](images/grafana_dashboards_002.png)
+<img src={grafanaDashboards_002} />

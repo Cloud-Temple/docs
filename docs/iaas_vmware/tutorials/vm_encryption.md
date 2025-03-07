@@ -10,6 +10,7 @@ import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
 import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
 
+
 Ce tutoriel vous aide à chiffrer une machine virtuelle IaaS VMWare depuis le portail Shiva.
 
 ### Prérequis

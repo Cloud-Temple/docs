@@ -6,6 +6,7 @@ import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 
+
 ## Déployer une plateforme Redhat Openshift au sein de votre tenant
 
 ### Affectation des droits d'accès
@@ -38,18 +39,18 @@ Voici les informations de connexion et de configuration propres à votre environ
 
 Pour accéder aux différents composants OpenShift, veillez à ce que votre locataire soit inscrit sur la liste blanche dans la console (consultez la documentation : [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Shiva Tenant__ :  
-  [https://**votre-id-locataire**.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)  
-  
-- __OpenShift UI__ :  
-  [https://ui-ocp01-**votre-id**.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)  
-  
-- __API externe__ :  
-  [https://api-ocp01-**votre-id**.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)  
-  
-- __GitOps (ARGOCD)__ :  
-  [https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)  
-  
+- __URL Shiva Tenant__ :
+  [https://**votre-id-locataire**.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
+
+- __OpenShift UI__ :
+  [https://ui-ocp01-**votre-id**.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
+
+- __API externe__ :
+  [https://api-ocp01-**votre-id**.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
+
+- __GitOps (ARGOCD)__ :
+  [https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
+
 #### Connexion au cluster via CLI
 
 Pour vous connecter via la ligne de commande (CLI), utilisez la commande suivante :
@@ -79,12 +80,12 @@ docker push registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:lat
 
 La plateforme propose des options flexibles pour le __roulage des flux__ et l’__équilibrage de charge__ :
 
-- Par défaut, des load balancers privés sont utilisés pour les routes et les ingresses.  
-- Domaines :  
-  - `*.apps-priv-ocp01-{votre-id}.paas.cloud-temple.com`  
-  - `*.apps-ocp01-{votre-id}.paas.cloud-temple.com`  
+- Par défaut, des load balancers privés sont utilisés pour les routes et les ingresses.
+- Domaines :
+  - `*.apps-priv-ocp01-{votre-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{votre-id}.paas.cloud-temple.com`
 
-Assurez-vous que vos routes ou ingresses sont configurés avec les étiquettes ou classes d’ingress appropriées pour garantir un routage correct. 
+Assurez-vous que vos routes ou ingresses sont configurés avec les étiquettes ou classes d’ingress appropriées pour garantir un routage correct.
 
 Exemple :
 
@@ -98,7 +99,7 @@ metadata:
 
 Les configurations réseau jouent un rôle crucial pour sécuriser les communications avec OpenShift.
 
-- __Réseau d’interconnexion__ : 100.67.0.0/28  
-- __VIP du load balancer privé__ : 100.67.0.3  
+- __Réseau d’interconnexion__ : 100.67.0.0/28
+- __VIP du load balancer privé__ : 100.67.0.3
 
 Vérifiez que votre pare-feu dispose d’une interface dédiée et autorise le trafic entre les réseaux spécifiés.

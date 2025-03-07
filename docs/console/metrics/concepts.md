@@ -10,11 +10,12 @@ import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
 
+
 ## Concept
 
-La majorité des clients __Cloud Temple__ disposent d'outils de visualisation, de monitoring et de métrologie pour le suivi de leurs opérations. 
+La majorité des clients __Cloud Temple__ disposent d'outils de visualisation, de monitoring et de métrologie pour le suivi de leurs opérations.
 
-La philosophie de la console Shiva est de permettre l'accès à la donnée afin de s'intégrer dans cet outillage via un proxy prometheus intégré. 
+La philosophie de la console Shiva est de permettre l'accès à la donnée afin de s'intégrer dans cet outillage via un proxy prometheus intégré.
 
 Ce proxy vous permet de requêter et manipuler les donnes depuis un outil de visualisation comme [Grafana](https://grafana.com).
 
@@ -26,9 +27,9 @@ Il est cependant possible de visualiser certaines données de performances de vo
 
 *__Nota :__ Pour accéder à ces dashboards, il est nécessaire de posséder le droit __'metric_read'__*
 
-### Suivi des emissions carbone pour le calcul 
+### Suivi des emissions carbone pour le calcul
 
-Le tableau de board de la console Shiva intègre par défaut un graphique de suivi de la consommation électrique de votre calcul ainsi que l'estimation 
+Le tableau de board de la console Shiva intègre par défaut un graphique de suivi de la consommation électrique de votre calcul ainsi que l'estimation
 de l'émission de carbone associée.
 
 Il est accessible directement dans la page d'accueil de l'interface web de la console Cloud Temple, en cliquant sur __'Metric'__ :
@@ -41,8 +42,8 @@ La synthèse de l'état des machines virtuelles est accessible dans le menu __'I
 
 Cette synthèse donne, sur la plage de temps sélectionnée dans __'Filtres'__ :
 
-- le nombre de CPU et la __moyenne d'utilisation CPU__, 
-- le nombre de Go de mémoire et la __moyenne d'usage de la mémoire__, 
+- le nombre de CPU et la __moyenne d'utilisation CPU__,
+- le nombre de Go de mémoire et la __moyenne d'usage de la mémoire__,
 - Les moyennes de __latence d'accès au stockage__ en lecture et en écriture,
 - Le __'CPU Ready'__ moyen de la machine virtuelle (ce qui correspond au temps moyen d'attente de disponibilité d'un core physique par la machine virtuelle).
 

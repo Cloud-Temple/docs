@@ -9,6 +9,7 @@ import shivaInet_005 from './images/shiva_inet_005.png'
 import shivaInet_008 from './images/shiva_inet_008.png'
 import shivaInet_007 from './images/shiva_inet_007.png'
 
+
 ## Gestion de vos connectivités Internet
 
 La gestion de la connectivité s'effectue via le menu **'Réseau'** > **'Internet'**. Ce menu centralise la gestion des adresses IP, offrant deux catégories distinctes :
@@ -42,7 +43,7 @@ La modification ou la suppression de la reservation via les boutons **'Actions'*
 
 <img src={shivaInet_005} />
 
-Supprimer une réservation signifie que la ressource devient disponible pour un autre usage, mais reste allouée et facturée au client. 
+Supprimer une réservation signifie que la ressource devient disponible pour un autre usage, mais reste allouée et facturée au client.
 
 Sur certaines lignes, le bouton **'Action'** n'est pas disponible, indiquant que les adresses IP sont réservées et donc non disponibles pour une utilisation.
 

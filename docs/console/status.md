@@ -12,6 +12,7 @@ import shivaIncident_004 from './images/shiva_incident_004.png'
 import shivaIncident_005 from './images/shiva_incident_005.png'
 import shivaIncident_006 from './images/shiva_incident_006.png'
 
+
 Comme toute plateforme d'infrastructure Cloud, la plateforme Cloud Temple fait l'objet de travaux et de maintenance matérielle et logicielle régulièrement.
 
 ## Accès aux opérations et incidents en cours
@@ -54,7 +55,7 @@ Un bouton __'En savoir plus'__ redirige vers la page publique de suivi des incid
 
 <img src={shivaIncident_002} />
 
-Il est possible d'obtenir les rapports des incidents globaux. L'accès à ces rapports requiert la permission spécifique '**incident_management**'. 
+Il est possible d'obtenir les rapports des incidents globaux. L'accès à ces rapports requiert la permission spécifique '**incident_management**'.
 
 Voici un exemple de l'onglet affichant ces rapports :
 
@@ -62,7 +63,7 @@ Voici un exemple de l'onglet affichant ces rapports :
 
 ### Incidents sur un périmètre commanditaire
 
-La visibilité des incidents spécifiques à un périmètre client nécessite la permission **incident_read**. Ces incidents sont représentés par une icône dédiée, accompagnée d'un badge rouge indiquant le nombre d'incidents en cours. 
+La visibilité des incidents spécifiques à un périmètre client nécessite la permission **incident_read**. Ces incidents sont représentés par une icône dédiée, accompagnée d'un badge rouge indiquant le nombre d'incidents en cours.
 
 L'icône est cliquable, permettant de lister les tickets associés aux incidents. Chaque ticket inclut un lien vers les détails de l'incident, offrant la possibilité de suivre l'avancement de leur résolution :
 

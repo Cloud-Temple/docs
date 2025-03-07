@@ -1,7 +1,6 @@
 ---
 title: Guide de démarrage
 ---
-
 import shivaTenant from './images/shiva_tenant.png'
 import shivaOnboard_003 from './images/shiva_onboard_003.png'
 import shivaOnboard_004 from './images/shiva_onboard_004.png'

@@ -16,6 +16,7 @@ import S3Lifecycle from './images/S3_lifecycle.png'
 import S3CreatePopup_002 from './images/S3_create_popup_002.png'
 import S3Delete from './images/S3_delete.png'
 
+
 ## Lister l'ensemble des bucket S3 de votre tenant
 
 Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :

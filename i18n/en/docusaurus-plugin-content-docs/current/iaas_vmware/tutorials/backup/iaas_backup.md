@@ -1,10 +1,26 @@
 ---
-title: Frequently Asked Questions on Backup
+title: Frequently Asked Questions About Backup
 tags:
   - iaas_vmware
   - tutorials
   - iaas_backup
 ---
+import backupCloneIaas_001 from './images/backup_clone_iaas_001.png'
+import backupCloneIaas_002 from './images/backup_clone_iaas_002.png'
+import backupRestoIaas_001 from './images/backup_resto_iaas_001.png'
+import backupCloneIaas_004 from './images/backup_clone_iaas_004.png'
+import backupPolicyIaas_001 from './images/backup_policy_iaas_001.png'
+import backupPolicyIaas_002 from './images/backup_policy_iaas_002.png'
+import backupPolicyIaas_003 from './images/backup_policy_iaas_003.png'
+import backupPolicyIaas_006 from './images/backup_policy_iaas_006.png'
+import backupPolicyIaas_005 from './images/backup_policy_iaas_005.png'
+import backupPolicyIaas_004 from './images/backup_policy_iaas_004.png'
+import backupCloneIaas_003 from './images/backup_clone_iaas_003.png'
+import backupPolicyIaas_007 from './images/backup_policy_iaas_007.png'
+import backupRestoreIaas_001 from './images/backup_restore_iaas_001.png'
+import backupRestoreIaas_003 from './images/backup_restore_iaas_003.png'
+import backupRestoreIaas_002 from './images/backup_restore_iaas_002.png'
+import backupInvIaas_001 from './images/backup_inv_iaas_001.png'
 
 #### How to clone a virtual machine?
 
@@ -12,157 +28,158 @@ There are 2 ways to clone a virtual machine:
 
 - The first option allows you to clone a virtual machine directly from the __'Clone'__ icon of your virtual machine:
 
-![](images/backup_clone_iaas_001.png)
-![](images/backup_clone_iaas_002.png)
+<img src={backupCloneIaas_001} />
+<img src={backupCloneIaas_002} />
 
-- The second solution is to clone the virtual machine using __a backup__ of the virtual machine and then using __clone mode restoration__ of a backup.
+- The second solution is to clone the virtual machine using __a backup__ of the virtual machine and then using the __clone mode restore__ from a backup.
 Go to the __'Backup'__ section of your virtual machine and choose the __'Restore'__ action:
 
-![](images/backup_resto_iaas_001.png)
+<img src={backupRestoIaas_001} />
 
 Then choose the __'Clone'__ restore option:
 
-![](images/backup_clone_iaas_004.png)
+<img src={backupCloneIaas_004} />
 
-#### Why when I go to the "backup policies" page and select a policy, I don't see the same virtual machines as when I go to the "backup reports" and select the same policy?
+#### Why when I go to the "backup policies" page and select a policy, do I not see the same virtual machines as when I go to "backup reports" and select the same policy?
 
-This means that the missing virtual machines had the said policy assigned to them for a while (explaining their presence in the backup reports) but that is __no longer the case now__.
+This means that the missing virtual machines had the policy in question assigned to them for some time
+(explaining their presence on the backup reports) but __that is no longer the case currently__.
 
 #### How to add a backup policy to a virtual machine?
 
 Go to the __'Virtual Machines'__ page in the __'IaaS'__ section of the green menu bar on the left side of the screen.
 
-Select a virtual machine then the __'Backup Policies'__ tab of that machine:
+Select a virtual machine and then the __'Backup policies'__ tab of that machine:
 
-![](images/backup_policy_iaas_001.png)
+<img src={backupPolicyIaas_001} />
 
 Add the desired backup policy:
 
-![](images/backup_policy_iaas_002.png)
+<img src={backupPolicyIaas_002} />
 
-### How to remove a backup policy from a virtual machine?
+### How to delete a backup policy from a virtual machine?
 
-Go to the __'Virtual Machines'__ page, select a virtual machine then the __'Backup Policies'__ tab of that machine.
+Go to the __'Virtual Machines'__ page, select a virtual machine, and then the __'Backup policies'__ tab of that machine.
 
-Remove the desired backup policy and confirm the removal:
+Delete the desired backup policy and confirm the deletion:
 
-![](images/backup_policy_iaas_003.png)
+<img src={backupPolicyIaas_003} />
 
-__*Note:*__ *Caution! __Secnumcloud requires at least one backup policy__ for each virtual machine.*
+__*Note:*__ *Be careful! __Secnumcloud requires that there is at least one backup policy__ for each virtual machine.*
 
 ### How to know if a backup was successfully executed?
 
 There are 2 possible solutions:
 
-1. Go to the __'Jobs'__ page in the __'Backup'__ menu on the green bar on the left of your screen. Choose the job corresponding to the backup and select it.
-Then find the *jobsession* corresponding to your backup, select it using the __'Actions'__ menu.
+1. Go to the __'Jobs'__ page of the __'Backup'__ menu in the green bar on the left side of your screen. Choose the job corresponding to the backup and select it.
+Then find the *jobsession* corresponding to your backup, select it through the __'Actions'__ menu.
 
-![](images/backup_policy_iaas_006.png)
+<img src={backupPolicyIaas_006} />
 
-These actions allow you to get detailed logs of the backup execution. You can search in the backup logs:
+These actions allow you to have detailed logs of the backup execution. You can search in the backup logs:
 
-![](images/backup_policy_iaas_005.png)
+<img src={backupPolicyIaas_005} />
 
-2. Go to the __'Backup Reports'__ page and select the policy you are interested in:
+2. Go to the __'Backup reports'__ page and select the policy you are interested in:
 
-![](images/backup_policy_iaas_004.png)
+<img src={backupPolicyIaas_004} />
 
-You can then filter by date, download the report in __PDF__ or __CSV__ format for use in third-party tools.
+You can then filter by date, download the report in __PDF__ or __CSV__ format to use in third-party tools.
 
-### How to start a restoration?
+### How to start a restore?
 
-Go to the __'Virtual Machines'__ page, select a virtual machine then the __'Backups'__ tab of that machine. To start the restoration, select the backup to restore.
+Go to the __'Virtual Machines'__ page, select a virtual machine, and then the __'Backups'__ tab of that machine. To start the restore, select the backup to restore.
 
-![](images/backup_clone_iaas_003.png)
+<img src={backupCloneIaas_003} />
 
 ### What is the quiescing option?
 
-__Quiescing__ is a process of notifying the system to put itself in an appropriate state before the snapshot starts.
-By default, __quiescing is enabled__. It can be manually disabled in cases where the system does not handle the snapshot well or if the hypervisor agent is not installed on the virtual machine.
+__Quiescing__ is a process of notifying the system to put it in an appropriate state before starting the snapshot.
+By default, __quiescing is enabled__. It can be manually disabled if the system poorly manages the snapshot or if the hypervisor agent is not installed on the virtual machine.
 
-To do this, in the __'Backups'__ section of your virtual machine, click on __'Modify options'__ and disable __quiescing__:
+To do this, in the __'Backups'__ section of your virtual machine, click on __'Edit options'__ and disable __quiescing__:
 
-![](images/backup_policy_iaas_007.png)
+<img src={backupPolicyIaas_007} />
 
-### What are the restoration options for a virtual machine?
+### What are the recovery options for a virtual machine?
 
-3 main options to restore a VM, either to its original target or to a different target:
+3 main options to restore a VM, to its initial target or a different target:
 
 - __'CLONE'__: Restores the virtual machine by renaming it, without replacing the original virtual machine.
 
-![](images/backup_restore_iaas_001.png)
+<img src={backupRestoreIaas_001} />
 
-- __'PRODUCTION'__: Restores and __replaces__ the production virtual machine (the currently production virtual machine is __destroyed__)
+- __'PRODUCTION'__: Restores and __replaces__ the production virtual machine (the currently running virtual machine is __destroyed__)
 
-![](images/backup_restore_iaas_003.png)
+<img src={backupRestoreIaas_003} />
 
 - __'TEST'__: Restores the production virtual machine __without overwriting__ it.
 
-![](images/backup_restore_iaas_002.png)
+<img src={backupRestoreIaas_002} />
 
-### How to restore and replace the production virtual machine without keeping the currently production virtual machine?
+### How to restore and replace the production virtual machine, without keeping the currently running virtual machine?
 
-Choose the __'Production'__ restoration mode. The option to 'overwrite the virtual machine' is enabled by default.
+Choose the __'Production'__ restore mode. The 'overwrite the virtual machine' option is the default.
 
-![](images/backup_restore_iaas_003.png)
+<img src={backupRestoreIaas_003} />
 
 ### Why is the number of virtual machines different between the backup and compute modules?
 
-The difference in virtual machines may be due to the backup module not retrieving the latest created machines.
+The difference in virtual machines may be because the backup module has not retrieved the latest created machines.
 
 To update the backup module, you need to ask the backup software layer to re-inventory the virtual machines.
-To do this, in the __'Infrastructure'__ menu on the green bar to the left of the screen, navigate to the __'Spectrum Protect Plus'__ submenu and use the __'Action'__ button of the inventory:
+To do this, in the __'Infrastructure'__ menu in the green bar on the left side of the screen, navigate to the __'Spectrum Protect Plus'__ submenu and use the __'Action'__ button for the inventory:
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
-Note that you have the date of the last inventory indicated.
+Note that the date of the last inventory is indicated.
 
-If a virtual machine difference persists, it may be due to virtual machines hosting the backup system. Indeed, these do not count themselves in the number of machines in the backup module.
+If a virtual machine discrepancy persists, it may come from the virtual machines hosting the backup system. Indeed, these do not count themselves in the calculation of the number of machines in the backup module.
 
 ### How to inventory virtual machines on the backup module?
 
-To launch an inventory of virtual machines on the backup module, in the __'Infrastructure'__ menu on the green bar to the left of the screen, navigate to the __'Spectrum Protect Plus'__ submenu and use the __'Action'__ button of the inventory:
+To launch an inventory of virtual machines on the backup module, in the __'Infrastructure'__ menu in the green bar on the left side of the screen, navigate to the __'Spectrum Protect Plus'__ submenu and use the __'Action'__ button for the inventory:
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
-Note that you have the date of the last inventory indicated.
+Note that the date of the last inventory is indicated.
 
-### Why does my virtual machine backup fail indicating a snapshot problem?
+### Why does the backup of my virtual machine fail indicating a snapshot issue?
 
-This error means it's the first time your machine is trying to be backed up.
+This error means that it is the first time your machine is trying to be backed up.
 
-__During the first backup of a virtual machine, no snapshot must be present on the machine.__
+__During the first backup of a virtual machine, no snapshot should be present on the machine.__
 
-### How to restore and replace the production virtual machine, keeping and renaming the current production virtual machine?
+### How to restore and replace the production virtual machine, while keeping and renaming the currently running virtual machine?
 
-Here is how to proceed:
+Here's how to proceed:
 
-- Choose the __'CLONE'__ mode (the clone mode causes a change of MAC address and UUID of the virtual machine),
-- Rename the restored virtual machine to the final name (of the production VM),
+- Choose the __'CLONE'__ mode (the clone mode changes the MAC address and UUID of the virtual machine),
+- Rename the restored virtual machine with the final name (of the production VM),
 - Rename the old production virtual machine (to _OLD).
 
-### How to restore a virtual machine without replacing the original virtual machine?
+### How to restore a virtual machine, without replacing the original virtual machine?
 
-Here is how to proceed:
+Here's how to proceed:
 
-- Choose the __'CLONE'__ mode (the clone mode causes a change of MAC address and UUID of the virtual machine)
+- Choose the __'CLONE'__ mode (the clone mode changes the MAC address and UUID of the virtual machine)
 - Define the name of the clone (_REST or others)
 
 ### Why can't I delete a disk in instant access mode on my virtual machine?
 
-Run the backup inventory: in the __'Infrastructure'__ menu on the green bar to the left of the screen, navigate
-to the __'Spectrum Protect Plus'__ submenu and use the __'Action'__ button of the inventory:
+Perform the backup inventory: in the __'Infrastructure'__ menu in the green bar on the left side of the screen, navigate
+to the __'Spectrum Protect Plus'__ submenu and use the __'Action'__ button for the inventory:
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
-Perform the disk deletion once the inventory is finished. Refresh the virtual machine to verify that the disk has been deleted.
+Perform the disk deletion once the inventory is finished. Refresh the virtual machine to confirm that the disk has been deleted.
 
 ### Why can't I start a virtual machine with a policy in Held status (suspended policy)?
 
-A policy in "Held" status is a feature that temporarily suspends retention and data deletion actions, thereby ensuring that data remains intact and available beyond its standard retention period for specific reasons such as compliance or legal needs.
+A policy in "Held" status is a feature that allows temporarily suspending retention and deletion actions of the data, ensuring that the data remain intact and available beyond their standard retention period for specific reasons such as compliance or legal needs.
 
-Suppose a company has a 30-day backup retention policy for certain production data. Due to a legal investigation, they receive a request to preserve all relevant backups for an indefinite period. You have the option to suspend the associated backup policy via the "Held" status to prevent the automatic deletion of these backups after 30 days, ensuring that the data remains available for the investigation's duration.
+Suppose a company has a 30-day backup retention policy for some production data. Due to a legal investigation, they receive a request to preserve all relevant backups for an indefinite period. You have the option to suspend the associated backup policy via the "Held" status to prevent the automatic deletion of these backups after 30 days, thus ensuring that the data remain available for the entire duration of the investigation.
 
-A suspended backup policy (in Held status) will not execute the scheduled backups assigned to it, so the virtual machine cannot be considered protected, which does not comply with SecNumCloud standards.
+A suspended backup policy (in Held status) will not execute backups according to its assigned schedule, meaning the virtual machine cannot be considered protected, which does not comply with SecNumCloud standards.
 
-Feel free to ask our support team for advice on this subject.
+Feel free to ask our support team for advice on this topic.

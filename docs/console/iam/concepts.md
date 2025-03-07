@@ -17,6 +17,7 @@ import shivaProfil_006 from './images/shiva_profil_006.png'
 import shivaProfil_007 from './images/shiva_profil_007.png'
 import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
+
 ## Utilisateurs
 
 Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).

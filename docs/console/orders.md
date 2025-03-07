@@ -28,9 +28,10 @@ import shivaOrdersNet_004 from './images/shiva_orders_net_004.png'
 import shivaOrdersIaasCpoolEsx from './images/shiva_orders_iaas_cpool_esx.png'
 import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.png'
 
+
 ## Concept
 
-Le suivi du déploiement de nouvelles ressources se fait dans le menu __'Commandes'__ accessible dans le bandeau vert à gauche de l'écran. 
+Le suivi du déploiement de nouvelles ressources se fait dans le menu __'Commandes'__ accessible dans le bandeau vert à gauche de l'écran.
 
 Il permet de visualiser les ressources Cloud commandées, en cours de déploiement et les eventuelles erreurs au sein d'un [Tenant](iam/concepts.md#tenant) de votre [Organisation](iam/concepts.md#organisations).
 
@@ -131,23 +132,23 @@ Vous accédez ensuite à un récapitulatif complet des options que vous avez sé
 ### Déployer un nouveau datastore au sein d'un cluster SDRS VMware
 
 Dans cet exemple, nous allons ajouter du stockage en mode bloc pour une infrastructure VMware.
-Pour ajouter un datastore supplémentaire dans votre cluster de stockage SDRS, allez dans le sous menu __'Infrastructure'__ puis __'VMWare'__. 
+Pour ajouter un datastore supplémentaire dans votre cluster de stockage SDRS, allez dans le sous menu __'Infrastructure'__ puis __'VMWare'__.
 Choisissez alors la stack vmware et la zone de disponibilité. Allez ensuite dans le sous menu __'Stockage'__.
 
-Choisissez le cluster SDRS correspondant aux caractéristiques de performance que vous souhaitez et cliquez sur le bouton __'Ajouter un datastore'__ qui se situe dans le tableau 
-avec la liste des datastores. 
+Choisissez le cluster SDRS correspondant aux caractéristiques de performance que vous souhaitez et cliquez sur le bouton __'Ajouter un datastore'__ qui se situe dans le tableau
+avec la liste des datastores.
 
 <img src={shivaOrdersIaasSpoolDs} />
 
-__nota__ :  
-- *La taille de la plus petite LUN activable sur un cluster est de __500 Gio__.*  
-- *Les performances d'un datastore vont de 500 iops/Tio en moyenne jusqu'à 15000 iops/Tio en moyenne. __C'est un bridage logiciel réalisé au niveau des contrôleurs de stockage__.*  
-- *La comptabilité du volume de disque consommé par votre organisation est la somme de toutes les LUNs sur l'ensemble des AZs utilisées*.  
+__nota__ :
+- *La taille de la plus petite LUN activable sur un cluster est de __500 Gio__.*
+- *Les performances d'un datastore vont de 500 iops/Tio en moyenne jusqu'à 15000 iops/Tio en moyenne. __C'est un bridage logiciel réalisé au niveau des contrôleurs de stockage__.*
+- *La comptabilité du volume de disque consommé par votre organisation est la somme de toutes les LUNs sur l'ensemble des AZs utilisées*.
 - *Les droits __'order'__ ainsi que __'compute'__ sont nécessaires au compte pour mener cette action.*
 
 ### Commander de nouveaux réseaux
 
-La technologie réseau utilisée sur l'infrastructure Cloud Temple est basée sur [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). Elle vous permet de bénéficier de __réseaux de niveau 2 en continuité entre vos zones de disponibilité au sein d'une région__. 
+La technologie réseau utilisée sur l'infrastructure Cloud Temple est basée sur [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). Elle vous permet de bénéficier de __réseaux de niveau 2 en continuité entre vos zones de disponibilité au sein d'une région__.
 Il est aussi possible de partager des réseaux entre vos tenants et de les terminer en zone de hosting.
 Basiquement, vous pouvez imaginer un réseau Cloud Temple comme un vlan 802.1q disponible en tout point de votre tenant.
 
@@ -181,7 +182,7 @@ Dans l'exemple suivant, nous allons ajouter du calcul sur un cluster d'hypervise
 Allez dans le sous menu __'Infrastructure'__ puis __'VMWare'__. Choisissez alors la stack vmware et la zone de disponibilité et le cluster de calcul.
 Dans cet exemple, il s'agit du __'clu001-ucs12'__. Cliquez sur le bouton __'Ajouter un host'__ qui se situe dans le tableau avec la liste des hosts, en haut à droite.
 
-__nota__ : 
+__nota__ :
 
 - *__La configuration d'un cluster doit être homogène__. Ainsi, il n'est pas permis de mixer les types d'hyperviseur au sein d'un cluster. Toutes les lames doivent être de même type.*
 - *Les droits __'order'__ ainsi que __'compute'__ sont nécessaires au compte pour mener cette action.*
@@ -196,8 +197,8 @@ Pour ajouter de la mémoire vive sur un cluster, il suffit de se rendre sur la c
 
 <img src={shivaOrdersIaasCpoolMemory} />
 
-__nota__ :  
-- *__Les machines sont livrées avec la totalité de la mémoire physique__. Le débridage de la ressource mémoire n'est qu'une activation logicielle au niveau d'un cluster.*  
-- *Il n'est pas possible de modifier la quantité de mémoire physique d'un type de lame. Bien tenir compte de la capacité maximale d'une lame lors de la création d'un cluster.*  
+__nota__ :
+- *__Les machines sont livrées avec la totalité de la mémoire physique__. Le débridage de la ressource mémoire n'est qu'une activation logicielle au niveau d'un cluster.*
+- *Il n'est pas possible de modifier la quantité de mémoire physique d'un type de lame. Bien tenir compte de la capacité maximale d'une lame lors de la création d'un cluster.*
 - *Les droits __'order'__ ainsi que __'compute'__ sont nécessaires au compte pour mener cette action.*
 

@@ -47,6 +47,7 @@ import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
+
 ## Calcul
 
 ### Pilotage des Machines virtuelles

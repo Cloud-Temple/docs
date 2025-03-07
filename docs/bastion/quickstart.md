@@ -8,6 +8,7 @@ import creerSession3 from './images/creer_session3.png'
 import ouvrirSession from './images/ouvrir_session.png'
 import ouvrirSession2 from './images/ouvrir_session2.png'
 
+
 Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter.
 
 ## Prérequis

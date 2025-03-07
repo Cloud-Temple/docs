@@ -1,70 +1,82 @@
+---
 title: Geplante Operationen und Vorfallmanagement
 ---
+import shivaInterventionMenu01 from './images/shiva_intervention_menu01.png'
+import shivaInterventionMenu03 from './images/shiva_intervention_menu03.png'
+import shivaInterventionMenu04 from './images/shiva_intervention_menu04.png'
+import shivaInterventionMenu05 from './images/shiva_intervention_menu05.png'
+import shivaIncident_001 from './images/shiva_incident_001.png'
+import shivaIncident_002 from './images/shiva_incident_002.png'
+import shivaIncident_003 from './images/shiva_incident_003.png'
+import shivaIncident_004 from './images/shiva_incident_004.png'
+import shivaIncident_005 from './images/shiva_incident_005.png'
+import shivaIncident_006 from './images/shiva_incident_006.png'
 
-Wie jede Cloud-Infrastrukturplattform unterliegt die Cloud Temple Plattform regelmäßigen Hardware- und Software-Wartungen und -Upgrades.
+
+Wie jede Cloud-Infrastrukturplattform unterliegt auch die Cloud-Temple-Plattform regelmäßig Hardware- und Software-Wartungsarbeiten.
 
 ## Zugriff auf laufende Operationen und Vorfälle
 
-Das Symbol zur Operationsverfolgung ermöglicht es Ihnen, geplante Operationen auf der Cloud Temple Infrastruktur sowie offene Vorfälle auf dem Tenant einzusehen. Dieses Symbol ist in der Symbolleiste oben links auf dem Bildschirm zugänglich und hat die Form eines __'Werkzeug'__-Symbols.
+Das Operations-Tracking-Icon ermöglicht die Ansicht der geplanten Operationen auf der Cloud Temple-Infrastruktur sowie der offenen Vorfälle auf dem Mandanten. Dieses Icon ist in der Iconleiste oben links auf dem Bildschirm zugänglich und hat die Form eines __'Werkzeug'-Icons__.
 
-![](images/shiva_intervention_menu01.png)
+<img src={shivaInterventionMenu01} />
 
-Dieses Symbol soll Sichtbarkeit über laufende und abgeschlossene geplante Eingriffe und/oder Vorfälle auf dem Tenant bieten.
+Dieses Icon zielt darauf ab, Sichtbarkeit auf geplante, laufende und abgeschlossene Eingriffe und/oder Vorfälle auf dem Mandanten zu bieten.
 
-Wenn Eingriffe und/oder Vorfälle im Gange sind, erscheint eine Zahl auf dem Symbol.
+Wenn Eingriffe und/oder Vorfälle im Gange sind, erscheint eine Zahl auf dem Icon.
 
-Durch Klicken auf Schnellansicht finden Sie die laufenden Eingriffe. Es ist auch möglich, auf __'Alle Eingriffe'__ oder __'Alle Tenant-Vorfälle und Berichte'__ zu klicken, um weitere Details anzuzeigen.
+Durch Klicken auf schnelle Ansicht finden Sie die laufenden Eingriffe. Es ist auch möglich, auf __'Alle Eingriffe'__ oder __'Alle Vorfälle und Berichte des Mandanten'__ zu klicken, um weitere Details anzuzeigen.
 
-![](images/shiva_intervention_menu03.png)
+<img src={shivaInterventionMenu03} />
 
-## Verfolgung geplanter Eingriffe
+## Nachverfolgung der geplanten Eingriffe
 
-Die Seite Eingriffe besteht aus zwei Registerkarten. Die erste Registerkarte ermöglicht es Ihnen, Eingriffe einzusehen, die für die nächsten 30 Tage geplant sind, sowie laufende Eingriffe.
+Die Seite Eingriffe besteht aus zwei Registerkarten. Die erste Registerkarte ermöglicht die Ansicht der geplanten Eingriffe für die nächsten 30 Tage und der laufenden Eingriffe.
 
-![](images/shiva_intervention_menu04.png)
+<img src={shivaInterventionMenu04} />
 
-Abgeschlossene Eingriffe sind in der zweiten Registerkarte 'Abgeschlossen' sichtbar.
+Abgeschlossene Eingriffe sind auf der zweiten Registerkarte 'Abgeschlossen' sichtbar.
 
-![](images/shiva_intervention_menu05.png)
+<img src={shivaInterventionMenu05} />
 
 Der Zugriff auf diese Informationen erfordert für das Benutzerprofil die Berechtigung '**intervention_read**'.
 
 ## Vorfallmanagement
 
-Es können zwei Arten von Vorfällen unterschieden werden: globale Vorfälle, die das gesamte System betreffen, und Vorfälle, die spezifisch für einen Kundenbereich sind und nur die Ressourcen oder Dienste betreffen, die mit einem bestimmten Kunden verbunden sind.
+Es gibt zwei Arten von Vorfällen: globale Vorfälle, die das gesamte System betreffen, und vorfallbezogene Vorfälle, die nur die Ressourcen oder Dienste eines bestimmten Kunden betreffen.
 
 ### Globale Vorfälle
 
-Das Abrufen von Informationen über globale Vorfälle erfordert keine besondere Berechtigung. Ein rotes Banner wird angezeigt, sobald Sie sich mit der Konsole verbinden, um vor dem Vorhandensein eines globalen Vorfalls zu warnen, der gerade gelöst wird. Der Benutzer hat die Möglichkeit, dieses Banner während seiner Sitzung vorübergehend auszublenden, aber es wird bei jeder neuen Verbindung oder beim Aktualisieren der Seite wieder erscheinen, solange der Vorfall nicht gelöst ist.
+Für den Abruf von Informationen zu globalen Vorfällen sind keine besonderen Berechtigungen erforderlich. Ein rotes Banner wird beim Anmelden an der Konsole angezeigt, um auf das Vorhandensein eines globalen Vorfalls hinzuweisen, der derzeit behoben wird. Der Benutzer hat die Möglichkeit, dieses Banner während seiner Sitzung vorübergehend auszublenden, aber es wird bei jeder neuen Anmeldung oder beim Aktualisieren der Seite wieder angezeigt, solange der Vorfall ungelöst bleibt.
 
-![](images/shiva_incident_001.png)
+<img src={shivaIncident_001} />
 
-Eine Schaltfläche __'Mehr erfahren'__ leitet zur öffentlichen Seite zur Vorfallverfolgung weiter, die Zugang zu zusätzlichen Informationen über den laufenden Vorfall ermöglicht:
+Eine Schaltfläche __'Mehr erfahren'__ leitet zur öffentlichen Vorfallverfolgungsseite weiter, auf der zusätzliche Informationen zum laufenden Vorfall zugänglich sind:
 
-![](images/shiva_incident_002.png)
+<img src={shivaIncident_002} />
 
 Es ist möglich, Berichte über globale Vorfälle zu erhalten. Der Zugriff auf diese Berichte erfordert die spezifische Berechtigung '**incident_management**'.
 
 Hier ist ein Beispiel für die Registerkarte, die diese Berichte anzeigt:
 
-![](images/shiva_incident_003.png)
+<img src={shivaIncident_003} />
 
-### Vorfälle in einem Kundenbereich
+### Vorfälle auf einem Sponsorbereich
 
-Die Sichtbarkeit von Vorfällen, die spezifisch für einen Kundenbereich sind, erfordert die Berechtigung **incident_read**. Diese Vorfälle werden durch ein spezielles Symbol dargestellt, begleitet von einem roten Abzeichen, das die Anzahl der laufenden Vorfälle anzeigt.
+Die Sichtbarkeit der vorfallbezogenen Vorfälle erfordert die Berechtigung **incident_read**. Diese Vorfälle werden durch ein entsprechendes Icon dargestellt, das von einem roten Abzeichen begleitet wird, das die Anzahl der laufenden Vorfälle anzeigt.
 
-Das Symbol ist anklickbar und ermöglicht es, die mit den Vorfällen verbundenen Tickets aufzulisten. Jedes Ticket enthält einen Link zu den Details des Vorfalls, der die Möglichkeit bietet, den Fortschritt ihrer Lösung zu verfolgen:
+Das Icon ist anklickbar und ermöglicht die Auflistung der mit den Vorfällen verbundenen Tickets. Jedes Ticket enthält einen Link zu den Vorfalldetails und bietet die Möglichkeit, deren Fortschritt zu verfolgen:
 
-![](images/shiva_incident_004.png)
+<img src={shivaIncident_004} />
 
-Um die Details eines Vorfalls einzusehen, ist es notwendig, der Autor des Vorfalltickets zu sein oder über die Berechtigung **support_management** zu verfügen.
+Um die Details eines Vorfalls einzusehen, ist es notwendig, der Verfasser des Vorfalltickets zu sein oder über die Berechtigung **support_management** zu verfügen.
 
-### Benachrichtigungsverwaltung
+### Benachrichtigungsmanagement
 
-Um Benutzer im Falle eines neuen Vorfalls schnell zu informieren, wurde ein E-Mail-Benachrichtigungssystem eingerichtet. Von ihrem Benutzerprofil aus ermöglicht eine Registerkarte mit dem Titel '*Meine Abonnements*' den Benutzern, Benachrichtigungen für beide Arten von Vorfällen zu abonnieren. So erhalten sie innerhalb kürzester Zeit eine E-Mail, wenn ein Vorfall gemeldet oder gelöst wird.
+Um Benutzer im Falle eines neuen Vorfalls schnell zu informieren, wurde ein E-Mail-Benachrichtigungssystem eingerichtet. Von ihrem Benutzerprofil aus können sich Benutzer unter der Registerkarte '*Meine Abonnements*' für Benachrichtigungen zu beiden Vorfalltypen abonnieren. So erhalten sie eine E-Mail in kurzer Zeit bei der Meldung oder Lösung eines Vorfalls.
 
-![](images/shiva_incident_005.png)
+<img src={shivaIncident_005} />
 
-Der Betreff der E-Mail gibt die Art des Vorfalls an und im Falle eines bereichsbezogenen Vorfalls den Namen des betroffenen Bereichs. Die Benachrichtigung enthält auch einen Link, der direkten Zugang zu den Details des Vorfalls ermöglicht:
+Der Betreff der E-Mail gibt den Vorfalltyp und im Falle eines vorfallbezogenen Vorfalls den Namen des betroffenen Bereichs an. Die Benachrichtigung enthält auch einen Link, der direkt zu den Vorfalldetails führt:
 
-![](images/shiva_incident_006.png)
+<img src={shivaIncident_006} />

@@ -23,9 +23,10 @@ import ssoAad_016 from './images/sso_aad_016.png'
 import ssoAad_017 from './images/sso_aad_017.png'
 import ssoAad_018 from './images/sso_aad_018.png'
 
-Voici un exemple de configuration du référentiel d'authentification d'une organisation Cloud Temple avec __Microsoft EntraID__ (Azure Active Directory).  
 
-La configuration de votre référentiel Microsoft au niveau d'une organisation Cloud Temple facilite l'authentification de vos utilisateurs sur la console Shiva. Cela permet d'éviter la multiplication des facteurs d'authentification et de diminuer la surface d'attaque.  
+Voici un exemple de configuration du référentiel d'authentification d'une organisation Cloud Temple avec __Microsoft EntraID__ (Azure Active Directory).
+
+La configuration de votre référentiel Microsoft au niveau d'une organisation Cloud Temple facilite l'authentification de vos utilisateurs sur la console Shiva. Cela permet d'éviter la multiplication des facteurs d'authentification et de diminuer la surface d'attaque.
 
 Si vos utilisateurs sont authentifiés à leur compte Microsoft, l'authentification aux services de la console Shiva sera transparente.
 
@@ -36,12 +37,12 @@ Voici les différentes étapes pour réaliser cette configuration :
 
 ### Enregistrement d'une nouvelle application Azure (portail Azure)
 
-Pour la création de l'__app registration__, il faut se rendre sur le portail Microsoft Azure, puis daans Microsoft EntraID, __"ADD > App Registration"__ 
+Pour la création de l'__app registration__, il faut se rendre sur le portail Microsoft Azure, puis daans Microsoft EntraID, __"ADD > App Registration"__
 
 Dans la page "Register an application", veuillez indiquer :
 ```
 - __Name__ : Indiquer "__SHIVA__"
-- __Supported account types__ :  __Accounts in this organizational directory only__ (__<Votre Tenant Azure>__ only - Single tenant) 
+- __Supported account types__ :  __Accounts in this organizational directory only__ (__<Votre Tenant Azure>__ only - Single tenant)
 - __Redirect URL__ : A ne pas paramétrer dans un premier temps. L'URL sera fournie par le support Cloud Temple et sera à ajouter dans ce champ plus tard.
 ```
 
@@ -52,7 +53,7 @@ Les informations **Application (client) ID** et **Directory (tenant) ID** sont l
 <img src={ssoEntra_002} />
 
 ### Définition d'un secret
-Dans l'onglet "Certificates & secrets", créer un nouveau secret.  
+Dans l'onglet "Certificates & secrets", créer un nouveau secret.
 
 *À noter : la date d'expiration du secret ne peut être supérieure à 24 mois, y compris avec une date d'expiration custom.*
 
@@ -63,9 +64,9 @@ Le secret généré sera à fournir dans la demande de support :
 <img src={ssoAad_005} />
 
 
-### Définition du token EntraID 
+### Définition du token EntraID
 
-Le token EntraID est nécessaire à la configuration de l'authentification.  
+Le token EntraID est nécessaire à la configuration de l'authentification.
 
 Dans le menu __"Token Configuration"__, cliquer sur __"Add optional claim"__. Vous devrez sélectionner "ID" en tant que type de token et cocher "email".
 
@@ -87,12 +88,12 @@ Il est  possible de restreindre au niveau de __"App Registration"__ les accès p
 Voici la procédure à suivre ;
 
 #### Accéder aux paramètres supplémentaires "App Registration"
-##### Option 1 
+##### Option 1
 Allez sur l'onglet "Overview" puis cliquez sur le nom de l'application (le lien situé à la suite de "Managed application").
 
 <img src={ssoAad_009} />
 
-##### Option 2 
+##### Option 2
 Se rendre dans les "Enterprise applications" et chercher en utilisant le nom de l'application créée précédemment.
 
 <img src={ssoAad_010} />
@@ -116,9 +117,9 @@ Désormais les utilisateurs assignés à l'application pourront se connecter à 
 
 ## Etape 2 : Demander la configuration du SSO (Single Sign-On) de votre organisation
 
-Cette partie de la configuration se fait au niveau de l'organisation par l'équipe Cloud temple.  
+Cette partie de la configuration se fait au niveau de l'organisation par l'équipe Cloud temple.
 
-Pour se faire, faites __une demande d'assistance__ dans la console indiquant votre souhait de configurer une SSO Microsoft EntraID.  
+Pour se faire, faites __une demande d'assistance__ dans la console indiquant votre souhait de configurer une SSO Microsoft EntraID.
 
 Veuillez donner les informations suivantes dans la demande d'assistance :
 
