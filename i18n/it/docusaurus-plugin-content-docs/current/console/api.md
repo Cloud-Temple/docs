@@ -52,7 +52,7 @@ Vedrai poi il nuovo token creato e la sua futura data di scadenza.
 
 La documentazione OpenAPI 3.0 (Swagger) delle API della console Cloud Temple è disponibile direttamente nell'applicazione:
 
-<img src={ShivaApi001} className="img-large" />
+<img src={ShivaApi001} />
 
 L'accesso alle API richiede l'autenticazione. Una volta autenticato tutte le operazioni devono avere l'intestazione
 __'Authorization'__ con il bearer access token ottenuto durante la fase di autenticazione.
@@ -204,7 +204,7 @@ sono dei buoni punti di partenza per implementare strategie di attenuazione.
 
 Le informazioni sull'evoluzione degli endpoint dell'API sono disponibili nelle note di aggiornamento:
 
-<img src={ShivaApi004} className="img-large" />
+<img src={ShivaApi004} />
 
 Troverai l'elenco degli endpoint che vengono deprecati attività per attività.
 

@@ -52,7 +52,7 @@ Dann sehen Sie den neu erstellten Token und das zukünftige Ablaufdatum.
 
 Die OpenAPI 3.0 (Swagger)-Dokumentation der Cloud Temple-Konsolen-APIs ist direkt in der Anwendung verfügbar:
 
-<img src={ShivaApi001} className="img-large" />
+<img src={ShivaApi001} />
 
 Der Zugriff auf die APIs erfordert eine Authentifizierung. Sobald Sie authentifiziert sind, müssen alle Operationen den Header
 __'Authorization'__ mit dem bei der Authentifizierung erhaltenen Bearer-Access-Token enthalten.
@@ -202,7 +202,7 @@ sind gute Ausgangspunkte zur Implementierung von Abklingstrategien.
 
 Die Entwicklungsinformationen der API-Endpunkte sind in den Versionshinweisen verfügbar:
 
-<img src={ShivaApi004} className="img-large" />
+<img src={ShivaApi004} />
 
 Sie finden die Liste der Endpunkte, die aktiv schrittweise eingestellt werden.
 

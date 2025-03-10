@@ -52,7 +52,7 @@ You then see the new token created and its future expiration date.
 
 The OpenAPI 3.0 (Swagger) documentation of the Cloud Temple console APIs is directly available in the application:
 
-<img src={ShivaApi001} className="img-large" />
+<img src={ShivaApi001} />
 
 Access to the APIs requires authentication. Once authenticated, all operations must have the header
 __'Authorization'__ with the bearer access token obtained during the authentication phase.
@@ -192,7 +192,7 @@ The Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Ten
 
 Information on API endpoint updates is available in the release notes:
 
-<img src={ShivaApi004} className="img-large" />
+<img src={ShivaApi004} />
 
 You will find the list of endpoints that are deprecated activity by activity.
 
