@@ -1,12 +1,21 @@
 ---
 title: Metrologie
 ---
+import metricsHypervisorsCo2 from './images/metrics_hypervisors_co2.png'
+import shivaMetric_000 from './images/shiva_metric_000.png'
+import shivaMetric_003 from './images/shiva_metric_003.png'
+import shivaMetric_001 from './images/shiva_metric_001.png'
+import shivaMetric_002 from './images/shiva_metric_002.png'
+import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
+import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
+import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
+
 
 ## Concept
 
-La majorité des clients __Cloud Temple__ disposent d'outils de visualisation, de monitoring et de métrologie pour le suivi de leurs opérations. 
+La majorité des clients __Cloud Temple__ disposent d'outils de visualisation, de monitoring et de métrologie pour le suivi de leurs opérations.
 
-La philosophie de la console Shiva est de permettre l'accès à la donnée afin de s'intégrer dans cet outillage via un proxy prometheus intégré. 
+La philosophie de la console Shiva est de permettre l'accès à la donnée afin de s'intégrer dans cet outillage via un proxy prometheus intégré.
 
 Ce proxy vous permet de requêter et manipuler les donnes depuis un outil de visualisation comme [Grafana](https://grafana.com).
 
@@ -18,14 +27,14 @@ Il est cependant possible de visualiser certaines données de performances de vo
 
 *__Nota :__ Pour accéder à ces dashboards, il est nécessaire de posséder le droit __'metric_read'__*
 
-### Suivi des emissions carbone pour le calcul 
+### Suivi des emissions carbone pour le calcul
 
-Le tableau de board de la console Shiva intègre par défaut un graphique de suivi de la consommation électrique de votre calcul ainsi que l'estimation 
+Le tableau de board de la console Shiva intègre par défaut un graphique de suivi de la consommation électrique de votre calcul ainsi que l'estimation
 de l'émission de carbone associée.
 
 Il est accessible directement dans la page d'accueil de l'interface web de la console Cloud Temple, en cliquant sur __'Metric'__ :
 
-![](images/metrics_hypervisors_co2.png)
+<img src={metricsHypervisorsCo2} />
 
 ### Vue globale de la santé des machines virtuelles
 
@@ -33,22 +42,22 @@ La synthèse de l'état des machines virtuelles est accessible dans le menu __'I
 
 Cette synthèse donne, sur la plage de temps sélectionnée dans __'Filtres'__ :
 
-- le nombre de CPU et la __moyenne d'utilisation CPU__, 
-- le nombre de Go de mémoire et la __moyenne d'usage de la mémoire__, 
+- le nombre de CPU et la __moyenne d'utilisation CPU__,
+- le nombre de Go de mémoire et la __moyenne d'usage de la mémoire__,
 - Les moyennes de __latence d'accès au stockage__ en lecture et en écriture,
 - Le __'CPU Ready'__ moyen de la machine virtuelle (ce qui correspond au temps moyen d'attente de disponibilité d'un core physique par la machine virtuelle).
 
-![](images/shiva_metric_000.png)
+<img src={shivaMetric_000} />
 
 Pour chaque VM, vous pouvez accéder à l'historique de ses performances en cliquant sur l'icône vert __'Historique'__ de la machine virtuelle dans la colonne action. :
 
-![](images/shiva_metric_003.png)
+<img src={shivaMetric_003} />
 
 Vous accédez alors à la page de visualisation graphique des données historisée, incluant une vue __performance environnementale__ :
 
-![](images/shiva_metric_001.png)
+<img src={shivaMetric_001} />
 
-![](images/shiva_metric_002.png)
+<img src={shivaMetric_002} />
 
 ## Utilisation avec __Grafana__
 
@@ -58,8 +67,8 @@ Vous trouverez tout un ensemble d'__exemple de configuration pour Grafana__ ici 
 
 https://github.com/Cloud-Temple/console-grafana-iaas
 
-![](images/grafana_dashboards_003.png)
+<img src={grafanaDashboards_003} />
 
-![](images/grafana_dashboards_004.png)
+<img src={grafanaDashboards_004} />
 
-![](images/grafana_dashboards_002.png)
+<img src={grafanaDashboards_002} />

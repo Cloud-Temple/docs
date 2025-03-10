@@ -1,39 +1,54 @@
 ---
 title: Guide de démarrage
 ---
+import S3ListBucket from './images/S3_list_bucket.png'
+import S3Accounts from './images/S3_accounts.png'
+import S3CreateAccount from './images/S3_create_account.png'
+import S3StorageKeys from './images/S3_storage_keys.png'
+import S3Keyregen from './images/S3_keyregen.png'
+import S3Create from './images/S3_create.png'
+import S3CreatePopup_001 from './images/S3_create_popup_001.png'
+import S3AccountAssign from './images/S3_account_assign.png'
+import S3AccountAccess from './images/S3_account_access.png'
+import S3Files from './images/S3_files.png'
+import S3Params from './images/S3_params.png'
+import S3Lifecycle from './images/S3_lifecycle.png'
+import S3CreatePopup_002 from './images/S3_create_popup_002.png'
+import S3Delete from './images/S3_delete.png'
+
 
 ## Lister l'ensemble des bucket S3 de votre tenant
 
 Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
 
-![](images/S3_list_bucket.png)
+<img src={S3ListBucket} />
 
 Vous pouvez voir tous les comptes créés sur votre tenant et autorisé à accéder au service S3 via l'onglet '__Comptes de stockage__'.
 
-![](images/S3_accounts.png)
+<img src={S3Accounts} />
 
 ## Création d'un nouveau compte de stockage
 
 La création d'un compte de stockage sur votre tenant se fait en appuyant sur le bouton '__Nouveau compte de stockage__' en haut à droite, dans l'onglet '__Comptes de stockage__' :
 
-![](images/S3_create_account.png)
+<img src={S3CreateAccount} />
 
 La plateforme vous donne alors la clef d'accès et la clef secrète de votre bucket :
 
-![](images/S3_storage_keys.png)
+<img src={S3StorageKeys} />
 
 __ATTENTION :__ Les clés secrète et d'accès sont présentées une seule fois. Après cette première apparition, il devient impossible de consulter à nouveau la clé secrète. Il est donc essentiel de noter ces informations immédiatement ; faute de quoi, il vous sera nécessaire de générer une nouvelle paire de clés.
 
 La regeneration se fait au niveau des options de la clefs en choisissant l'option "Réinitialiser clé d'accès".
 
-![](images/S3_keyregen.png)
+<img src={S3Keyregen} />
 
 
 ## Création d'un bucket S3
 
 La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
 
-![](images/S3_create.png)
+<img src={S3Create} />
 
 Une fenêtre s'affiche alors et vous devez renseigner :
 
@@ -41,7 +56,7 @@ Une fenêtre s'affiche alors et vous devez renseigner :
 2. Le **type** de bucket : performant ou archivage,
 3. Le **nom** de votre bucket (il doit être unique).
 
-![](images/S3_create_popup_001.png)
+<img src={S3CreatePopup_001} />
 
 Au 3 Avril 2024, la région disponible est **FR1** (Paris) et seul le type performant est disponible.
 
@@ -55,7 +70,7 @@ Vous devez aussi choisir qui peut accéder à votre bucket :
 
 Les associations de compte aux buckets sont réalisées dans l'onglet '__Politiques__'
 
-![](images/S3_account_assign.png)
+<img src={S3AccountAssign} />
 
 Cette association permet de donner l'accès du compte de stockage au bucket. Il y quatres rôles :
 
@@ -111,17 +126,17 @@ Les permissions S3 derrière ce rôle:
 }
 ```
 
-![](images/S3_account_access.png)
+<img src={S3AccountAccess} />
 
 ## Parcourir un bucket S3
 
 Lorsque vous cliquez sur le nom d'un bucket, vous avez accès en premier à l'onglet '__Fichiers__' pour voir son contenu :
 
-![](images/S3_files.png)
+<img src={S3Files} />
 
 Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
 
-![](images/S3_params.png)
+<img src={S3Params} />
 
 Vous avez alors :
 
@@ -133,7 +148,7 @@ Vous avez alors :
 
 Vous pouvez modifier le paramètre de rétention via le bouton '__Modifier__' du cycle de vie :
 
-![](images/S3_lifecycle.png)
+<img src={S3Lifecycle} />
 
 Enfin, vous pouvez modifier sa typologie d'accès.
 
@@ -141,13 +156,13 @@ Enfin, vous pouvez modifier sa typologie d'accès.
 
 Il est très simple de configurer les restrictions d'accès à vos buckets S3. Lors de la création d'un bucket, vous avez le choix entre trois configurations d'accès :
 
-![](images/S3_create_popup_001.png)
+<img src={S3CreatePopup_001} />
 
 - Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
 - Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
 - Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser:
 
-![](images/S3_create_popup_002.png)
+<img src={S3CreatePopup_002} />
 
 *Le support IPv6 est prévu pour le premier semestre 2025.*
 
@@ -155,7 +170,7 @@ Il est très simple de configurer les restrictions d'accès à vos buckets S3. L
 
 La suppression d'un bucket se fait dans les actions associées au bucket en choisissant l'option __'Supprimer'__.
 
-![](images/S3_delete.png)
+<img src={S3Delete} />
 
 _**ATTENTION : La suppression est définitive et il n'existe aucun moyen de récupérer les données.**_
 

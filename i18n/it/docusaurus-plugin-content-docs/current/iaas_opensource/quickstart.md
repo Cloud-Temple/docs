@@ -1,20 +1,27 @@
 ---
-title: Guida introduttiva
+title: Guida per Iniziare
 ---
+import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
+import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
+import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
+import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
+import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
+import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+
 
 ## Calcolo
 
-### Gestione delle Macchine virtuali
+### Gestione delle Macchine Virtuali
 
-L'interfaccia di gestione delle tue macchine virtuali è disponibile nella console Shiva nel menu __'OpenIaaS'__ situato sulla barra verde a sinistra dello schermo.
+L’interfaccia di gestione delle tue macchine virtuali è disponibile nella console Shiva nel menu __'OpenIaaS'__ situato sulla fascia verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 
-Nella sezione __'Macchine virtuali'__, hai accesso all'elenco delle tue macchine virtuali ospitate sul tuo Cloud di fiducia.
+Nella sezione __'Machines virtuelles'__, hai accesso all'elenco delle tue macchine virtuali ospitate sul tuo Cloud di fiducia.
 
-![](images/open_iaas_virtual_machines_list.png)
+<img src={openIaasVirtualMachinesList} />
 
-Hai accesso alle seguenti informazioni per ciascuna macchina virtuale:
+Hai accesso alle seguenti informazioni, per ogni macchina virtuale:
 
 - Il suo nome.
 - Il suo stato (spenta, accesa).
@@ -32,15 +39,15 @@ Le seguenti azioni sono possibili da questa interfaccia:
 - Cercare una macchina virtuale per nome.
 - Creare una nuova macchina virtuale.
 
-![](images/open_iaas_virtual_machines_list_actions.png)
+<img src={openIaasVirtualMachinesListActions} />
 
-Quando fai clic sulla freccia a discesa verde a destra dell'elenco per una macchina virtuale, puoi accedere a tutte le informazioni relative ad essa.
+Quando fai clic sulla freccia a discesa verde sulla destra dell'elenco per una macchina virtuale, accedi a tutte le informazioni che riguardano quella macchina.
 
-![](images/open_iaas_virtual_machine_overview.png)
+<img src={openIaasVirtualMachineOverview} />
 
-Un banner rapido consente di eseguire le seguenti azioni:
+Una barra rapida consente di eseguire le seguenti azioni:
 
-![](images/open_iaas_virtual_machine_actions.png)
+<img src={openIaasVirtualMachineActions} />
 
 - Accendere la macchina virtuale.
 - Spegnerla.
@@ -48,25 +55,25 @@ Un banner rapido consente di eseguire le seguenti azioni:
 - Aprire la console.
 - Montare un ISO.
 - Smontare un ISO.
-- Convertire la macchina virtuale in template.
+- Convertire la macchina virtuale in un modello.
 - Spostarla.
 - Rinominare.
-- Eliminare.
+- Eliminarla.
 
-Nella scheda di informazioni '**Generali**', trovi informazioni dettagliate relative alla tua macchina virtuale, come la sua posizione fisica (AZ, Pool, Host), la RAM, la CPU, gli indirizzi IP e altro.
+Nella scheda delle informazioni '**Generali**', trovi informazioni dettagliate relative alla tua macchina virtuale, come la sua posizione fisica (AZ, Pool, Host), RAM, CPU, indirizzi IP, e altro.
 
-![](images/open_iaas_virtual_machine_overview_informations.png)
+<img src={openIaasVirtualMachineOverviewInformations} />
 
-Una scheda '**Avanzate**' consente di visualizzare informazioni più specifiche:
+Una scheda '**Avanzato**' consente di consultare informazioni più specifiche:
 
 - UUID della macchina virtuale
 - Guest tools
-- OS guest
+- OS ospite
 - Lettore DVD
 
-E di modificare alcune opzioni come:
+Inoltre, è possibile modificare alcune opzioni come:
 - L'ordine di avvio
 - Il secure boot
-- L'avvio automatico (impossibile se non è associata alcuna politica di backup alla VM)
+- L'avvio automatico (impossibile se nessuna politica di backup è associata alla VM)
 
-![](images/open_iaas_virtual_machine_advanced_overview.png)
+<img src={openIaasVirtualMachineAdvancedOverview} />

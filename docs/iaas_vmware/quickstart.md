@@ -1,6 +1,53 @@
 ---
 title: Guide de démarrage
 ---
+import shivaVmHome from './images/shiva_vm_home.png'
+import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
+import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
+import shivaVmActions from './images/shiva_vm_actions.png'
+import shivaVmInformations from './images/shiva_vm_informations.png'
+import shivaVmBandeauRapide from './images/shiva_vm_bandeau_rapide.png'
+import shivaVmVueRapide from './images/shiva_vm_vue_rapide.png'
+import shivaVmInfosGenerales from './images/shiva_vm_infos_generales.png'
+import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
+import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
+import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
+import shivaCpool_010 from './images/shiva_cpool_010.png'
+import shivaCpool_011 from './images/shiva_cpool_011.jpg'
+import shivaCatalogs from './images/shiva_catalogs.png'
+import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
+import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
+import shivaVmTemplate_001 from './images/shiva_vm_template_001.png'
+import shivaVmAdv_001 from './images/shiva_vm_adv_001.png'
+import shivaVmAdv_002 from './images/shiva_vm_adv_002.png'
+import shivaVmAdv_003 from './images/shiva_vm_adv_003.png'
+import shivaVmAdv_004 from './images/shiva_vm_adv_004.png'
+import shivaCpool_001 from './images/shiva_cpool_001.png'
+import shivaEsx_001 from './images/shiva_esx_001.png'
+import shivaEsx_002 from './images/shiva_esx_002.png'
+import shivaCpool_003 from './images/shiva_cpool_003.png'
+import shivaCpool_004 from './images/shiva_cpool_004.png'
+import shivaCpool_005 from './images/shiva_cpool_005.png'
+import shivaCpool_009 from './images/shiva_cpool_009.png'
+import shivaCpool_007 from './images/shiva_cpool_007.jpg'
+import shivaCpool_008Build from './images/shiva_cpool_008_build.jpg'
+import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
+import shivaCpool_006 from './images/shiva_cpool_006.png'
+import shivaSupport from '../console/images/shiva_support.png'
+import shivaVmPolitiquesBackupAssignMandatory from './images/shiva_vm_politiques_backup_assign_mandatory.png'
+import shivaVmPolitiquesBackup from './images/shiva_vm_politiques_backup.png'
+import shivaVmDisquesVirtuelsPolitiques from './images/shiva_vm_disques_virtuels_politiques.png'
+import shivaVmPolitiquesBackupExecute from './images/shiva_vm_politiques_backup_execute.png'
+import shivaVmPolitiquesBackupExecute2 from './images/shiva_vm_politiques_backup_execute2.png'
+import shivaVmPolitiquesBackupRetirer from './images/shiva_vm_politiques_backup_retirer.png'
+import shivaVmPolitiquesBackupRetirerImpossible from './images/shiva_vm_politiques_backup_retirer_impossible.png'
+import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
+import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
+import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
+import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
+import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+
+
 ## Calcul
 
 ### Pilotage des Machines virtuelles
@@ -11,7 +58,7 @@ L’interface de gestion de vos machines virtuelles est disponible dans la conso
 
 Dans la section __'Machines virtuelles'__, vous avez accès à la liste de vos machines virtuelles hébergées sur votre Cloud de confiance.
 
-![](images/shiva_vm_home.png)
+<img src={shivaVmHome} />
 
 Vous avez accès aux informations suivantes, pour chaque machine virtuelle :
 - son nom,
@@ -32,24 +79,24 @@ Les actions suivantes sont possibles à partir de cette interface :
 - Rechercher une machine virtuelle par son nom ;
 - Créer une nouvelle machine virtuelle.
 
-![](images/shiva_vm_home_desc.png)
+<img src={shivaVmHomeDesc} />
 
 __Un bandeau d'alertes peut être présent en haut de la liste__ : il indique que des alarmes critiques ont été déclenchées sur une ou plusieurs de vos machines virtuelles.
 Le bouton __'Voir'__ permet de consulter les machines virtuelles qui sont concernées par cette notification.
 
-![](images/shiva_vm_home_alarme.png)
+<img src={shivaVmHomeAlarme} />
 
 Lorsque vous cliquez sur la flèche déroulante verte sur la droite de la liste pour une machine virtuelle :
 
-![](images/shiva_vm_actions.png)
+<img src={shivaVmActions} />
 
 Vous accédez à toutes les informations concernant celle-ci :
 
-![](images/shiva_vm_informations.png)
+<img src={shivaVmInformations} />
 
 Un bandeau rapide permet de réaliser les actions suivantes :
 
-![](images/shiva_vm_bandeau_rapide.png)
+<img src={shivaVmBandeauRapide} />
 
 - Allumer la machine virtuelle ;
 - L'éteindre ;
@@ -65,11 +112,11 @@ Un bandeau rapide permet de réaliser les actions suivantes :
 
 Une vue rapide offre une visualisation du __stockage__, du __CPU__ et de la __RAM__ de la machine virtuelle.
 
-![](images/shiva_vm_vue_rapide.png)
+<img src={shivaVmVueRapide} />
 
 Dans l'onglet __'Informations générales'__, vous trouvez des informations détaillées relatives à votre machine virtuelle, telles que son OS, son emplacement physique (datacenter, datastore, etc.), la RAM, le CPU, les adresses IP, les logs, et autres.
 
-![](images/shiva_vm_infos_generales.png)
+<img src={shivaVmInfosGenerales} />
 
 Depuis cette vue, vous pouvez effectuer les actions suivantes :
 
@@ -79,13 +126,13 @@ Depuis cette vue, vous pouvez effectuer les actions suivantes :
 
 Un onglet __'Avancé'__ permet de consulter des informations plus spécifiques comme les infos "VMware tools", la version hardware, le manager, etc...
 
-![](images/shiva_vm_infos_avancees.png)
+<img src={shivaVmInfosAvancees} />
 
 ### Édition de la RAM ou le CPU d'une machine virtuelle
 Allez dans l'onglet __'Machines Virtuelles'__, affichez les détails d'une machine virtuelle,
 sélectionnez l'onglet __'Infos générales'__ et cliquez sur le bouton d'édition de la variable à modifier :
 
-![](images/shiva_edit_cpu_ram.png)
+<img src={shivaEditCpuRam} />
 
 ### Les modes de disques
 
@@ -98,7 +145,7 @@ Vous pouvez ajouter différents modes de disques:
 
 Vous pouvez modifier le type de contrôleur de disque pour votre machine virtuelle.
 
-![](images/shiva_vm_diskctrl_001.png)
+<img src={shivaVmDiskctrl_001} />
 
 Les machines virtuelles peuvent être équipées de contrôleurs SCSI et NVME, avec une limite de 4 contrôleurs de chaque type. Chaque contrôleur peut gérer jusqu'à 15 disques.
 
@@ -112,11 +159,11 @@ Le contrôleur Para Virtual se distingue par sa capacité étendue. Il peut supp
 
 La console d'une machine virtuelle est accessible depuis la liste des machines virtuelles en cliquant sur l'icône __'Console'__ :
 
-![](images/shiva_cpool_010.png)
+<img src={shivaCpool_010} />
 
 Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de votre machine, basée sur un client VNC :
 
-![](images/shiva_cpool_011.jpg)
+<img src={shivaCpool_011} />
 
 Il est possible dans le menu VNC :
 
@@ -153,19 +200,19 @@ et essayez d'entrer le @ de manière classique__ *(sortie azerty : AltGr + touch
 Cloud Temple met à votre disposition un catalogue de `Templates` régulièrement enrichi et mis à jour par nos équipes.
 Il comprend à ce jour plusieurs dizaines de `Templates` et images à monter sur vos machines virtuelles.
 
-![](images/shiva_catalogs.png)
+<img src={shivaCatalogs} />
 
 Pour publier un ISO/OVF, il faut aller dans la vue __'Catalogue'__ et cliquer sur le bouton __'publier des fichiers'__ en haut de la page :
 
-![](images/shiva_catalogs_002.png)
+<img src={shivaCatalogs_002} />
 
 Il est possible de transformer une VM en modèle et de l'exporter dans le catalogue. Pour ce faire, sélectionnez une machine virtuelle et utilisez le bouton d'action __'clone'__ :
 
-![](images/shiva_vm_template_002.png)
+<img src={shivaVmTemplate_002} />
 
 Sélectionnez __'Exporter en vm-template'__ :
 
-![](images/shiva_vm_template_001.png)
+<img src={shivaVmTemplate_001} />
 
 Renseignez ensuite les informations nécessaires. Il sera alors possible de déployer une nouvelle VM à partir du modèle depuis le bouton __'Nouvelle machine virtuelle'__ ou depuis la page __'Catalogues'__. Il est aussi possible d'exporter la VM au format OVF.
 
@@ -188,13 +235,13 @@ Les Extra Config fournissent un moyen flexible d'inclure des paires clé=valeur 
 
 Désormais, vous pouvez, vous même, modifier les propriétés de type __Extra Config__ dans les options avancées d'une machine virtuelle :
 
-![](images/shiva_vm_adv_001.png)
+<img src={shivaVmAdv_001} />
 
 Vous pouvez ajouter une propriété parmi une liste de clés. De plus, vous pouvez modifier la valeur d'une clé que vous avez vous-même ajouté. Les paires clé=valeur déjà existantes ne sont pas modifiables.
 
 Veuillez contacter le support pour toute demande d'ajout de nouvelles clés.
 
-![](images/shiva_vm_adv_002.png)
+<img src={shivaVmAdv_002} />
 
 __Note__ : *Pour l'utilisation de GPU par la machine virtuelle, il est obligatoire d'activer la clé 'pciPassthru.use64bitMMIO' et d'allouer la quantité d'espace MMIO (Memory-mapped I/O) nécessaire via 'pciPassthru.64bitMMIOSizeGB'. Il est fortement recommandé de vous référerer à la [documentation officielle Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
@@ -202,11 +249,11 @@ __Note__ : *Pour l'utilisation de GPU par la machine virtuelle, il est obligatoi
 
 Vous pouvez, également, modifier les propriétés de type __vAPP__ dans les options avancées d'une machine virtuelle :
 
-![](images/shiva_vm_adv_003.png)
+<img src={shivaVmAdv_003} />
 
 Vous pouvez ajouter une propriété, la modifier ou la supprimer. Quatre types de propriétés sont proposées, String, Nombre, Booléen, Mot de passe:
 
-![](images/shiva_vm_adv_004.png)
+<img src={shivaVmAdv_004} />
 
 __Note__ : *La machine virtuelle doit être stoppée pour modifier ses propriétés vAPP.*
 
@@ -214,7 +261,7 @@ __Note__ : *La machine virtuelle doit être stoppée pour modifier ses propriét
 
 Le pilotage de vos hyperviseurs se fait dans le sous menu __'Calcul'__ du menu __'IaaS'__, situé dans le bandeau vert à gauche de votre écran.
 
-![](images/shiva_cpool_001.png)
+<img src={shivaCpool_001} />
 
 Dans ce sous menu, vous disposez d'une vue sur :
 
@@ -229,15 +276,15 @@ Pour accéder au pilotage des clusters VMware, cliquez dans le sous menu __'Calc
 
 Par défaut, le premier onglet liste tous les hyperviseurs (tous cluster confondus):
 
-![](images/shiva_esx_001.png)
+<img src={shivaEsx_001} />
 
 Il est possible de visualiser les détails d'un hyperviseur en cliquant sur son nom:
 
-![](images/shiva_esx_002.png)
+<img src={shivaEsx_002} />
 
 Il existe un onglet par cluster d'hyperviseur pour consulter les détails de chacun:
 
-![](images/shiva_cpool_003.png)
+<img src={shivaCpool_003} />
 
 Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
 
@@ -251,7 +298,7 @@ Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
 <!-- TODO: Add missing page. -->
 <!-- En consultant la page d'un cluster, plusieurs onglets sont disponibles. L'onglet __'Règles'__ vous permet de définir les [règles d'affinité / anti-affinité](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
 
-![](images/shiva_cpool_004.png)
+<img src={shivaCpool_004} />
 
 Vous voyez apparaitre pour chaque hyperviseur dans l'onglet __'Hosts'__ :
 
@@ -261,28 +308,28 @@ Vous voyez apparaitre pour chaque hyperviseur dans l'onglet __'Hosts'__ :
 - Le statut de l'hyperviseur (connecté en production, en maintenance, éteint, ...),
 - Un menu action.
 
-![](images/shiva_cpool_005.png)
+<img src={shivaCpool_005} />
 
 Plusieurs actions sont possibles depsuis l'onglet __'Hosts'__ :
 
 - commander de nouveaux hyperviseurs via le bouton __'Ajouter un host'__ :
 
-![](images/shiva_cpool_009.png)
+<img src={shivaCpool_009} />
 
 - possibilité de consulter __le détail d'un hyperviseur__ :
 
-![](images/shiva_cpool_007.jpg)
+<img src={shivaCpool_007} />
 
 - de rentrer ou de sortir de l'__état de maintenance__ un hyperviseur,
 - de __mettre à jour__ le cas échéant cet hyperviseur ; pour ce faire, __il doit impérativement être en maintenance__. Il existe deux types de mises à jours :
 
 1. Les builds VMware (les nouvelles versions de l'hyperviseur):
 
-![](images/shiva_cpool_008_build.jpg)
+<img src={shivaCpool_008Build} />
 
 2. La mise à jour du firmware de votre lame de calcul (bios et firmware cartes filles):
 
-![](images/shiva_cpool_008_firm.png)
+<img src={shivaCpool_008Firm} />
 
 *__Remarque__* :
 
@@ -322,7 +369,7 @@ Par exemple, vous ne souhaitez pas que vos deux Actives Directory soient sur le 
 Lors de la création d'une règle, vous définissez le type de règle (affinité / anti-affinité), le nom de la règle,
 son état d'activation (__'Statut'__) et les machines concernées de votre cluster d'hyperviseurs.
 
-![](images/shiva_cpool_006.png)
+<img src={shivaCpool_006} />
 
 *Remarque : les règles affinité/aint-affinité proposées dans la console sont des règles concernant les machines virtuelles entre elles (pas de règles entre hyperviseurs et machines virtuelles).*
 
@@ -340,7 +387,7 @@ La création d'une nouvelle politique de sauvegarde est réalisée par __une dem
     Le nom de la politique de sauvegarde
     Les caractéristiques (x jours, y semaines, z mois, ...)
 
-![](../console/images/shiva_support.png)
+<img src={shivaSupport} />
 
 ### Assigner une politique de sauvegarde à une machine virtuelle
 
@@ -348,13 +395,13 @@ Lorsqu'une SLA est assignée à une machine virtuelle (VM), tous les disques ass
 
 SecNumCloud rend obligatoire l'assignation d'une politique de sauvegarde à une machine virtuelle avant son démarrage. Dans le cas contraire, vous aurez la notification suivante :
 
-![](images/shiva_vm_politiques_backup_assign_mandatory.png)
+<img src={shivaVmPolitiquesBackupAssignMandatory} />
 
 Cliquez sur l’onglet __'Politiques de sauvegarde'__ du menu de votre machine virtuelle. Vous pouvez y visualiser la ou les politiques de sauvegardes assignée(s) à celle-ci.
 
 Pour assigner une nouvelle politique de sauvegarde à la machine virtuelle, cliquez sur le bouton __'Ajouter une politique'__ et sélectionnez la politique de sauvegarde voulue.
 
-![](images/shiva_vm_politiques_backup.png)
+<img src={shivaVmPolitiquesBackup} />
 
 ### Assigner une politique de sauvegarde à un disque virtuel
 
@@ -364,7 +411,7 @@ En revanche, il est possible d'exclure certains disques d'une ou plusieurs polit
 
 Cliquez sur la barre d'actions du disque auquel vous souhaitez assigner une politique de sauvegarde. Puis, cliquez sur __'Politiques'__ et sélectionnez la politique de sauvegarde souhaitée.
 
-![](images/shiva_vm_disques_virtuels_politiques.png)
+<img src={shivaVmDisquesVirtuelsPolitiques} />
 
 *Nota* : La politique à ajouter doit se trouver sur une zone de disponibilité différente de la machine virtuelle.
 
@@ -372,22 +419,22 @@ Cliquez sur la barre d'actions du disque auquel vous souhaitez assigner une poli
 
 Dans le menu __'Politiques de sauvegarde'__ de votre machine virtuelle, cliquez sur le bouton __'Exécuter'__ de la colonne __'Actions'__ de la politique de sauvegarde que vous souhaitez exécuter.
 
-![](images/shiva_vm_politiques_backup_execute.png)
+<img src={shivaVmPolitiquesBackupExecute} />
 
 Pour exécuter une politique de sauvegarde, vous pouvez également partir de la section __'Sauvegardes'__ dans le menu de
 votre machine virtuelle. Cliquez sur le bouton __'Exécuter la sauvegarde'__, puis sélectionnez la sauvegarde que vous souhaitez exécuter dans la liste déroulante.
 
-![](images/shiva_vm_politiques_backup_execute2.png)
+<img src={shivaVmPolitiquesBackupExecute2} />
 
 ### Retirer une politique de sauvegarde
 
 Dans le menu __'Politiques de sauvegarde'__ de votre machine virtuelle, cliquez sur le bouton __'Retirer'__ de la colonne __'Actions'__ de la politique de sauvegarde que vous souhaitez retirer.
 
-![](images/shiva_vm_politiques_backup_retirer.png)
+<img src={shivaVmPolitiquesBackupRetirer} />
 
 __Attention, il n'est pas possible de retirer la dernière SLA sur une machine virtuelle allumée :__
 
-![](images/shiva_vm_politiques_backup_retirer_impossible.png)
+<img src={shivaVmPolitiquesBackupRetirerImpossible} />
 
 ### Suppression d'une politique de sauvegarde : cas d'une politique de sauvegarde suspendue ("held")
 
@@ -401,18 +448,18 @@ note : Pour toute précision sur cette situation, contactez le support Cloud Tem
 
 La console Cloud Temple empêche l'affectation d'une machine virtuelle à une politique suspendue :
 
-![](images/shiva_backup_held_001.png)
+<img src={shivaBackupHeld_001} />
 
 De même, il n'est pas possible de démarrer une machine virtuelle qui est associée à une politique de sauvegarde suspendue :
 
-![](images/shiva_backup_held_002.png)
+<img src={shivaBackupHeld_002} />
 
 ### Restaurer une sauvegarde
 
 L’onglet __'Sauvegardes'__ du menu de vos machines virtuelles vous permet d’accéder à la liste des sauvegardes de celle-ci.
 Pour restaurer une sauvegarde, cliquez sur le bouton __'Restaurer'__ sur la ligne correspondant à la sauvegarde que vous souhaitez restaurer.
 
-![](images/shiva_vm_backup_restaurer.png)
+<img src={shivaVmBackupRestaurer} />
 
 1. __Mode production__ : Le mode production permet la reprise après incident sur le site local depuis le stockage primaire ou un site de reprise après incident distant, en remplaçant les images de machine originales par les images de récupération. Toutes les configurations sont transférées dans le cadre de la reprise, notamment les noms et les identificateurs, et tous les travaux de copie des données associés à la machine virtuelle continuent de s'exécuter. Dans le cadre d'une restauration en mode production, vous pouvez choisir de remplacer le stockage dans la machine virtuelle par un disque virtuel provenant d'une sauvegarde de machine virtuelle précédente.
 
@@ -422,8 +469,8 @@ Pour restaurer une sauvegarde, cliquez sur le bouton __'Restaurer'__ sur la lign
 
 __La restauration est par défaut en mode "TEST" pour préserver la production__ et il vous est possible de choisir le nom de la vm restaurée :
 
-![](images/shiva_vm_backup_test.png)
+<img src={shivaVmBackupTest} />
 
 Notez que si les tests sont satisfaisant, il est possible de passer une machine virtuelle du mode test au mode production :
 
-![](images/shiva_vm_backup_2prod.png)
+<img src={shivaVmBackup_2prod} />
