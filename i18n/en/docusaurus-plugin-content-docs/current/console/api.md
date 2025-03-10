@@ -1,67 +1,75 @@
 ---
 title: API Documentation
 ---
-
+import ShivaProfil001 from './images/shiva_profil_001.png'
+import ShivaProfil002 from './images/shiva_profil_002.png'
+import ShivaProfil003 from './images/shiva_profil_003.png'
+import ShivaProfil004 from './images/shiva_profil_004.png'
+import ShivaProfil005 from './images/shiva_profil_005.png'
+import ShivaApi001 from './images/shiva_api_001.png'
+import ShivaApi002 from './images/shiva_api_002.png'
+import ShivaApi003 from './images/shiva_api_003.png'
+import ShivaApi004 from './images/shiva_api_004.jpg'
 
 ## API Keys
 
-The __API key__ allows for authentication when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the Shiva APIs without using a graphical interface. Each of these tokens is linked to a tenant and the user who created it.
+The __API key__ allows authentication when you want to make requests to the API. The generation of an API key, also called __Personal Access Token (PAT)__,
+is a secure way to connect to Shiva APIs without going through a graphical interface. Each of these tokens is linked to a tenant and the user who created it.
 
-Creating this token is done from your account. It is possible to generate multiple keys and configure permissions for each one within the limits of your rights.
+The creation of this token is done from your account. It is possible to generate multiple keys and configure permissions for each within the limits of your rights.
 
 To create an API key, simply __click on your profile__:
 
-![](images/shiva_profil_001.png)
+<img src={ShivaProfil001} />
 
 In the profile menu, click on __'Personal Access Token'__
 
-![](images/shiva_profil_003.png)
+<img src={ShivaProfil003} />
 
-You will then see all the API keys created for this user in this tenant. Click on __'New personal access token'__
+You will then see all the API keys that have been created for this user in this tenant. Click on __'New personal access token'__
 
-![](images/shiva_profil_002.png)
+<img src={ShivaProfil002} />
 
-You will need to:
+You must then:
 
-- Provide the name of this new token,
+- Provide a name for this new token,
 - Provide an expiration date (maximum 12 months validity),
 - Choose the permissions associated with the token.
 
-The details of your token will then be displayed. __Note that it will no longer be accessible later.__
+The details concerning your token are then displayed. __Be careful, it will not be possible to access them afterward.__
 
-If you do not note this information, you will need to destroy and recreate the token.
+If you do not note this information, you will have to destroy and recreate the token.
 
-![](images/shiva_profil_004.png)
+<img src={ShivaProfil004} />
 
-For security reasons, it is recommended to create several tokens each having a specific utility (one token for each application or business process) rather than creating one token with all rights.
+For security reasons, it is recommended to create multiple tokens each having a specific use (a token for each application or each business process) rather than creating 1 token with all permissions.
 
-You will then see the new token created and its future expiration date.
+You then see the new token created and its future expiration date.
 
-![](images/shiva_profil_005.png)
+<img src={ShivaProfil005} />
 
-## API Portal Access
+## Access to the API Portal
 
-The OpenAPI 3.0 (Swagger) documentation of the Cloud Temple console APIs is directly available within the application:
+The OpenAPI 3.0 (Swagger) documentation of the Cloud Temple console APIs is directly available in the application:
 
-![](images/shiva_api_001.png)
+<img src={ShivaApi001} className="img-large" />
 
 Access to the APIs requires authentication. Once authenticated, all operations must have the header
 __'Authorization'__ with the bearer access token obtained during the authentication phase.
 
-The URL of the access points is directly given in __Swagger__ (in the "Servers" object of each API page).
+The URL for the endpoints is directly given in __Swagger__ (in the "Servers" object on each API page).
 
 ## Activities
 
-Tracking of write-type requests (POST, PUT, PATCH, DELETE) is ensured via activity management. Each request of this type automatically generates an associated activity. An HTTP status code 201 confirms the successful creation of the activity.
-The unique identifier of this activity is returned in the response headers, under the 'Location' key.
+The tracking of write-type requests (POST, PUT, PATCH, DELETE) is ensured via activity management. Each request of this type automatically generates an associated activity. An HTTP status code 201 confirms the successful creation of the activity. The unique identifier of this activity is returned in the response headers, under the 'Location' key.
 
-![](images/shiva_api_002.png)
+<img src={ShivaApi002} />
 
-Once the identifier is retrieved, it is possible to access the activity details using the Activity module's API:
+Once the identifier is retrieved, it is possible to access the details of the activity using the Activity module API:
 
-![](images/shiva_api_003.png)
+<img src={ShivaApi003} />
 
-The content of the activity includes all essential information to identify the operation, its execution date, and its progress state. Here is the model of an activity:
+The content of the activity includes all the essential information to identify the operation, its execution date, and its progress status. Here is the model of an activity:
 
 ```
     {
@@ -83,7 +91,7 @@ The content of the activity includes all essential information to identify the o
 }
 ```
 
-The **state** object can take different forms depending on the activity status, namely:
+The **state** object can take various forms depending on the activity's status, namely:
 
 **waiting**, state before the operation has started:
 ```
@@ -97,7 +105,7 @@ The **state** object can take different forms depending on the activity status, 
     progression: number;
     };
 ```
-**failed**, state if the operation has failed:
+**failed**, state if the operation failed:
 ```
     failed: {
     startDate: Date;
@@ -105,7 +113,7 @@ The **state** object can take different forms depending on the activity status, 
     reason: string;
     };
 ```
-**completed**, state if the operation is completed:
+**completed**, state if the operation is complete:
 ```
     completed: {
     startDate: Date;
@@ -114,47 +122,46 @@ The **state** object can take different forms depending on the activity status, 
     };
 ```
 
-**Note: The Identifier (UUIDv4) of the created resource is available in the activity result once it is completed.**
+**Note: The (UUIDv4) Identifier of the created resource is available in the activity result once it is completed.**
 
 ## API Limits
 
 ### Why limits?
 
-The Cloud Temple console defines __ceiling limits on the volume of requests__ that a user can send to the API over a determined period. Establishing these frequency limits is a common measure in API management, adopted for several essential reasons:
+The Cloud Temple console defines __caps on the volume of requests__ a user can send to the API over a specified time period. Setting these frequency caps is a common measure in API management, adopted for several essential reasons:
 
-- **Abuse Prevention**: These limits help preserve the integrity of the API by preventing abusive or careless usage that could compromise its operation.
-- **Quality of Service Assurance**: By regulating API access, we ensure an equitable distribution of resources, allowing all users to enjoy a stable and performant experience.
+- **Prevention of abuse**: These limits help protect the API's integrity by preventing abusive or careless uses that could compromise its functionality.
+- **Assuring quality of service**: By regulating API access, we ensure a fair distribution of resources, allowing all users to enjoy a stable and efficient experience.
 
-For example, a poorly designed or inefficient script that makes repetitive calls to the API, risking to saturate resources and degrade performance. By setting request thresholds, we prevent these situations and ensure the maintenance of __a smooth and uninterrupted service__ for all our customers.
+For example, a poorly designed or inefficient script that repeatedly calls the API could saturate resources and degrade performance. By establishing request thresholds, we prevent these situations and ensure __a smooth, uninterrupted service__ for all our clients.
 
-### What are the rate limits for the Cloud Temple console API?
+### What are the rate limits for Cloud Temple console API?
 
-We apply quantitative restrictions on user interactions with the console
-for each product.
+We apply quantitative restrictions on user interactions with the console for each product.
 
-The limits are defined in __requests per second (r/s) and per source IP__. Beyond the threshold limit, the system will respond
-with an HTTP error code 429, indicating that the allowed request limit has been exceeded.
+Limits are defined in __requests per second (r/s) and by source IP__. Beyond the threshold limit, the system will respond
+with an HTTP 429 error code, indicating that the authorized request limit has been exceeded.
 
 Here are the defined limits:
 
-| Product              | Limit threshold |
-|----------------------|------------------|
-| Cloud Temple Console | 60 r/s           |
-| Identity (IAM)       | 60 r/s           |
-| IaaS - Compute       | 60 r/s           |
-| IaaS - Storage       | 20 r/s           |
-| IaaS - Backup        | 60 r/s           |
-| PaaS - S3            | 60 r/s           |
-| PaaS - Openshift     | 60 r/s           |
-| Network              | 60 r/s           |
-| Hosting              | 60 r/s           |
+| Product              | Threshold Limit |
+|----------------------|--------------|
+| Console Cloud Temple | 60 r/s       |
+| Identity (IAM)       | 60 r/s       |
+| IaaS - Compute       | 60 r/s       |
+| IaaS - Storage       | 20 r/s       |
+| IaaS - Backup        | 60 r/s       |
+| PaaS - S3            | 60 r/s       |
+| PaaS - Openshift     | 60 r/s       |
+| Network              | 60 r/s       |
+| Hosting              | 60 r/s       |
 
 ### How do rate limits work?
 
 If the number of requests sent to an API endpoint exceeds the allowed limit, the API endpoint will respond by returning
-__an HTTP 429 response code__. This code indicates that the user has exceeded the permissible request limit.
-When this happens, the API endpoint will also provide a JSON object as a response,
-which will contain detailed information about the applied limitation:
+__an HTTP 429 response code__. This code indicates that the user has exceeded the number of permitted requests.
+When this occurs, the API endpoint will also provide a JSON object as a response,
+containing detailed information about the applied limitation:
 ```
     {
         "error": {
@@ -163,37 +170,31 @@ which will contain detailed information about the applied limitation:
         }
     }
 ```
-### How can you avoid making too many requests?
+### How to avoid making too many requests?
 
-It is recommended to limit the number of API calls made by your automation to stay below
-the set rate limit for the endpoint.
+It is recommended to limit the number of API calls made by your automation in order to stay below the rate limit set for the endpoint.
 
-This situation often occurs when multiple requests are executed in parallel,
-using multiple processes or threads.
+This situation often arises when multiple requests are executed in parallel, using multiple processes or threads.
 
-There are several ways to improve the efficiency of your automation, particularly by using __caching mechanisms__ and implementing __a retry system with progressive backoff__. This method involves taking a short pause when a rate limit error is encountered, then retrying the request.
-If the request fails again, the pause duration is progressively increased until the request succeeds
-or until the maximum number of retries is reached.
+There are several ways to improve the efficiency of your automation, particularly by using __caching__ mechanisms and implementing __a backoff retry system__. This method involves taking a short pause when a rate limit error is encountered, then retrying the request. If the request fails again, the pause duration is progressively increased until the request succeeds or until a maximum number of retries is reached.
 
 This approach has many advantages:
 
-- __Progressive backoff__ ensures that initial attempts are made quickly, while allowing for longer delays in case of repeated failure.
-- Adding a __random variation__ to the pause helps prevent all attempts from occurring simultaneously.
+- __Backoff__ ensures that early attempts are made quickly, while accounting for longer delays in case of repeated failure.
+- Adding __random variation__ to the pause helps avoid all retry attempts occurring simultaneously.
 
 It is important to note that __unsuccessful requests do not affect your rate limit__.
-However, continuously retrying a request may not be a viable long-term solution,
-as this behavior could be modified in the future. We therefore recommend not relying exclusively on this mechanism.
+However, continuously re-sending a request might not be a viable long-term solution, as this behavior could be altered in the future. Therefore, we recommend not relying solely on this mechanism.
 
-The __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ libraries in Python
-are good starting points for implementing backoff strategies.
+The Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are good starting points for implementing backoff strategies.
 
 ## API Endpoint Lifecycle
 
-Information on the evolution of API endpoints is available in the release notes:
+Information on API endpoint updates is available in the release notes:
 
-![](images/shiva_api_004.jpg)
+<img src={ShivaApi004} className="img-large" />
 
-You will find a list of endpoints that are deprecated activity by activity.
+You will find the list of endpoints that are deprecated activity by activity.
 
-Additionally, the deprecated endpoints will appear in this manner on our APIs:
-__~~this/is/an/endpoint~~__ along with a definitive removal date in the description.
+Additionally, deprecated endpoints will appear in this manner on our APIs:
+__~~this/is/an/endpoint~~__ along with a definitive deletion date in the description.

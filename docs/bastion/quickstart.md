@@ -1,6 +1,12 @@
 ---
 title: Guide de démarrage
 ---
+import shivaSupport from './images/shiva_support.png'
+import creerSession from './images/creer_session.png'
+import creerSession2 from './images/creer_session2.png'
+import creerSession3 from './images/creer_session3.png'
+import ouvrirSession from './images/ouvrir_session.png'
+import ouvrirSession2 from './images/ouvrir_session2.png'
 
 
 Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter.
@@ -39,7 +45,7 @@ Plusieurs flux sont nécessaires pour le bon fonctionnement de l'Appliance Basti
 Avant de pouvoir déployer une Appliance, il faut faire une demande de souscription à une Appliance via une demande au support.
 Le support est accessible dans la console Shiva depuis l'icône de bouée sur la barre en haut à droite de la fenêtre.
 
-![](images/shiva_support.png)
+<img src={shivaSupport} />
 
 
 ## Enregistrer un équipement
@@ -48,7 +54,7 @@ Pour accéder régulièrement à un équipement à administrer, il est plus adap
 
 Pour cela, rendez-vous dans l’onglet « Equipements » du menu « Bastion », puis, cliquez sur le bouton « Nouveau équipement ».
 
-![](images/creer_session.png)
+<img src={creerSession} />
 
 
 Renseignez ensuite les informations nécessaires à la création de votre équipement :
@@ -60,23 +66,23 @@ Renseignez ensuite les informations nécessaires à la création de votre équip
     - Adresse IP de l’host ;
     - Configuration du clavier.
 
-![](images/creer_session2.png)
+<img src={creerSession2} />
 
 
 Une notification vous indiquant la création de l'équipement devrait apparaître en haut à droite de la page. La session s’ajoute ensuite à la liste de vos équipements.
 
 Pour créer un nouvel équipement, vous pouvez également passer par l’onglet « Appliances » en cliquant sur la barre d’action de l’Appliance à laquelle vous souhaitez associer un équipement.
 
-![](images/creer_session3.png)
+<img src={creerSession3} />
 
 ## Se connecter à un équipement
 
 Rendez-vous dans l’onglet « Equipements » de l’onglet « Bastion ». Cliquez sur la barre d’actions de l'équipement que vous souhaitez ouvrir, et cliquez sur le bouton « Ouvrir ».
 
-![](images/ouvrir_session.png)
+<img src={ouvrirSession} />
 
 À chaque connexion à l'équipement, vous n’avez besoin de renseigner que vos informations d'authentification.
 
-![](images/ouvrir_session2.png)
+<img src={ouvrirSession2} />
 
 Après avoir saisi vos identifiants, une notification confirmant le début de la connexion à votre équipement apparaît et la console vers votre machine virtuelle s’ouvre.

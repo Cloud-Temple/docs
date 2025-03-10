@@ -1,168 +1,183 @@
 ---
-title: Fragen zu Backup
+title: Häufig gestellte Fragen zur Sicherung
 tags:
   - iaas_vmware
   - tutorials
   - iaas_backup
 ---
+import backupCloneIaas_001 from './images/backup_clone_iaas_001.png'
+import backupCloneIaas_002 from './images/backup_clone_iaas_002.png'
+import backupRestoIaas_001 from './images/backup_resto_iaas_001.png'
+import backupCloneIaas_004 from './images/backup_clone_iaas_004.png'
+import backupPolicyIaas_001 from './images/backup_policy_iaas_001.png'
+import backupPolicyIaas_002 from './images/backup_policy_iaas_002.png'
+import backupPolicyIaas_003 from './images/backup_policy_iaas_003.png'
+import backupPolicyIaas_006 from './images/backup_policy_iaas_006.png'
+import backupPolicyIaas_005 from './images/backup_policy_iaas_005.png'
+import backupPolicyIaas_004 from './images/backup_policy_iaas_004.png'
+import backupCloneIaas_003 from './images/backup_clone_iaas_003.png'
+import backupPolicyIaas_007 from './images/backup_policy_iaas_007.png'
+import backupRestoreIaas_001 from './images/backup_restore_iaas_001.png'
+import backupRestoreIaas_003 from './images/backup_restore_iaas_003.png'
+import backupRestoreIaas_002 from './images/backup_restore_iaas_002.png'
+import backupInvIaas_001 from './images/backup_inv_iaas_001.png'
 
-#### Wie klone ich eine virtuelle Maschine?
+#### Wie klont man eine virtuelle Maschine?
 
 Es gibt 2 Möglichkeiten, eine virtuelle Maschine zu klonen:
 
-- Die erste Option ermöglicht das Klonen einer virtuellen Maschine direkt über das __'Clone'__ -Symbol Ihrer virtuellen Maschine:
+- Die erste Option ermöglicht das Klonen einer virtuellen Maschine direkt über das __'Clone'__-Symbol Ihrer virtuellen Maschine:
 
-![](images/backup_clone_iaas_001.png)
-![](images/backup_clone_iaas_002.png)
+<img src={backupCloneIaas_001} />
+<img src={backupCloneIaas_002} />
 
-- Die zweite Lösung besteht darin, die virtuelle Maschine mithilfe eines Backups der virtuellen Maschine zu klonen und dann __die Wiederherstellung im Clone-Modus__ eines Backups zu verwenden.
-Gehen Sie zum __'Backup'__ -Bereich Ihrer virtuellen Maschine und wählen Sie die Aktion __'Wiederherstellen'__:
+- Die zweite Lösung besteht darin, die virtuelle Maschine durch __ein Backup__ der virtuellen Maschine zu klonen und anschließend die __Klone-Wiederherstellung__ eines Backups zu verwenden.
+Gehen Sie zum Abschnitt __'Backup'__ Ihrer virtuellen Maschine und wählen Sie die Aktion __'Restore'__:
 
-![](images/backup_resto_iaas_001.png)
+<img src={backupRestoIaas_001} />
 
 Wählen Sie dann die Option __'Clone'__ zur Wiederherstellung:
 
-![](images/backup_clone_iaas_004.png)
+<img src={backupCloneIaas_004} />
 
-#### Warum sehe ich bei der Auswahl einer Richtlinie auf der Seite "Backups-Richtlinien" nicht dieselben virtuellen Maschinen, wie wenn ich im "Backups-Bericht" dieselbe Richtlinie auswähle?
+#### Warum sehe ich auf der Seite "Backup-Richtlinien" bei Auswahl einer Richtlinie nicht dieselben virtuellen Maschinen wie auf der Seite "Backup-Berichte" bei Auswahl derselben Richtlinie?
 
-Das bedeutet, dass die fehlenden virtuellen Maschinen die betreffende Richtlinie für eine gewisse Zeit zugewiesen hatten (was ihre Anwesenheit in den Backup-Berichten erklärt), dass dies jedoch __nicht mehr der Fall ist__.
+Das bedeutet, dass die fehlenden virtuellen Maschinen die betreffende Richtlinie eine Zeit lang zugewiesen hatten (was ihre Präsenz in den Backup-Berichten erklärt), aber __derzeit nicht mehr haben__.
 
 #### Wie füge ich einer virtuellen Maschine eine Backup-Richtlinie hinzu?
 
-Gehen Sie zur Seite __'Virtuelle Maschinen'__ im Abschnitt __'IaaS'__ im grünen Menüband auf der linken Seite des Bildschirms.
+Gehen Sie auf die Seite __'Virtuelle Maschinen'__ im Abschnitt __'IaaS'__ im grünen Menüband auf der linken Seite des Bildschirms.
 
-Wählen Sie eine virtuelle Maschine und dann die Registerkarte __'Backups-Richtlinien'__ dieser Maschine:
+Wählen Sie eine virtuelle Maschine und dann den Tab __'Backup-Richtlinien'__ dieser Maschine:
 
-![](images/backup_policy_iaas_001.png)
+<img src={backupPolicyIaas_001} />
 
 Fügen Sie die gewünschte Backup-Richtlinie hinzu:
 
-![](images/backup_policy_iaas_002.png)
+<img src={backupPolicyIaas_002} />
 
 ### Wie entferne ich eine Backup-Richtlinie von einer virtuellen Maschine?
 
-Gehen Sie zur Seite __'Virtuelle Maschinen'__, wählen Sie eine virtuelle Maschine und dann die Registerkarte __'Backups-Richtlinien'__ dieser Maschine.
+Gehen Sie auf die Seite __'Virtuelle Maschinen'__, wählen Sie eine virtuelle Maschine und dann den Tab __'Backup-Richtlinien'__ dieser Maschine.
 
-Löschen Sie die gewünschte Backup-Richtlinie und bestätigen Sie die Löschung:
+Entfernen Sie die gewünschte Backup-Richtlinie und bestätigen Sie die Entfernung:
 
-![](images/backup_policy_iaas_003.png)
+<img src={backupPolicyIaas_003} />
 
-__*Hinweis:*__ *Achtung! __Secnumcloud verlangt, dass jede virtuelle Maschine mindestens eine Backup-Richtlinie haben muss.__*
+__*Hinweis:*__ *Achtung! __Secnumcloud verlangt mindestens eine Backup-Richtlinie__ für jede virtuelle Maschine.*
 
-### Wie kann ich feststellen, ob ein Backup erfolgreich ausgeführt wurde?
+### Wie erfahre ich, ob ein Backup erfolgreich durchgeführt wurde?
 
 Es gibt 2 mögliche Lösungen:
 
-1. Gehen Sie zur Seite __'Jobs'__ im Menü __'Backup'__ im grünen Menüband auf der linken Seite Ihres Bildschirms. Wählen Sie den Job aus, der dem Backup entspricht, und selektieren Sie ihn.
-Dann finden Sie die *jobsession*, die Ihrem Backup entspricht, und wählen Sie diese über das Menü __'Aktionen'__ aus.
+1. Gehen Sie auf die Seite __'Jobs'__ im Menü __'Backup'__ im grünen Menüband auf der linken Seite Ihres Bildschirms. Wählen Sie den Backup-Job und wählen Sie ihn aus.
+Finden Sie anschließend die *jobsession*, die Ihrem Backup entspricht, und wählen Sie sie über das Menü __'Actions'__ aus.
 
-![](images/backup_policy_iaas_006.png)
+<img src={backupPolicyIaas_006} />
 
-Diese Aktionen zeigen detaillierte Protokolle der Backup-Ausführung. Sie können in den Backup-Protokollen suchen:
+Diese Aktionen ermöglichen das Abrufen der detaillierten Logs des Backup-Vorgangs. Sie können in den Backup-Logs suchen:
 
-![](images/backup_policy_iaas_005.png)
+<img src={backupPolicyIaas_005} />
 
-2. Gehen Sie zur Seite __'Backups-Berichte'__ und wählen Sie die Richtlinie aus, die Sie interessiert:
+2. Gehen Sie auf die Seite __'Backup-Berichte'__ und wählen Sie die für Sie interessante Richtlinie aus:
 
-![](images/backup_policy_iaas_004.png)
+<img src={backupPolicyIaas_004} />
 
-Sie können dann nach einem Datum filtern, den Bericht im __PDF__- oder __CSV__-Format herunterladen, um ihn in Drittanbieter-Tools zu verwenden.
+Dann können Sie nach einem Datum filtern, den Bericht im __PDF__- oder __CSV__-Format herunterladen, um ihn in Drittwerkzeugen zu verwenden.
 
 ### Wie starte ich eine Wiederherstellung?
 
-Gehen Sie zur Seite __'Virtuelle Maschinen'__, wählen Sie eine virtuelle Maschine und dann die Registerkarte __'Backups'__ dieser Maschine. Um die Wiederherstellung zu starten, wählen Sie das wiederherzustellende Backup aus.
+Gehen Sie auf die Seite __'Virtuelle Maschinen'__, wählen Sie eine virtuelle Maschine und dann den Tab __'Backups'__ dieser Maschine. Um die Wiederherstellung zu starten, wählen Sie das zu wiederherstellende Backup aus.
 
-![](images/backup_clone_iaas_003.png)
+<img src={backupCloneIaas_003} />
 
 ### Was ist die Quiescing-Option?
 
-__Quiescing__ ist ein Prozess, der das System dazu auffordert, sich vor Beginn des Snapshots in einen geeigneten Zustand zu versetzen.
-Standardmäßig ist __quiescing aktiviert__. Es kann manuell deaktiviert werden, wenn das System den Snapshot schlecht verwaltet oder wenn der Hypervisor-Agent nicht auf der virtuellen Maschine installiert ist.
+Das __Quiescing__ ist ein Prozess, bei dem das System benachrichtigt wird, sich vor dem Start des Snapshots in einen geeigneten Zustand zu versetzen.
+Standardmäßig ist das __Quiescing aktiviert__. Es kann manuell deaktiviert werden, wenn das System den Snapshot schlecht handhabt oder wenn der Hypervisor-Agent nicht auf der virtuellen Maschine installiert ist.
 
-Um dies zu tun, klicken Sie im __'Backups'__-Bereich Ihrer virtuellen Maschine auf __'Optionen bearbeiten'__ und deaktivieren Sie die __quiescing__:
+Um dies zu tun, gehen Sie zum Abschnitt __'Backups'__ Ihrer virtuellen Maschine, klicken Sie auf __'Optionen ändern'__ und deaktivieren Sie das __Quiescing__:
 
-![](images/backup_policy_iaas_007.png)
+<img src={backupPolicyIaas_007} />
 
 ### Welche Wiederherstellungsoptionen gibt es für eine virtuelle Maschine?
 
-3 Hauptoptionen, um eine VM auf ihrem ursprünglichen Ziel oder einem anderen Ziel wiederherzustellen:
+3 Hauptoptionen für die Wiederherstellung einer VM auf ihrem ursprünglichen Ziel oder auf einem anderen Ziel:
 
-- __'CLONE'__: Stellt die virtuelle Maschine umbenannt wieder her, ohne die ursprüngliche virtuelle Maschine zu ersetzen.
+- __'CLONE'__: Stellt die virtuelle Maschine umbenannt wieder her, ohne die Originalmaschine zu ersetzen.
 
-![](images/backup_restore_iaas_001.png)
+<img src={backupRestoreIaas_001} />
 
-- __'PRODUCTION'__: Stellt die Produktions-VM wieder her und __ersetzt__ diese (die aktuelle Produktions-VM wird __zerstört__).
+- __'PRODUCTION'__: Stellt die Produktionsmaschine wieder her und __ersetzt__ sie (die derzeit in Produktion befindliche virtuelle Maschine wird __zerstört__).
 
-![](images/backup_restore_iaas_003.png)
+<img src={backupRestoreIaas_003} />
 
-- __'TEST'__: Stellt die Produktions-VM wieder her, __ohne sie zu überschreiben__.
+- __'TEST'__: Stellt die Produktionsmaschine wieder her, ohne sie __zu überschreiben__.
 
-![](images/backup_restore_iaas_002.png)
+<img src={backupRestoreIaas_002} />
 
-### Wie stelle ich die Produktions-VM wieder her und ersetze sie, ohne die aktuell in Produktion befindliche VM zu behalten?
+### Wie stelle ich die Produktionsmaschine wieder her und ersetze sie, ohne die aktuelle Produktionsmaschine beizubehalten?
 
-Wählen Sie den Wiederherstellungsmodus __'Production'__. Die Option 'VM überschreiben' ist standardmäßig aktiviert.
+Wählen Sie den Wiederherstellungsmodus __'Production'__. Die Option 'virtuelle Maschine überschreiben' ist standardmäßig aktiviert.
 
-![](images/backup_restore_iaas_003.png)
+<img src={backupRestoreIaas_003} />
 
-### Warum ist die Anzahl der virtuellen Maschinen in den Backup- und Compute-Modulen unterschiedlich?
+### Warum unterscheidet sich die Anzahl der virtuellen Maschinen zwischen den Backup- und Compute-Modulen?
 
-Der Unterschied in den virtuellen Maschinen kann daran liegen, dass das Backup-Modul die zuletzt erstellten Maschinen nicht abgerufen hat.
+Der Unterschied in den virtuellen Maschinen kann darauf zurückzuführen sein, dass das Backup-Modul die neuesten erstellten Maschinen nicht abgerufen hat.
 
-Um das Backup-Modul zu aktualisieren, müssen Sie die Backup-Software anweisen, die virtuellen Maschinen erneut zu inventarisieren.
-Um dies zu tun, gehen Sie im Menü __'Infrastruktur'__ im grünen Menüband auf der linken Seite des Bildschirms in das Untermenü __'Spectrum Protect Plus'__ und verwenden Sie die __'Aktion'__-Schaltfläche im Inventar:
+Um das Backup-Modul zu aktualisieren, müssen Sie die Backup-Softwareschicht anweisen, die virtuellen Maschinen neu zu inventarisieren.
+Gehen Sie dazu im Menü __'Infrastruktur'__ im grünen Menüband auf der linken Seite des Bildschirms zum Untermenü __'Spectrum Protect Plus'__ und verwenden Sie den __'Action'__-Button des Inventars:
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
-Beachten Sie, dass das Datum des letzten Inventars angezeigt wird.
+Beachten Sie, dass das Datum der letzten Inventur angegeben ist.
 
-Falls immer noch ein Unterschied besteht, kann dies an den virtuellen Maschinen liegen, die das System hosten, das die Backups ermöglicht.
-Diese zählen sich nämlich selbst nicht zur Anzahl der Maschinen im Backup-Modul.
+Wenn ein Unterschied bei den virtuellen Maschinen weiterhin besteht, könnte dies daran liegen, dass die virtuellen Maschinen das System hosten, das die Backups ermöglicht.
+Diese Maschinen werden nicht in die Berechnung der Anzahl der Maschinen im Backup-Modul einbezogen.
 
-### Wie inventarisiere ich virtuelle Maschinen im Backup-Modul?
+### Wie inventarisiere ich die virtuellen Maschinen im Backup-Modul?
 
-Um eine Inventarisierung der virtuellen Maschinen im Backup-Modul durchzuführen, gehen Sie im Menü __'Infrastruktur'__ im grünen Menüband auf der linken Seite des Bildschirms in das Untermenü __'Spectrum Protect Plus'__ und verwenden Sie die __'Aktion'__-Schaltfläche im Inventar:
+Um eine Inventur der virtuellen Maschinen im Backup-Modul durchzuführen, gehen Sie im Menü __'Infrastruktur'__ im grünen Menüband auf der linken Seite des Bildschirms zum Untermenü __'Spectrum Protect Plus'__ und verwenden Sie den __'Action'__-Button des Inventars:
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
-Beachten Sie, dass das Datum des letzten Inventars angezeigt wird.
+Beachten Sie, dass das Datum der letzten Inventur angegeben ist.
 
-### Warum schlägt das Backup meiner virtuellen Maschine fehl mit dem Hinweis auf ein Snapshot-Problem?
+### Warum schlägt das Backup meiner virtuellen Maschine mit einem Snapshot-Problem fehl?
 
-Dieser Fehler bedeutet, dass es das erste Mal ist, dass Ihre Maschine versucht, gesichert zu werden.
+Dieser Fehler bedeutet, dass Ihre Maschine zum ersten Mal versucht, gesichert zu werden.
 
 __Bei der ersten Sicherung einer virtuellen Maschine darf kein Snapshot auf der Maschine vorhanden sein.__
 
-### Wie stelle ich die Produktions-VM wieder her und ersetze sie, indem ich die aktuell in Produktion befindliche VM beibehalte und umbenenne?
+### Wie stelle ich die Produktionsmaschine wieder her und ersetze sie, während die aktuelle Produktionsmaschine beibehalten und umbenannt wird?
 
-Hier ist wie es geht:
+So gehen Sie vor:
 
-- Wählen Sie den Modus __'CLONE'__ (der Clone-Modus führt zu einer Änderung der MAC-Adresse und der UUID der virtuellen Maschine),
-- Benennen Sie die wiederhergestellte virtuelle Maschine mit dem endgültigen Namen (der Produktions-VM) um,
-- Benennen Sie die alte Produktions-VM (in _OLD) um.
+- Wählen Sie den Modus __'CLONE'__ (der Klonmodus führt zu einer Änderung der MAC-Adresse und der UUID der virtuellen Maschine),
+- Benennen Sie die wiederhergestellte virtuelle Maschine mit dem endgültigen Namen (der Produktions-VM),
+- Benennen Sie die alte Produktionsmaschine (in _OLD) um.
 
-### Wie stelle ich eine virtuelle Maschine wieder her, ohne die ursprüngliche VM zu ersetzen?
+### Wie stelle ich eine virtuelle Maschine wieder her, ohne die Originalmaschine zu ersetzen?
 
-Hier ist wie es geht:
+So gehen Sie vor:
 
-- Wählen Sie den Modus __'CLONE'__ (der Clone-Modus führt zu einer Änderung der MAC-Adresse und der UUID der virtuellen Maschine)
-- Definieren Sie den Namen des Clones (_REST oder anderes)
+- Wählen Sie den Modus __'CLONE'__ (der Klonmodus führt zu einer Änderung der MAC-Adresse und der UUID der virtuellen Maschine)
+- Legen Sie den Namen des Klons fest (_REST oder andere)
 
-### Warum kann ich eine Festplatte im Instant-Access-Modus nicht von meiner virtuellen Maschine löschen?
+### Warum kann ich eine Festplatte im Instant Access-Modus auf meiner virtuellen Maschine nicht löschen?
 
-Führen Sie die Inventarisierung des Backups aus: Gehen Sie im Menü __'Infrastruktur'__ im grünen Menüband auf der linken Seite des Bildschirms in das Untermenü __'Spectrum Protect Plus'__ und verwenden Sie die __'Aktion'__-Schaltfläche im Inventar:
+Führen Sie die Inventur des Backups durch: Im Menü __'Infrastruktur'__ im grünen Menüband auf der linken Seite des Bildschirms, gehen Sie zum Untermenü __'Spectrum Protect Plus'__ und verwenden Sie den __'Action'__-Button des Inventars:
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
-Löschen Sie die Festplatte, nachdem die Inventarisierung abgeschlossen ist. Aktualisieren Sie die virtuelle Maschine, um zu überprüfen, ob die Festplatte gelöscht wurde.
+Führen Sie die Entfernung der Festplatte durch, sobald die Inventur abgeschlossen ist. Aktualisieren Sie die virtuelle Maschine, um zu überprüfen, ob die Festplatte entfernt wurde.
 
-### Warum kann ich eine virtuelle Maschine mit einer Backup-Richtlinie im Status Held (ausgesetzte Richtlinie) nicht starten?
+### Warum kann ich eine virtuelle Maschine mit einer Richtlinie im Held-Status (ausgesetzte Richtlinie) nicht starten?
 
-Eine "Held"-Richtlinie ist eine Funktion, die es ermöglicht, Retentions- und Datenlöschaktionen vorübergehend auszusetzen, wodurch sichergestellt wird, dass die Daten über ihren Standard-Retentionszeitraum hinaus aus bestimmten Gründen wie Compliance oder rechtlichen Anforderungen intakt und verfügbar bleiben.
+Eine Richtlinie im "Held"-Status ist eine Funktion, die vorübergehend die Aufbewahrungs- und Löschaktionen für Daten aussetzt, um sicherzustellen, dass die Daten aus spezifischen Gründen wie der Einhaltung von Vorschriften oder rechtlichen Anforderungen über den Standardaufbewahrungszeitraum hinaus intakt und verfügbar bleiben.
 
-Angenommen, ein Unternehmen hat eine 30-tägige Backup-Retention-Richtlinie für bestimmte Produktionsdaten. Aufgrund einer rechtlichen Untersuchung erhalten sie die Anforderung, alle relevanten Backups auf unbestimmte Zeit aufzubewahren. Sie können die zugehörige Backup-Richtlinie über den Status "Held" aussetzen, um die automatische Löschung dieser Backups nach 30 Tagen zu verhindern und sicherzustellen, dass die Daten für die Dauer der Untersuchung verfügbar bleiben.
+Angenommen, ein Unternehmen hat eine Backup-Aufbewahrungsrichtlinie von 30 Tagen für bestimmte Produktionsdaten. Aufgrund einer rechtlichen Untersuchung erhalten sie die Anfrage, alle relevanten Backups für eine unbestimmte Zeit zu speichern. Sie haben die Möglichkeit, die zugehörige Backup-Richtlinie über den Held-Status auszusetzen, um das automatische Löschen dieser Backups nach 30 Tagen zu verhindern, und sicherzustellen, dass die Daten für die gesamte Dauer der Untersuchung verfügbar bleiben.
+Eine angehaltene Sicherungspolitik (im Status Gehalten) wird die dem zugewiesenen Zeitplan entsprechenden Sicherungen nicht ausführen, sodass die virtuelle Maschine nicht als geschützt angesehen werden kann, was den SecNumCloud-Normen nicht entspricht.
 
-Eine ausgesetzte Backup-Richtlinie (im Status Held) wird die ihr zugewiesenen geplanten Backups nicht ausführen, wodurch die virtuelle Maschine nicht als geschützt angesehen werden kann, was den SecNumCloud-Standards nicht entspricht.
-
-Zögern Sie nicht, sich bei Fragen an unser Support-Team zu wenden.
+Zögern Sie nicht, unser Support-Team zu diesem Thema um Rat zu fragen.

@@ -1,6 +1,18 @@
 ---
 title: Quickstart
 ---
+import shivaLogin from './images/shiva_login.png'
+import shivaHome from './images/shiva_home.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaSupport from './images/shiva_support.png'
+import shivaSupport_01 from './images/shiva_support_01.png'
+import shivaSupport_02 from './images/shiva_support_02.png'
+import shivaSupport_03 from './images/shiva_support_03.png'
+import shivaOnboard_007 from './images/shiva_onboard_007.png'
+import shivaLogs from './images/shiva_logs.png'
+import shivaOnboard_009 from './images/shiva_onboard_009.png'
+import shivaOnboard_008 from './images/shiva_onboard_008.png'
+
 
 ## Prérequis
 - Avoir souscrit à une offre Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
@@ -15,19 +27,19 @@ Shiva est accessible via l'URL ci-dessous:
 La première page vous permet de sélectionner [l'organisation](iam/concepts.md#organisations) dans laquelle votre utilisateur a été créé.
 Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
 
-![](images/shiva_login.png)
+<img src={shivaLogin} />
 
 Vous allez ensuite être redirigé vers une page vous demandant de vous authentifier.
 Une fois connecté, vous arrivez sur cette page.
 
-![](images/shiva_home.png)
+<img src={shivaHome} />
 
 ## Gestion de la langue
 La console est disponible en __francais__, __anglais__. Vous pouvez changer la langue de fonctionnement grâce à l'icône __langue__ situé en haut à droite de l'écran.
 
 Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
 
-![](images/shiva_profil_006.png)
+<img src={shivaProfil_006} />
 
 La configuration est faite pour chaque tenant [Tenant](iam/concepts.md#tenant).
 
@@ -35,7 +47,7 @@ La configuration est faite pour chaque tenant [Tenant](iam/concepts.md#tenant).
 
 À tout moment, vous pouvez contacter __l'équipe de support Cloud Temple__ via __l'icône 'bouée'__ situé en haut à droite de l'écran.
 
-![](images/shiva_support.png)
+<img src={shivaSupport} />
 
 Vous serez guidé pendant tout le processus de demande de support.
 
@@ -46,7 +58,7 @@ La première étape est l'identification du type de demande de support :
 - Déclarer un incident ou demander un support technique.
 - Demander l'assistance d'un service professionnel (mise à disposition d'un ingénieur Cloud Temple sur une problématique).
 
-![](images/shiva_support_01.png)
+<img src={shivaSupport_01} />
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
@@ -83,11 +95,11 @@ Le commanditaire peut également préciser un niveau de criticité (P1 à P4) da
 - Question de conformité
 - Besoin de clarification technique
 
-![](images/shiva_support_02.png)
+<img src={shivaSupport_02} />
 
 Une fois votre demande effectuée, il est possible de retrouver vos demandes via __l'icône 'bouée'__ situé en haut à droite de l'écran :
 
-![](images/shiva_support_03.png)
+<img src={shivaSupport_03} />
 
 ## Accès aux fonctionnalités utilisateur via l'interface web
 
@@ -104,9 +116,9 @@ Les fonctionnalités sont regroupés par module. Cela regroupe principalement :
 L'activation d'un module pour un utilisateur dépend des droits de l'utilisateur. Par exemple le module __'Commande'__ ne sera pas disponible si l'utilisateur ne dispose pas du droit __'ORDER'__.
 
 Voici une présentation des différents modules disponibles. De nouveaux modules viennent enrichir la console régulièrement :
-
-![](images/shiva_onboard_007.png)
-
+<div style={{display: 'flex'}}>
+<img src={shivaOnboard_007} style={{'margin-right': 20}}/>
+<div>
 - __Tableau de Bord__ : permet d'avoir rapidement une vue sur le __total des ressources de calcul et de stockage__, les statistiques de la __sauvegarde__ et une __synthèse des dossiers de support__,
 - __Inventaire__ : permet d'avoir une vue de l'ensemble de vos ressources de type __'machines virtuelles'__. Si les __tags__ sont utilisés, il permet d'avoir une vue par __tag__ (par exemple, vue métier, vue applicatif, ...),
 - __Infogérance__ : donne accès au suivi de vos __demandes de support__ et à la __métrologie des services__,
@@ -118,7 +130,8 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 - __Colocation__ : Offre la vue sur les équipements situés en zone de __collocation mutualisée ou dédiée__,
 - __Commande__ : Permet la commande de ressources et le suivi des déploiements,
 - __Administration__ : Regroupe les fonctions d'administration des utilisateurs et des tenants ainsi que l'accès à la journalisation globale.
-
+</div>
+</div>
 Les pictogrammes __'NEW'__ signifient que le produit en question a été provisionné mais n'est pas encore qualifié __offre SecNumCloud__ et __'BETA'__ signifient que le produit en question a été provisionné et vient d'être qualifié __offre SecNumCloud__.
 
 **Journalisation - Suivi des Activités**
@@ -126,7 +139,7 @@ Les pictogrammes __'NEW'__ signifient que le produit en question a été provisi
 
 La page des activités est destinée à fournir une visibilité complète sur toutes les opérations de lecture et d'écriture réalisées au sein de la console, assurant ainsi une traçabilité et une sécurité accrues. Elle met en évidence les deux onglets principaux : Récents et Archivés.
 
-![](images/shiva_logs.png)
+<img src={shivaLogs} />
 
 ### **Structure de la Page**
 
@@ -161,13 +174,13 @@ Conformément à la qualification SecNumCloud, le stockage des événements de l
 
 Cliquez en bas à gauche du bandeau vert sur l'icône __'Nouveautés'__. Vous aurez le détail des modifications pour chaque version de la console Cloud Temple.
 
-![](images/shiva_onboard_009.png)
+<img src={shivaOnboard_009} />
 
 ## Accès aux fonctionnalités utilisateur via l'API
 
 L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__ :
 
-![](images/shiva_onboard_008.png)
+<img src={shivaOnboard_008} />
 
 ## Provider Terraform
 

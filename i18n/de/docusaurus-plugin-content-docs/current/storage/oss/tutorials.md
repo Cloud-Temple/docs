@@ -1,64 +1,69 @@
 ---
 title: Tutorials
 ---
+import S3Cloudberry_001 from './images/S3_cloudberry_001.png'
+import S3Cloudberry_002 from './images/S3_cloudberry_002.png'
+import S3Cloudberry_003 from './images/S3_cloudberry_003.png'
+import S3Winscp_001 from './images/S3_winscp_001.png'
+import S3Winscp_002 from './images/S3_winscp_002.png'
 
-## Utiliser MINIO
 
-Vous pouvez utiliser le client minio par exemple :
+## MINIO verwenden
+
+Sie können zum Beispiel den Minio-Client verwenden:
 
 https://min.io/docs/minio/linux/reference/minio-mc.html
 
-Par exemple :
+Zum Beispiel:
 ```
     mc alias set <alias_name> https://reks2ee2b1.s3.fr1.cloud-temple.com <access_key> <secret_key>
 ```
-Pousser un fichier :
+Eine Datei hochladen:
 ```
     mc cp test.txt <alias_name>/<bucket_name>
 ```
-Récupérer un fichier :
+Eine Datei abrufen:
 ```
     mc ls <alias_name>/<bucket_name>
 ```
-
 ## Cloud Berry Explorer
 
-vous pouvez aussi utiliser [Cloud Berry Explorer](https://www.msp360.com/explorer/).
+Sie können auch [Cloud Berry Explorer](https://www.msp360.com/explorer/) verwenden.
 
-1. Connectez vous en utilisant votre endpoint et votre clef :
+1. Melden Sie sich mit Ihrem Endpunkt und Ihrem Schlüssel an:
 
-![](images/S3_cloudberry_001.png)
+<img src={S3Cloudberry_001} />
 
-2. Eine fois connecté, saisissez le nom du bucket dans la barre de navigation:
+2. Nach der Anmeldung geben Sie den Bucket-Namen in der Navigationsleiste ein:
 
-![](images/S3_cloudberry_002.png)
+<img src={S3Cloudberry_002} />
 
-3. Vous pourrez alors utiliser le bucket normalement :
+3. Sie können dann den Bucket normal verwenden:
 
-![](images/S3_cloudberry_003.png)
+<img src={S3Cloudberry_003} />
 
-## Utiliser WINSCP 6.3.x
+## WINSCP 6.3.x verwenden
 
-Vous pouvez utiliser [Winscp](https://winscp.net/eng/download.php) :
+Sie können [Winscp](https://winscp.net/eng/download.php) verwenden:
 
-1. Connectez vous en utilisant votre endpoint, votre clef d'accès et votre clef secrete :
+1. Melden Sie sich mit Ihrem Endpunkt, Zugriffsschlüssel und geheimen Schlüssel an:
 
-![](images/S3_winscp_001.png)
+<img src={S3Winscp_001} />
 
-2. Une fois connecté, utilisez WINSCP normalement comme un site FTP ou SCP :
+2. Nach der Anmeldung verwenden Sie WINSCP normal wie eine FTP- oder SCP-Site:
 
-![](images/S3_winscp_002.png)
+<img src={S3Winscp_002} />
 
 
-## Ajouter le HASH d'un fichier lors de l'upload d'un objet
+## Hinzufügen des HASH einer Datei beim Hochladen eines Objekts
 
-Globalement, le HASH des fichiers est supporté sur notre stockage objet via les metadatas. Certains clients permettent de calculer à la volée un HASH et de l'ajouter en metadata (minio-mc avec md5 par exemple), pour d'autre, il faut préciser la donnée en metadata directement.
+Generell wird der Datei-HASH in unserem Objektspeicher über Metadaten unterstützt. Einige Clients können einen HASH im Flug berechnen und als Metadaten hinzufügen (minio-mc mit md5 zum Beispiel), während bei anderen die Daten direkt in den Metadaten angegeben werden müssen.
 
-1. Cas de l'ajout d'un HASH avec le client minio-mc : ce client supporte le calcul à la volée d'un hash MD5 et le stockage dans les metadatas
+1. Hinzufügen eines HASH mit dem minio-mc-Client: Dieser Client unterstützt die Berechnung eines MD5-Hashs im Flug und die Speicherung in Metadaten
 
 
             ╰─➤  cat test.txt
-            Ceci est un test
+            Dies ist ein Test
             ╰─➤  md5 test.txt
             MD5 (test.txt) = 8b34b2754802a46e3475998dfcf76f83
             ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB
@@ -73,10 +78,10 @@ Globalement, le HASH des fichiers est supporté sur notre stockage objet via les
             Metadata  :
                 Content-Type: text/plain
 
-2. Beispiel für die manuelle Hinzufügung eines sha256: Dazu verwenden wir die S3-Attribute der Datei.
+2. Beispiel für das "manuelle" Hinzufügen eines sha256: Hierfür verwenden wir die S3-Attribute der Datei.
 
             ╰─➤  cat test.txt
-            Ceci est un test
+            Dies ist ein Test
             ╰─➤  shasum -a 256 test.txt
             2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
             ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB -attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"

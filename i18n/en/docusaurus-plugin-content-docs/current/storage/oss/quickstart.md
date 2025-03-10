@@ -1,64 +1,79 @@
 ---
 title: Getting Started Guide
 ---
+import S3ListBucket from './images/S3_list_bucket.png'
+import S3Accounts from './images/S3_accounts.png'
+import S3CreateAccount from './images/S3_create_account.png'
+import S3StorageKeys from './images/S3_storage_keys.png'
+import S3Keyregen from './images/S3_keyregen.png'
+import S3Create from './images/S3_create.png'
+import S3CreatePopup_001 from './images/S3_create_popup_001.png'
+import S3AccountAssign from './images/S3_account_assign.png'
+import S3AccountAccess from './images/S3_account_access.png'
+import S3Files from './images/S3_files.png'
+import S3Params from './images/S3_params.png'
+import S3Lifecycle from './images/S3_lifecycle.png'
+import S3CreatePopup_002 from './images/S3_create_popup_002.png'
+import S3Delete from './images/S3_delete.png'
 
-## List all S3 buckets in your tenant
+## Listing all S3 buckets in your tenant
 
-You can access all of your buckets via the '__Object Storage__' menu in the Cloud Temple console:
+You can access all your buckets via the '__Object Storage__' menu in the Cloud Temple console:
 
-![](images/S3_list_bucket.png)
+<img src={S3ListBucket} />
 
-You can see all accounts created on your tenant and authorized to access the S3 service via the '__Storage Accounts__' tab.
+You can see all the accounts created on your tenant and authorized to access the S3 service via the '__Storage Accounts__' tab.
 
-![](images/S3_accounts.png)
+<img src={S3Accounts} />
 
 ## Creating a new storage account
 
-Creating a storage account on your tenant is done by pressing the button '__New storage account__' at the top right, in the '__Storage Accounts__' tab:
+Creating a storage account on your tenant is done by pressing the '__New storage account__' button at the top right, in the '__Storage Accounts__' tab:
 
-![](images/S3_create_account.png)
+<img src={S3CreateAccount} />
 
 The platform then gives you the access key and the secret key of your bucket:
 
-![](images/S3_storage_keys.png)
+<img src={S3StorageKeys} />
 
-__WARNING:__ The secret and access keys are presented only once. After this first appearance, it becomes impossible to view the secret key again. It is therefore essential to note this information immediately; otherwise, you will need to generate a new pair of keys.
+__ATTENTION:__ The secret and access keys are presented only once. After this first appearance, it becomes impossible to consult the secret key again. It is therefore essential to note this information immediately; otherwise, you will need to generate a new key pair.
 
-The regeneration is done in the key options by selecting the "Reset access key" option.
+Regeneration is done at the key options level by choosing the "Reset access key" option.
 
-![](images/S3_keyregen.png)
+<img src={S3Keyregen} />
+
 
 ## Creating an S3 bucket
 
 Creating a new bucket is done by clicking the '__New bucket__' button at the top right of the screen:
 
-![](images/S3_create.png)
+<img src={S3Create} />
 
-A window then appears, and you must provide:
+A window will then appear, and you need to fill in:
 
-1. The **region** where your bucket will be created,
-2. The **type** of bucket: performance or archival,
+1. The **region** of your bucket,
+2. The **type** of bucket: performance or archiving,
 3. The **name** of your bucket (it must be unique).
 
-![](images/S3_create_popup_001.png)
+<img src={S3CreatePopup_001} />
 
-As of April 3, 2024, the available region is **FR1** (Paris), and only the performance type is available.
+As of April 3, 2024, the available region is **FR1** (Paris) and only the performance type is available.
 
 You must also choose who can access your bucket:
 
-- **Private** Access: By default, access is limited to specific IP addresses from Cloud Temple.
-- **Public** Access: Access is open to all Internet addresses (notably via the rule 0.0.0.0/0). However, authentication is still required. We discourage this configuration due to its security implications.
+- **Private** Access: By default, the access is limited to specific Cloud Temple IP addresses.
+- **Public** Access: The access is open to all Internet addresses (notably via the 0.0.0.0/0 rule). However, authentication is still required. We discourage this configuration due to its security implications.
 - **Custom** Access: This option allows you to specify the IPv4 addresses or subnet ranges you want to authorize.
 
-## Associating a storage account with a bucket
+## Associating a storage account to a bucket
 
-Account associations with buckets are made in the '__Policies__' tab.
+Account associations with the buckets are done in the '__Policies__' tab.
 
-![](images/S3_account_assign.png)
+<img src={S3AccountAssign} />
 
-This association allows giving the storage account access to the bucket. There are four roles:
+This association gives the storage account access to the bucket. There are four roles:
 
-1. **Maintainer**: Read, write, permission management, and policy management rights
+1. **Maintainer**: Read, write, manage permissions, and policy management rights
 
 The S3 permissions behind this role:
 ```json
@@ -70,7 +85,7 @@ The S3 permissions behind this role:
 }
 ```
 
-2. **Read and Write**: Read, edit, modify, and delete files in the buckets.
+2. **Writer and Reader**: Read and edit, modify, delete files in the buckets.
 
 The S3 permissions behind this role:
 ```json
@@ -84,7 +99,7 @@ The S3 permissions behind this role:
 }
 ```
 
-3. **Writer**: Read, edit, modify, and delete files in the buckets.
+3. **Writer**: Read and edit, modify, delete files in the buckets.
 
 The S3 permissions behind this role:
 ```json
@@ -110,43 +125,43 @@ The S3 permissions behind this role:
 }
 ```
 
-![](images/S3_account_access.png)
+<img src={S3AccountAccess} />
 
 ## Browsing an S3 bucket
 
-When you click on the name of a bucket, you first access the '__Files__' tab to see its contents:
+When you click on the name of a bucket, you first have access to the '__Files__' tab to see its content:
 
-![](images/S3_files.png)
+<img src={S3Files} />
 
 In the '__Settings__' tab, you can see the detailed information of your S3 bucket:
 
-![](images/S3_params.png)
+<img src={S3Params} />
 
-You then have:
+You will then see:
 
 1. The name of the S3 bucket,
-2. Its region,
+2. Its region
 3. The number of objects it contains and the size in bytes of the bucket,
 4. Its endpoint,
-5. The lifecycle parameters, which define, among other things, the expiration of objects in the bucket. '__0__' corresponds to an infinite retention.
+5. The lifecycle settings that define, among other things, the expiration of the bucket's objects. '__0__' corresponds to infinite retention.
 
-You can modify the retention parameter via the '__Modify__' button of the lifecycle:
+You can modify the retention setting via the '__Edit__' button in the lifecycle:
 
-![](images/S3_lifecycle.png)
+<img src={S3Lifecycle} />
 
-Finally, you can modify its access type.
+Finally, you can modify its access typology.
 
 ## Limiting access to your S3 buckets
 
-It is very simple to configure access restrictions to your S3 buckets. When creating a bucket, you have the choice between three access configurations:
+It is very simple to configure access restrictions to your S3 buckets. During the creation of a bucket, you can choose between three access configurations:
 
-![](images/S3_create_popup_001.png)
+<img src={S3CreatePopup_001} />
 
-- **Private** Access: By default, access is limited to specific IP addresses from Cloud Temple.
-- **Public** Access: Access is open to all Internet addresses (notably via the rule 0.0.0.0/0). We discourage this configuration due to its security implications.
-- **Custom** Access: This option allows you to specify the IPv4 addresses or subnet ranges you want to authorize.
+- **Private** Access: By default, the access is limited to specific Cloud Temple IP addresses.
+- **Public** Access: The access is open to all Internet addresses (notably via the 0.0.0.0/0 rule). However, authentication is still required. We discourage this configuration due to its security implications.
+- **Custom** Access: This option allows you to specify the IPv4 addresses or subnet ranges you want to authorize:
 
-![](images/S3_create_popup_002.png)
+<img src={S3CreatePopup_002} />
 
 *IPv6 support is planned for the first half of 2025.*
 
@@ -154,12 +169,13 @@ It is very simple to configure access restrictions to your S3 buckets. When crea
 
 Deleting a bucket is done in the actions associated with the bucket by choosing the '__Delete__' option.
 
-![](images/S3_delete.png)
+<img src={S3Delete} />
 
-_**WARNING: Deletion is permanent, and there is no way to recover the data.**_
+_**ATTENTION: Deletion is final and there is no way to recover the data.**_
 
-## How is the Cloud Temple S3 offer billed?
 
-The price is a monthly price, per GiB of storage, billed monthly. However, the platform calculates usage by the hour and bills on a monthly basis of 720 hours.
+## How is Cloud Temple's S3 offering billed?
 
-For example, if you consume 30 GiB in a month for 1 hour and then nothing, and then a few days later 30 GiB for 2 hours, the monthly bill will be *( Price (1 x 30 GiB) + 2 x Price (30 GiB) ) / 720* for the month considered. Billing is in arrears.
+The price is a monthly rate, per Gio of storage, billed monthly. However, the platform tracks usage by the hour and performs billing on a monthly basis of 720 hours.
+
+For example, if you consume 30 Gio for 1 hour in a month, then nothing, then a few days later 30 Gio for 2 hours, the monthly bill will be *( Price (1 x 30 Gio) + 2 x Price (30 Gio) ) / 720* for the considered month. Billing is done in arrears.

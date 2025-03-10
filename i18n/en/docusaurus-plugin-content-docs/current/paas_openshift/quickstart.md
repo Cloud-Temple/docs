@@ -1,52 +1,57 @@
 ---
 title: Getting Started Guide
 ---
+import oshiftRights from './images/oshift_rights.png'
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-## Deploy a Redhat Openshift Platform within Your Tenant
 
-### Assigning Access Rights
+## Deploy a Redhat Openshift platform within your tenant
 
-It is essential that the [Tenant](../console/iam/concepts.md#tenants) administrator grants the Openshift platform management rights to the Openshift administrator user to enable access:
+### Assigning access rights
 
-![](images/oshift_rights.png)
+It is essential that the [Tenant](../console/iam/concepts.md#tenants) administrator grants the Openshift platform management right to the Openshift admin user to access it:
 
-### Accessing the Openshift Environment within a Tenant
+<img src={oshiftRights} />
 
-After assigning the rights, the '__Openshift__' module will appear in the Cloud Temple console menu:
+### Access to the Openshift environment within a tenant
 
-![](images/oshift_menu_001.png)
+After assigning rights, the '__Openshift__' module will then appear in the Cloud Temple console menu:
 
-You will then see the Openshift clusters deployed within your tenant.
+<img src={oshiftMenu_001} />
 
-Click on the cluster you wish to manage. You will enter the cluster management environment:
+You will then see the Openshift clusters that are deployed within your tenant.
 
-![](images/oshift_menu_002.png)
+Click on the cluster you wish to administer. You will access the cluster administration environment:
 
-After authentication, you can manage your cluster:
+<img src={oshiftMenu_002} />
 
-![](images/oshift_menu_003.png)
+Once authenticated, you can administer your cluster:
 
-### Resources of Your Environment
+<img src={oshiftMenu_003} />
+
+### Resources of your environment
 
 Here is the connection and configuration information specific to your OpenShift environment.
 
 #### Connection Details
 
-To access the various OpenShift components, ensure your tenant is whitelisted in the console (refer to the documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+To access the various OpenShift components, make sure your tenant is whitelisted in the console (refer to the documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Shiva Tenant__ :  
-  [https://**your-tenant-id**.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)  
-  
-- __OpenShift UI__ :  
-  [https://ui-ocp01-**your-id**.paas.cloud-temple.com/](https://ui-ocp01-**your-id**.paas.cloud-temple.com/)  
-  
-- __External API__ :  
-  [https://api-ocp01-**your-id**.paas.cloud-temple.com](https://api-ocp01-**your-id**.paas.cloud-temple.com)  
-  
-- __GitOps (ARGOCD)__ :  
-  [https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)  
-  
-#### Connecting to the Cluster via CLI
+- __Shiva Tenant URL__:
+  [https://**your-tenant-id**.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+
+- __OpenShift UI__:
+  [https://ui-ocp01-**your-id**.paas.cloud-temple.com/](https://ui-ocp01-**your-id**.paas.cloud-temple.com/)
+
+- __External API__:
+  [https://api-ocp01-**your-id**.paas.cloud-temple.com](https://api-ocp01-**your-id**.paas.cloud-temple.com)
+
+- __GitOps (ARGOCD)__:
+  [https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)
+
+#### Connecting to the cluster via CLI
 
 To connect via the command line (CLI), use the following command:
 
@@ -54,13 +59,13 @@ To connect via the command line (CLI), use the following command:
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com/ --web
 ```
 
-#### Accessing the Registry
+#### Access to the registry
 
 To access the registry, log in using the following commands:
 
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
-docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
+docker login -u {your-user} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
 ```
 
 Next, test building and uploading a Docker image:
@@ -71,18 +76,18 @@ docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.co
 docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Configuration of Routers and Load Balancers
+#### Router and Load Balancer configuration
 
-The platform offers flexible options for __traffic routing__ and __load balancing__ :
+The platform offers flexible options for __traffic routing__ and __load balancing__:
 
-- By default, private load balancers are used for routes and ingresses.  
-- Domains :  
-  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`  
-  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`  
+- By default, private load balancers are used for routes and ingresses.
+- Domains:
+  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
 
-Ensure your routes or ingresses are configured with the appropriate labels or ingress classes for correct routing.
+Ensure that your routes or ingresses are configured with appropriate labels or ingress classes to ensure proper routing.
 
-Example :
+Example:
 
 ```yaml
 metadata:
@@ -94,7 +99,7 @@ metadata:
 
 Network configurations play a crucial role in securing communications with OpenShift.
 
-- __Interconnection Network__ : 100.67.0.0/28  
-- __VIP of the private load balancer__ : 100.67.0.3  
+- __Interconnection Network__: 100.67.0.0/28
+- __Private load balancer VIP__: 100.67.0.3
 
-Ensure your firewall has a dedicated interface and allows traffic between the specified networks.
+Ensure that your firewall has a dedicated interface and allows traffic between the specified networks.
