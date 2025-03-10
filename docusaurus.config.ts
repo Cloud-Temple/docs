@@ -148,10 +148,6 @@ const config: Config = {
           title: 'Market Place',
           items: [
             {
-              label: 'Privacy',
-              to: '/privacy',
-            },
-            {
               label: 'UGAP',
               to: '/market_place_public',
             },
