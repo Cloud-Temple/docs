@@ -52,7 +52,7 @@ Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
 La documentation OpenAPI 3.0 (Swagger) des APIs de la console Cloud Temple est disponible directement dans l'application :
 
-<img src={ShivaApi001} className="img-large" />
+<img src={ShivaApi001} />
 
 L'accès aux APIs nécessite d'être authentifié. Une fois authentifié toutes les opérations doivent avoir le header
 __'Authorization'__ avec le bearer access token obtenu lors de la phase d'authentification.
@@ -206,7 +206,7 @@ sont des bons points de départ pour implémenter des stratégies d'attenuation.
 
 Les informations d'évolution des endpoint de l'API est disponible dans les notes de mises à jour :
 
-<img src={ShivaApi004} className="img-large" />
+<img src={ShivaApi004} />
 
 Vous trouverez la liste des endpoints qui sont dépréciés activité par activité.
 
