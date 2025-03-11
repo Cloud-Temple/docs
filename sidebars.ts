@@ -165,7 +165,14 @@ const sidebars: SidebarsConfig = {
             'network/internet/internet',
             'network/internet/concepts',
             'network/internet/quickstart',
-            'network/internet/tutorials',
+            {
+              type: 'category',
+              label: 'Tutorials',
+              items: [
+                'network/internet/tutorials/forti',
+                'network/internet/tutorials/pfSense',
+              ],
+            },
           ],
         },
       ],
