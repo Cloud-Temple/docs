@@ -59,8 +59,8 @@ La première étape consiste à récupérer [les informations d'accès internet 
 Vous pouvez ensuite déployer votre vm pfSense :
 
 1. __Installation du firewall__ depuis le template pfSense dans shiva :
-    - [(Déployer via la console)](../iaas_vmware/tutorials/deploy_vm_template)
-    - [(Déployer via Terraform)](../iaas_vmware/tutorials/deploy_vm_terraform).
+    - [(Déployer via la console)](/docs/iaas_vmware/tutorials/deploy_vm_template)
+    - [(Déployer via Terraform)](/docs/iaas_vmware/tutorials/deploy_vm_terraform).
 2. __Configuration des interfaces LAN et WAN__ du firewall : l'interface WAN doit être dans votre vLAN internet, son IP sera prise dans la plage IP qui vous a été communiquée par le CDS ainsi que la default GW.
 3. __Installation de la deuxième machine__ de management.
 4. __Configuration de l'interface__ de la VM de management : cette machine doit être dans le même réseau que celui dans lequel l'interface LAN du firewall a été configurée.
