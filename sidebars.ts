@@ -120,6 +120,8 @@ const sidebars: SidebarsConfig = {
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
             },
+            'iaas_vmware/tutorials/deploy_vm_template',
+            'iaas_vmware/tutorials/deploy_vm_terraform',
             'iaas_vmware/tutorials/vm_encryption',
           ],
         },
