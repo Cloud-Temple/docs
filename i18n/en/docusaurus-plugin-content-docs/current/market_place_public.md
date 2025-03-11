@@ -1,21 +1,21 @@
 ---
-title: Purchasing Platforms
+title: Procurement Platforms
 tags:
   - ugap
   - caih
   - marketplace
 ---
 
-## Purchasing Platforms
+## Procurement Platforms
 
 <div class="purchase-platforms">
-  <p>Are you a public sector actor? The <strong>IaaS Cloud Temple</strong> offer is accessible via:</p>
+  <p>Are you a public sector stakeholder? The <strong>IaaS Cloud Temple</strong> offer is accessible via:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        The public procurement platform UGAP
+        The UGAP public procurement platform
       </a>
     </p>
   </div>

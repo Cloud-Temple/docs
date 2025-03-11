@@ -4,7 +4,6 @@ tags:
   - internet
   - tutorials
 ---
-
 import pfSenseWebui from '../images/pfsense_webui.png';
 import pfSenseHomePage from '../images/pfsense_home_page.png';
 import pfSenseBgpRule from '../images/pfsense_bgp_rule.png';
@@ -75,7 +74,7 @@ Une fois que les deux VM sont bien installées, la deuxième étape consiste à 
 - login par défaut :
     - username : *admin*
     - password : *pfsense* (pensez à changer le mot de passe par default)
-  
+
 <img src={pfSenseHomePage} />
 ### Configuration du firewall
 Cette étape consiste à configurer les neighbors BGP du FW.
@@ -113,7 +112,7 @@ Dans Neighbors, cliquez sur +Add pour commencer à créer vos voisins BPG.
 <img src={routeServerNeighbor} />
 
 - à la fin, n'oubliez pas de sauvegarder vos modifications en cliquant sur __'save'__ :
-  
+
 <img src={neighborsOverview} />
 
 ### Vérification de l'état de la session bgp avec les neighbors
