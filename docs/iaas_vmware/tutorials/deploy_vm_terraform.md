@@ -4,7 +4,6 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-
 import statusCloudInit from './images/status_cloud_init.png';
 import cloudInitOutput from './images/cloud-init-output.png';
 
@@ -182,7 +181,7 @@ users:
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: sudo
-    lock_passwd: false  
+    lock_passwd: false
     plain_text_passwd: password
 ```
 

@@ -4,7 +4,6 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-
 import shivaCatalogsCharger from './images/shiva_catalogs_charger.png';
 import shivaCatalogsAjout from './images/shiva_catalogs_ajout.png';
 import shivaCatalogsDeployer from './images/shiva_catalogs_deployer.png';
