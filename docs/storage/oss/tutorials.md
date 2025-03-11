@@ -1,6 +1,11 @@
 ---
 title: Tutoriels
 ---
+import S3Cloudberry_001 from './images/S3_cloudberry_001.png'
+import S3Cloudberry_002 from './images/S3_cloudberry_002.png'
+import S3Cloudberry_003 from './images/S3_cloudberry_003.png'
+import S3Winscp_001 from './images/S3_winscp_001.png'
+import S3Winscp_002 from './images/S3_winscp_002.png'
 
 
 ## Utiliser MINIO
@@ -27,15 +32,15 @@ vous pouvez aussi utiliser [Cloud Berry Explorer](https://www.msp360.com/explore
 
 1. Connectez vous en utilisant votre endpoint et votre clef :
 
-![](images/S3_cloudberry_001.png)
+<img src={S3Cloudberry_001} />
 
 2. Une fois connecté, saisissez le nom du bucket dans la barre de navigation:
 
-![](images/S3_cloudberry_002.png)
+<img src={S3Cloudberry_002} />
 
 3. Vous pourrez alors utiliser le bucket normalement :
 
-![](images/S3_cloudberry_003.png)
+<img src={S3Cloudberry_003} />
 
 ## Utiliser WINSCP 6.3.x
 
@@ -43,11 +48,11 @@ Vous pouvez utiliser [Winscp](https://winscp.net/eng/download.php) :
 
 1. Connectez vous en utilisant votre endpoint, votre clef d'accès et votre clef secrete :
 
-![](images/S3_winscp_001.png)
+<img src={S3Winscp_001} />
 
 2. Une fois connecté, utilisez WINSCP normalement comme un site FTP ou SCP :
 
-![](images/S3_winscp_002.png)
+<img src={S3Winscp_002} />
 
 
 ## Ajouter le HASH d'un fichier lors de l'upload d'un objet

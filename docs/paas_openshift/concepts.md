@@ -1,6 +1,8 @@
 ---
 title: Concepts
 ---
+import oshiftOffert from './images/oshift_offert.jpg'
+
 
 ## Présentation de RedHat Openshift
 
@@ -97,7 +99,7 @@ Les produits Red Hat OpenShift Cloud Temple sont disponibles en paiement à l'us
 
 La plateforme est une Redhat Openshift 4 basée sur [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) et inclut [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
-![](images/oshift_offert.jpg)
+<img src={oshiftOffert} />
 
 ## Stratégie de sauvegarde de votre plateforme PaaS Openshift
 

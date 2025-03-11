@@ -141,17 +141,6 @@ const sidebars: SidebarsConfig = {
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
           ]
-        },
-        'governance/paas/mco_mcs',
-        {
-          type: 'doc',
-          label: 'RACI',
-          id: 'governance/paas/raci'
-        },
-        {
-          type: 'doc',
-          label: 'Service Agreement',
-          id: 'governance/paas/service_agreement_paas'
         }
       ],
     },

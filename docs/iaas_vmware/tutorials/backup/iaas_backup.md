@@ -5,6 +5,22 @@ tags:
   - tutorials
   - iaas_backup
 ---
+import backupCloneIaas_001 from './images/backup_clone_iaas_001.png'
+import backupCloneIaas_002 from './images/backup_clone_iaas_002.png'
+import backupRestoIaas_001 from './images/backup_resto_iaas_001.png'
+import backupCloneIaas_004 from './images/backup_clone_iaas_004.png'
+import backupPolicyIaas_001 from './images/backup_policy_iaas_001.png'
+import backupPolicyIaas_002 from './images/backup_policy_iaas_002.png'
+import backupPolicyIaas_003 from './images/backup_policy_iaas_003.png'
+import backupPolicyIaas_006 from './images/backup_policy_iaas_006.png'
+import backupPolicyIaas_005 from './images/backup_policy_iaas_005.png'
+import backupPolicyIaas_004 from './images/backup_policy_iaas_004.png'
+import backupCloneIaas_003 from './images/backup_clone_iaas_003.png'
+import backupPolicyIaas_007 from './images/backup_policy_iaas_007.png'
+import backupRestoreIaas_001 from './images/backup_restore_iaas_001.png'
+import backupRestoreIaas_003 from './images/backup_restore_iaas_003.png'
+import backupRestoreIaas_002 from './images/backup_restore_iaas_002.png'
+import backupInvIaas_001 from './images/backup_inv_iaas_001.png'
 
 #### Comment cloner une machine virtuelle ?
 
@@ -12,17 +28,17 @@ Il existe 2 façons de cloner une machine virtuelle :
 
 - La première option permet de cloner une machine virtuelle directement depuis l'icône __'Clone'__ de votre machine virtuelle :
 
-![](images/backup_clone_iaas_001.png)
-![](images/backup_clone_iaas_002.png)
+<img src={backupCloneIaas_001} />
+<img src={backupCloneIaas_002} />
 
 - La seconde solution consiste à cloner la machine virtuelle en utilisant __une sauvegarde__ de la machine virtuelle puis en utilisant __la restauration en mode clone__ d'une sauvegarde.
 Aller dans la partie __'Sauvegarde'__ de votre machine virtuelle et choisissez l'action __'Restaurer'__ :
 
-![](images/backup_resto_iaas_001.png)
+<img src={backupRestoIaas_001} />
 
 Choisissez ensuite l'option __'Clone'__ de restauration :
 
-![](images/backup_clone_iaas_004.png)
+<img src={backupCloneIaas_004} />
 
 #### Pourquoi lorsque je vais sur la page "politiques de sauvegarde" et que je sélectionne une politique, je ne vois pas les mêmes machines virtuelles que lorsque je vais sur "rapport de sauvegardes" et que je sélectionne la même politique ?
 
@@ -35,11 +51,11 @@ Allez sur la page __'Machines Virtuelles'__ dans la section __'IaaS'__ du bandea
 
 Sélectionnez une machine virtuelle puis l'onglet __'Politiques de sauvegardes'__ de cette machine :
 
-![](images/backup_policy_iaas_001.png)
+<img src={backupPolicyIaas_001} />
 
 Ajoutez la politique de sauvegarde voulue :
 
-![](images/backup_policy_iaas_002.png)
+<img src={backupPolicyIaas_002} />
 
 ### Comment supprimer une politique de sauvegarde d'une machine virtuelle ?
 
@@ -47,7 +63,7 @@ Allez sur la page __'Machines Virtuelles'__, sélectionnez une machine virtuelle
 
 Supprimez la politique de sauvegarde voulue et confirmez la suppression :
 
-![](images/backup_policy_iaas_003.png)
+<img src={backupPolicyIaas_003} />
 
 __*Remarque :*__ *Attention ! __Secnumcloud impose qu'il y est au minimum une politique de sauvegarde__ pour chaque machine virtuelle.*
 
@@ -58,15 +74,15 @@ Il y a 2 solutions possibles :
 1. Allez sur la page __'Jobs'__ du menu __'Sauvegarde'__ dans le bandeau vert à gauche de votre écran. Choisissez le job correspondant à la sauvegarde et sélectionnez-le.
 Ensuite, retrouvez le *jobsession* correspondant à votre sauvegarde, sélectionnez-le grâce au menu __'Actions'__.
 
-![](images/backup_policy_iaas_006.png)
+<img src={backupPolicyIaas_006} />
 
 Ces actions permettent d'avoir les logs détaillés de l'exécution de la sauvegarde. Vous pouvez rechercher dans les journaux de sauvegarde :
 
-![](images/backup_policy_iaas_005.png)
+<img src={backupPolicyIaas_005} />
 
 2. Allez sur la page __'Rapports de sauvegarde'__ et sélectionnez la politique qui vous intéresse :
 
-![](images/backup_policy_iaas_004.png)
+<img src={backupPolicyIaas_004} />
 
 Vous pouvez alors filtrer sur une date, télécharger le rapport au format __PDF__ ou __CSV__ pour l'exploiter dans des outils tiers.
 
@@ -74,7 +90,7 @@ Vous pouvez alors filtrer sur une date, télécharger le rapport au format __PDF
 
 Allez sur la page __'Machines Virtuelles'__, sélectionnez une machine virtuelle puis l'onglet __'Sauvegardes'__ de cette machine. Pour lancer la restauration, sélectionnez la sauvegarde à restaurer.
 
-![](images/backup_clone_iaas_003.png)
+<img src={backupCloneIaas_003} />
 
 ### Qu'est-ce que l'option de quiescing ?
 
@@ -83,7 +99,7 @@ Par défaut, le __quiescing est activé__. Il peut être désactivé manuellemen
 
 Pour ce faire, dans la partie __'Sauvegardes'__ de votre machine, virtuelle, cliquez sur __'Modifier les options'__ et désactiver le __quiescing__ :
 
-![](images/backup_policy_iaas_007.png)
+<img src={backupPolicyIaas_007} />
 
 ### Quelles sont les options de restaurations d'une machine virtuelle ?
 
@@ -91,21 +107,21 @@ Pour ce faire, dans la partie __'Sauvegardes'__ de votre machine, virtuelle, cli
 
 - __'CLONE'__ : Restaure la machine virtuelle en la renommant, sans remplacer la machine virtuelle d'origine.
 
-![](images/backup_restore_iaas_001.png)
+<img src={backupRestoreIaas_001} />
 
 - __'PRODUCTION'__ : Restaure et __remplace__ la machine virtuelle de production (la machine virtuelle actuellement en production est __détruite__)
 
-![](images/backup_restore_iaas_003.png)
+<img src={backupRestoreIaas_003} />
 
 - __'TEST'__ : Restaure la machine virtuelle de production __sans l'écraser__.
 
-![](images/backup_restore_iaas_002.png)
+<img src={backupRestoreIaas_002} />
 
 ### Comment restaurer et remplacer la machine virtuelle de production, sans conserver la machine virtuelle actuellement en production ?
 
 Choisissez le mode de restauration __'Production'__. L'option 'écraser la machine virtuelle' est par défaut.
 
-![](images/backup_restore_iaas_003.png)
+<img src={backupRestoreIaas_003} />
 
 ### Pourquoi le nombre de machines virtuelles est-il différent entre les modules sauvegarde et compute ?
 
@@ -114,7 +130,7 @@ La différence de machines virtuelles peut venir du fait que le module de sauveg
 Pour mettre à jour le module de sauvegardes, il faut demander à la couche logicielle de sauvegarde de réinventorier les machines virtuelles.
 Pour ce faire, dans le menu __'Infrastructure'__ du bandeau vert à gauche de l'écran, naviguer vers le sous menu __'Spectrum Protect Plus'__ et utiliser le bouton __'Action'__ de l'inventaire :
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
 Notez que vous avez la date du dernier inventaire qui est indiquée.
 
@@ -125,7 +141,7 @@ les sauvegardes. En effet, celles-ci ne se comptabilisent pas elles-mêmes dans 
 
 Pour lancer un inventaire des machines virtuelles sur le module de sauvegardes, dans le menu __'Infrastructure'__ du bandeau vert à gauche de l'écran, naviguer vers le sous menu __'Spectrum Protect Plus'__ et utiliser le bouton __'Action'__ de l'inventaire :
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
 Notez que vous avez la date du dernier inventaire qui est indiquée.
 
@@ -155,7 +171,7 @@ Voici comment procéder :
 Exécutez l'inventaire de la sauvegarde : dans le menu __'Infrastructure'__ du bandeau vert à gauche de l'écran, naviguer
 vers le sous menu __'Spectrum Protect Plus'__ et utiliser le bouton __'Action'__ de l'inventaire :
 
-![](images/backup_inv_iaas_001.png)
+<img src={backupInvIaas_001} />
 
 Effectuez la suppression du disque une fois l'inventaire fini. Actualisez la machine virtuelle afin de vérifier que le disque a bien été supprimé.
 

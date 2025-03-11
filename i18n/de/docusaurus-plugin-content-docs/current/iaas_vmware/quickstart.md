@@ -1,63 +1,110 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
+import shivaVmHome from './images/shiva_vm_home.png'
+import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
+import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
+import shivaVmActions from './images/shiva_vm_actions.png'
+import shivaVmInformations from './images/shiva_vm_informations.png'
+import shivaVmBandeauRapide from './images/shiva_vm_bandeau_rapide.png'
+import shivaVmVueRapide from './images/shiva_vm_vue_rapide.png'
+import shivaVmInfosGenerales from './images/shiva_vm_infos_generales.png'
+import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
+import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
+import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
+import shivaCpool_010 from './images/shiva_cpool_010.png'
+import shivaCpool_011 from './images/shiva_cpool_011.jpg'
+import shivaCatalogs from './images/shiva_catalogs.png'
+import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
+import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
+import shivaVmTemplate_001 from './images/shiva_vm_template_001.png'
+import shivaVmAdv_001 from './images/shiva_vm_adv_001.png'
+import shivaVmAdv_002 from './images/shiva_vm_adv_002.png'
+import shivaVmAdv_003 from './images/shiva_vm_adv_003.png'
+import shivaVmAdv_004 from './images/shiva_vm_adv_004.png'
+import shivaCpool_001 from './images/shiva_cpool_001.png'
+import shivaEsx_001 from './images/shiva_esx_001.png'
+import shivaEsx_002 from './images/shiva_esx_002.png'
+import shivaCpool_003 from './images/shiva_cpool_003.png'
+import shivaCpool_004 from './images/shiva_cpool_004.png'
+import shivaCpool_005 from './images/shiva_cpool_005.png'
+import shivaCpool_009 from './images/shiva_cpool_009.png'
+import shivaCpool_007 from './images/shiva_cpool_007.jpg'
+import shivaCpool_008Build from './images/shiva_cpool_008_build.jpg'
+import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
+import shivaCpool_006 from './images/shiva_cpool_006.png'
+import shivaSupport from '../console/images/shiva_support.png'
+import shivaVmPolitiquesBackupAssignMandatory from './images/shiva_vm_politiques_backup_assign_mandatory.png'
+import shivaVmPolitiquesBackup from './images/shiva_vm_politiques_backup.png'
+import shivaVmDisquesVirtuelsPolitiques from './images/shiva_vm_disques_virtuels_politiques.png'
+import shivaVmPolitiquesBackupExecute from './images/shiva_vm_politiques_backup_execute.png'
+import shivaVmPolitiquesBackupExecute2 from './images/shiva_vm_politiques_backup_execute2.png'
+import shivaVmPolitiquesBackupRetirer from './images/shiva_vm_politiques_backup_retirer.png'
+import shivaVmPolitiquesBackupRetirerImpossible from './images/shiva_vm_politiques_backup_retirer_impossible.png'
+import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
+import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
+import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
+import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
+import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+
+
 ## Berechnung
 
-### Verwaltung von Virtuellen Maschinen
+### Management der Virtuellen Maschinen
 
-Die Verwaltungsoberfläche Ihrer virtuellen Maschinen ist in der Shiva-Konsole im Menü __'IaaS'__ verfügbar, das sich auf dem grünen Balken links auf dem Bildschirm befindet.
+Die Verwaltungsoberfläche Ihrer virtuellen Maschinen ist in der Shiva-Konsole im Menü __'IaaS'__ im grünen Balken auf der linken Seite des Bildschirms verfügbar.
 
 ### Liste der virtuellen Maschinen
 
-Im Abschnitt __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer auf Ihrer vertrauenswürdigen Cloud gehosteten virtuellen Maschinen.
+Im Abschnitt __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer virtuellen Maschinen, die in Ihrer vertrauenswürdigen Cloud gehostet werden.
 
-![](images/shiva_vm_home.png)
+<img src={shivaVmHome} />
 
-Sie haben Zugriff auf die folgenden Informationen für jede virtuelle Maschine:
+Sie haben Zugriff auf folgende Informationen für jede virtuelle Maschine:
 - ihren Namen,
-- die ihr zugewiesenen Tags,
+- die zugewiesenen Tags,
 - ihren Status (ausgeschaltet, eingeschaltet, in Bearbeitung, Host getrennt oder ungültig),
 - ihren Manager (in einer VMware-Umgebung das zugehörige Vcenter),
 - ihr Betriebssystem,
-- die Menge der virtuellen CPUs (vCPU),
-- die Menge des virtuellen Arbeitsspeichers (vRAM).
+- Die Anzahl der virtuellen CPUs (vCPU),
+- Die Menge an virtuellem Speicher (vRAM).
 
 ### Aktionen auf virtuellen Maschinen
 
-Die folgenden Aktionen sind über diese Schnittstelle möglich:
+Folgende Aktionen sind von dieser Schnittstelle aus möglich:
 
 - Liste der virtuellen Maschinen aktualisieren;
 - Liste im CSV-Format exportieren;
 - Liste filtern;
-- Eine virtuelle Maschine nach ihrem Namen suchen;
+- Virtuelle Maschine nach ihrem Namen suchen;
 - Eine neue virtuelle Maschine erstellen.
 
-![](images/shiva_vm_home_desc.png)
+<img src={shivaVmHomeDesc} />
 
-__Ein Alarmbanner kann oben in der Liste angezeigt werden__: Es zeigt an, dass kritische Alarme auf einer oder mehreren Ihrer virtuellen Maschinen ausgelöst wurden.
-Die Schaltfläche __'Anzeigen'__ ermöglicht das Anzeigen der virtuellen Maschinen, die von dieser Benachrichtigung betroffen sind.
+__Ein Alarmbanner kann oben in der Liste angezeigt werden__: Es zeigt an, dass auf einer oder mehreren Ihrer virtuellen Maschinen kritische Alarme ausgelöst wurden.
+Die Schaltfläche __'Ansehen'__ ermöglicht das Abrufen der virtuellen Maschinen, die von dieser Benachrichtigung betroffen sind.
 
-![](images/shiva_vm_home_alarme.png)
+<img src={shivaVmHomeAlarme} />
 
 Wenn Sie auf den grünen Dropdown-Pfeil rechts in der Liste für eine virtuelle Maschine klicken:
 
-![](images/shiva_vm_actions.png)
+<img src={shivaVmActions} />
 
-haben Sie Zugriff auf alle Informationen zu dieser Maschine:
+Erhalten Sie Zugriff auf alle Informationen zu dieser Maschine:
 
-![](images/shiva_vm_informations.png)
+<img src={shivaVmInformations} />
 
-Ein Schnellaktionsleiste ermöglicht die Ausführung der folgenden Aktionen:
+Ein Schnellzugriffsband ermöglicht folgende Aktionen:
 
-![](images/shiva_vm_bandeau_rapide.png)
+<img src={shivaVmBandeauRapide} />
 
 - Die virtuelle Maschine einschalten;
 - Sie ausschalten;
 - Sie neu starten;
 - Die Energieoptionen des Gastbetriebssystems ändern;
 - Die Konsole öffnen;
-- Ein ISO einhängen;
-- Ein ISO aushängen;
+- Eine ISO laden;
+- Eine ISO auswerfen;
 - Die virtuelle Maschine klonen;
 - Sie verschieben (vMotion);
 - Sie umbenennen;
@@ -65,113 +112,113 @@ Ein Schnellaktionsleiste ermöglicht die Ausführung der folgenden Aktionen:
 
 Eine Schnellansicht bietet eine Visualisierung des __Speichers__, der __CPU__ und des __RAM__ der virtuellen Maschine.
 
-![](images/shiva_vm_vue_rapide.png)
+<img src={shivaVmVueRapide} />
 
-Im Tab __'Allgemeine Informationen'__ finden Sie detaillierte Informationen zu Ihrer virtuellen Maschine, wie ihr Betriebssystem, ihren physischen Standort (Datacenter, Datastore usw.), RAM, CPU, IP-Adressen, Logs und mehr.
+Im Tab __'Allgemeine Informationen'__ finden Sie detaillierte Informationen zu Ihrer virtuellen Maschine, wie z.B. ihr Betriebssystem, ihren physischen Standort (Rechenzentrum, Datenspeicher usw.), den RAM, die CPU, die IP-Adressen, die Protokolle und andere.
 
-![](images/shiva_vm_infos_generales.png)
+<img src={shivaVmInfosGenerales} />
 
-Über diese Ansicht können Sie die folgenden Aktionen ausführen:
+Von dieser Ansicht aus können Sie folgende Aktionen durchführen:
 
 - Das Betriebssystem ändern (die virtuelle Maschine muss ausgeschaltet sein),
 - Die Hardwareversion aktualisieren (die virtuelle Maschine muss ausgeschaltet sein),
 - RAM oder CPU ändern.
 
-Ein Tab __'Erweitert'__ bietet spezifischere Informationen wie "VMware Tools"-Informationen, die Hardwareversion, den Manager usw.
+Ein __'Erweitert'__-Tab ermöglicht das Abrufen spezifischerer Informationen wie VMware-Tools-Infos, Hardwareversion, Manager usw.
 
-![](images/shiva_vm_infos_avancees.png)
+<img src={shivaVmInfosAvancees} />
 
-### Bearbeiten des RAM oder der CPU einer virtuellen Maschine
+### Editieren von RAM oder CPU einer virtuellen Maschine
 Gehen Sie zum Tab __'Virtuelle Maschinen'__, zeigen Sie die Details einer virtuellen Maschine an,
-wählen Sie den Tab __'Allgemeine Informationen'__ und klicken Sie auf die Schaltfläche zum Bearbeiten der zu ändernden Variable:
+wählen Sie den Tab __'Allgemeine Informationen'__ und klicken Sie auf die Schaltfläche zum Editieren der Variable, die geändert werden soll:
 
-![](images/shiva_edit_cpu_ram.png)
+<img src={shivaEditCpuRam} />
 
-### Die Betriebsmodi von Festplatten
+### Die Betriebsarten der Festplatten
 
-Sie können verschiedene Festplattenmodi hinzufügen:
-  - __Persistente__ : Änderungen werden sofort und dauerhaft auf die virtuelle Festplatte geschrieben. **Dies ist der empfohlene Modus.**
-  - __Unabhängig, nicht persistent__ : Änderungen an der virtuellen Festplatte werden in einem neuen Logbuch aufgezeichnet und beim Ausschalten gelöscht. Nicht betroffen von Snapshots. **Wird nicht von der Sicherung unterstützt.**
-  - __Unabhängig, persistent__ : Änderungen werden sofort und dauerhaft auf die virtuelle Festplatte geschrieben. Nicht betroffen von Snapshots. **Wird nicht von der Sicherung unterstützt.**
+Sie können verschiedene Betriebsarten für Festplatten hinzufügen:
+  - __Persistent__: Änderungen werden sofort und dauerhaft auf die virtuelle Festplatte geschrieben. **Dies ist der empfohlene Modus.**
+  - __Unabhängig nicht persistent__: Änderungen an der virtuellen Festplatte werden in einem neuen Log aufgezeichnet und beim Ausschalten gelöscht. Nicht von Snapshots betroffen. **Wird nicht von der Sicherung unterstützt.**
+  - __Unabhängig persistent__: Änderungen werden sofort und dauerhaft auf die virtuelle Festplatte geschrieben. Nicht von Snapshots betroffen. **Wird nicht von der Sicherung unterstützt.**
 
-### Verwaltung der Controller einer virtuellen Maschine
+### Verwaltung der Festplattencontroller einer virtuellen Maschine
 
-Sie können den Festplattentyp Ihrer virtuellen Maschine ändern.
+Sie können den Festplattencontrollertyp Ihrer virtuellen Maschine ändern.
 
-![](images/shiva_vm_diskctrl_001.png)
+<img src={shivaVmDiskctrl_001} />
 
-Virtuelle Maschinen können mit SCSI- und NVME-Controllern ausgestattet werden, mit einer Grenze von 4 Controllern pro Typ. Jeder Controller kann bis zu 15 Festplatten verwalten.
+Virtuelle Maschinen können mit SCSI- und NVME-Controllern ausgestattet werden, mit einem Limit von 4 Controllern pro Typ. Jeder Controller kann bis zu 15 Festplatten verwalten.
 
-Ein SCSI-Controller kann mit verschiedenen Untertypen konfiguriert werden: Para Virtual, Bus Logic, LSI Logic oder LSI Logic SAS.
+Ein SCSI-Controller kann mit unterschiedlichen Subtypen konfiguriert werden: Para Virtual, Bus Logic, LSI Logic oder LSI Logic SAS.
 
-Der Para Virtual Controller zeichnet sich durch seine erweiterte Kapazität aus. Er kann bis zu 64 Festplatten unterstützen, wenn die Hardwareversion der virtuellen Maschine mit einem ESXi ab Version 6.7 kompatibel ist.
+Der Para Virtual-Controller zeichnet sich durch seine erweiterte Kapazität aus. Er kann bis zu 64 Festplatten unterstützen, wenn die Hardwareversion der virtuellen Maschine mit einem ESXi-Version 6.7 oder höher kompatibel ist.
 
-> **Wichtig**: Wenn Sie den Typ eines Para Virtual Controllers ändern möchten, der mehr als 15 Festplatten besitzt, müssen Sie zunächst die Festplatten an den betreffenden Steckplätzen trennen.
+> **Wichtig**: Wenn Sie den Typ eines Para Virtual-Controllers ändern möchten, der mehr als 15 Festplatten besitzt, müssen Sie zunächst die Festplatten von den betroffenen Steckplätzen loslösen.
 
 ### Konsole einer virtuellen Maschine
 
 Die Konsole einer virtuellen Maschine ist über die Liste der virtuellen Maschinen zugänglich, indem Sie auf das Symbol __'Konsole'__ klicken:
 
-![](images/shiva_cpool_010.png)
+<img src={shivaCpool_010} />
 
-Ein neuer Tab in Ihrem Browser wird geöffnet und die Konsole Ihrer Maschine, basierend auf einem VNC-Client, wird angezeigt:
+Ein neuer Tab Ihres Browsers öffnet sich und die Konsole Ihrer Maschine wird angezeigt, basierend auf einem VNC-Client:
 
-![](images/shiva_cpool_011.jpg)
+<img src={shivaCpool_011} />
 
-Im VNC-Menü sind folgende Aktionen möglich:
+Es ist im VNC-Menü möglich:
 
-- Eine spezielle Taste senden,
-- Kopieren/Einfügen aus der Zwischenablage Ihres Betriebssystems,
-- In den Vollbildmodus wechseln,
-- Die Fenstergröße ändern (Skalierung).
+- spezielle Tasteneingaben zu senden,
+- Kopieren/Einfügen aus der Zwischenablage Ihres Betriebssystems durchzuführen,
+- in den Vollbildmodus zu wechseln,
+- die Fenstergröße zu ändern (Skalierung).
 
-Die Tastatursteuerung mit der Konsole virtueller Maschinen funktioniert perfekt in einer vollständig *englischen* Umgebung.
+Die Verwaltung der Tastatur mit der Konsole der virtuellen Maschinen funktioniert perfekt in einer vollständig *englischen* Umgebung.
 
-Die Eingabe in die Konsole hängt von der Sprache der Tastatur Ihrer physischen Maschine, der Sprache der Tastatur der virtuellen Maschine und davon ab, ob die Option 'Tastatur erzwingen' links auf dem Bildschirm aktiviert ist oder nicht.
-Hier ist eine Zusammenfassung der möglichen Situationen für die französische Sprache:
+Die in der Konsole durchgeführten Eingaben hängen von der Sprache der Tastatur Ihrer physischen Maschine, der Sprache der Tastatur der virtuellen Maschine und der Aktivierung oder Deaktivierung der Option 'Tastatur erzwingen' auf der linken Seite des Bildschirms ab.
+Hier ist eine Zusammenfassung der möglichen Situationen mit der französischen Sprache:
 
-| Sprache der Tastatur der physischen Maschine (Eingabe) | Sprache der Tastatur der virtuellen Maschine | Option 'Tastatur erzwingen' ausgewählt | Ergebnis (Ausgabe)                                   |
-| ------------------------------------------------------- | -------------------------------------------- | ------------------------------------- | ---------------------------------------------------- |
-| Französisch                                              | Französisch                                   | Nein                                  | Nicht empfohlen (Problem mit Sonderzeichen) |
-| Französisch                                              | Französisch                                   | Ja                                    | < und > funktionieren nicht                      |
-| Französisch                                              | Englisch                                     | Nein                                  | Nicht empfohlen (Problem mit Sonderzeichen) |
-| Französisch                                              | Englisch                                     | Ja                                    | Englisch                                              |
-| Englisch                                                | Französisch                                   | Nein                                  | < und > funktionieren nicht                       |
-| Englisch                                                | Französisch                                   | Ja                                    | < und > funktionieren nicht                      |
-| Englisch                                                | Englisch                                     | Nein                                  | Englisch                                              |
-| Englisch                                                | Englisch                                     | Ja                                    | Englisch                                              |
+| Sprache der Tastatur der physischen Maschine (Eingabe) | Sprache der Tastatur der virtuellen Maschine | 'Tastatur erzwingen' Option ausgewählt | Ergebnis (Ausgabe)                                  |
+| ------------------------------------------------------ | --------------------------------------------- | ------------------------------------ | -------------------------------------------------- |
+| Französisch                                             | Französisch                                    | Nein                                  | Nicht empfohlen (Problem mit Sonderzeichen)         |
+| Französisch                                             | Französisch                                    | Ja                                    | < und > funktionieren nicht                        |
+| Französisch                                             | Englisch                                       | Nein                                  | Nicht empfohlen (Problem mit Sonderzeichen)         |
+| Französisch                                             | Englisch                                       | Ja                                    | Englisch                                           |
+| Englisch                                           | Französisch                                  | Nein                                    | < und > funktionieren nicht                      |
+| Englisch                                           | Französisch                                  | Ja                                    | < und > funktionieren nicht                      |
+| Englisch                                           | Englisch                                   | Nein                                    | Englisch                                             |
+| Englisch                                           | Englisch                                   | Ja                                    | Englisch                                             |
+ 
+__Hinweis__ :
 
-__Hinweis__:
+- Wenn die Kombination __'AltGr'__ und __'@'__ auf der Tastatur nicht funktioniert, aktivieren Sie die Schaltfläche __'enforce key'__ im __'VNC'__ Menü der Konsole und versuchen Sie es erneut.
+- Wenn das immer noch nicht funktioniert und das Betriebssystem des physischen PCs __Windows__ ist, stellen Sie die Tastatur des physischen PCs auf englisch um
+und versuchen Sie, das @-Zeichen auf die übliche Weise einzugeben __*(azerty: AltGr + 0-Taste oder qwerty: 2-Taste)*.
 
-- Wenn die Kombination __'AltGr'__ und __'@'__ auf der Tastatur nicht funktioniert, aktivieren Sie die Schaltfläche __'Taste erzwingen'__ im __'VNC'__-Menü der Konsole und versuchen Sie es erneut.
-- Wenn es weiterhin nicht funktioniert und das Betriebssystem der physischen Maschine __Windows_ ist, stellen Sie die Tastatur der physischen Maschine auf Englisch
-und versuchen Sie, das @-Zeichen auf die normale Weise einzugeben__ *(AZERTY-Ausgabe: AltGr + 0-Taste oder QWERTY-Ausgabe: 2-Taste)*.
+### Kataloge für virtuelle Maschinen bei Cloud Temple
 
-### Kataloge von virtuellen Maschinen bei Cloud Temple
+Cloud Temple stellt Ihnen einen Katalog von `Templates` zur Verfügung, der regelmäßig von unseren Teams erweitert und aktualisiert wird.
+Er umfasst aktuell mehrere Dutzend `Templates` und Images, die auf Ihren virtuellen Maschinen installiert werden können.
 
-Cloud Temple stellt Ihnen einen regelmäßig von unseren Teams erweiterten und aktualisierten `Templates`-Katalog zur Verfügung.
-Er umfasst derzeit mehrere Dutzend `Templates` und Images, die Sie auf Ihren virtuellen Maschinen verwenden können.
+<img src={shivaCatalogs} />
 
-![](images/shiva_catalogs.png)
+Um eine ISO/OVF zu veröffentlichen, müssen Sie zur Ansicht __'Catalogue'__ gehen und oben auf der Seite auf die Schaltfläche __'publier des fichiers'__ klicken:
 
-Um ein ISO/OVF zu veröffentlichen, gehen Sie zur Ansicht __'Katalog'__ und klicken Sie auf die Schaltfläche __'Dateien veröffentlichen'__ oben auf der Seite:
+<img src={shivaCatalogs_002} />
 
-![](images/shiva_catalogs_002.png)
+Es ist möglich, eine VM in ein Template zu verwandeln und in den Katalog zu exportieren. Wählen Sie dazu eine virtuelle Maschine aus und verwenden Sie die Aktionstaste __'clone'__:
 
-Sie können eine virtuelle Maschine in ein Modell umwandeln und in den Katalog exportieren. Wählen Sie dazu eine virtuelle Maschine aus und verwenden Sie die Schaltfläche __'Klonen'__:
+<img src={shivaVmTemplate_002} />
 
-![](images/shiva_vm_template_002.png)
+Wählen Sie __'Exporter en vm-template'__:
 
-Wählen Sie __'Als VM-Template exportieren'__:
+<img src={shivaVmTemplate_001} />
 
-![](images/shiva_vm_template_001.png)
+Geben Sie dann die erforderlichen Informationen ein. Es ist dann möglich, eine neue VM aus dem Template über die Schaltfläche __'Nouvelle machine virtuelle'__ oder von der Seite __'Catalogues'__ zu erstellen. Es ist auch möglich, die VM im OVF-Format zu exportieren.
 
-Geben Sie dann die erforderlichen Informationen ein. Es wird möglich sein, eine neue VM aus dem Modell über die Schaltfläche __'Neue virtuelle Maschine'__ oder über die Seite __'Kataloge'__ zu starten. Es ist auch möglich, die VM im OVF-Format zu exportieren.
+**Wissenswertes:** Es ist möglich, eine Datei von OVA zu OVF und umgekehrt zu konvertieren.
+Die gebräuchlichste Methode ist Vmware Converter, aber es gibt auch eine einfache Methode mit ```tar```
 
-**Gut zu wissen**: Es ist möglich, eine OVA-Datei in eine OVF-Datei zu konvertieren und umgekehrt.
-Die am häufigsten verwendete Methode ist der VMware-Konverter, aber es gibt auch eine einfache Methode unter Verwendung von ```tar```
-
-Extrahieren der OVA-Datei:
+Extraktion der ova-Datei:
 ```
 $ tar -xvf vmName.ova
 ```
@@ -185,212 +232,244 @@ $ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 
 Die Extra Config bietet eine flexible Möglichkeit, Schlüssel=Wert-Paare in die Konfiguration einer virtuellen Maschine aufzunehmen. Die Schlüssel und Werte werden vom System interpretiert, wenn die virtuelle Maschine bereitgestellt wird.
 
-Jetzt können Sie selbst die Eigenschaften vom Typ __Extra Config__ in den erweiterten Optionen einer virtuellen Maschine ändern:
+Ab sofort können Sie die Eigenschaften vom Typ __Extra Config__ in den erweiterten Optionen einer virtuellen Maschine selbst ändern:
 
-![](images/shiva_vm_adv_001.png)
+<img src={shivaVmAdv_001} />
 
-Sie können eine Eigenschaft aus einer Liste von Schlüsseln hinzufügen. Außerdem können Sie den Wert eines Schlüssels ändern, den Sie selbst hinzugefügt haben. Bereits vorhandene Schlüssel=Wert-Paare können nicht geändert werden.
+Sie können eine Eigenschaft aus einer Liste von Schlüsseln hinzufügen. Außerdem können Sie den Wert eines von Ihnen selbst hinzugefügten Schlüssels ändern. Bereits vorhandene Schlüssel=Wert-Paare sind nicht änderbar.
 
-Bitte kontaktieren Sie den Support für Anfragen zum Hinzufügen neuer Schlüssel.
+Bitte kontaktieren Sie den Support für Anfragen zur Hinzufügung neuer Schlüssel.
 
-![](images/shiva_vm_adv_002.png)
+<img src={shivaVmAdv_002} />
 
-__Hinweis__ : *Für die Verwendung von GPU durch die virtuelle Maschine ist es obligatorisch, den Schlüssel 'pciPassthru.use64bitMMIO' zu aktivieren und die notwendige Menge an MMIO-Speicherplatz (Memory-mapped I/O) über 'pciPassthru.64bitMMIOSizeGB' zuzuweisen. Es wird dringend empfohlen, sich auf die [offizielle Nvidia-Dokumentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms) zu beziehen.*
+__Hinweis__ : *Für die Verwendung von GPU durch die virtuelle Maschine muss der Schlüssel 'pciPassthru.use64bitMMIO' aktiviert und die erforderliche Menge an MMIO (Memory-mapped I/O) Speicherplatz über 'pciPassthru.64bitMMIOSizeGB' zugewiesen werden. Es wird dringend empfohlen, die [offizielle Nvidia-Dokumentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms) zu konsultieren.*
 
 ### Erweiterte Einstellungen für virtuelle Maschinen: vAPP
 
-Sie können auch Eigenschaften vom Typ __vAPP__ in den erweiterten Optionen einer virtuellen Maschine ändern:
+Sie können auch die Eigenschaften vom Typ __vAPP__ in den erweiterten Optionen einer virtuellen Maschine ändern:
 
-![](images/shiva_vm_adv_003.png)
+<img src={shivaVmAdv_003} />
 
-Sie können eine Eigenschaft hinzufügen, ändern oder löschen. Es werden vier Arten von Eigenschaften angeboten: String, Zahl, Boolean, Passwort:
+Sie können eine Eigenschaft hinzufügen, ändern oder löschen. Vier Arten von Eigenschaften werden angeboten: String, Nummer, Boolean, Passwort:
 
-![](images/shiva_vm_adv_004.png)
+<img src={shivaVmAdv_004} />
 
-__Hinweis__ : *Die virtuelle Maschine muss gestoppt sein, um ihre vAPP-Eigenschaften zu ändern.*
+__Hinweis__: *Die virtuelle Maschine muss gestoppt werden, um ihre vAPP-Eigenschaften zu ändern.*
 
-### Verwaltung von __'Hypervisoren'__ und __'Cpool'__ (Hypervisor-Clustern)
+### Steuerung der __'Hypervisoren'__ und __'Cpool'__ (Hypervisor-Cluster)
 
-Die Verwaltung Ihrer Hypervisoren erfolgt im Untermenü __'Berechnung'__ des Menüs __'IaaS'__, das sich im grünen Banner auf der linken Seite Ihres Bildschirms befindet.
+Die Steuerung Ihrer Hypervisoren erfolgt im Untermenü __'Calcul'__ des Menüs __'IaaS'__, das sich in der grünen Leiste links auf Ihrem Bildschirm befindet.
 
-![](images/shiva_cpool_001.png)
+<img src={shivaCpool_001} />
 
-In diesem Untermenü haben Sie eine Ansicht auf:
+In diesem Untermenü haben Sie eine Übersicht über:
 
-- Den Hypervisor-Software-Stack, ihre AZ und ihre Ressourcen,
-- Den Backup-Software-Stack.
+- Die Software-Stack der Hypervisoren, ihre AZ und ihre Ressourcen,
+- Die Backup-Software-Stack.
 
-Im Januar 2024 basiert das auf der qualifizierten Cloud Temple-Infrastruktur verfügbare Hypervisor-Angebot auf VMware. Die verwendete Backup-Software ist IBM Spectrum Protect Plus.
+Im Januar 2024 basieren die verfügbaren Hypervisor-Dienstleistungen auf der qualifizierten Cloud Temple-Infrastruktur auf VMware. Die verwendete Backup-Software ist IBM Spectrum Protect Plus.
 
 ### Verwaltung von VMware-Clustern
 
-Um auf die Verwaltung von VMware-Clustern zuzugreifen, klicken Sie im Untermenü __'Berechnung'__ des Menüs __'IaaS'__:
+Um auf die Steuerung der VMware-Cluster zuzugreifen, klicken Sie im Untermenü __'Calcul'__ des Menüs __'IaaS'__:
 
-Standardmäßig listet der erste Tab alle Hypervisoren auf (alle Cluster zusammen):
+Standardmäßig listet der erste Tab alle Hypervisoren (alle Cluster kombiniert):
 
-![](images/shiva_esx_001.png)
+<img src={shivaEsx_001} />
 
-Sie können die Details eines Hypervisors anzeigen, indem Sie auf seinen Namen klicken:
+Es ist möglich, die Details eines Hypervisors zu sehen, indem Sie auf dessen Namen klicken:
 
-![](images/shiva_esx_002.png)
+<img src={shivaEsx_002} />
 
-Es gibt einen Tab für jeden Hypervisor-Cluster, um die Details jedes einzelnen einzusehen:
+Es gibt einen Tab für jeden Hypervisor-Cluster, um die Details jedes einzelnen zu konsultieren:
 
-![](images/shiva_cpool_003.png)
+<img src={shivaCpool_003} />
 
 Wenn Sie auf einen Cluster klicken, sehen Sie eine Zusammenfassung seiner Zusammensetzung:
 
-- Die gesamte Rechenleistung in Ghz,
+- Die Gesamtrechenleistung in GHz,
 - Der gesamte verfügbare Speicher und das verwendete Verhältnis,
-- Der gesamte Speicherplatz (alle Typen zusammen) sowie der verwendete Anteil,
-- Automatisierungsmechanismen bei Nichtverfügbarkeit einer Recheneinheit (__'Vsphere DRS'__),
+- Der gesamte Speicherplatz (alle Typen zusammen) sowie der genutzte Anteil,
+- Die Mechanismen für die Automatisierung beim Ausfall einer Recheneinheit (__'Vsphere DRS'__),
 - Die Anzahl der virtuellen Maschinen,
 - Die Anzahl der Hypervisoren.
 
 <!-- TODO: Add missing page. -->
-<!-- Wenn Sie die Seite eines Clusters aufrufen, stehen mehrere Tabs zur Verfügung. Der Tab __'Regeln'__ ermöglicht es Ihnen, die [Affinitäts-/Anti-Affinitätsregeln](compute.md#verwaltung-der-affinität-ihrer-virtuellen-maschinen) zu definieren. -->
+<!-- Beim Betrachten der Seite eines Clusters sind mehrere Registerkarten verfügbar. Die Registerkarte __'Règles'__ ermöglicht das Festlegen der [Affinitäts-/Anti-Affinitätsregeln](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
 
-![](images/shiva_cpool_004.png)
+<img src={shivaCpool_004} />
 
-Für jeden Hypervisor im Tab __'Hosts'__ sehen Sie:
+Auf der Registerkarte __'Hosts'__ sehen Sie für jeden Hypervisor:
 
-- Die __CPU__- und __Speicher__-Nutzung,
+- Die Nutzung von __CPU__ und __Memory__,
 - Die Anzahl der zugewiesenen virtuellen Maschinen,
 - Die Verfügbarkeit eines neuen Builds für das Betriebssystem des Hypervisors, falls zutreffend,
-- Den Status des Hypervisors (verbunden in Produktion, in Wartung, ausgeschaltet, ...),
+- Den Status des Hypervisors (verbunden in Produktion, Wartung, ausgeschaltet, ...),
 - Ein Aktionsmenü.
 
-![](images/shiva_cpool_005.png)
+<img src={shivaCpool_005} />
 
 Mehrere Aktionen sind vom Tab __'Hosts'__ aus möglich:
 
-- Neue Hypervisoren über die Schaltfläche __'Host hinzufügen'__ bestellen:
+- Neue Hypervisoren über die Schaltfläche __'Ajouter un host'__ bestellen:
 
-![](images/shiva_cpool_009.png)
+<img src={shivaCpool_009} />
 
-- Möglichkeit, __die Details eines Hypervisors__ einzusehen:
+- Möglichkeit, den __Detail eines Hypervisors__ zu konsultieren:
 
-![](images/shiva_cpool_007.jpg)
+<img src={shivaCpool_007} />
 
-- Einen Hypervisor in den __Wartungszustand__ zu versetzen oder aus diesem herauszunehmen,
-- Diesen Hypervisor gegebenenfalls __zu aktualisieren__; dazu __muss er unbedingt in Wartung sein__. Es gibt zwei Arten von Updates:
+- Einen Hypervisor in den __Wartungsmodus__ versetzen oder daraus entfernen,
+- Den Hypervisor aktualisieren, falls erforderlich; hierzu __muss er sich unbedingt im Wartungsmodus befinden__. Es gibt zwei Arten von Updates:
 
 1. VMware-Builds (neue Versionen des Hypervisors):
 
-![](images/shiva_cpool_008_build.jpg)
+<img src={shivaCpool_008Build} />
 
-2. Aktualisierung der Firmware Ihrer Recheneinheit (BIOS und Firmware der Tochterkarten):
+2. Die Aktualisierung der Firmware Ihrer Recheneinheit (BIOS und Firmware der Steckkarten):
 
-![](images/shiva_cpool_008_firm.png)
+<img src={shivaCpool_008Firm} />
 
-*__Anmerkung__* :
+*__Hinweis__* :
 
-- *Cloud Temple stellt in regelmäßigen Abständen Builds für Hypervisoren zur Verfügung.
-Es ist wichtig, Ihre Hypervisoren regelmäßig zu aktualisieren, insbesondere um die Anwendung von Sicherheitspatches zu ermöglichen.
-Allerdings __aktualisieren wir Ihre Hypervisoren nicht selbst__. Cloud Temple hat keinen Einblick in die Verfügbarkeitsverpflichtungen Ihrer Workloads.
-Wir überlassen es Ihnen daher, Ihr Änderungsmanagement umzusetzen und die neuen Builds zum bestmöglichen Zeitpunkt anzuwenden.*
-- *Der Aktualisierungsprozess ist vollständig automatisiert. Sie müssen mindestens zwei Hypervisoren in Ihrem Cluster haben, um eine Aktualisierung ohne Serviceunterbrechung zu ermöglichen.*
+- *Cloud Temple stellt die Builds für die Hypervisoren in regelmäßigen Abständen zur Verfügung.
+Es ist wichtig, Ihre Hypervisoren regelmäßig zu aktualisieren, insbesondere um Sicherheitsupdates zu ermöglichen.
+Jedoch __aktualisieren wir Ihre Hypervisoren nicht automatisch__. Cloud Temple hat keinen Einblick in Ihre Verfügbarkeitsverpflichtungen.
+Deshalb überlassen wir Ihnen die Verwaltung Ihrer Change-Management-Prozesse und die Anwendung neuer Builds zum bestmöglichen Zeitpunkt.*
+- *Der Aktualisierungsprozess ist vollständig automatisiert. Sie müssen über mindestens zwei Hypervisoren in Ihrem Cluster verfügen, um eine Aktualisierung ohne Unterbrechung des Dienstes zu ermöglichen.*
 
 <!-- TODO: Add missing page. -->
-<!-- - *Es ist notwendig, [die entsprechenden Berechtigungen](../console/permissions.md) zu haben, um die verschiedenen Aktionen durchzuführen.* -->
+<!-- - *Es ist erforderlich, über die [entsprechenden Berechtigungen](../console/permissions.md) zu verfügen, um die verschiedenen Aktionen durchzuführen.* -->
 
-Sie sehen auch alle Affinitäts-/Anti-Affinitätsregeln für Ihren Hypervisor-Cluster im Abschnitt __'Regeln'__.
+Sie sehen auch alle Affinitäts-/Anti-Affinitätsregeln für Ihren Hypervisor-Cluster im Abschnitt __'Règles'__.
 
 ### Verwaltung der Affinität Ihrer virtuellen Maschinen
 
-Die __Affinitäts- und Anti-Affinitätsregeln__ ermöglichen es Ihnen, die Platzierung von virtuellen Maschinen auf Ihren Hypervisoren zu kontrollieren.
-Sie können verwendet werden, um die Ressourcennutzung Ihres __'Cpool'__ zu verwalten.
-Zum Beispiel können sie helfen, die Arbeitslast zwischen Servern auszugleichen oder ressourcenhungrige Arbeitslasten zu isolieren.
-In einem __'Cpool'__ VMware werden diese Regeln oft verwendet, um das Verhalten von virtuellen Maschinen mit vMotion zu verwalten.
-vMotion ermöglicht das Verschieben von virtuellen Maschinen von einem Host zu einem anderen ohne Serviceunterbrechung.
+Die __Affinitäts- und Anti-Affinitätsregeln__ ermöglichen die Kontrolle der Platzierung virtueller Maschinen auf Ihren Hypervisoren.
+Sie können verwendet werden, um die Ressourcennutzung Ihres __'Cpool'__ zu steuern.
+Zum Beispiel können sie helfen, die Arbeitslast zwischen den Servern auszugleichen oder ressourcenintensive Arbeitslasten zu isolieren.
+In einem __'Cpool'__ VMware werden diese Regeln oft verwendet, um das Verhalten virtueller Maschinen mit vMotion zu steuern.
+vMotion ermöglicht das Verschieben virtueller Maschinen von einem Host auf einen anderen ohne Unterbrechung des Dienstes.
 
-Mit der Regelverwaltung können Sie konfigurieren:
+Sie können Regeln konfigurieren, um:
 
-- __Affinitätsregeln__: Diese Regeln stellen sicher, dass bestimmte virtuelle Maschinen auf demselben physischen Host ausgeführt werden.
+- __Affinitätsregeln__ : Diese Regeln stellen sicher, dass bestimmte virtuelle Maschinen auf demselben physischen Host ausgeführt werden.
 Sie werden verwendet, um die Leistung zu verbessern, indem virtuelle Maschinen, die häufig miteinander kommunizieren,
-auf demselben Server gehalten werden, um die Netzwerklatenz zu reduzieren. Affinitätsregeln sind nützlich in Szenarien,
-in denen die Leistung kritisch ist, wie im Fall von Datenbanken oder Anwendungen, die eine schnelle Kommunikation zwischen Servern erfordern.
+auf demselben Server bleiben, um die Netzwerklatenz zu reduzieren. Affinitätsregeln sind in Szenarien nützlich,
+in denen die Leistung kritisch ist, z. B. bei Datenbanken oder Anwendungen, die eine schnelle Kommunikation zwischen den Servern benötigen.
 
-- __Anti-Affinitätsregeln__: Im Gegensatz dazu stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen nicht auf
-demselben physischen Host ausgeführt werden. Sie sind wichtig für die Verfügbarkeit und Resilienz, zum Beispiel,
-um zu vermeiden, dass alle kritischen Maschinen bei einem Ausfall eines einzelnen Servers betroffen sind.
+- __Anti-Affinitätsregeln__ : Im Gegensatz dazu stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen nicht auf demselben physischen Host ausgeführt werden.
+Sie sind wichtig für die Verfügbarkeit und Resilienz, z. B.
+um zu verhindern, dass kritische Maschinen bei einem Ausfall eines einzelnen Servers alle betroffen sind.
 Anti-Affinitätsregeln sind entscheidend für Anwendungen, die eine hohe Verfügbarkeit erfordern,
-wie in Produktionsumgebungen, in denen die Fehlertoleranz eine Priorität ist.
-Zum Beispiel möchten Sie nicht, dass Ihre beiden Active Directories auf demselben Hypervisor sind.
+wie in Produktionsumgebungen, in denen Fehlertoleranz Priorität hat.
 
-Bei der Erstellung einer Regel definieren Sie den Regeltyp (Affinität / Anti-Affinität), den Namen der Regel,
-ihren Aktivierungsstatus (__'Status'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
+Par exemple, vous ne souhaitez pas que vos deux Actives Directory soient sur le même hyperviseur.
 
-![](images/shiva_cpool_006.png)
+Lors de la création d'une règle, vous définissez le type de règle (affinité / anti-affinité), le nom de la règle,
+son état d'activation (__'Statut'__) et les machines concernées de votre cluster d'hyperviseurs.
 
-*Anmerkung: Die in der Konsole angebotenen Affinitäts-/Anti-Affinitätsregeln sind Regeln, die virtuelle Maschinen untereinander betreffen (keine Regeln zwischen Hypervisoren und virtuellen Maschinen).*
+<img src={shivaCpool_006} />
+
+*Remarque : les règles affinité/aint-affinité proposées dans la console sont des règles concernant les machines virtuelles entre elles (pas de règles entre hyperviseurs et machines virtuelles).*
 
 ## Sicherung
 
-### Eine Sicherungskopie-Richtlinie erstellen
+### Eine Sicherungsrichtlinie erstellen
 
-Um eine neue Sicherungskopie-Richtlinie hinzuzufügen, müssen Sie eine Anfrage an den Support stellen. Der Support ist über das Rettungsring-Symbol oben rechts im Fenster zugänglich.
+Um eine neue Sicherungsrichtlinie hinzuzufügen, müssen Sie eine Anfrage beim Support stellen. Der Support ist über das Rettungsring-Symbol oben rechts im Fenster erreichbar.
 
-Die Erstellung einer neuen Sicherungskopie-Richtlinie erfolgt durch __eine Serviceanfrage__ mit Angabe von:
+Die Erstellung einer neuen Sicherungsrichtlinie erfolgt durch __einen Serviceantrag__, der folgendes angibt:
 
     Der Name Ihrer Organisation
-    Der Name eines Kontakts mit seiner E-Mail und Telefonnummer zur Fertigstellung der Konfiguration
+    Name eines Kontakts mit E-Mail und Telefonnummer zur finalen Konfiguration
     Der Name des Tenants
-    Der Name der Sicherungskopie-Richtlinie
-    Die Eigenschaften (x Tage, y Wochen, z Monate, ...)
+    Der Name der Sicherungsrichtlinie
+    Die Merkmale (x Tage, y Wochen, z Monate, ...)
 
-![](../console/images/shiva_support.png)
+<img src={shivaSupport} />
 
-### Eine Sicherungskopie-Richtlinie einer virtuellen Maschine zuweisen
+### Eine Sicherungsrichtlinie einer virtuellen Maschine zuweisen
 
-Wenn einer virtuellen Maschine (VM) eine SLA zugewiesen wird, erben alle mit dieser VM verbundenen Festplatten automatisch dieselbe SLA. Anschließend ist es möglich, die Ausführung der Sicherung manuell über den Tab "Sicherungskopie-Richtlinien" zu starten. Ohne manuellen Start wird die Sicherung automatisch gemäß dem von der SLA konfigurierten Zeitplan ausgeführt.
+Wenn eine SLA einer virtuellen Maschine (VM) zugewiesen wird, erben alle mit dieser VM verbundenen Festplatten automatisch die gleiche SLA. Anschließend ist es möglich, die Ausführung der Sicherung manuell über die Registerkarte "Sicherungsrichtlinien" zu starten. In Ermangelung eines manuellen Starts wird die Sicherung gemäß dem von der SLA festgelegten Plan automatisch ausgeführt.
 
-SecNumCloud macht es obligatorisch, einer virtuellen Maschine vor ihrem Start eine Sicherungskopie-Richtlinie zuzuweisen. Andernfalls erhalten Sie die folgende Benachrichtigung:
+SecNumCloud macht die Zuweisung einer Sicherungsrichtlinie an eine virtuelle Maschine vor deren Start obligatorisch. Andernfalls erhalten Sie die folgende Benachrichtigung:
 
-![](images/shiva_vm_politiques_backup_assign_mandatory.png)
+<img src={shivaVmPolitiquesBackupAssignMandatory} />
 
-Klicken Sie auf den Tab __'Sicherungskopie-Richtlinien'__ im Menü Ihrer virtuellen Maschine. Sie können die der Maschine zugewiesene(n) Sicherungskopie-Richtlinie(n) einsehen.
+Klicken Sie auf die Registerkarte __'Sicherungsrichtlinien'__ im Menü Ihrer virtuellen Maschine. Hier können Sie die der VM zugewiesenen Sicherungsrichtlinien anzeigen.
 
-Um der virtuellen Maschine eine neue Sicherungskopie-Richtlinie zuzuweisen, klicken Sie auf die Schaltfläche __'Richtlinie hinzufügen'__ und wählen Sie die gewünschte Sicherungskopie-Richtlinie aus.
+Um eine neue Sicherungsrichtlinie der virtuellen Maschine zuzuweisen, klicken Sie auf den Button __'Richtlinie hinzufügen'__ und wählen Sie die gewünschte Sicherungsrichtlinie aus.
 
-![](images/shiva_vm_politiques_backup.png)
+<img src={shivaVmPolitiquesBackup} />
 
-### Eine Sicherungskopie-Richtlinie einer virtuellen Festplatte zuweisen
+### Eine Sicherungsrichtlinie einer virtuellen Festplatte zuweisen
 
-Es ist auch möglich, eine SLA direkt einer bestimmten virtuellen Festplatte einer Maschine zuzuweisen. In diesem Fall erbt die virtuelle Maschine nicht die individuell auf die Festplatte angewendete SLA. Es ist jedoch nicht möglich, die Ausführung der Sicherung auf Festplattenebene manuell zu starten, da diese Funktionalität in Spectrum Protect Plus nicht unterstützt wird.
+Es ist auch möglich, einer spezifischen virtuellen Festplatte einer Maschine direkt eine SLA zuzuweisen. In diesem Fall erbt die virtuelle Maschine nicht die individuell auf die Festplatte angewandte SLA. Es ist jedoch nicht möglich, die Ausführung der Sicherung auf Festplattenebene manuell zu starten, da diese Funktion in Spectrum Protect Plus nicht unterstützt wird.
 
-Andererseits ist es möglich, bestimmte Festplatten von einer oder mehreren Sicherungskopie-Richtlinien (SLAs) der VM auszuschließen, was es ermöglicht, eine oder mehrere SLA(s) auf Festplatte-für-Festplatte-Basis abzumelden. Dieser Ansatz bietet die Flexibilität, die Ausführung der Sicherung einer SLA manuell zu starten, ohne alle Festplatten der virtuellen Maschine zu beeinflussen, was eine feinere Verwaltung der Sicherungen ermöglicht.
+Es ist jedoch möglich, bestimmte Festplatten von einer oder mehreren Sicherungsrichtlinien (SLA) der VM auszuschließen, wodurch eine oder mehrere SLA(s) auf Basis der Festplatte abgewiesen werden können. Dieser Ansatz bietet die Flexibilität, die Ausführung einer SLA-Sicherung manuell zu starten, ohne alle Festplatten der virtuellen Maschine zu beeinflussen, und ermöglicht so eine feinere Verwaltung der Sicherungen.
 
-Klicken Sie auf die Aktionsleiste der Festplatte, der Sie eine Sicherungskopie-Richtlinie zuweisen möchten. Klicken Sie dann auf __'Richtlinien'__ und wählen Sie die gewünschte Sicherungskopie-Richtlinie aus.
+Klicken Sie auf die Aktionsleiste der Festplatte, der Sie eine Sicherungsrichtlinie zuweisen möchten. Klicken Sie dann auf __'Richtlinien'__ und wählen Sie die gewünschte Sicherungsrichtlinie aus.
 
-![](images/shiva_vm_disques_virtuels_politiques.png)
+<img src={shivaVmDisquesVirtuelsPolitiques} />
 
-*Hinweis* : Die hinzuzufügende Richtlinie muss sich in einer anderen Verfügbarkeitszone als die virtuelle Maschine befinden.
+*Nota*: Die hinzuzufügende Richtlinie muss sich in einer anderen Verfügbarkeitszone als die virtuelle Maschine befinden.
 
-### Ausführen einer Sicherheitskopie-Richtlinie
+### Eine Sicherungsrichtlinie ausführen
 
-Im Menü __'Sicherheitskopie-Richtlinien'__ Ihrer virtuellen Maschine klicken Sie auf die Schaltfläche __'Ausführen'__ in der Spalte __'Aktionen'__ der Sicherheitskopie-Richtlinie, die Sie ausführen möchten.
+Im Menü __'Sicherungsrichtlinien'__ Ihrer virtuellen Maschine klicken Sie auf den Button __'Ausführen'__ in der Spalte __'Aktionen'__ der Sicherungsrichtlinie, die Sie ausführen möchten.
 
-![](images/shiva_vm_politiques_backup_execute.png)
+<img src={shivaVmPolitiquesBackupExecute} />
 
-Um eine Sicherheitskopie-Richtlinie auszuführen, können Sie auch zum Abschnitt __'Sicherungen'__ im Menü Ihrer virtuellen Maschine gehen. Klicken Sie auf die Schaltfläche __'Sicherung ausführen'__, und wählen Sie die Sicherung aus, die Sie in der Dropdown-Liste ausführen möchten.
+Um eine Sicherungsrichtlinie auszuführen, können Sie auch von der Sektion __'Sicherungen'__ im Menü Ihrer virtuellen Maschine aus starten. Klicken Sie auf den Button __'Sicherung ausführen'__, und wählen Sie dann die Sicherung, die Sie ausführen möchten, aus der Dropdown-Liste aus.
 
-![](images/shiva_vm_politiques_backup_execute2.png)
+<img src={shivaVmPolitiquesBackupExecute2} />
 
-### Eine Sicherheitskopie-Richtlinie entfernen
+### Eine Sicherungsrichtlinie entfernen
 
-Im Menü __'Sicherheitskopie-Richtlinien'__ Ihrer virtuellen Maschine klicken Sie auf die Schaltfläche __'Entfernen'__ in der Spalte __'Aktionen'__ der Sicherheitskopie-Richtlinie, die Sie entfernen möchten.
+Im Menü __'Sicherungsrichtlinien'__ Ihrer virtuellen Maschine klicken Sie auf den Button __'Entfernen'__ in der Spalte __'Aktionen'__ der Sicherungsrichtlinie, die Sie entfernen möchten.
 
-![](images/shiva_vm_politiques_backup_retirer.png)
+<img src={shivaVmPolitiquesBackupRetirer} />
 
 __Achtung, es ist nicht möglich, die letzte SLA auf einer eingeschalteten virtuellen Maschine zu entfernen:__
 
-![](images/shiva_vm_politiques_backup_retirer_impossible.png)
+<img src={shivaVmPolitiquesBackupRetirerImpossible} />
 
-### Löschen einer Sicherheitskopie-Richtlinie: Fall einer gestoppten Sicherheitskopie-Richtlinie ("held")
+### Löschen einer Sicherungsrichtlinie: Fall einer "gehaltenen" ("held") Sicherungsrichtlinie
 
-Wenn die letzte Ressource von einer SLA-Richtlinie dissiziert wird, erkennt das System diese Situation automatisch. Infolgedessen wechseln alle Arbeiten, die mit dieser SLA-Richtlinie verbunden sind, automatisch in den Zustand "Gestoppt" ("Held"). Es ist wichtig zu beachten, dass in diesem Stadium das direkte Löschen der SLA-Richtlinie aufgrund der Existenz abhängiger Arbeiten nicht möglich ist. Um die Richtlinie zu löschen, muss eine Reihe von Schritten befolgt werden.
+Wenn die letzte Ressource von einer SLA-Richtlinie getrennt wird, erkennt das System diese Situation automatisch. Infolgedessen wechseln alle mit dieser SLA-Richtlinie verbundenen Arbeiten automatisch in den Status "Suspendiert" ("Held"). Es ist wichtig zu beachten, dass zu diesem Zeitpunkt das direkte Löschen der SLA-Richtlinie aufgrund bestehender abhängiger Arbeiten nicht möglich ist. Um die Richtlinie zu löschen, muss eine Reihe von Schritten befolgt werden.
 
-Es muss überprüft werden, dass die betroffenen Arbeiten tatsächlich im Zustand "Gestoppt" sind. Nach dieser Überprüfung können diese Arbeiten gelöscht werden. Erst nach dem Löschen dieser abhängigen Arbeiten kann die SLA-Richtlinie endgültig aus dem System gelöscht werden.
+Hierbei ist zu überprüfen, dass die betreffenden Arbeiten tatsächlich im Zustand "Suspendiert" sind. Nach dieser Überprüfung können diese Arbeiten gelöscht werden. Erst nach dem Löschen dieser abhängigen Arbeiten kann die SLA-Richtlinie endgültig aus dem System gelöscht werden.
 
-Ein spezieller Fall verdient besondere Aufmerksamkeit: das Hinzufügen einer neuen Ressource zu einer SLA-Richtlinie, deren abhängige Arbeiten nicht gelöscht wurden. In dieser Situation werden die Arbeits-IDs beibehalten. Es ist jedoch wichtig zu beachten, dass die Arbeiten im Zustand "Gestoppt" nicht automatisch wieder aufgenommen werden. Ein manuelles Eingreifen ist erforderlich, um sie wieder zu aktivieren und ihre Ausführ
+Ein besonderer Fall verdient besondere Aufmerksamkeit: das Hinzufügen einer neuen Ressource zu einer SLA-Richtlinie, deren abhängige Arbeiten nicht gelöscht wurden. In dieser Situation werden die Identifikatoren der Arbeiten beibehalten. Es ist jedoch wichtig zu beachten, dass die Arbeiten im Zustand "Suspendiert" nicht automatisch fortgesetzt werden. Ein manuelles Eingreifen ist erforderlich, um sie zu reaktivieren und ihre Ausführung zu ermöglichen.
+
+Hinweis: Für weitere Informationen zu dieser Situation wenden Sie sich an den Cloud Temple Support.
+
+Die Cloud Temple-Konsole verhindert die Zuweisung einer virtuellen Maschine an eine suspendierte Richtlinie:
+
+<img src={shivaBackupHeld_001} />
+
+Ebenso ist es nicht möglich, eine virtuelle Maschine zu starten, die einer suspendierten Sicherungsrichtlinie zugeordnet ist:
+
+<img src={shivaBackupHeld_002} />
+
+### Eine Sicherung wiederherstellen
+
+Die Registerkarte __'Sicherungen'__ im Menü Ihrer virtuellen Maschinen ermöglicht Ihnen den Zugriff auf die Liste der Sicherungen dieser Maschine.
+Um eine Sicherung wiederherzustellen, klicken Sie auf den Button __'Wiederherstellen'__ in der Zeile der Sicherung, die Sie wiederherstellen möchten.
+
+<img src={shivaVmBackupRestaurer} />
+
+1. __Produktionsmodus__: Der Produktionsmodus ermöglicht die Wiederaufnahme nach einem Vorfall vor Ort aus dem Primärspeicher oder einem entfernten Wiederaufnahmeort, indem die Originalmaschinenbilder durch Wiederherstellungsbilder ersetzt werden. Alle Konfigurationen werden im Zuge der Wiederherstellung übertragen, einschließlich Namen und Identifikatoren, und alle mit der virtuellen Maschine verbundenen Datenkopierarbeiten werden weiterhin ausgeführt. Im Rahmen einer Wiederherstellung im Produktionsmodus können Sie wählen, den Speicher in der virtuellen Maschine durch eine virtuelle Festplatte aus einer früheren virtuellen Maschinensicherung zu ersetzen.
+
+2. __Testmodus__: Der Testmodus erstellt temporäre virtuelle Maschinen für Entwicklung, Test, Snapshot-Überprüfung und Wiederherstellungsverifizierung auf der Grundlage eines wiederholbaren Schedules, ohne die Produktionsumgebungen zu beeinträchtigen. Die Testmaschinen laufen so lange wie nötig, um den Test und die Verifizierung durchzuführen, und werden dann bereinigt. Über ein isoliertes Netzwerk können Sie eine sichere Umgebung schaffen, um Ihre Arbeiten zu testen, ohne die für die Produktion verwendeten virtuellen Maschinen zu stören. Die im Testmodus erstellten virtuellen Maschinen haben eindeutige Namen und Kennungen, um Konflikte in Ihrer Produktionsumgebung zu vermeiden.
+
+3. __Klonmodus__: Der Klonmodus erstellt Kopien der virtuellen Maschinen für Anwendungsfälle, die dauerhafte oder langfristig laufende Kopien für die Datenexploration oder die Duplizierung einer Testumgebung in einem isolierten Netzwerk erfordern. Die im Klonmodus erstellten virtuellen Maschinen haben eindeutige Namen und Kennungen, um Konflikte in Ihrer Produktionsumgebung zu vermeiden. Im Klonmodus müssen Sie auf den Ressourcenverbrauch achten, da der Klonmodus dauerhafte oder langfristige Maschinen erstellt.
+
+__Die Wiederherstellung erfolgt standardmäßig im "TEST"-Modus, um die Produktion zu schonen__, und Sie können den Namen der wiederhergestellten VM wählen:
+
+<img src={shivaVmBackupTest} />
+
+Beachten Sie, dass es möglich ist, eine virtuelle Maschine vom Testmodus in den Produktionsmodus zu überführen, wenn die Tests zufriedenstellend sind:
+
+<img src={shivaVmBackup_2prod} />
