@@ -1,6 +1,13 @@
 ---
 title: Guide de démarrage
 ---
+import shivaInet_001 from './images/shiva_inet_001.png'
+import shivaInet_002 from './images/shiva_inet_002.png'
+import shivaInet_003 from './images/shiva_inet_003.png'
+import shivaInet_004 from './images/shiva_inet_004.png'
+import shivaInet_005 from './images/shiva_inet_005.png'
+import shivaInet_008 from './images/shiva_inet_008.png'
+import shivaInet_007 from './images/shiva_inet_007.png'
 
 
 ## Gestion de vos connectivités Internet
@@ -14,7 +21,7 @@ Les adresses IP publiques permettent l'accès Internet, tandis que les adresses 
 
 Voici l'interface principale pour la gestion des adresses IP :
 
-![](images/shiva_inet_001.png)
+<img src={shivaInet_001} />
 
 L'onglet d'accueil correspond à votre ASN interne dédié à votre tenant. Il indique notamment les informations importante pour le paramétrage de votre connectivité BGP.
 
@@ -22,21 +29,21 @@ L'onglet d'accueil correspond à votre ASN interne dédié à votre tenant. Il i
 
 Il est possible de voir et de commenter les blocs et adresses d'IP associé à votre tenant via l'IPAM intégré à la console Cloud Temple:
 
-![](images/shiva_inet_002.png)
+<img src={shivaInet_002} />
 
 La commande d'adresses IPs publiques se fait via le bouton **'Commander des IPs publiques'** :
 
-![](images/shiva_inet_003.png)
+<img src={shivaInet_003} />
 
 La réservation et l'affectation d'une adresse IP se font via le bouton **'Réserver une adresse'** :
 
-![](images/shiva_inet_004.png)
+<img src={shivaInet_004} />
 
 La modification ou la suppression de la reservation via les boutons **'Actions'** :
 
-![](images/shiva_inet_005.png)
+<img src={shivaInet_005} />
 
-Supprimer une réservation signifie que la ressource devient disponible pour un autre usage, mais reste allouée et facturée au client. 
+Supprimer une réservation signifie que la ressource devient disponible pour un autre usage, mais reste allouée et facturée au client.
 
 Sur certaines lignes, le bouton **'Action'** n'est pas disponible, indiquant que les adresses IP sont réservées et donc non disponibles pour une utilisation.
 
@@ -44,8 +51,8 @@ Sur certaines lignes, le bouton **'Action'** n'est pas disponible, indiquant que
 
 De la même façon, vous pouvez voir et commenter les blocs d'adresses IP d'interconnexion. Vous pouvez visualiser les sous réseaux d'interconnexions avec le réseau Cloud Temple et leur usage :
 
-![](images/shiva_inet_008.png)
+<img src={shivaInet_008} />
 
 Vous pouvez facilement modifier, comme pour les adresses publiques, leur usage dans la gestion IPAM intégrée :
 
-![](images/shiva_inet_007.png)
+<img src={shivaInet_007} />

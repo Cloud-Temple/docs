@@ -1,63 +1,78 @@
 ---
-title: Guía de inicio rápido
+title: Guía de inicio
 ---
+import S3ListBucket from './images/S3_list_bucket.png'
+import S3Accounts from './images/S3_accounts.png'
+import S3CreateAccount from './images/S3_create_account.png'
+import S3StorageKeys from './images/S3_storage_keys.png'
+import S3Keyregen from './images/S3_keyregen.png'
+import S3Create from './images/S3_create.png'
+import S3CreatePopup_001 from './images/S3_create_popup_001.png'
+import S3AccountAssign from './images/S3_account_assign.png'
+import S3AccountAccess from './images/S3_account_access.png'
+import S3Files from './images/S3_files.png'
+import S3Params from './images/S3_params.png'
+import S3Lifecycle from './images/S3_lifecycle.png'
+import S3CreatePopup_002 from './images/S3_create_popup_002.png'
+import S3Delete from './images/S3_delete.png'
 
-## Listar todos los buckets S3 de tu tenant
 
-Puedes acceder a todos tus buckets a través del menú '__Almacenamiento de Objetos__' de la consola Cloud Temple:
+## Listar todos los bucket S3 de su tenant
 
-![](images/S3_list_bucket.png)
+Puede acceder a todos sus buckets a través del menú '__Almacenamiento de objetos__' de la consola Cloud Temple:
 
-Puedes ver todas las cuentas creadas en tu tenant y autorizadas a acceder al servicio S3 a través de la pestaña '__Cuentas de almacenamiento__'.
+<img src={S3ListBucket} />
 
-![](images/S3_accounts.png)
+Puede ver todas las cuentas creadas en su tenant y autorizadas para acceder al servicio S3 a través de la pestaña '__Cuentas de almacenamiento__'.
+
+<img src={S3Accounts} />
 
 ## Creación de una nueva cuenta de almacenamiento
 
-La creación de una cuenta de almacenamiento en tu tenant se realiza pulsando el botón '__Nueva cuenta de almacenamiento__' en la parte superior derecha, en la pestaña '__Cuentas de almacenamiento__':
+La creación de una cuenta de almacenamiento en su tenant se realiza presionando el botón '__Nueva cuenta de almacenamiento__' en la parte superior derecha, en la pestaña '__Cuentas de almacenamiento__' :
 
-![](images/S3_create_account.png)
+<img src={S3CreateAccount} />
 
-La plataforma te proporciona entonces la clave de acceso y la clave secreta de tu bucket:
+La plataforma le proporciona la clave de acceso y la clave secreta de su bucket:
 
-![](images/S3_storage_keys.png)
+<img src={S3StorageKeys} />
 
-__ATENCIÓN:__ Las claves secreta y de acceso se presentan una sola vez. Después de esta primera aparición, se vuelve imposible consultar de nuevo la clave secreta. Por lo tanto, es esencial anotar esta información inmediatamente; de lo contrario, será necesario generar un nuevo par de claves.
+__ATENCIÓN:__ Las claves secretas y de acceso se presentan una sola vez. Después de esta primera aparición, es imposible consultar nuevamente la clave secreta. Por lo tanto, es esencial anotar esta información inmediatamente; de lo contrario, será necesario generar un nuevo par de claves.
 
-La regeneración se realiza a nivel de las opciones de la clave eligiendo la opción "Reiniciar clave de acceso".
+La regeneración se realiza en las opciones de la clave eligiendo la opción "Reiniciar clave de acceso".
 
-![](images/S3_keyregen.png)
+<img src={S3Keyregen} />
 
 
 ## Creación de un bucket S3
 
 La creación de un nuevo bucket se realiza haciendo clic en el botón '__Nuevo bucket__' en la parte superior derecha de la pantalla:
 
-![](images/S3_create.png)
+<img src={S3Create} />
 
-Aparece una ventana y debes proporcionar:
+A continuación, aparece una ventana en la que debe proporcionar:
 
-1. La **región** de creación de tu bucket,
-2. El **tipo** de bucket: rendimiento o archivo,
-3. El **nombre** de tu bucket (debe ser único).
+1. La **región** de creación de su bucket,
+2. El **tipo** de bucket: alto rendimiento o archivo,
+3. El **nombre** de su bucket (debe ser único).
 
-![](images/S3_create_popup_001.png)
+<img src={S3CreatePopup_001} />
 
-A 3 de abril de 2024, la región disponible es **FR1** (París) y solo está disponible el tipo de rendimiento.
+El 3 de abril de 2024, la región disponible es **FR1** (París) y solo está disponible el tipo de alto rendimiento.
 
-Debes también elegir quién puede acceder a tu bucket:
+También debe elegir quién puede acceder a su bucket:
 
-- Acceso **Privado**: Por defecto, el acceso está limitado a direcciones IP específicas de Cloud Temple.
-- Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (particularmente a través de la regla 0.0.0.0/0). Desaconsejamos esta configuración debido a sus implicaciones en términos de seguridad.
+- Acceso **Privado**: Por defecto, el acceso está limitado a las direcciones IP específicas de Cloud Temple.
+- Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (especialmente a través de la regla 0.0.0.0/0). Sin embargo, siempre se requiere autenticación. Desaconsejamos esta configuración debido a sus implicaciones de seguridad.
 - Acceso **Personalizado**: Esta opción le permite especificar las direcciones IPv4 o los rangos de subredes que desea autorizar.
 
 ## Asociación de una cuenta de almacenamiento a un bucket
 
-Las asociaciones de cuenta a buckets se realizan en la pestaña '__Políticas__'
+Las asociaciones de cuentas a los buckets se realizan en la pestaña '__Políticas__'
 
-![](images/S3_account_assign.png)
+<img src={S3AccountAssign} />
 
-Esta asociación permite dar acceso del cuenta de almacenamiento al bucket. Hay cuatro roles:
+Esta asociación permite dar acceso al bucket a la cuenta de almacenamiento. Existen cuatro roles:
 
 1. **Mantenedor**: Derechos de lectura, escritura, gestión de derechos y gestión de políticas.
 
@@ -71,7 +86,7 @@ Los permisos S3 detrás de este rol:
 }
 ```
 
-2. **Escritor y Lector**: Leer, editar, modificar y eliminar archivos en los buckets.
+2. **Escritor y Lector**: Leer, editar, modificar, eliminar los archivos en los buckets.
 
 Los permisos S3 detrás de este rol:
 ```json
@@ -85,7 +100,7 @@ Los permisos S3 detrás de este rol:
 }
 ```
 
-3. **Escritor**: Leer, editar, modificar y eliminar archivos en los buckets.
+3. **Escritor**: Leer, editar, modificar, eliminar los archivos en los buckets.
 
 Los permisos S3 detrás de este rol:
 ```json
@@ -98,7 +113,7 @@ Los permisos S3 detrás de este rol:
 }
 ```
 
-4. **Lector**: Leer y descargar archivos en los buckets.
+4. **Lector**: Leer los archivos en los buckets y descargarlos.
 
 Los permisos S3 detrás de este rol:
 ```json
@@ -111,57 +126,57 @@ Los permisos S3 detrás de este rol:
 }
 ```
 
-![](images/S3_account_access.png)
+<img src={S3AccountAccess} />
 
-## Explorar un bucket S3
+## Navegar por un bucket S3
 
-Cuando haces clic en el nombre de un bucket, primero accedes a la pestaña '__Archivos__' para ver su contenido:
+Al hacer clic en el nombre de un bucket, accede primero a la pestaña '__Archivos__' para ver su contenido:
 
-![](images/S3_files.png)
+<img src={S3Files} />
 
-En la pestaña '__Configuración__' puedes ver los detalles de tu bucket S3:
+En la pestaña '__Configuración__', puede ver los detalles de la información de su bucket S3:
 
-![](images/S3_params.png)
+<img src={S3Params} />
 
-Aquí puedes ver:
+A continuación, tiene:
 
 1. El nombre del bucket S3,
 2. Su región,
 3. El número de objetos que contiene y el tamaño en bytes del bucket,
-4. Su punto de acceso,
-5. Los parámetros del ciclo de vida que, en particular, definen la expiración de los objetos del bucket. '__0__' corresponde a una retención infinita.
+4. Su punto final,
+5. Los parámetros de ciclo de vida que definen la expiración de los objetos en el bucket. '__0__' corresponde a una retención infinita.
 
-Puedes modificar el parámetro de retención a través del botón '__Modificar__' del ciclo de vida:
+Puede modificar el parámetro de retención a través del botón '__Modificar__' del ciclo de vida:
 
-![](images/S3_lifecycle.png)
+<img src={S3Lifecycle} />
 
-Finalmente, puedes modificar su tipología de acceso.
+Finalmente, puede modificar su tipología de acceso.
 
-## Limitaciones de acceso a tus buckets S3
+## Limitaciones de acceso a sus buckets S3
 
-Es muy sencillo configurar las restricciones de acceso a tus buckets S3. Al crear un bucket, tienes la opción de elegir entre tres configuraciones de acceso:
+Es muy fácil configurar las restricciones de acceso a sus buckets S3. Al crear un bucket, tiene la opción de elegir entre tres configuraciones de acceso:
 
-![](images/S3_create_popup_001.png)
+<img src={S3CreatePopup_001} />
 
-- Acceso **Privado**: Por defecto, el acceso está limitado a direcciones IP específicas de Cloud Temple.
-- Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (particularmente a través de la regla 0.0.0.0/0). Desaconsejamos esta configuración debido a sus implicaciones en términos de seguridad.
-- Acceso **Personalizado**: Esta opción te permite especificar las direcciones IPv4 o los rangos de subredes que deseas autorizar:
+- Acceso **Privado**: Por defecto, el acceso está limitado a las direcciones IP específicas de Cloud Temple.
+- Acceso **Público**: El acceso está abierto a todas las direcciones de Internet (especialmente a través de la regla 0.0.0.0/0). Desaconsejamos esta configuración debido a sus implicaciones de seguridad.
+- Acceso **Personalizado**: Esta opción le permite especificar las direcciones IPv4 o los rangos de subredes que desea autorizar:
 
-![](images/S3_create_popup_002.png)
+<img src={S3CreatePopup_002} />
 
-*El soporte IPv6 está previsto para el primer semestre de 2025.*
+*El soporte para IPv6 está previsto para el primer semestre de 2025.*
 
 ## Eliminación de un bucket S3
 
 La eliminación de un bucket se realiza en las acciones asociadas al bucket eligiendo la opción __'Eliminar'__.
 
-![](images/S3_delete.png)
+<img src={S3Delete} />
 
-_**ATENCIÓN: La eliminación es definitiva y no hay manera de recuperar los datos.**_
+_**ATENCIÓN: La eliminación es definitiva y no hay forma de recuperar los datos.**_
 
 
 ## ¿Cómo se factura la oferta S3 de Cloud Temple?
 
-El precio es mensual, por GiB de almacenamiento, facturado mensualmente. Sin embargo, la plataforma contabiliza el uso por hora y realiza la facturación sobre una base mensual de 720 horas.
+El precio es mensual, por Gio de almacenamiento, facturado mensualmente. Sin embargo, la plataforma contabiliza el uso por hora y realiza la facturación en una base mensual de 720 horas.
 
-Por ejemplo, si consumes en el mes 30 GiB durante 1 hora y luego nada, y después de unos días 30 GiB durante 2 horas, la factura mensual será de *(Precio (1 x 30 GiB) + 2 x Precio (30 GiB)) / 720* para el mes en cuestión. La facturación es a término vencido.
+Por ejemplo, si consume durante el mes 30 Gio durante 1 hora y luego nada, y luego unos días más tarde 30Gio durante 2 horas, la factura mensual será de *( Precio (1 x 30Gio) + 2 x Precio (30Gio) ) / 720* para el mes considerado. La facturación es a término vencido.

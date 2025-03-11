@@ -1,77 +1,88 @@
 ---
 title: Guía de inicio
 ---
+import shivaNetwork_001 from './images/shiva_network_001.jpg'
+import shivaNetwork_002 from './images/shiva_network_002.jpg'
+import shivaNetwork_003 from './images/shiva_network_003.jpg'
+import shivaNetwork_004 from './images/shiva_network_004.jpg'
+import shivaNetwork_005 from './images/shiva_network_005.jpg'
+import shivaNetwork_006 from './images/shiva_network_006.jpg'
+import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
+import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
+import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
+import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
+
 
 ## Redes privadas regionales
 
-El control de las redes privadas dentro de una región se realiza directamente en la consola de Cloud Temple. 
+La creación de redes privadas dentro de una región se realiza directamente en la consola Cloud Temple.
 
 ### Dentro de un tenant
 
-La creación de una red virtual se hace en el menú __*Network*__ en la barra verde a la izquierda de la pantalla.
+La creación de una red virtual se realiza en el menú __*Network*__ en la banda verde a la izquierda de la pantalla.
 
-![](images/shiva_network_001.jpg)
+<img src={shivaNetwork_001} />
 
-Luego, haga clic en el botón __*Nueva red*__
+Luego haga clic en el botón __*Nouveau réseau*__
 
-Debe especificar el nombre de su red que se mostrará. Por defecto, todos sus clusters accederán a su nueva red.
-Sin embargo, en el submenú __*Opciones Avanzadas*__, puede especificar más detalladamente el alcance de la propagación dentro del tenant entre sus diferentes clusters.
+Debe especificar el nombre de su red que se mostrará. Por defecto, todos sus clústeres accederán a su nueva red.
+Sin embargo, en el submenú __*Options Avancées*__, puede especificar más detalladamente el alcance de la propagación dentro del tenant entre sus diferentes clústeres.
 
-![](images/shiva_network_002.jpg)
+<img src={shivaNetwork_002} />
 
-Todas las acciones posibles en sus redes se encuentran en el menú __*Acciones*__ de cada una de ellas:
+Todas las acciones posibles sobre sus redes se encuentran en el menú __*Actions*__ de cada una de ellas:
 
-- La activación del intercambio de una red entre tenants de una misma organización.
-- La desactivación del intercambio de una red entre tenants de una misma organización.
-- La adición de un intercambio de una red entre tenants de una misma organización.
-- La eliminación de un intercambio de una red entre tenants de una misma organización.
-- La visualización gráfica de la propagación de una red en todos sus clusters e hipervisores dentro de un tenant.
+- La activación del compartir una red entre tenants de una misma organización.
+- La desactivación del compartir una red entre tenants de una misma organización.
+- La adición de un compartir una red entre tenants de una misma organización.
+- La eliminación de un compartir una red entre tenants de una misma organización.
+- La visualización gráfica de la propagación de una red en todos sus clústeres e hipervisores dentro de un tenant.
 - La eliminación de una propagación dentro de un tenant.
 - La modificación de una propagación dentro de un tenant.
 - La eliminación de una red.
 
-![](images/shiva_network_003.jpg)
+<img src={shivaNetwork_003} />
 
 #### Visualización de la propagación de sus redes
 
-Puede visualizar fácilmente en el menú __*Acciones*__ la propagación de una red hacia sus diferentes clusters dentro de un mismo tenant.
-Elija la opción *"Visualizar la propagación"*:
+Puede fácilmente en el menú __*Actions*__ visualizar para una red su propagación hacia sus diferentes clústeres dentro de un mismo tenant.
+Elija la opción *"Visualiser la propagation"* :
 
-![](images/shiva_network_004.jpg) 
+<img src={shivaNetwork_004} />
 
 #### Modificación de la propagación
 
-La modificación de una propagación dentro de un tenant se realiza mediante la opción *"Propagar"*:
-Luego, elija los clusters que deben integrarse en esta propagación.
+La modificación de una propagación dentro de un tenant se realiza mediante la opción *"Propager"* :
+luego elija los clústeres que deben integrarse en esta propagación.
 
-![](images/shiva_network_005.jpg)
+<img src={shivaNetwork_005} />
 
-__*Nota:*__ *La modificación de la propagación está limitada a 20 redes por acción.*
+__*Nota :*__ *La modificación de la propagación está limitada a 20 redes por acción.*
 
 #### Eliminación de una red
 
-La eliminación de una red dentro de un tenant se realiza mediante la opción *"Eliminar la red"*:
+La eliminación de una red dentro de un tenant se realiza mediante la opción *"Supprimer le réseau"* :
 
-![](images/shiva_network_006.jpg)
+<img src={shivaNetwork_006} />
 
-### Compartir red entre tenants
+### Compartir una red entre tenants
 
-Por defecto, __las redes están disponibles únicamente dentro de un tenant__. Puede optar por __compartir una red entre varios tenants__ por razones técnicas o de conectividad.
+Por defecto, __las redes están disponibles solo dentro de un tenant__. Puede elegir __compartir una red entre varios tenants__ por razones técnicas o de conectividad.
 Es posible compartir una red entre sus __[Tenant](../../../console/iam/concepts/#tenant)__ dentro de una misma organización.
 
-Simplemente active el intercambio como se muestra a continuación.
+Solo necesita activar el compartir como se muestra a continuación.
 
-![](images/shiva_network_vn_share_enabled.png)
+<img src={shivaNetworkVnShareEnabled} />
 
-Una vez que se haya activado el intercambio, simplemente agregue un intercambio como se muestra a continuación.
+Una vez activado el compartir, solo necesita agregar un compartir como se muestra a continuación.
 
-![](images/shiva_network_vn_shared.png)
+<img src={shivaNetworkVnShared} />
 
-Luego, seleccione el tenant de destino. Atención, la lista de tenants es dinámica.
-Depende de su organización y sus permisos.
+Luego, seleccione el tenant objetivo. Tenga en cuenta que la lista de tenants es dinámica.
+Depende de su organización y de sus derechos.
 
-![](images/shiva_network_vn_shared_tenant.png)
+<img src={shivaNetworkVnSharedTenant} />
 
-Una vez que la red se haya compartido, será visible en la pestaña 'Redes compartidas' desde su segundo tenant.
+Una vez compartida la red, será visible en la pestaña 'Réseaux partagés' desde su segundo tenant.
 
-![](images/shiva_network_vn_shared_with_me.png)
+<img src={shivaNetworkVnSharedWithMe} />

@@ -1,6 +1,11 @@
 ---
 title: Tutorials
 ---
+import S3Cloudberry_001 from './images/S3_cloudberry_001.png'
+import S3Cloudberry_002 from './images/S3_cloudberry_002.png'
+import S3Cloudberry_003 from './images/S3_cloudberry_003.png'
+import S3Winscp_001 from './images/S3_winscp_001.png'
+import S3Winscp_002 from './images/S3_winscp_002.png'
 
 
 ## Using MINIO
@@ -25,40 +30,40 @@ Retrieve a file:
 
 you can also use [Cloud Berry Explorer](https://www.msp360.com/explorer/).
 
-1. Connect using your endpoint and your key:
+1. Log in using your endpoint and your key:
 
-![](images/S3_cloudberry_001.png)
+<img src={S3Cloudberry_001} />
 
-2. Once connected, enter the bucket name in the navigation bar:
+2. Once logged in, enter the bucket name in the navigation bar:
 
-![](images/S3_cloudberry_002.png)
+<img src={S3Cloudberry_002} />
 
 3. You can then use the bucket normally:
 
-![](images/S3_cloudberry_003.png)
+<img src={S3Cloudberry_003} />
 
 ## Using WINSCP 6.3.x
 
 You can use [Winscp](https://winscp.net/eng/download.php):
 
-1. Connect using your endpoint, access key, and secret key:
+1. Log in using your endpoint, access key, and secret key:
 
-![](images/S3_winscp_001.png)
+<img src={S3Winscp_001} />
 
-2. Once connected, use WINSCP normally like an FTP or SCP site:
+2. Once logged in, use WINSCP normally as an FTP or SCP site:
 
-![](images/S3_winscp_002.png)
+<img src={S3Winscp_002} />
 
 
 ## Adding the HASH of a file during object upload
 
-In general, the HASH of files is supported on our object storage via metadata. Some clients can compute a HASH on-the-fly and add it as metadata (minio-mc with md5 for example), for others, you need to specify the data directly in metadata.
+Overall, file HASH is supported on our object storage via metadata. Some clients can compute a HASH on-the-fly and add it as metadata (minio-mc with md5, for example), while for others, the data must be specified directly in the metadata.
 
-1. Case of adding a HASH with the minio-mc client: this client supports on-the-fly MD5 hash computation and storage in metadata
+1. Adding a HASH with the minio-mc client: this client supports on-the-fly MD5 hash computation and storage in metadata
 
 
             ╰─➤  cat test.txt
-            Ceci est un test
+            This is a test
             ╰─➤  md5 test.txt
             MD5 (test.txt) = 8b34b2754802a46e3475998dfcf76f83
             ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB
@@ -73,10 +78,10 @@ In general, the HASH of files is supported on our object storage via metadata. S
             Metadata  :
                 Content-Type: text/plain
 
-2. Example of manually adding a sha256: for this, we use the file's S3 attributes.
+2. Example of "manually" adding a sha256: for this, we use the file's S3 attributes.
 
             ╰─➤  cat test.txt
-            Ceci est un test
+            This is a test
             ╰─➤  shasum -a 256 test.txt
             2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
             ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB -attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"

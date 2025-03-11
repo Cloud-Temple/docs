@@ -1,86 +1,91 @@
 ---
-title: Quickstart
+title: Guide de démarrage
 ---
+import oshiftRights from './images/oshift_rights.png'
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-## Bereitstellen einer Redhat OpenShift-Plattform in Ihrem Tenant
 
-### Zuweisung von Zugriffsrechten
+## Eine Redhat Openshift-Plattform innerhalb Ihres Tenants bereitstellen
 
-Es ist unerlässlich, dass der Administrator des [Tenants](../console/iam/concepts.md#tenants) dem OpenShift-Administrator die Verwaltungsrechte für die OpenShift-Plattform gewährt, um darauf zugreifen zu können:
+### Zuweisung der Zugriffsrechte
 
-![](images/oshift_rights.png)
+Der Administrator des [Tenants](../console/iam/concepts.md#tenants) muss dem Openshift-Administrator die Zugriffsrechte zur Verwaltung der Openshift-Plattform zuweisen, um darauf zugreifen zu können:
 
-### Zugriff auf die OpenShift-Umgebung innerhalb eines Tenants
+<img src={oshiftRights} />
+
+### Zugriff auf die Openshift-Umgebung innerhalb eines Tenants
 
 Nach der Zuweisung der Rechte erscheint das Modul '__Openshift__' im Menü der Cloud Temple-Konsole:
 
-![](images/oshift_menu_001.png)
+<img src={oshiftMenu_001} />
 
-Sie sehen dann die OpenShift-Cluster, die in Ihrem Tenant bereitgestellt sind.
+Sie sehen dann die Openshift-Cluster, die innerhalb Ihres Tenants bereitgestellt werden.
 
 Klicken Sie auf den Cluster, den Sie verwalten möchten. Sie greifen auf die Verwaltungsumgebung des Clusters zu:
 
-![](images/oshift_menu_002.png)
+<img src={oshiftMenu_002} />
 
 Nach der Authentifizierung können Sie Ihren Cluster verwalten:
 
-![](images/oshift_menu_003.png)
+<img src={oshiftMenu_003} />
 
 ### Ressourcen Ihrer Umgebung
 
-Hier sind die Verbindungs- und Konfigurationsinformationen, die spezifisch für Ihre OpenShift-Umgebung sind.
+Hier sind die Verbindungs- und Konfigurationsinformationen Ihrer OpenShift-Umgebung.
 
 #### Verbindungsdetails
 
-Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, dass Ihr Tenant in der Konsole auf der Whitelist steht (siehe Dokumentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, dass Ihr Tenant in der Whitelist der Konsole eingetragen ist (siehe Dokumentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
 - __URL Shiva Tenant__:
-  [https://**Ihr-Tenant-ID**.shiva.cloud-temple.com/](https://**Ihr-Tenant-ID**.shiva.cloud-temple.com/)
+  [https://**ihr-tenant-id**.shiva.cloud-temple.com/](https://**ihr-tenant-id**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__:
-  [https://ui-ocp01-**Ihr-ID**.paas.cloud-temple.com/](https://ui-ocp01-**Ihr-ID**.paas.cloud-temple.com/)
+  [https://ui-ocp01-**ihr-id**.paas.cloud-temple.com/](https://ui-ocp01-**ihr-id**.paas.cloud-temple.com/)
 
 - __Externe API__:
-  [https://api-ocp01-**Ihr-ID**.paas.cloud-temple.com](https://api-ocp01-**Ihr-ID**.paas.cloud-temple.com)
+  [https://api-ocp01-**ihr-id**.paas.cloud-temple.com](https://api-ocp01-**ihr-id**.paas.cloud-temple.com)
 
 - __GitOps (ARGOCD)__:
-  [https://gitops-ocp01-**Ihr-ID**.paas.cloud-temple.com/applications](https://gitops-ocp01-**Ihr-ID**.paas.cloud-temple.com/applications)
+  [https://gitops-ocp01-**ihr-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**ihr-id**.paas.cloud-temple.com/applications)
 
-#### Verbindung zum Cluster über CLI
+#### Verbindung zum Cluster via CLI
 
-Um sich über die Kommandozeile (CLI) zu verbinden, verwenden Sie den folgenden Befehl:
-
-```bash
-oc login https://api-ocp01-{Ihr-ID}.paas.cloud-temple.com/ --web
-```
-
-#### Zugriff auf das Register
-
-Um auf das Register zuzugreifen, melden Sie sich mit den folgenden Befehlen an:
+Um sich über die Befehlszeile (CLI) zu verbinden, verwenden Sie den folgenden Befehl:
 
 ```bash
-oc login https://api-ocp01-{Ihr-ID}.paas.cloud-temple.com --web
-docker login -u {Ihr-Benutzername} -p $(oc whoami -t) registry-ocp01-{Ihr-ID}.paas.cloud-temple.com
+oc login https://api-ocp01-{ihr-id}.paas.cloud-temple.com/ --web
 ```
 
-Testen Sie anschließend den Aufbau und das Hochladen eines Docker-Images:
+#### Zugriff auf das Registry
+
+Um auf das Registry zuzugreifen, loggen Sie sich mit den folgenden Befehlen ein:
+
+```bash
+oc login https://api-ocp01-{ihr-id}.paas.cloud-temple.com --web
+docker login -u {ihr-benutzername} -p $(oc whoami -t) registry-ocp01-{ihr-id}.paas.cloud-temple.com
+```
+
+Testen Sie dann den Build und das Hochladen eines Docker-Images:
 
 ```bash
 docker build -t <namespace>/temp:latest .
-docker tag <namespace>/temp:latest registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:latest
-docker push registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{ihr-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{ihr-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
 #### Konfiguration der Router und Load Balancer
 
-Die Plattform bietet flexible Optionen für das __Routing von Flussdaten__ und das __Lastenausgleich__:
+Die Plattform bietet flexible Optionen für das __Routing der Flows__ und das __Load-Balancing__:
 
-- Standardmäßig werden private Load Balancer für Routen und Ingresses verwendet.
+- Standardmäßig werden private Load Balancer für Routen und Ingress verwendet.
 - Domains:
-  - `*.apps-priv-ocp01-{Ihr-ID}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{Ihr-ID}.paas.cloud-temple.com`
+  - `*.apps-priv-ocp01-{ihr-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{ihr-id}.paas.cloud-temple.com`
 
-Stellen Sie sicher, dass Ihre Routen oder Ingresses mit den entsprechenden Labels oder Ingress-Klassen konfiguriert sind, um eine korrekte Weiterleitung zu gewährleisten.
+Stellen Sie sicher, dass Ihre Routen oder Ingress mit den entsprechenden Labels oder Klassen konfiguriert sind, um korrektes Routing zu gewährleisten.
 
 Beispiel:
 
@@ -90,11 +95,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### IaaS-Interconnection
+#### IaaS-Interkonnektivität
 
-Netzwerkkonfigurationen spielen eine wesentliche Rolle bei der Sicherung der Kommunikation mit OpenShift.
+Netzwerkkonfigurationen spielen eine entscheidende Rolle bei der Sicherung der Kommunikation mit OpenShift.
 
-- __Interconnection-Netzwerk__: 100.67.0.0/28
+- __Interkonnektivitätsnetzwerk__: 100.67.0.0/28
 - __VIP des privaten Load Balancers__: 100.67.0.3
 
-Stellen Sie sicher, dass Ihre Firewall eine dedizierte Schnittstelle hat und den Verkehr zwischen den angegebenen Netzwerken zulässt.
+Stellen Sie sicher, dass Ihre Firewall über eine dedizierte Schnittstelle verfügt und den Verkehr zwischen den angegebenen Netzwerken zulässt.
