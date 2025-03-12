@@ -25,6 +25,16 @@ Le modèle de stockage distribué offre une séparation entre le calcul (serveur
 
 ---
 
+## Régions et zones de disponibilité
+
+Le produit Bare Metal est déployé dans une zone de disponibilité. 
+Une [zones de disponibilité](../additional_content/concepts_az.md) fait partie d’une [région](../additional_content/concepts_regional.md).
+
+Ce type de déploiement permet de choisir la localisation des serveurs Bare Metal et de pouvoir les répartir sur différentes zones de disponibilité (AZ).
+Cela offre une meilleure répartition de la charge, maximise la redondance et facilite la mise en place d’un plan de reprise d’activité (DRP) en cas d’incident.
+
+---
+
 ## Classes de lames de calcul
 
 Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de performances pour répondre à divers besoins :

@@ -1,6 +1,5 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
-
 const sidebars: SidebarsConfig = {
   docSidebar: [
     {
@@ -53,6 +52,14 @@ const sidebars: SidebarsConfig = {
             'console/iam/tutorials/sso_adfs',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AdditionalContent',
+      items: [
+        'additional_content/concepts_regional',
+        'additional_content/concepts_az',
       ],
     },
     {

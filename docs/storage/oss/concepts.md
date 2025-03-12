@@ -42,7 +42,7 @@ Le chiffrement des données est appliqué de manière systématique, assurant le
 
 ### Déploiement de type région
 
-Le stockage S3 Cloud Temple stocke les données de manière native sur __trois zones de disponibilité distinctes__ au sein d'une même région Cloud Temple. Cette architecture est conçue pour offrir une haute disponibilité et une résilience maximale face aux pannes matérielles ou logicielles :
+Le stockage S3 Cloud Temple stocke les données de manière native sur [**trois zones de disponibilité distinctes**](../../additional_content/concepts_az.md) au sein d'une même [région](../../additional_content/concepts_regional.md) Cloud Temple. Cette architecture est conçue pour offrir une haute disponibilité et une résilience maximale face aux pannes matérielles ou logicielles :
 - Erasure Coding (EC) : Nous utilisons par défaut un schéma EC 12+4, qui divise les données en 12 segments de données et 4 segments de parité. Cette technique permet de reconstruire les données même en cas de perte de plusieurs segments.
 - Distribution des données : Les segments EC sont répartis sur différents nœuds et racks, assurant une protection contre les pannes de disques, de nœuds et même de racks entiers.
 - Réplication géographique : Pour une protection supplémentaire, les données sont répliquées sur 3 zones de disponibilités, offrant une résilience face aux sinistres locaux.

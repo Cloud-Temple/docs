@@ -46,15 +46,15 @@ La plateforme est qualifiée **SecNumCloud** par l'[ANSSI](https://www.ssi.gouv.
 | On demand           | Ressources disponibles à la demande.                                                                                                          |
 
 
+## Régions et zones de disponibilité
 
+Le produit IaaS VMware est déployé dans une zone de disponibilité. 
+Une [zones de disponibilité](../additional_content/concepts_az.md) fait partie d’une [région](../additional_content/concepts_regional.md).
 
+Ce type de déploiement permet de choisir la localisation des cluster et de pouvoir les répartir sur différentes zones de disponibilité (AZ).
+Cela offre une meilleure répartition de la charge, maximise la redondance et facilite la mise en place d’un plan de reprise d’activité (DRP) en cas d’incident.
 
-
-
-
-
-
-
+---
 
 
 ## Calcul
