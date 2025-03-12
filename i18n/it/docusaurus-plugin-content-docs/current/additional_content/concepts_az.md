@@ -1,5 +1,5 @@
 ---
-title: Concepts - Zones de disponibilité
+title: Concetti - Zone di disponibilità
 ---
 
 ## Zone di disponibilità

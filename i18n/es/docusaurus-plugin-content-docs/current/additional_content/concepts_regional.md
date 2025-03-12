@@ -1,5 +1,5 @@
 ---
-title: Concepts - Régions
+title: Conceptos - Regiones
 ---
 
 import iaasAz001 from './images/iaas_az_001.png';

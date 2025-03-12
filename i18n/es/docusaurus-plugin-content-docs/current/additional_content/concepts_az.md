@@ -1,5 +1,5 @@
 ---
-title: Concepts - Zones de disponibilité
+title: Conceptos - Zonas de disponibilidad
 ---
 
 ## Zonas de disponibilidad
@@ -14,6 +14,6 @@ La consola Shiva le propone automáticamente zonas de disponibilidad en sitios f
 *__Nota: Si desea una configuración específica para un contexto particular (varias AZ en el mismo sitio físico), es necesario hacer una solicitud de soporte.__*
 
 
-| Referencia de pedido                                                 | Unidad                 | SKU                       |  
+| Referencia de pedido                                                 | Unidad                 | SKU                       |
 |---------------------------------------------------------------------|------------------------|---------------------------|
 | TENANT - *(REGION)* - Activación de una zona de disponibilidad | 1 AZ por tenant | csp:*(REGION)*:iaas:az:v1 |

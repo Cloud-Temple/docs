@@ -1,5 +1,5 @@
 ---
-title: Concepts - Zones de disponibilité
+title: Concepts - Availability zones
 ---
 
 ## Availability Zones
@@ -14,6 +14,6 @@ The Shiva console automatically offers you Availability Zones on distinct physic
 *__Note: If you require a specific configuration for a particular context (multiple AZs on the same physical site), it is necessary to make a support request.__*
 
 
-| Order Reference                                              | Unit            | SKU                       |  
+| Order Reference                                              | Unit            | SKU                       |
 |--------------------------------------------------------------|-----------------|---------------------------|
 | TENANT - *(REGION)* - Activation of an Availability Zone     | 1 AZ per tenant | csp:*(REGION)*:iaas:az:v1 |
