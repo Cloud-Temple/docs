@@ -12,7 +12,6 @@ import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
 import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
 import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
 
-
 ## Réseaux privés régionaux
 
 La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple.
@@ -69,9 +68,6 @@ La suppression d'un réseau au sein d'un tenant est réalisée par l'option *"Su
 
 Par défaut, __les réseaux sont uniquement disponibles au sein d'un tenant__. Vous pouvez choisir de __partager un réseau entre plusieurs tenants__ pour des raisons techniques ou des raisons de connectivité.
 Il est ainsi possible de partager un réseau entre vos __[Tenant](../../../console/iam/concepts/#tenant)__ au sein d'une même organisation.
-
-
-
 
 Il suffit pour cela d'activer le partage comme ci-dessous.
 

@@ -8,7 +8,6 @@ Accessible depuis la console Cloud Temple, il garantit une gestion centralisée 
 
 Avec son approche orientée sécurité et ses fonctionnalités avancées telles que l’Infrastructure as Code, le Bastion répond aux besoins des environnements Cloud, hybrides et on-premises.
 
-
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>

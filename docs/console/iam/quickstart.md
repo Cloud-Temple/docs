@@ -11,7 +11,7 @@ import shivaProfil_007 from './images/shiva_profil_007.png'
 import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
 import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
-##  Tenant
+## Tenant
 
 ### Création d'un tenant
 
@@ -22,17 +22,13 @@ La création d'un tenant est réalisée par une demande de service indiquant :
     Le nom du tenant
     La zone de disponibilité ou à défaut le site physique souhaité pour le tenant
 
-
 ### Selection d'un tenant
 
 La selection du tenant se fait depuis la page principale de la console Shiva :
 
 <img src={shivaTenant} />
 
-
 *__Nota :__ Les ressources d'un tenant lui sont propres et ne sont pas mélangeable avec d'autres tenants.*
-
-
 
 ## Comptes d'accès à la console Shiva
 
@@ -96,7 +92,6 @@ Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" 
 
 La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichir progressivement pour s'adapter aux besoins et aux changements dans notre environnement opérationnel.
 
-
 ## Permissions
 
 ### Quelles sont les permissions disponibles pour les comptes utilisateur de la console Shiva ?
@@ -124,13 +119,16 @@ Allez sur la page utilisateurs et cliquez sur le bouton __'Exporter csv'__ :
 Dans le menu __'Administration'__ sur le bandeau vert à gauche de l'écran, dans le sous menu __'utilisateur'__, cliquer sur l'icône __'Action'__ de l'utilisateur cible et choisissez __'Supprimer'__.
 
 *__nota__ :*
+
 - *Pour ajouter un utilisateur, vous devez posséder le droit __'iam_write'__.*
 - *S'il s'agit d'un utilisateur fédéré, __assurez-vous que l'utilisateur a été supprimé également depuis le référentiel d'identité__.*
 
 ### Comment réinitialiser son mot de passe ?
+
 Il est possible de réinitialiser son mot de passe depuis la page de connexion de la console Shiva en cliquant sur __'Mot de passe oublié ?'__.
 
 ### Pourquoi certains utilisateurs sont grisés ?
+
 Les utilisateurs grisés sont ceux n'ayant pas validé leur compte. Lors de la création du compte, ;'utilisateur a recu un mail de vérification.
 
 <img src={shivaOnboard_001} />
@@ -145,10 +143,10 @@ La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
 est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique.
 
 ### Qu'est-ce que le MFA et est-il obligatoire ?
+
 Le MFA (multi-factor authentication) est un concept de vérification de l'identité d'un utilisateur en deux étapes, appelée __authentification à double facteur__.
 
 L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de la console Shiva, l'authentification à double facteur est obligatoire et requiert de rentrer un code à usage unique une fois que l'utilisateur a entré le mot de passe de son compte.
-
 
 ## Gestion des accès et authentification
 

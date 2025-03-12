@@ -10,7 +10,6 @@ import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
 
-
 ## Concept
 
 La majorité des clients __Cloud Temple__ disposent d'outils de visualisation, de monitoring et de métrologie pour le suivi de leurs opérations.
@@ -63,9 +62,7 @@ Vous accédez alors à la page de visualisation graphique des données historis�
 
 Il est possible pour la console Shiva de service de __datasource__ pour votre infrastructure [Grafana](https://grafana.com).
 
-Vous trouverez tout un ensemble d'__exemple de configuration pour Grafana__ ici :
-
-https://github.com/Cloud-Temple/console-grafana-iaas
+Vous trouverez tout un ensemble d'__exemple de configuration pour Grafana__ [ici](https://github.com/Cloud-Temple/console-grafana-iaas)
 
 <img src={grafanaDashboards_003} />
 

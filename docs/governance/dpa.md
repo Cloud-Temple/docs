@@ -89,6 +89,7 @@ Le Sous-traitant mettra à la disposition du Responsable de traitement toutes le
 # Article 12 : Registre des activités de Traitement
 
  Le Sous-traitant doit également tenir un registre des activités de Traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées. Ce registre contient à minima :
+
 - Le nom et coordonnées du responsable du traitement et, le cas échéant, du co-responsable du traitement, du représentant du responsable du traitement et du délégué à la protection des données ;
 - La description des catégories de personnes concernées et des catégories de données personnelles ;
 - Les finalités du Traitement ;
