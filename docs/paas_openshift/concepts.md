@@ -3,7 +3,6 @@ title: Concepts
 ---
 import oshiftOffert from './images/oshift_offert.jpg'
 
-
 ## Présentation de RedHat Openshift
 
 **Red Hat OpenShift** est une plateforme de conteneurs d'entreprise qui automatise le déploiement, la gestion et l'échelle des applications conteneurisées. C'est une plateforme construite autour de Docker, un système de conteneurisation qui permet de packager une application et ses dépendances dans un conteneur virtuel, et de Kubernetes, un système d'orchestration de conteneurs, qui gère l'exécution et la coordination des conteneurs sur un cluster de serveurs.

@@ -5,7 +5,6 @@ title: Hiérarchie des documents contractuels
 ## Documentation Contractuelle Générale
 
 <div class="card-grid">
-
   <div class="card">
     <h3>Conditions Générales de Vente et d'Utilisation (CGVU)</h3>
     <p>Découvrez les conditions générales régissant l'utilisation de nos services.</p>
@@ -25,6 +24,7 @@ title: Hiérarchie des documents contractuels
 ## Convention de service particulière
 
 ### Convention de service IaaS
+
  <div class="card-grid">
   <div class="card">
     <h3>Convention de service IaaS</h3>
@@ -35,6 +35,7 @@ title: Hiérarchie des documents contractuels
 </div>
 
 ### Convention de service Stockage Object
+
  <div class="card-grid">
   <div class="card">
     <h3>Matrice de responsabilité Stockage Objet S3</h3>
@@ -45,6 +46,7 @@ title: Hiérarchie des documents contractuels
 </div>
 
 ### Convention de service PaaS
+
  <div class="card-grid">
   <div class="card">
     <h3>MCO/MCS</h3>

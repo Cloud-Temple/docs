@@ -2,7 +2,6 @@
 title: Conditions Générales de Vente et d'Utilisation (CGVU)
 ---
 
-
 **Table des matières**
 
 - [1. Cadre](#1-cadre)
@@ -65,7 +64,6 @@ title: Conditions Générales de Vente et d'Utilisation (CGVU)
 - [27. Assurance](#27-assurance)
 - [28. Attribution de compétence et droit applicable](#28-attribution-de-compétence-et-droit-applicable)
 
-
 ## 1. Cadre
 
 |           |                    |
@@ -88,13 +86,13 @@ Il est précisé que les termes utilisés avec une majuscule dans le cadre du pr
 
 Cette reformulation vise à clarifier et formaliser la portée et les parties prenantes du Contrat, tout en respectant les conventions et la précision requises dans le langage juridique.
 
-__IL EST PRÉALABLEMENT RAPPELÉ CE QUI SUIT__
+**IL EST PRÉALABLEMENT RAPPELÉ CE QUI SUIT**
 
 Le Prestataire se positionne en tant qu'opérateur spécialisé dans le domaine du Cloud Computing, offrant notamment des services d'Infrastructure
 en tant que Service (IaaS), de plateforme en tant que Service (PaaS) ainsi que des prestations de services professionnels (Professional Services).
 
 L'ensemble des services proposés par Cloud Temple sont disponibles à l'échelle globale pour les clients qui souscrivent aux
-offres présentées sur leur plateforme en ligne, accessible à l'adresse suivante : https://www.cloud-temple.com.
+offres présentées sur leur plateforme en ligne, accessible à l'adresse suivante: [Cloud Temple](https://www.cloud-temple.com).
 
 En présence de discordances entre une ou plusieurs dispositions contenues dans les documents annexes, la primauté sera accordée au document hiérarchiquement supérieur.
 La version la plus récente et officiellement approuvée d'un document l'emporte sur toutes ses versions précédentes. Ainsi,
@@ -114,7 +112,7 @@ Les termes figurant ci-dessous auront pour les Parties les définitions suivante
 - **Compte Client** : un Compte permet au CLIENT, une fois qu’il a accepté le Contrat associé à ce Compte (en acceptant les présentes CGVU), de consommer des Prestations. le Prestataire n’ouvre un Compte au CLIENT qu’après fourniture par ce dernier (i)de l’adresse email qui servira d’identifiant à ce Compte (c’est là que le Prestataire adressera les notifications relatives au Contrat associé à ce Compte), et (ii) de ses données d’identification (nom, numéro de TVA intracommunautaire ou équivalent dans le pays du CLIENT, adresse, etc.), enfin (iii) de ses informations bancaires exactes et à jour nécessaires à la facturation de ses consommations.
 - **Convention de Services** : désigne le document décrivant, notamment, de manière technique et fonctionnelle les Services fournis par le Prestataire ; ainsi que la liste détaillée des Niveaux de Services, leur méthode de calcul et la périodicité de leur production.
 - **Données du Client** : toutes les Données, quelle que soit leur nature, y compris les Données Personnelles, que le CLIENT stocke et Traite sur une Infrastructure mise à disposition par le Prestataire. De convention expresse, le Prestataire (i) s’interdit d’accéder aux Données du CLIENT, et (ii) conseille au CLIENT de les chiffrer sans lui remettre la clé de chiffrement ; étant précisé, enfin, (iii) que le Prestataire ne peut pas distinguer parmi les Données du CLIENT celles qui sont des Données Personnelles.
-- **Données Personnelles** : celles des Données du CLIENT qui répondent à la définition de « données à caractère personnel » au sens de la Législation sur les Données Personnelles. Pour toutes questions relatives aux Données Personnelles (à l’exception de celles liées aux Systèmes du CLIENT qui sont sous sa seule responsabilité) vous pouvez contacter dpd@cloud-temple.com
+- **Données Personnelles** : celles des Données du CLIENT qui répondent à la définition de « données à caractère personnel » au sens de la Législation sur les Données Personnelles. Pour toutes questions relatives aux Données Personnelles (à l’exception de celles liées aux Systèmes du CLIENT qui sont sous sa seule responsabilité) vous pouvez contacter [dpo@cloud-temple.com](dpo@cloud-temple.com)
 - **Équipement** : désigne tout équipement informatique de nature logicielle ou matérielle fourni par l’une ou l’autre des Parties, composant le Système Hébergé et Infogéré, pris en charge par le Prestataire au titre du Contrat et objet des Services.
 - **Extension du Périmètre des Prestations** : désigne les ressources supplémentaires non souscrites.
 - **Iaas** : acronyme d’Infrastructure as a Service, il désigne la mise à disposition d’une infrastructure en tant que Service, permettant de louer des infrastructures informatiques (RAM, CPU…).
@@ -234,6 +232,7 @@ via l'utilisation des Services. Pour toute demande d'information relative aux Se
 Il est de la responsabilité du CLIENT de se tenir informé des modifications susceptibles d'intervenir, notamment lors de l'émission de nouvelles Commandes.
 
 ### 10.3. Connexion
+
 L'accès aux Services requiert que le CLIENT dispose, à ses propres frais et sous sa responsabilité, d'une connexion à distance adéquate
 (telle qu'une connexion Internet ou un réseau privé). Il est porté à la connaissance du CLIENT que le réseau Internet peut subir des aléas techniques
 et présenter des risques de sécurité qui échappent aux mesures techniques déployées par le Prestataire dans le cadre des Services.
@@ -564,11 +563,11 @@ de ces pénalités par le Prestataire constituera une indemnité forfaitaire et 
 
 **Pénalités = Ecart en pourcentage entre la disponibilité promise par SLA du Service considéré sur la période de calcul et la disponibilité constatée du service considéré sur la période de calcul.**
 
-_**Exemple : Non-respect des SLA 1 – 3 et 4**_
+***Exemple : Non-respect des SLA 1 – 3 et 4***
 
-- _SLA 1 : IC-INFRA_SNC-01 – Disponibilité Compute : 99,9%;taux du mois en cours 90%; taux de pénalité à appliquer **9,9%**_
-- _SLA 3 : IC-INFRA_SNC-03 – Sauvegarde : 99,9%; taux du mois en cours 80%; taux de pénalité à appliquer **19,9%**_
-- _SLA 4 : IC-INFRA-SNC-05 – Accès internet 99,9%; taux du mois en cours 90%; taux de pénalité à appliquer **9,9%**_
+- *SLA 1 : IC-INFRA_SNC-01 – Disponibilité Compute : 99,9%;taux du mois en cours 90%; taux de pénalité à appliquer **9,9%***
+- *SLA 3 : IC-INFRA_SNC-03 – Sauvegarde : 99,9%; taux du mois en cours 80%; taux de pénalité à appliquer **19,9%***
+- *SLA 4 : IC-INFRA-SNC-05 – Accès internet 99,9%; taux du mois en cours 90%; taux de pénalité à appliquer **9,9%***
 
 En tout état de cause, toutes les pénalités dans le cadre des présents Conditions Générales de Vente et Utilisation ne peuvent excéder 30 % (trente pour cent)
 du montant des services concernés de la facture du mois. En outre, les pénalités constituent toujours une indemnité forfaitaire et définitive de dommages-intérêts
@@ -654,6 +653,7 @@ le type de documents (papier ou numérique), et par tout moyen de communication.
 Toutefois, l'absence de telles mentions ou rappels n'affecte en rien la nature confidentielle des informations ni les obligations de confidentialité des Parties.
 
 Les obligations de confidentialité ne s'appliquent pas aux informations qui :
+
 - Sont déjà du domaine public sans faute de la Partie réceptrice ;
 - Étaient connues de la Partie réceptrice avant la communication par l'émetteur, comme en attestent les archives de la Partie réceptrice ;
 - Sont reçues légitimement d'un tiers sans restriction de confidentialité ;
@@ -762,7 +762,7 @@ sans avoir à le motiver, peut notifier à l’autre Partie de ne plus la citer.
 ## 26. Données à caractère personnel
 
 Le CLIENT s’engage à respecter, dans le cadre des présentes CGVU, la politique de protection des données personnelles du Prestataire.
-Le CLIENT peut solliciter cette politique sur demande à l’adresse suivante dpo@cloud-temple.fr.
+Le CLIENT peut solliciter cette politique sur demande à l’adresse suivante [dpo@cloud-temple.fr](dpo@cloud-temple.fr).
 
 Le CLIENT et le Prestataire s’engagent à respecter la réglementation en vigueur applicable au traitement des Données Personnelles et, en particulier, la loi n°78-17 du 6 janvier 1978
 relative à l’informatique, aux fichiers et aux libertés, modifiée et le règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 applicable à compter du 25 mai 2018.

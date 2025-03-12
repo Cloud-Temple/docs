@@ -6,7 +6,6 @@ import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-
 ## Déployer une plateforme Redhat Openshift au sein de votre tenant
 
 ### Affectation des droits d'accès
@@ -40,16 +39,16 @@ Voici les informations de connexion et de configuration propres à votre environ
 Pour accéder aux différents composants OpenShift, veillez à ce que votre locataire soit inscrit sur la liste blanche dans la console (consultez la documentation : [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
 - __URL Shiva Tenant__ :
-  [https://**votre-id-locataire**.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
+  [https://__votre-id-locataire__.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__ :
-  [https://ui-ocp01-**votre-id**.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
+  [https://ui-ocp01-__votre-id__.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
 
 - __API externe__ :
-  [https://api-ocp01-**votre-id**.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
+  [https://api-ocp01-__votre-id__.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
 
 - __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
+  [https://gitops-ocp01-__votre-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
 
 #### Connexion au cluster via CLI
 

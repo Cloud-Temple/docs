@@ -17,7 +17,6 @@ import shivaProfil_006 from './images/shiva_profil_006.png'
 import shivaProfil_007 from './images/shiva_profil_007.png'
 import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
-
 ## Utilisateurs
 
 Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
@@ -67,7 +66,7 @@ La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur
 
 Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
 
-**Warning**: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+__Warning__: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 <img src={shivaProfil_012} />
 
@@ -79,7 +78,7 @@ Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Par
 
 Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre profil.
 
-**Warning**: Assurez vous de bien être à l'origine de la demande de mise à jour du profil. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+__Warning__: Assurez vous de bien être à l'origine de la demande de mise à jour du profil. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 <img src={shivaProfil_014} />
 
@@ -91,7 +90,7 @@ Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Par
 
 Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre mot de passe.
 
-**Warning**: Assurez vous de bien être à l'origine de la demande de réinitialisation de votre mot de passe. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+__Warning__: Assurez vous de bien être à l'origine de la demande de réinitialisation de votre mot de passe. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 <img src={shivaProfil_015} />
 
@@ -103,7 +102,7 @@ Sélectionnez dans votre __'Profil'__, en haut à droite de l'écran puis __'Par
 
 Rendez-vous ensuite dans votre boite mail et cliquez sur le lien généré par la Console. Suivez simplement les étapes pour mettre à jour votre double facteur d'authentification.
 
-**Warning**: Assurez vous de bien être à l'origine de la demande de réinitialiser de votre double facteur d'authentification. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+__Warning__: Assurez vous de bien être à l'origine de la demande de réinitialiser de votre double facteur d'authentification. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
 
 <img src={shivaProfil_016} />
 
@@ -158,9 +157,9 @@ Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les per
 Lorsqu’un utilisateur est créé, il ne possède aucune permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
 
 Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
-	•	Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
-	•	Permissions de type “write” : autorisent la modification des configurations.
- 	•	Permissions de type “management“ : autorisent la gestion avancées des ressources.
+ • Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
+ • Permissions de type “write” : autorisent la modification des configurations.
+  • Permissions de type “management“ : autorisent la gestion avancées des ressources.
 
 - __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 
@@ -255,7 +254,6 @@ Les référentiels externes suivants sont supportés :
 - Auth0
 - KeyCloak
 
-
 ## Tenant
 
 Le tenant est un __regroupement de ressources au sein d'une organisation__. Une [Organisation](#organisations) a au minimum un tenant (appelé __tenant par défaut__, pouvant être renommé). Généralement, plusieurs tenants sont utilisés pour segmenter les responsabilités ou les périmètres techniques.
@@ -287,33 +285,36 @@ Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec
 - Un espace de stockage,
 - Un vlan réseau.
 
-
 | Référence de commande                                        | Unité    | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
 | TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
 | TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
 
-
 ### Gestion des propriétaires sur un tenant
+
 Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
 
 #### Informations importantes sur la gestion des propriétaires
 
 #### 1. Nombre de propriétaires
+
 * Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
-* L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
+- L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
 
 #### 2. Ajout d'un nouveau propriétaire
+
 * Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
-* Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
+- Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
 
 #### 2. Permissions d'un propriétaire
+
 * Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
-* Il n'est pas possible de modifier les permissions d'un propriétaire.
+- Il n'est pas possible de modifier les permissions d'un propriétaire.
 
 #### 3. Retrait d'un propriétaire
+
 * Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
-* Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
+- Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
 
 ### Autorisation d'accès à un tenant : IP autorisées
 
