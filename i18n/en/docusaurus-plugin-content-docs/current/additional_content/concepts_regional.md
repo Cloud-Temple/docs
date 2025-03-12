@@ -2,6 +2,8 @@
 title: Concepts - Régions
 ---
 
+import iaasAz001 from './images/iaas_az_001.png';
+
 ## Regions
 
 The Cloud Temple infrastructure is designed to ensure the business continuity of your applications and platforms. 
@@ -17,7 +19,7 @@ As of January 2024, the Cloud Temple IaaS platform has the following regions:
 
 The FR1 region is based on three physical sites in the Paris region. 
 
-![](images/iaas_az_001.png)
+<img src={iaasAz001} />
 
 Each site is more than 30km as the crow flies from the others. On average, there is 80km of optical distance between each site. The guaranteed latency between sites is less than 4 ms.
 
