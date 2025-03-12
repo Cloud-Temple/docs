@@ -1,5 +1,5 @@
 ---
-title: Beispiel für eine Identitätsföderation mit Microsoft ADFS
+title: Beispiel für Identitätsföderation mit Microsoft ADFS
 tags:
   - iam
   - tutorials
@@ -18,99 +18,103 @@ import ssoAdfs_010 from './images/sso_adfs_010.png'
 import ssoAdfs_011 from './images/sso_adfs_011.png'
 import ssoAdfs_012 from './images/sso_adfs_012.png'
 
-
 Hier ist ein Beispiel für die Konfiguration des Authentifizierungsverzeichnisses einer Cloud Temple-Organisation mit __Microsoft ADFS__.
 
-Die Konfiguration Ihres Microsoft-Verzeichnisses auf der Ebene einer Cloud Temple-Organisation erleichtert die Authentifizierung Ihrer Benutzer auf der Shiva-Konsole.
-Dies verhindert eine Vervielfachung der Authentifizierungsfaktoren und reduziert die Angriffsfläche.
+Die Konfiguration Ihres Microsoft-Verzeichnisses auf der Ebene einer Cloud Temple-Organisation erleichtert die Authentifizierung Ihrer Benutzer an der Shiva-Konsole.
+Dies hilft, die Vervielfachung von Authentifizierungsfaktoren zu vermeiden und die Angriffsfläche zu reduzieren.
 Wenn Ihre Benutzer bei ihrem Microsoft-Konto authentifiziert sind, wird die Authentifizierung bei den Diensten der Shiva-Konsole transparent sein.
 
 Hier sind die verschiedenen Schritte zur Durchführung dieser Konfiguration:
 
-
 ## Voraussetzungen
-Ihr Microsoft ADFS-Server muss auf die folgende Cloud Temple-URL zugreifen können: https://keycloak-shiva.cloud-temple.com/auth/.
 
-Der ADFS muss aus den Netzwerken von Cloud Temple erreichbar sein und __ein TLS-Zertifikat von einer öffentlichen CA ausstellen__.
+Ihr Microsoft ADFS-Server muss auf [die Cloud Temple-URL](https://keycloak-shiva.cloud-temple.com/auth/) zugreifen können.
 
-Die Benutzer, die sich auf dem Portal anmelden möchten, müssen ihre E-Mail, ihren Vor- und Nachnamen im Active Directory hinterlegt haben.
+Der ADFS muss von den Cloud Temple-Netzwerken aus erreichbar sein und __ein TLS-Zertifikat einer öffentlichen Zertifizierungsstelle bereitstellen__.
 
-## Schritt 2: Anfordern der Konfiguration von SSO (Single Sign-On) für Ihre Organisation
+Benutzer, die sich am Portal anmelden möchten, müssen ihre E-Mail-Adresse, Vor- und Nachnamen im Active Directory hinterlegt haben.
+
+## Schritt 2: Anforderung der SSO-Konfiguration (Single Sign-On) für Ihre Organisation
 
 Dieser Teil der Konfiguration wird auf Organisationsebene vom Cloud Temple-Team durchgeführt.
 
-Führen Sie dazu __eine Support-Anfrage__ in der Konsole durch und geben Sie an, dass Sie Ihr Microsoft ADFS-Authentifizierungsverzeichnis konfigurieren möchten.
+Stellen Sie dazu eine __Support-Anfrage__ in der Konsole, in der Sie Ihren Wunsch nach Konfiguration Ihres Microsoft ADFS-Authentifizierungsverzeichnisses angeben.
 
-Bitte geben Sie in der Support-Anfrage die folgenden Informationen an:
+Bitte geben Sie die folgenden Informationen in der Support-Anfrage an:
+
 ```
     Der Name Ihrer Organisation
-    Der Name eines Ansprechpartners mit E-Mail und Telefonnummer zur abschließenden Konfiguration
-    Öffentliche URL der Metadaten der ADFS-Föderation (<Domänenname des ADFS>/FederationMetadata/2007-06/FederationMetadata.xml)
-    (Beispiel : https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
+    Der Name eines Kontakts mit seiner E-Mail und Telefonnummer zur Finalisierung der Konfiguration
+    Öffentliche URL der ADFS-Föderationsmetadaten (<adfs-Domänenname>/FederationMetadata/2007-06/FederationMetadata.xml)
+    (Beispiel: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
-Sobald die Konfiguration auf der Shiva-Konsole abgeschlossen ist, wird der angegebene Kontakt informiert.
 
-Das Cloud Temple Support-Team stellt Ihnen eine URL zur Verfügung, die in etwa so aussieht: https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
+Sobald die Konfiguration auf der Seite der Shiva-Konsole abgeschlossen ist, wird der angegebene Kontakt informiert.
 
-*Sie können die URL in einen Browser einfügen, um sie zu testen. Wenn sie korrekt funktioniert, sollten Sie ein XML sehen.*
+Das Cloud Temple-Support-Team wird Ihnen eine URL zur Verfügung stellen, die wie folgt aussieht: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
+
+*Sie können die URL in einen Browser einfügen, um sie zu testen. Wenn sie korrekt funktioniert, sollte ein XML angezeigt werden*
 
 ## Schritt 3: Durchführung der ADFS-Konfiguration
+
 ### Konfiguration der Authentifizierungsföderation
 
-#### Hinzufügen einer Vertrauensstellung
+#### Hinzufügen einer Vertrauensstellung für die vertrauende Seite
 
-Gehen Sie auf Ihrem ADFS-Server auf __"Vertrauensstellung einer vertrauenden Partei hinzufügen"__.
+Gehen Sie auf Ihrem ADFS-Server zu __"Vertrauensstellung für die vertrauende Seite hinzufügen"__.
 
 <img src={ssoAdfs_001} />
 
 ### Konfigurieren der "Claims"
-Die Claims liefern Informationen an das Token, das an die Cloud Temple-Konsole übermittelt wird.
 
-Sie übermitteln Informationen des angemeldeten Benutzers, die für das ordnungsgemäße Funktionieren der verschiedenen Dienste erforderlich sind, wie z.B. seine E-Mail, seinen Vor- und Nachnamen.
+Claims stellen Informationen für das Token bereit, das an die Cloud Temple-Konsole übermittelt wird.
+
+Sie übertragen die Informationen des angemeldeten Benutzers, die für das ordnungsgemäße Funktionieren der verschiedenen Dienste erforderlich sind, wie z.B. seine E-Mail, seinen Vor- und Nachnamen.
 
 <img src={ssoAdfs_002} />
 
-Wählen Sie "Importieren von Daten über die vertrauende Partei, die online oder im lokalen Netzwerk veröffentlicht sind" und geben Sie die vom Cloud Temple Support bereitgestellte URL ein.
+Wählen Sie "Daten über die vertrauende Seite importieren, die online oder in einem lokalen Netzwerk veröffentlicht wurden" und geben Sie die vom Cloud Temple-Support bereitgestellte URL ein.
 
 <img src={ssoAdfs_003} />
 
-Sie können einen Namen und eine Beschreibung für die vertrauende Partei angeben, dieser Teil ist optional.
+Sie können einen Namen und eine Beschreibung für die vertrauende Seite eingeben; dieser Teil ist optional.
 
 <img src={ssoAdfs_004} />
 
-Standardmäßig erlauben wir jedem den Zugriff, aber es ist möglich, __"Eine bestimmte Gruppe zulassen"__ auszuwählen, um die Gruppen zu wählen, die über das ADFS auf die Dienste der Shiva-Konsole zugreifen dürfen.
+Standardmäßig erlauben wir allen Zugriff, aber es ist möglich, __"Eine bestimmte Gruppe zulassen"__ zu wählen, um die Gruppe(n) auszuwählen, die über ADFS auf die Dienste der Shiva-Konsole zugreifen dürfen.
 
 <img src={ssoAdfs_005} />
 
-Nachdem Sie alle diese Schritte durchgeführt haben, haben Sie die Konfiguration der vertrauenden Partei abgeschlossen.
+Sobald alle diese Schritte abgeschlossen sind, haben Sie die Konfiguration der vertrauenden Seite beendet.
 
 <img src={ssoAdfs_006} />
 
-Anschließend müssen Sie die Anspruchsausstellungsrichtlinie dieser neuen vertrauenden Partei bearbeiten.
+Sie müssen dann die Richtlinie für die Ausgabe von Ansprüchen für diese neue vertrauende Seite bearbeiten.
 
 <img src={ssoAdfs_007} />
 
-Klicken Sie auf "Regel hinzufügen" und geben Sie das Modell "Eingehenden Anspruch transformieren" an.
+Klicken Sie auf "Regel hinzufügen" und geben Sie die Vorlage an, die "Einen eingehenden Anspruch transformieren" ist.
 
 <img src={ssoAdfs_008} />
 
-Sie müssen nur die Informationen wie im Screenshot unten angegeben eingeben.
+Sie müssen nur die Informationen eingeben, wie im Screenshot unten gezeigt.
 
 <img src={ssoAdfs_009} />
 
-### Claims hinzufügen
-Fügen Sie eine zweite Regel hinzu, dieses Mal mit dem Modell "LDAP-Attribute als Claims senden".
+### Hinzufügen der Claims
+
+Fügen Sie eine zweite Regel mit der Vorlage "LDAP-Attribute als Ansprüche senden" hinzu.
 
 <img src={ssoAdfs_010} />
 
-Wählen Sie den Attributspeicher und fügen Sie die Attribute "E-Mail-Adressen, Vorname, Nachname und SAM-Account-Name" wie im Screenshot unten angegeben hinzu.
+Wählen Sie den Attributspeicher aus und fügen Sie die Attribute "E-Mail-Adressen, Vorname, Nachname und SAM-Kontoname" hinzu, wie im Screenshot unten gezeigt.
 
 <img src={ssoAdfs_011} />
 
-Sie brauchen nur noch die Änderungen anzuwenden.
+Sie müssen nur die Änderungen anwenden.
 
-## Schritt 3: Abschluss
+## Schritt 3: Finalisierung
 
-Sie können nun testen, indem Sie sich auf der Shiva-Konsole anmelden und auf die Schaltfläche für die clientseitige ADFS-Authentifizierung klicken; in diesem Beispiel ist es __"ADFS Test"__
+Sie können nun testen, indem Sie zur Shiva-Konsole gehen und auf die Schaltfläche klicken, die der ADFS-Client-Authentifizierung entspricht; in diesem Beispiel ist es __"ADFS Test"__
 
 <img src={ssoAdfs_012} />

@@ -9,7 +9,6 @@ import shivaInet_005 from './images/shiva_inet_005.png'
 import shivaInet_008 from './images/shiva_inet_008.png'
 import shivaInet_007 from './images/shiva_inet_007.png'
 
-
 ## Gestion de vos connectivités Internet
 
 La gestion de la connectivité s'effectue via le menu **'Réseau'** > **'Internet'**. Ce menu centralise la gestion des adresses IP, offrant deux catégories distinctes :

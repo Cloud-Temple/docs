@@ -13,16 +13,15 @@ import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
-
 ## Prérequis
+
 - Avoir souscrit à une offre Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
 - Avoir un accès à la console Shiva
 - Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la console shiva est limité aux adresses de confiances identifiées)
 
 ## Connexion à votre tenant Cloud Temple
-Shiva est accessible via l'URL ci-dessous:
-    https://shiva.cloud-temple.com
-    Ou bien depuis l'URL directe qui vous a été communiquée par mail.
+
+Shiva est accessible via l'URL ci-dessous: [Shiva](https://shiva.cloud-temple.com) ou bien depuis l'URL directe qui vous a été communiquée par mail.
 
 La première page vous permet de sélectionner [l'organisation](iam/concepts.md#organisations) dans laquelle votre utilisateur a été créé.
 Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
@@ -35,6 +34,7 @@ Une fois connecté, vous arrivez sur cette page.
 <img src={shivaHome} />
 
 ## Gestion de la langue
+
 La console est disponible en __francais__, __anglais__. Vous pouvez changer la langue de fonctionnement grâce à l'icône __langue__ situé en haut à droite de l'écran.
 
 Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
@@ -64,7 +64,7 @@ Vous avez ensuite la possibilité de donner des précisions et d'inclure des fic
 
 Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
 
-**CRITIQUE (P1)**:
+__CRITIQUE (P1)__:
 
 - Suspicion de fuite de données sensibles
 - Détection d'un accès non autorisé à vos données
@@ -73,7 +73,7 @@ Le commanditaire peut également préciser un niveau de criticité (P1 à P4) da
 - Comportements anormaux sur des données sensibles
 - Violation de données à caractère personnel
 
-**HAUTE (P2)h**:
+__HAUTE (P2)h__:
 
 - Dysfonctionnement des accès utilisateurs
 - Anomalie dans le chiffrement de vos données
@@ -81,14 +81,14 @@ Le commanditaire peut également préciser un niveau de criticité (P1 à P4) da
 - Incohérence dans les données
 - Lenteurs majeures impactant l'activité
 
-**MOYENNE (P3)**:
+__MOYENNE (P3)__:
 
 - Problème de performance localisé
 - Incident sur une fonction non critique
 - Erreur de configuration avec impact limité
 - Difficulté d'accès ponctuelle
 
-**BASSE (P4)**:
+__BASSE (P4)__:
 
 - Demande d'investigation
 - Anomalie sans impact direct
@@ -134,41 +134,51 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 </div>
 Les pictogrammes __'NEW'__ signifient que le produit en question a été provisionné mais n'est pas encore qualifié __offre SecNumCloud__ et __'BETA'__ signifient que le produit en question a été provisionné et vient d'être qualifié __offre SecNumCloud__.
 
-**Journalisation - Suivi des Activités**
+__Journalisation - Suivi des Activités__
 =====================================
 
 La page des activités est destinée à fournir une visibilité complète sur toutes les opérations de lecture et d'écriture réalisées au sein de la console, assurant ainsi une traçabilité et une sécurité accrues. Elle met en évidence les deux onglets principaux : Récents et Archivés.
 
 <img src={shivaLogs} />
 
-### **Structure de la Page**
+### __Structure de la Page__
 
-#### **Onglets**
-	+ **Récents**
-		- Opérations récentes
-		- Suivi en temps réel
-	+ **Archivés**
-		- Opérations sur une période plus longue
-		- Opérations archivées pour traçabilité et conformité
-#### **Informations Affichées**
-	+ Date et Heure
-	+ Type d'opération
-    + L'état
-	+ Utilisateur
-	+ Description de l'opération
-#### **Fonctionnalité**
-	+ Recherche/Filtrage pour opérations spécifiques
+#### __Onglets__
 
-### **Utilisation**
+ + **Récents**
 
-* **Accès :** permission `activity_read`
-* **Navigation :**
-	- Sélectionnez l'onglet "Récents" pour les opérations en temps réel.
-	- Choisissez "Archivés" pour consulter l'historique.
-	- Utilisez les fonctionnalités de recherche et de filtrage pour localiser des opérations spécifiques.
+- Opérations récentes
+- Suivi en temps réel
 
-#### **Note de Conformité**
-Conformément à la qualification SecNumCloud, le stockage des événements de la console Cloud Temple est d'une durée minimale de **6 mois**, garantissant ainsi le respect des exigences de sécurité et de traçabilité.
+- __Archivés__
+
+- Opérations sur une période plus longue
+- Opérations archivées pour traçabilité et conformité
+
+#### __Informations Affichées__
+
+ + Date et Heure
+
+- Type d'opération
+  - L'état
+- Utilisateur
+- Description de l'opération
+
+#### __Fonctionnalité__
+
+ + Recherche/Filtrage pour opérations spécifiques
+
+### __Utilisation__
+
+- __Accès :__ permission `activity_read`
+- __Navigation :__
+  - Sélectionnez l'onglet "Récents" pour les opérations en temps réel.
+  - Choisissez "Archivés" pour consulter l'historique.
+  - Utilisez les fonctionnalités de recherche et de filtrage pour localiser des opérations spécifiques.
+
+#### __Note de Conformité__
+
+Conformément à la qualification SecNumCloud, le stockage des événements de la console Cloud Temple est d'une durée minimale de __6 mois__, garantissant ainsi le respect des exigences de sécurité et de traçabilité.
 
 ## Consultation des dernières mises à jour
 
@@ -184,6 +194,4 @@ L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via
 
 ## Provider Terraform
 
-Cloud Temple met à votre disposition un provider Terraform pour piloter *"as code"* votre plateforme Cloud. Il est accessible ici :
-
-https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest
+Cloud Temple met à votre disposition un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter *"as code"* votre plateforme Cloud.

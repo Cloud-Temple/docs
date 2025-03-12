@@ -1,40 +1,40 @@
 ---
-title: Guide de démarrage
+title: Schnellstartanleitung
 ---
 
 
-Ce guide **Quickstart Housing** vous accompagne pour démarrer rapidement avec l’offre d’hébergement physique Cloud Temple. Il couvre les étapes essentielles pour effectuer une demande d’hébergement, configurer vos équipements, et bénéficier des services complémentaires.
+Diese **Housing Schnellstartanleitung** hilft Ihnen, schnell mit dem physischen Hosting-Angebot von Cloud Temple zu beginnen. Sie umfasst die wesentlichen Schritte zur Beantragung eines Hostings, zur Konfiguration Ihrer Geräte und zur Nutzung ergänzender Dienste.
 
-## Étape 1 : Faire une demande d’hébergement
+## Schritt 1: Hosting-Anfrage stellen
 
-1. Accédez à la console Cloud Temple.
-2. Ouvrez un dossier de service en fournissant :
-   - Nom de votre organisation.
-   - Coordonnées d’un contact (email et téléphone).
-   - Type d’hébergement souhaité (mutualisé au 'U' ou dédié par rack).
-   - Quantité et caractéristiques des équipements (taille, poids, consommation, etc.).
+1. Greifen Sie auf die Cloud Temple-Konsole zu.
+2. Eröffnen Sie ein Service-Ticket mit folgenden Angaben:
+   - Name Ihrer Organisation.
+   - Kontaktdaten (E-Mail und Telefon).
+   - Gewünschter Hosting-Typ (gemeinsam genutzt nach 'U' oder dediziert nach Rack).
+   - Menge und Eigenschaften der Geräte (Größe, Gewicht, Stromverbrauch usw.).
 
-## Étape 2 : Préparer vos équipements
+## Schritt 2: Ihre Geräte vorbereiten
 
-- Vérifiez que vos équipements respectent les contraintes techniques :
-  - Taille en unités de rack (U).
-  - Poids maximal par 'U' (25kg pour mutualisé, jusqu'à 1000kg pour un rack dédié).
-  - Consommation électrique (150W à 3Kw selon l'option souscrite).
+- Überprüfen Sie, ob Ihre Geräte die technischen Anforderungen erfüllen:
+  - Größe in Rack-Einheiten (U).
+  - Maximales Gewicht pro 'U' (25kg für gemeinsam genutzt, bis zu 1000kg für ein dediziertes Rack).
+  - Stromverbrauch (150W bis 3kW je nach abonnierter Option).
 
-## Étape 3 : Configurer la connectivité réseau
+## Schritt 3: Netzwerkkonnektivität konfigurieren
 
-1. Sélectionnez le type de port requis :
-   - Cuivre 1Gbps.
-   - Fibre 1Gbps ou 10Gbps.
-2. Ajoutez des options de connectivité en Meet Me Room si nécessaire pour l’intégration opérateur.
+1. Wählen Sie den benötigten Port-Typ:
+   - Kupfer 1Gbps.
+   - Glasfaser 1Gbps oder 10Gbps.
+2. Fügen Sie bei Bedarf Meet-Me-Room-Konnektivitätsoptionen für die Betreiberintegration hinzu.
 
-## Étape 4 : Activer les services Hands & Eyes
+## Schritt 4: Hands & Eyes-Dienste aktivieren
 
-Si besoin, demandez une assistance technique pour :
-- Installer vos équipements.
-- Configurer le câblage.
-- Effectuer des actions ponctuelles (redémarrage, photos, etc.).
+Bei Bedarf können Sie technische Unterstützung anfordern für:
+- Installation Ihrer Geräte.
+- Konfiguration der Verkabelung.
+- Durchführung spezifischer Aktionen (Neustart, Fotos usw.).
 
-## Étape 5 : Valider l'installation
+## Schritt 5: Installation validieren
 
-Une fois vos équipements installés, vérifiez leur connectivité et leur bon fonctionnement directement via la console Cloud Temple ou en coordination avec le support.
+Sobald Ihre Geräte installiert sind, überprüfen Sie deren Konnektivität und ordnungsgemäße Funktion direkt über die Cloud Temple-Konsole oder in Abstimmung mit dem Support.

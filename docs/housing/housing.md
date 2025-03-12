@@ -8,7 +8,6 @@ Le **Housing Cloud Temple** offre une solution d'hébergement physique pour vos 
 
 Avec des options flexibles et un haut niveau de sécurité, le Housing Cloud Temple garantit la continuité et la fiabilité de vos opérations, qu’il s’agisse d’héberger des appliances, des serveurs ou de bénéficier de services complémentaires pour optimiser votre infrastructure.
 
-
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>

@@ -17,11 +17,7 @@ Ce guide va vous permettre de déployer en moins de 5 minutes vos premières ins
 ## Déployer une machine virtuelle via Terraform
 
 Dans cette section, nous allons voir comment déployer en quelques minutes une machine virtuelle sur le Cloud de Confiance via le provider Terraform Cloud Temple.
-Si vous n'avez pas encore utilisé le provider Cloud Temple, suivez les instructions qui figurent à l'adresse suivante pour l'installer et vous authentifier à votre tenant :
-
-```
-https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs
-```
+Si vous n'avez pas encore utilisé le provider Cloud Temple, suivez les instructions qui figurent à [l'adresse suivante](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) pour l'installer et vous authentifier à votre tenant.
 
 On va commencer par créer un fichier .tf qui décrit l'instance que l'on souhaite déployer.
 Le script suivant permet de déployer une machine virtuelle from scratch.
@@ -71,11 +67,7 @@ Les paramètres utilisés dans ce script sont les suivants :
 - datastore_cluster_id : datastore auquel la machine est rattachée
 - guest_operating_system_moref : système d'exploitation de la machine
 
-D'autres paramètres peuvent être appliqués à une machine virtuelle lors de son déploiement. Vous pouvez retrouver l'ensemble de ces paramètres à la page suivante de la documentation Terraform :
-
-```
-https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine
-```
+D'autres paramètres peuvent être appliqués à une machine virtuelle lors de son déploiement. Vous pouvez retrouver l'ensemble de ces paramètres à la page suivante de la [documentation Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
 
 Une fois le fichier .tf créé et sauvegardé, exécutez la commande suivante pour vérifier votre code :
 
@@ -98,7 +90,7 @@ terraform apply
 ## Utiliser cloud-init pour configurer une machine virtuelle déployée depuis le provider Terraform
 
 L'outil __'cloud-init'__ permet de personnaliser une machine virtuelle, ou une instance cloud, lors de son premier démarrage. Il s'agit d'un standard qui est très largement répandu.
-Pour plus d'informations, se référer à la documentation : ```https://cloudinit.readthedocs.io/en/latest/```
+Pour plus d'informations, se référer à la [documentation](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Compatibilité
 
@@ -117,7 +109,7 @@ Si besoin, vous pouvez trouver des images compatibles cloud-init sur internet (p
 ### Déploiement
 
 Maintenant que vous êtes certain que l’OVF déployé est bien compatible à cloud-init, voici un exemple de fichier terraform (.tf) que vous pouvez utiliser pour configurer votre machine virtuelle.
-NB : Tous les exemples montrés ici peuvent être retrouvés dans le dossier exemples du repository du provider Terraform Cloud Temple ici : ```https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples```
+NB : Tous les exemples montrés ici peuvent être retrouvés dans le dossier exemples du repository du provider Terraform Cloud Temple ici : [Exemples](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
 
 #### `main.tf`
 
@@ -189,14 +181,14 @@ L’élement intéressant ici, est la présence de la propriété cloud-init, vo
 
 Ces dernières font partie d’un ensemble de 7 propriétés que vous pouvez utiliser pour configurer votre machine virtuelle avec cloud-init.
 
-* __user-data__ : Cette valeur doit être encodée en base64 et contient des notamment des informations de configuration pour les comptes utilisateurs de la machine virtuelle. Vous pouvez aussi y ajouter des scripts permettant d’installer ou mettre à jour des paquets.
-* __network-config__ : Cette valeur doit être encodée en base64 et contient notamment des informations de configuration réseau de la machine virtuelle.
-* __public-keys__ : Indique que l'instance doit remplir les 'authorized_keys' de l'utilisateur par défaut avec cette valeur.
-* __instance-id__ : Permet de définir un identifiant unique d’instance auprès de cloud-init.
-* __password__ : S'il est défini, le mot de passe de l'utilisateur par défaut sera défini à cette valeur pour permettre une connexion basée sur un mot de passe. Le mot de passe ne sera valable que pour une seule connexion. Si la valeur est 'RANDOM', un mot de passe aléatoire sera généré et affiché sur la console.
-* __hostname__ : Spécifie un nom d’hôte pour l’instance déployée.
-* __seedfrom__ : Permet de définir une URL sur laquelle cloud-init ira chercher les fichiers de configuration qu’il doit utiliser.
-Pour plus d'information sur le fonctionnement de cloud-init, veuillez vous référer à la documentation officielle. ```https://cloudinit.readthedocs.io/en/latest/```
+- __user-data__ : Cette valeur doit être encodée en base64 et contient des notamment des informations de configuration pour les comptes utilisateurs de la machine virtuelle. Vous pouvez aussi y ajouter des scripts permettant d’installer ou mettre à jour des paquets.
+- __network-config__ : Cette valeur doit être encodée en base64 et contient notamment des informations de configuration réseau de la machine virtuelle.
+- __public-keys__ : Indique que l'instance doit remplir les 'authorized_keys' de l'utilisateur par défaut avec cette valeur.
+- __instance-id__ : Permet de définir un identifiant unique d’instance auprès de cloud-init.
+- __password__ : S'il est défini, le mot de passe de l'utilisateur par défaut sera défini à cette valeur pour permettre une connexion basée sur un mot de passe. Le mot de passe ne sera valable que pour une seule connexion. Si la valeur est 'RANDOM', un mot de passe aléatoire sera généré et affiché sur la console.
+- __hostname__ : Spécifie un nom d’hôte pour l’instance déployée.
+- __seedfrom__ : Permet de définir une URL sur laquelle cloud-init ira chercher les fichiers de configuration qu’il doit utiliser.
+Pour plus d'information sur le fonctionnement de cloud-init, veuillez vous référer à la [documentation officielle](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Execution
 

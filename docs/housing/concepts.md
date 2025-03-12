@@ -2,7 +2,7 @@
 title: Concepts
 ---
 
-## Deux options sont possibles : 
+## Deux options sont possibles
 
 - __hébergement physique au 'U'__ en baie mutualisée et espace mutualisé,
 - __hébergement dédié par rack__ d'au minimum 42 'U' en espace mutualisé.
@@ -31,9 +31,9 @@ Par exemple, pour un équipement de 34 Kg, il est nécessaire de souscrire à 2 
 
 Il est possible pour chaque unité de rack de demander à bénéficier d'une ou deux prises électriques type C13 en fonction de vos besoins.
 
-Chaque prise électrique est limité à 150W sous 220v pour chaque 'U'. 
+Chaque prise électrique est limité à 150W sous 220v pour chaque 'U'.
 
-Si vous souhaitez pour votre équipement bénéficier d'une puissance de 1500W, sur deux alimentations, il est nécessaire de demander 
+Si vous souhaitez pour votre équipement bénéficier d'une puissance de 1500W, sur deux alimentations, il est nécessaire de demander
 
 1500 W / 150 W = 10 'U', soit 5 'U' (ou 750 W) par chaine électrique.
 
@@ -42,7 +42,7 @@ La connectivité réseau est à souscrire en parallèle par type de port attendu
 - Cuivre 100MBps/1Gbps,
 - Fibre 1Gbps/10Gbps via un module SFP fournit pour la connectivité coté Cloud Temple.
 
-Pour ces unités d'oeuvre, le refroidissement se fait nécessairement depuis la face avant de la baie, vers la face arrière, et **l'appliance prend sa connectivité réseau face avant de la baie.**
+Pour ces unités d'oeuvre, le refroidissement se fait nécessairement depuis la face avant de la baie, vers la face arrière, et __l'appliance prend sa connectivité réseau face avant de la baie.__
 
 __*Remarque :*__ *l'engagement minimum est de 12 mois.*
 
@@ -53,15 +53,14 @@ __*Remarque :*__ *l'engagement minimum est de 12 mois.*
 
 ### Hébergement de serveurs
 
-Les unités d'oeuvres **'Serveurs'** sont prévues pour s'adapter à la dissipation thermique des serveurs et **apporte de la connectivité réseau en face arrière**, simplifiant les opérations de maintenance et optimisant ainsi le refroidissement de la baie. 
+Les unités d'oeuvres __'Serveurs'__ sont prévues pour s'adapter à la dissipation thermique des serveurs et __apporte de la connectivité réseau en face arrière__, simplifiant les opérations de maintenance et optimisant ainsi le refroidissement de la baie.
 
-**Elle sont obligatoires pour les serveurs.**
+__Elle sont obligatoires pour les serveurs.__
 
 | Référence                                                    | Unité | SKU                                        | Engagement |
 | ------------------------------------------------------------ | ----- | ------------------------------------------ | ---------- |
 | HEBERGEMENT EN BAIE - 1 U Mutualisé - Server - 400 W (2 C19) | 2 U   | csp:(region):hosting:shared:srv:basic:v1   | 12 mois    |
 | HEBERGEMENT EN BAIE - 1 U Mutualisé - Server - 800 W (2 C19) | 2 U   | csp:(region):hosting:shared:srv:premium:v1 | 12 mois    |
-
 
 ## Hébergement dédié
 
@@ -102,7 +101,7 @@ En complément des services d'hébergement physique et de connectivité réseau,
 
 Ils sont opérés par les techniciens datacenter ou par les ingénieurs Cloud Temple spécialisés en datacenter.
 
-Voici les principales unités d'œuvres 'Hands & Eyes' disponibles. Elles visent à traiter les sujets suivants : 
+Voici les principales unités d'œuvres 'Hands & Eyes' disponibles. Elles visent à traiter les sujets suivants :
 
 - Accompagnement d'un intervenant externe préalablement identifié,
 - Constaté un statut sur un équipement (état des LEDS, état de fonctionnement, ...),

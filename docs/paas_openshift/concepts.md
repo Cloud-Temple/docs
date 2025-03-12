@@ -3,7 +3,6 @@ title: Concepts
 ---
 import oshiftOffert from './images/oshift_offert.jpg'
 
-
 ## Présentation de RedHat Openshift
 
 **Red Hat OpenShift** est une plateforme de conteneurs d'entreprise qui automatise le déploiement, la gestion et l'échelle des applications conteneurisées. C'est une plateforme construite autour de Docker, un système de conteneurisation qui permet de packager une application et ses dépendances dans un conteneur virtuel, et de Kubernetes, un système d'orchestration de conteneurs, qui gère l'exécution et la coordination des conteneurs sur un cluster de serveurs.
@@ -61,7 +60,8 @@ Red Hat OpenShift Data Foundation est une solution de stockage de données avanc
 
 ### Généralités
 
-La plateforme Red Hat OpenShift de Cloud Temple est conçue comme une offre régionale, déployée nativement sur **trois zones de disponibilité distinctes** au sein d'une même région de Cloud Temple. Cette architecture tri-zonale augmente significativement la disponibilité et la résilience des données.
+La plateforme Red Hat OpenShift de Cloud Temple est conçue comme une offre régionale, déployée nativement sur [**trois zones de disponibilité distinctes**](../additional_content/concepts_az.md) au sein d'une même [région](../additional_content/concepts_regional.md) de Cloud Temple. Cette architecture tri-zonale augmente significativement la disponibilité et la résilience des données.
+
 
 La plateforme se compose d'un plan de contrôle et de noeuds de travail, tous gérés par l'infrastructure Cloud Temple. Le plan de contrôle est réparti équitablement sur les trois zones de disponibilité, assurant une gestion centralisée et sécurisée. Les noeuds de travail, quant à eux, sont représentés par des lames de calcul, disposées de manière à ce que chaque zone de disponibilité en contienne une.
 
