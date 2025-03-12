@@ -9,33 +9,32 @@ import shivaInet_005 from './images/shiva_inet_005.png'
 import shivaInet_008 from './images/shiva_inet_008.png'
 import shivaInet_007 from './images/shiva_inet_007.png'
 
+## Managing your Internet connectivity
 
-## Management of Your Internet Connectivity
+Connectivity management is done through the **'Network'** > **'Internet'** menu. This menu centralizes IP address management, offering two distinct categories:
 
-Connectivity management is carried out through the **'Network'** > **'Internet'** menu. This menu centralizes the management of IP addresses, offering two distinct categories:
+1. **Public IP Addresses**: they are used to expose your services on the Internet, facilitating incoming and outgoing data exchanges.
+2. **Interconnection IP Addresses**: these addresses allow your gateways to direct traffic to Cloud Temple's specific network, ensuring a secure and efficient connection.
 
-1. **Public IP Addresses**: they are used to expose your services on the Internet, thereby facilitating incoming and outgoing data exchanges.
-2. **Interconnection IP Addresses**: these addresses enable your gateways to direct traffic to the specific Cloud Temple network, ensuring a secure and efficient connection.
-
-Public IP addresses allow Internet access, while interconnection IP addresses used with the BGP4 protocol ensure secure connections between networks. The latter facilitate reliable and secure exchanges between your tenant and the Cloud Temple network. The joint use of these addresses improves traffic management and enhances network security and performance.
+Public IP addresses enable Internet access, while interconnection IP addresses used with the BGP4 protocol ensure secure connections between networks. The latter facilitate reliable and secure exchanges between your tenant and the Cloud Temple network. The combined use of these addresses improves traffic management and enhances network security and performance.
 
 Here is the main interface for IP address management:
 
 <img src={shivaInet_001} />
 
-The home tab corresponds to your internal ASN dedicated to your tenant. It notably indicates important information for configuring your BGP connectivity.
+The home tab corresponds to your internal ASN dedicated to your tenant. It notably indicates important information for setting up your BGP connectivity.
 
-### Public IP Addresses
+### Public IP addresses
 
-It is possible to view and comment on the blocks and IP addresses associated with your tenant via the IPAM integrated into the Cloud Temple console:
+It is possible to view and comment on the IP blocks and addresses associated with your tenant via the IPAM integrated into the Cloud Temple console:
 
 <img src={shivaInet_002} />
 
-Ordering public IP addresses is done through the **'Order Public IPs'** button:
+Public IP addresses can be ordered via the **'Order public IPs'** button:
 
 <img src={shivaInet_003} />
 
-Reserving and assigning an IP address is done through the **'Reserve an Address'** button:
+Reserving and assigning an IP address is done via the **'Reserve an address'** button:
 
 <img src={shivaInet_004} />
 
@@ -43,16 +42,16 @@ Modifying or deleting the reservation is done via the **'Actions'** buttons:
 
 <img src={shivaInet_005} />
 
-Deleting a reservation means that the resource becomes available for another use but remains allocated and billed to the client.
+Deleting a reservation means that the resource becomes available for another use, but remains allocated and billed to the customer.
 
-On some lines, the **'Action'** button is not available, indicating that the IP addresses are reserved and thus unavailable for use.
+On some lines, the **'Action'** button is not available, indicating that the IP addresses are reserved and therefore not available for use.
 
-### Interconnection IP Addresses
+### Interconnection IP addresses
 
-Similarly, you can view and comment on interconnection IP address blocks. You can view the subnets of interconnections with the Cloud Temple network and their usage:
+Similarly, you can view and comment on interconnection IP address blocks. You can visualize the interconnection subnets with the Cloud Temple network and their usage:
 
 <img src={shivaInet_008} />
 
-You can easily modify their usage, as with public addresses, in the integrated IPAM management:
+You can easily modify, as with public addresses, their usage in the integrated IPAM management:
 
 <img src={shivaInet_007} />

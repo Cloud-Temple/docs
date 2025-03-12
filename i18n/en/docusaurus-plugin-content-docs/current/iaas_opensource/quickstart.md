@@ -1,5 +1,5 @@
 ---
-title: Getting Started Guide
+title: Quickstart Guide
 ---
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
@@ -8,12 +8,11 @@ import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_ac
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
 
-
 ## Compute
 
-### Managing Virtual Machines
+### Virtual Machine Management
 
-The interface for managing your virtual machines is available in the Shiva console in the __'OpenIaaS'__ menu located on the green banner to the left of the screen.
+The management interface for your virtual machines is available in the Shiva console in the __'OpenIaaS'__ menu located on the green sidebar on the left of the screen.
 
 ### Virtual Machine List
 
@@ -27,25 +26,25 @@ You have access to the following information for each virtual machine:
 - Its status (off, on).
 - Its availability zone (AZ).
 - Its operating system.
-- The amount of virtual CPUs (vCPU).
+- The number of virtual CPUs (vCPU).
 - The amount of virtual memory (vRAM).
 
-### Virtual Machine Actions
+### Actions on Virtual Machines
 
 The following actions are possible from this interface:
 
-- Refresh the virtual machines list.
+- Refresh the list of virtual machines.
 - Filter the list.
 - Search for a virtual machine by name.
 - Create a new virtual machine.
 
 <img src={openIaasVirtualMachinesListActions} />
 
-When you click on the green dropdown arrow on the right side of the list for a virtual machine, you get access to all the information about that machine.
+When you click on the green dropdown arrow on the right of the list for a virtual machine, you access all the information about it.
 
 <img src={openIaasVirtualMachineOverview} />
 
-A quick banner allows you to perform the following actions:
+A quick toolbar allows you to perform the following actions:
 
 <img src={openIaasVirtualMachineActions} />
 
@@ -60,20 +59,21 @@ A quick banner allows you to perform the following actions:
 - Rename it.
 - Delete it.
 
-In the '**General**' information tab, you can find detailed information related to your virtual machine, such as its physical location (AZ, Pool, Host), RAM, CPU, IP addresses, and more.
+In the '__General__' information tab, you will find detailed information about your virtual machine, such as its physical location (AZ, Pool, Host), RAM, CPU, IP addresses, and more.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-An '**Advanced**' tab allows you to view more specific information:
+An '__Advanced__' tab allows you to view more specific information:
 
-- UUID of the virtual machine
+- Virtual machine UUID
 - Guest tools
 - Guest OS
 - DVD drive
 
-As well as modify some options such as:
+As well as modify certain options such as:
+
 - Boot order
 - Secure boot
-- Automatic startup (impossible if no backup policy is associated with the VM)
+- Automatic startup (not possible if no backup policy is associated with the VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />

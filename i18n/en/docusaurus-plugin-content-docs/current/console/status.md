@@ -12,8 +12,7 @@ import shivaIncident_004 from './images/shiva_incident_004.png'
 import shivaIncident_005 from './images/shiva_incident_005.png'
 import shivaIncident_006 from './images/shiva_incident_006.png'
 
-
-Like any Cloud infrastructure platform, the Cloud Temple platform undergoes regular hardware and software maintenance works.
+Like any Cloud infrastructure platform, the Cloud Temple platform undergoes regular hardware and software maintenance work.
 
 ## Access to ongoing operations and incidents
 
@@ -25,7 +24,7 @@ This icon aims to provide visibility on planned, ongoing, and completed interven
 
 When interventions and/or incidents are ongoing, a number appears on the icon.
 
-By clicking on quick view, you will find the ongoing interventions. It is also possible to click on __‘All interventions’__ or __‘All tenant incidents and reports’__ to display more details.
+By clicking on quick view, you will find the ongoing interventions. It is also possible to click on __'All interventions'__ or __'All tenant incidents and reports'__ to display more details.
 
 <img src={shivaInterventionMenu03} />
 
@@ -35,11 +34,11 @@ The Interventions page consists of two tabs. The first tab allows you to view th
 
 <img src={shivaInterventionMenu04} />
 
-The completed interventions, on the other hand, are visible in the second tab ‘Completed’
+The completed interventions, on the other hand, are visible in the second tab 'Completed'.
 
 <img src={shivaInterventionMenu05} />
 
-Access to this information requires the user profile permission '**intervention_read**'.
+Access to this information requires the user profile permission '__intervention_read__'.
 
 ## Incident management
 
@@ -55,7 +54,7 @@ A __'Learn more'__ button redirects to the public incident tracking page, provid
 
 <img src={shivaIncident_002} />
 
-It is possible to obtain the global incident reports. Access to these reports requires the specific '**incident_management**' permission.
+It is possible to obtain the global incident reports. Access to these reports requires the specific '__incident_management__' permission.
 
 Here is an example of the tab displaying these reports:
 
@@ -63,13 +62,13 @@ Here is an example of the tab displaying these reports:
 
 ### Incidents on a client perimeter
 
-Visibility of incidents specific to a client perimeter requires the **incident_read** permission. These incidents are represented by a dedicated icon, accompanied by a red badge indicating the number of ongoing incidents.
+Visibility of incidents specific to a client perimeter requires the __incident_read__ permission. These incidents are represented by a dedicated icon, accompanied by a red badge indicating the number of ongoing incidents.
 
 The icon is clickable, allowing you to list the tickets associated with the incidents. Each ticket includes a link to the incident details, offering the possibility to track the progress of their resolution:
 
 <img src={shivaIncident_004} />
 
-To view the details of an incident, it is necessary to be the author of the incident ticket or to have the **support_management** permission.
+To view the details of an incident, it is necessary to be the author of the incident ticket or to have the __support_management__ permission.
 
 ### Notification management
 

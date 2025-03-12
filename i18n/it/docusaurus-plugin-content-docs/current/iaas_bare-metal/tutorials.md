@@ -1,9 +1,9 @@
 ---
-title: Tutorials
+title: Tutorial
 ---
 
 <div class="card">
-  <h3>Tutorials</h3>
-  <p>Nessun tutorial è disponibile al momento, ma ci stiamo lavorando attivamente. Torna presto per saperne di più!</p>
-  <a href="../" class="card-link">Accedi alla pagina principale &rarr;</a>
+  <h3>Tutorial</h3>
+  <p>Al momento non sono disponibili tutorial, ma ci stiamo lavorando attivamente. Tornate presto per saperne di più!</p>
+  <a href="../" class="card-link">Vai alla pagina iniziale &rarr;</a>
 </div>

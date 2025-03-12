@@ -2,44 +2,42 @@
 title: Übersicht
 ---
 
-Das __Bare Metal__-Angebot von Cloud Temple bietet dedizierte, vollständig anpassbare Server, um den Bedürfnissen der Kunden gerecht zu werden, die vollständige Autonomie über ihre Infrastruktur wünschen.
+Das __Bare Metal__-Angebot von Cloud Temple bietet dedizierte, vollständig anpassbare Server, um die Bedürfnisse von Kunden zu erfüllen, die vollständige Autonomie über ihre Infrastruktur suchen.
 
-Diese Lösung, die auf modernsten Technologien wie Cisco UCS zur Berechnung und IBM Spectrum Virtualize/FlashSystem zur Speicherung basiert, garantiert optimale Leistung und vorbildliche Zuverlässigkeit.
+Aufgebaut auf modernsten Technologien - Cisco UCS für die Rechenleistung und IBM Spectrum Virtualize/FlashSystem für den Speicher - garantiert diese Lösung optimale Leistung und vorbildliche Zuverlässigkeit.
 
-Mit __Bare Metal__ profitieren Sie von exklusiver Hardware ohne Virtualisierung, wodurch Sie die Softwareumgebung Ihrer Wahl installieren und verwalten können: Hypervisor, Linux, Windows oder anderes.
+Mit __Bare Metal__ profitieren Sie von exklusiver Hardware ohne gemeinsame Nutzung, die es Ihnen ermöglicht, die Software-Umgebung Ihrer Wahl zu installieren und zu verwalten: Hypervisor, Linux, Windows oder andere.
 
-Der direkte Zugang zu Ihren Servern erfolgt über die Cloud Temple-Konsole, die eine vereinfachte Verwaltung und sofortige Handhabung bietet. Egal ob Sie eine Infrastruktur für Ihre kritischen Anwendungen oder Hardware-Ressourcen für Ihre spezifischen Projekte suchen, das Bare Metal-Angebot garantiert Ihnen Flexibilität, vollständige Kontrolle und unvergleichliche Leistung.
-
+Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple-Konsole, die eine vereinfachte Verwaltung und sofortige Kontrolle bietet. Ob Sie nach einer Infrastruktur für Ihre kritischen Anwendungen oder nach Hardware-Ressourcen für Ihre spezifischen Projekte suchen, das Bare Metal-Angebot gewährleistet Flexibilität, vollständige Kontrolle und unübertroffene Leistung.
 
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Erfahren Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu meistern.</p>
-    <a href="iaas_bare-metal/concepts" class="card-link">Konzepte entdecken &rarr;</a>
+    <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="iaas_bare-metal/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Beginnen Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="iaas_bare-metal/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <h3>Schnellstart</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="iaas_bare-metal/quickstart" class="card-link">Schnellstart starten &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Erfahren Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen können.</p>
     <a href="iaas_bare-metal/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
 
-
-## Einkaufsplattformen
+## Kaufplattformen
 
 <div class="purchase-platforms">
-  <p>Sie sind ein Akteur im öffentlichen Sektor? Das <strong>Bare Metal</strong>-Angebot ist verfügbar über:</p>
+  <p>Sind Sie eine Organisation des öffentlichen Sektors? Das <strong>Bare Metal</strong>-Angebot ist zugänglich über:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        Die öffentliche Einkaufsplattform UGAP
+        Die UGAP-Plattform für öffentliche Beschaffung
       </a>
     </p>
   </div>
@@ -48,7 +46,7 @@ Der direkte Zugang zu Ihren Servern erfolgt über die Cloud Temple-Konsole, die 
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        Der CAIH-Markt für den medizinischen Sektor
+        Den CAIH-Markt für den medizinischen Sektor
       </a>
     </p>
   </div>

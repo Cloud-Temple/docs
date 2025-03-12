@@ -7,24 +7,20 @@ tags:
 import statusCloudInit from './images/status_cloud_init.png';
 import cloudInitOutput from './images/cloud-init-output.png';
 
-Dieser Leitfaden ermöglicht es Ihnen, in weniger als 5 Minuten Ihre ersten Instanzen in der Cloud of Trust zu deployen.
+Diese Anleitung ermöglicht es Ihnen, in weniger als 5 Minuten Ihre ersten Instanzen auf der Cloud of Trust zu deployen.
 
 ## __Voraussetzungen__
 
 1. Ein Abonnement des Cloud Temple Angebots (IaaS-Angebot).
-2. Aktivierte Berechtigungen für die Steuerung von __'IaaS'__-Objekten.
+2. Aktivierte Berechtigungen für den __'IaaS'__-Objekttreiber
 
 ## Bereitstellen einer virtuellen Maschine über Terraform
 
-In diesem Abschnitt werden wir sehen, wie man in wenigen Minuten eine virtuelle Maschine in der Cloud of Trust über den Terraform Cloud Temple Provider bereitstellt.
-Wenn Sie den Cloud Temple Provider noch nicht verwendet haben, folgen Sie den Anweisungen unter der folgenden Adresse, um ihn zu installieren und sich bei Ihrem Tenant zu authentifizieren:
-
-```
-https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs
-```
+In diesem Abschnitt werden wir sehen, wie man in wenigen Minuten eine virtuelle Maschine auf der Cloud of Trust über den Cloud Temple Terraform Provider bereitstellt.
+Wenn Sie den Cloud Temple Provider noch nicht verwendet haben, folgen Sie den Anweisungen unter [dieser Adresse](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs), um ihn zu installieren und sich bei Ihrem Tenant zu authentifizieren.
 
 Wir beginnen mit der Erstellung einer .tf-Datei, die die Instanz beschreibt, die wir bereitstellen möchten.
-Das folgende Skript ermöglicht die Bereitstellung einer virtuellen Maschine von Grund auf.
+Das folgende Skript ermöglicht es Ihnen, eine virtuelle Maschine von Grund auf neu zu erstellen.
 
 ```hcl
 data "cloudtemple_compute_virtual_datacenter" "dc" {
@@ -60,9 +56,9 @@ resource "cloudtemple_compute_virtual_machine" "scratch" {
 }
 ```
 
-Die in diesem Skript verwendeten Parameter sind folgende:
+Die in diesem Skript verwendeten Parameter sind wie folgt:
 
-- datacenter_id (erforderlich): Datacenter, in dem die virtuelle Maschine bereitgestellt wird
+- datacenter_id (erforderlich): Rechenzentrum, in dem die virtuelle Maschine bereitgestellt wird
 - host_cluster_id (erforderlich): Cluster, in dem die virtuelle Maschine bereitgestellt wird
 - name (erforderlich): Name der Maschine
 - memory: RAM, das der Maschine zu Beginn zugewiesen wird
@@ -71,11 +67,7 @@ Die in diesem Skript verwendeten Parameter sind folgende:
 - datastore_cluster_id: Datastore, an den die Maschine angeschlossen ist
 - guest_operating_system_moref: Betriebssystem der Maschine
 
-Weitere Parameter können bei der Bereitstellung auf eine virtuelle Maschine angewendet werden. Sie finden alle diese Parameter auf der folgenden Seite der Terraform-Dokumentation:
-
-```
-https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine
-```
+Weitere Parameter können während der Bereitstellung auf eine virtuelle Maschine angewendet werden. Sie finden alle diese Parameter auf der folgenden Seite der [Terraform-Dokumentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
 
 Sobald die .tf-Datei erstellt und gespeichert ist, führen Sie den folgenden Befehl aus, um Ihren Code zu überprüfen:
 
@@ -97,12 +89,12 @@ terraform apply
 
 ## Verwendung von cloud-init zur Konfiguration einer vom Terraform-Provider bereitgestellten virtuellen Maschine
 
-Das Tool __'cloud-init'__ ermöglicht die Anpassung einer virtuellen Maschine oder einer Cloud-Instanz bei ihrem ersten Start. Es handelt sich um einen weit verbreiteten Standard.
-Weitere Informationen finden Sie in der Dokumentation: ```https://cloudinit.readthedocs.io/en/latest/```
+Das Tool __'cloud-init'__ ermöglicht es Ihnen, eine virtuelle Maschine oder eine Cloud-Instanz bei ihrem ersten Start anzupassen. Es handelt sich um einen weit verbreiteten Standard.
+Weitere Informationen finden Sie in der [Dokumentation](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Kompatibilität
 
-Um eine vom Terraform Cloud Temple Provider bereitgestellte virtuelle Maschine über cloud-init konfigurieren zu können, muss die für die Bereitstellung verwendete __OVF__ mit __cloud-init__ __kompatibel__ sein.
+Um eine vom Cloud Temple Terraform-Provider bereitgestellte virtuelle Maschine über cloud-init konfigurieren zu können, muss das für die Bereitstellung verwendete __OVF__ mit __cloud-init__ __kompatibel__ sein.
 
 Um die Kompatibilität Ihrer virtuellen Maschine mit cloud-init zu überprüfen, geben Sie den folgenden Befehl ein:
 
@@ -112,12 +104,12 @@ Wenn cloud-init korrekt auf der Maschine installiert ist, sollten Sie eine Antwo
 
 <img src={statusCloudInit}/>
 
-Bei Bedarf können Sie cloud-init-kompatible Images im Internet finden (zum Beispiel [Ubuntu Cloud Image](https://cloud-images.ubuntu.com/)) oder es selbst auf Ihrer Maschine installieren, bevor Sie sie in OVF umwandeln.
+Bei Bedarf können Sie cloud-init-kompatible Images im Internet finden (zum Beispiel [Ubuntu Cloud Image](https://cloud-images.ubuntu.com/)) oder es selbst auf Ihrer Maschine installieren, bevor Sie sie in ein OVF umwandeln.
 
 ### Bereitstellung
 
-Nachdem Sie sichergestellt haben, dass die bereitgestellte OVF mit cloud-init kompatibel ist, finden Sie hier ein Beispiel für eine Terraform-Datei (.tf), die Sie zur Konfiguration Ihrer virtuellen Maschine verwenden können.
-Hinweis: Alle hier gezeigten Beispiele finden Sie im Beispielordner des Terraform Cloud Temple Provider-Repositories hier: ```https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples```
+Nachdem Sie sicher sind, dass das bereitgestellte OVF mit cloud-init kompatibel ist, finden Sie hier ein Beispiel für eine Terraform-Datei (.tf), die Sie zur Konfiguration Ihrer virtuellen Maschine verwenden können.
+Hinweis: Alle hier gezeigten Beispiele finden Sie im Ordner examples des Cloud Temple Terraform Provider Repositories hier: [Beispiele](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
 
 #### `main.tf`
 
@@ -185,27 +177,27 @@ users:
     plain_text_passwd: password
 ```
 
-Das Interessante hier ist das Vorhandensein der cloud-init-Eigenschaft. Sie können sehen, dass sie aus zwei Untereigenschaften besteht: __network-config__ und __user-data__.
+Das interessante Element hier ist das Vorhandensein der cloud-init-Eigenschaft, die, wie Sie sehen können, aus zwei Untereigenschaften besteht: __network-config__ und __user-data__.
 
 Diese gehören zu einer Gruppe von 7 Eigenschaften, die Sie zur Konfiguration Ihrer virtuellen Maschine mit cloud-init verwenden können.
 
-* __user-data__: Dieser Wert muss base64-kodiert sein und enthält insbesondere Konfigurationsinformationen für die Benutzerkonten der virtuellen Maschine. Sie können auch Skripte hinzufügen, um Pakete zu installieren oder zu aktualisieren.
-* __network-config__: Dieser Wert muss base64-kodiert sein und enthält insbesondere Netzwerkkonfigurationsinformationen der virtuellen Maschine.
-* __public-keys__: Gibt an, dass die Instanz die 'authorized_keys' des Standardbenutzers mit diesem Wert füllen soll.
-* __instance-id__: Ermöglicht die Definition einer eindeutigen Instanz-ID für cloud-init.
-* __password__: Wenn definiert, wird das Passwort des Standardbenutzers auf diesen Wert gesetzt, um eine passwortbasierte Anmeldung zu ermöglichen. Das Passwort ist nur für eine einzige Anmeldung gültig. Wenn der Wert 'RANDOM' ist, wird ein zufälliges Passwort generiert und auf der Konsole angezeigt.
-* __hostname__: Gibt einen Hostnamen für die bereitgestellte Instanz an.
-* __seedfrom__: Ermöglicht die Definition einer URL, von der cloud-init die zu verwendenden Konfigurationsdateien abruft.
-Für weitere Informationen zur Funktionsweise von cloud-init, beziehen Sie sich bitte auf die offizielle Dokumentation. ```https://cloudinit.readthedocs.io/en/latest/```
+- __user-data__: Dieser Wert muss base64-kodiert sein und enthält Konfigurationsinformationen für die Benutzerkonten der virtuellen Maschine. Sie können auch Skripte hinzufügen, um Pakete zu installieren oder zu aktualisieren.
+- __network-config__: Dieser Wert muss base64-kodiert sein und enthält Netzwerkkonfigurationsinformationen für die virtuelle Maschine.
+- __public-keys__: Gibt an, dass die Instanz die 'authorized_keys' des Standardbenutzers mit diesem Wert füllen soll.
+- __instance-id__: Ermöglicht die Definition einer eindeutigen Instanz-ID für cloud-init.
+- __password__: Wenn definiert, wird das Passwort des Standardbenutzers auf diesen Wert gesetzt, um eine passwortbasierte Anmeldung zu ermöglichen. Das Passwort ist nur für eine einzige Anmeldung gültig. Wenn der Wert 'RANDOM' ist, wird ein zufälliges Passwort generiert und auf der Konsole angezeigt.
+- __hostname__: Gibt einen Hostnamen für die bereitgestellte Instanz an.
+- __seedfrom__: Ermöglicht die Definition einer URL, von der cloud-init die zu verwendenden Konfigurationsdateien abruft.
+Weitere Informationen zur Funktionsweise von cloud-init finden Sie in der [offiziellen Dokumentation](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Ausführung
 
-Um die korrekte Ausführung von cloud-init zu überprüfen, sollten Sie sich mit dem Benutzer anmelden können, den Sie in der user-data.yml-Datei konfiguriert haben, oder der Hostname sollte auf den Wert geändert worden sein, den Sie in 'hostname' angegeben haben.
+Um die erfolgreiche Ausführung von cloud-init zu überprüfen, sollten Sie sich mit dem Benutzer verbinden können, den Sie in der user-data.yml-Datei konfiguriert haben, oder sehen, dass sich der Hostname in den ändert, den Sie in 'hostname' festgelegt haben.
 
 Bei Problemen können Sie die cloud-init-Logs mit dem folgenden Befehl überprüfen:
 
 `sudo cat /var/log/cloud-init-output.log`
 
-Sie sollten verschiedene Informationen über die Ausführung von cloud-init sehen. Auf dem folgenden Screenshot können Sie sehen, dass die Netzwerkkonfiguration erfolgreich durchgeführt wurde.
+Sie sollten verschiedene Informationen über die Ausführung von cloud-init sehen. In dem folgenden Screenshot können wir sehen, dass die Netzwerkkonfiguration erfolgreich abgeschlossen wurde.
 
 <img src={cloudInitOutput} />

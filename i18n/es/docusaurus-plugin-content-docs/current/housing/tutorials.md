@@ -1,12 +1,11 @@
 ---
-title: Tutoriels
+title: Tutoriales
 ---
 
-Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Shiva.
-
+Estos tutoriales le ayudan a implementar y gestionar el Housing Cloud Temple desde el portal Shiva.
 
 <div class="card">
-  <h3>Tutorials</h3>
-  <p>No hay ningún Tutorial disponible por el momento, pero estamos trabajando activamente en ello. ¡Vuelve pronto para saber más!</p>
-  <a href="../" class="card-link">Acceder a la página de inicio &rarr;</a>
+  <h3>Tutoriales</h3>
+  <p>No hay tutoriales disponibles en este momento, pero estamos trabajando activamente en ellos. ¡Vuelva pronto para obtener más información!</p>
+  <a href="../" class="card-link">Ir a la página de inicio &rarr;</a>
 </div>
