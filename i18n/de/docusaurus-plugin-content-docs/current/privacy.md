@@ -1,5 +1,5 @@
 ---
-title: Vertraulichkeit
+title: Datenschutz
 tags:
   - privacy
 ---
@@ -7,102 +7,106 @@ tags:
 
 ## Kontext
 
-Die Datenschutzpolitik existiert, um ein angemessenes Maß an Sicherheit hinsichtlich der Vertraulichkeit, Verfügbarkeit und Integrität von Informations- und personenbezogenen Datenressourcen gegenüber allen Bedrohungen zu gewährleisten, die diese beeinträchtigen könnten.
+Die Datenschutzrichtlinie existiert, um ein angemessenes Sicherheitsniveau in Bezug auf Vertraulichkeit, Verfügbarkeit und Integrität von Informationsressourcen und personenbezogenen Daten gegenüber allen Bedrohungen zu gewährleisten, die diese beeinträchtigen könnten.
 
-Cloud Temple definiert, implementiert, betreibt, überwacht, überprüft, wartet und verbessert den Prozess und die Maßnahmen in Bezug auf Datenverarbeitung und Informationssicherheit basierend auf einem Risikomanagementansatz.
+Cloud Temple definiert, wendet an, betreibt, überwacht, überprüft, erhält und verbessert den Prozess und die Maßnahmen im Zusammenhang mit der Datenverarbeitung und Informationssicherheit auf Basis eines risikobasierten Ansatzes.
 
-Die Privatsphäre der Menschen wird somit immer respektiert.
+Die Privatsphäre von Personen wird so stets respektiert.
 
+## Einleitung
 
-## Einführung
+Alle Informationen, die wir über Personen verarbeiten, speichern oder übertragen, müssen angemessen vor unbefugtem Zugriff oder Änderungen geschützt werden. Bei der Beschaffung, Speicherung zur Verarbeitung oder Übertragung von Informationen über Personen respektieren wir jederzeit deren Wünsche und ihr Recht auf Privatsphäre.
 
-Alle Informationen, die wir verarbeiten, speichern oder übertragen, die Personen betreffen, müssen angemessen vor unbefugtem Zugriff oder Änderungen geschützt werden. Bei der Beschaffung, Speicherung zur Verarbeitung oder Übertragung von Informationen, die Personen betreffen, respektieren wir jederzeit ihre Wünsche und ihr Recht auf Privatsphäre.
-
-Cloud Temple stellt die Integrität, Vertraulichkeit und Verfügbarkeit der im Rahmen der Verarbeitung personenbezogener Daten generierten Informationen sicher: Cloud Temple muss den Schutz seiner Informationsressourcen gegenüber internen oder externen, zufälligen oder vorsätzlichen Bedrohungen gewährleisten.
+Cloud Temple gewährleistet die Achtung der Integrität, Vertraulichkeit und Verfügbarkeit von Informationen, die bei der Verarbeitung personenbezogener Daten entstehen: Cloud Temple muss den Schutz seiner Informationsressourcen vor internen oder externen, zufälligen oder vorsätzlichen Bedrohungen sicherstellen.
 
 ## Ziele des Datenschutzes
-- Sicherstellung der Kontinuität der wichtigen Aktivitäten von Cloud Temple
-- Sicherstellung, dass alle von Cloud Temple verarbeiteten, gespeicherten, ausgetauschten oder veröffentlichten Informationen absolut integer sind
-- Sicherstellung, dass alle Informationen über unsere Kunden gemäß den Verfahren zur Aufrechterhaltung einer angemessenen Vertraulichkeit überwacht und gespeichert werden
-- Sicherstellung, dass informationsbezogene Personen in Übereinstimmung mit unseren Datenschutznormen und respektierend die Rechte der Einzelpersonen behandelt werden.
 
-## Datenschutzprinzipien
-- Alle Mitarbeiter werden über die Datenschutzanforderungen informiert und sind dafür verantwortlich, diese zu respektieren, soweit sie ihre Rolle betreffen.
-- Es werden Vorkehrungen getroffen, um relevante Datenschutzmaßnahmen in Betriebs- und Managementprozesse zu finanzieren.
-- Die Risiken bei der Datenverarbeitung werden überwacht, und Maßnahmen werden ergriffen, wenn Änderungen Risiken verursachen, die nicht akzeptabel sind.
-- Risikoklassifizierungs- und Akzeptabilitätskriterien finden sich im organisatorischen Rahmen der Datenschutzpolitik.
-- Situationen, die das Unternehmen in Konflikt mit Gesetzen und Vorschriften bringen könnten, werden nicht toleriert.
+- Sicherstellung der Kontinuität der entscheidenden Aktivitäten von Cloud Temple
+- Gewährleistung, dass alle von Cloud Temple verarbeiteten, gespeicherten, ausgetauschten oder veröffentlichten Informationen von absoluter Integrität sind
+- Sicherstellung, dass alle Informationen zu unseren Kunden gemäß den Verfahren zur Aufrechterhaltung einer angemessenen Vertraulichkeit überwacht und aufbewahrt werden
+- Gewährleistung, dass Informationen über Personen in einer Weise behandelt werden, die mit unseren Datenschutzgrundsätzen übereinstimmt und die Rechte des Einzelnen respektiert.
+
+## Grundsätze des Datenschutzes
+
+- Alle Mitarbeiter werden über die für ihre Rolle relevanten Datenschutzanforderungen informiert und sind für deren Einhaltung verantwortlich.
+- Es werden Vorkehrungen getroffen, um relevante Datenschutzmaßnahmen in Betriebs- und Managementprozessen zu finanzieren.
+- Risiken bei der Datenverarbeitung werden überwacht und Maßnahmen werden ergriffen, wenn Änderungen zu Risiken führen, die nicht akzeptabel sind.
+- Die Kriterien für die Risikoklassifizierung und Akzeptabilität finden sich im organisatorischen Rahmen der Datenschutzrichtlinie.
+- Situationen, die die Organisation in Verletzung von Gesetzen und Vorschriften bringen könnten, werden nicht toleriert.
 
 ## Verantwortlichkeiten
 
-Die Geschäftsführung ist verantwortlich dafür, dass der Datenschutz im Unternehmen angemessen behandelt wird.
+Die Geschäftsleitung ist dafür verantwortlich, sicherzustellen, dass der Datenschutz innerhalb des Unternehmens angemessen behandelt wird.
 
-Jeder Direktor ist dafür verantwortlich, dass die unter seiner Leitung arbeitenden Personen die Informationen gemäß den Standards der Organisation schützen.
+Jeder Direktor ist dafür verantwortlich, sicherzustellen, dass Personen, die unter seiner Leitung arbeiten, Informationen gemäß den Standards der Organisation schützen.
 
-Alle Mitarbeiter haben Datenschutzpflichten, die Teil ihrer Arbeit sind.
+Alle Mitarbeiter haben Datenschutzverantwortlichkeiten, die Teil ihrer Arbeit sind.
 
-## Hauptleistungen
+## Hauptergebnisse
 
-Angemessene und verhältnismäßige Maßnahmen werden implementiert, um die Ressourcen zu schützen und das Vertrauen der Interessengruppen zu stärken.
+Angemessene und verhältnismäßige Maßnahmen werden umgesetzt, um Ressourcen zu schützen und den interessierten Parteien Vertrauen zu geben.
 
 Die Auswirkungen von Datenschutzverletzungen werden begrenzt.
 
-Entscheidungen zu Datenschutzthemen basieren auf einer Risikobewertung, der Cloud Temple ausgesetzt ist.
+Entscheidungen zu Datenschutzthemen werden auf Grundlage einer Bewertung der Risiken getroffen, denen Cloud Temple ausgesetzt ist.
 
-Die gesetzlichen, regulatorischen und vertraglichen Anforderungen von Cloud Temple werden erfüllt.
+Die rechtlichen, regulatorischen und vertraglichen Anforderungen von Cloud Temple werden erfüllt.
 
-## Übersetzung von Informationen
+## Übersetzung der Informationen
 
-Die englischen, spanischen, italienischen und deutschen Übersetzungen dieser Dokumentation erfolgen automatisch.
+Die englischen, spanischen, italienischen und deutschen Übersetzungen dieser Dokumentation werden automatisch erstellt.
 
-Trotz der angemessenen Anstrengungen, eine qualitativ hochwertige Übersetzung zu liefern, kann Cloud Temple die Genauigkeit der darin enthaltenen Informationen nicht garantieren.
-Für Fragen hierzu konsultieren Sie bitte die französische Version der Informationen.
+Trotz angemessener Bemühungen, eine qualitativ hochwertige Übersetzung bereitzustellen, kann Cloud Temple die Richtigkeit der darin enthaltenen Informationen nicht garantieren.
+Bei Fragen dazu beziehen Sie sich bitte auf die französische Version der Informationen.
 
 ## Rechtliche Hinweise
 
 ### Herausgeber dieser Website
-Firmenname: __CLOUD TEMPLE__, Gesellschaft mit vereinfachter Haftung mit Einpersonengesellschaft
 
-Hauptsitzadresse: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
+Firmenname: __CLOUD TEMPLE__, Vereinfachte Aktiengesellschaft mit einem einzigen Aktionär
 
-Telefon (Zentrale): 01 41 91 77 77
+Adresse des Firmensitzes: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
-Registrierungsnummer im Handelsregister: 825 400 336
+Telefon (Standard): 01 41 91 77 77
+
+Handelsregisternummer: 825 400 336
 
 USt-IdNr.: FR 55 825 400 336
 
-Stammkapital: 13 174 890 Euro
+Stammkapital: 13.174.890 Euro
 
-Veröffentlichungsdirektor: Franck DUBRAY
+Publikationsdirektor: Franck DUBRAY
 
 Hosting: Cloud Temple
 
 Adresse: Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.
 
-Telefon (Zentrale): 01 41 91 77 77
+Telefon (Standard): 01 41 91 77 77
 
-### Datensammlung
-Cloud Temple verpflichtet sich, dass die Sammlung und Verarbeitung Ihrer Daten, die über die Website __docs.cloud-temple.com__ durchgeführt wird,
-den Allgemeinen Datenschutzbestimmungen (DSGVO) und dem Gesetz über Informatik und Freiheit entsprechen.
+### Datenerhebung
 
-Für Informationen oder zur Ausübung Ihrer Datenschutzrechte in Bezug auf die von Cloud Temple verwalteten Datenverarbeitung
+Cloud Temple verpflichtet sich, sicherzustellen, dass die Erhebung und Verarbeitung Ihrer Daten, die über die Website __docs.cloud-temple.com__ erfolgt,
+der Datenschutz-Grundverordnung (DSGVO) und dem französischen Datenschutzgesetz entspricht.
+
+Für Informationen oder die Ausübung Ihrer Datenschutzrechte bezüglich der von Cloud Temple verwalteten personenbezogenen Datenverarbeitung
 können Sie den Datenschutzbeauftragten (DPO) kontaktieren:
 
 per E-Mail an: __contact@cloud-temple.com__
 
-Zur Ausübung Ihrer Rechte in Bezug auf Ihre Daten müssen Sie eine Kopie eines gültigen Identitätsnachweises (Personalausweis oder Reisepass) im folgenden Format beifügen: GIF, JPG, PNG, PDF, maximal 2 MB.
+Um Ihre Rechte bezüglich Ihrer Daten auszuüben, müssen Sie eine Kopie eines gültigen Ausweisdokuments (Personalausweis oder Reisepass) als Anhang im folgenden Format beifügen: GIF, JPG, PNG, PDF, maximal 2 MB.
 
 per Post an folgende Adresse:
 
-*__Cloud Temple an die Aufmerksamkeit des Datenschutzbeauftragten (DPO) Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES__*
+*__Cloud Temple zu Händen des Datenschutzbeauftragten (DPO) Le Belvédère, 1-7 Cr Valmy, 92800 Puteaux – SPACES.__*
 
-Zur Ausübung Ihrer Rechte in Bezug auf Ihre Daten müssen Sie eine Kopie eines gültigen Identitätsnachweises (Personalausweis oder Reisepass) beifügen.
+Um Ihre Rechte bezüglich Ihrer Daten auszuüben, müssen Sie eine Kopie eines gültigen Ausweisdokuments (Personalausweis oder Reisepass) beifügen.
 
 ### Personenbezogene Daten und Cookies
-___Diese Website erhebt keine personenbezogenen Daten. Das von uns verwendete Audience-Messgerät ist so konfiguriert,
-dass die erfassten Informationen anonymisiert werden.___
 
-Die auf Ihrem Computer beim Besuch der Website abgelegten Cookies ermöglichen es uns, die Anzahl der Besuche und die am häufigsten aufgerufenen Seiten zu kennen,
-ohne Sie persönlich identifizieren zu können.
+___Diese Website erhebt keine personenbezogenen Daten. Das von uns verwendete Audience-Measurement-Tool ist so konfiguriert,
+dass die gesammelten Informationen anonymisiert werden.__*
 
-Wir entsprechen somit den Vorschriften der CNIL und sind von der vorherigen Genehmigungspflicht befreit.
+Die Cookies, die auf Ihrem Computer platziert werden, wenn Sie die Website besuchen, ermöglichen es uns, die Anzahl der Besuche und die am häufigsten aufgerufenen Seiten zu kennen,
+ohne dass wir Sie persönlich identifizieren können.
+
+Wir entsprechen somit den CNIL-Vorschriften und sind von einer vorherigen Genehmigung befreit

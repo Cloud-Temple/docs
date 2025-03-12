@@ -1,5 +1,5 @@
 ---
-title: Guida per Iniziare
+title: Guida rapida
 ---
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
@@ -8,20 +8,19 @@ import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_ac
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
 
-
 ## Calcolo
 
-### Gestione delle Macchine Virtuali
+### Gestione delle macchine virtuali
 
-L’interfaccia di gestione delle tue macchine virtuali è disponibile nella console Shiva nel menu __'OpenIaaS'__ situato sulla fascia verde a sinistra dello schermo.
+L'interfaccia di gestione delle vostre macchine virtuali è disponibile nella console Shiva nel menu __'OpenIaaS'__ situato sulla barra laterale verde a sinistra dello schermo.
 
-### Elenco delle macchine virtuali
+### Lista delle macchine virtuali
 
-Nella sezione __'Machines virtuelles'__, hai accesso all'elenco delle tue macchine virtuali ospitate sul tuo Cloud di fiducia.
+Nella sezione __'Macchine virtuali'__, avete accesso alla lista delle vostre macchine virtuali ospitate sul vostro Cloud di fiducia.
 
 <img src={openIaasVirtualMachinesList} />
 
-Hai accesso alle seguenti informazioni, per ogni macchina virtuale:
+Avete accesso alle seguenti informazioni per ogni macchina virtuale:
 
 - Il suo nome.
 - Il suo stato (spenta, accesa).
@@ -34,18 +33,18 @@ Hai accesso alle seguenti informazioni, per ogni macchina virtuale:
 
 Le seguenti azioni sono possibili da questa interfaccia:
 
-- Aggiornare l'elenco delle macchine virtuali.
-- Filtrare l'elenco.
+- Aggiornare la lista delle macchine virtuali.
+- Filtrare la lista.
 - Cercare una macchina virtuale per nome.
 - Creare una nuova macchina virtuale.
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Quando fai clic sulla freccia a discesa verde sulla destra dell'elenco per una macchina virtuale, accedi a tutte le informazioni che riguardano quella macchina.
+Quando cliccate sulla freccia a discesa verde a destra della lista per una macchina virtuale, accedete a tutte le informazioni su di essa.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Una barra rapida consente di eseguire le seguenti azioni:
+Una barra degli strumenti rapida vi permette di eseguire le seguenti azioni:
 
 <img src={openIaasVirtualMachineActions} />
 
@@ -55,25 +54,26 @@ Una barra rapida consente di eseguire le seguenti azioni:
 - Aprire la console.
 - Montare un ISO.
 - Smontare un ISO.
-- Convertire la macchina virtuale in un modello.
+- Convertire la macchina virtuale in un template.
 - Spostarla.
-- Rinominare.
+- Rinominarla.
 - Eliminarla.
 
-Nella scheda delle informazioni '**Generali**', trovi informazioni dettagliate relative alla tua macchina virtuale, come la sua posizione fisica (AZ, Pool, Host), RAM, CPU, indirizzi IP, e altro.
+Nella scheda di informazioni '__Generali__', troverete informazioni dettagliate relative alla vostra macchina virtuale, come la sua posizione fisica (AZ, Pool, Host), RAM, CPU, indirizzi IP e altro.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Una scheda '**Avanzato**' consente di consultare informazioni più specifiche:
+Una scheda '__Avanzate__' vi permette di consultare informazioni più specifiche:
 
 - UUID della macchina virtuale
 - Guest tools
-- OS ospite
-- Lettore DVD
+- Sistema operativo ospite
+- Unità DVD
 
-Inoltre, è possibile modificare alcune opzioni come:
-- L'ordine di avvio
-- Il secure boot
-- L'avvio automatico (impossibile se nessuna politica di backup è associata alla VM)
+Così come modificare alcune opzioni come:
+
+- Ordine di avvio
+- Secure boot
+- Avvio automatico (impossibile se nessuna politica di backup è associata alla VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />

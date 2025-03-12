@@ -1,5 +1,5 @@
 ---
-title: Guide de démarrage
+title: Erste Schritte
 ---
 import shivaInet_001 from './images/shiva_inet_001.png'
 import shivaInet_002 from './images/shiva_inet_002.png'
@@ -9,50 +9,49 @@ import shivaInet_005 from './images/shiva_inet_005.png'
 import shivaInet_008 from './images/shiva_inet_008.png'
 import shivaInet_007 from './images/shiva_inet_007.png'
 
+## Verwaltung Ihrer Internetkonnektivität
 
-## Verwaltung Ihrer Internetverbindungen
+Die Verwaltung der Konnektivität erfolgt über das Menü **'Netzwerk'** > **'Internet'**. Dieses Menü zentralisiert die Verwaltung von IP-Adressen und bietet zwei verschiedene Kategorien:
 
-Die Verwaltung der Konnektivität erfolgt über das Menü **'Netzwerk'** > **'Internet'**. Dieses Menü zentralisiert die Verwaltung der IP-Adressen und bietet zwei unterschiedliche Kategorien:
+1. **Öffentliche IP-Adressen**: Sie werden verwendet, um Ihre Dienste im Internet zugänglich zu machen und erleichtern so den ein- und ausgehenden Datenaustausch.
+2. **Verbindungs-IP-Adressen**: Diese Adressen ermöglichen es Ihren Gateways, den Datenverkehr zum spezifischen Netzwerk von Cloud Temple zu leiten und sorgen so für eine sichere und effiziente Verbindung.
 
-1. **Öffentliche IP-Adressen**: Diese werden verwendet, um Ihre Dienste im Internet zu veröffentlichen und somit eingehende und ausgehende Datenübertragungen zu erleichtern.
-2. **Interkonnektions-IP-Adressen**: Diese Adressen ermöglichen es Ihren Gateways, den Datenverkehr in das spezifische Netzwerk von Cloud Temple zu leiten und so eine sichere und effiziente Verbindung zu gewährleisten.
+Öffentliche IP-Adressen ermöglichen den Internetzugang, während Verbindungs-IP-Adressen, die mit dem BGP4-Protokoll verwendet werden, sichere Verbindungen zwischen Netzwerken gewährleisten. Letztere erleichtern einen zuverlässigen und sicheren Austausch zwischen Ihrem Tenant und dem Cloud Temple-Netzwerk. Die kombinierte Nutzung dieser Adressen verbessert das Verkehrsmanagement und erhöht die Sicherheit und Leistung des Netzwerks.
 
-Öffentliche IP-Adressen ermöglichen den Internetzugang, während Interkonnektions-IP-Adressen in Verbindung mit dem BGP4-Protokoll sichere Verbindungen zwischen Netzwerken gewährleisten. Letztere erleichtern sichere und zuverlässige Verbindungen zwischen Ihrem Mandanten und dem Netzwerk von Cloud Temple. Die gemeinsame Nutzung dieser Adressen verbessert das Verkehrsmanagement und stärkt die Sicherheit und Leistung des Netzwerks.
-
-Hier ist die Hauptschnittstelle zur Verwaltung der IP-Adressen:
+Hier ist die Hauptoberfläche für die IP-Adressverwaltung:
 
 <img src={shivaInet_001} />
 
-Der Start-Tab entspricht Ihrem internen ASN, der Ihrem Mandanten zugewiesen ist. Er enthält insbesondere wichtige Informationen für die Konfiguration Ihrer BGP-Konnektivität.
+Der Startreiter entspricht Ihrer internen ASN, die Ihrem Tenant zugeordnet ist. Er enthält wichtige Informationen für die Einrichtung Ihrer BGP-Konnektivität.
 
 ### Öffentliche IP-Adressen
 
-Sie können die Blöcke und IP-Adressen, die Ihrem Mandanten zugewiesen sind, über das in die Cloud Temple-Konsole integrierte IPAM anzeigen und kommentieren:
+Es ist möglich, die IP-Blöcke und -Adressen, die Ihrem Tenant zugeordnet sind, über das in die Cloud Temple-Konsole integrierte IPAM einzusehen und zu kommentieren:
 
 <img src={shivaInet_002} />
 
-Die Bestellung öffentlicher IP-Adressen erfolgt über den Button **'Öffentliche IPs bestellen'**:
+Öffentliche IP-Adressen können über die Schaltfläche **'Öffentliche IPs bestellen'** bestellt werden:
 
 <img src={shivaInet_003} />
 
-Die Reservierung und Zuweisung einer IP-Adresse erfolgt über den Button **'Eine Adresse reservieren'**:
+Die Reservierung und Zuweisung einer IP-Adresse erfolgt über die Schaltfläche **'Eine Adresse reservieren'**:
 
 <img src={shivaInet_004} />
 
-Die Änderung oder Löschung der Reservierung erfolgt über die Buttons **'Aktionen'**:
+Die Änderung oder Löschung der Reservierung erfolgt über die Schaltflächen **'Aktionen'**:
 
 <img src={shivaInet_005} />
 
-Das Löschen einer Reservierung bedeutet, dass die Ressource für eine andere Nutzung verfügbar wird, aber weiterhin dem Kunden zugewiesen und in Rechnung gestellt wird.
+Das Löschen einer Reservierung bedeutet, dass die Ressource für eine andere Verwendung verfügbar wird, aber dem Kunden weiterhin zugewiesen und in Rechnung gestellt wird.
 
-Bei einigen Zeilen ist der Button **'Aktion'** nicht verfügbar, was darauf hinweist, dass die IP-Adressen reserviert und somit nicht für eine Nutzung verfügbar sind.
+Bei einigen Zeilen ist die Schaltfläche **'Aktion'** nicht verfügbar, was darauf hinweist, dass die IP-Adressen reserviert und daher nicht für eine Verwendung verfügbar sind.
 
-### Interkonnektions-IP-Adressen
+### Verbindungs-IP-Adressen
 
-In gleicher Weise können Sie die Blöcke der Interkonnektions-IP-Adressen anzeigen und kommentieren. Sie können die Interkonnektionsnetze mit dem Cloud Temple-Netzwerk und deren Nutzung anzeigen:
+Ebenso können Sie Verbindungs-IP-Adressblöcke einsehen und kommentieren. Sie können die Verbindungssubnetze mit dem Cloud Temple-Netzwerk und deren Verwendung visualisieren:
 
 <img src={shivaInet_008} />
 
-Sie können, wie bei den öffentlichen Adressen, deren Nutzung im integrierten IPAM-Management leicht ändern:
+Sie können, wie bei öffentlichen Adressen, deren Verwendung in der integrierten IPAM-Verwaltung leicht ändern:
 
 <img src={shivaInet_007} />

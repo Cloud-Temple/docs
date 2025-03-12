@@ -1,22 +1,23 @@
 ---
-title: Guide de démarrage
+title: Schnellstartanleitung
 ---
 import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
 import shivaBareMetalList from './images/shiva_bare-metal_list.png'
 import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
 import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
 
+# Schnellstart für das Bare Metal-Angebot
 
-# QuickStart für das Bare Metal Angebot
-
-Diese Seite führt Sie durch die ersten Schritte zur Nutzung des **Bare Metal** Angebots über die Cloud Temple-Konsole. Folgen Sie diesen Anweisungen, um die verfügbaren Menüs und Funktionen zu entdecken.
+Diese Seite führt Sie durch die ersten Schritte zur Nutzung des **Bare Metal**-Angebots über die Cloud Temple-Konsole. Folgen Sie diesen Anweisungen, um die verfügbaren Menüs und Funktionen kennenzulernen.
 
 ---
 
 ## Voraussetzungen
-Bevor Sie beginnen, stellen Sie sicher, dass:
-1. **Aktiviertes Abonnement**: Ihre Organisation muss das Bare Metal-Angebot abonniert haben.
-2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Rechte zum Zugriff und zur Verwaltung der Bare Metal-Ressourcen verfügen.
+
+Bevor Sie beginnen, stellen Sie sicher, dass folgende Punkte erfüllt sind:
+
+1. **Aktives Abonnement**: Ihre Organisation muss das Bare Metal-Angebot abonniert haben.
+2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die notwendigen Rechte verfügen, um auf Bare Metal-Ressourcen zuzugreifen und diese zu verwalten.
 
 ---
 
@@ -30,7 +31,8 @@ Sobald das Abonnement aktiviert und die Berechtigungen konfiguriert sind, ersche
 
 ### 1. Untermenü **Bare Metal**
 
-Das Untermenü **Bare Metal** zeigt Ihnen eine Tabelle mit allen verfügbaren Bare Metal-Instanzen. Diese Tabelle enthält die wichtigsten Informationen zu jeder Instanz:
+Das Untermenü **Bare Metal** zeigt eine Tabelle mit allen verfügbaren Bare Metal-Instanzen. Diese Tabelle enthält die wichtigsten Informationen für jede Instanz:
+
 - **Name des Bare Metal**
 - **Status**
 - **Hardware-Konfiguration**
@@ -39,9 +41,10 @@ Das Untermenü **Bare Metal** zeigt Ihnen eine Tabelle mit allen verfügbaren Ba
 <img src={shivaBareMetalList} />
 
 #### Hauptfunktionen
-- **Aktionsbutton**: Ermöglicht den direkten Zugriff auf die Verwaltungs-Konsole des Bare Metal.
-- **Klickbarer Name**: Durch Klicken auf den Namen einer Bare Metal-Instanz wird eine neue Seite mit den **vollständigen Details** der Instanz angezeigt:
-  - Hardware-Informationen (RAM, CPU, GPU, etc.).
+
+- **Aktionsschaltfläche**: Ermöglicht direkten Zugriff auf die Bare Metal-Administrationskonsole.
+- **Anklickbarer Name**: Durch Klicken auf den Namen einer Bare Metal-Instanz wird eine neue Seite mit den **vollständigen Details** der Instanz angezeigt:
+  - Hardware-Informationen (RAM, CPU, GPU usw.).
   - Netzwerkkonfiguration (zugeordnete IP-Adressen).
   - Konnektivitätsinformationen für die Verwaltung.
 
@@ -51,15 +54,17 @@ Das Untermenü **Bare Metal** zeigt Ihnen eine Tabelle mit allen verfügbaren Ba
 
 ### 2. Untermenü **Volumes**
 
-Das Untermenü **Volumes** zeigt eine Tabelle mit allen Speicher-Volumes, die mit Ihrem Bare Metal-Abonnement verknüpft sind. Für jedes Volume stehen die folgenden Informationen zur Verfügung:
+Das Untermenü **Volumes** zeigt eine Tabelle mit allen Speichervolumes, die mit Ihrem Bare Metal-Abonnement verknüpft sind. Für jedes Volume sind folgende Informationen verfügbar:
+
 - **Name des Volumes**
 - **Kapazität**
 - **Leistungsklasse** (IOPS pro TB)
-- **Status** (Verfügbar, In Bereitstellung, etc.)
+- **Status** (Verfügbar, Wird bereitgestellt usw.)
 
 <img src={shivaBareMetalStoragelist} />
 
 #### Hauptfunktionen
-- Volume-Verwaltung: Aus dieser Tabelle können Sie die Volumes Ihren Bare Metal-Instanzen zuordnen.
+
+- Volume-Verwaltung: Von dieser Tabelle aus können Sie Volumes Ihren Bare Metal-Instanzen zuordnen.
 
 ---

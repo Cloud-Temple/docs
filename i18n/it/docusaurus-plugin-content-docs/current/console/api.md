@@ -54,7 +54,7 @@ La documentazione OpenAPI 3.0 (Swagger) delle API della console Cloud Temple è 
 
 <img src={ShivaApi001} />
 
-L'accesso alle API richiede l'autenticazione. Una volta autenticato tutte le operazioni devono avere l'intestazione
+L'accesso alle API richiede l'autenticazione. Una volta autenticato, tutte le operazioni devono avere l'intestazione
 __'Authorization'__ con il bearer access token ottenuto durante la fase di autenticazione.
 
 L'URL dei punti di accesso è fornito direttamente in __Swagger__ (nell'oggetto "Servers" di ogni pagina delle API).
@@ -149,16 +149,16 @@ con un codice di errore HTTP 429, segnalando che è stato superato il limite di 
 Ecco i limiti definiti:
 
 | Prodotto             | Soglia limite |
-|----------------------|--------------|
-| Console Cloud Temple | 60 r/s       |
-| Identità (IAM)       | 60 r/s       |
-| IaaS - Calcolo       | 60 r/s       |
-| IaaS - Archiviazione | 20 r/s       |
-| IaaS - Backup        | 60 r/s       |
-| PaaS - S3            | 60 r/s       |
-| PaaS - Openshift     | 60 r/s       |
-| Rete                 | 60 r/s       |
-| Hosting              | 60 r/s       |
+|----------------------|---------------|
+| Console Cloud Temple | 60 r/s        |
+| Identità (IAM)       | 60 r/s        |
+| IaaS - Calcolo       | 60 r/s        |
+| IaaS - Archiviazione | 20 r/s        |
+| IaaS - Backup        | 60 r/s        |
+| PaaS - S3            | 60 r/s        |
+| PaaS - Openshift     | 60 r/s        |
+| Rete                 | 60 r/s        |
+| Hosting              | 60 r/s        |
 
 ### Come funzionano i limiti di tasso?
 
@@ -183,14 +183,14 @@ Questa situazione si verifica spesso quando più richieste vengono eseguite in p
 utilizzando più processi o thread.
 
 Esistono diversi modi per migliorare l'efficienza della tua automazione, inclusi l'uso di meccanismi
-di __caching__ e l'implementazione di un __sistema di ripetizione con attenuazione progressiva__. Questo metodo consiste
+di __caching__ e l'implementazione di un __sistema di ripetizione con backoff progressivo__. Questo metodo consiste
 nel fare una breve pausa quando si incontra un errore di limite di tasso, quindi riprovare la richiesta.
 Se la richiesta fallisce di nuovo, la durata della pausa viene aumentata progressivamente fino a quando la richiesta non riesce
 o fino a quando non viene raggiunto un numero massimo di tentativi.
 
 Questo approccio presenta numerosi vantaggi:
 
-- __L'attenuazione progressiva__ garantisce che i primi tentativi vengano fatti rapidamente, prevedendo al contempo tempi di attesa più lunghi in caso di fallimento ripetuto.
+- __Il backoff progressivo__ garantisce che i primi tentativi vengano fatti rapidamente, prevedendo al contempo tempi di attesa più lunghi in caso di fallimento ripetuto.
 - L'aggiunta di __una variazione casuale__ alla pausa aiuta a evitare che tutti i tentativi si verifichino simultaneamente.
 
 È importante notare che __le richieste fallite non influiscono sul tuo limite di tasso__.
@@ -198,7 +198,7 @@ Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione 
 poiché questo comportamento potrebbe essere modificato in futuro. Pertanto, si consiglia di non dipendere esclusivamente da questo meccanismo.
 
 Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python
-sono dei buoni punti di partenza per implementare strategie di attenuazione.
+sono dei buoni punti di partenza per implementare strategie di backoff.
 
 ## Ciclo di vita di un endpoint API
 

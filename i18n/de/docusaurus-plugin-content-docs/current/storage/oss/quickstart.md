@@ -16,67 +16,66 @@ import S3Lifecycle from './images/S3_lifecycle.png'
 import S3CreatePopup_002 from './images/S3_create_popup_002.png'
 import S3Delete from './images/S3_delete.png'
 
+## Auflisten aller S3-Buckets in Ihrem Tenant
 
-## Auflisten aller S3-Buckets Ihres Tenants
-
-Sie können auf alle Ihre Buckets über das Menü '__Objektspeicher__' der Cloud Temple-Konsole zugreifen:
+Sie können auf alle Ihre Buckets über das Menü '__Objektspeicher__' in der Cloud Temple-Konsole zugreifen:
 
 <img src={S3ListBucket} />
 
-Sie können alle auf Ihrem Tenant erstellten Konten, die zum Zugriff auf den S3-Service berechtigt sind, über die Registerkarte '__Speicherkonten__' einsehen.
+Sie können alle auf Ihrem Tenant erstellten und für den Zugriff auf den S3-Dienst autorisierten Konten über den Tab '__Speicherkonten__' einsehen.
 
 <img src={S3Accounts} />
 
 ## Erstellen eines neuen Speicherkontos
 
-Die Erstellung eines Speicherkontos auf Ihrem Tenant erfolgt, indem Sie auf die Schaltfläche '__Neues Speicherkonto__' oben rechts in der Registerkarte '__Speicherkonten__' klicken:
+Um ein Speicherkonto auf Ihrem Tenant zu erstellen, klicken Sie auf die Schaltfläche '__Neues Speicherkonto__' in der oberen rechten Ecke des Tabs '__Speicherkonten__':
 
 <img src={S3CreateAccount} />
 
-Die Plattform gibt Ihnen dann den Zugriffsschlüssel und den geheimen Schlüssel für Ihren Bucket:
+Die Plattform stellt Ihnen dann den Zugriffsschlüssel und den geheimen Schlüssel für Ihren Bucket zur Verfügung:
 
 <img src={S3StorageKeys} />
 
-__ACHTUNG:__ Die geheimen und Zugriffsschlüssel werden nur einmal angezeigt. Nach diesem ersten Erscheinen ist es unmöglich, den geheimen Schlüssel erneut einzusehen. Es ist daher wichtig, diese Informationen sofort zu notieren; andernfalls müssen Sie ein neues Schlüsselpaar generieren.
+__ACHTUNG:__ Die geheimen und Zugriffsschlüssel werden nur einmal angezeigt. Nach dieser ersten Anzeige ist es nicht mehr möglich, den geheimen Schlüssel erneut einzusehen. Es ist daher wichtig, diese Informationen sofort zu notieren; andernfalls müssen Sie ein neues Schlüsselpaar generieren.
 
-Die Neugenerierung erfolgt über die Optionen des Schlüssels, indem Sie die Option "Zugriffsschlüssel zurücksetzen" wählen.
+Die Schlüsselregenerierung erfolgt in den Schlüsseloptionen durch Auswahl von "Zugriffsschlüssel zurücksetzen".
 
 <img src={S3Keyregen} />
 
-
 ## Erstellen eines S3-Buckets
 
-Das Erstellen eines neuen Buckets erfolgt durch Klicken auf die Schaltfläche '__Neuer Bucket__' oben rechts auf dem Bildschirm:
+Um einen neuen Bucket zu erstellen, klicken Sie auf die Schaltfläche '__Neuer Bucket__' oben rechts auf dem Bildschirm:
 
 <img src={S3Create} />
 
-Es erscheint ein Fenster, in dem Sie folgendes angeben müssen:
+Es erscheint ein Fenster, in dem Sie Folgendes angeben müssen:
 
-1. Die **Region**, in der Ihr Bucket erstellt werden soll,
-2. Der **Typ** des Buckets: Leistungsfähig oder Archivierung,
-3. Der **Name** Ihres Buckets (muss eindeutig sein).
+1. Die __Region__, in der Ihr Bucket erstellt werden soll,
+2. Der __Typ__ des Buckets: Leistung oder Archivierung,
+3. Der __Name__ Ihres Buckets (er muss eindeutig sein).
 
 <img src={S3CreatePopup_001} />
 
-Ab dem 3. April 2024 ist die verfügbare Region **FR1** (Paris) und nur der leistungsfähige Typ ist verfügbar.
+Stand 3. April 2024 ist die verfügbare Region __FR1__ (Paris) und nur der Leistungstyp ist verfügbar.
 
-Sie müssen auch festlegen, wer auf Ihren Bucket zugreifen kann:
+Sie müssen auch wählen, wer auf Ihren Bucket zugreifen kann:
 
-- **Privater** Zugriff: Standardmäßig ist der Zugriff auf spezifische IP-Adressen von Cloud Temple beschränkt.
-- **Öffentlicher** Zugriff: Der Zugriff ist für alle Internetadressen geöffnet (insbesondere durch die Regel 0.0.0.0/0). Eine Authentifizierung ist jedoch weiterhin erforderlich. Wir raten aufgrund der Sicherheitsimplikationen von dieser Konfiguration ab.
-- **Benutzerdefinierter** Zugriff: Mit dieser Option können Sie die IPv4-Adressen oder die Netzwerksubnetzbereiche angeben, die Sie zulassen möchten.
+- __Privater__ Zugriff: Standardmäßig ist der Zugriff auf bestimmte Cloud Temple-IP-Adressen beschränkt.
+- __Öffentlicher__ Zugriff: Der Zugriff ist für alle Internetadressen offen (insbesondere über die Regel 0.0.0.0/0). Eine Authentifizierung ist jedoch weiterhin erforderlich. Wir empfehlen diese Konfiguration aufgrund ihrer Sicherheitsimplikationen nicht.
+- __Benutzerdefinierter__ Zugriff: Diese Option ermöglicht es Ihnen, die IPv4-Adressen oder Subnetz-Bereiche anzugeben, die Sie autorisieren möchten.
 
-## Zuordnung eines Speicherkontos zu einem Bucket
+## Zuordnen eines Speicherkontos zu einem Bucket
 
-Die Kontozuweisungen zu Buckets werden in der Registerkarte '__Richtlinien__' vorgenommen
+Kontozuordnungen zu Buckets werden im Tab '__Richtlinien__' vorgenommen
 
 <img src={S3AccountAssign} />
 
-Diese Zuordnung ermöglicht es, dem Speicherkonto den Zugriff auf den Bucket zu gewähren. Es gibt vier Rollen:
+Diese Zuordnung gibt dem Speicherkonto Zugriff auf den Bucket. Es gibt vier Rollen:
 
-1. **Verwalter**: Lese-, Schreib-, Rechteverwaltungs- und Richtlinienverwaltungsrechte
+1. __Betreuer__: Lese-, Schreib-, Rechteverwaltungs- und Richtlinienverwaltungsberechtigungen
 
 Die S3-Berechtigungen hinter dieser Rolle:
+
 ```json
 {
     "name": "maintainer",
@@ -86,9 +85,10 @@ Die S3-Berechtigungen hinter dieser Rolle:
 }
 ```
 
-2. **Schreiber und Leser**: Lesen und Bearbeiten, Ändern, Löschen von Dateien in den Buckets.
+2. __Schreiber und Leser__: Lesen und Bearbeiten, Ändern, Löschen von Dateien in Buckets.
 
 Die S3-Berechtigungen hinter dieser Rolle:
+
 ```json
 {
     "name": "read_write",
@@ -100,9 +100,10 @@ Die S3-Berechtigungen hinter dieser Rolle:
 }
 ```
 
-3. **Schreiber**: Lesen und Bearbeiten, Ändern, Löschen von Dateien in den Buckets.
+3. __Schreiber__: Lesen und Bearbeiten, Ändern, Löschen von Dateien in Buckets.
 
 Die S3-Berechtigungen hinter dieser Rolle:
+
 ```json
 {
     "name": "write_only",
@@ -113,9 +114,10 @@ Die S3-Berechtigungen hinter dieser Rolle:
 }
 ```
 
-4. **Leser**: Lesen und Herunterladen von Dateien in den Buckets.
+4. __Leser__: Lesen von Dateien in Buckets und Herunterladen.
 
 Die S3-Berechtigungen hinter dieser Rolle:
+
 ```json
 {
     "name": "read_only",
@@ -130,53 +132,52 @@ Die S3-Berechtigungen hinter dieser Rolle:
 
 ## Durchsuchen eines S3-Buckets
 
-Wenn Sie auf den Namen eines Buckets klicken, haben Sie zunächst Zugriff auf die Registerkarte '__Dateien__', um deren Inhalt zu sehen:
+Wenn Sie auf einen Bucket-Namen klicken, greifen Sie zuerst auf den Tab '__Dateien__' zu, um seinen Inhalt zu sehen:
 
 <img src={S3Files} />
 
-In der Registerkarte '__Einstellungen__' können Sie die Detailinformationen Ihres S3-Buckets sehen:
+Im Tab '__Einstellungen__' können Sie die Details Ihres S3-Buckets sehen:
 
 <img src={S3Params} />
 
-Sie haben dann:
+Sie sehen:
 
 1. Den Namen des S3-Buckets,
 2. Seine Region
-3. Die Anzahl der darin enthaltenen Objekte und die Größe des Buckets in Byte,
+3. Die Anzahl der enthaltenen Objekte und die Größe des Buckets in Bytes,
 4. Seinen Endpunkt,
-5. Die Lebenszykluseinstellungen, die insbesondere das Verfallsdatum der Bucket-Objekte definieren. '__0__' entspricht einer unbegrenzten Aufbewahrung.
+5. Die Lebenszykluseinstellungen, die das Ablaufdatum der Objekte im Bucket definieren. '__0__' entspricht einer unbegrenzten Aufbewahrung.
 
-Sie können den Aufbewahrungsparameter über die Schaltfläche '__Bearbeiten__' des Lebenszyklus ändern:
+Sie können den Aufbewahrungsparameter über die Schaltfläche '__Bearbeiten__' im Lebenszyklusbereich ändern:
 
 <img src={S3Lifecycle} />
 
-Schließlich können Sie dessen Zugriffstypologie ändern.
+Schließlich können Sie seine Zugriffstypologie ändern.
 
-## Beschränkungen des Zugriffs auf Ihre S3-Buckets
+## Einschränken des Zugriffs auf Ihre S3-Buckets
 
-Es ist sehr einfach, die Zugriffsbeschränkungen auf Ihre S3-Buckets zu konfigurieren. Beim Erstellen eines Buckets haben Sie die Wahl zwischen drei Zugriffskonfigurationen:
+Es ist sehr einfach, Zugriffsbeschränkungen für Ihre S3-Buckets zu konfigurieren. Bei der Erstellung eines Buckets haben Sie die Wahl zwischen drei Zugriffskonfigurationen:
 
 <img src={S3CreatePopup_001} />
 
-- **Privater** Zugriff: Standardmäßig ist der Zugriff auf spezifische IP-Adressen von Cloud Temple beschränkt.
-- **Öffentlicher** Zugriff: Der Zugriff ist für alle Internetadressen geöffnet (insbesondere durch die Regel 0.0.0.0/0). Wir raten aufgrund der Sicherheitsimplikationen von dieser Konfiguration ab.
-- **Benutzerdefinierter** Zugriff: Mit dieser Option können Sie die IPv4-Adressen oder die Netzwerksubnetzbereiche angeben, die Sie zulassen möchten:
+- __Privater__ Zugriff: Standardmäßig ist der Zugriff auf bestimmte Cloud Temple-IP-Adressen beschränkt.
+- __Öffentlicher__ Zugriff: Der Zugriff ist für alle Internetadressen offen (insbesondere über die Regel 0.0.0.0/0). Wir empfehlen diese Konfiguration aufgrund ihrer Sicherheitsimplikationen nicht.
+- __Benutzerdefinierter__ Zugriff: Diese Option ermöglicht es Ihnen, die IPv4-Adressen oder Subnetz-Bereiche anzugeben, die Sie autorisieren möchten:
 
 <img src={S3CreatePopup_002} />
 
-*Die IPv6-Unterstützung ist für das erste Halbjahr 2025 geplant.*
+*IPv6-Unterstützung ist für die erste Hälfte des Jahres 2025 geplant.*
 
 ## Löschen eines S3-Buckets
 
-Das Löschen eines Buckets erfolgt in den mit dem Bucket verknüpften Aktionen, indem Sie die Option '__Löschen__' wählen.
+Um einen Bucket zu löschen, verwenden Sie die mit dem Bucket verbundenen Aktionen, indem Sie die Option '__Löschen__' auswählen.
 
 <img src={S3Delete} />
 
-_**ACHTUNG: Das Löschen ist endgültig und es besteht keine Möglichkeit, die Daten wiederherzustellen.**_
-
+***ACHTUNG: Das Löschen ist endgültig und es gibt keine Möglichkeit, die Daten wiederherzustellen.***
 
 ## Wie wird das S3-Angebot von Cloud Temple abgerechnet?
 
-Der Preis ist ein monatlicher Preis, pro gespeichertes GiB, monatlich abgerechnet. Die Plattform zählt jedoch die Nutzung stundenweise und berechnet die Abrechnung auf einer monatlichen Basis von 720 Stunden.
+Der Preis ist ein monatlicher Preis, pro GiB Speicher, der monatlich abgerechnet wird. Die Plattform zählt jedoch die Nutzung stündlich und rechnet auf einer monatlichen Basis von 720 Stunden ab.
 
-Zum Beispiel, wenn Sie im Monat 30 GiB für 1 Stunde und dann nichts, und ein paar Tage später 30 GiB für 2 Stunden nutzen, wird die monatliche Rechnung *(Preis (1 x 30 GiB) + 2 x Preis (30 GiB)) / 720* für den betreffenden Monat betragen. Die Abrechnung erfolgt nachträglich.
+Wenn Sie beispielsweise im Monat 30 GiB für 1 Stunde verbrauchen, dann nichts, und dann einige Tage später 30 GiB für 2 Stunden, beträgt die monatliche Rechnung *( Preis (1 x 30GiB) + 2 x Preis (30GiB) ) / 720* für den betreffenden Monat. Die Abrechnung erfolgt nachträglich.
