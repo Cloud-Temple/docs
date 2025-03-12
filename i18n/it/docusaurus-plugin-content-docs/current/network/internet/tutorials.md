@@ -1,5 +1,5 @@
 ---
-title: Tutoriels
+title: Tutorials
 ---
 
 <div class="card">

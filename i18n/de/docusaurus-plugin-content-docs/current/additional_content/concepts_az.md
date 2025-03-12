@@ -1,5 +1,5 @@
 ---
-title: Concepts - Zones de disponibilité
+title: Konzepte - Verfügbarkeitsbereiche
 ---
 
 ## Verfügbarkeitszonen
@@ -14,6 +14,6 @@ Die Shiva-Konsole bietet Ihnen automatisch Verfügbarkeitszonen an verschiedenen
 *__Hinweis: Wenn Sie eine spezifische Konfiguration für einen bestimmten Kontext benötigen (mehrere AZs am selben physischen Standort), ist es notwendig, eine Support-Anfrage zu stellen.__*
 
 
-| Bestellreferenz                                                      | Einheit         | SKU                       |  
+| Bestellreferenz                                                      | Einheit         | SKU                       |
 |---------------------------------------------------------------------|-----------------|---------------------------|
 | TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 AZ pro Tenant | csp:*(REGION)*:iaas:az:v1 |

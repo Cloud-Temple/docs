@@ -1,14 +1,14 @@
 Ecco la traduzione in italiano, mantenendo la formattazione Markdown e senza tradurre i contenuti all'interno dei segnaposto:
 
 ---
-title: Concepts - Régions
+title: Concetti - Regioni
 ---
 
 import iaasAz001 from './images/iaas_az_001.png';
 
 ## Regioni
 
-L'infrastruttura Cloud Temple è progettata per consentire la continuità operativa delle tue applicazioni e piattaforme. 
+L'infrastruttura Cloud Temple è progettata per consentire la continuità operativa delle tue applicazioni e piattaforme.
 All'interno di una regione, benefici di una continuità di rete di livello 2.
 
 Pertanto, è possibile definire un'architettura tecnica nella regione di Parigi, utilizzando 3 siti fisici per consentire l'implementazione di una piattaforma ad alta disponibilità con quorum.
@@ -19,7 +19,7 @@ A gennaio 2024, la piattaforma IaaS Cloud Temple dispone delle seguenti regioni:
 
 ### Regione FR1
 
-La regione FR1 si basa su tre siti fisici nella regione parigina. 
+La regione FR1 si basa su tre siti fisici nella regione parigina.
 
 <img src={iaasAz001} />
 

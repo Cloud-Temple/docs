@@ -1,5 +1,5 @@
 ---
-title: Concepts
+title: Konzepte
 ---
 
 Das __IaaS (Infrastructure As A Service)__-Angebot von Cloud Temple ist darauf ausgelegt, kritische Anforderungen an Kontinuität und Notfallwiederherstellung zu erfüllen, mit einem besonderen Schwerpunkt auf anspruchsvolle Branchen wie Industrie, Bankwesen und Versicherungen. Basierend auf modernster Technologie gewährleistet diese Infrastruktur maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Workloads.
@@ -36,11 +36,11 @@ Die Plattform ist von der [ANSSI](https://www.ssi.gouv.fr/) als **SecNumCloud** 
 
 ## Vorteile
 
-| Vorteil              | Beschreibung                                                                                                                                    |   
+| Vorteil              | Beschreibung                                                                                                                                    |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| Digitale Vertrauenswürdigkeit | Datenhosting in Frankreich und Konformität mit der DSGVO.                                                                                        |   
-| Sicherheit           | Hochsichere Plattform, zertifiziert nach **SecNumCloud**, **HDS** (Hosting von Gesundheitsdaten), **ISO 27001** und **ISAE 3402 Typ II**.         |  
-| Hohe Verfügbarkeit   | Plattformverfügbarkeit von 99,99%, monatlich gemessen, einschließlich Wartungsfenster.                                                           |   
+| Digitale Vertrauenswürdigkeit | Datenhosting in Frankreich und Konformität mit der DSGVO.                                                                                        |
+| Sicherheit           | Hochsichere Plattform, zertifiziert nach **SecNumCloud**, **HDS** (Hosting von Gesundheitsdaten), **ISO 27001** und **ISAE 3402 Typ II**.         |
+| Hohe Verfügbarkeit   | Plattformverfügbarkeit von 99,99%, monatlich gemessen, einschließlich Wartungsfenster.                                                           |
 | Resilienz            | Implementierung von Kontinuitäts- oder Notfallwiederherstellungsplänen je nach Bedarf.                                                             |
 | Automatisierung      | Vollständig automatisierte Plattform, konzipiert für die Integration in ein Digitalisierungsprogramm.                                              |
 | On-Demand            | Ressourcen sind auf Abruf verfügbar.                                                                                                             |
@@ -97,9 +97,9 @@ Der Netzwerkdienst auf der IaaS-Plattform von Cloud Temple basiert auf einer VPL
 Die in der IaaS-Angebot verfügbaren VLANs sind vom Typ **Stufe 2** und bieten eine vollständige Netzwerksicherheit und eine anpassbare Konfiguration entsprechend den Anforderungen.
 
 #### Hauptkonzepte:
-- **Gemeinsame Nutzung zwischen Clustern und Verfügbarkeitszonen (AZ)**: 
+- **Gemeinsame Nutzung zwischen Clustern und Verfügbarkeitszonen (AZ)**:
    - Die VLANs können zwischen den verschiedenen AZs und Clustern desselben Tenants geteilt werden.
-- **Propagation zwischen Tenants**: 
+- **Propagation zwischen Tenants**:
    - Die VLANs können zwischen mehreren Tenants derselben Organisation propagiert werden, um die interne Kommunikation zu erleichtern.
 
 ---
@@ -122,45 +122,43 @@ Die Netzwerkinfrastruktur gewährleistet eine niedrige Latenz für optimale Leis
 
 ## Blockspeicher
 
-Cloud Temple bietet mehrere Speicherklassen basierend auf der Technologie [IBM FlashSystem](https://www.ibm.com/flashsystem/) 
+Cloud Temple bietet mehrere Speicherklassen basierend auf der Technologie [IBM FlashSystem](https://www.ibm.com/flashsystem/)
 und [IBM SVC](https://www.ibm.com/products/san-volume-controller).
 
-Die Technologie __IBM SVC__ ermöglicht das Bereitstellen der erforderlichen Leistungsstufe 
-für die Umgebungen unserer Kunden dank der großen Menge an Cache-Speicher, die in den Controllern integriert ist, 
+Die Technologie __IBM SVC__ ermöglicht das Bereitstellen der erforderlichen Leistungsstufe
+für die Umgebungen unserer Kunden dank der großen Menge an Cache-Speicher, die in den Controllern integriert ist,
 und der Möglichkeit, alle IOPS eines Servers auf mehrere SANs zu verteilen.
 
-Elle est aussi utilisée pour permettre la réplication de vos LUNs de stockage en mode bloc entre
-les zones de disponibilité ou faciliter les interventions sur les baies de stockages.
+Sie wird auch verwendet, um die Replikation Ihrer Blockspeicher-LUNs zwischen Verfügbarkeitszonen zu ermöglichen oder Eingriffe an den Speicherarrays zu erleichtern.
 
-Le stockage est principalement du stockage de type FLASH NVME dédié aux charges de travail professionnelles.
-Les disques sont utilisés par les baies de stockage en [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
+Der Speicher besteht hauptsächlich aus FLASH NVME-Speicher, der für professionelle Workloads ausgelegt ist.
+Die Festplatten werden von den Speicherarrays im [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties) verwendet.
 
-Le classe de stockage __'Mass Storage'__ propose des disques mécaniques pour les besoins d'archivages
-dans un contexte d'efficience économique. Plusieurs niveaux de performances sont disponibles :
+Die Speicherklasse __'Mass Storage'__ bietet mechanische Festplatten für Archivierungsbedürfnisse in einem wirtschaftlich effizienten Kontext. Mehrere Leistungsstufen sind verfügbar:
 
-| Référence                         | Unité | SKU                                          | 
-|-----------------------------------|-------|----------------------------------------------|
-| FLASH - Essentiel - 500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:medium:v1     | 
-| FLASH - Premium - 3000 IOPS/To    | 1 Gio | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | csp:(region):iaas:storage:bloc:ultra:v1      | 
-| MASS STORAGE - Archivage          | 1 Tio | csp:(region):iaas:storage:bloc:mass:v1       |
+| Referenz                          | Einheit | SKU                                          |
+|-----------------------------------|---------|----------------------------------------------|
+| FLASH - Essenziell - 500 IOPS/TB  | 1 GB    | csp:(region):iaas:storage:bloc:live:v1       |
+| FLASH - Standard - 1500 IOPS/TB   | 1 GB    | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/TB    | 1 GB    | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/TB | 1 GB    | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/TB     | 1 GB    | csp:(region):iaas:storage:bloc:ultra:v1      |
+| MASS STORAGE - Archivierung       | 1 TB    | csp:(region):iaas:storage:bloc:mass:v1       |
 
-*__Nota__ :*
+*__Hinweis__ :*
 
-- *La performance effective pour une classe de stockage étant liée à la volumétrie effectivement commandée, selon la notion "IOPS/To", s'entendant "limite d'IOPS par Tera alloué",* 
-> *Ainsi, un volume de 0,5To dans la classe de performance 'Standard' aura une limitation d'IOPS plafonnée à 750IOPS,*
-> *De même, un volume de 10To dans la classe de performance 'Ultra' aura lui une limitation d'IOPS à hauteur de 150000 IOPS,*
-- *La limitation d'IOPS est appliquée au volume, donc à la notion de Datastore pour un environnement VMware,*
-- *La disponibilité du stockage est de 99.99% mesuré mensuellement, plage de maintenance incluse,*
-- *Il n'y a pas de restriction ou de quota sur la lecture ou l'écriture,*
-- *Il n'y a pas de facturation à l'IOPS,*
-- *Il n'y a pas d'engagement de performance sur la classe __'Mass Storage'__,*
-- *La taille minimale d'une LUN de stockage est de 500Gio,*
-- *Lors de l'usage d'un mécanisme de réplication de stockage, les performances doivent être identiques sur les deux zones de disponibilité,*
-- *Aucun mécanisme d'optimisation "intelligent" de type compression ou déduplication n'est mis en œuvre : quand vous réservez 10Tio de stockage, vous avez physiquement 10Tio utile de stockage mis en œuvre sur les machines IBM.*
-- *Les LUNs de stockage sont dédiés à l'environnement client.*
+- *Die effektive Leistung für eine Speicherklasse ist mit dem tatsächlich bestellten Volumen verbunden, gemäß dem Konzept "IOPS/TB", was "IOPS-Limit pro zugewiesenem Terabyte" bedeutet,*
+> *So hat beispielsweise ein 0,5-TB-Volume in der Leistungsklasse 'Standard' eine IOPS-Begrenzung von 750 IOPS,*
+> *Ebenso hat ein 10-TB-Volume in der Leistungsklasse 'Ultra' eine IOPS-Begrenzung von 150.000 IOPS,*
+- *Die IOPS-Begrenzung wird auf das Volume angewendet, also auf den Begriff des Datastores in einer VMware-Umgebung,*
+- *Die Verfügbarkeit des Speichers beträgt 99,99%, monatlich gemessen, einschließlich Wartungsfenster,*
+- *Es gibt keine Einschränkungen oder Quoten für Lese- oder Schreibvorgänge,*
+- *Es gibt keine Abrechnung nach IOPS,*
+- *Es gibt keine Leistungszusage für die Klasse __'Mass Storage'__,*
+- *Die Mindestgröße einer Speicher-LUN beträgt 500 GB,*
+- *Bei der Verwendung eines Speicherreplikationsmechanismus müssen die Leistungen in beiden Verfügbarkeitszonen identisch sein,*
+- *Es werden keine "intelligenten" Optimierungsmechanismen wie Kompression oder Deduplizierung eingesetzt: Wenn Sie 10 TB Speicher reservieren, haben Sie physisch 10 TB nutzbaren Speicher auf den IBM-Maschinen.*
+- *Die Speicher-LUNs sind der Kundenumgebung gewidmet.*
 
 ### Nutzung im Rahmen des VMware-Compute-Angebots
 
@@ -176,9 +174,9 @@ Eine proaktive Verwaltung des Speicherplatzes ist unerlässlich, um das ordnungs
 
 ## Backup-Mode-Speicher
 
-Der Speicher, der der Sicherung Ihrer virtuellen Maschinen gewidmet ist, wird von der Plattform innerhalb des bestellten Quotas automatisch bereitgestellt. 
+Der Speicher, der der Sicherung Ihrer virtuellen Maschinen gewidmet ist, wird von der Plattform innerhalb des bestellten Quotas automatisch bereitgestellt.
 
-| Referenz               | Maßeinheit | SKU                                      | 
+| Referenz               | Maßeinheit | SKU                                      |
 |------------------------|------------|------------------------------------------|
 | MASS STORAGE - Archiv  | 1 Tio      | csp:(region):iaas:storage:bloc:backup:v1 |
 
@@ -189,44 +187,44 @@ Der Speicher, der der Sicherung Ihrer virtuellen Maschinen gewidmet ist, wird vo
 
 Um die Umsetzung Ihrer Disaster-Recovery-Pläne zu ermöglichen, wenn eine Geschäftskontinuitätssituation mit Anwendungsmethoden nicht möglich ist und die Replikation virtueller Maschinen nicht geeignet ist, bietet Cloud Temple __Replikationsmechanismen für Blockspeicher zwischen den Verfügbarkeitszonen einer Region__ an.
 
-Diese Replikationsmechanismen werden zusätzlich zu den Sicherungen auf den Speicher-LUNs Ihrer Umgebungen angewendet. 
-Die Entscheidung, ob ein Replikationsmechanismus in einer Umgebung verwendet wird, __hängt von vielen Faktoren ab, darunter deren Kritikalität, die zulässige Datenverlusttoleranz oder die angestrebte Leistung__ für die Anwendung. 
+Diese Replikationsmechanismen werden zusätzlich zu den Sicherungen auf den Speicher-LUNs Ihrer Umgebungen angewendet.
+Die Entscheidung, ob ein Replikationsmechanismus in einer Umgebung verwendet wird, __hängt von vielen Faktoren ab, darunter deren Kritikalität, die zulässige Datenverlusttoleranz oder die angestrebte Leistung__ für die Anwendung.
 
 Cloud Temple bietet zwei Typen von Mechanismen, die in einer aktiv/passiv-Konfiguration implementiert werden:
 
-- Die __asynchrone__ Replikation (oder __'Global Mirror'__) : *Die Funktion __'Global Mirror'__ bietet einen asynchronen Kopiervorgang. 
+- Die __asynchrone__ Replikation (oder __'Global Mirror'__) : *Die Funktion __'Global Mirror'__ bietet einen asynchronen Kopiervorgang.
 Wenn ein Host auf das Primärvolumen schreibt, wird die Bestätigung des Abschlusses der I/O empfangen, bevor der Schreibvorgang auf das Sekundärvolumen kopiert wird. Wenn ein Failover initiiert wird, muss die Anwendung alle Aktualisierungen wiederherstellen und anwenden, die nicht auf dem Sekundärvolumen bestätigt wurden. Wenn die I/O-Operationen auf dem Primärvolumen für eine kurze Zeit unterbrochen werden, kann das Sekundärvolumen eine exakte Übereinstimmung mit dem Primärvolumen werden. Diese Funktion ist mit einem kontinuierlichen Sicherungsprozess vergleichbar, bei dem immer die letzten Aktualisierungen fehlen. Wenn Sie Global Mirror für die Wiederherstellung nach einem Desaster verwenden, sollten Sie darüber nachdenken, wie Sie mit diesen fehlenden Aktualisierungen umgehen möchten.*
 
 - Die __synchrone__ Replikation (oder __'Metro Mirror'__) : *Die Funktion __'Metro Mirror'__ ist eine Art Ferndatenkopie, die eine synchrone Kopie der Daten von einem Primärvolumen auf ein Sekundärvolumen erstellt. Bei synchronen Kopien schreiben Hostanwendungen auf das Primärvolumen, erhalten jedoch erst eine Bestätigung, dass der Schreibvorgang abgeschlossen ist, wenn die Daten auf das Sekundärvolumen geschrieben wurden. Dies stellt sicher, dass beide Volumen identische Daten enthalten, wenn der Kopiervorgang abgeschlossen ist. Nachdem der anfängliche Kopiervorgang abgeschlossen ist, hält die Funktion Metro Mirror fortlaufend eine vollständig synchronisierte Kopie der Quelldaten am Zielort. __Seit dem 1. Januar 2024 wird die 'Metro Mirror'-Funktion nicht mehr vermarktet.__*
 
 
 Es wird dann ein Standort als "aktiv" oder "primär" und ein Standort als "passiv" oder "Standby" definiert.
-Der Disaster-Recovery-Plan wird im Falle eines Desasters oder im Rahmen einer Testanforderung für den DR-Plan aktiviert. 
+Der Disaster-Recovery-Plan wird im Falle eines Desasters oder im Rahmen einer Testanforderung für den DR-Plan aktiviert.
 Der passive Standort übernimmt dann die Rolle des aktiven Standorts.
 
-#### Asynchrone Replikation 
+#### Asynchrone Replikation
 
 Wenn Ihre Workloads kurze Wiederherstellungszeiten erfordern und es nicht akzeptabel
-oder angemessen ist, Anwendungsmethoden / virtuelle Maschinen-Replikationen zu verwenden, 
-kann eine SAN-Speicher-LUN zwischen zwei Verfügbarkeitszonen derselben Region repliziert werden. 
+oder angemessen ist, Anwendungsmethoden / virtuelle Maschinen-Replikationen zu verwenden,
+kann eine SAN-Speicher-LUN zwischen zwei Verfügbarkeitszonen derselben Region repliziert werden.
 
-Dieses Angebot ermöglicht ein __RPO von 15Mn__ und ein __RTO von weniger als 4H__. Es ermöglicht eine viel schnellere Wiederaufnahme als 
+Dieses Angebot ermöglicht ein __RPO von 15Mn__ und ein __RTO von weniger als 4H__. Es ermöglicht eine viel schnellere Wiederaufnahme als
 die Implementierung einer Sicherungswiederherstellung.
 
-In einem asynchron replizierten Speicher-Volumen (__Global Mirror__) arbeiten die SAN-Virtualisierungscontroller der 
-beiden Verfügbarkeitszonen zusammen, um die Schreibvorgänge an beiden Standorten durchzuführen. 
+In einem asynchron replizierten Speicher-Volumen (__Global Mirror__) arbeiten die SAN-Virtualisierungscontroller der
+beiden Verfügbarkeitszonen zusammen, um die Schreibvorgänge an beiden Standorten durchzuführen.
 Der Master-Standort wartet nicht auf die Schreibbestätigung des Slave-Standorts.
 
 Die Schritte eines Schreibvorgangs sind wie folgt:
 
-1. Ein Hypervisor möchte __eine Schreibvorgang auf einem Global-Mirror-Volumen__ durchführen: Er sendet seine Anfrage an den SAN-Controller seiner Verfügbarkeitszone, 
+1. Ein Hypervisor möchte __eine Schreibvorgang auf einem Global-Mirror-Volumen__ durchführen: Er sendet seine Anfrage an den SAN-Controller seiner Verfügbarkeitszone,
 2. Der lokale SAN-Controller fordert den SAN-Controller der entfernten Zone auf, den Schreibvorgang durchzuführen,
 3. der lokale SAN-Controller wartet nicht auf die Bestätigung des entfernten SANs und führt dann den Schreibvorgang lokal durch,
 4. Er bestätigt dem Hypervisor, der die Anfrage gestellt hat,
 5. __Die Hypervisoren des entfernten Standorts greifen nicht direkt auf die Global Mirror-LUN zu__: Eine Serviceanfrage ist erforderlich.
 
 
-| SLA       | Beschreibung                                                                                                                                                | 
+| SLA       | Beschreibung                                                                                                                                                |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | RPO 15mn  | Im Falle eines Ausfalls des Hauptrechenzentrums entspricht die maximal verlorene Datenmenge maximal den letzten 15 Minuten der Schreibvorgänge      |
 | RTO < 4H  | Im Falle eines Ausfalls des Hauptrechenzentrums ist die Wiederaufnahme des Betriebs je nach Komplexität der Umgebungen innerhalb von 4 Stunden garantiert|
@@ -238,11 +236,11 @@ Der Einsatz dieser Technologie erfordert auch eine Verdopplung des Speicherplatz
 Die Verwendung dieses Mechanismus kann die Anwendungsleistung um bis zu 10 % beeinträchtigen. __Nur die Speicherkategorien 500 Iops/To, 1500 Iops/To und 3000 Iops/To sind kompatibel.__
 
 
-| Referenz                           | Einheit | SKU                                               |  
+| Referenz                           | Einheit | SKU                                               |
 |------------------------------------|---------|---------------------------------------------------|
 | STORAGE - Global Replication SAN   | 1 Tio   | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
-*__Hinweis__* : 
+*__Hinweis__* :
 
 - *Da das Angebot asynchron ist, kann es bei einem Notfall vorkommen, dass einige Festplattenvorgänge nicht auf den entfernten Standort geschrieben wurden. Es kann daher ein Risiko für die Datenkonsistenz bestehen, das in der Risikobewertung des Wiederherstellungsplans berücksichtigt werden sollte.*
 - *Die Blockspeicherreplikation erfolgt für virtuelle Maschinen und Anwendungen unsichtbar,*
@@ -320,7 +318,7 @@ Cloud Temple stellt Ihnen regelmäßig von unseren Teams aktualisierte `Template
 Es umfasst derzeit mehrere Dutzend `Templates` und Images, die Sie auf Ihre virtuellen Maschinen montieren können.
 
 ### Aktualisierung der Hypervisoren
-Cloud Temple stellt regelmäßig Builds für die Hypervisoren zur Verfügung, um sicherzustellen, dass Sicherheitsupdates angewendet werden. 
+Cloud Temple stellt regelmäßig Builds für die Hypervisoren zur Verfügung, um sicherzustellen, dass Sicherheitsupdates angewendet werden.
 Die Aktualisierung der Hypervisoren bleibt jedoch in Ihrer Verantwortung, da wir keine Einsicht in Ihre geschäftlichen Anforderungen haben.
 
 Der Aktualisierungsprozess ist vollständig automatisiert. Um die Servicekontinuität zu gewährleisten, sind während der Aktualisierung mindestens zwei Hypervisoren pro Cluster erforderlich. Stellen Sie sicher, dass Sie die erforderlichen Berechtigungen für diese Aktionen haben.
@@ -344,7 +342,7 @@ bei denen die Leistung kritisch ist, wie bei Datenbanken oder Anwendungen, die s
 - __Anti-Affinitätsregeln__ : Im Gegensatz dazu stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen
 nicht auf dem gleichen physischen Host ausgeführt werden. Sie sind wichtig für die Verfügbarkeit und Ausfallsicherheit, beispielsweise,
 um zu vermeiden, dass kritische Maschinen im Falle eines einzelnen Serverausfalls alle betroffen sind.
-Anti-Affinitätsregeln sind entscheidend für Anwendungen, die hohe Verfügbarkeit erfordern, 
+Anti-Affinitätsregeln sind entscheidend für Anwendungen, die hohe Verfügbarkeit erfordern,
 wie Produktionsumgebungen, bei denen Fehlertoleranz oberste Priorität hat.
 Zum Beispiel möchten Sie nicht, dass Ihre beiden Active Directories auf demselben Hypervisor liegen.
 
@@ -364,7 +362,7 @@ Die Replikation von virtuellen Maschinen basiert auf dem Snapshot-Mechanismus de
 
 Das typische Beispiel einer Maschine, die den Replikationsmechanismus virtueller Maschinen nicht unterstützt, ist ein FTP-Server, der Echtzeitströme von Überwachungskameras empfängt. __Die Maschine verbringt ihre Zeit mit Schreiben und wird nicht in der Lage sein, einen Snapshot abzuschließen, ohne das Betriebssystem für einen signifikanten Zeitraum (einige Dutzend Minuten) anzuhalten__. Wenn der Hypervisor den Snapshot nicht abschließen kann, wird er genau das tun, ohne die Möglichkeit einzugreifen, außer die virtuelle Maschine zu beschädigen.
 
-| SLA             | Beschreibung                                                                                                                                                  |   
+| SLA             | Beschreibung                                                                                                                                                  |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RPO von 1H bis 24H | Im Falle eines Notfalls im Hauptrechenzentrum ist die maximale verlorene Datenmenge die der letzten Schreiboperation auf dem Standby-Standort.                |
 | RTO  < 15mn     | Startoperation der gestoppten virtuellen Maschine auf dem entfernten Standort                                                                                   |
@@ -373,7 +371,7 @@ Das typische Beispiel einer Maschine, die den Replikationsmechanismus virtueller
 Bei Bedarf oder bei einem Ausfall einer Maschine am Hauptstandort wird die Spiegelmaschine am Standby-Standort aktiviert. Die Wiederaufnahme des Betriebs erfordert reservierte Rechenleistung und RAM im Standby-Modus am Standby-Standort. Es ist notwendig, den gleichen Speicherplatz am passiven Standort wie am aktiven Standort zu haben.
 
 
-| Referenz                          | Einheit | SKU                                            |  
+| Referenz                          | Einheit | SKU                                            |
 |-----------------------------------|---------|------------------------------------------------|
 | PRA - Replikation VMware zwischen AZ | 1 vm   | csp:(region):iaas:vmware:lizenz:replikation:v1 |
 

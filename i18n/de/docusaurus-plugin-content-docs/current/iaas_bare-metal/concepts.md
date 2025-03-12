@@ -3,12 +3,12 @@ title: Concepts
 ---
 
 
-L'offre **Bare Metal** de Cloud Temple propose des serveurs physiques dédiés associés à un stockage de type bloc distribué. 
-Cette solution offre une personnalisation totale pour les clients souhaitant gérer leurs propres environnements logiciels, que ce soit pour installer un système Linux, Windows ou un hyperviseur.
+Das **Bare Metal**-Angebot von Cloud Temple bietet dedizierte physische Server in Verbindung mit verteiltem Blockspeicher.
+Diese Lösung bietet vollständige Anpassungsmöglichkeiten für Kunden, die ihre eigenen Softwareumgebungen verwalten möchten, sei es für die Installation eines Linux- oder Windows-Systems oder eines Hypervisors.
 
 ---
 
-## Eine flexible und materielle Infrastruktur
+## Eine Hardware-Infrastruktur mit Flexibilität
 
 Das Bare-Metal-Angebot basiert auf einer Architektur, die entwickelt wurde, um den Anforderungen kritischer Workloads gerecht zu werden.
 
@@ -27,7 +27,7 @@ Das verteilte Speichermodell bietet eine Trennung zwischen Rechenleistung (Bare-
 
 ## Regionen und Verfügbarkeitszonen
 
-Das Bare-Metal-Produkt wird in einer Verfügbarkeitszone bereitgestellt. 
+Das Bare-Metal-Produkt wird in einer Verfügbarkeitszone bereitgestellt.
 Eine [Verfügbarkeitszone](../additional_content/concepts_az.md) ist Teil einer [Region](../additional_content/concepts_regional.md).
 
 Diese Art der Bereitstellung ermöglicht es, den Standort der Bare-Metal-Server auszuwählen und sie auf verschiedene Verfügbarkeitszonen (AZ) zu verteilen.
@@ -39,7 +39,7 @@ Dies bietet eine bessere Workload-Verteilung, maximiert die Redundanz und erleic
 
 Die für das Bare-Metal-Angebot verfügbaren Rechenblades bieten eine Reihe von Leistungsstufen, um unterschiedlichen Anforderungen gerecht zu werden:
 
-| Referenz              | RAM  __(1)__ | Frequenz __(2)__                         | Anzahl der Kerne/Threads  | Konnektivität __(3)__ | GPU __(4)__          | 
+| Referenz              | RAM  __(1)__ | Frequenz __(2)__                         | Anzahl der Kerne/Threads  | Konnektivität __(3)__ | GPU __(4)__          |
 |-----------------------|--------------|------------------------------------------|---------------------------|-----------------------|----------------------|
 | **ECO**              | 384 GB       | 2,20/3,0 GHz (Silver 4114 oder gleichwertig) | 20 / 40 Threads           | 2 X 10 Gbit/s         | -                    |
 | **STANDARD**         | 384 GB       | 2,40/3,4 GHz (Silver 4314 oder gleichwertig) | 32 / 64 Threads           | 2 X 25 Gbit/s         | -                    |
@@ -63,7 +63,7 @@ Die Verfügbarkeit der Infrastruktur wird mit 99,9% garantiert und monatlich gem
 
 Der verteilte Blockspeicher, basierend auf **IBM Spectrum Virtualize**, bietet eine Reihe von Leistungsstufen, die sich für verschiedene Anwendungsfälle eignen:
 
-| Referenz                         | IOPS/TB                 | Hauptnutzung                         | 
+| Referenz                         | IOPS/TB                 | Hauptnutzung                         |
 |----------------------------------|-------------------------|--------------------------------------|
 | **FLASH - Essentiel**            | 500                     | Leichte Workloads                    |
 | **FLASH - Standard**             | 1500                    | Standard-Workloads                   |

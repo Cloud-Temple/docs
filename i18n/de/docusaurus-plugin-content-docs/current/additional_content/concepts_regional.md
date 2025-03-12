@@ -1,12 +1,12 @@
 ---
-title: Concepts - Régions
+title: Konzepte - Regionen
 ---
 
 import iaasAz001 from './images/iaas_az_001.png';
 
 ## Regionen
 
-Die Cloud Temple Infrastruktur ist darauf ausgelegt, die Geschäftskontinuität Ihrer Anwendungen und Plattformen zu gewährleisten. 
+Die Cloud Temple Infrastruktur ist darauf ausgelegt, die Geschäftskontinuität Ihrer Anwendungen und Plattformen zu gewährleisten.
 Innerhalb einer Region profitieren Sie von einer Netzwerkkontinuität der Stufe 2.
 
 So ist es möglich, eine technische Architektur für die Region Paris zu definieren, die drei physische Standorte nutzt, um eine hochverfügbare Plattform mit Quorum einzurichten.
@@ -17,7 +17,7 @@ Im Januar 2024 verfügt die IaaS-Plattform Cloud Temple über die folgenden Regi
 
 ### Region FR1
 
-Die Region FR1 basiert auf drei physischen Standorten in der Region Paris. 
+Die Region FR1 basiert auf drei physischen Standorten in der Region Paris.
 
 <img src={iaasAz001} />
 

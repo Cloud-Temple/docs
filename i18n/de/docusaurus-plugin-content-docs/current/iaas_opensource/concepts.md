@@ -1,8 +1,8 @@
 ---
-title: Concepts
+title: Konzepte
 ---
 
-L'offre __IaaS (Infrastructure As A Service)__ de Cloud Temple est conçue pour répondre aux besoins critiques de continuité et reprise d'activité, avec un accent particulier sur les secteurs exigeants comme l'industrie, la banque et l'assurance. Basée sur des technologies de pointe, cette infrastructure garantit une disponibilité maximale et une performance optimale pour vos charges de travail critiques.
+Das __IaaS (Infrastructure As A Service)__-Angebot von Cloud Temple ist darauf ausgerichtet, kritische Anforderungen an Geschäftskontinuität und Wiederherstellung zu erfüllen, mit besonderem Fokus auf anspruchsvolle Branchen wie Industrie, Banken und Versicherungen. Basierend auf fortschrittlichen Technologien garantiert diese Infrastruktur maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Workloads.
 
 ## Eine vertrauenswürdige Technologieplattform
 
