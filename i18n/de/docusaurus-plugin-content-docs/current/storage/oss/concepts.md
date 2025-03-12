@@ -2,12 +2,12 @@
 title: Concepts
 ---
 
-## Elastic Cloud Storage (ECS) : eine Referenzlösung
+## Elastic Cloud Storage (ECS): Eine Referenzlösung
 
-Das Objekt-Speicherangebot von Cloud Temple basiert auf der Technologie __Elastic Cloud Storage (ECS)__ von Dell, die für ihre hohe Leistung und Einhaltung industrieller Standards anerkannt ist. Mit einer **97%igen Kompatibilität zum AWS S3-Protokoll** bietet diese Lösung:
+Das Object Storage Angebot von Cloud Temple basiert auf der Technologie __Elastic Cloud Storage (ECS)__ von Dell, bekannt für seine hohe Leistung und Einhaltung industrieller Standards. Mit einer **97% Kompatibilität zum AWS S3 Protokoll** gewährleistet diese Lösung:
 
 - Eine einfache und standardisierte Integration;
-- Erhöhte Flexibilität für Benutzer;
+- Erhöhte Flexibilität für die Benutzer;
 - Einen reibungslosen Übergang zu einer modernen Speicherinfrastruktur.
 
 ---
@@ -16,84 +16,85 @@ Das Objekt-Speicherangebot von Cloud Temple basiert auf der Technologie __Elasti
 
 Cloud Temple verpflichtet sich zur Gewährleistung der Datensicherheit durch anerkannte Zertifizierungen:
 
-- **SecNumCloud** : Eine von der ANSSI verliehene Qualifikation, die Datenhoheit und -sicherheit im französischen und europäischen Rahmen gewährleistet.
-- **HDS (Hébergement de Données de Santé)** : Einhaltung strenger Anforderungen an sensible medizinische Daten.
-- **ISO 27001** : Einhaltung der besten Praktiken im Bereich der Informationssicherheit.
+- **SecNumCloud**: Von der ANSSI ausgestellte Qualifikation, die die Souveränität und Sicherheit der Daten im französischen und europäischen Rahmen sicherstellt.
+- **HDS (Hébergement de Données de Santé)**: Konformität mit den strengen Anforderungen an sensible medizinische Daten.
+- **ISO 27001**: Einhaltung der besten Praktiken im Bereich der Informationssicherheit.
 
-## Erweiterte Verschlüsselung für optimalen Schutz
+## Fortschrittliche Verschlüsselung für optimalen Schutz
 
 Die Datenverschlüsselung wird systematisch angewendet und gewährleistet deren Sicherheit in jeder Phase:
 
-- **In Transit** : Schutz durch das Protokoll __TLS 1.3__.
-- **Im Speicher** : Drei Optionen, um den Bedürfnissen der Benutzer gerecht zu werden:
-  - **SSE-ECS** : Schlüsselverwaltung durch Cloud Temple für eine vereinfachte Verwaltung.
-  - **SSE-C** : Vom Kunden bereitgestellte Schlüssel für erhöhte Kontrolle.
-  - **CSE** : Vom Kunden durchgeführte Verschlüsselung für maximale Sicherheit.
+- **Während der Übertragung**: Schutz durch das Protokoll __TLS 1.3__.
+- **Während der Speicherung**: Drei Optionen, die an die Bedürfnisse der Benutzer angepasst sind:
+  - **SSE-ECS**: Schlüssel werden von Cloud Temple verwaltet für eine vereinfachte Verwaltung.
+  - **SSE-C**: Schlüssel werden vom Kunden bereitgestellt für eine erhöhte Kontrolle.
+  - **CSE**: Verschlüsselung erfolgt durch den Kunden für maximale Sicherheit.
 
-| Verschlüsselungsmodell         | Vorteile                             | Nachteile                          |
-| ----------------------------- | ------------------------------------ | --------------------------------- |
-| **SSE-ECS**                   | Vereinfachte und transparente Verwaltung | Weniger Kontrolle über die Schlüssel |
-| **SSE-C**                     | Totale Kontrolle über die Schlüssel  | Schlüsselverwaltung erforderlich    |
-| **CSE**                       | Maximale Sicherheit                   | Komplexität und Auswirkungen auf die Leistung |
-
----
-
-## Architektur und Deployment
-
-### Regionstyp-Deployment
-
-Der S3-Speicher von Cloud Temple speichert Daten nativ in __drei verschiedenen Verfügbarkeitszonen__ innerhalb einer einzigen Cloud-Temple-Region. Diese Architektur ist darauf ausgelegt, hohe Verfügbarkeit und maximale Resilienz gegenüber Hardware- oder Softwareausfällen zu bieten:
-- Erasure Coding (EC): Standardmäßig verwenden wir ein EC 12+4-Schema, das die Daten in 12 Datensegmente und 4 Paritätssegmente aufteilt. Diese Technik ermöglicht die Wiederherstellung der Daten auch bei Verlust mehrerer Segmente.
-- Datenverteilung: Die EC-Segmente werden auf verschiedene Knoten und Racks verteilt, wodurch Schutz vor Festplattenausfällen, Knotenfehlern und sogar kompletten Rackausfällen gewährleistet wird.
-- Geografische Replikation: Zur zusätzlichen Absicherung werden die Daten auf 3 Verfügbarkeitszonen repliziert, was eine Resilienz gegenüber lokalen Katastrophen bietet.
-
-Diese Replikation stellt sicher, dass die Daten selbst bei Ausfall einer Zone zugänglich und intakt bleiben, was zu einer hochresilienten Speicherinfrastruktur beiträgt.
+| Verschlüsselungsmodell           | Vorteile                              | Nachteile                          |
+| -------------------------------- | ------------------------------------- | ---------------------------------- |
+| **SSE-ECS**                      | Vereinfachte und transparente Verwaltung | Weniger Kontrolle über die Schlüssel |
+| **SSE-C**                        | Volle Kontrolle über die Schlüssel    | Schlüsselverwaltung erforderlich   |
+| **CSE**                          | Maximale Sicherheit                   | Komplexität und Auswirkungen auf die Leistung |
 
 ---
 
-## Leistung und Service Level
+## Architektur und Bereitstellung
 
-### Garantierte Service Level
+### Regionale Bereitstellung
+
+Die S3-Speicherung von Cloud Temple speichert die Daten nativ in [**drei unterschiedlichen Verfügbarkeitszonen**](../../additional_content/concepts_az.md) innerhalb einer [Region](../../additional_content/concepts_regional.md) von Cloud Temple. Diese Architektur ist darauf ausgelegt, hohe Verfügbarkeit und maximale Widerstandsfähigkeit gegenüber Hardware- oder Softwareausfällen zu bieten:
+- Erasure Coding (EC): Standardmäßig verwenden wir ein EC 12+4 Schema, das die Daten in 12 Datensegmente und 4 Paritätssegmente aufteilt. Diese Technik ermöglicht es, die Daten auch beim Verlust mehrerer Segmente wiederherzustellen.
+- Datenverteilung: Die EC-Segmente werden über verschiedene Knoten und Racks verteilt und bieten Schutz vor Festplatten-, Knoten- und sogar Rackausfällen.
+- Geografische Replikation: Für zusätzlichen Schutz werden die Daten über 3 Verfügbarkeitszonen repliziert, was eine Widerstandsfähigkeit gegenüber lokalen Katastrophen bietet.
+
+Diese Replikation stellt sicher, dass selbst bei einem Ausfall einer Zone die Daten zugänglich und intakt bleiben,
+was zu einer hoch widerstandsfähigen Speicherinfrastruktur beiträgt.
+
+---
+
+## Leistung und Service Levels
+
+### Garantierte Service Levels
 
 Cloud Temple bietet eine hochzuverlässige Infrastruktur mit klaren Verpflichtungen:
 
-| Verpflichtung                  | Ziel                               |
-| ------------------------------ | ---------------------------------- |
-| Verfügbarkeit                  | 99.99% (einschließlich Wartung)    |
-| Datenbeständigkeit             | 99,99999999%                       |
-| Garantierte Netzwerkbandbreite | 1 Gbit/Sekunde                     |
+| Verpflichtung                    | Ziel                                |
+| -------------------------------- | ----------------------------------- |
+| Verfügbarkeit                    | 99,99% (einschließlich Wartung)     |
+| Datenbeständigkeit               | 99,99999999%                        |
+| Garantierte Netzwerkbandbreite   | 1 Gbp/sekunde                       |
 
-### Einschränkungen des Objektspeichers
+### Grenzen des Object Storage
 
-Cloud Temple bietet eine Objektspeicherlösung mit folgenden technischen Merkmalen:
+Cloud Temple bietet eine Object Storage Lösung mit den folgenden technischen Merkmalen:
 
-• **Maximale Anzahl von Buckets pro Mandant**: Die maximale Anzahl von Buckets pro Mandant beträgt 999.
+• **Maximale Anzahl von Buckets pro Tenant**: Die maximale Anzahl von Buckets pro Tenant beträgt 999.
 
-• **Maximale Größe pro Objekt**: Die maximale Größe eines Objekts beträgt 5 TB.
+• **Maximale Bucketgröße**: Die maximale Größe eines Objekts beträgt 5 TB.
 
-• **Anzahl gleichzeitiger Verbindungen**: Keine spezifische Begrenzung.
+• **Anzahl gleichzeitiger Verbindungen**: Keine spezifische Grenze.
 
-• **Leistung beim Hochladen**:
-  - Bis zu 100 Gbit/s Eingangsleistung
-  - Bis zu 100 Gbit/s Ausgangsleistung
+• **Upload-Leistung**:
+  - Bis zu 100Gb/s im Eingang
+  - Bis zu 100Gb/s im Ausgang
 
 ---
 
-## Konzepte und Speicherorganisation
+## Konzepte und Organisation des Speicherplatzes
 
 ### Das Speicherkonto
 
-Ein **Storage Account** ist eine logische Entität, die über einen **Access Key** und einen **Secret Key** verfügt, die zur Authentifizierung und Sicherung der Interaktionen mit einem Bucket verwendet werden.
-Auf diesem Konto basieren die Rollen und Berechtigungen, die mit **Buckets** verbunden sind, wodurch der Zugriff und die autorisierten Aktionen für jeden Benutzer oder Dienst präzise kontrolliert werden können.
+Ein **Storage Account** ist eine logische Einheit, die über einen **Access Key** und einen **Secret Key** verfügt, die zur Authentifizierung und Sicherung der Interaktionen mit einem Bucket verwendet werden.
+Auf diesem Konto werden die Rollen und Berechtigungen für die **Buckets** positioniert, um den Zugriff und die zulässigen Aktionen für jeden Benutzer oder Dienst genau zu steuern.
 
-### Der "Bucket" im Ökosystem des Objektspeichers
+### Der "Bucket" im Objekt-Speicher-Ökosystem
 
-Ein S3-Bucket, popularisiert durch den Dienst Amazon Simple Storage Service (Amazon S3), ist **ein öffentlicher Cloud-Speichercontainer**, der für die sichere, zuverlässige und hochverfügbare Speicherung einer unbegrenzten Menge an Daten konzipiert ist. Jeder S3-Bucket kann Dateien speichern (in S3 als „Objekte“ bezeichnet), die von Dokumenten und Bildern bis hin zu großen Datenbanken oder Videodateien reichen. Buckets werden verwendet, um den Speicherplatz innerhalb des Objektspeichers von Cloud Temple logisch zu organisieren, und jeder Bucket wird durch einen vom Benutzer bereitgestellten eindeutigen Namen identifiziert. S3-Buckets bieten erweiterte Funktionen, wie die Verwaltung von Versionen, die Sicherung von Daten über Zugriffskontrollrichtlinien und die Möglichkeit zur Unveränderlichkeit.
+Ein S3-Bucket, das durch den Amazon Simple Storage Service (Amazon S3) populär gemacht wurde, ist **ein öffentlicher Cloud-Speichercontainer**, der entwickelt wurde, um eine unbegrenzte Menge an Daten sicher, zuverlässig und hochverfügbar zu speichern. Jeder S3-Bucket kann Dateien (in S3 als "Objekte" bezeichnet) speichern, von Dokumenten und Bildern bis hin zu großen Datenbanken oder Videodateien. Buckets werden verwendet, um den Speicherplatz innerhalb des Cloud Temple Object Storage logisch zu organisieren, und jeder Bucket ist durch einen eindeutigen, vom Benutzer bereitgestellten Namen identifiziert. S3-Buckets bieten fortschrittliche Funktionen wie Versionsverwaltung, Datensicherung durch Zugriffskontrollrichtlinien und die Möglichkeit der Unveränderlichkeit.
 
 ### Nutzt das S3-Angebot von Cloud Temple die 'PathStyle'-Methode?
 
-Aufgrund der mit der SecNumCloud-Qualifikation verbundenen Anforderungen ist das Angebot derzeit für die Nutzung der '**PathStyle**'-Methode vorgesehen. Wir arbeiten daran, dass die '**UrlStyle**'-Methode ab H1 2025 verfügbar ist.
+Aufgrund der mit der SecNumCloud-Qualifikation verbundenen Einschränkungen ist das Angebot derzeit so konzipiert, dass die '**PathStyle**'-Methode verwendet wird. Wir arbeiten daran, die '**UrlStyle**'-Methode ab dem ersten Halbjahr 2025 verfügbar zu machen.
 
-### Vorab signierte Anforderungen
+### Vorab unterzeichnete Anfragen
 
-Der Objektspeicher von Cloud Temple unterstützt **vorab signierte Anforderungen**, eine wichtige Funktion, die es ermöglicht, temporäre URLs zu generieren, die für eine begrenzte Zeit Zugang zu bestimmten Objekten gewähren. Diese Funktion ist besonders nützlich, um Dateien sicher mit externen Benutzern zu teilen, ohne ihnen dauerhafte Rechte oder Zugriffsdaten für den Bucket zu gewähren. Vorab signierte Anforderungen können mit einer präzisen Gültigkeitsdauer konfiguriert werden, was eine granulare Kontrolle über den Datenzugriff bietet.
+Die Object Storage Lösung von Cloud Temple unterstützt **vorab unterzeichnete Anfragen**, eine wesentliche Funktion, die es ermöglicht, temporäre URLs zu erstellen, die für einen begrenzten Zeitraum Zugang zu bestimmten Objekten gewähren. Diese Funktion ist besonders nützlich, um Dateien sicher mit externen Benutzern zu teilen, ohne ihnen permanente Rechte oder Zugangskennungen für den Bucket zu geben. Die vorab unterzeichneten Anfragen können mit einer genauen Gültigkeitsdauer konfiguriert werden, was eine granulare Kontrolle über den Datenzugriff ermöglicht.
