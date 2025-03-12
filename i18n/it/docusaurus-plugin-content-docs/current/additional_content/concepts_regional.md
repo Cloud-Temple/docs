@@ -4,6 +4,8 @@ Ecco la traduzione in italiano, mantenendo la formattazione Markdown e senza tra
 title: Concepts - Régions
 ---
 
+import iaasAz001 from './images/iaas_az_001.png';
+
 ## Regioni
 
 L'infrastruttura Cloud Temple è progettata per consentire la continuità operativa delle tue applicazioni e piattaforme. 
@@ -19,7 +21,7 @@ A gennaio 2024, la piattaforma IaaS Cloud Temple dispone delle seguenti regioni:
 
 La regione FR1 si basa su tre siti fisici nella regione parigina. 
 
-![](images/iaas_az_001.png)
+<img src={iaasAz001} />
 
 Ogni sito si trova a più di 30 km in linea d'aria dagli altri. In media, bisogna contare 80 km di distanza ottica tra ogni sito. La latenza garantita tra i siti è inferiore a 4 ms.
 
