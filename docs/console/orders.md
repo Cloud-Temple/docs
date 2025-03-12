@@ -28,7 +28,6 @@ import shivaOrdersNet_004 from './images/shiva_orders_net_004.png'
 import shivaOrdersIaasCpoolEsx from './images/shiva_orders_iaas_cpool_esx.png'
 import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.png'
 
-
 ## Concept
 
 Le suivi du déploiement de nouvelles ressources se fait dans le menu __'Commandes'__ accessible dans le bandeau vert à gauche de l'écran.
@@ -49,11 +48,11 @@ Depuis la page de commandes, vous pouvez voir l'état d'avancement d'une livrais
 
 <img src={shivaOrderStatus} />
 
-**Note** : **Il n'est pas possible de lancer plusieurs commandes du même type de ressource simultanément. Vous devrez donc attendre que la commande en cours soit traitée et finalisée avant de pouvoir en effectuer une nouvelle. Cela garantit une gestion efficace et ordonnée des ressources au sein de votre environnement.**
+__Note__ : __Il n'est pas possible de lancer plusieurs commandes du même type de ressource simultanément. Vous devrez donc attendre que la commande en cours soit traitée et finalisée avant de pouvoir en effectuer une nouvelle. Cela garantit une gestion efficace et ordonnée des ressources au sein de votre environnement.__
 
 ## Commander une nouvelle zone de disponibilité
 
-Il est possible d'ajouter une nouvelle zone de disponibilité en accédant au menu "**Commande**". Cette option vous permet d'étendre vos ressources et d'améliorer la disponibilité et la résilience de vos applications en quelques clics seulement :
+Il est possible d'ajouter une nouvelle zone de disponibilité en accédant au menu "__Commande__". Cette option vous permet d'étendre vos ressources et d'améliorer la disponibilité et la résilience de vos applications en quelques clics seulement :
 
 <img src={shivaOrderAz_01} />
 
@@ -113,7 +112,7 @@ Vous obtenez ensuite un résumé des options séléctionnées avant de valider v
 
 ### Déployer un nouveau cluster de stockage
 
-Dans le menu "**commande**", procédez à la commande d'un **nouveau cluster de stockage** pour votre environnement en sélectionnant les options qui correspondent à vos besoins en termes de capacité, de performance et de redondance. Sélectionnez l'emplacement :
+Dans le menu "__commande__", procédez à la commande d'un __nouveau cluster de stockage__ pour votre environnement en sélectionnant les options qui correspondent à vos besoins en termes de capacité, de performance et de redondance. Sélectionnez l'emplacement :
 
 <img src={shivaOrderClusto_01} />
 
@@ -141,6 +140,7 @@ avec la liste des datastores.
 <img src={shivaOrdersIaasSpoolDs} />
 
 __nota__ :
+
 - *La taille de la plus petite LUN activable sur un cluster est de __500 Gio__.*
 - *Les performances d'un datastore vont de 500 iops/Tio en moyenne jusqu'à 15000 iops/Tio en moyenne. __C'est un bridage logiciel réalisé au niveau des contrôleurs de stockage__.*
 - *La comptabilité du volume de disque consommé par votre organisation est la somme de toutes les LUNs sur l'ensemble des AZs utilisées*.
@@ -198,7 +198,7 @@ Pour ajouter de la mémoire vive sur un cluster, il suffit de se rendre sur la c
 <img src={shivaOrdersIaasCpoolMemory} />
 
 __nota__ :
+
 - *__Les machines sont livrées avec la totalité de la mémoire physique__. Le débridage de la ressource mémoire n'est qu'une activation logicielle au niveau d'un cluster.*
 - *Il n'est pas possible de modifier la quantité de mémoire physique d'un type de lame. Bien tenir compte de la capacité maximale d'une lame lors de la création d'un cluster.*
 - *Les droits __'order'__ ainsi que __'compute'__ sont nécessaires au compte pour mener cette action.*
-

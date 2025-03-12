@@ -1,59 +1,58 @@
 ---
-title: Guía de inicio
+title: Guía de inicio rápido
 ---
 import oshiftRights from './images/oshift_rights.png'
 import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-
-## Desplegar una plataforma Redhat Openshift dentro de su tenant
+## Desplegar una plataforma RedHat OpenShift dentro de su tenant
 
 ### Asignación de derechos de acceso
 
-Es indispensable que el administrador del [Tenant](../console/iam/concepts.md#tenants) otorgue el derecho de gestión de la plataforma Openshift al usuario administrador de Openshift para poder acceder a ella:
+Es indispensable que el administrador del [Tenant](../console/iam/concepts.md#tenants) conceda el derecho de gestión de la plataforma OpenShift al usuario administrador de OpenShift para poder acceder a ella:
 
 <img src={oshiftRights} />
 
-### Acceso al entorno Openshift dentro de un tenant
+### Acceso al entorno OpenShift dentro de un tenant
 
 Después de la asignación de derechos, el módulo '__Openshift__' aparece en el menú de la consola Cloud Temple:
 
 <img src={oshiftMenu_001} />
 
-Verá aparecer los clusters Openshift que están desplegados dentro de su tenant.
+Entonces verá los clústeres OpenShift que están desplegados dentro de su tenant.
 
-Haga clic en el cluster que desea administrar. Accederá al entorno de administración del cluster:
+Haga clic en el clúster que desea administrar. Accederá al entorno de administración del clúster:
 
 <img src={oshiftMenu_002} />
 
-Después de la autenticación, puede administrar su cluster:
+Después de la autenticación, puede administrar su clúster:
 
 <img src={oshiftMenu_003} />
 
 ### Recursos de su entorno
 
-Aquí están la información de conexión y configuración propia de su entorno OpenShift.
+Aquí está la información de conexión y configuración específica para su entorno OpenShift.
 
 #### Detalles de conexión
 
-Para acceder a los diferentes componentes de OpenShift, asegúrese de que su tenancy esté en la lista blanca en la consola (consulte la documentación: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+Para acceder a los diferentes componentes de OpenShift, asegúrese de que su tenant esté en la lista blanca en la consola (consulte la documentación: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Shiva Tenant__ :
-  [https://**su-id-tenant**.shiva.cloud-temple.com/](https://**su-id-tenant**.shiva.cloud-temple.com/)
+- __URL Shiva Tenant__:
+  [https://__su-id-tenant__.shiva.cloud-temple.com/](https://**su-id-tenant**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__ :
-  [https://ui-ocp01-**su-id**.paas.cloud-temple.com/](https://ui-ocp01-**su-id**.paas.cloud-temple.com/)
+- __OpenShift UI__:
+  [https://ui-ocp01-__su-id__.paas.cloud-temple.com/](https://ui-ocp01-**su-id**.paas.cloud-temple.com/)
 
-- __API externa__ :
-  [https://api-ocp01-**su-id**.paas.cloud-temple.com](https://api-ocp01-**su-id**.paas.cloud-temple.com)
+- __API externa__:
+  [https://api-ocp01-__su-id__.paas.cloud-temple.com](https://api-ocp01-**su-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-**su-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**su-id**.paas.cloud-temple.com/applications)
+- __GitOps (ARGOCD)__:
+  [https://gitops-ocp01-__su-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**su-id**.paas.cloud-temple.com/applications)
 
-#### Conexión al cluster via CLI
+#### Conexión al clúster vía CLI
 
-Para conectarse a través de la línea de comandos (CLI), use el siguiente comando:
+Para conectarse a través de la interfaz de línea de comandos (CLI), utilice el siguiente comando:
 
 ```bash
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
@@ -76,11 +75,11 @@ docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/
 docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Configuración de routers y Load Balancers
+#### Configuración de routers y balanceadores de carga
 
-La plataforma ofrece opciones flexibles para el __enrutamiento de flujos__ y el __balanceo de carga__:
+La plataforma ofrece opciones flexibles para el __enrutamiento de flujos__ y el __equilibrio de carga__:
 
-- Por defecto, se utilizan load balancers privados para las rutas y los ingresses.
+- Por defecto, se utilizan balanceadores de carga privados para las rutas y los ingresses.
 - Dominios:
   - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
@@ -100,6 +99,6 @@ metadata:
 Las configuraciones de red juegan un papel crucial para asegurar las comunicaciones con OpenShift.
 
 - __Red de interconexión__: 100.67.0.0/28
-- __VIP del load balancer privado__: 100.67.0.3
+- __VIP del balanceador de carga privado__: 100.67.0.3
 
-Verifique que su firewall tenga una interfaz dedicada y autorice el tráfico entre las redes especificadas.
+Verifique que su firewall disponga de una interfaz dedicada y autorice el tráfico entre las redes especificadas.

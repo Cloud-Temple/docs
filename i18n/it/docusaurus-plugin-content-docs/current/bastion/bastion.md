@@ -8,7 +8,6 @@ Accessibile dalla console Cloud Temple, garantisce una gestione centralizzata pr
 
 Con il suo approccio orientato alla sicurezza e le sue funzionalità avanzate come l'Infrastructure as Code, il Bastion risponde alle esigenze degli ambienti Cloud, ibridi e on-premises.
 
-
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
@@ -21,7 +20,7 @@ Con il suo approccio orientato alla sicurezza e le sue funzionalità avanzate co
     <a href="console/iam/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutorial</h3>
     <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="console/iam/tutorials/sso_aad.md" class="card-link">Scopri i tutorial &rarr;</a>
   </div>

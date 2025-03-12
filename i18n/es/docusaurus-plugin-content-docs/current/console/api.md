@@ -13,8 +13,8 @@ import ShivaApi004 from './images/shiva_api_004.jpg'
 
 ## Claves API
 
-La __clave API__ permite autenticarse cuando desea realizar solicitudes en la API. La generación de una clave API, también llamada __Personal Access Token (PAT)__,
-es una forma segura de conectarse a las API de Shiva sin pasar por una interfaz gráfica. Cada uno de estos tokens está vinculado a un tenant y al usuario que lo creó.
+La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también llamada __Personal Access Token (PAT)__,
+es una forma segura de conectarse a las APIs de Shiva sin pasar por una interfaz gráfica. Cada uno de estos tokens está vinculado a un tenant y al usuario que lo creó.
 
 La creación de este token se realiza desde su cuenta. Es posible generar varias claves y configurar para cada una los permisos dentro de los límites de sus derechos.
 
@@ -36,7 +36,7 @@ Luego debe:
 - Indicar una fecha de expiración (máximo 12 meses de validez),
 - Elegir los permisos asociados al token.
 
-Los detalles sobre su token se mostrarán a continuación. __Atención, no es posible acceder a ellos posteriormente.__
+Los detalles sobre su token se mostrarán a continuación. __Atención, no será posible acceder a ellos posteriormente.__
 
 Si no anota esta información, deberá destruir y recrear el token.
 
@@ -50,11 +50,11 @@ Luego verá el nuevo token creado y su futura fecha de expiración.
 
 ## Acceso al portal API
 
-La documentación OpenAPI 3.0 (Swagger) de las API de la consola de Cloud Temple está disponible directamente en la aplicación:
+La documentación OpenAPI 3.0 (Swagger) de las APIs de la consola Cloud Temple está disponible directamente en la aplicación:
 
 <img src={ShivaApi001} />
 
-El acceso a las API requiere autenticación. Una vez autenticado, todas las operaciones deben tener el encabezado
+El acceso a las APIs requiere autenticación. Una vez autenticado, todas las operaciones deben tener el encabezado
 __'Authorization'__ con el token de acceso bearer obtenido durante la fase de autenticación.
 
 La URL de los puntos de acceso se proporciona directamente en __Swagger__ (en el objeto "Servers" de cada página de las APIs).
@@ -144,16 +144,16 @@ Los límites se definen en __solicitudes por segundos (r/s) y por IP de origen__
 Estos son los límites definidos:
 
 | Producto              | Umbral límite |
-|----------------------|--------------|
-| Consola Cloud Temple | 60 r/s       |
-| Identidad (IAM)       | 60 r/s       |
-| IaaS - Cálculo        | 60 r/s       |
-| IaaS - Almacenamiento | 20 r/s       |
-| IaaS - Respaldo      | 60 r/s       |
-| PaaS - S3            | 60 r/s       |
-| PaaS - Openshift     | 60 r/s       |
-| Red                 | 60 r/s       |
-| Alojamiento          | 60 r/s       |
+|----------------------|---------------|
+| Consola Cloud Temple | 60 r/s        |
+| Identidad (IAM)      | 60 r/s        |
+| IaaS - Cálculo       | 60 r/s        |
+| IaaS - Almacenamiento| 20 r/s        |
+| IaaS - Respaldo      | 60 r/s        |
+| PaaS - S3            | 60 r/s        |
+| PaaS - Openshift     | 60 r/s        |
+| Red                  | 60 r/s        |
+| Alojamiento          | 60 r/s        |
 
 ### ¿Cómo funcionan los límites de tasa?
 
@@ -174,16 +174,16 @@ Se recomienda limitar el número de llamadas a la API realizadas por su automati
 
 Esto ocurre a menudo cuando se ejecutan varias solicitudes en paralelo, utilizando varios procesos o hilos.
 
-Existen varias maneras de mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de __un sistema de repetición con atenuación progresiva__. Este método consiste en realizar una breve pausa cuando se encuentra un error de límite de tasa, y luego volver a intentar la solicitud. Si la solicitud falla nuevamente, la duración de la pausa aumenta gradualmente hasta que la solicitud tenga éxito o se alcance un número máximo de intentos.
+Existen varias maneras de mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de __un sistema de repetición con retroceso progresivo__. Este método consiste en realizar una breve pausa cuando se encuentra un error de límite de tasa, y luego volver a intentar la solicitud. Si la solicitud falla nuevamente, la duración de la pausa aumenta gradualmente hasta que la solicitud tenga éxito o se alcance un número máximo de intentos.
 
 Este enfoque presenta muchas ventajas:
 
-- __La atenuación progresiva__ garantiza que los primeros intentos se realicen rápidamente, mientras que se prevén pausas más prolongadas en caso de fallos repetidos.
+- __El retroceso progresivo__ garantiza que los primeros intentos se realicen rápidamente, mientras que se prevén pausas más prolongadas en caso de fallos repetidos.
 - La adición de __una variación aleatoria__ a la pausa ayuda a evitar que todos los intentos ocurran simultáneamente.
 
 Es importante tener en cuenta que __las solicitudes fallidas no afectan su límite de tasa__. Sin embargo, reenviar continuamente una solicitud puede no ser una solución viable a largo plazo, ya que este comportamiento podría cambiar en el futuro. Por lo tanto, recomendamos no depender exclusivamente de este mecanismo.
 
-Las bibliotecas __[Backoff](https://pypi.org/project/backoff/)__ y __[Tenacity](https://pypi.org/project/tenacity/)__ en Python son buenos puntos de partida para implementar estrategias de atenuación.
+Las bibliotecas __[Backoff](https://pypi.org/project/backoff/)__ y __[Tenacity](https://pypi.org/project/tenacity/)__ en Python son buenos puntos de partida para implementar estrategias de retroceso.
 
 ## Ciclo de vida de un endpoint de API
 

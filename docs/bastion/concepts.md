@@ -3,7 +3,6 @@ title: Concepts
 ---
 import bastion from './images/bastion.svg'
 
-
 ## C'est quoi le Bastion Cloud Temple ?
 
 Le Bastion Cloud Temple est un service managé qui vous fournit une connectivité RDP ou SSH sécurisée depuis la console
@@ -13,6 +12,7 @@ Cloud public ou onpremise. La solution Bastion permet d’administrer vos équip
 <img src={bastion} />
 
 ## Les avantages
+
 | Avantage               |                                                                              Description                                                                               |
 |------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | Gestion centralisée    |                                              Le Bastion Cloud Temple est accessible directement depuis le portail Shiva.                                               |
@@ -20,10 +20,10 @@ Cloud public ou onpremise. La solution Bastion permet d’administrer vos équip
 | Infrastructure as Code |          Des APIs permettent de gérer le Bastion Cloud Temple entièrement "as Code" (création de session, connexion, modification et suppression de session).          |
 
 ## Références (SKU)
+
 | Référence                          |   Unité   |           SKU           |
 |------------------------------------|:---------:|:-----------------------:|
 | ADMINISTRATION - Bastion SSH & RDP | 1 Session | cmp:bastion:session:std |
-
 
 ### L'Appliance Bastion
 

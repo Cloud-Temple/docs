@@ -8,7 +8,6 @@ import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_ac
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
 
-
 ## Calcul
 
 ### Pilotage des Machines virtuelles
@@ -60,11 +59,11 @@ Un bandeau rapide permet de réaliser les actions suivantes :
 - La renommer.
 - La supprimer.
 
-Dans l'onglet d'information '**Générales**', vous trouvez des informations détaillées relatives à votre machine virtuelle, telles que son emplacement physique (AZ, Pool, Host), la RAM, le CPU, les adresses IP, et autres.
+Dans l'onglet d'information '__Générales__', vous trouvez des informations détaillées relatives à votre machine virtuelle, telles que son emplacement physique (AZ, Pool, Host), la RAM, le CPU, les adresses IP, et autres.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Un onglet '**Avancé**' permet de consulter des informations plus spécifiques :
+Un onglet '__Avancé__' permet de consulter des informations plus spécifiques :
 
 - UUID de la machine virtuelle
 - Guest tools
@@ -72,6 +71,7 @@ Un onglet '**Avancé**' permet de consulter des informations plus spécifiques :
 - Lecteur DVD
 
 Ainsi que modifier certaines options telles que :
+
 - L'ordre de lancement
 - Le secure boot
 - Le démarrage automatique (impossible si aucune politique de sauvegarde n'est associée à la VM)

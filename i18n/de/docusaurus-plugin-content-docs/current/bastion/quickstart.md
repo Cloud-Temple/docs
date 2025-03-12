@@ -8,7 +8,6 @@ import creerSession3 from './images/creer_session3.png'
 import ouvrirSession from './images/ouvrir_session.png'
 import ouvrirSession2 from './images/ouvrir_session2.png'
 
-
 Diese Schnellstartanleitung zeigt Ihnen, wie Sie die Erstellung einer Appliance beantragen und wie Sie eine neue Sitzung registrieren und sich damit verbinden können.
 
 ## Voraussetzungen
@@ -18,35 +17,32 @@ Diese Schnellstartanleitung zeigt Ihnen, wie Sie die Erstellung einer Appliance 
 3. Sie haben die Rechte für das Bastion-Modul.
 4. Bei der Bereitstellung der On-Premise-Appliance müssen die entsprechenden Datenflüsse geöffnet sein.
 
-
 ## Für den Betrieb des Bastion-Produkts erforderliche Datenflüsse
 
 Für den ordnungsgemäßen Betrieb der Bastion Appliance sind mehrere Datenflüsse erforderlich.
 
 ### Das Bastion-Gateway
-| Quelle                   | Ziel                                       | Protokoll |
-|--------------------------|---------------------------------------------|----------|
-| Bastion-Client-Appliance | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242 |
+| Quelle                   | Ziel                                        | Protokoll |
+|--------------------------|---------------------------------------------|-----------|
+| Bastion-Client-Appliance | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242  |
 
 ### RDP-Verwaltungsdatenflüsse
 
 | Quelle                   | Ziel                        | Protokoll |
-|--------------------------|----------------------------|----------|
-| Bastion-Client-Appliance | Zu verwaltende Instanzen   | TCP/3389 |
+|--------------------------|----------------------------|-----------|
+| Bastion-Client-Appliance | Zu verwaltende Instanzen   | TCP/3389  |
 
 ### SSH-Verwaltungsdatenflüsse
 
 | Quelle                   | Ziel                        | Protokoll |
-|--------------------------|----------------------------|----------|
-| Bastion-Client-Appliance | Zu verwaltende Instanzen   | TCP/22   |
-
+|--------------------------|----------------------------|-----------|
+| Bastion-Client-Appliance | Zu verwaltende Instanzen   | TCP/22    |
 
 ## Beantragung der Erstellung einer Appliance
 Bevor Sie eine Appliance bereitstellen können, müssen Sie ein Appliance-Abonnement über eine Support-Anfrage beantragen.
 Der Support ist in der Shiva-Konsole über das Rettungsring-Symbol in der Leiste oben rechts im Fenster zugänglich.
 
 <img src={shivaSupport} />
-
 
 ## Gerät registrieren
 
@@ -55,7 +51,6 @@ Um regelmäßig auf ein zu verwaltendes Gerät zuzugreifen, ist es sinnvoller, e
 Gehen Sie dazu auf die Registerkarte "Geräte" im Menü "Bastion" und klicken Sie dann auf die Schaltfläche "Neues Gerät".
 
 <img src={creerSession} />
-
 
 Füllen Sie dann die notwendigen Informationen für die Erstellung Ihres Geräts aus:
 
@@ -68,10 +63,9 @@ Füllen Sie dann die notwendigen Informationen für die Erstellung Ihres Geräts
 
 <img src={creerSession2} />
 
-
 Eine Benachrichtigung, die die Erstellung des Geräts anzeigt, sollte oben rechts auf der Seite erscheinen. Die Sitzung wird dann zur Liste Ihrer Geräte hinzugefügt.
 
-Um ein neues Gerät zu erstellen, können Sie auch den Tab "Appliances" öffnen, indem Sie auf die Aktionsleiste der Appliance klicken, mit der Sie ein Gerät verknüpfen möchten.
+Um ein neues Gerät zu erstellen, können Sie auch über die Registerkarte "Appliances" gehen, indem Sie auf die Aktionsleiste der Appliance klicken, mit der Sie ein Gerät verknüpfen möchten.
 
 <img src={creerSession3} />
 

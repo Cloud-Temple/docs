@@ -12,7 +12,6 @@ import shivaIncident_004 from './images/shiva_incident_004.png'
 import shivaIncident_005 from './images/shiva_incident_005.png'
 import shivaIncident_006 from './images/shiva_incident_006.png'
 
-
 Comme toute plateforme d'infrastructure Cloud, la plateforme Cloud Temple fait l'objet de travaux et de maintenance matérielle et logicielle régulièrement.
 
 ## Accès aux opérations et incidents en cours
@@ -39,7 +38,7 @@ Les interventions terminées quant à elles sont visibles dans le second onglet 
 
 <img src={shivaInterventionMenu05} />
 
-L'accès à ces informations nécessite pour le profil de l'utilisateur la permission '**intervention_read**'.
+L'accès à ces informations nécessite pour le profil de l'utilisateur la permission '__intervention_read__'.
 
 ## Gestion des incidents
 
@@ -55,7 +54,7 @@ Un bouton __'En savoir plus'__ redirige vers la page publique de suivi des incid
 
 <img src={shivaIncident_002} />
 
-Il est possible d'obtenir les rapports des incidents globaux. L'accès à ces rapports requiert la permission spécifique '**incident_management**'.
+Il est possible d'obtenir les rapports des incidents globaux. L'accès à ces rapports requiert la permission spécifique '__incident_management__'.
 
 Voici un exemple de l'onglet affichant ces rapports :
 
@@ -63,13 +62,13 @@ Voici un exemple de l'onglet affichant ces rapports :
 
 ### Incidents sur un périmètre commanditaire
 
-La visibilité des incidents spécifiques à un périmètre client nécessite la permission **incident_read**. Ces incidents sont représentés par une icône dédiée, accompagnée d'un badge rouge indiquant le nombre d'incidents en cours.
+La visibilité des incidents spécifiques à un périmètre client nécessite la permission __incident_read__. Ces incidents sont représentés par une icône dédiée, accompagnée d'un badge rouge indiquant le nombre d'incidents en cours.
 
 L'icône est cliquable, permettant de lister les tickets associés aux incidents. Chaque ticket inclut un lien vers les détails de l'incident, offrant la possibilité de suivre l'avancement de leur résolution :
 
 <img src={shivaIncident_004} />
 
-Pour consulter les détails d'un incident, il est nécessaire d'être l'auteur du ticket d'incident ou de disposer de la permission **support_management**.
+Pour consulter les détails d'un incident, il est nécessaire d'être l'auteur du ticket d'incident ou de disposer de la permission __support_management__.
 
 ### Gestion des notifications
 

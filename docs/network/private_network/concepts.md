@@ -3,6 +3,7 @@ title: Concepts
 ---
 
 ### La technologie VPLS
+
 Le réseau global Cloud Temple utilise la technologie __[VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service)__.
 __VPLS__ est un VPN de couche 2 point-à-multipoint basé sur Ethernet. Il permet de connecter des sites géographiquement
 dispersés les uns aux autres à travers un réseau MPLS. Pour les clients, tous les sites semblent être dans le même
@@ -47,7 +48,6 @@ Les configurations disponibles sur la console Cloud Temple dans le cadre de l'of
 - *__QinQ__ est supporté sur l'architecture Cloud Temple. QinQ, également connu sous le nom de "VLAN stacking" ou de 802.1ad, est
 un protocole réseau qui permet l'encapsulation de plusieurs étiquettes VLAN (Virtual Local Area Network) dans une seule trame Ethernet.*
 
-
 ## Réseaux privés régionaux
 
 La commande des réseaux privés au sein d'une région se réalise directement dans la console Cloud Temple.
@@ -57,7 +57,6 @@ __*Remarque :*__ *Il n'est pas possible de choisir l'ID de vlan 802.1q.*
 | Référence                                 | Unité  | SKU                          |
 |-------------------------------------------|--------|------------------------------|
 | RESEAU - Région FR1 - VLAN privé inter AZ | 1 vlan | csp:(region):network:vlan:v1 |
-
 
 ## Partage de réseau entre tenants
 

@@ -4,44 +4,44 @@ title: Convention de Service SecNumCloud PaaS
 
 **Table des matières**
 
--   [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
--   [2. Acronymes](#Xc79d173393c04b42ba8cdf223cca3c0202f4dee)
--   [3. Glossaire](#X0c9d1d82fdc5fcc3d01a320dd2dd3715a6900b4)
--   [4. Objet de la convention de service PaaS du
+- [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
+- [2. Acronymes](#Xc79d173393c04b42ba8cdf223cca3c0202f4dee)
+- [3. Glossaire](#X0c9d1d82fdc5fcc3d01a320dd2dd3715a6900b4)
+- [4. Objet de la convention de service PaaS du
     Prestataire](#X23ec3c3767539f9e69acc7cbf5af8aa8c1b6ad7)
--   [5. Evolution de la convention de service
+- [5. Evolution de la convention de service
     PaaS](#Xa7161677dcf9a35d02c20807040326b39d55881)
--   [6. Audit](#X910e2801262de94af715f54b8fb509cc70cc79a)
--   [7. Description du
+- [6. Audit](#X910e2801262de94af715f54b8fb509cc70cc79a)
+- [7. Description du
     service](#X3d12a6c93683f0122f5f9a8e21e7c12fc92490b)
--   [8. Mise en œuvre du
+- [8. Mise en œuvre du
     service](#Xc98fb6da582d483e300add6a80df6e3eb76498a)
-    -   [8.1. Description des composants
+  - [8.1. Description des composants
         techniques](#Xa61c340e3fdf14082cef411d3a913fc4bdeeb4c)
-        -   [8.1.1. Plateforme de service REDHAT
+    - [8.1.1. Plateforme de service REDHAT
             OpenShift](#Xf81d22ed0abca8eab163c160107fa228901d82c)
-        -   [8.1.2. Infrastructure logiciel de pilotage de la plateforme
+    - [8.1.2. Infrastructure logiciel de pilotage de la plateforme
             Redhat Openshift](#Xf11ec2e6a431ae11852fe3129245b4d0fd0747b)
-        -   [8.1.3. Infrastructure de sauvegarde
+    - [8.1.3. Infrastructure de sauvegarde
             associée](#X77b1112fa2c2a53eb0cf09b416962164b77b437)
-        -   [8.1.4. Mise en œuvre de solutions de reprise d\'activité ou
+    - [8.1.4. Mise en œuvre de solutions de reprise d\'activité ou
             de continuité
             d\'activité](#Xae1394210f1c9bee4293a93160d2d11cc70ebdd)
--   [9. Engagements et niveaux de
+- [9. Engagements et niveaux de
     services](#Xad2b4ae071a52a99b502c4e84cbba3f15ac78f8)
-    -   [9.1. Engagements de disponibilité de la plateforme RedHat
+  - [9.1. Engagements de disponibilité de la plateforme RedHat
         OpenShift](#X273341276df81e9f6fad2000ac84216560e59fa)
--   [10. Modèle de responsabilités partagées
+- [10. Modèle de responsabilités partagées
     applicable](#Xa90d4e180ca2ae1d92e4e4cf00f20aca5061eac)
-    -   [10.1. Responsabilité et Obligations du
+  - [10.1. Responsabilité et Obligations du
         Prestataire](#Xe5cf73850ea2189ab60f41560bf52e97d3019f9)
-    -   [10.2. Limitation de responsabilité du
+  - [10.2. Limitation de responsabilité du
         Prestataire](#X8856c8f606130116944398b24484722823c023c)
-    -   [10.3. Limitation
+  - [10.3. Limitation
         d\'accès](#X902763258f1242326933ce46892d3f549e73e30)
--   [11. Effacement des données en fin de
+- [11. Effacement des données en fin de
     contrat](#Xbe642a80027ce4ad88cc932e98b8661c2a0d3a6)
--   [12. Droit applicable](#Xa219184d62eb90dfeec612801fd05c5d816c331)
+- [12. Droit applicable](#Xa219184d62eb90dfeec612801fd05c5d816c331)
 
 ## 1. Cadre
 
@@ -119,7 +119,7 @@ title: Convention de Service SecNumCloud PaaS
 
   VSR           Validation de Service Régulier
 
-  SNC           SecNumCloud
+SNC           SecNumCloud
   ------------------------------------------------------------------------------
 
 ## 3. Glossaire
@@ -147,10 +147,10 @@ ci-dessous :
   zone)                            et la résilience des services par une distribution
                                    géographique des ressources.
 
-  Tenant                           Une instance isolée réservée à un utilisateur ou groupe
+Tenant                           Une instance isolée réservée à un utilisateur ou groupe
                                    d\'utilisateurs, partageant une infrastructure commune tout
                                    en maintenant l\'indépendance et la sécurité des données et
-                                   des applications.
+                                   des applications
   --------------------------------------------------------------------------------------------
 
   -------------------------------------------------------------------------
@@ -173,7 +173,7 @@ ci-dessous :
                   production et les impacts (y compris financiers) sont
                   connus et acceptés à l'avance par les Parties. Il est
                   alors intégré au catalogue des changements standards, et
-                  peut selon les cas avoir une GTI et une GTR. 
+                  peut selon les cas avoir une GTI et une GTR.
 
   Mise en         action(s) d'administration de réalisation du changement
   production      quand celui-ci est approuvé (le changement, au sens ITIL,
@@ -218,12 +218,12 @@ ci-dessous :
                   critères et engagements définis dans les Accords de
                   Niveau de Service (SLA)
 
-  Supervision     Surveillance d\'un Système d\'Information ou d\'un
+Supervision     Surveillance d\'un Système d\'Information ou d\'un
                   Service, impliquant la collecte de diverses données
                   telles que mesures et alarmes. Cette activité se limite à
                   l\'observation et au suivi, sans intervenir directement
                   sur les éléments surveillés, une prérogative qui
-                  appartient aux opérations d\'Administration.
+                  appartient aux opérations d\'Administration
   -------------------------------------------------------------------------
 
 ## 4. Objet de la convention de service PaaS du Prestataire
@@ -235,15 +235,15 @@ Service -- PaaS », dûment qualifiée SecNumCloud.
 
 Objet de la Convention de Services :
 
-1.  Préciser les exigences de performance attendues par le COMMANDITAIRE
+1. Préciser les exigences de performance attendues par le COMMANDITAIRE
     en termes de fonctionnalité et de fiabilité de l\'infrastructure.
-2.  Énoncer les obligations du Prestataire afin de satisfaire aux
+2. Énoncer les obligations du Prestataire afin de satisfaire aux
     niveaux de service convenus.
-3.  Identifier les normes réglementaires applicables spécifiquement à
+3. Identifier les normes réglementaires applicables spécifiquement à
     l\'infrastructure proposée.
-4.  Assurer une uniformité et une intégrité dans l\'évaluation de la
+4. Assurer une uniformité et une intégrité dans l\'évaluation de la
     qualité des services rendus.
-5.  Garantir l\'excellence des services fournis, évaluée au moyen
+5. Garantir l\'excellence des services fournis, évaluée au moyen
     d\'indicateurs de performance quantitatifs.
 
 Il est stipulé que, dans l\'hypothèse où le Prestataire se verrait
@@ -273,12 +273,12 @@ l\'établissement et la signature d\'un avenant au contrat en cours.
 Les facteurs pouvant induire une révision de cette convention incluent,
 sans s\'y limiter :
 
--   L\'adaptation de la plateforme PaaS orchestrée par le Prestataire.
--   Les ajustements apportés aux services déployés par le Prestataire.
--   Les variations des engagements pris et des sanctions applicables.
--   Les reconfigurations organisationnelles au sein du COMMANDITAIRE ou
+- L\'adaptation de la plateforme PaaS orchestrée par le Prestataire.
+- Les ajustements apportés aux services déployés par le Prestataire.
+- Les variations des engagements pris et des sanctions applicables.
+- Les reconfigurations organisationnelles au sein du COMMANDITAIRE ou
     du Prestataire.
--   L\'expansion ou la réduction du champ d\'application des services
+- L\'expansion ou la réduction du champ d\'application des services
     auxquels le COMMANDITAIRE a souscrit.
 
 La gestion des versions et des révisions de la convention est consignée
@@ -300,12 +300,12 @@ données et l'informer de tout changement de sous-traitants.**
 Par l\'acceptation de la présente convention de service, le
 COMMANDITAIRE confère son autorisation explicite à :
 
-1.  **L\'Agence Nationale de la Sécurité des Systèmes d\'Information
+1. **L\'Agence Nationale de la Sécurité des Systèmes d\'Information
     (ANSSI)** ainsi qu\'à l\'entité de qualification compétente pour
     entreprendre la vérification de la conformité du Service et de son
     Système d\'Information aux standards définis par le Référentiel
     SecNumCloud.
-2.  **Un prestataire d\'audit en sécurité des systèmes d\'information**,
+2. **Un prestataire d\'audit en sécurité des systèmes d\'information**,
     dûment qualifié et expressément désigné par le Prestataire, pour
     mener à bien des audits de sécurité portant sur le Service délivré
     par le Prestataire.
@@ -317,7 +317,7 @@ mise à disposition des prestations suivantes, lesquelles s\'alignent sur
 le principe de responsabilité partagée détaillé dans les normes établies
 par le référentiel SecNumCloud :
 
--   La provision d\'une plateforme de gestion des conteneurs Redhat
+- La provision d\'une plateforme de gestion des conteneurs Redhat
     Openshift pilotée par le Prestataire.
 
 Il est entendu que le Prestataire mobilisera son expertise pour réaliser
@@ -459,13 +459,13 @@ SLAs concernés, lesquels sont spécifiquement identifiés par un
 astérisque (\*). L\'accessibilité aux SLAs se fait via l\'interface
 COMMANDITAIRE. **Les mesures s\'entendent calculées mensuellement**:
 
--   \*\*SLA 1 (\*) : IC-PAAS_SNC-01\*\* -- Disponibilité de la
+- \*\*SLA 1 (\*) : IC-PAAS_SNC-01\*\* -- Disponibilité de la
     plateforme RedHat OpenShift : taux de disponibilité garanti de
     99,9%, calculé sur une base 24h/24, 7j/7.
 
 ***Remarques*** :
 
--   *En réponse une attaque par déni de service distribué (DDoS), le
+- *En réponse une attaque par déni de service distribué (DDoS), le
     Prestataire se réserve le droit d\'ajuster sa configuration de
     routage internet pour limiter l\'impact de cette attaque et
     sauvegarder son infrastructure. En particulier, si une adresse IP
@@ -480,7 +480,7 @@ COMMANDITAIRE. **Les mesures s\'entendent calculées mensuellement**:
     disponibles sur le marché, et à configurer soigneusement ses groupes
     de sécurité via l\'API de commande.*
 
--   *Le Prestataire insiste sur la nécessité pour le COMMANDITAIRE de
+- *Le Prestataire insiste sur la nécessité pour le COMMANDITAIRE de
     minimiser les ouvertures de flux, en évitant notamment de rendre
     accessibles les ports d\'administration **SSH** (port TCP 22) et
     **RDP** (port TCP 3389) depuis l\'ensemble d\'Internet (sous-réseau
@@ -543,25 +543,25 @@ La structure de responsabilité partagée réduit efficacement l\'étendue
 de l\'intervention du Prestataire aux aspects liés à la fourniture
 d\'une plateforme RedHat OpenShift fonctionnelle, comprenant :
 
--   La gestion de l\'infrastructure IaaS qui prend en charge la
+- La gestion de l\'infrastructure IaaS qui prend en charge la
     plateforme RedHat OpenShift et son provisionnement,
--   La gestion des systèmes nécessaires au bon fonctionnement de la
+- La gestion des systèmes nécessaires au bon fonctionnement de la
     plateforme,
--   Le maintien en conditions de sécurité,
--   La mise à jour de la plateforme RedHat OpenShift,
--   La sauvegarde des données de configuration essentielles de cette
+- Le maintien en conditions de sécurité,
+- La mise à jour de la plateforme RedHat OpenShift,
+- La sauvegarde des données de configuration essentielles de cette
     plateforme, à l\'exception des données et des applications du
     COMMANDITAIRE qui relèvent de sa responsabilité.
 
 Elle exclue notamment, mais sans s\'y limiter :
 
--   La mise à jour des systèmes d\'exploitation et des logiciels
+- La mise à jour des systèmes d\'exploitation et des logiciels
     installés par le COMMANDITAIRE sur ses environnements OpenShift dans
     ses espaces locatifs,
--   La sécurité des programmes, logiciels et applications installés au
+- La sécurité des programmes, logiciels et applications installés au
     sein de l\'environnement OpenShift par le COMMANDITAIRE,
--   La sauvegarde des données au niveau applicatif,
--   La configuration des politiques de sauvegarde.
+- La sauvegarde des données au niveau applicatif,
+- La configuration des politiques de sauvegarde.
 
 ### 10.3. Limitation d\'accès
 

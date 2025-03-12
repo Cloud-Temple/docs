@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble
+title: Panoramica
 ---
 
 Il prodotto IaaS Open Source di Cloud Temple: un'alleanza unica tra prestazioni, sicurezza e trasparenza.

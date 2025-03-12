@@ -1,6 +1,5 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
-
 const sidebars: SidebarsConfig = {
   docSidebar: [
     {
@@ -53,6 +52,14 @@ const sidebars: SidebarsConfig = {
             'console/iam/tutorials/sso_adfs',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AdditionalContent',
+      items: [
+        'additional_content/concepts_regional',
+        'additional_content/concepts_az',
       ],
     },
     {
@@ -203,10 +210,13 @@ const sidebars: SidebarsConfig = {
       `,
     },
     {
+      type: 'doc',
+      id: 'contractual/orderdoc',
+    },
+    {
       type: 'category',
       label: 'Contractual documents',
       items: [
-        'contractual/orderdoc',
         'contractual/cgvu',
         'contractual/iaas/sla_iaas',
         'contractual/iaas/sla_openiaas',
