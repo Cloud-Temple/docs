@@ -16,7 +16,6 @@ import S3Lifecycle from './images/S3_lifecycle.png'
 import S3CreatePopup_002 from './images/S3_create_popup_002.png'
 import S3Delete from './images/S3_delete.png'
 
-
 ## Lister l'ensemble des bucket S3 de votre tenant
 
 Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
@@ -43,7 +42,6 @@ La regeneration se fait au niveau des options de la clefs en choisissant l'optio
 
 <img src={S3Keyregen} />
 
-
 ## Création d'un bucket S3
 
 La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau bucket__' en haut à droite de l'écran :
@@ -52,19 +50,19 @@ La création de nouveau bucket se fait en cliquant sur le bouton '__Nouveau buck
 
 Une fenêtre s'affiche alors et vous devez renseigner :
 
-1. La **région** de création de votre bucket,
-2. Le **type** de bucket : performant ou archivage,
-3. Le **nom** de votre bucket (il doit être unique).
+1. La __région__ de création de votre bucket,
+2. Le __type__ de bucket : performant ou archivage,
+3. Le __nom__ de votre bucket (il doit être unique).
 
 <img src={S3CreatePopup_001} />
 
-Au 3 Avril 2024, la région disponible est **FR1** (Paris) et seul le type performant est disponible.
+Au 3 Avril 2024, la région disponible est __FR1__ (Paris) et seul le type performant est disponible.
 
 Vous devez aussi choisir qui peut accéder à votre bucket :
 
-- Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
-- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Cependant, une authentification est toujours requise. Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
-- Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser.
+- Accès __Privé__ : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
+- Accès __Public__ : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Cependant, une authentification est toujours requise. Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès __Personnalisé__ : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser.
 
 ## Association d'un compte de stockage à un bucket
 
@@ -74,9 +72,10 @@ Les associations de compte aux buckets sont réalisées dans l'onglet '__Politiq
 
 Cette association permet de donner l'accès du compte de stockage au bucket. Il y quatres rôles :
 
-1. **Mainteneur** : Les droits de lecture, ecriture, gestion des droits et gestion de la politique
+1. __Mainteneur__ : Les droits de lecture, ecriture, gestion des droits et gestion de la politique
 
 Les permissions S3 derrière ce rôle:
+
 ```json
 {
     "name": "maintainer",
@@ -86,9 +85,10 @@ Les permissions S3 derrière ce rôle:
 }
 ```
 
-2. **Ecrivain et Lecteur** : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
+2. __Ecrivain et Lecteur__ : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
 
 Les permissions S3 derrière ce rôle:
+
 ```json
 {
     "name": "read_write",
@@ -100,9 +100,10 @@ Les permissions S3 derrière ce rôle:
 }
 ```
 
-3. **Ecrivain** : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
+3. __Ecrivain__ : Lire et éditer, modifier, supprimer les fichiers dans les buckets.
 
 Les permissions S3 derrière ce rôle:
+
 ```json
 {
     "name": "write_only",
@@ -113,9 +114,10 @@ Les permissions S3 derrière ce rôle:
 }
 ```
 
-4. **Lecteur** : Lire les fichiers dans les buckets et les télécharger.
+4. __Lecteur__ : Lire les fichiers dans les buckets et les télécharger.
 
 Les permissions S3 derrière ce rôle:
+
 ```json
 {
     "name": "read_only",
@@ -158,9 +160,9 @@ Il est très simple de configurer les restrictions d'accès à vos buckets S3. L
 
 <img src={S3CreatePopup_001} />
 
-- Accès **Privé** : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
-- Accès **Public** : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
-- Accès **Personnalisé** : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser:
+- Accès __Privé__ : Par défaut, l'accès est limité aux adresses IP spécifiques de Cloud Temple.
+- Accès __Public__ : L'accès est ouvert à toutes les adresses Internet (notamment via la règle 0.0.0.0/0). Nous déconseillons cette configuration en raison de ses implications en termes de sécurité.
+- Accès __Personnalisé__ : Cette option vous permet de spécifier les adresses IPv4 ou les plages de sous-réseaux que vous souhaitez autoriser:
 
 <img src={S3CreatePopup_002} />
 
@@ -172,8 +174,7 @@ La suppression d'un bucket se fait dans les actions associées au bucket en choi
 
 <img src={S3Delete} />
 
-_**ATTENTION : La suppression est définitive et il n'existe aucun moyen de récupérer les données.**_
-
+***ATTENTION : La suppression est définitive et il n'existe aucun moyen de récupérer les données.***
 
 ## Comment est facturé l'offre S3 de Cloud Temple ?
 

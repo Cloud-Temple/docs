@@ -9,7 +9,7 @@ tags:
 ## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> es accesible a través de:</p>
+  <p>¿Es usted un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> es accesible vía:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
@@ -30,6 +30,6 @@ tags:
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Saber más &rarr;
+    Más información &rarr;
   </a>
 </div>

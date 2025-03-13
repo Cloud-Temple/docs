@@ -9,7 +9,7 @@ tags:
 ## Piattaforme di acquisto
 
 <div class="purchase-platforms">
-  <p>Sei un attore del settore pubblico? L’offerta <strong>IaaS Cloud Temple</strong> è accessibile tramite :</p>
+  <p>Sei un attore del settore pubblico? L'offerta <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />

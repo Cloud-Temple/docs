@@ -21,7 +21,7 @@ These tutorials help you deploy and manage a Cloud Temple Bastion from the Shiva
 1. Have subscribed to the Cloud Temple offer (Bastion Appliance subscription).
 2. The equipment to be administered must be accessible from the network where the Bastion Appliance is deployed.
 3. Have rights on the Bastion module.
-4. In the context of deploying the on-premise Appliance, the corresponding streams must be opened.
+4. In the context of deploying the on-premise Appliance, the corresponding flows must be open.
 
 ## Interface
 
@@ -42,9 +42,11 @@ A search engine is available to allow you to search for an Appliance by its name
 <img src={appliances} />
 
 ## Deploy an Appliance
+
 Before being able to deploy an Appliance, a subscription request for an Appliance must be made via a support request.
 
-## Open a stream to equipment
+## Open a flow to equipment
+
 In the "Appliances" tab, click on the action bar of the Appliance you want to open. Then click on the "Open" button.
 
 <img src={ouvrirAppliance} />

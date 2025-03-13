@@ -44,9 +44,11 @@ Un moteur de recherche est disponible pour vous permettre de chercher une Applia
 <img src={appliances} />
 
 ## Déployer une Appliance
+
 Avant de pouvoir déployer une Appliance, il faut faire une demande de souscription à une Appliance via une demande au support.
 
 ## Ouvrir un flux vers un équipement
+
 Dans l’onglet « Appliances », cliquez sur la barre d’action de l’Appliance que vous souhaitez ouvrir. Cliquez ensuite sur le bouton « Ouvrir ».
 
 <img src={ouvrirAppliance} />
@@ -68,7 +70,6 @@ Pour cela, rendez-vous dans l’onglet « Equipements » du menu « Bastion », 
 
 <img src={creerSession} />
 
-
 Renseignez ensuite les informations nécessaires à la création de votre équipement :
 
     - Nom de l'équipement ;
@@ -79,7 +80,6 @@ Renseignez ensuite les informations nécessaires à la création de votre équip
     - Langue du clavier.
 
 <img src={creerSession2} />
-
 
 Une notification vous indiquant la création de votre configuration d'équipement devrait apparaître en haut à droite de la page. La configuration s’ajoute ensuite à la liste de vos équipements.
 
@@ -114,9 +114,3 @@ Vous pouvez ensuite modifier le nom de l'équipement, sa description, l’Applia
 Rendez-vous dans l’onglet « Equipements » de la section « Bastion », cliquez sur la barre d’action de l'équipement que vous souhaitez supprimer, et cliquez sur le bouton « Supprimer ».
 
 <img src={supprimerSession} />
-
-
-
-
-
-

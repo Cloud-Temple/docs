@@ -4,7 +4,6 @@ title: Vue d'ensemble
 
 Cloud Temple propose une offre Réseaux Privés conçue pour répondre aux besoins des entreprises en matière de connectivité sécurisée, performante et flexible. Basée sur une architecture innovante utilisant la technologie VPLS, cette solution offre un réseau de niveau 2 privé, transparent et extensible à travers toutes les zones de disponibilité.
 
-
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
@@ -22,4 +21,3 @@ Cloud Temple propose une offre Réseaux Privés conçue pour répondre aux besoi
     <a href="./private_network/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
-

@@ -10,7 +10,6 @@ Avec __Bare Metal__, vous bénéficiez d’un matériel exclusif, sans mutualisa
 
 L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant une gestion simplifiée et une prise en main immédiate. Que vous cherchiez une infrastructure pour vos applications critiques ou des ressources matérielles pour vos projets spécifiques, l’offre Bare Metal vous assure flexibilité, contrôle total, et performances inégalées.
 
-
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
@@ -28,7 +27,6 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
     <a href="iaas_bare-metal/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
-
 
 ## Plateformes d'achat
 

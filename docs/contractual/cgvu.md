@@ -4,96 +4,96 @@ title: Conditions Générales de Vente et Utilisation (CGVU)
 
 **Table des matières**
 
--   [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
--   [2. Préambule](#X95f5a49ce2232622edafb4d282b365be9aa60c6)
--   [3. Définitions](#X31b0d34b3711f9b12e76c2254c4efb43454053e)
--   [4. Objet](#X6cbf86c27755c45da6fe8cf2ffb85cf5ac969a2)
--   [5. Disposition générale](#Xe916e2c8dc91d280dd54f660184b7c68f730905)
--   [6. Commande des
+- [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
+- [2. Préambule](#X95f5a49ce2232622edafb4d282b365be9aa60c6)
+- [3. Définitions](#X31b0d34b3711f9b12e76c2254c4efb43454053e)
+- [4. Objet](#X6cbf86c27755c45da6fe8cf2ffb85cf5ac969a2)
+- [5. Disposition générale](#Xe916e2c8dc91d280dd54f660184b7c68f730905)
+- [6. Commande des
     services](#X726505ed12598bf0395725645f700cf9881390b)
-    -   [6.1. Compte CLIENT](#Xa6f21c912e3c6c90db6dc23ab3fbc53b91395ad)
-    -   [6.2. Activation du compte
+  - [6.1. Compte CLIENT](#Xa6f21c912e3c6c90db6dc23ab3fbc53b91395ad)
+  - [6.2. Activation du compte
         CLIENT](#Xc9c2e6f53c31cd3699c5290f87faf6294229fb4)
-    -   [6.3. Commande](#X46e06bbce0004ff78b342b604ddc8185c3b8c28)
--   [7. Durée du contrat](#X22994bef2242f20259ca6d7a37a1f22845cc738)
--   [8. Périmètre des
+  - [6.3. Commande](#X46e06bbce0004ff78b342b604ddc8185c3b8c28)
+- [7. Durée du contrat](#X22994bef2242f20259ca6d7a37a1f22845cc738)
+- [8. Périmètre des
     services](#Xaf22d3a4bdf044e63e167702e8f42bf565757a5)
--   [9. Services optionnels](#X98940c117e0de1a509e0e37602fc39b081ab760)
--   [10. Conditions d'utilisation des
+- [9. Services optionnels](#X98940c117e0de1a509e0e37602fc39b081ab760)
+- [10. Conditions d'utilisation des
     services](#Xd3f38a589bfb7ccc0f9f402aaeb5afd07cd4fd4)
-    -   [10.1. Respect des conditions de
+  - [10.1. Respect des conditions de
         service](#Xf2145552b39fd0050fb4fedd8020785b2024f85)
-    -   [10.2. Choix des
+  - [10.2. Choix des
         services](#X90a17cc9e0f33015a7993730b7e003409f3ec78)
-    -   [10.3. Connexion](#Xc21984a083e130216be098de30f6c1f4ceae9d4)
-    -   [10.4. Moyens
+  - [10.3. Connexion](#Xc21984a083e130216be098de30f6c1f4ceae9d4)
+  - [10.4. Moyens
         d'authentification](#X48971bda881b21af9feb2cdcac70a97af59250b)
-    -   [10.5. Contenus](#Xa9698bbc45b482c0e3a687dd4d5c64e797ee950)
-    -   [10.6. Respect des lois, réglementations et règles
+  - [10.5. Contenus](#Xa9698bbc45b482c0e3a687dd4d5c64e797ee950)
+  - [10.6. Respect des lois, réglementations et règles
         déontologiques](#X5286f504ecb1a5336bdba1273060bf92e237c6e)
-    -   [10.7. Suspension de
+  - [10.7. Suspension de
         service](#X69b15bb7ec103c723c784184bc0aa74641f90a9)
-    -   [10.8. Evolution des
+  - [10.8. Evolution des
         services](#Xcb68e745ac44cea5d5e293b48415ae1c9bd95bb)
-    -   [10.9. Propriété intellectuelle et droit
+  - [10.9. Propriété intellectuelle et droit
         d'utilisation](#X9feab2d58ffacf660cd09c7478e4d2395258d81)
-    -   [10.10. Contrôle à
+  - [10.10. Contrôle à
         l'exportation](#Xc87e8881391c8c2f9de35248d6550909d347440)
-    -   [10.11. Produits
+  - [10.11. Produits
         tiers](#Xbe72b1fb7b3a1f96902c52f15a6faafbc4c542c)
-    -   [10.12. Continuité et réversibilité des
+  - [10.12. Continuité et réversibilité des
         services](#Xdea843d0835a09a5fc94ab8c7f534337ffb44cd)
-    -   [10.13. Test
+  - [10.13. Test
         d'intrusion](#X1e5a22eb5f75767dde3b9268d2c0126ca9b6046)
--   [11. Collaboration](#X3e91da35bd647d680e0ada9980c9c6e21b4304f)
--   [12. Responsabilité](#X18dea78e62b2478833dd6b0d5a4a643c814d689)
-    -   [12.1. Capacité](#X9a873cb42a55326042124368e0e9b325014b41f)
-    -   [12.2. Responsabilité du
+- [11. Collaboration](#X3e91da35bd647d680e0ada9980c9c6e21b4304f)
+- [12. Responsabilité](#X18dea78e62b2478833dd6b0d5a4a643c814d689)
+  - [12.1. Capacité](#X9a873cb42a55326042124368e0e9b325014b41f)
+  - [12.2. Responsabilité du
         Prestataire](#X3ed498cfaa1526cdaeb4596c17e227e6838c82b)
-    -   [12.3. Responsabilité du
+  - [12.3. Responsabilité du
         CLIENT](#X61713926950a4a5b07e4d8e51981a439bb35775)
-    -   [12.4. Garantie](#Xa68777faa87654fa8cdbea2dae3b039359bec35)
-    -   [12.5. Tiers](#X1e3da7b2e01ecf52b7180e0382f49b9bfa96953)
--   [13. Force majeure](#Xbd1998a95e1281f5b2e34456f65831500e7777f)
--   [14. Conditions
+  - [12.4. Garantie](#Xa68777faa87654fa8cdbea2dae3b039359bec35)
+  - [12.5. Tiers](#X1e3da7b2e01ecf52b7180e0382f49b9bfa96953)
+- [13. Force majeure](#Xbd1998a95e1281f5b2e34456f65831500e7777f)
+- [14. Conditions
     financières](#Xb608ecff8d8e06e3cc183e9204f7c608180e2ea)
-    -   [14.1. Tarifs
+  - [14.1. Tarifs
         appliqués](#X413b7ff7c8cb07ad4aa5a9620f2cbe02ab5629c)
-    -   [14.2. Changement de
+  - [14.2. Changement de
         prix](#X1d89095a6fb65869d20d60aad1f8fdfcfc7a960)
-    -   [14.3. Facturation](#X453f9f7d9c04d187ab470603e49cf07d8af5bf3)
-    -   [14.4. Défaut et retard de
+  - [14.3. Facturation](#X453f9f7d9c04d187ab470603e49cf07d8af5bf3)
+  - [14.4. Défaut et retard de
         paiement](#Xb6c6b08c304edae93fd7af7b60adf80ea04ec8c)
-    -   [14.5. Contestation](#X635be4c898aac61cf513a85e4061e3786a937bd)
--   [15. Pénalités](#X5e5b8465fbd4ee6798d8e0dce99cc38496ec909)
-    -   [15.1. Principe](#X51c3a2b1f705e030f7f4b42a64dd1185ad06d90)
-    -   [15.2. Calcul des
+  - [14.5. Contestation](#X635be4c898aac61cf513a85e4061e3786a937bd)
+- [15. Pénalités](#X5e5b8465fbd4ee6798d8e0dce99cc38496ec909)
+  - [15.1. Principe](#X51c3a2b1f705e030f7f4b42a64dd1185ad06d90)
+  - [15.2. Calcul des
         pénalités](#Xaf3bf16557932c83dddecd7870b88b216373039)
--   [16. Résiliation](#Xc31fd02152596edd77e91d909cfe1ed97be407f)
-    -   [16.1. Résiliation par
+- [16. Résiliation](#Xc31fd02152596edd77e91d909cfe1ed97be407f)
+  - [16.1. Résiliation par
         convenance](#X4b00620ec0d9516776df563c25c1f6de321d25c)
-    -   [16.2. Résiliation pour
+  - [16.2. Résiliation pour
         manquement](#Xcfbac4c564ea7abb9567693026eaabe3a778468)
-    -   [16.3. Résiliation sans
+  - [16.3. Résiliation sans
         faute](#Xb88ab50e4db29ec7b87ee10ae925ad1d4abdc53)
--   [17. Réversibilité](#X5f4b87aa44285b480f94090ac846aeca7a7d4e9)
--   [18. Confidentialité](#X5a32ce0bfe3b75c0a1bcda86779820b6c7a6709)
--   [19. Sous traitance](#X77b7cfa5f8500f5f40b3510f7bc86f6f135a101)
--   [20. Cession du contrat](#Xbfa7c5cf04f837da0f2329aa808d9a42392b7de)
--   [21. Réglementation en matière de droit du
+- [17. Réversibilité](#X5f4b87aa44285b480f94090ac846aeca7a7d4e9)
+- [18. Confidentialité](#X5a32ce0bfe3b75c0a1bcda86779820b6c7a6709)
+- [19. Sous traitance](#X77b7cfa5f8500f5f40b3510f7bc86f6f135a101)
+- [20. Cession du contrat](#Xbfa7c5cf04f837da0f2329aa808d9a42392b7de)
+- [21. Réglementation en matière de droit du
     travail](#X90b08ad7f78b144e0a50c3d68032fbc28cc38c9)
--   [22. Ethique et responsabilité
+- [22. Ethique et responsabilité
     sociale](#Xf36964be4c6d404d8271d6cf77b6adfc98bb16c)
--   [23. Propriété
+- [23. Propriété
     intellectuelle](#X64525e0d647cf0aea1ca9d95e6fd0042ec83927)
--   [24. Non solicitation de
+- [24. Non solicitation de
     personnel](#X6ed1e0b4d56101422258bbb573368239efc6b3f)
--   [25. Signes distinctifs des
+- [25. Signes distinctifs des
     parties](#Xe079096ffe8dcd428435a88408152507b8c8e53)
--   [26. Données à caractère
+- [26. Données à caractère
     personnel](#X9f8662e91d64a22d87f82ce3b1dc339c6951f51)
--   [27. Assurance](#X651b2074f1a48055669f930db4345bbb1f39310)
--   [28. Attribution de compétence et droit
+- [27. Assurance](#X651b2074f1a48055669f930db4345bbb1f39310)
+- [28. Attribution de compétence et droit
     applicable](#X6a1853454b81593f5b286633ac7ecc35a5857e3)
 
 ## 1. Cadre
@@ -141,8 +141,7 @@ Service (PaaS) ainsi que des prestations de services professionnels
 
 L'ensemble des services proposés par Cloud Temple sont disponibles à
 l'échelle globale pour les clients qui souscrivent aux offres présentées
-sur leur plateforme en ligne, accessible à l'adresse suivante :
-https://www.cloud-temple.com.
+sur leur plateforme en ligne, accessible à [l'adresse suivante](https://www.cloud-temple.com).
 
 En présence de discordances entre une ou plusieurs dispositions
 contenues dans les documents annexes, la primauté sera accordée au
@@ -162,13 +161,13 @@ Les termes figurant ci-dessous auront pour les Parties les définitions
 suivantes. Chaque terme débutant par une majuscule ci-après a le sens
 qui lui est donné dans sa définition.
 
--   **Accès** : désigne l'ensemble d'identifiants (login, mot de passe,
+- **Accès** : désigne l'ensemble d'identifiants (login, mot de passe,
     etc.), permettant au CLIENT de s'authentifier avant de pouvoir
     consommer et piloter des Prestations. Les Accès sont dédiés à un
     compte précis et ne doivent pas être partagées par le CLIENT.
--   **Annexe** : désigne tout document d'information complémentaire
+- **Annexe** : désigne tout document d'information complémentaire
     adjoint au Contrat.
--   **Bon de Commande** : désigne le document, pouvant être
+- **Bon de Commande** : désigne le document, pouvant être
     dématérialisé, signé ou validé lorsqu'il s'agit d'un formulaire
     dématérialisé, par le CLIENT aux termes duquel ce dernier accepte
     une proposition de service/un devis ou commande un produit ; il
@@ -177,7 +176,7 @@ qui lui est donné dans sa définition.
     pour la réalisation de Services Professionnels ou la fourniture de
     Prestations sur devis sans un Bon de Commande formalisé signé par le
     CLIENT et ensuite accepté par le Prestataire.
--   **Client** : désigne toute personne morale qui sera consommateur du
+- **Client** : désigne toute personne morale qui sera consommateur du
     service IAAS. Le CLIENT s'engage à fournir toutes les informations
     requises (notamment courriel, identité, coordonnées, informations
     bancaires, etc.) et s'engage à ce que l'ensemble des informations
@@ -187,12 +186,12 @@ qui lui est donné dans sa définition.
     garantit au Prestataire le pouvoir et la capacité nécessaire pour
     représenter et engager le CLIENT dans les conditions prévues au
     Contrat.
--   **Cloud Computing** (informatique dans les nuages) : désigne la mise
+- **Cloud Computing** (informatique dans les nuages) : désigne la mise
     à disposition du CLIENT de ressources mémoires, calculs, stockage et
     réseau fournies par des serveurs en réseaux. Lesdits serveurs, ainsi
     que l'Infrastructure sous-jacente, sont opérés et maintenus par le
     Prestataire de manière transparente pour le CLIENT.
--   **Compte Client** : un Compte permet au CLIENT, une fois qu'il a
+- **Compte Client** : un Compte permet au CLIENT, une fois qu'il a
     accepté le Contrat associé à ce Compte (en acceptant les présentes
     CGVU), de consommer des Prestations. le Prestataire n'ouvre un
     Compte au CLIENT qu'après fourniture par ce dernier (i)de l'adresse
@@ -202,12 +201,12 @@ qui lui est donné dans sa définition.
     de TVA intracommunautaire ou équivalent dans le pays du CLIENT,
     adresse, etc.), enfin (iii) de ses informations bancaires exactes et
     à jour nécessaires à la facturation de ses consommations.
--   **Convention de Services** : désigne le document décrivant,
+- **Convention de Services** : désigne le document décrivant,
     notamment, de manière technique et fonctionnelle les Services
     fournis par le Prestataire ; ainsi que la liste détaillée des
     Niveaux de Services, leur méthode de calcul et la périodicité de
     leur production.
--   **Données du Client** : toutes les Données, quelle que soit leur
+- **Données du Client** : toutes les Données, quelle que soit leur
     nature, y compris les Données Personnelles, que le CLIENT stocke et
     Traite sur une Infrastructure mise à disposition par le Prestataire.
     De convention expresse, le Prestataire (i) s'interdit d'accéder aux
@@ -215,57 +214,62 @@ qui lui est donné dans sa définition.
     lui remettre la clé de chiffrement ; étant précisé, enfin, (iii) que
     le Prestataire ne peut pas distinguer parmi les Données du CLIENT
     celles qui sont des Données Personnelles.
--   **Données Personnelles** : celles des Données du CLIENT qui
+- **Données Personnelles** : celles des Données du CLIENT qui
     répondent à la définition de « données à caractère personnel » au
     sens de la Législation sur les Données Personnelles. Pour toutes
     questions relatives aux Données Personnelles (à l'exception de
     celles liées aux Systèmes du CLIENT qui sont sous sa seule
-    responsabilité) vous pouvez contacter dpd@cloud-temple.com
--   **Équipement** : désigne tout équipement informatique de nature
+    responsabilité) vous pouvez contacter
+
+    ```
+    <dpd@cloud-temple.com>
+    ```
+
+- **Équipement** : désigne tout équipement informatique de nature
     logicielle ou matérielle fourni par l'une ou l'autre des Parties,
     composant le Système Hébergé et Infogéré, pris en charge par le
     Prestataire au titre du Contrat et objet des Services.
--   **Extension du Périmètre des Prestations** : désigne les ressources
+- **Extension du Périmètre des Prestations** : désigne les ressources
     supplémentaires non souscrites.
--   **Iaas** : acronyme d'Infrastructure as a Service, il désigne la
+- **Iaas** : acronyme d'Infrastructure as a Service, il désigne la
     mise à disposition d'une infrastructure en tant que Service,
     permettant de louer des infrastructures informatiques (RAM, CPU...).
--   **Incident** : désigne tout événement ne faisant pas partie du
+- **Incident** : désigne tout événement ne faisant pas partie du
     fonctionnement standard d'un Équipement, et qui cause, ou peut
     causer, un non-respect d'un ou plusieurs Niveaux de Services, une
     perturbation ou une interruption d'un Service, et/ou un dommage au
     CLIENT.
--   **Maintenance** : désigne l'ensemble des Services de maintenance
+- **Maintenance** : désigne l'ensemble des Services de maintenance
     préventive, corrective et évolutive à la charge du Prestataire
     portant sur le Système Hébergé et Infogéré.
--   **Prestataire Tiers** : désigne toute personne morale ou physique
+- **Prestataire Tiers** : désigne toute personne morale ou physique
     cocontractant du CLIENT ou du Prestataire qui, sous quelque statut
     que ce soit, intervient dans la fourniture d'une partie des
     Services.
--   **Prestations** : désigne la mise à disposition par le Prestataire
+- **Prestations** : désigne la mise à disposition par le Prestataire
     au CLIENT de ressources (Machines Virtuelles, Service de Stockage
     Objet, etc.), au sein de l'Infrastructure du Prestataire, ainsi que,
     le cas échéant, de services connexes.
--   **Produits Tiers** : désigne tous les produits ne participant pas à
+- **Produits Tiers** : désigne tous les produits ne participant pas à
     la fourniture du Service.
--   **Services Professionnels** (Professional Services) : désigne toute
+- **Services Professionnels** (Professional Services) : désigne toute
     Prestation fournie par le Prestataire sur une demande spécifique du
     CLIENT, afin d'assurer un accompagnement des équipes du CLIENT.
--   **Réversibilité** : désigne l'ensemble des opérations permettant au
+- **Réversibilité** : désigne l'ensemble des opérations permettant au
     CLIENT de reprendre, ou de faire reprendre, l'exécution des Services
     prévus au Contrat. La Réversibilité désigne aussi la restitution, au
     CLIENT ou à un Prestataire Tiers, de la responsabilité
     opérationnelle et de la détention du Système Hébergé et Infogéré et
     des Équipements le composant.
--   **RGPD** : désigne le règlement Général sur la Protection des
+- **RGPD** : désigne le règlement Général sur la Protection des
     Données (UE) 2016/679 du 27 avril 2016 relatif à la protection des
     personnes physiques à l'égard du traitement des données à caractère
     personnel et à la libre circulation de ces données.
--   **Services** : désigne les prestations fournies par le Prestataire
+- **Services** : désigne les prestations fournies par le Prestataire
     au CLIENT, détaillées dans chacun des documents contractuels.
--   **Service Level Agreement (ou SLA)** : désigne les engagements de
+- **Service Level Agreement (ou SLA)** : désigne les engagements de
     qualité de service du Prestataire dans le cadre des Prestations.
--   **Souveraineté** : désigne la politique de gestion à la fois des
+- **Souveraineté** : désigne la politique de gestion à la fois des
     Données, mais aussi des personnels et de l'ensemble de
     l'Infrastructure du Prestataire. La Souveraineté s'applique à un
     Territoire. Le Prestataire garantit au CLIENT qu'il s'assure que le
@@ -277,16 +281,16 @@ qui lui est donné dans sa définition.
     seront liés contractuellement à ce Territoire et nulle personne d'un
     autre Territoire ne pourra accéder aux équipements d'un Territoire
     sans l'autorisation d'un personnel dudit Territoire.
--   **Système Hébergé et Infogéré** : désigne l'ensemble des Équipements
+- **Système Hébergé et Infogéré** : désigne l'ensemble des Équipements
     sur lesquels portent les Services sur le Cloud défini et pris en
     charge par le Prestataire au titre du Contrat.
--   **Utilisateur(s)** : désigne une personne physique qui, à la suite
+- **Utilisateur(s)** : désigne une personne physique qui, à la suite
     de la demande d'un CLIENT, obtient un compte Utilisateur et accède à
     la Console fournie par le Prestataire. Les accès et privilèges
     obtenus de cette manière sont réservés à une personne physique
     uniquement et ne peuvent en aucun cas être partagés entre plusieurs
     personnes.
--   **Unité d'œuvre** : désigne une mesure standardisée utilisée pour
+- **Unité d'œuvre** : désigne une mesure standardisée utilisée pour
     évaluer et tarifer l'utilisation de ressources informatiques, basée
     sur la consommation ou la performance.
 
@@ -404,9 +408,9 @@ coûts relatifs aux Prestations déjà fournies.
 
 Le périmètre des services englobe spécifiquement :
 
--   L'implémentation des services conformément au bon de commande,
--   La provision de services d'infrastructure,
--   La prestation additionnelle de services de Réversibilité.
+- L'implémentation des services conformément au bon de commande,
+- La provision de services d'infrastructure,
+- La prestation additionnelle de services de Réversibilité.
 
 L'accès à ces services, ainsi que leur utilisation, sont soumis aux
 termes et conditions établis dans le présent Contrat, y compris toutes
@@ -531,17 +535,17 @@ rester attentives aux changements législatifs et réglementaires. Sont
 expressément interdites les pratiques suivantes, bien que cette
 énumération ne soit pas exhaustive :
 
-1.  les usages abusifs ou frauduleux des Services et des ressources
+1. les usages abusifs ou frauduleux des Services et des ressources
     fournies, susceptibles de compromettre la stabilité et la sécurité
     des systèmes du Prestataire, pouvant affecter la qualité des
     Services offerts aux autres utilisateurs ;
-2.  les tentatives d'intrusion ou d'attaque via les Services incluant,
+2. les tentatives d'intrusion ou d'attaque via les Services incluant,
     mais sans s'y limiter, le balayage de ports, l'écoute clandestine,
     le spoofing, ainsi que toute forme d'attaque émanant des ressources
     fournies, à l'exception des tests d'intrusion préalablement
     autorisés par le Prestataire ;
-3.  toute forme de SPAM ou pratiques similaires de « spamming » ;
-4.  l'utilisation de contenus illicites ou interdits, tels que décrits
+3. toute forme de SPAM ou pratiques similaires de « spamming » ;
+4. l'utilisation de contenus illicites ou interdits, tels que décrits
     précédemment dans la section « Contenus ».
 
 ### 10.7. Suspension de service
@@ -549,13 +553,13 @@ expressément interdites les pratiques suivantes, bien que cette
 Le Prestataire se réserve le droit de suspendre temporairement ou
 totalement les Services en cas de :
 
-1.  menace réelle pour la sécurité ou la stabilité des systèmes du
+1. menace réelle pour la sécurité ou la stabilité des systèmes du
     Prestataire, des Services, ou des données CLIENT ;
-2.  mise en œuvre des opérations de maintenance prévues ;
-3.  requêtes d'autorités judiciaires ou administratives ;
-4.  alertes reçues conformément à l'article 6 de la Loi pour la
+2. mise en œuvre des opérations de maintenance prévues ;
+3. requêtes d'autorités judiciaires ou administratives ;
+4. alertes reçues conformément à l'article 6 de la Loi pour la
     Confiance dans l'Économie Numérique (LCEN) ;
-5.  violation des conditions d'utilisation établies par le Contrat.
+5. violation des conditions d'utilisation établies par le Contrat.
 
 Cette suspension peut être immédiate, sans préavis, en cas de situation
 critique ou pour prévenir un usage illicite ou frauduleux des Services,
@@ -653,14 +657,14 @@ manière unilatérale et immédiate après en avoir informé le CLIENT.
 
 Conformément aux engagements pris, il est important de noter que :
 
-1.  le Prestataire décline toute responsabilité quant aux Produits Tiers
+1. le Prestataire décline toute responsabilité quant aux Produits Tiers
     fournis dans le cadre des Services. Ces produits peuvent présenter
     des défauts techniques, des vulnérabilités de sécurité, des
     problèmes de compatibilité ou de stabilité. Le Prestataire n'offre
     aucune garantie relative à ces Produits Tiers, y compris mais sans
     s'y limiter, à toute information ou élément associé tel que
     logiciels, systèmes, applications, etc.,
-2.  l'utilisation des Produits Tiers par le CLIENT est strictement
+2. l'utilisation des Produits Tiers par le CLIENT est strictement
     limitée au cadre des Services fournis. Il est notamment interdit au
     CLIENT de décompiler, d'obtenir l'accès aux codes sources, ou de
     réinstaller les Produits Tiers logiciels ou systèmes sur d'autres
@@ -701,11 +705,11 @@ s'engage à garantir le respect de ces conditions par l'auditeur, qui
 agit sous la responsabilité du CLIENT. Les Tests d'intrusion ne doivent
 en aucun cas :
 
--   Cibler d'autres infrastructures ou services du Prestataire et/ou du
+- Cibler d'autres infrastructures ou services du Prestataire et/ou du
     Prestataire non exclusivement utilisés par le CLIENT,
--   Perturber le fonctionnement optimal des Services, infrastructures,
+- Perturber le fonctionnement optimal des Services, infrastructures,
     et réseaux du Prestataire,
--   Affecter les services, ressources, réseaux et infrastructures mis à
+- Affecter les services, ressources, réseaux et infrastructures mis à
     disposition par le Prestataire à d'autres clients.
 
 Toute intrusion dans les systèmes utilisés par d'autres clients est
@@ -764,34 +768,34 @@ d'indemnisation.
 **Clause d'exonération de responsabilité :** La responsabilité du
 Prestataire ne saurait être engagée dans les cas suivants :
 
--   Mauvaise utilisation des services contrairement aux termes du
+- Mauvaise utilisation des services contrairement aux termes du
     Contrat ;
--   Non-exécution, défaillance, dysfonctionnement ou indisponibilité des
+- Non-exécution, défaillance, dysfonctionnement ou indisponibilité des
     services due à un tiers (autres que les sous-traitants du
     Prestataire), au CLIENT, à un produit tiers, ou à une négligence du
     CLIENT ;
--   Dommages indirects tels que le préjudice commercial, la perte de
+- Dommages indirects tels que le préjudice commercial, la perte de
     commandes, la baisse d'activité, l'atteinte à la réputation, la
     perte de profits ou de clients, notamment due à une divulgation
     accidentelle d'informations confidentielles, à une action en justice
     d'un tiers, etc.;
--   Perte, divulgation ou utilisation inappropriée ou frauduleuse des
+- Perte, divulgation ou utilisation inappropriée ou frauduleuse des
     identifiants d'accès des utilisateurs, imputable au CLIENT ou à des
     tiers ;
--   Suspension de l'accès aux services ou interruption temporaire ou
+- Suspension de l'accès aux services ou interruption temporaire ou
     définitive, conformément à l'article 6 "Conditions d'utilisation", y
     compris à la demande d'autorités administratives ou judiciaires ;
--   Perte, altération ou destruction de contenus hébergés sur
+- Perte, altération ou destruction de contenus hébergés sur
     l'infrastructure, dans la mesure où le Prestataire n'est pas
     responsable de la continuité d'activité du CLIENT, y compris des
     sauvegardes ;
--   Inadéquation des services aux besoins du CLIENT (notamment eu égard
+- Inadéquation des services aux besoins du CLIENT (notamment eu égard
     à la sensibilité des données concernées);
--   Incidents de sécurité liés à l'utilisation d'internet, notamment en
+- Incidents de sécurité liés à l'utilisation d'internet, notamment en
     cas de perte, altération, destruction, divulgation ou accès
     non-autorisé a des données ou informations du CLIENT sur ou à partir
     du réseau internet ;
--   Détérioration des systèmes, applications et autres éléments
+- Détérioration des systèmes, applications et autres éléments
     installés par le CLIENT sur l'infrastructure.
 
 ### 12.3. Responsabilité du CLIENT
@@ -804,9 +808,9 @@ par le CLIENT ou au nom de tiers.
 
 Plus précisément, le CLIENT est responsable :
 
--   de s'assurer que les Services choisis correspondent à ses exigences
+- de s'assurer que les Services choisis correspondent à ses exigences
     et à celles de tout tiers les utilisant en son nom ;
--   de la gestion des Contenus - informations, données, fichiers,
+- de la gestion des Contenus - informations, données, fichiers,
     systèmes, applications, logiciels, sites web, etc., qu'il reproduit,
     héberge, installe, collecte, transmet, diffuse, publie ou utilise de
     toute autre manière dans le cadre des Services. Cela inclut le
@@ -814,9 +818,9 @@ Plus précisément, le CLIENT est responsable :
     sauvegarde des Contenus, et la mise en œuvre de mesures pour
     prévenir leur perte ou altération, même lorsque ces contenus
     appartiennent à des tiers ou sont gérés pour leur compte ;
--   de respecter les législations, régulations en vigueur, ainsi que
+- de respecter les législations, régulations en vigueur, ainsi que
     toute charte de déontologie applicable.
--   de respecter la PGSSI-S (politique générale de sécurité des systèmes
+- de respecter la PGSSI-S (politique générale de sécurité des systèmes
     d'information de santé) si la prestation objet du présent contrat
     concerne des données de santé, conformément à l'exigence 4.5.2 du
     référentiel HDS.
@@ -835,14 +839,14 @@ des lois et réglementations applicables. Le CLIENT dégage le Prestataire
 de toute responsabilité et s'engage à le protéger contre toute
 conséquence découlant :
 
--   de l'usage ou de l'exploitation de Contenus illicites via les
+- de l'usage ou de l'exploitation de Contenus illicites via les
     Services ;
--   d'une utilisation frauduleuse ou non conforme aux réglementations en
+- d'une utilisation frauduleuse ou non conforme aux réglementations en
     vigueur des Services ;
--   d'une exploitation des Services violant les droits de tiers ;
--   du choix de Services inadaptés aux besoins du CLIENT ou à ceux de
+- d'une exploitation des Services violant les droits de tiers ;
+- du choix de Services inadaptés aux besoins du CLIENT ou à ceux de
     tiers ;
--   de la perte, de l'utilisation non autorisée ou frauduleuse des
+- de la perte, de l'utilisation non autorisée ou frauduleuse des
     identifiants des Utilisateurs.
 
 Le CLIENT promet également de prendre part activement à la gestion de
@@ -880,14 +884,14 @@ Dans un premier temps, les cas de force majeure suspendront l'exécution
 du Contrat. En cas de force majeure empêchant le Prestataire d'exécuter
 ses Services :
 
--   Dès la survenance de l'évènement constitutif d'un cas de force
+- Dès la survenance de l'évènement constitutif d'un cas de force
     majeure, Cloud Tempe se rapprochera du CLIENT afin d'étudier
     ensemble les solutions permettant d'assurer la reprise des Services
     et de convenir d'un commun accord des modalités de mise en œuvre de
     ces solutions, mise en œuvre qui devra intervenir au plus tard
     quarante-huit (48) heures après la date de survenance de l'évènement
     constitutif du cas de force majeure;
--   Si la durée de ce dernier venait à excéder trente (30) jours
+- Si la durée de ce dernier venait à excéder trente (30) jours
     calendaires à compter de la date de l'évènement constitutif du cas
     de force majeure, ou si les Parties ne parvenaient pas à s'entendre
     sur la solution de remplacement au plus tard à l'expiration de ce
@@ -895,7 +899,7 @@ ses Services :
     Contrat, à un autre Prestataire de son choix, engageant de fait la
     Phase de Réversibilité dans la mesure où la nature, la gravité et
     l'impact du cas de force majeure le permet ;
--   A contrario, si le Prestataire parvenait dans un délai inférieur à
+- A contrario, si le Prestataire parvenait dans un délai inférieur à
     trente (30) jours calendaires à compter de la date de survenance de
     l'évènement constitutif du cas de force majeure, à exécuter
     normalement ses obligations, le cas de force majeure ayant cessé, le
@@ -992,19 +996,19 @@ Sauf contestation de bonne foi par le CLIENT concernant tout ou partie
 de la facture, en cas de manquement ou de retard dans le paiement, y
 compris un paiement partiel, les conséquences suivantes s'appliqueront :
 
-1.  des pénalités de retard seront immédiatement exigibles dès le
+1. des pénalités de retard seront immédiatement exigibles dès le
     lendemain de la date d'échéance, calculées sur la base d'un taux
     d'intérêt équivalent à trois fois le taux légal,
-2.  tout retard ou défaut de paiement (même partiel) des sommes dues par
+2. tout retard ou défaut de paiement (même partiel) des sommes dues par
     le CLIENT en vertu du Contrat, persistant plus de sept (7) jours
     calendaires après l'envoi d'une notification de défaut de paiement
     par courriel, entraînera automatiquement sans autre notification ni
     formalité :
 
--   l'exigibilité immédiate de l'intégralité des sommes restant dues par
+- l'exigibilité immédiate de l'intégralité des sommes restant dues par
     le CLIENT au titre du Contrat, quel que soit le mode de paiement
     initialement convenu,
--   le droit pour le Prestataire de suspendre immédiatement et sans
+- le droit pour le Prestataire de suspendre immédiatement et sans
     préavis l'ensemble ou une partie des Services fournis au CLIENT (y
     compris ceux déjà payés), de refuser toute nouvelle Commande ou
     renouvellement de Services, et de procéder à la résiliation
@@ -1059,11 +1063,11 @@ constatée du service considéré sur la période de calcul.**
 
 ***Exemple : Non-respect des SLA 1 -- 3 et 4***
 
--   *SLA 1 : IC-INFRA_SNC-01 -- Disponibilité Compute : 99,9%;taux du
+- *SLA 1 : IC-INFRA_SNC-01 -- Disponibilité Compute : 99,9%;taux du
     mois en cours 90%; taux de pénalité à appliquer **9,9%***
--   *SLA 3 : IC-INFRA_SNC-03 -- Sauvegarde : 99,9%; taux du mois en
+- *SLA 3 : IC-INFRA_SNC-03 -- Sauvegarde : 99,9%; taux du mois en
     cours 80%; taux de pénalité à appliquer **19,9%***
--   *SLA 4 : IC-INFRA-SNC-05 -- Accès internet 99,9%; taux du mois en
+- *SLA 4 : IC-INFRA-SNC-05 -- Accès internet 99,9%; taux du mois en
     cours 90%; taux de pénalité à appliquer **9,9%***
 
 En tout état de cause, toutes les pénalités dans le cadre des présents
@@ -1125,32 +1129,32 @@ Chaque partie se réserve le droit de résilier le Contrat sans préavis ni
 indemnisation dans les circonstances suivantes, en envoyant une lettre
 recommandée avec avis de réception :
 
-1.  En cas de dépôt de bilan de l'autre partie, sauf si l'administrateur
+1. En cas de dépôt de bilan de l'autre partie, sauf si l'administrateur
     judiciaire opte pour la poursuite du Contrat dans le délai légal.
-2.  Si un changement de contrôle survient chez l'autre partie,
+2. Si un changement de contrôle survient chez l'autre partie,
     conformément à l'article L. 233-3 du Code de commerce, résultant en
     sa possession directe ou indirecte par un concurrent de la partie
     invoquant la résiliation.
-3.  L'inexécution du Contrat par l'autre partie pour une durée
+3. L'inexécution du Contrat par l'autre partie pour une durée
     supérieure à trente (30) jours calendaires en raison d'un cas de
     force majeure.
-4.  Un changement de circonstances imprévisibles au moment de la
+4. Un changement de circonstances imprévisibles au moment de la
     signature du Contrat, modifiant significativement son équilibre
     économique.
-5.  L'usage abusif et répété par le CLIENT de la clause de
+5. L'usage abusif et répété par le CLIENT de la clause de
     responsabilité sans fondement, plaçant le Prestataire dans une
     situation financière préjudiciable ou rendant le Contrat non
     rentable.
 
 À l'expiration ou pour toute autre raison de fin de Contrat :
 
--   Le CLIENT est autorisé à initier la phase de réversibilité selon les
+- Le CLIENT est autorisé à initier la phase de réversibilité selon les
     modalités décrites à l'article "Réversibilité" ;
 
--   Le Prestataire est tenu d'assurer la suppression sécurisée de toutes
+- Le Prestataire est tenu d'assurer la suppression sécurisée de toutes
     les données du CLIENT final.
 
--   Cette suppression implique une suppression sécurisée de tous les
+- Cette suppression implique une suppression sécurisée de tous les
     supports ayant contenu ces données, conformément aux dispositions de
     la Convention de service. Suite à la conclusion d'un Contrat, quelle
     qu'en soit la raison, le Prestataire est également chargé d'éliminer
@@ -1201,9 +1205,9 @@ indirectement à l'autre Partie, quelle que soit leur forme (orale,
 écrite), le type de documents (papier ou numérique), et par tout moyen
 de communication. Pour renforcer leur confidentialité :
 
--   Des mentions spécifiques seront apposées sur les supports de
+- Des mentions spécifiques seront apposées sur les supports de
     communication.
--   Un rappel de la confidentialité sera systématiquement effectué lors
+- Un rappel de la confidentialité sera systématiquement effectué lors
     de chaque échange, avec indication de la date et référence à cet
     engagement de confidentialité.
 
@@ -1223,16 +1227,16 @@ Les Informations Confidentielles doivent être strictement protégées par
 les Parties et uniquement utilisées pour l'exécution du Contrat. Les
 Parties s'engagent à :
 
--   Utiliser les Informations Confidentielles exclusivement dans le
+- Utiliser les Informations Confidentielles exclusivement dans le
     cadre du Contrat ;
--   Limiter la divulgation des Informations Confidentielles aux membres
+- Limiter la divulgation des Informations Confidentielles aux membres
     de leur équipe impliqués dans l'exécution du Contrat, en s'assurant
     de leur engagement à maintenir la confidentialité ;
--   Préserver la confidentialité du contenu du Contrat ;
--   Ne pas divulguer les Informations Confidentielles à des tiers sans
+- Préserver la confidentialité du contenu du Contrat ;
+- Ne pas divulguer les Informations Confidentielles à des tiers sans
     consentement écrit préalable de l'autre Partie, sauf nécessité
     légale ou judiciaire ;
--   Protéger physiquement les Informations Confidentielles, en les
+- Protéger physiquement les Informations Confidentielles, en les
     conservant dans des lieux sécurisés et en prenant toutes mesures
     nécessaires pour leur sécurité.
 
@@ -1279,9 +1283,9 @@ Dans ces conditions et afin de respecter les dispositions des articles
 L. 8221-1 et L. 8524-1 à L. 8254-4 du Code du travail, le Prestataire
 remet au CLIENT, uniquement sur demande de ce dernier :
 
--   L'ensemble des documents exigés par l'article D. 8222-5 du Code du
+- L'ensemble des documents exigés par l'article D. 8222-5 du Code du
     travail;
--   L'attestation sur l'honneur de lutte contre le travail dissimulé.
+- L'attestation sur l'honneur de lutte contre le travail dissimulé.
 
 Le Prestataire s'engage également à appliquer ces engagements à tous ses
 sous-traitants intervenant sur la durée du contrat. Pour les prestations
@@ -1320,17 +1324,17 @@ répression du travail dissimulé, le Prestataire s'engage à remettre au
 CLIENT à la date de signature du Contrat et tous les six (6) mois
 jusqu'à la fin de son exécution :
 
--   Une attestation sur l'honneur du dépôt auprès de l'administration
+- Une attestation sur l'honneur du dépôt auprès de l'administration
     fiscale, à la date de l'attestation, de l'ensemble des déclarations
     fiscales obligatoires et le récépissé du dépôt de déclaration ;
--   Une attestation de fourniture de déclarations sociales émanant de
+- Une attestation de fourniture de déclarations sociales émanant de
     l'organisme de protection sociale chargé du recouvrement des
     cotisations et des contributions sociales incombant au Prestataire
     et datant de moins de six (6) mois ;
--   Un extrait de l'inscription au registre du commerce et des sociétés
+- Un extrait de l'inscription au registre du commerce et des sociétés
     (K ou K-bis relatif au Prestataire) ou un document conforme aux
     stipulations de l'article D. 8222-5 du Code du travail ;
--   Une attestation sur l'honneur établie par le Prestataire de la
+- Une attestation sur l'honneur établie par le Prestataire de la
     réalisation du travail par des salariés employés régulièrement au
     regard des articles L. 1221-10, L. 3243-2 et R. 3243-1 du Code du
     travail.
@@ -1340,14 +1344,14 @@ jusqu'à la fin de son exécution :
 Dans le cadre de l'exécution du présent Contrat, les Parties conviennent
 de respecter scrupuleusement les principes éthiques et légaux suivants :
 
--   Interdiction absolue de l'emploi de travailleurs mineurs, du travail
+- Interdiction absolue de l'emploi de travailleurs mineurs, du travail
     forcé ou de toute forme de travail obligatoire, en alignement avec
     les directives de l'Organisation Internationale du Travail (OIT) ;
--   Elimination de toute discrimination, qu'elle soit basée sur le sexe,
+- Elimination de toute discrimination, qu'elle soit basée sur le sexe,
     la race, la couleur, l'origine sociale, la religion, l'opinion
     politique, l'appartenance à une minorité nationale ou toute autre
     condition, conformément aux dispositions légales en vigueur ;
--   Lutte contre la corruption sous toutes ses formes, assurant une
+- Lutte contre la corruption sous toutes ses formes, assurant une
     intégrité et une transparence totales dans toutes les opérations.
 
 Le Prestataire s'engage fermement à honorer et promouvoir les valeurs
@@ -1363,11 +1367,11 @@ Ce Contrat ne constitue en aucun cas un transfert ni une cession de
 droits de propriété intellectuelle et/ou industrielle, y compris les
 brevets. Il est expressément interdit au CLIENT de :
 
--   Copier ou reproduire de quelque manière que ce soit les éléments
+- Copier ou reproduire de quelque manière que ce soit les éléments
     utilisés pour la prestation des services, incluant mais ne se
     limitant pas au code informatique, textes, images, designs, chartes
     graphiques, ergonomie, documentations, etc.
--   Tenter de décomposer, désassembler ou appliquer toute forme
+- Tenter de décomposer, désassembler ou appliquer toute forme
     d'ingénierie inverse aux technologies propriétaires du Prestataire.
 
 Malgré ces restrictions, le Prestataire accorde au CLIENT un droit
@@ -1408,7 +1412,10 @@ de ne plus la citer.
 Le CLIENT s'engage à respecter, dans le cadre des présentes CGVU, la
 politique de protection des données personnelles du Prestataire. Le
 CLIENT peut solliciter cette politique sur demande à l'adresse suivante
-dpo@cloud-temple.fr.
+
+```
+<dpo@cloud-temple.fr>.
+```
 
 Le CLIENT et le Prestataire s'engagent à respecter la réglementation en
 vigueur applicable au traitement des Données Personnelles et, en

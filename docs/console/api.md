@@ -91,13 +91,15 @@ Le contenu de l'activité inclut toutes les informations essentielles pour ident
 }
 ```
 
-L'objet **state** peut prendre différentes formes selon l'état de l'activité, à savoir :
+L'objet __state__ peut prendre différentes formes selon l'état de l'activité, à savoir :
 
-**waiting**, état avant que l'opération n'ait commencé :
+__waiting__, état avant que l'opération n'ait commencé :
+
 ```
     waiting: {}
 ```
-**running**, état lorsque l'opération est en cours :
+__running__, état lorsque l'opération est en cours :
+
 ```
     running: {
     status: string;
@@ -105,7 +107,8 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     progression: number;
     };
 ```
-**failed**, état si l'opération a échoué :
+__failed__, état si l'opération a échoué :
+
 ```
     failed: {
     startDate: Date;
@@ -113,7 +116,8 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     reason: string;
     };
 ```
-**completed**, état si l'opération est terminée :
+__completed__, état si l'opération est terminée :
+
 ```
     completed: {
     startDate: Date;
@@ -122,7 +126,7 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
     };
 ```
 
-**Nota: l'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.**
+__Nota: l'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.__
 
 ## Limites API
 
@@ -131,9 +135,9 @@ L'objet **state** peut prendre différentes formes selon l'état de l'activité,
 La console Cloud Temple définit __des plafonds sur le volume de requêtes__ qu'un utilisateur peut adresser
 à l'API sur une durée déterminée. L'instauration de ces plafonds de fréquence est une mesure courante dans la gestion des API, adoptée pour plusieurs motifs essentiels :
 
-- **Prévention des abus** : Ces limites contribuent à la sauvegarde de l'intégrité de l'API en prévenant les usages
+- __Prévention des abus__ : Ces limites contribuent à la sauvegarde de l'intégrité de l'API en prévenant les usages
 abusifs ou maladroits susceptibles de compromettre son fonctionnement.
-- **Assurance de la qualité de service** : En régulant l'accès à l'API, nous veillons à une distribution équitable
+- __Assurance de la qualité de service__ : En régulant l'accès à l'API, nous veillons à une distribution équitable
 des ressources, permettant ainsi à tous les utilisateurs de bénéficier d'une expérience stable et performante.
 
 Prenons l'exemple d'un script mal conçu ou inefficace qui tente des appels répétitifs à l'API,
@@ -168,6 +172,7 @@ Si le nombre de requêtes envoyées à un point d'API excède la limite autoris�
 __un code de réponse HTTP 429__. Ce code indique que l'utilisateur a dépassé le nombre de requêtes permises.
 Lorsque cela se produit, le point d'API fournira également un objet JSON en guise de réponse,
 lequel contiendra des informations détaillées sur la limitation appliquée :
+
 ```
     {
         "error": {
@@ -176,6 +181,7 @@ lequel contiendra des informations détaillées sur la limitation appliquée :
         }
     }
 ```
+
 ### Comment éviter d'effectuer trop de requêtes ?
 
 Il est recommandé de limiter le nombre d'appels d'API effectués par votre automatisation afin de rester en deçà

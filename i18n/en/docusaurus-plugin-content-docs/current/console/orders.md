@@ -28,18 +28,17 @@ import shivaOrdersNet_004 from './images/shiva_orders_net_004.png'
 import shivaOrdersIaasCpoolEsx from './images/shiva_orders_iaas_cpool_esx.png'
 import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.png'
 
-
 ## Concept
 
-The tracking of resource deployment is done in the __'Orders'__ menu accessible in the green sidebar on the left of the screen.
+The tracking of new resource deployment is done in the __'Orders'__ menu accessible in the green sidebar on the left of the screen.
 
 It allows you to view ordered Cloud resources, those in deployment, and any errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organisations).
 
 <img src={shivaOrdersList} />
 
-*__Note: At this moment, a global view at an organization's level of all resources deployed in various tenants is not yet possible.__ This will be addressed in 2024 through the implementation of a dedicated portal for the contractor (in the sense of a signer) and management of their organization.*
+*__Note: At this moment, a global view at an organization level of all resources deployed in various tenants is not yet possible.__ This topic will be addressed in 2024 through the implementation of a dedicated portal for the contractor (in the sense of a signatory) and management of their organization.*
 
-Resource deployment or their removal is done within each product in the __'IaaS'__ and __'Network'__ menus on the left of the screen in the green sidebar.
+Resource deployment or removal is done within each product in the __'IaaS'__ and __'Network'__ menus on the left of the screen in the green sidebar.
 
 It is also possible to directly view deliveries in the Cloud Temple console notifications:
 
@@ -49,15 +48,15 @@ From the orders page, you can see the progress of a delivery and possibly intera
 
 <img src={shivaOrderStatus} />
 
-**Note**: **It is not possible to initiate multiple orders of the same type of resource simultaneously. You will need to wait for the current order to be processed and completed before placing a new one. This ensures efficient and organized management of resources within your environment.**
+__Note__: __It is not possible to initiate multiple orders of the same type of resource simultaneously. You will need to wait for the current order to be processed and completed before placing a new one. This ensures efficient and organized management of resources within your environment.__
 
 ## Order a new availability zone
 
-It is possible to add a new availability zone by accessing the "**Order**" menu. This option allows you to extend your resources and improve the availability and resilience of your applications with just a few clicks:
+It is possible to add a new availability zone by accessing the "__Order__" menu. This option allows you to extend your resources and improve the availability and resilience of your applications with just a few clicks:
 
 <img src={shivaOrderAz_01} />
 
-Start by selecting the desired location, first choosing the geographical region, then the corresponding availability zone (AZ) from among those available. This step allows you to adapt the deployment of your resources based on location and the needs of your infrastructure:
+Start by selecting the desired location, first choosing the geographical region, then the corresponding availability zone (AZ) from among those available. This step allows you to adapt the deployment of your resources based on location and the requirements of your infrastructure:
 
 <img src={shivaOrderAz_02} />
 
@@ -87,7 +86,7 @@ You will then get a summary of the selected options before validating your order
 
 ## Order additional storage resources
 
-The storage allocation logic in block mode on compute clusters is TODO
+The block mode storage allocation logic on compute clusters is TODO
 
 ### Deploy a new compute cluster
 
@@ -113,7 +112,7 @@ You will then get a summary of the selected options before validating your order
 
 ### Deploy a new storage cluster
 
-In the "**order**" menu, place an order for a **new storage cluster** for your environment by selecting options that match your capacity, performance, and redundancy needs. Select the location:
+In the "__order__" menu, place an order for a __new storage cluster__ for your environment by selecting options that match your capacity, performance, and redundancy needs. Select the location:
 
 <img src={shivaOrderClusto_01} />
 
@@ -135,12 +134,12 @@ In this example, we will add block storage for a VMware infrastructure.
 To add an additional datastore in your SDRS storage cluster, go to the __'Infrastructure'__ submenu then __'VMWare'__.
 Then choose the VMware stack and the availability zone. Next, go to the __'Storage'__ submenu.
 
-Choose the SDRS cluster corresponding to the performance characteristics you wish and click on the __'Add a datastore'__ button located in the table
-with the list of datastores.
+Choose the SDRS cluster corresponding to the performance characteristics you wish and click on the __'Add a datastore'__ button located in the table with the list of datastores.
 
 <img src={shivaOrdersIaasSpoolDs} />
 
-__Note__ :
+__Note__:
+
 - *The size of the smallest activatable LUN on a cluster is __500 GiB__.*
 - *The performance of a datastore ranges from 500 iops/TiB on average to 15000 iops/TiB on average. __This is a software throttling done at the storage controllers level__.*
 - *The volume accounting of disk consumed by your organization is the sum of all LUNs across all used AZs*.
@@ -154,12 +153,11 @@ Basically, you can imagine a Cloud Temple network as an 802.1q vlan available at
 
 TODO
 
-
-La commande d'un nouveau réseau et les décisions de partage entre vos tenants, sont réalisées dans le menu __'Réseau'__ du bandeau vert à gauche de l'écran. Les réseaux seront d'abord créés, puis une commande distincte sera générée pour les propager. Vous pouvez suivre l'avancement des commandes en cours en accédant à l'onglet "Commande" dans le menu, ou en cliquant sur les labels d'information qui vous redirigent vers les commandes actives ou en cours de traitement.
+The ordering of a new network and the decisions to share between your tenants are made in the __'Network'__ menu of the green sidebar on the left of the screen. Networks will first be created, then a separate order will be generated to propagate them. You can follow the progress of ongoing orders by accessing the "Order" tab in the menu, or by clicking on the information labels that redirect you to active or in-process orders.
 
 <img src={shivaOrdersNet_002} />
 
-Il est également possible de propager des réseaux déjà existants ou de séparer les deux étapes, en commençant par la création du réseau, puis en procédant à la propagation ultérieurement selon vos besoins. L'option de propagation se trouve dans les options du réseau sélectionné :
+It is also possible to propagate already existing networks or to separate the two steps, starting with the creation of the network, then proceeding with propagation later according to your needs. The propagation option is found in the options of the selected network:
 
 <img src={shivaOrdersNet_003} />
 
@@ -171,7 +169,7 @@ Click on the "Propagate" option for an existing network, then select the desired
 
 A network can also be deactivated if necessary. This option allows you to temporarily pause access or use of the network without permanently deleting it, providing flexibility in managing your infrastructure according to your needs.
 
-The deactivation option is found in the selected network's options. 
+The deactivation option is found in the selected network's options.
 
 ## Adding additional hypervisors to a compute cluster
 
@@ -183,7 +181,7 @@ In the following example, we are going to add compute to a hypervisor cluster us
 Go to the __'Infrastructure'__ submenu then __'VMware'__. Then choose the VMware stack and the availability zone and the compute cluster.
 In this example, it is the __'clu001-ucs12'__. Click on the __'Add a host'__ button situated in the table with the hosts list, at the top right.
 
-__note__:
+__Note__:
 
 - *__The configuration of a cluster must be homogeneous__. Therefore, it is not allowed to mix hypervisor types within a cluster. All the blades must be of the same type.*
 - *The __'order'__ and __'compute'__ rights are necessary for the account to carry out this action.*
@@ -198,7 +196,8 @@ To add RAM to a cluster, simply go to the cluster configuration (same as adding 
 
 <img src={shivaOrdersIaasCpoolMemory} />
 
-__note__:
+__Note__:
+
 - *__Machines are delivered with the total physical memory__. Unlocking the memory resource is only a software activation at the cluster level.*
 - *It is not possible to modify the amount of physical memory of a blade type. Be mindful of the maximum capacity of a blade when creating a cluster.*
 - *The __'order'__ and __'compute'__ rights are necessary for the account to carry out this action.*
