@@ -3,6 +3,10 @@
     "message": "Suivant",
     "description": "The label for version current"
   },
+  "sidebar.docSidebar.category.AdditionalContent": {
+    "message": "Contenu additionnel",
+    "description": "Libellé pour la catégorie Contenu additionnel dans la barre latérale docSidebar"
+  },
   "sidebar.docSidebar.category.IAM": {
     "message": "IAM",
     "description": "The label for category IAM in sidebar docSidebar"

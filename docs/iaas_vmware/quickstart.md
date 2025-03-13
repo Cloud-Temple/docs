@@ -47,7 +47,6 @@ import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
-
 ## Calcul
 
 ### Pilotage des Machines virtuelles
@@ -61,6 +60,7 @@ Dans la section __'Machines virtuelles'__, vous avez accès à la liste de vos m
 <img src={shivaVmHome} />
 
 Vous avez accès aux informations suivantes, pour chaque machine virtuelle :
+
 - son nom,
 - les tags qui lui sont assignés,
 - son statut (éteinte, allumée, en traitement, host déconnecté ou invalid),
@@ -129,6 +129,7 @@ Un onglet __'Avancé'__ permet de consulter des informations plus spécifiques c
 <img src={shivaVmInfosAvancees} />
 
 ### Édition de la RAM ou le CPU d'une machine virtuelle
+
 Allez dans l'onglet __'Machines Virtuelles'__, affichez les détails d'une machine virtuelle,
 sélectionnez l'onglet __'Infos générales'__ et cliquez sur le bouton d'édition de la variable à modifier :
 
@@ -137,9 +138,10 @@ sélectionnez l'onglet __'Infos générales'__ et cliquez sur le bouton d'éditi
 ### Les modes de disques
 
 Vous pouvez ajouter différents modes de disques:
-  - __Persistant__ : Les modifications sont immédiatement et définitivement écrites sur le disque virtuel. **C'est le mode recommandé.**
-  - __Indépendant non-persistant__ : Les modifications apportées au disque virtuel sont consignées dans un nouveau log et supprimées à la mise hors tension. Non affecté par les snapshots. **Il n'est pas pris en charge par la sauvegarde.**
-  - __Indépendant persistant__ : Les modifications sont immédiatement et définitivement écrites sur le disque virtuel. Non affecté par les snapshots. **Il n'est pas pris en charge par la sauvegarde.**
+
+- __Persistant__ : Les modifications sont immédiatement et définitivement écrites sur le disque virtuel. __C'est le mode recommandé.__
+- __Indépendant non-persistant__ : Les modifications apportées au disque virtuel sont consignées dans un nouveau log et supprimées à la mise hors tension. Non affecté par les snapshots. __Il n'est pas pris en charge par la sauvegarde.__
+- __Indépendant persistant__ : Les modifications sont immédiatement et définitivement écrites sur le disque virtuel. Non affecté par les snapshots. __Il n'est pas pris en charge par la sauvegarde.__
 
 ### Gestion des contrôleurs de machine virtuelle
 
@@ -153,7 +155,7 @@ Un contrôleur SCSI peut être configuré avec différents sous-types : Para Vir
 
 Le contrôleur Para Virtual se distingue par sa capacité étendue. Il peut supporter jusqu'à 64 disques lorsque la version hardware de la machine virtuelle est compatible avec un ESXi en version 6.7 ou supérieure.
 
-> **Important** : Si vous souhaitez modifier le type d'un contrôleur Para Virtual qui possède plus de 15 disques, vous devrez d'abord détacher les disques sur les slots concernés.
+> __Important__ : Si vous souhaitez modifier le type d'un contrôleur Para Virtual qui possède plus de 15 disques, vous devrez d'abord détacher les disques sur les slots concernés.
 
 ### Console d'une machine virtuelle
 
@@ -216,17 +218,19 @@ Sélectionnez __'Exporter en vm-template'__ :
 
 Renseignez ensuite les informations nécessaires. Il sera alors possible de déployer une nouvelle VM à partir du modèle depuis le bouton __'Nouvelle machine virtuelle'__ ou depuis la page __'Catalogues'__. Il est aussi possible d'exporter la VM au format OVF.
 
-**Bon à savoir**: il est possible de convertir un fichier OVA vers OVF et inversement.
+__Bon à savoir__: il est possible de convertir un fichier OVA vers OVF et inversement.
 La méthode la plus courante utilisée est Vmware convertor mais il existe aussi une méthode simple en utilisant ```tar```
 
 Extraction du fichier ova:
+
 ```
-$ tar -xvf vmName.ova
+tar -xvf vmName.ova
 ```
 
 Créer un fichier OVA depuis un fichier OVF:
+
 ```
-$ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
+tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 ```
 
 ### Paramétrage avancé des machines virtuelles : Extra Config

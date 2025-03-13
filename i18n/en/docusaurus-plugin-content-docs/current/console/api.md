@@ -122,7 +122,7 @@ The **state** object can take various forms depending on the activity's status, 
     };
 ```
 
-**Note: The (UUIDv4) Identifier of the created resource is available in the activity result once it is completed.**
+**Note: The Identifier (UUIDv4) of the created resource is available in the activity result once it is completed.**
 
 ## API Limits
 
@@ -145,16 +145,16 @@ with an HTTP 429 error code, indicating that the authorized request limit has be
 Here are the defined limits:
 
 | Product              | Threshold Limit |
-|----------------------|--------------|
-| Console Cloud Temple | 60 r/s       |
-| Identity (IAM)       | 60 r/s       |
-| IaaS - Compute       | 60 r/s       |
-| IaaS - Storage       | 20 r/s       |
-| IaaS - Backup        | 60 r/s       |
-| PaaS - S3            | 60 r/s       |
-| PaaS - Openshift     | 60 r/s       |
-| Network              | 60 r/s       |
-| Hosting              | 60 r/s       |
+|----------------------|-----------------|
+| Console Cloud Temple | 60 r/s          |
+| Identity (IAM)       | 60 r/s          |
+| IaaS - Compute       | 60 r/s          |
+| IaaS - Storage       | 20 r/s          |
+| IaaS - Backup        | 60 r/s          |
+| PaaS - S3            | 60 r/s          |
+| PaaS - Openshift     | 60 r/s          |
+| Network              | 60 r/s          |
+| Hosting              | 60 r/s          |
 
 ### How do rate limits work?
 

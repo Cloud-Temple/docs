@@ -7,25 +7,28 @@ import S3Cloudberry_003 from './images/S3_cloudberry_003.png'
 import S3Winscp_001 from './images/S3_winscp_001.png'
 import S3Winscp_002 from './images/S3_winscp_002.png'
 
-
 ## Utiliser MINIO
 
-Vous pouvez utiliser le client minio par exemple :
-
-https://min.io/docs/minio/linux/reference/minio-mc.html
+Vous pouvez utiliser le [client minio](https://min.io/docs/minio/linux/reference/minio-mc.html) :
 
 Par exemple :
+
 ```
     mc alias set <alias_name> https://reks2ee2b1.s3.fr1.cloud-temple.com <access_key> <secret_key>
 ```
+
 Pousser un fichier :
+
 ```
     mc cp test.txt <alias_name>/<bucket_name>
 ```
+
 Récupérer un fichier :
+
 ```
     mc ls <alias_name>/<bucket_name>
 ```
+
 ## Cloud Berry Explorer
 
 vous pouvez aussi utiliser [Cloud Berry Explorer](https://www.msp360.com/explorer/).
@@ -54,13 +57,11 @@ Vous pouvez utiliser [Winscp](https://winscp.net/eng/download.php) :
 
 <img src={S3Winscp_002} />
 
-
 ## Ajouter le HASH d'un fichier lors de l'upload d'un objet
 
 Globalement, le HASH des fichiers est supporté sur notre stockage objet via les metadatas. Certains clients permettent de calculer à la volée un HASH et de l'ajouter en metadata (minio-mc avec md5 par exemple), pour d'autre, il faut préciser la donnée en metadata directement.
 
 1. Cas de l'ajout d'un HASH avec le client minio-mc : ce client supporte le calcul à la volée d'un hash MD5 et le stockage dans les metadatas
-
 
             ╰─➤  cat test.txt
             Ceci est un test
@@ -96,4 +97,3 @@ Globalement, le HASH des fichiers est supporté sur notre stockage objet via les
             Metadata  :
                 X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
                 Content-Type              : text/plain
-

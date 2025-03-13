@@ -8,7 +8,6 @@ import creerSession3 from './images/creer_session3.png'
 import ouvrirSession from './images/ouvrir_session.png'
 import ouvrirSession2 from './images/ouvrir_session2.png'
 
-
 Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter.
 
 ## Prérequis
@@ -18,12 +17,12 @@ Ce guide de démarrage vous présente comment demander la création d'une Applia
 3. Avoir les droits sur le module Bastion.
 4. Dans le cadre d'un déploiement de l'Appliance onpremise, les flux correspondants doivent être ouverts.
 
-
 ## Les flux nécessaires au fonctionnement du produit Bastion
 
 Plusieurs flux sont nécessaires pour le bon fonctionnement de l'Appliance Bastion.
 
 ### La passerelle bastion
+
 | Source                   | Destination                                 | Protocole |
 |--------------------------|---------------------------------------------|-----------|
 | Appliance bastion client | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242  |
@@ -40,13 +39,12 @@ Plusieurs flux sont nécessaires pour le bon fonctionnement de l'Appliance Basti
 |--------------------------|-----------------------------|-----------|
 | Appliance bastion client | Les instances à administrer | TCP/22    |
 
-
 ## Demander la création d'une Appliance
+
 Avant de pouvoir déployer une Appliance, il faut faire une demande de souscription à une Appliance via une demande au support.
 Le support est accessible dans la console Shiva depuis l'icône de bouée sur la barre en haut à droite de la fenêtre.
 
 <img src={shivaSupport} />
-
 
 ## Enregistrer un équipement
 
@@ -55,7 +53,6 @@ Pour accéder régulièrement à un équipement à administrer, il est plus adap
 Pour cela, rendez-vous dans l’onglet « Equipements » du menu « Bastion », puis, cliquez sur le bouton « Nouveau équipement ».
 
 <img src={creerSession} />
-
 
 Renseignez ensuite les informations nécessaires à la création de votre équipement :
 
@@ -67,7 +64,6 @@ Renseignez ensuite les informations nécessaires à la création de votre équip
     - Configuration du clavier.
 
 <img src={creerSession2} />
-
 
 Une notification vous indiquant la création de l'équipement devrait apparaître en haut à droite de la page. La session s’ajoute ensuite à la liste de vos équipements.
 

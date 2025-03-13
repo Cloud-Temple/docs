@@ -1,39 +1,40 @@
 ---
-title: Guida di avvio
+title: Guida rapida
 ---
 
-Questo **Quickstart Housing** vi guida per iniziare rapidamente con l'offerta di housing fisico di Cloud Temple. Copre i passaggi essenziali per effettuare una richiesta di housing, configurare le vostre apparecchiature e godere dei servizi complementari.
 
-## Fase 1: Effettuare una richiesta di housing
+Questa **Guida rapida Housing** vi aiuta a iniziare rapidamente con l'offerta di hosting fisico di Cloud Temple. Copre i passaggi essenziali per effettuare una richiesta di hosting, configurare le vostre apparecchiature e beneficiare dei servizi complementari.
 
-1. Accedete alla console di Cloud Temple.
-2. Aprite una cartella di servizio fornendo:
+## Fase 1: Effettuare una richiesta di hosting
+
+1. Accedete alla console Cloud Temple.
+2. Aprite un ticket di servizio fornendo:
    - Nome della vostra organizzazione.
-   - Contatti di un referente (email e telefono).
-   - Tipo di housing desiderato (condiviso per 'U' o dedicato per rack).
-   - Quantità e caratteristiche delle apparecchiature (dimensioni, peso, consumo, ecc.).
+   - Dati di contatto (email e telefono).
+   - Tipo di hosting desiderato (condiviso a 'U' o dedicato a rack).
+   - Quantità e caratteristiche delle apparecchiature (dimensioni, peso, consumo energetico, ecc.).
 
 ## Fase 2: Preparare le vostre apparecchiature
 
-- Verificate che le vostre apparecchiature rispettino le restrizioni tecniche:
-  - Dimensione in unità di rack (U).
+- Verificate che le vostre apparecchiature rispettino i vincoli tecnici:
+  - Dimensioni in unità rack (U).
   - Peso massimo per 'U' (25kg per condiviso, fino a 1000kg per un rack dedicato).
-  - Consumo elettrico (150W a 3Kw secondo l'opzione sottoscritta).
+  - Consumo energetico (da 150W a 3Kw a seconda dell'opzione sottoscritta).
 
 ## Fase 3: Configurare la connettività di rete
 
-1. Selezionate il tipo di porta richiesta:
+1. Selezionate il tipo di porta richiesto:
    - Rame 1Gbps.
    - Fibra 1Gbps o 10Gbps.
-2. Aggiungete opzioni di connettività nella Meet Me Room se necessario per l'integrazione operatore.
+2. Aggiungete opzioni di connettività Meet Me Room se necessario per l'integrazione con l'operatore.
 
 ## Fase 4: Attivare i servizi Hands & Eyes
 
 Se necessario, richiedete assistenza tecnica per:
 - Installare le vostre apparecchiature.
 - Configurare il cablaggio.
-- Eseguire azioni occasionali (riavvio, foto, ecc.).
+- Eseguire azioni specifiche (riavvio, foto, ecc.).
 
 ## Fase 5: Validare l'installazione
 
-Una volta installate le vostre apparecchiature, verificate la loro connettività e il loro corretto funzionamento direttamente tramite la console di Cloud Temple o in coordinamento con il supporto.
+Una volta installate le vostre apparecchiature, verificate la loro connettività e il corretto funzionamento direttamente tramite la console Cloud Temple o in coordinamento con il supporto.

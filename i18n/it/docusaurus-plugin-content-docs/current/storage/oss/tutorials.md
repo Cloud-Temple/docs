@@ -7,60 +7,61 @@ import S3Cloudberry_003 from './images/S3_cloudberry_003.png'
 import S3Winscp_001 from './images/S3_winscp_001.png'
 import S3Winscp_002 from './images/S3_winscp_002.png'
 
-
 ## Utilizzare MINIO
 
-È possibile utilizzare il client minio, ad esempio:
-
-https://min.io/docs/minio/linux/reference/minio-mc.html
+Potete utilizzare il [client minio](https://min.io/docs/minio/linux/reference/minio-mc.html):
 
 Per esempio:
+
 ```
     mc alias set <alias_name> https://reks2ee2b1.s3.fr1.cloud-temple.com <access_key> <secret_key>
 ```
+
 Caricare un file:
+
 ```
     mc cp test.txt <alias_name>/<bucket_name>
 ```
+
 Recuperare un file:
+
 ```
     mc ls <alias_name>/<bucket_name>
 ```
+
 ## Cloud Berry Explorer
 
-È possibile utilizzare anche [Cloud Berry Explorer](https://www.msp360.com/explorer/).
+Potete anche utilizzare [Cloud Berry Explorer](https://www.msp360.com/explorer/).
 
-1. Accedere utilizzando il proprio endpoint e la propria chiave:
+1. Connettetevi utilizzando il vostro endpoint e la vostra chiave:
 
 <img src={S3Cloudberry_001} />
 
-2. Una volta connessi, inserire il nome del bucket nella barra di navigazione:
+2. Una volta connessi, inserite il nome del bucket nella barra di navigazione:
 
 <img src={S3Cloudberry_002} />
 
-3. Sarà quindi possibile utilizzare il bucket normalmente:
+3. Potrete quindi utilizzare il bucket normalmente:
 
 <img src={S3Cloudberry_003} />
 
 ## Utilizzare WINSCP 6.3.x
 
-È possibile utilizzare [Winscp](https://winscp.net/eng/download.php):
+Potete utilizzare [Winscp](https://winscp.net/eng/download.php):
 
-1. Accedere utilizzando il proprio endpoint, la chiave di accesso e la chiave segreta:
+1. Connettetevi utilizzando il vostro endpoint, la chiave di accesso e la chiave segreta:
 
 <img src={S3Winscp_001} />
 
-2. Una volta connessi, utilizzare WINSCP normalmente come un sito FTP o SCP:
+2. Una volta connessi, utilizzate WINSCP normalmente come un sito FTP o SCP:
 
 <img src={S3Winscp_002} />
 
-
 ## Aggiungere l'HASH di un file durante il caricamento di un oggetto
 
-In generale, l'HASH dei file è supportato nel nostro storage di oggetti tramite i metadati. Alcuni client permettono di calcolare al volo un HASH e aggiungerlo nei metadati (minio-mc con md5 ad esempio), per altri, è necessario specificare i dati direttamente nei metadati.
+In generale, l'HASH dei file è supportato sul nostro storage di oggetti tramite i metadati. Alcuni client permettono di calcolare un HASH al volo e di aggiungerlo come metadato (minio-mc con md5 per esempio), per altri, è necessario specificare i dati direttamente nei metadati.
 
 1. Caso dell'aggiunta di un HASH con il client minio-mc: questo client supporta il calcolo al volo di un hash MD5 e la memorizzazione nei metadati
-
 
             ╰─➤  cat test.txt
             Questo è un test
@@ -78,7 +79,7 @@ In generale, l'HASH dei file è supportato nel nostro storage di oggetti tramite
             Metadata  :
                 Content-Type: text/plain
 
-2. Esempio di aggiunta di un sha256 "manualmente": per farlo utilizziamo gli attributi S3 del file.
+2. Esempio di aggiunta di un sha256 "manualmente": per farlo, utilizziamo gli attributi S3 del file.
 
             ╰─➤  cat test.txt
             Questo è un test

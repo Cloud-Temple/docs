@@ -8,7 +8,6 @@ import creerSession3 from './images/creer_session3.png'
 import ouvrirSession from './images/ouvrir_session.png'
 import ouvrirSession2 from './images/ouvrir_session2.png'
 
-
 This getting started guide shows you how to request the creation of an Appliance and how to register and connect to a new session.
 
 ## Prerequisites
@@ -17,7 +16,6 @@ This getting started guide shows you how to request the creation of an Appliance
 2. The equipment to be administered must be accessible from the network where the Bastion Appliance is deployed.
 3. Have the rights on the Bastion module.
 4. When deploying the on-premise Appliance, the corresponding flows must be open.
-
 
 ## Flows necessary for the operation of the Bastion product
 
@@ -30,23 +28,21 @@ Several flows are necessary for the proper functioning of the Bastion Appliance.
 
 ### RDP administration flows
 
-| Source                   | Destination                 | Protocol |
-|--------------------------|-----------------------------|----------|
+| Source                   | Destination                  | Protocol |
+|--------------------------|------------------------------|----------|
 | Bastion client appliance | Instances to be administered | TCP/3389 |
 
 ### SSH administration flows
 
-| Source                   | Destination                 | Protocol |
-|--------------------------|-----------------------------|----------|
+| Source                   | Destination                  | Protocol |
+|--------------------------|------------------------------|----------|
 | Bastion client appliance | Instances to be administered | TCP/22   |
-
 
 ## Request the creation of an Appliance
 Before you can deploy an Appliance, you must request an Appliance subscription via a support request.
 Support is accessible in the Shiva console from the lifebuoy icon on the bar at the top right of the window.
 
 <img src={shivaSupport} />
-
 
 ## Register equipment
 
@@ -55,7 +51,6 @@ To regularly access equipment to be administered, it is more appropriate to crea
 To do this, go to the "Equipment" tab of the "Bastion" menu, then click on the "New equipment" button.
 
 <img src={creerSession} />
-
 
 Then fill in the necessary information for the creation of your equipment:
 
@@ -67,7 +62,6 @@ Then fill in the necessary information for the creation of your equipment:
     - Keyboard configuration.
 
 <img src={creerSession2} />
-
 
 A notification indicating the creation of the equipment should appear at the top right of the page. The session is then added to your list of equipment.
 

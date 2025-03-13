@@ -36,6 +36,7 @@ Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été
 </div>
 
 ## Comment utiliser cette documentation ?
+
 Cette documentation est votre guide pour exploiter tout le potentiel de nos produits CLoud et de **la console** Cloud Temple.
 
 Vous y trouverez des tutoriels, des guides techniques et des références pour simplifier la gestion de vos ressources cloud.

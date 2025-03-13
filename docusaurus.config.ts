@@ -72,6 +72,9 @@ const config: Config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root ("/docs/" by default)
           sidebarPath: './sidebars.ts',
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/Cloud-Temple/docs/edit/dev/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -93,7 +96,7 @@ const config: Config = {
       },
       items: [
         {
-          href: 'https://github.com/Cloud-Temple',
+          href: 'https://github.com/Cloud-Temple/docs',
           label: 'GitHub',
           position: 'right',
         },

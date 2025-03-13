@@ -1,6 +1,5 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
-
 const sidebars: SidebarsConfig = {
   docSidebar: [
     {
@@ -53,6 +52,14 @@ const sidebars: SidebarsConfig = {
             'console/iam/tutorials/sso_adfs',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AdditionalContent',
+      items: [
+        'additional_content/concepts_regional',
+        'additional_content/concepts_az',
       ],
     },
     {
@@ -120,6 +127,8 @@ const sidebars: SidebarsConfig = {
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
             },
+            'iaas_vmware/tutorials/deploy_vm_template',
+            'iaas_vmware/tutorials/deploy_vm_terraform',
             'iaas_vmware/tutorials/vm_encryption',
           ],
         },
@@ -165,7 +174,14 @@ const sidebars: SidebarsConfig = {
             'network/internet/internet',
             'network/internet/concepts',
             'network/internet/quickstart',
-            'network/internet/tutorials',
+            {
+              type: 'category',
+              label: 'Tutorials',
+              items: [
+                'network/internet/tutorials/forti',
+                'network/internet/tutorials/pfSense',
+              ],
+            },
           ],
         },
       ],
@@ -194,10 +210,13 @@ const sidebars: SidebarsConfig = {
       `,
     },
     {
+      type: 'doc',
+      id: 'contractual/orderdoc',
+    },
+    {
       type: 'category',
       label: 'Contractual documents',
       items: [
-        'contractual/orderdoc',
         'contractual/cgvu',
         'contractual/iaas/sla_iaas',
         'contractual/iaas/sla_openiaas',

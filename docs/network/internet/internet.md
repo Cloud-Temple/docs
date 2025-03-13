@@ -21,4 +21,3 @@ Cloud Temple met à disposition de ses clients des blocs d'__adresses IP publiqu
     <a href="./internet/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
-
