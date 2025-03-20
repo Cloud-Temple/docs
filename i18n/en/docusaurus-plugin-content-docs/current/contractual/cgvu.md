@@ -79,7 +79,9 @@ These General Terms of Sale and Use (hereinafter referred to by the acronym “C
 
 For the purposes of this Contract, the CLIENT and the Provider are respectively referred to as the “Party” when mentioned separately and as the “Parties” when mentioned jointly. It is specified that the terms used with an initial capital letter in the context of this Contract are defined in accordance with the provisions of Article 1, entitled “Definitions.”
 
-This reformulation aims to clarify and formalize the scope and stakeholders of the Contract, while respecting the conventions and precision required in legal language.
+This reformulation aims to clarify and formalize the scope and stakeholders of
+the Contract, while respecting the conventions and precision required in legal
+language.
 
 __IT IS PRIMARILY RECALLED AS FOLLOWS__
 
@@ -128,13 +130,13 @@ The present Contract aims to establish the terms and conditions under which the 
 
 The CLIENT's adherence to this contract implies unconditional acceptance of the General Terms of Sale and Use (GTSU), which the CLIENT declares to have previously consulted, understood, and accepted in their entirety. Although the CLIENT operates as a professional, it is strongly recommended that he seeks the expertise of an IT and network specialist before accepting these conditions. This step is essential to ensure an informed decision regarding the technical aspects of the Contract, especially concerning the selection of the proposed work unit characteristics and the determination of the necessary resources to meet his specific needs.
 
-## 5. General provision
+## 5. General Provision
 
 Each Party agrees not to make commitments on behalf of and for the other Party. The Parties remain individually responsible for their actions, statements, commitments, services, products, and the actions of their staff.
 
 In the event that a provision of the Contract is found to be invalid under applicable law or an irrevocable court decision, that provision will be considered unwritten. This invalidity will not affect the overall validity of the Contract nor the strength of its other provisions.
 
-## 6. Ordering services
+## 6. Ordering Services
 
 ### 6.1. CLIENT Account
 
@@ -239,7 +241,7 @@ The Provider endeavors, to the extent possible and unless legally required or in
 
 In case of the CLIENT's non-compliance with their obligations, such suspensions will be without prejudice to the Provider's right to terminate the Agreement or seek compensation. Unless in cases of termination or non-renewal, suspensions will not result in the deletion of CLIENT data. Unless they are solely due to a fault of the Provider, these interruptions will not be considered as unavailability of Services for the purposes of the service level commitments stipulated in the Agreement.
 
-### 10.8. Service evolution
+### 10.8. Service Evolution
 
 The Provider reserves the right to make any modifications to the Services, at its discretion, including adding, modifying, or deleting ranges, options, or features, as well as improving their performance. A detailed description of the Services is available on the Provider's website. It is the CLIENT's responsibility to stay informed of Service updates, which will apply immediately to all new orders. Changes may also occur immediately in response to urgent needs, such as security risks or legal or regulatory compliance requirements, or following modifications to third-party products.
 
