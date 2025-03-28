@@ -108,9 +108,7 @@ Nous rappelons ici les différents rôles du RACI :
 
 Les **opérateurs OpenShift** sont des extensions de la plateforme qui automatisent la gestion d'applications ou de services complexes sur Kubernetes.
 
-Seuls les **Opérateurs** issue des catalogues **Certifiés, Red Hat et MarketPlace** seront proposés dans les catalogues de l'**OperatorHub** sous réserve qu'ils soient **conformes aux exigences SecNumCloud** et qu'ils respectent les limitations de l'écosystème.
-
-Ces opérateurs sont mis à disposition via l'**OperatorHub** de votre Cluster.
+Seuls les **Opérateurs** provenant des catalogues **Certifiés, Red Hat et MarketPlace** seront proposés sous réserve qu'ils soient **conformes aux exigences SecNumCloud** et qu'ils respectent les limitations de l'écosystème.
 
 L’installation, la surveillance et la gestion des mises à jour de ces opérateurs sont gérées par **Cloud Temple**, tandis que le **Client** est responsable de l'utilisation de ces opérateurs pour gérer ses charges de travail.
 
