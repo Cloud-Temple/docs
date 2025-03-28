@@ -163,6 +163,7 @@ Le **traﬁc spécifique** est géré au travers de **MetalLB**, un LoadBalancer
 Cette solution permet de prendre en charge vos flux spécifiques, aussi bien pour vos interconnexions privées que pour vos besoins d’exposition publique.  
 
 Le routage est assuré via des **pools d’adresses IP publiques et privées**. Par défaut, deux pools vous sont attribués pour l’exposition de vos services :  
+
 - **Un pool de 4 adresses IP publiques**
 - **Un pool de 254 adresses IP privées**  
 

@@ -132,9 +132,9 @@ L’installation, la surveillance et la gestion des mises à jour de ces opérat
 | Gestion des plans de supports spécifiques sur les opérateurs    | RA          | I                 |
 
 > **Note importante** :
+> 
 > Seuls les opérateurs **déclaré supportés** par Cloud Temple et conformes à **SecNumCloud** sont mis à disposition. Tout opérateur non certifié ou provenant d’une source externe ne sera pas pris en charge ni validé pour être utilisé dans les environnements.
 > La gestion des **licences** et des **plans de supports spécifiques** sur les opérateurs issue du catalogue **MarketPlace Red Hat** ne sont pas de la responsabilité de **Cloud Temple**. La gestion du support de ces opérateurs est déléguée défacto au partenaire fournissant le service.
----
 
 ### Clarification sur l'assistance applicative
 
