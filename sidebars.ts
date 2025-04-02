@@ -50,6 +50,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'console/iam/tutorials/sso_aad',
             'console/iam/tutorials/sso_adfs',
+            'console/iam/tutorials/sso_jumpcloud',
           ],
         },
       ],
