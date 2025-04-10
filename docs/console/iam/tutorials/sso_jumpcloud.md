@@ -65,4 +65,4 @@ Suivez ces étapes pour configurer une nouvelle application OIDC dans votre cons
     *   Après l'activation, JumpCloud vous fournira un **Client ID** et un **Client Secret**.
     *   Communiquez ces deux informations de manière sécurisée à votre contact Cloud Temple pour finaliser la configuration de la fédération côté Keycloak.
 
-Une fois que Cloud Temple aura configuré la fédération avec les identifiants fournis, vos utilisateurs assignés pourront se connecter à la console Cloud Temple en utilisant leurs identifiants JumpCloud.
+Une fois que Cloud-Temple aura configuré la fédération avec les identifiants fournis, vos utilisateurs assignés pourront se connecter à la console Cloud Temple en utilisant leurs identifiants JumpCloud.
