@@ -439,10 +439,15 @@ async function initializeFile(filePath, translationMeta) {
       );
       
       if (isDryRun) {
+        const sourceHash = computeFileHash(filePath);
+        
         if (translationFileExists(filePath, lang)) {
           console.log(`[DRY RUN] Would initialize metadata for: ${relativePath} in ${lang}`);
+          console.log(`  Hash to be stored: ${sourceHash}`);
+          stats.skipped++;
         } else if (translateMissing) {
           console.log(`[DRY RUN] Would translate missing file: ${relativePath} to ${lang}`);
+          stats.translated++;
         } else {
           console.log(`[DRY RUN] Would skip missing translation: ${relativePath} for ${lang}`);
         }
@@ -485,6 +490,7 @@ async function initializeFile(filePath, translationMeta) {
         
         if (isDryRun) {
           console.log(`[DRY RUN] Would copy: ${relativePath} to ${lang}`);
+          stats.copied++;
           continue;
         }
         
@@ -530,10 +536,27 @@ async function processFile(filePath, translationMeta) {
       }
       
       if (isDryRun) {
-        if (isTranslationNeeded(filePath, lang, translationMeta)) {
-          console.log(`[DRY RUN] Would translate: ${relativePath} to ${lang}`);
+        const needsTranslation = isTranslationNeeded(filePath, lang, translationMeta);
+        
+        // Get current hash for comparison
+        const currentHash = computeFileHash(filePath);
+        const storedHash = translationMeta[relativePath]?.[lang] || 'none';
+        
+        if (needsTranslation) {
+          if (forceTranslation) {
+            console.log(`[DRY RUN] Would translate: ${relativePath} to ${lang} (--force flag used)`);
+          } else if (storedHash === 'none') {
+            console.log(`[DRY RUN] Would translate: ${relativePath} to ${lang} (new file or no previous translation)`);
+          } else {
+            console.log(`[DRY RUN] Would translate: ${relativePath} to ${lang} (content changed)`);
+            console.log(`  Current hash: ${currentHash}`);
+            console.log(`  Stored hash:  ${storedHash}`);
+          }
+          // Update statistics even in dry run mode
+          stats.translated++;
         } else {
           console.log(`[DRY RUN] Would skip: ${relativePath} for ${lang} (up-to-date)`);
+          stats.skipped++;
         }
         continue;
       }
@@ -566,6 +589,7 @@ async function processFile(filePath, translationMeta) {
       
       if (isDryRun) {
         console.log(`[DRY RUN] Would copy: ${relativePath} to ${lang}`);
+        stats.copied++;
         continue;
       }
       
