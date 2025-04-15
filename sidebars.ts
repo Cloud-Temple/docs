@@ -227,6 +227,7 @@ const sidebars: SidebarsConfig = {
         'contractual/iaas/raci',
         'contractual/iaas/raci_s3',
         'contractual/paas/raci',
+        'contractual/paas/raci_ocp_std'
       ],
     },
   ],
