@@ -97,3 +97,73 @@ Globalement, le HASH des fichiers est supporté sur notre stockage objet via les
             Metadata  :
                 X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
                 Content-Type              : text/plain
+
+## Je rencontre des erreurs XAmzContentSHA256Mismatch avec AWS CLI ou Terraform
+
+### Origine du problème
+
+Des erreurs `XAmzContentSHA256Mismatch` surviennent suite à une modification récente du comportement du SDK AWS concernant le calcul des checksums. Ce SDK est utilisé à la fois par AWS CLI et Terraform.
+
+### Versions concernées
+
+- **AWS CLI**: Version 2.23.0 et ultérieures
+- **Terraform**: Version 1.11.2 et ultérieures
+
+Ces versions intègrent un SDK AWS qui a modifié son comportement par défaut pour inclure automatiquement l'en-tête `x-amz-checksum-mode` et calculer des checksums CRC32 pour les uploads.
+
+### Solution 1: Variable d'environnement
+
+Pour **AWS CLI**:
+```bash
+AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED aws s3 cp fichier.txt s3://mon-bucket/
+```
+
+Pour **Terraform**:
+```bash
+AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED terraform apply
+```
+
+Pour rendre ce paramètre permanent dans votre session:
+```bash
+export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
+```
+
+### Solution 2: Configuration dans le profil AWS (pour AWS CLI uniquement)
+
+Vous pouvez configurer ce paramètre de façon permanente dans votre profil AWS CLI:
+
+1. Ouvrez votre fichier de configuration AWS: `~/.aws/config`
+2. Ajoutez le paramètre suivant dans votre profil:
+
+```ini
+[default]
+request_checksum_calculation = WHEN_REQUIRED
+```
+
+Cette solution est idéale si vous utilisez régulièrement AWS CLI et souhaitez une configuration permanente.
+
+### Solution 3: Downgrade vers une version antérieure
+
+Pour **AWS CLI**, revenir à la version 2.22.35:
+```bash
+pip install awscli==2.22.35
+```
+
+Pour **Terraform**, revenir à la version 1.11.1:
+```bash
+# Après téléchargement de la version 1.11.1
+terraform version  # Vérifiez que vous utilisez bien la 1.11.1
+```
+
+### Vérification 
+
+Pour confirmer que votre solution fonctionne, exécutez une commande simple:
+
+```bash
+aws s3 ls
+terraform plan
+```
+
+Si les commandes s'exécutent sans erreur de checksum, le problème est résolu.
+
+Les solutions par variable d'environnement ou configuration de profil sont recommandées car elles permettent de continuer à utiliser les versions récentes des outils tout en évitant le problème de checksum.
