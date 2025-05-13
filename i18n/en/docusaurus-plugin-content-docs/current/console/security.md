@@ -1,5 +1,5 @@
 ---
-title: Security Guide
+title: Security recommendations
 ---
 
 ## Recommendations for Secure Use of Cloud Temple Services

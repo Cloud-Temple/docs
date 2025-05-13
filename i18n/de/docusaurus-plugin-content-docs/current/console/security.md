@@ -1,5 +1,5 @@
 ---
-title: Sicherheitshandbuch
+title: Sicherheitsempfehlungen
 ---
 
 ## Empfehlungen für die sichere Nutzung der Cloud Temple-Dienste
