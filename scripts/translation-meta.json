@@ -882,5 +882,15 @@
     "de": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
     "es": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
     "it": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2"
-  }
+  },
+  ".DS_Store": {},
+  "console/.DS_Store": {},
+  "console/security.md": {
+    "en": "4ca8433772ba001ff918cadb82442cdf0712148156365b8195620e288234bdf7",
+    "de": "4ca8433772ba001ff918cadb82442cdf0712148156365b8195620e288234bdf7",
+    "es": "4ca8433772ba001ff918cadb82442cdf0712148156365b8195620e288234bdf7",
+    "it": "4ca8433772ba001ff918cadb82442cdf0712148156365b8195620e288234bdf7"
+  },
+  "contractual/.DS_Store": {},
+  "iaas_vmware/.DS_Store": {}
 }
