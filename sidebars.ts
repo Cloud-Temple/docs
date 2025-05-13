@@ -38,6 +38,10 @@ const sidebars: SidebarsConfig = {
       id: 'console/api',
     },
     {
+      type: 'doc',
+      id: 'console/security',
+    },
+    {
       type: 'category',
       label: 'IAM',
       items: [
