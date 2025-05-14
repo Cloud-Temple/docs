@@ -1,6 +1,7 @@
 build/
 node_modules/
 .git/
+scripts/
 
 .dockerignore
 .gitignore
@@ -12,3 +13,6 @@ node_modules/
 LICENSE
 makefile
 README.md
+
+# Cline Memory Bank
+memory-bank/
