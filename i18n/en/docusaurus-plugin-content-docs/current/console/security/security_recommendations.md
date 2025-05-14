@@ -20,7 +20,7 @@ Access to the Console is the gateway to all your Cloud Temple services. It is th
 
 Access to the cloud management console is limited to previously authorized IP addresses. This restriction allows access only to users from specified IP ranges, thus minimizing the risk of unauthorized access.
 
-You can configure these IP restrictions in your organization's settings. To learn how to configure IP filtering, see [Access Management and Authentication | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+You can configure these IP restrictions in your organization's settings. To learn how to configure IP filtering, see [Access Management and Authentication | Cloud Temple Documentation](../../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
 
 To maximize the effectiveness of this mechanism, be sure to:
 
@@ -46,8 +46,8 @@ Identity federation allows you to integrate the Cloud Temple Console with your i
 For these reasons, **identity federation is recommended**, particularly for environments with large staff or high security requirements.
 
 Follow our step-by-step guides to integrate your identity provider:
-- [Configure Federation with Azure AD | Cloud Temple Documentation](../console/iam/tutorials/sso_aad)
-- [Configure Federation with ADFS | Cloud Temple Documentation](../console/iam/tutorials/sso_adfs)
+- [Configure Federation with Azure AD | Cloud Temple Documentation](../../console/iam/tutorials/sso_aad)
+- [Configure Federation with ADFS | Cloud Temple Documentation](../../console/iam/tutorials/sso_adfs)
 
 ### Enable Multi-Factor Authentication (MFA)
 
@@ -59,9 +59,9 @@ For accounts managed locally by the Console (without federation), MFA is enabled
 
 To learn more:
 
-- [What is MFA and is it mandatory? | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
-- [Tutorial: Identity Federation with Microsoft EntraID | Cloud Temple Documentation](../console/iam/tutorials/sso_aad)
-- [Tutorial: Identity Federation with Microsoft ADFS | Cloud Temple Documentation](../console/iam/tutorials/sso_adfs)
+- [What is MFA and is it mandatory? | Cloud Temple Documentation](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Tutorial: Identity Federation with Microsoft EntraID | Cloud Temple Documentation](../../console/iam/tutorials/sso_aad)
+- [Tutorial: Identity Federation with Microsoft ADFS | Cloud Temple Documentation](../../console/iam/tutorials/sso_adfs)
 
 ### Access the Console from Secure Equipment
 
@@ -93,11 +93,11 @@ For secure and efficient management:
 - **Ensure direct control** by adding an owner who is a member of your organization, even if you outsource the management of your cloud service, in order to supervise notifications and important decisions.
 - **Limit the number of owners** to 3 to reduce the exposure surface and facilitate auditing of critical actions.
 
-To learn more about tenant owner management, see the [Tenant Owner Guide | Cloud Temple Documentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+To learn more about tenant owner management, see the [Tenant Owner Guide | Cloud Temple Documentation](../../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
 
 ### Manage Permissions on Your Cloud Services
 
-The Cloud Temple Console allows granular access management by assigning each user one or more permission levels, which precisely determine authorized actions. Consult the permissions documentation ([Permissions Available for Users in Your Organization | Cloud Temple Documentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) to understand in detail the different permissions and assign them appropriately.
+The Cloud Temple Console allows granular access management by assigning each user one or more permission levels, which precisely determine authorized actions. Consult the permissions documentation ([Permissions Available for Users in Your Organization | Cloud Temple Documentation](../../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) to understand in detail the different permissions and assign them appropriately.
 
 For effective and secure permission management, we recommend following these best practices:
 
@@ -125,8 +125,8 @@ A security information page available in the Console helps identify known vulner
 To ensure effective monitoring of your cloud environment and react quickly in case of anomaly, it is essential to implement an active monitoring strategy. We particularly recommend:
 
 - **Monitor service availability** via the [Status page | Cloud Temple](https://status.cloud-temple.com/), to be alerted in case of incidents or global outages;
-- **Enable relevant thematic notifications** for your usage from the Console, to receive important alerts in real time (see [Subscription to Thematic Notifications | Cloud Temple Documentation](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
-- **Leverage Cloud activity logs** to identify sensitive or suspicious actions on your resources (see "Logging - Activity Tracking" section of the [Getting Started Guide | Cloud Temple Documentation](../iaas_vmware/quickstart)). The collection and analysis of activity logs can be automated via the Console APIs, to integrate events into your monitoring or incident detection tools.
+- **Enable relevant thematic notifications** for your usage from the Console, to receive important alerts in real time (see [Subscription to Thematic Notifications | Cloud Temple Documentation](../../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Leverage Cloud activity logs** to identify sensitive or suspicious actions on your resources (see "Logging - Activity Tracking" section of the [Getting Started Guide | Cloud Temple Documentation](../../iaas_vmware/quickstart)). The collection and analysis of activity logs can be automated via the Console APIs, to integrate events into your monitoring or incident detection tools.
 
 ## Securing Hosted Resources
 
@@ -136,7 +136,7 @@ Below are essential best practices to strengthen the security of your VMs: confi
 
 ### Configure Backups
 
-To ensure the security and resilience of your data, it is essential to properly define and apply your backup policies. Assigning a backup policy to each virtual machine before it starts is mandatory. Documentation is available in the "Backup" section of the [Getting Started Guide | Cloud Temple Documentation](../iaas_vmware/quickstart).
+To ensure the security and resilience of your data, it is essential to properly define and apply your backup policies. Assigning a backup policy to each virtual machine before it starts is mandatory. Documentation is available in the "Backup" section of the [Getting Started Guide | Cloud Temple Documentation](../../iaas_vmware/quickstart).
 
 Here are the recommendations for managing backup policies for your Cloud Temple resources:
 
@@ -146,7 +146,7 @@ Here are the recommendations for managing backup policies for your Cloud Temple 
 
 ### Encrypt Sensitive VMs
 
-In addition to data encryption at the disk level, native for all cloud resources, **VM encryption can be activated to protect your most sensitive resources**. For this, see [Encrypt a VMware Virtual Machine | Cloud Temple Documentation](../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
+In addition to data encryption at the disk level, native for all cloud resources, **VM encryption can be activated to protect your most sensitive resources**. For this, see [Encrypt a VMware Virtual Machine | Cloud Temple Documentation](../../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
 
 Here are some best practices when using VM encryption:
 
@@ -158,7 +158,7 @@ Here are some best practices when using VM encryption:
 
 To limit the attack surface of your virtual machines, it is strongly recommended to restrict exposed services to what is strictly necessary. In particular, make sure to configure your resources to **not publicly expose administration interfaces and consoles** of deployed systems and applications.
 
-If you use Cloud Temple Object Storage services, it is also advised to **not configure your buckets for public access**, except in cases where it is strictly necessary (see [Limiting Access to Your S3 Buckets | Cloud Temple Documentation](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+If you use Cloud Temple Object Storage services, it is also advised to **not configure your buckets for public access**, except in cases where it is strictly necessary (see [Limiting Access to Your S3 Buckets | Cloud Temple Documentation](../../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
 
 ### Harden Virtual Machines (IaaS Services)
 
