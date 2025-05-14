@@ -1,5 +1,5 @@
 ---
-title: Recommandations de sécurité
+title: Bonnes pratiques
 ---
 
 ## Recommandations pour l’utilisation sécurisée des services Cloud Temple

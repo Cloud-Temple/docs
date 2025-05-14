@@ -38,8 +38,12 @@ const sidebars: SidebarsConfig = {
       id: 'console/api',
     },
     {
-      type: 'doc',
-      id: 'console/security',
+      type: 'category',
+      label: 'Security',
+      items: [
+        'console/security/security_recommendations',
+        'console/security/security_alarms',
+      ],
     },
     {
       type: 'category',
