@@ -20,7 +20,7 @@ L'accesso alla Console è la porta d'ingresso a tutti i vostri servizi Cloud Tem
 
 L'accesso alla console di gestione cloud è limitato agli indirizzi IP precedentemente autorizzati. Questa restrizione consente l'accesso solo agli utenti provenienti dagli intervalli IP specificati, riducendo così i rischi di accessi non autorizzati.
 
-Potete configurare queste restrizioni IP nelle impostazioni della vostra organizzazione. Per sapere come configurare il filtraggio IP, consultate la [Gestione degli accessi e autenticazione | Documentazione Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+Potete configurare queste restrizioni IP nelle impostazioni della vostra organizzazione. Per sapere come configurare il filtraggio IP, consultate la [Gestione degli accessi e autenticazione | Documentazione Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
 
 Per massimizzare l'efficacia di questo meccanismo, assicuratevi di:
 
@@ -46,8 +46,8 @@ La federazione di identità permette di integrare la Console Cloud Temple con il
 Per questi motivi, **la federazione di identità è raccomandata**, in particolare per ambienti con un ampio personale o con elevati requisiti di sicurezza.
 
 Seguite le nostre guide passo-passo per integrare il vostro provider di identità:
-- [Configurare la federazione con Azure AD | Documentazione Cloud Temple](../console/iam/tutorials/sso_aad)
-- [Configurare la federazione con ADFS | Documentazione Cloud Temple](../console/iam/tutorials/sso_adfs)
+- [Configurare la federazione con Azure AD | Documentazione Cloud Temple](../../console/iam/tutorials/sso_aad)
+- [Configurare la federazione con ADFS | Documentazione Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
 ### Attivare l'autenticazione a più fattori (MFA)
 
@@ -59,9 +59,9 @@ Per gli account gestiti localmente dalla Console (senza federazione), l'MFA è a
 
 Per saperne di più:
 
-- [Cos'è l'MFA ed è obbligatorio? | Documentazione Cloud Temple](../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
-- [Tutorial: Federazione di identità con Microsoft EntraID | Documentazione Cloud Temple](../console/iam/tutorials/sso_aad)
-- [Tutorial: Federazione di identità con Microsoft ADFS | Documentazione Cloud Temple](../console/iam/tutorials/sso_adfs)
+- [Cos'è l'MFA ed è obbligatorio? | Documentazione Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Tutorial: Federazione di identità con Microsoft EntraID | Documentazione Cloud Temple](../../console/iam/tutorials/sso_aad)
+- [Tutorial: Federazione di identità con Microsoft ADFS | Documentazione Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
 ### Accedere alla Console da dispositivi sicuri
 
@@ -93,11 +93,11 @@ Per una gestione sicura ed efficace:
 - **Assicurate un controllo diretto**, aggiungendo un proprietario membro della vostra organizzazione, anche se affidate la gestione del vostro servizio cloud, al fine di poter supervisionare le notifiche e le decisioni importanti.
 - **Limitate il numero di proprietari** a 3 per ridurre la superficie di esposizione e facilitare l'audit delle azioni critiche.
 
-Per saperne di più sulla gestione dei proprietari di tenant, consultate la [Guida dei proprietari su un tenant | Documentazione Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Per saperne di più sulla gestione dei proprietari di tenant, consultate la [Guida dei proprietari su un tenant | Documentazione Cloud Temple](../../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
 
 ### Gestire le autorizzazioni sui vostri servizi cloud
 
-La Console Cloud Temple permette una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano precisamente le azioni autorizzate. Consultate la documentazione delle autorizzazioni ([Autorizzazioni disponibili per gli utenti della vostra organizzazione | Documentazione Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle in modo appropriato.
+La Console Cloud Temple permette una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano precisamente le azioni autorizzate. Consultate la documentazione delle autorizzazioni ([Autorizzazioni disponibili per gli utenti della vostra organizzazione | Documentazione Cloud Temple](../../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle in modo appropriato.
 
 Per una gestione efficace e sicura delle autorizzazioni, vi raccomandiamo di seguire queste migliori pratiche:
 
@@ -125,8 +125,8 @@ Una pagina di informazioni sulla sicurezza disponibile nella Console permette di
 Per garantire un monitoraggio efficace del vostro ambiente cloud e reagire rapidamente in caso di anomalia, è essenziale implementare una strategia di vigilanza attiva. Vi raccomandiamo in particolare di:
 
 - **Monitorare la disponibilità dei servizi** tramite la [Status page | Cloud Temple](https://status.cloud-temple.com/), per essere avvisati in caso di incidenti o interruzioni globali;
-- **Attivare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, per ricevere in tempo reale gli avvisi importanti (vedere [Abbonamento alle notifiche tematiche | Documentazione Cloud Temple](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
-- **Sfruttare i log di attività Cloud** per identificare azioni sensibili o sospette sulle vostre risorse (vedere sezione "Logging - Monitoraggio delle Attività" della [Guida introduttiva | Documentazione Cloud Temple](../iaas_vmware/quickstart)). La raccolta e l'analisi dei log di attività può essere automatizzata tramite le API Console, al fine di integrare gli eventi nei vostri strumenti di supervisione o rilevamento degli incidenti.
+- **Attivare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, per ricevere in tempo reale gli avvisi importanti (vedere [Abbonamento alle notifiche tematiche | Documentazione Cloud Temple](../../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Sfruttare i log di attività Cloud** per identificare azioni sensibili o sospette sulle vostre risorse (vedere sezione "Logging - Monitoraggio delle Attività" della [Guida introduttiva | Documentazione Cloud Temple](../../iaas_vmware/quickstart)). La raccolta e l'analisi dei log di attività può essere automatizzata tramite le API Console, al fine di integrare gli eventi nei vostri strumenti di supervisione o rilevamento degli incidenti.
 
 ## Proteggere le risorse ospitate
 
@@ -136,7 +136,7 @@ Di seguito troverete le buone pratiche essenziali per rafforzare la sicurezza de
 
 ### Configurare i backup
 
-Per garantire la sicurezza e la resilienza dei vostri dati, è essenziale definire e applicare correttamente le vostre politiche di backup. L'assegnazione di una politica di backup a ogni macchina virtuale prima del suo avvio è obbligatoria. La documentazione è disponibile nella sezione "Backup" della [Guida introduttiva | Documentazione Cloud Temple](../iaas_vmware/quickstart).
+Per garantire la sicurezza e la resilienza dei vostri dati, è essenziale definire e applicare correttamente le vostre politiche di backup. L'assegnazione di una politica di backup a ogni macchina virtuale prima del suo avvio è obbligatoria. La documentazione è disponibile nella sezione "Backup" della [Guida introduttiva | Documentazione Cloud Temple](../../iaas_vmware/quickstart).
 
 Ecco le raccomandazioni in materia di gestione delle politiche di backup delle vostre risorse Cloud Temple:
 
@@ -146,7 +146,7 @@ Ecco le raccomandazioni in materia di gestione delle politiche di backup delle v
 
 ### Crittografare le VM sensibili
 
-In aggiunta alla crittografia dei dati a livello di dischi, nativa per tutte le risorse cloud, **la crittografia delle VM può essere attivata per proteggere le vostre risorse più sensibili**. Per questo, consultate [Crittografare una macchina virtuale VMware | Documentazione Cloud Temple](../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
+In aggiunta alla crittografia dei dati a livello di dischi, nativa per tutte le risorse cloud, **la crittografia delle VM può essere attivata per proteggere le vostre risorse più sensibili**. Per questo, consultate [Crittografare una macchina virtuale VMware | Documentazione Cloud Temple](../../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
 
 Ecco alcune buone pratiche in caso di utilizzo della crittografia delle VM:
 
@@ -158,7 +158,7 @@ Ecco alcune buone pratiche in caso di utilizzo della crittografia delle VM:
 
 Per limitare la superficie di attacco delle vostre macchine virtuali, è fortemente raccomandato limitare allo stretto necessario i servizi esposti. In particolare, assicuratevi di configurare le vostre risorse in modo da **non esporre pubblicamente le interfacce di amministrazione e le console** dei sistemi e delle applicazioni implementati.
 
-Se utilizzate i servizi di Object Storage di Cloud Temple, è anche consigliato **non configurare i vostri bucket in accesso pubblico**, salvo nei casi in cui ciò sia strettamente necessario (vedere [Limitazione degli accessi ai vostri bucket S3 | Documentazione Cloud Temple](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Se utilizzate i servizi di Object Storage di Cloud Temple, è anche consigliato **non configurare i vostri bucket in accesso pubblico**, salvo nei casi in cui ciò sia strettamente necessario (vedere [Limitazione degli accessi ai vostri bucket S3 | Documentazione Cloud Temple](../../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
 
 ### Rafforzare le macchine virtuali (servizi IaaS)
 
