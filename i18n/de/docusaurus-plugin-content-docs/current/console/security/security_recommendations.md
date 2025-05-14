@@ -20,7 +20,7 @@ Der Zugriff auf die Console ist das Eingangstor zu allen Ihren Cloud Temple-Dien
 
 Der Zugriff auf die Cloud-Management-Console ist auf zuvor autorisierte IP-Adressen beschränkt. Diese Einschränkung ermöglicht den Zugriff nur für Benutzer aus bestimmten IP-Bereichen und minimiert so das Risiko unbefugter Zugriffe.
 
-Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Informationen zur Konfiguration der IP-Filterung finden Sie unter [Zugriffsverwaltung und Authentifizierung | Cloud Temple-Dokumentation](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Informationen zur Konfiguration der IP-Filterung finden Sie unter [Zugriffsverwaltung und Authentifizierung | Cloud Temple-Dokumentation](../../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
 
 Um die Wirksamkeit dieses Mechanismus zu maximieren, sollten Sie:
 
@@ -46,8 +46,8 @@ Die Identitätsföderation ermöglicht die Integration der Cloud Temple Console 
 Aus diesen Gründen wird **die Identitätsföderation empfohlen**, insbesondere für Umgebungen mit großem Personalbestand oder hohen Sicherheitsanforderungen.
 
 Folgen Sie unseren Schritt-für-Schritt-Anleitungen zur Integration Ihres Identitätsanbieters:
-- [Konfiguration der Föderation mit Azure AD | Cloud Temple-Dokumentation](../console/iam/tutorials/sso_aad)
-- [Konfiguration der Föderation mit ADFS | Cloud Temple-Dokumentation](../console/iam/tutorials/sso_adfs)
+- [Konfiguration der Föderation mit Azure AD | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_aad)
+- [Konfiguration der Föderation mit ADFS | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_adfs)
 
 ### Aktivierung der Multi-Faktor-Authentifizierung (MFA)
 
@@ -59,9 +59,9 @@ Für lokal von der Console verwaltete Konten (ohne Föderation) ist MFA standard
 
 Weitere Informationen:
 
-- [Was ist MFA und ist es obligatorisch? | Cloud Temple-Dokumentation](../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
-- [Tutorial: Identitätsföderation mit Microsoft EntraID | Cloud Temple-Dokumentation](../console/iam/tutorials/sso_aad)
-- [Tutorial: Identitätsföderation mit Microsoft ADFS | Cloud Temple-Dokumentation](../console/iam/tutorials/sso_adfs)
+- [Was ist MFA und ist es obligatorisch? | Cloud Temple-Dokumentation](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Tutorial: Identitätsföderation mit Microsoft EntraID | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_aad)
+- [Tutorial: Identitätsföderation mit Microsoft ADFS | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_adfs)
 
 ### Zugriff auf die Console von sicheren Geräten
 
@@ -93,11 +93,11 @@ Für eine sichere und effiziente Verwaltung:
 - **Stellen Sie eine direkte Kontrolle sicher**, indem Sie einen Eigentümer hinzufügen, der Mitglied Ihrer Organisation ist, selbst wenn Sie die Verwaltung Ihres Cloud-Dienstes auslagern, um Benachrichtigungen und wichtige Entscheidungen überwachen zu können.
 - **Begrenzen Sie die Anzahl der Eigentümer** auf 3, um die Angriffsfläche zu reduzieren und die Prüfung kritischer Aktionen zu erleichtern.
 
-Weitere Informationen zur Verwaltung von Tenant-Eigentümern finden Sie im [Leitfaden für Eigentümer eines Tenants | Cloud Temple-Dokumentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Weitere Informationen zur Verwaltung von Tenant-Eigentümern finden Sie im [Leitfaden für Eigentümer eines Tenants | Cloud Temple-Dokumentation](../../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
 
 ### Verwaltung der Berechtigungen für Ihre Cloud-Dienste
 
-Die Cloud Temple Console ermöglicht eine granulare Zugriffsverwaltung, indem jedem Benutzer eine oder mehrere Berechtigungsstufen zugewiesen werden, die genau festlegen, welche Aktionen erlaubt sind. Konsultieren Sie die Berechtigungsdokumentation ([Verfügbare Berechtigungen für Benutzer Ihrer Organisation | Cloud Temple-Dokumentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)), um die verschiedenen Berechtigungen im Detail zu verstehen und sie angemessen zuzuweisen.
+Die Cloud Temple Console ermöglicht eine granulare Zugriffsverwaltung, indem jedem Benutzer eine oder mehrere Berechtigungsstufen zugewiesen werden, die genau festlegen, welche Aktionen erlaubt sind. Konsultieren Sie die Berechtigungsdokumentation ([Verfügbare Berechtigungen für Benutzer Ihrer Organisation | Cloud Temple-Dokumentation](../../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)), um die verschiedenen Berechtigungen im Detail zu verstehen und sie angemessen zuzuweisen.
 
 Für eine effektive und sichere Berechtigungsverwaltung empfehlen wir die folgenden bewährten Praktiken:
 
@@ -125,8 +125,8 @@ Eine in der Console verfügbare Sicherheitsinformationsseite hilft, bekannte Sch
 Um eine effektive Überwachung Ihrer Cloud-Umgebung zu gewährleisten und schnell auf Anomalien reagieren zu können, ist es wichtig, eine aktive Überwachungsstrategie zu implementieren. Wir empfehlen insbesondere:
 
 - **Überwachung der Dienstverfügbarkeit** über die [Statusseite | Cloud Temple](https://status.cloud-temple.com/), um bei Vorfällen oder globalen Ausfällen alarmiert zu werden;
-- **Aktivierung relevanter thematischer Benachrichtigungen** für Ihre Nutzung von der Console aus, um wichtige Warnungen in Echtzeit zu erhalten (siehe [Abonnement thematischer Benachrichtigungen | Cloud Temple-Dokumentation](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
-- **Nutzung der Cloud-Aktivitätsprotokolle** zur Identifizierung sensibler oder verdächtiger Aktionen auf Ihren Ressourcen (siehe Abschnitt "Protokollierung - Aktivitätsverfolgung" im [Erste Schritte-Leitfaden | Cloud Temple-Dokumentation](../iaas_vmware/quickstart)). Die Sammlung und Analyse von Aktivitätsprotokollen kann über die Console-APIs automatisiert werden, um Ereignisse in Ihre Überwachungs- oder Vorfallerkennungstools zu integrieren.
+- **Aktivierung relevanter thematischer Benachrichtigungen** für Ihre Nutzung von der Console aus, um wichtige Warnungen in Echtzeit zu erhalten (siehe [Abonnement thematischer Benachrichtigungen | Cloud Temple-Dokumentation](../../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Nutzung der Cloud-Aktivitätsprotokolle** zur Identifizierung sensibler oder verdächtiger Aktionen auf Ihren Ressourcen (siehe Abschnitt "Protokollierung - Aktivitätsverfolgung" im [Erste Schritte-Leitfaden | Cloud Temple-Dokumentation](../../iaas_vmware/quickstart)). Die Sammlung und Analyse von Aktivitätsprotokollen kann über die Console-APIs automatisiert werden, um Ereignisse in Ihre Überwachungs- oder Vorfallerkennungstools zu integrieren.
 
 ## Sicherung gehosteter Ressourcen
 
@@ -136,7 +136,7 @@ Nachfolgend finden Sie die wesentlichen bewährten Praktiken zur Stärkung der S
 
 ### Konfiguration von Backups
 
-Um die Sicherheit und Widerstandsfähigkeit Ihrer Daten zu gewährleisten, ist es wichtig, Ihre Backup-Richtlinien korrekt zu definieren und anzuwenden. Die Zuweisung einer Backup-Richtlinie zu jeder virtuellen Maschine vor ihrem Start ist obligatorisch. Die Dokumentation ist im Abschnitt "Backup" des [Erste Schritte-Leitfadens | Cloud Temple-Dokumentation](../iaas_vmware/quickstart) verfügbar.
+Um die Sicherheit und Widerstandsfähigkeit Ihrer Daten zu gewährleisten, ist es wichtig, Ihre Backup-Richtlinien korrekt zu definieren und anzuwenden. Die Zuweisung einer Backup-Richtlinie zu jeder virtuellen Maschine vor ihrem Start ist obligatorisch. Die Dokumentation ist im Abschnitt "Backup" des [Erste Schritte-Leitfadens | Cloud Temple-Dokumentation](../../iaas_vmware/quickstart) verfügbar.
 
 Hier sind die Empfehlungen für die Verwaltung von Backup-Richtlinien für Ihre Cloud Temple-Ressourcen:
 
@@ -146,7 +146,7 @@ Hier sind die Empfehlungen für die Verwaltung von Backup-Richtlinien für Ihre 
 
 ### Verschlüsselung sensibler VMs
 
-Zusätzlich zur Datenverschlüsselung auf Festplattenebene, die für alle Cloud-Ressourcen nativ ist, **kann die VM-Verschlüsselung aktiviert werden, um Ihre sensibleren Ressourcen zu schützen**. Dazu siehe [Verschlüsselung einer VMware-VM | Cloud Temple-Dokumentation](../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
+Zusätzlich zur Datenverschlüsselung auf Festplattenebene, die für alle Cloud-Ressourcen nativ ist, **kann die VM-Verschlüsselung aktiviert werden, um Ihre sensibleren Ressourcen zu schützen**. Dazu siehe [Verschlüsselung einer VMware-VM | Cloud Temple-Dokumentation](../../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
 
 Hier einige bewährte Praktiken bei der Verwendung der VM-Verschlüsselung:
 
@@ -158,7 +158,7 @@ Hier einige bewährte Praktiken bei der Verwendung der VM-Verschlüsselung:
 
 Um die Angriffsfläche Ihrer virtuellen Maschinen zu begrenzen, wird dringend empfohlen, die exponierten Dienste auf das unbedingt Notwendige zu beschränken. Achten Sie insbesondere darauf, Ihre Ressourcen so zu konfigurieren, dass **Administrationsoberflächen und Konsolen** der bereitgestellten Systeme und Anwendungen **nicht öffentlich exponiert werden**.
 
-Wenn Sie die Objektspeicherdienste von Cloud Temple nutzen, wird ebenfalls empfohlen, **Ihre Buckets nicht für öffentlichen Zugriff zu konfigurieren**, außer in Fällen, in denen dies unbedingt erforderlich ist (siehe [Einschränkung des Zugriffs auf Ihre S3-Buckets | Cloud Temple-Dokumentation](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Wenn Sie die Objektspeicherdienste von Cloud Temple nutzen, wird ebenfalls empfohlen, **Ihre Buckets nicht für öffentlichen Zugriff zu konfigurieren**, außer in Fällen, in denen dies unbedingt erforderlich ist (siehe [Einschränkung des Zugriffs auf Ihre S3-Buckets | Cloud Temple-Dokumentation](../../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
 
 ### Härtung virtueller Maschinen (IaaS-Dienste)
 
