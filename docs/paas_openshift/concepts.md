@@ -129,6 +129,47 @@ L’un des cas d’utilisation majeurs de Kasten K10 est **la migration de clust
 
 **(1)** _OADP n'est pas installé nativement dans le cluster. Seul Kasten est activé pour la gestion des migrations, des sauvegardes et de la restauration_
 
+## Répartiteurs de charge  
+
+L’environnement **SecNumCloud OpenShift** propose des solutions de répartition de charge adaptées à plusieurs périmètres fonctionnels, garantissant une gestion sécurisée et optimisée du trafic.  
+
+Les répartiteurs de charge couvrent quatre périmètres distincts, en s’appuyant sur différents niveaux du modèle OSI :  
+
+- **Accès aux outils d’administration** (serveur API et console OpenShift)  
+- **Trafic HTTP/HTTPS public**  
+- **Trafic HTTP/HTTPS privé**  
+- **Trafic spécifique nécessitant une personnalisation avancée**  
+
+### Accès aux outils d’administration  
+
+L’accès aux outils d’administration est sécurisé par des répartiteurs de charge dédiés. Ceux-ci sont protégés par des contrôles de sécurité renforcés, notamment une liste blanche administrable via la console **Cloud Temple**, garantissant une gestion stricte des accès.  
+
+### Trafic HTTP/HTTPS public  
+
+Les **LoadBalancers publics**, basés sur **HAProxy**, fonctionnent au niveau **4** du modèle OSI. Ils permettent d’exposer vos charges de travail en **HTTP/HTTPS** via des **routes** et des **ingress**, assurant ainsi une distribution efficace et performante du trafic entrant.  
+
+### Trafic HTTP/HTTPS privé (Interconnexion avec vos services IaaS SNC)  
+
+Les **LoadBalancers privés** facilitent la communication avec vos services **IaaS SNC** sans exposition publique. Comme leurs homologues publics, ils assurent la répartition du trafic **HTTP/HTTPS** tout en maintenant un environnement sécurisé et isolé.  
+
+### Trafic spécifique  
+
+Le **traﬁc spécifique** est géré au travers de **MetalLB**, un LoadBalancer opérant au niveau **2** du modèle OSI. Il prend en charge des besoins avancés nécessitant une personnalisation fine, notamment :  
+
+- La connexion à une base de données via **TCP**  
+- La gestion de flux **UDP** pour des applications en temps réel ou à faible latence  
+- Le routage de protocoles avancés comme **QUIC** ou **MQTT-SN**, offrant ainsi une flexibilité accrue  
+
+Cette solution permet de prendre en charge vos flux spécifiques, aussi bien pour vos interconnexions privées que pour vos besoins d’exposition publique.  
+
+Le routage est assuré via des **pools d’adresses IP publiques et privées**. Par défaut, deux pools vous sont attribués pour l’exposition de vos services :  
+- **Un pool de 4 adresses IP publiques**
+- **Un pool de 254 adresses IP privées**  
+
+Si ces ressources ne suffisent pas à supporter vos charges de travail, vous pouvez effectuer une demande auprès de nos services pour l’attribution d’adresses IP supplémentaires, qu’elles soient **publiques** ou **privées**.  
+
+> **À noter** : Les LoadBalancers intégrés ne font pas office de **WAF**. Une solution **WAF as a Service** sera prochainement disponible.  
+
 ## Droits et Permissions
 
 Voici les permissions principales misent en oeuvre :
@@ -166,67 +207,53 @@ Voici les permissions principales misent en oeuvre :
 |      Security      |PodSecurityPolicyReviews|                                                                                               Create                                                                                               |
 |       Custom       |       Resources        |                                       Diverses ressources personnalisées liées à Kasten K10, Keycloak, etc. Create, Get, List, Watch, Update, Patch, Delete                                        |
 
-## Limites actuelles de l'offre Redhat Openshift en environnement SecNumCloud
 
-Voici quelques limitations induites par la qualification SecNumCloud :
+## Restrictions et exigences de sécurité sur OpenShift SecNumCloud  
 
-### Plan de contrôle dédié
+### Plan de contrôle dédié  
 
-Les charges de travail ne peuvent pas être exécutées sur le plan de contrôle en raison des restrictions inhérentes à la gestion des ressources et à la sécurité de la plateforme OpenShift sur SecNumCloud.
+L’exécution des charges de travail sur le **plan de contrôle** est strictement interdite. Cette restriction garantit la sécurité et la stabilité de la plateforme OpenShift sur **SecNumCloud**, en limitant l’accès aux ressources critiques.  
 
-### Interdiction de déployer des images avec des privilèges élevés (rootless)
+### Interdiction des conteneurs avec privilèges élevés (rootless)  
 
-Pour se conformer aux exigences de sécurité du référentiel SecNumCloud, il est obligatoire d'utiliser des conteneurs sans privilèges (rootless).
+Pour respecter les exigences de sécurité du **référentiel SecNumCloud**, seuls les **conteneurs rootless** sont autorisés. Cette approche renforce la sécurité en empêchant tout accès privilégié aux conteneurs.  
 
-Cette approche renforce la sécurité globale en empêchant tout accès privilégié aux conteneurs. Les applications nécessitant des conteneurs avec privilèges devront être modifiées, car leur déploiement ne sera pas autorisé.
+Les applications nécessitant des privilèges élevés devront être adaptées, car leur déploiement ne sera pas autorisé. Cette contrainte s’applique également aux **Helm Charts** et aux **opérateurs** utilisant des images non rootless, rendant leur utilisation incompatible avec l’infrastructure.  
 
-Cette restriction s'étend également aux Helm Charts et aux opérateurs qui utilisent des images non rootless, rendant leur déploiement impossible au sein de l'infrastructure.
+### Restrictions sur les ClusterRoles  
 
-### Restrictions sur les droits des ClusterRole
+Dans notre offre OpenShift, la gestion des droits d’accès au niveau du cluster est rigoureusement encadrée pour garantir **sécurité et conformité** avec SecNumCloud.  
 
-Dans le cadre de notre offre OpenShift, nous mettons en place une gestion rigoureuse des droits d'accès au niveau du cluster, conformément aux exigences SecNumCloud.
+Cela implique des **restrictions sur les ClusterRoles**, limitant les privilèges globaux. Bien que ces restrictions puissent imposer des ajustements techniques, elles sont essentielles pour renforcer la résilience et la stabilité de l’environnement.  
 
-Cette approche implique une limitation des ClusterRoles pour nos clients, restreignant ainsi certains aspects de la gestion globale du cluster. Bien que cette mesure puisse initialement sembler contraignante, elle vise à renforcer la sécurité et la stabilité de l'infrastructure.
+Notre équipe de support est disponible pour vous accompagner dans l’adaptation de vos configurations et vous conseiller sur les alternatives possibles.  
 
-Nous sommes conscients que cela peut engendrer des défis techniques, notamment dans la configuration de paramètres avancés, et potentiellement des implications liées à l'adaptation de vos applications ou à l'acquisition d'outils complémentaires.
+### Restrictions sur les Security Context Constraints (SCC)  
 
-Notre équipe de support est disponible pour vous guider et vous conseiller sur ce sujet.
+Les **Security Context Constraints (SCC)** sont imposées et ne peuvent être modifiées par les utilisateurs. En conséquence, les paramètres d’exécution des conteneurs (privilèges d’accès, capacités Linux, etc.) sont prédéfinis et non personnalisables.  
 
-### Le contexte SCC ne peut pas être modifié dans l'environnement SecNumCloud
+Cette contrainte vise à empêcher tout accès non autorisé aux ressources critiques du cluster. Les applications nécessitant des contextes de sécurité spécifiques devront être adaptées pour respecter les SCC en vigueur.  
 
-Les Security Context Constraints (SCC) sont soumises à des restrictions strictes et ne peuvent pas être modifiées par les utilisateurs. Cette limitation a des répercussions significatives sur le déploiement et l'exécution des conteneurs.
+D’un point de vue opérationnel, cela peut nécessiter des ajustements architecturaux et des adaptations dans les processus de déploiement, en particulier pour les **Helm Charts** et les **opérateurs** ne respectant pas ces contraintes.  
 
-En pratique, cela signifie que les paramètres d'exécution des conteneurs, tels que les privilèges d'accès au système ou les capacités Linux, sont prédéfinis et non personnalisables.
+### Limitations sur les Custom Resource Definitions (CRDs)  
 
-Cette mesure, motivée par des exigences de sécurité, vise à empêcher tout accès non autorisé aux ressources critiques du cluster. Par conséquent, les applications nécessitant des contextes de sécurité spécifiques, notamment celles requérant des accès privilégiés, peuvent rencontrer des obstacles lors du déploiement.
+Pour garantir la **conformité SecNumCloud**, l’utilisation des **Custom Resource Definitions (CRDs)** et des contrôleurs personnalisés est restreinte.  
 
-D'un point de vue technique, cela peut impliquer une révision de l'architecture des applications et une adaptation des processus de déploiement afin de se conformer aux SCC prédéfinies. Sur le plan opérationnel, cette contrainte peut réduire la flexibilité des déploiements et augmenter la complexité de gestion de certaines applications dans l'environnement OpenShift, en particulier celles utilisant des Helm Charts ou des opérateurs qui ne respectent pas les SCC en vigueur.
+Cette mesure, liée aux droits sur le cluster, empêche le déploiement de ressources non autorisées pouvant affecter la stabilité et la sécurité de l’infrastructure. Elle s’applique également aux **opérateurs** et **Helm Charts**, avec des limitations sur les droits **RBAC**.  
 
-### Limitations sur les Custom Resource Definitions (CRDs)
+Les **CRDs non certifiées** peuvent être refusées afin d’assurer l’intégrité du cluster. Seules les **CRDs issues d’opérateurs ou Helm Charts certifiés** sont autorisées après validation par nos services.  
 
-Pour se conformer à la qualification SecNumCloud, une restriction importante concerne l'utilisation des Custom Resource Definitions (CRDs) et des contrôleurs personnalisés. Cette mesure, liée aux droits sur le cluster, vise à prévenir le déploiement de ressources personnalisées potentiellement instables ou non autorisées.
+Notre équipe de support peut vous guider dans cette démarche et vous conseiller sur les bonnes pratiques à adopter.  
 
-Cette limitation s'applique également aux opérateurs et aux Helm Charts, avec un impact direct sur les droits RBAC, car les CRDs permettent d'étendre l'API Kubernetes. Par conséquent, les opérateurs et Helm Charts doivent passer par une chaîne de certification auprès de nos services pour garantir leur conformité et leur sécurité.
+### Suppression du support des adresses IP dynamiques pour les runners  
 
-Les CRDs personnalisées, notamment celles répondant à des besoins métiers spécifiques, peuvent être refusées dans l'infrastructure en raison des risques qu'elles présentent pour la stabilité et la sécurité de la plateforme. Cette politique, conçue pour protéger l'intégrité et la fiabilité du cluster, n'autorise que les CRDs provenant d'opérateurs ou de Helm Charts officiellement certifiés.
+Les **runners OpenShift SecNumCloud** doivent être configurés avec des **adresses IP fixes**.  
 
-Notre équipe de support est disponible pour vous guider et vous conseiller sur les bonnes pratiques à adopter dans ce cadre.
+Cette exigence garantit l’accès sécurisé aux **API OpenShift**, aux interfaces d’administration et aux outils de gestion d’accès de la console **Cloud Temple**.  
 
-### Pas de support des IPs Dynamiques pour les runners
+Les **adresses IP dynamiques ne sont pas prises en charge**, nécessitant une configuration adaptée pour assurer la connectivité et la sécurité des composants.  
 
-La plateforme OpenShift SecNumCloud exige que les runners soient configurés avec des adresses IP fixes. Cette exigence est motivée par le besoin d'autoriser les IPs administrant notre console Cloud Temple, nécessaire pour l'outil de gestion d'accès aux API. Les adresses IPs autorisées sont également utilisées pour accéder à l'API OpenShift ainsi qu'aux interfaces d'administration d'OpenShift et de Shiva.
-
-Par conséquent, l'utilisation d'adresses IP dynamiques n'est pas prise en charge pour ces composants, imposant la configuration d'IPs fixes afin de garantir la sécurité et l'accès aux API.
-
-## Répartiteurs de charge
-
-L'environnement SecNumCloud Openshift offre des options de Load Balancing à différents niveaux pour garantir une gestion sécurisée et efficace du trafic. L'API du Load Balancer est accessible via les ports 6443 et 443, avec un contrôle de sécurité assuré par une liste blanche gérée par la console Cloud Temple. Cette API utilise une adresse IP publique connectée à notre backbone, mais elle n’est pas accessible par défaut, renforçant ainsi la sécurité des accès.
-
-Pour le Load Balancer privé, l’environnement utilise Ingress (nginx) comme solution par défaut, ce qui permet de gérer le trafic interne de manière efficace. De plus, un support TCP est disponible via l’infrastructure IaaS de Cloud Temple, offrant ainsi une flexibilité supplémentaire pour les applications nécessitant un équilibrage de charge à ce niveau.
-
-Concernant le Load Balancer public, le support de niveau 4 est assuré via Ingress, bien que quelques limitations existent actuellement avec la commande "expose." Cela signifie que le système est capable de gérer des connexions TCP et UDP de manière fiable tout en continuant à évoluer pour offrir une plus grande compatibilité et flexibilité.
-
-**À noter**: le Load Balancer intégré ne fait pas office de WAF. Une offre WAF as a Service est prévue pour le second semestre 2025.
 
 ## Bon à savoir
 
@@ -234,4 +261,4 @@ Concernant le Load Balancer public, le support de niveau 4 est assuré via Ingre
 
 • Pour tester OpenShift, Cloud Temple ne fournit pas d'environnement dédié, mais vous pouvez utiliser [les plateformes de test RedHat](https://www.redhat.com/fr/technologies/cloud-computing/openshift/try-it).
 
-• Pour l'automatisation de votre infrastructure, privilégiez le provider Terraform officiel d'OpenShift plutôt que celui de Cloud Temple.
+• Pour l'automatisation de votre infrastructure, privilégiez le provider Terraform officiel d'OpenShift.

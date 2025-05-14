@@ -39,6 +39,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Security',
+      items: [
+        'console/security/security_recommendations',
+        'console/security/security_alarms',
+      ],
+    },
+    {
+      type: 'category',
       label: 'IAM',
       items: [
         'console/iam/iam',
@@ -50,6 +58,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'console/iam/tutorials/sso_aad',
             'console/iam/tutorials/sso_adfs',
+            'console/iam/tutorials/sso_jumpcloud',
           ],
         },
       ],
