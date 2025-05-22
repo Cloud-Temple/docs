@@ -2,6 +2,8 @@
 title: Bonnes pratiques
 ---
 
+*Dernière mise à jour : 22/05/2025*
+
 ## Recommandations pour l’utilisation sécurisée des services Cloud Temple
 
 Les services Cloud Temple vous offrent une infrastructure cloud hautement sécurisée par conception. Cependant, certaines bonnes pratiques sécurité relèvent de votre responsabilité en tant qu'utilisateur de ces services. Ce guide vous aide à renforcer la sécurité de votre environnement cloud en tirant parti des fonctionnalités proposées dans la Console.
@@ -114,11 +116,11 @@ Cloud Temple fournit régulièrement des builds pour les hyperviseurs afin d’a
 
 Par conséquent, nous vous recommandons de :
 
-- Contrôler régulièrement dans la Console la disponibilité de nouveaux build pour vos hyperviseurs ;  
+- Contrôler régulièrement dans la Console la disponibilité de nouveaux builds pour vos hyperviseurs ;  
 - **Déployer régulièrement les nouveaux builds sur l’ensemble de vos hyperviseurs**, en particulier s’ils corrigent des failles de sécurité ;
 - Déployer régulièrement sur vos machines virtuelles les nouvelles versions des vmtools.
 
-Une page d’information sécurité disponible dans la Console permet d’identifier les vulnérabilités connues et les recommandations associées (builds à déployer…).  
+**Une page d’alertes sécurité est disponible** pour vous informer des vulnérabilités connues et recommandations associées : [Alertes de sécurité | Cloud Temple](https://docs.cloud-temple.com/console/security/security_alarms).  
 
 ### Suivre l’activité sur les services cloud
 
