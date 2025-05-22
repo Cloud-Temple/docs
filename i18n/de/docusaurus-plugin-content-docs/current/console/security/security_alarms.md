@@ -2,25 +2,34 @@
 title: Sicherheitshinweise
 ---
 
-Hier finden Sie unsere Sicherheitshinweise und Empfehlungen zu Cloud Temple-Diensten.
+Hier finden Sie die Sicherheitshinweise im Zusammenhang mit unseren Cloud-Services.  
+Diese Seite wird täglich aktualisiert, um neu identifizierte Schwachstellen zu berücksichtigen.
 
-## Sicherheitslücken
+## Schwachstellen
 
-### Tabelle der Sicherheitslücken
-
-| Veröffentlichungsdatum | Betroffener Dienst | Kennung | CVSSv3-Score | Details | CT-Schweregrad | Empfehlung | Beschreibung |
+| Datum | Referenz(en) | CVSS | Titel | Beschreibung | Service(s) | Schweregrad | Behandlung |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
-| 12.05.2025 | IaaS By VMware | CVE-2025-22247 | 6.1 | **VMware Tools-Sicherheitslücke: CVE-2025-25234** [Herstellerbulletin](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25683) | 🟡 Mittel | Aktualisieren Sie VMware Tools auf Version 12.5.2 auf Ihren VMs, um die Sicherheitslücke zu beheben. | Eine Sicherheitslücke bei der unsicheren Dateiverwaltung in VMware Tools wurde VMware privat gemeldet. Updates sind verfügbar, um diese Sicherheitslücke in betroffenen VMware-Produkten zu beheben. |
-| 25.03.2025 | IaaS By VMware | CVE-2025-22230 | 7.8 | **VMware Tools-Sicherheitslücke: CVE-2025-22230** [Herstellerbulletin](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 🟠 Hoch | Aktualisieren Sie VMware Tools auf Version 15.5.1 für Windows auf Ihren VMs, um diese Sicherheitslücke zu beheben. | Eine Authentifizierungsumgehungs-Sicherheitslücke in VMware Tools für Windows wurde VMware privat gemeldet. Updates sind verfügbar, um diese Sicherheitslücke in betroffenen VMware-Produkten zu beheben. |
-| 04.03.2025 | IaaS By VMware | Mehrere CVEs | 7.1 bis 9.3 | **Sicherheitslücken in VMware ESXI (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** [Herstellerbulletin](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 🟠 Hoch | Installieren Sie so schnell wie möglich die verfügbaren Patches für Ihren Branch. Die neuen gepatchten Versionen sind in der Console verfügbar. Zur Erinnerung: Die Console zeigt an, welche Versionen Ihrer ESXi nicht aktuell sind. | Mehrere Sicherheitslücken in VMware ESXi wurden VMware privat gemeldet (CVE-2025-22224; CVE-2025-22225; CVE-2025-22226). Updates sind verfügbar, um diese Sicherheitslücken in betroffenen VMware-Produkten zu beheben. |
+| 21/05/2025 | [VMSA-2025-0010](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25717) | 4.3-6.8 | **VMSA-2025-0010: Mehrere Schwachstellen in VMware ESXi (CVE-2025-41226, CVE-2025-41227, CVE-2025-41228)** | Es wurden mehrere Schwachstellen in VMware ESXi gemeldet: Denial-of-Service-Schwachstelle bei Gastoperationen (CVE-2025-41226), Denial-of-Service-Schwachstelle (CVE-2025-41227), Cross-Site-Scripting (XSS)-Schwachstelle (CVE-2025-41228). Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟡 Moderat | ⚠️ Wir empfehlen Ihnen, Ihre Hypervisoren zu aktualisieren. Die gepatchten ESXi-Versionen sind verfügbar, sobald sie von Cloud Temple validiert wurden. Die Konsole zeigt Ihnen an, welche ESXi aktualisiert werden müssen. | 
+| 21/05/2025 | [VMSA-2025-0010](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25717) | 4.3-8.8 | **VMSA-2025-0010: Mehrere Schwachstellen in vCenter (CVE-2025-41225, CVE-2025-41228)** | Es wurden mehrere Schwachstellen in VMware vCenter gemeldet: Authentifizierte Befehlsausführung in VMware vCenter Server (CVE-2025-41225), Cross-Site-Scripting (XSS)-Schwachstelle (CVE-2025-41228). Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟠 Wichtig | ✅ Die Aktualisierung Ihrer vCenter-Instanzen ist eingeplant, sobald die Patches von Cloud Temple validiert wurden. Es ist keine Aktion Ihrerseits erforderlich. | 
+| 14/05/2025 | [VMSA-2025-0007](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25683) | 6.1 | **VMSA-2025-0007: Unsichere Dateiverwaltung in VMware Tools (CVE-2025-22247)** | Es wurde eine unsichere Dateiverwaltung in VMware Tools gemeldet. Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟡 Moderat | ⚠️ Wir empfehlen Ihnen, VMware Tools auf Ihren virtuellen Maschinen zu aktualisieren. | 
+| 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005: Authentifizierungsumgehung in VMware Tools für Windows (CVE-2025-22230)** | Es wurde eine Schwachstelle zur Umgehung der Authentifizierung in VMware Tools für Windows gemeldet. Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟠 Wichtig | ⚠️ Wir empfehlen Ihnen, VMware Tools auf Ihren virtuellen Maschinen zu aktualisieren. |
+| 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004: Mehrere Schwachstellen in VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Es wurden mehrere Schwachstellen in VMware ESXi gemeldet: Heap-Überlauf-Schwachstelle in VMCI (CVE-2025-22224), von VMware als kritisch eingestuft, Arbiträrer Schreibzugriff in VMware ESXi (CVE-2025-22225), HGFS-Informationsleck-Schwachstelle (CVE-2025-22226). Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟠 Wichtig | ⚠️ Wir empfehlen Ihnen, Ihre Hypervisoren zu aktualisieren. Die gepatchten ESXi-Versionen sind verfügbar, sobald sie von Cloud Temple validiert wurden. Die Konsole zeigt Ihnen an, welche ESXi aktualisiert werden müssen. |
 
-## Schweregradskalen
+## Informationen
 
-| Stufe | Beschreibung |
+- **Datum**: Erscheinungsdatum der ursprünglichen Cloud Temple-Sicherheitsmeldung.
+- **Referenz(en)**: CVE-ID, sofern verfügbar.
+- **CVSS**: Basiswert laut CVSS v3, wie vom Hersteller oder CVE angegeben, nicht kontextualisiert. Die Kontextualisierung erfolgt über den CT-Schweregrad. Wenn eine Warnung mehrere Schwachstellen betrifft, werden der min. und max. CVSS-Wert angegeben.
+- **Titel**: Titel der Warnung, ggf. mit Anbieterreferenz.
+- **Beschreibung**: Zusammenfassung mit Link(s) zu Detailinformationen.
+- **Service(s)**: Betroffener(e) Cloud Temple-Service(s).
+- **Schweregrad**: Bewertung der Schwere im Kontext der Cloud Temple-Services (bei mehreren Schwachstellen auf die kritischste bezogen). Die Ausnutzbarkeit wird im technischen Kontext unserer Infrastrukturen und Cloud-Services berücksichtigt.
+
+| Niveau | Beschreibung |
 |--------|-------------|
-| 🔴 **Kritisch** | CVSS 7+ Sicherheitslücke mit erheblichem Ausnutzungsrisiko (Exposition, einfache Ausnutzung) |
-| 🟠 **Hoch** | CVSS 7+ Sicherheitslücke ohne erhebliches Ausnutzungsrisiko (begrenzte Exposition oder Ausnutzungseinschränkungen) |
-| 🟡 **Mittel** | CVSS 4+ Sicherheitslücke |
-| 🔵 **Niedrig** | CVSS-Sicherheitslücke unter 4 oder nicht ausnutzbar. |
+| 🔴 **Kritisch** | Schwachstelle mit CVSS 7+ und hohem Risiko der Ausnutzung (hohe Exposition, einfache Ausnutzung). Eine zeitnahe Behebung oder Minderung wird dringend empfohlen. |
+| 🟠 **Wichtig** | Schwachstelle mit CVSS 7+, aber ohne hohes Ausnutzungsrisiko (begrenzte Exposition oder Ausnutzungsschwierigkeit) |
+| 🟡 **Moderat** | Schwachstelle mit CVSS 4+ |
+| 🔵 **Niedrig** | Schwachstelle mit CVSS unter 4 oder nicht ausnutzbar. |
 
-*Die Ausnutzungskriterien werden im technischen Kontext unserer Cloud-Infrastrukturen und -Dienste berücksichtigt.*
+- **Behandlung**: Informationen und Empfehlungen im Kontext der Cloud Temple-Services. ⚠️ weist darauf hin, dass eine Aktion Ihrerseits erforderlich ist. ✅ zeigt an, dass Cloud Temple die Behebung übernimmt.
