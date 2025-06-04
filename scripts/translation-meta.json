@@ -1,4 +1,5 @@
 {
+  ".DS_Store": {},
   "additional_content/concepts_az.md": {
     "en": "306e96def3d723feafc9769b5743ab91a8dc119cf88f16890fee682cdf357b3b",
     "de": "306e96def3d723feafc9769b5743ab91a8dc119cf88f16890fee682cdf357b3b",
@@ -51,6 +52,7 @@
     "es": "898ba7e958934c3c1de5fdbd52b84f9070907f21505dc35c605fd1ab041ff001",
     "it": "898ba7e958934c3c1de5fdbd52b84f9070907f21505dc35c605fd1ab041ff001"
   },
+  "console/.DS_Store": {},
   "console/api.md": {
     "en": "0de8d08d56ed412b3d196c9ec116e7aa9636bca5cb5465a5897e0a6109ac0f2c",
     "de": "0de8d08d56ed412b3d196c9ec116e7aa9636bca5cb5465a5897e0a6109ac0f2c",
@@ -336,12 +338,25 @@
     "es": "3e9b4a37d416db1d0d62c68d10dc3038a694b9bf02f7666082772eae3da44741",
     "it": "3e9b4a37d416db1d0d62c68d10dc3038a694b9bf02f7666082772eae3da44741"
   },
+  "console/security/security_alarms.md": {
+    "en": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4",
+    "de": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4",
+    "es": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4",
+    "it": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4"
+  },
+  "console/security/security_recommendations.md": {
+    "en": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc",
+    "de": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc",
+    "es": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc",
+    "it": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc"
+  },
   "console/status.md": {
     "en": "494a70e241df5efbe3f77425c45ced084d9eeae2c81718bb39be66ed12ed6e76",
     "de": "494a70e241df5efbe3f77425c45ced084d9eeae2c81718bb39be66ed12ed6e76",
     "es": "494a70e241df5efbe3f77425c45ced084d9eeae2c81718bb39be66ed12ed6e76",
     "it": "494a70e241df5efbe3f77425c45ced084d9eeae2c81718bb39be66ed12ed6e76"
   },
+  "contractual/.DS_Store": {},
   "contractual/CT.AM.JUR.TEMPLATE_CS.dotx": {},
   "contractual/CT.AM.JUR.TEMPLATE_CS_nonum.dotx": {},
   "contractual/baremetal.docx": {},
@@ -514,6 +529,7 @@
     "es": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e",
     "it": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e"
   },
+  "iaas_vmware/.DS_Store": {},
   "iaas_vmware/concepts.md": {
     "en": "eca146818d69a84561900c11ba089ac92b5b64d5898a7e965893140492ff7bc4",
     "de": "eca146818d69a84561900c11ba089ac92b5b64d5898a7e965893140492ff7bc4",

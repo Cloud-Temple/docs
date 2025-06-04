@@ -39,6 +39,10 @@
     "message": "PaaS Openshift",
     "description": "The label for category PaaS Openshift in sidebar docSidebar"
   },
+  "sidebar.docSidebar.category.Security": {
+    "message": "Sicherheit",
+    "description": "The label for category Security in sidebar docSidebar"
+  },
   "sidebar.docSidebar.category.Network": {
     "message": "Netzwerk",
     "description": "The label for category Network in sidebar docSidebar"
