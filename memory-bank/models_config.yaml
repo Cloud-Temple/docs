@@ -1,0 +1,1109 @@
+# Configuration des modèles Cloud Temple MaaS
+# Ce fichier décrit tous les modèles disponibles dans l'offre LLM as a Service
+
+# Statistiques globales
+stats:
+  total_models: 36 # Ajout qwen3:32b
+  min_context: 8192 # Granite Guardian 2B
+  max_context: 120000 # Qwen3 / Gemma 3 / Granite 3.3 2B (Forcé/Vérifié)
+  pricing_input: 0.9
+  pricing_output: 4
+  pricing_reasoning: 21 # Nouveau prix pour le raisonnement
+  secnumcloud: true
+  hds: true
+  sovereign: true
+  c5: true
+
+# Modèles de grande taille
+large_models:
+  - name: Llama 3.3 70B
+    editor: Meta # Correspondance Table: Meta
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 70
+    parameters_string: 70B # Ajouté depuis table
+    context_size: 60000 # Correspondance Table: 60k
+    speed: 30 tokens/seconde
+    energy_per_million_tokens: 8.87 # (958W / 30 t/s) / 3.6 -> kWh/Mtoken (Serveur L40S + Cooling)
+    licence: LLAMA 3.3 Community Licence
+    description: Modèle multilingue de pointe développé par Meta, conçu pour exceller dans le dialogue naturel, le raisonnement complexe et la compréhension nuancée des instructions.
+    details: Combinant une efficacité remarquable avec des ressources computationnelles réduites, ce modèle offre des capacités multilingues étendues couvrant 8 langues majeures (anglais, français, allemand, espagnol, italien, portugais, hindi et thaï). Sa fenêtre contextuelle de 60 000 tokens permet l'analyse approfondie de documents complexes et de conversations longues, tout en maintenant une cohérence globale exceptionnelle. Optimisé pour minimiser les biais et les réponses problématiques.
+    supports_tools: false # Les modèles GEMMA3 ne supportent pas les outils
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 28 <= 50
+    tags:
+      - Agent
+      - Dialogue
+      - Multilingue
+      # Efficient tag removed (conso 9.50 >= 2.0)
+    use_cases:
+      - Chatbots multilingues prenant en charge 8 langues simultanément
+      - Exécution d'instructions complexes enchaînées (prompt chaining)
+      - Traitement d'une fenêtre de dialogue de 60K tokens pour historique conversationnel
+      - Analyse de documents juridiques ou techniques volumineux (>100 pages)
+      - Génération de textes structurés avec fidélité aux consignes stylistiques
+
+  - name: Qwen3 235B
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 235
+    parameters_string: 235B
+    context_size: 32000 # D'après model_list.md
+    speed: 21 # tokens/seconde, arrondi inférieur de 21.19 (tests du 29/05/2025)
+    energy_per_million_tokens: 6.35 # (480W Mac Studio / 21 t/s) / 3600
+    licence: Apache 2.0 # Supposée, comme les autres Qwen3
+    description: Modèle très volumineux de la nouvelle génération Qwen3, offrant des capacités étendues pour les tâches les plus complexes.
+    details: Fait partie de la série Qwen3. Ce modèle de 235 milliards de paramètres est conçu pour exceller dans les tâches de raisonnement profond, de génération de code complexe, et de compréhension nuancée sur de vastes contextes. Supporte plus de 100 langues et intègre des modes de pensée hybrides.
+    supports_tools: true # Capacités Agentiques / MCP
+    supports_vision: false # Non mentionné pour Qwen3 dense
+    supports_reasoning: true # Mode Thinking / Raisonnement amélioré
+    supports_security: false # Non mentionné
+    is_fast: false # Vitesse 21 <= 50
+    tags:
+      - Agent
+      - Raisonnement
+      - Multilingue
+      - Très Large
+    use_cases:
+      - Agents conversationnels très avancés avec grand contexte et intégration d'outils (MCP)
+      - Résolution de problèmes extrêmement complexes (maths, code)
+      - Analyse et génération de documents très volumineux et techniques
+      - Applications multilingues (>100 langues) nécessitant une compréhension et une génération de très haute fidélité
+
+  - name: DeepSeek-R1 671B
+    editor: DeepSeek AI
+    location: FR 🇫🇷
+    parameters: 671
+    parameters_string: 671B
+    context_size: 32000 # D'après model_list.md
+    speed: 16 tokens/seconde # Données du 04/06/2025
+    energy_per_million_tokens: 8.33 # (480W Mac Studio / 16 t/s) / 3.6
+    licence: MIT Licence # Supposée, comme les autres DeepSeek
+    description: Modèle extrêmement volumineux de DeepSeek AI, conçu pour le summum du raisonnement et de la génération.
+    details: DeepSeek-R1 671B représente l'un des plus grands modèles ouverts, destiné aux tâches de raisonnement les plus ardues et à la génération de texte d'une qualité exceptionnelle.
+    supports_tools: false # Par défaut, à confirmer
+    supports_vision: false # Par défaut, à confirmer
+    supports_reasoning: true # Supposé, étant un modèle de cette taille
+    supports_security: false # Par défaut, à confirmer
+    is_fast: false # Vitesse 16 <= 50
+    tags:
+      - Raisonnement
+      - Extrêmement Large
+      # Efficient tag removed (conso 8.33 >= 2.0)
+    use_cases:
+      - Tâches de raisonnement de pointe
+      - Génération de texte de qualité supérieure
+      - Recherche et développement en IA
+
+  - name: Gemma 3 27B
+    editor: Google # Correspondance Table: Google
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 27
+    parameters_string: 27B # Ajouté depuis table
+    context_size: 120000 # Correspondance Table: 120k
+    speed: 68 tokens/seconde
+    energy_per_million_tokens: 3.91 # (958W / 68 t/s) / 3.6 -> kWh/Mtoken (Serveur L40S + Cooling)
+    licence: Google Gemma Terms of Use
+    description: Modèle révolutionnaire de Google offrant un équilibre optimal entre puissance et efficacité, avec un rapport performance/coût exceptionnel pour les applications professionnelles exigeantes.
+    details: Doté d'une efficacité matérielle inégalée, ce modèle intègre des capacités multimodales natives et excelle dans la performance multilingue sur plus de 140 langues. Sa fenêtre contextuelle impressionnante de 120 000 tokens en fait le choix idéal pour l'analyse de documents très volumineux, la recherche documentaire, et toute application nécessitant la compréhension de contextes étendus. Son architecture optimisée permet un déploiement flexible sans compromettre la qualité des résultats.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: true # Correspondance Table: ✅ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 67 > 50
+    tags:
+      - Vision # Fusionné depuis badges
+      - Agent # Fusionné depuis badges
+      - Rapide # Fusionné depuis badges (OK)
+      - Grand contexte
+      # Efficient tag removed (conso 3.97 >= 2.0)
+    use_cases:
+      - Analyse de documents avec contexte étendu jusqu'à 120K tokens (environ 400 pages)
+      - Indexation et recherche sémantique dans des bases documentaires volumineuses
+      - Traitement d'images et texte en simultané grâce aux capacités multimodales
+      - Extraction structurée de données à partir de PDF et documents scannés
+      - Intégration avec des outils externes via l'API function calling
+
+  - name: Qwen3 30B-A3B FP8
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 30
+    parameters_string: 30B-A3B
+    context_size: 32000
+    speed: 103 tokens/seconde
+    energy_per_million_tokens: 2.58 # (958W / 103 t/s) / 3.6 -> kWh/Mtoken (Serveur L40S + Cooling)
+    licence: Apache 2.0 # Supposée
+    description: Modèle MoE FP8 (3B activés) nouvelle génération, avec modes de pensée hybrides et capacités agentiques avancées.
+    details: Version FP8 du modèle MoE Qwen3 30B-A3B. Intègre un mode "Thinking" pour le raisonnement complexe et un mode "Non-Thinking" rapide. Capacités améliorées en raisonnement, code, maths et agent (outils/MCP). Supporte plus de 100 langues. Idéal pour un équilibre performance/coût optimal.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: false
+    is_fast: true # Vitesse 81.12 > 50
+    tags:
+      - MoE
+      - Agent
+      - Raisonnement
+      - Rapide
+      - Multilingue
+    use_cases:
+      - Agents conversationnels avancés avec intégration d'outils (MCP)
+      - Résolution de problèmes complexes (maths, code) avec mode "Thinking"
+      - Applications multilingues (>100 langues)
+      - Scénarios nécessitant un équilibre coût/performance (MoE) sur VLLM
+      - Dialogue multi-tours engageant et suivi d'instructions précis
+
+  - name: DeepSeek-R1 70B
+    editor: DeepSeek AI
+    location: FR 🇫🇷
+    parameters: 70
+    parameters_string: 70B
+    context_size: 32000 # D'après model_list.md
+    speed: 20 tokens/seconde # Nouvelle valeur fournie
+    energy_per_million_tokens: 11.44 # (858W [Lame ~258W + 2x A100 300W] / 20.83 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 ia06)
+    licence: MIT Licence # Supposée, comme les autres DeepSeek
+    description: Modèle 70B de DeepSeek AI
+    details: DeepSeek-R1 70B est conçu pour des tâches complexes de raisonnement et de génération.
+    supports_tools: false # Par défaut, à confirmer
+    supports_vision: false # Par défaut, à confirmer
+    supports_reasoning: true # Supposé, étant un modèle 70B
+    supports_security: false # Par défaut, à confirmer
+    is_fast: false # Vitesse 20.83 <= 50
+    tags:
+      - Raisonnement
+      - Large
+      # Efficient tag removed (conso 11.44 >= 2.0)
+    use_cases:
+      - Tâches de raisonnement complexes
+      - Génération de texte de haute qualité
+      - Analyse approfondie de documents (dans la limite du contexte de 27k)
+
+# Modèles spécialisés
+specialized_models:
+  - name: Qwen3 14B # Nouveau modèle
+    editor: Qwen Team
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 14
+    parameters_string: 14B # Ajouté depuis table
+    context_size: 32000 # Corrigé
+    speed: 69 tokens/seconde
+    energy_per_million_tokens: 2.65 # (658W / 69 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: Apache 2.0
+    description: Modèle dense nouvelle génération Qwen3 (14B), offrant des performances équivalentes à Qwen2.5 32B avec une meilleure efficacité.
+    details: Fait partie de la série Qwen3, entraîné sur ~36T tokens. Capacités améliorées en raisonnement, code, maths et agent (outils/MCP). Supporte plus de 100 langues et les modes de pensée hybrides.
+    supports_tools: true # Capacités Agentiques / MCP
+    supports_vision: false # Non mentionné
+    supports_reasoning: true # Mode Thinking / Raisonnement amélioré
+    supports_security: false # Non mentionné
+    is_fast: true # Vitesse 74 > 50
+    tags:
+      - Agent
+      - Raisonnement
+      - Rapide # (OK)
+      - Multilingue
+      # Efficient tag removed (conso 2.47 >= 2.0)
+    use_cases:
+      - Tâches générales nécessitant performance et grand contexte
+      - Génération de contenu créatif et technique
+      - Analyse de données et raisonnement complexe
+      - Intégration avec des outils externes via function calling
+
+  - name: Gemma 3 12B
+    editor: Google # Correspondance Table: Google
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 12
+    parameters_string: 12B # Ajouté depuis table
+    context_size: 120000 # Correspondance Table: 120k
+    speed: 67 tokens/seconde
+    energy_per_million_tokens: 2.73 # (658W / 67 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: Google Gemma Terms of Use
+    description: Version intermédiaire du modèle Gemma 3 offrant un excellent équilibre entre performance et efficacité.
+    details: Ce modèle de taille moyenne combine performances de haute qualité et efficacité opérationnelle, offrant une grande partie des capacités de son grand frère de 27B paramètres dans un format plus léger. Idéal pour les déploiements nécessitant qualité et rapidité sans les ressources computationnelles des plus grands modèles.
+    supports_tools: false # Les modèles GEMMA3 ne supportent pas les outils
+    supports_vision: true # Correspondance Table: ✅ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 76 > 50
+    tags:
+      - Vision # Fusionné depuis badges
+      # Agent tag removed (ne supporte pas les outils)
+      - Rapide # Fusionné depuis badges (OK)
+      - Grand Contexte
+      # Efficient tag removed (conso 2.41 >= 2.0)
+    use_cases:
+      - Applications multimodales avec contraintes de ressources modérées
+      - Traitement de documents avec contexte standard (jusqu'à 100 pages)
+      - Génération de contenu textuel et analyse d'images combinées
+      - Déploiements sur GPU standard sans infrastructure spécialisée
+      - Chatbots avancés avec capacités visuelles et textuelles intégrées
+
+  - name: Gemma 3 4B
+    editor: Google # Correspondance Table: Google
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 4
+    parameters_string: 4B # Ajouté depuis table
+    context_size: 120000 # Correspondance Table: 120k
+    speed: 58 tokens/seconde
+    energy_per_million_tokens: 0.93 # (195W / 58 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Google Gemma Terms of Use
+    description: Modèle compact de Google offrant d'excellentes performances dans un format léger et économique.
+    details: Cette version compacte du modèle Gemma 3 est optimisée pour les déploiements avec contraintes de ressources tout en maintenant des performances remarquables pour sa taille. Son architecture efficiente permet une inférence rapide sur du matériel standard, idéale pour les applications nécessitant réactivité et déploiement à grande échelle. Malgré sa taille réduite, il maintient des capacités multimodales pour traiter à la fois texte et images.
+    supports_tools: false # Les modèles GEMMA3 ne supportent pas les outils
+    supports_vision: true # Correspondance Table: ✅ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 58 > 50
+    tags:
+      - Vision # Fusionné depuis badges
+      # Agent tag removed (ne supporte pas les outils)
+      - Rapide # Fusionné depuis badges (et déjà présent) (OK)
+      - Compact
+      - Grand Contexte
+      - Efficient # (OK)
+    use_cases:
+      - Applications embarquées et edge computing avec traitement d'images
+      - Chatbots multimodaux réactifs nécessitant faible latence (<50ms)
+      - Déploiements à grande échelle avec capacités visuelles et textuelles
+      - Applications mobiles avec analyse d'images et textes
+      - Traitement de requêtes visuelles simples à moyenne complexité avec haute performance
+
+  - name: Gemma 3 1B
+    editor: Google # Correspondance Table: Google
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 1
+    parameters_string: 1B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 41 tokens/seconde
+    energy_per_million_tokens: 1.32 # (195W / 41 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Google Gemma Terms of Use
+    description: Micro-modèle ultra-léger conçu pour les déploiements sur appareils à très faibles ressources.
+    details: Ce modèle ultra-compact représente la quintessence de l'efficience, permettant des déploiements dans des environnements extrêmement contraints en ressources. Malgré sa taille minimale, il offre des capacités de base surprenantes pour des tâches textuelles simples à modérées, avec une vitesse d'inférence exceptionnelle. Il prend également en charge l'intégration avec des outils externes via function calling.
+    supports_tools: false # Les modèles GEMMA3 ne supportent pas les outils
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 43 <= 50
+    tags:
+      # Agent tag removed (ne supporte pas les outils)
+      # Rapide tag removed (vitesse 43 <= 50)
+      - Ultra-compact
+      - Embarqué
+      - Efficient # (OK)
+    use_cases:
+      - Déploiement sur appareils IoT et systèmes embarqués avec intégration API
+      - Applications nécessitant inférence locale sur CPU avec appels à des fonctions
+      - Tâches textuelles basiques avec temps de réponse instantané et function calling
+      - Assistants compacts pour applications grand public avec intégration services externes
+      - Systèmes de contrôle intelligents intégrant plusieurs APIs/services
+
+  - name: Lucie-7B-Instruct # Nouveau modèle ajouté
+    editor: OpenLLM-France # Correspondance Table: OpenLLM-France
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 7
+    parameters_string: 7B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 41 tokens/seconde
+    energy_per_million_tokens: 1.32 # (195W / 41 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle causal multilingue open-source (7B), fine-tuné depuis Lucie-7B. Optimisé pour le français.
+    details: Fine-tuné sur instructions synthétiques (ChatGPT, Gemma) et prompts customisés. Non optimisé pour code/maths. Entraîné sur contexte 4k mais conserve la capacité du modèle de base pour 32k. Modèle en développement.
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 41 <= 50
+    tags:
+      - Français
+      - Open-Source
+      # Rapide tag removed (vitesse 41 <= 50)
+      - Efficient # Added (conso 1.32 < 2.0)
+
+  - name: Mistral Small 3.1
+    editor: Mistral AI # Correspondance Table: Mistral AI
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 24
+    parameters_string: 24B # Ajouté depuis table
+    context_size: 60000 # Correspondance Table: 60k
+    speed: 14 tokens/seconde
+    energy_per_million_tokens: 13.06 # (658W / 14 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: Apache 2.0
+    description: Modèle compact et réactif de Mistral AI, spécialement conçu pour offrir une assistance conversationnelle fluide et pertinente avec une vitesse de réponse optimale.
+    details: Malgré sa taille modérée, ce modèle affiche une performance remarquable qui rivalise avec celle de nombreux modèles propriétaires bien plus volumineux. Son architecture ingénieusement optimisée facilite le déploiement local sur des infrastructures variées. Intégrant des capacités multimodales natives, il peut traiter à la fois du texte et des images sans recourir à des systèmes externes. Sa licence Apache 2.0 offre une flexibilité maximale pour les déploiements commerciaux et les personnalisations, en faisant un choix idéal pour les entreprises soucieuses d'équilibrer performance et contraintes légales.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: true # Correspondance Table: ✅ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: false # Vitesse 22 <= 50
+    tags:
+      - Vision # Fusionné depuis badges
+      - Agent # Fusionné depuis badges
+      - Sécurité # Fusionné depuis badges
+      # Rapide tag removed (vitesse 22 <= 50)
+      # Efficient tag removed (conso 8.31 >= 2.0)
+    use_cases:
+      - Applications conversationnelles
+      - Assistants virtuels combinant analyse d'images et texte (26 tokens/s)
+      - Chatbots de support technique avec accès à la documentation technique
+      - Outils de création/édition de contenu avec réponse immédiate (blogs, emails)
+      - Déploiement sur infrastructures standard (24B de paramètres)
+
+  - name: DeepCoder
+    editor: Agentica x Together AI # Correspondance Table: Agentica x Together AI
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 14
+    parameters_string: 14B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 62 tokens/seconde
+    energy_per_million_tokens: 2.95 # (658W / 62 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: Apache 2.0
+    description: Modèle IA open source (14B) par Together AI & Agentica, alternative crédible aux modèles propriétaires pour la génération de code. # Description reformulée
+    details: Performances remarquables en génération de code et raisonnement algorithmique (60.6% LiveCodeBench Pass@1, 1936 Codeforces, 92.6% HumanEval+). Entraîné via RL (GRPO+) avec allongement progressif du contexte (32k -> 64k). Projet transparent (code, dataset, logs ouverts). Permet l'intégration de capacités avancées de génération de code sans dépendre de solutions propriétaires. # Détails reformulés
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 69 > 50
+    tags:
+      - Programmation # Tag principal
+      - Raisonnement # Capacité mentionnée
+      - Open-Source # Caractéristique clé
+      - Mathématiques # Mentionné comme domaine lié
+      - Rapide # (OK)
+      # Efficient tag removed (conso 2.65 >= 2.0)
+    use_cases:
+      - Génération de code dans plus de 15 langages avec optimisation des performances
+      - Débogage et refactoring de bases de code existantes avec analyse d'impact
+      - Implémentation d'algorithmes complexes (graphes, arbres, heuristiques)
+      - Transposition de code entre langages/frameworks (ex: Python vers JavaScript)
+      - Création automatisée de tests unitaires avec couverture de code > 80%
+
+  - name: Granite 3.2 Vision
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 2
+    parameters_string: 2B # Ajouté depuis table
+    context_size: 16384 # Correspondance Table: 16k
+    speed: 48 tokens/seconde
+    energy_per_million_tokens: 1.13 # (195W / 48 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0 # Correction: licence avec 'c'
+    description: Modèle compact révolutionnaire d'IBM spécialisé dans la vision par ordinateur, capable d'analyser et comprendre directement les documents visuels sans recourir à des technologies OCR intermédiaires.
+    details: Ce modèle compact réalise l'exploit remarquable d'égaler les performances de modèles bien plus volumineux sur un large éventail de tâches de compréhension visuelle. Sa capacité à interpréter directement le contenu visuel des documents - textes, tableaux, graphiques et diagrammes - sans passer par une étape d'OCR traditionnelle représente une avancée significative en termes d'efficacité et de précision. Cette approche intégrée réduit considérablement les erreurs de reconnaissance et permet une compréhension plus contextuelle et plus nuancée du contenu visuel.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: true # Correspondance Table: ✅ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: true # Vitesse 56 > 50
+    tags:
+      - Vision # Fusionné depuis badges (et déjà présent)
+      - Sécurité # Fusionné depuis badges
+      - Rapide # Fusionné depuis badges (OK)
+      - Compact
+      - Efficient # (OK)
+    use_cases:
+      - Extraction de données structurées à partir de factures et formulaires sans OCR
+      - Analyse directe de tableaux et graphiques avec interprétation des tendances
+      - Lecture et interprétation de diagrammes techniques (électriques, mécaniques)
+      - Traitement de documents manuscrits avec taux de reconnaissance élevé
+      - Vision par ordinateur légère (2B paramètres) avec vitesse élevée (79 tokens/s)
+
+  - name: Granite 3.3 8B
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 8
+    parameters_string: 8B # Ajouté depuis table
+    context_size: 60000 # Correspondance Table: 60k
+    speed: 27 tokens/seconde
+    energy_per_million_tokens: 2.00 # (195W / 27 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instructions améliorés, avec un contexte de 128k tokens.
+    details: Cette version 8B du modèle Granite 3.3 offre des gains significatifs sur les benchmarks génériques (AlpacaEval-2.0, Arena-Hard) et des améliorations en mathématiques, codage et suivi d'instructions. Il supporte 12 langues, le Fill-in-the-Middle (FIM) pour le code, le mode "Thinking" pour la réflexion structurée, et l'appel de fonctions. Licence Apache 2.0. Idéal pour les tâches générales et l'intégration dans des assistants IA.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: false # Vitesse 28 <= 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Raisonnement # Fusionné depuis badges (et déjà présent)
+      - Sécurité # Fusionné depuis badges
+      # Rapide tag removed (vitesse 28 <= 50)
+      - Efficient # Added (conso 1.93 < 2.0)
+    use_cases:
+      - Tâches générales d'instruction-following (classification, extraction, Q&A)
+      - Assistants IA multilingues (12 langues)
+      - Traitement de documents très longs (128k tokens) : résumés, Q&A
+      - Génération/complétion de code avec Fill-in-the-Middle
+      - Intégration avec des outils externes via function calling
+      - Raisonnement structuré avec le mode "Thinking"
+
+  - name: Granite 3.3 2B
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 2
+    parameters_string: 2B # Ajouté depuis table
+    context_size: 120000 # Correspondance Table: 120k
+    speed: 45 tokens/seconde
+    energy_per_million_tokens: 1.20 # (195W / 45 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle Granite 2B fine-tuné par IBM, optimisé pour le raisonnement et le suivi d'instructions, avec un contexte de 128k tokens.
+    details: Version compacte de Granite 3.3 (2B paramètres) offrant les mêmes améliorations en raisonnement, instruction-following, mathématiques et codage que la version 8B. Supporte 12 langues, le Fill-in-the-Middle (FIM), le mode "Thinking", et l'appel de fonctions. Licence Apache 2.0. Excellent choix pour des déploiements légers nécessitant de longues capacités contextuelles et de raisonnement.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: true # Vitesse 57 > 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Raisonnement
+      - Sécurité # Fusionné depuis badges
+      - Rapide # Fusionné depuis badges (OK)
+      - Efficient # (OK)
+    use_cases:
+      - Déploiements légers avec grand contexte (128k tokens)
+      - Tâches générales d'instruction-following sur ressources limitées
+      - Assistants IA multilingues compacts
+      - Traitement de documents longs sur appareils moins puissants
+      - Génération/complétion de code FIM sur postes de travail standards
+
+  - name: Granite 3.1 MoE
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 3
+    parameters_string: 3B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 74 tokens/seconde
+    energy_per_million_tokens: 0.73 # (195W / 74 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle innovant d'IBM utilisant l'architecture Mixture-of-Experts (MoE) pour offrir des performances exceptionnelles tout en optimisant drastiquement l'utilisation des ressources computationnelles.
+    details: L'architecture MoE (Mixture-of-Experts) de ce modèle constitue une avancée significative dans l'optimisation des modèles de langage, permettant d'atteindre des performances comparables à celles de modèles bien plus volumineux tout en maintenant une empreinte mémoire considérablement réduite. Cette approche innovante active dynamiquement uniquement les parties pertinentes du réseau pour chaque tâche spécifique, assurant ainsi une efficacité énergétique et computationnelle remarquable sans compromis sur la qualité des résultats.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: true # Vitesse 71 > 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Sécurité # Fusionné depuis badges
+      - Rapide # Fusionné depuis badges (OK)
+      - MoE
+      - Efficacité
+      - Efficient # (OK)
+    use_cases:
+      - Applications généralistes avec coût d'inférence optimisé (42 tokens/seconde)
+      - Traitement de documents dans des environnements CPU avec utilisation RAM limitée
+      - Analyses spécialisées avec activation dynamique des parties pertinentes du modèle
+      - Déploiements haute densité avec faible consommation énergétique par inférence
+      - Traitement parallèle de plusieurs types de requêtes avec spécialisation MoE
+
+  - name: Cogito 14B
+    editor: Deep Cogito # Correspondance Table: Deep Cogito
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 14
+    parameters_string: 14B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 60 tokens/seconde
+    energy_per_million_tokens: 3.05 # (658W / 60 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: LLAMA 3.2 Community Licence
+    description: Modèle de Deep Cogito spécialement conçu pour exceller dans les tâches de raisonnement profond et de compréhension contextuelle nuancée, idéal pour les applications analytiques sophistiquées.
+    details: Doté d'excellentes capacités de raisonnement logique et de compréhension sémantique approfondie, ce modèle se distingue par sa capacité à saisir les subtilités et les implications dans des textes complexes. Sa conception privilégie la cohérence du raisonnement et la précision analytique, le rendant particulièrement adapté aux applications nécessitant une analyse minutieuse et contextuelle des informations. Sa taille modérée permet un déploiement flexible tout en maintenant des performances de haute qualité sur un large éventail de tâches analytiques exigeantes.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 67 > 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Raisonnement # Fusionné depuis badges (et déjà présent)
+      - Compréhension
+      - Analyse
+      - Rapide # (OK)
+      # Efficient tag removed (conso 2.73 >= 2.0)
+    use_cases:
+      - Analyse sémantique de textes avec identification des implications non explicites
+      - Raisonnement causal structuré avec identification des relations cause-effet
+      - Synthèse de documents complexes avec extraction des informations clés
+      - Systèmes de question-réponse précis sur corpus documentaires spécialisés
+      - Analyse argumentative avec évaluation de la solidité des raisonnements
+
+  - name: Cogito 32B
+    editor: Deep Cogito # Correspondance Table: Deep Cogito
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 32
+    parameters_string: 32B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 32 tokens/seconde
+    energy_per_million_tokens: 5.73 # (658W / 32 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: LLAMA 3.2 Community Licence
+    description: Version avancée du modèle Cogito offrant des capacités de raisonnement et d'analyse considérablement amplifiées, conçue pour les applications les plus exigeantes en matière d'intelligence artificielle analytique.
+    details: Cette version étendue du modèle Cogito pousse encore plus loin les capacités de raisonnement et de compréhension, offrant une profondeur d'analyse inégalée pour les applications les plus complexes. Sa conception architecturale sophistiquée lui permet d'aborder des raisonnements multi-étapes avec rigueur et précision, tout en maintenant une cohérence globale remarquable. Idéal pour les applications critiques nécessitant une intelligence artificielle capable d'un raisonnement nuancé et d'une compréhension contextuelle approfondie comparable aux analyses d'experts humains dans des domaines spécialisés.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 36 <= 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Raisonnement # Fusionné depuis badges (et déjà présent)
+      - Compréhension
+      - Analyse
+      # Efficient tag removed (conso 5.08 >= 2.0)
+    use_cases:
+      - Analyse de scénarios multi-factoriels avec évaluation probabiliste des résultats
+      - Résolution de problèmes scientifiques avec démonstration formelle des étapes
+      - Applications à haute criticité nécessitant précision et vérifiabilité des résultats
+      - Systèmes experts dans des domaines spécialisés (juridique, médical, technique)
+      - Analyse avec raisonnement multi-étapes et explicabilité complète des conclusions
+
+  - name: Qwen3 32B
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 32
+    parameters_string: 32B
+    context_size: 40000 # Défini par l'utilisateur, ajusté
+    speed: # À déterminer après tests
+    energy_per_million_tokens: # À calculer après tests de vitesse et consommation
+    licence: Apache 2.0 # Supposée, comme les autres Qwen3
+    description: Modèle puissant de la nouvelle génération Qwen3, offrant des capacités avancées en raisonnement, code, et agentique, avec un contexte étendu.
+    details: Fait partie de la série Qwen3, entraîné sur un vaste corpus de données. Ce modèle de 32 milliards de paramètres est conçu pour exceller dans les tâches complexes, supporter plus de 100 langues et intégrer des modes de pensée hybrides pour une meilleure performance.
+    supports_tools: true # Capacités Agentiques / MCP
+    supports_vision: false # Non mentionné pour Qwen3 dense
+    supports_reasoning: true # Mode Thinking / Raisonnement amélioré
+    supports_security: false # Non mentionné
+    is_fast: # À déterminer après tests
+    tags:
+      - Agent
+      - Raisonnement
+      - Multilingue
+      - Grand Contexte
+    use_cases:
+      - Agents conversationnels avancés avec grand contexte et intégration d'outils (MCP)
+      - Résolution de problèmes complexes (maths, code) avec mode "Thinking"
+      - Analyse et génération de documents volumineux
+      - Applications multilingues (>100 langues) nécessitant une compréhension profonde
+
+  - name: QwQ-32B
+    editor: Qwen Team # Mis à jour depuis table
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 32
+    parameters_string: 32B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 35 tokens/seconde
+    energy_per_million_tokens: 5.22 # (658W / 35 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: Apache 2.0
+    description: Modèle de 32 milliards de paramètres amélioré par apprentissage par renforcement (RL) pour exceller dans le raisonnement, le codage, les mathématiques et les tâches d'agent.
+    details: Ce modèle utilise une approche RL innovante avec des récompenses basées sur les résultats (vérificateurs de précision pour les maths, exécution de code pour le codage) et un entraînement multi-étapes pour améliorer les capacités générales sans dégrader les performances spécialisées. Il intègre des capacités d'agent pour utiliser des outils et adapter son raisonnement. Licence Apache 2.0.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 38 <= 50
+    tags:
+      - Agent # Fusionné depuis badges (et déjà présent)
+      - Raisonnement # Fusionné depuis badges (et déjà présent)
+      - Codage
+      - Mathématiques
+      # Rapide tag removed (vitesse 38 <= 50)
+      # Efficient tag removed (conso 4.81 >= 2.0)
+    use_cases:
+      - Résolution de problèmes complexes nécessitant raisonnement et utilisation d'outils
+      - Génération et exécution de code avec vérification des résultats
+      - Tâches mathématiques avancées avec vérification de l'exactitude
+      - Applications d'agent capables d'interagir avec l'environnement
+      - Instruction following amélioré et alignement avec les préférences humaines
+
+  - name: DeepSeek-R1 14B
+    editor: DeepSeek AI # Correspondance Table: DeepSeek AI
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 14
+    parameters_string: 14B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 60 tokens/seconde
+    energy_per_million_tokens: 3.05 # (658W / 60 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: MIT licence
+    description: Version compacte et efficiente du modèle DeepSeek-R1, offrant un excellent compromis entre performance et légèreté pour les déploiements nécessitant flexibilité et réactivité.
+    details: Représentant un équilibre optimal entre performance et efficacité, cette version compacte du modèle DeepSeek-R1 conserve les principales qualités de raisonnement et d'analyse de son homologue plus volumineux, tout en permettant un déploiement plus léger et plus flexible. Sa conception soigneusement optimisée assure des résultats de qualité sur un large éventail de tâches, tout en minimisant les exigences en ressources computationnelles. Cette combinaison en fait le choix idéal pour les applications nécessitant un déploiement agile sans compromis majeur sur les capacités fondamentales.
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 67 > 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Raisonnement # Fusionné depuis badges
+      - Compact
+      - Polyvalent
+      - Rapide # (OK)
+      # Efficient tag removed (conso 2.73 >= 2.0)
+    use_cases:
+      - Applications généralistes avec besoins d'inférence rapide (44 tokens/s)
+      - Déploiements sur serveurs standard sans GPU spécialisé (14B paramètres)
+      - Traitement de texte avec analyse contextuelle et temps de réponse < 2s
+      - Déploiement sur edge computing avec inférence locale optimisée
+      - Prototypage rapide d'applications IA avec temps d'itération court
+
+  - name: DeepSeek-R1 32B
+    editor: DeepSeek AI # Correspondance Table: DeepSeek AI
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 32
+    parameters_string: 32B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 33 tokens/seconde
+    energy_per_million_tokens: 5.54 # (658W / 33 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: MIT licence
+    description: Version intermédiaire du modèle DeepSeek-R1 offrant un équilibre stratégique entre les capacités avancées de la version 70B et l'efficience de la version 14B, pour une polyvalence et performance optimales.
+    details: Cette version intermédiaire du modèle DeepSeek-R1 combine intelligemment puissance et efficacité, proposant des performances significativamente améliorées par rapport à la version 14B tout en maintenant une empreinte plus légère que la version 70B. Cette position stratégique dans la gamme en fait une option particulièrement intéressante pour les déploiements nécessitant des capacités de raisonnement avancées sans les exigences matérielles des plus grands modèles. Sa polyvalence lui permet d'exceller sur un large éventail de tâches, de l'analyse de texte à la génération de contenu structuré.
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 37 <= 50
+    tags:
+      - Agent # Fusionné depuis badges
+      - Raisonnement # Fusionné depuis badges
+      - Polyvalent
+      # Efficient tag removed (conso 4.94 >= 2.0)
+    use_cases:
+      - Applications nécessitant un bon équilibre puissance/coût (32B paramètres)
+      - Traitement de texte professionnel avec analyse des subtilités sémantiques
+      - Génération automatisée de rapports structurés à partir de données brutes
+      - Applications combinant analyse de données et génération de contenus
+      - Assistants spécialisés pour secteurs techniques (juridique, médical, technique)
+
+  - name: Cogito 3B
+    editor: Deep Cogito # Correspondance Table: Deep Cogito
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 3
+    parameters_string: 3B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 63 tokens/seconde
+    energy_per_million_tokens: 0.86 # (195W / 63 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: LLAMA 3.2 Community Licence
+    description: Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appareils à ressources limitées.
+    details: Offre les capacités de raisonnement de la famille Cogito dans un format très léger (3 milliards de paramètres), idéal pour les déploiements embarqués ou les environnements CPU.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 63 > 50
+    tags:
+      - Raisonnement
+      - Compact
+      - Embarqué
+      - Efficient # (OK)
+      - Rapide # Added (vitesse 63 > 50)
+
+  - name: Granite Embedding
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 0.278
+    parameters_string: 278M # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    # speed: N/A # Non applicable pour les modèles d'embedding
+    # energy_per_million_tokens: N/A # Pas de vitesse associée
+    licence: Apache 2.0
+    description: Modèle d'embedding ultra-léger d'IBM pour la recherche sémantique et la classification.
+    details: Conçu pour générer des représentations vectorielles denses de texte, ce modèle est optimisé pour l'efficacité et la performance dans les tâches de similarité sémantique, de clustering et de classification. Sa taille réduite le rend idéal pour les déploiements à grande échelle.
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Pas de vitesse
+    tags:
+      - Embedding
+      - Compact
+      - Sémantique
+      - Efficient # (OK)
+    # power_consumption: 145 W # Mac Mini (Removed as per plan)
+
+  - name: Granite 3 Guardian 2B
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 2
+    parameters_string: 2B # Ajouté depuis table
+    context_size: 8192 # Correspondance Table: 8k
+    # speed: N/A # Non applicable pour les modèles Guardian
+    # energy_per_million_tokens: N/A # Pas de vitesse associée
+    licence: Apache 2.0
+    description: Modèle compact d'IBM spécialisé dans la sécurité et la conformité, détectant les risques et les contenus inappropriés.
+    details: Version légère de la famille Guardian, entraînée pour identifier et filtrer les contenus nuisibles, les biais et les risques de sécurité dans les interactions textuelles. Offre une protection robuste avec une faible empreinte computationnelle. Contexte limité à 8k tokens.
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: false # Pas de vitesse
+    tags:
+      - Sécurité
+      - Conformité
+      - Compact
+      - Filtrage
+      - Efficient # (OK)
+    # power_consumption: 145 W # Mac Mini (Removed as per plan)
+
+  - name: Granite 3 Guardian 8B
+    editor: IBM # Correspondance Table: IBM
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 8
+    parameters_string: 8B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    # speed: N/A # Non applicable pour les modèles Guardian
+    # energy_per_million_tokens: N/A # Pas de vitesse associée
+    licence: Apache 2.0
+    description: Modèle d'IBM spécialisé dans la sécurité et la conformité, offrant des capacités avancées de détection des risques.
+    details: Modèle de taille intermédiaire de la famille Guardian, fournissant une analyse de sécurité plus approfondie que la version 2B. Idéal pour les applications nécessitant une surveillance rigoureuse du contenu et une conformité stricte.
+    supports_tools: false # Correspondance Table: ❌ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: true # Ajouté depuis table (✅)
+    is_fast: false # Pas de vitesse
+    tags:
+      - Sécurité
+      - Conformité
+      - Filtrage
+    # Efficient tag removed (pas de vitesse/conso)
+    # power_consumption: 480 W # A100 (Removed as per plan)
+
+  - name: Qwen 2.5 0.5B
+    editor: Qwen Team # Mis à jour depuis table
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 0.5
+    parameters_string: 0.5B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 57 tokens/seconde
+    energy_per_million_tokens: 0.95 # (195W / 57 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: MIT licence
+    description: Micro-modèle ultra-léger de la famille Qwen 2.5, conçu pour une efficacité maximale sur appareils contraints.
+    details: Le plus petit modèle de la série Qwen 2.5, offrant des capacités de base en traitement de langage avec une empreinte minimale. Idéal pour les tâches très simples sur des appareils IoT ou mobiles.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 53 > 50
+    tags:
+      - Ultra-compact
+      - Rapide # (OK)
+      - Embarqué
+      - Efficient # (OK)
+
+  - name: Qwen 2.5 1.5B
+    editor: Qwen Team # Mis à jour depuis table
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 1.5
+    parameters_string: 1.5B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 94 tokens/seconde
+    energy_per_million_tokens: 0.58 # (195W / 94 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: MIT licence
+    description: Modèle très compact de la famille Qwen 2.5, offrant un bon équilibre performance/taille pour les déploiements légers.
+    details: Modèle légèrement plus grand que la version 0.5B, offrant des capacités améliorées tout en restant très efficace. Convient aux applications mobiles ou embarquées nécessitant un peu plus de puissance.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 107 > 50
+    tags:
+      - Compact
+      - Rapide # Added (vitesse 107 > 50)
+      - Embarqué
+      - Efficient # (OK)
+
+  - name: Qwen 2.5 14B
+    editor: Qwen Team # Mis à jour depuis table
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 14
+    parameters_string: 14B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 61 tokens/seconde
+    energy_per_million_tokens: 3.00 # (658W / 61 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: MIT licence
+    description: Modèle polyvalent de taille moyenne de la famille Qwen 2.5, bon équilibre performance/ressources.
+    details: Offre de solides capacités multilingues et de compréhension générale dans un format 14B. Convient à une large gamme d'applications nécessitant un modèle fiable sans les exigences des très grands modèles.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 68 > 50
+    tags:
+      - Polyvalent
+      - Multilingue
+      - Rapide # (OK)
+      # Efficient tag removed (conso 2.69 >= 2.0)
+
+  - name: Qwen 2.5 32B
+    editor: Qwen Team # Mis à jour depuis table
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 32
+    parameters_string: 32B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 32 tokens/seconde
+    energy_per_million_tokens: 5.73 # (658W / 32 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 + Cooling)
+    licence: MIT licence
+    description: Modèle puissant de la famille Qwen 2.5, offrant des capacités avancées en compréhension et génération.
+    details: Version 32B de Qwen 2.5, fournissant des performances accrues par rapport à la version 14B, notamment en raisonnement et en suivi d'instructions complexes, tout en restant plus léger que le modèle 72B.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: true # Ajouté depuis table (✅)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: false # Vitesse 36 <= 50
+    tags:
+      - Polyvalent
+      - Multilingue
+      - Raisonnement
+      # Efficient tag removed (conso 5.08 >= 2.0)
+
+  - name: Qwen 2.5 3B
+    editor: Qwen Team # Mis à jour depuis table
+    location: FR 🇫🇷 # Mis à jour
+    parameters: 3
+    parameters_string: 3B # Ajouté depuis table
+    context_size: 32000 # Correspondance Table: 32k
+    speed: 60 tokens/seconde
+    energy_per_million_tokens: 0.90 # (195W / 60 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: MIT licence
+    description: Modèle compact et efficace de la famille Qwen 2.5, adapté aux tâches générales sur ressources limitées.
+    details: Offre un bon compromis entre les capacités des modèles 1.5B et 14B. Idéal pour les applications nécessitant une bonne compréhension générale dans un format léger et rapide.
+    supports_tools: true # Correspondance Table: ✅ Agent
+    supports_vision: false # Correspondance Table: ❌ Vision
+    supports_reasoning: false # Ajouté depuis table (❌)
+    supports_security: false # Ajouté depuis table (❌)
+    is_fast: true # Vitesse 57 > 50
+    tags:
+      - Compact
+      - Rapide # Added (vitesse 57 > 50)
+      - Polyvalent
+      - Efficient # (OK)
+
+  - name: Qwen3 0.6b # Nouveau modèle
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 0.6
+    parameters_string: 0.6B
+    context_size: 32000
+    speed: 60 tokens/seconde
+    energy_per_million_tokens: 0.90 # (195W / 60 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle compact et efficace de la famille Qwen3, adapté aux tâches générales sur ressources limitées.
+    details: Offre un bon compromis entre les capacités des modèles ultra-compacts et les modèles plus grands. Idéal pour les applications nécessitant une bonne compréhension générale dans un format léger et rapide.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: false
+    is_fast: true # Vitesse 58 > 50
+    tags:
+      - Compact
+      - Rapide # Added (vitesse 58 > 50)
+      - Polyvalent
+      - Efficient # Added (conso 0.93 < 2.0)
+
+  - name: Qwen3 1.7b # Nouveau modèle
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 1.7
+    parameters_string: 1.7B
+    context_size: 32000
+    speed: 83 tokens/seconde
+    energy_per_million_tokens: 0.65 # (195W / 83 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle très compact de la famille Qwen3, offrant un bon équilibre performance/taille pour les déploiements légers.
+    details: Modèle légèrement plus grand que la version 0.6B, offrant des capacités améliorées tout en restant très efficace. Convient aux applications mobiles ou embarquées nécessitant un peu plus de puissance.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: false
+    is_fast: true # Vitesse 84 > 50
+    tags:
+      - Compact
+      - Rapide # Added (vitesse 84 > 50)
+      - Embarqué
+      - Efficient # Added (conso 0.64 < 2.0)
+
+  - name: Qwen3 4b # Nouveau modèle
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 4
+    parameters_string: 4B
+    context_size: 32000
+    speed: 48 tokens/seconde
+    energy_per_million_tokens: 1.13 # (195W / 48 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle compact de la famille Qwen3 offrant d'excellentes performances dans un format léger et économique.
+    details: Cette version compacte du modèle Qwen3 est optimisée pour les déploiements avec contraintes de ressources tout en maintenant des performances remarquables pour sa taille. Son architecture efficiente permet une inférence rapide sur du matériel standard.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: false
+    is_fast: false # Vitesse 50 <= 50
+    tags:
+      - Compact
+      # Rapide tag removed (vitesse 50 <= 50)
+      - Efficient # Added (conso 1.08 < 2.0)
+
+  - name: Qwen3 8b # Nouveau modèle
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 8
+    parameters_string: 8B
+    context_size: 32000
+    speed: 29 tokens/seconde
+    energy_per_million_tokens: 1.87 # (195W / 29 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle Qwen3 8B offrant un bon équilibre entre performance et efficacité pour les tâches générales.
+    details: Version 8B de Qwen3, offrant des capacités améliorées en raisonnement, code, maths et agent. Supporte plus de 100 langues et les modes de pensée hybrides.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: false
+    is_fast: false # Vitesse 34 <= 50
+    tags:
+      - Raisonnement
+      - Agent
+      - Multilingue
+      # Rapide tag removed (vitesse 34 <= 50)
+      - Efficient # Added (conso 1.59 < 2.0)
+
+  - name: Qwen2.5-VL 3B
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 3.8
+    parameters_string: 3.8B
+    context_size: 128000
+    speed: 65 tokens/seconde
+    energy_per_million_tokens: 0.83 # (195W / 65 t/s) / 3.6
+    licence: Apache 2.0
+    description: Modèle Vision-Langage compact, solution performante pour l'IA en périphérie (edge AI).
+    details: Qwen2.5-VL est le nouveau modèle phare vision-langage de Qwen, marquant une avancée significative par rapport à Qwen2-VL. Caractéristiques clés - Compréhension visuelle (objets communs, textes, graphiques, icônes, mises en page). Capacités d'agent visuel (raisonnement, direction dynamique d'outils pour utilisation d'ordinateur/téléphone). Localisation visuelle précise (boîtes englobantes, points, sorties JSON stables). Génération de sorties structurées (factures, formulaires, tableaux). Le Qwen2.5-VL-3B surpasse même la version 7B de Qwen2-VL.
+    supports_tools: true
+    supports_vision: true
+    supports_reasoning: true # Agentic capabilities
+    supports_security: false
+    is_fast: true # 65.63 > 50
+    tags:
+      - Vision
+      - Agent
+      - Raisonnement
+      - Rapide
+      - Efficient
+      - OCR
+      - Localisation Visuelle
+      - Edge AI
+
+  - name: Qwen2.5-VL 7B
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 8.3 # Note: le fichier de config Ollama indique 8.3B pour le 7B
+    parameters_string: 7B (8.3B)
+    context_size: 128000
+    speed: 37 tokens/seconde
+    energy_per_million_tokens: 1.46 # (195W / 37 t/s) / 3.6
+    licence: Apache 2.0
+    description: Modèle Vision-Langage performant, surpassant GPT-4o-mini sur certaines tâches.
+    details: Qwen2.5-VL est le nouveau modèle phare vision-langage de Qwen, marquant une avancée significative par rapport à Qwen2-VL. Caractéristiques clés - Compréhension visuelle (objets communs, textes, graphiques, icônes, mises en page). Capacités d'agent visuel (raisonnement, direction dynamique d'outils pour utilisation d'ordinateur/téléphone). Localisation visuelle précise (boîtes englobantes, points, sorties JSON stables). Génération de sorties structurées (factures, formulaires, tableaux). Le Qwen2.5-VL-7B-Instruct surpasse GPT-4o-mini dans plusieurs tâches et est particulièrement performant pour la compréhension de documents et de diagrammes.
+    supports_tools: true
+    supports_vision: true
+    supports_reasoning: true # Agentic capabilities
+    supports_security: false
+    is_fast: false # 37.93 <= 50
+    tags:
+      - Vision
+      - Agent
+      - Raisonnement
+      - Efficient
+      - OCR
+      - Localisation Visuelle
+
+  - name: Foundation-Sec-8B # Llama-3.1-FoundationAI-SecurityLLM-base-8B
+    editor: Foundation AI — Cisco
+    location: FR 🇫🇷
+    parameters: 8
+    parameters_string: 8B
+    context_size: 16000
+    speed: 22 tokens/seconde
+    energy_per_million_tokens: 2.46 # (195W / 22 t/s) / 3.6 -> kWh/Mtoken (Serveur Mac + Cooling)
+    licence: Apache 2.0
+    description: Modèle de langage spécialisé pour la cybersécurité, optimisé pour l'efficacité.
+    details: Modèle Foundation-Sec-8B (Llama-3.1-FoundationAI-SecurityLLM-base-8B) basé sur Llama-3.1-8B, pré-entraîné sur un corpus cybersécurité. Conçu pour la détection de menaces, l'évaluation de vulnérabilités, l'automatisation de la sécurité, etc. Optimisé pour le déploiement local. Contexte de 16k tokens.
+    supports_tools: false # Basé sur le modèle de base, les capacités agentiques sont probablement ajoutées en aval.
+    supports_vision: false
+    supports_reasoning: true # Basé sur les benchmarks et cas d'usage.
+    supports_security: true
+    is_fast: false
+    tags:
+      - Sécurité
+      - Compact
+
+  - name: devstral 24B
+    editor: Mistral AI & All Hands AI
+    location: FR 🇫🇷
+    parameters: 24
+    parameters_string: 24B
+    context_size: 120000
+    speed: 53 tokens/seconde
+    energy_per_million_tokens: 4.50 # (858W / 53 t/s) / 3.6 -> kWh/Mtoken (Serveur A100 ia06)
+    licence: Apache 2.0
+    description: Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
+    details: Devstral est un LLM agentique pour les tâches d'ingénierie logicielle. Il excelle dans l'utilisation d'outils pour explorer les bases de code, modifier plusieurs fichiers et alimenter les agents d'ingénierie logicielle. Il est affiné à partir de Mistral Small 3.1, disposant ainsi d'une longue fenêtre contextuelle allant jusqu'à 128k tokens. 
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: true
+    is_fast: true # 53.37 > 50
+    tags:
+      - Agent
+      - Programmation
+      - Open-Source
+      - Grand Contexte
+    use_cases:
+      - Exploration et modification de bases de code
+      - Agentic
+      - Européen
+    
+# Cas d'usage recommandés
+use_cases:
+  - name: Dialogue multilingue
+    description: Chatbots et assistants capables de communiquer dans plusieurs langues avec détection automatique, maintien du contexte sur l'ensemble de la conversation et compréhension des spécificités linguistiques
+    recommended_models:
+      - Llama 3.3
+      - Mistral Small 3.1
+      - Qwen 2.5 
+      - Granite 3.3 
+
+  - name: Analyse de documents longs
+    description: Traitement de documents volumineux (>100 pages) avec maintien du contexte sur l'ensemble du texte, extraction d'informations clés, génération de résumés pertinents et réponse à des questions spécifiques sur le contenu
+    recommended_models:
+      - Gemma 3 
+      - DeepSeek-R1 
+      - Granite 3.3  # Mis à jour
+
+  - name: Programmation et développement
+    description: Génération et optimisation de code dans multiples langages, débogage, refactoring, développement de fonctionnalités complètes, compréhension des implémentations algorithmiques complexes et création de tests unitaires
+    recommended_models:
+      - DeepCoder
+      - QwQ
+      - DeepSeek-R1 
+      - Granite 3.3 # Ajouté (FIM)
+      - Devstral
+
+  - name: Analyse visuelle
+    description: Traitement direct d'images et documents visuels sans pré-traitement OCR, interprétation de diagrammes techniques, graphiques, tableaux, dessins et photos avec génération d'explications textuelles détaillées du contenu visuel
+    recommended_models:
+      - Granite 3.2 Vision
+      - Mistral Small 3.1
+      - Gemma 3
+      - Qwen2.5-VL
+    
+  - name: Sécurité et conformité
+    description: Applications nécessitant des capacités spécifiques en matière de sécurité ; filtrage de contenu sensible, traçabilité des raisonnements, vérification RGPD/HDS, minimisation des risques, analyse des vulnérabilités et respect des réglementations sectorielles
+    recommended_models:
+      - Granite Guardian
+      - Granite 3.3
+      - Devstral
+      - Mistral Small 3.1
+      - Foundation-Sec-8B
+
+  - name: Déploiements légers et embarqués
+    description: Applications nécessitant une empreinte minimale en ressources, déploiement sur appareils à capacité limitée, inférence en temps réel sur CPU standard et intégration dans des systèmes embarqués ou IoT
+    recommended_models:
+      - Gemma 3
+      - Granite 3.1 MoE
+      - Granite Guardian
+      - Granite 3.3
