@@ -98,7 +98,7 @@
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
 - ✅ `models.md` : **AUTOMATISÉ** - Catalogue 36 modèles (généré depuis YAML)
-- 🔄 `llmaas.md` : Vue d'ensemble service (planifié)
+- ✅ `llmaas.md` : Vue d'ensemble service (style Anthropic factuel)
 - 🔄 `api.md` : Documentation API REST (planifié) 
 - 🔄 `concepts.md` : Architecture IA (planifié)
 - 🔄 `quickstart.md` : Premier déploiement (planifié)
