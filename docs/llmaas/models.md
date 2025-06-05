@@ -452,7 +452,7 @@ Modèle de Deep Cogito spécialement conçu pour exceller dans les tâches de ra
 **Spécifications techniques :**
 - **Vitesse** : 60 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 3.05 kWh/million tokens
-- **Licence** : [LLAMA 3.2 Community Licence](./licences/cogito_14b.licence.md)
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -477,7 +477,7 @@ Version avancée du modèle Cogito offrant des capacités de raisonnement et d'a
 **Spécifications techniques :**
 - **Vitesse** : 32 tokens/seconde tokens/seconde
 - **Consommation** : 5.73 kWh/million tokens
-- **Licence** : [LLAMA 3.2 Community Licence](./licences/cogito_32b.licence.md)
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**

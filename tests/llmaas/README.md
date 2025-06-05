@@ -14,6 +14,7 @@ Garantir que **100%** des exemples de code dans `docs/llmaas/api.md` fonctionnen
 - ✅ **Python Basic** (`test_python_basic.py`) - Requests, gestion d'erreurs
 - ✅ **Python Streaming** (`test_python_streaming.py`) - SSE parsing complet  
 - ✅ **JavaScript Node.js** (`test_javascript_node.js`) - Axios, streaming
+- ✅ **Tutorials Intégrations** (`test_tutorials_integrations.py`) - LangChain, frameworks IA
 
 ### Tests Optionnels
 - 🔧 **Python SDK** (`test_python_sdk.py`) - OpenAI SDK, LangChain
@@ -106,6 +107,15 @@ npm install axios
 - ✅ LangChain OpenAI integration
 - ✅ LangChain ChatOpenAI
 - ⚠️  Tests non-bloquants si modules absents
+
+### test_tutorials_integrations.py
+- ✅ **LangChain Wrapper** - Custom CloudTempleLLM class
+- ✅ **SDK OpenAI** - Compatibilité transparente
+- ✅ **Outils Personnalisés** - Calculator et validation
+- ✅ **Streaming SSE** - Parsing chunks temps réel
+- ✅ **Templates Prompts** - Formatage et variables
+- ✅ **Gestion Erreurs** - Structure détail/error
+- ✅ **Rate Limiting** - Simulation requêtes multiples
 
 ### test_audio_transcription.py
 - ✅ Génération fichier WAV test
