@@ -342,6 +342,14 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 - 🎵 **Audio** : Transcription Whisper + formats multiples
 - 🔧 **Orchestrateur** : run_all_tests.py avec rapport détaillé
 
+#### Système de Licences LLMaaS ✅ COMPLET (05/06/2025)
+- 📄 **apache2.licence.md** : Fichier générique pour 20+ modèles Apache 2.0
+- 📄 **llama3.3_70b.licence.md** : Licence spécifique Llama 3.3 Community
+- 🔗 **Mappings automatiques** : Script génère liens selon type de licence
+- ✅ **Vérification existence** : Aucun lien cassé vers licences
+- 🛠️ **Maintenance zéro** : Un fichier par type, réutilisation maximale
+- 🤖 **Intégration** : `generate_models_doc.py` gère tout automatiquement
+
 ---
 
 *Patterns documentaires Cloud Temple - 05/06/2025*

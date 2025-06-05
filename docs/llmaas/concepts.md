@@ -94,7 +94,7 @@ print(f"Coût estimé: {total_cost:.6f}€")
 
 ### Qualification SecNumCloud
 
-Le service LLMaaS bénéficie de la **qualification SecNumCloud** de l'ANSSI, garantissant :
+Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
 
 #### **Protection des Données**
 - **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
@@ -128,20 +128,17 @@ flowchart LR
 
 ### Métriques de Performance
 
+    In progress
+
+
 #### **Latence**
-- **P50** : <200ms pour modèles 8B
-- **P95** : <500ms pour modèles 13B
-- **P99** : <1s pour modèles 70B
+
+    In progress
 
 #### **Débit**
-- **Concurrent users** : 100+ utilisateurs simultanés
-- **Tokens/seconde** : 420 tokens/sec total
-- **Disponibilité** : 99.9% SLA garanti
 
-#### **Optimisations**
-- **Model caching** : Modèles préchargés en mémoire
-- **Batch processing** : Regroupement des requêtes
-- **GPU optimization** : Kernels optimisés par modèle
+    In progress
+
 
 ### Monitoring en Temps Réel
 
@@ -155,7 +152,7 @@ Access via **Console Cloud Temple** :
 
 ### Compatibilité OpenAI
 
-Le service LLMaaS est **100% compatible** avec l'API OpenAI :
+Le service LLMaaS est **compatible** avec l'API OpenAI :
 
 ```python
 # Migration transparente
@@ -222,10 +219,10 @@ timeline
 
 ### Politique de Versioning
 
-- **Modèles stables** : Versions fixes disponibles 12+ mois
+- **Modèles stables** : Versions fixes disponibles 6 mois
 - **Modèles expérimentaux** : Versions bêta pour early adopters
-- **Dépréciation** : Préavis 6 mois avant retrait
-- **Migration** : Assistance technique pour transitions
+- **Dépréciation** : Préavis 3 mois avant retrait
+- **Migration** : Services professionnels disponibles pour assurer vos transitions
 
 ## 💡 Bonnes Pratiques
 
@@ -303,16 +300,3 @@ timeline
        logger.error(f"LLMaaS error: {e}")
        return "Désolé, erreur temporaire."
    ```
-
-## 📚 Ressources Supplémentaires
-
-- **[Guide de démarrage rapide](./quickstart)** - Premiers pas en 5 minutes
-- **[Documentation API](./api)** - Référence complète des endpoints
-- **[Catalogue des modèles](./models)** - Liste détaillée des modèles
-- **[Cas d'usage](./use-cases)** - Exemples sectoriels
-- **[Sécurité](./security)** - Guide sécurité approfondi
-- **[Tutoriels avancés](./tutorials)** - Guides d'intégration
-
----
-
-*Le service LLMaaS Cloud Temple combine la puissance de l'IA moderne avec les exigences de sécurité et de souveraineté les plus strictes.*
