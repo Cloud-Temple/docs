@@ -898,5 +898,297 @@
     "de": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
     "es": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
     "it": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2"
+  },
+  "iaas_bare-metal/images/bare-metal-icone.png": {},
+  "llmaas/api.md": {
+    "en": "208337dafd2af4b009b9f590ebe8f73adeb68acb68835266bba5a3184ed20e51",
+    "de": "208337dafd2af4b009b9f590ebe8f73adeb68acb68835266bba5a3184ed20e51",
+    "es": "208337dafd2af4b009b9f590ebe8f73adeb68acb68835266bba5a3184ed20e51",
+    "it": "208337dafd2af4b009b9f590ebe8f73adeb68acb68835266bba5a3184ed20e51"
+  },
+  "llmaas/concepts.md": {
+    "en": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+    "de": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+    "es": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+    "it": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171"
+  },
+  "llmaas/images/llmaas_architecture_001.png": {},
+  "llmaas/images/llmaas_lifecycle_003.png": {},
+  "llmaas/images/llmaas_security_002.png": {},
+  "llmaas/licences/apache2.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/cogito_14b.licence.md": {
+    "en": "0616851d14f5d3f5d0f1e8d7770a3410491ed0120f4eb68e3d0685ec5b41bc17",
+    "de": "0616851d14f5d3f5d0f1e8d7770a3410491ed0120f4eb68e3d0685ec5b41bc17",
+    "es": "0616851d14f5d3f5d0f1e8d7770a3410491ed0120f4eb68e3d0685ec5b41bc17",
+    "it": "0616851d14f5d3f5d0f1e8d7770a3410491ed0120f4eb68e3d0685ec5b41bc17"
+  },
+  "llmaas/licences/cogito_32b.licence.md": {
+    "en": "745d75733594fa04e9fdb4bc6a7e12eeadcb763aab86f87cfc2905a63eaf01fd",
+    "de": "745d75733594fa04e9fdb4bc6a7e12eeadcb763aab86f87cfc2905a63eaf01fd",
+    "es": "745d75733594fa04e9fdb4bc6a7e12eeadcb763aab86f87cfc2905a63eaf01fd",
+    "it": "745d75733594fa04e9fdb4bc6a7e12eeadcb763aab86f87cfc2905a63eaf01fd"
+  },
+  "llmaas/licences/cogito_3b.licence.md": {
+    "en": "bab200d1e3f1a0207858317f5565c8b5a57cfe5d5db2d7cafbf6dd7aff7f3f17",
+    "de": "bab200d1e3f1a0207858317f5565c8b5a57cfe5d5db2d7cafbf6dd7aff7f3f17",
+    "es": "bab200d1e3f1a0207858317f5565c8b5a57cfe5d5db2d7cafbf6dd7aff7f3f17",
+    "it": "bab200d1e3f1a0207858317f5565c8b5a57cfe5d5db2d7cafbf6dd7aff7f3f17"
+  },
+  "llmaas/licences/cogito_8b.licence.md": {
+    "en": "f0673bb6d92cb8381dc024397f91dda9363853b44a42a69f2c0e87569479565a",
+    "de": "f0673bb6d92cb8381dc024397f91dda9363853b44a42a69f2c0e87569479565a",
+    "es": "f0673bb6d92cb8381dc024397f91dda9363853b44a42a69f2c0e87569479565a",
+    "it": "f0673bb6d92cb8381dc024397f91dda9363853b44a42a69f2c0e87569479565a"
+  },
+  "llmaas/licences/deepcoder_14b.licence.md": {
+    "en": "6992a2566a6104fc717b567c27ce2122cd735ae0f740f924ac29fad59fbf5c16",
+    "de": "6992a2566a6104fc717b567c27ce2122cd735ae0f740f924ac29fad59fbf5c16",
+    "es": "6992a2566a6104fc717b567c27ce2122cd735ae0f740f924ac29fad59fbf5c16",
+    "it": "6992a2566a6104fc717b567c27ce2122cd735ae0f740f924ac29fad59fbf5c16"
+  },
+  "llmaas/licences/deepseek-r1_14b.licence.md": {
+    "en": "6761a4b388ee5f5f7698c87a0612cba6215e4f4c31ffc3e4fcc9c4341af96be6",
+    "de": "6761a4b388ee5f5f7698c87a0612cba6215e4f4c31ffc3e4fcc9c4341af96be6",
+    "es": "6761a4b388ee5f5f7698c87a0612cba6215e4f4c31ffc3e4fcc9c4341af96be6",
+    "it": "6761a4b388ee5f5f7698c87a0612cba6215e4f4c31ffc3e4fcc9c4341af96be6"
+  },
+  "llmaas/licences/deepseek-r1_32b.licence.md": {
+    "en": "63fcdec22b3acd5adf2113265de36812efcda91279bb8e7edbebcf107378bc61",
+    "de": "63fcdec22b3acd5adf2113265de36812efcda91279bb8e7edbebcf107378bc61",
+    "es": "63fcdec22b3acd5adf2113265de36812efcda91279bb8e7edbebcf107378bc61",
+    "it": "63fcdec22b3acd5adf2113265de36812efcda91279bb8e7edbebcf107378bc61"
+  },
+  "llmaas/licences/deepseek-r1_671b.licence.md": {
+    "en": "a4b40acd2721dde65aff3766e839f4091084fc79cab340e9d0628b4fdf1945f0",
+    "de": "a4b40acd2721dde65aff3766e839f4091084fc79cab340e9d0628b4fdf1945f0",
+    "es": "a4b40acd2721dde65aff3766e839f4091084fc79cab340e9d0628b4fdf1945f0",
+    "it": "a4b40acd2721dde65aff3766e839f4091084fc79cab340e9d0628b4fdf1945f0"
+  },
+  "llmaas/licences/deepseek-r1_70b.licence.md": {
+    "en": "58eb1c9d8287dd3194753c96cf603f90088a61d336d87f90f24ecccededfd373",
+    "de": "58eb1c9d8287dd3194753c96cf603f90088a61d336d87f90f24ecccededfd373",
+    "es": "58eb1c9d8287dd3194753c96cf603f90088a61d336d87f90f24ecccededfd373",
+    "it": "58eb1c9d8287dd3194753c96cf603f90088a61d336d87f90f24ecccededfd373"
+  },
+  "llmaas/licences/devstral_24b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/gemma3_12b.licence.md": {
+    "en": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a",
+    "de": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a",
+    "es": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a",
+    "it": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a"
+  },
+  "llmaas/licences/gemma3_1b.licence.md": {
+    "en": "c089861664d47f8c30f7e9edc5665825406e16af535e0e5411aa0dfc42fa232f",
+    "de": "c089861664d47f8c30f7e9edc5665825406e16af535e0e5411aa0dfc42fa232f",
+    "es": "c089861664d47f8c30f7e9edc5665825406e16af535e0e5411aa0dfc42fa232f",
+    "it": "c089861664d47f8c30f7e9edc5665825406e16af535e0e5411aa0dfc42fa232f"
+  },
+  "llmaas/licences/gemma3_27b.licence.md": {
+    "en": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a",
+    "de": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a",
+    "es": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a",
+    "it": "e51bab2018292c7ab160c6a652930c4247526db5733a5665e075494bf267f46a"
+  },
+  "llmaas/licences/gemma3_4b.licence.md": {
+    "en": "1d83fc9a080d492b119666ca5c098062b29eb60f017ca708d68e8e3ec89a434a",
+    "de": "1d83fc9a080d492b119666ca5c098062b29eb60f017ca708d68e8e3ec89a434a",
+    "es": "1d83fc9a080d492b119666ca5c098062b29eb60f017ca708d68e8e3ec89a434a",
+    "it": "1d83fc9a080d492b119666ca5c098062b29eb60f017ca708d68e8e3ec89a434a"
+  },
+  "llmaas/licences/granite-embedding_278m.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3-guardian_2b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3-guardian_8b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3.1-moe_2b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3.1-moe_3b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3.2-vision_2b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3.3_2b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/granite3.3_8b.licence.md": {
+    "en": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "de": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "es": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa",
+    "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
+  },
+  "llmaas/licences/llama3.1_8b.licence.md": {
+    "en": "647f08d0514c27cc79ffd717796fab403fb9899f9019d2651fd0d1e53b5e1789",
+    "de": "647f08d0514c27cc79ffd717796fab403fb9899f9019d2651fd0d1e53b5e1789",
+    "es": "647f08d0514c27cc79ffd717796fab403fb9899f9019d2651fd0d1e53b5e1789",
+    "it": "647f08d0514c27cc79ffd717796fab403fb9899f9019d2651fd0d1e53b5e1789"
+  },
+  "llmaas/licences/llama3.3_70b.licence.md": {
+    "en": "5c3e76d95c8e5a150b18e279fb854d1778d961a53cb42e0835cdd32405ae49e7",
+    "de": "5c3e76d95c8e5a150b18e279fb854d1778d961a53cb42e0835cdd32405ae49e7",
+    "es": "5c3e76d95c8e5a150b18e279fb854d1778d961a53cb42e0835cdd32405ae49e7",
+    "it": "5c3e76d95c8e5a150b18e279fb854d1778d961a53cb42e0835cdd32405ae49e7"
+  },
+  "llmaas/licences/phi4-reasoning_14b.licence.md": {
+    "en": "a17ee9cd902a8263b372ffa786d6a12ca9b0484af8c2d038c297e6c1fdffa132",
+    "de": "a17ee9cd902a8263b372ffa786d6a12ca9b0484af8c2d038c297e6c1fdffa132",
+    "es": "a17ee9cd902a8263b372ffa786d6a12ca9b0484af8c2d038c297e6c1fdffa132",
+    "it": "a17ee9cd902a8263b372ffa786d6a12ca9b0484af8c2d038c297e6c1fdffa132"
+  },
+  "llmaas/licences/qwen2.5_0.5b.licence.md": {
+    "en": "34b4884fbe096ff8386ea5bc6084c8df3c3e69b704217a3bccc20eeb1a115299",
+    "de": "34b4884fbe096ff8386ea5bc6084c8df3c3e69b704217a3bccc20eeb1a115299",
+    "es": "34b4884fbe096ff8386ea5bc6084c8df3c3e69b704217a3bccc20eeb1a115299",
+    "it": "34b4884fbe096ff8386ea5bc6084c8df3c3e69b704217a3bccc20eeb1a115299"
+  },
+  "llmaas/licences/qwen2.5_1.5b.licence.md": {
+    "en": "4478b3328515a8310c7170a59fa7ccab8875d54f64e7fec5ab9640ae20cda5eb",
+    "de": "4478b3328515a8310c7170a59fa7ccab8875d54f64e7fec5ab9640ae20cda5eb",
+    "es": "4478b3328515a8310c7170a59fa7ccab8875d54f64e7fec5ab9640ae20cda5eb",
+    "it": "4478b3328515a8310c7170a59fa7ccab8875d54f64e7fec5ab9640ae20cda5eb"
+  },
+  "llmaas/licences/qwen2.5_14b.licence.md": {
+    "en": "9be031999fb27f54582a9a835481046f9499352f1e708394885bdfceb545b6e0",
+    "de": "9be031999fb27f54582a9a835481046f9499352f1e708394885bdfceb545b6e0",
+    "es": "9be031999fb27f54582a9a835481046f9499352f1e708394885bdfceb545b6e0",
+    "it": "9be031999fb27f54582a9a835481046f9499352f1e708394885bdfceb545b6e0"
+  },
+  "llmaas/licences/qwen2.5_32b.licence.md": {
+    "en": "a6280f65900607402c7ea2b67a4bb66727996f143f5edb3957aa5faffcf2c1f6",
+    "de": "a6280f65900607402c7ea2b67a4bb66727996f143f5edb3957aa5faffcf2c1f6",
+    "es": "a6280f65900607402c7ea2b67a4bb66727996f143f5edb3957aa5faffcf2c1f6",
+    "it": "a6280f65900607402c7ea2b67a4bb66727996f143f5edb3957aa5faffcf2c1f6"
+  },
+  "llmaas/licences/qwen2.5_3b.licence.md": {
+    "en": "0305550fe7eb4ed24033fd541cd76d14f78d08cc429b8a6145f0eebc9bb01bf2",
+    "de": "0305550fe7eb4ed24033fd541cd76d14f78d08cc429b8a6145f0eebc9bb01bf2",
+    "es": "0305550fe7eb4ed24033fd541cd76d14f78d08cc429b8a6145f0eebc9bb01bf2",
+    "it": "0305550fe7eb4ed24033fd541cd76d14f78d08cc429b8a6145f0eebc9bb01bf2"
+  },
+  "llmaas/licences/qwen2.5vl_32b.licence.md": {
+    "en": "d62534056719aa9c0fcac22e4077d084e5b343da08b41627a440ee90652805ef",
+    "de": "d62534056719aa9c0fcac22e4077d084e5b343da08b41627a440ee90652805ef",
+    "es": "d62534056719aa9c0fcac22e4077d084e5b343da08b41627a440ee90652805ef",
+    "it": "d62534056719aa9c0fcac22e4077d084e5b343da08b41627a440ee90652805ef"
+  },
+  "llmaas/licences/qwen2.5vl_3b.licence.md": {
+    "en": "9f941cdb26e8bbe189d102f69c48f63eb48b43737f53bac2e541db5c4b9c8974",
+    "de": "9f941cdb26e8bbe189d102f69c48f63eb48b43737f53bac2e541db5c4b9c8974",
+    "es": "9f941cdb26e8bbe189d102f69c48f63eb48b43737f53bac2e541db5c4b9c8974",
+    "it": "9f941cdb26e8bbe189d102f69c48f63eb48b43737f53bac2e541db5c4b9c8974"
+  },
+  "llmaas/licences/qwen2.5vl_7b.licence.md": {
+    "en": "41ccd5ea371ffc526307072a3a2dee29a43ab99412d800a466175778c6b7e960",
+    "de": "41ccd5ea371ffc526307072a3a2dee29a43ab99412d800a466175778c6b7e960",
+    "es": "41ccd5ea371ffc526307072a3a2dee29a43ab99412d800a466175778c6b7e960",
+    "it": "41ccd5ea371ffc526307072a3a2dee29a43ab99412d800a466175778c6b7e960"
+  },
+  "llmaas/licences/qwen3_0.6b.licence.md": {
+    "en": "81a8dc21bbfecb2d5301b9ab51bca4c92b10426be665c6922a8206d549d40c54",
+    "de": "81a8dc21bbfecb2d5301b9ab51bca4c92b10426be665c6922a8206d549d40c54",
+    "es": "81a8dc21bbfecb2d5301b9ab51bca4c92b10426be665c6922a8206d549d40c54",
+    "it": "81a8dc21bbfecb2d5301b9ab51bca4c92b10426be665c6922a8206d549d40c54"
+  },
+  "llmaas/licences/qwen3_1.7b.licence.md": {
+    "en": "12fc90019613e25b05640ab19fa0ee345136f9a030262774d93ccd5aa8a893da",
+    "de": "12fc90019613e25b05640ab19fa0ee345136f9a030262774d93ccd5aa8a893da",
+    "es": "12fc90019613e25b05640ab19fa0ee345136f9a030262774d93ccd5aa8a893da",
+    "it": "12fc90019613e25b05640ab19fa0ee345136f9a030262774d93ccd5aa8a893da"
+  },
+  "llmaas/licences/qwen3_14b.licence.md": {
+    "en": "bfd87fc6ee6e4650315219bb9fdeec8c944e68593fc38b02f89ffe06f045fa71",
+    "de": "bfd87fc6ee6e4650315219bb9fdeec8c944e68593fc38b02f89ffe06f045fa71",
+    "es": "bfd87fc6ee6e4650315219bb9fdeec8c944e68593fc38b02f89ffe06f045fa71",
+    "it": "bfd87fc6ee6e4650315219bb9fdeec8c944e68593fc38b02f89ffe06f045fa71"
+  },
+  "llmaas/licences/qwen3_235b.licence.md": {
+    "en": "a393c884974671a7721d3cfb9ae93c0363a4e25e6dd868c8a52922a90146f642",
+    "de": "a393c884974671a7721d3cfb9ae93c0363a4e25e6dd868c8a52922a90146f642",
+    "es": "a393c884974671a7721d3cfb9ae93c0363a4e25e6dd868c8a52922a90146f642",
+    "it": "a393c884974671a7721d3cfb9ae93c0363a4e25e6dd868c8a52922a90146f642"
+  },
+  "llmaas/licences/qwen3_32b.licence.md": {
+    "en": "d4ca33a00c0c3f0a0a73dd20aa1bf5f0a14e51a9c4a66200fae33cd9095c8c66",
+    "de": "d4ca33a00c0c3f0a0a73dd20aa1bf5f0a14e51a9c4a66200fae33cd9095c8c66",
+    "es": "d4ca33a00c0c3f0a0a73dd20aa1bf5f0a14e51a9c4a66200fae33cd9095c8c66",
+    "it": "d4ca33a00c0c3f0a0a73dd20aa1bf5f0a14e51a9c4a66200fae33cd9095c8c66"
+  },
+  "llmaas/licences/qwen3_4b.licence.md": {
+    "en": "0b572eb84eef0ef078d28539c0f076487a6e59be62ff535cbc48b396ba605986",
+    "de": "0b572eb84eef0ef078d28539c0f076487a6e59be62ff535cbc48b396ba605986",
+    "es": "0b572eb84eef0ef078d28539c0f076487a6e59be62ff535cbc48b396ba605986",
+    "it": "0b572eb84eef0ef078d28539c0f076487a6e59be62ff535cbc48b396ba605986"
+  },
+  "llmaas/licences/qwen3_8b.licence.md": {
+    "en": "9625a9fc12cd3b8a604705a75af5d14a1fff363fa06dc1709a3ed107a4bf8a2d",
+    "de": "9625a9fc12cd3b8a604705a75af5d14a1fff363fa06dc1709a3ed107a4bf8a2d",
+    "es": "9625a9fc12cd3b8a604705a75af5d14a1fff363fa06dc1709a3ed107a4bf8a2d",
+    "it": "9625a9fc12cd3b8a604705a75af5d14a1fff363fa06dc1709a3ed107a4bf8a2d"
+  },
+  "llmaas/licences/qwq_32b.licence.md": {
+    "en": "fa722ffcc9c5777f49cdd170b1e32552554aea61c4914051fa9d7d00c4322eb1",
+    "de": "fa722ffcc9c5777f49cdd170b1e32552554aea61c4914051fa9d7d00c4322eb1",
+    "es": "fa722ffcc9c5777f49cdd170b1e32552554aea61c4914051fa9d7d00c4322eb1",
+    "it": "fa722ffcc9c5777f49cdd170b1e32552554aea61c4914051fa9d7d00c4322eb1"
+  },
+  "llmaas/llmaas.md": {
+    "en": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+    "de": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+    "es": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+    "it": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd"
+  },
+  "llmaas/models.md": {
+    "en": "e96919bc925bb9b68374ca09961f1128e97fdc253e5b465e3827272caec3b55a",
+    "de": "e96919bc925bb9b68374ca09961f1128e97fdc253e5b465e3827272caec3b55a",
+    "es": "e96919bc925bb9b68374ca09961f1128e97fdc253e5b465e3827272caec3b55a",
+    "it": "e96919bc925bb9b68374ca09961f1128e97fdc253e5b465e3827272caec3b55a"
+  },
+  "llmaas/quickstart.md": {
+    "en": "cfbcba0489a4e165f8c3ca382c9707ed9917d92263e4f0328290fdecc5fccc5e",
+    "de": "cfbcba0489a4e165f8c3ca382c9707ed9917d92263e4f0328290fdecc5fccc5e",
+    "es": "cfbcba0489a4e165f8c3ca382c9707ed9917d92263e4f0328290fdecc5fccc5e",
+    "it": "cfbcba0489a4e165f8c3ca382c9707ed9917d92263e4f0328290fdecc5fccc5e"
+  },
+  "llmaas/tutorials.md": {
+    "en": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358",
+    "de": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358",
+    "es": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358",
+    "it": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358"
   }
 }
