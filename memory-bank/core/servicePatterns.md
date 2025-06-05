@@ -354,3 +354,13 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 
 *Patterns documentaires Cloud Temple - 05/06/2025*
 *STYLE ANTHROPIC OBLIGATOIRE - EXEMPLES TESTÉS UNIQUEMENT*
+
+## ⚠️ RÈGLE CRITIQUE ABSOLUE
+
+### 🚫 INTERDICTION FORMELLE : PAS DE CODE NON TESTÉ
+- **TOUS les exemples de code DOIVENT être testés** avec infrastructure réelle
+- **AUCUN code publié sans validation complète**
+- **Code samples = contrat de fonctionnement garanti**
+- **Tests obligatoires pour TOUTES les dépendances externes**
+- **Validation avec packages réels (LangChain, OpenAI SDK, Semantic Kernel, etc.)**
+- **Aucune exception tolérée** - Code non testé = BUG de documentation
