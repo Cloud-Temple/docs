@@ -94,6 +94,31 @@
 - 📝 **Architecture réseau** : Diagrammes et concepts
 - 📝 **Configuration** : Guides techniques
 
+### 🤖 LLMaaS - LLM as a Service - Statut : ✅ INITIALISÉ
+
+#### Intelligence Artificielle Générative (`/docs/llmaas/`)
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 36 modèles (généré depuis YAML)
+- 🔄 `llmaas.md` : Vue d'ensemble service (planifié)
+- 🔄 `api.md` : Documentation API REST (planifié) 
+- 🔄 `concepts.md` : Architecture IA (planifié)
+- 🔄 `quickstart.md` : Premier déploiement (planifié)
+- 🔄 `use-cases.md` : Cas d'usage sectoriels (planifié)
+- 🔄 `security.md` : Sécurité et conformité IA (planifié)
+- 🔄 `tutorials.md` : Guides avancés (planifié)
+- ✅ `images/` : Structure créée pour screenshots
+
+#### Configuration Automatisée
+- ✅ **Source** : `memory-bank/models_config.yaml` (36 modèles)
+- ✅ **Script** : `scripts/generate_models_doc.py` (Python professionnel)
+- ✅ **NPM** : `npm run generate:models` (intégration workflow)
+- ✅ **Conformité** : SecNumCloud + HDS + Souveraineté + C5
+
+#### Spécifications LLMaaS
+- ✅ **36 modèles** : 6 grande taille + 34 spécialisés
+- ✅ **Contexte** : 8k → 120k tokens  
+- ✅ **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
+- ✅ **6 cas d'usage** : Multilingue, documents, code, vision, sécurité, embarqué
+
 ### 💾 Storage Solutions - Statut : 🔄 EN DÉVELOPPEMENT
 
 #### Object Storage Service (`/docs/storage/oss/`)
