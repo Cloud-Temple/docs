@@ -19,6 +19,7 @@ memory-bank/
 │   └── translationGuidelines.md       # ✅ Guidelines multilingues
 ├── context/                           # 🏗️ Contexte par service
 │   ├── console-context.md             # ✅ Console Management
+│   ├── llmaas-context.md              # ✅ LLM as a Service (36 modèles)
 │   ├── bastion-context.md             # 🔄 À créer
 │   ├── iaas-context.md                # 🔄 À créer
 │   ├── paas-context.md                # 🔄 À créer

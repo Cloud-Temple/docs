@@ -49,6 +49,13 @@ Cloud Temple est un fournisseur de cloud souverain français spécialisé dans l
 - **Colocation** : Hébergement physique dans datacenters certifiés
 - **Infrastructure** : Accès aux installations Cloud Temple
 
+### 🤖 LLM as a Service (`/docs/llmaas/`)
+- **Intelligence Artificielle** : 36 modèles de langage large SecNumCloud
+- **Conformité IA** : SecNumCloud + HDS + Souveraineté + C5
+- **Génération automatique** : Documentation depuis `memory-bank/models_config.yaml`
+- **API REST** : Compatible OpenAI avec sécurité renforcée
+- **Cas d'usage** : Multilingue, vision, code, sécurité, embarqué
+
 ### 🌐 Services Complémentaires
 - **Network** (`/docs/network/`) : Connectivité Internet et réseaux privés
 - **Storage** (`/docs/storage/`) : Solutions de stockage (OSS)
