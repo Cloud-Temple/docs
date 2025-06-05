@@ -279,6 +279,59 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 4. **Review technique** : Exactitude information
 5. **Feedback utilisateur** : Améliorations continue
 
+## 🎯 EXIGENCES DOCUMENTATION UTILISATEUR
+
+### ⚡ Style Obligatoire : "Mode Anthropic"
+**IMPÉRATIF** : Suivre l'approche technique factuelle d'Anthropic/OpenAI
+
+#### ✅ À FAIRE (Style Professionnel)
+- **Exemples concrets** : Code curl et Python qui MARCHENT vraiment
+- **Tone factuel** : Pas de superlatifs marketing ("révolutionnaire", "inégalé")
+- **Architecture technique** : Composants et workflow clairs
+- **Tests systématiques** : TOUS les exemples doivent être validés
+- **Métriques précises** : Performance et latence vérifiables
+- **Workflow de développement** : Phases structurées
+
+#### ❌ INTERDIT (Commercial de Mauvaise Qualité)
+- Promesses vagues sans détails techniques
+- Comparaisons commerciales agressives  
+- Jargon commercial sans substance technique
+- Claims sans preuves ou métriques
+- Exemples non testés qui ne marchent pas
+
+### 📋 Workflow Git Obligatoire
+**EXIGENCE** : Commit + push à chaque étape pour publication immédiate
+
+#### Processus Standard
+1. **Créer/modifier** documentation
+2. **Tester TOUS les exemples** (curl, Python, etc.)
+3. **Mettre à jour Memory Bank** avec état réel
+4. **Commit avec message détaillé** 
+5. **Push vers branche** pour review
+6. **Merger après validation**
+
+#### Messages de Commit
+- **Format** : Emoji + description technique
+- **Contenu** : Ce qui a été testé et validé
+- **Détails** : Exemples fonctionnels vs théoriques
+
+### 🧪 Validation Systématique
+**CRITÈRE QUALITÉ** : Aucun exemple non testé
+
+#### Tests Obligatoires
+- **API calls** : curl avec vraies clés
+- **Code examples** : Python/JS exécutés
+- **Responses** : JSON réels pas inventés
+- **Error handling** : Messages d'erreur réels
+- **Performance** : Latence mesurée
+
+#### Documentation des Tests
+- ✅ **Test 1** : curl /v1/models → JSON 43 modèles
+- ✅ **Test 2** : chat/completions → haiku généré
+- ✅ **Test 3** : Python script → photosynthèse expliquée
+- ✅ **Test 4** : Modèles recommandés → tous validés
+
 ---
 
 *Patterns documentaires Cloud Temple - 05/06/2025*
+*STYLE ANTHROPIC OBLIGATOIRE - EXEMPLES TESTÉS UNIQUEMENT*
