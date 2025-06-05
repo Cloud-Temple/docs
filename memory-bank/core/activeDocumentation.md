@@ -100,7 +100,7 @@
 - ✅ `models.md` : **AUTOMATISÉ** - Catalogue 36 modèles (généré depuis YAML)
 - ✅ `llmaas.md` : Vue d'ensemble service (style Anthropic factuel)
 - ✅ `quickstart.md` : Guide 5min **TESTÉ** - Tous exemples validés (curl + Python)
-- 🔄 `api.md` : Documentation API REST (planifié) 
+- ✅ `api.md` : Documentation API **TESTÉE** - Streaming SSE + endpoints validés
 - 🔄 `concepts.md` : Architecture IA (planifié)
 - 🔄 `use-cases.md` : Cas d'usage sectoriels (planifié)
 - 🔄 `security.md` : Sécurité et conformité IA (planifié)
