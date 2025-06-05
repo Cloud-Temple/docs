@@ -5,10 +5,6 @@ sidebar_position: 3
 
 # Concepts et Architecture LLMaaS
 
-## Vue d'Ensemble
-
-Le service **LLMaaS** (Large Language Models as a Service) de Cloud Temple fournit un accès sécurisé et souverain aux modèles d'intelligence artificielle les plus avancés, avec la **qualification SecNumCloud** de l'ANSSI.
-
 ## 🏗️ Architecture Technique
 
 ### Infrastructure Cloud Temple
@@ -73,7 +69,7 @@ print(f"Coût estimé: {total_cost:.6f}€")
 
 ### Qualification SecNumCloud
 
-Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
+Le service LLMaaS est déployé sur une infrastructure technique Cloud Temple qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
 
 #### **Protection des Données**
 - **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
@@ -100,21 +96,19 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ### Métriques de Performance
 
-    In progress
-
-
 #### **Latence**
-
-    In progress
+- **Temps de réponse moyen** : < 2 secondes pour modèles 8B
+- **Temps de premier token** : < 500ms
+- **Débit streaming** : 50-100 tokens/seconde selon modèle
 
 #### **Débit**
-
-    In progress
-
+- **Requêtes simultanées** : Jusqu'à 1000 requêtes/minute par tenant
+- **Scaling automatique** : Adaptation charge en temps réel
+- **Disponibilité** : SLA 99.9% garanti
 
 ### Monitoring en Temps Réel
 
-Access via **Console Cloud Temple** :
+Accès via **Console Cloud Temple** :
 - Métriques d'utilisation par modèle
 - Graphiques de latence et débit
 - Alertes sur seuils de performance
@@ -255,4 +249,3 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    except Exception as e:
        logger.error(f"LLMaaS error: {e}")
        return "Désolé, erreur temporaire."
-   ```
