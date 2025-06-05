@@ -1,5 +1,5 @@
 ---
-title: Concepts et Architecture
+title: Concepts
 sidebar_position: 3
 ---
 
@@ -13,30 +13,9 @@ Le service **LLMaaS** (Large Language Models as a Service) de Cloud Temple fourn
 
 ### Infrastructure Cloud Temple
 
-```mermaid
-graph TB
-    User[Utilisateur] --> LB[Load Balancer SecNumCloud]
-    LB --> API[API Gateway LLMaaS]
-    API --> Auth[Service d'Authentification]
-    API --> Router[Model Router]
-    
-    Router --> GPU1[Cluster GPU - Modèles 7B]
-    Router --> GPU2[Cluster GPU - Modèles 13B]
-    Router --> GPU3[Cluster GPU - Modèles 70B+]
-    
-    GPU1 --> M1[llama3.2:3b]
-    GPU1 --> M2[granite3.3:8b]
-    GPU2 --> M3[llama3.1:13b]
-    GPU3 --> M4[llama3.1:70b]
-    
-    API --> Monitor[Monitoring & Métriques]
-    API --> Audit[Audit SecNumCloud]
-    
-    style LB fill:#e1f5fe
-    style API fill:#f3e5f5
-    style Auth fill:#fff3e0
-    style Monitor fill:#e8f5e8
-```
+import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
+
+<img src={ArchitectureLLMaaS} alt="Architecture Technique LLMaaS Cloud Temple" />
 
 ### Composants Principaux
 
@@ -113,16 +92,9 @@ Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie 
 
 ### Contrôles de Sécurité
 
-```mermaid
-flowchart LR
-    Client[Client] --> TLS[TLS 1.3]
-    TLS --> Auth[Authentification]
-    Auth --> RBAC[Contrôle d'Accès]
-    RBAC --> Process[Traitement IA]
-    Process --> Encrypt[Chiffrement Données]
-    Encrypt --> Audit[Audit Log]
-    Audit --> Monitor[Monitoring SecOps]
-```
+import SecurityControls from './images/llmaas_security_002.png';
+
+<img src={SecurityControls} alt="Contrôles de Sécurité LLMaaS" />
 
 ## 📈 Performance et Scalabilité
 
@@ -197,25 +169,9 @@ response = client_ct.chat.completions.create(
 
 ### Mise à Jour des Modèles
 
-```mermaid
-timeline
-    title Cycle de Mise à Jour LLMaaS
-    
-    section Évaluation
-        Nouveaux modèles : Veille technologique
-        Tests qualité : Benchmarks internes
-        Validation sécurité : Audit SecNumCloud
-    
-    section Déploiement
-        Test cluster : Validation infrastructure
-        Déploiement progressif : Rollout contrôlé
-        Monitoring : Métriques qualité
-    
-    section Production
-        Disponibilité : Ajout au catalogue
-        Documentation : Mise à jour guides
-        Communication : Annonce utilisateurs
-```
+import ModelLifecycle from './images/llmaas_lifecycle_003.png';
+
+<img src={ModelLifecycle} alt="Cycle de Vie des Modèles LLMaaS" />
 
 ### Politique de Versioning
 

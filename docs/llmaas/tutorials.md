@@ -1,5 +1,5 @@
 ---
-title: Tutorials LLMaaS
+title: Tutoriels 
 sidebar_position: 6
 ---
 
@@ -516,22 +516,23 @@ test_llamaindex()
 
 ---
 
-## 🔧 Optimisations de Performance
-
-*Section à venir - prochaine étape*
-
-## 📊 Monitoring et Métriques
-
-*Section à venir - prochaine étape*
-
-## 🛡️ Best Practices de Sécurité
-
-*Section à venir - prochaine étape*
-
 ## 💡 Exemples Avancés
 
-*Section à venir - prochaine étape*
+Vous trouverez dans lerépertoire GitHub du produit une collection d'exemples de code et de scripts démontrant les différentes fonctionnalités et cas d'utilisation de l'offre LLM as a Service (LLMaaS) de Cloud Temple :
+
+[Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
+
+Vous y trouverez des guides pratiques pour :
+- __Extraction d'Informations et Analyse de Texte :__ Capacité à analyser des documents pour en extraire des données structurées telles que des entités, des événements, des relations et des attributs, en s'appuyant sur des ontologies spécifiques à des domaines (ex: juridique, RH, IT).
+
+- __Interaction Conversationnelle et Chatbots :__ Développement d'agents conversationnels capables de dialoguer, de maintenir un historique d'échange, d'utiliser des instructions système (prompts système) et d'invoquer des outils externes.
+
+- __Transcription Audio (Speech-to-Text) :__ Conversion de contenu audio en texte, y compris pour des fichiers volumineux, grâce à des techniques de découpage, de normalisation et de traitement par lots.
+
+- __Traduction de Texte :__ Traduction de documents d'une langue à une autre, en gérant le contexte sur plusieurs segments pour améliorer la cohérence.
+
+- __Gestion et Évaluation des Modèles :__ Listage des modèles de langage disponibles via l'API, consultation de leurs spécifications et exécution de tests pour comparer leurs performances.
+
+- __Streaming de Réponses en Temps Réel :__ Démonstration de la capacité à recevoir et afficher les réponses des modèles de manière progressive (token par token), essentielle pour les applications interactives.
 
 ---
-
-**Prochaines étapes :** Section suivante selon vos besoins - optimisations, monitoring, sécurité ou exemples avancés.

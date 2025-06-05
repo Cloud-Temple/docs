@@ -1,5 +1,5 @@
 ---
-title: Guide de Démarrage Rapide
+title: Guide de Démarrage
 sidebar_position: 3
 ---
 
