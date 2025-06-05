@@ -37,7 +37,7 @@ Modello multilingue di punta sviluppato da Meta, progettato per eccellere nel di
 **Specifiche tecniche:**
 - **Velocità** : 30 token/secondo token/secondo
 - **Consumo** : 8,87 kWh/milione di token
-- **Licenza** : [Licenza Comunitaria Llama 3.3](./licenze/llama3.3_70b.licenza.md)
+- **Licenza** : [Licenza Comunitaria Llama 3.3](./licences/llama3.3_70b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -62,7 +62,7 @@ Modello molto grande della nuova generazione Qwen3, che offre capacità estese p
 **Specifiche tecniche:**
 - **Velocità** : 21 token/secondo
 - **Consumo** : 6,35 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licenze/apache2.licenza.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -86,7 +86,7 @@ Modello estremamente grande di DeepSeek AI, progettato per il massimo del ragion
 **Specifiche tecniche:**
 - **Velocità** : 16 token/secondo token/secondo
 - **Consumo** : 8,33 kWh/milione di token
-- **Licenza** : [Licenza MIT](./licenze/deepseek-r1_671b.licenza.md)
+- **Licenza** : [Licenza MIT](./licences/deepseek-r1_671b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -109,7 +109,7 @@ Modello rivoluzionario di Google che offre un equilibrio ottimale tra potenza ed
 **Specifiche tecniche:**
 - **Velocità** : 68 token/secondo token/secondo ⚡
 - **Consumo** : 3,91 kWh/milione di token
-- **Licenza** : [Termini d'uso di Google Gemma](./licenze/gemma3_27b.licenza.md)
+- **Licenza** : [Termini d'uso di Google Gemma](./licences/gemma3_27b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -134,7 +134,7 @@ Modello MoE FP8 (3B attivati) di nuova generazione, con modi di pensiero ibridi 
 **Specifiche tecniche:**
 - **Velocità** : 103 token/secondo token/secondo ⚡
 - **Consumo** : 2,58 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licenze/apache2.licenza.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -159,7 +159,7 @@ Modello 70B di DeepSeek AI
 **Specifiche tecniche:**
 - **Velocità** : 20 token/secondo token/secondo
 - **Consumo** : 11,44 kWh/milione di token
-- **Licenza** : [Licenza MIT](./licenze/deepseek-r1_70b.licenza.md)
+- **Licenza** : [Licenza MIT](./licences/deepseek-r1_70b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
