@@ -337,7 +337,7 @@ def test_openai_compatibility():
         model="granite3.3:8b",
         messages=[
             {"role": "system", "content": "Sie sind ein professioneller KI-Assistent."},
-            {"role": "user", "content": "Erklären Sie mir die Cloud-Native-Architektur."}
+            {"role": "user", "content": "Erklären Sie Cloud-native Architektur."}
         ],
         max_tokens=300,
         temperature=0.7
@@ -347,8 +347,7 @@ def test_openai_compatibility():
     
     # Streaming
     stream = client.chat.completions.create(
-```
-model="granite3.3:8b",
+        model="granite3.3:8b",
         messages=[
             {"role": "user", "content": "Schreibe ein Gedicht über KI."}
         ],
@@ -363,7 +362,7 @@ model="granite3.3:8b",
     print()
 
 # Kompatibilitätstest
-test_openai_compatibility()
+test_openai_kompatibilitat()
 ```
 
 ### 5. Semantic Kernel-Integration (Microsoft)
