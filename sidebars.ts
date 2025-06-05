@@ -164,6 +164,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'LLMaaS',
+      items: [
+        'llmaas/llmaas',
+        'llmaas/concepts',
+        'llmaas/quickstart',
+        'llmaas/api',
+        'llmaas/models',
+        'llmaas/tutorials',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Network',
       items: [
         {

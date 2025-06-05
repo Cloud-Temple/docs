@@ -18,22 +18,31 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // Configuration
-const API_URL = process.env.DRAGONFLY_API_URL;
-const API_KEY = process.env.DRAGONFLY_API_KEY;
+const API_URL = process.env.CLOUDTEMPLE_API_URL || 'https://api.ai.cloud-temple.com/v1/chat/completions'; // Default Cloud Temple API URL
+const API_KEY = process.env.CLOUDTEMPLE_API_KEY;
 const DOC_BASE_PATH = process.env.DOC_BASE_PATH || '.';
-const TRANSLATION_MODEL = process.env.TRANSLATION_MODEL || 'gpt-4o';
+const TRANSLATION_MODEL = process.env.TRANSLATION_MODEL || 'Qwen/Qwen3-30B-A3B-FP8'; // Default to Qwen/Qwen3-30B-A3B-FP8
 const TRANSLATION_TEMPERATURE = parseFloat(process.env.TRANSLATION_TEMPERATURE || '1');
 const TRANSLATION_TOP_P = parseFloat(process.env.TRANSLATION_TOP_P || '1');
+const CONCURRENT_TRANSLATIONS = parseInt(process.env.CONCURRENT_TRANSLATIONS || '4', 10); // Number of files to process concurrently
 
 // Validate required environment variables
-if (!API_URL) {
-  console.error('Error: DRAGONFLY_API_URL environment variable is not defined');
+// API_URL has a default, so only API_KEY needs to be strictly checked if not using a local model or other auth.
+if (!API_KEY) {
+  console.error('Error: CLOUDTEMPLE_API_KEY environment variable is not defined');
   process.exit(1);
 }
-
-if (!API_KEY) {
-  console.error('Error: DRAGONFLY_API_KEY environment variable is not defined');
-  process.exit(1);
+// No need to check API_URL if it has a default. 
+// If the default is used, API_KEY is essential.
+// If a custom API_URL is set (e.g. for a local LLM), API_KEY might not be needed,
+// but for Cloud Temple's public API, it is.
+if (process.env.CLOUDTEMPLE_API_URL && !API_KEY) {
+    console.warn('Warning: CLOUDTEMPLE_API_URL is set, but CLOUDTEMPLE_API_KEY is not. This might be an issue for non-local APIs.');
+} else if (!process.env.CLOUDTEMPLE_API_URL && !API_KEY) {
+    // This case should ideally not be hit if API_URL has a default and API_KEY is checked.
+    // However, if the default URL is removed in the future, this check becomes relevant.
+    console.error('Error: CLOUDTEMPLE_API_URL (or its default) and CLOUDTEMPLE_API_KEY must be defined.');
+    process.exit(1);
 }
 
 // Language mapping
@@ -124,7 +133,7 @@ function splitContentIntoBlocks(content, maxTokens = 10000) {
 }
 
 /**
- * Translate text using the DragonflyGroup API
+ * Translate text using the Cloud Temple LLMaaS API
  * @param {string} text - Text to translate
  * @param {string} targetLang - Target language code
  * @param {string} targetLangName - Target language name
@@ -146,17 +155,7 @@ async function translateTextBlock(text, targetLang, targetLangName) {
     try {
       console.log(`Sending request to API...`);
       
-      const response = await axios.post(
-        API_URL,
-        {
-          messages: [{
-            role: 'user',
-            content: [{ type: 'text', text }]
-          }],
-          model: TRANSLATION_MODEL,
-          temperature: TRANSLATION_TEMPERATURE,
-          top_p: TRANSLATION_TOP_P,
-          promptSystem: `You are a technical translator specialized in Cloud computing, IT systems, and software engineering. 
+      const systemPrompt = `You are a technical translator specialized in Cloud computing, IT systems, and software engineering. 
 Your task is to translate plain text from French to ${targetLangName} while strictly preserving the structure and formatting of the original Markdown file. 
 Follow these rules strictly: 
 1. Do not modify, translate, or interpret any HTML or Markdown elements, such as \`<a>\`, \`<div>\`, or \`#\` headers. 
@@ -165,9 +164,20 @@ Follow these rules strictly:
 4. Do not add or modify any new lines, spaces, or formatting outside of the original text. 
 5. If the content includes raw HTML, do not alter or translate it; leave it exactly as it appears. 
 Your sole task is to translate only the plain text content outside of code, Markdown, or HTML elements, while ensuring that all formatting and structural integrity are preserved. 
-The goal is to produce a translation that is technically accurate, professional, and maintains the original file's structure without any unintended changes.`,
-          stream: false,
-          threadId: ''
+The goal is to produce a translation that is technically accurate, professional, and maintains the original file's structure without any unintended changes.`;
+
+      const response = await axios.post(
+        API_URL, // This will use the CLOUDTEMPLE_API_URL or its default
+        {
+          model: TRANSLATION_MODEL,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: text }
+          ],
+          temperature: TRANSLATION_TEMPERATURE,
+          top_p: TRANSLATION_TOP_P,
+          stream: false
+          // Consider adding max_tokens if appropriate for the API
         },
         {
           headers: {
@@ -180,11 +190,12 @@ The goal is to produce a translation that is technically accurate, professional,
       // Log response details
       console.log(`API response received:`);
       console.log(`- Status code: ${response.status}`);
-      console.log(`- Model used: ${response.data.response?.model || 'unknown'}`);
-      console.log(`- Tokens used: ${response.data.response?.usage?.total_tokens || 'unknown'}`);
+      // For OpenAI compatible APIs, model and usage are typically directly in response.data
+      console.log(`- Model used: ${response.data.model || response.data.id || 'unknown'}`); // model or id depending on API
+      console.log(`- Tokens used: ${response.data.usage?.total_tokens || 'unknown'}`);
 
-      if (response.status === 200 && response.data.response?.choices?.length > 0) {
-        const translatedText = response.data.response.choices[0].message.content;
+      if (response.status === 200 && response.data.choices?.length > 0) {
+        const translatedText = response.data.choices[0].message.content;
         console.log(`Translation successful (${translatedText.length} characters)`);
         return translatedText;
       } else {
@@ -661,7 +672,9 @@ async function main() {
     console.log('DRY RUN MODE - No files will be modified');
   }
   
-  // Process each file
+  // Determine the processing function based on the mode
+  const processFunction = isInitMode ? initializeFile : processFile;
+
   if (isInitMode) {
     console.log('INITIALIZATION MODE - Creating hashes for existing files');
     if (translateMissing) {
@@ -669,16 +682,36 @@ async function main() {
     } else {
       console.log('Skipping missing translations (use --translate-missing to translate them)');
     }
-    
-    // Initialize metadata for each file
-    for (const file of files) {
-      translationMeta = await initializeFile(file, translationMeta);
-    }
   } else {
-    // Normal translation mode
-    for (const file of files) {
-      translationMeta = await processFile(file, translationMeta);
-    }
+    console.log('TRANSLATION MODE - Processing files for translation.');
+  }
+  
+  console.log(`Processing files with up to ${CONCURRENT_TRANSLATIONS} concurrent operations.`);
+
+  // Process files in batches
+  for (let i = 0; i < files.length; i += CONCURRENT_TRANSLATIONS) {
+    const batch = files.slice(i, i + CONCURRENT_TRANSLATIONS);
+    console.log(`Processing batch of ${batch.length} files (Files ${i + 1} to ${i + batch.length} of ${files.length})...`);
+    
+    const promises = batch.map(file => 
+      processFunction(file, translationMeta)
+        .catch(err => {
+          console.error(`Error processing file ${file} in batch:`, err.message);
+          // stats.errors might be incremented inside processFunction,
+          // but good to log here as well.
+        })
+    );
+    
+    const results = await Promise.allSettled(promises);
+
+    results.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        // Log additional error context if the promise was rejected.
+        // processFunction itself should handle incrementing stats.errors.
+        console.error(`Batch processing encountered an error for file ${batch[index]}: ${result.reason}`);
+      }
+    });
+    console.log(`Batch (Files ${i + 1} to ${i + batch.length}) completed.`);
   }
   
   // Save updated translation metadata
