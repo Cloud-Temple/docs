@@ -444,7 +444,25 @@ async function chatCompletion(message) {
 // Example usage
 chatCompletion("What is photosynthesis?");
 ```
-},
+
+### JavaScript/Node.js with async/await
+
+```javascript
+const axios = require('axios');
+
+const API_KEY = 'VOTRE_TOKEN_API';
+const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
+
+async function chatCompletion(message) {
+    try {
+        const response = await axios.post(
+            `${BASE_URL}/chat/completions`,
+            {
+                model: 'granite3.3:8b',
+                messages: [
+                    { role: 'user', content: message }
+                ]
+            },
             {
                 headers: {
                     'Content-Type': 'application/json',
