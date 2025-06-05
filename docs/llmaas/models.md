@@ -37,7 +37,7 @@ Modèle multilingue de pointe développé par Meta, conçu pour exceller dans le
 **Spécifications techniques :**
 - **Vitesse** : 30 tokens/seconde tokens/seconde
 - **Consommation** : 8.87 kWh/million tokens
-- **Licence** : LLAMA 3.3 Community Licence
+- **Licence** : [LLAMA 3.3 Community Licence](./licences/llama3.3_70b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -62,7 +62,7 @@ Modèle très volumineux de la nouvelle génération Qwen3, offrant des capacit�
 **Spécifications techniques :**
 - **Vitesse** : 21 tokens/seconde
 - **Consommation** : 6.35 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -86,7 +86,7 @@ Modèle extrêmement volumineux de DeepSeek AI, conçu pour le summum du raisonn
 **Spécifications techniques :**
 - **Vitesse** : 16 tokens/seconde tokens/seconde
 - **Consommation** : 8.33 kWh/million tokens
-- **Licence** : MIT Licence
+- **Licence** : [MIT Licence](./licences/deepseek-r1_671b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -109,7 +109,7 @@ Modèle révolutionnaire de Google offrant un équilibre optimal entre puissance
 **Spécifications techniques :**
 - **Vitesse** : 68 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 3.91 kWh/million tokens
-- **Licence** : Google Gemma Terms of Use
+- **Licence** : [Google Gemma Terms of Use](./licences/gemma3_27b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -134,7 +134,7 @@ Modèle MoE FP8 (3B activés) nouvelle génération, avec modes de pensée hybri
 **Spécifications techniques :**
 - **Vitesse** : 103 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 2.58 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -159,7 +159,7 @@ Modèle 70B de DeepSeek AI
 **Spécifications techniques :**
 - **Vitesse** : 20 tokens/seconde tokens/seconde
 - **Consommation** : 11.44 kWh/million tokens
-- **Licence** : MIT Licence
+- **Licence** : [MIT Licence](./licences/deepseek-r1_70b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -184,7 +184,7 @@ Modèle dense nouvelle génération Qwen3 (14B), offrant des performances équiv
 **Spécifications techniques :**
 - **Vitesse** : 69 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 2.65 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -208,7 +208,7 @@ Version intermédiaire du modèle Gemma 3 offrant un excellent équilibre entre 
 **Spécifications techniques :**
 - **Vitesse** : 67 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 2.73 kWh/million tokens
-- **Licence** : Google Gemma Terms of Use
+- **Licence** : [Google Gemma Terms of Use](./licences/gemma3_12b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -233,7 +233,7 @@ Modèle compact de Google offrant d'excellentes performances dans un format lég
 **Spécifications techniques :**
 - **Vitesse** : 58 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.93 kWh/million tokens 🌱
-- **Licence** : Google Gemma Terms of Use
+- **Licence** : [Google Gemma Terms of Use](./licences/gemma3_4b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -258,7 +258,7 @@ Micro-modèle ultra-léger conçu pour les déploiements sur appareils à très 
 **Spécifications techniques :**
 - **Vitesse** : 41 tokens/seconde tokens/seconde
 - **Consommation** : 1.32 kWh/million tokens 🌱
-- **Licence** : Google Gemma Terms of Use
+- **Licence** : [Google Gemma Terms of Use](./licences/gemma3_1b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -283,7 +283,7 @@ Modèle causal multilingue open-source (7B), fine-tuné depuis Lucie-7B. Optimis
 **Spécifications techniques :**
 - **Vitesse** : 41 tokens/seconde tokens/seconde
 - **Consommation** : 1.32 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -301,7 +301,7 @@ Modèle compact et réactif de Mistral AI, spécialement conçu pour offrir une 
 **Spécifications techniques :**
 - **Vitesse** : 14 tokens/seconde tokens/seconde
 - **Consommation** : 13.06 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -326,7 +326,7 @@ Modèle IA open source (14B) par Together AI & Agentica, alternative crédible a
 **Spécifications techniques :**
 - **Vitesse** : 62 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 2.95 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -351,7 +351,7 @@ Modèle compact révolutionnaire d'IBM spécialisé dans la vision par ordinateu
 **Spécifications techniques :**
 - **Vitesse** : 48 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 1.13 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -376,7 +376,7 @@ Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instruc
 **Spécifications techniques :**
 - **Vitesse** : 27 tokens/seconde tokens/seconde
 - **Consommation** : 2.0 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -402,7 +402,7 @@ Modèle Granite 2B fine-tuné par IBM, optimisé pour le raisonnement et le suiv
 **Spécifications techniques :**
 - **Vitesse** : 45 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 1.2 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -427,7 +427,7 @@ Modèle innovant d'IBM utilisant l'architecture Mixture-of-Experts (MoE) pour of
 **Spécifications techniques :**
 - **Vitesse** : 74 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.73 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -452,7 +452,7 @@ Modèle de Deep Cogito spécialement conçu pour exceller dans les tâches de ra
 **Spécifications techniques :**
 - **Vitesse** : 60 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 3.05 kWh/million tokens
-- **Licence** : LLAMA 3.2 Community Licence
+- **Licence** : [LLAMA 3.2 Community Licence](./licences/cogito_14b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -477,7 +477,7 @@ Version avancée du modèle Cogito offrant des capacités de raisonnement et d'a
 **Spécifications techniques :**
 - **Vitesse** : 32 tokens/seconde tokens/seconde
 - **Consommation** : 5.73 kWh/million tokens
-- **Licence** : LLAMA 3.2 Community Licence
+- **Licence** : [LLAMA 3.2 Community Licence](./licences/cogito_32b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -500,7 +500,7 @@ Version avancée du modèle Cogito offrant des capacités de raisonnement et d'a
 Modèle puissant de la nouvelle génération Qwen3, offrant des capacités avancées en raisonnement, code, et agentique, avec un contexte étendu.
 
 **Spécifications techniques :**
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -524,7 +524,7 @@ Modèle de 32 milliards de paramètres amélioré par apprentissage par renforce
 **Spécifications techniques :**
 - **Vitesse** : 35 tokens/seconde tokens/seconde
 - **Consommation** : 5.22 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -549,7 +549,7 @@ Version compacte et efficiente du modèle DeepSeek-R1, offrant un excellent comp
 **Spécifications techniques :**
 - **Vitesse** : 60 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 3.05 kWh/million tokens
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/deepseek-r1_14b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -574,7 +574,7 @@ Version intermédiaire du modèle DeepSeek-R1 offrant un équilibre stratégique
 **Spécifications techniques :**
 - **Vitesse** : 33 tokens/seconde tokens/seconde
 - **Consommation** : 5.54 kWh/million tokens
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/deepseek-r1_32b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -599,7 +599,7 @@ Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appa
 **Spécifications techniques :**
 - **Vitesse** : 63 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.86 kWh/million tokens 🌱
-- **Licence** : LLAMA 3.2 Community Licence
+- **Licence** : [LLAMA 3.2 Community Licence](./licences/cogito_3b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -615,7 +615,7 @@ Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appa
 Modèle d'embedding ultra-léger d'IBM pour la recherche sémantique et la classification.
 
 **Spécifications techniques :**
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -631,7 +631,7 @@ Modèle d'embedding ultra-léger d'IBM pour la recherche sémantique et la class
 Modèle compact d'IBM spécialisé dans la sécurité et la conformité, détectant les risques et les contenus inappropriés.
 
 **Spécifications techniques :**
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -647,7 +647,7 @@ Modèle compact d'IBM spécialisé dans la sécurité et la conformité, détect
 Modèle d'IBM spécialisé dans la sécurité et la conformité, offrant des capacités avancées de détection des risques.
 
 **Spécifications techniques :**
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -665,7 +665,7 @@ Micro-modèle ultra-léger de la famille Qwen 2.5, conçu pour une efficacité m
 **Spécifications techniques :**
 - **Vitesse** : 57 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.95 kWh/million tokens 🌱
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/qwen2.5_0.5b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -683,7 +683,7 @@ Modèle très compact de la famille Qwen 2.5, offrant un bon équilibre performa
 **Spécifications techniques :**
 - **Vitesse** : 94 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.58 kWh/million tokens 🌱
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/qwen2.5_1.5b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -701,7 +701,7 @@ Modèle polyvalent de taille moyenne de la famille Qwen 2.5, bon équilibre perf
 **Spécifications techniques :**
 - **Vitesse** : 61 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 3.0 kWh/million tokens
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/qwen2.5_14b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -719,7 +719,7 @@ Modèle puissant de la famille Qwen 2.5, offrant des capacités avancées en com
 **Spécifications techniques :**
 - **Vitesse** : 32 tokens/seconde tokens/seconde
 - **Consommation** : 5.73 kWh/million tokens
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/qwen2.5_32b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -737,7 +737,7 @@ Modèle compact et efficace de la famille Qwen 2.5, adapté aux tâches généra
 **Spécifications techniques :**
 - **Vitesse** : 60 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.9 kWh/million tokens 🌱
-- **Licence** : MIT licence
+- **Licence** : [MIT licence](./licences/qwen2.5_3b.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -755,7 +755,7 @@ Modèle compact et efficace de la famille Qwen3, adapté aux tâches générales
 **Spécifications techniques :**
 - **Vitesse** : 60 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.9 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -773,7 +773,7 @@ Modèle très compact de la famille Qwen3, offrant un bon équilibre performance
 **Spécifications techniques :**
 - **Vitesse** : 83 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.65 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -791,7 +791,7 @@ Modèle compact de la famille Qwen3 offrant d'excellentes performances dans un f
 **Spécifications techniques :**
 - **Vitesse** : 48 tokens/seconde tokens/seconde
 - **Consommation** : 1.13 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -809,7 +809,7 @@ Modèle Qwen3 8B offrant un bon équilibre entre performance et efficacité pour
 **Spécifications techniques :**
 - **Vitesse** : 29 tokens/seconde tokens/seconde
 - **Consommation** : 1.87 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -827,7 +827,7 @@ Modèle Vision-Langage compact, solution performante pour l'IA en périphérie (
 **Spécifications techniques :**
 - **Vitesse** : 65 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 0.83 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -845,7 +845,7 @@ Modèle Vision-Langage performant, surpassant GPT-4o-mini sur certaines tâches.
 **Spécifications techniques :**
 - **Vitesse** : 37 tokens/seconde tokens/seconde
 - **Consommation** : 1.46 kWh/million tokens 🌱
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -863,7 +863,7 @@ Modèle de langage spécialisé pour la cybersécurité, optimisé pour l'effica
 **Spécifications techniques :**
 - **Vitesse** : 22 tokens/seconde tokens/seconde
 - **Consommation** : 2.46 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
@@ -881,7 +881,7 @@ Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
 **Spécifications techniques :**
 - **Vitesse** : 53 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 4.5 kWh/million tokens
-- **Licence** : Apache 2.0
+- **Licence** : [Apache 2.0](./licences/apache2.licence.md)
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**

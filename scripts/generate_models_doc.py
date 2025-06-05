@@ -160,6 +160,78 @@ class LLMaaSDocGenerator:
         else:
             return f"{number:,.2f}".replace(",", " ")
     
+    def _generate_licence_filename(self, model_name: str, parameters_string: str) -> str:
+        """
+        Génère automatiquement le nom du fichier de licence à partir du nom du modèle.
+        
+        Args:
+            model_name (str): Nom du modèle (ex: "Qwen3 14B")
+            parameters_string (str): Taille du modèle (ex: "14B")
+            
+        Returns:
+            str: Nom du fichier de licence (ex: "qwen3_14b.licence.md")
+        """
+        # Normalisation du nom du modèle
+        name_lower = model_name.lower()
+        
+        # Mappings spéciaux pour correspondre aux noms de fichiers existants
+        name_mappings = {
+            "llama 3.3 70b": "llama3.3_70b",
+            "qwen3 235b": "apache2",  # Apache 2.0
+            "deepseek-r1 671b": "deepseek-r1_671b", 
+            "deepseek-r1 70b": "deepseek-r1_70b",
+            "deepseek-r1 32b": "deepseek-r1_32b",
+            "deepseek-r1 14b": "deepseek-r1_14b",
+            "gemma 3 27b": "gemma3_27b",
+            "gemma 3 12b": "gemma3_12b",
+            "gemma 3 4b": "gemma3_4b", 
+            "gemma 3 1b": "gemma3_1b",
+            "qwen3 30b-a3b fp8": "apache2",  # Apache 2.0
+            "granite 3.2 vision": "apache2",  # Apache 2.0
+            "granite 3.3 8b": "apache2",  # Apache 2.0
+            "granite 3.3 2b": "apache2",  # Apache 2.0
+            "granite 3.1 moe": "apache2",  # Apache 2.0
+            "granite 3 guardian 2b": "apache2",  # Apache 2.0
+            "granite 3 guardian 8b": "apache2",  # Apache 2.0
+            "granite embedding": "apache2",  # Apache 2.0
+            "lucie-7b-instruct": "apache2",  # Apache 2.0
+            "mistral small 3.1": "apache2",  # Apache 2.0
+            "foundation-sec-8b": "apache2",  # Apache 2.0
+            "cogito 14b": "cogito_14b",
+            "cogito 32b": "cogito_32b", 
+            "cogito 3b": "cogito_3b",
+            "qwen3 32b": "apache2",  # Apache 2.0
+            "qwen3 14b": "apache2",  # Apache 2.0
+            "qwen3 8b": "apache2",  # Apache 2.0
+            "qwen3 4b": "apache2",  # Apache 2.0
+            "qwen3 1.7b": "apache2",  # Apache 2.0
+            "qwen3 0.6b": "apache2",  # Apache 2.0
+            "qwen 2.5 32b": "qwen2.5_32b",
+            "qwen 2.5 14b": "qwen2.5_14b",
+            "qwen 2.5 3b": "qwen2.5_3b",
+            "qwen 2.5 1.5b": "qwen2.5_1.5b",
+            "qwen 2.5 0.5b": "qwen2.5_0.5b",
+            "qwen2.5-vl 7b": "apache2",  # Apache 2.0
+            "qwen2.5-vl 3b": "apache2",  # Apache 2.0
+            "qwq-32b": "apache2",  # Apache 2.0
+            "deepcoder": "apache2",  # Apache 2.0
+            "devstral 24b": "apache2"  # Apache 2.0
+        }
+        
+        # Vérifier si on a un mapping direct
+        if name_lower in name_mappings:
+            return name_mappings[name_lower]
+        
+        # Génération automatique par défaut
+        # Remplacer espaces par underscore, supprimer caractères spéciaux
+        clean_name = name_lower.replace(" ", "_").replace("-", "-").replace(".", "")
+        
+        # Ajouter la taille si pas déjà présente
+        if parameters_string.lower() not in clean_name:
+            clean_name += f"_{parameters_string.lower()}"
+        
+        return clean_name
+    
     def _generate_model_section(self, model: Dict[str, Any]) -> str:
         """
         Génère la section Markdown pour un modèle.
@@ -189,7 +261,18 @@ class LLMaaSDocGenerator:
         if 'energy_per_million_tokens' in model and model['energy_per_million_tokens']:
             section += f"- **Consommation** : {model['energy_per_million_tokens']} kWh/million tokens{efficient_icon}\n"
         
-        section += f"- **Licence** : {model['licence']}\n"
+        # Génération du lien vers la licence
+        licence_text = model['licence']
+        licence_filename = self._generate_licence_filename(model['name'], model['parameters_string'])
+        licence_file = f"./licences/{licence_filename}.licence.md"
+        
+        # Vérifier si le fichier de licence existe
+        licence_file_path = self.output_path.parent / "licences" / f"{licence_filename}.licence.md"
+        if licence_file_path.exists():
+            licence_text = f"[{model['licence']}]({licence_file})"
+        # Sinon, garder le texte de licence sans lien
+        
+        section += f"- **Licence** : {licence_text}\n"
         
         if 'location' in model:
             section += f"- **Localisation** : {model['location']}\n"

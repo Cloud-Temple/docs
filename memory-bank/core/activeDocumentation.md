@@ -94,21 +94,29 @@
 - 📝 **Architecture réseau** : Diagrammes et concepts
 - 📝 **Configuration** : Guides techniques
 
-### 🤖 LLMaaS - LLM as a Service - Statut : ✅ INITIALISÉ
+### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 36 modèles (généré depuis YAML)
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 40 modèles (généré depuis YAML)
 - ✅ `llmaas.md` : Vue d'ensemble service (style Anthropic factuel)
 - ✅ `quickstart.md` : Guide 5min **TESTÉ** - Tous exemples validés (curl + Python)
 - ✅ `api.md` : Documentation API **TESTÉE** - Streaming SSE + endpoints validés
-- 🔄 `concepts.md` : Architecture IA (planifié)
+- ✅ `concepts.md` : Architecture IA **CRÉÉ** (05/06/2025)
 - 🔄 `use-cases.md` : Cas d'usage sectoriels (planifié)
 - 🔄 `security.md` : Sécurité et conformité IA (planifié)
 - 🔄 `tutorials.md` : Guides avancés (planifié)
 - ✅ `images/` : Structure créée pour screenshots
+- ✅ `licences/` : **SYSTÈME AUTOMATISÉ** - 42 fichiers de licence
+
+#### Système de Licences LLMaaS - ✅ COMPLET (05/06/2025)
+- ✅ **Fichier générique** : `apache2.licence.md` (20+ modèles)
+- ✅ **Fichier Llama 3.3** : `llama3.3_70b.licence.md` (licence spécifique)
+- ✅ **Mappings automatiques** : Script génère liens selon type de licence
+- ✅ **Vérification existence** : Pas de liens cassés
+- ✅ **Maintenance zéro** : Un fichier par type de licence
 
 #### Configuration Automatisée
-- ✅ **Source** : `memory-bank/models_config.yaml` (36 modèles)
+- ✅ **Source** : `memory-bank/models_config.yaml` (40 modèles)
 - ✅ **Script** : `scripts/generate_models_doc.py` (Python professionnel)
 - ✅ **NPM** : `npm run generate:models` (intégration workflow)
 - ✅ **Conformité** : SecNumCloud + HDS + Souveraineté + C5
