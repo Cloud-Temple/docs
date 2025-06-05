@@ -37,7 +37,7 @@ Modello multilingue di punta sviluppato da Meta, progettato per eccellere nel di
 **Specifiche tecniche:**
 - **Velocità** : 30 token/secondo token/secondo
 - **Consumo** : 8,87 kWh/milione di token
-- **Licenza** : [Licenza Comunitaria Llama 3.3](./licences/llama3.3_70b.licenza.md)
+- **Licenza** : [Licenza Comunitaria LLAMA 3.3](./licences/llama3.3_70b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -184,7 +184,7 @@ Modello denso di nuova generazione Qwen3 (14B), che offre prestazioni equivalent
 **Specifiche tecniche:**
 - **Velocità** : 69 token/secondo token/secondo ⚡
 - **Consumo** : 2,65 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licenze/apache2.licenza.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -208,7 +208,7 @@ Versione intermedia del modello Gemma 3 che offre un ottimo equilibrio tra prest
 **Specifiche tecniche:**
 - **Velocità** : 67 token/secondo token/secondo ⚡
 - **Consumo** : 2,73 kWh/milione di token
-- **Licenza** : [Termini d'uso di Google Gemma](./licenze/gemma3_12b.licenza.md)
+- **Licenza** : [Termini d'uso di Google Gemma](./licences/gemma3_12b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -233,7 +233,7 @@ Modello compatto di Google che offre ottime prestazioni in un formato leggero ed
 **Specifiche tecniche:**
 - **Velocità** : 58 token/secondo token/secondo ⚡
 - **Consumo** : 0,93 kWh/milione di token 🌱
-- **Licenza** : [Termini d'uso di Google Gemma](./licenze/gemma3_4b.licenza.md)
+- **Licenza** : [Termini d'uso di Google Gemma](./licences/gemma3_4b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -258,7 +258,7 @@ Micro-modello ultra-leggero progettato per deployment su dispositivi con risorse
 **Specifiche tecniche:**
 - **Velocità** : 41 token/secondo token/secondo
 - **Consumo** : 1,32 kWh/milione di token 🌱
-- **Licenza** : [Termini d'uso di Google Gemma](./licenze/gemma3_1b.licenza.md)
+- **Licenza** : [Termini d'uso di Google Gemma](./licences/gemma3_1b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità:**
@@ -283,7 +283,7 @@ Modello open-source multilingue causale (7B), fine-tuned da Lucie-7B. Ottimizzat
 **Specifiche tecniche:**
 - **Velocità** : 41 token/secondo token/secondo
 - **Consumo** : 1,32 kWh/milione di token 🌱
-- **Licenza** : [Apache 2.0](./licenze/apache2.licenza.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -301,7 +301,7 @@ Modello compatto e reattivo di Mistral AI, progettato specificamente per offrire
 **Specifiche tecniche :**
 - **Velocità** : 14 token/secondo token/secondo
 - **Consumo** : 13.06 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -326,260 +326,13 @@ Modello IA open source (14B) di Together AI & Agentica, alternativa credibile ai
 **Specifiche tecniche :**
 - **Velocità** : 62 token/secondo token/secondo ⚡
 - **Consumo** : 2.95 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ❌ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
 
-**Tags :** `Programmazione` `Ragionamento` `Open-Source` `Matematica` `Veloce`
-
-**Casi d'uso :**
-- Generazione di codice in più di 15 linguaggi con ottimizzazione delle prestazioni
-- Debugging e refactoring di basi di codice esistenti con analisi dell'impatto
-- Implementazione di algoritmi complessi (grafo, alberi, euristica)
-- Trasposizione di codice tra linguaggi e framework (es. Python vs JavaScript)
-- Creazione automatica di test unitari con copertura del codice > 80%
-
----
-
-### Granite 3.2 Vision
-**IBM • 2B parametri • Contesto : 16 384 token**
-
-Modello rivoluzionario di IBM specializzato in visione artificiale, in grado di analizzare e comprendere direttamente documenti visivi senza ricorrere a tecnologie OCR intermedie.
-
-**Specifiche tecniche :**
-- **Velocità** : 48 token/secondo token/secondo ⚡
-- **Consumo** : 1.13 kWh/milione di token 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ✅ Visione • ❌ Ragionamento • ✅ Sicurezza
-
-**Tags :** `Visione` `Sicurezza` `Veloce` `Compatto` `Efficiente`
-
-**Casi d'uso :**
-- Estrazione di dati strutturati da fatture e moduli senza OCR
-- Analisi diretta di tabelle e grafici con interpretazione delle tendenze
-- Lettura e interpretazione di diagrammi tecnici (elettrici, meccanici)
-- Elaborazione di documenti manoscritti con alto tasso di riconoscimento
-- Visione artificiale leggera (2B parametri) con velocità elevata (79 token/s)
-
----
-
-### Granite 3.3 8B
-**IBM • 8B parametri • Contesto : 60 000 token**
-
-Modello Granite 8B ottimizzato da IBM per un ragionamento e un follow-up di istruzioni migliorati, con un contesto di 128k token.
-
-**Specifiche tecniche :**
-- **Velocità** : 27 token/secondo token/secondo
-- **Consumo** : 2.0 kWh/milione di token 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ✅ Sicurezza
-
-**Tags :** `Agente` `Ragionamento` `Sicurezza` `Efficiente`
-
-**Casi d'uso :**
-- Compiti generali di follow-up di istruzioni (classificazione, estrazione, Q&A)
-- Assistenti IA multilingue (12 lingue)
-- Elaborazione di documenti molto lunghi (128k token): riassunti e Q&A
-- Generazione/completamento di codice con Fill-in-the-Middle
-- Integrazione con strumenti esterni tramite function calling
-- Ragionamento strutturato con il modo "Thinking"
-
----
-
-### Granite 3.3 2B
-**IBM • 2B parametri • Contesto : 120 000 token**
-
-Modello Granite 2B ottimizzato da IBM, ottimizzato per il ragionamento e il follow-up di istruzioni, con un contesto di 128k token.
-
-**Specifiche tecniche :**
-- **Velocità** : 45 token/secondo token/secondo ⚡
-- **Consumo** : 1.2 kWh/milione di token 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ✅ Sicurezza
-
-**Tags :** `Agente` `Ragionamento` `Sicurezza` `Veloce` `Efficiente`
-
-**Casi d'uso :**
-- Deployment leggeri con grande contesto (128k token)
-- Compiti generali di follow-up di istruzioni su risorse limitate
-- Assistenti IA multilingue compatti
-- Elaborazione di documenti lunghi su dispositivi meno potenti
-- Generazione/completamento di codice FIM su workstation standard
-
----
-
-### Granite 3.1 MoE
-**IBM • 3B parametri • Contesto : 32 000 token**
-
-Modello innovativo di IBM che utilizza l'architettura Mixture-of-Experts (MoE) per offrire prestazioni eccezionali e ottimizzare drasticamente l'utilizzo delle risorse computazionali.
-
-**Specifiche tecniche :**
-- **Velocità** : 74 token/secondo token/secondo ⚡
-- **Consumo** : 0.73 kWh/milione di token 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ✅ Sicurezza
-
-**Tags :** `Agente` `Sicurezza` `Veloce` `MoE` `Efficienza` `Efficiente`
-
-**Casi d'uso :**
-- Applicazioni generaliste con costo di inferenza ottimizzato (42 token/secondo)
-- Elaborazione di documenti in ambienti CPU con utilizzo RAM limitato
-- Analisi specializzate con attivazione dinamica delle parti pertinenti del modello
-- Deployment ad alta densità con basso consumo energetico per inferenza
-- Elaborazione parallela di diversi tipi di query con specializzazione MoE
-
----
-
-### Cogito 14B
-**Deep Cogito • 14B parametri • Contesto : 32 000 token**
-
-Modello di Deep Cogito progettato per eccellere nelle attività di ragionamento profondo e comprensione contestuale raffinata, ideale per applicazioni analitiche avanzate.
-
-**Specifiche tecniche :**
-- **Velocità** : 60 token/secondo token/secondo ⚡
-- **Consumo** : 3.05 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
-
-**Tags :** `Agente` `Ragionamento` `Comprensione` `Analisi` `Veloce`
-
-**Casi d'uso :**
-- Analisi semantica di testi con identificazione delle implicazioni non esplicite
-- Ragionamento causale strutturato con identificazione delle relazioni causa-effetto
-- Sintesi di documenti complessi con estrazione delle informazioni chiave
-- Sistemi di domanda-risposta precisi su corpus documentari specializzati
-- Analisi argomentativa con valutazione della solidità dei ragionamenti
-
----
-
-### Cogito 32B
-**Deep Cogito • 32B parametri • Contesto : 32 000 token**
-
-Versione avanzata del modello Cogito che offre capacità di ragionamento e analisi notevolmente amplificate, progettata per applicazioni più esigenti in termini di intelligenza artificiale analitica.
-
-**Specifiche tecniche :**
-- **Velocità** : 32 token/secondo token/secondo
-- **Consumo** : 5.73 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
-
-**Tags :** `Agente` `Ragionamento` `Comprensione` `Analisi`
-
-**Casi d'uso :**
-- Analisi di scenari multi-fattoriali con valutazione probabilistica dei risultati
-- Risoluzione di problemi scientifici con dimostrazione formale dei passaggi
-- Applicazioni ad alta criticità che richiedono precisione e verificabilità dei risultati
-- Sistemi esperti in ambiti specializzati (giuridico, medico, tecnico)
-- Analisi con ragionamento multi-fase e spiegabilità completa delle conclusioni
-
----
-
-### Qwen3 32B
-**Qwen Team • 32B parametri • Contesto : 40 000 token**
-
-Modello potente della nuova generazione Qwen3, che offre avanzate capacità di ragionamento, codifica e agenti, con un contesto esteso.
-
-**Specifiche tecniche :**
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
-
-**Tags :** `Agente` `Ragionamento` `Multilingua` `Grande Contesto`
-
-**Casi d'uso :**
-- Agenti conversazionali avanzati con grande contesto e integrazione di strumenti (MCP)
-- Risoluzione di problemi complessi (matematica, codifica) con modalità "Thinking"
-- Analisi e generazione di documenti voluminosi
-- Applicazioni multilingue (>100 lingue) che richiedono una comprensione approfondita
-
----
-
-### QwQ-32B
-**Qwen Team • 32B parametri • Contesto : 32 000 token**
-
-Modello da 32 miliardi di parametri migliorato con apprendimento per rinforzo (RL) per eccellere nel ragionamento, nella codifica, nelle matematiche e nelle attività di agente.
-
-**Specifiche tecniche :**
-- **Velocità** : 35 token/secondo token/secondo
-- **Consumo** : 5.22 kWh/milione di token
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
-
-**Tags :** `Agente` `Ragionamento` `Codifica` `Matematica`
-
-**Casi d'uso :**
-- Risoluzione di problemi complessi che richiedono ragionamento e utilizzo di strumenti
-- Generazione ed esecuzione di codice con verifica dei risultati
-- Compiti matematici avanzati con verifica dell'esattezza
-- Applicazioni di agente in grado di interagire con l'ambiente
-- Follow-up di istruzioni migliorato e allineamento con le preferenze umane
-
----
-
-### DeepSeek-R1 14B
-**DeepSeek AI • 14B parametri • Contesto : 32 000 token**
-Versione compatta ed efficiente del modello DeepSeek-R1, che offre un ottimo compromesso tra prestazioni e leggerezza per i deployamenti che richiedono flessibilità e reattività.
-
-**Specifiche tecniche :**
-- **Velocità** : 60 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 3.05 kWh/milione di tokens
-- **Licenza** : [MIT licence](./licences/deepseek-r1_14b.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-❌ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
-
-**Tag :** `Agent` `Ragionamento` `Compact` `Versatile` `Veloce`
-
-**Casi d'uso :**
-- Applicazioni generaliste con esigenze di inferenza rapida (44 tokens/s)
-- Deployamenti su server standard senza GPU specializzati (14B parametri)
-- Elaborazione testi con analisi contestuale e tempo di risposta < 2s
-- Deployamento su calcolo periferico con inferenza locale ottimizzata
-- Prototipazione rapida di applicazioni IA con tempo di iterazione breve
-
----
-
-### DeepSeek-R1 32B
-**DeepSeek AI • 32B parametri • Contesto : 32 000 tokens**
-
-Versione intermedia del modello DeepSeek-R1 che offre un equilibrio strategico tra le capacità avanzate della versione 70B e l'efficienza della versione 14B, per una versatilità e prestazioni ottimali.
-
-**Specifiche tecniche :**
-- **Velocità** : 33 tokens/secondo tokens/secondo
-- **Consumo** : 5.54 kWh/milione di tokens
-- **Licenza** : [MIT licence](./licences/deepseek-r1_32b.licence.md)
-- **Localizzazione** : FR 🇫🇷
-
-**Capacità :**
-❌ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
-
-**Tag :** `Agent` `Ragionamento` `Versatile`
+**Tag :** `Agente` `Ragionamento` `Versatile`
 
 **Casi d'uso :**
 - Applicazioni che richiedono un buon equilibrio tra potenza e costo (32B parametri)
@@ -591,62 +344,62 @@ Versione intermedia del modello DeepSeek-R1 che offre un equilibrio strategico t
 ---
 
 ### Cogito 3B
-**Deep Cogito • 3B parametri • Contesto : 32 000 tokens**
+**Deep Cogito • 3B parametri • Contesto : 32 000 token**
 
 Versione compatta del modello Cogito, ottimizzata per il ragionamento su dispositivi con risorse limitate.
 
 **Specifiche tecniche :**
-- **Velocità** : 63 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.86 kWh/milione di tokens 🌱
-- **Licenza** : [LLAMA 3.2 Community Licence](./licences/cogito_3b.licence.md)
+- **Velocità** : 63 token/secondo token/secondo ⚡
+- **Consumo** : 0.86 kWh/milione di token 🌱
+- **Licenza** : [Licenza Comunitaria LLAMA 3.2](./licences/cogito_3b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Ragionamento` `Compact` `Embedded` `Efficiente` `Veloce`
+**Tag :** `Ragionamento` `Compatto` `Embedded` `Efficiente` `Veloce`
 
 ---
 
 ### Granite Embedding
-**IBM • 278M parametri • Contesto : 32 000 tokens**
+**IBM • 278M parametri • Contesto : 32 000 token**
 
 Modello di embedding ultra-leggero di IBM per la ricerca semantica e la classificazione.
 
 **Specifiche tecniche :**
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ❌ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Embedding` `Compact` `Semantico` `Efficiente`
+**Tag :** `Embedding` `Compatto` `Semantico` `Efficiente`
 
 ---
 
 ### Granite 3 Guardian 2B
-**IBM • 2B parametri • Contesto : 8 192 tokens**
+**IBM • 2B parametri • Contesto : 8 192 token**
 
 Modello compatto di IBM specializzato nella sicurezza e conformità, che rileva i rischi e i contenuti inappropriati.
 
 **Specifiche tecniche :**
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ❌ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ✅ Sicurezza
 
-**Tag :** `Sicurezza` `Conformità` `Compact` `Filtraggio` `Efficiente`
+**Tag :** `Sicurezza` `Conformità` `Compatto` `Filtraggio` `Efficiente`
 
 ---
 
 ### Granite 3 Guardian 8B
-**IBM • 8B parametri • Contesto : 32 000 tokens**
+**IBM • 8B parametri • Contesto : 32 000 token**
 
 Modello di IBM specializzato nella sicurezza e conformità, che offre capacità avanzate di rilevamento dei rischi.
 
 **Specifiche tecniche :**
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -657,50 +410,50 @@ Modello di IBM specializzato nella sicurezza e conformità, che offre capacità 
 ---
 
 ### Qwen 2.5 0.5B
-**Qwen Team • 0.5B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 0.5B parametri • Contesto : 32 000 token**
 
 Micro-modello ultra-leggero della serie Qwen 2.5, progettato per un'efficienza massima su dispositivi limitati.
 
 **Specifiche tecniche :**
-- **Velocità** : 57 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.95 kWh/milione di tokens 🌱
-- **Licenza** : [MIT licence](./licences/qwen2.5_0.5b.licence.md)
+- **Velocità** : 57 token/secondo token/secondo ⚡
+- **Consumo** : 0.95 kWh/milione di token 🌱
+- **Licenza** : [Licenza MIT](./licences/qwen2.5_0.5b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Ultra-compact` `Veloce` `Embedded` `Efficiente`
+**Tag :** `Ultra-compatto` `Veloce` `Embedded` `Efficiente`
 
 ---
 
 ### Qwen 2.5 1.5B
-**Qwen Team • 1.5B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 1.5B parametri • Contesto : 32 000 token**
 
 Modello molto compatto della serie Qwen 2.5, che offre un buon equilibrio tra prestazioni e dimensioni per deployamenti leggeri.
 
 **Specifiche tecniche :**
-- **Velocità** : 94 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.58 kWh/milione di tokens 🌱
-- **Licenza** : [MIT licence](./licences/qwen2.5_1.5b.licence.md)
+- **Velocità** : 94 token/secondo token/secondo ⚡
+- **Consumo** : 0.58 kWh/milione di token 🌱
+- **Licenza** : [Licenza MIT](./licences/qwen2.5_1.5b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Compact` `Veloce` `Embedded` `Efficiente`
+**Tag :** `Compatto` `Veloce` `Embedded` `Efficiente`
 
 ---
 
 ### Qwen 2.5 14B
-**Qwen Team • 14B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 14B parametri • Contesto : 32 000 token**
 
 Modello versatile di dimensione media della serie Qwen 2.5, buon equilibrio tra prestazioni e risorse.
 
 **Specifiche tecniche :**
-- **Velocità** : 61 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 3.0 kWh/milione di tokens
-- **Licenza** : [MIT licence](./licences/qwen2.5_14b.licence.md)
+- **Velocità** : 61 token/secondo token/secondo ⚡
+- **Consumo** : 3.0 kWh/milione di token
+- **Licenza** : [Licenza MIT](./licences/qwen2.5_14b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -711,14 +464,14 @@ Modello versatile di dimensione media della serie Qwen 2.5, buon equilibrio tra 
 ---
 
 ### Qwen 2.5 32B
-**Qwen Team • 32B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 32B parametri • Contesto : 32 000 token**
 
 Modello potente della serie Qwen 2.5, che offre capacità avanzate di comprensione e generazione.
 
 **Specifiche tecniche :**
-- **Velocità** : 32 tokens/secondo tokens/secondo
-- **Consumo** : 5.73 kWh/milione di tokens
-- **Licenza** : [MIT licence](./licences/qwen2.5_32b.licence.md)
+- **Velocità** : 32 token/secondo token/secondo
+- **Consumo** : 5.73 kWh/milione di token
+- **Licenza** : [Licenza MIT](./licences/qwen2.5_32b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -729,86 +482,86 @@ Modello potente della serie Qwen 2.5, che offre capacità avanzate di comprensio
 ---
 
 ### Qwen 2.5 3B
-**Qwen Team • 3B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 3B parametri • Contesto : 32 000 token**
 
 Modello compatto ed efficiente della serie Qwen 2.5, adatto alle attività generali su risorse limitate.
 
 **Specifiche tecniche :**
-- **Velocità** : 60 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.9 kWh/milione di tokens 🌱
-- **Licenza** : [MIT licence](./licences/qwen2.5_3b.licence.md)
+- **Velocità** : 60 token/secondo token/secondo ⚡
+- **Consumo** : 0.9 kWh/milione di token 🌱
+- **Licenza** : [Licenza MIT](./licences/qwen2.5_3b.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Compact` `Veloce` `Versatile` `Efficiente`
+**Tag :** `Compatto` `Veloce` `Versatile` `Efficiente`
 
 ---
 
 ### Qwen3 0.6b
-**Qwen Team • 0.6B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 0.6B parametri • Contesto : 32 000 token**
 
 Modello compatto ed efficiente della serie Qwen3, adatto alle attività generali su risorse limitate.
 
 **Specifiche tecniche :**
-- **Velocità** : 60 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.9 kWh/milione di tokens 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 60 token/secondo token/secondo ⚡
+- **Consumo** : 0.9 kWh/milione di token 🌱
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Compact` `Veloce` `Versatile` `Efficiente`
+**Tag :** `Compatto` `Veloce` `Versatile` `Efficiente`
 
 ---
 
 ### Qwen3 1.7b
-**Qwen Team • 1.7B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 1.7B parametri • Contesto : 32 000 token**
 
 Modello molto compatto della serie Qwen3, che offre un buon equilibrio tra prestazioni e dimensioni per deployamenti leggeri.
 
 **Specifiche tecniche :**
-- **Velocità** : 83 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.65 kWh/milione di tokens 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 83 token/secondo token/secondo ⚡
+- **Consumo** : 0.65 kWh/milione di token 🌱
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Compact` `Veloce` `Embedded` `Efficiente`
+**Tag :** `Compatto` `Veloce` `Embedded` `Efficiente`
 
 ---
 
 ### Qwen3 4b
-**Qwen Team • 4B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 4B parametri • Contesto : 32 000 token**
 
 Modello compatto della serie Qwen3 che offre ottime prestazioni in un formato leggero ed economico.
 
 **Specifiche tecniche :**
-- **Velocità** : 48 tokens/secondo tokens/secondo
-- **Consumo** : 1.13 kWh/milione di tokens 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 48 token/secondo token/secondo
+- **Consumo** : 1.13 kWh/milione di token 🌱
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ✅ Strumenti/Agente • ❌ Visione • ❌ Ragionamento • ❌ Sicurezza
 
-**Tag :** `Compact` `Efficiente`
+**Tag :** `Compatto` `Efficiente`
 
 ---
 
 ### Qwen3 8b
-**Qwen Team • 8B parametri • Contesto : 32 000 tokens**
+**Qwen Team • 8B parametri • Contesto : 32 000 token**
 
 Modello Qwen3 8B che offre un buon equilibrio tra prestazioni ed efficienza per attività generali.
 
 **Specifiche tecniche :**
-- **Velocità** : 29 tokens/secondo tokens/secondo
-- **Consumo** : 1.87 kWh/milione di tokens 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 29 token/secondo token/secondo
+- **Consumo** : 1.87 kWh/milione di token 🌱
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -819,14 +572,14 @@ Modello Qwen3 8B che offre un buon equilibrio tra prestazioni ed efficienza per 
 ---
 
 ### Qwen2.5-VL 3B
-**Qwen Team • 3.8B parametri • Contesto : 128 000 tokens**
+**Qwen Team • 3.8B parametri • Contesto : 128 000 token**
 
 Modello Vision-Langage compatto, soluzione performante per l'IA in periferia (edge AI).
 
 **Specifiche tecniche :**
-- **Velocità** : 65 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 0.83 kWh/milione di tokens 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 65 token/secondo token/secondo ⚡
+- **Consumo** : 0.83 kWh/milione di token 🌱
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -837,14 +590,14 @@ Modello Vision-Langage compatto, soluzione performante per l'IA in periferia (ed
 ---
 
 ### Qwen2.5-VL 7B
-**Qwen Team • 7B (8.3B) parametri • Contesto : 128 000 tokens**
+**Qwen Team • 7B (8.3B) parametri • Contesto : 128 000 token**
 
 Modello Vision-Langage performante, che supera GPT-4o-mini in alcune attività.
 
 **Specifiche tecniche :**
-- **Velocità** : 37 tokens/secondo tokens/secondo
-- **Consumo** : 1.46 kWh/milione di tokens 🌱
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 37 token/secondo token/secondo
+- **Consumo** : 1.46 kWh/milione di token 🌱
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
@@ -855,30 +608,32 @@ Modello Vision-Langage performante, che supera GPT-4o-mini in alcune attività.
 ---
 
 ### Foundation-Sec-8B
-**Foundation AI — Cisco • 8B parametri • Contesto : 16 000 tokens**
+**Foundation AI — Cisco • 8B parametri • Contesto : 16 000 token**
 
 Modello di linguaggio specializzato per la cybersecurity, ottimizzato per l'efficienza.
-- **Velocità** : 22 tokens/secondo tokens/secondo
-- **Consumo** : 2,46 kWh/milione di tokens
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+
+**Specifiche tecniche :**
+- **Velocità** : 22 token/secondo token/secondo
+- **Consumo** : 2,46 kWh/milione di token
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
 ❌ Strumenti/Agente • ❌ Visione • ✅ Ragionamento • ✅ Sicurezza
 
-**Tags :** `Sicurezza` `Compacto`
+**Tags :** `Sicurezza` `Compatto`
 
 ---
 
 ### devstral 24B
-**Mistral AI & All Hands AI • 24B parametri • Contesto : 120 000 tokens**
+**Mistral AI & All Hands AI • 24B parametri • Contesto : 120 000 token**
 
 Devstral è un LLM agente per compiti di ingegneria del software.
 
 **Specifiche tecniche :**
-- **Velocità** : 53 tokens/secondo tokens/secondo ⚡
-- **Consumo** : 4,5 kWh/milione di tokens
-- **Licenza** : [Apache 2.0](./licences/apache2.licence.md)
+- **Velocità** : 53 token/secondo token/secondo ⚡
+- **Consumo** : 4,5 kWh/milione di token
+- **Licenza** : [Apache 2.0](./licences/apache2.licenza.md)
 - **Localizzazione** : FR 🇫🇷
 
 **Capacità :**
