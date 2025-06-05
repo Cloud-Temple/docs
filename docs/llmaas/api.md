@@ -23,13 +23,15 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 ### Système de Tiers par Montant
 
-| Tier | Crédit d'Achat | Limite Mensuelle | Description |
-|------|----------------|-------------------|-------------|
-| **Tier 1** | 200 € | 1 000 € | Utilisation standard |
-| **Tier 2** | 500 € | 3 000 € | Usage professionnel |
-| **Tier 3** | 1 000 € | 10 000 € | Volume élevé |
-| **Tier 4** | 2 000 € | 25 000 € | Entreprise |
-| **Facturation Mensuelle** | N/A | Illimitée | Contact commercial |
+| Tier | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description |
+|------|----------------|-------------------|---------------------|--------------------|-----------| 
+| **Tier 1** | 200 € | 1 000 € | 350 000 | 8 500 000 | Utilisation standard |
+| **Tier 2** | 500 € | 3 000 € | 1 000 000 | 25 000 000 | Usage professionnel |
+| **Tier 3** | 1 000 € | 5 000 € | 1 750 000 | 42 000 000 | Volume élevé |
+| **Tier 4** | 4 000 € | 10 000 € | 3 500 000 | 84 000 000 | Entreprise |
+| **Facturation Mensuelle** | N/A | Illimitée | Illimitée | Illimitée | Contact commercial |
+
+**Note** : Limites calculées sur les tokens de sortie (4€/million). Les tokens d'entrée (0.9€/million) ont des limites proportionnellement plus élevées.
 
 ### Headers de Limite
 
