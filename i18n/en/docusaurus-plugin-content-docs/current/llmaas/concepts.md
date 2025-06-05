@@ -5,10 +5,6 @@ sidebar_position: 3
 
 # Concepts and Architecture LLMaaS
 
-## Overview
-
-The **LLMaaS** (Large Language Models as a Service) service from Cloud Temple provides secure and sovereign access to the most advanced AI models, with the **SecNumCloud qualification** from ANSSI.
-
 ## 🏗️ Technical Architecture
 
 ### Cloud Temple Infrastructure
@@ -73,7 +69,7 @@ print(f"Estimated cost: {total_cost:.6f}€")
 
 ### SecNumCloud Qualification
 
-The LLMaaS service runs on an infrastructure that has the **SecNumCloud 3.2** qualification from ANSSI, ensuring:
+The LLMaaS service is deployed on a Cloud Temple technical infrastructure that has the **SecNumCloud 3.2** qualification from ANSSI, ensuring:
 
 #### **Data Protection**
 - **End-to-end Encryption**: TLS 1.3 for all exchanges
@@ -100,16 +96,15 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ### Performance Metrics
 
-    In progress
-
-
 #### **Latency**
-
-    In progress
+- **Average response time**: < 2 seconds for 8B models
+- **Time to first token**: < 500ms
+- **Streaming throughput**: 50-100 tokens/second depending on model
 
 #### **Throughput**
-
-    In progress
+- **Concurrent requests**: Up to 1000 requests/minute per tenant
+- **Automatic scaling**: Real-time load adaptation
+- **Availability**: 99.9% SLA guaranteed
 
 
 ### Real-time Monitoring
