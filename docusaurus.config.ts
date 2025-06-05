@@ -11,9 +11,13 @@ const config: Config = {
   onBrokenLinks: 'log',
 
   // enable faster build time https://docusaurus.io/blog/releases/3.6
-  future: {
-    experimental_faster: true,
-  },
+  // Temporarily disabled due to configuration error, will re-enable if needed
+  // future: {
+  //   experimental_faster: true,
+  //   v4: {
+  //     removeLegacyPostBuildHeadAttribute: true,
+  //   },
+  // },
 
   trailingSlash: false,
 

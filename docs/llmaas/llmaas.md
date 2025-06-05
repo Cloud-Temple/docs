@@ -1,5 +1,5 @@
 ---
-title: LLM as a Service (LLMaaS)
+title: Vue d'ensemble
 sidebar_position: 1
 ---
 

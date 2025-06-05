@@ -1,5 +1,5 @@
 ---
-title: Catalogue des Modèles LLMaaS
+title: Catalogue des Modèles IA
 sidebar_position: 2
 ---
 
@@ -243,7 +243,7 @@ Modèle compact de Google offrant d'excellentes performances dans un format lég
 
 **Cas d'usage :**
 - Applications embarquées et edge computing avec traitement d'images
-- Chatbots multimodaux réactifs nécessitant faible latence (<50ms)
+- Chatbots multimodaux réactifs nécessitant faible latence
 - Déploiements à grande échelle avec capacités visuelles et textuelles
 - Applications mobiles avec analyse d'images et textes
 - Traitement de requêtes visuelles simples à moyenne complexité avec haute performance
@@ -338,7 +338,7 @@ Modèle IA open source (14B) par Together AI & Agentica, alternative crédible a
 - Génération de code dans plus de 15 langages avec optimisation des performances
 - Débogage et refactoring de bases de code existantes avec analyse d'impact
 - Implémentation d'algorithmes complexes (graphes, arbres, heuristiques)
-- {'Transposition de code entre langages/frameworks (ex': 'Python vers JavaScript)'}
+- Transposition de code entre langages et frameworks (par exemple Python vers JavaScript)
 - Création automatisée de tests unitaires avec couverture de code > 80%
 
 ---
@@ -387,7 +387,7 @@ Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instruc
 **Cas d'usage :**
 - Tâches générales d'instruction-following (classification, extraction, Q&A)
 - Assistants IA multilingues (12 langues)
-- {'Traitement de documents très longs (128k tokens)': 'résumés, Q&A'}
+- Traitement de documents très longs (128k tokens) : résumés et questions-réponses
 - Génération/complétion de code avec Fill-in-the-Middle
 - Intégration avec des outils externes via function calling
 - Raisonnement structuré avec le mode "Thinking"
@@ -899,18 +899,22 @@ Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
 ## Cas d'Usage Recommandés
 
 ### Dialogue multilingue
+
 Chatbots et assistants capables de communiquer dans plusieurs langues avec détection automatique, maintien du contexte sur l'ensemble de la conversation et compréhension des spécificités linguistiques
 
 **Modèles recommandés :**
+
 - Llama 3.3
 - Mistral Small 3.1
 - Qwen 2.5
 - Granite 3.3
 
 ### Analyse de documents longs
+
 Traitement de documents volumineux (>100 pages) avec maintien du contexte sur l'ensemble du texte, extraction d'informations clés, génération de résumés pertinents et réponse à des questions spécifiques sur le contenu
 
 **Modèles recommandés :**
+
 - Gemma 3
 - DeepSeek-R1
 - Granite 3.3
@@ -919,6 +923,7 @@ Traitement de documents volumineux (>100 pages) avec maintien du contexte sur l'
 Génération et optimisation de code dans multiples langages, débogage, refactoring, développement de fonctionnalités complètes, compréhension des implémentations algorithmiques complexes et création de tests unitaires
 
 **Modèles recommandés :**
+
 - DeepCoder
 - QwQ
 - DeepSeek-R1
@@ -926,18 +931,22 @@ Génération et optimisation de code dans multiples langages, débogage, refacto
 - Devstral
 
 ### Analyse visuelle
+
 Traitement direct d'images et documents visuels sans pré-traitement OCR, interprétation de diagrammes techniques, graphiques, tableaux, dessins et photos avec génération d'explications textuelles détaillées du contenu visuel
 
 **Modèles recommandés :**
+
 - Granite 3.2 Vision
 - Mistral Small 3.1
 - Gemma 3
 - Qwen2.5-VL
 
 ### Sécurité et conformité
+
 Applications nécessitant des capacités spécifiques en matière de sécurité ; filtrage de contenu sensible, traçabilité des raisonnements, vérification RGPD/HDS, minimisation des risques, analyse des vulnérabilités et respect des réglementations sectorielles
 
 **Modèles recommandés :**
+
 - Granite Guardian
 - Granite 3.3
 - Devstral
@@ -945,11 +954,12 @@ Applications nécessitant des capacités spécifiques en matière de sécurité 
 - Foundation-Sec-8B
 
 ### Déploiements légers et embarqués
+
 Applications nécessitant une empreinte minimale en ressources, déploiement sur appareils à capacité limitée, inférence en temps réel sur CPU standard et intégration dans des systèmes embarqués ou IoT
 
 **Modèles recommandés :**
+
 - Gemma 3
 - Granite 3.1 MoE
 - Granite Guardian
 - Granite 3.3
-

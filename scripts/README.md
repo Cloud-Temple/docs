@@ -50,21 +50,60 @@ npm run generate:docs
 ---
 
 ### 🌐 `translate.js`
-**Script de traduction multilingue**
+**Script de traduction multilingue avec Cloud Temple LLMaaS**
 
-Script Node.js pour la gestion des traductions de la documentation dans les 5 langues supportées.
+Script Node.js pour la traduction automatique de la documentation Markdown (fichiers `.md`) du français vers d'autres langues en utilisant l'API Cloud Temple LLMaaS. Il conserve les hachages du contenu source pour ne retraduire que les fichiers modifiés. Les fichiers non-Markdown (images, .docx, etc.) sont copiés.
 
-#### Utilisation
+#### Configuration Requise
+
+Avant d'utiliser le script, vous devez configurer vos identifiants d'API et d'autres paramètres via un fichier `.env` placé à la racine de votre projet Docusaurus. Un fichier d'exemple `scripts/.env.example` est fourni. Copiez-le en `.env` à la racine et modifiez les valeurs :
+
 ```bash
-node scripts/translate.js
+cp scripts/.env.example .env
+# Ensuite, éditez .env avec vos informations
 ```
 
-#### Langues supportées
-- 🇫🇷 **Français** (langue source)
-- 🇬🇧 **Anglais** 
-- 🇩🇪 **Allemand**
-- 🇪🇸 **Espagnol**
-- 🇮🇹 **Italien**
+**Variables d'environnement principales :**
+- `CLOUDTEMPLE_API_KEY`: (Obligatoire) Votre clé API pour le service Cloud Temple LLMaaS.
+- `CLOUDTEMPLE_API_URL`: (Optionnel) URL de l'API LLMaaS. Par défaut : `https://api.ai.cloud-temple.com/v1/chat/completions`.
+- `TRANSLATION_MODEL`: (Optionnel) Modèle LLM à utiliser. Par défaut : `Qwen/Qwen3-30B-A3B-FP8`.
+- `CONCURRENT_TRANSLATIONS`: (Optionnel) Nombre de fichiers à traiter en parallèle. Par défaut : `4`.
+- `TRANSLATION_TEMPERATURE`: (Optionnel) Température pour la génération. Par défaut : `1`.
+- `TRANSLATION_TOP_P`: (Optionnel) Top_p pour la génération (nucleus sampling). Par défaut : `1`.
+- `DOC_BASE_PATH`: (Optionnel) Chemin de base de la documentation si le script n'est pas lancé depuis la racine. Par défaut : `.`
+
+#### Utilisation
+
+Exécutez le script depuis la racine de votre projet Docusaurus :
+```bash
+node scripts/translate.js [options]
+```
+
+#### Options de Ligne de Commande
+- `--dry-run`: Simule l'exécution sans modifier de fichiers ni appeler l'API. Affiche ce qui serait fait.
+- `--force`: Force la retraduction de tous les fichiers, même s'ils semblent à jour.
+- `--init`: Mode initialisation. Calcule et stocke les hachages des fichiers sources français existants dans `translation-meta.json` sans traduire. Si des traductions existent déjà, leur hachage est associé au source français actuel.
+    - `--init --translate-missing`: En mode initialisation, traduit également les fichiers pour lesquels une traduction n'existe pas encore.
+- `--translate-missing`: En mode de traduction normal (pas `--init`), traduit uniquement les fichiers pour lesquels une traduction n'existe pas encore, sans vérifier les hachages des traductions existantes.
+- `--lang=<code>`: Cible une langue spécifique pour la traduction (ex: `--lang=en`). `<code>` peut être `en`, `de`, `es`, `it`.
+
+#### Langues Supportées
+- 🇫🇷 **Français** (langue source, depuis le dossier `docs/`)
+- 🇬🇧 **Anglais** (code: `en`)
+- 🇩🇪 **Allemand** (code: `de`)
+- 🇪🇸 **Espagnol** (code: `es`)
+- 🇮🇹 **Italien** (code: `it`)
+
+Les traductions sont placées dans `i18n/<code>/docusaurus-plugin-content-docs/current/`.
+
+#### Fonctionnement
+1.  Le script scanne le dossier `docs/`.
+2.  Pour chaque fichier `.md`, il calcule un hachage de son contenu.
+3.  Il compare ce hachage avec celui stocké dans `scripts/translation-meta.json` pour chaque langue cible.
+4.  Si un fichier a été modifié (hachage différent) ou si la traduction est manquante (et que l'option appropriée est utilisée), le contenu est envoyé à l'API Cloud Temple LLMaaS pour traduction.
+5.  La traduction est sauvegardée dans le dossier `i18n/` correspondant.
+6.  Le nouveau hachage du fichier source est enregistré dans `translation-meta.json`.
+7.  Les fichiers non `.md` sont copiés dans les dossiers `i18n/` respectifs s'ils n'existent pas ou s'ils sont différents.
 
 ---
 
