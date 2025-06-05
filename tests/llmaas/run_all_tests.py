@@ -222,6 +222,15 @@ def main():
             'type': 'python',
             'critical': False,
             'requires': ['requests']
+        },
+        
+        # Tests Tutorials Intégrations (nouveaux)
+        {
+            'name': 'Tutorials Intégrations LangChain',
+            'script': 'test_tutorials_integrations.py',
+            'type': 'python',
+            'critical': True,
+            'requires': ['requests']
         }
     ]
     

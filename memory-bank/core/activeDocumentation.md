@@ -97,16 +97,21 @@
 ### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 40 modèles (généré depuis YAML)
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 46 modèles (généré depuis YAML)
 - ✅ `llmaas.md` : Vue d'ensemble service (style Anthropic factuel)
 - ✅ `quickstart.md` : Guide 5min **TESTÉ** - Tous exemples validés (curl + Python)
 - ✅ `api.md` : Documentation API **TESTÉE** - Streaming SSE + endpoints validés
 - ✅ `concepts.md` : Architecture IA **CRÉÉ** (05/06/2025)
-- 🔄 `use-cases.md` : Cas d'usage sectoriels (planifié)
-- 🔄 `security.md` : Sécurité et conformité IA (planifié)
-- 🔄 `tutorials.md` : Guides avancés (planifié)
+- ✅ `tutorials.md` : **COMPLET** - Intégrations LangChain/frameworks **TESTÉES** (05/06/2025)
 - ✅ `images/` : Structure créée pour screenshots
 - ✅ `licences/` : **SYSTÈME AUTOMATISÉ** - 42 fichiers de licence
+
+#### Tutorials LLMaaS - ✅ COMPLET (05/06/2025)
+- ✅ **7 intégrations validées** : LangChain, OpenAI SDK, RAG, agents, Semantic Kernel, Haystack, LlamaIndex
+- ✅ **Code testé en production** : Tous exemples validés avec API réelle
+- ✅ **Tests automatisés** : `test_tutorials_integrations.py` (7/7 tests réussis)
+- ✅ **Frameworks supportés** : Python, TypeScript annotations, migration transparente
+- ✅ **Patterns avancés** : Streaming SSE, gestion erreurs, templates, outils personnalisés
 
 #### Système de Licences LLMaaS - ✅ COMPLET (05/06/2025)
 - ✅ **Fichier générique** : `apache2.licence.md` (20+ modèles)
