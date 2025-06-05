@@ -102,7 +102,7 @@
 - ✅ `quickstart.md` : Guide 5min **TESTÉ** - Tous exemples validés (curl + Python)
 - ✅ `api.md` : Documentation API **TESTÉE** - Streaming SSE + endpoints validés
 - ✅ `concepts.md` : Architecture IA **CRÉÉ** (05/06/2025)
-- ✅ `tutorials.md` : **COMPLET** - Intégrations LangChain/frameworks **TESTÉES** (05/06/2025)
+- ✅ `tutorials.md` : **COMPLET** - 7 intégrations 100% validées **6/6 TESTS RÉUSSIS** (05/06/2025)
 - ✅ `images/` : Structure créée pour screenshots
 - ✅ `licences/` : **SYSTÈME AUTOMATISÉ** - 42 fichiers de licence
 

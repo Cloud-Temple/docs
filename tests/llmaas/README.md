@@ -14,6 +14,7 @@ Garantir que **100%** des exemples de code dans `docs/llmaas/api.md` fonctionnen
 - ✅ **Python Basic** (`test_python_basic.py`) - Requests, gestion d'erreurs
 - ✅ **Python Streaming** (`test_python_streaming.py`) - SSE parsing complet  
 - ✅ **JavaScript Node.js** (`test_javascript_node.js`) - Axios, streaming
+- ✅ **Tutorials Complets** (`test_tutorials_complete.py`) - **6/6 intégrations validées**
 - ✅ **Tutorials Intégrations** (`test_tutorials_integrations.py`) - LangChain, frameworks IA
 
 ### Tests Optionnels
