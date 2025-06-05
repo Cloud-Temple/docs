@@ -25,11 +25,11 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 | Tier | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description |
 |------|----------------|-------------------|---------------------|--------------------|-----------| 
-| **Tier 1** | 200 € | 1 000 € | 350 000 | 8 500 000 | Utilisation standard |
-| **Tier 2** | 500 € | 3 000 € | 1 000 000 | 25 000 000 | Usage professionnel |
-| **Tier 3** | 1 000 € | 5 000 € | 1 750 000 | 42 000 000 | Volume élevé |
-| **Tier 4** | 4 000 € | 10 000 € | 3 500 000 | 84 000 000 | Entreprise |
-| **Facturation Mensuelle** | N/A | Illimitée | Illimitée | Illimitée | Contact commercial |
+| **Tier 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Utilisation standard |
+| **Tier 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Usage professionnel |
+| **Tier 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Volume élevé |
+| **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Entreprise |
+| **Facturation Mensuelle** | N/A | Illimitée | Priorité élevée | Priorité élevée | Contact commercial |
 
 **Note** : Limites calculées sur les tokens de sortie (4€/million). Les tokens d'entrée (0.9€/million) ont des limites proportionnellement plus élevées.
 
@@ -538,16 +538,25 @@ print(response.choices[0].message.content)
 ### LangChain
 
 ```python
-from langchain.llms import OpenAI
+from langchain_openai import ChatOpenAI
+from langchain.schema import HumanMessage
 
-llm = OpenAI(
-    openai_api_key="VOTRE_TOKEN_API",
-    openai_api_base="https://api.ai.cloud-temple.com/v1",
-    model_name="granite3.3:8b"
+# Configuration du chat model (compatible avec LLMaaS)
+chat = ChatOpenAI(
+    api_key="VOTRE_TOKEN_API",
+    base_url="https://api.ai.cloud-temple.com/v1",
+    model="granite3.3:8b",
+    max_tokens=200
 )
 
-response = llm("Expliquez l'IA en 3 phrases")
-print(response)
+# Utilisation avec messages
+messages = [HumanMessage(content="Expliquez l'IA en 3 phrases")]
+response = chat.invoke(messages)
+print(response.content)
+
+# Ou avec une simple chaîne
+response = chat.invoke("Bonjour, comment ça va ?")
+print(response.content)
 ```
 
 ## Support

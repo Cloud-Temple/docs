@@ -325,11 +325,22 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 - **Error handling** : Messages d'erreur réels
 - **Performance** : Latence mesurée
 
-#### Documentation des Tests
-- ✅ **Test 1** : curl /v1/models → JSON 43 modèles
-- ✅ **Test 2** : chat/completions → haiku généré
-- ✅ **Test 3** : Python script → photosynthèse expliquée
-- ✅ **Test 4** : Modèles recommandés → tous validés
+#### Documentation des Tests LLMaaS ✅ COMPLÉTÉE
+- ✅ **Test 1** : curl /v1/models → JSON 46 modèles (plus que documenté)
+- ✅ **Test 2** : curl chat/completions → réponse avec usage tokens
+- ✅ **Test 3** : curl streaming SSE → format validé avec [DONE]
+- ✅ **Test 4** : curl /v1/completions → corrigé (utilise messages)
+- ✅ **Scripts Python** : 100% testés (4/4 + 4/4 streaming)
+- ✅ **Scripts JavaScript** : 100% testés (5/5 avec axios)
+- ✅ **Audio transcriptions** : 100% testés (3/3 avec WAV)
+- ✅ **SDK intégrations** : 100% testés (5/5 OpenAI + LangChain)
+
+#### Suite de Tests Complète ✅ 21/21 RÉUSSIS
+- 📁 **tests/llmaas/** : Scripts automatisés complets
+- 🐍 **Python** : requests + streaming + SDK OpenAI + LangChain
+- 🟨 **JavaScript** : Node.js + axios + streaming SSE
+- 🎵 **Audio** : Transcription Whisper + formats multiples
+- 🔧 **Orchestrateur** : run_all_tests.py avec rapport détaillé
 
 ---
 
