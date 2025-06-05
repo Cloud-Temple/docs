@@ -444,8 +444,24 @@ async function chatCompletion(message) {
 // Uso
 chatCompletion("¿Qué es la inteligencia artificial?");
 ```
-],
-                max_tokens: 100
+
+### JavaScript/Node.js con async/await
+
+```javascript
+const axios = require('axios');
+
+const API_KEY = 'SU_TOKEN_DE_API';
+const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
+
+async function chatCompletion(message) {
+    try {
+        const response = await axios.post(
+            `${BASE_URL}/chat/completions`,
+            {
+                model: 'granite3.3:8b',
+                messages: [
+                    { role: 'user', content: message }
+                ]
             },
             {
                 headers: {
