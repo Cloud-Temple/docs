@@ -7,7 +7,10 @@ sidebar_position: 2
 
 ## Vue d'ensemble
 
-Cloud Temple LLMaaS propose **36 modèles de langage large** soigneusement sélectionnés et optimisés pour répondre aux exigences **SecNumCloud** les plus strictes. Notre catalogue couvre l'ensemble du spectre, des micro-modèles ultra-efficaces aux modèles extrêmement volumineux.
+Cloud Temple LLMaaS propose **des modèles de langage large** soigneusement sélectionnés et optimisés. Notre catalogue couvre l'ensemble du spectre, des micro-modèles ultra-efficaces aux modèles extrêmement volumineux. 
+
+### Note sur les mesures de performance
+Les valeurs de vitesse (tokens/s) représentent des cibles de performance en conditions réelles. La consommation énergétique (kWh/Mtoken) est calculée en divisant la puissance estimée du serveur d'inférence (en Watts) par la vitesse mesurée du modèle (en tokens/seconde), puis convertie en kilowattheures par million de tokens. Cette méthode offre une comparaison pratique de l'efficience énergétique des différents modèles, à utiliser comme indicateur relatif plutôt que comme mesure absolue de la consommation électrique.
 
 ### Statistiques Globales
 
