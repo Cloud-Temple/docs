@@ -46,8 +46,6 @@ Modèle multilingue de pointe développé par Meta, conçu pour exceller dans le
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Agent` `Dialogue` `Multilingue`
-
 **Cas d'usage :**
 - Chatbots multilingues prenant en charge 8 langues simultanément
 - Exécution d'instructions complexes enchaînées (prompt chaining)
@@ -71,8 +69,6 @@ Modèle très volumineux de la nouvelle génération Qwen3, offrant des capacit�
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Agent` `Raisonnement` `Multilingue` `Très Large`
-
 **Cas d'usage :**
 - Agents conversationnels très avancés avec grand contexte et intégration d'outils (MCP)
 - Résolution de problèmes extrêmement complexes (maths, code)
@@ -95,8 +91,6 @@ Modèle extrêmement volumineux de DeepSeek AI, conçu pour le summum du raisonn
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Raisonnement` `Extrêmement Large`
-
 **Cas d'usage :**
 - Tâches de raisonnement de pointe
 - Génération de texte de qualité supérieure
@@ -117,8 +111,6 @@ Modèle révolutionnaire de Google offrant un équilibre optimal entre puissance
 
 **Capacités :**
 ✅ Outils/Agent • ✅ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Vision` `Agent` `Rapide` `Grand contexte`
 
 **Cas d'usage :**
 - Analyse de documents avec contexte étendu jusqu'à 120K tokens (environ 400 pages)
@@ -143,8 +135,6 @@ Modèle MoE FP8 (3B activés) nouvelle génération, avec modes de pensée hybri
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `MoE` `Agent` `Raisonnement` `Rapide` `Multilingue`
-
 **Cas d'usage :**
 - Agents conversationnels avancés avec intégration d'outils (MCP)
 - Résolution de problèmes complexes (maths, code) avec mode "Thinking"
@@ -167,8 +157,6 @@ Modèle 70B de DeepSeek AI
 
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
-
-**Tags :** `Raisonnement` `Large`
 
 **Cas d'usage :**
 - Tâches de raisonnement complexes
@@ -193,8 +181,6 @@ Modèle dense nouvelle génération Qwen3 (14B), offrant des performances équiv
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Agent` `Raisonnement` `Rapide` `Multilingue`
-
 **Cas d'usage :**
 - Tâches générales nécessitant performance et grand contexte
 - Génération de contenu créatif et technique
@@ -216,8 +202,6 @@ Version intermédiaire du modèle Gemma 3 offrant un excellent équilibre entre 
 
 **Capacités :**
 ❌ Outils/Agent • ✅ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Vision` `Rapide` `Grand Contexte`
 
 **Cas d'usage :**
 - Applications multimodales avec contraintes de ressources modérées
@@ -242,8 +226,6 @@ Modèle compact de Google offrant d'excellentes performances dans un format lég
 **Capacités :**
 ❌ Outils/Agent • ✅ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Vision` `Rapide` `Compact` `Grand Contexte` `Efficient`
-
 **Cas d'usage :**
 - Applications embarquées et edge computing avec traitement d'images
 - Chatbots multimodaux réactifs nécessitant faible latence
@@ -266,8 +248,6 @@ Micro-modèle ultra-léger conçu pour les déploiements sur appareils à très 
 
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Ultra-compact` `Embarqué` `Efficient`
 
 **Cas d'usage :**
 - Déploiement sur appareils IoT et systèmes embarqués avec intégration API
@@ -292,8 +272,6 @@ Modèle causal multilingue open-source (7B), fine-tuné depuis Lucie-7B. Optimis
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Français` `Open-Source` `Efficient`
-
 ---
 
 ### Mistral Small 3.1
@@ -309,8 +287,6 @@ Modèle compact et réactif de Mistral AI, spécialement conçu pour offrir une 
 
 **Capacités :**
 ✅ Outils/Agent • ✅ Vision • ❌ Raisonnement • ✅ Sécurité
-
-**Tags :** `Vision` `Agent` `Sécurité`
 
 **Cas d'usage :**
 - Applications conversationnelles
@@ -335,8 +311,6 @@ Modèle IA open source (14B) par Together AI & Agentica, alternative crédible a
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Programmation` `Raisonnement` `Open-Source` `Mathématiques` `Rapide`
-
 **Cas d'usage :**
 - Génération de code dans plus de 15 langages avec optimisation des performances
 - Débogage et refactoring de bases de code existantes avec analyse d'impact
@@ -360,8 +334,6 @@ Modèle compact révolutionnaire d'IBM spécialisé dans la vision par ordinateu
 **Capacités :**
 ✅ Outils/Agent • ✅ Vision • ❌ Raisonnement • ✅ Sécurité
 
-**Tags :** `Vision` `Sécurité` `Rapide` `Compact` `Efficient`
-
 **Cas d'usage :**
 - Extraction de données structurées à partir de factures et formulaires sans OCR
 - Analyse directe de tableaux et graphiques avec interprétation des tendances
@@ -384,8 +356,6 @@ Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instruc
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ✅ Sécurité
-
-**Tags :** `Agent` `Raisonnement` `Sécurité` `Efficient`
 
 **Cas d'usage :**
 - Tâches générales d'instruction-following (classification, extraction, Q&A)
@@ -411,8 +381,6 @@ Modèle Granite 2B fine-tuné par IBM, optimisé pour le raisonnement et le suiv
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ✅ Sécurité
 
-**Tags :** `Agent` `Raisonnement` `Sécurité` `Rapide` `Efficient`
-
 **Cas d'usage :**
 - Déploiements légers avec grand contexte (128k tokens)
 - Tâches générales d'instruction-following sur ressources limitées
@@ -435,8 +403,6 @@ Modèle innovant d'IBM utilisant l'architecture Mixture-of-Experts (MoE) pour of
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ✅ Sécurité
-
-**Tags :** `Agent` `Sécurité` `Rapide` `MoE` `Efficacité` `Efficient`
 
 **Cas d'usage :**
 - Applications généralistes avec coût d'inférence optimisé (42 tokens/seconde)
@@ -461,8 +427,6 @@ Modèle de Deep Cogito spécialement conçu pour exceller dans les tâches de ra
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Agent` `Raisonnement` `Compréhension` `Analyse` `Rapide`
-
 **Cas d'usage :**
 - Analyse sémantique de textes avec identification des implications non explicites
 - Raisonnement causal structuré avec identification des relations cause-effet
@@ -486,8 +450,6 @@ Version avancée du modèle Cogito offrant des capacités de raisonnement et d'a
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Agent` `Raisonnement` `Compréhension` `Analyse`
-
 **Cas d'usage :**
 - Analyse de scénarios multi-factoriels avec évaluation probabiliste des résultats
 - Résolution de problèmes scientifiques avec démonstration formelle des étapes
@@ -508,8 +470,6 @@ Modèle puissant de la nouvelle génération Qwen3, offrant des capacités avanc
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
-
-**Tags :** `Agent` `Raisonnement` `Multilingue` `Grand Contexte`
 
 **Cas d'usage :**
 - Agents conversationnels avancés avec grand contexte et intégration d'outils (MCP)
@@ -532,8 +492,6 @@ Modèle de 32 milliards de paramètres amélioré par apprentissage par renforce
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
-
-**Tags :** `Agent` `Raisonnement` `Codage` `Mathématiques`
 
 **Cas d'usage :**
 - Résolution de problèmes complexes nécessitant raisonnement et utilisation d'outils
@@ -558,8 +516,6 @@ Version compacte et efficiente du modèle DeepSeek-R1, offrant un excellent comp
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Agent` `Raisonnement` `Compact` `Polyvalent` `Rapide`
-
 **Cas d'usage :**
 - Applications généralistes avec besoins d'inférence rapide (44 tokens/s)
 - Déploiements sur serveurs standard sans GPU spécialisé (14B paramètres)
@@ -582,8 +538,6 @@ Version intermédiaire du modèle DeepSeek-R1 offrant un équilibre stratégique
 
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
-
-**Tags :** `Agent` `Raisonnement` `Polyvalent`
 
 **Cas d'usage :**
 - Applications nécessitant un bon équilibre puissance/coût (32B paramètres)
@@ -608,8 +562,6 @@ Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appa
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Raisonnement` `Compact` `Embarqué` `Efficient` `Rapide`
-
 ---
 
 ### Granite Embedding
@@ -623,8 +575,6 @@ Modèle d'embedding ultra-léger d'IBM pour la recherche sémantique et la class
 
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Embedding` `Compact` `Sémantique` `Efficient`
 
 ---
 
@@ -640,8 +590,6 @@ Modèle compact d'IBM spécialisé dans la sécurité et la conformité, détect
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ✅ Sécurité
 
-**Tags :** `Sécurité` `Conformité` `Compact` `Filtrage` `Efficient`
-
 ---
 
 ### Granite 3 Guardian 8B
@@ -655,8 +603,6 @@ Modèle d'IBM spécialisé dans la sécurité et la conformité, offrant des cap
 
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ✅ Sécurité
-
-**Tags :** `Sécurité` `Conformité` `Filtrage`
 
 ---
 
@@ -674,8 +620,6 @@ Micro-modèle ultra-léger de la famille Qwen 2.5, conçu pour une efficacité m
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Ultra-compact` `Rapide` `Embarqué` `Efficient`
-
 ---
 
 ### Qwen 2.5 1.5B
@@ -691,8 +635,6 @@ Modèle très compact de la famille Qwen 2.5, offrant un bon équilibre performa
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Compact` `Rapide` `Embarqué` `Efficient`
 
 ---
 
@@ -710,8 +652,6 @@ Modèle polyvalent de taille moyenne de la famille Qwen 2.5, bon équilibre perf
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Polyvalent` `Multilingue` `Rapide`
-
 ---
 
 ### Qwen 2.5 32B
@@ -727,8 +667,6 @@ Modèle puissant de la famille Qwen 2.5, offrant des capacités avancées en com
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
-
-**Tags :** `Polyvalent` `Multilingue` `Raisonnement`
 
 ---
 
@@ -746,8 +684,6 @@ Modèle compact et efficace de la famille Qwen 2.5, adapté aux tâches généra
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Compact` `Rapide` `Polyvalent` `Efficient`
-
 ---
 
 ### Qwen3 0.6b
@@ -763,8 +699,6 @@ Modèle compact et efficace de la famille Qwen3, adapté aux tâches générales
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Compact` `Rapide` `Polyvalent` `Efficient`
 
 ---
 
@@ -782,8 +716,6 @@ Modèle très compact de la famille Qwen3, offrant un bon équilibre performance
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
-**Tags :** `Compact` `Rapide` `Embarqué` `Efficient`
-
 ---
 
 ### Qwen3 4b
@@ -799,8 +731,6 @@ Modèle compact de la famille Qwen3 offrant d'excellentes performances dans un f
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
-
-**Tags :** `Compact` `Efficient`
 
 ---
 
@@ -818,8 +748,6 @@ Modèle Qwen3 8B offrant un bon équilibre entre performance et efficacité pour
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Raisonnement` `Agent` `Multilingue` `Efficient`
-
 ---
 
 ### Qwen2.5-VL 3B
@@ -835,8 +763,6 @@ Modèle Vision-Langage compact, solution performante pour l'IA en périphérie (
 
 **Capacités :**
 ✅ Outils/Agent • ✅ Vision • ✅ Raisonnement • ❌ Sécurité
-
-**Tags :** `Vision` `Agent` `Raisonnement` `Rapide` `Efficient` `OCR` `Localisation Visuelle` `Edge AI`
 
 ---
 
@@ -854,8 +780,6 @@ Modèle Vision-Langage performant, surpassant GPT-4o-mini sur certaines tâches.
 **Capacités :**
 ✅ Outils/Agent • ✅ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `Vision` `Agent` `Raisonnement` `Efficient` `OCR` `Localisation Visuelle`
-
 ---
 
 ### Foundation-Sec-8B
@@ -872,8 +796,6 @@ Modèle de langage spécialisé pour la cybersécurité, optimisé pour l'effica
 **Capacités :**
 ❌ Outils/Agent • ❌ Vision • ✅ Raisonnement • ✅ Sécurité
 
-**Tags :** `Sécurité` `Compact`
-
 ---
 
 ### devstral 24B
@@ -889,8 +811,6 @@ Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ✅ Sécurité
-
-**Tags :** `Agent` `Programmation` `Open-Source` `Grand Contexte`
 
 **Cas d'usage :**
 - Exploration et modification de bases de code
