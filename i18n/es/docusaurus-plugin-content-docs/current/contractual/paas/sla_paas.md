@@ -212,7 +212,7 @@ Se precisa que todas las operaciones y todos los componentes físicos implicados
 
 Los servicios PaaS (Platform as a Service) engloban la totalidad de los componentes y servicios requeridos para su funcionamiento óptimo respetando la cualificación SecNumCloud.
 
-A este respecto, su rendimiento y fiabilidad están intrínsecamente ligados a los componentes técnicos y a los servicios de **la infraestructura IaaS** del Proveedor, como se especifica en el documento [Acuerdo de Servicio IaaS](../Working%20in%20progress%20-%20not%20use/iaas/sla_iaas.md) del Proveedor.
+A este respecto, su rendimiento y fiabilidad están intrínsecamente ligados a los componentes técnicos y a los servicios de **la infraestructura IaaS** del Proveedor, como se especifica en el documento [Acuerdo de Servicio IaaS](../iaas/sla_iaas.md) del Proveedor.
 
 #### 8.1.1. Plataforma de servicio REDHAT OpenShift
 

@@ -5,10 +5,6 @@ sidebar_position: 3
 
 # Concepts et Architecture LLMaaS
 
-## Vue d'Ensemble
-
-Le service **LLMaaS** (Large Language Models as a Service) de Cloud Temple fournit un accès sécurisé et souverain aux modèles d'intelligence artificielle les plus avancés, avec la **qualification SecNumCloud** de l'ANSSI.
-
 ## 🏗️ Architecture Technique
 
 ### Infrastructure Cloud Temple
@@ -26,7 +22,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 - **Monitoring** : Métriques temps réel et alerting
 
 #### 2. **Service d'Authentification**
-- **Tokens API sécurisés** : Rotation automatique
+- **Tokens API sécurisés** 
 - **Contrôle d'accès** : Permissions granulaires par modèle
 - **Audit trails** : Traçabilité complète des accès
 
@@ -73,22 +69,22 @@ print(f"Coût estimé: {total_cost:.6f}€")
 
 ### Qualification SecNumCloud
 
-Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
+Le service LLMaaS est calculé sur une infrastructure IaaS Cloud Temple qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
 
 #### **Protection des Données**
 - **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
-- **Stockage sécurisé** : Données chiffrées au repos (AES-256)
-- **Isolation** : Environnements dédiés par tenant
+- **Stockage sécurisé** : Données chiffrées au repos 
+- **Isolation** de l'environnement
 
 #### **Souveraineté Numérique**
 - **Hébergement France** : Datacenters Cloud Temple certifiés
-- **Droit français** : Conformité RGPD native
-- **Pas d'exposition** : Aucun transfert vers clouds étrangers
+- **Droit français** : Conformité RGPD 
+- **Pas d'exposition** : Aucun transfert vers clouds étrangers et aucun stockage des données
 
 #### **Audit et Traçabilité**
 - **Logs complets** : Toutes les interactions tracées
 - **Rétention** : Conservation selon politiques légales
-- **Compliance** : Rapports d'audit disponibles
+- **Compliance** 
 
 ### Contrôles de Sécurité
 
@@ -100,21 +96,19 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ### Métriques de Performance
 
-    In progress
-
-
 #### **Latence**
-
-    In progress
+- **Temps de réponse moyen** : < 2 secondes pour modèles 8B
+- **Temps de premier token** : < 1500ms
+- **Débit streaming** : 15-100 tokens/seconde selon modèle
 
 #### **Débit**
-
-    In progress
-
+- **Requêtes simultanées** : Jusqu'à 1000 requêtes/minute par tenant
+- **Scaling automatique** : Adaptation charge en temps réel selon les modeles demandés
+- **Disponibilité** : Cible de SLA 99.9% de disponibilité mensuelle 
 
 ### Monitoring en Temps Réel
 
-Access via **Console Cloud Temple** :
+Accès via **Console Cloud Temple** :
 - Métriques d'utilisation par modèle
 - Graphiques de latence et débit
 - Alertes sur seuils de performance
@@ -255,4 +249,3 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    except Exception as e:
        logger.error(f"LLMaaS error: {e}")
        return "Désolé, erreur temporaire."
-   ```
