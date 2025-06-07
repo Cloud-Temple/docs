@@ -206,7 +206,7 @@ Es wird darauf hingewiesen, dass alle Operationen und alle physischen Komponente
 
 Die PaaS-Dienste (Platform as a Service) umfassen alle Komponenten und Dienste, die für ihren optimalen Betrieb unter Einhaltung der SecNumCloud-Qualifikation erforderlich sind.
 
-In dieser Hinsicht sind ihre Leistung und Zuverlässigkeit untrennbar mit den technischen Komponenten und Diensten der **IaaS-Infrastruktur** des Dienstleisters verbunden, wie in der [IaaS-Servicevereinbarung](../Working%20in%20progress%20-%20not%20use/iaas/sla_iaas.md) des Dienstleisters spezifiziert.
+In dieser Hinsicht sind ihre Leistung und Zuverlässigkeit untrennbar mit den technischen Komponenten und Diensten der **IaaS-Infrastruktur** des Dienstleisters verbunden, wie in der [IaaS-Servicevereinbarung](../iaas/sla_iaas.md) des Dienstleisters spezifiziert.
 
 #### 8.1.1. REDHAT OpenShift Serviceplattform
 

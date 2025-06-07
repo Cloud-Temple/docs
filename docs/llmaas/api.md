@@ -31,7 +31,7 @@ Authorization: Bearer VOTRE_TOKEN_API
 | **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Entreprise |
 | **Facturation Mensuelle** | N/A | Illimitée | Priorité élevée | Priorité élevée | Contact commercial |
 
-**Note** : Limites calculées sur les tokens de sortie (4€/million). Les tokens d'entrée (0.9€/million) ont des limites proportionnellement plus élevées.
+**Note** : Limites calculées sur les tokens de sortie. Les tokens d'entrée ont des limites proportionnellement plus élevées.
 
 ### Headers de Limite
 
