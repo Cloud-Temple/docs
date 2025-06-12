@@ -4,44 +4,28 @@ title: Convention de Service SecNumCloud PaaS
 
 **Table des matières**
 
-- [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
-- [2. Acronymes](#Xc79d173393c04b42ba8cdf223cca3c0202f4dee)
-- [3. Glossaire](#X0c9d1d82fdc5fcc3d01a320dd2dd3715a6900b4)
-- [4. Objet de la convention de service PaaS du
-    Prestataire](#X23ec3c3767539f9e69acc7cbf5af8aa8c1b6ad7)
-- [5. Evolution de la convention de service
-    PaaS](#Xa7161677dcf9a35d02c20807040326b39d55881)
-- [6. Audit](#X910e2801262de94af715f54b8fb509cc70cc79a)
-- [7. Description du
-    service](#X3d12a6c93683f0122f5f9a8e21e7c12fc92490b)
-- [8. Mise en œuvre du
-    service](#Xc98fb6da582d483e300add6a80df6e3eb76498a)
-  - [8.1. Description des composants
-        techniques](#Xa61c340e3fdf14082cef411d3a913fc4bdeeb4c)
-    - [8.1.1. Plateforme de service REDHAT
-            OpenShift](#Xf81d22ed0abca8eab163c160107fa228901d82c)
-    - [8.1.2. Infrastructure logiciel de pilotage de la plateforme
-            Redhat Openshift](#Xf11ec2e6a431ae11852fe3129245b4d0fd0747b)
-    - [8.1.3. Infrastructure de sauvegarde
-            associée](#X77b1112fa2c2a53eb0cf09b416962164b77b437)
-    - [8.1.4. Mise en œuvre de solutions de reprise d\'activité ou
-            de continuité
-            d\'activité](#Xae1394210f1c9bee4293a93160d2d11cc70ebdd)
-- [9. Engagements et niveaux de
-    services](#Xad2b4ae071a52a99b502c4e84cbba3f15ac78f8)
-  - [9.1. Engagements de disponibilité de la plateforme RedHat
-        OpenShift](#X273341276df81e9f6fad2000ac84216560e59fa)
-- [10. Modèle de responsabilités partagées
-    applicable](#Xa90d4e180ca2ae1d92e4e4cf00f20aca5061eac)
-  - [10.1. Responsabilité et Obligations du
-        Prestataire](#Xe5cf73850ea2189ab60f41560bf52e97d3019f9)
-  - [10.2. Limitation de responsabilité du
-        Prestataire](#X8856c8f606130116944398b24484722823c023c)
-  - [10.3. Limitation
-        d\'accès](#X902763258f1242326933ce46892d3f549e73e30)
-- [11. Effacement des données en fin de
-    contrat](#Xbe642a80027ce4ad88cc932e98b8661c2a0d3a6)
-- [12. Droit applicable](#Xa219184d62eb90dfeec612801fd05c5d816c331)
+- [1. Cadre](#1-cadre)
+- [2. Acronymes](#2-acronymes)
+- [SNC           SecNumCloud](#snc-----------secnumcloud)
+- [3. Glossaire](#3-glossaire)
+- [4. Objet de la convention de service PaaS du Prestataire](#4-objet-de-la-convention-de-service-paas-du-prestataire)
+- [5. Evolution de la convention de service PaaS](#5-evolution-de-la-convention-de-service-paas)
+- [6. Audit](#6-audit)
+- [7. Description du service](#7-description-du-service)
+- [8. Mise en œuvre du service](#8-mise-en-œuvre-du-service)
+  - [8.1. Description des composants techniques](#81-description-des-composants-techniques)
+    - [8.1.1. Plateforme de service REDHAT OpenShift](#811-plateforme-de-service-redhat-openshift)
+    - [8.1.2. Infrastructure logiciel de pilotage de la plateforme Redhat Openshift](#812-infrastructure-logiciel-de-pilotage-de-la-plateforme-redhat-openshift)
+    - [8.1.3. Infrastructure de sauvegarde associée](#813-infrastructure-de-sauvegarde-associée)
+    - [8.1.4. Mise en œuvre de solutions de reprise d'activité ou de continuité d'activité](#814-mise-en-œuvre-de-solutions-de-reprise-dactivité-ou-de-continuité-dactivité)
+- [9. Engagements et niveaux de services](#9-engagements-et-niveaux-de-services)
+  - [9.1. Engagements de disponibilité de la plateforme RedHat OpenShift](#91-engagements-de-disponibilité-de-la-plateforme-redhat-openshift)
+- [10. Modèle de responsabilités partagées applicable](#10-modèle-de-responsabilités-partagées-applicable)
+  - [10.1. Responsabilité et Obligations du Prestataire](#101-responsabilité-et-obligations-du-prestataire)
+  - [10.2. Limitation de responsabilité du Prestataire](#102-limitation-de-responsabilité-du-prestataire)
+  - [10.3. Limitation d'accès](#103-limitation-daccès)
+- [11. Effacement des données en fin de contrat](#11-effacement-des-données-en-fin-de-contrat)
+- [12. Droit applicable](#12-droit-applicable)
 
 ## 1. Cadre
 
@@ -343,7 +327,7 @@ respect de la qualification SecNumCloud.
 À cet égard, leur performance et fiabilité sont intrinsèquement liées
 aux composants techniques et aux services de **l\'infrastructure IaaS**
 du Prestataire, comme spécifié dans le document [Convention de Service
-IaaS](../Working%20in%20progress%20-%20not%20use/iaas/sla_iaas.md) du
+IaaS](../iaas/sla_iaas.md) du
 Prestataire.
 
 #### 8.1.1. Plateforme de service REDHAT OpenShift
