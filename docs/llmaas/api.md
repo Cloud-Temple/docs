@@ -21,7 +21,17 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 ## Rate Limiting et Facturation
 
-### Système de Tiers par Montant
+### Le Principe des Tiers : Palier d'Accès, Budget et Capacité
+
+Notre système de tiers est conçu comme des **enveloppes de service complètes** qui définissent trois aspects clés de votre utilisation :
+
+1.  **Un Palier d'Accès (Crédit d'Achat)** : Pour les Tiers 1 à 4, il s'agit d'un montant à régler de manière anticipée (upfront) pour activer le service et débloquer les capacités techniques et budgétaires du palier choisi.
+2.  **Une Limite de Budget Mensuel** : C'est le plafond de votre consommation mensuelle, vous assurant une maîtrise totale de vos coûts.
+3.  **Une Capacité Technique** : Ce sont les limites de débit (tokens par jour et par heure) qui garantissent une performance stable et prévisible pour votre volume d'appels.
+
+Le choix d'un tier est donc un équilibre entre l'investissement initial, le budget mensuel prévisionnel et la capacité technique requise. Votre consommation au sein de cette enveloppe est ensuite facturée selon les tarifs en vigueur.
+
+### Tableau des Tiers
 
 | Tier | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description |
 |------|----------------|-------------------|---------------------|--------------------|-----------| 
@@ -31,7 +41,10 @@ Authorization: Bearer VOTRE_TOKEN_API
 | **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Entreprise |
 | **Facturation Mensuelle** | N/A | Illimitée | Priorité élevée | Priorité élevée | Contact commercial |
 
-**Note** : Limites calculées sur les tokens de sortie (4€/million). Les tokens d'entrée (0.9€/million) ont des limites proportionnellement plus élevées.
+**Note** : Les limites de débit sont calculées sur la base des tokens de sortie. La tarification des tokens varie selon l'usage :
+- **Tokens d'entrée** : 0.90 € / million
+- **Tokens de sortie (standard)** : 4.00 € / million
+- **Tokens de sortie (raisonneur)** : 21.00 € / million (s'applique aux modèles les plus avancés pour les tâches complexes de type agent ou raisonnement)
 
 ### Headers de Limite
 
