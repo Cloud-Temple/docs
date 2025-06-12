@@ -347,8 +347,7 @@ def probar_compatibilidad_openai():
     
     # Streaming
     stream = cliente.chat.completions.create(
-```
-model="granite3.3:8b",
+        model="granite3.3:8b",
         messages=[
             {"role": "user", "content": "Escribe un poema sobre la IA."}
         ],
@@ -363,7 +362,7 @@ model="granite3.3:8b",
     print()
 
 # Prueba de compatibilidad
-test_openai_compatibility()
+probar_compatibilidad_openai()
 ```
 
 ### 5. Integración Semantic Kernel (Microsoft)

@@ -444,8 +444,24 @@ async function chatCompletion(message) {
 // Beispielaufruf
 chatCompletion("Erklären Sie die Quantenmechanik");
 ```
-],
-                max_tokens: 100
+
+### JavaScript/Node.js mit async/await
+
+```javascript
+const axios = require('axios');
+
+const API_KEY = 'IHR_API_TOKEN';
+const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
+
+async function chatCompletion(message) {
+    try {
+        const response = await axios.post(
+            `${BASE_URL}/chat/completions`,
+            {
+                model: 'granite3.3:8b',
+                messages: [
+                    { role: 'user', content: message }
+                ]
             },
             {
                 headers: {
@@ -461,7 +477,7 @@ chatCompletion("Erklären Sie die Quantenmechanik");
     }
 }
 
-// Nutzung
+// Verwendung
 chatCompletion('Hallo!').then(response => {
     console.log(response);
 });

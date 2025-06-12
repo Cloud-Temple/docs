@@ -316,7 +316,7 @@ PaaS services (Platform as a Service) encompass all components and services requ
 operation in compliance with the SecNumCloud qualification.
 
 In this regard, their performance and reliability are intrinsically linked to the technical components
-and services of the Provider's **IaaS infrastructure**, as specified in the document [IaaS Service Agreement](../Working%20in%20progress%20-%20not%20use/iaas/sla_iaas.md) of the Provider.
+and services of the Provider's **IaaS infrastructure**, as specified in the document [IaaS Service Agreement](../iaas/sla_iaas.md) of the Provider.
 
 #### 8.1.1. REDHAT OpenShift service platform
 
