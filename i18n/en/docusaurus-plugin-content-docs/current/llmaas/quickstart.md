@@ -330,10 +330,10 @@ def run_chat_with_tool_calling():
     print("\n✅ The LLM requested to use a tool.")
 
     if "tool_calls" not in assistant_message:
-```
-print("🤔 The model did not ask to use a tool. Direct response:")
+        print("🤔 The model did not ask to use a tool. Direct response:")
         print(assistant_message.get("content", "No content."))
         return
+```
 
     tool_call = assistant_message["tool_calls"][0]
     function_name = tool_call["function"]["name"]
