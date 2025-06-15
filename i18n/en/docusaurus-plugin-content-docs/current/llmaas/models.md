@@ -603,7 +603,7 @@ Granite 8B model fine-tuned by IBM for improved reasoning and instruction follow
 **Use Cases:**
 - General instruction-following tasks (classification, extraction, Q&A)
 - Multilingual AI assistants (12 languages)
-- {'Long document processing (128k tokens)': 'summaries, Q&A'}
+- (Long document processing (128k tokens): summaries, Q&A)
 - Code generation/completion with Fill-in-the-Middle
 - Integration with external tools via function calling
 - Structured reasoning with the "Thinking" mode
