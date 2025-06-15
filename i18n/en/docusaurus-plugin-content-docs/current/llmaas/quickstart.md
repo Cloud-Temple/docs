@@ -333,6 +333,69 @@ def run_chat_with_tool_calling():
         print("🤔 The model did not ask to use a tool. Direct response:")
         print(assistant_message.get("content", "No content."))
         return
+    tool_call = assistant_message["tool_calls"][0]
+    function_name = tool_call["function"]["name"]
+    function_args_str = tool_call["function"]["arguments"]
+    tool_call_id = tool_call["id"]
+
+    print(f"   - Tool to call : {function_name}")
+    print(f"   - Arguments       : {function_args_str}")
+
+    if function_name in TOOL_FUNCTIONS_MAP:
+        function_to_call = TOOL_FUNCTIONS_MAP[function_name]
+        try:
+            # The arguments are a JSON string, they need to be parsed
+            function_args = json.loads(function_args_str)
+            tool_result = function_to_call(**function_args)
+            print(f"   - Tool result : {tool_result}")
+        except Exception as e:
+            print(f"❌ Error during tool execution: {e}")
+            tool_result = f"Error: {e}"
+    else:
+        print(f"❌ Unknown tool : {function_name}")
+        tool_result = f"Error: Tool '{function_name}' not found."
+
+    # 3. Second API call with the tool result
+    # ----------------------------------------------------
+    print("\n➡️ Step 2: Sending the tool result to the LLM...")
+
+    # Add the tool result to the message history
+    messages.append(
+        {
+            "role": "tool",
+            "tool_call_id": tool_call_id,
+            "content": tool_result
+        }
+    )
+
+    # Make another call WITHOUT tools this time to get the final answer
+    payload_final = {
+        "model": MODEL,
+        "messages": messages,
+    }
+
+    try:
+        with httpx.Client() as client:
+            response_final = client.post(
+                f"{API_URL}/chat/completions",
+                headers={"Authorization": f"Bearer {API_KEY}"},
+                json=payload_final,
+                timeout=60,
+            )
+            response_final.raise_for_status()
+            final_data = response_final.json()
+
+    except (httpx.HTTPStatusError, httpx.RequestError) as e:
+        print(f"❌ API error during step 2: {e}")
+        return
+
+    final_answer = final_data["choices"][0]["message"]["content"]
+    print("\n✅ Final LLM response :")
+    print(f"💬 \"{final_answer}\"")
+
+
+if __name__ == "__main__":
+    run_chat_with_tool_calling()
 ```
 
     tool_call = assistant_message["tool_calls"][0]
