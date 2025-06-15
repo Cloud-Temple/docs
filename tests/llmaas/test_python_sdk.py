@@ -7,10 +7,14 @@ Teste les exemples OpenAI SDK et LangChain de docs/llmaas/api.md
 import os
 import sys
 from typing import Dict, Any
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
 
 # Configuration
-API_KEY = os.getenv("LLMAAS_API_KEY", "test-token-for-docs")
-BASE_URL = "https://api.ai.cloud-temple.com/v1"
+API_KEY = os.getenv("API_KEY")
+BASE_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 
 def test_openai_sdk() -> bool:
     """Teste l'intégration OpenAI SDK"""

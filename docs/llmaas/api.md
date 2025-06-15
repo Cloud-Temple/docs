@@ -106,6 +106,8 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 | `presence_penalty` | float | ❌ | Pénalité présence -2.0 à 2.0 (défaut: 0) |
 | `frequency_penalty` | float | ❌ | Pénalité fréquence -2.0 à 2.0 (défaut: 0) |
 | `user` | string | ❌ | ID utilisateur unique |
+| `tools` | array | ❌ | Liste des outils que le modèle peut appeler. |
+| `tool_choice`| string/object | ❌ | Contrôle si le modèle doit appeler un outil. "none", "auto", ou `{"type": "function", "function": {"name": "my_function"}}`. |
 
 #### Réponse Standard
 
@@ -130,6 +132,76 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
     "completion_tokens": 42,
     "total_tokens": 57
   }
+}
+```
+
+#### Réponse avec Appel d'Outils
+
+Si le modèle décide d'appeler un outil, la réponse aura un `finish_reason` de `tool_calls` et le message contiendra un tableau `tool_calls`.
+
+```json
+{
+  "id": "chatcmpl-9f27a53f52b44a9693753f2a5e1f7a73",
+  "object": "chat.completion",
+  "created": 1749115200,
+  "model": "qwen3:14b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_abc123",
+            "type": "function",
+            "function": {
+              "name": "get_current_weather",
+              "arguments": "{\n  \"location\": \"Paris, France\",\n  \"unit\": \"celsius\"\n}"
+            }
+          }
+        ]
+      },
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 18,
+    "total_tokens": 100
+  }
+}
+```
+
+Après avoir reçu une réponse `tool_calls`, vous devez exécuter l'outil de votre côté, puis renvoyer le résultat au modèle en utilisant un message avec le `role: "tool"`.
+
+```json
+{
+  "model": "qwen3:14b",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quel temps fait-il à Paris ?"
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "call_abc123",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"location\": \"Paris, France\", \"unit\": \"celsius\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_abc123",
+      "content": "{\"temperature\": \"22\", \"unit\": \"celsius\", \"description\": \"Ensoleillé\"}"
+    }
+  ]
 }
 ```
 
@@ -158,6 +230,45 @@ data: [DONE]
 - `choices[].delta.content` : Contenu incrémental
 - `finish_reason` : `null` pendant le streaming, puis `"stop"`
 - Signal de fin : `data: [DONE]`
+
+### Requêtes Multimodales (Vision)
+
+Pour analyser des images, vous pouvez envoyer une requête où le champ `content` d'un message utilisateur est un tableau (array) contenant à la fois du texte et des images.
+
+Le format pour une image est un objet avec `type: "image_url"` et un champ `image_url` contenant l'URL de l'image au format `data URI` (base64).
+
+:::info Note de Compatibilité
+Bien que le format standard et recommandé soit `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporte également par souci de flexibilité un format simplifié `{"type": "image", "image": "data:..."}`. Il est cependant conseillé d'utiliser le format `image_url` standard pour une meilleure compatibilité avec l'écosystème OpenAI.
+:::
+
+#### Exemple de Requête Vision
+
+```bash
+curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer VOTRE_TOKEN_API" \
+  -d '{
+    "model": "gemma3:27b",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Que vois-tu sur cette image ?"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/jpeg;base64,..."
+            }
+          }
+        ]
+      }
+    ],
+    "max_tokens": 500
+  }'
+```
 
 ### POST /v1/completions
 
@@ -213,17 +324,85 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 | Paramètre | Type | Obligatoire | Description |
 |-----------|------|-------------|-------------|
-| `file` | binary | ✅ | Fichier audio (wav, mp3, m4a) |
-| `language` | string | ❌ | Code langue ISO 639-1 (ex: "fr") |
-| `prompt` | string | ❌ | Contexte pour améliorer transcription |
-| `response_format` | string | ❌ | json, text, srt, vtt (défaut: json) |
-| `temperature` | float | ❌ | Créativité transcription (défaut: 0) |
+| `file` | binary | ✅ | Fichier audio (wav, mp3, m4a). |
+| `language` | string | ❌ | Code langue ISO 639-1 (ex: "fr"). Détection automatique si non fourni. |
+| `initial_prompt` | string | ❌ | Contexte ou mots spécifiques pour améliorer la précision de la transcription. |
+| `task` | string | ❌ | Tâche à effectuer : `transcribe` (défaut) ou `translate` (traduire en anglais). |
+| `response_format` | string | ❌ | `json` (défaut, équivalent à `verbose_json`), `text`, `srt`, `vtt`. |
+
+#### Réponse (`json`)
+
+```json
+{
+  "text": "Bonjour, ceci est un test de transcription audio.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Bonjour, ceci est un test de transcription audio.",
+      "tokens": [ 50364, 40365, 33, 2373, 359, 456, 2373, 323, 1330, 2373, 2264, 50564 ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.05
+    }
+  ],
+  "language": "fr"
+}
+```
+
+### POST /v1/audio/transcriptions_batch
+
+Transcription de plusieurs fichiers audio en parallèle.
+
+#### Requête
+
+```bash
+curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions_batch" \
+  -H "Authorization: Bearer VOTRE_TOKEN_API" \
+  -F "files=@audio1.wav" \
+  -F "files=@audio2.mp3" \
+  -F "language=fr"
+```
+
+#### Paramètres
+
+| Paramètre | Type | Obligatoire | Description |
+|-----------|------|-------------|-------------|
+| `files` | array | ✅ | Liste des fichiers audio à transcrire. |
+| `language` | string | ❌ | Code langue ISO 639-1 (ex: "fr"). |
+| `initial_prompt` | string | ❌ | Contexte pour améliorer la transcription. |
+| `task` | string | ❌ | Tâche à effectuer : `transcribe` (défaut) ou `translate`. |
 
 #### Réponse
 
 ```json
 {
-  "text": "Bonjour, ceci est un test de transcription audio."
+  "batch_results": [
+    {
+      "filename": "audio1.wav",
+      "text": "Ceci est le premier fichier.",
+      "segments": [],
+      "language": "fr",
+      "error": null
+    },
+    {
+      "filename": "audio2.mp3",
+      "text": "Et voici le second.",
+      "segments": [],
+      "language": "fr",
+      "error": null
+    },
+    {
+      "filename": "audio3.ogg",
+      "text": null,
+      "segments": [],
+      "language": null,
+      "error": "Erreur de transcription pour ce fichier."
+    }
+  ]
 }
 ```
 
