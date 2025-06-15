@@ -335,7 +335,6 @@ Open source AI model (14B) by Together AI & Agentica, a credible alternative to 
 - Code generation in over 15 languages with performance optimization
 - Debugging and refactoring of existing codebases with impact analysis
 - Implementation of complex algorithms (graphs, trees, heuristics)
-- {'Code transposition between languages/frameworks (e.g., Python to JavaScript)'}
 - Automated unit test creation with code coverage > 80%
 
 ---
