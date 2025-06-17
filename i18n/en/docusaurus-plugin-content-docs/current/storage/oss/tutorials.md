@@ -9,21 +9,21 @@ import S3Winscp_002 from './images/S3_winscp_002.png'
 
 ## Using MINIO
 
-You can use the [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html):
+You can use the [minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) :
 
-For example:
+For example :
 
 ```
     mc alias set <alias_name> https://reks2ee2b1.s3.fr1.cloud-temple.com <access_key> <secret_key>
 ```
 
-Push a file:
+Push a file :
 
 ```
     mc cp test.txt <alias_name>/<bucket_name>
 ```
 
-Retrieve a file:
+Retrieve a file :
 
 ```
     mc ls <alias_name>/<bucket_name>
@@ -31,9 +31,9 @@ Retrieve a file:
 
 ## Cloud Berry Explorer
 
-You can also use [Cloud Berry Explorer](https://www.msp360.com/explorer/).
+you can also use [Cloud Berry Explorer](https://www.msp360.com/explorer/).
 
-1. Connect using your endpoint and your key:
+1. Log in using your endpoint and your key :
 
 <img src={S3Cloudberry_001} />
 
@@ -41,27 +41,27 @@ You can also use [Cloud Berry Explorer](https://www.msp360.com/explorer/).
 
 <img src={S3Cloudberry_002} />
 
-3. You can then use the bucket normally:
+3. You can then use the bucket normally :
 
 <img src={S3Cloudberry_003} />
 
 ## Using WINSCP 6.3.x
 
-You can use [Winscp](https://winscp.net/eng/download.php):
+You can use [Winscp](https://winscp.net/eng/download.php) :
 
-1. Connect using your endpoint, access key, and secret key:
+1. Log in using your endpoint, your access key and your secret key :
 
 <img src={S3Winscp_001} />
 
-2. Once connected, use WINSCP normally like an FTP or SCP site:
+2. Once connected, use WINSCP normally as an FTP or SCP site :
 
 <img src={S3Winscp_002} />
 
-## Adding a file HASH when uploading an object
+## Add the HASH of a file when uploading an object
 
-Generally, file HASHes are supported on our object storage via metadata. Some clients allow calculating a HASH on the fly and adding it as metadata (minio-mc with md5 for example), for others, you need to specify the data in metadata directly.
+Generally, the HASH of files is supported on our object storage via the metadata. Some clients allow to calculate a HASH on the fly and add it to the metadata (minio-mc with md5 for example), for others, you need to specify the data directly in the metadata.
 
-1. Case of adding a HASH with the minio-mc client: this client supports on-the-fly calculation of an MD5 hash and storage in metadata
+1. Case of adding a HASH with the minio-mc client: this client supports on-the-fly calculation of a hash MD5 and storing it in the metadata
 
             ╰─➤  cat test.txt
             This is a test

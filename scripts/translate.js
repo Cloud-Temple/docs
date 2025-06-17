@@ -21,8 +21,8 @@ dotenv.config();
 const API_URL = process.env.CLOUDTEMPLE_API_URL || 'https://api.ai.cloud-temple.com/v1/chat/completions'; // Default Cloud Temple API URL
 const API_KEY = process.env.CLOUDTEMPLE_API_KEY;
 const DOC_BASE_PATH = process.env.DOC_BASE_PATH || '.';
-const TRANSLATION_MODEL = process.env.TRANSLATION_MODEL || 'Qwen/Qwen3-30B-A3B-FP8'; // Default to Qwen/Qwen3-30B-A3B-FP8
-const TRANSLATION_TEMPERATURE = parseFloat(process.env.TRANSLATION_TEMPERATURE || '1');
+const TRANSLATION_MODEL = process.env.TRANSLATION_MODEL || 'qwen3:30b-a3b'; // Default to qwen3:30b-a3b
+const TRANSLATION_TEMPERATURE = parseFloat(process.env.TRANSLATION_TEMPERATURE || '0.1');
 const TRANSLATION_TOP_P = parseFloat(process.env.TRANSLATION_TOP_P || '1');
 const CONCURRENT_TRANSLATIONS = parseInt(process.env.CONCURRENT_TRANSLATIONS || '4', 10); // Number of files to process concurrently
 
@@ -159,10 +159,20 @@ async function translateTextBlock(text, targetLang, targetLangName) {
 Your task is to translate plain text from French to ${targetLangName} while strictly preserving the structure and formatting of the original Markdown file. 
 Follow these rules strictly: 
 1. Do not modify, translate, or interpret any HTML or Markdown elements, such as \`<a>\`, \`<div>\`, or \`#\` headers. 
-2. Do not alter the content inside code blocks (\` \`\`\` \`) or inline code (\` \`code\` \`). 
-3. Do not translate or modify text inside square brackets \`[]\`, parentheses \`()\`, or URLs. 
-4. Do not add or modify any new lines, spaces, or formatting outside of the original text. 
-5. If the content includes raw HTML, do not alter or translate it; leave it exactly as it appears. 
+2. Do not alter the content inside code blocks delimited by:
+   - Triple backticks: \` \`\`\` \`
+   - Triple quotes: \`'''\` or \`"""\`
+   - Inline code: \` \`code\` \`
+3. For Python code blocks specifically:
+   - Do NOT translate variable names, function names, class names, or any Python syntax
+   - Do NOT translate strings inside the code (even if they contain French text)
+   - Do NOT translate docstrings (text between triple quotes \`'''\` or \`"""\`)
+   - Only translate comments that start with \`#\` if they are standalone comment lines
+   - Preserve all indentation, spacing, and Python syntax exactly
+4. Do not translate or modify text inside square brackets \`[]\`, parentheses \`()\`, or URLs. 
+5. Do not add or modify any new lines, spaces, or formatting outside of the original text. 
+6. If the content includes raw HTML, do not alter or translate it; leave it exactly as it appears. 
+7. For any programming language code blocks, preserve ALL syntax, variable names, function calls, and string literals unchanged.
 Your sole task is to translate only the plain text content outside of code, Markdown, or HTML elements, while ensuring that all formatting and structural integrity are preserved. 
 The goal is to produce a translation that is technically accurate, professional, and maintains the original file's structure without any unintended changes.`;
 

@@ -7,9 +7,9 @@ sidebar_position: 6
 
 ## Visión general
 
-Estos tutoriales avanzados cubren la integración, optimización y mejores prácticas para aprovechar al máximo LLMaaS Cloud Temple en producción. Cada tutorial incluye código probado y métricas de rendimiento reales.
+Estos tutoriales avanzados cubren la integración, optimización y buenas prácticas para aprovechar al máximo LLMaaS Cloud Temple en producción. Cada tutorial incluye código probado y métricas de rendimiento reales.
 
-## 🚀 Integraciones de LangChain y frameworks
+## 🚀 Integraciones de LangChain y Frameworks
 
 ### 1. Integración de LangChain
 
@@ -27,7 +27,7 @@ import requests
 import json
 
 class CloudTempleLLM(LLM):
-    """Envoltura de LangChain para LLMaaS Cloud Temple"""
+    """Envoltura para LLMaaS Cloud Temple en LangChain"""
     
     api_key: str = Field()
     model_name: str = Field(default="granite3.3:8b")
@@ -86,7 +86,7 @@ from langchain.prompts import PromptTemplate
 def ejemplo_langchain_basic():
     # Inicialización LLM Cloud Temple
     llm = CloudTempleLLM(
-        api_key="su-clave-de-api",
+        api_key="your-api-key",
         model_name="granite3.3:8b",
         temperature=0.7
     )
@@ -136,16 +136,16 @@ def configurar_pipeline_rag():
     """Configuración completa de la pipeline RAG con LLMaaS"""
     
     # 1. Carga de documentos
-    loader = TextLoader("documentos/base_de_conocimiento.txt")
+    loader = TextLoader("documents/knowledge_base.txt")
     documentos = loader.load()
     
-    # 2. División en fragmentos
+    # 2. División en chunks
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=200,
         length_function=len,
     )
-    fragmentos = text_splitter.split_documents(documentos)
+    splits = text_splitter.split_documents(documentos)
     
     # 3. Creación de embeddings
     embeddings = HuggingFaceEmbeddings(
@@ -153,11 +153,11 @@ def configurar_pipeline_rag():
     )
     
     # 4. Índice vectorial
-    vectorstore = FAISS.from_documents(fragmentos, embeddings)
+    vectorstore = FAISS.from_documents(splits, embeddings)
     
     # 5. LLM Cloud Temple
     llm = CloudTempleLLM(
-        api_key="su-clave-de-api",
+        api_key="your-api-key",
         model_name="granite3.3:8b",
         temperature=0.3  # Más preciso para RAG
     )
@@ -174,23 +174,23 @@ def configurar_pipeline_rag():
 
 def consultar_rag(qa_chain, pregunta: str):
     """Consulta del sistema RAG"""
-    resultado = qa_chain({"query": pregunta})
+    result = qa_chain({"query": pregunta})
     
     print(f"Pregunta: {pregunta}")
-    print(f"Respuesta: {resultado['result']}")
-    print(f"Fuentes: {len(resultado['source_documents'])} documentos")
+    print(f"Respuesta: {result['result']}")
+    print(f"Fuentes: {len(result['source_documents'])} documentos")
     
-    for i, doc in enumerate(resultado['source_documents']):
+    for i, doc in enumerate(result['source_documents']):
         print(f"Fuente {i+1}: {doc.page_content[:200]}...")
     
-    return resultado
+    return result
 
 # Ejemplo de uso
 pipeline_rag = configurar_pipeline_rag()
 consultar_rag(pipeline_rag, "¿Cómo configurar la seguridad de una API?")
 ```
 
-### 3. Agentes de LangChain con herramientas
+### 3. Agentes de LangChain con Herramientas
 
 ```python
 from langchain.agents import Tool, AgentExecutor, create_react_agent
@@ -205,17 +205,17 @@ class CloudTempleAPITool(BaseTool):
     name = "cloud_temple_api"
     description = "Herramienta para recuperar información sobre los servicios Cloud Temple"
     
-    def _run(self, consulta: str) -> str:
+    def _run(self, query: str) -> str:
         # Simulación de llamada a la API Cloud Temple
-        api_url = "https://api.cloud-temple.com/v1/servicios"
-        response = requests.get(api_url, params={"consulta": consulta})
+        api_url = "https://api.cloud-temple.com/v1/services"
+        response = requests.get(api_url, params={"query": query})
         
         if response.status_code == 200:
             return f"Información Cloud Temple: {response.json()}"
         else:
             return "Error al recuperar los datos"
     
-    def _arun(self, consulta: str) -> str:
+    def _arun(self, query: str) -> str:
         raise NotImplementedError("Async no implementado")
 
 class CalculadoraTool(BaseTool):
@@ -239,7 +239,7 @@ def crear_agente_con_herramientas():
     
     # LLM Cloud Temple
     llm = CloudTempleLLM(
-        api_key="su-clave-de-api",
+        api_key="your-api-key",
         model_name="granite3.3:8b",
         temperature=0.7
     )
@@ -254,13 +254,13 @@ def crear_agente_con_herramientas():
     prompt_template = """Eres un asistente de IA con acceso a herramientas especializadas.
     
     Tienes acceso a las siguientes herramientas:
-    {herramientas}
+    {tools}
     
     Usa el siguiente formato:
     
     Pregunta: la pregunta de entrada que debes responder
     Pensamiento: siempre debes reflexionar sobre qué hacer
-    Acción: la acción a realizar, debe ser una de [{nombre_herramientas}]
+    Acción: la acción a realizar, debe ser una de [{tool_names}]
     Entrada de la acción: la entrada de la acción
     Observación: el resultado de la acción
     ... (esta secuencia Pensamiento/Acción/Entrada de la acción/Observación puede repetirse N veces)
@@ -270,17 +270,17 @@ def crear_agente_con_herramientas():
     Comienza!
     
     Pregunta: {input}
-    Pensamiento: {agente_scratchpad}"""
+    Pensamiento: {agent_scratchpad}"""
     
     prompt = PromptTemplate(
         template=prompt_template,
-        input_variables=["input", "agente_scratchpad", "herramientas", "nombre_herramientas"]
+        input_variables=["input", "agent_scratchpad", "tools", "tool_names"]
     )
     
     # Creación del agente
     agente = create_react_agent(llm, herramientas, prompt)
     
-    # Ejecutor de agente
+    # Ejecutor del agente
     agente_executor = AgentExecutor(
         agente=agente,
         herramientas=herramientas,
@@ -309,7 +309,7 @@ def probar_agente():
 probar_agente()
 ```
 
-### 4. Integración del SDK de OpenAI
+### 4. Integración con SDK de OpenAI
 
 **Migración transparente desde OpenAI**
 
@@ -321,14 +321,14 @@ def configurar_cliente_cloud_temple():
     """Configuración del cliente OpenAI para Cloud Temple"""
     
     cliente = OpenAI(
-        api_key="su-clave-de-api-cloud-temple",
+        api_key="your-cloud-temple-api-key",
         base_url="https://api.ai.cloud-temple.com/v1"
     )
     
     return cliente
 
 def probar_compatibilidad_openai():
-    """Prueba de compatibilidad con el SDK de OpenAI"""
+    """Prueba de compatibilidad con SDK de OpenAI"""
     
     cliente = configurar_cliente_cloud_temple()
     
@@ -347,7 +347,7 @@ def probar_compatibilidad_openai():
     
     # Streaming
     stream = cliente.chat.completions.create(
-        model="granite3.3:8b",
+model="granite3.3:8b",
         messages=[
             {"role": "user", "content": "Escribe un poema sobre la IA."}
         ],
@@ -355,17 +355,17 @@ def probar_compatibilidad_openai():
         max_tokens=200
     )
     
-    print("Stream:")
+    print("Flujo:")
     for chunk in stream:
         if chunk.choices[0].delta.content is not None:
             print(chunk.choices[0].delta.content, end="")
     print()
 
 # Prueba de compatibilidad
-probar_compatibilidad_openai()
+test_openai_compatibility()
 ```
 
-### 5. Integración Semantic Kernel (Microsoft)
+### 5. Integración de Semantic Kernel (Microsoft)
 
 ```python
 import requests
@@ -518,21 +518,21 @@ test_llamaindex()
 
 ## 💡 Ejemplos Avanzados
 
-Encontrará en el directorio GitHub del producto una colección de ejemplos de código y scripts que demuestran las diferentes funcionalidades y casos de uso de la oferta LLM como servicio (LLMaaS) de Cloud Temple:
+En el repositorio GitHub del producto encontrarás una colección de ejemplos de código y scripts que demuestran las diferentes funcionalidades y casos de uso de la oferta LLM as a Service (LLMaaS) de Cloud Temple:
 
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
-Allí encontrará guías prácticas para:
-- __Extracción de Información y Análisis de Texto :__ Capacidad para analizar documentos y extraer datos estructurados como entidades, eventos, relaciones y atributos, basándose en ontologías específicas de dominios (ej: jurídico, RR.HH., TI).
+Allí encontrarás guías prácticas para:
+- __Extracción de información y análisis de texto:__ Capacidad para analizar documentos y extraer datos estructurados como entidades, eventos, relaciones y atributos, basándose en ontologías específicas a dominios (ej: jurídico, RR.HH., TI).
 
-- __Interacción Conversacional y Chatbots :__ Desarrollo de agentes conversacionales capaces de dialogar, mantener un historial de intercambio, usar instrucciones del sistema (prompts del sistema) e invocar herramientas externas.
+- __Interacción conversacional y chatbots:__ Desarrollo de agentes conversacionales capaces de dialogar, mantener un historial de intercambio, usar instrucciones del sistema (prompts del sistema) e invocar herramientas externas.
 
-- __Transcripción de Audio (Speech-to-Text) :__ Conversión de contenido de audio a texto, incluyendo archivos voluminosos, gracias a técnicas de segmentación, normalización y procesamiento por lotes.
+- __Transcripción de audio (Speech-to-Text):__ Conversión de contenido de audio a texto, incluyendo archivos voluminosos, gracias a técnicas de segmentación, normalización y procesamiento por lotes.
 
-- __Traducción de Texto :__ Traducción de documentos de un idioma a otro, manejando el contexto en múltiples segmentos para mejorar la coherencia.
+- __Traducción de texto:__ Traducción de documentos de un idioma a otro, manejando el contexto en varios segmentos para mejorar la coherencia.
 
-- __Gestión y Evaluación de Modelos :__ Listado de modelos de lenguaje disponibles a través de la API, consulta de sus especificaciones y ejecución de pruebas para comparar sus rendimientos.
+- __Gestión y evaluación de modelos:__ Listado de modelos de lenguaje disponibles a través de la API, consulta de sus especificaciones y ejecución de pruebas para comparar sus rendimientos.
 
-- __Streaming de Respuestas en Tiempo Real :__ Demostración de la capacidad para recibir y mostrar respuestas de los modelos de forma progresiva (token por token), esencial para aplicaciones interactivas.
+- __Transmisión de respuestas en tiempo real:__ Demostración de la capacidad para recibir y mostrar respuestas de los modelos de manera progresiva (token por token), esencial para aplicaciones interactivas.
 
 ---

@@ -2,56 +2,57 @@
 
 ```
 ""                                 Apache License
-                           Version 2.0, January 2004
+                           Versión 2.0, enero de 2004
                         http://www.apache.org/licenses/
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+   TÉRMINOS Y CONDICIONES PARA EL USO, REPRODUCCIÓN Y DISTRIBUCIÓN
 
-   1. Definitions.
+   1. Definiciones.
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+      "Licencia" se entenderá como los términos y condiciones de uso, reproducción
+      y distribución definidos en las secciones 1 a 9 de este documento.
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+      "Otorgante de la Licencia" se referirá al propietario de los derechos de autor
+      o a la entidad autorizada por el propietario de los derechos de autor que otorga
+      la Licencia.
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+      "Entidad Legal" se referirá a la unión de la entidad en cuestión y todas
+      las demás entidades que la controlan, son controladas por ella o están bajo
+      control común con dicha entidad. Para los fines de esta definición,
+      "control" significa (i) la capacidad, directa o indirecta, de influir en
+      la dirección o gestión de dicha entidad, ya sea mediante contrato u otras
+      formas, o (ii) la propiedad del 50% o más de las acciones emitidas, o (iii)
+      la propiedad beneficiaria de dicha entidad.
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+      "Usted" (o "Su") se referirá a un individuo o Entidad Legal que ejerza
+      las autorizaciones otorgadas por esta Licencia.
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+      "Forma Fuente" se referirá a la forma preferida para realizar modificaciones,
+      incluyendo, entre otras, código fuente de software, documentos fuente y
+      archivos de configuración.
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+      "Forma Objeto" se referirá a cualquier forma resultante de una transformación
+      mecánica o traducción de una forma fuente, incluyendo, entre otras, código
+      objeto compilado, documentación generada y conversiones a otros tipos de medios.
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+      "Trabajo" se referirá al trabajo de autoría, ya sea en forma fuente o
+      objeto, disponible bajo la Licencia, según se indica por un aviso de
+      derechos de autor que se incluya en el trabajo o se adjunte a él
+      (un ejemplo se proporciona en el Apéndice a continuación).
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+      "Obras Derivadas" se referirá a cualquier trabajo, ya sea en forma fuente
+      o objeto, que se base en (o se derive de) el Trabajo y para el cual las
+      revisiones editoriales, anotaciones, elaboraciones u otras modificaciones
+      representen, en su totalidad, un trabajo original de autoría. Para los
+      fines de esta Licencia, las Obras Derivadas no incluirán trabajos que
+      permanezcan separables o que simplemente enlacen (o vinculen por nombre)
+      las interfaces del Trabajo y de las Obras Derivadas de éste.
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted
+      "Contribución" se referirá a cualquier trabajo de autoría, incluyendo
+      la versión original del Trabajo y cualquier modificación o adición
+      a dicho Trabajo o Obras Derivadas, que se envíe intencionalmente al
+      Otorgante de la Licencia para su inclusión en el Trabajo por parte del
+      propietario de los derechos de autor o por un individuo o Entidad Legal
+      autorizada para enviar en nombre del propietario de los derechos de autor.
+      Para los fines de esta definición, "enviado
 ```

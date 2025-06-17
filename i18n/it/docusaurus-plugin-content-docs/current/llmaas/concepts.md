@@ -1,13 +1,9 @@
 ---
 title: Concetti
-sidebar_position: 3
+posizione_barra_laterale: 3
 ---
 
 # Concetti e Architettura LLMaaS
-
-## Panoramica
-
-Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple fornisce un accesso sicuro e sovrano ai modelli di intelligenza artificiale più avanzati, con la **qualifica SecNumCloud** dell'ANSSI.
 
 ## 🏗️ Architettura Tecnica
 
@@ -20,52 +16,54 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 ### Componenti Principali
 
 #### 1. **API Gateway LLMaaS**
-- **Compatibile OpenAI** : Integrazione trasparente con l'ecosistema esistente
-- **Rate Limiting** : Gestione dei quoti per tier di fatturazione
-- **Load Balancing** : Distribuzione intelligente su 12 macchine GPU
-- **Monitoring** : Metriche in tempo reale e alerting
+- **Compatibile con OpenAI** : Integrazione trasparente con l'ecosistema esistente
+- **Limitazione delle richieste** : Gestione dei quoti per livello di fatturazione
+- **Equilibrio del carico** : Distribuzione intelligente su 12 macchine GPU
+- **Monitoraggio** : Metriche in tempo reale e alerting
 
-#### 2. **Servizio di Autenticazione**
-- **Token API sicuri** : Rotazione automatica
-- **Controllo di accesso** : Permessi granulari per modello
-- **Audit trails** : Tracciabilità completa degli accessi
+#### 2. **Servizio di Autenticazione**  
+- **Token API sicuri**  
+- **Controllo di accesso** : Permessi granulari per modello  
+- **Tracciabilità completa** : Tracciabilità completa degli accessi
 
 ## 🤖 Modelli e Token
 
 ### Catalogo dei Modelli
 
-*Catalogo completo : [Lista dei modelli](./models)*
+*Catalogo completo : [Elenco dei modelli](./models)*
 
 ### Gestione dei Token
 
 #### **Tipi di Token**
 - **Token di input** : Il tuo prompt e contesto
 - **Token di output** : Risposta generata dal modello
-- **Token di sistema** : Metadata e istruzioni
+- **Token di sistema** : Metadati e istruzioni
 
 #### **Calcolo dei Costi**
 ```
-Costo totale = (Token di input × 0,9€/M) + (Token di output × 4€/M) +  (Token di output Ragionamento × 21€/M)
+Coût total = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M) +  (Tokens sortie Raisonnement × 21€/M)
 ```
 
 #### **Ottimizzazione**
 - **Context window** : Riutilizza le conversazioni per risparmiare
 - **Modelli appropriati** : Scegli la dimensione in base alla complessità
-- **Max token** : Limita la lunghezza delle risposte
+- **Max tokens** : Limita la lunghezza delle risposte
 
 ### Tokenizzazione
 
 ```python
+```
+
 # Esempio di stima dei token
 def estimate_tokens(text: str) -> int:
-    """Stima approssimativa : 1 token ≈ 4 caratteri"""
+    """Stima approssimativa: 1 token ≈ 4 caratteri"""
     return len(text) // 4
 
 prompt = "Spiega la fotosintesi"
 response_max = 200  # token massimi desiderati
 
 estimated_input = estimate_tokens(prompt)  # ~6 token
-total_cost = (estimated_input * 0,9 + response_max * 4) / 1_000_000
+total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
 print(f"Costo stimato: {total_cost:.6f}€")
 ```
 
@@ -73,22 +71,22 @@ print(f"Costo stimato: {total_cost:.6f}€")
 
 ### Qualifica SecNumCloud
 
-Il servizio LLMaaS è eseguito su un'infrastruttura tecnica che gode della **qualifica SecNumCloud 3.2** dell'ANSSI, garantendo:
+Il servizio LLMaaS è calcolato su un'infrastruttura IaaS Cloud Temple che gode della **qualifica SecNumCloud 3.2** dell'ANSSI, garantendo:
 
 #### **Protezione dei Dati**
 - **Crittografia end-to-end** : TLS 1.3 per tutti gli scambi
-- **Archiviazione sicura** : Dati crittografati a riposo (AES-256)
-- **Isolamento** : Ambienti dedicati per tenant
+- **Archiviazione sicura** : Dati crittografati a riposo 
+- **Isolamento** dell'ambiente
 
 #### **Sovranità Digitale**
-- **Ospitato in Francia** : Datacenter Cloud Temple certificati
-- **Diritto francese** : Conformità nativa RGPD
-- **Nessuna esposizione** : Nessun trasferimento verso cloud esteri
+- **Hosting Francia** : Datacenters Cloud Temple certificati
+- **Diritto francese** : Conformità al RGPD 
+- **Nessuna esposizione** : Nessun trasferimento verso cloud esteri e nessun archiviazione dei dati
 
 #### **Audit e Tracciabilità**
 - **Log completi** : Tutte le interazioni tracciate
 - **Ritenzione** : Conservazione secondo le politiche legali
-- **Conformità** : Report di audit disponibili
+- **Compliance**
 
 ### Controlli di Sicurezza
 
@@ -98,26 +96,24 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ## 📈 Prestazioni e Scalabilità
 
-### Metriche di Prestazione
-
-    In progress
-
+### Metriche di prestazione
 
 #### **Latenza**
+- **Tempo di risposta medio** : < 2 secondi per modelli 8B
+- **Tempo del primo token** : < 1500ms
+- **Banda di streaming** : 15-100 token/al secondo in base al modello
 
-    In progress
+#### **Banda**
+- **Richieste simultanee** : Fino a 1000 richieste/minuto per tenant
+- **Scaling automatico** : Adattamento della capacità in tempo reale in base ai modelli richiesti
+- **Disponibilità** : Obiettivo SLA del 99,9% di disponibilità mensile
 
-#### **Throughput**
+### Monitoraggio in tempo reale
 
-    In progress
-
-
-### Monitoraggio in Tempo Reale
-
-Accesso tramite **Console Cloud Temple** :
+Accesso tramite **Console Cloud Temple**:
 - Metriche di utilizzo per modello
 - Grafici di latenza e throughput
-- Alert sui limiti di prestazione
+- Avvisi sui limiti di prestazione
 - Storico delle richieste
 
 ## 🌐 Integrazione e Ecosistema
@@ -127,6 +123,8 @@ Accesso tramite **Console Cloud Temple** :
 Il servizio LLMaaS è **compatibile** con l'API OpenAI :
 
 ```python
+```
+
 # Migrazione trasparente
 from openai import OpenAI
 
@@ -135,39 +133,38 @@ client_openai = OpenAI(api_key="sk-...")
 
 # Dopo (Cloud Temple LLMaaS)
 client_ct = OpenAI(
-    api_key="vostro-token-cloud-temple",
+    api_key="votre-token-cloud-temple",
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
-# Codice identico!
+# Codice identico !
 response = client_ct.chat.completions.create(
-    model="granite3.3:8b",  # Modello Cloud Temple
-    messages=[{"role": "user", "content": "Ciao"}]
+    model="granite3.3:8b",  # Modèle Cloud Temple
+    messages=[{"role": "user", "content": "Bonjour"}]
 )
-```
 
 ### Ecosistema Supportato
 
-#### **Framework IA**
+#### **Framework di Intelligenza Artificiale**
 - ✅ **LangChain** : Integrazione nativa
 - ✅ **Haystack** : Pipeline di documenti
 - ✅ **Semantic Kernel** : Orchestrazione Microsoft
 - ✅ **AutoGen** : Agenti conversazionali
 
-#### **Strumenti Sviluppo**
+#### **Strumenti di Sviluppo**
 - ✅ **Jupyter** : Notebook interattivi
-- ✅ **Streamlit** : App web rapide
-- ✅ **Gradio** : Interfacce utente IA
+- ✅ **Streamlit** : Applicazioni web rapide
+- ✅ **Gradio** : Interfacce utente per l'IA
 - ✅ **FastAPI** : API backend
 
-#### **Piattaforme No-Code**
+#### **Piattaforme Senza Codice**
 - ✅ **Zapier** : Automazioni
 - ✅ **Make** : Integrazioni visive
-- ✅ **Bubble** : App web
+- ✅ **Bubble** : Applicazioni web
 
 ## 🔄 Ciclo di Vita dei Modelli
 
-### Aggiornamenti dei Modelli
+### Aggiornamento dei Modelli
 
 import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
@@ -175,10 +172,10 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
 ### Politica di Versioning
 
-- **Modelli stabili** : Versioni fisse disponibili 6 mesi
-- **Modelli sperimentali** : Versioni beta per early adopters
-- **Deprecazione** : Avviso 3 mesi prima del ritiro
-- **Migrazione** : Servizi professionali disponibili per garantire le tue transizioni
+- **Modelli stabili** : Versioni fisse disponibili per 6 mesi  
+- **Modelli sperimentali** : Versioni beta per early adopters  
+- **Depreciazione** : Avviso di 3 mesi prima del ritiro  
+- **Migrazione** : Servizi professionali disponibili per garantire le vostre transizioni
 
 ## 💡 Buone Pratiche
 
@@ -187,7 +184,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 1. **Scelta del modello**
    ```python
    # Compito semplice → modello leggero
-   if task_complexity == "semplice":
+   if task_complexity == "simple":
        model = "llama3.2:3b"  # Più economico
    else:
        model = "llama3.1:70b"  # Più potente
@@ -210,7 +207,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
        model="granite3.3:8b",
        messages=messages,
        max_tokens=100,  # Limita la lunghezza
-       temperature=0,7
+       temperature=0.7
    )
    ```
 
@@ -240,12 +237,12 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
 ### Sicurezza
 
-1. **Validazione degli input**
+1. **Convalida degli input**
    ```python
    def sanitize_input(user_input: str) -> str:
        # Pulire le potenziali iniezioni
        cleaned = user_input.replace("```", "")
-       return cleaned[:1000]  # Limita la dimensione
+       return cleaned[:1000]  # Limitare la dimensione
    ```
 
 2. **Gestione degli errori**

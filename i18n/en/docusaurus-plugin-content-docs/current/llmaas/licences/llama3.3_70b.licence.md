@@ -63,7 +63,8 @@ reference into this Agreement.
 the products or services made available by or for Licensee, or Licensee's affiliates, is greater than 700
 million monthly active users in the preceding calendar month, you must request a license from Meta,
 which Meta may grant to you in its sole discretion, and you are not authorized to exercise any of the
-rights under this Agreement unless or until Meta otherwise expressly grants you such rights.
+rights under this Agreement unless or until Meta otherwis
+e expressly grants you such rights.
 
 3. Disclaimer of Warranty. UNLESS REQUIRED BY APPLICABLE LAW, THE LLAMA MATERIALS AND ANY
 OUTPUT AND RESULTS THEREFROM ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF

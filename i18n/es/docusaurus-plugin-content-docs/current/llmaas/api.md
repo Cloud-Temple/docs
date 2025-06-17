@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Documentación de la API LLMaaS
 
-## URL base
+## URL Base
 
 ```
 https://api.ai.cloud-temple.com/v1
@@ -16,26 +16,39 @@ https://api.ai.cloud-temple.com/v1
 Todas las solicitudes requieren un encabezado `Authorization` con su token de API:
 
 ```
-Authorization: Bearer SU_TOKEN_DE_API
+Authorization: Bearer SU_TOKEN_API
 ```
 
-## Límites de velocidad y facturación
+## Límites de tasas y facturación
 
-### Sistema de niveles por monto
+### El Concepto de Tiers: Nivel de Acceso, Presupuesto y Capacidad
 
-| Nivel | Crédito de compra | Límite mensual | Tokens de salida/hora | Tokens de salida/día | Descripción |
-|------|-------------------|------------------|-----------------------|----------------------|-----------| 
-| **Nivel 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Uso estándar |
-| **Nivel 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Uso profesional |
-| **Nivel 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Alto volumen |
-| **Nivel 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Empresa |
+Nuestro sistema de tiers está diseñado como **envolturas completas de servicio** que definen tres aspectos clave de su uso:
+
+1.  **Un Nivel de Acceso (Crédito de Compra)** : Para los tiers 1 a 4, se trata de una cantidad que debe pagarse de forma anticipada (upfront) para activar el servicio y desbloquear las capacidades técnicas y presupuestarias del nivel elegido.
+2.  **Un Límite de Presupuesto Mensual** : Es el techo de su consumo mensual, asegurando un control total de sus costos.
+3.  **Una Capacidad Técnica** : Son los límites de volumen (tokens por día y por hora) que garantizan un rendimiento estable y predecible para su volumen de llamadas.
+
+La elección de un tier es por lo tanto un equilibrio entre la inversión inicial, el presupuesto mensual previsto y la capacidad técnica requerida. Su consumo dentro de este marco se facturará según los tarifas vigentes.
+
+### Tabla de Tiers
+
+| Tier | Crédito de compra | Límite mensual | Tokens Output/Hora | Tokens Output/Día | Descripción |
+|------|-------------------|------------------|--------------------|-------------------|-----------| 
+| **Tier 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Uso estándar |
+| **Tier 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Uso profesional |
+| **Tier 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Volumen alto |
+| **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Empresa |
 | **Facturación mensual** | N/A | Ilimitada | Prioridad alta | Prioridad alta | Contacto comercial |
 
-**Nota** : Límites calculados en tokens de salida (4€/millón). Los tokens de entrada (0,9€/millón) tienen límites proporcionalmente más altos.
+**Nota** : Los límites de volumen se calculan en función de los tokens de salida. La tarificación de los tokens varía según el uso:
+- **Tokens de entrada** : 0,90 € / millón
+- **Tokens de salida (estándar)** : 4,00 € / millón
+- **Tokens de salida (razonador)** : 21,00 € / millón (se aplica a los modelos más avanzados para tareas complejas de tipo agente o razonamiento)
 
-### Encabezados de límite
+### Encabezados de Límite
 
-Las respuestas incluyen encabezados informativos :
+Las respuestas incluyen encabezados informativos:
 
 ```
 X-RateLimit-Limit-Requests: 1000
@@ -43,19 +56,19 @@ X-RateLimit-Remaining-Requests: 999
 X-RateLimit-Reset-Requests: 1640995200
 ```
 
-### Error 429 - Límite alcanzado
+### Error 429 - Límite Alcanzado
 
 ```json
 {
   "error": {
-    "message": "Límite de velocidad excedido. Por favor, actualice su nivel o intente más tarde.",
+    "message": "Límite de tasas excedido. Por favor, actualice su nivel o intente más tarde.",
     "type": "rate_limit_error",
     "code": "rate_limit_exceeded"
   }
 }
 ```
 
-## Puntos finales
+## Endpoints
 
 ### POST /v1/chat/completions
 
@@ -66,7 +79,7 @@ Genera respuestas conversacionales.
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer SU_TOKEN_DE_API" \
+  -H "Authorization: Bearer SU_TOKEN_API" \
   -d '{
     "model": "granite3.3:8b",
     "messages": [
@@ -93,8 +106,10 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 | `presence_penalty` | float | ❌ | Penalización de presencia -2.0 a 2.0 (por defecto: 0) |
 | `frequency_penalty` | float | ❌ | Penalización de frecuencia -2.0 a 2.0 (por defecto: 0) |
 | `user` | string | ❌ | ID de usuario único |
+| `tools` | array | ❌ | Lista de herramientas que el modelo puede llamar. |
+| `tool_choice`| string/object | ❌ | Controla si el modelo debe llamar a una herramienta. "none", "auto", o `{"type": "function", "function": {"name": "my_function"}}`. |
 
-#### Respuesta estándar
+#### Respuesta Estándar
 
 ```json
 {
@@ -120,9 +135,79 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 }
 ```
 
+#### Respuesta con Llamada a Herramientas
+
+Si el modelo decide llamar a una herramienta, la respuesta tendrá un `finish_reason` de `tool_calls` y el mensaje contendrá un array `tool_calls`.
+
+```json
+{
+  "id": "chatcmpl-9f27a53f52b44a9693753f2a5e1f7a73",
+  "object": "chat.completion",
+  "created": 1749115200,
+  "model": "qwen3:14b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_abc123",
+            "type": "function",
+            "function": {
+              "name": "get_current_weather",
+              "arguments": "{\n  \"location\": \"París, Francia\",\n  \"unit\": \"celsius\"\n}"
+            }
+          }
+        ]
+      },
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 18,
+    "total_tokens": 100
+  }
+}
+```
+
+Después de recibir una respuesta `tool_calls`, debe ejecutar la herramienta desde su lado, y luego enviar el resultado al modelo utilizando un mensaje con el `role: "tool"`.
+
+```json
+{
+  "model": "qwen3:14b",
+  "messages": [
+    {
+      "role": "user",
+      "content": "¿Qué tiempo hace en París?"
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "call_abc123",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"location\": \"París, Francia\", \"unit\": \"celsius\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_abc123",
+      "content": "{\"temperature\": \"22\", \"unit\": \"celsius\", \"description\": \"Soleado\"}"
+    }
+  ]
+}
+```
+
 #### Streaming (SSE)
 
-Con `"stream": true`, la respuesta llega token por token :
+Con `"stream": true`, la respuesta llega token por token:
 
 **Encabezados de respuesta :**
 ```
@@ -130,7 +215,7 @@ Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
-**Formato de los eventos :**
+**Formato de eventos :**
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -144,12 +229,51 @@ data: [DONE]
 **Estructura de los chunks :**
 - `choices[].delta.content` : Contenido incremental
 - `finish_reason` : `null` durante el streaming, luego `"stop"`
-- Señal de final : `data: [DONE]`
+- Señal de finalización : `data: [DONE]`
+
+### Solicitud Multimodal (Visión)
+
+Para analizar imágenes, puede enviar una solicitud donde el campo `content` de un mensaje de usuario sea un array que contenga tanto texto como imágenes.
+
+El formato para una imagen es un objeto con `type: "image_url"` y un campo `image_url` que contenga la URL de la imagen en formato `data URI` (base64).
+
+:::info Nota de compatibilidad
+Aunque el formato estándar y recomendado es `{"type": "image_url", "image_url": {"url": "data:..."}}`, la API también admite por flexibilidad un formato simplificado `{"type": "image", "image": "data:..."}`. Sin embargo, se recomienda usar el formato estándar `image_url` para una mejor compatibilidad con el ecosistema OpenAI.
+:::
+
+#### Ejemplo de Solicitud de Visión
+
+```bash
+curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer SU_TOKEN_API" \
+  -d '{
+    "model": "gemma3:27b",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "¿Qué ves en esta imagen?"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/jpeg;base64,..."
+            }
+          }
+        ]
+      }
+    ],
+    "max_tokens": 500
+  }'
+```
 
 ### POST /v1/completions
 
 :::warning
-**Nota** : El punto final `/v1/completions` utiliza el mismo formato que `/v1/chat/completions` con mensajes. 
+**Nota** : El endpoint `/v1/completions` utiliza el mismo formato que `/v1/chat/completions` con mensajes. 
 Para completar texto simple, use un mensaje de usuario con su prompt.
 :::
 
@@ -160,7 +284,7 @@ Completar texto mediante formato de chat.
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/completions" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer SU_TOKEN_DE_API" \
+  -H "Authorization: Bearer SU_TOKEN_API" \
   -d '{
     "model": "granite3.3:8b",
     "messages": [
@@ -190,7 +314,7 @@ Transcripción de audio a texto (Whisper).
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
-  -H "Authorization: Bearer SU_TOKEN_DE_API" \
+  -H "Authorization: Bearer SU_TOKEN_API" \
   -F "file=@audio.wav" \
   -F "language=fr" \
   -F "response_format=json"
@@ -200,17 +324,85 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 | Parámetro | Tipo | Obligatorio | Descripción |
 |-----------|------|-------------|-------------|
-| `file` | binario | ✅ | Archivo de audio (wav, mp3, m4a) |
-| `language` | string | ❌ | Código de idioma ISO 639-1 (ej: "fr") |
-| `prompt` | string | ❌ | Contexto para mejorar la transcripción |
-| `response_format` | string | ❌ | json, text, srt, vtt (por defecto: json) |
-| `temperature` | float | ❌ | Creatividad de la transcripción (por defecto: 0) |
+| `file` | binario | ✅ | Archivo de audio (wav, mp3, m4a). |
+| `language` | string | ❌ | Código de idioma ISO 639-1 (ej: "fr"). Detección automática si no se proporciona. |
+| `initial_prompt` | string | ❌ | Contexto o palabras específicas para mejorar la precisión de la transcripción. |
+| `task` | string | ❌ | Tarea a realizar: `transcribe` (por defecto) o `translate` (traducir al inglés). |
+| `response_format` | string | ❌ | `json` (por defecto, equivalente a `verbose_json`), `text`, `srt`, `vtt`. |
+
+#### Respuesta (`json`)
+
+```json
+{
+  "text": "¡Hola, este es un test de transcripción de audio.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " ¡Hola, este es un test de transcripción de audio.",
+      "tokens": [ 50364, 40365, 33, 2373, 359, 456, 2373, 323, 1330, 2373, 2264, 50564 ],
+      "temperature": 0.0,
+      "avg_logprob": -0.25,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.05
+    }
+  ],
+  "language": "fr"
+}
+```
+
+### POST /v1/audio/transcriptions_batch
+
+Transcripción de varios archivos de audio en paralelo.
+
+#### Solicitud
+
+```bash
+curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions_batch" \
+  -H "Authorization: Bearer VOTRE_TOKEN_API" \
+  -F "files=@audio1.wav" \
+  -F "files=@audio2.mp3" \
+  -F "language=fr"
+```
+
+#### Parámetros
+
+| Parámetro | Tipo | Obligatorio | Descripción |
+|-----------|------|-------------|-------------|
+| `files` | array | ✅ | Lista de archivos de audio a transcribir. |
+| `language` | string | ❌ | Código de idioma ISO 639-1 (ej: "fr"). |
+| `initial_prompt` | string | ❌ | Contexto para mejorar la transcripción. |
+| `task` | string | ❌ | Tarea a realizar: `transcribe` (por defecto) o `translate`. |
 
 #### Respuesta
 
 ```json
 {
-  "text": "Bonjour, ceci est un test de transcription audio."
+  "batch_results": [
+    {
+      "filename": "audio1.wav",
+      "text": "Este es el primer archivo.",
+      "segments": [],
+      "language": "fr",
+      "error": null
+    },
+    {
+      "filename": "audio2.mp3",
+      "text": "Y aquí está el segundo.",
+      "segments": [],
+      "language": "fr",
+      "error": null
+    },
+    {
+      "filename": "audio3.ogg",
+      "text": null,
+      "segments": [],
+      "language": null,
+      "error": "Error de transcripción para este archivo."
+    }
+  ]
 }
 ```
 
@@ -222,7 +414,7 @@ Lista de modelos disponibles.
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
-  -H "Authorization: Bearer SU_TOKEN_DE_API"
+  -H "Authorization: Bearer VOTRE_TOKEN_API"
 ```
 
 #### Respuesta
@@ -253,32 +445,32 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-## Códigos de error
+## Códigos de Error
 
-### 400 - Solicitud inválida
+### 400 - Solicitud Inválida
 
 ```json
 {
   "error": {
-    "message": "Parámetro inválido 'temperature': debe estar entre 0 y 2",
+    "message": "Parámetro 'temperature' inválido: debe estar entre 0 y 2",
     "type": "invalid_request_error",
     "param": "temperature"
   }
 }
 ```
 
-### 401 - No autorizado
+### 401 - No Autorizado
 
 ```json
 {
   "error": {
-    "message": "Se proporcionó una clave de API inválida",
+    "message": "Clave API inválida proporcionada",
     "type": "authentication_error"
   }
 }
 ```
 
-### 404 - Modelo no encontrado
+### 404 - Modelo No Encontrado
 
 ```json
 {
@@ -291,7 +483,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-### 429 - Límite de velocidad
+### 429 - Límite de Velocidad
 
 ```json
 {
@@ -303,7 +495,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-### 500 - Error del servidor
+### 500 - Error de Servidor
 
 ```json
 {
@@ -314,7 +506,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-### 503 - Servicio no disponible
+### 503 - Servicio No Disponible
 
 ```json
 {
@@ -325,7 +517,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-## Ejemplos por lenguaje
+## Ejemplos por Lenguaje
 
 ### Python con requests
 
@@ -334,7 +526,7 @@ import requests
 import json
 
 # Configuración
-API_KEY = "SU_TOKEN_DE_API"
+API_KEY = "VOTRE_TOKEN_API"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 headers = {
@@ -342,7 +534,7 @@ headers = {
     "Authorization": f"Bearer {API_KEY}"
 }
 
-# Completación de chat
+# Completar chat
 payload = {
     "model": "granite3.3:8b",
     "messages": [
@@ -414,7 +606,7 @@ stream_chat("Explica la física cuántica")
 ```javascript
 const axios = require('axios');
 
-const API_KEY = 'SU_TOKEN_DE_API';
+const API_KEY = 'VOTRE_TOKEN_API';
 const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
 
 async function chatCompletion(message) {
@@ -425,43 +617,8 @@ async function chatCompletion(message) {
                 model: 'granite3.3:8b',
                 messages: [
                     { role: 'user', content: message }
-                ]
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${API_KEY}`
-                }
-            }
-        );
-
-        console.log(response.data.choices[0].message.content);
-    } catch (error) {
-        console.error(`Error ${error.response.status}:`, error.response.data);
-    }
-}
-
-// Uso
-chatCompletion("¿Qué es la inteligencia artificial?");
-```
-
-### JavaScript/Node.js con async/await
-
-```javascript
-const axios = require('axios');
-
-const API_KEY = 'SU_TOKEN_DE_API';
-const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
-
-async function chatCompletion(message) {
-    try {
-        const response = await axios.post(
-            `${BASE_URL}/chat/completions`,
-            {
-                model: 'granite3.3:8b',
-                messages: [
-                    { role: 'user', content: message }
-                ]
+                ],
+                max_tokens: 100
             },
             {
                 headers: {
@@ -516,7 +673,7 @@ async function fetchCompletion(message) {
 ### Gestión de Errores
 
 ```python
-def llamada_api_segura(payload):
+def safe_api_call(payload):
     try:
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
@@ -525,7 +682,7 @@ def llamada_api_segura(payload):
         if response.status_code == 429:
             print("Límite de velocidad alcanzado, esperar...")
             time.sleep(60)  # Esperar 1 minuto
-            return llamada_api_segura(payload)  # Reintentar
+            return safe_api_call(payload)  # Reintentar
         else:
             print(f"Error HTTP: {e}")
     except requests.exceptions.RequestException as e:
@@ -534,21 +691,21 @@ def llamada_api_segura(payload):
 
 ### Optimización de Costos
 
-1. **Use modelos adecuados** : Modelos más pequeños para pruebas
-2. **Limite max_tokens** : Evite respuestas demasiado largas
-3. **Reutilice las conversaciones** : Ventana de contexto eficiente
-4. **Monitoreo** : Supervise su uso en la Consola
+1. **Use modelos adecuados**: Modelos más pequeños para pruebas
+2. **Limite max_tokens**: Evite respuestas demasiado largas
+3. **Reutilice conversaciones**: Ventana de contexto eficiente
+4. **Monitoreo**: Supervise su uso en la Consola
 
 ### Seguridad
 
-1. **Proteja su token** : Variables de entorno
-2. **Rotación periódica** : Cambie sus claves periódicamente
-3. **Validación de entrada** : Limpie los datos de usuario
-4. **Límite de tasas cliente** : Implemente sus propias limitaciones
+1. **Proteja su token**: Variables de entorno
+2. **Rotación periódica**: Cambie sus claves periódicamente
+3. **Validación de entrada**: Limpie los datos del usuario
+4. **Límite de velocidad del cliente**: Implemente sus propias limitaciones
 
 ## SDK e Integraciones
 
-La API LLMaaS es compatible con los SDK existentes de OpenAI modificando la URL base:
+La API LLMaaS es compatible con los SDK de OpenAI existentes modificando la URL base:
 
 ### SDK Python de OpenAI
 
@@ -556,7 +713,7 @@ La API LLMaaS es compatible con los SDK existentes de OpenAI modificando la URL 
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="SU_TOKEN_API",
+    api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
@@ -578,18 +735,18 @@ from langchain.schema import HumanMessage
 
 # Configuración del modelo de chat (compatible con LLMaaS)
 chat = ChatOpenAI(
-    api_key="SU_TOKEN_API",
+    api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="granite3.3:8b",
     max_tokens=200
 )
 
 # Uso con mensajes
-messages = [HumanMessage(content="Explique la IA en 3 frases")]
+messages = [HumanMessage(content="Explica la IA en 3 frases")]
 response = chat.invoke(messages)
 print(response.content)
 
-# O con una cadena simple
+# O con una simple cadena
 response = chat.invoke("¡Hola, cómo estás?")
 print(response.content)
 ```

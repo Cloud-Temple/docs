@@ -173,35 +173,31 @@
       on Your own behalf and on Your sole responsibility, not on behalf
       of any other Contributor, and only if You agree to indemnify,
 ```
-defender y mantener indemne a cada Contribuyente ante cualquier responsabilidad
-      incurrida o reclamaciones presentadas contra dicho Contribuyente como consecuencia
-      de aceptar cualquiera de dicha garantía o responsabilidad adicional.
+defiende y mantén a cada Contribuyente indemne ante cualquier responsabilidad sufrida o reclamación presentada contra dicho Contribuyente por razón de tu aceptación de cualquier garantía o responsabilidad adicional.
 
    FIN DE LOS TÉRMINOS Y CONDICIONES
 
-   ANEXO: Cómo aplicar la Licencia Apache a su trabajo.
+   ANEXO: Cómo aplicar la Licencia Apache a tu trabajo.
 
-      Para aplicar la Licencia Apache a su trabajo, adjunte la siguiente
-      noticia estándar, con los campos encerrados entre corchetes "[ ]"
-      reemplazados por su propia información identificativa. (No incluya
-      los corchetes) El texto debe estar encerrado en el formato de comentario
-      adecuado para el tipo de archivo. También recomendamos que un nombre de archivo
-      o nombre de clase y una descripción del propósito se incluyan en la misma
-      "página impresa" que la noticia de derechos de autor para una identificación más
-      fácil dentro de archivos de terceros.
+      Para aplicar la Licencia Apache a tu trabajo, adjunta la siguiente
+      notificación estándar, con los campos encerrados entre corchetes "[]"
+      reemplazados por tu propia información identificativa. (No incluyas
+      los corchetes!) El texto debe estar encerrado en el formato de comentario
+      adecuado para el tipo de archivo. También recomendamos que un nombre de
+      archivo o nombre de clase y una descripción del propósito se incluyan en
+      la misma "página impresa" que la notificación de derechos de autor para
+      una identificación más fácil en archivos de terceros.
 
    Copyright 2024 Alibaba Cloud
 
    Licenciado bajo la Licencia Apache, Versión 2.0 (la "Licencia");
-   no se puede usar este archivo excepto en cumplimiento con la Licencia.
-   Puede obtener una copia de la Licencia en
+   no puedes usar este archivo excepto en conformidad con la Licencia.
+   Puedes obtener una copia de la Licencia en
 
        http://www.apache.org/licenses/LICENSE-2.0
 
-   Salvo que sea obligatorio por ley o acordado por escrito, el software
-   distribuido bajo la Licencia se distribuye "TAL CUAL", sin garantías ni condiciones
-   de ningún tipo, expresas o implícitas.
-   Véase la Licencia para conocer el lenguaje específico que rige las autorizaciones y
-   las limitaciones bajo la Licencia.
+   A menos que lo exija la ley aplicable o se acuerde por escrito, el software
+   distribuido bajo la Licencia se distribuye "tal cual", sin garantías ni condiciones de ningún tipo, ya sean expresas o implícitas.
+   Consulta la Licencia para conocer el lenguaje específico que rige las autorizaciones y las limitaciones bajo la Licencia.
 
 ```

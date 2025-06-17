@@ -1,4 +1,4 @@
-## Model Licence cogito:8b
+## cogito:8b Model License
 
 ```
 LLAMA 3.2 COMMUNITY LICENSE AGREEMENT
@@ -67,10 +67,11 @@ incorporated by reference into this Agreement.
 of the products or services made available by or for Licensee, or Licensee’s affiliates, 
 is greater than 700 million monthly active users in the preceding calendar month, you must request 
 a license from Meta, which Meta may grant to you in its sole discretion, and you are not authorized to
-exercise any of the rights under this Agreement unless or until Meta otherwise expressly grants you such rights.
+exercise any of the rights under this Agreemen
+t unless or until Meta otherwise expressly grants you such rights.
 
 3. Disclaimer of Warranty. UNLESS REQUIRED BY APPLICABLE LAW, THE LLAMA MATERIALS AND ANY OUTPUT AND 
-RESULTS THEREFROM ARE PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OF ANY KIND, AND META DISCLAIMS
+RESULTS THEREFROM ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, AND META DISCLAIMS
 ALL WARRANTIES OF ANY KIND, BOTH EXPRESS AND IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES
 OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE
 FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING THE LLAMA MATERIALS AND ASSUME ANY RISKS ASSOCIATED
@@ -112,4 +113,3 @@ Agreement. Upon termination of this Agreement, you shall delete and cease use of
 California without regard to choice of law principles, and the UN Convention on Contracts for the International
 Sale of Goods does not apply to this Agreement. The courts of California shall have exclusive jurisdiction of
 any dispute arising out of this Agreement.
-```
