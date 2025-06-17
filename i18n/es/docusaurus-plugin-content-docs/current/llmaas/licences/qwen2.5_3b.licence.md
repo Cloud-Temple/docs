@@ -1,4 +1,4 @@
-## Licencia del modelo qwen2.5:3b
+## Licence du modèle qwen2.5:3b
 
 ```
 ""Qwen RESEARCH LICENSE AGREEMENT

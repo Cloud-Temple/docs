@@ -13,24 +13,24 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 <img src={ArchitectureLLMaaS} alt="Technical Architecture LLMaaS Cloud Temple" />
 
-### Key Components
+### Main Components
 
-#### 1. **LLMaaS API Gateway**
-- **OpenAI Compatible**: Seamless integration with existing ecosystem
-- **Rate Limiting**: Quota management by billing tier
-- **Load Balancing**: Intelligent distribution across 12 GPU machines
-- **Monitoring**: Real-time metrics and alerting
+#### 1. **API Gateway LLMaaS**
+- **Compatible with OpenAI** : Transparent integration with existing ecosystem
+- **Rate Limiting** : Quota management by billing tier
+- **Load Balancing** : Intelligent distribution across 12 GPU machines
+- **Monitoring** : Real-time metrics and alerting
 
 #### 2. **Authentication Service**
-- **Secure API Tokens**: Automatic rotation
-- **Access Control**: Granular permissions per model
-- **Audit Trails**: Full access traceability
+- **Secure API Tokens** 
+- **Access Control**: Granular permissions by model
+- **Audit trails**: Full access traceability
 
 ## 🤖 Models and Tokens
 
 ### Model Catalog
 
-*Full catalog: [Model List](./models)*
+*Complete Catalog: [Model List](./models)*
 
 ### Token Management
 
@@ -45,20 +45,21 @@ Total Cost = (Input Tokens × 0.9€/M) + (Output Tokens × 4€/M) +  (Reasonin
 ```
 
 #### **Optimization**
-- **Context Window**: Reuse conversations to save
-- **Appropriate Models**: Choose size according to complexity
-- **Max Tokens**: Limit response length
+- **Context window**: Reuse conversations to save
+- **Appropriate models**: Choose the size according to complexity
+- **Max tokens**: Limit the length of responses
 
 ### Tokenization
 
 ```python
+
 # Example of token estimation
 def estimate_tokens(text: str) -> int:
     """Approximate estimation: 1 token ≈ 4 characters"""
     return len(text) // 4
 
-prompt = "Explain photosynthesis"
-response_max = 200  # desired max tokens
+prompt = "Expliquez la photosynthèse"
+response_max = 200  # maximum desired tokens
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
 total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
@@ -69,60 +70,60 @@ print(f"Estimated cost: {total_cost:.6f}€")
 
 ### SecNumCloud Qualification
 
-The LLMaaS service is deployed on a Cloud Temple technical infrastructure that has the **SecNumCloud 3.2** qualification from ANSSI, ensuring:
+The LLMaaS service is hosted on a Cloud Temple IaaS infrastructure that benefits from the **SecNumCloud 3.2** qualification from ANSSI, guaranteeing :
 
 #### **Data Protection**
-- **End-to-end Encryption**: TLS 1.3 for all exchanges
-- **Secure Storage**: Data encrypted at rest (AES-256)
-- **Isolation**: Dedicated environments per tenant
+- **End-to-end Encryption** : TLS 1.3 for all exchanges
+- **Secure Storage** : Data encrypted at rest 
+- **Environment isolation**
 
 #### **Digital Sovereignty**
-- **France Hosting**: Cloud Temple certified datacenters
-- **French Law**: Native GDPR compliance
-- **No Exposure**: No transfers to foreign clouds
+- **France Hosting** : Certified Cloud Temple Datacenters
+- **French Law** : GDPR Compliance 
+- **No Exposure** : No transfers to foreign clouds and no data storage
 
 #### **Audit and Traceability**
-- **Full Logs**: All interactions traced
-- **Retention**: Stored according to legal policies
-- **Compliance**: Audit reports available
+- **Full Logs** : All interactions traced
+- **Retention** : Retention according to legal policies
+- **Compliance**
 
 ### Security Controls
 
 import SecurityControls from './images/llmaas_security_002.png';
 
-<img src={SecurityControls} alt="LLMaaS Security Controls" />
+<img src={SecurityControls} alt="Security Controls LLMaaS" />
 
 ## 📈 Performance and Scalability
 
 ### Performance Metrics
 
 #### **Latency**
-- **Average response time**: < 2 seconds for 8B models
-- **Time to first token**: < 500ms
-- **Streaming throughput**: 50-100 tokens/second depending on model
+- **Average response time** : < 2 seconds for 8B models
+- **First token time** : < 1500ms
+- **Streaming throughput** : 15-100 tokens/second depending on model
 
 #### **Throughput**
-- **Concurrent requests**: Up to 1000 requests/minute per tenant
-- **Automatic scaling**: Real-time load adaptation
-- **Availability**: 99.9% SLA guaranteed
+- **Concurrent requests** : Up to 1000 requests/minute per tenant
+- **Auto-scaling** : Real-time load adaptation according to requested models
+- **Availability** : 99.9% monthly availability SLA target
 
+### Real-Time Monitoring
 
-### Real-time Monitoring
-
-Access via **Cloud Temple Console**:
+Access via **Console Cloud Temple**:
 - Usage metrics per model
 - Latency and throughput graphs
-- Alerts on performance thresholds
+- Performance threshold alerts
 - Request history
 
 ## 🌐 Integration and Ecosystem
 
 ### OpenAI Compatibility
 
-The LLMaaS service is **compatible** with the OpenAI API:
+The LLMaaS service is **compatible** with the OpenAI API :
 
 ```python
-# Transparent migration
+
+# Transparent Migration
 from openai import OpenAI
 
 # Before (OpenAI)
@@ -130,37 +131,37 @@ client_openai = OpenAI(api_key="sk-...")
 
 # After (Cloud Temple LLMaaS)
 client_ct = OpenAI(
-    api_key="your-cloud-temple-token",
+    api_key="votre-token-cloud-temple",
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
-# Same code!
+# Same code !
 response = client_ct.chat.completions.create(
-    model="granite3.3:8b",  # Cloud Temple model
-    messages=[{"role": "user", "content": "Hello"}]
+    model="granite3.3:8b",  # Cloud Temple Model
+    messages=[{"role": "user", "content": "Bonjour"}]
 )
 ```
 
 ### Supported Ecosystem
 
 #### **AI Frameworks**
-- ✅ **LangChain**: Native integration
-- ✅ **Haystack**: Document pipeline
-- ✅ **Semantic Kernel**: Microsoft orchestration
-- ✅ **AutoGen**: Conversational agents
+- ✅ **LangChain** : Native integration
+- ✅ **Haystack** : Document pipeline
+- ✅ **Semantic Kernel** : Microsoft orchestration
+- ✅ **AutoGen** : Conversational agents
 
 #### **Development Tools**
-- ✅ **Jupyter**: Interactive notebooks
-- ✅ **Streamlit**: Rapid web apps
-- ✅ **Gradio**: AI user interfaces
-- ✅ **FastAPI**: Backend APIs
+- ✅ **Jupyter** : Interactive notebooks
+- ✅ **Streamlit** : Rapid web applications
+- ✅ **Gradio** : AI user interfaces
+- ✅ **FastAPI** : Backend APIs
 
-#### **No-code Platforms**
-- ✅ **Zapier**: Automations
-- ✅ **Make**: Visual integrations
-- ✅ **Bubble**: Web applications
+#### **No-Code Platforms**
+- ✅ **Zapier** : Automations
+- ✅ **Make** : Visual integrations
+- ✅ **Bubble** : Web applications
 
-## 🔄 Model Lifecycle
+## 🔄 Life Cycle of Models
 
 ### Model Updates
 
@@ -173,7 +174,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 - **Stable Models**: Fixed versions available for 6 months
 - **Experimental Models**: Beta versions for early adopters
 - **Deprecation**: 3-month notice before removal
-- **Migration**: Professional services available for smooth transitions
+- **Migration**: Professional services available to ensure your transitions
 
 ## 💡 Best Practices
 
@@ -195,7 +196,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
        {"role": "system", "content": "You are an AI assistant."},
        {"role": "user", "content": "Question 1"},
        {"role": "assistant", "content": "Answer 1"},
-       {"role": "user", "content": "Question 2"}  # Reuses context
+       {"role": "user", "content": "Question 2"}  # Reuse the context
    ]
    ```
 
@@ -204,7 +205,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    response = client.chat.completions.create(
        model="granite3.3:8b",
        messages=messages,
-       max_tokens=100,  # Limits length
+       max_tokens=100,  # Limits the length
        temperature=0.7
    )
    ```
@@ -240,7 +241,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    def sanitize_input(user_input: str) -> str:
        # Clean potential injections
        cleaned = user_input.replace("```", "")
-       return cleaned[:1000]  # Limit size
+       return cleaned[:1000]  # Limit the size
    ```
 
 2. **Error Handling**

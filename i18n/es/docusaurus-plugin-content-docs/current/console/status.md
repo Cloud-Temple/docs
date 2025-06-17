@@ -1,5 +1,5 @@
 ---
-title: Operaciones planificadas y gestión de incidentes
+title: Operaciones programadas y gestión de incidentes
 ---
 import shivaInterventionMenu01 from './images/shiva_intervention_menu01.png'
 import shivaInterventionMenu03 from './images/shiva_intervention_menu03.png'
@@ -12,70 +12,70 @@ import shivaIncident_004 from './images/shiva_incident_004.png'
 import shivaIncident_005 from './images/shiva_incident_005.png'
 import shivaIncident_006 from './images/shiva_incident_006.png'
 
-Como cualquier plataforma de infraestructura Cloud, la plataforma Cloud Temple es objeto de trabajos y mantenimiento de hardware y software regularmente.
+Como cualquier plataforma de infraestructura en la nube, la plataforma Cloud Temple está sujeta a trabajos y mantenimiento regular de hardware y software.
 
-## Acceso a operaciones e incidentes en curso
+## Acceso a las operaciones y incidentes en curso
 
-El icono de seguimiento de operaciones permite visualizar las operaciones planificadas en la infraestructura Cloud Temple así como los incidentes abiertos en el tenant. Este icono es accesible en la barra de iconos en la parte superior izquierda de la pantalla y tiene la forma de un icono __'Herramientas'__.
+El icono de seguimiento de operaciones permite visualizar las operaciones programadas en la infraestructura Cloud Temple así como los incidentes abiertos en el inquilino. Este icono es accesible en la barra de iconos en la parte superior izquierda de la pantalla y tiene la forma de un icono __'Herramientas'__.
 
 <img src={shivaInterventionMenu01} />
 
-Este icono tiene como objetivo proporcionar visibilidad sobre las intervenciones planificadas, en curso y terminadas y/o los incidentes en el tenant.
+Este icono tiene como objetivo proporcionar visibilidad sobre las intervenciones programadas, en curso y finalizadas, así como los incidentes en el inquilino.
 
-Cuando hay intervenciones y/o incidentes en curso, aparece un número en el icono.
+Cuando hay intervenciones y/o incidentes en curso, un número aparece en el icono.
 
-Al hacer clic en visualización rápida, encontrará las intervenciones en curso. También es posible hacer clic en __'Todas las intervenciones'__ o __'Todos los incidentes e informes del tenant'__ para mostrar más detalles.
+Al hacer clic en visualización rápida, encontrarás las intervenciones en curso. También es posible hacer clic en __'Todas las intervenciones'__ o __'Todos los incidentes y informes del inquilino'__ para mostrar más detalles.
 
 <img src={shivaInterventionMenu03} />
 
-## Seguimiento de intervenciones planificadas
+## Seguimiento de intervenciones programadas
 
-La página Intervenciones está compuesta por dos pestañas. La primera pestaña permite visualizar las intervenciones previstas para los próximos 30 días y las intervenciones en curso.
+La página Intervenciones está compuesta por dos pestañas. La primera pestaña permite visualizar las intervenciones previstas en los próximos 30 días y las intervenciones en curso.
 
 <img src={shivaInterventionMenu04} />
 
-Las intervenciones terminadas, por su parte, son visibles en la segunda pestaña 'Terminado'.
+Las intervenciones finalizadas, por su parte, son visibles en la segunda pestaña 'Finalizado'.
 
 <img src={shivaInterventionMenu05} />
 
-El acceso a esta información requiere para el perfil del usuario el permiso '__intervention_read__'.
+El acceso a esta información requiere, para el perfil del usuario, la permisión '__intervention_read__'.
 
 ## Gestión de incidentes
 
-Se distinguen dos tipos de incidentes: los incidentes globales, que afectan a todo el sistema, y los incidentes específicos a un perímetro cliente, que impactan únicamente los recursos o servicios asociados a un cliente particular.
+Dos tipos de incidentes deben distinguirse: los incidentes globales, que afectan a todo el sistema, y los incidentes específicos de un área del cliente, que impactan únicamente en los recursos o servicios asociados a un cliente determinado.
 
 ### Incidentes globales
 
-La recuperación de información sobre los incidentes globales no requiere ningún permiso particular. Se muestra un banner rojo desde la conexión a la consola para advertir de la presencia de un incidente global en curso de resolución. El usuario tiene la posibilidad de ocultar este banner temporalmente durante su sesión, pero éste reaparecerá en cada nueva conexión o durante un refresco de la página, mientras el incidente siga sin resolverse.
+La recuperación de información sobre los incidentes globales no requiere ninguna permisión especial. Un banner rojo se muestra al iniciar sesión en la consola para alertar sobre la presencia de un incidente global en resolución. El usuario tiene la posibilidad de ocultar temporalmente este banner durante su sesión, pero volverá a aparecer en cada nueva conexión o al recargar la página, mientras el incidente no esté resuelto.
 
 <img src={shivaIncident_001} />
 
-Un botón __'Saber más'__ redirige hacia la página pública de seguimiento de incidentes, permitiendo acceder a información adicional sobre el incidente en curso:
+Un botón __'Más información'__ redirige a la página pública de seguimiento de incidentes, permitiendo acceder a información adicional sobre el incidente en curso:
 
 <img src={shivaIncident_002} />
 
-Es posible obtener los informes de los incidentes globales. El acceso a estos informes requiere el permiso específico '__incident_management__'.
+Es posible obtener informes sobre los incidentes globales. El acceso a estos informes requiere la permisión específica '__incident_management__'.
 
 Aquí hay un ejemplo de la pestaña que muestra estos informes:
 
 <img src={shivaIncident_003} />
 
-### Incidentes en un perímetro cliente
+### Incidentes en un área del cliente
 
-La visibilidad de los incidentes específicos a un perímetro cliente requiere el permiso __incident_read__. Estos incidentes están representados por un icono dedicado, acompañado de una insignia roja que indica el número de incidentes en curso.
+La visibilidad de los incidentes específicos de un área del cliente requiere la permisión __incident_read__. Estos incidentes se representan mediante un icono dedicado, acompañado de un indicador rojo que muestra el número de incidentes en curso.
 
 El icono es clicable, permitiendo listar los tickets asociados a los incidentes. Cada ticket incluye un enlace a los detalles del incidente, ofreciendo la posibilidad de seguir el avance de su resolución:
 
 <img src={shivaIncident_004} />
 
-Para consultar los detalles de un incidente, es necesario ser el autor del ticket de incidente o disponer del permiso __support_management__.
+Para consultar los detalles de un incidente, es necesario ser el autor del ticket de incidente o contar con la permisión __support_management__.
 
 ### Gestión de notificaciones
 
-Con el fin de informar rápidamente a los usuarios en caso de nuevo incidente, se ha establecido un sistema de notificaciones por correo electrónico. Desde su perfil de usuario, una pestaña titulada '*Mis suscripciones*' permite a los usuarios suscribirse a las notificaciones para los dos tipos de incidentes. Así, recibirán un correo electrónico en un plazo muy corto durante la declaración o la resolución de un incidente.
+Con el fin de informar rápidamente a los usuarios en caso de un nuevo incidente, se ha implementado un sistema de notificaciones por correo electrónico. Desde su perfil de usuario, una pestaña denominada '*Mis suscripciones*' permite a los usuarios suscribirse a las notificaciones para los dos tipos de incidentes. De esta manera, recibirán un correo electrónico en un plazo muy corto al declararse o resolverse un incidente.
 
 <img src={shivaIncident_005} />
 
-El asunto del correo electrónico indicará el tipo de incidente y, en el caso de un incidente relacionado con un perímetro, el nombre del perímetro impactado. La notificación también contendrá un enlace que permite acceder directamente a los detalles del incidente:
+El asunto del correo electrónico indicará el tipo de incidente y, en el caso de un incidente relacionado con un área, el nombre del área afectada. La notificación también contendrá un enlace que permite acceder directamente a los detalles del incidente:
 
 <img src={shivaIncident_006} />

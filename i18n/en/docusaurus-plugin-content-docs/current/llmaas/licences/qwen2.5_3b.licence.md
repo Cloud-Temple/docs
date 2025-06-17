@@ -1,7 +1,7 @@
-## Qwen2.5:3b Model License
+## Licence du modèle qwen2.5:3b
 
 ```
-"Qwen RESEARCH LICENSE AGREEMENT
+""Qwen RESEARCH LICENSE AGREEMENT
 
 Qwen RESEARCH LICENSE AGREEMENT Release Date: September 19, 2024
 
@@ -54,5 +54,5 @@ You may distribute copies or make the Materials, or derivative works thereof, av
 
 9. Other Terms and Conditions.
     a. Any arrangements, understandings, or agreements regarding the Material not stated herein are separate from and independent of the terms and conditions of this Agreement. You shall request a separate license from us, if you use the Materials in ways not expressly agreed to in this Agreement. 
-    b. We shall not be bound by any additional or different terms or conditions communicated by you unless expressly agreed."
+    b. We shall not be bound by any additional or different terms or conditions communicated by you unless expressly agreed.""
 ```

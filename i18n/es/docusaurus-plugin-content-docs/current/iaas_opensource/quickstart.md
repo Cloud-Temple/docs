@@ -1,5 +1,5 @@
 ---
-title: Guía de inicio rápido
+title: Guía de inicio
 ---
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
@@ -8,11 +8,11 @@ import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_ac
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
 
-## Cómputo
+## Cálculo
 
-### Gestión de máquinas virtuales
+### Gestión de Máquinas Virtuales
 
-La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva en el menú __'OpenIaaS'__ ubicado en la barra lateral verde a la izquierda de la pantalla.
+La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva en el menú __'OpenIaaS'__ situado en la barra verde a la izquierda de la pantalla.
 
 ### Lista de máquinas virtuales
 
@@ -20,16 +20,16 @@ En la sección __'Máquinas virtuales'__, tiene acceso a la lista de sus máquin
 
 <img src={openIaasVirtualMachinesList} />
 
-Tiene acceso a la siguiente información para cada máquina virtual:
+Tiene acceso a la siguiente información, para cada máquina virtual:
 
 - Su nombre.
 - Su estado (apagada, encendida).
 - Su zona de disponibilidad (AZ).
 - Su sistema operativo.
-- La cantidad de CPUs virtuales (vCPU).
+- La cantidad de CPU virtuales (vCPU).
 - La cantidad de memoria virtual (vRAM).
 
-### Acciones sobre las máquinas virtuales
+### Acciones en las máquinas virtuales
 
 Las siguientes acciones son posibles desde esta interfaz:
 
@@ -40,11 +40,11 @@ Las siguientes acciones son posibles desde esta interfaz:
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Cuando hace clic en la flecha desplegable verde a la derecha de la lista para una máquina virtual, accede a toda la información sobre ella.
+Cuando hace clic en la flecha verde a la derecha de la lista para una máquina virtual, accede a toda la información relativa a dicha máquina.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Una barra de herramientas rápida le permite realizar las siguientes acciones:
+Una barra rápida permite realizar las siguientes acciones:
 
 <img src={openIaasVirtualMachineActions} />
 
@@ -54,26 +54,26 @@ Una barra de herramientas rápida le permite realizar las siguientes acciones:
 - Abrir la consola.
 - Montar un ISO.
 - Desmontar un ISO.
-- Convertir la máquina virtual en una plantilla.
+- Convertir la máquina virtual en plantilla.
 - Moverla.
 - Renombrarla.
 - Eliminarla.
 
-En la pestaña de información '__General__', encontrará información detallada sobre su máquina virtual, como su ubicación física (AZ, Pool, Host), RAM, CPU, direcciones IP y más.
+En la pestaña de información '__Generales__', encuentra información detallada relativa a su máquina virtual, como su ubicación física (AZ, Pool, Host), la RAM, el CPU, las direcciones IP y otras.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Una pestaña '__Avanzado__' le permite ver información más específica:
+Una pestaña '__Avanzado__' permite consultar información más específica:
 
 - UUID de la máquina virtual
-- Herramientas de invitado
-- SO invitado
-- Unidad de DVD
+- Herramientas del invitado
+- Sistema operativo del invitado
+- Unidad DVD
 
-Así como modificar ciertas opciones como:
+Así como modificar ciertas opciones tales como:
 
-- Orden de arranque
-- Arranque seguro
-- Inicio automático (no es posible si no hay una política de copia de seguridad asociada a la VM)
+- El orden de arranque
+- El arranque seguro
+- El arranque automático (imposible si no hay ninguna política de copia de seguridad asociada a la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />

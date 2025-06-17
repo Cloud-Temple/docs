@@ -14,70 +14,67 @@ import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me
 
 ## Regional Private Networks
 
-Private networks within a region can be ordered directly from the Cloud Temple console.
+The management of private networks within a region is performed directly in the Cloud Temple console.
 
-### Within a Tenant
+### Within a tenant
 
-Creating a virtual network is done in the __*Network*__ menu on the green banner on the left side of the screen.
+The creation of a virtual network is done in the __*Network*__ menu on the green bar on the left side of the screen.
 
 <img src={shivaNetwork_001} />
 
-Then click on the __*New network*__ button.
+Click then on the __*New Network*__ button.
 
-You must specify the name of your network that will be displayed. By default, all your clusters will have access to your new network.
-However, in the __*Advanced Options*__ submenu, you can specify more precisely the scope of propagation within the tenant among your different clusters.
+You must specify the name of your network which will be displayed. By default, all your clusters will access your new network. However, in the __*Advanced Options*__ sub-menu, you can more precisely specify the propagation scope within the tenant between your different clusters.
 
 <img src={shivaNetwork_002} />
 
-All possible actions on your networks can be found in the __*Actions*__ menu for each of them:
+All possible actions on your networks are found in the __*Actions*__ menu of each of them:
 
-- Enabling network sharing between tenants of the same organization.
-- Disabling network sharing between tenants of the same organization.
-- Adding a network share between tenants of the same organization.
-- Removing a network share between tenants of the same organization.
-- Graphical visualization of network propagation across all your clusters and hypervisors within a tenant.
-- Removing a propagation within a tenant.
-- Modifying a propagation within a tenant.
-- Deleting a network.
+- Enable sharing of a network between tenants of the same organization.
+- Disable sharing of a network between tenants of the same organization.
+- Add sharing of a network between tenants of the same organization.
+- Delete sharing of a network between tenants of the same organization.
+- Visualize the network propagation across all your clusters and hypervisors within a tenant.
+- Delete a propagation within a tenant.
+- Modify a propagation within a tenant.
+- Delete a network.
 
 <img src={shivaNetwork_003} />
 
-#### Visualizing Network Propagation
+#### Viewing network propagation
 
-You can easily visualize the propagation of a network to your different clusters within the same tenant in the __*Actions*__ menu.
-Choose the *"View propagation"* option:
+You can easily view, in the __*Actions*__ menu, the propagation of a network to your different clusters within the same tenant. Choose the "View Propagation" option:
 
 <img src={shivaNetwork_004} />
 
-#### Modifying Propagation
+#### Modifying propagation
 
-Modifying a propagation within a tenant is done through the *"Propagate"* option:
-then choose the clusters that should be included in this propagation.
+The modification of a propagation within a tenant is performed via the "Propagate" option: 
+select then the clusters to be included in this propagation.
 
 <img src={shivaNetwork_005} />
 
-__*Note:*__ *Propagation modification is limited to 20 networks per action.*
+__*Note :*__ *Propagation modification is limited to 20 networks per action.*
 
-#### Deleting a Network
+#### Deleting a network
 
-Deleting a network within a tenant is done through the *"Delete network"* option:
+The deletion of a network within a tenant is performed via the "Delete Network" option:
 
 <img src={shivaNetwork_006} />
 
-### Network Sharing Between Tenants
+### Network sharing between tenants
 
-By default, __networks are only available within a tenant__. You can choose to __share a network between multiple tenants__ for technical or connectivity reasons.
-It is thus possible to share a network between your __[Tenants](../../../console/iam/concepts/#tenant)__ within the same organization.
+By default, __networks are only available within a tenant__. You can choose to __share a network between multiple tenants__ for technical reasons or connectivity reasons. It is thus possible to share a network between your __[Tenant](../../../console/iam/concepts/#tenant)__ within the same organization.
 
-To do this, simply enable sharing as shown below.
+Simply activate the sharing as below.
 
 <img src={shivaNetworkVnShareEnabled} />
 
-Once sharing is enabled, you just need to add a share as shown below.
+Once the sharing activation is performed, simply add a sharing as below.
 
 <img src={shivaNetworkVnShared} />
 
-Then, select the target tenant. Please note that the list of tenants is dynamic.
+Then, select the target tenant. Note that the list of tenants is dynamic. 
 It depends on your organization and your permissions.
 
 <img src={shivaNetworkVnSharedTenant} />

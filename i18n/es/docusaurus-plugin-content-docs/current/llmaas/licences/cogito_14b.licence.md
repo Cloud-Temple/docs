@@ -1,4 +1,4 @@
-## Licencia del modelo cogito:14b
+## Licence du modèle cogito:14b
 
 ```
 ""                                 Apache License
