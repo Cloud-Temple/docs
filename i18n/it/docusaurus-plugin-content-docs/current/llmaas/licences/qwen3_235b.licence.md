@@ -1,46 +1,57 @@
-## Licenza del modello qwen3:235b
+## Licence du modèle qwen3:235b
 
 ```
 ""                                 Apache License
-                           Versione 2.0, gennaio 2004
+                           Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
-   TERMINI E CONDIZIONI PER L'USO, LA RIPRODUZIONE E LA DISTRIBUZIONE
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-   1. Definizioni.
+   1. Definitions.
 
-      "Licenza" si intende i termini e le condizioni per l'uso, la riproduzione
-      e la distribuzione come definiti nei paragrafi 1 attraverso 9 del presente documento.
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
 
-      "Concedente" si intende il titolare dei diritti d'autore o l'entità autorizzata dal
-      titolare dei diritti d'autore che sta concedendo la Licenza.
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
 
-      "Ente Legale" si intende l'unione dell'entità in azione e di tutte le altre entità che controllano, sono controllate o sono sotto controllo comune con tale entità. Per gli scopi di questa definizione,
-      "controllo" significa (i) la capacità, diretta o indiretta, di determinare la direzione o la gestione di tale entità, sia tramite contratto o in altro modo, o (ii) la proprietà del 50% o più delle azioni in circolazione, o (iii) la proprietà benefica di tale entità.
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
 
-      "Tu" (o "Tua") si intende un individuo o un Ente Legale
-      che esercita le autorizzazioni fornite da questa Licenza.
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
 
-      "Forma Sorgente" si intende la forma preferita per apportare modifiche,
-      inclusi ma non limitati al codice sorgente del software, alla documentazione sorgente e ai file di configurazione.
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
 
-      "Forma Oggetto" si intende qualsiasi forma derivata da una trasformazione meccanica o traduzione di una Forma Sorgente, inclusi ma non limitati al codice oggetto compilato,
-      documentazione generata e conversioni ad altri tipi di media.
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
 
-      "Lavoro" si intende il lavoro di autore, sia nella forma Sorgente che Oggetto, reso disponibile sotto la Licenza, come indicato da un
-      avviso di copyright che è incluso nel lavoro o allegato ad esso
-      (un esempio è fornito nell'appendice di seguito).
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
 
-      "Lavori Derivati" si intende qualsiasi lavoro, sia nella forma Sorgente che Oggetto,
-      che si basa (o deriva) dal Lavoro e per il quale le revisioni editoriali, le annotazioni, le elaborazioni o altre modifiche
-      rappresentano, nel complesso, un lavoro originale di autore. Per gli scopi
-      di questa Licenza, i Lavori Derivati non dovranno includere lavori che rimangono separabili da, o che semplicemente collegano (o collegano per nome) le interfacce del
-      Lavoro e dei Lavori Derivati.
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
 
-      "Contributo" si intende qualsiasi lavoro di autore, incluso
-      la versione originale del Lavoro e qualsiasi modifica o aggiunta
-      a tale Lavoro o a Lavori Derivati, che viene intenzionalmente
-      inviato al Concedente per l'inclusione nel Lavoro dal titolare dei diritti d'autore
-      o da un individuo o un Ente Legale autorizzato a inviare al posto del
-      titolare dei diritti d'autore. Per gli scopi di questa definizione, "inviato
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted
 ```

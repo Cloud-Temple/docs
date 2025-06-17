@@ -1,4 +1,4 @@
-## Lizenz des Modells phi4-reasoning:14b
+## Licence du modèle phi4-reasoning:14b
 
 ```
 ""Microsoft.

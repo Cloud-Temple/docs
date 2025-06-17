@@ -1,23 +1,26 @@
-## Licencia del modelo phi4-reasoning:14b
+## Licence du modèle phi4-reasoning:14b
 
 ```
 ""Microsoft.
-Derechos de autor (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation.
 
-Licencia MIT
+MIT License
 
-Se otorga permiso, de forma gratuita, a cualquier persona que obtenga una copia
-de este software y los archivos de documentación asociados (el "Software"), para trabajar con
-el Software sin restricciones, incluyendo, pero no limitado a, los derechos de
-usar, copiar, modificar, fusionar, publicar, distribuir, otorgar sublicencias y/o vender
-copias del Software, y para permitir a las personas a las que se les proporcione el Software
-que lo hagan, sujeto a las siguientes condiciones:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-La notificación del copyright y la notificación de permiso mencionadas anteriormente deben incluirse en todas las
-copias o partes sustanciales del Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-EL SOFTWARE SE PROPORCIONA *COMO ESTÁ*, SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO, PERO NO LIMITADO A, LAS GARANTÍAS DE COMERCIABILIDAD,
-APTITUD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DE DERECHOS DE AUTOR SERÁN RESPONSABLES DE NINGÚN RECLAMO, DAÑOS O
-OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN DE CONTRATO, TORTA O DE OTRO TIPO, DERIVADAS DEL USO DEL SOFTWARE O DE LA UTILIZACIÓN DEL MISMO O DE OTROS
-RECLAMOS EN RELACIÓN CON EL SOFTWARE.""
+THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.""
 ```

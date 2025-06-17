@@ -3,11 +3,11 @@ title: Panoramica
 sidebar_position: 1
 ---
 
-# LLM come servizio (LLMaaS)
+# LLM come Servizio (LLMaaS)
 
 ## Panoramica
 
-Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple fornisce un accesso sicuro e sovrano ai modelli di intelligenza artificiale più avanzati, calcolati su un'infrastruttura IaaS Cloud Temple qualificata SecNumCloud 3.2 dall'ANSSI.
+Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple fornisce un accesso sicuro e sovrano ai modelli di intelligenza artificiale più avanzati, calcolati su un'infrastruttura IaaS Cloud Temple certificata SecNumCloud 3.2 dall'ANSSI.
 
 <div class="card-grid">
   <div class="card">
@@ -16,9 +16,9 @@ Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple forn
     <a href="llmaas/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Avvio rapido</h3>
-    <p>Inizia velocemente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="llmaas/quickstart" class="card-link">Avvia l'Avvio rapido &rarr;</a>
+    <h3>Quickstart</h3>
+    <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="llmaas/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorial</h3>

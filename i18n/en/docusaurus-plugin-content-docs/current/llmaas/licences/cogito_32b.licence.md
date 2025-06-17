@@ -1,4 +1,4 @@
-## Model cogito:32b License
+## Licence du modèle cogito:32b
 
 ```
 ""                                 Apache License

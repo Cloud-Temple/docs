@@ -1,58 +1,58 @@
-## Licencia del modelo qwen2.5:3b
+## Licence du modèle qwen2.5:3b
 
 ```
-"ACUERDO DE LICENCIA DE INVESTIGACIÓN Qwen
+""Qwen RESEARCH LICENSE AGREEMENT
 
-ACUERDO DE LICENCIA DE INVESTIGACIÓN Qwen Fecha de lanzamiento: 19 de septiembre de 2024
+Qwen RESEARCH LICENSE AGREEMENT Release Date: September 19, 2024
 
-Al hacer clic en "aceptar" o al utilizar o distribuir alguna parte o elemento de los Materiales Qwen, se considerará que ha reconocido y aceptado el contenido de este Acuerdo, el cual entrará en vigor inmediatamente.
+By clicking to agree or by using or distributing any portion or element of the Qwen Materials, you will be deemed to have recognized and accepted the content of this Agreement, which is effective immediately.
 
-1. Definiciones
-    a. Este ACUERDO DE LICENCIA DE INVESTIGACIÓN Qwen (este "Acuerdo") se referirá a los términos y condiciones para el uso, reproducción, distribución y modificación de los Materiales según se definen en este Acuerdo.
-    b. "Nosotros" (o "Nos") se referirá a Alibaba Cloud.
-    c. "Usted" (o "Su") se referirá a una persona natural o entidad legal que ejerza los derechos otorgados por este Acuerdo y/o utilice los Materiales con cualquier propósito y en cualquier campo de uso.
-    d. "Terceros" se referirá a individuos o entidades que no estén bajo control común con nosotros o usted.
-    e. "Qwen" se referirá a los modelos de lenguaje grandes, así como al software y algoritmos, que consisten en pesos de modelo entrenados, parámetros (incluidos los estados del optimizador), código de modelo de aprendizaje automático, código para habilitar la inferencia, código para habilitar el entrenamiento, código para habilitar la fine-tuning y otros elementos distribuidos por nosotros.
-    f. "Materiales" se referirá colectivamente a los Qwen propietarios de Alibaba Cloud y a la Documentación (y cualquier parte de ellos) puesta a disposición bajo este Acuerdo.
-    g. "Forma Fuente" se referirá a la forma preferida para realizar modificaciones, incluyendo, entre otras, código fuente del modelo, documentación fuente y archivos de configuración.
-    h. "Forma Objeto" se referirá a cualquier forma resultante de una transformación mecánica o traducción de una forma Fuente, incluyendo, entre otras, código objeto compilado, documentación generada y conversiones a otros tipos de medios.
-    i. "No Comercial" se referirá únicamente a fines de investigación o evaluación.
+1. Definitions
+    a. This Qwen RESEARCH LICENSE AGREEMENT (this "Agreement") shall mean the terms and conditions for use, reproduction, distribution and modification of the Materials as defined by this Agreement.
+    b. "We" (or "Us") shall mean Alibaba Cloud.
+    c. "You" (or "Your") shall mean a natural person or legal entity exercising the rights granted by this Agreement and/or using the Materials for any purpose and in any field of use.
+    d. "Third Parties" shall mean individuals or legal entities that are not under common control with us or you.
+    e. "Qwen" shall mean the large language models, and software and algorithms, consisting of trained model weights, parameters (including optimizer states), machine-learning model code, inference-enabling code, training-enabling code, fine-tuning enabling code and other elements of the foregoing distributed by us.
+    f. "Materials" shall mean, collectively, Alibaba Cloud's proprietary Qwen and Documentation (and any portion thereof) made available under this Agreement.
+    g. "Source" form shall mean the preferred form for making modifications, including but not limited to model source code, documentation source, and configuration files.
+    h. "Object" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+    i. "Non-Commercial" shall mean for research or evaluation purposes only.
 
-2. Concesión de derechos
-    a. Se le otorga una licencia limitada no exclusiva, mundial, no transferible y sin regalías bajo los derechos de propiedad intelectual o derechos otros propiedad de nosotros embutidos en los Materiales para utilizar, reproducir, distribuir, copiar, crear obras derivadas de, y realizar modificaciones a los Materiales ÚNICAMENTE PARA FINES NO COMERCIALES. 
-    b. Si utiliza los Materiales con fines comerciales, deberá solicitar una licencia a nosotros.
+2. Grant of Rights
+    a. You are granted a non-exclusive, worldwide, non-transferable and royalty-free limited license under Alibaba Cloud's intellectual property or other rights owned by us embodied in the Materials to use, reproduce, distribute, copy, create derivative works of, and make modifications to the Materials FOR NON-COMMERCIAL PURPOSES ONLY. 
+    b. If you are commercially using the Materials, you shall request a license from us.
 
-3. Redistribución
-Puede distribuir copias o hacer disponibles los Materiales, o obras derivadas de ellos, como parte de un producto o servicio que contenga alguno de ellos, con o sin modificaciones, y en forma Fuente u Objeto, siempre que cumpla con las siguientes condiciones:
-    a. Deberá proporcionar a cualquier otro destinatario de los Materiales u obras derivadas una copia de este Acuerdo;
-    b. Deberá hacer que los archivos modificados lleven notificaciones prominentes indicando que modificó los archivos;
-    c. Deberá mantener en todas las copias de los Materiales que distribuya las siguientes notificaciones de atribución dentro de un archivo de texto "Nota" distribuido como parte de dichas copias: "Qwen está licenciado bajo el ACUERDO DE LICENCIA DE INVESTIGACIÓN Qwen, Copyright (c) Alibaba Cloud. Todos los derechos reservados."; y
-    d. Puede agregar su propia declaración de derechos de autor a sus modificaciones y puede proporcionar términos y condiciones de licencia adicionales o diferentes para el uso, reproducción o distribución de sus modificaciones, o para cualquier obra derivada en su totalidad, siempre que su uso, reproducción y distribución del trabajo cumplan con los términos y condiciones de este Acuerdo.
+3. Redistribution
+You may distribute copies or make the Materials, or derivative works thereof, available as part of a product or service that contains any of them, with or without modifications, and in Source or Object form, provided that you meet the following conditions:
+    a. You shall give any other recipients of the Materials or derivative works a copy of this Agreement;
+    b. You shall cause any modified files to carry prominent notices stating that you changed the files;
+    c. You shall retain in all copies of the Materials that you distribute the following attribution notices within a "Notice" text file distributed as a part of such copies: "Qwen is licensed under the Qwen RESEARCH LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved."; and
+    d. You may add your own copyright statement to your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of your modifications, or for any such derivative works as a whole, provided your use, reproduction, and distribution of the work otherwise complies with the terms and conditions of this Agreement.
 
-4. Reglas de uso
-    a. Los Materiales pueden estar sujetos a controles de exportación o restricciones en China, Estados Unidos u otros países o regiones. Deberá cumplir con las leyes y regulaciones aplicables en su uso de los Materiales.
-    b. Si utiliza los Materiales o cualquier salida o resultado derivado para crear, entrenar, fine-tune o mejorar un modelo de IA que se distribuya o haga disponible, deberá mostrar prominentemente "Construido con Qwen" o "Mejorado usando Qwen" en la documentación del producto relacionada.
+4. Rules of use
+    a. The Materials may be subject to export controls or restrictions in China, the United States or other countries or regions. You shall comply with applicable laws and regulations in your use of the Materials.
+    b. If you use the Materials or any outputs or results therefrom to create, train, fine-tune, or improve an AI model that is distributed or made available, you shall prominently display “Built with Qwen” or “Improved using Qwen” in the related product documentation.
 
-5. Propiedad Intelectual
-    a. Nosotros conservamos la propiedad de todos los derechos de propiedad intelectual en los Materiales y en las obras derivadas realizadas por o para nosotros. Condicionado al cumplimiento de los términos y condiciones de este Acuerdo, con respecto a cualquier obra derivada y modificaciones de los Materiales realizadas por usted, usted será y será el propietario de dichas obras derivadas y modificaciones.
-    b. No se otorga licencia de marca comercial para utilizar los nombres comerciales, marcas comerciales, marcas de servicio o nombres de productos de nosotros, excepto en la medida en que sea necesario para cumplir con los requisitos de notificación bajo este Acuerdo o como sea necesario para un uso razonable y habitual en la descripción y redistribución de los Materiales.
-    c. Si inicia una demanda o cualquier otro procedimiento (incluyendo una reclamación cruzada o una contra-acción en una demanda) contra nosotros o cualquier entidad que alegue que los Materiales o cualquier salida derivada de ellos, o cualquier parte de lo anterior, infrinja cualquier derecho de propiedad intelectual o derecho otro propiedad o licenciable por usted, entonces todas las licencias otorgadas a usted bajo este Acuerdo se extinguirán a partir de la fecha en que se inicie o presente tal demanda o procedimiento.
+5. Intellectual Property
+    a. We retain ownership of all intellectual property rights in and to the Materials and derivatives made by or for us. Conditioned upon compliance with the terms and conditions of this Agreement, with respect to any derivative works and modifications of the Materials that are made by you, you are and will be the owner of such derivative works and modifications.
+    b. No trademark license is granted to use the trade names, trademarks, service marks, or product names of us, except as required to fulfill notice requirements under this Agreement or as required for reasonable and customary use in describing and redistributing the Materials.
+    c. If you commence a lawsuit or other proceedings (including a cross-claim or counterclaim in a lawsuit) against us or any entity alleging that the Materials or any output therefrom, or any part of the foregoing, infringe any intellectual property or other right owned or licensable by you, then all licenses granted to you under this Agreement shall terminate as of the date such lawsuit or other proceeding is commenced or brought.
 
-6. Renuncia de garantía y limitación de responsabilidad
-    a. No estamos obligados a brindar soporte, actualizaciones, capacitación para, o desarrollar una versión posterior de los Materiales Qwen ni a otorgar cualquier licencia sobre ellos.
-    b. LOS MATERIALES SE PROPORCIONAN "COMO ESTÁN" SIN NINGUNA GARANTÍA EXPRESA O IMPLÍCITA DE NINGÚN TIPO, INCLUYENDO GARANTÍAS DE COMERCIABILIDAD, NO INFRACCIÓN O APTITUD PARA UN PROPOSITO ESPECÍFICO. NO HACEMOS GARANTÍA Y ASUMIMOS NINGUNA RESPONSABILIDAD POR LA SEGURIDAD O ESTABILIDAD DE LOS MATERIALES Y CUALQUIER SALIDA DERIVADA DE ELLOS.
-    c. EN NINGÚN CASO NOSOTROS SEREMOS RESPONSABLES DE USTED POR CUALQUIER DAÑO, INCLUYENDO, PERO NO LIMITADO A CUALQUIER DAÑO DIRECTO, INDIRECTO, ESPECIAL O CONSECUENTE DERIVADO DEL USO O INHABILIDAD DE USAR LOS MATERIALES O CUALQUIER SALIDA DE ÉL, SIN IMPORTAR CÓMO SE PRODUZCA.
-    d. Usted defenderá, indemnizará y mantendrá indemne a nosotros frente a cualquier reclamo de cualquier tercero derivado o relacionado con el uso o distribución de los Materiales.
+6. Disclaimer of Warranty and Limitation of Liability
+    a. We are not obligated to support, update, provide training for, or develop any further version of the Qwen Materials or to grant any license thereto.
+    b. THE MATERIALS ARE PROVIDED "AS IS" WITHOUT ANY EXPRESS OR IMPLIED WARRANTY OF ANY KIND INCLUDING WARRANTIES OF MERCHANTABILITY, NONINFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE. WE MAKE NO WARRANTY AND ASSUME NO RESPONSIBILITY FOR THE SAFETY OR STABILITY OF THE MATERIALS AND ANY OUTPUT THEREFROM.
+    c. IN NO EVENT SHALL WE BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO ANY DIRECT, OR INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR USE OR INABILITY TO USE THE MATERIALS OR ANY OUTPUT OF IT, NO MATTER HOW IT’S CAUSED.
+    d. You will defend, indemnify and hold harmless us from and against any claim by any third party arising out of or related to your use or distribution of the Materials.
 
-7. Supervivencia y terminación.
-    a. El plazo de este Acuerdo comenzará con la aceptación de este Acuerdo o el acceso a los Materiales y continuará en pleno vigor y efecto hasta que se termine de acuerdo con los términos y condiciones aquí establecidos.
-    b. Podemos terminar este Acuerdo si usted incumple cualquiera de los términos o condiciones de este Acuerdo. Al terminar este Acuerdo, debe eliminar y dejar de usar los Materiales. Las secciones 6 y 8 sobrevivirán a la terminación de este Acuerdo.
+7. Survival and Termination.
+    a. The term of this Agreement shall commence upon your acceptance of this Agreement or access to the Materials and will continue in full force and effect until terminated in accordance with the terms and conditions herein.
+    b. We may terminate this Agreement if you breach any of the terms or conditions of this Agreement. Upon termination of this Agreement, you must delete and cease use of the Materials. Sections 6 and 8 shall survive the termination of this Agreement.
 
-8. Ley aplicable y jurisdicción.
-    a. Este Acuerdo y cualquier disputa derivada de o relacionada con él estará regido por las leyes de China, sin considerar principios de conflicto de leyes, y la Convención de las Naciones Unidas sobre los Contratos de Venta Internacional de Mercancías no se aplica a este Acuerdo.
-    b. Los Tribunales Populares de la Ciudad de Hangzhou tendrán jurisdicción exclusiva sobre cualquier disputa derivada de este Acuerdo.
+8. Governing Law and Jurisdiction.
+    a. This Agreement and any dispute arising out of or relating to it will be governed by the laws of China, without regard to conflict of law principles, and the UN Convention on Contracts for the International Sale of Goods does not apply to this Agreement.
+    b. The People's Courts in Hangzhou City shall have exclusive jurisdiction over any dispute arising out of this Agreement.
 
-9. Otros términos y condiciones.
-    a. Cualquier acuerdo, entendimiento o acuerdo sobre el Material no establecido aquí es separado e independiente de los términos y condiciones de este Acuerdo. Deberá solicitar una licencia separada a nosotros, si utiliza los Materiales de formas no expresamente acordadas en este Acuerdo. 
-    b. No estaremos obligados por ningún término adicional o diferente comunicado por usted a menos que se acuerde expresamente.""
+9. Other Terms and Conditions.
+    a. Any arrangements, understandings, or agreements regarding the Material not stated herein are separate from and independent of the terms and conditions of this Agreement. You shall request a separate license from us, if you use the Materials in ways not expressly agreed to in this Agreement. 
+    b. We shall not be bound by any additional or different terms or conditions communicated by you unless expressly agreed.""
 ```

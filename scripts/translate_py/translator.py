@@ -213,7 +213,7 @@ class CloudTempleTranslator:
         self, 
         content: str, 
         target_lang: str,
-        progress_callback: Optional[Callable[[int, int], None]] = None
+        progress_callback: Optional[Callable[..., None]] = None
     ) -> BlockTranslationResult:
         target_lang_name = LANG_CONFIG.LANGUAGES.get(target_lang, target_lang)
         blocks = self.content_splitter.split_content(content)
@@ -225,21 +225,23 @@ class CloudTempleTranslator:
         if total_blocks == 1:
             result = await self._translate_block(blocks[0], target_lang_name, 1, 1)
             if progress_callback:
-                progress_callback(1, 1)
+                progress_callback(1, 1, result)
             return result
         
         # Traitement séquentiel des blocs pour une progression cohérente
         translated_blocks = []
         errors = []
         total_tokens = 0
+        total_prompt_tokens = 0
+        total_completion_tokens = 0
         total_time = 0
 
         for i, block in enumerate(blocks):
             block_result = await self._translate_block(block, target_lang_name, i + 1, total_blocks)
             
-            # Appel du callback après avoir terminé le bloc
+            # Appel du callback après avoir terminé le bloc avec le résultat
             if progress_callback:
-                progress_callback(i + 1, total_blocks)
+                progress_callback(i + 1, total_blocks, block_result)
             
             if block_result.success and block_result.translated_text:
                 translated_blocks.append(block_result.translated_text)
@@ -248,8 +250,13 @@ class CloudTempleTranslator:
                 if block_result.error:
                     errors.append(f"Bloc {block_result.block_number}: {block_result.error}")
             
+            # Accumulation des tokens
             if block_result.tokens_used:
                 total_tokens += block_result.tokens_used
+            if block_result.prompt_tokens:
+                total_prompt_tokens += block_result.prompt_tokens
+            if block_result.completion_tokens:
+                total_completion_tokens += block_result.completion_tokens
             if block_result.processing_time:
                 total_time += block_result.processing_time
         
@@ -265,7 +272,9 @@ class CloudTempleTranslator:
             block_number=total_blocks,
             total_blocks=total_blocks,
             processing_time=total_time,
-            tokens_used=total_tokens
+            tokens_used=total_tokens,
+            prompt_tokens=total_prompt_tokens,
+            completion_tokens=total_completion_tokens
         )
     
     async def _translate_block(
@@ -291,7 +300,9 @@ class CloudTempleTranslator:
                         block_number=block_number,
                         total_blocks=total_blocks,
                         processing_time=time.time() - start_time,
-                        tokens_used=api_response.tokens_used or 0
+                        tokens_used=api_response.tokens_used or 0,
+                        prompt_tokens=api_response.prompt_tokens or 0,
+                        completion_tokens=api_response.completion_tokens or 0
                     )
                 else:
                     last_error = api_response.error
@@ -381,6 +392,8 @@ class CloudTempleTranslator:
                             content=content,
                             model_used=data.get("model"),
                             tokens_used=tokens_used,
+                            prompt_tokens=prompt_tokens,
+                            completion_tokens=completion_tokens,
                             response_time=response_time,
                             attempt_number=attempt,
                             max_attempts=self.config.max_retries

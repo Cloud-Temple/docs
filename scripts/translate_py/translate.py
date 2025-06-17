@@ -101,7 +101,7 @@ class TranslationEngine:
         
         # Démarrage du suivi de progression
         job.stats.start_timer()
-        self.ui.start_job_progress(job)
+        self.ui.start_job_progress(job, len(tasks_to_process))
         
         # Traitement des tâches
         if job.dry_run:
@@ -202,27 +202,62 @@ class TranslationEngine:
     
     async def _process_translation_tasks(self, translation_tasks: List, job: TranslationJob) -> None:
         """
-        Traite les tâches de traduction avec concurrence.
+        Traite les tâches de traduction avec concurrence optimale.
         
         Args:
             translation_tasks: Tâches de traduction
             job: Job de traduction
         """
-        # Création du traducteur
-        async with CloudTempleTranslator(self.config, self.ui) as translator: # Passer l'UI au traducteur
+        # En mode debug, traiter un fichier à la fois
+        if self.ui.debug:
+            async with CloudTempleTranslator(self.config, self.ui) as translator:
+                for task in translation_tasks:
+                    await self._translate_single_task(task, translator, job)
+            return
+        
+        # Mode production : pool de workers avec queue optimisée
+        async with CloudTempleTranslator(self.config, self.ui) as translator:
+            # Queue des tâches à traiter
+            task_queue = asyncio.Queue()
             
-            # Traitement par lots pour limiter la concurrence
-            # En mode debug, traiter un fichier à la fois
-            batch_size = 1 if self.ui.debug else self.config.concurrent_translations
+            # Ajout de toutes les tâches dans la queue
+            for task in translation_tasks:
+                await task_queue.put(task)
             
-            for i in range(0, len(translation_tasks), batch_size):
-                batch = translation_tasks[i:i + batch_size]
-                
-                # Traitement concurrent du lot
-                await asyncio.gather(*[
-                    self._translate_single_task(task, translator, job)
-                    for task in batch
-                ], return_exceptions=True)
+            # Fonction worker qui traite les tâches en continu
+            async def worker():
+                while True:
+                    try:
+                        # Récupération d'une tâche (timeout pour éviter l'attente infinie)
+                        task = await asyncio.wait_for(task_queue.get(), timeout=1.0)
+                        
+                        # Traitement de la tâche
+                        await self._translate_single_task(task, translator, job)
+                        
+                        # Marquer la tâche comme terminée
+                        task_queue.task_done()
+                        
+                    except asyncio.TimeoutError:
+                        # Plus de tâches disponibles, sortir du worker
+                        break
+                    except Exception as e:
+                        # Log de l'erreur mais continuer
+                        self.ui.add_log(f"Erreur dans worker: {e}", "error")
+                        break
+            
+            # Lancement des workers concurrents
+            max_workers = self.config.concurrent_translations
+            workers = [asyncio.create_task(worker()) for _ in range(max_workers)]
+            
+            # Attendre que toutes les tâches soient terminées
+            await task_queue.join()
+            
+            # Annuler les workers restants
+            for worker_task in workers:
+                worker_task.cancel()
+            
+            # Attendre que tous les workers se terminent proprement
+            await asyncio.gather(*workers, return_exceptions=True)
     
     async def _translate_single_task(self, task, translator, job: TranslationJob) -> None:
         """
@@ -241,9 +276,19 @@ class TranslationEngine:
             content = await self.file_manager.read_file_content(task.source_path)
             task.content_size = len(content)
             
-            # Callback de progression
-            def progress_callback(block_num: int, total_blocks: int):
-                # Mise à jour de la progression du fichier (qui met à jour task.current_block automatiquement)
+            # Callback de progression avec mise à jour des tokens en temps réel
+            def progress_callback(block_num: int, total_blocks: int, block_result=None):
+                # Mise à jour des tokens à chaque chunk traduit
+                if block_result and block_result.success:
+                    if block_result.prompt_tokens:
+                        job.stats.total_input_tokens += block_result.prompt_tokens
+                    if block_result.completion_tokens:
+                        job.stats.total_output_tokens += block_result.completion_tokens
+                    
+                    # Mise à jour des statistiques en temps réel dans l'UI
+                    self.ui._current_stats = job.stats
+                
+                # Mise à jour de la progression du fichier
                 self.ui.update_file_progress(task, block_num, total_blocks)
             
             # Traduction
@@ -268,6 +313,10 @@ class TranslationEngine:
                 task.processing_time = result.processing_time
                 job.stats.files_translated += 1
                 job.stats.increment_lang_stat(task.target_lang, "translated")
+                
+                # Les tokens sont maintenant mis à jour en temps réel via le callback
+                # Mise à jour finale des statistiques dans l'UI
+                self.ui._current_stats = job.stats
                 
             else:
                 task.status = TranslationStatus.FAILED

@@ -142,11 +142,15 @@ class TranslationUI:
         self.console.print(columns)
         self.console.print()
     
-    def start_job_progress(self, job: TranslationJob) -> None:
+    def start_job_progress(self, job: TranslationJob, tasks_to_process: Optional[int] = None) -> None:
         """Démarre l'affichage de progression avec interface live."""
         self._start_time = datetime.now()
+        
+        # Utilise le nombre de tâches à traiter ou le total des tâches
+        total_tasks = tasks_to_process if tasks_to_process is not None else len(job.tasks)
+        
         self._job_info = {
-            'total_tasks': len(job.tasks),
+            'total_tasks': total_tasks,
             'target_languages': job.target_languages,
             'dry_run': job.dry_run,
             'force_retranslation': job.force_retranslation
@@ -165,10 +169,10 @@ class TranslationUI:
             transient=False
         )
         
-        # Tâche globale
+        # Tâche globale basée sur les tâches à traiter
         self._global_task = self._progress.add_task(
             "[bold blue]🌍 Progression Globale",
-            total=len(job.tasks)
+            total=total_tasks
         )
         
         # Création du layout
@@ -195,18 +199,12 @@ class TranslationUI:
         self._layout.split_column(
             Layout(name="header", size=3),
             Layout(name="main", ratio=1),
-            Layout(name="footer", ratio=1)
+            Layout(name="logs", ratio=1)
         )
         
         # Division de la section principale
         self._layout["main"].split_row(
             Layout(name="progress", ratio=2),
-            Layout(name="files", ratio=1)
-        )
-        
-        # Division du footer
-        self._layout["footer"].split_row(
-            Layout(name="logs", ratio=2),
             Layout(name="stats", ratio=1)
         )
         
@@ -241,9 +239,6 @@ class TranslationUI:
         
         # Logs - messages récents
         self._layout["logs"].update(self._create_logs_panel())
-        
-        # Files - fichiers actifs
-        self._layout["files"].update(self._create_files_panel())
     
     def _create_header_panel(self) -> Panel:
         """Crée le panneau d'en-tête."""
@@ -274,22 +269,34 @@ class TranslationUI:
         stats_table = Table(show_header=False, box=None, padding=(0, 1))
         stats_table.add_column("Icon", width=3)
         stats_table.add_column("Label", width=12)
-        stats_table.add_column("Value", width=8, justify="right")
+        stats_table.add_column("Value", width=10, justify="right")
         
+        # Statistiques de fichiers
         stats_table.add_row("✅", "Traduits", f"[green]{self._current_stats.files_translated:,}[/green]")
         stats_table.add_row("📋", "Copiés", f"[blue]{self._current_stats.files_copied:,}[/blue]")
         stats_table.add_row("⏭️", "Ignorés", f"[yellow]{self._current_stats.files_skipped:,}[/yellow]")
         stats_table.add_row("❌", "Échecs", f"[red]{self._current_stats.files_failed:,}[/red]")
         
-        # Statistiques par langue si disponibles
-        if self._current_stats.stats_by_lang:
-            stats_table.add_row("", "", "")  # Séparateur
-            lang_emojis = {'en': '🇬🇧', 'de': '🇩🇪', 'es': '🇪🇸', 'it': '🇮🇹'}
-            
-            for lang_code, lang_stats in self._current_stats.stats_by_lang.items():
-                emoji = lang_emojis.get(lang_code, '🌍')
-                total = sum(lang_stats.values())
-                stats_table.add_row(emoji, lang_code.upper(), f"[white]{total:,}[/white]")
+        # Séparateur
+        stats_table.add_row("", "", "")
+        
+        # Statistiques de tokens
+        stats_table.add_row("🔤", "Tokens IN", f"[cyan]{self._current_stats.total_input_tokens:,}[/cyan]")
+        stats_table.add_row("📤", "Tokens OUT", f"[magenta]{self._current_stats.total_output_tokens:,}[/magenta]")
+        
+        # Calculs de moyennes et vitesse en temps réel
+        if self._current_stats.total_api_calls > 0:
+            avg_input = self._current_stats.total_input_tokens / self._current_stats.total_api_calls
+            avg_output = self._current_stats.total_output_tokens / self._current_stats.total_api_calls
+            stats_table.add_row("📥", "IN moyen", f"[dim]{avg_input:.0f}[/dim]")
+            stats_table.add_row("📤", "OUT moyen", f"[dim]{avg_output:.0f}[/dim]")
+        
+        # Vitesse tokens/seconde en temps réel (seulement tokens OUT générés)
+        if self._start_time:
+            elapsed = (datetime.now() - self._start_time).total_seconds()
+            if elapsed > 0 and self._current_stats.total_output_tokens > 0:
+                tokens_per_sec = self._current_stats.total_output_tokens / elapsed
+                stats_table.add_row("⚡", "Tokens/s", f"[yellow]{tokens_per_sec:.1f}[/yellow]")
         
         return Panel(
             stats_table,
@@ -344,51 +351,6 @@ class TranslationUI:
             border_style="white"
         )
     
-    def _create_files_panel(self) -> Panel:
-        """Crée le panneau des fichiers actifs."""
-        if not self._active_files:
-            files_content = Text("Aucun fichier en cours...", style="dim")
-        else:
-            files_lines = []
-            for file_path, task in list(self._active_files.items())[-5:]:  # 5 derniers fichiers
-                # Nom du fichier court
-                file_name = Path(file_path.split(':')[0]).name  # Retirer le target_lang du key
-                if len(file_name) > 25:
-                    file_name = file_name[:22] + "..."
-                
-                # Status avec couleur
-                status_styles = {
-                    TranslationStatus.PROCESSING: "yellow",
-                    TranslationStatus.COMPLETED: "green",
-                    TranslationStatus.FAILED: "red",
-                    TranslationStatus.COPIED: "blue"
-                }
-                
-                status_emojis = {
-                    TranslationStatus.PROCESSING: "🔄",
-                    TranslationStatus.COMPLETED: "✅",
-                    TranslationStatus.FAILED: "❌",
-                    TranslationStatus.COPIED: "📋"
-                }
-                
-                style = status_styles.get(task.status, "white")
-                emoji = status_emojis.get(task.status, "ℹ️")
-                
-                line = Text()
-                line.append(f"{emoji} ", style="white")
-                line.append(f"{file_name} ", style="cyan")
-                line.append("→ ", style="dim")
-                line.append(f"{task.target_lang}", style="magenta")
-                
-                files_lines.append(line)
-            
-            files_content = Text("\n").join(files_lines)
-        
-        return Panel(
-            files_content,
-            title="🔄 Fichiers Actifs",
-            border_style="yellow"
-        )
     
     def update_task_progress(self, task: FileTranslationTask) -> None:
         """Met à jour la progression d'une tâche."""

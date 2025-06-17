@@ -1,4 +1,4 @@
-## Licencia del modelo qwen2.5:14b
+## Licence du modèle qwen2.5:14b
 
 ```
                         Apache License
@@ -172,22 +172,34 @@
       License. However, in accepting such obligations, You may act only
       on Your own behalf and on Your sole responsibility, not on behalf
       of any other Contributor, and only if You agree to indemnify,
-defiende y exonera a cada Contribuyente de cualquier responsabilidad incurrida o reclamaciones presentadas contra dicho Contribuyente como consecuencia de tu aceptación de cualquier garantía o responsabilidad adicional.
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
 
-   FIN DE LOS TÉRMINOS Y CONDICIONES
+   END OF TERMS AND CONDITIONS
 
-   ANEXO: Cómo aplicar la Licencia Apache a tu trabajo.
+   APPENDIX: How to apply the Apache License to your work.
 
-      Para aplicar la Licencia Apache a tu trabajo, adjunta la siguiente notificación estándar, con los campos encerrados entre corchetes "[ ]" reemplazados por tu propia información identificativa. (No incluyas los corchetes) El texto debe estar encerrado en el formato de comentario adecuado para el tipo de archivo. También recomendamos que se incluya el nombre de un archivo o clase y una descripción del propósito en la misma "página impresa" que la notificación de derechos de autor para una identificación más fácil en archivos de terceros.
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
 
    Copyright 2024 Alibaba Cloud
 
-   Licenciado bajo la Licencia Apache, Versión 2.0 (la "Licencia");
-   no puedes usar este archivo excepto en cumplimiento con la Licencia.
-   Puedes obtener una copia de la Licencia en
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
 
-   A menos que lo exija la ley aplicable o se acuerde por escrito, el software se distribuye bajo la Licencia en un estado "tal cual", sin garantías ni condiciones de ningún tipo, ya sean expresas o implícitas.
-   Consulta la Licencia para conocer el lenguaje específico que rige las autorizaciones y limitaciones bajo la Licencia.
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 ```

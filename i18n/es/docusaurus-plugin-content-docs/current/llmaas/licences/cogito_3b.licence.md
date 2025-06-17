@@ -1,54 +1,115 @@
-## Licencia del modelo cogito:3b
+## Licence du modèle cogito:3b
 
 ```
 LLAMA 3.2 COMMUNITY LICENSE AGREEMENT
 Llama 3.2 Version Release Date: September 25, 2024
 
-“Acuerdo” significa los términos y condiciones para el uso, reproducción, distribución y modificación de los Materiales Llama establecidos en este documento.
+“Agreement” means the terms and conditions for use, reproduction, distribution 
+and modification of the Llama Materials set forth herein.
 
-“Documentación” significa las especificaciones, manuales y documentación acompañantes de Llama 3.2 distribuidos por Meta en https://llama.meta.com/doc/overview.
+“Documentation” means the specifications, manuals and documentation accompanying Llama 3.2
+distributed by Meta at https://llama.meta.com/doc/overview.
 
-“Licenciatario” o “usted” significa usted, o su empleador o cualquier otra persona o entidad (si usted está entrando en este Acuerdo en nombre de dicha persona o entidad), de la edad requerida según las leyes, reglas o regulaciones aplicables para proporcionar consentimiento legal y que tiene autoridad legal para vincular a su empleador o dicha otra persona o entidad si usted está entrando en este Acuerdo en su nombre.
+“Licensee” or “you” means you, or your employer or any other person or entity (if you are 
+entering into this Agreement on such person or entity’s behalf), of the age required under
+applicable laws, rules or regulations to provide legal consent and that has legal authority
+to bind your employer or such other person or entity if you are entering in this Agreement
+on their behalf.
 
-“Llama 3.2” significa los modelos de lenguaje grandes fundamentales y el software y algoritmos, incluyendo código de modelos de aprendizaje automático, pesos de modelos entrenados, código que habilita la inferencia, código que habilita el entrenamiento, código que habilita la fine-tuning y otros elementos de los anteriores distribuidos por Meta en https://www.llama.com/llama-downloads.
+“Llama 3.2” means the foundational large language models and software and algorithms, including
+machine-learning model code, trained model weights, inference-enabling code, training-enabling code,
+fine-tuning enabling code and other elements of the foregoing distributed by Meta at 
+https://www.llama.com/llama-downloads.
 
-“Materiales Llama” significa, colectivamente, la propiedad intelectual de Meta Llama 3.2 y Documentación (y cualquier parte de ellos) puesta a disposición bajo este Acuerdo.
+“Llama Materials” means, collectively, Meta’s proprietary Llama 3.2 and Documentation (and 
+any portion thereof) made available under this Agreement.
 
-“Meta” o “nosotros” significa Meta Platforms Ireland Limited (si usted se encuentra en o, si es una entidad, su sede principal está en el EEA o Suiza) y Meta Platforms, Inc. (si usted se encuentra fuera del EEA o Suiza). 
+“Meta” or “we” means Meta Platforms Ireland Limited (if you are located in or, 
+if you are an entity, your principal place of business is in the EEA or Switzerland) 
+and Meta Platforms, Inc. (if you are located outside of the EEA or Switzerland). 
 
 
-Al hacer clic en "Acepto" a continuación o al utilizar o distribuir alguna parte o elemento de los Materiales Llama, usted acepta estar obligado por este Acuerdo.
+By clicking “I Accept” below or by using or distributing any portion or element of the Llama Materials,
+you agree to be bound by this Agreement.
 
 
-1. Derechos de licencia y redistribución.
+1. License Rights and Redistribution.
 
-    a. Concesión de derechos. Se le otorga una licencia limitada no exclusiva, mundial, no transferible y sin regalías bajo los derechos de propiedad intelectual o otros derechos propiedad de Meta embutidos en los Materiales Llama para utilizar, reproducir, distribuir, copiar, crear obras derivadas de, y realizar modificaciones a los Materiales Llama.  
+    a. Grant of Rights. You are granted a non-exclusive, worldwide, 
+non-transferable and royalty-free limited license under Meta’s intellectual property or other rights 
+owned by Meta embodied in the Llama Materials to use, reproduce, distribute, copy, create derivative works 
+of, and make modifications to the Llama Materials.  
 
-    b. Redistribución y uso.  
+    b. Redistribution and Use.  
 
-        i. Si distribuye o pone a disposición los Materiales Llama (o cualquier obra derivada de ellos), o un producto o servicio (incluido otro modelo de IA) que contenga alguno de ellos, usted deberá (A) proporcionar una copia de este Acuerdo con dichos Materiales Llama; y (B) mostrar prominentemente "Built with Llama" en un sitio web relacionado, interfaz de usuario, publicación en blog, página "Acerca de", o documentación del producto. Si utiliza los Materiales Llama o cualquier salida o resultado de los Materiales Llama para crear, entrenar, fine-tune, o de otra forma mejorar un modelo de IA, que se distribuya o ponga a disposición, usted deberá incluir "Llama" al comienzo de cualquier nombre de dicho modelo de IA.
+        i. If you distribute or make available the Llama Materials (or any derivative works thereof), 
+or a product or service (including another AI model) that contains any of them, you shall (A) provide
+a copy of this Agreement with any such Llama Materials; and (B) prominently display “Built with Llama”
+on a related website, user interface, blogpost, about page, or product documentation. If you use the
+Llama Materials or any outputs or results of the Llama Materials to create, train, fine tune, or
+otherwise improve an AI model, which is distributed or made available, you shall also include “Llama”
+at the beginning of any such AI model name.
 
-        ii. Si recibe Materiales Llama, o cualquier obra derivada de ellos, de un Licenciatario como parte de un producto para el usuario final integrado, entonces la Sección 2 de este Acuerdo no se aplicará a usted. 
+        ii. If you receive Llama Materials, or any derivative works thereof, from a Licensee as part
+of an integrated end user product, then Section 2 of this Agreement will not apply to you. 
 
-        iii. Debe conservar en todas las copias de los Materiales Llama que distribuya la siguiente noticia de atribución dentro de un archivo de texto "Nota" distribuido como parte de dichas copias: "Llama 3.2 está licenciado bajo la Licencia Comunitaria Llama 3.2, Copyright © Meta Platforms, Inc. Todos los derechos reservados."
+        iii. You must retain in all copies of the Llama Materials that you distribute the 
+following attribution notice within a “Notice” text file distributed as a part of such copies: 
+“Llama 3.2 is licensed under the Llama 3.2 Community License, Copyright © Meta Platforms,
+Inc. All Rights Reserved.”
 
-        iv. Su uso de los Materiales Llama debe cumplir con las leyes y regulaciones aplicables (incluyendo leyes y regulaciones de cumplimiento comercial) y cumplir con la Política de Uso Aceptable para los Materiales Llama (disponible en https://www.llama.com/llama3_2/use-policy), que se incorpora por referencia en este Acuerdo.
+        iv. Your use of the Llama Materials must comply with applicable laws and regulations
+(including trade compliance laws and regulations) and adhere to the Acceptable Use Policy for
+the Llama Materials (available at https://www.llama.com/llama3_2/use-policy), which is hereby 
+incorporated by reference into this Agreement.
   
-2. Términos comerciales adicionales. Si, en la fecha de lanzamiento de la versión Llama 3.2, el número de usuarios activos mensuales de los productos o servicios puestos a disposición por o para el Licenciatario, o las filiales del Licenciatario, es superior a 700 millones de usuarios activos mensuales en el mes calendario anterior, usted debe solicitar una licencia a Meta, la cual Meta puede otorgarle a su entera discreción, y usted no está autorizado a ejercer ninguno de los derechos bajo este Acuerdo hasta que Meta exprese expresamente dichos derechos.
+2. Additional Commercial Terms. If, on the Llama 3.2 version release date, the monthly active users
+of the products or services made available by or for Licensee, or Licensee’s affiliates, 
+is greater than 700 million monthly active users in the preceding calendar month, you must request 
+a license from Meta, which Meta may grant to you in its sole discretion, and you are not authorized to
+exercise any of the rights under this Agreement unless or until Meta otherwise expressly grants you such rights.
 
-3. Renuncia de garantía. A menos que lo exija la ley aplicable, los Materiales Llama y cualquier salida y resultados derivados de ellos se proporcionan en base "tal cual", sin garantías de ningún tipo, y Meta renuncia a todas las garantías de cualquier tipo, tanto expresas como implícitas, incluyendo, sin limitación, cualquier garantía de titularidad, no infracción, comercialización o idoneidad para un propósito particular. Usted es el único responsable de determinar la idoneidad del uso o redistribución de los Materiales Llama y asume cualquier riesgo asociado con su uso de los Materiales Llama y cualquier salida y resultados.
+3. Disclaimer of Warranty. UNLESS REQUIRED BY APPLICABLE LAW, THE LLAMA MATERIALS AND ANY OUTPUT AND 
+RESULTS THEREFROM ARE PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OF ANY KIND, AND META DISCLAIMS
+ALL WARRANTIES OF ANY KIND, BOTH EXPRESS AND IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES
+OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE
+FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING THE LLAMA MATERIALS AND ASSUME ANY RISKS ASSOCIATED
+WITH YOUR USE OF THE LLAMA MATERIALS AND ANY OUTPUT AND RESULTS.
 
-4. Limitación de responsabilidad. En ningún caso Meta o sus filiales serán responsables bajo cualquier teoría de responsabilidad, ya sea en contrato, tort, negligencia, responsabilidad de productos o de otra forma, derivada de este Acuerdo, por cualquier pérdida de beneficios o cualquier daño indirecto, especial, consecuente, incidental, ejemplar o punitivo, incluso si Meta o sus filiales han sido advertidos de la posibilidad de alguno de los anteriores.
+4. Limitation of Liability. IN NO EVENT WILL META OR ITS AFFILIATES BE LIABLE UNDER ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, TORT, NEGLIGENCE, PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, 
+FOR ANY LOST PROFITS OR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN 
+IF META OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE FOREGOING.
 
-5. Propiedad intelectual.
+5. Intellectual Property.
 
-    a. No se otorgan licencias de marcas comerciales bajo este Acuerdo, y en relación con los Materiales Llama, ni Meta ni el Licenciatario podrán usar ningún nombre o marca propiedad de o asociada con la otra parte o cualquiera de sus filiales, excepto como se requiere para un uso razonable y habitual en la descripción y redistribución de los Materiales Llama o como se establece en esta Sección 5(a). Meta le otorga aquí una licencia para usar "Llama" (la "Marca") exclusivamente como se requiere para cumplir con la última oración de la Sección 1.b.i. Deberá cumplir con las directrices de marca de Meta (actualmente accesibles en https://about.meta.com/brand/resources/meta/company-brand/). Todo el buen fondo generado por el uso de la Marca corresponderá al beneficio de Meta.
+    a. No trademark licenses are granted under this Agreement, and in connection with the Llama Materials, 
+neither Meta nor Licensee may use any name or mark owned by or associated with the other or any of its affiliates, 
+except as required for reasonable and customary use in describing and redistributing the Llama Materials or as 
+set forth in this Section 5(a). Meta hereby grants you a license to use “Llama” (the “Mark”) solely as required 
+to comply with the last sentence of Section 1.b.i. You will comply with Meta’s brand guidelines (currently accessible 
+at https://about.meta.com/brand/resources/meta/company-brand/). All goodwill arising out of your use of the Mark 
+will inure to the benefit of Meta.
 
-    b. Con respecto a cualquier obra derivada y modificaciones de los Materiales Llama que realice, entre usted y Meta, usted será y permanecerá el propietario de dichas obras derivadas y modificaciones, sujeto a la propiedad de Meta sobre los Materiales Llama y sus derivados realizados por o para Meta.
+    b. Subject to Meta’s ownership of Llama Materials and derivatives made by or for Meta, with respect to any
+    derivative works and modifications of the Llama Materials that are made by you, as between you and Meta,
+    you are and will be the owner of such derivative works and modifications.
 
-    c. Si inicia litigio o cualquier otro procedimiento contra Meta o cualquier entidad (incluyendo una reclamación cruzada o contra-alegación en una demanda) alegando que los Materiales Llama o los resultados o salidas de Llama 3.2, o cualquier parte de los anteriores, constituyen infracción de derechos de propiedad intelectual u otros derechos propiedad o licenciables por usted, entonces cualquier licencia otorgada a usted bajo este Acuerdo cesará en la fecha en que se presente o inicie dicho litigio o reclamación. Usted indemnizará y mantendrá indemne a Meta frente a cualquier reclamación de terceros derivada o relacionada con su uso o distribución de los Materiales Llama.
+    c. If you institute litigation or other proceedings against Meta or any entity (including a cross-claim or
+    counterclaim in a lawsuit) alleging that the Llama Materials or Llama 3.2 outputs or results, or any portion
+    of any of the foregoing, constitutes infringement of intellectual property or other rights owned or licensable
+    by you, then any licenses granted to you under this Agreement shall terminate as of the date such litigation or
+    claim is filed or instituted. You will indemnify and hold harmless Meta from and against any claim by any third
+    party arising out of or related to your use or distribution of the Llama Materials.
 
-6. Plazo y terminación. El plazo de este Acuerdo comenzará con su aceptación de este Acuerdo o acceso a los Materiales Llama y continuará en pleno vigor y efecto hasta que se termine de acuerdo con los términos y condiciones establecidos aquí. Meta puede terminar este Acuerdo si usted incumple cualquier término o condición de este Acuerdo. Al terminar este Acuerdo, usted deberá eliminar y dejar de usar los Materiales Llama. Las Secciones 3, 4 y 7 sobrevivirán a la terminación de este Acuerdo. 
+6. Term and Termination. The term of this Agreement will commence upon your acceptance of this Agreement or access
+to the Llama Materials and will continue in full force and effect until terminated in accordance with the terms
+and conditions herein. Meta may terminate this Agreement if you are in breach of any term or condition of this
+Agreement. Upon termination of this Agreement, you shall delete and cease use of the Llama Materials. Sections 3,
+4 and 7 shall survive the termination of this Agreement. 
 
-7. Ley aplicable y jurisdicción. Este Acuerdo estará regido y se interpretará bajo las leyes del Estado de California sin considerar los principios de elección de ley, y la Convención de las Naciones Unidas sobre los Contratos de Venta Internacional de Mercancías no se aplica a este Acuerdo. Los tribunales de California tendrán jurisdicción exclusiva sobre cualquier disputa derivada de este Acuerdo.
+7. Governing Law and Jurisdiction. This Agreement will be governed and construed under the laws of the State of 
+California without regard to choice of law principles, and the UN Convention on Contracts for the International
+Sale of Goods does not apply to this Agreement. The courts of California shall have exclusive jurisdiction of
+any dispute arising out of this Agreement.
 ```

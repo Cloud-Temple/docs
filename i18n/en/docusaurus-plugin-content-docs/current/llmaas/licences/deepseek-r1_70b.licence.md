@@ -1,7 +1,7 @@
-## Model License deepseek-r1:70b
+## Licence du modèle deepseek-r1:70b
 
 ```
-"MIT License
+""MIT License
 
 Copyright (c) 2023 DeepSeek
 

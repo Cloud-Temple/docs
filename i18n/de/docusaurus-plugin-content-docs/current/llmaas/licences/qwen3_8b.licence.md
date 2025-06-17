@@ -1,29 +1,57 @@
-## Lizenz des Modells qwen3:8b
+## Licence du modèle qwen3:8b
 
 ```
-""                                 Apache Lizenz
-                           Version 2.0, Januar 2004
+""                                 Apache License
+                           Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
-   BESTIMMUNGEN UND BEDINGUNGEN FÜR DIE NUTZUNG, VERVIELFÄLTIGUNG UND VERTEILUNG
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-   1. Definitionen.
+   1. Definitions.
 
-      "Lizenz" bezeichnet die Bedingungen für die Nutzung, Vervielfältigung und Verteilung, wie in den Abschnitten 1 bis 9 dieses Dokuments definiert.
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
 
-      "Lizenzgeber" bezeichnet den Urheberrechtsinhaber oder die von dem Urheberrechtsinhaber autorisierte Einheit, die die Lizenz erteilt.
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
 
-      "Rechtliche Person" bezeichnet die Vereinigung der handelnden Einheit und aller anderen Einheiten, die diese Einheit kontrollieren, von ihr kontrolliert werden oder gemeinsam mit ihr kontrolliert werden. Zur Zweckbestimmung dieser Definition bedeutet "Kontrolle" (i) die direkte oder indirekte Macht, die Richtung oder Verwaltung dieser Einheit zu beeinflussen, sei es durch Vertrag oder anderweitig, oder (ii) das Eigentum an 50 % oder mehr der ausstehenden Anteile, oder (iii) wirtschaftliches Eigentum an dieser Einheit.
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
 
-      "Sie" (oder "Ihre") bezeichnet eine einzelne Person oder eine rechtliche Einheit, die die durch diese Lizenz gewährten Rechte ausübt.
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
 
-      "Quellform" bezeichnet die bevorzugte Form zur Erstellung von Änderungen, einschließlich, aber nicht beschränkt auf Software-Quellcode, Dokumentationsquellen und Konfigurationsdateien.
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
 
-      "Objektform" bezeichnet jede Form, die als mechanische Umwandlung oder Übersetzung einer Quellform entsteht, einschließlich, aber nicht beschränkt auf kompilierten Objektcode, generierte Dokumentation und Umwandlungen in andere Medientypen.
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
 
-      "Werk" bezeichnet das Werk der Urheberschaft, sei es in Quell- oder Objektform, das unter der Lizenz zur Verfügung gestellt wird, wie durch einen Urheberrechtsvermerk angegeben, der in das Werk integriert oder angehängt ist (ein Beispiel ist im Anhang unten enthalten).
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
 
-      "Abgeleitete Werke" bezeichnet jedes Werk, sei es in Quell- oder Objektform, das auf dem Werk basiert (oder aus dem Werk abgeleitet ist) und für das die redaktionellen Überarbeitungen, Anmerkungen, Erweiterungen oder anderen Änderungen als Ganzes ein originäres Werk der Urheberschaft darstellen. Zur Zweckbestimmung dieser Lizenz umfassen Abgeleitete Werke keine Werke, die sich von, oder lediglich mit den Schnittstellen der, des Werks und der Abgeleiteten Werke davon trennen lassen.
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
 
-      "Beitrag" bezeichnet jedes Werk der Urheberschaft, einschließlich der ursprünglichen Version des Werks und jeder Änderung oder Ergänzung dieses Werks oder der Abgeleiteten Werke, das absichtlich an den Lizenzgeber zur Einbeziehung in das Werk von dem Urheberrechtsinhaber oder einer einzelnen Person oder rechtlichen Einheit, die berechtigt ist, im Namen des Urheberrechtsinhabers beizutragen, übermittelt wird. Zur Zweckbestimmung dieses Begriffs bedeutet "übermittelt"
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted
 ```
