@@ -25,18 +25,11 @@ import click
 # Gestion des imports relatifs/absolus
 try:
     # Import relatif (quand exécuté comme module)
-    from . import (
-        TranslationConfig,
-        load_config,
-        TranslationUI,
-        CloudTempleTranslator,
-        test_api_connection,
-        FileManager,
-        TranslationStatus
-    )
-    from .config import validate_environment, get_paths, LANG_CONFIG
-    from .models import TranslationJob, TranslationStats
-    from .file_manager import FileCopier
+    from .config import TranslationConfig, load_config, validate_environment, get_paths, LANG_CONFIG
+    from .models import TranslationJob, TranslationStats, TranslationStatus
+    from .ui import TranslationUI
+    from .translator import CloudTempleTranslator, test_api_connection
+    from .file_manager import FileManager, FileCopier
 except ImportError:
     # Import absolu (quand exécuté directement)
     sys.path.insert(0, str(Path(__file__).parent))

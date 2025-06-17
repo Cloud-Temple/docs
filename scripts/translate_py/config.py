@@ -182,7 +182,8 @@ def get_paths(config: TranslationConfig) -> Dict[str, Path]:
     Returns:
         Dict contenant les chemins principaux
     """
-    base_path = config.doc_base_path
+    # Détection automatique du répertoire racine du projet
+    base_path = _find_project_root(config.doc_base_path)
     
     return {
         'docs': base_path / 'docs',
@@ -191,6 +192,28 @@ def get_paths(config: TranslationConfig) -> Dict[str, Path]:
         'metadata': base_path / 'scripts' / 'translation-meta.json',
         'translate_py': base_path / 'scripts' / 'translate_py'
     }
+
+
+def _find_project_root(start_path: Path) -> Path:
+    """
+    Trouve automatiquement la racine du projet en remontant les répertoires.
+    
+    Args:
+        start_path: Chemin de départ
+        
+    Returns:
+        Chemin vers la racine du projet
+    """
+    current = Path(start_path).resolve()
+    
+    # Cherche la racine en remontant jusqu'à trouver le dossier 'docs'
+    while current != current.parent:
+        if (current / 'docs').exists() and (current / 'scripts').exists():
+            return current
+        current = current.parent
+    
+    # Si pas trouvé, utilise le répertoire courant
+    return Path(".").resolve()
 
 
 def validate_environment(config: TranslationConfig) -> bool:
