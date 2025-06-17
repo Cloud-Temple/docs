@@ -16,7 +16,6 @@ Diese erweiterten Tutorials behandeln die Integration, Optimierung und Best Prac
 **LangChain-Konfiguration mit LLMaaS**
 
 ```python
-```
 
 # Installation der Abhängigkeiten
 
@@ -187,7 +186,6 @@ def query_rag(qa_chain, question: str):
         print(f"Quelle {i+1}: {doc.page_content[:200]}...")
     
     return result
-```
 
 # Beispiel der Verwendung
 rag_pipeline = setup_rag_pipeline()
@@ -293,7 +291,6 @@ def create_agent_with_tools():
     )
     
     return agent_executor
-```
 
 # Verwendung des Agents
 def test_agent():
@@ -320,8 +317,6 @@ test_agent()
 
 ```python
 from openai import OpenAI
-
-```
 
 # Konfiguration für Cloud Temple LLMaaS
 def setup_cloud_temple_client():
@@ -370,6 +365,7 @@ def test_openai_compatibility():
 
 # Test von Kompatibilität
 test_openai_compatibility()
+```
 
 ### 5. Integration Semantic Kernel (Microsoft)
 
@@ -461,7 +457,6 @@ haystack_simple()
 ### 7. Integration LlamaIndex
 
 ```python
-```
 
 # pip install llama-index
 

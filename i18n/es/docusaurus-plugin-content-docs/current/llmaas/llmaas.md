@@ -3,11 +3,11 @@ title: Visión general
 sidebar_position: 1
 ---
 
-# LLM como servicio (LLMaaS)
+# LLM como un Servicio (LLMaaS)
 
 ## Visión general
 
-El servicio **LLMaaS** (Modelos de Lenguaje a Gran Escala como Servicio) de Cloud Temple proporciona acceso seguro y soberano a los modelos de inteligencia artificial más avanzados, calculados en una infraestructura IaaS Cloud Temple certificada por la ANSSI según SecNumCloud 3.2.
+El servicio **LLMaaS** (Modelos de Lenguaje a Servicio) de Cloud Temple proporciona acceso seguro y soberano a los modelos de inteligencia artificial más avanzados, calculados en una infraestructura IaaS Cloud Temple calificada SecNumCloud 3.2 por la ANSSI.
 
 <div class="card-grid">
   <div class="card">
@@ -16,9 +16,9 @@ El servicio **LLMaaS** (Modelos de Lenguaje a Gran Escala como Servicio) de Clou
     <a href="llmaas/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Inicio rápido</h3>
+    <h3>Quickstart</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="llmaas/quickstart" class="card-link">Iniciar el inicio rápido &rarr;</a>
+    <a href="llmaas/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>

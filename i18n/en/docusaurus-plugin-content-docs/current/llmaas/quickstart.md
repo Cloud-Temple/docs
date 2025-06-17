@@ -62,7 +62,6 @@ pip install requests
 ```python
 import requests
 import json
-```
 
 # Configuration
 API_KEY = "YOUR_API_KEY"
@@ -105,11 +104,11 @@ else:
 
 For your first test, use one of these recommended models:
 
-| Model | Usage | Speed | Note |
-|--------|--------|---------|------|
-| `granite3.3:8b` | General purpose, balanced | Fast | Recommended for beginners |
-| `qwen3:14b` | Complex tasks | Medium | Visible "thinking" mode |
-| `gemma3:4b` | Rapid tests, prototyping | Very fast | Detailed answers |
+| Model           | Usage                     | Speed     | Note                      |
+| --------------- | ------------------------- | --------- | ------------------------- |
+| `granite3.3:8b` | General purpose, balanced | Fast      | Recommended for beginners |
+| `qwen3:14b`     | Complex tasks             | Medium    | Visible "thinking" mode   |
+| `gemma3:4b`     | Rapid tests, prototyping  | Very fast | Detailed answers          |
 
 Check the [complete model catalog](./models) for more options.
 
@@ -191,8 +190,8 @@ python-dotenv
 ```
 
 **`.env.example`**
+
 ```env
-```
 
 # Base URL of the LLMaaS API
 API_URL="https://api.ai.cloud-temple.com/v1"
@@ -209,7 +208,6 @@ DEFAULT_MODEL="qwen3:30b-a3b"
 **Source Code (`test_tool_calling.py`)**
 
 ```python
-```
 
 # -*- coding: utf-8 -*-
 """
@@ -451,7 +449,6 @@ Pillow
 **`.env.example`**
 ```env
 VARIABLES
-```
 
 # Base URL of the LLMaaS API
 API_URL="https://api.ai.cloud-temple.com/v1"
@@ -468,8 +465,6 @@ DEFAULT_MODEL="granite3.2-vision:2b"
 **Source Code (`test_vision.py`)**
 
 ```python
-```
-
 # -*- coding: utf-8 -*-
 """
 Simple example of using the LLMaaS Vision API.
@@ -481,8 +476,6 @@ import os
 import base64
 import httpx
 from dotenv import load_dotenv
-
-```
 
 # --- Configuration ---
 

@@ -16,7 +16,6 @@ Estos tutoriales avanzados cubren la integración, optimización y mejores prác
 **Configuración de LangChain con LLMaaS**
 
 ```python
-```
 
 # Instalación de dependencias
 
@@ -291,7 +290,7 @@ def create_agent_with_tools():
     )
     
     return agent_executor
-```
+
 
 # Uso del agente
 def test_agent():
@@ -318,8 +317,6 @@ test_agent()
 
 ```python
 from openai import OpenAI
-
-```
 
 # Configuración para Cloud Temple LLMaaS
 def setup_cloud_temple_client():
@@ -368,6 +365,7 @@ def test_openai_compatibility():
 
 # Prueba de compatibilidad
 test_openai_compatibility()
+```
 
 ### 5. Integración Semantic Kernel (Microsoft)
 
@@ -459,7 +457,7 @@ haystack_simple()
 ### 7. Integración LlamaIndex
 
 ```python
-```
+
 
 # pip install llama-index
 

@@ -523,7 +523,6 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```python
 import requests
 import json
-```
 
 # Configuración
 API_KEY = "SU_TOKEN_API"
@@ -735,7 +734,6 @@ print(response.choices[0].message.content)
 ```python
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
-```
 
 # Configuración del modelo de chat (compatible con LLMaaS)
 chat = ChatOpenAI(
