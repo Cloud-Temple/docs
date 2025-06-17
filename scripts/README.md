@@ -49,8 +49,127 @@ npm run generate:docs
 
 ---
 
-### 🌐 `translate.js`
+### 🐍 `translate_py/translate.py` (Recommandé)
+**Système de traduction moderne avec interface avancée**
+
+Système de traduction Python avancé utilisant l'API Cloud Temple LLMaaS avec une interface utilisateur moderne, gestion optimisée de la concurrence et fonctionnalités étendues.
+
+#### ✨ Fonctionnalités Avancées
+- 🎨 **Interface Rich** : Affichage moderne avec barres de progression en temps réel
+- ⚡ **Concurrence optimisée** : Pool de workers pour utilisation maximale de l'API
+- 📊 **Statistiques avancées** : Tokens IN/OUT, vitesse tokens/s en temps réel
+- 🚫 **Support .notranslation** : Exclusion automatique de répertoires
+- 🔄 **Détection automatique** : Racine du projet détectée automatiquement
+- 📋 **Métadonnées intelligentes** : Traduction incrémentale basée sur les hash
+- 🎯 **Mode debug** : Logs détaillés avec informations API
+
+#### Installation et Configuration
+```bash
+# Installation des dépendances
+cd scripts/translate_py
+pip install -r requirements.txt
+
+# Configuration (copier depuis .env.example)
+cp .env.example .env
+# Éditer .env avec vos paramètres
+```
+
+#### Variables d'environnement (.env)
+```bash
+# API Configuration
+CLOUDTEMPLE_API_KEY=your_api_key_here
+CLOUDTEMPLE_API_URL=https://api.ai.cloud-temple.com/v1/chat/completions
+TRANSLATION_MODEL=qwen3:30b-a3b
+
+# Performance Settings
+CONCURRENT_TRANSLATIONS=8         # Nombre de traductions simultanées
+MAX_TOKENS_PER_BLOCK=5000        # Taille max des blocs de traduction
+MAX_RETRIES=5                    # Nombre de tentatives par traduction
+RETRY_DELAY=5.0                  # Délai entre tentatives (secondes)
+
+# Model Parameters
+TRANSLATION_TEMPERATURE=0.1      # Créativité du modèle (0.0-2.0)
+TRANSLATION_TOP_P=1.0           # Nucleus sampling (0.0-1.0)
+```
+
+#### Utilisation
+```bash
+# Depuis le répertoire racine ou scripts/translate_py/
+python translate.py [OPTIONS]
+
+# Exemples d'utilisation
+python translate.py --dry-run                    # Simulation
+python translate.py --force                      # Force retraduction
+python translate.py --lang=en                    # Traduction anglaise uniquement
+python translate.py --debug                      # Mode debug avec logs détaillés
+python translate.py --test-api                   # Test de connexion API
+```
+
+#### Options Disponibles
+- `--dry-run` : Mode simulation sans modifications
+- `--force` : Force la retraduction de tous les fichiers
+- `--init` : Mode initialisation des métadonnées
+- `--translate-missing` : Traduit seulement les fichiers manquants
+- `--lang=<code>` : Langue cible spécifique (en, de, es, it)
+- `--debug` : Mode debug avec logs détaillés
+- `--no-debug-system-prompt` : Masque le prompt système en debug
+- `--test-api` : Test la connexion API et affiche le résultat
+
+#### Fonctionnalité .notranslation
+Placez un fichier `.notranslation` dans un répertoire pour forcer la **copie** (au lieu de la traduction) de tous les fichiers de ce répertoire :
+
+```bash
+# Exemple : Licences LLM non traduisibles
+docs/llmaas/licences/.notranslation
+
+# Résultat : Tous les .md dans licences/ sont copiés identiques
+# dans toutes les langues au lieu d'être traduits
+```
+
+#### Interface Utilisateur
+L'interface moderne affiche en temps réel :
+```
+🇫🇷 Cloud Temple Documentation Translation 🌍
+
+📋 Configuration
+🗣️ Langues Cibles
+
+⏱️ 00:02:45 | 🚀 PRODUCTION | 🗣️ en, de, es, it
+
+📊 Progression          │ 📈 Statistiques
+════════════════════════ │ ═══════════════════
+🌍 Progression Globale   │ ✅ Traduits    : 42
+█████████████░░░ 78%     │ 📋 Copiés     : 8
+                        │ ❌ Échecs     : 0
+api.md → en             │ 
+█████████░░░ 3/4        │ 🔤 Tokens IN  : 125,847
+                        │ 📤 Tokens OUT : 98,342
+📝 Logs Récents          │ ⚡ Tokens/s   : 1,247.3
+════════════════════════ │
+✅ Traduction: api.md → en
+🔄 Traduction: concepts.md → de
+```
+
+#### Architecture du Système
+```
+scripts/translate_py/
+├── translate.py          # 🚀 Script principal
+├── config.py            # ⚙️ Configuration et environnement
+├── models.py            # 📋 Modèles de données
+├── ui.py               # 🎨 Interface utilisateur Rich
+├── translator.py        # 🌐 Moteur de traduction
+├── file_manager.py      # 📁 Gestion fichiers et métadonnées
+├── requirements.txt     # 📦 Dépendances Python
+├── .env.example        # 📝 Template configuration
+└── .env               # 🔒 Configuration locale
+```
+
+---
+
+### 🌐 `translate.js` (Legacy)
 **Script de traduction multilingue avec Cloud Temple LLMaaS**
+
+> ⚠️ **Obsolète** : Utilisez `translate_py/translate.py` pour les nouvelles fonctionnalités.
 
 Script Node.js pour la traduction automatique de la documentation Markdown (fichiers `.md`) du français vers d'autres langues en utilisant l'API Cloud Temple LLMaaS. Il conserve les hachages du contenu source pour ne retraduire que les fichiers modifiés. Les fichiers non-Markdown (images, .docx, etc.) sont copiés.
 

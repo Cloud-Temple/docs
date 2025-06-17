@@ -189,7 +189,7 @@ def get_paths(config: TranslationConfig) -> Dict[str, Path]:
         'docs': base_path / 'docs',
         'i18n': base_path / 'i18n',
         'scripts': base_path / 'scripts',
-        'metadata': base_path / 'scripts' / 'translation-meta.json',
+        'metadata': base_path / 'scripts' / 'translate_py' / 'translation-meta.json',
         'translate_py': base_path / 'scripts' / 'translate_py'
     }
 

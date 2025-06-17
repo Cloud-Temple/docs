@@ -68,6 +68,10 @@ class TranslationEngine:
         # Chargement des métadonnées
         job.metadata = await self.file_manager.metadata_manager.load_metadata()
         
+        # Traitement spécial pour le mode initialisation
+        if job.init_mode:
+            return await self._run_initialization_mode(job)
+        
         # Construction des tâches
         job.tasks = await self.file_manager.task_builder.build_translation_tasks(
             target_languages=job.target_languages,
@@ -122,8 +126,16 @@ class TranslationEngine:
         for task in tasks:
             # Simulation des statistiques
             if task.is_translatable:
-                if task.stored_hash is None:
-                    self.ui.add_log(f"[DRY RUN] Nouvelle traduction: {task.relative_path} → {task.target_lang}", "info")
+                if job.force_retranslation:
+                    self.ui.add_log(f"[DRY RUN] Forcerait traduction: {task.relative_path} → {task.target_lang} (--force)", "info")
+                elif task.stored_hash is None:
+                    self.ui.add_log(f"[DRY RUN] Nouvelle traduction: {task.relative_path} → {task.target_lang} (pas de hash stocké)", "info")
+                elif not task.target_path.exists():
+                    self.ui.add_log(f"[DRY RUN] Fichier manquant: {task.relative_path} → {task.target_lang}", "info")
+                elif task.current_hash != task.stored_hash:
+                    self.ui.add_log(f"[DRY RUN] Contenu modifié: {task.relative_path} → {task.target_lang}", "info")
+                    self.ui.add_log(f"  Hash actuel : {task.current_hash}", "info")
+                    self.ui.add_log(f"  Hash stocké : {task.stored_hash}", "info")
                 else:
                     self.ui.add_log(f"[DRY RUN] Mise à jour: {task.relative_path} → {task.target_lang}", "info")
                 
@@ -264,6 +276,20 @@ class TranslationEngine:
         self.ui.log_task_start(task)
         task.status = TranslationStatus.PROCESSING
         
+        # Log de la raison de la traduction
+        if job.force_retranslation:
+            self.ui.add_log(f"Traduction forcée: {task.relative_path} → {task.target_lang} (--force)", "info")
+        elif task.stored_hash is None:
+            self.ui.add_log(f"Nouvelle traduction: {task.relative_path} → {task.target_lang} (pas de hash stocké)", "info")
+        elif not task.target_path.exists():
+            self.ui.add_log(f"Fichier manquant: {task.relative_path} → {task.target_lang}", "info")
+        elif task.current_hash != task.stored_hash:
+            self.ui.add_log(f"Contenu modifié: {task.relative_path} → {task.target_lang}", "info")
+            self.ui.add_log(f"  Hash actuel : {task.current_hash}", "info")
+            self.ui.add_log(f"  Hash stocké : {task.stored_hash}", "info")
+        else:
+            self.ui.add_log(f"Traduction: {task.relative_path} → {task.target_lang}", "info")
+        
         try:
             # Lecture du contenu source
             content = await self.file_manager.read_file_content(task.source_path)
@@ -325,6 +351,164 @@ class TranslationEngine:
         
         self.ui.log_task_complete(task)
         self.ui.update_task_progress(task)
+    
+    async def _run_initialization_mode(self, job: TranslationJob) -> TranslationStats:
+        """
+        Exécute le mode initialisation - calcule les hash et initialise les métadonnées.
+        
+        Args:
+            job: Job de traduction en mode init
+            
+        Returns:
+            Statistiques d'initialisation
+        """
+        self.ui.add_log("MODE INITIALISATION - Calcul des hash pour les fichiers existants", "info")
+        
+        if job.translate_missing:
+            self.ui.add_log("Option --translate-missing activée - traduction des fichiers manquants", "info")
+        else:
+            self.ui.add_log("Initialisation des métadonnées uniquement (utiliser --translate-missing pour traduire)", "info")
+        
+        # Scanner tous les fichiers dans docs/
+        all_files = self.file_manager.task_builder.file_scanner.scan_files()
+        markdown_files = [f for f in all_files if f.suffix.lower() == '.md']
+        
+        self.ui.add_log(f"Trouvé {len(markdown_files)} fichiers Markdown sur {len(all_files)} fichiers totaux", "info")
+        
+        # Debug: afficher quelques fichiers
+        if markdown_files:
+            self.ui.add_log(f"Exemples de fichiers Markdown:", "info")
+            for i, f in enumerate(markdown_files[:5]):
+                relative = self.file_manager.task_builder.file_scanner.get_relative_path(f)
+                self.ui.add_log(f"  {relative}", "info")
+            if len(markdown_files) > 5:
+                self.ui.add_log(f"  ... et {len(markdown_files) - 5} autres", "info")
+        
+        # Démarrage du suivi
+        job.stats.start_timer()
+        
+        # Traitement des fichiers en lot avec concurrence
+        processed_count = 0
+        concurrent_limit = min(self.config.concurrent_translations, 8)  # Limite pour l'I/O
+        
+        # Fonction pour traiter un fichier
+        async def process_file_init(file_path: Path) -> None:
+            nonlocal processed_count
+            
+            relative_path = self.file_manager.task_builder.file_scanner.get_relative_path(file_path)
+            
+            # Calcul du hash du fichier source
+            source_hash = await self.file_manager.task_builder.file_hasher.compute_file_hash_async(file_path)
+            
+            # Vérification que les métadonnées existent
+            if not job.metadata:
+                self.ui.add_log("Erreur: métadonnées non initialisées", "error")
+                return
+            
+            # Initialisation des métadonnées pour ce fichier
+            if relative_path not in job.metadata.files:
+                job.metadata.files[relative_path] = {}
+            
+            # Traitement pour chaque langue cible
+            for lang_code in job.target_languages:
+                lang_name = LANG_CONFIG.LANGUAGES.get(lang_code, lang_code)
+                
+                # Construction du chemin cible
+                target_path = self.file_manager.task_builder._get_target_path(relative_path, lang_code)
+                
+                if job.dry_run:
+                    if target_path.exists():
+                        self.ui.add_log(f"[DRY RUN] Initialiserait: {relative_path} → {lang_code}", "info")
+                        job.stats.files_skipped += 1
+                    elif job.translate_missing:
+                        self.ui.add_log(f"[DRY RUN] Traduirait manquant: {relative_path} → {lang_code}", "info")
+                        job.stats.files_translated += 1
+                    else:
+                        self.ui.add_log(f"[DRY RUN] Ignorerait manquant: {relative_path} → {lang_code}", "info")
+                    continue
+                
+                # Vérifier si la traduction existe
+                if target_path.exists():
+                    # Enregistrer le hash dans les métadonnées
+                    job.metadata.set_hash(relative_path, lang_code, source_hash)
+                    self.ui.add_log(f"Initialisé: {relative_path} → {lang_code}", "success")
+                    job.stats.files_skipped += 1
+                    job.stats.increment_lang_stat(lang_code, "initialized")
+                    
+                elif job.translate_missing:
+                    # Traduire le fichier manquant
+                    try:
+                        self.ui.add_log(f"Traduction manquante: {relative_path} → {lang_code}", "info")
+                        
+                        # Lecture du contenu source
+                        source_content = await self.file_manager.read_file_content(file_path)
+                        
+                        # Traduction avec l'API
+                        async with CloudTempleTranslator(self.config, self.ui) as translator:
+                            result = await translator.translate_content(
+                                content=source_content,
+                                target_lang=lang_code
+                            )
+                            
+                            if result.success and result.translated_text:
+                                # Sauvegarde
+                                await self.file_manager.write_file_content(target_path, result.translated_text)
+                                
+                                # Mise à jour des métadonnées
+                                job.metadata.set_hash(relative_path, lang_code, source_hash)
+                                
+                                # Statistiques
+                                job.stats.files_translated += 1
+                                job.stats.increment_lang_stat(lang_code, "translated")
+                                if result.prompt_tokens:
+                                    job.stats.total_input_tokens += result.prompt_tokens
+                                if result.completion_tokens:
+                                    job.stats.total_output_tokens += result.completion_tokens
+                                
+                                self.ui.add_log(f"Traduit: {relative_path} → {lang_code}", "success")
+                            else:
+                                job.stats.files_failed += 1
+                                job.stats.add_error(f"Traduction échouée: {relative_path} → {lang_code}")
+                                self.ui.add_log(f"Échec traduction: {relative_path} → {lang_code}", "error")
+                    
+                    except Exception as e:
+                        job.stats.files_failed += 1
+                        job.stats.add_error(f"Erreur traduction {relative_path} → {lang_code}: {e}")
+                        self.ui.add_log(f"Erreur: {relative_path} → {lang_code}: {e}", "error")
+                else:
+                    # Fichier manquant mais pas de traduction demandée
+                    self.ui.add_log(f"Ignoré (manquant): {relative_path} → {lang_code}", "warning")
+            
+            processed_count += 1
+            if processed_count % 10 == 0:
+                self.ui.add_log(f"Progression: {processed_count}/{len(markdown_files)} fichiers traités", "info")
+        
+        # Traitement en lots avec concurrence
+        tasks = []
+        for i, file_path in enumerate(markdown_files):
+            task = asyncio.create_task(process_file_init(file_path))
+            tasks.append(task)
+            
+            # Traitement par lot
+            if len(tasks) >= concurrent_limit or i == len(markdown_files) - 1:
+                await asyncio.gather(*tasks, return_exceptions=True)
+                tasks = []
+        
+        # Finalisation
+        job.stats.stop_timer()
+        
+        # Sauvegarde des métadonnées
+        if not job.dry_run and job.metadata:
+            await self.file_manager.metadata_manager.save_metadata(job.metadata)
+            self.ui.add_log("Métadonnées sauvegardées", "success")
+        
+        # Message de fin
+        if job.dry_run:
+            self.ui.add_log("Mode simulation terminé - aucun fichier modifié", "info")
+        else:
+            self.ui.add_log("Initialisation terminée", "success")
+        
+        return job.stats
 
 
 @click.command()
