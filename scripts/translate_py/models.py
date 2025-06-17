@@ -42,6 +42,11 @@ class TranslationStats:
     files_skipped: int = 0
     files_failed: int = 0
     
+    # Statistiques de tokens
+    total_input_tokens: int = 0
+    total_output_tokens: int = 0
+    total_api_calls: int = 0
+    
     # Détails temporels
     start_time: Optional[datetime] = None
     end_time: Optional[datetime] = None
@@ -107,6 +112,7 @@ class FileTranslationTask:
     current_hash: Optional[str] = None
     stored_hash: Optional[str] = None
     needs_translation: bool = True
+    force_copy: bool = False  # Force la copie même pour les fichiers MARKDOWN
     
     # Informations de traitement
     content_size: int = 0
@@ -120,7 +126,7 @@ class FileTranslationTask:
     @property
     def is_translatable(self) -> bool:
         """Vérifie si le fichier peut être traduit."""
-        return self.file_type == FileType.MARKDOWN
+        return self.file_type == FileType.MARKDOWN and not self.force_copy
     
     @property
     def is_up_to_date(self) -> bool:
@@ -249,6 +255,8 @@ class APIResponse:
     # Métadonnées de la réponse
     model_used: Optional[str] = None
     tokens_used: Optional[int] = None
+    prompt_tokens: Optional[int] = None
+    completion_tokens: Optional[int] = None
     response_time: Optional[float] = None
     
     # Informations de retry
@@ -270,3 +278,5 @@ class BlockTranslationResult:
     total_blocks: int = 0
     processing_time: Optional[float] = None
     tokens_used: Optional[int] = 0
+    prompt_tokens: Optional[int] = 0
+    completion_tokens: Optional[int] = 0

@@ -1,82 +1,82 @@
-## Lizenz des Modells gemma3:1b
+## Licence du modèle gemma3:1b
 
 ```
-"Gemma Nutzungsbedingungen
+""Gemma Terms of Use 
 
-Letzte Änderung: 21. Februar 2024
+Last modified: February 21, 2024
 
-Durch die Nutzung, Vervielfältigung, Änderung, Verbreitung, Ausführung oder Darstellung eines beliebigen Teils oder Elements von Gemma, Modellabkömmlingen einschließlich über jeden Hosted Service (wie unten definiert) (jeweils als „Gemma Services“ bezeichnet) oder durch sonstige Annahme der Bedingungen dieses Vertrags erklären Sie sich damit einverstanden, durch diesen Vertrag gebunden zu werden.
+By using, reproducing, modifying, distributing, performing or displaying any portion or element of Gemma, Model Derivatives including via any Hosted Service, (each as defined below) (collectively, the "Gemma Services") or otherwise accepting the terms of this Agreement, you agree to be bound by this Agreement.
 
-Abschnitt 1: DEFINITIONEN
-1.1 Definitionen
-(a) „Vertrag“ oder „Gemma Nutzungsbedingungen“ bezeichnet diese Allgemeinen Geschäftsbedingungen, die die Nutzung, Vervielfältigung, Verbreitung oder Änderung der Gemma Services und alle in die Vertragsbedingungen einbezogenen Bedingungen regeln.
+Section 1: DEFINITIONS
+1.1 Definitions
+(a) "Agreement" or "Gemma Terms of Use" means these terms and conditions that govern the use, reproduction, Distribution or modification of the Gemma Services and any terms and conditions incorporated by reference.
 
-(b) „Verbreitung“ oder „Verbreiten“ bedeutet jede Übertragung, Veröffentlichung oder sonstige Weitergabe von Gemma oder Modellabkömmlingen an eine dritte Partei, einschließlich der Bereitstellung oder Machbarkeit von Gemma oder ihrer Funktionalität als Hosted Service über API, Webzugriff oder andere elektronische oder entfernte Mittel („Hosted Service“).
+(b) "Distribution" or "Distribute" means any transmission, publication, or other sharing of Gemma or Model Derivatives to a third party, including by providing or making Gemma or its functionality available as a hosted service via API, web access, or any other electronic or remote means ("Hosted Service").
 
-(c) „Gemma“ bezeichnet die Sammlung von maschinellen Lernsprachmodellen, trainierten Modellgewichten und Parametern, die unter ai.google.dev/gemma identifiziert werden, unabhängig davon, aus welcher Quelle Sie es erhalten haben.
+(c) "Gemma" means the set of machine learning language models, trained model weights and parameters identified at ai.google.dev/gemma, regardless of the source that you obtained it from.
 
-(d) „Google“ bezeichnet Google LLC.
+(d) "Google" means Google LLC.
 
-(e) „Modellabkömmlinge“ bezeichnet alle (i) Änderungen an Gemma, (ii) Werke, die auf Gemma basieren, oder (iii) jedes andere maschinelle Lernmodell, das durch Übertragung von Mustern der Gewichte, Parameter, Operationen oder Ausgaben von Gemma auf dieses Modell erstellt wird, um zu erreichen, dass dieses Modell ähnlich wie Gemma funktioniert, einschließlich von Verfahren zur Verdichtung, die Zwischendatenrepräsentationen verwenden oder Methoden basierend auf der Generierung synthetischer Ausgabedaten durch Gemma für das Training dieses Modells. Für Klarheit: Ausgaben gelten nicht als Modellabkömmlinge.
+(e) "Model Derivatives" means all (i) modifications to Gemma, (ii) works based on Gemma, or (iii) any other machine learning model which is created by transfer of patterns of the weights, parameters, operations, or Output of Gemma, to that model in order to cause that model to perform similarly to Gemma, including distillation methods that use intermediate data representations or methods based on the generation of synthetic data Outputs by Gemma for training that model. For clarity, Outputs are not deemed Model Derivatives.
 
-(f) „Ausgabe“ bezeichnet den informationsinhaltlichen Ausgang von Gemma oder einem Modellabkömmling, der sich aus der Ausführung oder sonstigen Nutzung von Gemma oder dem Modellabkömmling ergibt, einschließlich über einen Hosted Service.
+(f) "Output" means the information content output of Gemma or a Model Derivative that results from operating or otherwise using Gemma or the Model Derivative, including via a Hosted Service.
 
 1.2
-Im Rahmen dieses Vertrags bedeutet „einschließlich“ „einschließlich ohne Einschränkung“.
+As used in this Agreement, "including" means "including without limitation".
 
-Abschnitt 2: EIGNUNG UND NUTZUNG
-2.1 Eignung
-Sie versichern und garantieren, dass Sie die rechtliche Kapazität besitzen, diesen Vertrag abzuschließen (einschließlich der ausreichenden Altersgrenze für die Zustimmung). Wenn Sie auf oder für Rechnung einer rechtlichen Person auf irgendeine der Gemma Services zugreifen oder diese nutzen, (a) schließen Sie diesen Vertrag im Namen von sich selbst und dieser rechtlichen Person ab, (b) versichern und garantieren Sie, dass Sie die Befugnis haben, im Namen und zur Verpflichtung dieser rechtlichen Person gegenüber diesem Vertrag zu handeln, und (c) beziehen sich die Verweise auf „Sie“ oder „Ihre“ in den restlichen Teilen dieses Vertrags auf Sie (als Einzelperson) und diese rechtliche Person.
+Section 2: ELIGIBILITY AND USAGE
+2.1 Eligibility
+You represent and warrant that you have the legal capacity to enter into this Agreement (including being of sufficient age of consent). If you are accessing or using any of the Gemma Services for or on behalf of a legal entity, (a) you are entering into this Agreement on behalf of yourself and that legal entity, (b) you represent and warrant that you have the authority to act on behalf of and bind that entity to this Agreement and (c) references to "you" or "your" in the remainder of this Agreement refers to both you (as an individual) and that entity.
 
-2.2 Nutzung
-Sie dürfen Gemma Services nur gemäß den Bedingungen dieses Vertrags nutzen, vervielfältigen, ändern, verbreiten, ausführen oder darstellen und dürfen nicht (oder ermutigen oder erlauben, dass jemand anderes) eine Bedingung dieses Vertrags verletzen.
+2.2 Use
+You may use, reproduce, modify, Distribute, perform or display any of the Gemma Services only in accordance with the terms of this Agreement, and must not violate (or encourage or permit anyone else to violate) any term of this Agreement.
 
-Abschnitt 3: VERBREITUNG UND EINSCHRÄNKUNGEN
-3.1 Verbreitung und Weiterverbreitung
-Sie dürfen Kopien von Gemma oder Modellabkömmlingen vervielfältigen oder verbreiten, sofern Sie alle folgenden Bedingungen erfüllen:
+Section 3: DISTRIBUTION AND RESTRICTIONS
+3.1 Distribution and Redistribution
+You may reproduce or Distribute copies of Gemma or Model Derivatives if you meet all of the following conditions:
 
-Sie müssen die in Abschnitt 3.2 genannten Nutzungsbeschränkungen als durchsetzbare Bestimmung in jedem Vertrag (z. B. Lizenzvertrag, Nutzungsbedingungen usw.) verpflichtend machen, der die Nutzung und/oder Verbreitung von Gemma oder Modellabkömmlingen regelt, und müssen den nachfolgenden Nutzern, an die Sie verbringen, eine Mitteilung geben, dass Gemma oder Modellabkömmlinge den Nutzungsbeschränkungen in Abschnitt 3.2 unterliegen.
-Sie müssen allen Drittparteien, die Gemma oder Modellabkömmlinge erhalten, eine Kopie dieses Vertrags bereitstellen.
-Sie müssen sicherstellen, dass alle geänderten Dateien prominent darauf hinweisen, dass Sie die Dateien geändert haben.
-Alle Verbreitungen (außer über einen Hosted Service) müssen mit einer „Hinweis“-Textdatei versehen sein, die folgenden Hinweis enthält: „Gemma wird unter und unterliegt den Gemma Nutzungsbedingungen, die unter ai.google.dev/gemma/terms gefunden werden.“
-Sie können Ihre eigenen geistigen Eigentumsangaben zu Ihren Änderungen hinzufügen und, außer wie in diesem Abschnitt festgelegt, können Sie zusätzliche oder unterschiedliche Bedingungen für die Nutzung, Vervielfältigung oder Verbreitung Ihrer Änderungen oder für solche Modellabkömmlinge insgesamt vorsehen, vorausgesetzt, Ihre Nutzung, Vervielfältigung, Änderung, Verbreitung, Ausführung und Darstellung von Gemma entspricht den Bedingungen dieses Vertrags. Jede zusätzliche oder unterschiedliche Bedingung, die Sie vorsehen, darf nicht mit den Bedingungen dieses Vertrags in Konflikt stehen.
+You must include the use restrictions referenced in Section 3.2 as an enforceable provision in any agreement (e.g., license agreement, terms of use, etc.) governing the use and/or distribution of Gemma or Model Derivatives and you must provide notice to subsequent users you Distribute to that Gemma or Model Derivatives are subject to the use restrictions in Section 3.2.
+You must provide all third party recipients of Gemma or Model Derivatives a copy of this Agreement.
+You must cause any modified files to carry prominent notices stating that you modified the files.
+All Distributions (other than through a Hosted Service) must be accompanied by a "Notice" text file that contains the following notice: "Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms".
+You may add your own intellectual property statement to your modifications and, except as set forth in this Section, may provide additional or different terms and conditions for use, reproduction, or Distribution of your modifications, or for any such Model Derivatives as a whole, provided your use, reproduction, modification, Distribution, performance, and display of Gemma otherwise complies with the terms and conditions of this Agreement. Any additional or different terms and conditions you impose must not conflict with the terms of this Agreement.
 
-3.2 Nutzungsbeschränkungen
-Sie dürfen keine der Gemma Services verwenden:
+3.2 Use Restrictions
+You must not use any of the Gemma Services:
 
-für die in der Gemma Verbotenen Nutzungspolitik unter ai.google.dev/gemma/prohibited_use_policy genannten verbotenen Anwendungen ("Verbotene Nutzungspolitik"), die hiermit in diesen Vertrag einbezogen werden; oder
-in Verstoß gegen geltende Gesetze und Vorschriften.
-So weit gesetzlich zulässig, behält sich Google das Recht vor, die Nutzung jeder der Gemma Services, die Google vernünftigerweise als Verstoß gegen diesen Vertrag betrachtet, einzuschränken (entfernt oder anderweitig).
+for the restricted uses set forth in the Gemma Prohibited Use Policy at ai.google.dev/gemma/prohibited_use_policy ("Prohibited Use Policy"), which is hereby incorporated by reference into this Agreement; or
+in violation of applicable laws and regulations.
+To the maximum extent permitted by law, Google reserves the right to restrict (remotely or otherwise) usage of any of the Gemma Services that Google reasonably believes are in violation of this Agreement.
 
-3.3 Generierte Ausgaben
-Google beansprucht keine Rechte an Ausgaben, die Sie mit Gemma generieren. Sie und Ihre Nutzer sind allein verantwortlich für die Ausgaben und deren nachfolgende Nutzung.
+3.3 Generated Output
+Google claims no rights in Outputs you generate using Gemma. You and your users are solely responsible for Outputs and their subsequent uses.
 
-Abschnitt 4: ZUSÄTZLICHE BESTIMMUNGEN
+Section 4: ADDITIONAL PROVISIONS
 4.1 Updates
-Google kann Gemma von Zeit zu Zeit aktualisieren, und Sie müssen angemessene Bemühungen unternehmen, die neueste Version von Gemma zu verwenden.
+Google may update Gemma from time to time, and you must make reasonable efforts to use the latest version of Gemma.
 
-4.2 Markenrechte
-Nichts in diesem Vertrag gewährt Ihnen Rechte, Google's Marken, Handelsnamen, Logos oder anderweitig zu verwenden oder zu vermitteln, dass Sie von Google unterstützt werden oder die Beziehung zwischen Ihnen und Google falsch darstellen. Google behält alle Rechte vor, die nicht ausdrücklich in diesem Vertrag gewährt werden.
+4.2 Trademarks
+Nothing in this Agreement grants you any rights to use Google's trademarks, trade names, logos or to otherwise suggest endorsement or misrepresent the relationship between you and Google. Google reserves any rights not expressly granted herein.
 
-4.3 AUSNAHME DER GARANTIE
-AUSSERHALB DER GESETZLICHEN VERPFLICHTUNGEN WERDEN DIE GEMMA SERVICES UND AUSGABEN AUF EINEM „WIE GEFUNGEN“-BASIS ANGEBOTEN, OHNE JEGLICHE GARANTIE ODER BEDINGUNGEN, AUCH NICHT AUSDRÜCKLICH ODER IMPLIZIT, EINSCHLIESSLICH JEGLICHER GARANTIEN ODER BEDINGUNGEN ZUM EIGENTUM, ZUR NICHTEINBRUCHSFREIHEIT, ZUR VERKAUFBARKEIT ODER ZUR EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. SIE SIND ALLEIN VERANTWORTLICH FÜR DIE BEURTEILUNG DER EIGNUNG DER NUTZUNG, VERVIELFÄLTIGUNG, ÄNDERUNG, AUSFÜHRUNG, DARSTELLUNG ODER VERBREITUNG DER GEMMA SERVICES ODER AUSGABEN UND TRAGEN JEDE UND ALLE RISIKEN, DIE MIT IHRER NUTZUNG ODER VERBREITUNG DER GEMMA SERVICES ODER AUSGABEN UND IHRER AUSÜBUNG VON RECHTEN UND ERLAUBNISSEN UNTER DIESEM VERTRAG VERBUNDEN SIND.
+4.3 DISCLAIMER OF WARRANTY
+UNLESS REQUIRED BY APPLICABLE LAW, THE GEMMA SERVICES, AND OUTPUTS, ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING, REPRODUCING, MODIFYING, PERFORMING, DISPLAYING OR OR DISTRIBUTING ANY OF THE GEMMA SERVICES OR OUTPUTS AND ASSUME ANY AND ALL RISKS ASSOCIATED WITH YOUR USE OR DISTRIBUTION OF ANY OF THE GEMMA SERVICES OR OUTPUTS AND YOUR EXERCISE OF RIGHTS AND PERMISSIONS UNDER THIS AGREEMENT.
 
-4.4 BESCHRÄNKUNG DER HAFTUNG
-SO FERN GESETZLICH ZULÄSSIG, SOLLTE GOOGLE ODER SEINE TOCHTERGESELLSCHAFTEN IN KEINEM FALL UND AUF KEINE RECHTSTHEORIE, OB IN TORSCHADEN (EINSCHLIESSLICH FALLEN), PRODUKTHAFTUNG, VERTRAG ODER ANDERWEISE, AUSSERHALB DER GESETZLICHEN VERPFLICHTUNGEN, HAFTBAR SEIN FÜR SCHÄDEN, EINSCHLIESSLICH JEGLICHER DIREKTER, INDIREKTER, SPEZIELLER, ZUFÄLLIGER, BEISPIELHAFTER, FOLGESCHÄDEN ODER STRAFSCHÄDEN, ODER VERLUSTE VON GEWINNEN JEGLICHER ART, DIE AUS DIESEM VERTRAG ENTSTEHEN ODER MIT, IRGENDEINEM DER GEMMA SERVICES ODER AUSGABEN VERBUNDEN SIND, SELBST WENN GOOGLE ODER SEINE TOCHTERGESELLSCHAFTEN VON DER MÖGLICHKEIT SOLCHER SCHÄDEN INFORMIERT WURDEN.
+4.4 LIMITATION OF LIABILITY
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY, CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW, SHALL GOOGLE OR ITS AFFILIATES BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOST PROFITS OF ANY KIND ARISING FROM THIS AGREEMENT OR RELATED TO, ANY OF THE GEMMA SERVICES OR OUTPUTS EVEN IF GOOGLE OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
-4.5 Vertragsdauer, Kündigung und Fortgeltung
-Die Dauer dieses Vertrags beginnt mit Ihrer Annahme dieses Vertrags (einschließlich der Annahme durch Ihre Nutzung, Änderung, Verbreitung, Vervielfältigung, Ausführung oder Darstellung eines beliebigen Teils oder Elements der Gemma Services) und bleibt bis zur Kündigung gemäß den Bedingungen dieses Vertrags in vollem Umfang gültig. Google kann diesen Vertrag kündigen, wenn Sie eine Bedingung dieses Vertrags verletzen. Bei Kündigung dieses Vertrags müssen Sie alle Kopien von Gemma und Modellabkömmlingen, die in Ihrem Besitz oder Ihrer Kontrolle sind, löschen und die Nutzung und Verbreitung davon einstellen. Abschnitte 1, 2.1, 3.3, 4.2 bis 4.9 bleiben nach Beendigung dieses Vertrags wirksam.
+4.5 Term, Termination, and Survival
+The term of this Agreement will commence upon your acceptance of this Agreement (including acceptance by your use, modification, or Distribution, reproduction, performance or display of any portion or element of the Gemma Services) and will continue in full force and effect until terminated in accordance with the terms of this Agreement. Google may terminate this Agreement if you are in breach of any term of this Agreement. Upon termination of this Agreement, you must delete and cease use and Distribution of all copies of Gemma and Model Derivatives in your possession or control. Sections 1, 2.1, 3.3, 4.2 to 4.9 shall survive the termination of this Agreement.
 
-4.6 Geltendes Recht und Gerichtsstand
-Dieser Vertrag unterliegt den Gesetzen des Bundesstaates Kalifornien ohne Rücksicht auf Konfliktregeln. Das Übereinkommen der Vereinten Nationen über Verträge zum internationalen Warenkauf gilt nicht für diesen Vertrag. Die staatlichen und Bundesgerichte von Santa Clara County, Kalifornien, haben ausschließlichen Gerichtsstand für Streitigkeiten, die aus diesem Vertrag entstehen.
+4.6 Governing Law and Jurisdiction
+This Agreement will be governed by the laws of the State of California without regard to choice of law principles. The UN Convention on Contracts for the International Sale of Goods does not apply to this Agreement. The state and federal courts of Santa Clara County, California shall have exclusive jurisdiction of any dispute arising out of this Agreement.
 
-4.7 Teilweise Unwirksamkeit
-Wenn eine Bestimmung dieses Vertrags als ungültig, illegal oder nicht durchsetzbar erklärt wird, bleiben die übrigen Bestimmungen unberührt und bleiben gültig, als ob diese Bestimmung nicht in diesem Vertrag enthalten gewesen wäre.
+4.7 Severability
+If any provision of this Agreement is held to be invalid, illegal or unenforceable, the remaining provisions shall be unaffected thereby and remain valid as if such provision had not been set forth herein.
 
-4.8 Ganzes Vertrag
-Dieser Vertrag enthält alle Bedingungen, die zwischen den Parteien vereinbart wurden, und ersetzt alle anderen Vereinbarungen zwischen den Parteien, die am Tag der Annahme in Bezug auf ihren Gegenstand bestanden.
+4.8 Entire Agreement
+This Agreement states all the terms agreed between the parties and supersedes all other agreements between the parties as of the date of acceptance relating to its subject matter.
 
-4.9 Keine Verzichtserklärung
-Google wird nicht als Verzicht auf irgendwelche Rechte angesehen, wenn es nicht (oder die Ausübung verzögert) irgendein Recht unter diesem Vertrag ausübt.
+4.9 No Waiver
+Google will not be treated as having waived any rights by not exercising (or delaying the exercise of) any rights under this Agreement.
 ""
 ```

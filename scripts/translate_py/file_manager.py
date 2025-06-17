@@ -173,6 +173,7 @@ class FileScanner:
         self.config = config
         self.paths = get_paths(config)
         self.docs_path = self.paths['docs']
+        self._excluded_dirs_cache = None
     
     def scan_files(self) -> List[Path]:
         """
@@ -185,7 +186,7 @@ class FileScanner:
             raise FileNotFoundError(f"Dossier docs non trouvé: {self.docs_path}")
         
         # Fichiers à ignorer
-        ignore_patterns = {'.DS_Store', 'Thumbs.db', '.gitkeep'}
+        ignore_patterns = {'.DS_Store', 'Thumbs.db', '.gitkeep', '.notranslation'}
         
         files = []
         for file_path in self.docs_path.rglob('*'):
@@ -195,6 +196,48 @@ class FileScanner:
                 files.append(file_path)
         
         return sorted(files)
+    
+    def _find_excluded_directories(self) -> Set[Path]:
+        """
+        Trouve tous les répertoires contenant .notranslation
+        
+        Returns:
+            Set des répertoires à exclure
+        """
+        excluded_dirs = set()
+        
+        # Recherche de tous les fichiers .notranslation
+        for notranslation_file in self.docs_path.rglob('.notranslation'):
+            if notranslation_file.is_file():
+                excluded_dir = notranslation_file.parent
+                excluded_dirs.add(excluded_dir)
+                
+                # Log du répertoire exclu
+                relative_path = str(excluded_dir.relative_to(self.docs_path))
+                print(f"🚫 Répertoire exclu de la traduction: {relative_path or '.'}")
+        
+        return excluded_dirs
+    
+    def _is_in_excluded_directory(self, file_path: Path, excluded_dirs: Set[Path]) -> bool:
+        """
+        Vérifie si un fichier est dans un répertoire exclu
+        
+        Args:
+            file_path: Chemin du fichier à vérifier
+            excluded_dirs: Set des répertoires exclus
+            
+        Returns:
+            True si le fichier est dans un répertoire exclu
+        """
+        # Vérification de tous les parents du fichier
+        for parent in file_path.parents:
+            if parent in excluded_dirs:
+                return True
+            # Arrêt quand on atteint le dossier docs
+            if parent == self.docs_path:
+                break
+        
+        return False
     
     def get_relative_path(self, file_path: Path) -> str:
         """
@@ -247,13 +290,22 @@ class TaskBuilder:
             Liste des tâches de traduction
         """
         files = self.file_scanner.scan_files()
+        
+        # Trouve les répertoires avec .notranslation
+        notranslation_dirs = self._find_notranslation_directories()
+        
         tasks = []
         
         for file_path in files:
             relative_path = self.file_scanner.get_relative_path(file_path)
             file_type = self.file_detector.detect_file_type(file_path)
             
-            # Calcul du hash pour les fichiers traduisibles
+            # Vérifier si le fichier est dans un répertoire .notranslation
+            force_copy = self._is_in_notranslation_directory(file_path, notranslation_dirs)
+            if force_copy:
+                print(f"📋 Fichier forcé en copie (répertoire .notranslation): {relative_path}")
+            
+            # Calcul du hash pour les fichiers traduisibles (même si force_copy)
             current_hash = None
             if file_type == FileType.MARKDOWN:
                 current_hash = self.file_hasher.compute_file_hash(file_path)
@@ -286,12 +338,55 @@ class TaskBuilder:
                     target_path=target_path,
                     current_hash=current_hash,
                     stored_hash=stored_hash,
-                    needs_translation=needs_translation
+                    needs_translation=needs_translation,
+                    force_copy=force_copy
                 )
                 
                 tasks.append(task)
         
         return tasks
+    
+    def _find_notranslation_directories(self) -> Set[Path]:
+        """
+        Trouve tous les répertoires contenant .notranslation
+        
+        Returns:
+            Set des répertoires contenant .notranslation
+        """
+        notranslation_dirs = set()
+        
+        # Recherche de tous les fichiers .notranslation
+        for notranslation_file in self.paths['docs'].rglob('.notranslation'):
+            if notranslation_file.is_file():
+                notranslation_dir = notranslation_file.parent
+                notranslation_dirs.add(notranslation_dir)
+                
+                # Log du répertoire en mode copie
+                relative_path = str(notranslation_dir.relative_to(self.paths['docs']))
+                print(f"📋 Répertoire en mode copie (.notranslation): {relative_path or '.'}")
+        
+        return notranslation_dirs
+    
+    def _is_in_notranslation_directory(self, file_path: Path, notranslation_dirs: Set[Path]) -> bool:
+        """
+        Vérifie si un fichier est dans un répertoire contenant .notranslation
+        
+        Args:
+            file_path: Chemin du fichier à vérifier
+            notranslation_dirs: Set des répertoires avec .notranslation
+            
+        Returns:
+            True si le fichier est dans un répertoire .notranslation
+        """
+        # Vérification de tous les parents du fichier
+        for parent in file_path.parents:
+            if parent in notranslation_dirs:
+                return True
+            # Arrêt quand on atteint le dossier docs
+            if parent == self.paths['docs']:
+                break
+        
+        return False
     
     def _get_target_path(self, relative_path: str, lang_code: str) -> Path:
         """

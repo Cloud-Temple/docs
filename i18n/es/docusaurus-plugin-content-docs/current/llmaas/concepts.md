@@ -7,24 +7,24 @@ sidebar_position: 3
 
 ## 🏗️ Arquitectura Técnica
 
-### Infraestructura Cloud Temple
+### Infraestructura Cloud Templo
 
 import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
-<img src={ArchitectureLLMaaS} alt="Arquitectura Técnica LLMaaS Cloud Temple" />
+<img src={ArchitectureLLMaaS} alt="Arquitectura Técnica LLMaaS Cloud Templo" />
 
 ### Componentes Principales
 
 #### 1. **API Gateway LLMaaS**
-- **Compatible OpenAI** : Integración transparente con el ecosistema existente
-- **Limitación de tasas** : Gestión de cuotas por nivel de facturación
+- **Compatible con OpenAI** : Integración transparente con el ecosistema existente
+- **Límite de tasas** : Gestión de los límites por nivel de facturación
 - **Balanceo de carga** : Distribución inteligente en 12 máquinas GPU
 - **Monitoreo** : Métricas en tiempo real y alertas
 
 #### 2. **Servicio de Autenticación**
 - **Tokens API seguros** 
 - **Control de acceso** : Permisos granulares por modelo
-- **Auditoría** : Rastreabilidad completa de los accesos
+- **Auditorías** : Rastreabilidad completa de los accesos
 
 ## 🤖 Modelos y Tokens
 
@@ -41,7 +41,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 #### **Cálculo de Costos**
 ```
-Costo total = (Tokens de entrada × 0.9€/M) + (Tokens de salida × 4€/M) +  (Tokens de salida Razonamiento × 21€/M)
+Coût total = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M) +  (Tokens sortie Raisonnement × 21€/M)
 ```
 
 #### **Optimización**
@@ -52,12 +52,14 @@ Costo total = (Tokens de entrada × 0.9€/M) + (Tokens de salida × 4€/M) +  
 ### Tokenización
 
 ```python
+```
+
 # Ejemplo de estimación de tokens
 def estimate_tokens(text: str) -> int:
-    """Estimación aproximada : 1 token ≈ 4 caracteres"""
+    """Estimación aproximada: 1 token ≈ 4 caracteres"""
     return len(text) // 4
 
-prompt = "Expliquez la photosynthèse"
+prompt = "Explique la fotosíntesis"
 response_max = 200  # tokens máximos deseados
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
@@ -71,20 +73,20 @@ print(f"Costo estimado: {total_cost:.6f}€")
 
 El servicio LLMaaS se ejecuta en una infraestructura IaaS Cloud Temple que cuenta con la **calificación SecNumCloud 3.2** de la ANSSI, garantizando :
 
-#### **Protección de los Datos**
+#### **Protección de datos**
 - **Cifrado extremo a extremo** : TLS 1.3 para todos los intercambios
 - **Almacenamiento seguro** : Datos cifrados en reposo 
 - **Aislamiento** del entorno
 
-#### **Sovietud Numérica**
+#### **Soberanía Numérica**
 - **Almacenamiento en Francia** : Datacenters Cloud Temple certificados
-- **Derecho francés** : Conformidad RGPD 
+- **Derecho francés** : Cumplimiento RGPD 
 - **Sin exposición** : Ningún transferencia a nubes extranjeras y ningún almacenamiento de datos
 
-#### **Auditoría y Rastreabilidad**
-- **Registros completos** : Todas las interacciones trazadas
+#### **Auditoría y Trazabilidad**
+- **Logs completos** : Todas las interacciones registradas
 - **Retención** : Conservación según políticas legales
-- **Cumplimiento** 
+- **Cumplimiento**
 
 ### Controles de Seguridad
 
@@ -94,25 +96,25 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ## 📈 Rendimiento y Escalabilidad
 
-### Métricas de Rendimiento
+### Métricas de rendimiento
 
 #### **Latencia**
 - **Tiempo de respuesta promedio** : < 2 segundos para modelos 8B
-- **Tiempo del primer token** : < 1500ms
-- **Rendimiento de transmisión** : 15-100 tokens/segundo según modelo
+- **Tiempo del primer token** : < 1500 ms
+- **Débito de transmisión** : 15-100 tokens por segundo según el modelo
 
-#### **Rendimiento**
-- **Solicitudes simultáneas** : Hasta 1000 solicitudes/minuto por inquilino
-- **Escalado automático** : Adaptación de carga en tiempo real según los modelos solicitados
-- **Disponibilidad** : Objetivo de SLA 99.9% de disponibilidad mensual 
+#### **Ancho de banda**
+- **Peticiones simultáneas** : Hasta 1000 peticiones por minuto por inquilino
+- **Escalado automático** : Adaptación de la carga en tiempo real según los modelos solicitados
+- **Disponibilidad** : Objetivo de SLA del 99,9% de disponibilidad mensual
 
 ### Monitoreo en Tiempo Real
 
-Acceso a través de **Consola Cloud Temple** :
+Acceso a través de **Console Cloud Temple** :
 - Métricas de uso por modelo
 - Gráficos de latencia y rendimiento
 - Alertas sobre umbrales de rendimiento
-- Historial de solicitudes
+- Historial de consultas
 
 ## 🌐 Integración y Ecosistema
 
@@ -121,6 +123,8 @@ Acceso a través de **Consola Cloud Temple** :
 El servicio LLMaaS es **compatible** con la API OpenAI :
 
 ```python
+```
+
 # Migración transparente
 from openai import OpenAI
 
@@ -142,16 +146,16 @@ response = client_ct.chat.completions.create(
 
 ### Ecosistema Soportado
 
-#### **Frameworks IA**
+#### **Frameworks de IA**
 - ✅ **LangChain** : Integración nativa
 - ✅ **Haystack** : Pipeline de documentos
-- ✅ **Semantic Kernel** : Orquestación Microsoft
+- ✅ **Semantic Kernel** : Orquestación de Microsoft
 - ✅ **AutoGen** : Agentes conversacionales
 
 #### **Herramientas de Desarrollo**
-- ✅ **Jupyter** : Cuadernos interactivos
+- ✅ **Jupyter** : Notebooks interactivos
 - ✅ **Streamlit** : Aplicaciones web rápidas
-- ✅ **Gradio** : Interfaces de usuario IA
+- ✅ **Gradio** : Interfaces de usuario de IA
 - ✅ **FastAPI** : APIs backend
 
 #### **Plataformas No-Code**
@@ -161,40 +165,40 @@ response = client_ct.chat.completions.create(
 
 ## 🔄 Ciclo de Vida de los Modelos
 
-### Actualización de los Modelos
+### Actualización de Modelos
 
 import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
 <img src={ModelLifecycle} alt="Ciclo de Vida de los Modelos LLMaaS" />
 
-### Política de Versionado
+### Política de Versioning
 
-- **Modelos estables** : Versiones fijas disponibles 6 meses
+- **Modelos estables** : Versiones fijas disponibles durante 6 meses
 - **Modelos experimentales** : Versiones beta para early adopters
-- **Deprecación** : Aviso de 3 meses antes del retiro
+- **Depreciación** : Aviso de 3 meses antes del retiro
 - **Migración** : Servicios profesionales disponibles para garantizar sus transiciones
 
-## 💡 Buenas Prácticas
+## 💡 Buenas prácticas
 
 ### Optimización de Costos
 
-1. **Elección del modelo**
+1. **Selección del modelo**
    ```python
-   # Tarea simple → modelo ligero
+   # Tâche simple → modèle léger
    if task_complexity == "simple":
-       model = "llama3.2:3b"  # Más barato
+       model = "llama3.2:3b"  # Moins cher
    else:
-       model = "llama3.1:70b"  # Más potente
+       model = "llama3.1:70b"  # Plus capable
    ```
 
 2. **Gestión del contexto**
    ```python
-   # Reutilizar las conversaciones
+   # Réutiliser les conversations
    messages = [
-       {"role": "system", "content": "Eres un asistente de IA."},
-       {"role": "user", "content": "Pregunta 1"},
-       {"role": "assistant", "content": "Respuesta 1"},
-       {"role": "user", "content": "Pregunta 2"}  # Reutiliza el contexto
+       {"role": "system", "content": "Vous êtes un assistant IA."},
+       {"role": "user", "content": "Question 1"},
+       {"role": "assistant", "content": "Réponse 1"},
+       {"role": "user", "content": "Question 2"}  # Réutilise le contexte
    ]
    ```
 
@@ -203,7 +207,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    response = client.chat.completions.create(
        model="granite3.3:8b",
        messages=messages,
-       max_tokens=100,  # Limita la longitud
+       max_tokens=100,  # Limite la longueur
        temperature=0.7
    )
    ```
@@ -237,7 +241,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 1. **Validación de entradas**
    ```python
    def sanitize_input(user_input: str) -> str:
-       # Limpiar inyecciones potenciales
+       # Limpiar las inyecciones potenciales
        cleaned = user_input.replace("```", "")
        return cleaned[:1000]  # Limitar el tamaño
    ```
@@ -248,5 +252,5 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
        response = client.chat.completions.create(...)
    except Exception as e:
        logger.error(f"LLMaaS error: {e}")
-       return "Lo siento, error temporal."
+       return "Désolé, erreur temporaire."
    ```

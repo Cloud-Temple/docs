@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Visión general
 
-El servicio **LLMaaS** (Large Language Models as a Service) de Cloud Temple proporciona acceso seguro y soberano a los modelos de inteligencia artificial más avanzados, calculados en una infraestructura IaaS Cloud Temple certificada SecNumCloud 3.2 por la ANSSI.
+El servicio **LLMaaS** (Modelos de Lenguaje a Gran Escala como Servicio) de Cloud Temple proporciona acceso seguro y soberano a los modelos de inteligencia artificial más avanzados, calculados en una infraestructura IaaS Cloud Temple certificada por la ANSSI según SecNumCloud 3.2.
 
 <div class="card-grid">
   <div class="card">

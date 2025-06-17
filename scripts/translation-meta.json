@@ -431,15 +431,15 @@
     },
     "contractual/paas/raci.md": {
       "en": "3a20ce1e0d72cb8968f125d108d09f719fab4ad87540de6782ae973cf76fbfb1",
-      "de": "2138a3b84c84a9e7189983534011ff9767b3cf6ffb1d342419cec963b8cb1e90",
-      "es": "2138a3b84c84a9e7189983534011ff9767b3cf6ffb1d342419cec963b8cb1e90",
+      "de": "3a20ce1e0d72cb8968f125d108d09f719fab4ad87540de6782ae973cf76fbfb1",
+      "es": "3a20ce1e0d72cb8968f125d108d09f719fab4ad87540de6782ae973cf76fbfb1",
       "it": "3a20ce1e0d72cb8968f125d108d09f719fab4ad87540de6782ae973cf76fbfb1"
     },
     "contractual/paas/sla_paas.docx": {},
     "contractual/paas/sla_paas.md": {
       "en": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2",
-      "de": "e1863729bcd79eaa12b9acd1917197cf0bab1387cc8bc551ac12cf01873a0c62",
-      "es": "e1863729bcd79eaa12b9acd1917197cf0bab1387cc8bc551ac12cf01873a0c62",
+      "de": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2",
+      "es": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2",
       "it": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2"
     },
     "home.md": {
@@ -804,9 +804,9 @@
     },
     "paas_openshift/concepts.md": {
       "en": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0",
-      "de": "923cd3c173084dc37d90cf7c2b0de6749076766ae2a1a74f0be5c97762e82eaf",
-      "es": "923cd3c173084dc37d90cf7c2b0de6749076766ae2a1a74f0be5c97762e82eaf",
-      "it": "923cd3c173084dc37d90cf7c2b0de6749076766ae2a1a74f0be5c97762e82eaf"
+      "de": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0",
+      "es": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0",
+      "it": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0"
     },
     "paas_openshift/images/oshift_menu_001.png": {},
     "paas_openshift/images/oshift_menu_002.png": {},
@@ -909,8 +909,8 @@
     },
     "llmaas/concepts.md": {
       "en": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74",
-      "de": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
-      "es": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+      "de": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74",
+      "es": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74",
       "it": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74"
     },
     "llmaas/images/llmaas_architecture_001.png": {},
@@ -1170,14 +1170,14 @@
     },
     "llmaas/llmaas.md": {
       "en": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df",
-      "de": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
-      "es": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+      "de": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df",
+      "es": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df",
       "it": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df"
     },
     "llmaas/models.md": {
       "en": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e",
-      "de": "a6d62f61aa4b886fc4ec213fc49babe72c8e6291795534fd88683c351389d76a",
-      "es": "a6d62f61aa4b886fc4ec213fc49babe72c8e6291795534fd88683c351389d76a",
+      "de": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e",
+      "es": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e",
       "it": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e"
     },
     "llmaas/quickstart.md": {
@@ -1196,7 +1196,9 @@
     "console/images/console_support_home.png": {},
     "contractual/paas/raci_ocp_std.md": {
       "en": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e",
-      "it": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e"
+      "it": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e",
+      "de": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e",
+      "es": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e"
     },
     "housing/images/image-datacenter.jpg": {},
     "housing/images/image-datacenter01.jpg": {},
@@ -1206,6 +1208,6 @@
     "iaas_opensource/images/vm_encryption_for_iaas.png": {},
     "iaas_vmware/images/console_vmware_rename_cpool.png": {}
   },
-  "last_update": "2025-06-17T19:30:45.079883",
+  "last_update": "2025-06-17T20:46:36.837040",
   "version": "2.0"
 }
