@@ -36,7 +36,7 @@ Siga estos pasos para configurar una nueva aplicación OIDC en su consola de adm
         ```
         https://keycloak-shiva.cloud-temple.com/auth/realms/<company specific>/broker/<company specific>/endpoint
         ```
-        *Reemplace <company specific> por los identificadores específicos de su empresa proporcionados por Cloud Temple.*
+        *Reemplace company specific por los identificadores específicos de su empresa proporcionados por Cloud Temple.*
 
 4.  **Elegir el tipo de autenticación del cliente:**
     *   Seleccione `Cliente Secret Post` como "Tipo de autenticación del cliente".
@@ -46,7 +46,7 @@ Siga estos pasos para configurar una nueva aplicación OIDC en su consola de adm
         ```
         https://<unique-identifier>.shiva.cloud-temple.com
         ```
-        *Reemplace <unique-identifier> por el identificador único de su instancia Cloud Temple.*
+        *Reemplace unique-identifier por el identificador único de su instancia Cloud Temple.*
 
 6.  **Configurar el mapeo de atributos:**
     *   En la sección "Mapeo de atributos" (o equivalente), asegúrese de que los siguientes atributos estén seleccionados para ser enviados a Cloud Temple:

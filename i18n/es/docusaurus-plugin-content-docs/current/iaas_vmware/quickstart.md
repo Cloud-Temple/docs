@@ -45,7 +45,7 @@ import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
 import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
 import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
-import shivaVm_2prod from './images/shiva_vm_backup_2prod.png'
+import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ## Cálculo
 

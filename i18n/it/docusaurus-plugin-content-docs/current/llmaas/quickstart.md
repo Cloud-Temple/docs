@@ -63,8 +63,6 @@ pip install requests
 import requests
 import json
 
-```
-
 # Configurazione
 API_KEY = "LA TUA CHIAVE API"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -193,7 +191,7 @@ python-dotenv
 
 **`.env.example`**
 ```env
-```
+
 
 # URL di base dell'API LLMaaS
 API_URL="https://api.ai.cloud-temple.com/v1"
@@ -210,7 +208,6 @@ DEFAULT_MODEL="qwen3:30b-a3b"
 **Codice sorgente (`test_tool_calling.py`)**
 
 ```python
-```
 
 # -*- coding: utf-8 -*-
 """
@@ -444,7 +441,6 @@ Pillow
 
 **`.env.example`**
 ```env
-```
 
 # URL base dell'API LLMaaS
 API_URL="https://api.ai.cloud-temple.com/v1"
@@ -461,7 +457,6 @@ DEFAULT_MODEL="granite3.2-vision:2b"
 **Codice sorgente (`test_vision.py`)**
 
 ```python
-```
 
 # -*- coding: utf-8 -*-
 """

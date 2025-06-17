@@ -62,7 +62,6 @@ pip install requests
 ```python
 import requests
 import json
-```
 
 # Konfiguration
 API_KEY = "IHR_API_SCHLÜSSEL"
@@ -206,7 +205,6 @@ DEFAULT_MODEL="qwen3:30b-a3b"
 **Code Source (`test_tool_calling.py`)**
 
 ```python
-```
 
 # -*- coding: utf-8 -*-
 """
@@ -468,7 +466,6 @@ DEFAULT_MODEL="granite3.2-vision:2b"
 **Quellcode (`test_vision.py`)**
 
 ```python
-```
 
 # -*- coding: utf-8 -*-
 """

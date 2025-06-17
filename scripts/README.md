@@ -50,18 +50,20 @@ npm run generate:docs
 ---
 
 ### 🐍 `translate_py/translate.py` (Recommandé)
-**Système de traduction moderne avec interface avancée**
+**Système de traduction moderne avec détection intelligente des changements**
 
-Système de traduction Python avancé utilisant l'API Cloud Temple LLMaaS avec une interface utilisateur moderne, gestion optimisée de la concurrence et fonctionnalités étendues.
+Système de traduction Python avancé utilisant l'API Cloud Temple LLMaaS avec une interface utilisateur moderne, détection automatique des changements par hash SHA-256, et gestion optimisée de la concurrence.
 
 #### ✨ Fonctionnalités Avancées
 - 🎨 **Interface Rich** : Affichage moderne avec barres de progression en temps réel
 - ⚡ **Concurrence optimisée** : Pool de workers pour utilisation maximale de l'API
 - 📊 **Statistiques avancées** : Tokens IN/OUT, vitesse tokens/s en temps réel
+- 🔍 **Détection intelligente** : Hash SHA-256 pour détecter les fichiers modifiés
 - 🚫 **Support .notranslation** : Exclusion automatique de répertoires
 - 🔄 **Détection automatique** : Racine du projet détectée automatiquement
-- 📋 **Métadonnées intelligentes** : Traduction incrémentale basée sur les hash
-- 🎯 **Mode debug** : Logs détaillés avec informations API
+- 📋 **Métadonnées intelligentes** : Traduction incrémentale optimisée
+- 🎯 **Mode debug** : Logs détaillés avec comparaison des hash
+- ✅ **Mode initialisation** : Génération et gestion des métadonnées
 
 #### Installation et Configuration
 ```bash
@@ -150,28 +152,83 @@ api.md → en             │
 🔄 Traduction: concepts.md → de
 ```
 
+#### Workflow de Détection des Changements
+
+**1. Mode Initialisation** (`--init`)
+```bash
+# Génère les métadonnées pour la première fois
+python translate.py --init
+
+# Initialise ET traduit les fichiers manquants
+python translate.py --init --translate-missing
+```
+
+**2. Détection Automatique**
+```bash
+# Vérifie quels fichiers ont changé
+python translate.py --dry-run --debug
+
+# Exemple de sortie :
+# [DRY RUN] Contenu modifié: llmaas/concepts.md → en
+#   Hash actuel : 66e0869319196d8d3009c79c3e994e9d4c736677962502ffb5ded09d637284be
+#   Hash stocké : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
+```
+
+**3. Traduction Intelligente**
+```bash
+# Traduit uniquement les fichiers modifiés
+python translate.py
+
+# Les hash sont automatiquement mis à jour après traduction réussie
+```
+
 #### Architecture du Système
 ```
 scripts/translate_py/
-├── translate.py          # 🚀 Script principal
-├── config.py            # ⚙️ Configuration et environnement
-├── models.py            # 📋 Modèles de données
-├── ui.py               # 🎨 Interface utilisateur Rich
-├── translator.py        # 🌐 Moteur de traduction
-├── file_manager.py      # 📁 Gestion fichiers et métadonnées
-├── requirements.txt     # 📦 Dépendances Python
-├── .env.example        # 📝 Template configuration
-└── .env               # 🔒 Configuration locale
+├── translate.py              # 🚀 Script principal
+├── config.py                # ⚙️ Configuration et environnement
+├── models.py                # 📋 Modèles de données
+├── ui.py                   # 🎨 Interface utilisateur Rich
+├── translator.py            # 🌐 Moteur de traduction
+├── file_manager.py          # 📁 Gestion fichiers et métadonnées
+├── translation-meta.json    # 🔍 Métadonnées et hash SHA-256
+├── requirements.txt         # 📦 Dépendances Python
+├── .env.example            # 📝 Template configuration
+└── .env                   # 🔒 Configuration locale
 ```
+
+#### Détection des Changements par Hash SHA-256
+
+Le système utilise des **hash SHA-256** pour une détection précise :
+
+**✅ Fichier modifié** : Hash différent → Traduction nécessaire
+```
+Hash stocké : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
+Hash actuel : 66e0869319196d8d3009c79c3e994e9d4c736677962502ffb5ded09d637284be
+→ TRADUCTION REQUISE
+```
+
+**✅ Fichier inchangé** : Hash identique → Ignore
+```
+Hash stocké : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
+Hash actuel : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
+→ AUCUNE ACTION
+```
+
+**Avantages** :
+- ✅ **Précision absolue** : Détecte le moindre changement
+- ⚡ **Performance optimale** : Évite les traductions inutiles
+- 🔒 **Intégrité** : Garantit la cohérence des traductions
+- 📊 **Traçabilité** : Logs détaillés des décisions
 
 ---
 
-### 🌐 `translate.js` (Legacy)
+### 🌐 `oldies/translate.js` (Legacy - Archivé)
 **Script de traduction multilingue avec Cloud Temple LLMaaS**
 
-> ⚠️ **Obsolète** : Utilisez `translate_py/translate.py` pour les nouvelles fonctionnalités.
+> ⚠️ **Archivé** : Script déplacé dans `oldies/`. Utilisez `translate_py/translate.py` pour toutes les nouvelles traductions.
 
-Script Node.js pour la traduction automatique de la documentation Markdown (fichiers `.md`) du français vers d'autres langues en utilisant l'API Cloud Temple LLMaaS. Il conserve les hachages du contenu source pour ne retraduire que les fichiers modifiés. Les fichiers non-Markdown (images, .docx, etc.) sont copiés.
+Script Node.js legacy pour la traduction automatique de la documentation Markdown (fichiers `.md`) du français vers d'autres langues en utilisant l'API Cloud Temple LLMaaS. **Ce script est désormais archivé et remplacé par le système Python moderne.**
 
 #### Configuration Requise
 
@@ -245,8 +302,20 @@ Les scripts sont intégrés dans `package.json` pour faciliter l'utilisation :
 scripts/
 ├── README.md                    # 📋 Ce fichier
 ├── generate_models_doc.py       # 🚀 Générateur LLMaaS
-├── translate.js                 # 🌐 Script traduction
-└── translation-meta.json        # 📋 Métadonnées traduction
+└── translate_py/                # 🐍 Système de traduction moderne
+    ├── translate.py             # 🚀 Script principal
+    ├── translation-meta.json    # 🔍 Métadonnées et hash SHA-256
+    ├── config.py               # ⚙️ Configuration
+    ├── models.py               # 📋 Modèles de données
+    ├── ui.py                   # 🎨 Interface utilisateur
+    ├── translator.py           # 🌐 Moteur de traduction
+    ├── file_manager.py         # 📁 Gestion fichiers
+    ├── requirements.txt        # 📦 Dépendances
+    ├── .env.example           # 📝 Template config
+    └── .env                   # 🔒 Configuration locale
+
+oldies/
+└── translate.js                 # 🌐 Script Node.js archivé
 ```
 
 ## 🎯 Workflow de Documentation
@@ -258,7 +327,7 @@ scripts/
 
 ### Processus de Traduction
 1. **Source** : Créer contenu en français dans `/docs/`
-2. **Traduire** : `node scripts/translate.js`
+2. **Traduire** : `python scripts/translate_py/translate.py`
 3. **Vérifier** : Contenu traduit dans `/i18n/[langue]/`
 
 ## 🐍 Dépendances Python

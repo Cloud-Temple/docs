@@ -525,7 +525,6 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 import requests
 import json
 
-```
 
 # Configurazione
 API_KEY = "VOTRE_TOKEN_API"
@@ -745,7 +744,6 @@ chat = ChatOpenAI(
     model="granite3.3:8b",
     max_tokens=200
 )
-```
 
 # Utilizzo con messaggi
 messages = [HumanMessage(content="Spiega l'IA in 3 frasi")]

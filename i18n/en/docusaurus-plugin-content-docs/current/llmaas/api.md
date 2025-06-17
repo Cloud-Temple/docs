@@ -525,8 +525,6 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 import requests
 import json
 
-```
-
 # Configuration
 API_KEY = "YOUR_API_TOKEN"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"

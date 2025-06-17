@@ -16,7 +16,6 @@ Questi tutorial avanzati coprono l'integrazione, l'ottimizzazione e le migliori 
 **Configurazione LangChain con LLMaaS**
 
 ```python
-```
 
 # Installazione delle dipendenze
 
@@ -291,7 +290,6 @@ def create_agent_with_tools():
     )
     
     return agent_executor
-```
 
 # Utilizzo dell'agente
 def test_agent():
@@ -318,8 +316,6 @@ test_agent()
 
 ```python
 from openai import OpenAI
-
-```
 
 # Configurazione per Cloud Temple LLMaaS
 def setup_cloud_temple_client():
@@ -459,7 +455,6 @@ haystack_simple()
 ### 7. Integrazione LlamaIndex
 
 ```python
-```
 
 # pip install llama-index
 
