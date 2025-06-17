@@ -1,9 +1,9 @@
 ---
-title: Guía de Inicio
+title: Guía de inicio
 sidebar_position: 3
 ---
 
-# Guía de Inicio Rápido
+# Guía de inicio rápido
 
 Esta guía le permite realizar su primera solicitud a la API LLMaaS en menos de 5 minutos.
 
@@ -15,7 +15,7 @@ Esta guía le permite realizar su primera solicitud a la API LLMaaS en menos de 
 ## Paso 1: Generar una clave API
 
 1. Inicie sesión en la Consola Cloud Temple
-2. Acceda a la configuración de su cuenta
+2. Acceda a los ajustes de su cuenta
 3. Genere una nueva clave API LLMaaS
 4. Copie y guarde la clave (solo se mostrará una vez)
 
@@ -25,7 +25,7 @@ Verifique que su clave funcione listando los modelos disponibles:
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
-  -H "Authorization: Bearer VUESTRA_CLAVE_API"
+  -H "Authorization: Bearer SU_CLAVE_API"
 ```
 
 Debería recibir una lista JSON de los modelos disponibles.
@@ -37,7 +37,7 @@ Realice su primera generación de texto con un modelo rápido:
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer VUESTRA_CLAVE_API" \
+  -H "Authorization: Bearer SU_CLAVE_API" \
   -d '{
     "model": "granite3.3:8b",
     "messages": [
@@ -64,7 +64,7 @@ import requests
 import json
 
 # Configuración
-API_KEY = "VUESTRA_CLAVE_API"
+API_KEY = "SU_CLAVE_API"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 # Encabezados
@@ -102,7 +102,7 @@ else:
 
 ## Selección del modelo
 
-Para su primer prueba, use uno de estos modelos recomendados:
+Para su primer test, use uno de estos modelos recomendados:
 
 | Modelo | Uso | Velocidad | Nota |
 |--------|--------|---------|------|
@@ -143,7 +143,7 @@ Para comenzar, use estos parámetros:
 ```json
 {"error": {"message": "Límite de velocidad excedido", "type": "rate_limit_error"}}
 ```
-**Solución**: Espere unos segundos y pruebe nuevamente.
+**Solución**: Espere unos segundos y vuelva a intentarlo.
 
 ## Monitoreo del uso
 
@@ -153,19 +153,19 @@ En la Consola Cloud Temple, puede:
 - Configurar alertas de costo
 - Analizar el rendimiento por modelo
 
-## Avanzado: Ejemplos de Tool Calling y Visión
+## Avanzado: Ejemplos de Llamada a herramientas y Visión
 
 Esta sección proporciona ejemplos de scripts Python simples y autónomos para ilustrar funciones específicas de la API LLMaaS. Cada ejemplo está diseñado para ejecutarse directamente, con instrucciones claras para la configuración y el uso.
 
 ---
 
-## 💡 Ejemplos de Código Autónomo
+## 💡 Ejemplos de código autónomo
 
 Esta sección proporciona ejemplos de scripts Python simples y autónomos para ilustrar funciones específicas de la API LLMaaS. Cada ejemplo está diseñado para ejecutarse directamente, con instrucciones claras para la configuración y el uso.
 
-### 1. Ejemplo Simple de Tool Calling
+### 1. Ejemplo simple de Llamada a herramientas
 
-El "Tool Calling" (o llamada de función) permite a un modelo de lenguaje solicitar la ejecución de una función que ha definido en su código. Es una función poderosa para conectar los LLMs con herramientas externas (API, bases de datos, etc.).
+La "Llamada a herramientas" (o llamada de función) permite a un modelo de lenguaje solicitar la ejecución de una función que ha definido en su código. Es una función poderosa para conectar los LLM con herramientas externas (API, bases de datos, etc.).
 
 El flujo es el siguiente:
 1. El usuario hace una pregunta que requiere una herramienta (ej: "¿qué tiempo hace?").
@@ -179,9 +179,9 @@ El flujo es el siguiente:
 
 Para este ejemplo, cree un directorio `simple_tool_calling` con los siguientes archivos:
 
-- `test_tool_calling.py`: El script principal.
-- `requirements.txt`: Las dependencias Python.
-- `.env.example`: Un modelo para su archivo de configuración.
+-   `test_tool_calling.py`: El script principal.
+-   `requirements.txt`: Las dependencias Python.
+-   `.env.example`: Un modelo para su archivo de configuración.
 
 **`requirements.txt`**
 ```txt
@@ -198,7 +198,7 @@ API_URL="https://api.ai.cloud-temple.com/v1"
 API_KEY="su_clave_api_aqui"
 
 # Opcional: Modelo predeterminado a utilizar para la prueba
-# Asegúrese de que este modelo sea compatible con el "tool calling"
+# Asegúrese de que este modelo sea compatible con la "llamada a herramientas"
 DEFAULT_MODEL="qwen3:30b-a3b"
 ```
 
@@ -207,7 +207,7 @@ DEFAULT_MODEL="qwen3:30b-a3b"
 ```python
 # -*- coding: utf-8 -*-
 """
-Ejemplo simple de Tool Calling con la API LLMaaS.
+Ejemplo simple de Llamada a herramientas con la API LLMaaS.
 
 Este script muestra cómo definir una herramienta simple (una calculadora),
 enviarla a un modelo compatible y interpretar la respuesta del modelo
@@ -224,7 +224,7 @@ load_dotenv()
 
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
-# Usar un modelo conocido para manejar bien el tool calling
+# Usar un modelo conocido para manejar bien la llamada a herramientas
 MODEL = os.getenv("DEFAULT_MODEL", "qwen3:30b-a3b")
 
 # --- Definición de la herramienta ---
@@ -314,25 +314,24 @@ def run_chat_with_tool_calling():
             response_data = response.json()
 
     except httpx.HTTPStatusError as e:
-        print(f"❌ Error API (Estado HTTP) en el paso 1: {e}")
+        print(f"❌ Error API (Estado HTTP) durante el paso 1: {e}")
         print(f"Respuesta de la API : {e.response.text}")
         return
     except httpx.RequestError as e:
-        print(f"❌ Error API (Solicitud) en el paso 1: {e}")
+        print(f"❌ Error API (Solicitud) durante el paso 1: {e}")
         return
 
-    # El mensaje del asistente contiene la solicitud de llamada de herramienta
+    # El mensaje del asistente contiene la solicitud de llamada a herramienta
     assistant_message = response_data["choices"][0]["message"]
     messages.append(assistant_message)
 
-    # 2. Verificación y ejecución de la llamada de herramienta
+    # 2. Verificación y ejecución de la llamada a herramienta
     # ------------------------------------------------
     print("\n✅ El LLM ha solicitado usar una herramienta.")
 
     if "tool_calls" not in assistant_message:
-```
 print("🤔 El modelo no pidió usar una herramienta. Respuesta directa:")
-        print(assistant_message.get("content", "Sin contenido."))
+        print(assistant_message.get("content", "No hay contenido."))
         return
 
     tool_call = assistant_message["tool_calls"][0]
@@ -407,7 +406,7 @@ if __name__ == "__main__":
     pip install -r tests/llmaas/requirements.txt
     ```
 2.  **Configure su clave API :**
-    Copie `tests/llmaas/.env.example` a `tests/llmaas/.env` y reemplace `"su_clave_api_aqui"` con su clave API LLMaaS.
+    Copie `tests/llmaas/.env.example` en `tests/llmaas/.env` y reemplace `"su_clave_api_aqui"` por su clave API LLMaaS.
 3.  **Ejecute el script :**
     ```bash
     python tests/llmaas/test_tool_calling.py
@@ -495,8 +494,8 @@ def generate_example_image():
     try:
         from PIL import Image, ImageDraw
         if not os.path.exists(IMAGE_PATH):
-            print(f"🖼️  La imagen '{IMAGE_PATH}' no existe, generando... ")
-            # Crear una imagen simple: un cuadrado rojo sobre fondo blanco
+            print(f"🖼️  La imagen '{IMAGE_PATH}' no existe, generación en curso...")
+            # Crea una imagen simple: un cuadrado rojo sobre fondo blanco
             img = Image.new('RGB', (200, 200), color = 'white')
             draw = ImageDraw.Draw(img)
             draw.rectangle([50, 50, 150, 150], fill='red', outline='black')
@@ -562,7 +561,7 @@ def run_vision_test():
                 f"{API_URL}/chat/completions",
                 headers={"Authorization": f"Bearer {API_KEY}"},
                 json=payload,
-                timeout=120, # Los modelos de visión pueden tardar más
+                timeout=120, # Los modelos de visión pueden ser más lentos
             )
             response.raise_for_status()
             response_data = response.json()
@@ -591,7 +590,7 @@ if __name__ == "__main__":
     pip install -r tests/llmaas/requirements.txt
     ```
 2.  **Configure su clave API :**
-    Copie `tests/llmaas/.env.example` a `tests/llmaas/.env` y reemplace `"su_clave_api_aqui"` con su clave API LLMaaS.
+    Copie `tests/llmaas/.env.example` en `tests/llmaas/.env` y reemplace `"su_clave_api_aqui"` por su clave API LLMaaS.
 3.  **Ejecute el script :**
     ```bash
     python tests/llmaas/test_vision.py
@@ -601,11 +600,11 @@ if __name__ == "__main__":
 ---
 ## Próximos pasos
 
-Una vez que su primer prueba sea exitosa :
+Una vez que su primera prueba sea exitosa :
 
 1. **Explore los modelos** : Pruebe diferentes modelos según sus necesidades
 2. **Optimice los prompts** : Mejore la calidad de las respuestas
-3. **Intégrelo en su aplicación** : Consulte la [documentación API](./api)
+3. **Integre en su aplicación** : Consulte la [documentación API](./api)
 4. **Casos de uso avanzados** : Vea los [tutoriales](./tutorials)
 
 ## Soporte
@@ -613,4 +612,4 @@ Una vez que su primer prueba sea exitosa :
 En caso de problema :
 - Consulte la [documentación API completa](./api)
 - Verifique el estado del servicio en la Consola
-- Contacte al soporte a través de la Consola Cloud Temple
+- Póngase en contacto con el soporte a través de la Consola Cloud Temple

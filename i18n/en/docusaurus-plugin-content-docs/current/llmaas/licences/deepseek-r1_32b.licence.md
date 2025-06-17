@@ -1,7 +1,7 @@
-## Model License deepseek-r1:32b
+## Model deepseek-r1:32b License
 
 ```
-""MIT License
+"MIT License
 
 Copyright (c) 2023 DeepSeek
 

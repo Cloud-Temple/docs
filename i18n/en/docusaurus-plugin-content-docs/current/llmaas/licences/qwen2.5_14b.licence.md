@@ -1,4 +1,4 @@
-## License for the qwen2.5:14b model
+## Model License qwen2.5:14b
 
 ```
                         Apache License
@@ -73,7 +73,9 @@
       publicly display, publicly perform, sublicense, and distribute the
       Work and such Derivative Works in Source or Object form.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
+   3. Grant of Patent License. Subject to the terms
+```
+and conditions of
       this License, each Contributor hereby grants to You a perpetual,
       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
       (except as stated in this section) patent license to make, have made,
@@ -141,7 +143,8 @@
    6. Trademarks. This License does not grant permission to use the trade
       names, trademarks, service marks, or product names of the Licensor,
       except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+      origin of the Work.
+THE WORK AND REPRODUCING THE CONTENT OF THE NOTICE FILE.
 
    7. Disclaimer of Warranty. Unless required by applicable law or
       agreed to in writing, Licensor provides the Work (and each
@@ -172,8 +175,7 @@
       License. However, in accepting such obligations, You may act only
       on Your own behalf and on Your sole responsibility, not on behalf
       of any other Contributor, and only if You agree to indemnify,
-```
-defend, and hold each Contributor harmless for any liability
+      defend, and hold each Contributor harmless for any liability
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
 
@@ -203,4 +205,3 @@ defend, and hold each Contributor harmless for any liability
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-```

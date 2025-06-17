@@ -5,30 +5,26 @@ sidebar_position: 3
 
 # Conceptos y Arquitectura LLMaaS
 
-## Visión General
-
-El servicio **LLMaaS** (Large Language Models as a Service) de Cloud Temple proporciona acceso seguro y soberano a los modelos de inteligencia artificial más avanzados, con la **calificación SecNumCloud** de la ANSSI.
-
 ## 🏗️ Arquitectura Técnica
 
 ### Infraestructura Cloud Temple
 
 import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
-<img src={ArchitectureLLMaaS} alt="Arquitectura Técnica LLMaaS de Cloud Temple" />
+<img src={ArchitectureLLMaaS} alt="Arquitectura Técnica LLMaaS Cloud Temple" />
 
 ### Componentes Principales
 
 #### 1. **API Gateway LLMaaS**
-- **Compatible con OpenAI** : Integración transparente con el ecosistema existente
-- **Rate Limiting** : Gestión de cuotas por nivel de facturación
-- **Load Balancing** : Distribución inteligente en 12 máquinas GPU
-- **Monitoring** : Métricas en tiempo real y alertas
+- **Compatible OpenAI** : Integración transparente con el ecosistema existente
+- **Limitación de tasas** : Gestión de cuotas por nivel de facturación
+- **Balanceo de carga** : Distribución inteligente en 12 máquinas GPU
+- **Monitoreo** : Métricas en tiempo real y alertas
 
 #### 2. **Servicio de Autenticación**
-- **Tokens API seguros** : Rotación automática
+- **Tokens API seguros** 
 - **Control de acceso** : Permisos granulares por modelo
-- **Auditoría** : Rastreo completo de los accesos
+- **Auditoría** : Rastreabilidad completa de los accesos
 
 ## 🤖 Modelos y Tokens
 
@@ -41,7 +37,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 #### **Tipos de Tokens**
 - **Tokens de entrada** : Su prompt y contexto
 - **Tokens de salida** : Respuesta generada por el modelo
-- **Tokens del sistema** : Metadata e instrucciones
+- **Tokens del sistema** : Metadatos e instrucciones
 
 #### **Cálculo de Costos**
 ```
@@ -58,10 +54,10 @@ Costo total = (Tokens de entrada × 0.9€/M) + (Tokens de salida × 4€/M) +  
 ```python
 # Ejemplo de estimación de tokens
 def estimate_tokens(text: str) -> int:
-    """Estimación aproximada: 1 token ≈ 4 caracteres"""
+    """Estimación aproximada : 1 token ≈ 4 caracteres"""
     return len(text) // 4
 
-prompt = "Explique la fotosíntesis"
+prompt = "Expliquez la photosynthèse"
 response_max = 200  # tokens máximos deseados
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
@@ -73,22 +69,22 @@ print(f"Costo estimado: {total_cost:.6f}€")
 
 ### Calificación SecNumCloud
 
-El servicio LLMaaS se ejecuta en una infraestructura técnica que cuenta con la **calificación SecNumCloud 3.2** de la ANSSI, garantizando:
+El servicio LLMaaS se ejecuta en una infraestructura IaaS Cloud Temple que cuenta con la **calificación SecNumCloud 3.2** de la ANSSI, garantizando :
 
 #### **Protección de los Datos**
 - **Cifrado extremo a extremo** : TLS 1.3 para todos los intercambios
-- **Almacenamiento seguro** : Datos cifrados en reposo (AES-256)
-- **Aislamiento** : Entornos dedicados por inquilino
+- **Almacenamiento seguro** : Datos cifrados en reposo 
+- **Aislamiento** del entorno
 
-#### **Soberanía Digital**
+#### **Sovietud Numérica**
 - **Almacenamiento en Francia** : Datacenters Cloud Temple certificados
-- **Derecho francés** : Conformidad nativa con el RGPD
-- **Sin exposición** : Sin transferencia a nubes extranjeras
+- **Derecho francés** : Conformidad RGPD 
+- **Sin exposición** : Ningún transferencia a nubes extranjeras y ningún almacenamiento de datos
 
-#### **Auditoría y Rastreo**
+#### **Auditoría y Rastreabilidad**
 - **Registros completos** : Todas las interacciones trazadas
 - **Retención** : Conservación según políticas legales
-- **Cumplimiento** : Informes de auditoría disponibles
+- **Cumplimiento** 
 
 ### Controles de Seguridad
 
@@ -100,21 +96,19 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ### Métricas de Rendimiento
 
-    En progreso
-
-
 #### **Latencia**
-
-    En progreso
+- **Tiempo de respuesta promedio** : < 2 segundos para modelos 8B
+- **Tiempo del primer token** : < 1500ms
+- **Rendimiento de transmisión** : 15-100 tokens/segundo según modelo
 
 #### **Rendimiento**
+- **Solicitudes simultáneas** : Hasta 1000 solicitudes/minuto por inquilino
+- **Escalado automático** : Adaptación de carga en tiempo real según los modelos solicitados
+- **Disponibilidad** : Objetivo de SLA 99.9% de disponibilidad mensual 
 
-    En progreso
+### Monitoreo en Tiempo Real
 
-
-### Monitorización en Tiempo Real
-
-Acceso a través de **Console Cloud Temple** :
+Acceso a través de **Consola Cloud Temple** :
 - Métricas de uso por modelo
 - Gráficos de latencia y rendimiento
 - Alertas sobre umbrales de rendimiento
@@ -122,7 +116,7 @@ Acceso a través de **Console Cloud Temple** :
 
 ## 🌐 Integración y Ecosistema
 
-### Compatibilidad con OpenAI
+### Compatibilidad OpenAI
 
 El servicio LLMaaS es **compatible** con la API OpenAI :
 
@@ -135,14 +129,14 @@ client_openai = OpenAI(api_key="sk-...")
 
 # Después (Cloud Temple LLMaaS)
 client_ct = OpenAI(
-    api_key="su-token-cloud-temple",
+    api_key="votre-token-cloud-temple",
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
 # Código idéntico !
 response = client_ct.chat.completions.create(
     model="granite3.3:8b",  # Modelo Cloud Temple
-    messages=[{"role": "user", "content": "Hola"}]
+    messages=[{"role": "user", "content": "Bonjour"}]
 )
 ```
 
@@ -151,7 +145,7 @@ response = client_ct.chat.completions.create(
 #### **Frameworks IA**
 - ✅ **LangChain** : Integración nativa
 - ✅ **Haystack** : Pipeline de documentos
-- ✅ **Semantic Kernel** : Orquestación de Microsoft
+- ✅ **Semantic Kernel** : Orquestación Microsoft
 - ✅ **AutoGen** : Agentes conversacionales
 
 #### **Herramientas de Desarrollo**
@@ -204,7 +198,7 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    ]
    ```
 
-3. **Límite de tokens**
+3. **Limitación de tokens**
    ```python
    response = client.chat.completions.create(
        model="granite3.3:8b",
@@ -253,6 +247,6 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
    try:
        response = client.chat.completions.create(...)
    except Exception as e:
-       logger.error(f"Error de LLMaaS: {e}")
+       logger.error(f"LLMaaS error: {e}")
        return "Lo siento, error temporal."
    ```

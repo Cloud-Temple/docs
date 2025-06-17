@@ -34,7 +34,9 @@ You may distribute copies or make the Materials, or derivative works thereof, av
     b. If you use the Materials or any outputs or results therefrom to create, train, fine-tune, or improve an AI model that is distributed or made available, you shall prominently display “Built with Qwen” or “Improved using Qwen” in the related product documentation.
 
 5. Intellectual Property
-    a. We retain ownership of all intellectual property rights in and to the Materials and derivatives made by or for us. Conditioned upon compliance with the terms and conditions of this Agreement, with respect to any derivative works and modifications of the Materials that are made by you, you are and will be the owner of such derivative works and modifications.
+    a.
+```
+We retain ownership of all intellectual property rights in and to the Materials and derivatives made by or for us. Subject to compliance with the terms and conditions of this Agreement, with respect to any derivative works and modifications of the Materials that are made by you, you are and will be the owner of such derivative works and modifications.
     b. No trademark license is granted to use the trade names, trademarks, service marks, or product names of us, except as required to fulfill notice requirements under this Agreement or as required for reasonable and customary use in describing and redistributing the Materials.
     c. If you commence a lawsuit or other proceedings (including a cross-claim or counterclaim in a lawsuit) against us or any entity alleging that the Materials or any output therefrom, or any part of the foregoing, infringe any intellectual property or other right owned or licensable by you, then all licenses granted to you under this Agreement shall terminate as of the date such lawsuit or other proceeding is commenced or brought.
 
@@ -54,5 +56,4 @@ You may distribute copies or make the Materials, or derivative works thereof, av
 
 9. Other Terms and Conditions.
     a. Any arrangements, understandings, or agreements regarding the Material not stated herein are separate from and independent of the terms and conditions of this Agreement. You shall request a separate license from us, if you use the Materials in ways not expressly agreed to in this Agreement. 
-    b. We shall not be bound by any additional or different terms or conditions communicated by you unless expressly agreed."
-```
+    b. We shall not be bound by any additional or different terms or conditions communicated by you unless expressly agreed.

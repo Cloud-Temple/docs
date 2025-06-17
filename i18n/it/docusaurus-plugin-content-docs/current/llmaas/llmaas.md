@@ -3,26 +3,26 @@ title: Panoramica
 sidebar_position: 1
 ---
 
-# LLM as a Service (LLMaaS)
+# LLM come servizio (LLMaaS)
 
 ## Panoramica
 
-Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple fornisce accesso sicuro e sovrano ai modelli di intelligenza artificiale più avanzati, su un'infrastruttura Cloud Temple qualificata SecNumCloud da ANSSI.
+Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple fornisce un accesso sicuro e sovrano ai modelli di intelligenza artificiale più avanzati, calcolati su un'infrastruttura IaaS Cloud Temple qualificata SecNumCloud 3.2 dall'ANSSI.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
     <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="llmaas/concepts" class="card-link">Esplorare i concetti &rarr;</a>
+    <a href="llmaas/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Avvio rapido</h3>
-    <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="llmaas/quickstart" class="card-link">Avviare la guida rapida &rarr;</a>
+    <p>Inizia velocemente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="llmaas/quickstart" class="card-link">Avvia l'Avvio rapido &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorial</h3>
-    <p>Impara passo dopo passo come configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="llmaas/tutorials" class="card-link">Scoprire i tutorial &rarr;</a>
+    <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="llmaas/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

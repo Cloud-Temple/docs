@@ -277,6 +277,18 @@
 4. **Validation globale** : Cohérence et qualité
 5. **Traductions** : Mise à jour multilingue
 
+### Améliorations du Script de Traduction (`scripts/translate_py/`)
+- **Correction des erreurs** : Résolution des problèmes de syntaxe et d'importation (`f-string`, `ImportError`, `tiktoken KeyError`).
+- **Logique de découpage améliorée** :
+  - Priorité au découpage par en-têtes Markdown (`#`, `##`, `###`).
+  - Sous-découpage des blocs trop grands en respectant les fins de phrases (`.`, `!`, `?`), puis les espaces.
+  - La limite de tokens est une *cible*, non une contrainte stricte, permettant des blocs légèrement plus grands pour préserver la sémantique.
+- **Interface utilisateur optimisée** :
+  - Affichage détaillé et formaté des prompts et réponses API en mode debug (prompts complets, réponses complètes).
+  - Ajout de l'option `--no-debug-system-prompt` pour masquer le prompt système en mode debug.
+  - Intégration de `tqdm` pour une barre de progression visible en permanence, même en mode debug, affichée sur `stderr` pour ne pas interférer avec les logs.
+- **Mise à jour des dépendances** : Ajout de `tqdm` pour la barre de progression.
+
 ---
 
 *État de la documentation au 05/06/2025 - Memory Bank Cloud Temple*
