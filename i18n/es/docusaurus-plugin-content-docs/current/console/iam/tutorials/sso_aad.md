@@ -25,41 +25,41 @@ import ssoAad_018 from './images/sso_aad_018.png'
 
 Aquí hay un ejemplo de configuración del repositorio de autenticación de una organización Cloud Temple con __Microsoft EntraID__ (Azure Active Directory).
 
-La configuración de su repositorio Microsoft a nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la consola Shiva. Esto ayuda a evitar la multiplicación de factores de autenticación y reduce la superficie de ataque.
+La configuración de su repositorio Microsoft en el nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la consola Shiva. Esto permite evitar la multiplicación de los factores de autenticación y reducir la superficie de ataque.
 
-Si sus usuarios están autenticados en su cuenta de Microsoft, la autenticación a los servicios de la consola Shiva será transparente.
+Si sus usuarios están autenticados en su cuenta de Microsoft, la autenticación en los servicios de la consola Shiva será transparente.
 
-Aquí están los diferentes pasos para realizar esta configuración:
+A continuación, se detallan los pasos para realizar esta configuración:
 
-## Paso 1: Configuración de SSO en el lado de Microsoft Azure
+## Paso 1: Configuración del SSO en el lado de Microsoft Azure
 
 ### Registro de una nueva aplicación Azure (portal Azure)
 
-Para la creación del __registro de aplicación__, debe ir al portal de Microsoft Azure, luego en Microsoft EntraID, __"ADD > App Registration"__
+Para crear el __registro de aplicación__, debe dirigirse al portal Microsoft Azure, luego en Microsoft EntraID, __"ADD > Registro de aplicación"__
 
-En la página "Register an application", por favor indique:
+En la página "Registrar una aplicación", indique lo siguiente:
 
 ```
-- __Name__: Indique "__SHIVA__"
-- __Supported account types__: __Accounts in this organizational directory only__ (__<Su Tenant Azure>__ only - Single tenant)
-- __Redirect URL__: No configurar inicialmente. La URL será proporcionada por el soporte de Cloud Temple y se añadirá a este campo más tarde.
+- __Nombre__ : Especificar "__SHIVA__"
+- __Tipos de cuentas compatibles__ :  __Cuentas solo en este directorio organizativo__ (__<Su inquilino Azure>__ solo - de un solo inquilino)
+- __URL de redirección__ : No configurar en un primer momento. La URL será proporcionada por el soporte Cloud Temple y deberá añadirse en este campo posteriormente.
 ```
 
 <img src={ssoEntra_001} />
 
-La información __Application (client) ID__ y __Directory (tenant) ID__ es útil para proporcionarla en la solicitud de soporte al equipo de Cloud Temple para habilitar la autenticación Microsoft EntraID a nivel de su organización.
+Las informaciones __ID de aplicación (cliente)__ y __ID de directorio (inquilino)__ son las informaciones útiles para presentar en la solicitud de soporte a la equipe Cloud Temple para activar la autenticación Microsoft EntraID en el nivel de su organización.
 
 <img src={ssoEntra_002} />
 
 ### Definición de un secreto
 
-En la pestaña "Certificates & secrets", cree un nuevo secreto.
+En la pestaña "Certificados y secretos", cree un nuevo secreto.
 
-*Nota: la fecha de caducidad del secreto no puede ser superior a 24 meses, incluso con una fecha de caducidad personalizada.*
+*Nota: La fecha de expiración del secreto no puede superar los 24 meses, incluida una fecha de expiración personalizada.*
 
 <img src={ssoAad_004} />
 
-El secreto generado deberá proporcionarse en la solicitud de soporte:
+El secreto generado deberá presentarse en la solicitud de soporte:
 
 <img src={ssoAad_005} />
 
@@ -67,42 +67,42 @@ El secreto generado deberá proporcionarse en la solicitud de soporte:
 
 El token EntraID es necesario para la configuración de la autenticación.
 
-En el menú __"Token Configuration"__, haga clic en __"Add optional claim"__. Deberá seleccionar "ID" como tipo de token y marcar "email".
+En el menú __"Configuración de token"__, haga clic en __"Agregar reclamación opcional"__. Deberá seleccionar "ID" como tipo de token y marcar "correo electrónico".
 
 <img src={ssoAad_006} />
 
-La interfaz de Azure le preguntará si desea añadir un permiso que le permitirá leer el correo electrónico de un usuario (Microsoft Graph email), marque la casilla y valide.
+La interfaz Azure le preguntará si desea agregar un permiso que le permitirá leer el correo electrónico de un usuario (Microsoft Graph email), marque la casilla y confirme.
 
 <img src={ssoAad_007} />
 
-A continuación, vaya a "API permissions" y haga clic en __"Grant admin consent for Cloud Temple"__.
+A continuación, vaya a "Permisos de API" y haga clic en __"Conceder consentimiento del administrador para Cloud Temple"__.
 
 <img src={ssoAad_008} />
 
 ### Configuraciones de seguridad adicionales (opcional pero recomendado)
 
-Por defecto, Microsoft EntraID tal como está configurado dará a cualquier usuario de su tenant Azure la capacidad de conectarse a su organización Cloud Temple.
-Es posible restringir el acceso a nivel de __"App Registration"__ para autorizar solo a una lista de usuarios o grupos a conectarse a su organización Cloud Temple.
+Por defecto, Microsoft EntraID, tal como está configurado, dará a cualquier usuario de su inquilino Azure la posibilidad de conectarse a su organización Cloud Temple.
+Es posible restringir en el nivel de __"Registro de aplicación"__ los accesos para autorizar solo una lista de usuarios o grupos para conectarse a su organización Cloud Temple.
 
-Aquí está el procedimiento a seguir:
+Aquí se detalla el procedimiento a seguir:
 
-#### Acceder a la configuración adicional de "App Registration"
+#### Acceder a los parámetros adicionales "Registro de aplicación"
 
 ##### Opción 1
 
-Vaya a la pestaña "Overview" y haga clic en el nombre de la aplicación (el enlace situado junto a "Managed application").
+Vaya a la pestaña "Información general" y haga clic en el nombre de la aplicación (el enlace situado a continuación de "Aplicación administrada").
 
 <img src={ssoAad_009} />
 
 ##### Opción 2
 
-Navegue hasta "Enterprise applications" y busque utilizando el nombre de la aplicación creada previamente.
+Diríjase a las "Aplicaciones empresariales" y busque utilizando el nombre de la aplicación creada anteriormente.
 
 <img src={ssoAad_010} />
 
 #### Restricción de la autenticación a los usuarios asignados a la aplicación
 
-Indique aquí la necesidad de asignación de usuario a la aplicación para autorizar su autenticación:
+Indique aquí la necesidad de una asignación del usuario a la aplicación para autorizar su autenticación:
 
 <img src={ssoAad_011} />
 
@@ -112,47 +112,47 @@ Solo los grupos y usuarios asignados a la aplicación podrán conectarse a su or
 
 <img src={ssoAad_012} />
 
-Finalmente, solo tendrá que aplicar la asignación haciendo clic en "Assign".
+Finalmente, solo deberá aplicar la asignación haciendo clic en "Asignar".
 
 <img src={ssoAad_013} />
 
-Ahora los usuarios asignados a la aplicación podrán conectarse a su organización Cloud Temple a través de la aplicación creada.
+A partir de ahora, los usuarios asignados a la aplicación podrán conectarse a su organización Cloud Temple a través de la aplicación creada.
 
-## Paso 2: Solicitar la configuración de SSO (Single Sign-On) para su organización
+## Paso 2: Solicitar la configuración del SSO (Single Sign-On) de su organización
 
-Esta parte de la configuración se realiza a nivel de la organización por el equipo de Cloud Temple.
+Esta parte de la configuración se realiza en el nivel de la organización por el equipo Cloud temple.
 
-Para ello, haga una __solicitud de soporte__ en la consola indicando su deseo de configurar Microsoft EntraID SSO.
+Para hacerlo, realice __una solicitud de asistencia__ en la consola indicando su deseo de configurar un SSO de Microsoft EntraID.
 
-Por favor, proporcione la siguiente información en la solicitud de soporte:
+Proporcione las siguientes informaciones en la solicitud de asistencia:
 
-    El nombre de su Organización
-    El nombre de un contacto con su correo electrónico y número de teléfono para finalizar la configuración
-    Application ID (identificador único asociado a la aplicación creada previamente)
-    Directory ID (corresponde al ID de Azure AD del tenant Azure)
-    Secret (Secreto asociado a la aplicación creada previamente)
+    Nombre de su organización
+    Nombre de un contacto con su correo electrónico y número de teléfono para finalizar la configuración
+    ID de aplicación (identificador único asociado a la aplicación creada anteriormente)
+    ID de directorio (corresponde al identificador Azure AD del inquilino Azure)
+    Secreto (secreto asociado a la aplicación creada anteriormente)
 
-Tan pronto como se complete la configuración en el lado de la consola Shiva, se informará al contacto indicado.
+Una vez que la configuración esté realizada en la consola Shiva, el contacto indicado será informado.
 
 ## Paso 3: Finalización de la configuración
 
-En la página de inicio del App Registration, en el menú de vista general, haga clic en "Add a Redirect URL".
+En la página de inicio del Registro de aplicación, en el menú "Información general", haga clic en "Agregar una URL de redirección".
 
 <img src={ssoAad_014} />
 
-A continuación, navegue hasta "Add a platform" y añada una de tipo Web.
+A continuación, diríjase a "Agregar una plataforma" y añada una de tipo Web.
 
 <img src={ssoAad_015} />
 
-Simplemente introduzca la "Redirect URL" proporcionada por el Equipo de Aplicaciones de Producto.
+Solo debe rellenar la "URL de redirección" proporcionada por el equipo de Productos de Aplicaciones.
 
 <img src={ssoAad_016} />
 
-Debería obtener este resultado una vez añadida la "Redirect URL".
+Debería obtener este resultado una vez que se haya añadido la "URL de redirección".
 
 <img src={ssoAad_017} />
 
-La configuración de la "Redirect URL" puede tardar unos minutos en ser efectiva.
-Una vez completados todos los pasos, puede autenticarse en su organización Cloud Temple a través de su SSO.
+La configuración de la "URL de redirección" puede tardar unos minutos en hacerse efectiva.
+Una vez que se hayan realizado todas las etapas, podrá autenticarse en su organización Cloud Temple a través de su SSO.
 
 <img src={ssoAad_018} />

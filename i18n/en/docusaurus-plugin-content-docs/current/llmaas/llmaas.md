@@ -7,22 +7,22 @@ sidebar_position: 1
 
 ## Overview
 
-The **LLMaaS** (Large Language Models as a Service) service from Cloud Temple provides secure and sovereign access to the most advanced artificial intelligence models, on a Cloud Temple infrastructure qualified SecNumCloud by ANSSI.
+The **LLMaaS** (Large Language Models as a Service) service from Cloud Temple provides secure and sovereign access to the most advanced AI models, calculated on Cloud Temple IaaS infrastructure qualified SecNumCloud 3.2 by ANSSI.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the essential foundations and principles to understand and master our infrastructure.</p>
-    <a href="llmaas/concepts" class="card-link">Explore concepts &rarr;</a>
+    <p>Discover the basics and essential principles to understand and master our infrastructure.</p>
+    <a href="llmaas/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="llmaas/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="llmaas/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step by step how to configure and use our services with detailed guides.</p>
-    <a href="llmaas/tutorials" class="card-link">Discover tutorials &rarr;</a>
+    <a href="llmaas/tutorials" class="card-link">Discover the tutorials &rarr;</a>
   </div>
 </div>

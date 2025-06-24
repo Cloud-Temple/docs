@@ -1,4 +1,4 @@
-## Licencia del modelo cogito:3b
+## Licence du modèle cogito:3b
 
 ```
 LLAMA 3.2 COMMUNITY LICENSE AGREEMENT

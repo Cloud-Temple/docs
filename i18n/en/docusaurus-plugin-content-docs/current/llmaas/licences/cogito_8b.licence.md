@@ -1,4 +1,4 @@
-## Model Licence cogito:8b
+## Licence du modèle cogito:8b
 
 ```
 LLAMA 3.2 COMMUNITY LICENSE AGREEMENT

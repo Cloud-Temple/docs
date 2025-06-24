@@ -1,4 +1,4 @@
-## deepcoder:14b Model License
+## Licence du modèle deepcoder:14b
 
 ```
 ""MIT License
