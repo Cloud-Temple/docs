@@ -1,7 +1,7 @@
-## Gemma3:4b Model License
+## Licence du modèle gemma3:4b
 
 ```
-"Gemma Terms of Use 
+""Gemma Terms of Use 
 
 Last modified: February 21, 2024
 

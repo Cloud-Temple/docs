@@ -2,25 +2,24 @@
 title: Overview
 ---
 
-The Open Source IaaS product from Cloud Temple: a unique alliance of performance, security, and transparency.
+The Cloud Temple Open Source IaaS product: a unique alliance between performance, security, and transparency.
 
-This offer guarantees total control over your critical environments while ensuring security, continuity, and regulatory compliance.
-With scalable resources and automated management, you benefit from a high-performance infrastructure tailored to your needs. Embrace the power of Open Source with the reliability and support of Cloud Temple.
+This offering ensures total control over your critical environments, while guaranteeing security, continuity, and regulatory compliance. With scalable resources and automated management, you benefit from a high-performance infrastructure tailored to your needs. Adopt the power of Open Source with the reliability and support of Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the essential basics and principles to understand and master our infrastructure.</p>
+    <p>Discover the basic principles essential to understanding and mastering our infrastructure.</p>
     <a href="iaas_opensource/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="iaas_opensource/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="iaas_opensource/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step-by-step to configure and use our services with detailed guides.</p>
+    <p>Learn step by step how to configure and use our services with detailed guides.</p>
     <a href="iaas_opensource/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
 </div>
@@ -28,7 +27,7 @@ With scalable resources and automated management, you benefit from a high-perfor
 ## Purchase Platforms
 
 <div class="purchase-platforms">
-  <p>Are you a public sector player? The <strong>IaaS Cloud Temple</strong> offer is accessible via:</p>
+  <p>Are you a public sector actor? The <strong>IaaS Cloud Temple</strong> offering is available via:</p>
 
   <div class="platform-card">
     <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
@@ -43,7 +42,7 @@ With scalable resources and automated management, you benefit from a high-perfor
       <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        The CAIH market for the medical sector
+        The CAIH market for the healthcare sector
       </a>
     </p>
   </div>

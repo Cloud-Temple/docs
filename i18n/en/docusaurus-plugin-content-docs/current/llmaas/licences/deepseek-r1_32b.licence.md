@@ -1,4 +1,4 @@
-## Model License deepseek-r1:32b
+## Licence du modèle deepseek-r1:32b
 
 ```
 ""MIT License

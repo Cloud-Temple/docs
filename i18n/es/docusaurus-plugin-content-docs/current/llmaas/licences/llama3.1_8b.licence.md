@@ -1,4 +1,4 @@
-## Licencia del modelo llama3.1:8b
+## Licence du modèle llama3.1:8b
 
 ```
 LLAMA 3.1 COMMUNITY LICENSE AGREEMENT
@@ -116,51 +116,55 @@ the State of California without regard to choice of law principles, and the UN C
 for the International Sale of Goods does not apply to this Agreement. The courts of California shall have
 exclusive jurisdiction of any dispute arising out of this Agreement.
 
-# Política de Uso Aceptable de Llama 3.1
+# Llama 3.1 Acceptable Use Policy
 
-Meta se compromete a promover el uso seguro y justo de sus herramientas y características, incluido Llama 3.1. Si accede o utiliza Llama 3.1, acepta esta Política de Uso Aceptable ("Política"). La copia más reciente de esta política se puede encontrar en [https://llama.meta.com/llama3_1/use-policy](https://llama.meta.com/llama3_1/use-policy)
+Meta is committed to promoting safe and fair use of its tools and features, including Llama 3.1. If you
+access or use Llama 3.1, you agree to this Acceptable Use Policy (“Policy”). The most recent copy of
+this policy can be found at [https://llama.meta.com/llama3_1/use-policy](https://llama.meta.com/llama3_1/use-policy)
 
-## Usos Prohibidos
+## Prohibited Uses
 
-Queremos que todos usen Llama 3.1 de manera segura y responsable. Usted acepta que no usará, ni permitirá que otros usen, Llama 3.1 para:
+We want everyone to use Llama 3.1 safely and responsibly. You agree you will not use, or allow
+others to use, Llama 3.1 to:
 
-1. Violar la ley o los derechos de otros, incluyendo:
-    1. Participar, promover, generar, contribuir, fomentar, planear, incitar o continuar actividades o contenido ilegales o ilegítimos, tales como:
-        1. Violencia o terrorismo
-        2. Explotación o daño a niños, incluyendo la solicitud, creación, adquisición o difusión de contenido explotador de niños o la falta de informe de material de abuso sexual infantil
-        3. Tráfico humano, explotación y violencia sexual
-        4. Distribución ilegal de información o materiales a menores, incluyendo materiales obscenos, o la falta de empleo de la verificación de edad requerida legalmente en relación con dicha información o materiales.
-        5. Solicitud sexual
-        6. Cualquier otra actividad criminal
-    3. Participar, promover, incitar o facilitar el acoso, abuso, amenaza o bullying de individuos o grupos de individuos
-    4. Participar, promover, incitar o facilitar discriminación u otros conductas ilegales o dañinas en la provisión de empleo, beneficios de empleo, crédito, vivienda, otros beneficios económicos o otros bienes esenciales y servicios
-    5. Participar en la práctica no autorizada o no licenciada de cualquier profesión, incluyendo, pero no limitado a, financiero, legal, médico/salud, o prácticas profesionales relacionadas
-    6. Recopilar, procesar, revelar, generar o inferir información sensible o privada sobre individuos, como salud, demografía u otras, sin los derechos y consentimientos requeridos por leyes aplicables
-    7. Participar en o facilitar cualquier acción o generar cualquier contenido que infrinja, aproveche indebidamente o de otra forma viole cualquier derecho de terceros, incluyendo los resultados o salidas de cualquier productos o servicios que usen los Llama Materials
-8. Crear, generar o facilitar la creación de código malicioso, malware, virus informáticos o realizar cualquier otra acción que pueda desactivar, sobrecargar, interferir o perjudicar el funcionamiento, integridad, operación o apariencia de un sitio web o sistema informático
+1. Violate the law or others’ rights, including to:
+    1. Engage in, promote, generate, contribute to, encourage, plan, incite, or further illegal or unlawful activity or content, such as:
+        1. Violence or terrorism
+        2. Exploitation or harm to children, including the solicitation, creation, acquisition, or dissemination of child exploitative content or failure to report Child Sexual Abuse Material
+        3. Human trafficking, exploitation, and sexual violence
+        4. The illegal distribution of information or materials to minors, including obscene materials, or failure to employ legally required age-gating in connection with such information or materials.
+        5. Sexual solicitation
+        6. Any other criminal activity
+    3. Engage in, promote, incite, or facilitate the harassment, abuse, threatening, or bullying of individuals or groups of individuals
+    4. Engage in, promote, incite, or facilitate discrimination or other unlawful or harmful conduct in the provision of employment, employment benefits, credit, housing, other economic benefits, or other essential goods and services
+    5. Engage in the unauthorized or unlicensed practice of any profession including, but not limited to, financial, legal, medical/health, or related professional practices
+    6. Collect, process, disclose, generate, or infer health, demographic, or other sensitive personal or private information about individuals without rights and consents required by applicable laws
+    7. Engage in or facilitate any action or generate any content that infringes, misappropriates, or otherwise violates any third-party rights, including the outputs or results of any products or services using the Llama Materials
+    8. Create, generate, or facilitate the creation of malicious code, malware, computer viruses or do anything else that could disable, overburden, interfere with or impair the proper working, integrity, operation or appearance of a website or computer system
 
-2. Participar en, promover, incitar, facilitar o ayudar en la planificación o desarrollo de actividades que presenten un riesgo de muerte o daño corporal a individuos, incluido el uso de Llama 3.1 relacionado con lo siguiente:
-    1. Militar, guerra, industrias o aplicaciones nucleares, espionaje, uso de materiales o actividades sujetas al Reglamento de Tráfico Internacional de Armas (ITAR) mantenido por el Departamento de Estado de los Estados Unidos
-    2. Armas y armas ilegales (incluida el desarrollo de armas)
-    3. Drogas ilegales y sustancias reguladas o controladas
-    4. Operación de infraestructura crítica, tecnologías de transporte o maquinaria pesada
-    5. Autolesiones o daño a otros, incluido el suicidio, cortes y trastornos alimenticios
-    6. Cualquier contenido destinado a incitar o promover violencia, abuso o cualquier tipo de daño corporal a un individuo
+2. Engage in, promote, incite, facilitate, or assist in the planning or development of activities that present a risk of death or bodily harm to individuals, including use of Llama 3.1 related to the following:
+    1. Military, warfare, nuclear industries or applications, espionage, use for materials or activities that are subject to the International Traffic Arms Regulations (ITAR) maintained by the United States Department of State
+    2. Guns and illegal weapons (including weapon development)
+    3. Illegal drugs and regulated/controlled substances
+    4. Operation of critical infrastructure, transportation technologies, or heavy machinery
+    5. Self-harm or harm to others, including suicide, cutting, and eating disorders
+    6. Any content intended to incite or promote violence, abuse, or any infliction of bodily harm to an individual
 
-3. Engañar o inducir en error a otros intencionalmente, incluido el uso de Llama 3.1 relacionado con lo siguiente:
-    1. Generar, promover o fomentar fraudes o la creación o promoción de desinformación
-    2. Generar, promover o fomentar contenido difamatorio, incluida la creación de declaraciones, imágenes u otros contenidos difamatorios
-    3. Generar, promover o distribuir spam
-    4. Impersonar a otra persona sin consentimiento, autorización o derecho legal
-    5. Representar que el uso de Llama 3.1 o sus salidas son generados por humanos
-    6. Generar o facilitar engaño en línea falso, incluidas reseñas falsas y otros medios de engaño en línea falso
+3. Intentionally deceive or mislead others, including use of Llama 3.1 related to the following:
+    1. Generating, promoting, or furthering fraud or the creation or promotion of disinformation
+    2. Generating, promoting, or furthering defamatory content, including the creation of defamatory statements, images, or other content
+    3. Generating, promoting, or further distributing spam
+    4. Impersonating another individual without consent, authorization, or legal right
+    5. Representing that the use of Llama 3.1 or outputs are human-generated
+    6. Generating or facilitating false online engagement, including fake reviews and other means of fake online engagement
 
-4. No divulgar adecuadamente a los usuarios finales cualquier peligro conocido de su sistema de inteligencia artificial
+4. Fail to appropriately disclose to end users any known dangers of your AI system
 
-Por favor, informe cualquier violación de esta Política, "error" del software o cualquier otro problema que pueda conducir a una violación de esta Política mediante alguno de los siguientes medios:
+Please report any violation of this Policy, software “bug,” or other problems that could lead to a violation
+of this Policy through one of the following means:
 
-* Informar sobre problemas con el modelo: [https://github.com/meta-llama/llama-models/issues](https://github.com/meta-llama/llama-models/issues)
-* Informar sobre contenido riesgoso generado por el modelo: developers.facebook.com/llama_output_feedback
-* Informar sobre errores y preocupaciones de seguridad: facebook.com/whitehat/info
-* Informar sobre violaciones de la Política de Uso Aceptable o usos no autorizados de Llama 3.1: LlamaUseReport@meta.com
+* Reporting issues with the model: [https://github.com/meta-llama/llama-models/issues](https://github.com/meta-llama/llama-models/issues)
+* Reporting risky content generated by the model: developers.facebook.com/llama_output_feedback
+* Reporting bugs and security concerns: facebook.com/whitehat/info
+* Reporting violations of the Acceptable Use Policy or unlicensed uses of Llama 3.1: LlamaUseReport@meta.com
 ```

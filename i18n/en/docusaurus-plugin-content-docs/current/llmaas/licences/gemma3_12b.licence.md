@@ -1,7 +1,7 @@
 ## Licence du modèle gemma3:12b
 
 ```
-"Gemma Terms of Use 
+""Gemma Terms of Use 
 
 Last modified: February 21, 2024
 
