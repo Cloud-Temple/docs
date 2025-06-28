@@ -8,7 +8,6 @@ import os
 import sys
 from typing import Dict, Any
 from dotenv import load_dotenv
-from langchain_core.caches import BaseCache # Ajout pour résoudre l'erreur Pydantic/BaseCache
 
 # Charger les variables d'environnement depuis .env
 load_dotenv()
@@ -114,6 +113,8 @@ def test_langchain_integration() -> bool:
     
     try:
         from langchain_openai import ChatOpenAI
+        from langchain_core.caches import BaseCache # Importation locale pour garantir la portée
+        from langchain_core.callbacks.base import Callbacks # Importation locale pour Callbacks
         # Appeler model_rebuild() pour résoudre les problèmes de définition Pydantic
         # Cela est souvent nécessaire après l'importation pour les modèles basés sur Pydantic v2
         ChatOpenAI.model_rebuild()
@@ -123,10 +124,10 @@ def test_langchain_integration() -> bool:
     
     try:
         chat = ChatOpenAI(
-            api_key=SecretStr(API_KEY), # Utilisation de SecretStr pour la clé API
+            api_key=API_KEY, # Passer la clé API directement en chaîne
             base_url=BASE_URL,
             model="granite3.3:8b",
-            model_kwargs={"max_tokens": 50} # Passer max_tokens via model_kwargs
+            model_kwargs={"max_tokens": 50} # Passer max_tokens via model_kwargs pour la robustesse
         )
         
         print("✅ LangChain ChatOpenAI initialisé")
@@ -151,6 +152,8 @@ def test_langchain_chat() -> bool:
     
     try:
         from langchain_openai import ChatOpenAI
+        from langchain_core.caches import BaseCache # Importation locale pour garantir la portée
+        from langchain_core.callbacks.base import Callbacks # Importation locale pour Callbacks
         # Appeler model_rebuild() pour résoudre les problèmes de définition Pydantic
         ChatOpenAI.model_rebuild()
     except ImportError:
@@ -159,10 +162,10 @@ def test_langchain_chat() -> bool:
     
     try:
         chat = ChatOpenAI(
-            api_key=SecretStr(API_KEY), # Utilisation de SecretStr pour la clé API
+            api_key=API_KEY, # Passer la clé API directement en chaîne
             base_url=BASE_URL,
             model="granite3.3:8b",
-            model_kwargs={"max_tokens": 50} # Passer max_tokens via model_kwargs
+            model_kwargs={"max_tokens": 50} # Passer max_tokens via model_kwargs pour la robustesse
         )
         
         print("✅ LangChain ChatOpenAI initialisé")

@@ -779,7 +779,9 @@ chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="granite3.3:8b",
-    max_tokens=200
+    # Note: Les paramètres comme max_tokens sont passés via model_kwargs
+    # pour assurer la compatibilité entre les versions de LangChain.
+    model_kwargs={"max_tokens": 200}
 )
 
 try:

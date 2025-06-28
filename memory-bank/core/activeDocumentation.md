@@ -94,45 +94,37 @@
 - 📝 **Architecture réseau** : Diagrammes et concepts
 - 📝 **Configuration** : Guides techniques
 
-### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET
+### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET ET VALIDÉ
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 46 modèles (généré depuis YAML)
-- ✅ `llmaas.md` : Vue d'ensemble service (style Anthropic factuel)
-- ✅ `quickstart.md` : Guide 5min **TESTÉ** - Tous exemples validés (curl + Python)
-- ✅ `api.md` : Documentation API **TESTÉE** - Streaming SSE + endpoints validés
-- ✅ `concepts.md` : Architecture IA **CRÉÉ** (05/06/2025)
-- ✅ `tutorials.md` : **COMPLET** - 7 intégrations 100% validées **6/6 TESTS RÉUSSIS** (05/06/2025)
-- ✅ `images/` : Structure créée pour screenshots
-- ✅ `licences/` : **SYSTÈME AUTOMATISÉ** - 42 fichiers de licence
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
+- ✅ `llmaas.md` : Vue d'ensemble du service.
+- ✅ `quickstart.md` : Guide de démarrage rapide, testé.
+- ✅ `api.md` : Documentation API complète, alignée avec les tests.
+- ✅ `concepts.md` : Architecture et concepts de l'IA.
+- ✅ `tutorials.md` : **MIS À JOUR (28/06/2025)** - Exemples enrichis et validés par la suite de tests.
+- ✅ `images/` : Structure prête.
+- ✅ `licences/` : Système de gestion des licences automatisé.
 
-#### Tutorials LLMaaS - ✅ COMPLET (05/06/2025)
-- ✅ **7 intégrations validées** : LangChain, OpenAI SDK, RAG, agents, Semantic Kernel, Haystack, LlamaIndex
-- ✅ **Code testé en production** : Tous exemples validés avec API réelle
-- ✅ **Tests automatisés** : `test_tutorials_integrations.py` (7/7 tests réussis)
-- ✅ **Frameworks supportés** : Python, TypeScript annotations, migration transparente
-- ✅ **Patterns avancés** : Streaming SSE, gestion erreurs, templates, outils personnalisés
+#### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (28/06/2025)
+- ✅ **9/9 suites de tests réussies** : Couverture complète des fonctionnalités de l'API.
+- ✅ **Tests RAG validés** :
+    - `test_rag_simple.py` : Pipeline de base fonctionnel.
+    - `test_rag_pipeline_detailed.py` : Pipeline avancé avec `LLMaaSEmbeddings` et FAISS, corrigé et validé.
+    - `test_qdrant_integration.py` : Intégration avec Qdrant, corrigée et validée (nécessite un conteneur Docker).
+- ✅ **Tests SDK et API** : `test_python_sdk.py`, `test_python_basic.py`, etc., tous corrigés et validés.
+- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble des 9 suites de tests.
 
-#### Système de Licences LLMaaS - ✅ COMPLET (05/06/2025)
-- ✅ **Fichier générique** : `apache2.licence.md` (20+ modèles)
-- ✅ **Fichier Llama 3.3** : `llama3.3_70b.licence.md` (licence spécifique)
-- ✅ **Mappings automatiques** : Script génère liens selon type de licence
-- ✅ **Vérification existence** : Pas de liens cassés
-- ✅ **Maintenance zéro** : Un fichier par type de licence
-
-#### Configuration Automatisée
-- ✅ **Source** : `memory-bank/models_config.yaml` (40 modèles)
-- ✅ **Script** : `scripts/generate_models_doc.py` (Python professionnel)
-- ✅ **NPM** : `npm run generate:models` (intégration workflow)
-- ✅ **Conformité** : SecNumCloud + HDS + Souveraineté + C5
+#### Documentation des Tutoriels (`/docs/llmaas/tutorials.md`) - ✅ ENRICHIE (28/06/2025)
+- ✅ **Explications détaillées** : Chaque exemple de code est maintenant accompagné d'explications didactiques sur son fonctionnement et son utilité.
+- ✅ **Cohérence avec les tests** : Les exemples de code, en particulier pour les pipelines RAG, ont été alignés sur les implémentations validées dans la suite de tests.
+- ✅ **Instructions Qdrant** : Ajout d'un encart clair expliquant comment lancer le conteneur Docker Qdrant, un prérequis pour le test d'intégration.
 
 #### Spécifications LLMaaS
 - ✅ **36 modèles** : 6 grande taille + 34 spécialisés
 - ✅ **Contexte** : 8k → 120k tokens  
 - ✅ **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
 - ✅ **6 cas d'usage** : Multilingue, documents, code, vision, sécurité, embarqué
-- ✅ **Tests d'intégration Qdrant** : Ajout d'un test pour la recherche vectorielle avec Qdrant.
-- ✅ **Mise à jour des exemples** : Les exemples de code dans `api.md` et `tutorials.md` ont été mis à jour pour une meilleure robustesse et cohérence avec les tests.
 
 ### 💾 Storage Solutions - Statut : 🔄 EN DÉVELOPPEMENT
 
@@ -273,11 +265,12 @@
 
 ## Prochaines Actions Immédiates
 
-1. **Compléter Network** : Internet et Private Network
-2. **Développer Storage OSS** : Documentation API S3
-3. **Finaliser Console** : Metrics et Security modules
-4. **Validation globale** : Cohérence et qualité
-5. **Traductions** : Mise à jour multilingue
+1. **Traduire la documentation LLMaaS** : Les fichiers `docs/llmaas/api.md` et `docs/llmaas/tutorials.md` ont été significativement mis à jour et doivent être traduits.
+2. **Compléter Network** : Internet et Private Network
+3. **Développer Storage OSS** : Documentation API S3
+4. **Finaliser Console** : Metrics et Security modules
+5. **Validation globale** : Cohérence et qualité
+6. **Traductions** : Mise à jour multilingue générale
 
 ### 🐍 Système de Traduction Python - ✅ COMPLET ET OPÉRATIONNEL (17/06/2025)
 **Localisation** : `scripts/translate_py/`

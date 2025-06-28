@@ -235,6 +235,29 @@ def main():
             'type': 'python',
             'critical': True,
             'requires': ['requests']
+        },
+
+        # Tests RAG
+        {
+            'name': 'RAG Simple',
+            'script': 'test_rag_simple.py',
+            'type': 'python',
+            'critical': False,
+            'requires': ['langchain']
+        },
+        {
+            'name': 'RAG Pipeline Detailed',
+            'script': 'test_rag_pipeline_detailed.py',
+            'type': 'python',
+            'critical': False,
+            'requires': ['langchain']
+        },
+        {
+            'name': 'RAG Qdrant Integration',
+            'script': 'test_qdrant_integration.py',
+            'type': 'python',
+            'critical': False,
+            'requires': ['langchain']
         }
     ]
     
