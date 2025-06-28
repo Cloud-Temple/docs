@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Tutorials LLMaaS
 
-## Vue d'ensemble
+## Vue d'overview
 
 Ces tutorials avancés couvrent l'intégration, l'optimisation et les meilleures pratiques pour exploiter pleinement LLMaaS Cloud Temple en production. Chaque tutorial inclut du code testé et des métriques de performance réelles.
 
@@ -126,17 +126,49 @@ if __name__ == "__main__":
 ### 2. RAG (Retrieval-Augmented Generation) avec LangChain
 
 ```python
+import os
+import tempfile
+from pathlib import Path
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 
+def create_test_documents_for_rag():
+    """Crée des documents de test temporaires pour le pipeline RAG."""
+    temp_dir = Path(tempfile.mkdtemp(prefix="rag_docs_"))
+    
+    documents_content = [
+        "Cloud Temple est un fournisseur de cloud souverain français avec la qualification SecNumCloud de l'ANSSI.",
+        "L'API LLMaaS de Cloud Temple permet d'accéder à 36 modèles d'intelligence artificielle.",
+        "Les tarifs LLMaaS sont de 0.9€ pour l'input et 4€ pour l'output par million de tokens.",
+        "La sécurité Cloud Temple est garantie par les certifications HDS et ISO 27001.",
+        "Les cas d'usage de LLMaaS incluent le dialogue multilingue et l'analyse de documents longs."
+    ]
+    
+    for i, content in enumerate(documents_content):
+        file_path = temp_dir / f"doc_{i}.txt"
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(content.strip())
+            
+    print(f"Documents de test créés dans: {temp_dir}")
+    return temp_dir
+
 def setup_rag_pipeline():
     """Configuration complète pipeline RAG avec LLMaaS"""
     
+    # Création des documents de test
+    documents_dir = create_test_documents_for_rag()
+
     # 1. Chargement des documents
-    loader = TextLoader("documents/knowledge_base.txt")
+    from langchain_community.document_loaders import DirectoryLoader # Importation nécessaire
+    loader = DirectoryLoader(
+        str(documents_dir), # Utilise le répertoire temporaire
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={'encoding': 'utf-8'}
+    )
     documents = loader.load()
     
     # 2. Division en chunks
@@ -144,30 +176,40 @@ def setup_rag_pipeline():
         chunk_size=1000,
         chunk_overlap=200,
         length_function=len,
+        separators=["\n\n", "\n", " ", ""] # Ajout des séparateurs pour une meilleure division
     )
     splits = text_splitter.split_documents(documents)
     
     # 3. Création des embeddings
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={'device': 'cpu'}, # Spécifie l'utilisation du CPU pour la compatibilité
+        encode_kwargs={'normalize_embeddings': True} # Normalise les embeddings pour une meilleure performance
     )
     
     # 4. Index vectoriel
     vectorstore = FAISS.from_documents(splits, embeddings)
     
     # 5. LLM Cloud Temple
+    # Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+    # Exemple: api_key=os.getenv("LLMAAS_API_KEY")
     llm = CloudTempleLLM(
         api_key="your-api-key",
         model_name="granite3.3:8b",
-        temperature=0.3  # Plus précis pour RAG
+        temperature=0.3,  # Plus précis pour RAG
+        max_tokens=300 # Alignement avec les tests pour une réponse plus concise
     )
     
     # 6. Chain RAG
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",
-        retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),
-        return_source_documents=True
+        retriever=vectorstore.as_retriever(
+            search_type="similarity", # Type de recherche de similarité
+            search_kwargs={"k": 3}
+        ),
+        return_source_documents=True,
+        verbose=False # Désactive le logging verbeux de LangChain pour la démo
     )
     
     return qa_chain
@@ -186,8 +228,19 @@ def query_rag(qa_chain, question: str):
     return result
 
 # Exemple d'utilisation
-rag_pipeline = setup_rag_pipeline()
-query_rag(rag_pipeline, "Comment configurer la sécurité d'une API ?")
+import shutil # Importation nécessaire pour shutil.rmtree
+
+temp_docs_dir = None
+try:
+    rag_pipeline = setup_rag_pipeline()
+    query_rag(rag_pipeline, "Comment configurer la sécurité d'une API ?")
+    temp_docs_dir = rag_pipeline.retriever.vectorstore.docstore.temp_dir # Accéder au répertoire temporaire si stocké
+except Exception as e:
+    print(f"Une erreur est survenue lors de l'exécution du RAG: {e}")
+finally:
+    if temp_docs_dir and os.path.exists(temp_docs_dir):
+        shutil.rmtree(temp_docs_dir)
+        print(f"Répertoire temporaire {temp_docs_dir} supprimé.")
 ```
 
 ### 3. Agents LangChain avec Outils
@@ -534,5 +587,3 @@ Vous y trouverez des guides pratiques pour :
 - __Gestion et Évaluation des Modèles :__ Listage des modèles de langage disponibles via l'API, consultation de leurs spécifications et exécution de tests pour comparer leurs performances.
 
 - __Streaming de Réponses en Temps Réel :__ Démonstration de la capacité à recevoir et afficher les réponses des modèles de manière progressive (token par token), essentielle pour les applications interactives.
-
----

@@ -9,6 +9,10 @@ import json
 import os
 import sys
 from typing import Dict, Any
+from dotenv import load_dotenv # Importation nécessaire
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
 
 # Configuration
 API_KEY = os.getenv("LLMAAS_API_KEY", "test-token-for-docs")

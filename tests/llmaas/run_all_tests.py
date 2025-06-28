@@ -9,6 +9,10 @@ import sys
 import subprocess
 import time
 from pathlib import Path
+from dotenv import load_dotenv # Importation nécessaire
+
+# Charger les variables d'environnement depuis .env
+load_dotenv(dotenv_path=Path(__file__).parent / ".env") # Charger le .env spécifique au dossier tests/llmaas
 
 # Configuration globale
 TESTS_DIR = Path(__file__).parent
