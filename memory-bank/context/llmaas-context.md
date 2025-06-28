@@ -87,6 +87,13 @@ docs/llmaas/
 - **Monitoring** : Grafana + métriques personnalisées
 - **Chiffrement** : TLS 1.3 + AES-256
 
+### Pipelines RAG et Intégrations
+- ✅ **Pattern RAG validé** : Le service supporte des pipelines RAG complets.
+- ✅ **Embeddings LLMaaS** : Utilisation du modèle `granite-embedding:278m` via une classe wrapper `LLMaaSEmbeddings` pour la vectorisation de documents.
+- ✅ **Intégration FAISS** : L'exemple de tutoriel principal utilise FAISS pour un stockage vectoriel en mémoire, idéal pour les démonstrations rapides.
+- ✅ **Intégration Qdrant** : Un exemple avancé et un test d'intégration complet valident l'utilisation de Qdrant pour un stockage vectoriel persistant et scalable.
+- ✅ **Tests de bout en bout** : La suite de tests (`/tests/llmaas/`) inclut désormais des scripts dédiés (`test_rag_pipeline_detailed.py`, `test_qdrant_integration.py`) qui valident ces pipelines.
+
 ### Performance
 - **Vitesse** : 16-103 tokens/seconde
 - **Consommation** : 0.58-13.06 kWh/million tokens

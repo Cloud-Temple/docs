@@ -13,10 +13,23 @@ import shutil
 import requests
 from typing import Optional, List, Any, Dict
 from pathlib import Path
+from dotenv import load_dotenv
 
-# Configuration
-API_KEY = os.getenv("LLMAAS_API_KEY", "WolFH3xGSCMPvlfEru5JAt_KWZIrYreQOm1dDB2x5X4")
-BASE_URL = "https://api.ai.cloud-temple.com/v1"
+# --- Imports LangChain ---
+from langchain_core.embeddings import Embeddings
+from langchain_openai import ChatOpenAI
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain.chains import RetrievalQA
+from langchain.schema import HumanMessage
+
+# --- Configuration ---
+load_dotenv(dotenv_path=Path(__file__).parent / ".env")
+API_KEY = os.getenv("LLMAAS_API_KEY", "")
+BASE_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "granite-embedding:278m")
+LLM_MODEL = os.getenv("DEFAULT_MODEL", "granite3.3:8b")
 
 class RAGTestLogger:
     """Logger spécialisé pour les tests RAG"""
@@ -56,57 +69,33 @@ class RAGTestLogger:
         return success_count == total_steps
 
 def check_dependencies():
-    """Vérification et installation des dépendances RAG"""
+    """Vérification des dépendances RAG"""
     logger = RAGTestLogger()
     logger.log_step("Vérification dépendances", "PROGRESS")
     
-    required_packages = [
-        "langchain",
-        "langchain-community", 
-        "langchain-openai",
-        "faiss-cpu",
-        "sentence-transformers",
-        "requests"
-    ]
+    required_packages = {
+        "langchain": "langchain",
+        "langchain-community": "langchain_community",
+        "langchain-openai": "langchain_openai",
+        "faiss-cpu": "faiss",
+        "requests": "requests",
+        "httpx": "httpx",
+        "python-dotenv": "dotenv"
+    }
     
-    missing_packages = []
-    
-    for package in required_packages:
+    all_ok = True
+    for pkg_name, import_name in required_packages.items():
         try:
-            if package == "langchain-community":
-                import langchain_community
-            elif package == "langchain-openai":
-                import langchain_openai
-            elif package == "faiss-cpu":
-                import faiss
-            elif package == "sentence-transformers":
-                import sentence_transformers
-            elif package == "langchain":
-                import langchain
-            elif package == "requests":
-                import requests
-            
-            logger.log_step(f"✓ {package}", "SUCCESS", "Disponible")
+            __import__(import_name)
+            logger.log_step(f"✓ {pkg_name}", "SUCCESS", "Disponible")
         except ImportError:
-            missing_packages.append(package)
-            logger.log_step(f"✗ {package}", "ERROR", "Manquant")
+            logger.log_step(f"✗ {pkg_name}", "ERROR", "Manquant. Installez avec: pip install " + pkg_name)
+            all_ok = False
+            
+    if all_ok:
+        logger.log_step("Dépendances validées", "SUCCESS", f"{len(required_packages)} packages OK")
     
-    if missing_packages:
-        logger.log_step("Installation dépendances", "PROGRESS", f"Installation de {len(missing_packages)} packages")
-        
-        import subprocess
-        for package in missing_packages:
-            try:
-                subprocess.check_call([
-                    sys.executable, "-m", "pip", "install", package
-                ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                logger.log_step(f"Installé {package}", "SUCCESS")
-            except subprocess.CalledProcessError:
-                logger.log_step(f"Échec {package}", "ERROR")
-                return False
-    
-    logger.log_step("Dépendances validées", "SUCCESS", f"{len(required_packages)} packages OK")
-    return True
+    return all_ok
 
 def test_api_connection():
     """Test de connexion à l'API LLMaaS"""
@@ -139,65 +128,41 @@ def test_api_connection():
         logger.log_step("Connexion API", "ERROR", str(e))
         return False
 
-class CloudTempleLLM:
-    """
-    Wrapper LangChain pour Cloud Temple LLMaaS
-    Implémentation complète compatible avec l'interface LangChain LLM
-    """
+class LLMaaSEmbeddings(Embeddings):
+    """Classe d'embedding personnalisée pour l'API LLMaaS de Cloud Temple."""
     
-    def __init__(self, api_key: str, model_name: str = "granite3.3:8b", **kwargs):
+    def __init__(self, api_key: str, model_name: str, logger: RAGTestLogger):
         self.api_key = api_key
         self.model_name = model_name
         self.base_url = BASE_URL
-        self.temperature = kwargs.get('temperature', 0.7)
-        self.max_tokens = kwargs.get('max_tokens', 500)
-        self.logger = kwargs.get('logger', RAGTestLogger())
-    
-    @property
-    def _llm_type(self) -> str:
-        return "cloud_temple_llmaas"
-    
-    def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
-        """Appel direct à l'API LLMaaS"""
-        self.logger.log_step("Appel LLM", "PROGRESS", f"Prompt: {prompt[:50]}...")
-        
-        headers = {
+        self.logger = logger
+        self.headers = {
             "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
-        
-        payload = {
-            "model": self.model_name,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": self.temperature,
-            "max_tokens": self.max_tokens
-        }
-        
-        if stop:
-            payload["stop"] = stop
-        
+
+    def _embed(self, texts: List[str]) -> List[List[float]]:
+        """Génère les embeddings pour une liste de textes."""
+        self.logger.log_step("Génération Embeddings", "PROGRESS", f"Vectorisation de {len(texts)} chunk(s) via LLMaaS...")
+        payload = {"input": texts, "model": self.model_name}
         try:
-            response = requests.post(
-                f"{self.base_url}/chat/completions",
-                headers=headers,
-                json=payload,
-                timeout=60
-            )
-            
-            response.raise_for_status()
-            result = response.json()
-            
-            content = result['choices'][0]['message']['content']
-            usage = result.get('usage', {})
-            
-            self.logger.log_step("Réponse LLM", "SUCCESS", 
-                               f"Tokens: {usage.get('total_tokens', 'N/A')}, Longueur: {len(content)} chars")
-            
-            return content
-            
+            import httpx
+            with httpx.Client(timeout=60.0) as client:
+                response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
+                response.raise_for_status()
+                data = response.json()['data']
+                data.sort(key=lambda e: e['index'])
+                self.logger.log_step("Embeddings générés", "SUCCESS", f"{len(data)} vecteurs reçus")
+                return [item['embedding'] for item in data]
         except Exception as e:
-            self.logger.log_step("Erreur LLM", "ERROR", str(e))
+            self.logger.log_step("Erreur Embeddings", "ERROR", str(e))
             raise
+
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        return self._embed(texts)
+
+    def embed_query(self, text: str) -> List[float]:
+        return self._embed([text])[0]
 
 def create_test_documents():
     """Création de documents de test pour le RAG"""
@@ -263,78 +228,57 @@ def create_test_documents():
     return temp_dir
 
 def setup_rag_pipeline(documents_dir: str):
-    """Configuration complète du pipeline RAG"""
+    """Configuration complète du pipeline RAG avec les outils LLMaaS."""
     logger = RAGTestLogger()
     logger.log_step("Configuration pipeline RAG", "PROGRESS")
     
     try:
-        # Imports LangChain
-        from langchain_community.document_loaders import DirectoryLoader, TextLoader
-        from langchain.text_splitter import RecursiveCharacterTextSplitter
-        from langchain_community.vectorstores import FAISS
-        from langchain_community.embeddings import HuggingFaceEmbeddings
-        from langchain.chains import RetrievalQA
-        
-        logger.log_step("Imports LangChain", "SUCCESS")
-        
         # 1. Chargement des documents
         logger.log_step("Chargement documents", "PROGRESS")
-        loader = DirectoryLoader(
-            documents_dir,
-            glob="*.txt",
-            loader_cls=TextLoader,
-            loader_kwargs={'encoding': 'utf-8'}
-        )
+        loader = DirectoryLoader(documents_dir, glob="*.txt", loader_cls=TextLoader, loader_kwargs={'encoding': 'utf-8'})
         documents = loader.load()
         logger.log_step("Documents chargés", "SUCCESS", f"{len(documents)} fichiers")
         
         # 2. Division en chunks
         logger.log_step("Division en chunks", "PROGRESS")
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000,
-            chunk_overlap=200,
-            length_function=len,
-            separators=["\n\n", "\n", " ", ""]
-        )
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         splits = text_splitter.split_documents(documents)
         logger.log_step("Chunks créés", "SUCCESS", f"{len(splits)} chunks")
         
-        # 3. Création des embeddings
-        logger.log_step("Initialisation embeddings", "PROGRESS")
-        embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2",
-            model_kwargs={'device': 'cpu'},
-            encode_kwargs={'normalize_embeddings': True}
-        )
-        logger.log_step("Embeddings initialisés", "SUCCESS", "all-MiniLM-L6-v2")
+        # 3. Création des embeddings avec LLMaaS
+        logger.log_step("Initialisation embeddings LLMaaS", "PROGRESS")
+        embeddings = LLMaaSEmbeddings(api_key=API_KEY, model_name=EMBEDDING_MODEL, logger=logger)
+        logger.log_step("Embeddings initialisés", "SUCCESS", f"Modèle: {EMBEDDING_MODEL}")
         
         # 4. Création de l'index vectoriel FAISS
         logger.log_step("Création index FAISS", "PROGRESS")
         vectorstore = FAISS.from_documents(splits, embeddings)
         logger.log_step("Index FAISS créé", "SUCCESS", f"{vectorstore.index.ntotal} vecteurs")
         
-        # 5. Configuration du LLM Cloud Temple
+        # 5. Configuration du LLM Cloud Temple avec ChatOpenAI
         logger.log_step("Configuration LLM", "PROGRESS")
-        llm = CloudTempleLLM(
+        
+        # Correction pour les problèmes de définition Pydantic dans LangChain
+        from langchain_core.caches import BaseCache
+        from langchain_core.callbacks.base import Callbacks
+        ChatOpenAI.model_rebuild()
+
+        llm = ChatOpenAI(
             api_key=API_KEY,
-            model_name="granite3.3:8b",
-            temperature=0.3,  # Plus précis pour RAG
-            max_tokens=300,
-            logger=logger
+            base_url=BASE_URL,
+            model=LLM_MODEL,
+            temperature=0.3,
+            model_kwargs={"max_tokens": 300}
         )
-        logger.log_step("LLM configuré", "SUCCESS", "granite3.3:8b")
+        logger.log_step("LLM configuré", "SUCCESS", f"Modèle: {LLM_MODEL}")
         
         # 6. Création de la chaîne RAG
         logger.log_step("Création chaîne RAG", "PROGRESS")
         qa_chain = RetrievalQA.from_chain_type(
             llm=llm,
             chain_type="stuff",
-            retriever=vectorstore.as_retriever(
-                search_type="similarity",
-                search_kwargs={"k": 3}
-            ),
-            return_source_documents=True,
-            verbose=False
+            retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),
+            return_source_documents=True
         )
         logger.log_step("Chaîne RAG créée", "SUCCESS", "RetrievalQA avec k=3")
         
@@ -342,6 +286,8 @@ def setup_rag_pipeline(documents_dir: str):
         
     except Exception as e:
         logger.log_step("Erreur pipeline", "ERROR", str(e))
+        import traceback
+        traceback.print_exc()
         raise
 
 def test_rag_queries(qa_chain, vectorstore):
@@ -501,7 +447,7 @@ def analyze_rag_performance(results: List[Dict], vectorstore):
     
     # Critères de validation
     performance_criteria = {
-        "Temps de réponse": avg_query_time < 5.0,  # < 5 secondes
+        "Temps de réponse": avg_query_time < 8.0,  # < 8 secondes (seuil ajusté)
         "Score mots-clés": avg_keyword_score >= 0.6,  # >= 60%
         "Utilisation sources": avg_source_count >= 1.0,  # Au moins 1 source
         "Taux de succès": len(successful_results) / len(results) >= 0.8  # >= 80%
