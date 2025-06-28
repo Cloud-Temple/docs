@@ -131,6 +131,8 @@
 - ✅ **Contexte** : 8k → 120k tokens  
 - ✅ **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
 - ✅ **6 cas d'usage** : Multilingue, documents, code, vision, sécurité, embarqué
+- ✅ **Tests d'intégration Qdrant** : Ajout d'un test pour la recherche vectorielle avec Qdrant.
+- ✅ **Mise à jour des exemples** : Les exemples de code dans `api.md` et `tutorials.md` ont été mis à jour pour une meilleure robustesse et cohérence avec les tests.
 
 ### 💾 Storage Solutions - Statut : 🔄 EN DÉVELOPPEMENT
 

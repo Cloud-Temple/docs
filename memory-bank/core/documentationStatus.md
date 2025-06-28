@@ -13,6 +13,7 @@
 | Housing | ✅ 100% | ✅ 90% | ✅ 70% | ✅ 80% | 🟢 **BON** |
 | Network Services | 🔴 40% | 🔴 20% | 🔴 10% | 🔴 15% | 🔴 **CRITIQUE** |
 | Storage OSS | 🔴 30% | 🔴 15% | 🔴 5% | 🔴 10% | 🔴 **CRITIQUE** |
+| LLMaaS | ✅ 100% | ✅ 95% | ✅ 85% | ✅ 80% | 🟢 **EXCELLENT** |
 
 ## Détail par Dossier
 
