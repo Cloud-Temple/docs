@@ -41,7 +41,7 @@ cd docker/local
 
 2. Launch the services with Docker Compose:
 ```bash
-docker compose up
+docker-compose up
 ```
 
 3. Access the documentation locally:
