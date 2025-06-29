@@ -307,16 +307,16 @@
       "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
     },
     "llmaas/api.md": {
-      "en": "9e5c91117af556db788e5dd5001e0b4088879e5e33d6acfd36601474b451fe74",
-      "de": "9e5c91117af556db788e5dd5001e0b4088879e5e33d6acfd36601474b451fe74",
-      "es": "9e5c91117af556db788e5dd5001e0b4088879e5e33d6acfd36601474b451fe74",
-      "it": "9e5c91117af556db788e5dd5001e0b4088879e5e33d6acfd36601474b451fe74"
+      "en": "159e6b3db3ed1744874fa51f632776218cdad1b0eeb7ca7b70dc1d8853e4559d",
+      "de": "159e6b3db3ed1744874fa51f632776218cdad1b0eeb7ca7b70dc1d8853e4559d",
+      "es": "159e6b3db3ed1744874fa51f632776218cdad1b0eeb7ca7b70dc1d8853e4559d",
+      "it": "159e6b3db3ed1744874fa51f632776218cdad1b0eeb7ca7b70dc1d8853e4559d"
     },
     "llmaas/concepts.md": {
-      "en": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74",
-      "de": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74",
-      "es": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74",
-      "it": "99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74"
+      "en": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+      "de": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+      "es": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171",
+      "it": "237ab4fa224055fda43016dc550b9bcee03317a403f4b474bef9cd5e38f93171"
     },
     "iaas_vmware/tutorials/deploy_vm_terraform.md": {
       "en": "9465c1d0aa7e2189becbe648bdd5ec7c069412c6f6b67ff1a2a3f945bafbb664",
@@ -583,10 +583,10 @@
       "it": "1f20d193946190785e37277382494da55106e3f910ad83ecd463f6c1dc6d4799"
     },
     "llmaas/tutorials.md": {
-      "en": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358",
-      "de": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358",
-      "es": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358",
-      "it": "b4e6de3906b1c12a1dad4ce30fef431707d9476aa960c6ff8532c98a046cf358"
+      "en": "8be8707d025ff6fc093cf2044f446c1c9ae30bb7a55e6a95f9de5edf33dc5517",
+      "de": "8be8707d025ff6fc093cf2044f446c1c9ae30bb7a55e6a95f9de5edf33dc5517",
+      "es": "8be8707d025ff6fc093cf2044f446c1c9ae30bb7a55e6a95f9de5edf33dc5517",
+      "it": "8be8707d025ff6fc093cf2044f446c1c9ae30bb7a55e6a95f9de5edf33dc5517"
     },
     "network/internet/concepts.md": {
       "en": "c2dd6a65ec727802668afb24afcc24b27f133948d32db7b531929c40f56f866b",
@@ -613,16 +613,16 @@
       "it": "db3ce2f58eb5184299852c59f20707572900010f4605f3c956231106de38952f"
     },
     "llmaas/llmaas.md": {
-      "en": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df",
-      "de": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df",
-      "es": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df",
-      "it": "be1e8af4e119a83dc71f52367c369a709ca924b1c711bf7727fd711a23bd32df"
+      "en": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+      "de": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+      "es": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd",
+      "it": "df18bf33fdd5170a5f046c09261492a6db1d48e6058cdcff66446e5bf2fc60dd"
     },
     "llmaas/models.md": {
-      "en": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e",
-      "de": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e",
-      "es": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e",
-      "it": "a55f3d035d91a710f728b2b98685768a2a7a89465c8c722db8e8dc1d338d7f7e"
+      "en": "5375066821853c4d87b5177e89221a67090a19f8eae9cfbfd467ae3eac40ca1b",
+      "de": "5375066821853c4d87b5177e89221a67090a19f8eae9cfbfd467ae3eac40ca1b",
+      "es": "5375066821853c4d87b5177e89221a67090a19f8eae9cfbfd467ae3eac40ca1b",
+      "it": "5375066821853c4d87b5177e89221a67090a19f8eae9cfbfd467ae3eac40ca1b"
     },
     "network/private_network/tutorials.md": {
       "en": "d634445f1e1091e7094ab9afb6a16486ea076c0219b4e336d2d8ae21836f9049",
@@ -737,8 +737,14 @@
       "de": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
       "es": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
       "it": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2"
+    },
+    "llmaas/rag_explained.md": {
+      "en": "38feacd764d7ea99d4d84ea4f737ca66cb8394214a05aed1ac21f228b1d1da54",
+      "es": "38feacd764d7ea99d4d84ea4f737ca66cb8394214a05aed1ac21f228b1d1da54",
+      "de": "38feacd764d7ea99d4d84ea4f737ca66cb8394214a05aed1ac21f228b1d1da54",
+      "it": "38feacd764d7ea99d4d84ea4f737ca66cb8394214a05aed1ac21f228b1d1da54"
     }
   },
-  "last_update": "2025-06-17T23:37:35.565989",
+  "last_update": "2025-06-29T08:30:00.742168",
   "version": "2.0"
 }
