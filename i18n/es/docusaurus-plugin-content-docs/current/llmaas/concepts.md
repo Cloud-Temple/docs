@@ -56,7 +56,6 @@ Coût total = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M) +  (Token
 ### Tokenización
 
 ```python
-```
 
 # Ejemplo de estimación de tokens
 def estimate_tokens(text: str) -> int:
@@ -127,7 +126,6 @@ Acceso a través de **Console Cloud Temple**:
 El servicio LLMaaS es **compatible** con la API de OpenAI :
 
 ```python
-```
 
 # Migración transparente
 from openai import OpenAI

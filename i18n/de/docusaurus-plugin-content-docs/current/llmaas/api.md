@@ -519,12 +519,8 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 import requests
 import json
 
-```
-
 # Konfiguration
-
 # Es wird empfohlen, Ihren API-Schlüssel durch die Verwendung von Umgebungsvariablen zu schützen.
-
 # Beispiel: API_KEY = os.getenv("LLMAAS_API_KEY")
 API_KEY = "VOTRE_TOKEN_API" 
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -746,8 +742,6 @@ Die LLMaaS-API ist kompatibel mit bestehenden OpenAI-SDKs, indem man die Basis-U
 ```python
 from openai import OpenAI
 
-```
-
 Es wird empfohlen, Ihren API-Schlüssel mit Umgebungsvariablen zu schützen.
 
 # Beispiel: api_key=os.getenv("LLMAAS_API_KEY")
@@ -777,12 +771,10 @@ except Exception as e:
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
-```
+
 
 # Konfiguration des Chat-Modells (kompatibel mit LLMaaS)
-
 # Es wird empfohlen, Ihren API-Schlüssel durch die Verwendung von Umgebungsvariablen zu schützen.
-
 # Beispiel: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="IHR_API_TOKEN",
@@ -858,21 +850,15 @@ class LLMaaSEmbeddings(Embeddings):
 
     def embed_query(self, text: str) -> List[float]:
         return self._embed([text])[0]
-```
 
 # Verwendung
-
 # embeddings = LLMaaSEmbeddings(
-
 #     api_key="IHR_TOKEN_API",
-
 #     base_url="https://api.ai.cloud-temple.com/v1",
-
 #     model_name="granite-embedding:278m"
-
 # )
-
 # vector = embeddings.embed_query("Mon texte à vectoriser")
+```
 
 ## Support
 

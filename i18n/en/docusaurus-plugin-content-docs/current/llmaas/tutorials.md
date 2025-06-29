@@ -26,7 +26,7 @@ The code below defines a class `CloudTempleLLM` that inherits from the base `LLM
 This approach is useful if you want full control over how LangChain interacts with the API, but it's more verbose than using the `ChatOpenAI` client (see [API Reference](./api#langchain)).
 
 ```python
-```
+
 
 # Installing dependencies
 
@@ -172,8 +172,6 @@ import shutil
 from pathlib import Path
 from dotenv import load_dotenv
 from typing import List
-
-```
 
 # --- LangChain Imports ---
 from langchain_core.embeddings import Embeddings
@@ -336,7 +334,7 @@ This tutorial adapts the previous RAG pipeline to use Qdrant.
 For this tutorial, you'll need a Qdrant instance. You can easily launch it with Docker:
 
 ```bash
-```
+
 
 # 1. Download the latest Qdrant image
 docker pull qdrant/qdrant
@@ -358,7 +356,7 @@ from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from typing import List
 from langchain_core.embeddings import Embeddings
-```
+
 
 # (The LLMaaSEmbeddings class is the same as in the previous example,
 
@@ -485,8 +483,6 @@ import requests
 import json
 import os
 
-```
-
 # (The class CloudTempleLLM is the same as in the first example)
 
 # --- Tool Definitions ---
@@ -595,8 +591,6 @@ if __name__ == "__main__":
 
 ```python
 from openai import OpenAI
-
-```
 
 # Configuration for Cloud Temple LLMaaS
 def setup_cloud_temple_client():
@@ -825,7 +819,6 @@ This example shows how to configure LlamaIndex to use the LLMaaS API for text ge
     *   **Query engine** : `.as_query_engine()` creates a simple interface to ask questions to our index. When you call `.query()`, the engine vectorizes your question, finds the most relevant documents in the index, and sends them to the LLM (configured in `Settings`) along with the question to generate a response.
 
 ```python
-```
 
 # Dependencies:
 
