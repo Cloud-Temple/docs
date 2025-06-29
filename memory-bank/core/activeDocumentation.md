@@ -99,14 +99,15 @@
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
 - ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
 - ✅ `llmaas.md` : Vue d'ensemble du service.
-- ✅ `quickstart.md` : Guide de démarrage rapide, testé.
+- ✅ `quickstart.md` : Guide de démarrage rapide, testé et enrichi.
 - ✅ `api.md` : Documentation API complète, alignée avec les tests.
-- ✅ `concepts.md` : Architecture et concepts de l'IA.
-- ✅ `tutorials.md` : **MIS À JOUR (28/06/2025)** - Exemples enrichis et validés par la suite de tests.
-- ✅ `images/` : Structure prête.
+- ✅ `concepts.md` : Architecture et concepts de l'IA, enrichi avec les détails sur la sécurité des prompts et le cycle de vie des modèles.
+- ✅ `tutorials.md` : **MIS À JOUR (29/06/2025)** - Exemples enrichis et validés par la suite de tests.
+- ✅ `rag_explained.md` : **MIS À JOUR (29/06/2025)** - Explications détaillées sur le RAG et les modèles d'embedding.
+- ✅ `images/` : Ajout des images de benchmark.
 - ✅ `licences/` : Système de gestion des licences automatisé.
 
-#### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (28/06/2025)
+#### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (29/06/2025)
 - ✅ **9/9 suites de tests réussies** : Couverture complète des fonctionnalités de l'API.
 - ✅ **Tests RAG validés** :
     - `test_rag_simple.py` : Pipeline de base fonctionnel.
@@ -115,7 +116,7 @@
 - ✅ **Tests SDK et API** : `test_python_sdk.py`, `test_python_basic.py`, etc., tous corrigés et validés.
 - ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble des 9 suites de tests.
 
-#### Documentation des Tutoriels (`/docs/llmaas/tutorials.md`) - ✅ ENRICHIE (28/06/2025)
+#### Documentation des Tutoriels (`/docs/llmaas/tutorials.md`) - ✅ ENRICHIE (29/06/2025)
 - ✅ **Explications détaillées** : Chaque exemple de code est maintenant accompagné d'explications didactiques sur son fonctionnement et son utilité.
 - ✅ **Cohérence avec les tests** : Les exemples de code, en particulier pour les pipelines RAG, ont été alignés sur les implémentations validées dans la suite de tests.
 - ✅ **Instructions Qdrant** : Ajout d'un encart clair expliquant comment lancer le conteneur Docker Qdrant, un prérequis pour le test d'intégration.
@@ -151,6 +152,7 @@
 - ✅ `iaas/` : Contrats IaaS
 - ✅ `network/` : Contrats réseau
 - ✅ `paas/` : Contrats PaaS
+- ✅ `llmaas/` : **NOUVEAU** - Matrice de responsabilité (RACI)
 
 ## Internationalisation - Statut : ✅ STRUCTURE COMPLÈTE
 
@@ -170,6 +172,7 @@
 
 ### Documentation Globale (`/docs/`)
 - ✅ `home.md` : Page d'accueil
+- ✅ `changelog.md` : **NOUVEAU** - Suivi des modifications
 - ✅ `market_place_public.md` : Marketplace public
 - ✅ `privacy.md` : Politique de confidentialité
 
@@ -265,7 +268,7 @@
 
 ## Prochaines Actions Immédiates
 
-1. **Traduire la documentation LLMaaS** : Les fichiers `docs/llmaas/api.md` et `docs/llmaas/tutorials.md` ont été significativement mis à jour et doivent être traduits.
+1. **Traduire la documentation LLMaaS** : L'ensemble de la section `docs/llmaas` a été mis à jour et doit être traduit.
 2. **Compléter Network** : Internet et Private Network
 3. **Développer Storage OSS** : Documentation API S3
 4. **Finaliser Console** : Metrics et Security modules
