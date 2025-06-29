@@ -890,7 +890,7 @@ if __name__ == "__main__":
 
 ## 💡 Exemples Avancés
 
-Vous trouverez dans lerépertoire GitHub du produit une collection d'exemples de code et de scripts démontrant les différentes fonctionnalités et cas d'utilisation de l'offre LLM as a Service (LLMaaS) de Cloud Temple :
+Vous trouverez dans le répertoire GitHub ci-dessous une collection d'exemples de code et de scripts démontrant les différentes fonctionnalités et cas d'utilisation de l'offre LLM as a Service (LLMaaS) de Cloud Temple :
 
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
@@ -906,3 +906,5 @@ Vous y trouverez des guides pratiques pour :
 - __Gestion et Évaluation des Modèles :__ Listage des modèles de langage disponibles via l'API, consultation de leurs spécifications et exécution de tests pour comparer leurs performances.
 
 - __Streaming de Réponses en Temps Réel :__ Démonstration de la capacité à recevoir et afficher les réponses des modèles de manière progressive (token par token), essentielle pour les applications interactives.
+- __Pipeline RAG avec Base de Connaissances en Mémoire :__ Démonstrateur RAG pédagogique pour illustrer le fonctionnement du Retrieval-Augmented Generation. Utilise l'API LLMaaS pour l'embedding et la génération, avec stockage des vecteurs en mémoire (FAISS) pour une compréhension claire du processus.
+- __Pipeline RAG avec Base de Données Vectorielle (Qdrant) :__ Démonstrateur RAG complet et conteneurisé utilisant Qdrant comme base de données vectorielle. L'API LLMaaS est utilisée pour l'embedding des documents et la génération de réponses augmentées.

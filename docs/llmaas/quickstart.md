@@ -112,6 +112,10 @@ Pour votre premier test, utilisez un de ces modèles recommandés :
 
 Consultez le [catalogue complet des modèles](./models) pour plus d'options.
 
+:::tip Astuce pour les modèles Qwen
+Certains modèles de la famille **Qwen** (comme `qwen3:14b` ou `qwen3:30b-a3b`) disposent d'un mode de raisonnement avancé. Vous pouvez forcer son activation en ajoutant `/think` au début de votre prompt, ou le désactiver pour une réponse plus directe et rapide avec `/nothink`.
+:::
+
 ## Paramètres recommandés
 
 Pour débuter, utilisez ces paramètres :
@@ -181,7 +185,7 @@ Pour cet exemple, créez un répertoire `simple_tool_calling` avec les fichiers 
 
 -   `test_tool_calling.py`: Le script principal.
 -   `requirements.txt`: Les dépendances Python.
--   `.env.example`: Un modèle pour votre fichier de configuration.
+-   `.env`: Un modèle pour votre fichier de configuration.
 
 **`requirements.txt`**
 ```txt
@@ -189,7 +193,7 @@ httpx
 python-dotenv
 ```
 
-**`.env.example`**
+**`.env`**
 ```env
 # URL de base de l'API LLMaaS
 API_URL="https://api.ai.cloud-temple.com/v1"

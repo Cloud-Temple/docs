@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Acceso a la API
 
-La API es accesible a través de la Consola Cloud Temple. Puedes gestionar tus claves API, monitorear tu consumo y configurar tus terceros en los ajustes de tu cuenta. La consola también permite visualizar el uso de tus modelos.
+La API está accesible a través de la Consola Cloud Temple. Puede gestionar sus claves API, monitorear su consumo y configurar sus terceros en los ajustes de su cuenta. La consola también permite visualizar el uso de sus modelos.
 
 ## Autenticación
 
@@ -15,13 +15,13 @@ Todas las solicitudes a la API LLMaaS deben incluir un encabezado `Authorization
 
 ## Tipos de contenido
 
-La API LLMaaS siempre acepta JSON en el cuerpo de las solicitudes y devuelve JSON en el cuerpo de las respuestas. Debes enviar el encabezado `content-type: application/json` en tus solicitudes. Si usas los SDKs de cliente, esto se manejará automáticamente.
+La API LLMaaS siempre acepta JSON en el cuerpo de las solicitudes y devuelve JSON en el cuerpo de las respuestas. Debe enviar el encabezado `content-type: application/json` en sus solicitudes. Si utiliza los SDKs de cliente, esto se gestionará automáticamente.
 
 ## Encabezados de respuesta
 
-La API LLMaaS incluye los siguientes encabezados en cada respuesta :
+La API LLMaaS incluye los siguientes encabezados en cada respuesta:
 
-- `id` : Un identificador globalmente único para la solicitud
+- `id` : Un identificador único global para la solicitud
 - `backend` : Información sobre la infraestructura utilizada (engine_type, machine_name)
 
 ## Ejemplos
@@ -78,13 +78,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parámetro     | Tipo    | Descripción                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | El modelo a utilizar (ver [catalogue des modèles](./models)) |
-| `messages`    | array   | Lista de mensajes de la conversación                         |
-| `max_tokens`  | integer | Número máximo de tokens a generar                            |
-| `temperature` | float   | Controla la creatividad (0.0-2.0)                              |
-| `top_p`       | float   | Controla la diversidad de las respuestas                            |
-| `stream`      | boolean | Activa el streaming de la respuesta                             |
-| `user`        | string  | Identificador único del usuario final                     |
+| `model`       | cadena  | El modelo a utilizar (ver [catálogo de modelos](./models))    |
+| `messages`    | matriz  | Lista de los mensajes de la conversación                      |
+| `max_tokens`  | entero  | Número máximo de tokens a generar                             |
+| `temperature` | flotante | Controla la creatividad (0.0-2.0)                           |
+| `top_p`       | flotante | Controla la diversidad de las respuestas                     |
+| `stream`      | booleano | Activa el streaming de la respuesta                           |
+| `user`        | cadena  | Identificador único del usuario final                         |
 
 ## URL base
 
@@ -93,10 +93,11 @@ La URL base para todas las solicitudes de API es :
 https://api.ai.cloud-temple.com/v1/
 ```
 
-## Puntos de acceso disponibles
+## Puntos de conexión disponibles
 
-- `/chat/completions` : Generación de respuestas conversationales
-- `/completions` : Completión de texto simple
+- `/chat/completions` : Generación de respuestas conversacionales
+- `/completions` : Completación de texto simple
+- `/embeddings` : Crea un vector de embedding que representa el texto de entrada
 - `/models` : Lista de modelos disponibles
 
 ### Ejemplo: Lista de modelos
@@ -106,7 +107,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-**Respuesta** :
+**Respuesta**:
 ```json
 {
   "object": "list",

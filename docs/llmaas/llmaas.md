@@ -97,6 +97,7 @@ https://api.ai.cloud-temple.com/v1/
 
 - `/chat/completions` : Génération de réponses conversationnelles
 - `/completions` : Complétion de texte simple
+- `/embeddings` : Crée un vecteur d'embedding représentant le texte d'entrée
 - `/models` : Liste des modèles disponibles
 
 ### Exemple : Liste des modèles

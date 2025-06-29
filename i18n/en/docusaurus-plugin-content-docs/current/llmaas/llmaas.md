@@ -22,7 +22,7 @@ The LLMaaS API always accepts JSON in the request body and returns JSON in the r
 The LLMaaS API includes the following headers in each response:
 
 - `id` : A globally unique identifier for the request
-- `backend` : Information about the infrastructure used (engine_type, machine_name)
+- `backend` : Information on the infrastructure used (engine_type, machine_name)
 
 ## Examples
 
@@ -44,7 +44,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   }'
 ```
 
-### Response
+### Answer
 ```json
 {
   "backend": {
@@ -56,7 +56,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
       "finish_reason": "stop",
       "index": 0,
       "message": {
-        "content": "Hello! I am a virtual language model...",
+        "content": "Bonjour ! Je suis un modèle de langage virtuel...",
         "role": "assistant"
       }
     }
@@ -88,7 +88,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 ## Base URL
 
-The base URL for all API requests is:
+The base URL for all API requests is :
 ```
 https://api.ai.cloud-temple.com/v1/
 ```
@@ -97,16 +97,17 @@ https://api.ai.cloud-temple.com/v1/
 
 - `/chat/completions` : Conversational response generation
 - `/completions` : Simple text completion
+- `/embeddings` : Creates an embedding vector representing the input text
 - `/models` : List of available models
 
-### Example: List of models
+### Example: Model List
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-**Response** :
+**Response**:
 ```json
 {
   "object": "list",

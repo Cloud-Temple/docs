@@ -390,30 +390,6 @@ Mise à jour mineure de Mistral Small 3.1, améliorant le suivi d'instructions, 
 
 ---
 
-### Mistral Small 3.2
-**Mistral AI • 24B paramètres • Contexte : 120 000 tokens**
-
-Mise à jour mineure de Mistral Small 3.1, améliorant le suivi d'instructions, la robustesse du function calling et réduisant les erreurs de répétition.
-
-**Spécifications techniques :**
-- **Vitesse** : 50 tokens/seconde tokens/seconde
-- **Consommation** : 5.28 kWh/million tokens
-- **Licence** : Apache 2.0
-- **Localisation** : FR 🇫🇷
-
-**Capacités :**
-✅ Outils/Agent • ✅ Vision • ❌ Raisonnement • ✅ Sécurité
-
-**Tags :** `Vision` `Agent` `Sécurité` `Instruction Following`
-
-**Cas d'usage :**
-- Agents conversationnels avec un suivi d'instructions amélioré
-- Intégration robuste avec des outils externes via function calling
-- Applications nécessitant une grande fiabilité pour éviter les répétitions
-- Cas d'usage identiques à Mistral Small 3.1 avec des performances accrues
-
----
-
 ### DeepCoder
 **Agentica x Together AI • 14B paramètres • Contexte : 32 000 tokens**
 

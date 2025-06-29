@@ -2,11 +2,11 @@
 
 ## Service Overview
 
-**LLMaaS (Large Language Model as a Service)** est la nouvelle offre Cloud Temple dédiée à l'intelligence artificielle générative, proposant 36 modèles de langage large en conformité **SecNumCloud + HDS + Souveraineté + C5**.
+**LLMaaS (Large Language Model as a Service)** est la nouvelle offre Cloud Temple dédiée à l'intelligence artificielle générative, proposant 45 modèles de langage large en conformité **SecNumCloud + HDS + Souveraineté + C5**.
 
 ### Positionnement Stratégique
 - **Premier cloud souverain français** proposant des LLM SecNumCloud
-- **36 modèles** : du micro-modèle (278M) au modèle extrêmement large (671B)
+- **45 modèles** : du micro-modèle (278M) au modèle extrêmement large (671B)
 - **Localisation 100% France** 🇫🇷
 - **Conformité maximale** : SecNumCloud ✅ HDS ✅ Souveraineté ✅ C5 ✅
 
@@ -21,20 +21,22 @@ docs/llmaas/
 ├── concepts.md            # [RÉDIGÉ] Architecture IA
 ├── quickstart.md          # [RÉDIGÉ] Premier déploiement
 ├── tutorials.md           # [RÉDIGÉ] Guides avancés
+├── rag_explained.md       # [AJOUTÉ] Explication détaillée du RAG
+├── changelog.md           # [AJOUTÉ] Suivi des modifications
 └── images/               # Screenshots interface LLM
 ```
 
 ### Génération Automatique
-- **Source** : `memory-bank/models_config.yaml` (36 modèles)
-- **Script** : `scripts/generate_models_doc.py`
+- **Source** : `memory-bank/models_config.yaml` (45 modèles)
+- **Script** : `scripts/generate_models_doc/generate_models_doc.py`
 - **Commande** : `npm run generate:models`
 - **Sortie** : `docs/llmaas/models.md` (documentation Docusaurus)
 
 ## Configuration Modèles
 
 ### Statistiques Globales
-- **36 modèles** : 6 grande taille + 34 spécialisés
-- **Contexte** : 8k → 120k tokens
+- **45 modèles** : 8 grande taille + 37 spécialisés
+- **Contexte** : 8k → 128k tokens
 - **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
 
 ### Catégories de Modèles

@@ -12,11 +12,11 @@ This guide allows you to make your first request to the LLMaaS API in less than 
 - Access to the Cloud Temple Console
 - Account with LLMaaS permissions enabled
 
-## Step 1: Generate an API key
+## Step 1: Generate an API Key
 
-1. Log in to the Cloud Temple Console
-2. Access your account settings
-3. Generate a new LLMaaS API key
+1. Log in to the Cloud Temple Console  
+2. Access your account settings  
+3. Generate a new LLMaaS API key  
 4. Copy and save the key (it will only be displayed once)
 
 ## Step 2: Test the connection
@@ -63,6 +63,7 @@ pip install requests
 import requests
 import json
 
+
 # Configuration
 API_KEY = "YOUR_API_KEY"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -79,7 +80,7 @@ payload = {
     "messages": [
         {
             "role": "user",
-            "content": "Explique-moi la photosynthèse en 3 phrases."
+            "content": "Explain photosynthesis in 3 sentences."
         }
     ],
     "max_tokens": 150,
@@ -96,7 +97,7 @@ if response.status_code == 200:
     result = response.json()
     print(result["choices"][0]["message"]["content"])
 else:
-    print(f"Erreur: {response.status_code}")
+    print(f"Error: {response.status_code}")
     print(response.text)
 ```
 
@@ -104,13 +105,17 @@ else:
 
 For your first test, use one of these recommended models:
 
-| Model           | Usage                     | Speed     | Note                      |
-| --------------- | ------------------------- | --------- | ------------------------- |
-| `granite3.3:8b` | General purpose, balanced | Fast      | Recommended for beginners |
-| `qwen3:14b`     | Complex tasks             | Medium    | Visible "thinking" mode   |
-| `gemma3:4b`     | Rapid tests, prototyping  | Very fast | Detailed answers          |
+| Model | Usage | Speed | Rating |
+|--------|--------|---------|------|
+| `granite3.3:8b` | General, balanced | Fast | Recommended for beginners |
+| `qwen3:14b` | Complex tasks | Medium | Visible 'thinking' mode |
+| `gemma3:4b` | Quick tests, prototyping | Very fast | Detailed answers |
 
 Check the [complete model catalog](./models) for more options.
+
+:::tip Tip for Qwen models
+Some models from the **Qwen** family (like `qwen3:14b` or `qwen3:30b-a3b`) have an advanced reasoning mode. You can force its activation by adding `/think` at the beginning of your prompt, or disable it for a more direct and faster response with `/nothink`.
+:::
 
 ## Recommended Parameters
 
@@ -119,13 +124,13 @@ For starters, use these parameters:
 ```json
 {
   "temperature": 0.7,    // Moderate creativity
-  "max_tokens": 200,     // Concise answers
+  "max_tokens": 200,     // Concise responses
   "top_p": 1.0,         // Standard diversity
   "stream": false       // Full response at once
 }
 ```
 
-## Handling of Common Errors
+## Common Error Handling
 
 ### 401 Error - Unauthorized
 ```json
@@ -133,13 +138,13 @@ For starters, use these parameters:
 ```
 **Solution**: Check your API key in the Cloud Temple Console.
 
-### 400 Error - Model not found
+### 400 Error - Model Not Found
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
-**Solution**: Use `/v1/models` to list available models.
+**Solution** : Use /v1/models to list available models.
 
-### 429 Error - Rate Limit
+### Error 429 - Rate Limit
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
@@ -153,7 +158,7 @@ In the Cloud Temple Console, you can:
 - Set up cost alerts
 - Analyze performance by model
 
-## Going Further: Examples of Tool Calling and Vision
+## Going Further: Tool Calling and Vision Examples
 
 This section provides simple and standalone Python scripts to illustrate specific features of the LLMaaS API. Each example is designed to be run directly, with clear instructions for configuration and use.
 
@@ -165,12 +170,12 @@ This section provides simple and self-contained Python scripts to illustrate spe
 
 ### 1. Simple Tool Calling Example
 
-"Tool Calling" (or function calling) allows a language model to request the execution of a function you've defined in your code. This is a powerful feature to connect LLMs to external tools (APIs, databases, etc.).
+"Tool Calling" (or function call) allows a language model to request the execution of a function you have defined in your code. This is a powerful feature to connect LLMs to external tools (APIs, databases, etc.).
 
 The flow is as follows:
 1. The user asks a question that requires a tool (e.g., "What's the weather like?").
 2. You send the question and the list of available tools to the API.
-3. Instead of answering directly, the model returns a `tool_calls` request asking to execute a specific function with certain arguments.
+3. The model, instead of answering directly, returns a `tool_calls` request asking to execute a specific function with certain arguments.
 4. Your code executes the requested function.
 5. You return the function's result to the model.
 6. The model uses this result to formulate a final answer to the user.
@@ -181,7 +186,7 @@ For this example, create a directory `simple_tool_calling` with the following fi
 
 -   `test_tool_calling.py`: The main script.
 -   `requirements.txt`: Python dependencies.
--   `.env.example`: A template for your configuration file.
+-   `.env`: A template for your configuration file.
 
 **`requirements.txt`**
 ```txt
@@ -189,23 +194,23 @@ httpx
 python-dotenv
 ```
 
-**`.env.example`**
-
+**`.env`**
 ```env
+YOUR_API_KEY=your_api_key_here
 
 # Base URL of the LLMaaS API
 API_URL="https://api.ai.cloud-temple.com/v1"
 
-# Your API Key LLMaaS
+# Your LLMaaS API Key
 API_KEY="your_api_key_here"
 
-# Optional: Default model to use for testing
+# Optional: Default model to use for the test
 
-# Make sure this model is compatible with the "tool calling"
+# Make sure this model is compatible with "tool calling"
 DEFAULT_MODEL="qwen3:30b-a3b"
 ```
 
-**Source Code (`test_tool_calling.py`)**
+**Code Source (`test_tool_calling.py`)**
 
 ```python
 
@@ -230,7 +235,7 @@ load_dotenv()
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
 
-# Use a known model to properly handle tool calling
+# Use a known model to effectively manage tool calling
 MODEL = os.getenv("DEFAULT_MODEL", "qwen3:30b-a3b")
 
 # --- Tool Definition ---
@@ -241,7 +246,7 @@ def calculator(expression: str) -> str:
     Example: "2 + 2 * 10"
     """
     try:
-        # Security: do not use eval() directly in production without strict validation.
+        # Security: Do not use eval() directly in production without strict validation.
         # For this example, we limit the allowed characters.
         allowed_chars = "0123456789+-*/(). "
         if not all(char in allowed_chars for char in expression):
@@ -285,7 +290,7 @@ def run_chat_with_tool_calling():
     Main function that runs the test scenario.
     """
     if not API_KEY:
-        print("❌ Error: The API_KEY environment variable is not set.")
+        print("❌ Error: The environment variable API_KEY is not defined.")
         print("Please create a .env file or export it in your session.")
         return
 
@@ -321,7 +326,7 @@ def run_chat_with_tool_calling():
 
     except httpx.HTTPStatusError as e:
         print(f"❌ API Error (HTTP Status) during step 1: {e}")
-        print(f"API response : {e.response.text}")
+        print(f"API response: {e.response.text}")
         return
     except httpx.RequestError as e:
         print(f"❌ API Error (Request) during step 1: {e}")
@@ -351,7 +356,7 @@ def run_chat_with_tool_calling():
     if function_name in TOOL_FUNCTIONS_MAP:
         function_to_call = TOOL_FUNCTIONS_MAP[function_name]
         try:
-            # The arguments are a JSON string, they need to be parsed
+            # The arguments are a JSON string, need to parse them
             function_args = json.loads(function_args_str)
             tool_result = function_to_call(**function_args)
             print(f"   - Tool result : {tool_result}")
@@ -375,7 +380,7 @@ def run_chat_with_tool_calling():
         }
     )
 
-    # Make another call WITHOUT tools to get the final response
+    # Make another call WITHOUT tools this time to get the final response
     payload_final = {
         "model": MODEL,
         "messages": messages,
@@ -392,7 +397,7 @@ def run_chat_with_tool_calling():
             response_final.raise_for_status()
     except httpx.HTTPStatusError as e:
         print(f"❌ API Error (HTTP Status) during step 2: {e}")
-        print(f"API response : {e.response.text}")
+        print(f"API response: {e.response.text}")
         return
     except httpx.RequestError as e:
         print(f"❌ API Error (Request) during step 2: {e}")
@@ -415,7 +420,7 @@ if __name__ == "__main__":
 
 **Usage**
 
-1.  **Install the dependencies:**
+1.  **Install dependencies:**
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
@@ -426,7 +431,7 @@ if __name__ == "__main__":
     python tests/llmaas/test_tool_calling.py
     ```
 
-### 2. Simple Example of Vision (Multimodal)
+### 2. Simple Vision Example (Multimodal)
 
 Multimodal models can analyze both text and images. This example shows how to send an image and a question to the model to get a description of what it "sees".
 
@@ -448,12 +453,12 @@ Pillow
 
 **`.env.example`**
 ```env
-VARIABLES
+
 
 # Base URL of the LLMaaS API
 API_URL="https://api.ai.cloud-temple.com/v1"
 
-# Your LLMaaS API Key
+# Your API key LLMaaS
 API_KEY="your_api_key_here"
 
 # Optional: Default model to use for the test
@@ -465,6 +470,7 @@ DEFAULT_MODEL="granite3.2-vision:2b"
 **Source Code (`test_vision.py`)**
 
 ```python
+
 # -*- coding: utf-8 -*-
 """
 Simple example of using the LLMaaS Vision API.
@@ -514,7 +520,7 @@ def generate_example_image():
         from PIL import Image, ImageDraw
         if not os.path.exists(IMAGE_PATH):
             print(f"🖼️ The image '{IMAGE_PATH}' does not exist, generating...")
-            # Create a simple image: a red square on white background
+            # Create a simple image: a red square on a white background
             img = Image.new('RGB', (200, 200), color = 'white')
             draw = ImageDraw.Draw(img)
             draw.rectangle([50, 50, 150, 150], fill='red', outline='black')
@@ -534,10 +540,10 @@ def run_vision_test():
     Main function that runs the vision test scenario.
     """
     if not API_KEY:
-        print("❌ Error: The API_KEY environment variable is not set.")
+        print("❌ Error: The environment variable API_KEY is not set.")
         return
 
-    # Generate example image if needed
+    # Generate example image if necessary
     generate_example_image()
 
     # Encode image to base64
@@ -569,10 +575,10 @@ def run_vision_test():
                 ]
             }
         ],
-        "max_tokens": 500 # Limit the description length
+        "max_tokens": 500 # Limit the length of the description
     }
 
-    print("➡️ Sending the request to the vision LLM...")
+    print("➡️ Sending request to the vision LLM...")
     try:
         with httpx.Client() as client:
             response = client.post(
@@ -626,7 +632,7 @@ Once your first test is successful:
 
 ## Support
 
-In case of issues:
+In case of an issue:
 - Consult the [complete API documentation](./api)
 - Check the service status in the Console
 - Contact support via the Cloud Temple Console

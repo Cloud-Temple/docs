@@ -1,8 +1,14 @@
-# Comprendre le RAG : L'Embedding et la Distance Vectorielle
+# Le RAG : Interroger vos Données avec un LLM
 
-Le script `simple-rag-demo` est une excellente illustration du fonctionnement d'un système RAG (Retrieval-Augmented Generation). Cette page explique les concepts fondamentaux qui le font fonctionner : l'**embedding** et la **recherche par similarité**.
+Ce document explique les concepts fondamentaux derrière la technique de **Retrieval-Augmented Generation (RAG)**.
 
-## Le Problème : Les LLMs n'ont pas de mémoire à long terme
+:::tip Code d'Exemple Disponible
+Les concepts abordés ici sont illustrés dans un démonstrateur complet et fonctionnel disponible sur notre GitHub. Il constitue une excellente base de départ pour comprendre le fonctionnement pratique d'un pipeline RAG.
+
+➡️ **[Accéder au code du Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+:::
+
+## Le problème : Les LLMs n'ont pas de mémoire à long terme
 
 Un grand modèle de langage (LLM) comme Mistral ou Granite est très puissant, mais il ne connaît que les données sur lesquelles il a été entraîné. Il ne connaît pas vos documents internes, les derniers articles de presse, ou les spécificités de votre métier.
 
@@ -12,13 +18,17 @@ Le processus se déroule en deux temps :
 1.  **Retrieval (Récupération)** : Trouver les bons documents.
 2.  **Augmented Generation (Génération Augmentée)** : Utiliser ces documents pour générer une réponse.
 
-C'est l'étape de "Retrieval" qui nous intéresse ici. Comment un ordinateur peut-il "comprendre" qu'une question est sémantiquement proche d'un paragraphe ? La réponse est : avec des vecteurs.
+C'est cette étape de **Retrieval** qui est au cœur de notre sujet. Comment un ordinateur parvient-il à "comprendre" qu'une question et un paragraphe parlent de la même chose ? La magie opère grâce aux **vecteurs**.
 
 ![Schéma conceptuel du RAG](./images/rag_concept_overview.png)
 
-## Étape 1 : L'Embedding - Transformer les Mots en Nombres
+## Étape 1 : L'Embedding : Transformer les Mots en Nombres
 
 Un ordinateur ne comprend pas les mots, mais il est excellent pour manipuler les nombres. L'**embedding** est le processus qui traduit un texte (un mot, une phrase, un document) en une liste de nombres, appelée **vecteur**.
+
+:::tip Qu'est-ce qu'un vecteur ?
+En termes simples, un vecteur est une liste de nombres qui représente un point dans un espace à plusieurs dimensions. Chaque nombre dans le vecteur correspond à une coordonnée sur un "axe" de cet espace. Pour les embeddings de texte, ces axes ne sont pas `x`, `y`, `z` mais des dimensions sémantiques abstraites (par exemple, un axe pourrait représenter le concept de "royauté", un autre celui de "félin", etc.).
+:::
 
 `"Le chat est sur le tapis."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
@@ -26,11 +36,40 @@ Un ordinateur ne comprend pas les mots, mais il est excellent pour manipuler les
 
 Ce vecteur n'est pas aléatoire. Il représente la "position" du texte dans un espace sémantique multidimensionnel. Des textes ayant un sens similaire auront des vecteurs qui pointent dans des directions similaires.
 
-**Analogie** : Imaginez une carte géographique. "Paris" et "France" seraient très proches, tout comme "Rome" et "Italie". "Paris" serait plus éloigné de "Rome" que de "France", mais plus proche que de "Tokyo". L'embedding fait la même chose, mais avec des milliers de "dimensions" au lieu de deux, pour capturer des nuances de sens complexes.
+:::tip Analogie Géographique
+Imaginez une carte géographique. "Paris" et "France" seraient très proches, tout comme "Rome" et "Italie". "Paris" serait plus éloigné de "Rome" que de "France", mais plus proche que de "Tokyo". L'embedding fait la même chose, mais avec des milliers de "dimensions" au lieu de deux, pour capturer des nuances de sens complexes.
+:::
 
 Dans notre script, l'endpoint `/v1/embeddings` et le modèle `granite-embedding:278m` sont responsables de cette traduction.
 
-## Étape 2 : La Recherche - Mesurer la Proximité Sémantique
+### Focus sur les Modèles Granite Embedding
+
+Les embeddings font partie intégrante de l’écosystème LLM. Un moyen précis et efficace de représenter les mots, les requêtes et les documents sous forme numérique est essentiel pour toute une série de tâches d’entreprise, y compris la recherche sémantique, la recherche vectorielle et la RAG, ainsi que pour maintenir des bases de données vectorielles efficaces. Un modèle d’embedding efficace peut notablement améliorer la compréhension de l’intention de l’utilisateur par le système et augmenter la pertinence des informations et des sources en réponse à une requête.
+
+Alors que les deux dernières années ont vu la prolifération de LLM autorégressifs open source de plus en plus compétitifs pour des tâches comme la génération et la synthèse de texte, les modèles d’embedding open source publiés par les principaux fournisseurs sont relativement rares.
+
+#### Pourquoi Granite Embedding ?
+
+Les nouveaux modèles **Granite Embedding** d'IBM, que nous mettons à votre disposition, sont une évolution améliorée de la famille Slate de modèles de langage encodeurs uniquement basés sur RoBERTa. Ils se distinguent sur plusieurs points cruciaux pour un usage en entreprise :
+
+1.  **Entraînement Éthique et Commercialement Sûr** : Alors que la grande majorité des modèles d'embedding ouverts du classement MTEB Hugging Face s'appuient sur des ensembles de données d'entraînement uniquement sous licence à des fins de recherche (comme MS-MARCO), IBM a vérifié l'éligibilité commerciale de toutes les sources de données utilisées pour entraîner Granite Embedding.
+2.  **Indemnisation de Propriété Intellectuelle** : Soulignant le soin apporté à son utilisation en entreprise, IBM prend en charge Granite Embedding avec le même niveau d’indemnisation non plafonnée pour les réclamations de tiers liées à la propriété intellectuelle que celle prévue pour l’utilisation d’autres modèles développés par IBM.
+3.  **Performance et Efficacité** : Les efforts d’IBM dans l’organisation et le filtrage des données d’entraînement n’ont pas empêché les modèles Granite Embedding de suivre le rythme des principaux modèles d’embedding open source de taille similaire.
+
+Les benchmarks ci-dessous illustrent deux avantages clés :
+
+-   **Précision de la Recherche** : Le premier graphique montre que les modèles Granite (en bleu) sont très compétitifs, voire supérieurs, à des modèles de taille similaire sur des tâches de recherche sémantique (`Retrieval Tasks`).
+-   **Vitesse d'Inférence** : Le second graphique montre que les modèles Granite sont **nettement plus rapides** (temps par requête plus faible) que la plupart des alternatives populaires, ce qui est un avantage considérable pour les applications nécessitant des réponses en temps réel.
+
+![Benchmark de Performance des Modèles Granite](./images/granite_benchmark_performance.png)
+*Comparaison des performances sur des tâches de recherche (BEIR) et de recherche de code (CoIR).*
+
+![Benchmark de Vitesse des Modèles Granite](./images/granite_benchmark_speed.png)
+*Comparaison de la latence (temps par requête en secondes) entre différents modèles d'embedding.*
+
+C'est pour cet équilibre entre **performance, vitesse, sécurité juridique et éthique** que nous avons choisi d'intégrer le modèle `granite-embedding:278m` (la version multilingue la plus puissante) comme service d'embedding par défaut.
+
+## Étape 2 : La Recherche : Mesurer la Proximité Sémantique
 
 Une fois que notre question et tous nos documents sont transformés en vecteurs, la recherche devient un problème mathématique : **trouver le vecteur de document le plus "proche" du vecteur de la question.**
 

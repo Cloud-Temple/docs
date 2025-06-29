@@ -487,22 +487,18 @@ class TranslationUI:
             if self._live and self._live.is_started:
                 self._update_layout()
     
-    def log_api_request(self, attempt: int, model: str, system_prompt: str, user_prompt: str, system_tokens: int, user_tokens: int) -> None:
+    def log_api_request(self, attempt: int, model: str, system_prompt: str, user_prompt: str, system_tokens: int, user_tokens: int, max_completion_tokens: int) -> None:
         """Affiche les détails de la requête API de manière structurée."""
         total_tokens = system_tokens + user_tokens
         
         self.add_log(f"🔄 Requête API (Tentative {attempt}) - Modèle: {model}", "debug")
-        self.add_log(f"   📊 Tokens System: {system_tokens:,} | User: {user_tokens:,} | Total: {total_tokens:,}", "debug")
+        self.add_log(f"   📊 Tokens System: {system_tokens:,} | User: {user_tokens:,} | Total: {total_tokens:,} | Max Completion: {max_completion_tokens:,}", "debug")
         
         if self.show_system_prompt and self.debug:
-            # Affichage du prompt système (tronqué)
-            prompt_preview = system_prompt[:200] + "..." if len(system_prompt) > 200 else system_prompt
-            self.add_log(f"   🤖 Prompt Système: {prompt_preview}", "debug")
+            self.add_log(f"   🤖 Prompt Système: {system_prompt}", "debug")
         
         if self.debug:
-            # Affichage du chunk (tronqué)
-            chunk_preview = user_prompt[:200] + "..." if len(user_prompt) > 200 else user_prompt
-            self.add_log(f"   📝 Chunk: {chunk_preview}", "debug")
+            self.add_log(f"   📝 Chunk: {user_prompt}", "debug")
     
     def log_api_response(self, attempt: int, status: int, response_content: str, prompt_tokens: int, completion_tokens: int, total_tokens: int) -> None:
         """Affiche les détails de la réponse API de manière structurée."""
@@ -510,9 +506,7 @@ class TranslationUI:
         self.add_log(f"   📊 Tokens IN: {prompt_tokens:,} | OUT: {completion_tokens:,} | Total: {total_tokens:,}", "debug")
         
         if self.debug and response_content:
-            # Affichage du résultat (tronqué)
-            result_preview = response_content[:200] + "..." if len(response_content) > 200 else response_content
-            self.add_log(f"   📄 Résultat: {result_preview}", "debug")
+            self.add_log(f"   � Résultat: {response_content}", "debug")
     
     def stop_live_display(self) -> None:
         """Arrête l'affichage en temps réel."""
