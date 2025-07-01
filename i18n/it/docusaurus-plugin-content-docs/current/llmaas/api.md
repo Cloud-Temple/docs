@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Documentazione API LLMaaS
 
-## URL di Base
+## URL di base
 
 ```
 https://api.ai.cloud-temple.com/v1
@@ -13,7 +13,7 @@ https://api.ai.cloud-temple.com/v1
 
 ## Autenticazione
 
-Tutte le richieste richiedono un header `Authorization` con il tuo token API :
+Tutte le richieste richiedono un'intestazione `Authorization` con il tuo token API :
 
 ```
 Authorization: Bearer VOTRE_TOKEN_API
@@ -23,32 +23,35 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 ### Il Principio dei Terzi: Livello di Accesso, Budget e Capacità
 
-Il nostro sistema di terzi è progettato come **fascie di servizio complete** che definiscono tre aspetti chiave del vostro utilizzo:
+Il nostro sistema di terzi è progettato come **buste di servizio complete** che definiscono tre aspetti chiave del vostro utilizzo:
 
 1.  **Un Livello di Accesso (Credito d'Acquisto)** : Per i Terzi 1 a 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e il budget del livello scelto.
-2.  **Un Limite di Budget Mensile** : È il tetto della vostra spesa mensile, garantendovi un controllo totale dei vostri costi.
-3.  **Una Capacità Tecnica** : Sono i limiti di throughput (token al giorno e all'ora) che garantiscono una performance stabile e prevedibile per il vostro volume di chiamate.
+2.  **Un Limite di Budget Mensile** : È il tetto della vostra consumazione mensile, garantendovi un controllo totale dei vostri costi.
+3.  **Una Capacità Tecnica** : Sono i limiti di throughput (token al giorno e all'ora) che garantiscono una prestazione stabile e prevedibile per il vostro volume di chiamate.
 
-La scelta di un terzo è quindi un equilibrio tra l'investimento iniziale, il budget mensile preventivato e la capacità tecnica richiesta. La vostra spesa all'interno di questa fascia viene poi fatturata in base ai tariffe vigenti.
+La scelta di un terzo è quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. La vostra consumazione all'interno di questa busta viene poi fatturata in base ai prezzi vigenti.
 
 ### Tabella dei Tier
 
-| Tier | Credito d'Acquisto | Limite Mensile | Tokens Output/Ora | Tokens Output/Giorno | Descrizione |
-|------|-------------------|------------------|--------------------|---------------------|-----------| 
-| **Tier 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Utilizzo standard |
-| **Tier 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Utilizzo professionale |
-| **Tier 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Volume elevato |
-| **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Aziendale |
-| **Fatturazione Mensile** | N/A | Illimitata | Priorità elevata | Priorità elevata | Contatto commerciale |
+| Tier                     | Credito d'Acquisto | Limite Mensile | Tokens Output/Ora | Tokens Output/Giorno | Descrizione            |
+| ------------------------ | ------------------ | -------------- | ----------------- | -------------------- | ---------------------- |
+| **Tier 1**               | 200 €              | 1.000 €        | 150.000           | 3.600.000            | Utilizzo standard      |
+| **Tier 2**               | 500 €              | 3.000 €        | 300.000           | 7.200.000            | Utilizzo professionale |
+| **Tier 3**               | 1.000 €            | 5.000 €        | 450.000           | 10.800.000           | Volume elevato         |
+| **Tier 4**               | 4.000 €            | 10.000 €       | 600.000           | 14.400.000           | Aziendale              |
+| **Fatturazione Mensile** | N/A                | Illimitata     | Priorità elevata  | Priorità elevata     | Contatto commerciale   |
 
-**Nota** : I limiti di throughput sono calcolati in base ai tokens di output. La tariffa dei tokens varia in base all'uso:
-- **Tokens di input** : 0,90 € / milione
-- **Tokens di output (standard)** : 4,00 € / milione
-- **Tokens di output (ragionatore)** : 21,00 € / milione (si applica ai modelli più avanzati per compiti complessi di tipo agente o ragionamento)
+**Nota** : I limiti di throughput sono calcolati in base ai token di output. La tariffa dei token varia in base all'uso:
+- **Token di input** : 0,90 € / milione
+- **Token di output (standard)** : 4,00 € / milione
+- **Token di output (ragionatore)** : 21,00 € / milione (si applica ai modelli più avanzati per compiti complessi di tipo agente o ragionamento)
 
-### Intestazioni di Limiti
+#### **Fatturazione Audio**
+- **Trascrizione Audio** : 0.01 € / minuto (ogni minuto iniziato è dovuto)
 
-Le risposte includono delle intestazioni informative :
+### Headers di Limite
+
+Le risposte includono degli headers informativi :
 
 ```
 X-RateLimit-Limit-Requests: 1000
@@ -56,12 +59,12 @@ X-RateLimit-Remaining-Requests: 999
 X-RateLimit-Reset-Requests: 1640995200
 ```
 
-### Errore 429 - Limite raggiunta
+### Errore 429 - Limite raggiunto
 
 ```json
 {
   "error": {
-    "message": "Rate limit exceeded. Please upgrade your tier or try again later.",
+    "message": "Limite di velocità superata. Per favore aggiorna il tuo piano o riprova più tardi.",
     "type": "rate_limit_error",
     "code": "rate_limit_exceeded"
   }
@@ -95,19 +98,19 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 #### Parametri
 
-| Parametro | Tipo | Obbligatorio | Descrizione |
-|-----------|------|-------------|-------------|
-| `model` | string | ✅ | ID del modello (vedere [catalogo](./models)) |
-| `messages` | array | ✅ | Conversazione (role: system/user/assistant) |
-| `stream` | boolean | ❌ | Attiva il streaming (default: false) |
-| `temperature` | float | ❌ | Creatività 0.0-2.0 (default: 0.7) |
-| `max_tokens` | integer | ❌ | Limite di token (default: 1024) |
-| `top_p` | float | ❌ | Campionamento nucleus 0.0-1.0 (default: 1.0) |
-| `presence_penalty` | float | ❌ | Penalità presenza -2.0 a 2.0 (default: 0) |
-| `frequency_penalty` | float | ❌ | Penalità frequenza -2.0 a 2.0 (default: 0) |
-| `user` | string | ❌ | ID utente univoco |
-| `tools` | array | ❌ | Elenco degli strumenti che il modello può chiamare. |
-| `tool_choice`| string/oggetto | ❌ | Controlla se il modello deve chiamare uno strumento. "none", "auto", o `{"type": "function", "function": {"name": "my_function"}}`. |
+| Parametro           | Tipo           | Obbligatorio | Descrizione                                                                                                                         |
+| ------------------- | -------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `model`             | string         | ✅           | ID del modello (vedere [catalogo](./models))                                                                                        |
+| `messages`          | array          | ✅           | Conversazione (role: system/user/assistant)                                                                                         |
+| `stream`            | boolean        | ❌           | Abilita il streaming (predefinito: false)                                                                                           |
+| `temperature`       | float          | ❌           | Creatività 0.0-2.0 (predefinito: 0.7)                                                                                               |
+| `max_tokens`        | integer        | ❌           | Limite di token (predefinito: 1024)                                                                                                 |
+| `top_p`             | float          | ❌           | Campionamento nucleus 0.0-1.0 (predefinito: 1.0)                                                                                    |
+| `presence_penalty`  | float          | ❌           | Penalità presenza -2.0 a 2.0 (predefinito: 0)                                                                                       |
+| `frequency_penalty` | float          | ❌           | Penalità frequenza -2.0 a 2.0 (predefinito: 0)                                                                                      |
+| `user`              | string         | ❌           | ID utente univoco                                                                                                                   |
+| `tools`             | array          | ❌           | Elenco degli strumenti che il modello può chiamare.                                                                                 |
+| `tool_choice`       | string/oggetto | ❌           | Controlla se il modello deve chiamare uno strumento. "none", "auto", o `{"type": "function", "function": {"name": "my_function"}}`. |
 
 #### Risposta standard
 
@@ -135,7 +138,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 }
 ```
 
-#### Risposta con chiamata a strumenti
+#### Risposta con Chiamata a Strumenti
 
 Se il modello decide di chiamare uno strumento, la risposta avrà un `finish_reason` di `tool_calls` e il messaggio conterrà un array `tool_calls`.
 
@@ -157,7 +160,7 @@ Se il modello decide di chiamare uno strumento, la risposta avrà un `finish_rea
             "type": "function",
             "function": {
               "name": "get_current_weather",
-              "arguments": "{\n  \"location\": \"Paris, France\",\n  \"unit\": \"celsius\"\n}"
+              "arguments": "{\n  \"location\": \"Parigi, Francia\",\n  \"unit\": \"gradi Celsius\"\n}"
             }
           }
         ]
@@ -181,7 +184,7 @@ Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento da part
   "messages": [
     {
       "role": "user",
-      "content": "Quel tempo fa a Parigi?"
+      "content": "Che tempo fa a Parigi?"
     },
     {
       "role": "assistant",
@@ -191,7 +194,7 @@ Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento da part
           "type": "function",
           "function": {
             "name": "get_current_weather",
-            "arguments": "{\"location\": \"Paris, France\", \"unit\": \"celsius\"}"
+            "arguments": "{\"location\": \"Parigi, Francia\", \"unit\": \"gradi Celsius\"}"
           }
         }
       ]
@@ -199,7 +202,7 @@ Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento da part
     {
       "role": "tool",
       "tool_call_id": "call_abc123",
-      "content": "{\"temperature\": \"22\", \"unit\": \"celsius\", \"description\": \"Soleggiato\"}"
+      "content": "{\"temperature\": \"22\", \"unit\": \"gradi Celsius\", \"description\": \"Soleggiato\"}"
     }
   ]
 }
@@ -209,7 +212,7 @@ Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento da part
 
 Con `"stream": true`, la risposta arriva token per token:
 
-**Intestazioni di risposta:**
+**Intestazioni della risposta:**
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
@@ -237,11 +240,11 @@ Per analizzare le immagini, puoi inviare una richiesta in cui il campo `content`
 
 Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` che contiene l'URL dell'immagine nel formato `data URI` (base64).
 
-:::info Nota di Compatibilità
-Sebbene il formato standard e consigliato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche in modo flessibile un formato semplificato `{"type": "image", "image": "data:..."}`. Tuttavia, è consigliabile utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
+:::info Nota sulla compatibilità
+Sebbene il formato standard e consigliato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche un formato semplificato `{"type": "image", "image": "data:..."}` per maggiore flessibilità. Tuttavia, è consigliabile utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
 :::
 
-#### Esempio di Richiesta Vision
+#### Esempio di Richiesta di Visione
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
@@ -273,8 +276,8 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ### POST /v1/completions
 
 :::warning
-**Nota** : L'endpoint `/v1/completions` utilizza lo stesso formato di `/v1/chat/completions` con i messaggi. 
-Per la completione di testo semplice, utilizzare un messaggio utente con il proprio prompt.
+**Nota** : L'endpoint `/v1/completions` utilizza lo stesso formato di `/v1/chat/completions` con messaggi. 
+Per la completione di testo semplice, utilizza un messaggio utente con il tuo prompt.
 :::
 
 Completioni di testo tramite formato chat.
@@ -290,7 +293,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/completions" \
     "messages": [
       {
         "role": "user",
-        "content": "Complétez cette phrase: L'intelligence artificielle est"
+        "content": "Completa questa frase: L'intelligenza artificiale è"
       }
     ],
     "max_tokens": 100,
@@ -300,7 +303,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/completions" \
 
 #### Parametri
 
-Identici a /v1/chat/completions - vedi sezione precedente.
+Identici a `/v1/chat/completions` - vedere sezione precedente.
 
 #### Risposta
 
@@ -308,7 +311,7 @@ Formato identico a /v1/chat/completions.
 
 ### POST /v1/audio/transcriptions
 
-Trascrizione audio verso testo (Whisper).
+Trascrizione audio in testo (Whisper).
 
 #### Richiesta
 
@@ -322,26 +325,26 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 #### Parametri
 
-| Parametro | Tipo | Obbligatorio | Descrizione |
-|-----------|------|-------------|-------------|
-| `file` | binary | ✅ | File audio (wav, mp3, m4a). |
-| `language` | string | ❌ | Codice lingua ISO 639-1 (es: "fr"). Rilevamento automatico se non fornito. |
-| `initial_prompt` | string | ❌ | Contesto o parole specifiche per migliorare la precisione della trascrizione. |
-| `task` | string | ❌ | Compito da eseguire: `transcribe` (predefinito) o `translate` (tradurre in inglese). |
-| `response_format` | string | ❌ | `json` (predefinito, equivalente a `verbose_json`), `text`, `srt`, `vtt`. |
+| Parametro         | Tipo   | Obbligatorio | Descrizione                                                                                                         |
+| ----------------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `file`            | binary | ✅           | File audio (wav, mp3, m4a).                                                                                         |
+| `language`        | string | ❌           | Codice lingua ISO 639-1 (es: "fr"). Rilevamento automatico se non fornito.                                          |
+| `initial_prompt`  | string | ❌           | Contesto o parole specifiche per migliorare la precisione della trascrizione.                                       |
+| `task`            | string | ❌           | Compito da eseguire: `transcribe` (predefinito) o `translate` (tradurre in inglese).                                |
+| `response_format` | string | ❌           | `json` (predefinito, equivalente a `verbose_json`). I formati `text`, `srt`, `vtt` non sono attualmente supportati. |
 
 #### Risposta (`json`)
 
 ```json
 {
-  "text": "Ciao, questo è un testo di trascrizione audio.",
+  "text": "Ciao, questo è un test di trascrizione audio.",
   "segments": [
     {
       "id": 0,
       "seek": 0,
       "start": 0.0,
       "end": 4.0,
-      "text": " Ciao, questo è un testo di trascrizione audio.",
+      "text": " Ciao, questo è un test di trascrizione audio.",
       "tokens": [ 50364, 40365, 33, 2373, 359, 456, 2373, 323, 1330, 2373, 2264, 50564 ],
       "temperature": 0.0,
       "avg_logprob": -0.25,
@@ -353,56 +356,51 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 }
 ```
 
-### POST /v1/audio/transcriptions_batch
+### POST /v1/embeddings
 
-Trascrizione di diversi file audio in parallelo.
+Crea un vettore di embedding che rappresenta il testo di input.
 
 #### Richiesta
 
 ```bash
-curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions_batch" \
-  -H "Authorization: Bearer VOTRE_TOKEN_API" \
-  -F "files=@audio1.wav" \
-  -F "files=@audio2.mp3" \
-  -F "language=fr"
+curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer IL_VOSTRO_TOKEN_API" \
+  -d '{
+    "model": "granite-embedding:278m",
+    "input": "Il testo da vettorizzare"
+  }'
 ```
 
 #### Parametri
 
-| Parametro | Tipo | Obbligatorio | Descrizione |
-|-----------|------|-------------|-------------|
-| `files` | array | ✅ | Lista dei file audio da trascrivere. |
-| `language` | string | ❌ | Codice lingua ISO 639-1 (es: "fr"). |
-| `initial_prompt` | string | ❌ | Prompt iniziale per migliorare la trascrizione. |
-| `task` | string | ❌ | Compito da eseguire: `transcribe` (predefinito) o `translate`. |
+| Parametro | Tipo                        | Obbligatorio | Descrizione                                               |
+| --------- | --------------------------- | ------------ | --------------------------------------------------------- |
+| `model`   | stringa                     | ✅           | ID del modello di embedding (vedere [catalogo](./models)) |
+| `input`   | stringa o array di stringhe | ✅           | Il testo o la lista di testi da vettorizzare.             |
 
 #### Risposta
 
 ```json
 {
-  "batch_results": [
+  "object": "list",
+  "data": [
     {
-      "filename": "audio1.wav",
-      "text": "Questo è il primo file.",
-      "segments": [],
-      "language": "fr",
-      "error": null
-    },
-    {
-      "filename": "audio2.mp3",
-      "text": "Ed ecco il secondo.",
-      "segments": [],
-      "language": "fr",
-      "error": null
-    },
-    {
-      "filename": "audio3.ogg",
-      "text": null,
-      "segments": [],
-      "language": null,
-      "error": "Errore di trascrizione per questo file."
+      "object": "embedding",
+      "index": 0,
+      "embedding": [
+        0.018902843818068504,
+        -0.023282647132873535,
+        ...
+        -0.016484618186950684
+      ]
     }
-  ]
+  ],
+  "model": "granite-embedding:278m",
+  "usage": {
+    "prompt_tokens": 5,
+    "total_tokens": 5
+  }
 }
 ```
 
@@ -445,7 +443,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-## Codici di errore
+## Codici di Errore
 
 ### 400 - Richiesta non valida
 
@@ -475,7 +473,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```json
 {
   "error": {
-    "message": "Model 'unknown-model' does not exist",
+    "message": "Modello 'unknown-model' non esiste",
     "type": "invalid_request_error",
     "param": "model",
     "code": "model_not_found"
@@ -511,7 +509,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```json
 {
   "error": {
-    "message": "Servizio temporaneamente non disponibile",
+    "message": "Service temporarily unavailable",
     "type": "service_unavailable_error"
   }
 }
@@ -527,7 +525,11 @@ import json
 
 
 # Configurazione
-API_KEY = "VOTRE_TOKEN_API"
+
+# È consigliato proteggere la tua chiave API utilizzando variabili d'ambiente.
+
+# Esempio: API_KEY = os.getenv("LLMAAS_API_KEY")
+API_KEY = "VOTRE_TOKEN_API" 
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 headers = {
@@ -544,17 +546,26 @@ payload = {
     "max_tokens": 100
 }
 
-response = requests.post(
-    f"{BASE_URL}/chat/completions",
-    headers=headers,
-    json=payload
-)
-
-if response.status_code == 200:
+try:
+    response = requests.post(
+        f"{BASE_URL}/chat/completions",
+        headers=headers,
+        json=payload,
+        timeout=30 # Aggiunta di un timeout per la richiesta
+    )
+    
+    response.raise_for_status() # Solleva un'eccezione per i codici di errore HTTP (4xx, 5xx)
     result = response.json()
     print(result["choices"][0]["message"]["content"])
-else:
-    print(f"Errore {response.status_code}: {response.text}")
+
+except requests.exceptions.HTTPError as e:
+    print(f"Errore HTTP: {e.response.status_code} - {e.response.text}")
+except requests.exceptions.RequestException as e:
+    print(f"Errore di rete: {e}")
+except json.JSONDecodeError:
+    print(f"Errore di decodifica JSON: {response.text}")
+except Exception as e:
+    print(f"Si è verificato un errore imprevisto: {e}")
 ```
 
 ### Python con Streaming
@@ -564,6 +575,11 @@ import requests
 import json
 
 def stream_chat(message, model="granite3.3:8b"):
+    # Si consiglia di proteggere la propria chiave API utilizzando variabili d'ambiente.
+    # Esempio: API_KEY = os.getenv("LLMAAS_API_KEY")
+    API_KEY = "VOSTRO_TOKEN_API"
+    BASE_URL = "https://api.ai.cloud-temple.com/v1"
+
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {API_KEY}"
@@ -576,27 +592,39 @@ def stream_chat(message, model="granite3.3:8b"):
         "max_tokens": 200
     }
     
-    response = requests.post(
-        f"{BASE_URL}/chat/completions",
-        headers=headers,
-        json=payload,
-        stream=True
-    )
-    
-    for line in response.iter_lines():
-        if line:
-            line = line.decode('utf-8')
-            if line.startswith('data: '):
-                data = line[6:]  # Rimuovere 'data: '
-                if data == '[DONE]':
-                    break
-                try:
-                    chunk = json.loads(data)
-                    content = chunk['choices'][0]['delta'].get('content', '')
-                    if content:
-                        print(content, end='', flush=True)
-                except json.JSONDecodeError:
-                    continue
+    try:
+        response = requests.post(
+            f"{BASE_URL}/chat/completions",
+            headers=headers,
+            json=payload,
+            stream=True,
+            timeout=30 # Aggiunta di un timeout per la richiesta
+        )
+        
+        response.raise_for_status() # Solleva un'eccezione per i codici di errore HTTP (4xx, 5xx)
+        
+        for line in response.iter_lines():
+            if line:
+                line = line.decode('utf-8')
+                if line.startswith('data: '):
+                    data = line[6:]  # Rimuovere 'data: '
+                    if data == '[DONE]':
+                        break
+                    try:
+                        chunk = json.loads(data)
+                        content = chunk['choices'][0]['delta'].get('content', '')
+                        if content:
+                            print(content, end='', flush=True)
+                    except json.JSONDecodeError:
+                        print(f"Errore di decodifica JSON nel flusso: {data}")
+                        continue
+        print() # Nuova riga dopo il flusso
+    except requests.exceptions.HTTPError as e:
+        print(f"Errore HTTP: {e.response.status_code} - {e.response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Errore di rete: {e}")
+    except Exception as e:
+        print(f"Si è verificato un errore imprevisto: {e}")
 ```
 
 # Utilizzo
@@ -607,6 +635,9 @@ stream_chat("Expliquez la physique quantique")
 ```javascript
 const axios = require('axios');
 
+// Configuration
+// Si consiglia di proteggere la tua chiave API utilizzando variabili d'ambiente.
+// Esempio: const API_KEY = process.env.LLMAAS_API_KEY;
 const API_KEY = 'VOTRE_TOKEN_API';
 const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
 
@@ -625,19 +656,24 @@ async function chatCompletion(message) {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${API_KEY}`
-                }
+                },
+                timeout: 30000 // Aggiunta di un timeout per la richiesta (30 secondi)
             }
         );
         
         return response.data.choices[0].message.content;
     } catch (error) {
         console.error('Errore:', error.response?.data || error.message);
+        // La gestione più dettagliata degli errori può essere aggiunta qui se necessario
+        // Ad esempio: if (error.response?.status === 429) { console.error("Limite di velocità superato"); }
     }
 }
 
 // Utilisation
 chatCompletion('Bonjour !').then(response => {
-    console.log(response);
+    if (response) {
+        console.log(response);
+    }
 });
 ```
 
@@ -671,7 +707,7 @@ async function fetchCompletion(message) {
 
 ## Buone Pratiche
 
-### Gestione degli Errori
+### Gestione degli errori
 
 ```python
 def safe_api_call(payload):
@@ -681,9 +717,9 @@ def safe_api_call(payload):
         return response.json()
     except requests.exceptions.HTTPError as e:
         if response.status_code == 429:
-            print("Limite di velocità raggiunta, attendere...")
+            print("Limite di velocità raggiunta, aspettare...")
             time.sleep(60)  # Aspettare 1 minuto
-            return safe_api_call(payload)  # Retry
+            return safe_api_call(payload)  # Riprova
         else:
             print(f"Errore HTTP: {e}")
     except requests.exceptions.RequestException as e:
@@ -692,40 +728,48 @@ def safe_api_call(payload):
 
 ### Ottimizzazione dei Costi
 
-1. **Utilizzate modelli appropriati** : Modelli più piccoli per test  
-2. **Limitate max_tokens** : Evitate risposte troppo lunghe  
-3. **Riutilizzate le conversazioni** : Finestra di contesto efficace  
-4. **Monitoraggio** : Monitorate il vostro utilizzo nella Console
+1. **Utilizza modelli appropriati** : Modelli più piccoli per test  
+2. **Limita max_tokens** : Evita risposte troppo lunghe  
+3. **Riutilizza le conversazioni** : Finestra di contesto efficace  
+4. **Monitora il tuo utilizzo** : nella Console
 
 ### Sicurezza
 
 1. **Proteggi il tuo token** : Variabili di ambiente  
-2. **Rotazione periodica** : Cambia le tue chiavi periodicamente  
-3. **Convalida degli input** : Pulisci i dati degli utenti  
-4. **Limitazione delle richieste del client** : Implementa le tue proprie limitazioni
+2. **Rotazione periodica** : Cambia le tue chiavi in modo periodico  
+3. **Convalida degli input** : Pulisci i dati utente  
+4. **Limitazione del tasso del client** : Implementa le tue proprie limitazioni
 
 ## SDK e Integrazioni
 
 L'API LLMaaS è compatibile con i SDK OpenAI esistenti modificando l'URL di base :
 
-### SDK Python di OpenAI
+### OpenAI Python SDK
 
 ```python
 from openai import OpenAI
 
+# È consigliabile proteggere la tua chiave API utilizzando variabili d'ambiente.
+
+# Esempio: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
-response = client.chat.completions.create(
-    model="granite3.3:8b",
-    messages=[
-        {"role": "user", "content": "Bonjour !"}
-    ]
-)
+try:
+    response = client.chat.completions.create(
+        model="granite3.3:8b",
+        messages=[
+            {"role": "user", "content": "Bonjour !"}
+        ],
+        max_tokens=50 # Aggiunta di max_tokens per coerenza con i test
+    )
+    
+    print(response.choices[0].message.content)
 
-print(response.choices[0].message.content)
+except Exception as e:
+    print(f"Errore OpenAI SDK: {e}")
 ```
 
 ### LangChain
@@ -734,30 +778,99 @@ print(response.choices[0].message.content)
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
-```
+# Configurazione del chat model (compatibile con LLMaaS)
 
-```python
-# Configurazione del modello chat (compatibile con LLMaaS)
+# È consigliato proteggere la tua chiave API utilizzando variabili d'ambiente.
+
+# Esempio: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="granite3.3:8b",
-    max_tokens=200
+    # Nota: I parametri come max_tokens vengono passati tramite model_kwargs
+    # per garantire la compatibilità tra le versioni di LangChain.
+    model_kwargs={"max_tokens": 200}
 )
 
-# Utilizzo con messaggi
-messages = [HumanMessage(content="Spiega l'IA in 3 frasi")]
-response = chat.invoke(messages)
-print(response.content)
+try:
+    # Utilizzo con messaggi
+    messages = [HumanMessage(content="Expliquez l'IA en 3 phrases")]
+    response = chat.invoke(messages)
+    print(response.content)
 
-# Oppure con una semplice stringa
-response = chat.invoke("Bonjour, comment ça va ?")
-print(response.content)
+    # Oppure con una semplice stringa
+    response = chat.invoke("Bonjour, comment ça va ?")
+    print(response.content)
+
+except Exception as e:
+    print(f"Errore LangChain: {e}")
 ```
 
-## Supporto
+#### Utilizzo degli Embeddings
+
+:::warning Incompatibilità con i client standard di LangChain
+Attualmente, l'utilizzo dell'endpoint di embedding tramite le classi standard di LangChain (`langchain_openai.OpenAIEmbeddings` o `langchain_community.OllamaEmbeddings`) presenta incompatibilità con la nostra API.
+
+- `OpenAIEmbeddings` invia token pre-calcolati invece di testo grezzo, che viene rifiutato.
+- `OllamaEmbeddings` non gestisce l'autenticazione con il token Bearer richiesta.
+
+Mentre si attende una soluzione definitiva, si consiglia di creare una classe di embedding personalizzata o chiamare direttamente l'API, come mostrato nell'esempio `esempi/simple-rag-demo`.
+:::
+
+```python
+from langchain.embeddings.base import Embeddings
+from typing import List
+import httpx
+
+class LLMaaSEmbeddings(Embeddings):
+    """
+    Classe di embedding personalizzata per interagire con l'API LLMaaS di Cloud Temple.
+    Questa classe è progettata per essere compatibile con l'interfaccia `Embeddings` di LangChain,
+    permettendo il suo utilizzo in pipeline LangChain mentre chiama la nostra API specifica.
+    """
+    def __init__(self, api_key: str, base_url: str = "https://api.ai.cloud-temple.com/v1", model_name: str = "granite-embedding:278m"):
+        self.api_key = api_key
+        self.base_url = base_url
+        self.model_name = model_name
+        self.headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
+
+    def _embed(self, texts: List[str]) -> List[List[float]]:
+        payload = {"input": texts, "model": self.model_name}
+        try:
+            with httpx.Client(timeout=30.0) as client:
+                response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
+                response.raise_for_status()
+                data = response.json()['data']
+                # Ordinare gli embedding per il loro indice per garantire l'ordine
+                data.sort(key=lambda e: e['index'])
+                return [item['embedding'] for item in data]
+        except httpx.HTTPStatusError as e:
+            print(f"Errore HTTP durante il recupero dell'embedding: {e.response.status_code}")
+            print(f"Risposta: {e.response.text}")
+            return []
+
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        return self._embed(texts)
+
+    def embed_query(self, text: str) -> List[float]:
+        return self._embed([text])[0]
+
+# Utilizzo
+# embeddings = LLMaaSEmbeddings(
+#     api_key="TUA_TOKEN_API",
+#     base_url="https://api.ai.cloud-temple.com/v1",
+#     model_name="granite-embedding:278m"
+# )
+
+# vettore = embeddings.embed_query("Il mio testo da vettorizzare")
+```
+
+## Support
 
 - **Documentazione** : [Guida di avvio rapido](./quickstart)
 - **Catalogo modelli** : [Elenco completo](./models)
 - **Console** : Gestione e monitoraggio tramite Console Cloud Temple
-- **Supporto** : Tramite la Console Cloud Temple
+- **Supporto** : Tramite Console Cloud Temple

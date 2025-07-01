@@ -46,6 +46,9 @@ Le choix d'un tier est donc un équilibre entre l'investissement initial, le bud
 - **Tokens de sortie (standard)** : 4.00 € / million
 - **Tokens de sortie (raisonneur)** : 21.00 € / million (s'applique aux modèles les plus avancés pour les tâches complexes de type agent ou raisonnement)
 
+#### **Facturation Audio**
+- **Transcription Audio** : 0.01 € / minute (toute minute commencée est due)
+
 ### Headers de Limite
 
 Les réponses incluent des headers informatifs :
@@ -328,7 +331,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 | `language` | string | ❌ | Code langue ISO 639-1 (ex: "fr"). Détection automatique si non fourni. |
 | `initial_prompt` | string | ❌ | Contexte ou mots spécifiques pour améliorer la précision de la transcription. |
 | `task` | string | ❌ | Tâche à effectuer : `transcribe` (défaut) ou `translate` (traduire en anglais). |
-| `response_format` | string | ❌ | `json` (défaut, équivalent à `verbose_json`), `text`, `srt`, `vtt`. |
+| `response_format` | string | ❌ | `json` (défaut, équivalent à `verbose_json`). Les formats `text`, `srt`, `vtt` ne sont pas supportés actuellement. |
 
 #### Réponse (`json`)
 
@@ -353,56 +356,52 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 }
 ```
 
-### POST /v1/audio/transcriptions_batch
 
-Transcription de plusieurs fichiers audio en parallèle.
+### POST /v1/embeddings
+
+Crée un vecteur d'embedding représentant le texte d'entrée.
 
 #### Requête
 
 ```bash
-curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions_batch" \
+curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
+  -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_TOKEN_API" \
-  -F "files=@audio1.wav" \
-  -F "files=@audio2.mp3" \
-  -F "language=fr"
+  -d '{
+    "model": "granite-embedding:278m",
+    "input": "Le texte à vectoriser"
+  }'
 ```
 
 #### Paramètres
 
 | Paramètre | Type | Obligatoire | Description |
 |-----------|------|-------------|-------------|
-| `files` | array | ✅ | Liste des fichiers audio à transcrire. |
-| `language` | string | ❌ | Code langue ISO 639-1 (ex: "fr"). |
-| `initial_prompt` | string | ❌ | Contexte pour améliorer la transcription. |
-| `task` | string | ❌ | Tâche à effectuer : `transcribe` (défaut) ou `translate`. |
+| `model` | string | ✅ | ID du modèle d'embedding (voir [catalogue](./models)) |
+| `input` | string or array of strings | ✅ | Le texte ou la liste de textes à vectoriser. |
 
 #### Réponse
 
 ```json
 {
-  "batch_results": [
+  "object": "list",
+  "data": [
     {
-      "filename": "audio1.wav",
-      "text": "Ceci est le premier fichier.",
-      "segments": [],
-      "language": "fr",
-      "error": null
-    },
-    {
-      "filename": "audio2.mp3",
-      "text": "Et voici le second.",
-      "segments": [],
-      "language": "fr",
-      "error": null
-    },
-    {
-      "filename": "audio3.ogg",
-      "text": null,
-      "segments": [],
-      "language": null,
-      "error": "Erreur de transcription pour ce fichier."
+      "object": "embedding",
+      "index": 0,
+      "embedding": [
+        0.018902843818068504,
+        -0.023282647132873535,
+        ...
+        -0.016484618186950684
+      ]
     }
-  ]
+  ],
+  "model": "granite-embedding:278m",
+  "usage": {
+    "prompt_tokens": 5,
+    "total_tokens": 5
+  }
 }
 ```
 
@@ -526,7 +525,9 @@ import requests
 import json
 
 # Configuration
-API_KEY = "VOTRE_TOKEN_API"
+# Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+# Exemple: API_KEY = os.getenv("LLMAAS_API_KEY")
+API_KEY = "VOTRE_TOKEN_API" 
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 headers = {
@@ -543,17 +544,26 @@ payload = {
     "max_tokens": 100
 }
 
-response = requests.post(
-    f"{BASE_URL}/chat/completions",
-    headers=headers,
-    json=payload
-)
-
-if response.status_code == 200:
+try:
+    response = requests.post(
+        f"{BASE_URL}/chat/completions",
+        headers=headers,
+        json=payload,
+        timeout=30 # Ajout d'un timeout pour la requête
+    )
+    
+    response.raise_for_status() # Lève une exception pour les codes d'erreur HTTP (4xx, 5xx)
     result = response.json()
     print(result["choices"][0]["message"]["content"])
-else:
-    print(f"Erreur {response.status_code}: {response.text}")
+
+except requests.exceptions.HTTPError as e:
+    print(f"Erreur HTTP: {e.response.status_code} - {e.response.text}")
+except requests.exceptions.RequestException as e:
+    print(f"Erreur réseau: {e}")
+except json.JSONDecodeError:
+    print(f"Erreur de décodage JSON: {response.text}")
+except Exception as e:
+    print(f"Une erreur inattendue est survenue: {e}")
 ```
 
 ### Python avec Streaming
@@ -563,6 +573,11 @@ import requests
 import json
 
 def stream_chat(message, model="granite3.3:8b"):
+    # Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+    # Exemple: API_KEY = os.getenv("LLMAAS_API_KEY")
+    API_KEY = "VOTRE_TOKEN_API"
+    BASE_URL = "https://api.ai.cloud-temple.com/v1"
+
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {API_KEY}"
@@ -575,27 +590,39 @@ def stream_chat(message, model="granite3.3:8b"):
         "max_tokens": 200
     }
     
-    response = requests.post(
-        f"{BASE_URL}/chat/completions",
-        headers=headers,
-        json=payload,
-        stream=True
-    )
-    
-    for line in response.iter_lines():
-        if line:
-            line = line.decode('utf-8')
-            if line.startswith('data: '):
-                data = line[6:]  # Enlever 'data: '
-                if data == '[DONE]':
-                    break
-                try:
-                    chunk = json.loads(data)
-                    content = chunk['choices'][0]['delta'].get('content', '')
-                    if content:
-                        print(content, end='', flush=True)
-                except json.JSONDecodeError:
-                    continue
+    try:
+        response = requests.post(
+            f"{BASE_URL}/chat/completions",
+            headers=headers,
+            json=payload,
+            stream=True,
+            timeout=30 # Ajout d'un timeout pour la requête
+        )
+        
+        response.raise_for_status() # Lève une exception pour les codes d'erreur HTTP (4xx, 5xx)
+        
+        for line in response.iter_lines():
+            if line:
+                line = line.decode('utf-8')
+                if line.startswith('data: '):
+                    data = line[6:]  # Enlever 'data: '
+                    if data == '[DONE]':
+                        break
+                    try:
+                        chunk = json.loads(data)
+                        content = chunk['choices'][0]['delta'].get('content', '')
+                        if content:
+                            print(content, end='', flush=True)
+                    except json.JSONDecodeError:
+                        print(f"Erreur de décodage JSON dans le stream: {data}")
+                        continue
+        print() # Nouvelle ligne après le stream
+    except requests.exceptions.HTTPError as e:
+        print(f"Erreur HTTP: {e.response.status_code} - {e.response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Erreur réseau: {e}")
+    except Exception as e:
+        print(f"Une erreur inattendue est survenue: {e}")
 
 # Utilisation
 stream_chat("Expliquez la physique quantique")
@@ -606,6 +633,9 @@ stream_chat("Expliquez la physique quantique")
 ```javascript
 const axios = require('axios');
 
+// Configuration
+// Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+// Exemple: const API_KEY = process.env.LLMAAS_API_KEY;
 const API_KEY = 'VOTRE_TOKEN_API';
 const BASE_URL = 'https://api.ai.cloud-temple.com/v1';
 
@@ -624,19 +654,24 @@ async function chatCompletion(message) {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${API_KEY}`
-                }
+                },
+                timeout: 30000 // Ajout d'un timeout pour la requête (30 secondes)
             }
         );
         
         return response.data.choices[0].message.content;
     } catch (error) {
         console.error('Erreur:', error.response?.data || error.message);
+        // Gestion plus détaillée des erreurs peut être ajoutée ici si nécessaire
+        // Par exemple: if (error.response?.status === 429) { console.error("Rate limit exceeded"); }
     }
 }
 
 // Utilisation
 chatCompletion('Bonjour !').then(response => {
-    console.log(response);
+    if (response) {
+        console.log(response);
+    }
 });
 ```
 
@@ -712,19 +747,26 @@ L'API LLMaaS est compatible avec les SDK OpenAI existants en modifiant l'URL de 
 ```python
 from openai import OpenAI
 
+# Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+# Exemple: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
-response = client.chat.completions.create(
-    model="granite3.3:8b",
-    messages=[
-        {"role": "user", "content": "Bonjour !"}
-    ]
-)
+try:
+    response = client.chat.completions.create(
+        model="granite3.3:8b",
+        messages=[
+            {"role": "user", "content": "Bonjour !"}
+        ],
+        max_tokens=50 # Ajout de max_tokens pour cohérence avec les tests
+    )
+    
+    print(response.choices[0].message.content)
 
-print(response.choices[0].message.content)
+except Exception as e:
+    print(f"Erreur OpenAI SDK: {e}")
 ```
 
 ### LangChain
@@ -734,21 +776,90 @@ from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
 # Configuration du chat model (compatible avec LLMaaS)
+# Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+# Exemple: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="granite3.3:8b",
-    max_tokens=200
+    # Note: Les paramètres comme max_tokens sont passés via model_kwargs
+    # pour assurer la compatibilité entre les versions de LangChain.
+    model_kwargs={"max_tokens": 200}
 )
 
-# Utilisation avec messages
-messages = [HumanMessage(content="Expliquez l'IA en 3 phrases")]
-response = chat.invoke(messages)
-print(response.content)
+try:
+    # Utilisation avec messages
+    messages = [HumanMessage(content="Expliquez l'IA en 3 phrases")]
+    response = chat.invoke(messages)
+    print(response.content)
 
-# Ou avec une simple chaîne
-response = chat.invoke("Bonjour, comment ça va ?")
-print(response.content)
+    # Ou avec une simple chaîne
+    response = chat.invoke("Bonjour, comment ça va ?")
+    print(response.content)
+
+except Exception as e:
+    print(f"Erreur LangChain: {e}")
+```
+
+#### Utilisation des Embeddings
+
+:::warning Incompatibilité avec les clients LangChain standards
+Actuellement, l'utilisation de l'endpoint d'embedding via les classes standards de LangChain (`langchain_openai.OpenAIEmbeddings` ou `langchain_community.OllamaEmbeddings`) présente des incompatibilités avec notre API.
+
+- `OpenAIEmbeddings` envoie des tokens pré-calculés au lieu de texte brut, ce qui est rejeté.
+- `OllamaEmbeddings` ne gère pas l'authentification par Bearer Token requise.
+
+En attendant une solution pérenne, il est recommandé de créer une classe d'embedding personnalisée ou d'appeler l'API directement, comme démontré dans l'exemple `exemples/simple-rag-demo`.
+:::
+
+```python
+from langchain.embeddings.base import Embeddings
+from typing import List
+import httpx
+
+class LLMaaSEmbeddings(Embeddings):
+    """
+    Classe d'embedding personnalisée pour interagir avec l'API LLMaaS de Cloud Temple.
+    Cette classe est conçue pour être compatible avec l'interface `Embeddings` de LangChain,
+    permettant son utilisation dans des pipelines LangChain tout en appelant notre API spécifique.
+    """
+    def __init__(self, api_key: str, base_url: str = "https://api.ai.cloud-temple.com/v1", model_name: str = "granite-embedding:278m"):
+        self.api_key = api_key
+        self.base_url = base_url
+        self.model_name = model_name
+        self.headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
+
+    def _embed(self, texts: List[str]) -> List[List[float]]:
+        payload = {"input": texts, "model": self.model_name}
+        try:
+            with httpx.Client(timeout=30.0) as client:
+                response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
+                response.raise_for_status()
+                data = response.json()['data']
+                # Trier les embeddings par leur index pour garantir l'ordre
+                data.sort(key=lambda e: e['index'])
+                return [item['embedding'] for item in data]
+        except httpx.HTTPStatusError as e:
+            print(f"Erreur HTTP lors de la récupération de l'embedding : {e.response.status_code}")
+            print(f"Réponse : {e.response.text}")
+            return []
+
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        return self._embed(texts)
+
+    def embed_query(self, text: str) -> List[float]:
+        return self._embed([text])[0]
+
+# Utilisation
+# embeddings = LLMaaSEmbeddings(
+#     api_key="VOTRE_TOKEN_API",
+#     base_url="https://api.ai.cloud-temple.com/v1",
+#     model_name="granite-embedding:278m"
+# )
+# vector = embeddings.embed_query("Mon texte à vectoriser")
 ```
 
 ## Support

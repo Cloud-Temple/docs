@@ -38,23 +38,33 @@ class SimpleThrottler:
 class ContentSplitter:
     """Utilitaire pour découper le contenu en blocs traduisibles en comptant les tokens."""
     
-    def __init__(self, max_tokens: int = 8000, model_name: str = "gpt-4"):
+    def __init__(self, max_tokens: int = 8000, model_name: str = "gpt-4", model_type: str = "other"):
         """
         Initialise le splitter.
         
         Args:
             max_tokens: Taille maximale d'un bloc en tokens.
             model_name: Nom du modèle pour le tokenizer (ex: "gpt-4", "gpt-3.5-turbo").
+            model_type: Type de modèle ('openai' ou 'other') pour la sélection du tokenizer.
         """
         self.max_tokens = max_tokens
-        try:
-            self.encoding = tiktoken.encoding_for_model(model_name)
-        except KeyError:
-            self.encoding = tiktoken.get_encoding("cl100k_base")
+        self.model_type = model_type
+        self.encoding = None
+        
+        if self.model_type == "openai":
+            try:
+                self.encoding = tiktoken.encoding_for_model(model_name)
+            except KeyError:
+                self.encoding = tiktoken.get_encoding("cl100k_base")
     
     def _count_tokens(self, text: str) -> int:
-        """Compte le nombre de tokens dans un texte."""
-        return len(self.encoding.encode(text))
+        """Compte le nombre de tokens dans un texte. Utilise tiktoken pour OpenAI, sinon une estimation."""
+        if self.model_type == "openai" and self.encoding:
+            return len(self.encoding.encode(text))
+        else:
+            # Estimation pour les modèles non-OpenAI (environ 4 caractères par token pour l'anglais)
+            # C'est une heuristique, la précision peut varier selon la langue et le contenu.
+            return len(text) // 4
 
     def _split_large_block(self, block: str) -> List[str]:
         """Sous-découpe un bloc qui dépasse la limite de tokens."""
@@ -173,7 +183,7 @@ RÈGLES STRICTES À RESPECTER :
 
 Ta seule tâche est de traduire uniquement le contenu texte en dehors des éléments de code, Markdown ou HTML, tout en garantissant que tout formatage et intégrité structurelle sont préservés.
 L'objectif est de produire une traduction techniquement précise, professionnelle et qui maintient la structure du fichier original sans aucune modification non intentionnelle.
-NE RACONTE PAS TA VIE. Ne retourne QUE la traduction du contenu fourni, sans aucune introduction, conclusion, ou commentaire additionnel.
+NE RACONTE PAS TA VIE. NE PENSE PAS À VOIX HAUTE. Ne retourne ABSOLUMENT QUE la traduction du contenu fourni, sans aucune introduction, conclusion, commentaire additionnel, ou toute forme de pensée interne (comme les balises <think>).
 """
 
     @staticmethod
@@ -196,7 +206,7 @@ class CloudTempleTranslator:
     def __init__(self, config: TranslationConfig, ui=None):
         self.config = config
         self.ui = ui
-        self.content_splitter = ContentSplitter(config.max_tokens_per_block, config.model)
+        self.content_splitter = ContentSplitter(config.max_tokens_per_block, config.model, config.model_type)
         self.prompt_generator = TranslationPromptGenerator()
         self.throttler = SimpleThrottler(rate_limit=config.concurrent_translations)
         self._session: Optional[aiohttp.ClientSession] = None
@@ -334,6 +344,18 @@ class CloudTempleTranslator:
         system_prompt = self.prompt_generator.generate_system_prompt(target_lang_name)
         user_prompt = self.prompt_generator.generate_user_prompt(text)
         
+        # Calcul des tokens pour le prompt
+        system_tokens = self.content_splitter._count_tokens(system_prompt)
+        user_tokens = self.content_splitter._count_tokens(user_prompt)
+        
+        # Calculer les tokens disponibles pour la complétion en utilisant les valeurs configurables
+        available_tokens_for_completion = self.config.max_model_context_length - (system_tokens + user_tokens) - self.config.buffer_tokens
+        
+        # Assurer que max_tokens est au moins 1 et ne dépasse pas la limite disponible.
+        # Pour la traduction, il est préférable de laisser le modèle utiliser l'espace disponible
+        # plutôt que de le restreindre avec une heuristique basée sur la taille de l'entrée.
+        max_completion_tokens = max(1, available_tokens_for_completion)
+
         payload = {
             "model": self.config.model,
             "messages": [
@@ -342,7 +364,8 @@ class CloudTempleTranslator:
             ],
             "temperature": self.config.temperature,
             "top_p": self.config.top_p,
-            "stream": False
+            "stream": False,
+            "max_tokens": max_completion_tokens # Ajout du paramètre max_tokens
         }
         
         headers = {
@@ -351,15 +374,14 @@ class CloudTempleTranslator:
         }
         
         if self.ui and self.ui.debug:
-            system_tokens = self.content_splitter._count_tokens(system_prompt)
-            user_tokens = self.content_splitter._count_tokens(user_prompt)
             self.ui.log_api_request(
                 attempt=attempt,
                 model=payload['model'],
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
                 system_tokens=system_tokens,
-                user_tokens=user_tokens
+                user_tokens=user_tokens,
+                max_completion_tokens=max_completion_tokens # Ajout pour le log
             )
 
         start_time = time.time()
