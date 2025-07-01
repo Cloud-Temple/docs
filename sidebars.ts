@@ -7,6 +7,10 @@ const sidebars: SidebarsConfig = {
       id: 'home',
     },
     {
+      type: 'doc',
+      id: 'changelog',
+    },
+    {
       type: 'html', // Séparateur et titre
       value: `
         <hr class="sidebar-separator" />
@@ -168,6 +172,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'llmaas/llmaas',
         'llmaas/concepts',
+        'llmaas/rag_explained',
         'llmaas/quickstart',
         'llmaas/api',
         'llmaas/models',
@@ -247,7 +252,8 @@ const sidebars: SidebarsConfig = {
         'contractual/iaas/raci',
         'contractual/iaas/raci_s3',
         'contractual/paas/raci',
-        'contractual/paas/raci_ocp_std'
+        'contractual/paas/raci_ocp_std',
+        'contractual/llmaas/raci'
       ],
     },
   ],

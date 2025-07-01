@@ -9,6 +9,10 @@ import sys
 import subprocess
 import time
 from pathlib import Path
+from dotenv import load_dotenv # Importation nécessaire
+
+# Charger les variables d'environnement depuis .env
+load_dotenv(dotenv_path=Path(__file__).parent / ".env") # Charger le .env spécifique au dossier tests/llmaas
 
 # Configuration globale
 TESTS_DIR = Path(__file__).parent
@@ -231,6 +235,29 @@ def main():
             'type': 'python',
             'critical': True,
             'requires': ['requests']
+        },
+
+        # Tests RAG
+        {
+            'name': 'RAG Simple',
+            'script': 'test_rag_simple.py',
+            'type': 'python',
+            'critical': False,
+            'requires': ['langchain']
+        },
+        {
+            'name': 'RAG Pipeline Detailed',
+            'script': 'test_rag_pipeline_detailed.py',
+            'type': 'python',
+            'critical': False,
+            'requires': ['langchain']
+        },
+        {
+            'name': 'RAG Qdrant Integration',
+            'script': 'test_qdrant_integration.py',
+            'type': 'python',
+            'critical': False,
+            'requires': ['langchain']
         }
     ]
     

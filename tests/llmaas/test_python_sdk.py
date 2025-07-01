@@ -13,7 +13,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration
-API_KEY = os.getenv("API_KEY")
+# Assurez-vous que LLMAAS_API_KEY est toujours une chaîne de caractères pour SecretStr
+API_KEY = os.getenv("LLMAAS_API_KEY", "") # Utilise la variable d'environnement LLMAAS_API_KEY, avec une chaîne vide par défaut
 BASE_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 
 def test_openai_sdk() -> bool:
@@ -112,21 +113,21 @@ def test_langchain_integration() -> bool:
     
     try:
         from langchain_openai import ChatOpenAI
+        from langchain_core.caches import BaseCache # Importation locale pour garantir la portée
+        from langchain_core.callbacks.base import Callbacks # Importation locale pour Callbacks
+        # Appeler model_rebuild() pour résoudre les problèmes de définition Pydantic
+        # Cela est souvent nécessaire après l'importation pour les modèles basés sur Pydantic v2
+        ChatOpenAI.model_rebuild()
     except ImportError:
-        try:
-            # Fallback pour anciennes versions
-            from langchain.chat_models import ChatOpenAI
-        except ImportError:
-            print("⚠️  Module 'langchain' ChatOpenAI non disponible")
-            print("ℹ️  Test ignoré - utilisez ChatOpenAI pour LLMaaS")
-            return True  # Non bloquant
+        print("❌ Module 'langchain_openai' ChatOpenAI non disponible. Installez avec: pip install langchain-openai")
+        return False # Rendre le test bloquant si le module principal manque
     
     try:
         chat = ChatOpenAI(
-            api_key=API_KEY,
+            api_key=API_KEY, # Passer la clé API directement en chaîne
             base_url=BASE_URL,
             model="granite3.3:8b",
-            max_tokens=50
+            model_kwargs={"max_tokens": 50} # Passer max_tokens via model_kwargs pour la robustesse
         )
         
         print("✅ LangChain ChatOpenAI initialisé")
@@ -151,20 +152,20 @@ def test_langchain_chat() -> bool:
     
     try:
         from langchain_openai import ChatOpenAI
+        from langchain_core.caches import BaseCache # Importation locale pour garantir la portée
+        from langchain_core.callbacks.base import Callbacks # Importation locale pour Callbacks
+        # Appeler model_rebuild() pour résoudre les problèmes de définition Pydantic
+        ChatOpenAI.model_rebuild()
     except ImportError:
-        try:
-            # Fallback pour anciennes versions
-            from langchain.chat_models import ChatOpenAI
-        except ImportError:
-            print("❌ Module 'langchain' ChatOpenAI non disponible")
-            return False
+        print("❌ Module 'langchain_openai' ChatOpenAI non disponible. Installez avec: pip install langchain-openai")
+        return False # Rendre le test bloquant si le module principal manque
     
     try:
         chat = ChatOpenAI(
-            api_key=API_KEY,
+            api_key=API_KEY, # Passer la clé API directement en chaîne
             base_url=BASE_URL,
             model="granite3.3:8b",
-            max_tokens=50
+            model_kwargs={"max_tokens": 50} # Passer max_tokens via model_kwargs pour la robustesse
         )
         
         print("✅ LangChain ChatOpenAI initialisé")

@@ -5,24 +5,141 @@ sidebar_position: 1
 
 # LLM como un Servicio (LLMaaS)
 
-## Visión general
+## Acceso a la API
 
-El servicio **LLMaaS** (Modelos de Lenguaje a Servicio) de Cloud Temple proporciona acceso seguro y soberano a los modelos de inteligencia artificial más avanzados, calculados en una infraestructura IaaS Cloud Temple calificada SecNumCloud 3.2 por la ANSSI.
+La API está accesible a través de la Consola Cloud Temple. Puede gestionar sus claves API, monitorear su consumo y configurar sus terceros en los ajustes de su cuenta. La consola también permite visualizar el uso de sus modelos.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="llmaas/concepts" class="card-link">Explorar los conceptos &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Quickstart</h3>
-    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="llmaas/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
-  </div>
-    <div class="card">
-    <h3>Tutoriales</h3>
-    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="llmaas/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
-  </div>
-</div>
+## Autenticación
+
+Todas las solicitudes a la API LLMaaS deben incluir un encabezado `Authorization` con su clave de API en formato token Bearer. Si utiliza los SDK de cliente, la clave se incluirá automáticamente en cada solicitud. Si se integra directamente con la API, debe enviar este encabezado usted mismo.
+
+## Tipos de contenido
+
+La API LLMaaS siempre acepta JSON en el cuerpo de las solicitudes y devuelve JSON en el cuerpo de las respuestas. Debe enviar el encabezado `content-type: application/json` en sus solicitudes. Si utiliza los SDKs de cliente, esto se gestionará automáticamente.
+
+## Encabezados de respuesta
+
+La API LLMaaS incluye los siguientes encabezados en cada respuesta:
+
+- `id` : Un identificador único global para la solicitud
+- `backend` : Información sobre la infraestructura utilizada (engine_type, machine_name)
+
+## Ejemplos
+
+### Solicitud cURL
+```bash
+curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "model": "granite3.3:8b",
+    "messages": [
+      {
+        "role": "user", 
+        "content": "Salut ! Peux-tu te présenter en français ?"
+      }
+    ],
+    "max_tokens": 200,
+    "temperature": 0.7
+  }'
+```
+
+### Respuesta
+```json
+{
+  "backend": {
+    "engine_type": "engo",
+    "machine_name": "ma02"
+  },
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "¡Hola! Soy un modelo de lenguaje virtual...",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1749110753,
+  "id": "chatcmpl-ollama-14b812ef-b21f-430c-b93c-d0d1bf653806",
+  "model": "granite3.3:8b",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 200,
+    "prompt_tokens": 70,
+    "reasoning_tokens": 0,
+    "total_tokens": 270
+  }
+}
+```
+
+### Parámetros disponibles
+
+| Parámetro     | Tipo    | Descripción                                                   |
+| ------------- | ------- | ------------------------------------------------------------- |
+| `model`       | cadena  | El modelo a utilizar (ver [catálogo de modelos](./models))    |
+| `messages`    | matriz  | Lista de los mensajes de la conversación                      |
+| `max_tokens`  | entero  | Número máximo de tokens a generar                             |
+| `temperature` | flotante | Controla la creatividad (0.0-2.0)                           |
+| `top_p`       | flotante | Controla la diversidad de las respuestas                     |
+| `stream`      | booleano | Activa el streaming de la respuesta                           |
+| `user`        | cadena  | Identificador único del usuario final                         |
+
+## URL base
+
+La URL base para todas las solicitudes de API es :
+```
+https://api.ai.cloud-temple.com/v1/
+```
+
+## Puntos de conexión disponibles
+
+- `/chat/completions` : Generación de respuestas conversacionales
+- `/completions` : Completación de texto simple
+- `/embeddings` : Crea un vector de embedding que representa el texto de entrada
+- `/models` : Lista de modelos disponibles
+
+### Ejemplo: Lista de modelos
+
+```bash
+curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+**Respuesta**:
+```json
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "granite3.3:8b",
+      "object": "model",
+      "created": 1749110897,
+      "owned_by": "CloudTemple",
+      "root": "granite3.3:8b",
+      "aliases": ["granite3.3:8b"],
+      "parent": null,
+      "max_model_len": 60000,
+      "permission": [
+        {
+          "id": "modelperm-granite3.3:8b-1749110897",
+          "object": "model_permission",
+          "created": 1749110897,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}
+```
+
+La respuesta contiene todos los modelos disponibles con sus especificaciones y permisos.

@@ -30,6 +30,10 @@ class TranslationConfig(BaseModel):
         default="qwen3:30b-a3b",
         description="Modèle utilisé pour la traduction"
     )
+    model_type: str = Field(
+        default="other", # "openai" ou "other" pour la gestion du tokenizer
+        description="Type de modèle pour la gestion du tokenizer (ex: 'openai', 'other')"
+    )
     temperature: float = Field(
         default=0.1,
         ge=0.0,
@@ -69,10 +73,22 @@ class TranslationConfig(BaseModel):
     
     # Configuration contenu
     max_tokens_per_block: int = Field(
-        default=5000, # Réduit davantage pour laisser de la place au prompt système et à la complétion
+        default=4000, # Réduit davantage pour laisser de la place au prompt système et à la complétion
         ge=500, # Ajustement de la borne inférieure
-        le=6000, # Ajustement de la borne supérieure pour rester dans la limite du modèle
+        le=5000, # Ajustement de la borne supérieure pour rester dans la limite du modèle
         description="Taille maximale d'un bloc de traduction"
+    )
+
+    max_model_context_length: int = Field(
+        default=32768, # Longueur maximale du contexte du modèle (ex: 32768 pour qwen3:30b-a3b)
+        ge=1024,
+        description="Longueur maximale du contexte du modèle en tokens"
+    )
+
+    buffer_tokens: int = Field(
+        default=200, # Buffer de sécurité pour la complétion
+        ge=0,
+        description="Nombre de tokens de sécurité à soustraire du contexte disponible"
     )
     
     @validator('doc_base_path', pre=True)
@@ -133,6 +149,7 @@ def load_config() -> TranslationConfig:
         'api_url': os.getenv('CLOUDTEMPLE_API_URL'),
         'api_key': os.getenv('CLOUDTEMPLE_API_KEY'),
         'model': os.getenv('TRANSLATION_MODEL'),
+        'model_type': os.getenv('MODEL_TYPE'),
         'temperature': _get_float_env('TRANSLATION_TEMPERATURE'),
         'top_p': _get_float_env('TRANSLATION_TOP_P'),
         'doc_base_path': os.getenv('DOC_BASE_PATH'),
@@ -140,6 +157,8 @@ def load_config() -> TranslationConfig:
         'max_retries': _get_int_env('MAX_RETRIES'),
         'retry_delay': _get_float_env('RETRY_DELAY'),
         'max_tokens_per_block': _get_int_env('MAX_TOKENS_PER_BLOCK'),
+        'max_model_context_length': _get_int_env('MAX_MODEL_CONTEXT_LENGTH'),
+        'buffer_tokens': _get_int_env('BUFFER_TOKENS'),
     }
     
     # Suppression des valeurs None pour utiliser les défauts
