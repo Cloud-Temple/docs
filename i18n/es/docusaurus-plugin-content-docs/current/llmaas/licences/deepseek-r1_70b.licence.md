@@ -1,4 +1,4 @@
-## Licencia del modelo deepseek-r1:70b
+## Licence du modèle deepseek-r1:70b
 
 ```
 ""MIT License

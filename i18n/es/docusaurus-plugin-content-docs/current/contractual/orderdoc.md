@@ -2,26 +2,26 @@
 title: Jerarquía de los documentos contractuales
 ---
 
-|           | Referencias                |
+|           | Referencias                 |
 | --------- | -------------------------- |
-| Referencia| CT.AM.JUR.HDC 20250502_3.0 |
-| Fecha     | 5 de febrero de 2025       |
+| Referencia | CT.AM.JUR.HDC 20250502_3.0 |
+| Fecha      | 05 de febrero de 2025            |
 
-La jerarquía de los documentos contractuales se establece según un orden de prioridad definido:
+La jerarquía de los documentos contractuales se establece según un orden de prioridad definido :
 
 1. [Condiciones Generales de Venta y Uso (CGVU)](cgvu.docx).
-2. [Acuerdo de Servicio SecNumCloud IaaS](iaas/sla_iaas.docx).
-3. [Acuerdo de Servicio SecNumCloud OpenIaaS](iaas/sla_openiaas.docx).
-4. [Acuerdo de Servicio SecNumCloud PaaS](paas/sla_paas.docx). (*)
-5. [Acuerdo de Servicio Específico - Bare Metal](baremetal.docx).
-6. Acuerdo específico particular (**)
-7. Plan de Garantía de Seguridad (PGS) (***)
-8. Condiciones Particulares de Uso (CPU)
-9. [Acuerdo de Protección de Datos](dpa.docx). (APD)
+2. [Convenio de Servicio SecNumCloud IaaS](iaas/sla_iaas.docx).
+3. [Convenio de Servicio SecNumCloud OpenIaaS](iaas/sla_openiaas.docx).
+4. [Convenio de Servicio SecNumCloud PaaS](paas/sla_paas.docx). (*)
+5. [Convenio de Servicio específico - Bare Metal](baremetal.docx).
+6. Convenio específico particular (**)
+7. Plan de Seguridad (PAS) (***)
+8. Condiciones Particulares de Uso (CPU) 
+9. [Data Protection Agreement](dpa.docx). (DPA)
 
-(*) Se especifica que este Acuerdo de Servicio PaaS es válido únicamente si el CLIENTE ha firmado el Acuerdo relativo a los servicios SecNumCloud IaaS.
+(*) Se especifica que el presente Convenio de servicios PaaS es válido únicamente si el CLIENTE ha firmado el Convenio relativo a los servicios IaaS SecNumCloud.
 
-(**) Acuerdo específico, diseñado para alinearse con las particularidades del proyecto.
+(**) Convenio específico, diseñado para alinearse con las particularidades del proyecto.
 
 (***) Documento no público.
 

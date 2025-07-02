@@ -7,7 +7,7 @@ This page is updated daily to reflect newly identified vulnerabilities.
 
 ## Vulnerabilities
 
-| Date | Reference(s) | CVSS | Title | Description | Service(s) | Severity | Remediation |
+| Date | Reference(s) | CVSS | Title | Description | Service(s) | Severity | Treatment |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 23/05/2025 | [XSA-468](https://xenbits.xen.org/xsa/advisory-468.html) | 8.8-9.0 | **XCP-NG vulnerabilities in Windows PV drivers (XSA-468)** <br> [Publisher bulletin](https://xcp-ng.org/blog/2025/05/27/xsa-468-windows-pv-driver-vulnerabilities/) | Several vulnerabilities (CVE-2025-27462, CVE-2025-27463, CVE-2025-27464) in Windows PV drivers allow unprivileged users to obtain system privileges within Windows VMs. | IaaS OpenSource | 🟠 Important | ⚠️ We recommend updating the Windows PV drivers of your virtual machines to the corrected versions indicated in the security bulletin. ✅ The update of your XCP-ng instances is planned as soon as the patches are validated by Cloud Temple. |
 | 22/05/2025 | [XSA-469, INTEL-SA](https://xcp-ng.org/blog/2025/05/14/may-2025-security-update-for-xcp-ng-8-2-8-3/) | 4.9-6.5 | **XCP-NG vulnerabilities in Intel microcode and Xen (XSA-469, INTEL-SA)** <br> [Publisher bulletin](https://xcp-ng.org/blog/2025/05/14/may-2025-security-update-for-xcp-ng-8-2-8-3/) | Security patches for XCP-ng have been published, correcting several vulnerabilities in Intel microcode and Xen. | IaaS OpenSource | 🟡 Moderate | ✅ The update of your XCP-ng instances is planned as soon as the patches are validated by Cloud Temple. No action is required from your side.|
@@ -19,19 +19,19 @@ This page is updated daily to reflect newly identified vulnerabilities.
 
 ## Information
 
-- **Date**: Initial publication date of the Cloud Temple security alert.
-- **Reference(s)**: CVE ID, when available.
-- **CVSS**: Base CVSS v3 score as reported by the vendor or CVE, non-contextualized. Contextualization is expressed through CT severity. If the alert concerns multiple vulnerabilities, the minimum and maximum CVSS scores are shown.
-- **Title**: Alert title, with vendor reference if available.
-- **Description**: Summary description, with link(s) to detailed information.
-- **Service(s)**: Cloud Temple service(s) potentially affected.
-- **Severity**: Severity level in the context of Cloud Temple services (for the most critical vulnerability in case of multiple issues). Exploitation criteria are evaluated in the technical context of our infrastructure and Cloud services.
+- **Date** : Initial publication date of the Cloud Temple security alert.
+- **Reference(s)** : CVE ID, if available.
+- **CVSS** : Base CVSS v3 score as reported by the vendor or CVE, uncontextualized. Contextualization is expressed through the CT severity. If the alert concerns multiple vulnerabilities, the minimum and maximum CVSS scores are indicated.
+- **Title** : Alert title, with vendor reference if available.
+- **Description** : Summary description, with links to detailed information.
+- **Service(s)** : Cloud Temple service(s) potentially affected.
+- **Severity** : Severity level within the context of Cloud Temple services (for the most critical vulnerability in case of multiple vulnerabilities). Exploitation criteria are considered within the technical context of our cloud infrastructure and services.
 
 | Level | Description |
 |--------|-------------|
-| 🔴 **Critical** | CVSS 7+ vulnerability presenting a high risk of exploitation (high exposure, ease of exploitation). A fix or mitigation is strongly recommended as soon as possible. |
-| 🟠 **Important** | CVSS 7+ vulnerability not presenting a high risk of exploitation (limited exposure or exploitation constraints) |
+| 🔴 **Critical** | CVSS 7+ vulnerability presenting a significant exploitation risk (high exposure, ease of exploitation). A correction or mitigation is strongly recommended as soon as possible.|
+| 🟠 **Important** | CVSS 7+ vulnerability not presenting a significant exploitation risk (limited exposure or exploitation constraints) |
 | 🟡 **Moderate** | CVSS 4+ vulnerability |
-| 🔵 **Low** | CVSS vulnerability below 4, or not exploitable. |
+| 🔵 **Low** | CVSS below 4, or non-exploitable vulnerability. |
 
-- **Remediation**: Information and recommendations in the context of Cloud Temple services. ⚠️ indicates that user action is required to address the vulnerability. ✅ indicates that the vulnerability is handled by Cloud Temple.
+- **Treatment** : Information and recommendations within the context of Cloud Temple services. ⚠️ indicates that user action is required to address the vulnerability. ✅ indicates that the vulnerability treatment is handled by Cloud Temple.
