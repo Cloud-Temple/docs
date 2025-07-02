@@ -1,4 +1,4 @@
-## Licencia del modelo qwen3:235b
+## Licence du modèle qwen3:235b
 
 ```
 ""                                 Apache License

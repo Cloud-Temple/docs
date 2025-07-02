@@ -2,16 +2,16 @@
 title: Overview
 ---
 
-# Cloud Temple Housing
+# Housing Cloud Temple
 
-**Cloud Temple Housing** offers a physical hosting solution for your IT infrastructures in reliable and secure availability zones. Designed to meet business needs, this offering allows you to host your equipment in shared or dedicated racks, while ensuring high-performance network connectivity and professional datacenter assistance services.
+The **Housing Cloud Temple** offers a physical hosting solution for your IT infrastructures in reliable and secure availability zones. Designed to meet the needs of companies, this offer allows you to host your equipment in shared or dedicated racks, while ensuring high-performance network connectivity and professional datacenter support services.
 
-With flexible options and a high level of security, Cloud Temple Housing guarantees the continuity and reliability of your operations, whether you're hosting appliances, servers, or benefiting from complementary services to optimize your infrastructure.
+With flexible options and a high level of security, the Housing Cloud Temple guarantees the continuity and reliability of your operations, whether you are hosting appliances, servers, or benefiting from complementary services to optimize your infrastructure.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the essential basics and principles to understand and master our infrastructure.</p>
+    <p>Discover the basics and essential principles to understand and master our infrastructure.</p>
     <a href="housing/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">

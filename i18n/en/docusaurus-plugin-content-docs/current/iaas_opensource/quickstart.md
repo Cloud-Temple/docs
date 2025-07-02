@@ -1,5 +1,5 @@
 ---
-title: Quickstart Guide
+title: Getting Started Guide
 ---
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
@@ -12,9 +12,9 @@ import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_m
 
 ### Virtual Machine Management
 
-The management interface for your virtual machines is available in the Shiva console in the __'OpenIaaS'__ menu located on the green sidebar on the left of the screen.
+The management interface for your virtual machines is available in the Shiva console under the __'OpenIaaS'__ menu located on the green bar on the left side of the screen.
 
-### Virtual Machine List
+### List of Virtual Machines
 
 In the __'Virtual Machines'__ section, you have access to the list of your virtual machines hosted on your trusted Cloud.
 
@@ -35,37 +35,37 @@ The following actions are possible from this interface:
 
 - Refresh the list of virtual machines.
 - Filter the list.
-- Search for a virtual machine by name.
+- Search for a virtual machine by its name.
 - Create a new virtual machine.
 
 <img src={openIaasVirtualMachinesListActions} />
 
-When you click on the green dropdown arrow on the right of the list for a virtual machine, you access all the information about it.
+When you click on the green dropdown arrow on the right side of the list for a virtual machine, you access all the information related to it.
 
 <img src={openIaasVirtualMachineOverview} />
 
-A quick toolbar allows you to perform the following actions:
+A quick bar allows you to perform the following actions:
 
 <img src={openIaasVirtualMachineActions} />
 
 - Power on the virtual machine.
-- Power it off.
+- Shut it down.
 - Restart it.
 - Open the console.
 - Mount an ISO.
 - Unmount an ISO.
-- Convert the virtual machine to a template.
+- Convert the virtual machine into a template.
 - Move it.
 - Rename it.
 - Delete it.
 
-In the '__General__' information tab, you will find detailed information about your virtual machine, such as its physical location (AZ, Pool, Host), RAM, CPU, IP addresses, and more.
+In the '__General__' information tab, you find detailed information related to your virtual machine, such as its physical location (AZ, Pool, Host), RAM, CPU, IP addresses, and others.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
 An '__Advanced__' tab allows you to view more specific information:
 
-- Virtual machine UUID
+- Virtual Machine UUID
 - Guest tools
 - Guest OS
 - DVD drive

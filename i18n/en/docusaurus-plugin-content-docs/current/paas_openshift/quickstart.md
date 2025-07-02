@@ -6,87 +6,87 @@ import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-## Deploying a RedHat OpenShift Platform Within Your Tenant
+## Deploy a Redhat Openshift platform within your tenant
 
-### Assigning Access Rights
+### Assignment of access rights
 
-It is essential that the [Tenant](../console/iam/concepts.md#tenants) administrator grants the OpenShift platform management right to the OpenShift administrator user to access it:
+It is essential that the [Tenant](../console/iam/concepts.md#tenants) administrator grants the OpenShift platform management rights to the OpenShift administrator user to access it:
 
 <img src={oshiftRights} />
 
-### Accessing the OpenShift Environment Within a Tenant
+### Access to the Openshift environment within a tenant
 
-After the rights assignment, the '__Openshift__' module then appears in the Cloud Temple console menu:
+After assigning the rights, the '__Openshift__' module then appears in the Cloud Temple console menu:
 
 <img src={oshiftMenu_001} />
 
-You will then see the OpenShift clusters that are deployed within your tenant.
+You will then see the Openshift clusters that are deployed within your tenant.
 
 Click on the cluster you want to administer. You will access the cluster administration environment:
 
 <img src={oshiftMenu_002} />
 
-After authentication, you can administer your cluster:
+After authentication, you can manage your cluster:
 
 <img src={oshiftMenu_003} />
 
-### Resources for Your Environment
+### Resources of your environment
 
-Here is the connection and configuration information specific to your OpenShift environment.
+Here are the connection and configuration information specific to your OpenShift environment.
 
-#### Connection Details
+#### Connection details
 
-To access the different OpenShift components, make sure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+To access the different OpenShift components, make sure your tenant is registered on the whitelist in the console (see the documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __Shiva Tenant URL__:
-  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+- __Shiva Tenant URL__ :
+  [https://__votre-id-locataire__.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__:
-  [https://ui-ocp01-__your-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-id**.paas.cloud-temple.com/)
+- __OpenShift UI__ :
+  [https://ui-ocp01-__votre-id__.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
 
-- __External API__:
-  [https://api-ocp01-__your-id__.paas.cloud-temple.com](https://api-ocp01-**your-id**.paas.cloud-temple.com)
+- __External API__ :
+  [https://api-ocp01-__votre-id__.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__:
-  [https://gitops-ocp01-__your-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)
+- __GitOps (ARGOCD)__ :
+  [https://gitops-ocp01-__votre-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
 
-#### Connecting to the Cluster via CLI
+#### Connecting to the cluster via CLI
 
-To connect via the command line interface (CLI), use the following command:
-
-```bash
-oc login https://api-ocp01-{your-id}.paas.cloud-temple.com/ --web
-```
-
-#### Registry Access
-
-To access the registry, log in using the following commands:
+To connect via the command line (CLI), use the following command :
 
 ```bash
-oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
-docker login -u {your-user} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
+oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com/ --web
 ```
 
-Then, test building and uploading a Docker image:
+#### Accessing the registry
+
+To access the registry, log in using the following commands :
+
+```bash
+oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com --web
+docker login -u {votre-utilisateur} -p $(oc whoami -t) registry-ocp01-{votre-id}.paas.cloud-temple.com
+```
+
+Then test the build and upload of a Docker image :
 
 ```bash
 docker build -t <namespace>/temp:latest .
-docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Router and Load Balancer Configuration
+#### Configuration of routers and Load Balancers
 
-The platform offers flexible options for __traffic routing__ and __load balancing__:
+The platform offers flexible options for __traffic routing__ and __load balancing__ :
 
 - By default, private load balancers are used for routes and ingresses.
-- Domains:
-  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
+- Domains :
+  - `*.apps-priv-ocp01-{votre-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{votre-id}.paas.cloud-temple.com`
 
 Make sure your routes or ingresses are configured with the appropriate labels or ingress classes to ensure correct routing.
 
-Example:
+Example :
 
 ```yaml
 metadata:
@@ -98,7 +98,7 @@ metadata:
 
 Network configurations play a crucial role in securing communications with OpenShift.
 
-- __Interconnection network__: 100.67.0.0/28
-- __Private load balancer VIP__: 100.67.0.3
+- __Interconnection network__ : 100.67.0.0/28
+- __Private load balancer VIP__ : 100.67.0.3
 
-Verify that your firewall has a dedicated interface and allows traffic between the specified networks.
+Check that your firewall has a dedicated interface and allows traffic between the specified networks.

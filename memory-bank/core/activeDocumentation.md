@@ -94,37 +94,32 @@
 - 📝 **Architecture réseau** : Diagrammes et concepts
 - 📝 **Configuration** : Guides techniques
 
-### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET
+### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET ET VALIDÉ
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue 46 modèles (généré depuis YAML)
-- ✅ `llmaas.md` : Vue d'ensemble service (style Anthropic factuel)
-- ✅ `quickstart.md` : Guide 5min **TESTÉ** - Tous exemples validés (curl + Python)
-- ✅ `api.md` : Documentation API **TESTÉE** - Streaming SSE + endpoints validés
-- ✅ `concepts.md` : Architecture IA **CRÉÉ** (05/06/2025)
-- ✅ `tutorials.md` : **COMPLET** - 7 intégrations 100% validées **6/6 TESTS RÉUSSIS** (05/06/2025)
-- ✅ `images/` : Structure créée pour screenshots
-- ✅ `licences/` : **SYSTÈME AUTOMATISÉ** - 42 fichiers de licence
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
+- ✅ `llmaas.md` : Vue d'ensemble du service.
+- ✅ `quickstart.md` : Guide de démarrage rapide, testé et enrichi.
+- ✅ `api.md` : Documentation API complète, alignée avec les tests.
+- ✅ `concepts.md` : Architecture et concepts de l'IA, enrichi avec les détails sur la sécurité des prompts et le cycle de vie des modèles.
+- ✅ `tutorials.md` : **MIS À JOUR (29/06/2025)** - Exemples enrichis et validés par la suite de tests.
+- ✅ `rag_explained.md` : **MIS À JOUR (29/06/2025)** - Explications détaillées sur le RAG et les modèles d'embedding.
+- ✅ `images/` : Ajout des images de benchmark.
+- ✅ `licences/` : Système de gestion des licences automatisé.
 
-#### Tutorials LLMaaS - ✅ COMPLET (05/06/2025)
-- ✅ **7 intégrations validées** : LangChain, OpenAI SDK, RAG, agents, Semantic Kernel, Haystack, LlamaIndex
-- ✅ **Code testé en production** : Tous exemples validés avec API réelle
-- ✅ **Tests automatisés** : `test_tutorials_integrations.py` (7/7 tests réussis)
-- ✅ **Frameworks supportés** : Python, TypeScript annotations, migration transparente
-- ✅ **Patterns avancés** : Streaming SSE, gestion erreurs, templates, outils personnalisés
+#### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (29/06/2025)
+- ✅ **9/9 suites de tests réussies** : Couverture complète des fonctionnalités de l'API.
+- ✅ **Tests RAG validés** :
+    - `test_rag_simple.py` : Pipeline de base fonctionnel.
+    - `test_rag_pipeline_detailed.py` : Pipeline avancé avec `LLMaaSEmbeddings` et FAISS, corrigé et validé.
+    - `test_qdrant_integration.py` : Intégration avec Qdrant, corrigée et validée (nécessite un conteneur Docker).
+- ✅ **Tests SDK et API** : `test_python_sdk.py`, `test_python_basic.py`, etc., tous corrigés et validés.
+- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble des 9 suites de tests.
 
-#### Système de Licences LLMaaS - ✅ COMPLET (05/06/2025)
-- ✅ **Fichier générique** : `apache2.licence.md` (20+ modèles)
-- ✅ **Fichier Llama 3.3** : `llama3.3_70b.licence.md` (licence spécifique)
-- ✅ **Mappings automatiques** : Script génère liens selon type de licence
-- ✅ **Vérification existence** : Pas de liens cassés
-- ✅ **Maintenance zéro** : Un fichier par type de licence
-
-#### Configuration Automatisée
-- ✅ **Source** : `memory-bank/models_config.yaml` (40 modèles)
-- ✅ **Script** : `scripts/generate_models_doc.py` (Python professionnel)
-- ✅ **NPM** : `npm run generate:models` (intégration workflow)
-- ✅ **Conformité** : SecNumCloud + HDS + Souveraineté + C5
+#### Documentation des Tutoriels (`/docs/llmaas/tutorials.md`) - ✅ ENRICHIE (29/06/2025)
+- ✅ **Explications détaillées** : Chaque exemple de code est maintenant accompagné d'explications didactiques sur son fonctionnement et son utilité.
+- ✅ **Cohérence avec les tests** : Les exemples de code, en particulier pour les pipelines RAG, ont été alignés sur les implémentations validées dans la suite de tests.
+- ✅ **Instructions Qdrant** : Ajout d'un encart clair expliquant comment lancer le conteneur Docker Qdrant, un prérequis pour le test d'intégration.
 
 #### Spécifications LLMaaS
 - ✅ **36 modèles** : 6 grande taille + 34 spécialisés
@@ -157,6 +152,7 @@
 - ✅ `iaas/` : Contrats IaaS
 - ✅ `network/` : Contrats réseau
 - ✅ `paas/` : Contrats PaaS
+- ✅ `llmaas/` : **NOUVEAU** - Matrice de responsabilité (RACI)
 
 ## Internationalisation - Statut : ✅ STRUCTURE COMPLÈTE
 
@@ -176,6 +172,7 @@
 
 ### Documentation Globale (`/docs/`)
 - ✅ `home.md` : Page d'accueil
+- ✅ `changelog.md` : **NOUVEAU** - Suivi des modifications
 - ✅ `market_place_public.md` : Marketplace public
 - ✅ `privacy.md` : Politique de confidentialité
 
@@ -271,11 +268,75 @@
 
 ## Prochaines Actions Immédiates
 
-1. **Compléter Network** : Internet et Private Network
-2. **Développer Storage OSS** : Documentation API S3
-3. **Finaliser Console** : Metrics et Security modules
-4. **Validation globale** : Cohérence et qualité
-5. **Traductions** : Mise à jour multilingue
+1. **Traduire la documentation LLMaaS** : L'ensemble de la section `docs/llmaas` a été mis à jour et doit être traduit.
+2. **Compléter Network** : Internet et Private Network
+3. **Développer Storage OSS** : Documentation API S3
+4. **Finaliser Console** : Metrics et Security modules
+5. **Validation globale** : Cohérence et qualité
+6. **Traductions** : Mise à jour multilingue générale
+
+### 🐍 Système de Traduction Python - ✅ COMPLET ET OPÉRATIONNEL (17/06/2025)
+**Localisation** : `scripts/translate_py/`
+**Status** : Production Ready
+**Script Legacy** : `oldies/translate.js` (archivé)
+
+#### ✅ Fonctionnalités Implémentées et Testées
+- ✅ **Architecture modulaire complète** : config, models, ui, translator, file_manager
+- ✅ **Interface Rich moderne** : Barres de progression temps réel, statistiques avancées
+- ✅ **Détection intelligente par hash SHA-256** : Comparaison précise des fichiers modifiés
+- ✅ **Mode initialisation** (`--init`) : Génération métadonnées avec hash des traductions existantes
+- ✅ **Gestion métadonnées** : Fichier `translation-meta.json` dans `scripts/translate_py/`
+- ✅ **Support .notranslation** : Exclusion automatique de répertoires (copie forcée)
+- ✅ **Concurrence optimisée** : Pool de workers pour utilisation maximale API
+- ✅ **Statistiques temps réel** : Tokens IN/OUT, vitesse tokens/s, progression détaillée
+- ✅ **Mode debug complet** : Logs détaillés avec comparaison hash avant/après
+- ✅ **Configuration flexible** : Variables d'environnement, auto-détection racine projet
+- ✅ **Gestion erreurs robuste** : Retry automatique, validation des réponses API
+
+#### 🔍 Détection des Changements Validée
+- ✅ **Hash SHA-256** : Calcul et comparaison précise des fichiers source
+- ✅ **Métadonnées persistantes** : Stockage état par fichier et langue
+- ✅ **Logique de décision** :
+  - Nouveau fichier (pas de hash stocké) → Traduit
+  - Fichier modifié (hash différent) → Traduit
+  - Traduction manquante → Traduit  
+  - Fichier inchangé (hash identique) → Ignore
+- ✅ **Logs explicatifs** : Messages clairs pourquoi chaque fichier est traité
+- ✅ **Workflow testé** : Init → Modification → Détection → Traduction validé
+
+#### 📁 Architecture du Système
+```
+scripts/translate_py/
+├── translate.py              # 🚀 Script principal avec CLI Click
+├── translation-meta.json     # 🔍 Métadonnées et hash SHA-256 (123 fichiers)
+├── config.py                # ⚙️ Configuration Pydantic + env
+├── models.py                # 📋 Modèles de données TypedDict
+├── ui.py                   # 🎨 Interface Rich + barres progression
+├── translator.py           # 🌐 Moteur traduction Cloud Temple API
+├── file_manager.py         # 📁 Gestion fichiers + métadonnées
+├── requirements.txt        # 📦 aiofiles, rich, pydantic, click, aiohttp
+├── .env.example           # 📝 Template configuration
+└── .env                  # 🔒 Configuration locale
+```
+
+#### 🎯 Workflow de Production Validé
+1. **Initialisation** : `python translate.py --init` → Génère métadonnées (45Ko, 123 fichiers)
+2. **Détection** : `python translate.py --dry-run --debug` → Affiche changements avec hash
+3. **Traduction** : `python translate.py` → Traduit uniquement fichiers modifiés
+4. **Validation** : Hash mis à jour automatiquement après traduction réussie
+
+#### 📊 Performance et Métriques
+- **Fichiers indexés** : 123 fichiers Markdown
+- **Langues supportées** : 4 (en, de, es, it)
+- **Métadonnées** : 45 Ko (format JSON optimisé)
+- **Détection** : <1s pour 123 fichiers (hash précalculés)
+- **Concurrence** : 8 workers simultanés (configurable)
+
+#### 🔄 Migration Script Legacy
+- ✅ **Script JS archivé** : `oldies/translate.js` (plus de maintenance)
+- ✅ **Compatibilité métadonnées** : Format JSON conservé
+- ✅ **Documentation mise à jour** : README complet avec workflows
+- ✅ **Workflow unifié** : Même commandes, interface améliorée
 
 ---
 

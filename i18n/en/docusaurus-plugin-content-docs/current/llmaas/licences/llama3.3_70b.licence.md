@@ -1,4 +1,4 @@
-## Llama 3.3 Community License
+## Licence Llama 3.3 Community License
 
 ```
 LLAMA 3.3 COMMUNITY LICENSE AGREEMENT

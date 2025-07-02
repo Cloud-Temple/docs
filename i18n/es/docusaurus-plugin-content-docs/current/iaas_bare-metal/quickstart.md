@@ -1,14 +1,14 @@
 ---
-title: Guía de inicio rápido
+title: Guía de inicio
 ---
 import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
 import shivaBareMetalList from './images/shiva_bare-metal_list.png'
 import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
 import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
 
-# Inicio rápido para la oferta Bare Metal
+# QuickStart para la oferta Bare Metal
 
-Esta página le guía a través de los pasos iniciales para utilizar la oferta **Bare Metal** desde la consola Cloud Temple. Siga estas instrucciones para descubrir los menús y funcionalidades disponibles.
+Esta página lo guía a través de los pasos iniciales para utilizar la oferta **Bare Metal** desde la consola Cloud Temple. Siga estas instrucciones para descubrir los menús y funcionalidades disponibles.
 
 ---
 
@@ -16,14 +16,14 @@ Esta página le guía a través de los pasos iniciales para utilizar la oferta *
 
 Antes de comenzar, asegúrese de los siguientes puntos:
 
-1. **Suscripción activa**: Su organización debe haber suscrito a la oferta Bare Metal.
-2. **Permisos de usuario**: Su cuenta de usuario debe disponer de los derechos necesarios para acceder y gestionar los recursos Bare Metal.
+1. **Suscripción activada**: Su organización debe tener suscrito a la oferta Bare Metal.
+2. **Permisos de usuario**: Su cuenta de usuario debe contar con los derechos necesarios para acceder y gestionar las recursos Bare Metal.
 
 ---
 
 ## Acceso a la interfaz Bare Metal
 
-Una vez que la suscripción está activada y los permisos configurados, aparece un nuevo menú titulado **Bare Metal** en la consola Cloud Temple. Este menú contiene dos submenús principales: **Bare Metal** y **Volumes**.
+Una vez activada la suscripción y configurados los permisos, aparecerá un nuevo menú denominado **Bare Metal** en la consola Cloud Temple. Este menú contiene dos submenús principales: **Bare Metal** y **Volumes**.
 
 <img src={shivaBareMetalMenu} />
 
@@ -31,19 +31,19 @@ Una vez que la suscripción está activada y los permisos configurados, aparece 
 
 ### 1. Submenú **Bare Metal**
 
-El submenú **Bare Metal** presenta una tabla que lista todas las instancias Bare Metal disponibles. Esta tabla incluye la información principal para cada instancia:
+El submenú **Bare Metal** le presenta una tabla que enumera todas las instancias Bare Metal disponibles. Esta tabla incluye la información principal para cada instancia:
 
 - **Nombre del Bare Metal**
 - **Estado**
-- **Configuración de hardware**
+- **Configuración hardware**
 - **Dirección IP**
 
 <img src={shivaBareMetalList} />
 
 #### Funcionalidades principales
 
-- **Botón Acción**: Permite acceder directamente a la consola de administración del Bare Metal.
-- **Nombre clickable**: Al hacer clic en el nombre de una instancia Bare Metal, se muestra una nueva página con los **detalles completos** de la instancia:
+- **Botón de Acción**: Permite acceder directamente a la consola de administración del Bare Metal.
+- **Nombre clicable**: Al hacer clic en el nombre de una instancia Bare Metal, se abre una nueva página con los **detalles completos** de la instancia:
   - Información sobre el hardware (RAM, CPU, GPU, etc.).
   - Configuración de red (direcciones IP asociadas).
   - Información de conectividad para la gestión.
@@ -54,17 +54,15 @@ El submenú **Bare Metal** presenta una tabla que lista todas las instancias Bar
 
 ### 2. Submenú **Volumes**
 
-El submenú **Volumes** muestra una tabla que lista todos los volúmenes de almacenamiento asociados a su suscripción Bare Metal. Para cada volumen, está disponible la siguiente información:
+El submenú **Volumes** muestra una tabla que enumera todos los volúmenes de almacenamiento asociados a su suscripción Bare Metal. Para cada volumen, están disponibles las siguientes informaciones:
 
 - **Nombre del volumen**
 - **Capacidad**
-- **Clase de rendimiento** (IOPS por TB)
-- **Estado** (Disponible, En despliegue, etc.)
+- **Clase de rendimiento** (IOPS por To)
+- **Estado** (Disponible, en proceso de despliegue, etc.)
 
 <img src={shivaBareMetalStoragelist} />
 
 #### Funcionalidades principales
 
-- Gestión de volúmenes: Desde esta tabla, puede mapear los volúmenes a sus instancias Bare Metal.
-
----
+- Gestión de volúmenes: Desde esta tabla, puede asignar los volúmenes a sus instancias Bare Metal.

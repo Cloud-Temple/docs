@@ -41,7 +41,7 @@ cd docker/local
 
 2. Launch the services with Docker Compose:
 ```bash
-docker compose up
+docker-compose up
 ```
 
 3. Access the documentation locally:
@@ -74,87 +74,132 @@ Open your browser and go to: <http://localhost:8080>
 
 # Translation Workflow
 
-This documentation supports multiple languages. The primary content is written in French (in the `/docs/` directory) and automatically translated to other languages using the DragonflyGroup LLM API.
+This documentation supports multiple languages. The primary content is written in French (in the `/docs/` directory) and automatically translated to other languages using the **Cloud Temple LLMaaS API** with an advanced Python system.
 
-## Prerequisites
+## 🐍 Modern Translation System (Recommended)
 
-1. Install the required development dependencies:
+The new Python-based translation system provides intelligent change detection, modern UI, and optimized performance.
+
+### Prerequisites
+
+1. Install Python dependencies:
 ```bash
-npm install
+cd scripts/translate_py
+pip install -r requirements.txt
 ```
 
-2. Configure the translation API credentials in the `.env` file:
-```
-DRAGONFLY_API_URL=https://ai.dragonflygroup.fr/api/v1/chat/completions
-DRAGONFLY_API_KEY=your_api_key
-DOC_BASE_PATH=.
-TRANSLATION_MODEL=chatgpt-4o-latest
-TRANSLATION_TEMPERATURE=1
-TRANSLATION_TOP_P=1
+2. Configure the translation API credentials in `scripts/translate_py/.env`:
+```bash
+# Copy template and edit
+cp scripts/translate_py/.env.example scripts/translate_py/.env
+
+# Configure your API credentials
+CLOUDTEMPLE_API_KEY=your_api_key_here
+CLOUDTEMPLE_API_URL=https://api.ai.cloud-temple.com/v1/chat/completions
+TRANSLATION_MODEL=qwen3:30b-a3b
+CONCURRENT_TRANSLATIONS=8
+TRANSLATION_TEMPERATURE=0.1
 ```
 
-## Generating Translations
+### Generating Translations
 
-After adding or modifying French content in the `/docs/` directory, you can generate translations using the translation script:
+After adding or modifying French content in the `/docs/` directory:
 
 ```bash
 # Translate all outdated files to all supported languages (en, de, es, it)
-node scripts/translate.js
+python scripts/translate_py/translate.py
 
 # Translate only to a specific language (e.g., English)
-node scripts/translate.js --lang=en
+python scripts/translate_py/translate.py --lang=en
 
 # Perform a dry run (shows what would be translated without making changes)
-node scripts/translate.js --dry-run
+python scripts/translate_py/translate.py --dry-run
 
 # Force retranslation of all files (ignores hash comparison)
-node scripts/translate.js --force
+python scripts/translate_py/translate.py --force
 
 # Initialize metadata for existing translations (first-time setup)
-node scripts/translate.js --init
+python scripts/translate_py/translate.py --init
 
 # Initialize metadata and translate any missing files
-node scripts/translate.js --init --translate-missing
+python scripts/translate_py/translate.py --init --translate-missing
+
+# Debug mode with detailed logs
+python scripts/translate_py/translate.py --debug --dry-run
 ```
 
 ### First-Time Setup
 
-When you have existing translations that you want to preserve:
+For new installations or when you have existing translations:
 
-1. Run the script with the `--init` flag to create hashes for all existing files:
+1. **Initialize metadata** to create hash tracking for all existing files:
    ```bash
-   node scripts/translate.js --init
+   python scripts/translate_py/translate.py --init
    ```
-   This will:
-   - Create hashes for all French source files
-   - Record these hashes in the metadata file for existing translations
-   - Skip any missing translations
+   This creates `scripts/translate_py/translation-meta.json` with SHA-256 hashes.
 
-2. If you want to also translate any missing files during initialization:
+2. **Initialize and translate missing files**:
    ```bash
-   node scripts/translate.js --init --translate-missing
+   python scripts/translate_py/translate.py --init --translate-missing
    ```
-   This will initialize metadata for existing translations and translate any missing files.
 
-After initialization, future runs of the script will only translate new or modified files.
+After initialization, the system will only translate new or modified files based on intelligent SHA-256 hash comparison.
 
-## How It Works
+## How the Modern System Works
 
-The translation script:
-1. Traverses all Markdown files in the `/docs/` directory
-2. Computes a SHA-256 hash of each file's content
-3. Compares the hash with stored values in `scripts/translation-meta.json`
-4. Only translates files that are new or have changed since the last translation
-5. Saves translated content to `/i18n/<lang>/docusaurus-plugin-content-docs/current/`
-6. Updates the translation metadata file with the new hashes
+The Python translation system features:
 
-Key features:
-- Source file hashes are stored only in the metadata file, keeping translated files clean
-- Non-Markdown files (like images, .docx files, etc.) are copied without translation
-- Only .md files are processed for translation
+### 🔍 **Intelligent Change Detection**
+- **SHA-256 hashing**: Precise detection of file modifications
+- **Metadata persistence**: Tracks translation state for 123+ files across 4 languages
+- **Smart decision logic**:
+  - New file (no hash stored) → Translates
+  - Modified file (hash different) → Translates  
+  - Missing translation → Translates
+  - Unchanged file (hash identical) → Skips
+
+### 🎨 **Modern Interface**
+- **Real-time progress bars**: Live translation status
+- **Rich statistics**: Tokens IN/OUT, processing speed, completion rates
+- **Detailed logging**: Clear explanations for each translation decision
+- **Debug mode**: Hash comparison with before/after values
+
+### ⚡ **Optimized Performance**
+- **Concurrent processing**: 8 parallel translation workers (configurable)
+- **Intelligent batching**: Optimizes API usage patterns
+- **Error resilience**: Automatic retry with exponential backoff
+- **Resource efficiency**: Only processes changed files
+
+### 🚫 **Advanced Features**
+- **`.notranslation` support**: Place this file in directories to force copy instead of translation
+- **Auto-detection**: Automatically finds project root and configures paths
+- **Multiple output formats**: Supports all Docusaurus i18n structures
+- **Comprehensive error handling**: Detailed error reporting and recovery
+
+## Supported Languages
+
+- 🇫🇷 **French** (source language in `/docs/`)
+- 🇬🇧 **English** (`en`)
+- 🇩🇪 **German** (`de`) 
+- 🇪🇸 **Spanish** (`es`)
+- 🇮🇹 **Italian** (`it`)
+
+Translations are saved to `/i18n/<lang>/docusaurus-plugin-content-docs/current/`
+
+## Legacy System (Archived)
+
+The original Node.js translation script has been moved to `oldies/translate.js` and is no longer maintained. Use the Python system for all new translations.
 
 ## Troubleshooting
 
-- **API Connection Issues**: Verify your API credentials in the `.env` file
-- **Missing Translations**: Run with the `--force` flag to retranslate all files
-- **Translation Quality**: Adjust the temperature and top_p parameters in `.env` for different results
+### Modern Python System
+- **API Connection Issues**: Check `scripts/translate_py/.env` configuration
+- **Permission Errors**: Ensure write access to `i18n/` directory  
+- **Missing Dependencies**: Run `pip install -r scripts/translate_py/requirements.txt`
+- **Performance Issues**: Adjust `CONCURRENT_TRANSLATIONS` in `.env`
+
+### Getting Help
+- **Detailed logs**: Use `--debug` flag for comprehensive information
+- **Hash debugging**: Compare before/after hash values in debug output
+- **API testing**: Use `--test-api` to verify connection
+- **Documentation**: See `scripts/README.md` for complete reference
