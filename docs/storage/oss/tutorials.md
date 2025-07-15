@@ -97,3 +97,51 @@ Globalement, le HASH des fichiers est supporté sur notre stockage objet via les
             Metadata  :
                 X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
                 Content-Type              : text/plain
+
+## Synchroniser un dossier local avec mc
+
+La commande `mc mirror` est un outil puissant pour synchroniser le contenu d'un dossier local vers un bucket S3. Elle peut téléverser les fichiers nouveaux ou modifiés, et optionnellement supprimer les fichiers du bucket qui n'existent plus localement. C'est une méthode efficace pour maintenir une sauvegarde ou déployer un site statique.
+
+**Exemple :**
+
+Pour synchroniser le contenu du dossier local `./mon-site` vers le bucket `demo-app` :
+
+```bash
+❯ mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
+```
+
+**Options utiles :**
+
+*   `--overwrite` : Force le remplacement des fichiers existants même s'ils sont plus récents sur le bucket.
+*   `--remove` : Supprime les fichiers du bucket qui n'existent plus dans le dossier local source. À utiliser avec prudence.
+
+```bash
+# Synchronisation complète avec suppression des fichiers distants obsolètes
+❯ mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/
+```
+
+## Synchroniser un dossier local avec AWS CLI
+
+De manière similaire à `mc`, l'AWS CLI fournit la commande `aws s3 sync` pour synchroniser des répertoires. Cette commande compare le contenu du dossier source et du bucket de destination pour ne transférer que les fichiers nouveaux ou modifiés.
+
+N'oubliez pas de configurer votre [client AWS comme indiqué dans le guide de démarrage](./quickstart.md#configurer-votre-client-aws-aws) et d'utiliser le paramètre `--endpoint-url`.
+
+**Exemple :**
+
+Pour synchroniser le contenu du dossier local `./mon-site` vers le bucket `s3://demo-app` :
+
+```bash
+❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+```
+
+**Options utiles :**
+
+*   `--delete` : Supprime les fichiers du bucket qui n'existent plus dans le dossier local. C'est l'équivalent de l'option `--remove` de `mc mirror`.
+*   `--exact-timestamps` : Lors de la synchronisation, ne copie le fichier que si l'horodatage de modification est différent.
+*   `--dryrun` : Affiche les opérations qui seraient effectuées sans réellement les exécuter. Très utile pour vérifier une commande avant de la lancer.
+
+```bash
+# Simulation d'une synchronisation avec suppression
+❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://... --delete --dryrun
+(dryrun) delete: s3://demo-app/old-file.html
+(dryrun) upload: mon-site/new-file.css to s3://demo-app/new-file.css
