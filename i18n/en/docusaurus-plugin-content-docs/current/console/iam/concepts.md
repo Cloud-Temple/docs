@@ -157,11 +157,12 @@ Subsequently, the right __'iam_write'__ allows an account to manage the permissi
 When a user is created, they have no default permissions. Each permission is assigned individually and works in a unitary way, without overlapping with other permissions. They are applied in conjunction, meaning a user must have all required permissions to perform a specific action.
 
 The following permissions are configurable for each user and each tenant in your organization:
- • "read" type permissions: allow only the consultation of resources without the possibility of modification.
- • "write" type permissions: authorize the modification of configurations.
- • "management" type permissions: authorize advanced management of resources.
- • "console_access" type permissions: authorize PMAD connections to resources.
- • "virtual_machine_power" type permissions: authorize power management of a virtual machine.
+
+- "read" type permissions: allow only the consultation of resources without the possibility of modification.
+- "write" type permissions: authorize the modification of configurations.
+- "management" type permissions: authorize advanced management of resources.
+- "console_access" type permissions: authorize PMAD connections to resources.
+- "virtual_machine_power" type permissions: authorize power management of a virtual machine.
 
 - __These are permissions, not roles.__ For this reason, it is necessary to have READ and WRITE permissions to modify a configuration.
 
