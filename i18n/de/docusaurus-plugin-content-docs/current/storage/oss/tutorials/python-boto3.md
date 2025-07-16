@@ -6,7 +6,7 @@ Boto3 ist das AWS-Software-Entwicklungspaket (SDK) für Python. Es ermöglicht I
 
 ### Installation
 
-Die Installation der Bibliothek erfolgt einfach über pip, den Python-Paket-Manager :
+Die Installation der Bibliothek erfolgt einfach über pip, den Python-Paket-Manager:
 
 ```bash
 pip install boto3
@@ -17,8 +17,6 @@ pip install boto3
 Um mit dem Dienst zu interagieren, müssen Sie zunächst einen Boto3-Client initialisieren, indem Sie Ihre Anmeldeinformationen und den spezifischen Endpunkt (Endpoint) von Cloud Temple bereitstellen. Hier ist ein Beispiel für eine Konfiguration:
 
 ```python
-```
-
 # Ihre Anmeldeinformationen
 access_key = 'IHR_ZUGANGSSCHLÜSSEL'
 secret_key = 'IHR_GEHEIMES_SCHLÜSSEL'
@@ -27,6 +25,7 @@ region = 'eu-west-1' # Standardwert, kann angepasst werden
 
 # Name des Buckets für Beispiele
 bucket_name = 'mon-bucket-test'
+```
 
 ### 1. Dateien eines S3-Buckets auflisten
 
@@ -34,8 +33,6 @@ Um alle Objekte eines Buckets aufzulisten, können Sie einen `paginator` verwend
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -65,9 +62,7 @@ Die Methode `put_object` ist eine flexible Methode, um Daten in einen Bucket hoc
 
 ```python
 #!/usr/bin/env python3
-```
-
-# -*- Kodierung: utf-8 -*-
+# -*- coding: utf-8 -*-
 import boto3
 import json
 from botocore.config import Config
@@ -93,7 +88,6 @@ json_file = {
 
 key = f"users/dupond_claire.json"
 
-```python
 # Konvertierung in eine JSON-Zeichenkette und dann in Bytes
 json_str = json.dumps(json_file, indent=2)
 body_bytes = json_str.encode("utf-8")
@@ -127,8 +121,6 @@ Um den Inhalt eines Objekts zu erhalten, verwenden Sie die Methode `get_object`.
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -154,8 +146,6 @@ Die Methode `delete_object` ermöglicht das dauerhafte Löschen eines Objekts au
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -183,8 +173,6 @@ Wenn ein Objekt bereits existiert, können Sie dessen Berechtigungen ändern, um
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import os
@@ -204,4 +192,3 @@ put_object_acl_result = s3.put_object_acl(Bucket=bucket_name, Key=key, ACL="publ
 
 public_url = f"{os.getenv('S3_ENDPOINT_URL').rstrip('/')}/{bucket_name}/{key}"
 print("Öffentliche URL:", public_url)
-```

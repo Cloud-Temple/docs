@@ -6,7 +6,7 @@ Boto3 es el kit de desarrollo (SDK) de AWS para Python. Le permite crear, config
 
 ### Instalación
 
-La instalación de la biblioteca se realiza simplemente mediante pip, el gestor de paquetes de Python :
+La instalación de la biblioteca se realiza simplemente mediante pip, el gestor de paquetes de Python:
 
 ```bash
 pip install boto3
@@ -14,11 +14,9 @@ pip install boto3
 
 ### Configuración del cliente Boto3
 
-Para interactuar con el servicio, primero debe inicializar un cliente Boto3 proporcionándole sus credenciales y el punto de terminación (endpoint) específico de Cloud Temple. Aquí hay un ejemplo de configuración :
+Para interactuar con el servicio, primero debe inicializar un cliente Boto3 proporcionándole sus credenciales y el punto de terminación (endpoint) específico de Cloud Temple. Aquí hay un ejemplo de configuración:
 
 ```python
-```
-
 # Tus credenciales
 access_key = 'VOTRE_CLE_ACCES'
 secret_key = 'VOTRE_CLE_SECRETE'
@@ -27,6 +25,7 @@ region = 'eu-west-1' # Valor predeterminado, puede adaptarse
 
 # Nombre del bucket para los ejemplos
 bucket_name = 'mon-bucket-test'
+```
 
 ### 1. Listar los archivos de un bucket S3
 
@@ -34,8 +33,6 @@ Para listar todos los objetos de un bucket, puede usar un `paginator`. Es el mé
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -65,8 +62,6 @@ El método `put_object` es una forma flexible de subir datos a un bucket. Es esp
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import json
@@ -126,9 +121,7 @@ Para recuperar el contenido de un objeto, utilice el método `get_object`. Devue
 
 ```python
 #!/usr/bin/env python3
-```
-
-# -*- codificación: utf-8 -*-
+# -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
 
@@ -153,9 +146,7 @@ El método `delete_object` permite eliminar definitivamente un objeto de un buck
 
 ```python
 #!/usr/bin/env python3
-```
-
-# -*- codificación: utf-8 -*-
+# -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
 
@@ -182,8 +173,6 @@ Si un objeto ya existe, puedes modificar sus permisos para hacerlo públicamente
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import os
@@ -203,4 +192,3 @@ put_object_acl_result = s3.put_object_acl(Bucket=bucket_name, Key=key, ACL="publ
 
 public_url = f"{os.getenv('S3_ENDPOINT_URL').rstrip('/')}/{bucket_name}/{key}"
 print("URL pública :", public_url)
-```
