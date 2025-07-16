@@ -159,11 +159,13 @@ Quando un utente viene creato, non possiede alcun permesso di default. Ogni perm
 I seguenti permessi sono configurabili per ogni utente e per ogni tenant della vostra organizzazione:
  • Permessi di tipo "read": permettono unicamente la consultazione delle risorse senza possibilità di modifica.
  • Permessi di tipo "write": autorizzano la modifica delle configurazioni.
-  • Permessi di tipo "management": autorizzano la gestione avanzata delle risorse.
+ • Permessi di tipo "management": autorizzano la gestione avanzata delle risorse.
+ • Permessi di tipo "console_access": autorizzano le connessioni di tipo PMAD alle risorse.
+ • Permessi di tipo "virtual_machine_power": autorizzano la gestione dell'alimentazione di una macchina virtuale.
 
 - __Sono permessi, non ruoli.__ Come tali, è necessario avere sia il permesso READ che WRITE per modificare una configurazione.
 
-Ultimo aggiornamento il: 23/01/2025
+Ultimo aggiornamento il: 16/07/2025
 
 | Nome del permesso                             | Descrizione del permesso                                                                                                        |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -182,12 +184,14 @@ Ultimo aggiornamento il: 23/01/2025
 | compute_iaas_opensource_read                  | Offerta OpenIaaS - Consultazione delle risorse di tipo Macchine Virtuali                                                        |
 | compute_iaas_opensource_management            | Offerta OpenIaaS - Gestione delle risorse di tipo Macchine Virtuali                                                             |
 | compute_iaas_opensource_virtual_machine_power | Offerta OpenIaaS - Gestione dell'alimentazione di una macchina virtuale                                                         |
+| compute_iaas_opensource_replication_recover   | Offerta OpenIaaS - Gestione della replica                                                                                       |
 | compute_iaas_vmware_console_access            | Offerta Vmware - Apertura della console di una macchina virtuale                                                                |
 | compute_iaas_vmware_infrastructure_read       | Offerta Vmware - Consultazione di dati avanzati delle risorse VMware (regole di affinità/anti-affinità, configurazione drs, ecc)|
 | compute_iaas_vmware_infrastructure_write      | Offerta Vmware - Gestione avanzata delle risorse VMware                                                                         |
 | compute_iaas_vmware_read                      | Offerta Vmware - Consultazione delle risorse di tipo Macchine Virtuali                                                          |
 | compute_iaas_vmware_management                | Offerta Vmware - Gestione delle risorse di tipo Macchine Virtuali (permette la crittografia di una macchina virtuale)           |
 | compute_iaas_vmware_virtual_machine_power     | Offerta Vmware - Gestione dell'alimentazione di una macchina virtuale                                                           |
+| baremetal_management                          | Offerta Bare Metal - Gestione delle risorse di tipo Bare Metal                                                                 |
 | baremetal_read                                | Offerta Bare Metal - Consultazione delle risorse di tipo Bare Metal                                                             |
 | baremetal_console_access                      | Offerta Bare Metal - Apertura della console di un Bare Metal                                                                    |
 | console_public_access_read                    | Consultazione degli IP autorizzati ad accedere alla console                                                                     |
@@ -221,6 +225,8 @@ Ultimo aggiornamento il: 23/01/2025
 | ticket_comment_write                          | Gestione dei commenti                                                                                                           |
 | ticket_read                                   | Consultazione dei ticket                                                                                                        |
 | ticket_write                                  | Gestione dei ticket                                                                                                             |
+| incident_management                           | Gestione degli incidenti                                                                                                       |
+| incident_read                                 | Consultazione degli incidenti                                                                                                  |
 
 ## Organizzazioni
 
