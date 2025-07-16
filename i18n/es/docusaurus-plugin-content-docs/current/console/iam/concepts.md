@@ -159,11 +159,13 @@ Cuando se crea un usuario, no tiene ningún permiso por defecto. Cada permiso se
 Los siguientes permisos son configurables para cada usuario y para cada tenant de su organización:
  • Permisos de tipo "read": permiten únicamente la consulta de recursos sin posibilidad de modificación.
  • Permisos de tipo "write": permiten la modificación de configuraciones.
-  • Permisos de tipo "management": permiten la gestión avanzada de recursos.
+ • Permisos de tipo "management": permiten la gestión avanzada de recursos.
+ • Permisos de tipo "console_access": autorizan las conexiones tipo PMAD a los recursos.
+ • Permisos de tipo "virtual_machine_power": autorizan la gestión de la alimentación de una máquina virtual.
 
 - __Estos son permisos, no roles.__ Por lo tanto, es necesario tener el permiso READ y WRITE para modificar una configuración.
 
-Última actualización: 23/01/2025
+Última actualización: 16/07/2025
 
 | Nombre del permiso                          | Descripción del permiso                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -182,12 +184,14 @@ Los siguientes permisos son configurables para cada usuario y para cada tenant d
 | compute_iaas_opensource_read                  | Oferta OpenIaaS - Consulta de recursos de tipo Máquinas Virtuales                                                             |
 | compute_iaas_opensource_management            | Oferta OpenIaaS - Gestión de recursos de tipo Máquinas Virtuales                                                              |
 | compute_iaas_opensource_virtual_machine_power | Oferta OpenIaaS - Gestión de la alimentación de una máquina virtual                                                           |
+| compute_iaas_opensource_replication_recover   | Oferta OpenIaaS - Gestión de la replicación                                                                                   |
 | compute_iaas_vmware_console_access            | Oferta Vmware - Apertura de la consola de una máquina virtual                                                                 |
 | compute_iaas_vmware_infrastructure_read       | Oferta Vmware - Consulta de datos avanzados de recursos VMware (reglas de afinidad/anti-afinidad, configuración DRS, etc.)  |
 | compute_iaas_vmware_infrastructure_write      | Oferta Vmware - Gestión avanzada de recursos VMware                                                                           |
 | compute_iaas_vmware_read                      | Oferta Vmware - Consulta de recursos de tipo Máquinas Virtuales                                                               |
 | compute_iaas_vmware_management                | Oferta Vmware - Gestión de recursos de tipo Máquinas Virtuales (permite el cifrado de una máquina virtual)                                                              |
 | compute_iaas_vmware_virtual_machine_power     | Oferta Vmware - Gestión de la alimentación de una máquina virtual                                                             |
+| baremetal_management                          | Oferta Bare Metal - Gestión de recursos de tipo Bare Metal                                                                    |
 | baremetal_read                                | Oferta Bare Metal - Consulta de recursos de tipo Bare Metal                                                                   |
 | baremetal_console_access                      | Oferta Bare Metal - Apertura de la consola de un Bare Metal                                                                  |
 | console_public_access_read                    | Consulta de las IPs autorizadas para acceder a la consola                                                                     |
@@ -221,6 +225,8 @@ Los siguientes permisos son configurables para cada usuario y para cada tenant d
 | ticket_comment_write                          | Gestión de comentarios                                                                                                        |
 | ticket_read                                   | Consulta de tickets                                                                                                           |
 | ticket_write                                  | Gestión de tickets                                                                                                            |
+| incident_management                           | Gestión de incidentes                                                                                                        |
+| incident_read                                 | Consulta de incidentes                                                                                                       |
 
 ## Organizaciones
 
