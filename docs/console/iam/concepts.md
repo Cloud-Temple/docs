@@ -157,11 +157,12 @@ Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les per
 Lorsqu’un utilisateur est créé, il ne possède aucune permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
 
 Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
- • Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
- • Permissions de type “write” : autorisent la modification des configurations.
- • Permissions de type “management“ : autorisent la gestion avancées des ressources.
- • Permissions de type “console_access“ : autorisent les connexions type PMAD sur les ressources.
- • Permissions de type “virtual_machine_power“ : autorisent la gestion de l'alimentation d'une machine virtuelle.
+
+- Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
+- Permissions de type “write” : autorisent la modification des configurations.
+- Permissions de type “management“ : autorisent la gestion avancées des ressources.
+- Permissions de type “console_access“ : autorisent les connexions type PMAD sur les ressources.
+- Permissions de type “virtual_machine_power“ : autorisent la gestion de l'alimentation d'une machine virtuelle.
 
 - __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 

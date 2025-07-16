@@ -157,12 +157,12 @@ Anschließend ermöglicht das Recht __'iam_write'__ einem Konto, die Berechtigun
 Wenn ein Benutzer erstellt wird, hat er standardmäßig keine Berechtigungen. Jede Berechtigung wird individuell zugewiesen und funktioniert eigenständig, ohne Überschneidung mit anderen Berechtigungen. Sie werden in Kombination angewendet, was bedeutet, dass ein Benutzer alle erforderlichen Berechtigungen haben muss, um eine bestimmte Aktion durchzuführen.
 
 Die folgenden Berechtigungen sind für jeden Benutzer und für jeden Tenant Ihrer Organisation konfigurierbar:
- • Berechtigungen vom Typ "read": erlauben nur die Anzeige von Ressourcen ohne Möglichkeit zur Änderung.
- • Berechtigungen vom Typ "write": erlauben die Änderung von Konfigurationen.
-  • Berechtigungen vom Typ "management": erlauben die erweiterte Verwaltung von Ressourcen.
 
- • Berechtigungen vom Typ "console_access": autorisieren PMAD-Verbindungen zu Ressourcen.
- • Berechtigungen vom Typ "virtual_machine_power": autorisieren die Stromverwaltung einer virtuellen Maschine.
+- Berechtigungen vom Typ "read": erlauben nur die Anzeige von Ressourcen ohne Möglichkeit zur Änderung.
+- Berechtigungen vom Typ "write": erlauben die Änderung von Konfigurationen.
+- Berechtigungen vom Typ "management": erlauben die erweiterte Verwaltung von Ressourcen.
+- Berechtigungen vom Typ "console_access": autorisieren PMAD-Verbindungen zu Ressourcen.
+- Berechtigungen vom Typ "virtual_machine_power": autorisieren die Stromverwaltung einer virtuellen Maschine.
 
 - __Dies sind Berechtigungen, keine Rollen.__ Als solche ist es notwendig, sowohl die READ- als auch die WRITE-Berechtigung zu haben, um eine Konfiguration zu ändern.
 
