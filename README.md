@@ -72,134 +72,55 @@ Open your browser and go to: <http://localhost:8080>
 
 > Base url is set to "/" on production build
 
-# Translation Workflow
+# Scripts for Automation
 
-This documentation supports multiple languages. The primary content is written in French (in the `/docs/` directory) and automatically translated to other languages using the **Cloud Temple LLMaaS API** with an advanced Python system.
+This project includes several scripts to automate documentation and translation tasks. For complete technical details on all scripts, please refer to the [**Scripts README**](./scripts/README.md).
 
-## 🐍 Modern Translation System (Recommended)
+## 📜 LLMaaS Model Documentation Generator
 
-The new Python-based translation system provides intelligent change detection, modern UI, and optimized performance.
+This Python script automatically generates the `models.md` page from a YAML configuration file.
 
-### Prerequisites
+- **Source**: `memory-bank/models_config.yaml`
+- **Output**: `docs/llmaas/models.md`
 
-1. Install Python dependencies:
+### Usage
+To update the model documentation, run the following command from the project root:
 ```bash
-cd scripts/translate_py
-pip install -r requirements.txt
+npm run generate:models
+# or directly:
+python scripts/generate_models_doc.py
 ```
 
-2. Configure the translation API credentials in `scripts/translate_py/.env`:
-```bash
-# Copy template and edit
-cp scripts/translate_py/.env.example scripts/translate_py/.env
+## 🌍 Translation System
 
-# Configure your API credentials
-CLOUDTEMPLE_API_KEY=your_api_key_here
-CLOUDTEMPLE_API_URL=https://api.ai.cloud-temple.com/v1/chat/completions
-TRANSLATION_MODEL=qwen3:30b-a3b
-CONCURRENT_TRANSLATIONS=8
-TRANSLATION_TEMPERATURE=0.1
-```
+This documentation supports multiple languages. The primary content is written in French (in the `/docs/` directory) and automatically translated using an advanced Python system powered by the **Cloud Temple LLMaaS API**.
 
-### Generating Translations
+The system uses SHA-256 hashing to intelligently detect modified files, ensuring that only new or changed content is sent for translation. It features a modern command-line interface with real-time progress and detailed statistics.
 
-After adding or modifying French content in the `/docs/` directory:
+### Quick Start
 
-```bash
-# Translate all outdated files to all supported languages (en, de, es, it)
-python scripts/translate_py/translate.py
+1.  **Install Dependencies**:
+    ```bash
+    cd scripts/translate_py
+    pip install -r requirements.txt
+    ```
 
-# Translate only to a specific language (e.g., English)
-python scripts/translate_py/translate.py --lang=en
+2.  **Configure Environment**:
+    Copy the example `.env` file and add your API key.
+    ```bash
+    # From the scripts/translate_py directory
+    cp .env.example .env
+    # Now, edit the .env file with your credentials
+    ```
 
-# Perform a dry run (shows what would be translated without making changes)
-python scripts/translate_py/translate.py --dry-run
+3.  **Run Translation**:
+    After adding or modifying content in the `/docs` directory, run the translation from the project root.
+    ```bash
+    # Translate all modified files to all supported languages
+    python scripts/translate_py/translate.py
 
-# Force retranslation of all files (ignores hash comparison)
-python scripts/translate_py/translate.py --force
+    # Perform a dry run to see what would be translated
+    python scripts/translate_py/translate.py --dry-run
+    ```
 
-# Initialize metadata for existing translations (first-time setup)
-python scripts/translate_py/translate.py --init
-
-# Initialize metadata and translate any missing files
-python scripts/translate_py/translate.py --init --translate-missing
-
-# Debug mode with detailed logs
-python scripts/translate_py/translate.py --debug --dry-run
-```
-
-### First-Time Setup
-
-For new installations or when you have existing translations:
-
-1. **Initialize metadata** to create hash tracking for all existing files:
-   ```bash
-   python scripts/translate_py/translate.py --init
-   ```
-   This creates `scripts/translate_py/translation-meta.json` with SHA-256 hashes.
-
-2. **Initialize and translate missing files**:
-   ```bash
-   python scripts/translate_py/translate.py --init --translate-missing
-   ```
-
-After initialization, the system will only translate new or modified files based on intelligent SHA-256 hash comparison.
-
-## How the Modern System Works
-
-The Python translation system features:
-
-### 🔍 **Intelligent Change Detection**
-- **SHA-256 hashing**: Precise detection of file modifications
-- **Metadata persistence**: Tracks translation state for 123+ files across 4 languages
-- **Smart decision logic**:
-  - New file (no hash stored) → Translates
-  - Modified file (hash different) → Translates  
-  - Missing translation → Translates
-  - Unchanged file (hash identical) → Skips
-
-### 🎨 **Modern Interface**
-- **Real-time progress bars**: Live translation status
-- **Rich statistics**: Tokens IN/OUT, processing speed, completion rates
-- **Detailed logging**: Clear explanations for each translation decision
-- **Debug mode**: Hash comparison with before/after values
-
-### ⚡ **Optimized Performance**
-- **Concurrent processing**: 8 parallel translation workers (configurable)
-- **Intelligent batching**: Optimizes API usage patterns
-- **Error resilience**: Automatic retry with exponential backoff
-- **Resource efficiency**: Only processes changed files
-
-### 🚫 **Advanced Features**
-- **`.notranslation` support**: Place this file in directories to force copy instead of translation
-- **Auto-detection**: Automatically finds project root and configures paths
-- **Multiple output formats**: Supports all Docusaurus i18n structures
-- **Comprehensive error handling**: Detailed error reporting and recovery
-
-## Supported Languages
-
-- 🇫🇷 **French** (source language in `/docs/`)
-- 🇬🇧 **English** (`en`)
-- 🇩🇪 **German** (`de`) 
-- 🇪🇸 **Spanish** (`es`)
-- 🇮🇹 **Italian** (`it`)
-
-Translations are saved to `/i18n/<lang>/docusaurus-plugin-content-docs/current/`
-
-## Legacy System (Archived)
-
-The original Node.js translation script has been moved to `oldies/translate.js` and is no longer maintained. Use the Python system for all new translations.
-
-## Troubleshooting
-
-### Modern Python System
-- **API Connection Issues**: Check `scripts/translate_py/.env` configuration
-- **Permission Errors**: Ensure write access to `i18n/` directory  
-- **Missing Dependencies**: Run `pip install -r scripts/translate_py/requirements.txt`
-- **Performance Issues**: Adjust `CONCURRENT_TRANSLATIONS` in `.env`
-
-### Getting Help
-- **Detailed logs**: Use `--debug` flag for comprehensive information
-- **Hash debugging**: Compare before/after hash values in debug output
-- **API testing**: Use `--test-api` to verify connection
-- **Documentation**: See `scripts/README.md` for complete reference
+> For a complete list of commands, advanced features (like `--force`, `--init`, `.notranslation` files), and troubleshooting, please see the detailed [**Translation Script Documentation**](./scripts/README.md#--translatetranslatepy-recommandé).
