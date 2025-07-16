@@ -6,7 +6,7 @@ Boto3 is the AWS Software Development Kit (SDK) for Python. It allows you to cre
 
 ### Installation
 
-The installation of the library is done simply via pip, the Python package manager :
+The installation of the library is done simply via pip, the Python package manager:
 
 ```bash
 pip install boto3
@@ -17,8 +17,6 @@ pip install boto3
 To interact with the service, you must first initialize a Boto3 client by providing your credentials and the endpoint specific to Cloud Temple. Here is an example configuration:
 
 ```python
-```
-
 # Your credentials
 access_key = 'YOUR_ACCESS_KEY'
 secret_key = 'YOUR_SECRET_KEY'
@@ -27,6 +25,7 @@ region = 'eu-west-1' # Default value, can be adjusted
 
 # Bucket name for examples
 bucket_name = 'mon-bucket-test'
+```
 
 ### 1. List the files of an S3 bucket
 
@@ -34,13 +33,9 @@ To list all objects in a bucket, you can use a `paginator`. This is the most rob
 
 ```python
 #!/usr/bin/env python3
-```
-
-```python
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
-```
 
 # Initializing the S3 client
 s3_client = boto3.client(
@@ -61,14 +56,12 @@ for page in paginator.paginate(**operation_parameters):
         print(obj['Key'])
 ```
 
-### 2. Upload an object (Upload)
+### 2. Upload an object
 
 The `put_object` method is a flexible way to upload data to a bucket. It is particularly useful when the data does not come directly from a file, but is generated or manipulated in memory, such as in this example where a JSON object is uploaded.
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import json
@@ -128,13 +121,9 @@ To retrieve the content of an object, use the `get_object` method. It returns an
 
 ```python
 #!/usr/bin/env python3
-```
-
-```python
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
-```
 
 # Initialization of the S3 client
 s3_client = boto3.client(
@@ -157,8 +146,6 @@ The method `delete_object` allows you to permanently delete an object from a buc
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -186,8 +173,6 @@ If an object already exists, you can modify its permissions to make it publicly 
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import os
@@ -206,5 +191,4 @@ key = f"users/dupond_claire.json"
 put_object_acl_result = s3.put_object_acl(Bucket=bucket_name, Key=key, ACL="public-read")
 
 public_url = f"{os.getenv('S3_ENDPOINT_URL').rstrip('/')}/{bucket_name}/{key}"
-print("URL publique :", public_url)
-```
+print("Public URL:", public_url)

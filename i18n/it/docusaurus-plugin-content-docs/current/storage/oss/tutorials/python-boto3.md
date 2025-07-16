@@ -6,7 +6,7 @@ Boto3 è il kit di sviluppo software (SDK) AWS per Python. Vi consente di creare
 
 ### Installazione
 
-L'installazione della libreria avviene semplicemente tramite pip, il gestore di pacchetti Python :
+L'installazione della libreria avviene semplicemente tramite pip, il gestore di pacchetti Python:
 
 ```bash
 pip install boto3
@@ -14,11 +14,9 @@ pip install boto3
 
 ### Configurazione del client Boto3
 
-Per interagire con il servizio, è necessario inizializzare prima un client Boto3 fornendo le proprie credenziali e l'endpoint specifico per Cloud Temple. Ecco un esempio di configurazione :
+Per interagire con il servizio, è necessario inizializzare prima un client Boto3 fornendo le proprie credenziali e l'endpoint specifico per Cloud Temple. Ecco un esempio di configurazione:
 
 ```python
-```
-
 # Le tue credenziali
 access_key = 'LA_TUA_CLEF_ACCESSO'
 secret_key = 'LA_TUA_CLEF_SEGRETA'
@@ -27,6 +25,7 @@ region = 'eu-west-1' # Valore predefinito, può essere adattato
 
 # Nome del bucket per gli esempi
 bucket_name = 'mon-bucket-test'
+```
 
 ### 1. Elencare i file di un bucket S3
 
@@ -34,8 +33,6 @@ Per elencare tutti gli oggetti di un bucket, è possibile utilizzare un `paginat
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -65,8 +62,6 @@ La méthode `put_object` è un modo flessibile per caricare dati in un bucket. �
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import json
@@ -126,8 +121,6 @@ Per recuperare il contenuto di un oggetto, utilizza il metodo `get_object`. Esso
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -153,8 +146,6 @@ Il metodo `delete_object` consente di eliminare definitivamente un oggetto da un
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 from botocore.config import Config
@@ -182,8 +173,6 @@ Se un oggetto esiste già, è possibile modificare le sue autorizzazioni per ren
 
 ```python
 #!/usr/bin/env python3
-```
-
 # -*- coding: utf-8 -*-
 import boto3
 import os
@@ -202,5 +191,4 @@ key = f"users/dupond_claire.json"
 put_object_acl_result = s3.put_object_acl(Bucket=bucket_name, Key=key, ACL="public-read")
 
 public_url = f"{os.getenv('S3_ENDPOINT_URL').rstrip('/')}/{bucket_name}/{key}"
-print("URL publique :", public_url)
-```
+print("URL pubblico:", public_url)
