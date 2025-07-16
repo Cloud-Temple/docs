@@ -157,11 +157,12 @@ Successivamente, il diritto __'iam_write'__ permette a un account di amministrar
 Quando un utente viene creato, non possiede alcun permesso di default. Ogni permesso viene assegnato individualmente e funziona in modo unitario, senza sovrapporsi con altri permessi. Si applicano in congiunzione, il che significa che un utente deve disporre di tutti i permessi richiesti per effettuare un'azione specifica.
 
 I seguenti permessi sono configurabili per ogni utente e per ogni tenant della vostra organizzazione:
- • Permessi di tipo "read": permettono unicamente la consultazione delle risorse senza possibilità di modifica.
- • Permessi di tipo "write": autorizzano la modifica delle configurazioni.
- • Permessi di tipo "management": autorizzano la gestione avanzata delle risorse.
- • Permessi di tipo "console_access": autorizzano le connessioni di tipo PMAD alle risorse.
- • Permessi di tipo "virtual_machine_power": autorizzano la gestione dell'alimentazione di una macchina virtuale.
+
+- Permessi di tipo "read": permettono unicamente la consultazione delle risorse senza possibilità di modifica.
+- Permessi di tipo "write": autorizzano la modifica delle configurazioni.
+- Permessi di tipo "management": autorizzano la gestione avanzata delle risorse.
+- Permessi di tipo "console_access": autorizzano le connessioni di tipo PMAD alle risorse.
+- Permessi di tipo "virtual_machine_power": autorizzano la gestione dell'alimentazione di una macchina virtuale.
 
 - __Sono permessi, non ruoli.__ Come tali, è necessario avere sia il permesso READ che WRITE per modificare una configurazione.
 
