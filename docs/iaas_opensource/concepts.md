@@ -181,6 +181,18 @@ La mémoire réellement utilisable peut être limitée par le système d'exploit
 
 Il n'est pas possible de redimensionner les disques une fois créés. Pour étendre la capacité de stockage, il est nécessaire de créer un nouveau disque.
 
+### Outils pour les machines virtuelles
+Ces outils sont utilisés pour avoir un fonctionnement optimal des machines virtuelles. Lorsque vous souhaiterez effectuer une action et qu'un de ces outils est nécessaire, un message s'affichera sur la console Cloud Temple.
+
+#### Management Agent
+Le Management Agent est un composant logiciel installé dans la machine virtuelle qui établit un canal de communication privilégié entre la VM et l'hyperviseur. Il permet une gestion plus fine de la VM en remontant des informations système précises.
+
+#### PV Drivers (Paravirtualization Drivers)
+Les PV Drivers sont des pilotes qui optimisent la communication entre la machine virtuelle et l'hyperviseur. Ils améliorent significativement les performances des machines virtuelles. Leur installation est fortement recommandée pour toute machine virtuelle en production.
+
+#### Tools
+Les Tools sont un ensemble de composants logiciels qui améliorent l'intégration de la machine virtuelle avec l'infrastructure de virtualisation.
+
 ## Catalogues
 
 Le catalogue permet de gérer trois types d'éléments essentiels:

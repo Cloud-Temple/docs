@@ -18,6 +18,6 @@ Cloud Temple met à disposition de ses clients des blocs d'__adresses IP publiqu
     <div class="card">
     <h3>Tutorials</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="./internet/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="./internet/tutorials/forti" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
