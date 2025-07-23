@@ -74,7 +74,7 @@ Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de per
 - __(2)__ Les fréquences indiquées correspondent à la fréquence de base minimum et à la fréquence turbo.
 - __(3)__ La connectivité physique est mutualisée pour l'accès réseau et l'accès stockage bloc, grâce à une architecture convergée Cisco UCS.
 - __(4)__ Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, l'offre inclut des GPU NVIDIA LOVELACE L40S.
-- __(5)__ La HA sur un cluster est disponible uniquement à partir de 3 nœuds.
+- __(5)__ La HA sur un cluster est disponible uniquement à partir de 2 nœuds.
 
 La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellement, plages de maintenance incluses. Toute demande liée au SLA doit être déclarée via un ticket incident.
 
@@ -200,7 +200,7 @@ Avec le HA, chaque host dans le pool envoie régulièrement des signaux de vie �
 
 Pour que la haute disponibilité (HA) soit correctement configurée dans un pool OpenIaaS, il est indispensable de disposer **d’au moins deux hosts** connectés.
 
-Chaque VM doit etre configurée avec un niveau de priorité de redémarrage en HA :
+Chaque VM doit être configurée avec un niveau de priorité de redémarrage en HA :
 
 #### Disabled
   Si une VM non protégée ou son hôte est arrêté, la haute disponibilité **n’essaiera pas de redémarrer la VM**.
