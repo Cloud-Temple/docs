@@ -127,8 +127,8 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'High Availability',
               items: [
-                'iaas_opensource/tutotials/high_availability/manage_pool',
-                'iaas_opensource/tutotials/high_availability/manage_vm',
+                'iaas_opensource/tutorials/high_availability/manage_pool',
+                'iaas_opensource/tutorials/high_availability/manage_vm',
               ],
             },
           ],
