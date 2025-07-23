@@ -125,7 +125,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Haute Disponibilité',
+              label: 'High Availability',
               items: [
                 'iaas_opensource/tutotials/high_availability/manage_pool',
                 'iaas_opensource/tutotials/high_availability/manage_vm',

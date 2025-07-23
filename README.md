@@ -52,6 +52,64 @@ Open your browser and go to: <http://localhost:3000/docs/>
 
 🎉 Your local environment is ready!
 
+# Working Locally without Docker
+
+### Prerequisites
+
+- **Node.js** (version 18.0 or higher)
+- **npm** or **yarn** package manager
+
+### Installation Steps
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+2. **Start the development server**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+   This command will start the Docusaurus development server with hot reloading enabled.
+
+3. **Access the documentation locally**
+
+   Open your browser and go to: <http://localhost:3000/docs/>
+
+   > Base url is set to "/docs" when running on non production build (locally or deployed on github pages)
+
+### Multi-language Development
+
+The documentation supports 5 languages: **French (default)**, English, Spanish, Italian, and German.
+
+#### Working with Multiple Languages
+
+1. **Default Language (French)**
+   - All content is written in French in the `/docs/` directory
+   - This is the source language for all translations
+
+2. **Start with a specific language**
+   ```bash
+   # Start in English
+   npm start -- --locale en
+   
+   # Start in Spanish
+   npm start -- --locale es
+   
+   # Start in Italian
+   npm start -- --locale it
+   
+   # Start in German
+   npm start -- --locale de
+   ```
+
+🎉 Your local environment is ready!
+
 # Build and run locally in production mode
 
 To get started, follow these simple steps:
