@@ -119,7 +119,20 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/iaas_opensource',
         'iaas_opensource/concepts',
         'iaas_opensource/quickstart',
-        'iaas_opensource/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            {
+              type: 'category',
+              label: 'High Availability',
+              items: [
+                'iaas_opensource/tutorials/high_availability/manage_pool',
+                'iaas_opensource/tutorials/high_availability/manage_vm',
+              ],
+            },
+          ],
+        },
       ],
     },
     {

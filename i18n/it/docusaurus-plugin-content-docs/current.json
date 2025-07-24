@@ -3,12 +3,16 @@
     "message": "Successivo",
     "description": "The label for version current"
   },
+  "sidebar.docSidebar.category.AdditionalContent": {
+    "message": "Contenuto aggiuntivo",
+    "description": "Libellé pour la catégorie Contenu additionnel dans la barre latérale docSidebar"
+  },
   "sidebar.docSidebar.category.IAM": {
     "message": "IAM",
     "description": "The label for category IAM in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Tutoriels": {
-    "message": "Tutorial",
+    "message": "Esercitazioni",
     "description": "The label for category Tutoriels in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Bare Metal": {
@@ -32,8 +36,12 @@
     "description": "The label for category IaaS by VMware in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Tutorials": {
-    "message": "Tutorial",
+    "message": "Esercitazioni",
     "description": "The label for category Tutorials in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.High Availability": {
+    "message": "Alta Disponibilità",
+    "description": "The label for category High Availability in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Backup": {
     "message": "Backup",
