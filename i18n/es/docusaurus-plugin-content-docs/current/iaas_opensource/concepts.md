@@ -191,3 +191,23 @@ El catálogo permite gestionar tres tipos de elementos esenciales:
 En la vista detallada de una plantilla de máquina virtual, puede consultar información crucial como la ubicación, el número de discos o el número de adaptadores de red.
 
 Cuando el número de discos virtuales se indica como 0, esto significa que se trata de una plantilla de configuración sin sistema operativo preinstalado, permitiéndole así implementar su propio entorno personalizado.
+
+## Alta Disponibilidad
+
+La alta disponibilidad permite asegurar la continuidad del servicio de las máquinas virtuales (VM) en caso de fallo de un host físico dentro de un pool OpenIaaS.
+Con HA, cada host en el pool envía regularmente señales de vida a sus pares a través del almacenamiento compartido (Block Storage Heartbeat). En caso de ausencia prolongada de respuesta, el host se considera fallido.
+
+Para que la alta disponibilidad (HA) esté correctamente configurada en un pool OpenIaaS, es indispensable disponer de **al menos dos hosts** conectados.
+
+Cada VM debe estar configurada con un nivel de prioridad de reinicio en HA:
+
+#### Disabled
+  Si una VM no protegida o su host se detiene, la alta disponibilidad **no intentará reiniciar la VM**.
+
+#### Restart
+  Si una VM protegida no puede reiniciarse inmediatamente después de un fallo del servidor, HA **intentará reiniciarla más tarde** cuando haya capacidad adicional disponible en el pool. Sin embargo, **no hay garantía de que este intento tenga éxito**.
+
+#### Best-Effort  
+  Para las VMs configuradas en modo *best-effort*, HA **intentará reiniciarlas en otro host** si su host original falla.  
+  Este intento **solo tiene lugar después del reinicio exitoso de todas las VMs configuradas en modo "restart"**.  
+  HA **hará solo un intento de reinicio** para una VM en *best-effort*; si falla, **no se hará ningún otro intento**.

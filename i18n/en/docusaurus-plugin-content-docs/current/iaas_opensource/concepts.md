@@ -191,3 +191,23 @@ The catalog allows managing three essential types of elements:
 In the detailed view of a virtual machine template, you can view crucial information such as location, number of disks, or number of network adapters.
 
 When the number of virtual disks is listed as 0, it indicates a configuration template without a pre-installed operating system, allowing you to deploy your own custom environment.
+
+## High Availability
+
+High availability ensures service continuity for virtual machines (VMs) in case of physical host failure within an OpenIaaS pool.
+With HA, each host in the pool regularly sends heartbeat signals to its peers via shared storage (Block Storage Heartbeat). In case of prolonged absence of response, the host is considered failed.
+
+For high availability (HA) to be properly configured in an OpenIaaS pool, it is essential to have **at least two connected hosts**.
+
+Each VM must be configured with an HA restart priority level:
+
+#### Disabled
+  If an unprotected VM or its host is stopped, high availability **will not attempt to restart the VM**.
+
+#### Restart
+  If a protected VM cannot be restarted immediately after a server failure, HA **will attempt to restart it later** when additional capacity becomes available in the pool. However, **there is no guarantee that this attempt will succeed**.
+
+#### Best-Effort  
+  For VMs configured in *best-effort* mode, HA **will try to restart them on another host** if their original host fails.  
+  This attempt **only occurs after the successful restart of all VMs configured in "restart" mode**.  
+  HA **will make only one restart attempt** for a VM in *best-effort*; if it fails, **no other attempt will be made**.
