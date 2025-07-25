@@ -691,10 +691,10 @@
       "it": "a733d6a6baf97b08f8a496496c207af98fd7cd6ed2f9b822dbcbc7d893ecd113"
     },
     "storage/oss/concepts.md": {
-      "en": "92f13f38ab02d3ad414d7c78166ba5271ed7576dc4034ad4294114b127b921f7",
-      "de": "92f13f38ab02d3ad414d7c78166ba5271ed7576dc4034ad4294114b127b921f7",
-      "es": "92f13f38ab02d3ad414d7c78166ba5271ed7576dc4034ad4294114b127b921f7",
-      "it": "92f13f38ab02d3ad414d7c78166ba5271ed7576dc4034ad4294114b127b921f7"
+      "en": "0b0efa1e29c3609f92fd9716665003caa8493bfac99bbfb702ddbf7e17c23b53",
+      "de": "0b0efa1e29c3609f92fd9716665003caa8493bfac99bbfb702ddbf7e17c23b53",
+      "es": "0b0efa1e29c3609f92fd9716665003caa8493bfac99bbfb702ddbf7e17c23b53",
+      "it": "0b0efa1e29c3609f92fd9716665003caa8493bfac99bbfb702ddbf7e17c23b53"
     },
     "paas_openshift/quickstart.md": {
       "en": "04b2219ff3df5d9db270c6078d4bc5272aa1dd354762d7d4535e94e15e5dea39",
@@ -721,10 +721,10 @@
       "it": "d85516be3086c8c8d3d2d9a193ba6c20ac1f15bc27b0241303e565fee084962f"
     },
     "storage/oss/quickstart.md": {
-      "en": "db3fcd6300d968c56f7c41d972af497f28f449140789c257a11d8edd49325ca5",
-      "de": "db3fcd6300d968c56f7c41d972af497f28f449140789c257a11d8edd49325ca5",
-      "es": "db3fcd6300d968c56f7c41d972af497f28f449140789c257a11d8edd49325ca5",
-      "it": "db3fcd6300d968c56f7c41d972af497f28f449140789c257a11d8edd49325ca5"
+      "en": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34",
+      "de": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34",
+      "es": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34",
+      "it": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34"
     },
     "storage/oss/oss.md": {
       "en": "fa32731ec3b953f7381b35a97b728724727f9739aeff3e00d1f5f38a8afabc88",
@@ -733,10 +733,10 @@
       "it": "fa32731ec3b953f7381b35a97b728724727f9739aeff3e00d1f5f38a8afabc88"
     },
     "storage/oss/tutorials.md": {
-      "en": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
-      "de": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
-      "es": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2",
-      "it": "d6944b408f362f9c1d96089373e12ee8446566dbc8792311bb152e21db0a7fe2"
+      "en": "c3e584928f2e4fa887ec9600dfb12da8d35e6a5d51e8585ef1b03aaec293d02f",
+      "de": "c3e584928f2e4fa887ec9600dfb12da8d35e6a5d51e8585ef1b03aaec293d02f",
+      "es": "c3e584928f2e4fa887ec9600dfb12da8d35e6a5d51e8585ef1b03aaec293d02f",
+      "it": "c3e584928f2e4fa887ec9600dfb12da8d35e6a5d51e8585ef1b03aaec293d02f"
     },
     "llmaas/rag_explained.md": {
       "en": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad",
@@ -755,8 +755,44 @@
       "de": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
       "it": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
       "es": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f"
+    },
+    "storage/oss/tutorials/aws-s3-sync.md": {
+      "en": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6",
+      "de": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6",
+      "es": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6",
+      "it": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6"
+    },
+    "storage/oss/tutorials/cloudberry-explorer.md": {
+      "en": "a1e33b3b7029e5b8245e1ab81527c837f14935fdffa199a4307f3a636de79e9c",
+      "de": "a1e33b3b7029e5b8245e1ab81527c837f14935fdffa199a4307f3a636de79e9c",
+      "es": "a1e33b3b7029e5b8245e1ab81527c837f14935fdffa199a4307f3a636de79e9c",
+      "it": "a1e33b3b7029e5b8245e1ab81527c837f14935fdffa199a4307f3a636de79e9c"
+    },
+    "storage/oss/tutorials/file-hashing.md": {
+      "en": "63abede3550801d8a864dee77690156386f73e975b7ebc3dcbe67f861fc10f5c",
+      "de": "63abede3550801d8a864dee77690156386f73e975b7ebc3dcbe67f861fc10f5c",
+      "es": "63abede3550801d8a864dee77690156386f73e975b7ebc3dcbe67f861fc10f5c",
+      "it": "63abede3550801d8a864dee77690156386f73e975b7ebc3dcbe67f861fc10f5c"
+    },
+    "storage/oss/tutorials/mc-mirror.md": {
+      "en": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f",
+      "de": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f",
+      "es": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f",
+      "it": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f"
+    },
+    "storage/oss/tutorials/python-boto3.md": {
+      "en": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
+      "de": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
+      "es": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
+      "it": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9"
+    },
+    "storage/oss/tutorials/winscp.md": {
+      "en": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
+      "de": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
+      "es": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
+      "it": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444"
     }
   },
-  "last_update": "2025-06-29T14:40:06.828243",
+  "last_update": "2025-07-16T08:12:36.370982",
   "version": "2.0"
 }

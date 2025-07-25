@@ -14,9 +14,6 @@ Génère automatiquement la documentation Markdown des modèles LLM as a Service
 # Via Python directement
 python scripts/generate_models_doc.py
 
-# Via NPM (recommandé)
-npm run generate:models
-npm run generate:docs
 ```
 
 #### Fonctionnalités

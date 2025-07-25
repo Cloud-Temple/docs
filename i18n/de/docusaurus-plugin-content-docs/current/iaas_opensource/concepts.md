@@ -192,3 +192,23 @@ Der Katalog ermöglicht die Verwaltung von drei Arten wesentlicher Elemente:
 In der Detailansicht einer Vorlage für virtuelle Maschinen können Sie wichtige Informationen wie Standort, Anzahl der Festplatten oder Anzahl der Netzwerkadapter einsehen.
 
 Wenn die Anzahl der virtuellen Festplatten mit 0 angegeben ist, bedeutet dies, dass es sich um eine Konfigurationsvorlage ohne vorinstalliertes Betriebssystem handelt, die es Ihnen ermöglicht, Ihre eigene angepasste Umgebung zu implementieren.
+
+## Hochverfügbarkeit
+
+Hochverfügbarkeit gewährleistet die Servicekontinuität für virtuelle Maschinen (VMs) im Falle eines Ausfalls eines physischen Hosts innerhalb eines OpenIaaS-Pools.
+Mit HA sendet jeder Host im Pool regelmäßig Lebenszeichen an seine Peers über den gemeinsam genutzten Speicher (Block Storage Heartbeat). Bei längerer Abwesenheit einer Antwort wird der Host als ausgefallen betrachtet.
+
+Damit Hochverfügbarkeit (HA) in einem OpenIaaS-Pool ordnungsgemäß konfiguriert ist, ist es unerlässlich, **mindestens zwei verbundene Hosts** zu haben.
+
+Jede VM muss mit einer HA-Neustart-Prioritätsstufe konfiguriert werden:
+
+#### Disabled
+  Wenn eine ungeschützte VM oder ihr Host gestoppt wird, wird die Hochverfügbarkeit **nicht versuchen, die VM neu zu starten**.
+
+#### Restart
+  Wenn eine geschützte VM nicht sofort nach einem Serverausfall neu gestartet werden kann, wird HA **versuchen, sie später neu zu starten**, wenn zusätzliche Kapazität im Pool verfügbar wird. Es gibt jedoch **keine Garantie, dass dieser Versuch erfolgreich sein wird**.
+
+#### Best-Effort  
+  Für VMs, die im *Best-Effort*-Modus konfiguriert sind, wird HA **versuchen, sie auf einem anderen Host neu zu starten**, wenn ihr ursprünglicher Host ausfällt.  
+  Dieser Versuch **erfolgt nur nach dem erfolgreichen Neustart aller VMs, die im "Restart"-Modus konfiguriert sind**.  
+  HA **macht nur einen Neustart-Versuch** für eine VM im *Best-Effort*-Modus; wenn er fehlschlägt, **wird kein weiterer Versuch unternommen**.
