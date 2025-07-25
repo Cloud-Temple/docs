@@ -1,5 +1,5 @@
 ---
-title: Pool-Verwaltung
+title: Gestione del Pool
 ---
 import open_iaas_pool_ha_how_to_find from '../images/open_iaas_pool_ha_how_to_find.png'
 import open_iaas_pool_enable_ha from '../images/open_iaas_pool_enable_ha.png'
@@ -7,15 +7,15 @@ import open_iaas_pool_ha_enabled from '../images/open_iaas_pool_ha_enabled.png'
 import open_iaas_pool_ha_how_to_modify from '../images/open_iaas_pool_ha_how_to_modify.png'
 import open_iaas_pool_ha_error from '../images/open_iaas_pool_ha_error.png'
 
-Um die Hochverfügbarkeit eines Pools zu verwalten, gehen Sie einfach zur Pool-Seite. Der HA-Status wird direkt angezeigt:
+Per gestire l'alta disponibilità di un pool, è sufficiente andare alla pagina del pool. Lo stato dell'alta disponibilità viene visualizzato direttamente:
 <img src={open_iaas_pool_ha_how_to_find} />
 
-Um HA auf einem Pool zu aktivieren, müssen Sie einen Block Storage als Heartbeat auswählen:
+Per attivare l'alta disponibilità su un pool, è necessario selezionare un Block Storage come Heartbeat:
 <img src={open_iaas_pool_ha_how_to_modify} />
 <img src={open_iaas_pool_enable_ha} />
 
-Nach der Aktivierung können Sie die Anzahl der virtuellen Maschinen sehen, die keine HA-Konfiguration haben:
+Una volta attivato, è possibile vedere il numero di [macchine virtuali che non hanno configurazione di alta disponibilità](manage_vm.md):
 <img src={open_iaas_pool_ha_enabled} />
 
-Wenn die Anzahl der verfügbaren Hosts nicht ausreicht, damit HA funktioniert, wird eine Warnmeldung angezeigt:
+Se il [numero di host disponibili](../../concepts.md#alta-disponibilità) non consente il funzionamento dell'alta disponibilità, verrà visualizzato un messaggio di avviso:
 <img src={open_iaas_pool_ha_error} />

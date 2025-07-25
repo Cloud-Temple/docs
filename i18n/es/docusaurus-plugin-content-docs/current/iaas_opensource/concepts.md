@@ -74,7 +74,7 @@ Las láminas de cálculo disponibles para la oferta Bare Metal ofrecen una gama 
 - __(2)__ Las frecuencias indicadas corresponden a la frecuencia base mínima y a la frecuencia turbo.
 - __(3)__ La conectividad física es compartida para el acceso de red y el acceso de almacenamiento en bloques, gracias a una arquitectura convergente Cisco UCS.
 - __(4)__ Los GPUs disponibles evolucionan según las últimas tecnologías. Para el 1 de mayo de 2024, la oferta incluye GPUs NVIDIA LOVELACE L40S.
-- __(5)__ La HA en un cluster está disponible únicamente a partir de 3 nodos.
+- __(5)__ La alta disponibilidad en un cluster está disponible únicamente a partir de 2 nodos.
 
 La disponibilidad de la infraestructura está garantizada al 99.9%, medida mensualmente, incluyendo horas de mantenimiento. Cualquier solicitud relacionada con el SLA debe ser declarada mediante un ticket de incidente.
 
@@ -195,19 +195,21 @@ Cuando el número de discos virtuales se indica como 0, esto significa que se tr
 ## Alta Disponibilidad
 
 La alta disponibilidad permite asegurar la continuidad del servicio de las máquinas virtuales (VM) en caso de fallo de un host físico dentro de un pool OpenIaaS.
-Con HA, cada host en el pool envía regularmente señales de vida a sus pares a través del almacenamiento compartido (Block Storage Heartbeat). En caso de ausencia prolongada de respuesta, el host se considera fallido.
+Con la alta disponibilidad (HA), cada host en el pool envía regularmente señales de vida a sus pares a través del almacenamiento compartido (Block Storage Heartbeat). En caso de ausencia prolongada de respuesta, el host se considera fallido.
 
-Para que la alta disponibilidad (HA) esté correctamente configurada en un pool OpenIaaS, es indispensable disponer de **al menos dos hosts** conectados.
+Un Block Storage designado como heartbeat significa que servirá de base para autenticar los hosts que ya no respondan.
 
-Cada VM debe estar configurada con un nivel de prioridad de reinicio en HA:
+Para que la alta disponibilidad esté correctamente configurada en un pool OpenIaaS, es indispensable disponer de **al menos dos hosts** conectados.
+
+Cada VM debe estar configurada con un nivel de prioridad de reinicio en alta disponibilidad:
 
 #### Disabled
   Si una VM no protegida o su host se detiene, la alta disponibilidad **no intentará reiniciar la VM**.
 
 #### Restart
-  Si una VM protegida no puede reiniciarse inmediatamente después de un fallo del servidor, HA **intentará reiniciarla más tarde** cuando haya capacidad adicional disponible en el pool. Sin embargo, **no hay garantía de que este intento tenga éxito**.
+  Si una VM protegida no puede reiniciarse inmediatamente después de un fallo del servidor, la alta disponibilidad **intentará reiniciarla más tarde** cuando haya capacidad adicional disponible en el pool. Sin embargo, **no hay garantía de que este intento tenga éxito**.
 
 #### Best-Effort  
-  Para las VMs configuradas en modo *best-effort*, HA **intentará reiniciarlas en otro host** si su host original falla.  
+  Para las VMs configuradas en modo *best-effort*, la alta disponibilidad **intentará reiniciarlas en otro host** si su host original falla.  
   Este intento **solo tiene lugar después del reinicio exitoso de todas las VMs configuradas en modo "restart"**.  
-  HA **hará solo un intento de reinicio** para una VM en *best-effort*; si falla, **no se hará ningún otro intento**.
+  La alta disponibilidad **hará solo un intento de reinicio** para una VM en *best-effort*; si falla, **no se hará ningún otro intento**.

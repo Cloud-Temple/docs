@@ -18,9 +18,4 @@ Cette section contient des tutoriels pratiques pour utiliser efficacement la pla
 Avant de commencer ces tutoriels, assurez-vous d'avoir :
 
 - Un accès à la console Cloud Temple
-- Les permissions nécessaires pour gérer les ressources IaaS
-- Une compréhension de base des concepts OpenSource
-
-## Support
-
-Pour toute question concernant ces tutoriels, n'hésitez pas à contacter le support Cloud Temple via la console.
+- Les permissions nécessaires pour gérer les ressources IaaS OpenSource

@@ -74,7 +74,7 @@ The blade servers available for the Bare Metal offer provide a range of performa
 - __(2)__ The frequencies indicated correspond to the minimum base frequency and turbo frequency.
 - __(3)__ Physical connectivity is shared for network access and block storage access, thanks to a converged Cisco UCS architecture.
 - __(4)__ The available GPUs evolve according to the latest technologies. As of May 1, 2024, the offer includes NVIDIA LOVELACE L40S GPUs.
-- __(5)__ HA on a cluster is available only from 3 nodes.
+- __(5)__ High availability on a cluster is available only from 2 nodes.
 
 The infrastructure availability is guaranteed at 99.9%, measured monthly, including maintenance windows. Any SLA-related request must be reported via an incident ticket.
 
@@ -195,19 +195,21 @@ When the number of virtual disks is listed as 0, it indicates a configuration te
 ## High Availability
 
 High availability ensures service continuity for virtual machines (VMs) in case of physical host failure within an OpenIaaS pool.
-With HA, each host in the pool regularly sends heartbeat signals to its peers via shared storage (Block Storage Heartbeat). In case of prolonged absence of response, the host is considered failed.
+With high availability (HA), each host in the pool regularly sends heartbeat signals to its peers via shared storage (Block Storage Heartbeat). In case of prolonged absence of response, the host is considered failed.
 
-For high availability (HA) to be properly configured in an OpenIaaS pool, it is essential to have **at least two connected hosts**.
+A Block Storage designated as heartbeat means it will serve as the basis for authenticating hosts that no longer respond.
 
-Each VM must be configured with an HA restart priority level:
+For high availability to be properly configured in an OpenIaaS pool, it is essential to have **at least two connected hosts**.
+
+Each VM must be configured with a high availability restart priority level:
 
 #### Disabled
   If an unprotected VM or its host is stopped, high availability **will not attempt to restart the VM**.
 
 #### Restart
-  If a protected VM cannot be restarted immediately after a server failure, HA **will attempt to restart it later** when additional capacity becomes available in the pool. However, **there is no guarantee that this attempt will succeed**.
+  If a protected VM cannot be restarted immediately after a server failure, high availability **will attempt to restart it later** when additional capacity becomes available in the pool. However, **there is no guarantee that this attempt will succeed**.
 
 #### Best-Effort  
-  For VMs configured in *best-effort* mode, HA **will try to restart them on another host** if their original host fails.  
+  For VMs configured in *best-effort* mode, high availability **will try to restart them on another host** if their original host fails.  
   This attempt **only occurs after the successful restart of all VMs configured in "restart" mode**.  
-  HA **will make only one restart attempt** for a VM in *best-effort*; if it fails, **no other attempt will be made**.
+  High availability **will make only one restart attempt** for a VM in *best-effort*; if it fails, **no other attempt will be made**.
