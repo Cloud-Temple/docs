@@ -74,7 +74,7 @@ Die für das Bare Metal-Angebot verfügbaren Rechenblades bieten eine Reihe von 
 - __(2)__ Die angegebenen Frequenzen entsprechen der minimalen Basisfrequenz und der Turbo-Frequenz.
 - __(3)__ Die physische Konnektivität wird für Netzwerkzugriff und Blockspeicherzugriff gemeinsam genutzt, dank einer konvergenten Cisco UCS-Architektur.
 - __(4)__ Verfügbare GPUs entwickeln sich entsprechend den neuesten Technologien. Ab dem 1. Mai 2024 umfasst das Angebot NVIDIA LOVELACE L40S GPUs.
-- __(5)__ HA auf einem Cluster ist nur ab 3 Knoten verfügbar.
+- __(5)__ Die Hochverfügbarkeit auf einem Cluster ist nur ab 2 Knoten verfügbar.
 
 Die Verfügbarkeit der Infrastruktur wird mit 99,9% garantiert, monatlich gemessen, einschließlich Wartungsfenstern. Jede Anfrage im Zusammenhang mit dem SLA muss über ein Incident-Ticket gemeldet werden.
 
@@ -192,3 +192,23 @@ Der Katalog ermöglicht die Verwaltung von drei Arten wesentlicher Elemente:
 In der Detailansicht einer Vorlage für virtuelle Maschinen können Sie wichtige Informationen wie Standort, Anzahl der Festplatten oder Anzahl der Netzwerkadapter einsehen.
 
 Wenn die Anzahl der virtuellen Festplatten mit 0 angegeben ist, bedeutet dies, dass es sich um eine Konfigurationsvorlage ohne vorinstalliertes Betriebssystem handelt, die es Ihnen ermöglicht, Ihre eigene angepasste Umgebung zu implementieren.
+
+## Hochverfügbarkeit
+
+Die Hochverfügbarkeit ermöglicht es, die Servicekontinuität der virtuellen Maschinen (VMs) bei einem Ausfall eines physischen Hosts innerhalb eines OpenIaaS-Pools zu gewährleisten.
+Mit der Hochverfügbarkeit (HA) sendet jeder Host im Pool regelmäßig Lebenszeichen an seine Peers über den gemeinsam genutzten Speicher (Block Storage Heartbeat). Bei längerer Abwesenheit einer Antwort wird der Host als ausgefallen betrachtet.
+
+Ein als Heartbeat bezeichneter Block Storage bedeutet, dass er als Basis für die Authentifizierung von Hosts dient, die nicht mehr antworten.
+
+Damit die Hochverfügbarkeit in einem OpenIaaS-Pool ordnungsgemäß konfiguriert ist, ist es unerlässlich, **mindestens zwei verbundene Hosts** zu haben.
+
+Jede VM muss mit einer Prioritätsstufe für den Neustart bei Hochverfügbarkeit konfiguriert werden:
+
+#### Disabled
+  Die Hochverfügbarkeit ist nicht konfiguriert. Bei einem Host-Ausfall wird die virtuelle Maschine nicht neu gestartet.
+
+#### Restart
+  Bei einem Host-Ausfall wird die virtuelle Maschine automatisch neu gestartet, sobald Ressourcen im Pool verfügbar werden. Virtuelle Maschinen, die im "Restart"-Modus konfiguriert sind, werden mit Priorität behandelt, vor denen, die im "Best-Effort"-Modus konfiguriert sind.
+
+#### Best-Effort  
+  Bei einem Host-Ausfall wird die virtuelle Maschine nur automatisch neu gestartet, wenn Ressourcen verfügbar bleiben, nachdem alle virtuellen Maschinen, die im "Restart"-Modus konfiguriert sind, verarbeitet wurden. Der "Best-Effort"-Modus macht nur einen Versuch, daher wird die virtuelle Maschine nicht neu gestartet, wenn die Ressourcen unzureichend sind.

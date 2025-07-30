@@ -74,7 +74,7 @@ Las láminas de cálculo disponibles para la oferta Bare Metal ofrecen una gama 
 - __(2)__ Las frecuencias indicadas corresponden a la frecuencia base mínima y a la frecuencia turbo.
 - __(3)__ La conectividad física es compartida para el acceso de red y el acceso de almacenamiento en bloques, gracias a una arquitectura convergente Cisco UCS.
 - __(4)__ Los GPUs disponibles evolucionan según las últimas tecnologías. Para el 1 de mayo de 2024, la oferta incluye GPUs NVIDIA LOVELACE L40S.
-- __(5)__ La HA en un cluster está disponible únicamente a partir de 3 nodos.
+- __(5)__ La alta disponibilidad en un cluster está disponible únicamente a partir de 2 nodos.
 
 La disponibilidad de la infraestructura está garantizada al 99.9%, medida mensualmente, incluyendo horas de mantenimiento. Cualquier solicitud relacionada con el SLA debe ser declarada mediante un ticket de incidente.
 
@@ -191,3 +191,23 @@ El catálogo permite gestionar tres tipos de elementos esenciales:
 En la vista detallada de una plantilla de máquina virtual, puede consultar información crucial como la ubicación, el número de discos o el número de adaptadores de red.
 
 Cuando el número de discos virtuales se indica como 0, esto significa que se trata de una plantilla de configuración sin sistema operativo preinstalado, permitiéndole así implementar su propio entorno personalizado.
+
+## Alta Disponibilidad
+
+La alta disponibilidad permite asegurar la continuidad del servicio de las máquinas virtuales (VM) en caso de fallo de un host físico dentro de un pool OpenIaaS.
+Con la alta disponibilidad (HA), cada host en el pool envía regularmente señales de vida a sus pares a través del almacenamiento compartido (Block Storage Heartbeat). En caso de ausencia prolongada de respuesta, el host se considera fallido.
+
+Un Block Storage designado como heartbeat significa que servirá de base para autenticar los hosts que ya no respondan.
+
+Para que la alta disponibilidad esté correctamente configurada en un pool OpenIaaS, es indispensable disponer de **al menos dos hosts** conectados.
+
+Cada VM debe estar configurada con un nivel de prioridad de reinicio en alta disponibilidad:
+
+#### Disabled
+  La alta disponibilidad no está configurada. En caso de fallo del host, la máquina virtual no será reiniciada.
+
+#### Restart
+  En caso de fallo del host, la máquina virtual será reiniciada automáticamente tan pronto como los recursos estén disponibles en el pool. Las máquinas virtuales configuradas en modo "restart" son tratadas con prioridad, antes que las configuradas en modo "best-effort".
+
+#### Best-Effort  
+  En caso de fallo del host, la máquina virtual solo será reiniciada automáticamente si quedan recursos disponibles después del procesamiento de todas las máquinas virtuales configuradas en modo "restart". El modo "Best-effort" hace solo un intento, por lo que si los recursos son insuficientes, la máquina virtual no será reiniciada.
