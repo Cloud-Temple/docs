@@ -205,12 +205,10 @@ Damit die Hochverfügbarkeit in einem OpenIaaS-Pool ordnungsgemäß konfiguriert
 Jede VM muss mit einer Prioritätsstufe für den Neustart bei Hochverfügbarkeit konfiguriert werden:
 
 #### Disabled
-  Wenn eine ungeschützte VM oder ihr Host gestoppt wird, wird die Hochverfügbarkeit **nicht versuchen, die VM neu zu starten**.
+  Die Hochverfügbarkeit ist nicht konfiguriert. Bei einem Host-Ausfall wird die virtuelle Maschine nicht neu gestartet.
 
 #### Restart
-  Wenn eine geschützte VM nicht sofort nach einem Serverausfall neu gestartet werden kann, wird die Hochverfügbarkeit **versuchen, sie später neu zu starten**, wenn zusätzliche Kapazität im Pool verfügbar wird. Es gibt jedoch **keine Garantie, dass dieser Versuch erfolgreich sein wird**.
+  Bei einem Host-Ausfall wird die virtuelle Maschine automatisch neu gestartet, sobald Ressourcen im Pool verfügbar werden. Virtuelle Maschinen, die im "Restart"-Modus konfiguriert sind, werden mit Priorität behandelt, vor denen, die im "Best-Effort"-Modus konfiguriert sind.
 
 #### Best-Effort  
-  Für VMs, die im *Best-Effort*-Modus konfiguriert sind, wird die Hochverfügbarkeit **versuchen, sie auf einem anderen Host neu zu starten**, wenn ihr ursprünglicher Host ausfällt.  
-  Dieser Versuch **erfolgt nur nach dem erfolgreichen Neustart aller VMs, die im "Restart"-Modus konfiguriert sind**.  
-  Die Hochverfügbarkeit **macht nur einen Neustart-Versuch** für eine VM im *Best-Effort*-Modus; wenn er fehlschlägt, **wird kein weiterer Versuch unternommen**.
+  Bei einem Host-Ausfall wird die virtuelle Maschine nur automatisch neu gestartet, wenn Ressourcen verfügbar bleiben, nachdem alle virtuellen Maschinen, die im "Restart"-Modus konfiguriert sind, verarbeitet wurden. Der "Best-Effort"-Modus macht nur einen Versuch, daher wird die virtuelle Maschine nicht neu gestartet, wenn die Ressourcen unzureichend sind.

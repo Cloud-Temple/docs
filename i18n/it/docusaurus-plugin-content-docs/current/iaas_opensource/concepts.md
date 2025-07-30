@@ -205,12 +205,10 @@ Perché l'alta disponibilità sia correttamente configurata in un pool OpenIaaS,
 Ogni VM deve essere configurata con un livello di priorità di riavvio in alta disponibilità:
 
 #### Disabled
-  Se una VM non protetta o il suo host viene fermato, l'alta disponibilità **non tenterà di riavviare la VM**.
+  L'alta disponibilità non è configurata. In caso di guasto dell'host, la macchina virtuale non sarà riavviata.
 
 #### Restart
-  Se una VM protetta non può essere riavviata immediatamente dopo un guasto del server, l'alta disponibilità **tenterà di riavviarla successivamente** quando sarà disponibile capacità aggiuntiva nel pool. Tuttavia, **non c'è garanzia che questo tentativo abbia successo**.
+  In caso di guasto dell'host, la macchina virtuale sarà riavviata automaticamente non appena le risorse saranno disponibili nel pool. Le macchine virtuali configurate in modalità "restart" sono trattate con priorità, prima di quelle configurate in modalità "best-effort".
 
 #### Best-Effort  
-  Per le VM configurate in modalità *best-effort*, l'alta disponibilità **tenterà di riavviarle su un altro host** se il loro host originale si guasta.  
-  Questo tentativo **avviene solo dopo il riavvio riuscito di tutte le VM configurate in modalità "restart"**.  
-  L'alta disponibilità **farà solo un tentativo di riavvio** per una VM in *best-effort*; se fallisce, **non verrà fatto nessun altro tentativo**.
+  In caso di guasto dell'host, la macchina virtuale sarà riavviata automaticamente solo se rimangono risorse disponibili dopo l'elaborazione di tutte le macchine virtuali configurate in modalità "restart". La modalità "Best-effort" fa solo un tentativo, quindi se le risorse sono insufficienti, la macchina virtuale non sarà riavviata.

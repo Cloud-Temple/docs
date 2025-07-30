@@ -205,12 +205,10 @@ Pour que la haute disponibilité soit correctement configurée dans un pool Open
 Chaque VM doit être configurée avec un niveau de priorité de redémarrage en haute disponibilité :
 
 #### Disabled
-  Si une VM non protégée ou son hôte est arrêté, la haute disponibilité **n’essaiera pas de redémarrer la VM**.
+  La haute disponibilité n'est pas configurée. En cas de défaillance de l'hôte, la machine virtuelle ne sera pas redémarrée.
 
 #### Restart
-  Si une VM protégée ne peut pas être redémarrée immédiatement après une panne de serveur, la haute disponibilité **tentera de la redémarrer ultérieurement** lorsque de la capacité supplémentaire sera disponible dans le pool. Toutefois, **il n’y a aucune garantie que cette tentative aboutisse**.
+  En cas de défaillance de l'hôte, la machine virtuelle sera automatiquement redémarrée dès que des ressources seront disponibles dans le pool. Les machines virtuelles configurées en mode "restart" sont traitées en priorité, avant celles configurées en mode "best-effort".
 
 #### Best-Effort  
-  Pour les VMs configurées en mode *best-effort*, la haute disponibilité **essaiera de les redémarrer sur un autre hôte** si leur hôte d’origine tombe en panne.  
-  Cette tentative **n’a lieu qu’après le redémarrage réussi de toutes les VMs configurées en mode "restart"**.  
-  La haute disponibilité **ne fera qu’une seule tentative** de redémarrage pour une VM en *best-effort* ; si elle échoue, **aucune autre tentative ne sera faite**.
+  En cas de défaillance de l'hôte, la machine virtuelle ne sera automatiquement redémarrée que si des ressources restent disponibles après le traitement de toutes les machines virtuelles configurées en mode "restart". Le mode "Best-effort" ne fait qu'une seule tentative, donc si les ressources sont insuffisantes, la machine virtuelle ne sera pas redémarrée.
