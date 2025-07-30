@@ -204,12 +204,10 @@ For high availability to be properly configured in an OpenIaaS pool, it is essen
 Each VM must be configured with a high availability restart priority level:
 
 #### Disabled
-  If an unprotected VM or its host is stopped, high availability **will not attempt to restart the VM**.
+  High availability is not configured. In case of host failure, the virtual machine will not be restarted.
 
 #### Restart
-  If a protected VM cannot be restarted immediately after a server failure, high availability **will attempt to restart it later** when additional capacity becomes available in the pool. However, **there is no guarantee that this attempt will succeed**.
+  In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are processed with priority, before those configured in "best-effort" mode.
 
 #### Best-Effort  
-  For VMs configured in *best-effort* mode, high availability **will try to restart them on another host** if their original host fails.  
-  This attempt **only occurs after the successful restart of all VMs configured in "restart" mode**.  
-  High availability **will make only one restart attempt** for a VM in *best-effort*; if it fails, **no other attempt will be made**.
+  In case of host failure, the virtual machine will only be automatically restarted if resources remain available after processing all virtual machines configured in "restart" mode. The "Best-effort" mode makes only one attempt, so if resources are insufficient, the virtual machine will not be restarted.

@@ -204,12 +204,10 @@ Para que la alta disponibilidad esté correctamente configurada en un pool OpenI
 Cada VM debe estar configurada con un nivel de prioridad de reinicio en alta disponibilidad:
 
 #### Disabled
-  Si una VM no protegida o su host se detiene, la alta disponibilidad **no intentará reiniciar la VM**.
+  La alta disponibilidad no está configurada. En caso de fallo del host, la máquina virtual no será reiniciada.
 
 #### Restart
-  Si una VM protegida no puede reiniciarse inmediatamente después de un fallo del servidor, la alta disponibilidad **intentará reiniciarla más tarde** cuando haya capacidad adicional disponible en el pool. Sin embargo, **no hay garantía de que este intento tenga éxito**.
+  En caso de fallo del host, la máquina virtual será reiniciada automáticamente tan pronto como los recursos estén disponibles en el pool. Las máquinas virtuales configuradas en modo "restart" son tratadas con prioridad, antes que las configuradas en modo "best-effort".
 
 #### Best-Effort  
-  Para las VMs configuradas en modo *best-effort*, la alta disponibilidad **intentará reiniciarlas en otro host** si su host original falla.  
-  Este intento **solo tiene lugar después del reinicio exitoso de todas las VMs configuradas en modo "restart"**.  
-  La alta disponibilidad **hará solo un intento de reinicio** para una VM en *best-effort*; si falla, **no se hará ningún otro intento**.
+  En caso de fallo del host, la máquina virtual solo será reiniciada automáticamente si quedan recursos disponibles después del procesamiento de todas las máquinas virtuales configuradas en modo "restart". El modo "Best-effort" hace solo un intento, por lo que si los recursos son insuficientes, la máquina virtual no será reiniciada.
