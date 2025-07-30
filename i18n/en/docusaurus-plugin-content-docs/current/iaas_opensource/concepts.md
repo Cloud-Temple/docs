@@ -74,7 +74,7 @@ The blade servers available for the Bare Metal offer provide a range of performa
 - __(2)__ The frequencies indicated correspond to the minimum base frequency and turbo frequency.
 - __(3)__ Physical connectivity is shared for network access and block storage access, thanks to a converged Cisco UCS architecture.
 - __(4)__ The available GPUs evolve according to the latest technologies. As of May 1, 2024, the offer includes NVIDIA LOVELACE L40S GPUs.
-- __(5)__ HA on a cluster is available only from 3 nodes.
+- __(5)__ High availability on a cluster is available only from 2 nodes.
 
 The infrastructure availability is guaranteed at 99.9%, measured monthly, including maintenance windows. Any SLA-related request must be reported via an incident ticket.
 
@@ -191,3 +191,23 @@ The catalog allows managing three essential types of elements:
 In the detailed view of a virtual machine template, you can view crucial information such as location, number of disks, or number of network adapters.
 
 When the number of virtual disks is listed as 0, it indicates a configuration template without a pre-installed operating system, allowing you to deploy your own custom environment.
+
+## High Availability
+
+High availability ensures service continuity for virtual machines (VMs) in case of physical host failure within an OpenIaaS pool.
+With high availability (HA), each host in the pool regularly sends heartbeat signals to its peers via shared storage (Block Storage Heartbeat). In case of prolonged absence of response, the host is considered failed.
+
+A Block Storage designated as heartbeat means it will serve as the basis for authenticating hosts that no longer respond.
+
+For high availability to be properly configured in an OpenIaaS pool, it is essential to have **at least two connected hosts**.
+
+Each VM must be configured with a high availability restart priority level:
+
+#### Disabled
+  High availability is not configured. In case of host failure, the virtual machine will not be restarted.
+
+#### Restart
+  In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are processed with priority, before those configured in "best-effort" mode.
+
+#### Best-Effort  
+  In case of host failure, the virtual machine will only be automatically restarted if resources remain available after processing all virtual machines configured in "restart" mode. The "Best-effort" mode makes only one attempt, so if resources are insufficient, the virtual machine will not be restarted.

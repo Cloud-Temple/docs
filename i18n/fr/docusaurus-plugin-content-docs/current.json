@@ -39,6 +39,10 @@
     "message": "Tutoriels",
     "description": "The label for category Tutorials in sidebar docSidebar"
   },
+  "sidebar.docSidebar.category.High Availability": {
+    "message": "Haute disponibilité",
+    "description": "The label for category High Availability in sidebar docSidebar"
+  },
   "sidebar.docSidebar.category.Backup": {
     "message": "Sauvegarde",
     "description": "The label for category Backup in sidebar docSidebar"
