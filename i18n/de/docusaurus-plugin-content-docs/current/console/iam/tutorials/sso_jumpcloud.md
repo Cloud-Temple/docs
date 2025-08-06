@@ -5,8 +5,8 @@ tags:
   - tutorials
   - onboarding
 ---
-import ssoJumpcloud001 from './images/sso_jumpcloud_001.jpg';
-import ssoJumpcloud002 from './images/sso_jumpcloud_002.jpg';
+import ssoJumpcloud001 from './images/sso_jumpcloud_001.png';
+import ssoJumpcloud002 from './images/sso_jumpcloud_002.png';
 
 Dieses Tutorial führt Sie durch die Einrichtung der Einmalanmeldung (SSO) zwischen JumpCloud und der Cloud Temple Konsole unter Verwendung des OpenID Connect (OIDC)-Protokolls.
 

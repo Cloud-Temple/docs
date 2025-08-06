@@ -1,7 +1,7 @@
 ---
 title: Conceptos
 ---
-import oshiftOffert from './images/oshift_offert.jpg'
+import oshiftOffert from './images/oshift_offert.png'
 
 ## Presentación de Red Hat OpenShift
 
