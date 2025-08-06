@@ -1,12 +1,12 @@
 ---
 title: Guía de inicio rápido
 ---
-import shivaNetwork_001 from './images/shiva_network_001.jpg'
-import shivaNetwork_002 from './images/shiva_network_002.jpg'
-import shivaNetwork_003 from './images/shiva_network_003.jpg'
-import shivaNetwork_004 from './images/shiva_network_004.jpg'
-import shivaNetwork_005 from './images/shiva_network_005.jpg'
-import shivaNetwork_006 from './images/shiva_network_006.jpg'
+import shivaNetwork_001 from './images/shiva_network_001.png'
+import shivaNetwork_002 from './images/shiva_network_002.png'
+import shivaNetwork_003 from './images/shiva_network_003.png'
+import shivaNetwork_004 from './images/shiva_network_004.png'
+import shivaNetwork_005 from './images/shiva_network_005.png'
+import shivaNetwork_006 from './images/shiva_network_006.png'
 import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
 import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
 import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'

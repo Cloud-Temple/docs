@@ -55,9 +55,9 @@ Il est possible de visualiser les blocs d'adresses qui vous sont affectés dans 
 
 ## Blocs IPv6
 
-__Au 1er mai 2024, l'offre d'adresses IP Publiques IPv6 n'est pas encore disponible à la commercialisation.__
+La commande de bloc IPv6 se fait via le menu __*Internet*__ de l'onglet __*Réseaux*__.
 
-La cible de commercialisation est prévue pour le deuxième semestre 2024.
+Il est possible de visualiser les prefixes qui vous sont affectés dans le menu __*'IPs publiques'*__ du menu Réseaux dans le bandeau vert à gauche.
 
 | Référence                             | Unité   | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |

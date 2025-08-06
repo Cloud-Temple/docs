@@ -187,7 +187,7 @@ src/
 static/
 ├── .nojekyll               # Configuration GitHub Pages
 └── img/
-    ├── docusaurus-social-card.jpg
+    ├── docusaurus-social-card.png
     ├── docusaurus.png
     ├── favicon.ico
     ├── logo.svg

@@ -146,7 +146,7 @@ To update the model documentation, run the following command from the project ro
 ```bash
 npm run generate:models
 # or directly:
-python scripts/generate_models_doc.py
+python scripts/generate_models_doc/generate_models_doc.py
 ```
 
 ## 🌍 Translation System
