@@ -12,16 +12,16 @@ Con su enfoque orientado a la seguridad y sus funciones avanzadas como Infrastru
   <div class="card">
     <h3>Conceptos</h3>
     <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="console/iam/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+    <a href="bastion/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="console/iam/quickstart" class="card-link">Iniciar el inicio rápido &rarr;</a>
+    <a href="bastion/quickstart" class="card-link">Iniciar el inicio rápido &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="console/iam/tutorials/sso_aad.md" class="card-link">Descubrir los tutoriales &rarr;</a>
+    <a href="bastion/tutorials.md" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>
