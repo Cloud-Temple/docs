@@ -22,6 +22,6 @@ With its security-oriented approach and advanced features such as Infrastructure
   <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step by step how to configure and use our services with detailed guides.</p>
-    <a href="bastion/tutorials.md" class="card-link">Discover the tutorials &rarr;</a>
+    <a href="bastion/tutorials" class="card-link">Discover the tutorials &rarr;</a>
   </div>
 </div>

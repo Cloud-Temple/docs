@@ -22,6 +22,6 @@ Con su enfoque orientado a la seguridad y sus funciones avanzadas como Infrastru
     <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="bastion/tutorials.md" class="card-link">Descubrir los tutoriales &rarr;</a>
+    <a href="bastion/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>
