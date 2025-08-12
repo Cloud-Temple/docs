@@ -22,6 +22,6 @@ Mit seinem sicherheitsorientierten Ansatz und fortschrittlichen Funktionen wie I
     <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen können.</p>
-    <a href="bastion/tutorials.md" class="card-link">Tutorials entdecken &rarr;</a>
+    <a href="bastion/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
