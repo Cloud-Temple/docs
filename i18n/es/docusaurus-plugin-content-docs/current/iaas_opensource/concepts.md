@@ -180,6 +180,21 @@ La memoria realmente utilizable puede estar limitada por el sistema operativo in
 
 No es posible redimensionar los discos una vez creados. Para ampliar la capacidad de almacenamiento, es necesario crear un nuevo disco.
 
+### Herramientas para las máquinas virtuales
+Estas herramientas se utilizan para tener un funcionamiento óptimo de las máquinas virtuales. Cuando desee realizar una acción y una de estas herramientas sea necesaria, aparecerá un mensaje en la consola Cloud Temple.
+Para instalar estas herramientas, puede consultar los sitios oficiales de Xen Server para obtener un procedimiento preciso según su SO.
+
+#### Management Agent
+El Management Agent es un componente instalado en cada máquina virtual. Permite al hipervisor gestionar mejor la máquina teniendo acceso a más información y permite realizar ciertas acciones de manera más limpia.
+
+#### PV Drivers (Paravirtualization Drivers)
+Los PV Drivers son controladores instalados en la máquina virtual para mejorar su rendimiento.
+Sin estos controladores, la máquina funciona, pero más lentamente. Además, permiten ciertas acciones avanzadas.
+Los PV Drivers están instalados nativamente en la mayoría de los núcleos Linux actuales.
+
+#### Tools
+Las Tools son un conjunto de componentes de software que mejoran la integración de la máquina virtual con la infraestructura de virtualización.
+
 ## Catálogos
 
 El catálogo permite gestionar tres tipos de elementos esenciales:
