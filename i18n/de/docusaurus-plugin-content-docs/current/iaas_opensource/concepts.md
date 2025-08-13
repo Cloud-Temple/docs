@@ -181,6 +181,21 @@ Der tatsächlich nutzbare Speicher kann durch das Gastbetriebssystem begrenzt se
 
 Es ist nicht möglich, Festplatten nach der Erstellung zu vergrößern. Um die Speicherkapazität zu erweitern, ist es notwendig, eine neue Festplatte zu erstellen.
 
+### Tools für virtuelle Maschinen
+Diese Tools werden verwendet, um einen optimalen Betrieb der virtuellen Maschinen zu gewährleisten. Wenn Sie eine Aktion durchführen möchten und eines dieser Tools erforderlich ist, wird eine Nachricht auf der Cloud Temple-Konsole angezeigt.
+Um diese Tools zu installieren, können Sie die offiziellen Xen Server-Websites konsultieren, um ein präzises Verfahren entsprechend Ihrem Betriebssystem zu erhalten.
+
+#### Management Agent
+Der Management Agent ist eine Komponente, die in jeder virtuellen Maschine installiert wird. Er ermöglicht es dem Hypervisor, die Maschine besser zu verwalten, indem er Zugang zu mehr Informationen hat und bestimmte Aktionen sauberer durchführen kann.
+
+#### PV Drivers (Paravirtualization Drivers)
+PV Drivers sind Treiber, die in der virtuellen Maschine installiert werden, um ihre Leistung zu verbessern.
+Ohne diese Treiber funktioniert die Maschine, aber langsamer. Außerdem ermöglichen sie bestimmte erweiterte Aktionen.
+PV Drivers sind nativ auf der Mehrheit der aktuellen Linux-Kernel installiert.
+
+#### Tools
+Tools sind eine Sammlung von Softwarekomponenten, die die Integration der virtuellen Maschine mit der Virtualisierungsinfrastruktur verbessern.
+
 ## Kataloge
 
 Der Katalog ermöglicht die Verwaltung von drei Arten wesentlicher Elemente:
