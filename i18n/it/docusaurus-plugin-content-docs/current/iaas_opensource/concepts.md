@@ -74,7 +74,7 @@ Le lame di calcolo disponibili per l'offerta Bare Metal forniscono una gamma di 
 - __(2)__ Le frequenze indicate corrispondono alla frequenza base minima e alla frequenza turbo.
 - __(3)__ La connettività fisica è condivisa per l'accesso alla rete e l'accesso allo storage a blocchi, grazie a un'architettura convergente Cisco UCS.
 - __(4)__ Le GPU disponibili evolvono in base alle ultime tecnologie. Dal 1° maggio 2024, l'offerta include GPU NVIDIA LOVELACE L40S.
-- __(5)__ L'HA su un cluster è disponibile solo a partire da 3 nodi.
+- __(5)__ L'alta disponibilità su un cluster è disponibile solo a partire da 2 nodi.
 
 La disponibilità dell'infrastruttura è garantita al 99,9%, misurata mensilmente, incluse le finestre di manutenzione. Qualsiasi richiesta relativa all'SLA deve essere dichiarata tramite un ticket di incidente.
 
@@ -196,19 +196,19 @@ Quando il numero di dischi virtuali è indicato come 0, significa che si tratta 
 ## Alta Disponibilità
 
 L'alta disponibilità permette di assicurare la continuità del servizio delle macchine virtuali (VM) in caso di guasto di un host fisico all'interno di un pool OpenIaaS.
-Con l'HA, ogni host nel pool invia regolarmente segnali di vita ai suoi peer tramite lo storage condiviso (Block Storage Heartbeat). In caso di assenza prolungata di risposta, l'host è considerato guasto.
+Con l'alta disponibilità (HA), ogni host nel pool invia regolarmente segnali di vita ai suoi peer tramite lo storage condiviso (Block Storage Heartbeat). In caso di assenza prolungata di risposta, l'host è considerato guasto.
 
-Perché l'alta disponibilità (HA) sia correttamente configurata in un pool OpenIaaS, è indispensabile disporre di **almeno due host** connessi.
+Un Block Storage designato come heartbeat significa che servirà da base per autenticare gli host che non rispondono più.
 
-Ogni VM deve essere configurata con un livello di priorità di riavvio in HA:
+Perché l'alta disponibilità sia correttamente configurata in un pool OpenIaaS, è indispensabile disporre di **almeno due host** connessi.
+
+Ogni VM deve essere configurata con un livello di priorità di riavvio in alta disponibilità:
 
 #### Disabled
-  Se una VM non protetta o il suo host viene fermato, l'alta disponibilità **non tenterà di riavviare la VM**.
+  L'alta disponibilità non è configurata. In caso di guasto dell'host, la macchina virtuale non sarà riavviata.
 
 #### Restart
-  Se una VM protetta non può essere riavviata immediatamente dopo un guasto del server, l'HA **tenterà di riavviarla successivamente** quando sarà disponibile capacità aggiuntiva nel pool. Tuttavia, **non c'è garanzia che questo tentativo abbia successo**.
+  In caso di guasto dell'host, la macchina virtuale sarà riavviata automaticamente non appena le risorse saranno disponibili nel pool. Le macchine virtuali configurate in modalità "restart" sono trattate con priorità, prima di quelle configurate in modalità "best-effort".
 
 #### Best-Effort  
-  Per le VM configurate in modalità *best-effort*, l'HA **tenterà di riavviarle su un altro host** se il loro host originale si guasta.  
-  Questo tentativo **avviene solo dopo il riavvio riuscito di tutte le VM configurate in modalità "restart"**.  
-  L'HA **farà solo un tentativo di riavvio** per una VM in *best-effort*; se fallisce, **non verrà fatto nessun altro tentativo**.
+  In caso di guasto dell'host, la macchina virtuale sarà riavviata automaticamente solo se rimangono risorse disponibili dopo l'elaborazione di tutte le macchine virtuali configurate in modalità "restart". La modalità "Best-effort" fa solo un tentativo, quindi se le risorse sono insufficienti, la macchina virtuale non sarà riavviata.
