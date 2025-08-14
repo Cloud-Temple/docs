@@ -299,16 +299,24 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 - Claims sans preuves ou métriques
 - Exemples non testés qui ne marchent pas
 
+### 🎭 Processus de Relecture par Persona
+**EXIGENCE** : Toute modification ou création de contenu doit être systématiquement évaluée à travers le prisme des personas définis dans `.clinerules/personaProfiles/`.
+- **Analyse** : Pour chaque question/réponse ou section, analyser la pertinence, le ton et l'impact pour chaque persona (Dirigeant, Acheteur, DSI, RSSI, Expert Technique).
+- **Validation Utilisateur** : Si l'analyse révèle qu'un persona pourrait interpréter négativement le contenu ou que le message n'est pas adapté, je dois soumettre mon analyse à l'utilisateur et demander sa validation avant de finaliser le contenu.
+- **Ignorer un Persona** : L'utilisateur peut à tout moment me demander d'ignorer un ou plusieurs personas pour une tâche spécifique.
+
 ### 📋 Workflow Git Obligatoire
 **EXIGENCE** : Commit + push à chaque étape pour publication immédiate
 
 #### Processus Standard
-1. **Créer/modifier** documentation
-2. **Tester TOUS les exemples** (curl, Python, etc.)
-3. **Mettre à jour Memory Bank** avec état réel
-4. **Commit avec message détaillé** 
-5. **Push vers branche** pour review
-6. **Merger après validation**
+1. **Créer/Modifier** la documentation source (fr).
+2. **Tester** les exemples de code pour garantir leur validité.
+3. **Traduire** les modifications en lançant le script (`python scripts/translate_py/translate.py`).
+4. **Compiler** le site en local (`npm run build`) pour vérifier l'absence d'erreurs (liens cassés, etc.).
+5. **Mettre à jour** le `docs/changelog.md` avec des notes de version claires et orientées utilisateur.
+6. **Commiter** l'ensemble des changements (sources, traductions, changelog) avec un message descriptif.
+7. **Pousser** les commits sur le dépôt distant.
+8. **Mettre à jour** la Memory Bank si de nouvelles règles ou de nouveaux patterns ont été établis.
 
 #### Messages de Commit
 - **Format** : Emoji + description technique
