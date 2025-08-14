@@ -61,10 +61,10 @@
       "it": "b0ca668d5f57d66c2c5b35d40ffe24204844d3d01951e27b307ba9a6de46a0f2"
     },
     "console/iam/concepts.md": {
-      "en": "09b51aec65463fca7d3bb460a6d37afb85f3b78ede15ac672f008e8ac7a18ede",
-      "de": "09b51aec65463fca7d3bb460a6d37afb85f3b78ede15ac672f008e8ac7a18ede",
-      "es": "09b51aec65463fca7d3bb460a6d37afb85f3b78ede15ac672f008e8ac7a18ede",
-      "it": "09b51aec65463fca7d3bb460a6d37afb85f3b78ede15ac672f008e8ac7a18ede"
+      "en": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf",
+      "de": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf",
+      "es": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf",
+      "it": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf"
     },
     "console/iam/tutorials/sso_adfs.md": {
       "en": "6f070328920e458fe0eb6b4abfaf803a764d61b62e1c52bb916fae30691750fb",
@@ -109,10 +109,10 @@
       "it": "74c77a01fd0989be1d952513ed5f090f23dc3553da7a6c4985bc63f8a38893ad"
     },
     "console/security/security_alarms.md": {
-      "en": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4",
-      "de": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4",
-      "es": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4",
-      "it": "4ec3a0506ceef287d3e52ab8c4529178cd813239f89ed945b20b148a5fc0ede4"
+      "en": "105f7370dbf1a5c16671de5fb5a4b9fe8576a3c8d8e5b6cef0f5da3994a908f0",
+      "de": "105f7370dbf1a5c16671de5fb5a4b9fe8576a3c8d8e5b6cef0f5da3994a908f0",
+      "es": "105f7370dbf1a5c16671de5fb5a4b9fe8576a3c8d8e5b6cef0f5da3994a908f0",
+      "it": "105f7370dbf1a5c16671de5fb5a4b9fe8576a3c8d8e5b6cef0f5da3994a908f0"
     },
     "console/status.md": {
       "en": "494a70e241df5efbe3f77425c45ced084d9eeae2c81718bb39be66ed12ed6e76",
@@ -247,10 +247,10 @@
       "it": "5deae1f1d7073b314996962a448becda752dd254ee5cc9c981fc4483a87b91f0"
     },
     "iaas_opensource/concepts.md": {
-      "en": "1aefb0e96e1a63d3538a06cf51cc4cec2d3b6a0b7b020f3c3a60230d8ea808c8",
-      "de": "1aefb0e96e1a63d3538a06cf51cc4cec2d3b6a0b7b020f3c3a60230d8ea808c8",
-      "es": "1aefb0e96e1a63d3538a06cf51cc4cec2d3b6a0b7b020f3c3a60230d8ea808c8",
-      "it": "1aefb0e96e1a63d3538a06cf51cc4cec2d3b6a0b7b020f3c3a60230d8ea808c8"
+      "en": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c",
+      "de": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c",
+      "es": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c",
+      "it": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c"
     },
     "iaas_vmware/iaas_vmware.md": {
       "en": "227a6fc9452bc93a670f1148bc057120b0348edd9ca5266421fac7408ccefa46",
@@ -265,10 +265,10 @@
       "it": "cac853e30f8f98dcb715846bf925ba0980b334f9fac994345ee63eb5af1f263c"
     },
     "iaas_opensource/tutorials.md": {
-      "en": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e",
-      "de": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e",
-      "es": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e",
-      "it": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e"
+      "en": "4f854a0f3e50548ba4dd43aaedd2c85e80e47baa5a1308cfbab89271a8f074c0",
+      "de": "4f854a0f3e50548ba4dd43aaedd2c85e80e47baa5a1308cfbab89271a8f074c0",
+      "es": "4f854a0f3e50548ba4dd43aaedd2c85e80e47baa5a1308cfbab89271a8f074c0",
+      "it": "4f854a0f3e50548ba4dd43aaedd2c85e80e47baa5a1308cfbab89271a8f074c0"
     },
     "iaas_bare-metal/tutorials.md": {
       "en": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e",
@@ -745,10 +745,10 @@
       "it": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad"
     },
     "changelog.md": {
-      "en": "f1cfe4544bbc84a3a31126ca471488b3587ca50c8da2cd006113b12e49b3ebb5",
-      "es": "f1cfe4544bbc84a3a31126ca471488b3587ca50c8da2cd006113b12e49b3ebb5",
-      "de": "f1cfe4544bbc84a3a31126ca471488b3587ca50c8da2cd006113b12e49b3ebb5",
-      "it": "f1cfe4544bbc84a3a31126ca471488b3587ca50c8da2cd006113b12e49b3ebb5"
+      "en": "61e2f9981b45ff3592b25462b90154041337621606c6a1c8d1c42d4c2b5dc91b",
+      "es": "61e2f9981b45ff3592b25462b90154041337621606c6a1c8d1c42d4c2b5dc91b",
+      "de": "61e2f9981b45ff3592b25462b90154041337621606c6a1c8d1c42d4c2b5dc91b",
+      "it": "61e2f9981b45ff3592b25462b90154041337621606c6a1c8d1c42d4c2b5dc91b"
     },
     "contractual/llmaas/raci.md": {
       "en": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
@@ -791,8 +791,26 @@
       "de": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
       "es": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
       "it": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444"
+    },
+    "iaas_opensource/tutorials/high_availability/manage_pool.md": {
+      "en": "2ca24aceb8a01cb82cc6814a8005a532110b2f6aeaaa00b40b200e1bab883f2f",
+      "es": "2ca24aceb8a01cb82cc6814a8005a532110b2f6aeaaa00b40b200e1bab883f2f",
+      "de": "2ca24aceb8a01cb82cc6814a8005a532110b2f6aeaaa00b40b200e1bab883f2f",
+      "it": "2ca24aceb8a01cb82cc6814a8005a532110b2f6aeaaa00b40b200e1bab883f2f"
+    },
+    "iaas_opensource/tutorials/high_availability/manage_vm.md": {
+      "en": "2fa4e0a6e44632e90778e35113623c1fa3d2936065033ca6ce1c299c59406890",
+      "es": "2fa4e0a6e44632e90778e35113623c1fa3d2936065033ca6ce1c299c59406890",
+      "it": "2fa4e0a6e44632e90778e35113623c1fa3d2936065033ca6ce1c299c59406890",
+      "de": "2fa4e0a6e44632e90778e35113623c1fa3d2936065033ca6ce1c299c59406890"
+    },
+    "llmaas/faq.md": {
+      "en": "bafad1b09c979cb33bd6c8bdf2bba1afd61e8edf14381d7c41e62bcd0d5af256",
+      "de": "bafad1b09c979cb33bd6c8bdf2bba1afd61e8edf14381d7c41e62bcd0d5af256",
+      "it": "bafad1b09c979cb33bd6c8bdf2bba1afd61e8edf14381d7c41e62bcd0d5af256",
+      "es": "bafad1b09c979cb33bd6c8bdf2bba1afd61e8edf14381d7c41e62bcd0d5af256"
     }
   },
-  "last_update": "2025-07-16T08:12:36.370982",
+  "last_update": "2025-08-14T15:50:55.391949",
   "version": "2.0"
 }

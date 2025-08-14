@@ -1,21 +1,21 @@
 ---
-title: IaaS OpenSource Tutorials
+title: Tutorials IaaS OpenSource
 sidebar_position: 4
 ---
 
-# IaaS OpenSource Tutorials
+# Tutorien zu IaaS Open Source
 
-Dieser Abschnitt enthält praktische Tutorials zur effektiven Nutzung der IaaS OpenSource-Plattform von Cloud Temple.
+Diese Abschnitt enthält praktische Tutorials, um die IaaS-Plattform Open Source von Cloud Temple effizient zu nutzen.
 
 ## Verfügbare Tutorials
 
 ### Hochverfügbarkeit
-- [Verwaltung von Ressourcenpools](tutorials/high_availability/manage_pool.md)
-- [Verwaltung von virtuellen Maschinen](tutorials/high_availability/manage_vm.md)
+- [Verwaltung der Ressourcenpools](tutorials/high_availability/manage_pool.md)
+- [Verwaltung virtueller Maschinen](tutorials/high_availability/manage_vm.md)
 
 ## Voraussetzungen
 
-Bevor Sie mit diesen Tutorials beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Bevor Sie diese Tutorials beginnen, stellen Sie sicher, dass Sie folgendes haben:
 
-- Zugang zur Cloud Temple Konsole
-- Die erforderlichen Berechtigungen zur Verwaltung von IaaS OpenSource-Ressourcen
+- Zugang zur Cloud Temple-Konsole
+- Notwendige Berechtigungen, um IaaS-OpenSource-Ressourcen zu verwalten
