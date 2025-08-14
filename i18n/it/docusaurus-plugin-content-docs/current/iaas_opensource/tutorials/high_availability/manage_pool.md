@@ -8,18 +8,18 @@ import open_iaas_pool_ha_how_to_modify from '../images/open_iaas_pool_ha_how_to_
 import open_iaas_pool_ha_error from '../images/open_iaas_pool_ha_error.png'
 import open_iaas_pool_ha_vm_errors from '../images/open_iaas_pool_ha_vm_errors.png'
 
-Per gestire l'alta disponibilità di un pool, è sufficiente andare alla pagina del pool. Lo stato dell'alta disponibilità viene visualizzato direttamente:
+Per gestire l'alta disponibilità di un pool, è sufficiente accedere alla pagina del pool. Lo stato dell'alta disponibilità viene visualizzato direttamente:
 <img src={open_iaas_pool_ha_how_to_find} />
 
-Per attivare l'alta disponibilità su un pool, è necessario selezionare un Block Storage come Heartbeat:
+Per abilitare l'alta disponibilità su un pool, è necessario selezionare un Block Storage come Heartbeat:
 <img src={open_iaas_pool_ha_how_to_modify} />
 <img src={open_iaas_pool_enable_ha} />
 
-Una volta attivato, è possibile vedere il numero di [macchine virtuali che non hanno configurazione](manage_vm.md) ad alta disponibilità:
+Una volta abilitato, è possibile visualizzare il numero di [macchine virtuali che non hanno una configurazione](manage_vm.md) ad alta disponibilità:
 <img src={open_iaas_pool_ha_enabled} />
 
-Se il [numero di host disponibili](../../concepts.md#alta-disponibilità) non consente il funzionamento dell'alta disponibilità, verrà visualizzato un messaggio di avviso:
+Se il [numero di hosts disponibili](../../concepts.md#alta-disponibilità) non consente di far funzionare l'alta disponibilità, verrà visualizzato un messaggio di avviso:
 <img src={open_iaas_pool_ha_error} />
 
-Per poter attivare l'alta disponibilità su un pool, nessuna macchina virtuale deve essere contemporaneamente accesa, utilizzare un ISO da storage locale (non condiviso), e avere l'alta disponibilità configurata in modalità "restart". Se questa situazione si verifica, sarà possibile consultare l'elenco delle macchine virtuali problematiche:
+Per poter abilitare l'alta disponibilità su un pool, non deve esserci alcuna macchina virtuale accesa contemporaneamente, che utilizzi un ISO proveniente da un archiviazione locale (non condivisa) e che abbia l'alta disponibilità configurata in modalità "restart". In caso di questa situazione, è possibile consultare l'elenco delle macchine virtuali problematiche:
 <img src={open_iaas_pool_ha_vm_errors} />
