@@ -315,6 +315,12 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 - **Contenu** : Ce qui a été testé et validé
 - **Détails** : Exemples fonctionnels vs théoriques
 
+### 📝 Gestion du Changelog
+**EXIGENCE** : Mettre à jour systématiquement le fichier `docs/changelog.md` après chaque session de travail significative.
+- **Format** : `## [YYYY-MM-DD] - Titre de la mise à jour`
+- **Contenu** : Lister les changements majeurs, améliorations, et corrections de bugs.
+- **Attribution** : Mentionner les contributeurs si pertinent.
+
 ### 🧪 Validation Systématique
 **CRITÈRE QUALITÉ** : Aucun exemple non testé
 
