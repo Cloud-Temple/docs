@@ -1,5 +1,5 @@
 ---
-title: Erste Schritte
+title: Leitfaden zum Start
 ---
 import shivaNetwork_001 from './images/shiva_network_001.jpg'
 import shivaNetwork_002 from './images/shiva_network_002.jpg'
@@ -14,74 +14,74 @@ import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me
 
 ## Regionale private Netzwerke
 
-Private Netzwerke innerhalb einer Region können direkt über die Cloud Temple-Konsole bestellt werden.
+Die Verwaltung der privaten Netzwerke innerhalb einer Region erfolgt direkt in der Cloud Temple-Konsole.
 
-### Innerhalb eines Tenants
+### Innerhalb eines Mandanten
 
-Die Erstellung eines virtuellen Netzwerks erfolgt im Menü __*Network*__ auf der grünen Leiste auf der linken Seite des Bildschirms.
+Die Erstellung eines virtuellen Netzwerks erfolgt im Menü __*Network*__ auf dem grünen Balken links auf dem Bildschirm.
 
 <img src={shivaNetwork_001} />
 
-Klicken Sie dann auf die Schaltfläche __*Neues Netzwerk*__.
+Klicken Sie anschließend auf die Schaltfläche __*Neues Netzwerk*__.
 
-Sie müssen den Namen Ihres Netzwerks angeben, der angezeigt wird. Standardmäßig haben alle Ihre Cluster Zugriff auf Ihr neues Netzwerk.
-Im Untermenü __*Erweiterte Optionen*__ können Sie jedoch den Umfang der Ausbreitung innerhalb des Tenants zwischen Ihren verschiedenen Clustern genauer festlegen.
+Sie müssen den Namen Ihres Netzwerks angeben, der angezeigt wird. Standardmäßig werden alle Ihre Cluster auf Ihr neues Netzwerk zugreifen.  
+Allerdings im Untermenü __*Erweiterte Optionen*__ können Sie die Ausbreitung innerhalb des Mandanten zwischen Ihren verschiedenen Clustern detaillierter angeben.
 
 <img src={shivaNetwork_002} />
 
-Alle möglichen Aktionen für Ihre Netzwerke finden Sie im Menü __*Aktionen*__ für jedes einzelne:
+Alle möglichen Aktionen für Ihre Netzwerke finden Sie im Menü __*Aktionen*__ jedes einzelnen:
 
-- Aktivierung der Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Deaktivierung der Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Hinzufügen einer Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Entfernen einer Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Grafische Visualisierung der Netzwerkausbreitung über alle Ihre Cluster und Hypervisoren innerhalb eines Tenants.
-- Entfernen einer Ausbreitung innerhalb eines Tenants.
-- Ändern einer Ausbreitung innerhalb eines Tenants.
-- Löschen eines Netzwerks.
+- Die Aktivierung des Netzwerk-Teilens zwischen Mandanten einer Organisation.
+- Die Deaktivierung des Netzwerk-Teilens zwischen Mandanten einer Organisation.
+- Das Hinzufügen des Netzwerk-Teilens zwischen Mandanten einer Organisation.
+- Das Löschen des Netzwerk-Teilens zwischen Mandanten einer Organisation.
+- Die grafische Darstellung der Netzwerkverbreitung über alle Ihre Cluster und Hypervisoren innerhalb eines Mandanten.
+- Das Löschen einer Verbreitung innerhalb eines Mandanten.
+- Die Änderung einer Verbreitung innerhalb eines Mandanten.
+- Das Löschen eines Netzwerks.
 
 <img src={shivaNetwork_003} />
 
-#### Visualisierung der Netzwerkausbreitung
+#### Visualisierung der Ausbreitung Ihrer Netzwerke
 
-Sie können im Menü __*Aktionen*__ leicht die Ausbreitung eines Netzwerks auf Ihre verschiedenen Cluster innerhalb desselben Tenants visualisieren.
-Wählen Sie die Option *"Ausbreitung anzeigen"*:
+Sie können im Menü __*Aktionen*__ leicht für ein Netzwerk dessen Ausbreitung zu Ihren verschiedenen Clustern innerhalb eines Mieters visualisieren.
+Wählen Sie die Option *"Visualisierung der Ausbreitung"*:
 
 <img src={shivaNetwork_004} />
 
-#### Ändern der Ausbreitung
+#### Änderung der Propagation
 
-Das Ändern einer Ausbreitung innerhalb eines Tenants erfolgt über die Option *"Ausbreiten"*:
-Wählen Sie dann die Cluster aus, die in diese Ausbreitung einbezogen werden sollen.
+Die Änderung einer Propagation innerhalb eines Mandanten erfolgt über die Option *"Propagieren"*:  
+Wählen Sie anschließend die Cluster aus, die in diese Propagation integriert werden sollen.
 
 <img src={shivaNetwork_005} />
 
-__*Hinweis:*__ *Die Änderung der Ausbreitung ist auf 20 Netzwerke pro Aktion beschränkt.*
+__*Hinweis :*__ *Die Änderung der Propagation ist auf 20 Netzwerke pro Aktion begrenzt.*
 
 #### Löschen eines Netzwerks
 
-Das Löschen eines Netzwerks innerhalb eines Tenants erfolgt über die Option *"Netzwerk löschen"*:
+Das Löschen eines Netzwerks innerhalb eines Mandanten erfolgt über die Option *"Netzwerk löschen"* :
 
 <img src={shivaNetwork_006} />
 
-### Netzwerkfreigabe zwischen Tenants
+### Netzwerkfreigabe zwischen Mandanten
 
-Standardmäßig sind __Netzwerke nur innerhalb eines Tenants verfügbar__. Sie können wählen, __ein Netzwerk zwischen mehreren Tenants zu teilen__, aus technischen Gründen oder aus Konnektivitätsgründen.
-Es ist somit möglich, ein Netzwerk zwischen Ihren __[Tenants](../../../console/iam/concepts/#tenant)__ innerhalb derselben Organisation zu teilen.
+Standardmäßig sind Netzwerke nur innerhalb eines Mandanten verfügbar. Sie können ein Netzwerk zwischen mehreren Mandanten freigeben, aus technischen Gründen oder aus Gründen der Verbindung.
+Es ist somit möglich, ein Netzwerk zwischen Ihren __[Mandanten](../../console/iam/concepts.md#tenant)__ innerhalb derselben Organisation zu teilen.
 
-Aktivieren Sie dazu einfach die Freigabe wie unten gezeigt.
+Dazu müssen Sie die Freigabe wie unten aktivieren.
 
 <img src={shivaNetworkVnShareEnabled} />
 
-Sobald die Freigabe aktiviert ist, müssen Sie nur noch eine Freigabe hinzufügen, wie unten gezeigt.
+Nach der Aktivierung der Freigabe müssen Sie einfach eine Freigabe wie unten hinzufügen.
 
 <img src={shivaNetworkVnShared} />
 
-Wählen Sie dann den Ziel-Tenant aus. Bitte beachten Sie, dass die Liste der Tenants dynamisch ist.
+Danach wählen Sie den Zielmandanten aus. Beachten Sie, dass die Liste der Mandanten dynamisch ist.
 Sie hängt von Ihrer Organisation und Ihren Berechtigungen ab.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Sobald das Netzwerk geteilt ist, wird es im Tab 'Geteilte Netzwerke' von Ihrem zweiten Tenant aus sichtbar sein.
+Sobald das Netzwerk freigegeben ist, ist es im Tab „Freigegebene Netzwerke“ in Ihrem zweiten Mandanten sichtbar.
 
 <img src={shivaNetworkVnSharedWithMe} />
