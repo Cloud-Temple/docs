@@ -157,13 +157,16 @@ Anschließend ermöglicht das Recht __'iam_write'__ einem Konto, die Berechtigun
 Wenn ein Benutzer erstellt wird, hat er standardmäßig keine Berechtigungen. Jede Berechtigung wird individuell zugewiesen und funktioniert eigenständig, ohne Überschneidung mit anderen Berechtigungen. Sie werden in Kombination angewendet, was bedeutet, dass ein Benutzer alle erforderlichen Berechtigungen haben muss, um eine bestimmte Aktion durchzuführen.
 
 Die folgenden Berechtigungen sind für jeden Benutzer und für jeden Tenant Ihrer Organisation konfigurierbar:
- • Berechtigungen vom Typ "read": erlauben nur die Anzeige von Ressourcen ohne Möglichkeit zur Änderung.
- • Berechtigungen vom Typ "write": erlauben die Änderung von Konfigurationen.
-  • Berechtigungen vom Typ "management": erlauben die erweiterte Verwaltung von Ressourcen.
+
+- Berechtigungen vom Typ "read": erlauben nur die Anzeige von Ressourcen ohne Möglichkeit zur Änderung.
+- Berechtigungen vom Typ "write": erlauben die Änderung von Konfigurationen.
+- Berechtigungen vom Typ "management": erlauben die erweiterte Verwaltung von Ressourcen.
+- Berechtigungen vom Typ "console_access": autorisieren PMAD-Verbindungen zu Ressourcen.
+- Berechtigungen vom Typ "virtual_machine_power": autorisieren die Stromverwaltung einer virtuellen Maschine.
 
 - __Dies sind Berechtigungen, keine Rollen.__ Als solche ist es notwendig, sowohl die READ- als auch die WRITE-Berechtigung zu haben, um eine Konfiguration zu ändern.
 
-Letzte Aktualisierung am: 23.01.2025
+Letzte Aktualisierung am: 16.07.2025
 
 | Berechtigungsname                             | Beschreibung der Berechtigung                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -182,12 +185,14 @@ Letzte Aktualisierung am: 23.01.2025
 | compute_iaas_opensource_read                  | OpenIaaS-Angebot - Anzeigen von virtuellen Maschinenressourcen                                                                  |
 | compute_iaas_opensource_management            | OpenIaaS-Angebot - Verwaltung von virtuellen Maschinenressourcen                                                                |
 | compute_iaas_opensource_virtual_machine_power | OpenIaaS-Angebot - Stromverwaltung einer virtuellen Maschine                                                                    |
+| compute_iaas_opensource_replication_recover   | OpenIaaS-Angebot - Verwaltung der Replikation                                                                                   |
 | compute_iaas_vmware_console_access            | VMware-Angebot - Öffnen der Konsole einer virtuellen Maschine                                                                   |
 | compute_iaas_vmware_infrastructure_read       | VMware-Angebot - Anzeigen erweiterter Daten von VMware-Ressourcen (Affinitäts-/Anti-Affinitätsregeln, DRS-Konfiguration usw.)  |
 | compute_iaas_vmware_infrastructure_write      | VMware-Angebot - Erweiterte Verwaltung von VMware-Ressourcen                                                                    |
 | compute_iaas_vmware_read                      | VMware-Angebot - Anzeigen von virtuellen Maschinenressourcen                                                                    |
 | compute_iaas_vmware_management                | VMware-Angebot - Verwaltung von virtuellen Maschinenressourcen (ermöglicht die Verschlüsselung einer virtuellen Maschine)       |
 | compute_iaas_vmware_virtual_machine_power     | VMware-Angebot - Stromverwaltung einer virtuellen Maschine                                                                      |
+| baremetal_management                          | Bare Metal-Angebot - Verwaltung von Bare Metal-Ressourcen                                                                       |
 | baremetal_read                                | Bare Metal-Angebot - Anzeigen von Bare Metal-Ressourcen                                                                         |
 | baremetal_console_access                      | Bare Metal-Angebot - Öffnen der Konsole eines Bare Metal                                                                        |
 | console_public_access_read                    | Anzeigen von IPs, die für den Zugriff auf die Konsole autorisiert sind                                                          |
@@ -221,6 +226,8 @@ Letzte Aktualisierung am: 23.01.2025
 | ticket_comment_write                          | Verwaltung von Kommentaren                                                                                                      |
 | ticket_read                                   | Anzeigen von Tickets                                                                                                            |
 | ticket_write                                  | Verwaltung von Tickets                                                                                                          |
+| incident_management                           | Verwaltung von Vorfällen                                                                                                       |
+| incident_read                                 | Anzeigen von Vorfällen                                                                                                         |
 
 ## Organisationen
 
