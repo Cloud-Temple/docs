@@ -108,7 +108,7 @@ Utilisation des secrets OpenShift/Kubernetes et recommandation d'intégrer des s
 
 La revue des accès se réalise par l'intermédiaire de la console Shiva et du module "User Management" de la console OpenShift.
 
-Pour plus de détails sur cette fonctionnalité, se référer à notre [**guide**](/console/iam/iam) et à la [**documentation**](https://docs.redhat.com/en/documentation/openshift_container_platform/) de l'éditeur.
+Pour plus de détails sur cette fonctionnalité, se référer à notre [**guide**](../../../console/iam/iam.md) et à la [**documentation**](https://docs.redhat.com/en/documentation/openshift_container_platform/) de l'éditeur.
 
 **Responsabilité **Cloud Temple** :**
 
