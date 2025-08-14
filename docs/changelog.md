@@ -5,11 +5,22 @@ sidebar_position: 2
 
 # Suivi des Changements
 
-### 14 Août 2025 : Amélioration de la FAQ LLMaaS
+### 14 Août 2025 : Améliorations et corrections
 
-- Mise à jour et clarification des réponses de la FAQ pour mieux adresser les questions techniques et stratégiques.
-- Précision des informations sur le catalogue de modèles, notamment la taille maximale des contextes et les capacités multimodales.
-- Amélioration des sections sur le modèle économique, la sécurité et le support pour plus de clarté.
+- **LLMaaS** : Mise à jour et clarification des réponses de la FAQ pour mieux adresser les questions techniques et stratégiques. Ajout de la FAQ à la navigation.
+- **Général** : Correction de plusieurs liens de navigation internes à travers la documentation pour une expérience plus fluide.
+
+### Juillet 2025 : Nouveautés et mises à jour majeures
+
+- **Stockage Objet (OSS)** :
+    - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
+    - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
+- **IaaS OpenSource** :
+    - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
+- **Console** :
+    - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
+- **Réseau** :
+    - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
 
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 
