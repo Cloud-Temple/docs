@@ -7,9 +7,9 @@ sidebar_position: 2
 
 ### 14 Août 2025 : Amélioration de la FAQ LLMaaS
 
-- Révision complète de la FAQ LLMaaS pour améliorer la pertinence et l'impact pour chaque persona cible (Dirigeant, Acheteur, DSI, RSSI, Expert Technique).
-- Alignement des détails techniques (taille de contexte, noms de modèles) avec les dernières configurations.
-- Optimisation de la formulation des réponses sur la proposition de valeur, la sécurité, le modèle économique et le support.
+- Mise à jour et clarification des réponses de la FAQ pour mieux adresser les questions techniques et stratégiques.
+- Précision des informations sur le catalogue de modèles, notamment la taille maximale des contextes et les capacités multimodales.
+- Amélioration des sections sur le modèle économique, la sécurité et le support pour plus de clarté.
 
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 
