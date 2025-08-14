@@ -317,8 +317,9 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 
 ### 📝 Gestion du Changelog
 **EXIGENCE** : Mettre à jour systématiquement le fichier `docs/changelog.md` après chaque session de travail significative.
-- **Format** : `## [YYYY-MM-DD] - Titre de la mise à jour`
-- **Contenu** : Lister les changements majeurs, améliorations, et corrections de bugs.
+- **Audience Cible** : Le changelog est un document **public** destiné aux utilisateurs. La rédaction doit être claire, concise et orientée vers les bénéfices utilisateurs.
+- **Contenu** : Lister les changements majeurs, améliorations et corrections de bugs du point de vue de l'utilisateur. **Ne pas mentionner les processus internes** (ex: "revue par persona", "mise à jour de la memory bank").
+- **Format** : `### [Date] : Titre de la mise à jour`
 - **Attribution** : Mentionner les contributeurs si pertinent.
 
 ### 🧪 Validation Systématique
