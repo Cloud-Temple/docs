@@ -177,6 +177,21 @@ The actually usable memory may be limited by the guest operating system. Exceedi
 
 It is not possible to resize disks once created. To expand storage capacity, it is necessary to create a new disk.
 
+### Tools for virtual machines
+These tools are used to ensure optimal operation of virtual machines. When you want to perform an action and one of these tools is required, a message will appear on the Cloud Temple console.
+To install these tools, you can consult the official Xen Server sites to obtain a precise procedure according to your OS.
+
+#### Management Agent
+The Management Agent is a component installed in each virtual machine. It allows the hypervisor to better manage the machine by having access to more information and enables certain actions to be performed more cleanly.
+
+#### PV Drivers (Paravirtualization Drivers)
+PV Drivers are drivers installed in the virtual machine to improve its performance.
+Without these drivers, the machine works, but more slowly. Additionally, they enable certain advanced actions.
+PV Drivers are installed natively on the majority of current Linux kernels.
+
+#### Tools
+Tools are a set of software components that improve the integration of the virtual machine with the virtualization infrastructure.
+
 ## Catalogs
 
 The catalog allows managing three essential types of elements:
