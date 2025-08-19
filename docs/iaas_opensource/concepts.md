@@ -181,6 +181,21 @@ La mémoire réellement utilisable peut être limitée par le système d'exploit
 
 Il n'est pas possible de redimensionner les disques une fois créés. Pour étendre la capacité de stockage, il est nécessaire de créer un nouveau disque.
 
+### Outils pour les machines virtuelles
+Ces outils sont utilisés pour avoir un fonctionnement optimal des machines virtuelles. Lorsque vous souhaiterez effectuer une action et qu'un de ces outils est nécessaire, un message s'affichera sur la console Cloud Temple.
+Pour installer ces outils, vous pouvez consulter les sites officiels de Xen Server afin d'obtenir une démarche précise selon votre OS.
+
+#### Management Agent
+Le Management Agent est un composant installé dans chaque machine virtuelle. Il permet à l'hyperviseur de mieux gérer la machine en ayant accés à plus d'informations et permet de réaliser certaines actions plus proprement.
+
+#### PV Drivers (Paravirtualization Drivers)
+Les PV Drivers sont des pilotes installés dans la machine virtuelle pour améliorer ses performances.
+Sans ces pilotes, la machine fonctionne, mais plus lentement. De plus, ils permettent certaines actions avancées.
+Les PV Drivers sont installés nativement sur la majorité des noyaux Linux actuels.
+
+#### Tools
+Les Tools sont un ensemble de composants logiciels qui améliorent l'intégration de la machine virtuelle avec l'infrastructure de virtualisation.
+
 ## Catalogues
 
 Le catalogue permet de gérer trois types d'éléments essentiels:
