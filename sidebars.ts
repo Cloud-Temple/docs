@@ -220,6 +220,7 @@ const sidebars: SidebarsConfig = {
               items: [
                 'network/internet/tutorials/forti',
                 'network/internet/tutorials/pfSense',
+		'network/internet/tutorials/opensense',
               ],
             },
           ],
