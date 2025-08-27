@@ -22,7 +22,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 Access accounts to the Shiva console are created by the client's master account via invitation (regardless of the authentication repository).
 Credentials are global to your [Organization](#organisations).
 
-*__Note :__ [Identity federation is managed at the organization level](#organisations#mecanismes-dauthentification)*
+*__Note :__ [Identity federation is managed at the organization level](#mécanismes-dauthentification)*
 
 ### Creating a user account in your organization
 
@@ -54,7 +54,7 @@ The rights activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](#tenants) of the [Organization](#organisations).
+Permission configuration must be done for each [Tenant](#tenant) of the [Organization](#organisations).
 
 The list of permissions and their definitions is available [here](#permissions).
 
@@ -132,7 +132,7 @@ Changing the language of a user must be done in their __'Profile'__, top right o
 
 <img src={shivaProfil_006} />
 
-The configuration is set for each tenant [Tenant](#tenants).
+The configuration is set for each tenant [Tenant](#tenant).
 
 ### Subscription to Thematic Notifications
 

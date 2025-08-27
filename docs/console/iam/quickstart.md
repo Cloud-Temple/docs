@@ -67,7 +67,7 @@ Le menu d'activation des droits apparait alors :
 
 <img src={shivaOnboard_005} />
 
-La configuration des permissions est à faire pour chaque [Tenant](concepts.md#tenants) de l'
+La configuration des permissions est à faire pour chaque [Tenant](concepts.md#tenant) de l'
 [Organisation](concepts.md#organisations).
 
 La liste des permissions et leur définition est accessible [ici](#permissions).
@@ -78,7 +78,7 @@ Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__,
 
 <img src={shivaProfil_006} />
 
-La configuration est faite pour chaque tenant [Tenant](concepts.md#tenants).
+La configuration est faite pour chaque tenant [Tenant](concepts.md#tenant).
 
 ### Abonnement aux notifications thématiques
 

@@ -21,7 +21,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 I conti di accesso alla console Shiva vengono creati dal conto master del cliente su invito (indipendentemente dal repository di autenticazione). Le credenziali sono globali alla tua [Organizzazione](#organisations).
 
-*__Nota :__ [La federazione di identità viene gestita a livello di organizzazione](#organisations#mecanismes-dauthentification)*
+*__Nota :__ [La federazione di identità viene gestita a livello di organizzazione](#mécanismes-dauthentification)*
 
 ### Creazione di un account utente nella vostra organizzazione
 
@@ -53,7 +53,7 @@ Appare quindi il menu di attivazione delle autorizzazioni:
 
 <img src={shivaOnboard_005} />
 
-La configurazione delle autorizzazioni deve essere effettuata per ogni [Tenant](#tenants) dell'[Organizzazione](#organisations).
+La configurazione delle autorizzazioni deve essere effettuata per ogni [Tenant](#tenant) dell'[Organizzazione](#organisations).
 
 La lista delle autorizzazioni e la loro definizione è accessibile [qui](#permissions).
 
@@ -131,7 +131,7 @@ Il cambiamento della lingua di un utente deve essere effettuato nel suo __'Profi
 
 <img src={shivaProfil_006} />
 
-La configurazione è effettuata per ogni tenant [Tenant](#tenants).
+La configurazione è effettuata per ogni tenant [Tenant](#tenant).
 
 ### Abbonamento alle notifiche tematiche
 

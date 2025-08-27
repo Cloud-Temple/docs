@@ -22,7 +22,7 @@ Der Zugriff auf die Konsole ist das Eingangstor zu all Ihren Cloud-Temple-Dienst
 
 Der Zugriff auf die Verwaltungskonsole ist auf zuvor autorisierte IP-Adressen beschränkt. Diese Einschränkung ermöglicht den Zugriff ausschließlich von den angegebenen IP-Bereichen und minimiert dadurch das Risiko unbefugter Zugriffe.
 
-Sie können diese IP-Beschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Um zu erfahren, wie Sie IP-Filter einrichten, lesen Sie bitte [Gestion des accès et authentification | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+Sie können diese IP-Beschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Um zu erfahren, wie Sie IP-Filter einrichten, lesen Sie bitte [Gestion des accès et authentification | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
 Für eine optimale Wirksamkeit dieser Maßnahme sollten Sie:
 

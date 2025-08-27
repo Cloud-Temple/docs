@@ -10,7 +10,7 @@ import oshiftMenu_003 from './images/oshift_menu_003.png'
 
 ### Assignment of access rights
 
-It is essential that the [Tenant](../console/iam/concepts.md#tenants) administrator grants the OpenShift platform management rights to the OpenShift administrator user to access it:
+It is essential that the [Tenant](../console/iam/concepts.md#tenant) administrator grants the OpenShift platform management rights to the OpenShift administrator user to access it:
 
 <img src={oshiftRights} />
 
