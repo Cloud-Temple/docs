@@ -221,3 +221,65 @@ En caso de fallo del anfitrión, la máquina virtual se reiniciará automáticam
 
 #### Best-Effort  
 En caso de fallo del anfitrión, la máquina virtual solo se reiniciará automáticamente si hay recursos disponibles después de procesar todas las máquinas virtuales configuradas en modo "restart". El modo "Best-effort" realiza solo un intento, por lo tanto, si los recursos son insuficientes, la máquina virtual no se reiniciará.
+
+## Replicación de Máquinas Virtuales
+
+La replicación de máquinas virtuales es una funcionalidad esencial para garantizar la continuidad del negocio y implementar planes de recuperación ante desastres. Este servicio permite crear y mantener copias sincronizadas de sus máquinas virtuales entre diferentes zonas de disponibilidad.
+
+### Funcionalidades Clave
+
+| Funcionalidad | Descripción |
+|---------------|-------------|
+| **Intervalos Flexibles** | Configure la replicación de 1 a 59 minutos o de 1 a 24 horas según sus necesidades |
+| **Replicación Entre Zonas** | Replique sus VMs entre diferentes zonas de disponibilidad para máxima resistencia |
+| **Gestión Automatizada** | Programación y ejecución automática de replicaciones a través de la consola |
+| **Monitoreo Centralizado** | Siga el estado y el historial de todas sus replicaciones desde una sola interfaz |
+
+### Ventajas
+
+- **Continuidad del Negocio**: Asegure la continuidad del servicio en caso de incidentes
+- **Recuperación ante Desastres**: Implemente planes de recuperación robustos con réplicas distribuidas geográficamente
+- **Flexibilidad**: Adapte la frecuencia de replicación a la criticidad de sus aplicaciones
+- **Simplicidad**: Gestión intuitiva a través de la consola Cloud Temple
+- **Seguridad**: Las replicaciones se realizan dentro de la infraestructura calificada SecNumCloud
+
+### Configuración
+
+La configuración de la replicación se realiza en dos pasos principales:
+
+#### 1. Creación de una Política de Replicación
+
+Una política de replicación define:
+- **Almacenamiento de destino**: El repositorio de almacenamiento donde se almacenarán las réplicas
+- **Intervalo de replicación**: De 1 a 59 minutos o de 1 a 24 horas
+- **Zona de disponibilidad de destino**: La zona donde se crearán las réplicas
+
+#### 2. Asociación de VMs con la Política
+
+Una vez creada la política, puede:
+- Asociar una o más máquinas virtuales con esta política
+- Monitorear el estado de replicación para cada VM
+- Modificar las asociaciones según sus necesidades
+
+### Intervalos Soportados
+
+| Tipo de Intervalo | Valores Disponibles |
+|-------------------|---------------------|
+| **Minutos** | 1 a 59 minutos |
+| **Horas** | 1 a 24 horas |
+
+### Prerrequisitos
+
+- Las máquinas virtuales deben estar ubicadas en una zona de disponibilidad diferente a la zona de destino
+- El almacenamiento de destino debe ser de tipo `lvmohba`
+- Espacio de almacenamiento suficiente en la zona de destino
+
+### Monitoreo y Gestión
+
+La consola Cloud Temple proporciona:
+- **Estado en tiempo real** de todas las replicaciones
+- **Historial de ejecución** con marcas de tiempo y resultados
+- **Métricas de rendimiento** para cada política de replicación
+- **Gestión centralizada** de todas las configuraciones de replicación
+
+Esta solución de replicación se integra perfectamente con la infraestructura calificada SecNumCloud de Cloud Temple, garantizando máxima seguridad y cumplimiento para sus datos críticos.

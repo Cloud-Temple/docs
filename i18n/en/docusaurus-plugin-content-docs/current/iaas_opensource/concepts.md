@@ -223,3 +223,65 @@ In case of host failure, the virtual machine will be automatically restarted as 
 
 #### Best-Effort  
 In the event of a host failure, the virtual machine will not be automatically restarted unless resources remain available after processing all virtual machines configured in "restart" mode. The "Best-effort" mode makes only one attempt, so if resources are insufficient, the virtual machine will not be restarted.
+
+## Virtual Machine Replication
+
+Virtual machine replication is an essential feature for ensuring business continuity and implementing disaster recovery plans. This service allows you to create and maintain synchronized copies of your virtual machines across different availability zones.
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **Flexible Intervals** | Configure replication from 1 to 59 minutes or 1 to 24 hours according to your needs |
+| **Cross-Zone Replication** | Replicate your VMs between different availability zones for maximum resilience |
+| **Automated Management** | Automatic scheduling and execution of replications via the console |
+| **Centralized Monitoring** | Track the status and history of all your replications from a single interface |
+
+### Advantages
+
+- **Business Continuity**: Ensure service continuity in case of incidents
+- **Disaster Recovery**: Implement robust recovery plans with geographically distributed replicas
+- **Flexibility**: Adapt replication frequency to the criticality of your applications
+- **Simplicity**: Intuitive management via the Cloud Temple console
+- **Security**: Replications are performed within the SecNumCloud qualified infrastructure
+
+### Configuration
+
+Replication configuration is done in two main steps:
+
+#### 1. Creating a Replication Policy
+
+A replication policy defines:
+- **Target storage**: The storage repository where replicas will be stored
+- **Replication interval**: From 1 to 59 minutes or 1 to 24 hours
+- **Target availability zone**: The zone where replicas will be created
+
+#### 2. Associating VMs with the Policy
+
+Once the policy is created, you can:
+- Associate one or more virtual machines with this policy
+- Monitor replication status for each VM
+- Modify associations according to your needs
+
+### Supported Intervals
+
+| Interval Type | Available Values |
+|---------------|------------------|
+| **Minutes** | 1 to 59 minutes |
+| **Hours** | 1 to 24 hours |
+
+### Prerequisites
+
+- Virtual machines must be located in a different availability zone than the target zone
+- Target storage must be of type `lvmohba`
+- Sufficient storage space in the target zone
+
+### Monitoring and Management
+
+The Cloud Temple console provides:
+- **Real-time status** of all replications
+- **Execution history** with timestamps and results
+- **Performance metrics** for each replication policy
+- **Centralized management** of all replication configurations
+
+This replication solution integrates perfectly with Cloud Temple's SecNumCloud qualified infrastructure, ensuring maximum security and compliance for your critical data.
