@@ -194,7 +194,7 @@ Registro automático de los eventos críticos del clúster.
 **Procedimiento "Reanudación tras un siniestro"**
 
 - En caso de pérdida completa de acceso a un cluster, el **Cliente** debe declarar un incidente ante el soporte **Cloud Temple** a través del módulo de soporte de la consola.
-Ver el [**procedimiento de solicitud de soporte técnico**](/console/console_quickstart.md#accès-au-support-technique)
+Ver el [**procedimiento de solicitud de soporte técnico**](../../console/console_quickstart.md#accès-au-support-technique)
 
 ## Recomendaciones generales
 
@@ -204,4 +204,4 @@ Ver el [**procedimiento de solicitud de soporte técnico**](/console/console_qui
 4. **Mantenerse informado**: Seguir la roadmap y las guías para evitar funciones obsoletas.
 5. **Contactar al soporte**: Para problemas no resueltos, contactar al soporte a través del [**procedimiento de solicitud de soporte técnico**](/console/console_quickstart.md#acceso-al-soporte-técnico) o por correo electrónico a la dirección [**contacto**](mailto:contacto@cloud-temple.com).
 
-Para conocer en detalle las responsabilidades, por favor consulte nuestra [**matriz de responsabilidad**](/contractual/paas/raci.md).
+Para conocer en detalle las responsabilidades, por favor consulte nuestra [**matriz de responsabilidad**](../../contractual/paas/raci.md).

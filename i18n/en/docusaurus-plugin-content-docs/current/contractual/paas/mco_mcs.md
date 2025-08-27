@@ -32,7 +32,7 @@ This policy details the responsibilities and recommendations for Operational Con
 - Plan application deployments outside of maintenance windows to avoid conflicts with cluster automatic updates.
 - Follow **Cloud Temple** communications regarding major updates to plan necessary adjustments.
 - Follow upcoming updates via the [**Product Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
-- Subscribe to [**incident notifications**](/console/status.md#gestion-des-notifications)
+- Subscribe to [**incident notifications**](../../console/status.md#gestion-des-notifications)
 
 ### 1.2. Monitoring and Supervision
 
@@ -125,7 +125,7 @@ Vulnerabilities on the infrastructure and underlying services of the offering wi
 
 **Responsibility of Cloud Temple:**
 
-- **Cloud Temple** is responsible for communicating vulnerabilities on the infrastructure and underlying services of the offering as soon as they are detected via the [**incident**](/console/status.md) module of the SHIVA console.
+- **Cloud Temple** is responsible for communicating vulnerabilities on the infrastructure and underlying services of the offering as soon as they are detected via the [**incident**](../../console/status.md) module of the SHIVA console.
 - **Cloud Temple** is responsible for applying fixes in this scope.
 - **Cloud Temple** is responsible for providing tools to analyze vulnerabilities in Docker images. By default, **Cloud Temple** sets up **[Quay]** to perform automatic scanning of Docker images.
 
@@ -137,7 +137,7 @@ Vulnerabilities on the infrastructure and underlying services of the offering wi
 **Recommendation:**
 
 - Use the cluster alerting provided by **[Quay]** to analyze vulnerabilities and detect abnormal behaviors in the images used by the **Client**.
-- Subscribe to notifications from [**incidents**](/console/status.md#gestion-des-notifications).
+- Subscribe to notifications from [**incidents**](../../console/status.md#gestion-des-notifications).
 
 ### 2.4. Encryption
 
@@ -194,7 +194,7 @@ Automatic recording of critical cluster events.
 **"Disaster Recovery" Procedure**
 
 - In case of complete loss of access to a cluster, the **Client** must report an incident to **Cloud Temple** support via the support module of the console.
-See the [**technical support request procedure**](/console/console_quickstart.md#accès-au-support-technique)
+See the [**technical support request procedure**](../../console/console_quickstart.md#accès-au-support-technique)
 
 ## General Recommendations
 
@@ -202,6 +202,6 @@ See the [**technical support request procedure**](/console/console_quickstart.md
 2. **Validate configurations**: Test applications in staging environments before deploying to production.
 3. **Monitor regularly**: Use built-in tools to monitor resource usage and detect issues as early as possible.
 4. **Stay informed**: Follow the roadmap and guides to avoid obsolete features.
-5. **Contact support**: For unresolved issues, contact support via the [**technical support request procedure**](/console/console_quickstart.md#accès-au-support-technique) or by email to [**contact**](mailto:contact@cloud-temple.com).
+5. **Contact support**: For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#accès-au-support-technique) or by email to [**contact**](mailto:contact@cloud-temple.com).
 
-For detailed responsibilities, please review our [**responsibility matrix**](/contractual/paas/raci.md).
+For detailed responsibilities, please review our [**responsibility matrix**](../../contractual/paas/raci.md).
