@@ -202,6 +202,95 @@ In der detaillierten Ansicht eines virtuellen Maschinentemplates können Sie kri
 
 Wenn die Anzahl der virtuellen Festplatten als 0 angegeben ist, handelt es sich um ein Konfigurationstemplate ohne vorinstalliertes Betriebssystem, wodurch Ihnen das Bereitstellen Ihrer eigenen benutzerdefinierten Umgebung ermöglicht wird.
 
+## Replikation virtueller Maschinen
+
+Die __Replikation virtueller Maschinen__ von Cloud Temple gewährleistet den Schutz und die Kontinuität Ihrer kritischen Daten durch eine automatisierte Kopie Ihrer Umgebungen in eine separate Verfügbarkeitszone. Diese Funktionalität, nativ in das IaaS Open Source-Angebot integriert, erfüllt die strengsten Anforderungen an Geschäftskontinuität und Disaster Recovery.
+
+### Automatisierter und sicherer Schutz
+
+Die Replikation von Cloud Temple basiert auf einer __SecNumCloud-zertifizierten__ Infrastruktur und gewährleistet:
+
+- __Asynchrone Replikation__: Kontinuierliche Kopie Ihrer virtuellen Maschinen ohne Auswirkungen auf die Produktionsleistung
+- __Geografische Trennung__: Speicherung der Replikas in einer anderen Verfügbarkeitszone als die Quelle
+- __Vollständige Automatisierung__: Vollständig automatisierter Prozess über die [Cloud Temple Console](../console/console.md)
+- __Regulatorische Compliance__: Einhaltung der Backup- und Geschäftskontinuitätsanforderungen
+
+### Vorteile der Replikation
+
+| Vorteil                 | Beschreibung                                                                                                                                   |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Geschäftskontinuität    | Schutz Ihrer kritischen Services bei einem schweren Vorfall am Hauptstandort.                                                                 |
+| Geografischer Schutz    | Replikation in eine separate Verfügbarkeitszone, Schutz vor lokalisierten Katastrophen.                                                      |
+| Zeitliche Flexibilität  | Wahl des Replikationsintervalls nach Ihren Bedürfnissen: von 1 Minute bis 24 Stunden.                                                        |
+| Einfache Verwaltung     | Konfiguration und Überwachung vollständig in die Cloud Temple Console integriert.                                                             |
+| SecNumCloud-Compliance  | Zertifizierte Infrastruktur, die das höchste Sicherheitsniveau für Ihre sensiblen Daten gewährleistet.                                       |
+
+### Konfiguration der Replikation
+
+#### Replikationsrichtlinien
+
+Die Erstellung einer Replikationsrichtlinie definiert die Schutzparameter Ihrer virtuellen Maschinen:
+
+- __Ziel__: Auswahl des Zielspeicher in der Replikations-Verfügbarkeitszone
+- __Häufigkeit__: Replikationsintervall angepasst an Ihre Recovery-Bedürfnisse (RPO)
+- __Aufbewahrung__: Anzahl der aufbewahrten Wiederherstellungspunkte
+
+#### Verfügbare Intervalle
+
+| Intervall               | Empfohlene Verwendung                      | RPO (Max. Datenverlust)     |
+|-------------------------|--------------------------------------------|-----------------------------|
+| __1 bis 59 Minuten__    | Kritische Echtzeitanwendungen             | < 1 Stunde                  |
+| __1 bis 24 Stunden__    | Geschäftsanwendungen und Standardumgebungen | < 24 Stunden              |
+
+#### Zuordnung virtueller Maschinen
+
+Sobald die Richtlinie erstellt ist, können Sie Ihre zu schützenden virtuellen Maschinen zuordnen:
+
+- __Einfache Auswahl__: Auswahl der VMs über die Console-Oberfläche
+- __Automatische Validierung__: Überprüfung der Kompatibilität und Voraussetzungen
+- __Sofortige Aktivierung__: Automatischer Start der Replikation nach Konfiguration
+
+### Verwaltung der Replikas
+
+#### Ansicht der Richtlinien
+
+Die Cloud Temple Console bietet eine zentrale Ansicht Ihrer Replikationsrichtlinien mit:
+
+- Name und Häufigkeit jeder Richtlinie
+- Ziel-Verfügbarkeitszone
+- Zugeordneter Pool und Speicher
+- Verfügbare Verwaltungsaktionen
+
+#### Ansicht der Replikas
+
+Die Replikas-Tabelle ermöglicht Ihnen die Visualisierung:
+
+- Name der replizierten virtuellen Maschinen
+- Quell- und Zielstandort
+- Zugeordnete Replikationsrichtlinie
+- Export der Daten im CSV-Format
+
+### Best Practices
+
+#### Empfehlungen nach Workload-Typ
+
+- __Kritische Anwendungen__: Replikation alle 1-30 Minuten zur Minimierung des Datenverlusts
+- __Geschäftsanwendungen__: Stündliche oder zweistündliche Replikation je nach Bedarf
+- __Entwicklungsumgebungen__: Tägliche Replikation in der Regel ausreichend
+
+#### Richtlinienplanung
+
+- Erstellen Sie separate Richtlinien entsprechend der Kritikalität Ihrer Anwendungen
+- Benennen Sie Ihre Richtlinien klar zur Erleichterung der Verwaltung
+- Überprüfen Sie regelmäßig den Status Ihrer Replikas über die Console
+- Dokumentieren Sie Ihre Replikationsstrategie für Ihre Teams
+
+__Wichtiger Hinweis:__
+
+*Die Replikation ersetzt keine vollständige Backup-Strategie. Sie stellt eine wesentliche Ergänzung zur Gewährleistung der Geschäftskontinuität bei einem schweren Vorfall an Ihrem Hauptstandort dar.*
+
+---
+
 ## Hochverfügbarkeit
 
 Die Hochverfügbarkeit stellt sicher, dass die Dienstkontinuität der virtuellen Maschinen (VM) gewährleistet ist, falls ein physischer Host innerhalb eines OpenIaaS-Pools ausfällt.

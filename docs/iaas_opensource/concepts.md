@@ -208,14 +208,101 @@ Dans la vue détaillée d'un template de machine virtuelle, vous pouvez consulte
 
 Lorsque le nombre de disques virtuels est indiqué comme étant 0, cela signifie qu'il s'agit d'un template de configuration sans système d'exploitation préinstallé, vous permettant ainsi de déployer votre propre environnement personnalisé.
 
+## Réplication de machines virtuelles
+
+La __réplication de machines virtuelles__ de Cloud Temple garantit la protection et la continuité de vos données critiques grâce à une copie automatisée de vos environnements vers une zone de disponibilité distincte. Cette fonctionnalité, intégrée nativement à l'offre IaaS Open Source, répond aux exigences les plus strictes de continuité d'activité et de reprise après sinistre.
+
+### Une protection automatisée et sécurisée
+
+La réplication Cloud Temple s'appuie sur une infrastructure __qualifiée SecNumCloud__, garantissant :
+
+- __Réplication asynchrone__ : Copie continue de vos machines virtuelles sans impact sur les performances de production
+- __Séparation géographique__ : Stockage des réplicas dans une zone de disponibilité différente de la source
+- __Automatisation complète__ : Processus entièrement automatisé via la [Console Cloud Temple](../console/console.md)
+- __Conformité réglementaire__ : Respect des exigences de sauvegarde et de continuité d'activité
+
+### Avantages de la réplication
+
+| Avantage                | Description                                                                                                                                    |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Continuité d'activité   | Protection de vos services critiques en cas d'incident majeur sur le site principal.                                                          |
+| Protection géographique | Réplication vers une zone de disponibilité distincte, protégeant contre les sinistres localisés.                                             |
+| Flexibilité temporelle  | Choix de l'intervalle de réplication selon vos besoins : de 1 minute à 24 heures.                                                            |
+| Simplicité de gestion   | Configuration et surveillance entièrement intégrées à la Console Cloud Temple.                                                                |
+| Conformité SecNumCloud  | Infrastructure qualifiée garantissant le plus haut niveau de sécurité pour vos données sensibles.                                             |
+
+### Configuration de la réplication
+
+#### Politiques de réplication
+
+La création d'une politique de réplication définit les paramètres de protection de vos machines virtuelles :
+
+- __Destination__ : Sélection du stockage cible dans la zone de disponibilité de réplication
+- __Fréquence__ : Intervalle de réplication adapté à vos besoins de récupération (RPO)
+- __Rétention__ : Nombre de points de récupération conservés
+
+#### Intervalles disponibles
+
+| Intervalle              | Usage recommandé                           | RPO (Perte de données max) |
+|-------------------------|--------------------------------------------|-----------------------------|
+| __1 à 59 minutes__      | Applications critiques temps réel         | < 1 heure                   |
+| __1 à 24 heures__       | Applications métier et environnements standard | < 24 heures               |
+
+#### Association des machines virtuelles
+
+Une fois la politique créée, vous pouvez associer vos machines virtuelles à protéger :
+
+- __Sélection simple__ : Choix des VMs depuis l'interface de la Console
+- __Validation automatique__ : Vérification de la compatibilité et des prérequis
+- __Activation immédiate__ : Démarrage automatique de la réplication après configuration
+
+### Gestion des réplicas
+
+#### Vue des politiques
+
+La Console Cloud Temple offre une vue centralisée de vos politiques de réplication avec :
+
+- Nom et fréquence de chaque politique
+- Zone de disponibilité de destination
+- Pool et stockage associés
+- Actions de gestion disponibles
+
+#### Vue des réplicas
+
+Le tableau des réplicas vous permet de visualiser :
+
+- Nom des machines virtuelles répliquées
+- Emplacement source et cible
+- Politique de réplication associée
+- Export des données au format CSV
+
+### Bonnes pratiques
+
+#### Recommandations par type de charge
+
+- __Applications critiques__ : Réplication toutes les 1-30 minutes pour minimiser la perte de données
+- __Applications métier__ : Réplication horaire ou bi-horaire selon les besoins
+- __Environnements de développement__ : Réplication quotidienne généralement suffisante
+
+#### Planification des politiques
+
+- Créez des politiques distinctes selon les criticités de vos applications
+- Nommez clairement vos politiques pour faciliter la gestion
+- Vérifiez régulièrement l'état de vos réplicas depuis la console
+- Documentez votre stratégie de réplication pour vos équipes
+
+__Remarque importante :__
+
+*La réplication ne remplace pas une stratégie de sauvegarde complète. Elle constitue un complément essentiel pour assurer la continuité d'activité en cas d'incident majeur sur votre site principal.*
+
 ## Haute disponibilité
 
-La haute disponibilité permet d’assurer la continuité de service des machines virtuelles (VM) en cas de défaillance d’un host physique au sein d’un pool OpenIaaS.
+La haute disponibilité permet d'assurer la continuité de service des machines virtuelles (VM) en cas de défaillance d'un host physique au sein d'un pool OpenIaaS.
 Avec la haute disponibilité (HA), chaque host dans le pool envoie régulièrement des signaux de vie à ses pairs via le stockage partagé (Block Storage Heartbeat). En cas d'absence prolongée de réponse, l'host est considéré comme défaillant.
 
 Un Block Storage désigné comme heartbeat signifie qu'il servira de base pour authentifier les hosts qui ne répondraient plus.
 
-Pour que la haute disponibilité soit correctement configurée dans un pool OpenIaaS, il est indispensable de disposer **d’au moins deux hosts** connectés.
+Pour que la haute disponibilité soit correctement configurée dans un pool OpenIaaS, il est indispensable de disposer **d'au moins deux hosts** connectés.
 
 Chaque VM doit être configurée avec un niveau de priorité de redémarrage en haute disponibilité :
 

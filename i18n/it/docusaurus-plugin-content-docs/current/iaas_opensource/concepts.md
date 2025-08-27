@@ -225,3 +225,65 @@ In caso di guasto dell'host, la macchina virtuale verrà riavviata automaticamen
 
 #### Best-Effort  
   In caso di guasto dell'host, la macchina virtuale non verrà riavviata automaticamente se non ci sono risorse disponibili dopo il trattamento di tutte le macchine virtuali configurate in modalità "restart". La modalità "Best-effort" effettua un solo tentativo, quindi se le risorse sono insufficienti, la macchina virtuale non verrà riavviata.
+
+## Replica di Macchine Virtuali
+
+La replica di macchine virtuali è una funzionalità essenziale per garantire la continuità aziendale e implementare piani di disaster recovery. Questo servizio consente di creare e mantenere copie sincronizzate delle vostre macchine virtuali tra diverse zone di disponibilità.
+
+### Funzionalità Chiave
+
+| Funzionalità | Descrizione |
+|--------------|-------------|
+| **Intervalli Flessibili** | Configurate la replica da 1 a 59 minuti o da 1 a 24 ore secondo le vostre esigenze |
+| **Replica Cross-Zone** | Replicate le vostre VM tra diverse zone di disponibilità per massima resilienza |
+| **Gestione Automatizzata** | Programmazione ed esecuzione automatica delle repliche tramite la console |
+| **Monitoraggio Centralizzato** | Seguite lo stato e la cronologia di tutte le vostre repliche da un'unica interfaccia |
+
+### Vantaggi
+
+- **Continuità Aziendale**: Assicurate la continuità del servizio in caso di incidenti
+- **Disaster Recovery**: Implementate piani di recupero robusti con repliche distribuite geograficamente
+- **Flessibilità**: Adattate la frequenza di replica alla criticità delle vostre applicazioni
+- **Semplicità**: Gestione intuitiva tramite la console Cloud Temple
+- **Sicurezza**: Le repliche vengono eseguite all'interno dell'infrastruttura qualificata SecNumCloud
+
+### Configurazione
+
+La configurazione della replica avviene in due passaggi principali:
+
+#### 1. Creazione di una Politica di Replica
+
+Una politica di replica definisce:
+- **Storage di destinazione**: Il repository di archiviazione dove verranno memorizzate le repliche
+- **Intervallo di replica**: Da 1 a 59 minuti o da 1 a 24 ore
+- **Zona di disponibilità di destinazione**: La zona dove verranno create le repliche
+
+#### 2. Associazione delle VM con la Politica
+
+Una volta creata la politica, potete:
+- Associare una o più macchine virtuali con questa politica
+- Monitorare lo stato di replica per ogni VM
+- Modificare le associazioni secondo le vostre esigenze
+
+### Intervalli Supportati
+
+| Tipo di Intervallo | Valori Disponibili |
+|--------------------|--------------------|
+| **Minuti** | 1 a 59 minuti |
+| **Ore** | 1 a 24 ore |
+
+### Prerequisiti
+
+- Le macchine virtuali devono essere situate in una zona di disponibilità diversa dalla zona di destinazione
+- Lo storage di destinazione deve essere di tipo `lvmohba`
+- Spazio di archiviazione sufficiente nella zona di destinazione
+
+### Monitoraggio e Gestione
+
+La console Cloud Temple fornisce:
+- **Stato in tempo reale** di tutte le repliche
+- **Cronologia di esecuzione** con timestamp e risultati
+- **Metriche di performance** per ogni politica di replica
+- **Gestione centralizzata** di tutte le configurazioni di replica
+
+Questa soluzione di replica si integra perfettamente con l'infrastruttura qualificata SecNumCloud di Cloud Temple, garantendo massima sicurezza e conformità per i vostri dati critici.
