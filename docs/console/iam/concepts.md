@@ -22,7 +22,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
 Les informations d'identification sont globales à votre [Organisation](#organisations).
 
-*__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#organisations#mecanismes-dauthentification)*
+*__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#mécanismes-dauthentification)*
 
 ### Création d'un compte utilisateur dans votre organisation
 
@@ -54,7 +54,7 @@ Le menu d'activation des droits apparait alors :
 
 <img src={shivaOnboard_005} />
 
-La configuration des permissions est à faire pour chaque [Tenant](#tenants) de l'[Organisation](#organisations).
+La configuration des permissions est à faire pour chaque [Tenant](#tenant) de l'[Organisation](#organisations).
 
 La liste des permissions et leur définition est accessible [ici](#permissions).
 
@@ -132,7 +132,7 @@ Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__,
 
 <img src={shivaProfil_006} />
 
-La configuration est faite pour chaque tenant [Tenant](#tenants).
+La configuration est faite pour chaque tenant [Tenant](#tenant).
 
 ### Abonnement aux notifications thématiques
 

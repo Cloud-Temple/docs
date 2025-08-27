@@ -67,7 +67,7 @@ Das Menü zur Aktivierung der Rechte erscheint dann:
 
 <img src={shivaOnboard_005} />
 
-Die Berechtigungskonfiguration muss für jeden [Tenant](concepts.md#tenants) der [Organisation](concepts.md#organisations) durchgeführt werden.
+Die Berechtigungskonfiguration muss für jeden [Tenant](concepts.md#tenant) der [Organisation](concepts.md#organisations) durchgeführt werden.
 
 Die Liste der Berechtigungen und ihre Definitionen ist [hier](#permissions) zugänglich.
 
@@ -77,7 +77,7 @@ Das Ändern der Sprache eines Benutzers erfolgt über sein __'Profil'__ oben rec
 
 <img src={shivaProfil_006} />
 
-Die Konfiguration erfolgt für jeden [Tenant](concepts.md#tenants).
+Die Konfiguration erfolgt für jeden [Tenant](concepts.md#tenant).
 
 ### Abonnieren von thematischen Benachrichtigungen
 

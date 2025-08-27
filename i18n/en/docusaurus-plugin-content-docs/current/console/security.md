@@ -20,7 +20,7 @@ Access to the Console is the entry point to all your Cloud Temple services. It i
 
 Access to the cloud management console is limited to pre-authorized IP addresses. This restriction ensures that only users from specified IP ranges are granted access, thereby minimizing the risk of unauthorized access.
 
-You can configure these IP restrictions in your organization settings. To learn how to configure IP filtering, refer to [Access and Authentication Management | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+You can configure these IP restrictions in your organization settings. To learn how to configure IP filtering, refer to [Access and Authentication Management | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
 To maximize the effectiveness of this mechanism, be sure to:
 

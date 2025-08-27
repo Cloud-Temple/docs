@@ -34,7 +34,7 @@ Here are some best practices when using VM encryption:
 
 Access to the cloud management console is limited to previously authorized IP addresses. This restriction allows access only to users from specified IP ranges, thus minimizing the risk of unauthorized access.
 
-You can configure these IP restrictions in your organization's settings. To learn how to set up IP filtering, see the [Access Management and Authentication | Cloud Temple Documentation](../../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+You can configure these IP restrictions in your organization's settings. To learn how to set up IP filtering, see the [Access Management and Authentication | Cloud Temple Documentation](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
 To maximize the effectiveness of this mechanism, make sure to:
 

@@ -17,11 +17,11 @@
   },
   "link.item.label.Tutorials": {
     "message": "Tutoriels",
-    "description": "The label of footer link with label=Tutorials linking to /docs/tags/tutorials/"
+    "description": "The label of footer link with label=Tutorials linking to /tags/tutorials/"
   },
   "link.item.label.Onboarding": {
     "message": "Intégration",
-    "description": "The label of footer link with label=Onboarding linking to /docs/tags/onboarding/"
+    "description": "The label of footer link with label=Onboarding linking to /tags/onboarding/"
   },
   "link.item.label.Linkedin": {
     "message": "LinkedIn",
@@ -45,11 +45,11 @@
   },
   "link.item.label.UGAP": {
     "message": "UGAP",
-    "description": "The label of footer link with label=UGAP linking to /docs/market_place_public"
+    "description": "The label of footer link with label=UGAP linking to /market_place_public"
   },
   "link.item.label.CAIH": {
     "message": "CAIH",
-    "description": "The label of footer link with label=CAIH linking to /docs/market_place_public"
+    "description": "The label of footer link with label=CAIH linking to /market_place_public"
   },
   "copyright": {
     "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"contractual/orderdoc\">Contrats</a> |\n        <a href=\"privacy\">Politique de confidentialité</a>\n        <br />\n        Copyright © 2025 Cloud Temple.\n      </div>\n    ",

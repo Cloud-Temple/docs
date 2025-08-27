@@ -21,7 +21,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 Die Zugriffskonten für die Shiva-Konsole werden durch das Masterkonto des Auftraggebers auf Einladung erstellt (unabhängig vom Authentifizierungsrepository). Die Anmeldeinformationen sind für Ihre [Organisation](#organisations) global.
 
-*__Hinweis:__ [Die Identitätsfederierung wird auf Ebene der Organisation verwaltet](#organisations#mecanismes-dauthentification)*
+*__Hinweis:__ [Die Identitätsfederierung wird auf Ebene der Organisation verwaltet](#mécanismes-dauthentification)*
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
@@ -53,7 +53,7 @@ Das Menü zur Aktivierung der Berechtigungen erscheint dann:
 
 <img src={shivaOnboard_005} />
 
-Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenants) der [Organisation](#organisations) durchgeführt werden.
+Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organisations) durchgeführt werden.
 
 Die Liste der Berechtigungen und ihre Definitionen sind [hier](#permissions) zugänglich.
 
@@ -131,7 +131,7 @@ Die Änderung der Sprache eines Benutzers erfolgt in seinem __'Profil'__, oben r
 
 <img src={shivaProfil_006} />
 
-Die Konfiguration erfolgt pro Mieter [Tenant](#tenants).
+Die Konfiguration erfolgt pro Mieter [Tenant](#tenant).
 
 ### Themenbenachrichtigungen abonnieren
 

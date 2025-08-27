@@ -20,7 +20,7 @@ L’accesso alla Console è la porta d’ingresso a tutti i vostri servizi Cloud
 
 L’accesso alla console di gestione cloud è limitato agli indirizzi IP preventivamente autorizzati. Questa restrizione consente di autorizzare l’accesso solo agli utenti provenienti dagli intervalli IP specificati, minimizzando così i rischi di accessi non autorizzati.
 
-È possibile configurare queste restrizioni IP nei parametri della propria organizzazione. Per sapere come configurare il filtraggio IP, consultare la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+È possibile configurare queste restrizioni IP nei parametri della propria organizzazione. Per sapere come configurare il filtraggio IP, consultare la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
 Per massimizzare l’efficacia di questo meccanismo, assicuratevi di:
 

@@ -22,7 +22,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 Las cuentas de acceso a la consola Shiva se crean por la cuenta maestra del cliente mediante invitación (sin importar el repositorio de autenticación).
 Las credenciales son globales para su [Organización](#organisations).
 
-*__Nota :__ [La federación de identidad se gestiona a nivel de organización](#organisations#mecanismes-dauthentification)*
+*__Nota :__ [La federación de identidad se gestiona a nivel de organización](#mécanismes-dauthentification)*
 
 ### Creación de una cuenta de usuario en su organización
 
@@ -54,7 +54,7 @@ Aparece entonces el menú de activación de permisos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe realizarse para cada [Tenant](#tenants) de la [Organización](#organisations).
+La configuración de permisos debe realizarse para cada [Tenant](#tenant) de la [Organización](#organisations).
 
 La lista de permisos y su definición está disponible [aquí](#permissions).
 
@@ -132,7 +132,7 @@ El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte sup
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza para cada tenant [Tenant](#tenants).
+La configuración se realiza para cada tenant [Tenant](#tenant).
 
 ### Suscripción a notificaciones temáticas
 
