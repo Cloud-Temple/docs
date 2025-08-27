@@ -7,13 +7,13 @@ import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_o
 import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
-import openIaasReplicationPolicies from './images/open_iaas_replication_policies.png'
-import openIaasReplicationPolicyCreate from './images/open_iaas_replication_policy_create.png'
-import openIaasReplicationPolicyDetails from './images/open_iaas_replication_policy_details.png'
-import openIaasReplicationVmAssociate from './images/open_iaas_replication_vm_associate.png'
-import openIaasReplicationVmList from './images/open_iaas_replication_vm_list.png'
-import openIaasReplicationReplicas from './images/open_iaas_replication_replicas.png'
-import openIaasReplicationStatus from './images/open_iaas_replication_status.png'
+import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
+import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
+import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
+import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_policy_form2.png'
+import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
+import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
+import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
 
 ## Compute
 
@@ -87,93 +87,91 @@ As well as modify certain options such as:
 
 ## Replication
 
-Virtual machine replication allows you to create and maintain synchronized copies of your VMs across different availability zones, ensuring business continuity and facilitating disaster recovery plan implementation.
+### Accessing Replication Management
 
-### Managing Replication Policies
+The replication management interface is available in the Shiva console under the __'OpenIaaS'__ > __'Replication'__ menu located on the green bar on the left side of the screen.
 
-Replication policies define how and when your virtual machines will be replicated. Access replication management via the __'Replication'__ menu in the OpenIaaS section.
+<img src={openIaasReplicationMenu} />
 
-<img src={openIaasReplicationPolicies} />
+### Creating a Replication Policy
 
-#### Creating a Replication Policy
+In the __'Replication'__ section, you can create policies that define the protection parameters for your virtual machines.
 
-To create a new replication policy:
+<img src={openIaasReplicationPoliciesView} />
 
-1. Click the __'Create Policy'__ button
-2. Fill in the required information:
-   - **Policy name**: Choose a descriptive name
-   - **Target storage**: Select the storage repository (type `lvmohba`)
-   - **Replication interval**: Choose between 1-59 minutes or 1-24 hours
-   - **Target availability zone**: Select the destination zone
+To create a new policy, click the __'Add Policy'__ button. A form opens with the following steps:
 
-<img src={openIaasReplicationPolicyCreate} />
+#### Step 1: General Information
 
-#### Policy Details and Management
+- __Name__: Give an explicit name to your policy
+- __Frequency__: Choose the replication interval (1-59 minutes or 1-24 hours)
 
-Once created, you can view policy details including:
-- Configuration parameters
-- Associated virtual machines
-- Replication status and history
+<img src={openIaasReplicationPolicyForm1} />
 
-<img src={openIaasReplicationPolicyDetails} />
+#### Step 2: Storage Selection
 
-### Associating Virtual Machines
+- __Availability Zone__: Select the destination zone
+- __Pool__: Choose the resource pool
+- __Block Storage__: Select the destination storage
 
-#### Adding VMs to a Policy
+<img src={openIaasReplicationPolicyForm2} />
 
-To associate a virtual machine with a replication policy:
+#### Step 3: Validation
 
-1. Select the target policy
-2. Click __'Associate VM'__
-3. Choose the virtual machines to replicate
-4. Confirm the association
+Review the parameters and click __'Add'__ to create the policy.
 
-<img src={openIaasReplicationVmAssociate} />
+### Associating a VM with Replication
 
-**Important**: Virtual machines must be located in a different availability zone than the target zone.
+To protect a virtual machine, access your VM details from the virtual machines list.
 
-#### Managing Associated VMs
+In the detailed VM view, you will find a __'Replication'__ section:
 
-View and manage all virtual machines associated with your replication policies:
+<img src={openIaasVmReplicationSection} />
 
-<img src={openIaasReplicationVmList} />
+Steps to associate a VM with replication:
 
-For each VM, you can:
-- View replication status
-- Modify associations
-- Monitor replication history
+1. Click __'Configure a policy'__
+2. Select the desired replication policy from the dropdown list
+3. Validate your choice
 
-### Monitoring Replicas
+Replication starts automatically after validation.
 
-#### Replica Overview
+### Managing Policies and Replicas
 
-Access the complete list of your replicas and their status:
+#### Policy View
 
-<img src={openIaasReplicationReplicas} />
+The __'Policies'__ tab allows you to view all your replication policies:
 
-Each replica displays:
-- Source virtual machine information
-- Target location
-- Last replication timestamp
-- Current status
+<img src={openIaasReplicationPoliciesTable} />
 
-#### Replication Status
+You have access to the following information for each policy:
 
-Monitor the real-time status of all your replications:
+- Its name
+- Its replication frequency
+- The destination availability zone
+- The associated pool
+- The block storage used
 
-<img src={openIaasReplicationStatus} />
+Available actions include:
 
-The interface provides:
-- **Execution history** with detailed timestamps
-- **Success/failure status** for each replication
-- **Performance metrics** and statistics
-- **Alert notifications** for any issues
+- View details of each policy
+- Modify parameters
+- Delete an unused policy
 
-### Best Practices
+#### Replica View
 
-- **Plan your intervals**: Choose replication frequency based on your application criticality
-- **Monitor storage space**: Ensure sufficient space in target zones
-- **Test regularly**: Verify replica integrity periodically
-- **Document policies**: Maintain clear documentation of your replication strategy
+The __'Replicas'__ tab displays all virtual machines currently being replicated:
 
-This replication solution integrates seamlessly with Cloud Temple's SecNumCloud qualified infrastructure, providing maximum security and compliance for your critical data.
+<img src={openIaasReplicationReplicasTable} />
+
+You can view:
+
+- The name of replicated virtual machines
+- Source and target location
+- The associated replication policy
+
+Available actions include:
+
+- Export data in CSV format
+- View replication details
+- Manage replicas by policy
