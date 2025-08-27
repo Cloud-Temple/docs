@@ -1,5 +1,5 @@
 ---
-title: Guía de inicio rápido
+title: Guía de inicio
 ---
 import shivaNetwork_001 from './images/shiva_network_001.png'
 import shivaNetwork_002 from './images/shiva_network_002.png'
@@ -24,7 +24,7 @@ import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_d
 
 El pedido de redes privadas dentro de una región se realiza directamente en la consola Cloud Temple.
 
-### Dentro de un tenant
+### Dentro de un inquilino
 
 La creación de una red virtual se realiza en el menú __*Redes*__ en la banda verde a la izquierda de la pantalla.
 
@@ -89,7 +89,7 @@ Luego elija hacia qué producto (IaaS VMware, Open IaaS, Bare metal) desea propa
 <img src={shivaNetwork_008} />
 <img src={shivaNetwork_009} />
 
-__*Nota:*__ *La modificación de propagación está limitada a 20 redes por acción.*
+__*Nota :*__ *La modificación de propagación está limitada a 20 redes por acción.*
 
 #### Eliminación de la propagación
 
@@ -135,7 +135,7 @@ Depende de su organización y sus derechos.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Una vez compartida la red, será visible en la pestaña 'Redes compartidas' desde su segundo tenant.
+Una vez que la red se haya compartido, será visible en la pestaña "Redes compartidas" desde su segundo tenant.
 
 <img src={shivaNetworkVnSharedWithMe} />
 

@@ -24,7 +24,7 @@ import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_d
 
 Die Bestellung privater Netzwerke innerhalb einer Region erfolgt direkt in der Cloud Temple-Konsole.
 
-### Innerhalb eines Tenants
+### Innerhalb eines Mandanten
 
 Die Erstellung eines virtuellen Netzwerks erfolgt im Menü __*Netzwerke*__ in der grünen Leiste auf der linken Seite des Bildschirms.
 
@@ -122,7 +122,7 @@ Ein Netzwerk kann vorübergehend deaktiviert werden, ohne gelöscht zu werden, u
 Standardmäßig sind __Netzwerke nur innerhalb eines Tenants verfügbar__. Sie können sich dafür entscheiden, __ein Netzwerk zwischen mehreren Tenants zu teilen__ aus technischen Gründen oder aus Konnektivitätsgründen.
 Es ist somit möglich, ein Netzwerk zwischen Ihren __[Tenants](../../../console/iam/concepts/#tenant)__ innerhalb derselben Organisation zu teilen.
 
-Aktivieren Sie dazu einfach die Freigabe wie unten gezeigt.
+Dazu müssen Sie die Freigabe wie unten aktivieren.
 
 <img src={shivaNetworkVnShareEnabled} />
 

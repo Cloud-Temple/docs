@@ -28,7 +28,7 @@ Les réseaux virtuels (vlan) de l'offre de virtualisation VMware sont des résea
 ou __'Distributed Virtual Port Group'__, est un concept spécifique à VMware. Un dvPortGroup est une entité qui
 regroupe plusieurs ports virtuels (vPorts) dans un environnement de réseau virtuel distribué pour faciliter leur utilisation.
 
-Localisée au sein d'un __[Tenant](../../../console/iam/concepts/#tenant)__, ils peuvent être étendus entre les zones de disponibilités
+Localisée au sein d'un __[Tenant](../../console/iam/concepts.md#tenant)__, ils peuvent être étendus entre les zones de disponibilités
 vous permettant ainsi de construire des architectures "actif / actif" avec quorum.
 
 La bande passante maximale utilisable dépend principalement du modèle de lame utilisé (10Gbps convergés ou 25 Gbps convergés) et des capacités des machines virtuelles.
@@ -61,7 +61,7 @@ __*Remarque :*__ *Il n'est pas possible de choisir l'ID de vlan 802.1q.*
 ## Partage de réseau entre tenants
 
 Par défaut, __les réseaux sont uniquement disponibles au sein d'un tenant__. Vous pouvez choisir de __partager un réseau entre plusieurs tenants__ pour des raisons techniques ou des raisons de connectivité.
-Il est ainsi possible de partager un réseau entre vos __[Tenant](../../../console/iam/concepts/#tenant)__ au sein d'une même organisation.
+Il est ainsi possible de partager un réseau entre vos __[Tenant](../../console/iam/concepts.md#tenant)__ au sein d'une même organisation.
 
 ## Connectivité privé externe
 

@@ -190,6 +190,7 @@ const sidebars: SidebarsConfig = {
         'llmaas/api',
         'llmaas/models',
         'llmaas/tutorials',
+        'llmaas/faq',
       ],
     },
     {

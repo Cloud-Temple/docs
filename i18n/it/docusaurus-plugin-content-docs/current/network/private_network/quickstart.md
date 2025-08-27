@@ -1,5 +1,5 @@
 ---
-title: Guida rapida
+title: Guida di avvio
 ---
 import shivaNetwork_001 from './images/shiva_network_001.png'
 import shivaNetwork_002 from './images/shiva_network_002.png'
@@ -72,7 +72,7 @@ Tutte le azioni possibili sulle reti si trovano nel menu __*Azioni*__ di ciascun
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />
 
-#### Visualizzazione della propagazione delle reti
+#### Visualizzazione della diffusione della tua rete
 
 È possibile visualizzare facilmente nel menu __*Azioni*__ la propagazione di una rete verso i diversi cluster all'interno dello stesso tenant.
 
@@ -135,7 +135,7 @@ Dipende dalla propria organizzazione e dai propri diritti.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Una volta condivisa la rete, sarà visibile nella scheda 'Reti condivise' dal secondo tenant.
+Una volta condivisa la rete, sarà visibile nella scheda 'Reti condivise' dal tuo secondo tenant.
 
 <img src={shivaNetworkVnSharedWithMe} />
 
