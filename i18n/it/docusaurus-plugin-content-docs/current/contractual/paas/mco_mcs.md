@@ -202,4 +202,4 @@ Vedere la [**procedura per richiedere supporto tecnico**](/console/console_quick
 4. **Stare aggiornati** : Seguire la roadmap e le guide per evitare funzionalità obsoleti.
 5. **Contattare il supporto** : Per i problemi non risolti, contattare il supporto tramite la [**procedura di richiesta di supporto tecnico**](/console/console_quickstart.md#accesso-al-supporto-tecnico) o via e-mail all'indirizzo [**contact**](mailto:contact@cloud-temple.com).
 
-Per conoscere in dettaglio le responsabilità, consultare la nostra [**matrice di responsabilità**](/contractual/paas/raci.md).
+Per conoscere in dettaglio le responsabilità, consultare la nostra [**matrice di responsabilità**](../../contractual/paas/raci.md).

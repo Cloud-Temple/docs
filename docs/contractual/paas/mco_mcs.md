@@ -32,7 +32,7 @@ Cette politique détaille les responsabilités et les recommandations pour le Ma
 - Planifier les déploiements applicatifs en dehors des fenêtres de maintenance pour éviter les conflits avec les mises à jour automatiques du cluster.
 - Suivre les communications **Cloud Temple** concernant les mises à jour majeures pour planifier les ajustements nécessaires.
 - Suivre les mises à jour à venir via la [**Roadmap produit**](https://github.com/orgs/Cloud-Temple/projects/2)
-- S'abonner aux notifications [**d'incidents**](/console/status.md#gestion-des-notifications)
+- S'abonner aux notifications [**d'incidents**](../../console/status.md#gestion-des-notifications)
 
 ---
 
@@ -129,7 +129,7 @@ Les vulnérabilités sur l'infrastructure et les services sous-jacents à l'offr
 
 **Responsabilité **Cloud Temple** :**
 
-- **Cloud Temple** est responsable de la communication des vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre dès leur détection via le module [**incident**](/console/status.md) de la console SHIVA.
+- **Cloud Temple** est responsable de la communication des vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre dès leur détection via le module [**incident**](../../console/status.md) de la console SHIVA.
 - **Cloud Temple** est responsable de l'application des correctifs sur ce périmètre.
 - **Cloud Temple** est responsable de la mise à disposition d'outils pour analyser les vulnérabilités des images Docker. Par défaut, **Cloud Temple** met en place **[Quay]** pour effectuer le scan automatique des images Docker.
 
@@ -141,7 +141,7 @@ Les vulnérabilités sur l'infrastructure et les services sous-jacents à l'offr
 **Recommandation :**
 
 - Utiliser l'alerting du cluster fourni par **[Quay]** pour analyser les vulnérabilités et détecter les comportements anormaux dans les images utilisées par le **Client**.
-- S'abonner aux notifications d'[**incidents**](/console/status.md#gestion-des-notifications).
+- S'abonner aux notifications d'[**incidents**](../../console/status.md#gestion-des-notifications).
 
 ### 2.4. Chiffrement
 
@@ -200,7 +200,7 @@ Enregistrement automatique des événements critiques du cluster.
 **Procédure "Reprise après sinistre"**
 
 - En cas de perte complète d'accès à un cluster, le **Client** doit déclarer un incident auprès du support **Cloud Temple** via le module support de la console.
-Voir la [**procédure de demande de support technique**](/console/console_quickstart.md#accès-au-support-technique)
+Voir la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique)
 
 ---
 
@@ -210,6 +210,6 @@ Voir la [**procédure de demande de support technique**](/console/console_quicks
 2. **Valider les configurations** : Tester les applications dans des environnements de staging avant déploiement en production.
 3. **Surveiller régulièrement** : Utiliser les outils intégrés pour suivre l'utilisation des ressources et détecter les problèmes le plus tôt possible.
 4. **Se tenir informé** : Suivre la roadmap et les guides pour éviter les fonctionnalités obsolètes.
-5. **Contacter le support** : Pour les problèmes non résolus, contacter le support via la [**procédure de demande de support technique**](/console/console_quickstart.md#accès-au-support-technique) ou par mail à l'adresse [**contact**](mailto:contact@cloud-temple.com).
+5. **Contacter le support** : Pour les problèmes non résolus, contacter le support via la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique) ou par mail à l'adresse [**contact**](mailto:contact@cloud-temple.com).
 
-Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](/contractual/paas/raci.md).
+Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](../../contractual/paas/raci.md).
