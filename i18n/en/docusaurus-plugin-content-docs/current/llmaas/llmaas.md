@@ -15,14 +15,14 @@ All requests to the LLMaaS API must include an `Authorization` header with your 
 
 ## Content Types
 
-The LLMaaS API always accepts JSON in the request body and returns JSON in the response body. You must send the `content-type: application/json` header in your requests. If you use the client SDKs, this will be handled automatically.
+The LLMaaS API always accepts JSON in the request body and returns JSON in the response body. You must send the header `content-type: application/json` in your requests. If you use the client SDKs, this will be handled automatically.
 
 ## Response Headers
 
 The LLMaaS API includes the following headers in each response:
 
 - `id` : A globally unique identifier for the request
-- `backend` : Information on the infrastructure used (engine_type, machine_name)
+- `backend` : Information about the infrastructure used (engine_type, machine_name)
 
 ## Examples
 
@@ -36,7 +36,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
     "messages": [
       {
         "role": "user", 
-        "content": "Salut ! Peux-tu te présenter en français ?"
+        "content": "Hi! Can you introduce yourself in French?"
       }
     ],
     "max_tokens": 200,
@@ -44,7 +44,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   }'
 ```
 
-### Answer
+### Response
 ```json
 {
   "backend": {
@@ -56,7 +56,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
       "finish_reason": "stop",
       "index": 0,
       "message": {
-        "content": "Bonjour ! Je suis un modèle de langage virtuel...",
+        "content": "Hello! I am a virtual language model...",
         "role": "assistant"
       }
     }
@@ -78,17 +78,17 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Type    | Description                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | The model to use (see [model catalog](./models))              |
+| `model`       | string  | The model to use (see [model catalog](./models.md))            |
 | `messages`    | array   | List of conversation messages                                 |
 | `max_tokens`  | integer | Maximum number of tokens to generate                          |
 | `temperature` | float   | Controls creativity (0.0-2.0)                                 |
-| `top_p`       | float   | Controls response diversity                                   |
+| `top_p`       | float   | Controls answer diversity                                     |
 | `stream`      | boolean | Enables response streaming                                    |
-| `user`        | string  | Final user's unique identifier                                |
+| `user`        | string  | Unique identifier of the end user                             |
 
 ## Base URL
 
-The base URL for all API requests is :
+The base URL for all API requests is:
 ```
 https://api.ai.cloud-temple.com/v1/
 ```

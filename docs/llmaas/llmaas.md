@@ -78,7 +78,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Paramètre     | Type    | Description                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Le modèle à utiliser (voir [catalogue des modèles](./models)) |
+| `model`       | string  | Le modèle à utiliser (voir [catalogue des modèles](./models.md)) |
 | `messages`    | array   | Liste des messages de la conversation                         |
 | `max_tokens`  | integer | Nombre maximum de tokens à générer                            |
 | `temperature` | float   | Contrôle la créativité (0.0-2.0)                              |

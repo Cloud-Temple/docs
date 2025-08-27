@@ -120,7 +120,7 @@ Un réseau peut être temporairement désactivé sans être supprimé puis ensui
 ### Partage de réseau entre tenants
 
 Par défaut, __les réseaux sont uniquement disponibles au sein d'un tenant__. Vous pouvez choisir de __partager un réseau entre plusieurs tenants__ pour des raisons techniques ou des raisons de connectivité.
-Il est ainsi possible de partager un réseau entre vos __[Tenant](../../../console/iam/concepts/#tenant)__ au sein d'une même organisation.
+Il est ainsi possible de partager un réseau entre vos __[Tenant](../../console/iam/concepts.md#tenant)__ au sein d'une même organisation.
 
 Il suffit pour cela d'activer le partage comme ci-dessous.
 
