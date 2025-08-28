@@ -63,7 +63,7 @@ _Cette machine doit être dans le même réseau que celui dans lequel l'interfac
 
 
 # Configuration de l'interface LAN du firewall
-Pour pouvoir accéder au firewall en HTTP, vous devez associer une adresse IP de votre réseau à l'interface LAN, en y renseignant votre masque de sous-réseau et votre passerelle.
+_Pour pouvoir accéder au firewall en HTTP, vous devez associer une adresse IP de votre réseau à l'interface LAN, en y renseignant votre masque de sous-réseau et votre passerelle._
 ![Paramètres LAN](/img/screenshots/lan.png)
 
 Il convient maintenant de mettre une machine virtuelle avec interface graphique dans le même réseau afin d'administrer le firewall. Pour la démonstration, nous utilisons Ubuntu 22.04 avec une adresse IP dans le même réseau que l'interface LAN du firewall via Netplan.  
@@ -126,10 +126,18 @@ Pour annoncer son préfixe public, il faut l'annoncer en route statique en rense
 # Règles NAT
 Enfin, des règles doivent être rentrées manuellement pour :  
 > Ne pas faire du NAT avec les PEER BGP (à faire en premier)  
+![Rule1](/img/screenshots/rule1.png)
+
 > Donner accès à internet à votre réseau LAN  
+![Rule2](/img/screenshots/rule2.png)
+
 > Donner accès à internet au firewall (pour mises à jour)  
+![Rule3](/img/screenshots/rule3.png)
 
 ![NAT Rules](/img/screenshots/nat.png)
+
+> Il ne nous reste plus qu'à tester la connectivité vers Internet
+![ping](/img/screenshots/pinginternet.png)
 
 # Conclusion
 Votre firewall OPNsense est maintenant déployé et configuré dans le Cloud de Confiance.  
@@ -140,4 +148,4 @@ La session BGP est établie et votre préfixe public est annoncé, n'oubliez pas
 > Effectuer les mises à jour de sécurité régulières  
 > Monitorer l'état des sessions BGP
 
-Pour toute question ou problème, consultez la documentation officielle d'OPNsense ou contactez le support Cloud Temple.
+_Pour toute question ou problème, consultez la documentation officielle d'OPNsense ou contactez le support Cloud Temple._
