@@ -4,7 +4,7 @@ title: Synchroniser un dossier avec mc mirror
 
 La commande `mc mirror` est un outil puissant pour synchroniser le contenu d'un dossier local vers un bucket S3. Elle peut téléverser les fichiers nouveaux ou modifiés, et optionnellement supprimer les fichiers du bucket qui n'existent plus localement. C'est une méthode efficace pour maintenir une sauvegarde ou déployer un site statique.
 
-N'oubliez pas de configurer votre [client MinIO comme indiqué dans le guide de démarrage](../quickstart.md#configurer-votre-client-minio-mc).
+N'oubliez pas de configurer votre [client MinIO comme indiqué dans le guide de démarrage](../quickstart.md).
 
 ### Exemple de base
 

@@ -1,29 +1,26 @@
 ---
-title: Sincronizar un directorio con AWS CLI
+título: Sincronizar un directorio con AWS CLI
 ---
 
-De manera similar a `mc`, el CLI de AWS proporciona el comando `aws s3 sync` para sincronizar directorios. Este comando compara el contenido del directorio de origen y el bucket de destino para transferir solo los archivos nuevos o modificados.
+Al igual que `mc`, la herramienta AWS CLI ofrece la comando `aws s3 sync` para sincronizar directorios. Esta comando compara el contenido del directorio fuente y el bucket de destino para transferir solo los archivos nuevos o modificados.
 
-No olvide configurar su [cliente AWS como se indica en el guía de inicio](../quickstart.md#configurer-votre-client-aws-aws) y utilizar el parámetro `--endpoint-url`.
+No olvides configurar tu [cliente AWS según lo indicado en el guía de inicio](../quickstart.md) y utilizar el parámetro `--endpoint-url`.
 
-### Ejemplo básico
+### Exemple de traduction en español
 
-Para sincronizar el contenido del directorio local `./mon-site` hacia el bucket `s3://demo-app` :
+Para sincronizar el contenido del directorio local `./mon-sitio` hacia el bucket `s3://demo-app`:
 
 ```bash
-❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+❯ aws s3 sync ./mon-sitio/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
 ```
 
 ### Opciones útiles
 
-*   `--delete` : Elimina los archivos del bucket que ya no existen en el directorio local. Es el equivalente a la opción `--remove` de `mc mirror`.
-*   `--exact-timestamps` : Durante la sincronización, no copia el archivo si la marca de tiempo de modificación es la misma.
-*   `--dryrun` : Muestra las operaciones que se realizarían sin ejecutarlas realmente. Muy útil para verificar un comando antes de ejecutarlo.
+*   `--delete`: Elimina los archivos del bucket que no existen en el directorio local, equivalente a la opción `--remove` de `mc mirror`.
+*   `--exact-timestamps`: Durante la sincronización, copia solo el archivo si la hora de modificación es diferente.
+*   `--dryrun`: Mostró las operaciones que se realizarían sin ejecutarlas realmente. Muy útil para verificar una comanda antes de ejecutarla.
 
-```bash
-```
-
-# Simulación de una sincronización con eliminación para verificar los cambios
-❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
-(dryrun) eliminar: s3://demo-app/old-file.html
-(dryrun) subir: mon-site/new-file.css a s3://demo-app/new-file.css
+# Simulación de sincronización con eliminación para verificar cambios
+❯ aws s3 sync ./mon-sitio/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
+(después del dry run) eliminación: s3://demo-app/antiguo-archivo.html
+(después del dry run) carga: mon-sitio/nuevo-archivo.css a s3://demo-app/nuevo-archivo.css

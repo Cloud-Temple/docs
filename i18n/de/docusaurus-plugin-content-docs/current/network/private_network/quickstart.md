@@ -1,6 +1,8 @@
 ---
-title: Schnellstartanleitung
+Leitfaden zum Einstieg
 ---
+
+```
 import shivaNetwork_001 from './images/shiva_network_001.png'
 import shivaNetwork_002 from './images/shiva_network_002.png'
 import shivaNetwork_003 from './images/shiva_network_003.png'
@@ -19,128 +21,125 @@ import shivaNetwork_order_001 from './images/shiva_order_network_001.png'
 import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png'
 import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png'
 import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png'
+```
 
-## Regionale private Netzwerke
+### Private Networks within a Region
 
-Die Bestellung privater Netzwerke innerhalb einer Region erfolgt direkt in der Cloud Temple-Konsole.
+The management of private networks within a region is directly handled through the Cloud Temple console.
 
-### Innerhalb eines Mandanten
+### Inner to Tenant
 
-Die Erstellung eines virtuellen Netzwerks erfolgt im Menü __*Netzwerke*__ in der grünen Leiste auf der linken Seite des Bildschirms.
+The creation of a virtual network takes place in the *Réseaux* menu on the top left bar in the screen.
 
 <img src={shivaNetwork_001} />
 
-Klicken Sie dann auf die Schaltfläche __*Neues Netzwerk*__
+Clicking on the button *Nouveau réseau*
 
-Sie müssen den Namen Ihres Netzwerks angeben, der angezeigt wird. Standardmäßig greifen alle Ihre Cluster auf Ihr neues Netzwerk zu.
+You need to specify the name of your network, which will be displayed. By default, all of your clusters will access your new network.
 
-Es ist jetzt möglich, mehrere Netzwerke gleichzeitig zu erstellen. Klicken Sie einfach auf __*Netzwerk hinzufügen*__.
+It is now possible to create several networks simultaneously. Simply click on *ajouter un réseau*.
 
 <img src={shivaNetwork_002} />
 
-In den nächsten Schritten können Sie den Umfang der Verbreitung innerhalb des Tenants zwischen Ihren verschiedenen VMware IaaS- oder Open IaaS-Clustern genauer festlegen.
+In the following steps, you can specify more precisely the scope of propagation within the tenant between your different IaaS VMware or Open IaaS clusters.
 
 <div style={{display: 'flex', gap: '10px', alignItems: 'flex-start'}}>
   <img src={shivaNetwork_003} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
   <img src={shivaNetwork_004} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
 </div>
 
-### Verwaltung von Netzwerkbestellungen
+### Verwaltung von Netzwerkbefehlen
 
-Nach Abschluss aller Schritte werden Ihre Netzwerke erstellt und anschließend eine Bestellung zur Verbreitung generiert. Sie können Ihre Bestellungen verfolgen:
+Nachdem alle Schritte abgeschlossen sind, werden Ihre Netzwerke erstellt und eine Befehlszeile generiert, um sie zu verbreiten. Sie können Ihre Befehle wie folgt überwachen:
 
-- Über die Registerkarte __*Bestellungen*__ im Hauptmenü
+- Im Tab __Befehl__ im Hauptmenü
 
 <img src={shivaNetwork_order_001} />
 
-- Durch Klicken auf die Informationslabels, die zu den zugehörigen Bestellungen weiterleiten
+- Durch Klicken auf die Informationen, die zu den zugehörigen Befehlen weisen
 
-> __Wichtig:__ Es ist nicht möglich, mehrere Bestellungen desselben Ressourcentyps gleichzeitig zu generieren. Sie müssen warten, bis die aktuelle Bestellung bearbeitet wurde, bevor Sie eine neue erstellen.
+> **Wichtig:** Es ist nicht möglich, gleichzeitig mehrere Befehle desselben Ressourcentyps zu generieren. Sie müssen warten, bis der aktuelle Befehl bearbeitet wird, bevor Sie einen neuen erstellen.
 
-Alle möglichen Aktionen für Ihre Netzwerke finden Sie im Menü __*Aktionen*__ jedes einzelnen:
+Alle verfügbaren Aktionen für Ihre Netzwerke sind im Menü __Befehl__ jedes einzelnen Netzwerks zu finden:
 
-- Aktivierung der Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Deaktivierung der Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Hinzufügen einer Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Entfernen einer Netzwerkfreigabe zwischen Tenants derselben Organisation.
-- Grafische Visualisierung der Netzwerkverbreitung über alle Ihre Cluster und Hypervisoren innerhalb eines Tenants.
-- Löschen einer Verbreitung innerhalb eines Tenants.
-- Ändern einer Verbreitung innerhalb eines Tenants.
+- Aktivierung des Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Deaktivierung des Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Hinzufügen eines neuen Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Löschen eines bestehenden Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Darstellung grafisch der Verbreitung eines Netzwerks auf allen Clustern und Hypervisoren innerhalb eines Tenants.
+- Löschen der Verbreitung innerhalb eines Tenants.
+- Änderung der Verbreitung innerhalb eines Tenants.
 
-> Das Löschen von Netzwerken ist noch nicht verfügbar.
+> Die Löschung eines Netzwerks ist derzeit nicht verfügbar.
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />
 
-#### Anzeige Ihrer Netzwerkverbreitung
+#### Anzeigen der Verbreitung von Netzwerken
 
-Sie können im Menü __*Aktionen*__ einfach die Verbreitung eines Netzwerks zu Ihren verschiedenen Clustern innerhalb desselben Tenants anzeigen.
+Sie können leicht im Menü __*Aktionen*__ die Verbreitung eines Netzwerks auf Ihre verschiedenen Clusters innerhalb einesselben Tenants visualisieren.
 
-Wählen Sie die Option *"Verbreitung anzeigen"*:
+Wählen Sie die Option *"Verbreitungsverfolgung anzeigen"* :
 
 <img src={shivaNetwork_007} />
 
-#### Änderung der Verbreitung
+#### Modifikation der Verbreitung
 
-Die Änderung einer Verbreitung innerhalb eines Tenants erfolgt über die Option __*Verbreiten*__:
-
-Wählen Sie dann aus, auf welches Produkt (VMware IaaS, Open IaaS, Bare Metal) Sie Ihre Netzwerke verbreiten möchten, und dann die Cluster, die in diese Verbreitung integriert werden sollen.
+Die Änderung einer Verbreitungsregel innerhalb eines Tenants erfolgt über die Option __Verbreiten__. Nachdem Sie einen Produkt (z.B. IaaS VMware, Open IaaS, Bare metal) ausgewählt haben, müssen die Clusters in diese Verbreitung integriert werden.
 
 <img src={shivaNetwork_008} />
 <img src={shivaNetwork_009} />
 
-__*Hinweis:*__ *Die Änderung der Verbreitung ist auf 20 Netzwerke pro Aktion begrenzt.*
+__Hinweis:__ *Die Änderung der Verbreitungsregel ist auf 20 Netzwerke pro Aktion beschränkt.*
 
-#### Löschen der Verbreitung
+#### Entfernung der Verbreitung
 
-Das Löschen einer Verbreitung innerhalb eines Tenants erfolgt über die Option __*Verbreitung löschen*__:
+Die Entfernung einer Verbreitung innerhalb eines Tenants erfolgt durch die Option __Entfernen einer Verbreitung__:
 
-Wählen Sie dann aus, welche Verbreitung Sie löschen möchten:
+Wählen Sie dann aus, welche Verbreitung Sie entfernen möchten:
 
 <img src={shivaNetworkDeletePropagation} />
 
-Anschließend wird eine Bestellung erstellt, wie bei der ursprünglichen Erstellung mit Verbreitung.
+Eine Kommando wird dann erstellt, wie bei der ursprünglichen Erstellung mit Verbreitung.
 
 <img src={shivaNetworkDeletePropagationOrder} />
 <img src={shivaNetworkDeletePropagationOrderValidate} />
 
 #### Verzögerte Netzwerkverbreitung
 
-Es ist möglich, die Netzwerkerstellung und -verbreitung in zwei separate Schritte zu unterteilen:
+Es ist möglich, die Erstellung und Verbreitung von Netzwerken in zwei separaten Schritten zu trennen:
 
-1. __Ein vorhandenes Netzwerk verbreiten__: Klicken Sie auf die Aktion __*Verbreiten*__ bei einem bereits erstellten Netzwerk
-2. __Das Verbreitungsziel auswählen__: Anschließend wird eine Bestellung erstellt, wie bei der ursprünglichen Erstellung mit Verbreitung.
+1. __Verbreiten eines bestehenden Netzwerks__ : Klicken Sie auf die Aktion __*Verbreiten*__ auf einem bereits erstelltem Netzwerk
+2. __Auswahl des Ziels der Verbreitung__ : Eine Befehlszeile wird dann erstellt, ähnlich wie bei der ursprünglichen Erstellung mit Verbreitung.
 
-#### Aktivieren und Deaktivieren von Netzwerken
+#### Aktivierung und Deaktivierung von Netzwerken
 
-Ein Netzwerk kann vorübergehend deaktiviert werden, ohne gelöscht zu werden, und dann wieder aktiviert werden.
+Ein Netzwerk kann zeitweise deaktiviert werden, ohne dass es gelöscht wird, und dann wieder aktiviert werden.
 
 <img src={shivaNetwork_010} />
 
-### Netzwerkfreigabe zwischen Tenants
+### Network Sharing Between Tenants
 
-Standardmäßig sind __Netzwerke nur innerhalb eines Tenants verfügbar__. Sie können sich dafür entscheiden, __ein Netzwerk zwischen mehreren Tenants zu teilen__ aus technischen Gründen oder aus Konnektivitätsgründen.
-Es ist somit möglich, ein Netzwerk zwischen Ihren __[Tenants](../../../console/iam/concepts/#tenant)__ innerhalb derselben Organisation zu teilen.
+By default, **networks are only available within a single tenant**. You can choose to **share a network across multiple tenants** for technical or connectivity reasons. This means you can share a network between your **[Tenant](../../console/iam/concepts.md#tenant)** within the same organization.
 
-Dazu müssen Sie die Freigabe wie unten aktivieren.
+To achieve this, simply enable sharing as shown below:
 
 <img src={shivaNetworkVnShareEnabled} />
 
-Sobald die Freigabe aktiviert ist, fügen Sie einfach eine Freigabe wie unten gezeigt hinzu.
+After enabling sharing, add a share as follows:
 
 <img src={shivaNetworkVnShared} />
 
-Wählen Sie dann den Ziel-Tenant aus. Beachten Sie, dass die Tenant-Liste dynamisch ist.
-Sie hängt von Ihrer Organisation und Ihren Rechten ab.
+Next, select the target tenant. Note that the list of tenants is dynamic and depends on your organization and your permissions.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Sobald das Netzwerk freigegeben ist, wird es in der Registerkarte "Geteilte Netzwerke" von Ihrem zweiten Tenant aus sichtbar sein.
+Once network sharing is enabled, it will be visible in the 'Shared Networks' tab from your second tenant.
 
 <img src={shivaNetworkVnSharedWithMe} />
 
-### Anzeige geteilter Netzwerke
+### Anzeige von geteilten Netzwerken
 
-Sobald die Netzwerke verbreitet sind, können Sie über die Registerkarte "Geteilte Netzwerke" die Netzwerke anzeigen, die andere Tenants Ihrer Organisation mit Ihnen teilen:
+Nachdem die Netzwerkverbindungen propagiert wurden, ermöglicht der Register "Geteilte Netzwerke" die Darstellung der Netzwerke, die andere Tenants Ihrer Organisation mit Ihnen teilen:
 
 <img src={shivaNetwork_007} />

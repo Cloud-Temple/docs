@@ -157,7 +157,7 @@ Algunas buenas prácticas en caso de uso del cifrado de las VM:
 
 Para limitar la superficie de ataque de sus máquinas virtuales, se recomienda encarecidamente restringir a lo estrictamente necesario los servicios expuestos. En particular, asegúrese de configurar sus recursos para **no exponer públicamente las interfaces de administración y consolas** de los sistemas y aplicaciones desplegados.
 
-Si utiliza los servicios de Almacenamiento de Objetos de Cloud Temple, también se aconseja **no configurar sus buckets con acceso público**, salvo en los casos en que esto sea estrictamente necesario (ver [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Si utiliza los servicios de Almacenamiento de Objetos de Cloud Temple, también se aconseja **no configurar sus buckets con acceso público**, salvo en los casos en que esto sea estrictamente necesario (ver [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
 
 ### Endurecer las máquinas virtuales (servicios IaaS)
 
