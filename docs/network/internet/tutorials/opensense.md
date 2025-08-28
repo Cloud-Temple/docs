@@ -2,33 +2,36 @@
 sidebar_position: 1
 ---
 
-# Déploiement d'un firewall OPNsense dans le Cloud de Confiance
+# Déployer un firewall opensource OPNsense
 ## Prérequis
-Ce guide va vous aider à déployer votre firewall opensource OPNsense dans le Cloud de Confiance en seulement quelques minutes.
-Les prérequis à ce guide sont les suivants :
+Ce guide va vous aider à déployer votre firewall opensource OPNsense dans le Cloud de Confiance.  
 
-Avoir souscrit à l'offre Cloud Temple : vous devez disposer de votre organisation, de votre tenant et de vos accès
-Avoir les droits sur le module compute
+Les prérequis à ce guide sont les suivants :  
 
-Ce document décrit les étapes à suivre pour déployer un firewall virtuel OPNsense.
+> Avoir souscrit à l'offre Cloud Temple : vous devez disposer de votre organisation, de votre tenant et de vos accès  
+> Avoir les droits sur le module compute
+
 # Présentation d'OPNsense
 
-OPNsense est une plateforme de firewall et de routage open source basée sur FreeBSD. Fork de pfSense depuis 2014, OPNsense se distingue par :
+_OPNsense est une plateforme de firewall et de routage open source basée sur FreeBSD. Fork de pfSense depuis 2014, OPNsense se distingue par_:  
 
-Une interface utilisateur moderne et intuitive
-Un cycle de développement transparent avec des mises à jour bi-hebdomadaires
-Une architecture modulaire avec un système de plugins extensible
-Un support natif d'OpenVPN, Wireguard et IPsec
+> Une interface utilisateur moderne et intuitive  
+> Un cycle de développement transparent avec des mises à jour bi-hebdomadaires  
+> Une architecture modulaire avec un système de plugins extensible  
+> Un support natif d'OpenVPN, Wireguard et IPsec  
 
 ## Architecture de déploiement
-L'administration d'OPNsense s'effectue via son interface web responsive accessible depuis n'importe quel navigateur moderne. Pour le déploiement, nous utiliserons une architecture à deux VM :
+  
+_Pour le déploiement, nous utiliserons une architecture à deux machines virtuelles_ :
 
-La première sera la machine sur laquelle nous allons déployer le firewall  
-La deuxième sera la machine à partir de laquelle nous allons administrer le firewall
+> La première sera la machine sur laquelle nous allons déployer le firewall  
+> La deuxième sera la machine à partir de laquelle nous allons administrer le firewall
 
-# Récupérer ses informations de connection internet
-Avant de procéder au déploiement d'OPNsense, il est essentiel de récupérer l'ensemble des paramètres de connectivité fournis par Cloud Temple depuis l'interface Shiva.  
-Pour établir une session BGP fonctionnelle avec OPNsense, vous devez disposer des éléments suivants :
+# Récupérer ses informations de connection internet  
+
+Avant de procéder au déploiement d'OPNsense, il est essentiel de récupérer l'ensemble des paramètres de connectivité fournis par Cloud Temple depuis l'interface **Shiva.**  
+
+_Pour établir une session BGP fonctionnelle avec OPNsense, vous devez disposer des éléments suivants_ :
 
 - **Préfixe public** : Bloc d'adresses IP publiques alloué à votre organisation (visible dans l'onglet "IP publiques")
 - **Préfixe d'interconnexion** : Sous-réseau point-à-point pour la liaison BGP (visible dans l'onglet "IP d'interco")
@@ -39,24 +42,25 @@ Pour établir une session BGP fonctionnelle avec OPNsense, vous devez disposer d
 - **Hold-time timer** : Délai d'expiration de la session BGP
 - **Adresses des route servers** : IPs des serveurs de routes pour l'échange d'informations de routage
 
-> **Note** : Ces éléments sont visibles depuis votre portail Shiva
 
 ![Paramètres BGP dans Shiva](/img/screenshots/shiva.png)
 
-Paramètres de connectivité disponibles dans l'interface Shiva
-Installation et configuration réseau des interfaces
-Étapes de déploiement
-1. Installation du firewall depuis le template OPNsense dans Shiva
-Deux options s'offrent à vous :
+# Étapes de déploiement
+1. Installation du firewall depuis le template OPNsense disponible dans **Shiva**  
 
-Déployer via la console
-Déployer via Terraform
+_Deux options s'offrent à vous_:  
+> Déployer via la console  
+> Déployer via Terraform
 
-2. Configuration des interfaces LAN et WAN du firewall
-L'interface WAN doit être dans votre vLAN internet, une adresse IP doit être allouée depuis le préfixe d'interconnection depuis Shiva.
-3. Installation de la deuxième machine de management
-4. Configuration de l'interface de la VM de management
-Cette machine doit être dans le même réseau que celui dans lequel l'interface LAN du firewall a été configurée.
+2. Configuration de l'interfaces LAN du firewall  
+_Consultez l'étape suivante "Configuration de l'interface LAN du firewall"_
+
+
+3. Installation de la deuxième machine de management avec interface graphique (_Ubuntu par exemple_)
+
+4. Configuration de l'interface de la VM de management  
+_Cette machine doit être dans le même réseau que celui dans lequel l'interface LAN du firewall a été configurée._
+
 
 # Configuration de l'interface LAN du firewall
 Pour pouvoir accéder au firewall en HTTP, vous devez associer une adresse IP de votre réseau à l'interface LAN, en y renseignant votre masque de sous-réseau et votre passerelle.
@@ -105,7 +109,7 @@ Nous devons renseigner les routes statiques pour joindre ces serveurs (pensez à
 ![Route RS2](/img/screenshots/routers2.png)
 
 ## Étape 5 : Redistribution des routes
-Il faut également permettre la redistribution des routes statiques & connectées afin d'annoncer votre préfixe public.
+Il faut également permettre la redistribution des routes statiques & connectées afin de pouvoir annoncer votre préfixe public.
 ![Redistribute routes](/img/screenshots/redistribute.png)
 
 ## Étape 6 : Vérification de l'état de la session BGP
@@ -121,18 +125,19 @@ Pour annoncer son préfixe public, il faut l'annoncer en route statique en rense
 
 # Règles NAT
 Enfin, des règles doivent être rentrées manuellement pour :  
-Ne pas faire du NAT avec les PEER BGP (à faire en premier)  
-Donner accès à internet à votre réseau LAN  
-Donner accès à internet au firewall (pour mises à jour)  
+> Ne pas faire du NAT avec les PEER BGP (à faire en premier)  
+> Donner accès à internet à votre réseau LAN  
+> Donner accès à internet au firewall (pour mises à jour)  
 
 ![NAT Rules](/img/screenshots/nat.png)
 
 # Conclusion
-Votre firewall OPNsense est maintenant déployé et configuré dans le Cloud de Confiance. La session BGP est établie et votre préfixe public est annoncé. N'oubliez pas de :
+Votre firewall OPNsense est maintenant déployé et configuré dans le Cloud de Confiance.  
+La session BGP est établie et votre préfixe public est annoncé, n'oubliez pas de :  
 
-Changer les mots de passe par défaut
-Configurer les règles de firewall selon vos besoins
-Effectuer les mises à jour de sécurité régulières
-Monitorer l'état des sessions BGP
+> Changer le mot de passe superutilisateur par défaut  
+> Configurer les règles de firewall selon vos besoins  
+> Effectuer les mises à jour de sécurité régulières  
+> Monitorer l'état des sessions BGP
 
 Pour toute question ou problème, consultez la documentation officielle d'OPNsense ou contactez le support Cloud Temple.
