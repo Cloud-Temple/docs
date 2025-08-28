@@ -7,10 +7,10 @@
       "it": "054394a5682cb8aa0e21725caa096f322a8a6c72b8b47f8491593338167524b3"
     },
     "console/api.md": {
-      "en": "0de8d08d56ed412b3d196c9ec116e7aa9636bca5cb5465a5897e0a6109ac0f2c",
-      "de": "0de8d08d56ed412b3d196c9ec116e7aa9636bca5cb5465a5897e0a6109ac0f2c",
-      "es": "0de8d08d56ed412b3d196c9ec116e7aa9636bca5cb5465a5897e0a6109ac0f2c",
-      "it": "0de8d08d56ed412b3d196c9ec116e7aa9636bca5cb5465a5897e0a6109ac0f2c"
+      "en": "5adc34330e92115616548a705a9899d3d5c5efea51112e1c357cf3bcb7c0e7c8",
+      "de": "5adc34330e92115616548a705a9899d3d5c5efea51112e1c357cf3bcb7c0e7c8",
+      "es": "5adc34330e92115616548a705a9899d3d5c5efea51112e1c357cf3bcb7c0e7c8",
+      "it": "5adc34330e92115616548a705a9899d3d5c5efea51112e1c357cf3bcb7c0e7c8"
     },
     "bastion/quickstart.md": {
       "en": "ef1179615dbf46d2f2152c37d115d0226f0b7ff4f9a31e0b3b02efd6ffcd933c",
@@ -25,10 +25,10 @@
       "it": "306e96def3d723feafc9769b5743ab91a8dc119cf88f16890fee682cdf357b3b"
     },
     "bastion/bastion.md": {
-      "en": "bd23bcc5e72b2aad8a0e04a21d088316b9261f2292a0d6144354203a3c792747",
-      "de": "bd23bcc5e72b2aad8a0e04a21d088316b9261f2292a0d6144354203a3c792747",
-      "es": "bd23bcc5e72b2aad8a0e04a21d088316b9261f2292a0d6144354203a3c792747",
-      "it": "bd23bcc5e72b2aad8a0e04a21d088316b9261f2292a0d6144354203a3c792747"
+      "en": "3d93307da1382658d2de7d9852e3b69298fa901574dd334adc542ad8a75c37c8",
+      "de": "3d93307da1382658d2de7d9852e3b69298fa901574dd334adc542ad8a75c37c8",
+      "es": "3d93307da1382658d2de7d9852e3b69298fa901574dd334adc542ad8a75c37c8",
+      "it": "3d93307da1382658d2de7d9852e3b69298fa901574dd334adc542ad8a75c37c8"
     },
     "console/console.md": {
       "en": "c19b2a39c7ce5d815417c0eac556b838c03721960ab10c5d8286b825a7443f96",
@@ -61,10 +61,10 @@
       "it": "b0ca668d5f57d66c2c5b35d40ffe24204844d3d01951e27b307ba9a6de46a0f2"
     },
     "console/iam/concepts.md": {
-      "en": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf",
-      "de": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf",
-      "es": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf",
-      "it": "1b56e95ae2d41f1442e7374c2766a7a5c2a78e3deeca70a0f56d0a73dfed3acf"
+      "en": "f519d386cbf62aa85c25337cb0f22e5f8d464c6d4493545e0b4cb9611720dbff",
+      "de": "f519d386cbf62aa85c25337cb0f22e5f8d464c6d4493545e0b4cb9611720dbff",
+      "es": "f519d386cbf62aa85c25337cb0f22e5f8d464c6d4493545e0b4cb9611720dbff",
+      "it": "f519d386cbf62aa85c25337cb0f22e5f8d464c6d4493545e0b4cb9611720dbff"
     },
     "console/iam/tutorials/sso_adfs.md": {
       "en": "6f070328920e458fe0eb6b4abfaf803a764d61b62e1c52bb916fae30691750fb",
@@ -73,16 +73,16 @@
       "it": "6f070328920e458fe0eb6b4abfaf803a764d61b62e1c52bb916fae30691750fb"
     },
     "console/iam/quickstart.md": {
-      "en": "d466cb829117f0269ad9b01838a5beab19f18dfc7f224cd80282202fb4ac1e7e",
-      "de": "d466cb829117f0269ad9b01838a5beab19f18dfc7f224cd80282202fb4ac1e7e",
-      "es": "d466cb829117f0269ad9b01838a5beab19f18dfc7f224cd80282202fb4ac1e7e",
-      "it": "d466cb829117f0269ad9b01838a5beab19f18dfc7f224cd80282202fb4ac1e7e"
+      "en": "aebfc72824869daac94429c2d40da9ff3a42b13b1023c79402b48a1375f39c36",
+      "de": "aebfc72824869daac94429c2d40da9ff3a42b13b1023c79402b48a1375f39c36",
+      "es": "aebfc72824869daac94429c2d40da9ff3a42b13b1023c79402b48a1375f39c36",
+      "it": "aebfc72824869daac94429c2d40da9ff3a42b13b1023c79402b48a1375f39c36"
     },
     "console/iam/tutorials/sso_jumpcloud.md": {
-      "en": "9414091448f8f09322ae8dfc58bd5bcb27f281091a37c45c07acdd0b6f6dc58d",
-      "de": "9414091448f8f09322ae8dfc58bd5bcb27f281091a37c45c07acdd0b6f6dc58d",
-      "es": "9414091448f8f09322ae8dfc58bd5bcb27f281091a37c45c07acdd0b6f6dc58d",
-      "it": "9414091448f8f09322ae8dfc58bd5bcb27f281091a37c45c07acdd0b6f6dc58d"
+      "en": "f6c34c956caa7b687b061f3b43c74b43831a7fab5e6bb5068f04b87e3d16bdc3",
+      "de": "f6c34c956caa7b687b061f3b43c74b43831a7fab5e6bb5068f04b87e3d16bdc3",
+      "es": "f6c34c956caa7b687b061f3b43c74b43831a7fab5e6bb5068f04b87e3d16bdc3",
+      "it": "f6c34c956caa7b687b061f3b43c74b43831a7fab5e6bb5068f04b87e3d16bdc3"
     },
     "console/iam/iam.md": {
       "en": "b1ed2392738fc331bbc9f5b479dbabda6eb29e48999d92ea94754fe4a292d9dc",
@@ -97,16 +97,16 @@
       "it": "b473c941bed2937194b95c537957159c5390342a6896ad02750c525fa77dba24"
     },
     "console/security/security_recommendations.md": {
-      "en": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc",
-      "de": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc",
-      "es": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc",
-      "it": "0a6d29a5a15f4985e65359df2c1e680d3ea6ef7adbf97c0aa0c7c6963dccabdc"
+      "en": "1cee06ab4bfe10efb1c4949131a12d9309a9dbb4dfc3a0b68925f75a26a71cd0",
+      "de": "1cee06ab4bfe10efb1c4949131a12d9309a9dbb4dfc3a0b68925f75a26a71cd0",
+      "es": "1cee06ab4bfe10efb1c4949131a12d9309a9dbb4dfc3a0b68925f75a26a71cd0",
+      "it": "1cee06ab4bfe10efb1c4949131a12d9309a9dbb4dfc3a0b68925f75a26a71cd0"
     },
     "contractual/dpa.md": {
-      "en": "74c77a01fd0989be1d952513ed5f090f23dc3553da7a6c4985bc63f8a38893ad",
-      "de": "74c77a01fd0989be1d952513ed5f090f23dc3553da7a6c4985bc63f8a38893ad",
-      "es": "74c77a01fd0989be1d952513ed5f090f23dc3553da7a6c4985bc63f8a38893ad",
-      "it": "74c77a01fd0989be1d952513ed5f090f23dc3553da7a6c4985bc63f8a38893ad"
+      "en": "8181e71c8e6ba51e71343160ffb7a44b97828b5e57ec397136e7daf7ef3148e3",
+      "de": "8181e71c8e6ba51e71343160ffb7a44b97828b5e57ec397136e7daf7ef3148e3",
+      "es": "8181e71c8e6ba51e71343160ffb7a44b97828b5e57ec397136e7daf7ef3148e3",
+      "it": "8181e71c8e6ba51e71343160ffb7a44b97828b5e57ec397136e7daf7ef3148e3"
     },
     "console/security/security_alarms.md": {
       "en": "105f7370dbf1a5c16671de5fb5a4b9fe8576a3c8d8e5b6cef0f5da3994a908f0",
@@ -127,22 +127,22 @@
       "it": "3e9b4a37d416db1d0d62c68d10dc3038a694b9bf02f7666082772eae3da44741"
     },
     "contractual/iaas/raci.md": {
-      "en": "2ef6fdce5280e2b47c767c1e878381d27af38a687917c52136ed7ba463013eeb",
-      "de": "2ef6fdce5280e2b47c767c1e878381d27af38a687917c52136ed7ba463013eeb",
-      "es": "2ef6fdce5280e2b47c767c1e878381d27af38a687917c52136ed7ba463013eeb",
-      "it": "2ef6fdce5280e2b47c767c1e878381d27af38a687917c52136ed7ba463013eeb"
+      "en": "ccb84a4732e6bed28145cda0d246c209acdd93bcd1064574c86555cf31f3f817",
+      "de": "ccb84a4732e6bed28145cda0d246c209acdd93bcd1064574c86555cf31f3f817",
+      "es": "ccb84a4732e6bed28145cda0d246c209acdd93bcd1064574c86555cf31f3f817",
+      "it": "ccb84a4732e6bed28145cda0d246c209acdd93bcd1064574c86555cf31f3f817"
     },
     "contractual/baremetal.md": {
-      "en": "8996082d08c90904bdd6c23bcff568d92e1138d0d8d1cf45c29a3f8c153121c0",
-      "de": "8996082d08c90904bdd6c23bcff568d92e1138d0d8d1cf45c29a3f8c153121c0",
-      "es": "8996082d08c90904bdd6c23bcff568d92e1138d0d8d1cf45c29a3f8c153121c0",
-      "it": "8996082d08c90904bdd6c23bcff568d92e1138d0d8d1cf45c29a3f8c153121c0"
+      "en": "cf55c48e8841a31ac8e28979edd4e6f303c498bc66b28d0abfdad53616a0f68f",
+      "de": "cf55c48e8841a31ac8e28979edd4e6f303c498bc66b28d0abfdad53616a0f68f",
+      "es": "cf55c48e8841a31ac8e28979edd4e6f303c498bc66b28d0abfdad53616a0f68f",
+      "it": "cf55c48e8841a31ac8e28979edd4e6f303c498bc66b28d0abfdad53616a0f68f"
     },
     "contractual/cgvu.md": {
-      "en": "dadfb354a19020a0a10d2cfc7536aeecc9e9bccd940d5e380fe13c0c141126cd",
-      "de": "dadfb354a19020a0a10d2cfc7536aeecc9e9bccd940d5e380fe13c0c141126cd",
-      "es": "dadfb354a19020a0a10d2cfc7536aeecc9e9bccd940d5e380fe13c0c141126cd",
-      "it": "dadfb354a19020a0a10d2cfc7536aeecc9e9bccd940d5e380fe13c0c141126cd"
+      "en": "3fb7fd7b68254d073cc685daf52c7befda2efaae8dd143e7a16632f0ed656db0",
+      "de": "3fb7fd7b68254d073cc685daf52c7befda2efaae8dd143e7a16632f0ed656db0",
+      "es": "3fb7fd7b68254d073cc685daf52c7befda2efaae8dd143e7a16632f0ed656db0",
+      "it": "3fb7fd7b68254d073cc685daf52c7befda2efaae8dd143e7a16632f0ed656db0"
     },
     "contractual/network/raci.md": {
       "en": "f4ea003ba08f104d7bf622f9b13f97ebeee01728c9d4df34d3d44567594c4e59",
@@ -151,10 +151,10 @@
       "it": "f4ea003ba08f104d7bf622f9b13f97ebeee01728c9d4df34d3d44567594c4e59"
     },
     "contractual/paas/mco_mcs.md": {
-      "en": "e826061fad7e0bed7021bd0578e1c9fe8f3262dc7be237025eb246bec57c8e95",
-      "de": "e826061fad7e0bed7021bd0578e1c9fe8f3262dc7be237025eb246bec57c8e95",
-      "es": "e826061fad7e0bed7021bd0578e1c9fe8f3262dc7be237025eb246bec57c8e95",
-      "it": "e826061fad7e0bed7021bd0578e1c9fe8f3262dc7be237025eb246bec57c8e95"
+      "en": "5a42cd102121c12a78312eb28914c1ab11a744ee4210bbf9219471af3d0d642a",
+      "de": "5a42cd102121c12a78312eb28914c1ab11a744ee4210bbf9219471af3d0d642a",
+      "es": "5a42cd102121c12a78312eb28914c1ab11a744ee4210bbf9219471af3d0d642a",
+      "it": "5a42cd102121c12a78312eb28914c1ab11a744ee4210bbf9219471af3d0d642a"
     },
     "contractual/iaas/raci_s3.md": {
       "en": "a3ba19e7a50cf1c7a0e242778ffd1c04ea04d74a5c1721137d65343322bdde85",
@@ -175,22 +175,22 @@
       "it": "0593a2c7004fe885ae2c638a517ba0ef0bf2734c1130341b9695c1de3d666681"
     },
     "contractual/paas/raci_ocp_std.md": {
-      "en": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e",
-      "de": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e",
-      "es": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e",
-      "it": "cbdf114a38ef439e8098702ff3589d92d06243798ed24ef9de4d669bf71e652e"
+      "en": "e6c24afa046165bae4c221753322debfc7d306867762defa14acf8b2a3e8e76b",
+      "de": "e6c24afa046165bae4c221753322debfc7d306867762defa14acf8b2a3e8e76b",
+      "es": "e6c24afa046165bae4c221753322debfc7d306867762defa14acf8b2a3e8e76b",
+      "it": "e6c24afa046165bae4c221753322debfc7d306867762defa14acf8b2a3e8e76b"
     },
     "contractual/iaas/sla_iaas.md": {
-      "en": "8450335fdbbce6db9894ea47711faaaacfe36dce9102ab649b15af1d85bb25c8",
-      "de": "8450335fdbbce6db9894ea47711faaaacfe36dce9102ab649b15af1d85bb25c8",
-      "es": "8450335fdbbce6db9894ea47711faaaacfe36dce9102ab649b15af1d85bb25c8",
-      "it": "8450335fdbbce6db9894ea47711faaaacfe36dce9102ab649b15af1d85bb25c8"
+      "en": "6201d7c5cbbf478cde6371455c71e3ea6393432ea92ad118a7405528dcc36d6f",
+      "de": "6201d7c5cbbf478cde6371455c71e3ea6393432ea92ad118a7405528dcc36d6f",
+      "es": "6201d7c5cbbf478cde6371455c71e3ea6393432ea92ad118a7405528dcc36d6f",
+      "it": "6201d7c5cbbf478cde6371455c71e3ea6393432ea92ad118a7405528dcc36d6f"
     },
     "contractual/iaas/sla_openiaas.md": {
-      "en": "c8c50399bab72ad5c393cdf37c0b85cf76bdc180255d3f42f09982cc93856b1d",
-      "de": "c8c50399bab72ad5c393cdf37c0b85cf76bdc180255d3f42f09982cc93856b1d",
-      "es": "c8c50399bab72ad5c393cdf37c0b85cf76bdc180255d3f42f09982cc93856b1d",
-      "it": "c8c50399bab72ad5c393cdf37c0b85cf76bdc180255d3f42f09982cc93856b1d"
+      "en": "448d341a3baff47ca82b9daf9edb127699c2c6424d12d23d8f59937a2db98070",
+      "de": "448d341a3baff47ca82b9daf9edb127699c2c6424d12d23d8f59937a2db98070",
+      "es": "448d341a3baff47ca82b9daf9edb127699c2c6424d12d23d8f59937a2db98070",
+      "it": "448d341a3baff47ca82b9daf9edb127699c2c6424d12d23d8f59937a2db98070"
     },
     "home.md": {
       "en": "7015aec3784268c1f37f039cc382320fa254bbb292336e98958b37d92e15a822",
@@ -217,10 +217,10 @@
       "it": "ab070de3bdb5833b64bc9eee336f8d0df43286122c596001bab5a9b0738a00c6"
     },
     "contractual/paas/sla_paas.md": {
-      "en": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2",
-      "de": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2",
-      "es": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2",
-      "it": "3e27f0c99779b9026cedeba286a92f132220f18f6b652d2d122b9a4ce60372e2"
+      "en": "ed844f1ba9b8e96333a9175e1b32281826191d97d6d635d7673a9d9bd64b4218",
+      "de": "ed844f1ba9b8e96333a9175e1b32281826191d97d6d635d7673a9d9bd64b4218",
+      "es": "ed844f1ba9b8e96333a9175e1b32281826191d97d6d635d7673a9d9bd64b4218",
+      "it": "ed844f1ba9b8e96333a9175e1b32281826191d97d6d635d7673a9d9bd64b4218"
     },
     "iaas_bare-metal/concepts.md": {
       "en": "d7647544b1531b15b46bd90a090f5b80cb96aab3c94510b5f3ce6ef264efebbd",
@@ -247,10 +247,10 @@
       "it": "5deae1f1d7073b314996962a448becda752dd254ee5cc9c981fc4483a87b91f0"
     },
     "iaas_opensource/concepts.md": {
-      "en": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c",
-      "de": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c",
-      "es": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c",
-      "it": "f97c94ea3d9f62155135e33f89051a55d7b191e27d0bb75fd0c2642b49f9cd3c"
+      "en": "1ba53f070f535e26045bcd231b9f21bc72f72c51f3b079d74125e3219b8383be",
+      "de": "1ba53f070f535e26045bcd231b9f21bc72f72c51f3b079d74125e3219b8383be",
+      "es": "1ba53f070f535e26045bcd231b9f21bc72f72c51f3b079d74125e3219b8383be",
+      "it": "1ba53f070f535e26045bcd231b9f21bc72f72c51f3b079d74125e3219b8383be"
     },
     "iaas_vmware/iaas_vmware.md": {
       "en": "227a6fc9452bc93a670f1148bc057120b0348edd9ca5266421fac7408ccefa46",
@@ -259,10 +259,10 @@
       "it": "227a6fc9452bc93a670f1148bc057120b0348edd9ca5266421fac7408ccefa46"
     },
     "iaas_opensource/quickstart.md": {
-      "en": "cac853e30f8f98dcb715846bf925ba0980b334f9fac994345ee63eb5af1f263c",
-      "de": "cac853e30f8f98dcb715846bf925ba0980b334f9fac994345ee63eb5af1f263c",
-      "es": "cac853e30f8f98dcb715846bf925ba0980b334f9fac994345ee63eb5af1f263c",
-      "it": "cac853e30f8f98dcb715846bf925ba0980b334f9fac994345ee63eb5af1f263c"
+      "en": "673093f1c9db883f349904d20980509d15b523b9035aced7c1c73ddac1909d4b",
+      "de": "673093f1c9db883f349904d20980509d15b523b9035aced7c1c73ddac1909d4b",
+      "es": "673093f1c9db883f349904d20980509d15b523b9035aced7c1c73ddac1909d4b",
+      "it": "673093f1c9db883f349904d20980509d15b523b9035aced7c1c73ddac1909d4b"
     },
     "iaas_opensource/tutorials.md": {
       "en": "4f854a0f3e50548ba4dd43aaedd2c85e80e47baa5a1308cfbab89271a8f074c0",
@@ -331,10 +331,10 @@
       "it": "e58a23f7cf83208762d1642a705210fa31cacd3094e0db9edc3c00dabffc6428"
     },
     "iaas_vmware/quickstart.md": {
-      "en": "a64de6c3035ccc1f186b5947503e6fb2f174c6aa950e8a69f3385c0c4c43ce27",
-      "de": "a64de6c3035ccc1f186b5947503e6fb2f174c6aa950e8a69f3385c0c4c43ce27",
-      "es": "a64de6c3035ccc1f186b5947503e6fb2f174c6aa950e8a69f3385c0c4c43ce27",
-      "it": "a64de6c3035ccc1f186b5947503e6fb2f174c6aa950e8a69f3385c0c4c43ce27"
+      "en": "723f8330d33704b64c9bc1a6b2f23080672fb9be5cb6f5ae5cff4c1f0f548de6",
+      "de": "723f8330d33704b64c9bc1a6b2f23080672fb9be5cb6f5ae5cff4c1f0f548de6",
+      "es": "723f8330d33704b64c9bc1a6b2f23080672fb9be5cb6f5ae5cff4c1f0f548de6",
+      "it": "723f8330d33704b64c9bc1a6b2f23080672fb9be5cb6f5ae5cff4c1f0f548de6"
     },
     "llmaas/licences/cogito_3b.licence.md": {
       "en": "bab200d1e3f1a0207858317f5565c8b5a57cfe5d5db2d7cafbf6dd7aff7f3f17",
@@ -589,10 +589,10 @@
       "it": "112d86eb0b96397d132e97bb14b52fb2932d3ebd9af3136eda654f911cffd063"
     },
     "network/internet/concepts.md": {
-      "en": "c2dd6a65ec727802668afb24afcc24b27f133948d32db7b531929c40f56f866b",
-      "de": "c2dd6a65ec727802668afb24afcc24b27f133948d32db7b531929c40f56f866b",
-      "es": "c2dd6a65ec727802668afb24afcc24b27f133948d32db7b531929c40f56f866b",
-      "it": "c2dd6a65ec727802668afb24afcc24b27f133948d32db7b531929c40f56f866b"
+      "en": "cdd23c38d5a1034d38a816753473f7b34ce53fa32ed21a6d007d3c8b5ade5691",
+      "de": "cdd23c38d5a1034d38a816753473f7b34ce53fa32ed21a6d007d3c8b5ade5691",
+      "es": "cdd23c38d5a1034d38a816753473f7b34ce53fa32ed21a6d007d3c8b5ade5691",
+      "it": "cdd23c38d5a1034d38a816753473f7b34ce53fa32ed21a6d007d3c8b5ade5691"
     },
     "market_place_public.md": {
       "en": "bbc2021736b25948e141aa4a513329c400ca93159b576c6d1621025be35ca0f6",
@@ -649,10 +649,10 @@
       "it": "f4b32003e20f5e6ea54f7460d0b1e1181dc6956d2b9d8e786bf7fd96965b61de"
     },
     "paas_openshift/concepts.md": {
-      "en": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0",
-      "de": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0",
-      "es": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0",
-      "it": "0fa6ccd362e16770e592a1f8d0b2a4d7b9c3c6a9df5fd45eed189901a69121a0"
+      "en": "45a643c5d379cc52f00129d785eeb37d855f8b62d0b84d003979edde7fc02259",
+      "de": "45a643c5d379cc52f00129d785eeb37d855f8b62d0b84d003979edde7fc02259",
+      "es": "45a643c5d379cc52f00129d785eeb37d855f8b62d0b84d003979edde7fc02259",
+      "it": "45a643c5d379cc52f00129d785eeb37d855f8b62d0b84d003979edde7fc02259"
     },
     "network/private_network/concepts.md": {
       "en": "60e7c424c08e19463c55702e85cff9d985be3facd85364fa3d48a44a6a528df8",
@@ -661,16 +661,16 @@
       "it": "60e7c424c08e19463c55702e85cff9d985be3facd85364fa3d48a44a6a528df8"
     },
     "network/private_network/quickstart.md": {
-      "en": "8a4e92b12abf39eab66acc18f4076137d8e2aba3f8515803efa1d267c3c95393",
-      "de": "8a4e92b12abf39eab66acc18f4076137d8e2aba3f8515803efa1d267c3c95393",
-      "es": "8a4e92b12abf39eab66acc18f4076137d8e2aba3f8515803efa1d267c3c95393",
-      "it": "8a4e92b12abf39eab66acc18f4076137d8e2aba3f8515803efa1d267c3c95393"
+      "en": "5461a6248495464e005fc046e5d0629109dce54728aa8c131a0e145667b5f7e8",
+      "de": "5461a6248495464e005fc046e5d0629109dce54728aa8c131a0e145667b5f7e8",
+      "es": "5461a6248495464e005fc046e5d0629109dce54728aa8c131a0e145667b5f7e8",
+      "it": "5461a6248495464e005fc046e5d0629109dce54728aa8c131a0e145667b5f7e8"
     },
     "network/internet/tutorials/pfSense.md": {
-      "en": "a3ed9e1ce420f39be6f66f60467aa71ae1524bb6157348426dc6f04fe7f9593f",
-      "de": "a3ed9e1ce420f39be6f66f60467aa71ae1524bb6157348426dc6f04fe7f9593f",
-      "es": "a3ed9e1ce420f39be6f66f60467aa71ae1524bb6157348426dc6f04fe7f9593f",
-      "it": "a3ed9e1ce420f39be6f66f60467aa71ae1524bb6157348426dc6f04fe7f9593f"
+      "en": "adb343b4ada9aac5fd1d74dee6713456e291ac9b915c90141a4f25f55c1da009",
+      "de": "adb343b4ada9aac5fd1d74dee6713456e291ac9b915c90141a4f25f55c1da009",
+      "es": "adb343b4ada9aac5fd1d74dee6713456e291ac9b915c90141a4f25f55c1da009",
+      "it": "adb343b4ada9aac5fd1d74dee6713456e291ac9b915c90141a4f25f55c1da009"
     },
     "paas_openshift/paas_openshift.md": {
       "en": "c24c84b7dd2e82a31cec1446003dda0e9dd2660ce1c4fd4cb448a3cc1370011c",
@@ -697,10 +697,10 @@
       "it": "0b0efa1e29c3609f92fd9716665003caa8493bfac99bbfb702ddbf7e17c23b53"
     },
     "paas_openshift/quickstart.md": {
-      "en": "04b2219ff3df5d9db270c6078d4bc5272aa1dd354762d7d4535e94e15e5dea39",
-      "de": "04b2219ff3df5d9db270c6078d4bc5272aa1dd354762d7d4535e94e15e5dea39",
-      "es": "04b2219ff3df5d9db270c6078d4bc5272aa1dd354762d7d4535e94e15e5dea39",
-      "it": "04b2219ff3df5d9db270c6078d4bc5272aa1dd354762d7d4535e94e15e5dea39"
+      "en": "8150a4a9ddfd5be0ee003db3f4c4bf89573230c3833631daff81cc2d673d5af6",
+      "de": "8150a4a9ddfd5be0ee003db3f4c4bf89573230c3833631daff81cc2d673d5af6",
+      "es": "8150a4a9ddfd5be0ee003db3f4c4bf89573230c3833631daff81cc2d673d5af6",
+      "it": "8150a4a9ddfd5be0ee003db3f4c4bf89573230c3833631daff81cc2d673d5af6"
     },
     "privacy.md": {
       "en": "03ce6808894a3b12567fc584a7cf355f64dbe8bb4dc78dfc829825517bbd2340",
@@ -721,10 +721,10 @@
       "it": "d85516be3086c8c8d3d2d9a193ba6c20ac1f15bc27b0241303e565fee084962f"
     },
     "storage/oss/quickstart.md": {
-      "en": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34",
-      "de": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34",
-      "es": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34",
-      "it": "dbd7ab1fb8424d794573629d5dfa513e519d11237e83e047e90c0334762ddd34"
+      "en": "153bab0fecf030d1b6037d4005c0a55b0519762a26d52e0fe84fcb16b3880164",
+      "de": "153bab0fecf030d1b6037d4005c0a55b0519762a26d52e0fe84fcb16b3880164",
+      "es": "153bab0fecf030d1b6037d4005c0a55b0519762a26d52e0fe84fcb16b3880164",
+      "it": "153bab0fecf030d1b6037d4005c0a55b0519762a26d52e0fe84fcb16b3880164"
     },
     "storage/oss/oss.md": {
       "en": "fa32731ec3b953f7381b35a97b728724727f9739aeff3e00d1f5f38a8afabc88",
@@ -757,10 +757,10 @@
       "es": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f"
     },
     "storage/oss/tutorials/aws-s3-sync.md": {
-      "en": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6",
-      "de": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6",
-      "es": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6",
-      "it": "345d51b734e27bb76bd6c174ef37281c416a824512ededd94b35740d8cf211d6"
+      "en": "a677d29c12508d93a59be9298e2de63ff77102c4468d4211980c28c10d95cfec",
+      "de": "a677d29c12508d93a59be9298e2de63ff77102c4468d4211980c28c10d95cfec",
+      "es": "a677d29c12508d93a59be9298e2de63ff77102c4468d4211980c28c10d95cfec",
+      "it": "a677d29c12508d93a59be9298e2de63ff77102c4468d4211980c28c10d95cfec"
     },
     "storage/oss/tutorials/cloudberry-explorer.md": {
       "en": "a1e33b3b7029e5b8245e1ab81527c837f14935fdffa199a4307f3a636de79e9c",
@@ -775,10 +775,10 @@
       "it": "63abede3550801d8a864dee77690156386f73e975b7ebc3dcbe67f861fc10f5c"
     },
     "storage/oss/tutorials/mc-mirror.md": {
-      "en": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f",
-      "de": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f",
-      "es": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f",
-      "it": "a4d540de82ae336d0b94ea9fb8f01e1fe38da71589e8135fbdd303626a33f69f"
+      "en": "a64eb325a35b2b36436ba69c903e25cb279f5d70f03116f2b44bda79fcabc3c2",
+      "de": "a64eb325a35b2b36436ba69c903e25cb279f5d70f03116f2b44bda79fcabc3c2",
+      "es": "a64eb325a35b2b36436ba69c903e25cb279f5d70f03116f2b44bda79fcabc3c2",
+      "it": "a64eb325a35b2b36436ba69c903e25cb279f5d70f03116f2b44bda79fcabc3c2"
     },
     "storage/oss/tutorials/python-boto3.md": {
       "en": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
@@ -811,6 +811,6 @@
       "es": "bafad1b09c979cb33bd6c8bdf2bba1afd61e8edf14381d7c41e62bcd0d5af256"
     }
   },
-  "last_update": "2025-08-14T16:15:49.276941",
+  "last_update": "2025-08-28T12:22:07.788618",
   "version": "2.0"
 }

@@ -1,140 +1,141 @@
-# Contractual Appendix - Personal Data (DPA)
+## Contractual Data Protection Agreement (DPA) Appendix
 
-**Reference : Appendix - Personal Data**
+**Reference: Contractual Data Protection Agreement Appendix
 
-**V1 - 15/01/2025 - Modified by Emeline Cazaux**
+**Version V1 - January 15, 2025 - Modified by Emeline Cazaux**
 
-## Article 1: Definitions
+## Definitions
 
-**Personal Data**: Any information relating to an identified or identifiable natural person ("data subject"), as defined by the General Data Protection Regulation (GDPR).
+**Personal Data**: Any information relating to an identified or identifiable natural person (“data subject”), as defined by the General Data Protection Regulation (GDPR).
 
-**Data Controller**: The natural or legal person, public authority, service or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.
+**Data Controller**: The individual, legal entity, public authority, service, or any other body that, alone or jointly with others, determines the purposes and means of processing personal data.
 
-**Data Processor**: The natural or legal person, public authority, service or other body which processes personal data on behalf of the Data Controller.
+**Sub-processor**: The individual or entity that processes personal data on behalf of the Data Controller for its specific instructions.
 
-**Processing**: Any operation or set of operations performed or not performed by automated means and applied to personal data or sets of personal data.
+**Processing**: Any operation performed on personal data or an ensemble of personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure, or destruction.
 
-**Data Breach**: A breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of personal data transmitted, stored or otherwise processed, or unauthorized access to such data.
+**Data Breach**: An incident involving the unauthorized access, acquisition, disclosure, or destruction of personal data, either accidentally or illegally, leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or unauthorized access of such data.
 
-**Data Transfer**: Any transfer of personal data outside the European Economic Area (EEA), including to a third country or international organization.
+**Data Transfer**: Any transfer of personal data outside the European Economic Area (EEA), including transfers to third countries or international organizations.
 
-**Cloud Service**: Any processing, storage or management service of personal data provided by the Data Processor via cloud infrastructures.
+**Cloud Service**: A service for processing, storing, or managing personal data provided by a sub-processor using cloud infrastructure.
 
-## Article 2: Purpose
+## Object
 
-This appendix aims to define the conditions and modalities for the processing of personal data within the framework of the main contract, including the use of cloud services. It seeks to ensure that the parties comply with the obligations arising from the GDPR and French laws relating to the protection of personal data.
+This annex serves to outline the conditions and terms for processing personal data within the main contract, including utilization of cloud services. Its purpose is to ensure compliance with both GDPR obligations and French laws concerning personal data protection.
 
-## Article 3: Obligations of the Data Controller
+## Data Processing Responsible's Obligations
 
-- **Lawfulness of Processing**: The Data Controller undertakes to process personal data in a lawful, fair and transparent manner in accordance with Articles 5 and 6 of the GDPR.
+- **Lawfulness of Processing** : The Data Processor commits to processing personal data lawfully, fairly, and transparently in accordance with Articles 5 and 6 of GDPR.
 
-- **Specific, Explicit and Legitimate Purposes**: Personal data should only be collected for specific, explicit and legitimate purposes, and should not be processed further in a manner incompatible with those purposes.
+- **Specific Purposes Only** : Personal data must be collected for specific, explicit, and legitimate purposes only, and should not be processed further in a manner incompatible with these purposes.
 
-- **Data Minimization**: The Data Controller must ensure that the data collected are adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed.
+- **Data Minimization** : The Data Processor is responsible to ensure that the collected data is adequate, relevant, and limited to what is necessary concerning the intended processing purposes.
 
-- **Accuracy of Data**: It is the responsibility of the Data Controller to ensure that personal data are accurate and, if necessary, kept up to date.
+- **Accuracy of Data** : It falls upon the Data Processor to guarantee that personal data is accurate and, if needed, up-to-date.
 
-- **Data Security**: The Data Controller must implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, in accordance with Article 32 of the GDPR. This includes the regular evaluation of the security measures of the cloud services used.
+- **Data Security** : The Data Processor must implement appropriate technical and organizational measures to ensure an adequate level of security in line with Article 32 of GDPR. This includes regular assessments of the security measures applied by cloud services utilized.
 
-## Article 4: Obligations of the Data Processor
+## Subcontractor Obligations
 
-- **Processing in Accordance with Instructions**: The Data Processor undertakes to process personal data only on documented instructions from the Data Controller, including regarding transfers of personal data to a third country or international organization, unless a legal requirement obliges it to do so.
+- **Compliance with Instructions**: The Subcontractor agrees to process personal data only on documented instructions from the Data Controller, including transfers of personal data to a third country or international organization, unless required by applicable law.
 
-- **Confidentiality**: The Data Processor must ensure that persons authorized to process personal data commit to confidentiality or are subject to a legal obligation of confidentiality.
+- **Confidentiality**: The Subcontractor must ensure that individuals authorized to process personal data adhere to confidentiality or are subject to an appropriate legal obligation for confidentiality.
 
-- **Security of Processing**: The Data Processor undertakes to implement appropriate technical and organizational measures to ensure the security of personal data it processes, including those processed via cloud services, in accordance with Article 32 of the GDPR.
+- **Data Security**: The Subcontractor commits to implementing appropriate technical and organizational measures to guarantee the security of processed personal data, including cloud-processed data, in accordance with Article 32 of GDPR.
 
-- **Sub-processing**: The Data Processor must not use another processor without the prior written and specific authorization of the Data Controller. In the case of authorized sub-processing, the Data Processor must ensure that the subsequent processor complies with the same data protection obligations.
+- **Subcontracting**: The Subcontractor shall not engage another subcontractor without prior written and specific authorization from the Data Controller. In cases where subcontracting is authorized, the Subcontractor must ensure that the subsequent subcontractor meets the same data protection obligations.
 
-- **Assistance to the Data Controller**: The Data Processor must assist the Data Controller, to the extent possible, in fulfilling its obligations regarding data security, notification of data breaches, data protection impact assessments and prior consultations with the supervisory authorities.
+- **Assistance to Data Controller**: The Subcontractor should assist the Data Controller, as feasible, in fulfilling its data security, breach notification, impact assessment on data protection, and preliminary consultations with supervisory authorities obligations.
 
-- **Data Location**: The Data Processor must provide clear information on the locations of storage and processing of data in cloud infrastructures, and ensure that these locations comply with applicable data protection regulations.
+- **Data Location**: The Subcontractor must provide clear information about the storage and processing locations of personal data within cloud infrastructures and ensure these locations comply with applicable data protection regulations.
 
-## Article 5: Description of Processing
+## Description of Processing Activities
 
-The Data Processor is authorized to process, on behalf of the Data Controller, the personal data necessary to provide the Services. The nature and category of the operations carried out on personal data will be defined by the Data Controller according to the specific needs of each Service. The purposes of the processing are determined by the Data Controller and communicated to the Data Processor. The nature and category of personal data processed are specified by the Data Controller. The categories of data subjects are identified by the Data Controller. For the execution of the Services, the Data Controller provides the Data Processor with the necessary information. The duration of the processing is set by the Data Controller according to the requirements of the Services provided.
+The Subprocessor is authorized to process personal data on behalf of the Data Controller for the purpose of providing the Services. The nature and category of processing operations performed on personal data will be defined by the Data Controller according to the specific requirements of each Service. The purposes of processing are determined by the Data Controller and communicated to the Subprocessor. The type and category of personal data processed is specified by the Data Controller. The categories of individuals concerned are identified by the Data Controller. To execute the Services, the Data Controller provides the Subprocessor with the necessary information. The duration of processing is fixed by the Data Controller in accordance with the requirements of the provided Services.
 
-## Article 6: Rights of Data Subjects
+## Individual Rights
 
-- **Access and Correction**: The Data Controller and the Data Processor must allow data subjects to exercise their rights of access and correction of their personal data, in accordance with Articles 15 and 16 of the GDPR.
+- **Access and Correction**: The Data Controller and Processor must enable individuals to exercise their rights of access and correction regarding their personal data, in accordance with Articles 15 and 16 of GDPR.
 
-- **Erasure and Restriction of Processing**: Data subjects must be able to exercise their right to erasure of their data (right to be forgotten) or to the restriction of processing, in accordance with Articles 17 and 18 of the GDPR.
+- **Erasure and Limitation of Processing**: Individuals should be able to exercise their rights for erasure (right to be forgotten) or limitation of processing, as per Articles 17 and 18 of GDPR.
 
-- **Data Portability**: The Data Controller must ensure, where applicable, the portability of personal data of data subjects, in accordance with Article 20 of the GDPR.
+- **Data Portability**: The Data Controller must ensure, where applicable, the portability of personal data concerning individuals, in compliance with Article 20 of GDPR.
 
-- **Objection**: Data subjects must be able to exercise their right to object to the processing of their personal data in accordance with Article 21 of the GDPR.
+- **Objection**: Individuals should be able to exercise their right to object to processing of their personal data, as stipulated in Article 21 of GDPR.
 
-## Article 7: Security and Confidentiality Measures
+## Security and Confidentiality Measures
 
-The Data Processor undertakes, in particular, to implement sufficient measures to ensure the security and confidentiality of the Personal Data entrusted and processed within the framework of the Services, namely:
+The Sub-Contractor commits specifically to implementing the necessary measures for ensuring the security and confidentiality of Personal Data entrusted and processed within the scope of the Services, including but not limited to:
 
-- Implementing appropriate technical and organizational measures to protect personal data against accidental or unlawful destruction, accidental loss, alteration, unauthorized use, disclosure or unauthorized access, as well as against any other form of unlawful processing
+- Implementing appropriate technical and organizational measures to protect Personal Data against accidental or unauthorized destruction, loss, alteration, misuse, dissemination, or unauthorized access, as well as any other illicit processing.
 
-- Not using personal data for its own account or for the account of third parties and not transferring them without the prior written authorization of the Data Controller or the end client
+- Refraining from using Personal Data for its own purposes or those of third parties and refraining from transferring it without the written prior authorization of the Data Controller or the final client.
 
-- Ensuring that persons authorized to process personal data are subject to appropriate confidentiality obligations
+- Ensuring that individuals authorized to process Personal Data are subject to appropriate confidentiality obligations.
 
-- Not making copies or duplications of personal data without the prior written authorization of the Data Controller or the end client (unless necessary for the performance of the services provided by the provider under the Contract)
+- Not creating copies or duplicates of Personal Data without the written prior authorization of the Data Controller or the final client, unless necessary for providing the Services under the Contract (with exceptions for operational necessities).
 
-- Informing the Data Controller of any accidental or unauthorized access to personal data, any breach of data protection regulations or any suspicion of such a breach, as soon as possible and, if possible, within 48 hours of becoming aware of it
+- Informing the Data Controller immediately of any accidental or unauthorized access to Personal Data, any violation of data protection regulations, or any suspicion of such violations, within the best timeframe and no later than 48 hours after becoming aware.
 
-- Upon the choice of the Data Controller, deleting or returning the personal data or returning them at the end of the Contract, and destroying existing copies, unless there is a legal obligation to retain them
+- As per the Data Controller's choice, deleting or returning Personal Data or returning it at the end of the Contract, and destroying existing copies, unless legally required to retain them.
 
-- Implementing an information systems security policy and access authorization management, particularly logical and physical, which it must maintain and evolve throughout the duration of the Contract
+- Implementing a system for securing information systems and managing access permissions, both logical and physical, which must be maintained and updated throughout the duration of the Contract.
 
-## Article 8: Notification of Data Breaches
+## Data Breach Notification
 
-In the event of a personal data breach, the Data Processor must notify the Data Controller without undue delay after becoming aware of it. This notification must include all relevant information allowing the Data Controller to notify this breach to the competent supervisory authority and, where applicable, to the data subjects in accordance with Article 33 of the GDPR. The notification must specify the potential impact on the data hosted in the cloud and the measures taken to remedy it.
+Upon discovering a personal data breach, the Sub-processor must promptly notify the Data Controller without undue delay after becoming aware of it. This notification should encompass all pertinent information enabling the Data Controller to report this breach to the relevant supervisory authority and, if applicable, affected individuals in accordance with Article 33 of GDPR. The notification should detail potential impacts on cloud-hosted data and the measures implemented to address these issues.
 
-## Article 9: Data Transfers Outside the European Union
-Personal data transfers to third countries or international organizations may only be carried out subject to the conditions provided for by the GDPR, notably articles 44 to 50. The data controller must ensure that appropriate safeguards are in place, such as the standard contractual clauses approved by the European Commission or the existence of an adequacy decision.
+## Data Transfers Outside the European Union
 
-## Article 10: Duration and termination of processing
+Any transfer of personal data outside the European Union or to an international organization can only occur under the condition that the General Data Protection Regulation (RGPD) requirements, particularly Articles 44-50, are met. The data controller must ensure that appropriate safeguards are in place, such as standard contractual clauses approved by the European Commission or the existence of an adequacy decision.
 
-At the end of the main contract, the processor undertakes, according to the data controller's instructions, to delete all personal data or return it to the data controller, and to destroy existing copies except where a legal obligation requires their retention. This obligation also includes data stored on backup media in cloud infrastructures, unless a legal obligation requires their preservation.
+## Duration and Completion of Processing
 
-## Article 11: Documentation and audits
+Upon the termination of the main contract, the Subcontractor shall, in accordance with the instructions of the Data Controller, delete all personal data or return it to the Data Controller, and destroy any existing copies, except where legally required otherwise. This obligation also applies to data stored on backup systems within cloud infrastructures, unless a legal requirement mandates their retention.
 
-The processor will make available to the data controller all information necessary to demonstrate compliance with the obligations set forth in this appendix and will authorize audits, including inspections, by the data controller or another auditor mandated by it, to verify compliance with this appendix and the GDPR. The processor must also maintain a record of processing activities in accordance with article 30 of the GDPR and provide compliance reports on the cloud infrastructures used.
+## Documentation and Audits
 
-## Article 12: Record of processing activities
+The Subcontractor will provide the Processor with all necessary information to demonstrate compliance with the obligations outlined in this Annex, and will allow audits, including inspections, by the Processor or any other auditor mandated by the Processor, to verify adherence to this Annex and GDPR. The Subcontractor is also required to maintain a log of processing activities as per Article 30 of GDPR and provide compliance reports on cloud infrastructure utilized.
 
-The processor must also maintain a record of processing activities in accordance with article 30 of the GDPR and provide compliance reports on the cloud infrastructures used. This record contains at a minimum:
+## Processing Activity Log
 
-- The name and contact details of the data controller and, where applicable, the joint data controller, the data controller's representative, and the data protection officer
-- A description of the categories of data subjects and categories of personal data
-- The purposes of the processing
-- The categories of recipients to whom the personal data have been or will be disclosed, including recipients in third countries or international organizations
-- The duration of data retention
-- A general description of the technical and organizational security measures implemented
+The Sub-processor must also maintain a log of processing activities in accordance with Article 30 of GDPR and provide compliance reports on the cloud infrastructure utilized. This log includes at minimum:
 
-Upon written request from the Data Controller, the end customer, or any competent authority, the Processor will have a period of 15 working days to provide a copy of said record from the date of receipt of the request.
+- The name and contact information of the data controller, as well as any co-processors, representatives of the data controller, and data protection officer (DPO)
+- A description of the categories of individuals concerned and personal data categories
+- The purposes of processing
+- Categories of recipients to whom personal data has been or will be communicated, including recipients in third countries or international organizations
+- The retention period for data
+- A general description of technical and organizational security measures implemented
 
-## Article 13: Sub-processors
+Upon written request from the Data Controller, end client, or any competent authority, the Sub-processor shall have 15 working days to provide a copy of this log upon receipt of the request.
 
-The Processor may be required to use one (or more) external provider(s) / supplier(s) to handle specific services under the Contract. To this end, the Processor may be required to recruit one (or more) second-tier processors under its own responsibility, solely for the purpose of providing part of the services necessary for the managed system.
+## Subcontractors
 
-The Processor undertakes to conclude a binding legal act with any subsequent processor it engages for the processing of Data, to impose compliance with the GDPR requirements and the same obligations as those provided for in article 20.2. In particular, the Processor must ensure that the subsequent processor it has engaged provides sufficient guarantees for the implementation of the necessary security measures.
+The Principal may need to engage one or more external contractors/suppliers for specific services covered under the Contract. In such cases, the Principal may recruit, at its discretion, a subcontractor of second tier solely for providing part of the necessary processing services for the managed system.
 
-In the event of a subsequent processor failing to comply with its obligations regarding personal data protection, the Processor will remain fully responsible to the Data Controller, without prejudice to the rights of the data subjects provided for in articles 79 and 82 of the GDPR.
+The Principal commits to entering into a legally binding agreement with any subsequent subcontractor engaged for data processing, ensuring adherence to GDPR requirements and imposing identical obligations as stipulated in Article 20.2. Specifically, the Principal must verify that the recruited subcontractor possesses sufficient safeguards for implementing necessary security measures.
 
-The list of authorized subsequent processors is as follows:
+In case of a subsequent subcontractor's failure to meet data protection obligations, the Principal remains fully accountable towards the Data Controller, irrespective of rights granted to affected individuals under Articles 79 and 82 of GDPR.
+
+The authorized list of subsequent subcontractors is as follows:
 
 - Interxion
 - Data4
 - Telehouse
 - Iron Mountain
 
-During the execution of the Contract, the Data Controller may at any time request the Processor to provide an updated version of this list. Notwithstanding the foregoing, the Processor will notify the Data Controller in writing of the updated list of subsequent processors on a regular basis, except for a major change in subsequent processor.
+During contract execution, the Data Controller can request updates on this list from the Principal at any time. Regardless, the Principal will be notified in writing by the Subcontractor of regularly updated lists (except for major changes in subcontractors).
 
-## Article 14: Liability
+## Liability
 
-The Data Controller and the Processor acknowledge that they may be held liable for damages caused by processing of personal data that is not compliant with the GDPR and applicable French laws. The Processor is liable for damages caused by the processing if it has not complied with the GDPR obligations specifically applicable to processors or if it has acted outside the legal instructions of the Data Controller or contrary to them.
+The Data Processor and Subprocessor acknowledge that they may be held liable for damages resulting from non-conforming personal data processing in accordance with GDPR and applicable French law. The Subprocessor is responsible for damages caused by processing if it fails to meet the specific RGPD obligations applicable to subprocessors or acts outside of legally mandated instructions from the Data Controller or contrary to those instructions.
 
-## Article 15: Amendments
+## Modifications
 
-Any amendment to this appendix must be the subject of a written amendment signed by both parties. The amendments must comply with the requirements of the GDPR and the French laws relating to personal data protection.
+Any modification to this Annex must be subject to a written amendment signed by both parties. The modifications must comply with the GDPR and French data protection laws regarding personal data privacy.
 
-## Article 16: Governing law and competent jurisdiction
+## Applicable Law and Jurisdiction
 
-This appendix is governed by French law. Any dispute relating to its interpretation or execution shall be under the exclusive jurisdiction of the French courts. In case of discrepancy between the linguistic versions of this appendix, the French version shall prevail.
+This Annex shall be governed by French law. Any disputes regarding its interpretation or execution will be exclusively resolved by French courts. In the event of a difference between the language versions of this Annex, the French version shall take precedence.

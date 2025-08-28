@@ -157,7 +157,7 @@ Ecco alcune buone pratiche in caso di utilizzo della crittografia delle VM:
 
 Per ridurre al minimo la superficie d’attacco delle vostre macchine virtuali, è fortemente consigliato limitare ai soli necessari i servizi esposti. In particolare, assicuratevi di configurare le vostre risorse in modo da **non esporre pubblicamente le interfacce di amministrazione e le console** dei sistemi e delle applicazioni distribuite.
 
-Se utilizzate il servizio Object Storage di Cloud Temple, è inoltre consigliato **non configurare i vostri bucket in accesso pubblico**, tranne nei casi in cui ciò sia strettamente necessario (vedi [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Se utilizzate il servizio Object Storage di Cloud Temple, è inoltre consigliato **non configurare i vostri bucket in accesso pubblico**, tranne nei casi in cui ciò sia strettamente necessario (vedi [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
 
 ### Rinforzare le macchine virtuali (servizi IaaS)
 

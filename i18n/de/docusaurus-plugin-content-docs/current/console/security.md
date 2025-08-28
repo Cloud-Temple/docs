@@ -157,7 +157,7 @@ Bewährte Praktiken bei Einsatz von VM-Verschlüsselung:
 
 Um die Angriffsfläche Ihrer virtuellen Maschinen zu reduzieren, wird dringend empfohlen, nur notwendige Dienste verfügbar zu machen. Stellen Sie insbesondere sicher, dass Sie **Administrationsschnittstellen und Konsolen von Systemen und Anwendungen nicht öffentlich exponieren**.
 
-Wenn Sie die Objektspeicher-Services von Cloud Temple nutzen, wird zudem empfohlen, **Buckets nicht öffentlich zugänglich zu konfigurieren**, außer in notwendigen Fällen (siehe [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Wenn Sie die Objektspeicher-Services von Cloud Temple nutzen, wird zudem empfohlen, **Buckets nicht öffentlich zugänglich zu konfigurieren**, außer in notwendigen Fällen (siehe [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
 
 ### Härtung der virtuellen Maschinen (IaaS-Services)
 

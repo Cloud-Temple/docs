@@ -10,9 +10,9 @@ Cette politique détaille les responsabilités et les recommandations pour le Ma
 
 ---
 
-## 1. Maintien en Conditions Opérationnelles (MCO)
+## Maintien en Conditions Opérationnelles (MCO)
 
-### 1.1. Gestion et mise à jour des clusters
+### Gestion et mise à jour des clusters
 
 **Responsabilité **Cloud Temple** :**
 
@@ -36,7 +36,7 @@ Cette politique détaille les responsabilités et les recommandations pour le Ma
 
 ---
 
-### 1.2. Supervision et monitoring
+### Supervision et monitoring
 
 **Responsabilité **Cloud Temple** :**
 
@@ -63,7 +63,7 @@ Automatiser l’escalade des alertes vers vos outils de gestion pour une réacti
 
 ---
 
-### 1.3. Sauvegardes et restauration
+### Sauvegardes et restauration
 
 Les composants critiques du cluster sont sauvegardés automatiquement par **Cloud Temple**. Les charges de travail et les données des utilisateurs nécessitent une gestion dédiée.
 
@@ -85,9 +85,9 @@ Les composants critiques du cluster sont sauvegardés automatiquement par **Clou
 
 ---
 
-## 2. Maintien en Conditions de Sécurité (MCS)
+## Maintien en Conditions de Sécurité (MCS)
 
-### 2.1. Gestion des secrets et des configurations
+### Gestion des secrets et des configurations
 
 Utilisation des secrets OpenShift/Kubernetes et recommandation d'intégrer des systèmes de gestion centralisée des secrets.
 
@@ -104,7 +104,7 @@ Utilisation des secrets OpenShift/Kubernetes et recommandation d'intégrer des s
 - Ne pas stocker de secrets en texte clair dans les fichiers YAML.
 - Utiliser des outils pour chiffrer les informations sensibles.
 
-### 2.2. Contrôle des accès (IAM)
+### Contrôle des accès (IAM)
 
 La revue des accès se réalise par l'intermédiaire de la console Shiva et du module "User Management" de la console OpenShift.
 
@@ -123,7 +123,7 @@ Pour plus de détails sur cette fonctionnalité, se référer à notre [**guide*
 - Le **Client** est responsable de l'octroi des accès à ses utilisateurs et de leur onboarding dans le tenant.
 - Le **Client** doit gérer ses utilisateurs dans le respect des limitations imposées par le système **Cloud Temple**.
 
-### 2.3. Gestion des vulnérabilités
+### Gestion des vulnérabilités
 
 Les vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre seront communiquées dans le module incident.
 
@@ -143,7 +143,7 @@ Les vulnérabilités sur l'infrastructure et les services sous-jacents à l'offr
 - Utiliser l'alerting du cluster fourni par **[Quay]** pour analyser les vulnérabilités et détecter les comportements anormaux dans les images utilisées par le **Client**.
 - S'abonner aux notifications d'[**incidents**](../../console/status.md#gestion-des-notifications).
 
-### 2.4. Chiffrement
+### Chiffrement
 
 Garantie d'un chiffrement natif sur l'infrastructure **Cloud Temple**, avec recommandations pour les charges de travail.
 
@@ -163,7 +163,7 @@ Garantie d'un chiffrement natif sur l'infrastructure **Cloud Temple**, avec reco
 - Activer le **chiffrement TLS** pour toutes les communications entre les Offres PaaS et IaaS **Cloud Temple**.
 - Assurer le chiffrement des données au repos via les solutions de stockage **Cloud Temple**.
 
-### 2.5. Journalisation et audit
+### Journalisation et audit
 
 Enregistrement automatique des événements critiques du cluster.
 
@@ -183,7 +183,7 @@ Enregistrement automatique des événements critiques du cluster.
 
 ---
 
-## 3. Gestion des incidents et PCA (Plan de Continuité d’Activité)
+## Gestion des incidents et PCA (Plan de Continuité d’Activité)
 
 **Responsabilité **Cloud Temple** :**
 

@@ -1,6 +1,8 @@
 ---
-title: Schnellstartanleitung
+Leitfaden zum Einstieg
 ---
+
+```
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
 import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
@@ -14,164 +16,170 @@ import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_polic
 import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
 import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
 import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
+```
 
-## Berechnung
+### Berechnung
 
-### Verwaltung virtueller Maschinen
+### Management of Virtual Machines
 
-Die Verwaltungsoberfläche für Ihre virtuellen Maschinen ist in der Shiva-Konsole im Menü __'OpenIaaS'__ verfügbar, das sich in der grünen Seitenleiste auf der linken Seite des Bildschirms befindet.
+The management interface for your virtual machines is accessible in the Shiva console, under the 'OpenIaaS' option located on the top left toolbar of the screen.
 
 ### Liste der virtuellen Maschinen
 
-Im Bereich __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer virtuellen Maschinen, die auf Ihrer vertrauenswürdigen Cloud gehostet werden.
+In der Abschnitt __'Virtuelle Maschinen'__ erhalten Sie Zugriff auf die Liste Ihrer virtuellen Maschinen, die bei Ihrem vertrauenswürdigen Cloud-Anbieter gehostet werden.
 
 <img src={openIaasVirtualMachinesList} />
 
-Sie haben Zugriff auf die folgenden Informationen für jede virtuelle Maschine:
+Für jede virtuelle Maschine stehen Ihnen folgende Informationen zur Verfügung:
 
-- Ihren Namen.
-- Ihren Status (ausgeschaltet, eingeschaltet).
-- Ihre Verfügbarkeitszone (AZ).
-- Ihr Betriebssystem.
-- Die Anzahl der virtuellen CPUs (vCPU).
-- Die Menge an virtuellem Speicher (vRAM).
+- Den Namen der Maschine.
+- Deren Status (ausgeschaltet, eingeschaltet).
+- Die Verfügungszone (AZ).
+- Das Betriebssystem.
+- Die Anzahl der virtuellen Prozessoren (vCPU).
+- Die Menge der virtuellen Speicher (vRAM).
 
-### Aktionen für virtuelle Maschinen
+### Actions sur les machines virtuelles
 
-Die folgenden Aktionen sind über diese Oberfläche möglich:
+Les actions suivantes sont disponibles via cette interface :
 
-- Aktualisieren der Liste der virtuellen Maschinen.
-- Filtern der Liste.
-- Suchen einer virtuellen Maschine nach Namen.
-- Erstellen einer neuen virtuellen Maschine.
+- Rafraîchir la liste des machines virtuelles.
+- Filtrer la liste.
+- Rechercher une machine virtuelle par son nom.
+- Créer une nouvelle machine virtuelle.
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Wenn Sie auf den grünen Dropdown-Pfeil auf der rechten Seite der Liste für eine virtuelle Maschine klicken, erhalten Sie Zugriff auf alle Informationen darüber.
+En cliquant sur le point d'extraction verticale à droite d'une machine virtuelle, vous accédez à toutes les informations détaillées concernant celle-ci.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Eine Schnellzugriffsleiste ermöglicht es Ihnen, die folgenden Aktionen durchzuführen:
+Un bandeau rapide permet de réaliser les actions suivantes :
 
 <img src={openIaasVirtualMachineActions} />
 
-- Einschalten der virtuellen Maschine.
-- Ausschalten der virtuellen Maschine.
-- Neustarten der virtuellen Maschine.
-- Öffnen der Konsole.
-- Mounten einer ISO-Datei.
-- Unmounten einer ISO-Datei.
-- Konvertieren der virtuellen Maschine in eine Vorlage.
-- Verschieben der virtuellen Maschine.
-- Umbenennen der virtuellen Maschine.
-- Löschen der virtuellen Maschine.
+- Allumer la machine virtuelle.
+- Éteindre la machine virtuelle.
+- Redémarrer la machine virtuelle.
+- Ouvrir la console.
+- Monter un ISO.
+- Démonter un ISO.
+- Convertir la machine virtuelle en template.
+- La déplacer.
+- La renommer.
+- La supprimer.
 
-Im Reiter '__Allgemein__' finden Sie detaillierte Informationen zu Ihrer virtuellen Maschine, wie ihren physischen Standort (AZ, Pool, Host), RAM, CPU, IP-Adressen und mehr.
+Dans l'onglet d'information '__Générales__', vous trouvez des informations détaillées relatives à votre machine virtuelle, telles que son emplacement physique (AZ, Pool, Host), la RAM, le CPU, les adresses IP, et autres.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Ein Reiter '__Erweitert__' ermöglicht es Ihnen, spezifischere Informationen anzuzeigen:
+Un onglet '__Avancé__' permet de consulter des informations plus spécifiques :
 
-- UUID der virtuellen Maschine
-- Gast-Tools
-- Gast-Betriebssystem
-- DVD-Laufwerk
+- UUID de la machine virtuelle
+- Guest tools
+- OS invité
+- Lecteur DVD
 
-Sowie bestimmte Optionen zu ändern, wie:
+Ainsi que modifier certaines options telles que :
 
-- Startreihenfolge
-- Secure Boot
-- Automatischer Start (nicht möglich, wenn keine Sicherungsrichtlinie mit der VM verknüpft ist)
+- Ordre de lancement
+- Secure boot
+- Démarrage automatique (impossible si aucune politique de sauvegarde n'est associée à la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
-## Replikation
+### Wiederholung
 
-### Zugriff auf die Replikationsverwaltung
+### Zugrichtung zur Replikationsverwaltung
 
-Die Replikationsverwaltungsoberfläche ist in der Shiva-Konsole im Menü __'OpenIaaS'__ > __'Replikation'__ verfügbar, das sich in der grünen Seitenleiste auf der linken Seite des Bildschirms befindet.
+Die Verwaltungs-Schnittstelle für die Replikation befindet sich in der Shiva-Konsole unter dem Menüpunkt "OpenIaaS" > "Replikation", welcher sich auf der linken oberen Bandeimer befindet.
 
 <img src={openIaasReplicationMenu} />
 
 ### Erstellung einer Replikationsrichtlinie
 
-Im Bereich __'Replikation'__ können Sie Richtlinien erstellen, die die Schutzparameter Ihrer virtuellen Maschinen definieren.
+In der Abschnitt __'Replikation'__ können Sie Richtlinien erstellen, die die Parameter der Schutzmaßnahmen für Ihre virtuellen Maschinen definieren.
 
 <img src={openIaasReplicationPoliciesView} />
 
-Um eine neue Richtlinie zu erstellen, klicken Sie auf die Schaltfläche __'Richtlinie hinzufügen'__. Ein Formular öffnet sich mit den folgenden Schritten:
+Um eine neue Richtlinie zu erstellen, klicken Sie auf den Button __'Eine Richtlinie hinzufügen'__. Eine Formularseite öffnet sich mit den folgenden Schritten:
 
 #### Schritt 1: Allgemeine Informationen
 
-- __Name__: Geben Sie Ihrer Richtlinie einen aussagekräftigen Namen
-- __Häufigkeit__: Wählen Sie das Replikationsintervall (1-59 Minuten oder 1-24 Stunden)
+- __Name__ : Geben Sie Ihrem Replikationsrichtlinie einen Namen
+- __Frequenz__ : Wählen Sie den Replikationintervall (1 bis 59 Minuten oder 1 bis 24 Stunden)
 
-<img src={openIaasReplicationPolicyForm1} />
+![Formular für die Erstellung einer Replikationsrichtlinie](https://source.unsplash.com/1600x900/?replikationsrichtlinie,formular)
 
-#### Schritt 2: Speicherauswahl
+### Schritt 2: Auswahl des Speicherspeichers
 
-- __Verfügbarkeitszone__: Wählen Sie die Zielzone aus
-- __Pool__: Wählen Sie den Ressourcenpool aus
-- __Block Storage__: Wählen Sie den Zielspeicher aus
+- **Verfügungszone**: Wählen Sie die Ziel-Lokalität aus
+- **Pool**: Wählen Sie den Ressourcenpool aus
+- **Block Storage**: Wählen Sie das Zielspeicherdestination aus
 
 <img src={openIaasReplicationPolicyForm2} />
 
 #### Schritt 3: Validierung
 
-Überprüfen Sie die Parameter und klicken Sie auf __'Hinzufügen'__, um die Richtlinie zu erstellen.
+Überprüfen Sie die Parameter und klicken Sie auf __'Hinzufügen'__ zum Erstellen der Politik.
 
-### Zuordnung einer VM zur Replikation
+### Association einer VM zur Replikation
 
-Um eine virtuelle Maschine zu schützen, greifen Sie auf die Details Ihrer VM über die Liste der virtuellen Maschinen zu.
+Um eine virtuelle Maschine zu schützen, gehen Sie auf die Details Ihrer VM aus der Liste der virtuellen Maschinen.
 
-In der detaillierten Ansicht der VM finden Sie einen Bereich __'Replikation'__:
+In der detaillierten Ansicht der VM finden Sie eine Abschnitt __'Replikation'__:
 
 <img src={openIaasVmReplicationSection} />
 
-Die Schritte zur Zuordnung einer VM zur Replikation:
+Die Schritte zur Verknüpfung einer VM mit der Replikation:
 
-1. Klicken Sie auf __'Richtlinie konfigurieren'__
+1. Klicken Sie auf __'Einstellungen für die Replikationsrichtlinie__'
 2. Wählen Sie die gewünschte Replikationsrichtlinie aus der Dropdown-Liste aus
 3. Bestätigen Sie Ihre Auswahl
 
-Die Replikation startet automatisch nach der Validierung.
+Die Replikation startet automatisch nach der Bestätigung.
 
-### Verwaltung von Richtlinien und Replikas
+### Verwaltung von Richtlinien und Replikate
 
-#### Ansicht der Richtlinien
+---
 
-Der Reiter __'Richtlinien'__ ermöglicht es Ihnen, alle Ihre Replikationsrichtlinien zu visualisieren:
+#### Politikoversicht
+
+Der Register "Politik" ermöglicht es Ihnen, alle Replikationsrichtlinien anzuzeigen:
 
 <img src={openIaasReplicationPoliciesTable} />
 
-Sie haben Zugriff auf die folgenden Informationen für jede Richtlinie:
+Für jede Richtlinie stehen Ihnen die folgenden Informationen zur Verfügung:
 
-- Ihren Namen
-- Ihre Replikationshäufigkeit
-- Die Ziel-Verfügbarkeitszone
-- Den zugeordneten Pool
-- Den verwendeten Block Storage
+- Den Namen
+- Die Replikationsfrequenz
+- Die Zielverfügbarkeitszone
+- Der zugehörige Pool
+- Das Blockspeicherprodukt, das verwendet wird
 
-Die verfügbaren Aktionen umfassen:
+Die verfügbaren Aktionen sind:
 
-- Einsehen der Details jeder Richtlinie
-- Ändern der Parameter
-- Löschen einer nicht verwendeten Richtlinie
+- Die Details jeder Richtlinie anzeigen
+- Die Parameter ändern
+- Eine nicht genutzte Richtlinie löschen
 
-#### Ansicht der Replikas
+#### Ansicht der Replikate
 
-Der Reiter __'Replikas'__ zeigt alle virtuellen Maschinen an, die derzeit repliziert werden:
+Der Register "Replikate" zeigt alle virtuellen Maschinen, die gerade repliziert werden:
 
+```markdown
 <img src={openIaasReplicationReplicasTable} />
+```
 
-Sie können visualisieren:
+Sie können folgende Informationen anzeigen:
 
 - Den Namen der replizierten virtuellen Maschinen
-- Quell- und Zielstandort
-- Die zugeordnete Replikationsrichtlinie
+- Den Standort Quelle und Ziel
+- Die mit der Replikation verbundene Politik
 
-Die verfügbaren Aktionen umfassen:
+Verfügbare Aktionen sind:
 
-- Export der Daten im CSV-Format
-- Einsehen der Replikationsdetails
-- Verwaltung der Replikas nach Richtlinie
+- Ausgabe der Daten in CSV-Format
+- Anzeige der Replikationsdetails
+- Verwaltung der Replikate nach Politik
+```

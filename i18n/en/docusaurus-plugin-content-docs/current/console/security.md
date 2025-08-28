@@ -157,7 +157,7 @@ Here are some best practices when using VM encryption:
 
 To limit the attack surface of your virtual machines, it is strongly recommended to restrict exposed services to the strict minimum. In particular, ensure your resources are configured to **avoid public exposure of administration interfaces and consoles** for deployed systems and applications.
 
-If you use Cloud Temple's Object Storage services, it is also recommended to **avoid configuring your buckets for public access**, except in cases where this is strictly necessary (see [Access limitations for your S3 buckets | Cloud Temple Documentation](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+If you use Cloud Temple's Object Storage services, it is also recommended to **avoid configuring your buckets for public access**, except in cases where this is strictly necessary (see [Access limitations for your S3 buckets | Cloud Temple Documentation](../storage/oss/quickstart#gestion-des-politiques-daccès).
 
 ### Harden virtual machines (IaaS services)
 

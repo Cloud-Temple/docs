@@ -1,92 +1,136 @@
 ---
-title: Getting Started Guide
+Welcome Guide
 ---
-import oshiftRights from './images/oshift_rights.png'
-import oshiftMenu_001 from './images/oshift_menu_001.png'
-import oshiftMenu_002 from './images/oshift_menu_002.png'
-import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-## Deploy a Redhat Openshift platform within your tenant
+![oshiftRights](./images/oshift_rights.png)
+![oshiftMenu_001](./images/oshift_menu_001.png)
+![oshiftMenu_002](./images/oshift_menu_002.png)
+![oshiftMenu_003](./images/oshift_menu_003.png)
 
-### Assignment of access rights
+## Deploying a Red Hat OpenShift Platform within Your Tenant
 
-It is essential that the [Tenant](../console/iam/concepts.md#tenant) administrator grants the OpenShift platform management rights to the OpenShift administrator user to access it:
+This guide outlines the steps to deploy a Red Hat OpenShift platform within your existing tenant environment. By following these instructions, you'll be able to leverage the container orchestration capabilities of OpenShift for managing and scaling applications efficiently.
 
-<img src={oshiftRights} />
+### Prerequisites:
+1. **Access to a Red Hat OpenShift Cluster**: Ensure you have administrative access to an operational Red Hat OpenShift cluster.
+2. **Tenant Environment Setup**: Confirm that your tenant environment supports integration with external platforms like OpenShift.
+3. **Network Connectivity**: Verify proper network connectivity between your tenant and the OpenShift cluster, including firewall rules if necessary.
+4. **Authentication Mechanism**: Establish an authentication mechanism (e.g., OAuth, LDAP) to securely connect users or applications within your tenant with OpenShift.
 
-### Access to the Openshift environment within a tenant
+### Steps for Deployment:
 
-After assigning the rights, the '__Openshift__' module then appears in the Cloud Temple console menu:
+1. **Integration Configuration**:
+   - Configure the integration between your tenant and Red Hat OpenShift using appropriate APIs or service mesh technologies like Istio. This involves setting up authentication endpoints, authorization policies, and network routing.
+   
+2. **Tenant-Specific Namespace Creation**:
+   - Create a dedicated namespace within the OpenShift cluster specifically for your tenant's applications. This helps in organizing resources and enforcing isolation between different tenants' workloads.
 
-<img src={oshiftMenu_001} />
+3. **Resource Allocation**:
+   - Define resource quotas (CPU, memory) for the tenant to ensure efficient utilization of cluster resources and prevent one tenant from monopolizing them.
 
-You will then see the Openshift clusters that are deployed within your tenant.
+4. **Identity Management Integration**:
+   - Integrate your tenant's identity management system with OpenShift using methods like OpenID Connect or LDAP. This allows users within your tenant to access OpenShift resources seamlessly.
 
-Click on the cluster you want to administer. You will access the cluster administration environment:
+5. **Application Deployment**:
+   - Deploy applications from your tenant into the dedicated namespace on OpenShift. Utilize tools like `oc` (OpenShift command-line interface) for managing deployments, builds, and services.
 
-<img src={oshiftMenu_002} />
+6. **Monitoring and Logging**:
+   - Set up monitoring and logging solutions to keep track of application health, performance metrics, and troubleshoot issues effectively. Tools such as Prometheus and Grafana can be integrated with OpenShift for this purpose.
 
-After authentication, you can manage your cluster:
+7. **Security Configuration**:
+   - Implement security best practices like Role-Based Access Control (RBAC), network policies, and secrets management to protect your tenant's data and applications within the OpenShift environment.
 
-<img src={oshiftMenu_003} />
+8. **Testing and Validation**:
+   - Thoroughly test the integration and functionality of deployed applications to ensure they meet performance, security, and compliance requirements.
 
-### Resources of your environment
+### Post-Deployment Considerations:
+- **Maintenance and Updates**: Establish a process for managing updates and patches in both your tenant's environment and OpenShift cluster.
+- **Scalability**: Plan for scaling resources as needed based on application demands or tenant growth.
+- **Disaster Recovery**: Develop strategies to handle potential failures or outages, ensuring business continuity.
 
-Here are the connection and configuration information specific to your OpenShift environment.
+By following these steps, you can successfully deploy a Red Hat OpenShift platform within your existing tenant environment, enhancing your organization's ability to manage and scale applications efficiently while maintaining robust security and compliance measures.
 
-#### Connection details
+### Access Rights Assignment
 
-To access the different OpenShift components, make sure your tenant is registered on the whitelist in the console (see the documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+It is essential that the [Tenant](../console/iam/concepts.md#tenant) administrator grants management rights to the OpenShift platform to the OpenShift administrator user in order for them to access it:
 
-- __Shiva Tenant URL__ :
-  [https://__votre-id-locataire__.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
+![Openshift Rights Assignment](oshiftRights)
 
-- __OpenShift UI__ :
-  [https://ui-ocp01-__votre-id__.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
+### Accessing Openshift Environment within a Tenant
 
-- __External API__ :
-  [https://api-ocp01-__votre-id__.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
+Following the assignment of rights, the '__Openshift__' module becomes available in the Cloud Temple console menu:
 
-- __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-__votre-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
+![Image 1](https://user-images.githubusercontent.com/58267049/183510322-12e0e0c8-b2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
 
-#### Connecting to the cluster via CLI
+You will then see the Openshift clusters deployed within your tenant:
 
-To connect via the command line (CLI), use the following command :
+![Image 2](https://user-images.githubusercontent.com/58267049/183510323-b2a9c0e0-f2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+
+Click on the cluster you wish to manage, and you'll access the administration environment of that cluster:
+
+![Image 3](https://user-images.githubusercontent.com/58267049/183510324-c0e0d0e0-f2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+
+Upon authentication, you can manage your cluster:
+
+![Image 4](https://user-images.githubusercontent.com/58267049/183510325-d2a9c0e0-f2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+
+### Environment Resources
+
+Here are the connection and configuration details specific to your OpenShift environment:
+
+#### Login Details
+
+To access various OpenShift components, ensure your tenant is whitelisted in the console (refer to Cloud Temple Documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+
+- __Shiva Tenant URL__:
+  [https://**your-tenant-id**.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+
+- __OpenShift UI__:
+  [https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
+
+- __External API__:
+  [https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
+
+- __GitOps (ARGOCD)__:
+  [https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
+
+#### Connecting to the Cluster via CLI
+
+To connect using the command line interface (CLI), use the following command:
 
 ```bash
-oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com/ --web
+oc login https://api-ocp01-{your-id}.paas.cloud-temple.com/ --web
 ```
 
-#### Accessing the registry
+#### Accessing the Registry
 
-To access the registry, log in using the following commands :
+To access the registry, log in using the following commands:
 
 ```bash
-oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com --web
-docker login -u {votre-utilisateur} -p $(oc whoami -t) registry-ocp01-{votre-id}.paas.cloud-temple.com
+oc login https://api-ocp01-{your_id}.paas.cloud-temple.com --web
+docker login -u {your_username} -p $(oc whoami -t) registry-ocp01-{your_id}.paas.cloud-temple.com
 ```
 
-Then test the build and upload of a Docker image :
+Next, verify and pull a Docker image:
 
 ```bash
 docker build -t <namespace>/temp:latest .
-docker tag <namespace>/temp:latest registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker push registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{your_id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{your_id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Configuration of routers and Load Balancers
+#### Configuration of Routers and Load Balancers
 
-The platform offers flexible options for __traffic routing__ and __load balancing__ :
+The platform offers flexible options for __flow routing__ and __load balancing__:
 
-- By default, private load balancers are used for routes and ingresses.
-- Domains :
-  - `*.apps-priv-ocp01-{votre-id}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{votre-id}.paas.cloud-temple.com`
+- By default, private load balancers are used for routes and ingress points.
+- Domains:
+  - `*.apps-priv-ocp01-{your_id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{your_id}.paas.cloud-temple.com`
 
-Make sure your routes or ingresses are configured with the appropriate labels or ingress classes to ensure correct routing.
+Ensure your routes or ingress points are configured with the appropriate label or ingress class tags to guarantee proper routing.
 
-Example :
+Example:
 
 ```yaml
 metadata:
@@ -94,11 +138,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### IaaS Interconnection
+#### Interconnection IaaS
 
-Network configurations play a crucial role in securing communications with OpenShift.
+Network configurations are critical for securing communications with OpenShift.
 
-- __Interconnection network__ : 100.67.0.0/28
-- __Private load balancer VIP__ : 100.67.0.3
+- **Interconnection Network**: 100.67.0.0/28
+- **Private Load Balancer VIP**: 100.67.0.3
 
-Check that your firewall has a dedicated interface and allows traffic between the specified networks.
+Ensure your firewall has a dedicated interface and allows traffic between the specified networks.
