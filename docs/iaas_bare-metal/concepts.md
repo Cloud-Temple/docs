@@ -108,7 +108,12 @@ Les utilisateurs peuvent :
 
 ### Agrégation des interfaces réseau
 
-Chaque serveur est équipé de **deux interfaces réseau**. Ces interfaces peuvent être utilisées de manière indépendante ou combinées pour une meilleure performance et redondance :
+Les serveurs sont disponibles en deux versions:
+
+- Bonding: une carte réseau, avec redondance et bonding intégré
+- Standard: Quatre (4) cartes réseau, avec redondance integré
+
+Ces interfaces peuvent être utilisées de manière indépendante ou combinées pour une meilleure performance et redondance
 
 ### Performances réseau
 
