@@ -1,25 +1,22 @@
 ---
-Titel: Konzepte
+title: Konzepte
 ---
-Importieren Sie die folgenden Bilder:
 
-```
-import shivaOnboard_003 von './images/shiva_onboard_003.png'
-import shivaOnboard_004 von './images/shiva_onboard_004.png'
-import shivaOnboard_001 von './images/shiva_onboard_001.png'
-import shivaOnboard_005 von './images/shiva_onboard_005.png'
-import shivaProfil_012 von './images/shiva_profil_012.png'
-import shivaProfil_014 von './images/shiva_profil_014.png'
-import shivaProfil_015 von './images/shiva_profil_015.png'
-import shivaProfil_016 von './images/shiva_profil_016.png'
-import shivaProfil_013 von './images/shiva_profil_013.png'
-import shivaProfil_010 von './images/shiva_profil_010.png'
-import shivaProfil_009 von './images/shiva_profil_009.png'
-import shivaProfil_011 von './images/shiva_profil_011.png'
-import shivaProfil_006 von './images/shiva_profil_006.png'
-import shivaProfil_007 von './images/shiva_profil_007.png'
-import shivaTenantRessources_01 von './images/shiva_tenant_ressourcen_01.png'
-```
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_012 from './images/shiva_profil_012.png'
+import shivaProfil_014 from './images/shiva_profil_014.png'
+import shivaProfil_015 from './images/shiva_profil_015.png'
+import shivaProfil_016 from './images/shiva_profil_016.png'
+import shivaProfil_013 from './images/shiva_profil_013.png'
+import shivaProfil_010 from './images/shiva_profil_010.png'
+import shivaProfil_009 from './images/shiva_profil_009.png'
+import shivaProfil_011 from './images/shiva_profil_011.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Benutzernamen
 
@@ -93,7 +90,7 @@ Wählen Sie in Ihrem __'Profil'__ oben rechts auf der Seite und wählen Sie dann
 
 Gehen Sie dann in Ihre E-Mail-Adresse und klicken Sie auf den vom Console generierten Link. Folgen Sie einfach den Anweisungen, um Ihr Profil zu aktualisieren.
 
-<Hinweis>: Stellen Sie sicher, dass Sie die Anfrage zur Aktualisierung Ihres Profils tatsächlich gesendet haben. Bitte melden Sie alle unbekannten Anfragen über ein Support-Ticket an.
+**Hinweis**: Stellen Sie sicher, dass Sie die Anfrage zur Aktualisierung Ihres Profils tatsächlich gesendet haben. Bitte melden Sie alle unbekannten Anfragen über ein Support-Ticket an.
 
 <img src={shivaProfil_014} />
 

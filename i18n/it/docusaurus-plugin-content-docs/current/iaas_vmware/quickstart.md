@@ -1,8 +1,7 @@
 ---
-Guida di Partenza
+title: Guida di Partenza
 ---
 
-```
 import shivaVmHome from './images/shiva_vm_home.png'
 import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
 import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
@@ -14,6 +13,7 @@ import shivaVmInformazioniGenerali from './images/shiva_vm_informazioni_generali
 import shivaVmInformazioniAvanzate from './images/shiva_vm_informazioni_avanzate.png'
 import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
 import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
+import shivaVmNetctrl_001 from './images/shiva_vm_netctrl_001.png'
 import shivaCpool_010 from './images/shiva_cpool_010.png'
 import shivaCpool_011 from './images/shiva_cpool_011.png'
 import shivaCatalogs from './images/shiva_catalogs.png'
@@ -48,7 +48,6 @@ import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
 import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
-```
 
 ### Calcolo
 
@@ -383,13 +382,13 @@ Quando si assegna una SLA (Service Level Agreement) a una macchina virtuale (VM)
 
 SecNumCloud rende obbligatorio l'assegnazione di una politica di backup a una macchina virtuale prima del suo avvio. In caso contrario, si visualizzerà la seguente notifica:
 
-<img src="shivaVmPolitiquesBackupAssignMandatory.png" alt="Notifica di mancanza di assegnazione della politica di backup" />
+<img src={shivaVmPolitiquesBackupAssignMandatory} alt="Notifica di mancanza di assegnazione della politica di backup" />
 
 Fare clic sul riquadino "Politiche di backup" nel menu della tua macchina virtuale per visualizzare la/le politica(i) di backup assegnata(e).
 
 Per assegnare una nuova politica di backup alla macchina virtuale, fare clic sul pulsante "Aggiungi politica" e selezionare quella desiderata.
 
-<img src="shivaVmPolitiquesBackup.png" alt="Assegnazione di una politica di backup" />
+<img src={shivaVmPolitiquesBackup} alt="Assegnazione di una politica di backup" />
 
 ### Assegnare una politica di backup a un volume virtuale
 
@@ -399,7 +398,7 @@ Al contrario, è possibile escludere determinati volti da una o più politiche d
 
 Fai clic sulla barra degli atti del volume al quale desideri assegnare una politica di backup. Successivamente, fai clic su "Politiche" e seleziona la politica di backup desiderata.
 
-<img src={shivaVmDischiVirtualiPolitiche} />
+<img src={shivaVmDisquesVirtuelsPolitiques} />
 
 *Nota*: La politica da aggiungere deve trovarsi in una zona disponibilità diversa dalla macchina virtuale.
 
@@ -407,11 +406,11 @@ Fai clic sulla barra degli atti del volume al quale desideri assegnare una polit
 
 Nella scheda "Politiche di backup" della tua macchina virtuale, fai clic sul pulsante "Esegui" nella colonna "Azioni" della politica di backup che desideri eseguire.
 
-<img src="https://example.com/shivaVmPolitiquesBackupExecute.png" alt="Politiche di backup - Esegui" />
+<img src={shivaVmPolitiquesBackupExecute} alt="Politiche di backup - Esegui" />
 
 Puoi anche eseguire una politica di backup partendo dalla sezione "Backup" nel menu della tua macchina virtuale. Fai clic sul pulsante "Esegui il backup", quindi seleziona la backup che desideri eseguire nella lista a discesa.
 
-<img src="https://example.com/shivaVmPolitiquesBackupExecute2.png" alt="Backup - Esegui il backup" />
+<img src={shivaVmPolitiquesBackupExecute2} alt="Backup - Esegui il backup" />
 
 ### Rimuovere una politica di backup
 

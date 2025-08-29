@@ -1,8 +1,11 @@
 ---
-Guida di Partenza
+title: Guida di Partenza
 ---
-importa immagine oshiftRights da './images/oshift_rights.png'
-importa immagini oshiftMenu_001, oshiftMenu_002 e oshiftMenu_003 da './images/'
+
+import oshiftRights from './images/oshift_rights.png'
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
 
 ## Deployment of a Red Hat OpenShift environment within your tenant
 

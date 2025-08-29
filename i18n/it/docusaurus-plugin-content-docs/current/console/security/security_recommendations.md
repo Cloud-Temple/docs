@@ -1,5 +1,5 @@
 ---
-Titoli delle Buone Pratiche
+title: Titoli delle Buone Pratiche
 ---
 
 Ultima revisione: 22 maggio 2025

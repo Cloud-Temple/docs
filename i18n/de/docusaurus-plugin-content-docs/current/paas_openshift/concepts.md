@@ -1,7 +1,6 @@
 ---
-Concepts
+title: Concepts
 ---
-Importieren von oshift_offert aus './images/oshift_offert.png'
 
 ## Anschrift von Red Hat OpenShift
 
@@ -98,7 +97,7 @@ Die Produkte Red Hat OpenShift von Cloud Temple sind sowohl auf Zeitabhängigkei
 
 La plateforme est une Redhat Openshift 4, basée sur [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) et inclut [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
-<img src={oshiftOffert} />
+![Offre RedHat OpenShift](./images/oshift_offert.png)
 
 ## Data Backup Strategy for Your OpenShift PaaS by Cloud Temple
 

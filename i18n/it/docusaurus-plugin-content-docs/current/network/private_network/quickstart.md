@@ -1,8 +1,7 @@
 ---
-Guida di Partenza
+title: Guida di Partenza
 ---
 
-```
 import shivaNetwork_001 from './images/shiva_network_001.png'
 import shivaNetwork_002 from './images/shiva_network_002.png'
 import shivaNetwork_003 from './images/shiva_network_003.png'
@@ -21,7 +20,6 @@ import shivaNetwork_order_001 from './images/shiva_order_network_001.png'
 import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png'
 import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png'
 import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png'
-```
 
 ### Reti Privati Regionali
 
@@ -114,7 +112,7 @@ Viene successivamente creata una comanda, proprio come durante la creazione iniz
 
 Una rete può essere temporaneamente disattivata senza essere rimossa e poi riattivata.
 
-![shivaNetwork_010](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'height='270'%3E%3Ccircle%20cx='240'%20cy='135'%20r='135'%20fill='lightblue'%20/%3E%3C/svg%3E)
+<img src={shivaNetwork_010} />
 
 ### Condivisione di rete tra tenenti
 
@@ -140,6 +138,4 @@ Una volta condiviso il rete, sarà visibile nell'angolo "Reti condivise" dal sec
 
 Dopo aver propagati i network, l'angolo "Reti condivise" consente di visualizzare i network che altri tenitori della tua organizzazione condividono con te:
 
-```
 <img src={shivaNetwork_007} />
-```

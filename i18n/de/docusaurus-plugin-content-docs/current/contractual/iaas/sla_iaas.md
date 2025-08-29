@@ -1,5 +1,5 @@
 ---
-Titel des Dienstvereinbarungen für Cloud-Infrastruktur (SecNumCloud IaaS)
+title: Titel des Dienstvereinbarungen für Cloud-Infrastruktur (SecNumCloud IaaS)
 ---
 
 # CONVENTION DE SERVICES IaaS
@@ -173,18 +173,16 @@ Durch die Annahme dieser Dienstleistungsvereinbarung erteilt der AUFTRAGSMITTLER
 
 ## Dienstbeschreibung
 
-```markdown
-### Service Description
+### Dienstbeschreibung
 
-Ce service offre une plateforme d'hébergement cloud flexible et évolutive pour les applications logicielles. Il permet aux développeurs de stocker, de traiter et de gérer des données en temps réel, tout en garantissant la haute disponibilité et la sécurité des informations. Le service prend en charge divers langages de programmation et frameworks, facilitant ainsi le déploiement et l'exploitation de solutions logicielles complexes.
+Dieser Service bietet eine flexible und skalierbare Cloud-Hosting-Plattform für Softwareanwendungen. Er ermöglicht es Entwicklern, Daten in Echtzeit zu speichern, zu verarbeiten und zu verwalten, während gleichzeitig hohe Verfügbarkeit und Sicherheit der Informationen gewährleistet werden. Der Service unterstützt verschiedene Programmiersprachen und Frameworks und erleichtert so die Bereitstellung und den Betrieb komplexer Softwarelösungen.
 
-Les fonctionnalités clés incluent :
-- **Scalabilité** : Facilite la gestion automatique des ressources pour répondre à des charges de travail variées.
-- **Haute disponibilité** : Assure un niveau élevé de service avec des redondances et des mesures de sécurité robustes.
-- **Sécurité** : Intègre des outils avancés pour protéger les données contre les menaces externes.
-- **Interopérabilité** : Permet l'intégration facile avec d'autres services et systèmes en utilisant des protocoles standard.
-- **Gestion des coûts efficace** : Offre un modèle de tarification transparent basé sur l'utilisation, permettant aux clients de payer uniquement pour ce qu'ils consomment.
-```
+Die wichtigsten Funktionen umfassen:
+- **Skalierbarkeit**: Erleichtert die automatische Verwaltung von Ressourcen zur Bewältigung unterschiedlicher Arbeitslasten.
+- **Hohe Verfügbarkeit**: Gewährleistet ein hohes Serviceniveau mit Redundanzen und robusten Sicherheitsmaßnahmen.
+- **Sicherheit**: Integriert fortschrittliche Tools zum Schutz von Daten vor externen Bedrohungen.
+- **Interoperabilität**: Ermöglicht die einfache Integration mit anderen Services und Systemen unter Verwendung von Standardprotokollen.
+- **Effizientes Kostenmanagement**: Bietet ein transparentes, nutzungsbasiertes Preismodell, das es Kunden ermöglicht, nur für das zu zahlen, was sie verbrauchen.
 
 ## Shared Responsibility Model
 
@@ -698,16 +696,6 @@ Der COMMANDITAIRE, der allein für sein System verantwortlich ist, muss alles tu
 
 ### Verwaltung von Meldungen und Ausfällen
 
-Ich werde die Markdown-Struktur und das Formatierungselemente wie Hashtags, Listen, Absätze und Codeblöcke so weit wie möglich behalten. Für den Text innerhalb von Tabellen werde ich ebenfalls übersetzen. Ich vermeide Änderungen an HTML- oder Markdown-Strukturelementen außerhalb des Textes selbst, insbesondere an Elementen wie <a>, <div>, Hashtags (#), Listen (ul/ol) und Codeblöcken (durch triple backticks ```).
-
-Für Python-Code werde ich:
-- Namen von Variablen, Funktionen, Klassen und Syntax nicht übersetzen.
-- Inhalt innerhalb von Kommentaren (#) außer autonomen Kommentaren, die ich in Deutsch übersetze.
-- Die Indentation, Spacing und Python-Syntax genau so lassen wie sie sind.
-
-Für URLs, Beschreibungen in Klammern () und andere HTML-Elemente werde ich den Inhalt unverändert belassen. Ich werde keine neuen Zeilen, Rückspacht oder Formatierungseinstellungen hinzufügen oder ändern, außer für den Text selbst.
-
-Für HTML-Code, der nicht als Codeblock klassifiziert ist (d.h. kein triple backticks), werde ich ihn so lange wie möglich behalten. Ich werde keine Änderungen an dem HTML-Code selbst vornehmen.
 
 ---
 Incidents

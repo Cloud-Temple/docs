@@ -1,27 +1,24 @@
 ---
-Guide de démarrage
+title: Getting Started Guide
 ---
-
-![Shiva Network Images](
-  ./images/shiva_network_001.png,
-  ./images/shiva_network_002.png,
-  ./images/shiva_network_003.png,
-  ./images/shiva_network_004.png,
-  ./images/shiva_network_005.png,
-  ./images/shiva_network_006.png,
-  ./images/shiva_network_007.png,
-  ./images/shiva_network_008.png,
-  ./images/shiva_network_009.png,
-  ./images/shiva_network_010.png,
-  ./images/shiva_network_vn_share_enabled.png,
-  ./images/shiva_network_vn_shared.png,
-  ./images/shiva_network_vn_shared_tenant.png,
-  ./images/shiva_network_vn_shared_with_me.png,
-  ./images/shiva_order_network_001.png,
-  ./images/shiva_network_delete_propagation.png,
-  ./images/shiva_network_delete_propagation_order.png,
-  ./images/shiva_network_delete_propagation_order_validate.png
-)
+import shivaNetwork_001 from './images/shiva_network_001.png';
+import shivaNetwork_002 from './images/shiva_network_002.png';
+import shivaNetwork_003 from './images/shiva_network_003.png';
+import shivaNetwork_004 from './images/shiva_network_004.png';
+import shivaNetwork_005 from './images/shiva_network_005.png';
+import shivaNetwork_006 from './images/shiva_network_006.png';
+import shivaNetwork_007 from './images/shiva_network_007.png';
+import shivaNetwork_008 from './images/shiva_network_008.png';
+import shivaNetwork_009 from './images/shiva_network_009.png';
+import shivaNetwork_010 from './images/shiva_network_010.png';
+import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png';
+import shivaNetworkVnShared from './images/shiva_network_vn_shared.png';
+import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png';
+import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png';
+import shivaOrderNetwork_001 from './images/shiva_order_network_001.png';
+import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png';
+import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png';
+import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png';
 
 ### Private Regional Networks
 
@@ -54,7 +51,7 @@ Once all steps are completed, your networks are created, and a command is genera
 
 - Through the __*Commands*__ tab in the main menu
 
-![ShivaNetwork_order_001](https://example.com/shivaNetwork_order_001.png)
+<img src={shivaOrderNetwork_001} alt="Shiva Network Order 001" />
 
 - By clicking on informational labels that redirect to related commands
 
@@ -72,8 +69,8 @@ All possible actions on your networks are available in the __*Actions*__ menu of
 
 > Network removal is currently not available.
 
-![ShivaNetwork_005](https://example.com/shivaNetwork_005.png)
-![ShivaNetwork_006](https://example.com/shivaNetwork_006.png)
+<img src={shivaNetwork_005} alt="Shiva Network 005" />
+<img src={shivaNetwork_006} alt="Shiva Network 006" />
 
 #### Visualization of Network Propagation
 
@@ -87,8 +84,8 @@ Modifying a propagation within a tenant is done via the __Propager__ option:
 
 Next, select the target product (IaaS VMware, Open IaaS, Bare metal) for your network propagation, and ensure that the clusters are integrated into this propagation.
 
-![Propagation]({shivaNetwork_008})  
-![Propagation]({shivaNetwork_009})
+<img src={shivaNetwork_008} alt="Propagation" />
+<img src={shivaNetwork_009} alt="Propagation" />
 
 __Note:__ *Propagation modification is limited to 20 networks per action.*
 
@@ -98,12 +95,12 @@ The removal of a propagation within a tenant is carried out through the option _
 
 You then select which propagation you wish to remove:
 
-<img src="shivaNetworkDeletePropagation" />
+<img src={shivaNetworkDeletePropagation} alt="Shiva Network Delete Propagation" />
 
 A command is subsequently generated, similar to the initial creation with propagation.
 
-<img src="shivaNetworkDeletePropagationOrder" />
-<img src="shivaNetworkDeletePropagationOrderValidate" />
+<img src={shivaNetworkDeletePropagationOrder} alt="Shiva Network Delete Propagation Order" />
+<img src={shivaNetworkDeletePropagationOrderValidate} alt="Shiva Network Delete Propagation Order Validate" />
 
 #### Delayed Network Propagation
 
@@ -116,7 +113,7 @@ It is feasible to separate the creation and propagation of networks into two dis
 
 A network can be temporarily deactivated without being deleted, and then reactivated later.
 
-![Shiva Network](https://i.imgur.com/shivaNetwork_010.png)
+<img src={shivaNetwork_010} alt="Shiva Network" />
 
 ### Network Sharing Between Tenants
 
@@ -142,4 +139,4 @@ Once network sharing is enabled, it will be visible in the 'Shared Networks' tab
 
 After propagating the networks, the "Shared Networks" tab allows you to visualize the networks that other tenants within your organization share with you:
 
-![Visualisation des réseaux partagés](https://shiva-network_007.png)
+<img src={shivaNetwork_007} alt="Visualisation des réseaux partagés" />

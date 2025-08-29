@@ -1,27 +1,25 @@
 ---
-Leitfaden zum Einstieg
+title: Leitfaden zum Einstieg
 ---
 
-```
-import shivaNetwork_001 from './images/shiva_network_001.png'
-import shivaNetwork_002 from './images/shiva_network_002.png'
-import shivaNetwork_003 from './images/shiva_network_003.png'
-import shivaNetwork_004 from './images/shiva_network_004.png'
-import shivaNetwork_005 from './images/shiva_network_005.png'
-import shivaNetwork_006 from './images/shiva_network_006.png'
-import shivaNetwork_007 from './images/shiva_network_007.png'
-import shivaNetwork_008 from './images/shiva_network_008.png'
-import shivaNetwork_009 from './images/shiva_network_009.png'
-import shivaNetwork_010 from './images/shiva_network_010.png'
-import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
-import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
-import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
-import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
-import shivaNetwork_order_001 from './images/shiva_order_network_001.png'
-import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png'
-import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png'
-import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png'
-```
+import shivaNetwork_001 from './images/shiva_network_001.png';
+import shivaNetwork_002 from './images/shiva_network_002.png';
+import shivaNetwork_003 from './images/shiva_network_003.png';
+import shivaNetwork_004 from './images/shiva_network_004.png';
+import shivaNetwork_005 from './images/shiva_network_005.png';
+import shivaNetwork_006 from './images/shiva_network_006.png';
+import shivaNetwork_007 from './images/shiva_network_007.png';
+import shivaNetwork_008 from './images/shiva_network_008.png';
+import shivaNetwork_009 from './images/shiva_network_009.png';
+import shivaNetwork_010 from './images/shiva_network_010.png';
+import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png';
+import shivaNetworkVnShared from './images/shiva_network_vn_shared.png';
+import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png';
+import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png';
+import shivaNetwork_order_001 from './images/shiva_order_network_001.png';
+import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png';
+import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png';
+import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png';
 
 ### Private Networks within a Region
 

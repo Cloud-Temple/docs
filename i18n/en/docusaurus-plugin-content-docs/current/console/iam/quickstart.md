@@ -1,16 +1,15 @@
 ---
-Welcome Guide
+title: Welcome Guide
 ---
-
-![Shiva Tenant](./images/shiva_tenant.png)
-![Shiva Onboarding 003](./images/shiva_onboard_003.png)
-![Shiva Onboarding 004](./images/shiva_onboard_004.png)
-![Shiva Onboarding 001](./images/shiva_onboard_001.png)
-![Shiva Onboarding 005](./images/shiva_onboard_005.png)
-![Shiva Profile 006](./images/shiva_profil_006.png)
-![Shiva Profile 007](./images/shiva_profil_007.png)
-![IP Access Management 01](./images/shiva_ip_access_management_01.png)
-![IP Access Management 02](./images/shiva_ip_access_management_02.png)
+import shivaTenant from './images/shiva_tenant.png'
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
 ## Tenant
 
@@ -27,7 +26,7 @@ Creating a tenant involves submitting a service request that includes:
 
 The selection of a tenant is done from the main page of Shiva's console:
 
-![shivaTenant](shivaTenant)
+<img src={shivaTenant} />
 
 *__Note:__ The resources of a tenant are exclusive to that tenant and cannot be mixed with other tenants.*
 
@@ -89,7 +88,7 @@ The subscription management allows users to receive e-mails pertaining to activa
 
 It can be accessed within the user profile, under the "My Subscriptions" tab:
 
-![shivaProfil_007](https://i.imgur.com/shivaProfil_007.png)
+<img src={shivaProfil_007} />
 
 For instance, in case of an incident, specific e-mail notifications for this theme will be generated.
 
@@ -209,7 +208,7 @@ It is possible to reset your password by clicking on "Forgot Password?" from the
 
 Users marked in gray are those whose accounts have not been verified. Upon account creation, the user receives a verification email.
 
-![Shiva Onboarding](https://i.imgur.com/shivaOnboard_001)
+<img src={shivaOnboard_001} />
 
 Once verification is complete, the user can log into the console. The account remains gray until verification is finalized.
 

@@ -1,5 +1,5 @@
 ---
-Service-Specific Service Agreement - Dedicated Hardware
+Title: Service-Specific Service Agreement - Dedicated Hardware
 ---
 
 # SERVICE AGREEMENT FOR BARE METAL

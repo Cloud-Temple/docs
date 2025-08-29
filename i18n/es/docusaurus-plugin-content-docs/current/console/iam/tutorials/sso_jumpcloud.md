@@ -1,12 +1,13 @@
 ---
 title: Ejemplo de federicación de identidad con JumpCloud
-etiquetas:
+tags:
   - iam
   - tutoriales
   - enrollado
 ---
-importar imagen ssoJumpcloud001 desde './imágenes/sso_jumpcloud_001.png';
-importar imagen ssoJumpcloud002 desde './imágenes/sso_jumpcloud_002.png';
+
+import ssoJumpcloud001 from './images/sso_jumpcloud_001.png'
+import ssoJumpcloud002 from './images/sso_jumpcloud_002.png'
 
 Este tutoría te guía a través de la configuración de la autenticación única (SSO) entre JumpCloud y la consola Cloud Temple utilizando el protocolo OpenID Connect (OIDC).
 
@@ -29,7 +30,7 @@ Sigue estos pasos para configurar una nueva aplicación OIDC en tu consola de ad
     * Selecciona "Gestionar Single Sign-On (SSO)".
     * Elige "Configurar SSO con OIDC".
 
-    <img src="ssoJumpcloud001.png" alt="Configuración SSO OIDC JumpCloud">
+    <img src={ssoJumpcloud001} alt="Configuración SSO OIDC JumpCloud" />
 
 
 3. **Ingresar las URIs de redirección:**
@@ -54,7 +55,7 @@ Sigue estos pasos para configurar una nueva aplicación OIDC en tu consola de ad
         * `Email`
         * `Perfil` (puede incluir nombre, apellido, etc.)
 
-    <img src="ssoJumpcloud002.png" alt="Mapeo de atributos JumpCloud">
+    <img src={ssoJumpcloud002} alt="Mapeo de atributos JumpCloud" />
 
 
 7. **Asociar grupos:**

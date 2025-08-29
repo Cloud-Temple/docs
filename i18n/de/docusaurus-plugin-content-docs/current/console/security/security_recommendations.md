@@ -15,17 +15,6 @@ Sie finden hier praktische Empfehlungen für:
 - Sicherung der von unseren Cloud-Diensten bereitgestellten Ressourcen.
 
 
-### Note:
-
-Le texte a été traduit en allemand, respectant les règles spécifiées :
-
-1. Structure et formatage Markdown ont été préservés.
-2. Les éléments HTML ou Markdown structurels (comme <a>, <div>, les en-têtes #, les listes) n'ont pas été modifiés. Cependant, le contenu à l'intérieur des tableaux a été traduit.
-3. Les blocs de code Python ont été traduits sans modifier les noms de variables, fonctions, classes ou syntaxe Python, les chaînes, docstrings ni la mise en forme d'indentation, espace et syntaxe.
-4. Le contenu dans les parenthèses (), balises [] ou URLs a été conservé inchangé.
-5. Aucune nouvelle ligne, espace ou formatage n'a été ajoutée ou modifiée en dehors du texte original.
-6. Les éléments HTML bruts ont été laissés intacts.
-7. La syntaxe, noms de variables, appels de fonction et chaînes de caractères dans les langages de programmation ont été préservées.
 
 ## Zugriff auf die Konsole
 

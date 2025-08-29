@@ -1,22 +1,9 @@
 ---
-Leuchtetung: Einstiegsführer
+title: Einstiegsführer
 ---
-Importiere Bilder:
-- `S3ListBucket` von './images/S3_list_bucket.png'
-- `S3Accounts` von './images/S3_accounts.png'
-- `S3CreateAccount` von './images/S3_create_account.png'
-- `S3StorageKeys` von './images/S3_storage_keys.png'
-- `S3Keyregen` von './images/S3_keyregen.png'
-- `S3Create` von './images/S3_create.png'
-- `S3CreatePopup_001` von './images/S3_create_popup_001.png'
-- `S3AccountAssign` von './images/S3_account_assign.png'
-- `S3AccountAccess` von './images/S3_account_access.png'
-- `S3Files` von './images/S3_files.png'
-- `S3Params` von './images/S3_params.png'
-- `S3Lifecycle` von './images/S3_lifecycle.png'
-- `S3CreatePopup_002` von './images/S3_create_popup_002.png'
-- `S3Delete` von './images/S3_delete.png'
-Importiere `Tabs` und `TabItem` aus `@theme/Tabs`.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Cloud-Speicherservice, der auf dem Protokoll Amazon S3 von SecNumCloud basiert. Er ermöglicht es Ihnen, alle Arten von Daten zu speichern, einschließlich sensibler Daten, in Übereinstimmung mit den höchsten Sicherheitsanforderungen. Sie können Ihren Speicher direkt aus der Cloud Temple-Konsole verwalten und viele bestehende Bibliotheken oder CLI-Clients integrieren, um ein programmatisches Einsatz zu ermöglichen.
 
@@ -76,9 +63,9 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Vous pouvez accéder à l'ensemble de vos buckets via le menu '__Stockage Objet__' de la console Cloud Temple :
-    ![S3 List Buckets](https://link-to-image.com/S3ListBucket)
+    ![S3 List Buckets](./images/S3_list_bucket.png)
     Vous pouvez voir tous les comptes créés sur votre tenant et autorisé à accéder au service S3 via l'onglet '__Comptes de stockage__'.
-    ![S3 Accounts](https://link-to-image.com/S3Accounts)
+    ![S3 Accounts](./images/S3_accounts.png)
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
@@ -104,9 +91,9 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Lorsque vous cliquez sur le nom d'un bucket, vous accédez en premier à l'onglet '__Fichiers__' pour voir son contenu :
-    ![S3 Files](https://link-to-S3-Files-image)
+    ![S3 Files](./images/S3_files.png)
     Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
-    ![S3 Parameters](https://link-to-S3-Parameters-image)
+    ![S3 Parameters](./images/S3_params.png)
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
@@ -184,12 +171,12 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
 <Tabs>
   <TabItem value="Cloud-Console" label="Cloud-Console" default>
     Die Erstellung eines Speicherkontos auf Ihrem Tenant erfolgt, indem Sie auf den Button "__Neues Speicherkonto__" oben rechts im Bereich "__Speicherkonten__" klicken:
-    <img src={S3CreateAccount} />
+    ![S3 Create Account](./images/S3_create_account.png)
     Die Plattform zeigt dann die Zugriffs- und Versteckeklönullen Ihres Buckets an:
-    <img src={S3StorageKeys} />
+    ![S3 Storage Keys](./images/S3_storage_keys.png)
     **WICHTIG:** Die Zugriffs- und Versteckeklönullen werden nur einmal angezeigt. Nach dieser ersten Anzeige ist es unmöglich, die Versteckeklösung erneut abzurufen. Es ist daher entscheidend, diese Informationen sofort zu notieren; andernfalls müssen Sie eine neue Paarungsnummer generieren.
     Die Wiederherstellung der Klönullen erfolgt über die Optionen für die Klösungen und wählt dabei "Klösungen neu generieren".
-    <img src={S3Keyregen} />
+    ![S3 Key Regeneration](./images/S3_keyregen.png)
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
     Die Erstellung von Speicherkonten ist eine spezifische Operation der Plattform Cloud Temple und muss über die Konsole wie in der ersten Schicht durchgeführt werden, wie oben beschrieben.
@@ -203,12 +190,12 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
 <Tabs>
   <TabItem value="Cloud Temple Console" label="Cloud Temple Console" default>
     Die Erstellung eines neuen Buckets erfolgt, indem Sie auf den Button "__Neues Bucket__" oben rechts klicken:
-    ![S3 Create](https://link-to-S3-Create-image)
+    ![S3 Create](./images/S3_create.png)
     Anschließend öffnet sich eine Fenster und Sie müssen die folgenden Informationen eingeben:
     1. Die **Region** für die Erstellung Ihres Buckets,
     2. Der **Typ** des Buckets (leistungsstark oder Archiv),
     3. Den **Namen** Ihres Buckets (er muss einzigartig sein).
-    ![S3 Create Popup](https://link-to-S3-Create-Popup-image)
+    ![S3 Create Popup](./images/S3_create_popup_001.png)
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
     ```bash
@@ -228,7 +215,7 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
 <Tabs>
   <TabItem value="Konsole Cloud Temple" label="Konsole Cloud Temple" default>
     Die Löschung eines Buckets erfolgt durch die Auswahl der entsprechenden Aktionen für den Bucket und Wahl der Option __'Löschen__'.
-    <img src={S3Delete} />
+    ![S3 Delete](./images/S3_delete.png)
     **WICHTIG: Die Löschung ist endgültig und keine Rückkehr möglich. Daten können nicht mehr wiederhergestellt werden.**
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
@@ -249,7 +236,7 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
 <Tabs>
   <TabItem value="Cloud-Cloud-S3-Konsole" label="Cloud-Cloud-S3-Konsole" default>
     Die Zusammenführung von Konten mit S3-Buckets und die Konfiguration der Zugriffsbeschränkungen erfolgt im Tab "__Regeln__" des Buckets.
-    <img src={S3AccountAssign} />
+    ![S3 Account Assign](./images/S3_account_assign.png)
     Diese Benutzeroberfläche ermöglicht es Ihnen, dem Speicherkonto Zugang zum Bucket gemäß vier vordefinierten Rollen (Wartung, Schreiben und Lesen, Schreiben) zu gewähren.
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">

@@ -1,11 +1,10 @@
 ---
-Welcome Guide
+title: Welcome Guide
 ---
-
-![oshiftRights](./images/oshift_rights.png)
-![oshiftMenu_001](./images/oshift_menu_001.png)
-![oshiftMenu_002](./images/oshift_menu_002.png)
-![oshiftMenu_003](./images/oshift_menu_003.png)
+import oshiftRights from './images/oshift_rights.png'
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
 
 ## Deploying a Red Hat OpenShift Platform within Your Tenant
 
@@ -54,25 +53,25 @@ By following these steps, you can successfully deploy a Red Hat OpenShift platfo
 
 It is essential that the [Tenant](../console/iam/concepts.md#tenant) administrator grants management rights to the OpenShift platform to the OpenShift administrator user in order for them to access it:
 
-![Openshift Rights Assignment](oshiftRights)
+<img src={oshiftRights} />
 
 ### Accessing Openshift Environment within a Tenant
 
 Following the assignment of rights, the '__Openshift__' module becomes available in the Cloud Temple console menu:
 
-![Image 1](https://user-images.githubusercontent.com/58267049/183510322-12e0e0c8-b2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+<img src={oshiftMenu_001} />
 
 You will then see the Openshift clusters deployed within your tenant:
 
-![Image 2](https://user-images.githubusercontent.com/58267049/183510323-b2a9c0e0-f2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+<img src={oshiftMenu_002} />
 
 Click on the cluster you wish to manage, and you'll access the administration environment of that cluster:
 
-![Image 3](https://user-images.githubusercontent.com/58267049/183510324-c0e0d0e0-f2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+<img src={oshiftMenu_002} />
 
 Upon authentication, you can manage your cluster:
 
-![Image 4](https://user-images.githubusercontent.com/58267049/183510325-d2a9c0e0-f2a9-4f2d-9c6e-4e6e6d6e6e6d.png)
+<img src={oshiftMenu_003} />
 
 ### Environment Resources
 

@@ -1,5 +1,5 @@
 ---
-Condiciones Generales de Venta y Uso (CGVU)
+title: Condiciones Generales de Venta y Uso (CGVU)
 ---
 
 ## Frame

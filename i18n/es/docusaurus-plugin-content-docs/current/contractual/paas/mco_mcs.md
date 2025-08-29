@@ -1,6 +1,5 @@
 ---
-Política de Mantenimiento en Condiciones Operativas (MCO) y Mantenimiento en Condiciones de Seguridad (MCS) sobre el PaaS OpenShift SNC en Cloud Temple****
-
+title: Política de Mantenimiento en Condiciones Operativas (MCO) y Mantenimiento en Condiciones de Seguridad (MCS) sobre el PaaS OpenShift SNC en Cloud Temple
 ---
 
 ## Introducción

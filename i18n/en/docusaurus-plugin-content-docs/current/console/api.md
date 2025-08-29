@@ -1,16 +1,15 @@
 ---
-Documentation API
+title: Documentation API
 ---
-
-![ShivaProfil001](./images/shiva_profil_001.png)
-![ShivaProfil002](./images/shiva_profil_002.png)
-![ShivaProfil003](./images/shiva_profil_003.png)
-![ShivaProfil004](./images/shiva_profil_004.png)
-![ShivaProfil005](./images/shiva_profil_005.png)
-![ShivaApi001](./images/shiva_api_001.png)
-![ShivaApi002](./images/shiva_api_002.png)
-![ShivaApi003](./images/shiva_api_003.png)
-![ShivaApi004](./images/shiva_api_004.png)
+import ShivaProfil001 from './images/shiva_profil_001.png';
+import ShivaProfil002 from './images/shiva_profil_002.png';
+import ShivaProfil003 from './images/shiva_profil_003.png';
+import ShivaProfil004 from './images/shiva_profil_004.png';
+import ShivaProfil005 from './images/shiva_profil_005.png';
+import ShivaApi001 from './images/shiva_api_001.png';
+import ShivaApi002 from './images/shiva_api_002.png';
+import ShivaApi003 from './images/shiva_api_003.png';
+import ShivaApi004 from './images/shiva_api_004.png';
 
 ## API Keys
 
@@ -20,15 +19,15 @@ Creating these tokens can be done from your account. You can generate multiple k
 
 To create an API key, simply:
 
-<img src="ShivaProfil001" />
+<img src={ShivaProfil001} alt="Shiva Profil 001" />
 
 From the profile menu, select __'Personal Access Token'__.
 
-<img src="ShivaProfil003" />
+<img src={ShivaProfil003} alt="Shiva Profil 003" />
 
 You'll then see a list of all API keys created for this user in this tenant. Click on __'New Personal Access Token'__.
 
-<img src="ShivaProfil002" />
+<img src={ShivaProfil002} alt="Shiva Profil 002" />
 
 You will need to:
 
@@ -40,13 +39,13 @@ The details of your token are then displayed. **Note**: You cannot view these la
 
 If you miss noting these details, you'll need to destroy and regenerate the token.
 
-<img src="ShivaProfil004" />
+<img src={ShivaProfil004} alt="Shiva Profil 004" />
 
 For security reasons, it's recommended to create multiple tokens with specific purposes (one for each application or business process) rather than using one token with all permissions.
 
 You will then see the newly created token and its upcoming expiration date.
 
-<img src="ShivaProfil005" />
+<img src={ShivaProfil005} alt="Shiva Profil 005" />
 
 ## Accessing the Cloud Temple API Portal
 
@@ -216,7 +215,7 @@ Python libraries like __Backoff__ ([https://pypi.org/project/backoff/]) and __Te
 
 Details regarding the evolution of our API endpoints can be found in the release notes:
 
-<img src="ShivaApi004" />
+<img src={ShivaApi004} alt="Shiva API 004" />
 
 You will find a list of endpoints that are deprecated activity by activity.
 

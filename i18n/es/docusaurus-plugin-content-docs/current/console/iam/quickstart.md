@@ -1,15 +1,16 @@
 ---
-guía de inicio
+title: guía de inicio
 ---
-importar imagen de ShivaTenant: './images/shiva_tenant.png'
-importar imagen de Onboarding_003: './images/shiva_onboard_003.png'
-importar imagen de Onboarding_004: './images/shiva_onboard_004.png'
-importar imagen de Onboarding_001: './images/shiva_onboard_001.png'
-importar imagen de Onboarding_005: './images/shiva_onboard_005.png'
-importar imagen de Perfil: './images/shiva_profil_006.png'
-importar imagen de Perfil 007: './images/shiva_profil_007.png'
-importar imagen de Gestión de Acceso IP: './images/shiva_ip_access_management_01.png'
-importar imagen de Gestión de Acceso IP 02: './images/shiva_ip_access_management_02.png'
+
+import shivaTenant from './images/shiva_tenant.png'
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
 ## Propietario
 
@@ -56,28 +57,19 @@ El usuario recibirá un correo de verificación.
 Una vez completada la verificación, el usuario podrá iniciar sesión en la consola.
 
 
-### Nota:
-- El texto dentro del código fuente (blocs de code) no se traduce.
-- Los elementos HTML o Markdown estructurales (como <a>, <div>, los encabezados #, las listas, los bloques de código) y el contenido dentro de los blocs de código (incluyendo los enunciados de tablero) se mantienen sin modificación.
-- Los nombres de variables, funciones, clases o cualquier sintaxis Python no se traducen, ni las cadenas dentro del código, ni los docstrings. Solo se traduce el contenido de los comentarios independientes (#).
-- El texto dentro de los pilas [], paréntesis () o en los URLs permanece sin cambios.
-- No se añaden ni se modifican líneas, espacios o formato fuera del texto original.
-- Los elementos HTML brutos se mantienen intactos.
-
 ### Asignación de permisos a un usuario
 
-El gestor de permisos se realiza desde la página del usuario.
+La gestión de permisos se realiza desde la página del usuario.
 
 <img src={shivaOnboard_003} />
 
-Por defecto, un usuario no tiene permisos. Por lo tanto, es necesario que el administrador que invitó al usuario le otorgue los permisos necesarios para su actividad. Basta con hacer clic en el menú __'Acciones'__ del usuario y seleccionar la opción __'Modificar'.
+Por defecto, un usuario no tiene permisos. Por lo tanto, es necesario que el administrador que invitó al usuario le otorgue los permisos necesarios para su actividad. Basta con hacer clic en el menú __'Acciones'__ del usuario y seleccionar la opción __'Modificar'__.
 
 El menú de activación de permisos aparece entonces:
 
 <img src={shivaOnboard_005} />
 
-La configuración de los permisos se realiza para cada [Teniente](concepts.md#tenant) del
-[Organización](concepts.md#organisations).
+La configuración de los permisos se realiza para cada [Teniente](concepts.md#tenant) de la [Organización](concepts.md#organisations).
 
 La lista de permisos y su definición está disponible [aquí](#permissions).
 
@@ -103,19 +95,7 @@ La lista de las temáticas disponibles puede variar y mejorarse gradualmente par
 
 ### Permisos
 
-La traducción del texto "Permissions" en español sería:
-
-**Permisos**
-
-### Quels sont les droits d'accès disponibles pour les comptes utilisateur de la console Shiva ?
-
-Voici la liste des [droits d'accès disponibles](#permissions).
-
-### How to grant permissions?
-
-You can find the procedure for assigning permissions [here](#permissions)
-
-Para agregar una permiso, necesita tener la permiso __'iam_write'__ y la permiso específico que desea agregar.
+Para agregar un permiso, necesita tener el permiso __'iam_write'__ y el permiso específico que desea agregar.
 
 ### ¿Cómo agregar a un usuario?
 
@@ -125,14 +105,14 @@ Para agregar una permiso, necesita tener la permiso __'iam_write'__ y la permiso
 
 Ve a la página de usuarios y haz clic en el botón __'Exportar CSV'__.
 
-### How to delete a user?
+### ¿Cómo eliminar un usuario?
 
-In the "Administration" menu located on the top left bar, under the "User" submenu, click on the "Action" icon of the target user and select "Delete".
+En el menú "Administración" ubicado en la barra superior izquierda, bajo el submenú "Usuario", haga clic en el icono "Acción" del usuario objetivo y seleccione "Eliminar".
 
-*Note:*
+*Nota:*
 
-- *To add a user, you must have the __'iam_write'__ permission.*
-- *If it's a federated user, make sure they've been removed from their identity repository as well.*
+- *Para agregar un usuario, debe tener el permiso __'iam_write'__.*
+- *Si es un usuario federado, asegúrese de que también haya sido eliminado de su repositorio de identidad.*
 
 ### Cómo restablecer el contraseña
 

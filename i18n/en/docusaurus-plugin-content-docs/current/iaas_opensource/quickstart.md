@@ -1,20 +1,19 @@
 ---
-Guide de démarrage
--------------------
-
-![Open IaaS Virtual Machines List](./images/open_iaas_virtual_machines_list.png)
-![Actions sur les listes de machines virtuelles IaaS](./images/open_iaas_virtual_machines_list_actions.png)
-![Aperçu de la machine virtuelle IaaS](./images/open_iaas_virtual_machine_overview.png)
-![Actions sur les machines virtuelles IaaS](./images/open_iaas_virtual_machine_actions.png)
-![Informations sur la machine virtuelle IaaS](./images/open_iaas_virtual_machine_overview_informations.png)
-![Aperçu avancé de la machine virtuelle IaaS](./images/open_iaas_virtual_machine_advanced_overview.png)
-![Menu de réplication IaaS](./images/open_iaas_replication_menu.png)
-![Tableau des politiques de réplication IaaS](./images/open_iaas_replication_policies_view.png)
-![Formulaire de la politique de réplication 1](./images/open_iaas_replication_policy_form1.png)
-![Formulaire de la politique de réplication 2](./images/open_iaas_replication_policy_form2.png)
-![Section de la reproduction des VM IaaS](./images/open_iaas_vm_replication_section.png)
-![Tableau des politiques de réplication](./images/open_iaas_replication_policies_table.png)
-![Tableau des réplicas](./images/open_iaas_replication_replicas_table.png)
+title: Getting Started Guide
+---
+import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
+import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
+import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
+import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
+import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
+import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
+import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
+import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
+import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_policy_form2.png'
+import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
+import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
+import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
 
 ### Calculation
 
@@ -28,7 +27,7 @@ The management interface for your virtual machines is accessible in the Shiva co
 
 In the 'Virtual Machines' section, you can access a list of your virtual machines hosted on your trusted Cloud provider.
 
-![OpenIaasVirtualMachinesList](open_iaas_virtual_machines_list)
+<img src={openIaasVirtualMachinesList} />
 
 For each virtual machine, you will find:
 
@@ -110,7 +109,7 @@ The choice of replication method depends on factors like the required level of d
 
 The replication management interface is accessible via the Shiva console, under the 'OpenIaaS' menu > 'Replication' located in the top left navigation bar of the screen.
 
-![openIaasReplicationMenu](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200'%20preserveAspectRatio='none'%3E%3Ccircle%20cx='50'%20cy='50'%20r='40'%20fill='white'%20/%3E%3C/svg%3E)
+<img src={openIaasReplicationMenu} />
 
 ### Creation of a replication policy
 
@@ -125,7 +124,7 @@ To create a new policy, click on the 'Add Policy' button. A form opens with the 
 - **Name**: Provide an explicit name for your replication policy
 - **Frequency**: Select the replication interval (1-59 minutes or 1-24 hours)
 
-![Open IaaS Replication Policy Form 1](https://i.imgur.com/example_image.png)
+<img src={openIaasReplicationPolicyForm1} />
 
 ### Step 2: Storage Selection
 
@@ -133,7 +132,7 @@ To create a new policy, click on the 'Add Policy' button. A form opens with the 
 - **Pool**: Choose the resource pool
 - **Block Storage**: Select the target storage
 
-![openIaasReplicationPolicyForm2](openIaasReplicationPolicyForm2)
+<img src={openIaasReplicationPolicyForm2} />
 
 #### Step 3: Verification
 
@@ -145,7 +144,7 @@ To safeguard a virtual machine, navigate to the details of your VM from the list
 
 In the detailed view of the VM, you'll find a section labeled __'Replication'__:
 
-<img src="openIaasVmReplicationSection" />
+<img src={openIaasVmReplicationSection} />
 
 Steps to associate a VM with replication:
 
@@ -197,7 +196,7 @@ By carefully managing policies and replication, organizations can ensure their c
 
 The 'Policies' tab allows you to view all your replication policies:
 
-![openIaasReplicationPoliciesTable](data:image/svg+xml;base64,PHN2ZyB3aSwbGUxOS41MDA0IE0geD0iMTAwJyOgICIgT2ZmZ2huIiB4bWxucz0iaW50Ij4KICA8Y2lyY2xlIHhtbG5cIExvYWFsIEFjbGI+DQo8L3N2Zz4K)
+<img src={openIaasReplicationPoliciesTable} />
 
 For each policy, you can access the following information:
 
@@ -217,9 +216,7 @@ Available actions include:
 
 The "Replicas" tab displays all virtual machines currently in replication:
 
-```
 <img src={openIaasReplicationReplicasTable} />
-```
 
 You can view:
 

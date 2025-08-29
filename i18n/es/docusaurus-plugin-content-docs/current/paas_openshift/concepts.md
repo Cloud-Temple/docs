@@ -1,5 +1,7 @@
 ---
-conceptos
+title: conceptos
+---
+
 import oshiftOferta from './images/oshift_oferta.png'
 
 ## Presentación de RedHat OpenShift
@@ -103,7 +105,7 @@ Red Hat OpenShift Cloud Temple products are available for usage-based or 12-mont
 
 La plataforma se basa en Redhat Openshift 4, integrado con [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) y cuenta con [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
-<img src={oshiftOffert} />
+<img src={oshiftOferta} />
 
 ## Data Protection Strategy for Your OpenShift PaaS by Cloud Temple
 

@@ -1,5 +1,5 @@
 ---
-Título del Acuerdo de Servicio de Cloud Seguridad Numérica PaaS
+title: Título del Acuerdo de Servicio de Cloud Seguridad Numérica PaaS
 ---
 
 ## Frame

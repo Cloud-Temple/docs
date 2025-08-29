@@ -1,5 +1,5 @@
 ---
-Título del Acuerdo de Servicio Específico - Hardware Desnudo
+title: Título del Acuerdo de Servicio Específico - Hardware Desnudo
 ---
 
 # CONVENIO DE SERVICIOS Bare Metal

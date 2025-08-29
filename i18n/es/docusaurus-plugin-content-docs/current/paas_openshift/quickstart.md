@@ -1,10 +1,11 @@
 ---
-Guía de inicio
+title: Guía de inicio
 ---
-importar imagen de derechos de oshiftRights desde './images/oshift_rights.png'
-importar imagen de menú 001 de oshiftMenu_001 desde './images/oshift_menu_001.png'
-importar imagen de menú 002 de oshiftMenu_002 desde './images/oshift_menu_002.png'
-importar imagen de menú 003 de oshiftMenu_003 desde './images/oshift_menu_003.png'
+
+import oshiftRights from './images/oshift_rights.png'
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
 
 ## Desplegar una plataforma Red Hat OpenShift en tu tenencia
 

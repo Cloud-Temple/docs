@@ -1,5 +1,5 @@
 ---
-conceptos
+title: conceptos
 ---
 
 ## Allocation de una dirección IP pública Provider Aggregated (PA)

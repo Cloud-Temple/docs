@@ -1,5 +1,5 @@
 ---
-Tabelle der Verantwortlichkeit - Standard OpenShift
+title: Tabelle der Verantwortlichkeit - Standard OpenShift
 ---
 
 Hier ist das RACI-Modell, das die Aufgabenverteilung zwischen dem Kunden und Cloud Temple für die Nutzung der Angebot **Standard OpenShift** definiert.

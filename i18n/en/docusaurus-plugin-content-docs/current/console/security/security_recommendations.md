@@ -1,5 +1,5 @@
 ---
-Best Practices
+title: Best Practices
 ---
 
 *Last Updated: 22/05/2025*

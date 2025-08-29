@@ -1,10 +1,11 @@
 ---
-Leitfaden zum Einstieg
+title: Leitfaden zum Einstieg
 ---
-Importieren von `oshiftRights` aus `'./images/oshift_rights.png'`
-Importieren von `oshiftMenu_001` aus `'./images/oshift_menu_001.png'`
-Importieren von `oshiftMenu_002` aus `'./images/oshift_menu_002.png'`
-Importieren von `oshiftMenu_003` aus `'./images/oshift_menu_003.png'`
+
+import oshiftRights from './images/oshift_rights.png';
+import oshiftMenu_001 from './images/oshift_menu_001.png';
+import oshiftMenu_002 from './images/oshift_menu_002.png';
+import oshiftMenu_003 from './images/oshift_menu_003.png';
 
 ## Deployment of a Red Hat OpenShift Environment within Your Tenant
 
