@@ -1,22 +1,23 @@
 ---
-guía de inicio
+title: guía de inicio
 ---
-importar imagen de lista de cuentas S3: './images/S3_list_bucket.png'
-importar imagen de cuentas S3: './images/S3_accounts.png'
-importar imagen de creación de cuenta S3: './images/S3_create_account.png'
-importar imagen de claves de almacenamiento S3: './images/S3_storage_keys.png'
-importar imagen de regeneración de clave S3: './images/S3_keyregen.png'
-importar imagen de creación de S3: './images/S3_create.png'
-importar imagen de popup de creación S3: './images/S3_create_popup_001.png'
-importar imagen de asignación de cuenta S3: './images/S3_account_assign.png'
-importar imagen de acceso a la cuenta S3: './images/S3_account_access.png'
-importar imagen de archivos S3: './images/S3_files.png'
-importar imagen de parámetros S3: './images/S3_params.png'
-importar imagen de vida útil de objetos S3: './images/S3_lifecycle.png'
-importar imagen de popup de creación S3 (versión 002): './images/S3_create_popup_002.png'
-importar imagen de eliminación de objetos S3: './images/S3_delete.png'
-importar TabItem de @theme: '@theme/TabItem'
-importar TabItem de @theme: '@theme/TabItem'
+
+import S3ListBucket from './images/S3_list_bucket.png'
+import S3Accounts from './images/S3_accounts.png'
+import S3CreateAccount from './images/S3_create_account.png'
+import S3StorageKeys from './images/S3_storage_keys.png'
+import S3Keyregen from './images/S3_keyregen.png'
+import S3Create from './images/S3_create.png'
+import S3CreatePopup_001 from './images/S3_create_popup_001.png'
+import S3AccountAssign from './images/S3_account_assign.png'
+import S3AccountAccess from './images/S3_account_access.png'
+import S3Files from './images/S3_files.png'
+import S3Params from './images/S3_params.png'
+import S3Lifecycle from './images/S3_lifecycle.png'
+import S3CreatePopup_002 from './images/S3_create_popup_002.png'
+import S3Delete from './images/S3_delete.png'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 El Templo del Almacenamiento Objeto Cloud es un servicio de almacenamiento de objetos altamente seguro y calificado SecNumCloud, basado en el protocolo Amazon S3. Te permite almacenar todos los tipos de datos, incluidos los más sensibles, cumpliendo con las más altas exigencias de seguridad. Puedes gestionar tu almacenamiento directamente desde la consola Cloud Temple y integrar muchas bibliotecas existentes o clientes CLI para el uso programático.
 

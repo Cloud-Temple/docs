@@ -1,15 +1,16 @@
 ---
-Leitmotiv
+title: Leitmotiv
 ---
-import shivaTenant.png
-import shivaOnboard_003.png
-import shivaOnboard_004.png
-import shivaOnboard_001.png
-import shivaOnboard_005.png
-import shivaProfil_006.png
-import shivaProfil_007.png
-import shivaIpAccessManagement_01.png
-import shivaIpAccessManagement_02.png
+
+import shivaTenant from './images/shiva_tenant.png'
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
 ## Eigentum
 
@@ -146,7 +147,7 @@ Es ist möglich, Ihr Passwort wiederherzustellen, indem Sie auf die Seite der An
 
 Die Grautöne stellen Benutzer dar, die ihr Konto noch nicht validiert haben. Bei der Erstellung des Kontos erhielten die Benutzer eine Bestätigungs-E-Mail.
 
-<img src="shivaOnboard_001" />
+<img src={shivaOnboard_001} />
 
 Nach Abschluss der Validierung können die Benutzer sich auf die Konsole einloggen.
 

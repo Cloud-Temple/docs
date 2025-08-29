@@ -1,3 +1,7 @@
+---
+title: Annexo Contratto - Dati a Carattere Personale (DPA)
+---
+
 # Annexo Contratto - Dati a Carattere Personale (DPA)
 
 **Riferimento : Annesso - Dati a Carattere Personale

@@ -1,5 +1,5 @@
 ---
-Título del Acuerdo de Servicio de Cloud Segura (OpenIaaS)
+title: Título del Acuerdo de Servicio de Cloud Segura (OpenIaaS)
 ---
 
 # CONVENT DE SERVICIOS OpenIaaS

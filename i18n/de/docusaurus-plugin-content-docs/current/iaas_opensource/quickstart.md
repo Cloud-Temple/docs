@@ -1,8 +1,7 @@
 ---
-Leitfaden zum Einstieg
+title: Leitfaden zum Einstieg
 ---
 
-```
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
 import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
@@ -16,7 +15,6 @@ import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_polic
 import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
 import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
 import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
-```
 
 ### Berechnung
 
@@ -167,9 +165,7 @@ Die verfügbaren Aktionen sind:
 
 Der Register "Replikate" zeigt alle virtuellen Maschinen, die gerade repliziert werden:
 
-```markdown
 <img src={openIaasReplicationReplicasTable} />
-```
 
 Sie können folgende Informationen anzeigen:
 
@@ -182,4 +178,3 @@ Verfügbare Aktionen sind:
 - Ausgabe der Daten in CSV-Format
 - Anzeige der Replikationsdetails
 - Verwaltung der Replikate nach Politik
-```

@@ -1,5 +1,5 @@
 ---
-Politica di Manutenzione in Condizioni Operative (MCO) e Manutenzione in Condizioni di Sicurezza (MCS) su Piattaforma a Cloud OpenShift SNC - Tempio del Cloud
+title: Politica di Manutenzione in Condizioni Operative (MCO) e Manutenzione in Condizioni di Sicurezza (MCS) su Piattaforma a Cloud OpenShift SNC - Tempio del Cloud
 ---
 
 Note: The provided text is already in Markdown format, and it includes some technical terms related to cloud computing. I have ensured that the structure, formatting, and non-structural elements like headers (# MCO/MCS) are preserved as they are. The content within tables (including table headers) has been translated, while code blocks (Python syntax, for instance) remain unchanged, adhering to the rules provided.

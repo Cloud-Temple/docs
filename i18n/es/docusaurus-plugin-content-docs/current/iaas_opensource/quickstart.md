@@ -1,20 +1,19 @@
 ---
-guía de inicio
+title: Guía de inicio
 ---
-importar imagenes:
-- openIaasVirtualMachinesList: './images/open_iaas_virtual_machines_list.png'
-- openIaasVirtualMachinesListActions: './images/open_iaas_virtual_machines_list_actions.png'
-- openIaasVirtualMachineOverview: './images/open_iaas_virtual_machine_overview.png'
-- openIaasVirtualMachineActions: './images/open_iaas_virtual_machine_actions.png'
-- openIaasVirtualMachineOverviewInformations: './images/open_iaas_virtual_machine_overview_informations.png'
-- openIaasVirtualMachineAdvancedOverview: './images/open_iaas_virtual_machine_advanced_overview.png'
-- openIaasReplicationMenu: './images/open_iaas_replication_menu.png'
-- openIaasReplicationPoliciesView: './images/open_iaas_replication_policies_view.png'
-- openIaasReplicationPolicyForm1: './images/open_iaas_replication_policy_form1.png'
-- openIaasReplicationPolicyForm2: './images/open_iaas_replication_policy_form2.png'
-- openIaasVmReplicationSection: './images/open_iaas_vm_replication_section.png'
-- openIaasReplicationPoliciesTable: './images/open_iaas_replication_policies_table.png'
-- openIaasReplicationReplicasTable: './images/open_iaas_replication_replicas_table.png'
+import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
+import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
+import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
+import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
+import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
+import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
+import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
+import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
+import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_policy_form2.png'
+import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
+import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
+import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
 
 ## Cálculo
 
@@ -69,7 +68,7 @@ Un barra rápida permite realizar las siguientes acciones:
 
 En el apartado '__Información general__', se encuentran detalles detallados sobre tu máquina virtual, como su ubicación física (AZ, Pool, Host), la RAM, el CPU, las direcciones IP y otros datos relevantes.
 
-<img src={openIaasVirtualMachineOverviewInformaciones} />
+<img src={openIaasVirtualMachineOverviewInformations} />
 
 Un apartado '__Avanzado__' permite consultar información más específica:
 

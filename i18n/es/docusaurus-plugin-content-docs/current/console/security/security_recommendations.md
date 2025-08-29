@@ -1,9 +1,8 @@
 ---
-Títulos de buenas prácticas
+title: Títulos de buenas prácticas
 ---
 
 Última actualización: 22/05/2025
----
 
 ## Recomendaciones para el uso seguro de los servicios Cloud Temple
 

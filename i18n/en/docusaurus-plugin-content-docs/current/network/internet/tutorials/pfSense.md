@@ -68,27 +68,27 @@ Once both VMs are properly installed, the next step involves accessing the firew
 
 - Access the firewall's web interface from the management VM:
 
-![pfSense Web UI](pfSenseWebui)
+<img src={pfSenseWebui} alt="pfSense Web UI" />
 - Default login credentials:
     - Username: *admin*
     - Password: *pfsense* (Remember to change this default password)
 
-![pfSense Homepage](pfSenseHomePage)
+<img src={pfSenseHomePage} alt="pfSense Homepage" />
 
 ### Firewall Configuration
 This step involves configuring the BGP neighbors of the firewall.
 
 - Initially, ensure that BGP traffic is allowed over TCP port 179 in __'Firewall > Rules'__:
 
-![pfSenseBgpRule](https://i.imgur.com/example.png)
+<img src={pfSenseBgpRule} alt="pfSense BGP Rule" />
 
 - Proceed to configure your BGP session by navigating to __'services > FRR BGP'__:
 
-![pfSenseFrrPackage](https://i.imgur.com/example.png)
+<img src={pfSenseFrrPackage} alt="pfSense FRR Package" />
 
 - Check the two initial checkboxes and input your local AS number along with the times received from the CDS.
 
-![pfSenseGeneralConf](https://i.imgur.com/example.png)
+<img src={pfSenseGeneralConf} alt="pfSense General Configuration" />
 
 ### Configuring BGP Neighbors
 
@@ -97,23 +97,23 @@ In the Neighbors section, click on "+Add" to start creating your BGP neighbors.
 - For each neighbor:
   - Enter its IP address in the "General Options > Name/address" field.
   
-  ![pfSenseNeighborConf](https://i.imgur.com/example_image.png)
+  <img src={pfSenseNeighborConf} alt="pfSense Neighbor Configuration" />
 
 - Fill in the remote AS (matching the cloud temple's AS number) in basic options as follows:
 
-  ![bgpBasicOptions](https://i.imgur.com/example_image2.png)
+  <img src={bgpBasicOptions} alt="BGP Basic Options" />
 
 - In Advanced options, configure it like this:
 
-  ![ebgpConf](https://i.imgur.com/example_image3.png)
+  <img src={ebgpConf} alt="eBGP Configuration" />
 
 - Check the box that defines your neighbor type. For our case, it's a "route server" neighbor:
 
-  ![routeServerNeighbor](https://i.imgur.com/example_image4.png)
+  <img src={routeServerNeighbor} alt="Route Server Neighbor" />
 
 - Don't forget to save your changes by clicking on "save":
 
-  ![neighborsOverview](https://i.imgur.com/example_image5.png)
+  <img src={neighborsOverview} alt="Neighbors Overview" />
 
 ### Verification of BGP Session Status with Neighbors
 

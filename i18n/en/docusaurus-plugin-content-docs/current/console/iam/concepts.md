@@ -1,24 +1,21 @@
 ---
-Concepts
+title: Concepts
 ---
-
-Import the following images:
-
-- `shivaOnboard_003.png`
-- `shivaOnboard_004.png`
-- `shivaOnboard_001.png`
-- `shivaOnboard_005.png`
-- `shivaProfil_012.png`
-- `shivaProfil_014.png`
-- `shivaProfil_015.png`
-- `shivaProfil_016.png`
-- `shivaProfil_013.png`
-- `shivaProfil_010.png`
-- `shivaProfil_009.png`
-- `shivaProfil_011.png`
-- `shivaProfil_006.png`
-- `shivaProfil_007.png`
-- `shivaTenantRessources_01.png`
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_012 from './images/shiva_profil_012.png'
+import shivaProfil_014 from './images/shiva_profil_014.png'
+import shivaProfil_015 from './images/shiva_profil_015.png'
+import shivaProfil_016 from './images/shiva_profil_016.png'
+import shivaProfil_013 from './images/shiva_profil_013.png'
+import shivaProfil_010 from './images/shiva_profil_010.png'
+import shivaProfil_009 from './images/shiva_profil_009.png'
+import shivaProfil_011 from './images/shiva_profil_011.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Users
 
@@ -52,13 +49,13 @@ Note: The provided images (shivaOnboard_003, shivaOnboard_004, and shivaOnboard_
 
 User permission management is handled from the user profile page.
 
-![User Permission Management](shivaOnboard_003)
+<img src={shivaOnboard_003} />
 
 By default, a user has no permissions. Therefore, it's necessary for the administrator who invited them to grant the required permissions based on their role. This can be done by clicking on the "Actions" menu of the user and selecting "Modify."
 
 The permission assignment menu appears then:
 
-![Permission Assignment](shivaOnboard_005)
+<img src={shivaOnboard_005} />
 
 User permission configuration needs to be set for each [Tenant](#tenant) within an [Organization](#organizations).
 
@@ -125,8 +122,8 @@ Note: You cannot delete yourself and you cannot delete a user with the role 'Own
 
 A user's logout should be initiated from their **Profile**, located at the top right corner of the screen, and selecting **Log Out**.
 
-![shivaProfil_009](https://user-images.githubusercontent.com/12345678/12345678-1234-1234)
-![shivaProfil_011](https://user-images.githubusercontent.com/12345678/12345679-2345-4567)
+<img src={shivaProfil_009} />
+<img src={shivaProfil_011} />
 
 A logout is automatically executed when the session token (JWT Token) expires.
 
@@ -144,7 +141,7 @@ The thematic subscription management allows users to receive e-mails pertaining 
 
 It can be accessed within the user profile, under the "My Subscriptions" tab:
 
-![shivaProfil_007](https://i.imgur.com/shivaProfil_007.png)
+<img src={shivaProfil_007} />
 
 For instance, in case of an incident, specific e-mail notifications for this theme will be generated.
 

@@ -1,53 +1,51 @@
 ---
-Guía de inicio
+title: Guía de inicio
 ---
-
-Importar imágenes:
-- shivaVmHome desde './images/shiva_vm_home.png'
-- shivaVmHomeDesc desde './images/shiva_vm_home_desc.png'
-- shivaVmHomeAlarme desde './images/shiva_vm_home_alarme.png'
-- shivaVmActions desde './images/shiva_vm_actions.png'
-- shivaVmInformaciones desde './images/shiva_vm_informations.png'
-- shivaVmBandeauRapide desde './images/shiva_vm_bandeau_rapide.png'
-- shivaVmVueRapide desde './images/shiva_vm_vue_rapide.png'
-- shivaVmInfosGenerales desde './images/shiva_vm_infos_generales.png'
-- shivaVmInfosAvancees desde './images/shiva_vm_infos_avancees.png'
-- shivaEditCpuRam desde './images/shiva_edit_cpu_ram.png'
-- shivaVmDiskctrl_001 desde './images/shiva_vm_diskctrl_001.png'
-- shivaCpool_010 desde './images/shiva_cpool_010.png'
-- shivaCpool_011 desde './images/shiva_cpool_011.png'
-- shivaCatalogs desde './images/shiva_catalogs.png'
-- shivaCatalogs_002 desde './images/shiva_catalogs_002.png'
-- shivaVmTemplate_002 desde './images/shiva_vm_template_002.png'
-- shivaVmTemplate_001 desde './images/shiva_vm_template_001.png'
-- shivaVmAdv_001 desde './images/shiva_vm_adv_001.png'
-- shivaVmAdv_002 desde './images/shiva_vm_adv_002.png'
-- shivaVmAdv_003 desde './images/shiva_vm_adv_003.png'
-- shivaVmAdv_004 desde './images/shiva_vm_adv_004.png'
-- shivaCpool_001 desde './images/shiva_cpool_001.png'
-- shivaEsx_001 desde './images/shiva_esx_001.png'
-- shivaEsx_002 desde './images/shiva_esx_002.png'
-- shivaCpool_003 desde './images/shiva_cpool_003.png'
-- shivaCpool_004 desde './images/shiva_cpool_004.png'
-- shivaCpool_005 desde './images/shiva_cpool_005.png'
-- shivaCpool_009 desde './images/shiva_cpool_009.png'
-- shivaCpool_007 desde './images/shiva_cpool_007.png'
-- shivaCpool_008Build desde './images/shiva_cpool_008_build.png'
-- shivaCpool_008Firm desde './images/shiva_cpool_008_firm.png'
-- shivaCpool_006 desde './images/shiva_cpool_006.png'
-- shivaSupport desde '../console/images/shiva_support.png'
-- shivaVmPolíticasBackupAssignMandatory desde './images/shiva_vm_políticas_backup_assign_mandatory.png'
-- shivaVmPolíticasBackup desde './images/shiva_vm_políticas_backup.png'
-- shivaVmDiscosVirtualesPolíticas desde './images/shiva_vm_discos_virtueles_políticas.png'
-- shivaVmPolíticasBackupExecute desde './images/shiva_vm_políticas_backup_execute.png'
-- shivaVmPolíticasBackupExecute2 desde './images/shiva_vm_políticas_backup_execute2.png'
-- shivaVmPolíticasBackupRetirar desde './images/shiva_vm_políticas_backup_retirar.png'
-- shivaVmPolíticasBackupRetirarImposible desde './images/shiva_vm_políticas_backup_retirar_imposible.png'
-- shivaBackupHeld_001 desde './images/shiva_backup_held_001.png'
-- shivaBackupHeld_002 desde './images/shiva_backup_held_002.png'
-- shivaVmBackupRestaurar desde './images/shiva_vm_backup_restaurer.png'
-- shivaVmBackupTest desde './images/shiva_vm_backup_test.png'
-- shivaVmBackup_2prod desde './images/shiva_vm_backup_2prod.png'
+import shivaVmHome from './images/shiva_vm_home.png'
+import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
+import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
+import shivaVmActions from './images/shiva_vm_actions.png'
+import shivaVmInformaciones from './images/shiva_vm_informations.png'
+import shivaVmBandeauRapide from './images/shiva_vm_bandeau_rapide.png'
+import shivaVmVueRapide from './images/shiva_vm_vue_rapide.png'
+import shivaVmInfosGenerales from './images/shiva_vm_infos_generales.png'
+import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
+import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
+import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
+import shivaCpool_010 from './images/shiva_cpool_010.png'
+import shivaCpool_011 from './images/shiva_cpool_011.png'
+import shivaCatalogs from './images/shiva_catalogs.png'
+import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
+import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
+import shivaVmTemplate_001 from './images/shiva_vm_template_001.png'
+import shivaVmAdv_001 from './images/shiva_vm_adv_001.png'
+import shivaVmAdv_002 from './images/shiva_vm_adv_002.png'
+import shivaVmAdv_003 from './images/shiva_vm_adv_003.png'
+import shivaVmAdv_004 from './images/shiva_vm_adv_004.png'
+import shivaCpool_001 from './images/shiva_cpool_001.png'
+import shivaEsx_001 from './images/shiva_esx_001.png'
+import shivaEsx_002 from './images/shiva_esx_002.png'
+import shivaCpool_003 from './images/shiva_cpool_003.png'
+import shivaCpool_004 from './images/shiva_cpool_004.png'
+import shivaCpool_005 from './images/shiva_cpool_005.png'
+import shivaCpool_009 from './images/shiva_cpool_009.png'
+import shivaCpool_007 from './images/shiva_cpool_007.png'
+import shivaCpool_008Build from './images/shiva_cpool_008_build.png'
+import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
+import shivaCpool_006 from './images/shiva_cpool_006.png'
+import shivaSupport from '../console/images/shiva_support.png'
+import shivaVmPolíticasBackupAssignMandatory from './images/shiva_vm_políticas_backup_assign_mandatory.png'
+import shivaVmPolíticasBackup from './images/shiva_vm_políticas_backup.png'
+import shivaVmDiscosVirtualesPolíticas from './images/shiva_vm_discos_virtueles_políticas.png'
+import shivaVmPolíticasBackupExecute from './images/shiva_vm_políticas_backup_execute.png'
+import shivaVmPolíticasBackupExecute2 from './images/shiva_vm_políticas_backup_execute2.png'
+import shivaVmPolíticasBackupRetirar from './images/shiva_vm_políticas_backup_retirar.png'
+import shivaVmPolíticasBackupRetirarImposible from './images/shiva_vm_políticas_backup_retirar_imposible.png'
+import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
+import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
+import shivaVmBackupRestaurar from './images/shiva_vm_backup_restaurer.png'
+import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
+import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ### Cálculo
 
@@ -81,23 +79,23 @@ Las siguientes acciones son posibles a partir de esta interfaz:
 - Buscar una máquina virtual por su nombre;
 - Crear una nueva máquina virtual.
 
-<img src={shivaVmHomeDescripcion} />
+<img src={shivaVmHomeDesc} />
 
 __Un bandeau de alertas puede estar presente en la parte superior de la lista__ para indicar que se han activado alarmas críticas en una o más de sus máquinas virtuales. El botón __'Ver detalles'__ permite consultar las máquinas virtuales afectadas por esta notificación.
 
-<img src={shivaVmHomeAlerta} />
+<img src={shivaVmHomeAlarme} />
 
 Al hacer clic en el botón verde rectangular al lado derecho de una máquina virtual:
 
-<img src={shivaVmAcciones} />
+<img src={shivaVmActions} />
 
 Se accede a todas las información relacionadas con ella:
 
-<img src={shivaVmInformacion} />
+<img src={shivaVmInformaciones} />
 
 Un bandeau rápido permite realizar las siguientes acciones:
 
-<img src={shivaVmBandejaRapida} />
+<img src={shivaVmBandeauRapide} />
 
 - Enciender la máquina virtual;
 - Apagarla;
@@ -113,11 +111,11 @@ Un bandeau rápido permite realizar las siguientes acciones:
 
 Una vista rápida ofrece una visualización del __almacenamiento__, __procesador__ y __RAM__ de la máquina virtual.
 
-<img src={shivaVmVistaRapida} />
+<img src={shivaVmVueRapide} />
 
 En el apartado __'Información general___, se encuentran detalles detallados sobre su máquina virtual, como el sistema operativo, su ubicación física (datacenter, datastore, etc.), la RAM, el procesador, las direcciones IP, los registros y otros.
 
-<img src={shivaVmInformacionGeneral} />
+<img src={shivaVmInfosGenerales} />
 
 Desde esta vista, se pueden realizar las siguientes acciones:
 
@@ -127,7 +125,7 @@ Desde esta vista, se pueden realizar las siguientes acciones:
 
 Un apartado __'Avanzado___, permite consultar información más específica como las informaciones de "VMware tools", la versión hardware, el manager, etc...
 
-<img src={shivaVmInformacionAvanzada} />
+<img src={shivaVmInfosAvancees} />
 
 ### Edición de la RAM o del CPU de una máquina virtual
 
@@ -422,13 +420,13 @@ Al asignar una SLA (Servicio de Nivel de Aceite) a una máquina virtual (VM), to
 
 SecNumCloud hace obligatoria la asignación de una política de respaldo a una máquina virtual antes de su arranque. En caso contrario, recibirás la siguiente notificación:
 
-<img src="shivaVmPolitiquesBackupAssignMandatory.png" alt="Notificación de falta de asignación de política de respaldo" />
+<img src={shivaVmPolíticasBackupAssignMandatory} alt="Notificación de falta de asignación de política de respaldo" />
 
 Haz clic en el menú "Políticas de respaldo" del panel de control de tu máquina virtual para visualizar la o las políticas de respaldo asignadas a ella.
 
 Para asignar una nueva política de respaldo a la máquina virtual, haz clic en el botón "Agregar política" y selecciona la política de respaldo deseada.
 
-<img src="shivaVmPolitiquesBackup.png" alt="Menú para agregar o modificar una política de respaldo" />
+<img src={shivaVmPolíticasBackup} alt="Menú para agregar o modificar una política de respaldo" />
 
 ### Asociar una política de respaldo a un volumen virtual
 
@@ -438,7 +436,7 @@ Por otro lado, es posible excluir ciertos volúmenes de una o más políticas de
 
 Haz clic en el botón de acciones del volumen al que deseas asignar una política de respaldo. Luego, selecciona __'Políticas'__ y elige la política de respaldo deseada.
 
-<img src={shivaVmDiscosVirtualesPoliticas} />
+<img src={shivaVmDiscosVirtualesPolíticas} />
 
 *Nota*: La política a agregar debe estar ubicada en una zona de disponibilidad diferente a la máquina virtual.
 
@@ -446,21 +444,21 @@ Haz clic en el botón de acciones del volumen al que deseas asignar una polític
 
 En el menú __'Políticas de respaldo'__ de su máquina virtual, haga clic en el botón __'Ejecutar'__ de la columna __'Acciones'__ de la política de respaldo que desee ejecutar.
 
-<img src={shivaVmPolitiquesBackupExecute} />
+<img src={shivaVmPolíticasBackupExecute} />
 
 Para ejecutar una política de respaldo, también puede comenzar desde la sección __'Respaldos'__ en el menú de su máquina virtual. Haga clic en el botón __'Ejecutar respaldo'__, luego seleccione la copia que desee ejecutar en el listado desplegable.
 
-<img src={shivaVmPolitiquesBackupExecute2} />
+<img src={shivaVmPolíticasBackupExecute2} />
 
 ### Eliminar una política de respaldo
 
 En el menú __'Políticas de respaldo'__ de su máquina virtual, haga clic en el botón __'Eliminar'__ de la columna __'Acciones'__ de la política de respaldo que desee eliminar.
 
-<img src={shivaVmPolitiquesBackupRetirer} />
+<img src={shivaVmPolíticasBackupRetirar} />
 
 __Atención: No se puede eliminar la última SLA en una máquina virtual encendida:__
 
-<img src={shivaVmPolitiquesBackupRetirerImpossible} />
+<img src={shivaVmPolíticasBackupRetirarImposible} />
 
 ### Eliminación de una política de respaldo: caso de una política de respaldo suspendida ("suelta")
 
@@ -484,7 +482,7 @@ Del mismo modo, no se puede iniciar una máquina virtual asociada a una polític
 
 El menú "Copias de seguridad" de las máquinas virtuales te permite acceder a la lista de copias de seguridad disponibles para ellas. Para restaurar una copia de seguridad, haz clic en el botón "Restaurar" junto a la copia de seguridad que deseas restaurar.
 
-<img src={shivaVmBackupRestaurer} />
+<img src={shivaVmBackupRestaurar} />
 
 1. **Modo producción**: El modo producción permite la recuperación tras un incidente en el sitio local desde el almacenamiento primario o un sitio de recuperación tras un incidente distante, reemplazando las imágenes de máquina original por las de recuperación. Se transfieren todas las configuraciones asociadas a la recuperación, incluyendo nombres y identificadores, y se continúan ejecutando los trabajos de copia de datos relacionados con la máquina virtual. En el modo producción, puedes optar por reemplazar el almacenamiento en la máquina virtual por un disco virtual de una copia de seguridad de máquina virtual anterior.
 
@@ -494,7 +492,7 @@ El menú "Copias de seguridad" de las máquinas virtuales te permite acceder a l
 
 **La restauración por defecto está configurada en modo "PRUEBA" para preservar la producción**, y puedes elegir el nombre de la VM restaurada:
 
-<img src={shivaVmBackupRestaurer} />
+<img src={shivaVmBackupRestaurar} />
 
 Tenguido que si los pruebas son satisfactorias, es posible pasar una máquina virtual del modo prueba al modo producción:
 

@@ -1,45 +1,51 @@
 ---
-Guide de démarrage
+title: Getting Started Guide
 ---
-
-Images:
-- [shivaVmHome](./images/shiva_vm_home.png)
-- [shivaVmHomeDesc](./images/shiva_vm_home_desc.png)
-- [shivaVmHomeAlarme](./images/shiva_vm_home_alarme.png)
-- [shivaVmActions](./images/shiva_vm_actions.png)
-- [shivaVmInformations](./images/shiva_vm_informations.png)
-- [shivaVmBandeauRapide](./images/shiva_vm_bandeau_rapide.png)
-- [shivaVmVueRapide](./images/shiva_vm_vue_rapide.png)
-- [shivaVmInfosGenerales](./images/shiva_vm_infos_generales.png)
-- [shivaVmInfosAvancees](./images/shiva_vm_infos_avancees.png)
-- [shivEditCpuRam](./images/shiva_edit_cpu_ram.png)
-- [shivaVmDiskctrl_001](./images/shiva_vm_diskctrl_001.png)
-- [shivaCpool_010](./images/shiva_cpool_010.png)
-- [shivaCpool_011](./images/shiva_cpool_011.png)
-- [shivaCatalogs](./images/shiva_catalogs.png)
-- [shivaCatalogs_002](./images/shiva_catalogs_002.png)
-- [shivaCpool_002](./images/shiva_cpool_002.png)
-- [shivaCpool_003](./images/shiva_cpool_003.png)
-- [shivaCpool_004](./images/shiva_cpool_004.png)
-- [shivaCpool_005](./images/shiva_cpool_005.png)
-- [shivaCpool_009](./images/shiva_cpool_009.png)
-- [shivaCpool_007](./images/shiva_cpool_007.png)
-- [shivaCpool_008Build](./images/shiva_cpool_008_build.png)
-- [shivaCpool_008Firm](./images/shiva_cpool_008_firm.png)
-- [shivaCpool_006](./images/shiva_cpool_006.png)
-- [shivaCsupport](../console/images/shiva_support.png)
-- [shivaVmPolitiquesBackupAssignMandatory](./images/shiva_vm_politiques_backup_assign_mandatory.png)
-- [shivaVmPolitiquesBackup](./images/shiva_vm_politiques_backup.png)
-- [shivaVmDisquesVirtuelsPolitiques](./images/shiva_vm_disques_virtuels_politiques.png)
-- [shivaVmPolitiquesBackupExecute](./images/shiva_vm_politiques_backup_execute.png)
-- [shivaVmPolitiquesBackupExecute2](./images/shiva_vm_politiques_backup_execute2.png)
-- [shivaVmPolitiquesBackupRetirer](./images/shiva_vm_politiques_backup_retirer.png)
-- [shivaVmPolitiquesBackupRetirerImpossible](./images/shiva_vm_politiques_backup_retirer_impossible.png)
-- [shivaBackupHeld_001](./images/shiva_backup_held_001.png)
-- [shivaBackupHeld_002](./images/shiva_backup_held_002.png)
-- [shivaVmBackupRestaurer](./images/shiva_vm_backup_restaurer.png)
-- [shivaVmBackupTest](./images/shiva_vm_backup_test.png)
-- [shivaVmBackup_2prod](./images/shiva_vm_backup_2prod.png)
+import shivaVmHome from './images/shiva_vm_home.png'
+import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
+import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
+import shivaVmActions from './images/shiva_vm_actions.png'
+import shivaVmInformations from './images/shiva_vm_informations.png'
+import shivaVmBandeauRapide from './images/shiva_vm_bandeau_rapide.png'
+import shivaVmVueRapide from './images/shiva_vm_vue_rapide.png'
+import shivaVmInfosGenerales from './images/shiva_vm_infos_generales.png'
+import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
+import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
+import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
+import shivaCpool_010 from './images/shiva_cpool_010.png'
+import shivaCpool_011 from './images/shiva_cpool_011.png'
+import shivaCatalogs from './images/shiva_catalogs.png'
+import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
+import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
+import shivaVmTemplate_001 from './images/shiva_vm_template_001.png'
+import shivaVmAdv_001 from './images/shiva_vm_adv_001.png'
+import shivaVmAdv_002 from './images/shiva_vm_adv_002.png'
+import shivaVmAdv_003 from './images/shiva_vm_adv_003.png'
+import shivaVmAdv_004 from './images/shiva_vm_adv_004.png'
+import shivaCpool_001 from './images/shiva_cpool_001.png'
+import shivaEsx_001 from './images/shiva_esx_001.png'
+import shivaEsx_002 from './images/shiva_esx_002.png'
+import shivaCpool_003 from './images/shiva_cpool_003.png'
+import shivaCpool_004 from './images/shiva_cpool_004.png'
+import shivaCpool_005 from './images/shiva_cpool_005.png'
+import shivaCpool_009 from './images/shiva_cpool_009.png'
+import shivaCpool_007 from './images/shiva_cpool_007.png'
+import shivaCpool_008Build from './images/shiva_cpool_008_build.png'
+import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
+import shivaCpool_006 from './images/shiva_cpool_006.png'
+import shivaSupport from '../console/images/shiva_support.png'
+import shivaVmPolitiquesBackupAssignMandatory from './images/shiva_vm_politiques_backup_assign_mandatory.png'
+import shivaVmPolitiquesBackup from './images/shiva_vm_politiques_backup.png'
+import shivaVmDisquesVirtuelsPolitiques from './images/shiva_vm_disques_virtuels_politiques.png'
+import shivaVmPolitiquesBackupExecute from './images/shiva_vm_politiques_backup_execute.png'
+import shivaVmPolitiquesBackupExecute2 from './images/shiva_vm_politiques_backup_execute2.png'
+import shivaVmPolitiquesBackupRetirer from './images/shiva_vm_politiques_backup_retirer.png'
+import shivaVmPolitiquesBackupRetirerImpossible from './images/shiva_vm_politiques_backup_retirer_impossible.png'
+import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
+import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
+import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
+import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
+import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ### Calculation
 
@@ -53,7 +59,7 @@ The management interface for your virtual machines is accessible in the Shiva co
 
 In the 'Virtual Machines' section, you have access to a list of your virtual machines hosted on your trusted Cloud provider.
 
-![Shiva VM Home](shivaVmHome)
+<img src={shivaVmHome} />
 
 For each virtual machine, you can find:
 
@@ -75,23 +81,23 @@ The following actions can be performed from this interface:
 - Search for a virtual machine by its name;
 - Create a new virtual machine.
 
-![shivaVmHomeDesc](https://i.imgur.com/example_image1.png)
+<img src={shivaVmHomeDesc} />
 
 __A warning banner may appear at the top of the list__: it indicates critical alarms have been triggered on one or more of your virtual machines. The 'View' button allows you to check the affected virtual machines.
 
-![shivaVmHomeAlarme](https://i.imgur.com/example_image2.png)
+<img src={shivaVmHomeAlarme} />
 
 Upon clicking the right-hand dropdown arrow next to a virtual machine:
 
-![shivaVmActions](https://i.imgur.com/example_image3.png)
+<img src={shivaVmActions} />
 
 You gain access to all relevant information about that machine:
 
-![shivaVmInformations](https://i.imgur.com/example_image4.png)
+<img src={shivaVmInformations} />
 
 A quick toolbar enables you to perform the following actions:
 
-![shivaVmBandeauRapide](https://i.imgur.com/example_image5.png)
+<img src={shivaVmBandeauRapide} />
 
 - Power on the virtual machine;
 - Power off;
@@ -107,7 +113,7 @@ A quick toolbar enables you to perform the following actions:
 
 A quick view provides a visual representation of:
 
-![shivaVmVueRapide](https://i.imgur.com/example_image6.png)
+<img src={shivaVmVueRapide} />
 
 Storage, CPU, and RAM usage of the virtual machine.
 
@@ -119,7 +125,7 @@ In the 'General Information' tab, you find detailed information about your virtu
 
 An 'Advanced' tab offers more specific information such as VMware tools details, hardware version, and management software.
 
-![shivaVmInfosAvancees](https://i.imgur.com/example_image7.png)
+<img src={shivaVmInfosAvancees} />
 
 ### Editing Virtual Machine RAM or CPU
 
@@ -139,7 +145,7 @@ You can add different disk modes:
 
 You can change the type of disk controller for your virtual machine.
 
-![Virtual Machine Disk Controller](shivaVmDiskctrl_001)
+<img src={shivaVmDiskctrl_001} />
 
 Virtual machines can be equipped with SCSI and NVME controllers, each limited to 4 controllers in total (regardless of type). Each controller can manage up to 15 disks.
 
@@ -196,19 +202,19 @@ __Note__:
 
 Cloud Temple offers you a regularly updated and enriched `Templates` catalog, currently containing several dozens of `Templates` and images to deploy on your virtual machines.
 
-![Catalogue de Templates](shivaCatalogs)
+<img src={shivaCatalogs} />
 
 To publish an ISO/OVF, navigate to the 'Catalog' view and click the 'Publish Files' button at the top of the page:
 
-![Publier des fichiers](shivaCatalogs_002)
+<img src={shivaCatalogs_002} />
 
 You can transform a VM into a template and export it into the catalog. To do this, select a virtual machine and use the 'Clone' action:
 
-![Cloner une machine virtuelle](shivaVmTemplate_002)
+<img src={shivaVmTemplate_002} />
 
 Choose 'Export as vm-template':
 
-![Exporter en modèle de machine virtuelle](shivaVmTemplate_001)
+<img src={shivaVmTemplate_001} />
 
 Fill in the necessary details. You can then deploy a new VM from the template via the 'New Virtual Machine' button or directly from the 'Catalogs' page. It's also possible to export the VM in OVF format.
 
@@ -246,11 +252,11 @@ __Note__: *For GPU utilization by the virtual machine, it is mandatory to enable
 
 You can also modify the properties of type __vAPP__ in the advanced settings of a virtual machine:
 
-![Advanced VM Settings](shivaVmAdv_003)
+<img src={shivaVmAdv_003} />
 
 You can add, change, or remove these properties. Four types are available: String, Number, Boolean, Password:
 
-![Property Types](shivaVmAdv_004)
+<img src={shivaVmAdv_004} />
 
 **Note:** *The virtual machine must be stopped to modify its vAPP properties.*
 
@@ -376,13 +382,13 @@ When an SLA (Service Level Agreement) is assigned to a virtual machine (VM), all
 
 SecNumCloud mandates that a backup policy must be assigned to a virtual machine before it starts. Otherwise, you'll receive this notification:
 
-<img src="shivaVmPolitiquesBackupAssignMandatory.png" alt="Notification of Mandatory Backup Policy Assignment">
+<img src={shivaVmPolitiquesBackupAssignMandatory} />
 
 Click on the "Backup Policies" tab in your VM's menu. Here, you can view the assigned backup policy(ies).
 
 To assign a new backup policy to the virtual machine, click the "Add Policy" button and select the desired policy:
 
-<img src="shivaVmPolitiquesBackup.png" alt="Assigning a Backup Policy">
+<img src={shivaVmPolitiquesBackup} />
 
 ### Assigning a Backup Policy to a Virtual Disk
 
@@ -392,7 +398,7 @@ Instead, you can exclude certain disks from one or more backup policies (SLA) of
 
 Click on the Actions bar of the disk you wish to assign a backup policy to. Then, click on __'Policies__' and select the desired backup policy.
 
-![Assigning Backup Policy](https://i.imgur.com/z9lQ2jS.png)
+<img src={shivaVmDisquesVirtuelsPolitiques} />
 
 *Note*: The policy to be added must reside in a different availability zone than the virtual machine.
 
@@ -400,21 +406,21 @@ Click on the Actions bar of the disk you wish to assign a backup policy to. Then
 
 In the 'Backup Policies' menu of your virtual machine, click on the 'Execute' button in the 'Actions' column of the backup policy you wish to run.
 
-<img src="shivaVmPolitiquesBackupExecute" />
+<img src={shivaVmPolitiquesBackupExecute} />
 
 You can also initiate a backup policy execution from the 'Backups' section in your virtual machine's menu. Click on 'Run Backup', then select the desired backup from the dropdown list.
 
-<img src="shivaVmPolitiquesBackupExecute2" />
+<img src={shivaVmPolitiquesBackupExecute2} />
 
 ### Removing a Backup Policy
 
 In the 'Backup Policies' menu of your virtual machine, click on the 'Remove' button in the 'Actions' column of the backup policy you wish to remove.
 
-![Remove Backup Policy](<img src={shivaVmPolitiquesBackupRetirer}>)
+<img src={shivaVmPolitiquesBackupRetirer} />
 
 **Note:** It is not possible to remove the last Service Level Agreement (SLA) from an active virtual machine:
 
-![Cannot Remove Last SLA on Active VM](<img src={shivaVmPolitiquesBackupRetirerImpossible}>)
+<img src={shivaVmPolitiquesBackupRetirerImpossible} />
 
 ### Deactivation of a Backup Policy: Case of a Suspended Backup Policy ("held")
 

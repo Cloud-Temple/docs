@@ -1,15 +1,16 @@
 ---
-título: Documentación API
+title: Documentación API
 ---
-importar imagen de ShivaProfil001 desde './imagenes/shiva_profil_001.png'
-importar imagen de ShivaProfil002 desde './imagenes/shiva_profil_002.png'
-importar imagen de ShivaProfil003 desde './imagenes/shiva_profil_003.png'
-importar imagen de ShivaProfil004 desde './imagenes/shiva_profil_004.png'
-importar imagen de ShivaProfil005 desde './imagenes/shiva_profil_005.png'
-importar imagen de ShivaApi001 desde './imagenes/shiva_api_001.png'
-importar imagen de ShivaApi002 desde './imagenes/shiva_api_002.png'
-importar imagen de ShivaApi003 desde './imagenes/shiva_api_003.png'
-importar imagen de ShivaApi004 desde './imagenes/shiva_api_004.png'
+
+import ShivaProfil001 from './images/shiva_profil_001.png'
+import ShivaProfil002 from './images/shiva_profil_002.png'
+import ShivaProfil003 from './images/shiva_profil_003.png'
+import ShivaProfil004 from './images/shiva_profil_004.png'
+import ShivaProfil005 from './images/shiva_profil_005.png'
+import ShivaApi001 from './images/shiva_api_001.png'
+import ShivaApi002 from './images/shiva_api_002.png'
+import ShivaApi003 from './images/shiva_api_003.png'
+import ShivaApi004 from './images/shiva_api_004.png'
 
 ## API Keys
 
@@ -21,15 +22,15 @@ To create an API key, simply:
 
 1. Click on your profile:
 
-   <img src="ShivaProfil001" />
+   <img src={ShivaProfil001} />
 
 2. Navigate to the 'Personal Access Token' option in the profile menu:
 
-   <img src="ShivaProfil003" />
+   <img src={ShivaProfil003} />
 
 You'll then see a list of all API keys created for this user within this tenant. Click on 'New Personal Access Token':
 
-   <img src="ShivaProfil002" />
+   <img src={ShivaProfil002} />
 
 You will need to:
 
@@ -41,13 +42,13 @@ The details of your token will then be displayed. **Note**: You cannot view thes
 
 If you forget these details, you'll need to destroy and regenerate the token.
 
-<img src="ShivaProfil004" />
+<img src={ShivaProfil004} />
 
 For security reasons, it's advisable to create several tokens with specific purposes (one for each application or business process) rather than using one token with all permissions.
 
 You will then see your newly created token and its upcoming expiration date:
 
-   <img src="ShivaProfil005" />
+   <img src={ShivaProfil005} />
 
 ## Acceso al portal API
 

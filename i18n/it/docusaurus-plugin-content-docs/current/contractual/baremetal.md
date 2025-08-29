@@ -1,5 +1,5 @@
 ---
-Titolo di Convenzione di Servizio Specifico - Hardware Nudo
+title: Titolo di Convenzione di Servizio Specifico - Hardware Nudo
 ---
 
 # CONVENTION DE SERVIZI DI SERVER BARE METAL

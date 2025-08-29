@@ -1,12 +1,13 @@
 ---
-titolo: Esempio di federazione dell'identità con JumpCloud
-tag:
+title: Esempio di federazione dell'identità con JumpCloud
+tags:
   - iam
   - tutorial
   - onboarding
 ---
-importa `ssoJumpcloud001` da './immagini/sso_jumpcloud_001.png';
-importa `ssoJumpcloud002` da './immagini/sso_jumpcloud_002.png';
+
+import ssoJumpcloud001 from './images/sso_jumpcloud_001.png';
+import ssoJumpcloud002 from './images/sso_jumpcloud_002.png';
 
 Questo tutorial guida attraverso la configurazione dell'autenticazione unica (SSO) tra JumpCloud e la console Cloud Temple utilizzando il protocollo OpenID Connect (OIDC).
 
@@ -29,7 +30,7 @@ Seguire queste istruzioni per configurare una nuova applicazione OIDC nella cons
     * Scegli "Gestione Single Sign-On (SSO)".
     * Seleziona "Configura SSO con OIDC".
 
-    <img src="ssoJumpcloud001.png" alt="Configurazione SSO OIDC JumpCloud">
+    <img src={ssoJumpcloud001} alt="Configurazione SSO OIDC JumpCloud" />
 
 3. **Inserire le URI di reindirizzamento:**
     * Nel campo appropriato (spesso chiamato "URI di reindirizzamento" o "Callback URL"), inserisci l'URI fornita da Cloud Temple. Seguirà generalmente questo formato:
@@ -53,7 +54,7 @@ Seguire queste istruzioni per configurare una nuova applicazione OIDC nella cons
         * `Email`
         * `Profile` (può includere nome, cognome, ecc.)
 
-    <img src="ssoJumpcloud002.png" alt="Mappatura degli attributi JumpCloud">
+    <img src={ssoJumpcloud002} alt="Mappatura degli attributi JumpCloud" />
 
 7. **Assegnare i gruppi:**
     * Assegna i gruppi di utenti JumpCloud che dovrebbero avere accesso alla console Cloud Temple tramite questa applicazione SSO.

@@ -1,21 +1,23 @@
 ---
-Guida di Partenza
+title: Guida di Partenza
 ---
-importa immagini/S3_list_bucket.png
-importa immagini/S3_accounts.png
-importa immagini/S3_create_account.png
-importa immagini/S3_storage_keys.png
-importa immagini/S3_keyregen.png
-importa immagini/S3_create.png
-importa immagini/S3_create_popup_001.png
-importa immagini/S3_account_assign.png
-importa immagini/S3_account_access.png
-importa immagini/S3_files.png
-importa immagini/S3_params.png
-importa imagini/S3_lifecycle.png
-importa immagini/S3_create_popup_002.png
-importa immagini/S3_delete.png
-importa TabItem dal '@theme'
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import S3ListBucket from './images/S3_list_bucket.png';
+import S3Accounts from './images/S3_accounts.png';
+import S3CreateAccount from './images/S3_create_account.png';
+import S3StorageKeys from './images/S3_storage_keys.png';
+import S3Keyregen from './images/S3_keyregen.png';
+import S3Create from './images/S3_create.png';
+import S3CreatePopup_001 from './images/S3_create_popup_001.png';
+import S3AccountAssign from './images/S3_account_assign.png';
+import S3AccountAccess from './images/S3_account_access.png';
+import S3Files from './images/S3_files.png';
+import S3Params from './images/S3_params.png';
+import S3Lifecycle from './images/S3_lifecycle.png';
+import S3CreatePopup_002 from './images/S3_create_popup_002.png';
+import S3Delete from './images/S3_delete.png';
 
 Il Tempio del Servizio di Obiettivi Cloud SecNumCloud è un servizio di archiviazione di oggetti altamente sicuro e certificato, basato sul protocollo Amazon S3. Ti permette di archiviare qualsiasi tipo di dati, inclusi quelli più sensibili, in conformità con le più elevate esigenze di sicurezza. Puoi gestire il tuo archiviazione direttamente dalla console Cloud Temple e integrare numerose biblioteche esistenti o client CLI per l'uso programmatico.
 

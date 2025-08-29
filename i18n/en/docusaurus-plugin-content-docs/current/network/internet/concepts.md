@@ -1,5 +1,5 @@
 ---
-concepts
+title: Concepts
 ---
 
 ## Assignment of a Public Internet Address (PA)

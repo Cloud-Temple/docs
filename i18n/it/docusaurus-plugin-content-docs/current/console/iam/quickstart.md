@@ -1,8 +1,7 @@
 ---
-Guida di Partenza
+title: Guida di Partenza
 ---
 
-```
 import shivaTenant from './images/shiva_tenant.png'
 import shivaOnboard_003 from './images/shiva_onboard_003.png'
 import shivaOnboard_004 from './images/shiva_onboard_004.png'
@@ -12,11 +11,8 @@ import shivaProfil_006 from './images/shiva_profil_006.png'
 import shivaProfil_007 from './images/shiva_profil_007.png'
 import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
 import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
-```
 
-```
 # Tenente
-```
 
 ### Creazione di un tenente
 
@@ -67,21 +63,21 @@ Una volta completata la verifica, l'utente potrà accedere alla console.
 - Nessun elemento HTML bruto è stato modificato o tradotto.
 - La struttura e il formato del Markdown originale sono stati mantenuti.
 
-### Assignment of User Permissions
+### Assegnazione dei Permessi Utente
 
-User permission management is handled from the user profile page.
+La gestione dei permessi utente viene gestita dalla pagina del profilo utente.
 
-![Assigning User Permissions](shivaOnboard_003)
+<img src={shivaOnboard_003} alt="Assegnazione Permessi Utente" />
 
-By default, a user has no permissions. Therefore, it's necessary for the administrator who invited them to grant the required permissions based on their role. This can be done by clicking on the "Actions" menu of the user and selecting "Modify".
+Per impostazione predefinita, un utente non ha alcun permesso. Pertanto, è necessario che l'amministratore che li ha invitati conceda i permessi richiesti in base al loro ruolo. Questo può essere fatto cliccando sul menu "Azioni" dell'utente e selezionando "Modifica".
 
-The permission assignment menu then appears:
+Il menu di assegnazione dei permessi appare quindi:
 
-![User Permission Assignment](shivaOnboard_005)
+<img src={shivaOnboard_005} alt="Assegnazione Permessi Utente" />
 
-Permission configuration needs to be set for each [Tenant] within an [Organization].
+La configurazione dei permessi deve essere impostata per ogni [Tenant] all'interno di un'[Organizzazione].
 
-The list of permissions along with their definitions can be found [here](#permissions).
+L'elenco dei permessi insieme alle loro definizioni può essere trovato [qui](#permessi).
 
 ### Modifica la lingua di un utente
 
@@ -142,7 +138,7 @@ Nel menu "Amministrazione" sulla barra laterale verticale sinistra dello schermo
 
 Gli utenti grigi sono quelli che non hanno ancora validato il proprio account. Durante la creazione dell'account, l'utente riceve un messaggio di conferma via email.
 
-<img src="shivaOnboard_001" />
+<img src={shivaOnboard_001} />
 
 Una volta completata la verifica, l'utente potrà accedere alla console.
 

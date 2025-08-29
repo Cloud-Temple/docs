@@ -1,5 +1,5 @@
 ---
-titolo: Sincronizzazione di un directory con mc mirror
+title: Sincronizzazione di un directory con mc mirror
 ---
 
 La comando `mc mirror` è uno strumento potente per sincronizzare il contenuto di un directory locale con un bucket S3. Può trasferire nuovi o modificati file, e opzionalmente rimuovere i file dal bucket che non esistono più localmente. È una metodo efficiente per mantenere una copia di sicurezza o distribuire un sito statico.

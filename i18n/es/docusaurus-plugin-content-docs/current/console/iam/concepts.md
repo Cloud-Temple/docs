@@ -1,23 +1,22 @@
 ---
-conceptos:
+title: conceptos
 ---
 
-Importar imágenes:
-- shivaOnboard_003 desde './images/shiva_onboard_003.png'
-- shivaOnboard_004 desde './images/shiva_onboard_004.png'
-- shivaOnboard_001 desde './images/shiva_onboard_001.png'
-- shivaOnboard_005 desde './images/shiva_onboard_005.png'
-- shivaProfil_012 desde './images/shiva_profil_012.png'
-- shivaProfil_014 desde './images/shiva_profil_014.png'
-- shivaProfil_015 desde './images/shiva_profil_015.png'
-- shivaProfil_016 desde './images/shiva_profil_016.png'
-- shivaProfil_013 desde './images/shiva_profil_013.png'
-- shivaProfil_010 desde './images/shiva_profil_010.png'
-- shivaProfil_009 desde './images/shiva_profil_009.png'
-- shivaProfil_011 desde './images/shiva_profil_011.png'
-- shivaProfil_006 desde './images/shiva_profil_006.png'
-- shivaProfil_007 desde './images/shiva_profil_007.png'
-- shivaTenantRessources_01 desde './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_012 from './images/shiva_profil_012.png'
+import shivaProfil_014 from './images/shiva_profil_014.png'
+import shivaProfil_015 from './images/shiva_profil_015.png'
+import shivaProfil_016 from './images/shiva_profil_016.png'
+import shivaProfil_013 from './images/shiva_profil_013.png'
+import shivaProfil_010 from './images/shiva_profil_010.png'
+import shivaProfil_009 from './images/shiva_profil_009.png'
+import shivaProfil_011 from './images/shiva_profil_011.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Usuarios
 
@@ -45,29 +44,21 @@ El usuario recibirá un correo de confirmación.
 Una vez completada la confirmación, el usuario podrá iniciar sesión en la consola.
 
 
-### Explicación:
-- La traducción se ha centrado principalmente en el texto explicativo que describe el proceso de creación de un usuario dentro de una organización, manteniendo la estructura y formato Markdown original.
-- No se han modificado elementos HTML o Markdown estructurales (como etiquetas <a>, <div>, encabezados #, listas, bloques de código) a menos que el contenido interno de los tableaux (incluyendo encabezados de tabla) haya sido traducido.
-- Los blocs de código Python no se han modificado; solo se ha mantenido la indicación de no traducir nombres de variables, funciones, clases, sintaxis Python, comentarios y la indentación.
-- Contenidos dentro de corchetes [], parenthèses o URLs se han dejado intactos.
-- Nuevas líneas, espacios o formato no se han añadido fuera del texto original.
-- El contenido HTML bruto se ha dejado sin modificación.
+### Atribución de permisos de usuario
 
-### Attribution of User Permissions
-
-User permission management is handled from the user profile page.
+La gestión de permisos de usuario se maneja desde la página de perfil del usuario.
 
 <img src={shivaOnboard_003} />
 
-By default, a user has no permissions. Therefore, it's essential that the administrator who invited them grants the necessary rights for their role. This can be done by clicking on the "Actions" menu of the user and selecting "Modify".
+Por defecto, un usuario no tiene permisos. Por lo tanto, es esencial que el administrador que los invitó otorgue los derechos necesarios para su rol. Esto se puede hacer haciendo clic en el menú "Acciones" del usuario y seleccionando "Modificar".
 
-The permission activation menu then appears:
+Entonces aparece el menú de activación de permisos:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be set up for each [Tenant](#tenant) within an [Organization](#organizations).
+La configuración de permisos debe configurarse para cada [Tenant](#tenant) dentro de una [Organización](#organizations).
 
-The list of permissions along with their definitions can be found [here](#permissions).
+La lista de permisos junto con sus definiciones se puede encontrar [aquí](#permissions).
 
 ### Re-registración de un usuario
 
@@ -336,25 +327,6 @@ Cada teniente cuenta con al menos un propietario, lo que garantiza una responsab
     - Realizar auditorías periódicas para evaluar la eficiencia del sistema de gestión de propietarios.
     - Utilizar retroalimentación de usuarios y análisis de datos para mejorar continuamente las prácticas de gestión.
 
-### Ejemplo Markdown con traducción:
-
-```markdown
-# Informaciones importantes sobre la gestión de propietarios
-
-## Definición
-- Propietario en el contexto del cloud computing y de los sistemas IT se refiere a una persona o entidad que tiene la propiedad legal y los derechos administrativos sobre un recurso informático, como un servidor virtual, un almacenamiento en la nube, un sistema de gestión de bases de datos, etc.
-
-## Responsabilidades
-- Gestionar el acceso y la seguridad del recurso.
-- Supervisar el rendimiento y la disponibilidad del servicio.
-- Realizar mantenimientos preventivos y correctivos.
-- Asegurar el cumplimiento de políticas de seguridad y privacidad.
-- Planificar y ejecutar actualizaciones y mejoras del sistema.
-
-## Gestión de Propietarios
-- La gestión de propietarios puede ser centralizada o descentralizada, dependiendo del modelo de cloud computing adoptado (publico, privado, híbrido).
-- En modelos publicos, los proveedores de servicios manejan la infraestructura subyacente; en privados, las organizaciones tienen más control sobre ella.
-```
 
 ### Número de propietarios
 

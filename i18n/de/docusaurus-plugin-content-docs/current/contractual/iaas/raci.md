@@ -1,5 +1,5 @@
 ---
-Tabelle der Verantwortlichkeit IaaS
+title: Tabelle der Verantwortlichkeit IaaS
 ---
 
 Hier ist das RACI-Modell, das die Aufgabenverteilung zwischen dem Kunden und Cloud Temple für die Nutzung der IaaS-Infrastrukturen von Cloud Temple definiert.

@@ -1,5 +1,5 @@
 ---
-Concepts
+title: Concepts
 ---
 import oshiftOffert from './images/oshift_offert.png'
 
@@ -104,7 +104,7 @@ Red Hat OpenShift Cloud Temple products are available for usage-based or 12-mont
 
 The platform is a Redhat Openshift 4, built upon [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) and includes [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
-![RedHat Offer](oshiftOffert)
+<img src={oshiftOffert} alt="RedHat Offer" />
 
 ## Data Protection Strategy for Your OpenShift PaaS by Cloud Temple
 

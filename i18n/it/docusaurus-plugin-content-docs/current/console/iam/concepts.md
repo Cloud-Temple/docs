@@ -1,24 +1,22 @@
 ---
-concepti
+title: Concepti
 ---
 
-Importa le seguenti immagini:
-
-- `shivaOnboard_003` da `'./images/shiva_onboard_003.png'`
-- `shivaOnboard_004` da `'./images/shiva_onboard_004.png'`
-- `shivaOnboard_001` da `'./images/shiva_onboard_001.png'`
-- `shivaOnboard_005` da `'./images/shiva_onboard_005.png'`
-- `shivaProfil_012` da `'./images/shiva_profil_012.png'`
-- `shivaProfil_014` da `'./images/shiva_profil_014.png'`
-- `shivaProfil_015` da `'./images/shiva_profil_015.png'`
-- `shivaProfil_016` da `'./images/shiva_profil_016.png'`
-- `shivaProfil_013` da `'./images/shiva_profil_013.png'`
-- `shivaProfil_010` da `'./images/shiva_profil_010.png'`
-- `shivaProfil_009` da `'./images/shiva_profil_009.png'`
-- `shivaProfil_011` da `'./images/shiva_profil_011.png'`
-- `shivaProfil_006` da `'./images/shiva_profil_006.png'`
-- `shivaProfil_007` da `'./images/shiva_profil_007.png'`
-- `shivaTenantRessources_01` da `'./images/shiva_tenant_ressources_01.png'`
+import shivaOnboard_003 from './images/shiva_onboard_003.png'
+import shivaOnboard_004 from './images/shiva_onboard_004.png'
+import shivaOnboard_001 from './images/shiva_onboard_001.png'
+import shivaOnboard_005 from './images/shiva_onboard_005.png'
+import shivaProfil_012 from './images/shiva_profil_012.png'
+import shivaProfil_014 from './images/shiva_profil_014.png'
+import shivaProfil_015 from './images/shiva_profil_015.png'
+import shivaProfil_016 from './images/shiva_profil_016.png'
+import shivaProfil_013 from './images/shiva_profil_013.png'
+import shivaProfil_010 from './images/shiva_profil_010.png'
+import shivaProfil_009 from './images/shiva_profil_009.png'
+import shivaProfil_011 from './images/shiva_profil_011.png'
+import shivaProfil_006 from './images/shiva_profil_006.png'
+import shivaProfil_007 from './images/shiva_profil_007.png'
+import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Utenti
 
@@ -47,36 +45,36 @@ Una volta completata la verifica, l'utente potrà accedere alla console.
 
 
 ### Note:
-- Il formato Markdown rimane invariato per elementi HTML o Markdown strutturali come <a>, <div>, <h1> (en-têtes), liste, blocchi di codice e commenti Markdown.
+- Il formato Markdown rimane invariato per elementi HTML o Markdown strutturali come `<a>`, `<div>`, `<h1>` (en-têtes), liste, blocchi di codice e commenti Markdown.
 - I blocchi di codice Python non vengono tradotti, tranne i commenti che iniziano con #.
 - Il contenuto all'interno dei bracket [], parentesi o URL rimane invariato.
 - Nessuna modifica viene apportata al formato del file Markdown originale, rispetto alle regole stabilite.
 
-### Assignment of User Permissions
+### Assegnazione dei Permessi Utente
 
-User permission management is handled from the user profile page.
+La gestione dei permessi utente viene gestita dalla pagina del profilo utente.
 
-![Assigning User Permissions](shivaOnboard_003)
+<img src={shivaOnboard_003} alt="Assegnazione Permessi Utente" />
 
-By default, a user has no permissions. Therefore, it's essential that the administrator who invited them grants the necessary rights for their role. This can be done by clicking on the "Actions" menu of the user and selecting "Modify".
+Per impostazione predefinita, un utente non ha alcun permesso. Pertanto, è essenziale che l'amministratore che li ha invitati conceda i diritti necessari per il loro ruolo. Questo può essere fatto cliccando sul menu "Azioni" dell'utente e selezionando "Modifica".
 
-The permission assignment menu appears then:
+Il menu di assegnazione dei permessi appare quindi:
 
-![Permission Assignment Menu](shivaOnboard_005)
+<img src={shivaOnboard_005} alt="Menu Assegnazione Permessi" />
 
-User permissions configuration is required for each [Tenant](#tenant) within an [Organization](#organizations).
+La configurazione dei permessi utente è richiesta per ogni [Tenant](#tenant) all'interno di un'[Organizzazione](#organizzazioni).
 
-The list of permissions along with their definitions can be found [here](#permissions).
+L'elenco dei permessi insieme alle loro definizioni può essere trovato [qui](#permessi).
 
-### Re-registration of a User
+### Ri-registrazione di un Utente
 
-When a user has been provisioned but fails to confirm their registration within the expiration period of the email sent by the Console, they are no longer able to finalize their registration. In such cases, it is possible to resend them a renewal link for their initial registration.
+Quando un utente è stato fornito ma non riesce a confermare la sua registrazione entro il periodo di scadenza dell'email inviata dalla Console, non è più in grado di finalizzare la sua registrazione. In tali casi, è possibile inviare loro un link di rinnovo per la loro registrazione iniziale.
 
-To perform a user re-registration, navigate to the "User" tab in the Administration panel, located at the bottom left of the screen.
+Per eseguire una ri-registrazione utente, navigare alla scheda "Utente" nel pannello Amministrazione, situato in basso a sinistra dello schermo.
 
-Select the user you wish to re-register, then click on the action button at the end of the line and choose "Re-registration".
+Selezionare l'utente che si desidera ri-registrare, quindi fare clic sul pulsante azione alla fine della riga e scegliere "Ri-registrazione".
 
-**Warning**: Ensure that you are indeed initiating this re-registration request for your own account. Please report any unauthorized requests via support ticket.
+**Avviso**: Assicurarsi di avviare effettivamente questa richiesta di ri-registrazione per il proprio account. Si prega di segnalare eventuali richieste non autorizzate tramite ticket di supporto.
 
 <img src={shivaProfil_012} />
 
@@ -102,7 +100,7 @@ Passa quindi alla tua casella email e clicca sul link generato dalla Console. Se
 
 **Avviso**: Assicurati di essere a conoscenza della richiesta di ristrutturazione del tuo password. Raccomandiamo di segnalare eventuali richieste non autorizzate tramite il servizio client.
 
-<img src={shivaProfilo_015} />
+<img src={shivaProfil_015} />
 
 ### Rinnovamento del fattore di autenticazione doppio
 
@@ -114,7 +112,7 @@ Passa quindi alla tua casella di posta elettronica e clicca sul link generato da
 
 **Avviso**: Assicurati di essere a conoscenza della richiesta di rinnovamento del tuo fattore di autenticazione doppio. Fai segnalare eventuali richieste non autorizzate tramite un ticket di supporto.
 
-<img src={shivaProfilo_016} />
+<img src={shivaProfil_016} />
 
 ### Eliminazione di un utente
 

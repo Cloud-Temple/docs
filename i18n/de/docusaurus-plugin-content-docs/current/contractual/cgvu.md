@@ -1,5 +1,5 @@
 ---
-Allgemeine Geschäftsbedingungen und Nutzungsbedingungen (CGVU)
+title: Allgemeine Geschäftsbedingungen und Nutzungsbedingungen (CGVU)
 ---
 
 ## Framework

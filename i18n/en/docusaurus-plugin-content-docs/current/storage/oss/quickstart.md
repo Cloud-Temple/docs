@@ -1,30 +1,22 @@
 ---
-Guide de démarrage
+title: Getting Started Guide
 ---
-
-Importation d'images:
-
-- `S3ListBucket` from './images/S3_list_bucket.png'
-- `S3Accounts` from './images/S3_accounts.png'
-- `S3CreateAccount` from './images/S3_create_account.png'
-- `S3StorageKeys` from './images/S3_storage_keys.png'
-- `S3Keyregen` from './images/S3_keyregen.png'
-- `S3Create` from './images/S3_create.png'
-- `S3CreatePopup_001` from './images/S3_create_popup_001.png'
-- `S3AccountAssign` from './images/S3_account_assign.png'
-- `S3AccountAccess` from './images/S3_account_access.png'
-- `S3Files` from './images/S3_files.png'
-- `S3Params` from './images/S3_params.png'
-- `S3Lifecycle` from './images/S3_lifecycle.png'
-- `S3CreatePopup_002` from './images/S3_create_popup_002.png'
-- `S3Delete` from './images/S3_delete.png'
-
-Importation de composants:
-
-- `Tabs` du `@theme/Tabs`
-- `TabItem` du `@theme/TabItem`
-
-Description:
+import S3ListBucket from './images/S3_list_bucket.png';
+import S3Accounts from './images/S3_accounts.png';
+import S3CreateAccount from './images/S3_create_account.png';
+import S3StorageKeys from './images/S3_storage_keys.png';
+import S3Keyregen from './images/S3_keyregen.png';
+import S3Create from './images/S3_create.png';
+import S3CreatePopup_001 from './images/S3_create_popup_001.png';
+import S3AccountAssign from './images/S3_account_assign.png';
+import S3AccountAccess from './images/S3_account_access.png';
+import S3Files from './images/S3_files.png';
+import S3Params from './images/S3_params.png';
+import S3Lifecycle from './images/S3_lifecycle.png';
+import S3CreatePopup_002 from './images/S3_create_popup_002.png';
+import S3Delete from './images/S3_delete.png';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sécurisé et qualifié SecNumCloud, basé sur le protocole Amazon S3. Il vous permet de stocker tous types de données, y compris les plus sensibles, en conformité avec les plus hautes exigences de sécurité. Vous pouvez gérer votre stockage directement depuis la console Cloud Temple et intégrer de nombreuses bibliothèques existantes ou clients CLI pour un usage programmatique.
 
@@ -235,7 +227,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     The deletion of a bucket is done through the actions associated with the bucket by selecting the 'Delete' option.
-    ![S3 Delete](S3Delete)
+    <img src={S3Delete} alt="S3 Delete" />
     _**WARNING: Deletion is irreversible and there's no way to recover the data.**_
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">

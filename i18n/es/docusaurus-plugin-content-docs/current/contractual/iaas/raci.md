@@ -1,5 +1,5 @@
 ---
-Matrizas de Responsabilidad IaaS
+title: Matrizas de Responsabilidad IaaS
 ---
 
 Aquí se presenta el modelo **RACI** que define la distribución de responsabilidades entre el cliente y Cloud Temple para el uso de las infraestructuras IaaS de Cloud Temple.

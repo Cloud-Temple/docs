@@ -1,20 +1,21 @@
 ---
-titolo: Deployment di un firewall opensource pfSense
-tag:
+title: Deployment di un firewall opensource pfSense
+tags:
   - internet
   - tutorial
 ---
-importo pfSenseWebui da '../images/pfsense_webui.png';
-importo pfSenseHomePage da '../images/pfsense_home_page.png';
-importo pfSenseBgpRule da '../images/pfsense_bgp_rule.png';
-importo pfSenseFrrPackage da '../images/pfsense_frr_package.png';
-importo pfSenseGeneralConf da '../images/pfsense_general_conf.png';
-importo pfSenseNeighborConf da '../images/pfsense_neighbor_conf.png';
-importo bgpBasicOptions da '../images/bgp_basic_options.png';
-importo ebgpConf da '../images/ebgp_conf.png';
-importo routeServerNeighbor da '../images/route_server_neighbor.png';
-importo neighborsOverview da '../images/neighbors_overview.png';
-importo pfSenseBgpStatus da '../images/pfsense_bgp_status.png';
+
+import pfSenseWebui from '../images/pfsense_webui.png';
+import pfSenseHomePage from '../images/pfsense_home_page.png';
+import pfSenseBgpRule from '../images/pfsense_bgp_rule.png';
+import pfSenseFrrPackage from '../images/pfsense_frr_package.png';
+import pfSenseGeneralConf from '../images/pfsense_general_conf.png';
+import pfSenseNeighborConf from '../images/pfsense_neighbor_conf.png';
+import bgpBasicOptions from '../images/bgp_basic_options.png';
+import ebgpConf from '../images/ebgp_conf.png';
+import routeServerNeighbor from '../images/route_server_neighbor.png';
+import neighborsOverview from '../images/neighbors_overview.png';
+import pfSenseBgpStatus from '../images/pfsense_bgp_status.png';
 
 Questo tutorial vi aiuterà a installare il tuo __firewall opensource pfSense__ nel Cloud di fiducia in pochi minuti.
 

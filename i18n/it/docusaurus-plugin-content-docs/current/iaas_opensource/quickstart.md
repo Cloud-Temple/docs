@@ -1,8 +1,7 @@
 ---
-Guida di Partenza
+title: Guida di Partenza
 ---
 
-```
 import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
 import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
@@ -16,7 +15,6 @@ import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_polic
 import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
 import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
 import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
-```
 
 ### Calcolo
 
@@ -71,7 +69,7 @@ Un bandello rapido consente di eseguire le seguenti azioni:
 
 Nell'elenco delle informazioni "__Generali__", si trovano dettagli dettagliati sulla propria macchina virtuale, come il suo posizionamento fisico (AZ, Pool, Host), la RAM, il CPU, le indirizzi IP e altre informazioni.
 
-<img src={openIaasVirtualMachineOverviewInformazioni} />
+<img src={openIaasVirtualMachineOverviewInformations} />
 
 Un'area "__Avanzate__" fornisce ulteriori dettagli:
 
@@ -168,9 +166,7 @@ Questo ambito è cruciale per garantire che i sistemi cloud rispettino gli stand
 
 Il riquadro "Politiche" ti permette di visualizzare tutte le tue politiche di replica:
 
-```markdown
 <img src={openIaasReplicationPoliciesTable} />
-```
 
 Per ciascuna politica, avrai accesso alle seguenti informazioni:
 
@@ -191,9 +187,7 @@ Le azioni disponibili includono:
 
 Il modulo __"Repliche"__ mostra tutte le server virtuali in fase di replica:
 
-```markdown
 <img src={openIaasReplicationReplicasTable} />
-```
 
 Puoi visualizzare:
 

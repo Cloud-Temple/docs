@@ -1,5 +1,5 @@
 ---
-Titel des Dienstleistungsvertrags SecNumCloud PaaS
+title: Titel des Dienstleistungsvertrags SecNumCloud PaaS
 ---
 
 ### Referenz
