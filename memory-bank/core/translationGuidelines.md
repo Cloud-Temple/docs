@@ -184,13 +184,13 @@ const TECHNICAL_TERMS = [
 ### Workflow Automatisé
 ```bash
 # 1. Traduire nouveau contenu français
-npm run translate:new
+yarn translate:new
 
 # 2. Valider terminologie
-npm run translate:validate
+yarn translate:validate
 
 # 3. Générer glossaire
-npm run translate:glossary
+yarn translate:glossary
 ```
 
 ## Processus de Validation
@@ -306,13 +306,13 @@ Les titres de navigation sont traduits via `i18n/[lang]/code.json` :
 ### Outils de Validation
 ```bash
 # Vérifier cohérence terminologique
-npm run i18n:check-terms
+yarn i18n:check-terms
 
 # Valider structure markdown
-npm run i18n:validate-structure
+yarn i18n:validate-structure
 
 # Générer rapport complétude
-npm run i18n:coverage-report
+yarn i18n:coverage-report
 ```
 
 ---
