@@ -312,7 +312,7 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 1. **Créer/Modifier** la documentation source (fr).
 2. **Tester** les exemples de code pour garantir leur validité.
 3. **Traduire** les modifications en lançant le script (`python scripts/translate_py/translate.py`).
-4. **Compiler** le site en local (`npm run build`) pour vérifier l'absence d'erreurs (liens cassés, etc.).
+4. **Compiler** le site en local (`yarn build`) pour vérifier l'absence d'erreurs (liens cassés, etc.).
 5. **Mettre à jour** le `docs/changelog.md` avec des notes de version claires et orientées utilisateur.
 6. **Commiter** l'ensemble des changements (sources, traductions, changelog) avec un message descriptif.
 7. **Pousser** les commits sur le dépôt distant.
