@@ -1,6 +1,7 @@
 ---
-title: API-Dokumentation
+title: Dokumentation API
 ---
+
 import ShivaProfil001 from './images/shiva_profil_001.png'
 import ShivaProfil002 from './images/shiva_profil_002.png'
 import ShivaProfil003 from './images/shiva_profil_003.png'
@@ -9,70 +10,68 @@ import ShivaProfil005 from './images/shiva_profil_005.png'
 import ShivaApi001 from './images/shiva_api_001.png'
 import ShivaApi002 from './images/shiva_api_002.png'
 import ShivaApi003 from './images/shiva_api_003.png'
-import ShivaApi004 from './images/shiva_api_004.jpg'
+import ShivaApi004 from './images/shiva_api_004.png'
 
-## API-Schlüssel
+## API Keys
 
-Der __API-Schlüssel__ ermöglicht die Authentifizierung, wenn Sie Anfragen an die API stellen möchten. Die Generierung eines API-Schlüssels, auch __Personal Access Token (PAT)__ genannt,
-ist eine sichere Methode, um sich mit den Shiva-APIs zu verbinden, ohne eine grafische Benutzeroberfläche zu verwenden. Jeder dieser Tokens ist mit einem Tenant und dem Benutzer verknüpft, der ihn erstellt hat.
+The __API Key__, also known as a __Personal Access Token (PAT)__, serves as an authentication method when you need to make requests to the Shiva API. Generating an API key is a secure way to connect to Shiva's APIs without relying on a graphical interface. Each token is associated with a tenant and the user who created it.
 
-Die Erstellung dieses Tokens erfolgt über Ihr Konto. Es ist möglich, mehrere Schlüssel zu generieren und für jeden die Berechtigungen im Rahmen Ihrer Rechte zu konfigurieren.
+Creating these tokens can be done from your account. You can generate multiple keys, configuring permissions for each within the limits of your access rights.
 
-Um einen API-Schlüssel zu erstellen, __klicken Sie einfach auf Ihr Profil__:
+To create an API key, simply:
 
-<img src={ShivaProfil001} />
+<img src="ShivaProfil001" />
 
-Im Profilmenü klicken Sie auf __'Persönlicher Zugriffstoken'__
+From the profile menu, select __'Personal Access Token'__.
 
-<img src={ShivaProfil003} />
+<img src="ShivaProfil003" />
 
-Sie sehen dann alle API-Schlüssel, die für diesen Benutzer in diesem Tenant erstellt wurden. Klicken Sie auf __'Neuer persönlicher Zugriffstoken'__
+You'll then see a list of all API keys created for this user in this tenant. Click on __'New Personal Access Token'__.
 
-<img src={ShivaProfil002} />
+<img src="ShivaProfil002" />
 
-Sie müssen dann:
+You will need to:
 
-- Den Namen dieses neuen Tokens angeben,
-- Ein Ablaufdatum angeben (maximal 12 Monate Gültigkeit),
-- Die mit dem Token verbundenen Berechtigungen auswählen.
+- Provide a name for the new token,
+- Specify an expiration date (maximum 12 months validity),
+- Choose the permissions associated with the token.
 
-Die Details zu Ihrem Token werden dann angezeigt. __Achtung, es ist später nicht mehr möglich, darauf zuzugreifen.__
+The details of your token are then displayed. __Note:__ It's no longer possible to view these after creation.
 
-Wenn Sie diese Informationen nicht notieren, müssen Sie den Token löschen und neu erstellen.
+If you forget these details, you'll need to destroy and regenerate the token.
 
-<img src={ShivaProfil004} />
+<img src="ShivaProfil004" />
 
-Aus Sicherheitsgründen wird empfohlen, mehrere Tokens zu erstellen, die jeweils einen spezifischen Verwendungszweck haben (ein Token für jede Anwendung oder jeden Geschäftsprozess), anstatt einen Token mit allen Berechtigungen zu erstellen.
+For security reasons, it is recommended to create multiple tokens with specific purposes (one for each application or business process) rather than using one token with all permissions.
 
-Sie sehen dann den neu erstellten Token und sein zukünftiges Ablaufdatum.
+You will then see the newly created token and its upcoming expiration date.
 
-<img src={ShivaProfil005} />
+<img src="ShivaProfil005" />
 
-## Zugriff auf das API-Portal
+## Zugruß zum API-Portal
 
-Die OpenAPI 3.0 (Swagger)-Dokumentation der Cloud Temple-Konsolen-APIs ist direkt in der Anwendung verfügbar:
+Die Dokumentation OpenAPI 3.0 (Swagger) der Cloud-Console-APIs von Cloud Temple ist direkt in der Anwendung verfügbar:
 
 <img src={ShivaApi001} />
 
-Der Zugriff auf die APIs erfordert eine Authentifizierung. Nach der Authentifizierung müssen alle Operationen den Header
-__'Authorization'__ mit dem Bearer-Access-Token enthalten, der während der Authentifizierungsphase erhalten wurde.
+Der Zugriff auf die APIs erfordert eine Authentifizierung. Nach erfolgreicher Authentifizierung müssen alle Operationen den Header `__'Authorization'__ enthalten, der den bearer Access Token enthält, der während der Authentifizierungsphase erhalten wurde.
 
-Die URL der Endpunkte wird direkt in __Swagger__ angegeben (im "Servers"-Objekt jeder API-Seite).
+Die URL der Zugriffsstellen wird direkt in __Swagger__ (im Objekt "Servers" jeder Seite der APIs) angegeben.
 
-## Die Aktivitäten
+## Aktivitäten
 
-Die Nachverfolgung von Schreibanfragen (POST, PUT, PATCH, DELETE) erfolgt über das Aktivitätsmanagement. Jede Anfrage dieser Art generiert automatisch eine zugehörige Aktivität. Ein HTTP-Statuscode 201 bestätigt die erfolgreiche Erstellung der Aktivität. Die eindeutige Kennung dieser Aktivität wird in den Antwort-Headern unter dem Schlüssel 'Location' zurückgegeben.
+Die Überwachung von Anfragen des Typs Erstellung (POST, PUT, PATCH, DELETE) erfolgt über die Verwaltung von Aktivitäten. Jede solche Anfrage generiert automatisch eine entsprechende Aktivität. Ein Statuscode HTTP 201 bestätigt die erfolgreiche Erstellung der Aktivität. Der eindeutige Identifikator dieser Aktivität wird im Antwortheader unter der Schlüssel "Location" zurückgegeben.
 
 <img src={ShivaApi002} />
 
-Sobald die Kennung abgerufen wurde, ist es möglich, auf die Details der Aktivität zuzugreifen, indem man die API des Activity-Moduls verwendet:
+Nachdem der Identifikator abgerufen wurde, kann man die Details der Aktivität über die API des Moduls Aktivität erhalten:
 
 <img src={ShivaApi003} />
 
-Der Inhalt der Aktivität enthält alle wesentlichen Informationen zur Identifizierung der Operation, ihres Ausführungsdatums und ihres Fortschrittsstatus. Hier ist das Modell einer Aktivität:
+Der Inhalt der Aktivität enthält alle notwendigen Informationen zur Identifizierung der Operation, zur Datum der Ausführung sowie zum Fortschritt. Hier ist ein Beispiel für eine Aktivität:
 
-```
-    {
+```json
+{
     "tenantId": "UUIDV4",
     "description": "STRING",
     "type": "ComputeActivity" | "BackupActivity" | "IAMActivity" | "TagActivity" | "RTMSActivity" | "BastionActivity" | "SupportActivity",
@@ -91,110 +90,159 @@ Der Inhalt der Aktivität enthält alle wesentlichen Informationen zur Identifiz
 }
 ```
 
-Das Objekt **state** kann je nach Status der Aktivität verschiedene Formen annehmen, nämlich:
+Das Objekt __state__ kann je nach Zustand der Aktivität verschiedene Formen annehmen:
 
-**waiting**, Status bevor die Operation begonnen hat:
+__warten__, Zustand vor Beginn der Operation:
+
+```json
+waiting: {}
 ```
-    waiting: {}
-```
-**running**, Status während die Operation ausgeführt wird:
-```
-    running: {
+
+__laufen__, Zustand während der Ausführung der Operation:
+
+```json
+running: {
     status: string;
     startDate: Date;
     progression: number;
-    };
+}
 ```
-**failed**, Status wenn die Operation fehlgeschlagen ist:
-```
-    failed: {
+
+__fehlgeschlagen__, Zustand, wenn die Operation fehlschlug:
+
+```json
+failed: {
     startDate: Date;
     stopDate: Date;
     reason: string;
-    };
+}
 ```
-**completed**, Status wenn die Operation abgeschlossen ist:
-```
-    completed: {
+
+__abgeschlossen__, Zustand, wenn die Operation abgeschlossen ist:
+
+```json
+completed: {
     startDate: Date;
     stopDate: Date;
     result: string;
-    };
+}
 ```
 
-**Hinweis: Die Kennung (UUIDv4) der erstellten Ressource ist im Ergebnis der Aktivität verfügbar, sobald diese abgeschlossen ist.**
+__Hinweis: Der Identifikator (UUIDv4) der erstellten Ressource steht im Antwortinhalt der Aktivität zur Verfügung, sobald diese abgeschlossen ist.__
 
-## API-Limits
+### Einschränkungen der API
 
-### Warum Limits?
+Dieses Dokument beschreibt die Grenzen und Beschränkungen der angebotenen APIs. Es ist wichtig, diese Begrenzungen zu verstehen, um effektiv mit unseren Dienstleistungen zu arbeiten und potenzielle Probleme zu vermeiden.
 
-Die Cloud Temple-Konsole definiert __Obergrenzen für das Volumen an Anfragen__, die ein Benutzer innerhalb eines bestimmten Zeitraums an die API senden kann. Die Festlegung dieser Frequenzobergrenzen ist eine übliche Maßnahme im API-Management, die aus mehreren wesentlichen Gründen eingeführt wurde:
+#### 1. Rate Limiting
 
-- **Verhinderung von Missbrauch**: Diese Limits tragen dazu bei, die Integrität der API zu schützen, indem sie missbräuchliche oder unachtsame Nutzungen verhindern, die ihre Funktionalität beeinträchtigen könnten.
-- **Sicherstellung der Servicequalität**: Durch die Regulierung des API-Zugriffs gewährleisten wir eine gerechte Verteilung der Ressourcen, sodass alle Benutzer eine stabile und effiziente Erfahrung genießen können.
+Unsere API implementiert ein Rate Limiting, um die Last auf unsere Server zu verteilen und sicherzustellen, dass alle Nutzer gleichberechtigt zugreifen können. Jeder Benutzer hat einen täglichen Rate Limit, der sich anhand seiner Abonnementstyp (Standard, Premium, Enterprise) berechnet wird. Übersteigen Sie diesen Limit, werden Ihre Anfragen geblockiert oder verzögert.
 
-Ein Beispiel: Ein schlecht konzipiertes oder ineffizientes Skript, das wiederholt API-Aufrufe tätigt, könnte Ressourcen sättigen und die Leistung beeinträchtigen. Durch die Festlegung von Anfragelimits verhindern wir solche Situationen und stellen __einen reibungslosen, unterbrechungsfreien Service__ für alle unsere Kunden sicher.
+#### 2. Datenvolumen
 
-### Welche Ratelimits gelten für die Cloud Temple-Konsolen-API?
+Es gibt ein maximales Datenvolumen pro Tag, das von Ihrem Abonnement abhängt. Übersteigen Sie dieses Volumen, können zusätzliche Gebühren anfallen. Bitte beachten Sie, dass dieses Limit je nach API-Endpunkt variieren kann.
 
-Wir wenden quantitative Beschränkungen auf die Benutzerinteraktionen mit der Konsole für jedes Produkt an.
+#### 3. Datenaktualisierung
 
-Die Limits sind in __Anfragen pro Sekunde (r/s) und pro Quell-IP__ definiert. Jenseits des Schwellenwerts antwortet das System
-mit einem HTTP-Fehlercode 429, der anzeigt, dass das erlaubte Anfragelimit überschritten wurde.
+Einige APIs bieten eine zeitbasierte Aktualisierungsrate für bestimmte Ressourcen. Diese Grenzen stellen sicher, dass die Daten aktuell und relevant bleiben. Übersteigen Sie diese Grenzen, können Ihre Anfragen verzögert oder abgelehnt werden.
 
-Hier sind die definierten Limits:
+#### 4. Authentifizierung
 
-| Produkt              | Schwellenwert |
-|----------------------|---------------|
-| Cloud Temple-Konsole | 60 r/s        |
-| Identität (IAM)      | 60 r/s        |
-| IaaS - Berechnung    | 60 r/s        |
-| IaaS - Speicher      | 20 r/s        |
-| IaaS - Sicherung     | 60 r/s        |
-| PaaS - S3            | 60 r/s        |
-| PaaS - Openshift     | 60 r/s        |
-| Netzwerk             | 60 r/s        |
-| Hosting              | 60 r/s        |
+Die Authentifizierung erfolgt über API-Schlüssel. Bitte beachten Sie, dass dieses Schlüsselpaar für jede Anfrabe benötigt wird und nicht wiederholt werden kann. Eine unsachgemäße Verwaltung der Schlüssel kann zu einer vorübergehenden oder dauerhaften Blockierung Ihres Kontos führen.
 
-### Wie funktionieren die Ratelimits?
+#### 5. Fehlerbehandlung
 
-Wenn die Anzahl der an einen API-Endpunkt gesendeten Anfragen das erlaubte Limit überschreitet, antwortet der API-Endpunkt mit
-__einem HTTP-Antwortcode 429__. Dieser Code zeigt an, dass der Benutzer die Anzahl der erlaubten Anfragen überschritten hat.
-In diesem Fall stellt der API-Endpunkt auch ein JSON-Objekt als Antwort bereit,
-das detaillierte Informationen über die angewandte Begrenzung enthält:
-```
-    {
-        "error": {
-            "status": "429 Too Many Requests",
-            "message": "Too Many Requests"
-        }
+Wir bieten eine detaillierte Fehlerbehandlung, um Ihnen bei der Diagnose und Behebung von Problemen zu helfen. Bitte beachten Sie, dass einige Fehlercodes spezifisch für bestimmte Abonnementtypen oder API-Endpunkte sind.
+
+#### 6. Nutzungsbedingungen
+
+Die Nutzung unserer APIs unterliegt den Nutzungsbedingungen und Datenschutzerklärungen, die Sie auf unserer Website finden können. Bitte beachten Sie, dass die Verletzung dieser Bedingungen zu einer vorübergehenden oder dauerhaften Blockierung Ihres Kontos führen kann.
+
+#### 7. Support und Wartung
+
+Wir bieten technischen Support für unsere APIs an, aber bitte beachten Sie, dass die Reaktionszeit je nach Abonnementstyp variieren kann. Unsere Wartungs- und Updatesdienste sind regelmäßig durchgeführt, um eine optimale Leistung zu gewährleisten.
+
+#### 8. API-Änderungen
+
+Wir behalten uns das Recht vor, unsere APIs jederzeit zu ändern oder zu erweitern. Wir werden unsere Nutzer über solche Änderungen informieren und gegebenenfalls angemessene Anpassungszeiträume einräumen.
+
+#### 9. Datenschutz
+
+Wir verarbeiten personenbezogene Daten gemäß den geltenden Datenschutzbestimmungen. Bitte beachten Sie, dass die Verwendung unserer APIs unter der Voraussetzung Ihrer Einhaltung dieser Bestimmungen erfolgt.
+
+#### 10. Zahlungsbedingungen
+
+Bitte beachten Sie, dass alle Transaktionen mit unseren API-Diensten in [Währung] durchgeführt werden und die Zahlungsinformationen gemäß den Bedingungen unserer Abonnementpläne verarbeitet werden.
+
+Diese Grenzen sind dazu gedacht, eine stabile und effiziente Nutzung unserer APIs zu gewährleisten. Für weitere Informationen oder spezifische Anfragen wenden Sie sich bitte an unser Support-Team.
+
+### Warum diese Grenzen?
+
+Die Cloud-Tempel-Konsole definiert __Grenzen für den Anfragenausmaß__, den ein Benutzer an die API innerhalb einer bestimmten Zeitspanne stellen kann. Die Einführung dieser Fréquence-Grenzen ist eine übliche Praxis in der Verwaltung von APIs, um mehrere wichtige Gründe zu erfüllen:
+
+- __Prävention von Missbrauch__ : Diese Begrenzungen tragen zur Erhaltung der Integrität der API bei, indem sie unangemessene oder fehlerhafte Nutzungen verhindern, die dessen Funktionalität beeinträchtigen könnten.
+- __Garantie von Dienstleistungsqualität__ : Durch die Kontrolle des Zugriffs auf die API stellen wir sicher, dass Ressourcen gleichmäßig verteilt werden und allen Benutzern eine stabile und leistungsstarke Erfahrung bieten.
+
+Betrachten wir zum Beispiel einen schlecht konzipierten oder ineffizienten Skript, das wiederholt an die API appelliert, das das System überlasten und die Leistung beeinträchtigen könnte. Durch die Festlegung von Anfragegrenzen verhindern wir solche Situationen und gewährleisten ein __flüssiges und ununterbrochenes Dienstleistungsangebot__ für unser gesamtes Kundenkollektif.
+
+### Welche Rate-Limits für die API der Cloud-Tempel-Konsole gelten?
+
+Wir legen Quotas an Interaktionen mit unserer Konsole fest, die von den Benutzern für jeden Produkt genutzt werden. Diese Grenzen sind in __Anfragen pro Sekunde (r/s) und IP-Quelle__ definiert. Übersteigen Sie diese Grenze, erhalten Sie ein HTTP-Fehlercode 429, der anzeigt, dass die zulässige Anzahl von Anfragen überschritten wurde.
+
+Hier sind die festgelegten Grenzen:
+
+| Produkt                | Grenzwertprozent |
+|-----------------------|------------------|
+| Cloud-Tempel-Konsole  | 60 r/s           |
+| Identität (IAM)        | 60 r/s           |
+| IaaS - Berechnung     | 60 r/s           |
+| IaaS - Speicher       | 20 r/s           |
+| IaaS - Backup        | 60 r/s           |
+| PaaS - S3            | 60 r/s           |
+| PaaS - OpenShift      | 60 r/s           |
+| Netzwerk             | 60 r/s           |
+| Hosting              | 60 r/s           |
+
+### Wie funktionieren die Rate Limits?
+
+Wenn der Anzahl der an einen API-Punkt gesendeten Anfragen die zulässige Obergrenze überschreitet, reagiert der API-Punkt mit einem HTTP-Statuscode 429. Dieser Code signalisiert, dass der Benutzer die maximale Anzahl von Anfragen überschritten hat. Zusätzlich zur Rückmeldigung des Statuscodes 429 liefert der API-Punkt ein JSON-Objekt mit detaillierten Informationen über die angelegte Begrenzung:
+
+```json
+{
+    "error": {
+        "status": "429 Too Many Requests",
+        "message": "Too Many Requests"
     }
+}
 ```
-### Wie vermeidet man zu viele Anfragen?
 
-Es wird empfohlen, die Anzahl der von Ihrer Automatisierung getätigten API-Aufrufe zu begrenzen, um unter dem für den Endpunkt festgelegten Ratelimit zu bleiben.
+### Wie man zu viele Anfragen vermeidet
 
-Diese Situation tritt häufig auf, wenn mehrere Anfragen parallel ausgeführt werden, unter Verwendung mehrerer Prozesse oder Threads.
+Es wird empfohlen, die Anzahl der API-Anfragen in Ihrer Automatisierung so weit wie möglich zu begrenzen, um immer unterhalb des Endpunkts für die Taktstufe zu bleiben.
 
-Es gibt mehrere Möglichkeiten, die Effizienz Ihrer Automatisierung zu verbessern, insbesondere durch die Verwendung von __Caching__-Mechanismen und die Implementierung eines __Backoff-Wiederholungssystems__. Diese Methode beinhaltet eine kurze Pause, wenn ein Ratelimit-Fehler auftritt, und dann einen erneuten Versuch der Anfrage. Wenn die Anfrage erneut fehlschlägt, wird die Pausendauer schrittweise erhöht, bis die Anfrage erfolgreich ist oder bis eine maximale Anzahl von Wiederholungen erreicht ist.
+Diese Situation tritt häufig auf, wenn mehrere Anfragen gleichzeitig mit verschiedenen Prozessen oder Threads ausgeführt werden.
 
-Dieser Ansatz bietet viele Vorteile:
+Es gibt verschiedene Möglichkeiten, Ihre Automatisierung effizienter zu gestalten:
 
-- __Backoff__ stellt sicher, dass frühe Versuche schnell durchgeführt werden, während bei wiederholtem Fehlschlagen längere Verzögerungen berücksichtigt werden.
-- Das Hinzufügen einer __zufälligen Variation__ zur Pause hilft zu vermeiden, dass alle Wiederholungsversuche gleichzeitig stattfinden.
+- **Verwendung von __Meldungsmüll__**: Dies bedeutet, dass Sie die Ergebnisse vorher speichern und bei erneuten Anfragen diese Meldungen wiederholen.
+- **Implementierung eines __Systeme der Wiederholungsversuch mit progressiver Verzögerung__**: Bei einer Fehlermeldung aufgrund von Taktstufenbeschränkungen pausieren Sie zunächst kurz und versuchen die Anfrage erneut. Wenn dies ebenfalls fehlschlägt, verlängern Sie die Pause progressiv, bis die Anfrage erfolgreich ist oder ein maximales Anzahl von Wiederholungsversuchen erreicht ist.
 
-Es ist wichtig zu beachten, dass __erfolglose Anfragen Ihr Ratelimit nicht beeinflussen__.
-Allerdings könnte das kontinuierliche Wiederholen einer Anfrage keine langfristig tragfähige Lösung sein, da dieses Verhalten in Zukunft geändert werden könnte. Daher empfehlen wir, sich nicht ausschließlich auf diesen Mechanismus zu verlassen.
+Diese Methode bietet mehrere Vorteile:
 
-Die Python-Bibliotheken __[Backoff](https://pypi.org/project/backoff/)__ und __[Tenacity](https://pypi.org/project/tenacity/)__ sind gute Ausgangspunkte für die Implementierung von Backoff-Strategien.
+- Die __progressive Verzögerung__ stellt sicher, dass die ersten Versuche schnell durchgeführt werden, während längere Pausen bei wiederholten Fehlerschlägen eingeleitet werden.
+- Die Einführung von __randomisierten Verzögerungen__ kann dazu beitragen, dass keine Anfragen gleichzeitig ausgeführt werden und somit die Last auf das System verteilt wird.
 
-## API-Endpunkt-Lebenszyklus
+Es ist wichtig zu beachten, dass unerfolgreiche Anfragen Ihre Taktstufe nicht beeinträchtigen. Dennoch, kontinuierliches Wiederholen einer fehlgeschlagenen Anfrage kann langfristig nicht die beste Lösung sein, da dies sich ändern könnte. Daher sollten Sie Ihre Automatisierung nicht ausschließlich auf diesem Mechanismus stützen.
 
-Informationen zu API-Endpunkt-Updates sind in den Release Notes verfügbar:
+Bibliotheken wie __Backoff__ (https://pypi.org/project/backoff/) und __Tenacity__ (https://pypi.org/project/tenacity/) in Python bieten gute Grundlagen für die Implementierung von Attenuation-Strategien.
+
+## Lebenszyklus eines Endpunkt-API
+
+Die Informationen zur Entwicklung der Endpunkte der API sind in den Release-Notes verfügbar:
 
 <img src={ShivaApi004} />
 
-Sie finden die Liste der Endpunkte, die aktivitätsweise als veraltet markiert sind.
+Sie finden die Liste der Endpunkte, die aktuell nicht mehr unterstützt werden.
 
-Darüber hinaus werden veraltete Endpunkte in unseren APIs wie folgt dargestellt:
-__~~this/is/an/endpoint~~__ zusammen mit einem endgültigen Löschdatum in der Beschreibung.
+Zusätzlich werden die Endpunkte, die obsolet sind, auf unserer API wie folgt dargestellt:
+__~~this/is/an/endpoint~~__ sowie eine endgültige Löschdatum in der Beschreibung.

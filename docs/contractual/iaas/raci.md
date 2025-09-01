@@ -53,10 +53,10 @@ reposent les réseaux clients spécifiques, lesquels sont intégrés et pris en 
 |-------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
 | Créer, installer, mettre à jour vos machines virtuelles                                                                       | **RA**      |                   |
 | Installer et configurer les logiciels et middlewares sur vos machines virtuelles                                              | **RA**      |                   |
-| Acheter et détenir les licences et les droits d'utilisation <br/>pour les systèmes d'exploitation de vos machines virtuelles  | **RA**      |                   |
+| Acheter et détenir les licences et les droits d'utilisation pour les systèmes d'exploitation de vos machines virtuelles  | **RA**      |                   |
 | Configurer le réseau pour chacune vos machines virtuelles                                                                     | **RA**      |                   |
 | S'assurer que chaque machine virtuelle est associée à un plan de sauvegarde cohérent                                          | **RA**      | **C**             |
-| S'assurer que chaque machine virtuelle est associée à un <br/>plan de reprise d'activité ou de continuité d'activité cohérent | **RA**      | **C**             |
+| S'assurer que chaque machine virtuelle est associée à un plan de reprise d'activité ou de continuité d'activité cohérent | **RA**      | **C**             |
 | Implémenter une stratégie de protection antivirale sur vos machines virtuelles                                                | **RA**      |                   |
 | Mettre en place une solution de métrologie et de surveillance sur vos machines virtuelles                                     | **RA**      |                   |
 | Définir la politique de TAG de vos machines virtuelles                                                                        | **RA**      |                   |
@@ -71,7 +71,7 @@ reposent les réseaux clients spécifiques, lesquels sont intégrés et pris en 
 | Assurer l'accessibilité du système d'information déployé sur vos machines virtuelles                                                 | **RA**      |                   |
 | Gérer les habilitations physiques et logiques des équipes Cloud Temple aux infrastructures SecNumCloud.                              |             | **RA**            |
 | Administrer les accès et la politique de sécurité associée liés à l'interface de la console Cloud Temple et à son API                | **RA**      |                   |
-| Administrer les accès et la politique de sécurité associée au système d'information<br/> hébergé au sein de vos tenants Cloud Temple | **RA**      |                   |
+| Administrer les accès et la politique de sécurité associée au système d'information hébergé au sein de vos tenants Cloud Temple | **RA**      |                   |
 
 ### maintien en condition opérationnelle et en condition de sécurité
 
@@ -158,7 +158,7 @@ et de métrologie nécessaires pour assurer le suivi du fonctionnement optimal d
 | S'assurer que les politiques de sauvegarde sont cohérentes avec le cycle de vie de la donnée                                              | **RA**      |                   |
 | S'assurer que les plans de continuité d'activité ou de reprise d'activité sont cohérents avec le cycle de vie de la donnée                | **RA**      |                   |
 | Effectuer des tests périodiques pour évaluer l'efficacité de la stratégie de sauvegarde                                                   | **RA**      |                   |
-| Effectuer des tests périodiques pour évaluer l'efficacité de la stratégie<br/> de reprise d'activité ou de continuité d'activité          | **RA**      | **CI**            |
+| Effectuer des tests périodiques pour évaluer l'efficacité de la stratégie de reprise d'activité ou de continuité d'activité          | **RA**      | **CI**            |
 
 *(5) Au 1er janvier 2024, la solution de sauvegarde intégrée à la plateforme Cloud Temple est IBM Spectrum Protect Plus.
 Cette solution est entièrement automatisée et peut être gérée via la console Cloud Temple ou l'API Cloud Temple.*
@@ -176,7 +176,7 @@ Cette solution est entièrement automatisée et peut être gérée via la consol
 | S'assurer que les politiques de sauvegarde sont cohérentes avec le cycle de vie de la donnée                                              | **RA**      |                   |
 | S'assurer que les plans de continuité d'activité ou de reprise d'activité sont cohérents avec le cycle de vie de la donnée                | **RA**      |                   |
 | Effectuer des tests périodiques pour évaluer l'efficacité de la stratégie de sauvegarde                                                   | **RA**      |                   |
-| Effectuer des tests périodiques pour évaluer l'efficacité de la stratégie<br/> de reprise d'activité ou de continuité d'activité          | **RA**      | **CI**            |
+| Effectuer des tests périodiques pour évaluer l'efficacité de la stratégie de reprise d'activité ou de continuité d'activité          | **RA**      | **CI**            |
 
 *(6) Ceci concerne toute solution de sauvegarde supplémentaire mise en place dans les environnements du client et gérée par celui-ci.
 Cloud Temple propose des services professionnels pour ceux qui souhaitent déléguer certaines opérations à Cloud Temple.*
@@ -189,7 +189,7 @@ Cloud Temple propose des services professionnels pour ceux qui souhaitent délé
 | Assurer le suivi contractuel de la prestation, incluant la validation des devis, le suivi des livraisons et la surveillance de la facturation                   | **RA**      | **I**             |
 | Assurer la maintenance et la disponibilité de l'inventaire des ressources fournies par Cloud Temple relative à l'offre SecNumCloud                              | **I**       | **RA**            |
 | Assurer la maintenance et la mise à disposition de la documentation technique relative à l'offre SecNumCloud                                                    | **I**       | **RA**            |
-| Assurer le suivi du cycle de vie des machines virtuelles déployées dans vos environnements Cloud Temple<br/> via votre CMDB (Configuration Management Database) | **RA**      |                   |
+| Assurer le suivi du cycle de vie des machines virtuelles déployées dans vos environnements Cloud Temple via votre CMDB (Configuration Management Database) | **RA**      |                   |
 | Maintenir à jour la politique d'accès à l'interface de la console Cloud Temple ou à l'API Cloud Temple                                                          | **RA**      |                   |
 
 ### Gestion des journaux
@@ -197,7 +197,7 @@ Cloud Temple propose des services professionnels pour ceux qui souhaitent délé
 | Activité                                                                                                                 | Rôle Client | Rôle Cloud Temple |
 |--------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
 | Conserver et mettre à disposition les journaux de la plateforme IaaS Cloud Temple **(7)**                                |             | **RA**            |
-| Conserver et mettre à disposition les journaux du système d'information<br/> hébergé au sein de vos tenants Cloud Temple | **RA**      |                   |
+| Conserver et mettre à disposition les journaux du système d'information hébergé au sein de vos tenants Cloud Temple | **RA**      |                   |
 
 *(7) Au premier janvier 2024, la durée de rétention des journaux de la plateforme est d'une année.*
 
@@ -220,7 +220,7 @@ Dans l'offre d'hébergement en baie physique, Cloud Temple assume la responsabil
 | Activité                                                                                                                                                                                       | Rôle Client | Rôle Cloud Temple |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------|
 | Planifier le projet de réversibilité et choisir les infrastructures cibles                                                                                                                     | **RA**      | **I**             |
-| Mettre en oeuvre les opérations de transition, qu'elles impliquent une extraction manuelle, l'utilisation d'API <br/>ou toute autre méthode tierce compatible avec la plateforme Cloud Temple. | **RA**      | **I**             |
-| Transférer les données tout en contrôlant les répercussions de la migration sur la qualité du service fourni <br/>par le système d'information du client.                                      | **RA**      |                   |
-| Procéder au démantèlement des configurations du Cloud Privé et des options associées au client, <br/>à la suite de la résiliation du contrat.                                                  | **I**       | **RA**            |
+| Mettre en oeuvre les opérations de transition, qu'elles impliquent une extraction manuelle, l'utilisation d'API ou toute autre méthode tierce compatible avec la plateforme Cloud Temple. | **RA**      | **I**             |
+| Transférer les données tout en contrôlant les répercussions de la migration sur la qualité du service fourni par le système d'information du client.                                      | **RA**      |                   |
+| Procéder au démantèlement des configurations du Cloud Privé et des options associées au client, à la suite de la résiliation du contrat.                                                  | **I**       | **RA**            |
 | Réaliser l'effacement sécurisé des données sur les supports de stockage et fournir une attestation                                                                                             | **I**       | **RA**            |

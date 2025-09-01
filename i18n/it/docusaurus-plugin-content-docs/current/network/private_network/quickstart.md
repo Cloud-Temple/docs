@@ -1,87 +1,141 @@
 ---
-title: Guida di avvio
+title: Guida di Partenza
 ---
-import shivaNetwork_001 from './images/shiva_network_001.jpg'
-import shivaNetwork_002 from './images/shiva_network_002.jpg'
-import shivaNetwork_003 from './images/shiva_network_003.jpg'
-import shivaNetwork_004 from './images/shiva_network_004.jpg'
-import shivaNetwork_005 from './images/shiva_network_005.jpg'
-import shivaNetwork_006 from './images/shiva_network_006.jpg'
+
+import shivaNetwork_001 from './images/shiva_network_001.png'
+import shivaNetwork_002 from './images/shiva_network_002.png'
+import shivaNetwork_003 from './images/shiva_network_003.png'
+import shivaNetwork_004 from './images/shiva_network_004.png'
+import shivaNetwork_005 from './images/shiva_network_005.png'
+import shivaNetwork_006 from './images/shiva_network_006.png'
+import shivaNetwork_007 from './images/shiva_network_007.png'
+import shivaNetwork_008 from './images/shiva_network_008.png'
+import shivaNetwork_009 from './images/shiva_network_009.png'
+import shivaNetwork_010 from './images/shiva_network_010.png'
 import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
 import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
 import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
 import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
+import shivaNetwork_order_001 from './images/shiva_order_network_001.png'
+import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png'
+import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png'
+import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png'
 
-## Reti private regionali
+### Reti Privati Regionali
 
-La gestione delle reti private all'interno di una regione si effettua direttamente nella console Cloud Temple.
+L'esecuzione delle richieste di reti private all'interno di una regione avviene direttamente nella console Cloud Temple.
 
-### All'interno di un tenant
+### Within a Tenant
 
-La creazione di una rete virtuale avviene nel menu __*Network*__ sulla barra verde a sinistra dello schermo.
+The creation of a virtual network takes place in the *Réseaux* menu on the top left bar of the screen.
 
 <img src={shivaNetwork_001} />
 
-Fare clic sul pulsante __*Nuova rete*__.
+Clicking on the button *Nouveau réseau*
 
-Dovete specificare il nome della vostra rete che verrà visualizzato. Per impostazione predefinita, l'insieme dei vostri cluster accederà alla vostra nuova rete.
-Tuttavia, nel sottomenu __*Opzioni Avanzate*__, è possibile specificare in modo più preciso l'ambito di propagazione all'interno del tenant tra i vostri diversi cluster.
+You need to specify the name of your network, which will be displayed. By default, all of your clusters will access your new network.
+
+It is now possible to create several networks simultaneously. Simply click on *ajouter un réseau*.
 
 <img src={shivaNetwork_002} />
 
-L'insieme delle azioni possibili sui vostri reti si trova nel menu __*Azioni*__ di ciascuna di esse :
+In the following steps, you can specify more precisely the scope of propagation within the tenant between your different IaaS VMware clusters or Open IaaS clusters.
 
-- L'attivazione del condivisione di una rete tra tenant di una stessa organizzazione.
-- La disattivazione del condivisione di una rete tra tenant di una stessa organizzazione.
-- L'aggiunta di una condivisione di una rete tra tenant di una stessa organizzazione.
-- La cancellazione di una condivisione di una rete tra tenant di una stessa organizzazione.
-- La visualizzazione grafica della propagazione di una rete sull'insieme dei vostri cluster e dei vostri hyperviseur all'interno di un tenant.
-- La cancellazione di una propagazione all'interno di un tenant.
-- La modifica di una propagazione all'interno di un tenant.
-- La cancellazione di una rete.
+<div style={{display: 'flex', gap: '10px', alignItems: 'flex-start'}}>
+  <img src={shivaNetwork_003} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
+  <img src={shivaNetwork_004} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
+</div>
 
-<img src={shivaNetwork_003} />
+### Gestione delle comandi di rete
 
-#### Visualizzazione della diffusione della tua rete
+Dopo aver completato tutte le fasi, i tuoi reti saranno create e una comando verrà generata per la loro propagazione. Puoi monitorare le tue comandi:
 
-Puoi facilmente nel menu __*Actions*__ visualizzare la diffusione di una rete verso i tuoi diversi cluster all'interno dello stesso tenant.  
-Seleziona l'opzione *"Visualizza la diffusione"*:
+- Nell'angolo __*Comandi*__ del menu principale
 
-<img src={shivaNetwork_004} />
+<img src={shivaNetwork_order_001} />
 
-#### Modifica della propagazione
+- Cliccando sui pulsanti informativi che indirizzano versi i comandi correlati
 
-La modifica di una propagazione all'interno di un tenant viene eseguita con l'opzione *"Propagare"*:
-selezionate quindi i cluster da integrare in questa propagazione.
+> **Importante**: Non è possibile generare più comandi dello stesso tipo di risorsa contemporaneamente. Dovrai aspettare che la comando corrente venga elaborata prima di creare una nuova.
+
+Tutte le azioni possibili sui tuoi reti sono disponibili nel menu __*Azioni*__ di ciascuno:
+
+- Attivazione del condivisione di un network tra tenute dell'organizzazione stessa.
+- Disattivazione del condivisione di un network tra tenute dell'organizzazione stessa.
+- Aggiunta di un nuovo condivisione di network tra tenute dell'organizzazione stessa.
+- Rimozione di un condivisione di network tra tenute dell'organizzazione stessa.
+- Visualizzazione grafica della propagazione di un network sui tuoi cluster e i tuoi hypervisor all'interno di una tenuta.
+- Rimozione di una propagazione all'interno di una tenuta.
+- Modifica di una propagazione all'interno di una tenuta.
+
+> La rimozione di un network non è ancora disponibile.
 
 <img src={shivaNetwork_005} />
+<img src={shivaNetwork_006} />
+
+#### Visualizzazione della propagazione dei tuoi reti
+
+Puoi facilmente visualizzare nella sezione __*Azioni*__ la propagazione di un tuo network verso i diversi cluster all'interno dello stesso tenant.
+
+Seleziona l'opzione *"Visualizza la propagazione"* :
+
+<img src={shivaNetwork_007} />
+
+#### Modificazione della propagazione
+
+La modifica di una propagazione all'interno di un tenant viene eseguita tramite l'opzione __*Propaga*. Scegli quindi il prodotto (IaaS VMware, Open IaaS, Bare metal) per cui desideri propagare i tuoi reti e poi integra i cluster in questa propagazione.
+
+<img src={shivaNetwork_008} />
+<img src={shivaNetwork_009} />
 
 __*Nota:*__ *La modifica della propagazione è limitata a 20 reti per azione.*
 
-#### Eliminazione di una rete
+#### Suppression della propagazione all'interno di un ambiente è eseguita tramite l'opzione *Eliminare una propagazione*:
 
-L'eliminazione di una rete all'interno di un tenant viene eseguita dall'opzione *"Elimina la rete"* :
+Seleziona quindi la propagazione che desideri eliminare:
 
-<img src={shivaNetwork_006} />
+<img src={shivaNetworkDeletePropagation} />
 
-### Condivisione di rete tra tenant
+Viene successivamente creata una comanda, proprio come durante la creazione iniziale con propagazione.
 
-Di default, __i reti sono disponibili solo all'interno di un tenant__. È possibile scegliere di __condividere una rete tra più tenant__ per motivi tecnici o di connettività.  
-È quindi possibile condividere una rete tra i propri __[Tenant](../../console/iam/concepts.md#tenant)__ all'interno della stessa organizzazione.
+<img src={shivaNetworkDeletePropagationOrder} />
+<img src={shivaNetworkDeletePropagationOrderValidate} />
 
-Per farlo, è sufficiente attivare la condivisione come mostrato di seguito.
+#### Difficoltà di propagazione dei reti
+
+È possibile separare la creazione e la propagazione dei reti in due fasi distinte:
+
+1. **Propagare un rete esistente**: Fai clic sull'azione "Propagare" su un rete già creata
+2. **Selezionare la destinazione della propagazione**: Verrà poi generata una comanda, proprio come durante la creazione iniziale con la propagazione.
+
+### Attivazione e disattivazione dei reti
+
+Una rete può essere temporaneamente disattivata senza essere rimossa e poi riattivata.
+
+<img src={shivaNetwork_010} />
+
+### Condivisione di rete tra tenenti
+
+Per default, i **reti sono disponibili solo all'interno di un tenente**. È possibile scegliere di **condividere un rete tra più tenenti** per ragioni tecniche o di connettività. Pertanto, è possibile condividere un rete tra i vostri **tenenti all'interno della stessa organizzazione**.
+
+Per farlo, basta attivare la condivisione come indicato di seguito.
 
 <img src={shivaNetworkVnShareEnabled} />
 
-Una volta attivata la condivisione, è sufficiente aggiungere una condivisione come mostrato di seguito.
+Dopo l'attivazione della condivisione, è necessario aggiungere un **condivisione** come indicato di seguito.
 
 <img src={shivaNetworkVnShared} />
 
-Selezionare quindi il tenant di destinazione. Attenzione, la lista dei tenant è dinamica.  
-Dipende dalla tua organizzazione e dai tuoi diritti.
+Successivamente, seleziona il tenente di destinazione. Attenzione: la lista dei tenenti è dinamica e dipende dall'organizzazione e dagli eventuali diritti dell'utente.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Una volta condivisa la rete, sarà visibile nella scheda 'Reti condivise' dal tuo secondo tenant.
+Una volta condiviso il rete, sarà visibile nell'angolo "Reti condivise" dal secondo tenente.
 
 <img src={shivaNetworkVnSharedWithMe} />
+
+### Visualizzazione dei reti condivise
+
+Dopo aver propagati i network, l'angolo "Reti condivise" consente di visualizzare i network che altri tenitori della tua organizzazione condividono con te:
+
+<img src={shivaNetwork_007} />

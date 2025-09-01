@@ -1,4 +1,8 @@
-### Connectivité réseau client
+---
+title: Connectivité réseau client
+---
+
+# Connectivité réseau client
 
 | Attività                                                                                            | Ruolo Cliente | Ruolo Cloud Temple |
 |-----------------------------------------------------------------------------------------------------|---------------|--------------------|

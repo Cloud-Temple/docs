@@ -1,87 +1,143 @@
 ---
-title: Leitfaden zum Start
+title: Leitfaden zum Einstieg
 ---
-import shivaNetwork_001 from './images/shiva_network_001.jpg'
-import shivaNetwork_002 from './images/shiva_network_002.jpg'
-import shivaNetwork_003 from './images/shiva_network_003.jpg'
-import shivaNetwork_004 from './images/shiva_network_004.jpg'
-import shivaNetwork_005 from './images/shiva_network_005.jpg'
-import shivaNetwork_006 from './images/shiva_network_006.jpg'
-import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
-import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
-import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
-import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
 
-## Regionale private Netzwerke
+import shivaNetwork_001 from './images/shiva_network_001.png';
+import shivaNetwork_002 from './images/shiva_network_002.png';
+import shivaNetwork_003 from './images/shiva_network_003.png';
+import shivaNetwork_004 from './images/shiva_network_004.png';
+import shivaNetwork_005 from './images/shiva_network_005.png';
+import shivaNetwork_006 from './images/shiva_network_006.png';
+import shivaNetwork_007 from './images/shiva_network_007.png';
+import shivaNetwork_008 from './images/shiva_network_008.png';
+import shivaNetwork_009 from './images/shiva_network_009.png';
+import shivaNetwork_010 from './images/shiva_network_010.png';
+import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png';
+import shivaNetworkVnShared from './images/shiva_network_vn_shared.png';
+import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png';
+import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png';
+import shivaNetwork_order_001 from './images/shiva_order_network_001.png';
+import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png';
+import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png';
+import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png';
 
-Die Verwaltung der privaten Netzwerke innerhalb einer Region erfolgt direkt in der Cloud Temple-Konsole.
+### Private Networks within a Region
 
-### Innerhalb eines Mandanten
+The management of private networks within a region is directly handled through the Cloud Temple console.
 
-Die Erstellung eines virtuellen Netzwerks erfolgt im Menü __*Network*__ auf dem grünen Balken links auf dem Bildschirm.
+### Inner to Tenant
+
+The creation of a virtual network takes place in the *Réseaux* menu on the top left bar in the screen.
 
 <img src={shivaNetwork_001} />
 
-Klicken Sie anschließend auf die Schaltfläche __*Neues Netzwerk*__.
+Clicking on the button *Nouveau réseau*
 
-Sie müssen den Namen Ihres Netzwerks angeben, der angezeigt wird. Standardmäßig werden alle Ihre Cluster auf Ihr neues Netzwerk zugreifen.  
-Allerdings im Untermenü __*Erweiterte Optionen*__ können Sie die Ausbreitung innerhalb des Mandanten zwischen Ihren verschiedenen Clustern detaillierter angeben.
+You need to specify the name of your network, which will be displayed. By default, all of your clusters will access your new network.
+
+It is now possible to create several networks simultaneously. Simply click on *ajouter un réseau*.
 
 <img src={shivaNetwork_002} />
 
-Alle möglichen Aktionen für Ihre Netzwerke finden Sie im Menü __*Aktionen*__ jedes einzelnen:
+In the following steps, you can specify more precisely the scope of propagation within the tenant between your different IaaS VMware or Open IaaS clusters.
 
-- Die Aktivierung des Netzwerk-Teilens zwischen Mandanten einer Organisation.
-- Die Deaktivierung des Netzwerk-Teilens zwischen Mandanten einer Organisation.
-- Das Hinzufügen des Netzwerk-Teilens zwischen Mandanten einer Organisation.
-- Das Löschen des Netzwerk-Teilens zwischen Mandanten einer Organisation.
-- Die grafische Darstellung der Netzwerkverbreitung über alle Ihre Cluster und Hypervisoren innerhalb eines Mandanten.
-- Das Löschen einer Verbreitung innerhalb eines Mandanten.
-- Die Änderung einer Verbreitung innerhalb eines Mandanten.
-- Das Löschen eines Netzwerks.
+<div style={{display: 'flex', gap: '10px', alignItems: 'flex-start'}}>
+  <img src={shivaNetwork_003} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
+  <img src={shivaNetwork_004} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
+</div>
 
-<img src={shivaNetwork_003} />
+### Verwaltung von Netzwerkbefehlen
 
-#### Visualisierung der Ausbreitung Ihrer Netzwerke
+Nachdem alle Schritte abgeschlossen sind, werden Ihre Netzwerke erstellt und eine Befehlszeile generiert, um sie zu verbreiten. Sie können Ihre Befehle wie folgt überwachen:
 
-Sie können im Menü __*Aktionen*__ leicht für ein Netzwerk dessen Ausbreitung zu Ihren verschiedenen Clustern innerhalb eines Mieters visualisieren.
-Wählen Sie die Option *"Visualisierung der Ausbreitung"*:
+- Im Tab __Befehl__ im Hauptmenü
 
-<img src={shivaNetwork_004} />
+<img src={shivaNetwork_order_001} />
 
-#### Änderung der Propagation
+- Durch Klicken auf die Informationen, die zu den zugehörigen Befehlen weisen
 
-Die Änderung einer Propagation innerhalb eines Mandanten erfolgt über die Option *"Propagieren"*:  
-Wählen Sie anschließend die Cluster aus, die in diese Propagation integriert werden sollen.
+> **Wichtig:** Es ist nicht möglich, gleichzeitig mehrere Befehle desselben Ressourcentyps zu generieren. Sie müssen warten, bis der aktuelle Befehl bearbeitet wird, bevor Sie einen neuen erstellen.
+
+Alle verfügbaren Aktionen für Ihre Netzwerke sind im Menü __Befehl__ jedes einzelnen Netzwerks zu finden:
+
+- Aktivierung des Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Deaktivierung des Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Hinzufügen eines neuen Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Löschen eines bestehenden Teilens eines Netzwerks zwischen Tenant innerhalb derselben Organisation.
+- Darstellung grafisch der Verbreitung eines Netzwerks auf allen Clustern und Hypervisoren innerhalb eines Tenants.
+- Löschen der Verbreitung innerhalb eines Tenants.
+- Änderung der Verbreitung innerhalb eines Tenants.
+
+> Die Löschung eines Netzwerks ist derzeit nicht verfügbar.
 
 <img src={shivaNetwork_005} />
-
-__*Hinweis :*__ *Die Änderung der Propagation ist auf 20 Netzwerke pro Aktion begrenzt.*
-
-#### Löschen eines Netzwerks
-
-Das Löschen eines Netzwerks innerhalb eines Mandanten erfolgt über die Option *"Netzwerk löschen"* :
-
 <img src={shivaNetwork_006} />
 
-### Netzwerkfreigabe zwischen Mandanten
+#### Anzeigen der Verbreitung von Netzwerken
 
-Standardmäßig sind Netzwerke nur innerhalb eines Mandanten verfügbar. Sie können ein Netzwerk zwischen mehreren Mandanten freigeben, aus technischen Gründen oder aus Gründen der Verbindung.
-Es ist somit möglich, ein Netzwerk zwischen Ihren __[Mandanten](../../console/iam/concepts.md#tenant)__ innerhalb derselben Organisation zu teilen.
+Sie können leicht im Menü __*Aktionen*__ die Verbreitung eines Netzwerks auf Ihre verschiedenen Clusters innerhalb einesselben Tenants visualisieren.
 
-Dazu müssen Sie die Freigabe wie unten aktivieren.
+Wählen Sie die Option *"Verbreitungsverfolgung anzeigen"* :
+
+<img src={shivaNetwork_007} />
+
+#### Modifikation der Verbreitung
+
+Die Änderung einer Verbreitungsregel innerhalb eines Tenants erfolgt über die Option __Verbreiten__. Nachdem Sie einen Produkt (z.B. IaaS VMware, Open IaaS, Bare metal) ausgewählt haben, müssen die Clusters in diese Verbreitung integriert werden.
+
+<img src={shivaNetwork_008} />
+<img src={shivaNetwork_009} />
+
+__Hinweis:__ *Die Änderung der Verbreitungsregel ist auf 20 Netzwerke pro Aktion beschränkt.*
+
+#### Entfernung der Verbreitung
+
+Die Entfernung einer Verbreitung innerhalb eines Tenants erfolgt durch die Option __Entfernen einer Verbreitung__:
+
+Wählen Sie dann aus, welche Verbreitung Sie entfernen möchten:
+
+<img src={shivaNetworkDeletePropagation} />
+
+Eine Kommando wird dann erstellt, wie bei der ursprünglichen Erstellung mit Verbreitung.
+
+<img src={shivaNetworkDeletePropagationOrder} />
+<img src={shivaNetworkDeletePropagationOrderValidate} />
+
+#### Verzögerte Netzwerkverbreitung
+
+Es ist möglich, die Erstellung und Verbreitung von Netzwerken in zwei separaten Schritten zu trennen:
+
+1. __Verbreiten eines bestehenden Netzwerks__ : Klicken Sie auf die Aktion __*Verbreiten*__ auf einem bereits erstelltem Netzwerk
+2. __Auswahl des Ziels der Verbreitung__ : Eine Befehlszeile wird dann erstellt, ähnlich wie bei der ursprünglichen Erstellung mit Verbreitung.
+
+#### Aktivierung und Deaktivierung von Netzwerken
+
+Ein Netzwerk kann zeitweise deaktiviert werden, ohne dass es gelöscht wird, und dann wieder aktiviert werden.
+
+<img src={shivaNetwork_010} />
+
+### Network Sharing Between Tenants
+
+By default, **networks are only available within a single tenant**. You can choose to **share a network across multiple tenants** for technical or connectivity reasons. This means you can share a network between your **[Tenant](../../console/iam/concepts.md#tenant)** within the same organization.
+
+To achieve this, simply enable sharing as shown below:
 
 <img src={shivaNetworkVnShareEnabled} />
 
-Nach der Aktivierung der Freigabe müssen Sie einfach eine Freigabe wie unten hinzufügen.
+After enabling sharing, add a share as follows:
 
 <img src={shivaNetworkVnShared} />
 
-Danach wählen Sie den Zielmandanten aus. Beachten Sie, dass die Liste der Mandanten dynamisch ist.
-Sie hängt von Ihrer Organisation und Ihren Berechtigungen ab.
+Next, select the target tenant. Note that the list of tenants is dynamic and depends on your organization and your permissions.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Sobald das Netzwerk freigegeben ist, ist es im Tab „Freigegebene Netzwerke“ in Ihrem zweiten Mandanten sichtbar.
+Once network sharing is enabled, it will be visible in the 'Shared Networks' tab from your second tenant.
 
 <img src={shivaNetworkVnSharedWithMe} />
+
+### Anzeige von geteilten Netzwerken
+
+Nachdem die Netzwerkverbindungen propagiert wurden, ermöglicht der Register "Geteilte Netzwerke" die Darstellung der Netzwerke, die andere Tenants Ihrer Organisation mit Ihnen teilen:
+
+<img src={shivaNetwork_007} />

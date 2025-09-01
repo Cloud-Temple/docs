@@ -119,7 +119,7 @@ class LanguageConfig(BaseModel):
     TRANSLATABLE_EXTENSIONS: set = {'.md'}
     
     # Extensions de fichiers à copier sans traduction
-    COPYABLE_EXTENSIONS: set = {'.png', '.jpg', '.jpeg', '.gif', '.svg', '.docx', '.pdf'}
+    COPYABLE_EXTENSIONS: set = {'.png', '.png', '.jpeg', '.gif', '.svg', '.docx', '.pdf'}
 
 
 def load_config() -> TranslationConfig:

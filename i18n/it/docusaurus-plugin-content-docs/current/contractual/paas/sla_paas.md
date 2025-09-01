@@ -1,388 +1,248 @@
 ---
-title: Convenzione di Servizio SecNumCloud PaaS
+title: Titolo Convenio di Servizio SecNumCloud PaaS
 ---
 
-**Indice**
+## Framework
+
+| Referenza | CT.AM.JUR.ANX.PAAS 2.1 |
+| :- | :- |
+| **Data** | 21 gennaio 2025 |
+
+## Abbreviations
+
+| Abbreviation | Descrizione |
+| :--- | :--- |
+| **CAB** | Comitato Consultivo per i cambiamenti (Conseil consultatif pour les changements) |
+| **CMDB** | Database di Gestione delle Configurazioni (Base di dati di gestione delle configurazioni) |
+| **COPIL** | Comitato di Pianificazione |
+| **COSTRAT** | Comitato Strategico |
+| **DB** | Database (base di dati) |
+| **DRP** | Piano di Ripristino d'Attività (Piano di ripristino dell'attività) |
+| **GTI** | Garanzia Tempo di Intervento (Garantia di tempo di intervento) |
+| **GTR** | Garanzia Tempo di Risoluzione (Garantia di tempo di risoluzione) |
+| **GTE** | Garanzia Tempo di Escalation (Garantia di tempo di escalazione) |
+| **Hypervisor** | Sistema Operativo per l'esecuzione di VM su una scheda di calcolo (Sistema operativo per l'esecuzione di VM su una scheda di calcolo) |
+| **ITIL** | Biblioteca delle Buone Pratiche per la Gestione dei Sistemi d'Informazione (Biblioteca delle buone pratiche per la gestione dei sistemi d'informazione) |
+| **IAAS** | Infrastruttura come Servizio (Infrastruttura come servizio) |
+| **MCO** | Manutenzione in Condizioni Operative (Manutenzione in condizioni operative) |
+| **MOA** | Gestione dell'Ordine d'Avere |
+| **MOE** | Gestione dell'Ordine di Esecuzione |
+| **OS** | Sistema Operativo (Sistema operativo) |
+| **PAQ** | Piano di Assicurazione Qualità (Piano di assicurazione qualità) |
+| **PAAS** | Platform as a Service (Piattaforma come servizio) |
+| **SDM** | Manager del Servizio (Manager del servizio) |
+| **RFC** | Richiesta di Modifica (Richiesta di modifica) |
+| **RGPD** | Regolamento Generale sulla Protezione dei Dati (Regolamento generale sulla protezione dei dati) |
+| **RPO** | Obiettivo di Fraichezza delle Ripristine (Obiettivo di fraichezza delle ripristinate) |
+| **RTO** | Tempo di Riparazione del Servizio (Tempo di riparazione del servizio) |
+| **SLA** | Accordo sui Livelli di Servizio (Accordo sui livelli di servizio) |
+| **UO** | Unità d'Ottimizzazione (Unità di ottimizzazione) |
+| **VABF** | Validazione dell'Affidabilità del Funzionamento (Validazione dell'affidabilità del funzionamento) |
+| **VABE** | Validazione dell'Affidabilità dell'Esecuzione (Validazione dell'affidabilità dell'esecuzione) |
+| **VM** | Macchina Virtuale (Macchina virtuale) |
+| **VSR** | Valutazione del Servizio Regolare (Valutazione del servizio regolare) |
+| **SNC** | SecNumCloud (SecNumCloud) |
 
-- [1. Contesto](#1-contesto)
-- [2. Acronimi](#2-acronimi)
-- [SNC           SecNumCloud](#snc-----------secnumcloud)
-- [3. Glossario](#3-glossario)
-- [4. Oggetto della convenzione di servizio PaaS del Fornitore](#4-oggetto-della-convenzione-di-servizio-paas-del-fornitore)
-- [5. Evoluzione della convenzione di servizio PaaS](#5-evoluzione-della-convenzione-di-servizio-paas)
-- [6. Audit](#6-audit)
-- [7. Descrizione del servizio](#7-descrizione-del-servizio)
-- [8. Implementazione del servizio](#8-implementazione-del-servizio)
-  - [8.1. Descrizione dei componenti tecnici](#81-descrizione-dei-componenti-tecnici)
-    - [8.1.1. Piattaforma di servizio REDHAT OpenShift](#811-piattaforma-di-servizio-redhat-openshift)
-    - [8.1.2. Infrastruttura software di gestione della piattaforma Redhat Openshift](#812-infrastruttura-software-di-gestione-della-piattaforma-redhat-openshift)
-    - [8.1.3. Infrastruttura di backup associata](#813-infrastruttura-di-backup-associata)
-    - [8.1.4. Implementazione di soluzioni di ripresa o continuità operativa](#814-implementazione-di-soluzioni-di-ripristino-o-continuità-operativa)
-- [9. Impegni e livelli di servizio](#9-impegni-e-livelli-di-servizio)
-  - [9.1. Impegni di disponibilità della piattaforma RedHat OpenShift](#91-impegni-di-disponibilità-della-piattaforma-redhat-openshift)
-- [10. Modello di responsabilità condivisa applicabile](#10-modello-di-responsabilità-condivisa-applicabile)
-  - [10.1. Responsabilità e obblighi del Fornitore](#101-responsabilità-e-obblighi-del-fornitore)
-  - [10.2. Limitazione di responsabilità del Fornitore](#102-limitazione-di-responsabilità-del-fornitore)
-  - [10.3. Limitazione di accesso](#103-limitazione-di-accesso)
-- [11. Cancellazione dei dati alla fine del contratto](#11-cancellazione-dei-dati-alla-fine-del-contratto)
-- [12. Legge applicabile](#12-legge-applicabile)
+## Glossary
 
-## 1. Contesto
+The following expressions used in the present document will be interpreted according to the definitions provided below:
 
-  --------------------- -------------------------------------------------
-  Riferimento           CT.AM.JUR.ANX.PAAS 2.1
+| Expression | Definition |
+| :--- | :--- |
+| **Secure Temple** | Refers to the qualified IaaS service SecNumCloud offered by Cloud Temple, as defined in the accessible attestation on the ANSSI website and included as an Annex in this Service Agreement. |
+| **Region** | In the context of cloud computing, a "region" denotes a geographically delimited set of availability zones providing network, compute, and storage services to optimize latency, performance, and local regulatory compliance. |
+| **Availability Zone (AZ)** | A specific and isolated section of the cloud infrastructure designed for ensuring high availability and resilience of services through geographical distribution of resources. |
+| **Tenant** | An isolated instance reserved for a user or group of users, sharing a common infrastructure while maintaining data and application independence and security. |
 
-  Data                  21 gennaio 2025
-  --------------------- -------------------------------------------------
+| Expression | Definition |
+| :--- | :--- |
+| **Incident** | Any "incident" refers to an unexpected event disrupting the normal functioning of a system or compromising data security. |
+| **Problem** | A "problem" is a fundamental cause of one or more incidents, identified or suspected, requiring analysis and resolution for preventing recurrence. |
+| **Change** | Any addition, modification, or removal impacting the Service, authorized, planned, or managed, constitutes a "change." |
+| **Standard Change** | A "standard change" is a change subject to a procedure, with known procedures for deployment and impacts (including financial ones) accepted in advance by the parties. It's then integrated into the standard changes catalog, potentially having a GTI and GTR. |
+| **Production** | Actions taken by administration to implement a change once approved (the change, according to ITIL, concerns change management, not its execution/implementation). |
+| **Service Request** | A request for service evolution following a procedure where the realization: i) does not modify the CMDB, ii) operational mode, costs, and risks are known and accepted in advance without specific return procedures, iii) is subject to an agreed-upon service level agreement (SLA) and included in the contract fee when performed during business hours. |
+| **Configuration Element** | An "configuration element" refers to a identifiable component of IT information system, such as software, hardware, or document, managed within IT service management framework. |
+| **Service** | A "service" denotes the qualified SecNumCloud service delivered by the Provider to COMMANDITAIRE, as described in the "Description of Service" section of this Service Agreement. |
+| **Event** | Any detectable or identifiable occurrence potentially significant for managing a service's performance. |
+| **Incident** | A "incident" is any severe event of natural or human origin, accidental or intentional, causing substantial losses and damages to the affected party. |
+| **Service Agreement** | This document, established within the framework of a specific contract or General Terms and Conditions of Sale and Use (CGVU), adhering to SecNumCloud Reference requirements. |
+| **Availability** | The capability to ensure service availability and optimal performance, in alignment with defined criteria and commitments outlined in Service Level Agreements (SLAs). |
+| **Supervision** | Surveillance of an IT system or service, involving the collection of various data such as measurements and alarms. This activity is limited to observation and tracking without direct intervention on monitored elements, a prerogative reserved for operational administration. |
 
-## 2. Acronimi
+## Obiettivo della Convenzione di Servizio PaaS del Fornitore
 
-  ------------------------------------------------------------------------------
-  Acronimo      Descrizione
-  ------------- ----------------------------------------------------------------
-  CAB           Change Advisory Board -- Comitato Consultivo sui Cambiamenti
+La presente Convenzione di Servizi stabilisce i termini e le condizioni
+secondo cui il Fornitore si impegna a fornire al COMMANDITAIRE un'infrastruttura conforme alle specifiche dell'"Infrastruttura come Servizio" (PaaS) certificata SecNumCloud.
 
-  CMDB          Configuration Management Database -- Database di Gestione delle Configurazioni
-                dei sistemi
+Obiettivo della Convenzione di Servizio:
 
-  COPIL         Comitato di Pilotaggio
+ 1. Definire le aspettative di prestazione atteso dal COMMANDITAIRE in termini di funzionalità e affidabilità dell'infrastruttura.
+2. Elaborare le responsabilità del Fornitore per soddisfare agli standard di servizio concordati.
+3. Identificare le normative regolatorie applicabili specificamente all'infrastruttura proposta.
+4. Garantire l'uniformità e l'integrità nell'evaluazione della qualità dei servizi forniti.
+5. Assicurare l'eccellenza dei servizi offerti, valutata attraverso indicatori di prestazione quantitativi.
 
-  COSTRAT       Comitato Strategico
+È disposto che, in caso in cui il Fornitore perda la qualificazione SecNumCloud, il presente Contratto possa essere risolto immediatamente e senza penali da parte del COMMANDITAIRE. In tale ipotesi, il Fornitore si impegna a informare il COMMANDITAIRE della dequalificazione tramite una notifica ufficiale, utilizzando un'lettera raccomandata con ricevuta di ritorno.
 
-  DB            Database (base di dati)
+È importante sottolineare che qualsiasi modifica o aggiustamento della qualificazione SecNumCloud non sarà interpretato come revoca della qualificazione iniziale.
 
-  DRP           Disaster Recovery Plan (Piano di Recupero da Disastri)
+## Evoluzione della Convenzione di Servizio PaaS
 
-  GTI           Garanzia Tempo di Intervento
+Le cambiamento o l'aggiunta apportati alla presente convenzione di servizio derivano esclusivamente dalle richieste formulate dagli organismi di governo designati a tale scopo. Queste proposte di modifica saranno valutate all'interno del comitato strategico, l'unica istituzione autorizzata a determinare gli aspetti che richiedono una formalizzazione scritta.
 
-  GTR           Garanzia Tempo di Risoluzione
+Si concorda che qualsiasi evoluzione della convenzione, dopo la validazione, che altera le condizioni finanziarie inizialmente stabilite, richiederà l'emissione e la firma di un aggiunto contrattuale in corso.
 
-  GTE           Garanzia Tempo di Escalation
+I fattori che potrebbero portare a una revisione della convenzione includono, ma non si limitano:
 
-  HYPERVISEUR   Sistema operativo che permette l'esecuzione di VM su una
-                lama di calcolo
+- L'adattamento della piattaforma PaaS orchestrata dal fornitore.
+- Gli aggiustamenti apportati ai servizi emessi dal fornitore.
+- Le variazioni degli impegni presi e delle sanzioni applicabili.
+- Le riorganizzazioni organizzative all'interno del COMMANDITAIRE o del fornitore.
+- L'espansione o la riduzione del campo d'applicazione dei servizi a cui il COMMANDITAIRE ha abbonato.
 
-  ITIL          Information Technology Infrastructure Library - Buone pratiche
-                per la gestione delle infrastrutture informatiche
+La gestione delle versioni e delle revisioni della convenzione è registrata in prefazione al documento per facilitare il monitoraggio.
 
-  IAAS          Infrastructure as a Service
+## Audit
 
-  MCO           Manutenzione in Condizione Operativa
+The Provider commits to allowing the COMMANDITAIRE, or any third-party auditor designated by the latter, to access all necessary documents for verifying full compliance with the obligations related to compliance with Article 28 of the General Data Protection Regulation (RGPD). This facilitates the conduct of audits.
 
-  MOA           Gestione d'Opera
+**The Provider specifically commits to providing the COMMANDITAIRE with a list of all third parties who can access the data and informing them of any changes in subcontractors.**
 
-  MOE           Realizzazione d'Opera
+By accepting this Service Agreement, the COMMANDITAIRE grants its explicit authorization to:
 
-  OS            Sistema Operativo
+ 1. **The National Agency for Information System Security (ANSSI)**, as well as any competent entity for verifying the compliance of the Service and its Information System with the standards defined by the SecNumCloud Reference Framework.
+2. **A third-party security audit provider**, duly qualified and expressly designated by the Provider, to conduct security audits on the Service provided by the Provider.
 
-  PAQ           Piano di Assicurazione Qualità
+## Servizi offerti
 
-  PAAS          Platform as a Service
+Il servizio proposto dal Fornitore si basa sulla fornitura delle seguenti prestazioni, che sono allineate con il principio di responsabilità condivisa definito dalle norme stabilite dal riferimento SecNumCloud:
 
-  SDM           Service Delivery Manager
+- La disponibilità di una piattaforma di gestione container Redhat Openshift gestita dal Fornitore.
 
-  RFC           Request For Change -- Richiesta di Cambiamento
+Si intende che il Fornitore utilizzerà la propria esperienza per eseguire le prestazioni secondo le migliori pratiche professionali, in linea con le specifiche e nel rispetto delle norme ISO/IEC 27001 e delle direttive del Riferimento SecNumCloud.
 
-  RGPD          Regolamento Generale sulla Protezione dei Dati (personali)
+## Implementazione del Servizio
 
-  RPO           Recovery Point Objective -- Freschezza dei dati ripristinati in
-                caso di incidente
+Si precisa che tutte le operazioni e i componenti fisici coinvolti nella fornitura di un servizio qualificato, per il quale è presentata questa convenzione, siano situati all'interno dell'Unione Europea. Ciò comprende, tra l'altro, il support, la supervisione operativa e la supervisione della sicurezza (SOC).
 
-  RTO           Recovery Time Objective -- Tempo di ripristino del servizio in
-                caso di incidente
+### Descrizione dei componenti tecnici
 
-  SLA           Service Level Agreement -- Accordo sui Livelli di Servizio
+I servizi PaaS (Platform as a Service) includono tutti i componenti e i servizi necessari per il funzionamento ottimale in conformità con la qualificazione SecNumCloud.
 
-  UO            Unità d'Opera
+Per quanto riguarda le prestazioni e la affidabilità di questi servizi, essi sono intrinsecamente legati ai componenti tecnici e ai servizi dell' **infrastruttura IaaS** (Infrastructure as a Service) del fornitore, come specificato nel documento [Convenzione di Servizio IaaS](../iaas/sla_iaas.md) del fornitore.
 
-  VABF          Validazione dell'Adattamento al Buon Funzionamento
+### Piattaforma di servizio REDHAT OpenShift
 
-  VABE          Validazione dell'Adattamento alla Buona Utilizzabilità
+Il servizio comprende la disponibilità all'interno di una regione, su tre zone di disponibilità.
 
-  VM            Virtual Machine (Macchina Virtuale)
+#### Infrastructure software di controllo della piattaforma Redhat OpenShift
 
-  VSR           Validazione del Servizio Regolare
+Il fornitore fornisce al COMMANDITAIRE la console di amministrazione e l'API necessarie per il funzionamento dei propri ambienti PaaS RedHat OpenShift. Si impegna inoltre a mantenerle in condizioni operative ottimali e a garantir la sicurezza in modo continuo.
 
-SNC           SecNumCloud
-  ------------------------------------------------------------------------------
-
-## 3. Glossario
-
-Le espressioni seguenti utilizzate nel presente documento saranno interpretate conformemente alle definizioni che le riguardano di seguito:
-
-  --------------------------------------------------------------------------------------------
-  Espressione                       Definizione
-  -------------------------------- -----------------------------------------------------------
-  "Secure Temple"                Indica il servizio IaaS qualificato SecNumCloud, proposto
-                                   dalla società Cloud Temple, come definito nell'attestazione
-                                   consultabile sul sito dell'ANSSI e fornita in allegato alla
-                                   presente Convenzione di servizio.
-
-  Regione                           Una "regione" nel contesto del cloud computing indica
-                                   un insieme geograficamente delimitato di zone di
-                                   disponibilità cloud, che fornisce servizi di rete, calcolo e
-                                   archiviazione per ottimizzare la latenza, le prestazioni e la
-                                   conformità normativa locale.
-
-  Zona                             Una sezione specifica e isolata dell'infrastruttura di
-  Disponibilità (AZ) (Availability   calcolo cloud, progettata per garantire alta disponibilità
-  zone)                            e resilienza dei servizi attraverso una distribuzione
-                                   geografica delle risorse.
-
-Tenant                           Un'istanza isolata riservata a un utente o gruppo di
-                                   utenti, condividendo un'infrastruttura comune, mantenendo
-                                   l'indipendenza e la sicurezza dei dati e delle applicazioni
-  --------------------------------------------------------------------------------------------
-
-  -------------------------------------------------------------------------
-  Espressione      Definizione
-  --------------- ---------------------------------------------------------
-  Incidente        Un "incidente" indica ogni evento imprevisto che
-                  interrompe il funzionamento normale di un sistema o
-                  compromette la sicurezza dei dati.
-
-  Problema         Un "problema" è una causa fondamentale di uno o
-                   più incidenti, identificata o sospettata, che richiede
-                   un'analisi e una risoluzione per prevenire la sua
-                   ricorrenza.
-
-  Cambiamento      Un "cambiamento" indica ogni aggiunta, modifica o
-                   cancellazione che impatta sul Servizio, autorizzata,
-                   pianificata o supportata.
-
-  Cambiamento      Un "cambiamento standard" è un cambiamento che
-  standard         fa oggetto di una procedura, le cui modalità di
-                   implementazione e impatti (inclusi quelli finanziari) sono
-                   noti e accettati in anticipo dalle Parti. Viene quindi
-                   integrato nel catalogo dei cambiamenti standard, e può
-                   in alcuni casi avere una GTI e una GTR.
-
-  Implementazione   azioni di amministrazione per la realizzazione del
-  (Mise en production)   cambiamento quando è approvato (il cambiamento, nel senso
-                   ITIL, riguarda solo la gestione del cambiamento e non la sua
-                   realizzazione/concretizzazione).
+Nel contesto specifico del servizio fornito, il fornitore mette a disposizione del COMMANDITAIRE tutte le interfacce e l'API della piattaforma RedHat OpenShift all'interno del tenant selezionato. Al COMMANDITAIRE spetta di istituire i dispositivi di sicurezza appropriati, come firewall (firewall), firewall applicativi web (WAF) e altre misure di protezione, nonché di definire le regole di filtraggio correlate per garantire l'accesso sicuro alla propria piattaforma in conformità con la politica di sicurezza.
 
-  Richiesta di      richiesta di evoluzione che fa oggetto di una procedura, la
-  servizio          realizzazione: i) non modifica la CMDB, ii) il procedimento
-                   operativo, i costi e i rischi sono noti e accettati in anticipo
-                   e non richiedono modalità di rollback specifiche iii) la
-                   realizzazione è soggetta a un accordo di livello di servizio e
-                   inclusa nella tariffa del contratto quando è realizzata in
-                   orari di lavoro e giorni lavorativi.
+Il fornitore avvisa il COMMANDITAIRE che un utilizzo anomalo della console di amministrazione, soprattutto in caso di sovraccarico delle API (hammering), può attivare misure di sicurezza automatiche che portano al blocco dell'accesso alle API di comando o a determinati servizi del fornitore. È importante sottolineare che tale situazione non rappresenta un indisponibilità del servizio, ma piuttosto una misura di protezione dell'infrastruttura del fornitore; pertanto, il COMMANDITAIRE non può considerarla come un'indisponibilità nei calcoli.
 
-  Elemento di       Un "elemento di configurazione" è un componente
-  configurazione   identificabile del sistema informativo, come un
-                   software, un hardware o un documento, soggetto a gestione
-                   nel contesto della gestione dei servizi IT
+Inoltre, il fornitore precisa al COMMANDITAIRE che le richieste perfettamente identiche (doppie) inviate alle API sono limitate a una per secondo (Throttling). Se il COMMANDITAIRE invia richieste identiche a una frequenza superiore, il loro respingo non deve essere interpretato come un'indisponibilità del servizio.
 
-  Servizio         Un "servizio" indica il servizio qualificato SecNumCloud,
-                   fornito dal PRESTATORE al COMANDITARIO, come descritto
-                   nella sezione «Descrizione del Servizio» della presente
-                   Convenzione di servizio.
+#### Infrastruttura di backup associata
 
-  Evento           Un "evento" è ogni occorrenza rilevabile o identificabile
-                   che può avere importanza per la gestione del Servizio.
+Il fornitore offre al COMMANDITAURE una piattaforma di backup integrata, dedicata e gestita, destinata alla protezione dei dati degli ambienti RedHat Openshift. Il fornitore garantisce il mantenimento in condizioni operative ed in sicurezza di questa piattaforma di backup integrata. Indipendentemente dal numero di zone di disponibilità sottoscritte dal COMMANDITAURE, il fornitore garantisce che la piattaforma di backup del COMMANDITAURE sarà situata al di fuori della zona di disponibilità delle infrastrutture da salvaguardare.
 
-  Sinistro         Un «sinistro» indica un evento grave di origine
-                   naturale o umana, accidentale o intenzionale, che causa
-                   perdite e danni significativi alla Parte danneggiata.
+La fornitura di backup si limita alla conservazione dei server virtuali e delle configurazioni topologiche dell'ambiente IaaS dei tenenti SecNumCloud del COMMANDITAURE. La creazione e l'applicazione di una politica di backup adeguata da parte del COMMANDITAURE dipende dalla sottoscrizione di unità di lavoro specifiche. Pertanto, il COMMANDITAURE è responsabile di verificare la disponibilità delle risorse tecniche presso il fornitore per implementare la politica di backup o adattarla in base alle possibilità disponibili.
 
-  Convenzione di   Questo documento, redatto nel quadro di un contratto
-  servizio         specifico o delle Condizioni Generali di Vendita e
-                   Utilizzo (CGVU), in conformità con i requisiti del
-                   Riferimento SecNumCloud.
+Il fornitore si impegna a avvisare il COMMANDITAURE in caso di limitazioni di capacità e a fornire assistenza consultiva per l'ottimizzazione delle risorse. Le obbligazioni del fornitore si limitano alla realizzazione dei bisogni espressi dal COMMANDITAURE in termini di politica di backup, all'interno dei limiti sottoscritti.
 
-  Disponibilità    Capacità di garantire la disponibilità e il mantenimento
-                   delle prestazioni ottimali di un servizio, in accordo con i
-                   criteri e gli impegni definiti negli Accordi di Livello di
-                   Servizio (SLA)
+#### Implementazione di soluzioni di ripristino dell'attività o continuità aziendale
 
-Supervisione     Sorveglianza di un Sistema Informativo o di un
-                 Servizio, che implica la raccolta di diverse dati come
-                 misure e allarmi. Questa attività si limita all'osservazione
-                 e al monitoraggio, senza intervenire direttamente sugli
-                 elementi sorvegliati, una prerogativa che appartiene alle
-                 operazioni di Amministrazione
+Il fornitore fornisce al COMMANDITAIRE tutte le soluzioni tecniche necessarie per garantire una distribuzione ottimale delle risorse attraverso diverse zone di disponibilità. È responsabilità del COMMANDITAIRE gestire efficacement la distribuzione delle risorse, per la quale ha accesso agli strumenti forniti dal fornitore a tal scopo.
 
-## 4. Oggetto della convenzione dei servizi PaaS del Fornitore
+In particolare, le applicazioni eseguite sulla piattaforma RedHat OpenShift devono adottare i meccanismi di redundanza proposti dal fornitore per poter beneficiare delle soluzioni di ripristino dell'attività o continuità aziendale associate.
 
-La presente Convenzione dei Servizi stabilisce i termini e le condizioni
-secondo cui il Fornitore si impegna a fornire al COMMITTENTE una
-infrastruttura conforme alle specifiche dell'offerta « Platform as a
-Service -- PaaS », correttamente qualificata SecNumCloud.
+## Garanti di servizio e livelli di prestazione
 
-Oggetto della Convenzione dei Servizi:
+Il fornitore si impegna a garantire una sorveglianza continua della performance e dell'integrità sicura delle sue piattaforme e servizi, assicurando il loro funzionamento ottimale.
 
-1. Definire i requisiti di prestazione attesi dal COMMITTENTE
-    in termini di funzionalità e affidabilità dell'infrastruttura.
-2. Elenca le obbligazioni del Fornitore per soddisfare i
-    livelli di servizio concordati.
-3. Identificare le normative applicabili specificamente all'
-    infrastruttura proposta.
-4. Garantire un'armonizzazione e un'integrità nella valutazione della
-    qualità dei servizi erogati.
-5. Garantire l'eccellenza dei servizi forniti, valutata attraverso
-    indicatori di prestazione quantitativi.
+L'assenza di un servizio, indicata da un indicatore di prestazione, viene riconosciuta dalla prima identificazione del sistema di supervisione del fornitore, o su richiesta di un utente COMMANDITAIRE. Il momento in cui inizia l'assenza è fissato al momento più antico tra questi due eventi per garantire un conteggio preciso e giusto del tempo di assenza.
 
-È stabilito che, in caso in cui il Fornitore venisse privato della qualifica SecNumCloud, il presente Contratto potrà essere risolto di diritto, senza incorrere in penali, dal COMMITTENTE. In tale evenienza, il Fornitore si impegna a informare il COMMITTENTE di tale privazione mediante invio di una notifica ufficiale, attraverso una lettera raccomandata con ricevuta di ritorno.
+La fine dell'assenza viene ufficialmente segnalata dalla completa ripristino del servizio, confermato dagli strumenti di supervisione del fornitore o da un feedback utente, garantendo così una ripresa efficace delle attività e una misurazione accurata della durata dell'interruzione.
 
-Va precisato che una modifica o un adattamento della qualifica SecNumCloud non sarà interpretata come revoca della qualifica iniziale.
+### Garanti di Disponibilità della Piattaforma RedHat OpenShift
 
-## 5. Evoluzione della convenzione di servizio PaaS
+Il fornitore si impegna a mantenere un livello di disponibilità e
+prestazioni conforme agli standard definiti per ogni periodo specificato. Gli impegni di servizio qualità (SLA) si applicano, salvo che il COMMANDITAIRE implementi i propri sistemi attraverso almeno due delle zone di disponibilità presenti nella regione in questionata.
 
-Le modifiche o aggiunte apportate alla presente convenzione di servizio derivano esclusivamente dalle richieste formulate dagli organi di governance designati a tale scopo. Queste proposte di modifica saranno esaminate dal comitato strategico, unica istanza autorizzata a determinare gli aspetti che necessitano di una formalizzazione scritta.
+In assenza del rispetto di queste condizioni dal COMMANDITAIRE, quest'ultimo non sarà in grado di rivendicare l'applicazione degli SLA specificati, che sono identificabili con un asterisco (\*). L'accesso agli SLA avviene tramite l'interfaccia COMMANDITAIRE. Le misurazioni vengono calcolate mensilmente:
 
-Si conviene che ogni evoluzione della convenzione, dopo la validazione, che modifica le condizioni finanziarie inizialmente stabilite, richiederà la stesura e la sottoscrizione di un accordo integrativo al contratto in corso.
+- **SLA 1 (\*) : IC-PAAS_SNC-01** - Disponibilità della piattaforma RedHat OpenShift: tasso di disponibilità garantito del 99,9%, calcolato su una base giornaliera 24/7, 7 giorni alla settimana.
 
-I fattori che possono indurre una revisione di questa convenzione includono, ma non si limitano a:
+**Nota:**
 
-- L'adattamento della piattaforma PaaS orchestrata dal Prestatore.
-- Gli aggiustamenti apportati ai servizi distribuiti dal Prestatore.
-- Le variazioni degli impegni assunti e delle sanzioni applicabili.
-- Le riconfigurazioni organizzative all'interno del COMMITTENTE o del Prestatore.
-- L'espansione o la riduzione del campo di applicazione dei servizi ai quali il COMMITTENTE ha sottoscritto.
+- In risposta a un attacco Distributed Denial of Service (DDoS), il fornitore si riserva il diritto di regolare la configurazione del routing internet per limitare l'impatto di tale attacco e salvaguardare la propria infrastruttura. In particolare, se un'indirizzo IP appartenente al COMMANDITAIRE è bersaglio, il fornitore può adottare la tecnica di blackholing tramite la comunità BGP per bloccare tutto il traffico verso l'indirizzo IP mirato presso i propri fornitori, in modo da proteggere le risorse del COMMANDITAIRE e quelle di altri COMMANDITAIRE e dell'infrastruttura del fornitore. Il fornitore consiglia fortemente al COMMANDITAIRE di adottare misure simili, come l'utilizzo di software di firewall per applicazioni web disponibili sul mercato e la configurazione accurata dei gruppi di sicurezza tramite l'API di comando.
 
-La gestione delle versioni e delle revisioni della convenzione è registrata nell'introduzione del documento per facilitarne il tracciamento.
+- Il fornitore sottolinea l'importanza per il COMMANDITAIRE di minimizzare le aperture di flusso, evitando in particolare di rendere accessibili i port ECSH (port TCP 22) e RDP (port TCP 3389) da tutto Internet (subrete 0.0.0.0/0), così come i protocolli interni come SMB (port TCP/UDP 445) o NFS (port TCP/UDP 2049).
 
-## 6. Audit
+## Model of Shared Responsibilities Applicable
 
-Il Fornitore si impegna a permettere al COMMITTENTE, o a qualsiasi auditor terzo da quest'ultimo designato, di consultare l'intero insieme dei documenti necessari per attestare il rispetto integrale degli obblighi derivanti dalla conformità alle disposizioni dell'articolo 28 del Regolamento Generale sulla Protezione dei Dati (GDPR), facilitando così la realizzazione di audit.
+### Responsabilità e Obblighi del Fornitore
 
-**Il Fornitore si impegna in particolare a mettere a disposizione del COMMITTENTE l'elenco di tutti i terzi che possono accedere ai dati e a informare del cambiamento di subappaltatori.**
+Il fornitore si impegna a fornire al COMMANDITAIRE interfacce utente in lingua francese ed inglese, facilitando così l'accesso e la gestione dei servizi offerti. Il COMMANDITAIRE, d'altro canto, si impegna a rispettare le vincoli legali e regolamentari vigenti relativi alle informazioni che trasferisce al fornitore per il trattamento.
 
-Con l'accettazione del presente accordo di servizio, il COMMITTENTE conferisce il proprio consenso esplicito a:
+In caso di trasmissione di dati soggetti a requisiti legali specifici, il fornitore collaborerà con il COMMANDITAIRE per identificare e attuare le misure di sicurezza necessarie, in conformità con gli obblighi del fornitore e nel quadro della fornitura dei servizi.
 
-1. **L'Agence Nationale de la Sécurité des Systèmes d'Information (ANSSI)** e all'ente competente per effettuare la verifica della conformità del Servizio e del suo Sistema Informatico agli standard definiti dal Referente SecNumCloud.
-2. **Un fornitore di audit di sicurezza dei sistemi informativi**, correttamente qualificato ed espressamente designato dal Fornitore, per effettuare audit di sicurezza relativi al Servizio fornito dal Fornitore.
+Il fornitore si impegna anche a esaminare e considerare i bisogni specifici legati alle attività dell'COMMANDITAIRE, rispettando le limitazioni della propria responsabilità, per garantire un livello di sicurezza adatto alle informazioni trattate.
 
-## 7. Descrizione del servizio
+Se un progetto è suscettibile di influenzare la sicurezza del servizio offerto o la sua disponibilità, o di generare una perdita di funzionalità, il fornitore si impegna a informare al COMMANDITAIRE tramite la console o via email al contatto dell'COMMANDITAIRE, entro un termine ragionevole, sui potenziali impatti, sulle misure correttive in considerazione e sui rischi residui che riguarda.
 
-L'offerta di servizi proposta dal Prestatore si caratterizza con la messa a disposizione delle prestazioni seguenti, le quali si allineano con il principio di responsabilità condivisa dettagliato nei documenti stabiliti dal riferimento SecNumCloud:
+Il fornitore si impegna a non utilizzare i dati del COMMANDITAIRE provenienti dalla produzione per effettuare test, a meno che non ottenga esplicitamente l'autorizzazione esplicita del COMMANDITAIRE, nel caso in cui il fornitore sia tenuto ad anonimizzare queste informazioni e a garantirne la confidenzialità durante il processo di anonimizzazione.
 
-- La fornitura di una piattaforma di gestione dei container Redhat Openshift gestita dal Prestatore.
+In caso di cambiamento del subappaltatore per l'hosting, il fornitore avvisa il COMMANDITAIRE in anticipo, assicurando che questa transizione non abbia un impatto negativo sul servizio fornito.
 
-Si intende che il Prestatore metterà a disposizione la propria esperienza per realizzare le Prestazioni secondo le migliori pratiche professionali, conformemente alle loro Specifiche e rispettando le norme della propria certificazione ISO/IEC 27001 nonché le direttive del Riferimento SecNumCloud.
+Su richiesta del COMMANDITAIRE, il fornitore fornisce l'accesso al proprio regolamento interno, alla propria dichiarazione etica, alle sanzioni applicabili in caso di non rispetto della politica di sicurezza, agli eventi che lo riguardano, alle procedure relative al servizio e alle esigenze di sicurezza specifiche.
 
-## 8. Implementazione del servizio
+Il fornitore si impegna a informare il COMMANDITAIRE di qualsiasi cambiamento futuro su elementi software sotto la responsabilità di Cloud Temple non appena la compatibilità completa non sarà garantita.
 
-Si precisa che tutte le operazioni e i componenti fisici coinvolti nell'erogazione del servizio qualificato, di cui la presente convenzione è oggetto, si trovano nell'Unione Europea.
-Questo include in particolare il supporto, la supervisione operativa e la supervisione della sicurezza (SOC).
+### Limitazione della responsabilità del fornitore
 
-### 8.1. Descrizione dei componenti tecnici
-
-I servizi PaaS (Platform as a Service) comprendono l'intero insieme dei componenti e dei servizi necessari per il loro funzionamento ottimale nel rispetto della qualifica SecNumCloud.
-
-In questo contesto, la loro performance e affidabilità sono strettamente correlate ai componenti tecnici e ai servizi dell'**infrastruttura IaaS** del Prestatore, come specificato nel documento [Convenzione di Servizio IaaS](../iaas/sla_iaas.md) del Prestatore.
-
-#### 8.1.1. Piattaforma del servizio REDHAT OpenShift
-
-Il servizio include la messa a disposizione all'interno di una regione, su 3 zone di disponibilità,
-
-#### 8.1.2. Infrastruttura software per il controllo della piattaforma Redhat Openshift
-
-Il Fornitore fornisce al Committente la console di amministrazione e l'API necessaria per l'operazione dei propri ambienti PaaS RedHat OpenShift. Si impegna inoltre a mantenerle in condizioni operative ottimali e a garantire la loro sicurezza in modo continuo.
-
-Nel contesto specifico del servizio fornito, il Fornitore mette a disposizione del Committente tutte le interfacce e le API della piattaforma RedHat OpenShift all'interno del tenant selezionato. Spetta al Committente stabilire i dispositivi di sicurezza appropriati, come i firewall, i firewall applicativi Web (WAF) e altre misure di protezione, nonché definire le relative regole di filtraggio per garantire l'accesso alla propria piattaforma in conformità con la propria politica di sicurezza.
-
-Il Fornitore avvisa il Committente che un'utilizzo anomalo della propria console di amministrazione, in particolare in caso di sovraccarico delle API di comando (hammering), può attivare misure di sicurezza automatiche che bloccano l'accesso alle API di comando o a determinati servizi del Fornitore. Si sottolinea che questa situazione non costituisce un'indisponibilità del servizio, ma un'azione di protezione dell'infrastruttura del Fornitore; pertanto, il Committente non può considerarla come un'indisponibilità nei propri calcoli.
-
-Inoltre, il Fornitore informa il Committente che le richieste perfettamente identiche (duplicati) inviate alle proprie API sono limitate a una al secondo (Throttling). Se il Committente invia richieste identiche a una frequenza superiore, il loro rifiuto non deve essere interpretato come un'indisponibilità del servizio.
-
-#### 8.1.3. Infrastruttura di backup associata
-
-Il Prestatore mette a disposizione del COMMittente una piattaforma di backup integrata, dedicata e gestita, destinata alla protezione dei dati dei suoi ambienti RedHat Openshift. Il Prestatore garantisce il mantenimento in condizioni operative e di sicurezza di questa piattaforma integrata di backup. Indipendentemente dal numero di zone di disponibilità sottoscritte dal COMMittente, il Prestatore garantisce che la piattaforma di backup del COMMittente sia situata al di fuori della zona di disponibilità dei carichi di lavoro salvati.
-
-La prestazione di backup si limita al backup delle macchine virtuali e delle configurazioni di topologia dell'ambiente IaaS dei tenant SecNumCloud del COMMittente. L'elaborazione e l'applicazione di una politica di backup adeguata da parte del COMMittente dipendono dalla sottoscrizione di unità di lavoro specifiche. Spetta quindi al COMMittente assicurarsi della disponibilità delle risorse tecniche necessarie presso il Prestatore per attuare la propria politica di backup o per aggiornarla in base alle risorse disponibili.
-
-Il Prestatore si impegna a notificare al COMMittente in caso di vincoli di capacità e a fornire un'assistenza consulenza per l'ottimizzazione delle risorse. Gli obblighi del Prestatore si limiteranno all'implementazione delle esigenze espresse dal COMMittente in materia di politica di backup, nel contesto delle risorse sottoscritte.
-
-#### 8.1.4. Implementazione di soluzioni di continuità operativa o di ripristino delle attività
-
-Il Fornitore fornisce al COMMITTENTE l'insieme delle soluzioni tecniche necessarie per garantire una distribuzione ottimale delle proprie risorse attraverso diverse aree di disponibilità. Spetta al COMMITTENTE la responsabilità di gestire in modo efficace questa distribuzione delle risorse, per la quale ha la possibilità di utilizzare gli strumenti del Fornitore disponibili a tale scopo.
-
-In particolare, le applicazioni distribuite sulla piattaforma RedHat OpenShift devono supportare i meccanismi di ridondanza proposti dal Fornitore per poter beneficiare delle soluzioni di continuità operativa o di ripristino delle attività associate.
-
-## 9. Impegni e livelli di servizio
-
-Il Fornitore si impegna a garantire un monitoraggio continuo delle prestazioni e dell'integrità sicura delle proprie piattaforme e servizi, vigilando sul loro funzionamento ottimale.
-
-L'inutilizzabilità di un servizio, che è oggetto di un indicatore di prestazione, è riconosciuta non appena identificata dal sistema di monitoraggio del Fornitore, o a seguito di una notifica da parte di un utente del COMANDITARIO. L'inizio dell'inutilizzabilità è fissato al momento più precoce tra questi due eventi, al fine di garantire un calcolo preciso e giusto del tempo di inutilizzabilità.
-
-La fine dell'inutilizzabilità è ufficialmente segnata dal ripristino completo del servizio, confermato sia dagli strumenti di monitoraggio del Fornitore, sia da un feedback utente, garantendo così un ripristino effettivo delle operazioni e una misurazione fedele della durata dell'interruzione.
-
-### 9.1. Impegni di disponibilità della piattaforma RedHat OpenShift
-
-Il Fornitore si impegna a mantenere un livello di disponibilità e di prestazioni conforme agli standard definiti per ogni periodo specificato. Gli accordi sul livello dei servizi (Service Level Agreements, SLA) si applicano a condizione che il COMANDANTE implementi i propri sistemi attraverso almeno due delle zone di disponibilità presenti nella regione interessata.
-
-In assenza del rispetto di tali condizioni da parte del COMANDANTE, quest'ultimo non potrà richiedere l'applicazione degli SLA interessati, i quali sono specificamente identificati da un asterisco (\*). L'accesso agli SLA avviene tramite l'interfaccia COMANDANTE. **Le misure si intendono calcolate mensilmente**:
-
-- **SLA 1 (\*) : IC-PAAS_SNC-01** -- Disponibilità della piattaforma RedHat OpenShift: tasso di disponibilità garantito del 99,9%, calcolato su base 24h/24, 7g/7.
-
-***Osservazioni*** :
-
-- *Di fronte a un attacco di tipo DDoS, il Fornitore si riserva il diritto di modificare la propria configurazione di routing internet per limitare l'impatto di tale attacco e proteggere la propria infrastruttura. In particolare, se un indirizzo IP appartenente al COMANDANTE viene bersagliato, il Fornitore può ricorrere alla tecnica del blackholing tramite la comunità BGP per bloccare tutto il traffico verso l'indirizzo IP bersagliato a monte presso i propri fornitori, al fine di proteggere le risorse del COMANDANTE nonché quelle di altri COMANDANTI e dell'infrastruttura del Fornitore. Il Fornitore incoraggia vivamente il COMANDANTE ad adottare misure simili, come l'utilizzo di software firewall per applicazioni web disponibili sul mercato, e a configurare attentamente i propri gruppi di sicurezza tramite l'API di comando.*
-
-- *Il Fornitore insiste sulla necessità per il COMANDANTE di minimizzare le aperture di flusso, evitando in particolare di rendere accessibili i porti di amministrazione **SSH** (porta TCP 22) e **RDP** (porta TCP 3389) da tutto Internet (sottorete 0.0.0.0/0), nonché i protocolli interni come **SMB** (porta TCP/UDP 445) o **NFS** (porta TCP/UDP 2049).*
-
-## 10. Modello di responsabilità condivise applicabile
-
-### 10.1. Responsabilità e Obblighi del Prestatore
-
-Il Prestatore si impegna a mettere a disposizione del COMMITTENTE delle interfacce utente in lingua francese e inglese, facilitando così l'accesso e la gestione dei servizi forniti. Il COMMITTENTE, a sua volta, si impegna a rispettare i vincoli legali e regolamentari in vigore relativi ai dati che conferisce al Prestatore per il trattamento.
-
-In caso di trasmissione di dati soggetti a requisiti legali specifici, il Prestatore collaborerà con il COMMITTENTE per identificare e implementare le misure di sicurezza necessarie, conformemente agli obblighi del Prestatore e nel quadro della prestazione dei servizi.
-
-Il Prestatore si impegna inoltre a esaminare e considerare le esigenze specifiche relative ai settori di attività del COMMITTENTE, rispettando i limiti della sua responsabilità, per garantire un livello di sicurezza adeguato alle informazioni trattate.
-
-Se un progetto è suscettibile di impattare la sicurezza del Servizio offerto o la disponibilità di detto Servizio o ancora di generare una perdita di funzionalità, il Prestatore si impegna a informare attraverso la console o via e-mail il contatto del COMMITTENTE e in un termine ragionevole del COMMITTENTE sugli impatti potenziali, sulle misure correttive previste e sui rischi residui che lo riguardano, garantendo una trasparenza totale.
-
-Il Prestatore si impegna a non utilizzare i dati del COMMITTENTE derivanti dalla produzione per effettuare test, ad eccezione del fatto di ottenere preventivamente l'autorizzazione esplicita del COMMITTENTE, nel qual caso il Prestatore si impegna a anonimizzare tali dati e a garantirne la riservatezza durante l'anonimizzazione.
-
-In caso di cambio di sottappaltatore per l'hosting, il Prestatore informerà il COMMITTENTE in anticipo, assicurandosi che questa transizione non danneggi negativamente il servizio fornito.
-
-Su richiesta del COMMITTENTE, il Prestatore fornirà l'accesso al suo regolamento interno, alla sua carta etica, alle sanzioni applicabili in caso di mancato rispetto della sua politica di sicurezza, agli eventi che lo riguardano, alle procedure relative al servizio e alle esigenze specifiche di sicurezza.
-
-Il Prestatore si impegna a informare il COMMITTENTE di ogni cambiamento imminente su elementi software sotto la responsabilità di Cloud Temple, nel momento in cui non possa essere garantita la completa compatibilità.
-
-### 10.2. Limitazione di responsabilità del Prestatore
-
-La struttura di responsabilità condivisa riduce efficacemente l'ambito di intervento del Prestatore agli aspetti relativi alla fornitura di una piattaforma RedHat OpenShift funzionante, comprensiva di:
+La struttura di responsabilità condivisa riduce efficacement l'ambito
+di intervento del fornitore nei settori relativi alla fornitura di una piattaforma RedHat OpenShift funzionante, compresi:
 
 - La gestione dell'infrastruttura IaaS che supporta la piattaforma RedHat OpenShift e il suo provisioning,
-- La gestione dei sistemi necessari al corretto funzionamento della piattaforma,
-- Il mantenimento in condizioni di sicurezza,
-- L'aggiornamento della piattaforma RedHat OpenShift,
-- La salvataggio dei dati di configurazione essenziali di questa piattaforma, ad eccezione dei dati e delle applicazioni del COMMITTENTE che rientrano nella sua responsabilità.
+- La gestione dei sistemi necessari per il corretto funzionamento della piattaforma,
+- Il mantenimento delle condizioni di sicurezza,
+- Le aggiornamenti della piattaforma RedHat OpenShift,
+- La salvaguardia dei dati di configurazione essenziali di questa piattaforma, a esclusione dei dati e delle applicazioni del COMMANDITAIRE che rientrano nella sua responsabilità.
 
-Esclude in particolare, ma non solo:
+Essa esclude in particolare, ma senza limitarsi a:
 
-- L'aggiornamento dei sistemi operativi e dei software installati dal COMMITTENTE sui suoi ambienti OpenShift nei suoi spazi locativi,
-- La sicurezza dei programmi, software e applicazioni installati all'interno dell'ambiente OpenShift dal COMMITTENTE,
-- La salvataggio dei dati a livello applicativo,
+- Gli aggiornamenti degli sistemi operativi e dei software installati dal COMMANDITAIRE nei suoi ambienti OpenShift negli spazi di localizzazione,
+- La sicurezza dei programmi, dei software e delle applicazioni installati all'interno dell'ambiente OpenShift dal COMMANDITAIRE,
+- La salvaguardia dei dati a livello applicativo,
 - La configurazione delle politiche di salvataggio.
 
-### 10.3. Limitazione di accesso
+### Limitazione Accesso
 
-All'interno di questa convenzione di servizio, il Fornitore è formalmente vietato dall'accedere ai tenant appartenenti al Committente senza autorizzazione preventiva. Spetta al Committente fornire gli accessi necessari al personale del Fornitore, in base alle esigenze specifiche dell'hosting e, se del caso, dei servizi professionali di supporto, se questa opzione è stata scelta dal Committente.
+Nel contesto di questo accordo di servizio, il fornitore è formalmente vietato di accedere ai tenori appartenenti al COMMANDITAIRE senza autorizzazione precedente. È la responsabilità del COMMANDITAIRE di fornire gli accessi necessari al personale del fornitore, in base alle esigenze specifiche dell'hosting e, se applicabile, ai servizi professionali di supporto scelti dal COMMANDITAIRE.
 
-Il Committente riconosce che questi accessi sono concessi esclusivamente per gli scopi connessi alla prestazione dei servizi concordati, garantendo così una gestione sicura e conforme ai termini dell'accordo.
+Il COMMANDITAIRE riconosce che questi accessi sono concessi esclusivamente per scopi legati alla fornitura dei servizi convenuti, garantendo così una gestione sicura e conformi agli accordi stipulati.
 
-L'accesso remoto da parte di terzi coinvolti nella prestazione del servizio del Fornitore è strettamente vietato. In caso di esigenza tecnica specifica che richiedesse un tale accesso, quest'ultimo potrebbe essere stabilito solo dopo aver chiaramente notificato al Committente, fornito una giustificazione dettagliata e ottenuto il suo accordo scritto.
+L'accesso remoto da parte di terzi coinvolti nella fornitura del servizio dal fornitore è strictamente vietato. In caso in cui una esigenza tecnica specifica richieda tale accesso, questo potrebbe essere autorizzato solo dopo aver chiaramente notificato il COMMANDITAIRE, fornire una giustificazione dettagliata e ottenere l'accordo scritto.
 
-Questa misura garantisce il controllo e la sicurezza dei dati del Committente, assicurandosi che ogni eccezione alla regola sia debitamente autorizzata e documentata.
+Questa misura garantisce il controllo e la sicurezza dei dati del COMMANDITAIRE, assicurando che qualsiasi eccezione alla regola sia adeguatamente autorizzata ed documentata.
 
-## 11. Cancellazione dei dati alla fine del contratto
+## Data deletion upon contract termination
 
-Al termine del contratto, sia che scada o venga risolto per qualsiasi motivo, il Prestatore si impegna a procedere alla cancellazione sicura dell'intera quantità di dati del COMMittente, inclusi i dati tecnici. Il Prestatore garantirà di comunicare al COMMittente un preavviso formale, rispettando un termine di ventuno (21) giorni calendariali. I dati del COMMittente verranno quindi eliminati entro un massimo di trenta (30) giorni dalla detta notifica.
+Upon the expiration of the contract, whether by expiry or termination for any reason, the Provider commits to securely erase all data from the COMMANDITAIRE, including technical data. The Provider will ensure that the COMMANDITAIRE is formally notified of this erasure with a formal notice within twenty-one (21) calendar days. The COMMANDITAIRE's data will then be deleted within a maximum period of thirty (30) days following this notification.
 
-Per attestare questa eliminazione, il Prestatore rilascerà al COMMittente un certificato che conferma la cancellazione dei dati.
+To verify this deletion, the Provider will provide the COMMANDITAIRE with a certificate confirming the erasure of data.
 
-## 12. Legge applicabile
+## Applicable Law
 
-La legge applicabile per la presente convenzione di servizio è la legge francese.
+The applicable law for the present service agreement is French law.
 
-In caso di ricorso da parte del Prestatore, nel quadro dei servizi forniti al COMMANDITAIRE, a una società terza, compreso un subappaltatore, la cui sede sociale, amministrazione centrale o principale stabilimento si trova in uno Stato non membro dell'Unione Europea, o che è di proprietà o sotto il controllo di una società terza con sede fuori dall'Unione Europea, il Prestatore si impegna a garantire che detta società terza non avrà alcun accesso ai dati elaborati dal servizio del Prestatore.
+In case of a claim brought by the Service Provider, in relation to services provided to the CLIENT, against a third party, including a subcontractor, whose registered office, central administration or main establishment is located in a non-EU Member State, or which is owned or controlled by a third party domiciled outside the EU, the Service Provider undertakes to ensure that such third party has no access to the processed data handled by the Service Provider's services.
 
-Si precisa che i dati indicati comprendono quelli affidati al Prestatore dal COMMANDITAIRE, nonché tutti i dati tecnici, come le identità dei beneficiari e degli amministratori dell'infrastruttura tecnica, i dati elaborati dai reti, i log dell'infrastruttura tecnica, l'elenco, i certificati, la configurazione degli accessi, ecc., contenenti informazioni sul COMMANDITAIRE.
+It should be noted that the data in question includes those entrusted to the Service Provider by the CLIENT, as well as all technical data such as beneficiary and infrastructure administrator identities, data manipulated by networks, network logs, directory, certificates, access configuration, etc., containing information about the CLIENT.
 
-Per precisazione, il concetto di controllo è definito conformemente al II dell'articolo L233-3 del codice commerciale.
+For clarity, the concept of "control" is defined in accordance with Article II of Law L233-3 of the French Commercial Code.
