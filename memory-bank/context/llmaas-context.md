@@ -29,7 +29,7 @@ docs/llmaas/
 ### Génération Automatique
 - **Source** : `memory-bank/models_config.yaml` (45 modèles)
 - **Script** : `scripts/generate_models_doc/generate_models_doc.py`
-- **Commande** : `npm run generate:models`
+- **Commande** : `yarn generate:models`
 - **Sortie** : `docs/llmaas/models.md` (documentation Docusaurus)
 
 ## Configuration Modèles
@@ -125,14 +125,14 @@ docs/llmaas/
 vim memory-bank/models_config.yaml
 
 # Génération propre
-npm run generate:models
+yarn generate:models
 
 # Résultat : Documentation mise à jour !
 ```
 
 ### Structure Scripts
 - **generate_models_doc.py** : Générateur principal
-- **NPM integration** : `npm run generate:models`
+- **module integration** : `yarn generate:models`
 - **Documentation** : `scripts/README.md`
 - **Logging coloré** : Feedback développeur
 

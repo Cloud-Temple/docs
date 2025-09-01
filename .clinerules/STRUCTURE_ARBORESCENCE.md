@@ -7,9 +7,9 @@ Cette documentation technique est construite avec **Docusaurus**, une plateforme
 
 ### Fichiers de Configuration Core
 ```
-├── docusaurus.config.ts        # Configuration principale Docusaurus
-├── package.json               # Dépendances et scripts npm
-├── package-lock.json         # Verrouillage des versions
+├── docusaurus.config.ts      # Configuration principale Docusaurus
+├── package.json              # Dépendances et scripts
+├── yarn.lock                 # Verrouillage des versions
 ├── yarn.lock                 # Gestionnaire de paquets Yarn
 ├── tsconfig.json             # Configuration TypeScript
 ├── sidebars.ts               # Structure de navigation
