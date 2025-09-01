@@ -1,29 +1,26 @@
 ---
-title: Synchronize a folder with AWS CLI
+title: Synchronizing a Directory with AWS CLI
 ---
 
-Similarly to `mc`, the AWS CLI provides the `aws s3 sync` command to synchronize directories. This command compares the contents of the source directory and destination bucket to transfer only new or modified files.
+Similar to `mc`, the AWS CLI offers the command `aws s3 sync` for synchronizing directories. This command compares the content of the source directory and the destination bucket, transferring only new or modified files.
 
-Don't forget to configure your [AWS client as described in the quickstart guide](../quickstart.md#configurer-votre-client-aws-aws) and use the `--endpoint-url` parameter.
+Please ensure your [AWS client is configured as described in the Getting Started guide](../quickstart.md) and use the `--endpoint-url` parameter.
 
-### Basic example
+### Exemple de base (Translated)
 
-To synchronize the content of the local folder `./mon-site` to the bucket `s3://demo-app`:
-
-```bash
-❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
-```
-
-### Useful options
-
-*   `--delete` : Deletes files from the bucket that no longer exist in the local directory. This is equivalent to the `--remove` option of `mc mirror`.
-*   `--exact-timestamps` : During synchronization, copy the file only if the modification timestamp is different.
-*   `--dryrun` : Displays the operations that would be performed without actually executing them. Very useful for verifying a command before running it.
+To synchronize the content of the local directory `./mon-site` to the S3 bucket `demo-app`:
 
 ```bash
+❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://YOUR_NAMESPACE.s3.fr1.cloud-temple.com
 ```
 
-# Simulation of a synchronization with deletion to check changes
-❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
-(dryrun) delete: s3://demo-app/old-file.html
-(dryrun) upload: mon-site/new-file.css to s3://demo-app/new-file.css
+### Useful Options
+
+*   `--delete`: Removes files from the bucket that no longer exist in the local directory, equivalent to the `--remove` option of `mc mirror`.
+*   `--exact-timestamps`: During synchronization, only copies a file if the modification timestamp is different.
+*   `--dryrun`: Displays operations that would be executed without actually running them. Highly useful for verifying a command before execution.
+
+# Simulation of synchronization with deletion for change verification
+> aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
+(dry run) delete: s3://demo-app/old-file.html
+(dry run) upload: mon-site/new-file.css to s3://demo-app/new-file.css

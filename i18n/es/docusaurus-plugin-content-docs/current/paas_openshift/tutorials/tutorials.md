@@ -20,7 +20,7 @@ Antes de iniciar tu recorrido en nuestra plataforma, te recomendamos explorar lo
     - Descubre la estructura fundamental de la plataforma.
     - Comprende cómo se integra OpenShift con los servicios de Cloud Temple.
 
-2. [**Límites y Restricciones Conocidas**](../concepts.md#limites-actuelles-de-loffre-redhat-openshift-en-environnement-secnumcloud)
+2. [**Límites y Restricciones Conocidas**](../concepts.md)
     - Infórmate sobre los límites de la plataforma para planificar mejor tus implementaciones.
     - Evita los problemas comunes y optimiza el uso de recursos.
 

@@ -66,7 +66,7 @@ La documentation Console dispose du plus riche support visuel :
 - `shiva_api_001.png` : Documentation Swagger
 - `shiva_api_002.png` : Authentification API
 - `shiva_api_003.png` : Endpoints principaux
-- `shiva_api_004.jpg` : Tests API
+- `shiva_api_004.png` : Tests API
 
 #### **Workflow Incidents** (6 captures)
 - `shiva_incident_001.png` : Création incident

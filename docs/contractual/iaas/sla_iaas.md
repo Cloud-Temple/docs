@@ -3,205 +3,37 @@ title: Convention de Service SecNumCloud IaaS
 ---
 
 
-# 1. CONVENTION DE SERVICES IaaS
+# CONVENTION DE SERVICES IaaS
 
-  -----------------------------------------------------------------------
-  **Destinataires :**            **COMMANDITAIRE**
-  ------------------------------ ----------------------------------------
-  **Référence du documents**     CT.AM.JUR.ANX CdS-IaaS -
-                                 20251701_v3.0.docx_Jour JJ AAAA
-
-  **Vos interlocuteurs**         *Prénom* *Nom*
-
-                                 Account Manager
-
-                                 e-mail : *prenom.nom*\@cloud-temple.com
-
-  **Date de dernière mise à      17/01/2025
-  jour**
-
-**Date de validation           Jour JJ AAAA
-  contractuelle**
-  -----------------------------------------------------------------------
+| Destinataires : | **COMMANDITAIRE** |
+| :--- | :--- |
+| **Référence du documents** | CT.AM.JUR.ANX CdS-IaaS - 20251701_v3.0.docx_Jour JJ AAAA |
+| **Vos interlocuteurs** | *Prénom* *Nom* Account Manager e-mail : *prenom.nom*\@cloud-temple.com |
+| **Date de dernière mise à jour** | 17/01/2025 |
+| **Date de validation contractuelle** | Jour JJ AAAA |
 
 ------------------------------------------------------------------------
 
-  ------------------------------------------------------------------------------
-  **Version**   **Date**     **Action**                           **Auteur**
-  ------------- ------------ ------------------------------------ --------------
-  v0.1          07/06/2022   Rédaction initiale                   Lorena ALCALDE
-
-  v0.2          14/09/2022   Enrichissement                       Lorena ALCALDE
-
-  v1.0          30/12/2022   Intégration Indicateurs              Lorena ALCALDE
-
-  v1.1          23/01/2023   Modification pied de page            Lorena ALCALDE
-
-  v1.2          22/05/2023   Enrichissement                       Lorena ALCALDE
-
-  v1.3          29/06/2023   Enrichissement                       Lorena ALCALDE
-
-  v1.4          06/11/2023   Modification Capital et              Lorena ALCALDE
-                             Enrichissement
-
-  v1.5          30/11/2023   Enrichissement                       Lorena ALCALDE
-
-  v1.6          21/03/2024   Enrichissement                       Lorena ALCALDE
-
-  v2.0          29/03/2024   Ajustements conformité SNC           Nicolas
-                                                                  ABRIOUX
-
-  v2.0          03/04/2024   Publication                          Lorena ALCALDE
-
-  V3.0          17/01/2025   Enrichissement                       Emeline CAZAUX
-  ------------- ------------ ------------------------------------ --------------
-  ------------------------------------------------------------------------------
+| Version | Date | Action | Auteur |
+| :--- | :--- | :--- | :--- |
+| v0.1 | 07/06/2022 | Rédaction initiale | Lorena ALCALDE |
+| v0.2 | 14/09/2022 | Enrichissement | Lorena ALCALDE |
+| v1.0 | 30/12/2022 | Intégration Indicateurs | Lorena ALCALDE |
+| v1.1 | 23/01/2023 | Modification pied de page | Lorena ALCALDE |
+| v1.2 | 22/05/2023 | Enrichissement | Lorena ALCALDE |
+| v1.3 | 29/06/2023 | Enrichissement | Lorena ALCALDE |
+| v1.4 | 06/11/2023 | Modification Capital et Enrichissement | Lorena ALCALDE |
+| v1.5 | 30/11/2023 | Enrichissement | Lorena ALCALDE |
+| v1.6 | 21/03/2024 | Enrichissement | Lorena ALCALDE |
+| v2.0 | 29/03/2024 | Ajustements conformité SNC | Nicolas ABRIOUX |
+| v2.0 | 03/04/2024 | Publication | Lorena ALCALDE |
+| V3.0 | 17/01/2025 | Enrichissement | Emeline CAZAUX |
 
 ------------------------------------------------------------------------
 
-# 2. TABLE DES MATIÈRES
+# Préliminaire et Glossaire
 
-- [1. **CONVENTION DE SERVICES
-    IaaS**](#Xc3786c07943ae71dec5191b24567a7f31cb6100)
-- [2. **TABLE DES
-    MATIÈRES**](#X3dffd8c5466b60a9d1847f151e1ff8bf27d5bbe)
-- [3. Préliminaire et
-    Glossaire](#X9df3d46524e9acceada5b6725a4b3f19a8b9b42)
-  - [3.1. Préliminaire](#X72bdbcbbf0c088c7b664a8859dff9c5e94a1c67)
-  - [3.2. Glossaire](#X0bd89fddb7967cedd9680ed4f7efa236729ef3e)
-- [4. Acronymes](#X69ea3329484b8f0083d344ad9c43d7dabdcccc9)
-- [5. Objet de la présente Convention de
-    service](#X30e34f28e133265489633a87e3abd4d1a022de5)
-- [6. Audit](#X910e2801262de94af715f54b8fb509cc70cc79a)
-- [7. Description du
-    Service](#X3d12a6c93683f0122f5f9a8e21e7c12fc92490b)
-  - [7.1. Modèle de responsabilité
-        partagé](#X5ab2fd5cebb0dc76febf8e32f5665b447285437)
-  - [7.2. Présentation détaillée du périmètre du
-        Service](#Xd81ad0562f6e00e693916802084624b2a4885a5)
-    - [7.2.1. Infrastructures
-            Datacenters](#Xfd30a9e9ca5808eb0dd2b0f76d8755ff494726d)
-    - [7.2.2. Infrastructure logicielle de pilotage du
-            Service](#X429d709e167549b1f31f4cdbe79bbf526f0b1dc)
-    - [7.2.3. Infrastructures de
-            calcul](#X432e4596f65dd97ffb3314bc9725a08a9369f4d)
-    - [7.2.4. Infrastructure de
-            stockage](#X30efbac0441ad31cd6ec07282a96acfcd07e9b2)
-    - [7.2.5. Infrastructure réseau
-            globale](#X78b4484e386c95a988a698cd84bae342679ddb5)
-    - [7.2.6. Infrastructure de
-            sauvegarde](#Xdf2c99a6958ca2f79a1cf60659dd5a3029ab31c)
-    - [7.2.7. Mise en œuvre de solutions de reprise d'activité ou
-            de continuité
-            d'activité](#X5610bffa77dd118e87cbee05f204158179c962f)
-  - [7.3. Limitations des services dans le modèle IaaS
-        qualifié](#X9afa960ae3673041349d17f6a264de8fb35d3b0)
-    - [7.3.1. Services managés en
-            RUN](#Xa64cd9832e1132b6d2d4e8ef50163a925fcceeb)
-    - [7.3.2. Configuration du
-            secours](#Xfc39a8474ae9c8d4eedbb3b8e543dc0a137bd71)
-    - [7.3.3. Configuration de la
-            sauvegarde](#Xfd8664b285a442773de0c9989256f92bc1f6ca2)
-  - [7.4. Mise en œuvre du
-        service](#X93e04903630a0a81d7b9ebc1a4c5a933dfa0088)
-    - [7.4.1. Prérequis
-            techniques](#X59ca4242dbed0e6d5e3efa2ba91a80866647f92)
-  - [7.5. Localisation du service en
-        France](#Xdcea3053acc96cf4c715a189f3d7d9842c70915)
-    - [7.5.1. Localisation des Datacenters hébergeant le
-            Service](#Xac9c0f685576284f9431d5c1b6df99bc7ab662b)
-    - [7.5.2. Localisation des agences Cloud Temple opérant le
-            service](#X528b4e5e85b084898df1a4b0ee003fda94dca5d)
-  - [7.6. Support](#X451baaab9b4764d97da95395b7e24265143a283)
-    - [7.6.1. Nature du support accompagnant le
-            service](#X192381358bcad693baa22b16773742f4c8cf227)
-    - [7.6.2. Sollicitation du service support
-            technique](#X03ef425751011df1818d9488df5625576c33f5e)
-    - [7.6.3. Processus de gestion des
-            Incidents](#Xac759d2aee6d685130dea876d7a1ed03888b994)
-    - [7.6.4. Processus de priorisation des
-            traitements](#X30a0604e2d2957ae43d1f1fe2cb9c04f5c05885)
-    - [7.6.5. Langue et localisation du service de
-            support](#X1afc584a9d5f886a1ad8b9ca498773d2e10cff8)
-- [8. Engagements et niveaux de
-    services](#Xf1662fa601c14a35f4b238c1effe9c712d3efbe)
-  - [8.1. Engagements de disponibilité de
-        l'infrastructure](#X8e3206aed4045e8fbaad84d93ea150db664eb69)
-  - [8.2. Engagement de disponibilité de l'interface
-        COMMANDITAIRE](#X86570f48e6da9370f069232b4ae175183f2dafd)
-  - [8.3. Engagement de disponibilité du
-        support](#Xfc8548982b300528a67725f1705f15805f405f0)
-  - [8.4. Engagement de disponibilité du stockage objet
-        S3](#Xd1858bb2ec86b964cb6a768cb7d9a7a780abb7b)
-  - [8.5. Précision concernant l'engagement de
-        sauvegarde](#Xcc0ee164bf81418fd2280ceac4eb569bf7b97f7)
-- [9. Organisation de la relation
-    contractuelle](#Xf5428518d06ee6569b2c74ea4a26421ab0998e2)
-  - [9.1. Responsabilités du
-        Prestataire](#X29068434a285c3f52c7ddc1ef50404d65e76fb5)
-  - [9.2. Limitation des responsabilités du
-        Prestataire](#X19121b2bd4fb4e4f45228e8bab910b62dc757c1)
-  - [9.3. Limitation
-        d'accès](#X4e70434457f7c115f116a9f6ea4ab4af9b8d941)
-  - [9.4. Responsabilités des tiers participant à la fourniture du
-        service Secure
-        Temple](#Xc662a81cadd2baa300ca83a27240dec61621a56)
-  - [9.5. Responsabilités et obligations du
-        COMMANDITAIRE](#X53c94c34c467a68244ea6ce991e3e56c55d5d85)
-  - [9.6. Droits du
-        COMMANDITAIRE](#Xc34f07dff71165a85ac919098e14cdc0f0f59e0)
-  - [9.7. Effacement des données en fin de
-        Contrat](#X18af7e8db06fe2d84076a4e5a797e8b384bc11c)
-- [10. Cycle de vie de la présente Convention de
-    service](#X89744c1f67247955b75e73d73aaa55899645415)
-  - [10.1. Entrée en effet de la Convention de
-        service](#Xa3b4f57d1f6067d72eba0c13dc12b4e2e5a4cf1)
-  - [10.2. Évolutions de la Convention de
-        service](#Xb5b2d189dece37be8660fbd35b3e0d097bb2969)
-    - [10.2.1. Évolutions déclenchées par le
-            COMMANDITAIRE](#X946a5e541a54ab2f0ca92ca2e5ab41b3740f564)
-    - [10.2.2. Évolutions déclenchées par le
-            Prestataire](#Xe94b2234fc6249c7021ff8c044fdaa857f6a9af)
-  - [10.3. Réversibilité](#X483eba08298e38537f9f27b026e82e1ece7ce7e)
-- [11. Disponibilité, continuité et restauration du
-    service](#X115fcc8f59c1201dae17a3d86136d153be01044)
-  - [11.1. Gestion des Incidents et des
-        interruptions](#X55fc305b5e53901383e26fda6b4957fbeefa9ca)
-    - [11.1.1.
-            Incidents](#X648046c564ac1cd52bebb02b256b193a3da4d74)
-      - [11.1.1.1. Types d'Incidents traités dans le cadre de
-                cette Convention de
-                service](#X09cc1e22db275b1a463f85596829f3f871ae224)
-      - [11.1.1.2. Traitement des
-                incidents](#X726d7a25d789f16db26761d7df0c2c91f7bcc3a)
-      - [11.1.1.3. Niveau de notification des Incidents de
-                sécurité](#X61ceb4b8f57902c74fbf77bbb211197e5a82412)
-  - [11.2. Maintenance du
-        Service](#X8f50b0b400c67568e380ddb602ac786ec585905)
-    - [11.2.1. Nature de la
-            maintenance](#X903d92edf16182242ecfd404337edbaf2243b81)
-    - [11.2.2. Accès distants de Cloud Temple sur le périmètre du
-            COMMANDITAIRE](#X89ffba42dc424905d6209f36393e0e9422b9ed6)
-    - [11.2.3. Accès distants de tiers participant à la fourniture
-            du service sur le périmètre du
-            COMMANDITAIRE](#X7ad951099cc984b8fc113222e52c4e27d11465f)
-- [12. Procédure d'effacement des données en fin de
-    Contrat](#X4ef75d4456496b7eb26b3d2dd8783cf17bd26c2)
-- [13. Droit applicable](#Xdc569bbb194e0e4a197cf31537db4bf08bf3eca)
-  - [13.1. De manière
-        générale](#X5ed94d170893fb4c04d7110c419f01198fda773)
-  - [13.2. Respect du droit et des réglementations
-        applicables](#Xce704548fdd653ba3dbdfe64fefff60a0972c3f)
-  - [13.3. RGPD](#Xfc35add53571984b04e4fc9d49dcfff4b7b3395)
-  - [13.4. Protection vis à vis du droit
-        extra-européen](#X5171f5ee735df20bc2100671620eddd76dca12d)
-- [14. SIGNATURES](#X7ad993788a708b47017c27c9d96178e8795e44f)
-
-------------------------------------------------------------------------
-
-# 3. Préliminaire et Glossaire
-
-## 3.1. Préliminaire
+## Préliminaire
 
 Le présent document formalise la Convention de service associée au
 service IaaS qualifiée SecNumCloud sous l'appellation de « *Secure
@@ -234,7 +66,7 @@ les autres dans l'ordre suivant :
 
 9. Data Protection Agreement
 
-## 3.2. Glossaire
+## Glossaire
 
 Dans la présente Convention de service, le **COMMANDITAIRE**, le
 **Prestataire** et les **Parties** sont identifiés dans le Contrat
@@ -353,90 +185,48 @@ attribuées ci-dessous :
     pour assurer la haute disponibilité et la résilience des services
     par une distribution géographique des ressources.
 
-# 4. Acronymes
+# Acronymes
 
-  -----------------------------------------------------------------------------
-  **Acronyme**   **Définition**
-  -------------- --------------------------------------------------------------
-  **CAB**        Change Advisory Board -- Comité consultatif sur les
-                 changements
+| Acronyme | Définition |
+| :--- | :--- |
+| **CAB** | Change Advisory Board -- Comité consultatif sur les changements |
+| **CMDB** | Configuration Management Database -- Base de données de gestion des configurations |
+| **COPIL** | Comité de pilotage |
+| **COSTRAT** | Comité stratégique |
+| **COPROJ** | Comité Projet |
+| **DB** | Database (base de données) |
+| **DPA** | Data Protection Agreement |
+| **DRP** | Disaster Recovery Plan (PRA) (Plan de reprise d'activité) |
+| **GTE** | Garantie de Temps d'Escalade |
+| **GTI** | Garantie de Temps d'Intervention |
+| **GTR** | Garantie de Temps de Résolution |
+| **ITIL** | Information Technology Infrastructure Library - Bonnes pratiques pour la gestion des SI |
+| **IaaS** | Infrastructure as a Service |
+| **MCO** | Maintien en condition opérationnelle |
+| **MOA** | Maitrise d'Ouvrage |
+| **MOE** | Maitrise d'Œuvre |
+| **MSP** | Managed Services Provider |
+| **OS** | Operating system (système d'exploitation) |
+| **PAQ** | Plan d'Assurance Qualité |
+| **PaaS** | Platform as a Service |
+| **PAS** | Plan d'Assurance Sécurité |
+| **PASSI** | Prestataire d'Audit de Sécurité des Systèmes d'Information |
+| **RFC** | Request For Change -- Demande de changement |
+| **RGPD** | Règlement Général de Protection des Données (personnelles) |
+| **RPO** | Recovery Point Objective -- Fraicheur des données restaurées en cas de Sinistre |
+| **RTO** | Recovery Time Objective -- Délai de rétablissement du service en cas de Sinistre |
+| **SDM** | Service Delivery Manager |
+| **SLA** | Service Level Agreement -- Accord sur les niveaux de services |
+| **SNC** | SecNumCloud |
+| **SOC** | Security Operation Center |
+| **TMA** | Tierce Maintenance dApplication |
+| **UO** | Unité d'Œuvre |
+| **VABE** | Validation d'Aptitude à la Bonne Exploitabilité |
+| **VABF** | Validation d'Aptitude au Bon Fonctionnement |
+| **VM** | Virtual Machine (Machine virtuelle) |
+| **VSR** | Validation de Service Régulier |
 
-  **CMDB**       Configuration Management Database -- Base de données de
-                 gestion des configurations
-
-  **COPIL**      Comité de pilotage
-
-  **COSTRAT**    Comité stratégique
-
-  **COPROJ**     Comité Projet
-
-  **DB**         Database (base de données)
-
-  **DPA**        Data Protection Agreement
-
-  **DRP**        Disaster Recovery Plan (PRA) (Plan de reprise d'activité)
-
-  **GTE**        Garantie de Temps d'Escalade
-
-  **GTI**        Garantie de Temps d'Intervention
-
-  **GTR**        Garantie de Temps de Résolution
-
-  **ITIL**       Information Technology Infrastructure Library - Bonnes
-                 pratiques pour la gestion des SI
-
-  **IaaS**       Infrastructure as a Service
-
-  **MCO**        Maintien en condition opérationnelle
-
-  **MOA**        Maitrise d'Ouvrage
-
-  **MOE**        Maitrise d'Œuvre
-
-  **MSP**        Managed Services Provider
-
-  **OS**         Operating system (système d'exploitation)
-
-  **PAQ**        Plan d'Assurance Qualité
-
-  **PaaS**       Platform as a Service
-
-  **PAS**        Plan d'Assurance Sécurité
-
-  **PASSI**      Prestataire d'Audit de Sécurité des Systèmes d'Information
-
-  **RFC**        Request For Change -- Demande de changement
-
-  **RGPD**       Règlement Général de Protection des Données (personnelles)
-
-  **RPO**        Recovery Point Objective -- Fraicheur des données restaurées
-                 en cas de Sinistre
-
-  **RTO**        Recovery Time Objective -- Délai de rétablissement du service
-                 en cas de Sinistre
-
-  **SDM**        Service Delivery Manager
-
-  **SLA**        Service Level Agreement -- Accord sur les niveaux de services
-
-  **SNC**        SecNumCloud
-
-  **SOC**        Security Operation Center
-
-  **TMA**        Tierce Maintenance dApplication
-
-  **UO**         Unité d'Œuvre
-
-  **VABE**       Validation d'Aptitude à la Bonne Exploitabilité
-
-  **VABF**       Validation d'Aptitude au Bon Fonctionnement
-
-  **VM**         Virtual Machine (Machine virtuelle)
-
-**VSR**        Validation de Service Régulier
-  -----------------------------------------------------------------------------
-
-# 5. Objet de la présente Convention de service
+# Objet de la présente Convention de service
 
 La présente Convention de service établit les termes et conditions selon
 lesquels le Prestataire s'engage à délivrer le Service au COMMANDITAIRE.
@@ -468,7 +258,7 @@ Il convient de noter qu'une modification ou un ajustement de la
 qualification SecNumCloud ne sera pas interprété comme une révocation de
 la qualification initiale.
 
-# 6. Audit
+# Audit
 
 Le Prestataire s'engage à permettre au COMMANDITAIRE, ou à tout auditeur
 tiers et non concurrent du Prestataire que ce dernier aurait désigné, de
@@ -488,9 +278,9 @@ confère son autorisation explicite à :
     dûment qualifié PASSI et expressément désigné par le Prestataire,
     pour mener à bien des audits de sécurité portant sur le Service.
 
-# 7. Description du Service
+# Description du Service
 
-## 7.1. Modèle de responsabilité partagé
+## Modèle de responsabilité partagé
 
 Le Service proposé par le Prestataire se caractérise par la mise à
 disposition des prestations suivantes, lesquelles s'alignent sur le
@@ -512,32 +302,22 @@ Il est entendu que le Prestataire mobilisera son expertise pour réaliser
 les Prestations selon les meilleures pratiques professionnelles et
 conformément aux exigences du référentiel SecNumCloud.
 
-## 7.2. Présentation détaillée du périmètre du Service
+## Présentation détaillée du périmètre du Service
 
-  -----------------------------------------------------------------------------
-  Compute          Ressource de calcul du Tenant COMMANDITAIRE
-  ---------------- ------------------------------------------------------------
-  Storage          Données de production du Tenant COMMANDITAIRE
-
-  Stockage objet   mise à disposition d'une infrastructure de stockage objet
-  S3               souverain multi AZ et compatible avec les API S3 standard.
-
-  Sauvegarde       Modulo souscription au mass-storage adéquat
-
-  Infrastructure   Ressource réseau du Tenant COMMANDITAIRE
-  réseau
-
-  Console          Le service permettant au COMMANDITAIRE d'accéder à son
-  COMMANDITAIRE    service IaaS et de l'administrer via l'interface Shiva
-
-Support          Le service de support accompagnant les services précédents
-                   et uniquement ceux-ci (\*)
-  -----------------------------------------------------------------------------
+| Service | Description |
+| :--- | :--- |
+| **Compute** | Ressource de calcul du Tenant COMMANDITAIRE |
+| **Storage** | Données de production du Tenant COMMANDITAIRE |
+| **Stockage objet S3** | mise à disposition d'une infrastructure de stockage objet souverain multi AZ et compatible avec les API S3 standard. |
+| **Sauvegarde** | Modulo souscription au mass-storage adéquat |
+| **Infrastructure réseau** | Ressource réseau du Tenant COMMANDITAIRE |
+| **Console COMMANDITAIRE** | Le service permettant au COMMANDITAIRE d'accéder à son service IaaS et de l'administrer via l'interface Shiva |
+| **Support** | Le service de support accompagnant les services précédents et uniquement ceux-ci (\*) |
 
 \_(\*) Dans la limite du périmètre du Service qualifié SNC et des
 responsabilités du Prestataire en la matière\_
 
-### 7.2.1. Infrastructures Datacenters
+### Infrastructures Datacenters
 
 Le Service englobe la mise à disposition, pour chaque Zone de
 disponibilité, des prestations qualifiées ci-après :
@@ -580,7 +360,7 @@ faciliter leur mise en œuvre. Le COMMANDITAIRE est également encouragé à
 prendre connaissance des recommandations de sécurité fournies et à les
 intégrer dans sa propre stratégie de gestion des risques.
 
-### 7.2.2. Infrastructure logicielle de pilotage du Service
+### Infrastructure logicielle de pilotage du Service
 
 Le Prestataire fournit au COMMANDITAIRE la console d'administration et
 l'API nécessaire à l'utilisation du Service. Il s'engage également à les
@@ -605,7 +385,7 @@ une par seconde (Throttling). Si le COMMANDITAIRE soumet des requêtes
 identiques à une fréquence supérieure, leur rejet ne pourra être
 interprété comme une indisponibilité du Service.
 
-### 7.2.3. Infrastructures de calcul
+### Infrastructures de calcul
 
 Le Service inclut la fourniture, dans les zones de disponibilité
 souscrites par le COMMANDITAIRE, des équipements nécessaires à
@@ -637,7 +417,7 @@ Le choix du modèle de lame de calcul, sélectionné parmi le catalogue
 proposé par le Prestataire, relève de la responsabilité du
 COMMANDITAIRE.
 
-### 7.2.4. Infrastructure de stockage
+### Infrastructure de stockage
 
 Le service comprend la fourniture au COMMANDITAIRE d'une infrastructure
 de stockage partagée de type SAN (Storage Area Network), offrant divers
@@ -653,7 +433,7 @@ niveaux de performance. Ce service englobe :
     COMMANDITAIRE, conformément aux volumes souscrits par le
     COMMANDITAIRE.
 
-### 7.2.5. Infrastructure réseau globale
+### Infrastructure réseau globale
 
 Le Prestataire déploie dans le cadre du Service, un réseau global
 facilitant au COMMANDITAIRE la mise en accessibilité de ses systèmes
@@ -673,7 +453,7 @@ composants techniques réalisant cette interconnexion, ne font pas partie
 du périmètre du Service. Cette interconnexion réseau est mise en œuvre
 conformément aux dispositions prévues dans le Contrat.
 
-### 7.2.6. Infrastructure de sauvegarde
+### Infrastructure de sauvegarde
 
 Le Prestataire met à disposition du COMMANDITAIRE un service de
 sauvegarde intégré, dédié et géré, destiné à la protection de ses
@@ -701,7 +481,7 @@ limiteront à la mise en œuvre des besoins exprimés par le COMMANDITAIRE
 en matière de politique de sauvegarde, dans le cadre des ressources
 souscrites.
 
-### 7.2.7. Mise en œuvre de solutions de reprise d'activité ou de continuité d'activité
+### Mise en œuvre de solutions de reprise d'activité ou de continuité d'activité
 
 Le Prestataire fournit au COMMANDITAIRE l'ensemble des solutions
 techniques nécessaires pour garantir une répartition optimale de ses
@@ -710,9 +490,9 @@ COMMANDITAIRE la responsabilité de gérer efficacement cette distribution
 de ressources, pour laquelle il a la possibilité à exploiter les outils
 du Prestataire disponibles à cet usage.
 
-## 7.3. Limitations des services dans le modèle IaaS qualifié
+## Limitations des services dans le modèle IaaS qualifié
 
-### 7.3.1. Services managés en RUN
+### Services managés en RUN
 
 Il est important de noter que sont écartés du Service :
 
@@ -733,7 +513,7 @@ intervenir en mode services managés sur ses Tenants. Ces services ne
 seront alors pas encadrés par la présente Convention de service et ses
 engagements/clauses bipartites.
 
-### 7.3.2. Configuration du secours
+### Configuration du secours
 
 Par défaut, le Prestataire fournit la mise en place des ressources du
 IaaS au COMMANDITAIRE en réservant des ressources et en configurant les
@@ -741,7 +521,7 @@ déploiements pour utiliser les Zones de disponibilité. Il incombe au
 COMMANDITAIRE de choisir les Zones de disponibilité via l'interface
 COMMANDITAIRE.
 
-### 7.3.3. Configuration de la sauvegarde
+### Configuration de la sauvegarde
 
 La prestation de sauvegarde s'arrête à la sauvegarde des machines
 virtuelles et des configurations de topologie représentant
@@ -800,9 +580,9 @@ le cadre de la présente Convention de service dont indiquées dans la
 section « Modèle de responsabilités partagées » de la présente
 Conventions de Service.
 
-## 7.4. Mise en œuvre du service
+## Mise en œuvre du service
 
-### 7.4.1. Prérequis techniques
+### Prérequis techniques
 
 Pour la mise en œuvre du Service, le COMMANDITAIRE reconnaît qu'il devra
 :
@@ -822,7 +602,7 @@ Pour la mise en œuvre du Service, le COMMANDITAIRE reconnaît qu'il devra
     service, le Prestataire aura été informé à minima d'au moins 1
     adresse IP telle que décrite.
 
-## 7.5. Localisation du service en France
+## Localisation du service en France
 
 Il est précisé qu'aucune des opérations et aucun des composants
 physiques impliqués dans la fourniture du Service , dont la présente
@@ -834,14 +614,14 @@ supervision de sécurité (SOC) de l'infrastructure technique délivrant le
 Service. De fait, tout le stockage, toutes les tâches d'administration,
 de supervision et tous les traitements sont réalisés en France.
 
-### 7.5.1. Localisation des Datacenters hébergeant le Service
+### Localisation des Datacenters hébergeant le Service
 
 A défaut des opérations des collaborateurs et des agences du
 Prestataire, l'ensemble des opérations de production (comprenant le
 stockage et le traitement des données) et composants techniques
 délivrant le Service sont situés dans les Datacenters basés en France.
 
-### 7.5.2. Localisation des agences Cloud Temple opérant le service
+### Localisation des agences Cloud Temple opérant le service
 
 Les collaborateurs de Cloud Temple intervenant sur le périmètre
 duService opèrent depuis les agences de Cloud Temple toutes situées
@@ -854,9 +634,9 @@ même niveau de sécurité concernant les accès à distance, notamment
 concernant les accès VPN. Ces accès distants sont mis en œuvre
 conformément aux exigences du référentiel SecNumCloud.
 
-## 7.6. Support
+## Support
 
-### 7.6.1. Nature du support accompagnant le service
+### Nature du support accompagnant le service
 
 Le Prestataire fournit un service de support technique visant à assister
 le COMMANDITAIRE dans la gestion, le dépannage et l'optimisation de
@@ -892,7 +672,7 @@ de service ne respectant pas ces critères.
 Le niveau d'engagement du support est conditionné à la souscription des
 unités d'œuvre de support associées.
 
-### 7.6.2. Sollicitation du service support technique
+### Sollicitation du service support technique
 
 Le support technique est accessible par le biais d'un système de tickets
 via la console COMMANDITAIRE et est disponible durant les heures
@@ -920,7 +700,7 @@ la création du ticket et son numéro unique. Le COMMANDITAIRE peut
 consulter le statut et l'historique de ses demandes et déclarations
 d'Incidents directement depuis la console de gestion.
 
-### 7.6.3. Processus de gestion des Incidents
+### Processus de gestion des Incidents
 
 Lors d'une déclaration d'un Incident, l'équipe de support technique du
 Prestataire initie une investigation pour identifier la cause du
@@ -942,7 +722,7 @@ s'appuie sur les échanges entre les Parties et les données du
 Prestataire, ces éléments étant considérés comme probants par accord des
 Parties.
 
-### 7.6.4. Processus de priorisation des traitements
+### Processus de priorisation des traitements
 
 La détermination du niveau de priorité d'un dossier repose sur une
 analyse matricielle qui évalue l'impact de l'Incident et son degré de
@@ -950,57 +730,35 @@ criticité :
 
 - Les niveaux d'impact sont définis de la manière suivante :
 
-  -------------------------------------------------------------------------
-  Niveau     Description
-  d'impact
-  ---------- --------------------------------------------------------------
-  Impact I1  Le ou les services du Prestataire sont interrompus
-
-  Impact I2  Le ou les services du Prestataire sont dégradés
-
-Impact I3  Le ou les services du Prestataire sont actuellement stable,
-             mais montrent des signes de potentiel déclin à long terme
-  -------------------------------------------------------------------------
+| Niveau d'impact | Description |
+| :--- | :--- |
+| **Impact I1** | Le ou les services du Prestataire sont interrompus |
+| **Impact I2** | Le ou les services du Prestataire sont dégradés |
+| **Impact I3** | Le ou les services du Prestataire sont actuellement stable, mais montrent des signes de potentiel déclin à long terme |
 
 - Les niveaux de Criticités sont définis de la manière suivante :
 
-  -----------------------------------------------------------------------
-  Niveau de   Description
-  criticité
-  ----------- -----------------------------------------------------------
-  Criticité   Le ou les services du Prestataire se dégradent à une
-  C1          vitesse préoccupante
-
-  Criticité   Le ou les services du Prestataire se détériore
-  C2          progressivement au fil du temps
-
-Criticité   Le ou les services du Prestataire présentes un ou plusieurs
-  C3          inconvenient sans conséquence significative
-  -----------------------------------------------------------------------
+| Niveau de criticité | Description |
+| :--- | :--- |
+| **Criticité C1** | Le ou les services du Prestataire se dégradent à une vitesse préoccupante |
+| **Criticité C2** | Le ou les services du Prestataire se détériore progressivement au fil du temps |
+| **Criticité C3** | Le ou les services du Prestataire présentes un ou plusieurs inconvenient sans conséquence significative |
 
 - Sur la base d'une analyse approfondie de la situation, prenant en
     compte les éléments déterminant l'Impact et la Criticité, une
     priorité est attribuée au ticket conformément à la matrice de
     décision ci-après :
 
-  -------------------------------------------------------------------------
-  Niveau d'impact  Niveau de         Impact I1    Impact I2    Impact I3
-  criticité
-  ---------------------------------- ------------ ------------ ------------
-  Criticité C1                       Priorité     Priorité     Priorité
-                                     **P1**       **P2**       **P3**
-
-  Criticité C2                       Priorité     Priorité     Priorité
-                                     **P2**       **P3**       **P4**
-
-Criticité C3                       Priorité     Priorité     Priorité
-                                     **P3**       **P4**       **P5**
-  -------------------------------------------------------------------------
+| Niveau d'impact / Niveau de criticité | Impact I1 | Impact I2 | Impact I3 |
+| :--- | :--- | :--- | :--- |
+| **Criticité C1** | Priorité **P1** | Priorité **P2** | Priorité **P3** |
+| **Criticité C2** | Priorité **P2** | Priorité **P3** | Priorité **P4** |
+| **Criticité C3** | Priorité **P3** | Priorité **P4** | Priorité **P5** |
 
 Les engagements de niveau de service correspondant à chaque niveau de
 priorité sont détaillés dans le chapitre suivant.
 
-### 7.6.5. Langue et localisation du service de support
+### Langue et localisation du service de support
 
 Le support est fourni par le Prestataire au COMMANDITAIRE a minima en
 langue française. Le support peut être également fourni en langue
@@ -1010,7 +768,7 @@ Les opérations du service de support du Prestataire pour l'offre de
 service d'infrastructure qualifiée SecNumCloud sont situées dans l'Union
 Européenne.
 
-# 8. Engagements et niveaux de services
+# Engagements et niveaux de services
 
 Le Prestataire s'engage à garantir une surveillance continue de la
 performance et de l'intégrité sécuritaire de son infrastructure
@@ -1029,7 +787,7 @@ supervision du Prestataire, soit par un retour utilisateur, assurant
 ainsi une reprise effective des opérations et une mesure fidèle de la
 durée de l'interruption.
 
-## 8.1. Engagements de disponibilité de l'infrastructure
+## Engagements de disponibilité de l'infrastructure
 
 Le Prestataire s'engage à maintenir un niveau de disponibilité et de
 performance conforme aux standards définis pour chaque période
@@ -1082,7 +840,7 @@ Les mesures s'entendent calculées mensuellement :
     0.0.0.0/0), ainsi que les protocoles internes tels que **SMB** (port
     TCP/UDP 445) ou **NFS** (port TCP/UDP 2049).*
 
-## 8.2. Engagement de disponibilité de l'interface COMMANDITAIRE
+## Engagement de disponibilité de l'interface COMMANDITAIRE
 
 - SLA 6 : IC-INFRA_SNC-06 -- Accès à la console d'administration du
     Service : une disponibilité garantie de 97%, assurée en continu, 24
@@ -1090,43 +848,26 @@ Les mesures s'entendent calculées mensuellement :
 - SLA 7 : IC-INFRA_SNC-07 -- Accès aux APIs de pilotage du Service :
     une disponibilité de 99.9%, calculé sur une base 24h/24, 7j/7.
 
-## 8.3. Engagement de disponibilité du support
+## Engagement de disponibilité du support
 
 - **SLA 8 : IC-INFRA_SNC-08** -- Voici les engagements de performance
     du support technique du Prestataire pour les incidents, hors
     maintenances programmées :
 
-  ------------------------------------------------------------------------
-  Priorité       Garantie de temps d'intervention    Objectif de
-                 (GTI)                               performance
-  -------------- ----------------------------------- ---------------------
-  Priorité       30mn                                95%
-  **P1**
-
-  Priorité       2h                                  90%
-  **P2**
-
-  Priorité       4h                                  90%
-  **P3**
-
-  Priorité       24h                                 85%
-  **P4**
-
-Priorité       48h                                 85%
-  **P5**
-  ------------------------------------------------------------------------
+| Priorité | Garantie de temps d'intervention (GTI) | Objectif de performance |
+| :--- | :--- | :--- |
+| **Priorité P1** | 30mn | 95% |
+| **Priorité P2** | 2h | 90% |
+| **Priorité P3** | 4h | 90% |
+| **Priorité P4** | 24h | 85% |
+| **Priorité P5** | 48h | 85% |
 
 - **SLA 9 : IC-INFRA_SNC-09** -- Voici les engagements de performance
     du support technique du Prestataire pour les demandes de service :
 
-  ------------------------------------------------------------------------
-                   Garantie de temps d'intervention   Objectif de
-                   (GTI)                              performance
-  ---------------- ---------------------------------- --------------------
-  Demande de       4h                                 90%
-  service
-
-  ------------------------------------------------------------------------
+| Type | Garantie de temps d'intervention (GTI) | Objectif de performance |
+| :--- | :--- | :--- |
+| **Demande de service** | 4h | 90% |
 
 *Nota* :
 
@@ -1141,24 +882,16 @@ Priorité       48h                                 85%
     performance rencontrés. Sur la base des résultats de cette analyse,
     des recommandations pourront être suggérées.*
 
-## 8.4. Engagement de disponibilité du stockage objet S3
+## Engagement de disponibilité du stockage objet S3
 
 - **SLA 10 : IC-INFRA_SNC-10** -- Voici les engagements de
     disponibilité pour le stockage objet S3 :
 
-  ------------------------------------------------------------------------------
-  Indicateur          Engagement                             Objectif de
-                                                             disponibilité
-  ------------------- -------------------------------------- -------------------
-  IC-INFRA-SNC-10.1   Durabilité du stockage d'un objet sur  99.9999999% / an
-                      une région
-
-  IC-INFRA-SNC-10.2   Disponibilité de l'API Stockage Objet  99.99%
-                      S3
-
-IC-INFRA-SNC-10.3   Latence maximale d'accès à un objet    150 ms
-                      sur une région
-  ------------------------------------------------------------------------------
+| Indicateur | Engagement | Objectif de disponibilité |
+| :--- | :--- | :--- |
+| **IC-INFRA-SNC-10.1** | Durabilité du stockage d'un objet sur une région | 99.9999999% / an |
+| **IC-INFRA-SNC-10.2** | Disponibilité de l'API Stockage Objet S3 | 99.99% |
+| **IC-INFRA-SNC-10.3** | Latence maximale d'accès à un objet sur une région | 150 ms |
 
 Remarques :
 
@@ -1177,7 +910,7 @@ Remarques :
     intentionnelle ou accidentelle, résultant d'actions entreprises par
     le COMMANDITAIRE.
 
-## 8.5. Précision concernant l'engagement de sauvegarde
+## Précision concernant l'engagement de sauvegarde
 
 La stratégie de sauvegarde déployée pour le COMMANDITAIRE, est
 conditionnée par la souscription aux unités d'œuvre adéquates.
@@ -1208,9 +941,9 @@ pour être assisté.*
 **Le SLA 8 : IC-INFRA_SNC-08 et SLA 9**, sera exclusivement applicable
 dans le cas d'un Incident du service sauvegarde.
 
-# 9. Organisation de la relation contractuelle
+# Organisation de la relation contractuelle
 
-## 9.1. Responsabilités du Prestataire
+## Responsabilités du Prestataire
 
 Le Prestataire s'engage :
 
@@ -1331,7 +1064,7 @@ Sur demande du COMMANDITAIRE formelle et écrite, le Prestataire s'engage
 > respect de la dignité humaine, à la liberté, à l'égalité, à la
 > démocratie et à l'État de droit.
 
-## 9.2. Limitation des responsabilités du Prestataire
+## Limitation des responsabilités du Prestataire
 
 Du fait de l'ensemble des définitions et conditions mentionnées dans la
 présente Convention de service, les responsabilités du Prestataire sont
@@ -1380,7 +1113,7 @@ limitées ainsi :
     qu'introduisent ces composants vis-à-vis du Service IaaS qualifié
     SecNumCloud.
 
-## 9.3. Limitation d'accès
+## Limitation d'accès
 
 Dans le cadre du Service, le Prestataire est formellement interdit
 d'accéder aux Tenants appartenant au COMMANDITAIRE sans autorisation
@@ -1404,7 +1137,7 @@ Cette mesure garantit le contrôle et la sécurité des données du
 COMMANDITAIRE, en s'assurant que toute exception à la règle est dûment
 autorisée et documentée.
 
-## 9.4. Responsabilités des tiers participant à la fourniture du service Secure Temple
+## Responsabilités des tiers participant à la fourniture du service Secure Temple
 
 Le Prestataire maîtrise la liste des tiers partenaires participant de la
 fourniture du Service. Ces tiers sont les éditeurs, prestataires (du
@@ -1433,7 +1166,7 @@ Service. Le Prestataire applique les mesures suivantes à ces tiers :
     d\'affecter le niveau de sécurité du système d\'information du
     service.
 
-## 9.5. Responsabilités et obligations du COMMANDITAIRE
+## Responsabilités et obligations du COMMANDITAIRE
 
 Le COMMANDITAIRE dispose des obligations suivantes dans le cadre du
 Service :
@@ -1462,7 +1195,7 @@ Service :
     abaissant le niveau de sécurité établi par le respect des exigences
     de ce même référentiel d'autre part.
 
-## 9.6. Droits du COMMANDITAIRE
+## Droits du COMMANDITAIRE
 
 À tout moment au cours de la relation contractuelle, le COMMANDITAIRE
 peut déposer une réclamation relative au service qualifié auprès de
@@ -1471,7 +1204,7 @@ l'ANSSI.
 À tout moment, le COMMANDITAIRE peut demander au Prestataire de lui
 rendre accessible son règlement intérieur et sa charte d'éthique.
 
-## 9.7. Effacement des données en fin de Contrat
+## Effacement des données en fin de Contrat
 
 À l'issue du contrat, qu'il arrive à échéance ou qu'il soit résilié pour
 quelque raison que ce soit, le Prestataire s'engage à procéder à
@@ -1485,9 +1218,9 @@ notification.
 Pour attester de cette suppression, le Prestataire remettra au
 COMMANDITAIRE un certificat confirmant l'effacement des données.
 
-# 10. Cycle de vie de la présente Convention de service
+# Cycle de vie de la présente Convention de service
 
-## 10.1. Entrée en effet de la Convention de service
+## Entrée en effet de la Convention de service
 
 La présente Convention de service entre en effet le jour de sa signature
 par le COMMANDITAIRE.
@@ -1496,7 +1229,7 @@ La collecte, la manipulation, le stockage et le traitement des données
 faits dans le cadre de l'avant-vente, la mise en œuvre, l'arrêt du
 Service​, sont faits dans le respect de la législation en vigueur.
 
-## 10.2. Évolutions de la Convention de service
+## Évolutions de la Convention de service
 
 Les modifications ou ajouts apportés à la présente Convention de service
 découlent exclusivement des requêtes formulées par les organes de
@@ -1524,7 +1257,7 @@ incluent, sans s'y limiter :
 La gestion des versions et des révisions de la Convention de service est
 consignée en préambule du document pour en faciliter le suivi.
 
-### 10.2.1. Évolutions déclenchées par le COMMANDITAIRE
+### Évolutions déclenchées par le COMMANDITAIRE
 
 Les évolutions de la Convention de service peuvent avoir, notamment,
 pour origine :
@@ -1536,14 +1269,14 @@ pour origine :
 - Une modification des engagements de niveaux de services par le
     Prestataire.
 
-### 10.2.2. Évolutions déclenchées par le Prestataire
+### Évolutions déclenchées par le Prestataire
 
 Toute modification de la Convention de service est soumise à acceptation
 du COMMANDITAIRE. Il est entendu que toute modification ou complément
 validés modifiant les éléments financiers du Contrat, pourra impliquer
 la signature d'un avenant à celui-ci.
 
-## 10.3. Réversibilité
+## Réversibilité
 
 De plus, Cloud Temple s'engage à permettre une révision de la présente
 Convention de service (prévoyant notamment sa résiliation) sans pénalité
@@ -1570,13 +1303,13 @@ COMMANDITAIRE aurait besoin d'une prestation complémentaire, le
 Prestataire peut proposer une mission de conseil à cet égard dans le
 cadre d'un contrat spécifique à négocier.
 
-# 11. Disponibilité, continuité et restauration du service
+# Disponibilité, continuité et restauration du service
 
-## 11.1. Gestion des Incidents et des interruptions
+## Gestion des Incidents et des interruptions
 
-### 11.1.1. Incidents
+### Incidents
 
-#### 11.1.1.1. Types d'Incidents traités dans le cadre de cette Convention de service
+#### Types d'Incidents traités dans le cadre de cette Convention de service
 
 - Sinistres ;
 
@@ -1585,7 +1318,7 @@ cadre d'un contrat spécifique à négocier.
 - Incidents de sécurité impactant la disponibilité, la confidentialité
     ou l'intégrité du Service.
 
-#### 11.1.1.2. Traitement des incidents
+#### Traitement des incidents
 
 > Le Prestataire informe le COMMANDITAIRE dans les meilleurs délais, des
 > incidents et interruptions, au moyen d'une une notification dans la
@@ -1594,7 +1327,7 @@ cadre d'un contrat spécifique à négocier.
 > le canal utilisé pour notifier l'incident, ou par le canal indiqué
 > dans la notification de l'incident.
 
-#### 11.1.1.3. Niveau de notification des Incidents de sécurité
+#### Niveau de notification des Incidents de sécurité
 
 Le COMMANDITAIRE a la responsabilité de choisir les niveaux de gravité
 des Incidents de sécurité pour lesquels il souhaite être informé, par
@@ -1616,9 +1349,9 @@ Par défaut, le COMMANDITAIRE est informé :
 
 -
 
-## 11.2. Maintenance du Service
+## Maintenance du Service
 
-### 11.2.1. Nature de la maintenance
+### Nature de la maintenance
 
 Des violations de données à caractère personnel pour lesquelles le
 Prestataire est responsable du traitement et comportant des données
@@ -1632,7 +1365,7 @@ DPA. La maintenance assurée consiste en la mise en œuvre :
 - Du plan de PCA/PRA si souscrit par le COMMANDITAIRE déclenché selon
     les éventuels incidents qui surviendraient.
 
-### 11.2.2. Accès distants de Cloud Temple sur le périmètre du COMMANDITAIRE
+### Accès distants de Cloud Temple sur le périmètre du COMMANDITAIRE
 
 Le Prestataire s'interdit, dans le cadre de la présente Convention de
 service, tout accès aux Tenants et à l'espace de l'interface du
@@ -1643,7 +1376,7 @@ du Prestataire. Le COMMANDITAIRE reconnaît que les accès seront utilisés
 dans le cadre de l'hébergement et in fine de l'infogérance (si souscrit
 par le COMMANDITAIRE).
 
-### 11.2.3. Accès distants de tiers participant à la fourniture du service sur le périmètre du COMMANDITAIRE
+### Accès distants de tiers participant à la fourniture du service sur le périmètre du COMMANDITAIRE
 
 Aucun accès distant de tiers participant à la fourniture du Service
 n'est autorisé.
@@ -1652,7 +1385,7 @@ Si un besoin technique rendait ce cas de figure nécessaire, alors ce
 type d'accès ne serait réalisé qu'après notification du COMMANDITAIRE
 justification et obtention de son accord écrit.
 
-# 12. Procédure d'effacement des données en fin de Contrat
+# Procédure d'effacement des données en fin de Contrat
 
 A la fin du Contrat, que le Contrat soit arrivé à son terme ou pour
 toute autre cause, le Prestataire assura l'effacement sécurisé de
@@ -1663,14 +1396,14 @@ calendaires. Les données du COMMANDITAIRE seront supprimées dans un
 délai maximum de trente (30) jour après la notification. Le Prestataire
 fournit un certificat de suppression de données au COMMANDITAIRE.
 
-# 13. Droit applicable
+# Droit applicable
 
-## 13.1. De manière générale
+## De manière générale
 
 Le droit applicable et auquel est soumise la présente Convention de
 service est le droit français.
 
-## 13.2. Respect du droit et des réglementations applicables
+## Respect du droit et des réglementations applicables
 
 Le Prestataire s'engage sur les points suivants :
 
@@ -1693,7 +1426,7 @@ Le Prestataire s'engage sur les points suivants :
     traitées dans le cadre du Services. Cela inclus notamment l'ANSSI,
     le CERT-FR et la CNIL.
 
-## 13.3. RGPD
+## RGPD
 
 Agissant en qualité de sous-traitant au sens de l'article 28 du
 Règlement général sur la protection des données (RGPD), le Prestataire
@@ -1712,7 +1445,7 @@ s'engage :
 - Une garantie de sécurité sur les données traitées (du fait de la
     qualification SecNumCloud).
 
-## 13.4. Protection vis à vis du droit extra-européen
+## Protection vis à vis du droit extra-européen
 
 Le siège statuaire du Prestataire est établi au sein d\'un État membre
 de l\'Union Européenne. Le capital social et les droits de vote dans la
@@ -1748,7 +1481,7 @@ Pour les besoins du présent article, la notion de contrôle est entendue
 comme étant celle mentionnée au II de l'article L233-3 du code de
 commerce.
 
-# 14. SIGNATURES
+# SIGNATURES
 
 Fait à \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, le
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_

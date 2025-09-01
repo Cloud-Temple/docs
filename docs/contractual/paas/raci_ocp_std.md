@@ -143,5 +143,3 @@ L'assistance applicative concernant le développement, la configuration, la gest
 | Activité                                           | Rôle Client | Rôle Cloud Temple |
 | -------------------------------------------------- | ----------- | ----------------- |
 | Assistance applicative (prestation complémentaire) | RA          | C                 |
-
----

@@ -20,7 +20,7 @@ El acceso a la Consola es la puerta de entrada a todos sus servicios Cloud Templ
 
 El acceso a la consola de gestión cloud está limitado a las direcciones IP autorizadas previamente. Esta restricción permite autorizar el acceso únicamente a los usuarios provenientes de los rangos de IP especificados, minimizando así los riesgos de accesos no autorizados.
 
-Puede configurar estas restricciones IP en los parámetros de su organización. Para saber cómo configurar el filtrado IP, consulte la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+Puede configurar estas restricciones IP en los parámetros de su organización. Para saber cómo configurar el filtrado IP, consulte la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
 Para maximizar la eficacia de este mecanismo, asegúrese de:
 
@@ -157,7 +157,7 @@ Algunas buenas prácticas en caso de uso del cifrado de las VM:
 
 Para limitar la superficie de ataque de sus máquinas virtuales, se recomienda encarecidamente restringir a lo estrictamente necesario los servicios expuestos. En particular, asegúrese de configurar sus recursos para **no exponer públicamente las interfaces de administración y consolas** de los sistemas y aplicaciones desplegados.
 
-Si utiliza los servicios de Almacenamiento de Objetos de Cloud Temple, también se aconseja **no configurar sus buckets con acceso público**, salvo en los casos en que esto sea estrictamente necesario (ver [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Si utiliza los servicios de Almacenamiento de Objetos de Cloud Temple, también se aconseja **no configurar sus buckets con acceso público**, salvo en los casos en que esto sea estrictamente necesario (ver [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
 
 ### Endurecer las máquinas virtuales (servicios IaaS)
 

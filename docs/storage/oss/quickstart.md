@@ -23,7 +23,6 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
 
 ## Avant de commencer
 
-
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
 
@@ -36,7 +35,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
     ❯ mc alias set cloudtemple-fr1 https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com VOTRE_CLE_ACCES VOTRE_CLE_SECRETE
-    Added `cloudtemple-fr1` successfully.           
+    Added `cloudtemple-fr1` successfully.
     ```
     - Remplacez `VOTRE_NAMESPACE` par votre namespace. Ce paramètre est disponible dans la console Cloud Temple, dans le détail d'un bucket.
     - Remplacez `VOTRE_CLE_ACCES` et `VOTRE_CLE_SECRETE` par celles de votre compte de stockage.
