@@ -23,11 +23,11 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 Gli account di accesso alla console Shiva vengono creati dal conto principale del committente sul comando (indipendentemente dall'autenticazione di riferimento).
 Le informazioni di autenticazione sono globali per la tua [Organizzazione](#organizzazioni).
 
-*__Nota:__ [La federazione dell'identità viene gestita al livello dell'organizzazione](#meccanismi-autenticazione)*
+*__Nota:__ [La federazione dell'identità viene gestita al livello dell'organizzazione](#mechanismi-di-autenticazione)*
 
 ### Creazione di un utente nell'organizzazione della tua azienda
 
-La creazione di un account utente all'interno dell'organizzazione della tua azienda avviene tramite invito. Per invitare un utente all'interno di una [Organizzazione](#organisations), accedi al menu __'Amministrazione'__ situato alla sinistra del bordo superiore del tuo schermo, poi al sotto-menu __'Utenti'.
+La creazione di un account utente all'interno dell'organizzazione della tua azienda avviene tramite invito. Per invitare un utente all'interno di una [Organizzazione](#organizzazioni), accedi al menu __'Amministrazione'__ situato alla sinistra del bordo superiore del tuo schermo, poi al sotto-menu __'Utenti'.
 
 Fai clic sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti.
 

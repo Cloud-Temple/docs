@@ -1,800 +1,696 @@
 ---
-title: Título del Acuerdo de Servicio Específico - Hardware Desnudo
+title: Convention de Service spécifique - Bare Metal
 ---
 
-# CONVENIO DE SERVICIOS Bare Metal
+# CONVENTION DE SERVICES Bare Metal
 
-| Destinatarios: | **COMMANDITARIO** |
+| Destinataires : | **COMMANDITAIRE** |
 | :--- | :--- |
-| **Referencia del documento** | CT.AM.JUR.ANX. CdSS-BM - 20250122_v1.0.docx_Día MM AAAA - VF |
-| **Vos interlocutores** | *Apellido* *Nombre* Gerente de cuenta correo electrónico: *apellido.nombre@cloud-temple.com |
-| **Fecha de última revisión** | 22/01/2025 |
-| **Fecha de validación contratual** | Día MM AAAA |
+| **Référence du documents** | CT.AM.JUR.ANX. CdSS-BM - 20250122_v1.0.docx_Jour MM AAAA - VF |
+| **Vos interlocuteurs** | *Prénom* *Nom* Account Manager e-mail : *prenom.nom*\@cloud-temple.com |
+| **Date de dernière mise à jour** | 22/01/2025 |
+| **Date de validation contractuelle** | Jour MM AAAA |
 
-| Versión | Fecha | Acción | Autor |
+| Version | Date | Action | Auteur |
 | :--- | :--- | :--- | :--- |
-| v1.0 | 22/01/2025 | Redacción inicial | Nicolás BODILIS |
+| v1.0 | 22/01/2025 | Rédaction initiale | Nicolas BODILIS |
 
-## Introducción y Diccionario
+# Préliminaire et Glossaire
 
-## Introducción
+## Préliminaire
 
-El presente documento formaliza la Cláusula de Servicio asociada al servicio Bare Metal en fase de validación SecNumCloud.
+Le présent document formalise la Convention de service associée au service Bare Metal en cours de qualification SecNumCloud.
 
-El Servicio está en fase de validación SecNumCloud (ver certificado de auditoría en Anexo).
+Le Service est en cours de qualification SecNumCloud (voir attestation en Annexe).
 
-La presente cláusula de servicio completa y complementa las condiciones generales de venta y uso del Proveedor. Se entiende que los documentos contractuales se interpretarán de manera coherente entre sí. En caso de contradicción o divergencia en los términos de los documentos contractuales, prevalecerán los documentos en el siguiente orden:
+La présente convention de service complète et est complémentaire aux conditions générales de vente et d'utilisation du Prestataire. Il est entendu que les documents contractuels s'interprètent de manière cohérente entre eux. En cas de contradiction ou de divergence entre les termes des documents contractuels, les documents prévaudront les uns sur les autres dans l'ordre suivant :
 
-1. Condiciones Generales de Venta y Uso (CGVU)
-2. Cláusula de Servicio SecNumCloud IaaS
-3. Cláusula de Servicio SecNumCloud OpenIaaS
-4. Cláusula de Servicio SecNumCloud PaaS
-5. Cláusula de Servicio específico - Bare Metal
-6. Cláusula específica particular
-7. Plan de Seguro de Seguridad (PAS)
-8. Condiciones Particulares de Uso (CPU)
-9. Acuerdo de Protección de Datos
+1. Conditions Générales de Vente et Utilisation (CGVU)
+2. Convention de Service SecNumCloud IaaS
+3. Convention de Service SecNumCloud OpenIaaS
+4. Convention de Service SecNumCloud PaaS
+5. Convention de Service spécifique - Bare Metal
+6. Convention spécifique particulière
+7. Plan d'Assurance Sécurité (PAS)
+8. Conditions Particulières d'Utilisation (CPU)
+9. Data Protection Agreement
 
+## Glossaire
 
-### Explicación:
+Dans la présente Convention de service, le **COMMANDITAIRE**, le **Prestataire** et les **Parties** sont identifiés dans le Contrat auquel est annexe la présente Convention de service.
 
-1. **Introducción**: La traducción comienza con "## Introducción" para indicar el inicio del documento en español.
-2. **Objeto**: El texto original describe un servicio en fase de validación SecNumCloud, y la cláusula de servicio completa las condiciones generales existentes.
-3. **Interpretación coherente**: Se menciona que los documentos contractuales deben interpretarse de manera coherente entre sí, priorizando el orden dado en caso de conflicto.
-4. **Cláusulas específicas**: Se enumeran las cláusulas específicas, desde la más general (CGVU) hasta la más específica (Acuerdo de Protección de Datos), manteniendo su secuencia original.
+Les expressions ci-après employées dans la présente Convention de service seront interprétées conformément aux définitions qui leur sont attribuées ci-dessous :
 
-## Glossary
+- **Changement :** Tout ajout, une modification ou suppression impactant le Service, ayant été autorisé, planifié ou pris en charge.
 
-In the present Service Agreement, the **Commanditaire**, **Prestataire** and **Parties** are identified in the Contract to which this Service Agreement is annexed.
+- **Changement standard :** Changement faisant l'objet d'une procédure, dont les modalités de mise en production et les impacts (y compris financiers) sont connus et acceptés à l'avance par les Parties. Il est alors intégré au catalogue des changements standards, et peut selon les cas avoir une GTI et une GTR.
 
-The following expressions used in this Service Agreement shall be interpreted according to the definitions assigned below:
+- **Contrat :** désigne le contrat souscrit par le COMMANDITAIRE auprès du Prestataire pour permettre au COMMANDITAIRE de bénéficier du Service, et auquel la présente Convention de service est annexée.
 
-- **Change:** Any addition, modification, or removal impacting the Service, authorized, planned, or covered by the Commanditaire, that affects the service's functionality, performance, and costs.
+- \***Convention de service :** Ce document, établi dans le cadre d'un contrat spécifique ou des Conditions Générales de Vente et d'Utilisation (CGVU), et ce, en conformité avec les exigences du Référentiel SecNumCloud.
 
-- **Standard Change:** A change subject to a procedure with known production procedures and anticipated impacts (including financial ones) accepted in advance by the Parties. It is then integrated into the standard change catalog, potentially having a GTI (Gross Time Impact) and GTR (Gross Revenue Impact).
+- **Demande de service :** demande d'évolution faisant l'objet d'une procédure, dont la réalisation : i) ne modifie pas la CMDB,ii) le mode opératoire, les coûts et les risques sont connus et acceptés à l'avance et ne nécessitent pas de modalités de retour arrière spécifiques iii) la réalisation est soumise à un accord de niveau de service et incluse dans la redevance du contrat lorsqu'elle est réalisée en heures ouvrées et jours ouvrés.
 
-- **Contract:** Refers to the contract subscribed by the Commanditaire with the Prestataire for accessing the Service, to which this Service Agreement is annexed.
+- **Disponibilité :** Capacité à assurer la disponibilité et le maintien des performances optimales du Service, en accord avec les critères et engagements définis dans les Accords de Niveau de Service (SLA).
 
-- **Service Agreement:** This document established within a specific contract or Conditions of Sale and Use (CGVU), in compliance with SecNumCloud Reference Framework requirements.
+- **Données techniques** : comprend l'ensemble des données manipulées pour délivrer le Service, notablement dont l'identité des bénéficiaires et des administrateurs de l'infrastructure technique, des journaux de l'infrastructure technique, configuration des accès, annuaire, certificats\...
 
-- **Service Request:** A request for service evolution following a procedure wherein realization: i) does not modify the CMDB, ii) known operational mode, costs, and risks are accepted upfront without specific rollback procedures, iii) is subject to an agreed level of service (SLA) agreement and included in the contract's revenue when performed during business hours.
+- **Evènement :** Un \"événement\" est toute occurrence détectable ou identifiable pouvant avoir une importance pour la gestion du Service.
 
-- **Availability:** Capacity to ensure the Service's availability and optimal performance, aligned with defined criteria and commitments within the Service Level Agreements (SLAs).
+- **Hyperviseur :** Système d'exploitation permettant l'execution de machines virtuelles sur une lame de calcul.
 
-- **Technical Data:** Encompasses all data processed for delivering the Service, notably including identities of beneficiaries and administrators of the technical infrastructure, logs, configuration access, directory, certificates, etc.
+- **Incident :** Tout événement imprévu qui perturbe le fonctionnement normal du Service ou compromet la sécurité des données.
 
-- **Event:** Any detectable or identifiable occurrence that may have significance for managing the Service.
+- **Incident de sécurité :** Tout événement dans le périmètre du Service:
 
-- **Hypervisor:** Operating system enabling virtual machine execution on a compute layer.
+  - De nature intentionnellement malveillante ;
+  - De nature accidentelle portant atteinte à l'intégrité, la confidentialité ou la traçabilité du Service ou des données du COMMANDITAIRE ;
+  - Portant atteinte aux mesures de sécurité existantes. Les atteintes à la Disponibilité d'origine non-malveillante ne sont pas considérées comme un Incident de sécurité (panne matérielle, bug, dysfonctionnement, sinistre naturel...).
 
-- **Incident:** An unforeseen event disrupting normal Service operation or compromising COMMANDITAIRE data security.
+- **Interface COMMANDITAIRE :** Interface d'administration du Service mise à disposition du COMMANDITAIRE par le Prestataire, regroupant une console d'administration web et une API.
 
-- **Security Incident:** Any event within the Service's scope:
-  - Intentionally malicious;
-  - Accidental, affecting the integrity, confidentiality, or traceability of the Service or COMMANDITAIRE data;
-  - Compromising existing security measures. Non-origin-based availability outages are not considered security incidents (hardware failure, bug, malfunction, natural disaster...).
+- **Mise en production :** action(s) d'administration de réalisation du Changement quand celui-ci est approuvé (le changement, au sens ITIL, ne concernant que la gestion du changement et non sa réalisation/concrétisation).
 
-- **Commanditaire Interface:** Administration interface for the Service provided by the Prestataire to the Commanditaire, combining a web administration console and an API.
+- **Problème** : cause d'un ou plusieurs Incidents récurrents, cause d'un Incident potentiel (situation à risque) nécessitant une analyse et une résolution pour prévenir sa récurrence.
 
-- **Deployment:** Actions taken to implement a Change once approved (the change, in ITIL context, pertains to change management but not its execution/implementation).
+- **Région :** désigne un ensemble géographiquement délimité de zones de disponibilité cloud, fournissant des services de réseau, de calcul et de stockage pour optimiser la latence, la performance et la conformité réglementaire locale.
 
-- **Problem:** Root cause of recurring incidents, potential issue (situation at risk) requiring analysis and resolution to prevent recurrence.
+- **Service :** désigne le service Bare Metal en cours de qualification SecNumCloud, délivré au COMMANDITAIRE par la Prestataire depuis des infrastructures techniques maintenues par le Prestataire, tel que décrit dans la section « Description du Service » de la présente Convention de service.
 
-- **Region:** A geographically defined set of availability zones providing cloud services for optimizing latency, performance, and local regulatory compliance.
+- **Sinistre :** désigne un événement grave d'origine naturelle ou humaine, accidentelle ou intentionnelle, occasionnant des pertes et des dommages importants à la Partie sinistrée.
 
-- **Service:** The Bare Metal service currently under SecNumCloud qualification, delivered by the Prestataire from maintained technical infrastructures as described in the "Description of Service" section of this Agreement.
+- **Supervision :** Surveillance d'un Système d'Information ou d'un Service, impliquant la collecte de diverses données telles que mesures et alarmes. Cette activité se limite à l'observation et au suivi, sans intervenir directement sur les éléments surveillés, une prérogative qui appartient aux opérations d'Administration.
 
-- **Catastrophe:** A severe event of natural or human origin, accidental or intentional, causing significant losses and damages to the affected party.
+- **Tenant :** Une instance isolée réservée à un utilisateur ou groupe d'utilisateurs, partageant une infrastructure commune tout en maintenant l'indépendance et la sécurité des données et des applications.
 
-- **Supervision:** Monitoring of an Information System or service involves collecting various data such as measurements and alarms. This activity is limited to observation and tracking without intervening directly on monitored elements, a prerogative reserved for administration operations.
+- **Zone de Disponibilité (AZ) (Availibility zone) :** Une section spécifique et isolée de l'infrastructure de cloud computing, conçue pour assurer la haute disponibilité et la résilience des services par une distribution géographique des ressources.
 
-- **Tenant:** An isolated instance reserved for a user or group of users sharing a common infrastructure while maintaining data and application independence and security.
+# Acronymes
 
-- **Availability Zone (AZ) (Availability Region):** A specific, isolated section of the cloud computing infrastructure designed to ensure high availability and resilience of services through geographical distribution of resources.
-
-# Acrónimos
-
-| Acrónimo | Definición |
+| Acronyme | Définition |
 | :--- | :--- |
-| **CAB** | Comité consultivo sobre cambios -- Comité consultivo sobre cambios |
-| **CMDB** | Base de datos de gestión de configuraciones -- Base de datos de gestión de configuraciones |
-| **COPIL** | Comité de supervisión |
-| **COSTRAT** | Comité estratégico |
-| **COPROJ** | Comité del proyecto |
-| **DB** | Base de datos (base de datos) |
-| **DPA** | Acuerdo de protección de datos |
-| **DRP** | Plan de recuperación ante desastres (PRA) -- Plan de reprise d'activité |
-| **GTE** | Garantía de tiempo escalado |
-| **GTI** | Garantía de tiempo de intervención |
-| **GTR** | Garantía de tiempo de resolución |
-| **ITIL** | Biblioteca de buenas prácticas para la gestión de SI -- Bonnes pratiques pour la gestion des SI |
-| **IaaS** | Infraestructura como servicio (IaaS) |
-| **MCO** | Mantenimiento en condiciones operativas |
-| **MOA** | Gestión del proyecto |
-| **MOE** | Gestión de obra |
-| **MSP** | Proveedor de servicios gestionados |
-| **OS** | Sistema operativo (sistema operativo) |
-| **PAQ** | Plan de aseguramiento de calidad |
-| **PaaS** | Plataforma como servicio (PaaS) |
-| **PAS** | Plan de aseguramiento de seguridad |
-| **PASSI** | Proveedor de auditoría de sistemas de información |
-| **RFC** | Solicitud de cambio -- Demanda de changement |
-| **RGPD** | Reglamento general de protección de datos (personales) |
-| **RPO** | Objetivo de fraichez de datos en caso de desastre -- Fraichez des données restaurées en cas de sinistre |
-| **RTO** | Objetivo de tiempo de recuperación del servicio en caso de desastre -- Délai de rétablissement du service en cas de sinistre |
-| **SDM** | Gestor de entrega de servicios |
-| **SLA** | Acuerdo sobre niveles de servicio (SLA) -- Accord sur les niveaux de services |
+| **CAB** | Change Advisory Board -- Comité consultatif sur les changements |
+| **CMDB** | Configuration Management Database -- Base de données de gestion des configurations |
+| **COPIL** | Comité de pilotage |
+| **COSTRAT** | Comité stratégique |
+| **COPROJ** | Comité Projet |
+| **DB** | Database (base de données) |
+| **DPA** | Data Protection Agreement |
+| **DRP** | Disaster Recovery Plan (PRA) (Plan de reprise d'activité) |
+| **GTE** | Garantie de Temps d'Escalade |
+| **GTI** | Garantie de Temps d'Intervention |
+| **GTR** | Garantie de Temps de Résolution |
+| **ITIL** | Information Technology Infrastructure Library - Bonnes pratiques pour la gestion des SI |
+| **IaaS** | Infrastructure as a Service |
+| **MCO** | Maintien en condition opérationnelle |
+| **MOA** | Maitrise d'Ouvrage |
+| **MOE** | Maitrise d'Œuvre |
+| **MSP** | Managed Services Provider |
+| **OS** | Operating system (système d'exploitation) |
+| **PAQ** | Plan d'Assurance Qualité |
+| **PaaS** | Platform as a Service |
+| **PAS** | Plan d'Assurance Sécurité |
+| **PASSI** | Prestataire d'Audit de Sécurité des Systèmes d'Information |
+| **RFC** | Request For Change -- Demande de changement |
+| **RGPD** | Règlement Général de Protection des Données (personnelles) |
+| **RPO** | Recovery Point Objective -- Fraicheur des données restaurées en cas de Sinistre |
+| **RTO** | Recovery Time Objective -- Délai de rétablissement du service en cas de Sinistre |
+| **SDM** | Service Delivery Manager |
+| **SLA** | Service Level Agreement -- Accord sur les niveaux de services |
 | **SNC** | SecNumCloud |
-| **SOC** | Centro de operaciones de seguridad |
-| **TMA** | Mantenimiento tercerizado de aplicaciones |
-| **UO** | Unidad de obra |
-| **VABE** | Validación de aptitud para buena explotabilidad |
-| **VABF** | Validación de aptitud al buen funcionamiento |
-| **VM** | Máquina virtual (Virtual Machine) |
-| **VSR** | Válidación de servicio regular |
+| **SOC** | Security Operation Center |
+| **TMA** | Tierce Maintenance dApplication |
+| **UO** | Unité d'Œuvre |
+| **VABE** | Validation d'Aptitude à la Bonne Exploitabilité |
+| **VABF** | Validation d'Aptitude au Bon Fonctionnement |
+| **VM** | Virtual Machine (Machine virtuelle) |
+| **VSR** | Validation de Service Régulier |
 
-# Objet de la presente Convenio de Servicio
+# Objet de la présente Convention de service
 
-La presente Convenio de Servicio establece los términos y condiciones bajo las cuales el Prestador se compromete a entregar el Servicio al COMMANDITARIO. Su objetivo es:
+La présente Convention de service établit les termes et conditions selon lesquels le Prestataire s'engage à délivrer le Service au COMMANDITAIRE. Son objet est de :
 
-- Especificar las expectativas de rendimiento esperadas por parte del COMMANDITARIO en términos de funcionalidad y fiabilidad del Servicio;
+- Préciser les exigences de performance attendues par le COMMANDITAIRE en termes de fonctionnalité et de fiabilité du Service ;
 
-- Detallar las obligaciones del Prestador para cumplir con los niveles de servicio acordados;
+- Énoncer les obligations du Prestataire afin de satisfaire aux niveaux de service convenus ;
 
-- Identificar las normas regulatorias aplicables específicamente al Servicio que se entregará;
+- Identifier les normes réglementaires applicables spécifiquement au Service délivré ;
 
-- Garantizar la uniformidad y integridad en la evaluación de la calidad del Servicio;
+- Assurer une uniformité et une intégrité dans l'évaluation de la qualité du Service ;
 
-- Asegurar la excelencia de los servicios prestados, evaluada mediante indicadores de rendimiento cuantitativos.
+- Garantir l'excellence des services fournis, évaluée au moyen d'indicateurs de performance quantitatifs.
 
-Se establece que, en caso de que el Prestador pierda su calificación SecNumCloud, el Contrato podrá ser resuelto de forma automática y sin penalización por parte del COMMANDITARIO. En tal supuesto, el Prestador se compromete a informar al COMMANDITARIO de esta degradación mediante una notificación oficial, mediante correo certificado con solicitud de constancia de entrega.
+Il est stipulé que, dans l'hypothèse où le Prestataire se verrait retirer sa qualification SecNumCloud, le Contrat pourra être résilié de plein droit, sans encourir de pénalités, par le COMMANDITAIRE. Dans une telle éventualité, le Prestataire s'engage à informer le COMMANDITAIRE de cette déqualification par envoi d'une notification officielle, au moyen d'une lettre recommandée avec demande d'avis de réception.
 
-Es importante destacar que cualquier modificación o ajuste en la calificación SecNumCloud no será interpretada como una revocación de la calificación inicial.
+Il convient de noter qu'une modification ou un ajustement de la qualification SecNumCloud ne sera pas interprété comme une révocation de la qualification initiale.
 
-# Auditoría
+# Audit
 
-El Proveedor se compromete a permitir que el CLIENTE, o cualquier auditor externo y no concurrente del Proveedor que este último haya designado, acceda a todos los documentos necesarios para la certificación del cumplimiento integral de las obligaciones relacionadas con la conformidad con las disposiciones del Artículo 28 del Reglamento General de Protección de Datos (RGPD), facilitando así la realización de auditorías.
+Le Prestataire s'engage à permettre au COMMANDITAIRE, ou à tout auditeur tiers et non concurrent du Prestataire que ce dernier aurait désigné, de consulter l'ensemble des documents nécessaires à l'attestation du respect intégral des obligations liées à la conformité avec les dispositions de l'article 28 du Règlement Général sur la Protection des Données (RGPD), facilitant ainsi la réalisation d'audits.
 
-Al aceptar esta Convenio de Servicio, el CLIENTE otorga su autorización explícita para:
+Par l'acceptation de la présente Convention de service, le COMMANDITAIRE confère son autorisation explicite à :
 
-1. La Agencia Nacional de Seguridad de los Sistemas de Información (ANSSI) y cualquier entidad de certificación competente que realice la verificación del cumplimiento del Servicio y del sistema de información al referencial SecNumCloud.
-2. Un auditor externo de seguridad de sistemas de información, calificado PASSI y específicamente designado por el Proveedor, para llevar a cabo auditorías de seguridad sobre el Servicio.
+1. L'Agence Nationale de la Sécurité des Systèmes d'Information (ANSSI) ainsi qu'à l'entité de qualification compétente pour entreprendre la vérification de la conformité du Service et de son système d'information au référentiel SecNumCloud.
+2. Un prestataire d'audit de la sécurité des systèmes d'information, dûment qualifié PASSI et expressément désigné par le Prestataire, pour mener à bien des audits de sécurité portant sur le Service.
 
-## Descripción del Servicio
+# Description du Service
 
-Este servicio ofrece soluciones avanzadas en infraestructura de nube, gestión de sistemas IT y desarrollo de software. Nuestro equipo experto se dedica a la implementación de soluciones escalables, seguras y eficientes, adaptadas a las necesidades específicas de cada cliente.
+## Modèle de responsabilité partagé
 
-- **Infraestructura de Nube**: Proporcionamos una amplia gama de servicios en plataformas como AWS, Azure y Google Cloud, asegurando la optimización de recursos, reducción de costos y escalabilidad flexible.
+Le Service proposé par le Prestataire se caractérise par la mise à disposition des prestations suivantes, lesquelles s'alignent sur le principe de responsabilité partagée présenté dans le référentiel SecNumCloud :
 
-- **Gestión de Sistemas IT**: Ofrecimos soluciones integrales para la gestión de infraestructuras informáticas, incluyendo monitoreo, mantenimiento proactivo, seguridad cibernética y optimización de rendimiento.
+- La provision de ressources de calcul (compute) ;
 
-- **Desarrollo de Software**: Nuestro equipo de desarrolladores experimentados trabaja en el diseño y la implementación de aplicaciones personalizadas, siguiendo las mejores prácticas del desarrollo ágil y DevOps.
+- La mise à disposition d'espaces de stockage ;
 
-Nuestra metodología se basa en la innovación constante, la colaboración estrecha con los clientes y un compromiso total con la calidad y la eficiencia. Estamos a su disposición para ayudarles a transformar sus negocios mediante soluciones tecnológicas de vanguardia.
+- L'accès à des services de connectivité réseau et internet ;
 
-## Shared Responsibility Model
+- L'accès à une console de gestion des ressources déployées ;
 
-The service offered by the Provider is characterized by the provision of the following services, which align with the shared responsibility principle presented in the SecNumCloud reference:
+Le modèle de responsabilités partagé appliqué entre le Prestataire et le COMMANDITAIRE dans le cadre du Service est présenté en §7.1.
 
-- Provisioning of computing resources (compute);
-- Availability of storage spaces;
-- Access to network connectivity and internet services;
-- Access to a management console for deployed resources.
+Il est entendu que le Prestataire mobilisera son expertise pour réaliser les Prestations selon les meilleures pratiques professionnelles et conformément aux exigences du référentiel SecNumCloud.
 
-The shared responsibility model applied between the Provider and the COMMANDITAIRE within the scope of the Service is outlined in §7.1.
+## Présentation détaillée du périmètre du Service
 
-It is understood that the Provider will utilize its expertise to deliver the Services in accordance with professional best practices and in compliance with SecNumCloud requirements.
-
-## Detalizada de la Área de Alcance del Servicio
-
-| Servicio | Descripción |
+| Service | Description |
 | :--- | :--- |
-| **Computación** | Recursos de cálculo del Teniente COMMANDITAIRE |
-| **Almacenamiento** | Datos de producción del Teniente COMMANDITAIRE |
-| **Redificación de red** | Recurso de red del Teniente COMMANDITAIRE |
-| **Console COMMANDITAIRE** | El servicio que permite al COMMANDITAIRE acceder a su servicio Bare Metal y administrarlo a través de la interfaz Console |
-| **Soporte** | El servicio de soporte acompañante de los servicios mencionados anteriormente (\*) |
+| **Compute** | Ressource de calcul du Tenant COMMANDITAIRE |
+| **Storage** | Données de production du Tenant COMMANDITAIRE |
+| **Infrastructure réseau** | Ressource réseau du Tenant COMMANDITAIRE |
+| **Console COMMANDITAIRE** | Le service permettant au COMMANDITAIRE d'accéder à son service Bare Metal et de l'administrer via l'interface Console |
+| **Support** | Le service de support accompagnant les services précédents et uniquement ceux-ci (\*) |
 
-(\*) En el límite del alcance del Servicio calificado SNC y las responsabilidades del Proveedor en relación con él\_
+(\*) Dans la limite du périmètre du Service qualifié SNC et des responsabilités du Prestataire en la matière\_
 
-### Infraestructuras Centros de Datos
+### Infrastructures Datacenters
 
-El servicio incluye la oferta, para cada Zona de Disponibilidad, las siguientes prestaciones en fase de aprobación:
+Le Service englobe la mise à disposition, pour chaque Zone de disponibilité, des prestations en cours de qualification ci-après :
 
-- Centro de datos ubicado en Francia para la Región FR, conforme a las últimas normativas tecnológicas, proporcionando un nivel de resiliencia equivalente o superior al Tier 3 del Uptime Institute.
-- Oferta de salas técnicas dentro de centros de datos dedicados para alojar equipos técnicos esenciales para la producción del servicio, incluyendo procesamiento, almacenamiento, red, cableado y otros componentes necesarios.
-- Alimentación eléctrica segura, garantizada por dos circuitos eléctricos distintos, asegurando continuidad de servicio.
-- Suministro de servicios de climatización ajustados para cumplir con las normas y recomendaciones de los fabricantes de equipos, manteniendo un entorno óptimo para los dispositivos técnicos.
-- Supervisión continua y metrología detallada, permitiendo un seguimiento preciso y una gestión proactiva de las prestaciones y la seguridad del servicio ofrecido.
+- Site datacenter situé en France pour la Région FR, conforme aux dernières normes technologiques, avec proposant un niveau de résilience équivalent ou supérieur au niveau Tier 3 du Uptime Institute ;
+- Mise à disposition de salles techniques au sein de datacenters dédiés à l'accueil des équipements techniques indispensables à la production du service, incluant calcul, stockage, réseau, câblage, et autres composants nécessaires ;
+- Alimentation électrique sécurisée, assurée par deux circuits électriques distincts, garantissant une continuité de service ;
+- Fourniture de services de climatisation, ajustés pour respecter les normes et préconisations des fabricants d'équipements, afin de maintenir un environnement optimal pour les dispositifs techniques ;
+- Supervision continue et métrologie détaillée, permettant un suivi précis et une gestion proactive des performances et de la sécurité du service fourni.
 
-El Proveedor se encarga de la oferta de servicios avanzados de detección e extinción de incendios, diseñados para identificar y neutralizar eficazmente cualquier inicio de incendio dentro de las instalaciones. Estos sistemas incluyen detectores de humo de alta precisión y dispositivos de extinción que pueden actuar rápidamente sin dañar el equipo informático. Este servicio es crucial para prevenir riesgos de incendio, minimizar los daños potenciales y garantizar la continuidad de las operaciones.
+Le Prestataire assure la mise à disposition de services avancés de détection et d'extinction d'incendie, conçus pour identifier et neutraliser efficacement tout départ de feu au sein des installations. Ces systèmes sont essentiels pour garantir la sécurité des équipements et des données. Ils comprennent des détecteurs de fumée de haute précision et des dispositifs d'extinction qui peuvent agir rapidement sans endommager l'équipement informatique. Ce service est crucial pour prévenir les risques d'incendie, minimiser les dommages potentiels et assurer la continuité des opérations.
 
-El COMMANDITAIRE está informado de que todas las procedimientos y medidas de seguridad implementadas, incluyendo los pruebas anuales de corte de energía en los generadores, son esenciales para garantizar la continuidad e integridad del servicio prestado. Estas prácticas están diseñadas para minimizar los riesgos de fallo y asegurar una respuesta rápida en caso de incidente. Al aceptar estas condiciones, el COMMANDITAIRE reconoce la importancia de estas medidas y se compromete a cooperar plenamente para facilitar su implementación. Además, el COMMANDITAIRE está animado a consultar las recomendaciones de seguridad proporcionadas y a integrarlas en su propia estrategia de gestión de riesgos.
+Le COMMANDITAIRE est informé que toutes les procédures et mesures de sécurité mises en place, y compris les tests annuels de basculement sur les groupes électrogènes, sont essentielles pour garantir la continuité et l'intégrité des services fournis. Ces pratiques sont conçues pour minimiser les risques de panne et assurer une réactivité optimale en cas d'Incident. En acceptant ces conditions, le COMMANDITAIRE reconnaît l'importance de ces mesures et s'engage à coopérer pleinement pour faciliter leur mise en œuvre. Le COMMANDITAIRE est également encouragé à prendre connaissance des recommandations de sécurité fournies et à les intégrer dans sa propre stratégie de gestion des risques.
 
-### Infraestructura de gestión del servicio
+### Infrastructure logicielle de pilotage du Service
 
-El Proveedor entrega al COMMANDITARIO la consola de administración y la API necesarias para el uso del Servicio. Además, se compromete a mantener esta consola de administración y la API en óptima condición operativa y asegurar su seguridad de manera continua. Esta consola de administración y la API se denominan colectivamente como "la interfaz COMMANDITARIO".
+Le Prestataire fournit au COMMANDITAIRE la console d'administration et l'API nécessaire à l'utilisation du Service. Il s'engage également à les maintenir cette console d'administration et l'API en condition opérationnelle optimale et à en assurer la sécurité de manière continue. Cette console d'administration et l'API sont désignées de manière groupée sous le terme « interface COMMANDITAIRE ».
 
-El Proveedor informa al COMMANDITARIO que una utilización anormal de la interfaz COMMANDITARIO, especialmente en caso de sobrecarga de sus APIs de comanda (hammering), puede desencadenar medidas de seguridad automáticas que resulten en el bloqueo del acceso a las APIs de comanda o al Servicio. Es importante destacar que esta situación no implica una indisponibilidad del Servicio, sino una acción de protección tanto del Servicio como de la infraestructura del Proveedor; por lo tanto, el COMMANDITARIO no puede considerarlo como una indisponibilidad en sus cálculos.
+Le Prestataire alerte le COMMANDITAIRE sur le fait qu'une utilisation anormale de l'interface COMMANDITAIRE, notamment en cas de surcharge de ses APIs de commande (hammering), peut déclencher des mesures de sécurité automatiques entraînant le blocage de l'accès aux APIs de commande ou au Service. Il convient de souligner que cette situation ne constitue pas une indisponibilité du Service mais une action de protection du Service et de l'infrastructure du Prestataire ; par conséquent, le COMMANDITAIRE ne peut la considérer comme une indisponibilité dans ses calculs.
 
-Además, el Proveedor indica al COMMANDITARIO que las solicitudes idénticas (duplicados) enviadas a sus APIs están limitadas a una por segundo (Throttling). Si el COMMANDITARIO envía solicitudes idénticas a una frecuencia superior, su rechazo no podrá interpretarse como una indisponibilidad del Servicio.
+De plus, le Prestataire précise au COMMANDITAIRE que les requêtes parfaitement identiques (doublons) envoyées à ses APIs sont limitées à une par seconde (Throttling). Si le COMMANDITAIRE soumet des requêtes identiques à une fréquence supérieure, leur rejet ne pourra être interprété comme une indisponibilité du Service.
 
-### Infraestructuras de Cálculo
+### Infrastructures de calcul
 
-El servicio incluye la prestación, dentro de las zonas de disponibilidad suscritas por el COMMANDITA, de los equipos necesarios para ejecutar las cargas de trabajo en forma de máquinas virtuales.
+Le Service inclut la fourniture, dans les zones de disponibilité souscrites par le COMMANDITAIRE, des équipements nécessaires à l'exécution des charges de travail sous forme de machines virtuelles.
 
-Esto comprende:
+Ceci comprend :
 
-- La provisión de marcos técnicos necesarios para el correcto funcionamiento de las unidades de procesamiento;
-- La provisión de unidades de procesamiento en las cantidades especificadas por el COMMANDITA y distribuidas según las zonas de disponibilidad elegidas. Es importante destacar que estas unidades de procesamiento están exclusivamente dedicadas al COMMANDITA;
-- La disponibilidad de una consola tipo KVM para controlar la gestión de la recursos de cálculo.
+- La fourniture des chassis techniques nécessaires au bon fonctionnement des lames de calcul ;
+- La fourniture des lames de calcul dans les quantités spécifiées par le COMMANDITAIRE et réparties selon les zones de disponibilité de son choix. Il est à noter que ces lames de calcul sont exclusivement dédiées au COMMANDITAIRE ;
+- La mise à disposition d'une console type KVM pour piloter la gestion de la ressource de calcul
 
-El seleccionado del modelo de unidad de procesamiento, elegido entre el catálogo ofrecido por el Proveedor, recae en la responsabilidad del COMMANDITA.
+Le choix du modèle de lame de calcul, sélectionné parmi le catalogue proposé par le Prestataire, relève de la responsabilité du COMMANDITAIRE.
 
-### Infraestructura de almacenamiento
+### Infrastructure de stockage
 
-El servicio incluye la provisión al COMMANDITARIO de una infraestructura de almacenamiento compartida de tipo SAN (Network Area Storage), que ofrece múltiples niveles de rendimiento. Este servicio abarca:
+Le service comprend la fourniture au COMMANDITAIRE d'une infrastructure de stockage partagée de type SAN (Storage Area Network), offrant divers niveaux de performance. Ce service englobe :
 
-- La implementación y el mantenimiento en condiciones operativas y de seguridad del red SAN dedicada;
-- La instalación y gestión de las unidades de almacenamiento compartidas entre los clientes, incluyendo su mantenimiento en condiciones operativas y de seguridad, supervisión y monitoreo;
-- La configuración de sistemas automatizados para la asignación de LUNs (Unidades de Lógico Numérico) de almacenamiento dedicados al uso del COMMANDITARIO, en conformidad con los volúmenes suscritos por el COMMANDITARIO.
+- L'implémentation et le maintien en condition opérationnelle et en condition de sécurité du réseau SAN dédié ;
+- L'installation et la gestion des baies de stockage mutualisées entre les clients, y compris leur maintien en condition opérationnelle et en condition de sécurité, leur supervision et leur métrologie ;
+- La mise en place des systèmes automatisés pour l'allocation des LUNs (Logical Unit Numbers) de stockage dédiés à l'usage du COMMANDITAIRE, conformément aux volumes souscrits par le COMMANDITAIRE.
 
-### Infraestructura de red global
+### Infrastructure réseau globale
 
-El Proveedor despliega, como parte del Servicio, un red global que permite al COMMANDITAIRE la accesibilidad de sus sistemas hospedados. Este servicio incluye:
+Le Prestataire déploie dans le cadre du Service, un réseau global facilitant au COMMANDITAIRE la mise en accessibilité de ses systèmes hébergés. Ce service comprend :
 
-- La provisión, el mantenimiento en condiciones operativas y de seguridad de toda la conectividad óptica entre las diferentes Zonas de disponibilidad;
+- La fourniture, le maintien en condition opérationnelle et en condition de sécurité de l'ensemble des liaisons en fibres optiques interconnectant les différentes Zones de disponibilité;
 
-- La provisión, el mantenimiento en condiciones operativas y de seguridad de los equipos técnicos necesarios para el correcto funcionamiento del red y la aislamiento de los distintos clientes.
+- La fourniture, le maintien en condition opérationnelle et en condition de sécurité des équipements techniques nécessaires au bon fonctionnement du réseau et à l'isolation des différents clients.
 
-La interconexión de red del TENANT COMMANDITAIRE, con Internet o redes privadas, así como los componentes de red, operadores de conexión y otros componentes técnicos que realizan esta interconexión, no forman parte del alcance del Servicio. Esta interconexión de red se implementa de acuerdo con las disposiciones previstas en el Contrato.
+L'interconnexion réseau du Tenant COMMANDITAIRE, à Internet ou à des réseaux privés, et les équipements réseaux, liens opérateurs et autres composants techniques réalisant cette interconnexion, ne font pas partie du périmètre du Service. Cette interconnexion réseau est mise en œuvre conformément aux dispositions prévues dans le Contrat.
 
-### Implementación de soluciones de recuperación ante desastres o continuidad empresarial
+### Mise en œuvre de solutions de reprise d'activité ou de continuité d'activité
 
-El Proveedor ofrece al COMMANDITARIO toda la infraestructura técnica necesaria para garantizar una distribución óptima de sus recursos a través de diversas Zonas de disponibilidad. Es responsabilidad del COMMANDITARIO gestionar eficazmente esta distribución de recursos, para la cual cuenta con el acceso a los herramientas del Proveedor diseñadas específicamente para este propósito.
+Le Prestataire fournit au COMMANDITAIRE l'ensemble des solutions techniques nécessaires pour garantir une répartition optimale de ses ressources à travers diverses Zones de disponibilité. Il incombe au COMMANDITAIRE la responsabilité de gérer efficacement cette distribution de ressources, pour laquelle il a la possibilité à exploiter les outils du Prestataire disponibles à cet usage.
 
-## Limites de los servicios en el modelo de infraestructura metálica calificada
+## Limitations des services dans le modèle Bare Metal qualifié
 
-En el modelo de infraestructura metálica calificada, existen varias limitaciones a considerar al analizar las capacidades y prestaciones de los servicios:
+### Services managés en RUN
 
-1. **Control Exhaustivo**: Los clientes tienen un control total sobre la infraestructura física, lo que permite una configuración altamente personalizada según sus necesidades específicas. Sin embargo, este nivel de control también implica responsabilidad adicional en la gestión y mantenimiento del hardware.
+Il est important de noter que sont écartés du Service :
 
-2. **Escalabilidad Limitada**: Aunque el modelo ofrece un alto grado de escalabilidad inicial, agregar nuevos recursos físicos puede ser costoso y llevar tiempo debido a la necesidad de comprar e instalar hardware adicional.
+- L'hébergement de composants physiques du COMMANDITAIRE ;
 
-3. **Costos Iniciales Elevados**: La infraestructura metálica calificada generalmente requiere una inversión inicial significativa en hardware, lo que puede ser un obstáculo para empresas con presupuestos limitados o necesidades de escalabilidad flexible.
+- L'interconnexion réseau du Tenant COMMANDITAIRE, à Internet ou à des réseaux privés, incluant les liens opérateur ;
 
-4. **Gestión de Actualizaciones**: Los clientes son responsables de las actualizaciones del hardware y la instalación de nuevas tecnologías, lo que requiere un equipo técnico dedicado para mantener el sistema al día con los últimos avances.
+- Tout service de type managé, ou TMA;
 
-5. **Dependencia de Proveedores**: La calidad y disponibilidad de componentes críticos dependen en gran medida del proveedor, lo que puede limitar la flexibilidad en caso de cambios en las políticas o problemas de suministro.
+- Toute assistance sur les systèmes d'exploitation installés et au-dessus dans la pile de responsabilités, même s'il s'agit de simple supervision.
 
-6. **Complejidad de Gestión**: El mantenimiento y gestión de una infraestructura metálica compleja requiere conocimientos técnicos avanzados, lo que puede aumentar la carga administrativa y los costos operativos.
+Cela étant, il n'est absolument pas exclu que le COMMANDITAIRE ait recours à de tels services auprès de l'offre MSP du Prestataire pour intervenir en mode services managés sur ses Tenants. Ces services ne seront alors pas encadrés par la présente Convention de service et ses engagements/clauses bipartites.
 
-7. **Eficiencia Energética**: Aunque el control sobre hardware permite optimizaciones energéticas, la infraestructura metálica en sí misma puede ser menos eficiente que soluciones de nube o virtualización debido a los consumos ineficientes del hardware físico.
+### Configuration du secours
 
-8. **Disponibilidad y Redundancia**: Asegurar altos niveles de disponibilidad y redundancia en una infraestructura metálica puede ser desafiante, especialmente cuando se trata de componentes críticos que pueden fallar sin previo aviso.
+Par défaut, le Prestataire fournit la mise en place des ressources du Bare Metal au COMMANDITAIRE en réservant des ressources et en configurant les déploiements pour utiliser les Zones de disponibilité. Il incombe au COMMANDITAIRE de choisir les Zones de disponibilité via l'interface COMMANDITAIRE.
 
-9. **Seguridad y Cumplimiento**: Mantener la seguridad y cumplir con las regulaciones en un entorno metálico puede ser complejo, especialmente cuando se maneja hardware sensible y los datos deben protegerse contra amenazas internas y externas.
+## Mise en œuvre du service
 
-10. **Flexibilidad de Movimiento**: Los recursos físicos no son tan fáciles de mover o reubicar como en soluciones de nube, lo que puede limitar la capacidad para adaptarse rápidamente a cambios en las demandas del negocio.
+### Prérequis techniques
 
-Estas limitaciones deben ser cuidadosamente evaluadas al considerar un modelo de infraestructura metálica calificada en comparación con otras soluciones de computación, como la nube pública o privada virtualizada.
+Pour la mise en œuvre du Service, le COMMANDITAIRE reconnaît qu'il devra :
 
-### Servicios administrados en RUN
+- Déclarer des IP fixes depuis lesquelles le Prestataire l'autorisera à accéder à l'interface COMMANDITAIRE (Filtrage par liste blanche). Les modifications de cette liste d'IP devront être réalisées via le menu prévu à cet effet dans la console ou via des Demandes de service pour les modifications ultérieures. A l'initialisation du service, le Prestataire aura été informé à minima d'au moins 1 adresse IP telle que décrite.
 
-Es importante destacar que el servicio COMMANDITAIRE no incluye:
+## Localisation du service en France
 
-- La gestión del hardware físico del COMMANDITAIRE;
+Il est précisé qu'aucune des opérations et aucun des composants physiques impliqués dans la fourniture du Service , dont la présente Convention de service fait l'objet, n'est situé hors de l'Union Européenne.
 
-- La conectividad de red del Tenant COMMANDITAIRE, tanto con Internet como con redes privadas, incluyendo los enlaces operadores;
+Cela inclut notamment le support, la supervision opérationnelle et la supervision de sécurité (SOC) de l'infrastructure technique délivrant le Service. De fait, tout le stockage, toutes les tâches d'administration, de supervision et tous les traitements sont réalisés en France.
 
-- Todo servicio de tipo administrado (TMA);
+### Localisation des Datacenters hébergeant le Service
 
-- Cualquier asistencia sobre los sistemas operativos instalados y encima en la pila de responsabilidades, incluso si se trata de supervisión básica.
+A défaut des opérations des collaborateurs et des agences du Prestataire, l'ensemble des opérations de production (comprenant le stockage et le traitement des données) et composants techniques délivrant le Service sont situés dans les Datacenters basés en France.
 
-No obstante, no es en absoluto excluido que COMMANDITAIRE utilice tales servicios a través del ofrecimiento MSP del Proveedor para intervenir en modo de servicio administrado en sus Tenants. En este caso, estos servicios no estarán sujetos a la presente Condición de Servicio ni a las cláusulas reciprocas.
+### Localisation des agences Cloud Temple opérant le service
 
-### Configuración del rescate
+Les collaborateurs de Cloud Temple intervenant sur le périmètre du Service opèrent depuis les agences de Cloud Temple toutes situées exclusivement en France. Ces agences sont situées en France, à Tours, Lyon, Caen et Paris La Défense.
 
-De forma predeterminada, el Proveedor configura las recursos de Bare Metal al COMMANDITAIRE asignando recursos y configurando los despliegues para utilizar las Zonas de disponibilidad. Es responsabilidad del COMMANDITAIRE seleccionar las Zonas de disponibilidad a través de la interfaz COMMANDITAIRE.
+Le COMMANDITAIRE est informé de la possibilité des salariés de Cloud Temple de travailler à distance. Toutefois, le Prestataire garantit le même niveau de sécurité concernant les accès à distance, notamment concernant les accès VPN. Ces accès distants sont mis en œuvre conformément aux exigences du référentiel SecNumCloud.
 
-## Implementación del Servicio
+## Support
 
-### Requis técnicos
+### Nature du support accompagnant le service
 
-Para la implementación del Servicio, el COMMANDITAIRE reconoce que deberá:
+Le Prestataire fournit un service de support technique visant à assister le COMMANDITAIRE dans la gestion, le dépannage et l'optimisation de leurs ressources déployées. Ce service couvre une gamme étendue d'activités, depuis l'aide à la configuration initiale des services jusqu'au soutien technique avancé pour résoudre des problèmes spécifiques.
 
-- Declarar IPs fijos desde los cuales el Proveedor le permitirá acceder a la interfaz COMMANDITAIRE (Filtrado por lista blanca). Las modificaciones de esta lista de IPs deberán realizarse a través del menú previsto para la consola o mediante Solicitudes de servicio para las modificaciones posteriores. Al iniciar el servicio, el Proveedor quedará informado al menos de una dirección IP como se describe.
+Voici une description des caractéristiques et fonctionnalités du service de support :
 
-## Localización del servicio en Francia
+- Assistance à la mise en œuvre initiale de l'utilisation du Service ;
+- Assistance à la résolution d'incidents ;
+- Assistance à la résolution de problèmes ;
+- Suivi et conseil sur l'optimisation du socle technique.
 
-Se especifica que ninguna de las operaciones y ninguno de los componentes físicos involucrados en la prestación del Servicio, al cual se refiere la presente Condición de Servicio, no está ubicado fuera de la Unión Europea.
+Dans le cadre du service de support, le Prestataire ne se substitue pas au COMMANDITAIRE dans l'usage du Service. Le COMMANDITAIRE reste entièrement responsable de la configuration, de l'exploitation de ses VM et de ses Tenants, et de la gestion de tous les éléments (données et applications incluses) qu'il a stockés ou installés sur les infrastructures du Prestataire. Le service de support technique est fourni en accord avec les Conditions Générales de Vente et d'Utilisation, le Prestataire étant tenu à une obligation de moyens.
 
-Esto incluye, entre otros, el soporte, la supervisión operativa y la supervisión de seguridad (SOC) de la infraestructura técnica que entrega el Servicio. Por lo tanto, todo el almacenamiento, las tareas administrativas, de supervisión y los procesos se realizan en Francia.
+Le COMMANDITAIRE s'engage à utiliser le service de support technique de manière raisonnable, s'abstenant notamment de solliciter des services non souscrits auprès du Prestataire et de faire intervenir les équipes du Prestataire auprès de ses propres clients ou de tiers non inclus dans le Contrat. Le Prestataire se réserve le droit de rejeter toute demande de service ne respectant pas ces critères.
 
-### Localización de los Centros de Datos alojando el Servicio
+Le niveau d'engagement du support est conditionné à la souscription des unités d'œuvre de support associées.
 
-En ausence de las operaciones de los empleados y agencias del Proveedor, todas las operaciones de producción (incluyendo el almacenamiento y procesamiento de datos) y componentes técnicos que brindan el Servicio se encuentran ubicados en Centros de Datos ubicados en Francia.
+### Sollicitation du service support technique
 
-### Localización de las oficinas Cloud Temple que brindan el servicio
+Le support technique est accessible par le biais d'un système de tickets via la console COMMANDITAIRE et est disponible durant les heures normales de bureau, hors jours fériés (8h - 18h ; Lundi -- Vendredi ; calendrier et horaires français). Pour les urgences survenant en dehors des heures ouvrées, notamment les incidents affectant significativement la production, le service d'astreinte peut être joint via un numéro communiqué au COMMANDITAIRE à l'initialisation du Service.
 
-Los empleados de Cloud Temple que operan dentro del alcance del servicio trabajan desde las oficinas de Cloud Temple ubicadas exclusivamente en Francia. Estas oficinas se encuentran en Tours, Lyon, Caen y París La Défense.
+Pour chaque demande ou Incident, il est impératif de générer un ticket auprès du support du Prestataire. L'initialisation de ce ticket, comprenant toutes les informations nécessaires, est essentielle et marque le début de l'évaluation des engagements du Prestataire.
 
-El Comanditario está informado sobre la posibilidad para los empleados de Cloud Temple trabajar remotamente. Sin embargo, el Proveedor asegura el mismo nivel de seguridad en relación con los acceso remoto, especialmente en lo que respecta a los accesos VPN. Estos accesos remotos se implementan de conformidad con las exigencias del recién puesto SecNumCloud.
+Dès que le Prestataire reçoit une demande ou une notification d'Incident, que ce soit par le biais de la console de gestion ou à la suite d'un appel téléphonique, un ticket est automatiquement créé. Lors de la déclaration d'un Incident, il est essentiel que le COMMANDITAIRE fournisse au prestataire un maximum de détails sur le problème rencontré. Cette démarche est cruciale pour permettre une évaluation adéquate de la situation, sa priorisation et un diagnostic efficace.
 
-## Soporte
+Le COMMANDITAIRE reçoit alors une confirmation par courriel, indiquant la création du ticket et son numéro unique. Le COMMANDITAIRE peut consulter le statut et l'historique de ses demandes et déclarations d'Incidents directement depuis la console de gestion.
 
-### Characteristics of the accompanying support service
+### Processus de gestion des Incidents
 
-The Provider offers a technical support service aimed at assisting the COMMANDITAIRE in managing, troubleshooting, and optimizing their deployed resources. This service encompasses a wide range of activities, from initial configuration of services to advanced technical support for resolving specific issues.
+Lors d'une déclaration d'un Incident, l'équipe de support technique du Prestataire initie une investigation pour identifier la cause du problème et établir un diagnostic. Le COMMANDITAIRE doit collaborer activement avec le Prestataire en fournissant toutes les informations nécessaires et en effectuant les tests requis. Le Prestataire peut accéder au Service du COMMANDITAIRE pour diagnostiquer l'Incident.
 
-Here's an overview of the features and functionalities of the technical support service:
+Si les Services du Prestataire sont jugés fonctionnels et que l'Incident ne lui est pas imputable, le COMMANDITAIRE en sera informé. À la demande du COMMANDITAIRE, le Prestataire peut proposer des Services Professionnels pour identifier l'origine du problème, facturable sur accord préalable par tranche de 30mn.
 
-- Assistance with the initial setup of Service utilization;
-- Incident resolution assistance;
-- Problem resolution assistance;
-- Monitoring and guidance on technical optimization.
+Dans le cas où l'Incident est de la responsabilité du Prestataire ou de l'un de ses sous-traitants, celui-ci complète le diagnostic et s'attèle à la restauration du Service sans frais supplémentaires. Le diagnostic s'appuie sur les échanges entre les Parties et les données du Prestataire, ces éléments étant considérés comme probants par accord des Parties.
 
-In the context of the technical support service, the Provider does not replace the COMMANDITAIRE in using the Service. The COMMANDITAIRE remains fully responsible for configuring, operating its VMs and Tenants, and managing all elements (including data and applications) stored or installed on the Provider's infrastructure. Technical support is provided in accordance with the General Terms of Sale and Use, with the Provider obligated to provide means of service.
+### Processus de priorisation des traitements
 
-The COMMANDITAIRE commits to using the technical support service reasonably, avoiding unsubscribed services from the Provider and having Provider teams assist its own clients or third parties not covered by the contract. The Provider reserves the right to reject any service request that does not meet these criteria.
+La détermination du niveau de priorité d'un dossier repose sur une analyse matricielle qui évalue l'impact de l'Incident et son degré de criticité :
 
-The level of support engagement is contingent upon subscribing to the associated units of work support.
+- Les niveaux d'impact sont définis de la manière suivante :
 
-### Solicitude del Servicio Técnico
-
-El soporte técnico está disponible a través de un sistema de tickets mediante la consola COMMANDITAIRE y es accesible durante las horas laborales normales, excluyendo los días festivos (de 8:00 a 18:00; lunes a viernes; calendario y horarios franceses). Para emergencias que ocurren fuera de los horarios comerciales, especialmente aquellas que afectan significativamente la producción, el servicio de urgencia puede ser contactado mediante un número comunicado al COMMANDITAIRE al iniciar el Servicio.
-
-Para cada solicitud o incidente, es imprescindible generar un ticket en el soporte del Proveedor. La inicialización de este ticket, que incluye toda la información necesaria, es fundamental y marca el inicio de la evaluación de los compromisos del Proveedor.
-
-Una vez que el Proveedor recibe una solicitud o notificación de incidente, ya sea a través de la consola de gestión o tras un llamado telefónico, se creará automáticamente un ticket. Al declarar un incidente, es crucial que COMMANDITAIRE proporcione al Proveedor los detalles más detallados sobre el problema encontrado. Esta acción es esencial para permitir una evaluación adecuada de la situación, su priorización y un diagnóstico eficiente.
-
-COMMANDITAIRE recibirá entonces una confirmación por correo electrónico, indicando la creación del ticket y su número único. COMMANDITAIRE podrá consultar el estado y el historial de sus solicitudes e incidentes directamente desde la consola de gestión.
-
-### Proceso de Gestión de Incidentes
-
-Al declarar un incidento, la equipe de soporte técnico del Proveedor inicia una investigación para identificar la causa del problema y establecer un diagnóstico. El COMMANDITAIRE debe colaborar activamente con el Proveedor, proporcionando toda la información necesaria y realizando los pruebas requeridos. El Proveedor puede acceder al Servicio del COMMANDITAIRE para diagnosticar el incidente.
-
-Si los servicios del Proveedor se consideran funcionales y el incidente no le es imputable, el COMMANDITAIRE lo informará. Al solicitud del COMMANDITAIRE, el Proveedor puede ofrecer servicios profesionales para identificar la origen del problema, facturable previamente en tramos de 30 minutos.
-
-En caso de que el incidente sea responsabilidad del Proveedor o de uno de sus subcontratistas, este completará el diagnóstico y se encargará de la restauración del servicio sin costo adicional. El diagnóstico se basa en los intercambios entre las partes y los datos del Proveedor, considerados probatorios por acuerdo de las partes.
-
-### Proceso de priorización de los tratajos
-
-El determinar el nivel de prioridad de un archivo se basa en una análisis matricial que evalúa el impacto del incidente y su grado de crítica:
-
-- Los niveles de impacto se definen de la siguiente manera:
-
-| Nivel de impacto | Descripción |
+| Niveau d'impact | Description |
 | :--- | :--- |
-| **Impacto I1** | Los servicios del Proveedor están interrumpidos |
-| **Impacto I2** | Los servicios del Proveedor se ven afectados |
-| **Impacto I3** | Los servicios del Proveedor están actualmente estables, pero muestran signos de declíne potencial a largo plazo |
+| **Impact I1** | Le ou les services du Prestataire sont interrompus |
+| **Impact I2** | Le ou les services du Prestataire sont dégradés |
+| **Impact I3** | Le ou les services du Prestataire sont actuellement stable, mais montrent des signes de potentiel déclin à long terme |
 
-- Los niveles de crítica se definen de la siguiente manera:
+- Les niveaux de Criticités sont définis de la manière suivante :
 
-| Nivel de crítica | Descripción |
+| Niveau de criticité | Description |
 | :--- | :--- |
-| **Crítica C1** | Los servicios del Proveedor se degradan a un ritmo preocupante |
-| **Crítica C2** | Los servicios del Proveedor se deterioran gradualmente con el tiempo |
-| **Crítica C3** | Los servicios del Proveedor presentan uno o más inconvenientes sin consecuencias significativas |
+| **Criticité C1** | Le ou les services du Prestataire se dégradent à une vitesse préoccupante |
+| **Criticité C2** | Le ou les services du Prestataire se détériore progressivement au fil du temps |
+| **Criticité C3** | Le ou les services du Prestataire présentes un ou plusieurs inconvenient sans conséquence significative |
 
-- Basado en una evaluación exhaustiva de la situación, considerando los factores que determinan el impacto y la crítica, se asigna una prioridad al ticket según la matriz de decisión siguiente:
+- Sur la base d'une analyse approfondie de la situation, prenant en compte les éléments déterminant l'Impact et la Criticité, une priorité est attribuée au ticket conformément à la matrice de décision ci-après :
 
-| Nivel de impacto / Nivel de crítica | Impacto I1 | Impacto I2 | Impacto I3 |
+| Niveau d'impact / Niveau de criticité | Impact I1 | Impact I2 | Impact I3 |
 | :--- | :--- | :--- | :--- |
-| **Crítica C1** | Prioridad P1 | Prioridad P2 | Prioridad P3 |
-| **Crítica C2** | Prioridad P2 | Prioridad P3 | Prioridad P4 |
-| **Crítica C3** | Prioridad P3 | Prioridad P4 | Prioridad P5 |
+| **Criticité C1** | Priorité **P1** | Priorité **P2** | Priorité **P3** |
+| **Criticité C2** | Priorité **P2** | Priorité **P3** | Priorité **P4** |
+| **Criticité C3** | Priorité **P3** | Priorité **P4** | Priorité **P5** |
 
-Los compromisos de nivel de servicio correspondientes a cada nivel de prioridad se detallan en el capítulo siguiente.
+Les engagements de niveau de service correspondant à chaque niveau de priorité sont détaillés dans le chapitre suivant.
 
-### Lenguaje y localización del servicio de soporte
+### Langue et localisation du service de support
 
-El soporte se presta al proveedor al COMMANDITARIO mínimo en francés. El soporte también puede ofrecerse en inglés.
+Le support est fourni par le Prestataire au COMMANDITAIRE a minima en langue française. Le support peut être également fourni en langue anglaise.
 
-Las operaciones del servicio de soporte del proveedor para la oferta de servicio Bare Metal en fase de validación SecNumCloud se llevan a cabo dentro de la Unión Europea.
+Les opérations du service de support du Prestataire pour l'offre de service de Bare Metal en cours de qualification SecNumCloud sont situées dans l'Union Européenne.
 
-# Compromisos y niveles de servicio
+# Engagements et niveaux de services
 
-El Proveedor se compromete a garantizar una supervisión continua del rendimiento y la integridad de seguridad de su infraestructura técnica que entrega el Servicio, asegurando su funcionamiento óptimo.
+Le Prestataire s'engage à garantir une surveillance continue de la performance et de l'intégrité sécuritaire de son infrastructure technique délivrant le Service, veillant à leur fonctionnement optimal.
 
-La indisponibilidad del servicio, cuya detección se realiza mediante un indicador de rendimiento, es reconocida de inmediato por el sistema de supervisión del Proveedor, o tras una notificación de un usuario del COMMANDITAIRE. El inicio de la indisponibilidad se fija en el momento más temprano entre estos dos eventos para garantizar un cálculo preciso y justo del tiempo de indisponibilidad.
+L'indisponibilité d'un service, faisant l'objet d'un indicateur de performance, est reconnue dès son identification par le système de supervision du Prestataire, ou suite à une notification par un utilisateur du COMMANDITAIRE. Le début de l'indisponibilité est fixé au moment le plus précoce entre ces deux événements, afin de garantir un décompte précis et juste du temps d'indisponibilité.
 
-La finalización oficial de la indisponibilidad se marca por la restauración completa del servicio, confirmada tanto por los herramientas de supervisión del Proveedor como por una notificación de usuario, asegurando así una reanudación efectiva de las operaciones y una medición fiel de la duración de la interrupción.
+La fin de l'indisponibilité est officiellement marquée par la restauration complète du service, confirmée soit par les outils de supervision du Prestataire, soit par un retour utilisateur, assurant ainsi une reprise effective des opérations et une mesure fidèle de la durée de l'interruption.
 
-## Availability Commitments of the Infrastructure
+## Engagements de disponibilité de l'infrastructure
 
-The Provider commits to maintaining a level of availability and performance in accordance with the standards defined for each specified period. These Service Level Agreements (SLAs) are subject to the CONDITION that the COMMANDITAIRE implements its systems through at least two of the available zones of availability within the relevant region.
+Le Prestataire s'engage à maintenir un niveau de disponibilité et de performance conforme aux standards définis pour chaque période spécifiée. Les engagements de niveau de service (Service Level Agreements, SLAs) s'appliquent sous réserve que le COMMANDITAIRE implémente ses systèmes à travers au moins deux des Zones de disponibilité présentes dans la Région concernée.
 
-In the absence of these conditions by the COMMANDITAIRE, it will not be able to claim the application of the concerned SLAs, which are specifically identified with an asterisk (\*). Access to SLAs is provided via the COMMANDITAIRE interface. The measurements are calculated monthly:
+En l'absence de respect de ces conditions par le COMMANDITAIRE, celui-ci se verra dans l'incapacité de revendiquer l'application des SLAs concernés, lesquels sont spécifiquement identifiés par un astérisque (\*). L'accessibilité aux SLAs se fait via l'interface COMMANDITAIRE. Les mesures s'entendent calculées mensuellement :
 
-- **SLA 1** (IC-INFRA_SNC-01) - Compute availability: guaranteed uptime of 99.99%, calculated on a daily basis, 24/7.
-- **SLA 2** (IC-INFRA_SNC-02) - Storage availability: guaranteed uptime of 99.99%, calculated on a daily basis, 24/7.
-- **SLA 3** (IC-INFRA_SNC-03) - Network infrastructure availability: guaranteed uptime of 99.99%, calculated on a daily basis, 24/7.
-- **SLA 4** (IC-INFRA_SNC-04) - Internet access: guaranteed uptime of 99.99%, calculated on a daily basis, 24/7.
+- \*\*SLA 1 (\*) : IC-INFRA_SNC-01\*\* -- Disponibilité de la puissance de calcul (Compute) : taux de disponibilité garanti de 99,99%, calculé sur une base 24h/24, 7j/7.
+- \*\*SLA 2 (\*) : IC-INFRA_SNC-02\*\* -- Disponibilité du stockage : taux de disponibilité garanti de 99,99%, calculé sur une base 24h/24, 7j/7.
+- \*\*SLA 3 (\*) : IC-INFRA_SNC-03\*\* -- Disponibilité de l'infrastructure réseau : taux de disponibilité garanti de 99,99%, calculé sur une base 24h/24, 7j/7.
+- **SLA 4 : IC-INFRA_SNC-04** -- Accès Internet : taux de disponibilité garanti de 99,99%, calculé sur une base 24h/24, 7j/7.
 
-***Remarks***:
+***Remarques*** :
 
-- In response to a Distributed Denial of Service (DDoS) attack, the Provider reserves the right to adjust its internet routing configuration to mitigate the impact and safeguard its infrastructure. Specifically, if an IP address belonging to the COMMANDITAIRE is targeted, the Provider may employ BGP blackholing to block all traffic destined for that IP address upstream with their providers, thereby protecting the COMMANDITAIRE's resources as well as those of other COMMANDITAIREs and the Provider’s infrastructure. The Provider strongly encourages the COMMANDITAIRE to adopt similar measures, such as utilizing web application firewall software available on the market, and meticulously configuring its security groups via the command-line interface (CLI).
+- *En réponse à une attaque par déni de service distribué (DDoS), le Prestataire se réserve le droit d'ajuster sa configuration de routage internet pour limiter l'impact de cette attaque et sauvegarder son infrastructure. En particulier, si une adresse IP appartenant au COMMANDITAIRE est ciblée, le Prestataire peut recourir à la technique de blackholing via la communauté BGP pour bloquer tout le trafic vers l'adresse IP visée en amont chez ses fournisseurs, dans le but de protéger les ressources du COMMANDITAIRE ainsi que celles d'autres COMMANDITAIREs et de l'infrastructure du Prestataire. Le Prestataire encourage vivement le COMMANDITAIRE à adopter des mesures similaires, telles que l'utilisation de logiciels de pare-feu d'applications web disponibles sur le marché, et à configurer soigneusement ses groupes de sécurité via l'API de commande.*
 
-- The Provider emphasizes the importance for the COMMANDITAIRE to minimize open ports, particularly avoiding making administration ports **SSH** (TCP port 22) and **RDP** (TCP port 3389) accessible from the entire Internet (subnet 0.0.0.0/0), as well as internal protocols like **SMB** (TCP/UDP port 445) or **NFS** (TCP/UDP port 2049).
+- *Le Prestataire insiste sur la nécessité pour le COMMANDITAIRE de minimiser les ouvertures de flux, en évitant notamment de rendre accessibles les ports d'administration **SSH** (port TCP 22) et **RDP** (port TCP 3389) depuis l'ensemble d'Internet (sous-réseau 0.0.0.0/0), ainsi que les protocoles internes tels que **SMB** (port TCP/UDP 445) ou **NFS** (port TCP/UDP 2049).*
 
-## Compromiso de Disponibilidad de la Interfaz COMMANDITAIRE
+## Engagement de disponibilité de l'interface COMMANDITAIRE
 
-- SLA 5: IC-INFRA_SNC-05 - Acceso a la consola de administración del Servicio: una disponibilidad garantizada del 97%, proporcionada en tiempo real, las 24 horas del día y los 7 días de la semana.
-- SLA 6: IC-INFRA_SNC-06 - Acceso a las APIs de gestión del Servicio: una disponibilidad del 99.9%, calculada sobre una base de 24 horas al día, 7 días a la semana.
+- SLA 5 : IC-INFRA_SNC-05 -- Accès à la console d'administration du Service : une disponibilité garantie de 97%, assurée en continu, 24 heures sur 24 et 7 jours sur 7.
+- SLA 6 : IC-INFRA_SNC-06 -- Accès aux APIs de pilotage du Service : une disponibilité de 99.9%, calculé sur une base 24h/24, 7j/7.
 
-## Compromiso de disponibilidad del soporte
+## Engagement de disponibilité du support
 
-- **SLA 7 : IC-INFRA_SNC-07** -- Aquí están los compromisos de rendimiento del soporte técnico del Proveedor para los incidentes, fuera de las mantenimientos programadas:
+- **SLA 7 : IC-INFRA_SNC-07** -- Voici les engagements de performance du support technique du Prestataire pour les incidents, hors maintenances programmées :
 
-| Prioridad | Garantía de tiempo de intervención (GTI) | Objetivo de rendimiento |
+| Priorité | Garantie de temps d'intervention (GTI) | Objectif de performance |
 | :--- | :--- | :--- |
-| **Prioridad P1** | 30min | 95% |
-| **Prioridad P2** | 2h | 90% |
-| **Prioridad P3** | 4h | 90% |
-| **Prioridad P4** | 24h | 85% |
-| **Prioridad P5** | 48h | 85% |
+| **Priorité P1** | 30mn | 95% |
+| **Priorité P2** | 2h | 90% |
+| **Priorité P3** | 4h | 90% |
+| **Priorité P4** | 24h | 85% |
+| **Priorité P5** | 48h | 85% |
 
-- **SLA 8 : IC-INFRA_SNC-08** -- Aquí están los compromisos de rendimiento del soporte técnico del Proveedor para las solicitudes de servicio:
+- **SLA 8 : IC-INFRA_SNC-08** -- Voici les engagements de performance du support technique du Prestataire pour les demandes de service :
 
-| Tipo | Garantía de tiempo de intervención (GTI) | Objetivo de rendimiento |
+| Type | Garantie de temps d'intervention (GTI) | Objectif de performance |
 | :--- | :--- | :--- |
-| **Solicitud de servicio** | 4h | 90% |
+| **Demande de service** | 4h | 90% |
 
-*Nota:*
+*Nota* :
 
-- *El plazo para la Garantía de Tiempo de Intervención (GTI) se calcula a partir del momento en que el COMMANDITAIRE abre el ticket hasta la primera intervención del soporte del Proveedor.*
-- *La investigación de incidentes relacionados con los COMMANDITAIRE no incluirá una intervención remota sobre los servidores alojados por el COMMANDITAIRE. Esta asistencia se limitará a la explicación de las métricas disponibles relativas al entorno del COMMANDITAIRE, para facilitar la comprensión de los incidentes o problemas de rendimiento detectados. Basándose en los resultados de esta analisis, se podrán sugerir recomendaciones.*
+- *Le délai pour la Garantie de Temps d'Intervention (GTI) est calculé à partir de la différence entre le moment où le COMMANDITAIRE ouvre le ticket et la première intervention du support du Prestataire.*
+- *L'investigation d'incidents concernant les COMMANDITAIREs ne comprendra pas d'intervention à distance sur les serveurs hébergés du COMMANDITAIRE. Cette assistance se limitera à l'explication des métriques disponibles relatives à l'environnement du COMMANDITAIRE, afin de faciliter la compréhension des incidents ou des problèmes de performance rencontrés. Sur la base des résultats de cette analyse, des recommandations pourront être suggérées.*
 
-## Organización de la relación contratual
+# Organisation de la relation contractuelle
 
-## Responsabilidades del Proveedor
+## Responsabilités du Prestataire
 
-El Proveedor se compromete a:
+Le Prestataire s'engage :
 
-- Informar al COMMANDITAIRE de manera adecuada (por ejemplo, en caso de limitación de recursos técnicos que puedan afectar la prestación del Servicio) sobre cualquier aspecto relevante.
+- à informer son COMMANDITAIRE de manière adéquate (par exemple en cas de limite de capacité de ressources techniques délivrant le Service).
 
-- Informar formalmente al COMMANDITAIRE y dentro de un mes, de todo cambio jurídico, organizativo o técnico que pueda afectar la conformidad del Servicio con las exigencias de protección contra leyes extracontinentales (19.6 del référentiel SNC v3.2).
+- à informer formellement le COMMANDITAIRE et dans un délai d'un mois, de tout​ changement juridique, organisationnel ou technique pouvant avoir un impact sur la conformité du Service aux exigences de protection contre les lois extra-européennes (19.6 du référentiel SNC v3.2).
 
-- Proporcionar al COMMANDITAIRE interfaces y servicios de interfaz en francés mínimo.
+- à fournir au COMMANDITAIRE des interfaces et des interfaces de service qui sont en langue française a minima.
 
-- Considerar las exigencias sectoriales específicas relacionadas con los tipos de información confiadas por el COMMANDITAIRE para la implementación del Servicio, dentro de las responsabilidades del Proveedor y del Contrato, así como las disposiciones previstas en el mismo.
+- à prendre en compte les exigences sectorielles spécifiques liées aux types d\'informations confiées par le COMMANDITAIRE dans le cadre de la mise en œuvre du Service et dans la limite des responsabilités du Prestataire d\'une part, et des dispositions prévues au Contrat d\'autre part ;
 
-- Estudiar las exigencias sectoriales específicas relacionadas con los tipos de información confiadas por el COMMANDITAIRE para la implementación del Servicio, que puedan expresarse posteriormente por parte del COMMANDITAIRE, y comunicar al último las acciones necesarias para su consideración.
+- à étudier les exigences sectorielles spécifiques liées aux types d\'informations confiées par le COMMANDITAIRE dans le cadre de la mise en œuvre du Service, ultérieurement exprimées par le COMMANDITAIRE, et à indiquer à ce dernier les actions nécessaires pour leur prise en compte
 
-- No divulgar ninguna información relacionada con la prestación a terceros, salvo una autorización formal y escrita del COMMANDITAIRE.
+- à ne divulguer aucune information relative à la prestation à des tiers, sauf autorisation formelle et écrite du COMMANDITAIRE.
 
-- Poner a disposición de todo lo necesario para realizar auditorías de conformidad en conformidad con las disposiciones del artículo 28 del RGPD.
+- à mettre à disposition toutes les informations nécessaires à la réalisation d'audits de conformité conformément aux dispositions de l'article 28 du RGPD.
 
-- Proporcionar, como subcontratista, en cumplimiento con el artículo 28 del Reglamento General de Protección de Datos (RGPD), asistencia y asesoramiento al COMMANDITAIRE, alertándolo inmediatamente cuando una instrucción emitida por este último pueda constituir una violación de las normas de protección de datos.
+- à rendre compte auprès du COMMANDITAIRE, par la présente Convention de service, de tout Incident de sécurité impactant le Service ou l'utilisation faite par le COMMANDITAIRE du Service (incluant les données du COMMANDITAIRE).
 
-- Notificar al COMMANDITAIRE en un plazo razonable, a través de la consola COMMANDITAIRE o del correo electrónico del COMMANDITAIRE, sobre cualquier proyecto que pueda impactar o esté sujeto a impactar el nivel de seguridad o disponibilidad del Servicio, o causar una pérdida de funcionalidad, potenciales impactos, medidas de mitigación implementadas y riesgos residuales que le afecten.
+- à autoriser un prestataire d'audit de la sécurité des systèmes d'information (PASSI) qualifié, mandaté par le Prestataire, à auditer le service ainsi que son système d'information, conformément au plan de contrôle du SecNumCloud du Prestataire. De plus, le Prestataire s'engage à fournir toutes les informations nécessaires pour mener à bien les audits de conformité aux dispositions de l'article 28 du RGPD, menés par le commanditaire ou un tiers mandaté.
 
-- Documentar y poner en práctica todas las procedimientos necesarios para cumplir con las exigencias legales, regulatorias y contractuales aplicables al Servicio, así como los requisitos de seguridad específicos del COMMANDITAIRE, definidos por este último y previstos en el Contrato.
+- à fournir, en qualité de sous-traitant, conformément à l'article 28 du Règlement général sur la protection des données (RGPD), assistance et conseils au COMMANDITAIRE en l'alertant dès lors qu'une instruction émise par ce dernier est susceptible de constituer une violation des règles de protection des données.
 
-- No utilizar las datos del COMMANDITAIRE provenientes de la producción para realizar pruebas, a excepción de obtener previamente la autorización explícita del COMMANDITAIRE, al cual caso el Proveedor se compromete a anonimizar estas datos y a garantizar su confidencialidad durante su anonimización.
+- à notifier le COMMANDITAIRE dans un délai raisonnable, à travers la console COMMANDITAIRE ou par courriel au contact COMMANDITAIRE, lorsqu'un projet impacte ou est susceptible d'impacter le niveau de sécurité ou la disponibilité du Service, ou à engendrer une perte de fonctionnalité, des potentiels impacts, des mesures d'atténuation mises en place, ainsi que des risques résiduels qui le concernent.
 
-- Eliminar las datos y datos técnicos relacionados con el COMMANDITAIRE, en conformidad con la "procedimiento de eliminación de datos al final del Contrato" descrita en la presente Convenio de Servicio, en caso de fin o rescisión del Contrato.
+- à documenter et à mettre en œuvre l'ensemble des procédures nécessaires pour respecter les exigences légales, réglementaires et contractuelles applicables au service, ainsi que les besoins de sécurité spécifiques du COMMANDITAIRE, définis par ce dernier et prévus au Contrat.
 
-- Garantizar una eliminación segura de toda la información del COMMANDITAIRE mediante la reescritura completa de todo el medio que albergue sus datos en el marco del Servicio.
+- à ne pas utiliser les données du COMMANDITAIRE issues de la production pour réaliser des tests, à l'exception d'en obtenir préalablement l\'autorisation explicite du COMMANDITAIRE, auquel cas le Prestataire s\'engage à anonymiser ces données et à en assurer la confidentialité lors de leur anonymisation.
 
-Bajo solicitud formal y escrita del COMMANDITAIRE, el Proveedor se compromete a:
+- à supprimer les données et Données techniques relatives au COMMANDITAIRE, conformément à la « procédure d'effacement des données en fin de Contrat » décrite dans la présente Convention de service lors d'une fin ou résiliation de Contrat.
 
-1. Hacer accesible al COMMANDITAIRE el reglamento interno y la carta de ética del Proveedor.
-2. Hacer accesible al COMMANDITAIRE las sanciones aplicables en caso de incumplimiento de la política de seguridad.
-3. Proporcionar al COMMANDITAIRE toda la información relacionada con los eventos que le afecten, dentro de las herramientas de registro del Servicio. El COMMANDITAIRE podrá consultar independientemente estos eventos relativos a su uso del Servicio a través de las interfaces web y API del Servicio.
-4. Hacer accesible al COMMANDITAIRE las procedimientos para cumplir con las exigencias legales, regulatorias y contractuales aplicables al Servicio, así como los requisitos de seguridad específicos del COMMANDITAIRE previstos en el Contrato.
-5. Proporcionar a la evaluación de riesgos relativa a la presentación de datos del COMMANDITAIRE ante un estado no miembro de la Unión Europea.
-6. Informar al COMMANDITAIRE sobre los subcontratistas posteriores involucrados en la prestación del Servicio, así como cualquier cambio que afecte a estos subcontratistas.
+- à assurer un effacement sécurisé de l'intégralité des données du COMMANDITAIRE par réécriture complète de tout support ayant hébergé ses données dans le cadre du Service.
 
-El Proveedor y todas sus filiales se comprometen a respetar los valores fundamentales de la Unión Europea, como la dignidad humana, la libertad, la democracia, la igualdad, el estado de derecho, así como el respeto de los Derechos Humanos. El servicio prestado por el Proveedor está en conformidad con la legislación vigente en materia de derechos fundamentales y las valores de la Unión Europea relativos al respeto de la dignidad humana, la libertad, la igualdad, la democracia y el estado de derecho.
+Sur demande du COMMANDITAIRE formelle et écrite, le Prestataire s'engage à :
 
-## Limitación de responsabilidades del Proveedor
+1. Rendre accessible au COMMANDITAIRE le règlement intérieur et la charte d'éthique du Prestataire ;
 
-Debido a las definiciones y condiciones mencionadas en la presente Convenio de Servicio, las responsabilidades del Proveedor se limitan así:
+2. Rendre accessible au COMMANDITAIRE les sanctions encourues en cas d'infraction à la politique de sécurité ;
 
-1. El modelo de responsabilidad compartida, descrito en la sección "Modelo de responsabilidades compartidas" de la presente Convenio de Servicio, limita de hecho la participación del Proveedor en las capas de funcionamiento que van "por encima" de la prestación de recursos de computación, red, almacenamiento y copia de seguridad. Esto excluye, entre otras cosas:
+3. Fournir au COMMANDITAIRE l\'ensemble des événements le concernant dans les éléments de journalisation du Service ; le COMMANDITAIRE pouvant par ailleurs consulter en autonomie les événements relatifs à son utilisation du Service au travers des interfaces web et API du Service ;
 
-    - La gestión de lo que se instala en las máquinas virtuales (Sistema Operativo, middleware, aplicaciones, etc.);
+4. Rendre accessible au COMMANDITAIRE les procédures permettant de respecter les exigences légales, réglementaires et contractuelles en vigueur applicables au Service, ainsi que les besoins de sécurité spécifiques du COMMANDITAIRE prévus au Contrat ;
 
-    - La actualización de los Sistemas Operativos y otros programas instalados por el COMMANDITAIRE en sus Tenants;
+5. A fournir, les éléments d'appréciation des risques relatifs à la soumission des données du COMMANDITAIRE au droit d'un état non-membre de l'Union Européenne ;
 
-    - La seguridad de los programas, software y aplicaciones instalados en las máquinas virtuales;
+6. A informer le COMMANDITAIRE des sous-traitants ultérieurs intervenants dans la fourniture du Service, et à l\'informer de tout changement l\'impactant relatif à ces sous-traitants.
 
-    - La actualización de las máquinas virtuales;
+> Le Prestataire et l'ensemble de ses filiales s'engagent à respecter les valeurs fondamentales de l'Union européenne, à savoir la dignité humaine, la liberté, la démocratie, l'égalité, l'état de droit, ainsi que le respect des Droits de l'homme. Le service fourni par le Prestataire est conforme à la législation en vigueur en matière de droits fondamentaux et aux valeurs de l'Union européenne relatives au respect de la dignité humaine, à la liberté, à l'égalité, à la démocratie et à l'État de droit.
 
-    - La copia de seguridad de los datos a nivel de aplicación.
+## Limitation des responsabilités du Prestataire
 
+Du fait de l'ensemble des définitions et conditions mentionnées dans la présente Convention de service, les responsabilités du Prestataire sont limitées ainsi :
 
-2. El Proveedor no puede reclamar la propiedad de los datos transmitidos y generados por el COMMANDITAIRE. De hecho, estos pertenecen al COMMANDITAIRE.
+1. Le modèle de responsabilité partagée, décrit dans la section « Modèle de responsabilités partagées » de la présente Convention de service, limite de fait l'implication du Prestataire dans les couches de fonctionnement allant "au-dessus" de la mise à disposition de ressources de calcul, de réseau, de stockage et de sauvegarde. Ceci exclut en particulier sans s'y limiter :
 
+    - La gestion de ce qui est installé sur les machines virtuelles (OS, middlewares, applicatifs, etc.);
 
-3. El Proveedor enfatiza que no puede explotar ni disponer de los datos transmitidos y generados por el COMMANDITAIRE sin la validación previa del último, entendiéndose que su disposición está reservada al COMMANDITAIRE.
+    - La tenue à jour des OS et autres logiciels installés par le COMMANDITAIRE sur ses machines dans ses Tenants;
 
+    - La sécurité des programmes, logiciels et applicatifs installés sur les machines virtuelles;
 
-4. El Proveedor se libera toda responsabilidad sobre los componentes físicamente hospedados y gestionados por el Proveedor, pero que son propiedad directa del COMMANDITAIRE o de un tercero con el cual el COMMANDITAIRE haya contratado. El alojamiento de componentes físicos del cliente no forma parte del Servicio y está fuera del ámbito de la presente Convenio de Servicio. Es responsabilidad del COMMANDITAIRE evaluar el nivel de adhesión o dependencia que introducen estos componentes respecto al Servicio Bare Metal en curso de calificación SecNumCloud.
+    - La mise à jour des machines virtuelles;
 
-## Limitación de acceso
+    - La sauvegarde des données au niveau applicatif.
 
-En el marco del servicio, el Proveedor está expresamente prohibido de acceder a los Tenants pertenecientes al COMMANDITAIRE sin autorización previa. Es responsabilidad del COMMANDITAIRE proporcionar los accesos necesarios al personal del Proveedor, según las necesidades específicas del hospedaje y, en su caso, los servicios de soporte profesional, si esta opción ha sido elegida por el COMMANDITAIRE.
+2. Le Prestataire ne peut se prévaloir de la propriété des données transmises et générées par le COMMANDITAIRE. En effet, celles-ci relèvent de la propriété du COMMANDITAIRE.
 
-El COMMANDITAIRE reconoce que estos accesos se otorgan exclusivamente para los fines relacionados con la prestación de servicios acordados, garantizando así una gestión segura y conforme a los términos del contrato.
+3. Le Prestataire souligne qu'il ne peut en aucun cas exploiter et/ou disposer des données transmises et générées par le COMMANDITAIRE sans validation préalable de ce dernier, étant entendu que leur disposition est réservée au COMMANDITAIRE.
 
-El acceso remoto por parte de terceros involucrados en la prestación de servicio del Proveedor está estrictamente prohibido. En caso que una necesidad técnica específica requiera tal acceso, el mismo solo podría establecerse tras haber notificado claramente al COMMANDITAIRE, proporcionar una justificación detallada y obtener su acuerdo escrito.
+4. Le Prestataire dégage toute responsabilité sur les composants physiquement hébergés et infogéré par le Prestataire, mais étant la propriété directe du COMMANDITAIRE ou d'un tiers avec lequel le COMMANDITAIRE a contractualisé. L'hébergement de composants physiques des clients ne fait pas partie du Service et est de fait hors du cadre de la présente Convention de service. Il incombe au COMMANDITAIRE d'évaluer le niveau d'adhérence ou de dépendance qu'introduisent ces composants vis-à-vis du Service Bare Metal en cours de qualification SecNumCloud.
 
-Esta medida asegura el control y la seguridad de los datos del COMMANDITAIRE, asegurando que cualquier excepción a la regla esté debidamente autorizada e indocumentada.
+## Limitation d'accès
 
-## Responsabilidades de terceros proporcionadores del servicio
+Dans le cadre du Service, le Prestataire est formellement interdit d'accéder aux Tenants appartenant au COMMANDITAIRE sans autorisation préalable. Il est de la responsabilité du COMMANDITAIRE de fournir les accès nécessaires au personnel du Prestataire, selon les besoins spécifiques de l'hébergement et, le cas échéant, des services professionnels de support, si cette option a été choisie par le COMMANDITAIRE.
 
-El Proveedor tiene control total sobre la lista de terceros socios que participan en la prestación del Servicio. Estos terceros son editores, proveedores (del Proveedor) y otros proveedores participantes en la prestación del Servicio. El Proveedor aplica las siguientes medidas a estos terceros:
+Le COMMANDITAIRE reconnaît que ces accès sont accordés exclusivement pour les besoins liés à la prestation de services convenus, assurant ainsi une gestion sécurisée et conforme aux termes de l'accord.
 
-- El Proveedor exige a los terceros que participen en la implementación del servicio, dentro de su contribución al Servicio, un nivel de seguridad al menos igual al mantenido por el Proveedor en su propia política de seguridad aplicable al servicio;
+L'accès distant par des tiers impliqués dans la prestation de service du Prestataire est strictement interdit. Dans l'éventualité où une exigence technique spécifique nécessiterait un tel accès, celui-ci ne pourrait être établi qu'après avoir clairement notifié le COMMANDITAIRE, fourni une justification détaillée et obtenu son accord écrit.
 
-- El Proveedor contrata con cada uno de los terceros que participen en la implementación del servicio, cláusulas de auditoría que permiten a un organismo de certificación verificar que estos terceros cumplen con las exigencias legales y las normativas SNC, lo que permite al Proveedor cumplir con sus compromisos en la presente Condición de Servicio.
+Cette mesure garantit le contrôle et la sécurité des données du COMMANDITAIRE, en s'assurant que toute exception à la règle est dûment autorisée et documentée.
 
-- El Proveedor implementa una procedura para controlar regularmente las medidas adoptadas por los terceros participantes en la implementación del servicio para cumplir con las exigencias del Proveedor para mantener sus compromisos en la presente Condición de Servicio.
+## Responsabilités des tiers participant à la fourniture du service
 
-- El Proveedor realiza un seguimiento de los cambios introducidos por los terceros participantes en la implementación del servicio que puedan afectar el nivel de seguridad del sistema de información del Servicio.
+Le Prestataire maîtrise la liste des tiers partenaires participant à la fourniture du Service. Ces tiers sont les éditeurs, prestataires (du Prestataire) et autres fournisseurs participant de la fourniture du Service. Le Prestataire applique les mesures suivantes à ces tiers :
 
-## Responsabilidades y obligaciones del COMMANDITA
+- Le Prestataire exige des tiers participant à la mise en œuvre du service, dans leur contribution au Service, un niveau de sécurité au moins équivalent à celui qu'il s'engage à maintenir dans sa propre politique de sécurité applicable au service ;
 
-El COMMANDITA tiene las siguientes responsabilidades en el marco del servicio:
+- Le Prestataire contractualise, avec chacun des tiers participant à la mise en œuvre du service, des clauses d'audit permettant à un organisme de qualification de vérifier que ces tiers respectent les exigences légales et les exigences SNC, permettant au Prestataire de respecter ses engagements dans la présente Convention de service.
 
-- El Prestador proporciona al COMMANDITA una plataforma de cálculo (servidor sin sistema operativo) cuya configuración es a cargo del COMMANDITA.
+- Le Prestataire met en œuvre une procédure permettant de contrôler régulièrement les mesures mises en place par les tiers participant à la mise en œuvre du service pour respecter les exigences au Prestataire de respecter ses engagements dans la présente Convention de service.
 
-- El COMMANDITA autoriza a ANSSI y al organismo de certificación SNC para auditar el servicio y la infraestructura técnica que lo entrega.
+- Le Prestataire assure un suivi des changements apportés par les tiers participant à la mise en œuvre du service susceptibles d\'affecter le niveau de sécurité du système d\'information du service.
 
-- El COMMANDITA es responsable de informar al Prestador cualquier exigencia sectorial específica relacionada con los tipos de información confiadas por el COMMANDITA y que requieren ser consideradas por el Prestador.
+## Responsabilités et obligations du COMMANDITAIRE
 
-- El COMMANDITA acepta no solicitar al Prestador requisitos o acciones que excusen al Prestador de las exigencias del référentiel SecNumCloud en su versión actual, o que reduzcan el nivel de seguridad establecido por el cumplimiento de estas mismas exigencias.
+Le COMMANDITAIRE dispose des obligations suivantes dans le cadre du Service :
 
-## DERECHOS DEL COMMANDITARIO
+- Pour rappel, le Prestataire fournit au COMMANDITAIRE une plateforme de calcul (serveur sans OS) dont la configuration de celle-ci est à la charge du COMMANDITAIRE.
 
-En cualquier momento durante la relación contratual, el COMMANDITARIO puede presentar una reclamación relacionada con el servicio calificado ante la ANSSI.
+- Le COMMANDITAIRE autorise l'ANSSI et l'organisme de qualification SNC à auditer le Service et l'infrastructure technique délivrant le Service.
 
-En cualquier momento, el COMMANDITARIO puede solicitar al Prestador que le proporcione acceso a su saldo interno y su carta de ética.
+- Le COMMANDITAIRE est responsable d\'indiquer au Prestataire les éventuelles exigences sectorielles spécifiques liées aux types d\'informations confiées par le COMMANDITAIRE et nécessitant d\'être prises en compte par le Prestataire.
 
-## Eliminación de datos al final del Contrato
+- Le COMMANDITAIRE accepte de ne pas demander au Prestataire des exigences ou actions faisant déroger le Prestataire aux exigences du référentiel SecNumCloud dans sa version courante d\'une part, ou abaissant le niveau de sécurité établi par le respect des exigences de ce même référentiel d'autre part.
 
-Al término del contrato, ya sea por vencimiento o por cualquier causa que resulte en su suspensión, el Proveedor se compromete a realizar la eliminación segura de toda la información del COMMANDITAIRE, incluyendo las datos técnicos. El Proveedor asegurará comunicar al COMMANDITAIRE un aviso formal dentro de los veinte y uno (21) días calendarios posteriores al término del contrato. Las datos del COMMANDITAIRE serán eliminadas en un plazo máximo de treinta (30) días siguientes a esta notificación.
+## Droits du COMMANDITAIRE
 
-Para corroborar este borrado, el Proveedor entregará al COMMANDITAIRE un certificado que confirme la eliminación de los datos.
+À tout moment au cours de la relation contractuelle, le COMMANDITAIRE peut déposer une réclamation relative au service qualifié auprès de l'ANSSI.
 
-## Ciclo de vida del presente Acuerdo de Servicio
+À tout moment, le COMMANDITAIRE peut demander au Prestataire de lui rendre accessible son règlement intérieur et sa charte d'éthique.
 
-1. **Planificación y Desarrollo**:
-   - Identificación de necesidades y requisitos del cliente.
-   - Diseño del sistema y arquitectura del servicio.
-   - Selección de tecnologías y plataformas adecuadas.
+## Effacement des données en fin de Contrat
 
-2. **Implementación**:
-   - Despliegue del software en la infraestructura cloud.
-   - Configuración de servicios, bases de datos, servidores, etc.
-   - Integración con otros sistemas externos (APIs, SaaS).
+À l'issue du contrat, qu'il arrive à échéance ou qu'il soit résilié pour quelque raison que ce soit, le Prestataire s'engage à procéder à l'effacement sécurisé de l'intégralité des données du COMMANDITAIRE, y compris les données techniques. Le Prestataire s'assurera de communiquer au COMMANDITAIRE un préavis formel, respectant un délai de vingt et un (21) jours calendaires. Les données du COMMANDITAIRE seront alors supprimées dans un délai maximum de trente (30) jours suivant cette notification.
 
-3. **Pruebas y Validación**:
-   - Pruebas unitarias y de integración.
-   - Pruebas de rendimiento y seguridad.
-   - Validación del cumplimiento de los requisitos del cliente.
+Pour attester de cette suppression, le Prestataire remettra au COMMANDITAIRE un certificat confirmant l'effacement des données.
 
-4. **Entrenamiento y Documentación**:
-   - Capacitación del equipo de soporte técnico.
-   - Creación de documentación técnica, manuales de usuario, etc.
+# Cycle de vie de la présente Convention de service
 
-5. **Despliegue y Mantenimiento**:
-   - Despliegue en entorno de producción.
-   - Monitoreo continuo del sistema para identificar y resolver problemas.
-   - Actualizaciones y mejoras periódicas según necesidad.
+## Entrée en effet de la Convention de service
 
-6. **Soporte y Gestión de Incidentes**:
-   - Resolución de incidentes y soporte técnico al cliente.
-   - Gestión de solicitudes de servicio y mejora continua del servicio.
+La présente Convention de service entre en effet le jour de sa signature par le COMMANDITAIRE.
 
-7. **Evaluación y Mejora Continua**:
-   - Análisis de rendimiento y eficiencia del sistema.
-   - Recopilación de comentarios del usuario para mejoras futuras.
-   - Implementación de nuevas características según demanda del mercado o necesidades del cliente.
+La collecte, la manipulation, le stockage et le traitement des données faits dans le cadre de l'avant-vente, la mise en œuvre, l'arrêt du Service​, sont faits dans le respect de la législation en vigueur.
 
-8. **Cierre**:
-   - Finalización del contrato y entrega de documentos finales.
-   - Retiro del servicio, si aplicable.
+## Évolutions de la Convention de service
 
-## Efectivación del Contrato de Servicio
+Les modifications ou ajouts apportés à la présente Convention de service découlent exclusivement des requêtes formulées par les organes de gouvernance désignés à cet effet. Ces propositions de changement seront examinées par les Parties, habilitées à déterminer les aspects nécessitant une formalisation écrite.
 
-La presente Convenio de Servicio entra en vigor el día de su firma por parte del COMMANDITARIO.
+Il est convenu que toute évolution de la Convention de service, après validation, qui altère les conditions financières initialement établies, nécessitera l'établissement et la signature d'un avenant au Contrat en cours.
 
-La recolección, manipulación, almacenamiento y tratamiento de los datos realizados en el marco de la ventanilla de ventas, implementación y detención del Servicio​ se lleva a cabo de acuerdo con la legislación vigente.
+Les facteurs pouvant induire une révision de cette Convention de service incluent, sans s'y limiter :
 
-## Evolución de la Condición de Servicio
+- L'évolution de l'infrastructure technique délivrant le Service Bare Metal ;
+- Les ajustements apportés aux services déployés par le Prestataire pour fournir le Service ;
+- Les variations des engagements pris et des sanctions applicables ;
+- Les reconfigurations organisationnelles au sein du COMMANDITAIRE ou du Prestataire ;
+- L'expansion ou la réduction du champ d'application du Service.
 
-Las modificaciones o adiciones realizadas a la presente Condición de Servicio derivan exclusivamente de las solicitudes formuladas por los órganos de gobierno designados para ello. Estas propuestas de cambio serán examinadas por las Partes, competentes para determinar los aspectos que requieren una formalización escrita.
+La gestion des versions et des révisions de la Convention de service est consignée en préambule du document pour en faciliter le suivi.
 
-Se acordó que cualquier modificación de la Condición de Servicio, después de su validación, que altere las condiciones financieras inicialmente establecidas, requerirá el estudio y firma de un adenda al Contrato vigente.
+### Évolutions déclenchées par le COMMANDITAIRE
 
-Los factores que podrían llevar a una revisión de la Condición de Servicio incluyen, pero no se limitan a:
+Les évolutions de la Convention de service peuvent avoir, notamment, pour origine :
 
-- El avance de la infraestructura técnica que entrega el Servicio Bare Metal;
-- Los ajustes realizados por el Prestatario para ofrecer el Servicio;
-- Las variaciones en los compromisos asumidos y las sanciones aplicables;
-- Las reconfiguraciones organizacionales dentro del COMMANDITAIRE o del Prestatario;
-- La expansión o reducción del alcance del Servicio.
+- Une évolution de l'infrastructure gérée par le Prestataire ;
 
-La gestión de las versiones y revisiones de la Condición de Servicio se registra en el preámbulo del documento para facilitar su seguimiento.
+- Une modification des services mis en œuvre par le Prestataire ;
 
-### Evoluciones Descendidas por el COMMANDITAIRE
+- Une modification des engagements de niveaux de services par le Prestataire.
 
-Las actualizaciones de la Convenio de Servicio pueden tener, entre otras cosas, las siguientes origen:
+### Évolutions déclenchées par le Prestataire
 
-- Una evolución de la infraestructura gestionada por el Proveedor;
+Toute modification de la Convention de service est soumise à acceptation du COMMANDITAIRE. Il est entendu que toute modification ou complément validés modifiant les éléments financiers du Contrat, pourra impliquer la signature d'un avenant à celui-ci.
 
-- Una modificación de los servicios implementados por el Proveedor;
+## Réversibilité
 
-- Una modificación de los compromisos de niveles de servicio por parte del Proveedor.
+Cloud Temple s'engage à permettre une révision de la présente Convention de service (prévoyant notamment sa résiliation) sans pénalité pour le COMMANDITAIRE en cas de perte de la qualification SecNumCloud.
 
-### Modificaciones Ejercidas por el Proveedor
+Les Services ne comprennent pas d'obligation de réversibilité (à savoir, l'aide au COMMANDITAIRE pour qu'il puisse migrer son système vers un autre" Prestataire) à l'exception de la mise à disposition du COMMANDITAIRE par le Prestataire de l'interface COMMANDITAIRE permettant au COMMANDITAIRE de sauvegarder et récupérer ses données y compris notamment les données de configuration de leur système d'information via l'une des modalités techniques suivantes au choix du COMMANDITAIRE : la mise à disposition de fichiers suivant un ou plusieurs formats documentés et exploitables en dehors du service fourni par le Prestataire ou bien via la mise en place d'interfaces techniques permettant l'accès aux données suivant un schéma documenté et exploitable (API).
 
-Cualquier modificación de la Condición del Servicio está sujeta a la aceptación del COMMANDITARIO. Se entiende que cualquier modificación o complemento validado que modifique los elementos financieros del Contrato, podrá requerir la firma de un adhesión al mismo.
+Le COMMANDITAIRE, seul maître de son système, doit tout mettre en œuvre pour faciliter cette opération en tant que de besoin (ce qui implique, notamment, qu'il mette en place une documentation rigoureuse à cet effet) et l'élaboration de plans de réversibilité. Dans le cas où le COMMANDITAIRE aurait besoin d'une prestation complémentaire, le Prestataire peut proposer une mission de conseil à cet égard dans le cadre d'un contrat spécifique à négocier.
 
-## Reversibilidad
+# Disponibilité, continuité et restauration du service
 
-Cloud Temple se compromette a garantir la revisibilité de la presente Condición de Servicio (que incluye, entre otras cosas, su revocación) sin penalización para el COMMANDITAIRE en caso de pérdida de la calificación SecNumCloud.
+## Gestion des Incidents et des interruptions
 
-Los Servicios no contienen obligación de reversibilidad (es decir, ayuda al COMMANDITAIRE para que pueda migrar su sistema a otro "Prestatario") a excepción de la entrega del COMMANDITAIRE por parte del Prestatario de la interfaz COMMANDITAIRE que permite al COMMANDITAIRE guardar y recuperar sus datos, incluyendo los datos de configuración de su sistema de información a través de una o más modalidades técnicas documentadas y explotables fuera del servicio proporcionado por el Prestatario: la entrega de archivos siguiendo un o más formatos documentados y explotables fuera del servicio ofrecido por el Prestatario o bien mediante la implementación de interfaces técnicas que permitan el acceso a los datos siguiendo un esquema documentado y explotable (API).
+### Incidents
 
-El COMMANDITAIRE, único responsable de su sistema, debe tomar todas las medidas necesarias para facilitar esta operación en caso de necesidad (lo que implica, entre otras cosas, la implementación de una documentación rigurosa a este respecto) y la elaboración de planes de reversibilidad. En el caso de que el COMMANDITAIRE requiera una prestación adicional, el Prestatario puede ofrecer una misión de asesoramiento en torno a esto dentro del marco de un contrato específico a negociar.
+#### Types d'Incidents traités dans le cadre de cette Convention de service
 
-## Disponibilidad, Continuidad y Restauración del Servicio
+- Sinistres ;
 
-La disponibilidad, la continuidad y la restauración del servicio son aspectos cruciales en el ámbito de la computación en la nube y los sistemas IT. Estos conceptos se centran en garantizar que los servicios digitales estén accesibles, funcionen sin interrupciones y puedan recuperarse rápidamente en caso de fallos o desastres.
+- Pannes et défaillances ;
 
-### Disponibilidad
+- Incidents de sécurité impactant la disponibilité, la confidentialité ou l'intégrité du Service.
 
-La disponibilidad se refiere a la capacidad de un servicio para estar operativo y accesible a los usuarios cuando son necesarios. Se mide generalmente como el porcentaje de tiempo que un sistema está funcionando correctamente en un período determinado (por ejemplo, un mes). Un alto nivel de disponibilidad se logra mediante la implementación de estrategias de redundancia, la utilización de infraestructuras robustas y la planificación de mantenimientos proactivos.
+#### Traitement des incidents
 
-### Continuidad
+> Le Prestataire informe le COMMANDITAIRE dans les meilleurs délais, des incidents et interruptions, au moyen d'une notification dans la console COMMANDITAIRE ou par courriel au contact COMMANDITAIRE. Le Prestataire informe le COMMANDITAIRE du traitement de l'incident par le canal utilisé pour notifier l'incident, ou par le canal indiqué dans la notification de l'incident.
 
-La continuidad del servicio implica que el sistema puede seguir operando sin interrupciones significativas incluso en caso de fallos o desastres. Esto se logra mediante la implementación de mecanismos de respaldo y recuperación ante desastres, como copias de seguridad regulares, sistemas de replicación y planes de contingencia. La continuidad también abarca la capacidad del sistema para adaptarse a cambios en la demanda o eventos imprevistos sin comprometer el rendimiento o la calidad del servicio.
+#### Niveau de notification des Incidents de sécurité
 
-### Restauración del Servicio
+Le COMMANDITAIRE a la responsabilité de choisir les niveaux de gravité des Incidents de sécurité pour lesquels il souhaite être informé, par exemple via leur formalisation dans un PAS applicable au Service.
 
-La restauración del servicio es la capacidad de un sistema para recuperarse rápidamente de una interrupción y volver a operar a su estado normal. Una buena estrategia de restauración incluye:
+Par défaut, le COMMANDITAIRE est informé :
 
-- **Planificación de Contingencia**: Desarrollar planes detallados que describan los pasos a seguir en caso de un incidente.
-- **Copias de Seguridad**: Mantener copias de seguridad frecuentes y verificar su integridad.
-- **Procesos de Recuperación Automática (DR)**: Implementar automatización para minimizar el tiempo de inactividad.
-- **Pruebas de DR**: Realizar pruebas periódicas para validar la efectividad del plan de recuperación ante desastres.
+- Des incidents de sécurité avec impact (impacts I1 et I2 selon l'échelle d'impact définie dans le processus de priorisation des traitements de la présente Convention de service) ;
 
-### Estrategias y Tecnologías
+- Des incidents de sécurité impactant la confidentialité ou l'intégrité des données du COMMANDITAIRE confiées dans le cadre du Service ;
 
-Para lograr altos niveles de disponibilidad, continuidad y restauración del servicio, se emplean diversas estrategias y tecnologías:
-
-- **Distribución de Carga**: Distribuir el tráfico entre múltiples servidores para evitar el colapso.
-- **Redundancia**: Duplicar componentes críticos del sistema (hardware, software) para garantizar que si uno falla, otro pueda tomar su lugar.
-- **Sistemas de Replicación**: Mantener múltiples copias de datos en diferentes ubicaciones geográficas.
-- **Plataformas de Computación en la Nube**: Utilizar servicios como AWS, Azure o Google Cloud que ofrecen alta disponibilidad y capacidad de escalado automático.
-- **Tecnologías de Monitoreo**: Implementar herramientas de monitoreo continuo para detectar problemas antes de que afecten la calidad del servicio.
-
-### Consideraciones Críticas
-
-Asegurar una alta disponibilidad, continuidad y restauración del servicio no solo implica tecnología, sino también planificación cuidadosa, capacitación del personal y políticas de gestión de riesgos. Es crucial que las organizaciones evalúen regularmente sus procesos y adapten sus estrategias para enfrentar nuevos desafíos y amenazas.
-
-En resumen, la disponibilidad, continuidad y restauración del servicio son aspectos esenciales para cualquier sistema de computación en la nube o IT complejo. Su implementación adecuada no solo mejora la experiencia del usuario, sino que también fortalece la confianza y la resiliencia frente a eventos adversos.
-
-### Gestión de incidentes y interrupciones
-
-## Incidentes
-
-#### Tipos de incidentes abordados en el marco de esta Convenio de servicio
-
-- Siniestros;
-
-- Apagones y fallas;
-
-- Incidentes de seguridad que afecten la disponibilidad, confidencialidad o integridad del Servicio.
-
-### Tratamiento de incidentes
-
-El Proveedor informa al COMMANDITARIO en los plazos más rápidos posibles sobre los incidentes y las interrupciones, a través de una notificación en la consola COMMANDITARIO o por correo electrónico al contacto COMMANDITARIO. El Proveedor informa al COMMANDITARIO del tratamiento del incidente mediante el canal utilizado para notificar el incidente, o mediante el canal indicado en la notificación del incidente.
-
-#### Nivelación de notificación de incidentes de seguridad
-
-El COMMANDITAIRE tiene la responsabilidad de seleccionar los niveles de gravedad de los Incidentes de seguridad por los cuales desea recibir noticias, por ejemplo, a través de su formalización en un PAS aplicable al Servicio.
-
-Por defecto, el COMMANDITAIRE recibe:
-
-- Incidentes de seguridad con impacto (impactos I1 y I2 según la escala de impacto definida en el proceso de priorización de los tratamientos del presente Acuerdo de Servicio) ;
-
-- Incidentes de seguridad que afecten la confidencialidad o la integridad de los datos del COMMANDITAIRE confiados en el marco del Servicio ;
-
-- Violaciones de datos personales para las que el COMMANDITAIRE es responsable del tratamiento de conformidad con el artículo 8 de la Anexo DPA en el marco del Servicio ;
+- Des violations de données à caractère personnel pour lesquelles le COMMANDITAIRE est responsable du traitement conformément à l'article 8 de l'Annexe DPA dans le cadre du Service ;
 
 -
 
-### Mantenimiento del Servicio
+## Maintenance du Service
 
-### Naturaleza de la mantenimiento
+### Nature de la maintenance
 
-Violaciones de datos personales a los que el Proveedor es responsable del tratamiento y que contienen datos personales del COMMANDITARIO, en conformidad con el artículo 8 de la Anexo DPA. La mantenimiento garantizado consiste en la implementación:
+Des violations de données à caractère personnel pour lesquelles le Prestataire est responsable du traitement et comportant des données personnelles du COMMANDITAIRE, conformément à l'article 8 de l'Annexe DPA. La maintenance assurée consiste en la mise en œuvre :
 
-- Del plan de mantenimiento en condiciones operativas del Servicio para asegurar buenos indicadores de disponibilidad tal como lo compromete el Proveedor anteriormente;
+- Du plan de maintien en conditions opérationnelles du Service pour assurer de bons indicateurs de disponibilité tels que s'y engage le Prestataire plus haut ;
 
-- Del plan PCA/PRA, si es suscrito por el COMMANDITARIO, que se activará en caso de incidentes que puedan ocurrir.
+- Du plan de PCA/PRA si souscrit par le COMMANDITAIRE déclenché selon les éventuels incidents qui surviendraient.
 
-### Acceso remoto a Cloud Temple fuera del perímetro del COMMANDITAIRE
+### Accès distants de Cloud Temple sur le périmètre du COMMANDITAIRE
 
-El Proveedor se prohibe, en el marco de la presente Condición de Servicio, cualquier acceso a los Tenants y al espacio de la interfaz del COMMANDITAIRE.
+Le Prestataire s'interdit, dans le cadre de la présente Convention de service, tout accès aux Tenants et à l'espace de l'interface du COMMANDITAIRE.
 
-Será responsabilidad del COMMANDITAIRE otorgar las autorizaciones necesarias al personal del Proveedor. El COMMANDITAIRE reconoce que dichos accesos se utilizarán en el marco del alojamiento y, finalmente, de la gestión (si es contratado por el COMMANDITAIRE).
+Il incombera au COMMANDITAIRE donner les accès nécessaires au personnel du Prestataire. Le COMMANDITAIRE reconnaît que les accès seront utilisés dans le cadre de l'hébergement et in fine de l'infogérance (si souscrit par le COMMANDITAIRE).
 
-### Acceso remoto de terceros para la prestación del servicio dentro del ámbito del COMMANDITAIRE
+### Accès distants de tiers participant à la fourniture du service sur le périmètre du COMMANDITAIRE
 
-No se permite acceso remoto de terceros para la prestación del servicio en el perímetro del COMMANDITAIRE.
+Aucun accès distant de tiers participant à la fourniture du Service n'est autorisé.
 
-En caso que un requerimiento técnico lo hiciera necesario, dicho tipo de acceso solo sería realizado después de notificar al COMMANDITAIRE la justificación y obtener su acuerdo escrito.
+Si un besoin technique rendait ce cas de figure nécessaire, alors ce type d'accès ne serait réalisé qu'après notification du COMMANDITAIRE justification et obtention de son accord écrit.
 
-# Procedimiento de eliminación de datos al final del Contrato
+# Procédure d'effacement des données en fin de Contrat
 
-Al finalizar el contrato, ya sea por finalización del plazo o por cualquier otra causa, el Proveedor asegurará la eliminación segura de toda la información procesada en el marco del Servicio, incluyendo las Datos técnicos del COMMANDITAIRE. El Proveedor notificará formalmente al COMMANDITAIRE con un plazo de veintiuno días (21) calendario. Las datos del COMMANDITAIRE serán eliminadas en un plazo máximo de treinta (30) días posteriores a la notificación. El Proveedor proporcionará un certificado de eliminación de datos al COMMANDITAIRE.
+A la fin du Contrat, que le Contrat soit arrivé à son terme ou pour toute autre cause, le Prestataire assura l'effacement sécurisé de l'intégralité des données traitées dans le cadre du Service, y compris les Données techniques du COMMANDITAIRE. Le Prestataire donnera un préavis formel en respectant un délai de vingt et un jours (21) calendaires. Les données du COMMANDITAIRE seront supprimées dans un délai maximum de trente (30) jour après la notification. Le Prestataire fournit un certificat de suppression de données au COMMANDITAIRE.
 
-## Derecho aplicable
+# Droit applicable
 
-Note: The Markdown structure and formatting are preserved as is. Only the text content outside of HTML, Markdown, or code blocks was translated from French to Spanish. The translation follows strict rules, ensuring no alteration or modification of structural elements (like headers, lists, code blocks) or HTML/Markdown syntax.
+## De manière générale
 
-## En general
+Le droit applicable et auquel est soumise la présente Convention de service est le droit français.
 
-El derecho aplicable y al que está sujeto la presente Convenio de Servicio es el derecho francés.
+## Respect du droit et des réglementations applicables
 
-## Respeto al cumplimiento de las leyes y regulaciones aplicables
+Le Prestataire s'engage sur les points suivants :
 
-El Proveedor se compromete a los siguientes puntos:
+- L'identification des contraintes légales et réglementaires applicables dans le cadre du Service ;
 
-- Identificación de las restricciones legales y regulatorias aplicables en el marco del Servicio;
+- Le respect des contraintes légales et réglementaires applicables aux données confiées au Prestataire dans la limite des responsabilités de ce dernier d\'une part, et des dispositions prévues au Contrat d\'autre part.;
 
-- Cumplimiento de las restricciones legales y regulatorias aplicables a los datos confiados al Proveedor, dentro de las responsabilidades de este último, y de acuerdo con las disposiciones previstas en el Contrato.
+- Le respect de la Loi informatique et liberté et du RGPD ;
 
-- Cumplimiento de la Ley de Informática y Libertad (LIL) y del Reglamento General de Protección de Datos (RGPD);
+- La mise en œuvre de moyens de protection des données personnelles ;
 
-- Implementación de medidas de protección de datos personales;
+- La mise en œuvre d'un processus de veille légale et réglementaire ;
 
-- Establecimiento y mantenimiento de un proceso de vigilancia legal y regulatoria;
-
-- Disponer y mantener relaciones apropiadas o una vigilancia con las autoridades sectoriales en relación con la naturaleza de los datos tratados en el marco del Servicio. Esto incluye, entre otros, ANSSI (Agence nationale de la sécurité des systèmes d'information), CERT-FR (Centre national de prévention et de lutte contre les attaques informatiques) y CNIL (Commission nationale de l'informatique et des libertés).
+- De disposer et maintenir des relations appropriées ou une veille avec les autorités sectorielles en lien avec la nature des données traitées dans le cadre du Services. Cela inclus notamment l'ANSSI, le CERT-FR et la CNIL.
 
 ## RGPD
 
-Acting as a subcontractor within the meaning of Article 28 of the General Data Protection Regulation (RGPD), the Provider commits to:
+Agissant en qualité de sous-traitant au sens de l'article 28 du Règlement général sur la protection des données (RGPD), le Prestataire s'engage :
 
-- Ensuring transparency and traceability;
+- A assurer la transparence et la traçabilité ;
 
-- Designating a DPO responsible for defining and implementing data protection measures concerning personal data;
+- A désigner un DPO en charge de définir et mettre en œuvre les mesures de protection des données à caractère personnel ;
 
-- Providing assistance and advice to the COMMANDITAIRE, alerting them if an instruction from the latter constitutes a violation of data protection rules regarding personal data that the Provider can identify;
+- Apporter une assistance et du conseil au COMMANDITAIRE en l'alerte si une instruction de ce dernier constitue une violation des règles de protection des données personnelles si le Prestataire a le moyen d'en identifier ;
 
-- Ensuring security of processed data (due to SecNumCloud qualification).
+- Une garantie de sécurité sur les données traitées (du fait de la qualification SecNumCloud).
 
-## Protección contra riesgos extracomunitarios
+## Protection vis à vis du droit extra-européen
 
-El domicilio social del Proveedor se encuentra dentro de un Estado miembro de la Unión Europea. El capital social y los derechos de voto en la sociedad del Proveedor no están, directa ni indirectamente:
+Le siège statuaire du Prestataire est établi au sein d\'un État membre de l\'Union Européenne. Le capital social et les droits de vote dans la société du Prestataire ne sont pas, directement ou indirectement :
 
-- individualmente poseídos a más del 24%,
+- individuellement détenus à plus de 24% ;
 
-- y colectivamente poseen a más del 39% de manera conjunta o en conjunto con entidades terceras que tengan su domicilio social, centro administrativo o principal establecimiento ubicado en un Estado no miembro de la Unión Europea.
+- et collectivement détenus à plus de 39% ;
 
-En caso de reclamo por parte del Proveedor, dentro del servicio, al servicio de una sociedad tercera (incluyendo un subcontratista) que tenga su domicilio social, centro administrativo o establecimiento principal ubicado en un Estado no miembro de la Unión Europea o que sea propiedad o controlada por una sociedad tercera domiciliada fuera del Espacio Económico Europeo (EEE), el Proveedor se compromete:
+par des entités tierces possédant leur siège statutaire, administration centrale ou principal établissement au sein d'un État non membre de l'Union européenne.
 
-- a que dicha sociedad tercera no tenga acceso a las operaciones confidenciales;
+En cas de recours par le Prestataire, dans le cadre du Service, au service d\'une société tierce - y compris un sous-traitant - possédant son siège statutaire, administration centrale ou principal établissement au sein d\'un État non membre de l\'Union Européenne ou appartenant ou étant contrôlée par une société tierce domiciliée en dehors l\'Union Européenne, le Prestataire s\'engage :
 
-- a disponer de autonomía operativa mediante la posibilidad de contratar a otro subcontratista o implementar rápidamente una alternativa tecnológica.
+- à ce que cette susdite société tierce ne disposera d\'aucun accès aux données opérées ;
 
-Para recordatorio, los datos mencionados son aquellos que el COMMANDITAIRE confía al Proveedor, así como todas las Datas técnicas que incluyen información sobre los COMMANDITAIRES.
+- à disposer d\'une autonomie d\'exploitation à travers la possibilité de faire appel à un autre sous-traitant ou de mettre rapidement en oeuvre une alternative technologique.
 
-Para los fines de este artículo, la notion de control se entiende según lo mencionado en el artículo L233-3 II del Código de Comercio.
+Pour rappel, les données visées sont celles qui sont confiées au Prestataire par le COMMANDITAIRE ainsi que toutes Données techniques comprenant des informations sur les COMMANDITAIRES.
 
-# FIRMAZAS
+Pour les besoins du présent article, la notion de contrôle est entendue comme étant celle mentionnée au II de l'article L233-3 du code de commerce.
 
-Firmado en \_\_\_\_\_\_\_\_\_\_\_\_\_\_\, el \_\__\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+# SIGNATURES
 
-Por Cloud Temple, EL PROVEEDOR
+Fait à \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, le \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Para \_\__\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, EL CONTRATISTA
+Pour Cloud Temple, le PRESTATAIRE
+
+Pour \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, le COMMANDITAIRE

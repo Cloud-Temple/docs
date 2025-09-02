@@ -1,215 +1,215 @@
 ---
-title: Politica di Manutenzione in Condizioni Operative (MCO) e Manutenzione in Condizioni di Sicurezza (MCS) su Piattaforma a Cloud OpenShift SNC - Tempio del Cloud
+title: MCO/MCS
 ---
 
-Note: The provided text is already in Markdown format, and it includes some technical terms related to cloud computing. I have ensured that the structure, formatting, and non-structural elements like headers (# MCO/MCS) are preserved as they are. The content within tables (including table headers) has been translated, while code blocks (Python syntax, for instance) remain unchanged, adhering to the rules provided.
+**Politique de Maintien en Conditions Opérationnelles (MCO) et de Maintien en Conditions de Sécurité (MCS) sur le PaaS OpenShift SNC **Cloud Temple****
 
-The text translates to:
+## Préambule
 
----
-**MCO/MCS Policy on Operational Readiness (MCO) and Security Maintenance (MCS) on OpenShift PaaS SNC Cloud**
----
-
-## Introduzione
-
-Questa politica descrive le compiti e le consigli per il Mantenimento in Condizioni Operative (MCO) e il Mantenimento in Condizioni di Sicurezza (MCS) dei tuoi ambienti su Piattaforma come Servizio Contenuto (OpenShift) SNC **Cloud Temple**.
+Cette politique détaille les responsabilités et les recommandations pour le Maintien en Conditions Opérationnelles (MCO) et le Maintien en Conditions de Sécurité (MCS) de vos environnements sur le PaaS OpenShift SNC **Cloud Temple**.
 
 ---
 
-### Mantenimento delle Condizioni Operative (MCO)
+## Maintien en Conditions Opérationnelles (MCO)
 
-### Gestione e aggiornamenti dei cluster
+### Gestion et mise à jour des clusters
 
-**Responsabilità di Cloud Temple:**
+**Responsabilité **Cloud Temple** :**
 
-- Gestione completa dell'infrastruttura sottostante, compresi i nodi di controllo, le aggiornamenti delle versioni OpenShift e la resilienza dei servizi critici gestiti da Cloud Temple.
-- Aggiornamenti minori/patch automatici senza interruzioni per le carichi di lavoro ospitati, a meno che non venga richiesto un'avviso contrario.
-- Limitazione dei diritti e delle funzionalità alle restrizioni SecNumCloud.
-- Comunicazione degli aggiornamenti futuri e delle fratture sulle tre prossime mesi tramite la [**Roadmap Cloud Temple**](https://github.com/orgs/Cloud-Temple/projects/2).
+- Gestion complète de l'infrastructure sous-jacente, incluant les nœuds maîtres, les mises à jour de versions OpenShift, et la résilience des services critiques déployés par **Cloud Temple**.
+- Mises à jour mineures/patches automatiques sans interruption pour les charges de travail hébergées, sauf notification contraire.
+- Limitation des droits et des fonctionnalités aux contraintes SecNumCloud.
+- Communication des mises à jour à venir et des mises à jour de fractures sur les trois prochains mois via la [**Roadmap Cloud Temple**](https://github.com/orgs/Cloud-Temple/projects/2)
 
-**Responsabilità dell'utente:**
+**Responsabilité de l'utilisateur :**
 
-- Gestione dei carichi di lavoro (applicazioni, strumenti CI/CD) e delle loro configurazioni.
-- Test degli aggiornamenti del carico di lavoro su un ambiente staging prima del deploiamento in produzione.
-- Assicurazione della compatibilità dei carichi di lavoro con i componenti del cluster.
+- Gestion des charges de travail déployées (applications, outils CI/CD) et de leurs configurations.
+- Tests des mises à jour de charge de travail sur un environnement de staging avant déploiement en production.
+- Assurance de la compatibilité des charges de travail avec les composants du cluster.
 
-**Raccomandazione:**
+**Recommandation :**
 
-- Pianificare gli aggiornamenti applicativi fuori dalle fasce di manutenzione per evitare conflitti con gli aggiornamenti automatici del cluster.
-- Seguire le comunicazioni di Cloud Temple riguardo agli aggiornamenti principali per pianificare eventuali aggiustamenti necessari.
-- Seguire le fratture future tramite la [**Roadmap prodotto**](https://github.com/orgs/Cloud-Temple/projects/2).
-- Abbonarsi alle notifiche degli incidenti (https://github.com/orgs/Cloud-Temple/projects/2#gestion-des-notifications).
-
-### Supervisione e monitoraggio
-
-**Responsabilità di Cloud Temple:**
-
-- Supervisione e monitoraggio dell'infrastruttura e dei servizi sottostanti forniti da Cloud Temple.
-
-**Responsabilità dell'utente:**
-
-- Supervisione e monitoraggio delle proprie applicazioni.
-
-**Raccomandazione:**
-
-Utilizzare gli strumenti native forniti:
-
-- Analisi dei log di prestazioni e degli eventi tramite la console OpenShift.
-- Configurazione di avvisi personalizzati basati sui metriche del cluster e sui pod tramite l'interfaccia utente.  
-
-Configurare i livelli critici di allarme:
-
-- **CPU/Memoria dei pod**: ≥ 80 %.
-- **Spazio su volume persistenti**: ≥ 85 %.
-- **Errore di avvio dei pod**: più di X occorrenze in 10 minuti.  
-
-Automatizzare l'aumento degli allarmi verso i tuoi strumenti di gestione per una risposta rapida.  
+- Planifier les déploiements applicatifs en dehors des fenêtres de maintenance pour éviter les conflits avec les mises à jour automatiques du cluster.
+- Suivre les communications **Cloud Temple** concernant les mises à jour majeures pour planifier les ajustements nécessaires.
+- Suivre les mises à jour à venir via la [**Roadmap produit**](https://github.com/orgs/Cloud-Temple/projects/2)
+- S'abonner aux notifications [**d'incidents**](../../console/status.md#gestion-des-notifications)
 
 ---
 
-### Backup and Restore
+### Supervision et monitoring
 
-The critical components of the cluster are automatically backed up by **Cloud Temple**. Workloads and user data require dedicated management.
+**Responsabilité **Cloud Temple** :**
 
-**Responsibility of Cloud Temple:**
+- Supervision et monitoring de l'infrastructure et des services sous-jacents déployés par **Cloud Temple**.
 
-- Automatic redundancy mechanisms within the infrastructure.
-- Automated backups of cluster configurations.
+**Responsabilité de l'utilisateur :**
 
-**User Responsibility:**
+- Supervision et monitoring de ses charges de travail.
 
-- Save critical workload data using solutions such as the **Kasten** offering available in the **Cloud Temple** catalog.
+**Recommandation :**
 
-**Recommendation:**
+Utiliser les **outils natifs fournis :**
 
-- Establish regular backup policies:
-  - Automatic backups of PVs with Kasten.
-  - Daily backups of Kubernetes configurations, secrets, and YAML deployment files.
-- Regularly test restores to validate RPO (Recovery Point Objective).
+- Analyse des logs de performance et des événements via la console OpenShift.
+- Configuration d'alertes personnalisées à partir des métriques du cluster et des pods via l'interface utilisateur.  
+  
+Configurer des seuils critiques d'alerte :
 
-### Gestione delle Condizioni di Sicurezza (MCS)
+- **CPU/Mémoire** des pods : ≥ 80 %.
+- **Espace disque sur les volumes persistants** : ≥ 85 %.
+- **Échecs au démarrage des pods** : plus de X occurrences en 10 minutes.  
+  
+Automatiser l’escalade des alertes vers vos outils de gestion pour une réaction rapide.  
 
-### Gestione dei segreti e delle configurazioni
+---
 
-Utilizzo dei segreti OpenShift/Kubernetes e raccomandazione di integrare sistemi di gestione centralizzati dei segreti.
+### Sauvegardes et restauration
 
-**Responsabilità Cloud Temple:**
+Les composants critiques du cluster sont sauvegardés automatiquement par **Cloud Temple**. Les charges de travail et les données des utilisateurs nécessitent une gestion dédiée.
 
-- La gestione dei segreti e della configurazione dell'infrastruttura e dei servizi subordinari all'offerta è responsabilità di **Cloud Temple**.
+**Responsabilité **Cloud Temple** :**
 
-**Responsabilità dell'utente:**
+- Mécanismes de redondance automatique au sein de l’infrastructure.
+- Sauvegardes automatiques des configurations de cluster.
 
-- La gestione dei segreti e della configurazione delle applicazioni del **Client** è responsabilità del **Client**.
+**Responsabilité de l'utilisateur :**
 
-**Raccomandazione:**
+- Sauvegarder les données critiques des charges de travail en utilisant des solutions telles que l'offre **Kasten** disponible dans le catalogue **Cloud Temple**.
 
-- Non memorizzare i segretti in formato chiaro nei file YAML.
-- Utilizzare strumenti per crittografare le informazioni sensibili.
+**Recommandation :**
 
-### Access Control (IAM)
+- Mettre en place des politiques de sauvegarde régulières :
+  - Sauvegardes automatiques des PV avec Kasten.
+  - Sauvegarde quotidienne des configurations Kubernetes, secrets, et déploiements YAML.
+- Tester régulièrement les restaurations pour valider les RPO.
 
-The access review is carried out through the Shiva console and the "User Management" module of the OpenShift console.
+---
 
-For more details on this feature, refer to our [**guide**](../../console/iam/iam.md) and the [**documentation**](https://docs.redhat.com/en/documentation/openshift_container_platform/) provided by the editor.
+## Maintien en Conditions de Sécurité (MCS)
 
-**Responsibility:**
+### Gestion des secrets et des configurations
 
-- **Cloud Temple**:
-  - Manages service accounts and administrative accounts.
-  - Integrates with the Cloud Temple identity system for access management.
-  - Sets up default Role-Based Access Control (RBAC) configuration and restricts initial user permissions.
-  - Provides and maintains the two-factor authentication system to enhance access security.
+Utilisation des secrets OpenShift/Kubernetes et recommandation d'intégrer des systèmes de gestion centralisée des secrets.
 
-**User Responsibility:**
+**Responsabilité **Cloud Temple** :**
 
-- The **Client** must regularly review user access rights.
-- The **Client** is responsible for granting user access and onboarding them into their tenant.
-- The **Client** must manage users within the constraints set by the Cloud Temple system.
+- La gestion des secrets et de la configuration de l'infrastructure et des services sous-jacents à l'offre est de la responsabilité de **Cloud Temple**.
 
-### Vuln Management
+**Responsabilité de l'utilisateur :**
 
-Vulnerabilities on the underlying infrastructure and services of our offer will be communicated within the incident module.
+- La gestion des secrets et de la configuration des charges de travail du **Client** est de la responsabilité du **Client**.
+  
+**Recommandation :**
 
-**Cloud Temple Responsibilities:**
+- Ne pas stocker de secrets en texte clair dans les fichiers YAML.
+- Utiliser des outils pour chiffrer les informations sensibles.
 
-- **Cloud Temple** is responsible for communicating vulnerabilities on the infrastructure and underlying services via the [**incident**](../../console/status.md) module of the SHIVA console upon detection.
-- **Cloud Temple** is responsible for applying patches within this scope.
-- **Cloud Temple** sets up **[Quay]** by default to perform automated scanning of Docker images.
+### Contrôle des accès (IAM)
 
-**User Responsibilities:**
+La revue des accès se réalise par l'intermédiaire de la console Shiva et du module "User Management" de la console OpenShift.
 
-- The **Client** is responsible for detecting and fixing vulnerabilities in their workloads.
-- The **Client** is responsible for upgrading their workloads to enable the quickest application of security patches.
+Pour plus de détails sur cette fonctionnalité, se référer à notre [**guide**](../../console/iam/iam.md) et à la [**documentation**](https://docs.redhat.com/en/documentation/openshift_container_platform/) de l'éditeur.
 
-**Recommendation:**
+**Responsabilité **Cloud Temple** :**
 
-- Utilize the cluster alerting provided by **[Quay]** for analyzing vulnerabilities and detecting anomalies in images used by the **Client**.
-- Subscribe to incident notifications via [**incidents**](../../console/status.md#gestion-des-notifications).
+- **Cloud Temple** est responsable de la gestion des comptes de service et d'administration.
+- **Cloud Temple** est responsable de l'intégration au système d'identité **Cloud Temple** pour gérer les accès.
+- **Cloud Temple** est responsable de la mise en place par défaut de la configuration **RBAC** et des restrictions des droits des utilisateurs initiales.
+- **Cloud Temple** est responsable de la fourniture du système de **double authentification** et de son maintien pour renforcer les accès.
+  
+**Responsabilité de l'utilisateur :**
 
-### Encryption
+- Le **Client** doit contrôler régulièrement les accès de ses utilisateurs.
+- Le **Client** est responsable de l'octroi des accès à ses utilisateurs et de leur onboarding dans le tenant.
+- Le **Client** doit gérer ses utilisateurs dans le respect des limitations imposées par le système **Cloud Temple**.
 
-Ensure native encryption on the Cloud Temple infrastructure, along with workload recommendations.
+### Gestion des vulnérabilités
 
-**Cloud Temple Responsibility:**
+Les vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre seront communiquées dans le module incident.
 
-- Redundancy mechanisms within the infrastructure.
-- Automated backups of cluster configurations.
+**Responsabilité **Cloud Temple** :**
 
-**User Responsibility:**
+- **Cloud Temple** est responsable de la communication des vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre dès leur détection via le module [**incident**](../../console/status.md) de la console SHIVA.
+- **Cloud Temple** est responsable de l'application des correctifs sur ce périmètre.
+- **Cloud Temple** est responsable de la mise à disposition d'outils pour analyser les vulnérabilités des images Docker. Par défaut, **Cloud Temple** met en place **[Quay]** pour effectuer le scan automatique des images Docker.
 
-- Back up critical workload data using solutions such as **Kasten**, available in the Cloud Temple catalog.
-- Ensure workloads utilize resilience mechanisms and adapt deployments accordingly.
+**Responsabilité de l'utilisateur :**
 
-**Recommendation:**
+- Le **Client** est responsable de la détection et de la correction des vulnérabilités dans ses charges de travail.
+- Le **Client** est responsable de mettre à niveau ses charges de travail pour permettre l'application des patchs de sécurité au plus vite.
 
-- Enable TLS encryption for all intra-pod communications.
-- Enable TLS encryption for all communications between Cloud Temple PaaS and IaaS offerings.
-- Ensure data at rest encryption via Cloud Temple storage solutions.
+**Recommandation :**
 
-### Logging and Auditing
+- Utiliser l'alerting du cluster fourni par **[Quay]** pour analyser les vulnérabilités et détecter les comportements anormaux dans les images utilisées par le **Client**.
+- S'abonner aux notifications d'[**incidents**](../../console/status.md#gestion-des-notifications).
 
-Automatic logging of critical events within the cluster.
+### Chiffrement
 
-**Cloud Temple Responsibility:**
+Garantie d'un chiffrement natif sur l'infrastructure **Cloud Temple**, avec recommandations pour les charges de travail.
 
-- Cloud Temple is responsible for logging and auditing the underlying infrastructure and services supporting the offering.
+**Responsabilité **Cloud Temple** :**
 
-**User Responsibility:**
+- Mécanismes de redondance au sein de l’infrastructure.
+- Sauvegardes automatiques des configurations de cluster.
 
-- The **Client** is responsible for logging and auditing their workloads.
+**Responsabilité de l'utilisateur :**
 
-**Recommendation:**
+- Sauvegarder les données critiques des charges de travail en utilisant des solutions telles que l'offre **Kasten** disponible dans le catalogue **Cloud Temple**.
+- S'assurer que les charges de travail utilisent les mécanismes de résilience et adapter les déploiements pour les mettre en œuvre.
 
-- Set up pipelines to centralize and analyze your workload logs:
-  - Use collectors for log aggregation, with a visualization tool.
-  - Integrate logs into your **SIEM** (highly recommended).
+**Recommandation :**
 
-## Incident Management and Business Continuity Plan (PCA)
+- Activer le **chiffrement TLS** pour toutes les communications intra-pod.
+- Activer le **chiffrement TLS** pour toutes les communications entre les Offres PaaS et IaaS **Cloud Temple**.
+- Assurer le chiffrement des données au repos via les solutions de stockage **Cloud Temple**.
 
-### Cloud Temple Responsibilities:
+### Journalisation et audit
 
-- **Cloud Temple** is responsible for redundancy mechanisms within the infrastructure.
-- **Cloud Temple** manages automated backups of cluster configurations.
-- **Cloud Temple** ensures business resumption following an incident affecting the infrastructure or underlying services offered.
+Enregistrement automatique des événements critiques du cluster.
 
-### User Responsibilities:
+**Responsabilité **Cloud Temple** :**
 
-- The **Client** is responsible for backing up critical workload data using solutions like the **Kasten** offering available in the Cloud Temple catalog.
-- The **Client** must ensure workloads utilize resilience mechanisms and adapt deployments accordingly.
-- The **Client** is solely responsible for PRA/PCA of their workloads.
+- **Cloud Temple** est responsable de la journalisation et de l'audit de l'infrastructure et des services sous-jacents à l'offre.
 
-### Incident Recovery Procedure
+**Responsabilité de l'utilisateur :**
 
-- In case of complete loss of access to a cluster, the **Client** must report an incident to Cloud Temple's support via the support module in the console.
-  - Refer to the [**support request procedure**](../../console/console_quickstart.md#accessing-technical-support) for details.
+- Le **Client** est responsable de la journalisation et de l'audit de ses charges de travail.
+  
+**Recommandation :**
 
-## Recommandazioni generali
+- Configurer des pipelines pour centraliser et analyser les logs de vos charges de travail :
+  - Utiliser des collecteurs, pour l'agrégation de logs, avec un outil de visualisation.
+  - Intégrer les logs à votre **SIEM** (recommandé).
 
+---
 
-1. **Pianificare le risorse**: Assicurarsi che la capacità del cluster sia sufficiente per le carichi di lavoro di punta.
-2. **Verificare le configurazioni**: Testare le applicazioni in ambienti staging prima dello sviluppo produttivo.
-3. **Monitorare regolarmente**: Utilizzare gli strumenti integrati per monitorare l'utilizzo delle risorse e rilevare i problemi il prima possibile.
-4. **Rimanere informati**: Seguire la roadmap e le linee guida per evitare funzionalità obsoleti.
-5. **Contattare il supporto**: Per i problemi non risolti, contattare il supporto tramite la [**procedure di richiesta di assistenza tecnica**](../../console/console_quickstart.md#accesso-al-supporto-technico) o all'indirizzo email [**contatto**](mailto:contact@cloud-temple.com).
+## Gestion des incidents et PCA (Plan de Continuité d’Activité)
 
-Per consultare le responsabilità in dettaglio, si prega di consultare la nostra [**matrice delle responsabilità**](../../contractual/paas/raci.md).
+**Responsabilité **Cloud Temple** :**
+
+- **Cloud Temple** est responsable des mécanismes de redondance au sein de l’infrastructure.
+- **Cloud Temple** est responsable des sauvegardes automatiques des configurations de cluster.
+- **Cloud Temple** est responsable de la reprise de l'activité après incident sur l'infrastructure ou sur les services sous-jacents à l'offre.
+
+**Responsabilité de l'utilisateur :**
+
+- Le **Client** est responsable de sauvegarder les données critiques des charges de travail en utilisant des solutions telles que l'offre **Kasten** disponible dans le catalogue **Cloud Temple**.
+- Le **Client** doit s'assurer que les charges de travail utilisent les mécanismes de résilience et doit adapter ses déploiements pour les mettre en œuvre.
+- Le **Client** est responsable du PRA/PCA de ses charges de travail.
+
+**Procédure "Reprise après sinistre"**
+
+- En cas de perte complète d'accès à un cluster, le **Client** doit déclarer un incident auprès du support **Cloud Temple** via le module support de la console.
+Voir la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique)
+
+---
+
+## Recommandations générales
+
+1. **Planifier les ressources** : Assurer une capacité de cluster suffisante pour les charges de travail de pointe.
+2. **Valider les configurations** : Tester les applications dans des environnements de staging avant déploiement en production.
+3. **Surveiller régulièrement** : Utiliser les outils intégrés pour suivre l'utilisation des ressources et détecter les problèmes le plus tôt possible.
+4. **Se tenir informé** : Suivre la roadmap et les guides pour éviter les fonctionnalités obsolètes.
+5. **Contacter le support** : Pour les problèmes non résolus, contacter le support via la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique) ou par mail à l'adresse [**contact**](mailto:contact@cloud-temple.com).
+
+Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](../../contractual/paas/raci.md).

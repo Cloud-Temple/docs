@@ -104,7 +104,7 @@ The distributed block storage, based on **IBM Spectrum Virtualize**, provides a 
 
 ## Networks
 
-The OpenIaaS product is compatible with [private networks](network/private_network) and [internet access](network/internet).
+The OpenIaaS product is compatible with [private networks](../network/private_network) and [internet access](../network/internet).
 
 Two types of networks are available upon configuring a virtual machine:
 
