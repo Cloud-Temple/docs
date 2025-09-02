@@ -118,7 +118,7 @@ Una red puede estar temporalmente desactivada sin ser eliminada y luego reactiva
 
 ### Compartir red de redes entre tenantes
 
-De forma predeterminada, los redes están disponibles únicamente dentro de un teniente. Puedes optar por compartir una red entre múltiples tenientes para razones técnicas o necesidades de conectividad. De esta manera, es posible compartir una red entre tus [Tenentes](console/iam/concepts.md#tenant) dentro de la misma organización.
+De forma predeterminada, los redes están disponibles únicamente dentro de un teniente. Puedes optar por compartir una red entre múltiples tenientes para razones técnicas o necesidades de conectividad. De esta manera, es posible compartir una red entre tus [Tenentes](../../console/iam/concepts.md#hosting) dentro de la misma organización.
 
 Para ello, solo es necesario activar la compartición a continuación:
 

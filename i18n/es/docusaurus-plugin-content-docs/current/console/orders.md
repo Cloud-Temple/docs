@@ -32,7 +32,7 @@ import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.
 
 El seguimiento del despliegue de nuevas recursos se realiza en el menú __'Pedidos'__ accesible en la barra verde a la izquierda de la pantalla.
 
-Permite visualizar los recursos Cloud ordenados, en proceso de despliegue y posibles errores dentro de un [Tenant](iam/concepts.md#tenant) de su [Organización](iam/concepts.md#organizaciones).
+Permite visualizar los recursos Cloud ordenados, en proceso de despliegue y posibles errores dentro de un [Tenant](iam/concepts.md#hosting) de su [Organización](iam/concepts.md#organizaciones).
 
 <img src={shivaOrdersList} />
 

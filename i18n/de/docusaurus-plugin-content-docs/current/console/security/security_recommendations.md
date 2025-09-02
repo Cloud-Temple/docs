@@ -24,7 +24,7 @@ Der Zugriff auf die Konsole ist der Eingangspunkt zu Ihrem gesamten Cloud-Tempel
 
 Der Zugriff auf die Cloud-Management-Konsole wird auf vorab autorisierte IP-Adressen beschränkt. Diese Regelung ermöglicht den Zugang nur für Benutzer aus spezifischen IP-Adresseinheiten, was die Risiken von unbefugtem Zugriff minimiert.
 
-Sie können diese Einschränkungen in den Organisationsrichtlinien konfigurieren. Weitere Informationen zur Konfiguration des IP-Filtrierens finden Sie in der [Verwaltung der Zugriffssteuerung und Authentifizierung | Cloud Temple Dokumentation](../../console/iam/quickstart?_highlight=*factor#verwaltung-der-zugriffssteuerung-und-authentifizierung).
+Sie können diese Einschränkungen in den Organisationsrichtlinien konfigurieren. Weitere Informationen zur Konfiguration des IP-Filtrierens finden Sie in der [Verwaltung der Zugriffssteuerung und Authentifizierung | Cloud Temple Dokumentation](../../console/iam/quickstart#verwaltung-von-zugriffen-und-authentifizierung).
 
 Um die Effizienz dieses Mechanismus zu maximieren, beachten Sie bitte:
 
@@ -64,9 +64,9 @@ Für Konten, die lokal durch die Cloud-Console verwaltigt werden (ohne Federieru
 
 Weitere Informationen:
 
-- [Was ist MFA und ist es verpflichtend? | Dokumentation von Cloud Temple](../../console/iam/quickstart#what-is-mfa-and-is-it-mandatory)
-- [Schulung: Federierung der Identität mit Microsoft Intune | Dokumentation von Cloud Temple](../../console/iam/schulungen/sso_intune)
-- [Schulung: Federierung der Identität mit Okta | Dokumentation von Cloud Temple](../../console/iam/schulungen/sso_okta)
+- [Was ist MFA und ist es verpflichtend? | Dokumentation von Cloud Temple](../../console/iam/quickstart#was-ist-mfa-und-ist-es-verpflichtend)
+- [Schulung: Federierung der Identität mit Microsoft Intune | Dokumentation von Cloud Temple](../../console/iam/tutorials/sso_intune)
+- [Schulung: Federierung der Identität mit Okta | Dokumentation von Cloud Temple](../../console/iam/tutorials/sso_okta)
 
 ### Zugang zur Konsole aus sichernen Umgebungen
 
@@ -98,11 +98,11 @@ Für eine sichere und effiziente Verwaltung:
 - **Ein direkter Zugang durch die Hinzufügung eines Organisationsmitglieds als Eigentümer** gewährleisten, selbst wenn Sie die Verwaltung Ihres Cloud-Dienstes an einen externen Dienstleister übertragen, um wichtige Entscheidungen und Benachrichtigungen zu kontrollieren.
 - **Die Anzahl der Eigentümer auf 3 begrenzen**, um die Exposition zu reduzieren und den Audit von kritischen Handlungen zu erleichtern.
 
-Weitere Informationen zur Verwaltung von Eigentümern finden Sie im [Guide zum Eigentum eines Tenants | Cloud Temple-Dokumentation](../../console/iam/concepts?_highlight=*propri%C3%A9taire#management-of-owners-on-a-tenant).
+Weitere Informationen zur Verwaltung von Eigentümern finden Sie im [Guide zum Eigentum eines Tenants | Cloud Temple-Dokumentation](../../console/iam/concepts#besitzverwaltung-auf-einem-tenant).
 
 ### Verwaltung von Zugriffsrechten auf Ihren Cloud-Diensten
 
-Die Cloud-Tempel-Konsole ermöglicht eine präzise Verwaltung der Zugriffsrechte, indem jedem Benutzer ein oder mehrere Zugangsniveaus zugewiesen werden, die bestimmen, welche Aktionen autorisiert sind. Weitere Informationen zu den verfügbaren Rechten ([Zugriffsrechte für Benutzer Ihrer Organisation | Konfigurationsrichtlinien Cloud Temple](../../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) finden Sie in der Dokumentation.
+Die Cloud-Tempel-Konsole ermöglicht eine präzise Verwaltung der Zugriffsrechte, indem jedem Benutzer ein oder mehrere Zugangsniveaus zugewiesen werden, die bestimmen, welche Aktionen autorisiert sind. Weitere Informationen zu den verfügbaren Rechten ([Zugriffsrechte für Benutzer Ihrer Organisation | Konfigurationsrichtlinien Cloud Temple](../../console/iam/concepts#berechtigungen-für-benutzer-in-ihrer-organisation)) finden Sie in der Dokumentation.
 
 Für eine effiziente und sichere Verwaltung der Zugriffsrechte empfehlen wir folgende Best Practices:
 
@@ -130,7 +130,7 @@ Eine Seite mit Sicherheitswarnungen steht zur Verfügung, um Sie über bekannte 
 Um eine effektive Überwachung Ihres Cloud-Umfelds durchzuführen und schnell auf Anomalien reagieren zu können, ist es entscheidend, eine Strategie für aktive Alarmsysteme einzurichten. Wir empfehlen Ihnen:
 
 - **Überwachen Sie die Verfügbarkeit der Dienste** über die [Statusseite | Cloud Temple](https://status.cloud-temple.com/), um im Falle von Störungen oder großflächigen Ausfällen benachrichtigt zu werden;
-- **Themenüberwachungen aktivieren**, die für Ihren Einsatz relevant sind, aus der Konsole, um relevante Erinnerungen in Echtzeit zu erhalten (siehe [Abonnement auf Themenüberwachungen | Dokumentation Cloud Temple](../../console/iam/concepts#themauebersicht)) ;
+- **Themenüberwachungen aktivieren**, die für Ihren Einsatz relevant sind, aus der Konsole, um relevante Erinnerungen in Echtzeit zu erhalten (siehe [Abonnement auf Themenüberwachungen | Dokumentation Cloud Temple](../../console/iam/concepts#abonnement-an-die-themen-updates)) ;
 - **Die Aktivitätslogs des Cloud** nutzen, um verdächtige oder ungewöhnliche Aktionen auf Ihren Ressourcen zu identifizieren (siehe Abschnitt "Journalisierung - Überwachung von Aktivitäten" im [Einstiegsleitfaden | Dokumentation Cloud Temple](../../iaas_vmware/quickstart)). Die Sammlung und Analyse der Aktivitätslogs kann automatisiert über die API-Konsole erfolgen, um die Ereignisse in Ihre Tools zur Überwachung oder Erkennung von Ausfällen zu integrieren.
 
 ## Sicherung von gehosteten Ressourcen

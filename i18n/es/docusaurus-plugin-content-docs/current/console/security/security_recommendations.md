@@ -22,7 +22,7 @@ El acceso a la Consola es la entrada principal hacia el conjunto de servicios Cl
 
 El acceso a la consola de gestión cloud está limitado a las direcciones IP previamente autorizadas. Esta restricción permite autorizar el acceso solo a los usuarios provenientes de rangos de direcciones IP específicos, minimizando así los riesgos de acceso no autorizado.
 
-Puede configurar estas restricciones de direcciones IP en los parámetros de su organización. Para saber cómo configurar el filtrado de direcciones IP, consulte la [Gestión del acceso y autentificación | Documentación Cloud Temple](../../console/iam/quickstart?_highlight=*factor#gestión-del-acceso-y-autentificación).
+Puede configurar estas restricciones de direcciones IP en los parámetros de su organización. Para saber cómo configurar el filtrado de direcciones IP, consulte la [Gestión del acceso y autentificación | Documentación Cloud Temple](../../console/iam/quickstart#gestión-de-acceso-y-autenticación).
 
 Para maximizar la eficiencia de este mecanismo, asegúrese de:
 
@@ -62,7 +62,7 @@ Para los cuentas gestionadas localmente a través de la Consola (sin federicaci�
 
 Para más información:
 
-- [¿Qué es la MFA y está obligatoria? | Documentación Cloud Temple](../../console/iam/quickstart?_highlight=*factor#qu%C3%B1en+de+lo+que+es+la+MFA+y+est+obligatoria)
+- [¿Qué es la MFA y está obligatoria? | Documentación Cloud Temple](../../console/iam/quickstart#qué-es-el-mfa-y-está-obligatorio)
 - [Tutorial: Federicación de identidad con Microsoft Intune | Documentación Cloud Temple](../../console/iam/tutorials/sso_intune)
 - [Tutorial: Federicación de identidad con Okta | Documentación Cloud Temple](../../console/iam/tutorials/sso_okta)
 
@@ -96,11 +96,11 @@ Para una gestión segura y eficiente:
 - **Mantén un control directo**, agregando un propietario miembro de tu organización, incluso si confías la gestión de tu servicio cloud, para supervisar las notificaciones y decisiones importantes.
 - **Limita el número de propietarios** a 3 para reducir la superficie de exposición y facilitar el auditoría de acciones críticas.
 
-Para obtener más información sobre la gestión de propietarios de tenencia, consulta el [Guía sobre los propietarios en un tenencia | Documentación Cloud Temple](../../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-dels-propietarios-en-un-tenencia).
+Para obtener más información sobre la gestión de propietarios de tenencia, consulta el [Guía sobre los propietarios en un tenencia | Documentación Cloud Temple](../../console/iam/concepts#gestión-de-propietarios-en-un-teniente).
 
 ### Gestion de las permisos en tus servicios cloud
 
-La Consola Cloud Temple ofrece una gestión de permisos altamente gráfica, permitiendo asignar a cada usuario un o más niveles de permiso, que determinan con precisión las acciones autorizadas. Consulta la documentación sobre los permisos ([Permisos disponibles para los usuarios de tu organización | Documentación Cloud Temple](../../console/iam/conceptos?_highlight=*propietario#permisos-disponibles-para-los-usuarios-de-tu-organizacion)) para entender en detalle las diferentes permisos y su asignación adecuada.
+La Consola Cloud Temple ofrece una gestión de permisos altamente gráfica, permitiendo asignar a cada usuario un o más niveles de permiso, que determinan con precisión las acciones autorizadas. Consulta la documentación sobre los permisos ([Permisos disponibles para los usuarios de tu organización | Documentación Cloud Temple](../../console/iam/concepts#permisos-disponibles-para-los-usuarios-de-su-organización)) para entender en detalle las diferentes permisos y su asignación adecuada.
 
 Para una gestión eficiente y segura de los permisos, te recomendamos seguir estas mejores prácticas:
 
@@ -128,7 +128,7 @@ También puedes consultar una página de alertas de seguridad para estar informa
 Para garantizar una vigilancia efectiva de tu entorno cloud y responder rápidamente en caso de anomalía, es crucial implementar una estrategia de vigilancia activa. Te recomendamos especialmente:
 
 - **Monitorear la disponibilidad de los servicios** a través de la [Página de Estado | Cloud Temple](https://status.cloud-temple.com/), para ser alertado en caso de incidentes o fallos globales;
-- **Activar las notificaciones temáticas** relevantes para tu uso desde la Consola, para recibir alertas importantes en tiempo real (ver [Suscripción a notificaciones temáticas | Documentación Cloud Temple](../../console/iam/concepts#suscripcion-a-notificaciones-tematicas)).
+- **Activar las notificaciones temáticas** relevantes para tu uso desde la Consola, para recibir alertas importantes en tiempo real (ver [Suscripción a notificaciones temáticas | Documentación Cloud Temple](../../console/iam/concepts#abonnement-a-notificaciones-thematicas)).
 - **Aprovechar los registros de actividad cloud** para identificar acciones sensibles o sospechosas sobre tus recursos (ver sección "Registro - Seguimiento de Actividades" del [Guía de inicio | Documentación Cloud Temple](../../iaas_vmware/quickstart)). La recolección y análisis de los registros de actividad pueden automatizarse a través de las API Consola, para integrar los eventos en tus herramientas de supervisión o de detección de incidentes.
 
 ## Fortalecer la seguridad de las recursos alojadas
@@ -149,7 +149,7 @@ Aquí están las recomendaciones para gestionar las políticas de copias de segu
 
 ### Encriptar máquinas virtuales sensibles
 
-Además del encriptado de datos al nivel de los discos, nativos para todas las recursos cloud, **el encriptado de máquinas virtuales (VM) puede activarse para proteger sus recursos más sensibles**. Para ello, consulta [Encriptar una máquina virtual VMware | Documentación Cloud Temple](../../iaas_vmware/tutorials/vm_encryption?_highlight=*encriptar).
+Además del encriptado de datos al nivel de los discos, nativos para todas las recursos cloud, **el encriptado de máquinas virtuales (VM) puede activarse para proteger sus recursos más sensibles**. Para ello, consulta [Encriptar una máquina virtual VMware | Documentación Cloud Temple](../../iaas_vmware/tutorials/vm_encryption).
 
 Aquí hay algunas buenas prácticas a considerar al utilizar el encriptado de VM:
 
@@ -161,7 +161,7 @@ Aquí hay algunas buenas prácticas a considerar al utilizar el encriptado de VM
 
 Para limitar la superficie de ataque de tus máquinas virtuales, es altamente recomendable restringir los servicios expuestos al máximo necesario. En particular, asegúrate de configurar tus recursos de manera que **no se exposen públicamente las interfaces de administración y consolas** de sistemas y aplicaciones despliegues.
 
-Si utilizas los servicios de Almacenamiento Objeto de Cloud Temple, también es recomendable **no configurar tus buckets en acceso público**, a menos que sea estrictamente necesario (consulta [Limitación del acceso a tus buckets S3 | Documentación Cloud Temple](../../storage/oss/quickstart?#gestión-de-políticas-de-acceso]).
+Si utilizas los servicios de Almacenamiento Objeto de Cloud Temple, también es recomendable **no configurar tus buckets en acceso público**, a menos que sea estrictamente necesario (consulta [Limitación del acceso a tus buckets S3 | Documentación Cloud Temple](../../storage/oss/quickstart#gestión-de-políticas-de-acceso)).
 
 ### Fortalecer las máquinas virtuales (servicios IaaS)
 

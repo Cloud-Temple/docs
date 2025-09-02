@@ -59,11 +59,11 @@ La prima fase consiste nel recuperare [le informazioni di accesso internet qui s
 Dopo aver installato il firewall pfSense, puoi procedere con la sua configurazione:
 
 1. **Installazione del firewall** da template pfSense nello spazio Shiva:
-    - [(Installazione tramite console)](../../../iaas_vmware/tutoriali/deploy_vm_template)
-    - [(Installazione tramite Terraform)](../../../iaas_vmware/tutoriali/deploy_vm_terraform).
+    - [(Installazione tramite console)](../../../iaas_vmware/tutorials/deploy_vm_template)
+    - [(Installazione tramite Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
 2. **Configurazione delle interfacce LAN e WAN del firewall**: l'interfaccia WAN deve essere all'interno del tuo vLAN internet, il suo IP sarà preso nella gamma di indirizzi IP che ti è stata comunicata dal CDS insieme alla default Gateway.
 3. **Installazione della seconda macchina di gestione**:
-    - [(Configurazione della macchina di gestione)](../../../iaas_vmware/tutoriali/configure_management_vm).
+    - [(Configurazione della macchina di gestione)](../../../iaas_vmware/tutorials/configure_management_vm).
 4. **Configurazione dell'interfaccia** della VM di gestione: questa macchina deve essere all'interno dello stesso network dell'interfaccia LAN del firewall configurata.
 
 ### Accesso al Firewall

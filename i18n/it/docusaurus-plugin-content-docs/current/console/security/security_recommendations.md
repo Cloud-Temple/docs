@@ -49,8 +49,8 @@ Per questi motivi, **la federazione dell'identità è raccomandata**, soprattutt
 
 Segui i nostri tutorial passo-passo per integrare il tuo fornitore di identità:
 
-- [Configurazione della federazione con Azure AD | Documentazione Cloud Temple](../../console/iam/tutorial/sso_aad)
-- [Configurazione della federazione con ADFS | Documentazione Cloud Temple](../../console/iam/tutorial/sso_adfs)
+- [Configurazione della federazione con Azure AD | Documentazione Cloud Temple](../../console/iam/tutorials/sso_azuread)
+- [Configurazione della federazione con ADFS | Documentazione Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
 ### Attivare l'autenticazione a più fattori (MFA)
 
@@ -62,9 +62,9 @@ Per gli account gestiti localmente tramite la Console (senza federazione), l'MFA
 
 Per ulteriori informazioni:
 
-- [Cos'è l'MFA e è obbligatorio? | Documentazione Cloud Temple](../../console/iam/quickstart?_highlight=*fattore#cos%27è+l%27MFA+e+è+obbligatorio-)
-- [Esercizio: Federazione dell'identità con Microsoft Intune | Documentazione Cloud Temple](../../console/iam/esercizi/sso_intune)
-- [Esercizio: Federazione dell'identità con Okta | Documentazione Cloud Temple](../../console/iam/esercizi/sso_okta)
+- [Cos'è l'MFA e è obbligatorio? | Documentazione Cloud Temple](../../console/iam/quickstart#cosa-è-il-mfa-e-è-obbligatorio)
+- [Esercizio: Federazione dell'identità con Microsoft Intune | Documentazione Cloud Temple](../../console/iam/tutorials/sso_intune)
+- [Esercizio: Federazione dell'identità con Okta | Documentazione Cloud Temple](../../console/iam/tutorials/sso_okta)
 
 ### Accessoire alla console da ambienti sicuri
 
@@ -96,11 +96,11 @@ Per una gestione sicura ed efficiente:
 - **Assicura un controllo diretto**, aggiungendo un proprietario membro della tua organizzazione, anche se affidiamo la gestione del tuo servizio cloud, per poter supervisionare le notifiche e le decisioni importanti.
 - **Limita il numero di proprietari** a 3 per ridurre l'area esposta e facilitare l'audit delle azioni critiche.
 
-Per saperne di più sulla gestione dei proprietari del tenimento, consulta il [Guida ai proprietari su un tenimento | Documentazione Cloud Temple](../../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Per saperne di più sulla gestione dei proprietari del tenimento, consulta il [Guida ai proprietari su un tenimento | Documentazione Cloud Temple](../../console/iam/concepts#gestione-dei-proprietari-su-un-tenente).
 
 ### Gestione delle autorizzazioni sui servizi cloud
 
-La Console Cloud Temple offre una gestione delle autorizzazioni estremamente personalizzabile, consentendo di assegnare a ciascun utente un o più livelli di permesso, che determinano con precisione le azioni autorizzate. Consulta la documentazione sui permessi ([Permessi disponibili per gli utenti della tua organizzazione | Documentazione Cloud Temple](../../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle di conseguenza.
+La Console Cloud Temple offre una gestione delle autorizzazioni estremamente personalizzabile, consentendo di assegnare a ciascun utente un o più livelli di permesso, che determinano con precisione le azioni autorizzate. Consulta la documentazione sui permessi ([Permessi disponibili per gli utenti della tua organizzazione | Documentazione Cloud Temple](../../console/iam/concepts#permessi-disponibili-per-gli-utenti-della-tua-organizzazione)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle di conseguenza.
 
 Per una gestione efficiente ed efficace delle autorizzazioni, ti consigliamo di seguire queste migliori pratiche:
 
@@ -149,7 +149,7 @@ Ecco le raccomandazioni per la gestione delle politiche di backup delle risorse 
 
 ### Encriptare VM sensibili
 
-In aggiunta al cifraggio dei dati a livello di disco, nativi per tutte le risorse cloud, **l'encriptazione delle VM può essere attivata per proteggere le vostre risorse più sensibili**. Per questo, consulta [Encrittura di una macchina virtuale VMware | Documentazione Cloud Temple](../../iaas_vmware/tutoriali/vm_encryption?_highlight=*encriptare).
+In aggiunta al cifraggio dei dati a livello di disco, nativi per tutte le risorse cloud, **l'encriptazione delle VM può essere attivata per proteggere le vostre risorse più sensibili**. Per questo, consulta [Encrittura di una macchina virtuale VMware | Documentazione Cloud Temple](../../iaas_vmware/tutorials/vm_encryption).
 
 Ecco alcune buone pratiche in caso di utilizzo dell'encriptazione delle VM:
 

@@ -32,7 +32,7 @@ import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.
 
 Die Verfolgung der Bereitstellung neuer Ressourcen erfolgt im Menü __'Bestellungen'__, das in der grünen Seitenleiste auf der linken Seite des Bildschirms zugänglich ist.
 
-Es ermöglicht Ihnen, bestellte Cloud-Ressourcen, solche in der Bereitstellung und eventuelle Fehler innerhalb eines [Tenants](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organisations) zu sehen.
+Es ermöglicht Ihnen, bestellte Cloud-Ressourcen, solche in der Bereitstellung und eventuelle Fehler innerhalb eines [Tenants](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organisationen) zu sehen.
 
 <img src={shivaOrdersList} />
 

@@ -1,617 +1,1350 @@
 ---
-Title: Terms and Conditions of Sale and Use (TCU)
+title: Conditions Générales de Vente et Utilisation (CGVU)
 ---
 
-## Framework
 
-| Reference | CT.AM.JUR.CGVU 2.0 |
+## Cadre
+
+| Référence | CT.AM.JUR.CGVU 2.0 |
 | :--- | :--- |
-| **Date** | March 13, 2024 |
-
-## Preface
-
-The present General Terms and Conditions of Sale and Use (hereinafter referred to as "CGVU") along with the attached Annex titled Services Agreement, constitute a contract (hereinafter referred to as the “Contract”) established between Cloud Temple, a French Société à Responsabilité Limitée (SARL) registered under French law, with a capital of 13,425,850 euros, and registered at the Commercial and Professional Register of Nanterre under number 825 400 336, whose head office is located at *Belvédère 1 -- 7 cours Valmy Spaces, 92800 Puteaux, France* (hereinafter referred to as the “Provider”), and any entity, whether a natural person or legal person, acting in a consumer or professional capacity, of private law or public law, subscribing to an Infrastructure-as-a-Service offering compliant with the SecNumCloud Reference Model (hereinafter referred to as the “Client”).
-
-For the purposes of this Contract, the Client and Provider are respectively designated as "Party" when mentioned separately and as "Parties" when mentioned jointly. It is specified that terms used in uppercase within the scope of this Contract are defined according to the provisions of Article 1, titled “Definitions.”
-
-This reformulation aims to clarify and formalize the scope and parties involved in the Contract while adhering to legal precision requirements in language.
-
-**PRIOR NOTICE**
-
-Cloud Temple operates as a specialist in Cloud Computing, providing services including Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and professional services.
-
-All services offered by Cloud Temple are globally accessible to clients who subscribe to the offers presented on their online platform, available at [this address](https://www.cloud-temple.com).
-
-In case of discrepancies between provisions in different documents, precedence is given to the hierarchically superior document. The most recent and officially approved version of a document supersedes all prior versions. In cases where there are conflicting stipulations within the same document, the latest validated version takes precedence.
-
-The absence of a provision in a lower-ranked document from being explicitly mentioned in a higher-ranked one does not diminish its legal validity.
-
-## Definitions
-
-The following terms shall have the following meanings for the Parties: Each term beginning with a capital letter hereinafter shall have the meaning given to it in its definition. The text within tables (including table headers) must be translated.
-
-- **Access**: Refers to a set of identifiers (login, password, etc.) allowing the CLIENT to authenticate before consuming and managing Prestations. Accesses are dedicated to a specific account and should not be shared by the CLIENT.
-- **Annex**: Means any supplementary information document attached to the Contract.
-- **Purchase Order**: Refers to a document, which can be electronic, signed, or validated when it's a digital form, issued by the CLIENT accepting a service proposal/quote or ordering a product; it describes the applicable Conditions Particulars if any. No obligation whatsoever shall rest on the Provider for providing Professional Services or delivering Prestations on a quote without a formal Purchase Order signed by the CLIENT and subsequently accepted by the Provider.
-- **Client**: Refers to any legal person consuming IAAS services. The CLIENT agrees to provide all required information (including email, identity, contact details, banking info, etc.) and ensures that all provided information remains accurate and up-to-date throughout the Contract's duration. When a Client Account is used by an individual acting on behalf of the CLIENT, they confirm and guarantee the Provider with the power and capacity to represent and engage the CLIENT in accordance with the Contract terms.
-- **Cloud Computing** (computing in the clouds): Refers to the provision of resources (memory, computing power, storage, network) by servers within networks to the CLIENT, operated and maintained by the Provider in a transparent manner for the CLIENT.
-- **Client Account**: A Client Account enables the CLIENT, upon accepting the Contract associated with this Account (accepting these GDU), to consume Prestations. The Provider opens a Client Account only after receiving from the CLIENT (i) the email address that will serve as the account identifier (where the Provider will send notifications regarding the Contract linked to this Account), (ii) the CLIENT's identification details (name, VAT number or equivalent in the CLIENT's country, address, etc.), and (iii) the CLIENT's exact and up-to-date banking information necessary for billing its consumption.
-- **Service Agreement**: Refers to a document describing, among other technical and functional aspects, the Services provided by the Provider; it also includes a detailed list of Service Levels, their calculation methods, and service production frequency.
-- **Client Data**: All data, regardless of type, including Personal Data that the CLIENT stores and processes on an Infrastructure provided by the Provider. By express agreement, the Provider (i) refrains from accessing Client Data, and (ii) advises the CLIENT to encrypt it without providing the decryption key; furthermore, the Provider cannot distinguish between Client Data and Personal Data among them.
-- **Personal Data**: Those elements of Client Data that comply with the definition of "personal data" under the applicable Data Protection Legislation. For any questions regarding Personal Data (excluding those related to CLIENT's systems under its sole responsibility), you can contact:
-  ```
-  dpd@cloud-temple.com
-  ```
-- **Equipment**: Refers to any computer hardware or software provided by either Party, forming part of the Hosted and Managed System, taken over by the Provider for the Contract's purpose and as part of the Services.
-- **Extended Service Scope**: Refers to resources not subscribed to.
-- **IaaS**: Short for Infrastructure as a Service, it denotes the provision of infrastructure as a service, enabling the leasing of computing infrastructures (RAM, CPU, etc.).
-- **Incident**: Refers to any event outside the normal operation of Equipment that may cause or could cause a breach of one or more Service Levels, a disruption or interruption of a Service, or damage to the CLIENT.
-- **Maintenance**: Refers to all preventive, corrective, and evolutive services provided by the Provider regarding the Hosted and Managed System.
-- **Third-Party Supplier**: Refers to any legal person or natural person contracted with the CLIENT or the Provider who, under any status, participates in providing part of the Services.
-- **Services**: Refers to the services provided by the Provider to the CLIENT, detailed in each contractual document.
-- **Service Level Agreement (or SLA)**: Refers to the Provider's quality of service commitments regarding the Services.
-- **Sovereignty**: Refers to the policy for managing both Data, personnel, and the entire Infrastructure provided by the Provider. Sovereignty applies to a territory. The Provider guarantees the CLIENT that it ensures appropriate technical and organizational measures are in place to prevent unauthorized access to Data and, using one or more regions on the same territory, no Data leaves this territory at the Provider's initiative. Furthermore, personnel of the Provider on a territory will be contractually bound to that territory, and no person from another territory can access equipment on that territory without authorization from the relevant personnel of that territory.
-- **Hosted and Managed System**: Refers to the entire set of equipment on which the Services are provided on the Cloud, as defined and managed by the Provider under the Contract.
-- **User(s)**: Refers to a natural person who, upon CLIENT's request, obtains a User Account and accesses the Provider's Console. The access and privileges obtained in this manner are reserved for a single individual only and cannot be shared among multiple persons.
-- **Unit of Work**: Refers to a standardized measure used to evaluate and price the utilization of computing resources, based on consumption or performance.
-
-## Subject
-
-This contract aims to establish the terms and conditions under which the Provider agrees to deliver the SERVICES defined, specifying the scope of application, execution modalities of services, and financial aspects associated with it. The CLIENT accepts these terms on its own behalf and for its account.
-
-The CLIENT's adherence to this contract implies an unreserved acceptance of the General Terms of Sale and Use (CGVU), which the CLIENT has previously reviewed, understood, and accepted in full. Although the CLIENT operates as a professional, it is strongly recommended that they consult with a specialist in IT and networking before accepting these conditions. This step is crucial for making an informed decision regarding the technical aspects of the contract, particularly concerning the selection of features of the provided units and determining necessary resources to meet specific needs.
-
-## General Provisions
-
-Each Party agrees not to make any commitments on behalf of or for the other Party. Each Party remains individually responsible for its actions, statements, commitments, services, products, and actions of its personnel.
-
-In case a provision of this Agreement is found invalid under applicable law or by an irrevocable judicial decision, such provision will be deemed non-existent. This invalidity shall not affect the overall validity of the Agreement or the enforceability of other provisions.
-
-### Service Request
-
-This section outlines the process for requesting cloud services. It includes details on how to initiate a service request, categorize the request, and track its progress through various stages of approval and provisioning. The system is designed to ensure efficient handling, transparency, and accountability in managing cloud resources.
-
-### CLIENT ACCOUNT
-
-To access and order the Services provided by the Prestataire, it is
-essential for the CLIENT to possess a **CLIENT ACCOUNT** that is valid.
-In the process of creating and managing this account, the CLIENT
-commits to providing the Prestataire with all necessary information
-to execute the contract. This includes, but is not limited to, email
-address, identity and contact details, as well as relevant banking
-information. The CLIENT ensures the accuracy, reliability, and
-up-to-date status of these details throughout the Contract's duration.
-
-Should the CLIENT ACCOUNT be established or managed by a third party
-acting on behalf of the CLIENT, this third party must confirm and
-guarantee to the Prestataire that they hold the requisite legal authority
-and capacity to act on behalf of the CLIENT and bind them in accordance
-with contractual obligations.
-
-### Client Account Activation
-
-Prior to and at any time during the provision of services, the Provider reserves the right to verify the accuracy of the information provided by the CLIENT or on their behalf. This verification may involve requesting supporting documents for the communicated information. The Provider also has the right to refuse account activation or deactivate the Client Account if the information is deemed incomplete, inaccurate, or fraudulent.
-
-### Translation
-
-Upon activation of the CLIENT's ACCOUNT by the PRESTAVER, the CLIENT acquires the ability to place orders for SERVICES. The type of SERVICES requested determines how orders are placed via the CLIENT'S dedicated MANAGEMENT interface. The CLIENT is fully responsible for managing their ACCOUNT, including securing authentication means (identifiers, passwords, etc.) linked to it.
-
-Any order placed through the CLIENT'S ACCOUNT is considered as having been made by the CLIENT directly and carries full adherence to the CONTRACT's terms. Delivery times and conditions for the SERVICES ordered vary based on the service type required. Some SERVICES may only become available once the PRESTAVER has received full payment from the CLIENT. It is thus the CLIENT'S responsibility to ensure that the SERVICE delivery conditions meet their requirements.
-
-The CONTRACT's constitutive documents complement and interpret each other consistently. In case of contradiction or divergence, precedence will be given to documents listed in the order they appear, according to the specified hierarchy. The ANNEXES of the CONTRACT, detailing the SERVICES' technical aspects, do not contradict the general principles outlined in the main body of the CONTRACT. Their role is to provide technical precision without challenging the overarching provisions stated in the document.
-
-## Contract Duration
-
-Contracts established under these General Sales and Usage Conditions (CGVU) are concluded for an indefinite period, unless otherwise specified in the Particular Conditions which may stipulate a fixed duration.
-
-Contract termination is solely possible according to the provisions outlined in the "Termination" article. Prior to any termination, the CLIENT must ensure complete recovery of all data stored under the concerned contracts, as per the provisions related to "Data Recovery and Erase".
-
-The cessation of a contract, whether initiated by the Service Provider or the CLIENT, does not relieve the latter from paying for costs associated with previously provided services.
-
-## Scope of Services
-
-The scope of services encompasses:
-
-- Implementation of services in accordance with the order,
-- Provision of infrastructure services,
-- Additional provision of Reversibility services.
-
-Access to these services and their utilization are subject to the terms and conditions outlined in this Contract, including all associated annexes.
-
-## Optional Services
-
-In the event that certain Optional Services were not initially included in the Contract, the CLIENT has the option to subscribe to them subsequently. The provision of any Optional Service by the Prestator is contingent upon prior agreement between parties following a joint evaluation.
-
-### Terms of Service
-
-By accessing and utilizing our cloud computing services, you agree to the following terms:
-
-1. **Acceptance of Terms**
-   - By using our services, you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service. If you do not agree with any part of these terms, please refrain from using our services.
-
-2. **Description of Services**
-   - Our cloud computing platform provides a suite of tools and infrastructure for data storage, processing, and application deployment. This includes but is not limited to virtual machines, databases, networking resources, and various software development kits (SDKs).
-
-3. **User Responsibilities**
-   - You are responsible for the creation and maintenance of your user accounts, passwords, and all activities conducted through them. Ensure that you comply with applicable laws and regulations while using our services.
-
-4. **Intellectual Property Rights**
-   - All content, including but not limited to software, documentation, and user interfaces, is protected by intellectual property rights. You may not modify, copy, distribute, or exploit any part of these materials without explicit permission from the respective owners.
-
-5. **Service Availability**
-   - We strive to ensure high availability of our services; however, unscheduled downtime may occur due to system maintenance, security updates, or other critical reasons. In such cases, we will make reasonable efforts to minimize disruption and notify users as soon as possible.
-
-6. **Payment Terms**
-   - Our pricing structure is outlined in detail on our [Pricing Page](https://www.example.com/pricing). All transactions are subject to applicable taxes and fees as specified therein.
-
-7. **Termination**
-   - Either party may terminate this agreement with written notice, provided that all outstanding payments have been settled. Upon termination, you will cease using our services immediately.
-
-8. **Liability**
-   - We provide our services "as is" and do not guarantee their performance or availability. Our liability for any direct, indirect, incidental, special, consequential, or exemplary damages arising from the use of or inability to use these services is limited to the amount paid by you for the services.
-
-9. **Governing Law**
-   - These Terms are governed by and construed in accordance with the laws of [Jurisdiction], without giving effect to any choice of law principles that would result in the application of another governing law.
-
-10. **Changes to Terms**
-    - We reserve the right to modify these terms at any time. Any changes will be posted on this page and your continued use of our services after such posting constitutes acceptance of the updated terms.
-
-By using our cloud computing services, you confirm that you have read, understood, and agreed to be bound by these Terms of Service. If there are any questions or concerns regarding these terms, please contact us at [support@example.com](mailto:support@example.com).
-
-### Compliance with Service Terms
-
-The CLIENT agrees to place orders and utilize the SERVICES in strict adherence to the applicable Service Usage Conditions. The use of the SERVICES must be conducted responsibly. In particular, the CLIENT commits to familiarizing itself with the General Sales and Usage Terms (CGVU) in effect and to complying with all directives provided at the time of ordering.
-
-When the CLIENT uses the SERVICES on behalf of third parties or allows third parties access to the SERVICES, it is obligated, prior to any such use by these parties, to inform and obtain their acceptance of the current usage conditions. The CLIENT ensures that the Service Provider respects the full extent of these conditions by the concerned third parties.
-
-### Service Selection
-
-Prior to placing an order and utilizing the Services, the
-CUSTOMER agrees to thoroughly review the current Terms of Service
-and analyze all documentation, configurations, options, and service
-ranges provided, with the intention of selecting Services and features
-that precisely align with their needs as well as those of any third
-parties using the Services on their behalf or in their name.
-
-The CUSTOMER pays particular attention to ensuring that the selected
-Services comply with all legal and regulatory obligations inherent to
-activities conducted through the use of these Services. For any
-inquiries regarding the Services, the CUSTOMER is encouraged to contact
-the Service Provider. It is the CUSTOMER's responsibility to stay
-informed about potential changes, especially when new Orders are issued.
-
-### Connection
-
-Access to the Services requires that the CLIENT has, at their own expense and responsibility, a remote access connection (such as an Internet connection or a private network) in place. The CLIENT is advised that the Internet can experience technical glitches and security risks that are beyond the technical measures deployed by the Provider in the context of the Services.
-
-The Provider cannot be held responsible for any malfunctions attributable to Internet service providers or any other third-party network operators (including, without limitation, issues with connection reliability, bandwidth variations, service outages, etc.), nor can the Provider be held liable for any resulting consequences, especially when these lead to unavailability or interruption of the Services.
-
-### Authentication Methods
-
-The CLIENT assumes full responsibility for managing and maintaining the confidentiality of the identifiers and passwords necessary to access and utilize the Services. It must ensure that authorized users are fully informed and adhere to best security practices to preserve the confidentiality of their authentication methods. The CLIENT is solely responsible for any consequences arising from the loss, disclosure, or abuse/unauthorized use of such authentication methods assigned to users.
-
-In no event shall the PRESTAVER's liability be engaged for such incidents. The CLIENT agrees to promptly notify the PRESTAVER of any suspected loss or disclosure of authentication methods and immediately initiate replacement or re-authentication procedures.
-
-### Content
-
-In accordance with the provisions outlined by the Provider, the latter
-does not actively manage the Client's content and refrains from any
-access to these contents, except within the strictly necessary scope for
-providing the Services. Consequently, the Provider does not conduct any
-content verification, validation, or updates of the mentioned contents.
-
-Similarly, it does not ensure a dedicated backup for contents stored via
-the Services' platform. It is therefore the Client's responsibility to
-take appropriate measures for backing up their content, in order to
-protect against any risk of loss or degradation, regardless of the cause,
-especially by utilizing the appropriate units of work available in the
-Provider's catalog.
-
-The managed contents must be legal and used in compliance with good
-practices, as well as applicable laws and regulations. The use of illegal
-contents (such as dissemination, publication, storage, or transmission
-of content inciting crimes, promoting hatred or violence against individuals
-based on their sex, religion, orientation, or gender identity, or handicap,
-or infringing intellectual property rights of others) is strictly prohibited.
-
-Any violation of these rules may result, at the Provider's discretion, in
-an immediate suspension of Services, deactivation of the Client's account,
-or termination of the Contract solely at the Client's expense. This is
-without prejudice to the Provider's right to initiate legal proceedings or
-claim damages for any incurred harm.
-
-### Compliance with Laws, Regulations, and Ethical Standards
-
-The Services must be utilized responsibly, in accordance with applicable laws and regulations. Parties agree to remain vigilant regarding changes in legislation and regulation. The following practices are expressly prohibited, although this list is not exhaustive:
-
-1. Abuse or fraudulent use of Services and provided resources, potentially jeopardizing the stability and security of Provider's systems, impacting the quality of Services offered to other users;
-2. Attempts at intrusion or attack via Services, including but not limited to port scanning, eavesdropping, spoofing, and any form of attack originating from provided resources (excluding pre-authorized penetration testing authorized by the Provider);
-3. Any form of SPAM or similar "spamming" practices;
-4. Use of illicit or prohibited content, as previously detailed in the "Content" section.
-
-### Service Suspension
-
-The Provider reserves the right to temporarily or completely suspend the Services in the following circumstances:
-
-1. A real threat to the security or stability of the Provider's systems, the Services, or Client data;
-2. Implementation of scheduled maintenance operations;
-3. Requests from judicial or administrative authorities;
-4. Alerts received in accordance with Article 6 of the Digital Economy Trust Act (LCEN);
-5. Violation of usage conditions outlined in the Contract.
-
-Such suspension can be immediate, without prior notice, in critical situations or to prevent illicit or fraudulent use of Services, infringement of third-party rights, or any act potentially implicating Provider liability. The Provider strives to minimize the impact of such suspensions on regular service provision, within the bounds of legal necessity and adherence to usage conditions. However, these suspensions do not exempt the Client from fulfilling outstanding payment obligations under the Contract. Clients are informed about planned maintenance via a dedicated interface.
-
-In case of Client non-compliance with their obligations, these suspensions will not preclude the Provider's right to terminate the Contract or seek compensation. Suspensions, except in cases of termination or non-renewal, do not result in data deletion from the Client’s end. Unless solely due to Provider failure, such interruptions are not considered a complete unavailability of Services for the purpose of service level agreement (SLA) commitments outlined in the Contract.
-
-### Evolution of Services
-
-The Provider reserves the right to make any modifications to the Services at its discretion, including adding, modifying, or removing service lines, options, features, and enhancing their performance. A detailed description of the Services is available on the Provider's website. It is the Client's responsibility to stay informed about Service updates, which will apply immediately to all future orders. Changes can also occur immediately due to urgent matters such as security risks, legal or regulatory compliance requirements, or as a result of changes to third-party products.
-
-In accordance with the "Consumer Specific Conditions," if a service update results in degradation of a Service used by the Client (e.g., removal of a feature or performance drop), the Client has the right to terminate the affected service. To exercise this right, the Client must send a termination notice via registered mail with request for receipt, within 60 days following the application of the modification.
-
-### Intellectual Property and Usage Rights
-
-All elements provided by the Prestataire to the CLIENT, including software, infrastructure, documentation, and others, remain the exclusive property of the Prestataire or its right holders. The Prestataire grants the CLIENT a non-exclusive usage right to these elements solely for the purpose of utilizing the Services, in accordance with the contractual terms, for the duration of the agreement. It is crucial to highlight that, outside of these provided elements, the CLIENT bears full responsibility for obtaining all necessary authorizations and rights for any additional elements (data, software, applications, systems, websites, etc.) it chooses to use or exploit within the Services' framework.
-
-The CLIENT, as well as its Users, remain the owners of their content. The Prestataire commits to not exploiting these contents for purposes other than those stipulated in the contract. In accordance with applicable laws, the CLIENT is obligated not to decompile any software, codes, or algorithms made available under the Services' umbrella, including for reverse engineering purposes, unless explicit legal authorization permits circumventing this restriction.
-
-### Export Control
-
-Subject to the limitations specified in the Contract terms and any restrictions related to CLIENT's own activities, the Provider guarantees that the Services are commercially viable and usable within the European Union as well as in the host countries of the Data Centers providing the Services.
-
-It is the CLIENT's responsibility, if considering using the Services or allowing their use by third parties outside Europe, to ensure such usage complies with applicable laws and regulations. This includes, but is not limited to, compliance with Regulation (EC) No 428/2009 of the Council of 5 May 2009 on export controls for dual-use items, as well as U.S. regulations such as EAR (Export Administration Regulations) and 'ITAR' (International Traffic in Arms Regulations), given that the Provider distributes third-party solutions governed by U.S. law.
-
-The Provider reserves the right to refuse any order originating from countries subject to commercial restrictions or sanctions, or individuals or entities within those countries or under sanctions. Due diligence, including solvency checks and potential listing on sanctions lists (e.g., the EU Asset Freezing Regulations), may be conducted. Upon completion of these checks, the Provider can unilaterally and immediately terminate the contract, notifying the CLIENT in advance.
-
-### Third-Party Products
-
-In accordance with our commitments, it is important to note that:
-
-1. The Provider disclaims all responsibility for Third-Party products provided as part of the Services. These products may contain technical defects, security vulnerabilities, compatibility issues, or stability problems. The Provider offers no warranty regarding these Third-Party products, including but not limited to, any associated software, systems, applications, etc.,
-2. The use of Third-Party products by the CLIENT is strictly limited to the scope of the Services provided. It is expressly prohibited for the CLIENT to decompile, access source code, or reinstall software or systems provided as Third-Party products on other infrastructure. Full responsibility for the use of Third-Party products lies with the CLIENT, who must ensure their suitability for specific needs and objectives, while adhering to the terms of the Contract.
-
-### Continuity and Reversibility of Services
-
-The termination of Services, for any reason (such as contract termination, non-renewal, client-initiated service shutdown, breach of contract terms, etc.), as well as certain upgrade or reinstallation operations, result in the permanent and irreversible deletion of all Content (including information, data, files, systems, applications, websites, and other elements) that the CLIENT has reproduced, stored, hosted, collected, transmitted, disseminated, published, or otherwise utilized or exploited within the context of Services, including any backups.
-
-### Vulnerability Testing
-
-The CLIENT is authorized to conduct vulnerability tests (hereinafter "Vulnerability Tests") on the provided services. These tests can only be performed after signing an audit agreement involving all parties involved in service provision, including the CLIENT, the auditor, the Service Provider, and any subcontractors. The tests must comply with current legislation and require prior consent from users and rights holders in the tested domain.
-
-The specifics of conducting these Vulnerability Tests by an external auditor will be outlined in a separate contract between the CLIENT and this auditor, incorporating the obligations stated in this article. The CLIENT commits to ensuring adherence to these conditions by the auditor, who acts under the CLIENT's responsibility.
-
-Vulnerability Tests must not:
-
-- Target other infrastructure or services of the Service Provider and/or non-exclusively used by the CLIENT,
-- Disrupt optimal functioning of Services, infrastructure, and networks provided by the Service Provider,
-- Impact systems, resources, networks, and infrastructures made available by the Service Provider to other clients.
-
-Any intrusion into systems used by other clients is strictly prohibited. The CLIENT assumes full responsibility for consequences arising from Vulnerability Tests, including those resulting from actions taken by an external auditor. It is the CLIENT's duty to perform all necessary backups before tests to ensure system restoration in case of incidents.
-
-It should be noted that security mechanisms against spam, DOS/DDOS attacks, and others will remain active during testing, potentially causing temporary service unavailability. The CLIENT must inform any parties affected by this downtime. Upon completion of the Vulnerability Tests, an audit report will be prepared and made available to the Service Provider upon request or when pertinent (e.g., in case vulnerabilities are discovered).
-
-This audit report, its content, and all information gathered or disclosed during the audit are strictly confidential and must not be published or shared without the written authorization of the Service Provider. In violation of established conditions, the Service Provider reserves the right to immediately suspend access to Services, without prejudice to potential damage claims.
+| **Date** | 13 mars 2024 |
+
+## Préambule
+
+Les présentes Conditions Générales de Vente et d'Utilisation (ci-après
+désignées par l'acronyme « CGVU »), conjointement avec l'annexe
+intitulée Convention de Services, constituent un contrat (ci-après le «
+**Contrat** ») établi entre Cloud Temple, une Société par Actions
+Simplifiée réglementée par le droit français, dotée d'un capital social
+de 13 425 850 euros, enregistrée au Registre du Commerce et des Sociétés
+de Nanterre sous le numéro 825 400 336, dont le siège social est situé
+au *Belvédère 1 -- 7 cours Valmy Spaces, 92800 Puteaux, France*
+(ci-après désignée le « **Prestataire** »), et toute entité, qu'elle
+soit personne physique ou morale, agissant en qualité de consommateur ou
+de professionnel, de droit privé ou de droit public, ayant souscrit à
+une offre de fourniture d'Infrastructure-as-a-Service conforme au
+Référentiel SecNumCloud (ci-après désignée le « **CLIENT** »).
+
+Aux fins du présent Contrat, le CLIENT et le Prestataire sont
+respectivement qualifiés de « Partie » lorsqu'ils sont mentionnés
+séparément et de « Parties » lorsqu'ils sont mentionnés conjointement.
+Il est précisé que les termes utilisés avec une majuscule dans le cadre
+du présent Contrat sont définis conformément aux dispositions de
+l'article 1, intitulé « Définitions ».
+
+Cette reformulation vise à clarifier et formaliser la portée et les
+parties prenantes du Contrat, tout en respectant les conventions et la
+précision requises dans le langage juridique.
+
+**IL EST PRÉALABLEMENT RAPPELÉ CE QUI SUIT**
+
+Le Prestataire se positionne en tant qu'opérateur spécialisé dans le
+domaine du Cloud Computing, offrant notamment des services
+d'Infrastructure en tant que Service (IaaS), de plateforme en tant que
+Service (PaaS) ainsi que des prestations de services professionnels
+(Professional Services).
+
+L'ensemble des services proposés par Cloud Temple sont disponibles à
+l'échelle globale pour les clients qui souscrivent aux offres présentées
+sur leur plateforme en ligne, accessible à [l'adresse suivante](https://www.cloud-temple.com).
+
+En présence de discordances entre une ou plusieurs dispositions
+contenues dans les documents annexes, la primauté sera accordée au
+document hiérarchiquement supérieur. La version la plus récente et
+officiellement approuvée d'un document l'emporte sur toutes ses versions
+précédentes. Ainsi, en cas de divergence entre une ou plusieurs
+dispositions au sein d'un même document, c'est la version ultérieurement
+validée qui prévaudra.
+
+Le fait qu'une stipulation figurant dans un document de rang inférieur
+ne soit pas expressément mentionnée dans le document de rang supérieur
+ne lui fera pas perdre sa valeur juridique.
+
+## Définitions
+
+Les termes figurant ci-dessous auront pour les Parties les définitions
+suivantes. Chaque terme débutant par une majuscule ci-après a le sens
+qui lui est donné dans sa définition.
+
+- **Accès** : désigne l'ensemble d'identifiants (login, mot de passe,
+    etc.), permettant au CLIENT de s'authentifier avant de pouvoir
+    consommer et piloter des Prestations. Les Accès sont dédiés à un
+    compte précis et ne doivent pas être partagées par le CLIENT.
+- **Annexe** : désigne tout document d'information complémentaire
+    adjoint au Contrat.
+- **Bon de Commande** : désigne le document, pouvant être
+    dématérialisé, signé ou validé lorsqu'il s'agit d'un formulaire
+    dématérialisé, par le CLIENT aux termes duquel ce dernier accepte
+    une proposition de service/un devis ou commande un produit ; il
+    décrit les Conditions Particulières applicables s'il y a lieu.
+    Aucune obligation d'aucune sorte ne saurait peser sur le Prestataire
+    pour la réalisation de Services Professionnels ou la fourniture de
+    Prestations sur devis sans un Bon de Commande formalisé signé par le
+    CLIENT et ensuite accepté par le Prestataire.
+- **Client** : désigne toute personne morale qui sera consommateur du
+    service IAAS. Le CLIENT s'engage à fournir toutes les informations
+    requises (notamment courriel, identité, coordonnées, informations
+    bancaires, etc.) et s'engage à ce que l'ensemble des informations
+    ainsi fournies soient exactes et mises à jour pendant toute la durée
+    du Contrat. Lorsque le Compte CLIENT est utilisé par une personne
+    agissant au nom et pour le compte du CLIENT, elle déclare et
+    garantit au Prestataire le pouvoir et la capacité nécessaire pour
+    représenter et engager le CLIENT dans les conditions prévues au
+    Contrat.
+- **Cloud Computing** (informatique dans les nuages) : désigne la mise
+    à disposition du CLIENT de ressources mémoires, calculs, stockage et
+    réseau fournies par des serveurs en réseaux. Lesdits serveurs, ainsi
+    que l'Infrastructure sous-jacente, sont opérés et maintenus par le
+    Prestataire de manière transparente pour le CLIENT.
+- **Compte Client** : un Compte permet au CLIENT, une fois qu'il a
+    accepté le Contrat associé à ce Compte (en acceptant les présentes
+    CGVU), de consommer des Prestations. le Prestataire n'ouvre un
+    Compte au CLIENT qu'après fourniture par ce dernier (i)de l'adresse
+    email qui servira d'identifiant à ce Compte (c'est là que le
+    Prestataire adressera les notifications relatives au Contrat associé
+    à ce Compte), et (ii) de ses données d'identification (nom, numéro
+    de TVA intracommunautaire ou équivalent dans le pays du CLIENT,
+    adresse, etc.), enfin (iii) de ses informations bancaires exactes et
+    à jour nécessaires à la facturation de ses consommations.
+- **Convention de Services** : désigne le document décrivant,
+    notamment, de manière technique et fonctionnelle les Services
+    fournis par le Prestataire ; ainsi que la liste détaillée des
+    Niveaux de Services, leur méthode de calcul et la périodicité de
+    leur production.
+- **Données du Client** : toutes les Données, quelle que soit leur
+    nature, y compris les Données Personnelles, que le CLIENT stocke et
+    Traite sur une Infrastructure mise à disposition par le Prestataire.
+    De convention expresse, le Prestataire (i) s'interdit d'accéder aux
+    Données du CLIENT, et (ii) conseille au CLIENT de les chiffrer sans
+    lui remettre la clé de chiffrement ; étant précisé, enfin, (iii) que
+    le Prestataire ne peut pas distinguer parmi les Données du CLIENT
+    celles qui sont des Données Personnelles.
+- **Données Personnelles** : celles des Données du CLIENT qui
+    répondent à la définition de « données à caractère personnel » au
+    sens de la Législation sur les Données Personnelles. Pour toutes
+    questions relatives aux Données Personnelles (à l'exception de
+    celles liées aux Systèmes du CLIENT qui sont sous sa seule
+    responsabilité) vous pouvez contacter
+
+    ```
+    <dpd@cloud-temple.com>
+    ```
+
+- **Équipement** : désigne tout équipement informatique de nature
+    logicielle ou matérielle fourni par l'une ou l'autre des Parties,
+    composant le Système Hébergé et Infogéré, pris en charge par le
+    Prestataire au titre du Contrat et objet des Services.
+- **Extension du Périmètre des Prestations** : désigne les ressources
+    supplémentaires non souscrites.
+- **Iaas** : acronyme d'Infrastructure as a Service, il désigne la
+    mise à disposition d'une infrastructure en tant que Service,
+    permettant de louer des infrastructures informatiques (RAM, CPU...).
+- **Incident** : désigne tout événement ne faisant pas partie du
+    fonctionnement standard d'un Équipement, et qui cause, ou peut
+    causer, un non-respect d'un ou plusieurs Niveaux de Services, une
+    perturbation ou une interruption d'un Service, et/ou un dommage au
+    CLIENT.
+- **Maintenance** : désigne l'ensemble des Services de maintenance
+    préventive, corrective et évolutive à la charge du Prestataire
+    portant sur le Système Hébergé et Infogéré.
+- **Prestataire Tiers** : désigne toute personne morale ou physique
+    cocontractant du CLIENT ou du Prestataire qui, sous quelque statut
+    que ce soit, intervient dans la fourniture d'une partie des
+    Services.
+- **Prestations** : désigne la mise à disposition par le Prestataire
+    au CLIENT de ressources (Machines Virtuelles, Service de Stockage
+    Objet, etc.), au sein de l'Infrastructure du Prestataire, ainsi que,
+    le cas échéant, de services connexes.
+- **Produits Tiers** : désigne tous les produits ne participant pas à
+    la fourniture du Service.
+- **Services Professionnels** (Professional Services) : désigne toute
+    Prestation fournie par le Prestataire sur une demande spécifique du
+    CLIENT, afin d'assurer un accompagnement des équipes du CLIENT.
+- **Réversibilité** : désigne l'ensemble des opérations permettant au
+    CLIENT de reprendre, ou de faire reprendre, l'exécution des Services
+    prévus au Contrat. La Réversibilité désigne aussi la restitution, au
+    CLIENT ou à un Prestataire Tiers, de la responsabilité
+    opérationnelle et de la détention du Système Hébergé et Infogéré et
+    des Équipements le composant.
+- **RGPD** : désigne le règlement Général sur la Protection des
+    Données (UE) 2016/679 du 27 avril 2016 relatif à la protection des
+    personnes physiques à l'égard du traitement des données à caractère
+    personnel et à la libre circulation de ces données.
+- **Services** : désigne les prestations fournies par le Prestataire
+    au CLIENT, détaillées dans chacun des documents contractuels.
+- **Service Level Agreement (ou SLA)** : désigne les engagements de
+    qualité de service du Prestataire dans le cadre des Prestations.
+- **Souveraineté** : désigne la politique de gestion à la fois des
+    Données, mais aussi des personnels et de l'ensemble de
+    l'Infrastructure du Prestataire. La Souveraineté s'applique à un
+    Territoire. Le Prestataire garantit au CLIENT qu'il s'assure que le
+    Prestataire met en œuvre les mesures techniques, organisationnelles
+    appropriées afin de prévenir l'accès non autorisé aux Données et
+    qu'en utilisant une ou plusieurs Régions sur un même Territoire,
+    aucune Donnée ne sortira de ce Territoire à l'initiative du
+    Prestataire. De plus les personnels du Prestataire sur un Territoire
+    seront liés contractuellement à ce Territoire et nulle personne d'un
+    autre Territoire ne pourra accéder aux équipements d'un Territoire
+    sans l'autorisation d'un personnel dudit Territoire.
+- **Système Hébergé et Infogéré** : désigne l'ensemble des Équipements
+    sur lesquels portent les Services sur le Cloud défini et pris en
+    charge par le Prestataire au titre du Contrat.
+- **Utilisateur(s)** : désigne une personne physique qui, à la suite
+    de la demande d'un CLIENT, obtient un compte Utilisateur et accède à
+    la Console fournie par le Prestataire. Les accès et privilèges
+    obtenus de cette manière sont réservés à une personne physique
+    uniquement et ne peuvent en aucun cas être partagés entre plusieurs
+    personnes.
+- **Unité d'œuvre** : désigne une mesure standardisée utilisée pour
+    évaluer et tarifer l'utilisation de ressources informatiques, basée
+    sur la consommation ou la performance.
+
+## Objet
+
+Le présent Contrat vise à établir les termes et conditions selon
+lesquels le Prestataire s'engage à fournir au CLIENT les Services
+définis, en précisant le champ d'application, les modalités d'exécution
+des Prestations, ainsi que les modalités financières associées. Le
+CLIENT s'engage dans ce contrat en son nom propre et pour son compte.
+
+L'adhésion du CLIENT à ce contrat implique une acceptation sans réserve
+des Conditions Générales de Vente et d'Utilisation (CGVU), que le CLIENT
+déclare avoir préalablement consultées, comprises et acceptées dans leur
+intégralité. Bien que le CLIENT opère en qualité de professionnel, il
+lui est vivement recommandé de solliciter l'expertise d'un spécialiste
+en informatique et réseaux avant de procéder à l'acceptation des
+présentes conditions. Cette démarche est essentielle pour garantir une
+décision éclairée concernant les aspects techniques du Contrat,
+notamment en ce qui concerne la sélection des caractéristiques des
+unités d'œuvre proposées et la détermination des ressources nécessaires
+à la satisfaction de ses besoins spécifiques.
+
+## Disposition générale
+
+Chaque Partie s'engage à ne pas prendre d'engagements au nom et pour le
+compte de l'autre Partie. Les Parties restent individuellement
+responsables de leurs actions, déclarations, engagements, services,
+produits et des actions de leur personnel.
+
+Dans l'éventualité où une disposition du Contrat se révèle invalide en
+vertu de la législation applicable ou d'une décision de justice
+irrévocable, cette disposition sera considérée comme non écrite. Cette
+invalidité n'affectera pas la validité globale du Contrat ni la force
+des autres dispositions.
+
+## Commande des services
+
+### Compte CLIENT
+
+Pour accéder et commander les Services proposés par le Prestataire, il
+est impératif pour le CLIENT de posséder un **Compte CLIENT** valide.
+Dans le cadre de la création et de la gestion de ce compte, le CLIENT
+s'engage à fournir au Prestataire toutes les données nécessaires à la
+bonne exécution du contrat. Ces données incluent, sans s'y limiter,
+l'adresse courriel, les informations d'identité et de contact, ainsi que
+les détails bancaires pertinents. Le CLIENT garantit l'exactitude, la
+fiabilité et la mise à jour de ces informations pour toute la durée du
+Contrat.
+
+Dans l'éventualité où le Compte CLIENT serait établi ou administré par
+un tiers agissant en représentation du CLIENT, ce tiers doit attester et
+assurer au Prestataire qu'il détient l'autorité et la capacité
+juridiques nécessaires pour agir au nom du CLIENT et l'engager
+conformément aux dispositions d'un contrat.
+
+### Activation du compte CLIENT
+
+Avant l'activation du Compte CLIENT, ainsi qu'à tout moment durant la
+prestation de services, le Prestataire se réserve le droit de vérifier
+l'exactitude des informations fournies par le CLIENT ou en son nom.
+Cette vérification peut inclure la demande de documents justificatifs à
+l'appui des informations communiquées. Le Prestataire détient également
+le droit de refuser l'activation ou de procéder à la désactivation du
+Compte CLIENT dans le cas où les informations seraient jugées
+incomplètes, inexactes, ou frauduleuses.
+
+### Commande
+
+Dès l'activation de son Compte CLIENT par le Prestataire, le CLIENT
+acquiert la possibilité de commander des Services. Selon la nature des
+Services sollicités, les commandes peuvent être effectuées via
+l'Interface de Gestion dédiée au CLIENT. Ce dernier assume l'entière
+responsabilité de la gestion de son Compte CLIENT, incluant la
+sécurisation des moyens d'authentification (identifiants, mots de passe,
+etc.) qui lui sont associés.
+
+Toute commande passée depuis le Compte CLIENT est considérée comme ayant
+été effectuée par le CLIENT lui-même, et emporte son adhésion pleine et
+entière aux termes du Contrat. Les modalités et délais de mise à
+disposition des Services commandés varient selon le type de Service
+requis. Certains Services ne seront disponibles qu'après que le
+Prestataire aura reçu le paiement intégral du CLIENT. Il incombe donc au
+CLIENT de vérifier que les conditions de fourniture des Services
+répondent à ses exigences.
+
+Les documents constitutifs du Contrat se complètent et s'interprètent de
+manière cohérente. Néanmoins, en cas de contradiction ou de divergences
+entre eux, la prééminence sera accordée aux documents selon l'ordre dans
+lequel ils ont été énumérés. Les annexes du Contrat, qui détaillent
+techniquement les Prestations, ne sauraient contredire les principes
+établis dans le corps principal du Contrat. Leur rôle est d'apporter une
+précision technique sans remettre en cause les dispositions générales du
+document.
+
+## Durée du contrat
+
+Les contrats établis sous ces Conditions Générales de Vente et
+d'Utilisation (CGVU) sont conclus pour une durée indéterminée, sauf
+disposition contraire stipulée dans les Conditions Particulières qui
+prévoiraient une durée déterminée.
+
+La résiliation du Contrat est uniquement possible en respectant les
+modalités spécifiées à l'article "Résiliation". Avant toute résiliation,
+le CLIENT doit s'assurer de la récupération intégrale de ses données qui
+étaient stockées dans le cadre des Contrat(s) concerné(s), conformément
+aux dispositions de l'article relatif à la « Récupération et effacement
+des Données ».
+
+La cessation du Contrat, que l'initiative provienne du Prestataire ou du
+CLIENT, n'exonère pas ce dernier de l'obligation de s'acquitter des
+coûts relatifs aux Prestations déjà fournies.
+
+## Périmètre des services
+
+Le périmètre des services englobe spécifiquement :
+
+- L'implémentation des services conformément au bon de commande,
+- La provision de services d'infrastructure,
+- La prestation additionnelle de services de Réversibilité.
+
+L'accès à ces services, ainsi que leur utilisation, sont soumis aux
+termes et conditions établis dans le présent Contrat, y compris toutes
+ses annexes associées.
+
+## Services optionnels
+
+Dans le cas où certains Services optionnels n'auraient pas été
+initialement inclus dans le Contrat, le CLIENT a la possibilité de les
+souscrire ultérieurement. La fourniture de tout Service optionnel par le
+Prestataire est conditionnée à l'accord préalable des parties suite à
+une évaluation concertée.
+
+## Conditions d'utilisation des services
+
+### Respect des conditions de service
+
+Le CLIENT s'oblige à passer commande et à utiliser les Services en
+respectant scrupuleusement les conditions d'utilisation applicables.
+L'utilisation des Services doit se faire de manière responsable. En
+particulier, le CLIENT s'engage à se familiariser avec les Conditions
+Générales de Vente et d'Utilisation (CGVU) en vigueur et à respecter
+toutes les directives qui lui sont fournies au moment de la commande.
+
+Lorsque le CLIENT utilise les Services pour le compte de tiers ou permet
+à des tiers d'accéder aux Services, il est tenu, avant toute utilisation
+par ces derniers, de leur faire connaître et accepter les conditions
+d'utilisation actuelles. Le CLIENT assure ainsi le Prestataire du
+respect intégral de ces conditions par les tiers concernés.
+
+### Choix des services
+
+Avant de procéder à la commande et à l'utilisation des Services, le
+CLIENT s'engage à examiner attentivement les Conditions d'utilisation
+actuelles, ainsi qu'à analyser en détail l'ensemble des documentations,
+configurations, options, et gammes de services proposées, ceci dans le
+but de choisir des Services et des caractéristiques qui correspondent
+précisément à ses besoins et à ceux des tiers utilisant les Services en
+son nom ou pour son compte.
+
+Le CLIENT veille particulièrement à ce que les Services sélectionnés
+soient conformes aux obligations légales et réglementaires inhérentes
+aux activités menées via l'utilisation des Services. Pour toute demande
+d'information relative aux Services, le CLIENT est invité à prendre
+contact avec le Prestataire. Il est de la responsabilité du CLIENT de se
+tenir informé des modifications susceptibles d'intervenir, notamment
+lors de l'émission de nouvelles Commandes.
+
+### Connexion
+
+L'accès aux Services requiert que le CLIENT dispose, à ses propres frais
+et sous sa responsabilité, d'une connexion à distance adéquate (telle
+qu'une connexion Internet ou un réseau privé). Il est porté à la
+connaissance du CLIENT que le réseau Internet peut subir des aléas
+techniques et présenter des risques de sécurité qui échappent aux
+mesures techniques déployées par le Prestataire dans le cadre des
+Services.
+
+Le Prestataire ne peut être tenu responsable des dysfonctionnements
+attribuables aux fournisseurs d'accès Internet ou à tout autre opérateur
+de réseau tiers (incluant, sans s'y limiter, les problèmes de fiabilité
+des connexions, les variations de bande passante, les interruptions de
+service, etc.), ni des répercussions éventuelles de ces
+dysfonctionnements, en particulier lorsqu'ils conduisent à une
+indisponibilité ou à une interruption des Services.
+
+### Moyens d'authentification
+
+Le CLIENT assume l'entière responsabilité de la gestion et du maintien
+de la confidentialité des identifiants et mots de passe nécessaires pour
+accéder et utiliser les Services. Il doit veiller à ce que les
+utilisateurs autorisés soient pleinement informés et respectent les
+meilleures pratiques en matière de sécurité pour préserver la
+confidentialité de leurs moyens d'authentification. Le CLIENT est le
+seul responsable des conséquences découlant de la perte, de la
+divulgation ou de l'utilisation abusive ou non autorisée des moyens
+d'authentification attribués aux utilisateurs.
+
+En aucun cas, la responsabilité du Prestataire ne saurait être engagée
+pour de tels incidents. Le CLIENT s'engage à notifier sans délai le
+Prestataire en cas de perte ou de divulgation suspectée des moyens
+d'authentification, et à initier immédiatement les procédures de
+remplacement ou de réinitialisation de ces moyens.
+
+### Contenus
+
+Dans le respect des dispositions fournies par le Prestataire, ce dernier
+ne participe pas activement à la gestion des contenus du CLIENT et
+s'abstient de tout accès à ces contenus, sauf dans le strict cadre
+nécessaire à la fourniture des Services. Ainsi, le Prestataire ne
+procède à aucune vérification, validation ou mise à jour des contenus
+mentionnés.
+
+De la même manière, il n'assure pas de sauvegarde dédiée des contenus
+stockés via les Services. Il incombe donc au CLIENT de prendre les
+dispositions adéquates pour la sauvegarde de ses contenus, afin de se
+protéger contre tout risque de perte ou de détérioration, quelle qu'en
+soit la raison, notamment via l'usage des unités d'œuvre appropriées
+dans le catalogue du Prestataire.
+
+Les contenus gérés doivent être légaux et utilisés dans le respect des
+bonnes pratiques, ainsi que des lois et réglementations applicables.
+L'utilisation de contenus illicites (tels que la diffusion, la
+publication, le stockage ou la transmission de contenus faisant
+l'apologie de crimes, incitant à la haine ou à la violence contre des
+individus en raison de leur sexe, religion, orientation ou identité
+sexuelle, ou handicap, ou violant les droits de propriété intellectuelle
+d'autrui) est strictement interdite.
+
+Tout manquement à ces règles peut entraîner, à la discrétion du
+Prestataire, la suspension immédiate des Services, la désactivation du
+compte du CLIENT, voire la résiliation du Contrat aux torts exclusifs du
+CLIENT. Cela sans préjudice du droit du Prestataire à engager des
+poursuites judiciaires ou à réclamer des dommages-intérêts pour
+préjudice subi.
+
+### Respect des lois, réglementations et règles déontologiques
+
+Les Services doivent être utilisés de manière responsable, en conformité
+avec les lois et réglementations applicables. Les Parties conviennent de
+rester attentives aux changements législatifs et réglementaires. Sont
+expressément interdites les pratiques suivantes, bien que cette
+énumération ne soit pas exhaustive :
+
+1. les usages abusifs ou frauduleux des Services et des ressources
+    fournies, susceptibles de compromettre la stabilité et la sécurité
+    des systèmes du Prestataire, pouvant affecter la qualité des
+    Services offerts aux autres utilisateurs ;
+2. les tentatives d'intrusion ou d'attaque via les Services incluant,
+    mais sans s'y limiter, le balayage de ports, l'écoute clandestine,
+    le spoofing, ainsi que toute forme d'attaque émanant des ressources
+    fournies, à l'exception des tests d'intrusion préalablement
+    autorisés par le Prestataire ;
+3. toute forme de SPAM ou pratiques similaires de « spamming » ;
+4. l'utilisation de contenus illicites ou interdits, tels que décrits
+    précédemment dans la section « Contenus ».
+
+### Suspension de service
+
+Le Prestataire se réserve le droit de suspendre temporairement ou
+totalement les Services en cas de :
+
+1. menace réelle pour la sécurité ou la stabilité des systèmes du
+    Prestataire, des Services, ou des données CLIENT ;
+2. mise en œuvre des opérations de maintenance prévues ;
+3. requêtes d'autorités judiciaires ou administratives ;
+4. alertes reçues conformément à l'article 6 de la Loi pour la
+    Confiance dans l'Économie Numérique (LCEN) ;
+5. violation des conditions d'utilisation établies par le Contrat.
+
+Cette suspension peut être immédiate, sans préavis, en cas de situation
+critique ou pour prévenir un usage illicite ou frauduleux des Services,
+une infraction aux droits de tiers, ou tout acte susceptible d'engager
+la responsabilité du Prestataire. Le Prestataire s'efforce, dans la
+mesure du possible et sauf en cas de nécessité légale ou de violation
+des conditions d'utilisation, de minimiser l'impact de toute suspension
+sur le service habituel. Cependant, de telles suspensions n'exonèrent
+pas le CLIENT de son obligation de régler les montants dus au titre du
+Contrat. Le CLIENT reste informé des maintenances planifiées via une
+interface dédiée.
+
+En cas de manquement du CLIENT à ses obligations, ces suspensions se
+feront sans préjudice du droit du Prestataire de résilier le Contrat ou
+de demander réparation. Sauf dans les cas de résiliation ou de
+non-renouvellement, les suspensions n'entraîneront pas la suppression
+des données CLIENT. À moins qu'elles ne soient exclusivement dues à un
+défaut du Prestataire, ces interruptions ne seront pas considérées comme
+une indisponibilité des Services aux fins des engagements de niveau de
+service stipulés dans le Contrat.
+
+### Evolution des services
+
+Le Prestataire se réserve le droit d'apporter, à sa discrétion, toute
+modification aux Services, y compris l'ajout, la modification ou la
+suppression de gammes, d'options, de fonctionnalités, ainsi que
+l'amélioration de leurs performances. La description détaillée des
+Services est disponible sur le site internet du Prestataire. Il est de
+la responsabilité du CLIENT de rester informé des mises à jour des
+Services, lesquelles s'appliqueront immédiatement à toutes nouvelles
+commandes. Des changements peuvent aussi survenir de manière immédiate
+en réponse à des nécessités urgentes, telles que des risques
+sécuritaires ou des exigences de conformité légale ou réglementaire, ou
+encore suite à des modifications de produits tiers.
+
+En conformité avec l'article « Conditions spécifiques aux Consommateurs
+», si une mise à jour entraine une dégradation d'un Service utilisé par
+le CLIENT --- par exemple, la suppression d'une fonctionnalité ou une
+baisse de performance ---, le CLIENT a le droit de résilier le Service
+concerné. Pour ce faire, il doit envoyer une notification de résiliation
+par courrier recommandé avec demande d'avis de réception, dans un délai
+de soixante (60) jours suivant l'application de la modification.
+
+### Propriété intellectuelle et droit d'utilisation
+
+Tous les éléments fournis au CLIENT par le Prestataire --- incluant
+logiciels, infrastructures, documentations, et autres --- demeurent la
+propriété exclusive du Prestataire ou de ses ayants droit. Le
+Prestataire accorde au CLIENT un droit d'utilisation non exclusif de ces
+éléments, strictement pour l'usage des Services et conformément aux
+termes contractuels, pour la durée de l'accord. Il est important de
+souligner que, en dehors de ces éléments fournis, le CLIENT est
+entièrement responsable d'obtenir toutes les autorisations et droits
+nécessaires pour les éléments et contenus (données, logiciels,
+applications, systèmes, sites web, etc.) qu'il choisit d'utiliser ou
+d'exploiter dans le cadre des Services.
+
+Le CLIENT, ainsi que ses Utilisateurs, restent les propriétaires de
+leurs contenus. Le Prestataire s'engage à ne pas exploiter ces contenus
+à d'autres fins que celles stipulées dans le contrat. Conformément aux
+lois en vigueur, le CLIENT est tenu de ne pas décompiler les logiciels,
+codes et algorithmes mis à disposition dans le cadre des Services, y
+compris pour des tentatives de rétro-ingénierie, sauf autorisation
+légale explicite permettant de contourner cette restriction.
+
+### Contrôle à l'exportation
+
+Sous réserve des limitations spécifiées dans les termes du Contrat et
+des restrictions liées aux activités propres au CLIENT, le Prestataire
+garantit que les Services sont commercialisables et utilisables au sein
+de l'Union Européenne ainsi que dans les pays hôtes des Centres de
+données fournissant les Services.
+
+Il incombe au CLIENT, s'il envisage d'utiliser les Services ou
+d'autoriser leur utilisation par des tiers hors des frontières
+Européenne, de s'assurer que cette utilisation respecte les lois et
+réglementations applicables. Ceci inclut, mais n'est pas limité à, le
+respect du Règlement (CE) n°428/2009 du Conseil du 5 mai 2009,
+concernant le contrôle des exportations de biens à double usage, ainsi
+que les réglementations américaines telles que les EAR (Export
+Administration Regulations) et les 'ITAR' (International Traffic In Arms
+Regulations), étant donné que le Prestataire distribue des solutions de
+tiers régis par la législation américaine.
+
+Le Prestataire se réserve le droit de refuser toute commande émanant de
+pays faisant l'objet de restrictions commerciales ou de sanctions, ou de
+personnes physiques ou morales de ces pays ou sous sanctions. Des
+vérifications, incluant la solvabilité et la présence éventuelle du
+CLIENT sur des listes de sanctions, telles que la liste de gels des
+avoirs de la Direction générale du Trésor, pourront être effectuées.
+Suite à ces vérifications, le Prestataire peut résilier le contrat de
+manière unilatérale et immédiate après en avoir informé le CLIENT.
+
+### Produits tiers
+
+Conformément aux engagements pris, il est important de noter que :
+
+1. le Prestataire décline toute responsabilité quant aux Produits Tiers
+    fournis dans le cadre des Services. Ces produits peuvent présenter
+    des défauts techniques, des vulnérabilités de sécurité, des
+    problèmes de compatibilité ou de stabilité. Le Prestataire n'offre
+    aucune garantie relative à ces Produits Tiers, y compris mais sans
+    s'y limiter, à toute information ou élément associé tel que
+    logiciels, systèmes, applications, etc.,
+2. l'utilisation des Produits Tiers par le CLIENT est strictement
+    limitée au cadre des Services fournis. Il est notamment interdit au
+    CLIENT de décompiler, d'obtenir l'accès aux codes sources, ou de
+    réinstaller les Produits Tiers logiciels ou systèmes sur d'autres
+    infrastructures. La responsabilité de l'utilisation des Produits
+    Tiers incombe entièrement au CLIENT, qui doit s'assurer de leur
+    adéquation avec ses besoins spécifiques et les objectifs visés, tout
+    en respectant les termes du Contrat.
+
+### Continuité et réversibilité des services
+
+La cessation des Services, pour toute raison (telle que la résiliation
+du Contrat, son non-renouvellement, l'interruption des Services par le
+CLIENT, la violation des termes du Contrat, etc.), ainsi que certaines
+opérations de mise à jour ou de réinstallation, entraînent la
+suppression définitive et irréversible de tous les Contenus (y compris
+les informations, données, fichiers, systèmes, applications, sites web,
+et autres éléments) que le CLIENT a reproduits, stockés, hébergés,
+collectés, transmis, diffusés, publiés, ou de toute autre manière
+utilisés ou exploités dans le cadre des Services, incluant les
+sauvegardes éventuelles.
+
+### Test d'intrusion
+
+Le CLIENT est autorisé à conduire, directement ou via un auditeur
+externe spécifiquement mandaté, des tests d'intrusion sur les Services
+fournis (dénommés ici « Tests d'intrusion »). Ces tests ne peuvent être
+effectués qu'après la signature d'un accord d'audit par toutes les
+parties concernées par la fourniture du Service, y compris le CLIENT,
+l'auditeur, le Prestataire, ainsi que leurs sous-traitants le cas
+échéant. Ces tests doivent respecter la législation actuelle et
+nécessitent l'accord préalable des utilisateurs et des détenteurs de
+droits dans le domaine testé.
+
+Les modalités de réalisation de ces Tests d'intrusion par un auditeur
+externe seront définies dans un contrat distinct entre le CLIENT et cet
+auditeur, reprenant les obligations énoncées dans cet article. Le CLIENT
+s'engage à garantir le respect de ces conditions par l'auditeur, qui
+agit sous la responsabilité du CLIENT. Les Tests d'intrusion ne doivent
+en aucun cas :
+
+- Cibler d'autres infrastructures ou services du Prestataire et/ou du
+    Prestataire non exclusivement utilisés par le CLIENT,
+- Perturber le fonctionnement optimal des Services, infrastructures,
+    et réseaux du Prestataire,
+- Affecter les services, ressources, réseaux et infrastructures mis à
+    disposition par le Prestataire à d'autres clients.
+
+Toute intrusion dans les systèmes utilisés par d'autres clients est
+formellement interdite. Le CLIENT assume l'entière responsabilité des
+conséquences découlant des Tests d'intrusion, y compris celles résultant
+d'actions menées par un auditeur externe. Il est de la responsabilité du
+CLIENT de réaliser toutes les sauvegardes nécessaires avant les tests
+pour assurer la restauration des systèmes en cas d'incident.
+
+Il est à noter que les mécanismes de protection contre le spam, les
+DOS/DDOS, et autres, resteront actifs pendant les tests, pouvant
+entraîner une indisponibilité temporaire des Services. Le CLIENT doit
+informer toute partie impactée par cette indisponibilité. À la fin des
+Tests d'intrusion, un rapport d'audit sera rédigé et mis à disposition
+du Prestataire sur demande ou si cela s'avère pertinent (par exemple, en
+cas de découverte de vulnérabilités).
+
+Ce rapport d'audit, son contenu, et toutes les informations obtenues ou
+divulguées au cours de l'audit sont strictement confidentiels et ne
+doivent pas être publiés ou partagés sans l'autorisation écrite du
+Prestataire. En cas de violation des conditions établies, le Prestataire
+se réserve le droit de suspendre immédiatement l'accès aux Services,
+sans préjudice de tout dommage-intérêt potentiel.
 
 ## Collaboration
 
-The Parties acknowledge an obligation of cooperation. Consequently, they agree to communicate all relevant information and documents necessary for the performance of this Contract, particularly their respective obligations.
+Les Parties reconnaissent être soumises à une obligation de
+collaboration. En conséquence, elles s'engagent à se communiquer toute
+information et document de nature à faciliter l'exécution du Contrat, et
+plus particulièrement, de leurs obligations respectives.
 
-### Liability
+## Responsabilité
 
-This section outlines the responsibilities and liabilities associated with the implementation and operation of cloud computing systems, IT infrastructure, and software development projects. It emphasizes adherence to legal, ethical, and quality standards, ensuring data security, compliance with regulations, and maintaining transparency in processes. The document details best practices for risk management, incident response, and continuous improvement, aiming to minimize potential liabilities while maximizing the benefits of cloud computing and IT services.
+### Capacité
 
-### Capacity
+Chacune des Parties déclare et garantit posséder l'autorité et la
+capacité nécessaires à la conclusion du Contrat et à l'exécution des
+obligations lui incombant. Le CLIENT et le Prestataire déclarent et
+garantissent notamment disposer de toutes les autorisations, compétences
+et connaissances (notamment techniques), leur permettant respectivement
+d'utiliser et de fournir les Services conformément aux conditions
+prévues au Contrat.
 
-Each Party represents and warrants that they possess the authority and capacity necessary to enter into this Agreement and perform the obligations imposed upon them. The CLIENT and Service Provider represent and warrant, among other things, that they have all necessary authorizations, competencies, and knowledge (including technical expertise) allowing them respectively to utilize and provide the Services in accordance with the conditions set forth in this Agreement.
+### Responsabilité du Prestataire
 
-### Service Provider Liability
+Lorsque le Contrat stipule des engagements de niveau de service, les
+pénalités ou crédits octroyés par le Prestataire au CLIENT servent de
+compensation forfaitaire pour tout préjudice découlant du non-respect de
+ces engagements. En conséquence, le CLIENT renonce à toute autre forme
+de demande, réclamation ou action à ce titre. Si aucun engagement de
+niveau de service n'est applicable, la réparation maximale imputable au
+Prestataire est limitée au total des sommes versées par le CLIENT pour
+les services affectés durant les trois (3) mois précédant la demande
+d'indemnisation.
 
-When the Contract specifies service level agreements (SLAs), the penalties or credits provided by the Service Provider to the Client serve as a fixed compensation for any damage resulting from non-compliance with these SLAs. Consequently, the Client waives all other claims, demands, or actions related to this matter. If no applicable SLA exists, the maximum repairable amount attributable to the Service Provider is limited to the total sums paid by the Client for services affected within three (3) months preceding the indemnification request.
+**Clause d'exonération de responsabilité :** La responsabilité du
+Prestataire ne saurait être engagée dans les cas suivants :
 
-**Exclusion of Liability Clause:** The Service Provider's liability shall not be assumed in the following instances:
+- Mauvaise utilisation des services contrairement aux termes du
+    Contrat ;
+- Non-exécution, défaillance, dysfonctionnement ou indisponibilité des
+    services due à un tiers (autres que les sous-traitants du
+    Prestataire), au CLIENT, à un produit tiers, ou à une négligence du
+    CLIENT ;
+- Dommages indirects tels que le préjudice commercial, la perte de
+    commandes, la baisse d'activité, l'atteinte à la réputation, la
+    perte de profits ou de clients, notamment due à une divulgation
+    accidentelle d'informations confidentielles, à une action en justice
+    d'un tiers, etc.;
+- Perte, divulgation ou utilisation inappropriée ou frauduleuse des
+    identifiants d'accès des utilisateurs, imputable au CLIENT ou à des
+    tiers ;
+- Suspension de l'accès aux services ou interruption temporaire ou
+    définitive, conformément à l'article 6 "Conditions d'utilisation", y
+    compris à la demande d'autorités administratives ou judiciaires ;
+- Perte, altération ou destruction de contenus hébergés sur
+    l'infrastructure, dans la mesure où le Prestataire n'est pas
+    responsable de la continuité d'activité du CLIENT, y compris des
+    sauvegardes ;
+- Inadéquation des services aux besoins du CLIENT (notamment eu égard
+    à la sensibilité des données concernées);
+- Incidents de sécurité liés à l'utilisation d'internet, notamment en
+    cas de perte, altération, destruction, divulgation ou accès
+    non-autorisé a des données ou informations du CLIENT sur ou à partir
+    du réseau internet ;
+- Détérioration des systèmes, applications et autres éléments
+    installés par le CLIENT sur l'infrastructure.
 
-- Misuse of services contrary to Contract terms;
-- Failure, delay, malfunction, or unavailability of services due to a third party (other than the Prestataire's subcontractors), Client, third-party product, or Client negligence;
-- Indirect damages such as commercial harm, loss of orders, decreased activity, reputational damage, loss of profits or clients, including but not limited to, accidental disclosure of confidential information, third-party legal actions, etc.;
-- Unauthorized use, disclosure, or misuse of Client user authentication credentials, attributable to the Client or third parties;
-- Suspension of access to services or temporary/permanent interruption, in accordance with Article 6 "Terms of Use," including requests from administrative or judicial authorities;
-- Loss, alteration, or destruction of hosted content on the infrastructure, within the limits of the Service Provider's responsibility for Client uptime, including backups;
-- Inadequacy of services to meet Client needs (especially concerning data sensitivity);
-- Security incidents related to internet usage, particularly in cases involving loss, alteration, destruction, disclosure, or unauthorized access to Client data on or from the internet network;
-- Deterioration of systems, applications, and other elements installed by the Client on the infrastructure.
+### Responsabilité du CLIENT
 
-### CLIENT RESPONSIBILITY
+Le CLIENT est entièrement responsable des risques associés à ses
+activités, incluant l'utilisation des Services fournis par le
+Prestataire et le respect intégral des termes du Contrat. Cette
+responsabilité s'étend aux cas où les Services sont employés directement
+par le CLIENT ou au nom de tiers.
 
-The CLIENT is solely responsible for all risks associated with its activities, including the use of Services provided by the Prestataire and full compliance with the terms of the Contract. This responsibility extends to cases where Services are used directly by the CLIENT or on behalf of third parties.
+Plus précisément, le CLIENT est responsable :
 
-Specifically, the CLIENT is accountable for:
+- de s'assurer que les Services choisis correspondent à ses exigences
+    et à celles de tout tiers les utilisant en son nom ;
+- de la gestion des Contenus - informations, données, fichiers,
+    systèmes, applications, logiciels, sites web, etc., qu'il reproduit,
+    héberge, installe, collecte, transmet, diffuse, publie ou utilise de
+    toute autre manière dans le cadre des Services. Cela inclut le
+    contrôle, la validation, la mise à jour, l'élimination, la
+    sauvegarde des Contenus, et la mise en œuvre de mesures pour
+    prévenir leur perte ou altération, même lorsque ces contenus
+    appartiennent à des tiers ou sont gérés pour leur compte ;
+- de respecter les législations, régulations en vigueur, ainsi que
+    toute charte de déontologie applicable.
+- de respecter la PGSSI-S (politique générale de sécurité des systèmes
+    d'information de santé) si la prestation objet du présent contrat
+    concerne des données de santé, conformément à l'exigence 4.5.2 du
+    référentiel HDS.
 
-- Ensuring that chosen Services meet its requirements and those of any third parties it represents;
-- Managing Contents - information, data, files, systems, applications, software, websites, etc., reproduced, hosted, installed, collected, transmitted, disseminated, published, or otherwise utilized within the Services' scope. This includes control, validation, updates, removal, backups of Contents, and implementing measures to prevent their loss or alteration, even when these contents belong to third parties or are managed on their behalf;
-- Compliance with applicable laws, regulations, and any professional code of conduct;
-- Adherence to PGSSI-S (General Information Security Policy for Health Information Systems) if the rendered service involves health data, in accordance with requirement 4.5.2 of the HDS reference framework.
+Lorsque le CLIENT utilise les Services à des fins professionnelles ou
+agit pour le compte de tiers, il s'engage à souscrire une assurance
+responsabilité civile auprès d'un assureur reconnu, couvrant tous les
+dommages potentiels qui pourraient lui être attribués. Il s'engage
+également à maintenir cette assurance, ou toute autre assurance offrant
+une couverture équivalente, active durant toute la période du Contrat.
 
-When the CLIENT uses Services for commercial purposes or acts on behalf of third parties, it commits to obtaining professional liability insurance from a recognized insurer, covering all potential damages attributable to it. It also pledges to maintain this insurance (or any equivalent coverage) active throughout the Contract's duration.
+### Garantie
 
-### Guarantee
+Chaque Partie s'engage à exercer ses activités dans le strict respect
+des lois et réglementations applicables. Le CLIENT dégage le Prestataire
+de toute responsabilité et s'engage à le protéger contre toute
+conséquence découlant :
 
-Each Party agrees to conduct its activities in strict compliance with applicable laws and regulations. THE CLIENT releases the Provider from any liability and commits to protect it against any consequence arising from:
+- de l'usage ou de l'exploitation de Contenus illicites via les
+    Services ;
+- d'une utilisation frauduleuse ou non conforme aux réglementations en
+    vigueur des Services ;
+- d'une exploitation des Services violant les droits de tiers ;
+- du choix de Services inadaptés aux besoins du CLIENT ou à ceux de
+    tiers ;
+- de la perte, de l'utilisation non autorisée ou frauduleuse des
+    identifiants des Utilisateurs.
 
-- The use or exploitation of Illicit Contents via the Services;
-- Any fraudulent or non-compliant use of the Services, in accordance with existing regulations;
-- Any violation of third parties' rights through the use of the Services;
-- The selection of inappropriate Services for THE CLIENT's or others' needs;
-- The loss, unauthorized or fraudulent use of User Identifiers.
+Le CLIENT promet également de prendre part activement à la gestion de
+toute demande, réclamation, ou action en justice impliquant les Contenus
+ou les termes du Contrat, y compris celles émanant d'autorités
+administratives ou judiciaires, et s'engage à indemniser le Prestataire
+pour tous dommages résultants, incluant les éventuelles condamnations,
+ainsi que les frais de défense justifiés.
 
-THE CLIENT further pledges to actively participate in managing any request, claim, or legal action involving Contents or Contract terms, including those from administrative or judicial authorities, and commits to indemnify the Provider for all resulting damages, encompassing any potential penalties, as well as justified defense costs.
+### Tiers
 
-### Third Parties
+Dans le cadre du présent Contrat, le Prestataire n'assume aucune
+obligation à l'égard de tiers, y compris les Utilisateurs, et aucune
+clause ne doit être interprétée comme octroyant des droits bénéficiaires
+à des tiers. Le CLIENT assume l'entière responsabilité de ses
+interactions avec les tiers, en particulier avec les Utilisateurs des
+Services, et s'engage à indemniser le Prestataire pour toute demande,
+réclamation, ou action de tiers qui pourrait remettre en question la
+qualité ou la conformité des Services fournis par le Prestataire.
 
-In the context of this Agreement, the Provider assumes no obligation with respect to third parties, including Users, and any clause shall not be interpreted as granting third parties any beneficial rights. The CLIENT assumes full responsibility for its interactions with third parties, particularly with Services Users, and agrees to indemnify the Provider for any claim, demand, or action by third parties that could challenge the quality or compliance of the Services provided by the Provider.
+Le CLIENT s'oblige également à informer le Prestataire, par écrit et
+dans les plus brefs délais, de toute demande, réclamation, ou action de
+tiers concernant les Services du Prestataire, en fournissant un
+descriptif détaillé de la demande ainsi que toutes les informations
+pertinentes permettant au Prestataire de fournir au CLIENT les éléments
+de réponse ou les documents utiles qu'il détient.
 
-The CLIENT further obligates itself to promptly inform the Provider, in writing, of any claim, demand, or action by third parties concerning the Provider's Services, providing a detailed description of the request along with all relevant information enabling the Provider to furnish the CLIENT with responses or documents that it holds.
+## Force majeure
 
-## Force Majeure
+L'exécution d'une obligation, quelle qu'elle soit, est suspendue en
+lorsque son exécution est empêchée par un cas de force majeure tel que
+défini par l'article 1218 du Code civil.
 
-The performance of any obligation, whether contractual, is suspended in the event it becomes impossible due to a case of force majeure as defined by Article 1218 of the Civil Code.
+Dans un premier temps, les cas de force majeure suspendront l'exécution
+du Contrat. En cas de force majeure empêchant le Prestataire d'exécuter
+ses Services :
 
-Initially, cases of force majeure will suspend the execution of the Contract. In the event that a force majeure prevents the Service Provider from fulfilling their obligations:
+- Dès la survenance de l'évènement constitutif d'un cas de force
+    majeure, Cloud Tempe se rapprochera du CLIENT afin d'étudier
+    ensemble les solutions permettant d'assurer la reprise des Services
+    et de convenir d'un commun accord des modalités de mise en œuvre de
+    ces solutions, mise en œuvre qui devra intervenir au plus tard
+    quarante-huit (48) heures après la date de survenance de l'évènement
+    constitutif du cas de force majeure;
+- Si la durée de ce dernier venait à excéder trente (30) jours
+    calendaires à compter de la date de l'évènement constitutif du cas
+    de force majeure, ou si les Parties ne parvenaient pas à s'entendre
+    sur la solution de remplacement au plus tard à l'expiration de ce
+    même délai, le CLIENT pourrait alors confier les Services, objet du
+    Contrat, à un autre Prestataire de son choix, engageant de fait la
+    Phase de Réversibilité dans la mesure où la nature, la gravité et
+    l'impact du cas de force majeure le permet ;
+- A contrario, si le Prestataire parvenait dans un délai inférieur à
+    trente (30) jours calendaires à compter de la date de survenance de
+    l'évènement constitutif du cas de force majeure, à exécuter
+    normalement ses obligations, le cas de force majeure ayant cessé, le
+    Contrat reprendra son exécution normale.
 
-- Upon the occurrence of an event constituting a force majeure, Cloud Tempe will promptly contact the CLIENT to collaboratively explore solutions for resuming Services and agree on the implementation details of these solutions. This must be completed no later than 48 hours after the occurrence of the event defining the force majeure;
-- If the duration of this replacement exceeds thirty (30) calendar days from the date of the event constituting the force majeure, or if the Parties cannot agree on a replacement solution within that same period, the CLIENT may then assign the Services, subject to the Contract, to another Service Provider at their discretion. This would include the Phase of Reversibility, as permitted by the nature, gravity, and impact of the force majeure;
-- Conversely, if the Service Provider fails to execute its obligations within thirty (30) calendar days from the occurrence of the event defining the force majeure, despite the cessation of the force majeure, the Contract will resume normal execution.
+Si le cas de force majeure perdure au-delà de trente (30) jours
+calendaires, chacune des parties pourra résilier le Contrat après envoi
+d'une lettre recommandée à l'autre partie.
 
-Should the force majeure persist beyond thirty (30) calendar days, either Party may terminate the Contract upon sending a registered letter to the other Party.
+Tous les frais liés à la mise en œuvre des solutions susvisées
+incomberont à la Partie affectée par le cas de force majeure.
 
-All costs associated with implementing these solutions will fall on the Party affected by the force majeure.
+## Conditions financières
 
-### Financial Conditions
+### Tarifs appliqués
 
-This section outlines the financial terms and conditions of our agreement. It includes details on payment schedules, currency, tax implications, and any other relevant financial aspects. Please review these conditions carefully to ensure full understanding before proceeding.
+Les tarifs appliqués pour les Services fournis au CLIENT correspondent
+aux prix en vigueur au moment de l'émission de la facture, conformément
+aux conditions convenues lors de la signature du Contrat. À moins qu'il
+n'en soit spécifié autrement, ces prix sont exprimés en euros. Le
+Prestataire offre diverses grilles tarifaires pour ses Services, qui
+peuvent inclure, selon le cas, une période d'engagement minimale et/ou
+une modalité de facturation dédiée. Pour un Service donné proposant
+plusieurs options tarifaires, le CLIENT est libre de choisir l'option
+qui lui convient le mieux au moment de passer sa commande.
 
-### Applied Fees
+Les prix mentionnés s'entendent hors taxes pour les Services destinés
+aux professionnels, ce qui signifie que la TVA et toute autre taxe
+pertinente (à l'exception des taxes sur les revenus du Prestataire)
+s'ajoutent au montant facturé. Cette imposition supplémentaire ne
+constitue pas une modification du prix au sens de l'article dédié aux
+conditions de révision des tarifs.
 
-The applied fees for the Services provided to the CLIENT correspond to the current prices at the time of invoice issuance, in accordance with the terms agreed upon in the Contract. Unless otherwise specified, these prices are expressed in euros. The Provider offers various pricing structures for its Services, which may include, where applicable, a minimum engagement period and/or a dedicated billing method. For a given Service offering multiple pricing options, the CLIENT is free to select the option that best suits their needs when placing their order.
+Sauf mention d'une tarification spécifique, le coût des Services inclut
+également les frais liés à l'acquisition des licences et des droits
+d'utilisation des outils, logiciels et systèmes d'exploitation employés
+par le Prestataire ou, le cas échéant, mis à disposition du CLIENT dans
+le cadre des Services. Il revient au CLIENT d'obtenir et de régler toute
+licence ou droit d'utilisation nécessaire pour l'exploitation des
+contenus qu'il utilise via les Services.
 
-The mentioned prices are net of taxes for services intended for professionals, meaning that VAT and any other applicable taxes (excluding the Provider's own revenue taxes) will be added to the billed amount. This additional imposition does not constitute a price modification as per the article on tariff revision conditions.
+La structure de prix des Services et les unités de mesure utilisées pour
+le calcul de ces prix sont disponibles sur le site internet du
+Prestataire. Il est recommandé au CLIENT de consulter ces informations
+avant de valider sa commande. Toute unité de mesure entamée est due dans
+son intégralité, même si elle n'est pas entièrement consommée. De plus,
+certains Services peuvent engendrer des coûts supplémentaires pour leur
+installation ou leur mise en service.
 
-Beyond specific pricing details, the cost of Services also encompasses acquisition fees for licenses and usage rights of tools, software, and operating systems utilized by the Provider or, if applicable, made available to the CLIENT through the Services. It is the CLIENT's responsibility to acquire and pay for any necessary licenses or usage rights required for the operation of content accessed via the Services.
+### Changement de prix
 
-The pricing structure of Services and the units of measurement used for their calculation are accessible on the Provider's website. It is recommended that the CLIENT review these details prior to confirming their order. Any partial unit of measurement is due in full, even if not fully consumed. Additionally, certain Services may incur extra costs for installation or activation.
+Le Prestataire se réserve le droit de réviser ses tarifs à sa
+discrétion. Toute modification tarifaire s'appliquera immédiatement aux
+Commandes passées postérieurement à cette modification. Pour les
+Services déjà souscrits, toute hausse tarifaire sera communiquée au
+CLIENT avec un préavis de trente (30) jours calendaires via courriel.
 
-### Price Change Notification
+Suite à cette notification, le CLIENT aura la possibilité, durant trente
+(30) jours calendaires, de résilier les Services concernés sans encourir
+de pénalités. Cette résiliation peut être effectuée soit par envoi d'un
+courrier recommandé avec accusé de réception, soit via un formulaire
+spécifique disponible dans l'Interface de Gestion du CLIENT. En
+l'absence de résiliation dans ce délai, le CLIENT sera considéré comme
+ayant accepté les nouveaux prix. Il est important de noter que l'option
+de résiliation sans pénalités n'est pas offerte dans les situations où
+l'augmentation des prix découle de circonstances imprévues, telles que
+définies par l'article 1195 du Code civil. Dans de telles circonstances,
+les termes spécifiés dans ledit article s'appliqueront.
 
-The Provider reserves the right to adjust its prices at its discretion. Any price change will apply immediately to future orders placed after the adjustment. For subscribed services, any tariff increase will be communicated to the CLIENT with a 30-day (30 calendar day) notice via email.
+### Facturation
 
-Following this notification, the CLIENT has 30 calendar days to cancel the affected services without incurring penalties. This cancellation can be made either by registered mail with acknowledgment of receipt or through a specific form available within the CLIENT's Management Interface. In the absence of cancellation within this period, the CLIENT is deemed to have accepted the new prices. It's crucial to note that the option for penalty-free cancellation does not apply in cases where price increases are due to unforeseen circumstances as defined by Article 1195 of the Civil Code. In such scenarios, the terms specified in this article will apply.
+La facturation des Services est effectuée en fonction de l'utilisation
+réelle et des Commandes passées par le CLIENT, telles enregistrées dans
+le système d'information du Prestataire, qui est considéré comme fiable
+et fait autorité en cas de différend avec le CLIENT. La fréquence de
+facturation (mensuelle, annuelle, ou selon une autre périodicité) ainsi
+que le timing (à la commande ou après livraison) diffèrent selon le
+Service concerné. Les modalités de facturation sont déterminées
+conformément à l'offre technique et commerciale validée par le CLIENT et
+le Prestataire. Toute période entamée est due au prorata de la période.
+Il est de la responsabilité du CLIENT de se familiariser avec ces
+conditions avant de procéder à une commande. Suite au règlement de
+chaque facture, le Prestataire envoie au CLIENT un justificatif de
+paiement.
 
-### Billing
+Le CLIENT accepte de manière explicite la réception des factures par
+voie électronique, celles-ci étant envoyées à l'adresse courriel fournie
+par le CLIENT. Il incombe au CLIENT de sauvegarder une copie de chaque
+facture reçue, en accord avec les exigences légales en vigueur.
 
-Billing for the Services is based on actual usage and orders placed by the CLIENT, recorded in the Provider's information system, which is considered reliable and authoritative in case of disputes with the CLIENT. The billing frequency (monthly, annually, or another specified period) and timing (at order or upon delivery) vary depending on the specific Service. Billing terms are determined according to the technical and commercial offer validated by both the CLIENT and the Provider. Any partial period is billed at the prorata. It is the CLIENT's responsibility to familiarize themselves with these conditions prior to placing an order. Upon settlement of each invoice, the Provider sends the CLIENT a payment receipt.
+### Défaut et retard de paiement
 
-The CLIENT explicitly accepts the receipt of invoices electronically, which are sent to the email address provided by the CLIENT. The CLIENT is responsible for maintaining a copy of every invoice received, in compliance with applicable legal requirements.
+Sauf contestation de bonne foi par le CLIENT concernant tout ou partie
+de la facture, en cas de manquement ou de retard dans le paiement, y
+compris un paiement partiel, les conséquences suivantes s'appliqueront :
 
-### Overdue and Late Payment
+1. des pénalités de retard seront immédiatement exigibles dès le
+    lendemain de la date d'échéance, calculées sur la base d'un taux
+    d'intérêt équivalent à trois fois le taux légal,
+2. tout retard ou défaut de paiement (même partiel) des sommes dues par
+    le CLIENT en vertu du Contrat, persistant plus de sept (7) jours
+    calendaires après l'envoi d'une notification de défaut de paiement
+    par courriel, entraînera automatiquement sans autre notification ni
+    formalité :
 
-Except for a good-faith contest by the CLIENT regarding any part or all of the invoice, in case of non-payment or delay in payment (including partial payments), the following consequences shall apply:
+- l'exigibilité immédiate de l'intégralité des sommes restant dues par
+    le CLIENT au titre du Contrat, quel que soit le mode de paiement
+    initialement convenu,
+- le droit pour le Prestataire de suspendre immédiatement et sans
+    préavis l'ensemble ou une partie des Services fournis au CLIENT (y
+    compris ceux déjà payés), de refuser toute nouvelle Commande ou
+    renouvellement de Services, et de procéder à la résiliation
+    unilatérale du Contrat, en totalité ou en partie, par courriel.
 
-1. Late payment penalties will be immediately exigible from the day after the due date, calculated at an interest rate equivalent to three times the legal rate.
-2. Any persistent delay or default in payment of amounts due by the CLIENT under the Contract, lasting more than seven (7) calendar days following the sending of a payment default notice via email, will automatically:
-
-   - Make the entire outstanding amount due from the CLIENT under the Contract immediately payable, regardless of the initially agreed payment method.
-   - Allow the Service Provider to immediately and without prior notice or formalities suspend all or part of the Services provided to the CLIENT (including those already paid), refuse any new Order or renewal of Services, and unilaterally terminate the Contract in full or in part via email.
-
-Furthermore, in case of payment delay or default, professional clients are required to pay a fixed penalty of forty (40) euros for collection fees, without prejudice to the Service Provider's right to demand additional compensation, upon presentation of documentation, if the collection costs exceed this fixed amount.
+De plus, en cas de retard ou défaut de paiement, les clients
+professionnels sont tenus de verser une indemnité forfaitaire de
+quarante (40) euros pour frais de recouvrement, sans préjudice du droit
+pour le Prestataire d'exiger une indemnisation supplémentaire, sur
+présentation de justificatifs, si les frais de recouvrement engagés
+dépassent ce montant forfaitaire.
 
 ### Contestation
 
-Any dispute concerning billing or specifics of the Services must be addressed to the Prestataire's Service CLIENT via the CLIENT's Management Interface, within a maximum of one (1) month following the invoice date. Beyond this period, the CLIENT remains obligated to settle outstanding amounts in accordance with the Contract terms, despite any future contestation of the invoice. In case an accounting error is identified, the Prestataire reserves the right to make necessary adjustments on the affected invoices, adhering to applicable statutes of limitations.
-
-### Penalties
-
-This section outlines the various penalties that may be imposed in case of non-compliance with the terms and conditions outlined in this document. These penalties are designed to ensure adherence to the stipulated rules and regulations, thereby maintaining a secure and efficient environment for all users involved.
-
-1. **Warning**:
-   - A verbal or written warning will be issued for minor violations of the terms. This serves as an initial cautionary measure, emphasizing the importance of compliance without resorting to immediate penalties.
-
-2. **Temporary Suspension**:
-   - For repeated minor infractions or significant but non-critical breaches, users may face a temporary suspension from accessing certain features or services. This allows for a cooling-off period and encourages corrective action before full access is restored.
-
-3. **Account Suspension/Termination**:
-   - Persistent or severe violations, especially those affecting system integrity or user safety, can lead to account suspension or termination. This serves as the most stringent measure, ensuring that users who repeatedly disregard rules do not continue to pose risks to the platform's stability and security.
-
-4. **Monetary Fines**:
-   - In cases where penalties are imposed for commercial entities or repeated violations by individuals, monetary fines may be levied as a deterrent measure. These fines aim to discourage non-compliance through economic pressure.
-
-5. **Legal Action**:
-   - For severe breaches that involve illegal activities or infringement of intellectual property rights, legal action may be pursued. This is reserved for situations where penalties under contractual obligations or local laws are insufficient to address the severity of the offense.
-
-Each penalty type carries specific criteria and thresholds, determined by the governing body responsible for overseeing compliance within this framework. The exact application of these penalties will depend on the nature, frequency, and severity of the infractions, as well as the user's history of compliance.
-
-### Principle
-
-Failure to meet the Service Levels outlined in the SecNumCloud Services Convention grants the CLIENT the right to impose penalties. The imposition of penalties will be requested by the CLIENT via email within a maximum 90 (four-and-twenty) day period following the triggering event. In cases where non-compliance is due to the CLIENT's or third party's actions, no penalties will be applicable to the Prestataire.
-
-Penalties will be calculated based on the non-compliant reference indicator. Regardless, the total monthly penalty amount shall not exceed 30% (thirty percent) of the monthly Services' value as stated in the invoice. Upon the CLIENT's request for penalty application, the Prestataire's payment of these penalties will serve as a fixed and final indemnity for damages concerning the incidents leading to the penalty.
-
-### Penalty Calculation
-
-**Penalties = Percentage deviation between the availability promised by
-SLA of the considered service on the calculation period and the actual
-availability of the service on the calculation period.**
-
-***Example: Non-compliance with SLA 1, 3, and 4***
-
-- *SLA 1: IC-INFRA_SNC-01 -- Compute Availability: 99.9%; current month's
-    rate is 90%; penalty rate to be applied **9.9%**
-- *SLA 3: IC-INFRA_SNC-03 -- Backup: 99.9%; current month's rate is 80%;
-    penalty rate to be applied **19.9%**
-- *SLA 4: IC-INFRA-SNC-05 -- Internet Access: 99.9%; current month's rate is 90%;
-    penalty rate to be applied **9.9%**
-
-In all cases, penalties under the present Sales and Usage Conditions do not exceed 30% (thirty percent) of the amount of services concerned on the invoice for the month. Furthermore, penalties are always a fixed, final indemnity for damages regardless of the incident causing the penalties, which have a redemptive nature.
-
-Penalties will be applied as a credit of the regular service's value for the following month. If any penalties remain due at contract termination, regardless of cause, the Service Provider will settle the deficit with the CLIENT through bank transfer.
-
-### Rescission
-
-This section outlines the process and conditions for terminating the agreement between the parties involved. It includes details on notice periods, consequences of early termination, and any applicable fees or penalties. The specifics may vary depending on the contract's terms, but generally, it will cover:
-
-1. **Notice Period**: The required duration before either party can initiate the resumption of rights under the agreement.
-2. **Grounds for Rescission**: Reasons that justify termination, such as breach of contract by one party or non-payment of fees.
-3. **Effects of Termination**: How the termination affects ongoing obligations, including settlement of outstanding duties and responsibilities.
-4. **Fees and Penalties**: Any charges or compensations due to either party upon termination, such as early termination fees or penalties for non-compliance.
-5. **Post-Termination Obligations**: Responsibilities that remain after the agreement is terminated, including data return, confidentiality clauses, and non-compete agreements.
-
-It's crucial to carefully review this section to understand the implications of terminating the agreement prematurely or under specific conditions.
-
-### Termination for Convenience
-
-The CLIENT is authorized to terminate the Contract at any time after a one-month period from the activation date of the Contract, without needing justification or incurring penalties. To do so, the CLIENT must notify termination via registered mail with request for receipt addressed to the Service Provider.
-
-A two-month notice period is mandatory. Termination becomes effective at the end of this period. Services provided by the Service Provider up until the effective date of termination will be billed according to the Contract terms, without any additional compensation. However, the CLIENT remains responsible for paying all outstanding amounts due for the full duration of the Contract, including equipment and license fees that were invoiced on a monthly basis.
-
-### Breach of Contract Termination
-
-In the event that either party fails to fulfill an essential obligation stipulated in the Agreement, the affected party will issue a formal notice by certified mail with return receipt requesting that the defaulting party correct the situation within thirty (30) business days from the date of notification.
-
-Should the defaulting party fail to rectify their breach beyond this period, the aggrieved party is entitled to terminate the Agreement by sending another formal notice via certified mail with return receipt. This termination will occur without any compensation being provided to the defaulting party, while reserving the right to claim damages for the suffered losses.
-
-The decision to terminate the Agreement due to breach imposes liability on the initiating party. In a scenario where it is established that the party subject to termination did not actually fail in their obligations, the party instigating the termination would be obligated to compensate the other party for any damages incurred.
-
-### Termination Without Cause
-
-Each party reserves the right to terminate the Contract without notice or compensation under the following circumstances, by sending registered mail with acknowledgment of receipt:
-
-1. In case of insolvency filing by the other party, unless the judicial administrator decides to continue the Contract within the legal period.
-2. If there is a change in control at the other party's end, as per Article L. 233-3 of the French Commercial Code, resulting in direct or indirect ownership by a competitor of the party invoking termination.
-3. The non-execution of the Contract by the other party for more than thirty (30) calendar days due to unforeseen circumstances constituting a force majeure.
-4. An unexpected change in circumstances at the time of Contract signing, significantly altering its economic balance.
-5. Excessive and repeated abuse by the CLIENT of the liability clause without justification, placing the Prestataire in a financially precarious position or making the Contract non-profitable.
-
-Upon expiration or for any other reason for Contract termination:
-
-- The CLIENT is authorized to initiate the phase of reversibility as per the provisions outlined in "Reversibility" article;
-- The Prestataire must ensure secure deletion of all CLIENT's data according to specified procedures;
-- This secure deletion involves secure removal of all media containing these data, in accordance with the terms of the Service Convention. Post Contract conclusion, regardless of termination reason, the Prestataire is also responsible for erasing technical data associated with the CLIENT final, including directory, certificates, and access configuration settings.
-
-## Reversibility
-
-The Services do not have an obligation of reversibility (i.e., the Client's ability to migrate their system to another Provider) except for the provision by the Provider to the Client of the technical interface and APIs enabling the Client to back up and retrieve their data, including configuration data of platforms via one of the following technical modalities at the Client's discretion:
-
-1. Providing files in a documented and externally exploitable format (e.g., CSV, JSON, XML).
-2. Setting up technical interfaces allowing access to data according to a documented and exploitable schema (API).
-
-The Client, being the sole owner of its System, must take all necessary measures to facilitate this migration process as needed (which may involve, among other things, meticulous documentation) and the development of a Reversibility Plan. In case the Client requires additional services, the Provider may offer consulting work in this area under a separate, negotiable contract.
-
-## Confidentiality
-
-The Parties agree that all information exchanged between them, whether during negotiations or the execution of the Contract, are considered Confidential Information, regardless of their form or medium. This includes, but is not limited to, any information related to the Contract itself, as well as personal data, scientific, technical, technological, commercial, social, financial, legal, or information from any other domain, susceptible of protection by patent or otherwise. Among these, one finds plans, drawings, specifications, processes, know-how, designs, methods, studies, forecasts of needs, software/applications, as well as information concerning prospects, client/partner names.
-
-These Confidential Information can be transmitted directly or indirectly to the other Party, regardless of form (oral, written), type of documents (paper or digital), and through any communication means. To enhance their confidentiality:
-
-- Specific mentions will be affixed on communication supports.
-- A reminder of confidentiality will be systematically provided during each exchange, with date indication and reference to this confidentiality obligation.
-
-The absence of such mentions or reminders does not affect the Confidential Information's nature or the Parties' confidentiality obligations.
-
-Confidentiality obligations do not apply to information that:
-- Is already public without any fault on the receiving Party's part;
-- Was known to the receiving Party before communication by the transmitting Party, as attested by the receiving Party's records;
-- Is received legitimately from a third party without confidentiality restrictions;
-- Is developed independently by the receiving Party without references to Confidential Information.
-
-Confidential Information must be strictly protected by the Parties and used solely for Contract execution. The Parties commit to:
-
-- Using Confidential Information exclusively within the scope of the Contract;
-- Limiting disclosure of Confidential Information to their team members involved in Contract execution, ensuring these individuals are bound by confidentiality;
-- Preserving the content's confidentiality of the Contract;
-- Not disclosing Confidential Information to third parties without written prior consent from the other Party, except for legal or judicial necessity;
-- Protecting physically the Confidential Information by storing it in secure locations and implementing necessary security measures.
-
-These confidentiality commitments remain in effect throughout the Contract's duration and for five (5) years post-Contract conclusion/cancellation. Upon Contract termination, Parties agree to return or destroy all Confidential Information, without retaining any copies, unless otherwise instructed by the transmitting Party.
-
-The Service Provider ensures these confidentiality principles are adhered to by all subcontractors during the Contract period.
-
-## Subcontracting
-
-The Provider shall comply with the mandatory provisions of French Law No. 75-1334 of December 31, 1975 on subcontracting, and will be responsible to the CLIENT for any failure to fulfill obligations stipulated by this law. The use of Subcontractors in no way reduces the Provider's responsibility to the CLIENT under the Contract; the Provider remains fully liable for carrying out the subcontracted services towards the CLIENT and, generally, for the proper execution of the Contract.
-
-## Assignment of Contract
-
-The Parties agree that the Contract was concluded intuitu personae.
-Therefore, none of the Parties can assign or transfer any part of the Contract to a third party without the prior written agreement of the other Party, particularly in cases of change of control (as defined by articles L. 233-1 or L. 233-3 of the French Commercial Code) or partial asset disposal.
-By way of exception to the above, each Party is authorized to assign or transfer the Contract within its group, provided that it informs the other Party at least 30 days prior to the assignment or transfer operation.
-
-## Labor Law Compliance
-
-The Provider asserts that it adheres to the provisions of Articles L.8211-1, L.8221-1 and subsequently, L.8524-1 to L.8254-4, as well as those of Articles L.8251-1 and subsequently of the Labor Code, concerning the individuals it employs.
-
-Under these conditions and in compliance with the provisions of Articles L.8221-1 and L.8524-1 to L.8254-4 of the Labor Code, the Provider will deliver to the CLIENT, upon request, the following:
-
-- The complete set of documents required by Article D.8222-5 of the Labor Code;
-- An honor pledge regarding the fight against hidden labor.
-
-The Provider further commits to upholding these obligations with all subcontractors engaged under this contract's duration. For services provided within the CLIENT's premises, the Provider guarantees that its employees will adhere to all hygiene and safety regulations applicable at the CLIENT's location, in accordance with Decree No. 92-158 of February 20, 1992, which outlines specific hygiene and safety precautions for work performed by an external company (Articles R.4511-1 to R.4515-11 of the Labor Code).
-
-Both parties will be informed about any potential difficulties related to these matters and the methods to address them. This Contract exclusively covers staffing arrangements under temporary labor regulations, excluding any form of on-site personnel provision.
-
-The Provider's workforce remains perpetually subject to the exclusive legal jurisdiction of the Provider, who holds sole authority for direction and control over its employees. The CLIENT is prohibited from issuing direct orders to the Provider's staff or those of its subcontractors.
-
-The Provider assumes full responsibility for its personnel's social security affiliation with all relevant institutions and complete liability concerning labor law compliance. To this end, the Provider confirms having fulfilled all required declarations to social protection bodies and refrains from engaging in hidden work as defined by Articles L.8221-3 and 5 of the Labor Code. Should a subcontractor be employed, the Provider guarantees strict adherence to the legal stipulations mentioned above.
-
-In accordance with prevention and suppression regulations for hidden labor, the Provider commits to delivering to the CLIENT at the Contract's signing date and every six months until contract completion:
-
-- An honor pledge of filing all mandatory tax declarations with the relevant authorities on the declaration date, along with the receipt of filing;
-- A social security declaration from the organization responsible for collecting labor contributions and social security dues due to the Provider, issued no more than six months prior;
-- An excerpt from the commercial register (K or K-bis for the Provider) or a document conforming to Article D.8222-5 of the Labor Code;
-- An honor pledge by the Provider confirming that work was performed by regularly employed staff in accordance with Articles L.1221-10, L.3243-2, and R.3243-1 of the Labor Code.
-
-## Ethics and Social Responsibility
-
-In the execution of this Contract, both Parties agree to strictly adhere to the following ethical principles and legal requirements:
-
-- Absolute prohibition against employing minors, forced labor, or any form of compulsory work, in accordance with International Labour Organization (ILO) directives;
-- Eradication of all forms of discrimination, whether based on gender, race, color, social origin, religion, political opinion, sexual orientation, disability, or any other condition, in compliance with applicable laws.
-- Combat against corruption in all its forms, ensuring complete integrity and transparency in all operations.
-
-The Service Provider firmly commits to upholding and promoting the fundamental values of the European Union, including human dignity, freedom, democracy, equality, respect for the rule of law, and human rights, encompassing those of minorities. This commitment is manifested through continuous vigilance and action aimed at ensuring these principles are respected across all aspects of their operations.
-
-## Intellectual Property
-
-This Agreement does not constitute any transfer or assignment of intellectual property and/or industrial property rights, including patents. It is expressly prohibited for the CLIENT to:
-
-- Copy or reproduce in any manner the elements used for service provision, including but not limited to computer code, text, images, designs, graphical charts, ergonomics, documentation, etc.
-- Attempt to decompose, disassemble, or apply any form of reverse engineering to the Prestataire's proprietary technologies.
-
-Despite these restrictions, the Prestataire grants the CLIENT a non-transferable, non-exclusive right to use said elements solely for the purpose of using the Services and during the duration thereof. This authorization to use expires automatically upon completion of service provision.
-
-## Non-Solicitation of Personnel
-
-Unless prior written consent is obtained, each Party agrees not to hire or engage directly or indirectly any employee of the other Party during the term of this Agreement extended by an additional one (1) year from the date of termination.
-
-Any breach of the above obligation by either Party will result in automatic payment by the breaching Party of a fixed and irrecoverable penalty equal to twelve (12) months of gross salary (fixed and variable) of the affected employee, as determined by reference to the average salary over the three (3) preceding months prior to the termination date.
-
-## Distinctive Marks of the Parties
-
-Each Party agrees to refrain from any action or act that could directly or indirectly infringe upon the distinctive marks of the other Party, and particularly its trademarks. This prohibition does not preclude either the Service Provider citing the CLIENT for reference purposes and the CLIENT mentioning that it utilizes the Service Provider's offerings. However, each Party, without necessitating a reason, may inform the other Party that it no longer wishes to be cited.
-
-## Personal Data
-
-The CLIENT agrees to adhere to the Prestataire's data protection policy as outlined in these GVU (General Terms and Conditions). The CLIENT can request this policy at the following address:
+Tout litige relatif à la facturation ou aux spécificités des Services
+doit être soumis au Service CLIENT du Prestataire via l'Interface de
+gestion du CLIENT, dans un délai maximum d'un (1) mois suivant la date
+d'émission de la facture. Passé ce délai, le CLIENT reste, malgré toute
+contestation future éventuelle de la facture, obligé de régler les
+montants dus conformément aux termes du Contrat. Dans l'éventualité où
+une erreur de facturation serait constatée, le Prestataire se réserve le
+droit d'effectuer les ajustements nécessaires sur les factures
+concernées, et ce, dans le respect des délais de prescription
+applicables.
+
+## Pénalités
+
+### Principe
+
+Le non-respect des Niveaux de Services visés dans la Convention de
+Services SecNumCloud donne au CLIENT le droit d'appliquer des pénalités.
+L'application des pénalités sera demandée par le CLIENT par e-mail dans
+un délai maximal de 90 (quatre-vingt-dix) jours après l'effet
+générateur. Dans le cas d'un manquement qui ne serait pas de la
+responsabilité du Prestataire, mais du CLIENT ou d'un Tiers, aucune
+pénalité ne sera applicable au Prestataire.
+
+Les pénalités seront calculées par rapport à l'indicateur de référence
+non respecté. En tout état de cause, le montant total des pénalités
+mensuelles ne peut excéder de 30 % (trente pour cent) du montant des
+Services concernés de la facture du mois. Lorsque l'application des
+pénalités est demandée par le CLIENT, le paiement de ces pénalités par
+le Prestataire constituera une indemnité forfaitaire et définitive de
+dommages intérêts pour ce qui concerne les incidents à l'origine de la
+pénalité.
+
+### Calcul des pénalités
+
+**Pénalités = Ecart en pourcentage entre la disponibilité promise par
+SLA du Service considéré sur la période de calcul et la disponibilité
+constatée du service considéré sur la période de calcul.**
+
+***Exemple : Non-respect des SLA 1 -- 3 et 4***
+
+- *SLA 1 : IC-INFRA_SNC-01 -- Disponibilité Compute : 99,9%;taux du
+    mois en cours 90%; taux de pénalité à appliquer **9,9%***
+- *SLA 3 : IC-INFRA_SNC-03 -- Sauvegarde : 99,9%; taux du mois en
+    cours 80%; taux de pénalité à appliquer **19,9%***
+- *SLA 4 : IC-INFRA-SNC-05 -- Accès internet 99,9%; taux du mois en
+    cours 90%; taux de pénalité à appliquer **9,9%***
+
+En tout état de cause, toutes les pénalités dans le cadre des présents
+Conditions Générales de Vente et Utilisation ne peuvent excéder 30 %
+(trente pour cent) du montant des services concernés de la facture du
+mois. En outre, les pénalités constituent toujours une indemnité
+forfaitaire et définitive de dommages-intérêts pour ce qui concerne les
+incidents à l'origine des pénalités, ces pénalités ayant un caractère
+libératoire.
+
+Les pénalités seront appliquées sous forme d'un crédit du montant du
+Service Régulier le mois suivant. Si des pénalités restent dues à la fin
+du Contrat quelle qu'en soit la cause, le Prestataire paiera le reliquat
+au CLIENT par versement bancaire.
+
+## Résiliation
+
+### Résiliation par convenance
+
+Le CLIENT est autorisé à mettre fin au Contrat, sans avoir à justifier
+sa décision ni encourir de pénalités, une fois écoulé un délai d'un (1)
+mois suivant l'activation du Contrat. Pour ce faire, il doit notifier sa
+résolution par lettre recommandée avec demande d'avis de réception
+adressée au Prestataire.
+
+Un préavis de deux (2) mois est requis. La résiliation prend effet à
+l'issue de cette période. Les services fournis par le Prestataire
+jusqu'à la date effective de résiliation seront facturés conformément
+aux termes du Contrat, sans aucune indemnité supplémentaire. Cependant,
+le CLIENT reste tenu de régler les sommes restantes dues pour
+l'intégralité de la durée du Contrat, y compris pour les équipements et
+licences qui étaient facturés sur une base mensuelle.
+
+### Résiliation pour manquement
+
+En cas de non-respect par l'une des parties de ses obligations
+essentielles stipulées dans le Contrat, la partie affectée enverra à la
+partie défaillante une mise en demeure par courrier recommandé avec
+accusé de réception, lui accordant un délai de trente (30) jours
+ouvrables à compter de la réception de la notification pour corriger la
+situation.
+
+Si, passé ce délai, la partie en tort n'a pas rectifié son manquement,
+la partie lésée est en droit de procéder à la résiliation du Contrat en
+adressant une nouvelle notification par courrier recommandé avec accusé
+de réception. Cette résiliation sera effectuée sans qu'aucune
+compensation ne soit versée à la partie fautive, tout en se réservant le
+droit de réclamer des dommages-intérêts pour les préjudices subis.
+
+La décision de résilier le Contrat pour manquement engage la
+responsabilité de la partie initiant cette démarche. Dans le cas où il
+serait établi que la partie visée par la résiliation n'a, en fait, pas
+failli à ses engagements, la partie ayant engagé la procédure de rupture
+se verrait tenue de compenser les dommages encourus par l'autre partie.
+
+### Résiliation sans faute
+
+Chaque partie se réserve le droit de résilier le Contrat sans préavis ni
+indemnisation dans les circonstances suivantes, en envoyant une lettre
+recommandée avec avis de réception :
+
+1. En cas de dépôt de bilan de l'autre partie, sauf si l'administrateur
+    judiciaire opte pour la poursuite du Contrat dans le délai légal.
+2. Si un changement de contrôle survient chez l'autre partie,
+    conformément à l'article L. 233-3 du Code de commerce, résultant en
+    sa possession directe ou indirecte par un concurrent de la partie
+    invoquant la résiliation.
+3. L'inexécution du Contrat par l'autre partie pour une durée
+    supérieure à trente (30) jours calendaires en raison d'un cas de
+    force majeure.
+4. Un changement de circonstances imprévisibles au moment de la
+    signature du Contrat, modifiant significativement son équilibre
+    économique.
+5. L'usage abusif et répété par le CLIENT de la clause de
+    responsabilité sans fondement, plaçant le Prestataire dans une
+    situation financière préjudiciable ou rendant le Contrat non
+    rentable.
+
+À l'expiration ou pour toute autre raison de fin de Contrat :
+
+- Le CLIENT est autorisé à initier la phase de réversibilité selon les
+    modalités décrites à l'article "Réversibilité" ;
+
+- Le Prestataire est tenu d'assurer la suppression sécurisée de toutes
+    les données du CLIENT final.
+
+- Cette suppression implique une suppression sécurisée de tous les
+    supports ayant contenu ces données, conformément aux dispositions de
+    la Convention de service. Suite à la conclusion d'un Contrat, quelle
+    qu'en soit la raison, le Prestataire est également chargé d'éliminer
+    les données techniques associées au CLIENT final, incluant
+    l'annuaire, les certificats et la configuration des accès.
+
+## Réversibilité
+
+Les Services ne comprennent pas d'obligation de réversibilité (à savoir,
+l'aide au Client pour qu'il puisse migrer son système vers un autre
+Prestataire) à l'exception de la mise à disposition du CLIENT par le
+Prestataire de l'interface technique et des APIS permettant au CLIENT de
+sauvegarder et récupérer ses données y compris notamment les données de
+configuration des plateformes via l'une des modalités techniques
+suivantes au choix du CLIENT : la mise à disposition de fichiers suivant
+un ou plusieurs formats documentés et exploitables en dehors du service
+fourni par le Prestataire ou bien via la mise en place d'interfaces
+techniques permettant l'accès aux données suivant un schéma documenté et
+exploitable (API).
+
+Le CLIENT, seul maître de son Système, doit tout mettre en œuvre pour
+faciliter cette opération en tant que de besoin (ce qui implique,
+notamment, qu'il mette en place une documentation rigoureuse à cet
+effet) et l'élaboration de plans de Réversibilité. Dans le cas où le
+CLIENT aurait besoin d'une prestation complémentaire, le Prestataire
+peut proposer une mission de conseil à cet égard dans le cadre d'un
+contrat spécifique à négocier.
+
+## Confidentialité
+
+Les Parties conviennent que toutes les informations échangées entre
+elles, que ce soit lors des négociations ou de l'exécution du Contrat,
+sont considérées comme des Informations Confidentielles, indépendamment
+de leur forme ou support.
+
+Cela inclut, mais sans s'y limiter, toute information relative au
+Contrat, ainsi que les données personnelles, scientifiques, techniques,
+technologiques, commerciales, sociales, financières, juridiques ou de
+tout autre domaine, qu'elles soient susceptibles de protection par
+brevet ou non. Parmi ces informations, on retrouve notamment des plans,
+dessins, spécifications, procédés, savoir-faire, designs, méthodes,
+études, rapports, prévisions de besoins, logiciels ou applications,
+ainsi que les informations concernant les prospects, les noms des
+clients ou des partenaires.
+
+Ces Informations Confidentielles peuvent être transmises directement ou
+indirectement à l'autre Partie, quelle que soit leur forme (orale,
+écrite), le type de documents (papier ou numérique), et par tout moyen
+de communication. Pour renforcer leur confidentialité :
+
+- Des mentions spécifiques seront apposées sur les supports de
+    communication.
+- Un rappel de la confidentialité sera systématiquement effectué lors
+    de chaque échange, avec indication de la date et référence à cet
+    engagement de confidentialité.
+
+Toutefois, l'absence de telles mentions ou rappels n'affecte en rien la
+nature confidentielle des informations ni les obligations de
+confidentialité des Parties.
+
+Les obligations de confidentialité ne s'appliquent pas aux informations
+qui : - Sont déjà du domaine public sans faute de la Partie réceptrice
+; - Étaient connues de la Partie réceptrice avant la communication par
+l'émetteur, comme en attestent les archives de la Partie réceptrice ; -
+Sont reçues légitimement d'un tiers sans restriction de confidentialité
+; - Sont développées indépendamment par la Partie réceptrice sans
+références aux Informations Confidentielles.
+
+Les Informations Confidentielles doivent être strictement protégées par
+les Parties et uniquement utilisées pour l'exécution du Contrat. Les
+Parties s'engagent à :
+
+- Utiliser les Informations Confidentielles exclusivement dans le
+    cadre du Contrat ;
+- Limiter la divulgation des Informations Confidentielles aux membres
+    de leur équipe impliqués dans l'exécution du Contrat, en s'assurant
+    de leur engagement à maintenir la confidentialité ;
+- Préserver la confidentialité du contenu du Contrat ;
+- Ne pas divulguer les Informations Confidentielles à des tiers sans
+    consentement écrit préalable de l'autre Partie, sauf nécessité
+    légale ou judiciaire ;
+- Protéger physiquement les Informations Confidentielles, en les
+    conservant dans des lieux sécurisés et en prenant toutes mesures
+    nécessaires pour leur sécurité.
+
+Ces engagements de confidentialité restent en vigueur durant la durée du
+Contrat et pour cinq (5) années après sa conclusion ou résiliation. À la
+fin du Contrat, les Parties s'engagent à restituer ou détruire toutes
+les Informations Confidentielles, sans en conserver de copie, sauf
+instruction contraire de la Partie émettrice.
+
+Le Prestataire s'assure que ces principes de confidentialité soient
+respectés par tous ses sous-traitants durant le Contrat.
+
+## Sous traitance
+
+Le Prestataire devra respecter les dispositions impératives de la loi n°
+75-1334 du 31 décembre 1975 relative à la sous-traitance, et sera
+responsable envers le CLIENT de tout manquement aux obligations édictées
+par ladite loi. Le recours aux Sous-traitants, ne réduira en aucune
+façon la responsabilité du Prestataire envers le CLIENT au titre du
+Contrat, le Prestataire restant entièrement tenu de la réalisation des
+Services sous-traités vis-à-vis du CLIENT et, d'une manière générale, de
+la bonne exécution du Contrat.
+
+## Cession du contrat
+
+Les Parties conviennent que le Contrat a été conclu intuitu personae.
+Par conséquent, aucune des Parties ne pourra céder le Contrat, en tout
+ou partie, à un tiers sans l'accord préalable et écrit de l'autre
+Partie, notamment en cas de changement de contrôle (au sens des articles
+L. 233-1 ou L. 233-3 du Code de commerce) ou apport partiel d'actifs.
+Par dérogation à ce qui précède, chaque Partie est autorisée à céder ou
+transférer le Contrat à l'intérieur de son groupe sous réserve qu'il en
+informe l'autre Partie au moins 30 jours préalablement à l'opération de
+cession ou de transfert.
+
+## Réglementation en matière de droit du travail
+
+Le Prestataire déclare qu'il respecte les dispositions des articles L.
+8211-1, L. 8221-1 et suivants, L. 8524-1 à L. 8254-4, ainsi que les
+dispositions des articles L. 8251-1 et suivants du Code du travail,
+relativement aux personnes qu'il emploie.
+
+Dans ces conditions et afin de respecter les dispositions des articles
+L. 8221-1 et L. 8524-1 à L. 8254-4 du Code du travail, le Prestataire
+remet au CLIENT, uniquement sur demande de ce dernier :
+
+- L'ensemble des documents exigés par l'article D. 8222-5 du Code du
+    travail;
+- L'attestation sur l'honneur de lutte contre le travail dissimulé.
+
+Le Prestataire s'engage également à appliquer ces engagements à tous ses
+sous-traitants intervenant sur la durée du contrat. Pour les prestations
+délivrées dans les locaux du CLIENT, le Prestataire s'engage à faire
+respecter par ses salariés l'ensemble des dispositions relatives à
+l'hygiène et à la sécurité en vigueur chez le CLIENT. En particulier, le
+Prestataire et ses sous-traitants devront veiller à respecter les
+stipulations du décret n° 92-158 du 20 février 1992 fixant les
+prescriptions particulières d'hygiène et de sécurité, applicables aux
+travaux effectués dans un établissement par une entreprise extérieure
+(art. R. 4511-1 à R. 4515-11 du Code du travail).
+
+Les Parties se tiendront informées de toute éventuelle difficulté à ce
+titre et des moyens d'y remédier. Le Contrat est exclusif de toute
+notion de mise à disposition de personnel entrant dans le cadre de la
+réglementation sur le travail temporaire.
+
+Le personnel du Prestataire reste en toutes circonstances sous la
+subordination juridique permanente exclusive du Prestataire qui dispose
+seul d'un pouvoir de direction et de contrôle sur ses salariés. Le
+CLIENT ne peut donner d'ordre directement au personnel du Prestataire
+et/ou au personnel des éventuels sous-traitants du Prestataire.
+
+Le Prestataire assure pour son personnel la responsabilité de son
+affiliation auprès de tous les organismes sociaux ainsi que son entière
+responsabilité vis-à-vis de la législation du travail. A ce titre, le
+Prestataire certifie avoir procédé aux déclarations exigées par les
+organismes de protection sociale et ne pas recourir au travail dissimulé
+tel que défini aux articles L. 8221-3 et 5 du Code du travail. Dans
+l'hypothèse où le Prestataire aurait recours à un sous-traitant, il
+s'engage à s'assurer que celui-ci respecte strictement les stipulations
+légales ci-dessus rappelées.
+
+Conformément aux dispositions légales en matière de prévention et de
+répression du travail dissimulé, le Prestataire s'engage à remettre au
+CLIENT à la date de signature du Contrat et tous les six (6) mois
+jusqu'à la fin de son exécution :
+
+- Une attestation sur l'honneur du dépôt auprès de l'administration
+    fiscale, à la date de l'attestation, de l'ensemble des déclarations
+    fiscales obligatoires et le récépissé du dépôt de déclaration ;
+- Une attestation de fourniture de déclarations sociales émanant de
+    l'organisme de protection sociale chargé du recouvrement des
+    cotisations et des contributions sociales incombant au Prestataire
+    et datant de moins de six (6) mois ;
+- Un extrait de l'inscription au registre du commerce et des sociétés
+    (K ou K-bis relatif au Prestataire) ou un document conforme aux
+    stipulations de l'article D. 8222-5 du Code du travail ;
+- Une attestation sur l'honneur établie par le Prestataire de la
+    réalisation du travail par des salariés employés régulièrement au
+    regard des articles L. 1221-10, L. 3243-2 et R. 3243-1 du Code du
+    travail.
+
+## Ethique et responsabilité sociale
+
+Dans le cadre de l'exécution du présent Contrat, les Parties conviennent
+de respecter scrupuleusement les principes éthiques et légaux suivants :
+
+- Interdiction absolue de l'emploi de travailleurs mineurs, du travail
+    forcé ou de toute forme de travail obligatoire, en alignement avec
+    les directives de l'Organisation Internationale du Travail (OIT) ;
+- Elimination de toute discrimination, qu'elle soit basée sur le sexe,
+    la race, la couleur, l'origine sociale, la religion, l'opinion
+    politique, l'appartenance à une minorité nationale ou toute autre
+    condition, conformément aux dispositions légales en vigueur ;
+- Lutte contre la corruption sous toutes ses formes, assurant une
+    intégrité et une transparence totales dans toutes les opérations.
+
+Le Prestataire s'engage fermement à honorer et promouvoir les valeurs
+fondamentales de l'Union européenne, telles que la dignité humaine, la
+liberté, la démocratie, l'égalité, le respect de l'état de droit, ainsi
+que les droits de l'homme y compris ceux des minorités. Cet engagement
+se traduit par une vigilance et une action constantes pour assurer que
+ces principes soient respectés à tous les niveaux de leur activité.
+
+## Propriété intellectuelle
+
+Ce Contrat ne constitue en aucun cas un transfert ni une cession de
+droits de propriété intellectuelle et/ou industrielle, y compris les
+brevets. Il est expressément interdit au CLIENT de :
+
+- Copier ou reproduire de quelque manière que ce soit les éléments
+    utilisés pour la prestation des services, incluant mais ne se
+    limitant pas au code informatique, textes, images, designs, chartes
+    graphiques, ergonomie, documentations, etc.
+- Tenter de décomposer, désassembler ou appliquer toute forme
+    d'ingénierie inverse aux technologies propriétaires du Prestataire.
+
+Malgré ces restrictions, le Prestataire accorde au CLIENT un droit
+d'usage personnel, non transférable et non exclusif sur lesdits
+éléments, uniquement dans le cadre nécessaire à l'utilisation des
+Prestations et pour la durée de celles-ci. Cette autorisation
+d'utilisation expire automatiquement avec la fin de la prestation des
+services.
+
+## Non solicitation de personnel
+
+Sauf accord préalable et écrit, chacune des Parties renonce à engager ou
+à faire travailler directement ou indirectement tout membre du personnel
+de l'autre Partie pendant la durée du Contrat augmentée d'une durée d'un
+(1) an à compter de sa date de cessation.
+
+Toute violation par une des Parties de l'obligation ci-dessus entraîne
+de plein droit le paiement par la Partie contrevenante d'une indemnité
+forfaitaire et libératoire fixée à douze (12) mois de salaire bruts
+(salaire fixe et variable) du membre du personnel concerné.
+
+Le salaire moyen de référence pour calculer le montant de
+l'indemnisation est celui des 3 derniers mois ayant précédé la date de
+rupture du contrat de travail.
+
+## Signes distinctifs des parties
+
+Chaque Partie s'interdit tout agissement et tout acte susceptible de
+porter atteinte directement ou non aux signes distinctifs l'autre
+Partie, et en particulier ses marques. Sans préjudice pour le
+Prestataire de citer le CLIENT en référence et pour le CLIENT de
+mentionner qu'il utilise les Prestations du Prestataire. Toutefois,
+chaque Partie, sans avoir à le motiver, peut notifier à l'autre Partie
+de ne plus la citer.
+
+## Données à caractère personnel
+
+Le CLIENT s'engage à respecter, dans le cadre des présentes CGVU, la
+politique de protection des données personnelles du Prestataire. Le
+CLIENT peut solliciter cette politique sur demande à l'adresse suivante
 
 ```
-dpo@cloud-temple.fr
+<dpo@cloud-temple.fr>.
 ```
 
-Both the CLIENT and the Prestataire commit to complying with applicable data protection regulations, particularly the French law no. 78-17 of 6 January 1978 concerning computer files and freedoms (as amended) and the EU Regulation no. 2016/679 of the European Parliament and Council of 27 April 2016, applicable from May 25, 2018 onwards.
+Le CLIENT et le Prestataire s'engagent à respecter la réglementation en
+vigueur applicable au traitement des Données Personnelles et, en
+particulier, la loi n°78-17 du 6 janvier 1978 relative à l'informatique,
+aux fichiers et aux libertés, modifiée et le règlement (UE) 2016/679 du
+Parlement européen et du Conseil du 27 avril 2016 applicable à compter
+du 25 mai 2018.
 
-## Data Protection Insurance
+## Assurance
 
-Should the CLIENT intend to process critical or strategic data (such as billing, payroll, R&D information, etc.) utilizing our services, it is the CLIENT's responsibility to secure dedicated data protection insurance for covering potential data loss.
+Dans le cas où le CLIENT prévoit de traiter des données critiques ou
+stratégiques (telles que des informations liées à la facturation, à la
+paie, à la recherche et développement, etc.) à l'aide des services
+fournis, il incombe au CLIENT de prendre les dispositions nécessaires
+pour souscrire à une assurance dédiée à la couverture des pertes de
+données.
 
-## Assignment of Competence and Applicable Law
+## Attribution de compétence et droit applicable
 
-The Contract shall be governed by French law.
+Le Contrat est régi par le droit français.
 
-For any dispute arising between the Parties regarding the execution or termination of the Contract, the Parties will first attempt to resolve it amicably. In case of failure, the dispute will be submitted to the Commercial Court of Nanterre, regardless of multiple defendants or sureties, even for preliminary procedures, referrals, or requests, in full.
+Pour tout différend survenant entre les Parties concernant l'exécution
+ou la résiliation du Contrat, les Parties se rapprocheront d'abord aux
+fins d'envisager de trouver une solution amiable. En cas d'échec, le
+différend sera soumis au Tribunal de Commerce de Nanterre, nonobstant
+pluralité de défendeurs ou appel en garantie, même pour les procédures
+conservatoires, en référé ou par requête.
