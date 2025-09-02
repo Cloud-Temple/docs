@@ -69,9 +69,9 @@ El menú de activación de permisos aparece entonces:
 
 <img src={shivaOnboard_005} />
 
-La configuración de los permisos se realiza para cada [Teniente](concepts.md#tenant) de la [Organización](concepts.md#organisations).
+La configuración de los permisos se realiza para cada [Teniente](concepts.md#hosting) de la [Organización](concepts.md#organizaciones).
 
-La lista de permisos y su definición está disponible [aquí](#permissions).
+La lista de permisos y su definición está disponible [aquí](#permisos).
 
 ### Cambio de idioma del usuario
 
@@ -79,7 +79,7 @@ El cambio de idioma del usuario debe realizarse en el __'Perfil'__ del usuario, 
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza para cada tenant [Tenant](concepts.md#tenant).
+La configuración se realiza para cada tenant [Tenant](concepts.md#hosting).
 
 ### Abonnement a Notificaciones Thematicas
 

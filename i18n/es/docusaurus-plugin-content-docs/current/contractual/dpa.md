@@ -1,141 +1,141 @@
-# Anexo Contractual - Datos de Carácter Personal (DPA)
+# Annexe Contractuelle - Données à Caractère Personnel (DPA)
 
-**Referencia : Anexo - Datos de Carácter Personal
+**Reference : Annexe - Données à Caractère Personnel
 
-**V1 - 15/01/2025 - Modificado por Emeline Cazaux
+**V1 - 15/01/2025 - Modifié par Emeline Cazaux
 
-## Definiciónes
+## Définitions
 
-**Datos personales**: Todo el información que se refiere a una persona física identificada o identificable («persona afectada»), tal como se define en el Reglamento General de Protección de Datos (RGPD).
+**Données à caractère personnel** : Toute information se rapportant à une personne physique identifiée ou identifiable (« personne concernée »), telle que définie par le Règlement Général sur la Protection des Données (RGPD).
 
-**Responsable del tratamiento**: La persona física o moral, la autoridad pública, el servicio o cualquier otro organismo que, por sí mismo o en colaboración con otros, determine las finalidades y los medios del tratamiento de los datos personales.
+**Responsable de traitement** : La personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui, seul ou conjointement avec d'autres, détermine les finalités et les moyens du traitement des données à caractère personnel.
 
-**Subcontratista**: La persona física o moral, la autoridad pública, el servicio o cualquier otro organismo que trate datos personales en nombre del Responsable del tratamiento.
+**Sous-traitant** : La personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui traite des données à caractère personnel pour le compte du Responsable de traitement.
 
-**Tratamiento**: Cualquier operación o conjunto de operaciones realizadas o no con métodos automatizados y aplicables a datos o conjuntos de datos personales.
+**Traitement** : Toute opération ou ensemble d'opérations effectuées ou non à l'aide de procédés automatisés et appliquées à des données ou des ensembles de données à caractère personnel.
 
-**Violación de datos**: Una violación de la seguridad que, de manera accidental o ilícita, resulte en la destrucción, pérdida, alteración, divulgación no autorizada de datos personales transmitidos, conservados o tratados de alguna forma, o en el acceso no autorizado a dichos datos.
+**Violation de données** : Une violation de la sécurité entraînant de manière accidentelle ou illicite la destruction, la perte, l'altération, la divulgation non autorisée de données à caractère personnel transmises, conservées ou autrement traitées, ou l'accès non autorisé à de telles données.
 
-**Transferencia de datos**: Cualquier transferencia de datos personales fuera del Espacio Económico Europeo (EEE), incluyendo hacia países terceros o organizaciones internacionales.
+**Transfert de données** : Tout transfert de données à caractère personnel en dehors de l'Espace Économique Européen (EEE), y compris vers un pays tiers ou une organisation internationale.
 
-**Servicio Cloud**: Todo servicio de procesamiento, almacenamiento o gestión de datos personales proporcionado por el subcontratista a través de infraestructuras cloud.
+**Service Cloud** : Tout service de traitement, stockage, ou gestion de données à caractère personnel fourni par le Sous-traitant via des infrastructures cloud.
 
-## Objeto
+## Objet
 
-La presente anexo tiene como objetivo definir las condiciones y modalidades de tratamiento de los datos personales en el marco del contrato principal, incluyendo el uso de servicios cloud. Su finalidad es garantizar la conformidad de las partes con las obligaciones derivadas del RGPD y de las leyes francesas relativas a la protección de los datos personales.
+La présente annexe a pour objet de définir les conditions et modalités de traitement des données à caractère personnel dans le cadre du contrat principal, incluant l'utilisation de services cloud. Elle vise à garantir la conformité des parties aux obligations découlant du RGPD et des lois françaises relatives à la protection des données personnelles.
 
-## Responsable del Procesamiento's Obligations
+## Obligations du Responsable de traitement
 
-- **Legítimo tratamiento**: El Responsable del Procesamiento se compromete a procesar los datos personales de manera lícita, justa y transparente, en conformidad con los artículos 5 y 6 del RGPD.
+- **Licéité du traitement** : Le Responsable de traitement s'engage à traiter les données à caractère personnel de manière licite, loyale et transparente conformément aux articles 5 et 6 du RGPD.
 
-- **Finalidades determinadas**: Los datos personales solo pueden recopilarse para finalidades específicas, explícitas y legítimas, y no deben ser procesados posteriormente de manera incompatible con estas finalidades.
+- **Finalités déterminées** : Les données à caractère personnel ne doivent être collectées que pour des finalités déterminées, explicites et légitimes, et ne doivent pas être traitées ultérieurement de manière incompatible avec ces finalités.
 
-- **Minimización de los datos**: El Responsable del Procesamiento debe asegurarse de que los datos recopilados sean adecuados, relevantes y limitados al máximo necesario en relación con las finalidades para las cuales se procesarán.
+- **Minimisation des données** : Le Responsable de traitement doit veiller à ce que les données collectées soient adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités pour lesquelles elles sont traitées.
 
-- **Precisión de los datos**: Es responsabilidad del Responsable del Procesamiento garantizar que los datos personales sean precisos y, si es necesario, mantenerlos actualizados.
+- **Exactitude des données** : Il incombe au Responsable de traitement de s'assurer que les données à caractère personnel sont exactes et, si nécessaire, tenues à jour.
 
-- **Seguridad de los datos**: El Responsable del Procesamiento debe implementar las medidas técnicas e organizativas adecuadas para garantizar un nivel de seguridad adaptado al riesgo, en conformidad con el artículo 32 del RGPD. Esto incluye la evaluación regular de las medidas de seguridad de los servicios de nube utilizados.
+- **Sécurité des données** : Le Responsable de traitement doit mettre en œuvre les mesures techniques et organisationnelles appropriées pour garantir un niveau de sécurité adapté au risque, conformément à l'article 32 du RGPD. Cela inclut l'évaluation régulière des mesures de sécurité des services cloud utilisés.
 
-## Obligaciones del Subcontratista
+## Obligations du Sous-traitant
 
-- **Tratamiento conforme a las instrucciones**: El Subcontratista se compromete a tratar los datos personales solo bajo una instrucción documentada por el Responsable del Tratamiento, incluyendo los transferencias de datos personales a países terceros o organizaciones internacionales, salvo que una exigencia legal lo requiera.
+- **Traitement conforme aux instructions** : Le Sous-traitant s'engage à ne traiter les données à caractère personnel que sur instruction documentée du Responsable de traitement, y compris en ce qui concerne les transferts de données à caractère personnel vers un pays tiers ou à une organisation internationale, sauf si une exigence légale l'y oblige.
 
-- **Confidencialidad**: El Subcontratista debe asegurarse de que las personas autorizadas para tratar los datos personales se comprometan a respetar la confidencialidad o estén sujetas a una obligación legal adecuada de confidencialidad.
+- **Confidentialité** : Le Sous-traitant doit veiller à ce que les personnes autorisées à traiter les données à caractère personnel s'engagent à respecter la confidentialité ou soient soumises à une obligation légale appropriée de confidentialité.
 
-- **Seguridad de los tratamientos**: El Subcontratista se compromete a implementar las medidas técnicas y organizativas apropiadas para garantizar la seguridad de los datos personales que trata, incluidos aquellos procesados a través de servicios en la nube, en conformidad con el artículo 32 del RGPD.
+- **Sécurité des traitements** : Le Sous-traitant s'engage à mettre en œuvre les mesures techniques et organisationnelles appropriées pour garantir la sécurité des données à caractère personnel qu'il traite, y compris celles traitées via des services cloud, conformément à l'article 32 du RGPD.
 
-- **Subcontratación posterior**: El Subcontratista no puede recourrir a otro subcontratista sin una autorización previa escrita y específica por parte del Responsable del Tratamiento. En caso de subcontratación autorizada, el Subcontratista debe asegurarse de que el subcontratista posterior respete las mismas obligaciones de protección de datos.
+- **Sous-traitance ultérieure** : Le Sous-traitant ne doit pas recourir à un autre sous-traitant sans l'autorisation préalable écrite et spécifique du Responsable de traitement. En cas de sous-traitance ultérieure autorisée, le Sous-traitant doit s'assurer que le sous-traitant ultérieur respecte les mêmes obligations de protection des données.
 
-- **Asistencia al Responsable del Tratamiento**: El Subcontratista debe asistir al Responsable del Tratamiento, en la medida de lo posible, para cumplir con sus obligaciones en materia de seguridad de datos, notificación de violaciones de datos, realización de evaluaciones de impacto en la protección de datos y consultas previas ante las autoridades de control.
+- **Assistance au Responsable de traitement** : Le Sous-traitant doit assister le Responsable de traitement, dans la mesure du possible, pour s'acquitter de ses obligations en matière de sécurité des données, de notification des violations de données, de réalisation d'analyses d'impact sur la protection des données et de consultations préalables auprès des autorités de contrôle.
 
-- **Ubicación de los datos**: El Subcontratista debe proporcionar información clara sobre los lugares de almacenamiento y tratamiento de los datos dentro de las infraestructuras en la nube, y asegurarse de que estos lugares cumplan con las regulaciones aplicables en materia de protección de datos.
+- **Localisation des données** : Le Sous-traitant doit fournir des informations claires sur les lieux de stockage et de traitement des données dans les infrastructures cloud, et s'assurer que ces lieux respectent les réglementations applicables en matière de protection des données.
 
-## Descripción de los tratajos
+## Description des traitements
 
-El Subcontratista está autorizado para procesar, a nombre del Controlador de Tratamiento, las datos personales necesarios para la prestación de los Servicios. La naturaleza y categoría de las operaciones realizadas sobre los datos personales serán definidas por el Controlador de Tratamiento en función de los requisitos específicos de cada Servicio. Las finalidades del tratajo se determinan por el Controlador de Tratamiento y se comunican al Subcontratista. La naturaleza y categoría de los datos personales tratados se especifican por el Controlador de Tratamiento. Las categorías de las personas afectadas se identifican por el Controlador de Tratamiento. Para la ejecución de los Servicios, el Controlador de Tratamiento proporciona al Subcontratista las informaciónes necesarias. La duración del tratajo se fija por el Controlador de Tratamiento en función de las exigencias de los Servicios prestados.
+Le Sous-Traitant est autorisé à traiter pour le compte du Responsable de Traitement, les données à caractère personnel nécessaires pour fournir les Services. La nature et la catégorie des opérations réalisées sur les données à caractère personnel seront définies par le Responsable de Traitement selon les besoins spécifiques de chaque Service. Les finalités du traitement sont déterminées par le Responsable de Traitement et communiquées au Sous-Traitant. La nature et la catégorie des données à caractère personnel traitées sont spécifiées par le Responsable de Traitement. Les catégories de personnes concernées sont identifiées par le Responsable de Traitement. Pour l'exécution des Services, le Responsable de Traitement met à la disposition du Sous-Traitant les informations nécessaires. La durée du traitement est fixée par le Responsable de Traitement en fonction des exigences des Services fournis.
 
-## Derechos de las personas afectadas
+## Droits des personnes concernées
 
-- **Acceso y rectificación**: El Responsable del tratamiento y el Subcontratista deben permitir que las personas afectadas ejerzan sus derechos de acceso y corrección de sus datos personales, en conformidad con los artículos 15 y 16 del RGPD.
+- **Accès et rectification** : Le Responsable de traitement et le Sous-traitant doivent permettre aux personnes concernées d'exercer leurs droits d'accès et de rectification de leurs données à caractère personnel, conformément aux articles 15 et 16 du RGPD.
 
-- **Eliminación y limitación del tratamiento**: Las personas afectadas deben poder ejercitar sus derechos a la eliminación (derecho al olvido) o limitación del tratamiento de sus datos, en conformidad con los artículos 17 y 18 del RGPD.
+- **Effacement et limitation du traitement** : Les personnes concernées doivent pouvoir exercer leurs droits à l'effacement de leurs données (droit à l'oubli) ou à la limitation du traitement, conformément aux articles 17 et 18 du RGPD.
 
-- **Portabilidad de datos**: El Responsable del tratamiento debe garantizar, cuando sea aplicable, la portabilidad de los datos personales a las personas afectadas, en conformidad con el artículo 20 del RGPD.
+- **Portabilité des données** : Le Responsable de traitement doit assurer, lorsque cela est applicable, la portabilité des données à caractère personnel des personnes concernées, conformément à l'article 20 du RGPD.
 
-- **Oposición**: Las personas afectadas deben poder ejercitar su derecho a oponerse al tratamiento de sus datos personales en conformidad con el artículo 21 del RGPD.
+- **Opposition** : Les personnes concernées doivent pouvoir exercer leur droit d'opposition au traitement de leurs données personnelles conformément à l'article 21 du RGPD.
 
-## Security and Confidentiality Measures
+## Mesure de sécurité et de confidentialité
 
-The Sub-Contractor undertakes specifically to implement the appropriate technical and organizational measures to ensure the security and confidentiality of Personal Data processed within the Services, including but not limited to:
+Le Sous-Traitant s'engage en particulier à mettre en place les mesures suffisantes pour assurer la sécurité et la confidentialité des Données Personnelles confiées et traitées dans le cadre des Services, à savoir notamment :
 
-- Implementing suitable technical and organizational measures to protect Personal Data against accidental or unauthorized destruction, loss, alteration, diversion, disclosure, or any illicit processing.
+- Mettre en œuvre les mesures techniques et d'organisation appropriées pour protéger les Données à caractère personnel contre la destruction accidentelle ou illicite, la perte accidentelle, l'altération, l'utilisation détournée, la diffusion ou l'accès non autorisés, ainsi que contre toute autre forme de traitement illicite
 
-- Refraining from using Personal Data for its own purposes or those of third parties and refraining from transferring it without the explicit written authorization of the Data Controller or the final client.
+- Ne pas utiliser les Données à caractère personnel pour son propre compte ou pour le compte de tiers et ne pas les transférer sans l'autorisation écrite et préalable du Responsable de Traitement ou du client final
 
-- Ensuring that personnel authorized to process Personal Data adhere to appropriate confidentiality obligations.
+- Veiller à ce que les personnes autorisées à traiter les Données à caractère personnel soient soumises à des obligations appropriées de confidentialités
 
-- Not creating copies or duplicates of Personal Data without prior written consent from the Data Controller or the final client, unless necessary for providing the services as per the contract (with exceptions for operational necessities).
+- Ne pas réaliser de copies ou duplications des Données à caractère personnel sans l'autorisation écrite préalable du Responsable de Traitement ou du client final (à moins que cela soit nécessaire à l'accomplissement des Services fournis par le prestataire dans le cadre du Contrat)
 
-- Immediately notifying the Data Controller of any unauthorized access or disclosure to Personal Data, any violation of data protection regulations, or any suspicion of such violations, within the most expeditious time and no later than 48 hours after becoming aware.
+- Informer le Responsable de Traitement de tout accès accidentel ou non autorisé aux Données à caractère personnel, de tout manquement à la réglementation sur les Données à caractère personnel ou toute suspicion d'un tel manquement, dans les meilleurs délais et, si possible, 48 heures au plus tard après en avoir pris connaissance
 
-- As per the Data Controller's preference, either deleting or returning the Personal Data upon completion of services or at the end of the contract term, while destroying existing copies unless legally required to retain them.
+- Selon le choix du Responsable de Traitement, supprimer ou renvoyer les Données à caractère personnel ou les renvoyer au terme du Contrat, et détruire les copies existantes, sauf obligation légale de les conserver
 
-- Establishing and maintaining a system for information security and access control management, including logical and physical authorization mechanisms, which must be continuously updated throughout the duration of the contract.
+- Mettre en œuvre une politique de sécurité des systèmes d'information et de gestion des autorisations d'accès logique et physique notamment, qu'il devra maintenir et faire évoluer pendant toute la durée du Contrat
 
-## Notificación de violaciones de datos personales
+## Notification des violations de données
 
-En caso de violación de datos personales, el Subcontratista debe notificar esta violación al Responsable del tratamiento sin demora indebida después de haberlo conocido. Esta notificación debe incluir toda la información relevante que permita al Responsable del tratamiento notificar esta violación a las autoridades de control competentes y, en su caso, a las personas afectadas de conformidad con el artículo 33 del RGPD. La notificación debe especificar el posible impacto en los datos alojados en la nube y las medidas tomadas para abordarlo.
+En cas de violation de données à caractère personnel, le Sous-traitant doit notifier cette violation au Responsable de traitement sans délai indu après en avoir pris connaissance. Cette notification doit inclure toutes les informations pertinentes permettant au Responsable de traitement de notifier cette violation à l'autorité de contrôle compétente et, le cas échéant, aux personnes concernées conformément à l'article 33 du RGPD. La notification doit préciser l'impact potentiel sur les données hébergées dans le cloud et les mesures prises pour y remédier.
 
-## Transfer of personal data outside the European Union
+## Transferts de données hors de l'Union Européenne
 
-Cualquier transferencia de datos personales a un país tercer o una organización internacional no puede realizarse a menos que se cumplan las condiciones previstas por el RGPD, especialmente en los artículos 44 al 50. El Responsable del tratamiento debe asegurarse de que se establezcan garantías adecuadas, como cláusulas tipo aprobadas por la Comisión Europea o la existencia de una decisión de adhesión.
+Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
 
-## Duración y finalización del tratamiento
+## Durée et fin du traitement
 
-Al término del contrato principal, el Subcontratista se compromete, bajo las instrucciones del Responsable del tratamiento, a eliminar todas las datos personales o devolverlos al Responsable del tratamiento, y a destruir las copias existentes, salvo obligación legal contraria. Esta obligación también incluye los datos almacenados en medios de respalio en las infraestructuras de nube, salvo que una obligación legal exija su conservación.
+À l'issue du contrat principal, le Sous-traitant s'engage, selon les instructions du Responsable de traitement, à supprimer toutes les données à caractère personnel ou à les retourner au Responsable de traitement, et à détruire les copies existantes sauf obligation légale contraire. Cette obligation inclut également les données stockées sur des supports de sauvegarde dans les infrastructures cloud, sauf si une obligation légale impose leur conservation.
 
-## Documentación y auditorías
+## Documentation et audits
 
-El Subcontratista proporcionará al Responsable del Tratamiento toda la información necesaria para demostrar el cumplimiento de las obligaciones previstas en esta anexa y permitirá auditorías, incluidas inspecciones, por el Responsable del Tratamiento o cualquier otro auditor autorizado por él, con el fin de verificar la conformidad con esta anexa y el RGPD. Además, el Subcontratista mantendrá un registro de las actividades de tratamiento en conformidad con el artículo 30 del RGPD y proporcionará informes de cumplimiento sobre las infraestructuras de nube utilizadas.
+Le Sous-traitant mettra à la disposition du Responsable de traitement toutes les informations nécessaires pour démontrer le respect des obligations prévues par la présente annexe et autorisera les audits, y compris les inspections, par le Responsable de traitement ou un autre auditeur mandaté par ce dernier, afin de vérifier la conformité avec cette annexe et le RGPD. Le Sous-traitant doit également tenir un registre des activités de traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées.
 
-## Registro de Actividades de Procesamiento
+## Registre des activités de Traitement
 
-El subcontratista también debe mantener un registro de las actividades de procesamiento conforme al artículo 30 del RGPD y proporcionar informes de cumplimiento sobre las infraestructuras de nube utilizadas. Este registro contiene, mínimo:
+Le Sous-traitant doit également tenir un registre des activités de Traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées. Ce registre contient à minima :
 
-- Nombre y datos de contacto del responsable del tratamiento y, en su caso, el co-responsable del tratamiento, el representante del responsable del tratamiento y el delegado de protección de datos.
-- Descripción de las categorías de personas afectadas y las categorías de datos personales.
-- Finalidades del procesamiento.
-- Categorías de destinatarios a los que se han o han de comunicado los datos personales, incluyendo destinatarios en países terceros o organizaciones internacionales.
-- Duración de conservación de los datos.
-- Descripción general de las medidas técnicas y organizacionales de seguridad implementadas.
+- Le nom et coordonnées du responsable du traitement et, le cas échéant, du co-responsable du traitement, du représentant du responsable du traitement et du délégué à la protection des données
+- La description des catégories de personnes concernées et des catégories de données personnelles
+- Les finalités du Traitement
+- Les catégories de destinataires auxquels les données personnelles ont été ou seront communiquées, y compris les destinataires dans des pays tiers ou des organisations internationales
+- La durée de conservation des données
+- La description générale des mesures techniques et organisationnelles de sécurité mises en œuvre
 
-Bajo solicitud escrita del Responsable del Tratamiento, del cliente final o de cualquier autoridad competente, el Subcontratista tendrá un plazo de 15 días hábiles para comunicar una copia del mencionado registro a partir de la recepción de la solicitud.
+Sur demande écrite du Responsable de Traitement, du client final ou de toute autorité compétente, le Sous-Traitant disposera d'un délai de 15 jours ouvrés pour communiquer une copie dudit registre à compter de la réception delate demande.
 
-## Subcontractors
+## Les sous-traitants ultérieurs
 
-The Principal may need to engage one or more external contractors/suppliers for specific services covered under the Contract. In such cases, the Principal may be required to hire, at its discretion, a second-tier subcontractor(s) solely for providing part of the necessary processing services for the managed system.
+Le Sous-Traitant peut être amené à recourir à un (ou des) prestataire(s) / fournisseur(s) externes pour la prise en charge de prestations spécifiques relevant du Contrat. A cet effet, le Sous-traitant peut être amené à recruter, sous sa responsabilité, un (ou des) Sous-traitant(s) de second rang aux seules fins de fournir une partie des prestations nécessaires au système infogéré.
 
-The Principal commits to entering into a legally binding agreement with any subsequent subcontractor engaged for data processing, ensuring compliance with GDPR requirements and imposing identical obligations as stipulated in Article 20.2. Specifically, the Principal must verify that the recruited subcontractor possesses sufficient guarantees for implementing necessary security measures.
+Le Sous-Traitant s'engage à conclure un acte juridique contraignant avec tout sous-traitant ultérieur qu'il engage pour le Traitement des Données, afin de lui imposer le respect des exigences du RGPD et les mêmes obligations que celles prévues par l'article 20.2. En particulier, le Sous-Traitant doit s'assurer que le sous-traitant ultérieur qu'il a recruté présente des garanties suffisantes pour la mise en œuvre des mesures de sécurité nécessaires.
 
-In case a subsequent subcontractor fails to meet its data protection obligations, the Principal remains fully accountable towards the Data Controller, without prejudice to the rights of affected individuals as outlined in Articles 79 and 82 of GDPR.
+En cas de défaillance du sous-traitant ultérieur dans le respect de ses obligations en matière de protection des Données personnelles, le Sous-traitant demeurera pleinement responsable à l'égard du Responsable de traitement, sans préjudice des droits des Personnes concernées prévus aux articles 79 et 82 du RGPD.
 
-The authorized list of subsequent subcontractors is as follows:
+La liste des sous-traitants subséquents autorisés est la suivante :
 
 - Interxion
 - Data4
 - Telehouse
 - Iron Mountain
 
-During contract execution, the Data Controller can request updates to this list at any time from the Principal. Regardless, the Principal will be notified in writing by the Subcontractor of any updated lists of subsequent subcontractors on a regular basis, excluding major changes in subcontractor arrangements.
+En cours d'exécution du Contrat, le Responsable de traitement peut accéder à tout moment auprès du Sous-Traitant à l'actualisation de ladite liste. Nonobstant ce qui précède, le Sous-traitant notifiera par écrit au Responsable de Traitement la liste des sous-traitants ultérieurs mise à jour régulièrement à l'exception d'un changement majeur de sous-traitant ultérieur.
 
-## Responsabilidad
+## Responsabilité
 
-El Responsable del Tratamiento y el Subcontratista reconocen que pueden ser considerados responsables por los daños causados por un tratamiento de datos personales no conforme al RGPD y a las leyes francesas aplicables. El Subcontratista es responsable de los daños causados por el tratamiento si no cumple con las obligaciones específicas del RGPD para los subcontratistas o actúa fuera de las instrucciones legales del Responsable del Tratamiento o en contravención a ellas.
+Le Responsable de traitement et le Sous-traitant reconnaissent qu'ils peuvent être tenus pour responsables des dommages causés par un traitement des données à caractère personnel non conforme au RGPD et aux lois françaises applicables. Le Sous-traitant est responsable des dommages causés par le traitement s'il n'a pas respecté les obligations du RGPD spécifiquement applicables aux sous-traitants ou s'il a agi en dehors des instructions légales du Responsable de traitement ou contrairement à celles-ci.
 
-## Cambios
+## Modifications
 
-Cualquier modificación de esta anexo requerirá un convenio escrito firmado por ambas partes. Las modificaciones deben estar alineadas con las exigencias del RGPD y las leyes francesas sobre la protección de datos personales.
+Toute modification de la présente annexe doit faire l'objet d'un avenant écrit signé par les deux parties. Les modifications doivent être conformes aux exigences du RGPD et des lois françaises relatives à la protection des données personnelles.
 
-## Aplicable Law and Competent Jurisdiction
+## Loi applicable et juridiction compétente
 
-This Annex shall be governed by French law. Any dispute regarding its interpretation or execution will be exclusively resolved by French courts. In case of a difference between the language versions of this Annex, the French version shall prevail.
+La présente annexe est régie par le droit français. Tout litige relatif à son interprétation ou à son exécution sera de la compétence exclusive des tribunaux français. En cas de divergence entre les versions linguistiques de la présente annexe, la version française prévaudra.

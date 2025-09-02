@@ -40,7 +40,7 @@ Le dati di identificazione sono globali per la tua [Organizzazione](concepts.md#
 
 ### Creazione di un utente nell'organizzazione della tua azienda
 
-La creazione di un account utente all'interno dell'organizzazione della tua azienda avviene tramite invito. Per invitare un utente nell' [Organizzazione](concepts.md#organisations), accedi al menu __'Amministrazione'__ situato a sinistra del bandetto superiore sul tuo schermo, poi al sotto-menu __'Utenti'.
+La creazione di un account utente all'interno dell'organizzazione della tua azienda avviene tramite invito. Per invitare un utente nell' [Organizzazione](concepts.md#organizzazioni), accedi al menu __'Amministrazione'__ situato a sinistra del bandetto superiore sul tuo schermo, poi al sotto-menu __'Utenti'.
 
 Fai clic sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti.
 
@@ -99,15 +99,15 @@ Ad esempio, in caso di incidente, saranno generate notifiche email specifiche pe
 
 La lista dei temi disponibili può evolversi e arricchirsi progressivamente per adattarsi ai bisogni e ai cambiamenti nel nostro ambiente operativo.
 
-# Permessi
+## Permessi
 
 ### Quali sono le permessi disponibili per gli account utente della console Shiva?
 
-Ecco la lista delle [permessi disponibili](#permissions).
+Ecco la lista delle [permessi disponibili](#permessi).
 
 ### Come aggiungere una permesso?
 
-La procedura per l'assegnazione delle autorizzazioni è disponibile qui: [autorizzazioni](#autorizzazioni)
+La procedura per l'assegnazione delle autorizzazioni è disponibile qui: [autorizzazioni](#permessi)
 
 Perché non riesco ad aggiungere una permesso?
 

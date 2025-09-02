@@ -18,7 +18,7 @@ Um die Hochverfügbarkeit für einen Pool zu aktivieren, müssen Sie einen Block
 Sobald sie aktiviert ist, können Sie die Anzahl der [virtuellen Maschinen, die keine Konfiguration](manage_vm.md) für Hochverfügbarkeit haben, einsehen:
 <img src={open_iaas_pool_ha_enabled} />
 
-Wenn die [Anzahl der verfügbaren Hosts](../../concepts.md#haute-disponibilité) nicht ausreicht, um die Hochverfügbarkeit zu gewährleisten, wird ein Warnhinweis angezeigt:
+Wenn die [Anzahl der verfügbaren Hosts](../../concepts.md#hohe-verfügbarkeit) nicht ausreicht, um die Hochverfügbarkeit zu gewährleisten, wird ein Warnhinweis angezeigt:
 <img src={open_iaas_pool_ha_error} />
 
 Um die Hochverfügbarkeit für einen Pool zu aktivieren, darf keine virtuelle Maschine gleichzeitig eingeschaltet sein, ein ISO aus einem lokalen Speicher verwenden oder den Hochverfügbarkeitsmodus auf "Neustart" eingestellt haben. Falls dies der Fall ist, können Sie die Liste der problematischen virtuellen Maschinen aufrufen:

@@ -11,7 +11,7 @@ import oshiftMenu_003 from './images/oshift_menu_003.png'
 
 ### Asignación de derechos de acceso
 
-Es esencial que el administrador del [Tenant](../console/iam/concepts.md#tenant) otorgue los derechos de gestión de la plataforma Openshift al usuario administrador Openshift para poder acceder a ella:
+Es esencial que el administrador del [Tenant](../console/iam/concepts.md#hosting) otorgue los derechos de gestión de la plataforma Openshift al usuario administrador Openshift para poder acceder a ella:
 
 <img src={oshiftRights} />
 

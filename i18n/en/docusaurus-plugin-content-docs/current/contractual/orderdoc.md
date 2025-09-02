@@ -1,28 +1,28 @@
 ---
-title: Contract Document Hierarchy
+title: Hiérarchie des documents contractuels
 ---
 
-|           | References                 |
+|           | Références                 |
 | --------- | -------------------------- |
-| Reference | CT.AM.JUR.HDC 20250502_3.0 |
-| Date      | 05 February 2025            |
+| Référence | CT.AM.JUR.HDC 20250502_3.0 |
+| Date      | 05 février 2025            |
 
-The contract document hierarchy is established according to a defined priority order:
+La hiérarchie des documents contractuels est établie selon un ordre de priorité défini :
 
-1. [General Terms and Conditions of Sale and Use (GTCU)](cgvu.docx).
-2. [SecNumCloud IaaS Service Agreement](iaas/sla_iaas.docx).
-3. [SecNumCloud OpenIaaS Service Agreement](iaas/sla_openiaas.docx).
-4. [SecNumCloud PaaS Service Agreement](paas/sla_paas.docx). (*)
-5. Specific Service Agreement - Bare Metal](baremetal.docx).
-6. Specific particular agreement (**)
-7. Security Assurance Plan (SAP) (***)
-8. General Terms of Use (GTOU) 
+1. [Conditions Générales de Vente et Utilisation (CGVU)](cgvu.docx).
+2. [Convention de Service SecNumCloud IaaS](iaas/sla_iaas.docx).
+3. [Convention de Service SecNumCloud OpenIaaS](iaas/sla_openiaas.docx).
+4. [Convention de Service SecNumCloud PaaS](paas/sla_paas.docx). (*)
+5. [Convention de Service spécifique - Bare Metal](baremetal.docx).
+6. Convention spécifique particulière (**)
+7. Plan d'Assurance Sécurité (PAS) (***)
+8. Conditions Particulières d’Utilisation (CPU) 
 9. [Data Protection Agreement](dpa.docx). (DPA)
 
-(*) It is specified that the present PaaS Service Agreement is valid only if the CLIENT has signed the SecNumCloud IaaS Services Agreement.
+(*) Il est spécifié que la présente Convention de services PaaS est valide uniquement si le CLIENT a signé la Convention concernant les services IaaS SecNumCloud.
 
-(**) Specific agreement, designed to align with the project's particularities.
+(**) Convention spécifique, conçue pour s'aligner sur les particularités du projet.
 
-(***) Non-public document.
+(***) Document non public.
 
-_Note: Translated versions in English, Italian, German, and Spanish are provided solely to facilitate understanding of the offer._
+_Note : Les versions traduites en anglais, italien, allemand et espagnol sont fournies uniquement pour faciliter la compréhension de l'offre._

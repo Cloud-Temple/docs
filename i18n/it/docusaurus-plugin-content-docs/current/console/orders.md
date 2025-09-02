@@ -32,7 +32,7 @@ import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.
 
 Il monitoraggio della distribuzione di nuove risorse si effettua nel menu __'Ordini'__ accessibile nella barra verde a sinistra dello schermo.
 
-Permette di visualizzare le risorse Cloud ordinate, in corso di distribuzione e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della vostra [Organizzazione](iam/concepts.md#organisations).
+Permette di visualizzare le risorse Cloud ordinate, in corso di distribuzione e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della vostra [Organizzazione](iam/concepts.md#organizzazioni).
 
 <img src={shivaOrdersList} />
 
