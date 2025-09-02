@@ -48,7 +48,7 @@ La piattaforma è certificata SecNumCloud dall'ANSSI ([https://www.ssi.gouv.fr](
 ## Regioni e zone di disponibilità
 
 Il prodotto IaaS VMware viene distribuito in una zona di disponibilità.
-Una [zona di disponibilità](https://.../additional_content/concepts_az.md) fa parte di una [regione](https://.../additional_content/concepts_regional.md).
+Una [zona di disponibilità](../additional_content/concepts_az.md) fa parte di una [regione](../additional_content/concepts_regional.md).
 
 Questo tipo di deployment consente di scegliere la localizzazione dei cluster e di distribuirli su diverse zone di disponibilità (AZ).
 Ciò offre una migliore distribuzione della carico, massimizza la redundanza e semplifica la pianificazione del ripristino in caso di incidente (DRP).
@@ -169,21 +169,21 @@ Nel contesto dell'utilizzo dello storage in formato blocco come datastore nell'o
 
 Una gestione proattiva dello spazio su disco è essenziale per garantire il corretto funzionamento delle vostre macchine virtuali e la fiabilità dei backup. Assicuratevi sempre di avere lo spazio necessario per i file di swap, le snapshot e la crescita dei dischi dinamici.
 
-## Backup Storage Allocation
+## Allocazione dello storage di backup
 
-Backup storage for your virtual machines is automatically provisioned by the platform, within the allocated quota.
+Lo storage dedicato al backup delle vostre macchine virtuali è auto-provisionato dalla piattaforma entro il limite della quota ordinata.
 
-| Reference                | Unité | SKU                                      |
+| Riferimento             | Unità | SKU                                      |
 |--------------------------|-------|------------------------------------------|
-| MASS STORAGE - BACKUP    | 1 TiB | csp:(region):iaas:storage:block:backup:v1 |
+| MASS STORAGE - Backup   | 1 TiB | csp:(region):iaas:storage:bloc:backup:v1 |
 
 ### Replicazione dello stoccaggio in modalità blocco
 
-#### Principes
+#### Principi
 
-Pour facilitater la mise en œuvre de vos plans de reprise après sinistre, lorsque l'application d'activité continue n'est pas possible avec des mécanismes applicatifs et que la réplication des machines virtuelles n'est pas adaptée, Cloud Temple propose des **meccanismi di replica dello stoccaggio in modalità blocco tra le punti di disponibilità di una regione**.
+Per facilitare l'implementazione dei vostri piani di ripristino dopo sinistro, quando non è possibile essere in situazione di continuità operativa con meccanismi applicativi e la replica delle macchine virtuali non è adatta, Cloud Temple propone **meccanismi di replica dello storage in modalità blocco tra le zone di disponibilità di una regione**.
 
-Questi meccanismi di replica sono applicati ai LUNs di stoccaggio dei tuoi ambienti, in aggiunta alle procedure di backup. Il choice dell'utilizzo di un meccanismo di replica su un ambiente **dipende da numerosi fattori**, come la sua criticità, la perdita di dati tollerata o la performance mirata** per l'applicazione.
+Questi meccanismi di replica sono applicati alle LUN di storage dei vostri ambienti, in aggiunta ai backup. La scelta dell'utilizzo di un meccanismo di replica su un ambiente **dipende da numerosi fattori tra cui la sua criticità, la perdita di dati tollerata o ancora le prestazioni mirate** per l'applicazione.
 
 Cloud Temple offre due tipi di meccanismi implementati in una configurazione attiva/passiva:
 
@@ -193,43 +193,43 @@ Cloud Temple offre due tipi di meccanismi implementati in una configurazione att
 
 Si definisce quindi un sito chiamato "attivo" o "primario" e uno "passivo" o "standby". Il piano di reprise dopo sinistro viene attivato in caso di incidente o durante una richiesta di test del PRA. Il sito passivo prende quindi il relais del sito attivo.
 
-#### Asynchronous Replication
+#### Replica asincrona
 
-When your workloads require short downtime and using application-level or virtual machine replication mechanisms is not feasible or suitable, it's possible to replicate a SAN storage LUN between two availability zones within the same region.
+Quando i vostri carichi di lavoro richiedono tempi di ripristino brevi e non è accettabile o adatto utilizzare meccanismi di tipo replica applicativa / replica di macchine virtuali, è possibile replicare una LUN di storage SAN tra due zone di disponibilità della stessa regione.
 
-This offering provides a __RPO of 15 minutes__ and an __RTO below 4 hours__. It allows for a much faster recovery compared to traditional backup restoration processes.
+Questa offerta permette di ottenere un __RPO di 15 minuti__ e un __RTO inferiore a 4 ore__. Permette di ripartire molto più rapidamente rispetto all'implementazione di un ripristino da backup.
 
-In a storage volume replication setup (__Global Mirror__), the SAN virtualization controllers in both availability zones collaborate to perform write operations on both sites simultaneously. The master site does not wait for the write confirmation from the remote site's SAN controller.
+In un volume di storage in replica asincrona (__Global Mirror__), i controller di virtualizzazione SAN delle due zone di disponibilità lavorano insieme per realizzare le operazioni di scrittura su entrambi i siti. Il sito master non attende la conferma di scrittura del sito slave.
 
-The steps of a write operation are as follows:
+Le fasi di un'operazione di scrittura sono le seguenti:
 
-1. A hypervisor intends to perform __a write operation on a Global-Mirror volume__: It sends the request to the local SAN controller in its availability zone,
-2. The local SAN controller requests the remote site's SAN controller to perform the write operation,
-3. The local SAN controller does not wait for the remote site's confirmation and performs the write locally,
-4. It gives __write acknowledgment__ to the hypervisor that initiated the request,
-5. __Hypervisors on the distant site do not directly access the Global Mirror LUN__: A service request is necessary.
+1. Un hypervisor desidera realizzare __un'operazione di scrittura su un volume Global-Mirror__: invia la sua richiesta al controller SAN della sua zona di disponibilità,
+2. Il controller SAN locale chiede al controller SAN della zona distante di realizzare l'operazione di scrittura,
+3. Il controller SAN locale non attende la conferma del SAN distante e realizza quindi la scrittura localmente,
+4. Dà __conferma__ all'hypervisor che ha emesso la richiesta,
+5. __Gli hypervisor del sito distante non accedono direttamente alla LUN Global Mirror__: È necessaria una richiesta di servizio.
 
 | SLA       | Description                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | RPO 15mn  | In case of a disaster at the primary data center, the maximum amount of lost data corresponds to the maximum of 15 minutes of writing. |
 | RTO < 4H  | In case of a disaster at the primary data center, recovery is guaranteed within 4 hours, depending on the complexity of the environment.          |
 
-Upon activation of the PRA (Planned Recovery Action), Cloud Temple's team replicates the 'Global Mirror' LUN to the distant hypervisors for them to access the data. This setup requires reserving computing and RAM resources on the standby site for failover in case of a disaster.
+In caso di attivazione del PRA, il team di Cloud Temple realizza un'operazione di presentazione della LUN __'Global Mirror'__ agli hypervisor distanti perché possano accedere al dato. L'implementazione di questa soluzione richiede quindi di aver riservato sul sito 'standby' risorse di calcolo e RAM per riprendere l'attività in caso di sinistro.
 
-Using this technology also necessitates doubling the storage space: it's essential to have exactly the same amount of space on the distant site as on the local site.
+L'uso di questa tecnologia richiede anche il raddoppio dello spazio disco: è necessario avere esattamente lo stesso spazio sul sito distante che sul sito locale.
 
-This replication method can impact application performance by 10%. Only storage classes with 500 Iops/To, 1500 Iops/To, and 3000 Iops/TO are compatible.
+L'uso di questo meccanismo può impattare le prestazioni dell'applicazione fino al 10%. __Solo le classi di storage 500 Iops/To, 1500 Iops/To e 3000 Iops/TO sono compatibili.__
 
 | Reference                          | Unité  | SKU                                               |  
 |------------------------------------|--------|---------------------------------------------------|
 | STORAGE - Global Replication SAN    | 1 Tio  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
-*__Note__:
+*__Nota__*:
 
-- Since the offering is asynchronous, there's a possibility during a disaster that some disk operations are not written to the remote site. This could lead to data inconsistency, mitigated through risk assessment of the recovery plan.*
-- Block storage replication is performed transparently for virtual machines and applications,
-- Consequently, it's crucial to favor application-level or potentially VM replication scenarios,
-- Computing and memory resources on the recovery site can be reduced to optimize costs if a degraded state is acceptable during the recovery action.*
+- *L'offerta essendo asincrona, è possibile durante un sinistro che alcune operazioni disco non siano state scritte sul sito distante. Può quindi esserci un rischio sulla coerenza dei dati, da mitigare nell'analisi di rischio del piano di ripristino dopo sinistro.*
+- *La replica dello storage in modalità blocco si fa in modo mascherato per le macchine virtuali e le applicazioni,*
+- *A questo titolo, è importante privilegiare gli scenari di replica applicativa o eventualmente di replica di macchina virtuale,*
+- *Il calcolo e la memoria, sul sito di ripristino, possono essere diminuiti per ottimizzare i costi se una situazione degradata è accettabile per il business durante l'azione del piano di ripristino dopo sinistro.*
 
 ## Virtualizzazione VMware con Cloud Temple SecNumCloud
 
@@ -306,57 +306,57 @@ Creando una regola, definite il tipo della regola (affinità o anti-affinità), 
 
 *Nota: i regolamenti di affinità/anti-affinità proposti nella console sono riguardanti le macchine virtuali tra loro (non esistono regole tra virtualizzatori e macchine virtuali).*
 
-### Asynchronous Replication of Virtual Machines in VMware Environment
+### Replica asincrona delle macchine virtuali in ambiente VMware
 
-Asynchronous replication of your virtual machines involves pushing write operations from the source hypervisor to the standby site at regular intervals.
+La replica asincrona delle vostre macchine virtuali è un meccanismo che consiste nel spingere a livello dell'hypervisor sorgente le operazioni di scrittura sul sito standby a intervalli di tempo regolari.
 
-Following an initial hot copy of the entire active storage on the standby site, only writes are pushed to the standby machine at regular intervals (ranging from every hour to every 24 hours, depending on the volume of writes).
+Dopo una copia iniziale a caldo dell'insieme dello storage attivo sul sito standby, solo le scritture vengono spinte a intervalli regolari sul sito in standby. Questo intervallo dipende dal volume di scrittura (da ogni ora a ogni 24 ore).
 
-This virtual machine replication leverages the instant cloning mechanism of the hypervisor. Consequently, this solution faces similar limitations, particularly regarding sensitivity to the volume of writes by the virtual machine, as the process of instant cloning is a recursive closure mechanism for the instant clone.
+La replica delle macchine virtuali si appoggia sul meccanismo di istantanee dell'hypervisor. A questo titolo, questa soluzione ha gli stessi inconvenienti, in particolare la sensibilità al volume di scritture della macchina virtuale, il processo di istantanea essendo un meccanismo ricorsivo per la chiusura dell'istantanea.
 
-An example of a machine that typically does not support virtual machine replication is an FTP server receiving real-time video feeds from surveillance cameras. Such a machine spends most of its time writing and would be unable to complete an instant clone without pausing the operating system for a significant period (several tens of minutes). If the hypervisor cannot close the instant clone, it will do so automatically, potentially corrupting the virtual machine unless intervention is possible.
+L'esempio tipico di macchina che non supporta il meccanismo di replica delle macchine virtuali è un server FTP che riceve i flussi in tempo reale di telecamere di sorveglianza. __La macchina passa il suo tempo a scrivere e non sarà capace di chiudere un'istantanea senza messa in pausa del sistema operativo per un periodo di tempo significativo (diverse decine di minuti)__. Se l'hypervisor non riesce a chiudere l'istantanea, è esattamente quello che farà, senza possibilità di intervenire salvo corrompere la macchina virtuale.
 
-| SLA             | Description                                                                                                                                               |
+| SLA             | Descrizione                                                                                                                                               |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 1H to 24H    | In case of a disaster at the primary data center, the maximum amount of lost data is that of the last write pushed to the standby site. |
-| RTO < 15mn      | Operation to restart the virtual machine stopped on the distant site                                                                                |
+| RPO da 1H a 24H | In caso di sinistro sul datacenter principale, la quantità massima di dati persi è quella dell'ultima spinta delle scritture sul sito standby. |
+| RTO < 15mn      | Operazione di avvio della macchina virtuale fermata sul sito distante                                                                                |
 
-In case of need or in case of failure on a machine at the primary site, the mirrored machine on the standby site is activated. Recovery requires having reserved compute and memory resources on the standby site as well as identical storage capacity on the passive site as on the active site.
+In caso di bisogno, o in caso di difetto su una macchina del sito principale, la macchina mirror sul sito standby viene attivata. La ripresa di attività necessita di aver riservato sul sito standby del calcolo e della RAM in standby. È necessario avere lo stesso spazio di storage sul sito passivo che sul sito attivo.
 
-| Reference                         | Unité | SKU                                             |  
+| Riferimento                       | Unità | SKU                                             |  
 |-----------------------------------|-------|-------------------------------------------------|
-| PRA - Replication VMware inter-AZ | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
+| PRA - Replica VMware inter-AZ     | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
 
-*__Note__: The minimum RPO must be defined based on the virtual machine's change rate.*
+*__Nota__: Il calcolo del RPO minimo deve essere definito in funzione del tasso di cambiamento sulla macchina virtuale.*
 
-## Virtual Machine Backup
+## Backup delle macchine virtuali
 
-Cloud Temple offers an **integrated, non-detachable cross-platform backup solution** (it's mandatory for secnumcloud French qualification).
+Cloud Temple propone __un'architettura di backup incrociata nativa e non disattivabile__ (è obbligatoria nella qualificazione secnumcloud francese).
 
-Backups are stored in a high availability zone and on a physically separate datacenter from the one hosting the virtual machine.
+I backup sono memorizzati in una zona di disponibilità e su un datacenter fisico diverso da quello che ospita la macchina virtuale.
 
-This setup safeguards against major failures at the production datacenter and allows restoration onto a secondary datacenter (e.g., due to fire).
+Questo permette di proteggersi in caso di difetto maggiore sul datacenter di produzione e di ripristinare su un datacenter secondario (incendio per esempio).
 
-This solution encompasses:
+Questa soluzione comprende:
 
-- Hot, site-level backup of all disks,
-- Instantaneous presentation and startup of a virtual machine from the storage infrastructure and hot reload on production SANs,
-- Partial file restoration from backups,
-- Limited retention based solely on mass storage allocation.
+- Il backup fuori sito a caldo dell'insieme dei dischi,
+- La presentazione e l'avvio istantaneo di una macchina virtuale dall'infrastruttura di mass storage e il ricaricamento a caldo sui SAN di produzione,
+- Il ripristino parziale di file dal backup,
+- Una ritenzione limitata unicamente dall'allocazione di spazio di storage di massa.
 
-This backup infrastructure is built upon IBM Spectrum Protect Plus, an agentless architecture solution that's user-friendly and facilitates automated backup processes along with space optimization on mass storage.
+Questa infrastruttura di backup è basata sulla soluzione *IBM Spectrum Protect Plus*, una soluzione ad architettura senza agente, semplice da utilizzare e che permette l'automazione dei processi di backup oltre a un'ottimizzazione dello spazio di mass storage.
 
-Backup speeds and restore times are dependent on the rate of data changes in environments. The backup policy can be configured via [Cloud Temple Console](../console/console.md) for each virtual machine.
+Le velocità di backup e di ripristino sono dipendenti dal tasso di cambiamento sugli ambienti. La politica di backup è configurabile dalla [Console Cloud Temple](../console/console.md) per ogni macchina virtuale.
 
-*__Note:__
+*__Nota:__*
 
-* Some virtual machines may not be compatible with this technology, which relies on hypervisor snapshot mechanisms. These typically involve VMs with constant disk writes. The hypervisor cannot close the instantaneous snapshot, necessitating VM freeze to complete the closure operation—a process that can take several hours and is unstoppable.
+*__Alcune macchine virtuali non sono compatibili con questa tecnologia di backup__ che utilizza i meccanismi di istantanee dell'hypervisor. Sono tipicamente le macchine i cui carichi di scrittura su disco sono costanti. Non è possibile per l'hypervisor chiudere l'istantanea il che obbliga al congelamento della macchina virtuale per poter terminare l'operazione di chiusura. Questo congelamento può durare diverse ore e non è fermabile.*
 
-In such cases, the solution involves excluding the target persistent disk and backing up data through an alternative method.*
+*La soluzione è allora di escludere il disco che è target di scritture permanenti e di salvare i dati con un altro metodo.*
 
-| Reference                                               | Unité | SKU                            |
+| Riferimento                                             | Unità | SKU                            |
 | ------------------------------------------------------- | ----- | ------------------------------ |
-| BACKUP - Access to IBM Spectrum Protect Plus service     | 1 VM  | csp:(region):iaas:backup:vm:v1 |
+| BACKUP - Accesso al servizio IBM Spectrum Protect Plus | 1 VM  | csp:(region):iaas:backup:vm:v1 |
 
 Per creare una nuova politica di backup, è necessario effettuare una richiesta al supporto. Il supporto è accessibile tramite l'icona della palla a vela in alto a destra della finestra.
 
@@ -368,9 +368,9 @@ La creazione di una nuova politica di backup viene realizzata attraverso una **r
     Il nome della politica di backup
     Le caratteristiche (x giorni, y settimane, z mesi, ecc.)
 
-## Advanced Data Protection (HSM/KMS)
+## Protezione Avanzata dei Dati (HSM/KMS)
 
-Cloud Temple offers an advanced data encryption solution for virtual machines based on hardware security modules (HSM) and a key management service (KMS). This feature strengthens the protection of sensitive data through centralized and secure key management, directly integrated into the SecNumCloud environment.
+Cloud Temple offre una soluzione avanzata di crittografia dei dati per le macchine virtuali basata su moduli di sicurezza hardware (HSM) e un servizio di gestione delle chiavi (KMS). Questa funzionalità rafforza la protezione dei dati sensibili attraverso una gestione centralizzata e sicura delle chiavi, direttamente integrata nell'ambiente SecNumCloud.
 
 ### Architettura tecnica
 
@@ -380,15 +380,15 @@ La soluzione si basa su un'infrastruttura di sicurezza robusta composta da:
 - **KMS (Key Management System)**: **Thales CipherTrust Manager** per la gestione centralizzata delle chiavi
 - **Integrazione VMware**: Comunicazione tramite il protocollo **KMIP (Key Management Interoperability Protocol)**
 
-#### Deployment high availability
+#### Deployment ad alta disponibilità
 
-The HSM infrastructure is deployed across **three availability zones** of the FR1 region:
+L'infrastruttura HSM è distribuita su **tre zone di disponibilità** della regione FR1:
 
 - PAR7S
 - TH3S  
 - AZ07
 
-This distribution ensures a **high availability** and maximum resilience for the encryption service.
+Questa distribuzione garantisce un'**alta disponibilità** e la massima resilienza per il servizio di crittografia.
 
 ### Funzionamento e gerarchia delle chiavi
 
@@ -453,11 +453,11 @@ In conclusione, la sicurezza e la conformità sono aspetti critici per qualsiasi
 - **Common Criteria EAL4+**: Valutazione di sicurezza avanzata
 - **SecNumCloud**: Qualificazione ANSSI integrata nell'ambiente Cloud Temple
 
-#### Multi-tenant isolation
+#### Isolamento multi-tenant
 
-- **Cryptographic separation**: Each client has an isolated KMS domain
-- **Dedicated keys**: A specific Domain Key for each client
-- **Audit and traceability**: Comprehensive logging of actions per tenant
+- **Separazione crittografica**: Ogni cliente ha un dominio KMS isolato
+- **Chiavi dedicate**: Una chiave di dominio specifica per ogni cliente
+- **Audit e tracciabilità**: Registrazione completa delle azioni per tenant
 
 ### Attivazione e utilizzo
 
@@ -485,12 +485,12 @@ Questo paragrafo descrive le limitazioni e le considerazioni relative al progett
 - **Ricostruzione**: Le backup delle VM crittografati mantengono la loro protezione crittografica
 - **Esporta**: L'esportazione di VM crittografate richiede procedure specifiche
 
-#### Performance
+#### Prestazioni
 
-- **Minimal Impact**: Hardware encryption ensures optimal performance
-- **Transparency**: No effect on application functionality
+- **Impatto minimo**: La crittografia hardware garantisce prestazioni ottimali
+- **Trasparenza**: Nessun effetto sulla funzionalità delle applicazioni
 
-### Cas d'uso raccomandati
+### Casi d'uso raccomandati
 
 Questa soluzione di protezione avanzata è particolarmente adatta per:
 
