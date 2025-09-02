@@ -1,50 +1,50 @@
 ---
-title: First steps
+Erstgehende Schritte
 ---
 
-# Erste Schritte
+# Erstes Schritte
 
 Willkommen in unserem Tutorial-Bereich!
 
-Dieser Bereich ist dafür vorgesehen, zu erklären und zu demonstrieren, wie Anwendungen auf der **OpenShift Container Platform (OCP)**, betrieben von **Cloud Temple**, bereitgestellt werden können.
+Diese Plattform dient dazu, zu erklären und zu demonstrieren, wie man Anwendungen auf der **OpenShift Container Platform (OCP)**, die von **Cloud Temple** betrieben wird, bereitstellt.
 
-Er hebt die Fähigkeiten und Einschränkungen der Plattform anhand konkreter Beispiele hervor und zeigt, wie man diese effektiv nutzt.
+Sie zeigt die Fähigkeiten und Grenzen der Plattform durch praktische Beispiele und vermittelt, wie man sie effizient nutzt.
 
-Hier finden Sie Informationen und Anwendungsfälle rund um die Bereitstellung, Verwaltung und Skalierung von Anwendungen. Lernen Sie Best Practices und folgen Sie detaillierten Anweisungen, um Arbeitsabläufe zu optimieren und einen reibungslosen Betrieb sicherzustellen.
+Hier finden Sie Informationen und Anwendungsbeispiele im Zusammenhang mit dem Bereitstellen, Verwalten und Skalieren von Anwendungen. Lernen Sie die besten Praktiken kennen und folgen Sie detaillierten Anweisungen, um Ihre Prozesse zu optimieren und eine reibungslose Betriebsführung sicherzustellen.
 
 ## Zum Start
 
-Bevor Sie Ihre Reise auf unserer Plattform beginnen, empfehlen wir Ihnen, die folgenden Punkte zu erkunden:
+Bevor Sie Ihre Reise auf unserer Plattform beginnen, empfehlen wir Ihnen, sich mit den folgenden Punkten vertraut zu machen:
 
-1. [**Einführung in die Architektur**](../concepts.md#architecture-générale-de-la-plateforme)
-   - Entdecken Sie die grundlegende Struktur der Plattform.
-   - Verstehen Sie, wie sich OpenShift mit den Diensten von Cloud Temple integriert.
+1. [**Architektur der Plattform**](../concepts.md#générale-architektur-der-plattform)
+   - Erkunden Sie die grundlegende Struktur der Plattform.
+   - Verstehen Sie, wie OpenShift mit den Cloud Temple Diensten integriert ist.
 
-2. [**Bekannte Grenzen und Einschränkungen**](../concepts.md)
-   - Informieren Sie sich über die Grenzen der Plattform, um Ihre Implementierungen besser planen zu können.
-   - Vermeiden Sie häufige Stolperfallen und optimieren Sie die Ressourcennutzung.
+2. [**Grenzen und bekannte Einschränkungen**](../concepts.md)
+   - Informieren Sie sich über die Grenzen der Plattform, um Ihre Implementierungen besser zu planen.
+   - Vermeiden Sie häufige Fehler und optimieren Sie die Ressourcennutzung.
 
-3. [**Ein Rundgang durch OpenShift von Cloud Temple**](../quickstart.md)
-   - Erkunden Sie ausführlich die Funktionen und Merkmale, die an unsere Bereitstellung angepasst sind.
-   - Entdecken Sie praktische Anwendungsfälle, um die Fähigkeiten der Plattform voll auszuschöpfen.
+3. [**Erkundung von OpenShift durch Cloud Temple**](../quickstart.md)
+   - Erkunden Sie detailliert die Funktionen und Merkmale, die für unsere Bereitstellung geeignet sind.
+   - Entdecken Sie praktische Anwendungsfälle, um die Kapazitäten der Plattform voll auszuschöpfen.
 
-4. **Folgen Sie unseren schrittweisen Tutorials**
-   - Verwenden Sie die [**Ressourcen**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) aus unserem Demo-Repository, um Schritt für Schritt Bereitstellungen durchzuführen.
+4. **Befolgen Sie unsere Schritt-für-Schritt-Anleitungen**
+   - Nutzen Sie die [**Ressourcen**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) aus unserem Demonstrationsportal, um Ihre Bereitstellungen Schritt für Schritt durchzuführen.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Bereitstellung mit helmfile</h3>
-    <p>Erfahren Sie, wie Sie Ihre Anwendungen mit helmfile bereitstellen.</p>
-    <a href="tutorials/deploy-through-helmfile" class="card-link">Starten &rarr;</a>
+    <h3>Durchführung über Helmfile</h3>
+    <p>Entdecken Sie, wie Sie Ihre Anwendungen mit Helmfile bereitstellen.</p>
+    <a href="tutorials/deploy-through-helmfile" class="card-link">Beginnen &rarr;</a>
   </div>
   <div class="card">
-    <h3>Virtualisierung mit Kubevirt erkunden</h3>
-    <p>Entdecken Sie Kubevirt und seine Funktionen im **Cloud Temple** Kontext.</p>
-    <a href="tutorials/deploy-vm-with-kubevirt" class="card-link">Starten &rarr;</a>
+    <h3>Erkundung der Virtualisierung mit Kubevirt</h3>
+    <p>Entdecken Sie kubevirt und seine Funktionen im Kontext von Cloud Temple.</p>
+    <a href="tutorials/deploy-vm-with-kubevirt" class="card-link">Beginnen &rarr;</a>
   </div>
   <div class="card">
-    <h3>Kasten nutzen</h3>
-    <p>Erfahren Sie mehr über Kasten und richten Sie Ihre Datensicherungen ein.</p>
-    <a href="tutorials/using-kasten" class="card-link">Starten &rarr;</a>
+    <h3>Nutzung von Kasten</h3>
+    <p>Entdecken Sie Kasten und konfigurieren Sie die Datenbackups.</p>
+    <a href="tutorials/using-kasten" class="card-link">Beginnen &rarr;</a>
   </div>
 </div>

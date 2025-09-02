@@ -283,10 +283,10 @@
       "it": "07a8672b97f6e5ee05173035f85734217aa6c2d8ee62f1684a9182b7865718fa"
     },
     "iaas_vmware/concepts.md": {
-      "en": "eca146818d69a84561900c11ba089ac92b5b64d5898a7e965893140492ff7bc4",
-      "de": "eca146818d69a84561900c11ba089ac92b5b64d5898a7e965893140492ff7bc4",
-      "es": "eca146818d69a84561900c11ba089ac92b5b64d5898a7e965893140492ff7bc4",
-      "it": "eca146818d69a84561900c11ba089ac92b5b64d5898a7e965893140492ff7bc4"
+      "en": "1a9c523cfaf9cc869956729ce75e413ef58b554b42ca97b512b5d1ddf800c07c",
+      "de": "1a9c523cfaf9cc869956729ce75e413ef58b554b42ca97b512b5d1ddf800c07c",
+      "es": "1a9c523cfaf9cc869956729ce75e413ef58b554b42ca97b512b5d1ddf800c07c",
+      "it": "1a9c523cfaf9cc869956729ce75e413ef58b554b42ca97b512b5d1ddf800c07c"
     },
     "iaas_vmware/tutorials/deploy_vm_template.md": {
       "en": "cc0ad329b8c9f86f8bea4830de8ba6fd499cefc16ccca6f94dfc95cc19401246",
@@ -709,10 +709,10 @@
       "it": "03ce6808894a3b12567fc584a7cf355f64dbe8bb4dc78dfc829825517bbd2340"
     },
     "paas_openshift/tutorials/tutorials.md": {
-      "en": "0d5b69884c8af34a490d61d8c20467d0a62585afe0a2a58cd6d6b432147fed14",
-      "de": "0d5b69884c8af34a490d61d8c20467d0a62585afe0a2a58cd6d6b432147fed14",
-      "es": "0d5b69884c8af34a490d61d8c20467d0a62585afe0a2a58cd6d6b432147fed14",
-      "it": "0d5b69884c8af34a490d61d8c20467d0a62585afe0a2a58cd6d6b432147fed14"
+      "en": "93470d31a8855b3cb1b20793df414729dd58ac967085adbf551c0c943431d8d5",
+      "de": "93470d31a8855b3cb1b20793df414729dd58ac967085adbf551c0c943431d8d5",
+      "es": "93470d31a8855b3cb1b20793df414729dd58ac967085adbf551c0c943431d8d5",
+      "it": "93470d31a8855b3cb1b20793df414729dd58ac967085adbf551c0c943431d8d5"
     },
     "paas_openshift/tutorials/deploy-vm-with-kubevirt.md": {
       "en": "d85516be3086c8c8d3d2d9a193ba6c20ac1f15bc27b0241303e565fee084962f",
@@ -811,6 +811,6 @@
       "es": "bafad1b09c979cb33bd6c8bdf2bba1afd61e8edf14381d7c41e62bcd0d5af256"
     }
   },
-  "last_update": "2025-08-28T12:22:07.788618",
+  "last_update": "2025-09-02T09:53:00.041880",
   "version": "2.0"
 }

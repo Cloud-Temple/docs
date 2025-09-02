@@ -1,50 +1,50 @@
 ---
-title: First steps
+First Steps
 ---
 
 # First Steps
 
 Welcome to our tutorial space!
 
-This space is designed to explain and demonstrate how to deploy applications on the **OpenShift Container Platform (OCP)** platform, powered by **Cloud Temple**.
+This space is designed to explain and demonstrate how to deploy applications on the **OpenShift Container Platform (OCP)**, powered by **Cloud Temple**.
 
-It highlights the platform's capabilities and limitations through concrete examples and shows how to use it effectively.
+It highlights the platform's capabilities and limitations through concrete examples, showing you how to use it effectively.
 
-You will find information and use cases related to application deployment, management, and scaling. Learn best practices and follow detailed instructions to optimize workflows and ensure smooth operations.
+You'll find information and use cases related to application deployment, management, and scaling. Learn best practices and follow detailed instructions to optimize workflows and ensure smooth operations.
 
-## Getting started
+## Getting Started
 
-Before starting your journey on our platform, we recommend exploring the following:
+Before embarking on your journey through our platform, we recommend exploring the following:
 
-1. [**Architecture Overview**](../concepts.md#architecture-générale-de-la-plateforme)
+1. [**Overview of Architecture**](../concepts.md#general-architecture-of-the-platform)
    - Discover the fundamental structure of the platform.
-   - Understand how OpenShift integrates with Cloud Temple services.
+   - Understand how OpenShift integrates with Cloud Temple's services.
 
-2. [**Known Limits and Constraints**](../concepts.md)
-   - Learn about the platform's limitations to better plan your implementations.
+2. [**Known Limitations and Constraints**](../concepts.md)
+   - Familiarize yourself with the platform's limitations to better plan your implementations.
    - Avoid common pitfalls and optimize resource usage.
 
-3. [**Exploring OpenShift through Cloud Temple**](../quickstart.md)
-   - Explore in detail the features and characteristics tailored to our deployment.
+3. [**OpenShift Tour by Cloud Temple**](../quickstart.md)
+   - Delve into detailed features and characteristics tailored for our deployment.
    - Discover practical use cases to fully leverage the platform's capabilities.
 
 4. **Follow our step-by-step tutorials**
-   - Use the [**resources**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) from our demonstration repository to perform step-by-step deployments.
+   - Utilize the [**resources**](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) from our demonstration repository for hands-on deployments.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Deploy using helmfile</h3>
-    <p>Discover how to deploy your applications with helmfile.</p>
-    <a href="tutorials/deploy-through-helmfile" class="card-link">Get started &rarr;</a>
+    <h3>Deploy via Helmfile</h3>
+    <p>Discover how to deploy your applications using helmfile.</p>
+    <a href="tutorials/deploy-through-helmfile" class="card-link">Get Started &rarr;</a>
   </div>
   <div class="card">
-    <h3>Explore virtualization with Kubevirt</h3>
-    <p>Discover Kubevirt and its features within the **Cloud Temple** context.</p>
-    <a href="tutorials/deploy-vm-with-kubevirt" class="card-link">Get started &rarr;</a>
+    <h3>Explore Virtualization with Kubevirt</h3>
+    <p>Discover kubevirt and its features within the Cloud Temple context.</p>
+    <a href="tutorials/deploy-vm-with-kubevirt" class="card-link">Get Started &rarr;</a>
   </div>
   <div class="card">
-    <h3>Use Kasten</h3>
-    <p>Discover Kasten and configure backups for your data.</p>
-    <a href="tutorials/using-kasten" class="card-link">Get started &rarr;</a>
+    <h3>Utilize Kasten</h3>
+    <p>Discover Kasten and configure data backups.</p>
+    <a href="tutorials/using-kasten" class="card-link">Get Started &rarr;</a>
   </div>
 </div>
