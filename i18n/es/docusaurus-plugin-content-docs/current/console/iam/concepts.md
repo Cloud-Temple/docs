@@ -23,7 +23,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 Los cuentas de acceso a la consola Shiva se crean por el cuenta matriz del cliente en invitación (independientemente del repositorio de autenticación).
 Las información de identificación son globales para tu [Organización](#organizaciones).
 
-*__Nota:__ [La federicación de identidad se gestiona al nivel de la organización](#mecanismos-autenticación)*
+*__Nota:__ [La federicación de identidad se gestiona al nivel de la organización](#mecanismos-de-autenticación)*
 
 ### Creación de una cuenta de usuario en su organización
 
@@ -56,9 +56,9 @@ Entonces aparece el menú de activación de permisos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe configurarse para cada [Tenant](#tenant) dentro de una [Organización](#organizations).
+La configuración de permisos debe configurarse para cada [Tenant](#hosting) dentro de una [Organización](#organizaciones).
 
-La lista de permisos junto con sus definiciones se puede encontrar [aquí](#permissions).
+La lista de permisos junto con sus definiciones se puede encontrar [aquí](#permisos).
 
 ### Re-registración de un usuario
 

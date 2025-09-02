@@ -34,13 +34,13 @@ Die Auswahl des Tenants erfolgt von der Hauptseite der Shiva-Konsole:
 ## Shiva Console Access Accounts
 
 Shiva Console Access Accounts are created by the master account of the sponsor on invitation (regardless of the authentication reference).
-The identification information is global to your [Organization](concepts.md#organisations).
+The identification information is global to your [Organization](concepts.md#organisationen).
 
 *__Note:__ The identity federation is managed at the organization level.*
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt durch Einladen. Um einen Benutzer in einer [Organisation](https://docs.example.com/concepts#organizations) einzuladen, gehen Sie im linken Bandeau über den Menüpunkt __'Administration'__, dann __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt durch Einladen. Um einen Benutzer in einer [Organisation](concepts.md#organisationen) einzuladen, gehen Sie im linken Bandeau über den Menüpunkt __'Administration'__, dann __'Benutzer'__.
 
 Klicken Sie auf den Button __'Neuer Benutzer'__ aus der Seite der Benutzer.
 
@@ -82,9 +82,9 @@ Das Menü zur Zugriffsrechtskonfiguration erscheint dann:
 
 <img src={shivaOnboard_005} />
 
-Die Konfiguration der Rechte erfolgt für jeden [Tenant](https://cloud.safe-software.com/de/concepts/tenants) innerhalb der [Organisation](https://cloud.safe-software.com/de/concepts/organizations).
+Die Konfiguration der Rechte erfolgt für jeden [Tenant](concepts.md#tenant) innerhalb der [Organisation](concepts.md#organisationen).
 
-Die Liste der Rechte und deren Definition ist hier [durchzugehen](#permissions).
+Die Liste der Rechte und deren Definition ist hier [durchzugehen](#berechtigungen).
 
 ### Ändern des Benutzersystemsprachen
 
@@ -106,17 +106,17 @@ Beispielsweise würden bei einem Vorfall spezifische E-Mail-Benachrichtigungen f
 
 Die Liste der verfügbaren Themen kann sich ständig weiterentwickeln und verbessern, um den Bedürfnissen und Veränderungen in unserem Betriebsmilieu gerecht zu werden.
 
-### Berechtigungen
+## Berechtigungen
 
 Note: The Markdown structure and formatting are preserved as is. The text "Permissions" remains unchanged in the translation. No modifications were made to HTML elements or code blocks, adhering strictly to the provided rules.
 
 ### Welche Berechtigungen stehen den Benutzerkonten der Shiva-Konsole zur Verfügung?
 
-Hier ist die Liste der verfügbaren [Berechtigungen](#permissions).
+Hier ist die Liste der verfügbaren [Berechtigungen](#berechtigungen).
 
 ### How to grant permissions?
 
-You can find the procedure for assigning permissions [here](#permissions)
+You can find the procedure for assigning permissions [here](#berechtigungen)
 
 ### Warum kann ich keine Berechtigung hinzufügen?
 

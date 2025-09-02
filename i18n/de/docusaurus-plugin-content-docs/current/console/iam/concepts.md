@@ -20,13 +20,13 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Benutzernamen
 
-Die Zugriffsberechtigungen auf die Shiva-Konsole werden vom Hauptauftragnehmer des Auftrags über eine Einladung (unabhängig vom Authentifizierungssystem) erstellt. Die Identifikationsinformationen sind für Ihre [Organisation](#organisation) gültig.
+Die Zugriffsberechtigungen auf die Shiva-Konsole werden vom Hauptauftragnehmer des Auftrags über eine Einladung (unabhängig vom Authentifizierungssystem) erstellt. Die Identifikationsinformationen sind für Ihre [Organisation](#organisationen) gültig.
 
 *__Hinweis:__ Die Verwaltung der Identitätsfusion erfolgt auf Organisationslevel (#Authentifizierungsmechanismen)*
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt durch Einladen. Um einen Benutzer in einer [Organisation](#organisation) einzuladen, gehen Sie im linken Bandeau oben auf der Startseite zur Unterseite __'Administration'__ und dann zum Untermenü __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt durch Einladen. Um einen Benutzer in einer [Organisation](#organisationen) einzuladen, gehen Sie im linken Bandeau oben auf der Startseite zur Unterseite __'Administration'__ und dann zum Untermenü __'Benutzer'__.
 
 Klicken Sie auf den Button __'Neuer Benutzer'__ aus der Seite der Benutzer.
 
@@ -68,7 +68,7 @@ Das Menü zur Aktivierung der Rechte erscheint dann:
 
 Die Konfiguration der Berechtigungen muss für jeden [Tenant] innerhalb des [Organisation] vorgenommen werden.
 
-Die Liste der Berechtigungen und ihre Definition ist hier zugänglich [diesen Link](#permissions).
+Die Liste der Berechtigungen und ihre Definition ist hier zugänglich [diesen Link](#zugriffskontrollen).
 
 ### User Re-registration
 

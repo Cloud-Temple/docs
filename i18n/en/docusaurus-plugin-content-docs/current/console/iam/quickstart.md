@@ -70,7 +70,7 @@ The permission assignment menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration needs to be set for each [Tenant](concepts.md#tenant) within an [Organization](concepts.md#organisations).
+Permission configuration needs to be set for each [Tenant](concepts.md#tenant) within an [Organization](concepts.md#organizations).
 
 The list of permissions and their definitions can be accessed [here](#permissions).
 
