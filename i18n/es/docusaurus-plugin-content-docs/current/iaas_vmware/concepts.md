@@ -45,10 +45,10 @@ La plataforma está calificada como SecNumCloud por [ANSSI](https://www.ssi.gouv
 | Automatización      | Plataforma completamente automatizada diseñada para integrarse en un programa de transformación digital.                                        |
 | Disponible al demanda | Recursos disponibles a demanda.                                                                                                          |
 
-## Zonas de disponibilidad y regiones
+## Regiones y zonas de disponibilidad
 
 El producto IaaS VMware se despliega en una zona de disponibilidad.
-Una [zona de disponibilidad](../adicional_contenido/conceptos_az.md) forma parte de una [región](../adicional_contenido/conceptos_regional.md).
+Una [zona de disponibilidad](../additional_content/concepts_az.md) forma parte de una [región](../additional_content/concepts_regional.md).
 
 Este tipo de despliegue permite seleccionar la ubicación del cluster y distribuirlo sobre diferentes zonas de disponibilidad (AZ).
 Esto ofrece una mejor distribución de carga, maximiza la redundancia y facilita la implementación de un plan de recuperación ante desastres (DRP) en caso de incidente.

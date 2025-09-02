@@ -4,17 +4,17 @@ Titel: Konzepte
 
 Die Cloud-Angebot __IaaS (Infrastructure as a Service)__ von Cloud Temple ist konzipiert, um kritische Anforderungen an die Kontinuität und Wiederbelebung zu erfüllen, mit einem besonderen Fokus auf Branchen, die hohe Anforderungen stellen wie Industrie, Finanzwesen und Versicherung. Auf Basis von Hochleistungs-Technologien garantiert diese Infrastruktur eine maximale Verfügbarkeit und optimale Leistung für Ihre kritischen Lasten.
 
-## A trustworthy technological platform
+## Eine vertrauenswürdige technologische Plattform
 
-The Cloud Temple IaaS platform leverages renowned international technology partners:
+Die IaaS-Plattform von Cloud Temple stützt sich auf renommierte internationale Technologiepartner:
 
-- Computing: __CISCO UCS__.
-- Storage: __IBM Spectrum Virtualize__, __IBM FlashSystem__ for block storage.
-- Networking: __JUNIPER__.
-- Virtualization: __VMware__, providing a reliable and proven foundation for managing cloud environments.
-- Backup: __IBM Spectrum Protect Plus__, for orchestrating and storing backup data.
+- Berechnung: __CISCO UCS__.
+- Speicher: __IBM Spectrum Virtualize__, __IBM FlashSystem__ für Block-Speicher.
+- Netzwerk: __JUNIPER__.
+- Virtualisierung: __VMware__, bietet eine zuverlässige und bewährte Grundlage für die Verwaltung Ihrer Cloud-Umgebungen.
+- Backup: __IBM Spectrum Protect Plus__, für die Orchestrierung und Speicherung von Backups.
 
-This architecture is built on the __VersaStack__ model, an alliance between Cisco and IBM, ensuring broad compatibility with major software vendors.
+Diese Architektur basiert auf dem __VersaStack__-Modell, einer Allianz zwischen Cisco und IBM, die eine umfassende Kompatibilität mit den wichtigsten Software-Herstellern gewährleistet.
 
 ## Eine automatisierte, spezialisierte Infrastruktur
 
@@ -45,10 +45,10 @@ Die Plattform erfüllt die Anforderungen an **SecNumCloud** durch die [ANSSI](ht
 | Automatisierung      | Plattform vollständig automatisiert und konzipiert für die Integration in einen Digitalisierungs-Programm.                                       |
 | Nach Bedarf verfügbar | Ressourcen zur Verfügung gestellt, sobald sie benötigt werden.                                                                                  |
 
-## Régions und Zoneen der Verfügbarkeit
+## Regionen und Verfügbarkeitszonen
 
 Das IaaS-Produkt VMware wird in einer Verfügbarkeitszone bereitgestellt.
-Eine [Verfügbarkeitszone](https://.../additional_content/concepts_az.md) ist Teil einer [Region](https://.../additional_content/concepts_regional.md).
+Eine [Verfügbarkeitszone](../additional_content/concepts_az.md) ist Teil einer [Region](../additional_content/concepts_regional.md).
 
 Diese Art des Deployment ermöglicht es, die Lokalisierung der Cluster auszuwählen und diese auf verschiedenen Verfügbarkeitszonen (AZ) zu verteilen.
 Dadurch wird eine bessere Lastverteilung erreicht, maximiert die Redundanz und vereinfacht die Einrichtung eines Notfall-Wiederherstellungsplans (DRP) im Falle eines Störungsfalls.
@@ -163,67 +163,67 @@ Bei der Nutzung von Speicher in Form von Datastore als Teil der VMware-Rechenanl
 
 Eine proaktive Speicherplanung ist entscheidend für die ordnungsgemäße Funktion Ihrer virtuellen Maschinen und die Zuverlässigkeit der Backups. Stellen Sie sicher, dass Sie immer den erforderlichen Speicherplatz für Swap-Dateien, Snapshots und das Wachstum dynamischer Festplatten zur Verfügung haben.
 
-## Backup Storage Allocation
+## Backup-Speicher-Zuteilung
 
-Backup storage for your virtual machines is automatically provisioned by the platform, within the allocated quota.
+Der Backup-Speicher für Ihre virtuellen Maschinen wird automatisch von der Plattform innerhalb des zugewiesenen Kontingents bereitgestellt.
 
-| Reference                | Unité | SKU                                      |
+| Referenz                | Einheit | SKU                                      |
 |--------------------------|-------|------------------------------------------|
-| MASS STORAGE - BACKUP    | 1 TiB | csp:(region):iaas:storage:block:backup:v1 |
+| MASS STORAGE - Backup    | 1 TiB | csp:(region):iaas:storage:bloc:backup:v1 |
 
-### Block Storage Replication
+### Block-Speicher-Replikation
 
-#### Principes
+#### Grundsätze
 
-Pour faciliter la mise en œuvre de vos plans de reprise après sinistre, lorsque des mécanismes applicatifs de continuité d'activité ne sont pas possibles et que la réplication des machines virtuelles n'est pas adaptée, Cloud Temple propose des **mécanismes de réplication du stockage en mode bloc entre les zones de disponibilité d'une région**.
+Um die Umsetzung Ihrer Disaster-Recovery-Pläne zu erleichtern, wenn Anwendungsebenen-Kontinuitätsmechanismen nicht möglich sind und die Replikation virtueller Maschinen nicht geeignet ist, bietet Cloud Temple __Mechanismen zur Block-Speicher-Replikation zwischen den Verfügbarkeitszonen einer Region__.
 
-Ces mécanismes de réplication sont appliqués sur les LUNs (Volumes Logiques Uniformes) de stockage de vos environnements, en complément des sauvegardes. Le choix de l'utilisation d'un mécanisme de réplication sur un environnement **dépend de nombreux facteurs**, tels que la criticité du système, la tolérance aux pertes de données autorisée ou encore les performances souhaitées pour l'application.
+Diese Replikationsmechanismen werden auf die LUNs (Logical Unit Numbers) Ihrer Umgebungen angewendet, zusätzlich zu den Backups. Die Wahl der Verwendung eines Replikationsmechanismus in einer Umgebung __hängt von vielen Faktoren ab__, wie der Kritikalität des Systems, der tolerierten Datenverluste oder den gewünschten Leistungen für die Anwendung.
 
-Cloud Temple propose deux types de mécanismes déployés dans une configuration actif/passif :
+Cloud Temple bietet zwei Arten von Mechanismen, die in einer Aktiv/Passiv-Konfiguration bereitgestellt werden:
 
-- La réplication **asynchrone** (ou __'Global Mirror'__): *La fonction __'Global Mirror'__ fournit un processus de copie asynchrone. Lorsqu'un hôte écrit sur le volume primaire, la confirmation de l'achèvement de l'E/S est reçue avant que l'opération d'écriture ne se termine pour le volume secondaire. Si une opération de basculement est initiée, l'application doit récupérer et appliquer toutes les mises à jour qui n'ont pas été confirmées sur le volume secondaire. Si les opérations d'E/S sur le volume primaire sont temporairement suspendues, le volume secondaire peut devenir une correspondance exacte du volume primaire. Cette fonction est comparable à un processus de sauvegarde continue dans lequel les dernières mises à jour sont toujours manquantes.*
+- Die __asynchrone__ Replikation (oder __'Global Mirror'__): *Die __'Global Mirror'__-Funktion bietet einen asynchronen Kopierprozess. Wenn ein Host auf das primäre Volume schreibt, wird die Bestätigung des I/O-Abschlusses empfangen, bevor der Schreibvorgang für das sekundäre Volume abgeschlossen ist. Wenn ein Failover eingeleitet wird, muss die Anwendung alle Updates abrufen und anwenden, die auf dem sekundären Volume nicht bestätigt wurden. Wenn I/O-Operationen auf dem primären Volume kurzzeitig pausiert werden, kann das sekundäre Volume zu einer exakten Entsprechung des primären Volumes werden. Diese Funktion ist vergleichbar mit einem kontinuierlichen Backup-Prozess, bei dem die neuesten Updates immer fehlen.*
 
-- La réplication **synchrone** (ou __'Metro Mirror'__): *La fonction __'Metro Mirror'__ est un type de copie à distance qui crée une copie synchrone des données d'un volume primaire vers un volume secondaire. Avec des copies synchrones, les applications hôtes écrivent sur le volume primaire, mais ne reçoivent pas de confirmation que l'opération d'écriture est terminée tant que les données ne sont pas écrites sur le volume secondaire. Cela garantit que les deux volumes contiennent des données identiques lorsque l'opération de copie est terminée. Après que l'opération de copie initiale est terminée, la fonction Metro Mirror maintient en permanence une copie entièrement synchronisée des données source sur le site cible. Depuis le 1° janvier 2024, la fonction 'Metro Mirror' n'est plus commercialisée.*
+- Die __synchrone__ Replikation (oder __'Metro Mirror'__): *Die __'Metro Mirror'__-Funktion ist eine Art Remote-Kopie, die eine synchrone Kopie der Daten von einem primären Volume zu einem sekundären Volume erstellt. Bei synchronen Kopien schreiben Host-Anwendungen auf das primäre Volume, erhalten aber keine Bestätigung, dass der Schreibvorgang abgeschlossen ist, bis die Daten auf das sekundäre Volume geschrieben wurden. Dies gewährleistet, dass beide Volumes identische Daten enthalten, wenn der Kopiervorgang abgeschlossen ist. Nach Abschluss des ersten Kopiervorgangs hält Metro Mirror dauerhaft eine vollständig synchronisierte Kopie der Quelldaten am Zielstandort aufrecht. __Seit dem 1. Januar 2024 wird die 'Metro Mirror'-Funktion nicht mehr vermarktet.__*
 
-On définit alors un site dit "actif" ou "principal" et un site "passif" ou "standby". Le plan de reprise après sinistre est activé en cas de sinistre ou dans le cadre d'une demande de test du PRA (Planification des Récupérations Après Sinistre). Le site passif prend ensuite le relais du site actif.
+Es wird dann ein "aktiver" oder "primärer" Standort und ein "passiver" oder "Standby"-Standort definiert. Der Disaster-Recovery-Plan wird im Falle eines Notfalls oder im Rahmen einer PRA-Testanfrage aktiviert. Der passive Standort übernimmt dann die Rolle des aktiven Standorts.
 
-#### Asynchronous Replication
+#### Asynchrone Replikation
 
-When your workloads require short downtime windows and using application-level replication or virtual machine replication is not feasible or appropriate, it's possible to replicate a SAN storage LUN between two availability zones within the same region.
+Wenn Ihre Arbeitslasten kurze Ausfallzeiten erfordern und die Verwendung von Anwendungsebenen- oder VM-Replikationsmechanismen nicht machbar oder geeignet ist, ist es möglich, eine SAN-Speicher-LUN zwischen zwei Verfügbarkeitszonen innerhalb derselben Region zu replizieren.
 
-This offering provides a __RPO of 15 minutes__ and an __RTO below 4 hours__. It allows for a much faster recovery compared to traditional backup restoration processes.
+Dieses Angebot bietet ein __RPO von 15 Minuten__ und ein __RTO unter 4 Stunden__. Es ermöglicht eine viel schnellere Wiederherstellung im Vergleich zu herkömmlichen Backup-Wiederherstellungsprozessen.
 
-In a synchronous replication setup (__Global Mirror__), controllers of virtualization SAN in both availability zones collaborate to perform write operations on both sites simultaneously. The primary site does not wait for the remote site's write confirmation.
+In einem asynchronen Replikations-Setup (__Global Mirror__) arbeiten die SAN-Virtualisierungscontroller in beiden Verfügbarkeitszonen zusammen, um Schreibvorgänge auf beiden Standorten gleichzeitig durchzuführen. Der primäre Standort wartet nicht auf die Schreibbestätigung des entfernten Standorts.
 
-The steps for a write operation are as follows:
+Die Schritte eines Schreibvorgangs sind wie folgt:
 
-1. A hypervisor intends to perform a __write operation on a Global-Mirror volume__: It sends the request to the SAN controller in its availability zone,
-2. The local SAN controller requests the remote SAN controller to perform the write operation,
-3. The local SAN controller does not wait for the remote site's confirmation and performs the write locally,
-4. It gives __acknowledgement__ to the hypervisor that initiated the request,
-5. __Hypervisors on the distant site do not directly access the Global Mirror LUN__: A service request is necessary.
+1. Ein Hypervisor möchte __einen Schreibvorgang auf einem Global-Mirror-Volume__ durchführen: Er sendet die Anfrage an den SAN-Controller in seiner Verfügbarkeitszone,
+2. Der lokale SAN-Controller fordert den entfernten SAN-Controller auf, den Schreibvorgang durchzuführen,
+3. Der lokale SAN-Controller wartet nicht auf die Bestätigung des entfernten Standorts und führt den Schreibvorgang lokal durch,
+4. Er gibt __Bestätigung__ an den Hypervisor, der die Anfrage gestellt hat,
+5. __Hypervisors am entfernten Standort greifen nicht direkt auf die Global Mirror LUN zu__: Eine Serviceanfrage ist erforderlich.
 
-| SLA       | Description                                                                                                                                       |
+| SLA       | Beschreibung                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 15mn  | In case of a disaster at the primary data center, the maximum amount of lost data corresponds to the maximum of 15 minutes of writing. |
-| RTO < 4H  | In case of a disaster at the primary data center, recovery is guaranteed within 4 hours, depending on the complexity of the environment.          |
+| RPO 15mn  | Im Falle eines Notfalls im primären Rechenzentrum entspricht die maximale Menge verlorener Daten maximal 15 Minuten Schreibzeit |
+| RTO < 4H  | Im Falle eines Notfalls im primären Rechenzentrum ist die Wiederherstellung innerhalb von 4 Stunden garantiert, je nach Komplexität der Umgebung.          |
 
-In case of PRA activation, Cloud Temple's team performs an operation to present the 'Global Mirror' LUN to distant hypervisors, enabling them to access the data. Implementing this solution requires reserving computing and RAM resources on the standby site for failover in case of a disaster.
+Im Falle einer PRA-Aktivierung führt das Cloud Temple-Team eine Operation durch, um die 'Global Mirror' LUN den entfernten Hypervisors zu präsentieren, damit sie auf die Daten zugreifen können. Die Implementierung dieser Lösung erfordert die Reservierung von Rechen- und RAM-Ressourcen am Standby-Standort für den Failover im Falle eines Notfalls.
 
-Using this technology also necessitates doubling storage space: it's essential to have exactly the same amount of space on the distant site as on the local site.
+Die Verwendung dieser Technologie erfordert auch die Verdopplung des Speicherplatzes: Es ist wesentlich, genau die gleiche Menge an Speicherplatz am entfernten Standort wie am lokalen Standort zu haben.
 
-This mechanism can impact application performance by 10%. Only storage classes with 500 IOPS/TB, 1500 IOPS/TB, and 3000 IOPS/TB are compatible.
+Dieser Mechanismus kann die Anwendungsleistung um 10% beeinträchtigen. Nur Speicherklassen mit 500 IOPS/TB, 1500 IOPS/TB und 3000 IOPS/TB sind kompatibel.
 
-| Reference                          | Unité  | SKU                                               |  
+| Referenz                          | Einheit  | SKU                                               |  
 |------------------------------------|--------|---------------------------------------------------|
-| STORAGE - Global Replication SAN    | 1 Tio  | csp:(region):iaas:storage:licence:globalmirror:v1 |
+| SPEICHER - Global Replication SAN    | 1 TiB  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
-*__Note__:
+*__Hinweis__:
 
-- Since the offering is asynchronous, there's a possibility during a disaster that some disk operations aren't written to the distant site. This could lead to data inconsistency, mitigated through risk assessment in the disaster recovery plan.*
-- Block storage replication is performed transparently for virtual machines and applications,
-- Consequently, it's crucial to favor application-level or potentially VM replication scenarios,
-- Computing and memory resources on the recovery site can be reduced to optimize costs if a degraded state is acceptable during the disaster recovery process.*
+- Da das Angebot asynchron ist, besteht die Möglichkeit, dass bei einem Notfall einige Festplattenvorgänge nicht auf den entfernten Standort geschrieben werden. Dies könnte zu Dateninkonsistenz führen, die durch Risikobewertung im Disaster-Recovery-Plan gemildert wird.*
+- Die Block-Speicher-Replikation wird transparent für virtuelle Maschinen und Anwendungen durchgeführt,
+- Folglich ist es wichtig, Anwendungsebenen- oder möglicherweise VM-Replikationsszenarien zu bevorzugen,
+- Rechen- und Speicherressourcen am Wiederherstellungsstandort können reduziert werden, um Kosten zu optimieren, wenn ein degradierter Zustand während des Disaster-Recovery-Prozesses akzeptabel ist.*
 
 ## Virtualisierung VMware durch Cloud Temple SecNumCloud
 
@@ -238,38 +238,40 @@ Die Plattform wird von Cloud Temple automatisch verwaltet (Wartung der Sicherhei
 - Der Speicher verwendet keine Technologie von VMware vSan, sondern ausschließlich SANs IBM in Fiber Channel 32G.
 - Es werden keine versteckten Optimierungen wie Kompression oder Deduplikation implementiert.
 
-### Definition of a Compute Pool ('Cpool')
+### Definition eines Rechenpool ('Cpool')
 
-The `__Cpool__` is a grouping of VMware ESXi hypervisors, also known as a *cluster ESX*.
+Der __'Cpool'__ ist eine Gruppierung von VMware ESXi-Hypervisors, auch bekannt als *'cluster ESX'*.
 
-All hosts within an `__Cpool__` belong to the same tenant and availability zone (AZ). It's mandatory that they share the same hardware class:
-__It's not possible to mix different types of compute nodes within the same cluster__.
+Alle Hosts innerhalb eines __'Cpool'__ gehören zum selben Tenant und zur selben Verfügbarkeitszone (AZ). Sie müssen zwingend dieselbe Klasse haben:
+__Es ist nicht möglich, verschiedene Modelle von Rechenblades innerhalb desselben Clusters zu mischen__.
 
-Since all compute nodes come with the maximum physical memory, a software RAM usage limit is applied at the cluster level to ensure it matches the physically purchased RAM.
+Da alle Rechenblades mit dem physischen Maximum an Speicher geliefert werden, wird eine softwarebasierte RAM-Nutzungsbegrenzung auf Cluster-Ebene angewendet, um sicherzustellen, dass sie dem abgerechneten RAM entspricht.
 
-By default, each node has 128 GB of activated memory within the `__Cpool__`.
+Standardmäßig verfügt jede Blade über 128 GB aktivierten Speicher innerhalb des __'Cpool'__.
 
-A `__Cpool__` can accommodate up to 32 hypervisors by default. Beyond this limit, a second cluster would need to be created.
+Ein __'Cpool'__ kann maximal 32 Hypervisors enthalten. Über diese Grenze hinaus muss ein zweiter Cluster erstellt werden.
 
-Storage can be shared between the `__Cpool__`.
+Der Speicher kann zwischen den __'Cpool'__ geteilt werden.
 
-### Allocation of Memory for a 'Cpool'
+### Speicherzuteilung für einen 'Cpool'
 
-The allocation of RAM is configurable at the cluster level. You can adjust the amount of RAM to match your needs according to the scale of the cluster.
+Die RAM-Reservierung ist pro Cluster konfigurierbar. Sie können die RAM-Menge reduzieren oder erhöhen, damit sie Ihren Anforderungen auf Cluster-Ebene entspricht.
 
-**Please note not to exceed an average memory usage of 85% per compute node.**
-Indeed, VMware's optimization method, which involves compression, can significantly impact the performance of your workloads and complicate diagnostics. Similarly, excessive memory pressure on compute nodes will force the hypervisor to offload some memory onto disk to accommodate virtual machine needs.
+__Achten Sie darauf, nicht mehr als durchschnittlich 85% Speicherverbrauch pro Rechenblades zu überschreiten__.
+Die VMware-Technologie wird eine Optimierungsmethode vom Typ Kompression verwenden, die die Leistung Ihrer Arbeitslasten stark beeinträchtigen und die Diagnose erschweren kann.
+Ebenso wird ein zu hoher Speicherdruck auf Ihren Rechenblades den Hypervisor zwingen, einen Teil seines Speichers auf die Festplatte auszulagern, um den Bedürfnissen der virtuellen Maschinen gerecht zu werden.
 
-This scenario, known as __'Ballooning'__, has a substantial impact on the overall performance of virtual machines located on the affected datastore. Diagnostics become complex in this context because your monitoring tools will detect impacts at the CPU level rather than memory or storage.
+Dieser Fall, genannt __'Ballooning'__, beeinträchtigt sehr stark die Gesamtleistung der virtuellen Maschinen, die sich auf dem betroffenen Speicher (Datastore) befinden.
+__Die Diagnose ist in diesem Kontext kompliziert__, da Ihre Metrologie Auswirkungen auf CPU-Ebene und nicht auf Speicher- oder Storage-Ebene feststellen wird.
+Bedenken Sie auch, dass das erste, was der Hypervisor beim Start einer virtuellen Maschine tut, die Erstellung __einer Swap-Speicherdatei__ (.vswap) auf der Festplatte ist, in der Größe des Speichers der betreffenden virtuellen Maschine. Sie müssen __dies bei der Dimensionierung Ihres Speichers berücksichtigen__.
 
-Also remember that upon the startup of a virtual machine, the hypervisor automatically creates __a swap memory file__ (.vswap) on the disk, equal to the size of the compute node's memory. This should be considered when determining your storage dimensioning.
+Jede Rechenblades wird mit 128GB softwareaktiviertem Speicher auf Ebene des __'Cpool'__ geliefert, verfügt aber physisch über die gesamte zuweisbare Speichermenge.
 
-Each compute node comes with 128GB of software-activated memory in the __'Cpool'__, but it physically has access to the entire allocable memory.
+Zum Beispiel beträgt für einen Cluster von drei Hosts vom Typ ```vmware:standard:v2``` die RAM-Reservierung bei der Aktivierung des _*'Cpool'* 3 x 128GB = 384 GB RAM.
+Sie können dies maximal auf 3 x 384GB = 1152GB Speicher erweitern.
 
-For instance, for a cluster of three VMware hosts of type ```vmware:standard:v2```, the RAM allocation for activating the _*'Cpool'* will be 3 x 128GB = 384GB. You can extend this up to 3 x 384GB = 1152GB.
-
-    Minimum memory of a 'Cpool' = number of hosts x 128GB
-    Maximum memory of a 'Cpool' = number of hosts x the physical memory capacity of the compute node
+    Minimum-Speicher eines 'Cpool' = Anzahl der Hosts X 128GB Speicher
+    Maximum-Speicher eines 'Cpool' = Anzahl der Hosts X die physische Speichermenge der Rechenblades
 
 ### Cloud Temple - Katalogus virtueller Maschinen
 
@@ -277,52 +279,61 @@ Cloud Temple stellt Ihnen ein regelmäßig aktualisiertes und erweitertes Katalo
 
 Dieser Katalog enthält derzeit mehrere Dutzende von `Templates` und Bildern, die Sie auf Ihre virtuellen Maschinen montieren können.
 
-### Hypervisor Updates
+### Hypervisor-Updates
 
-Cloud Temple regularly provides updates for hypervisors to ensure the application of security patches. However, the update process of hypervisors remains your responsibility as we do not have insight into your business constraints.
+Cloud Temple stellt regelmäßig Builds für die Hypervisors zur Verfügung, um die Anwendung von Sicherheitspatches zu gewährleisten.
+Die Aktualisierung der Hypervisors bleibt jedoch in Ihrer Verantwortung, da wir keine Einsicht in Ihre geschäftlichen Einschränkungen haben.
 
-The update process is fully automated. To maintain service continuity, a minimum of two hyperviseurs per cluster must be available during the update. Please ensure you have the necessary permissions to carry out these actions.
+Der Update-Prozess ist vollständig automatisiert. Um die Servicekontinuität zu gewährleisten, sind mindestens zwei Hypervisors pro Cluster während des Updates erforderlich. Stellen Sie sicher, dass Sie über die notwendigen Berechtigungen verfügen, um diese Aktionen durchzuführen.
 
-### Management of Virtual Machine Affinity
+### Verwaltung der Affinität Ihrer virtuellen Maschinen
 
-The __affinity and anti-affinity rules__ allow you to control the placement of your virtual machines on your hypervisors. They can be used to manage your __'Cpool'__.
+Die __Affinitäts- und Anti-Affinitätsregeln__ ermöglichen es, die Platzierung der virtuellen Maschinen auf Ihren Hypervisors zu kontrollieren.
+Sie können zur Verwaltung der Ressourcennutzung Ihres __'Cpool'__ verwendet werden.
+Zum Beispiel können sie helfen, die Arbeitslast zwischen den Servern auszugleichen oder ressourcenintensive Arbeitslasten zu isolieren.
+In einem VMware __'Cpool'__ werden diese Regeln oft zur Verwaltung des Verhaltens virtueller Maschinen mit vMotion verwendet.
+vMotion ermöglicht es, virtuelle Maschinen von einem Host zu einem anderen ohne Serviceunterbrechung zu verschieben.
 
-For instance, they help balance workload distribution between servers or isolate resource-intensive workloads. In a VMware 'Cpool', these rules are frequently employed for managing the behavior of virtual machines with vMotion.
+Sie können über die Regelverwaltung konfigurieren:
 
-vMotion enables moving virtual machines from one host to another without service interruption.
+- __Affinitätsregeln__: Diese Regeln stellen sicher, dass bestimmte virtuelle Maschinen auf demselben physischen Host ausgeführt werden.
+Sie werden verwendet, um die Leistung zu verbessern, indem virtuelle Maschinen, die häufig miteinander kommunizieren,
+auf demselben Server gehalten werden, um die Netzwerklatenz zu reduzieren. Affinitätsregeln sind nützlich in Szenarien,
+in denen die Leistung kritisch ist, wie bei Datenbanken oder Anwendungen, die eine schnelle Kommunikation zwischen Servern erfordern.
 
-You can configure using affinity/anti-affinity rule management:
+- __Anti-Affinitätsregeln__: Umgekehrt gewährleisten diese Regeln, dass bestimmte virtuelle Maschinen nicht auf demselben physischen Host ausgeführt werden. Sie sind wichtig für Verfügbarkeit und Resilienz, zum Beispiel,
+um zu vermeiden, dass kritische Maschinen alle von einem einzigen Serverausfall betroffen sind.
+Anti-Affinitätsregeln sind entscheidend für Anwendungen, die hohe Verfügbarkeit erfordern,
+wie in Produktionsumgebungen, wo Fehlertoleranz eine Priorität ist.
+Zum Beispiel möchten Sie nicht, dass Ihre beiden Active Directory-Instanzen auf demselben Hypervisor sind.
 
-- __Affinity Rules__: These ensure certain virtual machines run on the same physical host. They enhance performance by keeping frequently communicating VMs on the same server, reducing network latency. Affinity rules are beneficial in scenarios where high performance is critical, such as with databases or applications requiring rapid communication between servers.
+Bei der Erstellung einer Regel definieren Sie den Regeltyp (Affinität / Anti-Affinität), den Namen der Regel,
+ihren Aktivierungsstatus (__'Status'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
 
-- __Anti-Affinity Rules__: Conversely, these ensure certain virtual machines do not run on the same physical host. They are crucial for availability and resilience, preventing all critical VMs from being affected by a single server failure. Anti-affinity rules are vital for applications demanding high availability, like production environments where fault tolerance is paramount. For example, you wouldn't want both your Active Directory instances on the same hypervisor.
+*Hinweis: Die in der Konsole angebotenen Affinitäts-/Anti-Affinitätsregeln sind Regeln bezüglich der virtuellen Maschinen untereinander (keine Regeln zwischen Hypervisors und virtuellen Maschinen).*
 
-When creating a rule, you define its type (affinity/anti-affinity), name, activation status (__'Status'__), and the affected virtual machines in your hypervisor cluster.
+### Asynchrone Replikation virtueller Maschinen in VMware-Umgebung
 
-*Note: The affinity/anti-affinity rules provided in the console pertain to VMs among themselves (not between hypervisors and VMs).*
+Die asynchrone Replikation Ihrer virtuellen Maschinen ist ein Mechanismus, der darin besteht, auf Hypervisor-Ebene die Schreibvorgänge in regelmäßigen Zeitabständen auf den Standby-Standort zu übertragen.
 
-### Asynchronous Replication of Virtual Machines in VMware Environment
+Nach einer anfänglichen Hot-Kopie des gesamten aktiven Speichers auf den Standby-Standort werden nur noch die Schreibvorgänge in regelmäßigen Abständen auf den ruhenden Standort übertragen. Dieses Intervall hängt vom Schreibvolumen ab (von stündlich bis alle 24 Stunden).
 
-Asynchronous replication of your virtual machines involves pushing write operations from the source hypervisor to the standby site at regular intervals.
+Die Replikation virtueller Maschinen stützt sich auf den Mechanismus der Momentaufnahmen des Hypervisors. Aus diesem Grund hat diese Lösung die gleichen Nachteile, insbesondere die Empfindlichkeit gegenüber dem Schreibvolumen der virtuellen Maschine, da der Momentaufnahme-Prozess ein rekursiver Mechanismus zum Schließen der Momentaufnahme ist.
 
-Following an initial hot copy of all active storage on the standby site, only writes are pushed to the standby machine at regular intervals (ranging from hourly to every 24 hours, depending on the volume of writes).
+Das typische Beispiel einer Maschine, die den Mechanismus der Replikation virtueller Maschinen nicht unterstützt, ist ein FTP-Server, der Echtzeit-Streams von Überwachungskameras empfängt. __Die Maschine verbringt ihre Zeit mit Schreiben und wird nicht in der Lage sein, eine Momentaufnahme zu schließen, ohne das Betriebssystem für einen erheblichen Zeitraum (mehrere Dutzend Minuten) zu pausieren__. Wenn der Hypervisor die Momentaufnahme nicht schließen kann, wird er genau das tun, ohne Eingriffsmöglichkeit, außer die virtuelle Maschine zu korrumpieren.
 
-This virtual machine replication leverages the instant cloning mechanism provided by the hypervisor. Consequently, this solution faces similar limitations, particularly in terms of sensitivity to the volume of writes by the virtual machine, as the instant clone process is a recursive mechanism for closing the instant clone.
-
-An example of a machine that typically does not support virtual machine replication is an FTP server receiving real-time video feeds from surveillance cameras. Such a machine spends most of its time writing and would be unable to complete an instant clone without pausing the operating system for a significant period (several tens of minutes). If the hypervisor cannot close the instant clone, it will do so automatically, potentially corrupting the virtual machine unless intervention is possible.
-
-| SLA             | Description                                                                                                                                               |
+| SLA             | Beschreibung                                                                                                                                               |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 1H to 24H    | In case of a disaster at the primary data center, the maximum amount of lost data is that of the last write pushed to the standby site. |
-| RTO < 15mn      | Operation to restart the virtual machine stopped on the distant site                                                                                |
+| RPO 1H bis 24H  | Im Falle eines Notfalls im primären Rechenzentrum entspricht die maximale Menge verlorener Daten der letzten Übertragung der Schreibvorgänge auf den Standby-Standort. |
+| RTO < 15mn      | Vorgang zum Starten der auf dem entfernten Standort gestoppten virtuellen Maschine                                                                                |
 
-In case of need or in case of failure on a machine at the primary site, the mirrored machine on the standby site is activated. Recovery requires having reserved computing and memory resources on the standby site as well as identical storage capacity on the passive site as on the active site.
+Im Bedarfsfall oder bei einem Defekt an einer Maschine des primären Standorts wird die Spiegelmaschine auf dem Standby-Standort aktiviert. Die Wiederaufnahme der Aktivität erfordert, dass auf dem Standby-Standort Rechen- und RAM-Ressourcen im Standby-Modus reserviert wurden. Es ist notwendig, den gleichen Speicherplatz auf dem passiven Standort wie auf dem aktiven Standort zu haben.
 
-| Reference                         | Unité | SKU                                             |  
+| Referenz                          | Einheit | SKU                                             |  
 |-----------------------------------|-------|-------------------------------------------------|
-| PRA - Replication VMware inter-AZ | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
+| PRA - VMware Replikation inter-AZ | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
 
-*__Note__: The minimum RPO must be defined based on the change rate of the virtual machine.*
+*__Hinweis__: Die Berechnung des minimalen RPO muss basierend auf der Änderungsrate der virtuellen Maschine definiert werden.*
 
 ## Virtual Machine Backup
 
@@ -341,7 +352,7 @@ This solution encompasses:
 
 This backup infrastructure is built upon IBM Spectrum Protect Plus, an agentless architecture solution that's user-friendly and enables automated backup processes along with space optimization on mass storage.
 
-Backup speeds and restoration times depend on the data change rate in environments. The backup policy can be configured via [Cloud Temple Console](../console/console.md) for each virtual machine.
+Die Geschwindigkeit von Backups und Wiederherstellungen hängt von der Änderungsrate der Daten in den Umgebungen ab. Die Backup-Richtlinie kann über die [Cloud Temple Console](../console/console.md) für jede virtuelle Maschine konfiguriert werden.
 
 *__Note:__*
 
