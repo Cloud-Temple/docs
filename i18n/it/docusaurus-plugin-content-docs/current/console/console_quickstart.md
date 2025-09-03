@@ -23,7 +23,7 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 Shiva è accessibile tramite l'URL seguente: [Shiva](https://shiva.cloud-temple.com) oppure dall'URL diretta che vi è stata comunicata via email.
 
-La prima pagina vi permette di selezionare [l'organizzazione](iam/concepts.md#organisations) in cui è stato creato il vostro utente.
+La prima pagina vi permette di selezionare [l'organizzazione](iam/concepts.md#organizzazioni) in cui è stato creato il vostro utente.
 Una volta inserita l'azienda, cliccate su __'Accedi'__.
 
 <img src={shivaLogin} />

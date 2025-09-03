@@ -5,28 +5,28 @@ sidebar_position: 1
 
 # LLM als Dienst (LLMaaS)
 
-## Accès à l'API
+## Zugriff auf die API
 
-Die API ist über die Cloud Temple Console verfügbar. Sie können Ihre API-Schlüssel verwalten, Ihre Nutzung überwachen und Ihre Drittanbieter in den Einstellungen Ihres Kontos konfigurieren. Die Konsole ermöglicht auch die Anzeige des Einsatzes Ihrer Modelle.
+Die API ist über die Cloud Temple-Console zugänglich. Sie können Ihre API-Schlüssel verwalten, Ihren Verbrauch überwachen und Ihre Drittanbieter in den Einstellungen Ihres Kontos konfigurieren. Die Konsole ermöglicht zudem die Anzeige der Nutzung Ihrer Modelle.
 
 ## Authentifizierung
 
-Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem API-Schlüssel im Bearer-Token-Format enthalten. Wenn Sie die Client-SDKs verwenden, wird der Schlüssel automatisch in jede Anfrage einbezogen. Wenn Sie direkt mit der API integrieren, müssen Sie diesen Header selbst senden.
+Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem API-Schlüssel im Format Bearer-Token enthalten. Wenn Sie die Client-SDKs verwenden, wird der Schlüssel automatisch in jede Anfrage einbezogen. Wenn Sie direkt mit der API integrieren, müssen Sie diesen Header selbst senden.
 
-## Inhaltsarten
+## Inhaltstypen
 
 Die LLMaaS-API akzeptiert immer JSON im Anfragekörper und gibt JSON im Antwortkörper zurück. Sie müssen den Header `content-type: application/json` in Ihre Anfragen senden. Wenn Sie die Client-SDKs verwenden, wird dies automatisch verwaltet.
 
-## Antwort-Header
+## Antwortköpfe
 
 Die LLMaaS-API enthält die folgenden Header in jeder Antwort:
 
-- `id` : Eine eindeutige globale Kennung für die Anfrage
+- `id` : Eine global eindeutige Kennung für die Anfrage
 - `backend` : Informationen über die verwendete Infrastruktur (engine_type, machine_name)
 
 ## Beispiele
 
-### Anfrage cURL
+### cURL-Anfrage
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
@@ -36,7 +36,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
     "messages": [
       {
         "role": "user", 
-        "content": "Hallo! Kannst du dich in Französisch vorstellen?"
+        "content": "Hallo! Könntest du dich in Französisch vorstellen?"
       }
     ],
     "max_tokens": 200,
@@ -56,7 +56,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
       "finish_reason": "stop",
       "index": 0,
       "message": {
-        "content": "Hallo! Ich bin ein virtueller Sprachmodell...",
+        "content": "Bonjour ! Je suis un modèle de langage virtuel...",
         "role": "assistant"
       }
     }
@@ -77,14 +77,14 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ### Verfügbare Parameter
 
 | Parameter     | Typ    | Beschreibung                                                   |
-| ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Das zu verwendende Modell (siehe [catalogue des modèles](./models)) |
-| `messages`    | array   | Liste der Nachrichten der Unterhaltung                         |
-| `max_tokens`  | integer | Maximale Anzahl an Tokens, die generiert werden sollen                            |
-| `temperature` | float   | Steuert die Kreativität (0,0–2,0)                              |
-| `top_p`       | float   | Steuert die Vielfalt der Antworten                            |
-| `stream`      | boolean | Aktiviert den Streaming der Antwort                             |
-| `user`        | string  | Eindeutiger Benutzer-Identifikator                     |
+| ------------- | ------ | ------------------------------------------------------------- |
+| `model`       | string | Das zu verwendende Modell (siehe [Modellkatalog](./models.md)) |
+| `messages`    | array  | Liste der Nachrichten der Unterhaltung                         |
+| `max_tokens`  | integer| Maximale Anzahl an Tokens, die generiert werden sollen        |
+| `temperature` | float  | Steuert die Kreativität (0.0-2.0)                              |
+| `top_p`       | float  | Steuerung der Vielfalt der Antworten                           |
+| `stream`      | boolean| Aktiviert den Stream der Antwort                               |
+| `user`        | string | Eindeutiger Identifikator des Endbenutzers                     |
 
 ## Basis-URL
 
@@ -95,7 +95,7 @@ https://api.ai.cloud-temple.com/v1/
 
 ## Verfügbare Endpunkte
 
-- `/chat/completions` : Erzeugung konversationeller Antworten
+- `/chat/completions` : Konversationelle Antworten generieren
 - `/completions` : Einfache Textergänzung
 - `/embeddings` : Erstellt einen Embedding-Vektor, der den Eingabetext darstellt
 - `/models` : Liste der verfügbaren Modelle

@@ -22,7 +22,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
 Les informations d'identification sont globales à votre [Organisation](#organisations).
 
-*__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#organisations#mecanismes-dauthentification)*
+*__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#mécanismes-dauthentification)*
 
 ### Création d'un compte utilisateur dans votre organisation
 
@@ -54,7 +54,7 @@ Le menu d'activation des droits apparait alors :
 
 <img src={shivaOnboard_005} />
 
-La configuration des permissions est à faire pour chaque [Tenant](#tenants) de l'[Organisation](#organisations).
+La configuration des permissions est à faire pour chaque [Tenant](#tenant) de l'[Organisation](#organisations).
 
 La liste des permissions et leur définition est accessible [ici](#permissions).
 
@@ -132,7 +132,7 @@ Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__,
 
 <img src={shivaProfil_006} />
 
-La configuration est faite pour chaque tenant [Tenant](#tenants).
+La configuration est faite pour chaque tenant [Tenant](#tenant).
 
 ### Abonnement aux notifications thématiques
 
@@ -157,13 +157,16 @@ Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les per
 Lorsqu’un utilisateur est créé, il ne possède aucune permission par défaut. Chaque permission est attribuée individuellement et fonctionne de manière unitaire, sans chevauchement avec d’autres permissions. Elles s’appliquent en conjonction, ce qui signifie qu’un utilisateur doit disposer de toutes les permissions requises pour effectuer une action spécifique.
 
 Les permissions suivantes sont configurables pour chaque utilisateur et pour chaque tenant de votre organisation :
- • Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
- • Permissions de type “write” : autorisent la modification des configurations.
-  • Permissions de type “management“ : autorisent la gestion avancées des ressources.
+
+- Permissions de type “read” : permettent uniquement la consultation des ressources sans possibilité de modification.
+- Permissions de type “write” : autorisent la modification des configurations.
+- Permissions de type “management“ : autorisent la gestion avancées des ressources.
+- Permissions de type “console_access“ : autorisent les connexions type PMAD sur les ressources.
+- Permissions de type “virtual_machine_power“ : autorisent la gestion de l'alimentation d'une machine virtuelle.
 
 - __Ce sont des permissions, pas des rôles.__ À ce titre, il est nécessaire d'avoir la permission READ et WRITE pour modifier une configuration.
 
-Dernière mise à jour le: 23/01/2025
+Dernière mise à jour le: 16/07/2025
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -182,17 +185,18 @@ Dernière mise à jour le: 23/01/2025
 | compute_iaas_opensource_read                  | Offre OpenIaaS -Consultation des ressources de type Machines Virtuelles                                                        |
 | compute_iaas_opensource_management            | Offre OpenIaaS -Gestion des ressources de type Machines Virtuelles                                                             |
 | compute_iaas_opensource_virtual_machine_power | Offre OpenIaaS -Gestion de l'alimentation d'une machine virtuelle                                                              |
+| compute_iaas_opensource_replication_recover   | Offre OpenIaaS -Gestion de la réplication                                                              |
 | compute_iaas_vmware_console_access            | Offre Vmware - Ouverture de la console d'une machine virtuelle                                                                 |
 | compute_iaas_vmware_infrastructure_read       | Offre Vmware - Consultation de données avancées des ressources VMware (règles affinité/anti-affinité, configuration drs, etc)  |
 | compute_iaas_vmware_infrastructure_write      | Offre Vmware - Gestion avancée des ressources VMware                                                                           |
 | compute_iaas_vmware_read                      | Offre Vmware - Consultation des ressources de type Machines Virtuelles                                                         |
 | compute_iaas_vmware_management                | Offre Vmware - Gestion des ressources de type Machines Virtuelles (permet le chiffrement d'une machine virtuelle)                                                              |
 | compute_iaas_vmware_virtual_machine_power     | Offre Vmware - Gestion de l'alimentation d'une machine virtuelle                                                               |
+| baremetal_management                          | Offre Bare Metal - Gestion des ressources de type Bare Metal                                                               |
 | baremetal_read                                | Offre Bare Metal - Consultation des ressources de type Bare Metal                                                               |
 | baremetal_console_access                      | Offre Bare Metal - Ouverture de la console d'un Bare Metal                                                                  |
 | console_public_access_read                    | Consultation des IPs autorisées à accéder à la console                                                                         |
 | console_public_access_write                   | Ajout d'IPs autorisées à accéder à la console                                                                                  |
-| compute_virtual_machine_power                 | Gestion de l'alimentation d'une machine virtuelle                                                                              |
 | documentation_read                            | Consultation des ressources documentation de confluence                                                                        |
 | housing_read                                  | Consultation des ressources de type colocation                                                                                 |
 | iam_offline_access                            | Création et suppression d'Access Token Personnels (PAT)                                                                        |
@@ -221,6 +225,8 @@ Dernière mise à jour le: 23/01/2025
 | ticket_comment_write                          | Gestion des commentaires                                                                                                       |
 | ticket_read                                   | Consultation des tickets                                                                                                       |
 | ticket_write                                  | Gestion des tickets                                                                                                            |
+| incident_management                           | Gestion des incidents                                                                                                       |
+| incident_read                                 | Consultation des incidents                                                                                                            |
 
 ## Organisations
 

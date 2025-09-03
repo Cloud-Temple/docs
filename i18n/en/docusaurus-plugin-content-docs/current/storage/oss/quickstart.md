@@ -1,183 +1,260 @@
 ---
 title: Getting Started Guide
 ---
-import S3ListBucket from './images/S3_list_bucket.png'
-import S3Accounts from './images/S3_accounts.png'
-import S3CreateAccount from './images/S3_create_account.png'
-import S3StorageKeys from './images/S3_storage_keys.png'
-import S3Keyregen from './images/S3_keyregen.png'
-import S3Create from './images/S3_create.png'
-import S3CreatePopup_001 from './images/S3_create_popup_001.png'
-import S3AccountAssign from './images/S3_account_assign.png'
-import S3AccountAccess from './images/S3_account_access.png'
-import S3Files from './images/S3_files.png'
-import S3Params from './images/S3_params.png'
-import S3Lifecycle from './images/S3_lifecycle.png'
-import S3CreatePopup_002 from './images/S3_create_popup_002.png'
-import S3Delete from './images/S3_delete.png'
+import S3ListBucket from './images/S3_list_bucket.png';
+import S3Accounts from './images/S3_accounts.png';
+import S3CreateAccount from './images/S3_create_account.png';
+import S3StorageKeys from './images/S3_storage_keys.png';
+import S3Keyregen from './images/S3_keyregen.png';
+import S3Create from './images/S3_create.png';
+import S3CreatePopup_001 from './images/S3_create_popup_001.png';
+import S3AccountAssign from './images/S3_account_assign.png';
+import S3AccountAccess from './images/S3_account_access.png';
+import S3Files from './images/S3_files.png';
+import S3Params from './images/S3_params.png';
+import S3Lifecycle from './images/S3_lifecycle.png';
+import S3CreatePopup_002 from './images/S3_create_popup_002.png';
+import S3Delete from './images/S3_delete.png';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## List all S3 buckets of your tenant
+Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sécurisé et qualifié SecNumCloud, basé sur le protocole Amazon S3. Il vous permet de stocker tous types de données, y compris les plus sensibles, en conformité avec les plus hautes exigences de sécurité. Vous pouvez gérer votre stockage directement depuis la console Cloud Temple et intégrer de nombreuses bibliothèques existantes ou clients CLI pour un usage programmatique.
 
-You can access all your buckets via the '__Object Storage__' menu in the Cloud Temple console:
+## Before You Begin
 
-<img src={S3ListBucket} />
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
 
-You can see all the accounts created on your tenant and authorized to access the S3 service via the '__Storage Accounts__' tab.
+    To perform the actions outlined below, you need:
 
-<img src={S3Accounts} />
+    *   A Cloud Temple account connected to the console
+    *   'Owner' status or IAM permissions allowing you to perform actions on the tenant of the relevant organization
 
-## Creating a new storage account
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    ```bash
+    ❯ mc alias set cloudtemple-fr1 https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com VOTRE_CLE_ACCES VOTRE_CLE_SECRETE
+    Added `cloudtemple-fr1` successfully.
+    ```
+    - Replace `VOTRE_NAMESPACE` with your namespace. This parameter is available in the Cloud Temple console, under the bucket details.
+    - Replace `VOTRE_CLE_ACCES` and `VOTRE_CLE_SECRETE` with those from your storage account.
 
-Creating a storage account on your tenant is done by clicking the '__New Storage Account__' button in the top right corner, in the '__Storage Accounts__' tab:
+  </TabItem>
+  <TabItem value="AWS CLI" label="AWS CLI">
 
-<img src={S3CreateAccount} />
+    The AWS client is configured via the command `aws configure`. You will need to provide your access keys and default region.
+    ```bash
+    ❯ aws configure
+    AWS Access Key ID [None]: VOTRE_CLE_ACCES
+    AWS Secret Access Key [None]: VOTRE_CLE_SECRETE
+    Default region name [None]: fr1
+    Default output format [None]: json
+    ```
+    Unlike `mc`, the AWS client does not save the endpoint (endpoint URL). You will need to specify it for each command using the `--endpoint-url` option.
 
-The platform then provides you with the access key and secret key for your bucket:
+    The endpoint of your service is: `https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com`
 
-<img src={S3StorageKeys} />
+    **Tip:** To avoid typing the endpoint every time, you can define it in the AWS configuration file (`~/.aws/config`) by creating a dedicated profile:
+    ```ini
+    [profile cloudtemple]
+    region = fr1
+    output = json
+    s3 =
+      endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    s3api =
+      endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    ```
+    You can then use this profile with the `--profile cloudtemple` option on each command.
 
-__WARNING:__ The secret and access keys are displayed only once. After this first display, it becomes impossible to view the secret key again. It is therefore essential to note these information immediately; otherwise, you will need to generate a new pair of keys.
 
-Regeneration is done at the key options level by choosing the "Reset access key" option.
+  </TabItem>
 
-<img src={S3Keyregen} />
+</Tabs>
 
-## Creating an S3 bucket
+## Listing all S3 buckets in your tenant
 
-Creating a new bucket is done by clicking the '__New bucket__' button in the top right corner of the screen:
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
+    You can access the list of all your buckets via the '__Storage Objects__' menu in the Cloud Temple console:
+    ![S3 List Buckets](https://link-to-image-for-console)
+    Here, you can view all accounts created on your tenant and authorized to access S3 service through the '__Storage Accounts__' tab.
+    ![Storage Accounts](https://link-to-image-for-storage-accounts)
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    ```bash
+    ❯ mc ls cloudtemple-fr1
+    [2025-05-06 15:12:57 CEST]     13B demo01/
+    [2025-06-30 15:29:56 CEST]      0B demo03/
+    [2025-01-29 14:40:40 CET]      0B test/
+    ```
+  </TabItem>
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 ls --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    2025-05-06 15:12:57 demo01
+    2025-06-30 15:29:56 demo03
+    2025-01-29 14:40:40 test
+    ```
+  </TabItem>
 
-<img src={S3Create} />
+</Tabs>
 
-A window then appears and you must fill in:
+## Browsing an S3 Bucket
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
+    Upon clicking on the name of a bucket, you first access the '__Files__' tab to view its contents:
+    ![S3 Files](https://link-to-S3-Files-image)
+    In the '__Parameters__' tab, you can see detailed information about your S3 bucket:
+    ![S3 Parameters](https://link-to-S3-Params-image)
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    ```bash
+    ❯ mc ls cloudtemple-fr1/demo-app/
+    [2024-05-23 09:41:58 CEST] 8.9KiB README.md
+    [2024-05-22 09:56:04 CEST]      0B helloworld.txt
+    ```
+  </TabItem>
 
-1. The __region__ for creating your bucket,
-2. The __type__ of bucket: performance or archive,
-3. The __name__ of your bucket (it must be unique).
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 ls s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    2024-05-23 09:41:58       8923 README.md
+    2024-05-22 09:56:04          0 helloworld.txt
+    ```
+  </TabItem>
 
-<img src={S3CreatePopup_001} />
+</Tabs>
 
-As of April 3, 2024, the available region is __FR1__ (Paris) and only the performance type is available.
+## Writing a file into a bucket (upload)
+<Tabs>
+  <TabItem value="MC CLI" label="MC CLI" default>
+    ```bash
+    ❯ mc cp ./version.txt cloudtemple-fr1/demo-app/
+    `./version.txt` -> `cloudtemple-fr1/demo-app/version.txt`
+    ```
+  </TabItem>
 
-You must also choose who can access your bucket:
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 cp ./version.txt s3://demo-app/version.txt --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    upload: ./version.txt to s3://demo-app/version.txt
+    ```
+  </TabItem>
 
-- __Private__ access: By default, access is limited to specific Cloud Temple IP addresses.
-- __Public__ access: Access is open to all Internet addresses (including the 0.0.0.0/0 rule). However, authentication is always required. We advise against this configuration due to its security implications.
-- __Custom__ access: This option allows you to specify the IPv4 addresses or subnetwork ranges you wish to authorize.
+</Tabs>
 
-## Associating a storage account with a bucket
+## Download a file from a bucket
+<Tabs>
+  <TabItem value="MC CLI" label="MC CLI" default>
+    ```bash
+    ❯ mc cp cloudtemple-fr1/demo-app/app.tar.gz .
+    `cloudtemple-fr1/demo-app/app.tar.gz` -> `./app.tar.gz`
+    ```
+  </TabItem>
 
-Storage account associations with buckets are performed in the '__Policies__' tab:
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 cp s3://demo-app/app.tar.gz . --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    download: s3://demo-app/app.tar.gz to ./app.tar.gz
+    ```
+  </TabItem>
 
-<img src={S3AccountAssign} />
+</Tabs>
 
-This association allows the storage account to access the bucket. There are four roles:
+## Deleting a file from a bucket
+<Tabs>
+  <TabItem value="MC CLI" label="MC CLI" default>
+    ```bash
+    ❯ mc rm cloudtemple-fr1/demo-app/version.txt
+    Removed `cloudtemple-fr1/demo-app/version.txt`.
+    ```
+  </TabItem>
 
-1. __Maintainer__: Read, write, permission management, and policy management rights.
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 rm s3://demo-app/version.txt --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    delete: s3://demo-app/version.txt
+    ```
+  </TabItem>
 
-S3 permissions behind this role:
+</Tabs>
 
-```json
-{
-    "name": "maintainer",
-    "permissions": [
-        "s3:*"
-    ]
-}
-```
+## Creating a New Storage Account
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
+    To create a new storage account on your tenant, click the '__New Storage Account__' button located at the top right in the '__Storage Accounts__' tab:
+    ![S3CreateAccount](https://link-to-image.com/S3CreateAccount)
+    The platform then provides you with the access key and secret key for your bucket:
+    ![S3StorageKeys](https://link-to-image.com/S3StorageKeys)
+    **ATTENTION:** Access and secret keys are shown only once. After this initial display, it becomes impossible to view the secret key again. Therefore, it's crucial to note these details immediately; otherwise, you'll need to generate a new key pair.
+    Key rotation is done at the key options level by selecting 'Regenerate Access Key'.
+    ![S3Keyregen](https://link-to-image.com/S3Keyregen)
+  </TabItem>
+  <TabItem value="AWS CLI" label="AWS CLI">
+    Creating storage accounts is a specific operation for Cloud Temple's platform and must be done via the console, as described in the first tab.
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    Creating storage accounts is a specific operation for Cloud Temple's platform and must be performed through the console.
+  </TabItem>
+</Tabs>
 
-2. __Reader and Writer__: Read and edit, modify, delete files in the buckets.
+## Creating an S3 Bucket
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
+    To create a new bucket, click on the '__New Bucket__' button at the top right of the screen:
+    ![S3 Create](https://link-to-S3Create-image)
+    A window then appears where you need to fill in:
+    1. The **region** for your bucket creation,
+    2. The **bucket type**: performance or archival,
+    3. The **bucket name** (it must be unique).
+    ![S3 Create Popup](https://link-to-S3CreatePopup_001)
+  </TabItem>
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 mb s3://nouveau-bucket --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    make_bucket: nouveau-bucket
+    ```
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    ```bash
+    ❯ mc mb cloudtemple-fr1/nouveau-bucket
+    Bucket `cloudtemple-fr1/nouveau-bucket` created successfully.
+    ```
+  </TabItem>
+</Tabs>
 
-S3 permissions behind this role:
+## Deleting an S3 Bucket
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
+    The deletion of a bucket is done through the actions associated with the bucket by selecting the 'Delete' option.
+    <img src={S3Delete} alt="S3 Delete" />
+    _**WARNING: Deletion is irreversible and there's no way to recover the data.**_
+  </TabItem>
+  <TabItem value="AWS CLI" label="AWS CLI">
+    ```bash
+    ❯ aws s3 rb s3://nouveau-bucket --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    remove_bucket: nouveau-bucket
+    ```
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    ```bash
+    ❯ mc rb cloudtemple-fr1/nouveau-bucket
+    Removed `cloudtemple-fr1/nouveau-bucket` successfully.
+    ```
+  </TabItem>
+</Tabs>
 
-```json
-{
-    "name": "read_write",
-    "permissions": [
-        "s3:Get*",
-        "s3:List*",
-        "s3:*Object"
-    ]
-}
-```
-
-3. __Writer__: Read and edit, modify, delete files in the buckets.
-
-S3 permissions behind this role:
-
-```json
-{
-    "name": "write_only",
-    "permissions": [
-        "s3:List*",
-        "s3:*Object"
-    ]
-}
-```
-
-4. __Reader__: Read files in the buckets and download them.
-
-S3 permissions behind this role:
-
-```json
-{
-    "name": "read_only",
-    "permissions": [
-        "s3:Get*",
-        "s3:List*"
-    ]
-}
-```
-
-<img src={S3AccountAccess} />
-
-## Browsing an S3 bucket
-
-When you click on the name of a bucket, you first access the '__Files__' tab to view its contents:
-
-<img src={S3Files} />
-
-In the '__Settings__' tab, you can view the details of your S3 bucket information:
-
-<img src={S3Params} />
-
-You then have:
-
-1. The S3 bucket name,
-2. Its region
-3. The number of objects it contains and the size in bytes of the bucket,
-4. Its endpoint,
-5. The lifecycle parameters that define, among other things, the expiration of the bucket's objects. '__0__' corresponds to an infinite retention.
-
-You can modify the retention parameter via the '__Modify__' button of the lifecycle:
-
-<img src={S3Lifecycle} />
-
-Finally, you can modify its access type.
-
-## Access restrictions for your S3 buckets
-
-It is very simple to configure access restrictions for your S3 buckets. During bucket creation, you have the choice between three access configurations:
-
-<img src={S3CreatePopup_001} />
-
-- __Private__ access: By default, access is limited to specific Cloud Temple IP addresses.
-- __Public__ access: Access is open to all Internet addresses (including the 0.0.0.0/0 rule). We advise against this configuration due to its security implications.
-- __Custom__ access: This option allows you to specify the IPv4 addresses or subnetwork ranges you wish to authorize:
-
-<img src={S3CreatePopup_002} />
-
-*IPv6 support is planned for the first half of 2025.*
-
-## Deleting an S3 bucket
-
-Deleting a bucket is done via the actions associated with the bucket by choosing the __'Delete'__ option.
-
-<img src={S3Delete} />
-
-***WARNING: Deletion is permanent and there is no way to recover the data.***
-
-## How is the Cloud Temple S3 offer billed?
-
-The price is a monthly price, per GiB of storage, billed monthly. However, the platform tracks usage by the hour and performs billing on a monthly basis of 720 hours.
-
-For example, if you consume 30 GiB for 1 hour during the month, then nothing, and later 30 GiB for 2 hours, the monthly invoice will be *(Price (1 x 30 GiB) + 2 x Price (30 GiB)) / 720* for the considered month. Billing is done at the end of the term.
+## Access Control Management
+<Tabs>
+  <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
+    Account associations to buckets and access restrictions are managed in the '__Policies__' tab of the bucket.
+    ![S3 Account Assign](https://link-to-image)
+    This interface allows you to grant storage account access to a bucket based on four predefined roles (Administrator, Writer, Reader, Editor, Viewer).
+  </TabItem>
+  <TabItem value="AWS CLI" label="AWS CLI">
+    Fine management of access policies via the AWS CLI (`put-bucket-policy`) is an advanced operation. For most use cases, we recommend using the Cloud Temple console for simplified and secure configuration.
+  </TabItem>
+  <TabItem value="MC CLI" label="MC CLI">
+    Fine management of access policies via the `mc` client (`policy` commands) is an advanced operation. For most use cases, we recommend using the Cloud Temple console for simplified and secure configuration.
+  </TabItem>
+</Tabs>
