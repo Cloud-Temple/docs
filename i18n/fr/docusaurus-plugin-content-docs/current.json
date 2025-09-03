@@ -5,7 +5,7 @@
   },
   "sidebar.docSidebar.category.AdditionalContent": {
     "message": "Contenu additionnel",
-    "description": "Libellé pour la catégorie Contenu additionnel dans la barre latérale docSidebar"
+    "description": "The label for category AdditionalContent in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.IAM": {
     "message": "IAM",
@@ -38,6 +38,10 @@
   "sidebar.docSidebar.category.Tutorials": {
     "message": "Tutoriels",
     "description": "The label for category Tutorials in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.High Availability": {
+    "message": "Haute disponibilité",
+    "description": "The label for category High Availability in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Backup": {
     "message": "Sauvegarde",
@@ -82,5 +86,9 @@
   "sidebar.docSidebar.doc.Service Agreement": {
     "message": "Accord de service",
     "description": "The label for the doc item Service Agreement in sidebar docSidebar, linking to the doc governance/paas/service_agreement_paas"
+  },
+  "sidebar.docSidebar.category.LLMaaS": {
+    "message": "LLMaaS",
+    "description": "The label for category LLMaaS in sidebar docSidebar"
   }
 }

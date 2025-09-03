@@ -60,9 +60,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'console/iam/tutorials/sso_aad',
+            'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
             'console/iam/tutorials/sso_jumpcloud',
+            'console/iam/tutorials/sso_intune',
+            'console/iam/tutorials/sso_okta',
           ],
         },
       ],
@@ -119,7 +121,20 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/iaas_opensource',
         'iaas_opensource/concepts',
         'iaas_opensource/quickstart',
-        'iaas_opensource/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            {
+              type: 'category',
+              label: 'High Availability',
+              items: [
+                'iaas_opensource/tutorials/high_availability/manage_pool',
+                'iaas_opensource/tutorials/high_availability/manage_vm',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
@@ -140,6 +155,7 @@ const sidebars: SidebarsConfig = {
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
             },
+            'iaas_vmware/tutorials/configure_management_vm',
             'iaas_vmware/tutorials/deploy_vm_template',
             'iaas_vmware/tutorials/deploy_vm_terraform',
             'iaas_vmware/tutorials/vm_encryption',
@@ -158,7 +174,6 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'paas_openshift/tutorials/tutorials',
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
@@ -177,6 +192,7 @@ const sidebars: SidebarsConfig = {
         'llmaas/api',
         'llmaas/models',
         'llmaas/tutorials',
+        'llmaas/faq',
       ],
     },
     {
@@ -223,7 +239,22 @@ const sidebars: SidebarsConfig = {
             'storage/oss/oss',
             'storage/oss/concepts',
             'storage/oss/quickstart',
-            'storage/oss/tutorials',
+            {
+              type: 'category',
+              label: 'Tutoriels',
+              link: {
+                type: 'doc',
+                id: 'storage/oss/tutorials',
+              },
+              items: [
+                'storage/oss/tutorials/cloudberry-explorer',
+                'storage/oss/tutorials/winscp',
+                'storage/oss/tutorials/mc-mirror',
+                'storage/oss/tutorials/aws-s3-sync',
+                'storage/oss/tutorials/python-boto3',
+                'storage/oss/tutorials/file-hashing',
+              ],
+            },
           ],
         },
       ],

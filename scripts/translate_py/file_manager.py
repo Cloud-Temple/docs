@@ -92,7 +92,7 @@ class FileTypeDetector:
         
         if extension in LANG_CONFIG.TRANSLATABLE_EXTENSIONS:
             return FileType.MARKDOWN
-        elif extension in {'.png', '.jpg', '.jpeg', '.gif', '.svg'}:
+        elif extension in {'.png', '.png', '.jpeg', '.gif', '.svg'}:
             return FileType.IMAGE
         elif extension in {'.docx', '.pdf'}:
             return FileType.DOCUMENT

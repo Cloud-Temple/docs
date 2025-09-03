@@ -1,145 +1,147 @@
 ---
-title: RACI-Matrix für PaaS – OpenShift SecNumCloud
+title: Matrice de responsabilité PaaS - OpenShift SecNumCloud
 ---
 
-Hier ist das RACI-Modell, das die Verantwortungsverteilung zwischen dem Kunden und Cloud Temple bei der Nutzung des PaaS OpenShift SecNumCloud definiert.
+Voici le modèle RACI définissant la répartition des responsabilités entre le client et Cloud Temple pour l'utilisation du PaaS OpenShift SecNumCloud.
 
-## Definition der verschiedenen Rollen
+## Définition des différents rôles
 
-Wir erinnern hier an die verschiedenen Rollen des RACI:
+Nous rappelons ici les différents rôles du RACI :
 
-| Rolle        | Beschreibung                                                                           |
+| Rôle         | Description                                                                           |
 | ------------ | ------------------------------------------------------------------------------------- |
-| (R) Realisiert | __R__ealisiert den Prozess                                                              |
-| (A) Genehmigt | __A__ntrag zur Genehmigung der Durchführung des Prozesses                                              |
-| (C) Konsultiert | __C__onsultiert während des Prozesses                                                     |
-| (I) Informiert  | __I__nformiert über die Ergebnisse des Prozesses (über das Werkzeug, das Portal oder die Nachrichtenübermittlung) |
+| (R) Réalise  | __R__éalise le processus                                                              |
+| (A) Approuve | __A__pprouve la réalisation du processus                                              |
+| (C) Consulte | __C__onsulté pendant le processus                                                     |
+| (I) Informé  | __I__nformé des résultats du processus (via l'outillage, le portail ou la messagerie) |
 
-## Ersteinrichtung
 
-| Aktivität                                                             | Kundenrolle | Cloud Temple-Rolle |
-| -------------------------------------------------------------------- | ----------- | ------------------ |
-| Die globale Architektur der OpenShift-Plattform definieren            | C           | RA                 |
-| Die OpenShift-Plattform dimensionieren (Anzahl der Knoten, Ressourcen) | C           | RA                 |
-| Die OpenShift-Plattform installieren und konfigurieren                | I           | RA                 |
-| Das Basisnetzwerk der OpenShift-Plattform konfigurieren              | I           | RA                 |
-| Die Identitäts- und Zugriffsverwaltung für OpenShift einrichten       | C           | RA                 |
-| Die Skalierungs- und Hochverfügbarkeitsstrategie definieren           | C           | RA                 |
+## Mise en place initiale
 
-## Projekt- und Anwendungsverwaltung
+| Activité                                                             | Rôle Client | Rôle Cloud Temple |
+| -------------------------------------------------------------------- | ----------- | ----------------- |
+| Définir l'architecture globale de la plateforme OpenShift            | C           | RA                |
+| Dimensionner la plateforme OpenShift (nombre de nœuds, ressources)   | C           | RA                |
+| Installer et configurer la plateforme OpenShift                      | I           | RA                |
+| Configurer le réseau de base de la plateforme OpenShift              | I           | RA                |
+| Mettre en place la gestion des identités et des accès pour OpenShift | C           | RA                |
+| Définir la stratégie de mise à l'échelle et de haute disponibilité   | C           | RA                |
 
-| Aktivität                                         | Rolle Kunde | Rolle Cloud Temple |
-| ------------------------------------------------- | ----------- | ------------------ |
-| Projekte in OpenShift erstellen und verwalten     | RA          | C                  |
-| Anwendungen in OpenShift bereitstellen und verwalten | RA          | C                  |
-| CI/CD-Pipelines konfigurieren                     | RA          | C                  |
-| Containerimages und Registrierungen verwalten     | RA          | C                  |
+## Gestion des projets et des applications
 
-## Wartung und Updates
+| Activité                                          | Rôle Client | Rôle Cloud Temple |
+| ------------------------------------------------- | ----------- | ----------------- |
+| Créer et gérer les projets OpenShift              | RA          | C                 |
+| Déployer et gérer les applications dans OpenShift | RA          | C                 |
+| Configurer les pipelines CI/CD                    | RA          | C                 |
+| Gérer les images de conteneurs et les registres   | RA          | C                 |
 
-| Aktivität                                        | Client-Rolle | Cloud Temple-Rolle |
-| ------------------------------------------------ | ------------ | ------------------ |
-| OpenShift-Plattform aktualisieren                | I            | RA                 |
-| Sicherheitspatches für OpenShift anwenden        | I            | RA                 |
-| Bereitgestellte Anwendungen aktualisieren       | RA           | I                  |
-| Container-Images-Updates verwalten              | RA           | I                  |
+## Maintenance et mises à jour
 
-## Überwachung und Leistung
+| Activité                                         | Rôle Client | Rôle Cloud Temple |
+| ------------------------------------------------ | ----------- | ----------------- |
+| Mettre à jour la plateforme OpenShift            | I           | RA                |
+| Appliquer les correctifs de sécurité à OpenShift | I           | RA                |
+| Mettre à jour les applications déployées         | RA          | I                 |
+| Gérer les mises à jour des images de conteneurs  | RA          | I                 |
 
-| Aktivität                                             | Rolle Client | Rolle Cloud Temple |
-| ---------------------------------------------------- | ------------ | ------------------ |
-| Überwachen der Leistung der OpenShift-Plattform       | I            | RA                 |
-| Überwachen der Leistung der Anwendungen               | RA           | I                  |
-| Benachrichtigungen zur Plattform verwalten            | I            | RA                 |
-| Benachrichtigungen zu Anwendungen verwalten          | RA           | I                  |
+## Surveillance et performance
 
-## Sicherheit
+| Activité                                             | Rôle Client | Rôle Cloud Temple |
+| ---------------------------------------------------- | ----------- | ----------------- |
+| Surveiller la performance de la plateforme OpenShift | I           | RA                |
+| Surveiller la performance des applications           | RA          | I                 |
+| Gérer les alertes liées à la plateforme              | I           | RA                |
+| Gérer les alertes liées aux applications             | RA          | I                 |
 
-| Aktivität                                                          | Kundenrolle | Cloud-Temple-Rolle |
-| ------------------------------------------------------------------ | ----------- | ------------------ |
-| Die Sicherheit der OpenShift-Plattform verwalten                   | I           | RA                 |
-| Konfigurieren und Verwalten der Sicherheitsrichtlinien für Pods    | RA          | C                  |
-| Die SSL/TLS-Zertifikate für die Plattform verwalten                 | I           | RA                 |
-| Die SSL/TLS-Zertifikate für Anwendungen verwalten                  | RA          | C                  |
-| Implementieren und Verwalten des rollenbasierten Zugriffssteuerungs (RBAC) | C           | RA                 |
+## Sécurité
 
-## Datensicherung und Notwiederherstellung
+| Activité                                                           | Rôle Client | Rôle Cloud Temple |
+| ------------------------------------------------------------------ | ----------- | ----------------- |
+| Gérer la sécurité de la plateforme OpenShift                       | I           | RA                |
+| Configurer et gérer les politiques de sécurité des pods            | RA          | C                 |
+| Gérer les certificats SSL/TLS pour la plateforme                   | I           | RA                |
+| Gérer les certificats SSL/TLS pour les applications                | RA          | C                 |
+| Implémenter et gérer le contrôle d'accès basé sur les rôles (RBAC) | C           | RA                |
 
-| Aktivität                                                             | Kundenrolle | Cloud Temple-Rolle |
-| --------------------------------------------------------------------- | ----------- | ------------------ |
-| Strategie für die Datensicherung der OpenShift-Plattform definieren    | C           | RA                 |
-| Datensicherungen der Plattform implementieren und verwalten           | I           | RA                 |
-| Strategie für die Datensicherung der Anwendungen definieren           | RA          | C                  |
-| Datensicherungen der Anwendungen implementieren und verwalten         | RA          | I                  |
-| Testen der Notwiederherstellungsverfahren für die Plattform            | I           | RA                 |
-| Testen der Notwiederherstellungsverfahren für die Anwendungen         | RA          | C                  |
+## Sauvegarde et reprise après sinistre
 
-## Support und Problembehebung
+| Activité                                                              | Rôle Client | Rôle Cloud Temple |
+| --------------------------------------------------------------------- | ----------- | ----------------- |
+| Définir la stratégie de sauvegarde pour la plateforme OpenShift       | C           | RA                |
+| Mettre en œuvre et gérer les sauvegardes de la plateforme             | I           | RA                |
+| Définir la stratégie de sauvegarde pour les applications              | RA          | C                 |
+| Mettre en œuvre et gérer les sauvegardes des applications             | RA          | I                 |
+| Tester les procédures de reprise après sinistre pour la plateforme    | I           | RA                |
+| Tester les procédures de reprise après sinistre pour les applications | RA          | C                 |
 
-| Aktivität                                                        | Kundenrolle | Cloud Temple-Rolle |
-| ---------------------------------------------------------------- | ----------- | ------------------ |
-| Support auf Level 1 für die OpenShift-Plattform bereitstellen     | I           | RA                 |
-| Support auf Level 2 und 3 für die OpenShift-Plattform bereitstellen | I           | RA                 |
-| Probleme im Zusammenhang mit der Plattform lösen                 | I           | RA                 |
-| Probleme im Zusammenhang mit Anwendungen lösen                  | RA          | C                  |
+## Support et résolution des problèmes
 
-## Kapazitäts- und Skalierungsverwaltung
+| Activité                                                         | Rôle Client | Rôle Cloud Temple |
+| ---------------------------------------------------------------- | ----------- | ----------------- |
+| Fournir un support de niveau 1 pour la plateforme OpenShift      | I           | RA                |
+| Fournir un support de niveau 2 et 3 pour la plateforme OpenShift | I           | RA                |
+| Résoudre les problèmes liés à la plateforme                      | I           | RA                |
+| Résoudre les problèmes liés aux applications                     | RA          | C                 |
 
-| Aktivität                                                | Kundenrolle | Cloud Temple-Rolle |
-| -------------------------------------------------------- | ----------- | ------------------ |
-| Ressourcennutzung der Plattform überwachen               | I           | RA                 |
-| Skalierung der Plattform planen                           | C           | RA                 |
-| Kapazitätsänderungen implementieren                       | I           | RA                 |
-| Anwendungsentwicklung und deren Ressourcen verwalten     | RA          | C                  |
+## Gestion des capacités et évolution
 
-## Dokumentation und Compliance
+| Activité                                                 | Rôle Client | Rôle Cloud Temple |
+| -------------------------------------------------------- | ----------- | ----------------- |
+| Surveiller l'utilisation des ressources de la plateforme | I           | RA                |
+| Planifier l'évolution des capacités de la plateforme     | C           | RA                |
+| Implémenter les changements de capacité                  | I           | RA                |
+| Gérer l'évolution des applications et leurs ressources   | RA          | C                 |
 
-| Aktivität                                                      | Rolle Kunde | Rolle Cloud Temple |
+## Documentation et conformité
+
+| Activité                                                      | Rôle Client | Rôle Cloud Temple |
 | ------------------------------------------------------------- | ----------- | ----------------- |
-| Dokumentation der OpenShift-Plattform pflegen         | I           | RA                |
-| Dokumentation der Anwendungen pflegen                   | RA          | I                 |
-| Sicherstellung der Plattformkonformität mit Sicherheitsstandards | I           | RA                |
-| Sicherstellung der Anwendungsconformität mit Sicherheitsstandards | RA          | C                 |
-| Durchführung von Plattform-Überprüfungen                          | I           | RA                |
-| Durchführung von Anwendungs-Überprüfungen                          | RA          | C                 |
+| Maintenir la documentation de la plateforme OpenShift         | I           | RA                |
+| Maintenir la documentation des applications                   | RA          | I                 |
+| Assurer la conformité de la plateforme aux normes de sécurité | I           | RA                |
+| Assurer la conformité des applications aux normes de sécurité | RA          | C                 |
+| Réaliser des audits de la plateforme                          | I           | RA                |
+| Réaliser des audits des applications                          | RA          | C                 |
 
-### Verwaltung der OpenShift-Operatoren
+### Gestion des opérateurs OpenShift
 
-Die **OpenShift-Operatoren** sind Erweiterungen der Plattform, die die Automatisierung der Verwaltung komplexer Anwendungen oder Dienste auf Kubernetes ermöglichen.
+Les **opérateurs OpenShift** sont des extensions de la plateforme qui automatisent la gestion d'applications ou de services complexes sur Kubernetes.
 
-Nur die **Operatoren** aus den Katalogen **Zertifiziert, Red Hat und MarketPlace** werden angeboten, vorausgesetzt, sie sind **mit den Anforderungen der SecNumCloud kompatibel** und entsprechen den Beschränkungen des Ökosystems.
+Seuls les **Opérateurs** provenant des catalogues **Certifiés, Red Hat et MarketPlace** seront proposés sous réserve qu'ils soient **conformes aux exigences SecNumCloud** et qu'ils respectent les limitations de l'écosystème.
 
-Die Installation, Überwachung und Verwaltung von Updates dieser Operatoren wird durch **Cloud Temple** geregelt, während der **Kunde** für die Nutzung dieser Operatoren zur Verwaltung seiner Workloads verantwortlich ist.
+L’installation, la surveillance et la gestion des mises à jour de ces opérateurs sont gérées par **Cloud Temple**, tandis que le **Client** est responsable de l'utilisation de ces opérateurs pour gérer ses charges de travail.
 
-| Aktivität                                                       | Rolle Kunde | Rolle Cloud Temple |
-| --------------------------------------------------------------- | ----------- | ------------------ |
-| Bereitstellung der Operatoren im Katalog                        | CI          | RA                 |
-| Erstkonfiguration der Operatoren über die Marketplace           | CI          | RA                 |
-| Aktualisierung der Operatoren                                  | I           | RA                 |
-| Überwachung des Zustands der Operatoren                        | I           | RA                 |
-| Behebung von Problemen im Zusammenhang mit Operatoren          | CI          | RA                 |
-| Verwaltung der Berechtigungen der Operatoren                   | C           | RA                 |
-| Verwaltung der Ressourcen der Operatoren (Hinzufügen/Entfernen) | CI          | RA                 |
-| Sicherung der Daten der Ressourcen der Operatoren              | CI          | RA                 |
-| Überwachung und Monitoring der Ressourcen der Operatoren        | CI          | RA                 |
-| Wiederherstellung der Daten der Ressourcen der Operatoren       | CI          | RA                 |
-| Sicherheitsaudit der Operatoren                                | I           | RA                 |
-| Support der Red Hat-Operatoren                                | I           | RA                 |
-| Support der zertifizierten Operatoren                         | I           | RA                 |
-| Support der MarketPlace-Operatoren                            | I           | RA                 |
-| Verwaltung von Lizenzen und Lizenzverträgen für Operatoren     | RA          | I                  |
-| Verwaltung spezifischer Supportpläne für Operatoren            | RA          | I                  |
+| Activité                                                        | Rôle Client | Rôle Cloud Temple |
+| --------------------------------------------------------------- | ----------- | ----------------- |
+| Mise à disposition des opérateurs dans le catalogue             | CI          | RA                |
+| Configuration initiale des Opérateurs via la Marketplace        | CI          | RA                |
+| Mise à jour des Opérateurs                                      | I           | RA                |
+| Surveillance de l’état des Opérateurs                           | I           | RA                |
+| Résolution des problèmes liés aux Opérateurs                    | CI          | RA                |
+| Gestion des autorisations des Opérateurs                        | C           | RA                |
+| Gestion des ressources des Opérateurs (ajout/suppression)       | CI          | RA                |
+| Sauvegarde des données des ressources des Opérateurs            | CI          | RA                |
+| Supervision et monitoring des ressources Opérateurs             | CI          | RA                |
+| Restauration des données des ressources des Opérateurs          | CI          | RA                |
+| Audit de sécurité des Opérateurs                                | I           | RA                |
+| Support des Opérateurs Red Hat                                  | I           | RA                |
+| Support des Opérateurs Certifiés                                | I           | RA                |
+| Support des Opérateurs MarketPlace                              | I           | RA                |
+| Gestion des licences et contrats de licenses sur les opérateurs | RA          | I                 |
+| Gestion des plans de supports spécifiques sur les opérateurs    | RA          | I                 |
 
-> **Wichtiger Hinweis**:
-> Nur die **offiziell unterstützten** Operatoren durch Cloud Temple und mit **SecNumCloud** kompatibel sind verfügbar. Jeder nicht zertifizierte Operator oder ein Operator aus einer externen Quelle wird nicht unterstützt und nicht für die Nutzung in Umgebungen zugelassen.
-> Die Verwaltung von **Lizenzen** und **spezifischen Supportplänen** für Operatoren aus dem **Red Hat MarketPlace**-Katalog liegt nicht in der Verantwortung von **Cloud Temple**. Die Unterstützung dieser Operatoren wird de facto dem Partner übertragen, der den Dienst bereitstellt.
+> **Note importante** :
+> Seuls les opérateurs **déclaré supportés** par Cloud Temple et conformes à **SecNumCloud** sont mis à disposition. Tout opérateur non certifié ou provenant d’une source externe ne sera pas pris en charge ni validé pour être utilisé dans les environnements.
+> La gestion des **licences** et des **plans de supports spécifiques** sur les opérateurs issue du catalogue **MarketPlace Red Hat** ne sont pas de la responsabilité de **Cloud Temple**. La gestion du support de ces opérateurs est déléguée défacto au partenaire fournissant le service.
+---
 
-### Klarstellung zur Anwendungsunterstützung
+### Clarification sur l'assistance applicative
 
-**Anwendungsunterstützung (ergänzende Leistung):**
+**Assistance applicative (prestation complémentaire) :**
 
-Die Anwendungsunterstützung im Bereich Entwicklung, Konfiguration, Betrieb und Wartung von Anwendungen **liegt nicht in der Verantwortung von Cloud Temple**. Der Umfang beschränkt sich ausschließlich auf die Verwaltung der OpenShift-Infrastruktur und der Operatoren. Der **Support der Workloads** (bereitgestellten Anwendungen) und der CI/CD-Pipelines liegt in der Verantwortung des Kunden oder eines von diesem beauftragten Drittanbieters.
+L'assistance applicative concernant le développement, la configuration, la gestion et la maintenance des applications **n'est pas sous la responsabilité de Cloud Temple**. Le périmètre se concentre uniquement sur la gestion de l'infrastructure OpenShift et des opérateurs. Le **support des charges de travail** (applications déployées) et des pipelines CI/CD sont de la responsabilité du client ou de tout prestataire tiers désigné pour cette tâche.
 
-| Aktivität | Kundenrolle | Rolle Cloud Temple |
+| Activité | Rôle Client | Rôle Cloud Temple |
 | --- | --- | --- |
-| Anwendungsunterstützung (ergänzende Leistung) | RA | C |
+| Assistance applicative (prestation complémentaire) | RA | C |
