@@ -280,7 +280,7 @@ Les traductions sont placées dans `i18n/<code>/docusaurus-plugin-content-docs/c
 
 ---
 
-## 🔧 Configuration NPM
+## 🔧 Configuration yarn
 
 Les scripts sont intégrés dans `package.json` pour faciliter l'utilisation :
 
@@ -288,7 +288,7 @@ Les scripts sont intégrés dans `package.json` pour faciliter l'utilisation :
 {
   "scripts": {
     "generate:models": "python scripts/generate_models_doc.py",
-    "generate:docs": "npm run generate:models"
+    "generate:docs": "yarn generate:models"
   }
 }
 ```
@@ -319,7 +319,7 @@ oldies/
 
 ### Génération LLMaaS
 1. **Éditer** : `memory-bank/models_config.yaml`
-2. **Générer** : `npm run generate:models`
+2. **Générer** : `yarn generate:models`
 3. **Vérifier** : Documentation mise à jour dans `docs/llmaas/models.md`
 
 ### Processus de Traduction
@@ -350,7 +350,7 @@ ls memory-bank/models_config.yaml
 
 # S'assurer d'être dans le bon répertoire
 cd /path/to/docs/
-npm run generate:models
+yarn generate:models
 ```
 
 #### `ModuleNotFoundError: No module named 'yaml'`

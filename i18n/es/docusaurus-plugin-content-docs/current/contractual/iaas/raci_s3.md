@@ -1,74 +1,74 @@
 ---
-title: Matriz de responsabilidad IaaS - Almacenamiento de objetos S3
+title: Matrice de responsabilité IaaS - Stockage Objet S3
 ---
 
-Aquí se presenta la matriz RACI del reparto de responsabilidades entre el cliente y Cloud Temple para el uso de la plataforma de Almacenamiento de objetos S3 de Cloud Temple.
+Voici le RACI du partage de responsabilité entre le client et Cloud Temple pour l'usage de la plateforme de Stockage Objets S3 Cloud Temple.
 
-## Definición de los diferentes roles
+## Définition des différents rôles
 
-A continuación se recuerdan los diferentes roles del RACI:
+Nous rappelons ici les différents rôle du RACI :
 
-| Rol          | Descripción                              |
+| Rôle         | Description                              |
 |--------------|------------------------------------------|
-| (R) Realiza  | __R__ealiza el proceso                   |
-| (A) Aprueba  | __A__prueba la realización del proceso   |
-| (C) Consulta | __C__onsultado durante el proceso        |
-| (I) Informado| __I__nformado de los resultados del proceso |
+| (R) Réalise  | __R__éalise le processus                 |
+| (A) Approuve | __A__pprouve la réalisation du processus |
+| (C) Consulte | __C__onsulté pendant le processus        |
+| (I) Informé  | __I__nformé des résultats du processus   |
 
-## Definir su necesidad
+## Définir votre besoin
 
-| Actividad                                                                            | Rol Cliente | Rol Cloud Temple |
-|----------------------------------------------------------------------------------|-------------|------------------|
-| Validar que el producto Almacenamiento de objetos S3 cumple con los requisitos de la aplicación | __RA__      | __CI__           |
-| Suscribirse al servicio con la información necesaria                           | __RA__      | __I__            |
+| Activité                                                                            | Rôle Client | Rôle Cloud Temple |
+|----------------------------------------------------------------------------------|-------------|-------------------|
+| Valider que le produit Stockage Objet S3 est conforme au besoin de l'application | __RA__      | __CI__            |
+| Souscrire au service avec les informations nécessaires                           | __RA__      | __I__             |
 
-## Implementar el servicio
+## Mettre en oeuvre le service
 
-| Actividad                                                                             | Rol Cliente | Rol Cloud Temple |
-|------------------------------------------------------------------------------------|-------------|------------------|
-| Garantizar el mantenimiento en condiciones operativas de la plataforma Almacenamiento de objetos S3 | __I__       | __RA__           |
-| Garantizar el mantenimiento en condiciones de seguridad de la plataforma Almacenamiento de objetos S3 | __I__       | __RA__           |
-| Crear los objetos                                                                   | __RA__      |                  |
-| Crear las claves de acceso y asignar los derechos asociados                            | __RA__      |                  |
+| Activité                                                                             | Rôle Client | Rôle Cloud Temple |
+|------------------------------------------------------------------------------------|-------------|-------------------|
+| Assurer le maintien en condition opérationnelle de la plateforme Stockage Objet S3 | __I__       | __RA__            |
+| Assurer le maintien en condition de sécurité de la plateforme Stockage Objet S3    | __I__       | __RA__            |
+| Créer les objets                                                                   | __RA__      |                   |
+| Créer les clefs d'accès et affecter les droits associés                            | __RA__      |                   |
 
-## Operaciones recurrentes
+## Opérations récurrentes
 
-| Actividad                                                                           | Rol Cliente | Rol Cloud Temple |
-|------------------------------------------------------------------------------------|-------------|------------------|
-| Garantizar el mantenimiento en condiciones operativas de la plataforma Almacenamiento de objetos S3 | __I__       | __RA__           |
-| Garantizar el mantenimiento en condiciones de seguridad de la plataforma Almacenamiento de objetos S3 | __I__       | __RA__           |
-| Garantizar la accesibilidad del servicio Almacenamiento de objetos S3               | __I__       | __RA__           |
-| Conservar y poner a disposición los registros de la plataforma Almacenamiento de objetos S3  |             | __RA__           |
-| Supervisar el buen funcionamiento de la plataforma Almacenamiento de objetos S3                | __I__       | __RA__           |
-| Seguir el ciclo de vida de los objetos                                                  | __RA__      |                  |
-| Seguir el ciclo de vida de los derechos sobre los objetos                                   | __RA__      |                  |
-| Gestionar la seguridad lógica de los objetos                                               | __RA__      |                  |
-| Gestionar incidentes en el servicio Almacenamiento de objetos S3                              | __I__       | __RA__           |
-| Gestionar problemas en el servicio Almacenamiento de objetos S3                              | __I__       | __RA__           |
-| Gestionar la capacidad en el servicio Almacenamiento de objetos S3                                | __I__       | __RA__           |
-| Gestionar las evoluciones en el servicio Almacenamiento de objetos S3                             | __I__       | __RA__           |
+| Activité                                                                           | Rôle Client | Rôle Cloud Temple |
+|------------------------------------------------------------------------------------|-------------|-------------------|
+| Assurer le maintien en condition opérationnelle de la plateforme Stockage Objet S3 | __I__       | __RA__            |
+| Assurer le maintien en condition de sécurité de la plateforme Stockage Objet S3    | __I__       | __RA__            |
+| Assurer l'accessibilité du service Stockage Objet S3                               | __I__       | __RA__            |
+| Conserver et mettre à disposition les journaux de la plateforme Stockage Objet S3  |             | __RA__            |
+| Superviser le bon fonctionnement de la plateforme Stockage Objet S3                | __I__       | __RA__            |
+| Suivre le cycle de vie des objets                                                  | __RA__      |                   |
+| Suivre le cycle de vie des droits sur les objets                                   | __RA__      |                   |
+| Gérer la sécurité logique des objets                                               | __RA__      |                   |
+| Gérer les incidents sur le service Stockage objets S3                              | __I__       | __RA__            |
+| Gérer les problèmes sur le service Stockage objets S3                              | __I__       | __RA__            |
+| Gérer la capacité sur le service Stockage objets S3                                | __I__       | __RA__            |
+| Gérer les évolutions sur le service Stockage objets S3                             | __I__       | __RA__            |
 
-## Gestión del cifrado
+## Gestion du chiffrement
 
-| Actividad                                                                                 | Rol Cliente | Rol Cloud Temple |
-|------------------------------------------------------------------------------------------|-------------|------------------|
-| Gestionar el cifrado de los datos antes del despliegue en el servicio Almacenamiento de objetos S3      | __RA__      |                  |
-| Gestionar el cifrado en el espacio de almacenamiento asignado por el servicio Almacenamiento de objetos S3    | __A__       | __R__            |
+| Activité                                                                                 | Rôle Client | Rôle Cloud Temple |
+|------------------------------------------------------------------------------------------|-------------|-------------------|
+| Gérer le chiffrement des données avant déploiement sur le service Stockage Objet S3      | __RA__      |                   |
+| Gérer le chiffrement sur l'espace de stockage alloué par le service Stockage objet S3    | __A__       | __R__             |
 
-## Continuidad de actividad
+## Continuité d'activité
 
-| Actividad                                                                                  | Rol Cliente | Rol Cloud Temple |
-|-------------------------------------------------------------------------------------------|-------------|------------------|
-| Garantizar la continuidad de actividad del servicio de almacenamiento de objetos S3                         | __I__       | __RA__           |
-| Garantizar el respaldo de los datos                                                         | __RA__      |                  |
-| Realizar pruebas periódicas de restauración de los datos                                | __RA__      |                  |
-| Mantener el plan de continuidad de actividad y recuperación de actividad para las aplicaciones | __RA__      |                  |
+| Activité                                                                                  | Rôle Client | Rôle Cloud Temple |
+|-------------------------------------------------------------------------------------------|-------------|-------------------|
+| Assurer la continuité d'activité du service de stockage objets S3                         | __I__       | __RA__            |
+| Assurer la sauvegarde des données                                                         | __RA__      |                   |
+| Réaliser des tests périodiques de restauration des données                                | __RA__      |                   |
+| maintenir le plan de continuité d'activité et de reprise d'activité pour les applications | __RA__      |                   |
 
-## Reversibilidad
+## Réversibilité
 
-| Actividad                                                                                  | Rol Cliente | Rol Cloud Temple |
-|-------------------------------------------------------------------------------------------|-------------|------------------|
-| Implementar el proyecto de reversibilidad (planificación, herramientas, métodos, objetivos, etc.) | __RA__      |                  |
-| Exportar los datos desde el servicio de Almacenamiento de objetos S3                              | __RA__      |                  |
-| Eliminar los datos en el servicio de Almacenamiento de objetos S3                                | __RA__      |                  |
-| Destruir los medios de almacenamiento al final de su vida útil o en caso de fallo                              |             | __RA__           |
+| Activité                                                                                  | Rôle Client | Rôle Cloud Temple |
+|-------------------------------------------------------------------------------------------|-------------|-------------------|
+| Mettre en oeuvre le projet de réversibilité (planification, outils, méthodes, cibles,...) | __RA__      |                   |
+| Exporter les données depuis le service de Stockage Objets S3                              | __RA__      |                   |
+| Supprimer les données sur le service de Stockage Objets S3                                | __RA__      |                   |
+| Détruite les supports de stockage en fin de vie ou en erreur                              |             | __RA__            |

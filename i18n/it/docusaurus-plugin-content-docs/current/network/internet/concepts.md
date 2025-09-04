@@ -1,96 +1,119 @@
 ---
-title: Concepts
+title: Concetti
 ---
 
-## Assegnazione di un indirizzo internet pubblico Provider Aggregated (PA)
+## Infrastruttura Internet di CloudTemple
 
-In questo contesto, utilizzi degli indirizzi IP pubblici assegnati a Cloud Temple, che ti vengono noleggiati per i tuoi usi.
+CloudTemple opera come **Cloud Service Provider (CSP)** con un'infrastruttura Internet autonoma, altamente resiliente e sicura. La nostra connettività di livello carrier si basa sul nostro AS (Autonomous System Number) che ci conferisce il pieno controllo sul routing e garantisce un'elevata disponibilità per tutti i nostri servizi.
 
-La creazione di una connettività internet e l'assegnazione degli indirizzi IP pubblici associati vengono realizzate tramite __una richiesta di servizio__ indicando:
+Questa infrastruttura autonoma ci consente di offrire connettività Internet con funzionalità avanzate, adatte a tutti i tipi di offerte CloudTemple, dall'hosting dedicato alle soluzioni IaaS e ai servizi PaaS.
 
-    Il nome della tua Organizzazione
-    Il nome di un contatto con il suo email e n. di telefono per finalizzare la configurazione
-    Il nome del tenant
-    La dimensione della subnet desiderata (minimo /29 in IPv4 e /64 in IPv6)
-    Se non sono già state fornite, le informazioni RIPE (contatto amministrativo in particolare) verranno richieste dal supporto
+## Architettura di rete e ridondanza
 
-La consegna dell'accesso internet avviene tramite il protocollo BGP4 a seguito della richiesta di supporto, che fornirà le seguenti informazioni:
+La nostra rete beneficia di un'architettura ridondante progettata per ottimizzare le prestazioni e garantire la continuità del servizio. CloudTemple dispone di un sistema autonomo indipendente con un insieme di prefissi IP pubblici assegnati, garantendo una connettività globale diretta.
 
-- *prefisso pubblico*
-- *prefisso di interconnessione*
-- *gateway any-cast*
-- *Subnet IP*
-- *AS locale*
-- *AS di Cloud Temple*
-- *timer di keepalive e timer di hold-time*
-- *gli indirizzi dei route server associati al tuo tenant*.
+Questa connettività si basa su **due percorsi distinti** per massimizzare la resilienza:
 
-L'utilizzo del protocollo BGP4 garantisce un routing efficiente dei tuoi flussi Internet verso il gateway attivo della tua architettura, particolarmente negli scenari di distribuzione multi-zone di disponibilità, come nel caso di cluster di firewall distribuiti tra due zone di disponibilità.
+**Connettività di transito:** Due principali operatori di transito garantiscono la ridondanza a livello globale, consentendo un instradamento ottimale del traffico Internet verso le nostre infrastrutture.
+
+**Punti di interscambio:** La nostra presenza in due punti di interscambio (IXP) a Parigi ci consente di ridurre significativamente la latenza per gli utenti europei, migliorando al contempo le prestazioni dei servizi regionali. Questo approccio garantisce anche una ridondanza naturale contro i guasti dei fornitori.
+
+L'uso del protocollo BGP4 garantisce un instradamento efficiente dei flussi Internet verso il gateway attivo della tua architettura, in particolare negli scenari di implementazione multi-zona di disponibilità, come nel caso di cluster di firewall distribuiti tra due zone di disponibilità.
+
+## Protezione anti-DDoS integrata
+
+Tutto il traffico in entrata verso l'infrastruttura CloudTemple beneficia di una protezione anti-DDoS avanzata, fornita da **F5**, leader mondiale nella sicurezza di rete. Questa protezione funziona in modo trasparente e automatico.
+
+Gli attacchi volumetrici vengono rilevati e mitigati direttamente ai margini della rete F5, prima ancora di raggiungere la rete CloudTemple. Questo filtraggio a monte garantisce che nessuna saturazione possa influire sulle nostre connessioni Internet e solo le richieste legittime raggiungono le nostre infrastrutture.
+
+**Tutti i servizi CloudTemple** beneficiano di questa protezione senza costi aggiuntivi, compresi i prefissi dei clienti che possono essere migrati sulla nostra infrastruttura. Questo approccio integrato trasforma un vincolo di sicurezza in un vantaggio operativo per i nostri clienti.
+
+## Assegnazione di indirizzi IP pubblici
+
+CloudTemple offre un sistema flessibile per l'assegnazione di indirizzi IP pubblici Provider Aggregated (PA), consentendo ai clienti di prenotare indirizzi IP pubblici **singolarmente** in base alle loro esigenze specifiche.
+
+### Processo di prenotazione
+
+La prenotazione degli indirizzi IP pubblici viene effettuata direttamente tramite la console CloudTemple, offrendo una gestione autonoma e immediata:
+
+**Tramite l'API della console:** Possibile integrazione nei flussi di lavoro di automazione e provisioning.
+
+**Tramite la console web:** Interfaccia intuitiva accessibile dalla sezione *Internet* della tua area clienti.
+
+Il processo di prenotazione segue questi semplici passaggi: connessione alla console, navigazione in *Internet* > *Gestisci indirizzi IP*, selezione di *Prenota un nuovo indirizzo*, scelta tra IPv4 o IPv6, quindi convalida dell'ordine.
+
+### Fatturazione
+
+La fatturazione degli indirizzi IP pubblici viene effettuata per unità di lavoro (UO) e inizia non appena l'indirizzo viene prenotato, garantendo la totale trasparenza dei costi.
+
+| Riferimento | Unità | SKU |
+|---|---|---|
+| Rete - IPv4 Pubblico Dedicato | 1 IPv4 | RSIP-IP4-UNIT |
+| Rete - IPv6 Pubblico Dedicato | 1 IPv6 | RSIP-IP6-UNIT |
 
 ## Blocchi IPv4
 
-### Offerta di indirizzo IPv4 versione 1
+La consegna di IPv4 è soggetta a __limiti di stock disponibile__ per i nostri clienti, per indirizzo IP.
 
-__*Questa offerta non è più commercializzata dal 2 maggio 2024*__
+L'ordine di indirizzi IPv4 viene effettuato dal menu __*'IP pubblici'*__ del menu Reti nel banner verde a sinistra, tramite il pulsante __*"Ordina indirizzi IPv4 o prefissi IPv6"*__.
 
-La consegna degli IPv4 avviene nei __limiti delle scorte disponibili__ per i nostri clienti, con un blocco minimo di 8 IPv4 (/29 o 255.255.255.248).
+Puoi visualizzare i blocchi di indirizzi che ti sono stati assegnati in questo stesso menu.
 
-È possibile visualizzare i blocchi di indirizzi che ti sono assegnati nel menu __*'IPs pubbliche'*__ del menu Reti nella banda verde a sinistra.
-
-| Riferimento                             | Unità  | SKU                          |
-| --------------------------------------- | ------ | ---------------------------- |
-| Rete - Fascia IPv4 Pubbliche dedicate   | 8 IPv4 | csp:(region):network:ipv4:v1 |
-
-### Offerta di indirizzo IPv4 versione 2
-
-La consegna di un IPv4 avviene nei __limiti delle scorte disponibili__ per i nostri clienti, per indirizzo IP.
-
-È possibile visualizzare i blocchi di indirizzi che ti sono assegnati nel menu __*'IPs pubbliche'*__ del menu Reti nella banda verde a sinistra.
-
-| Riferimento                     | Unità  | SKU                          |
-| ------------------------------- | ------ | ---------------------------- |
-| Rete - IPv4 Pubblica dedicata   | 1 IPv4 | csp:(region):network:ipv4:v2 |
+| Riferimento | Unità | SKU |
+|---|---|---|
+| Rete - IPv4 Pubblico Dedicato | 1 IPv4 | csp:(region):network:ipv4:v2 |
 
 ## Blocchi IPv6
 
-__Al 1° maggio 2024, l'offerta di indirizzi IP Pubblici IPv6 non è ancora disponibile per la commercializzazione.__
+L'ordine di prefissi IPv6 viene effettuato dal menu __*'IP pubblici'*__ del menu Reti nel banner verde a sinistra, tramite il pulsante __*"Ordina indirizzi IPv4 o prefissi IPv6"*__.
 
-L'obiettivo di commercializzazione è previsto per il secondo semestre 2024.
+Puoi visualizzare i prefissi che ti sono stati assegnati in questo stesso menu.
 
-| Riferimento                             | Unità   | SKU                          |
-| --------------------------------------- | ------- | ---------------------------- |
-| Rete - Fascia IPv6 Pubbliche dedicate   | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Riferimento | Unità | SKU |
+|---|---|---|
+| Rete - Range IPv6 Pubblici Dedicati | 64 IPv6 | csp:(region):network:ipv6:v1 |
 
-## Indirizzi IP pubblici Provider Independent (PI)
+## Migrazione dei prefissi IP dei clienti
 
-Se disponi del tuo proprio indirizzo Provider Independent, hai la possibilità di annunciarlo all'interno del Sistema Autonomo di Cloud Temple. Questo ti consente di continuare a utilizzare i tuoi indirizzi IP all'interno dell'infrastruttura Cloud Temple e di facilitare le tue migrazioni.
+CloudTemple supporta i clienti che desiderano migrare i propri prefissi IP sulla nostra infrastruttura, facilitando così i progetti di migrazione mantenendo l'identità di rete esistente.
 
-Per farlo, effettua __una richiesta di servizio__ indicando:
+### Vantaggi della migrazione
 
-    Il nome della tua Organizzazione
-    Il nome di un contatto con il suo email e n. di telefono per finalizzare la configurazione
-    Il nome del tenant
-    Il blocco di indirizzi IP PI che detieni e che desideri annunciare
-    Se non sono già state fornite, le informazioni RIPE associate verranno richieste dal supporto
+Questo approccio ti consente di mantenere la tua identità IP durante la migrazione a CloudTemple, garantendo una continuità perfetta per le tue applicazioni e i tuoi clienti. Mantieni il pieno controllo sull'uso dei tuoi indirizzi IP beneficiando al contempo dell'infrastruttura CloudTemple.
 
-Non c'è alcuna fatturazione specifica per i clienti che utilizzano indirizzi Provider Independent.
+### Processo di integrazione
 
-### Prenotazione di banda Internet
+Il tuo prefisso IP (ad esempio `203.0.113.0/24`) viene integrato nella rete backbone di CloudTemple e annunciato dal nostro AS. Una volta integrato, il prefisso può essere liberamente associato alle tue macchine virtuali, ai bilanciatori di carico o ad altri servizi.
 
-La banda Internet è prenotabile per incrementi di 100 Mbps. La capacità massima disponibile per un gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche del tuo gateway.
+**Tutti gli indirizzi del prefisso migrato beneficiano automaticamente della protezione anti-DDoS F5**, senza alcuna configurazione aggiuntiva o costo extra.
 
-La fatturazione viene effettuata al 95° percentile sul periodo di fatturazione, solitamente un mese. Puoi quindi occasionalmente sfruttare un burst oltre la tua capacità prenotata.
+### Condizioni richieste
 
-| Riferimento                                 | Unità    | SKU                                 |
-| ------------------------------------------- | -------- | ----------------------------------- |
-| Rete - Banda Internet prenotata             | 100 Mbps | csp:(region):network:traffic:internet:v1 |
+La migrazione dei prefissi IP richiede che il prefisso sia registrato presso un registro Internet riconosciuto (ARIN, RIPE, APNIC, ecc.) e che tu ne sia il legittimo proprietario. La gestione BGP può essere gestita dai tuoi team o beneficiare del supporto tecnico di CloudTemple in base alle tue preferenze.
 
-__*Notavi*__
-*Non c'è __fatturazione volumetrica__ di tipo __'egress fees'. Paghi solo la prenotazione della banda.__*
+## Prenotazione della larghezza di banda Internet
 
+La larghezza di banda Internet può essere prenotata in incrementi di 100 Mbps. La capacità massima disponibile per un gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche del tuo gateway.
 
-## Anti-DDoS
+La fatturazione viene effettuata al 95° percentile durante il periodo di fatturazione, generalmente un mese. Pertanto, puoi beneficiare occasionalmente di un burst oltre la tua capacità riservata.
 
-Un attacco di tipo Denial-of-Service Distribuito (DDoS) mira a degradare o mettere offline un servizio sovraccaricandolo tramite traffico illecito.
+| Riferimento | Unità | SKU |
+|---|---|---|
+| Rete - Larghezza di banda Internet riservata | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
-La protezione Anti-DDoS di Cloud Temple ti protegge contro gli attori dannosi ed è __attiva senza costi aggiuntivi contro gli attacchi volumetrici__: il filtraggio viene effettuato a monte dai nostri partner telecom.
+__*Nota:*__
+*Non c'è __fatturazione volumetrica__ del tipo __'egress fees'. Paghi solo per la prenotazione della larghezza di banda.__*
+
+## Disponibilità per offerta
+
+Tutte queste funzionalità di connettività Internet sono disponibili in tutte le offerte CloudTemple, garantendo un'esperienza coerente indipendentemente dal tipo di servizio utilizzato.
+
+| Offerta | Connettività Internet | Protezione DDoS | Gestione RSIP | Migrazione Prefissi |
+|---|---|---|---|---|
+| Hosting Dedicato | ✓ | ✓ | ✓ | ✓ |
+| Hosting Condiviso | ✓ | ✓ | ✓ | ✓ |
+| IaaS VMware | ✓ | ✓ | ✓ | ✓ |
+| IaaS OpenSource | ✓ | ✓ | ✓ | ✓ |
+| PaaS OpenShift | ✓ | ✓ | ✓ | ✓ |
+
+Questo approccio unificato garantisce che tutti i nostri clienti beneficino di un accesso Internet di livello carrier, con sicurezza integrata e funzionalità avanzate, indipendentemente dalla loro scelta tecnologica.

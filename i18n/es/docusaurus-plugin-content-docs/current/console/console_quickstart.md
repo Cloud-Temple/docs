@@ -23,7 +23,7 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 Shiva es accesible a través de la URL siguiente: [Shiva](https://shiva.cloud-temple.com) o bien desde la URL directa que le ha sido comunicada por correo electrónico.
 
-La primera página le permite seleccionar [la organización](iam/concepts.md#organisations) en la que se ha creado su usuario.
+La primera página le permite seleccionar [la organización](iam/concepts.md#organizaciones) en la que se ha creado su usuario.
 Una vez ingresada la empresa, por favor haga clic en __'Iniciar sesión'__.
 
 <img src={shivaLogin} />
@@ -41,7 +41,7 @@ El cambio de idioma de un usuario debe realizarse en su __'Perfil'__, en la part
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](iam/concepts.md#tenant).
+La configuración se realiza por cada inquilino [Tenant](iam/concepts.md#hosting).
 
 ## Acceso al soporte técnico
 

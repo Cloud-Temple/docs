@@ -1,15 +1,16 @@
 ---
-title: Network Responsibility Matrix
+title: Matrice de responsabilité Réseau
 ---
 
-### Client Network Connectivity
+### Connectivité réseau client
 
-| Activity                                                                                             | Client Role | Cloud Temple Role |
+| Activité                                                                                             | Rôle Client | Rôle Cloud Temple |
 |------------------------------------------------------------------------------------------------------|-------------|-------------------|
-| Subscribe to an operator network connectivity to access Cloud Temple's physical datacenter (6)      | __RA__      | __CI__            |
-| Manage incidents on client operator network links                                                    | __RA__      |                   |
-| Manage problems on client operator network links                                                     | __RA__      | __I__             |
-| Manage capacities on client operator network links                                                   | __RA__      | __CI__            |
+| Souscrire à une connectivité réseau opérateur pour accéder à un datacenter physique Cloud Temple (6) | __RA__      | __CI__            |
+| Gérer les incidents sur les liens réseaux opérateurs client                                          | __RA__      |                   |
+| Gérer les problèmes sur les liens réseaux opérateurs client                                          | __RA__      | __I__             |
+| Gérer les capacités sur les liens réseaux opérateurs client                                          | __RA__      | __CI__            |
 
-*(6) Cloud Temple assumes responsibility for the network regarding its backbone infrastructure, collection points, and datacenter interconnection points, ensuring connectivity between these points and its backbone network. 
-In the physical bay hosting offer, Cloud Temple assumes responsibility from the equipment located at the top of the rack, commonly called "top of rack".*
+*(6) Cloud Temple assume la responsabilité du réseau concernant son infrastructure backbone, ses points de collecte ainsi que
+les points d'interconnexion datacenter, garantissant ainsi la connectivité entre ces points et son réseau backbone.
+Dans l'offre d'hébergement en baie physique, Cloud Temple assume la responsabilité à partir de l'équipement situé en haut du rack, communément appelé "top of rack".*

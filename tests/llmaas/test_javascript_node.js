@@ -335,7 +335,7 @@ try {
     require('axios');
 } catch (error) {
     console.log('❌ Erreur: axios n\'est pas installé');
-    console.log('Installez avec: npm install axios');
+    console.log('Installez avec: yarn add axios');
     process.exit(1);
 }
 

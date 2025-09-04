@@ -1,26 +1,23 @@
 ---
-title: Synchronize a folder with mc mirror
+title: Synchronizing a Directory with mc mirror
 ---
 
-The `mc mirror` command is a powerful tool for synchronizing the contents of a local folder to an S3 bucket. It can upload new or modified files, and optionally delete files in the bucket that no longer exist locally. It is an efficient method for maintaining a backup or deploying a static site.
+The `mc mirror` command is a powerful tool for synchronizing the contents of a local directory to an S3 bucket. It can upload new or modified files, and optionally delete files from the bucket that no longer exist locally. This method is efficient for maintaining backups or deploying static websites.
 
-Don't forget to configure your [MinIO client as described in the quickstart guide](../quickstart.md#configurer-votre-client-minio-mc).
+Please ensure your [MinIO client is configured as described in the quickstart guide](../quickstart.md).
 
-### Basic example
+### Exemple de base
 
-To synchronize the content of the local folder `./mon-site` to the bucket `demo-app` on your alias `cloudtemple-fr1`:
+To synchronize the content of the local directory `./mon-site` to the bucket `demo-app` on your alias `cloudtemple-fr1`:
 
 ```bash
-❯ mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
+mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
 ```
 
 ### Useful Options
 
-*   `--overwrite` : Forces the replacement of existing files on the destination, even if they are newer.
-*   `--remove` : Removes files from the destination that no longer exist in the source folder. **Use with caution**, as this can cause irreversible data loss.
+*   `--overwrite`: Forces the replacement of existing files on the destination, even if they are more recent.
+*   `--remove`: Removes files from the destination that do not exist in the source directory. **Use with caution**, as this can lead to irreversible data loss.
 
-```bash
-```
-
-# Full synchronization with deletion of obsolete remote files
-❯ mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/
+## Complete synchronization with removal of remote obsolete files
+> `mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/`
