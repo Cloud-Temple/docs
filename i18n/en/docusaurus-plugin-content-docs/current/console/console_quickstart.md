@@ -11,7 +11,7 @@
 
 Shiva is accessible via the following URL: [Shiva](https://shiva.cloud-temple.com) or directly via the URL you received by email.
 
-The first page allows you to select [the organization](iam/concepts.md#organisations) in which your user was created.
+The first page allows you to select [the organization](iam/concepts.md#organizations) in which your user was created.
 Once the company is filled in, please click on __'Sign in'__.
 
 <img src={shivaLogin} />

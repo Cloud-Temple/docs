@@ -1,16 +1,16 @@
 ---
-title: Netzwerk-Verantwortungsmatrix
+title: Matrice de responsabilité Réseau
 ---
 
-### Kundennetzwerkkonnektivität
+### Connectivité réseau client
 
-| Aktivität                                                                                                | Rolle des Kunden | Rolle von Cloud Temple |
-|----------------------------------------------------------------------------------------------------------|-----------------|------------------------|
-| Abonnieren einer Betreiber-Netzwerkkonnektivität für den Zugang zu einem physischen Cloud Temple Rechenzentrum (6) | __RA__          | __CI__                 |
-| Verwaltung von Vorfällen auf den Netzwerkverbindungen des Kundenbetreibers                               | __RA__          |                        |
-| Verwaltung von Problemen auf den Netzwerkverbindungen des Kundenbetreibers                               | __RA__          | __I__                  |
-| Kapazitätsmanagement auf den Netzwerkverbindungen des Kundenbetreibers                                   | __RA__          | __CI__                 |
+| Activité                                                                                             | Rôle Client | Rôle Cloud Temple |
+|------------------------------------------------------------------------------------------------------|-------------|-------------------|
+| Souscrire à une connectivité réseau opérateur pour accéder à un datacenter physique Cloud Temple (6) | __RA__      | __CI__            |
+| Gérer les incidents sur les liens réseaux opérateurs client                                          | __RA__      |                   |
+| Gérer les problèmes sur les liens réseaux opérateurs client                                          | __RA__      | __I__             |
+| Gérer les capacités sur les liens réseaux opérateurs client                                          | __RA__      | __CI__            |
 
-*(6) Cloud Temple übernimmt die Verantwortung für das Netzwerk in Bezug auf seine Backbone-Infrastruktur, seine Sammelpunkte sowie
-die Rechenzentrum-Verbindungspunkte und garantiert so die Konnektivität zwischen diesen Punkten und seinem Backbone-Netzwerk.
-Im Angebot für physisches Rack-Hosting übernimmt Cloud Temple die Verantwortung ab dem Gerät oben im Rack, allgemein bekannt als "Top of Rack".*
+*(6) Cloud Temple assume la responsabilité du réseau concernant son infrastructure backbone, ses points de collecte ainsi que
+les points d'interconnexion datacenter, garantissant ainsi la connectivité entre ces points et son réseau backbone.
+Dans l'offre d'hébergement en baie physique, Cloud Temple assume la responsabilité à partir de l'équipement situé en haut du rack, communément appelé "top of rack".*

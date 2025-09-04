@@ -1,14 +1,14 @@
 ---
-title: Ein Verzeichnis mit der AWS CLI synchronisieren
+Titel: Synchronisieren eines Verzeichnisses mit AWS CLI
 ---
 
-Ähnlich wie `mc` bietet die AWS CLI den Befehl `aws s3 sync`, um Verzeichnisse zu synchronisieren. Dieser Befehl vergleicht den Inhalt des Quellverzeichnisses und des Zielbuckets, um nur neue oder geänderte Dateien zu übertragen.
+Wie `mc`, bietet auch die AWS CLI die Befehlszeile `aws s3 sync` für das Synchronisieren von Verzeichnissen. Diese Befehl vergleicht den Inhalt des Quellverzeichnisses und des S3-Buckets, um nur neue oder geänderte Dateien zu übertragen.
 
-Vergessen Sie nicht, Ihren [AWS-Client gemäß dem Schnellstart-Guide zu konfigurieren](../quickstart.md#configurer-votre-client-aws-aws) und den Parameter `--endpoint-url` zu verwenden.
+Vergessen Sie nicht, Ihren [AWS-Client wie im Anleitungsstart](../quickstart.md) einzurichten und den Parameter `--endpoint-url` zu verwenden.
 
-### Grundbeispiel
+### Beispiel für die Grundform
 
-Um den Inhalt des lokalen Verzeichnisses `./mon-site` in den Bucket `s3://demo-app` zu synchronisieren:
+Um den Inhalt des Verzeichnisses lokal `./mon-site` mit dem S3-Bucket `s3://demo-app` zu synchronisieren:
 
 ```bash
 ❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
@@ -16,14 +16,11 @@ Um den Inhalt des lokalen Verzeichnisses `./mon-site` in den Bucket `s3://demo-a
 
 ### Nützliche Optionen
 
-*   `--delete` : Löscht die Dateien im Bucket, die nicht mehr im lokalen Verzeichnis vorhanden sind. Dies entspricht der Option `--remove` von `mc mirror`.
-*   `--exact-timestamps` : Kopiert die Datei nur, wenn das Änderungsdatum anders ist.
-*   `--dryrun` : Zeigt die Operationen an, die durchgeführt würden, ohne sie tatsächlich auszuführen. Sehr nützlich, um eine Befehlszeile zu überprüfen, bevor sie ausgeführt wird.
+*   `--delete`: Löscht Dateien aus dem Bucket, die im lokalen Verzeichnis nicht mehr vorhanden sind. Dies ist der entsprechende Ersatz für die Option `--remove` von `mc mirror`.
+*   `--exact-timestamps`: Bei der Synchronisation kopiert nur den Dateipfad, wenn das Modifikationsdatum unterschiedlich ist.
+*   `--dryrun`: Zeigt die zu erledigenden Operationen an, ohne sie tatsächlich auszuführen. Sehr nützlich zur Überprüfung einer Befehlszeile vor der Ausführung.
 
-```bash
-```
-
-# Simulation einer Synchronisation mit Löschung zur Überprüfung von Änderungen
-❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
-(dryrun) Löschen: s3://demo-app/old-file.html
-(dryrun) Hochladen: mon-site/new-file.css nach s3://demo-app/new-file.css
+# Simulation der Synchronisation mit Löschen zur Überprüfung von Änderungen
+❯ aws s3 sync ./mon-Site/ s3://demo-App/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
+(dry run) löschen: s3://demo-App/alt-Datei.html
+(dry run) Hochladen: mon-Site/neue-Datei.css in s3://demo-App/neue-Datei.css

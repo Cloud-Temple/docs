@@ -26,7 +26,7 @@ The deactivation option is found in the options of the selected network.
 
 The tracking of new resource deployment is done in the __'Commandes'__ menu accessible in the green bar on the left side of the screen.
 
-It allows you to view the ordered Cloud resources, those in deployment, and any potential errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organisations).
+It allows you to view the ordered Cloud resources, those in deployment, and any potential errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organizations).
 
 <img src={shivaOrdersList} />
 

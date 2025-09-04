@@ -20,7 +20,7 @@ L’accesso alla Console è la porta d’ingresso a tutti i vostri servizi Cloud
 
 L’accesso alla console di gestione cloud è limitato agli indirizzi IP preventivamente autorizzati. Questa restrizione consente di autorizzare l’accesso solo agli utenti provenienti dagli intervalli IP specificati, minimizzando così i rischi di accessi non autorizzati.
 
-È possibile configurare queste restrizioni IP nei parametri della propria organizzazione. Per sapere come configurare il filtraggio IP, consultare la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-acc%C3%A8s-et-authentification).
+È possibile configurare queste restrizioni IP nei parametri della propria organizzazione. Per sapere come configurare il filtraggio IP, consultare la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
 Per massimizzare l’efficacia di questo meccanismo, assicuratevi di:
 
@@ -157,7 +157,7 @@ Ecco alcune buone pratiche in caso di utilizzo della crittografia delle VM:
 
 Per ridurre al minimo la superficie d’attacco delle vostre macchine virtuali, è fortemente consigliato limitare ai soli necessari i servizi esposti. In particolare, assicuratevi di configurare le vostre risorse in modo da **non esporre pubblicamente le interfacce di amministrazione e le console** dei sistemi e delle applicazioni distribuite.
 
-Se utilizzate il servizio Object Storage di Cloud Temple, è inoltre consigliato **non configurare i vostri bucket in accesso pubblico**, tranne nei casi in cui ciò sia strettamente necessario (vedi [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart?_highlight=*bucket#limitations-des-acc%C3%A8s-%C3%A0-vos-bucket-s3)).
+Se utilizzate il servizio Object Storage di Cloud Temple, è inoltre consigliato **non configurare i vostri bucket in accesso pubblico**, tranne nei casi in cui ciò sia strettamente necessario (vedi [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
 
 ### Rinforzare le macchine virtuali (servizi IaaS)
 

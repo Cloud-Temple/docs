@@ -1,26 +1,23 @@
 ---
-title: Ein Verzeichnis mit mc mirror synchronisieren
+titel: Synchronisieren eines Verzeichnisses mit mc mirror
 ---
 
-Die `mc mirror`-Befehlszeile ist ein leistungsstarker Tool, um den Inhalt eines lokalen Verzeichnisses mit einem S3-Bucket zu synchronisieren. Sie kann neue oder geänderte Dateien hochladen und optional Dateien im Bucket löschen, die nicht mehr lokal vorhanden sind. Es handelt sich um eine effektive Methode, um eine Sicherung aufrechtzuerhalten oder eine statische Website bereitzustellen.
+Die Befehlszeile `mc mirror` ist ein leistungsstarkes Werkzeug zur Synchronisation des Inhalts eines lokalen Verzeichnisses mit einem S3-Bucket. Sie ladet neue oder geänderte Dateien, und optional auch die Löschung von Dateien aus dem Bucket, die lokal nicht mehr vorhanden sind. Dies ist eine effiziente Methode zur Erhaltung einer Backup-Sicherung oder zum Bereitstellen eines statischen Websites.
 
-Vergessen Sie nicht, Ihren [MinIO-Client wie im Schnellstart-Guide beschrieben](../quickstart.md#configurer-votre-client-minio-mc) zu konfigurieren.
+Vergessen Sie nicht, Ihren [MinIO-Client wie im Anleitungsstart](../quickstart.md) zu konfigurieren.
 
-### Grundbeispiel
+### Beispiel für die Grundform
 
-Um den Inhalt des lokalen Verzeichnisses `./mon-site` auf den Bucket `demo-app` auf Ihrem Alias `cloudtemple-fr1` zu synchronisieren:
-
-```bash
-❯ mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
-```
-
-### Nützliche Optionen
-
-*   `--overwrite` : Erzwingt die Ersetzung vorhandener Dateien am Zielort, auch wenn sie neuer sind.
-*   `--remove` : Löscht Dateien am Zielort, die nicht mehr im Quellordner vorhanden sind. **Mit Vorsicht verwenden**, da dies zu unumkehrbaren Datenverlust führen kann.
+Um den Inhalt des Verzeichnisses lokal `./mon-site` mit dem Bucket `demo-app` auf Ihrem Alias `cloudtemple-fr1` zu synchronisieren:
 
 ```bash
+mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
 ```
 
-# Vollständige Synchronisation mit Entfernung veralteter entfernter Dateien
-❯ mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/
+### Optionen zum Nutzen
+
+*   `--overwrite`: Erzwingt das Überschreiben von Dateien auf der Ziel-Destination, selbst wenn diese neuer sind als die entsprechenden Dateien im Quellverzeichnis. **Nutzen Sie dies mit Vorsicht, da es zu einer unwiderruhbaren Datenverlust führen kann.**
+*   `--remove`: Entfernt von der Ziel-Destination Dateien, die im Quellverzeichnis nicht mehr vorhanden sind. **Verwenden Sie dies sorgfältig, da es zu einer irreversiblen Datenverlust führen kann.**
+
+# Komplette Synchronisation mit Entfernung von abgelegten Dateien auf dem Ziel
+> mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/

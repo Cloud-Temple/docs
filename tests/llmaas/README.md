@@ -68,7 +68,7 @@ pip install langchain langchain-openai  # Pour LangChain tests
 
 ### Node.js
 ```bash
-npm install axios
+yarn add axios
 ```
 
 ## 📊 Critères de Succès
@@ -192,7 +192,7 @@ pip install requests
 
 **Node.js script fails**
 ```bash
-npm install axios
+yarn add axios
 node --version  # Vérifier Node.js installé
 ```
 

@@ -3,7 +3,7 @@ title: Panoramica
 sidebar_position: 1
 ---
 
-# LLM come servizio (LLMaaS)
+# LLM come un Servizio (LLMaaS)
 
 ## Accesso all'API
 
@@ -11,17 +11,17 @@ L'API è accessibile tramite la Console Cloud Temple. Puoi gestire le tue chiavi
 
 ## Autenticazione
 
-Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con la tua chiave API nel formato token Bearer. Se utilizzi i SDK client, la chiave verrà automaticamente inclusa in ogni richiesta. Se ti integri direttamente con l'API, devi inviare questo header tu stesso.
+Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con la propria chiave API nel formato Bearer token. Se si utilizzano i SDK client, la chiave verrà automaticamente inclusa in ogni richiesta. Se si integra direttamente con l'API, è necessario inviare questo header manualmente.
 
 ## Tipi di contenuto
 
 L'API LLMaaS accetta sempre JSON nel corpo delle richieste e restituisce JSON nel corpo delle risposte. Devi inviare l'intestazione `content-type: application/json` nelle tue richieste. Se utilizzi i SDK client, questo sarà gestito automaticamente.
 
-## Intestazioni di risposta
+## Headers di risposta
 
-L'API LLMaaS include le seguenti intestazioni in ogni risposta:
+L'API LLMaaS include i seguenti headers in ogni risposta:
 
-- `id` : Un identificativo univoco a livello globale per la richiesta
+- `id` : Un identificatore univoco a livello globale per la richiesta
 - `backend` : Informazioni sull'infrastruttura utilizzata (engine_type, machine_name)
 
 ## Esempi
@@ -36,7 +36,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
     "messages": [
       {
         "role": "user", 
-        "content": "Ciao! Puoi presentarti in italiano?"
+        "content": "Ciao! Puoi presentarti in francese?"
       }
     ],
     "max_tokens": 200,
@@ -78,13 +78,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parametro     | Tipo    | Descrizione                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | stringa | Il modello da utilizzare (vedere [catalogo dei modelli](./models)) |
-| `messages`    | array   | Elenco dei messaggi della conversazione                         |
-| `max_tokens`  | intero  | Numero massimo di token da generare                            |
-| `temperature` | float   | Controlla la creatività (0.0-2.0)                              |
-| `top_p`       | float   | Controlla la diversità delle risposte                            |
-| `stream`      | booleano | Attiva il flusso della risposta                             |
-| `user`        | stringa | Identificativo unico dell'utente finale                     |
+| `model`       | stringa | Il modello da utilizzare (vedi [catalogo dei modelli](./models.md)) |
+| `messages`    | array   | Elenco dei messaggi della conversazione                       |
+| `max_tokens`  | intero  | Numero massimo di token da generare                           |
+| `temperature` | float   | Controllo della creatività (0.0-2.0)                          |
+| `top_p`       | float   | Controllo della diversità delle risposte                      |
+| `stream`      | booleano| Attiva lo streaming delle risposte                            |
+| `user`        | stringa | Identificativo univoco dell'utente finale                     |
 
 ## URL di base
 
@@ -97,7 +97,7 @@ https://api.ai.cloud-temple.com/v1/
 
 - `/chat/completions` : Generazione di risposte conversazionali
 - `/completions` : Completamento di testo semplice
-- `/embeddings` : Crea un vettore di embedding rappresentante il testo di input
+- `/embeddings` : Crea un vettore di embedding che rappresenta il testo di input
 - `/models` : Elenco dei modelli disponibili
 
 ### Esempio: Elenco dei modelli

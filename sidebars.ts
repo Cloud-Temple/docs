@@ -60,9 +60,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'console/iam/tutorials/sso_aad',
+            'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
             'console/iam/tutorials/sso_jumpcloud',
+            'console/iam/tutorials/sso_intune',
+            'console/iam/tutorials/sso_okta',
           ],
         },
       ],
@@ -153,6 +155,7 @@ const sidebars: SidebarsConfig = {
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
             },
+            'iaas_vmware/tutorials/configure_management_vm',
             'iaas_vmware/tutorials/deploy_vm_template',
             'iaas_vmware/tutorials/deploy_vm_terraform',
             'iaas_vmware/tutorials/vm_encryption',
@@ -171,7 +174,6 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'paas_openshift/tutorials/tutorials',
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
@@ -190,6 +192,7 @@ const sidebars: SidebarsConfig = {
         'llmaas/api',
         'llmaas/models',
         'llmaas/tutorials',
+        'llmaas/faq',
       ],
     },
     {
