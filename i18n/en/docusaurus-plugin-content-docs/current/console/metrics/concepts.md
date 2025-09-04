@@ -2,11 +2,17 @@
 
 *__Note :__ To access these dashboards, it is necessary to have the right __'metric_read'__*
 
-## Usage with __Grafana__
+## Use with __Grafana__
 
-The Shiva service console can act as a __datasource__ for your infrastructure [Grafana](https://grafana.com).
+Integrating the Shiva console with Grafana
 
-You will find a complete set of __Grafana configuration examples__ [here](https://github.com/Cloud-Temple/console-grafana-iaas)
+The Cloud Temple Shiva console can be used as a datasource for your [Grafana](https://grafana.com) infrastructure.
+
+The console is Prometheus compatible, which allows you to add it in Grafana as a Prometheus type datasource. You will be able to:
+  •  Visualize all your metrics.
+  •  Create your own custom dashboards tailored to your needs.
+
+Cloud Temple also provides a [collection of ready-to-use dashboards](https://github.com/Cloud-Temple/console-grafana-iaas), which you can use as a base or adapt to your use cases.
 
 <img src={grafanaDashboards_003} />
 
