@@ -64,8 +64,8 @@ Integrazione della console Shiva con Grafana
 La console Shiva di Cloud Temple può essere utilizzata come origine dati per la tua infrastruttura [Grafana](https://grafana.com).
 
 La console è compatibile con Prometheus, il che ti consente di aggiungerla in Grafana come origine dati di tipo Prometheus. Sarai in grado di:
-  •  Visualizzare tutte le tue metriche.
-  •  Creare le tue dashboard personalizzate su misura per le tue esigenze.
+-  Visualizzare tutte le tue metriche.
+-  Creare le tue dashboard personalizzate su misura per le tue esigenze.
 
 Cloud Temple fornisce anche una [raccolta di dashboard pronte all'uso](https://github.com/Cloud-Temple/console-grafana-iaas), che puoi utilizzare come base o adattare ai tuoi casi d'uso.
 
