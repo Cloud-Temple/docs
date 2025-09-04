@@ -59,9 +59,15 @@ Accede entonces a la página de visualización de datos históricos, incluyendo 
 
 ## Uso con __Grafana__
 
-Es posible que la consola Shiva sirva como __origen de datos__ para su infraestructura en [Grafana](https://grafana.com).
+Integración de la consola Shiva con Grafana
 
-Encontrará un conjunto completo de __ejemplos de configuración para Grafana__ [aquí](https://github.com/Cloud-Temple/console-grafana-iaas)
+La consola Shiva de Cloud Temple se puede utilizar como fuente de datos para su infraestructura de [Grafana](https://grafana.com).
+
+La consola es compatible con Prometheus, lo que le permite agregarla en Grafana como una fuente de datos de tipo Prometheus. Podrá:
+  •  Visualizar todas sus métricas.
+  •  Crear sus propios paneles personalizados adaptados a sus necesidades.
+
+Cloud Temple también proporciona una [colección de paneles listos para usar](https://github.com/Cloud-Temple/console-grafana-iaas), que puede usar como base o adaptar a sus casos de uso.
 
 <img src={grafanaDashboards_003} />
 
