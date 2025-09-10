@@ -389,7 +389,7 @@ est nécessaire d'avoir le même espace de stockage sur le site passif que sur l
 
 Cloud Temple propose __une architecture de sauvegarde croisée native et non débrayable__ (elle est obligatoire dans la qualification secnumcloud francaise).
 
-Les sauvegardes sont stockées dans une zone de disponibilité et sur un datacenter physique différent de celui qui héberge la machine virtuelle.
+Les sauvegardes sont stockées dans une zone de disponibilité et sur un datacenter physique différent de celui qui héberge la machine virtuelle. Elles sont chiffrées via un algorithme à clés symétriques AES 256 bits (cipher mode `xts-plain64`) pour garantir la confidentialité des données.
 
 Cela permet de se protéger en cas de défaut majeur sur le datacenter de production et de restaurer sur un datacenter secondaire (incendie par exemple).
 
