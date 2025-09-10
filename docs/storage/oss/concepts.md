@@ -75,10 +75,10 @@ Cloud Temple propose une solution de stockage objet avec les caractéristiques t
 
 • __Nombre de connexions simultanées__ : Aucune limite spécifique.
 
-• __Performance à l'upload__ :
+• __Performance__ :
 
-- Jusqu'à 100Gb/s en entrée
-- Jusqu'à 100Gb/s en sortie
+- Jusqu'à 1 Gb/s en entrée
+- Jusqu'à 1 Gb/s en sortie
 
 ---
 
