@@ -27,9 +27,9 @@
     "message": "IaaS OpenSource",
     "description": "The label for category IaaS OpenSource in sidebar docSidebar"
   },
-  "sidebar.docSidebar.category.IaaS by VMware": {
-    "message": "IaaS by VMware",
-    "description": "The label for category IaaS by VMware in sidebar docSidebar"
+  "sidebar.docSidebar.category.IaaS VMware": {
+    "message": "IaaS VMware",
+    "description": "The label for category IaaS VMware in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Tutorials": {
     "message": "Anleitungen",
