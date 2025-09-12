@@ -17,7 +17,11 @@ En janvier 2024, la plateforme IaaS Cloud Temple dispose des régions suivantes 
 
 ### Région FR1
 
-La région FR1 est basée sur trois sites physiques en région parisienne. 
+La région FR1 est basée sur trois sites physiques en région parisienne:
+
+- FR1 - AZ05 (PAR7S)
+- FR1 - AZ06 (TH3S)
+- FR1 - AZ07 (DATA4)
 
 <img src={iaasAz001} />
 
