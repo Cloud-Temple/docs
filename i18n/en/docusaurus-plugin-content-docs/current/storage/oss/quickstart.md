@@ -108,6 +108,22 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     ![S3 Parameters](https://link-to-S3-Params-image)
 
     **Important note on retention**: The retention concept corresponds to the data protection duration, not a scheduled deletion. Data remains accessible throughout the retention period. To trigger automatic data deletion at the end of the retention period, it is necessary to define a lifecycle policy.
+    
+    **Lifecycle policy example**:
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "Delete-after-30-days",
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30
+          }
+        }
+      ]
+    }
+    ```
+    This policy will automatically delete all objects in the bucket after 30 days.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

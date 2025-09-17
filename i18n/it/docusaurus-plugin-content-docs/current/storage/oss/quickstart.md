@@ -108,6 +108,22 @@ Il Tempio del Servizio di Obiettivi Cloud SecNumCloud è un servizio di archivia
     ![S3 Parameters](https://link-to-S3-Parameters-image)
 
     **Nota importante sulla ritenzione**: Il concetto di ritenzione corrisponde alla durata di protezione dei dati, non a una cancellazione programmata. I dati rimangono accessibili per tutto il periodo di ritenzione. Per provocare una cancellazione automatica dei dati alla fine del periodo di ritenzione, è necessario definire una politica del ciclo di vita (lifecycle).
+    
+    **Esempio di politica del ciclo di vita**:
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "Cancellazione-dopo-30-giorni",
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30
+          }
+        }
+      ]
+    }
+    ```
+    Questa politica cancellerà automaticamente tutti gli oggetti nel bucket dopo 30 giorni.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

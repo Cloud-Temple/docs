@@ -108,6 +108,22 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     <img src={S3Params} />
 
     **Note importante** : La notion de '__Protection de suppression__' correspond à la durée de protection de la donnée, et non à une suppression programmée. Les données restent accessibles pendant toute la période de configurée. Pour provoquer une suppression automatique des données à l'issue de la période de rétention, il est nécessaire de définir une politique de cycle de vie (lifecycle).
+    
+    **Exemple de politique de cycle de vie** :
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "Suppression-apres-30-jours",
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30
+          }
+        }
+      ]
+    }
+    ```
+    Cette politique supprimera automatiquement tous les objets du bucket après 30 jours.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
