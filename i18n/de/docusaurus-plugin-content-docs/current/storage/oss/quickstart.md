@@ -96,6 +96,22 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
     ![S3 Parameters](./images/S3_params.png)
 
     **Wichtiger Hinweis zur Aufbewahrung**: Das Konzept der Aufbewahrung entspricht der Datenschutzdauer, nicht einer geplanten Löschung. Die Daten bleiben während der gesamten Aufbewahrungszeit zugänglich. Um eine automatische Datenlöschung am Ende der Aufbewahrungszeit auszulösen, ist es notwendig, eine Lifecycle-Richtlinie zu definieren.
+    
+    **Beispiel einer Lifecycle-Richtlinie**:
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "Loeschung-nach-30-Tagen",
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30
+          }
+        }
+      ]
+    }
+    ```
+    Diese Richtlinie löscht automatisch alle Objekte im Bucket nach 30 Tagen.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

@@ -109,6 +109,22 @@ El Templo del Almacenamiento Objeto Cloud es un servicio de almacenamiento de ob
     <img src={S3Params} />
 
     **Nota importante sobre la retención**: El concepto de retención corresponde a la duración de protección de los datos, no a una eliminación programada. Los datos permanecen accesibles durante todo el período de retención. Para provocar una eliminación automática de los datos al final del período de retención, es necesario definir una política de ciclo de vida (lifecycle).
+    
+    **Ejemplo de política de ciclo de vida**:
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "Eliminacion-despues-30-dias",
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30
+          }
+        }
+      ]
+    }
+    ```
+    Esta política eliminará automáticamente todos los objetos del bucket después de 30 días.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
