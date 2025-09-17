@@ -106,6 +106,8 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     ![S3 Files](https://link-to-S3-Files-image)
     In the '__Parameters__' tab, you can see detailed information about your S3 bucket:
     ![S3 Parameters](https://link-to-S3-Params-image)
+
+    **Important note on retention**: The retention concept corresponds to the data protection duration, not a scheduled deletion. Data remains accessible throughout the retention period. To trigger automatic data deletion at the end of the retention period, it is necessary to define a lifecycle policy.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

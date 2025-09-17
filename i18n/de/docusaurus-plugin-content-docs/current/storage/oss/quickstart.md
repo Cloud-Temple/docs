@@ -94,6 +94,8 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
     ![S3 Files](./images/S3_files.png)
     Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
     ![S3 Parameters](./images/S3_params.png)
+
+    **Wichtiger Hinweis zur Aufbewahrung**: Das Konzept der Aufbewahrung entspricht der Datenschutzdauer, nicht einer geplanten Löschung. Die Daten bleiben während der gesamten Aufbewahrungszeit zugänglich. Um eine automatische Datenlöschung am Ende der Aufbewahrungszeit auszulösen, ist es notwendig, eine Lifecycle-Richtlinie zu definieren.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

@@ -106,6 +106,8 @@ Il Tempio del Servizio di Obiettivi Cloud SecNumCloud è un servizio di archivia
     ![S3 Files](https://link-to-S3-Files-image)
     Nell'onglet '__Parametri__' è possibile vedere i dettagli delle informazioni del bucket S3:
     ![S3 Parameters](https://link-to-S3-Parameters-image)
+
+    **Nota importante sulla ritenzione**: Il concetto di ritenzione corrisponde alla durata di protezione dei dati, non a una cancellazione programmata. I dati rimangono accessibili per tutto il periodo di ritenzione. Per provocare una cancellazione automatica dei dati alla fine del periodo di ritenzione, è necessario definire una politica del ciclo di vita (lifecycle).
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
