@@ -107,6 +107,8 @@ El Templo del Almacenamiento Objeto Cloud es un servicio de almacenamiento de ob
     <img src={S3Files} />
     Dans l'onglet '__Paramètres__', vous pouvez obtenir des informations détaillées sur les propriétés de votre bucket S3 :
     <img src={S3Params} />
+
+    **Nota importante sobre la retención**: El concepto de retención corresponde a la duración de protección de los datos, no a una eliminación programada. Los datos permanecen accesibles durante todo el período de retención. Para provocar una eliminación automática de los datos al final del período de retención, es necesario definir una política de ciclo de vida (lifecycle).
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
