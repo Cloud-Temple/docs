@@ -11,10 +11,6 @@ title: Overview
 
 Benefit from a comprehensive view of your resources through integrated monitoring and reporting tools to ensure your environments operate optimally.
 
-### Multi-cloud Integration
-
-Thanks to its hybridization capabilities, the console facilitates the management of multi-cloud environments by integrating third-party services such as **Microsoft Azure** and **Amazon AWS**, all through a single interface.
-
 ### Management of Your Cloud Temple Products and Services
 
 The console allows you to effectively manage your virtual servers, storage, networks, and Cloud services from a centralized interface.

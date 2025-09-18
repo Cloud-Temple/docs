@@ -55,10 +55,6 @@ Die Konsole integriert fortschrittliche Funktionen für:
 - Filterung von Zugriffen zur Erfüllung regulatorischer Anforderungen,
 - Stärkung Ihrer Sicherheitsrichtlinien.
 
-### Multi-Cloud-Integration
-
-Dank ihrer Hybridfähigkeiten erleichtert die Konsole die Verwaltung von Multi-Cloud-Umgebungen durch die Integration von Drittanbieterdiensten wie **Microsoft Azure** und **Amazon AWS**, alles über eine einzige Benutzeroberfläche.
-
 ### Technischer Support und Kundendienst
 
 Die Konsole bietet direkten Zugang zu Ihren technischen Support-Fällen. Sie profitieren von:
