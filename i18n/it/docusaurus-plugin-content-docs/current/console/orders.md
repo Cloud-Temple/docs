@@ -36,7 +36,7 @@ Permette di visualizzare le risorse Cloud ordinate, in corso di distribuzione e 
 
 <img src={shivaOrdersList} />
 
-*__Nota: In questo momento, la vista globale a livello di un'organizzazione di tutte le risorse distribuite nei diversi tenant non è ancora possibile.__ Questo argomento sarà trattato nel 2024 attraverso l'implementazione di un portale dedicato al committente (nel senso di firmatario) e alla gestione della sua organizzazione.*
+*__Nota: In questo momento, la vista globale a livello di un'organizzazione di tutte le risorse distribuite nei diversi tenant non è ancora possibile.__ Questo argomento sarà trattato in futuro attraverso l'implementazione di un portale dedicato al committente (nel senso di firmatario) e alla gestione della sua organizzazione.*
 
 La distribuzione delle risorse o la loro rimozione si effettuano in ciascuno dei prodotti nei menu __'IaaS'__ e __'Rete'__ a sinistra dello schermo nella barra verde.
 

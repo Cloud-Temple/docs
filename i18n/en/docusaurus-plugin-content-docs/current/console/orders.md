@@ -30,7 +30,7 @@ It allows you to view the ordered Cloud resources, those in deployment, and any 
 
 <img src={shivaOrdersList} />
 
-*__Note: At this time, a global view at the organization level of all resources deployed across different tenants is not yet possible.__ This topic will be addressed in 2024 through the implementation of a dedicated portal for the signatory (contractor) and management of their organization.*
+*__Note: At this time, a global view at the organization level of all resources deployed across different tenants is not yet possible.__ This topic will be addressed in the future through the implementation of a dedicated portal for the signatory (contractor) and management of their organization.*
 
 The deployment of resources or their deletion is performed in each product within the __'IaaS'__ and __'Réseau'__ menus on the left side of the screen in the green bar.
 

@@ -36,7 +36,7 @@ Il permet de visualiser les ressources Cloud commandées, en cours de déploieme
 
 <img src={shivaOrdersList} />
 
-*__Nota : A cet instant, la vue globale au niveau d'une organisation de l'ensemble des ressources déployées dans les différents tenants n'est pas encore possible.__ Ce sujet sera traité en 2024 par la mise en œuvre d'un portail dédié au commanditaire (au sens signataire) et au pilotage de son organisation.*
+*__Nota : A cet instant, la vue globale au niveau d'une organisation de l'ensemble des ressources déployées dans les différents tenants n'est pas encore possible.__ Ce sujet sera traité ultérieurement par la mise en œuvre d'un portail dédié au commanditaire (au sens signataire) et au pilotage de son organisation.*
 
 Le déploiement des ressources ou leur suppression se font dans chacun des produits dans les menus __'IaaS'__ et __'Réseau'__ à gauche de l'écran dans le bandeau vert.
 
