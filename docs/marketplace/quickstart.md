@@ -14,7 +14,7 @@ Cette page vous guide à travers les étapes initiales pour utiliser la **Market
 
 Avant de commencer, assurez-vous des points suivants :
 
-1. **Souscription activée** : Pour permettre des déploiement votre organisation doit avoir souscrit à au moins un service Cloud Temple (IaaS OpenSource ou IaaS VMware). Dans le cadre de contact avec nos partenaire vous n'avez pas besoin de souscription spécifique.
+1. **Souscription activée** : Pour permettre des déploiements votre organisation doit avoir souscrit à au moins un service Cloud Temple (IaaS OpenSource ou IaaS VMware). Dans le cadre de contact avec nos partenaire vous n'avez pas besoin de souscription spécifique.
 2. **Permissions utilisateur** : Votre compte utilisateur doit disposer des droits nécessaires pour accéder à la console et des droits d'écritures sur les environnements cibles lorsque vous souhaitez y déployer des ressources.
 3. **Environnement cible** : Disposer d'un tenant configuré pour le déploiement des solutions.
 
