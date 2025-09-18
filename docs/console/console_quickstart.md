@@ -62,7 +62,7 @@ La première étape est l'identification du type de demande de support :
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
-Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
+Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident de sécurité, tel que:
 
 __CRITIQUE (P1)__:
 

@@ -62,7 +62,7 @@ Il primo passo è l'identificazione del tipo di richiesta di supporto:
 
 Avete poi la possibilità di fornire precisazioni e includere file (immagine o log, ad esempio).
 
-Il richiedente può anche precisare un livello di criticità (da P1 a P4) nella descrizione del ticket, in caso di incidente, come:
+Il richiedente può anche precisare un livello di criticità (da P1 a P4) nella descrizione del ticket, in caso di incidente di sicurezza, come:
 
 __CRITICO (P1)__:
 
