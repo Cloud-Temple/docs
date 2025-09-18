@@ -29,7 +29,7 @@ Configurez les paramètres de base de votre machine virtuelle :
 
 <img src={marketplaceVmwareConfig} />
 
-Le déploiement s'effectue généralement en moins de 5 minutes selon la taille de l'image.
+Le déploiement s'effectue généralement en moins de 10 minutes selon la taille de l'image.
 
 ## Accès alternatif
 

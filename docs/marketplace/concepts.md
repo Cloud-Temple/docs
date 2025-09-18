@@ -27,7 +27,7 @@ Les images de machines virtuelles constituent le cœur actuel de l'offre Marketp
 **Caractéristiques :**
 - Images validées et sécurisées
 - Compatible avec les environnements OpenIaaS et VMware
-- Déploiement en moins de 5 minutes
+- Déploiement en moins de 10 minutes
 - Intégration native avec la console Cloud Temple
 
 ### Solutions partenaires
