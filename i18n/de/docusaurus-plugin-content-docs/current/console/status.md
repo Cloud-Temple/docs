@@ -30,11 +30,11 @@ Durch Klicken auf Schnellansicht finden Sie die laufenden Eingriffe. Es ist auch
 
 ## Verfolgung geplanter Eingriffe
 
-Die Seite Eingriffe besteht aus zwei Registerkarten. Die erste Registerkarte ermöglicht es Ihnen, die für die nächsten 30 Tage geplanten Eingriffe und die laufenden Eingriffe zu sehen.
+Die Seite Eingriffe besteht aus zwei Registerkarten. Die erste Registerkarte ermöglicht es Ihnen, die für die nächsten 60 Tage geplanten Eingriffe und die laufenden Eingriffe zu sehen.
 
 <img src={shivaInterventionMenu04} />
 
-Die abgeschlossenen Eingriffe hingegen sind in der zweiten Registerkarte 'Abgeschlossen' sichtbar.
+Die abgeschlossenen Eingriffe hingegen sind in der zweiten Registerkarte 'Abgeschlossen' sichtbar. Abgeschlossene Eingriffe werden 60 Tage lang in der Vergangenheit aufbewahrt und sind zugänglich, was eine umfassende Verfolgung der Wartungsoperationshistorie ermöglicht.
 
 <img src={shivaInterventionMenu05} />
 
@@ -54,7 +54,7 @@ Eine Schaltfläche __'Mehr erfahren'__ leitet zur öffentlichen Seite zur Vorfal
 
 <img src={shivaIncident_002} />
 
-Es ist möglich, die Berichte zu globalen Vorfällen zu erhalten. Der Zugriff auf diese Berichte erfordert die spezifische Berechtigung '__incident_management__'.
+Es ist möglich, die Berichte zu globalen Vorfällen zu erhalten. Der Zugriff auf diese Berichte erfordert die spezifische Berechtigung '__incident_management__'. Globale Vorfallberichte werden archiviert und sind 60 Tage nach ihrer Lösung zugänglich, um eine vollständige Nachverfolgbarkeit der Systemereignisse zu gewährleisten.
 
 Hier ist ein Beispiel für die Registerkarte, die diese Berichte anzeigt:
 
@@ -64,7 +64,7 @@ Hier ist ein Beispiel für die Registerkarte, die diese Berichte anzeigt:
 
 Die Sichtbarkeit von Vorfällen, die spezifisch für einen Kundenbereich sind, erfordert die Berechtigung __incident_read__. Diese Vorfälle werden durch ein spezielles Symbol dargestellt, begleitet von einem roten Badge, das die Anzahl der laufenden Vorfälle anzeigt.
 
-Das Symbol ist anklickbar und ermöglicht es, die mit den Vorfällen verbundenen Tickets aufzulisten. Jedes Ticket enthält einen Link zu den Details des Vorfalls, der die Möglichkeit bietet, den Fortschritt ihrer Lösung zu verfolgen:
+Das Symbol ist anklickbar und ermöglicht es, die mit den Vorfällen verbundenen Tickets aufzulisten. Jedes Ticket enthält einen Link zu den Details des Vorfalls, der die Möglichkeit bietet, den Fortschritt ihrer Lösung zu verfolgen. Gelöste Vorfälle und ihre Berichte (CRs) bleiben 60 Tage lang zugänglich, was eine rückblickende Analyse und Verfolgung der implementierten Korrekturmaßnahmen ermöglicht.
 
 <img src={shivaIncident_004} />
 
