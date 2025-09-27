@@ -7,15 +7,15 @@ sidebar_position: 2
 
 ## Vue d'ensemble
 
-Cloud Temple LLMaaS propose **45 modèles de langage large** soigneusement sélectionnés et optimisés pour répondre aux exigences **SecNumCloud** les plus strictes. Notre catalogue couvre l'ensemble du spectre, des micro-modèles ultra-efficaces aux modèles extrêmement volumineux.
+Cloud Temple LLMaaS propose **51 modèles de langage large** soigneusement sélectionnés et optimisés pour répondre aux exigences **SecNumCloud** les plus strictes. Notre catalogue couvre l'ensemble du spectre, des micro-modèles ultra-efficaces aux modèles extrêmement volumineux.
 
 ### Statistiques Globales
 
 | Métrique | Valeur |
 |----------|--------|
-| **Nombre total de modèles** | 45 modèles |
+| **Nombre total de modèles** | 51 modèles |
 | **Contexte minimum** | 8 192 tokens |
-| **Contexte maximum** | 128 000 tokens |
+| **Contexte maximum** | 262 144 tokens |
 | **Conformité** | SecNumCloud ✅ HDS ✅ Souveraineté ✅ C5 ❌ |
 | **Localisation** | 100% France 🇫🇷 |
 
@@ -29,19 +29,43 @@ Cloud Temple LLMaaS propose **45 modèles de langage large** soigneusement séle
 
 ## Modèles de Grande Taille
 
-### Llama 3.3 70B
-**Meta • 70B paramètres • Contexte : 60 000 tokens**
+### gpt-oss:120b
+**OpenAI • 120B paramètres • Contexte : 120 000 tokens**
+
+Modèle de langage open-weight de pointe d'OpenAI, offrant de solides performances avec une licence flexible Apache 2.0.
+
+**Spécifications techniques :**
+- **Vitesse** : 38 tokens/seconde tokens/seconde
+- **Consommation** : 3.51 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
+
+**Tags :** `MoE` `Agent` `Raisonnement` `Open-Source` `Très Large`
+
+**Cas d'usage :**
+- Agents conversationnels avancés avec raisonnement complexe et intégration d'outils.
+- Applications nécessitant une transparence totale du processus de raisonnement (chain-of-thought).
+- Scénarios commerciaux nécessitant une licence permissive (Apache 2.0).
+- Fine-tuning pour des tâches spécialisées nécessitant un modèle de base puissant.
+
+---
+
+### llama3.3:70b
+**Meta • 70B paramètres • Contexte : 120 000 tokens**
 
 Modèle multilingue de pointe développé par Meta, conçu pour exceller dans le dialogue naturel, le raisonnement complexe et la compréhension nuancée des instructions.
 
 **Spécifications techniques :**
-- **Vitesse** : 26 tokens/seconde tokens/seconde
-- **Consommation** : 11.75 kWh/million tokens
+- **Vitesse** : 15 tokens/seconde tokens/seconde
+- **Consommation** : 8.89 kWh/million tokens
 - **Licence** : LLAMA 3.3 Community Licence
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
-❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
+✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
 
 **Tags :** `Agent` `Dialogue` `Multilingue`
 
@@ -54,13 +78,13 @@ Modèle multilingue de pointe développé par Meta, conçu pour exceller dans le
 
 ---
 
-### Qwen3 235B
+### qwen3:235b
 **Qwen Team • 235B paramètres • Contexte : 60 000 tokens**
 
 Modèle très volumineux de la nouvelle génération Qwen3, offrant des capacités étendues pour les tâches les plus complexes.
 
 **Spécifications techniques :**
-- **Vitesse** : 17 tokens/seconde tokens/seconde
+- **Vitesse** : 17 tokens/seconde tokens/seconde ⚡
 - **Consommation** : 7.84 kWh/million tokens
 - **Licence** : Apache 2.0
 - **Localisation** : FR 🇫🇷
@@ -78,7 +102,7 @@ Modèle très volumineux de la nouvelle génération Qwen3, offrant des capacit�
 
 ---
 
-### DeepSeek-R1 671B
+### deepseek-r1:671b
 **DeepSeek AI • 671B paramètres • Contexte : 16 000 tokens**
 
 Modèle extrêmement volumineux de DeepSeek AI, conçu pour le summum du raisonnement et de la génération.
@@ -101,7 +125,7 @@ Modèle extrêmement volumineux de DeepSeek AI, conçu pour le summum du raisonn
 
 ---
 
-### Gemma 3 27B
+### gemma3:27b
 **Google • 27B paramètres • Contexte : 120 000 tokens**
 
 Modèle révolutionnaire de Google offrant un équilibre optimal entre puissance et efficacité, avec un rapport performance/coût exceptionnel pour les applications professionnelles exigeantes.
@@ -126,32 +150,102 @@ Modèle révolutionnaire de Google offrant un équilibre optimal entre puissance
 
 ---
 
-### Qwen3 30B-A3B FP8
-**Qwen Team • 30B-A3B paramètres • Contexte : 32 000 tokens**
+### qwen3-coder:30b
+**Qwen Team • 30B paramètres • Contexte : 250 000 tokens**
 
-Modèle MoE FP8 (3B activés) nouvelle génération, avec modes de pensée hybrides et capacités agentiques avancées.
+Modèle MoE optimisé pour les tâches d'ingénierie logicielle, avec un contexte très long.
 
 **Spécifications techniques :**
-- **Vitesse** : 106 tokens/seconde tokens/seconde ⚡
-- **Consommation** : 2.88 kWh/million tokens
+- **Vitesse** : 80 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 3.3 kWh/million tokens
 - **Licence** : Apache 2.0
 - **Localisation** : FR 🇫🇷
 
 **Capacités :**
 ✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
 
-**Tags :** `MoE` `Agent` `Raisonnement` `Rapide` `Multilingue`
+**Tags :** `Agent` `Programmation` `Grand Contexte` `MoE`
 
 **Cas d'usage :**
-- Agents conversationnels avancés avec intégration d'outils (MCP)
-- Résolution de problèmes complexes (maths, code) avec mode "Thinking"
-- Applications multilingues (>100 langues)
-- Scénarios nécessitant un équilibre coût/performance (MoE) sur VLLM
-- Dialogue multi-tours engageant et suivi d'instructions précis
+- Agents d'ingénierie logicielle pour explorer et modifier des bases de code
+- Génération de code complexe avec compréhension à l'échelle du dépôt (repository-scale)
+- Tâches de raisonnement sur des contextes étendus
+- Amélioration de code via apprentissage par renforcement
 
 ---
 
-### DeepSeek-R1 70B
+### qwen3-2507-think:30b-a3b
+**Qwen Team • 30B paramètres • Contexte : 120 000 tokens**
+
+Modèle avancé de la famille Qwen3, optimisé pour le raisonnement profond et les contextes étendus.
+
+**Spécifications techniques :**
+- **Vitesse** : 80 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 3.3 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
+
+**Tags :** `Agent` `Raisonnement` `Grand Contexte`
+
+**Cas d'usage :**
+- Analyse de documents très volumineux avec raisonnement complexe.
+- Agents conversationnels avec un historique de conversation étendu.
+- Tâches de Q&A sur de larges corpus de texte.
+- Intégration avec des outils externes via function calling sur de grands contextes.
+
+---
+
+### qwen3-2507:30b-a3b
+**Qwen Team • 30B paramètres • Contexte : 250 000 tokens**
+
+Version améliorée du mode non-pensée de Qwen3-30B, avec des capacités générales, une couverture de connaissances et un alignement utilisateur améliorés.
+
+**Spécifications techniques :**
+- **Vitesse** : 90 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 2.16 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
+
+**Tags :** `Agent` `Grand Contexte` `MoE` `Multilingue`
+
+**Cas d'usage :**
+- Tâches complexes nécessitant un suivi d'instructions précis et un raisonnement logique.
+- Applications multilingues avec une large couverture de connaissances.
+- Génération de texte de haute qualité pour des tâches ouvertes et subjectives.
+- Analyse de documents très volumineux grâce au contexte de 250k tokens.
+
+---
+
+### qwen3:30b-a3b
+**Qwen Team • 30B paramètres • Contexte : 32 000 tokens**
+
+Dernière génération des modèles Qwen, offrant des améliorations significatives en termes de données d'entraînement, d'architecture et d'optimisation.
+
+**Spécifications techniques :**
+- **Vitesse** : 50 tokens/seconde tokens/seconde
+- **Consommation** : 3.89 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
+
+**Tags :** `Agent` `Programmation` `Multilingue` `MoE`
+
+**Cas d'usage :**
+- Tâches de raisonnement complexes et génération de code.
+- Applications multilingues nécessitant une large couverture linguistique.
+- Scénarios nécessitant un bon équilibre entre performance et efficacité des ressources grâce à l'architecture MoE.
+
+---
+
+### deepseek-r1:70b
 **DeepSeek AI • 70B paramètres • Contexte : 32 000 tokens**
 
 Modèle 70B de DeepSeek AI
@@ -174,7 +268,7 @@ Modèle 70B de DeepSeek AI
 
 ---
 
-### Qwen2.5-VL 32B
+### qwen2.5vl:32b
 **Qwen Team • 32B paramètres • Contexte : 120 000 tokens**
 
 Version la plus puissante de la série Qwen2.5-VL, offrant des capacités de compréhension visuelle et d'agentique de pointe.
@@ -198,7 +292,7 @@ Version la plus puissante de la série Qwen2.5-VL, offrant des capacités de com
 
 ---
 
-### Qwen2.5-VL 72B
+### qwen2.5vl:72b
 **Qwen Team • 72B paramètres • Contexte : 128 000 tokens**
 
 Version la plus puissante de la série Qwen2.5-VL, offrant des capacités de compréhension visuelle et d'agentique de pointe pour les tâches les plus exigeantes.
@@ -224,14 +318,60 @@ Version la plus puissante de la série Qwen2.5-VL, offrant des capacités de com
 
 ## Modèles Spécialisés
 
-### Qwen3 14B
+### embeddinggemma:300m
+**Google • 300M paramètres • Contexte : 2 048 tokens**
+
+Modèle d'embedding de pointe de Google, optimisé pour sa taille, idéal pour les tâches de recherche et de récupération sémantique.
+
+**Spécifications techniques :**
+- **Licence** : Google Gemma Terms of Use
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+❌ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
+
+**Tags :** `Embedding` `Compact` `Sémantique` `Efficient` `Multilingue`
+
+**Cas d'usage :**
+- Recherche et récupération d'informations (Retrieval)
+- Classification et clustering de documents
+- Recherche de similarité sémantique
+- Déploiement sur des appareils à ressources limitées (mobile, laptop)
+
+---
+
+### gpt-oss:20b
+**OpenAI • 20B paramètres • Contexte : 120 000 tokens**
+
+Modèle de langage open-weight d'OpenAI, optimisé pour l'efficacité et le déploiement sur du matériel grand public.
+
+**Spécifications techniques :**
+- **Vitesse** : 57 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 2.34 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
+
+**Tags :** `MoE` `Agent` `Raisonnement` `Open-Source` `Compact` `Rapide`
+
+**Cas d'usage :**
+- Déploiements sur des appareils à ressources limitées (edge devices) ou des serveurs à faible coût.
+- Applications nécessitant une inférence rapide avec de bonnes capacités de raisonnement.
+- Cas d'usage agentiques avec appel de fonctions, navigation web et exécution de code.
+- Fine-tuning pour des tâches spécialisées sur du matériel grand public.
+
+---
+
+### qwen3:14b
 **Qwen Team • 14B paramètres • Contexte : 32 000 tokens**
 
 Modèle dense nouvelle génération Qwen3 (14B), offrant des performances équivalentes à Qwen2.5 32B avec une meilleure efficacité.
 
 **Spécifications techniques :**
-- **Vitesse** : 68 tokens/seconde tokens/seconde ⚡
-- **Consommation** : 3.88 kWh/million tokens
+- **Vitesse** : 40 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 3.33 kWh/million tokens
 - **Licence** : Apache 2.0
 - **Localisation** : FR 🇫🇷
 
@@ -248,7 +388,7 @@ Modèle dense nouvelle génération Qwen3 (14B), offrant des performances équiv
 
 ---
 
-### Gemma 3 12B
+### gemma3:12b
 **Google • 12B paramètres • Contexte : 120 000 tokens**
 
 Version intermédiaire du modèle Gemma 3 offrant un excellent équilibre entre performance et efficacité.
@@ -273,7 +413,7 @@ Version intermédiaire du modèle Gemma 3 offrant un excellent équilibre entre 
 
 ---
 
-### Gemma 3 4B
+### gemma3:4b
 **Google • 4B paramètres • Contexte : 120 000 tokens**
 
 Modèle compact de Google offrant d'excellentes performances dans un format léger et économique.
@@ -298,7 +438,7 @@ Modèle compact de Google offrant d'excellentes performances dans un format lég
 
 ---
 
-### Gemma 3 1B
+### gemma3:1b
 **Google • 1B paramètres • Contexte : 32 000 tokens**
 
 Micro-modèle ultra-léger conçu pour les déploiements sur appareils à très faibles ressources.
@@ -323,7 +463,7 @@ Micro-modèle ultra-léger conçu pour les déploiements sur appareils à très 
 
 ---
 
-### Lucie-7B-Instruct
+### lucie-instruct:7b
 **OpenLLM-France • 7B paramètres • Contexte : 32 000 tokens**
 
 Modèle causal multilingue open-source (7B), fine-tuné depuis Lucie-7B. Optimisé pour le français.
@@ -341,7 +481,7 @@ Modèle causal multilingue open-source (7B), fine-tuné depuis Lucie-7B. Optimis
 
 ---
 
-### Mistral Small 3.1
+### mistral-small3.1:24b
 **Mistral AI • 24B paramètres • Contexte : 120 000 tokens**
 
 Modèle compact et réactif de Mistral AI, spécialement conçu pour offrir une assistance conversationnelle fluide et pertinente avec une vitesse de réponse optimale.
@@ -366,7 +506,7 @@ Modèle compact et réactif de Mistral AI, spécialement conçu pour offrir une 
 
 ---
 
-### Mistral Small 3.2
+### mistral-small3.2:24b
 **Mistral AI • 24B paramètres • Contexte : 120 000 tokens**
 
 Mise à jour mineure de Mistral Small 3.1, améliorant le suivi d'instructions, la robustesse du function calling et réduisant les erreurs de répétition.
@@ -390,7 +530,7 @@ Mise à jour mineure de Mistral Small 3.1, améliorant le suivi d'instructions, 
 
 ---
 
-### DeepCoder
+### deepcoder:14b
 **Agentica x Together AI • 14B paramètres • Contexte : 32 000 tokens**
 
 Modèle IA open source (14B) par Together AI & Agentica, alternative crédible aux modèles propriétaires pour la génération de code.
@@ -415,7 +555,7 @@ Modèle IA open source (14B) par Together AI & Agentica, alternative crédible a
 
 ---
 
-### Granite 3.2 Vision
+### granite3.2-vision:2b
 **IBM • 2B paramètres • Contexte : 16 384 tokens**
 
 Modèle compact révolutionnaire d'IBM spécialisé dans la vision par ordinateur, capable d'analyser et comprendre directement les documents visuels sans recourir à des technologies OCR intermédiaires.
@@ -440,7 +580,7 @@ Modèle compact révolutionnaire d'IBM spécialisé dans la vision par ordinateu
 
 ---
 
-### Granite 3.3 8B
+### granite3.3:8b
 **IBM • 8B paramètres • Contexte : 60 000 tokens**
 
 Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instructions améliorés, avec un contexte de 128k tokens.
@@ -466,7 +606,7 @@ Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instruc
 
 ---
 
-### Granite 3.3 2B
+### granite3.3:2b
 **IBM • 2B paramètres • Contexte : 120 000 tokens**
 
 Modèle Granite 2B fine-tuné par IBM, optimisé pour le raisonnement et le suivi d'instructions, avec un contexte de 128k tokens.
@@ -491,7 +631,7 @@ Modèle Granite 2B fine-tuné par IBM, optimisé pour le raisonnement et le suiv
 
 ---
 
-### Magistral 24B
+### magistral:24b
 **Mistral AI • 24B paramètres • Contexte : 40 000 tokens**
 
 Le premier modèle de raisonnement de Mistral AI, excellant dans le raisonnement spécifique au domaine, transparent et multilingue.
@@ -515,7 +655,7 @@ Le premier modèle de raisonnement de Mistral AI, excellant dans le raisonnement
 
 ---
 
-### Granite 3.1 MoE
+### granite3.1-moe:3b
 **IBM • 3B paramètres • Contexte : 32 000 tokens**
 
 Modèle innovant d'IBM utilisant l'architecture Mixture-of-Experts (MoE) pour offrir des performances exceptionnelles tout en optimisant drastiquement l'utilisation des ressources computationnelles.
@@ -565,7 +705,7 @@ Modèle de Deep Cogito spécialement conçu pour exceller dans les tâches de ra
 
 ---
 
-### Cogito 32B
+### cogito:32b
 **Deep Cogito • 32B paramètres • Contexte : 32 000 tokens**
 
 Version avancée du modèle Cogito offrant des capacités de raisonnement et d'analyse considérablement amplifiées, conçue pour les applications les plus exigeantes en matière d'intelligence artificielle analytique.
@@ -590,7 +730,7 @@ Version avancée du modèle Cogito offrant des capacités de raisonnement et d'a
 
 ---
 
-### Qwen3 32B
+### qwen3:32b
 **Qwen Team • 32B paramètres • Contexte : 40 000 tokens**
 
 Modèle puissant de la nouvelle génération Qwen3, offrant des capacités avancées en raisonnement, code, et agentique, avec un contexte étendu.
@@ -614,7 +754,7 @@ Modèle puissant de la nouvelle génération Qwen3, offrant des capacités avanc
 
 ---
 
-### QwQ-32B
+### qwq:32b
 **Qwen Team • 32B paramètres • Contexte : 32 000 tokens**
 
 Modèle de 32 milliards de paramètres amélioré par apprentissage par renforcement (RL) pour exceller dans le raisonnement, le codage, les mathématiques et les tâches d'agent.
@@ -639,7 +779,7 @@ Modèle de 32 milliards de paramètres amélioré par apprentissage par renforce
 
 ---
 
-### DeepSeek-R1 14B
+### deepseek-r1:14b
 **DeepSeek AI • 14B paramètres • Contexte : 32 000 tokens**
 
 Version compacte et efficiente du modèle DeepSeek-R1, offrant un excellent compromis entre performance et légèreté pour les déploiements nécessitant flexibilité et réactivité.
@@ -664,7 +804,7 @@ Version compacte et efficiente du modèle DeepSeek-R1, offrant un excellent comp
 
 ---
 
-### DeepSeek-R1 32B
+### deepseek-r1:32b
 **DeepSeek AI • 32B paramètres • Contexte : 32 000 tokens**
 
 Version intermédiaire du modèle DeepSeek-R1 offrant un équilibre stratégique entre les capacités avancées de la version 70B et l'efficience de la version 14B, pour une polyvalence et performance optimales.
@@ -689,7 +829,7 @@ Version intermédiaire du modèle DeepSeek-R1 offrant un équilibre stratégique
 
 ---
 
-### Cogito 3B
+### cogito:3b
 **Deep Cogito • 3B paramètres • Contexte : 32 000 tokens**
 
 Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appareils à ressources limitées.
@@ -707,7 +847,7 @@ Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appa
 
 ---
 
-### Granite Embedding
+### granite-embedding:278m
 **IBM • 278M paramètres • Contexte : 512 tokens**
 
 Modèle d'embedding ultra-léger d'IBM pour la recherche sémantique et la classification.
@@ -723,7 +863,7 @@ Modèle d'embedding ultra-léger d'IBM pour la recherche sémantique et la class
 
 ---
 
-### Granite 3 Guardian 2B
+### granite3-guardian:2b
 **IBM • 2B paramètres • Contexte : 8 192 tokens**
 
 Modèle compact d'IBM spécialisé dans la sécurité et la conformité, détectant les risques et les contenus inappropriés.
@@ -739,7 +879,7 @@ Modèle compact d'IBM spécialisé dans la sécurité et la conformité, détect
 
 ---
 
-### Granite 3 Guardian 8B
+### granite3-guardian:8b
 **IBM • 8B paramètres • Contexte : 32 000 tokens**
 
 Modèle d'IBM spécialisé dans la sécurité et la conformité, offrant des capacités avancées de détection des risques.
@@ -755,7 +895,7 @@ Modèle d'IBM spécialisé dans la sécurité et la conformité, offrant des cap
 
 ---
 
-### Qwen 2.5 0.5B
+### qwen2.5:0.5b
 **Qwen Team • 0.5B paramètres • Contexte : 32 000 tokens**
 
 Micro-modèle ultra-léger de la famille Qwen 2.5, conçu pour une efficacité maximale sur appareils contraints.
@@ -773,7 +913,7 @@ Micro-modèle ultra-léger de la famille Qwen 2.5, conçu pour une efficacité m
 
 ---
 
-### Qwen 2.5 1.5B
+### qwen2.5:1.5b
 **Qwen Team • 1.5B paramètres • Contexte : 32 000 tokens**
 
 Modèle très compact de la famille Qwen 2.5, offrant un bon équilibre performance/taille pour les déploiements légers.
@@ -791,7 +931,7 @@ Modèle très compact de la famille Qwen 2.5, offrant un bon équilibre performa
 
 ---
 
-### Qwen 2.5 14B
+### qwen2.5:14b
 **Qwen Team • 14B paramètres • Contexte : 32 000 tokens**
 
 Modèle polyvalent de taille moyenne de la famille Qwen 2.5, bon équilibre performance/ressources.
@@ -809,7 +949,7 @@ Modèle polyvalent de taille moyenne de la famille Qwen 2.5, bon équilibre perf
 
 ---
 
-### Qwen 2.5 32B
+### qwen2.5:32b
 **Qwen Team • 32B paramètres • Contexte : 32 000 tokens**
 
 Modèle puissant de la famille Qwen 2.5, offrant des capacités avancées en compréhension et génération.
@@ -827,7 +967,7 @@ Modèle puissant de la famille Qwen 2.5, offrant des capacités avancées en com
 
 ---
 
-### Qwen 2.5 3B
+### qwen2.5:3b
 **Qwen Team • 3B paramètres • Contexte : 32 000 tokens**
 
 Modèle compact et efficace de la famille Qwen 2.5, adapté aux tâches générales sur ressources limitées.
@@ -845,7 +985,7 @@ Modèle compact et efficace de la famille Qwen 2.5, adapté aux tâches généra
 
 ---
 
-### Qwen3 0.6b
+### qwen3:0.6b
 **Qwen Team • 0.6B paramètres • Contexte : 32 000 tokens**
 
 Modèle compact et efficace de la famille Qwen3, adapté aux tâches générales sur ressources limitées.
@@ -863,7 +1003,7 @@ Modèle compact et efficace de la famille Qwen3, adapté aux tâches générales
 
 ---
 
-### Qwen3 1.7b
+### qwen3:1.7b
 **Qwen Team • 1.7B paramètres • Contexte : 32 000 tokens**
 
 Modèle très compact de la famille Qwen3, offrant un bon équilibre performance/taille pour les déploiements légers.
@@ -881,7 +1021,7 @@ Modèle très compact de la famille Qwen3, offrant un bon équilibre performance
 
 ---
 
-### Qwen3 4b
+### qwen3:4b
 **Qwen Team • 4B paramètres • Contexte : 32 000 tokens**
 
 Modèle compact de la famille Qwen3 offrant d'excellentes performances dans un format léger et économique.
@@ -899,7 +1039,55 @@ Modèle compact de la famille Qwen3 offrant d'excellentes performances dans un f
 
 ---
 
-### Qwen3 8b
+### qwen3-2507-think:4b
+**Qwen Team • 4B paramètres • Contexte : 250 000 tokens**
+
+Modèle Qwen3-4B optimisé pour le raisonnement, avec des performances améliorées sur les tâches logiques, les mathématiques, la science et le code, et un contexte étendu à 250K tokens.
+
+**Spécifications techniques :**
+- **Vitesse** : 70 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 1.9 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ✅ Raisonnement • ❌ Sécurité
+
+**Tags :** `Agent` `Raisonnement` `Grand Contexte` `Compact` `Rapide`
+
+**Cas d'usage :**
+- Tâches de raisonnement très complexes (logique, maths, science, code).
+- Agents conversationnels avec un historique de conversation très étendu (256k tokens).
+- Analyse de documents très volumineux avec raisonnement profond.
+- Intégration avec des outils externes via function calling sur de très grands contextes.
+
+---
+
+### qwen3-2507:4b
+**Qwen Team • 4B paramètres • Contexte : 250 000 tokens**
+
+Version mise à jour du mode non-pensée de Qwen3-4B, avec des améliorations significatives des capacités générales, une couverture de connaissances étendue et un meilleur alignement avec les préférences des utilisateurs.
+
+**Spécifications techniques :**
+- **Vitesse** : 70 tokens/seconde tokens/seconde ⚡
+- **Consommation** : 1.9 kWh/million tokens
+- **Licence** : Apache 2.0
+- **Localisation** : FR 🇫🇷
+
+**Capacités :**
+✅ Outils/Agent • ❌ Vision • ❌ Raisonnement • ❌ Sécurité
+
+**Tags :** `Agent` `Grand Contexte` `Compact` `Rapide` `Multilingue`
+
+**Cas d'usage :**
+- Tâches générales nécessitant un suivi d'instructions précis et un raisonnement logique.
+- Applications multilingues avec une large couverture de connaissances.
+- Génération de texte de haute qualité pour des tâches ouvertes et subjectives.
+- Analyse de documents très volumineux grâce au contexte de 256k tokens.
+
+---
+
+### qwen3:8b
 **Qwen Team • 8B paramètres • Contexte : 32 000 tokens**
 
 Modèle Qwen3 8B offrant un bon équilibre entre performance et efficacité pour les tâches générales.
@@ -917,7 +1105,7 @@ Modèle Qwen3 8B offrant un bon équilibre entre performance et efficacité pour
 
 ---
 
-### Qwen2.5-VL 3B
+### qwen2.5vl:3b
 **Qwen Team • 3.8B paramètres • Contexte : 128 000 tokens**
 
 Modèle Vision-Langage compact, solution performante pour l'IA en périphérie (edge AI).
@@ -935,7 +1123,7 @@ Modèle Vision-Langage compact, solution performante pour l'IA en périphérie (
 
 ---
 
-### Qwen2.5-VL 7B
+### qwen2.5vl:7b
 **Qwen Team • 7B (8.3B) paramètres • Contexte : 128 000 tokens**
 
 Modèle Vision-Langage performant, surpassant GPT-4o-mini sur certaines tâches.
@@ -953,7 +1141,7 @@ Modèle Vision-Langage performant, surpassant GPT-4o-mini sur certaines tâches.
 
 ---
 
-### Foundation-Sec-8B
+### hf.co/roadus/Foundation-Sec-8B-Q4_K_M-GGUF:Q4_K_M
 **Foundation AI — Cisco • 8B paramètres • Contexte : 16 384 tokens**
 
 Modèle de langage spécialisé pour la cybersécurité, optimisé pour l'efficacité.
@@ -971,7 +1159,7 @@ Modèle de langage spécialisé pour la cybersécurité, optimisé pour l'effica
 
 ---
 
-### devstral 24B
+### devstral:24b
 **Mistral AI & All Hands AI • 24B paramètres • Contexte : 120 000 tokens**
 
 Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
@@ -994,7 +1182,7 @@ Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
 
 ---
 
-### Cogito 8B
+### cogito:8b
 **Deep Cogito • 8B paramètres • Contexte : 32 000 tokens**
 
 Modèle de taille intermédiaire de la famille Cogito, offrant un bon équilibre entre les capacités de raisonnement et l'efficacité.
@@ -1012,7 +1200,7 @@ Modèle de taille intermédiaire de la famille Cogito, offrant un bon équilibre
 
 ---
 
-### Llama 3.1 8B
+### llama3.1:8b
 **Meta • 8B paramètres • Contexte : 32 000 tokens**
 
 Modèle de base de la famille Llama 3.1, offrant des performances solides pour sa taille.
@@ -1030,7 +1218,7 @@ Modèle de base de la famille Llama 3.1, offrant des performances solides pour s
 
 ---
 
-### Phi-4 Reasoning 14B
+### phi4-reasoning:14b
 **Microsoft • 14B paramètres • Contexte : 32 000 tokens**
 
 Modèle de la famille Phi de Microsoft, spécialisé dans le raisonnement complexe et les mathématiques.
@@ -1055,8 +1243,8 @@ Chatbots et assistants capables de communiquer dans plusieurs langues avec déte
 
 **Modèles recommandés :**
 - Llama 3.3
-- Mistral Small 3.1
-- Qwen 2.5
+- Mistral Small 3.2
+- Qwen 3
 - Granite 3.3
 
 ### Analyse de documents longs
@@ -1064,7 +1252,7 @@ Traitement de documents volumineux (>100 pages) avec maintien du contexte sur l'
 
 **Modèles recommandés :**
 - Gemma 3
-- DeepSeek-R1
+- Qwen3
 - Granite 3.3
 
 ### Programmation et développement
@@ -1073,7 +1261,7 @@ Génération et optimisation de code dans multiples langages, débogage, refacto
 **Modèles recommandés :**
 - DeepCoder
 - QwQ
-- DeepSeek-R1
+- Qwen3 coder
 - Granite 3.3
 - Devstral
 
@@ -1082,7 +1270,7 @@ Traitement direct d'images et documents visuels sans pré-traitement OCR, interp
 
 **Modèles recommandés :**
 - Granite 3.2 Vision
-- Mistral Small 3.1
+- Mistral Small 3.2
 - Gemma 3
 - Qwen2.5-VL
 
