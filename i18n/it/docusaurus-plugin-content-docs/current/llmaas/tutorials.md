@@ -891,6 +891,38 @@ def setup_and_run_llamaindex():
 if __name__ == "__main__":
     setup_and_run_llamaindex()
 
+### 8. Configurazione dell'estensione CLINE per VSCode
+
+Questo tutorial ti guida nella configurazione dell'estensione CLINE in Visual Studio Code per utilizzare i modelli linguistici di Cloud Temple direttamente dal tuo editor.
+
+#### Passaggi di configurazione
+
+1.  **Apri le impostazioni di CLINE**: In VSCode, apri le impostazioni dell'estensione CLINE.
+2.  **Crea un nuovo modello**: Aggiungi una nuova configurazione del modello.
+3.  **Compila i campi**: Configura i campi come segue, basandoti sull'immagine qui sotto.
+
+    ![Configurazione di CLINE per LLMaaS](./images/cline_configuration.png)
+
+    *   **API Provider**: Seleziona `OpenAI Compatible`.
+    *   **Base URL**: Inserisci l'endpoint dell'API LLMaaS di Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
+    *   **OpenAI Compatible API Key**: Incolla la chiave API che hai generato dalla console di Cloud Temple.
+    
+    :::tip Generazione della chiave API
+    Per generare la tua chiave API, vai alla console di Cloud Temple, sezione **LLMaaS** > **Chiavi API**, quindi fai clic su **"Crea una chiave API"**.
+    
+    ![Creazione di una chiave API dalla console](./images/console_create_api_key.png)
+    :::
+    
+    *   **Model ID**: Specifica il modello che desideri utilizzare, ad esempio `qwen3-coder:30b`. Puoi trovare l'elenco dei modelli disponibili nella sezione [Modelli](./models.md).
+    *   **Model Configuration**:
+        *   **Supports Images**: Seleziona questa casella se il modello supporta le immagini.
+        *   **Supports browser use**: Seleziona questa casella.
+        *   **Context Window Size**: Indica la dimensione della finestra di contesto del modello (es: `128000`).
+        *   **Max Output Tokens**: Lascia `-1` per un output non limitato per impostazione predefinita.
+        *   **Temperature**: Regola la temperatura in base alle tue esigenze (es: `0`).
+
+Ora puoi selezionare un modello in CLINE e utilizzarlo per generare codice, rispondere a domande, ecc.
+
 ## 💡 Esempi avanzati
 
 Nel seguente repository GitHub troverai una raccolta di esempi di codice e script che dimostrano le diverse funzionalità e casi d'uso dell'offerta LLM as a Service (LLMaaS) di Cloud Temple:
