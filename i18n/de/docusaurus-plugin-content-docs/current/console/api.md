@@ -130,78 +130,50 @@ completed: {
 
 __Hinweis: Der Identifikator (UUIDv4) der erstellten Ressource steht im Antwortinhalt der Aktivität zur Verfügung, sobald diese abgeschlossen ist.__
 
-### Einschränkungen der API
+## API-Limits
 
-Dieses Dokument beschreibt die Grenzen und Beschränkungen der angebotenen APIs. Es ist wichtig, diese Begrenzungen zu verstehen, um effektiv mit unseren Dienstleistungen zu arbeiten und potenzielle Probleme zu vermeiden.
+### Warum gibt es Limits?
 
-#### 1. Rate Limiting
+Die Cloud Temple-Konsole definiert __Obergrenzen für das Anfragevolumen__, das ein Benutzer innerhalb eines bestimmten Zeitraums an die API richten kann. Die Einführung dieser Ratenbegrenzungen ist eine gängige Praxis in der API-Verwaltung und wird aus mehreren wesentlichen Gründen angewendet:
 
-Unsere API implementiert ein Rate Limiting, um die Last auf unsere Server zu verteilen und sicherzustellen, dass alle Nutzer gleichberechtigt zugreifen können. Jeder Benutzer hat einen täglichen Rate Limit, der sich anhand seiner Abonnementstyp (Standard, Premium, Enterprise) berechnet wird. Übersteigen Sie diesen Limit, werden Ihre Anfragen geblockiert oder verzögert.
+- __Missbrauchsprävention__: Diese Limits tragen dazu bei, die Integrität der API zu schützen, indem sie missbräuchliche oder unsachgemäße Nutzungen verhindern, die ihren Betrieb beeinträchtigen könnten.
+- __Sicherstellung der Dienstqualität__: Durch die Regulierung des Zugriffs auf die API gewährleisten wir eine gerechte Verteilung der Ressourcen, sodass alle Benutzer von einer stabilen und leistungsstarken Erfahrung profitieren können.
 
-#### 2. Datenvolumen
+Nehmen wir als Beispiel ein schlecht konzipiertes oder ineffizientes Skript, das wiederholte Aufrufe an die API versucht und dabei Gefahr läuft, die Ressourcen zu überlasten und die Leistung zu beeinträchtigen. Durch die Festlegung von Anfrageschwellenwerten verhindern wir solche Situationen und gewährleisten die Aufrechterhaltung eines __flüssigen und unterbrechungsfreien Dienstes__ für alle unsere Kunden.
 
-Es gibt ein maximales Datenvolumen pro Tag, das von Ihrem Abonnement abhängt. Übersteigen Sie dieses Volumen, können zusätzliche Gebühren anfallen. Bitte beachten Sie, dass dieses Limit je nach API-Endpunkt variieren kann.
+### Was sind die Ratenlimits für die API der Cloud Temple-Konsole?
 
-#### 3. Datenaktualisierung
+Wir wenden quantitative Beschränkungen für die Interaktionen der Benutzer mit der Konsole für jedes Produkt an.
 
-Einige APIs bieten eine zeitbasierte Aktualisierungsrate für bestimmte Ressourcen. Diese Grenzen stellen sicher, dass die Daten aktuell und relevant bleiben. Übersteigen Sie diese Grenzen, können Ihre Anfragen verzögert oder abgelehnt werden.
+Die Limits sind in __Anfragen pro Sekunde (A/s) und pro Quell-IP__ definiert. Bei Überschreiten des Grenzwertes antwortet das System mit dem HTTP-Fehlercode 429, der anzeigt, dass das Limit der zulässigen Anfragen überschritten wurde.
 
-#### 4. Authentifizierung
+Hier sind die definierten Limits:
 
-Die Authentifizierung erfolgt über API-Schlüssel. Bitte beachten Sie, dass dieses Schlüsselpaar für jede Anfrabe benötigt wird und nicht wiederholt werden kann. Eine unsachgemäße Verwaltung der Schlüssel kann zu einer vorübergehenden oder dauerhaften Blockierung Ihres Kontos führen.
+| Produkt | Limit |
+|---|---|
+| Cloud Temple Konsole | 25 A/s |
+| Identität (IAM) | 25 A/s |
+| IaaS VMware | 25 A/s |
+| OpenIaaS | 25 A/s |
+| S3 | 25 A/s |
+| Openshift | 25 A/s |
+| Bastion | 25 A/s |
+| Netzwerk | 25 A/s |
+| Hosting | 25 A/s |
+| Marktplatz | 25 A/s |
+| Support | 25 A/s |
+| Benachrichtigung | 25 A/s |
+| LLMaaS | 25 A/s |
 
-#### 5. Fehlerbehandlung
+### Spezifische Routen
 
-Wir bieten eine detaillierte Fehlerbehandlung, um Ihnen bei der Diagnose und Behebung von Problemen zu helfen. Bitte beachten Sie, dass einige Fehlercodes spezifisch für bestimmte Abonnementtypen oder API-Endpunkte sind.
+Bestimmte API-Endpunkte, insbesondere solche, die mit der Authentifizierung oder sensiblen Aktionen zusammenhängen, haben restriktivere Limits, um die Sicherheit zu erhöhen und die Stabilität zu gewährleisten.
 
-#### 6. Nutzungsbedingungen
-
-Die Nutzung unserer APIs unterliegt den Nutzungsbedingungen und Datenschutzerklärungen, die Sie auf unserer Website finden können. Bitte beachten Sie, dass die Verletzung dieser Bedingungen zu einer vorübergehenden oder dauerhaften Blockierung Ihres Kontos führen kann.
-
-#### 7. Support und Wartung
-
-Wir bieten technischen Support für unsere APIs an, aber bitte beachten Sie, dass die Reaktionszeit je nach Abonnementstyp variieren kann. Unsere Wartungs- und Updatesdienste sind regelmäßig durchgeführt, um eine optimale Leistung zu gewährleisten.
-
-#### 8. API-Änderungen
-
-Wir behalten uns das Recht vor, unsere APIs jederzeit zu ändern oder zu erweitern. Wir werden unsere Nutzer über solche Änderungen informieren und gegebenenfalls angemessene Anpassungszeiträume einräumen.
-
-#### 9. Datenschutz
-
-Wir verarbeiten personenbezogene Daten gemäß den geltenden Datenschutzbestimmungen. Bitte beachten Sie, dass die Verwendung unserer APIs unter der Voraussetzung Ihrer Einhaltung dieser Bestimmungen erfolgt.
-
-#### 10. Zahlungsbedingungen
-
-Bitte beachten Sie, dass alle Transaktionen mit unseren API-Diensten in [Währung] durchgeführt werden und die Zahlungsinformationen gemäß den Bedingungen unserer Abonnementpläne verarbeitet werden.
-
-Diese Grenzen sind dazu gedacht, eine stabile und effiziente Nutzung unserer APIs zu gewährleisten. Für weitere Informationen oder spezifische Anfragen wenden Sie sich bitte an unser Support-Team.
-
-### Warum diese Grenzen?
-
-Die Cloud-Tempel-Konsole definiert __Grenzen für den Anfragenausmaß__, den ein Benutzer an die API innerhalb einer bestimmten Zeitspanne stellen kann. Die Einführung dieser Fréquence-Grenzen ist eine übliche Praxis in der Verwaltung von APIs, um mehrere wichtige Gründe zu erfüllen:
-
-- __Prävention von Missbrauch__ : Diese Begrenzungen tragen zur Erhaltung der Integrität der API bei, indem sie unangemessene oder fehlerhafte Nutzungen verhindern, die dessen Funktionalität beeinträchtigen könnten.
-- __Garantie von Dienstleistungsqualität__ : Durch die Kontrolle des Zugriffs auf die API stellen wir sicher, dass Ressourcen gleichmäßig verteilt werden und allen Benutzern eine stabile und leistungsstarke Erfahrung bieten.
-
-Betrachten wir zum Beispiel einen schlecht konzipierten oder ineffizienten Skript, das wiederholt an die API appelliert, das das System überlasten und die Leistung beeinträchtigen könnte. Durch die Festlegung von Anfragegrenzen verhindern wir solche Situationen und gewährleisten ein __flüssiges und ununterbrochenes Dienstleistungsangebot__ für unser gesamtes Kundenkollektif.
-
-### Welche Rate-Limits für die API der Cloud-Tempel-Konsole gelten?
-
-Wir legen Quotas an Interaktionen mit unserer Konsole fest, die von den Benutzern für jeden Produkt genutzt werden. Diese Grenzen sind in __Anfragen pro Sekunde (r/s) und IP-Quelle__ definiert. Übersteigen Sie diese Grenze, erhalten Sie ein HTTP-Fehlercode 429, der anzeigt, dass die zulässige Anzahl von Anfragen überschritten wurde.
-
-Hier sind die festgelegten Grenzen:
-
-| Produkt                | Grenzwertprozent |
-|-----------------------|------------------|
-| Cloud-Tempel-Konsole  | 60 r/s           |
-| Identität (IAM)        | 60 r/s           |
-| IaaS - Berechnung     | 60 r/s           |
-| IaaS - Speicher       | 20 r/s           |
-| IaaS - Backup        | 60 r/s           |
-| PaaS - S3            | 60 r/s           |
-| PaaS - OpenShift      | 60 r/s           |
-| Netzwerk             | 60 r/s           |
-| Hosting              | 60 r/s           |
+| Route | Limit |
+|---|---|
+| Authentifizierung (IAM) | 5 A/s |
+| IaaS - Storage (Datastores) | 20 A/s |
+| Marktplatz (Kontakt) | 1 A/min - 5 A/h |
 
 ### Wie funktionieren die Rate Limits?
 
