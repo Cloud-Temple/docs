@@ -106,6 +106,41 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     ![S3 Files](https://link-to-S3-Files-image)
     In the '__Parameters__' tab, you can see detailed information about your S3 bucket:
     ![S3 Parameters](https://link-to-S3-Params-image)
+
+    **Important note on retention**: The retention concept corresponds to the data protection duration, not a scheduled deletion. Data remains accessible throughout the retention period. To trigger automatic data deletion at the end of the retention period, it is necessary to define a lifecycle policy.
+
+    **Lifecycle policy example** (`lifecycle.json`):
+
+    **Prerequisites**:
+
+    - The storage account '__global access key__' must be used as it must have '__s3:PutLifecycleConfiguration__' and '__s3:GetLifecycleConfiguration__' rights on the bucket.
+
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "DeleteOldObjects",
+          "Prefix": "",  // "" = entire bucket, otherwise set a specific prefix
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30  // delete after 30 days
+          },
+          "NoncurrentVersionExpiration": {
+            "NoncurrentDays": 7  // delete old versions 7 days after new version creation
+          }
+        }
+      ]
+    }
+    ```
+
+    If you use AWS CLI:
+
+    ```bash
+    aws --endpoint-url https://<ecs-endpoint> \
+    s3api put-bucket-lifecycle-configuration \
+    --bucket <bucket-name> \
+    --lifecycle-configuration file://lifecycle.json
+    ```
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
