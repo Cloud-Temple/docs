@@ -106,6 +106,41 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     <img src={S3Files} />
     Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
     <img src={S3Params} />
+
+    **Note importante** : La notion de '__Protection de suppression__' correspond à la durée de protection de la donnée, et non à une suppression programmée. Les données restent accessibles pendant toute la période de configurée. Pour provoquer une suppression automatique des données à l'issue de la période de rétention, il est nécessaire de définir une politique de cycle de vie (lifecycle).
+
+    **Exemple de politique de cycle de vie** (`lifecycle.json`):
+
+    **Prérequis**:
+
+    - le compte de stockage '__clé d'accès global__' doit être utilisé car il doit avoir les droits '__s3:PutLifecycleConfiguration__' et '__s3:GetLifecycleConfiguration__' sur le bucket.
+
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "DeleteOldObjects",
+          "Prefix": "",  // "" = tout le bucket, sinon mettre un préfixe spécifique
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30  // supprime après 30 jours
+          },
+          "NoncurrentVersionExpiration": {
+            "NoncurrentDays": 7  // supprime les anciennes versions 7 jours après création d'une nouvelle
+          }
+        }
+      ]
+    }
+    ```
+
+    Si vous utilisez AWS CLI :
+
+    ```bash
+    aws --endpoint-url https://<ecs-endpoint> \
+    s3api put-bucket-lifecycle-configuration \
+    --bucket <nom-du-bucket> \
+    --lifecycle-configuration file://lifecycle.json
+    ```
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
@@ -161,7 +196,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
 
 </Tabs>
 
-## Supprimer un fichier d’un bucket
+## Supprimer un fichier d'un bucket
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
