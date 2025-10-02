@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
@@ -60,7 +59,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Tutorials',
-          key: 'tutorials-iam',
           items: [
             'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
@@ -106,7 +104,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Tutorials',
-          key: 'tutorials-marketplace',
           items: [
             'marketplace/tutorials/deploy_openiaas',
             'marketplace/tutorials/deploy_vmware',
@@ -145,7 +142,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Tutorials',
-          key: 'tutorials-iaas-opensource',
           items: [
             {
               type: 'category',
@@ -169,7 +165,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Tutorials',
-          key: 'tutorials-iaas-vmware',
           items: [
             {
               type: 'category',
@@ -196,7 +191,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Tutorials',
-          key: 'tutorials-paas-openshift',
           items: [
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
@@ -243,7 +237,6 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: 'Tutorials',
-              key: 'tutorials-network-internet',
               items: [
                 'network/internet/tutorials/forti',
                 'network/internet/tutorials/pfSense',
