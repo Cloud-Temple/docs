@@ -30,11 +30,11 @@ Cliccando su visualizzazione rapida, troverete gli interventi in corso. È anche
 
 ## Monitoraggio degli interventi pianificati
 
-La pagina Interventi è composta da due schede. La prima scheda permette di visualizzare gli interventi previsti per i prossimi 30 giorni e gli interventi in corso.
+La pagina Interventi è composta da due schede. La prima scheda permette di visualizzare gli interventi previsti per i prossimi 60 giorni e gli interventi in corso.
 
 <img src={shivaInterventionMenu04} />
 
-Gli interventi terminati, invece, sono visibili nella seconda scheda 'Terminato'.
+Gli interventi terminati, invece, sono visibili nella seconda scheda 'Terminato'. Gli interventi terminati sono conservati e accessibili per 60 giorni nel passato, permettendo un monitoraggio completo della cronologia delle operazioni di manutenzione.
 
 <img src={shivaInterventionMenu05} />
 
@@ -54,7 +54,7 @@ Un pulsante __'Saperne di più'__ reindirizza verso la pagina pubblica di monito
 
 <img src={shivaIncident_002} />
 
-È possibile ottenere i rapporti degli incidenti globali. L'accesso a questi rapporti richiede il permesso specifico '__incident_management__'.
+È possibile ottenere i rapporti degli incidenti globali. L'accesso a questi rapporti richiede il permesso specifico '__incident_management__'. I rapporti degli incidenti globali sono archiviati e accessibili per 60 giorni dopo la loro risoluzione, garantendo una tracciabilità completa degli eventi di sistema.
 
 Ecco un esempio della scheda che mostra questi rapporti:
 
@@ -64,7 +64,7 @@ Ecco un esempio della scheda che mostra questi rapporti:
 
 La visibilità degli incidenti specifici a un perimetro cliente richiede il permesso __incident_read__. Questi incidenti sono rappresentati da un'icona dedicata, accompagnata da un badge rosso che indica il numero di incidenti in corso.
 
-L'icona è cliccabile, permettendo di elencare i ticket associati agli incidenti. Ogni ticket include un link ai dettagli dell'incidente, offrendo la possibilità di seguire l'avanzamento della loro risoluzione:
+L'icona è cliccabile, permettendo di elencare i ticket associati agli incidenti. Ogni ticket include un link ai dettagli dell'incidente, offrendo la possibilità di seguire l'avanzamento della loro risoluzione. Gli incidenti risolti e i loro verbali (CR) rimangono accessibili per 60 giorni, permettendo un'analisi retrospettiva e il monitoraggio delle azioni correttive implementate.
 
 <img src={shivaIncident_004} />
 

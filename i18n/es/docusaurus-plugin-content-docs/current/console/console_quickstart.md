@@ -62,7 +62,7 @@ La primera etapa es la identificación del tipo de solicitud de soporte:
 
 A continuación, tiene la posibilidad de dar más detalles y adjuntar archivos (imagen o registros, por ejemplo).
 
-El cliente también puede especificar un nivel de criticidad (P1 a P4) en la descripción del ticket, en caso de un incidente, tal como:
+El cliente también puede especificar un nivel de criticidad (P1 a P4) en la descripción del ticket, en caso de un incidente de seguridad, tal como:
 
 __CRÍTICO (P1)__:
 

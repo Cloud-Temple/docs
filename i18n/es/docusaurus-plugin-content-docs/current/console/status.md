@@ -30,11 +30,11 @@ Al hacer clic en visualización rápida, encontrarás las intervenciones en curs
 
 ## Seguimiento de intervenciones programadas
 
-La página Intervenciones está compuesta por dos pestañas. La primera pestaña permite visualizar las intervenciones previstas en los próximos 30 días y las intervenciones en curso.
+La página Intervenciones está compuesta por dos pestañas. La primera pestaña permite visualizar las intervenciones previstas en los próximos 60 días y las intervenciones en curso.
 
 <img src={shivaInterventionMenu04} />
 
-Las intervenciones finalizadas, por su parte, son visibles en la segunda pestaña 'Finalizado'.
+Las intervenciones finalizadas, por su parte, son visibles en la segunda pestaña 'Finalizado'. Las intervenciones finalizadas se conservan y son accesibles durante 60 días en el pasado, permitiendo un seguimiento completo del historial de operaciones de mantenimiento.
 
 <img src={shivaInterventionMenu05} />
 
@@ -54,7 +54,7 @@ Un botón __'Más información'__ redirige a la página pública de seguimiento 
 
 <img src={shivaIncident_002} />
 
-Es posible obtener informes sobre los incidentes globales. El acceso a estos informes requiere la permisión específica '__incident_management__'.
+Es posible obtener informes sobre los incidentes globales. El acceso a estos informes requiere la permisión específica '__incident_management__'. Los informes de incidentes globales se archivan y son accesibles durante 60 días después de su resolución, garantizando una trazabilidad completa de los eventos del sistema.
 
 Aquí hay un ejemplo de la pestaña que muestra estos informes:
 
@@ -64,7 +64,7 @@ Aquí hay un ejemplo de la pestaña que muestra estos informes:
 
 La visibilidad de los incidentes específicos de un área del cliente requiere la permisión __incident_read__. Estos incidentes se representan mediante un icono dedicado, acompañado de un indicador rojo que muestra el número de incidentes en curso.
 
-El icono es clicable, permitiendo listar los tickets asociados a los incidentes. Cada ticket incluye un enlace a los detalles del incidente, ofreciendo la posibilidad de seguir el avance de su resolución:
+El icono es clicable, permitiendo listar los tickets asociados a los incidentes. Cada ticket incluye un enlace a los detalles del incidente, ofreciendo la posibilidad de seguir el avance de su resolución. Los incidentes resueltos y sus informes (CRs) permanecen accesibles durante 60 días, permitiendo un análisis retrospectivo y seguimiento de las acciones correctivas implementadas.
 
 <img src={shivaIncident_004} />
 
