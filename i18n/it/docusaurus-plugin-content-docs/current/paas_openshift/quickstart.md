@@ -55,7 +55,7 @@ Seguendo questi passaggi, sarai in grado di implementare con successo una piatta
 
 ### Autorizzazione degli accessi
 
-È fondamentale che l'amministratore del [Tenant](console/iam/concepts.md#tenant) conceda il diritto di gestione della piattaforma Openshift all'utente amministratore Openshift per potervi accedere:
+È indispensabile che l'amministratore del [Tenant](../console/iam/concepts.md#tenant) conceda i diritti di lettura e gestione della piattaforma Openshift all'utente amministratore Openshift per potervi accedere:
 
 <img src={oshiftRights} />
 
