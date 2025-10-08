@@ -106,7 +106,7 @@ The first step is to identify the type of support request:
 
 You can then provide additional details and include files (images or logs for example).
 
-The client can also specify a criticality level (P1 to P4) in the ticket description, in the case of an incident, as follows:
+The client can also specify a criticality level (P1 to P4) in the ticket description, in the case of a security incident, as follows:
 
 __CRITICAL (P1)__:
 
