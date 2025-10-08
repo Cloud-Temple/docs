@@ -51,7 +51,7 @@ By following these steps, you can successfully deploy a Red Hat OpenShift platfo
 
 ### Access Rights Assignment
 
-It is essential that the [Tenant](../console/iam/concepts.md#tenant) administrator grants management rights to the OpenShift platform to the OpenShift administrator user in order for them to access it:
+It is essential that the [Tenant](../console/iam/concepts.md#tenant) administrator grants read and management rights to the OpenShift platform to the OpenShift administrator user in order for them to access it:
 
 <img src={oshiftRights} />
 
