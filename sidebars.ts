@@ -108,6 +108,8 @@ const sidebars: SidebarsConfig = {
             'marketplace/tutorials/deploy_openiaas',
             'marketplace/tutorials/deploy_vmware',
             'marketplace/tutorials/contact_partner',
+            'marketplace/tutorials/customize_image_openiaas',
+            'marketplace/tutorials/customize_image_vmware',
           ],
         },
       ],
