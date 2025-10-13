@@ -55,10 +55,6 @@ La consola integra funciones avanzadas para:
 - Filtrar accesos para responder a requisitos regulatorios,
 - Reforzar sus políticas de seguridad.
 
-### Integración multi-nube
-
-Gracias a sus capacidades de hibridación, la consola facilita la gestión de entornos multi-nube integrando servicios de terceros como **Microsoft Azure** y **Amazon AWS**, todo a través de una interfaz única.
-
 ### Asistencia técnica y soporte al cliente
 
 La consola ofrece acceso directo a sus carpetas de asistencia técnica. Usted dispone de:

@@ -106,6 +106,41 @@ Il Tempio del Servizio di Obiettivi Cloud SecNumCloud è un servizio di archivia
     ![S3 Files](https://link-to-S3-Files-image)
     Nell'onglet '__Parametri__' è possibile vedere i dettagli delle informazioni del bucket S3:
     ![S3 Parameters](https://link-to-S3-Parameters-image)
+
+    **Nota importante sulla ritenzione**: Il concetto di ritenzione corrisponde alla durata di protezione dei dati, non a una cancellazione programmata. I dati rimangono accessibili per tutto il periodo di ritenzione. Per provocare una cancellazione automatica dei dati alla fine del periodo di ritenzione, è necessario definire una politica del ciclo di vita (lifecycle).
+
+    **Esempio di politica del ciclo di vita** (`lifecycle.json`):
+
+    **Prerequisiti**:
+
+    - Deve essere utilizzato l'account di archiviazione '__chiave di accesso globale__' in quanto deve avere i diritti '__s3:PutLifecycleConfiguration__' e '__s3:GetLifecycleConfiguration__' sul bucket.
+
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "DeleteOldObjects",
+          "Prefix": "",  // "" = tutto il bucket, altrimenti mettere un prefisso specifico
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30  // cancella dopo 30 giorni
+          },
+          "NoncurrentVersionExpiration": {
+            "NoncurrentDays": 7  // cancella le vecchie versioni 7 giorni dopo la creazione di una nuova
+          }
+        }
+      ]
+    }
+    ```
+
+    Se usi AWS CLI:
+
+    ```bash
+    aws --endpoint-url https://<ecs-endpoint> \
+    s3api put-bucket-lifecycle-configuration \
+    --bucket <nome-del-bucket> \
+    --lifecycle-configuration file://lifecycle.json
+    ```
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

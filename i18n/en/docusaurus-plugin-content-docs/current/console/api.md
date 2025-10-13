@@ -125,61 +125,50 @@ The `__state__` object can take different forms depending on the activity's stat
 
 __Note:__ The identifier (UUIDv4) of the created resource is available in the activity's result once it’s completed.
 
-### API Limitations
+## API Limits
 
-This section outlines the limitations associated with our API. Understanding these constraints is crucial for effective utilization and optimization of your application's interaction with our services.
+### Why are there limits?
 
-1. **Rate Limiting**:
-   - Each user account has a built-in rate limit to prevent abuse and ensure fair usage across all clients. The default limit is 60 requests per minute per IP address. Exceeding this threshold may result in temporary throttling or increased latency for subsequent requests until the quota resets.
+The Cloud Temple console defines __limits on the volume of requests__ a user can make to the API over a specific period. The introduction of these rate limits is a common practice in API management, adopted for several essential reasons:
 
-2. **Quota Limits**:
-   - Certain API endpoints are subject to daily, weekly, and monthly quotas based on your subscription plan. These limits vary depending on the tier of service you have subscribed to. Exceeding these limits may require additional configuration or escalation with our support team.
+- __Abuse Prevention__: These limits help safeguard the integrity of the API by preventing abusive or improper use that could compromise its operation.
+- __Ensuring Quality of Service__: By regulating access to the API, we ensure an equitable distribution of resources, allowing all users to benefit from a stable and high-performance experience.
 
-3. **Data Size Restrictions**:
-   - For certain operations (e.g., large data retrieval), there are size limitations imposed by our infrastructure. If your request exceeds these thresholds, consider breaking down the request into smaller chunks or using pagination features provided in the API documentation.
+For example, a poorly designed or inefficient script making repetitive calls to the API could risk saturating resources and degrading performance. By establishing request thresholds, we prevent these situations and ensure the maintenance of a __smooth and uninterrupted service__ for all our customers.
 
-4. **Authentication and Authorization**:
-   - Ensure that all requests include valid authentication tokens. Incorrect or expired tokens will result in a 401 Unauthorized response. Additionally, ensure that the user account associated with the token has the necessary permissions to perform the requested action.
-
-5. **Error Handling**:
-   - Familiarize yourself with common error codes and messages. These provide insights into potential issues such as invalid parameters, unsupported operations, or service unavailability. Refer to our API documentation for detailed error codes and troubleshooting guides.
-
-6. **Versioning**:
-   - Our API follows versioning to allow for backward compatibility while introducing new features. Ensure that your application is compatible with the version you are using. Migrating to a newer version may require adjustments in your code, as some endpoints or parameters might change.
-
-7. **Documentation and Updates**:
-   - Always refer to the latest API documentation for the most accurate and up-to-date information regarding limits, changes, and new features. Outdated documentation can lead to misinterpretation of limitations or incorrect usage patterns.
-
-By adhering to these guidelines, you can optimize your application's interaction with our APIs, ensuring efficient resource utilization and compliance with service terms. Should you encounter specific challenges related to API usage, please contact our support team for personalized assistance.
-
-### Why Limits?
-
-The Cloud Temple console sets __volume limits on requests__ that a user can make to the API over a specified period. Establishing these rate limits is a common practice in API management, implemented for several key reasons:
-
-- **Prevention of Abuse**: These caps contribute to safeguarding the integrity of the API by preventing abusive or poorly designed usages that could compromise its operation.
-- **Ensuring Service Quality**: By regulating access to the API, we ensure a fair distribution of resources, allowing all users to enjoy a stable and high-performing experience.
-
-Consider an example of a poorly designed script repeatedly calling the API, potentially overwhelming resources and degrading performance. By setting request limits, we prevent such scenarios and guarantee a smooth, uninterrupted service for our entire clientele.
-
-### Rate Limiting for Cloud Temple Console API
+### What are the rate limits for the Cloud Temple console API?
 
 We apply quantitative restrictions on user interactions with the console for each product.
 
-These limits are defined in __requests per second (r/s) and by IP source__. Once the threshold is exceeded, the system will respond with an HTTP 429 error code, indicating that the authorized request limit has been surpassed.
+The limits are defined in __requests per second (r/s) and by source IP__. Beyond the limit threshold, the system will respond with an HTTP 429 error code, signaling that the authorized request limit has been exceeded.
 
 Here are the defined limits:
 
-| Product              | Limit   |
-|----------------------|---------|
-| Cloud Temple Console | 60 r/s  |
-| IAM                   | 60 r/s  |
-| IaaS - Compute       | 60 r/s  |
-| IaaS - Storage       | 20 r/s  |
-| IaaS - Backup       | 60 r/s  |
-| PaaS - S3           | 60 r/s  |
-| PaaS - OpenShift     | 60 r/s  |
-| Network             | 60 r/s  |
-| Hosting              | 60 r/s  |
+| Product | Limit |
+|---|---|
+| Cloud Temple Console | 25 r/s |
+| Identity (IAM) | 25 r/s |
+| IaaS VMware | 25 r/s |
+| OpenIaaS | 25 r/s |
+| S3 | 25 r/s |
+| Openshift | 25 r/s |
+| Bastion | 25 r/s |
+| Network | 25 r/s |
+| Hosting | 25 r/s |
+| Marketplace | 25 r/s |
+| Support | 25 r/s |
+| Notification | 25 r/s |
+| LLMaaS | 25 r/s |
+
+### Specific Routes
+
+Certain specific API endpoints, particularly those related to authentication or sensitive actions, have more restrictive limits to enhance security and ensure stability.
+
+| Route | Limit |
+|---|---|
+| Authentication (IAM) | 5 r/s |
+| IaaS - Storage (Datastores) | 20 r/s |
+| Marketplace (Contact) | 1 r/min - 5 r/h |
 
 ### How do rate limits work?
 

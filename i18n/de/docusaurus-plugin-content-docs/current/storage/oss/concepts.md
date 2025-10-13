@@ -1,143 +1,180 @@
+
+
 ---
 title: Konzepte
 ---
 
+
+
 ## Elastic Cloud Storage (ECS): Eine Referenzlösung
 
-Das Objektspeicherangebot von Cloud Temple basiert auf der __Elastic Cloud Storage (ECS)__-Technologie von Dell, die für ihre hohe Leistung und die Einhaltung von Industriestandards bekannt ist. Mit einer Kompatibilität von __97% mit dem AWS S3-Protokoll__ gewährleistet diese Lösung:
+Das Objektspeicherangebot Cloud Temple basiert auf der Technologie __Elastic Cloud Storage (ECS)__ von Dell, die für ihre hohe Leistungsfähigkeit und Einhaltung industrieller Standards bekannt ist. Mit einer Kompatibilität von __97 % mit dem AWS S3-Protokoll__ bietet diese Lösung:
 
 - Eine einfache und standardisierte Integration;
 - Erhöhte Flexibilität für die Benutzer;
-- Einen reibungslosen Übergang zu einer modernen Speicherinfrastruktur.
+- Eine nahtlose Überleitung zu einer modernen Speicherinfrastruktur.
 
 ---
+
+
 
 ## Sicherheitsverpflichtungen und Zertifizierungen
 
-Cloud Temple verpflichtet sich, die Datensicherheit durch anerkannte Zertifizierungen zu gewährleisten:
+Cloud Temple verpflichtet sich, die Sicherheit der Daten durch anerkannte Zertifizierungen zu gewährleisten:
 
-- __SecNumCloud__: Eine von der ANSSI ausgestellte Qualifikation, die die Souveränität und Sicherheit der Daten in einem französischen und europäischen Rahmen sicherstellt.
-- __HDS (Hosting von Gesundheitsdaten)__: Einhaltung der strengen Anforderungen für sensible medizinische Daten.
-- __ISO 27001__: Einhaltung der besten Praktiken im Bereich der Informationssicherheit.
+- __SecNumCloud__ : Zertifizierung, die von der ANSSI ausgestellt wird, die Souveränität und Sicherheit der Daten in einem französischen und europäischen Rahmen gewährleistet.
+- __HDS (Datenhosting für Gesundheitsdaten)__ : Konformität mit strengen Anforderungen für sensible Gesundheitsdaten.
+- __ISO 27001__ : Einhaltung der besten Praktiken im Bereich der Informationssicherheit.
 
-## Erweiterte Verschlüsselung für optimalen Schutz
 
-Die Datenverschlüsselung wird systematisch angewendet, um ihre Sicherheit in jeder Phase zu gewährleisten:
 
-- __Während der Übertragung__: Schutz durch das __TLS 1.3__-Protokoll.
-- __Im Ruhezustand__: Drei Optionen, die auf die Bedürfnisse der Benutzer zugeschnitten sind:
-  - __SSE-ECS__: Schlüssel, die von Cloud Temple für eine vereinfachte Verwaltung verwaltet werden.
-  - __SSE-C__: Vom Kunden bereitgestellte Schlüssel für eine erhöhte Kontrolle.
-  - __CSE__: Vom Kunden durchgeführte Verschlüsselung für maximale Sicherheit.
+## Forte Verschlüsselung für optimale Sicherheit
 
-| Verschlüsselungsmodell | Vorteile | Nachteile |
-|---|---|---|
-| __SSE-ECS__ | Vereinfachte und transparente Verwaltung | Weniger Kontrolle über die Schlüssel |
-| __SSE-C__ | Vollständige Kontrolle über die Schlüssel | Schlüsselverwaltung erforderlich |
-| __CSE__ | Maximale Sicherheit | Komplexität und Leistungseinbußen |
+Die Datenverschlüsselung wird systematisch angewendet und gewährleistet ihre Sicherheit in jedem Schritt:
 
----
+- __Im Transits__: Schutz über das Protokoll __TLS 1.3__.
+- __Im Speicher__: Drei Optionen, die den Anforderungen der Benutzer entsprechen:
+  - __SSE-ECS__: Schlüssel, die von Cloud Temple verwaltet werden, für eine vereinfachte Verwaltung.
+  - __SSE-C__: Schlüssel, die vom Kunden bereitgestellt werden, für einen erhöhten Kontrolle.
+  - __CSE__: Verschlüsselung, die vom Kunden durchgeführt wird, für maximale Sicherheit.
+
+| Verschlüsselungsmodell         | Vorteile                              | Nachteile                     |
+| ----------------------------- | -------------------------------------- | ----------------------------- |
+| __SSE-ECS__                  | Einfache und transparente Verwaltung     | Weniger Kontrolle über die Schlüssel   |
+| __SSE-C__                    | Vollständige Kontrolle über die Schlüssel            | Schlüsselverwaltung erforderlich       |
+| __CSE__                      | Maximale Sicherheit                      | Komplexität und Leistungseinbußen |
+
+
 
 ## Architektur und Bereitstellung
 
-### Bereitstellung vom Typ Region
 
-Der S3-Speicher von Cloud Temple speichert die Daten nativ in [__drei verschiedenen Verfügbarkeitszonen__](../../../../additional_content/concepts_az.md) innerhalb derselben Cloud Temple [Region](../../../../additional_content/concepts_regional.md). Diese Architektur ist darauf ausgelegt, eine hohe Verfügbarkeit und maximale Ausfallsicherheit gegenüber Hardware- oder Softwareausfällen zu bieten:
 
-- Erasure Coding (EC): Standardmäßig verwenden wir ein EC-Schema von 12+4, das die Daten in 12 Datensegmente und 4 Paritätssegmente aufteilt. Diese Technik ermöglicht die Wiederherstellung der Daten auch bei Verlust mehrerer Segmente.
-- Datenverteilung: Die EC-Segmente werden auf verschiedene Knoten und Racks verteilt, um einen Schutz vor Ausfällen von Festplatten, Knoten und sogar ganzen Racks zu gewährleisten.
-- Geografische Replikation: Für zusätzlichen Schutz werden die Daten auf 3 Verfügbarkeitszonen repliziert, was eine Ausfallsicherheit gegenüber lokalen Katastrophen bietet.
+### Regionale Bereitstellung
 
-Diese Replikation stellt sicher, dass die Daten auch bei Ausfall einer Zone zugänglich und intakt bleiben, was zu einer hochgradig widerstandsfähigen Speicherinfrastruktur beiträgt.
+Der Cloud Temple S3-Speicher speichert Daten native in [__drei unterschiedlichen Availability Zones__](../../additional_content/concepts_az.md) innerhalb derselben [Region](../../additional_content/concepts_regional.md) von Cloud Temple. Diese Architektur ist darauf ausgelegt, eine hohe Verfügbarkeit und maximale Resilienz gegenüber Hardware- oder Softwareausfällen zu bieten:
 
----
+- Erasure Coding (EC): Wir verwenden standardmäßig ein EC-12+4-Schema, das die Daten in 12 Datenblöcke und 4 Paritätsblöcke aufteilt. Diese Technik ermöglicht die Wiederherstellung der Daten, auch wenn mehrere Blöcke verloren gehen.
+- Datenverteilung: Die EC-Blöcke werden auf verschiedenen Knoten und Racks verteilt, was Schutz gegen Festplatten-, Knoten- und sogar Rackausfälle gewährleistet.
+- Geografische Replikation: Um zusätzlichen Schutz zu gewährleisten, werden die Daten auf drei Availability Zones repliziert, was Resilienz gegenüber lokalen Katastrophen bietet.
+
+Diese Replikation stellt sicher, dass selbst bei einem Ausfall einer Zone die Daten weiterhin zugänglich und intakt bleiben, was zu einer hochverfügbaren Speicherinfrastruktur beiträgt.
+
+
 
 ## Leistung und Servicelevel
 
-### Garantierte Servicelevel
 
-Cloud Temple bietet eine hochzuverlässige Infrastruktur mit klaren Verpflichtungen:
 
-| Verpflichtung | Ziel |
-|---|---|
-| Verfügbarkeit | 99,99% (einschließlich Wartung) |
-| Datendurabilität | 99,999999999% |
-| Garantierte Netzwerkbandbreite | 1 Gbit/s |
+### Garantierte Dienstleistungslevel
+
+Cloud Temple bietet eine hochverlässliche Infrastruktur mit klaren Verpflichtungen:
+
+| Verpflichtung                      | Ziel                         |
+| ---------------------------------- | ---------------------------- |
+| Verfügbarekeit                     | 99,99% (einschließlich Wartung)|
+| Datenintegrität                    | 99,99999999%                 |
+| Garantierte Netzwerkbandbreite     | 1 Gbps/Sekunde               |
+
+
 
 ### Einschränkungen des Objektspeichers
 
-Cloud Temple bietet eine Objektspeicherlösung mit den folgenden technischen Merkmalen:
+Cloud Temple bietet eine Objektspeicherlösung mit folgenden technischen Merkmalen:
 
-• __Maximale Anzahl von Buckets pro Mandant__: Die maximale Anzahl von Buckets pro Mandant beträgt 999.
+• __Maximale Anzahl von Buckets pro Tenant__ : Die maximale Anzahl von Buckets pro Tenant beträgt 999.
 
-• __Größenbeschränkung pro Bucket__: Die maximale Größe eines Objekts beträgt 5 TB.
+• __Maximale Größe pro Bucket__ : Die maximale Größe eines Objekts beträgt 5 To.
 
-• __Anzahl gleichzeitiger Verbindungen__: Keine spezifische Begrenzung.
+• __Anzahl gleichzeitiger Verbindungen__ : Keine spezifische Begrenzung.
 
-• __Leistung__:
+• __Leistung__ :
 
-- Bis zu 1 Gbit/s Eingang
-- Bis zu 1 Gbit/s Ausgang
+- Bis zu 1 Gb/s Eingabegeschwindigkeit
+- Bis zu 1 Gb/s Ausgabegeschwindigkeit
 
 ---
 
-## Speicherkonzepte und -organisation
+
+
+## Konzepte und Organisation der Speicherung
+
+
 
 ### Das Speicherkonto
 
-Ein __Speicherkonto__ ist eine logische Einheit, die einen __Zugriffsschlüssel__ und einen __geheimen Schlüssel__ besitzt, die zur Authentifizierung und Sicherung der Interaktionen mit einem Bucket verwendet werden.
-Auf diesem Konto werden die Rollen und Berechtigungen für die __Buckets__ festgelegt, um den Zugriff und die zulässigen Aktionen für jeden Benutzer oder Dienst genau zu steuern.
+Ein __Storage Account__ ist eine logische Einheit, die einen __Zugriffsschlüssel__ und einen __Geheimnis-Schlüssel__ besitzt, die zur Authentifizierung und Sicherung der Interaktionen mit einem Bucket verwendet werden. Auf diesem Konto werden die Rollen und Berechtigungen, die mit __Buckets__ verbunden sind, definiert, um den Zugriff und die autorisierten Aktionen genau zu kontrollieren.
+
+
 
 ### Arten von Speicherkonten
 
-Die Cloud Temple Object Storage-Plattform unterscheidet zwei Arten von Speicherkonten, jede mit einer spezifischen Rolle und Berechtigungsstufe:
+Die Cloud Object Storage-Plattform Temple unterscheidet zwei Arten von Speicherkonten, jeder mit einer spezifischen Rolle und Berechtigungsebene:
+
+
 
 #### 1. Klassisches Speicherkonto
 
-Dies ist der Standardkontotyp, den Sie für die meisten Ihrer Anwendungsfälle erstellen werden.
+Dies ist der Standard-Konto-Typ, den Sie für die meisten Anwendungsfälle erstellen werden.
 
-*   **Schlüsselverwaltung**: Für jedes klassische Konto können Sie ein Paar Zugriffsschlüssel (`Zugriffsschlüssel` und `geheimer Schlüssel`) generieren.
-*   **Granulare Berechtigungen**: Die Zugriffsrechte dieses Kontos werden auf Bucket-Ebene über Zugriffskontrolllisten (ACLs) definiert. Sie müssen ihm explizit Berechtigungen (Lesen, Schreiben usw.) für die Buckets erteilen, auf die er zugreifen soll.
+*   **Schlüsselverwaltung**: Für jedes klassische Konto können Sie ein Schlüsselpaar für den Zugriff (`Access Key` und `Secret Key`) generieren.
+*   **Granulare Berechtigungen**: Die Zugriffsrechte dieses Kontos werden über Zugriffssteuerungslisten (ACL) pro Bucket definiert. Sie müssen ihm explizit Berechtigungen (Lesen, Schreiben usw.) für die Buckets erteilen, auf die es zugreifen muss.
 
-#### 2. Globales (Root) Speicherkonto
 
-Jeder *Namespace* (Mandant) verfügt über ein einziges globales Speicherkonto, das manchmal als "Root-Konto" bezeichnet wird. Dieses Konto verfügt über erweiterte administrative Berechtigungen.
 
-*   **Vollständiger Zugriff**: Das globale Konto hat vollen Zugriff auf alle Buckets innerhalb des Namespace, ohne dass ihm spezifische Berechtigungen zugewiesen werden müssen. Es kann alle möglichen Operationen im gesamten Speicherdienst ausführen.
-*   **Administrative Verwendung**: Es ist hauptsächlich für globale Konfigurations- und Verwaltungsaufgaben vorgesehen.
-*   **Schlüsselzurücksetzung**: Aufgrund seiner Bedeutung können Sie, wenn der Zugriffsschlüssel und der geheime Schlüssel dieses Kontos verloren gehen, diese auf der Plattform zurücksetzen, um neue zu generieren.
+#### 2. Globales Speicherkonto (Root)
+
+Jeder *namespace* (tenant) verfügt über ein einziges globales Speicherkonto, manchmal auch als „Root-Konto“ bezeichnet. Dieses Konto verfügt über erweiterte Administratorrechte.
+
+*   **Vollzugriff**: Das globale Konto hat vollen Zugriff auf alle Buckets innerhalb des Namespace, ohne dass spezifische Berechtigungen zugewiesen werden müssen. Es kann alle möglichen Operationen auf dem gesamten Speicherdienst durchführen.
+*   **Administrativer Gebrauch**: Es ist hauptsächlich für Konfigurations- und Verwaltungsaufgaben gedacht.
+*   **Kennwort-Neustellung**: Aufgrund seiner Bedeutung ermöglicht die Plattform die Neustellung der Zugriffsschlüssel und des geheimen Schlüssels dieses Kontos, um neue zu generieren.
+
+
 
 ### Der "Bucket" im Ökosystem des Objektspeichers
 
-Ein S3-Bucket, populär gemacht durch den Amazon Simple Storage Service (Amazon S3), ist ein __öffentlicher Cloud-Speichercontainer__, der dazu dient, eine unbegrenzte Menge an Daten sicher, zuverlässig und hochverfügbar zu speichern. Jeder S3-Bucket kann Dateien (in S3 als "Objekte" bezeichnet) speichern, die von Dokumenten und Bildern bis hin zu großen Datenbanken oder Videodateien reichen. Buckets werden verwendet, um den Speicherplatz innerhalb des Cloud Temple-Objektspeichers logisch zu organisieren, und jeder Bucket wird durch einen eindeutigen, vom Benutzer bereitgestellten Namen identifiziert. S3-Buckets bieten erweiterte Funktionen wie Versionierung, Datensicherheit durch Zugriffskontrollrichtlinien und die Möglichkeit der Unveränderlichkeit.
+Ein S3-Bucket, populär gemacht durch den Amazon Simple Storage Service (Amazon S3), ist __ein öffentlicher Speicherbehälter__ in der Cloud, der entwickelt wurde, um eine unbegrenzte Menge an Daten sicher, zuverlässig und hochverfügbar zu speichern. Jeder S3-Bucket kann Dateien (in S3 als "Objekte" bezeichnet) speichern, von Dokumenten und Bildern bis hin zu großen Datenbanken oder Videodateien. Buckets werden verwendet, um den Speicherplatz im Objektspeicher Cloud Temple logisch zu organisieren, und jeder Bucket wird durch einen eindeutigen Namen identifiziert, der vom Benutzer bereitgestellt wird. S3-Buckets bieten fortgeschrittene Funktionen wie Versionierung, Datenverschlüsselung durch Zugriffssteuerungspolitiken und die Möglichkeit der Unveränderlichkeit.
 
-### Verwendet das S3-Angebot von Cloud Temple die 'PathStyle'-Methode?
 
-Aufgrund der mit der SecNumCloud-Qualifikation verbundenen Einschränkungen ist das Angebot derzeit für die Verwendung der '__PathStyle__'-Methode vorgesehen. Wir arbeiten daran, die '__UrlStyle__'-Methode im zweiten Halbjahr 2025 verfügbar zu machen.
 
-### Vor-signierte Anfragen
+### Verwendet das S3 Cloud Temple-Angebot die Methode 'PathStyle'
 
-Der Objektspeicher von Cloud Temple unterstützt __vor-signierte Anfragen__, eine wesentliche Funktion, die es ermöglicht, temporäre URLs zu generieren, die für eine begrenzte Zeit Zugriff auf bestimmte Objekte gewähren. Diese Funktion ist besonders nützlich, um Dateien sicher mit externen Benutzern zu teilen, ohne ihnen dauerhafte Rechte oder Zugangsdaten für den Bucket zu gewähren. Vor-signierte Anfragen können mit einer genauen Gültigkeitsdauer konfiguriert werden, was eine granulare Kontrolle über den Datenzugriff ermöglicht.
+Aufgrund der mit der SecNumCloud-Zertifizierung verbundenen Einschränkungen ist die Angebotsplanung derzeit auf die Verwendung der Methode '__PathStyle__' ausgerichtet. Wir arbeiten daran, die Methode '__UrlStyle__' bis S2 2025 verfügbar zu machen.
 
-### Unveränderlichkeit von Objekten (Object Lock)
 
-Der Objektspeicher von Cloud Temple, basierend auf Dell ECS, unterstützt die Unveränderlichkeitsfunktion über **Object Lock** in Übereinstimmung mit dem S3-Standard. Diese Option ermöglicht es, Objekte im **WORM (Write Once, Read Many)**-Modus zu konfigurieren, um sie für einen definierten Zeitraum vor jeglicher Änderung oder Löschung zu schützen. Dies ist ein wesentlicher Schutz für die Einhaltung gesetzlicher Vorschriften und die Abwehr von Ransomware.
 
-#### Funktionsweise
+### Vorgesichtete Anfragen
+
+Der Cloud Temple-Objektspeicher unterstützt __vorgesichtete Anfragen__, eine entscheidende Funktion, die die Erstellung temporärer URLs ermöglicht, die Zugriff auf bestimmte Objekte für eine begrenzte Dauer gewähren. Diese Funktion ist besonders nützlich, um Dateien sicher mit externen Benutzern zu teilen, ohne ihnen dauerhafte Berechtigungen oder Zugangsidentifikationen für den Bucket zu gewähren. Vorgesichtete Anfragen können mit einer genauen Gültigkeitsdauer konfiguriert werden, was einen präzisen Kontrollmechanismus für den Datenzugriff ermöglicht.
+
+
+
+### Unveränderlichkeit der Objekte (Object Lock)
+
+Der Objektspeicher von Cloud Temple, basierend auf Dell ECS, unterstützt die Unveränderlichkeitsfunktion über **Object Lock**, im Einklang mit dem S3-Standard. Diese Option ermöglicht die Konfiguration von Objekten im WORM-Modus (Write Once, Read Many), wodurch sie vor jeglicher Änderung oder Löschung für eine festgelegte Periode geschützt werden. Es handelt sich um eine entscheidende Schutzmaßnahme für die regulatorische Konformität und den Schutz vor Ransomware-Angriffen.
+
+
+
+#### Funktion
 
 Die Unveränderlichkeit gilt für Objektversionen und kann auf zwei Arten konfiguriert werden:
-*   **Feste Aufbewahrungsfrist**: Das Objekt wird für eine bestimmte Dauer (in Tagen oder Jahren) gesperrt.
-*   **Gesetzliche Aufbewahrung (Legal Hold)**: Das Objekt wird unbegrenzt gesperrt, bis die Aufbewahrung explizit aufgehoben wird.
+*   **Festgelegte Aufbewahrungsfrist**: Das Objekt ist für eine bestimmte Dauer (in Tagen oder Jahren) gesperrt.
+*   **Rechtliche Aufbewahrung (Legal Hold)**: Das Objekt ist unbegrenzt gesperrt, bis die Aufbewahrung explizit aufgehoben wird.
+
+
 
 #### Implementierungsbedingungen
 
-*   **Versionierung erforderlich**: Um Object Lock zu aktivieren, muss die Versionierung für den Bucket aktiviert sein. Sobald Object Lock aktiv ist, kann die Versionierung nicht mehr deaktiviert werden.
-*   **Aktivierung bei der Erstellung**: Die Unveränderlichkeit muss zum Zeitpunkt der Erstellung des Buckets über die S3-API aktiviert werden (z. B. mit dem Header `x-amz-bucket-object-lock-enabled: true`).
-*   **Zwei Schutzmodi**:
-    *   **Governance-Modus**: Benutzer mit spezifischen Berechtigungen können die Aufbewahrungseinstellungen ändern oder löschen.
-    *   **Compliance-Modus**: Niemand, einschließlich des Root-Administrators, kann die Aufbewahrungseinstellungen ändern oder löschen. Dies ist die höchste Schutzstufe.
+*   **Erforderliche Versionierung** : Um Object Lock zu aktivieren, muss die Versionierung im Bucket aktiviert sein. Sobald Object Lock aktiviert ist, kann die Versionierung nicht mehr deaktiviert werden.
+*   **Aktivierung bei der Erstellung** : Die Unveränderlichkeit muss bei der Erstellung des Buckets über die S3-API aktiviert werden (z. B. mit dem Header `x-amz-bucket-object-lock-enabled: true`).
+*   **Zwei Schutzmodi** :
+    *   **Gouvernance-Modus** : Benutzer mit spezifischen Berechtigungen können die Aufbewahrungsparameter ändern oder löschen.
+    *   **Konformitätsmodus** : Niemand, nicht einmal der Root-Administrator, kann die Aufbewahrungsparameter ändern oder löschen. Dies ist das höchste Schutzniveau.
+
+
 
 #### Hauptanwendungsfälle
 
-*   **Schutz vor Ransomware**: Geschützte Backups können durch einen Angriff weder verschlüsselt noch gelöscht werden, was eine zuverlässige Datenwiederherstellung gewährleistet.
-*   **Einhaltung gesetzlicher Vorschriften**: Erfüllt strenge Anforderungen an die Datenaufbewahrung in Sektoren wie dem Finanzwesen (FINRA, SEC 17a-4) oder dem Gesundheitswesen.
+*   **Anti-Ransomware-Schutz** : Geschützte Backups können weder verschlüsselt noch gelöscht werden, was eine zuverlässige Wiederherstellung der Daten gewährleistet.
+*   **Regulierungscompliance** : Erfüllt strenge Datenhaltungsvorschriften in Sektoren wie Finanzen (FINRA, SEC 17a-4) oder Gesundheitswesen.
