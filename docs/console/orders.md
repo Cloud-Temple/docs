@@ -86,7 +86,20 @@ Vous obtenez ensuite un résumé des options sélectionnées avant de valider vo
 
 ## Commander de la ressource stockage supplémentaire
 
-La logique d'allocation du stockage en mode bloc sur les clusters de calcul est TODO
+La logique d'allocation du stockage en mode bloc sur les clusters de calcul repose sur la technologie __IBM SVC (San Volume Controller)__ et __IBM FlashSystem__. Le stockage est organisé en __LUNs de 500 Gio minimum__, présentées selon la technologie utilisée :
+- Pour __VMware__ : sous forme de __datastores__ regroupés dans des __clusters SDRS (Storage Distributed Resource Scheduler)__
+- Pour __Bare Metal__ : sous forme de __volumes__
+- Pour __Open IaaS__ : sous forme de __Storage Repository (SR)__
+
+Chaque datastore hérite d'une __classe de performance__ définie en IOPS/To (de 500 à 15000 IOPS/To pour le FLASH, ou sans garantie pour le MASS STORAGE). La limitation d'IOPS est appliquée __au niveau du datastore__ (et non par VM), ce qui signifie que toutes les machines virtuelles partageant le même datastore se partagent le quota d'IOPS alloué.
+
+__Points clés à retenir__ :
+
+- __Taille minimale__ : 500 Gio par LUN
+- __Performance__ : Proportionnelle au volume alloué (ex: 2 To en classe Standard = 3000 IOPS max)
+- __Organisation__ : Les datastores de même type sont automatiquement regroupés en clusters de datastores
+- __Disponibilité__ : 99,99% mesuré mensuellement, plages de maintenance incluses
+- __Espace nécessaire__ : Prévoir toujours 10% d'espace libre pour les snapshots de sauvegarde et l'équivalent de la somme des RAM des VMs pour les fichiers .VSWP
 
 ### Déployer un nouveau cluster de calcul
 
@@ -152,7 +165,18 @@ La technologie réseau utilisée sur l'infrastructure Cloud Temple est basée su
 Il est aussi possible de partager des réseaux entre vos tenants et de les terminer en zone de hosting.
 Basiquement, vous pouvez imaginer un réseau Cloud Temple comme un vlan 802.1q disponible en tout point de votre tenant.
 
-TODO
+Les réseaux sur la plateforme Cloud Temple sont de __niveau 2 (VLANs)__ basés sur la technologie __VPLS (Virtual Private LAN Service)__. Cette technologie vous permet de bénéficier d'une __continuité réseau entre vos zones de disponibilité__ au sein d'une région, avec des performances garanties :
+
+- __Latence intra-AZ__ : < 3 ms
+- __Latence inter-AZ__ : < 5 ms
+
+__Flexibilité des réseaux__ :
+
+- Un réseau peut être __partagé entre plusieurs clusters__ d'une même zone de disponibilité
+- Un réseau peut être __propagé entre plusieurs zones de disponibilité__ d'une même région
+- Un réseau peut être __partagé entre différents tenants__ de votre organisation
+- Un réseau peut être __terminé en zone de hosting__ pour vos équipements physiques
+- __Limite__ : Maximum de 20 réseaux par commande. Vous pouvez effectuer plusieurs commandes successives pour étendre ce nombre selon vos besoins
 
 La commande d'un nouveau réseau et les décisions de partage entre vos tenants, sont réalisées dans le menu __'Réseau'__ du bandeau vert à gauche de l'écran. Les réseaux seront d'abord créés, puis une commande distincte sera générée pour les propager. Vous pouvez suivre l'avancement des commandes en cours en accédant à l'onglet "Commande" dans le menu, ou en cliquant sur les labels d'information qui vous redirigent vers les commandes actives ou en cours de traitement.
 
@@ -174,7 +198,26 @@ L'option de désactivation se trouve dans les options du réseau sélectionné. 
 
 ## Ajouter des hyperviseurs supplémentaires à un cluster de calcul
 
-La logique de fonctionnement des clusters de calcul est TODO
+Un __cluster de calcul__ est un regroupement d'hyperviseurs qui doivent respecter les règles suivantes :
+
+### Pour les clusters VMware ESXi
+
+__Règles d'homogénéité__ :
+
+- Tous les hôtes d'un cluster doivent être du __même type de lame__ (ECO, STANDARD, ADVANCE, PERFORMANCE, etc.)
+- Tous les hôtes appartiennent __au même tenant et à la même zone de disponibilité__
+- __Limite__ : Maximum de 32 hyperviseurs par cluster
+
+__Allocation mémoire__ :
+
+- Chaque lame est livrée avec __la totalité de la mémoire physique activée__ dès le départ
+- __Exemple__ : Un cluster de 3 lames STANDARD v3 (384 Go physiques chacune) = 3 × 384 Go = 1152 Go disponibles
+- __Recommandation__ : Ne pas dépasser 85% de consommation mémoire par lame pour éviter le mécanisme de compression VMware et le ballooning
+
+__Haute disponibilité__ :
+
+- __Minimum recommandé__ : 2 hyperviseurs par cluster pour bénéficier du SLA de 99,99%
+- Activer la fonctionnalité __VMware HA__ (High Availability) pour le redémarrage automatique des VMs en cas de défaillance d'un hôte
 
 L'ajout d'hyperviseurs à un cluster de calcul se fait dans le menu __'IaaS'__ dans le bandeau vert à gauche de l'écran.
 Dans l'exemple suivant, nous allons ajouter du calcul sur un cluster d'hyperviseur utilisant la technologie VMware.
@@ -189,9 +232,33 @@ __nota__ :
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
+### Pour les clusters Open IaaS
+
+Les clusters Open IaaS suivent des règles similaires en termes d'homogénéité et de haute disponibilité. La gestion des ressources de calcul s'effectue également via le menu __'OpenIaaS'__ avec les mêmes prérequis en termes de droits d'accès.
+
 ## Ajouter de la ressource mémoire supplémentaire à un cluster de calcul
 
-La logique d'allocation de la mémoire sur les clusters de calcul est TODO
+L'allocation de la mémoire sur les clusters de calcul fonctionne de la manière suivante :
+
+__Principe de l'allocation mémoire__ :
+
+- Toutes les lames de calcul sont livrées avec le __maximum physique de mémoire__ installée
+- Une __limitation logicielle__ est appliquée au niveau du cluster VMware pour correspondre à la RAM facturée
+- Chaque lame dispose de __la totalité de la mémoire physique activée__ au sein du cluster
+
+__Dimensionnement par cluster__ :
+
+- __Minimum__ : nombre d'hôtes × 128 Go de mémoire
+- __Maximum__ : nombre d'hôtes × quantité de mémoire physique de la lame
+
+__Exemple__ : Pour un cluster de trois hosts de type `STANDARD v3` (384 Go physiques par lame)
+
+- Mémoire totale disponible : 3 × 384 Go = 1152 Go
+
+__Recommandations importantes__ :
+
+- Ne pas dépasser __85% de consommation mémoire moyenne par lame__ pour éviter le ballooning et la compression VMware
+- Prévoir de l'espace disque pour les fichiers de swap (.VSWP) créés au démarrage de chaque VM (taille = mémoire de la VM)
 
 Pour ajouter de la mémoire vive sur un cluster, il suffit de se rendre sur la configuration du cluster (comme pour l'ajout d'un hôte de calcul tel que précédemment vue) et de cliquer sur __'Modifier la mémoire'__.
 
