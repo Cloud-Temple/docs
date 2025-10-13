@@ -86,7 +86,10 @@ Luego obtendrá un resumen de las opciones seleccionadas antes de validar su ped
 
 ## Pedir recursos de almacenamiento adicionales
 
-La lógica de asignación de almacenamiento en modo de bloque en los clústeres de cómputo se basa en la tecnología __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. El almacenamiento está organizado en __LUNs de 500 GiB mínimo__, presentadas a los hipervisores VMware como __datastores__ agrupados en __clústeres SDRS (Storage Distributed Resource Scheduler)__.
+La lógica de asignación de almacenamiento en modo de bloque en los clústeres de cómputo se basa en la tecnología __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. El almacenamiento está organizado en __LUNs de 500 GiB mínimo__, presentadas según la tecnología utilizada:
+- Para __VMware__: como __datastores__ agrupados en __clústeres SDRS (Storage Distributed Resource Scheduler)__
+- Para __Bare Metal__: como __volúmenes__
+- Para __IaaS Open Source__: como __Storage Repository (SR)__
 
 Cada datastore hereda una __clase de rendimiento__ definida en IOPS/TB (de 500 a 15,000 IOPS/TB para FLASH, o sin garantía para MASS STORAGE). La limitación de IOPS se aplica __a nivel del datastore__ (no por VM), lo que significa que todas las máquinas virtuales que comparten el mismo datastore comparten la cuota de IOPS asignada.
 
@@ -172,7 +175,7 @@ __Flexibilidad de red__:
 - Una red puede ser __propagada entre varias zonas de disponibilidad__ dentro de la misma región
 - Una red puede ser __compartida entre diferentes tenants__ de su organización
 - Una red puede ser __terminada en la zona de hosting__ para su equipo físico
-- __Límite__: Máximo de 20 redes configurables por clúster de cómputo
+- __Límite__: Máximo de 20 redes por pedido. Puede realizar varios pedidos sucesivos para ampliar este número según sus necesidades
 
 El pedido de una nueva red y las decisiones de compartir entre sus tenants se realizan en el menú __'Red'__ en el banner verde en el lado izquierdo de la pantalla. Las redes se crearán primero, luego se generará un pedido separado para propagarlas. Puede rastrear el progreso de los pedidos en curso accediendo a la pestaña "Pedido" en el menú, o haciendo clic en las etiquetas de información que lo redirigen a pedidos activos o en proceso.
 
@@ -194,7 +197,9 @@ La opción de desactivación se encuentra en las opciones de la red seleccionada
 
 ## Agregar hipervisores adicionales a un clúster de cómputo
 
-Un __clúster de cómputo__ es una agrupación de hipervisores VMware ESXi que deben seguir estas reglas:
+Un __clúster de cómputo__ es una agrupación de hipervisores que deben seguir estas reglas:
+
+### Para clústeres VMware ESXi
 
 __Reglas de homogeneidad__:
 
@@ -204,9 +209,8 @@ __Reglas de homogeneidad__:
 
 __Asignación de memoria__:
 
-- Cada blade se entrega con __128 GB de RAM activada por software__ de forma predeterminada
-- La memoria física total está presente en la blade pero limitada por software a nivel del clúster
-- __Ejemplo__: Un clúster de 3 blades STANDARD v3 = 3 × 128 GB = 384 GB activados (ampliable hasta 3 × 384 GB = 1,152 GB)
+- Cada blade se entrega con __toda la memoria física activada__ desde el inicio
+- __Ejemplo__: Un clúster de 3 blades STANDARD v3 (384 GB físicos cada una) = 3 × 384 GB = 1,152 GB disponibles
 - __Recomendación__: No exceda el 85% de consumo de memoria por blade para evitar el mecanismo de compresión de VMware y el ballooning
 
 __Alta disponibilidad__:
@@ -227,6 +231,10 @@ __nota__:
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
+### Para clústeres IaaS Open Source
+
+Los clústeres IaaS Open Source siguen reglas similares en términos de homogeneidad y alta disponibilidad. La gestión de recursos de cómputo también se realiza a través del menú __'IaaS'__ con los mismos requisitos previos en términos de derechos de acceso.
+
 ## Agregar recursos de memoria adicionales a un clúster de cómputo
 
 La asignación de memoria en los clústeres de cómputo funciona de la siguiente manera:
@@ -235,7 +243,7 @@ __Principio de asignación de memoria__:
 
 - Todas las blades de cómputo se entregan con el __máximo de memoria física__ instalada
 - Se aplica una __limitación de software__ a nivel del clúster VMware para corresponder a la RAM facturada
-- De forma predeterminada, cada blade tiene __128 GB de memoria activada__ dentro del clúster
+- Cada blade tiene __toda la memoria física activada__ dentro del clúster
 
 __Dimensionamiento del clúster__:
 
@@ -244,8 +252,7 @@ __Dimensionamiento del clúster__:
 
 __Ejemplo__: Para un clúster de tres hosts de tipo `STANDARD v3` (384 GB físicos por blade)
 
-- Memoria inicial activada: 3 × 128 GB = 384 GB
-- Memoria máxima disponible: 3 × 384 GB = 1,152 GB
+- Memoria total disponible: 3 × 384 GB = 1,152 GB
 
 __Recomendaciones importantes__:
 

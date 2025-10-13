@@ -86,7 +86,10 @@ You will then get a summary of the selected options before validating your order
 
 ## Ordering additional storage resources
 
-The storage allocation logic in block mode on compute clusters is based on __IBM SVC (San Volume Controller)__ and __IBM FlashSystem__ technology. Storage is organized in __LUNs of 500 GiB minimum__, presented to VMware hypervisors as __datastores__ grouped in __SDRS (Storage Distributed Resource Scheduler) clusters__.
+The storage allocation logic in block mode on compute clusters is based on __IBM SVC (San Volume Controller)__ and __IBM FlashSystem__ technology. Storage is organized in __LUNs of 500 GiB minimum__, presented according to the technology used:
+- For __VMware__: as __datastores__ grouped in __SDRS (Storage Distributed Resource Scheduler) clusters__
+- For __Bare Metal__: as __volumes__
+- For __IaaS Open Source__: as __Storage Repository (SR)__
 
 Each datastore inherits a __performance class__ defined in IOPS/TB (from 500 to 15,000 IOPS/TB for FLASH, or without guarantee for MASS STORAGE). The IOPS limitation is applied __at the datastore level__ (not per VM), meaning all virtual machines sharing the same datastore share the allocated IOPS quota.
 
@@ -172,7 +175,7 @@ __Network flexibility__:
 - A network can be __propagated between multiple availability zones__ within the same region
 - A network can be __shared between different tenants__ of your organization
 - A network can be __terminated in the hosting zone__ for your physical equipment
-- __Limit__: Maximum of 20 configurable networks per compute cluster
+- __Limit__: Maximum of 20 networks per order. You can place multiple successive orders to extend this number according to your needs
 
 Ordering a new network and sharing decisions between your tenants are done in the __'Network'__ menu in the green banner on the left side of the screen. Networks will first be created, then a separate order will be generated to propagate them. You can track the progress of current orders by accessing the "Order" tab in the menu, or by clicking on the information labels that redirect you to active or processing orders.
 
@@ -194,7 +197,9 @@ The deactivation option is found in the options of the selected network.
 
 ## Adding additional hypervisors to a compute cluster
 
-A __compute cluster__ is a grouping of VMware ESXi hypervisors that must follow these rules:
+A __compute cluster__ is a grouping of hypervisors that must follow these rules:
+
+### For VMware ESXi clusters
 
 __Homogeneity rules__:
 
@@ -204,9 +209,8 @@ __Homogeneity rules__:
 
 __Memory allocation__:
 
-- Each blade is delivered with __128 GB of RAM activated by software__ by default
-- Total physical memory is present on the blade but software-throttled at the cluster level
-- __Example__: A cluster of 3 STANDARD v3 blades = 3 × 128 GB = 384 GB activated (expandable up to 3 × 384 GB = 1,152 GB)
+- Each blade is delivered with __all physical memory activated__ from the start
+- __Example__: A cluster of 3 STANDARD v3 blades (384 GB physical each) = 3 × 384 GB = 1,152 GB available
 - __Recommendation__: Do not exceed 85% memory consumption per blade to avoid VMware compression mechanism and ballooning
 
 __High availability__:
@@ -227,6 +231,10 @@ __note__:
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
+### For IaaS Open Source clusters
+
+IaaS Open Source clusters follow similar rules in terms of homogeneity and high availability. Compute resource management is also done via the __'IaaS'__ menu with the same access rights prerequisites.
+
 ## Adding additional memory resources to a compute cluster
 
 Memory allocation on compute clusters works as follows:
@@ -235,7 +243,7 @@ __Memory allocation principle__:
 
 - All compute blades are delivered with the __maximum physical memory__ installed
 - A __software limitation__ is applied at the VMware cluster level to match the billed RAM
-- By default, each blade has __128 GB of activated memory__ within the cluster
+- Each blade has __all physical memory activated__ within the cluster
 
 __Cluster sizing__:
 
@@ -244,8 +252,7 @@ __Cluster sizing__:
 
 __Example__: For a cluster of three hosts of type `STANDARD v3` (384 GB physical per blade)
 
-- Initial activated memory: 3 × 128 GB = 384 GB
-- Maximum available memory: 3 × 384 GB = 1,152 GB
+- Total available memory: 3 × 384 GB = 1,152 GB
 
 __Important recommendations__:
 
