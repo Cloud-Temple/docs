@@ -86,7 +86,10 @@ Vous obtenez ensuite un résumé des options sélectionnées avant de valider vo
 
 ## Commander de la ressource stockage supplémentaire
 
-La logique d'allocation du stockage en mode bloc sur les clusters de calcul repose sur la technologie __IBM SVC (San Volume Controller)__ et __IBM FlashSystem__. Le stockage est organisé en __LUNs de 500 Gio minimum__, présentées aux hyperviseurs VMware sous forme de __datastores__ regroupés dans des __clusters SDRS (Storage Distributed Resource Scheduler)__.
+La logique d'allocation du stockage en mode bloc sur les clusters de calcul repose sur la technologie __IBM SVC (San Volume Controller)__ et __IBM FlashSystem__. Le stockage est organisé en __LUNs de 500 Gio minimum__, présentées selon la technologie utilisée :
+- Pour __VMware__ : sous forme de __datastores__ regroupés dans des __clusters SDRS (Storage Distributed Resource Scheduler)__
+- Pour __Bare Metal__ : sous forme de __volumes__
+- Pour __Open IaaS__ : sous forme de __Storage Repository (SR)__
 
 Chaque datastore hérite d'une __classe de performance__ définie en IOPS/To (de 500 à 15000 IOPS/To pour le FLASH, ou sans garantie pour le MASS STORAGE). La limitation d'IOPS est appliquée __au niveau du datastore__ (et non par VM), ce qui signifie que toutes les machines virtuelles partageant le même datastore se partagent le quota d'IOPS alloué.
 
@@ -173,7 +176,7 @@ __Flexibilité des réseaux__ :
 - Un réseau peut être __propagé entre plusieurs zones de disponibilité__ d'une même région
 - Un réseau peut être __partagé entre différents tenants__ de votre organisation
 - Un réseau peut être __terminé en zone de hosting__ pour vos équipements physiques
-- __Limite__ : Maximum de 20 réseaux configurables par cluster de calcul
+- __Limite__ : Maximum de 20 réseaux par commande. Vous pouvez effectuer plusieurs commandes successives pour étendre ce nombre selon vos besoins
 
 La commande d'un nouveau réseau et les décisions de partage entre vos tenants, sont réalisées dans le menu __'Réseau'__ du bandeau vert à gauche de l'écran. Les réseaux seront d'abord créés, puis une commande distincte sera générée pour les propager. Vous pouvez suivre l'avancement des commandes en cours en accédant à l'onglet "Commande" dans le menu, ou en cliquant sur les labels d'information qui vous redirigent vers les commandes actives ou en cours de traitement.
 
@@ -195,7 +198,9 @@ L'option de désactivation se trouve dans les options du réseau sélectionné. 
 
 ## Ajouter des hyperviseurs supplémentaires à un cluster de calcul
 
-Un __cluster de calcul__ est un regroupement d'hyperviseurs VMware ESXi qui doivent respecter les règles suivantes :
+Un __cluster de calcul__ est un regroupement d'hyperviseurs qui doivent respecter les règles suivantes :
+
+### Pour les clusters VMware ESXi
 
 __Règles d'homogénéité__ :
 
@@ -205,9 +210,8 @@ __Règles d'homogénéité__ :
 
 __Allocation mémoire__ :
 
-- Chaque lame est livrée avec __128 Go de RAM activée logiciellement__ par défaut
-- La mémoire physique totale est présente sur la lame mais bridée logiciellement au niveau du cluster
-- __Exemple__ : Un cluster de 3 lames STANDARD v3 = 3 × 128 Go = 384 Go activés (extensible jusqu'à 3 × 384 Go = 1152 Go)
+- Chaque lame est livrée avec __la totalité de la mémoire physique activée__ dès le départ
+- __Exemple__ : Un cluster de 3 lames STANDARD v3 (384 Go physiques chacune) = 3 × 384 Go = 1152 Go disponibles
 - __Recommandation__ : Ne pas dépasser 85% de consommation mémoire par lame pour éviter le mécanisme de compression VMware et le ballooning
 
 __Haute disponibilité__ :
@@ -228,6 +232,10 @@ __nota__ :
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
+### Pour les clusters Open IaaS
+
+Les clusters Open IaaS suivent des règles similaires en termes d'homogénéité et de haute disponibilité. La gestion des ressources de calcul s'effectue également via le menu __'OpenIaaS'__ avec les mêmes prérequis en termes de droits d'accès.
+
 ## Ajouter de la ressource mémoire supplémentaire à un cluster de calcul
 
 L'allocation de la mémoire sur les clusters de calcul fonctionne de la manière suivante :
@@ -236,7 +244,7 @@ __Principe de l'allocation mémoire__ :
 
 - Toutes les lames de calcul sont livrées avec le __maximum physique de mémoire__ installée
 - Une __limitation logicielle__ est appliquée au niveau du cluster VMware pour correspondre à la RAM facturée
-- Par défaut, chaque lame dispose de __128 Go de mémoire activée__ au sein du cluster
+- Chaque lame dispose de __la totalité de la mémoire physique activée__ au sein du cluster
 
 __Dimensionnement par cluster__ :
 
@@ -245,8 +253,7 @@ __Dimensionnement par cluster__ :
 
 __Exemple__ : Pour un cluster de trois hosts de type `STANDARD v3` (384 Go physiques par lame)
 
-- Mémoire initiale activée : 3 × 128 Go = 384 Go
-- Mémoire maximale disponible : 3 × 384 Go = 1152 Go
+- Mémoire totale disponible : 3 × 384 Go = 1152 Go
 
 __Recommandations importantes__ :
 

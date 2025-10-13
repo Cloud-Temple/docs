@@ -86,7 +86,10 @@ Sie erhalten dann eine Zusammenfassung der ausgewählten Optionen, bevor Sie Ihr
 
 ## Bestellung zusätzlicher Speicherressourcen
 
-Die Logik der Speicherzuweisung im Block-Modus auf Compute-Clustern basiert auf der Technologie __IBM SVC (San Volume Controller)__ und __IBM FlashSystem__. Der Speicher ist in __LUNs von mindestens 500 GiB__ organisiert, die VMware-Hypervisoren als __Datastores__ präsentiert werden, die in __SDRS (Storage Distributed Resource Scheduler) Clustern__ gruppiert sind.
+Die Logik der Speicherzuweisung im Block-Modus auf Compute-Clustern basiert auf der Technologie __IBM SVC (San Volume Controller)__ und __IBM FlashSystem__. Der Speicher ist in __LUNs von mindestens 500 GiB__ organisiert und wird je nach verwendeter Technologie präsentiert:
+- Für __VMware__: als __Datastores__, die in __SDRS (Storage Distributed Resource Scheduler) Clustern__ gruppiert sind
+- Für __Bare Metal__: als __Volumes__
+- Für __IaaS Open Source__: als __Storage Repository (SR)__
 
 Jeder Datastore erbt eine __Leistungsklasse__, die in IOPS/TB definiert ist (von 500 bis 15.000 IOPS/TB für FLASH oder ohne Garantie für MASS STORAGE). Die IOPS-Beschränkung wird __auf Datastore-Ebene__ angewendet (nicht pro VM), was bedeutet, dass alle virtuellen Maschinen, die sich denselben Datastore teilen, das zugewiesene IOPS-Kontingent teilen.
 
@@ -172,7 +175,7 @@ __Netzwerkflexibilität__:
 - Ein Netzwerk kann __zwischen mehreren Verfügbarkeitszonen__ innerhalb derselben Region verbreitet werden
 - Ein Netzwerk kann __zwischen verschiedenen Tenants__ Ihrer Organisation geteilt werden
 - Ein Netzwerk kann __in der Hosting-Zone beendet werden__ für Ihre physische Ausrüstung
-- __Grenze__: Maximal 20 konfigurierbare Netzwerke pro Compute-Cluster
+- __Grenze__: Maximal 20 Netzwerke pro Bestellung. Sie können mehrere aufeinanderfolgende Bestellungen aufgeben, um diese Anzahl nach Ihren Bedürfnissen zu erweitern
 
 Die Bestellung eines neuen Netzwerks und Entscheidungen über die Freigabe zwischen Ihren Tenants erfolgen im Menü __'Netzwerk'__ im grünen Banner auf der linken Seite des Bildschirms. Die Netzwerke werden zunächst erstellt, dann wird eine separate Bestellung zur Verbreitung generiert. Sie können den Fortschritt laufender Bestellungen verfolgen, indem Sie auf die Registerkarte "Bestellung" im Menü zugreifen oder auf die Informationslabels klicken, die Sie zu aktiven oder in Bearbeitung befindlichen Bestellungen weiterleiten.
 
@@ -194,7 +197,9 @@ Die Deaktivierungsoption befindet sich in den Optionen des ausgewählten Netzwer
 
 ## Hinzufügen zusätzlicher Hypervisoren zu einem Compute-Cluster
 
-Ein __Compute-Cluster__ ist eine Gruppierung von VMware ESXi-Hypervisoren, die die folgenden Regeln befolgen müssen:
+Ein __Compute-Cluster__ ist eine Gruppierung von Hypervisoren, die die folgenden Regeln befolgen müssen:
+
+### Für VMware ESXi-Cluster
 
 __Homogenitätsregeln__:
 
@@ -204,9 +209,8 @@ __Homogenitätsregeln__:
 
 __Speicherzuweisung__:
 
-- Jede Blade wird standardmäßig mit __128 GB softwareaktiviertem RAM__ geliefert
-- Der gesamte physische Speicher ist auf der Blade vorhanden, wird aber softwareseitig auf Cluster-Ebene gedrosselt
-- __Beispiel__: Ein Cluster mit 3 STANDARD v3-Blades = 3 × 128 GB = 384 GB aktiviert (erweiterbar auf 3 × 384 GB = 1.152 GB)
+- Jede Blade wird mit __dem gesamten physischen Speicher aktiviert__ von Anfang an geliefert
+- __Beispiel__: Ein Cluster mit 3 STANDARD v3-Blades (je 384 GB physisch) = 3 × 384 GB = 1.152 GB verfügbar
 - __Empfehlung__: Überschreiten Sie nicht 85% Speicherverbrauch pro Blade, um den VMware-Kompressionsmechanismus und Ballooning zu vermeiden
 
 __Hochverfügbarkeit__:
@@ -227,6 +231,10 @@ __Hinweis__:
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
+### Für IaaS Open Source-Cluster
+
+IaaS Open Source-Cluster folgen ähnlichen Regeln in Bezug auf Homogenität und Hochverfügbarkeit. Die Verwaltung der Rechenressourcen erfolgt ebenfalls über das Menü __'IaaS'__ mit denselben Voraussetzungen für Zugriffsrechte.
+
 ## Hinzufügen zusätzlicher Speicherressourcen zu einem Compute-Cluster
 
 Die Speicherzuweisung auf Compute-Clustern funktioniert wie folgt:
@@ -235,7 +243,7 @@ __Prinzip der Speicherzuweisung__:
 
 - Alle Compute-Blades werden mit dem __maximalen physischen Speicher__ installiert geliefert
 - Eine __Software-Beschränkung__ wird auf VMware-Cluster-Ebene angewendet, um dem abgerechneten RAM zu entsprechen
-- Standardmäßig hat jede Blade __128 GB aktivierten Speicher__ innerhalb des Clusters
+- Jede Blade hat __den gesamten physischen Speicher aktiviert__ innerhalb des Clusters
 
 __Cluster-Dimensionierung__:
 
@@ -244,8 +252,7 @@ __Cluster-Dimensionierung__:
 
 __Beispiel__: Für einen Cluster mit drei Hosts vom Typ `STANDARD v3` (384 GB physisch pro Blade)
 
-- Anfänglich aktivierter Speicher: 3 × 128 GB = 384 GB
-- Maximal verfügbarer Speicher: 3 × 384 GB = 1.152 GB
+- Insgesamt verfügbarer Speicher: 3 × 384 GB = 1.152 GB
 
 __Wichtige Empfehlungen__:
 

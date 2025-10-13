@@ -86,7 +86,10 @@ Si otterrà quindi un riepilogo delle opzioni selezionate prima di convalidare l
 
 ## Ordinare risorse di archiviazione aggiuntive
 
-La logica di allocazione dello storage in modalità block sui cluster di elaborazione si basa sulla tecnologia __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. Lo storage è organizzato in __LUN di almeno 500 GiB__, presentate agli hypervisor VMware come __datastore__ raggruppati in __cluster SDRS (Storage Distributed Resource Scheduler)__.
+La logica di allocazione dello storage in modalità block sui cluster di elaborazione si basa sulla tecnologia __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. Lo storage è organizzato in __LUN di almeno 500 GiB__, presentate secondo la tecnologia utilizzata:
+- Per __VMware__: come __datastore__ raggruppati in __cluster SDRS (Storage Distributed Resource Scheduler)__
+- Per __Bare Metal__: come __volumi__
+- Per __IaaS Open Source__: come __Storage Repository (SR)__
 
 Ogni datastore eredita una __classe di prestazioni__ definita in IOPS/TB (da 500 a 15.000 IOPS/TB per FLASH, o senza garanzia per MASS STORAGE). La limitazione IOPS viene applicata __a livello di datastore__ (non per VM), il che significa che tutte le macchine virtuali che condividono lo stesso datastore condividono la quota di IOPS assegnata.
 
@@ -172,7 +175,7 @@ __Flessibilità della rete__:
 - Una rete può essere __propagata tra più zone di disponibilità__ all'interno della stessa regione
 - Una rete può essere __condivisa tra diversi tenant__ della vostra organizzazione
 - Una rete può essere __terminata nella zona di hosting__ per le vostre apparecchiature fisiche
-- __Limite__: Massimo 20 reti configurabili per cluster di elaborazione
+- __Limite__: Massimo 20 reti per ordine. È possibile effettuare più ordini successivi per estendere questo numero secondo le proprie esigenze
 
 L'ordine di una nuova rete e le decisioni di condivisione tra i propri tenant vengono effettuate nel menu __'Rete'__ nel banner verde sul lato sinistro dello schermo. Le reti verranno prima create, quindi verrà generato un ordine separato per propagarle. È possibile monitorare l'avanzamento degli ordini in corso accedendo alla scheda "Ordine" nel menu, o facendo clic sulle etichette informative che reindirizzano agli ordini attivi o in elaborazione.
 
@@ -194,7 +197,9 @@ L'opzione di disattivazione si trova nelle opzioni della rete selezionata.
 
 ## Aggiungere hypervisor aggiuntivi a un cluster di elaborazione
 
-Un __cluster di elaborazione__ è un raggruppamento di hypervisor VMware ESXi che devono seguire queste regole:
+Un __cluster di elaborazione__ è un raggruppamento di hypervisor che devono seguire queste regole:
+
+### Per cluster VMware ESXi
 
 __Regole di omogeneità__:
 
@@ -204,9 +209,8 @@ __Regole di omogeneità__:
 
 __Allocazione della memoria__:
 
-- Ogni blade viene fornita con __128 GB di RAM attivata via software__ per impostazione predefinita
-- La memoria fisica totale è presente sulla blade ma limitata via software a livello di cluster
-- __Esempio__: Un cluster di 3 blade STANDARD v3 = 3 × 128 GB = 384 GB attivati (espandibile fino a 3 × 384 GB = 1.152 GB)
+- Ogni blade viene fornita con __tutta la memoria fisica attivata__ fin dall'inizio
+- __Esempio__: Un cluster di 3 blade STANDARD v3 (384 GB fisici ciascuna) = 3 × 384 GB = 1.152 GB disponibili
 - __Raccomandazione__: Non superare l'85% di consumo di memoria per blade per evitare il meccanismo di compressione VMware e il ballooning
 
 __Alta disponibilità__:
@@ -227,6 +231,10 @@ __nota__:
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
+### Per cluster IaaS Open Source
+
+I cluster IaaS Open Source seguono regole simili in termini di omogeneità e alta disponibilità. La gestione delle risorse di elaborazione viene effettuata anche tramite il menu __'IaaS'__ con gli stessi prerequisiti in termini di diritti di accesso.
+
 ## Aggiungere risorse di memoria aggiuntive a un cluster di elaborazione
 
 L'allocazione della memoria sui cluster di elaborazione funziona come segue:
@@ -235,7 +243,7 @@ __Principio di allocazione della memoria__:
 
 - Tutte le blade di elaborazione vengono fornite con la __massima memoria fisica__ installata
 - Viene applicata una __limitazione software__ a livello di cluster VMware per corrispondere alla RAM fatturata
-- Per impostazione predefinita, ogni blade ha __128 GB di memoria attivata__ all'interno del cluster
+- Ogni blade ha __tutta la memoria fisica attivata__ all'interno del cluster
 
 __Dimensionamento del cluster__:
 
@@ -244,8 +252,7 @@ __Dimensionamento del cluster__:
 
 __Esempio__: Per un cluster di tre host di tipo `STANDARD v3` (384 GB fisici per blade)
 
-- Memoria iniziale attivata: 3 × 128 GB = 384 GB
-- Memoria massima disponibile: 3 × 384 GB = 1.152 GB
+- Memoria totale disponibile: 3 × 384 GB = 1.152 GB
 
 __Raccomandazioni importanti__:
 
