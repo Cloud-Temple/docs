@@ -892,6 +892,38 @@ if __name__ == "__main__":
     setup_and_run_llamaindex()
 ```
 
+### 8. Configuring the CLINE extension for VSCode
+
+This tutorial guides you through configuring the CLINE extension in Visual Studio Code to use Cloud Temple's language models directly from your editor.
+
+#### Configuration Steps
+
+1.  **Open CLINE Settings**: In VSCode, open the settings for the CLINE extension.
+2.  **Create a New Model**: Add a new model configuration.
+3.  **Fill in the Fields**: Configure the fields as follows, based on the image below.
+
+    ![CLINE Configuration for LLMaaS](./images/cline_configuration.png)
+
+    *   **API Provider**: Select `OpenAI Compatible`.
+    *   **Base URL**: Enter the Cloud Temple LLMaaS API endpoint: `https://api.ai.cloud-temple.com/v1`.
+    *   **OpenAI Compatible API Key**: Paste the API key you generated from the Cloud Temple console.
+    
+    :::tip API Key Generation
+    To generate your API key, go to the Cloud Temple console, in the **LLMaaS** > **API Keys** section, then click on **"Create an API key"**.
+    
+    ![Create an API key from the console](./images/console_create_api_key.png)
+    :::
+    
+    *   **Model ID**: Specify the model you want to use, for example `qwen3-coder:30b`. You can find the list of available models in the [Models](./models.md) section.
+    *   **Model Configuration**:
+        *   **Supports Images**: Check this box if the model supports images.
+        *   **Supports browser use**: Check this box.
+        *   **Context Window Size**: Indicate the model's context window size (e.g., `128000`).
+        *   **Max Output Tokens**: Leave at `-1` for unlimited output by default.
+        *   **Temperature**: Adjust the temperature according to your needs (e.g., `0`).
+
+You can now select a model in CLINE and use it to generate code, answer questions, etc.
+
 ## 💡 Advanced Examples
 
 You will find in the following GitHub directory a collection of code examples and scripts demonstrating the different features and use cases of Cloud Temple's LLM as a Service (LLMaaS) offering:

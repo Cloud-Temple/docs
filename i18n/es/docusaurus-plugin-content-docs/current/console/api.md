@@ -132,44 +132,50 @@ completed: {
 
 __Nota: El identificador (UUIDv4) de la recurso creada está disponible en los resultados de la actividad una vez completada.__
 
-## Límites de API
+## Límites de la API
 
-1. **Tasa de solicitud**: Cada usuario tiene un límite diario o mensual de solicitudes que puede realizar a la API.
-2. **Cantidad de datos**: Puede haber límites en el número total de datos que se pueden recuperar por solicitud, tanto por tipo como por categoría.
-3. **Repetición de recursos**: Algunas APIs pueden limitar la frecuencia con la que se pueden solicitar ciertos recursos para evitar sobrecargar los servidores.
-4. **Autenticación y autorización**: Los límites también pueden estar relacionados con la autenticación del usuario, como el número de tokens de acceso o permisos asociados a una cuenta.
-5. **Costo**: En casos de APIs pagadas, puede haber límites en el coste total que se puede gastar por mes o año.
-6. **Uso no autorizado**: Las APIs pueden tener restricciones para evitar el uso no autorizado, como limitar el acceso solo desde direcciones IP específicas o dispositivos autorizados.
-7. **Errores de API**: Algunas plataformas pueden imponer límites en la cantidad de errores que se pueden generar por un período determinado para evitar problemas de mantenimiento.
+### ¿Por qué hay límites?
 
-### ¿Por qué las limitaciones?
+La consola de Cloud Temple define __límites sobre el volumen de solicitudes__ que un usuario puede dirigir a la API durante un período determinado. La instauración de estos límites de frecuencia es una medida común en la gestión de APIs, adoptada por varias razones esenciales:
 
-La consola Cloud Temple establece __límites en el volumen de solicitudes__ que un usuario puede enviar a la API durante una duración determinada. La implementación de estos límites de frecuencia es una práctica común en la gestión de APIs, adoptada para varios motivos esenciales:
+- __Prevención de abusos__: Estos límites contribuyen a salvaguardar la integridad de la API al prevenir usos abusivos o torpes que puedan comprometer su funcionamiento.
+- __Garantía de la calidad del servicio__: Al regular el acceso a la API, aseguramos una distribución equitativa de los recursos, permitiendo así que todos los usuarios se beneficien de una experiencia estable y de alto rendimiento.
 
-- **Prevención de abusos**: Estas limitaciones contribuyen a la salvaguarda de la integridad de la API al prevenir usos inadecuados o negligentes que podrían comprometer su funcionamiento.
-- **Garantía del servicio calidad**: Al regular el acceso a la API, aseguramos una distribución equitativa de los recursos, permitiendo que todos los usuarios disfruten de una experiencia estable y eficiente.
+Tomemos el ejemplo de un script mal diseñado o ineficaz que intenta realizar llamadas repetitivas a la API, con el riesgo de saturar los recursos y degradar el rendimiento. Al establecer umbrales de solicitudes, prevenimos estas situaciones y aseguramos el mantenimiento de __un servicio fluido y sin interrupciones__ para toda nuestra clientela.
 
-Pensemos en un script mal diseñado o ineficiente que realice llamadas repetidas a la API, pudiendo saturar las recursos y comprometer las prestaciones. Al establecer límites de solicitudes, evitamos tales situaciones y garantizamos el mantenimiento de __un servicio fluido y sin interrupciones__ para toda nuestra base de clientes.
+### ¿Cuáles son los límites de tasa para la API de la consola de Cloud Temple?
 
-### Qué limites de tasa para la API de la consola Cloud Temple?
+Aplicamos restricciones cuantitativas a las interacciones de los usuarios con la consola para cada producto.
 
-Aplicamos restricciones cuantitativas sobre las interacciones de los usuarios con la consola para cada producto.
+Los límites se definen en __solicitudes por segundo (s/s) y por IP de origen__. Más allá del umbral límite, el sistema responderá con un código de error HTTP 429, señalando que se ha superado el límite de solicitudes autorizadas.
 
-Estos límites se definen en __peticiones por segundo (r/s) y por fuente IP__. Superando el límite establecido, el sistema responderá con un código HTTP 429, indicando que se ha superado la cantidad de solicitudes autorizadas.
+Aquí están los límites definidos:
 
-A continuación, se detallan los límites definidos:
+| Producto | Límite |
+|---|---|
+| Consola de Cloud Temple | 25 s/s |
+| Identidad (IAM) | 25 s/s |
+| IaaS VMware | 25 s/s |
+| OpenIaaS | 25 s/s |
+| S3 | 25 s/s |
+| Openshift | 25 s/s |
+| Bastion | 25 s/s |
+| Red | 25 s/s |
+| Alojamiento | 25 s/s |
+| Marketplace | 25 s/s |
+| Soporte | 25 s/s |
+| Notificación | 25 s/s |
+| LLMaaS | 25 s/s |
 
-| Producto              | Límite establecido |
-|----------------------|--------------------|
-| Consola Cloud Temple | 60 r/s            |
-| Identidad (IAM)       | 60 r/s            |
-| Infraestructura como Servicio - Cálculo | 60 r/s |
-| Infraestructura como Servicio - Almacenamiento | 20 r/s |
-| Infraestructura como Servicio - Backups   | 60 r/s |
-| Plataforma como Servicio - S3         | 60 r/s |
-| Plataforma como Servicio - OpenShift | 60 r/s |
-| Red                   | 60 r/s            |
-| Hospedeo              | 60 r/s            |
+### Rutas específicas
+
+Ciertos puntos finales de la API específicos, especialmente los relacionados con la autenticación o acciones sensibles, tienen límites más restrictivos para reforzar la seguridad y garantizar la estabilidad.
+
+| Ruta | Límite |
+|---|---|
+| Autenticación (IAM) | 5 s/s |
+| IaaS - Almacenamiento (Datastores) | 20 s/s |
+| Marketplace (Contacto) | 1 s/min - 5 s/h |
 
 ### ¿Cómo funcionan las tasas de límite?
 

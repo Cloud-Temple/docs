@@ -1,201 +1,239 @@
+
+
 ---
-Titel: Gute Praktiken
+title: Gute Praktiken
 ---
 
 *Letzte Aktualisierung: 22.05.2025*
 
-## Empfehlungen zur sicheren Nutzung von Cloud Temple's Dienstleistungen
 
-Die Cloud Temple bietet eine hochgesichertes Infrastruktur durch Design, jedoch liegen bestimmte Sicherheitsbest Practices in Ihrer Verantwortung als Nutzer dieser Dienste. Dieses Dokument hilft Ihnen, die Sicherheit Ihres Cloud-Umfelds zu verbessern, indem es die Funktionen der Konsole nutzt.
 
-Sie finden hier praktische Empfehlungen für:
+## Empfehlungen für die sichere Nutzung der Cloud Temple-Dienste
 
-- Schutz des Zugriffs auf die Cloud-Konsole;
-- Management der Zugriffe und Berechtigungen effektiv;
-- Sicherung der von unseren Cloud-Diensten bereitgestellten Ressourcen.
+Die Cloud Temple-Dienste bieten Ihnen eine hochsichere Cloud-Infrastruktur per Design. Allerdings liegen bestimmte Sicherheitspraktiken in Ihrer Verantwortung als Benutzer dieser Dienste. Dieser Leitfaden hilft Ihnen, die Sicherheit Ihrer Cloud-Umgebung zu stärken, indem Sie die in der Konsole verfügbaren Funktionen nutzen.
+
+Sie finden darin konkrete Empfehlungen für:
+
+- Schutz des Zugangs zur Cloud-Konsole;
+- Kontrollierte Verwaltung von Zugriffen und Berechtigungen;
+- Sicherung der über unsere Cloud-Dienste bereitgestellten Ressourcen.
 
 
 
 ## Zugriff auf die Konsole
 
-Der Zugriff auf die Konsole ist der Eingangspunkt zu Ihrem gesamten Cloud-Tempel-Ökosystem. Daher ist es von entscheidender Bedeutung, ihn sicherzustellen, dass er effektiv geschützt wird.
+Der Zugriff auf die Konsole ist der Einstiegspunkt zu allen Ihren Cloud Temple-Diensten. Es ist daher wichtig, ihn effektiv zu schützen.
 
-### Einschränkung des Zugriffs auf die Konsole durch IP-Filtern
 
-Der Zugriff auf die Cloud-Management-Konsole wird auf vorab autorisierte IP-Adressen beschränkt. Diese Regelung ermöglicht den Zugang nur für Benutzer aus spezifischen IP-Adresseinheiten, was die Risiken von unbefugtem Zugriff minimiert.
 
-Sie können diese Einschränkungen in den Organisationsrichtlinien konfigurieren. Weitere Informationen zur Konfiguration des IP-Filtrierens finden Sie in der [Verwaltung der Zugriffssteuerung und Authentifizierung | Cloud Temple Dokumentation](../../console/iam/quickstart#verwaltung-von-zugriffen-und-authentifizierung).
+### Zugriff auf die Konsole durch IP-Filterung beschränken
 
-Um die Effizienz dieses Mechanismus zu maximieren, beachten Sie bitte:
+Der Zugriff auf die Cloud-Verwaltungskonsole ist auf vorab autorisierte IP-Adressen beschränkt. Diese Einschränkung ermöglicht es, den Zugriff nur für Benutzer aus den angegebenen IP-Bereichen zu erlauben, wodurch das Risiko von unerlaubtem Zugriff minimiert wird.
 
-- **Die Anzahl der zulässigen IP-Adressen** auf das absolut Notwendige zu beschränken;
-- Vermeiden Sie zu große oder allgemeine Platten;
-- Fügen Sie nur IP-Adressen von kontrollierten Umgebungen hinzu (z.B. IP-Adresse des Ausgangsnetzes Ihres Unternehmens);
-- Einschränken oder beschränken Sie die IP-Adressen einzelner Benutzer (z.B. öffentliche IP-Adresse eines Heimcomputers) auf das absolut Notwendige;
-- Einschränken oder beschränken Sie die IP-Adressen von Dritten (z.B. Dienstleister);
-- Halten Sie diese Liste aktuell, falls sich Ihre Netzwerkinfrastruktur ändert.
+Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Um zu erfahren, wie Sie die IP-Filterung einrichten, konsultieren Sie die [Zugangs- und Authentifizierungsverwaltung | Cloud Temple-Dokumentation](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
 
-Für den Zugang aus dem Homeoffice oder über externe Dienste (z.B. Remote-Arbeit, Cloud-Dienste) bevorzugen Sie eine Verbindung über Ihr Unternehmensnetzwerk via VPN anstelle direkter Autorisierung von IP-Adressen einzelner Benutzer. Dies reduziert die Ausweitung der Konsole und vereinfacht die Zugangskontrolle innerhalb Ihres Unternehmens.
+Um die Effektivität dieses Mechanismus zu maximieren, achten Sie auf folgendes:
 
-### Verwenden der Identitätsverwaltungsfederation
+- **Beschränken Sie die Anzahl der erlaubten IP-Adressen auf das Notwendigste**;
+- Vermeiden Sie zu große oder generische Bereiche;
+- Fügen Sie **nur IP-Adressen aus kontrollierten Umgebungen** hinzu (z. B. Ausgangs-IPs Ihres Unternehmensnetzwerks);
+- Verboten oder so weit wie möglich eingeschränkt: individuelle IP-Adressen (z. B. öffentliche IP-Adresse des Heimbüros Ihres IT-Personals);
+- Verboten oder so weit wie möglich eingeschränkt: IP-Adressen von Dritten (z. B. Dienstleister);
+- Halten Sie diese Liste bei Änderungen Ihrer Netzwerkinfrastruktur aktuell.
 
-Die Identitätsverwaltungsfederation ermöglicht die Integration der Console Cloud Temple mit Ihrem Identity Provider (IdP), indem Sie Single Sign-On (SSO) aktivieren. Diese Methode bietet eine zentrale Authentifizierung und bringt mehrere Vorteile:
+Für Fernzugriff (Homeoffice, Dienstleister...) bevorzugen Sie einen Zugang über Ihr Unternehmensnetzwerk via VPN anstelle der direkten Freigabe einzelner IP-Adressen. Dies reduziert die Angriffsfläche der Konsole und zentralisiert die Zugriffsverwaltung innerhalb Ihrer Organisation.
 
-- Zentralisierte Benutzerverwaltung: Erstellung, Änderung und Löschung von Konten über Ihren Adressserver;
-- Reduzierte Angriffsfläche: Die lokalen Konten werden obsolet oder eingeschränkt;
-- Erhöhte Transparenz: Zugriffe werden durch Ihr IdP protokolliert;
-- Erhöhte Integration: Multi-Factor-Authentifizierung (MFA), Warnungen, Sicherheitskontextpolitiken usw.;
-- Einfache Konformität: Konsistenz mit Ihren internen Praktiken.
 
-Aufgrund dieser Vorteile wird **die Identitätsverwaltungsfederation empfohlen**, insbesondere für Umgebungen mit großem Personal oder hohen Sicherheitsanforderungen.
 
-Befolgen Sie unsere Schritt-für-Schritt-Anleitungen zur Integration Ihres Identity Providers:
+### Identitätsfederierung verwenden
 
-- [Konfiguration der Identitätsverwaltungsfederation mit Azure AD | Dokumentation Cloud Temple](../../console/iam/tutorials/sso_aad)
-- [Konfiguration der Identitätsverwaltungsfederation mit ADFS | Dokumentation Cloud Temple](../../console/iam/tutorials/sso_adfs)
+Die Identitätsfederierung ermöglicht die Integration der Cloud Temple-Konsole bei Ihrem Identitätsanbieter (IdP) und aktiviert das SSO. Dieser Ansatz zentralisiert die Authentifizierung und bietet zahlreiche Vorteile:
 
-### Aktivieren der Mehrfaktor-Authentifizierung (MFA)
+- Einheitliche Kontoverwaltung: Erstellung, Änderung und Löschung über Ihr Verzeichnis;
+- Reduzierung der Angriffsfläche: lokale Konten werden überflüssig oder eingeschränkt;
+- Erhöhte Nachverfolgbarkeit: Zugriffe werden durch Ihren IdP protokolliert;
+- Stärkere Integration: MFA, Alarmierung, kontextbezogene Sicherheitsrichtlinien…;
+- Einfachere Einhaltung: Konsistenz mit Ihren internen Praktiken.
 
-Die Mehrfaktor-Authentifizierung (MFA) erhöht die Sicherheit beim Zugriff auf die Cloud-Console "Tempel des Königs". Sie führt eine zusätzliche Authentifizierungsstufe hinzu, indem sie einen temporären Code erfordert, der von einer speziellen Anwendung generiert wird, neben dem Passwort. Diese Maßnahme reduziert die Risiken von unbefugtem Zugriff erheblich, selbst bei einem Diebstahl der Identifikatoren.
+Aus diesen Gründen **wird die Identitätsfederierung empfohlen**, insbesondere für Umgebungen mit großem Personal oder hohen Sicherheitsanforderungen.
 
-Für Konten, die lokal durch die Cloud-Console verwaltigt werden (ohne Federierung), wird MFA standardmäßig aktiviert und kann nicht deaktiviert werden.
+Befolgen Sie unsere Schritt-für-Schritt-Anleitungen, um Ihren Identitätsanbieter zu integrieren:
 
-**Für federierte Konten ist es dringend empfohlen, den Auftrag des Anbieters der Identitätsverwaltung zu verlangen, MFA am Kundenseite durchzuführen**, insbesondere für Administratoren mit Zugriff auf die Cloud-Console.
+- [Identitätsfederierung mit Azure AD konfigurieren | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_azuread)
+- [Identitätsfederierung mit ADFS konfigurieren | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_adfs)
 
-Weitere Informationen:
 
-- [Was ist MFA und ist es verpflichtend? | Dokumentation von Cloud Temple](../../console/iam/quickstart#was-ist-mfa-und-ist-es-verpflichtend)
-- [Schulung: Federierung der Identität mit Microsoft Intune | Dokumentation von Cloud Temple](../../console/iam/tutorials/sso_intune)
-- [Schulung: Federierung der Identität mit Okta | Dokumentation von Cloud Temple](../../console/iam/tutorials/sso_okta)
 
-### Zugang zur Konsole aus sichernen Umgebungen
+### MFA-Authentifizierung aktivieren
 
-Die von Ihnen genutzten Anschlüsse und der von Ihnen betriebene Umfeld sind entscheidend für die Sicherung der Administration Ihrer Cloud-Dienste. Wenn Sie in einem Umfeld mit hohen Sicherheitsanforderungen arbeiten, sollten Sie die folgenden Empfehlungen beachten:
+Die Mehrfaktor-Authentifizierung (MFA) stärkt die Zugriffssicherheit auf die Cloud Temple-Konsole erheblich. Sie fügt eine zusätzliche Authentifizierungsstufe hinzu, bei der ein temporärer Code, der von einer speziellen Anwendung generiert wird, neben dem Passwort angefordert wird. Dieser Schutz begrenzt die Risiken von unautorisiertem Zugriff erheblich, auch wenn Anmeldeinformationen gestohlen werden.
 
-- Für die Selbstverwaltung durch Ihre eigenen Teams, befolgen Sie bitte vollständig oder teilweise die [Sicherheitsverfahren für die Verwaltung von IT-Systemen | Bundesamt für Sicherheit im Internet (BSI)](https://www.bsi.de/EN/Topics/A_Security/IT_Security_Guides/Security_Guidelines_for_IT_Systems_en.html);
-- Bei der Verwaltung durch einen Dritten sollten Sie die Möglichkeit prüfen, einen [Sicherer Administrationspartner (PAM) zu beauftragen | BSI](https://www.bsi.de/EN/Topics/A_Security/IT_Security_Guides/Security_Guidelines_for_IT_Systems_en.html), abhängig von der Empfindlichkeit der gehosteten Ressourcen und Ihrem rechtlichen sowie regulatorischen Kontext.
+Für Konten, die lokal über die Cloud Temple-Konsole verwaltet werden (ohne Federation), ist die MFA standardmäßig aktiviert und kann nicht deaktiviert werden.
 
-### Sensibiliser die Administratoren an Phishing-Risiken
+**Für federierte Konten wird dringend empfohlen, die MFA auf Seiten des Identitätsanbieters zu verlangen**, insbesondere für Administratoren, die Zugriff auf die Konsole haben.
 
-Die Zugriffe auf die Cloud-Console von Cloud Temple sollten mit besonderer Vorsicht genommen werden, insbesondere gegenüber Versuchen, durch Phishing Identifikatoren oder MFA-Codes zu erpressen. Es ist entscheidend, dass berechtigte Benutzer regelmäßig über die Risiken informiert werden: systematische Überprüfung der URL, Vorsicht vor unerwarteten Nachrichten und sofortiges Melden von verdächtigen Aktivitäten.
+Weitere Informationen:  
 
-Um diese Risiken zu minimieren, empfehlen wir, niemals über E-Mail empfangene Links zur Console zu nutzen, sondern immer die bekannten URL manuell einzugeben.
+- [Was ist MFA und ist es obligatorisch? | Cloud Temple-Dokumentation](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Tutorial: Identitätsfederierung mit Microsoft EntraID | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_azuread)
+- [Tutorial: Identitätsfederierung mit Microsoft ADFS | Cloud Temple-Dokumentation](../../console/iam/tutorials/sso_adfs)
 
-Diese guten Praktiken obliegen Ihnen als Kunde und sind unerlässlich, um Phishing-Angriffe zu verhindern. Bei Zweifeln steht der Cloud-Tempel-Support für Sie zur Verfügung.
 
-### Verwaltung von Cloud-Diensten
 
-Ihre Cloud-Ressourcen werden aus der Konsole verwaltet. In diesem Kapitel stellen wir Ihnen wichtige Empfehlungen zur Kontrolle der Betriebsführung von Cloud-Diensten vor.
+### Auf die Konsole von sicheren Geräten zugreifen
 
-### Identifizierung der Eigentümer
+Der Arbeitsplatz und die Umgebung, von denen aus Sie auf die Konsole zugreifen, sind wichtig, um die Administration Ihrer Cloud-Dienste zu sichern. Wenn Sie in einem Umfeld mit hohen Sicherheitsanforderungen arbeiten, können Sie die folgenden Empfehlungen anwenden:
 
-Der Eigentümer eines Tenants besitzt alle Zugangsrechte zu aktivierten Produkten und erhält offizielle Benachrichtigungen. Es ist entscheidend, sicherzustellen, dass die Eigentümer Ihres Tenants die richtigen Ansprechpartner innerhalb Ihrer Organisation sind.
+- Für die Administration durch Ihre eigenen Teams, wenden Sie eine oder mehrere der [Empfehlungen zur sicheren Administration von IT-Systemen | ANSSI](https://cyber.gouv.fr/publications/recommandations-relatives-ladministration-securisee-des-si) an;
+- Bei der Administration durch Dritte prüfen Sie die Möglichkeit, auf [Zertifizierte Administrations- und Wartungsdienstleister (PAMS) | ANSSI](https://cyber.gouv.fr/prestataires-dadministration-et-de-maintenance-securisees-pams) zurückzugreifen, abhängig von der Sensibilität der gehosteten Ressourcen und Ihrem rechtlichen und regulatorischen Kontext.
+
+
+
+### Bewusstsein der Administratoren für das Phishing-Risiko schärfen
+
+Der Zugang zur Cloud Temple Console muss besonders aufmerksam überwacht werden, insbesondere gegenüber Phishing-Angriffen, die darauf abzielen, Zugangsdaten oder MFA-Codes zu stehlen. Es ist entscheidend, dass berechtigte Benutzer regelmäßig über diese Risiken informiert werden: systematische Überprüfung der URL, Vorsicht bei unerwarteten Nachrichten und unverzügliche Meldung jeder verdächtigen Aktivität.
+
+Um diese Risiken zu begrenzen, empfehlen wir, niemals über einen Link zuzugreifen, der per E-Mail erhalten wurde, sondern immer die gewöhnliche URL manuell einzugeben.
+
+Diese guten Praktiken sind Ihre Verantwortung als Kunde und sind entscheidend, um Phishing-Angriffe zu verhindern. Im Zweifelsfall steht Ihnen der Cloud Temple Support zur Verfügung.
+
+
+
+## Cloud-Dienstverwaltung
+
+Ihre Cloud-Ressourcen werden von der Konsole aus verwaltet. Dieses Kapitel präsentiert Ihnen wichtige Empfehlungen, um die Nutzung der Cloud-Dienste zu kontrollieren.
+
+
+
+### Mandantbesitzer identifizieren
+
+Der Mandantbesitzer verfügt über alle Berechtigungen für aktivierte Produkte und erhält offizielle Benachrichtigungen. Es ist entscheidend sicherzustellen, dass die Mandantbesitzer die richtigen Ansprechpartner innerhalb Ihrer Organisation sind.
 
 Für eine sichere und effiziente Verwaltung:
 
-- **Einen verantwortlichen Eigentümer identifizieren**, idealerweise jemanden, der direkt in die Verwaltung des Umfelds involviert ist.
-- **Die Kontaktdaten des Eigentümers** überprüfen, um sicherzustellen, dass sie gültig und regelmäßig genutzt werden.
-- **Ein direkter Zugang durch die Hinzufügung eines Organisationsmitglieds als Eigentümer** gewährleisten, selbst wenn Sie die Verwaltung Ihres Cloud-Dienstes an einen externen Dienstleister übertragen, um wichtige Entscheidungen und Benachrichtigungen zu kontrollieren.
-- **Die Anzahl der Eigentümer auf 3 begrenzen**, um die Exposition zu reduzieren und den Audit von kritischen Handlungen zu erleichtern.
+- **Identifizieren Sie einen verantwortlichen Mandantbesitzer**, idealerweise eine Person, die direkt in die Verwaltung der Umgebung involviert ist.
+- **Überprüfen Sie die Kontaktemail des Mandantbesitzers**, um sicherzustellen, dass sie gültig ist und regelmäßig geprüft wird.
+- **Stellen Sie eine direkte Kontrolle sicher**, indem Sie einen Mandantbesitzer aus Ihrer Organisation hinzufügen, selbst wenn Sie die Verwaltung Ihres Cloud-Diensts an Dritte übertragen, um Benachrichtigungen und wichtige Entscheidungen überwachen zu können.
+- **Begrenzen Sie die Anzahl der Mandantbesitzer auf 3**, um die Angriffsfläche zu reduzieren und die Auditierung kritischer Aktionen zu vereinfachen.
 
-Weitere Informationen zur Verwaltung von Eigentümern finden Sie im [Guide zum Eigentum eines Tenants | Cloud Temple-Dokumentation](../../console/iam/concepts#besitzverwaltung-auf-einem-tenant).
+Weitere Informationen zur Verwaltung von Mandantbesitzern finden Sie im [Guide zu Mandantbesitzern | Cloud Temple-Dokumentation](../../console/iam/concepts#gestion-des-propri%C3%A9taires-sur-un-tenant).
 
-### Verwaltung von Zugriffsrechten auf Ihren Cloud-Diensten
 
-Die Cloud-Tempel-Konsole ermöglicht eine präzise Verwaltung der Zugriffsrechte, indem jedem Benutzer ein oder mehrere Zugangsniveaus zugewiesen werden, die bestimmen, welche Aktionen autorisiert sind. Weitere Informationen zu den verfügbaren Rechten ([Zugriffsrechte für Benutzer Ihrer Organisation | Konfigurationsrichtlinien Cloud Temple](../../console/iam/concepts#berechtigungen-für-benutzer-in-ihrer-organisation)) finden Sie in der Dokumentation.
 
-Für eine effiziente und sichere Verwaltung der Zugriffsrechte empfehlen wir folgende Best Practices:
+### Berechtigungen für Ihre Cloud-Dienste verwalten
 
-- **Anwendungs des Prinzips der geringsten Privilegien:** Geben Sie den Benutzern nur die Rechte zu, die für ihre Aufgaben unbedingt erforderlich sind. Dies reduziert Risiken, indem der Zugriff auf nicht notwendige Funktionen eingeschränkt wird.
-- **Sensiblen Rechten beschränken:** Vergeben Sie sensible Rechte nur an die Benutzer, die für diese Funktionen verantwortlich sind. Sensible Rechte beziehen sich insbesondere auf die Zugangskontrolle (console_public_access_write, *_console_access, object - storage_write), die Berechtigungenverwaltung (iam_write, iam_offline_access) und die Backup-Verwaltung (backup_iaas_opensource_write, backup_iaas_spp_write).
-- **Lesendes Alleingeben:** In Zweifelsfällen geben Sie ein Lesendes Alleingeben (*_read) an, um Risiken zu minimieren und gleichzeitig den Zugriff auf notwendige Informationen zu ermöglichen.
-- **Regelmäßige Überprüfung der Rechte:** Überprüfen Sie regelmäßig die Rechte der Benutzer, um abgeschaffte Rechte zu entfernen. Die Exportierung der Rechte in CSV-Format erleichtert diese Verwaltung.
+Die Cloud Temple-Konsole ermöglicht eine granulare Zugriffsverwaltung, indem jedem Benutzer ein oder mehrere Berechtigungsebenen zugewiesen werden, die genau die erlaubten Aktionen bestimmen. Lesen Sie die Berechtigungs-Dokumentation ([Verfügbare Berechtigungen für Benutzer Ihrer Organisation | Cloud Temple-Dokumentation](../../console/iam/concepts#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)), um detailliert zu verstehen, welche verschiedenen Berechtigungen vorhanden sind und wie Sie diese angemessen zuweisen.
 
-Eine sorgfältige Zugriffsrechtszuweisung verringert das Risiko von Fehlern oder bösartiger Handlung, während sie die Sicherheitsposition stärkt.
+Für eine effektive und sichere Berechtigungsverwaltung empfehlen wir, diese Best Practices zu befolgen:
 
-### Regelmäßige Aktualisierung der Hypervisor
+- **Prinzip der minimalen Berechtigung anwenden:** Gewähren Sie Benutzern nur die Berechtigungen, die für ihre Aufgaben erforderlich sind. Dies reduziert Risiken, indem der Zugriff auf nicht benötigte Funktionen eingeschränkt wird.
+- **Sensible Berechtigungen begrenzen:** Weisen Sie sensible Berechtigungen nur Benutzern zu, die für diese Funktionen verantwortlich sind. Zu den sensiblen Berechtigungen gehören insbesondere die Zugriffsverwaltung (console_public_access_write, *_console_access, object - storage_write), die Berechtigungsverwaltung (iam_write, iam_offline_access) und die Backup-Verwaltung (backup_iaas_opensource_write, backup_iaas_spp_write).**
+- **Leserechte bevorzugen:** Bei Unsicherheit gewähren Sie Leserechte (*_read), um Risiken zu minimieren, während der Zugriff auf erforderliche Informationen ermöglicht wird.
+- **Regelmäßige Überprüfung der Berechtigungen durchführen:** Überprüfen Sie regelmäßig die Berechtigungen der Benutzer, um veraltete Berechtigungen zu entfernen. Der Export der Berechtigungen im CSV-Format erleichtert diese Verwaltung.**
 
-Cloud Temple bietet regelmäßig Updates für die Hypervisor, um sicherzustellen, dass Sicherheitslücken geschlossen werden. Die Aktualisierung der Hypervisor liegt jedoch in Ihrer Verantwortung, da wir keine Einblicke in Ihre Geschäftskonfiguration haben.
+Eine kontrollierte Zuweisung von Berechtigungen begrenzt Risiken von Fehlern oder schädlichen Aktionen und stärkt Ihre Sicherheitsposition.
+
+
+
+### Regelmäßige Aktualisierung der Hypervisoren
+
+Cloud Temple stellt regelmäßig Builds für die Hypervisoren bereit, um die Anwendung von Sicherheitspatches zu gewährleisten. Die Aktualisierung der Hypervisoren bleibt jedoch Ihre Verantwortung, da wir keinen Einblick in Ihre geschäftlichen Anforderungen haben.
 
 Daher empfehlen wir Ihnen:
 
-- **Regelmäßig die verfügbaren neuen Builds für Ihre Hypervisor in der Konsole zu überprüfen**;
-- **Regelmäßig die neuen Builds auf allen Ihrer Hypervisor auszuführen**, insbesondere wenn sie Sicherheitslücken schließen;
-- **Regelmäßig auf Ihren virtuellen Maschinen die neuesten Versionen der vmtools auszuführen**.
+- Regelmäßig in der Konsole zu prüfen, ob neue Builds für Ihre Hypervisoren verfügbar sind;  
+- **Regelmäßig die neuen Builds auf allen Ihren Hypervisoren zu deployen**, insbesondere wenn sie Sicherheitslücken beheben;  
+- Regelmäßig die neuen Versionen der vmtools auf Ihren virtuellen Maschinen zu deployen.
 
-Eine Seite mit Sicherheitswarnungen steht zur Verfügung, um Sie über bekannte Schwachstellen und Empfehlungen zu informieren: [Sicherheitswarnungen | Cloud Temple](https://docs.cloud-temple.com/console/security/security_alarms).
+**Eine Sicherheitswarnungsseite ist verfügbar**, um Sie über bekannte Schwachstellen und zugehörige Empfehlungen zu informieren: [Sicherheitswarnungen | Cloud Temple](https://docs.cloud-temple.com/console/security/security_alarms).
 
-### Verfolgen der Cloud-Aktivitäten
 
-Um eine effektive Überwachung Ihres Cloud-Umfelds durchzuführen und schnell auf Anomalien reagieren zu können, ist es entscheidend, eine Strategie für aktive Alarmsysteme einzurichten. Wir empfehlen Ihnen:
 
-- **Überwachen Sie die Verfügbarkeit der Dienste** über die [Statusseite | Cloud Temple](https://status.cloud-temple.com/), um im Falle von Störungen oder großflächigen Ausfällen benachrichtigt zu werden;
-- **Themenüberwachungen aktivieren**, die für Ihren Einsatz relevant sind, aus der Konsole, um relevante Erinnerungen in Echtzeit zu erhalten (siehe [Abonnement auf Themenüberwachungen | Dokumentation Cloud Temple](../../console/iam/concepts#abonnement-an-die-themen-updates)) ;
-- **Die Aktivitätslogs des Cloud** nutzen, um verdächtige oder ungewöhnliche Aktionen auf Ihren Ressourcen zu identifizieren (siehe Abschnitt "Journalisierung - Überwachung von Aktivitäten" im [Einstiegsleitfaden | Dokumentation Cloud Temple](../../iaas_vmware/quickstart)). Die Sammlung und Analyse der Aktivitätslogs kann automatisiert über die API-Konsole erfolgen, um die Ereignisse in Ihre Tools zur Überwachung oder Erkennung von Ausfällen zu integrieren.
+### Aktivitäten auf Cloud-Diensten überwachen
 
-## Sicherung von gehosteten Ressourcen
+Um eine effektive Überwachung Ihrer Cloud-Umgebung sicherzustellen und schnell auf Anomalien reagieren zu können, ist es entscheidend, eine aktive Überwachungsstrategie zu implementieren. Wir empfehlen insbesondere:
 
-In einem Cloud-Modell liegt die Verantwortung für die Sicherung der von Ihnen bereitgestellten Ressourcen bei Ihnen selbst. Cloud Temple bietet eine sichere Infrastruktur, aber es ist Ihre Aufgabe, Ihre Betriebssysteme, Daten und Konfigurationen zu schützen.
+- **Die Verfügbbarkeit der Dienste überwachen** über die [Statusseite | Cloud Temple](https://status.cloud-temple.com/), um bei Incidenten oder Ausfällen globaler Natur benachrichtigt zu werden;
+- **Relevante thematische Benachrichtigungen aktivieren** für Ihren Einsatzfall über die Console, um in Echtzeit wichtige Alarme zu erhalten (siehe [Abonnement zu thematischen Benachrichtigungen | Cloud Temple-Dokumentation](../../console/iam/concepts#abonnement-aux-notifications-thématiques));
+- **Die Cloud-Protokolle auswerten**, um sensible oder verdächtige Aktionen auf Ihren Ressourcen zu identifizieren (siehe Abschnitt „Protokollierung – Aktivitätsverfolgung“ des [Leitfadens zur Einrichtung | Cloud Temple-Dokumentation](../../iaas_vmware/quickstart)). Die Erfassung und Analyse der Aktivitätsprotokolle kann über die Console-API automatisiert werden, um Ereignisse in Ihre Überwachungs- oder Incident-Erkennungstools zu integrieren.
 
-Sie finden hier die grundlegenden Best Practices zur Stärkung der Sicherheit Ihrer VMs: Konfiguration von Backup-Politiken, Verschlüsselung kritischer Ressourcen sowie Hardening der Betriebssysteme. Diese Maßnahmen tragen dazu bei, das Risiko eines Angriffs zu minimieren, die Integrität der Daten zu gewährleisten und eine Kontinuität im Falle eines Incidents sicherzustellen.
 
-### Sichern von Daten - Datensicherung konfigurieren
 
-Um die Sicherheit und Widerstandsfähigkeit Ihrer Daten zu gewährleisten, ist es unerlässlich, Ihre Datensicherungsrichtlinien korrekt festzulegen und anzuwenden. Die Zuweisung einer Datensicherungsrichtlinie auf jede virtuellen Maschine vor ihrem Start ist Pflicht. Weitere Informationen finden Sie in der Abschnitt "Datensicherung" des [Startgültige Anleitung | Dokumentation Cloud Temple](../../iaas_vmware/quickstart).
+## Ressourcen schützen
 
-Hier sind die Empfehlungen zur Verwaltung von Datensicherungsrichtlinien für Ihre Cloud Temple Ressourcen:
+Im Cloud-Modell liegt die Sicherheit der bereitgestellten Ressourcen in der Verantwortung des Benutzers. Cloud Temple bietet eine sichere Infrastruktur, aber es liegt an Ihnen, Ihre Betriebssysteme, Ihre Daten und Ihre Konfigurationen zu schützen.
 
-- **Richtlinien definieren:** Lassen Sie uns von unserem Support spezielle Datensicherungsrichtlinien erstellen, die den Sicherheitsanforderungen Ihrer Organisation entsprechen.
-- **Vermeiden Sie suspendierte Richtlinien:** Stellen Sie sicher, dass keine VM mit einer suspendierten Datensicherungsrichtlinie verbunden ist, um unbeabsichtigte Datenverletzungen zu vermeiden.
-- **Testen Sie die Wiederherstellung:** Testen Sie regelmäßig die Wiederherstellung Ihrer Backups, um die Effizienz Ihrer Wiederherstellungsverfahren zu überprüfen.
+Unten finden Sie die wesentlichen Best Practices, um die Sicherheit Ihrer VM zu verstärken: Konfiguration von Sicherungsrichtlinien, Verschlüsselung kritischer Ressourcen und Verstärkung der Betriebssysteme. Diese Maßnahmen tragen dazu bei, die Risiken von Sicherheitsverletzungen zu begrenzen, die Datenintegrität zu gewährleisten und eine Betriebskontinuität im Falle eines Vorfalls zu sichern.
 
-### Encrypting Sensitive VMs
 
-In addition to encrypting data at the disk level, native for all cloud resources, **encrypting virtual machines (VMs) can be enabled to safeguard your most sensitive resources**. For more information, refer to [Encrypting a VMware Machine | Cloud Temple Documentation](../../iaas_vmware/tutorials/vm_encryption?_highlight=*chiff).
 
-Here are some best practices when using VM encryption:
+### Backup konfigurieren
 
-- Enable encryption on sensitive VMs: Apply it during VM creation or planned updates. The process requires temporarily stopping the VM;
-- Verify encryption status: Confirm from the console that the VM displays "encrypted" status correctly;
-- Backup before encryption: Ensure the VM is properly backed up prior to any modifications.
+Um die Sicherheit und Resilienz Ihrer Daten zu gewährleisten, ist es entscheidend, Ihre Backup-Politiken korrekt zu definieren und anzuwenden. Die Zuweisung einer Backup-Politik zu jeder virtuellen Maschine vor deren Start ist obligatorisch. Die Dokumentation ist in der Sektion „Backup“ des [Quickstart-Guides | Cloud Temple-Dokumentation](../../iaas_vmware/quickstart) verfügbar.
 
-### Begrenzen der Auskunftserstattung Ihrer Ressourcen
+Hier sind die Empfehlungen für die Verwaltung der Backup-Politiken Ihrer Cloud Temple-Ressourcen:
 
-Um die Angriffsfläche Ihrer virtuellen Maschinen zu reduzieren, ist es empfehenswert, die bereitgestellten Dienste auf das Notwendige zu beschränken. Insbesondere sollten Sie sicherstellen, dass Ihre Ressourcen so konfiguriert sind, **dass keine Admin-Interfaces und Konsolen der Systeme und Anwendungen öffentlich zugänglich sind**.
+- **Definieren Sie Ihre Backup-Politiken:** Fordern Sie den Support an, um Backup-Politiken zu erstellen, die den Sicherheitsanforderungen unserer Organisation entsprechen.  
+- **Vermeiden Sie suspendierte Backup-Politiken:** Lassen Sie keine VM mit einer suspendierten Backup-Politik verbunden, um die Datenintegrität nicht zu gefährden.
+- **Führen Sie regelmäßige Wiederherstellungstests durch:** Testen Sie regelmäßig die Wiederherstellung Ihrer Backups, um die Effektivität Ihrer Wiederherstellungsverfahren zu überprüfen.
 
-Wenn Sie die Cloud Storage Object Services von Cloud Temple verwenden, ist es ratsam, **die Buckets nicht öffentlich zu konfigurieren**, außer in den Fällen, in denen dies absolut notwendig ist (weitere Informationen finden Sie in der Dokumentation zur Verwaltung von Zugriffsrechten für S3 | Cloud Storage Object Services).
 
-### Hardening Virtual Machines (IaaS)
 
-Hosting virtual machines on a secure cloud does not inherently ensure the security of the operating system, services, or applications they run. Hardening virtual machines, whether self-managed or sourced from a catalog, falls under your responsibility.
+### Verschlüsselung sensibler VMs
 
-We recommend you to **apply basic security measures**:
+Zusätzlich zur Verschlüsselung der Daten auf Festplattenebene, die für alle Cloud-Ressourcen nativ ist, **kann die Verschlüsselung von VMs aktiviert werden, um Ihre sensibelsten Ressourcen zu schützen**. Dazu konsultieren Sie bitte [VMware-Maschine verschlüsseln | Cloud Temple-Dokumentation](../../iaas_vmware/tutorials/vm_encryption).
 
-- Keep systems updated with security patches;
-- Limit exposed services;
-- Disable unnecessary components;  
-- Restrict access rights to the minimum necessary;
-- Enable access logging;
-- Configure regular backups.
+Hier sind einige bewährte Praktiken bei der Verwendung der VM-Verschlüsselung:
 
-To guide you through these actions, refer to:
+- Verschlüsselung auf sensiblen VMs aktivieren: Aktivieren Sie sie bei der Erstellung der Maschine oder während einer geplanten Aktualisierung. Der Vorgang erfordert einen vorübergehenden Stopp der VM;
+- Status der Verschlüsselung prüfen: Kontrollieren Sie über die Konsole, ob die VM den Status "verschlüsselt" anzeigt;
+- Vor der Verschlüsselung sichern: Stellen Sie sicher, dass die VM korrekt gesichert ist, bevor Sie Änderungen vornehmen.
 
-- Security hardening guides provided by software vendors you use;
-- [Essential Guides and Cybersecurity Best Practices | ANSSI (FR)](https://cyber.gouv.fr/guides-essentiels-et-bonnes-pratiques-de-cybersecurite-par-ou-commencer);
-- [CIS Benchmarks® Security Guides | CIS (EN)](https://www.cisecurity.org/cis-benchmarks).
 
-These practices form the first line of defense for securing your systems in the cloud.
 
-### Hardening Container (Security Enhancements for PaaS Services)
+### Einschränkung der Exposition Ihrer Ressourcen
 
-To ensure the security of your containers within the OpenShift Platform-as-a-Service (PaaS), we recommend implementing the following measures to strengthen their hardening:
+Um die Angriffsfläche Ihrer virtuellen Maschinen zu begrenzen, wird dringend empfohlen, die exponierten Dienste auf das Notwendigste zu beschränken. Insbesondere achten Sie darauf, Ihre Ressourcen so zu konfigurieren, dass **die Verwaltungs-Schnittstellen und Konsole der deployten Systeme und Anwendungen nicht öffentlich zugänglich gemacht werden**.
 
-- **Image Sources**: Ensure that all images originate from trusted sources, such as internal registries or the Red Hat Container Catalog, and avoid using unverified community images available on public Docker Hub.
-- **Privilege Restriction**: Utilize OpenShift's security features, including *Security Context Constraints* (SCC), to limit container permissions strictly to what is necessary.
-- **Custom SCC Configuration**: Create tailored SCCs for each application or group of applications. This includes restricting allowed system calls via *seccomp profiles*, with specific configurations like the prohibition of *ptrace* or *mount* to minimize the risk of container escape attacks.
-- **Workload Isolation**: Leverage *Namespaces* and *Network Policies* to isolate workloads and limit unnecessary interactions between containers.
-- **Comprehensive Logging**: Activate logging via OpenShift's Operator for OpenShift Logging to capture events related to containers and hosted systems, enhancing the detection and analysis of suspicious activities.
+Wenn Sie die Objektspeicher-Dienste von Cloud Temple verwenden, wird ebenfalls empfohlen, **Ihre Buckets nicht im öffentlichen Zugriff zu konfigurieren**, es sei denn, dies ist ausdrücklich notwendig (siehe [Einschränkung des Zugriffs auf Ihre S3-Buckets | Cloud Temple-Dokumentation](../../storage/oss/quickstart#gestion-des-politiques-daccès)).
 
-## Weitere Informationen
 
-Wenn Sie zusätzliche Sicherheitsdienste oder einen verstärkten Sicherheitsbegleitung in Bezug auf Aspekte wie Audit, Hardening, Compliance, Beratung usw. benötigen, können unsere **Professional Services** für Sie da sein. Weitere Informationen erhalten Sie bei Ihrem Cloud Temple-Ansprechpartner.
+
+### Virtuelle Maschinen harden (IaaS-Dienste)
+
+Das Hosting einer virtuellen Maschine in einer sicheren Cloud garantiert allein nicht die Sicherheit des Betriebssystems, der Dienste oder der Anwendungen, die sie ausführt. Das Hardening von VMs, egal ob sie von Ihnen bereitgestellt werden oder aus dem Katalog stammen, liegt in Ihrer Verantwortung.
+
+Wir empfehlen Ihnen, **die grundlegenden Sicherheitsmaßnahmen anzuwenden**
+
+- Systeme aktuell mit Sicherheitspatches halten;
+- Exponierte Dienste begrenzen;
+- Nicht benötigte Komponenten deaktivieren;  
+- Zugriffsrechte auf das Notwendigste beschränken;
+- Zugriffsprotokollierung aktivieren;
+- Regelmäßige Backups konfigurieren.
+
+Um diese Maßnahmen umzusetzen, verlassen Sie sich auf :
+
+- Die Hardening-Guides der Anbieter der von Ihnen verwendeten Software;
+- [Essentielle Leitfäden und Cybersecurity-Best Practices | ANSSI (FR)](https://cyber.gouv.fr/guides-essentiels-et-bonnes-pratiques-de-cybersecurite-par-ou-commencer) ;
+- [Sicherheitsleitfäden CIS Benchmarks® | CIS (EN)](https://www.cisecurity.org/cis-benchmarks).
+
+Diese Best Practices bilden die erste Verteidigungslinie, um Ihre Systeme in der Cloud zu sichern.
+
+
+
+### Container sicherer gestalten (PaaS-Dienste)
+
+Um die Sicherheit Ihrer Container im Rahmen des PaaS-Dienstes OpenShift zu gewährleisten, empfehlen wir, die folgenden Maßnahmen zur Stärkung des Sicherheitsniveaus umzusetzen:
+
+- **Bildquellen**: Stellen Sie sicher, dass alle Bilder aus vertrauenswürdigen Quellen stammen, wie z. B. internen Registrierungen oder dem Red Hat Container Catalog, und vermeiden Sie die Verwendung nicht verifizierter Community-Bilder, wie sie auf Docker Hub öffentlich verfügbar sind.
+- **Einschränkung der Berechtigungen**: Begrenzen Sie die Berechtigungen der Container mithilfe der Funktionen von OpenShift, insbesondere der *Security Context Constraints* (SCC), um die Berechtigungen auf das unbedingt Notwendige zu beschränken.
+- **Konfiguration der SCC**: Erstellen Sie benutzerdefinierte SCCs für jede Anwendung oder Gruppe von Anwendungen. Dies umfasst die Einschränkung der zulässigen Systemaufrufe (z. B. über *seccomp profiles*), mit spezifischen Konfigurationen wie dem Verbot von *ptrace* oder *mount*, um das Risiko von Container-Eskapaden zu reduzieren.
+- **Arbeitslast-Isolierung**: Verwenden Sie *Namespaces* und *Network Policies*, um Anwendungen zu isolieren und unnotwendige Interaktionen zwischen Containern zu begrenzen.
+- **Vollständige Protokollierung**: Aktivieren Sie die Protokollierung über den OpenShift-Logging-Operator, um Ereignisse im Zusammenhang mit Containern und Host-Systemen zu erfassen, um so verdächtige Aktivitäten besser zu erkennen und zu analysieren.
+
+
+
+## Weiterführende Informationen
+
+Wenn Sie zusätzliche Sicherheitsdienstleistungen oder eine verstärkte Begleitung bei Sicherheitsaspekten (Audit, Hardening, Compliance, Beratung usw.) wünschen, können unsere **Professional Services** in Anspruch genommen werden. Weitere Informationen erhalten Sie, indem Sie sich an Ihren Cloud Temple-Kontakt wenden.

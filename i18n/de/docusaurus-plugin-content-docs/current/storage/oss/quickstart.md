@@ -94,6 +94,41 @@ Das Cloud Storage Temple ist ein hochgesicherter und qualitativ hochwertiger Clo
     ![S3 Files](./images/S3_files.png)
     Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
     ![S3 Parameters](./images/S3_params.png)
+
+    **Wichtiger Hinweis zur Aufbewahrung**: Das Konzept der Aufbewahrung entspricht der Datenschutzdauer, nicht einer geplanten Löschung. Die Daten bleiben während der gesamten Aufbewahrungszeit zugänglich. Um eine automatische Datenlöschung am Ende der Aufbewahrungszeit auszulösen, ist es notwendig, eine Lifecycle-Richtlinie zu definieren.
+
+    **Beispiel einer Lifecycle-Richtlinie** (`lifecycle.json`):
+
+    **Voraussetzungen**:
+
+    - Das Speicherkonto '__globaler Zugriffsschlüssel__' muss verwendet werden, da es die Rechte '__s3:PutLifecycleConfiguration__' und '__s3:GetLifecycleConfiguration__' auf dem Bucket haben muss.
+
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "DeleteOldObjects",
+          "Prefix": "",  // "" = gesamter Bucket, sonst spezifisches Präfix setzen
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30  // löscht nach 30 Tagen
+          },
+          "NoncurrentVersionExpiration": {
+            "NoncurrentDays": 7  // löscht alte Versionen 7 Tage nach Erstellung einer neuen
+          }
+        }
+      ]
+    }
+    ```
+
+    Wenn Sie AWS CLI verwenden:
+
+    ```bash
+    aws --endpoint-url https://<ecs-endpoint> \
+    s3api put-bucket-lifecycle-configuration \
+    --bucket <bucket-name> \
+    --lifecycle-configuration file://lifecycle.json
+    ```
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

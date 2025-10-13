@@ -129,68 +129,50 @@ completed: {
 
 __Nota__: L'identificatore (UUIDv4) della risorsa creata è disponibile negli elementi di risposta dell'attività una volta completata la stessa.
 
-# Limitazioni API
+## Limiti API
 
-Questo documento descrive le limitazioni relative alle API. Le informazioni contenute in questo documento sono destinate a essere utilizzate da sviluppatori e ingegneri IT che lavorano con i nostri servizi cloud.
+### Perché ci sono dei limiti?
 
-## 1. Limitazioni di Risposta per API REST
+La console di Cloud Temple definisce dei __limiti sul volume di richieste__ che un utente può indirizzare all'API in un determinato periodo. L'introduzione di questi limiti di frequenza è una misura comune nella gestione delle API, adottata per diverse ragioni essenziali:
 
-Le nostre API REST implementano limitazioni di risposta per garantire un'efficace gestione delle risorse e prevenire il sovraccarico dei server. Le principali limitazioni includono:
+- __Prevenzione degli abusi__: Questi limiti contribuiscono a salvaguardare l'integrità dell'API prevenendo usi abusivi o maldestri che potrebbero comprometterne il funzionamento.
+- __Garanzia della qualità del servizio__: Regolando l'accesso all'API, assicuriamo una distribuzione equa delle risorse, permettendo così a tutti gli utenti di beneficiare di un'esperienza stabile e performante.
 
-- **Numero massimo di richieste par zona**: Ogni utente può effettuare fino a 100 richieste simultanee provenienti da una singola zona geografica. Questa limitazione è in vigore per proteggere le risorse e garantire un'esperienza fluida per tutti gli utenti.
-- **Risposta massima**: Le API REST restituiscono fino a 100 record per richiesta. Se necessario, è possibile ottenere ulteriori pagine di risultati consultando i metadati di posizionamento (paginazione) presenti nelle risposte.
-- **Tempo di attesa**: Le API REST hanno un limite di tempo di attesa massimo di 60 secondi per qualsiasi singola richiesta. Se una richiesta non viene completata entro questo periodo, verrà restituita un messaggio di errore indicando che la richiesta ha superato il limite temporale.
+Prendiamo l'esempio di uno script mal progettato o inefficiente che tenta di effettuare chiamate ripetitive all'API, rischiando di saturare le risorse e di degradare le prestazioni. Stabilendo delle soglie di richieste, preveniamo queste situazioni e assicuriamo il mantenimento di __un servizio fluido e senza interruzioni__ per tutta la nostra clientela.
 
-## 2. Limitazioni di Utilizzo per API Private
+### Quali sono i limiti di tasso per l'API della console di Cloud Temple?
 
-Le nostre API private sono progettate per l'uso interno e non sono soggette alle stesse limitazioni pubbliche. Tuttavia, è fondamentale rispettare i seguenti punti:
+Applichiamo restrizioni quantitative sulle interazioni degli utenti con la console per ogni prodotto.
 
-- **Numero massimo di utenti simultanei**: Le API private possono gestire fino a 500 connessioni simultanee. Superare questo limite può influire sulla stabilità del servizio e potrebbe comportare la sospensione temporanea dell'accesso per garantire un'esperienza fluida per tutti gli utenti.
-- **Volume di dati**: Le API private sono progettate per gestire grandi volumi di dati, ma è importante monitorare il flusso di dati per evitare sovraccarichi che potrebbero influire negativamente sulle prestazioni del sistema.
-
-## 3. Limitazioni di Utilizzo per API di Terze Parte
-
-Le API di terze parti, integrate con i nostri servizi cloud, possono avere limitazioni specifiche impostate dai fornitori di queste API. È essenziale consultare direttamente il fornitore per ottenere informazioni dettagliate sulle limitazioni relative alle loro API.
-
-## 4. Gestione delle Limitazioni
-
-In caso di superamento delle limitazioni, le seguenti azioni possono essere prese:
-
-- **Riduzione dei requisiti**: Rivedi i tuoi algoritmi o query per ridurre il volume di dati richiesto.
-- **Asincronicità**: Implementa tecniche asincrone per gestire grandi volumi di richieste senza sovraccaricare le risorse.
-- **Paginazione**: Utilizza la paginazione per recuperare i dati in più fasi, riducendo così il volume di dati trasferito in una singola richiesta.
-- **Caching**: Implementa strategie di caching per ridurre il numero di richieste alle API principali.
-
-Ricorda che queste limitazioni sono soggette a modifiche e potrebbero variare nel tempo, pertanto è sempre consigliabile consultare regolarmente le nostre documentazioni ufficiali per informazioni aggiornate.
-
-### Perché di queste limitazioni?
-
-La console Cloud Temple definis __limiti sul volume di richiesta__ che un utente può effettuare all'API nel corso di una determinata durata. L'introduzione di questi limiti di frequenza è una pratica comune nella gestione delle API, adottata per diversi motivi essenziali:
-
-- __Prevenzione degli abusi__ : Queste limitazioni contribuiscono a preservare l'integrità dell'API impedendo utilizzi abusivi o maldestri che potrebbero comprometterne il funzionamento.
-- __Assicurazione del servizio qualitativo__ : Regolando l'accesso all'API, garantiamo una distribuzione equa delle risorse, permettendo a tutti gli utenti di godere di un'esperienza stabile e performante.
-
-Consideriamo ad esempio un script mal concepito o inefficiente che effettua appelli ripetuti all'API, potenzialmente sovraccaricando le risorse e compromettendo le prestazioni. Estendendo i limiti di richiesta, preveniamo queste situazioni e garantiamo un __servizio fluido e senza interruzioni__ per l'intera nostra clientela.
-
-### Quale è il limite di frequenza per l'API della console Cloud Temple?
-
-Ci applichiamo limiti quantitativi sulle interazioni degli utenti con la console per ogni prodotto.
-
-I limiti sono definiti in **richieste per secondo (r/s)** e per fonte IP. Oltre il limite di frequenza, il sistema risponderà con un codice di errore HTTP 429, indicando che la soglia di richieste autorizzate è stata superata.
+I limiti sono definiti in __richieste al secondo (r/s) e per IP di origine__. Oltre la soglia limite, il sistema risponderà con un codice di errore HTTP 429, segnalando che il limite di richieste autorizzate è stato superato.
 
 Ecco i limiti definiti:
 
-| Prodotto              | Limite di frequenza |
-|----------------------|--------------------|
-| Console Cloud Temple | 60 r/s            |
-| Identità (IAM)       | 60 r/s            |
-| IaaS - Calcolo       | 60 r/s            |
-| IaaS - Archiviazione  | 20 r/s            |
-| IaaS - Backup       | 60 r/s            |
-| PaaS - S3           | 60 r/s            |
-| PaaS - OpenShift     | 60 r/s            |
-| Rete                | 60 r/s            |
-| Ospitamento         | 60 r/s            |
+| Prodotto | Limite |
+|---|---|
+| Console Cloud Temple | 25 r/s |
+| Identità (IAM) | 25 r/s |
+| IaaS VMware | 25 r/s |
+| OpenIaaS | 25 r/s |
+| S3 | 25 r/s |
+| Openshift | 25 r/s |
+| Bastion | 25 r/s |
+| Rete | 25 r/s |
+| Hosting | 25 r/s |
+| Marketplace | 25 r/s |
+| Supporto | 25 r/s |
+| Notifica | 25 r/s |
+| LLMaaS | 25 r/s |
+
+### Rotte specifiche
+
+Alcuni endpoint API specifici, in particolare quelli legati all'autenticazione o ad azioni sensibili, hanno limiti più restrittivi per rafforzare la sicurezza e garantire la stabilità.
+
+| Rotta | Limite |
+|---|---|
+| Autenticazione (IAM) | 5 r/s |
+| IaaS - Archiviazione (Datastores) | 20 r/s |
+| Marketplace (Contatto) | 1 r/min - 5 r/h |
 
 ### Come funzionano le limiti di frequenza?
 

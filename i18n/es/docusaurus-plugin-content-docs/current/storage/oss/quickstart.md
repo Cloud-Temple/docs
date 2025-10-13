@@ -107,6 +107,41 @@ El Templo del Almacenamiento Objeto Cloud es un servicio de almacenamiento de ob
     <img src={S3Files} />
     Dans l'onglet '__Paramètres__', vous pouvez obtenir des informations détaillées sur les propriétés de votre bucket S3 :
     <img src={S3Params} />
+
+    **Nota importante sobre la retención**: El concepto de retención corresponde a la duración de protección de los datos, no a una eliminación programada. Los datos permanecen accesibles durante todo el período de retención. Para provocar una eliminación automática de los datos al final del período de retención, es necesario definir una política de ciclo de vida (lifecycle).
+
+    **Ejemplo de política de ciclo de vida** (`lifecycle.json`):
+
+    **Prerrequisitos**:
+
+    - Se debe usar la cuenta de almacenamiento '__clave de acceso global__' ya que debe tener los derechos '__s3:PutLifecycleConfiguration__' y '__s3:GetLifecycleConfiguration__' en el bucket.
+
+    ```json
+    {
+      "Rules": [
+        {
+          "ID": "DeleteOldObjects",
+          "Prefix": "",  // "" = todo el bucket, sino poner un prefijo específico
+          "Status": "Enabled",
+          "Expiration": {
+            "Days": 30  // elimina después de 30 días
+          },
+          "NoncurrentVersionExpiration": {
+            "NoncurrentDays": 7  // elimina versiones antiguas 7 días después de crear una nueva
+          }
+        }
+      ]
+    }
+    ```
+
+    Si usas AWS CLI:
+
+    ```bash
+    aws --endpoint-url https://<ecs-endpoint> \
+    s3api put-bucket-lifecycle-configuration \
+    --bucket <nombre-del-bucket> \
+    --lifecycle-configuration file://lifecycle.json
+    ```
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash

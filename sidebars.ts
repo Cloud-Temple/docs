@@ -96,6 +96,26 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Marketplace',
+      items: [
+        'marketplace/marketplace',
+        'marketplace/concepts',
+        'marketplace/quickstart',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'marketplace/tutorials/deploy_openiaas',
+            'marketplace/tutorials/deploy_vmware',
+            'marketplace/tutorials/contact_partner',
+            'marketplace/tutorials/customize_image_openiaas',
+            'marketplace/tutorials/customize_image_vmware',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Bastion',
       items: [
         'bastion/bastion',

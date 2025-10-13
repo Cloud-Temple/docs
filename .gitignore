@@ -10,6 +10,8 @@
 
 # Python
 __pycache__/
+scripts/translate_py/__pycache__/
+scripts/translate_py/venv/
 *.pyc
 
 # Misc
@@ -24,3 +26,6 @@ __pycache__/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+scripts/translate_py/__pycache__/config.cpython-311.pyc
+scripts/translate_py/__pycache__/file_manager.cpython-311.pyc
+scripts/translate_py/venv/lib/python3.11/site-packages/pip/_vendor/rich/__pycache__/logging.cpython-311.pyc
