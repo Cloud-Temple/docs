@@ -97,7 +97,8 @@ En tant que Sous-traitant, Cloud Temple assiste le Responsable de traitement dan
 
 **Contact direct** :
 
-- Pour les cas exceptionnels ou les questions spécifiques, le Délégué à la Protection des Données Cloud Temple peut être contacté directement : <DPD@cloud-temple.com>
+- Pour les cas exceptionnels ou les questions spécifiques, le Délégué à la Protection des Données Cloud Temple peut être contacté directement : [DPD@cloud-temple.com](mailto:DPD@cloud-temple.com)
+
 - Un circuit de validation par le DPO Cloud Temple est maintenu pour assurer la cohérence des réponses
 - Une traçabilité des demandes et actions entreprises est assurée
 
@@ -197,7 +198,8 @@ Le Sous-traitant mettra à la disposition du Responsable de traitement toutes le
 
 Le Sous-traitant met à la disposition du Responsable de traitement :
 
-- Une page dédiée listant l'ensemble des démarches de conformité maintenue à jour à l'adresse : <https://www.cloud-temple.com/demarches-conformite/>
+- Une page dédiée listant l'ensemble des démarches de conformité maintenue à jour à l'adresse : [https://www.cloud-temple.com/demarches-conformite/](https://www.cloud-temple.com/demarches-conformite/)
+
 - Les attestations de conformité disponibles (ISO 27001, SecNumCloud, ISAE, etc.)
 - Des recommandations pour l'utilisation sécurisée des services Cloud Temple incluant :
   - Les bonnes pratiques pour protéger l'accès à la Console cloud
