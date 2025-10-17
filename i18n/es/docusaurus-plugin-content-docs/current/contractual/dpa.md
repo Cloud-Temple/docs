@@ -93,7 +93,7 @@ En tant que Sous-traitant, Cloud Temple assiste le Responsable de traitement dan
 - Le Sous-traitant fournit son assistance technique dans les limites de son rôle de sous-traitant et des capacités de ses services
 
 **Contact direct** :
-- Pour les cas exceptionnels ou les questions spécifiques, le Délégué à la Protection des Données Cloud Temple peut être contacté directement : DPD@cloud-temple.com
+- Pour les cas exceptionnels ou les questions spécifiques, le Délégué à la Protection des Données Cloud Temple peut être contacté directement : [DPD@cloud-temple.com](mailto:DPD@cloud-temple.com)
 - Un circuit de validation par le DPO Cloud Temple est maintenu pour assurer la cohérence des réponses
 - Une traçabilité des demandes et actions entreprises est assurée
 
@@ -187,7 +187,7 @@ Cette obligation inclut également les données stockées sur des supports de sa
 Le Sous-traitant mettra à la disposition du Responsable de traitement toutes les informations nécessaires pour démontrer le respect des obligations prévues par la présente annexe et autorisera les audits, y compris les inspections, par le Responsable de traitement ou un autre auditeur mandaté par ce dernier, afin de vérifier la conformité avec cette annexe et le RGPD.
 
 Le Sous-traitant met à la disposition du Responsable de traitement :
-- Une page dédiée listant l'ensemble des démarches de conformité maintenue à jour à l'adresse : https://www.cloud-temple.com/demarches-conformite/
+- Une page dédiée listant l'ensemble des démarches de conformité maintenue à jour à l'adresse : [https://www.cloud-temple.com/demarches-conformite/](https://www.cloud-temple.com/demarches-conformite/)
 - Les attestations de conformité disponibles (ISO 27001, SecNumCloud, ISAE, etc.)
 - Des recommandations pour l'utilisation sécurisée des services Cloud Temple incluant :
   - Les bonnes pratiques pour protéger l'accès à la Console cloud
