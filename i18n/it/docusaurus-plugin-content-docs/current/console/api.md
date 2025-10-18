@@ -13,39 +13,49 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## Chiavi API
 
-La __chiave API__ permet di autenticarsi quando si desidera effettuare richieste sull'API. La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__, è un modo sicuro per connettersi alle API Shiva senza dover passare attraverso un'interfaccia grafica. Ogni token è associato a un tenant e all'utente che lo ha creato.
+La __chiave API__ permet di autenticarsi quando si desidera effettuare richieste all'API. La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__,
+è un modo sicuro per connettersi alle API Shiva senza dover passare attraverso un'interfaccia grafica. Ogni token è associato a un tenant e all'utente che lo ha creato.
 
-La creazione di questo token avviene dal tuo account. È possibile generare più chiavi e configurare per ciascuna le autorizzazioni, entro i limiti dei tuoi diritti.
+La creazione di questo token avviene dal tuo account. È possibile generare più chiavi e configurare per ciascuna le autorizzazioni entro i limiti dei tuoi diritti.
 
 Per creare una chiave API, è sufficiente __fare clic sul tuo profilo__:
 
 <img src={ShivaProfil001} />
 
-Nel menu del profilo, fare clic su __'Token di accesso personale'__.
+Nel menu del profilo, fare clic su __'Token di accesso personale'__
 
 <img src={ShivaProfil003} />
 
-A questo punto, sullo schermo verranno visualizzate tutte le chiavi API create per questo utente in questo tenant. Fare clic su __'Nuovo token di accesso personale'__.
+A questo punto, sullo schermo verranno visualizzate tutte le chiavi API create per questo utente in questo tenant. Fare clic su __'Nuovo token di accesso personale'__
 
 <img src={ShivaProfil002} />
 
-È quindi necessario:
+Devi quindi:
 
-- Inserire un nome per questo nuovo token,
+- Inserire il nome di questo nuovo token,
 - Specificare una data di scadenza (massimo 12 mesi di validità),
-- Selezionare le autorizzazioni associate al token.
+- Scegliere le autorizzazioni associate al token.
 
-Verranno quindi visualizzati i dettagli relativi al token. __Attenzione: non sarà più possibile accedervi successivamente.__
+Verranno quindi visualizzati i dettagli relativi al tuo token. __Attenzione, non sarà più possibile accedervi successivamente.__
 
-Se non si annotano queste informazioni, sarà necessario eliminare e ricreare il token.
+Se non annoti queste informazioni, dovrai distruggere e ricreare il token.
 
 <img src={ShivaProfil004} />
 
-Per ragioni di sicurezza, si raccomanda di creare più token, ciascuno con una funzione specifica (un token per ogni applicazione o processo aziendale), piuttosto che creare un unico token con tutti i permessi.
+Per ragioni di sicurezza, si raccomanda di creare più token, ciascuno con una funzione specifica (un token per ogni applicazione o processo aziendale), piuttosto che creare un singolo token con tutti i diritti.
 
-Verrà quindi visualizzato il nuovo token creato e la relativa data di scadenza futura.
+Vedi quindi il nuovo token creato e la sua futura data di scadenza.
 
 <img src={ShivaProfil005} />
+
+:::info Ciclo di vita del token di autenticazione
+Quando utilizzi il tuo **Personal Access Token (PAT)** per autenticarti presso l'API, ricevi in risposta un token di accesso. È importante notare che questo token di accesso è un **JSON Web Token (JWT)** con una durata di vita limitata.
+
+-   **Durata di vita**: Ogni token JWT è valido per una durata di **5 minuti**.
+-   **Verifica**: Puoi verificare la data di emissione (`iat`) e la data di scadenza (`exp`) del tuo token decodificandolo. Strumenti online come [jwt.io](https://jwt.io) ti permettono di farlo facilmente.
+
+Una volta scaduto il token, dovrai autenticarti nuovamente con il tuo PAT per ottenerne uno nuovo. È quindi consigliabile gestire questo ciclo di vita nei tuoi script e applicazioni prevedendo un aggiornamento automatico del token.
+:::
 
 ## Accesso al portale API
 
@@ -97,7 +107,7 @@ __waiting__, stato prima che l'operazione abbia iniziato:
 ```
     waiting: {}
 ```
-__running__, stato quando l'operazione è in corso:
+__running__, stato durante l'esecuzione dell'operazione:
 
 ```
     running: {
@@ -106,7 +116,7 @@ __running__, stato quando l'operazione è in corso:
     progression: number;
     };
 ```
-__failed__, stato se l'operazione ha fallito:
+__failed__, stato se l'operazione ha avuto esito negativo:
 
 ```
     failed: {
@@ -131,22 +141,22 @@ __Nota: l'identificativo (UUIDv4) della risorsa creata è disponibile nel risult
 
 ### Perché limiti?
 
-La console Cloud Temple definisce __un limite massima sul volume di richieste__ che un utente può inviare all'API in un determinato periodo di tempo. L'implementazione di questi limiti di frequenza è una pratica comune nella gestione delle API, adottata per diversi motivi fondamentali:
+La console Cloud Temple stabilisce __un limite massima sul volume di richieste__ che un utente può inviare all'API in un determinato periodo di tempo. L'implementazione di questi limiti di frequenza è una pratica comune nella gestione delle API, adottata per diversi motivi fondamentali:
 
 - __Prevenzione degli abusi__: Questi limiti contribuiscono a preservare l'integrità dell'API prevenendo utilizzi abusivi o inadeguati che potrebbero comprometterne il funzionamento.
 - __Garanzia della qualità del servizio__: Regolando l'accesso all'API, garantiamo una distribuzione equa delle risorse, permettendo a tutti gli utenti di godere di un'esperienza stabile e performante.
 
-Consideriamo ad esempio uno script mal progettato o inefficiente che effettua chiamate ripetute all'API, con il rischio di saturare le risorse e degradare le prestazioni. Stabilendo soglie di richieste, preveniamo tali situazioni e garantiamo il mantenimento di un __servizio fluido e continuo__ per l'intera clientela.
+Prendiamo ad esempio uno script mal progettato o inefficiente che tenta chiamate ripetute all'API, rischiando di saturare le risorse e degradare le prestazioni. Stabilendo soglie di richieste, preveniamo queste situazioni e garantiamo il mantenimento di un __servizio fluido e continuo__ per l'intera clientela.
 
 ### Quali sono i limiti di velocità per l'API della console Cloud Temple?
 
 Applichiamo restrizioni quantitative sulle interazioni degli utenti con la console per ogni prodotto.
 
-I limiti sono definiti in __richieste al secondo (r/s) e per indirizzo IP sorgente__. Oltre al limite massimo, il sistema risponderà con un codice di errore HTTP 429, indicando che il limite massimo di richieste consentite è stato superato.
+I limiti sono definiti in __richieste al secondo (r/s) e per indirizzo IP sorgente__. Oltre la soglia limite, il sistema risponderà con un codice di errore HTTP 429, indicando che il limite massimo di richieste consentite è stato superato.
 
 Ecco i limiti definiti:
 
-| Prodotto | Soglia massima |
+| Prodotto | Soglia limite |
 |---|---|
 | Console Cloud Temple | 25 r/s |
 | Identità (IAM) | 25 r/s |
@@ -199,9 +209,9 @@ Esistono diversi modi per migliorare l'efficienza della propria automazione, in 
 Questo approccio presenta numerosi vantaggi:
 
 - L'__attenuazione progressiva__ garantisce che i primi tentativi vengano eseguiti rapidamente, prevedendo tempi di attesa più lunghi in caso di fallimenti ripetuti.
-- L'aggiunta di una __variazione casuale__ alla pausa contribuisce a evitare che tutti i tentativi avvengano simultaneamente.
+- L'aggiunta di una __variazione casuale__ alla pausa contribuisce a evitare che tutti i tentativi si verifichino simultaneamente.
 
-È importante notare che le __richieste non riuscite non influiscono sul proprio limite di frequenza__. Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione sostenibile a lungo termine, poiché questo comportamento potrebbe essere modificato in futuro. Vi raccomandiamo quindi di non basarvi esclusivamente su questo meccanismo.
+È importante notare che le __richieste non riuscite non influenzano il proprio limite di frequenza__. Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione sostenibile a lungo termine, poiché questo comportamento potrebbe essere modificato in futuro. Vi raccomandiamo quindi di non basarvi esclusivamente su questo meccanismo.
 
 Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python sono buoni punti di partenza per implementare strategie di attenuazione.
 
