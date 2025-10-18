@@ -5,14 +5,15 @@ sidebar_position: 2
 
 # Change Tracking
 
-### October 18, 2025: Maintenance and New Documentation
+### 18 October 2025: Maintenance and New Documentation
 
 - **LLMaaS**: Added a new question to the FAQ to introduce the public status page ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), enabling real-time monitoring of the availability and performance of each model.
 - **Contractual**: Major update to the Data Processing Agreement (DPA v2) to reflect the latest legal and compliance requirements.
 - **Console**: Improved and clarified documentation regarding order management.
 - **Marketplace**: Added a detailed tutorial on customizing virtual machine (VM) images to create reusable templates.
 - **LLMaaS**: Added a guide to configure the VSCode CLINE extension for using Cloud Temple's language models directly from the editor.
-- **Object Storage (OSS)**: Added clarifications regarding the lifecycle policy for data deletion.
+- **Object Storage (OSS)**: Added clarifications on the lifecycle policy for data deletion.
+- **Object Storage (OSS)**: Added a troubleshooting guide for checksum errors (`XAmzContentSHA256Mismatch`) with AWS CLI and Terraform.
 - **LLMaaS**: Updated the list of available models and retranslated over 50 documents to ensure consistency.
 
 ### August 14, 2025: Improvements and Fixes
@@ -41,5 +42,5 @@ sidebar_position: 2
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Incorporation of the projected model lifecycle timeline.
+- Incorporation of the projected model lifecycle roadmap.
 - Addition of the responsibility matrix for the LLMaaS offering.

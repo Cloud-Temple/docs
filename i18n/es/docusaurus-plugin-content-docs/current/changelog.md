@@ -11,13 +11,14 @@ sidebar_position: 2
 - **Contractual**: Actualización importante del Acuerdo de Procesamiento de Datos (DPA v2) para reflejar los últimos requisitos legales y de cumplimiento.
 - **Consola**: Mejora y aclaración de la documentación relacionada con la gestión de órdenes.
 - **Marketplace**: Adición de un tutorial detallado sobre la personalización de imágenes de máquinas virtuales (VM) para crear plantillas reutilizables.
-- **LLMaaS**: Adición de una guía para configurar la extensión VSCode CLINE y utilizar directamente los modelos de lenguaje de Cloud Temple desde el editor.
+- **LLMaaS**: Adición de una guía para configurar la extensión VSCode CLINE y utilizar los modelos de lenguaje de Cloud Temple directamente desde el editor.
 - **Almacenamiento Objeto (OSS)**: Añadidas precisiones sobre la política de ciclo de vida (Lifecycle) para la eliminación de datos.
+- **Almacenamiento Objeto (OSS)**: Adición de una guía de solución de problemas para errores de suma de verificación (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
 - **LLMaaS**: Actualización de la lista de modelos disponibles y retraducción de más de 50 documentos para garantizar la coherencia.
 
 ### 14 de agosto de 2025: Mejoras y correcciones
 
-- **LLMaaS**: Actualización y aclaración de las respuestas de la FAQ para abordar de forma más efectiva las preguntas técnicas y estratégicas. Incorporación de la FAQ a la navegación.
+- **LLMaaS**: Actualización y aclaración de las respuestas de la FAQ para abordar de manera más efectiva las preguntas técnicas y estratégicas. Incorporación de la FAQ a la navegación.
 - **General**: Corrección de varios enlaces de navegación internos a través de la documentación para una experiencia más fluida.
 
 ### Julio 2025: Nuevas funciones y actualizaciones principales
@@ -41,5 +42,5 @@ sidebar_position: 2
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Addition of the projected model lifecycle planning.
+- Addition of the forecasted model lifecycle timeline.
 - Addition of the responsibility matrix for the LLMaaS offering.
