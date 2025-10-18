@@ -2,73 +2,67 @@
 title: Conceptos
 ---
 
-El **Cloud Temple Marketplace** es una plataforma centralizada que facilita el acceso y despliegue de soluciones cloud listas para usar en un entorno soberano y seguro.
+La **Marketplace Cloud Temple** es una plataforma centralizada que facilita el acceso y despliegue de soluciones cloud listas para usar en un entorno soberano y seguro.
 
 ---
 
 ## Definición y posicionamiento
 
-El Cloud Temple Marketplace se posiciona como una palanca de transformación digital para empresas que buscan servicios confiables, alojados en Europa, con integración simple y rápida.
+La Marketplace Cloud Temple se posiciona como un impulso para la transformación digital de las empresas que buscan servicios fiables, alojados en Europa, con una integración sencilla y rápida.
 
 Permite:
-- **Centralizar** el acceso a soluciones de socios validadas
-- **Simplificar** el despliegue de entornos cloud
+- **Centralizar** el acceso a las soluciones validadas por socios
+- **Simplificar** el despliegue de entornos en la nube
 - **Acelerar** la implementación de proyectos digitales
-- **Garantizar** el cumplimiento y seguridad de los despliegues
-
----
+- **Garantizar** la conformidad y seguridad de los despliegues
 
 ## Tipos de soluciones disponibles
 
-### Imágenes de Máquinas Virtuales
+### Virtual Machine Images
 
-Las imágenes de máquinas virtuales constituyen el núcleo actual de la oferta del Marketplace. Estas imágenes preconfiguradas permiten un despliegue rápido de entornos estandarizados.
+Virtual machine images are the current core of the Marketplace offering. These pre-configured images enable rapid deployment of standardized environments.
 
-**Características:**
-- Imágenes validadas y aseguradas
-- Compatible con entornos OpenIaaS y VMware
-- Despliegue en menos de 10 minutos
-- Integración nativa con la consola Cloud Temple
+**Features:**
+- Validated and secure images
+- Compatible with OpenIaaS and VMware environments
+- Deployment in under 10 minutes
+- Native integration with the Cloud Temple console
 
 ### Soluciones de socios
 
-El Marketplace también proporciona acceso a soluciones desarrolladas por nuestros editores asociados, cubriendo diferentes dominios empresariales.
+La Marketplace también ofrece acceso a soluciones desarrolladas por nuestros socios editores, cubriendo diversos ámbitos de actividad.
 
 **Proceso de acceso:**
 - Consulta del catálogo desde la consola
-- Conexión directa con el socio
+- Contacto directo con el socio
 - Despliegue en la infraestructura Cloud Temple
-
----
 
 ## Integración con el ecosistema Cloud Temple
 
-### Consola Cloud Temple
+### Cloud Temple Console
 
-El Marketplace está integrado nativamente con la consola Cloud Temple, ofreciendo:
+La Marketplace está integrada nativamente en la consola Cloud Temple, ofreciendo:
 - **Acceso unificado** desde la interfaz de gestión habitual
-- **Despliegue directo** en infraestructuras existentes
+- **Despliegue directo** en las infraestructuras existentes
 - **Gestión centralizada** de recursos y soluciones
 
-### Compatibilidad de servicios
+### Compatibility with services
 
-Las soluciones del Marketplace están diseñadas para integrarse armoniosamente con:
-- **IaaS OpenSource**: Despliegue en infraestructura OpenIaaS
-- **IaaS VMware**: Integración con entorno vSphere
-
----
+The solutions from the Marketplace are designed to seamlessly integrate with:
+- **OpenSource IaaS**: Deployment on OpenIaaS infrastructure
+- **VMware IaaS**: Integration with the vSphere environment
 
 ## Seguridad y cumplimiento
 
 ### Alojamiento soberano
 
-Todas las soluciones desplegadas vía el Marketplace se benefician de:
-- **Alojamiento en Francia** exclusivamente
-- **Calificación SecNumCloud** de la infraestructura
+Todas las soluciones desplegadas a través de la Marketplace cuentan con:
+- **Alojamiento exclusivamente en Francia**
+- **Certificación SecNumCloud** de la infraestructura
 
-### Validación de soluciones
+### Validación de las soluciones
 
-Las soluciones ofrecidas en el Marketplace pasan por una selección rigurosa que garantiza:
+Las soluciones propuestas en la Marketplace están sujetas a una selección rigurosa que garantiza:
 - **Compatibilidad** con la infraestructura Cloud Temple
-- **Seguridad** de imágenes y aplicaciones
-- **Confiabilidad** de los editores asociados
+- **Seguridad** de las imágenes y aplicaciones
+- **Fiabilidad** de los editores socios

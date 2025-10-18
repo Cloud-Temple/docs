@@ -1,59 +1,49 @@
 ---
-title: Ein OpenIaaS-Image anpassen
+title: Customize an OpenIaaS Image
 ---
-import marketplaceOpenIaasExportTemplate from '@site/docs/marketplace/images/marketplace_openiaas_export_template.png'
-import marketplaceOpenIaasExportTemplateButton from '@site/docs/marketplace/images/marketplace_openiaas_export_template_button.png'
-import marketplaceOpeniaasDeployFromTemplate from '@site/docs/marketplace/images/marketplace_openiaas_deploy_from_template.png'
+import marketplaceOpenIaasExportTemplate from '../images/marketplace_openiaas_export_template.png'
+import marketplaceOpenIaasExportTemplateButton from '../images/marketplace_openiaas_export_template_button.png'
+import marketplaceOpenIaasDeployFromTemplate from '../images/marketplace_openiaas_deploy_from_template.png'
 
-Dieses Tutorial erklärt, wie Sie ein vom Marktplatz bereitgestelltes OpenIaaS-Image für virtuelle Maschinen (VMI) anpassen, um Ihre eigenen wiederverwendbaren Vorlagen zu erstellen.
+This tutorial explains how to customize a virtual machine image (VMI) provided by OpenIaaS Marketplace to create your own reusable templates.
 
 ### Allgemeines Prinzip
 
-Der Marktplatz bietet generische Betriebssysteme (OS). Die Bereitstellung über den Marktplatz bietet Ihnen eine saubere Basis, die schnell und einfach bereitgestellt werden kann, wodurch Sie manuelle Uploads vermeiden und Ihre Bereitstellungen beschleunigen.
+Die Marketplace stellt generische Betriebssysteme (OS) bereit. Die Bereitstellung über die Marketplace bietet Ihnen eine gesunde Basis, die schnell und einfach bereitgestellt werden kann, wodurch manuelle Uploads entfallen und Ihre Bereitstellungen beschleunigt werden.
 
-Sobald das Image bereitgestellt ist, wird es zu einer virtuellen Maschine, die Sie konfigurieren können. Sie können es dann als Vorlage exportieren, die von allen Benutzern in Ihrem Mandanten wiederverwendet werden kann.
+Sobald das Image bereitgestellt wurde, wird es zu einer virtuellen Maschine, die Sie konfigurieren können. Anschließend können Sie sie als wiederverwendbares Modell für alle Benutzer Ihres Mandanten exportieren.
 
----
+## Customization Steps
 
-## Anpassungsschritte
+1.  **Deploy the base image** from the Marketplace.
+2.  **Configure the virtual machine** according to your requirements.
+3.  **Create a template** from the configured virtual machine.
+4.  **Deploy a new virtual machine** from your customized template.
 
-1.  **Bereitstellen des Basis-Images** aus dem Marktplatz.
-2.  **Konfigurieren der virtuellen Maschine** nach Ihren Bedürfnissen.
-3.  **Erstellen einer Vorlage** aus der konfigurierten virtuellen Maschine.
-4.  **Bereitstellen einer neuen virtuellen Maschine** aus Ihrer benutzerdefinierten Vorlage.
+### Step 1: Deploy the base image
 
----
+Follow the tutorial [Deploy an image on OpenIaaS](./deploy_openiaas.md) to get started.
 
-### Schritt 1: Bereitstellen des Basis-Images
+### Step 2: Configure the virtual machine
 
-Folgen Sie dem Tutorial [Ein Image auf OpenIaaS bereitstellen](./deploy_openiaas.md), um zu beginnen.
+Once the virtual machine has been deployed, configure it according to your requirements (installation of software, security configuration, etc.).
 
----
+### Step 3: Create a template from the virtual machine
 
-### Schritt 2: Konfigurieren der virtuellen Maschine
-
-Sobald die virtuelle Maschine bereitgestellt ist, konfigurieren Sie sie nach Ihren Bedürfnissen (Installation von Software, Sicherheitseinstellungen usw.).
-
----
-
-### Schritt 3: Erstellen einer Vorlage aus der virtuellen Maschine
-
-1.  Wählen Sie aus Ihrer Liste der virtuellen Maschinen die konfigurierte virtuelle Maschine aus.
-2.  Wählen Sie **"Exportieren"** aus der Aktionsleiste.
-3.  Befolgen Sie die Schritte in der Konsole, um die Vorlage zu exportieren.
+1. From your list of virtual machines, select the configured virtual machine.
+2. Select **"Export"** from the action bar.
+3. Follow the steps in the Console to export the template.
 
 <img src={marketplaceOpenIaasExportTemplateButton} />
 <img src={marketplaceOpenIaasExportTemplate} />
 
----
+### Step 4: Deploy from your new template
 
-### Schritt 4: Bereitstellen von Ihrer neuen Vorlage
+You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
-Sie können von der Seite "Katalog" oder von der Seite "Virtuelle Maschinen" bereitstellen.
+To deploy from the **Virtual Machines** page:
+1. Click on **"Create a virtual machine"**.
+2. Choose **"Deploy from a template"**.
+3. Select your new template from the list.
 
-So stellen Sie von der Seite **Virtuelle Maschinen** bereit:
-1.  Klicken Sie auf **"Eine virtuelle Maschine erstellen"**.
-2.  Wählen Sie **"Aus einer Vorlage bereitstellen"**.
-3.  Wählen Sie Ihre neue Vorlage aus der Liste aus.
-
-<img src={marketplaceOpeniaasDeployFromTemplate} />
+<img src={marketplaceOpenIaasDeployFromTemplate} />

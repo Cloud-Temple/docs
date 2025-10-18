@@ -1,59 +1,51 @@
 ---
-title: Ein VMware-Image anpassen
+title: Customize a VMware Image
 ---
-import marketplaceVMwareExportTemplate from '@site/docs/marketplace/images/marketplace_vmware_export_template.png'
-import marketplaceVMwareExportTemplateButton from '@site/docs/marketplace/images/marketplace_vmware_export_template_button.png'
-import marketplaceVMwareDeployFromTemplate from '@site/docs/marketplace/images/marketplace_vmware_deploy_from_template.png'
+import marketplaceVMwareExportTemplate from '../images/marketplace_vmware_export_template.png'
+import marketplaceVMwareExportTemplateButton from '../images/marketplace_vmware_export_template_button.png'
+import marketplaceVMwareDeployFromTemplate from '../images/marketplace_vmware_deploy_from_template.png'
 
-Dieses Tutorial erklärt, wie Sie ein vom Marktplatz bereitgestelltes VMware-Image für virtuelle Maschinen (VMI) anpassen, um Ihre eigenen wiederverwendbaren Vorlagen zu erstellen.
+This tutorial explains how to customize a VMware virtual machine image (VMI) provided by the Marketplace to create your own reusable templates.
 
 ### Allgemeines Prinzip
 
-Der Marktplatz bietet generische Betriebssysteme (OS). Die Bereitstellung über den Marktplatz bietet Ihnen eine saubere Basis, die schnell und einfach bereitgestellt werden kann, wodurch Sie manuelle Uploads vermeiden und Ihre Bereitstellungen beschleunigen.
+Die Marketplace stellt generische Betriebssysteme (OS) bereit. Die Bereitstellung über die Marketplace bietet Ihnen eine gesunde Basis, die schnell und einfach bereitgestellt werden kann, wodurch manuelle Uploads entfallen und Ihre Bereitstellungen beschleunigt werden.
 
-Sobald das Image bereitgestellt ist, wird es zu einer virtuellen Maschine, die Sie konfigurieren können. Sie können es dann als Vorlage exportieren, die von allen Benutzern in Ihrem Mandanten wiederverwendet werden kann.
+Sobald das Image bereitgestellt wurde, wird es zu einer virtuellen Maschine, die Sie konfigurieren können. Anschließend können Sie sie als wiederverwendbaren Template für alle Benutzer Ihres Mandanten exportieren.
 
----
+## Customization Steps
 
-## Anpassungsschritte
+1.  **Deploy the base image** from the Marketplace.
+2.  **Configure the virtual machine** according to your requirements.
+3.  **Create a template** from the configured virtual machine.
+4.  **Deploy a new virtual machine** from your customized template.
 
-1.  **Bereitstellen des Basis-Images** aus dem Marktplatz.
-2.  **Konfigurieren der virtuellen Maschine** nach Ihren Bedürfnissen.
-3.  **Erstellen einer Vorlage** aus der konfigurierten virtuellen Maschine.
-4.  **Bereitstellen einer neuen virtuellen Maschine** aus Ihrer benutzerdefinierten Vorlage.
+### Step 1: Deploy the base image
 
----
-
-### Schritt 1: Bereitstellen des Basis-Images
-
-Folgen Sie dem Tutorial [Ein Image auf VMware bereitstellen](./deploy_vmware.md), um zu beginnen.
+Follow the tutorial [Deploy an image on VMware](./deploy_vmware.md) to get started.
 
 ---
 
-### Schritt 2: Konfigurieren der virtuellen Maschine
+### Step 2: Configure the virtual machine
 
-Sobald die virtuelle Maschine bereitgestellt ist, konfigurieren Sie sie nach Ihren Bedürfnissen (Installation von Software, Sicherheitseinstellungen usw.).
+Once the virtual machine has been deployed, configure it according to your requirements (installation of software, security configuration, etc.).
 
----
+### Step 3: Create a template from the virtual machine
 
-### Schritt 3: Erstellen einer Vorlage aus der virtuellen Maschine
-
-1.  Wählen Sie aus Ihrer Liste der virtuellen Maschinen die konfigurierte virtuelle Maschine aus.
-2.  Wählen Sie **"Exportieren"** aus der Aktionsleiste.
-3.  Befolgen Sie die Schritte in der Konsole, um die Vorlage zu exportieren.
+1. From your list of virtual machines, select the configured virtual machine.
+2. Select **"Export"** from the action bar.
+3. Follow the steps in the Console to export the template.
 
 <img src={marketplaceVMwareExportTemplateButton} />
 <img src={marketplaceVMwareExportTemplate} />
 
----
+### Step 4: Deploy from your new template
 
-### Schritt 4: Bereitstellen von Ihrer neuen Vorlage
+You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
-Sie können von der Seite "Katalog" oder von der Seite "Virtuelle Maschinen" bereitstellen.
-
-So stellen Sie von der Seite **Virtuelle Maschinen** bereit:
-1.  Klicken Sie auf **"Eine virtuelle Maschine erstellen"**.
-2.  Wählen Sie **"Aus einer Vorlage bereitstellen"**.
-3.  Wählen Sie Ihre neue Vorlage aus der Liste aus.
+To deploy from the **Virtual Machines** page:
+1. Click on **"Create virtual machine"**.
+2. Choose **"Deploy from template"**.
+3. Select your new template from the list.
 
 <img src={marketplaceVMwareDeployFromTemplate} />

@@ -5,39 +5,38 @@ import marketplaceContactAccess from '../images/marketplaceContactAccess.png'
 import marketplaceContactConfirm from '../images/marketplaceContactConfirm.png'
 import marketplaceContactEmail from '../images/marketplaceContactEmail.png'
 
-Questo tutorial ti guida per metterti in contatto con un editore partner tramite il Cloud Temple Marketplace.
+Questo tutorial ti guida nel contattare un partner sviluppatore tramite la Marketplace Cloud Temple.
 
 ## Contesto d'uso
 
-Usa questa funzionalità quando:
-- La soluzione richiede connessione con il partner
-- Vuoi ottenere informazioni aggiuntive
-- La soluzione non è direttamente distribuibile (nessuna VM Image)
+Utilizzate questa funzionalità quando:
+- la soluzione richiede un collegamento con il partner
+- desiderate ottenere informazioni aggiuntive
+- la soluzione non è direttamente implementabile (nessuna immagine VM)
 
-## Passaggi di contatto
+## Passi di contatto
 
 ### 1. Accesso al modulo
 
-Dalla pagina di dettagli di una soluzione partner, clicca **Contatta il partner**:
+Dalla pagina di dettaglio di una soluzione partner, fare clic su **Contatta il partner**:
 <img src={marketplaceContactAccess} />
 
-### 2. Invio richiesta
+### 2. Invio della richiesta
 
-Convalida e invia la tua richiesta di contatto:
+Conferma e invia la tua richiesta di contatto:
 <img src={marketplaceContactConfirm} />
 
-Riceverai una conferma via email dell'invio della tua richiesta.
+Riceverai una conferma via email relativa all'invio della tua richiesta.
 
-### 3. Connessione
+### 3. Collegamento
 
 Il partner riceverà automaticamente un'email con le tue informazioni:
 
 **Esempio di email inviata al partner:**
 <img src={marketplaceContactEmail} />
 
+## Best practices
 
-## Migliori pratiche
-
-- **Sii preciso** nella descrizione del tuo bisogno
-- **Indica il contesto** d'uso previsto
-- **Menziona i tuoi vincoli** tecnici o normativi
+- **Be precise** in describing your requirement
+- **Indicate the intended use context**
+- **Mention your technical or regulatory constraints**

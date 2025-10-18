@@ -1,5 +1,5 @@
 ---
-title: Geplante Operationen und Vorfallmanagement
+title: Scheduled Operations and Incident Management
 ---
 import shivaInterventionMenu01 from './images/shiva_intervention_menu01.png'
 import shivaInterventionMenu03 from './images/shiva_intervention_menu03.png'
@@ -12,70 +12,70 @@ import shivaIncident_004 from './images/shiva_incident_004.png'
 import shivaIncident_005 from './images/shiva_incident_005.png'
 import shivaIncident_006 from './images/shiva_incident_006.png'
 
-Wie jede Cloud-Infrastrukturplattform unterliegt die Cloud Temple-Plattform regelmäßigen Hardware- und Software-Wartungsarbeiten.
+As with any cloud infrastructure platform, the Temple Cloud platform regularly undergoes maintenance and hardware/software updates.
 
-## Zugriff auf laufende Operationen und Vorfälle
+## Access to ongoing operations and incidents
 
-Das Symbol zur Operationsverfolgung ermöglicht es Ihnen, die geplanten Operationen auf der Cloud Temple-Infrastruktur sowie die offenen Vorfälle auf dem Tenant zu sehen. Dieses Symbol ist in der Symbolleiste oben links auf dem Bildschirm zugänglich und hat die Form eines __'Werkzeug'__-Symbols.
+The operations tracking icon allows you to view planned operations on the Cloud Temple infrastructure as well as open incidents on the tenant. This icon is accessible in the icon bar in the top-left corner of the screen and appears as the __'Tools'__ icon.
 
 <img src={shivaInterventionMenu01} />
 
-Dieses Symbol soll Sichtbarkeit über geplante, laufende und abgeschlossene Eingriffe und/oder Vorfälle auf dem Tenant bieten.
+This icon is designed to provide visibility into planned, ongoing, and completed interventions, as well as incidents on the tenant.
 
-Wenn Eingriffe und/oder Vorfälle laufen, erscheint eine Zahl auf dem Symbol.
+When ongoing interventions and/or incidents exist, a number appears on the icon.
 
-Durch Klicken auf Schnellansicht finden Sie die laufenden Eingriffe. Es ist auch möglich, auf __'Alle Eingriffe'__ oder __'Alle Tenant-Vorfälle und Berichte'__ zu klicken, um mehr Details anzuzeigen.
+By clicking on "Quick view," you can see the ongoing interventions. It is also possible to click on __'All Interventions'__ or __'All Incidents and Tenant Reports'__ to display more details.
 
 <img src={shivaInterventionMenu03} />
 
-## Verfolgung geplanter Eingriffe
+## Geplante Interventionen verfolgen
 
-Die Seite Eingriffe besteht aus zwei Registerkarten. Die erste Registerkarte ermöglicht es Ihnen, die für die nächsten 60 Tage geplanten Eingriffe und die laufenden Eingriffe zu sehen.
+Die Seite "Interventionen" besteht aus zwei Registerkarten. Die erste Registerkarte zeigt die geplanten Interventionen für die nächsten 60 Tage sowie laufende Interventionen an.
 
 <img src={shivaInterventionMenu04} />
 
-Die abgeschlossenen Eingriffe hingegen sind in der zweiten Registerkarte 'Abgeschlossen' sichtbar. Abgeschlossene Eingriffe werden 60 Tage lang in der Vergangenheit aufbewahrt und sind zugänglich, was eine umfassende Verfolgung der Wartungsoperationshistorie ermöglicht.
+Die abgeschlossenen Interventionen sind in der zweiten Registerkarte „Abgeschlossen“ sichtbar. Abgeschlossene Interventionen werden 60 Tage im Vergangenheitsbereich aufbewahrt und bleiben zugänglich, um einen vollständigen Überblick über die Wartungsgeschichte zu gewährleisten.
 
 <img src={shivaInterventionMenu05} />
 
 Der Zugriff auf diese Informationen erfordert für das Benutzerprofil die Berechtigung '__intervention_read__'.
 
-## Vorfallmanagement
+## Incident Management
 
-Es sind zwei Arten von Vorfällen zu unterscheiden: globale Vorfälle, die das gesamte System betreffen, und Vorfälle, die spezifisch für einen Kundenbereich sind und nur die Ressourcen oder Dienste betreffen, die mit einem bestimmten Kunden verbunden sind.
+Two types of incidents need to be distinguished: global incidents, which affect the entire system, and client-specific incidents, which impact only the resources or services associated with a particular client.
 
-### Globale Vorfälle
+### Global Incidents
 
-Der Abruf von Informationen zu globalen Vorfällen erfordert keine besondere Berechtigung. Ein rotes Banner wird beim Einloggen in die Konsole angezeigt, um vor dem Vorhandensein eines laufenden globalen Vorfalls zu warnen. Der Benutzer hat die Möglichkeit, dieses Banner während der Sitzung vorübergehend auszublenden, aber es wird bei jeder neuen Anmeldung oder bei einer Aktualisierung der Seite wieder erscheinen, solange der Vorfall nicht gelöst ist.
+Retrieving information about global incidents does not require any special permissions. A red banner is displayed immediately upon logging into the console to alert users of an ongoing global incident currently being resolved. Users have the option to temporarily hide this banner during their session, but it will reappear on every new login or page refresh as long as the incident remains unresolved.
 
 <img src={shivaIncident_001} />
 
-Eine Schaltfläche __'Mehr erfahren'__ leitet zur öffentlichen Seite zur Vorfallverfolgung weiter, die Zugang zu zusätzlichen Informationen über den laufenden Vorfall bietet:
+A button labeled __'Learn more'__ redirects to the public incident tracking page, providing additional details about the current incident:
 
 <img src={shivaIncident_002} />
 
-Es ist möglich, die Berichte zu globalen Vorfällen zu erhalten. Der Zugriff auf diese Berichte erfordert die spezifische Berechtigung '__incident_management__'. Globale Vorfallberichte werden archiviert und sind 60 Tage nach ihrer Lösung zugänglich, um eine vollständige Nachverfolgbarkeit der Systemereignisse zu gewährleisten.
+Global incident reports can be accessed. Access to these reports requires the specific permission '__incident_management__'. Global incident reports are archived and remain accessible for 60 days after resolution, ensuring full traceability of system events.
 
-Hier ist ein Beispiel für die Registerkarte, die diese Berichte anzeigt:
+Here is an example of the tab displaying these reports:
 
 <img src={shivaIncident_003} />
 
-### Vorfälle in einem Kundenbereich
+### Incidents within a Customer Scope
 
-Die Sichtbarkeit von Vorfällen, die spezifisch für einen Kundenbereich sind, erfordert die Berechtigung __incident_read__. Diese Vorfälle werden durch ein spezielles Symbol dargestellt, begleitet von einem roten Badge, das die Anzahl der laufenden Vorfälle anzeigt.
+Visibility of incidents specific to a customer scope requires the __incident_read__ permission. These incidents are represented by a dedicated icon, accompanied by a red badge indicating the number of ongoing incidents.
 
-Das Symbol ist anklickbar und ermöglicht es, die mit den Vorfällen verbundenen Tickets aufzulisten. Jedes Ticket enthält einen Link zu den Details des Vorfalls, der die Möglichkeit bietet, den Fortschritt ihrer Lösung zu verfolgen. Gelöste Vorfälle und ihre Berichte (CRs) bleiben 60 Tage lang zugänglich, was eine rückblickende Analyse und Verfolgung der implementierten Korrekturmaßnahmen ermöglicht.
+The icon is clickable, allowing you to list the tickets associated with the incidents. Each ticket includes a link to the incident details, enabling you to track the progress of resolution. Resolved incidents and their incident reports (CRs) remain accessible for 60 days, allowing for retrospective analysis and follow-up on corrective actions taken.
 
 <img src={shivaIncident_004} />
 
-Um die Details eines Vorfalls einzusehen, ist es notwendig, der Autor des Vorfalltickets zu sein oder über die Berechtigung __support_management__ zu verfügen.
+To view the details of an incident, you must either be the ticket author or hold the __support_management__ permission.
 
-### Benachrichtigungsverwaltung
+### Notification Management
 
-Um Benutzer im Falle eines neuen Vorfalls schnell zu informieren, wurde ein E-Mail-Benachrichtigungssystem eingerichtet. Von ihrem Benutzerprofil aus ermöglicht eine Registerkarte mit dem Titel '*Meine Abonnements*' den Benutzern, Benachrichtigungen für beide Arten von Vorfällen zu abonnieren. So erhalten sie kurz nach der Meldung oder Lösung eines Vorfalls eine E-Mail.
+To quickly inform users about new incidents, an email notification system has been implemented. From their user profile, users can subscribe to notifications for both types of incidents via a tab titled '*My Subscriptions*'. As a result, they will receive an email shortly after an incident is reported or resolved.
 
 <img src={shivaIncident_005} />
 
-Der Betreff der E-Mail gibt die Art des Vorfalls an und, im Falle eines Vorfalls im Zusammenhang mit einem Bereich, den Namen des betroffenen Bereichs. Die Benachrichtigung enthält auch einen Link, um direkt auf die Details des Vorfalls zuzugreifen:
+The email subject will indicate the type of incident, and in the case of an incident related to a scope, it will include the name of the affected scope. The notification will also contain a link allowing direct access to the incident details:
 
 <img src={shivaIncident_006} />
