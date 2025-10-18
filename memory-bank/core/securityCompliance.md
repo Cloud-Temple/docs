@@ -77,7 +77,7 @@ La **qualification SecNumCloud** est le plus haut niveau de certification de sé
 #### Certification IaaS
 - ✅ **Isolation physique** : Conformité matérielle
 - ✅ **Hyperviseur sécurisé** : VMware NSX
-- ✅ **Chiffrement stockage** : AES-256
+- ✅ **Chiffrement stockage bloc (Data at Rest)** : Chiffrement matériel **XTS-AES 256** (conforme FIPS 140-2) sur l'ensemble du stockage bloc. Le chiffrement est appliqué à l'écriture sur disque et n'est pas "on-the-fly" lors des réplications.
 - ✅ **Network security** : Firewalls distribués
 
 ### 🚀 PaaS OpenShift - Containers Sécurisés
@@ -94,6 +94,18 @@ La **qualification SecNumCloud** est le plus haut niveau de certification de sé
 - **Secrets Management** : Vault intégré
 - **Compliance** : CIS Benchmarks Kubernetes
 - **Audit Kubernetes** : Logs API server
+- **Chiffrement Stockage Persistant** : Hérite du chiffrement **XTS-AES 256** de l'infrastructure de stockage bloc sous-jacente.
+- **Chiffrement des Accès** : Tous les accès à la plateforme (API, console, routes) sont sécurisés par **TLS**.
+
+### 💾 Storage OSS - Sécurité du Stockage Objet
+
+#### Documentation (`/docs/storage/oss/`)
+- **Concepts** : Architecture et mécanismes de sécurité.
+
+#### Contrôles SecNumCloud OSS
+- **Chiffrement des Données au Repos (D@RE)** : Chiffrement côté serveur avec l'algorithme **AES-256**, activé par namespace.
+- **Chiffrement des Données en Transit** : Communications avec l'API sécurisées via **TLS 1.2 / 1.3**.
+- **Isolation** : Buckets et données isolés par tenant.
 
 ### 🏢 Housing - Sécurité Physique
 
