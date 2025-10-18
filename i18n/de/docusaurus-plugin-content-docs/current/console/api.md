@@ -13,8 +13,8 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## API-Schlüssel
 
-Der __API-Schlüssel__ dient zur Authentifizierung, wenn Sie Anfragen an die API stellen möchten. Die Erstellung eines API-Schlüssels, auch bekannt als __Personal Access Token (PAT)__,
-ist eine sichere Methode, um sich an die Shiva-APIs anzumelden, ohne eine grafische Benutzeroberfläche nutzen zu müssen. Jeder dieser Tokens ist mit einem Mandanten und dem Benutzer verknüpft, der ihn erstellt hat.
+Der __API-Schlüssel__ ermöglicht die Authentifizierung, wenn Sie Anfragen an die API stellen möchten. Die Erstellung eines API-Schlüssels, auch bekannt als __Personal Access Token (PAT)__,
+ist eine sichere Methode, um sich an die Shiva-APIs anzumelden, ohne eine grafische Benutzeroberfläche verwenden zu müssen. Jeder dieser Tokens ist mit einem Tenant und dem Benutzer verknüpft, der ihn erstellt hat.
 
 Die Erstellung dieses Tokens erfolgt über Ihr Konto. Es ist möglich, mehrere Schlüssel zu generieren und für jeden die Berechtigungen entsprechend Ihren Rechten einzurichten.
 
@@ -26,15 +26,15 @@ Im Profilmenü klicken Sie auf __'Persönlichen Zugangstoken erstellen'__.
 
 <img src={ShivaProfil003} />
 
-Sie sehen nun alle API-Schlüssel, die für diesen Benutzer in diesem Mandanten erstellt wurden. Klicken Sie auf __'Neuen persönlichen Zugangstoken erstellen'__.
+Sie sehen nun alle API-Schlüssel, die für diesen Benutzer in diesem Tenant erstellt wurden. Klicken Sie auf __'Neuen persönlichen Zugangstoken erstellen'__.
 
 <img src={ShivaProfil002} />
 
 Sie müssen nun Folgendes angeben:
 
-- Geben Sie einen Namen für diesen neuen Token an,
-- Legen Sie ein Ablaufdatum fest (maximal 12 Monate Gültigkeit),
-- Wählen Sie die Berechtigungen, die mit dem Token verknüpft werden sollen.
+- Den Namen für diesen neuen Token,
+- Ein Ablaufdatum (maximal 12 Monate Gültigkeit),
+- Die zugehörigen Berechtigungen für den Token.
 
 Anschließend werden die Details Ihres Tokens angezeigt. __Achtung: Der Zugriff auf diese Informationen ist nachträglich nicht mehr möglich.__
 
@@ -48,6 +48,15 @@ Sie sehen nun den neu erstellten Token und sein zukünftiges Ablaufdatum.
 
 <img src={ShivaProfil005} />
 
+:::info Lebenszyklus des Authentifizierungstokens
+Wenn Sie Ihren **Personal Access Token (PAT)** verwenden, um sich bei der API zu authentifizieren, erhalten Sie daraufhin einen Zugangstoken zurück. Es ist wichtig zu beachten, dass dieser Zugangstoken ein **JSON Web Token (JWT)** mit begrenzter Gültigkeitsdauer ist.
+
+-   **Gültigkeitsdauer**: Jeder JWT-Token ist für eine Dauer von **5 Minuten** gültig.
+-   **Überprüfung**: Sie können das Erstellungsdatum (`iat`) und das Ablaufdatum (`exp`) Ihres Tokens überprüfen, indem Sie es decodieren. Online-Tools wie [jwt.io](https://jwt.io) ermöglichen dies einfach.
+
+Sobald der Token abgelaufen ist, müssen Sie sich erneut mit Ihrem PAT authentifizieren, um einen neuen Token zu erhalten. Es wird daher empfohlen, diesen Lebenszyklus in Ihren Skripten und Anwendungen zu verwalten, indem Sie eine automatische Erneuerung des Tokens vorsehen.
+:::
+
 ## Access to the API Portal
 
 The OpenAPI 3.0 (Swagger) documentation for the Cloud Temple console APIs is available directly within the application:
@@ -57,7 +66,7 @@ The OpenAPI 3.0 (Swagger) documentation for the Cloud Temple console APIs is ava
 Access to the APIs requires authentication. Once authenticated, all operations must include the header  
 __'Authorization'__ with the bearer access token obtained during the authentication phase.
 
-The URLs for the endpoints are provided directly in __Swagger__ (in the "Servers" object on each API page).
+The URLs for the endpoints are directly provided in __Swagger__ (in the "Servers" object on each API page).
 
 ## Activities
 
@@ -91,7 +100,7 @@ The activity content includes all essential information needed to identify the o
 }
 ```
 
-The __state__ object can take different forms depending on the activity's status, as follows:
+The __state__ object can take different forms depending on the activity's status:
 
 __waiting__, status before the operation has started:
 
@@ -134,10 +143,10 @@ __Note: The resource's UUIDv4 identifier is available in the activity result onc
 
 The Cloud Temple console sets __caps on the number of requests__ a user can send to the API within a given time period. Implementing these rate limits is a common practice in API management, adopted for several essential reasons:
 
-- __Prevention of abuse__: These limits help safeguard the integrity of the API by preventing abusive or careless usage that could compromise its operation.
-- __Guarantee of service quality__: By regulating access to the API, we ensure a fair distribution of resources, allowing all users to enjoy a stable and high-performing experience.
+- __Prevention of abuse__: These limits help safeguard the API's integrity by preventing abusive or poorly designed usage that could compromise its operation.
+- __Guarantee of service quality__: By regulating API access, we ensure a fair distribution of resources, allowing all users to enjoy a stable and high-performing experience.
 
-Consider a poorly designed or inefficient script making repeated calls to the API, risking resource exhaustion and performance degradation. By setting request thresholds, we prevent such scenarios and ensure __a smooth, uninterrupted service__ for our entire customer base.
+Consider a poorly designed or inefficient script making repeated API calls, risking resource exhaustion and performance degradation. By setting request thresholds, we prevent such scenarios and ensure __a smooth, uninterrupted service__ for our entire customer base.
 
 ### What are the rate limits for the Cloud Temple Console API?
 
@@ -160,7 +169,7 @@ The following limits are in place:
 | Hosting | 25 r/s |
 | Marketplace | 25 r/s |
 | Support | 25 r/s |
-| Notification | 25 r/s |
+| Notifications | 25 r/s |
 | LLMaaS | 25 r/s |
 
 ### Specific Routes
@@ -195,14 +204,14 @@ It is recommended to limit the number of API calls made by your automation to st
 
 This situation often occurs when multiple requests are executed in parallel, using several processes or threads.
 
-There are several ways to improve the efficiency of your automation, including using __caching mechanisms__ and implementing a __retry system with exponential backoff__. This method involves taking a short pause when a rate limit error is encountered, then retrying the request. If the request fails again, the pause duration is progressively increased until the request succeeds or until a maximum number of retries is reached.
+There are several ways to improve the efficiency of your automation, including using __caching mechanisms__ and implementing a __retry system with exponential backoff__. This method involves taking a short pause when a rate limit error is encountered, then retrying the request. If the request fails again, the pause duration is progressively increased until the request succeeds or a maximum number of retries is reached.
 
 This approach offers several advantages:
 
-- __Exponential backoff__ ensures that initial attempts are made quickly, while longer delays are applied in case of repeated failures.
+- __Exponential backoff__ ensures that initial attempts are made quickly, while longer delays are scheduled in case of repeated failures.
 - Adding a __random variation__ to the pause helps prevent all retry attempts from occurring simultaneously.
 
-It is important to note that __failed requests do not affect your rate limit__. However, continuously retrying a request may not be a sustainable long-term solution, as this behavior could change in the future. Therefore, we recommend not relying solely on this mechanism.
+It is important to note that __failed requests do not affect your rate limit__. However, continuously retrying a request may not be a sustainable long-term solution, as this behavior could change in the future. Therefore, we recommend against relying solely on this mechanism.
 
 Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are excellent starting points for implementing retry strategies.
 
