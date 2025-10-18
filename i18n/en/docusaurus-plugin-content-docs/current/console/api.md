@@ -15,7 +15,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 The __API key__ allows you to authenticate when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the Shiva APIs without using a graphical interface. Each of these tokens is linked to a specific tenant and the user who created it.
 
-Creating this token is done from your account. You can generate multiple keys and configure permissions for each one, within the limits of your rights.
+Creating this token is done from your account. You can generate multiple keys and configure permissions for each one, within the limits of your access rights.
 
 To create an API key, simply __click on your profile__:
 
@@ -47,7 +47,16 @@ You will then see the newly created token and its future expiration date.
 
 <img src={ShivaProfil005} />
 
-## API Portal Access
+:::info Token Authentication Lifecycle
+When you use your **Personal Access Token (PAT)** to authenticate with the API, you receive in return an access token. It is important to note that this access token is a **JSON Web Token (JWT)** with a limited lifespan.
+
+-   **Lifespan**: Each JWT token is valid for **5 minutes**.
+-   **Verification**: You can check the issuance date (`iat`) and expiration date (`exp`) of your token by decoding it. Online tools such as [jwt.io](https://jwt.io) make this easy.
+
+Once the token expires, you must re-authenticate using your PAT to obtain a new one. Therefore, it is recommended to manage this lifecycle in your scripts and applications by implementing automatic token renewal.
+:::
+
+## Access to the API Portal
 
 The OpenAPI 3.0 (Swagger) documentation for the Cloud Temple console APIs is available directly within the application:
 
@@ -60,7 +69,7 @@ The API endpoint URLs are directly provided in __Swagger__ (within the "Servers"
 
 ## Activities
 
-Tracking of write-type requests (POST, PUT, PATCH, DELETE) is handled through activity management. Each request of this type automatically generates a corresponding activity. A HTTP status code 201 confirms the successful creation of the activity. The unique identifier of this activity is returned in the response headers under the key 'Location'.
+Tracking of write-type requests (POST, PUT, PATCH, DELETE) is handled through activity management. Each such request automatically generates a corresponding activity. A HTTP status code 201 confirms the successful creation of the activity. The unique identifier of this activity is returned in the response headers under the key 'Location'.
 
 <img src={ShivaApi002} />
 
@@ -134,15 +143,15 @@ __Note: The resource's UUIDv4 identifier is available in the activity result onc
 The Cloud Temple console sets __caps on the volume of requests__ an individual user can send to the API within a given time period. Implementing these rate limits is a common practice in API management, adopted for several essential reasons:
 
 - __Prevention of abuse__: These limits help safeguard the API's integrity by preventing abusive or poorly designed usage that could compromise its operation.
-- __Guarantee of service quality__: By regulating API access, we ensure a fair distribution of resources, enabling all users to enjoy a stable and high-performing experience.
+- __Guarantee of service quality__: By regulating API access, we ensure a fair distribution of resources, allowing all users to enjoy a stable and high-performing experience.
 
-Consider a poorly designed or inefficient script making repeated API calls—such behavior risks overwhelming system resources and degrading performance. By establishing request thresholds, we prevent such scenarios and ensure the maintenance of a __smooth, uninterrupted service__ for our entire user base.
+Consider a poorly designed or inefficient script making repeated calls to the API—this could overwhelm system resources and degrade performance. By setting request thresholds, we prevent such scenarios and ensure a __smooth, uninterrupted service__ for our entire user base.
 
-### What are the rate limits for the Cloud Temple Console API?
+### What are the rate limits for the Cloud Temple console API?
 
 We apply quantitative restrictions on user interactions with the console for each product.
 
-Limits are defined in __requests per second (r/s) per source IP__. Once the threshold is exceeded, the system responds with an HTTP 429 error code, indicating that the allowed request limit has been surpassed.
+Limits are defined in __requests per second (r/s) and per source IP__. Once the threshold is exceeded, the system responds with an HTTP 429 error code, indicating that the allowed request limit has been surpassed.
 
 Here are the defined limits:
 
@@ -164,7 +173,7 @@ Here are the defined limits:
 
 ### Specific Routes
 
-Certain API endpoints, particularly those related to authentication or sensitive operations, have more restrictive limits to enhance security and ensure stability.
+Certain specific API endpoints, particularly those related to authentication or sensitive operations, have more restrictive limits to enhance security and ensure stability.
 
 | Route | Limit Threshold |
 |---|---|
@@ -201,9 +210,9 @@ This approach offers several advantages:
 - __Exponential backoff__ ensures that initial attempts are made quickly, while longer delays are applied in case of repeated failures.
 - Adding a __random variation__ to the pause helps prevent all retry attempts from occurring simultaneously.
 
-It is important to note that __failed requests do not count toward your rate limit__. However, continuously retrying a request may not be a sustainable long-term solution, as this behavior could change in the future. Therefore, we recommend not relying solely on this mechanism.
+It is important to note that __failed requests do not count toward your rate limit__. However, continuously retrying a request may not be a sustainable long-term solution, as this behavior could change in the future. Therefore, we recommend against relying solely on this mechanism.
 
-Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are excellent starting points for implementing retry strategies with backoff.
+Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are excellent starting points for implementing retry strategies.
 
 ## API Endpoint Lifecycle
 
@@ -211,7 +220,7 @@ Information about the evolution of API endpoints is available in the release not
 
 <img src={ShivaApi004} />
 
-You will find a list of endpoints that are deprecated, organized by activity.
+You will find a list of deprecated endpoints, organized by activity.
 
 Additionally, deprecated endpoints will appear in our API as follows:  
 __~~this/is/an/endpoint~~__ along with a definitive deletion date in the description.
