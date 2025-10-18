@@ -1,59 +1,49 @@
 ---
 title: Personalizzare un'immagine VMware
 ---
-import marketplaceVMwareExportTemplate from '@site/docs/marketplace/images/marketplace_vmware_export_template.png'
-import marketplaceVMwareExportTemplateButton from '@site/docs/marketplace/images/marketplace_vmware_export_template_button.png'
-import marketplaceVMwareDeployFromTemplate from '@site/docs/marketplace/images/marketplace_vmware_deploy_from_template.png'
+import marketplaceVMwareExportTemplate from '../images/marketplace_vmware_export_template.png'
+import marketplaceVMwareExportTemplateButton from '../images/marketplace_vmware_export_template_button.png'
+import marketplaceVMwareDeployFromTemplate from '../images/marketplace_vmware_deploy_from_template.png'
 
-Questo tutorial spiega come personalizzare un'immagine di macchina virtuale (VMI) VMware fornita dal Marketplace per creare i propri modelli riutilizzabili.
+Questo tutorial spiega come personalizzare un'immagine di macchina virtuale (VMI) VMware fornita dal Marketplace per creare modelli riutilizzabili personalizzati.
 
 ### Principio generale
 
-Il Marketplace fornisce sistemi operativi (OS) generici. La distribuzione dal marketplace ti offre una base pulita, rapida e facile da distribuire, risparmiandoti caricamenti manuali e accelerando le tue distribuzioni.
+La Marketplace fornisce sistemi operativi (OS) generici. Il deployment dalla Marketplace ti offre una base solida, rapidamente e facilmente deployabile, evitandoti caricamenti manuali e accelerando i tuoi deployment.
 
-Una volta distribuita l'immagine, diventa una macchina virtuale che puoi configurare. Puoi quindi esportarla come modello riutilizzabile da tutti gli utenti nel tuo tenant.
-
----
+Una volta che l'immagine è stata distribuita, diventa una macchina virtuale che puoi configurare. Successivamente, puoi esportarla come modello riutilizzabile da tutti gli utenti del tuo tenant.
 
 ## Passaggi di personalizzazione
 
-1.  **Distribuire l'immagine di base** dal Marketplace.
-2.  **Configurare la macchina virtuale** in base alle proprie esigenze.
-3.  **Creare un modello** dalla macchina virtuale configurata.
-4.  **Distribuire una nuova macchina virtuale** dal tuo modello personalizzato.
+1.  **Distribuire l'immagine di base** dalla Marketplace.
+2.  **Configurare la macchina virtuale** secondo le proprie esigenze.
+3.  **Creare un modello** a partire dalla macchina virtuale configurata.
+4.  **Distribuire una nuova macchina virtuale** dal proprio modello personalizzato.
 
----
+### Step 1: Deploy the base image
 
-### Passaggio 1: Distribuire l'immagine di base
+Follow the tutorial [Deploy an image on VMware](./deploy_vmware.md) to get started.
 
-Segui il tutorial [Distribuire un'immagine su VMware](./deploy_vmware.md) per iniziare.
+### Step 2: Configure the virtual machine
 
----
+Once the virtual machine is deployed, configure it according to your needs (software installation, security configuration, etc.).
 
-### Passaggio 2: Configurare la macchina virtuale
+### Step 3: Create a template from the virtual machine
 
-Una volta distribuita la macchina virtuale, configurala in base alle tue esigenze (installazione di software, impostazioni di sicurezza, ecc.).
-
----
-
-### Passaggio 3: Creare un modello dalla macchina virtuale
-
-1.  Dalla tua lista di macchine virtuali, seleziona la macchina virtuale configurata.
-2.  Seleziona **"Esporta"** dalla barra delle azioni.
-3.  Segui i passaggi nella Console per esportare il modello.
+1. From your list of virtual machines, select the configured virtual machine.
+2. Select **"Export"** from the action bar.
+3. Follow the steps in the Console to export the template.
 
 <img src={marketplaceVMwareExportTemplateButton} />
 <img src={marketplaceVMwareExportTemplate} />
 
----
+### Step 4: Deploy from your new template
 
-### Passaggio 4: Distribuire dal tuo nuovo modello
+You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
-Puoi distribuire dalla pagina "Catalogo" o dalla pagina "Macchine virtuali".
-
-Per distribuire dalla pagina **Macchine virtuali**:
-1.  Fai clic su **"Crea una macchina virtuale"**.
-2.  Scegli **"Distribuisci da un modello"**.
-3.  Seleziona il tuo nuovo modello dall'elenco.
+To deploy from the **Virtual Machines** page:
+1. Click on **"Create a virtual machine"**.
+2. Choose **"Deploy from a template"**.
+3. Select your new template from the list.
 
 <img src={marketplaceVMwareDeployFromTemplate} />

@@ -1,59 +1,49 @@
 ---
-title: Personalizar una imagen de OpenIaaS
+title: Customizar una imagen OpenIaaS
 ---
-import marketplaceOpenIaasExportTemplate from '@site/docs/marketplace/images/marketplace_openiaas_export_template.png'
-import marketplaceOpenIaasExportTemplateButton from '@site/docs/marketplace/images/marketplace_openiaas_export_template_button.png'
-import marketplaceOpeniaasDeployFromTemplate from '@site/docs/marketplace/images/marketplace_openiaas_deploy_from_template.png'
+import marketplaceOpenIaasExportTemplate from '../images/marketplace_openiaas_export_template.png'
+import marketplaceOpenIaasExportTemplateButton from '../images/marketplace_openiaas_export_template_button.png'
+import marketplaceOpenIaasDeployFromTemplate from '../images/marketplace_openiaas_deploy_from_template.png'
 
-Este tutorial explica cómo personalizar una imagen de máquina virtual (VMI) de OpenIaaS proporcionada por el Marketplace para crear sus propias plantillas reutilizables.
+Este tutorial explica cómo personalizar una imagen de máquina virtual (VMI) OpenIaaS proporcionada por la Marketplace para crear sus propios modelos reutilizables.
 
 ### Principio general
 
-El Marketplace proporciona sistemas operativos (SO) genéricos. La implementación desde el marketplace le brinda una base limpia, rápida y fácil de implementar, lo que le evita cargas manuales y acelera sus implementaciones.
+La Marketplace proporciona sistemas operativos (OS) genéricos. El despliegue desde la Marketplace le ofrece una base sólida, desplegable rápidamente y fácilmente, evitándole cargas manuales y acelerando sus despliegues.
 
-Una vez que la imagen se implementa, se convierte en una máquina virtual que puede configurar. Luego puede exportarla como una plantilla que puede ser reutilizada por todos los usuarios en su inquilino.
-
----
+Una vez desplegada la imagen, se convierte en una máquina virtual que puede configurar. A continuación, puede exportarla como un modelo reutilizable por todos los usuarios de su inquilino.
 
 ## Pasos de personalización
 
-1.  **Implementar la imagen base** desde el Marketplace.
+1.  **Desplegar la imagen base** desde la Marketplace.
 2.  **Configurar la máquina virtual** según sus necesidades.
-3.  **Crear una plantilla** a partir de la máquina virtual configurada.
-4.  **Implementar una nueva máquina virtual** desde su plantilla personalizada.
+3.  **Crear un modelo** a partir de la máquina virtual configurada.
+4.  **Desplegar una nueva máquina virtual** desde su modelo personalizado.
 
----
+### Paso 1: Desplegar la imagen base
 
-### Paso 1: Implementar la imagen base
-
-Siga el tutorial [Implementar una imagen en OpenIaaS](./deploy_openiaas.md) para comenzar.
-
----
+Siga el tutorial [Desplegar una imagen en OpenIaaS](./deploy_openiaas.md) para comenzar.
 
 ### Paso 2: Configurar la máquina virtual
 
-Una vez que la máquina virtual esté implementada, configúrela según sus necesidades (instalación de software, configuración de seguridad, etc.).
+Una vez desplegada la máquina virtual, configúrela según sus necesidades (instalación de software, configuración de seguridad, etc.).
 
----
+### Step 3: Create a template from the virtual machine
 
-### Paso 3: Crear una plantilla a partir de la máquina virtual
-
-1.  De su lista de máquinas virtuales, seleccione la máquina virtual configurada.
-2.  Seleccione **"Exportar"** en la barra de acciones.
-3.  Siga los pasos en la Consola para exportar la plantilla.
+1. From your list of virtual machines, select the configured virtual machine.
+2. Select **"Export"** from the action bar.
+3. Follow the steps in the Console to export the template.
 
 <img src={marketplaceOpenIaasExportTemplateButton} />
 <img src={marketplaceOpenIaasExportTemplate} />
 
----
+### Step 4: Deploy from your new template
 
-### Paso 4: Implementar desde su nueva plantilla
+You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
-Puede implementar desde la página "Catálogo" o desde la página "Máquinas virtuales".
+To deploy from the **Virtual Machines** page:
+1. Click on **"Create a virtual machine"**.
+2. Choose **"Deploy from a template"**.
+3. Select your new template from the list.
 
-Para implementar desde la página **Máquinas virtuales**:
-1.  Haga clic en **"Crear una máquina virtual"**.
-2.  Elija **"Implementar desde una plantilla"**.
-3.  Seleccione su nueva plantilla de la lista.
-
-<img src={marketplaceOpeniaasDeployFromTemplate} />
+<img src={marketplaceOpenIaasDeployFromTemplate} />

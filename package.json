@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "generate:models": "python scripts/generate_models_doc.py",
+    "generate:models": "python scripts/generate_models_doc/generate_models_doc.py",
     "generate:docs": "yarn generate:models"
   },
   "dependencies": {
