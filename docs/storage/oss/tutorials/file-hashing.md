@@ -56,3 +56,74 @@ Metadata  :
     Content-Type              : text/plain
 ```
 Le hash SHA-256 est maintenant présent dans les métadonnées personnalisées de l'objet.
+
+---
+
+### 3. Résoudre les erreurs `XAmzContentSHA256Mismatch` avec AWS CLI ou Terraform
+
+#### Origine du problème
+
+Des erreurs de type `XAmzContentSHA256Mismatch` peuvent survenir suite à une modification du comportement par défaut du SDK AWS concernant le calcul des checksums. Ce SDK est utilisé à la fois par AWS CLI et Terraform.
+
+#### Versions concernées
+
+- **AWS CLI**: Version 2.23.0 et ultérieures
+- **Terraform**: Version 1.11.2 et ultérieures
+
+Ces versions intègrent un SDK AWS qui inclut automatiquement l'en-tête `x-amz-checksum-mode` et calcule des checksums CRC32 pour les uploads, ce qui peut entrer en conflit avec la configuration du serveur de stockage objet.
+
+#### Solution 1: Variable d'environnement (Recommandée)
+
+La solution la plus simple est de désactiver ce nouveau comportement via une variable d'environnement.
+
+Pour **AWS CLI**:
+```bash
+AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED aws s3 cp fichier.txt s3://mon-bucket/
+```
+
+Pour **Terraform**:
+```bash
+AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED terraform apply
+```
+
+Pour rendre ce paramètre permanent dans votre session shell :
+```bash
+export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
+```
+
+#### Solution 2: Configuration dans le profil AWS (pour AWS CLI)
+
+Vous pouvez configurer ce paramètre de façon permanente dans votre profil AWS CLI.
+
+1.  Ouvrez votre fichier de configuration AWS : `~/.aws/config`
+2.  Ajoutez le paramètre suivant dans votre profil :
+
+```ini
+[default]
+request_checksum_calculation = WHEN_REQUIRED
+```
+
+Cette solution est idéale si vous utilisez régulièrement AWS CLI.
+
+#### Solution 3: Downgrade (Non recommandé)
+
+En dernier recours, vous pouvez revenir à une version antérieure des outils.
+
+Pour **AWS CLI**, revenir à la version 2.22.35 :
+```bash
+pip install awscli==2.22.35
+```
+
+Pour **Terraform**, revenir à la version 1.11.1.
+
+#### Vérification
+
+Pour confirmer que votre solution fonctionne, exécutez une commande simple :
+
+```bash
+aws s3 ls
+# ou
+terraform plan
+```
+
+Si les commandes s'exécutent sans erreur de checksum, le problème est résolu.
