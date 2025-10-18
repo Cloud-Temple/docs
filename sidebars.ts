@@ -7,6 +7,10 @@ const sidebars: SidebarsConfig = {
       id: 'home',
     },
     {
+      type: 'doc',
+      id: 'changelog',
+    },
+    {
       type: 'html', // Séparateur et titre
       value: `
         <hr class="sidebar-separator" />
@@ -39,6 +43,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Security',
+      items: [
+        'console/security/security_recommendations',
+        'console/security/security_alarms',
+      ],
+    },
+    {
+      type: 'category',
       label: 'IAM',
       items: [
         'console/iam/iam',
@@ -48,9 +60,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'console/iam/tutorials/sso_aad',
+            'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
             'console/iam/tutorials/sso_jumpcloud',
+            'console/iam/tutorials/sso_intune',
+            'console/iam/tutorials/sso_okta',
           ],
         },
       ],
@@ -82,6 +96,26 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Marketplace',
+      items: [
+        'marketplace/marketplace',
+        'marketplace/concepts',
+        'marketplace/quickstart',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'marketplace/tutorials/deploy_openiaas',
+            'marketplace/tutorials/deploy_vmware',
+            'marketplace/tutorials/contact_partner',
+            'marketplace/tutorials/customize_image_openiaas',
+            'marketplace/tutorials/customize_image_vmware',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Bastion',
       items: [
         'bastion/bastion',
@@ -107,12 +141,25 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/iaas_opensource',
         'iaas_opensource/concepts',
         'iaas_opensource/quickstart',
-        'iaas_opensource/tutorials',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            {
+              type: 'category',
+              label: 'High Availability',
+              items: [
+                'iaas_opensource/tutorials/high_availability/manage_pool',
+                'iaas_opensource/tutorials/high_availability/manage_vm',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
       type: 'category',
-      label: 'IaaS by VMware',
+      label: 'IaaS VMware',
       items: [
         'iaas_vmware/iaas_vmware',
         'iaas_vmware/concepts',
@@ -128,6 +175,7 @@ const sidebars: SidebarsConfig = {
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
             },
+            'iaas_vmware/tutorials/configure_management_vm',
             'iaas_vmware/tutorials/deploy_vm_template',
             'iaas_vmware/tutorials/deploy_vm_terraform',
             'iaas_vmware/tutorials/vm_encryption',
@@ -146,12 +194,25 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutorials',
           items: [
-            'paas_openshift/tutorials/tutorials',
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
           ]
         }
+      ],
+    },
+    {
+      type: 'category',
+      label: 'LLMaaS',
+      items: [
+        'llmaas/llmaas',
+        'llmaas/concepts',
+        'llmaas/rag_explained',
+        'llmaas/quickstart',
+        'llmaas/api',
+        'llmaas/models',
+        'llmaas/tutorials',
+        'llmaas/faq',
       ],
     },
     {
@@ -198,7 +259,22 @@ const sidebars: SidebarsConfig = {
             'storage/oss/oss',
             'storage/oss/concepts',
             'storage/oss/quickstart',
-            'storage/oss/tutorials',
+            {
+              type: 'category',
+              label: 'Tutoriels',
+              link: {
+                type: 'doc',
+                id: 'storage/oss/tutorials',
+              },
+              items: [
+                'storage/oss/tutorials/cloudberry-explorer',
+                'storage/oss/tutorials/winscp',
+                'storage/oss/tutorials/mc-mirror',
+                'storage/oss/tutorials/aws-s3-sync',
+                'storage/oss/tutorials/python-boto3',
+                'storage/oss/tutorials/file-hashing',
+              ],
+            },
           ],
         },
       ],
@@ -227,6 +303,8 @@ const sidebars: SidebarsConfig = {
         'contractual/iaas/raci',
         'contractual/iaas/raci_s3',
         'contractual/paas/raci',
+        'contractual/paas/raci_ocp_std',
+        'contractual/llmaas/raci'
       ],
     },
   ],

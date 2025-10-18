@@ -1,97 +1,149 @@
+
+
 ---
-title: Concepts
+title: Konzepte
 ---
 
-## Zuweisung einer öffentlichen Provider Aggregated (PA) Internetadresse
 
-In diesem Kontext verwenden Sie vom Cloud Temple zugewiesene öffentliche IP-Adressen, die Ihnen für Ihre Nutzung vermietet werden.
 
-Die Erstellung der Internetverbindung und die Zuweisung der zugehörigen öffentlichen IP-Adressen erfolgt durch __eine Serviceanfrage__, in der Folgendes angegeben wird:
+## Internet-Cloud-Infrastruktur
 
-    Der Name Ihrer Organisation
-    Der Name eines Ansprechpartners mit seiner E-Mail und Telefonnummer zur abschließenden Konfiguration
-    Der Name des Tenants
-    Die Größe des gewünschten Subnetzes (mindestens /29 bei IPv4 und /64 bei IPv6)
-    Falls sie noch nicht bereitgestellt wurden, werden die RIPE-Informationen (insbesondere administrativer Kontakt) vom Support angefordert
+CloudTemple betreibt als **Cloud-Service-Anbieter (CSP)** eine eigenständige, hochverfügbare und sichere Internet-Infrastruktur. Unsere Operator-Connectivity basiert auf einer eigenen AS-Nummer (Autonome Systemnummer), die uns eine vollständige Kontrolle über den Routing gewährleistet und eine hohe Verfügbarkeit für alle unsere Dienste sicherstellt.
 
-Die Bereitstellung des Internetzugangs erfolgt über das BGP4-Protokoll nach Rücksendung der Supportanfrage, das die folgenden Informationen bereitstellt:
+Diese eigenständige Infrastruktur ermöglicht es uns, eine Internet-Connectivity mit fortgeschrittenen Funktionen anzubieten, die sich an alle Arten von CloudTemple-Angeboten anpassen, von dediziertem Hosting bis hin zu IaaS-Lösungen über PaaS-Dienste.
 
-- *öffentliches Präfix*
-- *Interkonnektionspräfix*
-- *Any-Cast-Gateway*
-- *Subnet-IP*
-- *lokales AS*
-- *AS von Cloud Temple*
-- *Keepalive-Timer und Hold-Time-Timer*
-- *die Adressen der mit Ihrem Tenant verbundenen Routenserver*.
 
-Die Verwendung des BGP4-Protokolls garantiert eine effiziente Weiterleitung Ihrer Internetströme zum aktiven Gateway Ihrer Architektur, insbesondere in Szenarien mit Multi-Availability-Zone-Bereitstellungen, wie es bei Firewall-Clustern, die zwischen zwei Verfügbarkeitszonen verteilt sind, der Fall ist.
 
-## IPv4-Blöcke
+## Netzwerkarchitektur und Redundanz
 
-### IPv4-Adressenangebot Version 1
+Unser Netzwerk verfügt über eine redundante Architektur, die darauf abzielt, die Leistung zu optimieren und die Dienstverfügbarkeit zu gewährleisten. CloudTemple verfügt über ein eigenständiges, unabhängiges System mit einem Satz öffentlicher IP-Präfixe, die zugewiesen wurden, um eine direkte globale Verbindung zu ermöglichen.
 
-__*Dieses Angebot ist seit dem 2. Mai 2024 nicht mehr kommerziell verfügbar*__
+Diese Verbindung basiert auf **zwei unterschiedlichen Wegen**, um die Resilienz zu maximieren:
 
-Die Bereitstellung der IPv4-Adressen erfolgt __im Rahmen der verfügbaren Bestände__ für unsere Kunden, mit einem Mindestblock von 8 IP-Adressen (/29 oder 255.255.255.248).
+**Transit-Verbindung:** Zwei Haupt-Transit-Anbieter sorgen für globale Redundanz und ermöglichen einen optimalen Traffic-Routing über das Internet zu unseren Infrastrukturen.
 
-Es ist möglich, die Ihnen zugewiesenen Adressblöcke im Menü __*'Öffentliche IPs'*__ des Netzmenüs in der linken grünen Leiste anzuzeigen.
+**Exchange-Points:** Unsere Präsenz an zwei Exchange-Points (IXP) in Paris ermöglicht es, die Latenz für europäische Nutzer erheblich zu reduzieren und die Leistung regionaler Dienste zu verbessern. Dieser Ansatz gewährleistet zudem eine natürliche Redundanz gegenüber Ausfällen der Anbieter.
 
-| Referenz                               | Einheit | SKU                          |
-| -------------------------------------- | ------- | ---------------------------- |
-| Netzwerk - Dedizierte öffentliche IPv4-Plätze | 8 IPv4  | csp:(region):network:ipv4:v1 |
+Die Verwendung des BGP4-Protokolls gewährleistet einen effizienten Routing Ihrer Internet-Flüsse zur aktiven Gateway-Architektur, insbesondere in Szenarien mit Multi-Zonen-Verfügbarkeits-Deployment, wie beispielsweise Firewall-Cluster, die zwischen zwei Verfügbarkeitszonen verteilt sind.
 
-### IPv4-Adressenangebot Version 2
 
-Die Bereitstellung einer IPv4-Adresse erfolgt __im Rahmen der verfügbaren Bestände__ für unsere Kunden, pro IP-Adresse.
 
-Es ist möglich, die Ihnen zugewiesenen Adressblöcke im Menü __*'Öffentliche IPs'*__ des Netzmenüs in der linken grünen Leiste anzuzeigen.
+## Integrierter DDoS-Schutz
 
-| Referenz                    | Einheit | SKU                          |
-| --------------------------- | ------- | ---------------------------- |
-| Netzwerk - Dedizierte öffentliche IPv4 | 1 IPv4  | csp:(region):network:ipv4:v2 |
+Alle eingehenden Traffic zu CloudTemple-Infrastruktur profitieren von einem fortschrittlichen DDoS-Schutz, der von **F5**, einem weltweit führenden Unternehmen in Netzwerksicherheit, gewährleistet wird. Dieser Schutz funktioniert transparent und automatisch.
+
+Volumetrische Angriffe werden direkt an der Netzwerkrandstelle von F5 erkannt und abgemildert, noch bevor sie das CloudTemple-Netzwerk erreichen. Dieser Vorfilter schützt vor Überlastungen, die unsere Internetverbindungen beeinträchtigen könnten, und stellt sicher, dass nur legitime Anfragen unsere Infrastrukturen erreichen.
+
+**Alle CloudTemple-Dienste** profitieren diesen Schutz kostenlos, einschließlich Kundenpräfixe, die zu unserer Infrastruktur migriert werden können. Dieser integrierte Ansatz verwandelt eine Sicherheitsanforderung in einen operativen Vorteil für unsere Kunden.
+
+
+
+## Zuweisung öffentlicher IP-Adressen
+
+CloudTemple bietet ein flexibles System zur Zuweisung von öffentlichen Provider Aggregated (PA)-IP-Adressen, mit dem Kunden öffentliche IP-Adressen **einzelnen** nach ihren spezifischen Anforderungen reservieren können.
+
+
+
+### Buchungsprozess
+
+Die Buchung von öffentlichen IP-Adressen erfolgt direkt über die CloudTemple-Konsole und bietet eine selbstständige und sofortige Verwaltung:
+
+**Über die API der Konsole:** Integration in Ihre Automatisierungs- und Bereitstellungs-Workflows möglich.
+
+**Über die Web-Konsole:** Eine intuitive Oberfläche, die über den *Internet*-Bereich Ihres Kundenportals zugänglich ist.
+
+Der Buchungsprozess folgt diesen einfachen Schritten: Anmeldung an der Konsole, Navigation zu *Internet* > *Adressen verwalten*, Auswahl von *Neue Adresse buchen*, Auswahloption zwischen IPv4 oder IPv6, dann Bestätigung der Bestellung.
+
+
+
+### Abrechnung
+
+Die Abrechnung der öffentlichen IP-Adressen erfolgt pro Arbeitseinheit (AE) und beginnt mit der Reservierung der Adresse, wodurch eine vollständige Kostentransparenz gewährleistet wird.
+
+| Referenz | Einheit | SKU |
+|----------|---------|-----|
+| Netzwerk - Dedicated IPv4-Adresse | 1 IPv4 | RSIP-IP4-UNIT |
+| Netzwerk - Dedicated IPv6-Adresse | 1 IPv6 | RSIP-IP6-UNIT |
+
+
+
+## IPv4-Bereiche
+
+Die Lieferung einer IPv4-Adresse erfolgt __innerhalb des verfügbaren Lagerbestands__ für unsere Kunden, pro IP-Adresse.
+
+Die Bestellung von IPv4-Adressen erfolgt im Menü __*'Öffentliche IPs'*__ des Netzwerkmenüs im linken grünen Balken über den Button __*"IPv4-Adressen oder IPv6-Präfixe bestellen"*__.
+
+Es ist möglich, die Ihnen zugewiesenen Adressbereiche in diesem Menü anzuzeigen.
+
+| Referenz                     | Einheit  | SKU                          |
+| ----------------------------- | ------ | ---------------------------- |
+| Netzwerk - Dedicated IPv4-Öffentlich | 1 IPv4 | csp:(region):network:ipv4:v2 |
+
 
 
 ## IPv6-Blöcke
 
-__Zum 1. Mai 2024, ist das Angebot an öffentlichen IPv6-Adressen noch nicht marktfähig.__
+Die IPv6-Präfixe werden über das Menü __*'Öffentliche IPs'*__ im Netzwerk-Menü in der grünen Leiste auf der linken Seite über den Button __*"Adressen IPv4 oder IPv6-Präfixe bestellen"*__ bestellt.
 
-Das Ziel der Markteinführung ist für das zweite Halbjahr 2024 geplant.
+Es ist möglich, die Ihnen zugewiesenen Präfixe in diesem Menü anzuzeigen.
 
-| Referenz                               | Einheit | SKU                          |
-| -------------------------------------- | ------- | ---------------------------- |
-| Netzwerk - Dedizierte öffentliche IPv6-Plätze | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Referenz                             | Einheit   | SKU                          |
+| ------------------------------------- | ------- | ---------------------------- |
+| Netzwerk - Dedicated IPv6-Öffentliche Bereiche | 64 IPv6 | csp:(region):network:ipv6:v1 |
 
-## Unabhängige öffentliche IP-Adressen (PI)
 
-Wenn Sie über eigene unabhängige Provider-Adressen verfügen, haben Sie die Möglichkeit, diese im Autonomous System von Cloud Temple anzukündigen. Dadurch können Sie Ihre eigenen IP-Adressen weiterhin innerhalb der Cloud Temple-Infrastruktur nutzen und Ihre Migrationen erleichtern.
 
-Hierfür stellen Sie eine __Serviceanfrage__ mit folgenden Angaben:
+## Migration von IP-Präfixen der Kunden
 
-    Der Name Ihrer Organisation
-    Der Name eines Ansprechpartners mit seiner E-Mail und Telefonnummer zur abschließenden Konfiguration
-    Der Name des Tenants
-    Der IP-PI-Adressblock, den Sie besitzen und ankündigen möchten
-    Falls noch nicht bereitgestellt, werden die zugehörigen RIPE-Informationen vom Support angefordert
+CloudTemple begleitet Kunden, die ihre eigenen IP-Präfixe in unsere Infrastruktur migrieren möchten, und erleichtert damit die Migrationprojekte, während die bestehende Netzwerkidentität erhalten bleibt.
 
-Es gibt keine spezielle Abrechnung für Kunden, die unabhängige Provider-Adressen verwenden.
 
-### Reservierung von Internet-Bandbreite
 
-Die Internet-Bandbreite kann in Schritten von 100 Mbps reserviert werden. Die maximale verfügbare Kapazität für ein Gateway beträgt 10 Gbps, möglicherweise begrenzt durch die technischen Eigenschaften Ihres Gateways.
+### Vorteile der Migration
 
-Die Abrechnung erfolgt im 95. Perzentil über den Abrechnungszeitraum, in der Regel ein Monat. Gelegentlich können Sie also über Ihre reservierte Kapazität hinaus einen Burst erleben.
+Diese Vorgehensweise ermöglicht es, Ihre IP-Identität während der Migration zu CloudTemple zu bewahren, was eine perfekte Kontinuität für Ihre Anwendungen und Kunden gewährleistet. Sie behalten die vollständige Kontrolle über die Nutzung Ihrer IP-Adressen und profitieren gleichzeitig von der CloudTemple-Infrastruktur.
 
-| Referenz                               | Einheit | SKU                                      |
-| -------------------------------------- | ------- | ---------------------------------------- |
+
+
+### Integrationsprozess
+
+Ihr IP-Präfix (z. B. `203.0.113.0/24`) wird in das Backbone-Netzwerk von CloudTemple integriert und von unserem AS angekündigt. Sobald es integriert ist, kann das Präfix frei Ihren virtuellen Maschinen, Lastverteilern oder anderen Diensten zugeordnet werden.
+
+**Alle Adressen des migrierten Präfixes profitieren automatisch von der F5-DDoS-Schutzfunktion**, ohne zusätzliche Konfiguration oder Kosten.
+
+
+
+### Voraussetzungen
+
+Die Migration von IP-Präfixen erfordert, dass das Präfix in einem anerkannten Internet-Registry (ARIN, RIPE, APNIC usw.) registriert ist und Sie dessen rechtmäßiger Eigentümer sind. Die BGP-Verwaltung kann von Ihrem Team übernommen werden oder Sie können den technischen Support von CloudTemple in Anspruch nehmen, je nach Ihren Vorlieben.
+
+
+
+## Bandbreitenreservierung im Internet
+
+Die Internet-Bandbreite kann in 100 Mbps-Schritten reserviert werden. Die maximale verfügbare Kapazität für eine Gateway beträgt 10 Gbps, möglicherweise begrenzt durch die technischen Eigenschaften Ihrer Gateway.
+
+Die Abrechnung erfolgt nach dem 95. Perzentil während des Abrechnungszeitraums, üblicherweise einem Monat. Sie können daher gelegentlich einen Burst über Ihre reservierte Kapazität hinaus nutzen.
+
+| Referenz                                 | Einheit    | SKU                                     |
+| ----------------------------------------- | -------- | --------------------------------------- |
 | Netzwerk - Reservierte Internet-Bandbreite | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
-__*Bemerkung:*__
-*Es gibt keine __volumenbasierte Abrechnung__ wie __'Egress-Gebühren'. Sie zahlen nur für die Reservierung der Bandbreite.__*
+__*Hinweis:*__
+*Es gibt keine volumetrische Abrechnung im Sinne von 'Egress-Gebühren'. Sie zahlen nur die Reservierung der Bandbreite.*
 
 
-## Anti-DDoS
 
-Ein Distributed Denial of Service (DDoS) Angriff zielt darauf ab, einen Service durch illegitimen Verkehr zu überlasten oder offline zu stellen.
+## Verfügbarkeit nach Angebot
 
-Der Anti-DDoS-Schutz von Cloud Temple schützt Sie vor böswilligen Akteuren und __ist ohne zusätzliche Kosten gegen volumetrische Angriffe aktiv__: Die Filterung erfolgt im Vorfeld durch unsere Telekommunikationspartner.
+Alle diese Internet-Verbindungs-Funktionen sind auf allen CloudTemple-Angeboten verfügbar und gewährleisten eine einheitliche Erfahrung, unabhängig vom verwendeten Diensttyp.
+
+| Angebot | Internetverbindung | DDoS-Schutz | RSIP-Verwaltung | Präfixmigration |
+|---------|--------------------|----------------|------------------|-----------------|
+| Dedicated Hosting | ✓ | ✓ | ✓ | ✓ |
+| Shared Hosting | ✓ | ✓ | ✓ | ✓ |
+| IaaS VMware | ✓ | ✓ | ✓ | ✓ |
+| IaaS OpenSource | ✓ | ✓ | ✓ | ✓ |
+| PaaS OpenShift | ✓ | ✓ | ✓ | ✓ |
+
+Dieser einheitliche Ansatz stellt sicher, dass alle unsere Kunden einen qualitativ hochwertigen Operator-Internetzugang, integrierte Sicherheit und fortgeschrittene Funktionen genießen, unabhängig von ihrer technologischen Wahl.

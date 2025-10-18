@@ -1,7 +1,7 @@
 ---
 title: Concepts
 ---
-import oshiftOffert from './images/oshift_offert.jpg'
+import oshiftOffert from './images/oshift_offert.png'
 
 ## Présentation de RedHat Openshift
 
@@ -154,7 +154,7 @@ Les **LoadBalancers privés** facilitent la communication avec vos services **Ia
 
 ### Trafic spécifique  
 
-Le **traﬁc spécifique** est géré au travers de **MetalLB**, un LoadBalancer opérant au niveau **2** du modèle OSI. Il prend en charge des besoins avancés nécessitant une personnalisation fine, notamment :  
+Le **traﬁc spécifique** est géré au travers du LoadBalancer **MetalLB**. Il prend en charge des besoins avancés nécessitant une personnalisation fine, par exemple :  
 
 - La connexion à une base de données via **TCP**  
 - La gestion de flux **UDP** pour des applications en temps réel ou à faible latence  
@@ -162,9 +162,10 @@ Le **traﬁc spécifique** est géré au travers de **MetalLB**, un LoadBalancer
 
 Cette solution permet de prendre en charge vos flux spécifiques, aussi bien pour vos interconnexions privées que pour vos besoins d’exposition publique.  
 
-Le routage est assuré via des **pools d’adresses IP publiques et privées**. Par défaut, deux pools vous sont attribués pour l’exposition de vos services :  
-- **Un pool de 4 adresses IP publiques**
-- **Un pool de 254 adresses IP privées**  
+Le routage est assuré via des **adresses IP publiques et privées dédiées**. Par défaut, des ips vous sont attribuées pour l’exposition de vos services :  
+
+- **4 adresses IP publiques**
+- **254 adresses IP privées**  
 
 Si ces ressources ne suffisent pas à supporter vos charges de travail, vous pouvez effectuer une demande auprès de nos services pour l’attribution d’adresses IP supplémentaires, qu’elles soient **publiques** ou **privées**.  
 

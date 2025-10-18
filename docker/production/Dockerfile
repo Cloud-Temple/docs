@@ -17,7 +17,7 @@ WORKDIR /opt/docusaurus
 # Production build
 FROM base AS prod
 ## COPY dependencies
-COPY package*.json package-lock.json ./
+COPY package*.json yarn.lock ./
 ## Install dependencies with `--immutable` to ensure reproducibility.
 RUN yarn install --immutable
 ## Copy over the source code.

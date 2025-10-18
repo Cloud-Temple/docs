@@ -389,7 +389,7 @@ est nécessaire d'avoir le même espace de stockage sur le site passif que sur l
 
 Cloud Temple propose __une architecture de sauvegarde croisée native et non débrayable__ (elle est obligatoire dans la qualification secnumcloud francaise).
 
-Les sauvegardes sont stockées dans une zone de disponibilité et sur un datacenter physique différent de celui qui héberge la machine virtuelle.
+Les sauvegardes sont stockées dans une zone de disponibilité et sur un datacenter physique différent de celui qui héberge la machine virtuelle. Elles sont chiffrées via un algorithme à clés symétriques AES 256 bits (cipher mode `xts-plain64`) pour garantir la confidentialité des données.
 
 Cela permet de se protéger en cas de défaut majeur sur le datacenter de production et de restaurer sur un datacenter secondaire (incendie par exemple).
 
@@ -429,3 +429,105 @@ La création d'une nouvelle politique de sauvegarde est réalisée par __une dem
     Le nom du tenant
     Le nom de la politique de sauvegarde
     Les caractéristiques (x jours, y semaines, z mois, ...)
+
+## Protection avancée des données (HSM/KMS)
+
+Cloud Temple propose une solution de __chiffrement avancé des machines virtuelles__ basée sur des modules de sécurité matériels (HSM) et un service de gestion des clés (KMS). Cette fonctionnalité permet de renforcer la protection des données sensibles grâce à une gestion centralisée et sécurisée des clés de chiffrement, directement intégrée à l'environnement SecNumCloud.
+
+### Architecture technique
+
+La solution s'appuie sur une infrastructure de sécurité robuste composée de :
+
+- __HSM (Hardware Security Module)__ : Modules __Thales Luna S790__ certifiés __FIPS 140-3 niveau 3__
+- __KMS (Key Management System)__ : __Thales CipherTrust Manager__ pour la gestion centralisée des clés
+- __Intégration VMware__ : Communication via le protocole __KMIP__ (Key Management Interoperability Protocol)
+
+#### Déploiement haute disponibilité
+
+L'infrastructure HSM est déployée sur __trois zones de disponibilité__ de la région FR1 :
+
+- PAR7S
+- TH3S  
+- AZ07
+
+Cette répartition garantit une __haute disponibilité__ et une __résilience__ maximale du service de chiffrement.
+
+### Fonctionnement et hiérarchie des clés
+
+Le système utilise une __hiérarchie de clés cryptographiques__ pour assurer la sécurité des données :
+
+| Niveau | Type de clé | Description | Localisation |
+|--------|-------------|-------------|--------------|
+| 1 | __Root of Trust (RoT)__ | Clé maîtresse par KMS | HSM Luna |
+| 2 | __Domain Key (DK)__ | Clé de domaine par client (isolation multi-tenant) | HSM Luna |
+| 3 | __Key Encryption Key (KEK)__ | Clé de chiffrement par VM | CipherTrust Manager |
+| 4 | __Data Encryption Key (DEK)__ | Clé de données par VM | VMware ESXi |
+
+#### Processus de chiffrement
+
+1. __Génération__ : VMware ESXi génère une DEK unique pour chaque machine virtuelle
+2. __Protection__ : La DEK est chiffrée par la KEK stockée dans CipherTrust Manager
+3. __Sécurisation__ : La KEK est elle-même protégée par la hiérarchie de clés HSM
+4. __Stockage__ : La DEK chiffrée est stockée avec les fichiers de configuration de la VM
+
+### Sécurité et conformité
+
+#### Certifications
+
+- __FIPS 140-3 niveau 3__ : Certification du plus haut niveau pour les HSM
+- __Common Criteria EAL4+__ : Évaluation de sécurité avancée
+- __SecNumCloud__ : Qualification ANSSI intégrée à l'environnement Cloud Temple
+
+#### Isolation multi-tenant
+
+- __Séparation cryptographique__ : Chaque client dispose d'un domaine KMS isolé
+- __Clés dédiées__ : Une Domain Key spécifique par client
+- __Audit et traçabilité__ : Journalisation complète des actions par domaine
+
+### Activation et utilisation
+
+Le chiffrement des machines virtuelles s'active __en un seul clic__ depuis la [Console Shiva](../console/console.md).
+
+Pour une procédure détaillée avec captures d'écran, consultez le [tutoriel de chiffrement des machines virtuelles](tutorials/vm_encryption.md).
+
+#### Prérequis
+
+- __Fournisseur de clé configuré__ : Un fournisseur HSM/KMS doit être activé sur la vStack
+- __Machine virtuelle éteinte__ : La VM doit être arrêtée avant le chiffrement
+- __Aucune réplication active__ : La VM ne doit pas être répliquée (incompatible avec Global Mirror)
+- __Pas de snapshot__ : Aucun cliché instantané ne doit être présent
+- __Souscription au service__ : Le service de protection avancée doit être souscrit
+
+*__Remarque__ : Pour plus de détails sur les prérequis et la procédure complète, référez-vous au [guide de chiffrement des VMs](tutorials/vm_encryption.md).*
+
+### Limitations et considérations
+
+#### Compatibilité
+
+- __Global Mirror__ : Les machines virtuelles chiffrées ne sont __pas compatibles__ avec la réplication Global Mirror
+- __Restauration__ : Les sauvegardes de VMs chiffrées conservent leur protection cryptographique
+- __Export__ : L'export de VMs chiffrées nécessite des procédures spécifiques
+
+#### Performance
+
+- __Impact minimal__ : Le chiffrement matériel assure des performances optimales
+- __Transparence__ : Aucun impact sur le fonctionnement des applications
+
+### Cas d'usage recommandés
+
+Cette solution de protection avancée est particulièrement adaptée pour :
+
+- __Données sensibles__ : Informations personnelles, données financières, secrets industriels
+- __Conformité réglementaire__ : Exigences RGPD, HIPAA, PCI-DSS, ISO 27001, PDIS
+- __Secteurs critiques__ : Banque, assurance, santé, défense
+- __Souveraineté numérique__ : Protection contre les accès non autorisés, même en cas de compromission
+
+| Référence | Unité | SKU |
+|-----------|-------|-----|
+| PROTECTION AVANCÉE - Chiffrement VM via HSM/KMS | 1 VM | csp:(region):iaas:vmware:encryption:hsm:v1 |
+
+*__Nota__ :*
+
+- *Le service nécessite une souscription spécifique et n'est pas inclus dans l'offre IaaS standard*
+- *La gestion des clés reste entièrement sous contrôle de Cloud Temple dans l'environnement SecNumCloud*
+- *Les clés de chiffrement ne quittent jamais l'infrastructure française et souveraine*

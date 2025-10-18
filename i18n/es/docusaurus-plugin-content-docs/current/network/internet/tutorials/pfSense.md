@@ -1,8 +1,8 @@
 ---
-title: Desplegar un firewall opensource pfSense
+title: Desplegar un firewall open source pfSense
 tags:
   - internet
-  - tutorials
+  - tutoriales
 ---
 import pfSenseWebui from '../images/pfsense_webui.png';
 import pfSenseHomePage from '../images/pfsense_home_page.png';
@@ -16,116 +16,116 @@ import routeServerNeighbor from '../images/route_server_neighbor.png';
 import neighborsOverview from '../images/neighbors_overview.png';
 import pfSenseBgpStatus from '../images/pfsense_bgp_status.png';
 
-Esta guía te ayudará a desplegar tu __firewall opensource pfSense__ en la Nube de Confianza en solo unos minutos.
+Esta guía le ayudará a desplegar su __firewall open source pfSense__ en la nube de Confianza en solo unos minutos.
 
-## Prerrequisitos
+## Requis
 
-Los prerrequisitos para esta guía son los siguientes:
+Los requisitos para este guía son los siguientes:
 
-1. Haber suscrito a la oferta de Cloud Temple: debes disponer de tu organización, tu inquilino y tus accesos,
-2. Tener los derechos sobre el módulo compute.
+1. Tener suscrito al plan Cloud Temple: debe disponer de su organización, su inquilino y sus accesos,
+2. Tener permisos sobre el módulo compute.
 
 Este documento describe los pasos a seguir para desplegar un firewall virtual pfSense.
 
-## Desplegar un firewall opensource pfSense
+## Deploy a pfSense open source firewall
 
-[pfSense](https://www.pfsense.org) es un proyecto open source basado en freeBSD que permite implementar un firewall virtual.
+[pfSense](https://www.pfsense.org) is an open source project based on FreeBSD that enables the deployment of a virtual firewall.
 
-Un firewall pfSense se administra a través de una interfaz web, por lo que necesitas disponer de una segunda máquina
-con una interfaz gráfica que tenga una dirección IP en la misma red LAN que el firewall para poder configurarlo.
+A pfSense firewall is managed via a web interface, so you need a second machine with a graphical interface that has an IP address in the same LAN network as the firewall in order to configure it.
 
-Necesitaremos un conjunto de dos VM:
+We will need a set of two VMs:
 
-- la primera será la máquina en la que vamos a desplegar el firewall
-- la segunda será la máquina desde la que vamos a administrar el firewall.
+- The first one will be the machine where we deploy the firewall.
+- The second one will be the machine from which we will administer the firewall.
 
-### Solicitar una entrega de acceso a internet
+### Solicitar una entrega de acceso a Internet
 
-El primer paso consiste en recuperar [la información de acceso a internet aquí](https://docs.cloud-temple.com/network/internet/quickstart#gestion-de-vos-connectivites-internet).
- Debes tener la siguiente información:
+La primera etapa consiste en recuperar [la información de acceso a Internet aquí](https://docs.cloud-temple.com/network/internet/quickstart#gestion-de-vos-connectivites-internet).  
+Debe contar con la siguiente información:
 
-- prefijo público
-- prefijo interconexión
-- gateway any-cast
-- rango IP
-- AS local
-- AS de Cloud Temple
-- temporizadores de keepalive y el tiempo de retención
+- prefijo público  
+- prefijo de interconexión  
+- pasarela any-cast  
+- rango IP  
+- AS local  
+- AS de Cloud Temple  
+- temporizadores keepalive y temporizador hold-time  
 - las direcciones de los servidores de rutas
 
-### Instalación y configuración de red de las interfaces
+### Instalación y configuración de interfaces de red
 
-Luego puedes desplegar tu vm pfSense:
+A continuación, puede desplegar su máquina virtual pfSense:
 
-1. __Instalación del firewall__ desde la plantilla pfSense en shiva:
-    - [(Desplegar vía la consola)](/docs/iaas_vmware/tutorials/deploy_vm_template)
-    - [(Desplegar vía Terraform)](/docs/iaas_vmware/tutorials/deploy_vm_terraform).
-2. __Configuración de las interfaces LAN y WAN__ del firewall: la interfaz WAN debe estar en tu vLAN de internet, su IP se tomará del rango IP que te fue comunicado por el CDS así como el GW predeterminado.
+1. __Instalación del firewall__ a partir de la plantilla pfSense en Shiva:
+    - [(Desplegar mediante la consola)](../../../iaas_vmware/tutorials/deploy_vm_template)
+    - [(Desplegar mediante Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
+2. __Configuración de las interfaces LAN y WAN__ del firewall: la interfaz WAN debe estar en su vLAN de internet, su dirección IP se tomará de la gama IP que le fue proporcionada por el CDS, así como la puerta de enlace predeterminada.
 3. __Instalación de la segunda máquina__ de gestión.
-4. __Configuración de la interfaz__ de la VM de gestión: esta máquina debe estar en la misma red que aquella en la que se configuró la interfaz LAN del firewall.
+4. __Configuración de la interfaz__ de la VM de gestión: esta máquina debe estar en la misma red que la interfaz LAN del firewall.
 
 ### Acceso al Firewall
 
-Una vez que las dos VM están bien instaladas, el segundo paso consiste en acceder al firewall para comenzar su configuración.
+Una vez que las dos máquinas virtuales estén correctamente instaladas, la segunda etapa consiste en acceder al firewall para comenzar su configuración.
 
-- acceder a la interfaz web del firewall desde la vm de gestión:
+- Acceder a la interfaz web del firewall desde la VM de gestión:
 
 <img src={pfSenseWebui} />
-- login por defecto:
-    - username : *admin*
-    - password : *pfsense* (recuerda cambiar la contraseña por defecto)
+- Inicio de sesión por defecto:
+    - nombre de usuario: *admin*
+    - contraseña: *pfsense* (recuerde cambiar la contraseña predeterminada)
 
 <img src={pfSenseHomePage} />
-### Configuración del firewall
-Este paso consiste en configurar los vecinos BGP del FW.
 
-- en primer lugar, recuerda autorizar el Flujo BGP en TCP 179 en __'Firewall > Rules'__:
+### Configuración del firewall  
+Esta etapa consiste en configurar los vecinos BGP del FW.
+
+- En primer lugar, asegúrese de permitir el tráfico BGP mediante TCP 179 en __'Firewall > Rules'__:
 
 <img src={pfSenseBgpRule} />
 
-- Ir a __'services > FRR BGP'__ para comenzar la configuración de tu sesión BGP:
+- Vaya a __'Servicios > FRR BGP'__ para comenzar la configuración de su sesión BGP:
 
 <img src={pfSenseFrrPackage} />
 
-- Marca las dos primeras casillas e indica el número de tu AS local y los tiempos tal como te fueron comunicados por el CDS.
+- Marque las dos primeras casillas y especifique el número de su AS local y los tiempos que le fueron proporcionados por el CDS.
 
 <img src={pfSenseGeneralConf} />
 
 ### Configuración de los vecinos BGP
 
-En Neighbors, haz clic en +Add para comenzar a crear tus vecinos BGP.
+En la sección *Neighbors*, haga clic en **+Add** para comenzar a crear sus vecinos BGP.
 
-- Para cada vecino: introduce su dirección IP en __'General Options > Name/address'__
+- Para cada vecino: introduzca su dirección IP en __'Opciones generales > Nombre/dirección'__:
 
 <img src={pfSenseNeighborConf} />
 
-- introduce el AS remoto (correspondiente al número de AS de Cloud Temple) en basic options como sigue:
+- Ingrese el AS remoto (correspondiente al número de AS de Cloud Temple) en las opciones básicas como se muestra a continuación:
 
 <img src={bgpBasicOptions} />
 
-- y finalmente, en Advanced option, haz lo siguiente:
+- Por último, en las opciones avanzadas, realice lo siguiente:
 
 <img src={ebgpConf} />
 
-- marca la casilla que define el tipo de tu vecino. En nuestro caso, es ``un route`` servidor:
+- Marque la casilla que define el tipo de vecino. En nuestro caso, se trata de un servidor de rutas:
 
 <img src={routeServerNeighbor} />
 
-- al final, no olvides guardar tus modificaciones haciendo clic en __'save'__:
+- Finalmente, no olvide guardar sus modificaciones haciendo clic en __'Guardar'__:
 
 <img src={neighborsOverview} />
 
-### Verificación del estado de la sesión BGP con los neighbors
+### Verificación del estado de la sesión BGP con los vecinos
 
-En Status, puedes ver el estado de la sesión BGP que acabas de configurar
+En Status, puede ver el estado de la sesión BGP que acaba de configurar.
 
 <img src={pfSenseBgpStatus} />
 
-Asegúrate de que el __BGP State__ esté en __established__.
+Asegúrese de que el __Estado BGP__ esté en __established__.
 
-### Anunciar tu prefijo público
+### Anunciar su prefijo público
 
-Para anunciar tu prefijo público, puedes crear rutas en /32 y hacer la redistribución en estática:
+Para anunciar su prefijo público, puede crear rutas en /32 y redistribuirlas como rutas estáticas:
 
-- en __*System > Routing > Static Routes*__: crea tus rutas estáticas en /32 poniendo la Gateway en Null4- 127.0.0.1
-- en __*Services > FRR package > BGP > Network Distribution*__: activa la ``redistribution`` en local eligiendo IPV4 en ``Reditribute`` FRR static routes.
+- en __*System > Routing > Rutas estáticas*__ : cree sus rutas estáticas en /32, estableciendo la Gateway en Null4-127.0.0.1.
+- en __*Services > Paquete FRR > BGP > Distribución de red*__ : active la opción de ``redistribución`` local, seleccionando IPV4 en ``Redistribuir`` rutas estáticas de FRR.

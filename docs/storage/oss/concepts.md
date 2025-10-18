@@ -75,10 +75,10 @@ Cloud Temple propose une solution de stockage objet avec les caractéristiques t
 
 • __Nombre de connexions simultanées__ : Aucune limite spécifique.
 
-• __Performance à l'upload__ :
+• __Performance__ :
 
-- Jusqu'à 100Gb/s en entrée
-- Jusqu'à 100Gb/s en sortie
+- Jusqu'à 1 Gb/s en entrée
+- Jusqu'à 1 Gb/s en sortie
 
 ---
 
@@ -89,14 +89,56 @@ Cloud Temple propose une solution de stockage objet avec les caractéristiques t
 Un __Storage Account__ est une entité logique qui possède une __Access Key__ et une __Secret Key__ utilisées pour authentifier et sécuriser les interactions avec un bucket.
 C'est sur ce compte que sont positionnés les rôles et permissions associés aux __buckets__, permettant de contrôler précisément les accès et les actions autorisées pour chaque utilisateur ou service.
 
+### Types de comptes de stockage
+
+La plateforme de Stockage Objet Cloud Temple distingue deux types de comptes de stockage, chacun avec un rôle et un niveau de permissions spécifiques :
+
+#### 1. Compte de stockage classique
+
+C'est le type de compte standard que vous créerez pour la plupart de vos usages.
+
+*   **Gestion des clés** : Pour chaque compte classique, vous pouvez générer une paire de clés d'accès (`Access Key` et `Secret Key`).
+*   **Permissions granulaires** : Les droits d'accès de ce compte sont définis au niveau de chaque bucket via des listes de contrôle d'accès (ACL). Vous devez explicitement lui donner des permissions (lecture, écriture, etc.) sur les buckets auxquels il doit accéder.
+
+#### 2. Compte de stockage global (Root)
+
+Chaque *namespace* (tenant) dispose d'un unique compte de stockage global, parfois appelé "compte root". Ce compte dispose de privilèges administratifs étendus.
+
+*   **Accès total** : Le compte global a un accès complet à tous les buckets au sein du namespace, sans qu'il soit nécessaire de lui attribuer des permissions spécifiques. Il peut réaliser toutes les opérations possibles sur l'ensemble du service de stockage.
+*   **Usage administratif** : Il est principalement destiné aux tâches de configuration et d'administration globales.
+*   **Réinitialisation des clés** : Étant donné son importance, si la clé d'accès et la clé secrète de ce compte sont perdues, la plateforme vous permet de les réinitialiser pour en générer de nouvelles.
+
 ### Le "bucket" dans l'écosystème du stockage objet
 
 Un bucket S3, popularisé par le service Amazon Simple Storage Service (Amazon S3), est __un conteneur de stockage public__ dans le cloud conçu pour conserver une quantité illimitée de données de manière sécurisée, fiable et hautement disponible. Chaque bucket S3 peut stocker des fichiers (appelés "objets" dans S3), allant de documents et images à de grandes bases de données ou fichiers vidéo. Les buckets sont utilisés pour organiser l'espace de stockage de manière logique au sein du stockage objet Cloud Temple, et chaque bucket est identifié par un nom unique fourni par l'utilisateur. Les buckets S3 offrent des fonctionnalités avancées, comme la gestion des versions, la sécurisation des données via des politiques de contrôle d'accès, et la possibilité d'immutabilité.
 
 ### L'offre S3 Cloud Temple utilise-t-elle la méthode 'PathStyle'
 
-De part les contraintes associées à la qualification SecNumCloud, à cet instant, l'offre est prévue pour utiliser la méthode '__PathStyle__'. Nous travaillons à ce que la méthode '__UrlStyle__' soit disponible S1 2025.
+De part les contraintes associées à la qualification SecNumCloud, à cet instant, l'offre est prévue pour utiliser la méthode '__PathStyle__'. Nous travaillons à ce que la méthode '__UrlStyle__' soit disponible S2 2025.
 
 ### Requêtes pré-signées
 
 Le stockage objet Cloud Temple prend en charge les __requêtes pré-signées__, une fonctionnalité essentielle qui permet de générer des URL temporaires donnant accès à des objets spécifiques pendant une durée limitée. Cette fonctionnalité est particulièrement utile pour partager des fichiers de manière sécurisée avec des utilisateurs externes sans leur attribuer de droits permanents ou d'identifiants d'accès au bucket. Les requêtes pré-signées peuvent être configurées avec une durée de validité précise, offrant ainsi un contrôle granulaire sur l'accès aux données.
+
+### Immutabilité des objets (Object Lock)
+
+Le Stockage Objet de Cloud Temple, basé sur Dell ECS, supporte la fonctionnalité d'immutabilité via **Object Lock**, en conformité avec le standard S3. Cette option permet de configurer les objets en mode **WORM (Write Once, Read Many)**, les protégeant ainsi contre toute modification ou suppression pendant une période définie. C'est une protection essentielle pour la conformité réglementaire et la défense contre les ransomwares.
+
+#### Fonctionnement
+
+L'immutabilité s'applique aux versions des objets et peut être configurée de deux manières :
+*   **Période de rétention fixe** : L'objet est verrouillé pour une durée déterminée (en jours ou en années).
+*   **Conservation légale (Legal Hold)** : L'objet est verrouillé indéfiniment, jusqu'à ce que la conservation soit explicitement levée.
+
+#### Conditions de mise en œuvre
+
+*   **Versionning obligatoire** : Pour activer l'Object Lock, le versionning doit être activé sur le bucket. Une fois l'Object Lock actif, le versionning ne peut plus être désactivé.
+*   **Activation à la création** : L'immutabilité doit être activée au moment de la création du bucket, via l'API S3 (par exemple, avec le header `x-amz-bucket-object-lock-enabled: true`).
+*   **Deux modes de protection** :
+    *   **Mode Gouvernance** : Les utilisateurs disposant de permissions spécifiques peuvent modifier ou supprimer les paramètres de rétention.
+    *   **Mode Conformité** : Personne, y compris l'administrateur root, ne peut modifier ou supprimer les paramètres de rétention. C'est le plus haut niveau de protection.
+
+#### Cas d'usage principaux
+
+*   **Protection anti-ransomware** : Les sauvegardes protégées ne peuvent être ni chiffrées ni supprimées par une attaque, garantissant une restauration fiable des données.
+*   **Conformité réglementaire** : Répond aux exigences strictes de conservation des données dans des secteurs comme la finance (FINRA, SEC 17a-4) ou la santé.

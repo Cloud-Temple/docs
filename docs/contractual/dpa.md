@@ -1,9 +1,5 @@
 # Annexe Contractuelle - Données à Caractère Personnel (DPA)
 
-**Reference : Annexe - Données à Caractère Personnel
-
-**V1 - 15/01/2025 - Modifié par Emeline Cazaux
-
 ## Article 1 : Définitions
 
 **Données à caractère personnel** : Toute information se rapportant à une personne physique identifiée ou identifiable (« personne concernée »), telle que définie par le Règlement Général sur la Protection des Données (RGPD).
@@ -20,9 +16,11 @@
 
 **Service Cloud** : Tout service de traitement, stockage, ou gestion de données à caractère personnel fourni par le Sous-traitant via des infrastructures cloud.
 
+**Accès nécessaire au service** : Tout accès aux données à caractère personnel strictement requis pour l'exécution des services contractuels définis, incluant la fourniture, la maintenance, le support technique, la supervision des systèmes, et la résolution d'incidents, à l'exclusion de tout accès à des fins d'analyse commerciale, de profilage, ou de marketing direct.
+
 ## Article 2 : Objet
 
-La présente annexe a pour objet de définir les conditions et modalités de traitement des données à caractère personnel dans le cadre du contrat principal, incluant l'utilisation de services cloud. Elle vise à garantir la conformité des parties aux obligations découlant du RGPD et des lois françaises relatives à la protection des données personnelles.
+La présente annexe a pour objet de définir les conditions et modalités de traitement des données à caractère personnel dans le cadre du contrat principal, incluant l'utilisation de services cloud. Elle vise à garantir la conformité des parties aux obligations découlant du RGPD et des lois françaises relatives à la protection des données personnelles, ainsi qu'aux exigences du code de conduite CISPE.
 
 ## Article 3 : Obligations du Responsable de traitement
 
@@ -38,13 +36,33 @@ La présente annexe a pour objet de définir les conditions et modalités de tra
 
 ## Article 4 : Obligations du Sous-traitant
 
-- **Traitement conforme aux instructions** : Le Sous-traitant s'engage à ne traiter les données à caractère personnel que sur instruction documentée du Responsable de traitement, y compris en ce qui concerne les transferts de données à caractère personnel vers un pays tiers ou à une organisation internationale, sauf si une exigence légale l'y oblige.
+### 4.1 Traitement conforme aux instructions et limitation des accès
+
+Le Sous-traitant s'engage à :
+
+- Ne traiter les données à caractère personnel que sur instruction documentée du Responsable de traitement, y compris en ce qui concerne les transferts de données à caractère personnel vers un pays tiers ou à une organisation internationale, sauf si une exigence légale l'y oblige
+- Limiter strictement ses accès aux données à caractère personnel aux seuls **accès nécessaires au service** tels que définis à l'Article 1
+- **S'interdire formellement** tout traitement des données à caractère personnel à des fins de :
+  - Data mining ou exploration de données
+  - Profilage des utilisateurs finaux ou analyse comportementale
+  - Marketing direct ou publicité ciblée
+  - Toute utilisation commerciale non liée à l'exécution des services contractuels
+
+### 4.2 Politique de gestion des accès
+
+Le Sous-traitant maintient une politique détaillée de gestion des accès aux données clients qui inclut :
+
+- Les procédures d'autorisation et de révocation des accès
+- L'identification des personnes habilitées et leurs niveaux d'accès
+- Les contrôles d'accès physiques et techniques aux infrastructures
+- La journalisation complète des accès avec conservation sur 24 mois minimum
+- Les procédures de gestion des accès d'urgence et de supervision
+
+### 4.3 Obligations générales
 
 - **Confidentialité** : Le Sous-traitant doit veiller à ce que les personnes autorisées à traiter les données à caractère personnel s'engagent à respecter la confidentialité ou soient soumises à une obligation légale appropriée de confidentialité.
 
 - **Sécurité des traitements** : Le Sous-traitant s'engage à mettre en œuvre les mesures techniques et organisationnelles appropriées pour garantir la sécurité des données à caractère personnel qu'il traite, y compris celles traitées via des services cloud, conformément à l'article 32 du RGPD.
-
-- **Sous-traitance ultérieure** : Le Sous-traitant ne doit pas recourir à un autre sous-traitant sans l'autorisation préalable écrite et spécifique du Responsable de traitement. En cas de sous-traitance ultérieure autorisée, le Sous-traitant doit s'assurer que le sous-traitant ultérieur respecte les mêmes obligations de protection des données.
 
 - **Assistance au Responsable de traitement** : Le Sous-traitant doit assister le Responsable de traitement, dans la mesure du possible, pour s'acquitter de ses obligations en matière de sécurité des données, de notification des violations de données, de réalisation d'analyses d'impact sur la protection des données et de consultations préalables auprès des autorités de contrôle.
 
@@ -52,9 +70,13 @@ La présente annexe a pour objet de définir les conditions et modalités de tra
 
 ## Article 5 : Description des traitements
 
-Le Sous-Traitant est autorisé à traiter pour le compte du Responsable de Traitement, les données à caractère personnel nécessaires pour fournir les Services. La nature et la catégorie des opérations réalisées sur les données à caractère personnel seront définies par le Responsable de Traitement selon les besoins spécifiques de chaque Service. Les finalités du traitement sont déterminées par le Responsable de Traitement et communiquées au Sous-Traitant. La nature et la catégorie des données à caractère personnel traitées sont spécifiées par le Responsable de Traitement. Les catégories de personnes concernées sont identifiées par le Responsable de Traitement. Pour l'exécution des Services, le Responsable de Traitement met à la disposition du Sous-Traitant les informations nécessaires. La durée du traitement est fixée par le Responsable de Traitement en fonction des exigences des Services fournis.
+Le Sous-Traitant est autorisé à traiter pour le compte du Responsable de Traitement, les données à caractère personnel nécessaires pour fournir les Services.
+
+Les finalités du traitement sont déterminées par le Responsable de Traitement et communiquées au Sous-Traitant. La nature et la catégorie des données à caractère personnel traitées sont spécifiées par le Responsable de Traitement. Les catégories de personnes concernées sont identifiées par le Responsable de Traitement. Pour l'exécution des Services, le Responsable de Traitement met à la disposition du Sous-Traitant les informations nécessaires. La durée du traitement est fixée par le Responsable de Traitement en fonction des exigences des Services fournis.
 
 ## Article 6 : Droits des personnes concernées
+
+### 6.1 Droits fondamentaux
 
 - **Accès et rectification** : Le Responsable de traitement et le Sous-traitant doivent permettre aux personnes concernées d'exercer leurs droits d'accès et de rectification de leurs données à caractère personnel, conformément aux articles 15 et 16 du RGPD.
 
@@ -64,7 +86,23 @@ Le Sous-Traitant est autorisé à traiter pour le compte du Responsable de Trait
 
 - **Opposition** : Les personnes concernées doivent pouvoir exercer leur droit d'opposition au traitement de leurs données personnelles conformément à l'article 21 du RGPD.
 
-## Article 7 : Mesure de sécurité et de confidentialité
+### 6.2 Assistance pour l'exercice des droits
+
+En tant que Sous-traitant, Cloud Temple assiste le Responsable de traitement dans l'exercice des droits des personnes concernées selon les modalités suivantes :
+
+**Processus standard** :
+
+- Les demandes sont généralement adressées par le Responsable de traitement via les canaux de communication habituels : Account Manager et Service Delivery Manager
+- Le Sous-traitant fournit son assistance technique dans les limites de son rôle de sous-traitant et des capacités de ses services
+
+**Contact direct** :
+
+- Pour les cas exceptionnels ou les questions spécifiques, le Délégué à la Protection des Données Cloud Temple peut être contacté directement : [DPD@cloud-temple.com](mailto:DPD@cloud-temple.com)
+
+- Un circuit de validation par le DPO Cloud Temple est maintenu pour assurer la cohérence des réponses
+- Une traçabilité des demandes et actions entreprises est assurée
+
+## Article 7 : Mesures de sécurité et de confidentialité
 
 Le Sous-Traitant s'engage en particulier à mettre en place les mesures suffisantes pour assurer la sécurité et la confidentialité des Données Personnelles confiées et traitées dans le cadre des Services, à savoir notamment :
 
@@ -78,55 +116,156 @@ Le Sous-Traitant s'engage en particulier à mettre en place les mesures suffisan
 
 - Informer le Responsable de Traitement de tout accès accidentel ou non autorisé aux Données à caractère personnel, de tout manquement à la réglementation sur les Données à caractère personnel ou toute suspicion d'un tel manquement, dans les meilleurs délais et, si possible, 48 heures au plus tard après en avoir pris connaissance
 
-- Selon le choix du Responsable de Traitement, supprimer ou renvoyer les Données à caractère personnel ou les renvoyer au terme du Contrat, et détruire les copies existantes, sauf obligation légale de les conserver
-
 - Mettre en œuvre une politique de sécurité des systèmes d'information et de gestion des autorisations d'accès logique et physique notamment, qu'il devra maintenir et faire évoluer pendant toute la durée du Contrat
+
+### 7.1 Contrôles d'accès renforcés
+
+Le Sous-traitant met en œuvre un système de contrôle d'accès aux données clients comprenant :
+
+- Un système d'authentification forte et de gestion des identités
+- Une politique de moindre privilège avec révision périodique des autorisations
+- Une séparation des environnements clients et une isolation des données
+- Un système de journalisation complet avec alertes automatiques
+- Des audits périodiques des accès et des contrôles de sécurité
 
 ## Article 8 : Notification des violations de données
 
-En cas de violation de données à caractère personnel, le Sous-traitant doit notifier cette violation au Responsable de traitement sans délai indu après en avoir pris connaissance. Cette notification doit inclure toutes les informations pertinentes permettant au Responsable de traitement de notifier cette violation à l'autorité de contrôle compétente et, le cas échéant, aux personnes concernées conformément à l'article 33 du RGPD. La notification doit préciser l'impact potentiel sur les données hébergées dans le cloud et les mesures prises pour y remédier.
+En cas de violation de données à caractère personnel, le Sous-traitant doit notifier cette violation au Responsable de traitement sans délai indu après en avoir pris connaissance, et au plus tard dans les 48 heures. Cette notification doit inclure :
 
-## Article 9 : Transferts de données hors de l'Union Européenne
+- La nature de la violation de données à caractère personnel
+- Les catégories et le nombre approximatif de personnes concernées
+- Les catégories et le nombre approximatif d'enregistrements de données à caractère personnel concernés
+- Le nom et les coordonnées du point de contact où des informations supplémentaires peuvent être obtenues
+- Les conséquences probables de la violation de données à caractère personnel
+- Les mesures prises ou envisagées pour remédier à la violation et atténuer ses éventuels effets négatifs
 
-Tout transfert de données à caractère personnel vers un pays tiers ou une organisation internationale ne peut être effectué que sous réserve du respect des conditions prévues par le RGPD, notamment aux articles 44 à 50. Le Responsable de traitement doit s'assurer que des garanties appropriées sont en place, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation.
+Cette notification doit préciser l'impact potentiel sur les données hébergées dans le cloud et les mesures prises pour y remédier, permettant au Responsable de traitement de notifier cette violation à l'autorité de contrôle compétente et, le cas échéant, aux personnes concernées conformément à l'article 33 du RGPD.
+
+## Article 9 : Localisation et transferts de données
+
+### 9.1 Localisation des données selon les services
+
+**Services Cloud :**
+
+- Toutes les données à caractère personnel sont exclusivement traitées et stockées au sein de l'Union Européenne
+- L'ensemble des infrastructures et datacenters sont situés dans l'Union Européenne
+- Le client peut sélectionner les zones géographiques de traitement parmi les localisations européennes disponibles
+- Aucun traitement ou stockage de données n'a lieu en dehors de l'Union Européenne
+
+**Services Managés (Infogérance) :**
+
+- Les données à caractère personnel sont par défaut traitées et stockées au sein de l'Union Européenne
+- Des équipes de support technique situées hors de l'Union Européenne peuvent être amenées à accéder aux données dans le cadre de la prestation, uniquement avec l'accord préalable et écrit du Responsable de traitement
+- Ces accès sont strictement limités aux besoins opérationnels et encadrés par les garanties appropriées du RGPD
+
+### 9.2 Conditions des transferts hors UE
+
+Tout accès ou transfert de données à caractère personnel par des équipes ou vers des pays tiers ne peut être effectué qu'avec :
+
+- L'autorisation préalable et écrite du Responsable de traitement pour le service concerné
+- Le respect des conditions prévues par le RGPD, notamment aux articles 44 à 50
+- La mise en place de garanties appropriées, telles que les clauses contractuelles types approuvées par la Commission européenne ou l'existence d'une décision d'adéquation
+- La limitation des accès aux seuls besoins opérationnels
 
 ## Article 10 : Durée et fin du traitement
 
-À l'issue du contrat principal, le Sous-traitant s'engage, selon les instructions du Responsable de traitement, à supprimer toutes les données à caractère personnel ou à les retourner au Responsable de traitement, et à détruire les copies existantes sauf obligation légale contraire. Cette obligation inclut également les données stockées sur des supports de sauvegarde dans les infrastructures cloud, sauf si une obligation légale impose leur conservation.
+### 10.1 Fin de contrat
+
+À l'issue du contrat principal, le Sous-traitant s'engage, selon les instructions du Responsable de traitement, à supprimer toutes les données à caractère personnel ou à les retourner au Responsable de traitement, et à détruire les copies existantes sauf obligation légale contraire.
+
+### 10.2 Processus de récupération
+
+Le Sous-traitant fournit un guide détaillé permettant au Responsable de traitement de récupérer ses données dans un format standard et exploitable, incluant :
+
+- Les formats d'export disponibles
+- Les procédures de récupération
+- Les délais de mise à disposition
+- L'assistance technique disponible
+
+### 10.3 Délais de suppression des données
+
+Le Sous-traitant s'engage sur les délais suivants :
+
+- **Suppression logique** : dans les 48 heures suivant la demande
+- **Suppression physique définitive** : dans les 30 jours calendaires suivant la suppression logique
+- **Confirmation de suppression** : certificat de destruction fourni dans les 5 jours ouvrés suivant la suppression physique
+
+Cette obligation inclut également les données stockées sur des supports de sauvegarde dans les infrastructures cloud, sauf si une obligation légale impose leur conservation. Dans ce cas, le Sous-traitant en informe le Responsable de traitement avec justification légale et délai de conservation.
 
 ## Article 11 : Documentation et audits
 
-Le Sous-traitant mettra à la disposition du Responsable de traitement toutes les informations nécessaires pour démontrer le respect des obligations prévues par la présente annexe et autorisera les audits, y compris les inspections, par le Responsable de traitement ou un autre auditeur mandaté par ce dernier, afin de vérifier la conformité avec cette annexe et le RGPD. Le Sous-traitant doit également tenir un registre des activités de traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées.
+Le Sous-traitant mettra à la disposition du Responsable de traitement toutes les informations nécessaires pour démontrer le respect des obligations prévues par la présente annexe et autorisera les audits, y compris les inspections, par le Responsable de traitement ou un autre auditeur mandaté par ce dernier, afin de vérifier la conformité avec cette annexe et le RGPD.
 
-## Article 12 : Registre des activités de Traitement
+Le Sous-traitant met à la disposition du Responsable de traitement :
 
-Le Sous-traitant doit également tenir un registre des activités de Traitement conformément à l'article 30 du RGPD et fournir des rapports de conformité sur les infrastructures cloud utilisées. Ce registre contient à minima :
+- Une page dédiée listant l'ensemble des démarches de conformité maintenue à jour à l'adresse : [https://www.cloud-temple.com/demarches-conformite/](https://www.cloud-temple.com/demarches-conformite/)
 
-- Le nom et coordonnées du responsable du traitement et, le cas échéant, du co-responsable du traitement, du représentant du responsable du traitement et du délégué à la protection des données
-- La description des catégories de personnes concernées et des catégories de données personnelles
-- Les finalités du Traitement
-- Les catégories de destinataires auxquels les données personnelles ont été ou seront communiquées, y compris les destinataires dans des pays tiers ou des organisations internationales
-- La durée de conservation des données
-- La description générale des mesures techniques et organisationnelles de sécurité mises en œuvre
+- Les attestations de conformité disponibles (ISO 27001, SecNumCloud, ISAE, etc.)
+- Des recommandations pour l'utilisation sécurisée des services Cloud Temple incluant :
+  - Les bonnes pratiques pour protéger l'accès à la Console cloud
+  - La gestion maîtrisée des accès et permissions
+  - La sécurisation des ressources déployées via les services cloud
 
-Sur demande écrite du Responsable de Traitement, du client final ou de toute autorité compétente, le Sous-Traitant disposera d'un délai de 15 jours ouvrés pour communiquer une copie dudit registre à compter de la réception delate demande.
+## Article 12 : Registre des activités de traitement
+
+### 12.1 Contenu du registre
+
+Le Sous-traitant maintient un registre électronique des activités de traitement conformément à l'article 30(2) du RGPD. Ce registre contient la liste des clients pour lesquels Cloud Temple opère en tant que sous-traitant, avec pour chaque client :
+
+- Les coordonnées de la société cliente et du délégué à la protection des données (nom, prénom, téléphone, mail)
+- Les catégories de traitement effectuées pour le compte de ce client
+- Les transferts hors Union Européenne le cas échéant
+- Les mesures techniques et organisationnelles de sécurité mises en œuvre
+
+### 12.2 Gestion automatisée
+
+Le registre est automatiquement mis à jour lors de :
+
+- L'établissement de nouveaux contrats clients
+- Les modifications de services existants
+- Les évolutions des mesures de sécurité
+
+### 12.3 Accès au registre
+
+Sur demande écrite :
+
+- **Le Responsable de Traitement** peut accéder uniquement aux informations le concernant dans le registre
+- **Les autorités compétentes** (CNIL, ANSSI, etc.) peuvent accéder au registre complet dans le cadre de leurs missions de contrôle
+
+Le Sous-Traitant dispose d'un délai de 15 jours ouvrés pour communiquer les informations demandées à compter de la réception de la demande. Un processus de validation des demandes légitimes est mis en place pour assurer la confidentialité des informations sensibles.
 
 ## Article 13 : Les sous-traitants ultérieurs
 
-Le Sous-Traitant peut être amené à recourir à un (ou des) prestataire(s) / fournisseur(s) externes pour la prise en charge de prestations spécifiques relevant du Contrat. A cet effet, le Sous-traitant peut être amené à recruter, sous sa responsabilité, un (ou des) Sous-traitant(s) de second rang aux seules fins de fournir une partie des prestations nécessaires au système infogéré.
+### 13.1 Principe d'autorisation
 
-Le Sous-Traitant s'engage à conclure un acte juridique contraignant avec tout sous-traitant ultérieur qu'il engage pour le Traitement des Données, afin de lui imposer le respect des exigences du RGPD et les mêmes obligations que celles prévues par l'article 20.2. En particulier, le Sous-Traitant doit s'assurer que le sous-traitant ultérieur qu'il a recruté présente des garanties suffisantes pour la mise en œuvre des mesures de sécurité nécessaires.
+Le Sous-Traitant peut être amené à recourir à un (ou des) prestataire(s) / fournisseur(s) externes pour la prise en charge de prestations spécifiques relevant du Contrat. À cet effet, le Sous-traitant peut être amené à recruter, sous sa responsabilité, un (ou des) Sous-traitant(s) de second rang aux seules fins de fournir une partie des prestations nécessaires au système infogéré.
+
+### 13.2 Obligations contractuelles
+
+Le Sous-Traitant s'engage à conclure un acte juridique contraignant avec tout sous-traitant ultérieur qu'il engage pour le Traitement des Données, afin de lui imposer le respect des exigences du RGPD et les mêmes obligations que celles prévues par la présente annexe. En particulier, le Sous-Traitant doit s'assurer que le sous-traitant ultérieur qu'il a recruté présente des garanties suffisantes pour la mise en œuvre des mesures de sécurité nécessaires.
+
+### 13.3 Responsabilité
 
 En cas de défaillance du sous-traitant ultérieur dans le respect de ses obligations en matière de protection des Données personnelles, le Sous-traitant demeurera pleinement responsable à l'égard du Responsable de traitement, sans préjudice des droits des Personnes concernées prévus aux articles 79 et 82 du RGPD.
 
-La liste des sous-traitants subséquents autorisés est la suivante :
+### 13.4 Liste des sous-traitants autorisés
 
-- Interxion
-- Data4
-- Telehouse
-- Iron Mountain
+La liste des sous-traitants subséquents actuellement autorisés est la suivante :
 
-En cours d'exécution du Contrat, le Responsable de traitement peut accéder à tout moment auprès du Sous-Traitant à l'actualisation de ladite liste. Nonobstant ce qui précède, le Sous-traitant notifiera par écrit au Responsable de Traitement la liste des sous-traitants ultérieurs mise à jour régulièrement à l'exception d'un changement majeur de sous-traitant ultérieur.
+| Sous-traitant | Activité | Localisation | Date d'autorisation |
+|---------------|----------|--------------|-------------------|
+| Interxion | Hébergement datacenter | France/UE | 15/01/2025 |
+| Data4 | Hébergement datacenter | France/UE | 15/01/2025 |
+| Telehouse | Hébergement datacenter | France/UE | 15/01/2025 |
+| Iron Mountain | Sauvegarde et archivage | France/UE | 15/01/2025 |
+
+### 13.5 Processus de notification
+
+En cours d'exécution du Contrat :
+
+- Le Responsable de traitement peut accéder à tout moment à la liste actualisée via l'interface client
+- Le Sous-traitant notifie par écrit au Responsable de Traitement toute modification de sous-traitant ultérieur au minimum 30 jours calendaires avant la mise en œuvre
+- Pour tout nouveau sous-traitant critique, une autorisation préalable spécifique du Responsable de traitement est requise
 
 ## Article 14 : Responsabilité
 
@@ -134,7 +273,7 @@ Le Responsable de traitement et le Sous-traitant reconnaissent qu'ils peuvent ê
 
 ## Article 15 : Modifications
 
-Toute modification de la présente annexe doit faire l'objet d'un avenant écrit signé par les deux parties. Les modifications doivent être conformes aux exigences du RGPD et des lois françaises relatives à la protection des données personnelles.
+Toute modification de la présente annexe doit faire l'objet d'un avenant écrit signé par les deux Parties. Les modifications doivent être conformes aux exigences du RGPD et des lois françaises relatives à la protection des données personnelles ainsi qu'aux évolutions du code de conduite CISPE.
 
 ## Article 16 : Loi applicable et juridiction compétente
 
