@@ -17,7 +17,7 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 - Avoir souscrit à une offre Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
 - Avoir un accès à la console Shiva
-- Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la console shiva est limité aux adresses de confiances identifiées)
+- Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la console Shiva est limité aux adresses de confiances identifiées)
 
 ## Connexion à votre tenant Cloud Temple
 
@@ -62,7 +62,7 @@ La première étape est l'identification du type de demande de support :
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
-Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
+Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident de sécurité, tel que:
 
 __CRITIQUE (P1)__:
 

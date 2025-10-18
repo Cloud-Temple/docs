@@ -1,141 +1,280 @@
-# Vertragsanhang - Personenbezogene Daten (DPA)
+# Contractual Annex - Personal Data (DPA)
 
-**Referenz: Anhang - Personenbezogene Daten
+## Article 1: Definitionen
 
-**V1 - 15.01.2025 - Geändert von Emeline Cazaux
+**Personenbezogene Daten**: Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“) beziehen, wie im Allgemeinen Datenschutzverordnung (DSGVO) definiert.
 
-## Artikel 1: Definitionen
+**Verantwortlicher für die Verarbeitung**: Die natürliche oder juristische Person, die öffentliche Behörde, der Dienst oder jede andere Organisation, die allein oder gemeinsam mit anderen die Zwecke und Mittel der Verarbeitung personenbezogener Daten bestimmt.
 
-**Personenbezogene Daten**: Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person ("betroffene Person") beziehen, wie in der Datenschutz-Grundverordnung (DSGVO) definiert.
+**Unternehmer**: Die natürliche oder juristische Person, die öffentliche Behörde, der Dienst oder jede andere Organisation, die personenbezogene Daten im Auftrag des Verantwortlichen für die Verarbeitung verarbeitet.
 
-**Verantwortlicher**: Die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+**Verarbeitung**: Jede Operation oder jeder Satz von Operationen, die mit oder ohne automatisierte Verfahren an personenbezogenen Daten oder an Datensätzen mit personenbezogenen Daten durchgeführt werden.
 
-**Auftragsverarbeiter**: Eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.
+**Datenverletzung**: Ein Sicherheitsvorfall, der zufällig oder unrechtmäßig zur Zerstörung, zum Verlust, zur Veränderung, zur unerlaubten Offenlegung oder zum unerlaubten Zugriff auf personenbezogene Daten führt, die übermittelt, gespeichert oder auf sonstige Weise verarbeitet werden.
 
-**Verarbeitung**: Jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten.
+**Datenübertragung**: Jeder Übertragung personenbezogener Daten außerhalb des Europäischen Wirtschaftsraums (EWR), einschließlich in ein Drittland oder eine internationale Organisation.
 
-**Datenschutzverletzung**: Eine Verletzung der Sicherheit, die zur unbeabsichtigten oder unrechtmäßigen Vernichtung, zum Verlust, zur Veränderung oder zur unbefugten Offenlegung von bzw. zum unbefugten Zugang zu personenbezogenen Daten führt, die übermittelt, gespeichert oder auf sonstige Weise verarbeitet wurden.
+**Cloud-Service**: Jeder Dienst zur Verarbeitung, Speicherung oder Verwaltung personenbezogener Daten, der vom Unternehmer über Cloud-Infrastrukturen bereitgestellt wird.
 
-**Datenübermittlung**: Jede Übermittlung personenbezogener Daten außerhalb des Europäischen Wirtschaftsraums (EWR), einschließlich in ein Drittland oder an eine internationale Organisation.
+**Notwendiger Zugriff auf den Dienst**: Jeder Zugriff auf personenbezogene Daten, der streng notwendig ist, um die vertraglich vereinbarten Dienstleistungen auszuführen, einschließlich der Bereitstellung, Wartung, technischen Unterstützung, Systemüberwachung und Fehlerbehebung, ohne jeglichen Zugriff zu Zwecken der kommerziellen Analyse, Profilbildung oder direkten Marketing.
 
-**Cloud-Dienst**: Jeder Dienst zur Verarbeitung, Speicherung oder Verwaltung personenbezogener Daten, der vom Auftragsverarbeiter über Cloud-Infrastrukturen bereitgestellt wird.
+## Article 2 : Gegenstand
 
-## Artikel 2: Gegenstand
+Diese Anlage hat zum Ziel, die Bedingungen und Modalitäten für die Verarbeitung personenbezogener Daten im Rahmen des Hauptvertrags festzulegen, einschließlich der Nutzung von Cloud-Diensten. Sie verfolgt das Ziel, die Einhaltung der Pflichten gemäß der DSGVO sowie der französischen Gesetze zum Schutz personenbezogener Daten und der Anforderungen des CISPE-Verhaltenskodex zu gewährleisten.
 
-Dieser Anhang definiert die Bedingungen und Modalitäten für die Verarbeitung personenbezogener Daten im Rahmen des Hauptvertrags, einschließlich der Nutzung von Cloud-Diensten. Er soll die Einhaltung der Verpflichtungen aus der DSGVO und den französischen Gesetzen zum Schutz personenbezogener Daten durch die Parteien gewährleisten.
+## Article 3: Obligations of the Data Controller
 
-## Artikel 3: Pflichten des Verantwortlichen
+- **Lawfulness of Processing**: The Data Controller undertakes to process personal data in a lawful, fair, and transparent manner in accordance with Articles 5 and 6 of the GDPR.
 
-- **Rechtmäßigkeit der Verarbeitung**: Der Verantwortliche verpflichtet sich, personenbezogene Daten rechtmäßig, nach Treu und Glauben und in einer für die betroffene Person nachvollziehbaren Weise gemäß Artikel 5 und 6 der DSGVO zu verarbeiten.
+- **Specific Purposes**: Personal data must only be collected for specified, explicit, and legitimate purposes, and must not be further processed in a manner incompatible with those purposes.
 
-- **Festgelegte Zwecke**: Personenbezogene Daten dürfen nur für festgelegte, eindeutige und legitime Zwecke erhoben werden und dürfen nicht in einer mit diesen Zwecken nicht zu vereinbarenden Weise weiterverarbeitet werden.
+- **Data Minimization**: The Data Controller must ensure that the personal data collected is adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed.
 
-- **Datenminimierung**: Der Verantwortliche muss sicherstellen, dass die erhobenen Daten dem Zweck angemessen und erheblich sowie auf das für die Zwecke der Verarbeitung notwendige Maß beschränkt sind.
+- **Accuracy of Data**: The Data Controller is responsible for ensuring that personal data is accurate and, where necessary, kept up to date.
 
-- **Richtigkeit der Daten**: Es liegt in der Verantwortung des Verantwortlichen, sicherzustellen, dass die personenbezogenen Daten sachlich richtig und erforderlichenfalls auf dem neuesten Stand sind.
+- **Data Security**: The Data Controller must implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, in accordance with Article 32 of the GDPR. This includes the regular assessment of the security measures of cloud services used.
 
-- **Datensicherheit**: Der Verantwortliche muss geeignete technische und organisatorische Maßnahmen implementieren, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten, gemäß Artikel 32 der DSGVO. Dies umfasst die regelmäßige Bewertung der Sicherheitsmaßnahmen der genutzten Cloud-Dienste.
+## Article 4 : Pflichten des Unterauftragnehmers
 
-## Artikel 4: Pflichten des Auftragsverarbeiters
+### 4.1 Compliance with Instructions and Access Limitation
 
-- **Verarbeitung gemäß Anweisungen**: Der Auftragsverarbeiter verpflichtet sich, personenbezogene Daten nur auf dokumentierte Weisung des Verantwortlichen zu verarbeiten, auch in Bezug auf die Übermittlung personenbezogener Daten an ein Drittland oder eine internationale Organisation, sofern er nicht durch das Recht der Union oder der Mitgliedstaaten, dem der Auftragsverarbeiter unterliegt, hierzu verpflichtet ist.
+The Subcontractor undertakes to:
 
-- **Vertraulichkeit**: Der Auftragsverarbeiter muss sicherstellen, dass sich die zur Verarbeitung der personenbezogenen Daten befugten Personen zur Vertraulichkeit verpflichtet haben oder einer angemessenen gesetzlichen Verschwiegenheitspflicht unterliegen.
+- Process personal data only upon documented instructions from the Data Controller, including instructions regarding transfers of personal data to a third country or an international organization, unless a legal requirement obliges otherwise  
+- Strictly limit its access to personal data to only those **accesses necessary for the service** as defined in Article 1  
+- **Formally prohibit** any processing of personal data for purposes of:  
+  - Data mining or data exploration  
+  - User profiling or behavioral analysis  
+  - Direct marketing or targeted advertising  
+  - Any commercial use not related to the performance of the contractual services
 
-- **Sicherheit der Verarbeitung**: Der Auftragsverarbeiter verpflichtet sich, geeignete technische und organisatorische Maßnahmen zu implementieren, um die Sicherheit der von ihm verarbeiteten personenbezogenen Daten zu gewährleisten, einschließlich der über Cloud-Dienste verarbeiteten Daten, gemäß Artikel 32 der DSGVO.
+### 4.2 Access Management Policy
 
-- **Weitere Auftragsverarbeitung**: Der Auftragsverarbeiter darf keinen weiteren Auftragsverarbeiter ohne vorherige gesonderte oder allgemeine schriftliche Genehmigung des Verantwortlichen in Anspruch nehmen. Im Falle einer allgemeinen schriftlichen Genehmigung muss der Auftragsverarbeiter den Verantwortlichen über jede beabsichtigte Änderung in Bezug auf die Hinzuziehung oder die Ersetzung anderer Auftragsverarbeiter informieren.
+The Subcontractor maintains a detailed access management policy for client data, which includes:
 
-- **Unterstützung des Verantwortlichen**: Der Auftragsverarbeiter unterstützt den Verantwortlichen nach Möglichkeit mit geeigneten technischen und organisatorischen Maßnahmen bei der Erfüllung seiner Pflicht, auf Anfragen zur Ausübung der Rechte der betroffenen Person zu antworten.
+- Procedures for granting and revoking access
+- Identification of authorized personnel and their access levels
+- Physical and technical access controls for infrastructure
+- Comprehensive access logging with retention for a minimum of 24 months
+- Procedures for emergency access management and supervision
 
-- **Datenstandort**: Der Auftragsverarbeiter muss klare Informationen über die Standorte der Speicherung und Verarbeitung von Daten in den Cloud-Infrastrukturen bereitstellen und sicherstellen, dass diese Standorte die geltenden Datenschutzbestimmungen einhalten.
+### 4.3 General Obligations
 
-## Artikel 5: Beschreibung der Verarbeitungen
+- **Confidentiality**: The Subcontractor must ensure that persons authorized to process personal data are committed to maintaining confidentiality or are subject to an appropriate legal obligation of confidentiality.
 
-Der Auftragsverarbeiter ist berechtigt, im Namen des Verantwortlichen die personenbezogenen Daten zu verarbeiten, die für die Erbringung der Dienste erforderlich sind. Die Art und Kategorie der Vorgänge, die mit den personenbezogenen Daten durchgeführt werden, werden vom Verantwortlichen entsprechend den spezifischen Anforderungen jedes Dienstes definiert. Die Zwecke der Verarbeitung werden vom Verantwortlichen festgelegt und dem Auftragsverarbeiter mitgeteilt. Die Art und Kategorie der verarbeiteten personenbezogenen Daten werden vom Verantwortlichen spezifiziert. Die Kategorien der betroffenen Personen werden vom Verantwortlichen identifiziert. Für die Ausführung der Dienste stellt der Verantwortliche dem Auftragsverarbeiter die notwendigen Informationen zur Verfügung. Die Dauer der Verarbeitung wird vom Verantwortlichen entsprechend den Anforderungen der erbrachten Dienste festgelegt.
+- **Security of Processing**: The Subcontractor undertakes to implement appropriate technical and organizational measures to ensure the security of personal data it processes, including data processed via cloud services, in accordance with Article 32 of the GDPR.
 
-## Artikel 6: Rechte der betroffenen Personen
+- **Assistance to the Data Controller**: The Subcontractor must assist the Data Controller, to the extent possible, in fulfilling its obligations regarding data security, notification of data breaches, conducting data protection impact assessments, and prior consultations with supervisory authorities.
 
-- **Zugang und Berichtigung**: Der Verantwortliche und der Auftragsverarbeiter müssen den betroffenen Personen die Ausübung ihrer Rechte auf Zugang zu und Berichtigung ihrer personenbezogenen Daten gemäß Artikel 15 und 16 der DSGVO ermöglichen.
+- **Data Location**: The Subcontractor must provide clear information regarding the locations where data is stored and processed within cloud infrastructures, and ensure that these locations comply with applicable data protection regulations.
 
-- **Löschung und Einschränkung der Verarbeitung**: Die betroffenen Personen müssen ihre Rechte auf Löschung ihrer Daten (Recht auf Vergessenwerden) oder auf Einschränkung der Verarbeitung gemäß Artikel 17 und 18 der DSGVO ausüben können.
+## Article 5 : Description des Verarbeitungen
 
-- **Datenübertragbarkeit**: Der Verantwortliche muss, wenn anwendbar, die Übertragbarkeit der personenbezogenen Daten der betroffenen Personen gemäß Artikel 20 der DSGVO gewährleisten.
+Der Unterunternehmer ist berechtigt, im Auftrag des Verantwortlichen für die Verarbeitung die personenbezogenen Daten zu verarbeiten, die zur Erbringung der Dienstleistungen erforderlich sind.
 
-- **Widerspruch**: Die betroffenen Personen müssen ihr Recht auf Widerspruch gegen die Verarbeitung ihrer personenbezogenen Daten gemäß Artikel 21 der DSGVO ausüben können.
+Die Verarbeitungszwecke werden vom Verantwortlichen für die Verarbeitung bestimmt und dem Unterunternehmer mitgeteilt. Die Art und Kategorie der verarbeiteten personenbezogenen Daten wird vom Verantwortlichen für die Verarbeitung festgelegt. Die Kategorien betroffener Personen werden vom Verantwortlichen für die Verarbeitung identifiziert. Zur Durchführung der Dienstleistungen stellt der Verantwortliche für die Verarbeitung dem Unterunternehmer die erforderlichen Informationen bereit. Die Dauer der Verarbeitung wird vom Verantwortlichen für die Verarbeitung anhand der Anforderungen der bereitgestellten Dienstleistungen festgelegt.
 
-## Artikel 7: Sicherheits- und Vertraulichkeitsmaßnahmen
+## Article 6 : Rights of data subjects
 
-Der Auftragsverarbeiter verpflichtet sich insbesondere, ausreichende Maßnahmen zu ergreifen, um die Sicherheit und Vertraulichkeit der im Rahmen der Dienste anvertrauten und verarbeiteten personenbezogenen Daten zu gewährleisten, insbesondere:
+### 6.1 Grundrechte
 
-- Umsetzung geeigneter technischer und organisatorischer Maßnahmen zum Schutz personenbezogener Daten vor zufälliger oder unrechtmäßiger Zerstörung, zufälligem Verlust, Veränderung, unbefugter Weitergabe oder unbefugtem Zugang sowie vor jeder anderen Form der unrechtmäßigen Verarbeitung
+- **Zugang und Berichtigung**: Der Verantwortliche für die Verarbeitung und der Unterauftragnehmer müssen den Betroffenen die Ausübung ihrer Rechte auf Zugang und Berichtigung ihrer personenbezogenen Daten gemäß den Artikeln 15 und 16 der DSGVO ermöglichen.
 
-- Keine Verwendung der personenbezogenen Daten für eigene Zwecke oder für Zwecke Dritter und keine Übermittlung ohne vorherige schriftliche Genehmigung des Verantwortlichen oder des Endkunden
+- **Löschung und Einschränkung der Verarbeitung**: Die Betroffenen müssen ihre Rechte auf Löschung ihrer Daten (Recht auf Vergessenwerden) oder auf Einschränkung der Verarbeitung gemäß den Artikeln 17 und 18 der DSGVO ausüben können.
 
-- Sicherstellung, dass die zur Verarbeitung der personenbezogenen Daten befugten Personen angemessenen Vertraulichkeitsverpflichtungen unterliegen
+- **Datenportabilität**: Der Verantwortliche für die Verarbeitung muss sicherstellen, soweit zutreffend, die Portabilität der personenbezogenen Daten der Betroffenen gemäß Artikel 20 der DSGVO.
 
-- Keine Anfertigung von Kopien oder Duplikaten der personenbezogenen Daten ohne vorherige schriftliche Genehmigung des Verantwortlichen oder des Endkunden (es sei denn, dies ist für die Erfüllung der vom Dienstleister im Rahmen des Vertrags erbrachten Dienste erforderlich)
+- **Widerspruch**: Die Betroffenen müssen ihr Recht auf Widerspruch gegen die Verarbeitung ihrer personenbezogenen Daten gemäß Artikel 21 der DSGVO ausüben können.
 
-- Information des Verantwortlichen über jeden zufälligen oder unbefugten Zugriff auf personenbezogene Daten, jeden Verstoß gegen die Vorschriften über personenbezogene Daten oder jeden Verdacht auf einen solchen Verstoß, so schnell wie möglich und, wenn möglich, spätestens 48 Stunden nach Kenntnisnahme
+### 6.2 Support for the Exercise of Rights
 
-- Je nach Wahl des Verantwortlichen, Löschung oder Rückgabe der personenbezogenen Daten nach Beendigung des Vertrags und Vernichtung vorhandener Kopien, es sei denn, es besteht eine gesetzliche Verpflichtung zur Aufbewahrung
+As a Processor, Cloud Temple supports the Data Controller in exercising the rights of data subjects under the following conditions:
 
-- Implementierung einer Sicherheitsrichtlinie für Informationssysteme und Verwaltung von logischen und physischen Zugriffsberechtigungen, die während der gesamten Vertragslaufzeit aufrechterhalten und weiterentwickelt werden muss
+**Standard Process**:
 
-## Artikel 8: Meldung von Datenschutzverletzungen
+- Requests are typically submitted by the Data Controller via standard communication channels: Account Manager and Service Delivery Manager.
+- The Processor provides technical support within the scope of its role as a processor and the capabilities of its services.
 
-Im Falle einer Verletzung des Schutzes personenbezogener Daten muss der Auftragsverarbeiter diese Verletzung dem Verantwortlichen unverzüglich nach Kenntnisnahme melden. Diese Meldung muss alle relevanten Informationen enthalten, die es dem Verantwortlichen ermöglichen, die Verletzung der zuständigen Aufsichtsbehörde und gegebenenfalls den betroffenen Personen gemäß Artikel 33 der DSGVO zu melden. Die Meldung muss die potenziellen Auswirkungen auf die in der Cloud gespeicherten Daten und die ergriffenen Abhilfemaßnahmen angeben.
+**Direct Contact**:
 
-## Artikel 9: Datenübermittlungen außerhalb der Europäischen Union
+- For exceptional cases or specific inquiries, the Cloud Temple Data Protection Officer may be contacted directly: [DPD@cloud-temple.com](mailto:DPD@cloud-temple.com)
 
-Jede Übermittlung personenbezogener Daten in ein Drittland oder an eine internationale Organisation darf nur unter Einhaltung der in der DSGVO festgelegten Bedingungen, insbesondere in den Artikeln 44 bis 50, erfolgen. Der Verantwortliche muss sicherstellen, dass angemessene Garantien vorhanden sind, wie z.B. von der Europäischen Kommission genehmigte Standardvertragsklauseln oder das Vorhandensein eines Angemessenheitsbeschlusses.
+- A validation process by the Cloud Temple DPO is maintained to ensure consistency of responses.
+- Traceability of requests and actions taken is guaranteed.
 
-## Artikel 10: Dauer und Ende der Verarbeitung
+## Article 7: Sicherheits- und Vertraulichkeitsmaßnahmen
 
-Nach Beendigung des Hauptvertrags verpflichtet sich der Auftragsverarbeiter, gemäß den Anweisungen des Verantwortlichen alle personenbezogenen Daten zu löschen oder an den Verantwortlichen zurückzugeben und vorhandene Kopien zu vernichten, es sei denn, gesetzliche Verpflichtungen stehen dem entgegen. Diese Verpflichtung umfasst auch Daten, die auf Sicherungsmedien in Cloud-Infrastrukturen gespeichert sind, es sei denn, eine gesetzliche Verpflichtung erfordert deren Aufbewahrung.
+Der Unterauftragnehmer verpflichtet sich insbesondere, ausreichende Maßnahmen zu ergreifen, um die Sicherheit und Vertraulichkeit der im Rahmen der Dienstleistungen überlassenen und verarbeiteten personenbezogenen Daten zu gewährleisten, insbesondere:
 
-## Artikel 11: Dokumentation und Audits
+- Umsetzung angemessener technischer und organisatorischer Maßnahmen zum Schutz der personenbezogenen Daten vor zufälliger oder unrechtmäßiger Zerstörung, zufälligem Verlust, Verfälschung, missbräuchlicher Nutzung, Verbreitung oder unbefugtem Zugriff sowie vor jeder anderen Form unrechtmäßiger Verarbeitung
 
-Der Auftragsverarbeiter stellt dem Verantwortlichen alle Informationen zur Verfügung, die erforderlich sind, um die Einhaltung der in diesem Anhang festgelegten Verpflichtungen nachzuweisen, und ermöglicht Audits, einschließlich Inspektionen, durch den Verantwortlichen oder einen anderen vom Verantwortlichen beauftragten Prüfer, um die Einhaltung dieses Anhangs und der DSGVO zu überprüfen. Der Auftragsverarbeiter muss auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO führen und Konformitätsberichte über die verwendeten Cloud-Infrastrukturen bereitstellen.
+- Verwendung der personenbezogenen Daten nicht zu eigenen Zwecken oder im Auftrag Dritter und keine Übermittlung ohne vorherige schriftliche Genehmigung durch den Verantwortlichen für die Verarbeitung oder den Endkunden
 
-## Artikel 12: Verzeichnis der Verarbeitungstätigkeiten
+- Sicherstellung, dass die zur Verarbeitung der personenbezogenen Daten berechtigten Personen den entsprechenden Verpflichtungen zur Vertraulichkeit unterliegen
 
-Der Auftragsverarbeiter muss auch ein Verzeichnis der Verarbeitungstätigkeiten gemäß Artikel 30 der DSGVO führen und Konformitätsberichte über die verwendeten Cloud-Infrastrukturen bereitstellen. Dieses Verzeichnis enthält mindestens:
+- Keine Erstellung von Kopien oder Duplikaten der personenbezogenen Daten ohne vorherige schriftliche Genehmigung durch den Verantwortlichen für die Verarbeitung oder den Endkunden (es sei denn, dies ist zur Erfüllung der im Rahmen des Vertrags durch den Auftragnehmer erbrachten Dienstleistungen erforderlich)
 
-- Name und Kontaktdaten des Verantwortlichen und gegebenenfalls des gemeinsam Verantwortlichen, des Vertreters des Verantwortlichen und des Datenschutzbeauftragten
-- Beschreibung der Kategorien betroffener Personen und der Kategorien personenbezogener Daten
-- Die Zwecke der Verarbeitung
-- Die Kategorien von Empfängern, gegenüber denen die personenbezogenen Daten offengelegt worden sind oder noch offengelegt werden, einschließlich Empfänger in Drittländern oder internationale Organisationen
-- Die Dauer der Datenspeicherung
-- Eine allgemeine Beschreibung der technischen und organisatorischen Sicherheitsmaßnahmen
+- Sofortige Mitteilung des Verantwortlichen für die Verarbeitung bei jedem zufälligen oder unbefugten Zugriff auf die personenbezogenen Daten, bei jedem Verstoß gegen die Vorschriften zum Schutz personenbezogener Daten oder bei jeglichem Verdacht auf einen solchen Verstoß, unverzüglich und, soweit möglich, spätestens innerhalb von 48 Stunden nach Kenntniserlangung
 
-Auf schriftliche Anfrage des Verantwortlichen, des Endkunden oder einer zuständigen Behörde hat der Auftragsverarbeiter eine Frist von 15 Arbeitstagen, um eine Kopie des besagten Verzeichnisses ab Erhalt der Anfrage zu übermitteln.
+- Einführung einer Sicherheitsrichtlinie für Informationssysteme und der Verwaltung von Zugriffsrechten, sowohl logisch als auch physisch, die er während der gesamten Vertragslaufzeit aufrechterhalten und weiterentwickeln muss
 
-## Artikel 13: Weitere Auftragsverarbeiter
+### 7.1 Enhanced Access Controls
 
-Der Auftragsverarbeiter kann externe Dienstleister/Lieferanten für die Übernahme spezifischer Leistungen im Rahmen des Vertrags einsetzen. Zu diesem Zweck kann der Auftragsverarbeiter unter seiner Verantwortung einen (oder mehrere) Unterauftragsverarbeiter ausschließlich zum Zweck der Erbringung eines Teils der für das verwaltete System erforderlichen Leistungen einsetzen.
+The Subcontractor implements an access control system for customer data comprising:
 
-Der Auftragsverarbeiter verpflichtet sich, mit jedem weiteren Auftragsverarbeiter, den er für die Verarbeitung der Daten einsetzt, einen rechtsverbindlichen Vertrag abzuschließen, um ihm die Einhaltung der Anforderungen der DSGVO und die gleichen Verpflichtungen wie in Artikel 20.2 aufzuerlegen. Insbesondere muss der Auftragsverarbeiter sicherstellen, dass der von ihm beauftragte weitere Auftragsverarbeiter ausreichende Garantien für die Umsetzung der erforderlichen Sicherheitsmaßnahmen bietet.
+- A strong authentication and identity management system  
+- A least privilege policy with periodic review of permissions  
+- Separation of customer environments and data isolation  
+- A comprehensive logging system with automatic alerts  
+- Periodic audits of access and security controls
 
-Im Falle eines Verstoßes des weiteren Auftragsverarbeiters gegen seine Verpflichtungen zum Schutz personenbezogener Daten bleibt der Auftragsverarbeiter gegenüber dem Verantwortlichen vollständig verantwortlich, unbeschadet der in den Artikeln 79 und 82 der DSGVO vorgesehenen Rechte der betroffenen Personen.
+## Article 8: Notification of Data Breaches
 
-Die Liste der autorisierten nachfolgenden Auftragsverarbeiter ist wie folgt:
+In the event of a breach involving personal data, the Subprocessor must notify the Controller without undue delay upon becoming aware of the breach, and in any case within 48 hours. This notification must include:
 
-- Interxion
-- Data4
-- Telehouse
-- Iron Mountain
+- The nature of the personal data breach  
+- The categories and approximate number of individuals concerned  
+- The categories and approximate number of personal data records concerned  
+- The name and contact details of the point of contact where further information can be obtained  
+- The likely consequences of the personal data breach  
+- The measures taken or planned to address the breach and mitigate any potential adverse effects  
 
-Während der Ausführung des Vertrags kann der Verantwortliche jederzeit beim Auftragsverarbeiter auf die Aktualisierung dieser Liste zugreifen. Ungeachtet des Vorstehenden wird der Auftragsverarbeiter dem Verantwortlichen die regelmäßig aktualisierte Liste der weiteren Auftragsverarbeiter schriftlich mitteilen, mit Ausnahme einer wesentlichen Änderung des weiteren Auftragsverarbeiters.
+This notification must specify the potential impact on data hosted in the cloud and the measures taken to remediate it, enabling the Controller to notify the competent supervisory authority and, where applicable, the affected individuals in accordance with Article 33 of the GDPR.
 
-## Artikel 14: Haftung
+## Article 9 : Data Localization and Data Transfers
 
-Der Verantwortliche und der Auftragsverarbeiter erkennen an, dass sie für Schäden haftbar gemacht werden können, die durch eine nicht DSGVO-konforme Verarbeitung personenbezogener Daten und die geltenden französischen Gesetze verursacht werden. Der Auftragsverarbeiter haftet für Schäden, die durch die Verarbeitung verursacht werden, wenn er die speziell für Auftragsverarbeiter geltenden Verpflichtungen der DSGVO nicht eingehalten hat oder wenn er außerhalb der rechtmäßigen Anweisungen des Verantwortlichen oder entgegen diesen gehandelt hat.
+### 9.1 Data Localization According to Services
 
-## Artikel 15: Änderungen
+**Cloud Services:**
 
-Jede Änderung dieses Anhangs muss Gegenstand eines von beiden Parteien unterzeichneten schriftlichen Nachtrags sein. Die Änderungen müssen den Anforderungen der DSGVO und den französischen Gesetzen zum Schutz personenbezogener Daten entsprechen.
+- All personal data is processed and stored exclusively within the European Union
+- All infrastructure and data centers are located within the European Union
+- The customer can select the geographic processing locations among the available European locations
+- No processing or storage of data takes place outside the European Union
 
-## Artikel 16: Anwendbares Recht und zuständige Gerichtsbarkeit
+**Managed Services (Managed IT Support):**
 
-Dieser Anhang unterliegt französischem Recht. Alle Streitigkeiten bezüglich seiner Auslegung oder Ausführung fallen in die ausschließliche Zuständigkeit der französischen Gerichte. Im Falle von Abweichungen zwischen den Sprachversionen dieses Anhangs hat die französische Version Vorrang.
+- Personal data is default processed and stored within the European Union
+- Technical support teams located outside the European Union may need to access the data in the context of the service, but only with prior and explicit written consent from the data controller
+- Such access is strictly limited to operational needs and subject to appropriate GDPR safeguards
+
+### 9.2 Conditions for Transfers outside the EU
+
+Any access to or transfer of personal data by teams or to third countries may only be carried out with:
+
+- Prior written authorization from the Data Controller for the relevant service  
+- Compliance with the conditions set forth in the GDPR, in particular Articles 44 to 50  
+- Implementation of appropriate safeguards, such as the EU-approved Standard Contractual Clauses or the existence of an adequacy decision  
+- Restriction of access to only those with operational necessity
+
+## Article 10 : Duration and termination of processing
+
+### 10.1 End of contract
+
+Upon completion of the main contract, the Subprocessor undertakes, in accordance with the instructions of the Data Controller, to delete all personal data or return it to the Data Controller, and to destroy any existing copies, unless otherwise required by law.
+
+### 10.2 Recovery Process
+
+The Subcontractor provides a detailed guide enabling the Data Controller to recover its data in a standard and usable format, including:
+
+- Available export formats  
+- Recovery procedures  
+- Timeframes for data availability  
+- Technical support available
+
+### 10.3 Data Deletion Timelines
+
+The Subprocessor commits to the following timelines:
+
+- **Logical deletion**: within 48 hours following the request  
+- **Physical permanent deletion**: within 30 calendar days following logical deletion  
+- **Confirmation of deletion**: destruction certificate provided within 5 business days following physical deletion  
+
+This obligation also includes data stored on backup media within cloud infrastructures, unless a legal requirement mandates their retention. In such cases, the Subprocessor shall inform the Data Controller with a legal justification and the specified retention period.
+
+## Article 11 : Documentation and Audits
+
+The Subprocessor shall make available to the Data Controller all necessary information to demonstrate compliance with the obligations set forth in this Annex and shall permit audits, including inspections, by the Data Controller or an auditor appointed by the Data Controller, to verify compliance with this Annex and the GDPR.
+
+The Subprocessor shall provide the Data Controller with:
+
+- A dedicated page listing all compliance measures, kept up to date, accessible at: [https://www.cloud-temple.com/demarches-conformite/](https://www.cloud-temple.com/demarches-conformite/)
+
+- Available compliance certificates (e.g., ISO 27001, SecNumCloud, ISAE, etc.)
+- Recommendations for the secure use of Cloud Temple services, including:
+  - Best practices for protecting access to the Cloud Console
+  - Controlled management of access and permissions
+  - Securing resources deployed via cloud services
+
+## Article 12 : Register der Verarbeitungstätigkeiten
+
+### 12.1 Register content
+
+The Subcontractor maintains an electronic record of processing activities in accordance with Article 30(2) of the GDPR. This register contains a list of clients for whom Cloud Temple acts as a subprocessor, including for each client:
+
+- Contact details of the client company and the data protection officer (name, first name, phone number, email)
+- Categories of processing carried out on behalf of this client
+- Transfers outside the European Union, where applicable
+- Technical and organizational security measures implemented
+
+### 12.2 Automatisierte Verwaltung
+
+Der Register wird automatisch aktualisiert bei:
+
+- Abschluss neuer Kundenverträge  
+- Änderungen bestehender Dienstleistungen  
+- Änderungen der Sicherheitsmaßnahmen
+
+### 12.3 Access to the register
+
+Upon written request:
+
+- **The Data Controller** may access only the information concerning themselves in the register.
+- **Competent authorities** (CNIL, ANSSI, etc.) may access the complete register within the scope of their control missions.
+
+The Sub-processor has a period of 15 working days to provide the requested information starting from the receipt of the request. A validation process for legitimate requests is in place to ensure the confidentiality of sensitive information.
+
+## Article 13 : Subunternehmer
+
+### 13.1 Authorization Principle
+
+The Subcontractor may be required to engage one or more external service providers / suppliers to handle specific services covered by the Contract. To this end, the Subcontractor may, under its own responsibility, recruit one or more second-tier Subcontractors solely for the purpose of providing part of the services necessary for the managed system.
+
+### 13.2 Contractual Obligations
+
+The Subprocessor undertakes to enter into a legally binding agreement with any subsequent processor engaged by it for the Processing of Data, imposing on such subsequent processor the requirements of the GDPR and the same obligations as those set forth in this Annex. In particular, the Subprocessor must ensure that any subsequent processor it engages provides sufficient guarantees for implementing the necessary security measures.
+
+### 13.3 Responsibility
+
+In the event of a failure by the subsequent subcontractor to comply with its obligations regarding the protection of personal data, the Subcontractor shall remain fully liable toward the Data Controller, without prejudice to the rights of the data subjects as provided for in Articles 79 and 82 of the GDPR.
+
+### 13.4 List of Approved Subcontractors
+
+The following is the current list of approved subcontractors:
+
+| Subcontractor | Activity | Location | Authorization Date |
+|---------------|----------|----------|--------------------|
+| Interxion | Datacenter Hosting | France/EU | 01/15/2025 |
+| Data4 | Datacenter Hosting | France/EU | 01/15/2025 |
+| Telehouse | Datacenter Hosting | France/EU | 01/15/2025 |
+| Iron Mountain | Backup and Archiving | France/EU | 01/15/2025 |
+
+### 13.5 Notification Process
+
+While the Contract is in execution:
+
+- The Data Processor may access the updated list at any time via the client interface.
+- The Subprocessor shall notify the Data Controller in writing of any subsequent change of subcontractor at least 30 calendar days prior to implementation.
+- For any new critical subcontractor, prior specific authorization from the Data Controller is required.
+
+## Article 14 : Haftung
+
+Der Verantwortliche für die Verarbeitung und der Unterauftragnehmer erkennen an, dass sie für Schäden haftbar gemacht werden können, die durch eine nicht im Einklang mit der DSGVO und den anwendbaren französischen Gesetzen erfolgende Verarbeitung personenbezogener Daten verursacht wurden. Der Unterauftragnehmer ist für Schäden verantwortlich, die durch die Verarbeitung verursacht werden, wenn er die speziell für Unterauftragnehmer geltenden Pflichten der DSGVO nicht erfüllt hat oder wenn er außerhalb der gesetzlichen Anweisungen des Verantwortlichen für die Verarbeitung gehandelt oder diesen widersprochen hat.
+
+## Article 15 : Änderungen
+
+Jede Änderung dieser Anlage bedarf eines schriftlichen Zusatzvertrags, der von beiden Parteien unterzeichnet wird. Die Änderungen müssen den Anforderungen der DSGVO sowie den französischen Gesetzen zum Schutz personenbezogener Daten sowie den Entwicklungen des CISPE-Verhaltenskodex entsprechen.
+
+## Article 16: Applicable law and competent jurisdiction
+
+This Appendix is governed by French law. Any dispute relating to its interpretation or performance shall be exclusively subject to the jurisdiction of the French courts. In the event of any discrepancy between the linguistic versions of this Appendix, the French version shall prevail.

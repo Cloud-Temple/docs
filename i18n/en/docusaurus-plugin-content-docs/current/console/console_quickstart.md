@@ -17,127 +17,129 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 - Have subscribed to a Cloud Temple offer. To subscribe easily, you can [contact us](https://www.cloud-temple.com/contactez-nous/) or by email at __contact@cloud-temple.com__.
 - Have access to the Shiva console
-- Have your public IPv4 declared in the Cloud Temple trust zone (access to the Shiva console is limited to identified trusted addresses)
+- Have your public IPv4 address registered in the Cloud Temple trusted zone (access to the Shiva console is restricted to identified trusted addresses)
 
-## Connecting to your Cloud Temple tenant
+## Connecting to Your Cloud Temple Tenant
 
-Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or from the direct URL that was sent to you by email.
+Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or directly through the URL provided to you by email.
 
-The first page allows you to select [the organization](iam/concepts.md#organisations) in which your user was created.
-Once the company is entered, please click on __'Log In'__.
+The first page allows you to select the [organization](iam/concepts.md#organizations) in which your user was created.  
+Once you have entered the company name, click on __'Sign In'__.
 
 <img src={shivaLogin} />
 
-You will then be redirected to a page asking you to authenticate.
-Once logged in, you arrive on this page.
+You will then be redirected to a page prompting you to authenticate.  
+After logging in, you will land on this page.
 
 <img src={shivaHome} />
 
 ## Language Management
 
-The console is available in __French__ and __English__. You can change the operating language using the __language__ icon located at the top right of the screen.
+The console is available in __French__ and __English__. You can change the operating language using the __language__ icon located in the top-right corner of the screen.
 
-Changing a user's language is done in their __'Profile'__, at the top right of the screen, in the __'User Settings'__.
+To change a user's language, go to their __'Profile'__, in the top-right corner of the screen, and select __'User Settings'__.
 
 <img src={shivaProfil_006} />
 
-The configuration is done for each [Tenant](iam/concepts.md#tenant).
+Configuration is set per tenant [Tenant](iam/concepts.md#tenant).
 
-## Access to technical support
+## Technical Support Access
 
-At any time, you can contact the __Cloud Temple support team__ via the __'life buoy' icon__ located at the top right of the screen.
+At any time, you can contact the __Cloud Temple Support Team__ via the __"buoy" icon__ located in the top-right corner of the screen.
 
 <img src={shivaSupport} />
 
 You will be guided through the entire support request process.
 
-The first step is to identify the type of support request:
+The first step is identifying the type of support request:
 
-- Request advice on using a product (outside incidents),
+- Request advice on using a product (non-incident related),
 - Request assistance related to your customer account,
-- Report an incident or request technical support,
-- Request professional service assistance (provision of a Cloud Temple engineer for an issue).
+- Report an incident or request technical support.
+- Request assistance from a professional service (deployment of a Cloud Temple engineer for a specific issue).
 
 <img src={shivaSupport_01} />
 
-You then have the option to provide details and include files (images or logs, for example).
+You can then provide additional details and attach files (e.g., images or logs).
 
-The requester can also specify a criticality level (P1 to P4) in the ticket description, in case of an incident, such as:
+The requester may also specify a severity level (P1 to P4) in the ticket description, particularly in the case of a security incident, as follows:
 
 __CRITICAL (P1)__:
 
-- Suspected sensitive data breach
+- Suspected leakage of sensitive data
 - Detection of unauthorized access to your data
 - Compromise of your administrative credentials
-- Total unavailability of your critical services
-- Abnormal behaviors on sensitive data
-- Personal data breach
+- Complete unavailability of your critical services
+- Abnormal behavior on sensitive data
+- Breach of personal data
 
 __HIGH (P2)__:
 
 - User access malfunction
-- Data encryption anomaly
+- Anomaly in data encryption
 - Loss of access to certain critical features
 - Data inconsistency
-- Major slowdowns impacting activity
+- Major performance degradation impacting operations
 
 __MEDIUM (P3)__:
 
 - Localized performance issue
-- Incident on a non-critical function
+- Incident affecting a non-critical function
 - Configuration error with limited impact
-- Occasional access difficulty
+- Temporary access difficulties
 
 __LOW (P4)__:
 
-- Investigation request
-- Anomaly without direct impact
-- Compliance question
+- Request for investigation
+- Anomaly with no direct impact
+- Compliance-related question
 - Need for technical clarification
 
 <img src={shivaSupport_02} />
 
-Once your request is made, you can find your requests via the __'life buoy' icon__ located at the top right of the screen:
+Once your request has been submitted, you can retrieve your requests via the __"buoy" icon__ located in the top-right corner of the screen:
 
 <img src={shivaSupport_03} />
 
-## Access to user features via the web interface
+## User Feature Access via the Web Interface
 
-All features accessible to your user (depending on their rights) are located on the left of the screen, in the green strip.
-Features are grouped by module. This mainly includes:
+All features available to your user (based on their permissions) are located on the left side of the screen, within the green sidebar.  
+Features are grouped by module. These primarily include:
 
-- The __inventory__ of your resources,
-- The __operations tracking__,
-- The __IaaS resources management__ (Compute, storage, network, etc.),
-- The __OpenIaaS resources management__ (Compute, storage, network, etc.),
-- Access to __additional services__ (Bastion, monitoring, etc.),
-- The __administration of your organization__ (Management of tenants, rights, etc.).
+- The __inventory__ of your resources,  
+- The __tracking of operations__,  
+- The __management of IaaS resources__ (Compute, storage, networking, ...),  
+- The __management of OpenIaaS resources__ (Compute, storage, networking, ...),  
+- Access to __additional services__ (Bastion, monitoring, ...),  
+- The __administration of your organization__ (Tenant and permission management, ...).
 
-The activation of a module for a user depends on the user's rights. For example, the __'Order'__ module will not be available if the user does not have the __'ORDER'__ right.
+The activation of a module for a user depends on their user rights. For example, the __'Order'__ module will not be available if the user does not have the __'ORDER'__ permission.
 
-Here is an overview of the different available modules. New modules are regularly added to the console:
+Below is an overview of the available modules. New modules are regularly added to the console:
+
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__: provides a quick view of the __total compute and storage resources__, backup statistics, and a __summary of support tickets__,
-- __Inventory__: provides a view of all your __'virtual machines' resources__. If __tags__ are used, it provides a view by __tag__ (e.g., business view, application view, etc.),
-- __Managed Services__: provides access to the tracking of your __support requests__ and service metrics,
-- __IaaS__: allows management of VMware IaaS infrastructure (Virtual machines, clusters, hypervisors, replication, backup, etc.),
-- __OpenIaaS__: allows management of Xen Orchestra resources (Virtual machines, backup, etc.),
-- __OpenShift__: allows management of your **RedHat Openshift PaaS architecture** and containers across the platform's three availability zones,
-- __Bastion__: Allows deployment and management of SSH/RDP bastion appliances in your networks,
-- __Network__: allows management of __Layer 2 and 3 networks__, __public IPs__, and your __telecom circuits__,
-- __Colocation__: Provides a view of equipment located in __shared or dedicated colocation areas__,
-- __Order__: Allows ordering of resources and tracking deployments,
-- __Administration__: Groups user and tenant administration functions and access to global logging.
+- __Dashboard__: provides a quick overview of the __total compute and storage resources__, backup __statistics__, and a __summary of support tickets__,
+- __Inventory__: offers a view of all your __virtual machines__ resources. If __tags__ are used, it enables filtering by __tag__ (e.g., business view, application view, ...),
+- __Managed Services__: provides access to the tracking of your __support requests__ and the __service metrics__,
+- __IaaS__: enables the __management of VMware-based IaaS infrastructures__ (Virtual machines, clusters, hypervisors, replication, backup, ...),
+- __OpenIaaS__: enables the __management of Xen Orchestra resources__ (Virtual machines, backup, ...),
+- __OpenShift__: enables the management of your **RedHat OpenShift PaaS architecture** and container management across the three availability zones of the platform.
+- __Bastion__: allows deployment and management of SSH/RDP bastion appliances within your networks,
+- __Networking__: enables management of __Layer 2 and Layer 3 networks__, __public IPs__, and your __telecom circuits__,
+- __Colocation__: provides visibility into equipment located in shared or dedicated colocation zones,
+- __Order__: enables resource ordering and deployment tracking,
+- __Administration__: consolidates user and tenant administration functions, as well as access to global logging.
 </div>
 </div>
-The __'NEW'__ icons indicate that the product has been provisioned but is not yet qualified as a __SecNumCloud offer__, and __'BETA'__ indicates that the product has been provisioned and has just been qualified as a __SecNumCloud offer__.
+
+The __'NEW'__ icons indicate that the corresponding product has been provisioned but is not yet qualified as a __SecNumCloud offering__, while __'BETA'__ icons indicate that the product has been provisioned and has just been qualified as a __SecNumCloud offering__.
 
 __Logging - Activity Tracking__
 =====================================
 
-The activities page is designed to provide a complete overview of all read and write operations within the console, ensuring increased traceability and security. It highlights the two main tabs: Recent and Archived.
+The Activities page is designed to provide full visibility into all read and write operations performed within the console, ensuring enhanced traceability and security. It highlights two main tabs: Recent and Archived.
 
 <img src={shivaLogs} />
 
@@ -150,7 +152,7 @@ The activities page is designed to provide a complete overview of all read and w
 - Recent operations
 - Real-time tracking
 
- + __Archived__
+- __Archived__
 
 - Operations over a longer period
 - Archived operations for traceability and compliance
@@ -158,12 +160,13 @@ The activities page is designed to provide a complete overview of all read and w
 #### __Displayed Information__
 
  + Date and Time
- + Type of operation
- + Status
- + User
- + Description of operation
 
-#### __Functionality__
+- Operation Type
+  - Status
+- User
+- Operation Description
+
+#### __Feature__
 
  + Search/Filter for specific operations
 
@@ -173,24 +176,24 @@ The activities page is designed to provide a complete overview of all read and w
 - __Navigation:__
   - Select the "Recent" tab for real-time operations.
   - Choose "Archived" to view the history.
-  - Use the search and filter functions to locate specific operations.
+  - Use search and filtering features to locate specific operations.
 
 #### __Compliance Note__
 
-In accordance with SecNumCloud qualification, the storage of console events at Cloud Temple is for a minimum duration of __6 months__, thereby ensuring compliance with security and traceability requirements.
+In accordance with the SecNumCloud certification, the retention period for Cloud Temple console event logs is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
 
-## Checking the latest updates
+## Checking for Latest Updates
 
-Click at the bottom left of the green strip on the __'What's new' icon__. You will get the details of changes for each version of the Cloud Temple console.
+Click on the __'New Features'__ icon at the bottom-left of the green banner. You will find detailed information about the changes for each version of the Cloud Temple console.
 
 <img src={shivaOnboard_009} />
 
-## Access to user features via the API
+## User Features Access via API
 
-Access to all Shiva console features is possible via the Shiva API. You can see details of verbs and configurations via __'Profile'__ and __'APIs'__:
+Access to all features of the Shiva console is available through the Shiva API. You can find detailed information about verbs and configurations via __'Profile'__ and __'APIs'__:
 
 <img src={shivaOnboard_008} />
 
 ## Terraform Provider
 
-Cloud Temple provides you with a [Terraform provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) to manage your Cloud platform "as code".
+Cloud Temple provides you with a [Terraform provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) to manage your Cloud platform *"as code"*.

@@ -2,24 +2,23 @@
 title: Overview
 ---
 
+## Cloud Temple Console
 
-## The Cloud Temple Console
+The Cloud Temple Console is Cloud Temple's integrated cloud management platform (**Cloud Management Platform**). It serves as the central hub for managing all your cloud resources, providing a unified and high-performance interface.
 
-The Cloud Temple console is the integrated cloud management platform (**Cloud Management Platform**) of Cloud Temple. It serves as the central point for managing all your cloud resources, offering you a unique and powerful interface.
-
-Through the **Console**, you can monitor and operate your cloud infrastructures with great simplicity. Here is an overview of its main features:
+Thanks to the **Console**, you can monitor and operate your cloud infrastructure with great ease. Here is an overview of its main features:
 
 <div class="card-grid">
   <div class="card">
     <h3>The IAM Module</h3>
-    <p>Discover the IAM (Identity Access Management) module of the Cloud Temple console.</p>
-    <a href="console/iam" class="card-link">Click here &rarr;</a>
+    <p>Explore the IAM (Identity and Access Management) module of the Cloud Temple Console.</p>
+    <a href="console/iam" class="card-link">Go here &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Support</h3>
-    <p>View scheduled operations and manage incidents</p>
-    <a href="console/status" class="card-link">Click here &rarr;</a>
+    <p>View scheduled operations and manage incidents.</p>
+    <a href="console/status" class="card-link">Go here &rarr;</a>
   </div>
 
   <div class="card">
@@ -35,64 +34,60 @@ Through the **Console**, you can monitor and operate your cloud infrastructures 
   </div>
 </div>
 
-### Managing your Cloud Temple products and services
+### Management of Your Cloud Temple Products and Services
 
-The console allows you to efficiently manage your virtual servers, storage, networks, and Cloud services from a centralized interface.
+The console enables you to efficiently manage your virtual servers, storage, networks, and Cloud services through a centralized interface.
 
 ### Monitoring and Reporting
 
-Benefit from a comprehensive view of your resources with integrated monitoring and reporting tools, ensuring your environments operate optimally.
+Gain a comprehensive view of your resources through integrated monitoring and reporting tools, ensuring your environments operate at optimal performance.
 
 ### Automation and Orchestration
 
-With its **powerful API**, the console simplifies the automation of repetitive tasks and the orchestration of complex workflows. Deploy, manage, and scale your resources in a few clicks or via custom scripts.
+With its **powerful API**, the console simplifies the automation of repetitive tasks and the orchestration of complex workflows. Deploy, manage, and scale your resources with just a few clicks or through custom scripts.
 
 ### Security and Compliance
 
 The console includes advanced features to:
 
-- Manage identities and accesses,
+- Manage identities and access,
 - Filter access to meet regulatory requirements,
 - Strengthen your security policies.
 
-### Multi-Cloud Integration
+### Technical Assistance and Customer Support
 
-Thanks to its hybrid capabilities, the console facilitates the management of multi-cloud environments by integrating third-party services such as **Microsoft Azure** and **Amazon AWS**, all through a single interface.
-
-### Technical Support and Customer Service
-
-The console provides direct access to your technical support files. You benefit from:
+The console provides direct access to your technical support cases. You benefit from:
 
 - Dedicated customer support to resolve your technical issues,
 - Assistance with the initial configuration of your services.
 
 ### Professional Services
 
-Need expertise? Take advantage of our engineers' support for:
+Need expertise? Benefit from the support of our engineers for:
 
-- Personalized advice,
-- Help with the implementation of cloud architectures,
+- Personalized consulting,
+- Assistance with cloud architecture implementation,
 - Training for your teams.
 
-The Cloud Temple console **'Shiva'** is **the integrated cloud management platform** (Cloud Management Platform) of **Cloud Temple**.
+The Cloud Temple Console **'Shiva'** is **Cloud Temple's integrated Cloud Management Platform (CMP)**.
 
-The Cloud Temple Shiva console allows you to manage cloud resources such as virtual servers, storage, networks, and application services.
-It is a centralized management interface that enables you to design and operate your cloud infrastructure.
+The Cloud Temple Shiva console enables you to manage cloud resources such as virtual servers, storage, networks, and application services.  
+It is a centralized management interface that allows you to design and operate your cloud infrastructure.
 
-The Cloud Temple Shiva console particularly enables your teams to:
+The Cloud Temple Shiva console enables your teams to:
 
 - **Manage your Cloud Temple products and services**,
-- **Monitor and report** on the operation of your cloud resources,
-- **Automation and orchestration**: Shiva, with its API, allows automating repetitive tasks and orchestrating complex workflows to deploy, manage, and scale your cloud resources,
-- **Security and compliance**: Shiva enables identity control and access filtering to ensure regulatory compliance and adherence to your security policies,
-- **Integration of Cloud Adoption Framework repositories**: thanks to its hybrid functions, you can ensure operational continuity with third-party cloud providers (Microsoft Azure and Amazon AWS) from a single interface, facilitating the integration and management of your multi-cloud application environments,
-- **Access and track technical support files**: Dedicated technical assistance is also available. This includes customer support for resolving technical issues and assistance with the initial configuration,
-- **Subscribe to professional services**: to efficiently manage your Cloud environments, your teams can benefit from the assistance of our engineers for advice, help with architecture implementation, or training.
+- **Monitor and report on the performance of your cloud resources**,
+- **Automation and orchestration**: Thanks to its API, Shiva allows you to automate repetitive tasks and orchestrate complex workflows for deploying, managing, and scaling your cloud resources,
+- **Security and compliance**: Shiva enables identity management and access filtering to ensure regulatory compliance and adherence to your security policies,
+- **Integration with Cloud Adoption Frameworks (CAF)**: Thanks to its hybridization capabilities, you can maintain seamless operations with third-party cloud providers (Microsoft Azure and Amazon AWS) from a single interface, simplifying the integration and management of your multi-cloud application environments,
+- **Access and tracking of technical support tickets**: Dedicated technical support is also available, including customer support for troubleshooting technical issues as well as assistance with initial configuration,
+- **Subscription to professional services**: To effectively manage your cloud environments, your teams can benefit from our engineers’ expertise in consulting, architecture implementation support, or training.
 
-## Access User Features via API
+## User Features Access via API
 
-Access to all features of the Shiva console is possible via the Shiva API.
-You can find the details of verbs and configurations via **'Profile'** and **'APIs'**
+Access to all features of the Shiva console is available through the Shiva API.  
+You can find detailed information about verbs and configurations via **'Profile'** and **'APIs'**
 
 ## Terraform Provider
 

@@ -1,141 +1,280 @@
 # Allegato Contrattuale - Dati Personali (DPA)
 
-**Riferimento: Allegato - Dati Personali
-
-**V1 - 15/01/2025 - Modificato da Emeline Cazaux
-
 ## Articolo 1: Definizioni
 
-**Dati personali**: Qualsiasi informazione relativa a una persona fisica identificata o identificabile ("interessato"), come definito dal Regolamento Generale sulla Protezione dei Dati (GDPR).
+**Dati personali**: Qualsiasi informazione relativa a una persona fisica identificata o identificabile (« interessato »), come definito dal Regolamento Generale sulla Protezione dei Dati (GDPR).
 
-**Titolare del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che, singolarmente o insieme ad altri, determina le finalità e i mezzi del trattamento di dati personali.
+**Titolare del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che, in modo singolo o congiunto con altri, determina le finalità e i mezzi del trattamento dei dati personali.
 
 **Responsabile del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che tratta dati personali per conto del Titolare del trattamento.
 
-**Trattamento**: Qualsiasi operazione o insieme di operazioni, compiute con o senza l'ausilio di processi automatizzati e applicate a dati personali o insiemi di dati personali.
+**Trattamento**: Qualsiasi operazione o insieme di operazioni, effettuate o meno con mezzi automatizzati, applicate a dati personali o a insiemi di dati personali.
 
-**Violazione dei dati**: Una violazione di sicurezza che comporta accidentalmente o in modo illecito la distruzione, la perdita, la modifica, la divulgazione non autorizzata di dati personali trasmessi, conservati o comunque trattati, o l'accesso non autorizzato a tali dati.
+**Violazione dei dati**: Una violazione della sicurezza che causa accidentalmente o illecitamente la distruzione, la perdita, la modifica, la divulgazione non autorizzata di dati personali trasmessi, conservati o altrimenti trattati, o l'accesso non autorizzato a tali dati.
 
-**Trasferimento di dati**: Qualsiasi trasferimento di dati personali al di fuori dello Spazio Economico Europeo (SEE), incluso verso un paese terzo o un'organizzazione internazionale.
+**Trasferimento dei dati**: Ogni trasferimento di dati personali al di fuori dello Spazio Economico Europeo (SEE), compreso verso un paese terzo o un'organizzazione internazionale.
 
-**Servizio Cloud**: Qualsiasi servizio di elaborazione, archiviazione o gestione di dati personali fornito dal Responsabile del trattamento tramite infrastrutture cloud.
+**Servizio Cloud**: Qualsiasi servizio di trattamento, archiviazione o gestione di dati personali fornito dal Responsabile del trattamento tramite infrastrutture cloud.
+
+**Accesso necessario al servizio**: Ogni accesso ai dati personali strettamente necessario per l'esecuzione dei servizi contrattuali definiti, inclusi la fornitura, la manutenzione, il supporto tecnico, la supervisione dei sistemi e la risoluzione di incidenti, escluso qualsiasi accesso finalizzato all'analisi commerciale, al profilazione o al marketing diretto.
 
 ## Articolo 2: Oggetto
 
-Il presente allegato ha lo scopo di definire le condizioni e le modalità di trattamento dei dati personali nell'ambito del contratto principale, incluso l'utilizzo di servizi cloud. Mira a garantire la conformità delle parti agli obblighi derivanti dal GDPR e dalle leggi francesi relative alla protezione dei dati personali.
+L'oggetto della presente allegato è definire le condizioni e le modalità di trattamento dei dati personali nel quadro del contratto principale, compresa l'utilizzo di servizi cloud. L'obiettivo è garantire il rispetto da parte delle parti delle obbligazioni derivanti dal GDPR e dalle leggi francesi relative alla protezione dei dati personali, nonché delle disposizioni del codice di condotta CISPE.
 
-## Articolo 3: Obblighi del Titolare del trattamento
+## Article 3: Obligazioni del Titolare del trattamento
 
-- **Liceità del trattamento**: Il Titolare del trattamento si impegna a trattare i dati personali in modo lecito, corretto e trasparente conformemente agli articoli 5 e 6 del GDPR.
+- **Legittimità del trattamento**: Il Titolare del trattamento si impegna a trattare i dati personali in modo lecito, leale e trasparente, conformemente agli articoli 5 e 6 del GDPR.
 
-- **Finalità determinate**: I dati personali devono essere raccolti solo per finalità determinate, esplicite e legittime, e non devono essere ulteriormente trattati in modo incompatibile con tali finalità.
+- **Finalità determinate**: I dati personali devono essere raccolti esclusivamente per finalità determinate, esplicite e legittime, e non devono essere successivamente trattati in maniera incompatibile con tali finalità.
 
-- **Minimizzazione dei dati**: Il Titolare del trattamento deve garantire che i dati raccolti siano adeguati, pertinenti e limitati a quanto necessario rispetto alle finalità per le quali sono trattati.
+- **Minimizzazione dei dati**: Il Titolare del trattamento deve assicurarsi che i dati raccolti siano adeguati, pertinenti e limitati a quanto necessario rispetto alle finalità per le quali sono trattati.
 
-- **Esattezza dei dati**: È responsabilità del Titolare del trattamento garantire che i dati personali siano esatti e, se necessario, aggiornati.
+- **Esattezza dei dati**: Spetta al Titolare del trattamento garantire che i dati personali siano esatti e, se necessario, aggiornati.
 
-- **Sicurezza dei dati**: Il Titolare del trattamento deve implementare misure tecniche e organizzative appropriate per garantire un livello di sicurezza adeguato al rischio, conformemente all'articolo 32 del GDPR. Ciò include la valutazione regolare delle misure di sicurezza dei servizi cloud utilizzati.
+- **Sicurezza dei dati**: Il Titolare del trattamento deve implementare misure tecniche e organizzative adeguate per garantire un livello di sicurezza appropriato al rischio, conformemente all'articolo 32 del GDPR. Ciò include la valutazione periodica delle misure di sicurezza dei servizi cloud utilizzati.
 
-## Articolo 4: Obblighi del Responsabile del trattamento
+## Articolo 4: Obblighi del Subappaltatore
 
-- **Trattamento conforme alle istruzioni**: Il Responsabile del trattamento si impegna a trattare i dati personali solo su istruzione documentata del Titolare del trattamento, anche in caso di trasferimento di dati personali verso un paese terzo o un'organizzazione internazionale, a meno che non sia richiesto dal diritto dell'Unione o degli Stati membri cui è soggetto il Responsabile del trattamento.
+### 4.1 Compliance with Instructions and Access Limitation
 
-- **Riservatezza**: Il Responsabile del trattamento deve garantire che le persone autorizzate al trattamento dei dati personali si siano impegnate alla riservatezza o siano soggette ad un adeguato obbligo legale di riservatezza.
+The Subcontractor undertakes to:
 
-- **Sicurezza dei trattamenti**: Il Responsabile del trattamento si impegna a implementare misure tecniche e organizzative appropriate per garantire la sicurezza dei dati personali che tratta, compresi quelli trattati tramite servizi cloud, conformemente all'articolo 32 del GDPR.
+- Process personal data only upon documented instructions from the Data Controller, including instructions regarding transfers of personal data to a third country or an international organization, unless a legal requirement obliges it to do so;
+- Strictly limit its access to personal data to only those **accesses necessary for the service**, as defined in Article 1;
+- **Formally prohibit** any processing of personal data for purposes of:
+  - Data mining or data exploration
+  - User profiling or behavioral analysis
+  - Direct marketing or targeted advertising
+  - Any commercial use not related to the performance of the contractual services
 
-- **Sub-responsabile del trattamento**: Il Responsabile del trattamento non deve ricorrere a un altro responsabile senza previa autorizzazione scritta, specifica o generale, del Titolare del trattamento. In caso di autorizzazione scritta generale, il Responsabile del trattamento informa il Titolare del trattamento di eventuali modifiche previste riguardanti l'aggiunta o la sostituzione di altri responsabili.
+### 4.2 Policy for Access Management
 
-- **Assistenza al Titolare del trattamento**: Il Responsabile del trattamento deve assistere il Titolare del trattamento, nella misura del possibile, con misure tecniche e organizzative appropriate, nell'adempimento dell'obbligo del Titolare del trattamento di rispondere alle richieste per l'esercizio dei diritti dell'interessato.
+The Subcontractor maintains a detailed access management policy for client data, which includes:
 
-- **Localizzazione dei dati**: Il Responsabile del trattamento deve fornire informazioni chiare sui luoghi di archiviazione e trattamento dei dati nelle infrastrutture cloud, e assicurarsi che questi luoghi rispettino le normative applicabili in materia di protezione dei dati.
+- Procedures for authorization and revocation of access
+- Identification of authorized personnel and their access levels
+- Physical and technical access controls for infrastructure
+- Full access logging with retention for a minimum of 24 months
+- Procedures for emergency access management and supervision
 
-## Articolo 5: Descrizione dei trattamenti
+### 4.3 General Obligations
 
-Il Responsabile del Trattamento è autorizzato a trattare per conto del Titolare del Trattamento i dati personali necessari per fornire i Servizi. La natura e la categoria delle operazioni effettuate sui dati personali saranno definite dal Titolare del Trattamento secondo le esigenze specifiche di ciascun Servizio. Le finalità del trattamento sono determinate dal Titolare del Trattamento e comunicate al Responsabile del Trattamento. La natura e la categoria dei dati personali trattati sono specificate dal Titolare del Trattamento. Le categorie di interessati sono identificate dal Titolare del Trattamento. Per l'esecuzione dei Servizi, il Titolare del Trattamento mette a disposizione del Responsabile del Trattamento le informazioni necessarie. La durata del trattamento è fissata dal Titolare del Trattamento in funzione delle esigenze dei Servizi forniti.
+- **Confidentiality**: The Subcontractor must ensure that persons authorized to process personal data are committed to maintaining confidentiality or are subject to an appropriate legal obligation of confidentiality.
 
-## Articolo 6: Diritti degli interessati
+- **Security of Processing**: The Subcontractor undertakes to implement appropriate technical and organizational measures to ensure the security of personal data it processes, including data processed via cloud services, in accordance with Article 32 of the GDPR.
 
-- **Accesso e rettifica**: Il Titolare del trattamento e il Responsabile del trattamento devono consentire agli interessati di esercitare i loro diritti di accesso e rettifica dei propri dati personali, conformemente agli articoli 15 e 16 del GDPR.
+- **Assistance to the Data Controller**: The Subcontractor must assist the Data Controller, to the extent possible, in fulfilling its obligations regarding data security, notification of data breaches, conducting data protection impact assessments, and carrying out prior consultations with supervisory authorities.
 
-- **Cancellazione e limitazione del trattamento**: Gli interessati devono poter esercitare i loro diritti alla cancellazione dei propri dati (diritto all'oblio) o alla limitazione del trattamento, conformemente agli articoli 17 e 18 del GDPR.
+- **Data Location**: The Subcontractor must provide clear information regarding the locations where data is stored and processed within cloud infrastructures, and ensure that these locations comply with applicable data protection regulations.
 
-- **Portabilità dei dati**: Il Titolare del trattamento deve garantire, quando applicabile, la portabilità dei dati personali degli interessati, conformemente all'articolo 20 del GDPR.
+## Article 5 : Description dei trattamenti
 
-- **Opposizione**: Gli interessati devono poter esercitare il loro diritto di opposizione al trattamento dei loro dati personali conformemente all'articolo 21 del GDPR.
+Il Sottotratteggio è autorizzato a trattare, per conto del Titolare del trattamento, i dati personali necessari per fornire i Servizi.
+
+Le finalità del trattamento sono determinate dal Titolare del trattamento e comunicate al Sottotratteggio. La natura e la categoria dei dati personali trattati sono specificate dal Titolare del trattamento. Le categorie di persone interessate sono identificate dal Titolare del trattamento. Per l'esecuzione dei Servizi, il Titolare del trattamento mette a disposizione del Sottotratteggio le informazioni necessarie. La durata del trattamento è stabilita dal Titolare del trattamento in base alle esigenze dei Servizi forniti.
+
+## Articolo 6: Diritti delle persone interessate
+
+### 6.1 Diritti fondamentali
+
+- **Accesso e rettifica**: Il Titolare del trattamento e il Responsabile del trattamento devono consentire alle persone interessate di esercitare i propri diritti di accesso e rettifica dei dati personali, conformemente agli articoli 15 e 16 del GDPR.
+
+- **Cancellazione e limitazione del trattamento**: Le persone interessate devono poter esercitare il proprio diritto alla cancellazione dei dati (diritto all'oblio) o alla limitazione del trattamento, conformemente agli articoli 17 e 18 del GDPR.
+
+- **Portabilità dei dati**: Il Titolare del trattamento deve garantire, ove applicabile, la portabilità dei dati personali delle persone interessate, conformemente all'articolo 20 del GDPR.
+
+- **Opposizione**: Le persone interessate devono poter esercitare il proprio diritto di opposizione al trattamento dei propri dati personali, conformemente all'articolo 21 del GDPR.
+
+### 6.2 Support for the Exercise of Rights
+
+As a Processor, Cloud Temple supports the Data Controller in exercising the rights of data subjects under the following terms:
+
+**Standard Process**:
+
+- Requests are typically submitted by the Data Controller through standard communication channels: Account Manager and Service Delivery Manager.
+- The Processor provides technical assistance within the scope of its role as a processor and the capabilities of its services.
+
+**Direct Contact**:
+
+- For exceptional cases or specific inquiries, the Cloud Temple Data Protection Officer may be contacted directly: [DPD@cloud-temple.com](mailto:DPD@cloud-temple.com)
+
+- A validation process by the Cloud Temple DPO is maintained to ensure consistency of responses.
+- Traceability of requests and actions taken is guaranteed.
 
 ## Articolo 7: Misure di sicurezza e riservatezza
 
-Il Responsabile del Trattamento si impegna in particolare a implementare misure sufficienti per garantire la sicurezza e la riservatezza dei Dati Personali affidati e trattati nell'ambito dei Servizi, vale a dire in particolare:
+Il Sottotratteggiatore si impegna in particolare a mettere in atto misure adeguate per garantire la sicurezza e la riservatezza dei Dati Personali conferiti e trattati nell'ambito dei Servizi, in particolare:
 
-- Implementare misure tecniche e organizzative appropriate per proteggere i Dati personali contro la distruzione accidentale o illecita, la perdita accidentale, l'alterazione, l'uso improprio, la diffusione o l'accesso non autorizzati, nonché contro qualsiasi altra forma di trattamento illecito
+- Implementare misure tecniche e organizzative appropriate per proteggere i Dati Personali da distruzione accidentale o illecita, perdita accidentale, alterazione, utilizzo improprio, diffusione o accesso non autorizzato, nonché da qualsiasi altra forma di trattamento illecito
 
-- Non utilizzare i Dati personali per proprio conto o per conto di terzi e non trasferirli senza l'autorizzazione scritta e preventiva del Titolare del Trattamento o del cliente finale
+- Non utilizzare i Dati Personali per conto proprio o per conto di terzi, né trasferirli senza l'autorizzazione scritta e preventiva del Titolare del Trattamento o del cliente finale
 
-- Garantire che le persone autorizzate al trattamento dei Dati personali siano soggette ad adeguati obblighi di riservatezza
+- Assicurarsi che le persone autorizzate al trattamento dei Dati Personali siano vincolate da obblighi appropriati di riservatezza
 
-- Non effettuare copie o duplicati dei Dati personali senza la preventiva autorizzazione scritta del Titolare del Trattamento o del cliente finale (a meno che ciò non sia necessario per l'adempimento dei Servizi forniti dal fornitore nell'ambito del Contratto)
+- Non effettuare copie o duplicazioni dei Dati Personali senza l'autorizzazione scritta preventiva del Titolare del Trattamento o del cliente finale (salvo che ciò sia necessario per l'esecuzione dei Servizi forniti dal prestatore nell'ambito del Contratto)
 
-- Informare il Titolare del Trattamento di qualsiasi accesso accidentale o non autorizzato ai Dati personali, di qualsiasi violazione della normativa sui Dati personali o di qualsiasi sospetto di tale violazione, nel più breve tempo possibile e, se possibile, non oltre 48 ore dopo esserne venuto a conoscenza
+- Informare il Titolare del Trattamento di qualsiasi accesso accidentale o non autorizzato ai Dati Personali, di ogni violazione della normativa sui Dati Personali o di ogni sospetta violazione, nel minor tempo possibile e, se possibile, entro 48 ore dal momento in cui ne è venuto a conoscenza
 
-- A seconda della scelta del Titolare del Trattamento, cancellare o restituire i Dati personali al termine del Contratto, e distruggere le copie esistenti, salvo obbligo legale di conservarli
+- Implementare una politica di sicurezza dei sistemi informativi e di gestione delle autorizzazioni di accesso logico e fisico, che dovrà mantenere e aggiornare per tutta la durata del Contratto
 
-- Implementare una politica di sicurezza dei sistemi informativi e di gestione delle autorizzazioni di accesso logico e fisico, tra l'altro, che dovrà mantenere e far evolvere per tutta la durata del Contratto
+### 7.1 Enhanced Access Controls
+
+The Subcontractor implements an access control system for customer data including:
+
+- A strong authentication and identity management system
+- A least privilege policy with periodic review of permissions
+- Separation of customer environments and data isolation
+- A comprehensive logging system with automatic alerts
+- Periodic audits of access and security controls
 
 ## Articolo 8: Notifica delle violazioni dei dati
 
-In caso di violazione dei dati personali, il Responsabile del trattamento deve notificare tale violazione al Titolare del trattamento senza indebito ritardo dopo esserne venuto a conoscenza. Questa notifica deve includere tutte le informazioni pertinenti che consentano al Titolare del trattamento di notificare tale violazione all'autorità di controllo competente e, se del caso, agli interessati conformemente all'articolo 33 del GDPR. La notifica deve precisare l'impatto potenziale sui dati ospitati nel cloud e le misure adottate per porvi rimedio.
+In caso di violazione dei dati personali, il Sottoprogettista deve notificare tempestivamente al Titolare del trattamento, senza ritardi ingiustificati, non appena ne ha conoscenza, e al più tardi entro 48 ore. Tale notifica deve includere:
 
-## Articolo 9: Trasferimenti di dati al di fuori dell'Unione Europea
+- La natura della violazione dei dati personali  
+- Le categorie e il numero approssimativo di persone interessate  
+- Le categorie e il numero approssimativo di registrazioni di dati personali interessate  
+- Il nome e i recapiti del punto di contatto presso il quale è possibile ottenere ulteriori informazioni  
+- Le conseguenze probabili della violazione dei dati personali  
+- Le misure adottate o previste per rimediare alla violazione e mitigare gli effetti negativi eventuali  
 
-Qualsiasi trasferimento di dati personali verso un paese terzo o un'organizzazione internazionale può essere effettuato solo a condizione che siano rispettate le condizioni previste dal GDPR, in particolare agli articoli da 44 a 50. Il Titolare del trattamento deve assicurarsi che siano in atto garanzie adeguate, come le clausole contrattuali tipo approvate dalla Commissione europea o l'esistenza di una decisione di adeguatezza.
+La notifica deve specificare l'impatto potenziale sulle informazioni ospitate nel cloud e le misure adottate per porre rimedio alla situazione, consentendo al Titolare del trattamento di notificare la violazione all'autorità di controllo competente e, ove necessario, alle persone interessate, conformemente all'articolo 33 del GDPR.
 
-## Articolo 10: Durata e fine del trattamento
+## Articolo 9: Localizzazione e trasferimento dei dati
 
-Al termine del contratto principale, il Responsabile del trattamento si impegna, secondo le istruzioni del Titolare del trattamento, a cancellare tutti i dati personali o a restituirli al Titolare del trattamento, e a distruggere le copie esistenti salvo obbligo legale contrario. Questo obbligo include anche i dati memorizzati su supporti di backup nelle infrastrutture cloud, a meno che un obbligo legale non ne imponga la conservazione.
+### 9.1 Data localization according to services
+
+**Cloud Services:**
+
+- All personal data is processed and stored exclusively within the European Union
+- All infrastructure and data centers are located within the European Union
+- The customer can select the geographic processing locations among the available European locations
+- No data processing or storage takes place outside the European Union
+
+**Managed Services (Outsourced IT Management):**
+
+- Personal data is default processed and stored within the European Union
+- Technical support teams located outside the European Union may need to access the data in the context of the service, but only with prior and explicit consent from the data controller
+- Such access is strictly limited to operational needs and governed by appropriate GDPR safeguards
+
+### 9.2 Conditions for transfers outside the EU
+
+Any access to or transfer of personal data by teams or to third countries may only be carried out with:
+
+- Prior written authorization from the Data Controller for the relevant service  
+- Compliance with the conditions set forth in the GDPR, in particular Articles 44 to 50  
+- Implementation of appropriate safeguards, such as the EU-approved Standard Contractual Clauses or the existence of an adequacy decision  
+- Restriction of access to only those needs strictly necessary for operational purposes
+
+## Articolo 10: Durata e conclusione del trattamento
+
+### 10.1 End of contract
+
+At the end of the main contract, the Subprocessor undertakes, in accordance with the instructions of the Data Controller, to delete all personal data or return it to the Data Controller, and to destroy any existing copies, unless otherwise required by law.
+
+### 10.2 Processo di recupero
+
+Il Sottotitolare fornisce una guida dettagliata che consente al Titolare del trattamento di recuperare i propri dati in un formato standard e utilizzabile, includendo:
+
+- I formati di esportazione disponibili  
+- Le procedure di recupero  
+- I tempi di disponibilità  
+- L'assistenza tecnica disponibile
+
+### 10.3 Periodo di cancellazione dei dati
+
+Il Sottotratore si impegna a rispettare i seguenti termini:
+
+- **Cancellazione logica**: entro 48 ore dalla richiesta  
+- **Cancellazione fisica definitiva**: entro 30 giorni calendario successivi alla cancellazione logica  
+- **Conferma della cancellazione**: certificato di distruzione fornito entro 5 giorni lavorativi successivi alla cancellazione fisica
+
+Tale obbligo include anche i dati memorizzati su supporti di backup all'interno delle infrastrutture cloud, salvo obblighi legali che ne impongano la conservazione. In tal caso, il Sottotratore informa il Titolare del trattamento fornendo una giustificazione legale e il relativo periodo di conservazione.
 
 ## Articolo 11: Documentazione e audit
 
-Il Responsabile del trattamento metterà a disposizione del Titolare del trattamento tutte le informazioni necessarie per dimostrare il rispetto degli obblighi previsti dal presente allegato e consentirà e contribuirà alle attività di revisione, comprese le ispezioni, realizzate dal Titolare del trattamento o da un altro soggetto da questi incaricato, al fine di verificare la conformità con questo allegato e il GDPR. Il Responsabile del trattamento deve anche tenere un registro delle attività di trattamento conformemente all'articolo 30 del GDPR e fornire rapporti di conformità sulle infrastrutture cloud utilizzate.
+Il Sottotratteggio metterà a disposizione del Titolare del trattamento tutte le informazioni necessarie per dimostrare il rispetto degli obblighi previsti dalla presente allegato e consentirà gli audit, inclusi i controlli, da parte del Titolare del trattamento o di un altro revisore incaricato da quest'ultimo, al fine di verificare la conformità con il presente allegato e con il GDPR.
 
-## Articolo 12: Registro delle attività di Trattamento
+Il Sottotratteggio mette a disposizione del Titolare del trattamento:
 
-Il Responsabile del trattamento deve anche tenere un registro delle attività di Trattamento conformemente all'articolo 30 del GDPR e fornire rapporti di conformità sulle infrastrutture cloud utilizzate. Questo registro contiene come minimo:
+- Una pagina dedicata che elenca tutte le procedure di conformità aggiornate all'indirizzo: [https://www.cloud-temple.com/demarches-conformite/](https://www.cloud-temple.com/demarches-conformite/)
 
-- Il nome e i dati di contatto del titolare del trattamento e, se del caso, del contitolare del trattamento, del rappresentante del titolare del trattamento e del responsabile della protezione dei dati
-- La descrizione delle categorie di interessati e delle categorie di dati personali
-- Le finalità del Trattamento
-- Le categorie di destinatari a cui i dati personali sono stati o saranno comunicati, compresi i destinatari in paesi terzi o organizzazioni internazionali
-- Il periodo di conservazione dei dati
-- La descrizione generale delle misure tecniche e organizzative di sicurezza implementate
+- Le attestazioni di conformità disponibili (ISO 27001, SecNumCloud, ISAE, ecc.)
+- Raccomandazioni per l'utilizzo sicuro dei servizi Cloud Temple, incluse:
+  - Le buone pratiche per proteggere l'accesso alla Console cloud
+  - La gestione controllata degli accessi e delle autorizzazioni
+  - La sicurezza delle risorse distribuite tramite i servizi cloud
 
-Su richiesta scritta del Titolare del Trattamento, del cliente finale o di qualsiasi autorità competente, il Responsabile del Trattamento avrà un termine di 15 giorni lavorativi per comunicare una copia di detto registro a partire dalla ricezione della richiesta.
+## Articolo 12: Registro delle attività di trattamento
 
-## Articolo 13: I sub-responsabili del trattamento
+### 12.1 Content of the register
 
-Il Responsabile del Trattamento può ricorrere a uno (o più) fornitore(i) / provider esterni per la gestione di prestazioni specifiche relative al Contratto. A tal fine, il Responsabile del trattamento può reclutare, sotto la sua responsabilità, uno (o più) Sub-responsabile(i) di secondo livello al solo scopo di fornire una parte delle prestazioni necessarie per il sistema gestito.
+The Subcontractor maintains an electronic record of processing activities in accordance with Article 30(2) of the GDPR. This register contains a list of clients for whom Cloud Temple acts as a subprocessor, including for each client:
 
-Il Responsabile del Trattamento si impegna a concludere un atto giuridico vincolante con qualsiasi sub-responsabile ulteriore che ingaggia per il Trattamento dei Dati, al fine di imporgli il rispetto delle esigenze del GDPR e gli stessi obblighi di quelli previsti dall'articolo 20.2. In particolare, il Responsabile del Trattamento deve assicurarsi che il sub-responsabile ulteriore che ha reclutato presenti garanzie sufficienti per l'implementazione delle misure di sicurezza necessarie.
+- Contact details of the client company and the data protection officer (name, first name, phone number, email)
+- Categories of processing carried out on behalf of this client
+- Transfers outside the European Union, where applicable
+- Technical and organizational security measures implemented
 
-In caso di inadempimento da parte del sub-responsabile ulteriore dei suoi obblighi in materia di protezione dei Dati personali, il Responsabile del trattamento rimarrà pienamente responsabile nei confronti del Titolare del trattamento, fatti salvi i diritti degli Interessati previsti dagli articoli 79 e 82 del GDPR.
+### 12.2 Gestione automatizzata
 
-L'elenco dei sub-responsabili successivi autorizzati è il seguente:
+Il registro viene aggiornato automaticamente in occasione di:
 
-- Interxion
-- Data4
-- Telehouse
-- Iron Mountain
+- la stipula di nuovi contratti clienti
+- le modifiche ai servizi esistenti
+- i cambiamenti alle misure di sicurezza
 
-Durante l'esecuzione del Contratto, il Titolare del trattamento può accedere in qualsiasi momento al Responsabile del Trattamento per l'aggiornamento di tale elenco. Nonostante quanto sopra, il Responsabile del trattamento notificherà per iscritto al Titolare del Trattamento l'elenco dei sub-responsabili ulteriori aggiornato regolarmente ad eccezione di un cambiamento importante di sub-responsabile ulteriore.
+### 12.3 Accesso al registro
+
+Su richiesta scritta:
+
+- **Il Titolare del trattamento** può accedere esclusivamente alle informazioni che lo riguardano nel registro  
+- **Le autorità competenti** (CNIL, ANSSI, ecc.) possono accedere all'intero registro nell'ambito delle loro missioni di controllo
+
+Il Sottotratteggiatore dispone di un termine di 15 giorni lavorativi per comunicare le informazioni richieste a partire dalla ricezione della richiesta. È stato implementato un processo di validazione delle richieste legittime per garantire la riservatezza delle informazioni sensibili.
+
+## Articolo 13: I subappaltatori successivi
+
+### 13.1 Principio di autorizzazione
+
+Il Sottotitolare potrebbe essere chiamato a ricorrere a uno (o più) fornitore/i esterno/i per la gestione di prestazioni specifiche previste dal Contratto. A tale scopo, il Sottotitolare potrebbe essere tenuto a reclutare, sotto la propria responsabilità, uno (o più) Sottotitolare/i di secondo livello esclusivamente allo scopo di fornire una parte delle prestazioni necessarie al sistema gestito.
+
+### 13.2 Obligazioni contrattuali
+
+Il Sottotratteggio si impegna a stipulare un atto giuridicamente vincolante con ogni sottotratteggio successivo che dovesse assumere per il trattamento dei dati, al fine di imporgli il rispetto dei requisiti del GDPR e gli stessi obblighi previsti dalla presente allegato. In particolare, il Sottotratteggio deve accertarsi che il sottotratteggio successivo che ha assunto offra garanzie sufficienti per l'implementazione delle misure di sicurezza necessarie.
+
+### 13.3 Responsabilità
+
+In caso di mancata conformità del subappaltatore alle proprie obbligazioni in materia di protezione dei dati personali, il Subappaltatore rimarrà pienamente responsabile nei confronti del Titolare del trattamento, senza pregiudizio dei diritti delle persone interessate previsti dagli articoli 79 e 82 del GDPR.
+
+### 13.4 Elenco dei subappaltatori autorizzati
+
+L'elenco dei seguenti subappaltatori attualmente autorizzati è il seguente:
+
+| Subappaltatore | Attività | Localizzazione | Data di autorizzazione |
+|----------------|----------|--------------|-------------------|
+| Interxion | Hosting datacenter | Francia/UE | 15/01/2025 |
+| Data4 | Hosting datacenter | Francia/UE | 15/01/2025 |
+| Telehouse | Hosting datacenter | Francia/UE | 15/01/2025 |
+| Iron Mountain | Backup e archiviazione | Francia/UE | 15/01/2025 |
+
+### 13.5 Notification process
+
+While the Contract is in execution:
+
+- The Data Processor may access the updated list at any time via the client interface  
+- The Sub-processor shall notify the Data Controller in writing of any subsequent change of sub-processor at least 30 calendar days prior to implementation  
+- For any new critical sub-processor, prior specific authorization from the Data Controller is required
 
 ## Articolo 14: Responsabilità
 
-Il Titolare del trattamento e il Responsabile del trattamento riconoscono che possono essere ritenuti responsabili dei danni causati da un trattamento di dati personali non conforme al GDPR e alle leggi francesi applicabili. Il Responsabile del trattamento è responsabile dei danni causati dal trattamento se non ha adempiuto agli obblighi del GDPR specificamente diretti ai responsabili del trattamento o ha agito in modo difforme o contrario alle legittime istruzioni del Titolare del trattamento.
+Il Titolare del trattamento e il Sottotitolare riconoscono di poter essere ritenuti responsabili dei danni causati da un trattamento dei dati personali non conforme al GDPR e alle leggi francesi applicabili. Il Sottotitolare è responsabile dei danni causati dal trattamento se non ha rispettato gli obblighi del GDPR specificamente applicabili ai sottotitolari o se ha agito al di fuori delle istruzioni legali del Titolare del trattamento o in contrasto con tali istruzioni.
 
 ## Articolo 15: Modifiche
 
-Qualsiasi modifica del presente allegato deve essere oggetto di un addendum scritto firmato da entrambe le parti. Le modifiche devono essere conformi alle esigenze del GDPR e delle leggi francesi relative alla protezione dei dati personali.
+Ogni modifica alla presente allegato deve essere effettuata mediante un aggiornamento scritto firmato da entrambe le Parti. Le modifiche devono essere conformi ai requisiti del GDPR e alle leggi francesi relative alla protezione dei dati personali, nonché alle evoluzioni del codice di condotta CISPE.
 
-## Articolo 16: Legge applicabile e giurisdizione competente
+## Article 16: Legge applicabile e giurisdizione competente
 
-Il presente allegato è regolato dal diritto francese. Qualsiasi controversia relativa alla sua interpretazione o alla sua esecuzione sarà di competenza esclusiva dei tribunali francesi. In caso di divergenza tra le versioni linguistiche del presente allegato, prevarrà la versione francese.
+La presente allegato è soggetto al diritto francese. Ogni controversia relativa alla sua interpretazione o esecuzione è di competenza esclusiva dei tribunali francesi. In caso di divergenza tra le versioni linguistiche del presente allegato, prevarrà la versione francese.

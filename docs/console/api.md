@@ -9,7 +9,7 @@ import ShivaProfil005 from './images/shiva_profil_005.png'
 import ShivaApi001 from './images/shiva_api_001.png'
 import ShivaApi002 from './images/shiva_api_002.png'
 import ShivaApi003 from './images/shiva_api_003.png'
-import ShivaApi004 from './images/shiva_api_004.jpg'
+import ShivaApi004 from './images/shiva_api_004.png'
 
 ## Clés API
 
@@ -154,17 +154,31 @@ par un code d'erreur HTTP 429, signalant que la limite de requêtes autorisées 
 
 Voici les limites définies :
 
-| Produit              | Seuil limite |
-|----------------------|--------------|
-| Console Cloud Temple | 60 r/s       |
-| Identité (IAM)       | 60 r/s       |
-| IaaS - Calcul        | 60 r/s       |
-| IaaS - Stockage      | 20 r/s       |
-| IaaS - Sauvegarde    | 60 r/s       |
-| PaaS - S3            | 60 r/s       |
-| PaaS - Openshift     | 60 r/s       |
-| Réseau               | 60 r/s       |
-| Hébergement          | 60 r/s       |
+| Produit | Seuil limite |
+|---|---|
+| Console Cloud Temple | 25 r/s |
+| Identité (IAM) | 25 r/s |
+| IaaS VMware | 25 r/s |
+| OpenIaaS | 25 r/s |
+| S3 | 25 r/s |
+| Openshift | 25 r/s |
+| Bastion | 25 r/s |
+| Réseau | 25 r/s |
+| Hébergement | 25 r/s |
+| Marketplace | 25 r/s |
+| Support | 25 r/s |
+| Notification | 25 r/s |
+| LLMaaS | 25 r/s |
+
+### Routes spécifiques
+
+Certains points d'API spécifiques, notamment ceux liés à l'authentification ou à des actions sensibles, ont des limites plus restrictives pour renforcer la sécurité et garantir la stabilité.
+
+| Route | Seuil limite |
+|---|---|
+| Authentification (IAM) | 5 r/s |
+| IaaS - Stockage (Datastores) | 20 r/s |
+| Marketplace (Contact) | 1 r/min - 5 r/h |
 
 ### Comment fonctionnent les limites de taux ?
 

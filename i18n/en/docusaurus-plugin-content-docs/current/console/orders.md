@@ -30,67 +30,80 @@ import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.
 
 ## Concept
 
-The tracking of new resource deployment is done in the __'Orders'__ menu accessible in the green sidebar on the left of the screen.
+Deployment tracking for new resources is handled in the __'Orders'__ menu, accessible from the green sidebar on the left side of the screen.
 
-It allows you to view ordered Cloud resources, those in deployment, and any errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organisations).
+It allows you to view Cloud resources that have been ordered, are currently being deployed, and any potential errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organizations).
 
 <img src={shivaOrdersList} />
 
-*__Note: At this moment, a global view at an organization level of all resources deployed in various tenants is not yet possible.__ This topic will be addressed in 2024 through the implementation of a dedicated portal for the contractor (in the sense of a signatory) and management of their organization.*
+*__Note: At this stage, a global view across an organization of all resources deployed across various tenants is not yet available.__ This topic will be addressed later through the implementation of a dedicated portal for the sponsor (i.e., the signing party) and the management of their organization.*
 
-Resource deployment or removal is done within each product in the __'IaaS'__ and __'Network'__ menus on the left of the screen in the green sidebar.
+Resource deployment or deletion is performed within each product via the __'IaaS'__ and __'Network'__ menus located in the green sidebar on the left side of the screen.
 
-It is also possible to directly view deliveries in the Cloud Temple console notifications:
+You can also view deliveries directly through the Cloud Temple console notifications:
 
 <img src={shivaOrderNotif_001} />
 
-From the orders page, you can see the progress of a delivery and possibly interact with the team by providing comments or details:
+From the Orders page, you can monitor the progress of a delivery and, if needed, communicate with the team by adding comments or clarifications:
 
 <img src={shivaOrderStatus} />
 
-__Note__: __It is not possible to initiate multiple orders of the same type of resource simultaneously. You will need to wait for the current order to be processed and completed before placing a new one. This ensures efficient and organized management of resources within your environment.__
+__Note__: __It is not possible to initiate multiple orders of the same resource type simultaneously. You must wait for the current order to be processed and completed before placing a new one. This ensures efficient and orderly resource management within your environment.__
 
-## Order a new availability zone
+## Order a New Availability Zone
 
-It is possible to add a new availability zone by accessing the "__Order__" menu. This option allows you to extend your resources and improve the availability and resilience of your applications with just a few clicks:
+It is possible to add a new availability zone by accessing the "__Order__" menu. This option allows you to expand your resources and enhance the availability and resilience of your applications with just a few clicks:
 
 <img src={shivaOrderAz_01} />
 
-Start by selecting the desired location, first choosing the geographical region, then the corresponding availability zone (AZ) from among those available. This step allows you to adapt the deployment of your resources based on location and the requirements of your infrastructure:
+Begin by selecting your desired location, first choosing the geographic region, then selecting the corresponding availability zone (AZ) from the available options. This step enables you to tailor your resource deployment according to your infrastructure's location and requirements:
 
 <img src={shivaOrderAz_02} />
 
-Next, proceed to select the desired hypervisor cluster type, choosing the one that best meets your performance and management needs for your cloud infrastructure:
+Next, select the desired type of hypervisor cluster, choosing the one that best meets the performance and management needs of your cloud infrastructure:
 
 <img src={shivaOrderAz_03} />
 
-Select the number of hypervisors as well as the desired amount of memory to tailor resources to the workload and specific requirements of your cloud environment:
+Then, select the number of hypervisors and the desired amount of memory to adapt resources to your workload and specific cloud environment requirements:
 
 <img src={shivaOrderAz_04} />
 
-Select the number of datastores to provision in the cluster and their types. It is important to note that the maximum number of authorized datastores is 10, with a minimum of 2 required. Each different type of datastore will result in the creation of an additional datastoreCluster. For example, if you choose 2 "live" datastores and 1 "mass" datastore, this will result in the formation of 2 different datastoreClusters:
+Next, select the number of datastores to provision within the cluster, along with their types. Note that the maximum number of allowed datastores is 10, with a minimum of 2 datastores required. Each different datastore type will result in the creation of an additional datastoreCluster. For example, selecting 2 "live" type datastores and 1 "mass" type datastore will create 2 distinct datastoreClusters:
 
 <img src={shivaOrderAz_05} />
 
-Define the storage size necessary for backup ensuring to allocate capacity equal to your production storage. Consider an average compression rate of 2 to optimize backup space and ensure effective data protection:
+Define the required storage size for backup, ensuring capacity equivalent to your production storage. Consider an average compression ratio of 2 to optimize backup space and ensure effective data protection:
 
 <img src={shivaOrderAz_06} />
 
-Select the networks to propagate based on your needs. You also have the option to enable "Internet access" if necessary, by specifying the desired number of IP addresses, with a choice ranging from 1 to a maximum of 8:
+Select the networks to propagate based on your needs. You also have the option to enable "Internet Access" if required, specifying the desired number of IP addresses, with a range between 1 and a maximum of 8:
 
 <img src={shivaOrderAz_07} />
 
-You will then get a summary of the selected options before validating your order.
+You will then receive a summary of your selected options before validating your order:
 
 <img src={shivaOrderAz_08} />
 
-## Order additional storage resources
+## Requesting Additional Storage Resources
 
-The block mode storage allocation logic on compute clusters is TODO
+The block storage allocation logic on compute clusters is based on the __IBM SVC (San Volume Controller)__ and __IBM FlashSystem__ technologies. Storage is organized into __LUNs of at least 500 GiB__, presented according to the technology used:
+- For __VMware__: as __datastores__ grouped into __SDRS clusters (Storage Distributed Resource Scheduler)__
+- For __Bare Metal__: as __volumes__
+- For __Open IaaS__: as __Storage Repositories (SRs)__
+
+Each datastore inherits a __performance class__ defined in IOPS/To (ranging from 500 to 15,000 IOPS/To for FLASH, or no guarantee for MASS STORAGE). IOPS limitations are enforced __at the datastore level__ (not per VM), meaning all virtual machines sharing the same datastore share the allocated IOPS quota.
+
+__Key points to remember__:
+
+- __Minimum size__: 500 GiB per LUN
+- __Performance__: Proportional to allocated volume (e.g., 2 TiB in Standard class = maximum 3,000 IOPS)
+- __Organization__: Datastores of the same type are automatically grouped into datastore clusters
+- __Availability__: 99.99% measured monthly, including maintenance windows
+- __Required space__: Always reserve 10% free space for backup snapshots and an amount equivalent to the total RAM of VMs for .VSWP files
 
 ### Deploy a new compute cluster
 
-Place an order for a hypervisor cluster by selecting the options appropriate for your virtualization needs. Define key characteristics such as the number of hypervisors, cluster type, memory amount, and required compute resources:
+Proceed with ordering a hypervisor cluster by selecting options tailored to your virtualization requirements. Define key characteristics such as the number of hypervisors, cluster type, amount of memory, and required computing resources:
 
 <img src={shivaOrderClucalc_01} />
 
@@ -98,106 +111,161 @@ Select the availability zone:
 
 <img src={shivaOrderClucalc_02} />
 
-Choose the type of compute blade:
+Choose the compute blade type:
 
 <img src={shivaOrderClucalc_03} />
 
-You then have the option to select existing networks and propagate them, or create new ones directly at this stage, based on your infrastructure needs. Note that the total number of configurable networks is limited to a maximum of 20:
+You can then choose to select existing networks and propagate them, or create new networks directly at this stage, depending on your infrastructure needs. Note that the total number of configurable networks is limited to a maximum of 20:
 
 <img src={shivaOrderClucalc_04} />
 
-You will then get a summary of the selected options before validating your order and then you can visualize your ongoing order:
+You will then receive a summary of your selected options before confirming your order, after which you can view your ongoing order:
 
 <img src={shivaOrderClucalc_05} />
 
 ### Deploy a new storage cluster
 
-In the "__order__" menu, place an order for a __new storage cluster__ for your environment by selecting options that match your capacity, performance, and redundancy needs. Select the location:
+In the "__command__" menu, proceed with ordering a __new storage cluster__ for your environment by selecting options that match your requirements in terms of capacity, performance, and redundancy. Choose the location:
 
 <img src={shivaOrderClusto_01} />
 
-Define the number of datastores to provision in the cluster and their type, respecting the following limits: a minimum of 2 datastores and a maximum of 10 can be configured. Choose the types of datastores that best meet your performance, capacity, and usage needs to optimize storage in your environment:
+Define the number of datastores to provision within the cluster, as well as their type, adhering to the following limits: a minimum of 2 datastores and a maximum of 10 can be configured. Select the datastore types that best meet your needs regarding performance, capacity, and usage, in order to optimize storage in your environment:
 
 <img src={shivaOrderClusto_02} />
 
-Select the desired storage type from the different options available:
+Select the desired storage type from the available options:
 
 <img src={shivaOrderClusto_03} />
 
-You then access a full summary of the options you have selected, allowing you to check all parameters before definitively validating your order:
+You will then access a complete summary of the options you have selected, allowing you to review all settings before definitively confirming your order:
 
 <img src={shivaOrderClusto_04} />
 
 ### Deploy a new datastore within a VMware SDRS cluster
 
-In this example, we will add block storage for a VMware infrastructure.
-To add an additional datastore in your SDRS storage cluster, go to the __'Infrastructure'__ submenu then __'VMWare'__.
-Then choose the VMware stack and the availability zone. Next, go to the __'Storage'__ submenu.
+In this example, we will add block storage for a VMware infrastructure.  
+To add an additional datastore to your SDRS cluster, navigate to the __'Infrastructure'__ submenu, then select __'VMWare'__.  
+Choose the appropriate VMware stack and availability zone, then go to the __'Storage'__ submenu.
 
-Choose the SDRS cluster corresponding to the performance characteristics you wish and click on the __'Add a datastore'__ button located in the table with the list of datastores.
+Select the SDRS cluster that matches your desired performance characteristics, and click the __'Add a datastore'__ button located in the table listing the existing datastores.
 
 <img src={shivaOrdersIaasSpoolDs} />
 
 __Note__:
 
-- *The size of the smallest activatable LUN on a cluster is __500 GiB__.*
-- *The performance of a datastore ranges from 500 iops/TiB on average to 15000 iops/TiB on average. __This is a software throttling done at the storage controllers level__.*
-- *The volume accounting of disk consumed by your organization is the sum of all LUNs across all used AZs*.
-- *The rights __'order'__ as well as __'compute'__ are necessary for the account to perform this action.*
+- *The smallest activatable LUN size on a cluster is __500 GiB__.*
+- *Datastore performance ranges from an average of 500 iops/TiB up to 15,000 iops/TiB on average. __This is a software-based limit enforced at the storage controller level__.*
+- *The disk volume consumption billed to your organization is the sum of all LUNs across the availability zones used.*
+- *The __'order'__ and __'compute'__ permissions are required on the account to perform this action.*
 
-### Order new networks
+### Ordering New Networks
 
-The network technology used on the Cloud Temple infrastructure is based on [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). It allows you to benefit from __layer 2 networks continuity between your availability zones within a region__.
-It is also possible to share networks between your tenants and terminate them in the hosting zone.
-Basically, you can imagine a Cloud Temple network as an 802.1q vlan available at any point of your tenant.
+The networking technology used on the Cloud Temple infrastructure is based on [VPLS](https://en.wikipedia.org/wiki/Virtual_Private_LAN_Service). It enables you to benefit from __Layer 2 networks seamlessly connected across your availability zones within a region__.
 
-TODO
+It is also possible to share networks between your tenants and terminate them in hosting zones.  
+In essence, you can think of a Cloud Temple network as an 802.1q VLAN available at any point within your tenant.
 
-The ordering of a new network and the decisions to share between your tenants are made in the __'Network'__ menu of the green sidebar on the left of the screen. Networks will first be created, then a separate order will be generated to propagate them. You can follow the progress of ongoing orders by accessing the "Order" tab in the menu, or by clicking on the information labels that redirect you to active or in-process orders.
+Networks on the Cloud Temple platform are __Layer 2 (VLANs)__ based on the __VPLS (Virtual Private LAN Service)__ technology. This technology provides you with __seamless network connectivity across your availability zones__ within a region, with guaranteed performance:
+
+- __Intra-AZ latency__: < 3 ms  
+- __Inter-AZ latency__: < 5 ms  
+
+__Network Flexibility__:
+
+- A network can be __shared across multiple clusters__ within the same availability zone  
+- A network can be __propagated across multiple availability zones__ within the same region  
+- A network can be __shared between different tenants__ within your organization  
+- A network can be __terminated in a hosting zone__ for your physical equipment  
+- __Limit__: Maximum of 20 networks per order. You can place multiple successive orders to extend this number according to your needs  
+
+Ordering a new network and defining sharing policies between your tenants is done in the __'Network'__ menu of the green sidebar on the left side of the screen. Networks are first created, then a separate order is generated to propagate them. You can track the progress of ongoing orders by accessing the "Orders" tab in the menu, or by clicking on the information labels that redirect you to active or processing orders.
 
 <img src={shivaOrdersNet_002} />
 
-It is also possible to propagate already existing networks or to separate the two steps, starting with the creation of the network, then proceeding with propagation later according to your needs. The propagation option is found in the options of the selected network:
+It is also possible to propagate existing networks, or to separate the two steps—first creating the network, then propagating it later as needed. The propagation option is available in the settings of the selected network:
 
 <img src={shivaOrdersNet_003} />
 
-Click on the "Propagate" option for an existing network, then select the desired propagation target. This step allows you to define the location or resources on which the network should be propagated:
+Click on the "Propagate" option for an existing network, then select your desired propagation target. This step allows you to define the location or resources where the network should be propagated:
 
 <img src={shivaOrdersNet_004} />
 
-### Deactivating a network
+### Disabling a network
 
-A network can also be deactivated if necessary. This option allows you to temporarily pause access or use of the network without permanently deleting it, providing flexibility in managing your infrastructure according to your needs.
+A network can also be disabled if necessary. This option allows you to temporarily pause access to or usage of the network without permanently deleting it, providing flexibility in managing your infrastructure according to your needs.
 
-The deactivation option is found in the selected network's options.
+The disable option is located within the settings of the selected network.
 
-## Adding additional hypervisors to a compute cluster
+## Add additional hypervisors to a compute cluster
 
-The operating logic for compute clusters is TODO
+A __compute cluster__ is a grouping of hypervisors that must comply with the following rules:
 
-Adding hypervisors to a compute cluster is done in the __'IaaS'__ menu in the green sidebar to the left of the screen.
-In the following example, we are going to add compute to a hypervisor cluster using VMware technology.
+### For VMware ESXi Clusters
 
-Go to the __'Infrastructure'__ submenu then __'VMware'__. Then choose the VMware stack and the availability zone and the compute cluster.
-In this example, it is the __'clu001-ucs12'__. Click on the __'Add a host'__ button situated in the table with the hosts list, at the top right.
+__Homogeneity Rules__:
+
+- All hosts within a cluster must be of the __same server type__ (ECO, STANDARD, ADVANCE, PERFORMANCE, etc.)
+- All hosts must belong to the __same tenant and availability zone__
+- __Limit__: Maximum of 32 hypervisors per cluster
+
+__Memory Allocation__:
+
+- Each server is delivered with __all physical memory activated from the start__
+- __Example__: A cluster of 3 STANDARD v3 servers (each with 384 GB of physical memory) = 3 × 384 GB = 1,152 GB available
+- __Recommendation__: Do not exceed 85% memory utilization per server to avoid VMware's compression and ballooning mechanisms
+
+__High Availability__:
+
+- __Recommended minimum__: 2 hypervisors per cluster to benefit from the 99.99% SLA
+- Enable the __VMware HA__ (High Availability) feature to automatically restart VMs in case of host failure
+
+Adding hypervisors to a compute cluster is done in the __'IaaS'__ menu in the green sidebar on the left side of the screen.  
+In the following example, we will add compute capacity to a VMware-based hypervisor cluster.
+
+Go to the __'Infrastructure'__ submenu, then __'VMWare'__. Select the VMware stack, the availability zone, and the compute cluster.  
+In this example, it is __'clu001-ucs12'__. Click the __'Add Host'__ button located in the top-right corner of the table listing the hosts.
 
 __Note__:
 
-- *__The configuration of a cluster must be homogeneous__. Therefore, it is not allowed to mix hypervisor types within a cluster. All the blades must be of the same type.*
-- *The __'order'__ and __'compute'__ rights are necessary for the account to carry out this action.*
+- *__Cluster configuration must be homogeneous*. Mixing different hypervisor types within a cluster is not allowed. All servers must be of the same type.*
+- *The __'order'__ and __'compute'__ permissions are required for the account to perform this action.*
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
-## Adding additional memory resources to a compute cluster
+### For Open IaaS clusters
 
-The memory allocation logic on compute clusters is TODO
+Open IaaS clusters follow similar rules regarding homogeneity and high availability. Compute resource management is also performed via the __'OpenIaaS'__ menu, with the same access rights prerequisites.
 
-To add RAM to a cluster, simply go to the cluster configuration (same as adding a compute host as seen previously) and click on __'Modify memory'__.
+## Add Additional Memory Resources to a Compute Cluster
+
+Memory allocation on compute clusters works as follows:
+
+__Memory Allocation Principle__:
+
+- All compute blades are delivered with the __maximum physical memory__ installed
+- A __software-level limitation__ is applied at the VMware cluster level to match the billed RAM
+- Each blade has access to the __full amount of activated physical memory__ within the cluster
+
+__Cluster-Scale Memory Sizing__:
+
+- __Minimum__: number of hosts × 128 GB of memory
+- __Maximum__: number of hosts × physical memory capacity per blade
+
+__Example__: For a three-host cluster using `STANDARD v3` hosts (384 GB physical memory per blade)
+
+- Total available memory: 3 × 384 GB = 1152 GB
+
+__Important Recommendations__:
+
+- Do not exceed __85% average memory utilization per blade__ to avoid VMware ballooning and compression
+- Ensure sufficient disk space is available for swap files (.VSWP) created at each VM startup (size = VM memory allocation)
+
+To add additional RAM to a cluster, navigate to the cluster configuration (as previously described for adding a compute host) and click on __'Modify Memory'__.
 
 <img src={shivaOrdersIaasCpoolMemory} />
 
 __Note__:
 
-- *__Machines are delivered with the total physical memory__. Unlocking the memory resource is only a software activation at the cluster level.*
-- *It is not possible to modify the amount of physical memory of a blade type. Be mindful of the maximum capacity of a blade when creating a cluster.*
-- *The __'order'__ and __'compute'__ rights are necessary for the account to carry out this action.*
+- *__Machines are delivered with the full physical memory installed__. Memory resource unblocking is purely a software-level activation at the cluster level.*
+- *It is not possible to modify the physical memory capacity of a blade type. Always consider the maximum memory capacity of a blade when creating a cluster.*
+- *The __'order'__ and __'compute'__ permissions are required on the account to perform this action.*

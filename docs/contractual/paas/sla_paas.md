@@ -2,231 +2,77 @@
 title: Convention de Service SecNumCloud PaaS
 ---
 
-**Table des matières**
+## Cadre
 
-- [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
-- [2. Acronymes](#Xc79d173393c04b42ba8cdf223cca3c0202f4dee)
-- [3. Glossaire](#X0c9d1d82fdc5fcc3d01a320dd2dd3715a6900b4)
-- [4. Objet de la convention de service PaaS du
-    Prestataire](#X23ec3c3767539f9e69acc7cbf5af8aa8c1b6ad7)
-- [5. Evolution de la convention de service
-    PaaS](#Xa7161677dcf9a35d02c20807040326b39d55881)
-- [6. Audit](#X910e2801262de94af715f54b8fb509cc70cc79a)
-- [7. Description du
-    service](#X3d12a6c93683f0122f5f9a8e21e7c12fc92490b)
-- [8. Mise en œuvre du
-    service](#Xc98fb6da582d483e300add6a80df6e3eb76498a)
-  - [8.1. Description des composants
-        techniques](#Xa61c340e3fdf14082cef411d3a913fc4bdeeb4c)
-    - [8.1.1. Plateforme de service REDHAT
-            OpenShift](#Xf81d22ed0abca8eab163c160107fa228901d82c)
-    - [8.1.2. Infrastructure logiciel de pilotage de la plateforme
-            Redhat Openshift](#Xf11ec2e6a431ae11852fe3129245b4d0fd0747b)
-    - [8.1.3. Infrastructure de sauvegarde
-            associée](#X77b1112fa2c2a53eb0cf09b416962164b77b437)
-    - [8.1.4. Mise en œuvre de solutions de reprise d\'activité ou
-            de continuité
-            d\'activité](#Xae1394210f1c9bee4293a93160d2d11cc70ebdd)
-- [9. Engagements et niveaux de
-    services](#Xad2b4ae071a52a99b502c4e84cbba3f15ac78f8)
-  - [9.1. Engagements de disponibilité de la plateforme RedHat
-        OpenShift](#X273341276df81e9f6fad2000ac84216560e59fa)
-- [10. Modèle de responsabilités partagées
-    applicable](#Xa90d4e180ca2ae1d92e4e4cf00f20aca5061eac)
-  - [10.1. Responsabilité et Obligations du
-        Prestataire](#Xe5cf73850ea2189ab60f41560bf52e97d3019f9)
-  - [10.2. Limitation de responsabilité du
-        Prestataire](#X8856c8f606130116944398b24484722823c023c)
-  - [10.3. Limitation
-        d\'accès](#X902763258f1242326933ce46892d3f549e73e30)
-- [11. Effacement des données en fin de
-    contrat](#Xbe642a80027ce4ad88cc932e98b8661c2a0d3a6)
-- [12. Droit applicable](#Xa219184d62eb90dfeec612801fd05c5d816c331)
+| Référence | CT.AM.JUR.ANX.PAAS 2.1 |
+| :--- | :--- |
+| **Date** | 21 janvier 2025 |
 
-## 1. Cadre
+## Acronymes
 
-  --------------------- -------------------------------------------------
-  Référence             CT.AM.JUR.ANX.PAAS 2.1
+| Acronyme | Description |
+| :--- | :--- |
+| **CAB** | Change Advisory Board -- Comité consultatif sur les changements |
+| **CMDB** | Configuration Management Database -- Base de données de gestion des configurations |
+| **COPIL** | Comité de pilotage |
+| **COSTRAT** | Comité stratégique |
+| **DB** | Database (base de données) |
+| **DRP** | Disaster Recovery Plan (Plan de reprise d\'activité) |
+| **GTI** | Garantie de Temps d'Intervention |
+| **GTR** | Garantie de Temps de Résolution |
+| **GTE** | Garantie de Temps d'Escalade |
+| **HYPERVISEUR** | Système d\'exploitation permettant l\'execution de VM sur une lame de calcul |
+| **ITIL** | Information Technology Infrastructure Library - Bonnes pratiques pour la gestion des systèmes d\'information |
+| **IAAS** | Infrastructure as a Service |
+| **MCO** | Maintien en condition opérationnelle |
+| **MOA** | Maitrise d'Ouvrage |
+| **MOE** | Maitrise d'Œuvre |
+| **OS** | Operating system |
+| **PAQ** | Plan d'Assurance Qualité |
+| **PAAS** | Platform as a Service |
+| **SDM** | Service Delivery Manager |
+| **RFC** | Request For Change -- Demande de changement |
+| **RGPD** | Règlement Général de Protection des Données (personnelles) |
+| **RPO** | Recovery Point Objective -- Fraicheur des données restaurées en cas de sinistre |
+| **RTO** | Recovery Time Objective -- Délai de rétablissement du service en cas de sinistre |
+| **SLA** | Service Level Agreement -- Accord sur les niveaux de services |
+| **UO** | Unité d'Œuvre |
+| **VABF** | Validation d'Aptitude au Bon Fonctionnement |
+| **VABE** | Validation d'Aptitude à la Bonne Exploitabilité |
+| **VM** | Virtual Machine (Machine virtuelle) |
+| **VSR** | Validation de Service Régulier |
+| **SNC** | SecNumCloud |
 
-  Date                  21 janvier 2025
-  --------------------- -------------------------------------------------
-
-## 2. Acronymes
-
-  ------------------------------------------------------------------------------
-  Acronyme      Description
-  ------------- ----------------------------------------------------------------
-  CAB           Change Advisory Board -- Comité consultatif sur les changements
-
-  CMDB          Configuration Management Database -- Base de données de gestion
-                des configurations
-
-  COPIL         Comité de pilotage
-
-  COSTRAT       Comité stratégique
-
-  DB            Database (base de données)
-
-  DRP           Disaster Recovery Plan (Plan de reprise d\'activité)
-
-  GTI           Garantie de Temps d'Intervention
-
-  GTR           Garantie de Temps de Résolution
-
-  GTE           Garantie de Temps d'Escalade
-
-  HYPERVISEUR   Système d\'exploitation permettant l\'execution de VM sur une
-                lame de calcul
-
-  ITIL          Information Technology Infrastructure Library - Bonnes pratiques
-                pour la gestion des systèmes d\'information
-
-  IAAS          Infrastructure as a Service
-
-  MCO           Maintien en condition opérationnelle
-
-  MOA           Maitrise d'Ouvrage
-
-  MOE           Maitrise d'Œuvre
-
-  OS            Operating system
-
-  PAQ           Plan d'Assurance Qualité
-
-  PAAS          Platform as a Service
-
-  SDM           Service Delivery Manager
-
-  RFC           Request For Change -- Demande de changement
-
-  RGPD          Règlement Général de Protection des Données (personnelles)
-
-  RPO           Recovery Point Objective -- Fraicheur des données restaurées en
-                cas de sinistre
-
-  RTO           Recovery Time Objective -- Délai de rétablissement du service en
-                cas de sinistre
-
-  SLA           Service Level Agreement -- Accord sur les niveaux de services
-
-  UO            Unité d'Œuvre
-
-  VABF          Validation d'Aptitude au Bon Fonctionnement
-
-  VABE          Validation d'Aptitude à la Bonne Exploitabilité
-
-  VM            Virtual Machine (Machine virtuelle)
-
-  VSR           Validation de Service Régulier
-
-SNC           SecNumCloud
-  ------------------------------------------------------------------------------
-
-## 3. Glossaire
+## Glossaire
 
 Les expressions ci-après employées dans le présent document seront
 interprétées conformément aux définitions qui leur sont attribuées
 ci-dessous :
 
-  --------------------------------------------------------------------------------------------
-  Expression                       Définition
-  -------------------------------- -----------------------------------------------------------
-  \"Secure Temple\"                Désigne le service IaaS qualifié SecNumCloud, proposé par
-                                   la société Cloud Temple, tel que défini dans l'attestation
-                                   consultable sur le site de l'ANSSI et fournie en annexe de
-                                   la présente Convention de service.
+| Expression | Définition |
+| :--- | :--- |
+| **\"Secure Temple\"** | Désigne le service IaaS qualifié SecNumCloud, proposé par la société Cloud Temple, tel que défini dans l'attestation consultable sur le site de l'ANSSI et fournie en annexe de la présente Convention de service. |
+| **Région** | Une \"région\" dans le contexte du cloud computing désigne un ensemble géographiquement délimité de zones de disponibilité cloud, fournissant des services de réseau, de calcul et de stockage pour optimiser la latence, la performance et la conformité réglementaire locale. |
+| **Zone Disponibilité(AZ)(Availability zone)** | Une section spécifique et isolée de l\'infrastructure de cloud computing, conçue pour assurer la haute disponibilité et la résilience des services par une distribution géographique des ressources. |
+| **Tenant** | Une instance isolée réservée à un utilisateur ou groupe d\'utilisateurs, partageant une infrastructure commune tout en maintenant l\'indépendance et la sécurité des données et des applications |
 
-  Région                           Une \"région\" dans le contexte du cloud computing désigne
-                                   un ensemble géographiquement délimité de zones de
-                                   disponibilité cloud, fournissant des services de réseau, de
-                                   calcul et de stockage pour optimiser la latence, la
-                                   performance et la conformité réglementaire locale.
+| Expression | Définition |
+| :--- | :--- |
+| **Incident** | Un \"incident\" désigne tout événement imprévu qui perturbe le fonctionnement normal d\'un système ou compromet la sécurité des données. |
+| **Problème** | Un \"problème\" est une cause fondamentale d\'un ou plusieurs incidents, identifiée ou suspectée, nécessitant une analyse et une résolution pour prévenir sa récurrence |
+| **Changement** | Un \"changement\" désigne tout ajout, une modification ou suppression impactant le Service, ayant été autorisé, planifié ou pris en charge. |
+| **Changement standard** | Un \"changement standard\" est un changement faisant l'objet d'une procédure, dont les modalités de mise en production et les impacts (y compris financiers) sont connus et acceptés à l'avance par les Parties. Il est alors intégré au catalogue des changements standards, et peut selon les cas avoir une GTI et une GTR. |
+| **Mise en production** | action(s) d'administration de réalisation du changement quand celui-ci est approuvé (le changement, au sens ITIL, ne concernant que la gestion du changement et non sa réalisation/concrétisation). |
+| **Demande de service** | demande d'évolution faisant l'objet d'une procédure, dont la réalisation: i) ne modifie pas la CMDB,ii) le mode opératoire, les coûts et les risques sont connus et acceptés à l'avance et ne nécessitent pas de modalités de retour arrière spécifiques iii) la réalisation est soumise à un accord de niveau de service et incluse dans la redevance du contrat lorsqu'elle est réalisée en heures ouvrées et jours ouvrés. |
+| **Element de configuration** | Un \"élément de configuration\" est un composant identifiable du système d\'information, tel qu\'un logiciel, un matériel ou un document, sujet à gestion dans le cadre de la gestion des services IT |
+| **Service** | Un \"service\" désigne le service qualifié SecNumCloud, délivré au COMMANDITAIRE par le Prestataire, tel que décrit dans la section « Description du Service » de la présente Convention de service. |
+| **Evenement** | Un \"événement\" est toute occurrence détectable ou identifiable pouvant avoir une importance pour la gestion du Service. |
+| **Sinistre** | Un « sinistre » désigne un événement grave d'origine naturelle ou humaine, accidentelle ou intentionnelle, occasionnant des pertes et des dommages importants à la Partie sinistrée. |
+| **Convention de service** | Ce document, établi dans le cadre d\'un contrat spécifique ou des Conditions Générales de Vente et d'Utilisation (CGVU), et ce, en conformité avec les exigences du Référentiel SecNumCloud. |
+| **Disponibilité** | Capacité à assurer la disponibilité et le maintien des performances optimales d\'un service, en accord avec les critères et engagements définis dans les Accords de Niveau de Service (SLA) |
+| **Supervision** | Surveillance d\'un Système d\'Information ou d\'un Service, impliquant la collecte de diverses données telles que mesures et alarmes. Cette activité se limite à l\'observation et au suivi, sans intervenir directement sur les éléments surveillés, une prérogative qui appartient aux opérations d\'Administration |
 
-  Zone                             Une section spécifique et isolée de l\'infrastructure de
-  Disponibilité(AZ)(Availability   cloud computing, conçue pour assurer la haute disponibilité
-  zone)                            et la résilience des services par une distribution
-                                   géographique des ressources.
-
-Tenant                           Une instance isolée réservée à un utilisateur ou groupe
-                                   d\'utilisateurs, partageant une infrastructure commune tout
-                                   en maintenant l\'indépendance et la sécurité des données et
-                                   des applications
-  --------------------------------------------------------------------------------------------
-
-  -------------------------------------------------------------------------
-  Expression      Définition
-  --------------- ---------------------------------------------------------
-  Incident        Un \"incident\" désigne tout événement imprévu qui
-                  perturbe le fonctionnement normal d\'un système ou
-                  compromet la sécurité des données.
-
-  Problème        Un \"problème\" est une cause fondamentale d\'un ou
-                  plusieurs incidents, identifiée ou suspectée, nécessitant
-                  une analyse et une résolution pour prévenir sa récurrence
-
-  Changement      Un \"changement\" désigne tout ajout, une modification ou
-                  suppression impactant le Service, ayant été autorisé,
-                  planifié ou pris en charge.
-
-  Changement      Un \"changement standard\" est un changement faisant
-  standard        l'objet d'une procédure, dont les modalités de mise en
-                  production et les impacts (y compris financiers) sont
-                  connus et acceptés à l'avance par les Parties. Il est
-                  alors intégré au catalogue des changements standards, et
-                  peut selon les cas avoir une GTI et une GTR.
-
-  Mise en         action(s) d'administration de réalisation du changement
-  production      quand celui-ci est approuvé (le changement, au sens ITIL,
-                  ne concernant que la gestion du changement et non sa
-                  réalisation/concrétisation).
-
-  Demande de      demande d'évolution faisant l'objet d'une procédure, dont
-  service         la réalisation: i) ne modifie pas la CMDB,ii) le mode
-                  opératoire, les coûts et les risques sont connus et
-                  acceptés à l'avance et ne nécessitent pas de modalités de
-                  retour arrière spécifiques iii) la réalisation est
-                  soumise à un accord de niveau de service et incluse dans
-                  la redevance du contrat lorsqu'elle est réalisée en
-                  heures ouvrées et jours ouvrés.
-
-  Element de      Un \"élément de configuration\" est un composant
-  configuration   identifiable du système d\'information, tel qu\'un
-                  logiciel, un matériel ou un document, sujet à gestion
-                  dans le cadre de la gestion des services IT
-
-  Service         Un \"service\" désigne le service qualifié SecNumCloud,
-                  délivré au COMMANDITAIRE par le Prestataire, tel que
-                  décrit dans la section « Description du Service » de la
-                  présente Convention de service.
-
-  Evenement       Un \"événement\" est toute occurrence détectable ou
-                  identifiable pouvant avoir une importance pour la gestion
-                  du Service.
-
-  Sinistre        Un « sinistre » désigne un événement grave d'origine
-                  naturelle ou humaine, accidentelle ou intentionnelle,
-                  occasionnant des pertes et des dommages importants à la
-                  Partie sinistrée.
-
-  Convention de   Ce document, établi dans le cadre d\'un contrat
-  service         spécifique ou des Conditions Générales de Vente et
-                  d'Utilisation (CGVU), et ce, en conformité avec les
-                  exigences du Référentiel SecNumCloud.
-
-  Disponibilité   Capacité à assurer la disponibilité et le maintien des
-                  performances optimales d\'un service, en accord avec les
-                  critères et engagements définis dans les Accords de
-                  Niveau de Service (SLA)
-
-Supervision     Surveillance d\'un Système d\'Information ou d\'un
-                  Service, impliquant la collecte de diverses données
-                  telles que mesures et alarmes. Cette activité se limite à
-                  l\'observation et au suivi, sans intervenir directement
-                  sur les éléments surveillés, une prérogative qui
-                  appartient aux opérations d\'Administration
-  -------------------------------------------------------------------------
-
-## 4. Objet de la convention de service PaaS du Prestataire
+## Objet de la convention de service PaaS du Prestataire
 
 La présente Convention de Services établit les termes et conditions
 selon lesquels le Prestataire s\'engage à délivrer au COMMANDITAIRE une
@@ -258,7 +104,7 @@ Il convient de noter qu\'une modification ou un ajustement de la
 qualification SecNumCloud ne sera pas interprété comme une révocation de
 la qualification initiale.
 
-## 5. Evolution de la convention de service PaaS
+## Evolution de la convention de service PaaS
 
 Les modifications ou ajouts apportés à la présente convention de service
 découlent exclusivement des requêtes formulées par les organes de
@@ -284,7 +130,7 @@ sans s\'y limiter :
 La gestion des versions et des révisions de la convention est consignée
 en préambule du document pour en faciliter le suivi.
 
-## 6. Audit
+## Audit
 
 Le Prestataire s\'engage à permettre au COMMANDITAIRE, ou à tout
 auditeur tiers que ce dernier aurait désigné, de consulter l\'ensemble
@@ -310,7 +156,7 @@ COMMANDITAIRE confère son autorisation explicite à :
     mener à bien des audits de sécurité portant sur le Service délivré
     par le Prestataire.
 
-## 7. Description du service
+## Description du service
 
 L\'offre de services proposée par le Prestataire se caractérise par la
 mise à disposition des prestations suivantes, lesquelles s\'alignent sur
@@ -326,7 +172,7 @@ conformément à leurs Spécifications et en respectant les normes de sa
 certification ISO/IEC 27001 ainsi que les directives du Référentiel
 SecNumCloud.
 
-## 8. Mise en œuvre du service
+## Mise en œuvre du service
 
 Il est précisé que toutes les opérations et tous les composants
 physiques impliqués dans la fourniture du service qualifié, dont la
@@ -334,7 +180,7 @@ présente convention fait l'objet, sont situés dans l'Union Européenne.
 Cela inclut notamment le support, la supervision opérationnelle et la
 supervision de sécurité (SOC).
 
-### 8.1. Description des composants techniques
+### Description des composants techniques
 
 Les service PaaS (Platform as a Service) englobent l\'intégralité des
 composants et services requis pour son fonctionnement optimal dans le
@@ -343,15 +189,15 @@ respect de la qualification SecNumCloud.
 À cet égard, leur performance et fiabilité sont intrinsèquement liées
 aux composants techniques et aux services de **l\'infrastructure IaaS**
 du Prestataire, comme spécifié dans le document [Convention de Service
-IaaS](../Working%20in%20progress%20-%20not%20use/iaas/sla_iaas.md) du
+IaaS](../iaas/sla_iaas.md) du
 Prestataire.
 
-#### 8.1.1. Plateforme de service REDHAT OpenShift
+#### Plateforme de service REDHAT OpenShift
 
 Le service englobe la mise à disposition au sein d\'une région, sur 3
 zones de disponibilité,
 
-#### 8.1.2. Infrastructure logiciel de pilotage de la plateforme Redhat Openshift
+#### Infrastructure logiciel de pilotage de la plateforme Redhat Openshift
 
 Le Prestataire fournit au COMMANDITAIRE la console d\'administration et
 l\'API nécessaire à l\'exploitation de ses environnements PaaS RedHat
@@ -383,7 +229,7 @@ une par seconde (Throttling). Si le COMMANDITAIRE soumet des requêtes
 identiques à une fréquence supérieure, leur rejet ne doit pas être
 interprété comme une indisponibilité du service.
 
-#### 8.1.3. Infrastructure de sauvegarde associée
+#### Infrastructure de sauvegarde associée
 
 Le Prestataire met à disposition du COMMANDITAIRE une plateforme de
 sauvegarde intégrée, dédiée et gérée, destinée à la protection des
@@ -411,7 +257,7 @@ limiteront à la mise en œuvre des besoins exprimés par le COMMANDITAIRE
 en matière de politique de sauvegarde, dans le cadre des ressources
 souscrites.
 
-#### 8.1.4. Mise en œuvre de solutions de reprise d\'activité ou de continuité d\'activité
+#### Mise en œuvre de solutions de reprise d'activité ou de continuité d'activité
 
 Le Prestataire fournit au COMMANDITAIRE l\'ensemble des solutions
 techniques nécessaires pour garantir une répartition optimale de ses
@@ -425,7 +271,7 @@ OpenShift doivent prendre en charge les mécanismes de redondance
 proposés par le Prestataire afin de pouvoir bénéficier des solutions de
 reprise d\'activité ou de continuité d\'activité associées.
 
-## 9. Engagements et niveaux de services
+## Engagements et niveaux de services
 
 Le Prestataire s\'engage à garantir une surveillance continue de la
 performance et de l\'intégrité sécuritaire de ses plateformes et
@@ -444,7 +290,7 @@ supervision du Prestataire, soit par un retour utilisateur, assurant
 ainsi une reprise effective des opérations et une mesure fidèle de la
 durée de l\'interruption.
 
-### 9.1. Engagements de disponibilité de la plateforme RedHat OpenShift
+### Engagements de disponibilité de la plateforme RedHat OpenShift
 
 Le Prestataire s\'engage à maintenir un niveau de disponibilité et de
 performance conforme aux standards définis pour chaque période
@@ -487,9 +333,9 @@ COMMANDITAIRE. **Les mesures s\'entendent calculées mensuellement**:
     0.0.0.0/0), ainsi que les protocoles internes tels que **SMB** (port
     TCP/UDP 445) ou **NFS** (port TCP/UDP 2049).*
 
-## 10. Modèle de responsabilités partagées applicable
+## Modèle de responsabilités partagées applicable
 
-### 10.1. Responsabilité et Obligations du Prestataire
+### Responsabilité et Obligations du Prestataire
 
 Le Prestataire s\'engage à mettre à la disposition du COMMANDITAIRE des
 interfaces utilisateur en langue française et anglaise, facilitant ainsi
@@ -537,7 +383,7 @@ Le Prestataire s\'engage à informer le COMMANDITAIRE de tout changement
 à venir sur des éléments logiciels sous la responsabilité de Cloud
 Temple dès lors que la compatibilité complète ne peut être assurée.
 
-### 10.2. Limitation de responsabilité du Prestataire
+### Limitation de responsabilité du Prestataire
 
 La structure de responsabilité partagée réduit efficacement l\'étendue
 de l\'intervention du Prestataire aux aspects liés à la fourniture
@@ -563,7 +409,7 @@ Elle exclue notamment, mais sans s\'y limiter :
 - La sauvegarde des données au niveau applicatif,
 - La configuration des politiques de sauvegarde.
 
-### 10.3. Limitation d\'accès
+### Limitation d'accès
 
 Dans le cadre de cette convention de service, le Prestataire est
 formellement interdit d\'accéder aux tenants appartenant au
@@ -588,7 +434,7 @@ Cette mesure garantit le contrôle et la sécurité des données du
 COMMANDITAIRE, en s\'assurant que toute exception à la règle est dûment
 autorisée et documentée.
 
-## 11. Effacement des données en fin de contrat
+## Effacement des données en fin de contrat
 
 À l\'issue du contrat, qu\'il arrive à échéance ou qu\'il soit résilié
 pour quelque raison que ce soit, le Prestataire s\'engage à procéder à
@@ -602,7 +448,7 @@ cette notification.
 Pour attester de cette suppression, le Prestataire remettra au
 COMMANDITAIRE un certificat confirmant l\'effacement des données.
 
-## 12. Droit applicable
+## Droit applicable
 
 Le droit applicable pour la presente convention de service est le droit
 français.

@@ -3,6 +3,10 @@
     "message": "Siguiente",
     "description": "The label for version current"
   },
+  "sidebar.docSidebar.category.AdditionalContent": {
+    "message": "Contenido adicional",
+    "description": "Libellé pour la catégorie Contenu additionnel dans la barre latérale docSidebar"
+  },
   "sidebar.docSidebar.category.IAM": {
     "message": "IAM",
     "description": "The label for category IAM in sidebar docSidebar"
@@ -23,13 +27,17 @@
     "message": "IaaS OpenSource",
     "description": "The label for category IaaS OpenSource in sidebar docSidebar"
   },
-  "sidebar.docSidebar.category.IaaS by VMware": {
-    "message": "IaaS by VMware",
-    "description": "The label for category IaaS by VMware in sidebar docSidebar"
+  "sidebar.docSidebar.category.IaaS VMware": {
+    "message": "IaaS VMware",
+    "description": "The label for category IaaS VMware in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Tutorials": {
     "message": "Tutoriales",
     "description": "The label for category Tutorials in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.High Availability": {
+    "message": "Alta Disponibilidad",
+    "description": "The label for category High Availability in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Backup": {
     "message": "Respaldo",
@@ -38,6 +46,10 @@
   "sidebar.docSidebar.category.PaaS Openshift": {
     "message": "PaaS Openshift",
     "description": "The label for category PaaS Openshift in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Security": {
+    "message": "Seguridad",
+    "description": "The label for category Security in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Network": {
     "message": "Red",

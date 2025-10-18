@@ -1,187 +1,104 @@
 ---
-title: Allgemeine Verkaufs- und Nutzungsbedingungen (AVNB)
+title: Conditions Générales de Vente et Utilisation (CGVU)
 ---
 
-**Inhaltsverzeichnis**
-- [1. Rahmen](#X09af6387e1d2792b8edc09fc15abd136a837db5)
-- [2. Präambel](#X95f5a49ce2232622edafb4d282b365be9aa60c6)
-- [3. Definitionen](#X31b0d34b3711f9b12e76c2254c4efb43454053e)
-- [4. Zweck](#X6cbf86c27755c45da6fe8cf2ffb85cf5ac969a2)
-- [5. Allgemeine Bestimmungen](#Xe916e2c8dc91d280dd54f660184b7c68f730905)
-- [6. Bestellung der
-    Dienstleistungen](#X726505ed12598bf0395725645f700cf9881390b)
-  - [6.1. KUNDENKONTO](#Xa6f21c912e3c6c90db6dc23ab3fbc53b91395ad)
-  - [6.2. Aktivierung des
-        KUNDENKONTOS](#Xc9c2e6f53c31cd3699c5290f87faf6294229fb4)
-  - [6.3. Bestellung](#X46e06bbce0004ff78b342b604ddc8185c3b8c28)
-- [7. Vertragsdauer](#X22994bef2242f20259ca6d7a37a1f22845cc738)
-- [8. Umfang der
-    Dienstleistungen](#Xaf22d3a4bdf044e63e167702e8f42bf565757a5)
-- [9. Optionale Dienstleistungen](#X98940c117e0de1a509e0e37602fc39b081ab760)
-- [10. Nutzungsbedingungen der
-    Dienstleistungen](#Xd3f38a589bfb7ccc0f9f402aaeb5afd07cd4fd4)
-  - [10.1. Einhaltung der Dienstleistungsbedingungen](#Xf2145552b39fd0050fb4fedd8020785b2024f85)
-  - [10.2. Auswahl der
-        Dienstleistungen](#X90a17cc9e0f33015a7993730b7e003409f3ec78)
-  - [10.3. Verbindung](#Xc21984a083e130216be098de30f6c1f4ceae9d4)
-  - [10.4. Authentifizierungsmittel](#X48971bda881b21af9feb2cdcac70a97af59250b)
-  - [10.5. Inhalte](#Xa9698bbc45b482c0e3a687dd4d5c64e797ee950)
-  - [10.6. Einhaltung von Gesetzen, Vorschriften und ethischen
-        Regeln](#X5286f504ecb1a5336bdba1273060bf92e237c6e)
-  - [10.7. Dienstleistungsaussetzung](#X69b15bb7ec103c723c784184bc0aa74641f90a9)
-  - [10.8. Weiterentwicklung der
-        Dienstleistungen](#Xcb68e745ac44cea5d5e293b48415ae1c9bd95bb)
-  - [10.9. Geistiges Eigentum und Nutzungsrecht](#X9feab2d58ffacf660cd09c7478e4d2395258d81)
-  - [10.10. Exportkontrolle](#Xc87e8881391c8c2f9de35248d6550909d347440)
-  - [10.11. Drittprodukte](#Xbe72b1fb7b3a1f96902c52f15a6faafbc4c542c)
-  - [10.12. Dienstkontinuität und -umkehrbarkeit](#Xdea843d0835a09a5fc94ab8c7f534337ffb44cd)
-  - [10.13. Penetrationstest](#X1e5a22eb5f75767dde3b9268d2c0126ca9b6046)
-- [11. Zusammenarbeit](#X3e91da35bd647d680e0ada9980c9c6e21b4304f)
-- [12. Haftung](#X18dea78e62b2478833dd6b0d5a4a643c814d689)
-  - [12.1. Fähigkeit](#X9a873cb42a55326042124368e0e9b325014b41f)
-  - [12.2. Haftung des
-        Anbieters](#X3ed498cfaa1526cdaeb4596c17e227e6838c82b)
-  - [12.3. Haftung des
-        KUNDEN](#X61713926950a4a5b07e4d8e51981a439bb35775)
-  - [12.4. Garantie](#Xa68777faa87654fa8cdbea2dae3b039359bec35)
-  - [12.5. Dritte](#X1e3da7b2e01ecf52b7180e0382f49b9bfa96953)
-- [13. Höhere Gewalt](#Xbd1998a95e1281f5b2e34456f65831500e7777f)
-- [14. Finanzielle Bedingungen](#Xb608ecff8d8e06e3cc183e9204f7c608180e2ea)
-  - [14.1. Angewandte
-        Tarife](#X413b7ff7c8cb07ad4aa5a9620f2cbe02ab5629c)
-  - [14.2. Preisänderung](#X1d89095a6fb65869d20d60aad1f8fdfcfc7a960)
-  - [14.3. Rechnungsstellung](#X453f9f7d9c04d187ab470603e49cf07d8af5bf3)
-  - [14.4. Zahlungsverzug und -ausfall](#Xb6c6b08c304edae93fd7af7b60adf80ea04ec8c)
-  - [14.5. Beanstandung](#X635be4c898aac61cf513a85e4061e3786a937bd)
-- [15. Strafen](#X5e5b8465fbd4ee6798d8e0dce99cc38496ec909)
-  - [15.1. Prinzip](#X51c3a2b1f705e030f7f4b42a64dd1185ad06d90)
-  - [15.2. Berechnung der
-        Strafen](#Xaf3bf16557932c83dddecd7870b88b216373039)
-- [16. Kündigung](#Xc31fd02152596edd77e91d909cfe1ed97be407f)
-  - [16.1. Kündigung aus
-        Bequemlichkeit](#X4b00620ec0d9516776df563c25c1f6de321d25c)
-  - [16.2. Kündigung wegen Verstoß](#Xcfbac4c564ea7abb9567693026eaabe3a778468)
-  - [16.3. Kündigung ohne
-        Verschulden](#Xb88ab50e4db29ec7b87ee10ae925ad1d4abdc53)
-- [17. Umkehrbarkeit](#X5f4b87aa44285b480f94090ac846aeca7a7d4e9)
-- [18. Vertraulichkeit](#X5a32ce0bfe3b75c0a1bcda86779820b6c7a6709)
-- [19. Unterauftragsvergabe](#X77b7cfa5f8500f5f40b3510f7bc86f6f135a101)
-- [20. Vertragsübertragung](#Xbfa7c5cf04f837da0f2329aa808d9a42392b7de)
-- [21. Arbeitsrechtliche
-    Vorschriften](#X90b08ad7f78b144e0a50c3d68032fbc28cc38c9)
-- [22. Ethik und soziale
-    Verantwortung](#Xf36964be4c6d404d8271d6cf77b6adfc98bb16c)
-- [23. Geistiges Eigentum](#X64525e0d647cf0aea1ca9d95e6fd0042ec83927)
-- [24. Nichtabwerbung von
-    Personal](#X6ed1e0b4d56101422258bbb573368239efc6b3f)
-- [25. Unterscheidungsmerkmale der
-    Parteien](#Xe079096ffe8dcd428435a88408152507b8c8e53)
-- [26. Personenbezogene
-    Daten](#X9f8662e91d64a22d87f82ce3b1dc339c6951f51)
-- [27. Versicherung](#X651b2074f1a48055669f930db4345bbb1f39310)
-- [28. Zuständigkeit und anwendbares
-    Recht](#X6a1853454b81593f5b286633ac7ecc35a5857e3)
 
-## 1. Rahmen
+## Cadre
 
-  ------------------------ ----------------------------------------------
-  Referenz                CT.AM.JUR.CGVU 2.0
+| Référence | CT.AM.JUR.CGVU 2.0 |
+| :--- | :--- |
+| **Date** | 13 mars 2024 |
 
-  Datum                   13. März 2024
-  ------------------------ ----------------------------------------------
+## Préambule
 
-## 2. Präambel
+Les présentes Conditions Générales de Vente et d'Utilisation (ci-après
+désignées par l'acronyme « CGVU »), conjointement avec l'annexe
+intitulée Convention de Services, constituent un contrat (ci-après le «
+**Contrat** ») établi entre Cloud Temple, une Société par Actions
+Simplifiée réglementée par le droit français, dotée d'un capital social
+de 13 425 850 euros, enregistrée au Registre du Commerce et des Sociétés
+de Nanterre sous le numéro 825 400 336, dont le siège social est situé
+au *Belvédère 1 -- 7 cours Valmy Spaces, 92800 Puteaux, France*
+(ci-après désignée le « **Prestataire** »), et toute entité, qu'elle
+soit personne physique ou morale, agissant en qualité de consommateur ou
+de professionnel, de droit privé ou de droit public, ayant souscrit à
+une offre de fourniture d'Infrastructure-as-a-Service conforme au
+Référentiel SecNumCloud (ci-après désignée le « **CLIENT** »).
 
-Die vorliegenden Allgemeinen Verkaufs- und Nutzungsbedingungen (im
-Folgenden als „CGVU“ bezeichnet), in Verbindung mit dem Anhang
-betitelt „Dienstleistungsvertrag“, bilden einen Vertrag (im
-Folgenden der „**Vertrag**“) zwischen Cloud Temple, einer nach
-französischem Recht geregelten vereinfachten Aktiengesellschaft, mit einem
-Stammkapital von 13.425.850 Euro, eingetragen im Handels- und
-Gesellschaftsregister von Nanterre unter der Nummer 825 400 336, mit
-Sitz in *Belvédère 1 -- 7 cours Valmy Spaces, 92800 Puteaux, Frankreich*
-(im Folgenden der „**Dienstanbieter**“ genannt), und jeder
-Einheit, ob natürliche oder juristische Person, handelnd als
-Verbraucher oder Profi, privates oder öffentliches Recht, die ein
-Angebot zur Bereitstellung von Infrastructure-as-a-Service gemäß
-dem SecNumCloud-Referenzrahmen abonniert hat (im Folgenden der
-„**KUNDE**“ genannt), geschlossen haben.
+Aux fins du présent Contrat, le CLIENT et le Prestataire sont
+respectivement qualifiés de « Partie » lorsqu'ils sont mentionnés
+séparément et de « Parties » lorsqu'ils sont mentionnés conjointement.
+Il est précisé que les termes utilisés avec une majuscule dans le cadre
+du présent Contrat sont définis conformément aux dispositions de
+l'article 1, intitulé « Définitions ».
 
-Für die Zwecke dieses Vertrags werden der KUNDE und der Dienstanbieter
-jeweils als „Partei“ bezeichnet, wenn sie einzeln genannt werden,
-und als „Parteien“, wenn sie gemeinsam genannt werden. Es wird
-darauf hingewiesen, dass die im Rahmen dieses Vertrags mit einem
-Großbuchstaben versehenen Begriffe gemäß den Bestimmungen von Artikel
-1, betitelt „Definitionen“, definiert sind.
+Cette reformulation vise à clarifier et formaliser la portée et les
+parties prenantes du Contrat, tout en respectant les conventions et la
+précision requises dans le langage juridique.
 
-Diese Reformulierung zielt darauf ab, den Umfang und die Beteiligten des
-Vertrags zu klären und zu formalisieren, wobei die in der Rechtssprache
-erforderlichen Konventionen und die Präzision respektiert werden.
+**IL EST PRÉALABLEMENT RAPPELÉ CE QUI SUIT**
 
-**VORAB WIRD FOLGENDES ERINNERT**
+Le Prestataire se positionne en tant qu'opérateur spécialisé dans le
+domaine du Cloud Computing, offrant notamment des services
+d'Infrastructure en tant que Service (IaaS), de plateforme en tant que
+Service (PaaS) ainsi que des prestations de services professionnels
+(Professional Services).
 
-Der Dienstanbieter positioniert sich als spezialisierter Betreiber im
-Bereich Cloud Computing und bietet insbesondere Dienstleistungen als
-Infrastruktur als Dienstleistung (IaaS), Plattform als Dienstleistung
-(PaaS) sowie professionelle Dienstleistungen (Professional Services) an.
+L'ensemble des services proposés par Cloud Temple sont disponibles à
+l'échelle globale pour les clients qui souscrivent aux offres présentées
+sur leur plateforme en ligne, accessible à [l'adresse suivante](https://www.cloud-temple.com).
 
-Alle von Cloud Temple angebotenen Dienstleistungen sind weltweit für
-Kunden verfügbar, die die auf ihrer Online-Plattform angebotenen
-Angebote abonnieren, zugänglich unter [der folgenden Adresse](https://www.cloud-temple.com).
+En présence de discordances entre une ou plusieurs dispositions
+contenues dans les documents annexes, la primauté sera accordée au
+document hiérarchiquement supérieur. La version la plus récente et
+officiellement approuvée d'un document l'emporte sur toutes ses versions
+précédentes. Ainsi, en cas de divergence entre une ou plusieurs
+dispositions au sein d'un même document, c'est la version ultérieurement
+validée qui prévaudra.
 
-Bei Abweichungen zwischen einer oder mehreren Bestimmungen in den
-anhängenden Dokumenten hat das höherrangige Dokument Vorrang. Die
-neueste und offiziell genehmigte Version eines Dokuments hat Vorrang vor
-allen vorherigen Versionen. Somit gilt im Falle einer Abweichung
-zwischen einer oder mehreren Bestimmungen innerhalb eines
-Dokuments die später validierte Version.
+Le fait qu'une stipulation figurant dans un document de rang inférieur
+ne soit pas expressément mentionnée dans le document de rang supérieur
+ne lui fera pas perdre sa valeur juridique.
 
-Das Fehlen einer ausdrücklichen Erwähnung einer Klausel in einem
-untergeordneten Dokument im übergeordneten Dokument mindert nicht den
-rechtlichen Wert der Klausel.
+## Définitions
 
-## 3. Definitionen
+Les termes figurant ci-dessous auront pour les Parties les définitions
+suivantes. Chaque terme débutant par une majuscule ci-après a le sens
+qui lui est donné dans sa définition.
 
-Die unten aufgeführten Begriffe haben für die Parteien die folgenden
-Definitionen. Jeder im Folgenden mit einem Großbuchstaben beginnende
-Begriff hat die in seiner Definition angegebene Bedeutung.
-
-- **Zugang**: bezeichnet die Gesamtheit von Identifikationsdaten (Login,
-    Passwort, etc.), die dem KUNDEN die Authentifizierung ermöglichen,
-    bevor er Dienstleistungen konsumieren und steuern kann. Die
-    Zugänge sind auf ein bestimmtes Konto beschränkt und dürfen vom
-    KUNDEN nicht weitergegeben werden.
-- **Anhang**: bezeichnet jedes ergänzende Informationsdokument, das
-    dem Vertrag beigefügt ist.
-- **Bestellformular**: bezeichnet das Dokument, das digital sein kann,
-    vom KUNDEN unterschrieben oder validiert, sofern es sich um ein
-    digitales Formular handelt, in dem der KUNDE ein
-    Dienstleistungsangebot/ein Angebot annimmt oder ein Produkt bestellt;
-    es beschreibt die gegebenenfalls geltenden besonderen Bedingungen.
-    Dem Dienstanbieter dürfen keine Verpflichtungen auferlegt werden,
-    professionelle Dienstleistungen oder auf Angebot basierende
-    Dienstleistungen ohne ein formalisiertes und vom KUNDEN
-    unterschriebenes und dann vom Dienstanbieter akzeptiertes Bestellformular
-    zu erbringen.
-- **Kunde**: bezeichnet jede juristische Person, die IAAS-Dienstleistungen
-    konsumieren wird. Der KUNDE verpflichtet sich, alle erforderlichen
-    Informationen (einschließlich E-Mail, Identität, Kontaktdaten,
-    Bankinformationen, etc.) bereitzustellen und sicherzustellen, dass
-    alle bereitgestellten Informationen während der gesamten
-    Vertragslaufzeit korrekt und aktuell sind. Wenn das KUNDENKONTO von
-    einer Person verwendet wird, die im Namen und im Auftrag des KUNDEN
-    handelt, erklärt und garantiert diese Person dem Dienstanbieter die
-    notwendige Macht und Fähigkeit, den KUNDEN zu vertreten und zu
-    verpflichten, unter den im Vertrag vorgesehenen Bedingungen.
-- **Cloud Computing**: bezeichnet die Bereitstellung von
-    Speicher-, Rechen-, Speicher- und Netzwerkressourcen für den KUNDEN
-    durch vernetzte Server. Diese Server und die zugrunde liegende
-    Infrastruktur werden vom Dienstanbieter transparent für den KUNDEN
-    betrieben und gewartet.
-- **Kundenkonto**: Ein Konto ermöglicht es dem KUNDEN, Dienstleistungen
-    zu konsumieren, nachdem er den mit diesem Konto verbundenen Vertrag
-    (durch Annahme der vorliegenden CGVU) akzeptiert hat. Der
-    Dienstanbieter öffnet ein
+- **Accès** : désigne l'ensemble d'identifiants (login, mot de passe,
+    etc.), permettant au CLIENT de s'authentifier avant de pouvoir
+    consommer et piloter des Prestations. Les Accès sont dédiés à un
+    compte précis et ne doivent pas être partagées par le CLIENT.
+- **Annexe** : désigne tout document d'information complémentaire
+    adjoint au Contrat.
+- **Bon de Commande** : désigne le document, pouvant être
+    dématérialisé, signé ou validé lorsqu'il s'agit d'un formulaire
+    dématérialisé, par le CLIENT aux termes duquel ce dernier accepte
+    une proposition de service/un devis ou commande un produit ; il
+    décrit les Conditions Particulières applicables s'il y a lieu.
+    Aucune obligation d'aucune sorte ne saurait peser sur le Prestataire
+    pour la réalisation de Services Professionnels ou la fourniture de
+    Prestations sur devis sans un Bon de Commande formalisé signé par le
+    CLIENT et ensuite accepté par le Prestataire.
+- **Client** : désigne toute personne morale qui sera consommateur du
+    service IAAS. Le CLIENT s'engage à fournir toutes les informations
+    requises (notamment courriel, identité, coordonnées, informations
+    bancaires, etc.) et s'engage à ce que l'ensemble des informations
+    ainsi fournies soient exactes et mises à jour pendant toute la durée
+    du Contrat. Lorsque le Compte CLIENT est utilisé par une personne
+    agissant au nom et pour le compte du CLIENT, elle déclare et
+    garantit au Prestataire le pouvoir et la capacité nécessaire pour
+    représenter et engager le CLIENT dans les conditions prévues au
+    Contrat.
+- **Cloud Computing** (informatique dans les nuages) : désigne la mise
+    à disposition du CLIENT de ressources mémoires, calculs, stockage et
+    réseau fournies par des serveurs en réseaux. Lesdits serveurs, ainsi
+    que l'Infrastructure sous-jacente, sont opérés et maintenus par le
+    Prestataire de manière transparente pour le CLIENT.
+- **Compte Client** : un Compte permet au CLIENT, une fois qu'il a
+    accepté le Contrat associé à ce Compte (en acceptant les présentes
+    CGVU), de consommer des Prestations. le Prestataire n'ouvre un
     Compte au CLIENT qu'après fourniture par ce dernier (i)de l'adresse
     email qui servira d'identifiant à ce Compte (c'est là que le
     Prestataire adressera les notifications relatives au Contrat associé
@@ -282,86 +199,84 @@ Begriff hat die in seiner Definition angegebene Bedeutung.
     évaluer et tarifer l'utilisation de ressources informatiques, basée
     sur la consommation ou la performance.
 
-## 4. Objekt
+## Objet
 
-Der vorliegende Vertrag zielt darauf ab, die Bedingungen festzulegen,
-unter denen der Dienstleister sich verpflichtet, dem KUNDEN die
-definierten Dienste bereitzustellen, indem er den Anwendungsbereich, die
-Bedingungen für die Ausführung der Dienstleistungen und die damit
-verbundenen finanziellen Modalitäten präzisiert. Der KUNDE verpflichtet
-sich in diesem Vertrag in eigenem Namen und auf eigene Rechnung.
+Le présent Contrat vise à établir les termes et conditions selon
+lesquels le Prestataire s'engage à fournir au CLIENT les Services
+définis, en précisant le champ d'application, les modalités d'exécution
+des Prestations, ainsi que les modalités financières associées. Le
+CLIENT s'engage dans ce contrat en son nom propre et pour son compte.
 
-Die Zustimmung des KUNDEN zu diesem Vertrag impliziert eine vorbehaltlose
-Annahme der Allgemeinen Verkaufs- und Nutzungsbedingungen (CGVU), die
-der KUNDE zuvor konsultiert, verstanden und in ihrer Gesamtheit
-akzeptiert hat. Obwohl der KUNDE in der Eigenschaft eines
-Fachleutes tätig ist, wird ihm dringend empfohlen, vor der Annahme der
-vorliegenden Bedingungen die Expertise eines Spezialisten für
-Informatik und Netzwerke in Anspruch zu nehmen. Dieser Schritt ist
-wesentlich, um eine fundierte Entscheidung bezüglich der technischen
-Aspekte des Vertrags zu gewährleisten, insbesondere in Bezug auf die
-Auswahl der angebotenen Leistungsmerkmale und die Bestimmung der
-erforderlichen Ressourcen zur Befriedigung seiner spezifischen Bedürfnisse.
+L'adhésion du CLIENT à ce contrat implique une acceptation sans réserve
+des Conditions Générales de Vente et d'Utilisation (CGVU), que le CLIENT
+déclare avoir préalablement consultées, comprises et acceptées dans leur
+intégralité. Bien que le CLIENT opère en qualité de professionnel, il
+lui est vivement recommandé de solliciter l'expertise d'un spécialiste
+en informatique et réseaux avant de procéder à l'acceptation des
+présentes conditions. Cette démarche est essentielle pour garantir une
+décision éclairée concernant les aspects techniques du Contrat,
+notamment en ce qui concerne la sélection des caractéristiques des
+unités d'œuvre proposées et la détermination des ressources nécessaires
+à la satisfaction de ses besoins spécifiques.
 
-## 5. Allgemeine Bestimmungen
+## Disposition générale
 
-Jede Partei verpflichtet sich, keine Verpflichtungen im Namen und für
-Rechnung der anderen Partei einzugehen. Die Parteien tragen
-individuell die Verantwortung für ihre Handlungen, Erklärungen,
-Verpflichtungen, Dienstleistungen, Produkte und die Handlungen ihres
-Personals.
+Chaque Partie s'engage à ne pas prendre d'engagements au nom et pour le
+compte de l'autre Partie. Les Parties restent individuellement
+responsables de leurs actions, déclarations, engagements, services,
+produits et des actions de leur personnel.
 
-Für den Fall, dass eine Klausel des Vertrags gemäß dem geltenden Recht
-oder einer rechtskräftigen gerichtlichen Entscheidung unwirksam ist,
-wird diese Klausel als nicht geschrieben betrachtet. Diese Ungültigkeit
-beeinträchtigt nicht die gesamte Gültigkeit des Vertrags oder die
-Wirksamkeit der anderen Klauseln.
+Dans l'éventualité où une disposition du Contrat se révèle invalide en
+vertu de la législation applicable ou d'une décision de justice
+irrévocable, cette disposition sera considérée comme non écrite. Cette
+invalidité n'affectera pas la validité globale du Contrat ni la force
+des autres dispositions.
 
-## 6. Bestellung der Dienste
+## Commande des services
 
-### 6.1. KUNDENKONTO
+### Compte CLIENT
 
-Um auf die vom Dienstleister angebotenen Dienste zuzugreifen und sie zu
-bestellen, muss der KUNDE über ein gültiges **KUNDENKONTO** verfügen.
-Im Rahmen der Erstellung und Verwaltung dieses Kontos verpflichtet sich
-der KUNDE, dem Dienstleister alle für die ordnungsgemäße Ausführung des
-Vertrags erforderlichen Daten bereitzustellen. Diese Daten umfassen
-unter anderem die Email-Adresse, Identifikations- und Kontaktinformationen
-sowie die relevanten Bankdaten. Der KUNDE garantiert die Genauigkeit,
-Zuverlässigkeit und Aktualität dieser Informationen für die gesamte
-Laufzeit des Vertrags.
+Pour accéder et commander les Services proposés par le Prestataire, il
+est impératif pour le CLIENT de posséder un **Compte CLIENT** valide.
+Dans le cadre de la création et de la gestion de ce compte, le CLIENT
+s'engage à fournir au Prestataire toutes les données nécessaires à la
+bonne exécution du contrat. Ces données incluent, sans s'y limiter,
+l'adresse courriel, les informations d'identité et de contact, ainsi que
+les détails bancaires pertinents. Le CLIENT garantit l'exactitude, la
+fiabilité et la mise à jour de ces informations pour toute la durée du
+Contrat.
 
-Für den Fall, dass das KUNDENKONTO von einem Dritten im Namen des KUNDEN
-eingerichtet oder verwaltet wird, muss dieser Dritte dem Dienstleister
-bestätigen und zusichern, dass er über die erforderliche rechtliche
-Befugnis und Fähigkeit verfügt, im Namen des KUNDEN zu handeln und ihn
-gemäß den Bestimmungen eines Vertrags zu binden.
+Dans l'éventualité où le Compte CLIENT serait établi ou administré par
+un tiers agissant en représentation du CLIENT, ce tiers doit attester et
+assurer au Prestataire qu'il détient l'autorité et la capacité
+juridiques nécessaires pour agir au nom du CLIENT et l'engager
+conformément aux dispositions d'un contrat.
 
-### 6.2. Aktivierung des KUNDENKONTOS
+### Activation du compte CLIENT
 
-Vor der Aktivierung des KUNDENKONTOS sowie zu jedem Zeitpunkt während
-der Dienstleistungserbringung behält sich der Dienstleister das Recht
-vor, die Richtigkeit der vom KUNDEN bereitgestellten Informationen
-zu überprüfen. Diese Überprüfung kann die Anforderung unterstützender
-Dokumente zur Bestätigung der bereitgestellten Informationen umfassen.
-Der Dienstleister hat auch das Recht, die Aktivierung abzulehnen oder
-das KUNDENKONTO zu deaktivieren, wenn die Informationen als unvollständig,
-unrichtig oder betrügerisch erachtet werden.
+Avant l'activation du Compte CLIENT, ainsi qu'à tout moment durant la
+prestation de services, le Prestataire se réserve le droit de vérifier
+l'exactitude des informations fournies par le CLIENT ou en son nom.
+Cette vérification peut inclure la demande de documents justificatifs à
+l'appui des informations communiquées. Le Prestataire détient également
+le droit de refuser l'activation ou de procéder à la désactivation du
+Compte CLIENT dans le cas où les informations seraient jugées
+incomplètes, inexactes, ou frauduleuses.
 
-### 6.3. Bestellung
+### Commande
 
-Nach der Aktivierung seines KUNDENKONTOS durch den Dienstleister
-hat der KUNDE die Möglichkeit, Dienste zu bestellen. Je nach Art der
-angeforderten Dienste können Bestellungen über die dem KUNDEN
-dedizierte Verwaltungsoberfläche durchgeführt werden. Der KUNDE
-übernimmt die volle Verantwortung für die Verwaltung seines
-KUNDENKONTOS, einschließlich der Sicherung der zugehörigen
-Authentifizierungsmittel (Kennungen, Passwörter usw.).
+Dès l'activation de son Compte CLIENT par le Prestataire, le CLIENT
+acquiert la possibilité de commander des Services. Selon la nature des
+Services sollicités, les commandes peuvent être effectuées via
+l'Interface de Gestion dédiée au CLIENT. Ce dernier assume l'entière
+responsabilité de la gestion de son Compte CLIENT, incluant la
+sécurisation des moyens d'authentification (identifiants, mots de passe,
+etc.) qui lui sont associés.
 
-Jede von dem KUNDENKONTO ausgehende Bestellung wird so behandelt, als ob
-sie vom KUNDEN selbst getätigt wurde, und bedeutet seine vollständige
-Zustimmung zu den Vertragsbedingungen. Die Modalitäten und Fristen für
-die Bereitstellung der bestellten Dienste variieren je nach Art des Diensts.
+Toute commande passée depuis le Compte CLIENT est considérée comme ayant
+été effectuée par le CLIENT lui-même, et emporte son adhésion pleine et
+entière aux termes du Contrat. Les modalités et délais de mise à
+disposition des Services commandés varient selon le type de Service
 requis. Certains Services ne seront disponibles qu'après que le
 Prestataire aura reçu le paiement intégral du CLIENT. Il incombe donc au
 CLIENT de vérifier que les conditions de fourniture des Services
@@ -376,194 +291,193 @@ techniquement les Prestations, ne sauraient contredire les principes
 précision technique sans remettre en cause les dispositions générales du
 document.
 
-## 7. Laufzeit des Vertrags
+## Durée du contrat
 
-Die unter diesen Allgemeinen Verkaufs- und Nutzungsbedingungen (AVNB)
-abgeschlossenen Verträge werden auf unbestimmte Zeit geschlossen, es sei
-denn, im Einzelfall wurde ausdrücklich eine bestimmte Laufzeit gemäß den
-Besonderen Bedingungen vereinbart.
+Les contrats établis sous ces Conditions Générales de Vente et
+d'Utilisation (CGVU) sont conclus pour une durée indéterminée, sauf
+disposition contraire stipulée dans les Conditions Particulières qui
+prévoiraient une durée déterminée.
 
-Die Kündigung des Vertrags ist nur unter Einhaltung der Modalitäten
-möglich, die im Artikel "Kündigung" spezifiziert sind. Vor jeder
-Kündigung muss der KUNDE sicherstellen, dass er alle seine im Rahmen der
-betroffenen Verträge gespeicherten Daten gemäß den Bestimmungen des
-Artikels „Datenwiederherstellung und -löschung“ vollständig abgerufen hat.
+La résiliation du Contrat est uniquement possible en respectant les
+modalités spécifiées à l'article "Résiliation". Avant toute résiliation,
+le CLIENT doit s'assurer de la récupération intégrale de ses données qui
+étaient stockées dans le cadre des Contrat(s) concerné(s), conformément
+aux dispositions de l'article relatif à la « Récupération et effacement
+des Données ».
 
-Das Ende des Vertrags, unabhängig davon, ob es vom Dienstleister oder
-vom KUNDEN initiiert wurde, entbindet letzteren nicht von der
-Verpflichtung zur Begleichung der Kosten für bereits erbrachte
-Dienstleistungen.
+La cessation du Contrat, que l'initiative provienne du Prestataire ou du
+CLIENT, n'exonère pas ce dernier de l'obligation de s'acquitter des
+coûts relatifs aux Prestations déjà fournies.
 
-## 8. Leistungsumfang
+## Périmètre des services
 
-Der Leistungsumfang umfasst insbesondere:
+Le périmètre des services englobe spécifiquement :
 
-- Die Implementierung der Dienste gemäß dem Bestellschein,
-- Die Bereitstellung von Infrastrukturdiensten,
-- Die zusätzliche Erbringung von Umstellungsdiensten.
+- L'implémentation des services conformément au bon de commande,
+- La provision de services d'infrastructure,
+- La prestation additionnelle de services de Réversibilité.
 
-Der Zugang zu diesen Diensten und deren Nutzung unterliegen den im
-vorliegenden Vertrag festgelegten Bedingungen, einschließlich aller
-zugehörigen Anhänge.
+L'accès à ces services, ainsi que leur utilisation, sont soumis aux
+termes et conditions établis dans le présent Contrat, y compris toutes
+ses annexes associées.
 
-## 9. Optionale Dienste
+## Services optionnels
 
-Falls bestimmte optionale Dienste nicht im Vertrag enthalten sind, hat
-der KUNDE die Möglichkeit, diese nachträglich zu abonnieren. Die
-Erbringung jeglicher optionaler Dienste durch den Dienstleister
-unterliegt der vorherigen Zustimmung der Parteien nach einer gemeinsamen
-Bewertung.
+Dans le cas où certains Services optionnels n'auraient pas été
+initialement inclus dans le Contrat, le CLIENT a la possibilité de les
+souscrire ultérieurement. La fourniture de tout Service optionnel par le
+Prestataire est conditionnée à l'accord préalable des parties suite à
+une évaluation concertée.
 
-## 10. Nutzungsbedingungen der Dienste
+## Conditions d'utilisation des services
 
-### 10.1. Einhaltung der Nutzungsbedingungen
+### Respect des conditions de service
 
-Der KUNDE verpflichtet sich, die Dienste zu bestellen und zu nutzen,
-indem er die geltenden Nutzungsbedingungen sorgfältig einhält. Die
-Nutzung der Dienste muss verantwortungsvoll erfolgen. Insbesondere
-verpflichtet sich der KUNDE, sich mit den geltenden Allgemeinen
-Verkaufs- und Nutzungsbedingungen (AVNB) vertraut zu machen und alle
-ihm zum Zeitpunkt der Bestellung bereitgestellten Anweisungen zu
-befolgen.
+Le CLIENT s'oblige à passer commande et à utiliser les Services en
+respectant scrupuleusement les conditions d'utilisation applicables.
+L'utilisation des Services doit se faire de manière responsable. En
+particulier, le CLIENT s'engage à se familiariser avec les Conditions
+Générales de Vente et d'Utilisation (CGVU) en vigueur et à respecter
+toutes les directives qui lui sont fournies au moment de la commande.
 
-Wenn der KUNDE die Dienste im Namen Dritter nutzt oder Dritten den
-Zugang zu den Diensten ermöglicht, ist er dazu verpflichtet, ihnen die
-aktuellen Nutzungsbedingungen vor jeglicher Nutzung zur Kenntnis zu
-bringen und deren Einhaltung sicherzustellen. Der KUNDE gewährleistet
-dem Dienstleister die vollständige Einhaltung dieser Bedingungen durch
-die beteiligten Dritten.
+Lorsque le CLIENT utilise les Services pour le compte de tiers ou permet
+à des tiers d'accéder aux Services, il est tenu, avant toute utilisation
+par ces derniers, de leur faire connaître et accepter les conditions
+d'utilisation actuelles. Le CLIENT assure ainsi le Prestataire du
+respect intégral de ces conditions par les tiers concernés.
 
-### 10.2. Auswahl der Dienste
+### Choix des services
 
-Vor der Bestellung und Nutzung der Dienste verpflichtet sich der KUNDE,
-die aktuellen Nutzungsbedingungen sorgfältig zu prüfen, sowie die
-gesamte Dokumentation, Konfigurationen, Optionen und Dienstleistungspakete
-im Detail zu analysieren, um Dienste und Merkmale auszuwählen, die
-genau seinen Bedürfnissen und denen der Dritten entsprechen, die die
-Dienste in seinem Namen oder für ihn nutzen.
+Avant de procéder à la commande et à l'utilisation des Services, le
+CLIENT s'engage à examiner attentivement les Conditions d'utilisation
+actuelles, ainsi qu'à analyser en détail l'ensemble des documentations,
+configurations, options, et gammes de services proposées, ceci dans le
+but de choisir des Services et des caractéristiques qui correspondent
+précisément à ses besoins et à ceux des tiers utilisant les Services en
+son nom ou pour son compte.
 
-Der KUNDE sorgt insbesondere dafür, dass die ausgewählten Dienste im
-Einklang mit den gesetzlichen und regulatorischen Verpflichtungen stehen,
-die sich aus den über die Dienste durchgeführten Aktivitäten ergeben.
-Für alle Informationsanfragen zu den Diensten wird der KUNDE gebeten,
-Kontakt mit dem Dienstleister aufzunehmen. Es liegt in der
-Verantwortung des KUNDEN, sich über Änderungen, insbesondere bei der
-Erstellung neuer Bestellungen, zu informieren.
+Le CLIENT veille particulièrement à ce que les Services sélectionnés
+soient conformes aux obligations légales et réglementaires inhérentes
+aux activités menées via l'utilisation des Services. Pour toute demande
+d'information relative aux Services, le CLIENT est invité à prendre
+contact avec le Prestataire. Il est de la responsabilité du CLIENT de se
+tenir informé des modifications susceptibles d'intervenir, notamment
+lors de l'émission de nouvelles Commandes.
 
-### 10.3. Verbindung
+### Connexion
 
-Der Zugang zu den Diensten erfordert, dass der KUNDE auf eigene Kosten
-und auf eigene Verantwortung über eine geeignete Fernverbindung
-(vergleichbar mit einer Internetverbindung oder einem privaten Netzwerk)
-verfügt. Es wird dem KUNDEN zur Kenntnis gebracht, dass das Internet
-technischen Schwankungen unterliegen und Sicherheitsrisiken bergen kann,
-die den technischen Maßnahmen des Dienstleisters im Rahmen der Dienste
-entziehen.
+L'accès aux Services requiert que le CLIENT dispose, à ses propres frais
+et sous sa responsabilité, d'une connexion à distance adéquate (telle
+qu'une connexion Internet ou un réseau privé). Il est porté à la
+connaissance du CLIENT que le réseau Internet peut subir des aléas
+techniques et présenter des risques de sécurité qui échappent aux
+mesures techniques déployées par le Prestataire dans le cadre des
+Services.
 
-Der Dienstleister kann nicht für Fehlfunktionen verantwortlich gemacht
-werden, die auf Internetdienstanbieter oder andere Netzbetreiber
-zurückzuführen sind (einschließlich, aber nicht beschränkt auf,
-Zuverlässigkeitsprobleme der Verbindungen, Bandbreitenschwankungen,
-Dienstunterbrechungen usw.) sowie für die möglichen Folgen dieser
-Fehlfunktionen, insbesondere wenn sie zu einer Nichtverfügbarkeit oder
-Unterbrechung der Dienste führen.
+Le Prestataire ne peut être tenu responsable des dysfonctionnements
+attribuables aux fournisseurs d'accès Internet ou à tout autre opérateur
+de réseau tiers (incluant, sans s'y limiter, les problèmes de fiabilité
+des connexions, les variations de bande passante, les interruptions de
+service, etc.), ni des répercussions éventuelles de ces
+dysfonctionnements, en particulier lorsqu'ils conduisent à une
+indisponibilité ou à une interruption des Services.
 
-### 10.4. Authentifizierungsmittel
+### Moyens d'authentification
 
-Der KUNDE übernimmt die volle Verantwortung für die Verwaltung und den
-Erhalt der Vertraulichkeit der notwendigen Kennungen und Passwörter für
-den Zugang und die Nutzung der Dienste. Er muss sicherstellen, dass die
-autorisierten Benutzer umfassend informiert sind und die besten
-Sicherheitspraktiken einhalten, um die Vertraulichkeit ihrer
-Authentifizierungsmittel zu wahren. Der KUNDE ist allein für die
-Konsequenzen verantwortlich, die sich aus dem Verlust, der
-Offenlegung oder dem Missbrauch oder unbefugten Gebrauch der den
-Benutzern zugewiesenen Authentifizierungsmittel ergeben.
+Le CLIENT assume l'entière responsabilité de la gestion et du maintien
+de la confidentialité des identifiants et mots de passe nécessaires pour
+accéder et utiliser les Services. Il doit veiller à ce que les
+utilisateurs autorisés soient pleinement informés et respectent les
+meilleures pratiques en matière de sécurité pour préserver la
+confidentialité de leurs moyens d'authentification. Le CLIENT est le
+seul responsable des conséquences découlant de la perte, de la
+divulgation ou de l'utilisation abusive ou non autorisée des moyens
+d'authentification attribués aux utilisateurs.
 
-In keinem Fall kann der Dienstleister für solche Vorfälle haftbar
-gemacht werden. Der KUNDE verpflichtet sich, den Dienstleister
-unverzüglich im Falle eines Verlusts oder des vermuteten Missbrauchs der
-Authentifizierungsmittel zu benachrichtigen und sofort die Verfahren zum
-Ersatz oder zur Rücksetzung dieser Mittel einzuleiten.
+En aucun cas, la responsabilité du Prestataire ne saurait être engagée
+pour de tels incidents. Le CLIENT s'engage à notifier sans délai le
+Prestataire en cas de perte ou de divulgation suspectée des moyens
+d'authentification, et à initier immédiatement les procédures de
+remplacement ou de réinitialisation de ces moyens.
 
-### 10.5. Inhalte
+### Contenus
 
-Der Dienstleister beteiligt sich nicht aktiv an der Verwaltung der
-Inhalte des KUNDEN und entzieht sich jeglichem Zugang zu diesen
-Inhalten, es sei denn, dies ist strikt erforderlich für die Erbringung
-der Dienste. Somit führt der Dienstleister keine Überprüfung,
-Validierung oder Aktualisierung der genannten Inhalte durch.
+Dans le respect des dispositions fournies par le Prestataire, ce dernier
+ne participe pas activement à la gestion des contenus du CLIENT et
+s'abstient de tout accès à ces contenus, sauf dans le strict cadre
+nécessaire à la fourniture des Services. Ainsi, le Prestataire ne
+procède à aucune vérification, validation ou mise à jour des contenus
+mentionnés.
 
-Ebenso sorgt er nicht für eine spezielle Sicherung der über die Dienste
-gespeicherten Inhalte. Daher obliegt es dem KUNDEN, geeignete Maßnahmen
-für die Sicherung seiner Inhalte zu treffen, um sich gegen jegliche
-Verlustrisiken oder Verschlechterungen, unabhängig von der Ursache,
-zu schützen, insbesondere durch die Nutzung der im Katalog des
-Dienstleisters verfügbaren Arbeitseinheiten.
+De la même manière, il n'assure pas de sauvegarde dédiée des contenus
+stockés via les Services. Il incombe donc au CLIENT de prendre les
+dispositions adéquates pour la sauvegarde de ses contenus, afin de se
+protéger contre tout risque de perte ou de détérioration, quelle qu'en
+soit la raison, notamment via l'usage des unités d'œuvre appropriées
+dans le catalogue du Prestataire.
 
-Die verwalteten Inhalte müssen legal sein und im Einklang mit den
-besten Praktiken sowie den geltenden Gesetzen und Vorschriften
-verwendet werden. Die Verwendung illegaler Inhalte (wie die Verbreitung,
-Veröffentlichung, Speicherung oder Übertragung von Inhalten, die
-Verbrechen verherrlichen, zu Hass oder Gewalt gegen Einzelpersonen
-aufgrund ihres Geschlechts, ihrer Religion, ihrer sexuellen Orientierung
-oder Identität, oder ihrer Behinderung aufrufen oder die
-geistigen Eigentumsrechte Dritter verletzen) ist strengstens verboten.
+Les contenus gérés doivent être légaux et utilisés dans le respect des
+bonnes pratiques, ainsi que des lois et réglementations applicables.
+L'utilisation de contenus illicites (tels que la diffusion, la
+publication, le stockage ou la transmission de contenus faisant
+l'apologie de crimes, incitant à la haine ou à la violence contre des
+individus en raison de leur sexe, religion, orientation ou identité
+sexuelle, ou handicap, ou violant les droits de propriété intellectuelle
+d'autrui) est strictement interdite.
 
-Jeglicher Verstoß gegen diese Regeln kann nach Ermessen des
-Dienstleisters zur sofortigen Aussetzung der Dienste, zur Deaktivierung
-des Kontos des KUNDEN oder sogar zur Kündigung des Vertrags mit
-alleinigem Verschulden des KUNDEN führen. Dies gilt unbeschadet des
-Rechts des Dienstleisters, rechtliche Schritte einzuleiten oder
-Schadensersatzansprüche für erlittene Schäden geltend zu machen.
+Tout manquement à ces règles peut entraîner, à la discrétion du
+Prestataire, la suspension immédiate des Services, la désactivation du
+compte du CLIENT, voire la résiliation du Contrat aux torts exclusifs du
+CLIENT. Cela sans préjudice du droit du Prestataire à engager des
+poursuites judiciaires ou à réclamer des dommages-intérêts pour
+préjudice subi.
 
-### 10.6. Einhaltung von Gesetzen, Vorschriften und ethischen Richtlinien
+### Respect des lois, réglementations et règles déontologiques
 
-Die Dienste müssen verantwortungsvoll im Einklang mit den geltenden
-Gesetzen und Vorschriften genutzt werden. Die Parteien einigen sich
-darauf, auf gesetzliche und regulatorische Änderungen zu achten.
-Folgende Praktiken sind ausdrücklich untersagt, obwohl diese Liste nicht
-erschöpfend ist:
+Les Services doivent être utilisés de manière responsable, en conformité
+avec les lois et réglementations applicables. Les Parties conviennent de
+rester attentives aux changements législatifs et réglementaires. Sont
+expressément interdites les pratiques suivantes, bien que cette
+énumération ne soit pas exhaustive :
 
-1. Missbräuchliche oder betrügerische Nutzung der bereitgestellten
-    Dienste und Ressourcen, die die Stabilität und Sicherheit der
-    Systeme des Dienstleisters gefährden und die Qualität der
-    zu erbringenden Dienste für andere Nutzer beeinträchtigen können;
-2. Versuche, über die Dienste einzudringen oder zu attackieren,
-    einschließlich, aber nicht beschränkt auf Port-Scans, heimliche
-    Abhörversuche, Spoofing sowie jegliche Form von Angriffen, die von
-    den bereitgestellten Ressourcen ausgehen, mit Ausnahme von
-    Sicherheitstests, die zuvor vom Dienstleister genehmigt wurden;
-3. Jegliche Form von SPAM oder ähnliche Spam-Praktiken;
-4. Verwendung illegaler oder verbotener Inhalte, wie zuvor im Abschnitt
-    „Inhalte“ beschrieben.
+1. les usages abusifs ou frauduleux des Services et des ressources
+    fournies, susceptibles de compromettre la stabilité et la sécurité
+    des systèmes du Prestataire, pouvant affecter la qualité des
+    Services offerts aux autres utilisateurs ;
+2. les tentatives d'intrusion ou d'attaque via les Services incluant,
+    mais sans s'y limiter, le balayage de ports, l'écoute clandestine,
+    le spoofing, ainsi que toute forme d'attaque émanant des ressources
+    fournies, à l'exception des tests d'intrusion préalablement
+    autorisés par le Prestataire ;
+3. toute forme de SPAM ou pratiques similaires de « spamming » ;
+4. l'utilisation de contenus illicites ou interdits, tels que décrits
+    précédemment dans la section « Contenus ».
 
-### 10.7. Dienstunterbrechung
+### Suspension de service
 
-Der Dienstleister behält sich das Recht vor, die Dienste vorübergehend
-oder vollständig auszusetzen im Falle von:
+Le Prestataire se réserve le droit de suspendre temporairement ou
+totalement les Services en cas de :
 
-1. einer tatsächlichen Bedrohung der Sicherheit oder Stabilität der
-    Systeme des Dienstleisters, der Dienste oder der Daten des KUNDEN;
-2. geplanten Wartungsarbeiten;
-3. Anforderungen von Justiz- oder Verwaltungsbehörden;
-4. Alarmen gemäß Artikel 6 des Gesetzes für Vertrauen in die
-    digitale Wirtschaft (LCEN);
-5. Verstößen gegen die im Vertrag festgelegten Nutzungsbedingungen.
+1. menace réelle pour la sécurité ou la stabilité des systèmes du
+    Prestataire, des Services, ou des données CLIENT ;
+2. mise en œuvre des opérations de maintenance prévues ;
+3. requêtes d'autorités judiciaires ou administratives ;
+4. alertes reçues conformément à l'article 6 de la Loi pour la
+    Confiance dans l'Économie Numérique (LCEN) ;
+5. violation des conditions d'utilisation établies par le Contrat.
 
-Diese Aussetzung kann bei kritischen Situationen oder um einem
-illegalen oder betrügerischen Gebrauch der Dienste, einer Verletzung der
-Rechte Dritter oder jeglicher Handlung, die eine Haftung des
-Dienstleisters nach sich ziehen könnte, vorzubeugen, sofort und ohne
-vorherige Ankündigung erfolgen. Der Dienstleister bemüht sich, soweit
-möglich und außer bei rechtlichen Notwendigkeiten oder Verstößen gegen
-die Nutzungsbedingungen, die Auswirkungen einer solchen Aussetzung auf
-den regulären Dienst zu minimieren. Solche Aussetzungen entbinden den
-KUNDEN jedoch nicht von seiner Verpflichtung zur Zahlung der
-vertraglich geschuldeten Beträge. Der KUNDE wird über geplante
-Wartungsarbeiten über eine dedizierte Schnittstelle informiert.
+Cette suspension peut être immédiate, sans préavis, en cas de situation
+critique ou pour prévenir un usage illicite ou frauduleux des Services,
+une infraction aux droits de tiers, ou tout acte susceptible d'engager
+la responsabilité du Prestataire. Le Prestataire s'efforce, dans la
+mesure du possible et sauf en cas de nécessité légale ou de violation
+des conditions d'utilisation, de minimiser l'impact de toute suspension
+sur le service habituel. Cependant, de telles suspensions n'exonèrent
+pas le CLIENT de son obligation de régler les montants dus au titre du
+Contrat. Le CLIENT reste informé des maintenances planifiées via une
+interface dédiée.
 
-Bei Verstößen des KUNDEN gegen seine Verpflichtungen, gelten diese
+En cas de manquement du CLIENT à ses obligations, ces suspensions se
 feront sans préjudice du droit du Prestataire de résilier le Contrat ou
 de demander réparation. Sauf dans les cas de résiliation ou de
 non-renouvellement, les suspensions n'entraîneront pas la suppression
@@ -572,7 +486,7 @@ défaut du Prestataire, ces interruptions ne seront pas considérées comme
 une indisponibilité des Services aux fins des engagements de niveau de
 service stipulés dans le Contrat.
 
-### 10.8. Evolution des services
+### Evolution des services
 
 Le Prestataire se réserve le droit d'apporter, à sa discrétion, toute
 modification aux Services, y compris l'ajout, la modification ou la
@@ -594,7 +508,7 @@ concerné. Pour ce faire, il doit envoyer une notification de résiliation
 par courrier recommandé avec demande d'avis de réception, dans un délai
 de soixante (60) jours suivant l'application de la modification.
 
-### 10.9. Propriété intellectuelle et droit d'utilisation
+### Propriété intellectuelle et droit d'utilisation
 
 Tous les éléments fournis au CLIENT par le Prestataire --- incluant
 logiciels, infrastructures, documentations, et autres --- demeurent la
@@ -616,7 +530,7 @@ codes et algorithmes mis à disposition dans le cadre des Services, y
 compris pour des tentatives de rétro-ingénierie, sauf autorisation
 légale explicite permettant de contourner cette restriction.
 
-### 10.10. Contrôle à l'exportation
+### Contrôle à l'exportation
 
 Sous réserve des limitations spécifiées dans les termes du Contrat et
 des restrictions liées aux activités propres au CLIENT, le Prestataire
@@ -644,7 +558,7 @@ avoirs de la Direction générale du Trésor, pourront être effectuées.
 Suite à ces vérifications, le Prestataire peut résilier le contrat de
 manière unilatérale et immédiate après en avoir informé le CLIENT.
 
-### 10.11. Produits tiers
+### Produits tiers
 
 Conformément aux engagements pris, il est important de noter que :
 
@@ -664,7 +578,7 @@ Conformément aux engagements pris, il est important de noter que :
     adéquation avec ses besoins spécifiques et les objectifs visés, tout
     en respectant les termes du Contrat.
 
-### 10.12. Continuité et réversibilité des services
+### Continuité et réversibilité des services
 
 La cessation des Services, pour toute raison (telle que la résiliation
 du Contrat, son non-renouvellement, l'interruption des Services par le
@@ -677,7 +591,7 @@ collectés, transmis, diffusés, publiés, ou de toute autre manière
 utilisés ou exploités dans le cadre des Services, incluant les
 sauvegardes éventuelles.
 
-### 10.13. Test d'intrusion
+### Test d'intrusion
 
 Le CLIENT est autorisé à conduire, directement ou via un auditeur
 externe spécifiquement mandaté, des tests d'intrusion sur les Services
@@ -725,16 +639,16 @@ Prestataire. En cas de violation des conditions établies, le Prestataire
 se réserve le droit de suspendre immédiatement l'accès aux Services,
 sans préjudice de tout dommage-intérêt potentiel.
 
-## 11. Collaboration
+## Collaboration
 
 Les Parties reconnaissent être soumises à une obligation de
 collaboration. En conséquence, elles s'engagent à se communiquer toute
 information et document de nature à faciliter l'exécution du Contrat, et
 plus particulièrement, de leurs obligations respectives.
 
-## 12. Responsabilité
+## Responsabilité
 
-### 12.1. Capacité
+### Capacité
 
 Chacune des Parties déclare et garantit posséder l'autorité et la
 capacité nécessaires à la conclusion du Contrat et à l'exécution des
@@ -744,7 +658,7 @@ et connaissances (notamment techniques), leur permettant respectivement
 d'utiliser et de fournir les Services conformément aux conditions
 prévues au Contrat.
 
-### 12.2. Responsabilité du Prestataire
+### Responsabilité du Prestataire
 
 Lorsque le Contrat stipule des engagements de niveau de service, les
 pénalités ou crédits octroyés par le Prestataire au CLIENT servent de
@@ -756,563 +670,681 @@ Prestataire est limitée au total des sommes versées par le CLIENT pour
 les services affectés durant les trois (3) mois précédant la demande
 d'indemnisation.
 
-**Haftungsausschlussklausel:** Die Haftung des
-Prestataires kann in den folgenden Fällen nicht geltend gemacht werden:
+**Clause d'exonération de responsabilité :** La responsabilité du
+Prestataire ne saurait être engagée dans les cas suivants :
 
-- Unsachgemäße Nutzung der Dienste entgegen den Bestimmungen des
-    Vertrags;
-- Nichteinhaltung, Ausfall, Fehlfunktion oder Nichtverfügbarkeit der
-    Dienste aufgrund eines Dritten (außer den Unterauftragnehmern des
-    Prestataire), des CLIENT, eines Drittprodukts oder eines
-    Verschuldens des CLIENT;
-- Indirekte Schäden wie Geschäftsschäden, Auftragsverluste, Rückgang
-    der Geschäftstätigkeit, Rufschädigung, Gewinn- oder Kundenverlust,
-    insbesondere durch unbeabsichtigte Offenlegung vertraulicher
-    Informationen, Klage eines Dritten usw.;
-- Verlust, Offenlegung oder unsachgemäße oder betrügerische Nutzung
-    von Benutzerzugangsdaten, die dem CLIENT oder Dritten zuzuschreiben
-    sind;
-- Sperrung des Zugriffs auf die Dienste oder vorübergehende oder
-    dauerhafte Unterbrechung gemäß Artikel 6 "Nutzungsbedingungen",
-    einschließlich auf Ersuchen von Verwaltungs- oder Justizbehörden;
-- Verlust, Veränderung oder Zerstörung von Inhalten, die auf der
-    Infrastruktur gehostet werden, insofern der Prestataire nicht für
-    die Geschäftskontinuität des CLIENT verantwortlich ist, einschließlich
-    der Backups;
-- Unangemessenheit der Dienste für die Anforderungen des CLIENT
-    (insbesondere in Anbetracht der Sensibilität der betroffenen Daten);
-- Sicherheitsvorfälle im Zusammenhang mit der Internetnutzung,
-    insbesondere im Falle von Verlust, Veränderung, Zerstörung,
-    Offenlegung oder unberechtigtem Zugriff auf Daten oder Informationen
-    des CLIENT im oder aus dem Internetnetzwerk;
-- Beschädigung von Systemen, Anwendungen und anderen Elementen, die
-    vom CLIENT auf der Infrastruktur installiert wurden.
+- Mauvaise utilisation des services contrairement aux termes du
+    Contrat ;
+- Non-exécution, défaillance, dysfonctionnement ou indisponibilité des
+    services due à un tiers (autres que les sous-traitants du
+    Prestataire), au CLIENT, à un produit tiers, ou à une négligence du
+    CLIENT ;
+- Dommages indirects tels que le préjudice commercial, la perte de
+    commandes, la baisse d'activité, l'atteinte à la réputation, la
+    perte de profits ou de clients, notamment due à une divulgation
+    accidentelle d'informations confidentielles, à une action en justice
+    d'un tiers, etc.;
+- Perte, divulgation ou utilisation inappropriée ou frauduleuse des
+    identifiants d'accès des utilisateurs, imputable au CLIENT ou à des
+    tiers ;
+- Suspension de l'accès aux services ou interruption temporaire ou
+    définitive, conformément à l'article 6 "Conditions d'utilisation", y
+    compris à la demande d'autorités administratives ou judiciaires ;
+- Perte, altération ou destruction de contenus hébergés sur
+    l'infrastructure, dans la mesure où le Prestataire n'est pas
+    responsable de la continuité d'activité du CLIENT, y compris des
+    sauvegardes ;
+- Inadéquation des services aux besoins du CLIENT (notamment eu égard
+    à la sensibilité des données concernées);
+- Incidents de sécurité liés à l'utilisation d'internet, notamment en
+    cas de perte, altération, destruction, divulgation ou accès
+    non-autorisé a des données ou informations du CLIENT sur ou à partir
+    du réseau internet ;
+- Détérioration des systèmes, applications et autres éléments
+    installés par le CLIENT sur l'infrastructure.
 
-### 12.3. Verantwortung des CLIENT
+### Responsabilité du CLIENT
 
-Der CLIENT ist voll verantwortlich für die mit seinen Aktivitäten
-verbundenen Risiken, einschließlich der Nutzung der vom
-Prestataire bereitgestellten Dienste und der vollständigen Einhaltung
-der Vertragsbedingungen. Diese Verantwortung erstreckt sich auch auf den
-Fall, dass die Dienste direkt vom CLIENT oder im Namen Dritter
-genutzt werden.
+Le CLIENT est entièrement responsable des risques associés à ses
+activités, incluant l'utilisation des Services fournis par le
+Prestataire et le respect intégral des termes du Contrat. Cette
+responsabilité s'étend aux cas où les Services sont employés directement
+par le CLIENT ou au nom de tiers.
 
-Insbesondere ist der CLIENT verantwortlich für:
+Plus précisément, le CLIENT est responsable :
 
-- Sicherstellung, dass die gewählten Dienste seinen Anforderungen und
-    denen aller Dritten, die sie in seinem Namen nutzen, entsprechen;
-- Verwaltung der Inhalte – Informationen, Daten, Dateien, Systeme,
-    Anwendungen, Software, Websites usw., die er reproduziert, hostet,
-    installiert, sammelt, überträgt, verbreitet, veröffentlicht oder auf
-    andere Weise im Rahmen der Dienste nutzt. Dies umfasst die
-    Kontrolle, Validierung, Aktualisierung, Eliminierung und
-    Sicherung der Inhalte sowie die Implementierung von Maßnahmen zur
-    Verhinderung von Verlust oder Veränderung, auch wenn diese Inhalte
-    Dritten gehören oder in ihrem Auftrag verwaltet werden;
-- Einhaltung der geltenden Gesetze und Vorschriften sowie aller
-    anwendbaren Ethikrichtlinien.
-- Einhaltung der PGSSI-S (allgemeine Sicherheitspolitik für
-    Gesundheitssysteme), wenn die im Vertrag obliegende Leistung
-    Gesundheitsdaten betrifft, gemäß Anforderung 4.5.2 des HDS-Standards.
+- de s'assurer que les Services choisis correspondent à ses exigences
+    et à celles de tout tiers les utilisant en son nom ;
+- de la gestion des Contenus - informations, données, fichiers,
+    systèmes, applications, logiciels, sites web, etc., qu'il reproduit,
+    héberge, installe, collecte, transmet, diffuse, publie ou utilise de
+    toute autre manière dans le cadre des Services. Cela inclut le
+    contrôle, la validation, la mise à jour, l'élimination, la
+    sauvegarde des Contenus, et la mise en œuvre de mesures pour
+    prévenir leur perte ou altération, même lorsque ces contenus
+    appartiennent à des tiers ou sont gérés pour leur compte ;
+- de respecter les législations, régulations en vigueur, ainsi que
+    toute charte de déontologie applicable.
+- de respecter la PGSSI-S (politique générale de sécurité des systèmes
+    d'information de santé) si la prestation objet du présent contrat
+    concerne des données de santé, conformément à l'exigence 4.5.2 du
+    référentiel HDS.
 
-Wenn der CLIENT die Dienste für berufliche Zwecke nutzt oder im
-Namen Dritter handelt, verpflichtet er sich, eine
-Betriebshaftpflichtversicherung bei einem anerkannten Versicherer
-abzuschließen, die alle potenziellen Schäden abdeckt, die ihm
-zugeschrieben werden könnten. Er verpflichtet sich auch, diese
-Versicherung oder eine andere gleichwertige Versicherung während der
-gesamten Vertragslaufzeit aktiv aufrechtzuerhalten.
+Lorsque le CLIENT utilise les Services à des fins professionnelles ou
+agit pour le compte de tiers, il s'engage à souscrire une assurance
+responsabilité civile auprès d'un assureur reconnu, couvrant tous les
+dommages potentiels qui pourraient lui être attribués. Il s'engage
+également à maintenir cette assurance, ou toute autre assurance offrant
+une couverture équivalente, active durant toute la période du Contrat.
 
-### 12.4. Garantie
+### Garantie
 
-Jede Partei verpflichtet sich, ihre Aktivitäten im strikten Einklang
-mit den geltenden Gesetzen und Vorschriften auszuführen. Der CLIENT
-entlastet den Prestataire von jeglicher Haftung und verpflichtet sich,
-ihn vor jeglichen Konsequenzen zu schützen, die sich ergeben aus:
+Chaque Partie s'engage à exercer ses activités dans le strict respect
+des lois et réglementations applicables. Le CLIENT dégage le Prestataire
+de toute responsabilité et s'engage à le protéger contre toute
+conséquence découlant :
 
-- der Nutzung oder Verwertung unrechtmäßiger Inhalte über die Dienste;
-- betrügerischer oder nicht konformer Nutzung der Dienste;
-- Nutzung der Dienste in Verletzung der Rechte Dritter;
-- Wahl von Diensten, die nicht zu den Bedürfnissen des CLIENT oder
-    Dritter passen;
-- Verlust, unbefugter oder betrügerischer Nutzung der
-    Benutzerkennungen.
+- de l'usage ou de l'exploitation de Contenus illicites via les
+    Services ;
+- d'une utilisation frauduleuse ou non conforme aux réglementations en
+    vigueur des Services ;
+- d'une exploitation des Services violant les droits de tiers ;
+- du choix de Services inadaptés aux besoins du CLIENT ou à ceux de
+    tiers ;
+- de la perte, de l'utilisation non autorisée ou frauduleuse des
+    identifiants des Utilisateurs.
 
-Der CLIENT verspricht auch, aktiv an der Verwaltung aller Anfragen,
-Beschwerden oder rechtlichen Schritte teilzunehmen, die die Inhalte oder
-die Bedingungen des Vertrags betreffen, einschließlich derjenigen von
-Verwaltungs- oder Justizbehörden, und verpflichtet sich, den Prestataire
-für alle resultierenden Schäden zu entschädigen, einschließlich
-eventueller Verurteilungen und gerechtfertigter Verteidigungskosten.
+Le CLIENT promet également de prendre part activement à la gestion de
+toute demande, réclamation, ou action en justice impliquant les Contenus
+ou les termes du Contrat, y compris celles émanant d'autorités
+administratives ou judiciaires, et s'engage à indemniser le Prestataire
+pour tous dommages résultants, incluant les éventuelles condamnations,
+ainsi que les frais de défense justifiés.
 
-### 12.5. Dritte
+### Tiers
 
-Im Rahmen des vorliegenden Vertrages übernimmt der Prestataire keine
-Verpflichtungen gegenüber Dritten, einschließlich der Benutzer, und
-keine Klausel darf so ausgelegt werden, dass sie Dritten erhältliche
-Rechte gewährt. Der CLIENT übernimmt die volle Verantwortung für seine
-Interaktionen mit Dritten, insbesondere mit den Nutzern der Dienste, und
-verpflichtet sich, den Prestataire für jede von Dritten erhobene
-Forderung, Beschwerde oder Klage zu entschädigen, die die Qualität oder
-Einhaltung der vom Prestataire erbrachten Dienste in Frage stellen
-könnte.
+Dans le cadre du présent Contrat, le Prestataire n'assume aucune
+obligation à l'égard de tiers, y compris les Utilisateurs, et aucune
+clause ne doit être interprétée comme octroyant des droits bénéficiaires
+à des tiers. Le CLIENT assume l'entière responsabilité de ses
+interactions avec les tiers, en particulier avec les Utilisateurs des
+Services, et s'engage à indemniser le Prestataire pour toute demande,
+réclamation, ou action de tiers qui pourrait remettre en question la
+qualité ou la conformité des Services fournis par le Prestataire.
 
-Der CLIENT verpflichtet sich auch, den Prestataire schriftlich und
-unverzüglich über jede Forderung, Beschwerde oder Klage Dritter
-hinsichtlich der Dienste des Prestataire zu informieren und eine
-detaillierte Beschreibung der Forderung sowie alle relevanten
-Informationen bereitzustellen, die es dem Prestataire ermöglichen, dem
-CLIENT die erforderlichen Antwortdokumente zuzuleiten.
+Le CLIENT s'oblige également à informer le Prestataire, par écrit et
+dans les plus brefs délais, de toute demande, réclamation, ou action de
+tiers concernant les Services du Prestataire, en fournissant un
+descriptif détaillé de la demande ainsi que toutes les informations
+pertinentes permettant au Prestataire de fournir au CLIENT les éléments
+de réponse ou les documents utiles qu'il détient.
 
-## 13. Höhere Gewalt
+## Force majeure
 
-Die Erfüllung einer Verpflichtung, welcher Art auch immer, wird
-ausgesetzt, wenn ihre Erfüllung durch höhere Gewalt gemäß Artikel 1218
-des Bürgerlichen Gesetzbuchs verhindert wird.
+L'exécution d'une obligation, quelle qu'elle soit, est suspendue en
+lorsque son exécution est empêchée par un cas de force majeure tel que
+défini par l'article 1218 du Code civil.
 
-Im ersten Schritt wird die Ausführung des Vertrags durch Fälle höherer
-Gewalt ausgesetzt. Im Falle höherer Gewalt, die den Prestataire daran
-hindert, seine Dienste zu leisten:
+Dans un premier temps, les cas de force majeure suspendront l'exécution
+du Contrat. En cas de force majeure empêchant le Prestataire d'exécuter
+ses Services :
 
-- Ab dem Zeitpunkt des Eintritts des Ereignisses, das ein Fall
-    höherer Gewalt ist, tritt Cloud Tempe in Kontakt mit dem CLIENT,
-    um gemeinsam Lösungen zu finden, die eine Wiederaufnahme der Dienste
-    sicherstellen, und um sich einvernehmlich auf die Modalitäten der
-    Umsetzung dieser Lösungen zu einigen, die spätestens achtundvierzig
-    (48) Stunden nach dem Datum des Eintritts des Ereignisses, das der
-    Fall höherer Gewalt ist, erfolgen muss;
-- Sollte die Dauer dieses Ereignisses dreißig (30) Kalendertage ab
-    dem Datum des Ereignisses überschreiten oder sollten die Parteien
-    keine Einigung über die Ersatzlösung spätestens mit Ablauf dieser
-    Frist erzielen, kann der CLIENT die Dienste, die Gegenstand des
-    Vertrags sind, einem anderen Anbieter seiner Wahl anvertrauen und
-    damit die Reversibilitätsphase einleiten, soweit die Art, die
-    Schwere und die Auswirkungen des Falls höherer Gewalt dies
-    zulassen;
-- Im umgekehrten Fall, wenn der Prestataire in der Lage wäre, seine
-    Verpflichtungen innerhalb weniger als dreißig (30) Kalendertage ab
-    dem Datum des Eintritts des Ereignisses, das der Fall höherer Gewalt
-    ist, normal zu erfüllen, wird der Vertrag, sobald der Fall höherer
-    Gewalt beendet ist, normal fortgesetzt.
+- Dès la survenance de l'évènement constitutif d'un cas de force
+    majeure, Cloud Tempe se rapprochera du CLIENT afin d'étudier
+    ensemble les solutions permettant d'assurer la reprise des Services
+    et de convenir d'un commun accord des modalités de mise en œuvre de
+    ces solutions, mise en œuvre qui devra intervenir au plus tard
+    quarante-huit (48) heures après la date de survenance de l'évènement
+    constitutif du cas de force majeure;
+- Si la durée de ce dernier venait à excéder trente (30) jours
+    calendaires à compter de la date de l'évènement constitutif du cas
+    de force majeure, ou si les Parties ne parvenaient pas à s'entendre
+    sur la solution de remplacement au plus tard à l'expiration de ce
+    même délai, le CLIENT pourrait alors confier les Services, objet du
+    Contrat, à un autre Prestataire de son choix, engageant de fait la
+    Phase de Réversibilité dans la mesure où la nature, la gravité et
+    l'impact du cas de force majeure le permet ;
+- A contrario, si le Prestataire parvenait dans un délai inférieur à
+    trente (30) jours calendaires à compter de la date de survenance de
+    l'évènement constitutif du cas de force majeure, à exécuter
+    normalement ses obligations, le cas de force majeure ayant cessé, le
+    Contrat reprendra son exécution normale.
 
-Dauert der Fall höherer Gewalt über dreißig (30) Kalendertage an, kann
-jede der Parteien den Vertrag nach Versand eines eingeschriebenen Briefs
-an die andere Partei kündigen.
+Si le cas de force majeure perdure au-delà de trente (30) jours
+calendaires, chacune des parties pourra résilier le Contrat après envoi
+d'une lettre recommandée à l'autre partie.
 
-Alle im Zusammenhang mit der Umsetzung der vorgenannten Lösungen
-entstehenden Kosten trägt die von dem Fall höherer Gewalt betroffene
-Partei.
+Tous les frais liés à la mise en œuvre des solutions susvisées
+incomberont à la Partie affectée par le cas de force majeure.
 
-## 14. Finanzielle Bedingungen
+## Conditions financières
 
-### 14.1. Angewendete Tarife
+### Tarifs appliqués
 
-Die für die dem CLIENT erbrachten Dienste geltenden Tarife entsprechen
-den zum Zeitpunkt der Rechnungsstellung gültigen Preisen, gemäß den bei
-Vertragsunterzeichnung vereinbarten Bedingungen. Sofern nicht anders
-angegeben, sind diese Preise in Euro ausgedrückt. Der Prestataire bietet
-verschiedene Tarifmodelle für seine Dienste an, die je nach
-Erfordernis eine Mindestbindungsdauer und/oder ein spezielles
-Abrechnungsmodell umfassen können. Für einen bestimmten Dienst, der
-mehrere Tarifoptionen bietet, kann der CLIENT beim Auftragserteilen die
-für ihn am besten geeignete Option wählen.
+Les tarifs appliqués pour les Services fournis au CLIENT correspondent
+aux prix en vigueur au moment de l'émission de la facture, conformément
+aux conditions convenues lors de la signature du Contrat. À moins qu'il
+n'en soit spécifié autrement, ces prix sont exprimés en euros. Le
+Prestataire offre diverses grilles tarifaires pour ses Services, qui
+peuvent inclure, selon le cas, une période d'engagement minimale et/ou
+une modalité de facturation dédiée. Pour un Service donné proposant
+plusieurs options tarifaires, le CLIENT est libre de choisir l'option
+qui lui convient le mieux au moment de passer sa commande.
 
-Die angegebenen Preise verstehen sich ohne Steuern für Dienste, die für
-professionelle Zwecke bestimmt sind, was bedeutet, dass die
-Mehrwertsteuer und jede andere einschlägige Steuer (mit Ausnahme der
-Steuern auf die Einkommen des Prestataire) zu dem in Rechnung
-gestellten Betrag hinzukommen. Diese zusätzliche Besteuerung stellt
-keine Preisänderung im Sinne des Artikels über die Bedingungen zur
-Tarifanpassung dar.
+Les prix mentionnés s'entendent hors taxes pour les Services destinés
+aux professionnels, ce qui signifie que la TVA et toute autre taxe
+pertinente (à l'exception des taxes sur les revenus du Prestataire)
+s'ajoutent au montant facturé. Cette imposition supplémentaire ne
+constitue pas une modification du prix au sens de l'article dédié aux
+conditions de révision des tarifs.
 
-Sofern nicht anderweitig festgelegt, beinhalten die Kosten für die
-Dienste auch die Ausgaben für den Erwerb von Lizenzen und Nutzungsrechten
-für die vom Prestataire verwendeten Tools, Software und Betriebssysteme
-oder, falls zutreffend, für den CLIENT im Rahmen der Dienste
-bereitgestellt werden. Es liegt in der Verantwortung des CLIENT, alle
-Lizenzen oder Nutzungsrechte zu erwerben und zu bezahlen, die für die
-Nutzung der Inhalte erforderlich sind, die er über die Dienste nutzt.
+Sauf mention d'une tarification spécifique, le coût des Services inclut
+également les frais liés à l'acquisition des licences et des droits
+d'utilisation des outils, logiciels et systèmes d'exploitation employés
+par le Prestataire ou, le cas échéant, mis à disposition du CLIENT dans
+le cadre des Services. Il revient au CLIENT d'obtenir et de régler toute
+licence ou droit d'utilisation nécessaire pour l'exploitation des
+contenus qu'il utilise via les Services.
 
-Die Preisstruktur der Dienste und die verwendeten Maßeinheiten zur
-Berechnung dieser Preise sind auf der Website des Prestataire
-verfügbar. Es wird dem CLIENT empfohlen, diese Informationen vor
-der Auftragsbestätigung zu konsultieren. Jede begonnene Maßeinheit ist
-vollständig zu bezahlen, auch wenn sie nicht vollständig verbraucht
-wird. Darüber hinaus können für bestimmte Dienste zusätzliche Kosten für
-deren Installation oder Bereitstellung anfallen.
+La structure de prix des Services et les unités de mesure utilisées pour
+le calcul de ces prix sont disponibles sur le site internet du
+Prestataire. Il est recommandé au CLIENT de consulter ces informations
+avant de valider sa commande. Toute unité de mesure entamée est due dans
+son intégralité, même si elle n'est pas entièrement consommée. De plus,
+certains Services peuvent engendrer des coûts supplémentaires pour leur
+installation ou leur mise en service.
 
-### 14.2. Preisänderung
+### Changement de prix
 
-Der Prestataire behält sich das Recht vor, seine Tarife zu überarbeiten und
-discrétion. Toute modification tarifaire s'appliquera immédiatement aux Commandes passées postérieurement à cette modification. Pour les Services déjà souscrits, toute hausse tarifaire sera communiquée au CLIENT avec un préavis de trente (30) jours calendaires via courriel.
+Le Prestataire se réserve le droit de réviser ses tarifs à sa
+discrétion. Toute modification tarifaire s'appliquera immédiatement aux
+Commandes passées postérieurement à cette modification. Pour les
+Services déjà souscrits, toute hausse tarifaire sera communiquée au
+CLIENT avec un préavis de trente (30) jours calendaires via courriel.
 
-Suite à cette notification, le CLIENT aura la possibilité, durant trente (30) jours calendaires, de résilier les Services concernés sans encourir de pénalités. Cette résiliation peut être effectuée soit par envoi d'un courrier recommandé avec accusé de réception, soit via un formulaire spécifique disponible dans l'Interface de Gestion du CLIENT. En l'absence de résiliation dans ce délai, le CLIENT sera considéré comme ayant accepté les nouveaux prix. Il est important de noter que l'option de résiliation sans pénalités n'est pas offerte dans les situations où l'augmentation des prix découle de circonstances imprévues, telles que définies par l'article 1195 du Code civil. Dans de telles circonstances, les termes spécifiés dans ledit article s'appliqueront.
+Suite à cette notification, le CLIENT aura la possibilité, durant trente
+(30) jours calendaires, de résilier les Services concernés sans encourir
+de pénalités. Cette résiliation peut être effectuée soit par envoi d'un
+courrier recommandé avec accusé de réception, soit via un formulaire
+spécifique disponible dans l'Interface de Gestion du CLIENT. En
+l'absence de résiliation dans ce délai, le CLIENT sera considéré comme
+ayant accepté les nouveaux prix. Il est important de noter que l'option
+de résiliation sans pénalités n'est pas offerte dans les situations où
+l'augmentation des prix découle de circonstances imprévues, telles que
+définies par l'article 1195 du Code civil. Dans de telles circonstances,
+les termes spécifiés dans ledit article s'appliqueront.
 
-### 14.3. Facturation
+### Facturation
 
-La facturation des Services est effectuée en fonction de l'utilisation réelle et des Commandes passées par le CLIENT, telles enregistrées dans le système d'information du Prestataire, qui est considéré comme fiable et fait autorité en cas de différend avec le CLIENT. La fréquence de facturation (mensuelle, annuelle, ou selon une autre périodicité) ainsi que le timing (à la commande ou après livraison) diffèrent selon le Service concerné. Les modalités de facturation sont déterminées conformément à l'offre technique et commerciale validée par le CLIENT et le Prestataire. Toute période entamée est due au prorata de la période. Il est de la responsabilité du CLIENT de se familiariser avec ces conditions avant de procéder à une commande. Suite au règlement de chaque facture, le Prestataire envoie au CLIENT un justificatif de paiement.
+La facturation des Services est effectuée en fonction de l'utilisation
+réelle et des Commandes passées par le CLIENT, telles enregistrées dans
+le système d'information du Prestataire, qui est considéré comme fiable
+et fait autorité en cas de différend avec le CLIENT. La fréquence de
+facturation (mensuelle, annuelle, ou selon une autre périodicité) ainsi
+que le timing (à la commande ou après livraison) diffèrent selon le
+Service concerné. Les modalités de facturation sont déterminées
+conformément à l'offre technique et commerciale validée par le CLIENT et
+le Prestataire. Toute période entamée est due au prorata de la période.
+Il est de la responsabilité du CLIENT de se familiariser avec ces
+conditions avant de procéder à une commande. Suite au règlement de
+chaque facture, le Prestataire envoie au CLIENT un justificatif de
+paiement.
 
-Le CLIENT accepte de manière explicite la réception des factures par voie électronique, celles-ci étant envoyées à l'adresse courriel fournie par le CLIENT. Il incombe au CLIENT de sauvegarder une copie de chaque facture reçue, en accord avec les exigences légales en vigueur.
+Le CLIENT accepte de manière explicite la réception des factures par
+voie électronique, celles-ci étant envoyées à l'adresse courriel fournie
+par le CLIENT. Il incombe au CLIENT de sauvegarder une copie de chaque
+facture reçue, en accord avec les exigences légales en vigueur.
 
-### 14.4. Défaut et retard de paiement
+### Défaut et retard de paiement
 
-Sauf contestation de bonne foi par le CLIENT concernant tout ou partie de la facture, en cas de manquement ou de retard dans le paiement, y compris un paiement partiel, les conséquences suivantes s'appliqueront :
+Sauf contestation de bonne foi par le CLIENT concernant tout ou partie
+de la facture, en cas de manquement ou de retard dans le paiement, y
+compris un paiement partiel, les conséquences suivantes s'appliqueront :
 
-1. des pénalités de retard seront immédiatement exigibles dès le lendemain de la date d'échéance, calculées sur la base d'un taux d'intérêt équivalent à trois fois le taux légal,
-2. tout retard ou défaut de paiement (même partiel) des sommes dues par le CLIENT en vertu du Contrat, persistant plus de sept (7) jours calendaires après l'envoi d'une notification de défaut de paiement par courriel, entraînera automatiquement sans autre notification ni formalité :
+1. des pénalités de retard seront immédiatement exigibles dès le
+    lendemain de la date d'échéance, calculées sur la base d'un taux
+    d'intérêt équivalent à trois fois le taux légal,
+2. tout retard ou défaut de paiement (même partiel) des sommes dues par
+    le CLIENT en vertu du Contrat, persistant plus de sept (7) jours
+    calendaires après l'envoi d'une notification de défaut de paiement
+    par courriel, entraînera automatiquement sans autre notification ni
+    formalité :
 
-- l'exigibilité immédiate de l'intégralité des sommes restant dues par le CLIENT au titre du Contrat, quel que soit le mode de paiement initialement convenu,
-- le droit pour le Prestataire de suspendre immédiatement et sans préavis l'ensemble ou une partie des Services fournis au CLIENT (y compris ceux déjà payés), de refuser toute nouvelle Commande ou renouvellement de Services, et de procéder à la résiliation unilatérale du Contrat, en totalité ou en partie, par courriel.
+- l'exigibilité immédiate de l'intégralité des sommes restant dues par
+    le CLIENT au titre du Contrat, quel que soit le mode de paiement
+    initialement convenu,
+- le droit pour le Prestataire de suspendre immédiatement et sans
+    préavis l'ensemble ou une partie des Services fournis au CLIENT (y
+    compris ceux déjà payés), de refuser toute nouvelle Commande ou
+    renouvellement de Services, et de procéder à la résiliation
+    unilatérale du Contrat, en totalité ou en partie, par courriel.
 
-De plus, en cas de retard ou défaut de paiement, les clients professionnels sont tenus de verser une indemnité forfaitaire de quarante (40) euros pour frais de recouvrement, sans préjudice du droit pour le Prestataire d'exiger une indemnisation supplémentaire, sur présentation de justificatifs, si les frais de recouvrement engagés dépassent ce montant forfaitaire.
+De plus, en cas de retard ou défaut de paiement, les clients
+professionnels sont tenus de verser une indemnité forfaitaire de
+quarante (40) euros pour frais de recouvrement, sans préjudice du droit
+pour le Prestataire d'exiger une indemnisation supplémentaire, sur
+présentation de justificatifs, si les frais de recouvrement engagés
+dépassent ce montant forfaitaire.
 
-### 14.5. Contestation
+### Contestation
 
-Tout litige relatif à la facturation ou aux spécificités des Services doit être soumis au Service CLIENT du Prestataire via l'Interface de gestion du CLIENT, dans un délai maximum d'un (1) mois suivant la date d'émission de la facture. Passé ce délai, le CLIENT reste, malgré toute contestation future éventuelle de la facture, obligé de régler les montants dus conformément aux termes du Contrat. Dans l'éventualité où une erreur de facturation serait constatée, le Prestataire se réserve le droit d'effectuer les ajustements nécessaires sur les factures concernées, et ce, dans le respect des délais de prescription applicables.
+Tout litige relatif à la facturation ou aux spécificités des Services
+doit être soumis au Service CLIENT du Prestataire via l'Interface de
+gestion du CLIENT, dans un délai maximum d'un (1) mois suivant la date
+d'émission de la facture. Passé ce délai, le CLIENT reste, malgré toute
+contestation future éventuelle de la facture, obligé de régler les
+montants dus conformément aux termes du Contrat. Dans l'éventualité où
+une erreur de facturation serait constatée, le Prestataire se réserve le
+droit d'effectuer les ajustements nécessaires sur les factures
+concernées, et ce, dans le respect des délais de prescription
+applicables.
 
-## 15. Pénalités
+## Pénalités
 
-### 15.1. Principe
+### Principe
 
-Le non-respect des Niveaux de Services visés dans la Convention de Services SecNumCloud donne au CLIENT le droit d'appliquer des pénalités. L'application des pénalités sera demandée par le CLIENT par e-mail dans un délai maximal de 90 (quatre-vingt-dix) jours après l'effet générateur. Dans le cas d'un manquement qui ne serait pas de la responsabilité du Prestataire, mais du CLIENT ou d'un Tiers, aucune pénalité ne sera applicable au Prestataire.
+Le non-respect des Niveaux de Services visés dans la Convention de
+Services SecNumCloud donne au CLIENT le droit d'appliquer des pénalités.
+L'application des pénalités sera demandée par le CLIENT par e-mail dans
+un délai maximal de 90 (quatre-vingt-dix) jours après l'effet
+générateur. Dans le cas d'un manquement qui ne serait pas de la
+responsabilité du Prestataire, mais du CLIENT ou d'un Tiers, aucune
+pénalité ne sera applicable au Prestataire.
 
-Les pénalités seront calculées par rapport à l'indicateur de référence non respecté. En tout état de cause, le montant total des pénalités mensuelles ne peut excéder de 30 % (trente pour cent) du montant des Services concernés de la facture du mois. Lorsque l'application des pénalités est demandée par le CLIENT, le paiement de ces pénalités par le Prestataire constituera une indemnité forfaitaire et définitive de dommages intérêts pour ce qui concerne les incidents à l'origine de la pénalité.
+Les pénalités seront calculées par rapport à l'indicateur de référence
+non respecté. En tout état de cause, le montant total des pénalités
+mensuelles ne peut excéder de 30 % (trente pour cent) du montant des
+Services concernés de la facture du mois. Lorsque l'application des
+pénalités est demandée par le CLIENT, le paiement de ces pénalités par
+le Prestataire constituera une indemnité forfaitaire et définitive de
+dommages intérêts pour ce qui concerne les incidents à l'origine de la
+pénalité.
 
-### 15.2. Calcul des pénalités
+### Calcul des pénalités
 
-**Pénalités = Ecart en pourcentage entre la disponibilité promise par SLA du Service considéré sur la période de calcul et la disponibilité constatée du service considéré sur la période de calcul.**
+**Pénalités = Ecart en pourcentage entre la disponibilité promise par
+SLA du Service considéré sur la période de calcul et la disponibilité
+constatée du service considéré sur la période de calcul.**
 
 ***Exemple : Non-respect des SLA 1 -- 3 et 4***
 
-- *SLA 1 : IC-INFRA_SNC-01 -- Disponibilité Compute : 99,9%;taux du mois en cours 90%; taux de pénalité à appliquer **9,9%***
-- *SLA 3 : IC-INFRA_SNC-03 -- Sauvegarde : 99,9%; taux du mois en cours 80%; taux de pénalité à appliquer **19,9%***
-- *SLA 4 : IC-INFRA-SNC-05 -- Accès internet 99,9%; taux du mois en cours 90%; taux de pénalité à appliquer **9,9%***
+- *SLA 1 : IC-INFRA_SNC-01 -- Disponibilité Compute : 99,9%;taux du
+    mois en cours 90%; taux de pénalité à appliquer **9,9%***
+- *SLA 3 : IC-INFRA_SNC-03 -- Sauvegarde : 99,9%; taux du mois en
+    cours 80%; taux de pénalité à appliquer **19,9%***
+- *SLA 4 : IC-INFRA-SNC-05 -- Accès internet 99,9%; taux du mois en
+    cours 90%; taux de pénalité à appliquer **9,9%***
 
-En tout état de cause, toutes les pénalités dans le cadre des présents Conditions Générales de Vente et Utilisation ne peuvent excéder 30 % (trente pour cent) du montant des services concernés de la facture du mois. En outre, les pénalités constituent toujours une indemnité forfaitaire et définitive de dommages-intérêts pour ce qui concerne les incidents à l'origine des pénalités, ces pénalités ayant un caractère libératoire.
+En tout état de cause, toutes les pénalités dans le cadre des présents
+Conditions Générales de Vente et Utilisation ne peuvent excéder 30 %
+(trente pour cent) du montant des services concernés de la facture du
+mois. En outre, les pénalités constituent toujours une indemnité
+forfaitaire et définitive de dommages-intérêts pour ce qui concerne les
+incidents à l'origine des pénalités, ces pénalités ayant un caractère
+libératoire.
 
-Les pénalités seront appliquées sous forme d'un crédit du montant du Service Régulier le mois suivant. Si des pénalités restent dues à la fin du Contrat quelle qu'en soit la cause, le Prestataire paiera le reliquat au CLIENT par versement bancaire.
+Les pénalités seront appliquées sous forme d'un crédit du montant du
+Service Régulier le mois suivant. Si des pénalités restent dues à la fin
+du Contrat quelle qu'en soit la cause, le Prestataire paiera le reliquat
+au CLIENT par versement bancaire.
 
-## 16. Résiliation
+## Résiliation
 
-### 16.1. Résiliation par convenance
+### Résiliation par convenance
 
-Le CLIENT est autorisé à mettre fin au Contrat, sans avoir à justifier sa décision ni encourir de pénalités, une fois écoulé un délai d'un (1) mois suivant l'activation du Contrat. Pour ce faire, il doit notifier sa résolution par lettre recommandée avec demande d'avis de réception adressée au Prestataire.
+Le CLIENT est autorisé à mettre fin au Contrat, sans avoir à justifier
+sa décision ni encourir de pénalités, une fois écoulé un délai d'un (1)
+mois suivant l'activation du Contrat. Pour ce faire, il doit notifier sa
+résolution par lettre recommandée avec demande d'avis de réception
+adressée au Prestataire.
 
-Ein Vorlauf von zwei (2) Monaten ist erforderlich. Die Kündigung wird nach Ablauf dieser Frist wirksam. Die vom Dienstleister bis zum Datum des Inkrafttretens der Kündigung erbrachten Leistungen werden gemäß den Vertragsbedingungen ohne zusätzliche Entschädigung in Rechnung gestellt. Der KUNDE bleibt jedoch verpflichtet, die verbleibenden Beträge für die gesamte Vertragslaufzeit zu zahlen, einschließlich für Geräte und Lizenzen, die auf monatlicher Basis berechnet wurden.
+Un préavis de deux (2) mois est requis. La résiliation prend effet à
+l'issue de cette période. Les services fournis par le Prestataire
+jusqu'à la date effective de résiliation seront facturés conformément
+aux termes du Contrat, sans aucune indemnité supplémentaire. Cependant,
+le CLIENT reste tenu de régler les sommes restantes dues pour
+l'intégralité de la durée du Contrat, y compris pour les équipements et
+licences qui étaient facturés sur une base mensuelle.
 
-### 16.2. Résiliation pour manquement
+### Résiliation pour manquement
 
-Im Falle der Nichteinhaltung der wesentlichen vertraglichen Verpflichtungen durch eine der Parteien wird die betroffene Partei der säumigen Partei eine Mahnung per Einschreiben mit Rückschein zusenden und ihr eine Frist von dreißig (30) Arbeitstagen ab Erhalt der Mitteilung zur Behebung der Situation einräumen.
+En cas de non-respect par l'une des parties de ses obligations
+essentielles stipulées dans le Contrat, la partie affectée enverra à la
+partie défaillante une mise en demeure par courrier recommandé avec
+accusé de réception, lui accordant un délai de trente (30) jours
+ouvrables à compter de la réception de la notification pour corriger la
+situation.
 
-Wenn die fehlende Partei nach Ablauf dieser Frist und ohne die Schuld behoben zu haben, ist die geschädigte Partei berechtigt, den Vertrag zu kündigen und eine zweite Mitteilung per Einschreiben mit Rückschein zu senden. Diese Kündigung wird ohne Entschädigung der schuldigen Partei und unter Vorbehalt des Rechts auf Schadensersatz für erlittene Schäden durchgeführt.
+Si, passé ce délai, la partie en tort n'a pas rectifié son manquement,
+la partie lésée est en droit de procéder à la résiliation du Contrat en
+adressant une nouvelle notification par courrier recommandé avec accusé
+de réception. Cette résiliation sera effectuée sans qu'aucune
+compensation ne soit versée à la partie fautive, tout en se réservant le
+droit de réclamer des dommages-intérêts pour les préjudices subis.
 
-Die Entscheidung, den Vertrag wegen Nichteinhaltung zu kündigen, liegt in der Verantwortung der Partei, die diesen Schritt unternimmt. Wenn festgestellt wird, dass die gekündigte Partei ihre Verpflichtungen tatsächlich nicht verletzt hat, ist die Partei, die das Kündigungsverfahren eingeleitet hat, verpflichtet, den anderen Teil für die erlittenen Schäden zu entschädigen.
+La décision de résilier le Contrat pour manquement engage la
+responsabilité de la partie initiant cette démarche. Dans le cas où il
+serait établi que la partie visée par la résiliation n'a, en fait, pas
+failli à ses engagements, la partie ayant engagé la procédure de rupture
+se verrait tenue de compenser les dommages encourus par l'autre partie.
 
-### 16.3. Résiliation sans faute
+### Résiliation sans faute
 
-Jede Partei behält sich das Recht vor, den Vertrag unter folgenden Umständen ohne Vorankündigung und Entschädigung durch Einschreiben mit Rückschein zu kündigen:
+Chaque partie se réserve le droit de résilier le Contrat sans préavis ni
+indemnisation dans les circonstances suivantes, en envoyant une lettre
+recommandée avec avis de réception :
 
-1. Im Falle der Insolvenz der anderen Partei, es sei denn, der Insolvenzverwalter entscheidet, den Vertrag innerhalb der gesetzlichen Frist fortzusetzen.
-2. Wenn ein Kontrollwechsel bei der anderen Partei im Sinne des Artikels L. 233-3 des Handelsgesetzbuches auftritt, wodurch die andere Partei direkt oder indirekt von einem Konkurrenten der Partei übernommen wird, die die Kündigung einwendet.
-3. Die Nichterfüllung des Vertrages durch die andere Partei für einen Zeitraum von mehr als dreißig (30) Kalendertagen aufgrund höherer Gewalt.
-4. Eine Änderung unvorhersehbarer Umstände zum Zeitpunkt der Unterzeichnung des Vertrages, die das wirtschaftliche Gleichgewicht des Vertrages erheblich verändern.
-5. Der missbräuchliche und wiederholte Gebrauch der Haftungsklausel durch den KUNDEN führt zu einer finanziellen Notlage des Dienstleisters oder macht den Vertrag unrentabel.
+1. En cas de dépôt de bilan de l'autre partie, sauf si l'administrateur
+    judiciaire opte pour la poursuite du Contrat dans le délai légal.
+2. Si un changement de contrôle survient chez l'autre partie,
+    conformément à l'article L. 233-3 du Code de commerce, résultant en
+    sa possession directe ou indirecte par un concurrent de la partie
+    invoquant la résiliation.
+3. L'inexécution du Contrat par l'autre partie pour une durée
+    supérieure à trente (30) jours calendaires en raison d'un cas de
+    force majeure.
+4. Un changement de circonstances imprévisibles au moment de la
+    signature du Contrat, modifiant significativement son équilibre
+    économique.
+5. L'usage abusif et répété par le CLIENT de la clause de
+    responsabilité sans fondement, plaçant le Prestataire dans une
+    situation financière préjudiciable ou rendant le Contrat non
+    rentable.
 
-Am Ende oder aus einem anderen Grund der Vertragsbeendigung:
+À l'expiration ou pour toute autre raison de fin de Contrat :
 
-- Der KUNDE ist berechtigt, die Umkehrphase gemäß den
-    modalités décrites à l'article "Réversibilität" ;
+- Le CLIENT est autorisé à initier la phase de réversibilité selon les
+    modalités décrites à l'article "Réversibilité" ;
 
-- Der Dienstleister ist verpflichtet, die sichere Löschung aller
-    Daten des ENDKUNDEN zu gewährleisten.
+- Le Prestataire est tenu d'assurer la suppression sécurisée de toutes
+    les données du CLIENT final.
 
-- Diese Löschung beinhaltet eine sichere Löschung aller
-    Datenträger, die diese Daten enthalten haben, in Übereinstimmung
-    mit den Bestimmungen der Servicevereinbarung. Nach Abschluss eines
-    Vertrags, gleich aus welchem Grund, ist der Dienstleister ebenfalls
-    dafür verantwortlich, die technischen Daten des ENDKUNDEN zu löschen,
-    einschließlich des Verzeichnisses, der Zertifikate und der
-    Zugriffskonfiguration.
+- Cette suppression implique une suppression sécurisée de tous les
+    supports ayant contenu ces données, conformément aux dispositions de
+    la Convention de service. Suite à la conclusion d'un Contrat, quelle
+    qu'en soit la raison, le Prestataire est également chargé d'éliminer
+    les données techniques associées au CLIENT final, incluant
+    l'annuaire, les certificats et la configuration des accès.
 
-## 17. Réversibilität
+## Réversibilité
 
-Die Dienste beinhalten keine Verpflichtung zur Reversibilität (d.h.
-Hilfe für den Kunden, damit dieser sein System zu einem anderen
-Dienstleister migrieren kann) mit Ausnahme der Bereitstellung der
-technischen Schnittstelle und APIs durch den Dienstleister, die es dem
-KUNDEN ermöglichen, seine Daten zu sichern und abzurufen, einschließlich
-insbesondere der Konfigurationsdaten der Plattformen mittels einer der
-folgenden technischen Verfahren nach Wahl des KUNDEN: die Bereitstellung
-von Dateien in einem oder mehreren dokumentierten und außerhalb des
-vom Dienstleister bereitgestellten Dienstes nutzbaren Formaten oder
-durch die Einrichtung technischer Schnittstellen, die den Zugang zu den
-Daten gemäß einem dokumentierten und nutzbaren Schema ermöglichen (API).
+Les Services ne comprennent pas d'obligation de réversibilité (à savoir,
+l'aide au Client pour qu'il puisse migrer son système vers un autre
+Prestataire) à l'exception de la mise à disposition du CLIENT par le
+Prestataire de l'interface technique et des APIS permettant au CLIENT de
+sauvegarder et récupérer ses données y compris notamment les données de
+configuration des plateformes via l'une des modalités techniques
+suivantes au choix du CLIENT : la mise à disposition de fichiers suivant
+un ou plusieurs formats documentés et exploitables en dehors du service
+fourni par le Prestataire ou bien via la mise en place d'interfaces
+techniques permettant l'accès aux données suivant un schéma documenté et
+exploitable (API).
 
-Der KUNDE, alleiniger Herr seines Systems, muss alles daransetzen, diese
-Operation so gut wie möglich zu erleichtern (was bedeutet, dass er
-insbesondere eine rigorose Dokumentation zu diesem Zweck erstellt) und
-Reversibilitätspläne ausarbeitet. Für den Fall, dass der KUNDE eine
-zusätzliche Dienstleistung benötigt, kann der Dienstleister eine
-Beratungsmission in diesem Zusammenhang im Rahmen eines zu
-verhandelnden spezifischen Vertrags anbieten.
+Le CLIENT, seul maître de son Système, doit tout mettre en œuvre pour
+faciliter cette opération en tant que de besoin (ce qui implique,
+notamment, qu'il mette en place une documentation rigoureuse à cet
+effet) et l'élaboration de plans de Réversibilité. Dans le cas où le
+CLIENT aurait besoin d'une prestation complémentaire, le Prestataire
+peut proposer une mission de conseil à cet égard dans le cadre d'un
+contrat spécifique à négocier.
 
-## 18. Vertraulichkeit
+## Confidentialité
 
-Die Parteien vereinbaren, dass alle zwischen ihnen ausgetauschten
-Informationen, sei es während der Verhandlungen oder der Durchführung
-des Vertrags, als Vertrauliche Informationen betrachtet werden,
-unabhängig von ihrer Form oder ihrem Medium.
+Les Parties conviennent que toutes les informations échangées entre
+elles, que ce soit lors des négociations ou de l'exécution du Contrat,
+sont considérées comme des Informations Confidentielles, indépendamment
+de leur forme ou support.
 
-Dies umfasst, aber ist nicht beschränkt auf, alle Informationen im
-Zusammenhang mit dem Vertrag, sowie persönliche, wissenschaftliche,
-technische, technologische, kommerzielle, soziale, finanzielle,
-rechtliche oder andere Informationen, ob sie durch ein Patent geschützt
-werden können oder nicht. Unter diesen Informationen befinden sich
-insbesondere Pläne, Zeichnungen, Spezifikationen, Verfahren, Know-how,
-Designs, Methoden, Studien, Berichte, Bedarfsprognosen, Software oder
-Anwendungen, sowie Informationen zu potenziellen Kunden, Kunden- oder
-Partnernamen.
+Cela inclut, mais sans s'y limiter, toute information relative au
+Contrat, ainsi que les données personnelles, scientifiques, techniques,
+technologiques, commerciales, sociales, financières, juridiques ou de
+tout autre domaine, qu'elles soient susceptibles de protection par
+brevet ou non. Parmi ces informations, on retrouve notamment des plans,
+dessins, spécifications, procédés, savoir-faire, designs, méthodes,
+études, rapports, prévisions de besoins, logiciels ou applications,
+ainsi que les informations concernant les prospects, les noms des
+clients ou des partenaires.
 
-Diese Vertraulichen Informationen können direkt oder indirekt an die
-andere Partei übermittelt werden, unabhängig von ihrer Form (mündlich,
-schriftlich), der Art der Dokumente (Papier oder digital) und durch
-alle Kommunikationsmittel. Um ihre Vertraulichkeit zu verstärken:
+Ces Informations Confidentielles peuvent être transmises directement ou
+indirectement à l'autre Partie, quelle que soit leur forme (orale,
+écrite), le type de documents (papier ou numérique), et par tout moyen
+de communication. Pour renforcer leur confidentialité :
 
-- Spezifische Hinweise werden auf den Kommunikationsmitteln
-    angebracht.
-- Eine Erinnerung an die Vertraulichkeit erfolgt systematisch bei jedem
-    Austausch, mit Angabe des Datums und Verweis auf diese
-    Vertraulichkeitsvereinbarung.
+- Des mentions spécifiques seront apposées sur les supports de
+    communication.
+- Un rappel de la confidentialité sera systématiquement effectué lors
+    de chaque échange, avec indication de la date et référence à cet
+    engagement de confidentialité.
 
-Das Fehlen solcher Hinweise oder Erinnerungen beeinträchtigt jedoch in
-keiner Weise den vertraulichen Charakter der Informationen oder die
-Vertraulichkeitsverpflichtungen der Parteien.
+Toutefois, l'absence de telles mentions ou rappels n'affecte en rien la
+nature confidentielle des informations ni les obligations de
+confidentialité des Parties.
 
-Die Vertraulichkeitsverpflichtungen gelten nicht für Informationen, die:
-- Bereits öffentlich bekannt sind, ohne dass dies der empfangenden
-    Partei zuzuschreiben ist;
-- Der empfangenden Partei vor der Übermittlung durch den Absender bekannt
-    waren, wie durch die Archive der empfangenden Partei belegt;
-- Legitimerweise von einem Dritten ohne Vertraulichkeitsbeschränkung
-    erhalten wurden;
-- Unabhängig von der empfangenden Partei entwickelt wurden, ohne Bezug
-    auf die Vertraulichen Informationen.
+Les obligations de confidentialité ne s'appliquent pas aux informations
+qui : - Sont déjà du domaine public sans faute de la Partie réceptrice
+; - Étaient connues de la Partie réceptrice avant la communication par
+l'émetteur, comme en attestent les archives de la Partie réceptrice ; -
+Sont reçues légitimement d'un tiers sans restriction de confidentialité
+; - Sont développées indépendamment par la Partie réceptrice sans
+références aux Informations Confidentielles.
 
-Die Vertraulichen Informationen müssen von den Parteien streng geschützt
-und ausschließlich für die Durchführung des Vertrags genutzt werden. Die
-Parteien verpflichten sich zu:
+Les Informations Confidentielles doivent être strictement protégées par
+les Parties et uniquement utilisées pour l'exécution du Contrat. Les
+Parties s'engagent à :
 
-- Nutzung der Vertraulichen Informationen ausschließlich im Rahmen des
-    Vertrags;
-- Beschränkung der Offenlegung der Vertraulichen Informationen auf
-    Mitglieder ihres Teams, die an der Durchführung des Vertrags
-    beteiligt sind, und Sicherstellung deren Verpflichtung zur Wahrung der
-    Vertraulichkeit;
-- Wahrung der Vertraulichkeit des Vertragsinhalts;
-- Keine Offenlegung der Vertraulichen Informationen an Dritte ohne
-    vorherige schriftliche Zustimmung der anderen Partei, außer bei
-    rechtlicher oder gerichtlicher Notwendigkeit;
-- Physischer Schutz der Vertraulichen Informationen, Aufbewahrung an
-    sicheren Orten und Ergreifen aller notwendigen Maßnahmen zu ihrem
-    Schutz.
+- Utiliser les Informations Confidentielles exclusivement dans le
+    cadre du Contrat ;
+- Limiter la divulgation des Informations Confidentielles aux membres
+    de leur équipe impliqués dans l'exécution du Contrat, en s'assurant
+    de leur engagement à maintenir la confidentialité ;
+- Préserver la confidentialité du contenu du Contrat ;
+- Ne pas divulguer les Informations Confidentielles à des tiers sans
+    consentement écrit préalable de l'autre Partie, sauf nécessité
+    légale ou judiciaire ;
+- Protéger physiquement les Informations Confidentielles, en les
+    conservant dans des lieux sécurisés et en prenant toutes mesures
+    nécessaires pour leur sécurité.
 
-Diese Vertraulichkeitsverpflichtungen bleiben während der gesamten
-Vertragslaufzeit und für fünf (5) Jahre nach dessen Beendigung oder
-Kündigung in Kraft. Am Ende des Vertrags verpflichten sich die Parteien,
-alle Vertraulichen Informationen zurückzugeben oder zu vernichten, ohne
-eine Kopie zu behalten, es sei denn, es gibt abweichende Anweisungen der
-absendenden Partei.
+Ces engagements de confidentialité restent en vigueur durant la durée du
+Contrat et pour cinq (5) années après sa conclusion ou résiliation. À la
+fin du Contrat, les Parties s'engagent à restituer ou détruire toutes
+les Informations Confidentielles, sans en conserver de copie, sauf
+instruction contraire de la Partie émettrice.
 
-Der Dienstleister stellt sicher, dass diese Vertraulichkeitsprinzipien
-während der Vertragslaufzeit von allen seinen Unterauftragnehmern
-eingehalten werden.
+Le Prestataire s'assure que ces principes de confidentialité soient
+respectés par tous ses sous-traitants durant le Contrat.
 
-## 19. Unterauftragsvergabe
+## Sous traitance
 
-Der Dienstleister muss die zwingenden Bestimmungen des Gesetzes Nr. 75-1334
-vom 31. Dezember 1975 über die Unterauftragsvergabe einhalten und ist
-gegenüber dem KUNDEN für jede Nichterfüllung der durch dieses Gesetz
-vorgeschriebenen Verpflichtungen verantwortlich. Der Einsatz von
-Unterauftragnehmern verringert in keiner Weise die Verantwortung des
-Dienstleisters gegenüber dem KUNDEN im Rahmen des Vertrags, wobei der
-Dienstleister vollständig für die Durchführung der untervergebenen
-Dienste gegenüber dem KUNDEN verantwortlich bleibt und generell für die
-ordnungsgemäße Durchführung des Vertrags.
+Le Prestataire devra respecter les dispositions impératives de la loi n°
+75-1334 du 31 décembre 1975 relative à la sous-traitance, et sera
+responsable envers le CLIENT de tout manquement aux obligations édictées
+par ladite loi. Le recours aux Sous-traitants, ne réduira en aucune
+façon la responsabilité du Prestataire envers le CLIENT au titre du
+Contrat, le Prestataire restant entièrement tenu de la réalisation des
+Services sous-traités vis-à-vis du CLIENT et, d'une manière générale, de
+la bonne exécution du Contrat.
 
-## 20. Vertragsübertragung
+## Cession du contrat
 
-Die Parteien vereinbaren, dass der Vertrag intuitu personae abgeschlossen
-wurde. Daher darf keine der Parteien den Vertrag ohne die vorherige
-schriftliche Zustimmung der anderen Partei ganz oder teilweise an
-Dritte übertragen, insbesondere bei einem Kontrollwechsel (im Sinne der
-Artikel L. 233-1 oder L. 233-3 des Handelsgesetzbuches) oder einer
-Teilbetriebsübertragung. Abweichend hiervon ist jede Partei berechtigt,
-den Vertrag innerhalb ihrer Unternehmensgruppe zu übertragen oder zu
-übertragen, vorausgesetzt, sie informiert die andere Partei mindestens
-30 Tage im Voraus über die Übertragungs- oder Übertragungsmaßnahme.
+Les Parties conviennent que le Contrat a été conclu intuitu personae.
+Par conséquent, aucune des Parties ne pourra céder le Contrat, en tout
+ou partie, à un tiers sans l'accord préalable et écrit de l'autre
+Partie, notamment en cas de changement de contrôle (au sens des articles
+L. 233-1 ou L. 233-3 du Code de commerce) ou apport partiel d'actifs.
+Par dérogation à ce qui précède, chaque Partie est autorisée à céder ou
+transférer le Contrat à l'intérieur de son groupe sous réserve qu'il en
+informe l'autre Partie au moins 30 jours préalablement à l'opération de
+cession ou de transfert.
 
-## 21. Arbeitsrechtsvorschriften
+## Réglementation en matière de droit du travail
 
-Der Dienstleister erklärt, dass er die Bestimmungen der Artikel L.
-8211-1, L. 8221-1 ff., L. 8524-1 bis L. 8254-4 sowie die Bestimmungen
-der Artikel L. 8251-1 ff. des Arbeitsgesetzbuches in Bezug auf das von ihm
-beschäftigte Personal einhält.
+Le Prestataire déclare qu'il respecte les dispositions des articles L.
+8211-1, L. 8221-1 et suivants, L. 8524-1 à L. 8254-4, ainsi que les
+dispositions des articles L. 8251-1 et suivants du Code du travail,
+relativement aux personnes qu'il emploie.
 
-Um die Bestimmungen der Artikel L. 8221-1 und L. 8524-1 bis L. 8254-4 des
-Arbeitsgesetzbuches einzuhalten, übergibt der Dienstleister dem KUNDEN
-auf dessen Wunsch:
+Dans ces conditions et afin de respecter les dispositions des articles
+L. 8221-1 et L. 8524-1 à L. 8254-4 du Code du travail, le Prestataire
+remet au CLIENT, uniquement sur demande de ce dernier :
 
-- Alle Dokumente, die gemäß Artikel D. 8222-5 des Arbeitsgesetzbuches
-    erforderlich sind;
-- Eine Ehrenerklärung zur Bekämpfung der Schwarzarbeit.
+- L'ensemble des documents exigés par l'article D. 8222-5 du Code du
+    travail;
+- L'attestation sur l'honneur de lutte contre le travail dissimulé.
 
-Der Dienstleister verpflichtet sich auch, diese Verpflichtungen auf alle
-seine Unterauftragnehmer anzuwenden, die während der Vertragsdauer tätig
-werden. Für die in den Räumlichkeiten des KUNDEN erbrachten Leistungen
-verpflichtet sich der Dienstleister, sicherzustellen, dass seine
-Mitarbeiter alle Hygienebestimmungen und Sicherheitsvorschriften des
-KUNDEN einhalten. Insbesondere müssen der Dienstleister und seine
-Unterauftragnehmer die Bestimmungen des Dekrets Nr. 92-158 vom 20. Februar
-1992 einhalten, das spezifische Hygiene- und Sicherheitsvorschriften für
-Arbeiten in einem Betrieb durch ein Fremdunternehmen festlegt (Art. R.
-4511-1 bis R. 4515-11 des Arbeitsgesetzbuches).
+Le Prestataire s'engage également à appliquer ces engagements à tous ses
+sous-traitants intervenant sur la durée du contrat. Pour les prestations
+délivrées dans les locaux du CLIENT, le Prestataire s'engage à faire
+respecter par ses salariés l'ensemble des dispositions relatives à
+l'hygiène et à la sécurité en vigueur chez le CLIENT. En particulier, le
+Prestataire et ses sous-traitants devront veiller à respecter les
+stipulations du décret n° 92-158 du 20 février 1992 fixant les
+prescriptions particulières d'hygiène et de sécurité, applicables aux
+travaux effectués dans un établissement par une entreprise extérieure
+(art. R. 4511-1 à R. 4515-11 du Code du travail).
 
-Die Parteien werden sich über alle möglichen Schwierigkeiten in diesem
-Zusammenhang und die Mittel zu deren Behebung informieren. Der Vertrag
-schließt jegliches Konzept der Arbeitnehmerüberlassung im Rahmen der
-Vorschriften zur Zeitarbeit aus.
+Les Parties se tiendront informées de toute éventuelle difficulté à ce
+titre et des moyens d'y remédier. Le Contrat est exclusif de toute
+notion de mise à disposition de personnel entrant dans le cadre de la
+réglementation sur le travail temporaire.
 
-Das Personal des Dienstleisters bleibt zu jeder Zeit unter der
-ausschließlichen rechtlichen Kontrolle und Verantwortung des
-Dienstleisters, der allein über Weisungs- und Kontrollbefugnis gegenüber
-seinen Mitarbeitern verfügt. Der KUNDE darf keine Anweisungen direkt an
-das Personal des Dienstleisters und/oder das Personal eventueller
-Unterauftragnehmer des Dienstleisters geben.
+Le personnel du Prestataire reste en toutes circonstances sous la
+subordination juridique permanente exclusive du Prestataire qui dispose
+seul d'un pouvoir de direction et de contrôle sur ses salariés. Le
+CLIENT ne peut donner d'ordre directement au personnel du Prestataire
+et/ou au personnel des éventuels sous-traitants du Prestataire.
 
-Der Dienstleister stellt sicher, dass sein Personal bei allen relevanten
-Sozialversicherungsträgern angemeldet ist und übernimmt die volle
-Verantwortung in Bezug auf das Arbeitsrecht. In diesem Zusammenhang
-versichert der Dienstleister, dass er die erforderlichen Meldungen bei
-den Sozialversicherungsbehörden vorgenommen hat und keine Schwarzarbeit
-im Sinne der Artikel L. 8221-3 und 5 des Arbeitsgesetzbuches betreibt. Im
-Falle der Beauftragung eines Unterauftragnehmers verpflichtet sich der
-Dienstleister sicherzustellen, dass dieser die oben genannten
-gesetzlichen Bestimmungen strikt einhält.
+Le Prestataire assure pour son personnel la responsabilité de son
+affiliation auprès de tous les organismes sociaux ainsi que son entière
+responsabilité vis-à-vis de la législation du travail. A ce titre, le
+Prestataire certifie avoir procédé aux déclarations exigées par les
+organismes de protection sociale et ne pas recourir au travail dissimulé
+tel que défini aux articles L. 8221-3 et 5 du Code du travail. Dans
+l'hypothèse où le Prestataire aurait recours à un sous-traitant, il
+s'engage à s'assurer que celui-ci respecte strictement les stipulations
+légales ci-dessus rappelées.
 
-In Übereinstimmung mit den gesetzlichen Bestimmungen zur Verhütung und
-Bekämpfung von Schwarzarbeit verpflichtet sich der Dienstleister, dem
-KUNDEN bei Vertragsunterzeichnung und alle sechs (6) Monate bis zum Ende der
-Ausführung:
+Conformément aux dispositions légales en matière de prévention et de
+répression du travail dissimulé, le Prestataire s'engage à remettre au
+CLIENT à la date de signature du Contrat et tous les six (6) mois
+jusqu'à la fin de son exécution :
 
-- Eine Ehrenerklärung über die Abgabe aller verpflichtenden
-    Steuererklärungen bei der Finanzverwaltung zum Datum der Erklärung und
-    die Empfangsbestätigung der Erklärung;
-- Eine Bestätigung über die Abgabe von Sozialversicherungserklärungen,
-    ausgestellt von der Sozialversicherungseinrichtung, die für die
-    Erhebung der Beiträge und Abgaben des Dienstleisters zuständig ist und
-    nicht älter als sechs (6) Monate ist;
-- Einen Auszug aus dem Handelsregister (K oder K-bis für den
-    Dienstleister) oder ein Dokument gemäß den Bestimmungen des Artikels
-    D. 8222-5 des Arbeitsgesetzbuches;
-- Eine Ehrenerklärung des Dienstleisters über die ordnungsgemäße
-    Beschäftigung der Arbeitnehmer im Einklang mit den Artikeln L. 1221-10,
-    L. 3243-2 und R. 3243-1 des Arbeitsgesetzbuches.
+- Une attestation sur l'honneur du dépôt auprès de l'administration
+    fiscale, à la date de l'attestation, de l'ensemble des déclarations
+    fiscales obligatoires et le récépissé du dépôt de déclaration ;
+- Une attestation de fourniture de déclarations sociales émanant de
+    l'organisme de protection sociale chargé du recouvrement des
+    cotisations et des contributions sociales incombant au Prestataire
+    et datant de moins de six (6) mois ;
+- Un extrait de l'inscription au registre du commerce et des sociétés
+    (K ou K-bis relatif au Prestataire) ou un document conforme aux
+    stipulations de l'article D. 8222-5 du Code du travail ;
+- Une attestation sur l'honneur établie par le Prestataire de la
+    réalisation du travail par des salariés employés régulièrement au
+    regard des articles L. 1221-10, L. 3243-2 et R. 3243-1 du Code du
+    travail.
 
-## 22. Ethik und soziale Verantwortung
+## Ethique et responsabilité sociale
 
-Im Rahmen der Durchführung dieses Vertrags vereinbaren die Parteien
-de die folgenden ethischen und gesetzlichen Grundsätze strikt zu beachten:
+Dans le cadre de l'exécution du présent Contrat, les Parties conviennent
+de respecter scrupuleusement les principes éthiques et légaux suivants :
 
-- Absolutes Verbot der Beschäftigung von minderjährigen Arbeitnehmern,
-    Zwangsarbeit oder jeglicher Form von Pflichtarbeit, in Übereinstimmung
-    mit den Richtlinien der Internationalen Arbeitsorganisation (ILO);
-- Beseitigung jeglicher Diskriminierung, sei es aufgrund von Geschlecht,
-    Rasse, Hautfarbe, sozialer Herkunft, Religion, politischer Meinung,
-    Zugehörigkeit zu einer nationalen Minderheit oder jeglicher anderer
-    Bedingung, entsprechend den geltenden gesetzlichen Bestimmungen;
-- Bekämpfung jeglicher Form von Korruption, um vollständige
-    Integrität und Transparenz in allen Operationen zu gewährleisten.
+- Interdiction absolue de l'emploi de travailleurs mineurs, du travail
+    forcé ou de toute forme de travail obligatoire, en alignement avec
+    les directives de l'Organisation Internationale du Travail (OIT) ;
+- Elimination de toute discrimination, qu'elle soit basée sur le sexe,
+    la race, la couleur, l'origine sociale, la religion, l'opinion
+    politique, l'appartenance à une minorité nationale ou toute autre
+    condition, conformément aux dispositions légales en vigueur ;
+- Lutte contre la corruption sous toutes ses formes, assurant une
+    intégrité et une transparence totales dans toutes les opérations.
 
-Der Anbieter verpflichtet sich ausdrücklich, die grundlegenden Werte
-der Europäischen Union, wie die menschliche Würde, Freiheit, Demokratie,
-Gleichheit, Achtung der Rechtsstaatlichkeit sowie die Menschenrechte
-einschließlich der Rechte von Minderheiten zu ehren und zu fördern. Diese
-Verpflichtung zeigt sich in einer ständigen Wachsamkeit und Handlungsbereitschaft,
-um sicherzustellen, dass diese Grundsätze auf allen Ebenen ihrer Tätigkeit
-eingehalten werden.
+Le Prestataire s'engage fermement à honorer et promouvoir les valeurs
+fondamentales de l'Union européenne, telles que la dignité humaine, la
+liberté, la démocratie, l'égalité, le respect de l'état de droit, ainsi
+que les droits de l'homme y compris ceux des minorités. Cet engagement
+se traduit par une vigilance et une action constantes pour assurer que
+ces principes soient respectés à tous les niveaux de leur activité.
 
-## 23. Geistiges Eigentum
+## Propriété intellectuelle
 
-Dieser Vertrag stellt in keinem Fall eine Übertragung oder Abtretung von
-Rechten an geistigem oder gewerblichem Eigentum dar, einschließlich
-Patenten. Es ist dem KUNDEN ausdrücklich untersagt:
+Ce Contrat ne constitue en aucun cas un transfert ni une cession de
+droits de propriété intellectuelle et/ou industrielle, y compris les
+brevets. Il est expressément interdit au CLIENT de :
 
-- Elemente, die für die Erbringung der Dienstleistungen verwendet werden,
-    in irgendeiner Weise zu kopieren oder zu reproduzieren, einschließlich,
-    aber nicht beschränkt auf Computercode, Texte, Bilder, Designs, grafische
-    Charten, Ergonomie, Dokumentationen usw.;
-- Zu versuchen, die proprietären Technologien des Anbieters zu dekompilieren,
-    zu disassemblieren oder jegliche Form von Reverse Engineering anzuwenden.
+- Copier ou reproduire de quelque manière que ce soit les éléments
+    utilisés pour la prestation des services, incluant mais ne se
+    limitant pas au code informatique, textes, images, designs, chartes
+    graphiques, ergonomie, documentations, etc.
+- Tenter de décomposer, désassembler ou appliquer toute forme
+    d'ingénierie inverse aux technologies propriétaires du Prestataire.
 
-Trotz dieser Beschränkungen gewährt der Anbieter dem KUNDEN ein persönliches,
-nicht übertragbares und nicht exklusives Nutzungsrecht an den genannten Elementen,
-ausschließlich im Rahmen der notwendigen Nutzung der Dienstleistungen und für
-die Dauer derselben. Diese Nutzungserlaubnis erlischt automatisch mit dem Ende der
-Dienstleistungserbringung.
+Malgré ces restrictions, le Prestataire accorde au CLIENT un droit
+d'usage personnel, non transférable et non exclusif sur lesdits
+éléments, uniquement dans le cadre nécessaire à l'utilisation des
+Prestations et pour la durée de celles-ci. Cette autorisation
+d'utilisation expire automatiquement avec la fin de la prestation des
+services.
 
-## 24. Nichtabwerbung von Personal
+## Non solicitation de personnel
 
-Ohne vorherige schriftliche Vereinbarung verpflichtet sich jede der Parteien,
-während der Dauer des Vertrags zuzüglich einer Dauer von einem (1) Jahr ab dem
-Datum der Beendigung, kein Mitglied des Personals der anderen Partei direkt oder
-indirekt zu beschäftigen oder zu veranlassen, zu arbeiten.
+Sauf accord préalable et écrit, chacune des Parties renonce à engager ou
+à faire travailler directement ou indirectement tout membre du personnel
+de l'autre Partie pendant la durée du Contrat augmentée d'une durée d'un
+(1) an à compter de sa date de cessation.
 
-Jede Verletzung der oben genannten Verpflichtung durch eine der Parteien führt
-automatisch zur Zahlung einer pauschalen und befreienden Entschädigung durch die
-verletzende Partei, die auf zwölf (12) Bruttomonatsgehältern (fixes und variables
-Gehalt) des betreffenden Mitarbeiters festgelegt ist.
+Toute violation par une des Parties de l'obligation ci-dessus entraîne
+de plein droit le paiement par la Partie contrevenante d'une indemnité
+forfaitaire et libératoire fixée à douze (12) mois de salaire bruts
+(salaire fixe et variable) du membre du personnel concerné.
 
-Das Durchschnittsgehalt zur Berechnung der Entschädigung basiert auf den letzten
-3 Monaten vor dem Datum der Beendigung des Arbeitsvertrags.
+Le salaire moyen de référence pour calculer le montant de
+l'indemnisation est celui des 3 derniers mois ayant précédé la date de
+rupture du contrat de travail.
 
-## 25. Unterscheidungszeichen der Parteien
+## Signes distinctifs des parties
 
-Jede Partei verpflichtet sich, jede Handlung und jedes Verhalten zu unterlassen,
-das direkt oder indirekt die Unterscheidungszeichen der anderen Partei, insbesondere
-deren Marken, beeinträchtigen könnte. Unbeschadet dessen kann der Anbieter den KUNDEN
-als Referenz benennen und der KUNDE darauf hinweisen, dass er die Dienstleitungen des
-Anbieters verwendet. Jede Partei kann jedoch ohne Angabe von Gründen der anderen Partei
-mitteilen, sie nicht länger zu zitieren.
+Chaque Partie s'interdit tout agissement et tout acte susceptible de
+porter atteinte directement ou non aux signes distinctifs l'autre
+Partie, et en particulier ses marques. Sans préjudice pour le
+Prestataire de citer le CLIENT en référence et pour le CLIENT de
+mentionner qu'il utilise les Prestations du Prestataire. Toutefois,
+chaque Partie, sans avoir à le motiver, peut notifier à l'autre Partie
+de ne plus la citer.
 
-## 26. Personenbezogene Daten
+## Données à caractère personnel
 
-Der KUNDE verpflichtet sich, im Rahmen dieser AGBs die Datenschutzrichtlinie des
-Anbieters zu beachten. Der KUNDE kann diese Richtlinie auf Anfrage unter der folgenden
-Adresse anfordern
+Le CLIENT s'engage à respecter, dans le cadre des présentes CGVU, la
+politique de protection des données personnelles du Prestataire. Le
+CLIENT peut solliciter cette politique sur demande à l'adresse suivante
 
 ```
 <dpo@cloud-temple.fr>.
 ```
 
-Sowohl der KUNDE als auch der Anbieter verpflichten sich, die geltenden Vorschriften
-für die Verarbeitung personenbezogener Daten zu beachten, insbesondere das Gesetz Nr.
-78-17 vom 6. Januar 1978 über Informatik, Dateien und Freiheiten, geändert und die
-Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016,
-die ab dem 25. Mai 2018 gilt.
+Le CLIENT et le Prestataire s'engagent à respecter la réglementation en
+vigueur applicable au traitement des Données Personnelles et, en
+particulier, la loi n°78-17 du 6 janvier 1978 relative à l'informatique,
+aux fichiers et aux libertés, modifiée et le règlement (UE) 2016/679 du
+Parlement européen et du Conseil du 27 avril 2016 applicable à compter
+du 25 mai 2018.
 
-## 27. Versicherung
+## Assurance
 
-Falls der KUNDE beabsichtigt, mithilfe der angebotenen Dienstleistungen kritische oder
-strategische Daten (wie Informationen zu Abrechnungen, Gehältern, Forschung und Entwicklung
-usw.) zu verarbeiten, ist es in der Verantwortung des KUNDEN, die notwendigen Maßnahmen zu
-ergreifen, um eine spezielle Versicherung zum Schutz vor Datenverlust abzuschließen.
+Dans le cas où le CLIENT prévoit de traiter des données critiques ou
+stratégiques (telles que des informations liées à la facturation, à la
+paie, à la recherche et développement, etc.) à l'aide des services
+fournis, il incombe au CLIENT de prendre les dispositions nécessaires
+pour souscrire à une assurance dédiée à la couverture des pertes de
+données.
 
-## 28. Zuständige Gerichte und anwendbares Recht
+## Attribution de compétence et droit applicable
 
-Der Vertrag unterliegt dem französischen Recht.
+Le Contrat est régi par le droit français.
 
-Im Falle eines Streits zwischen den Parteien bezüglich der Ausführung oder Beendigung des
-Vertrags werden die Parteien zunächst versuchen, eine gütliche Einigung zu erzielen. Im Falle
-des Scheiterns wird der Streit dem Handelsgericht von Nanterre unterbreitet, ungeachtet
-mehrerer Beklagter oder Gewährleistungsansprüche, auch für einstweilige Verfügungen,
-im Eilverfahren oder per Antrag.
+Pour tout différend survenant entre les Parties concernant l'exécution
+ou la résiliation du Contrat, les Parties se rapprocheront d'abord aux
+fins d'envisager de trouver une solution amiable. En cas d'échec, le
+différend sera soumis au Tribunal de Commerce de Nanterre, nonobstant
+pluralité de défendeurs ou appel en garantie, même pour les procédures
+conservatoires, en référé ou par requête.

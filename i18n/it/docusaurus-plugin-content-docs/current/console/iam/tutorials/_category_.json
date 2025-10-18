@@ -1,0 +1,8 @@
+{
+  "label": "Esercizi",
+  "sidebar_position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Esercizi pratici per la configurazione dell'identità federata."
+  }
+}

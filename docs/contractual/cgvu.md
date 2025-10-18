@@ -2,109 +2,14 @@
 title: Conditions Générales de Vente et Utilisation (CGVU)
 ---
 
-**Table des matières**
 
-- [1. Cadre](#X09af6387e1d2792b8edc09fc15abd136a837db5)
-- [2. Préambule](#X95f5a49ce2232622edafb4d282b365be9aa60c6)
-- [3. Définitions](#X31b0d34b3711f9b12e76c2254c4efb43454053e)
-- [4. Objet](#X6cbf86c27755c45da6fe8cf2ffb85cf5ac969a2)
-- [5. Disposition générale](#Xe916e2c8dc91d280dd54f660184b7c68f730905)
-- [6. Commande des
-    services](#X726505ed12598bf0395725645f700cf9881390b)
-  - [6.1. Compte CLIENT](#Xa6f21c912e3c6c90db6dc23ab3fbc53b91395ad)
-  - [6.2. Activation du compte
-        CLIENT](#Xc9c2e6f53c31cd3699c5290f87faf6294229fb4)
-  - [6.3. Commande](#X46e06bbce0004ff78b342b604ddc8185c3b8c28)
-- [7. Durée du contrat](#X22994bef2242f20259ca6d7a37a1f22845cc738)
-- [8. Périmètre des
-    services](#Xaf22d3a4bdf044e63e167702e8f42bf565757a5)
-- [9. Services optionnels](#X98940c117e0de1a509e0e37602fc39b081ab760)
-- [10. Conditions d'utilisation des
-    services](#Xd3f38a589bfb7ccc0f9f402aaeb5afd07cd4fd4)
-  - [10.1. Respect des conditions de
-        service](#Xf2145552b39fd0050fb4fedd8020785b2024f85)
-  - [10.2. Choix des
-        services](#X90a17cc9e0f33015a7993730b7e003409f3ec78)
-  - [10.3. Connexion](#Xc21984a083e130216be098de30f6c1f4ceae9d4)
-  - [10.4. Moyens
-        d'authentification](#X48971bda881b21af9feb2cdcac70a97af59250b)
-  - [10.5. Contenus](#Xa9698bbc45b482c0e3a687dd4d5c64e797ee950)
-  - [10.6. Respect des lois, réglementations et règles
-        déontologiques](#X5286f504ecb1a5336bdba1273060bf92e237c6e)
-  - [10.7. Suspension de
-        service](#X69b15bb7ec103c723c784184bc0aa74641f90a9)
-  - [10.8. Evolution des
-        services](#Xcb68e745ac44cea5d5e293b48415ae1c9bd95bb)
-  - [10.9. Propriété intellectuelle et droit
-        d'utilisation](#X9feab2d58ffacf660cd09c7478e4d2395258d81)
-  - [10.10. Contrôle à
-        l'exportation](#Xc87e8881391c8c2f9de35248d6550909d347440)
-  - [10.11. Produits
-        tiers](#Xbe72b1fb7b3a1f96902c52f15a6faafbc4c542c)
-  - [10.12. Continuité et réversibilité des
-        services](#Xdea843d0835a09a5fc94ab8c7f534337ffb44cd)
-  - [10.13. Test
-        d'intrusion](#X1e5a22eb5f75767dde3b9268d2c0126ca9b6046)
-- [11. Collaboration](#X3e91da35bd647d680e0ada9980c9c6e21b4304f)
-- [12. Responsabilité](#X18dea78e62b2478833dd6b0d5a4a643c814d689)
-  - [12.1. Capacité](#X9a873cb42a55326042124368e0e9b325014b41f)
-  - [12.2. Responsabilité du
-        Prestataire](#X3ed498cfaa1526cdaeb4596c17e227e6838c82b)
-  - [12.3. Responsabilité du
-        CLIENT](#X61713926950a4a5b07e4d8e51981a439bb35775)
-  - [12.4. Garantie](#Xa68777faa87654fa8cdbea2dae3b039359bec35)
-  - [12.5. Tiers](#X1e3da7b2e01ecf52b7180e0382f49b9bfa96953)
-- [13. Force majeure](#Xbd1998a95e1281f5b2e34456f65831500e7777f)
-- [14. Conditions
-    financières](#Xb608ecff8d8e06e3cc183e9204f7c608180e2ea)
-  - [14.1. Tarifs
-        appliqués](#X413b7ff7c8cb07ad4aa5a9620f2cbe02ab5629c)
-  - [14.2. Changement de
-        prix](#X1d89095a6fb65869d20d60aad1f8fdfcfc7a960)
-  - [14.3. Facturation](#X453f9f7d9c04d187ab470603e49cf07d8af5bf3)
-  - [14.4. Défaut et retard de
-        paiement](#Xb6c6b08c304edae93fd7af7b60adf80ea04ec8c)
-  - [14.5. Contestation](#X635be4c898aac61cf513a85e4061e3786a937bd)
-- [15. Pénalités](#X5e5b8465fbd4ee6798d8e0dce99cc38496ec909)
-  - [15.1. Principe](#X51c3a2b1f705e030f7f4b42a64dd1185ad06d90)
-  - [15.2. Calcul des
-        pénalités](#Xaf3bf16557932c83dddecd7870b88b216373039)
-- [16. Résiliation](#Xc31fd02152596edd77e91d909cfe1ed97be407f)
-  - [16.1. Résiliation par
-        convenance](#X4b00620ec0d9516776df563c25c1f6de321d25c)
-  - [16.2. Résiliation pour
-        manquement](#Xcfbac4c564ea7abb9567693026eaabe3a778468)
-  - [16.3. Résiliation sans
-        faute](#Xb88ab50e4db29ec7b87ee10ae925ad1d4abdc53)
-- [17. Réversibilité](#X5f4b87aa44285b480f94090ac846aeca7a7d4e9)
-- [18. Confidentialité](#X5a32ce0bfe3b75c0a1bcda86779820b6c7a6709)
-- [19. Sous traitance](#X77b7cfa5f8500f5f40b3510f7bc86f6f135a101)
-- [20. Cession du contrat](#Xbfa7c5cf04f837da0f2329aa808d9a42392b7de)
-- [21. Réglementation en matière de droit du
-    travail](#X90b08ad7f78b144e0a50c3d68032fbc28cc38c9)
-- [22. Ethique et responsabilité
-    sociale](#Xf36964be4c6d404d8271d6cf77b6adfc98bb16c)
-- [23. Propriété
-    intellectuelle](#X64525e0d647cf0aea1ca9d95e6fd0042ec83927)
-- [24. Non solicitation de
-    personnel](#X6ed1e0b4d56101422258bbb573368239efc6b3f)
-- [25. Signes distinctifs des
-    parties](#Xe079096ffe8dcd428435a88408152507b8c8e53)
-- [26. Données à caractère
-    personnel](#X9f8662e91d64a22d87f82ce3b1dc339c6951f51)
-- [27. Assurance](#X651b2074f1a48055669f930db4345bbb1f39310)
-- [28. Attribution de compétence et droit
-    applicable](#X6a1853454b81593f5b286633ac7ecc35a5857e3)
+## Cadre
 
-## 1. Cadre
+| Référence | CT.AM.JUR.CGVU 2.0 |
+| :--- | :--- |
+| **Date** | 13 mars 2024 |
 
-  ------------------------ ----------------------------------------------
-  Référence                CT.AM.JUR.CGVU 2.0
-
-  Date                     13 mars 2024
-  ------------------------ ----------------------------------------------
-
-## 2. Préambule
+## Préambule
 
 Les présentes Conditions Générales de Vente et d'Utilisation (ci-après
 désignées par l'acronyme « CGVU »), conjointement avec l'annexe
@@ -155,7 +60,7 @@ Le fait qu'une stipulation figurant dans un document de rang inférieur
 ne soit pas expressément mentionnée dans le document de rang supérieur
 ne lui fera pas perdre sa valeur juridique.
 
-## 3. Définitions
+## Définitions
 
 Les termes figurant ci-dessous auront pour les Parties les définitions
 suivantes. Chaque terme débutant par une majuscule ci-après a le sens
@@ -294,7 +199,7 @@ qui lui est donné dans sa définition.
     évaluer et tarifer l'utilisation de ressources informatiques, basée
     sur la consommation ou la performance.
 
-## 4. Objet
+## Objet
 
 Le présent Contrat vise à établir les termes et conditions selon
 lesquels le Prestataire s'engage à fournir au CLIENT les Services
@@ -314,7 +219,7 @@ notamment en ce qui concerne la sélection des caractéristiques des
 unités d'œuvre proposées et la détermination des ressources nécessaires
 à la satisfaction de ses besoins spécifiques.
 
-## 5. Disposition générale
+## Disposition générale
 
 Chaque Partie s'engage à ne pas prendre d'engagements au nom et pour le
 compte de l'autre Partie. Les Parties restent individuellement
@@ -327,9 +232,9 @@ irrévocable, cette disposition sera considérée comme non écrite. Cette
 invalidité n'affectera pas la validité globale du Contrat ni la force
 des autres dispositions.
 
-## 6. Commande des services
+## Commande des services
 
-### 6.1. Compte CLIENT
+### Compte CLIENT
 
 Pour accéder et commander les Services proposés par le Prestataire, il
 est impératif pour le CLIENT de posséder un **Compte CLIENT** valide.
@@ -347,7 +252,7 @@ assurer au Prestataire qu'il détient l'autorité et la capacité
 juridiques nécessaires pour agir au nom du CLIENT et l'engager
 conformément aux dispositions d'un contrat.
 
-### 6.2. Activation du compte CLIENT
+### Activation du compte CLIENT
 
 Avant l'activation du Compte CLIENT, ainsi qu'à tout moment durant la
 prestation de services, le Prestataire se réserve le droit de vérifier
@@ -358,7 +263,7 @@ le droit de refuser l'activation ou de procéder à la désactivation du
 Compte CLIENT dans le cas où les informations seraient jugées
 incomplètes, inexactes, ou frauduleuses.
 
-### 6.3. Commande
+### Commande
 
 Dès l'activation de son Compte CLIENT par le Prestataire, le CLIENT
 acquiert la possibilité de commander des Services. Selon la nature des
@@ -386,7 +291,7 @@ techniquement les Prestations, ne sauraient contredire les principes
 précision technique sans remettre en cause les dispositions générales du
 document.
 
-## 7. Durée du contrat
+## Durée du contrat
 
 Les contrats établis sous ces Conditions Générales de Vente et
 d'Utilisation (CGVU) sont conclus pour une durée indéterminée, sauf
@@ -404,7 +309,7 @@ La cessation du Contrat, que l'initiative provienne du Prestataire ou du
 CLIENT, n'exonère pas ce dernier de l'obligation de s'acquitter des
 coûts relatifs aux Prestations déjà fournies.
 
-## 8. Périmètre des services
+## Périmètre des services
 
 Le périmètre des services englobe spécifiquement :
 
@@ -416,7 +321,7 @@ L'accès à ces services, ainsi que leur utilisation, sont soumis aux
 termes et conditions établis dans le présent Contrat, y compris toutes
 ses annexes associées.
 
-## 9. Services optionnels
+## Services optionnels
 
 Dans le cas où certains Services optionnels n'auraient pas été
 initialement inclus dans le Contrat, le CLIENT a la possibilité de les
@@ -424,9 +329,9 @@ souscrire ultérieurement. La fourniture de tout Service optionnel par le
 Prestataire est conditionnée à l'accord préalable des parties suite à
 une évaluation concertée.
 
-## 10. Conditions d'utilisation des services
+## Conditions d'utilisation des services
 
-### 10.1. Respect des conditions de service
+### Respect des conditions de service
 
 Le CLIENT s'oblige à passer commande et à utiliser les Services en
 respectant scrupuleusement les conditions d'utilisation applicables.
@@ -441,7 +346,7 @@ par ces derniers, de leur faire connaître et accepter les conditions
 d'utilisation actuelles. Le CLIENT assure ainsi le Prestataire du
 respect intégral de ces conditions par les tiers concernés.
 
-### 10.2. Choix des services
+### Choix des services
 
 Avant de procéder à la commande et à l'utilisation des Services, le
 CLIENT s'engage à examiner attentivement les Conditions d'utilisation
@@ -459,7 +364,7 @@ contact avec le Prestataire. Il est de la responsabilité du CLIENT de se
 tenir informé des modifications susceptibles d'intervenir, notamment
 lors de l'émission de nouvelles Commandes.
 
-### 10.3. Connexion
+### Connexion
 
 L'accès aux Services requiert que le CLIENT dispose, à ses propres frais
 et sous sa responsabilité, d'une connexion à distance adéquate (telle
@@ -477,7 +382,7 @@ service, etc.), ni des répercussions éventuelles de ces
 dysfonctionnements, en particulier lorsqu'ils conduisent à une
 indisponibilité ou à une interruption des Services.
 
-### 10.4. Moyens d'authentification
+### Moyens d'authentification
 
 Le CLIENT assume l'entière responsabilité de la gestion et du maintien
 de la confidentialité des identifiants et mots de passe nécessaires pour
@@ -495,7 +400,7 @@ Prestataire en cas de perte ou de divulgation suspectée des moyens
 d'authentification, et à initier immédiatement les procédures de
 remplacement ou de réinitialisation de ces moyens.
 
-### 10.5. Contenus
+### Contenus
 
 Dans le respect des dispositions fournies par le Prestataire, ce dernier
 ne participe pas activement à la gestion des contenus du CLIENT et
@@ -527,7 +432,7 @@ CLIENT. Cela sans préjudice du droit du Prestataire à engager des
 poursuites judiciaires ou à réclamer des dommages-intérêts pour
 préjudice subi.
 
-### 10.6. Respect des lois, réglementations et règles déontologiques
+### Respect des lois, réglementations et règles déontologiques
 
 Les Services doivent être utilisés de manière responsable, en conformité
 avec les lois et réglementations applicables. Les Parties conviennent de
@@ -548,7 +453,7 @@ expressément interdites les pratiques suivantes, bien que cette
 4. l'utilisation de contenus illicites ou interdits, tels que décrits
     précédemment dans la section « Contenus ».
 
-### 10.7. Suspension de service
+### Suspension de service
 
 Le Prestataire se réserve le droit de suspendre temporairement ou
 totalement les Services en cas de :
@@ -581,7 +486,7 @@ défaut du Prestataire, ces interruptions ne seront pas considérées comme
 une indisponibilité des Services aux fins des engagements de niveau de
 service stipulés dans le Contrat.
 
-### 10.8. Evolution des services
+### Evolution des services
 
 Le Prestataire se réserve le droit d'apporter, à sa discrétion, toute
 modification aux Services, y compris l'ajout, la modification ou la
@@ -603,7 +508,7 @@ concerné. Pour ce faire, il doit envoyer une notification de résiliation
 par courrier recommandé avec demande d'avis de réception, dans un délai
 de soixante (60) jours suivant l'application de la modification.
 
-### 10.9. Propriété intellectuelle et droit d'utilisation
+### Propriété intellectuelle et droit d'utilisation
 
 Tous les éléments fournis au CLIENT par le Prestataire --- incluant
 logiciels, infrastructures, documentations, et autres --- demeurent la
@@ -625,7 +530,7 @@ codes et algorithmes mis à disposition dans le cadre des Services, y
 compris pour des tentatives de rétro-ingénierie, sauf autorisation
 légale explicite permettant de contourner cette restriction.
 
-### 10.10. Contrôle à l'exportation
+### Contrôle à l'exportation
 
 Sous réserve des limitations spécifiées dans les termes du Contrat et
 des restrictions liées aux activités propres au CLIENT, le Prestataire
@@ -653,7 +558,7 @@ avoirs de la Direction générale du Trésor, pourront être effectuées.
 Suite à ces vérifications, le Prestataire peut résilier le contrat de
 manière unilatérale et immédiate après en avoir informé le CLIENT.
 
-### 10.11. Produits tiers
+### Produits tiers
 
 Conformément aux engagements pris, il est important de noter que :
 
@@ -673,7 +578,7 @@ Conformément aux engagements pris, il est important de noter que :
     adéquation avec ses besoins spécifiques et les objectifs visés, tout
     en respectant les termes du Contrat.
 
-### 10.12. Continuité et réversibilité des services
+### Continuité et réversibilité des services
 
 La cessation des Services, pour toute raison (telle que la résiliation
 du Contrat, son non-renouvellement, l'interruption des Services par le
@@ -686,7 +591,7 @@ collectés, transmis, diffusés, publiés, ou de toute autre manière
 utilisés ou exploités dans le cadre des Services, incluant les
 sauvegardes éventuelles.
 
-### 10.13. Test d'intrusion
+### Test d'intrusion
 
 Le CLIENT est autorisé à conduire, directement ou via un auditeur
 externe spécifiquement mandaté, des tests d'intrusion sur les Services
@@ -734,16 +639,16 @@ Prestataire. En cas de violation des conditions établies, le Prestataire
 se réserve le droit de suspendre immédiatement l'accès aux Services,
 sans préjudice de tout dommage-intérêt potentiel.
 
-## 11. Collaboration
+## Collaboration
 
 Les Parties reconnaissent être soumises à une obligation de
 collaboration. En conséquence, elles s'engagent à se communiquer toute
 information et document de nature à faciliter l'exécution du Contrat, et
 plus particulièrement, de leurs obligations respectives.
 
-## 12. Responsabilité
+## Responsabilité
 
-### 12.1. Capacité
+### Capacité
 
 Chacune des Parties déclare et garantit posséder l'autorité et la
 capacité nécessaires à la conclusion du Contrat et à l'exécution des
@@ -753,7 +658,7 @@ et connaissances (notamment techniques), leur permettant respectivement
 d'utiliser et de fournir les Services conformément aux conditions
 prévues au Contrat.
 
-### 12.2. Responsabilité du Prestataire
+### Responsabilité du Prestataire
 
 Lorsque le Contrat stipule des engagements de niveau de service, les
 pénalités ou crédits octroyés par le Prestataire au CLIENT servent de
@@ -798,7 +703,7 @@ Prestataire ne saurait être engagée dans les cas suivants :
 - Détérioration des systèmes, applications et autres éléments
     installés par le CLIENT sur l'infrastructure.
 
-### 12.3. Responsabilité du CLIENT
+### Responsabilité du CLIENT
 
 Le CLIENT est entièrement responsable des risques associés à ses
 activités, incluant l'utilisation des Services fournis par le
@@ -832,7 +737,7 @@ dommages potentiels qui pourraient lui être attribués. Il s'engage
 également à maintenir cette assurance, ou toute autre assurance offrant
 une couverture équivalente, active durant toute la période du Contrat.
 
-### 12.4. Garantie
+### Garantie
 
 Chaque Partie s'engage à exercer ses activités dans le strict respect
 des lois et réglementations applicables. Le CLIENT dégage le Prestataire
@@ -856,7 +761,7 @@ administratives ou judiciaires, et s'engage à indemniser le Prestataire
 pour tous dommages résultants, incluant les éventuelles condamnations,
 ainsi que les frais de défense justifiés.
 
-### 12.5. Tiers
+### Tiers
 
 Dans le cadre du présent Contrat, le Prestataire n'assume aucune
 obligation à l'égard de tiers, y compris les Utilisateurs, et aucune
@@ -874,7 +779,7 @@ descriptif détaillé de la demande ainsi que toutes les informations
 pertinentes permettant au Prestataire de fournir au CLIENT les éléments
 de réponse ou les documents utiles qu'il détient.
 
-## 13. Force majeure
+## Force majeure
 
 L'exécution d'une obligation, quelle qu'elle soit, est suspendue en
 lorsque son exécution est empêchée par un cas de force majeure tel que
@@ -912,9 +817,9 @@ d'une lettre recommandée à l'autre partie.
 Tous les frais liés à la mise en œuvre des solutions susvisées
 incomberont à la Partie affectée par le cas de force majeure.
 
-## 14. Conditions financières
+## Conditions financières
 
-### 14.1. Tarifs appliqués
+### Tarifs appliqués
 
 Les tarifs appliqués pour les Services fournis au CLIENT correspondent
 aux prix en vigueur au moment de l'émission de la facture, conformément
@@ -949,7 +854,7 @@ son intégralité, même si elle n'est pas entièrement consommée. De plus,
 certains Services peuvent engendrer des coûts supplémentaires pour leur
 installation ou leur mise en service.
 
-### 14.2. Changement de prix
+### Changement de prix
 
 Le Prestataire se réserve le droit de réviser ses tarifs à sa
 discrétion. Toute modification tarifaire s'appliquera immédiatement aux
@@ -969,7 +874,7 @@ l'augmentation des prix découle de circonstances imprévues, telles que
 définies par l'article 1195 du Code civil. Dans de telles circonstances,
 les termes spécifiés dans ledit article s'appliqueront.
 
-### 14.3. Facturation
+### Facturation
 
 La facturation des Services est effectuée en fonction de l'utilisation
 réelle et des Commandes passées par le CLIENT, telles enregistrées dans
@@ -990,7 +895,7 @@ voie électronique, celles-ci étant envoyées à l'adresse courriel fournie
 par le CLIENT. Il incombe au CLIENT de sauvegarder une copie de chaque
 facture reçue, en accord avec les exigences légales en vigueur.
 
-### 14.4. Défaut et retard de paiement
+### Défaut et retard de paiement
 
 Sauf contestation de bonne foi par le CLIENT concernant tout ou partie
 de la facture, en cas de manquement ou de retard dans le paiement, y
@@ -1021,7 +926,7 @@ pour le Prestataire d'exiger une indemnisation supplémentaire, sur
 présentation de justificatifs, si les frais de recouvrement engagés
 dépassent ce montant forfaitaire.
 
-### 14.5. Contestation
+### Contestation
 
 Tout litige relatif à la facturation ou aux spécificités des Services
 doit être soumis au Service CLIENT du Prestataire via l'Interface de
@@ -1034,9 +939,9 @@ droit d'effectuer les ajustements nécessaires sur les factures
 concernées, et ce, dans le respect des délais de prescription
 applicables.
 
-## 15. Pénalités
+## Pénalités
 
-### 15.1. Principe
+### Principe
 
 Le non-respect des Niveaux de Services visés dans la Convention de
 Services SecNumCloud donne au CLIENT le droit d'appliquer des pénalités.
@@ -1055,7 +960,7 @@ le Prestataire constituera une indemnité forfaitaire et définitive de
 dommages intérêts pour ce qui concerne les incidents à l'origine de la
 pénalité.
 
-### 15.2. Calcul des pénalités
+### Calcul des pénalités
 
 **Pénalités = Ecart en pourcentage entre la disponibilité promise par
 SLA du Service considéré sur la période de calcul et la disponibilité
@@ -1083,9 +988,9 @@ Service Régulier le mois suivant. Si des pénalités restent dues à la fin
 du Contrat quelle qu'en soit la cause, le Prestataire paiera le reliquat
 au CLIENT par versement bancaire.
 
-## 16. Résiliation
+## Résiliation
 
-### 16.1. Résiliation par convenance
+### Résiliation par convenance
 
 Le CLIENT est autorisé à mettre fin au Contrat, sans avoir à justifier
 sa décision ni encourir de pénalités, une fois écoulé un délai d'un (1)
@@ -1101,7 +1006,7 @@ le CLIENT reste tenu de régler les sommes restantes dues pour
 l'intégralité de la durée du Contrat, y compris pour les équipements et
 licences qui étaient facturés sur une base mensuelle.
 
-### 16.2. Résiliation pour manquement
+### Résiliation pour manquement
 
 En cas de non-respect par l'une des parties de ses obligations
 essentielles stipulées dans le Contrat, la partie affectée enverra à la
@@ -1123,7 +1028,7 @@ serait établi que la partie visée par la résiliation n'a, en fait, pas
 failli à ses engagements, la partie ayant engagé la procédure de rupture
 se verrait tenue de compenser les dommages encourus par l'autre partie.
 
-### 16.3. Résiliation sans faute
+### Résiliation sans faute
 
 Chaque partie se réserve le droit de résilier le Contrat sans préavis ni
 indemnisation dans les circonstances suivantes, en envoyant une lettre
@@ -1161,7 +1066,7 @@ recommandée avec avis de réception :
     les données techniques associées au CLIENT final, incluant
     l'annuaire, les certificats et la configuration des accès.
 
-## 17. Réversibilité
+## Réversibilité
 
 Les Services ne comprennent pas d'obligation de réversibilité (à savoir,
 l'aide au Client pour qu'il puisse migrer son système vers un autre
@@ -1183,7 +1088,7 @@ CLIENT aurait besoin d'une prestation complémentaire, le Prestataire
 peut proposer une mission de conseil à cet égard dans le cadre d'un
 contrat spécifique à négocier.
 
-## 18. Confidentialité
+## Confidentialité
 
 Les Parties conviennent que toutes les informations échangées entre
 elles, que ce soit lors des négociations ou de l'exécution du Contrat,
@@ -1249,7 +1154,7 @@ instruction contraire de la Partie émettrice.
 Le Prestataire s'assure que ces principes de confidentialité soient
 respectés par tous ses sous-traitants durant le Contrat.
 
-## 19. Sous traitance
+## Sous traitance
 
 Le Prestataire devra respecter les dispositions impératives de la loi n°
 75-1334 du 31 décembre 1975 relative à la sous-traitance, et sera
@@ -1260,7 +1165,7 @@ Contrat, le Prestataire restant entièrement tenu de la réalisation des
 Services sous-traités vis-à-vis du CLIENT et, d'une manière générale, de
 la bonne exécution du Contrat.
 
-## 20. Cession du contrat
+## Cession du contrat
 
 Les Parties conviennent que le Contrat a été conclu intuitu personae.
 Par conséquent, aucune des Parties ne pourra céder le Contrat, en tout
@@ -1272,7 +1177,7 @@ transférer le Contrat à l'intérieur de son groupe sous réserve qu'il en
 informe l'autre Partie au moins 30 jours préalablement à l'opération de
 cession ou de transfert.
 
-## 21. Réglementation en matière de droit du travail
+## Réglementation en matière de droit du travail
 
 Le Prestataire déclare qu'il respecte les dispositions des articles L.
 8211-1, L. 8221-1 et suivants, L. 8524-1 à L. 8254-4, ainsi que les
@@ -1339,7 +1244,7 @@ jusqu'à la fin de son exécution :
     regard des articles L. 1221-10, L. 3243-2 et R. 3243-1 du Code du
     travail.
 
-## 22. Ethique et responsabilité sociale
+## Ethique et responsabilité sociale
 
 Dans le cadre de l'exécution du présent Contrat, les Parties conviennent
 de respecter scrupuleusement les principes éthiques et légaux suivants :
@@ -1361,7 +1266,7 @@ que les droits de l'homme y compris ceux des minorités. Cet engagement
 se traduit par une vigilance et une action constantes pour assurer que
 ces principes soient respectés à tous les niveaux de leur activité.
 
-## 23. Propriété intellectuelle
+## Propriété intellectuelle
 
 Ce Contrat ne constitue en aucun cas un transfert ni une cession de
 droits de propriété intellectuelle et/ou industrielle, y compris les
@@ -1381,7 +1286,7 @@ Prestations et pour la durée de celles-ci. Cette autorisation
 d'utilisation expire automatiquement avec la fin de la prestation des
 services.
 
-## 24. Non solicitation de personnel
+## Non solicitation de personnel
 
 Sauf accord préalable et écrit, chacune des Parties renonce à engager ou
 à faire travailler directement ou indirectement tout membre du personnel
@@ -1397,7 +1302,7 @@ Le salaire moyen de référence pour calculer le montant de
 l'indemnisation est celui des 3 derniers mois ayant précédé la date de
 rupture du contrat de travail.
 
-## 25. Signes distinctifs des parties
+## Signes distinctifs des parties
 
 Chaque Partie s'interdit tout agissement et tout acte susceptible de
 porter atteinte directement ou non aux signes distinctifs l'autre
@@ -1407,7 +1312,7 @@ mentionner qu'il utilise les Prestations du Prestataire. Toutefois,
 chaque Partie, sans avoir à le motiver, peut notifier à l'autre Partie
 de ne plus la citer.
 
-## 26. Données à caractère personnel
+## Données à caractère personnel
 
 Le CLIENT s'engage à respecter, dans le cadre des présentes CGVU, la
 politique de protection des données personnelles du Prestataire. Le
@@ -1424,7 +1329,7 @@ aux fichiers et aux libertés, modifiée et le règlement (UE) 2016/679 du
 Parlement européen et du Conseil du 27 avril 2016 applicable à compter
 du 25 mai 2018.
 
-## 27. Assurance
+## Assurance
 
 Dans le cas où le CLIENT prévoit de traiter des données critiques ou
 stratégiques (telles que des informations liées à la facturation, à la
@@ -1433,7 +1338,7 @@ fournis, il incombe au CLIENT de prendre les dispositions nécessaires
 pour souscrire à une assurance dédiée à la couverture des pertes de
 données.
 
-## 28. Attribution de compétence et droit applicable
+## Attribution de compétence et droit applicable
 
 Le Contrat est régi par le droit français.
 

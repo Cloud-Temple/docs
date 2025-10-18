@@ -1,0 +1,8 @@
+{
+  "label": "Schulungen",
+  "sidebar_position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Praktische Schulungen für die Konfiguration der Identitätsföderation."
+  }
+}

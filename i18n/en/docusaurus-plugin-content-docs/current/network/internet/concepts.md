@@ -1,97 +1,149 @@
+
+
 ---
 title: Concepts
 ---
 
-## Assignment of a Provider Aggregated (PA) public internet addressing
 
-In this context, you use public IP addresses assigned to Cloud Temple, which are leased to you for your usage.
 
-The creation of internet connectivity and the assignment of associated public IP addresses is done by __a service request__ indicating:
+## Internet CloudTemple Infrastructure
 
-    The name of your Organization
-    The name of a contact with their email and phone number to finalize the configuration
-    The name of the tenant
-    The desired subnet size (minimum /29 in IPv4 and /64 in IPv6)
-    If not already provided, RIPE information (notably administrative contact) will be requested by support
+CloudTemple operates as a **Cloud Service Provider (CSP)** with an independent, highly resilient and secure internet infrastructure. Our operator-type connectivity is based on a dedicated AS (Autonomous System Number) which gives us full control over routing and ensures high availability for all our services.
 
-The delivery of internet access is done via the BGP4 protocol in response to the support request, which will provide the following information:
+This autonomous infrastructure enables us to offer internet connectivity with advanced features tailored to all types of CloudTemple offerings, from dedicated hosting to IaaS solutions and PaaS services.
 
-- *public prefix*
-- *interconnection prefix*
-- *any-cast gateway*
-- *Subnet IP*
-- *local AS*
-- *Cloud Temple AS*
-- *keepalive timers and hold-time timer*
-- *the addresses of route servers associated with your tenant*.
 
-Using the BGP4 protocol guarantees efficient routing of your internet traffic to the active gateway of your architecture, particularly in multi-availability zone deployment scenarios, such as in clusters of firewalls distributed between two availability zones.
+
+## Network Architecture and Redundancy
+
+Our network benefits from a redundant architecture designed to optimize performance and ensure service continuity. CloudTemple has an independent autonomous system with a set of assigned public IP prefixes, ensuring direct global connectivity.
+
+This connectivity relies on **two distinct paths** to maximize resilience:
+
+**Transit Connectivity:** Two main transit operators ensure global redundancy, enabling optimal routing of Internet traffic to our infrastructure.
+
+**Internet Exchange Points (IXPs):** Our presence at two IXPs in Paris allows us to significantly reduce latency for European users while improving regional service performance. This approach also provides natural redundancy against provider outages.
+
+The use of the BGP4 protocol ensures efficient routing of your Internet traffic to the active gateway of your architecture, particularly in multi-availability zone deployment scenarios, such as firewall clusters distributed across two availability zones.
+
+
+
+## Built-in DDoS Protection
+
+All incoming traffic to the CloudTemple infrastructure benefits from advanced DDoS protection provided by **F5**, a global leader in network security. This protection works transparently and automatically.
+
+Volumetric attacks are detected and mitigated directly at the F5 network edge, before reaching the CloudTemple network. This upstream filtering ensures that no congestion can affect our Internet connections, and only legitimate requests reach our infrastructures.
+
+**All CloudTemple services** benefit from this protection without additional cost, including customer prefixes that can be migrated to our infrastructure. This integrated approach turns a security constraint into an operational advantage for our customers.
+
+
+
+## Public IP Address Allocation
+
+CloudTemple offers a flexible system for allocating public IP addresses Provider Aggregated (PA), allowing clients to reserve public IP addresses **per unit** according to their specific needs.
+
+
+
+### Reservation Process
+
+Reserving public IP addresses is done directly via the CloudTemple console, offering self-service and immediate management:
+
+**Via the console API:** Possible integration into your automation and provisioning workflows.
+
+**Via the web console:** Intuitive interface accessible from the *Internet* section of your client area.
+
+The reservation process follows these simple steps: log in to the console, navigate to *Internet* > *Manage IP Addresses*, select *Reserve a new address*, choose between IPv4 or IPv6, then submit the order.
+
+
+
+### Billing
+
+Billing for public IP addresses is done by unit of work (UO) and starts from the reservation of the address, ensuring total cost transparency.
+
+| Reference | Unit | SKU |
+|-----------|------|-----|
+| Network - Dedicated Public IPv4 | 1 IPv4 | RSIP-IP4-UNIT |
+| Network - Dedicated Public IPv6 | 1 IPv6 | RSIP-IP6-UNIT |
+
+
 
 ## IPv4 Blocks
 
-### IPv4 address offering version 1
+The delivery of an IPv4 is subject to __limited availability__ for our customers, per IP address.
 
-__*This offer has not been available for sale since May 2, 2024*__
+The order of IPv4 addresses is carried out from the __*'Public IPs'*__ menu under the Networks menu in the left green bar, via the button __*"Order IPv4 addresses or IPv6 prefixes"*__.
 
-The delivery of IPv4s is done __within the limits of available stock__ for our customers, with a minimum block of 8 IPv4s (/29 or 255.255.255.248).
+It is possible to view the address blocks assigned to you in the same menu.
 
-You can view the address blocks assigned to you in the __*'Public IPs'*__ menu in the Networks menu on the green side panel.
-
-| Reference                              | Unit  | SKU                          |
-| -------------------------------------- | ------ | ---------------------------- |
-| Network - Dedicated Public IPv4 Range  | 8 IPv4 | csp:(region):network:ipv4:v1 |
-
-### IPv4 address offering version 2
-
-The delivery of an IPv4 is done __within the limits of available stock__ for our customers, per IP address.
-
-You can view the address blocks assigned to you in the __*'Public IPs'*__ menu in the Networks menu on the green side panel.
-
-| Reference                     | Unit  | SKU                          |
+| Reference                     | Unit   | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
 | Network - Dedicated Public IPv4 | 1 IPv4 | csp:(region):network:ipv4:v2 |
 
 
+
 ## IPv6 Blocks
 
-__As of May 1, 2024, the public IPv6 IP addresses offering is not yet available for sale.__
+The command for IPv6 prefixes is performed from the __*'Public IPs'*__ menu in the Networks section in the green bar on the left, via the button __*"Order IPv4 addresses or IPv6 prefixes"*__.
 
-The target for commercial availability is planned for the second half of 2024.
+It is possible to view the prefixes assigned to you in the same menu.
 
-| Reference                              | Unit   | SKU                          |
-| -------------------------------------- | ------- | ---------------------------- |
-| Network - Dedicated Public IPv6 Range  | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Reference                             | Unit    | SKU                          |
+| ------------------------------------- | ------- | ---------------------------- |
+| Network - Dedicated Public IPv6 Ranges | 64 IPv6 | csp:(region):network:ipv6:v1 |
 
-## Provider Independent (PI) public IP addresses
 
-If you have your own Provider Independent addressing, you have the option to announce it within Cloud Temple's Autonomous System. This allows you to continue using your own IP addresses within the Cloud Temple infrastructure and facilitate your migrations.
 
-To do this, submit __a service request__ indicating:
+## Client IP Prefix Migration
 
-    The name of your Organization
-    The name of a contact with their email and phone number to finalize the configuration
-    The name of the tenant
-    The PI IP address block that you own and wish to announce
-    If not already provided, the associated RIPE information will be requested by support
+CloudTemple supports clients wishing to migrate their own IP prefixes to our infrastructure, thereby facilitating migration projects while maintaining the existing network identity.
 
-There is no specific billing for customers using Provider Independent addresses.
 
-### Reserving internet bandwidth
 
-Internet bandwidth is reservable in increments of 100 Mbps. The maximum available capacity for a gateway is 10 Gbps, potentially limited by the technical characteristics of your gateway.
+### Advantages of the migration
 
-Billing is done at the 95th percentile over the billing period, typically a month. Therefore, you can occasionally benefit from a burst beyond your reserved capacity.
+This approach allows you to keep your IP address during migration to CloudTemple, ensuring perfect continuity for your applications and clients. You retain full control over the use of your IP addresses while benefiting from CloudTemple's infrastructure.
+
+
+
+### Integration Process
+
+Your IP prefix (e.g., `203.0.113.0/24`) is integrated into the CloudTemple backbone network and announced from our AS. Once integrated, the prefix can be freely associated with your virtual machines, load balancers, or other services.
+
+**All addresses in the migrated prefix automatically benefit from the F5 anti-DDoS protection**, without additional configuration or surcharge.
+
+
+
+### Requirements
+
+IP prefix migration requires that the prefix is registered with a recognized Internet registry (ARIN, RIPE, APNIC, etc.) and that you are the legitimate owner. BGP management can be handled by your teams or benefit from CloudTemple's technical support according to your preferences.
+
+
+
+## Reserved Internet Bandwidth
+
+Internet bandwidth can be reserved in increments of 100 Mbps. The maximum available capacity for a gateway is 10 Gbps, potentially limited by the technical characteristics of your gateway.
+
+Billing is based on the 95th percentile over the billing period, usually one month. You can therefore occasionally take advantage of a burst beyond your reserved capacity.
 
 | Reference                                 | Unit    | SKU                                     |
-| ----------------------------------------- | -------- | --------------------------------------- |
+| ----------------------------------------- | ------- | --------------------------------------- |
 | Network - Reserved Internet Bandwidth     | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
 __*Note:*__
-*There is no __volumetric billing__ such as __'egress fees'. You only pay for reserved bandwidth.__*
+*There is no __volume-based billing__ of the __'egress fees'__ type. You only pay for the reserved bandwidth.*
 
 
-## Anti-DDoS
 
-A distributed denial of service (DDoS) attack aims to degrade or take a service offline by overwhelming it with illegitimate traffic.
+## Availability by offer
 
-The Anti-DDoS protection from Cloud Temple protects you against malicious actors and __is active without additional cost for volumetric attacks__: filtering is done upstream by our telecom partners.
+The entire set of Internet connectivity features is available on all CloudTemple offers, ensuring a homogeneous experience regardless of the type of service used.
+
+| Offer | Internet Connectivity | DDoS Protection | RSIP Management | Prefix Migration |
+|-------|----------------------|------------------|-----------------|------------------|
+| Dedicated Hosting | ✓ | ✓ | ✓ | ✓ |
+| Shared Hosting | ✓ | ✓ | ✓ | ✓ |
+| IaaS VMware | ✓ | ✓ | ✓ | ✓ |
+| IaaS OpenSource | ✓ | ✓ | ✓ | ✓ |
+| PaaS OpenShift | ✓ | ✓ | ✓ | ✓ |
+
+This unified approach ensures that all our customers benefit from operator-quality Internet access, with integrated security and advanced features, regardless of their technological choice.

@@ -13,7 +13,7 @@ import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
 import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
 import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
 import shivaCpool_010 from './images/shiva_cpool_010.png'
-import shivaCpool_011 from './images/shiva_cpool_011.jpg'
+import shivaCpool_011 from './images/shiva_cpool_011.png'
 import shivaCatalogs from './images/shiva_catalogs.png'
 import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
 import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
@@ -29,8 +29,8 @@ import shivaCpool_003 from './images/shiva_cpool_003.png'
 import shivaCpool_004 from './images/shiva_cpool_004.png'
 import shivaCpool_005 from './images/shiva_cpool_005.png'
 import shivaCpool_009 from './images/shiva_cpool_009.png'
-import shivaCpool_007 from './images/shiva_cpool_007.jpg'
-import shivaCpool_008Build from './images/shiva_cpool_008_build.jpg'
+import shivaCpool_007 from './images/shiva_cpool_007.png'
+import shivaCpool_008Build from './images/shiva_cpool_008_build.png'
 import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
 import shivaCpool_006 from './images/shiva_cpool_006.png'
 import shivaSupport from '../console/images/shiva_support.png'
@@ -47,31 +47,33 @@ import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
-## Compute
+### Calculation
 
-### Managing Virtual Machines
+This term refers to the process of performing mathematical operations such as addition, subtraction, multiplication, division, and more complex calculations involving algebraic expressions, functions, or equations. In a technical context, it often pertains to computations performed by computers or software systems, including algorithms for numerical analysis, data processing, and scientific simulations.
 
-The management interface for your virtual machines is available in the Shiva console in the __'IaaS'__ menu located on the green sidebar on the left of the screen.
+### Management of Virtual Machines
 
-### Virtual Machine List
+The management interface for your virtual machines is accessible in the Shiva console, under the 'IaaS' menu located on the top left toolbar of the screen.
 
-In the __'Virtual Machines'__ section, you have access to the list of your virtual machines hosted on your trusted Cloud.
+### List of Virtual Machines
+
+In the 'Virtual Machines' section, you have access to a list of your virtual machines hosted on your trusted Cloud provider.
 
 <img src={shivaVmHome} />
 
-You have access to the following information for each virtual machine:
+For each virtual machine, you can find:
 
 - Its name,
 - The tags assigned to it,
-- Its status (off, on, processing, disconnected host, or invalid),
-- Its manager (in VMware environment, the associated Vcenter),
+- Its status (powered off, powered on, in use, host disconnected or invalid),
+- Its manager (in VMware environments, the associated Vcenter),
 - Its operating system,
 - The number of virtual CPUs (vCPU),
 - The amount of virtual memory (vRAM).
 
-### Actions on Virtual Machines
+### Actions sur les machines virtuelles
 
-The following actions are possible from this interface:
+The following actions can be performed from this interface:
 
 - Refresh the list of virtual machines;
 - Export the list in CSV format;
@@ -81,57 +83,53 @@ The following actions are possible from this interface:
 
 <img src={shivaVmHomeDesc} />
 
-__An alert banner may be present at the top of the list__: it indicates that critical alarms have been triggered on one or more of your virtual machines.
-The __'View'__ button allows you to see the virtual machines that are affected by this notification.
+__A warning banner may appear at the top of the list__: it indicates critical alarms have been triggered on one or more of your virtual machines. The 'View' button allows you to check the affected virtual machines.
 
 <img src={shivaVmHomeAlarme} />
 
-When you click on the green dropdown arrow on the right of the list for a virtual machine:
+Upon clicking the right-hand dropdown arrow next to a virtual machine:
 
 <img src={shivaVmActions} />
 
-You access all the information about it:
+You gain access to all relevant information about that machine:
 
 <img src={shivaVmInformations} />
 
-A quick toolbar allows you to perform the following actions:
+A quick toolbar enables you to perform the following actions:
 
 <img src={shivaVmBandeauRapide} />
 
 - Power on the virtual machine;
-- Power it off;
-- Restart it;
-- Modify the guest OS power options;
-- Open the console;
-- Mount an ISO;
-- Unmount an ISO;
+- Power off;
+- Restart;
+- Modify power settings of the guest OS;
+- Open console;
+- Mount ISO;
+- Dismount ISO;
 - Clone the virtual machine;
-- Move it (vMotion);
-- Rename it;
-- Delete it.
+- Move (vMotion);
+- Rename;
+- Delete.
 
-A quick view offers a visualization of the __storage__, __CPU__, and __RAM__ of the virtual machine.
+A quick view provides a visual representation of:
 
 <img src={shivaVmVueRapide} />
 
-In the __'General Information'__ tab, you will find detailed information about your virtual machine, such as its OS, its physical location (datacenter, datastore, etc.), RAM, CPU, IP addresses, logs, and more.
+Storage, CPU, and RAM usage of the virtual machine.
 
-<img src={shivaVmInfosGenerales} />
+In the 'General Information' tab, you find detailed information about your virtual machine, including OS, physical location (datacenter, datastore, etc.), RAM, CPU, IP addresses, logs, and other details. From this view, you can:
 
-From this view, you can perform the following actions:
+- Change the operating system (the machine must be shut down);
+- Update hardware firmware (the machine must be shut down);
+- Adjust RAM or CPU.
 
-- Modify the operating system (the virtual machine must be powered off),
-- Update the hardware version (the virtual machine must be powered off),
-- Modify the RAM or CPU.
-
-An __'Advanced'__ tab allows you to view more specific information such as "VMware tools" info, hardware version, manager, etc.
+An 'Advanced' tab offers more specific information such as VMware tools details, hardware version, and management software.
 
 <img src={shivaVmInfosAvancees} />
 
-### Editing the RAM or CPU of a Virtual Machine
+### Editing Virtual Machine RAM or CPU
 
-Go to the __'Virtual Machines'__ tab, display the details of a virtual machine,
-select the __'General Info'__ tab and click on the edit button of the variable to modify:
+Navigate to the 'Virtual Machines' tab, view the details of a virtual machine, select the 'General Information' tab, and click on the edit button for the variable you wish to modify:
 
 <img src={shivaEditCpuRam} />
 
@@ -139,342 +137,325 @@ select the __'General Info'__ tab and click on the edit button of the variable t
 
 You can add different disk modes:
 
-- __Persistent__: Changes are immediately and permanently written to the virtual disk. __This is the recommended mode.__
-- __Independent non-persistent__: Changes made to the virtual disk are logged in a new log and deleted when powered off. Not affected by snapshots. __It is not supported by backup.__
-- __Independent persistent__: Changes are immediately and permanently written to the virtual disk. Not affected by snapshots. __It is not supported by backup.__
+- **Persistent**: Modifications are immediately and definitively written to the virtual disk. This is the recommended mode.
+- **Independent Non-persistent**: Modifications made to the virtual disk are recorded in a new log and discarded upon power off. Not affected by snapshots. __Not supported for backup__.
+- **Independent Persistent**: Modifications are immediately and definitively written to the virtual disk. Not affected by snapshots. __Not supported for backup__.
 
-### Managing Virtual Machine Controllers
+### Management of Virtual Machine Disk Controllers
 
-You can modify the disk controller type for your virtual machine.
+You can change the type of disk controller for your virtual machine.
 
 <img src={shivaVmDiskctrl_001} />
 
-Virtual machines can be equipped with SCSI and NVME controllers, with a limit of 4 controllers of each type. Each controller can manage up to 15 disks.
+Virtual machines can be equipped with SCSI and NVME controllers, each limited to 4 controllers in total (regardless of type). Each controller can manage up to 15 disks.
 
-A SCSI controller can be configured with different subtypes: Para Virtual, Bus Logic, LSI Logic, or LSI Logic SAS.
+SCSI controllers can be configured with various subtypes: Para Virtual, Bus Logic, LSI Logic, or LSI Logic SAS.
 
-The Para Virtual controller is distinguished by its extended capacity. It can support up to 64 disks when the hardware version of the virtual machine is compatible with an ESXi version 6.7 or higher.
+Para Virtual controllers stand out due to their extensive capabilities. They can support up to 64 disks when the underlying hardware of the virtual machine is compatible with ESXi version 6.7 or higher.
 
-> __Important__: If you want to modify the type of a Para Virtual controller that has more than 15 disks, you will first need to detach the disks on the concerned slots.
+> **Important**: If you intend to change the type of a Para Virtual controller managing more than 15 disks, you must first detach the disks from the affected slots.
 
 ### Virtual Machine Console
 
-The console of a virtual machine is accessible from the list of virtual machines by clicking on the __'Console'__ icon:
+The virtual machine console can be accessed from the list of virtual machines by clicking on the 'Console' icon:
 
 <img src={shivaCpool_010} />
 
-A new tab in your browser opens and displays the console of your machine, based on a VNC client:
+A new tab opens in your browser, displaying the console of your virtual machine, based on a VNC client:
 
 <img src={shivaCpool_011} />
 
-In the VNC menu, it is possible to:
+Within the VNC menu, you can:
 
-- Request the sending of a particular key,
-- Perform copy/paste from your OS clipboard,
-- Switch to full screen mode,
-- Change the window size (scaling).
+- Request sending specific keys,
+- Perform copy-paste from your host OS's clipboard,
+- Switch to full-screen mode,
+- Adjust window size (scaling).
 
-Keyboard management with the virtual machine console works perfectly in a fully *English* environment.
+Keyboard management with virtual machine consoles works flawlessly in an entirely English environment.
 
-The input made in the console depends on the language of the keyboard of your physical machine, the language of the keyboard
-of the virtual machine, and whether or not the 'enforce keyboard' option on the left of the screen is activated.
-Here is a summary of the possible situations with the French language:
+The input typed into the console depends on:
 
-| Physical machine keyboard language (input) | Virtual machine keyboard language | 'enforce keyboard' option selected | Result (output)                                   |
-| ------------------------------------------ | --------------------------------- | ---------------------------------- | ------------------------------------------------- |
-| French                                     | French                            | No                                 | Not recommended (issue with special characters)    |
-| French                                     | French                            | Yes                                | < and > do not work                               |
-| French                                     | English                           | No                                 | Not recommended (issue with special characters)    |
-| French                                     | English                           | Yes                                | English                                           |
-| English                                    | French                            | No                                 | < and > do not work                               |
-| English                                    | French                            | Yes                                | < and > do not work                               |
-| English                                    | English                           | No                                 | English                                           |
-| English                                    | English                           | Yes                                | English                                           |
+- The language of the keyboard on your physical machine,
+- The language of the virtual machine's keyboard,
+- Whether the 'enforce keyboard' option is enabled (left side of the screen).
+
+Here’s a summary of possible scenarios using French as an example:
+
+| Language of keyboard on physical machine (input) | Language of keyboard in virtual machine | 'Enforce keyboard' selected | Result (output)                                   |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | --------------------------------------------------- |
+| French                                          | French                                  | No                                    | Discouraged (problem with special characters) |
+| French                                          | French                                  | Yes                                    | < and > do not function                      |
+| French                                          | English                                   | No                                    | Discouraged (problem with special characters) |
+| French                                          | English                                   | Yes                                    | English                                             |
+| English                                           | French                                  | No                                    | < and > do not function                      |
+| English                                           | French                                  | Yes                                    | < and > do not function                      |
+| English                                           | English                                   | No                                    | English                                             |
+| English                                           | English                                   | Yes                                    | English                                             |
 
 __Note__:
 
-- If the __'AltGr'__ and __'@'__ combination on the keyboard does not work, activate the __'enforce key'__ button in the __'VNC'__ menu of the console and try again.
-- If it still doesn't work and the OS of the physical machine is __Windows, set the keyboard of the physical machine to English
-and try to enter the @ in the classic way__ *(azerty output: AltGr + 0 key or qwerty output: 2 key)*.
+- If the 'AltGr' + '@' combination on your keyboard doesn't work, enable the 'enforce key' option in the VNC console menu and try again.
+- If it still doesn’t work and your host OS is Windows, switch your physical keyboard to English and enter @ as usual *(output: Azerty - AltGr + number key or Qwerty - Shift + 2)*.
 
 ### Cloud Temple Virtual Machine Catalogs
 
-Cloud Temple provides you with a catalog of `Templates` that is regularly enriched and updated by our teams.
-It currently includes several dozen `Templates` and images to mount on your virtual machines.
+Cloud Temple offers you a regularly updated and enriched `Templates` catalog, currently containing several dozens of `Templates` and images to deploy on your virtual machines.
 
 <img src={shivaCatalogs} />
 
-To publish an ISO/OVF, go to the __'Catalog'__ view and click on the __'publish files'__ button at the top of the page:
+To publish an ISO/OVF, navigate to the 'Catalog' view and click the 'Publish Files' button at the top of the page:
 
 <img src={shivaCatalogs_002} />
 
-It is possible to transform a VM into a template and export it to the catalog. To do this, select a virtual machine and use the __'clone'__ action button:
+You can transform a VM into a template and export it into the catalog. To do this, select a virtual machine and use the 'Clone' action:
 
 <img src={shivaVmTemplate_002} />
 
-Select __'Export as vm-template'__:
+Choose 'Export as vm-template':
 
 <img src={shivaVmTemplate_001} />
 
-Then fill in the necessary information. It will then be possible to deploy a new VM from the template using the __'New virtual machine'__ button or from the __'Catalogs'__ page. It is also possible to export the VM in OVF format.
+Fill in the necessary details. You can then deploy a new VM from the template via the 'New Virtual Machine' button or directly from the 'Catalogs' page. It's also possible to export the VM in OVF format.
 
-__Good to know__: it is possible to convert an OVA file to OVF and vice versa.
-The most common method used is VMware Converter, but there is also a simple method using ```tar```
+**Note**: It's possible to convert an OVA file into an OVF and vice versa. The most common method is VMware Converter, but a simpler approach exists using `tar`:
 
-Extracting the ova file:
+Extracting an OVA file:
 
 ```
 tar -xvf vmName.ova
 ```
 
-Creating an OVA file from an OVF file:
+Creating an OVA file from an OVF:
 
 ```
 tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 ```
 
-### Advanced Virtual Machine Settings: Extra Config
+### Advanced Configuration of Virtual Machines: Extra Config
 
-Extra Config provides a flexible way to include key=value pairs in a virtual machine's configuration. The keys and values are interpreted by the system when the virtual machine is deployed.
+Extra Config offers a flexible way to include key-value pairs in the configuration of a virtual machine. These keys and values are interpreted by the system when the virtual machine is deployed.
 
-Now, you can modify __Extra Config__ type properties yourself in the advanced options of a virtual machine:
+Now, you can modify properties of type __Extra Config__ directly within the advanced options of a virtual machine:
 
 <img src={shivaVmAdv_001} />
 
-You can add a property from a list of keys. Additionally, you can modify the value of a key that you have added yourself. Existing key=value pairs are not modifiable.
+You can add a property from a list of keys. Additionally, you can modify the value of a key you have already added. Existing key-value pairs are not modifiable.
 
-Please contact support for any request to add new keys.
+Please contact support for any requests to add new keys.
 
 <img src={shivaVmAdv_002} />
 
-__Note__: *For the use of GPU by the virtual machine, it is mandatory to activate the 'pciPassthru.use64bitMMIO' key and allocate the necessary MMIO (Memory-mapped I/O) space via 'pciPassthru.64bitMMIOSizeGB'. It is strongly recommended to refer to the [official Nvidia documentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Note__: *For GPU utilization by the virtual machine, it is mandatory to enable the 'pciPassthru.use64bitMMIO' key and allocate the necessary MMIO (Memory-mapped I/O) space via 'pciPassthru.64bitMMIOSizeGB'. It is highly recommended to refer to the [official NVIDIA documentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
-### Advanced Virtual Machine Settings: vAPP
+### Advanced VM Configuration: vAPP
 
-You can also modify __vAPP__ type properties in the advanced options of a virtual machine:
+You can also modify the properties of type __vAPP__ in the advanced settings of a virtual machine:
 
 <img src={shivaVmAdv_003} />
 
-You can add a property, modify it, or delete it. Four types of properties are offered: String, Number, Boolean, Password:
+You can add, change, or remove these properties. Four types are available: String, Number, Boolean, Password:
 
 <img src={shivaVmAdv_004} />
 
-__Note__: *The virtual machine must be stopped to modify its vAPP properties.*
+**Note:** *The virtual machine must be stopped to modify its vAPP properties.*
 
-### Managing __'hypervisors'__ and __'Cpool'__ (hypervisor clusters)
+### Management of __'Hypervisors__ and __'Cpool'__ (Hypervisor Clusters)
 
-The management of your hypervisors is done in the __'Compute'__ submenu of the __'IaaS'__ menu, located in the green sidebar on the left of your screen.
+The management of your hypervisors is handled within the sub-menu labeled 'Compute' under the 'IaaS' menu, located in the top left navigation bar on your screen.
 
 <img src={shivaCpool_001} />
 
-In this submenu, you have a view of:
+Within this sub-menu, you have visibility into:
 
-- The hypervisor software stack, their AZ, and their resources,
+- The hypervisor software stack, their AZ (Availability Zone), and resources,
 - The backup software stack.
 
-As of January 2024, the hypervisor offering available on the qualified Cloud Temple infrastructure is based on VMware. The backup software used is IBM Spectrum Protect Plus.
+As of January 2024, the hypervisor offering available on Cloud Temple's qualified infrastructure is based on VMware. The backup software utilized is IBM Spectrum Protect Plus.
 
 ### Managing VMware Clusters
 
-To access the management of VMware clusters, click in the __'Compute'__ submenu of the __'IaaS'__ menu:
+To access management of VMware clusters, navigate to the "Compute" submenu under the "IaaS" menu:
 
-By default, the first tab lists all hypervisors (across all clusters):
+By default, the first tab lists all hosts (all clusters consolidated):
 
 <img src={shivaEsx_001} />
 
-It is possible to view the details of a hypervisor by clicking on its name:
+You can view detailed information about a host by clicking on its name:
 
 <img src={shivaEsx_002} />
 
-There is a tab for each hypervisor cluster to view the details of each:
+There is one tab per VMware cluster for viewing details of each:
 
 <img src={shivaCpool_003} />
 
-If you click on a cluster, you see a summary of its composition:
+Clicking on a cluster displays a summary of its composition:
 
-- The total computing power expressed in GHz,
-- The total available memory and the used ratio,
-- The total storage space (all types combined) as well as the used share,
-- The automation mechanisms for unavailability of a compute blade (__'Vsphere DRS'__),
-- The number of virtual machines,
-- The number of hypervisors.
+- Total processing power expressed in GHz,
+- Total memory available and usage ratio,
+- Total storage (all types combined) along with utilization rate,
+- Automation mechanisms for unavailability of a compute node (__'Vsphere DRS'__),
+- Number of virtual machines,
+- Number of hosts.
 
 <!-- TODO: Add missing page. -->
-<!-- By consulting a cluster page, several tabs are available. The __'Rules'__ tab allows you to define [affinity / anti-affinity rules](compute.md#managing-the-affinity-of-your-virtual-machines) -->
+<!-- Consulting the cluster's page reveals several tabs. The 'Rules' tab allows you to define affinity/anti-affinity rules for your virtual machines (compute.md#managing-vm-affinity). -->
 
 <img src={shivaCpool_004} />
 
-You see for each hypervisor in the __'Hosts'__ tab:
+You'll find details for each host in the 'Hosts' tab:
 
-- __CPU__ and __Memory__ usage,
-- The number of assigned virtual machines,
-- The availability of a new build for the hypervisor's operating system if applicable,
-- The status of the hypervisor (connected in production, in maintenance, powered off, ...),
+- CPU and memory usage,
+- Number of virtual machines affected,
+- Availability of a new OS build for the host (if applicable),
+- Host status (production, maintenance, powered off, etc.),
 - An action menu.
 
 <img src={shivaCpool_005} />
 
-Several actions are possible from the __'Hosts'__ tab:
+Various actions are available from the 'Hosts' tab:
 
-- Order new hypervisors via the __'Add a host'__ button:
+- Ordering new hosts via the "Add Host" button:
 
 <img src={shivaCpool_009} />
 
-- Possibility to view __the details of a hypervisor__:
+- Viewing details of a host:
 
 <img src={shivaCpool_007} />
 
-- To enter or exit the __maintenance state__ of a hypervisor,
-- To __update__ the hypervisor if necessary; to do this, __it must imperatively be in maintenance__. There are two types of updates:
+- Entering or exiting maintenance mode for an host,
+- Updating (if necessary) the host; this requires the host to be in maintenance mode. There are two types of updates:
 
-1. VMware builds (new versions of the hypervisor):
+ 1. VMware hypervisor builds (new versions of the host):
 
 <img src={shivaCpool_008Build} />
 
-2. Updating the firmware of your compute blade (BIOS and daughter card firmware):
+ 2. Firmware update of your compute node (BIOS and firmware on child cards):
 
 <img src={shivaCpool_008Firm} />
 
-*__Note__*:
+*Note*:
 
-- *Cloud Temple makes builds available for hypervisors at regular intervals.
-It is important to regularly update your hypervisors, particularly to allow the application of security patches.
-However, __we do not update your hypervisors ourselves__. Cloud Temple has no visibility on the availability commitments of your workloads.
-We therefore let you implement your change management and apply the new builds at the best time.*
-- *The update process is fully automated. You must have at least two hypervisors in your cluster to allow an update without service interruption.*
+- *Cloud Temple provides VMware hypervisor builds at regular intervals. It's crucial to keep your hosts updated, especially for security patches. However, Cloud Temple does not automatically update your hosts. We do not have visibility into the availability commitments of your workloads.*
+- *The update process is fully automated. You need at least two hosts in your cluster to perform an upgrade without service disruption.*
 
 <!-- TODO: Add missing page. -->
-<!-- - *It is necessary to have [the appropriate permissions](../console/permissions.md) to perform the various actions.* -->
+<!-- - *You'll also find all affinity/anti-affinity rules for your VMware host cluster in the 'Rules' section.* -->
 
-You also see all the affinity/anti-affinity rules for your hypervisor cluster in the __'Rules'__ section.
+### Management of Virtual Machine Affinity
 
-### Managing the Affinity of Your Virtual Machines
+__Affinity and anti-affinity rules__ enable control over the placement of virtual machines on your hypervisors. They can be used to manage utilization of your __'Cpool'__. For instance, they can help balance workload distribution across servers or isolate resource-intensive tasks. In a VMware 'Cpool', these rules are frequently employed for managing the behavior of virtual machines with vMotion.
 
-__Affinity and anti-affinity rules__ allow you to control the placement of virtual machines on your hypervisors.
-They can be used to manage the resource usage of your __'Cpool'__.
-For example, they can help balance the workload between servers or isolate resource-intensive workloads.
-In a VMware __'Cpool'__, these rules are often used to manage the behavior of virtual machines with vMotion.
-vMotion allows moving virtual machines from one host to another without service interruption.
+vMotion allows you to move virtual machines from one host to another without service interruption.
 
-You can configure through rule management:
+You can configure using affinity/anti-affinity rule management:
 
-- __Affinity Rules__: These rules ensure that certain virtual machines are run on the same physical host.
-They are used to improve performance by keeping virtual machines that frequently communicate
-together on the same server to reduce network latency. Affinity rules are useful in scenarios
-where performance is critical, such as in the case of databases or applications that require fast communication between servers.
+- __Affinity Rules__ ensure certain virtual machines run on the same physical host. They enhance performance by keeping frequently communicating VMs on the same server, reducing network latency. Affinity rules are beneficial in scenarios where high performance is critical, such as with databases or applications requiring rapid communication between servers.
 
-- __Anti-affinity Rules__: Conversely, these rules ensure that certain virtual machines are not run
-on the same physical host. They are important for availability and resilience, for example,
-to prevent critical machines from all being affected in case of a single server failure.
-Anti-affinity rules are crucial for applications requiring high availability,
-such as in production environments where fault tolerance is a priority.
-For example, you don't want your two Active Directory servers to be on the same hypervisor.
+- __Anti-affinity Rules__ ensure certain virtual machines do not run on the same physical host. They enhance availability and resilience by preventing all critical VMs from being affected if a single server fails. Anti-affinity rules are crucial for applications demanding high availability, like production environments where fault tolerance is paramount. For example, you wouldn't want both your Active Directory instances on the same hypervisor.
 
-When creating a rule, you define the rule type (affinity / anti-affinity), the rule name,
-its activation state (__'Status'__), and the concerned machines of your hypervisor cluster.
+When creating a rule, you define its type (affinity/anti-affinity), name, activation status (__'Status'__), and the VMs involved in your cluster of hypervisors.
 
 <img src={shivaCpool_006} />
 
-*Note: the affinity/anti-affinity rules offered in the console are rules concerning virtual machines among themselves (no rules between hypervisors and virtual machines).*
+*Note: The affinity/anti-affinity rules provided in the console pertain to virtual machines among themselves (not between hypervisors and virtual machines).*
 
 ## Backup
 
 ### Creating a Backup Policy
 
-To add a new backup policy, you need to make a request to support. Support is accessible from the lifebuoy icon at the top right of the window.
+To establish a new backup policy, you need to submit a request to the support team. The support team can be reached via the anchor icon located at the top right corner of the window.
 
-The creation of a new backup policy is done through __a service request__ indicating:
+The creation of a new backup policy involves submitting a **service request** that includes:
 
-    The name of your Organization
-    The name of a contact with their email and phone number to finalize the configuration
-    The tenant name
-    The backup policy name
-    The characteristics (x days, y weeks, z months, ...)
+    Name of your Organization
+    Contact person's email and phone number for finalizing configuration
+    Tenant name
+    Backup policy name
+    Policy characteristics (x days, y weeks, z months, etc.)
 
 <img src={shivaSupport} />
 
 ### Assigning a Backup Policy to a Virtual Machine
 
-When an SLA is assigned to a virtual machine (VM), all disks associated with this VM automatically inherit the same SLA. Subsequently, it is possible to manually launch the execution of the backup via the "Backup Policies" tab. In the absence of a manual launch, the backup will automatically execute according to the schedule configured by the SLA.
+When an SLA (Service Level Agreement) is assigned to a virtual machine (VM), all associated disks inherit the same SLA. Subsequently, you can manually initiate backup execution via the "Backup Policies" tab. If no manual initiation occurs, the backup will run automatically according to the scheduling defined by the SLA.
 
-SecNumCloud makes it mandatory to assign a backup policy to a virtual machine before starting it. Otherwise, you will have the following notification:
+SecNumCloud mandates that a backup policy must be assigned to a virtual machine before it starts. Otherwise, you'll receive this notification:
 
 <img src={shivaVmPolitiquesBackupAssignMandatory} />
 
-Click on the __'Backup Policies'__ tab in your virtual machine's menu. You can view the backup policy(ies) assigned to it.
+Click on the "Backup Policies" tab in your VM's menu. Here, you can view the assigned backup policy(ies).
 
-To assign a new backup policy to the virtual machine, click on the __'Add a policy'__ button and select the desired backup policy.
+To assign a new backup policy to the virtual machine, click the "Add Policy" button and select the desired policy:
 
 <img src={shivaVmPolitiquesBackup} />
 
 ### Assigning a Backup Policy to a Virtual Disk
 
-It is also possible to assign an SLA directly to a specific virtual disk of a machine. In this case, the virtual machine does not inherit this SLA applied individually to the disk. However, it is not possible to manually launch the execution of the backup at the disk level, as this functionality is not supported in Spectrum Protect Plus.
+It's also possible to assign an SLA directly to a specific virtual disk of a machine. In this scenario, the virtual machine does not inherit this SLA applied individually to the disk. However, it's not feasible to manually initiate backup execution at the disk level since Spectrum Protect Plus doesn't support this feature.
 
-On the other hand, it is possible to exclude certain disks from one or more backup policies (SLAs) of the VM, which allows disassigning one or more SLA(s) on a disk-by-disk basis. This approach offers the flexibility to manually launch the execution of a backup of an SLA without affecting all the disks of the virtual machine, thus allowing finer management of backups.
+Instead, you can exclude certain disks from one or more backup policies (SLA) of a VM, allowing for discretionary SLA assignment on a per-disk basis. This approach provides flexibility in initiating backup execution of an SLA manually without affecting all disks of the virtual machine, thus enabling finer grained backup management.
 
-Click on the action bar of the disk to which you want to assign a backup policy. Then, click on __'Policies'__ and select the desired backup policy.
+Click on the Actions bar of the disk you wish to assign a backup policy to. Then, click on __'Policies__' and select the desired backup policy.
 
 <img src={shivaVmDisquesVirtuelsPolitiques} />
 
-*Note*: The policy to be added must be on a different availability zone from the virtual machine.
+*Note*: The policy to be added must reside in a different availability zone than the virtual machine.
 
-### Executing a Backup Policy
+### Execute a Backup Policy
 
-In the __'Backup Policies'__ menu of your virtual machine, click on the __'Execute'__ button in the __'Actions'__ column of the backup policy you want to execute.
+In the 'Backup Policies' menu of your virtual machine, click on the 'Execute' button in the 'Actions' column of the backup policy you wish to run.
 
 <img src={shivaVmPolitiquesBackupExecute} />
 
-To execute a backup policy, you can also start from the __'Backups'__ section in your
-virtual machine's menu. Click on the __'Execute Backup'__ button, then select the backup you want to execute from the dropdown list.
+You can also initiate a backup policy execution from the 'Backups' section in your virtual machine's menu. Click on 'Run Backup', then select the desired backup from the dropdown list.
 
 <img src={shivaVmPolitiquesBackupExecute2} />
 
 ### Removing a Backup Policy
 
-In the __'Backup Policies'__ menu of your virtual machine, click on the __'Remove'__ button in the __'Actions'__ column of the backup policy you want to remove.
+In the 'Backup Policies' menu of your virtual machine, click on the 'Remove' button in the 'Actions' column of the backup policy you wish to remove.
 
 <img src={shivaVmPolitiquesBackupRetirer} />
 
-__Attention, it is not possible to remove the last SLA on a powered-on virtual machine:__
+**Note:** It is not possible to remove the last Service Level Agreement (SLA) from an active virtual machine:
 
 <img src={shivaVmPolitiquesBackupRetirerImpossible} />
 
-### Deleting a Backup Policy: Case of a Suspended ("held") Backup Policy
+### Deactivation of a Backup Policy: Case of a Suspended Backup Policy ("held")
 
-When the last resource is disassociated from an SLA policy, the system automatically detects this situation. As a result, all jobs related to this SLA policy automatically switch to the "Suspended" ("Held") state. It is important to note that at this stage, direct deletion of the SLA policy is not possible due to the existence of dependent jobs. To proceed with the deletion of the policy, a series of steps must be followed.
+When the last resource associated with an SLA policy is disassociated, the system automatically detects this situation. Consequently, all tasks related to this SLA policy transition seamlessly into the "Suspended" ("Held") state. It's crucial to note that at this juncture, directly deleting the SLA policy isn't feasible due to ongoing dependent tasks. To proceed with SLA policy deletion, a series of steps must be followed:
 
-You must verify that the concerned jobs are indeed in the "Suspended" state. Once this verification is done, these jobs can be deleted. It is only after deleting these dependent jobs that the SLA policy can be permanently erased from the system.
+Firstly, confirm that the affected tasks are indeed in the "Suspended" state. Once verified, these tasks can be removed. It's only after these dependent tasks have been eliminated that the SLA policy will be definitively erased from the system.
 
-A particular case deserves specific attention: adding a new resource to an SLA policy whose dependent jobs have not been deleted. In this situation, the job identifiers will be preserved. However, it is crucial to note that jobs in the "Suspended" state will not automatically resume. Manual intervention will be necessary to reactivate them and allow their execution.
+A specific scenario warrants particular attention: adding a new resource to an SLA policy where dependent tasks haven't been deleted. In this case, task identifiers are retained. However, it's vital to understand that suspended tasks won’t resume automatically. Manual intervention will be required to reactivate and enable their execution.
 
-note: For any clarification on this situation, contact Cloud Temple support.
+**Note:** For any clarifications regarding this situation, please contact Cloud Temple Support.
 
-The Cloud Temple console prevents the assignment of a virtual machine to a suspended policy:
+The Cloud Temple console prevents attaching a virtual machine to a suspended policy:
 
 <img src={shivaBackupHeld_001} />
 
-Similarly, it is not possible to start a virtual machine that is associated with a suspended backup policy:
+Similarly, initiating a virtual machine associated with a suspended backup policy is prohibited:
 
 <img src={shivaBackupHeld_002} />
 
 ### Restoring a Backup
 
-The __'Backups'__ tab in your virtual machines menu allows you to access the list of backups for it.
-To restore a backup, click on the __'Restore'__ button on the line corresponding to the backup you want to restore.
+The 'Backups' tab in your virtual machine's menu provides access to the list of backups for that machine. To restore a backup, click on the 'Restore' button next to the backup you wish to restore.
 
 <img src={shivaVmBackupRestaurer} />
 
-1. __Production Mode__: Production mode allows for disaster recovery on the local site from primary storage or a remote disaster recovery site, replacing the original machine images with recovery images. All configurations are transferred as part of the recovery, including names and identifiers, and all data copy jobs associated with the virtual machine continue to run. As part of a production mode restoration, you can choose to replace the storage in the virtual machine with a virtual disk from a previous virtual machine backup.
+1. **Production Mode**: Production mode allows for disaster recovery at your local site from primary storage or a remote disaster recovery site by replacing original machine images with recovery images. All configurations, including names and identifiers, are transferred during the recovery process, along with ongoing data copy tasks associated with the virtual machine. In production restore mode, you can opt to replace the storage in the virtual machine with a virtual disk from a previous backup VM.
 
-2. __Test Mode__: Test mode creates temporary virtual machines for development, testing, snapshot verification, and disaster recovery verification based on a repeatable schedule, without impact on production environments. Test machines run as long as necessary to perform the test and verification, then they are cleaned up. Through isolated networking, you can establish a safe environment to test your jobs without interfering with the virtual machines used for production. Virtual machines that are created in test mode have unique names and identifiers to avoid any conflict in your production environment.
+2. **Test Mode**: Test mode creates temporary virtual machines for development, testing, instant verification, and disaster recovery planning according to an iterative schedule without affecting production environments. These test VMs run until the testing and verification tasks are complete, after which they are cleaned up. Through isolated networking, you can establish a secure environment for testing your work without interfering with production VM resources. Test VMs in this mode have unique names and identifiers to prevent conflicts within your production environment.
 
-3. __Clone Mode__: Clone mode creates copies of virtual machines for use cases requiring permanent or long-running copies for data exploration or duplication of a test environment on an isolated network. Virtual machines created in clone mode have unique names and identifiers to avoid any conflict in your production environment. In clone mode, you must be attentive to resource consumption as clone mode creates permanent or long-term machines.
+3. **Clone Mode**: Clone mode creates copies of virtual machines for use cases requiring permanent or long-running copies for data exploration or duplicating a test environment on an isolated network. Cloned VMs also have unique names and identifiers to avoid conflicts in your production environment. In clone mode, be mindful of resource consumption as this mode generates persistent or long-term VMs.
 
-__The restoration is by default in "TEST" mode to preserve production__ and it is possible for you to choose the name of the restored VM:
+**Restoration is set by default to 'TEST' mode to safeguard production**, allowing you to select the name for the restored VM:
 
 <img src={shivaVmBackupTest} />
 
-Note that if the tests are satisfactory, it is possible to switch a virtual machine from test mode to production mode:
+Keep in mind that if tests are successful, it's possible to transition a virtual machine from test mode to production mode:
 
 <img src={shivaVmBackup_2prod} />
