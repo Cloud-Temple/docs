@@ -101,7 +101,7 @@ import oshiftMenu_003 from './images/oshift_menu_003.png';
 
 ### Zugriffsrechtezuweisung
 
-Es ist unbedingt notwendig, dass der Tenant-Administrator ([Tenant](../console/iam/concepts.md#tenant)) den Zugriff auf die Plattform Openshift für das Administrativen Benutzer Openshift genehmigt, damit dieser diese zugreifen kann:
+Es ist unbedingt erforderlich, dass der [Tenant](../console/iam/concepts.md#tenant)-Administrator dem OpenShift-Administrator Lese- und Verwaltungsrechte für die OpenShift-Plattform gewährt, um darauf zugreifen zu können:
 
 <img src={oshiftRights} />
 
