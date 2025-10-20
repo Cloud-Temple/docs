@@ -267,6 +267,7 @@ const sidebars: SidebarsConfig = {
                 id: 'storage/oss/tutorials',
               },
               items: [
+                'storage/oss/tutorials/bucket-access',
                 'storage/oss/tutorials/cloudberry-explorer',
                 'storage/oss/tutorials/winscp',
                 'storage/oss/tutorials/mc-mirror',
