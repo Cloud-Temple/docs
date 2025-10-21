@@ -12,7 +12,7 @@
 | PaaS OpenShift     | ✅ 100%   | ✅ 85%  | ✅ 80%  | ✅ 80%  | 🟢 **BON**          |
 | Housing            | ✅ 100%   | ✅ 90%  | ✅ 70%  | ✅ 80%  | 🟢 **BON**          |
 | Network Services   | 🔴 40%    | 🔴 20%  | 🔴 10%  | 🔴 15%  | 🔴 **CRITIQUE**     |
-| Storage OSS        | 🔴 30%    | 🔴 15%  | 🔴 5%   | 🔴 10%  | 🔴 **CRITIQUE**     |
+| Storage OSS        | 🔴 30%    | 🔴 20%  | 🔴 5%   | 🔴 10%  | 🔴 **CRITIQUE**     |
 | LLMaaS             | ✅ 100%   | ✅ 100% | ✅ 95%  | ✅ 80%  | 🟢 **PARFAIT**      |
 
 ## Détail par Dossier
@@ -224,12 +224,13 @@
 ### 🔴 Issues Critiques
 1. **Network Documentation** : Services non documentés
 2. **Storage OSS** : API non documentée
-3. **Traductions** : Retard mise à jour multilingue
 
 ### 🔶 Issues Moyennes
-1. **Console Metrics** : Module incomplet
-2. **Console Security** : Module incomplet
-3. **Screenshots** : Mise à jour Interface Shiva
+1. **Liens Brisés** : De nombreux liens et ancres brisés ont été détectés par le build Docusaurus. Une passe de correction est nécessaire.
+2. **Console Metrics** : Module incomplet
+3. **Console Security** : Module incomplet
+4. **Screenshots** : Mise à jour Interface Shiva
+
 
 ### 🔵 Améliorations
 1. **SEO Optimization** : Métadonnées avancées
@@ -269,5 +270,5 @@
 
 ---
 
-*Tableau de bord documentation - 05/06/2025*
+*Tableau de bord documentation - 18/10/2025*
 *Prochaine révision : Weekly*
