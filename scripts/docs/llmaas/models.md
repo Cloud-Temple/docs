@@ -1020,7 +1020,7 @@ Modèle MoE hybride ultra-efficace d'IBM, conçu pour la faible latence, les app
 
 **Cas d'usage :**
 - Applications embarquées et "edge" nécessitant une faible latence.
-- Tâches rapides au sein de workflows agentiques plus larges (function calling).
+- {'Tâches rapides au sein de workflows agentiques plus larges (ex': 'function calling).'}
 - Analyse de documents sur du matériel grand public.
 - Déploiements nécessitant une empreinte mémoire minimale.
 

@@ -30,241 +30,242 @@ import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.
 
 ## Concetto
 
-Il monitoraggio della distribuzione di nuove risorse viene effettuato nel menu __'Ordini'__ accessibile dal banner verde sul lato sinistro dello schermo.
+Il monitoraggio del deployment delle nuove risorse è gestito nel menu __'Ordini'__ accessibile nella barra verde a sinistra dello schermo.
 
-Permette di visualizzare le risorse Cloud ordinate, quelle in fase di distribuzione e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della vostra [Organizzazione](iam/concepts.md#organisations).
+Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della propria [Organizzazione](iam/concepts.md#organizzazioni).
 
 <img src={shivaOrdersList} />
 
-*__Nota: Al momento, non è ancora possibile avere una vista globale a livello di organizzazione di tutte le risorse distribuite nei diversi tenant.__ Questo argomento sarà affrontato nel 2026 con l'implementazione di un portale dedicato allo sponsor (firmatario) e alla gestione della sua organizzazione.*
+*__Nota: Al momento, non è ancora possibile visualizzare un quadro generale a livello di organizzazione di tutte le risorse distribuite nei diversi tenant.__ Questo aspetto sarà affrontato in futuro con l'implementazione di un portale dedicato al committente (nel senso di firmatario) e al controllo della propria organizzazione.*
 
-La distribuzione delle risorse o la loro eliminazione viene effettuata in ciascun prodotto tramite i menu __'IaaS'__ e __'Rete'__ sul lato sinistro dello schermo nel banner verde.
+Il deployment delle risorse o la loro rimozione avviene all'interno di ciascun prodotto nei menu __'IaaS'__ e __'Rete'__ a sinistra nello schermo nella barra verde.
 
-È anche possibile vedere le consegne direttamente a livello delle notifiche della console Cloud Temple:
+È inoltre possibile visualizzare direttamente le consegne nelle notifiche della console Cloud Temple:
 
 <img src={shivaOrderNotif_001} />
 
-Dalla pagina degli ordini, è possibile vedere l'avanzamento di una consegna e interagire eventualmente con il team aggiungendo commenti o chiarimenti:
+Dalla pagina degli ordini, è possibile visualizzare lo stato di avanzamento di una consegna e, eventualmente, interagire con l'équipe fornendo commenti o ulteriori informazioni:
 
 <img src={shivaOrderStatus} />
 
-__Nota__: __Non è possibile avviare più ordini dello stesso tipo di risorsa contemporaneamente. Sarà necessario attendere che l'ordine corrente sia elaborato e finalizzato prima di poterne effettuare uno nuovo. Ciò garantisce una gestione efficiente e ordinata delle risorse all'interno del vostro ambiente.__
+__Nota__: __Non è possibile avviare più ordini contemporaneamente per lo stesso tipo di risorsa. È quindi necessario attendere il completamento dell'ordine in corso prima di poterne avviare un altro.__ Ciò garantisce una gestione efficiente e ordinata delle risorse all'interno del proprio ambiente.
 
-## Ordinare una nuova zona di disponibilità
+## Richiedere una nuova zona di disponibilità
 
-È possibile aggiungere una nuova zona di disponibilità accedendo al menu "__Ordine__". Questa opzione consente di espandere le risorse e migliorare la disponibilità e la resilienza delle applicazioni con pochi clic:
+È possibile aggiungere una nuova zona di disponibilità accedendo al menu "__Ordine__". Questa opzione ti permette di espandere le tue risorse e di migliorare la disponibilità e la resilienza delle tue applicazioni in pochi clic soltanto:
 
 <img src={shivaOrderAz_01} />
 
-Iniziare selezionando la posizione desiderata, scegliendo prima la regione geografica, poi la corrispondente zona di disponibilità (AZ) tra quelle disponibili. Questo passaggio consente di adattare la distribuzione delle risorse in base alla posizione e ai requisiti dell'infrastruttura:
+Inizia selezionando la posizione desiderata, scegliendo prima la regione geografica, quindi la zona di disponibilità (AZ) corrispondente tra quelle disponibili. Questa fase permette di adattare il deployment delle tue risorse in base alla localizzazione e ai requisiti della tua infrastruttura:
 
 <img src={shivaOrderAz_02} />
 
-Successivamente, procedere con la selezione del tipo di cluster di hypervisor desiderato, scegliendo quello che meglio soddisfa le esigenze di prestazioni e gestione della vostra infrastruttura cloud:
+Successivamente, procedi alla selezione del tipo di cluster di hypervisor desiderato, scegliendo quello che meglio risponde alle esigenze di prestazioni e gestione della tua infrastruttura cloud:
 
 <img src={shivaOrderAz_03} />
 
-Quindi selezionare il numero di hypervisor e la quantità di memoria desiderata per adattare le risorse al carico di lavoro e ai requisiti specifici del vostro ambiente cloud:
+Seleziona quindi il numero di hypervisor nonché la quantità di memoria desiderata, in modo da adattare le risorse al carico di lavoro e alle esigenze specifiche del tuo ambiente cloud:
 
 <img src={shivaOrderAz_04} />
 
-Successivamente, selezionare il numero di datastore da fornire nel cluster e i loro tipi. È importante notare che il numero massimo di datastore consentiti è 10, con un minimo di 2 datastore richiesti. Ogni tipo di datastore diverso comporterà la creazione di un datastoreCluster aggiuntivo. Ad esempio, se si scelgono 2 datastore di tipo "live" e 1 datastore di tipo "mass", questo porterà alla formazione di 2 datastoreCluster distinti:
+Seleziona quindi il numero di datastore da provisioning nel cluster e i loro tipi. È importante notare che il numero massimo di datastore consentito è 10, con un minimo di 2 datastore richiesti. Ogni tipo di datastore diverso comporterà la creazione di un datastoreCluster aggiuntivo. Ad esempio, se scegli 2 datastore di tipo "live" e 1 datastore di tipo "mass", si formeranno 2 datastoreClusters distinti:
 
 <img src={shivaOrderAz_05} />
 
-Definire la dimensione di archiviazione necessaria per il backup, assicurandosi di prevedere una capacità equivalente a quella dello storage di produzione. Considerare un tasso di compressione medio di 2 per ottimizzare lo spazio di backup e garantire una protezione efficace dei dati:
+Definisci la dimensione di archiviazione necessaria per il backup, assicurandoti di prevedere una capacità equivalente a quella del tuo archiviazione di produzione. Tieni conto di un tasso di compressione medio di 2 per ottimizzare lo spazio di backup e garantire una protezione efficace dei tuoi dati:
 
 <img src={shivaOrderAz_06} />
 
-Selezionare le reti da propagare in base alle proprie esigenze. È inoltre possibile attivare l'opzione "Accesso Internet" se necessario, definendo il numero di indirizzi IP desiderati, con una scelta compresa tra 1 e un massimo di 8:
+Seleziona i network da propagare in base alle tue esigenze. Hai inoltre la possibilità di abilitare l'opzione "Accesso Internet" se necessario, definendo il numero di indirizzi IP desiderati, con una scelta compresa tra 1 e un massimo di 8:
 
 <img src={shivaOrderAz_07} />
 
-Si otterrà quindi un riepilogo delle opzioni selezionate prima di convalidare l'ordine.
+Otterrai quindi un riepilogo delle opzioni selezionate prima di confermare il tuo ordine.
 
 <img src={shivaOrderAz_08} />
 
-## Ordinare risorse di archiviazione aggiuntive
+## Richiedere risorse di archiviazione aggiuntive
 
-La logica di allocazione dello storage in modalità block sui cluster di elaborazione si basa sulla tecnologia __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. Lo storage è organizzato in __LUN di almeno 500 GiB__, presentate secondo la tecnologia utilizzata:
-- Per __VMware__: come __datastore__ raggruppati in __cluster SDRS (Storage Distributed Resource Scheduler)__
-- Per __Bare Metal__: come __volumi__
-- Per __IaaS Open Source__: come __Storage Repository (SR)__
+La logica di allocazione dello storage in modalità blocco sui cluster di calcolo si basa sulla tecnologia __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. Lo storage è organizzato in __LUN da almeno 500 GiB__, presentate secondo la tecnologia utilizzata:
+- Per __VMware__: in forma di __datastore__ raggruppati in __cluster SDRS (Storage Distributed Resource Scheduler)__
+- Per __Bare Metal__: in forma di __volumi__
+- Per __Open IaaS__: in forma di __Storage Repository (SR)__
 
-Ogni datastore eredita una __classe di prestazioni__ definita in IOPS/TB (da 500 a 15.000 IOPS/TB per FLASH, o senza garanzia per MASS STORAGE). La limitazione IOPS viene applicata __a livello di datastore__ (non per VM), il che significa che tutte le macchine virtuali che condividono lo stesso datastore condividono la quota di IOPS assegnata.
+Ogni datastore eredita una __classe di prestazioni__ definita in IOPS/To (da 500 a 15000 IOPS/To per il FLASH, senza garanzia per il MASS STORAGE). Il limite di IOPS viene applicato __a livello di datastore__ (e non per VM), il che significa che tutte le macchine virtuali condividendo lo stesso datastore condividono il quota di IOPS assegnata.
 
 __Punti chiave da ricordare__:
 
 - __Dimensione minima__: 500 GiB per LUN
-- __Prestazioni__: Proporzionali al volume allocato (es. 2 TB in classe Standard = 3.000 IOPS max)
-- __Organizzazione__: I datastore dello stesso tipo vengono automaticamente raggruppati in cluster di datastore
-- __Disponibilità__: 99,99% misurato mensilmente, incluse le finestre di manutenzione
-- __Spazio necessario__: Prevedere sempre il 10% di spazio libero per gli snapshot di backup e l'equivalente della somma delle RAM delle VM per i file .VSWP
+- __Prestazioni__: proporzionali al volume allocato (es: 2 TiB nella classe Standard = 3000 IOPS massimi)
+- __Organizzazione__: i datastore dello stesso tipo vengono automaticamente raggruppati in cluster di datastore
+- __Disponibilità__: 99,99% misurata mensilmente, incluse le finestre di manutenzione
+- __Spazio necessario__: prevedere sempre lo 10% di spazio libero per i snapshot di backup e l'equivalente della somma della RAM delle VM per i file .VSWP
 
-### Distribuire un nuovo cluster di elaborazione
+### Deploy a new compute cluster
 
-Ordinare un cluster di hypervisor selezionando opzioni adatte alle esigenze di virtualizzazione. Definire caratteristiche chiave come il numero di hypervisor, il tipo di cluster, la quantità di memoria e le risorse di elaborazione richieste:
+Place a request for a hypervisor cluster by selecting the options that best suit your virtualization requirements. Define key characteristics such as the number of hypervisors, cluster type, amount of memory, and required computing resources:
 
 <img src={shivaOrderClucalc_01} />
 
-Selezionare la zona di disponibilità:
+Select the availability zone:
 
 <img src={shivaOrderClucalc_02} />
 
-Scegliere il tipo di blade di elaborazione:
+Choose the compute blade type:
 
 <img src={shivaOrderClucalc_03} />
 
-Si ha quindi la possibilità di selezionare reti esistenti e propagarle, oppure crearne di nuove direttamente in questo passaggio, in base alle esigenze dell'infrastruttura. Notare che il numero totale di reti configurabili è limitato a un massimo di 20:
+You can then select existing networks to propagate, or create new ones directly at this stage, depending on your infrastructure needs. Note that the total number of configurable networks is limited to a maximum of 20:
 
 <img src={shivaOrderClucalc_04} />
 
-Si otterrà quindi un riepilogo delle opzioni selezionate prima di convalidare l'ordine e sarà possibile visualizzare l'ordine in corso:
+You will then receive a summary of the selected options before validating your order, after which you can view your ongoing order:
 
 <img src={shivaOrderClucalc_05} />
 
 ### Distribuire un nuovo cluster di archiviazione
 
-Nel menu "__ordine__", ordinare un __nuovo cluster di archiviazione__ per il proprio ambiente selezionando opzioni che corrispondono alle esigenze in termini di capacità, prestazioni e ridondanza. Selezionare la posizione:
+Nel menu "__comando__", effettua l'ordine di un __nuovo cluster di archiviazione__ per il tuo ambiente selezionando le opzioni che corrispondono ai tuoi requisiti in termini di capacità, prestazioni e ridondanza. Seleziona la posizione:
 
 <img src={shivaOrderClusto_01} />
 
-Definire il numero di datastore da fornire nel cluster e il loro tipo, rispettando i seguenti limiti: è possibile configurare un minimo di 2 datastore e un massimo di 10. Scegliere i tipi di datastore che meglio soddisfano le esigenze in termini di prestazioni, capacità e utilizzo per ottimizzare lo storage nel proprio ambiente:
+Definisci il numero di datastores da provisioning all'interno del cluster, nonché il loro tipo, rispettando i seguenti limiti: un minimo di 2 datastores e un massimo di 10 possono essere configurati. Scegli i tipi di datastore che meglio rispondono ai tuoi bisogni in termini di prestazioni, capacità e utilizzo, al fine di ottimizzare l'archiviazione del tuo ambiente:
 
 <img src={shivaOrderClusto_02} />
 
-Selezionare il tipo di archiviazione desiderato tra le varie opzioni disponibili:
+Seleziona il tipo di archiviazione desiderato tra le diverse opzioni disponibili:
 
 <img src={shivaOrderClusto_03} />
 
-Si accederà quindi a un riepilogo completo delle opzioni selezionate, consentendo di verificare tutti i parametri prima di finalizzare l'ordine:
+Successivamente, accederai a un riepilogo completo delle opzioni selezionate, che ti permetterà di verificare tutti i parametri prima di confermare definitivamente il tuo ordine:
 
 <img src={shivaOrderClusto_04} />
 
-### Distribuire un nuovo datastore all'interno di un cluster SDRS VMware
+### Deploy a new datastore within a VMware SDRS cluster
 
-In questo esempio, aggiungeremo storage in blocco per un'infrastruttura VMware.
-Per aggiungere un datastore aggiuntivo al cluster di storage SDRS, andare al sottomenu __'Infrastruttura'__ e poi a __'VMware'__.
-Quindi scegliere lo stack VMware e la zona di disponibilità. Quindi andare al sottomenu __'Archiviazione'__.
+In this example, we will add block storage for a VMware infrastructure.  
+To add an additional datastore to your SDRS cluster, go to the __'Infrastructure'__ submenu, then __'VMware'__.  
+Select the desired VMware stack and availability zone, then navigate to the __'Storage'__ submenu.
 
-Scegliere il cluster SDRS corrispondente alle caratteristiche di prestazione desiderate e fare clic sul pulsante __'Aggiungi un datastore'__ che si trova nella tabella con l'elenco dei datastore.
+Choose the SDRS cluster that matches the performance characteristics you require, and click the __'Add a datastore'__ button located in the table listing the datastores.
 
 <img src={shivaOrdersIaasSpoolDs} />
 
-__nota__:
+__Note__:
 
-- *La dimensione minima di LUN che può essere attivata su un cluster è di __500 GiB__.*
-- *Le prestazioni di un datastore variano da 500 iops/TiB in media a 15.000 iops/TiB in media. __Questa è una limitazione software eseguita a livello dei controller di archiviazione__.*
-- *La contabilizzazione del volume di disco consumato dalla vostra organizzazione è la somma di tutte le LUN su tutte le AZ utilizzate*.
-- *I diritti __'order'__ così come __'compute'__ sono necessari per l'account per eseguire questa azione.*
+- *The minimum size of an activatable LUN on a cluster is __500 GiB__.*
+- *Datastore performance ranges from an average of 500 iops/TiB to 15,000 iops/TiB on average. __This is a software-based limit enforced at the storage controller level__.*
+- *The disk volume billing for your organization is the sum of all LUNs across the availability zones used.*
+- *The __'order'__ and __'compute'__ permissions are required on the account to perform this action.*
 
-### Ordinare nuove reti
+### Richiedere nuovi reti
 
-La tecnologia di rete utilizzata sull'infrastruttura Cloud Temple è basata su [VPLS](https://it.wikipedia.org/wiki/Virtual_Private_LAN_Service). Consente di beneficiare di __reti di livello 2 in continuità tra le zone di disponibilità all'interno di una regione__.
-È anche possibile condividere reti tra i propri tenant e terminarle nella zona di hosting.
-Fondamentalmente, è possibile immaginare una rete Cloud Temple come una VLAN 802.1q disponibile ovunque nel proprio tenant.
+La tecnologia di rete utilizzata sull'infrastruttura Cloud Temple si basa su [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). Ti permet di beneficiare di __reti di livello 2 con continuità tra le tue zone di disponibilità all'interno di una regione__.
 
-Le reti sulla piattaforma Cloud Temple sono __Livello 2 (VLAN)__ basate sulla tecnologia __VPLS (Virtual Private LAN Service)__. Questa tecnologia consente di beneficiare di __continuità di rete tra le zone di disponibilità__ all'interno di una regione, con prestazioni garantite:
+È inoltre possibile condividere reti tra i tuoi tenant e terminarle in una zona di hosting.  
+In termini basilari, puoi immaginare una rete Cloud Temple come un VLAN 802.1q disponibile in ogni punto del tuo tenant.
 
-- __Latenza intra-AZ__: < 3 ms
-- __Latenza inter-AZ__: < 5 ms
+Le reti sulla piattaforma Cloud Temple sono di __livello 2 (VLAN)__ basate sulla tecnologia __VPLS (Virtual Private LAN Service)__ . Questa tecnologia ti consente di godere di una __continuità di rete tra le tue zone di disponibilità__ all'interno di una regione, con prestazioni garantite:
 
-__Flessibilità della rete__:
+- __Latenza intra-AZ__ : < 3 ms  
+- __Latenza inter-AZ__ : < 5 ms  
 
-- Una rete può essere __condivisa tra più cluster__ all'interno della stessa zona di disponibilità
-- Una rete può essere __propagata tra più zone di disponibilità__ all'interno della stessa regione
-- Una rete può essere __condivisa tra diversi tenant__ della vostra organizzazione
-- Una rete può essere __terminata nella zona di hosting__ per le vostre apparecchiature fisiche
-- __Limite__: Massimo 20 reti per ordine. È possibile effettuare più ordini successivi per estendere questo numero secondo le proprie esigenze
+__Flessibilità delle reti__:
 
-L'ordine di una nuova rete e le decisioni di condivisione tra i propri tenant vengono effettuate nel menu __'Rete'__ nel banner verde sul lato sinistro dello schermo. Le reti verranno prima create, quindi verrà generato un ordine separato per propagarle. È possibile monitorare l'avanzamento degli ordini in corso accedendo alla scheda "Ordine" nel menu, o facendo clic sulle etichette informative che reindirizzano agli ordini attivi o in elaborazione.
+- Una rete può essere __condivisa tra diversi cluster__ della stessa zona di disponibilità  
+- Una rete può essere __propagata tra diverse zone di disponibilità__ della stessa regione  
+- Una rete può essere __condivisa tra diversi tenant__ della tua organizzazione  
+- Una rete può essere __terminata in una zona di hosting__ per i tuoi dispositivi fisici  
+- __Limite__ : massimo 20 reti per richiesta. Puoi effettuare più richieste consecutive per superare questo limite in base alle tue esigenze  
+
+La richiesta di una nuova rete e le decisioni relative alla condivisione tra i tuoi tenant vengono effettuate nel menu __'Rete'__ della barra verde a sinistra dello schermo. Le reti verranno prima create, quindi verrà generata una richiesta separata per la propagazione. Puoi monitorare lo stato delle richieste in corso accedendo all'opzione "Richiesta" nel menu, oppure facendo clic sui label informativi che ti reindirizzano alle richieste attive o in elaborazione.
 
 <img src={shivaOrdersNet_002} />
 
-È anche possibile propagare reti già esistenti o separare i due passaggi, iniziando con la creazione della rete, quindi procedendo con la propagazione successivamente secondo le proprie esigenze. L'opzione di propagazione si trova nelle opzioni della rete selezionata:
+È inoltre possibile propagare reti già esistenti o separare le due fasi, iniziando con la creazione della rete e procedendo successivamente con la propagazione in base alle tue esigenze. L'opzione di propagazione si trova nelle opzioni della rete selezionata:
 
 <img src={shivaOrdersNet_003} />
 
-Fare clic sull'opzione "Propaga" per una rete già esistente, quindi selezionare la destinazione di propagazione desiderata. Questo passaggio consente di definire la posizione o le risorse su cui la rete deve essere propagata:
+Fai clic sull'opzione "Propagare" per una rete già esistente, quindi seleziona la destinazione di propagazione desiderata. Questa fase ti permette di definire l'ubicazione o le risorse su cui la rete deve essere propagata:
 
 <img src={shivaOrdersNet_004} />
 
 ### Disattivazione di una rete
 
-Una rete può anche essere disattivata se necessario. Questa opzione consente di mettere temporaneamente in pausa l'accesso o l'utilizzo della rete senza eliminarla definitivamente, fornendo flessibilità nella gestione dell'infrastruttura secondo le proprie esigenze.
+Una rete può essere disattivata se necessario. Questa opzione consente di sospendere temporaneamente l'accesso o l'utilizzo della rete senza eliminarla definitivamente, offrendo così flessibilità nella gestione dell'infrastruttura in base alle proprie esigenze.
 
 L'opzione di disattivazione si trova nelle opzioni della rete selezionata.
 
-## Aggiungere hypervisor aggiuntivi a un cluster di elaborazione
+## Aggiungere ulteriori hypervisor a un cluster di calcolo
 
-Un __cluster di elaborazione__ è un raggruppamento di hypervisor che devono seguire queste regole:
+Un __cluster di calcolo__ è un raggruppamento di hypervisor che devono rispettare le seguenti regole:
 
-### Per cluster VMware ESXi
+### Per i cluster VMware ESXi
 
 __Regole di omogeneità__:
 
-- Tutti gli host in un cluster devono essere dello __stesso tipo di blade__ (ECO, STANDARD, ADVANCE, PERFORMANCE, ecc.)
-- Tutti gli host appartengono __allo stesso tenant e alla stessa zona di disponibilità__
-- __Limite__: Massimo 32 hypervisor per cluster
+- Tutti gli host di un cluster devono essere dello __stesso tipo di lamina__ (ECO, STANDARD, ADVANCE, PERFORMANCE, ecc.)
+- Tutti gli host appartengono allo __stesso tenant e alla stessa zona di disponibilità__
+- __Limite__: massimo 32 hypervisor per cluster
 
-__Allocazione della memoria__:
+__Assegnazione della memoria__:
 
-- Ogni blade viene fornita con __tutta la memoria fisica attivata__ fin dall'inizio
-- __Esempio__: Un cluster di 3 blade STANDARD v3 (384 GB fisici ciascuna) = 3 × 384 GB = 1.152 GB disponibili
-- __Raccomandazione__: Non superare l'85% di consumo di memoria per blade per evitare il meccanismo di compressione VMware e il ballooning
+- Ogni lamina viene consegnata con __tutta la memoria fisica attivata fin dall'inizio__
+- __Esempio__: un cluster di 3 lamine STANDARD v3 (384 GB fisici ciascuna) = 3 × 384 GB = 1152 GB disponibili
+- __Raccomandazione__: non superare l'85% di utilizzo della memoria per lamina per evitare l'attivazione del meccanismo di compressione VMware e del ballooning
 
 __Alta disponibilità__:
 
-- __Minimo consigliato__: 2 hypervisor per cluster per beneficiare dello SLA del 99,99%
-- Attivare la funzione __VMware HA__ (High Availability) per il riavvio automatico delle VM in caso di guasto di un host
+- __Minimo raccomandato__: 2 hypervisor per cluster per beneficiare del SLA del 99,99%
+- Attivare la funzionalità __VMware HA__ (High Availability) per il riavvio automatico delle VM in caso di guasto di un host
 
-L'aggiunta di hypervisor a un cluster di elaborazione viene effettuata nel menu __'IaaS'__ nel banner verde sul lato sinistro dello schermo.
-Nell'esempio seguente, aggiungeremo elaborazione a un cluster di hypervisor che utilizza la tecnologia VMware.
+L'aggiunta di hypervisor a un cluster di calcolo avviene nel menu __'IaaS'__ nella barra verde a sinistra dello schermo.  
+Nell'esempio seguente, aggiungeremo capacità di calcolo a un cluster di hypervisor basato sulla tecnologia VMware.
 
-Andare al sottomenu __'Infrastruttura'__ e poi a __'VMware'__. Quindi scegliere lo stack VMware, la zona di disponibilità e il cluster di elaborazione.
-In questo esempio, è __'clu001-ucs12'__. Fare clic sul pulsante __'Aggiungi un host'__ che si trova nella tabella con l'elenco degli host, in alto a destra.
+Vai al sottomenu __'Infrastruttura'__ poi __'VMWare'__. Seleziona quindi la stack VMware, la zona di disponibilità e il cluster di calcolo.  
+In questo esempio si tratta del __'clu001-ucs12'__. Clicca sul pulsante __'Aggiungi un host'__ situato nell'angolo in alto a destra della tabella con l'elenco degli host.
 
 __nota__:
 
-- *__La configurazione di un cluster deve essere omogenea__. Pertanto, non è consentito mescolare i tipi di hypervisor all'interno di un cluster. Tutte le blade devono essere dello stesso tipo.*
-- *I diritti __'order'__ così come __'compute'__ sono necessari per l'account per eseguire questa azione.*
+- *__La configurazione di un cluster deve essere omogenea*. Non è consentito combinare tipi diversi di hypervisor all'interno di un cluster. Tutte le lamine devono essere dello stesso tipo.*
+- *I permessi __'order'__ e __'compute'__ sono necessari per il conto per eseguire questa azione.*
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
-### Per cluster IaaS Open Source
+### Per i cluster Open IaaS
 
-I cluster IaaS Open Source seguono regole simili in termini di omogeneità e alta disponibilità. La gestione delle risorse di elaborazione viene effettuata anche tramite il menu __'IaaS'__ con gli stessi prerequisiti in termini di diritti di accesso.
+I cluster Open IaaS seguono regole simili in termini di omogeneità e alta disponibilità. La gestione delle risorse di calcolo avviene inoltre tramite il menu __'OpenIaaS'__ con gli stessi prerequisiti in termini di autorizzazioni di accesso.
 
-## Aggiungere risorse di memoria aggiuntive a un cluster di elaborazione
+## Aggiungere risorse di memoria aggiuntive a un cluster di calcolo
 
-L'allocazione della memoria sui cluster di elaborazione funziona come segue:
+L'allocazione della memoria nei cluster di calcolo funziona nel modo seguente:
 
 __Principio di allocazione della memoria__:
 
-- Tutte le blade di elaborazione vengono fornite con la __massima memoria fisica__ installata
-- Viene applicata una __limitazione software__ a livello di cluster VMware per corrispondere alla RAM fatturata
-- Ogni blade ha __tutta la memoria fisica attivata__ all'interno del cluster
+- Tutte le lame di calcolo vengono consegnate con la __memoria fisica massima installata__
+- Una __limitazione software__ viene applicata a livello del cluster VMware per corrispondere alla RAM fatturata
+- Ogni lama dispone della __totalità della memoria fisica abilitata__ all'interno del cluster
 
-__Dimensionamento del cluster__:
+__Dimensionamento per cluster__:
 
 - __Minimo__: numero di host × 128 GB di memoria
-- __Massimo__: numero di host × quantità di memoria fisica della blade
+- __Massimo__: numero di host × quantità di memoria fisica per lama
 
-__Esempio__: Per un cluster di tre host di tipo `STANDARD v3` (384 GB fisici per blade)
+__Esempio__: per un cluster di tre host del tipo `STANDARD v3` (384 GB fisici per lama)
 
-- Memoria totale disponibile: 3 × 384 GB = 1.152 GB
+- Memoria totale disponibile: 3 × 384 GB = 1152 GB
 
 __Raccomandazioni importanti__:
 
-- Non superare l'__85% di consumo medio di memoria per blade__ per evitare il ballooning e la compressione VMware
+- Non superare il __85% di utilizzo medio della memoria per lama__ per evitare ballooning e compressione VMware
 - Prevedere spazio su disco per i file di swap (.VSWP) creati all'avvio di ogni VM (dimensione = memoria della VM)
 
-Per aggiungere RAM a un cluster, basta andare alla configurazione del cluster (come per l'aggiunta di un host di elaborazione come visto in precedenza) e fare clic su __'Modifica memoria'__.
+Per aggiungere memoria RAM a un cluster, è sufficiente accedere alla configurazione del cluster (come per l'aggiunta di un host di calcolo, come precedentemente illustrato) e fare clic su __'Modifica memoria'__.
 
 <img src={shivaOrdersIaasCpoolMemory} />
 
 __nota__:
 
-- *__Le macchine vengono fornite con tutta la memoria fisica__. Lo sblocco della risorsa di memoria è solo un'attivazione software a livello di cluster.*
-- *Non è possibile modificare la quantità di memoria fisica di un tipo di blade. Tenere conto della capacità massima di una blade quando si crea un cluster.*
-- *I diritti __'order'__ così come __'compute'__ sono necessari per l'account per eseguire questa azione.*
+- *__Le macchine vengono consegnate con tutta la memoria fisica disponibile__. L'attivazione della risorsa memoria è solo un'abilitazione software a livello di cluster.*
+- *Non è possibile modificare la quantità di memoria fisica di un tipo di lama. Tenere sempre presente la capacità massima di una lama durante la creazione di un cluster.*
+- *Sono necessari i permessi __'order'__ e __'compute'__ sul conto per eseguire questa operazione.*

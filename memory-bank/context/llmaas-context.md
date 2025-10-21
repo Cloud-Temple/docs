@@ -182,4 +182,4 @@ Tous les documents principaux sont maintenant rédigés et disponibles.
 ---
 
 *Contexte LLMaaS Cloud Temple - Documentation technique complète*
-*Dernière mise à jour : 15/06/2025 - Suppression des tags de la page des modèles.*
+*Dernière mise à jour : 18/10/2025 - Validation complète du build et des traductions suite aux ajouts récents.*

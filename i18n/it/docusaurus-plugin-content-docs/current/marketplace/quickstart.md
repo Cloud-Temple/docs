@@ -1,82 +1,72 @@
 ---
-title: Guida introduttiva
+title: Guida di avvio
 ---
 import marketplaceCatalog from './images/marketplace_catalog.png'
 import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
 
-# Avvio rapido per Cloud Temple Marketplace
+# Guida rapida per la Marketplace Cloud Temple
 
-Questa pagina ti guida attraverso i passaggi iniziali per utilizzare il **Cloud Temple Marketplace** dalla console. Segui queste istruzioni per scoprire le soluzioni disponibili e distribuirle rapidamente.
-
----
+Questa pagina ti guida attraverso i passaggi iniziali per utilizzare la **Marketplace Cloud Temple** dalla console. Segui queste istruzioni per esplorare le soluzioni disponibili e distribuirle rapidamente.
 
 ## Prerequisiti
 
 Prima di iniziare, assicurati dei seguenti punti:
 
-1. **Abbonamento attivo**: Per abilitare le distribuzioni, la tua organizzazione deve aver sottoscritto almeno un servizio Cloud Temple (IaaS OpenSource o IaaS VMware). Per contattare i nostri partner, non hai bisogno di un abbonamento specifico.
-2. **Permessi utente**: Il tuo account utente deve avere i diritti necessari per accedere alla console e i permessi di scrittura sugli ambienti target quando vuoi distribuire risorse lì.
-3. **Ambiente target**: Avere un tenant configurato per la distribuzione delle soluzioni.
+1. **Sottoscrizione attivata**: Per consentire i deployment, la tua organizzazione deve essere sottoscritta a almeno un servizio Cloud Temple (IaaS OpenSource o IaaS VMware). Nel contesto del contatto con i nostri partner, non è necessaria una sottoscrizione specifica.
+2. **Permessi utente**: Il tuo account utente deve disporre dei diritti necessari per accedere alla console e dei diritti di scrittura sugli ambienti di destinazione quando desideri distribuire risorse.
+3. **Ambiente di destinazione**: Disporre di un tenant configurato per il deployment delle soluzioni.
 
----
-
-## Accesso al Marketplace
+## Accesso alla Marketplace
 
 ### 1. Accesso dalla console Shiva
 
-Una volta connesso alla console Cloud Temple, puoi accedere al Marketplace in diversi modi:
+Dopo esserti connesso alla console Cloud Temple, puoi accedere alla Marketplace in diversi modi:
 
 - **Menu principale**: Un menu **Marketplace** è disponibile nella navigazione principale
-- **Pagine macchine virtuali**: Il Marketplace è anche accessibile dalle pagine di creazione macchine virtuali negli ambienti OpenIaaS e VMware
+- **Pagine delle macchine virtuali**: La Marketplace è inoltre accessibile dalle pagine di creazione di macchine virtuali negli ambienti OpenIaaS e VMware
 
 ### 2. Pagina Marketplace
 
-La pagina Marketplace presenta un catalogo di soluzioni disponibili. Ogni soluzione mostra:
+La pagina Marketplace presenta un catalogo delle soluzioni disponibili. Ogni soluzione mostra:
 
-- **Nome e logo** della soluzione
-- **Descrizione breve**
-- **Editore/Partner**
-- **Tipo di soluzione** (VM Image, Soluzione SaaS, ecc.)
+- **Nome e logo** della soluzione  
+- **Descrizione breve**  
+- **Editore/Partner**  
+- **Tipo di soluzione** (Immagine VM, Soluzione SaaS, ecc.)
 
 <img src={marketplaceCatalog} />
 
----
-
-## Consultazione dettagli soluzione
+## Viewing solution details
 
 ### Accesso alle informazioni dettagliate
 
-Cliccando su una soluzione, accedi a una pagina di dettagli che include:
+Faccendo clic su una soluzione, si accede a una pagina di dettagli che include:
 
-- **Descrizione completa** della soluzione
-- **Specifiche tecniche** (se applicabile)
-- **Prerequisiti** di distribuzione
-- **Documentazione** fornita dall'editore
-- **Opzioni di distribuzione** disponibili
+- **Descrizione completa** della soluzione  
+- **Specifiche tecniche** (se applicabile)  
+- **Requisiti** per il deployment  
+- **Documentazione** fornita dall'editore  
+- **Opzioni di deployment** disponibili  
 
 <img src={marketplaceSolutionDetails} />
 
----
-
 ## Azioni disponibili
 
-A seconda del tipo di soluzione, sono possibili diverse azioni:
+A seconda del tipo di soluzione, sono disponibili diverse azioni:
 
-### Distribuzione di immagini macchine virtuali
+### Deployment di immagini di macchine virtuali
 
-Per soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi distribuire direttamente dal Marketplace.
+Per le soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi effettuare il deployment direttamente dalla Marketplace.
 
-**Nota importante:** La distribuzione diretta è disponibile solo per immagini che hanno il tuo ambiente nei loro target compatibili.
+**Nota importante:** Il deployment diretto è disponibile solo per le immagini che includono il tuo ambiente tra i target compatibili.
 
 **Guide dettagliate:**
 - [Come distribuire un'immagine su OpenIaaS?](tutorials/deploy_openiaas)
 - [Come distribuire un'immagine su VMware?](tutorials/deploy_vmware)
 
-### Contatto partner
+### Contatto con i partner
 
-Per soluzioni che richiedono connessione, puoi contattare direttamente l'editore partner.
+Per le soluzioni che richiedono un collegamento diretto, è possibile contattare direttamente il partner editore.
 
 **Guida dettagliata:**
 - [Come contattare un partner?](tutorials/contact_partner)
-
----

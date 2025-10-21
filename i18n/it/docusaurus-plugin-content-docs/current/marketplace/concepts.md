@@ -2,73 +2,65 @@
 title: Concetti
 ---
 
-Il **Cloud Temple Marketplace** è una piattaforma centralizzata che facilita l'accesso e la distribuzione di soluzioni cloud pronte all'uso in un ambiente sovrano e sicuro.
-
----
+La **Marketplace Cloud Temple** è una piattaforma centralizzata che semplifica l'accesso e il deployment di soluzioni cloud pronte all'uso in un ambiente sovrano e sicuro.
 
 ## Definizione e posizionamento
 
-Il Cloud Temple Marketplace si posiziona come una leva di trasformazione digitale per le aziende che cercano servizi affidabili, ospitati in Europa, con integrazione semplice e rapida.
+La Marketplace Cloud Temple si posiziona come un fattore di trasformazione digitale per le aziende che cercano servizi affidabili, ospitati in Europa, con un'integrazione semplice e rapida.
 
 Permette di:
 - **Centralizzare** l'accesso alle soluzioni partner validate
-- **Semplificare** la distribuzione di ambienti cloud
+- **Semplificare** il deployment di ambienti cloud
 - **Accelerare** l'implementazione di progetti digitali
-- **Garantire** la conformità e sicurezza delle distribuzioni
-
----
+- **Garantire** la conformità e la sicurezza dei deployment
 
 ## Tipi di soluzioni disponibili
 
-### Immagini di Macchine Virtuali
+### Virtual Machine Images
 
-Le immagini di macchine virtuali costituiscono il nucleo attuale dell'offerta del Marketplace. Queste immagini preconfigurate permettono una distribuzione rapida di ambienti standardizzati.
+Virtual machine images are the current core of the Marketplace offering. These pre-configured images enable the rapid deployment of standardized environments.
 
-**Caratteristiche:**
-- Immagini validate e sicure
-- Compatibili con ambienti OpenIaaS e VMware
-- Distribuzione in meno di 10 minuti
-- Integrazione nativa con la console Cloud Temple
+**Features:**
+- Validated and secure images
+- Compatible with OpenIaaS and VMware environments
+- Deployment in under 10 minutes
+- Native integration with the Cloud Temple console
 
 ### Soluzioni partner
 
-Il Marketplace fornisce anche accesso a soluzioni sviluppate dai nostri partner editori, coprendo diversi domini aziendali.
+La Marketplace offre inoltre l'accesso a soluzioni sviluppate dai nostri partner editori, coprendo diversi settori di attività.
 
 **Processo di accesso:**
 - Consultazione del catalogo dalla console
-- Connessione diretta con il partner
+- Collegamento diretto con il partner
 - Distribuzione sull'infrastruttura Cloud Temple
-
----
 
 ## Integrazione con l'ecosistema Cloud Temple
 
-### Console Cloud Temple
+### Cloud Temple Console
 
-Il Marketplace è integrato nativamente con la console Cloud Temple, offrendo:
+Il Marketplace è integrato nativamente alla console Cloud Temple, offrendo:
 - **Accesso unificato** dall'interfaccia di gestione abituale
-- **Distribuzione diretta** su infrastrutture esistenti
-- **Gestione centralizzata** di risorse e soluzioni
+- **Distribuzione diretta** sulle infrastrutture esistenti
+- **Gestione centralizzata** delle risorse e delle soluzioni
 
-### Compatibilità dei servizi
+### Compatibilità con i servizi
 
-Le soluzioni del Marketplace sono progettate per integrarsi armoniosamente con:
-- **IaaS OpenSource**: Distribuzione su infrastruttura OpenIaaS
-- **IaaS VMware**: Integrazione con ambiente vSphere
-
----
+Le soluzioni della Marketplace sono progettate per integrarsi in modo armonioso con:
+- **IaaS OpenSource**: distribuzione sull'infrastruttura OpenIaaS
+- **IaaS VMware**: integrazione con l'ambiente vSphere
 
 ## Sicurezza e conformità
 
 ### Hosting sovrano
 
-Tutte le soluzioni distribuite tramite il Marketplace beneficiano di:
-- **Hosting in Francia** esclusivamente
-- **Qualificazione SecNumCloud** dell'infrastruttura
+Tutte le soluzioni distribuite tramite la Marketplace beneficiano di:
+- **Hosting esclusivamente in Francia**
+- **Qualifica SecNumCloud** dell'infrastruttura
 
 ### Validazione delle soluzioni
 
-Le soluzioni offerte nel Marketplace passano attraverso una selezione rigorosa che garantisce:
+Le soluzioni proposte nella Marketplace sono oggetto di una selezione rigorosa che garantisce:
 - **Compatibilità** con l'infrastruttura Cloud Temple
-- **Sicurezza** di immagini e applicazioni
+- **Sicurezza** delle immagini e delle applicazioni
 - **Affidabilità** dei partner editori

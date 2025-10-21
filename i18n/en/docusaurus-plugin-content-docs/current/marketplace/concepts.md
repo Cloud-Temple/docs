@@ -2,73 +2,65 @@
 title: Concepts
 ---
 
-The **Cloud Temple Marketplace** is a centralized platform that facilitates access and deployment of ready-to-use cloud solutions in a sovereign and secure environment.
+The **Cloud Temple Marketplace** is a centralized platform that simplifies access to and deployment of ready-to-use cloud solutions in a sovereign and secure environment.
 
----
+## Definition and Positioning
 
-## Definition and positioning
+The Cloud Temple Marketplace positions itself as a driver of digital transformation for businesses seeking reliable services, hosted in Europe, with simple and rapid integration.
 
-The Cloud Temple Marketplace positions itself as a digital transformation lever for businesses seeking reliable services, hosted in Europe, with simple and fast integration.
+It enables:
+- **Centralizing** access to validated partner solutions
+- **Simplifying** the deployment of cloud environments
+- **Accelerating** the implementation of digital projects
+- **Ensuring** compliance and security of deployments
 
-It enables to:
-- **Centralize** access to validated partner solutions
-- **Simplify** cloud environment deployment
-- **Accelerate** digital project implementation
-- **Guarantee** deployment compliance and security
-
----
-
-## Available solution types
+## Types of solutions available
 
 ### Virtual Machine Images
 
-Virtual machine images constitute the current core of the Marketplace offering. These pre-configured images enable rapid deployment of standardized environments.
+Virtual machine images form the current core of the Marketplace offering. These pre-configured images enable rapid deployment of standardized environments.
 
-**Characteristics:**
-- Validated and secured images
+**Features:**
+- Validated and secure images
 - Compatible with OpenIaaS and VMware environments
-- Deployment in less than 10 minutes
+- Deployment in under 10 minutes
 - Native integration with the Cloud Temple console
 
-### Partner solutions
+### Partner Solutions
 
-The Marketplace also provides access to solutions developed by our partner publishers, covering different business domains.
+The Marketplace also provides access to solutions developed by our partner vendors, covering various business domains.
 
-**Access process:**
-- Catalog consultation from the console
-- Direct connection with the partner
-- Deployment on Cloud Temple infrastructure
+**Access Process:**
+- Browse the catalog from the console
+- Directly connect with the partner
+- Deploy on Temple Cloud infrastructure
 
----
-
-## Integration with the Cloud Temple ecosystem
+## Integration with the Cloud Temple Ecosystem
 
 ### Cloud Temple Console
 
-The Marketplace is natively integrated with the Cloud Temple console, offering:
-- **Unified access** from the usual management interface
-- **Direct deployment** on existing infrastructures
+The Marketplace is natively integrated into the Cloud Temple console, offering:
+- **Unified access** from your usual management interface
+- **Direct deployment** onto existing infrastructures
 - **Centralized management** of resources and solutions
 
-### Service compatibility
+### Compatibility with Services
 
-Marketplace solutions are designed to integrate harmoniously with:
-- **IaaS OpenSource**: Deployment on OpenIaaS infrastructure
-- **IaaS VMware**: Integration with vSphere environment
+The Marketplace solutions are designed to seamlessly integrate with:
+- **OpenSource IaaS**: Deployment on OpenIaaS infrastructure
+- **VMware IaaS**: Integration with the vSphere environment
 
----
+## Security and Compliance
 
-## Security and compliance
-
-### Sovereign hosting
+### Sovereign Hosting
 
 All solutions deployed via the Marketplace benefit from:
-- **Hosting in France** exclusively
-- **SecNumCloud qualification** of the infrastructure
+- **Hosting exclusively in France**
+- **SecNumCloud certification** of the infrastructure
 
-### Solution validation
+### Solution Validation
 
-Solutions offered in the Marketplace undergo rigorous selection guaranteeing:
-- **Compatibility** with Cloud Temple infrastructure
+The solutions offered in the Marketplace undergo a rigorous selection process ensuring:
+- **Compatibility** with the Cloud Temple infrastructure
 - **Security** of images and applications
-- **Reliability** of partner publishers
+- **Reliability** of publisher partners
