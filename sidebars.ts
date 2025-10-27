@@ -203,6 +203,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Managed Kubernetes',
+      items: [
+        'managed_kubernetes/managed_kubernetes',
+        'managed_kubernetes/concepts',
+        'managed_kubernetes/quickstart',
+        'managed_kubernetes/tutorials',
+      ],
+    },
+    {
+      type: 'category',
       label: 'LLMaaS',
       items: [
         'llmaas/llmaas',
