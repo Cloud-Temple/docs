@@ -284,6 +284,7 @@ const sidebars: SidebarsConfig = {
                 'storage/oss/tutorials/aws-s3-sync',
                 'storage/oss/tutorials/python-boto3',
                 'storage/oss/tutorials/file-hashing',
+                'storage/oss/tutorials/restic',
               ],
             },
           ],
