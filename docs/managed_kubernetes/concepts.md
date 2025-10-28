@@ -86,18 +86,18 @@ Les délais de prise en charge et de rétablissement dépendent de la sévérit�
 
 Pour un déploiement "de production" (multi-zonal), les machines suivantes sont utilisées:
 
-| **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
-|---------|---------------|------------|---------|--------------------|
-| AZ07  | Git Runner   | 4  | 8 Go | OS: 20 Go  |
-| AZ05  | Control Plane 1   | 8  | 12 Go | OS: 20 Go  |
-| AZ06  | Control Plane 2   | 8  | 12 Go | OS: 20 Go  |
-| AZ07  | Control Plane 3   | 8  | 12 Go | OS: 20 Go  |
-| AZ05  | Storage Node 1    | 12 | 24 Go | OS: 20 Go + Ceph 500 Go minimum (*) |
-| AZ06  | Storage Node 2    | 12 | 24 Go | OS: 20 Go + Ceph 500 Go minimum (*)|
-| AZ07  | Storage Node 3    | 12 | 24 Go | OS: 20 Go + Ceph 500 Go minimum (*)|
-| AZ05  | Worker Node 1 (**)   | 12 | 24 Go | OS: 20 Go |
-| AZ06  | Worker Node 2 (**)   | 12 | 24 Go | OS: 20 Go |
-| AZ07  | Worker Node 3 (**)   | 12 | 24 Go | OS: 20 Go |
+| **AZ** | **Machine**        | **vCores** | **RAM** | **Stockage local**                  |
+| ------ | ------------------ | ---------- | ------- | ----------------------------------- |
+| AZ07   | Git Runner         | 4          | 8 Go    | OS: 20 Go                           |
+| AZ05   | Control Plane 1    | 8          | 12 Go   | OS: 20 Go                           |
+| AZ06   | Control Plane 2    | 8          | 12 Go   | OS: 20 Go                           |
+| AZ07   | Control Plane 3    | 8          | 12 Go   | OS: 20 Go                           |
+| AZ05   | Storage Node 1     | 12         | 24 Go   | OS: 20 Go + Ceph 500 Go minimum (*) |
+| AZ06   | Storage Node 2     | 12         | 24 Go   | OS: 20 Go + Ceph 500 Go minimum (*) |
+| AZ07   | Storage Node 3     | 12         | 24 Go   | OS: 20 Go + Ceph 500 Go minimum (*) |
+| AZ05   | Worker Node 1 (**) | 12         | 24 Go   | OS: 20 Go                           |
+| AZ06   | Worker Node 2 (**) | 12         | 24 Go   | OS: 20 Go                           |
+| AZ07   | Worker Node 3 (**) | 12         | 24 Go   | OS: 20 Go                           |
 
 (*) : Chaque noeud de stockage est livré avec un minimum de 500 Go d'espace disque, pour un stockage utile Ceph distribué de 500 Go (les données sont répliquées sur chaque AZ, donc x3). L'espace libre disponible pour le client est d'environ 350 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins.
 
@@ -108,169 +108,41 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 
 Pour une version "dev/test" (mono-zonale), les machines suivantes sont déployées:
 
-| **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
-|---------|---------------|------------|---------|--------------------|
-| AZ0n  | Git Runner   | 4  | 8 Go | OS: 20 Go  |
-| AZ0n  | Control Plane    | 8  | 12 Go | OS: 20 Go  |
-| AZ0n  | Worker Node 1 (**)   | 12 | 24 Go | OS: 20 Go+ Ceph 300 Go minimum (*) |
-| AZ0n  | Worker Node 2 (**)   | 12 | 24 Go | OS: 20 Go+ Ceph 300 Go minimum (*) |
-| AZ0n  | Worker Node 3 (**)   | 12 | 24 Go | OS: 20 Go+ Ceph 300 Go minimum (*) |
+| **AZ** | **Machine**        | **vCores** | **RAM** | **Stockage local**                 |
+| ------ | ------------------ | ---------- | ------- | ---------------------------------- |
+| AZ0n   | Git Runner         | 4          | 8 Go    | OS: 20 Go                          |
+| AZ0n   | Control Plane      | 8          | 12 Go   | OS: 20 Go                          |
+| AZ0n   | Worker Node 1 (**) | 12         | 24 Go   | OS: 20 Go+ Ceph 300 Go minimum (*) |
+| AZ0n   | Worker Node 2 (**) | 12         | 24 Go   | OS: 20 Go+ Ceph 300 Go minimum (*) |
+| AZ0n   | Worker Node 3 (**) | 12         | 24 Go   | OS: 20 Go+ Ceph 300 Go minimum (*) |
 
 (*) : 3 Worker nodes sont utilisés comme Storage nodes et sont livrés avec un minimum de 300 Go d'espace disque, pour un stockage utile distribué de 300 Go (les données sont répliquées trois fois). L'espace libre disponible pour le client est d'environ 150 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins.
 
 (**) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (du fait de la réplication du stockage). La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 250. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
 
-## RACI
-### Architecture & Infrastructure
+## Prérequis IaaS
 
-| **Activité**                                                                 | **Client** | **Cloud Temple** |
-|------------------------------------------------------------------------------|------------|------------------------|
-| Définir l'architecture globale du service Kubernetes                         | C          | RA                     |
-| Dimensionner le service Kubernetes (nombre de noeuds, ressources)            | C          | RA                     |
-| Installer le service Kubernetes avec une configuration par défaut            | I          | RA                     |
-| Configuration du service Kubernetes                                          | C          | RA                     |
-| Configurer le réseau de base du service Kubernetes                           | I          | RA                     |
-| Déploiement de la configuration initiale des identités et des accès          | C          | RA                     |
-| Définir la stratégie de mise à l’échelle et de haute disponibilité           | C          | RA                     |
+Vous devez disposer d'une infrastructure IaaS avec les minimaux requis pour le déploiement de Kubernetes Managé:
 
-### Gestion des projets et applications métiers 
+### Production (multi-zonale)
 
-| **Activité**                                          | **Client** | **Cloud Temple** |
-|-------------------------------------------------------|------------|------------------------|
-| Créer et gérer les projets Kubernetes                 | RA         | I*                     |
-| Déployer et gérer les applications dans Kubernetes    | RA         | I*                     |
-| Configurer les pipelines CI/CD                        | RA         | I*                     |
-| Gérer les images de conteneurs et les registres       | RA         | I*                     |
+- 1 tenant Cloud-Temple
+- 3 AZ
+- 2 IP Publiques disponibles
+- 1 VLAN multi-zone avec un range privé IPv4 **/22**
+- 1 cluster de firewall : de préférence Fortigate, pour avoir du load-balacing avec BGP et une automatisation complète (mais les autres clusters de firewall sont acceptés)
+- ~2 To de stockage S3 (facturé au réél)
+- Sur chaque AZ:
+    - 1 lame hyperviseur (OpenIaaS ou VMware) par AZ avec 40 cores, et 72 Go de RAM dédiés à Kubernetes Managé (Lame ECO ou supérieur)
+    - 600 Go de disponible dans un datastore avec **7500 IOPS effectif** (par exemple un datastore de 2,5 To à 3000 IOPS)
 
-*peut passer à "C" en fonction du contrat d'infogérance
+### Dev/test (mono-zonale)
 
-### Surveillance et performance
-
-| **Activité**                                            | **Client** | **Cloud Temple** |
-|---------------------------------------------------------|------------|------------------------|
-| Surveiller la performance du service Kubernetes         | I          | RA                     |
-| Surveiller la performance des applications              | RA         |                      |
-| Gérer les alertes liées au service Kubernetes           | I          | RA                     |
-| Gérer les alertes liées aux applications                | RA         |                      |
-
-
-### Maintenance et mises à jour Infrastructures
-
-| **Activité**                                             | **Client** | **Cloud Temple** |
-|----------------------------------------------------------|------------|------------------------|
-| Mettre à jour le service Kubernetes/OS                   | C          | RA                     |
-| Appliquer les correctifs de sécurité à Kubernetes        | C          | RA                     |
-| Mettre à jour les applications déployées (opérateurs*)   | C          | RA                     |
-
-*Package opérateur inclus sur Managed Kube - voir chapitres : Packages Helm managés
-
-### Sécurité
-
-| **Activité**                                                              | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------------------|------------|------------------------|
-| Gérer la sécurité du service Kubernetes                                   | RA         | RA                     |
-| Configurer et gérer les politiques de sécurité des pods                   | RA         | I*                     |
-| Gérer les certificats SSL/TLS pour le service Kubernetes                  | C          | RA                     |
-| Gérer les certificats SSL/TLS pour les applications                       | RA         | I*                     |
-| Implémenter et gérer le contrôle d'accès basé sur les rôles de base (RBAC)| C          | R                      |
-| Implémenter et gérer le contrôle d'accès basé sur les rôles client (RBAC) | RA         | I*                     |
-
-*peut passer à "C" en fonction du contrat d'infogérance
-
-### Sauvegarde et reprise après sinistre
-
-| **Activité**                                                                 | **Client** | **Cloud Temple** |
-|------------------------------------------------------------------------------|------------|------------------------|
-| Définir la stratégie de sauvegarde pour le service Kubernetes                | I         | RA                    |
-| Mettre en oeuvre et gérer les sauvegardes du service Kubernetes              | I         | RA                    |
-| Définir la stratégie de sauvegarde pour les applications                     | RA*         | I*                   |
-| Mettre en oeuvre et gérer les sauvegardes des applications                   | RA*         | I*                   |
-| Tester les procédures de reprise après sinistre pour le service Kubernetes   | CI         | RA                   |
-| Tester les procédures de reprise après sinistre pour les applications      | RA*         | CI*                   |
-
-*peut passer à "CI | RA" en fonction du contrat d'infogérance
-
-### Support et résolution des problèmes
-
-| **Activité**                                              | **Client** | **Cloud Temple** |
-|-----------------------------------------------------------|------------|------------------------|
-| Fournir un support de niveau 1 pour l'infrastructure      | I          | RA                     |
-| Fournir un support de niveau 2 et 3 pour l'infrastructure | I          | RA                     |
-| Résoudre les problèmes liés au service Kubernetes         | C          | RA                     |
-| Résoudre les problèmes liés aux applications              | RA         | I                      |
-
-### Gestion des capacités et évolution
-
-| **Activité**                                              | **Client** | **Cloud Temple** |
-|-----------------------------------------------------------|------------|------------------------|
-| Surveiller l'utilisation des ressources Kubernetes         | C         | RA                     |
-| Planifier l’évolution des capacités du service            | RA         | C                      |
-| Implémenter les changements de capacité                   | I          | RA                     |
-| Gérer l’évolution des applications et leurs ressources    | RA         | I                      |
-
-### Documentation et conformité
-
-| **Activité**                                                  | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------|------------|------------------------|
-| Maintenir la documentation du service Kubernetes              | I          | RA                     |
-| Maintenir la documentation des applications                   | RA         | I                      |
-| Assurer la conformité du service Kubernetes                   | I          | RA                     |
-| Assurer la conformité des applications                        | RA         | I                      |
-| Réaliser des audits du service Kubernetes                     | I          | RA                     |
-| Réaliser des audits des applications                          | RA         | I                      |
-
-### Gestion des opérateurs/CRD Kubernetes de base
-
-| **Activité**                                                              | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------------------|------------|------------------------|
-| Mise à disposition du catalogue d'Opérateurs par défaut                   | CI         | RA                     |
-| Mise à jour des Opérateurs                                                | CI         | RA                     |
-| Surveillance de l’état des Opérateurs                                     | CI         | RA                     |
-| Résolution des problèmes liés aux Opérateurs                              | CI         | RA                     |
-| Gestion des autorisations des Opérateurs                                  | CI         | RA                     |
-| Gestion des ressources des Opérateurs (ajout/suppression)                 | CI         | RA                     |
-| Sauvegarde des données des ressources des Opérateurs                      | CI         | RA                     |
-| Supervision des ressources Opérateurs                                     | CI         | RA                     |
-| Restauration des données des ressources des Opérateurs                    | CI         | RA                     |
-| Audit de sécurité des Opérateurs                                          | CI         | RA                     |
-| Support des Opérateurs                                                    | CI         | RA                     |
-| Gestion des licences sur les opérateurs                                   | CI         | RA                     |
-| Gestion des plans de support spécifiques sur les opérateurs               | CI         | RA                     |
-
-*Package opérateur inclus sur Managed Kube - voir chapitres : Packages Helm managés
- 
-### Gestion des applications/opérateurs/CRD Kubernetes (métiers)
-
-| **Activité**                                                              | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------------------|------------|------------------------|
-| Déploiement des CRDs                                                      | RA*        | I*                    |
-| Mise à jour des Opérateurs                                                | RA         | I                     |
-| Surveillance de l’état des Opérateurs                                     | RA         | I                     |
-| Résolution des problèmes liés aux Opérateurs                              | RA         | I                     |
-| Gestion des autorisations des Opérateurs                                  | RA         | I                     |
-| Gestion des ressources des Opérateurs (ajout/suppression)                 | RA         | I                     |
-| Sauvegarde des données des ressources des Opérateurs                      | RA         | I                     |
-| Supervision des ressources Opérateurs                                     | RA         | I                     |
-| Restauration des données des ressources des Opérateurs                    | RA         | I                     |
-| Audit de sécurité des Opérateurs                                          | RA         | I                     |
-| Support des Opérateurs                                                    | RA         | I                     |
-| Gestion des licences sur les opérateurs                                   | RA         | I                     |
-| Gestion des plans de support spécifiques sur les opérateurs               | RA         | I                     |
-
-Certains services opérateurs peuvent être pris en charge en fonction du contrat d'infogérance.
-
-*peut passer à "A | RC" en fonction du contrat d'infogérance
-
-### Assistance applicative
-
-| **Activité**                                | **Client** | **Cloud Temple** |
-|---------------------------------------------|------------|------------------------|
-| Assistance applicative (prestation externe) | RA         | I                      |
-
-Un support applicatif peut être fourni via une prestation complémentaire.
-
-### RACI (synthétique)
-
-- Cloud Temple : responsable et acteur (RA) du socle Kubernetes, sécurité cluster, sauvegarde infra, supervision.
-- Client : responsable et acteur (RA) des projets applicatifs, opérateurs métiers, pipelines CI/CD, sauvegardes applicatives.
-- Zone "grise" : adaptations et extensions (IAM, opérateurs spécifiques, durcissement de conformité/sécurité du cluster) - facturées en mode projet.
+- 1 tenant Cloud-Temple
+- 1 AZ
+- 2 IP Publiques disponibles
+- 1 VLAN avec un range privé IPv4 **/22**
+- 1 cluster de firewall : de préférence Fortigate, pour avoir du load-balacing avec BGP et une automatisation complète (mais les autres clusters de firewall sont acceptés)
+- une capacité de calcul disponible de 48 cores et 92 Go de RAM (il est accepté que les cores soient soumis à un coefficient de virtualisation de 1.5)
+- 1,2 To disponible dans un datastore avec **7500 IOPS effectif**
+- ~1 To de stockage S3 (facturé au réél)

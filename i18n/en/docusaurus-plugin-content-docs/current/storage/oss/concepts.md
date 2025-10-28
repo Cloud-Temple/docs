@@ -35,4 +35,4 @@ To protect your stored data, our service uses server-side encryption.
 All communications with the object storage service API—whether for uploading, downloading, or managing your data—must be secured.
 
 -   **Protocol**: We require the use of the **TLS (Transport Layer Security)** protocol, versions **1.2 and 1.3**.
--   **Operation**: By using HTTPS for all your API requests, you ensure that data exchanged between your client and our servers is encrypted, thereby protecting it against interception or tampering during transit over the network.
+-   **Operation**: By using HTTPS for all your API requests, you ensure that data exchanged between your client and our servers is encrypted, thereby protecting it against interception or tampering during transit across the network.

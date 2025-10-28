@@ -3,7 +3,7 @@ title: Servicio de Almacenamiento de Objetos (OSS)
 sidebar_position: 1
 ---
 
-# Servicio de Almacenamiento Objetos (OSS)
+# Servicio de Almacenamiento de Objetos (OSS)
 
 ## Visión general
 
@@ -25,4 +25,4 @@ Al igual que todos los servicios de Cloud Temple, el servicio de almacenamiento 
 -   **Archivado a largo plazo**: Guarde grandes volúmenes de datos por razones de cumplimiento normativo o análisis futuro.
 -   **Contenido estático**: Hospede imágenes, videos y otros archivos estáticos de sus sitios web y aplicaciones.
 -   **Big Data y Data Lakes**: Centralice grandes conjuntos de datos para sus flujos de análisis y aprendizaje automático.
--   **Aplicaciones nativas en la nube**: Utilice un almacenamiento fiable y de alto rendimiento para los datos generados por sus aplicaciones contenedorizadas.
+-   **Aplicaciones nativas en la nube**: Utilice un almacenamiento fiable y de alto rendimiento para los datos generados por sus aplicaciones contenerizadas.

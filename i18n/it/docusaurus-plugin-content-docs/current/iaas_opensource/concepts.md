@@ -1,8 +1,8 @@
 ---
-title: Concepts
+title: Concetti
 ---
 
-The __IaaS (Infrastructure as a Service)__ offering from Cloud Temple is designed to meet the critical needs of business continuity and disaster recovery, with a particular focus on demanding sectors such as industry, banking, and insurance. Built on cutting-edge technologies, this infrastructure ensures maximum availability and optimal performance for your critical workloads.
+L'offerta __IaaS (Infrastructure come servizio)__ di Cloud Temple è progettata per soddisfare i bisogni critici di continuità operativa e ripresa d'attività, con un'enfasi particolare sui settori esigenti come l'industria, la banca e l'assicurazione. Basata su tecnologie all'avanguardia, questa infrastruttura garantisce un'alta disponibilità e un'ottimizzazione delle prestazioni per i tuoi carichi di lavoro critici.
 
 ## Una piattaforma tecnologica di fiducia
 
@@ -11,7 +11,7 @@ La piattaforma IaaS di Cloud Temple si basa su partner tecnologici di fama inter
 - Calcolo: __CISCO UCS__.
 - Archiviazione: __IBM Spectrum Virtualize__, __IBM FlashSystem__ per l'archiviazione a blocchi, e __DELL ECS__ per l'archiviazione oggetti.
 - Rete: __JUNIPER__.
-- Virtualizzazione: __Stack Open Source__, che offre una base affidabile ed esauriente per gestire i vostri ambienti cloud.
+- Virtualizzazione: __Stack Opensource__, che offre una base affidabile ed esauriente per gestire i vostri ambienti cloud.
 
 Questa architettura si basa sul modello __VersaStack__, un'alleanza tra Cisco e IBM, che garantisce un'ampia compatibilità con i principali produttori di software.
 
@@ -19,26 +19,26 @@ Questa architettura si basa sul modello __VersaStack__, un'alleanza tra Cisco e 
 
 Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offering provides a unique infrastructure:
 
-- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared between clients.
+- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared among clients.
 - __Maximum predictability__: You control virtualization rates, storage IOPS load, and benefit from clear, consumption-based monthly billing.
 
 The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr/), guaranteeing a high level of automation and security.
 
-## Funzionalità principali
+## Principali funzionalità
 
 - Risorse di calcolo (CPU, RAM) dedicate e su richiesta.
 - Archiviazione su richiesta (diverse classi disponibili).
 - Risorse di rete (Internet, reti private).
 - Backup incrociati con conservazione configurabile.
 - Replica asincrona per l'archiviazione o le macchine virtuali.
-- Gestione tramite la [Console Shiva](../console/console.md) oppure in modalità Infrastructure as Code grazie alle API e al provider Terraform.
+- Gestione tramite la [Console Shiva](../console/console.md) o in modalità Infrastructure as Code grazie alle API e al provider Terraform.
 
 ## Vantaggi
 
 | Vantaggio           | Descrizione                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Sicurezza digitale  | Archiviazione dei dati in Francia e conformità al RGPD.                                                                                          |
-| Sicurezza           | Piattaforma altamente sicura, certificata __SecNumCloud__, __HDS__ (Archiviazione dei Dati Sanitari), __ISO 27001__ e __ISAE 3402 tipo II__. |
+| Sicurezza digitale  | Memorizzazione dei dati in Francia e conformità al RGPD.                                                                                          |
+| Sicurezza           | Piattaforma altamente sicura, certificata __SecNumCloud__, __HDS__ (Ospitalità dei Dati Sanitari), __ISO 27001__ e __ISAE 3402 tipo II__. |
 | Alta disponibilità  | Tasso di disponibilità della piattaforma del 99,99%, misurato mensilmente, incluse le finestre di manutenzione.                                        |
 | Resilienza          | Implementazione di piani di continuità o ripresa dell'attività in base alle esigenze.                                                               |
 | Automazione         | Piattaforma completamente automatizzata progettata per integrarsi in un programma di trasformazione digitale.                                        |
@@ -80,7 +80,7 @@ La disponibilità dell'infrastruttura è garantita al 99,9%, misurata mensilment
 
 L'archiviazione in blocco distribuita, basata su __IBM Spectrum Virtualize__, offre una gamma di prestazioni adatta a diversi scenari di utilizzo:
 
-| Riferimento                       | IOPS/To                 | Uso principale                         |
+| Riferimento                       | IOPS/To                 | Utilizzo principale                    |
 |-----------------------------------|-------------------------|----------------------------------------|
 | __FLASH - Essenziale__            | 500                     | Carichi di lavoro leggeri              |
 | __FLASH - Standard__              | 1500                    | Carichi di lavoro standard             |
@@ -93,18 +93,18 @@ L'archiviazione in blocco distribuita, basata su __IBM Spectrum Virtualize__, of
 
 - __Tecnologia__: Flash NVMe con __RAID distribuito 6__ per una maggiore resilienza.
 - __Disponibilità__: 99,99%, misurata mensilmente.
-- __Restrizioni__: Nessuna limitazione sulle letture o scritture. Nessuna compressione o deduplicazione automatica, garantendo l'utilizzo integrale dei volumi riservati.
+- __Restrizioni__: Nessuna limitazione sulle letture o scritture. Nessuna compressione o deduplicazione automatica, garantendo un'utilizzo completo dei volumi riservati.
 
 ### Sicurezza e Crittografia del Storage a Blocchi
 
-Per garantire la riservatezza dei dati in stato di riposo, l'intera infrastruttura di storage a blocchi è dotata di un robusto cifratura hardware.
+Per garantire la riservatezza dei tuoi dati inattivi, l'intera infrastruttura di storage a blocchi è dotata di un robusto crittografia hardware.
 
 -   **Tipo di Crittografia**: I dati vengono crittografati direttamente sui dischi (`Data At Rest`) utilizzando l'algoritmo **XTS-AES 256**.
 -   **Conformità**: Questo metodo di crittografia è conforme allo standard **FIPS 140-2**, garantendo un elevato livello di sicurezza certificato.
 -   **Funzionamento**: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
 
 :::warning Osservazione sulla replica
-È importante sottolineare che questa crittografia protegge i dati memorizzati sui dischi. Non è attiva "on-the-fly", il che significa che i dati non vengono crittografati durante le operazioni di replica dello storage tra le zone di disponibilità. La sicurezza dei trasferimenti è garantita tramite canali di comunicazione dedicati e protetti.
+È importante sottolineare che questa crittografia protegge i dati archiviati sui dischi. Non è attiva "on-the-fly", il che significa che i dati non vengono crittografati durante le operazioni di replica dello storage tra le zone di disponibilità. La sicurezza dei trasferimenti è garantita tramite canali di comunicazione dedicati e protetti.
 :::
 
 ## Reti
@@ -115,31 +115,31 @@ Da configurazione di una macchina virtuale sono disponibili due tipi di rete.
 
 ### VLAN networks
 
-VLAN-type networks must be deployed at a rate of one VLAN per network interface card. If you wish to use multiple networks, simply create multiple network interface cards.
+VLAN-type networks are deployed at a rate of one VLAN per network interface card. If you want to use multiple networks, simply create multiple network interface cards.
 
 A limitation exists regarding the maximum number of network cards that can be created on a VM, which is 7.
 
 ### VLAN Trunk
 
-Nel caso in cui sia necessario propagare più di 7 VLAN, è necessario utilizzare il VLAN Trunk.  
-Il VLAN Trunk consente il passaggio di tutti i propri VLAN su un'unica scheda. La configurazione degli ID dei VLAN deve essere effettuata tramite interfacce virtuali di tipo VLAN dall'OS della VM. Gli ID dei VLAN sono gli stessi presenti e visibili dalla console.
+When you need to propagate more than 7 VLANs, you must use VLAN Trunking.  
+VLAN Trunk allows all your VLANs to pass through a single network interface. VLAN ID configuration must be performed via virtual VLAN interfaces from the VM's operating system. The VLAN IDs are the same as those present and visible from the console.
 
 ## Backup delle macchine virtuali
 
 Cloud Temple offre un'__architettura nativa e non rimovibile per il backup distribuito__, elemento obbligatorio per il raggiungimento della qualifica SecNumCloud francese.
 
-I backup vengono memorizzati nella soluzione [Storage Oggetto qualificato SecNumCloud](../storage/oss), garantendo una protezione ottimale in caso di guasto grave del datacenter di produzione. Questo approccio permette il ripristino dei dati su un datacenter secondario, anche in caso di incidente critico come un incendio.
+I backup vengono archiviati sulla soluzione [Storage oggetto qualificato SecNumCloud](../storage/oss), garantendo una protezione ottimale in caso di guasto grave del datacenter di produzione. Questo approccio permette il ripristino dei dati su un datacenter secondario, anche in caso di incidente critico come un incendio.
 
 Questa soluzione completa include:
 
 - Backup remoto in tempo reale di tutti i dischi
 - Flessibilità nel ripristino, con possibilità di scegliere il punto di recupero e la localizzazione
 
-L'infrastruttura di backup si basa su una tecnologia open source senza agente, che combina semplicità d'uso e automazione dei processi. Questa soluzione ottimizza l'utilizzo dello spazio di archiviazione mantenendo prestazioni elevate.
+L'infrastruttura di backup si basa su una tecnologia open source con architettura senza agente, che combina semplicità d'uso e automazione dei processi. Questa soluzione ottimizza l'utilizzo dello spazio di archiviazione mantenendo prestazioni elevate.
 
 Le velocità di backup e ripristino dipendono dal tasso di modifica negli ambienti. La politica di backup è completamente configurabile tramite [la Console Cloud Temple](../console/console.md) per ogni macchina virtuale.
 
-__Nota importante:__
+__Importante:__
 
 *Alcune macchine virtuali non sono compatibili con questa tecnologia di backup*, che utilizza i meccanismi di snapshot istantanei dell'ipervisore. Si tratta tipicamente di macchine con carichi di scrittura costanti sul disco. In questi casi, l'ipervisore non riesce a completare lo snapshot istantaneo, il che richiede il congelamento della macchina virtuale per terminare l'operazione. Questo congelamento può durare diverse ore e non è interrompibile.
 
@@ -153,12 +153,12 @@ La soluzione raccomandata consiste quindi nell'escludere il disco interessato da
 
 Per aggiungere una nuova politica di backup, è necessario inviare una richiesta al supporto, accessibile tramite l'icona del salvagente situata in alto a destra dell'interfaccia.
 
-La creazione di una nuova politica di backup avviene tramite __una richiesta di servizio__ che deve specificare:
+La creazione di una nuova politica di backup avviene tramite __una richiesta di servizio__ che specifica:
 
-- Il nome della tua Organizzazione  
-- I dati di contatto di un referente (email e telefono) per completare la configurazione  
-- Il nome del tenant  
-- Il nome della politica di backup  
+- Il nome della tua Organizzazione
+- I dati di contatto di un referente (email e telefono) per completare la configurazione
+- Il nome del tenant
+- Il nome della politica di backup
 - Le caratteristiche desiderate (x giorni, y settimane, z mesi, ...)
 
 ## Macchine virtuali
@@ -200,7 +200,7 @@ Senza questi driver, la macchina funziona, ma in modo più lento. Inoltre, conse
 I driver PV sono installati nativamente nella maggior parte dei kernel Linux attuali.
 
 #### Tools
-I Tools sono un insieme di componenti software che migliorano l'integrazione della macchina virtuale con l'infrastruttura di virtualizzazione.
+Gli strumenti sono un insieme di componenti software che migliorano l'integrazione della macchina virtuale con l'infrastruttura di virtualizzazione.
 
 ## Catalogs
 
@@ -214,9 +214,9 @@ In the detailed view of a virtual machine template, you can check crucial inform
 
 When the number of virtual disks is shown as 0, this indicates a configuration template without a preinstalled operating system, allowing you to deploy your own customized environment.
 
-## Replicazione delle macchine virtuali
+## Replica di macchine virtuali
 
-La __replicazione delle macchine virtuali__ di Cloud Temple garantisce la protezione e la continuità dei tuoi dati critici grazie a una copia automatica dei tuoi ambienti in un'area di disponibilità diversa. Questa funzionalità, integrata nativamente nell'offerta IaaS Open Source, soddisfa i requisiti più rigorosi in termini di continuità operativa e ripresa da incidenti.
+La funzionalità di __replica di macchine virtuali__ di Cloud Temple garantisce la protezione e la continuità dei tuoi dati critici grazie a una copia automatica dei tuoi ambienti in una zona di disponibilità diversa. Questa funzionalità, integrata nativamente nell'offerta IaaS Open Source, soddisfa i requisiti più rigorosi in termini di continuità operativa e ripresa da incidenti.
 
 ### Protezione automatizzata e sicura
 
@@ -231,11 +231,11 @@ La replica Cloud Temple si basa su un'infrastruttura __qualificata SecNumCloud__
 
 | Vantaggio               | Descrizione                                                                                                                                    |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Continuità operativa    | Protezione dei tuoi servizi critici in caso di incidente grave sul sito principale.                                                          |
-| Protezione geografica   | Replica verso un'area di disponibilità diversa, protetta da eventi localizzati.                                                             |
-| Flessibilità temporale  | Scelta dell'intervallo di replica in base alle tue esigenze: da 1 minuto a 24 ore.                                                            |
-| Semplificazione della gestione | Configurazione e monitoraggio completamente integrati nella Console Cloud Temple.                                                                |
-| Conformità SecNumCloud  | Infrastruttura qualificata che garantisce il massimo livello di sicurezza per i tuoi dati sensibili.                                             |
+| Continuità operativa    | Protezione dei servizi critici in caso di incidente grave sul sito principale.                                                                 |
+| Protezione geografica   | Replica in un'area di disponibilità diversa, protetta da eventi localizzati.                                                                   |
+| Flessibilità temporale  | Scelta dell'intervallo di replica in base alle proprie esigenze: da 1 minuto a 24 ore.                                                        |
+| Semplificazione della gestione | Configurazione e monitoraggio completamente integrati nella Console Cloud Temple.                                                              |
+| Conformità SecNumCloud  | Infrastruttura qualificata che garantisce il massimo livello di sicurezza per i tuoi dati sensibili.                                           |
 
 ### Configurazione della replica
 
@@ -249,7 +249,7 @@ La creazione di una politica di replica definisce i parametri di protezione dell
 
 #### Intervalli disponibili
 
-| Intervallo              | Utilizzo consigliato                           | RPO (massima perdita di dati) |
+| Intervallo              | Utilizzo consigliato                           | RPO (perdita massima di dati) |
 |-------------------------|--------------------------------------------|-----------------------------|
 | __da 1 a 59 minuti__      | Applicazioni critiche in tempo reale         | < 1 ora                   |
 | __da 1 a 24 ore__       | Applicazioni aziendali e ambienti standard | < 24 ore               |
@@ -273,9 +273,9 @@ La Console Cloud Temple offre una visualizzazione centralizzata delle tue politi
 - Pool e archiviazione associati
 - Azioni di gestione disponibili
 
-#### Replica View
+#### View of replicas
 
-The replica table allows you to visualize:
+The replicas table allows you to visualize:
 
 - Names of replicated virtual machines  
 - Source and target locations  
@@ -293,13 +293,13 @@ The replica table allows you to visualize:
 #### Pianificazione delle politiche
 
 - Creare politiche distinte in base alla criticità delle applicazioni
-- Assegnare nomi chiari alle politiche per facilitarne la gestione
+- Assegnare nomi chiari alle politiche per facilitare la gestione
 - Verificare regolarmente lo stato dei replica dalla console
 - Documentare la strategia di replica per i team
 
 __Nota importante:__
 
-*La replica non sostituisce una strategia completa di backup. Rappresenta un elemento essenziale per garantire la continuità operativa in caso di incidente grave sul sito principale.*
+*La replica non sostituisce una strategia di backup completo. Rappresenta un complemento essenziale per garantire la continuità operativa in caso di incidente grave sul sito principale.*
 
 ## Alta disponibilità
 
@@ -315,7 +315,7 @@ Ogni VM deve essere configurata con un livello di priorità di riavvio in caso d
 #### Disabled  
 High availability is not configured. In the event of host failure, the virtual machine will not be restarted.
 
-#### Restart  
+#### Restart
 In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
 
 #### Best-effort  

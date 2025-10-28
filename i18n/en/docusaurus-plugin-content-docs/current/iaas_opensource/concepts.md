@@ -13,14 +13,14 @@ Cloud Temple's IaaS platform is built on internationally recognized technology p
 - Networking: __JUNIPER__.
 - Virtualization: __Open Source Stack__, providing a reliable and proven foundation for managing your cloud environments.
 
-This architecture is based on the __VersaStack__ model, a collaboration between Cisco and IBM, ensuring broad compatibility with leading software vendors.
+This architecture is based on the __VersaStack__ model, a strategic alliance between Cisco and IBM, ensuring broad compatibility with leading software vendors.
 
 ## A dedicated and automated infrastructure
 
 Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offering provides a unique infrastructure:
 
 - __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared among clients.
-- __Maximum predictability__: You control virtualization rates, IOPS pressure on storage, and benefit from clear, consumption-based monthly billing.
+- __Maximum predictability__: You control virtualization rates, storage IOPS load, and benefit from clear, consumption-based monthly billing.
 
 The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr/), ensuring a high level of automation and security.
 
@@ -50,7 +50,7 @@ The OpenIaaS product is deployed within an availability zone.
 An availability zone is part of a region.
 
 This deployment model allows you to choose the location of clusters and distribute them across different availability zones (AZ).  
-This provides better load distribution, maximizes redundancy, and simplifies the implementation of a disaster recovery plan (DRP) in case of an incident.
+This provides better load distribution, maximizes redundancy, and simplifies the implementation of a Disaster Recovery Plan (DRP) in case of an incident.
 
 ## Compute Blade Classes
 
@@ -104,7 +104,7 @@ To ensure the confidentiality of your data at rest, our entire block storage inf
 -   **Operation**: Encryption is applied at the time data is written to the physical storage medium.
 
 :::warning Attention point regarding replication
-It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated, secure communication channels.
+It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated and secure communication channels.
 :::
 
 ---
@@ -117,35 +117,35 @@ Two types of networks are available from the virtual machine configuration.
 
 ### VLAN-type networks
 
-VLAN-type networks must be deployed at a rate of one VLAN per network interface card. If you wish to use multiple networks, simply create multiple network interface cards.
+VLAN-type networks are deployed at a rate of one VLAN per network interface card. If you want to use multiple networks, simply create multiple network interface cards.
 
 A limitation exists regarding the maximum number of network cards that can be created on a VM, which is 7.
 
 ### VLAN Trunk
 
 When you need to propagate more than 7 VLANs, you must use a VLAN Trunk.  
-The VLAN Trunk allows all your VLANs to pass through a single network interface. VLAN ID configuration must be performed via virtual VLAN interfaces from the VM's operating system. The VLAN IDs are the same as those present and visible from the console.
+The VLAN Trunk allows all your VLANs to pass through a single network interface. VLAN ID configurations must be performed via virtual VLAN interfaces from the VM's operating system. The VLAN IDs are the same as those present and visible from the console.
 
 ## Virtual Machine Backup
 
-Cloud Temple offers a __native, non-disruptive distributed backup architecture__, a mandatory requirement for French SecNumCloud certification.
+Cloud Temple offers a __native, non-disruptive distributed backup architecture__, a mandatory requirement for achieving French SecNumCloud certification.
 
-Backups are stored on the [SecNumCloud-certified Object Storage solution](../storage/oss), ensuring optimal protection in the event of a major datacenter failure. This approach enables data restoration on a secondary datacenter, even in critical incidents such as fires.
+Backups are stored on the [SecNumCloud-qualified Object Storage](../storage/oss) solution, ensuring optimal protection in the event of a major datacenter failure. This approach enables data restoration on a secondary datacenter, even in critical incidents such as fires.
 
 This comprehensive solution includes:
 
 - Hot off-site backup of all virtual disks
-- Flexible restoration options allowing selection of both recovery point and location
+- Flexible restoration capabilities allowing selection of both recovery point and location
 
-The backup infrastructure is built on an open-source, agentless architecture, combining ease of use with automated processes. This solution optimizes storage space utilization while maintaining high performance.
+The backup infrastructure is based on an open-source, agentless architecture, combining ease of use with automated processes. This solution optimizes storage space utilization while maintaining high performance.
 
-Backup and restore speeds depend on the rate of change within the environments. Backup policies are fully configurable per virtual machine via the [Cloud Temple Console](../console/console.md).
+Backup and restoration speeds depend on the rate of change within the environments. Backup policies are fully configurable per virtual machine via the [Cloud Temple Console](../console/console.md).
 
 __Important note:__
 
 *Some virtual machines are incompatible with this backup technology*, which relies on the hypervisor's snapshot mechanisms. This typically applies to machines with continuous disk write workloads. In such cases, the hypervisor cannot complete the snapshot, requiring the virtual machine to be frozen to finalize the operation. This freeze can last several hours and cannot be interrupted.
 
-The recommended solution is then to exclude the disk subject to constant writes and back up the data using an alternative method.
+The recommended solution is to exclude the disk subject to constant writes and instead back up the data using an alternative method.
 
 | Reference                                     | Unit  | SKU                            |
 | ----------------------------------------------| ----- | ------------------------------ |
@@ -153,7 +153,7 @@ The recommended solution is then to exclude the disk subject to constant writes 
 
 ### Creating a Backup Policy
 
-To create a new backup policy, a request must be submitted to support, accessible via the buoy icon located in the top-right corner of the interface.
+To add a new backup policy, a request must be submitted to support, accessible via the buoy icon located in the top-right corner of the interface.
 
 Creating a new backup policy is done through a __service request__ specifying:
 
@@ -167,13 +167,13 @@ Creating a new backup policy is done through a __service request__ specifying:
 
 ### vCPU Resource Management
 
-vCPU resource modifications must be performed while the machine is powered off (cold). The platform supports up to 254 vCPUs per virtual machine (theoretical limit), with successful testing conducted on Linux VMs equipped with 128 vCPUs.
+vCPU resource modifications are performed while the machine is powered off (cold). The platform supports up to 254 vCPUs per virtual machine (theoretical limit), with successful tests conducted on Linux VMs equipped with 128 vCPUs.
 
-It is important to note that guest operating system support is a determining factor when allocating resources. Allocating more resources than supported by the guest operating system may result in significant performance issues.
+It is important to note that guest operating system support is a determining factor when allocating resources. Allocating resources beyond the limits supported by the guest operating system may result in significant performance issues.
 
 ### Memory Resource Management
 
-Memory modifications are also performed cold. The limits are as follows:
+Memory modifications are also performed cold. The following limits apply:
 
 - 1.5 TiB with memory snapshot support
 - 8 TiB without memory snapshot support
@@ -192,15 +192,14 @@ It is not possible to resize disks after they are created. To increase storage c
 ### Virtual Machine Tools
 These tools are used to ensure optimal performance of virtual machines. When you need to perform an action requiring one of these tools, a message will appear on the Cloud Temple console.
 
-To install these tools, refer to the official Xen Server websites for detailed instructions specific to your operating system.
+To install these tools, refer to the official Xen Server websites for detailed instructions specific to your OS.
 
 #### Management Agent
-
 The Management Agent is a component installed on each virtual machine. It enables the hypervisor to better manage the machine by providing access to more information and allows certain actions to be performed more cleanly.
 
 #### PV Drivers (Paravirtualization Drivers)
 PV Drivers are drivers installed within the virtual machine to enhance its performance.  
-Without these drivers, the machine still functions, but at a slower speed. Additionally, they enable certain advanced operations.  
+Without these drivers, the machine still functions, but more slowly. Additionally, they enable certain advanced operations.  
 PV Drivers are natively included in most current Linux kernels.
 
 #### Tools
@@ -214,13 +213,13 @@ The catalog allows you to manage three essential types of items:
 - Configuration templates
 - Pre-installed virtual machine templates
 
-In the detailed view of a virtual machine template, you can access crucial information such as location, number of disks, and number of network adapters.
+In the detailed view of a virtual machine template, you can review critical information such as location, number of disks, and number of network adapters.
 
-When the number of virtual disks is shown as 0, this indicates a configuration template without a preinstalled operating system, allowing you to deploy your own customized environment.
+When the number of virtual disks is listed as 0, this indicates a configuration template without a preinstalled operating system, allowing you to deploy your own customized environment.
 
 ## Virtual Machine Replication
 
-The __Virtual Machine Replication__ feature of Cloud Temple ensures the protection and continuity of your critical data by automatically creating copies of your environments in a separate availability zone. This capability, natively integrated into the Open Source IaaS offering, meets the most stringent requirements for business continuity and disaster recovery.
+The __Virtual Machine Replication__ feature of Cloud Temple ensures the protection and continuity of your critical data by automatically copying your environments to a distinct availability zone. This capability, natively integrated into the Open Source IaaS offering, meets the most stringent requirements for business continuity and disaster recovery.
 
 ### Automated and Secure Protection
 
@@ -248,12 +247,12 @@ Cloud Temple replication relies on a __SecNumCloud-certified__ infrastructure, e
 Creating a replication policy defines the protection settings for your virtual machines:
 
 - __Destination__: Select the target storage within the replication availability zone
-- __Frequency__: Replication interval tailored to your recovery needs (RPO)
+- __Frequency__: Replication interval tailored to your recovery objectives (RPO)
 - __Retention__: Number of recovery points to retain
 
-#### Available intervals
+#### Available Intervals
 
-| Interval              | Recommended usage                           | RPO (Maximum data loss) |
+| Interval              | Recommended Usage                           | RPO (Maximum Data Loss) |
 |-----------------------|---------------------------------------------|--------------------------|
 | __1 to 59 minutes__   | Real-time critical applications             | < 1 hour                 |
 | __1 to 24 hours__     | Business applications and standard environments | < 24 hours            |
@@ -263,7 +262,7 @@ Creating a replication policy defines the protection settings for your virtual m
 After creating the policy, you can associate your virtual machines to protect:
 
 - __Single selection__: Select VMs from the Console interface  
-- __Automatic validation__: Compatibility and prerequisites verification  
+- __Automatic validation__: Compatibility and prerequisite verification  
 - __Immediate activation__: Automatic replication start after configuration
 
 ### Replica Management
@@ -296,10 +295,10 @@ The replica table allows you to visualize:
 
 #### Policy Planning
 
-- Create distinct policies according to the criticality of your applications
-- Clearly name your policies to facilitate management
-- Regularly check the status of your replicas from the console
-- Document your replication strategy for your teams
+- Create distinct policies according to the criticality of your applications  
+- Clearly name your policies to facilitate management  
+- Regularly check the status of your replicas from the console  
+- Document your replication strategy for your teams  
 
 __Important Note:__
 

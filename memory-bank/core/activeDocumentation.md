@@ -74,6 +74,15 @@
 - ✅ `images/` : Screenshots OpenShift
 - ✅ `tutorials/` : Workflows DevOps
 
+### 📦 Managed Kubernetes - Statut : ✅ BON
+
+#### Documentation Container (`/docs/managed_kubernetes/`)
+- ✅ `managed_kubernetes.md` : Vue d'ensemble du service
+- ✅ `concepts.md` : Concepts techniques et prérequis
+- ✅ `quickstart.md` : Guide de démarrage
+- 🟡 `tutorials.md` : Premier tutoriel "Hello World" créé, à enrichir
+- ✅ `images/` : Diagrammes d'architecture
+
 ### 🏢 Housing & Colocation - Statut : ✅ COMPLET
 
 #### Infrastructure Physique (`/docs/housing/`)
@@ -152,7 +161,8 @@
 - ✅ `iaas/` : Contrats IaaS
 - ✅ `network/` : Contrats réseau
 - ✅ `paas/` : Contrats PaaS
-- ✅ `llmaas/` : **NOUVEAU** - Matrice de responsabilité (RACI)
+- ✅ `llmaas/` : Matrice de responsabilité (RACI)
+- ✅ `kubernetes/` : **NOUVEAU** - Matrice de responsabilité (RACI)
 
 ## Internationalisation - Statut : ✅ STRUCTURE COMPLÈTE
 
@@ -172,7 +182,8 @@
 
 ### Documentation Globale (`/docs/`)
 - ✅ `home.md` : Page d'accueil
-- ✅ `changelog.md` : **NOUVEAU** - Suivi des modifications
+- ✅ `changelog.md` : Suivi des modifications
+- ✅ `containers_overview.md` : **NOUVEAU** - Comparaison des offres Containers
 - ✅ `market_place_public.md` : Marketplace public
 - ✅ `privacy.md` : Politique de confidentialité
 
@@ -197,12 +208,14 @@
    - Cas d'usage et bonnes pratiques
 
 ### 🔶 Priorité MOYENNE
-1. **Console Metrics** (`/docs/console/metrics/`)
+1. **Enrichissement Managed Kubernetes** (`/docs/managed_kubernetes/`)
+   - Ajouter des tutoriels avancés (sécurité, stockage, etc.).
+   - Détailler le modèle de pricing.
+2. **Console Metrics** (`/docs/console/metrics/`)
    - Dashboards Grafana avancés
    - Métriques custom et alerting
    - Intégration monitoring
-
-2. **Console Security** (`/docs/console/security/`)
+3. **Console Security** (`/docs/console/security/`)
    - Contrôles de sécurité avancés
    - Audit et compliance
    - Gestion des incidents
@@ -240,8 +253,9 @@
 - **Housing** : 100%
 - **Network** : 30% (structure créée)
 - **Storage** : 20% (structure créée)
+- **Managed Kubernetes**: 85%
 
-### Couverture Globale : 87%
+### Couverture Globale : 89%
 
 ### Par Type de Documentation
 - **Pages principales** : 100%
@@ -271,7 +285,7 @@
 1. **Compléter Network** : Internet et Private Network
 2. **Développer Storage OSS** : Documentation API S3
 3. **Finaliser Console** : Metrics et Security modules
-4. **Maintenance Générale** : Corriger les liens et ancres brisés identifiés lors du build.
+4. **Maintenance Générale** : Poursuivre la correction des liens et ancres cassés dans les traductions.
 5. **Validation globale** : Cohérence et qualité
 
 ---

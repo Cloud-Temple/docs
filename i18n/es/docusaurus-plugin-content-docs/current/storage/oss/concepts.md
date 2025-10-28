@@ -9,7 +9,7 @@ sidebar_position: 2
 
 El servicio de almacenamiento de objetos de Cloud Temple está construido sobre una arquitectura distribuida que garantiza una alta durabilidad y disponibilidad de los datos. Los objetos se almacenan de forma redundante en múltiples nodos de almacenamiento dentro de nuestros datacenters certificados SecNumCloud.
 
-El acceso al servicio se realiza mediante una API RESTful estándar, compatible con el protocolo S3, lo que le permite utilizar una amplia gama de herramientas y SDKs existentes.
+El acceso al servicio se realiza a través de una API RESTful estándar, compatible con el protocolo S3, lo que le permite utilizar una amplia gama de herramientas y SDKs existentes.
 
 ## Componentes Principales
 
@@ -32,7 +32,7 @@ Para proteger sus datos almacenados, nuestro servicio utiliza cifrado del lado d
 
 ### Cifrado de Datos en Tránsito
 
-Todas las comunicaciones con la API del servicio de almacenamiento objeto, ya sea para cargar, descargar o gestionar sus datos, deben estar protegidas.
+Todas las comunicaciones con la API del servicio de almacenamiento objeto, ya sea para subir, descargar o gestionar sus datos, deben estar protegidas.
 
 -   **Protocolo**: Exigimos el uso del protocolo **TLS (Transport Layer Security)**, versiones **1.2 y 1.3**.
 -   **Funcionamiento**: Al utilizar HTTPS para todas sus solicitudes de API, se asegura que los datos intercambiados entre su cliente y nuestros servidores estén cifrados, protegiéndolos así contra la interceptación o alteración durante su tránsito por la red.

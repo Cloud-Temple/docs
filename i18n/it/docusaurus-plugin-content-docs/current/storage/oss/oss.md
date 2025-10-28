@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Il servizio di archiviazione oggetti (Object Storage Service - OSS) di Cloud Temple è una soluzione di archiviazione altamente scalabile, durevole e sicura, progettata per archiviare e recuperare qualsiasi quantità di dati, da qualsiasi luogo.
 
-Basato su un'API compatibile con S3, il nostro servizio OSS è ideale per una vasta gamma di scenari d'uso, che vanno dalla backup e archiviazione alla gestione di contenuti statici per applicazioni web, passando allo stoccaggio di dati per l'analisi Big Data e le applicazioni cloud-native.
+Basato su un'API compatibile con S3, il nostro servizio OSS è ideale per una vasta gamma di scenari d'uso, che vanno dalla backup e archiviazione alla gestione di contenuti statici per applicazioni web, fino all'archiviazione di dati per analisi Big Data e applicazioni cloud-native.
 
 ## Qualifica SecNumCloud
 
@@ -17,7 +17,7 @@ Come tutti i servizi di Cloud Temple, il servizio di archiviazione oggetti è co
 
 -   **Sovranità dei dati**: I tuoi dati sono archiviati esclusivamente in Francia.
 -   **Massima sicurezza**: Meccanismi di crittografia robusti proteggono i tuoi dati in stato di riposo e in transito.
--   **Alta disponibilità**: Un'architettura ridondante garantisce la durabilità e la disponibilità dei tuoi dati.
+-   **Alta disponibilità**: Un'architettura ridondante assicura la durabilità e la disponibilità dei tuoi dati.
 
 ## Principali casi d'uso
 

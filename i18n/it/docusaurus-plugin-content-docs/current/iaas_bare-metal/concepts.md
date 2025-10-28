@@ -7,7 +7,7 @@ Questa soluzione offre una personalizzazione totale per i clienti che desiderano
 
 ## Un'infrastruttura hardware flessibile
 
-L'offerta Bare Metal si basa su un'architettura progettata per soddisfare i requisiti delle carichi di lavoro critici.
+L'offerta Bare Metal si basa su un'architettura progettata per rispondere ai bisogni delle carichi di lavoro critici.
 
 ### Componenti principali
 
@@ -16,9 +16,9 @@ L'offerta Bare Metal si basa su un'architettura progettata per soddisfare i requ
 
 ### Architettura
 
-Il modello di archiviazione distribuita offre una separazione tra calcolo (server Bare Metal) e archiviazione (blocco distribuito), consentendo:
+Il modello di archiviazione distribuita offre una separazione tra calcolo (server Bare Metal) e archiviazione (blocco distribuito), permettendo:
 
-- Flessibilità nel mappare i volumi di archiviazione su diversi server Bare Metal in base alle esigenze.
+- Flessibilità nel mappare i volumi di archiviazione su più server Bare Metal in base alle esigenze.
 - Personalizzazione ottimale delle configurazioni di calcolo e archiviazione.
 - Maggiore resilienza grazie all'utilizzo di **Distributed RAID 6**.
 
@@ -34,22 +34,22 @@ Ciò offre una migliore distribuzione del carico, massimizza la ridondanza e sem
 
 Le schede di calcolo disponibili per l'offerta Bare Metal offrono una gamma di prestazioni per soddisfare diversi requisiti:
 
-| Riferimento            | RAM **(1)** | Frequenza **(2)**                         | Numero di core / thread   | Connettività **(3)** | GPU **(4)**          |
-|------------------------|-------------|-------------------------------------------|---------------------------|----------------------|----------------------|
-| **ECO**               | 384 GB      | 2,20/3,0 GHz (Silver 4114 o equivalente) | 20 / 40 thread            | 2 x 10 Gbit/s        | -                    |
-| **STANDARD**          | 384 GB      | 2,40/3,4 GHz (Silver 4314 o equivalente) | 32 / 64 thread            | 2 x 25 Gbit/s        | -                    |
-| **ADVANCE**           | 768 GB      | 2,80/3,5 GHz (Gold 6342 o equivalente)   | 48 / 96 thread            | 2 x 25 Gbit/s        | -                    |
-| **PERFORMANCE 1**     | 384 GB      | 3,20/3,6 GHz (Xeon E-53I5Y o equivalente) | 16 / 32 thread            | 2 x 25 Gbit/s        | -                    |
-| **PERFORMANCE 2**     | 768 GB      | 3,00/3,6 GHz (Gold 6354 o equivalente)   | 36 / 72 thread            | 2 x 25 Gbit/s        | -                    |
-| **PERFORMANCE 3**     | 1536 GB     | 2,60/3,5 GHz (Gold 6348 o equivalente)   | 56 / 112 thread           | 2 x 25 Gbit/s        | -                    |
-| **PERFORMANCE 4**     | 512 GB      | 2,50/4,1 GHz (Intel 6426Y o equivalente) | 32 / 64 thread            | 2 x 25 Gbit/s        | 2 x NVIDIA L40S 48GB |
+| Riferimento            | RAM **(1)** | Frequenza **(2)**                        | Numero di core / thread   | Connettività **(3)** | GPU **(4)**          |
+|------------------------|-------------|------------------------------------------|---------------------------|----------------------|----------------------|
+| **ECO**               | 384 GB      | 2,20/3,0 GHz (Silver 4114 o equivalente) | 20 / 40 thread            | 2 × 10 Gbit/s        | -                    |
+| **STANDARD**          | 384 GB      | 2,40/3,4 GHz (Silver 4314 o equivalente) | 32 / 64 thread            | 2 × 25 Gbit/s        | -                    |
+| **ADVANCE**           | 768 GB      | 2,80/3,5 GHz (Gold 6342 o equivalente)   | 48 / 96 thread            | 2 × 25 Gbit/s        | -                    |
+| **PERFORMANCE 1**     | 384 GB      | 3,20/3,6 GHz (Xeon E-53I5Y o equivalente) | 16 / 32 thread            | 2 × 25 Gbit/s        | -                    |
+| **PERFORMANCE 2**     | 768 GB      | 3,00/3,6 GHz (Gold 6354 o equivalente)   | 36 / 72 thread            | 2 × 25 Gbit/s        | -                    |
+| **PERFORMANCE 3**     | 1536 GB     | 2,60/3,5 GHz (Gold 6348 o equivalente)   | 56 / 112 thread           | 2 × 25 Gbit/s        | -                    |
+| **PERFORMANCE 4**     | 512 GB      | 2,50/4,1 GHz (Intel 6426Y o equivalente) | 32 / 64 thread            | 2 × 25 Gbit/s        | 2 x NVIDIA L40S 48GB |
 
 ### Notes
 
 - **(1)** La quantità di memoria è quella fisicamente disponibile sulle lame e non può essere modificata.
 - **(2)** Le frequenze indicate corrispondono alla frequenza base minima e alla frequenza turbo.
-- **(3)** La connettività fisica è condivisa per l'accesso alla rete e l'accesso allo storage a blocchi, grazie all'architettura convergente Cisco UCS.
-- **(4)** I GPU disponibili evolvono in base alle ultime tecnologie. Al 1° maggio 2024, l'offerta include GPU NVIDIA LOVELACE L40S.
+- **(3)** La connettività fisica è condivisa per l'accesso alla rete e l'accesso allo storage a blocchi, grazie a un'architettura convergente Cisco UCS.
+- **(4)** I GPU disponibili evolvono in base alle ultime tecnologie. Al 1º maggio 2024, l'offerta include GPU NVIDIA LOVELACE L40S.
 
 La disponibilità dell'infrastruttura è garantita al 99,9%, misurata mensilmente, incluse le finestre di manutenzione. Ogni richiesta relativa allo SLA deve essere segnalata tramite un ticket incidente.
 
@@ -57,7 +57,7 @@ La disponibilità dell'infrastruttura è garantita al 99,9%, misurata mensilment
 
 L'archiviazione in blocco distribuita, basata su **IBM Spectrum Virtualize**, offre una gamma di prestazioni adatta a diversi scenari di utilizzo:
 
-| Riferimento                       | IOPS/To                 | Utilizzo principale                    |
+| Riferimento                       | IOPS/To                 | Uso principale                         |
 |-----------------------------------|-------------------------|----------------------------------------|
 | **FLASH - Essenziale**            | 500                     | Carichi di lavoro leggeri              |
 | **FLASH - Standard**              | 1500                    | Carichi di lavoro standard             |
@@ -74,10 +74,10 @@ L'archiviazione in blocco distribuita, basata su **IBM Spectrum Virtualize**, of
 
 ### Sicurezza e Crittografia del Storage a Blocchi
 
-Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrastruttura di storage a blocchi è dotata di un robusto crittografia hardware.
+Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrastruttura di storage a blocchi è dotata di un robusto cifratura hardware.
 
 -   **Tipo di Crittografia**: I dati vengono crittografati direttamente sui dischi (`Data At Rest`) utilizzando l'algoritmo **XTS-AES 256**.
--   **Conformità**: Questo metodo di crittografia è conforme allo standard **FIPS 140-2**, garantendo un elevato livello di sicurezza certificato.
+-   **Conformità**: Questo metodo di crittografia è conforme allo standard **FIPS 140-2**, garantendo un elevato livello di sicurezza verificato.
 -   **Funzionamento**: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
 
 :::warning Osservazione sulla replica
@@ -88,7 +88,7 @@ Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrast
 
 L'accesso ai server Bare Metal avviene direttamente dalla **console Cloud Temple**. Questa funzionalità offre un controllo totale sul ciclo di vita dei server, inclusi:
 
-- **Accesso KVM**: un'interfaccia diretta per gestire i server, come se foste fisicamente sul posto.
+- **Accesso KVM**: un'interfaccia diretta per gestire i server, come se foste fisicamente sul sito.
 - **Gestione delle operazioni quotidiane**: possibilità di eseguire azioni come la gestione dell'alimentazione, il riavvio o il **mapping di ISO** per l'installazione di un sistema operativo.
 
 Questo livello di accesso garantisce una massima flessibilità rispettando al contempo i vincoli di sicurezza.
