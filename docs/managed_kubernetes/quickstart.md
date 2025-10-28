@@ -2,41 +2,25 @@
 title: Guide de démarrage
 ---
 
-Ce guide **Quickstart Managed kubernetes** vous accompagne pour démarrer rapidement avec l’offre Managed Kubernetes Cloud Temple.
+Bienvenue sur le guide de démarrage de **Managed Kubernetes** Cloud Temple.
 
-## Étape 1 : Pré-requis
+L'objectif de cette section est de vous orienter vers les ressources nécessaires pour prendre en main votre cluster.
 
-Vous devez disposer d'une infrastructure IaaS avec les minimaux requis pour le déploiement de Kubernetes Managé:
+### Avant de commencer
 
-### Production (multi-zonale)
+Pour interagir avec votre cluster, deux éléments sont indispensables :
 
-- 1 tenant Cloud-Temple
-- 3 AZ
-- 2 IP Publiques disponibles
-- 1 VLAN multi-zone avec un range privé IPv4 **/22**
-- 1 cluster de firewall : de préférence Fortigate, pour avoir du load-balacing avec BGP et une automatisation complète (mais les autres clusters de firewall sont acceptés)
-- ~2 To de stockage S3 (facturé au réél)
-- Sur chaque AZ:
-    - 1 lame hyperviseur (OpenIaaS ou VMware) par AZ avec 40 cores, et 72 Go de RAM dédiés à Kubernetes Managé (Lame ECO ou supérieur)
-    - 600 Go de disponible dans un datastore avec **7500 IOPS effectif** (par exemple un datastore de 2,5 To à 3000 IOPS)
+1.  **Le fichier `kubeconfig`** : Ce fichier, qui vous est fourni par les équipes Cloud Temple à la livraison du service, contient toutes les informations pour vous connecter de manière sécurisée.
+2.  **L'outil `kubectl`** : Il s'agit de l'interface en ligne de commande standard pour piloter un cluster Kubernetes.
 
-### Dev/test (mono-zonale)
+### Vos premiers pas
 
-- 1 tenant Cloud-Temple
-- 1 AZ
-- 2 IP Publiques disponibles
-- 1 VLAN avec un range privé IPv4 **/22**
-- 1 cluster de firewall : de préférence Fortigate, pour avoir du load-balacing avec BGP et une automatisation complète (mais les autres clusters de firewall sont acceptés)
-- une capacité de calcul disponible de 48 cores et 92 Go de RAM (il est accepté que les cores soient soumis à un coefficient de virtualisation de 1.5)
-- 1,2 To disponible dans un datastore avec **7500 IOPS effectif**
-- ~1 To de stockage S3 (facturé au réél)
+Votre première mission consiste à valider la connexion à votre cluster, puis à y déployer une application test pour vous familiariser avec l'environnement.
 
-## Étape 2 : Commander Kubernetes Managé
+Nous avons préparé un tutoriel complet qui vous guide pas à pas pour accomplir ces tâches.
 
-Contactez Cloud-Temple pour souscrire à l'offre Kubernetes Managé.
-
-## Étape 3 : utiliser Kubernetes Managé
-
-Suite au déploiement de l'offre, vous disposerez des accès aux API Kubernetes et aux différentes interfaces mise à votre disposition (Grafana, Hubble, etc...) 
-
-Consultez nos tutoriaux pour une prise en main rapide !
+<div class="card">
+  <h3>Tutoriel : Déployer votre première application</h3>
+  <p>Suivez ce guide détaillé pour vous connecter, déployer une application "Hello World", et l'exposer sur Internet.</p>
+  <a href="tutorials" class="card-link">Commencer le tutoriel &rarr;</a>
+</div>

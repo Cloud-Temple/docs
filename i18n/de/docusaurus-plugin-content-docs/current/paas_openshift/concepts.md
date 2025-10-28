@@ -13,18 +13,18 @@ import oshiftOffert from './images/oshift_offert.png'
 
 - **Unterstützung mehrerer Sprachen und Dienste:** Die Plattform unterstützt eine breite Palette an Programmiersprachen (z. B. Java, Node.js, Python, Ruby und PHP) und bietet integrierte Dienste wie Messaging, Caching und Datenbanken, sodass Entwickler sich auf den Code konzentrieren können, anstatt sich um die Infrastruktur kümmern zu müssen.
 
-- **Integration kontinuierlicher Integration (CI) und kontinuierlichen Bereitstellungs (CD):** OpenShift integriert CI/CD-Tools, die den Softwareentwicklungs-Pipeline automatisieren – von der ersten Änderung bis hin zur Bereitstellung in der Produktion – und so DevOps-Praktiken fördern.
+- **Integration von CI/CD (Continuous Integration / Continuous Deployment):** OpenShift integriert CI/CD-Tools, die den Softwareentwicklungs-Pipeline automatisieren – von der ersten Änderung bis hin zum Produktions-Deployment – und so DevOps-Praktiken fördern.
 
-- **Operations-Management:** OpenShift bietet Werkzeuge zur Überwachung, Leistungssteuerung und Diagnose von Anwendungen und Infrastruktur, die Betreibern helfen, die Gesundheit und Leistung der Systeme aufrechtzuerhalten.
+- **Operations-Management:** OpenShift stellt Tools für Überwachung, Leistungsmanagement und Diagnose von Anwendungen und Infrastruktur bereit, die Betreibern helfen, die Gesundheit und Leistung der Systeme aufrechtzuerhalten.
 
-- **Erweiterte Sicherheit:** Die Plattform ist mit integrierter Sicherheit ausgelegt und bietet rollenbasierten Zugriff, Aufgaben-Trennung sowie automatisierte Verwaltung von Geheimnissen, um Anwendungen und Daten zu schützen.
+- **Erweiterte Sicherheit:** Die Plattform ist mit integrierter Sicherheit ausgelegt und bietet Rollenbasierten Zugriff (RBAC), Aufgaben-Trennung sowie automatisierte Verwaltung von Geheimnissen, um Anwendungen und Daten zu schützen.
 
 ### Vorteile von Red Hat OpenShift:
 
 - **Flexibilität:** Entwickler können die Tools, Sprachen und Frameworks ihrer Wahl verwenden.
 - **Betriebseffizienz:** OpenShift optimiert die Ressourcennutzung, verkürzt die Time-to-Market und steigert die Produktivität der Entwickler.
-- **Skalierbarkeit:** Die Plattform führt die Skalierung von Anwendungen automatisch durch, um dynamischen Anforderungen gerecht zu werden.
-- **Sicherheit und Compliance:** Durch integrierte Sicherheitsrichtlinien unterstützt OpenShift die Einhaltung von Sicherheits- und Compliance-Standards.
+- **Skalierbarkeit:** Die Plattform führt die Skalierung von Anwendungen automatisch aus, um dynamischen Anforderungen gerecht zu werden.
+- **Sicherheit und Compliance:** Durch integrierte Sicherheitsrichtlinien unterstützt OpenShift die Einhaltung von Sicherheitsstandards und Compliance-Anforderungen.
 
 Red Hat OpenShift ist eine umfassende Lösung für die Entwicklung, Bereitstellung und Verwaltung containerbasierter Anwendungen und bietet Unternehmen, die moderne Ansätze für die Softwareentwicklung verfolgen, eine leistungsstarke, sichere und flexible Plattform.
 
@@ -40,7 +40,7 @@ Red Hat OpenShift Data Foundation (ODF) is an integrated storage and data manage
 
 - **Automation and Orchestration:** Deep integration with Kubernetes and OpenShift allows ODF to automate provisioning, scaling, and lifecycle management of storage based on application requirements.
 
-- **High Availability and Resilience:** ODF ensures high availability and data durability through data replication and snapshotting, critical for maintaining business continuity.
+- **High Availability and Resilience:** ODF leverages data replication and snapshotting to ensure high availability and data durability—critical for maintaining business continuity.
 
 - **Data Security:** The solution includes advanced security features such as encryption at rest and in transit, along with customizable security and compliance policies. Our SecNumCloud implementation ensures multi-layered protection:
     - **Encryption at Rest:** The persistent storage provided by OpenShift Data Foundation relies on our underlying block storage infrastructure. As such, all data is encrypted at rest using the **XTS-AES 256** algorithm, compliant with the **FIPS 140-2** standard.
@@ -62,9 +62,9 @@ Red Hat OpenShift Data Foundation is an advanced data storage solution that enha
 
 ### Allgemeines
 
-Die Red Hat OpenShift-Plattform von Cloud Temple ist als regionale Lösung konzipiert und native auf [**drei unterschiedlichen Verfügbarkeitszonen**](../additional_content/concepts_az.md) innerhalb derselben [Region](../additional_content/concepts_regional.md) von Cloud Temple bereitgestellt. Diese dreizonale Architektur erhöht die Verfügbarkeit und Resilienz der Daten erheblich.
+Die Red Hat OpenShift-Plattform von Cloud Temple ist als regionale Lösung konzipiert und native auf [**drei verschiedene Verfügbarkeitszonen**](../additional_content/concepts_az.md) innerhalb derselben [Region](../additional_content/concepts_regional.md) von Cloud Temple bereitgestellt. Diese dreizonale Architektur erhöht die Verfügbarkeit und Resilienz der Daten erheblich.
 
-Die Plattform besteht aus einem Control Plane und Worker-Knoten, die beide von der Cloud Temple-Infrastruktur verwaltet werden. Die Control Plane ist gleichmäßig auf die drei Verfügbarkeitszonen verteilt, um eine zentrale und sichere Verwaltung zu gewährleisten. Die Worker-Knoten werden hingegen durch Compute-Blades repräsentiert, die so angeordnet sind, dass jede Verfügbarkeitszone eine solche enthält.
+Die Plattform besteht aus einem Control Plane und Worker-Knoten, die beide von der Cloud Temple-Infrastruktur verwaltet werden. Die Control Plane ist gleichmäßig auf die drei Verfügbarkeitszonen verteilt, was eine zentrale und sichere Verwaltung gewährleistet. Die Worker-Knoten werden hingegen durch Compute-Blades repräsentiert, die so angeordnet sind, dass jede Verfügbarkeitszone mindestens einen enthält.
 
 Für die Worker-Knoten stehen mehrere Arten von Compute-Blades zur Verfügung, was eine flexible Anpassung an unterschiedliche betriebliche Anforderungen ermöglicht:
 
@@ -82,15 +82,15 @@ Die Red Hat OpenShift-Angebote von Cloud Temple sind sowohl im Pay-As-You-Go-Mod
 
 **Hinweise**:
 
-1. *Die Aufrechterhaltung des betriebsbereiten und sicherheitskonformen Zustands der Control Plane liegt in der Verantwortung von Cloud Temple im Rahmen eines PaaS-Services.*
+1. *Die Aufrechterhaltung der Betriebsbereitschaft und Sicherheit der Control Plane liegt in der Verantwortung von Cloud Temple im Rahmen eines PaaS-Services.*
 
-2. *Zum 15. Juni 2024 ist die Version 1 der Plattform softwareseitig bewusst begrenzt: maximal 30 Worker-Knoten (unabhängig vom Worker-Typ) und insgesamt 50 TiB persistenten Speicher. Sollten diese Grenzen für Ihr Projekt problematisch sein, wenden Sie sich bitte an den Support.*
+2. *Zum 15. Juni 2024 ist die Version 1 der Plattform softwareseitig bewusst begrenzt: maximal 30 Worker-Knoten (unabhängig vom Worker-Typ) und insgesamt 50 TiB persistenten Speicher. Falls diese Grenzen für Ihr Projekt kritisch sind, wenden Sie sich bitte an den Support.*
 
 3. *Jeder Worker-Knoten verfügt standardmäßig über 512 GiB Flash-Speicher. Damit ergibt sich pro Einheit (1 Worker pro AZ) ein Gesamtspeicher von 1,5 TiB.*
 
-4. *Ein Worker-Knoten kann standardmäßig bis zu 250 Pods verwalten. Diese Anzahl ist über den Parameter `podsPerCore` anpassbar – beispielsweise ergeben sich bei 10 Pods pro Kern auf einem 4-Kern-Knoten maximal 40 Pods. Weitere technische Details finden Sie in der [Dokumentation zur Pod-Verwaltung](https://docs.openshift.com/container-platform/4.16/nodes/nodes/nodes-nodes-managing-max-pods.html) und im [Leitfaden zu OpenShift-Grenzwerten](https://docs.openshift.com/container-platform/4.16/scalability_and_performance/planning-your-environment-according-to-object-maximums.html).*
+4. *Ein Worker-Knoten kann standardmäßig bis zu 250 Pods verwalten. Diese Anzahl kann über den Parameter `podsPerCore` angepasst werden – beispielsweise ergeben sich bei 10 Pods pro Kern auf einem 4-Kern-Knoten maximal 40 Pods. Weitere technische Details finden Sie in der [Dokumentation zur Pod-Verwaltung](https://docs.openshift.com/container-platform/4.16/nodes/nodes/nodes-nodes-managing-max-pods.html) und im [Leitfaden zu OpenShift-Grenzwerten](https://docs.openshift.com/container-platform/4.16/scalability_and_performance/planning-your-environment-according-to-object-maximums.html).*
 
-5. *Das PaaS-OpenShift-Angebot beinhaltet die natürliche Nutzung der drei Verfügbarkeitszonen, ohne dass eine zusätzliche Buchung erforderlich ist.*
+5. *Das PaaS-OpenShift-Angebot beinhaltet standardmäßig den Zugriff auf die drei Verfügbarkeitszonen – eine zusätzliche Buchung ist nicht erforderlich.*
 
 6. *Es ist möglich, den Cluster später um zusätzlichen Block-Speicher zu erweitern.*
 
@@ -106,29 +106,29 @@ The platform is a Red Hat OpenShift 4 based on [Red Hat OpenShift Platform Plus]
 
 Die Sicherung und Wiederherstellung der PaaS-Plattform Openshift liegt in der Verantwortung von Cloud Temple für den **ETCD**-Teil im Rahmen der Plattformverwaltung. **Die Sicherung und Wiederherstellung für den Bereich Deployment und Anwendungsdaten liegt in der Verantwortung des Auftraggebers.**
 
-Cloud Temple stellt für seine Kunden das Angebot **Veeam Kasten K10** (Veeam [**Kasten K10**](https://www.veeam.com/fr/kubernetes-native-backup-and-restore.html)) zur Verfügung, eine Plattform speziell für die Datenverwaltung in Kubernetes-Umgebungen. Kasten K10 wurde entwickelt, um die Anforderungen an den Daten- und Anwendungs-Schutz zu erfüllen, und bietet leistungsstarke Funktionen für Sicherung, Wiederherstellung, Migration und Disaster Recovery. Die Lösung integriert sich nahtlos in Kubernetes-Umgebungen, unabhängig davon, ob diese auf Cloud-Clustern oder vor Ort betrieben werden, und kann an unterschiedliche Einsatzszenarien angepasst werden – beispielsweise die Migration von Clustern zwischen verschiedenen Kubernetes-Distributionen wie Kubernetes Vanilla, VMware Tanzu, Red Hat Kubernetes Engine und Red Hat OpenShift.
+Cloud Temple stellt für seine Kunden das Angebot **Veeam Kasten K10** (Veeam [**Kasten K10**](https://www.veeam.com/fr/kubernetes-native-backup-and-restore.html)) zur Verfügung, eine Plattform speziell für die Datenverwaltung in Kubernetes-Umgebungen. Sie wurde entwickelt, um die Anforderungen an den Daten- und Anwendungs-Schutz zu erfüllen, und bietet leistungsstarke Funktionen für Sicherung, Wiederherstellung, Migration und Disaster Recovery. Kasten K10 integriert sich nahtlos in Kubernetes-Umgebungen, unabhängig davon, ob diese auf Cloud-Clustern oder vor Ort betrieben werden, und kann an unterschiedliche Einsatzszenarien angepasst werden, insbesondere bei der Migration von Clustern zwischen verschiedenen Kubernetes-Distributionen wie Kubernetes Vanilla, VMware Tanzu, Red Hat Kubernetes Engine und Red Hat OpenShift.
 
-Ein zentrales Anwendungsfeld von Kasten K10 ist **die Migration von Clustern zwischen verschiedenen Kubernetes-Plattformen**. Ob zur Umstellung auf eine robustere Infrastruktur oder zur Konsolidierung bestehender Umgebungen – Kasten K10 bietet einfache und effiziente Werkzeuge zur Durchführung solcher Migrationen:
+Ein zentrales Anwendungsfeld von Kasten K10 ist **die Migration von Clustern zwischen verschiedenen Kubernetes-Plattformen**. Egal ob zur Umstellung auf eine robustere Infrastruktur oder zur Konsolidierung bestehender Umgebungen – Kasten K10 bietet einfache und effiziente Werkzeuge zur Durchführung solcher Migrationen:
 
-- **Sicherung und Schutz der Daten**: Bei der Migration eines Kubernetes-Vanilla- oder VMware-Tanzu-Clusters zu Red Hat Kubernetes Engine oder OpenShift ist die erste Schritte die Sicherung der Anwendungsdaten und deren Zustände. Kasten K10 integriert sich problemlos in die Kubernetes-API, um Anwendungen, deren Abhängigkeiten sowie zugehörige Datenvolumes zu identifizieren. Dazu gehören die Sicherung von Persistent Volumes (PV), Datenbanken, Konfigurationen und Secrets. Kasten K10 unterstützt eine breite Palette an Speicheranbietern (S3, Google Cloud Storage, Azure Blob Storage usw.), was die Erstellung von Snapshots für migrierbare Anwendungen ermöglicht. Diese Sicherungen werden sicher gespeichert, wobei Optionen für Verschlüsselung und granularen Zugriffsschutz zur Verfügung stehen, um die Datensicherheit während des gesamten Prozesses zu gewährleisten.
+ - **Sicherung und Schutz der Daten**: Bei der Migration eines Kubernetes-Vanilla- oder VMware-Tanzu-Clusters zu Red Hat Kubernetes Engine oder OpenShift ist die erste Schritt die Sicherung der Anwendungsdaten und deren Zustände. Kasten K10 integriert sich problemlos in die Kubernetes-API, um Anwendungen, deren Abhängigkeiten sowie zugehörige Datenvolumes zu identifizieren. Dazu gehören die Sicherung von Persistent Volumes (PV), Datenbanken, Konfigurationen und Geheimnissen. Kasten K10 unterstützt eine breite Palette von Speicheranbietern (S3, Google Cloud Storage, Azure Blob Storage usw.), was die Erstellung von Momentaufnahmen der zu migrierenden Anwendungen ermöglicht. Diese Sicherungen werden sicher gespeichert, mit Verschlüsselungsoptionen und granularem Zugriffssteuerung, um die Datensicherheit während des gesamten Prozesses zu gewährleisten.
 
-- **Portabilität und Migration**: Die Migration zwischen Kubernetes-Distributionen wie Vanilla oder Tanzu und Red Hat-Lösungen wie OpenShift oder Kubernetes Engine kann aufgrund architektonischer Unterschiede und spezifischer Konfigurationen komplex sein. Kasten K10 vereinfacht diesen Prozess durch eine Abstraktionsschicht für die Portabilität von Anwendungen. Bei der Migration repliziert Kasten K10 Konfigurationen und Daten von einem Quellcluster auf einen Zielcluster, wobei die Besonderheiten jedes Umfelds berücksichtigt werden. Beispielsweise können Kubernetes-Objekte wie ConfigMaps, Secrets, PVs sowie CRDs (Custom Resource Definitions) unter Berücksichtigung der spezifischen Anforderungen jeder Kubernetes-Distribution – ob Red Hat OpenShift oder Kubernetes Engine – migriert werden. Der Prozess ist automatisiert, wodurch das Risiko menschlicher Fehler erheblich reduziert wird. Zudem ermöglicht Kasten K10 eine schrittweise oder vollständige Migration, je nach Bedarf, und bietet Echtzeit-Übersicht über den Status der Migration, was die Verwaltung und Überwachung des Übergangs erleichtert.
+ - **Portabilität und Migration**: Die Migration zwischen Kubernetes-Distributionen wie Vanilla oder Tanzu und Red Hat-Lösungen wie OpenShift oder Kubernetes Engine kann komplex sein, da die Architekturen und Konfigurationen der Plattformen unterschiedlich sind. Kasten K10 vereinfacht diesen Prozess durch eine Abstraktionsschicht für die Portabilität von Anwendungen. Bei der Migration repliziert Kasten K10 Konfigurationen und Daten von einem Quell-Cluster auf einen Ziel-Cluster, wobei die Besonderheiten jedes Umfelds berücksichtigt werden. Beispielsweise können Kubernetes-Objekte wie ConfigMaps, Secrets, PVs sowie CRDs (Custom Resource Definitions) unter Berücksichtigung der spezifischen Anforderungen jeder Kubernetes-Distribution – sei es ein Red Hat OpenShift- oder Kubernetes Engine-Cluster – migriert werden. Der Prozess ist automatisiert, was das Risiko menschlicher Fehler erheblich reduziert. Zudem ermöglicht Kasten K10 eine schrittweise oder vollständige Migration je nach Bedarf und bietet Echtzeit-Übersicht über den Status der Migration, was die Verwaltung und Überwachung des Übergangs erleichtert.
 
-- **Multi-Cloud- und Multi-Distribution-Kompatibilität**: Kasten K10 ist für hybride und Multi-Cloud-Umgebungen konzipiert, was sie zu einem idealen Werkzeug für Organisationen macht, die Anwendungen von Tanzu- oder Vanilla-Clustern in Red Hat-Umgebungen im Cloud-Bereich (Cloud Temple, Amazon EKS, Azure AKS, Google GKE) oder auf lokalen Infrastrukturen migrieren möchten. Dies gewährleistet maximale Flexibilität und ermöglicht es DevOps-Teams, das beste Umfeld je nach Geschäftsbedarf oder Modernisierungsstrategie auszuwählen.
+ - **Multi-Cloud- und Multi-Distribution-Kompatibilität**: Kasten K10 ist für hybride und Multi-Cloud-Umgebungen konzipiert, was sie zu einem idealen Werkzeug für Organisationen macht, die Anwendungen von Tanzu- oder Vanilla-Clustern in Red Hat-Umgebungen im Cloud-Bereich (Cloud Temple, Amazon EKS, Azure AKS, Google GKE) oder auf lokalen Infrastrukturen migrieren möchten. Dies gewährleistet maximale Flexibilität und ermöglicht DevOps-Teams, den besten Umgebungsbereich je nach Geschäftsbedarf oder Modernisierungsstrategie auszuwählen.
 
-- **Einfache Verwaltung und Automatisierung**: Kasten K10 bietet eine intuitive Benutzeroberfläche, die Administratoren die Verwaltung von Migrationen und Sicherungen erleichtert, ohne tiefgehende Kenntnisse jeder einzelnen Kubernetes-Plattform zu erfordern. Die Lösung verfügt zudem über Automatisierungsfunktionen, mit denen wiederkehrende Sicherungs- und Migrationsrichtlinien definiert werden können, die nahtlos in CI/CD-Pipelines integriert werden können, um kontinuierliche Operationen zu ermöglichen. Benutzer können Migrationen oder Wiederherstellungen nach Wartungsfenstern planen, Validierungstests nach der Migration durchführen und Prozesse für Failover im Falle von Problemen auf dem Quellcluster automatisieren.
+ - **Einfache Verwaltung und Automatisierung**: Kasten K10 bietet eine intuitive Benutzeroberfläche, die Administratoren die Verwaltung von Migrationen und Sicherungen erleichtert, ohne tiefgehende Kenntnisse jeder einzelnen Kubernetes-Plattform zu erfordern. Die Lösung verfügt zudem über Automatisierungsfunktionen, mit denen wiederkehrende Sicherungs- und Migrationsrichtlinien definiert werden können, die nahtlos in CI/CD-Pipelines integriert werden können, um kontinuierliche Operationen zu ermöglichen. Benutzer können Migrationen oder Wiederherstellungen nach Wartungsfenstern planen, Validierungstests nach der Migration durchführen und Prozesse für Failover im Falle von Problemen auf dem Quell-Cluster automatisieren.
 
-- **Sicherheit und Compliance**: Bei Migrationen in kritische Umgebungen wie Red Hat OpenShift oder Kubernetes Engine sind Datensicherheit und Einhaltung von Standards (ISO, SOC, GDPR usw.) entscheidend. Kasten K10 gewährleistet die Verschlüsselung von Daten im Transit und im Ruhezustand und bietet Funktionen zur Auditierung und Nachverfolgbarkeit von Sicherungs- und Wiederherstellungsoperationen. Diese Funktionen sind unerlässlich, um die Sicherheit der migrierten Daten zu gewährleisten, egal ob in Produktiv- oder Testumgebungen. Kasten K10 ist eine unverzichtbare Lösung für Unternehmen, die Kubernetes-Cluster von Vanilla oder VMware Tanzu effizient und sicher in Red Hat Kubernetes Engine oder OpenShift migrieren möchten.
+ - **Sicherheit und Compliance**: Bei Migrationen in kritische Umgebungen wie Red Hat OpenShift oder Kubernetes Engine sind Datensicherheit und Einhaltung von Standards (ISO, SOC, GDPR usw.) entscheidend. Kasten K10 gewährleistet die Verschlüsselung von Daten im Transit und im Ruhezustand und bietet Audit- und Nachverfolgungsfunktionen für Sicherungs- und Wiederherstellungsoperationen. Diese Funktionen sind unerlässlich, um die Sicherheit der migrierten Daten – egal ob in Produktions- oder Testumgebungen – zu gewährleisten. Kasten K10 ist eine unverzichtbare Lösung für Unternehmen, die Kubernetes-Cluster von Vanilla oder VMware Tanzu effizient und sicher in Red Hat Kubernetes Engine oder OpenShift migrieren möchten.
 
-Die Abrechnung erfolgt nach Anzahl der Worker Nodes.
+ Die Abrechnung erfolgt nach Anzahl der Worker Nodes.
 
-| Einheiten für Red Hat Openshift 4 mit Data Foundations – Worker Node Backup-Lösung | Einheit | SKU                         |
+| Einheiten für Redhat Openshift 4 mit Data Foundations - Worker Node Backup Lösung | Einheit | SKU                         |
 | :------------------------------------------------------------------------------------ | :------ | :-------------------------- |
 | VEEAM - KASTEN K10 - Kubernetes-Daten-Schutz und Anwendungs-Mobilität                  | 3 Worker | csp:fr1:paas:kasten:3wkr:v1 |
 
-**Hinweis**: *Bitte beachten Sie, dass der erforderliche Speicherplatz für die ordnungsgemäße Funktion Ihrer Sicherung auf dem Empfangs-Environment (in der Regel S3-Speicher) vorab bereitzustellen ist. Er ist nicht in den Openshift- oder Kasten-Einheiten enthalten.*
+**Hinweis**: *Bitte beachten Sie, dass der erforderliche Speicherplatz für die ordnungsgemäße Funktion Ihrer Sicherung auf dem Zielumfeld Ihrer Sicherung (typischerweise S3-Speicher) vorab bereitzustellen ist. Er ist nicht in den Openshift- oder Kasten-Einheiten enthalten.*
 
-**(1)** _OADP ist nicht standardmäßig im Cluster installiert. Nur Kasten ist aktiviert, um Migrationen, Sicherungen und Wiederherstellungen zu verwalten._
+**(1)** _OADP ist nicht nativ im Cluster installiert. Lediglich Kasten ist aktiviert, um Migrationen, Sicherungen und Wiederherstellungen zu verwalten._
 
 ## Load Balancers
 
@@ -147,11 +147,11 @@ Access to administration tools is secured by dedicated load balancers. These are
 
 ### Public HTTP/HTTPS Traffic
 
-The **public LoadBalancers**, based on **HAProxy**, operate at **Layer 4** of the OSI model. They enable the exposure of your workloads via **routes** and **ingress** using **HTTP/HTTPS**, ensuring efficient and high-performance distribution of incoming traffic.
+**Public LoadBalancers**, based on **HAProxy**, operate at **Layer 4** of the OSI model. They enable you to expose your workloads via **HTTP/HTTPS** using **routes** and **ingresses**, ensuring efficient and high-performance distribution of incoming traffic.
 
-### Private HTTP/HTTPS Traffic (Connection with your SNC IaaS Services)
+### Private HTTP/HTTPS Traffic (Interconnection with Your IaaS SNC Services)
 
-**Private LoadBalancers** enable communication with your **SNC IaaS services** without public exposure. Like their public counterparts, they distribute **HTTP/HTTPS** traffic while maintaining a secure and isolated environment.
+**Private LoadBalancers** enable communication with your **IaaS SNC** services without public exposure. Like their public counterparts, they distribute **HTTP/HTTPS** traffic while maintaining a secure and isolated environment.
 
 ### Specific Traffic
 
@@ -159,11 +159,11 @@ The **public LoadBalancers**, based on **HAProxy**, operate at **Layer 4** of th
 
 - Connecting to a database via **TCP**
 - Handling **UDP** streams for real-time or low-latency applications
-- Routing advanced protocols such as **QUIC** or **MQTT-SN**, thus providing enhanced flexibility
+- Routing advanced protocols such as **QUIC** or **MQTT-SN**, thus providing increased flexibility
 
 This solution enables you to handle your specific traffic flows, whether for private interconnections or public exposure needs.
 
-Routing is performed via dedicated **public and private IP addresses**. By default, you are assigned the following IP addresses for service exposure:
+Routing is performed using dedicated **public and private IP addresses**. By default, you are assigned the following IP addresses for service exposure:
 
 - **4 public IP addresses**
 - **254 private IP addresses**
@@ -207,7 +207,7 @@ Hier sind die wichtigsten Berechtigungen, die implementiert wurden:
 |        CSI         |         Addons                 |                                                           CSIAddonsNodes, NetworkFences Create, Get, List, Watch, Update, Patch, Delete                                                            |
 |      Metrics       |         Pods,                 |                                                                                             Nodes Get                                                                                              |
 |      Security      | PodSecurityPolicyReviews      |                                                                                               Create                                                                                               |
-|       Custom       |       Ressourcen              |                                       Verschiedene benutzerdefinierte Ressourcen im Zusammenhang mit Kasten K10, Keycloak usw. Create, Get, List, Watch, Update, Patch, Delete                                        |
+|       Custom       |       Ressourcen               |                                       Verschiedene benutzerdefinierte Ressourcen im Zusammenhang mit Kasten K10, Keycloak usw. Create, Get, List, Watch, Update, Patch, Delete                                        |
 
 ## Security Restrictions and Requirements on OpenShift SecNumCloud
 
@@ -217,7 +217,7 @@ Running workloads on the **control plane** is strictly prohibited. This restrict
 
 ### Restriction of Containers with Elevated Privileges (rootless)
 
-To comply with the security requirements of the **SecNumCloud reference repository**, only **rootless containers** are permitted. This approach enhances security by preventing any privileged access to containers.
+To comply with the security requirements of the **SecNumCloud reference framework**, only **rootless containers** are permitted. This approach enhances security by preventing any privileged access to containers.
 
 Applications requiring elevated privileges must be adapted, as their deployment will not be allowed. This restriction also applies to **Helm Charts** and **operators** using non-rootless images, making their use incompatible with the infrastructure.
 
@@ -225,7 +225,7 @@ Applications requiring elevated privileges must be adapted, as their deployment 
 
 In our OpenShift offering, access management at the cluster level is strictly regulated to ensure **security and compliance** with SecNumCloud.
 
-This means there are **restrictions on ClusterRoles**, limiting global privileges. While these restrictions may require technical adjustments, they are essential for enhancing the resilience and stability of the environment.
+This means **restrictions on ClusterRoles**, limiting global privileges. While these restrictions may require technical adjustments, they are essential for enhancing the resilience and stability of the environment.
 
 Our support team is available to assist you in adapting your configurations and advise you on possible alternatives.
 
@@ -251,14 +251,14 @@ Our support team can guide you through this process and advise on best practices
 
 **OpenShift SecNumCloud runners** must be configured with **static IP addresses**.
 
-This requirement ensures secure access to **OpenShift APIs**, administration interfaces, and access management tools of the **Cloud Temple console**.
+This requirement ensures secure access to **OpenShift APIs**, administration interfaces, and access management tools in the **Cloud Temple** console.
 
 **Dynamic IP addresses are not supported**, requiring appropriate configuration to ensure connectivity and security of the components.
 
 ## Wissenswertes
 
-• Wenn die Hardwarekomponenten auf Plattformebene veraltet sind und eine Migration zu neuen Rechenressourcen erforderlich wird, übernimmt Cloud Temple die gesamte Hardware-Migration kostenfrei und ohne Dienstunterbrechung.
+• Wenn die Hardwarekomponenten auf Plattformebene veraltet sind und ein Umzug zu neuen Rechenressourcen notwendig wird, übernimmt Cloud Temple alle Hardware-Migrationen kostenfrei und ohne Dienstunterbrechung.
 
-• Für die Testung von OpenShift stellt Cloud Temple kein dediziertes Umfeld bereit, Sie können jedoch [die Red Hat Testplattformen](https://www.redhat.com/fr/technologies/cloud-computing/openshift/try-it) nutzen.
+• Für die Testung von OpenShift stellt Cloud Temple kein dediziertes Umfeld bereit, doch können Sie [die Red Hat Testplattformen](https://www.redhat.com/fr/technologies/cloud-computing/openshift/try-it) nutzen.
 
 • Für die Automatisierung Ihrer Infrastruktur empfehlen wir den offiziellen Terraform-Anbieter für OpenShift.

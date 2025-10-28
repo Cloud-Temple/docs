@@ -16,7 +16,7 @@ The __VPLS__ protocol is __completely transparent__ for customers who only see t
 
 The virtual networks (VLANs) of the VMware virtualization offering are of the type __'DVPortgroup'__. A __'dvPortGroup'__, or __'Distributed Virtual Port Group'__, is a specific concept in VMware. A dvPortGroup is an entity that groups multiple virtual ports (vPorts) in a distributed virtual network environment to facilitate their use.
 
-Located within a __[Tenant](../../console/iam/concepts.md#tenant)__, they can be extended across availability zones, allowing you to build "active/active" architectures with quorum.
+Located within a __[Tenant](../console/iam/concepts.md#tenant)__, they can be extended across availability zones, allowing you to build "active/active" architectures with quorum.
 
 The maximum usable bandwidth mainly depends on the blade model used (converged 10Gbps or 25Gbps) and the capabilities of the virtual machines.
 
@@ -47,7 +47,7 @@ __*Note:*__ *It is not possible to select the 802.1q VLAN ID.*
 ## Network Sharing Between Tenants
 
 By default, __networks are only available within a tenant__. You can choose to __share a network between multiple tenants__ for technical reasons or connectivity reasons.
-It is thus possible to share a network between your __[Tenant](../../console/iam/concepts.md#tenant)__ within the same organization.
+It is thus possible to share a network between your __[Tenant](../console/iam/concepts.md#tenant)__ within the same organization.
 
 ## External Private Connectivity
 

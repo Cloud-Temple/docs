@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Cloud Temple's Object Storage Service (OSS) is a highly scalable, durable, and secure storage solution designed to store and retrieve any amount of data from anywhere.
 
-Built on a S3-compatible API, our OSS service is ideal for a wide range of use cases—from backup and archiving, to hosting static content for web applications, to storing data for Big Data analytics and cloud-native applications.
+Built on a S3-compatible API, our OSS service is ideal for a wide range of use cases—from backup and archiving to hosting static content for web applications, as well as storing data for Big Data analytics and cloud-native applications.
 
 ## SecNumCloud Certification
 

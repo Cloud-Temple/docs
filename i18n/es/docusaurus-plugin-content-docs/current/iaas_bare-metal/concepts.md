@@ -36,17 +36,17 @@ Las placas de cálculo disponibles para la oferta Bare Metal ofrecen una gama de
 
 | Referencia            | RAM  **(1)** | Frecuencia **(2)**                        | Número de núcleos / hilos | Conectividad **(3)** | GPU **(4)**          |
 |-----------------------|--------------|-------------------------------------------|---------------------------|----------------------|----------------------|
-| **ECO**              | 384 GB       | 2.20/3.0 GHz (Silver 4114 o equivalente)  | 20 / 40 hilos             | 2 × 10 Gbit/s        | -                    |
-| **STANDARD**         | 384 GB       | 2.40/3.4 GHz (Silver 4314 o equivalente)  | 32 / 64 hilos             | 2 × 25 Gbit/s        | -                    |
-| **ADVANCE**          | 768 GB       | 2.80/3.5 GHz (Gold 6342 o equivalente)    | 48 / 96 hilos             | 2 × 25 Gbit/s        | -                    |
-| **PERFORMANCE 1**    | 384 GB       | 3.20/3.6 GHz (Xeon E-53I5Y o equivalente) | 16 / 32 hilos             | 2 × 25 Gbit/s        | -                    |
-| **PERFORMANCE 2**    | 768 GB       | 3.00/3.6 GHz (Gold 6354 o equivalente)    | 36 / 72 hilos             | 2 × 25 Gbit/s        | -                    |
-| **PERFORMANCE 3**    | 1536 GB      | 2.60/3.5 GHz (Gold 6348 o equivalente)    | 56 / 112 hilos            | 2 × 25 Gbit/s        | -                    |
-| **PERFORMANCE 4**    | 512 GB       | 2.50/4.1 GHz (Intel 6426Y o equivalente)  | 32 / 64 hilos             | 2 × 25 Gbit/s        | 2 × NVIDIA L40S 48 GB |
+| **ECO**              | 384 GB       | 2,20/3,0 GHz (Silver 4114 o equivalente)  | 20 / 40 hilos             | 2 x 10 Gbit/s        | -                    |
+| **STANDARD**         | 384 GB       | 2,40/3,4 GHz (Silver 4314 o equivalente)  | 32 / 64 hilos             | 2 x 25 Gbit/s        | -                    |
+| **ADVANCE**          | 768 GB       | 2,80/3,5 GHz (Gold 6342 o equivalente)    | 48 / 96 hilos             | 2 x 25 Gbit/s        | -                    |
+| **PERFORMANCE 1**    | 384 GB       | 3,20/3,6 GHz (Xeon E-53I5Y o equivalente) | 16 / 32 hilos             | 2 x 25 Gbit/s        | -                    |
+| **PERFORMANCE 2**    | 768 GB       | 3,00/3,6 GHz (Gold 6354 o equivalente)    | 36 / 72 hilos             | 2 x 25 Gbit/s        | -                    |
+| **PERFORMANCE 3**    | 1536 GB      | 2,60/3,5 GHz (Gold 6348 o equivalente)    | 56 / 112 hilos            | 2 x 25 Gbit/s        | -                    |
+| **PERFORMANCE 4**    | 512 GB       | 2,50/4,1 GHz (Intel 6426Y o equivalente)  | 32 / 64 hilos             | 2 x 25 Gbit/s        | 2 x NVIDIA L40S 48 GB |
 
 ### Notes
 
-- **(1)** The amount of memory is the physically available on the blades and cannot be modified.
+- **(1)** The amount of memory is the physically available memory on the blades and cannot be modified.
 - **(2)** The indicated frequencies correspond to the minimum base frequency and the turbo frequency.
 - **(3)** Physical connectivity is shared for network access and block storage access, thanks to a converged Cisco UCS architecture.
 - **(4)** Available GPUs evolve according to the latest technologies. As of May 1, 2024, the offering includes NVIDIA LOVELACE L40S GPUs.
@@ -55,9 +55,9 @@ Infrastructure availability is guaranteed at 99.9%, measured monthly, including 
 
 ## Clases de almacenamiento en modo bloque
 
-El almacenamiento en bloque distribuido, basado en **IBM Spectrum Virtualize**, ofrece una gama de rendimientos adecuada para diversos casos de uso:
+El almacenamiento en bloque distribuido, basado en **IBM Spectrum Virtualize**, ofrece una gama de rendimientos adaptados a diversos casos de uso:
 
-| Referencia                        | IOPS/TB                 | Uso principal                           |
+| Referencia                        | IOPS/To                 | Uso principal                           |
 |-----------------------------------|-------------------------|-----------------------------------------|
 | **FLASH - Esencial**              | 500                     | Cargas de trabajo ligeras               |
 | **FLASH - Estándar**              | 1500                    | Cargas de trabajo estándar              |
@@ -74,7 +74,7 @@ El almacenamiento en bloque distribuido, basado en **IBM Spectrum Virtualize**, 
 
 ### Seguridad y cifrado del almacenamiento en bloques
 
-Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraestructura de almacenamiento en bloques incorpora un cifrado hardware robusto.
+Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraestructura de almacenamiento en bloques integra un cifrado hardware robusto.
 
 -   **Tipo de cifrado**: Los datos se cifran directamente en los discos (`Data At Rest`) utilizando el algoritmo **XTS-AES 256**.
 -   **Cumplimiento**: Este método de cifrado cumple con la norma **FIPS 140-2**, asegurando un alto nivel de seguridad validado.
@@ -95,9 +95,9 @@ El acceso a los servidores Bare Metal se realiza directamente desde la **consola
 
 Este nivel de acceso garantiza una flexibilidad máxima respetando las restricciones de seguridad.
 
-## Red network connectivity for Bare Metal servers
+## Red network de los servidores Bare Metal
 
-Bare Metal servers come with advanced networking features.
+Los servidores Bare Metal cuentan con funciones de red avanzadas.
 
 ### VLAN de nivel 2
 
@@ -109,7 +109,7 @@ Los usuarios pueden:
 
 ### Aggregation of network interfaces
 
-Each server is equipped with **two network interfaces**. These interfaces can be used independently or combined to improve performance and redundancy:
+Each server is equipped with **two network interfaces**. These interfaces can be used independently or combined to achieve better performance and redundancy:
 
 ### Rendimiento de red
 
@@ -118,4 +118,4 @@ El rendimiento de las interfaces de red está directamente relacionado con la cl
 - Los servidores **ECO** ofrecen una conectividad de 2 x 10 Gbit/s.
 - Los servidores **STANDARD** y superiores disponen de una conectividad de 2 x 25 Gbit/s.
 
-Estas opciones de red garantizan una conectividad fiable, flexible y adaptada a una amplia variedad de cargas de trabajo profesionales.
+Estas opciones de red garantizan una conectividad fiable, flexible y adecuada para una variedad de cargas de trabajo profesionales.

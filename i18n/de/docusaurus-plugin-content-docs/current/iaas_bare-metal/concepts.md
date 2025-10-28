@@ -3,7 +3,7 @@ title: Concepts
 ---
 
 The **Bare Metal** offering from Cloud Temple provides dedicated physical servers coupled with a distributed block storage solution.  
-This solution offers full customization for clients who wish to manage their own software environments, whether installing a Linux or Windows system, or a hypervisor.
+This solution offers full customization for customers who wish to manage their own software environments, whether installing a Linux or Windows system, or a hypervisor.
 
 ## A flexible and robust hardware infrastructure
 
@@ -11,16 +11,16 @@ The Bare Metal offering is based on an architecture designed to meet the require
 
 ### Hauptkomponenten
 
-- **Cisco UCS-Server**: Leistungsstarke und zuverlässige Blade-Server bilden die Grundlage des Angebots.
-- **IBM Spectrum Virtualize-Speicher**: Ein verteilter Blockspeicher, der Resilienz und hohe Leistung bietet.
+- **Cisco UCS-Server**: Leistungsstark und zuverlässig, bilden diese Compute-Lanes die Grundlage des Angebots.
+- **IBM Spectrum Virtualize-Speicher**: Ein verteiltes Blockspeichersystem, das Resilienz und hohe Leistung bietet.
 
 ### Architecture
 
-Das verteilte Speichermuster bietet eine Trennung zwischen Rechenleistung (Bare-Metal-Server) und Speicher (verteiltes Blockspeicher), was ermöglicht:
+The distributed storage model provides a separation between computing (Bare Metal servers) and storage (distributed block), enabling:
 
-- Flexibilität beim Zuordnen von Speichervolumina zu mehreren Bare-Metal-Servern je nach Bedarf.
-- Optimierte Anpassung der Konfigurationen für Rechenleistung und Speicher.
-- Erhöhte Resilienz dank der Nutzung von **Distributed RAID 6**.
+- Flexibility to map storage volumes across multiple Bare Metal servers according to requirements.
+- Optimal customization of computing and storage configurations.
+- Enhanced resilience through the use of **Distributed RAID 6**.
 
 ## Regions and Availability Zones
 
@@ -61,9 +61,9 @@ Distributed block storage, based on **IBM Spectrum Virtualize**, offers a range 
 |-----------------------------------|-------------------------|----------------------------------------|
 | **FLASH - Essential**             | 500                     | Light workloads                        |
 | **FLASH - Standard**              | 1500                    | Standard workloads                     |
-| **FLASH - Premium**               | 3000                    | High-intensity workloads               |
-| **FLASH - Enterprise**            | 7500                    | Mission-critical workloads             |
-| **FLASH - Ultra**                 | 15000                   | Ultra-high-intensity workloads         |
+| **FLASH - Premium**               | 3000                    | Intensive workloads                    |
+| **FLASH - Enterprise**            | 7500                    | Critical workloads                     |
+| **FLASH - Ultra**                 | 15000                   | Ultra-intensive workloads              |
 | **MASS STORAGE - Archival**       | Not applicable          | Cost-effective storage for archiving   |
 
 ### Features
@@ -88,27 +88,27 @@ It is important to note that this encryption protects data stored on disks. It i
 
 ## Bare Metal Console Access
 
-Access to Bare Metal servers is provided directly through the **Cloud Temple console**. This feature offers full control over the server lifecycle, including:
+Access to Bare Metal servers is provided directly from the **Cloud Temple console**. This feature offers full control over the server lifecycle, including:
 
-- **KVM Access**: A direct interface to manage servers as if you were physically on-site.
-- **Management of routine operations**: Ability to perform actions such as power management, reboots, and **ISO mapping** for operating system installation.
+- **KVM Access**: A direct interface to manage servers, as if you were physically on-site.
+- **Management of common operations**: Ability to perform actions such as power management, reboots, and **ISO mapping** for operating system installation.
 
 This level of access ensures maximum flexibility while maintaining strict security requirements.
 
 ## Bare Metal Server Networking
 
-Bare Metal servers come with advanced networking features.
+Bare Metal servers come with advanced networking capabilities.
 
 ### Layer 2 VLANs
 
 It is possible to configure **Layer 2 VLANs** on the network interfaces of Bare Metal servers. Users can:
 
 - **Enable VLAN tagging** to associate one or more VLANs with a single interface.
-- **Propagate VLANs directly** onto the network interfaces of servers.
+- **Propagate VLANs directly** on the network interfaces of the Bare Metal servers.
 
 ### Network Interface Aggregation
 
-Each server is equipped with **two network interfaces**. These interfaces can be used independently or combined to achieve better performance and redundancy:
+Each server is equipped with **two network interfaces**. These interfaces can be used either independently or combined to achieve improved performance and redundancy:
 
 ### Network Performance
 

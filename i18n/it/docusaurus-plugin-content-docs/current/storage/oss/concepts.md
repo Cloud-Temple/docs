@@ -16,13 +16,13 @@ L'accesso al servizio avviene tramite un'API RESTful standard, compatibile con i
 -   **Oggetti**: I dati fondamentali archiviati nel servizio. Un oggetto è composto da dati (il file stesso) e metadati (informazioni descrittive sull'oggetto).
 -   **Bucket (Contenitori)**: Gli oggetti sono organizzati in bucket. Un bucket è un contenitore per gli oggetti, e il suo nome deve essere univoco all'interno del servizio.
 -   **Chiavi**: Ogni oggetto all'interno di un bucket è identificato in modo univoco da una chiave (un nome di file).
--   **Endpoint**: Le URL regionali utilizzate per accedere all'API del servizio di archiviazione.
+-   **Endpoint**: URL regionali utilizzati per accedere all'API del servizio di archiviazione.
 
 ## Sicurezza e Crittografia
 
-La sicurezza dei tuoi dati è la nostra priorità assoluta. Il servizio OSS integra meccanismi di crittografia robusti per proteggere i tuoi dati, sia quando sono memorizzati (inattivi) sia quando transitano attraverso la rete.
+La sicurezza dei tuoi dati è la nostra priorità assoluta. Il servizio OSS integra meccanismi di crittografia robusti per proteggere i tuoi dati, sia quando sono memorizzati (inattivi) sia durante il trasferimento attraverso la rete.
 
-### Crittografia dei dati inattivi (Data at Rest Encryption - D@RE)
+### Crittografia dei dati a riposo (Data at Rest Encryption - D@RE)
 
 Per proteggere i tuoi dati memorizzati, il nostro servizio utilizza la crittografia lato server.
 
@@ -35,4 +35,4 @@ Per proteggere i tuoi dati memorizzati, il nostro servizio utilizza la crittogra
 Tutte le comunicazioni con l'API del servizio di archiviazione oggetti, sia per caricare, scaricare o gestire i tuoi dati, devono essere protette.
 
 -   **Protocollo**: Impone l'uso del protocollo **TLS (Transport Layer Security)**, versioni **1.2 e 1.3**.
--   **Funzionamento**: Utilizzando HTTPS per tutte le tue richieste API, ti assicuri che i dati scambiati tra il tuo client e i nostri server siano crittografati, proteggendoli così da intercettazioni o alterazioni durante il trasferimento sulla rete.
+-   **Funzionamento**: Utilizzando HTTPS per tutte le tue richieste API, ti assicuri che i dati scambiati tra il tuo client e i nostri server siano crittografati, proteggendoli così da intercettazioni o alterazioni durante il trasferimento attraverso la rete.

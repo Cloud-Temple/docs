@@ -13,7 +13,7 @@ import oshiftOffert from './images/oshift_offert.png'
 
 - **Soporte para múltiples lenguajes y servicios:** La plataforma admite una amplia variedad de lenguajes de programación (como Java, Node.js, Python, Ruby y PHP) y ofrece servicios integrados como mensajería, caché y bases de datos, permitiendo a los desarrolladores centrarse en el código en lugar de en la infraestructura.
 
-- **Integración continua (CI) y despliegue continuo (CD):** OpenShift integra herramientas de CI/CD que automatizan el pipeline de desarrollo de software, desde el primer commit hasta el despliegue en producción, promoviendo así prácticas DevOps.
+- **Integración continua (CI) y despliegue continuo (CD):** OpenShift integra herramientas de CI/CD que automatizan el pipeline de desarrollo de software, desde el primer commit hasta el despliegue en producción, favoreciendo así las prácticas DevOps.
 
 - **Gestión de operaciones:** OpenShift proporciona herramientas para la supervisión, gestión del rendimiento y diagnóstico de aplicaciones e infraestructuras, ayudando a los operadores a mantener la salud y el rendimiento de los sistemas.
 
@@ -30,21 +30,21 @@ Red Hat OpenShift es una solución completa para el desarrollo, despliegue y ges
 
 ### Red Hat OpenShift Data Foundation
 
-Red Hat OpenShift Data Foundation (ODF) es una solución integrada de almacenamiento y gestión de datos diseñada para funcionar de forma transparente con el ecosistema OpenShift. Ofrece una infraestructura de datos persistente, segura y altamente disponible para aplicaciones contenedorizadas, apoyando así entornos de desarrollo modernos centrados en contenedores y microservicios. ODF está diseñada para simplificar y automatizar la gestión de datos en entornos híbridos y multicloud, proporcionando una base sólida para aplicaciones críticas de empresas.
+Red Hat OpenShift Data Foundation (ODF) es una solución integrada de almacenamiento y gestión de datos diseñada para funcionar de forma transparente con el ecosistema OpenShift. Ofrece una infraestructura de datos persistente, segura y altamente disponible para aplicaciones contenedorizadas, apoyando así entornos modernos de desarrollo centrados en contenedores y microservicios. ODF está diseñada para simplificar y automatizar la gestión de datos en entornos híbridos y multicloud, proporcionando una base sólida para aplicaciones críticas de empresa.
 
-#### Funcionalidades clave de OpenShift Data Foundation:
+#### Funcionalidades Clave de OpenShift Data Foundation:
 
-- **Almacenamiento persistente:** ODF proporciona una capa de almacenamiento persistente para contenedores, esencial para aplicaciones empresariales como bases de datos, sistemas de gestión de contenido y aplicaciones que requieren estado persistente.
+- **Almacenamiento Persistente:** ODF proporciona una capa de almacenamiento persistente para contenedores, esencial para aplicaciones empresariales como bases de datos, sistemas de gestión de contenido y aplicaciones que requieren estado persistente.
 
-- **Multinube y híbrido:** Diseñado para entornos híbridos y multinube, ODF permite una experiencia coherente de gestión de datos a través de diferentes entornos en la nube, facilitando la movilidad de aplicaciones y datos.
+- **Multinube y Híbrido:** Diseñado para entornos híbridos y multinube, ODF permite una experiencia coherente de gestión de datos a través de diferentes entornos en la nube, facilitando la movilidad de aplicaciones y datos.
 
-- **Automatización y orquestación:** La integración profunda con Kubernetes y OpenShift permite a ODF automatizar el aprovisionamiento, el escalado y la gestión del ciclo de vida del almacenamiento según las necesidades de las aplicaciones.
+- **Automatización y Orquestación:** La integración profunda con Kubernetes y OpenShift permite a ODF automatizar el aprovisionamiento, el escalado y la gestión del ciclo de vida del almacenamiento según las necesidades de las aplicaciones.
 
-- **Alta disponibilidad y resiliencia:** ODF utiliza la replicación y la creación de instantáneas (snapshots) de datos para garantizar alta disponibilidad y durabilidad de los datos, esenciales para la continuidad operativa empresarial.
+- **Alta Disponibilidad y Resiliencia:** ODF utiliza la replicación y la creación de instantáneas (snapshots) de datos para garantizar alta disponibilidad y durabilidad de los datos, esenciales para la continuidad operativa empresarial.
 
-- **Seguridad de los datos:** La solución incorpora funciones avanzadas de seguridad, como el cifrado de datos en reposo y en tránsito, así como políticas de seguridad y cumplimiento personalizables. Nuestra implementación SecNumCloud garantiza una protección en múltiples niveles:
-    -   **Cifrado de datos en reposo:** El almacenamiento persistente proporcionado por OpenShift Data Foundation se basa en nuestra infraestructura subyacente de almacenamiento en bloques. En este sentido, todos los datos están cifrados en reposo utilizando el algoritmo **XTS-AES 256**, conforme a la norma **FIPS 140-2**.
-    -   **Cifrado de datos en tránsito:** Todos los accesos a la plataforma, incluyendo la API, la consola web y el tráfico aplicativo a través de rutas, están sistemáticamente protegidos y cifrados mediante el protocolo **TLS**.
+- **Seguridad de Datos:** La solución incorpora funciones avanzadas de seguridad, como el cifrado de datos en reposo y en tránsito, así como políticas de seguridad y cumplimiento personalizables. Nuestra implementación SecNumCloud garantiza una protección en múltiples niveles:
+    -   **Cifrado de datos en reposo:** El almacenamiento persistente proporcionado por OpenShift Data Foundation se basa en nuestra infraestructura subyacente de almacenamiento en bloques. En este sentido, todos los datos se cifran en reposo utilizando el algoritmo **XTS-AES 256**, conforme a la norma **FIPS 140-2**.
+    -   **Cifrado de datos en tránsito:** Todos los accesos a la plataforma, incluyendo la API, la consola web y el tráfico aplicativo a través de rutas, se protegen y cifran sistemáticamente mediante el protocolo **TLS**.
 
 #### Beneficios de OpenShift Data Foundation:
 
@@ -62,11 +62,11 @@ Red Hat OpenShift Data Foundation es una solución avanzada de almacenamiento de
 
 ### Generalidades
 
-La plataforma Red Hat OpenShift de Cloud Temple está diseñada como una oferta regional, desplegada nativamente en [**tres zonas de disponibilidad distintas**](../additional_content/concepts_az.md) dentro de la misma [región](../additional_content/concepts_regional.md) de Cloud Temple. Esta arquitectura trizona incrementa significativamente la disponibilidad y resiliencia de los datos.
+La plataforma Red Hat OpenShift de Cloud Temple está diseñada como una oferta regional, desplegada nativamente en [**tres zonas de disponibilidad distintas**](../additional_content/concepts_az.md) dentro de la misma [región](../additional_content/concepts_regional.md) de Cloud Temple. Esta arquitectura tri-zonal aumenta significativamente la disponibilidad y resiliencia de los datos.
 
 La plataforma se compone de un plano de control y nodos de trabajo, ambos gestionados por la infraestructura de Cloud Temple. El plano de control se distribuye equitativamente entre las tres zonas de disponibilidad, garantizando una gestión centralizada y segura. Los nodos de trabajo, por su parte, se representan mediante láminas de cálculo, dispuestas de forma que cada zona de disponibilidad contenga una.
 
-Para los nodos de trabajo, existen varios tipos de láminas de cálculo disponibles, lo que permite una adaptación flexible a diversas necesidades operativas:
+Para los nodos de trabajo, están disponibles varios tipos de láminas de cálculo, lo que permite una adaptación flexible a diversas necesidades operativas:
 
 | Unidades de obra Redhat Openshift 4 with Data Foundations - On Demand - 1 month                                                | Unidad                   | SKU                                   |
 | :--------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :------------------------------------ |
@@ -74,8 +74,8 @@ Para los nodos de trabajo, existen varios tipos de láminas de cálculo disponib
 | OPENSHIFT - NODOS DE TRABAJO - TINY - 3 x (10 núcleos / 20 hilos - 64 GB de RAM - 512 GB de FLASH 1500 IOPS)                 | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:tiny:payg:v1  |
 | OPENSHIFT - NODOS DE TRABAJO - SMALL - 3 x (20 núcleos / 40 hilos - 128 GB de RAM - 512 GB de FLASH 1500 IOPS)                | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:small:payg:v1 |
 | OPENSHIFT - NODOS DE TRABAJO - STANDARD - 3 x (32 núcleos / 64 hilos - 384 GB de RAM - 512 GB de FLASH 1500 IOPS)             | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:std:payg:v1   |
-| OPENSHIFT - NODOS DE TRABAJO - ADVANCED - 3 x (48 núcleos / 96 hilos - 768 GB de RAM - 512 GB de FLASH 1500 IOPS)              | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:adv:payg:v1   |
-| OPENSHIFT - NODOS DE TRABAJO - PERF - 3 x (56 núcleos / 112 hilos - 1,5 TB de RAM - 512 GB de FLASH 1500 IOPS)                 | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:perf:payg:v1  |
+| OPENSHIFT - NODOS DE TRABAJO - ADVANCED - 3 x (48 núcleos / 96 hilos - 768 GB de RAM - 512 GB de FLASH 1500 IOPS)             | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:adv:payg:v1   |
+| OPENSHIFT - NODOS DE TRABAJO - PERF - 3 x (56 núcleos / 112 hilos - 1,5 TB de RAM - 512 GB de FLASH 1500 IOPS)                | 3 nodos dedicados        | csp:fr1:paas:oshift:wkr:perf:payg:v1  |
 | OPENSHIFT - NODOS DE TRABAJO - GPU - 3 x (32 núcleos / 64 hilos - 512 GB de RAM - 512 GB de FLASH 1500 IOPS - 2xNVIDIA L40S 48GB) | 3 nodos dedicados + GPUs | csp:fr1:paas:oshift:wkr:gpu:payg:v1   |
 
 Los productos Red Hat OpenShift de Cloud Temple están disponibles con pago por uso o con reserva de 12 meses.
@@ -84,13 +84,13 @@ Los productos Red Hat OpenShift de Cloud Temple están disponibles con pago por 
 
 1. *El mantenimiento en condiciones operativas y de seguridad del plano de control es responsabilidad de Cloud Temple como parte de un servicio PaaS.*
 
-2. *Al 15 de junio de 2024, la versión 1 de la plataforma está limitada de forma intencional a nivel software a un máximo de 30 nodos de trabajo (independientemente del tipo) y a un almacenamiento persistente global de 50 TiB. Si estas limitaciones son críticas para su proyecto, póngase en contacto con el soporte.*
+2. *Al 15 de junio de 2024, la versión 1 de la plataforma está limitada de forma intencional a nivel de software a un máximo de 30 nodos de trabajo (independientemente del tipo de nodo) y a un almacenamiento persistente global de 50 TiB. Si estas limitaciones son críticas para su proyecto, póngase en contacto con el soporte.*
 
 3. *Cada nodo de trabajo incluye 512 GB de almacenamiento flash en bloque, lo que representa 1,5 TB por unidad de obra (1 nodo por AZ).*
 
-4. *Un nodo de trabajo puede gestionar hasta 250 pods por defecto. Este número es ajustable mediante el parámetro podsPerCore; por ejemplo, con 10 pods por núcleo en un nodo de 4 núcleos, se alcanzarían un máximo de 40 pods. Para más detalles técnicos, consulte la [documentación sobre gestión de pods](https://docs.openshift.com/container-platform/4.16/nodes/nodes/nodes-nodes-managing-max-pods.html) y la [guía de límites de OpenShift](https://docs.openshift.com/container-platform/4.16/scalability_and_performance/planning-your-environment-according-to-object-maximums.html).*
+4. *Un nodo de trabajo puede gestionar hasta 250 pods por defecto. Este número es ajustable mediante el parámetro podsPerCore — por ejemplo, con 10 pods por núcleo en un nodo de 4 núcleos, se alcanzarían un máximo de 40 pods. Para más detalles técnicos, consulte la [documentación sobre gestión de pods](https://docs.openshift.com/container-platform/4.16/nodes/nodes/nodes-nodes-managing-max-pods.html) y la [guía de límites de OpenShift](https://docs.openshift.com/container-platform/4.16/scalability_and_performance/planning-your-environment-according-to-object-maximums.html).*
 
-5. *La oferta PaaS de OpenShift incluye de forma nativa el acceso a las 3 zonas de disponibilidad, sin necesidad de suscribirse adicionalmente a ellas.*
+5. *La oferta PaaS de OpenShift incluye de forma nativa el acceso a las 3 zonas de disponibilidad, sin necesidad de suscribirse a ellas adicionalmente.*
 
 6. *Es posible añadir posteriormente almacenamiento en bloque al clúster de OpenShift.*
 
@@ -104,50 +104,50 @@ The platform is a RedHat OpenShift 4 based on [RedHat OpenShift Platform Plus](h
 
 ## Estrategia de copia de seguridad de su plataforma PaaS OpenShift
 
-La copia de seguridad y recuperación de la plataforma PaaS OpenShift es responsabilidad de Cloud Temple para la parte **ETCD**, en virtud de la gestión de la plataforma. **La copia de seguridad y recuperación de la parte de despliegue y datos aplicativos es responsabilidad del Cliente**.
+La copia de seguridad y recuperación de la plataforma PaaS OpenShift es responsabilidad de Cloud Temple para la parte **ETCD**, en virtud de la gestión de la plataforma. **La copia de seguridad y recuperación de la parte de despliegue y datos aplicativos es responsabilidad del Comitente**.
 
-Cloud Temple pone a disposición de sus clientes la solución **Veeam Kasten K10** (Veeam [**Kasten K10**](https://www.veeam.com/es/kubernetes-native-backup-and-restore.html)), plataforma especializada en gestión de datos para entornos Kubernetes. Diseñada para responder a las necesidades de protección de datos, ofrece funciones robustas para copia de seguridad, recuperación, migración y recuperación ante desastres. Kasten K10 se integra de forma nativa en entornos Kubernetes, ya sean gestionados en clusters en la nube o en sitio, y puede adaptarse a diversos escenarios de uso, incluida la migración de clusters entre diferentes distribuciones Kubernetes como Kubernetes Vanilla, VMware Tanzu, Red Hat Kubernetes Engine y Red Hat OpenShift.
+Cloud Temple pone a disposición de sus clientes la oferta **Veeam Kasten K10** (Veeam [**Kasten K10**](https://www.veeam.com/fr/kubernetes-native-backup-and-restore.html)), plataforma especializada en gestión de datos para entornos Kubernetes. Diseñada para responder a las necesidades de protección de datos, ofrece funciones robustas para copia de seguridad, recuperación, migración y recuperación ante desastres. Kasten K10 se integra de forma nativa en entornos Kubernetes, ya sean gestionados en clusters en la nube o en sitio, y puede adaptarse a diferentes casos de uso, especialmente la migración de clusters entre distintas distribuciones Kubernetes como Kubernetes Vanilla, VMware Tanzu, Red Hat Kubernetes Engine y Red Hat OpenShift.
 
-Uno de los usos principales de Kasten K10 es **la migración de clusters entre distintas plataformas Kubernetes**. Ya sea para transitar hacia una infraestructura más robusta o para consolidar entornos existentes, Kasten K10 ofrece herramientas sencillas y eficientes para gestionar estas migraciones:
+Uno de los usos principales de Kasten K10 es **la migración de clusters entre distintas plataformas Kubernetes**. Ya sea para una transición hacia una infraestructura más robusta o para consolidar entornos existentes, Kasten K10 ofrece herramientas sencillas y eficaces para gestionar estas migraciones:
 
  - **Copia de seguridad y protección de datos**: durante la migración de un cluster Kubernetes Vanilla o VMware Tanzu hacia Red Hat Kubernetes Engine o OpenShift, la primera etapa consiste en realizar una copia de seguridad de los datos de las aplicaciones y sus estados. Kasten K10 se integra fácilmente con las API de Kubernetes para identificar las aplicaciones, sus dependencias y los volúmenes de datos asociados. Esto incluye la copia de seguridad de volúmenes persistentes (Persistent Volumes - PV), bases de datos, configuraciones y secretos. Kasten K10 soporta una amplia variedad de proveedores de almacenamiento (S3, Google Cloud Storage, Azure Blob Storage, etc.), lo que permite crear instantáneas de las aplicaciones a migrar. Estas copias de seguridad se almacenan de forma segura con opciones de cifrado y control de acceso granular, garantizando la seguridad de los datos durante todo el proceso.
 
- - **Portabilidad y migración**: la migración entre distribuciones Kubernetes como Vanilla o Tanzu y soluciones Red Hat como OpenShift o Kubernetes Engine puede ser compleja debido a las diferencias arquitectónicas y a las configuraciones específicas de cada plataforma. Kasten K10 simplifica este proceso proporcionando una capa de abstracción para la portabilidad de aplicaciones. Durante la migración, Kasten K10 replica las configuraciones y datos de un cluster origen hacia un cluster destino, teniendo en cuenta las particularidades de cada entorno. Por ejemplo, objetos Kubernetes como ConfigMaps, Secrets, PVs y CRDs (Custom Resource Definitions) pueden migrarse considerando las restricciones propias de cada distribución Kubernetes, ya sea un cluster Red Hat OpenShift o Kubernetes Engine. El proceso es automatizado, lo que reduce considerablemente el riesgo de errores manuales. Además, Kasten K10 permite migraciones progresivas o completas, según las necesidades, y ofrece visibilidad en tiempo real sobre el estado de la migración, facilitando así la gestión y supervisión de la transición.
+ - **Portabilidad y migración**: la migración entre distribuciones Kubernetes como Vanilla o Tanzu y soluciones Red Hat como OpenShift o Kubernetes Engine puede ser compleja debido a las diferencias arquitectónicas y a las configuraciones específicas de cada plataforma. Kasten K10 simplifica este proceso proporcionando una capa de abstracción para la portabilidad de aplicaciones. Durante la migración, Kasten K10 replica las configuraciones y datos de un cluster origen hacia un cluster destino, teniendo en cuenta las particularidades de cada entorno. Por ejemplo, objetos Kubernetes como ConfigMaps, Secrets, PVs y CRDs (Custom Resource Definitions) pueden migrarse considerando las restricciones propias de cada distribución Kubernetes, ya sea un cluster Red Hat OpenShift o Kubernetes Engine. El proceso es automatizado, lo que reduce considerablemente el riesgo de errores manuales. Además, Kasten K10 permite una migración progresiva o completa, según las necesidades, y ofrece visibilidad en tiempo real sobre el estado de la migración, facilitando así la gestión y supervisión de la transición.
 
  - **Compatibilidad multi-nube y multi-distribución**: Kasten K10 está diseñado para funcionar en entornos híbridos y multi-nube, lo que lo convierte en una herramienta ideal para organizaciones que buscan migrar aplicaciones de clusters Tanzu o Vanilla hacia entornos Red Hat en la nube (Cloud Temple, Amazon EKS, Azure AKS, Google GKE) o en infraestructuras locales. Esto garantiza una flexibilidad máxima y permite a los equipos DevOps elegir el mejor entorno según sus necesidades empresariales o estrategias de modernización de infraestructura.
 
- - **Gestión simplificada y automatización**: Kasten K10 ofrece una interfaz de usuario intuitiva que permite a los administradores gestionar fácilmente las operaciones de migración y copia de seguridad sin necesidad de una experiencia profunda en cada plataforma Kubernetes. La solución también incluye funciones de automatización que permiten definir políticas recurrentes de migración y copia de seguridad, integrándose con los pipelines CI/CD para operaciones continuas. Los usuarios pueden programar migraciones o recuperaciones según ventanas de mantenimiento, realizar pruebas de validación tras la migración y automatizar procesos de failover en caso de problemas en el cluster origen.
+ - **Gestión simplificada y automatización**: Kasten K10 ofrece una interfaz de usuario intuitiva que permite a los administradores gestionar fácilmente las operaciones de migración y copia de seguridad sin necesidad de una experiencia profunda en cada plataforma Kubernetes. La solución también incluye funciones de automatización que permiten definir políticas recurrentes de migración y copia de seguridad, integrándose en los pipelines CI/CD para operaciones continuas. Los usuarios pueden programar migraciones o recuperaciones según ventanas de mantenimiento, realizar pruebas de validación tras la migración y automatizar procesos de failover en caso de problemas en el cluster origen.
 
- - **Seguridad y cumplimiento**: en el contexto de migraciones hacia entornos críticos como Red Hat OpenShift o Kubernetes Engine, la seguridad de los datos y el cumplimiento con normativas (ISO, SOC, GDPR, etc.) son aspectos esenciales. Kasten K10 garantiza el cifrado de datos en tránsito y en reposo, además de ofrecer opciones de auditoría y trazabilidad de las operaciones de copia de seguridad y recuperación. Estas capacidades son fundamentales para asegurar la seguridad de los datos migrados, ya sea en entornos de producción o de prueba. Kasten K10 es una solución imprescindible para empresas que desean migrar de forma eficiente y segura clusters Kubernetes Vanilla o VMware Tanzu hacia Red Hat Kubernetes Engine o OpenShift.
+ - **Seguridad y cumplimiento**: en el marco de migraciones hacia entornos críticos como Red Hat OpenShift o Kubernetes Engine, la seguridad de los datos y el cumplimiento con normativas (ISO, SOC, GDPR, etc.) son aspectos esenciales. Kasten K10 garantiza el cifrado de datos en tránsito y en reposo, además de ofrecer opciones de auditoría y trazabilidad de las operaciones de copia de seguridad y recuperación. Estas capacidades son fundamentales para asegurar la seguridad de los datos migrados, ya sea en entornos de producción o de prueba. Kasten K10 es una solución imprescindible para empresas que desean migrar de forma eficiente y segura clusters Kubernetes Vanilla o VMware Tanzu hacia Red Hat Kubernetes Engine o OpenShift.
 
  La facturación se realiza según el número de nodos worker.
 
-| Unidades de obra Redhat Openshift 4 with Data Foundations - Solución de copia de seguridad para nodos worker | Unidad     | SKU                         |
+| Unidades de obra Redhat Openshift 4 with Data Foundations - Solución de copia de seguridad para nodo worker | Unidad     | SKU                         |
 | :---------------------------------------------------------------------------------------------------- | :-------- | :-------------------------- |
-| VEEAM - KASTEN K10 - Protección de datos Kubernetes y movilidad de aplicaciones                            | 3 nodos   | csp:fr1:paas:kasten:3wkr:v1 |
+| VEEAM - KASTEN K10 - Protección de datos Kubernetes y movilidad de aplicaciones                              | 3 nodos   | csp:fr1:paas:kasten:3wkr:v1 |
 
-**Nota**: *Atención, la capacidad de almacenamiento necesaria para el correcto funcionamiento de su copia de seguridad debe preverse en el entorno de recepción de la copia de seguridad, generalmente en almacenamiento S3. No está incluida en las unidades de obra de OpenShift ni de Kasten.*
+**Nota**: *Atención, la volumetría de disco necesaria para el correcto funcionamiento de su copia de seguridad debe preverse en el entorno de recepción de la copia de seguridad, generalmente en almacenamiento S3. No está incluida en las unidades de obra de OpenShift ni de Kasten.*
 
 **(1)** _OADP no está instalado de forma nativa en el cluster. Solo Kasten está activado para la gestión de migraciones, copias de seguridad y recuperación_
 
-## Load balancers
+## Balanceadores de carga
 
-The **SecNumCloud OpenShift** environment offers load balancing solutions tailored to multiple functional scopes, ensuring secure and optimized traffic management.
+El entorno **SecNumCloud OpenShift** ofrece soluciones de distribución de carga adaptadas a varios perfiles funcionales, garantizando una gestión segura y optimizada del tráfico.
 
-The load balancers cover four distinct scopes, leveraging different layers of the OSI model:
+Los balanceadores de carga cubren cuatro perfiles distintos, apoyándose en diferentes niveles del modelo OSI:
 
-- **Access to administration tools** (API server and OpenShift console)  
-- **Public HTTP/HTTPS traffic**  
-- **Private HTTP/HTTPS traffic**  
-- **Specific traffic requiring advanced customization**
+- **Acceso a las herramientas de administración** (servidor API y consola OpenShift)
+- **Tráfico HTTP/HTTPS público**
+- **Tráfico HTTP/HTTPS privado**
+- **Tráfico específico que requiere una personalización avanzada**
 
 ### Access to administration tools
 
-Access to administration tools is secured by dedicated load balancers. These are protected by enhanced security controls, including a manageable whitelist via the **Cloud Temple** console, ensuring strict access management.
+Access to administration tools is secured by dedicated load balancers. These are protected by enhanced security controls, including a manageable whitelist accessible via the **Cloud Temple** console, ensuring strict access management.
 
 ### Tráfico HTTP/HTTPS público
 
-Los **LoadBalancers públicos**, basados en **HAProxy**, funcionan al nivel **4** del modelo OSI. Permiten exponer sus cargas de trabajo en **HTTP/HTTPS** mediante **rutas** e **ingress**, asegurando así una distribución eficiente y óptima del tráfico entrante.
+Los **LoadBalancers públicos**, basados en **HAProxy**, funcionan a nivel **4** del modelo OSI. Permiten exponer sus cargas de trabajo en **HTTP/HTTPS** mediante **rutas** e **ingress**, asegurando así una distribución eficiente y óptima del tráfico entrante.
 
 ### Tráfico HTTP/HTTPS privado (Interconexión con sus servicios IaaS SNC)
 
@@ -157,9 +157,9 @@ Los **LoadBalancers privados** facilitan la comunicación con sus servicios **Ia
 
 El **tráfico específico** se gestiona a través del LoadBalancer **MetalLB**. Soporta necesidades avanzadas que requieren una personalización fina, por ejemplo:
 
-- La conexión a una base de datos mediante **TCP**
-- La gestión de flujos **UDP** para aplicaciones en tiempo real o de baja latencia
-- El enrutamiento de protocolos avanzados como **QUIC** o **MQTT-SN**, ofreciendo así una mayor flexibilidad
+- Conexión a una base de datos mediante **TCP**
+- Gestión de flujos **UDP** para aplicaciones en tiempo real o de baja latencia
+- Enrutamiento de protocolos avanzados como **QUIC** o **MQTT-SN**, ofreciendo así una mayor flexibilidad
 
 Esta solución permite gestionar sus flujos específicos, tanto para sus interconexiones privadas como para sus necesidades de exposición pública.
 
@@ -168,48 +168,48 @@ El enrutamiento se realiza mediante **direcciones IP públicas y privadas dedica
 - **4 direcciones IP públicas**
 - **254 direcciones IP privadas**
 
-Si estos recursos no son suficientes para soportar su carga de trabajo, puede realizar una solicitud a nuestros servicios para obtener direcciones IP adicionales, ya sean **públicas** o **privadas**.
+Si estos recursos no son suficientes para soportar sus cargas de trabajo, puede realizar una solicitud a nuestros servicios para obtener direcciones IP adicionales, ya sean **públicas** o **privadas**.
 
-> **A tener en cuenta**: Los LoadBalancers integrados no actúan como **WAF**. Próximamente estará disponible una solución **WAF as a Service**.
+> **A tener en cuenta**: Los LoadBalancers integrados no funcionan como **WAF**. Próximamente estará disponible una solución **WAF as a Service**.
 
-## Derechos y permisos
+## Rights and Permissions
 
-A continuación se muestran los permisos principales implementados:
+Here are the main permissions implemented:
 
-| Grupo | API | Recursos y permisos |
-|------|-----|---------------------|
-| Core | ("")/Apps | ConfigMaps, Endpoints, PersistentVolumeClaims, Pods, ReplicationControllers, Secrets, Services, DaemonSets, Deployments, ReplicaSets, StatefulSets, Create, Get, List, Watch, Update, Patch, Delete |
-| Core | ("") | Secrets Create |
-| config.kio.kasten.io | Profiles | Get, List, Watch, Create, Update, Patch, Delete |
-| config.kio.kasten.io | PolicyPresets, TransformSets, BlueprintBindings, StorageSecurityContexts, StorageSecurityContextBindings | Get, List |
-| config.kio.kasten.io | Todas | los recursos (*) Get, List |
-| Batch | CronJobs, Jobs | Create, Get, List, Watch, Update, Patch, Delete |
-| Autoscaling | HorizontalPodAutoscalers | Create, Get, List, Watch, Update, Patch, Delete |
-| Networking | Ingresses, NetworkPolicies | Create, Get, List, Watch, Update, Patch, Delete |
-| Policy | PodDisruptionBudgets | Create, Get, List, Watch, Update, Patch, Delete |
-| Route | (OpenShift) | Routes Create, Get, List, Watch, Update, Patch, Delete |
-| Build | (OpenShift) | BuildConfigs, Builds, BuildLogs Create, Get, List, Watch, Update, Patch, Delete |
-| Image | (OpenShift) | ImageStreams, ImageStreamTags Create, Get, List, Watch, Update, Patch, Delete |
-| Apps | (OpenShift) | DeploymentConfigs Create, Get, List, Watch, Update, Patch, Delete |
-| Template | (OpenShift) | Templates, TemplateInstances Create, Get, List, Watch, Update, Patch, Delete |
-| Authorization | Roles, RoleBindings | Create, Get, List, Watch, Update, Patch, Delete |
-| RBAC | Roles, RoleBindings | Create, Get, List, Watch, Update, Patch, Delete |
-| Project | (OpenShift) | Projects Get, Delete, Update, Patch |
-| Operators | Subscriptions, ClusterServiceVersions, CatalogSources, InstallPlans, OperatorGroups | Create, Get, List, Watch, Update, Patch, Delete |
-| Cert-Manager | Certificates, CertificateRequests, Issuers, ClusterIssuers | Create, Get, List, Watch, Update, Patch, Delete |
-| Logging | (OpenShift) | ClusterLogForwarders, ClusterLoggings Create, Get, List, Watch, Update, Patch, Delete |
-| Storage | VolumeSnapshots | Get, List, Watch, Create, Update, Patch, Delete |
-| Ceph | (Rook) | CephClusters, CephBlockPools, CephFilesystems, CephObjectStores Create, Get, List, Watch, Update, Patch, Delete |
-| NooBaa | BackingStores, BucketClasses, NooBaaAccounts | Create, Get, List, Watch, Update, Patch, Delete |
-| ObjectBucket | ObjectBucketClaims, ObjectBuckets | Create, Get, List, Watch, Update, Patch, Delete |
-| OCS | (OpenShift) | StorageClusters, StorageConsumers Create, Get, List, Watch, Update, Patch, Delete |
-| Local | Storage | LocalVolumes, LocalVolumeDiscoveries Create, Get, List, Watch, Update, Patch, Delete |
-| CSI | Addons | CSIAddonsNodes, NetworkFences Create, Get, List, Watch, Update, Patch, Delete |
-| Metrics | Pods, Nodes | Get |
-| Security | PodSecurityPolicyReviews | Create |
-| Custom | Resources | Diversos recursos personalizados relacionados con Kasten K10, Keycloak, etc. Create, Get, List, Watch, Update, Patch, Delete |
+|       Group        |         API          |                                                                                       Resource Permissions                                                                                       |
+|--------------------|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        Core        |       ("")/Apps      | ConfigMaps, Endpoints, PersistentVolumeClaims, Pods, ReplicationControllers, Secrets, Services, DaemonSets, Deployments, ReplicaSets, StatefulSets, Create, Get, List, Watch, Update, Patch, Delete |
+|        Core        |          ("")        |                                                                                           Secrets Create                                                                                           |
+| config.kio.kasten.io|        Profiles        |                                                                          Get, List, Watch, Create, Update, Patch, Delete                                                                           |
+| config.kio.kasten.io|     PolicyPresets,     |                                                TransformSets, BlueprintBindings, StorageSecurityContexts, StorageSecurityContextBindings Get, List                                                 |
+| config.kio.kasten.io|         All          |                                                                                    all resources (*) Get, List                                                                                    |
+|       Batch        |       CronJobs,        |                                                                        Jobs Create, Get, List, Watch, Update, Patch, Delete                                                                        |
+|    Autoscaling     | HorizontalPodAutoscalers|                                                                          Create, Get, List, Watch, Update, Patch, Delete                                                                           |
+|     Networking     |       Ingresses,       |                                                                  NetworkPolicies Create, Get, List, Watch, Update, Patch, Delete                                                                   |
+|       Policy       |  PodDisruptionBudgets  |                                                                          Create, Get, List, Watch, Update, Patch, Delete                                                                           |
+|       Route        |      (OpenShift)       |                                                                       Routes Create, Get, List, Watch, Update, Patch, Delete                                                                       |
+|       Build        |      (OpenShift)       |                                                          BuildConfigs, Builds, BuildLogs Create, Get, List, Watch, Update, Patch, Delete                                                           |
+|       Image        |      (OpenShift)       |                                                           ImageStreams, ImageStreamTags Create, Get, List, Watch, Update, Patch, Delete                                                            |
+|        Apps        |      (OpenShift)       |                                                                 DeploymentConfigs Create, Get, List, Watch, Update, Patch, Delete                                                                  |
+|      Template      |      (OpenShift)       |                                                            Templates, TemplateInstances Create, Get, List, Watch, Update, Patch, Delete                                                            |
+|   Authorization    |         Roles,         |                                                                    RoleBindings Create, Get, List, Watch, Update, Patch, Delete                                                                    |
+|        RBAC        |         Roles,         |                                                                    RoleBindings Create, Get, List, Watch, Update, Patch, Delete                                                                    |
+|      Project       |      (OpenShift)       |                                                                                Projects Get, Delete, Update, Patch                                                                                 |
+|     Operators      |     Subscriptions,     |                                        ClusterServiceVersions, CatalogSources, InstallPlans, OperatorGroups Create, Get, List, Watch, Update, Patch, Delete                                        |
+|    Cert-Manager    |     Certificates,      |                                                    CertificateRequests, Issuers, ClusterIssuers Create, Get, List, Watch, Update, Patch, Delete                                                    |
+|      Logging       |      (OpenShift)       |                                                       ClusterLogForwarders, ClusterLoggings Create, Get, List, Watch, Update, Patch, Delete                                                        |
+|      Storage       |    VolumeSnapshots     |                                                                          Get, List, Watch, Create, Update, Patch, Delete                                                                           |
+|        Ceph        |         (Rook)         |                                          CephClusters, CephBlockPools, CephFilesystems, CephObjectStores Create, Get, List, Watch, Update, Patch, Delete                                           |
+|       NooBaa       |     BackingStores,     |                                                           BucketClasses, NooBaaAccounts Create, Get, List, Watch, Update, Patch, Delete                                                            |
+|    ObjectBucket    |  ObjectBucketClaims,   |                                                                   ObjectBuckets Create, Get, List, Watch, Update, Patch, Delete                                                                    |
+|        OCS         |      (OpenShift)       |                                                         StorageClusters, StorageConsumers Create, Get, List, Watch, Update, Patch, Delete                                                          |
+|       Local        |        Storage         |                                                        LocalVolumes, LocalVolumeDiscoveries Create, Get, List, Watch, Update, Patch, Delete                                                        |
+|        CSI         |         Addons         |                                                           CSIAddonsNodes, NetworkFences Create, Get, List, Watch, Update, Patch, Delete                                                            |
+|      Metrics       |         Pods,          |                                                                                             Nodes Get                                                                                              |
+|      Security      | PodSecurityPolicyReviews|                                                                                               Create                                                                                               |
+|       Custom       |       Resources        |                                       Various custom resources related to Kasten K10, Keycloak, etc. Create, Get, List, Watch, Update, Patch, Delete                                        |
 
-## Restricciones y requisitos de seguridad en OpenShift SecNumCloud
+## Restrictions and security requirements on OpenShift SecNumCloud
 
 ### Dedicated control plane
 
@@ -219,7 +219,7 @@ Running workloads on the **control plane** is strictly prohibited. This restrict
 
 To comply with the security requirements of the **SecNumCloud reference framework**, only **rootless containers** are allowed. This approach enhances security by preventing any privileged access to containers.
 
-Applications requiring elevated privileges must be adapted, as their deployment will not be authorized. This restriction also applies to **Helm Charts** and **operators** using non-rootless images, making their use incompatible with the infrastructure.
+Applications requiring elevated privileges must be adapted, as their deployment will not be permitted. This restriction also applies to **Helm Charts** and **operators** using non-rootless images, making their use incompatible with the infrastructure.
 
 ### Restrictions on ClusterRoles
 
@@ -231,7 +231,7 @@ Our support team is available to assist you in adapting your configurations and 
 
 ### Restrictions on Security Context Constraints (SCC)
 
-**Security Context Constraints (SCC)** are enforced and cannot be modified by users. As a result, container execution parameters (such as access privileges, Linux capabilities, etc.) are predefined and not customizable.
+**Security Context Constraints (SCC)** are enforced and cannot be modified by users. As a result, container execution parameters (access privileges, Linux capabilities, etc.) are predefined and non-customizable.
 
 This restriction aims to prevent unauthorized access to critical cluster resources. Applications requiring specific security contexts must be adapted to comply with the existing SCCs.
 
@@ -241,7 +241,7 @@ From an operational standpoint, this may require architectural adjustments and m
 
 To ensure **SecNumCloud compliance**, the use of **Custom Resource Definitions (CRDs)** and custom controllers is restricted.
 
-This measure, linked to cluster permissions, prevents the deployment of unauthorized resources that could impact the stability and security of the infrastructure. It also applies to **operators** and **Helm Charts**, with limitations on **RBAC** permissions.
+This measure, tied to cluster permissions, prevents the deployment of unauthorized resources that could impact the stability and security of the infrastructure. It also applies to **operators** and **Helm Charts**, with limitations on **RBAC** permissions.
 
 **Non-certified CRDs** may be rejected to ensure cluster integrity. Only **CRDs from certified operators or Helm Charts** are allowed after validation by our services.
 

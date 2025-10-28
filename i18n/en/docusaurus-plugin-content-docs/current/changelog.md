@@ -5,6 +5,12 @@ sidebar_position: 2
 
 # Change Tracking
 
+### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
+
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick-start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
+- **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
+- **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
+
 ### October 18, 2025: Maintenance and New Documentation
 
 - **LLMaaS**: Added a new FAQ entry to introduce the public status page ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), enabling real-time monitoring of the availability and performance of each model.
@@ -35,12 +41,12 @@ sidebar_position: 2
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 
-- Full test suite validation.
-- Correction and validation of RAG pipelines with FAISS and Qdrant.
-- Enhanced tutorials with more detailed technical explanations.
-- Added a section on prompt security and model lifecycle within the concepts.
-- Improved the RAG explanation page with diagrams and details on embedding models.
-- Updated API documentation, quick start guide, and service presentation.
-- Added pricing for the Audio Transcription endpoint.
-- Added the projected model lifecycle roadmap.
-- Added the responsibility matrix for the LLMaaS offering.
+- Completion and validation of the full test suite.
+- Correction and validation of RAG pipelines using FAISS and Qdrant.
+- Enhancement of tutorials with more detailed technical explanations.
+- Addition of a section on prompt security and model lifecycle within the concepts.
+- Improvement of the RAG explanation page with diagrams and details on embedding models.
+- Update of the API documentation, quick start guide, and service presentation.
+- Addition of pricing for the Audio Transcription endpoint.
+- Incorporation of the projected model lifecycle roadmap.
+- Addition of the responsibility matrix for the LLMaaS offering.

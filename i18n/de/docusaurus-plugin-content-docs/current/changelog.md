@@ -5,7 +5,13 @@ sidebar_position: 2
 
 # Change Tracking
 
-### 18 October 2025: Maintenance and New Documentation
+### 28 October 2025: New Managed Kubernetes Documentation and Various Improvements
+
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes an overview of the service, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. The content has been enriched to better meet the expectations of different user profiles.
+- **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
+- **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
+
+### October 18, 2025: Maintenance and New Documentation
 
 - **LLMaaS**: Added a new question to the FAQ to introduce the public status page ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), enabling real-time monitoring of the availability and performance of each model.
 - **Contractual**: Major update to the Data Processing Agreement (DPA v2) to reflect the latest legal and compliance requirements.
@@ -36,7 +42,7 @@ sidebar_position: 2
 ### June 29, 2025: Finalization of LLMaaS Documentation
 
 - Completion and validation of the full test suite.
-- Correction and validation of RAG pipelines using FAISS and Qdrant.
+- Correction and validation of RAG pipelines with FAISS and Qdrant.
 - Enhancement of tutorials with more detailed technical explanations.
 - Addition of a section on prompt security and model lifecycle within the concepts.
 - Improvement of the RAG explanation page with diagrams and details on embedding models.

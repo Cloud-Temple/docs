@@ -58,7 +58,7 @@ const sidebars: SidebarsConfig = {
         'console/iam/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'IAM Tutorials',
           items: [
             'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
@@ -103,7 +103,7 @@ const sidebars: SidebarsConfig = {
         'marketplace/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'Marketplace Tutorials',
           items: [
             'marketplace/tutorials/deploy_openiaas',
             'marketplace/tutorials/deploy_vmware',
@@ -143,7 +143,7 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'OpenSource Tutorials',
           items: [
             {
               type: 'category',
@@ -166,7 +166,7 @@ const sidebars: SidebarsConfig = {
         'iaas_vmware/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'VMware Tutorials',
           items: [
             {
               type: 'category',
@@ -185,30 +185,40 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'PaaS Openshift',
+      label: 'Containers',
+      link: {
+        type: 'doc',
+        id: 'containers_overview',
+      },
       items: [
-        'paas_openshift/paas_openshift',
-        'paas_openshift/concepts',
-        'paas_openshift/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'PaaS Openshift',
+          items: [
+            'paas_openshift/paas_openshift',
+            'paas_openshift/concepts',
+            'paas_openshift/quickstart',
+        {
+          type: 'category',
+          label: 'Openshift Tutorials',
           items: [
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
           ]
         }
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Managed Kubernetes',
-      items: [
-        'managed_kubernetes/managed_kubernetes',
-        'managed_kubernetes/concepts',
-        'managed_kubernetes/quickstart',
-        'managed_kubernetes/tutorials',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Managed Kubernetes',
+          items: [
+            'managed_kubernetes/managed_kubernetes',
+            'managed_kubernetes/concepts',
+            'managed_kubernetes/quickstart',
+            'managed_kubernetes/tutorials',
+          ],
+        },
       ],
     },
     {
@@ -248,7 +258,7 @@ const sidebars: SidebarsConfig = {
             'network/internet/quickstart',
             {
               type: 'category',
-              label: 'Tutorials',
+              label: 'Internet Tutorials',
               items: [
                 'network/internet/tutorials/forti',
                 'network/internet/tutorials/pfSense',
@@ -271,7 +281,7 @@ const sidebars: SidebarsConfig = {
             'storage/oss/quickstart',
             {
               type: 'category',
-              label: 'Tutoriels',
+              label: 'Object Storage Tutorials',
               link: {
                 type: 'doc',
                 id: 'storage/oss/tutorials',
@@ -316,7 +326,8 @@ const sidebars: SidebarsConfig = {
         'contractual/iaas/raci_s3',
         'contractual/paas/raci',
         'contractual/paas/raci_ocp_std',
-        'contractual/llmaas/raci'
+        'contractual/llmaas/raci',
+        'contractual/kubernetes/raci'
       ],
     },
   ],
