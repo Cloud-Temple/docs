@@ -31,6 +31,8 @@ Dopo aver inserito l'azienda, fate clic su __'Accedi'__.
 Vi verrà quindi reindirizzati a una pagina in cui vi verrà chiesto di autenticarvi.  
 Dopo aver effettuato l'accesso, arriverete a questa pagina.
 
+Vi troverete tutte le metriche riguardanti i prodotti sottoscritti nel vostro perimetro. In caso di problema/i sui vostri prodotti VMware e/o OpenIaaS, saranno visibili degli avvisi, il colore è legato alla loro importanza.
+
 <img src={shivaHome} />
 
 ## Gestione della lingua
