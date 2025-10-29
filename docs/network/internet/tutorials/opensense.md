@@ -29,7 +29,7 @@ _Pour le déploiement, nous utiliserons une architecture à deux machines virtue
 
 # Récupérer ses informations de connection internet  
 
-Avant de procéder au déploiement d'OPNsense, il est essentiel de récupérer l'ensemble des paramètres de connectivité fournis par Cloud Temple depuis l'interface **Shiva.**  
+Avant de procéder au déploiement d'OPNsense, il est essentiel de récupérer l'ensemble des paramètres de connectivité fournis par Cloud Temple selon la livraison de votre connection Internet en **IPV4** ou en **IPV6**  depuis l'interface **Shiva.**  
 
 _Pour établir une session BGP fonctionnelle avec OPNsense, vous devez disposer des éléments suivants_ :
 
@@ -47,10 +47,6 @@ _Pour établir une session BGP fonctionnelle avec OPNsense, vous devez disposer 
 
 # Étapes de déploiement
 1. Installation du firewall depuis le template OPNsense disponible dans **Shiva**  
-
-_Deux options s'offrent à vous_:  
-> Déployer via la console  
-> Déployer via Terraform
 
 2. Configuration de l'interfaces LAN du firewall  
 _Consultez l'étape suivante "Configuration de l'interface LAN du firewall"_
@@ -71,12 +67,14 @@ Il convient maintenant de mettre une machine virtuelle avec interface graphique 
 > Accédez à l'interface web du firewall depuis la machine virtuelle graphique en tapant l'adresse IP du firewall dans un navigateur.
 ![Login screen](/img/screenshots/login.png)
 
-> **Note** : Identifiants par défaut  
-> Username : root  
-> Password : opnsense 
+<div align="center">
+ *Identifiants par défaut*  
+ Username : **root**  
+ Password : **opnsense**  
+  
+*Important : Pensez à changer le mot de passe après la première connexion.*
 
-
-> Important : Pensez à changer le mot de passe par défaut après la première connexion.
+</div>
 
 # Configuration du firewall partie WAN
 ## Étape 1 : Configuration de la passerelle
@@ -93,11 +91,12 @@ Choisir sur la gauche "Routing > General" qui va nous permettre de fournir les i
 ![General ](/img/screenshots/general.png)
 
 
-Il faut ensuite renseigner les informations de connexion vers nos serveurs de routes disponible depuis Shiva :
+> Il faut ensuite renseigner les informations de connexion vers nos serveurs de routes disponible depuis Shiva :
 
-Les adresses IP des serveurs de routes  
-Le numéro d'AS partenaire  
-> Cochez le multi-hop car la destination est à plus d'un saut et les sessions eBGP ont par défaut un TTL de 1
+> Les adresses IP des serveurs de routes  
+> Le numéro d'AS partenaire  
+  
+> **Cochez la case multi-hop** car la destination est à plus d'un saut et les sessions eBGP ont par défaut un TTL de 1
 
 ![PEER1](/img/screenshots/peer1.png)
 ![PEER2](/img/screenshots/peer2.png)
@@ -124,7 +123,9 @@ Pour annoncer son préfixe public, il faut l'annoncer en route statique en rense
 ![blackhole](/img/screenshots/blackhole.png)
 
 # Règles NAT
+
 Enfin, des règles doivent être rentrées manuellement pour :  
+
 > Ne pas faire du NAT avec les PEER BGP (à faire en premier)  
 ![Rule1](/img/screenshots/rule1.png)
 
