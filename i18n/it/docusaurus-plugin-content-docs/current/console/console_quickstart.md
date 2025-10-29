@@ -124,7 +124,7 @@ Ecco una presentazione dei diversi moduli disponibili. Nuovi moduli arricchiscon
 - __Servizi gestiti__: dà accesso al monitoraggio delle vostre __richieste di supporto__ e alla metrologia dei servizi,
 - __IaaS__: permette la __gestione delle infrastrutture IaaS VMware__ (Macchine virtuali, cluster, hypervisor, replicazioni, backup, ...),
 - __OpenIaaS__: permette la __gestione delle risorse Xen Orchestra__ (Macchine virtuali, backup, ...),
-- __OpenShift__: permette la gestione della vostra **architettura PaaS RedHat Openshift** e la gestione dei vostri container sulle 3 zone di disponibilità della piattaforma,
+- __OpenShift__: permette la gestione della vostra **architettura PaaS RedHat OpenShift** e la gestione dei vostri container sulle 3 zone di disponibilità della piattaforma,
 - __Bastion__: Permette di distribuire e gestire appliance bastion SSH/RDP nelle vostre reti,
 - __Rete__: permette la gestione delle __reti di livello 2 e 3__, degli __IP pubblici__ e dei vostri __circuiti di telecomunicazione__,
 - __Colocation__: Offre la vista sugli equipaggiamenti situati in zona di __colocation condivisa o dedicata__,

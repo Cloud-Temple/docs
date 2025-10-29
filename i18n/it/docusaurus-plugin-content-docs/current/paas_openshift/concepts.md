@@ -103,7 +103,7 @@ Red Hat OpenShift Cloud Temple products are available for usage-based or 12-mont
 
 ### Offerta RedHat fornita all'interno della piattaforma OpenShift Cloud Temple
 
-La piattaforma si basa su Redhat Openshift 4, integrata con [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) e include [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+La piattaforma si basa su Redhat OpenShift 4, integrata con [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) e include [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={oshiftOffer} />
 
@@ -127,7 +127,7 @@ A primary use case for Kasten K10 is **Kubernetes cluster migration across diffe
 
 Billing is based on worker nodes:
 
-| Unit of Work - Redhat Openshift 4 with Data Foundations Backup Solution | Unit       | SKU                                                                   |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit       | SKU                                                                   |
 | :-------------------------------------------------------------------- | :-------- | :------------------------------------------------------------ |
 | VEEAM - KASTEN K10 - Kubernetes data protection and application mobility | 3 workers  | csp:fr1:paas:kasten:3wkr:v1                               |
 

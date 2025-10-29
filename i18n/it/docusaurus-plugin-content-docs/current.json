@@ -47,9 +47,9 @@
     "message": "Backup",
     "description": "The label for category Backup in sidebar docSidebar"
   },
-  "sidebar.docSidebar.category.PaaS Openshift": {
-    "message": "PaaS Openshift",
-    "description": "The label for category PaaS Openshift in sidebar docSidebar"
+  "sidebar.docSidebar.category.PaaS OpenShift": {
+    "message": "PaaS OpenShift",
+    "description": "The label for category PaaS OpenShift in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Security": {
     "message": "Sicurezza",

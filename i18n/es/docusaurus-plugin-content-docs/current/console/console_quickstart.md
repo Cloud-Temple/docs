@@ -124,7 +124,7 @@ Aquí hay una presentación de los diferentes módulos disponibles. Nuevos módu
 - __Gestión__ : da acceso al seguimiento de sus __solicitudes de soporte__ y a la __metrología de los servicios__,
 - __IaaS__ : permite el __piloto de infraestructuras IaaS VMware__ (Máquinas virtuales, clústeres, hipervisores, replicaciones, copias de seguridad, ...),
 - __OpenIaaS__ : permite el __piloto de recursos Xen Orchestra__ (Máquinas virtuales, copias de seguridad, ...),
-- __OpenShift__ : permite el piloto de su **arquitectura PaaS RedHat Openshift** y la gestión de sus contenedores en las 3 zonas de disponibilidad de la plataforma.
+- __OpenShift__ : permite el piloto de su **arquitectura PaaS RedHat OpenShift** y la gestión de sus contenedores en las 3 zonas de disponibilidad de la plataforma.
 - __Bastión__ : Permite desplegar y pilotar appliances bastión SSH/RDP en sus redes,
 - __Red__ : permite el piloto de los __redes de nivel 2 y 3__, de las __IP públicas__ y de sus __circuitos de telecomunicaciones__,
 - __Colocación__ : Ofrece la vista sobre los equipos ubicados en zona de __colocación compartida o dedicada__,

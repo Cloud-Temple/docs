@@ -156,7 +156,7 @@ Hier sind die definierten Limits:
 | IaaS VMware | 25 A/s |
 | OpenIaaS | 25 A/s |
 | S3 | 25 A/s |
-| Openshift | 25 A/s |
+| OpenShift | 25 A/s |
 | Bastion | 25 A/s |
 | Netzwerk | 25 A/s |
 | Hosting | 25 A/s |

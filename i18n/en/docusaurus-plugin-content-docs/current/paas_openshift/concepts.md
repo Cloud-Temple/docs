@@ -100,9 +100,9 @@ Red Hat OpenShift Cloud Temple products are available for usage-based or 12-mont
 
 7. *Nodes are deployed evenly across the three availability zones (1 node per zone). It's not possible to unbalance a cluster by assigning more nodes to a single zone.*
 
-### RedHat Offer Deployed on Openshift Cloud Temple Platform
+### RedHat Offer Deployed on OpenShift Cloud Temple Platform
 
-The platform is a Redhat Openshift 4, built upon [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) and includes [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+The platform is a Redhat OpenShift 4, built upon [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) and includes [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={oshiftOffert} alt="RedHat Offer" />
 
@@ -126,7 +126,7 @@ A major use case for Kasten K10 is **Kubernetes cluster migration across differe
 
 Billing is based on worker nodes:
 
-| Unit of Work - Redhat Openshift 4 with Data Foundations Backup Solution | Unit       | SKU                         |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit       | SKU                         |
 | :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
 | VEEAM - KASTEN K10 - Kubernetes data protection and application mobility              | 3 workers | csp:fr1:paas:kasten:3wkr:v1 |
 

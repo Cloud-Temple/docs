@@ -183,7 +183,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'PaaS Openshift',
+      label: 'PaaS OpenShift',
       items: [
         'paas_openshift/paas_openshift',
         'paas_openshift/concepts',
