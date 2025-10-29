@@ -93,9 +93,9 @@ Die Produkte Red Hat OpenShift von Cloud Temple sind sowohl auf Zeitabhängigkei
 
 7. *Die Arbeitsnachrichten werden gleichmäßig auf die drei Verfügbarkeitszonen verteilt (ein Nachrichtenblock pro Zone). Es ist nicht möglich, ein Cluster zu ungleichmäßigen zu verteilen, indem man mehrere Nachrichtenblöcke einer Zone zugewiesen wird.*
 
-### Offre RedHat imballée dans le cadre de la plateforme Openshift Cloud Temple
+### Offre RedHat imballée dans le cadre de la plateforme OpenShift Cloud Temple
 
-La plateforme est une Redhat Openshift 4, basée sur [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) et inclut [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+La plateforme est une Redhat OpenShift 4, basée sur [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) et inclut [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 ![Offre RedHat OpenShift](./images/oshift_offert.png)
 
@@ -119,7 +119,7 @@ A major usage scenario for Kasten K10 is **data cluster migration across differe
 
 Billing is based on worker nodes:
 
-| Unit of Work - Redhat Openshift 4 with Data Foundations Backup Solution | Unit       | SKU                         |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit       | SKU                         |
 | :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
 | VEEAM - KASTEN K10 - Kubernetes data protection and application mobility              | 3 workers | csp:fr1:paas:kasten:3wkr:v1 |
 

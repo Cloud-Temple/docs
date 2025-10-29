@@ -2,7 +2,7 @@
 title: conceptos
 ---
 
-import oshiftOferta from './images/oshift_oferta.png'
+import oshiftOferta from './images/oshift_offert.png'
 
 ## Presentación de RedHat OpenShift
 
@@ -101,9 +101,9 @@ Red Hat OpenShift Cloud Temple products are available for usage-based or 12-mont
 
 7. *Nodes are deployed evenly across the three zones (1 node per zone). It's not possible to unbalance a cluster by assigning more nodes to a single zone.*
 
-### Oferta RedHat desplegada en la plataforma Openshift Cloud Temple
+### Oferta RedHat desplegada en la plataforma OpenShift Cloud Temple
 
-La plataforma se basa en Redhat Openshift 4, integrado con [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) y cuenta con [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+La plataforma se basa en Redhat OpenShift 4, integrado con [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) y cuenta con [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={oshiftOferta} />
 
@@ -127,7 +127,7 @@ A primary use case for Kasten K10 is **Kubernetes cluster migration across diffe
 
 Billing is based on worker nodes:
 
-| Unit of Work - Redhat Openshift 4 with Data Foundations Backup Solution | Unit | SKU                         |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit | SKU                         |
 | :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
 | VEEAM - KASTEN K10 - Kubernetes data protection and application mobility              | 3 workers | csp:fr1:paas:kasten:3wkr:v1 |
 

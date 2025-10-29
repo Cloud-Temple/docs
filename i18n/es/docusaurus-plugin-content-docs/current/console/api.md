@@ -158,7 +158,7 @@ Aquí están los límites definidos:
 | IaaS VMware | 25 s/s |
 | OpenIaaS | 25 s/s |
 | S3 | 25 s/s |
-| Openshift | 25 s/s |
+| OpenShift | 25 s/s |
 | Bastion | 25 s/s |
 | Red | 25 s/s |
 | Alojamiento | 25 s/s |

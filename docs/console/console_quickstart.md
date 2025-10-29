@@ -124,7 +124,7 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 - __Infogérance__ : donne accès au suivi de vos __demandes de support__ et à la __métrologie des services__,
 - __IaaS__ : permet le __pilotage des infrastructures IaaS VMware__ (Machines virtuelles, clusters, hyperviseurs, réplications, sauvegarde, ...),
 - __OpenIaaS__ : permet le __pilotage des ressources Xen Orchestra__ (Machines virtuelles, sauvegarde, ...),
-- __OpenShift__ : permet le pilotage de votre **architecture PaaS RedHat Openshift** et le management de vos containers sur les 3 zones de disponibilité de la plateforme.
+- __OpenShift__ : permet le pilotage de votre **architecture PaaS RedHat OpenShift** et le management de vos containers sur les 3 zones de disponibilité de la plateforme.
 - __Bastion__ : Permet de déployer et de piloter des appliances bastion SSH/RDP dans vos réseaux,
 - __Réseau__ : permet le pilotage des __réseaux de niveau 2 et 3__, des __IP publiques__ et de vos __circuits télécoms__,
 - __Colocation__ : Offre la vue sur les équipements situés en zone de __collocation mutualisée ou dédiée__,
