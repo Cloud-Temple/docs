@@ -216,7 +216,15 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/managed_kubernetes',
             'managed_kubernetes/concepts',
             'managed_kubernetes/quickstart',
-            'managed_kubernetes/tutorials',
+            {
+          type: 'category',
+          label: 'MK Tutorials',
+          items: [
+            'managed_kubernetes/tutorials/firstdeploy',
+            'managed_kubernetes/tutorials/networking',
+            'managed_kubernetes/tutorials/usingcapsule',
+          ],
+        },
           ],
         },
       ],

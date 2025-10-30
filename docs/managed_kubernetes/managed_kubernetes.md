@@ -22,7 +22,7 @@ title: Vue d'ensemble
   </div>
 </div>
 
-Managed Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs basée sur des produits OpenSources et conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple (VMware ou OpenIaaS) entièrement dédié au client.
+Managed Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs basée sur des produits OpenSources et conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple OpenIaaS entièrement dédié au client.
 
 Cette offre est conçue pour les experts Kubernetes et les adeptes de l'open source qui recherchent une solution native, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
@@ -47,20 +47,21 @@ La solution inclut nativement une stack complète et cohérente d'outils open so
 
 Nous proposons deux architectures distinctes pour répondre à vos besoins, que ce soit pour des environnements de développement ou de production critiques.
 
-### Architecture Mono-AZ (Développement et Test)
+### Architecture "Dev/Test"
 
 Idéale pour les environnements hors production, cette architecture compacte déploie toutes les ressources au sein d'une seule zone de disponibilité (AZ). Elle est conçue pour l'agilité et la maîtrise des coûts.
 
-- **Cas d'usage** : Développement, tests, pré-production, proof-of-concept (POC).
+- **Cas d'usage** : Développement, tests, proof-of-concept (POC).
 - **Points clés** :
     - 1 nœud Control Plane.
     - 3 nœuds Workers (ou plus).
     - Le stockage distribué (Ceph) est co-localisé sur les nœuds workers.
     - Ne bénéficie pas de SLA de haute disponibilité.
+    - aucune restriction de sécurité
 
 <img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
 
-### Architecture Multi-AZ (Production)
+### Architecture Production (Multi-AZ)
 
 Conçue pour la production et les applications critiques, cette architecture distribue les ressources sur trois zones de disponibilité (AZ) pour garantir une haute disponibilité et une résilience maximale, conformément aux exigences SecNumCloud.
 
@@ -88,4 +89,4 @@ L'offre inclus en détail les composants suivants:
 - Cost management avec KubeCost
 - Stratégies de sécurité avancée avec Kyverno et Capsule
 - Veeam Kasten (sauvegarde, automatisations inter-environnements et réversibilité)
-- (optionnel): Authentification Entra avec SSO
+- (optionnel): Authentification SSO avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
