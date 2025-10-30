@@ -70,7 +70,7 @@ Conçue pour la production et les applications critiques, cette architecture dis
     - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
     - **Stockage Dédié** : 3 nœuds de stockage dédiés et répartis pour la performance et la résilience.
     - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
-    - **SLA de 99,95%**.
+    - **SLA de 99,50%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
 
