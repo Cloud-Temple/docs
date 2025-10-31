@@ -31,6 +31,8 @@ Una vez haya indicado la empresa, haga clic en __'Conectarse'__.
 A continuación, será redirigido a una página que le solicitará autenticarse.  
 Una vez conectado, llegará a esta página.
 
+Encontrará todas las métricas relacionadas con los productos suscritos en su ámbito. En caso de problema(s) con sus productos VMware y/o OpenIaaS, las alertas serán visibles, su color está relacionado con su importancia.
+
 <img src={shivaHome} />
 
 ## Gestión del idioma

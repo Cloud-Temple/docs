@@ -29,7 +29,9 @@ Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
 <img src={shivaLogin} />
 
 Vous allez ensuite être redirigé vers une page vous demandant de vous authentifier.
-Une fois connecté, vous arrivez sur cette page.
+Une fois connecté, vous arrivez sur cette page. 
+
+Vous y trouverez l'ensemble des métriques concernant les produits souscrits sur votre périmètre. En cas de problème(s) sur vos produits VMware et/ou OpenIaaS, des alertes seront visibles, la couleur est liée à leur importance.
 
 <img src={shivaHome} />
 
