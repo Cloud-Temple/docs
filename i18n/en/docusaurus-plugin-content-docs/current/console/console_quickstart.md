@@ -31,6 +31,8 @@ Once you have entered the company name, click on __'Sign In'__.
 You will then be redirected to a page prompting you to authenticate.  
 After logging in, you will land on this page.
 
+Here you will find all the metrics related to the products subscribed to within your scope. In the event of issue(s) with your VMware and/or OpenIaaS products, alerts will be visible, with their color indicating their importance.
+
 <img src={shivaHome} />
 
 ## Language Management

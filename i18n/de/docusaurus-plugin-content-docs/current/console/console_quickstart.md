@@ -31,6 +31,8 @@ Once you have entered the company name, click on __'Sign in'__.
 You will then be redirected to a page prompting you to authenticate.  
 After logging in, you will arrive at this page.
 
+Hier finden Sie alle Metriken zu den in Ihrem Bereich abonnierten Produkten. Bei Problem(en) mit Ihren VMware- und/oder OpenIaaS-Produkten werden Warnungen sichtbar, deren Farbe mit ihrer Wichtigkeit verbunden ist.
+
 <img src={shivaHome} />
 
 ## Language Management
