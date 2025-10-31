@@ -1,13 +1,21 @@
-
-
 ---
 title: Metrologia
 ---
 import metricsHypervisorsCo2 from './images/metrics_hypervisors_co2.png'
+import shivaHome from './images/shiva_home.png'
 import shivaMetric_000 from './images/shiva_metric_000.png'
-import shivaMetric_003 from './images/shiva_metric_003.png'
 import shivaMetric_001 from './images/shiva_metric_001.png'
 import shivaMetric_002 from './images/shiva_metric_002.png'
+import shivaMetric_003 from './images/shiva_metric_003.png'
+import shivaMetric_004 from './images/shiva_metric_004.png'
+import shivaMetric_006 from './images/shiva_metric_006.png'
+import shivaMetric_007 from './images/shiva_metric_007.png'
+import shivaMetric_008 from './images/shiva_metric_008.png'
+import shivaMetric_009 from './images/shiva_metric_009.png'
+import shivaMetric_010 from './images/shiva_metric_010.png'
+import shivaMetric_011 from './images/shiva_metric_011.png'
+import shivaMetric_012 from './images/shiva_metric_012.png'
+import shivaMetric_013 from './images/shiva_metric_013.png'
 import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
@@ -26,38 +34,57 @@ Questo proxy ti permette di eseguire query e manipolare i dati da uno strumento 
 
 Tuttavia, è possibile visualizzare alcuni dati di prestazioni delle tue risorse Cloud nell'interfaccia web della console Shiva.
 
-*__Nota :__ La filosofia __Cloud Temple__ non è di integrare molti grafici nell'interfaccia web, ma di offrire il massimo delle informazioni accessibili tramite l'API*
+*__Nota:__ La filosofia __Cloud Temple__ non è di integrare molti grafici nell'interfaccia web, ma di offrire il massimo delle informazioni accessibili tramite l'API*
 
+## Dashboard integrati nell'interfaccia web
 
+*__Nota:__ Per accedere a questi dashboard, è necessario possedere il diritto __'metric_read'__*
 
-## Dashboard integrato nell'interfaccia web
+### Vista Globale
 
-*__Nota :__ Per accedere a questi dashboard, è necessario possedere il diritto __'metric_read'__*
+La pagina iniziale della console Shiva visualizza il dashboard principale, che presenta tutte le metriche che forniscono una panoramica di ciascun prodotto a cui sei abbonato nel tuo perimetro. In caso di problema(i) sui tuoi prodotti VMware e/o OpenIaaS, gli avvisi saranno visibili, con colori che indicano la loro importanza.
 
+Questi avvisi sono cliccabili e reindirizzano alla pagina del prodotto interessato.
 
+<img src={shivaHome} />
 
-### Tracciamento delle emissioni di carbonio per il calcolo
+### Metriche VMware - Vista Globale
 
-Il dashboard della console Shiva integra di default un grafico di monitoraggio del consumo elettrico del tuo calcolo così come la stima delle emissioni di carbonio associate.
+Nel menu **'VMware'**, un dashboard specifico è disponibile nel sottomenu **'Metriche'**. Raggruppa 4 schede:
 
-È accessibile direttamente nella pagina iniziale dell'interfaccia web della console Cloud Temple, cliccando su __'Metric'__ :
+#### Panoramica
 
-<img src={metricsHypervisorsCo2} />
-
-
-
-### Panoramica della salute delle macchine virtuali
-
-Il riepilogo dello stato delle macchine virtuali è accessibile nel menu __'IaaS'__ a sinistra dello schermo, nel sottomenu __'Salute'__ poi __'Macchine virtuali'__.
-
-Questo riepilogo fornisce, nell'intervallo di tempo selezionato in __'Filtri'__:
-
-- il numero di CPU e la __media di utilizzo della CPU__,
-- il numero di GB di memoria e la __media di utilizzo della memoria__,
-- le medie della __latenza di accesso al storage__ in lettura e scrittura,
-- il __CPU Ready__ medio della macchina virtuale (che corrisponde al tempo medio di attesa per la disponibilità di un core fisico da parte della macchina virtuale).
+In questa scheda, si trovano alcune delle metriche già presenti nel dashboard globale affrontato all'inizio di questo capitolo.
 
 <img src={shivaMetric_000} />
+
+#### Calcolo
+
+In questa scheda, si trova il numero di **AZ**, **Cluster**, **ESX**, **emissioni di carbonio**, **consumo**, così come 7 grafici che offrono una panoramica molto visiva del tuo ambiente VMware.
+
+Puoi scegliere l'intervallo di date da coprire, così come il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero perimetro). Ad esempio, scegliendo **Host**:
+
+<img src={shivaMetric_001} />
+
+<img src={shivaMetric_002} />
+
+#### Storage
+
+Allo stesso modo che nella scheda "Calcolo", si trovano diverse informazioni: il numero di **AZ**, **cluster di datastore**, **datastore**, così come 2 grafici. Lo stesso principio dei filtri si applica, ma qui possiamo raggruppare per **Cluster SDRS** e **Datastore**.
+
+<img src={shivaMetric_004} />
+
+#### Macchine virtuali
+
+Qui si trova una vista globale della salute delle macchine virtuali.
+
+Questo riepilogo fornisce, nell'intervallo di tempo selezionato:
+- il numero di CPU e la __media di utilizzo della CPU__,
+- il numero di GB di memoria e la __media di utilizzo della memoria__,
+- Le medie della __latenza di accesso al storage__ in lettura e scrittura,
+- Il __CPU Ready__ medio della macchina virtuale (che corrisponde al tempo medio di attesa per la disponibilità di un core fisico da parte della macchina virtuale).
+
+<img src={shivaMetric_006} />
 
 Per ogni VM, è possibile accedere alla cronologia delle prestazioni facendo clic sull'icona verde __'Storico'__ della macchina virtuale nella colonna azione:
 
@@ -65,11 +92,49 @@ Per ogni VM, è possibile accedere alla cronologia delle prestazioni facendo cli
 
 Si accede così alla pagina di visualizzazione grafica dei dati storici, inclusa una vista __prestazioni ambientali__:
 
-<img src={shivaMetric_001} />
+<img src={shivaMetric_007} />
 
-<img src={shivaMetric_002} />
+### Metriche VMware - Vista per risorsa
 
+È anche possibile consultare alcune delle metriche relative a VMware, ma questa volta più specificamente per un **Host** o un **Datastore** dato.
 
+#### Host
+
+Nella vista di un Host, è possibile consultare per un periodo dato, il **consumo energetico** così come la stima delle **emissioni di carbonio**.
+
+<img src={shivaMetric_008} />
+
+#### Datastore
+
+Nella vista di un Datastore, è possibile consultare per un periodo dato gli **IOPS**.
+
+<img src={shivaMetric_009} />
+
+### Metriche OpenIaaS
+
+Nel menu **'OpenIaaS'**, un dashboard specifico è disponibile nel sottomenu **'Metriche'**. Raggruppa 3 schede:
+
+#### Panoramica
+
+In questa scheda, si trovano alcune delle metriche già presenti nel dashboard globale affrontato all'inizio di questo capitolo.
+
+<img src={shivaMetric_010} />
+
+#### Calcolo
+
+In questa scheda, si trova il numero di **AZ**, **Cluster**, **Host**, così come 5 grafici che offrono una panoramica molto visiva del tuo ambiente OpenIaaS.
+
+Puoi scegliere l'intervallo di date da coprire, così come il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero perimetro). Ad esempio, scegliendo **Host**:
+
+<img src={shivaMetric_011} />
+
+<img src={shivaMetric_012} />
+
+#### Storage
+
+Allo stesso modo che nella scheda "Calcolo", si trovano diverse informazioni: il numero di **AZ**, **Cluster**, **Datastore**, così come un grafico. Lo stesso principio dei filtri si applica, ma qui possiamo raggruppare per **Block Storage**.
+
+<img src={shivaMetric_013} />
 
 ## Utilizzo con __Grafana__
 
