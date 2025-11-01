@@ -2,6 +2,8 @@
 title: le réseau dans Kubernetes Managé
 ---
 
+import cillium from './images/cillium.png'
+
 ---
 
 ## Objectifs
@@ -12,18 +14,21 @@ Ce tutoriel a pour objectif de vous familiariser avec les concepts réseau fonda
 - Connaître les différents mécanismes pour exposer vos applications (Ingress, LoadBalancer).
 - Visualiser les flux réseau et les politiques de sécurité avec Hubble.
 
-Nous prendrons comme exemple un cluster **"ctodev"**, dont le range attribué est **10.20.0.0/22**
+Nous prendrons comme **exemple** un cluster **"ctodev"**, dont le range attribué est **10.20.0.0/22**
+
+*Note : Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peux pas être modifié plus tard.*
 
 ## Plan d'adressage IP
 
 Votre cluster Kubernetes Managé dispose d'un VLAN multi-zonal avec un range d'adresses IPv4 en /22. 
 
-*Note : Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peux pas être modifié plus tard.*
-
-Ce range 10.20.0.0/22 est découpé de manière logique en sous-ranges.
+Le range de notre **exemple** 10.20.0.0/22 est découpé de manière logique en sous-ranges.
 
     - 10.20.0.0/24 est attribué aux Noeuds du cluster:
 
+        - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
+
+        - 10.20.0.20 : IP virtuelle (load balancée) du service API Kubernetes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -35,13 +40,17 @@ Ce range 10.20.0.0/22 est découpé de manière logique en sous-ranges.
         - 10.20.0.51 : ctodev-wrk-01 (Worker 01)
         - 10.20.0.52 : ctodev-wrk-02 (Worker 02)
         - 10.20.0.53 : ctodev-wrk-03 (Worker 03)
-        ...
+        - ...
         - 10.20.0.151 : ctodev-wrk-100 (Worker 100)
 
     - MetalLB interne : 10.20.1.1 – 10.20.1.127
+
+      - 10.20.1.1 : ingress `nginx-internal`
     
     - MetalLB externe : 10.20.1.128 – 10.20.1.254
 
+      - 10.20.1.128 : ingress `nginx-external`
+      - 10.20.1.129 : ingress `nginx-external-secure`
 
     - Pods: 10.241.0.0/16 
 
@@ -159,7 +168,35 @@ Pour que cette URL soit résolvable par votre poste de travail, vous devrez prob
 kubectl get ingress hubble-ui -n kube-system
 ```
 
+<img src={cillium} />
 
+### Création de zones DNS internes (cluster privé)
+
+Pour renforcer la sécurité et simplifier l'accès à vos services et à l'API Kubernetes depuis votre réseau interne, il est recommandé de créer une zone DNS interne. Cette zone permettra de résoudre les noms de domaine de vos Ingress et de l'API Kubernetes vers leurs adresses IP privées respectives, évitant ainsi de transiter par des réseaux publics.
+
+**Exemple de configuration avec notre cluster "ctodev", dont le range attribué est** **10.20.0.0/22 :**
+
+En vous basant sur les URLs fournies dans le guide de démarrage, vous pouvez configurer votre DNS interne comme suit :
+
+1.  **Créez la zone DNS privée** sur vos serveurs DNS internes pour `.<identifiant du cluster>.mk.ms-cloud-temple.com`
+
+2.  **Ajoutez les enregistrements de type A** suivants :
+
+    -   **Pour l'API Kubernetes :**
+        -   `. -> 10.20.0.20` (IP virtuelle de l'API)
+
+    -   **Pour les services internes (via l'Ingress `nginx-internal`) :**
+        -   `hubble.internal -> 10.20.1.1`
+        -   `argocd.internal -> 10.20.1.1`
+        -   `ceph.internal -> 10.20.1.1`
+
+    -   **Pour les services sécurisés (via l'Ingress `nginx-external-secure`) :**
+        -   `k10.external-secured -> 10.20.1.129`
+        -   `grafana.external-secured -> 10.20.1.129`
+        -   `harbor.external-secured -> 10.20.1.129`
+        -   `kubecost.external-secured -> 10.20.1.129`
+
+Cette configuration garantit que le trafic vers l'API et les services internes reste confiné à votre réseau privé, conformément aux meilleures pratiques de sécurité.
 
 <div class="card">
   <div class="card__header">
