@@ -86,7 +86,7 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
 |---------|---------------|------------|---------|--------------------|
-| AZ07  | Git Runner   | 4  | 8 Go | OS: 20 Go  |
+| AZ07  | Git Runner   | 4  | 8 Go | OS: 30 Go  |
 | AZ05  | Control Plane 1   | 8  | 12 Go | OS: 20 Go  |
 | AZ06  | Control Plane 2   | 8  | 12 Go | OS: 20 Go  |
 | AZ07  | Control Plane 3   | 8  | 12 Go | OS: 20 Go  |
@@ -108,7 +108,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
 |---------|---------------|------------|---------|--------------------|
-| AZ0n  | Git Runner   | 4  | 8 Go | OS: 20 Go  |
+| AZ0n  | Git Runner   | 4  | 8 Go | OS: 30 Go  |
 | AZ0n  | Control Plane    | 8  | 12 Go | OS: 20 Go  |
 | AZ0n  | Worker Node 1 (**)   | 12 | 24 Go | OS: 20 Go+ Ceph 300 Go minimum (*) |
 | AZ0n  | Worker Node 2 (**)   | 12 | 24 Go | OS: 20 Go+ Ceph 300 Go minimum (*) |
