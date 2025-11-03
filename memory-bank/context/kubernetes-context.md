@@ -28,7 +28,7 @@
 | `managed_kubernetes.md` | Vue d'ensemble, bénéfices stratégiques, architectures | 95% |
 | `concepts.md` | Description technique détaillée de tous les composants | 100% |
 | `quickstart.md` | Guide de démarrage pour la connexion au cluster | 100% |
-| `tutorials.md` | Tutoriels pratiques (déploiement, réseau, sécurité, sauvegarde, coûts) | 80% |
+| `tutorials.md` | Tutoriels pratiques (déploiement, réseau, sécurité, sauvegarde, coûts, GitOps) | 90% |
 
 ### Document Contractuel ✅
 | Fichier | Contenu | Complétude |
@@ -45,5 +45,7 @@
 2.  **Détailler le Pricing** : Le tutoriel sur KubeCost a clarifié la visibilité des coûts. Une page dédiée au modèle de tarification global reste pertinente.
 
 ### Moyen Terme
-1.  **Tutoriels Avancés** : Scénarios de sauvegarde/restauration avec Veeam Kasten, configuration d'un pipeline GitOps avec ArgoCD.
+1.  **Tutoriels Avancés** : Un tutoriel sur la configuration d'un pipeline GitOps avec ArgoCD a été ajouté. Prochaines étapes :
+    - Scénarios de sauvegarde/restauration avancés avec Veeam Kasten.
+    - Gestion des secrets dans un environnement GitOps (Sealed Secrets/Vault).
 2.  **Intégration Console** : Documenter comment le service Managed Kubernetes apparaît et est géré (même de manière limitée) depuis la console Shiva.

@@ -5,6 +5,11 @@ sidebar_position: 2
 
 # Change Tracking
 
+### November 3, 2025: Kubernetes Tutorials Enhancements
+
+- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
+- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
+
 ### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
 
 - **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick-start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
@@ -33,7 +38,7 @@ sidebar_position: 2
     - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
     - Added clarifications on storage account concepts and object locking (Object Lock).
 - **OpenSource IaaS**:
-    - Added detailed documentation on managing High Availability (HA) for resource pools and virtual machines.
+    - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
 - **Console**:
     - Updated the security alerts page with the latest vulnerabilities.
 - **Networking**:
@@ -41,12 +46,12 @@ sidebar_position: 2
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 
-- Completion and validation of the full test suite.
-- Correction and validation of RAG pipelines using FAISS and Qdrant.
-- Enhancement of tutorials with more detailed technical explanations.
-- Addition of a section on prompt security and model lifecycle within the concepts.
-- Improvement of the RAG explanation page with diagrams and details on embedding models.
-- Update of the API documentation, quick start guide, and service presentation.
-- Addition of pricing for the Audio Transcription endpoint.
-- Incorporation of the projected model lifecycle roadmap.
-- Addition of the responsibility matrix for the LLMaaS offering.
+- Full test suite validation.
+- Correction and validation of RAG pipelines with FAISS and Qdrant.
+- Enhanced tutorials with more detailed technical explanations.
+- Added a section on prompt security and model lifecycle within the concepts.
+- Improved the RAG explanation page with diagrams and details on embedding models.
+- Updated API documentation, quick start guide, and service presentation.
+- Added pricing for the Audio Transcription endpoint.
+- Added the projected model lifecycle roadmap.
+- Added the responsibility matrix for the LLMaaS offering.
