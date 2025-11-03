@@ -1,5 +1,5 @@
 ---
-title: la red en Kubernetes gestionado
+title: La red en Kubernetes gestionado
 ---
 
 import cillium from './images/cillium.png'
@@ -16,7 +16,9 @@ Este tutorial tiene como objetivo familiarizarte con los conceptos fundamentales
 
 Tomaremos como **ejemplo** un clúster **"ctodev"**, cuyo rango asignado es **10.20.0.0/22**.
 
-*Nota: Este rango de direcciones IP privadas X.Y.Z.0/22 (RFC 1918) se define con el cliente durante la configuración del clúster. No puede modificarse posteriormente.*
+:::warning definición de rangos
+ Este rango de direcciones IP privadas X.Y.Z.0/22 (RFC 1918) se define con el cliente durante la configuración del clúster. No puede modificarse posteriormente.
+:::
 
 ## Plan de direccionamiento IP
 
@@ -56,13 +58,15 @@ El rango de nuestro **ejemplo** 10.20.0.0/22 se divide lógicamente en subrangos
 
     - Servicios: 10.95.0.0/12 
 
-*Nota: Los rangos de Pods y Servicios se definen con el cliente durante la implementación del clúster. No pueden modificarse posteriormente.*
+:::warning Rangos Pods y Servicios
+Los rangos de Pods y Servicios se definen con el cliente durante la configuración del clúster. No pueden modificarse posteriormente.
+:::
 
 ## Uso de MetalLB
 
 MetalLB es el componente que permite exponer servicios de capa 3 (no web / L7) directamente mediante una dirección IP, ya sea interna o externa, utilizando el tipo de servicio `LoadBalancer`. Es una alternativa a los Ingress para aplicaciones no HTTP o para casos de uso específicos.
 
-Para utilizar MetalLB, simplemente debes crear un servicio del tipo `LoadBalancer`. MetalLB le asignará automáticamente una dirección IP desde las gamas preconfiguradas. La distinción entre las gamas `interna` y `externa` es una medida de seguridad para garantizar que una aplicación destinada a uso interno no se exponga accidentalmente en una red pública.
+Para usar MetalLB, simplemente debes crear un servicio del tipo `LoadBalancer`. MetalLB le asignará automáticamente una dirección IP desde las gamas preconfiguradas. La distinción entre las gamas `interna` y `externa` es una medida de seguridad para garantizar que una aplicación destinada a uso interno no se exponga accidentalmente en una red pública.
 
 **Ejemplo: Exponer un servicio en la red interna**
 
@@ -86,7 +90,7 @@ Tras aplicar este manifiesto, tu servicio recibirá una dirección IP dentro del
 
 **Ejemplo: Exponer un servicio en la red externa**
 
-Para solicitar una dirección IP desde la gama externa (`10.20.1.128 – 10.20.1.254`), debes añadir la etiqueta `lb-type: external` a tu servicio.
+Para solicitar una dirección IP desde el rango externo (`10.20.1.128 – 10.20.1.254`), debes añadir la etiqueta `lb-type: external` a tu servicio.
 
 ```yaml
 apiVersion: v1
@@ -121,7 +125,7 @@ La segunda IP pública se traduce (NAT) al controlador de ingreso *"nginx-extern
 
 Las aplicaciones expuestas mediante la clase de ingreso *"nginx-external"* serán, por tanto, directamente accesibles desde Internet a través de esta IP.
 
-*Si desea realizar modificaciones en las reglas del firewall (añadir o eliminar direcciones IP autorizadas), debe solicitar soporte técnico.*
+*Si desea realizar modificaciones en las reglas del firewall (añadir o eliminar direcciones IP autorizadas), debe solicitar soporte.*
 
 *Es posible agregar otras direcciones IP públicas si lo desea.*
 
@@ -141,7 +145,7 @@ Por ejemplo, un servicio llamado `api-backend` en el namespace `production` ser�
 La zona DNS pública utilizada para los clústeres Kubernetes gestionados es `.mk.ms-cloud-temple.com`.
 
 El ingress *"nginx-external"* (mapeado a la IP pública número 2) es accesible mediante `"*.external.<su identificador de clúster>.mk.ms-cloud-temple.com"`.  
-Si despliega una aplicación con esta clase de ingress, podrá acceder a ella directamente mediante este nombre de dominio. Consulte el tutorial: [Desplegar su primera aplicación](./firstdeploy)
+Si publica una aplicación con esta clase de ingress, podrá acceder a ella directamente mediante este nombre de dominio. Consulte el tutorial: [Desplegar su primera aplicación](./firstdeploy)
 
 ## Hubble: Observabilidad de red al alcance de la mano
 
@@ -161,7 +165,7 @@ Para acceder a ella, deberá estar conectado a la red interna del clúster (por 
 
 `http://hubble.internal.<su-identificador-de-clúster>.mk.ms-cloud-temple.com`
 
-Para que esta URL sea resoluble desde su estación de trabajo, probablemente deberá agregar una entrada en su archivo `hosts` o en su DNS interno. Puede obtener la dirección IP interna del Ingress Hubble con el siguiente comando:
+Para que esta URL sea resoluble desde su estación de trabajo, probablemente deberá agregar una entrada en su archivo `hosts` o en su DNS interno. Puede obtener la dirección IP interna del Ingress de Hubble con el siguiente comando:
 
 ```bash
 kubectl get ingress hubble-ui -n kube-system

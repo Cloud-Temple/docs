@@ -16,7 +16,9 @@ Capsule es un controlador de Kubernetes que introduce el concepto de **Tenant** 
 
 Al entregarle su clúster, los equipos de Cloud Temple han creado un primer Tenant para usted y lo han designado como **propietario (Tenant Owner)**.
 
-*Nota: Por defecto, su primer Tenant se llama `default` y el servicio de cuenta propietario es `defaultapp`.*
+:::tip
+Por defecto, su primer Tenant se llama `default` y el servicio de cuenta propietario es `defaultapp`.
+:::
 
 Para obtener más información sobre el proyecto, puede consultar el [sitio web oficial de Capsule](https://projectcapsule.dev/).
 
@@ -31,9 +33,6 @@ kubectl get ns -l capsule.clastix.io/tenant --show-labels
 ```
 
 Look for the label `capsule.clastix.io/tenant`. The value of this label is your Tenant name. You can then use this name to filter and display only the Namespaces belonging to your Tenant:
-
-```bash
-
 
 # Once you know the name of your tenant, for example "my-tenant"
 kubectl get ns -l capsule.clastix.io/tenant=my-tenant
@@ -74,6 +73,6 @@ This ensures your projects comply with consumption limits (CPU, memory, storage)
 
 ## Conclusión
 
-Gracias a Capsule, dispone de una autonomía completa para gestionar los Namespaces de sus equipos, al tiempo que se beneficia de un entorno seguro y preconfigurado por los administradores del clúster. Puede crear, modificar y eliminar Namespaces según sea necesario, sabiendo que los mecanismos de protección necesarios se aplican automáticamente.
+Gracias a Capsule, dispone de una autonomía completa para gestionar los Namespaces de sus equipos, al tiempo que se beneficia de un marco seguro y preconfigurado por los administradores del clúster. Puede crear, modificar y eliminar Namespaces según sea necesario, sabiendo que los mecanismos de protección necesarios se aplican automáticamente.
 
 Si necesita crear un nuevo Tenant para aislar otro conjunto de proyectos o equipos, puede solicitarlo al soporte de Cloud Temple.

@@ -901,10 +901,10 @@
       "it": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06"
     },
     "managed_kubernetes/quickstart.md": {
-      "en": "8c9beb056f92fbc4b193afb969d3cd462eabdae36a69116e42db7c4d5b0a9866",
-      "de": "8c9beb056f92fbc4b193afb969d3cd462eabdae36a69116e42db7c4d5b0a9866",
-      "es": "8c9beb056f92fbc4b193afb969d3cd462eabdae36a69116e42db7c4d5b0a9866",
-      "it": "8c9beb056f92fbc4b193afb969d3cd462eabdae36a69116e42db7c4d5b0a9866"
+      "en": "c9f0e24c17473e6fbdc4089570dc82737c400bcc617ca76c60504ddab1dba588",
+      "de": "c9f0e24c17473e6fbdc4089570dc82737c400bcc617ca76c60504ddab1dba588",
+      "es": "c9f0e24c17473e6fbdc4089570dc82737c400bcc617ca76c60504ddab1dba588",
+      "it": "c9f0e24c17473e6fbdc4089570dc82737c400bcc617ca76c60504ddab1dba588"
     },
     "managed_kubernetes/managed_kubernetes.md": {
       "en": "b9bbc97c16355d3575fac9ba2316f5f530cdd2b460daa822d2ce72b204aa8d1d",
@@ -937,22 +937,22 @@
       "es": "6589aebb6eb59050870704f43325b88fa2724e8b6f6efbe0c856f191b481f388"
     },
     "managed_kubernetes/tutorials/usingcapsule.md": {
-      "en": "04220ff1b119d392dc4fbf1e28cd33ce18b1eadf130896cd41d313ee2c87cb47",
-      "de": "04220ff1b119d392dc4fbf1e28cd33ce18b1eadf130896cd41d313ee2c87cb47",
-      "es": "04220ff1b119d392dc4fbf1e28cd33ce18b1eadf130896cd41d313ee2c87cb47",
-      "it": "04220ff1b119d392dc4fbf1e28cd33ce18b1eadf130896cd41d313ee2c87cb47"
+      "en": "53f2c6c6a0c11c7ada267be8219ec73e0497be2bc8e9fd84cb0500d93bfc0c88",
+      "de": "53f2c6c6a0c11c7ada267be8219ec73e0497be2bc8e9fd84cb0500d93bfc0c88",
+      "es": "53f2c6c6a0c11c7ada267be8219ec73e0497be2bc8e9fd84cb0500d93bfc0c88",
+      "it": "53f2c6c6a0c11c7ada267be8219ec73e0497be2bc8e9fd84cb0500d93bfc0c88"
     },
     "managed_kubernetes/tutorials/usingkubecosts.md": {
-      "en": "e924d0cfaa242e26add8b4b52c98f3a801da0acbe7e0ab7b4d30c368ae16e678",
-      "de": "e924d0cfaa242e26add8b4b52c98f3a801da0acbe7e0ab7b4d30c368ae16e678",
-      "es": "e924d0cfaa242e26add8b4b52c98f3a801da0acbe7e0ab7b4d30c368ae16e678",
-      "it": "e924d0cfaa242e26add8b4b52c98f3a801da0acbe7e0ab7b4d30c368ae16e678"
+      "en": "4c555afcfe80175feaee7300023c3c559c1e1ae4557ea0ba28f1d9b8d5250b01",
+      "de": "4c555afcfe80175feaee7300023c3c559c1e1ae4557ea0ba28f1d9b8d5250b01",
+      "es": "4c555afcfe80175feaee7300023c3c559c1e1ae4557ea0ba28f1d9b8d5250b01",
+      "it": "4c555afcfe80175feaee7300023c3c559c1e1ae4557ea0ba28f1d9b8d5250b01"
     },
     "managed_kubernetes/tutorials/networking.md": {
-      "en": "8cb04aa559ab9d2af24ea2438981dc5a5f1dff95d54b72e60d1838b57fdddcaa",
-      "de": "8cb04aa559ab9d2af24ea2438981dc5a5f1dff95d54b72e60d1838b57fdddcaa",
-      "es": "8cb04aa559ab9d2af24ea2438981dc5a5f1dff95d54b72e60d1838b57fdddcaa",
-      "it": "8cb04aa559ab9d2af24ea2438981dc5a5f1dff95d54b72e60d1838b57fdddcaa"
+      "en": "94c239d2ea4468b09c519f201fa63d4c726e080678a07f1f572d67c2f808635f",
+      "de": "94c239d2ea4468b09c519f201fa63d4c726e080678a07f1f572d67c2f808635f",
+      "es": "94c239d2ea4468b09c519f201fa63d4c726e080678a07f1f572d67c2f808635f",
+      "it": "94c239d2ea4468b09c519f201fa63d4c726e080678a07f1f572d67c2f808635f"
     },
     "managed_kubernetes/tutorials/usingkasten.md": {
       "en": "604b771652226bcba8417836732f7262677a99a66e7b4e02ed675c21fa4f03cd",
@@ -967,6 +967,6 @@
       "it": "9487a29cda9624fc94f16d1dfa7efc4b3f8d528a4404b7ad07a297383203c57b"
     }
   },
-  "last_update": "2025-11-03T16:49:15.559767",
+  "last_update": "2025-11-03T22:54:05.217733",
   "version": "2.0"
 }
