@@ -16,7 +16,9 @@ Ce tutoriel a pour objectif de vous familiariser avec les concepts réseau fonda
 
 Nous prendrons comme **exemple** un cluster **"ctodev"**, dont le range attribué est **10.20.0.0/22**
 
-*Note : Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peux pas être modifié plus tard.*
+:::warning définition des ranges
+ Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peut pas être modifié plus tard.
+:::
 
 ## Plan d'adressage IP
 
@@ -56,7 +58,9 @@ Le range de notre **exemple** 10.20.0.0/22 est découpé de manière logique en 
 
     - Services: 10.95.0.0/12 
 
-*Note : Les ranges Pods et Services sont définis avec le client lors de la mise en place du cluster. Ils ne peuvent pas être modifiés plus tard.*
+:::warning Ranges Pods et Services
+Les ranges Pods et Services sont définis avec le client lors de la mise en place du cluster. Ils ne peuvent pas être modifiés plus tard.
+:::
 
 ## Utilisation de MetalLB
 
