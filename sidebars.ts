@@ -218,7 +218,7 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/quickstart',
             {
           type: 'category',
-          label: 'MK Tutorials',
+          label: 'Tutorials MK',
           items: [
             'managed_kubernetes/tutorials/firstdeploy',
             'managed_kubernetes/tutorials/networking',

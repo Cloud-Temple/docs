@@ -16,8 +16,10 @@ Pour interagir avec votre cluster, plusieurs éléments sont indispensables :
 2.  **L'outil `kubectl`** : Il s'agit de l'interface en ligne de commande standard pour piloter un cluster Kubernetes.
 3.  **L'outil `kubelogin`** (si OIDC est utilisé) : Si votre cluster est configuré pour s'authentifier via un fournisseur d'identité OIDC (comme Entra ID/Azure AD), vous devez installer l'outil `kubelogin` pour gérer le flux d'authentification. Suivez le [guide d'installation de kubelogin](https://github.com/int128/kubelogin).
 
-Outils graphiques recommandés: Pour une expérience plus visuelle et une gestion simplifiée de vos ressources, nous vous recommandons l'utilisation de **Lens**. C'est un outil puissant pour Kubernetes qui vous permet d'explorer votre cluster, de gérer vos applications et de visualiser leur état de manière graphique.
+:::info Outils graphiques recommandés: 
+Pour une expérience plus visuelle et une gestion simplifiée de vos ressources, nous vous recommandons l'utilisation de **Lens**. C'est un outil puissant pour Kubernetes qui vous permet d'explorer votre cluster, de gérer vos applications et de visualiser leur état de manière graphique.
 Certains de nos tutoriels utiliseront Lens pour illustrer les manipulations. Vous pouvez le télécharger ici : [https://k8slens.dev/](https://k8slens.dev/).
+:::
 
 ---
 
@@ -36,20 +38,26 @@ Les urls sont:
   - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - kubecost.external-secured.**identifiant**.mk.ms-cloud-temple.com
 
-*Les url ci dessus ne sont accessible que depuis des IP publiques connues, configurées dans le firewall de la solution. Si vous souhaitez ajouter une IP publique, il faut faire une demande de support.*
+:::info url sécurisées
+Les url ci dessus ne sont accessible que depuis des IP publiques connues, configurées dans le firewall de la solution. Si vous souhaitez ajouter une IP publique, il faut faire une demande de support.
+:::
 
 - url internes :
   - ceph.internal.**identifiant**.mk.ms-cloud-temple.com
   - argocd.internal.**identifiant**.mk.ms-cloud-temple.com
   - hubble.internal.**identifiant**.mk.ms-cloud-temple.com
 
-*Les url ci dessus ne sont pas exposées sur Internet. Elles ne sont accessibles que sur le réseau Interne Kubernetes Managé.*
+:::info url internes
+Les url ci dessus ne sont pas exposées sur Internet. Elles ne sont accessibles que sur le réseau Interne Kubernetes Managé.
+:::
 
 ---
 
 ## Vos permissions
 
+:::warning Dev/Test
 Pour les clusters Kubernetes Managé **"Dev/Test"**, le compte de service qui vous a été fourni dispose de toutes les permissions sur l'ensemble du cluster (ClusterAdmin)
+:::
 
 Sur les cluster **"Production"**, vos permissions sont limitées. Vous disposez d"un droit **"Viewer Etendu"** sur les ressources du cluster. Ce droit accorde un accès en lecture seule à des ressources clés, à la fois au niveau du cluster et pour le diagnostic :
 
