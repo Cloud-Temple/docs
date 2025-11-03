@@ -57,7 +57,7 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 - (optionnel): **Authentification SSO** avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
 
 ## SLA & Information sur le support 
-- **Disponibilité garantie (production 3 AZ)** : 99,50 %
+- **Disponibilité garantie (production 3 AZ)** : 99.90 %
 - **Support** : N1/N2/N3 inclus pour le périmètre socle (infrastructure et opérateurs standards).
 - **Engagement de temps de rétablissement (ETR)** : selon contrat cadre Cloud Temple.
 - **Maintenance (MCO)** : patching régulier Talos / Kubernetes / opérateurs standards par MSP, sans interruption de service (rolling upgrade).
