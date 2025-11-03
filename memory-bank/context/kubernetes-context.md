@@ -28,7 +28,7 @@
 | `managed_kubernetes.md` | Vue d'ensemble, bénéfices stratégiques, architectures | 95% |
 | `concepts.md` | Description technique détaillée de tous les composants | 100% |
 | `quickstart.md` | Guide de démarrage pour la connexion au cluster | 100% |
-| `tutorials.md` | Tutoriel "Hello World" pour un premier déploiement | 60% |
+| `tutorials.md` | Tutoriels pratiques (déploiement, réseau, sécurité, sauvegarde, coûts) | 80% |
 
 ### Document Contractuel ✅
 | Fichier | Contenu | Complétude |
@@ -38,11 +38,11 @@
 ## Recommandations d'Amélioration
 
 ### Court Terme
-1.  **Enrichir les Tutoriels** : Ajouter des guides pratiques sur des sujets clés :
-    - Configuration d'une `StorageClass` avec Rook-Ceph.
-    - Application d'une politique de sécurité simple avec Kyverno.
-    - Utilisation de Harbor pour scanner une image.
-2.  **Détailler le Pricing** : Créer une section ou une page dédiée au modèle de coût (facturation des nœuds, du stockage, des licences Veeam Kasten, etc.).
+1.  **Enrichir les Tutoriels** : Les tutoriels existants ont été améliorés pour mieux intégrer les aspects de sécurité (bonnes pratiques, `NetworkPolicies`), de gouvernance (`Capsule`) et de coût (`KubeCost`). Prochaines étapes :
+    - Ajouter un tutoriel sur la configuration d'une `StorageClass` avec Rook-Ceph.
+    - Ajouter un tutoriel sur l'application d'une politique de sécurité simple avec Kyverno.
+    - Ajouter un tutoriel sur l'utilisation de Harbor pour scanner une image.
+2.  **Détailler le Pricing** : Le tutoriel sur KubeCost a clarifié la visibilité des coûts. Une page dédiée au modèle de tarification global reste pertinente.
 
 ### Moyen Terme
 1.  **Tutoriels Avancés** : Scénarios de sauvegarde/restauration avec Veeam Kasten, configuration d'un pipeline GitOps avec ArgoCD.

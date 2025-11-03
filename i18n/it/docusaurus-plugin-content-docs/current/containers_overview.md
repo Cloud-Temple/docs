@@ -15,11 +15,11 @@ Questo tabella mette in evidenza i punti di forza e il posizionamento di ciascun
 
 | Criterio                      | PaaS OpenShift                                                                                                                | Managed Kubernetes                                                                                                   |
 | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| **Posizionamento chiave**     | **La fiducia senza compromessi**<br/>_Piattaforma "as a Service", il percorso più veloce per modernizzare su una base certificata._ | **La flessibilità open source**<br/>_Un Kubernetes puro, portabile e senza sovrapposizioni su un'infrastruttura sovrana._ |
+| **Posizionamento chiave**     | **La fiducia senza compromessi**<br/>_Piattaforma "as a Service", il percorso più veloce per modernizzare su una base certificata._ | **La flessibilità open source**<br/>_Un Kubernetes puro, portabile e privo di sovrapposizioni su un'infrastruttura sovrana._ |
 | **Livello di servizio**       | as a Service                                                                                                                  | Gestito                                                                                                              |
 | **Conformità e sicurezza**    | **100% SecNumCloud**                                                                                                          | Ospitato su infrastruttura SNC                                                                                       |
 | **Pubblico target ideale**    | Team di sviluppo, DevOps                                                                                                      | Team DevOps, Esperti Kubernetes                                                                                      |
-| **Punto di differenziazione** | Semplificazione e velocità di implementazione                                                                                 | Open source, portabile e senza sovrapposizioni                                                                      |
+| **Punto di differenziazione** | Semplificazione e velocità di implementazione                                                                                 | Open source, portabile e priva di sovrapposizioni                                                                    |
 
 ### Confronto dei componenti tecnologici
 
@@ -32,8 +32,8 @@ Oltre al posizionamento, ogni offerta si basa su scelte tecnologiche distinte ch
 | **Archiviazione persistente** | OpenShift Data Foundation          | Rook-Ceph                   |
 | **Rete (CNI)**               | OVN-Kubernetes                     | Cilium                      |
 | **Ingress / Bilanciamento del carico** | HAProxy / MetalLB                  | NGINX Ingress / MetalLB     |
-| **Sicurezza (Motore delle policy)** | Security Context Constraints (SCC) | Kyverno                     |
-| **Backup**                   | Veeam Kasten K10 (opzionale)       | Veeam Kasten K10            |
+| **Sicurezza (Motore delle policy)** | Security Context Constraints (SCC) | PSA + Kyverno + Capsule     |
+| **Backup**                   | Veeam Kasten K10 (opzionale)       | Veeam Kasten K10 (incluso)  |
 | **Automazione (GitOps)**     | OpenShift Pipelines                | ArgoCD                      |
 | **Osservabilità**            | Prometheus / Grafana               | Prometheus / Grafana / Loki |
 
@@ -42,9 +42,44 @@ Oltre al posizionamento, ogni offerta si basa su scelte tecnologiche distinte ch
 La scelta della piattaforma di containerizzazione è una decisione strategica. Ecco alcuni elementi chiave per orientarvi verso l'offerta più adatta al vostro contesto.
 
 *   **Se la conformità normativa è la vostra priorità assoluta...**
-    ...e dovete operare in un settore altamente regolamentato (pubblico, sanità, OIV) o qualificare la vostra stessa soluzione, l'**Offerta PaaS OpenShift** è la soluzione di riferimento che vi garantisce il massimo livello di affidabilità sul mercato.
+    ...e dovete operare in un settore altamente regolamentato (pubblico, sanitario, OIV) o qualificare la vostra stessa soluzione, l'**Offerta PaaS OpenShift** è la soluzione di riferimento che vi garantisce il massimo livello di affidabilità sul mercato.
 
 *   **Se privilegiate l'open source, la modernità e la sicurezza "zero-trust"...**
     ...e la vostra cultura aziendale è fortemente orientata verso l'open source, l'assenza di dipendenza da un fornitore e le metodologie di sicurezza di nuova generazione (sistemi immutabili, gestione tramite API), l'**Offerta Managed Kubernetes** è quella più allineata alla vostra visione.
 
 Il nostro ruolo di consulenza è quello di accompagnarvi in questa scelta. I nostri architetti sono a vostra disposizione per analizzare il vostro contesto e definire con voi la traiettoria ottimale.
+
+## Esplora le nostre soluzioni
+
+<div className="row">
+  <div className="col col--6">
+    <div className="card">
+      <div className="card__header">
+        <h3>PaaS OpenShift</h3>
+      </div>
+      <div className="card__body">
+        <p>
+          Scopri la nostra piattaforma "as a Service" per modernizzare le tue applicazioni su una base certificata SecNumCloud.
+        </p>
+      </div>
+      <div className="card__footer">
+        <a href="./paas_openshift" className="button button--primary button--block">Scopri di più</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--6">
+    <div className="card">
+      <div className="card__header">
+        <h3>Managed Kubernetes</h3>
+      </div>
+      <div className="card__body">
+        <p>
+          Esplora la nostra offerta Kubernetes pura, portabile e priva di sovrapposizioni, ospitata su un'infrastruttura sovrana.
+        </p>
+      </div>
+      <div className="card__footer">
+        <a href="./managed_kubernetes" className="button button--primary button--block">Scopri di più</a>
+      </div>
+    </div>
+  </div>
+</div>

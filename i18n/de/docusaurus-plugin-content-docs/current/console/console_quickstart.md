@@ -15,23 +15,23 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 ## Voraussetzungen
 
-- Eine Cloud Temple-Angebot abgeschlossen haben. Um einfach abzuschließen, können Sie uns [kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an die Adresse __contact@cloud-temple.com__ erreichen.
+- Eine Cloud Temple-Angebot abgeschlossen haben. Um einfach abzuschließen, können Sie uns [kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an die Adresse __contact@cloud-temple.com__.
 - Zugriff auf die Shiva-Konsole haben
 - Ihre öffentliche IPv4-Adresse in der vertrauenswürdigen Zone von Cloud Temple angegeben haben (der Zugriff auf die Shiva-Konsole ist auf identifizierte vertrauenswürdige Adressen beschränkt)
 
-## Connecting to your Cloud Temple tenant
+## Verbindung mit Ihrem Cloud Temple-Mandanten
 
-Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or directly via the URL provided to you by email.
+Shiva ist über die folgende URL erreichbar: [Shiva](https://shiva.cloud-temple.com) oder über die direkte URL, die Ihnen per E-Mail mitgeteilt wurde.
 
-The first page allows you to select the [organization](iam/concepts.md#organizations) in which your user was created.  
-Once you have entered the company name, click on __'Sign in'__.
+Auf der ersten Seite können Sie die [Organisation](iam/concepts.md#organisations) auswählen, in der Ihr Benutzer erstellt wurde.  
+Nach Eingabe der Firma klicken Sie auf __'Anmelden'__.
 
 <img src={shivaLogin} />
 
-You will then be redirected to a page prompting you to authenticate.  
-After logging in, you will arrive at this page.
+Anschließend werden Sie auf eine Seite weitergeleitet, auf der Sie sich authentifizieren müssen.  
+Nach der Anmeldung gelangen Sie auf diese Seite.
 
-Hier finden Sie alle Metriken zu den in Ihrem Bereich abonnierten Produkten. Bei Problem(en) mit Ihren VMware- und/oder OpenIaaS-Produkten werden Warnungen sichtbar, deren Farbe mit ihrer Wichtigkeit verbunden ist.
+Hier finden Sie alle Metriken zu den Produkten, die in Ihrem Bereich abonniert sind. Bei Problemen mit Ihren VMware- und/oder OpenIaaS-Produkten werden entsprechende Warnungen angezeigt; die Farbcodierung entspricht der Schwere der Meldung.
 
 <img src={shivaHome} />
 
@@ -47,7 +47,7 @@ The configuration is set individually for each tenant [Tenant](iam/concepts.md#t
 
 ## Technischer Support
 
-Sie können jederzeit die __Cloud Temple-Support-Team__ über die __Schwimmring-Ikone__ oben rechts auf dem Bildschirm kontaktieren.
+Sie können jederzeit die __Cloud Temple-Support-Team__ über die __"Boje"-Ikon__ rechts oben auf dem Bildschirm kontaktieren.
 
 <img src={shivaSupport} />
 
@@ -58,7 +58,7 @@ Der erste Schritt ist die Identifizierung der Art der Support-Anfrage:
 - Beratung zur Nutzung eines Produkts (außer bei Incident),
 - Unterstützung im Zusammenhang mit Ihrem Kundenkonto,
 - Melden eines Incidents oder Anfordern technischer Unterstützung.
-- Anfordern der Unterstützung eines professionellen Dienstleisters (Bereitstellung eines Cloud Temple-Engineers für eine spezifische Problemstellung).
+- Anfordern der Unterstützung eines professionellen Dienstleisters (Bereitstellung eines Cloud Temple-Engineers für ein spezifisches Problem).
 
 <img src={shivaSupport_01} />
 
@@ -68,7 +68,7 @@ Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsg
 
 __KRITISCH (P1)__:
 
-- Verdacht auf Datenlecks sensibler Informationen
+- Verdacht auf Datenleck sensibler Informationen
 - Erkennung eines nicht autorisierten Zugriffs auf Ihre Daten
 - Kompromittierung Ihrer Administratoren-Zugangsdaten
 - Vollständige Unzugänglichkeit Ihrer kritischen Dienste
@@ -81,13 +81,13 @@ __HOCH (P2)__:
 - Anomalie im Verschlüsselungsverfahren Ihrer Daten
 - Verlust des Zugriffs auf bestimmte kritische Funktionen
 - Inkonsistenzen in den Daten
-- Schwere Verzögerungen, die die Geschäftsaktivität beeinträchtigen
+- Schwere Verzögerungen, die die Geschäftstätigkeit beeinträchtigen
 
 __MITTEL (P3)__:
 
 - Lokal begrenztes Leistungsproblem
-- Ausfall einer nicht-kritischen Funktion
-- Konfigurationsfehler mit begrenztem Auswirkungsumfang
+- Incident an einer nicht-kritischen Funktion
+- Konfigurationsfehler mit begrenztem Auswirkungsbereich
 - Punktuelle Zugriffsschwierigkeiten
 
 __NIEDRIG (P4)__:
@@ -99,7 +99,7 @@ __NIEDRIG (P4)__:
 
 <img src={shivaSupport_02} />
 
-Nach Abschluss Ihrer Anfrage können Sie Ihre Anfragen über die __Schwimmring-Ikone__ oben rechts auf dem Bildschirm wiederfinden:
+Nach Abschluss Ihrer Anfrage können Sie Ihre Anfragen über die __"Boje"-Ikon__ rechts oben auf dem Bildschirm wiederfinden:
 
 <img src={shivaSupport_03} />
 
@@ -121,14 +121,14 @@ Im Folgenden finden Sie eine Übersicht über die verfügbaren Module. Regelmä�
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__: ermöglicht eine schnelle Übersicht über den __Gesamtbestand an Rechen- und Speicherressourcen__, die Statistiken der __Sicherung__ sowie eine __Zusammenfassung der Support-Fälle__,
+- __Dashboard__: ermöglicht eine schnelle Übersicht über den __Gesamtbestand an Rechen- und Speicherressourcen__, die Statistiken zur __Sicherung__ sowie eine __Zusammenfassung der Support-Fälle__,
 - __Bestand__: bietet eine Übersicht über alle Ihre Ressourcen des Typs __'virtuelle Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z. B. Geschäftsbereich, Anwendung, ...),
 - __Infogérance__: gewährt Zugriff auf die Verfolgung Ihrer __Support-Anfragen__ und die __Metriken der Dienste__,
 - __IaaS__: ermöglicht die __Steuerung Ihrer VMware-IaaS-Infrastrukturen__ (virtuelle Maschinen, Cluster, Hypervisoren, Replikationen, Sicherungen, ...),
-- __OpenIaaS__: ermöglicht die __Steuerung von Xen Orchestra-Ressourcen__ (virtuelle Maschinen, Sicherungen, ...),
+- __OpenIaaS__: ermöglicht die __Steuerung der Xen Orchestra-Ressourcen__ (virtuelle Maschinen, Sicherungen, ...),
 - __OpenShift__: ermöglicht die Steuerung Ihrer **RedHat OpenShift-PaaS-Architektur** und die Verwaltung Ihrer Container über die drei Verfügbarkeitszonen der Plattform.
 - __Bastion__: ermöglicht das Bereitstellen und Steuern von Bastion-Appliances für SSH/RDP in Ihren Netzwerken,
-- __Netzwerk__: ermöglicht die Steuerung von __Netzwerken der Ebene 2 und 3__, __öffentlichen IP-Adressen__ und Ihrer __Telekommunikationsverbindungen__,
+- __Netzwerk__: ermöglicht die Steuerung von __Netzwerken der Ebene 2 und 3__, __öffentlichen IPs__ sowie Ihrer __Telekommunikationsverbindungen__,
 - __Colocation__: bietet eine Übersicht über die Geräte in den Bereichen der __gemeinsamen oder dedizierten Colocation__,
 - __Bestellung__: ermöglicht die Bestellung von Ressourcen und die Verfolgung der Bereitstellungen,
 - __Administration__: fasst die Administrationsfunktionen für Benutzer und Mandanten sowie den Zugriff auf die globale Protokollierung zusammen.
@@ -185,13 +185,13 @@ In accordance with the SecNumCloud certification, the retention period for Cloud
 
 ## Viewing the latest updates
 
-Click on the __'New Features'__ icon in the bottom-left corner of the green banner. You will find detailed information about the changes for each version of the Cloud Temple console.
+Click on the __'New Features'__ icon in the bottom-left corner of the green banner. You will find details of the changes for each version of the Cloud Temple console.
 
 <img src={shivaOnboard_009} />
 
-## Zugriff auf Benutzerfunktionen über die API
+## Access to user features via the API
 
-Der Zugriff auf alle Funktionen der Shiva-Konsole ist über die Shiva-API möglich. Sie finden detaillierte Informationen zu Verben und Konfigurationen unter __'Profil'__ und __'APIs'__:
+Access to all features of the Shiva console is possible via the Shiva API. You can find detailed information about verbs and configurations via __'Profile'__ and __'APIs'__:
 
 <img src={shivaOnboard_008} />
 

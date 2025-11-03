@@ -19,19 +19,19 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 - Avere accesso alla console Shiva
 - Aver dichiarato il proprio indirizzo IPv4 pubblico nella zona di fiducia Cloud Temple (l'accesso alla console Shiva è limitato agli indirizzi di fiducia identificati)
 
-## Accesso al vostro tenant Cloud Temple
+## Accesso al tuo tenant Cloud Temple
 
-Shiva è accessibile tramite l'URL seguente: [Shiva](https://shiva.cloud-temple.com) oppure dall'URL diretta che vi è stata inviata via email.
+Shiva è accessibile tramite l'URL riportata di seguito: [Shiva](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via e-mail.
 
-La prima pagina vi permette di selezionare l'[organizzazione](iam/concepts.md#organisations) in cui è stato creato il vostro utente.  
-Dopo aver inserito l'azienda, fate clic su __'Accedi'__.
+La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organisations) in cui è stato creato il tuo utente.  
+Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
 
 <img src={shivaLogin} />
 
-Vi verrà quindi reindirizzati a una pagina in cui vi verrà chiesto di autenticarvi.  
-Dopo aver effettuato l'accesso, arriverete a questa pagina.
+Successivamente verrai reindirizzato a una pagina in cui ti verrà chiesto di autenticarti.  
+Una volta effettuato l'accesso, arriverai a questa pagina.
 
-Vi troverete tutte le metriche riguardanti i prodotti sottoscritti nel vostro perimetro. In caso di problema/i sui vostri prodotti VMware e/o OpenIaaS, saranno visibili degli avvisi, il colore è legato alla loro importanza.
+Qui troverai l'insieme delle metriche relative ai prodotti sottoscritti nel tuo ambito. In caso di problemi relativi ai tuoi prodotti VMware e/o OpenIaaS, verranno visualizzate delle avvisi, la cui colorazione indica il loro livello di gravità.
 
 <img src={shivaHome} />
 
@@ -39,7 +39,7 @@ Vi troverete tutte le metriche riguardanti i prodotti sottoscritti nel vostro pe
 
 La console è disponibile in __francese__, __inglese__. È possibile cambiare la lingua di utilizzo tramite l'icona __lingua__ situata in alto a destra dello schermo.
 
-Il cambiamento della lingua di un utente deve essere effettuato nel suo __'Profilo'__, in alto a destra dello schermo, nei __'Impostazioni utente'__.
+Il cambio di lingua per un utente deve essere effettuato nel suo __'Profilo'__, in alto a destra dello schermo, nei __'Impostazioni utente'__.
 
 <img src={shivaProfil_006} />
 
@@ -55,10 +55,10 @@ Verrai guidato durante tutto il processo di richiesta di supporto.
 
 La prima fase consiste nell'identificare il tipo di richiesta di supporto:
 
-- Richiedere un consiglio sull'utilizzo di un prodotto (fuori dal contesto di un incidente),
-- Richiedere assistenza relativa al tuo account cliente,
+- Richiedere un consiglio sull'utilizzo di un prodotto (fuori dal caso di incidente),
+- Richiedere assistenza legata al tuo account cliente,
 - Segnalare un incidente o richiedere supporto tecnico.
-- Richiedere l'assistenza di un servizio professionale (messaggio a disposizione di un ingegnere Cloud Temple per un problema specifico).
+- Richiedere l'assistenza di un servizio professionale (disponibilità di un ingegnere Cloud Temple per un problema specifico).
 
 <img src={shivaSupport_01} />
 
@@ -109,13 +109,13 @@ Tutte le funzionalità accessibili all'utente (in base ai suoi diritti) si trova
 Le funzionalità sono raggruppate per modulo. Questi includono principalmente:
 
 - L'__inventario__ delle proprie risorse,  
-- Il __monitoraggio delle operazioni__,  
-- Il __pilotaggio delle risorse IaaS__ (Calcolo, archiviazione, rete, ...)  
-- Il __pilotaggio delle risorse OpenIaaS__ (Calcolo, archiviazione, rete, ...)  
-- L'accesso ai __servizi aggiuntivi__ (Bastion, monitoraggio, ...)  
-- L'__amministrazione dell'organizzazione__ (Gestione dei tenant, dei diritti, ...)
+- Il __tracciamento delle operazioni__,  
+- Il __pilotaggio delle risorse IaaS__ (Calcolo, archiviazione, rete, ...),  
+- Il __pilotaggio delle risorse OpenIaaS__ (Calcolo, archiviazione, rete, ...),  
+- L'accesso ai __servizi aggiuntivi__ (Bastion, monitoraggio, ...),  
+- L'__amministrazione della propria organizzazione__ (Gestione dei tenant, dei diritti, ...).
 
-L'attivazione di un modulo per un utente dipende dai diritti assegnati all'utente. Ad esempio, il modulo __'Ordine'__ non sarà disponibile se l'utente non dispone del diritto __'ORDER'__.
+L'attivazione di un modulo per un utente dipende dai diritti assegnati. Ad esempio, il modulo __'Ordine'__ non sarà disponibile se l'utente non dispone del diritto __'ORDER'__.
 
 Di seguito una presentazione dei diversi moduli disponibili. Nuovi moduli vengono regolarmente aggiunti alla console:
 
@@ -124,24 +124,24 @@ Di seguito una presentazione dei diversi moduli disponibili. Nuovi moduli vengon
 <div>
 - __Dashboard__: consente di ottenere rapidamente una panoramica sul __totale delle risorse di calcolo e archiviazione__, sulle statistiche della __protezione dei dati__ e su una __sintesi dei ticket di supporto__,  
 - __Inventario__: consente di visualizzare l'insieme delle proprie risorse di tipo __'macchine virtuali'__. Se vengono utilizzati i __tag__, permette di visualizzare le risorse raggruppate per __tag__ (ad esempio, vista aziendale, vista applicativa, ...),  
-- __Infogestione__: fornisce l'accesso al monitoraggio delle proprie __richieste di supporto__ e alla __metodologia dei servizi__,  
-- __IaaS__: consente il __pilotaggio delle infrastrutture IaaS VMware__ (macchine virtuali, cluster, iperhost, replica, backup, ...),  
+- __Infogestione__: fornisce l'accesso al tracciamento delle proprie __richieste di supporto__ e alla __metodologia dei servizi__,  
+- __IaaS__: consente il __pilotaggio delle infrastrutture IaaS VMware__ (macchine virtuali, cluster, iperhost, replicazioni, backup, ...),  
 - __OpenIaaS__: consente il __pilotaggio delle risorse Xen Orchestra__ (macchine virtuali, backup, ...),  
 - __OpenShift__: consente il pilotaggio dell'**architettura PaaS RedHat OpenShift** e la gestione dei container nelle 3 zone di disponibilità della piattaforma.  
 - __Bastion__: permette il deployment e il pilotaggio di appliance bastion SSH/RDP nei propri reti,  
-- __Rete__: consente il pilotaggio delle __reti di livello 2 e 3__, delle __IP pubbliche__ e dei propri __circuiti telecomunicazioni__,  
-- __Colocation__: offre la visione sugli apparati ubicati nelle zone di __collocazione condivisa o dedicata__,  
-- __Ordine__: permette l'ordine di risorse e il monitoraggio dei deployment,  
-- __Amministrazione__: raggruppa le funzioni di amministrazione degli utenti e dei tenant, nonché l'accesso alla registrazione globale.
+- __Rete__: consente il pilotaggio dei __reti di livello 2 e 3__, delle __IP pubbliche__ e dei __circuiti telecom__,  
+- __Collocamento__: offre la visualizzazione degli apparati situati nelle zone di __collocamento condivise o dedicate__,  
+- __Ordine__: permette l'ordine di risorse e il tracciamento dei deployment,  
+- __Amministrazione__: raggruppa le funzionalità di amministrazione degli utenti e dei tenant, nonché l'accesso alla registrazione globale.
 </div>
 </div>
 
 I pictogrammi __'NEW'__ indicano che il prodotto in questione è stato provisionato ma non è ancora qualificato come __offerta SecNumCloud__, mentre __'BETA'__ indica che il prodotto è stato provisionato e recentemente qualificato come __offerta SecNumCloud__.
 
-__Registrazione - Monitoraggio delle attività__
+__Registrazione - Tracciamento delle attività__
 =====================================
 
-La pagina delle attività è pensata per fornire una visibilità completa su tutte le operazioni di lettura e scrittura effettuate all'interno della console, garantendo così una tracciabilità e una sicurezza maggiori. Essa mette in evidenza i due principali tab: Recenti e Archiviati.
+La pagina delle attività è pensata per fornire una visibilità completa su tutte le operazioni di lettura e scrittura eseguite all'interno della console, garantendo così una tracciabilità e una sicurezza maggiori. Mette in evidenza i due principali tab: Recenti e Archiviati.
 
 <img src={shivaLogs} />
 
@@ -196,6 +196,6 @@ L'accesso a tutte le funzionalità della console Shiva è possibile tramite l'AP
 
 <img src={shivaOnboard_008} />
 
-## Provider Terraform
+## Terraform Provider
 
 Cloud Temple mette a vostra disposizione un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) per gestire la vostra piattaforma Cloud in modalità *"as code"*.

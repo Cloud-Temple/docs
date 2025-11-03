@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 3 Novembre 2025 : Amélioration des tutoriels Kubernetes
+
+- **Managed Kubernetes** : Revue et amélioration des tutoriels existants. Les guides sur le déploiement, le réseau, la gestion des permissions (Capsule) et la sauvegarde (Kasten) ont été enrichis pour mieux adresser les questions de sécurité, de gouvernance et de coût, en réponse aux attentes des profils RSSI et Acheteur.
+
 ### 28 Octobre 2025 : Nouvelle documentation Managed Kubernetes et améliorations diverses
 
 - **Managed Kubernetes (PR #193 & améliorations)**: Ajout d'une documentation complète pour le nouveau service Managed Kubernetes. La section inclut une présentation du service, les concepts techniques, un guide de démarrage, un premier tutoriel, et la matrice de responsabilités (RACI). Le contenu a été enrichi pour mieux répondre aux attentes des différents profils d'utilisateurs.
