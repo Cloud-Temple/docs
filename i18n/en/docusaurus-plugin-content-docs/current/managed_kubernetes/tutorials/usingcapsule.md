@@ -4,19 +4,21 @@ title: Managing Permissions with Capsule
 
 ## Objectives
 
-This tutorial will guide you through using **Capsule**, the built-in multi-tenancy tool for your **Managed Kubernetes** cluster. By the end of this guide, you will know:
+This tutorial will guide you through using **Capsule**, the built-in multi-tenancy tool for your **Managed Kubernetes** cluster. By the end of this guide, you will know how to:
 
-- What a **Capsule Tenant** is and how it organizes your permissions.
-- How to **create and manage Namespaces** within your Tenant.
-- How **security policies and quotas** are enforced on your projects.
+- Understand what a **Capsule Tenant** is and how it organizes your permissions.
+- Create and manage **Namespaces** within your Tenant.
+- Apply **security policies and quotas** to your projects.
 
 ## What is Capsule?
 
-Capsule is a Kubernetes controller that introduces the concept of **Tenant** to group multiple Namespaces. In Cloud Temple's Managed Kubernetes offering, Capsule is used to delegate the management of your own Namespaces to you, enabling full autonomy without requiring intervention from a cluster administrator.
+Capsule is a Kubernetes controller that introduces the concept of **Tenant** to group multiple Namespaces. In Cloud Temple's Managed Kubernetes offering, Capsule is used to delegate the management of your own Namespaces to you, allowing full autonomy without requiring intervention from a cluster administrator.
 
 Upon delivery of your cluster, the Cloud Temple teams have created a first Tenant for you and designated you as its **Tenant Owner**.
 
-*Note: By default, your first Tenant is named `default`, and the owner service account is `defaultapp`.*
+:::tip
+By default, your first Tenant is named `default`, and the owner service account is `defaultapp`.
+:::
 
 For more information about the project, you can visit the [official Capsule website](https://projectcapsule.dev/).
 
@@ -53,13 +55,13 @@ Capsule will intercept this request. Since you are the owner of a Tenant, it wil
 
 ## Step 3: Verify Namespace Association
 
-Once the namespace has been created, you can verify that it has been correctly attached to your Tenant.
+Once the Namespace is created, you can verify that it has been correctly attached to your Tenant.
 
 ```bash
 kubectl get ns mon-projet-dev --show-labels
 ```
 
-You will notice that Capsule has added a label to your namespace, indicating which Tenant it belongs to. This mechanism ensures isolation between the different Tenants in the cluster.
+You will notice that Capsule has added a label to your Namespace, indicating which Tenant it belongs to. This mechanism ensures isolation between the different Tenants in the cluster.
 
 ```
 NAME             STATUS   AGE   LABELS

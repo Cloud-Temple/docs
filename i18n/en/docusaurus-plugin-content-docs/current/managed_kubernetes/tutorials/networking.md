@@ -16,17 +16,19 @@ This tutorial aims to familiarize you with the fundamental networking concepts o
 
 We will use as an **example** a cluster named **"ctodev"**, with an assigned range of **10.20.0.0/22**.
 
-*Note: This private IP range X.Y.Z.0/22 (RFC 1918) is defined with the client during cluster setup and cannot be modified afterward.*
+:::warning IP range definition
+ This private IP range X.Y.Z.0/22 (RFC 1918) is defined with the client during cluster setup and cannot be modified afterward.
+:::
 
 ## IP Addressing Plan
 
 Your Managed Kubernetes cluster is provisioned with a multi-zone VLAN using an IPv4 address range of /22.
 
-The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
+The **example** range 10.20.0.0/22 is logically divided into sub-ranges:
 
     - 10.20.0.0/24 is assigned to cluster Nodes:
 
-        - 10.20.0.10 : ctodev-gitrunner (the machine that manages the infrastructure)
+        - 10.20.0.10 : ctodev-gitrunner (the machine that orchestrates the infrastructure)
 
         - 10.20.0.20 : Virtual IP (load-balanced) for the Kubernetes API service
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
@@ -56,13 +58,15 @@ The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
 
     - Services: 10.95.0.0/12 
 
-*Note: The Pods and Services ranges are defined with the client during cluster setup and cannot be modified afterward.*
+:::warning Pods and Services Ranges
+The Pods and Services ranges are defined with the client during cluster setup and cannot be modified afterward.
+:::
 
 ## Using MetalLB
 
 MetalLB is the component that enables exposing layer 3 (non-web / L7) services directly on an IP address—either internal or external—using the `LoadBalancer` service type. It serves as an alternative to Ingress for non-HTTP applications or specific use cases.
 
-To use MetalLB, simply create a `LoadBalancer` type service. MetalLB will automatically assign an IP address from the pre-configured pools. The distinction between `internal` and `external` pools is a security measure to ensure that an application intended for internal use is not accidentally exposed on a public network.
+To use MetalLB, simply create a `LoadBalancer`-type service. MetalLB will automatically assign an IP address from the preconfigured pools. The distinction between `internal` and `external` pools is a security measure to ensure that an internal-facing application is not accidentally exposed on a public network.
 
 **Example: Exposing a service on the internal network**
 
@@ -106,7 +110,7 @@ spec:
   type: LoadBalancer
 ```
 
-> **Important**: This range remains within a **private address space**. For **public exposure**, you must create a **NAT (DNAT) rule** on your infrastructure's firewall to redirect traffic from one of your public external IPs to the private IP assigned by MetalLB.
+> **Important**: This range remains within a **private address space**. For **public exposure**, you must create a **NAT rule (DNAT)** on your infrastructure's firewall to redirect traffic from one of your public external IPs to the private IP assigned by MetalLB.
 
 ## Public IPs
 
@@ -121,13 +125,13 @@ The second public IP is NATed to the ingress controller *"nginx-external"* on po
 
 Applications exposed via the ingress class *"nginx-external"* will therefore be directly accessible from the Internet using this IP.
 
-*If you wish to modify firewall rules (add/remove allowed IPs), you must submit a support request.*
+*If you wish to modify the firewall rules (add/remove allowed IPs), you must submit a support request.*
 
 *It is possible to add additional public IPs if desired.*
 
 ## DNS
 
-For the internal DNS (CoreDNS), the cluster will have the following settings:
+For the internal DNS (CoreDNS), the cluster will use the following settings:
 
 - Cluster name: ` <cluster identifier>`
 - Internal domain: `<cluster identifier>-cluster.local` (in our example: ctodev-cluster.local)
@@ -155,9 +159,9 @@ With Hubble, you can:
 
 ### Accessing the Hubble Interface
 
-The Hubble graphical interface is exposed via an internal URL of your cluster. Access is not possible through `kubectl port-forwarding` because users do not have sufficient permissions on the `kube-system` namespace.
+The Hubble graphical interface is exposed on an internal URL of your cluster. Access via `kubectl port-forward` is not possible, as users do not have sufficient permissions on the `kube-system` namespace.
 
-To access it, you must be connected to the cluster's internal network (for example, via a bastion host or a VPN). Use the following URL:
+To access it, you must be connected to the cluster's internal network (e.g., via a bastion host or a VPN). Use the following URL:
 
 `http://hubble.internal.<your-cluster-identifier>.mk.ms-cloud-temple.com`
 
@@ -171,13 +175,13 @@ kubectl get ingress hubble-ui -n kube-system
 
 ### Creating Internal DNS Zones (Private Cluster)
 
-To enhance security and simplify access to your services and the Kubernetes API from your internal network, it is recommended to set up an internal DNS zone. This zone will resolve domain names for your Ingresses and the Kubernetes API to their respective private IP addresses, ensuring traffic stays within your private network and avoids public networks.
+To enhance security and simplify access to your services and the Kubernetes API from within your internal network, it is recommended to create an internal DNS zone. This zone will resolve domain names for your Ingresses and the Kubernetes API to their respective private IP addresses, avoiding transit through public networks.
 
-**Example configuration for our cluster "ctodev", which has been assigned the range `10.20.0.0/22`:**
+**Example configuration using our cluster "ctodev", which has been assigned the range** **10.20.0.0/22:**
 
 Based on the URLs provided in the quick start guide, you can configure your internal DNS as follows:
 
-1.  **Create a private DNS zone** on your internal DNS servers for `. <cluster identifier>.mk.ms-cloud-temple.com`
+1.  **Create a private DNS zone** on your internal DNS servers for `.<cluster identifier>.mk.ms-cloud-temple.com`
 
 2.  **Add the following A records:**
 
@@ -211,10 +215,10 @@ This configuration ensures that traffic to the API and internal services remains
   </div>
 </div>
 
-:::warning Going Further: Security in Production
+:::warning Going Further: Production Security
 This document covers fundamental networking concepts. For production deployments, it is essential to implement additional security measures:
 
--   **Use secure images**: Prefer images from your enterprise-secured registry such as **Harbor**, rather than public images.
+-   **Use secure images**: Prefer images from your enterprise-secured registry such as **Harbor** over public images.
 -   **Control network traffic**: Implement `NetworkPolicies` to restrict communications to only necessary flows between your applications.
 -   **Enforce governance policies**: Use tools like **Kyverno** to enforce security rules (e.g., prohibit root containers, require resource `requests` and `limits`, etc.).
 :::

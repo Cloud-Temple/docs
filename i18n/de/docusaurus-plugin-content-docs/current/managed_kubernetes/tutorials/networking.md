@@ -10,28 +10,30 @@ import cillium from './images/cillium.png'
 
 Dieser Leitfaden soll Sie mit den grundlegenden Netzwerkkonzepten des Angebots **Managed Kubernetes** vertraut machen. Am Ende dieses Leitfadens können Sie:
 
-- Das IP-Adressierungsschema Ihres Clusters (Knoten, Pods, Services) verstehen.
+- Den IP-Adressraum Ihres Clusters (Knoten, Pods, Services) verstehen.
 - Die verschiedenen Mechanismen kennen, um Ihre Anwendungen verfügbar zu machen (Ingress, LoadBalancer).
 - Netzwerkflüsse und Sicherheitsrichtlinien mit Hubble visualisieren.
 
 Als **Beispiel** verwenden wir einen Cluster namens **"ctodev"**, dessen zugeordneter Bereich **10.20.0.0/22** ist.
 
-*Hinweis: Dieser private IP-Bereich X.Y.Z.0/22 (RFC 1918) wird beim Einrichten des Clusters mit dem Kunden festgelegt und kann später nicht mehr geändert werden.*
+:::warning Definition der IP-Bereiche
+ Der private IP-Bereich X.Y.Z.0/22 (RFC 1918) wird beim Einrichten des Clusters mit dem Kunden festgelegt und kann später nicht mehr geändert werden.
+:::
 
 ## IP Addressing Plan
 
-Your Managed Kubernetes cluster is provisioned with a multi-zone VLAN using an IPv4 address range of /22.
+Your Managed Kubernetes cluster is equipped with a multi-zone VLAN with an IPv4 address range of /22.
 
-The **example** range 10.20.0.0/22 is logically divided into sub-ranges:
+The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
 
-    - 10.20.0.0/24 is allocated to cluster Nodes:
+    - 10.20.0.0/24 is assigned to cluster Nodes:
 
-        - 10.20.0.10 : ctodev-gitrunner (the machine managing the infrastructure)
+        - 10.20.0.10 : ctodev-gitrunner (the machine that manages the infrastructure)
 
-        - 10.20.0.20 : Virtual IP (load-balanced) for the Kubernetes API service
-        - 10.20.0.21 : ctodev-cp-01 (Control Plane 01)
-        - 10.20.0.22 : ctodev-cp-02 (Control Plane 02)
-        - 10.20.0.23 : ctodev-cp-03 (Control Plane 03)
+        - 10.20.0.20 : virtual IP (load-balanced) for the Kubernetes API service
+        - 10.20.0.21 : ctodev-cp-01 (control plane 01)
+        - 10.20.0.22 : ctodev-cp-02 (control plane 02)
+        - 10.20.0.23 : ctodev-cp-03 (control plane 03)
 
         - 10.20.0.41 : ctodev-ceph-01 (Ceph Storage 01)
         - 10.20.0.42 : ctodev-ceph-02 (Ceph Storage 02)
@@ -56,11 +58,13 @@ The **example** range 10.20.0.0/22 is logically divided into sub-ranges:
 
     - Services: 10.95.0.0/12 
 
-*Note: The Pod and Service ranges are defined with the client during cluster setup and cannot be modified afterward.*
+:::warning Pod and Service Ranges
+The Pod and Service ranges are defined with the client during cluster setup and cannot be modified afterward.
+:::
 
 ## Using MetalLB
 
-MetalLB is the component that enables exposing layer 3 (non-web / L7) services directly on an IP address—either internal or external—using the `LoadBalancer` service type. It serves as an alternative to Ingress for non-HTTP applications or specific use cases.
+MetalLB is the component that enables exposing layer 3 (non-web / L7) services directly on an IP address—whether internal or external—using the `LoadBalancer` service type. It serves as an alternative to Ingress for non-HTTP applications or specific use cases.
 
 To use MetalLB, simply create a `LoadBalancer`-type service. MetalLB will automatically assign an IP address from the preconfigured pools. The distinction between `internal` and `external` pools is a security measure to ensure that an application intended for internal use is not accidentally exposed on a public network.
 
@@ -110,7 +114,7 @@ spec:
 
 ## Public IPs
 
-Your Managed Kubernetes cluster was initially delivered with 2 public IPv4 addresses.
+Your Managed Kubernetes cluster was delivered with 2 public IPv4 addresses by default.
 
 The first IP is used on port 6443 for the Kubernetes API (in our example: ctodev.mk.ms-cloud-temple.com:6443).
 
@@ -127,21 +131,21 @@ Applications exposed via the ingress class *"nginx-external"* will therefore be 
 
 ## DNS
 
-For the internal DNS (CoreDNS), the cluster will have the following settings:
+Für den internen DNS (CoreDNS) hat der Cluster folgende Einstellungen:
 
-- Cluster name: ` <cluster identifier>`
-- Internal domain: `<cluster identifier>-cluster.local` (in our example: ctodev-cluster.local)
+- Cluster-Name: ` <Cluster-Identifikator>`
+- Internes Domain-Name: `<Cluster-Identifikator>-cluster.local` (in unserem Beispiel: ctodev-cluster.local)
 
-This internal domain is crucial for inter-service communication within the cluster. It allows an application to contact another application simply by using the Kubernetes service name, without needing to know its internal IP address.
+Dieser interne Domain-Name ist entscheidend für die Kommunikation zwischen Services innerhalb des Clusters. Er ermöglicht es einer Anwendung, eine andere Anwendung über einfach nur ihren Kubernetes-Service-Namen aufzurufen, ohne die interne IP-Adresse kennen zu müssen.
 
-For example, a service named `api-backend` in the `production` namespace will automatically be resolvable at the address `api-backend.production.svc.ctodev-cluster.local`.
+Beispielsweise ist ein Service namens `api-backend` im Namespace `production` automatisch über die Adresse `api-backend.production.svc.ctodev-cluster.local` auflösbar.
 
 ---
 
-The public DNS zone used for Managed Kubernetes clusters is `.mk.ms-cloud-temple.com`.
+Die öffentliche DNS-Zone, die für die Kubernetes-Managed-Cluster verwendet wird, lautet `.mk.ms-cloud-temple.com`.
 
-The ingress *"nginx-external"* (mapped to public IP #2) is accessible at `"*.external.<your cluster identifier>.mk.ms-cloud-temple.com"`.  
-If you deploy an application using this ingress class, you can access it directly via this domain name. See the tutorial: [Deploy your first application](./firstdeploy)
+Der Ingress *"nginx-external"* (zugeordnet zu der öffentlichen IP-Adresse Nr. 2) ist erreichbar unter `"*.external.<Ihr Cluster-Identifikator>.mk.ms-cloud-temple.com"`.  
+Wenn Sie eine Anwendung mit dieser Ingress-Klasse bereitstellen, können Sie darauf direkt über diesen Domain-Namen zugreifen. Weitere Informationen finden Sie im Tutorial: [Ihre erste Anwendung bereitstellen](./firstdeploy)
 
 ## Hubble: Network Observability within Reach
 
@@ -150,12 +154,12 @@ Hubble is a graphical and command-line interface to visualize and understand net
 With Hubble, you can:
 - **Visualize traffic flows** between your pods and services.
 - **Identify connectivity issues** and network errors.
-- **Verify the enforcement of your security policies** (Network Policies).
+- **Verify enforcement of your security policies** (Network Policies).
 - **Explore dependencies** between your various applications.
 
 ### Access the Hubble Interface
 
-The Hubble graphical interface is exposed on an internal URL of your cluster. Access is not possible via `kubectl port-forward` because users do not have sufficient permissions on the `kube-system` namespace.
+The Hubble graphical interface is exposed via an internal URL of your cluster. Access is not possible through `kubectl port-forwarding` because users do not have sufficient permissions on the `kube-system` namespace.
 
 To access it, you must be connected to the cluster's internal network (for example, via a bastion host or a VPN). Use the following URL:
 
@@ -171,9 +175,9 @@ kubectl get ingress hubble-ui -n kube-system
 
 ### Erstellung interner DNS-Zonen (privater Cluster)
 
-Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste sowie die Kubernetes-API von Ihrem internen Netzwerk aus zu vereinfachen, wird empfohlen, eine interne DNS-Zone zu erstellen. Diese Zone ermöglicht die Auflösung der Domänennamen Ihrer Ingress-Ressourcen und der Kubernetes-API auf ihre jeweiligen privaten IP-Adressen, wodurch der Datenverkehr nicht mehr über öffentliche Netzwerke geleitet werden muss.
+Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste sowie die Kubernetes-API von Ihrem internen Netzwerk aus zu vereinfachen, wird empfohlen, eine interne DNS-Zone zu erstellen. Diese Zone ermöglicht die Auflösung der Domänennamen Ihrer Ingress-Ressourcen sowie der Kubernetes-API auf ihre jeweiligen privaten IP-Adressen und verhindert so den Datenverkehr über öffentliche Netzwerke.
 
-**Beispielkonfiguration für unseren Cluster „ctodev“, dessen zugewiesener Bereich 10.20.0.0/22 ist:**
+**Beispielkonfiguration für unseren Cluster „ctodev“ mit dem zugewiesenen Bereich 10.20.0.0/22:**
 
 Basierend auf den URLs im Schnellstartleitfaden können Sie Ihre interne DNS-Konfiguration wie folgt einrichten:
 
@@ -199,7 +203,7 @@ Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Die
 
 <div class="card">
   <div class="card__header">
-    <h3>Anleitung: Bereitstellen Ihrer ersten Anwendung</h3>
+    <h3>Anleitung: Bereitstellung Ihrer ersten Anwendung</h3>
   </div>
   <div class="card__body">
     <p>
@@ -212,9 +216,9 @@ Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Die
 </div>
 
 :::warning Weiterführend: Sicherheit in der Produktion
-Dieses Dokument erläutert grundlegende Netzwerkkonzepte. Für einen Produktiveinsatz ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu implementieren:
+Dieses Dokument erläutert grundlegende Netzwerkkonzepte. Für einen Produktionsbetrieb ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu ergreifen:
 
 -   **Verwenden Sie sichere Images**: Verwenden Sie bevorzugt Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor**, anstatt öffentliche Images.
--   **Steuern Sie Netzwerkflüsse**: Setzen Sie `NetworkPolicies` ein, um den Datenverkehr auf nur die für Ihre Anwendungen notwendigen Kommunikationswege zu beschränken.
--   **Implementieren Sie Governance-Politiken**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Pflicht zur Angabe von `requests` und `limits` für Ressourcen usw.).
+-   **Steuern Sie Netzwerkflüsse**: Implementieren Sie `NetworkPolicies`, um den Datenverkehr auf nur die für Ihre Anwendungen erforderlichen Kommunikationswege zu beschränken.
+-   **Wenden Sie Governance-Politiken an**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Anforderung von Ressourcenanforderungen und -Grenzen).
 :::

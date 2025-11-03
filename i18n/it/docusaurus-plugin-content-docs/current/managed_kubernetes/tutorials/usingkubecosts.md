@@ -5,17 +5,17 @@ import kubecostsallocations from './images/kubecostsallocations.png'
 
 ## Obiettivi
 
-Questo tutorial vi presenta **Kubecost**, lo strumento di monitoraggio e ottimizzazione dei costi integrato nel vostro cluster **Managed Kubernetes**. Al termine di questa guida, sarete in grado di:
+Questo tutorial ti presenta **Kubecost**, lo strumento di monitoraggio e ottimizzazione dei costi integrato nel tuo cluster **Managed Kubernetes**. Al termine di questa guida sarai in grado di:
 
 - **Accedere** all'interfaccia di Kubecost.
-- **Analizzare** la ripartizione dei costi delle vostre applicazioni.
-- **Identificare** le opportunità di ottimizzazione per ridurre la vostra fatturazione.
+- **Analizzare** la ripartizione dei costi delle tue applicazioni.
+- **Identificare** le opportunità di ottimizzazione per ridurre la tua fatturazione.
 
 ## Cos'è Kubecost?
 
 Kubecost è una soluzione open-source che fornisce una visibilità in tempo reale sui costi dei tuoi ambienti Kubernetes. Ti aiuta a comprendere esattamente cosa sta consumando risorse nel tuo cluster e come ciò si traduce in termini di costi.
 
-Nell'offerta Kubernetes gestito, Kubecost è preinstallato e preconfigurato per offrirti una visione chiara delle tue spese. È direttamente configurato con i costi effettivi dell'infrastruttura Cloud Temple, il che significa che le stime visualizzate corrispondono fedelmente alla tua fatturazione.
+Nell'offerta Kubernetes gestito, Kubecost è pre-installato e pre-configurato per offrirti una visione chiara delle tue spese. È direttamente configurato con i costi effettivi dell'infrastruttura Cloud Temple, il che significa che le stime visualizzate corrispondono fedelmente alla tua fatturazione.
 
 ## Access the Kubecost Interface
 
@@ -23,7 +23,9 @@ The Kubecost interface is exposed on a secure URL specific to your cluster. To a
 
 `https://kubecost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
-*Note: Access to this URL is restricted to the IP addresses you have declared to Cloud Temple support. If you are unable to access it, please contact support to verify your firewall rules.*
+:::info
+Access to this URL is restricted to the IP addresses you have declared to Cloud Temple support. If you are unable to access it, please contact support to verify your firewall rules.
+:::
 
 ## Esplorare la distribuzione dei costi (Allocations)
 
@@ -45,18 +47,18 @@ The **Assets** section provides a detailed view of the costs associated with the
 - Persistent disks
 - Network costs
 
-This allows you to understand the cost distribution across compute, storage, and network resources.
+This allows you to understand the cost distribution across computing, storage, and networking resources.
 
 ## Identificare le opportunità di ottimizzazione (Savings)
 
-Kubecost non si limita a mostrare i costi, ma vi aiuta anche a ridurli. La sezione **Savings** analizza continuamente il vostro cluster e vi fornisce raccomandazioni concrete per ottimizzare le spese.
+Kubecost non si limita a mostrare i costi, ma ti aiuta anche a ridurli. La sezione **Savings** analizza continuamente il tuo cluster e ti fornisce raccomandazioni concrete per ottimizzare le spese.
 
 Le raccomandazioni più comuni includono:
-- **Right-sizing delle richieste dei container:** Regolare le richieste di CPU e memoria dei vostri container in modo che corrispondano al consumo effettivo.
+- **Right-sizing delle richieste dei container:** Regolare le richieste di CPU e memoria dei tuoi container in modo che corrispondano al consumo effettivo.
 - **Gestione dei carichi di lavoro abbandonati:** Identificare i deployment che non sono più utilizzati ma continuano a consumare risorse.
 - **Gestione dei volumi non assegnati:** Trovare i volumi persistenti che non sono più collegati a nessun pod.
 
-Ogni raccomandazione è accompagnata da una stima dei risparmi mensili che potreste ottenere.
+Ogni raccomandazione è accompagnata da una stima dei risparmi mensili che potresti ottenere.
 
 ## Conclusione
 

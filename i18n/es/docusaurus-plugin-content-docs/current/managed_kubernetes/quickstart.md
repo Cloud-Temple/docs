@@ -8,44 +8,52 @@ El objetivo de esta sección es orientarte hacia los recursos necesarios para co
 
 ## Antes de comenzar
 
-Para interactuar con su clúster, son indispensables los siguientes elementos:
+Para interactuar con su clúster, son indispensables varios elementos:
 
-1.  **El archivo `kubeconfig`**: Este archivo, que le proporcionan los equipos de Cloud Temple al entregar el servicio, contiene toda la información necesaria para conectarse de forma segura.
+1.  **El archivo `kubeconfig`**: Este archivo, que le es proporcionado por los equipos de Cloud Temple al entregar el servicio, contiene toda la información necesaria para conectarse de forma segura.
 2.  **La herramienta `kubectl`**: Se trata de la interfaz de línea de comandos estándar para gestionar un clúster de Kubernetes.
-3.  **La herramienta `kubelogin`** (si se utiliza OIDC): Si su clúster está configurado para autenticarse mediante un proveedor de identidad OIDC (como Entra ID/Azure AD), deberá instalar la herramienta `kubelogin` para gestionar el flujo de autenticación. Consulte la [guía de instalación de kubelogin](https://github.com/int128/kubelogin).
+3.  **La herramienta `kubelogin`** (si se utiliza OIDC): Si su clúster está configurado para autenticarse mediante un proveedor de identidad OIDC (como Entra ID/Azure AD), deberá instalar la herramienta `kubelogin` para gestionar el flujo de autenticación. Siga la [guía de instalación de kubelogin](https://github.com/int128/kubelogin).
 
-Herramientas gráficas recomendadas: Para una experiencia más visual y una gestión simplificada de sus recursos, le recomendamos el uso de **Lens**. Se trata de una herramienta potente para Kubernetes que le permite explorar su clúster, gestionar sus aplicaciones y visualizar su estado de forma gráfica.  
+:::info Herramientas gráficas recomendadas: 
+Para una experiencia más visual y una gestión simplificada de sus recursos, le recomendamos el uso de **Lens**. Se trata de una herramienta potente para Kubernetes que le permite explorar su clúster, gestionar sus aplicaciones y visualizar su estado de forma gráfica.
 Algunos de nuestros tutoriales utilizarán Lens para ilustrar las manipulaciones. Puede descargarlo aquí: [https://k8slens.dev/](https://k8slens.dev/).
+:::
 
-## Acceder a su clúster Kubernetes gestionado
+## Acceder a su cluster Kubernetes gestionado
 
-Su clúster de producción está identificado por un código de 5 letras (6 letras en Dev/Test). Este código se utiliza para construir las URLs de las diferentes interfaces. En los tutoriales, usaremos **"ctodev"**.
+Su cluster de producción está identificado por un código de 5 letras (6 letras en Dev/Test). Este código se utiliza para construir las URL de las diferentes interfaces. En los tutoriales, usaremos **"ctodev"**.
 
-Las URLs son:
+Las URL son:
 
 - API de Kubernetes (utilizada en kubeconfig):
   - **identificador**.mk.ms-cloud-temple.com:6443 (por lo tanto, en nuestro ejemplo: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443))
 
-- URLs públicas:
+- URL públicas:
   - k10.external-secured.**identificador**.mk.ms-cloud-temple.com
   - grafana.external-secured.**identificador**.mk.ms-cloud-temple.com
   - harbor.external-secured.**identificador**.mk.ms-cloud-temple.com
   - kubecost.external-secured.**identificador**.mk.ms-cloud-temple.com
 
-*Las URLs anteriores solo son accesibles desde direcciones IP públicas conocidas, configuradas en el firewall de la solución. Si desea agregar una IP pública, debe solicitar soporte.*
+:::info URL seguras
+Las URL anteriores solo son accesibles desde direcciones IP públicas conocidas, configuradas en el firewall de la solución. Si desea agregar una IP pública, debe solicitar soporte.
+:::
 
-- URLs internas:
+- URL internas:
   - ceph.internal.**identificador**.mk.ms-cloud-temple.com
   - argocd.internal.**identificador**.mk.ms-cloud-temple.com
   - hubble.internal.**identificador**.mk.ms-cloud-temple.com
 
-*Las URLs anteriores no están expuestas en Internet. Solo son accesibles desde la red interna del clúster Kubernetes gestionado.*
+:::info URL internas
+Las URL anteriores no están expuestas en Internet. Solo son accesibles desde la red interna del Kubernetes gestionado.
+:::
 
 ## Sus permisos
 
+:::warning Dev/Test
 Para los clústeres Kubernetes gestionados **"Dev/Test"**, la cuenta de servicio que se le ha proporcionado tiene todos los permisos en todo el clúster (ClusterAdmin).
+:::
 
-En los clústeres **"Producción"**, sus permisos están limitados. Dispone de un permiso **"Viewer Extendido"** sobre los recursos del clúster. Este permiso otorga acceso de solo lectura a recursos clave, tanto a nivel de clúster como para diagnóstico:
+En los clústeres **"Producción"**, sus permisos están limitados. Usted cuenta con el permiso **"Viewer Extendido"** sobre los recursos del clúster. Este permiso otorga acceso de solo lectura a recursos clave, tanto a nivel de clúster como para diagnóstico:
 
 - **Namespaces**: permiten a los inquilinos listar los espacios de nombres para herramientas y paneles de control.
 - **Pods, deployments, replicaset...**: permiten a los inquilinos listar los recursos desplegados en el clúster.
@@ -55,16 +63,16 @@ En los clústeres **"Producción"**, sus permisos están limitados. Dispone de u
 - **NetworkPolicies, ResourceQuotas, LimitRanges y Events**: esenciales para diagnosticar restricciones de red, fallos de planificación o violaciones de cuotas de recursos.
 
 La cuenta de servicio que se le ha asignado también ha sido configurada como **propietaria de un primer *tenant* Capsule**.  
-Puede crear espacios de nombres (namespaces), que se asociarán a su tenant Capsule.  
-Los usuarios externos (OIDC) son miembros de este mismo tenant Capsule, lo que les permite interactuar libremente dentro de los **espacios de nombres** asociados al tenant. (Ver el tutorial "Gestionar permisos con Capsule").
+Puede crear namespaces, que se vincularán a su tenant Capsule.  
+Los usuarios externos (OIDC) son miembros de este mismo tenant Capsule, lo que les permite interactuar libremente dentro de los **namespaces** asociados al tenant. (Ver el tutorial "Gestionar permisos con Capsule")
 
 Algunas acciones no están permitidas:
 
-- Listar / crear tenants Capsule
-- Crear CRD: Si necesita desplegar una aplicación con CRD (por ejemplo, un chart Helm de un operador), deberá contactar al soporte para que importen estos CRD (mediante extracción de los archivos YAML desde el chart Helm). A continuación, podrá desplegar su chart Helm con la opción `--skip-crds`. Ver: [Documentación Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+  - Listar / crear tenants Capsule
+  - Crear CRD: Si necesita desplegar una aplicación con CRD (por ejemplo, un chart Helm de un operador), deberá contactar al soporte para que importen estos CRD (mediante extracción de los archivos YAML desde el chart Helm). Luego podrá desplegar su chart Helm con la opción `--skip-crds`. Ver: [Documentación Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
-
+ 
 <div class="row">
   <div class="col col--4">
     <div className="card">
@@ -77,14 +85,14 @@ Algunas acciones no están permitidas:
         </p>
       </div>
       <div className="card__footer">
-        <a href="./tutorials/firstdeploy" className="button button--primary button--block">Comenzar el tutorial &rarr;</a>
+        <a href="./tutorials/firstdeploy" className="button button--primary button--block">Empezar el tutorial &rarr;</a>
       </div>
     </div>
   </div>
   <div class="col col--4">
     <div className="card">
       <div className="card__header">
-        <h3>Tutorial: Entender la red</h3>
+        <h3>Tutorial: Comprender la red</h3>
       </div>
       <div className="card__body">
         <p>

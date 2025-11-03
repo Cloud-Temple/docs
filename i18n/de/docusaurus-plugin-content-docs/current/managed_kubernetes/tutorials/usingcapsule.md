@@ -1,5 +1,5 @@
 ---
-title: Manage Permissions with Capsule
+title: Permissions mit Capsule verwalten
 ---
 
 ## Ziele
@@ -12,11 +12,13 @@ Dieser Leitfaden führt Sie durch die Nutzung von **Capsule**, dem integrierten 
 
 ## What is Capsule?
 
-Capsule is a Kubernetes controller that introduces the concept of **Tenant** to group multiple Namespaces. In Cloud Temple's Managed Kubernetes offering, Capsule is used to delegate the management of your own Namespaces to you, enabling full autonomy without requiring intervention from a cluster administrator.
+Capsule is a Kubernetes controller that introduces the concept of **Tenant** to group multiple Namespaces. In Cloud Temple's Managed Kubernetes offering, Capsule is used to delegate the management of your own Namespaces to you, allowing full autonomy without requiring intervention from a cluster administrator.
 
 Upon delivery of your cluster, the Cloud Temple teams have created a first Tenant for you and appointed you as its **Tenant Owner**.
 
-*Note: By default, your first Tenant is named `default`, and the owner service account is `defaultapp`.*
+:::tip
+By default, your first Tenant is called `default`, and the owner service account is `defaultapp`.
+:::
 
 For more information about the project, you can visit the [official Capsule website](https://projectcapsule.dev/).
 
@@ -63,7 +65,7 @@ You will notice that Capsule has added a label to your namespace, indicating whi
 
 ```
 NAME             STATUS   AGE   LABELS
-mon-projet-dev   Active   1m    capsule.clastix.io/tenant=votre-tenant
+mon-projet-dev   Active   1m    capsule.clastix.io/tenant=your-tenant
 ```
 
 ## Step 4: Understanding Policy Inheritance
@@ -74,6 +76,6 @@ This ensures your projects adhere to consumption limits (CPU, memory, storage) a
 
 ## Schlussfolgerung
 
-Mit Capsule verfügen Sie über vollständige Autonomie zur Verwaltung der Namespaces Ihrer Teams, während Sie gleichzeitig einen sicheren und vorab konfigurierten Rahmen durch die Cluster-Administratoren nutzen. Sie können Namespaces beliebig erstellen, ändern und löschen, wobei die erforderlichen Sicherheitsmaßnahmen automatisch angewendet werden.
+Mit Capsule verfügen Sie über vollständige Autonomie zur Verwaltung der Namespaces Ihrer Teams, gleichzeitig profitieren Sie von einem sicheren und vorab konfigurierten Rahmen, der von den Cluster-Administratoren bereitgestellt wird. Sie können Namespaces beliebig erstellen, ändern und löschen, wobei die erforderlichen Sicherheitsmaßnahmen automatisch angewendet werden.
 
 Wenn Sie einen neuen Tenant erstellen müssen, um einen weiteren Satz von Projekten oder Teams zu isolieren, können Sie dies beim Cloud Temple-Support beantragen.
