@@ -15,33 +15,33 @@ Das Angebot **Managed Kubernetes** (auch „Kub Managé“ oder „KM“ genannt
 
 Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponenten, die vom CNCF validiert wurden:
 
-- **CNI Cillium** mit Observability-Interface (**Hubble**): Cillium ist eine Netzwerklösung für Kubernetes-Container (*Container Network Interface*). Es übernimmt Sicherheit, Load Balancing, Service Mesh, Observability, Verschlüsselung usw. Es ist ein zentraler Netzwerkbaustein, der in den meisten Kubernetes-Distributionen (OpenShift, AKS, GKE, EKS usw.) zu finden ist. Wir haben das grafische Interface **Hubble** integriert, um den Cillium-Verkehr visuell darzustellen.
+- **CNI Cillium** mit Observability-Interface (**Hubble**): Cillium ist eine Netzwerklösung für Kubernetes-Container (*Container Network Interface*). Es übernimmt Sicherheit, Load Balancing, Service Mesh, Observability, Verschlüsselung usw. Es ist ein zentraler Netzwerkbaustein, der in den meisten Kubernetes-Distributionen (OpenShift, AKS, GKE, EKS usw.) enthalten ist. Wir haben das grafische Interface **Hubble** integriert, um den Cillium-Verkehr visuell darzustellen.
 
     <img src={cillium} />
 
 - **MetalLB** und **nginx**: Für die Exposition von Web-Anwendungen sind standardmäßig drei *ingress-class* **nginx** integriert:
-    - *nginx-external-secured*: Exposition über eine öffentliche IP, mit Firewall-Filterung, die nur bekannte IPs erlaubt (z. B. für grafische Oberflächen der Produkte und die Kubernetes-API)
+    - *nginx-external-secured*: Exposition über eine öffentliche IP, mit Firewall-Filterung, die nur bekannte IPs zulässt (z. B. für grafische Oberflächen der Produkte und die Kubernetes-API)
     - *nginx-external*: Exposition über eine zweite öffentliche IP ohne Filterung (oder spezifische Filterung pro Kunde)
     - *nginx-internal*: Exposition nur über eine interne IP
 
-    Für nicht-webbasierte Dienste ermöglicht **MetalLB** die Exposition von Diensten intern oder über öffentliche IPs (z. B. zur Bereitstellung weiterer Ingresses wie z. B. eines WAF).
+    Für nicht-webbasierte Dienste ermöglicht ein Load-Balancer **MetalLB** die Exposition von Diensten intern oder über öffentliche IPs (z. B. zur Bereitstellung weiterer Ingresses wie z. B. eines WAF).
 
-- **Verteiltes Speicher-System Rook-Ceph**: Für persistente Volumes (PV) ist ein Open-Source-Verteiltes Speichersystem **Ceph** in die Plattform integriert. Es ermöglicht die Nutzung der Storage-Klassen *ceph-block*, *ceph-bucket* und *ceph-filesystem*. Es wird ein Speicher mit **7500 IOPS/To** eingesetzt, der hohe Leistung ermöglicht. In Produktionsumgebungen (über 3 AZ) sind die Speicherknoten dediziert (1 Knoten pro AZ); in Nicht-Produktionsumgebungen (1 AZ) wird der Speicher gemeinsam mit den Worker-Knoten genutzt.
+- **Verteiltes Speicher-System Rook-Ceph**: Für persistenten Speicher (PV) ist ein Open-Source-Verteiltes-Speichersystem **Ceph** in die Plattform integriert. Es unterstützt die Storage-Classes *ceph-block*, *ceph-bucket* und *ceph-filesystem*. Es wird ein Speicher mit **7500 IOPS/To** eingesetzt, der hohe Leistung ermöglicht. In Produktionsumgebungen (über 3 AZ) sind die Speicherknoten dediziert (1 Knoten pro AZ); in Nicht-Produktionsumgebungen (1 AZ) wird der Speicher gemeinsam mit den Worker-Knoten genutzt.
 
 - **Cert-Manager**: Der Open-Source-Zertifikat-Manager **Cert-Manager** ist nativ in die Plattform integriert.
 
-- **ArgoCD**: Wir verwenden **ArgoCD** für automatisierte Bereitstellungen der verschiedenen Komponenten über eine **CI/CD**-Pipeline.
+- **ArgoCD**: Wir nutzen **ArgoCD** für automatisierte Bereitstellungen der verschiedenen Komponenten über eine **CI/CD**-Pipeline.
 
-- **Prometheus-Stack** (Prometheus, Grafana, Promtail, Loki): Die Managed-Kubernetes-Cluster werden standardmäßig mit einem vollständigen Open-Source-**Prometheus**-Stack für Observability ausgeliefert, der folgende Komponenten enthält:
+- **Prometheus-Stack** (Prometheus, Grafana, Promtail, Loki): Die Managed-Kubernetes-Cluster werden standardmäßig mit einem vollständigen Open-Source-**Prometheus**-Stack für Observability ausgeliefert, der folgende Komponenten umfasst:
     - **Prometheus**
     - **Grafana** mit zahlreichen Dashboards
-    - **Loki** und **Promtail**: Die Logs der Plattform werden in das S3-Speicher-System von Cloud-Temple exportiert (und in Grafana integriert).
+    - **Loki** und **Promtail**: Die Plattform-Logs werden in das S3-Speicher-System von Cloud-Temple exportiert (und in Grafana integriert).
 
     <img src={grafana} />
 
-- **Harbor** ist eine **Container-Registry**, mit der Sie Container-Images oder Helm-Charts direkt im Cluster speichern können. Sie führt **Vulnerability-Scans** auf Ihren Images durch und unterstützt digitale Signierungen. **Harbor** ermöglicht zudem Synchronisationen mit anderen Registries. (https://goharbor.io/)
+- **Harbor** ist eine **Container-Registry**, mit der Sie Container-Images oder Helm-Charts direkt im Cluster speichern können. Sie führt **Vulnerability-Scans** Ihrer Images durch und unterstützt digitale Signierungen. **Harbor** ermöglicht zudem Synchronisationen mit anderen Registries. (https://goharbor.io/)
 
-- **KubeCost** (https://github.com/kubecost) ist ein FinOps-Tool zur Kostenverwaltung für Kubernetes. Es ermöglicht eine detaillierte Verfolgung der Ressourcennutzung in Kubernetes und die Kostenabrechnung nach Projekt/Namespace.
+- **KubeCost** (https://github.com/kubecost) ist ein FinOps-Tool zur Kostenverwaltung für Kubernetes. Es ermöglicht eine detaillierte Verfolgung der Ressourcennutzung in Kubernetes und die Unterkostenabrechnung pro Projekt/Namespace.
 
 - Erweiterte Sicherheitsstrategien mit **Kyverno** und **Capsule**:
     - **Kyverno** (https://kyverno.io/) ist ein Admission Controller für Kubernetes, der Strategien anwenden kann. Es ist ein essenzielles Werkzeug für Governance und Sicherheit in Kubernetes.
@@ -56,9 +56,9 @@ Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponent
 - (optional): **SSO-Authentifizierung** mit externem Identity Provider (OIDC) (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce usw.)
 
 ## SLA and Support Information
-- **Guaranteed Availability (production 3 AZ):** 99.50%
+- **Guaranteed Availability (production 3 AZ):** 99.90%
 - **Support:** N1/N2/N3 included for the core scope (infrastructure and standard operators).
-- **Mean Time to Recovery (MTTR):** As per the Cloud Temple framework agreement.
+- **Mean Time to Recovery (MTTR) Commitment:** As per the Cloud Temple framework agreement.
 - **Maintenance (MCO):** Regular patching of Talos / Kubernetes / standard operators by MSP, without service interruption (rolling upgrade).
 
 Response and recovery times depend on the incident severity, according to the support matrix (P1 to P4).
@@ -72,7 +72,7 @@ Response and recovery times depend on the incident severity, according to the su
   - Critical patches (CVE, kernel) are applied via rolling upgrade, without service interruption.
 - **Standard Operators:** updated within 90 days following stable release.
 - **Updates:**
-  - **Major** (Kubernetes N+1, Talos X+1): scheduled 3 times per year, via rolling update.
+  - **Major** (Kubernetes N+1, Talos X+1): scheduled 3 times per year, applied via rolling update.
   - **Minor:** applied automatically within 30 to 60 days.
 - **Deprecation:** version N-3 → end of support within 90 days after the release of N.
 
@@ -96,9 +96,9 @@ For a "production" (multi-zone) deployment, the following machines are used:
 | AZ06    | Worker Node 2 (**)  | 12         | 24 Go    | OS: 20 Go                  |
 | AZ07    | Worker Node 3 (**)  | 12         | 24 Go    | OS: 20 Go                  |
 
-(*): Each storage node comes with a minimum of 500 GB of disk space, providing a distributed Ceph usable capacity of 500 GB (data is replicated across each AZ, hence ×3). The available free space for the client is approximately 350 GB. This initial size can be increased during deployment or later, depending on requirements.
+(*) Each storage node comes with a minimum of 500 GB of disk space, providing a distributed Ceph usable capacity of 500 GB (data is replicated across each AZ, hence ×3). The available free space for the client is approximately 350 GB. This initial size can be increased during deployment or later, depending on requirements.
 
-(**): The size and number of Worker Nodes can be adjusted according to the client’s compute capacity needs. The minimum number of Worker Nodes is 3 (1 per AZ), and we recommend increasing the number in batches of 3 to maintain consistent multi-zone distribution. The Worker Node size can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The total number of Worker Nodes is limited to 100. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
+(**) The size and number of Worker Nodes can be adjusted according to the client’s compute capacity needs. The minimum number of Worker Nodes is 3 (1 per AZ), and we recommend increasing the number in batches of 3 to maintain consistent multi-zone distribution. The Worker Node size can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The total number of Worker Nodes is limited to 100. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
 
 ### Dev/Test
 <img src={archi_overview_1az} />
@@ -107,15 +107,15 @@ For a "dev/test" version, the following machines are deployed:
 
 | **AZ**  | **Machine**       | **vCores** | **RAM**  | **Local Storage**         |
 |---------|-------------------|------------|----------|----------------------------|
-| AZ0n    | Git Runner        | 4          | 8 Go     | OS: 30 Go                  |
-| AZ0n    | Control Plane     | 8          | 12 Go    | OS: 20 Go                  |
-| AZ0n    | Worker Node 1 (**) | 12        | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
-| AZ0n    | Worker Node 2 (**) | 12        | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
-| AZ0n    | Worker Node 3 (**) | 12        | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
+| AZ0n  | Git Runner       | 4          | 8 Go     | OS: 30 Go                  |
+| AZ0n  | Control Plane    | 8          | 12 Go    | OS: 20 Go                  |
+| AZ0n  | Worker Node 1 (**) | 12         | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
+| AZ0n  | Worker Node 2 (**) | 12         | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
+| AZ0n  | Worker Node 3 (**) | 12         | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
 
-(*) : Three Worker nodes are used as Storage nodes and come with a minimum of 300 Go of disk space, providing a distributed usable storage capacity of 300 Go (data is replicated three times). The available free space for the client is approximately 150 Go. This initial size can be increased during deployment or later, depending on requirements.
+(*) : Three Worker nodes are used as Storage nodes and are provisioned with a minimum of 300 GB of disk space, providing a distributed usable storage capacity of 300 GB (data is replicated three times). The available free space for the client is approximately 150 GB. This initial size can be increased during deployment or later, depending on requirements.
 
-(**) : The size and number of Worker Nodes can be adjusted according to the client’s compute capacity needs. The minimum number of Worker Nodes is 3 (due to storage replication). The size of each Worker Node can be adapted, with a minimum of 12 cores and 24 Go of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially up to 112 cores / 1536 Go of RAM with Performance 3 blade servers). The total number of Worker Nodes is limited to 250. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
+(**) : The size and number of Worker Nodes can be adjusted according to the client’s computational capacity needs. The minimum number of Worker Nodes is 3 (due to storage replication). The size of each Worker Node can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The maximum number of Worker Nodes is 250. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
 
 ## RACI
 
@@ -127,7 +127,7 @@ For a "dev/test" version, the following machines are deployed:
 | Size the Kubernetes service (number of nodes, resources)                     | C          | RA                     |
 | Install the Kubernetes service with default configuration                    | I          | RA                     |
 | Configure the Kubernetes service                                             | C          | RA                     |
-| Set up the base network for the Kubernetes service                           | I          | RA                     |
+| Set up the base networking for the Kubernetes service                        | I          | RA                     |
 | Deploy initial configuration for identities and access                       | C          | RA                     |
 | Define scaling and high availability strategy                                | C          | RA                     |
 
@@ -167,12 +167,12 @@ For a "dev/test" version, the following machines are deployed:
 
 | **Activity**                                                              | **Client** | **Cloud Temple** |
 |---------------------------------------------------------------------------|------------|------------------------|
-| Manage security for the Kubernetes service                                   | RA         | RA*                    |
-| Configure and manage pod security policies                                   | RA         | I                      |
-| Manage SSL/TLS certificates for the Kubernetes service                  | C          | RA*                    |
-| Manage SSL/TLS certificates for applications                       | RA         | I                      |
-| Implement and manage Role-Based Access Control (RBAC) for base roles        | C          | R*                     |
-| Implement and manage Role-Based Access Control (RBAC) for client roles      | RA         | I                      |
+| Manage security for the Kubernetes service                                | RA         | RA*                    |
+| Configure and manage pod security policies                                | RA         | I                      |
+| Manage SSL/TLS certificates for the Kubernetes service                    | C          | RA*                    |
+| Manage SSL/TLS certificates for applications                              | RA         | I                      |
+| Implement and manage Role-Based Access Control (RBAC)                     | C          | R*                     |
+| Implement and manage Client-Based Role-Based Access Control (RBAC)        | RA         | I                      |
 
 (*) : *Production cluster only. In Dev/Test, the client has full autonomy and responsibility.*
 
@@ -204,7 +204,7 @@ For a "dev/test" version, the following machines are deployed:
 
 | **Activity**                                              | **Client** | **Cloud Temple** |
 |-----------------------------------------------------------|------------|------------------------|
-| Monitor Kubernetes resource usage                         | C         | RA                     |
+| Monitor Kubernetes resource utilization                   | C         | RA                     |
 | Plan service capacity evolution                           | RA         | C                      |
 | Implement capacity changes                                | I          | RA                     |
 | Manage application evolution and their resources          | RA         | I                      |
@@ -220,13 +220,13 @@ For a "dev/test" version, the following machines are deployed:
 | Conduct Kubernetes service audits                           | I          | RA                     |
 | Conduct application audits                                  | RA         | I                      |
 
-### Operator / Kubernetes CRD Management (included in the offering)
+### Kubernetes Operators / CRD Management (included in the offer)
 
 | **Activity**                                                              | **Client** | **Cloud Temple** |
 |---------------------------------------------------------------------------|------------|------------------------|
-| Provisioning of default Operator catalog                                   | CI         | RA                     |
+| Provisioning of default Operators catalog                                   | CI         | RA                     |
 | Updating Operators                                                         | CI         | RA                     |
-| Monitoring Operator status                                                 | CI         | RA                     |
+| Monitoring Operators status                                                | CI         | RA                     |
 | Troubleshooting Operator-related issues                                    | CI         | RA                     |
 | Managing Operator permissions                                              | CI         | RA                     |
 | Managing Operator resources (addition/removal)                             | CI         | RA                     |
@@ -235,12 +235,12 @@ For a "dev/test" version, the following machines are deployed:
 | Restoration of Operator resource data                                      | CI         | RA                     |
 | Security auditing of Operators                                             | CI         | RA                     |
 | Operator support                                                           | CI         | RA                     |
-| License management for operators                                           | CI         | RA                     |
-| Management of specific support plans for operators                         | CI         | RA                     |
+| License management for Operators                                           | CI         | RA                     |
+| Management of specific support plans for Operators                         | CI         | RA                     |
 
 *Operator package included in Managed Kube – see chapters: Managed Helm Packages
 
-### Kubernetes Application/Operator/CRD Management (Client)
+### Kubernetes Application/Operator/CRD Management (Client Side)
 
 *Production cluster only. In Dev/Test, the client is fully autonomous and responsible.*
 
@@ -270,10 +270,10 @@ Some operator services may be managed depending on the managed services contract
 |---------------------------------------------|------------|------------------------|
 | Application Support (external service)      | RA         | I                      |
 
-Application support can be provided through an additional service.
+Application support can be provided as an additional service.
 
 ### RACI (synthetic)
 
-- Cloud Temple: Responsible and Accountable (RA) for the Kubernetes foundation, cluster security, infrastructure backups, monitoring, and CRDs.
-- Client: Responsible and Accountable (RA) for application projects, business operators, CI/CD pipelines, and application backups.
-- "Grey zone": Adaptations and extensions (IAM, specific operators, cluster compliance/security hardening) – billed on a project basis.
+- Cloud Temple: responsible and accountable (RA) for the Kubernetes foundation, cluster security, infrastructure backup, monitoring, and CRDs.
+- Client: responsible and accountable (RA) for application projects, business operators, CI/CD pipelines, and application backups.
+- "Grey zone": adaptations and extensions (IAM, specific operators, cluster compliance/security hardening) – billed on a project basis.

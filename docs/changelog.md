@@ -7,6 +7,7 @@ sidebar_position: 2
 
 ### 3 Novembre 2025 : Amélioration des tutoriels Kubernetes
 
+- **Managed Kubernetes** : Ajout d'un nouveau tutoriel sur le déploiement continu avec **ArgoCD** et l'approche GitOps.
 - **Managed Kubernetes** : Revue et amélioration des tutoriels existants. Les guides sur le déploiement, le réseau, la gestion des permissions (Capsule) et la sauvegarde (Kasten) ont été enrichis pour mieux adresser les questions de sécurité, de gouvernance et de coût, en réponse aux attentes des profils RSSI et Acheteur.
 
 ### 28 Octobre 2025 : Nouvelle documentation Managed Kubernetes et améliorations diverses

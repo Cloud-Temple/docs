@@ -24,15 +24,16 @@ title: Overview
 
 Managed Kubernetes by Cloud Temple is a container orchestration solution based on open-source products, designed to deliver a high level of security, resilience, and automation on Cloud Temple’s SecNumcloud platforms. Each cluster is deployed in a dedicated Cloud-Temple OpenIaaS IaaS environment fully dedicated to the customer.
 
-This offering is designed for Kubernetes experts and open-source enthusiasts seeking a native, portable solution without vendor-specific overhead, running on a minimal, immutable OS built for automation and security.
+This offering is designed for Kubernetes experts and open-source enthusiasts seeking a native, portable solution without vendor-specific overhead, running on a minimal, immutable operating system built for automation and security.
 
 ### Key Benefits
-- **Sovereignty and Reversibility**: The solution leverages open-source standards (CNCF Kubernetes) to avoid technological lock-in and ensure application portability. The Veeam Kasten backup tool included in the offering is specifically designed to simplify migrations between clouds.
-- **Zero-Trust Security and Governance**: The architecture is built on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
+- **Sovereignty and Reversibility**: The solution is built on open-source standards (CNCF Kubernetes) to avoid technological lock-in and ensure application portability. The Veeam Kasten backup tool included in the offering is specifically designed to simplify migrations between clouds.
+- **Zero-Trust Security and Governance**: The architecture is based on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
 - **Cost Control and Integration**: The solution natively integrates FinOps tools like KubeCost for precise consumption tracking. The pricing model is transparent, based on consumed IaaS resources, and the use of well-established open-source components (Cilium, Ceph, ArgoCD) facilitates seamless integration into your existing ecosystems.
 
-### A complete and ready-to-use platform  
-The solution natively includes a full, cohesive stack of cutting-edge open-source tools to cover all requirements across the application lifecycle:
+### A complete and ready-to-use platform
+
+The solution natively includes a full, cohesive stack of cutting-edge open-source tools to address all requirements across the application lifecycle:
 
 - **Networking and Security**: Cilium, Hubble, Kyverno, Capsule  
 - **Storage**: Rook-Ceph  
@@ -61,14 +62,14 @@ Ideal for non-production environments, this compact architecture deploys all res
 
 ### Production Architecture (Multi-AZ)
 
-Designed for production and critical applications, this architecture distributes resources across three Availability Zones (AZs) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
+Designed for production and critical applications, this architecture distributes resources across three Availability Zones (AZ) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
 
 - **Use Case**: Production applications, critical services, platforms requiring an SLA.
 - **Key Features**:
     - **High Availability**: 3 Control Plane nodes distributed across 3 AZs.
     - **Dedicated Storage**: 3 dedicated storage nodes distributed for performance and resilience.
     - **Distributed Workers**: At least 3 worker nodes, one per AZ.
-    - **SLA of 99.50%**.
+    - **SLA of 99.90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Multi-AZ Architecture" />
 

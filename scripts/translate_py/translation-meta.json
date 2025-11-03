@@ -745,10 +745,10 @@
       "it": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad"
     },
     "changelog.md": {
-      "en": "ea875d22b0e2f23c4b65a16ec7ad1f3a1002117fd7b4bb6b9eb312487013a0cb",
-      "es": "ea875d22b0e2f23c4b65a16ec7ad1f3a1002117fd7b4bb6b9eb312487013a0cb",
-      "de": "ea875d22b0e2f23c4b65a16ec7ad1f3a1002117fd7b4bb6b9eb312487013a0cb",
-      "it": "ea875d22b0e2f23c4b65a16ec7ad1f3a1002117fd7b4bb6b9eb312487013a0cb"
+      "en": "fe016677ed1afc2a94d1829add3a02518d40bbc83dd7dec42a3b46f32e06d63d",
+      "es": "fe016677ed1afc2a94d1829add3a02518d40bbc83dd7dec42a3b46f32e06d63d",
+      "de": "fe016677ed1afc2a94d1829add3a02518d40bbc83dd7dec42a3b46f32e06d63d",
+      "it": "fe016677ed1afc2a94d1829add3a02518d40bbc83dd7dec42a3b46f32e06d63d"
     },
     "contractual/llmaas/raci.md": {
       "en": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
@@ -895,10 +895,10 @@
       "it": "45ccc020dead1978dff5b6d24a083705f0a44e258242530f353f22d2c07a43c4"
     },
     "managed_kubernetes/concepts.md": {
-      "en": "0ae87b7dd12ba355a9c54392840a724a994e6b78b08a07ea8e0112ecad79253f",
-      "de": "0ae87b7dd12ba355a9c54392840a724a994e6b78b08a07ea8e0112ecad79253f",
-      "es": "0ae87b7dd12ba355a9c54392840a724a994e6b78b08a07ea8e0112ecad79253f",
-      "it": "0ae87b7dd12ba355a9c54392840a724a994e6b78b08a07ea8e0112ecad79253f"
+      "en": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06",
+      "de": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06",
+      "es": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06",
+      "it": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06"
     },
     "managed_kubernetes/quickstart.md": {
       "en": "8c9beb056f92fbc4b193afb969d3cd462eabdae36a69116e42db7c4d5b0a9866",
@@ -907,10 +907,10 @@
       "it": "8c9beb056f92fbc4b193afb969d3cd462eabdae36a69116e42db7c4d5b0a9866"
     },
     "managed_kubernetes/managed_kubernetes.md": {
-      "en": "7c509fc554e7a4fd557b537e26d7115187930dbdd98a2bbe994104b8e764cd17",
-      "de": "7c509fc554e7a4fd557b537e26d7115187930dbdd98a2bbe994104b8e764cd17",
-      "es": "7c509fc554e7a4fd557b537e26d7115187930dbdd98a2bbe994104b8e764cd17",
-      "it": "7c509fc554e7a4fd557b537e26d7115187930dbdd98a2bbe994104b8e764cd17"
+      "en": "b9bbc97c16355d3575fac9ba2316f5f530cdd2b460daa822d2ce72b204aa8d1d",
+      "de": "b9bbc97c16355d3575fac9ba2316f5f530cdd2b460daa822d2ce72b204aa8d1d",
+      "es": "b9bbc97c16355d3575fac9ba2316f5f530cdd2b460daa822d2ce72b204aa8d1d",
+      "it": "b9bbc97c16355d3575fac9ba2316f5f530cdd2b460daa822d2ce72b204aa8d1d"
     },
     "managed_kubernetes/tutorials.md": {
       "en": "ec7dca39ba811c8947882f464dab93081b191fc8ac5a740d48f6e6c10a6d7eff",
@@ -959,8 +959,14 @@
       "es": "604b771652226bcba8417836732f7262677a99a66e7b4e02ed675c21fa4f03cd",
       "de": "604b771652226bcba8417836732f7262677a99a66e7b4e02ed675c21fa4f03cd",
       "it": "604b771652226bcba8417836732f7262677a99a66e7b4e02ed675c21fa4f03cd"
+    },
+    "managed_kubernetes/tutorials/usingargocd.md": {
+      "en": "9487a29cda9624fc94f16d1dfa7efc4b3f8d528a4404b7ad07a297383203c57b",
+      "de": "9487a29cda9624fc94f16d1dfa7efc4b3f8d528a4404b7ad07a297383203c57b",
+      "es": "9487a29cda9624fc94f16d1dfa7efc4b3f8d528a4404b7ad07a297383203c57b",
+      "it": "9487a29cda9624fc94f16d1dfa7efc4b3f8d528a4404b7ad07a297383203c57b"
     }
   },
-  "last_update": "2025-11-03T15:33:55.328949",
+  "last_update": "2025-11-03T16:49:15.559767",
   "version": "2.0"
 }

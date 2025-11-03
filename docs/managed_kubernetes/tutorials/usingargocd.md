@@ -169,6 +169,10 @@ ArgoCD va maintenant supprimer tous les composants de l'application `guestbook`.
 kubectl delete namespace guestbook
 ```
 
+:::info Pour aller plus loin : la gestion des secrets
+Ce tutoriel utilise un dépôt public sans données sensibles. Pour vos applications en production, il est crucial de ne jamais stocker de secrets (mots de passe, clés d'API) en clair dans votre dépôt Git. Des solutions comme **Sealed Secrets** ou **HashiCorp Vault** s'intègrent avec ArgoCD pour gérer vos secrets de manière sécurisée. Un futur tutoriel détaillera cette approche.
+:::
+
 ## Conclusion
 
 Vous avez déployé votre première application avec ArgoCD en suivant les principes GitOps. Cette approche puissante vous permet de gérer vos déploiements de manière déclarative, fiable et sécurisée. Nous vous encourageons à l'adopter pour l'ensemble de vos applications sur Managed Kubernetes.
