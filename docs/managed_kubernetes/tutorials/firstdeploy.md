@@ -165,6 +165,14 @@ RawContent        : HTTP/1.1 200 OK
                     Expires: Wed, 29 Oct 2025 15:40:03 GMT
                     Server: ng...
 ```
+:::warning Pour aller plus loin : la sécurité en production
+Ce tutoriel vous a montré les bases du déploiement. Pour un environnement de production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
+
+-   **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
+-   **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour restreindre les communications aux seuls flux nécessaires entre vos applications.
+-   **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
+:::
+
 ## Nettoyage
 
 Pour supprimer toutes les ressources que vous avez créées pendant ce tutoriel, vous pouvez simplement supprimer le namespace :

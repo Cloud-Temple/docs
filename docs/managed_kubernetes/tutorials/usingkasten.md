@@ -47,6 +47,10 @@ Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est dé
 
 <img src={k10s3location} />
 
+:::info Modèle de coût
+Le service Veeam Kasten est inclus dans l'offre Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
+:::
+
 ## 3. Créer une politique de sauvegarde
 
 Une politique de sauvegarde (`Policy`) est un ensemble de règles qui définissent quand et comment sauvegarder vos applications.
@@ -93,6 +97,14 @@ Kasten facilite la restauration d'une application à son état précédent à pa
     - Cliquez sur **Restore** pour lancer le processus.
 
 Kasten va maintenant restaurer l'application à l'état capturé dans le snapshot. Vous pouvez suivre la progression dans le tableau de bord.
+
+## 5. Sécurité des sauvegardes
+
+La protection de vos données de sauvegarde est une priorité. L'intégration de Kasten dans l'offre Managed Kubernetes respecte les plus hauts standards de sécurité.
+
+-   **Chiffrement** : Conformément aux exigences SecNumCloud, toutes vos sauvegardes sont chiffrées. Les données sont chiffrées en transit vers le stockage S3 avec le protocole **TLS 1.3** et au repos dans les buckets de stockage avec l'algorithme **AES-256**.
+
+-   **Gestion des permissions** : L'accès à l'interface Kasten et à ses fonctionnalités est contrôlé par un système de permissions basé sur le RBAC de Kubernetes. Seuls les utilisateurs autorisés peuvent créer, modifier ou exécuter des politiques de sauvegarde et de restauration, garantissant ainsi une gouvernance stricte de vos opérations de sauvegarde.
 
 ## Conclusion
 

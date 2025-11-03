@@ -211,3 +211,11 @@ Cette configuration garantit que le trafic vers l'API et les services internes r
     <a href="./firstdeploy" class="button button--primary button--block">Voir le tutoriel &rarr;</a>
   </div>
 </div>
+
+:::warning Pour aller plus loin : la sécurité en production
+Ce document explique les concepts réseau fondamentaux. Pour un déploiement en production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
+
+-   **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
+-   **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour contrôler les communications aux seuls flux nécessaires entre vos applications.
+-   **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
+:::

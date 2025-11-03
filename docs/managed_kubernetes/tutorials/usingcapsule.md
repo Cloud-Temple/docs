@@ -68,7 +68,7 @@ mon-projet-dev   Active   1m    capsule.clastix.io/tenant=votre-tenant
 
 L'un des plus grands avantages de Capsule est que toutes les politiques de sécurité, les quotas de ressources (`ResourceQuota`) et les plages de ressources (`LimitRange`) définis au niveau du Tenant par les administrateurs sont **automatiquement hérités** par tous les Namespaces que vous créez.
 
-Cela garantit que vos projets respectent les limites de consommation (CPU, mémoire, stockage) et les règles de sécurité (politiques réseau) définies pour votre environnement, sans que vous ayez à les reconfigurer pour chaque Namespace.
+Cela garantit que vos projets respectent les limites de consommation (CPU, mémoire, stockage) et les règles de sécurité (comme les politiques réseau par défaut ou les contraintes de sécurité définies par **Kyverno**) définies pour votre environnement, sans que vous ayez à les reconfigurer pour chaque Namespace.
 
 ## Conclusion
 
