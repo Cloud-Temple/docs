@@ -16,7 +16,9 @@ Capsule est un contrôleur Kubernetes qui introduit le concept de **Tenant** pou
 
 À la livraison de votre cluster, les équipes Cloud Temple ont créé un premier Tenant pour vous et vous en ont désigné comme **propriétaire (Tenant Owner)**.
 
-*Note : Par défaut, votre premier Tenant s'appelle `default` et le compte de service propriétaire est `defaultapp`.*
+:::tip
+Par défaut, votre premier Tenant s'appelle `default` et le compte de service propriétaire est `defaultapp`.
+:::
 
 Pour en savoir plus sur le projet, vous pouvez consulter le [site web officiel de Capsule](https://projectcapsule.dev/).
 

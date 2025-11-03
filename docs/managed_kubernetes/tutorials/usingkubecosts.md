@@ -23,7 +23,9 @@ L'interface de Kubecost est exposée sur une URL sécurisée, propre à votre cl
 
 `https://kubecost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
-*Note : L'accès à cette URL est restreint aux adresses IP que vous avez déclarées au support Cloud Temple. Si vous ne parvenez pas à y accéder, veuillez contacter le support pour vérifier les règles de firewall.*
+:::info
+L'accès à cette URL est restreint aux adresses IP que vous avez déclarées au support Cloud Temple. Si vous ne parvenez pas à y accéder, veuillez contacter le support pour vérifier les règles de firewall.
+:::
 
 ## Explorer la répartition des coûts (Allocations)
 
