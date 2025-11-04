@@ -895,10 +895,10 @@
       "it": "45ccc020dead1978dff5b6d24a083705f0a44e258242530f353f22d2c07a43c4"
     },
     "managed_kubernetes/concepts.md": {
-      "en": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06",
-      "de": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06",
-      "es": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06",
-      "it": "d2902af6c8e8d7b307c28a004e0cc9a24eabeb19a078d323e6dbc9e5352afe06"
+      "en": "08d8332d24515463ab56a39a5e1726b0152bab9fc3abd0c4b6c14b1134790075",
+      "de": "08d8332d24515463ab56a39a5e1726b0152bab9fc3abd0c4b6c14b1134790075",
+      "es": "08d8332d24515463ab56a39a5e1726b0152bab9fc3abd0c4b6c14b1134790075",
+      "it": "08d8332d24515463ab56a39a5e1726b0152bab9fc3abd0c4b6c14b1134790075"
     },
     "managed_kubernetes/quickstart.md": {
       "en": "c9f0e24c17473e6fbdc4089570dc82737c400bcc617ca76c60504ddab1dba588",
@@ -967,6 +967,6 @@
       "it": "9487a29cda9624fc94f16d1dfa7efc4b3f8d528a4404b7ad07a297383203c57b"
     }
   },
-  "last_update": "2025-11-03T22:54:05.217733",
+  "last_update": "2025-11-04T13:17:52.405418",
   "version": "2.0"
 }

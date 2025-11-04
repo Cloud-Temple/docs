@@ -7,41 +7,41 @@ import grafana from './images/grafana.png'
 import archi_overview from './images/archi_overview.png'
 import archi_overview_1az from './images/archi_overview_1az.png'
 
-## Presentation von Managed Kubernetes
+## Übersicht über Managed Kubernetes
 
 Das Angebot **Managed Kubernetes** (auch „Kub Managé“ oder „KM“ genannt) ist eine von Cloud-Temple verwaltete Kubernetes-Lösung, die als virtuelle Maschinen auf den IaaS-Infrastrukturen von Cloud-Temple OpenIaaS bereitgestellt wird.
 
 **Managed Kubernetes** basiert auf **Talos Linux** (https://www.talos.dev/), einem spezialisierten Betriebssystem für Kubernetes, das leichtgewichtig und sicher ist. Es ist immutabel, verfügt über keinen Shell-Zugriff und keinen SSH-Zugang und wird ausschließlich deklarativ über die gRPC-API konfiguriert.
 
-Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponenten, die vom CNCF validiert wurden:
+Die standardmäßige Installation umfasst eine Reihe von Open-Source-Komponenten, die vom CNCF validiert wurden:
 
-- **CNI Cillium** mit Observability-Interface (**Hubble**): Cillium ist eine Netzwerklösung für Kubernetes-Container (*Container Network Interface*). Es übernimmt Sicherheit, Load Balancing, Service Mesh, Observability, Verschlüsselung usw. Es ist ein zentraler Netzwerkbaustein, der in den meisten Kubernetes-Distributionen (OpenShift, AKS, GKE, EKS usw.) enthalten ist. Wir haben das grafische Interface **Hubble** integriert, um den Cillium-Verkehr visuell darzustellen.
+- **CNI Cillium** mit Observability-Interface (**Hubble**): Cillium ist eine Netzwerklösung für Kubernetes-Container (*Container Network Interface*). Es übernimmt Sicherheit, Load Balancing, Service Mesh, Observability, Verschlüsselung usw. Es ist ein zentraler Netzwerkbestandteil, der in den meisten Kubernetes-Distributionen (OpenShift, AKS, GKE, EKS usw.) zu finden ist. Wir haben das grafische Interface **Hubble** integriert, um den Cillium-Verkehr zu visualisieren.
 
     <img src={cillium} />
 
 - **MetalLB** und **nginx**: Für die Exposition von Web-Anwendungen sind standardmäßig drei *ingress-class* **nginx** integriert:
-    - *nginx-external-secured*: Exposition über eine öffentliche IP, mit Firewall-Filterung, die nur bekannte IPs zulässt (z. B. für grafische Oberflächen der Produkte und die Kubernetes-API)
-    - *nginx-external*: Exposition über eine zweite öffentliche IP ohne Filterung (oder spezifische Filterung pro Kunde)
+    - *nginx-external-secured*: Exposition über eine öffentliche IP, mit Firewall-Filterung, die nur bekannte IPs erlaubt (z. B. für grafische Oberflächen der Produkte und die Kubernetes-API)
+    - *nginx-external*: Exposition über eine zweite öffentliche IP ohne Filterung (oder spezifische Filterung pro Client)
     - *nginx-internal*: Exposition nur über eine interne IP
 
-    Für nicht-webbasierte Dienste ermöglicht ein Load-Balancer **MetalLB** die Exposition von Diensten intern oder über öffentliche IPs (z. B. zur Bereitstellung weiterer Ingresses wie z. B. eines WAF).
+    Für nicht-webbasierte Dienste ermöglicht ein Load-Balancer **MetalLB** die Exposition interner oder öffentlicher Dienste (z. B. zur Bereitstellung weiterer Ingresses wie z. B. eines WAF).
 
-- **Verteiltes Speicher-System Rook-Ceph**: Für persistenten Speicher (PV) ist ein Open-Source-Verteiltes-Speichersystem **Ceph** in die Plattform integriert. Es unterstützt die Storage-Classes *ceph-block*, *ceph-bucket* und *ceph-filesystem*. Es wird ein Speicher mit **7500 IOPS/To** eingesetzt, der hohe Leistung ermöglicht. In Produktionsumgebungen (über 3 AZ) sind die Speicherknoten dediziert (1 Knoten pro AZ); in Nicht-Produktionsumgebungen (1 AZ) wird der Speicher gemeinsam mit den Worker-Knoten genutzt.
+- **Verteiltes Speicher-System Rook-Ceph**: Für persistente Volumes (PV) ist ein Open-Source-Verteiltes-Speichersystem **Ceph** in die Plattform integriert. Es ermöglicht die Nutzung der Storage-Klassen *ceph-block*, *ceph-bucket* und *ceph-filesystem*. Ein Speicher mit **7500 IOPS/To** wird verwendet, um hohe Leistung zu gewährleisten. In Produktionsumgebungen (über 3 AZ) sind die Speicherknoten dediziert (1 Knoten pro AZ); in Nicht-Produktionsumgebungen (1 AZ) wird der Speicher gemeinsam mit den Worker-Knoten genutzt.
 
 - **Cert-Manager**: Der Open-Source-Zertifikat-Manager **Cert-Manager** ist nativ in die Plattform integriert.
 
-- **ArgoCD**: Wir nutzen **ArgoCD** für automatisierte Bereitstellungen der verschiedenen Komponenten über eine **CI/CD**-Pipeline.
+- **ArgoCD**: Wir verwenden **ArgoCD** für automatisierte Bereitstellungen der verschiedenen Komponenten über eine **CI/CD**-Pipeline.
 
-- **Prometheus-Stack** (Prometheus, Grafana, Promtail, Loki): Die Managed-Kubernetes-Cluster werden standardmäßig mit einem vollständigen Open-Source-**Prometheus**-Stack für Observability ausgeliefert, der folgende Komponenten umfasst:
+- **Prometheus-Stack** (Prometheus, Grafana, Promtail, Loki): Die Managed-Kubernetes-Cluster werden standardmäßig mit einem vollständigen Open-Source-**Prometheus**-Stack für die Observability ausgeliefert, der folgende Komponenten enthält:
     - **Prometheus**
     - **Grafana** mit zahlreichen Dashboards
-    - **Loki** und **Promtail**: Die Plattform-Logs werden in das S3-Speicher-System von Cloud-Temple exportiert (und in Grafana integriert).
+    - **Loki** und **Promtail**: Die Protokolle der Plattform werden in den S3-Speicher von Cloud-Temple exportiert (und in Grafana integriert).
 
     <img src={grafana} />
 
 - **Harbor** ist eine **Container-Registry**, mit der Sie Container-Images oder Helm-Charts direkt im Cluster speichern können. Sie führt **Vulnerability-Scans** Ihrer Images durch und unterstützt digitale Signierungen. **Harbor** ermöglicht zudem Synchronisationen mit anderen Registries. (https://goharbor.io/)
 
-- **KubeCost** (https://github.com/kubecost) ist ein FinOps-Tool zur Kostenverwaltung für Kubernetes. Es ermöglicht eine detaillierte Verfolgung der Ressourcennutzung in Kubernetes und die Unterkostenabrechnung pro Projekt/Namespace.
+- **KubeCost** (https://github.com/kubecost) ist ein FinOps-Tool zur Kostenverwaltung für Kubernetes. Es ermöglicht eine detaillierte Verfolgung der Ressourcenverbrauch in Kubernetes und die Unterkostenabrechnung nach Projekt/Namespace.
 
 - Erweiterte Sicherheitsstrategien mit **Kyverno** und **Capsule**:
     - **Kyverno** (https://kyverno.io/) ist ein Admission Controller für Kubernetes, der Strategien anwenden kann. Es ist ein essenzielles Werkzeug für Governance und Sicherheit in Kubernetes.
@@ -49,7 +49,7 @@ Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponent
 
 - **Veeam Kasten** (auch „k10“ genannt) ist eine Lösung für die **Sicherung** von Kubernetes-Workloads.
 
-    Sie ermöglicht die vollständige Sicherung eines Deployments: Manifeste, Volumes usw. – und speichert diese im Cloud-Temple-S3-Objektspeicher. **Kasten** nutzt **Kanister**, um anwendungs-konsistente Sicherungen zu ermöglichen, z. B. für Datenbanken (https://docs.kasten.io/latest/usage/blueprints/). 
+    Sie ermöglicht die Sicherung eines kompletten Deployments: Manifeste, Volumes usw. – in den Objektspeicher S3 von Cloud-Temple. **Kasten** nutzt **Kanister**, um anwendungs-konsistente Sicherungen zu ermöglichen, z. B. für Datenbanken (https://docs.kasten.io/latest/usage/blueprints/). 
 
     **Kasten** ist eine plattformübergreifende Lösung, die mit anderen Kubernetes-Clustern (OpenShift, Hyperscaler usw.) funktioniert. Sie kann daher für Szenarien der Wiederherstellung oder Migration genutzt werden (K10 verwaltet mögliche Anpassungen über *Transformations*, z. B. Änderung der Ingress-Class), aber auch für „Refresh“-Szenarien (z. B. geplante Wiederherstellung eines Produktionsumfelds in der Vorbereitungs-Umgebung).
 
@@ -70,9 +70,9 @@ Response and recovery times depend on the incident severity, according to the su
   - Each branch is maintained for approximately 12 months (including security patches).
   - Recommended upgrade frequency: 3 times per year, in alignment with Kubernetes upgrades.
   - Critical patches (CVE, kernel) are applied via rolling upgrade, without service interruption.
-- **Standard Operators:** updated within 90 days following stable release.
+- **Standard Operators:** updated within 90 days following a stable release.
 - **Updates:**
-  - **Major** (Kubernetes N+1, Talos X+1): scheduled 3 times per year, applied via rolling update.
+  - **Major** (Kubernetes N+1, Talos X+1): scheduled 3 times per year, via rolling update.
   - **Minor:** applied automatically within 30 to 60 days.
 - **Deprecation:** version N-3 → end of support within 90 days after the release of N.
 
@@ -86,36 +86,36 @@ For a "production" (multi-zone) deployment, the following machines are used:
 | **AZ**  | **Machine**         | **vCores** | **RAM**  | **Local Storage**         |
 |---------|---------------------|------------|----------|----------------------------|
 | AZ07    | Git Runner          | 4          | 8 Go     | OS: 30 Go                  |
-| AZ05    | Control Plane 1     | 8          | 12 Go    | OS: 20 Go                  |
-| AZ06    | Control Plane 2     | 8          | 12 Go    | OS: 20 Go                  |
-| AZ07    | Control Plane 3     | 8          | 12 Go    | OS: 20 Go                  |
-| AZ05    | Storage Node 1      | 12         | 24 Go    | OS: 20 Go + Ceph 500 Go minimum (*) |
-| AZ06    | Storage Node 2      | 12         | 24 Go    | OS: 20 Go + Ceph 500 Go minimum (*) |
-| AZ07    | Storage Node 3      | 12         | 24 Go    | OS: 20 Go + Ceph 500 Go minimum (*) |
-| AZ05    | Worker Node 1 (**)  | 12         | 24 Go    | OS: 20 Go                  |
-| AZ06    | Worker Node 2 (**)  | 12         | 24 Go    | OS: 20 Go                  |
-| AZ07    | Worker Node 3 (**)  | 12         | 24 Go    | OS: 20 Go                  |
+| AZ05    | Control Plane 1     | 8          | 12 Go    | OS: 64 Go                  |
+| AZ06    | Control Plane 2     | 8          | 12 Go    | OS: 64 Go                  |
+| AZ07    | Control Plane 3     | 8          | 12 Go    | OS: 64 Go                  |
+| AZ05    | Storage Node 1      | 12         | 24 Go    | OS: 64 Go + Ceph 500 Go minimum (*) |
+| AZ06    | Storage Node 2      | 12         | 24 Go    | OS: 64 Go + Ceph 500 Go minimum (*) |
+| AZ07    | Storage Node 3      | 12         | 24 Go    | OS: 64 Go + Ceph 500 Go minimum (*) |
+| AZ05    | Worker Node 1 (**)  | 12         | 24 Go    | OS: 64 Go                  |
+| AZ06    | Worker Node 2 (**)  | 12         | 24 Go    | OS: 64 Go                  |
+| AZ07    | Worker Node 3 (**)  | 12         | 24 Go    | OS: 64 Go                  |
 
-(*) Each storage node comes with a minimum of 500 GB of disk space, providing a distributed Ceph usable capacity of 500 GB (data is replicated across each AZ, hence ×3). The available free space for the client is approximately 350 GB. This initial size can be increased during deployment or later, depending on requirements.
+(*) Each storage node comes with a minimum of 500 GB of disk space, providing a usable distributed Ceph storage of 500 GB (data is replicated across each AZ, hence ×3). The available free space for the client is approximately 350 GB. This initial size can be increased during deployment or later, depending on requirements.
 
-(**) The size and number of Worker Nodes can be adjusted according to the client’s compute capacity needs. The minimum number of Worker Nodes is 3 (1 per AZ), and we recommend increasing the number in batches of 3 to maintain consistent multi-zone distribution. The Worker Node size can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The total number of Worker Nodes is limited to 100. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
+(**) The size and number of Worker Nodes can be adjusted according to the client's compute capacity needs. The minimum number of Worker Nodes is 3 (1 per AZ), and we recommend increasing the number in batches of 3 to maintain consistent multi-zone distribution. The Worker Node size can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The total number of Worker Nodes is limited to 100. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
 
 ### Dev/Test
 <img src={archi_overview_1az} />
 
-For a "dev/test" version, the following machines are deployed:
+Für eine „Dev/Test“-Version werden die folgenden Maschinen bereitgestellt:
 
-| **AZ**  | **Machine**       | **vCores** | **RAM**  | **Local Storage**         |
-|---------|-------------------|------------|----------|----------------------------|
-| AZ0n  | Git Runner       | 4          | 8 Go     | OS: 30 Go                  |
-| AZ0n  | Control Plane    | 8          | 12 Go    | OS: 20 Go                  |
-| AZ0n  | Worker Node 1 (**) | 12         | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
-| AZ0n  | Worker Node 2 (**) | 12         | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
-| AZ0n  | Worker Node 3 (**) | 12         | 24 Go    | OS: 20 Go + Ceph at least 300 Go (*) |
+| **AZ**  | **Maschine**       | **vCores** | **RAM**  | **Lokaler Speicher**         |
+|---------|--------------------|------------|----------|------------------------------|
+| AZ0n  | Git Runner         | 4          | 8 GB     | OS: 30 GB                    |
+| AZ0n  | Control Plane      | 8          | 12 GB    | OS: 64 GB                    |
+| AZ0n  | Worker Node 1 (**) | 12         | 24 GB    | OS: 64 GB + Ceph min. 300 GB (*) |
+| AZ0n  | Worker Node 2 (**) | 12         | 24 GB    | OS: 64 GB + Ceph min. 300 GB (*) |
+| AZ0n  | Worker Node 3 (**) | 12         | 24 GB    | OS: 64 GB + Ceph min. 300 GB (*) |
 
-(*) : Three Worker nodes are used as Storage nodes and are provisioned with a minimum of 300 GB of disk space, providing a distributed usable storage capacity of 300 GB (data is replicated three times). The available free space for the client is approximately 150 GB. This initial size can be increased during deployment or later, depending on requirements.
+(*) : Drei Worker Nodes werden als Storage Nodes verwendet und verfügen über mindestens 300 GB Speicherplatz, um einen nutzbaren verteilten Speicher von 300 GB zu gewährleisten (Daten werden dreifach repliziert). Der verfügbare freie Speicherplatz für den Kunden beträgt etwa 150 GB. Diese Anfangsgröße kann bei der Bereitstellung oder später nach Bedarf erhöht werden.
 
-(**) : The size and number of Worker Nodes can be adjusted according to the client’s computational capacity needs. The minimum number of Worker Nodes is 3 (due to storage replication). The size of each Worker Node can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The maximum number of Worker Nodes is 250. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
+(**) : Die Größe und Anzahl der Worker Nodes kann an die Rechenleistungsanforderungen des Kunden angepasst werden. Die minimale Anzahl an Worker Nodes beträgt 3 (aufgrund der Speicherreplikation). Die Größe der Worker Nodes kann angepasst werden, wobei ein Minimum von 12 Cores und 24 GB RAM vorgesehen ist; die obere Grenze pro Worker Node ist durch die Größe der verwendeten Hypervisoren begrenzt (potenziell bis zu 112 Cores / 1536 GB RAM bei Performance-3-Blades). Die maximale Anzahl an Worker Nodes beträgt 250. Der CNCF empfiehlt, Worker Nodes mit identischer Größe zu verwenden. Die maximale Anzahl an Pods pro Worker Node beträgt 110.
 
 ## RACI
 
@@ -140,7 +140,7 @@ For a "dev/test" version, the following machines are deployed:
 | Configure CI/CD pipelines                             | RA         | I*                     |
 | Manage container images and registries                | RA         | I*                     |
 
-*May transition to "C" depending on the managed services contract
+*may move to "C" depending on outsourcing contract
 
 ### Monitoring and Performance
 
@@ -194,7 +194,7 @@ For a "dev/test" version, the following machines are deployed:
 | **Activity**                                              | **Client** | **Cloud Temple** |
 |-----------------------------------------------------------|------------|------------------------|
 | Provide level 1 support for infrastructure                | I          | RA                     |
-| Provide level 2 and 3 support for infrastructure          | I          | RA                     |
+| Provide level 2 and 3 support for infrastructure         | I          | RA                     |
 | Resolve issues related to the Kubernetes service          | C          | RA                     |
 | Resolve issues related to applications                    | RA         | I                      |
 
@@ -220,7 +220,7 @@ For a "dev/test" version, the following machines are deployed:
 | Conduct Kubernetes service audits                           | I          | RA                     |
 | Conduct application audits                                  | RA         | I                      |
 
-### Kubernetes Operators / CRD Management (included in the offer)
+### Kubernetes Operators / CRD Management (included in the offering)
 
 | **Activity**                                                              | **Client** | **Cloud Temple** |
 |---------------------------------------------------------------------------|------------|------------------------|
@@ -230,9 +230,9 @@ For a "dev/test" version, the following machines are deployed:
 | Troubleshooting Operator-related issues                                    | CI         | RA                     |
 | Managing Operator permissions                                              | CI         | RA                     |
 | Managing Operator resources (addition/removal)                             | CI         | RA                     |
-| Backup of Operator resource data                                           | CI         | RA                     |
+| Backing up Operator resource data                                          | CI         | RA                     |
 | Monitoring Operator resources                                              | CI         | RA                     |
-| Restoration of Operator resource data                                      | CI         | RA                     |
+| Restoring Operator resource data                                           | CI         | RA                     |
 | Security auditing of Operators                                             | CI         | RA                     |
 | Operator support                                                           | CI         | RA                     |
 | License management for Operators                                           | CI         | RA                     |
@@ -240,7 +240,7 @@ For a "dev/test" version, the following machines are deployed:
 
 *Operator package included in Managed Kube – see chapters: Managed Helm Packages
 
-### Kubernetes Application/Operator/CRD Management (Client Side)
+### Kubernetes Application/Operator/CRD Management (Client)
 
 *Production cluster only. In Dev/Test, the client is fully autonomous and responsible.*
 
@@ -248,8 +248,8 @@ For a "dev/test" version, the following machines are deployed:
 |---------------------------------------------------------------------------|------------|------------------------|
 | Deployment of CRDs                                                        | I*         | RA*                    |
 | Updating Operators                                                        | RA         | I                     |
-| Monitoring the state of Operators                                         | RA         | I                     |
-| Troubleshooting issues related to Operators                               | RA         | I                     |
+| Monitoring Operator status                                                | RA         | I                     |
+| Troubleshooting Operator-related issues                                   | RA         | I                     |
 | Managing Operator permissions                                             | RA         | I                     |
 | Managing Operator resources (addition/removal)                            | RA         | I                     |
 | Backup of Operator resource data                                          | RA         | I                     |
@@ -257,10 +257,10 @@ For a "dev/test" version, the following machines are deployed:
 | Restoration of Operator resource data                                     | RA         | I                     |
 | Security auditing of Operators                                            | RA         | I                     |
 | Support for Operators                                                     | RA         | I                     |
-| License management for Operators                                          | RA         | I                     |
-| Management of specific support plans for Operators                        | RA         | I                     |
+| License management for operators                                          | RA         | I                     |
+| Management of specific support plans for operators                        | RA         | I                     |
 
-Some operator services may be managed depending on the managed services contract.
+Some operator services may be supported depending on the managed services contract.
 
 *May change to "A | RC" depending on the managed services contract
 
@@ -274,6 +274,6 @@ Application support can be provided as an additional service.
 
 ### RACI (synthetic)
 
-- Cloud Temple: responsible and accountable (RA) for the Kubernetes foundation, cluster security, infrastructure backup, monitoring, and CRDs.
+- Cloud Temple: responsible and accountable (RA) for the Kubernetes foundation, cluster security, infrastructure backups, monitoring, and CRDs.
 - Client: responsible and accountable (RA) for application projects, business operators, CI/CD pipelines, and application backups.
 - "Grey zone": adaptations and extensions (IAM, specific operators, cluster compliance/security hardening) – billed on a project basis.
