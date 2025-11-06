@@ -21,9 +21,7 @@ import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_open
 
 ### How to clone a virtual machine?
 
-There is only one way to clone a virtual machine:
-
-- Directly from the __'Export'__ icon of your virtual machine:
+You can export a virtual machine by clicking on the __'Export'__ icon :
 
 <img src={backupCloneOpenIaas_001} />
 <img src={backupCloneOpenIaas_002} />

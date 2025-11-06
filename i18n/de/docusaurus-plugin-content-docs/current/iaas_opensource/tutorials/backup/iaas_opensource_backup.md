@@ -21,9 +21,7 @@ import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_open
 
 ### Wie klone ich eine virtuelle Maschine?
 
-Es gibt nur eine Möglichkeit, eine virtuelle Maschine zu klonen:
-
-- Direkt über das __'Exportieren'__-Symbol Ihrer virtuellen Maschine:
+Sie können eine virtuelle Maschine exportieren, indem Sie auf das Symbol __'Exportieren'__ klicken:
 
 <img src={backupCloneOpenIaas_001} />
 <img src={backupCloneOpenIaas_002} />
