@@ -21,7 +21,7 @@ import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_open
 
 ### Comment cloner une machine virtuelle ?
 
-Il existe une seule façons de cloner une machine virtuelle :f
+Il existe une seule façon de cloner une machine virtuelle :
 
 - Directement depuis l'icône __'Exporter'__ de votre machine virtuelle :
 
@@ -52,7 +52,7 @@ Supprimez la politique de sauvegarde voulue et confirmez la suppression :
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Remarque :*__ *Attention ! __Secnumcloud impose qu'il y est au minimum une politique de sauvegarde__ pour chaque machine virtuelle.*
+__*Remarque :*__ *Attention ! __SecNumCloud impose qu'il y ait au minimum une politique de sauvegarde__ pour chaque machine virtuelle.*
 
 ---
 
