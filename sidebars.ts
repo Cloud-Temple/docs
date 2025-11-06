@@ -151,6 +151,13 @@ const sidebars: SidebarsConfig = {
                 'iaas_opensource/tutorials/high_availability/manage_vm',
               ],
             },
+            {
+              type: 'category',
+              label: 'Backup',
+              items: [
+                'iaas_opensource/tutorials/backup/iaas_opensource_backup',
+              ],
+            },
           ],
         },
       ],
