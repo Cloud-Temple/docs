@@ -212,4 +212,4 @@ Voir la [**procédure de demande de support technique**](../../console/console_q
 4. **Se tenir informé** : Suivre la roadmap et les guides pour éviter les fonctionnalités obsolètes.
 5. **Contacter le support** : Pour les problèmes non résolus, contacter le support via la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique) ou par mail à l'adresse [**contact**](mailto:contact@cloud-temple.com).
 
-Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](../../contractual/paas/raci.md).
+Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](./raci.md).

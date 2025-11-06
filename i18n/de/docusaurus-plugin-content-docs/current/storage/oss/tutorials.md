@@ -3,19 +3,23 @@ title: Tutorials
 sidebar_position: 4
 ---
 
-Diese Abschnitt enthält eine Reihe von Tutorials, um Sie bei der Einführung und Nutzung des Objektspeicherdiensts von Cloud Temple mit verschiedenen Tools zu unterstützen.
+This section gathers a set of tutorials to help you get started with and use the Cloud Temple Object Storage service with various tools.
 
-### Graphische Clients
+### Graphical Clients
 
-*   [Cloud Berry Explorer verwenden](./tutorials/cloudberry-explorer.md)
-*   [WinSCP verwenden](./tutorials/winscp.md)
+*   [Use Cloud Berry Explorer](./tutorials/cloudberry-explorer.md)
+*   [Use WinSCP](./tutorials/winscp.md)
 
-### Befehlszeilen-Clients (CLI) und SDKs
+### Command-line clients (CLI) and SDKs
 
-*   [Ein Verzeichnis mit mc mirror synchronisieren](./tutorials/mc-mirror.md)
-*   [Ein Verzeichnis mit AWS CLI synchronisieren](./tutorials/aws-s3-sync.md)
-*   [Das Python-SDK (Boto3) verwenden](./tutorials/python-boto3.md)
+*   [Synchronize a directory with mc mirror](./tutorials/mc-mirror.md)
+*   [Synchronize a directory with AWS CLI](./tutorials/aws-s3-sync.md)
+*   [Use the Python SDK (Boto3)](./tutorials/python-boto3.md)
 
-### Erweiterte Anwendungsfälle
+### Zugriffsverwaltung
 
-*   [Hash einer Datei hinzufügen (Prüfsumme)](./tutorials/file-hashing.md)
+*   [Zugriff auf meinen Bucket verwalten](./tutorials/bucket-access.md)
+
+### Advanced Use Cases
+
+*   [Add the HASH of a file (Checksum)](./tutorials/file-hashing.md)

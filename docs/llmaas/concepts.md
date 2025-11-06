@@ -120,7 +120,7 @@ Il est possible de désactiver cette analyse de sécurité pour des cas d'usage 
 #### 3. Analyse Comportementale (`check_behavior`)
 - Le load balancer maintient un historique des prompts récents.
 - **Détection de Fragmentation** : Il combine les prompts récents pour voir si une attaque est fragmentée sur plusieurs requêtes. Par exemple, si "ignore" est envoyé dans un prompt et "instructions" dans le suivant, le système peut les détecter ensemble.
-- **Détection de Répétition** : Il identifie si le même prompt est répété de manière excessive. Le seuil actuel pour la détection de répétition est de **30 prompts consécutifs identiques**.
+- **Détection de Répétition** : Il identifie si le même prompt est répété de manière excessive. Le seuil actuel pour la détection de répétition est de 30 prompts consécutifs identiques.
 
 Cette approche multicouche permet de détecter un large éventail d'attaques de prompts, des plus simples aux plus sophistiquées, en combinant l'analyse statique du contenu et l'analyse dynamique du comportement.
 
@@ -205,55 +205,62 @@ Ce planning est fourni à titre indicatif et est **revu au début de chaque trim
 - **DMP (Date de Mise en Production)** : Date à laquelle le modèle devient disponible en production.
 - **DSP (Date de Fin de Support)** : Date prévisionnelle à partir de laquelle le modèle ne sera plus maintenu. Un préavis de 3 mois est respecté avant toute suppression effective.
 
-| Modèle | Éditeur | Phase | DMP | DSP |
-| :--- | :--- | :--- | :--- | :--- |
-| deepcoder:14b | Agentica x Together AI | Production | 13/06/2025 | 30/06/2026 |
-| cogito:14b | Deep Cogito | Production | 13/06/2025 | 30/06/2026 |
-| cogito:32b | Deep Cogito | Production | 13/06/2025 | 30/06/2026 |
-| cogito:3b | Deep Cogito | Production | 13/06/2025 | 30/06/2026 |
-| cogito:8b | Deep Cogito | Production | 13/06/2025 | 30/06/2026 |
-| deepseek-r1:14b | DeepSeek AI | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:32b | DeepSeek AI | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:671b | DeepSeek AI | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:70b | DeepSeek AI | Production | 13/06/2025 | 31/12/2025 |
-| foundation-sec:8b | Foundation AI — Cisco | Production | 13/06/2025 | 30/09/2025 |
-| gemma3:12b | Google | Production | 13/06/2025 | 31/12/2026 |
-| gemma3:1b | Google | Production | 13/06/2025 | 31/12/2026 |
-| gemma3:27b | Google | Production | 13/06/2025 | 31/12/2026 |
-| gemma3:4b | Google | Production | 13/06/2025 | 31/12/2026 |
-| granite-embedding:278m | IBM | Production | 13/06/2025 | 31/12/2026 |
-| granite3-guardian:2b | IBM | Production | 13/06/2025 | 31/12/2026 |
-| granite3-guardian:8b | IBM | Production | 13/06/2025 | 31/12/2026 |
-| granite3.1-moe:3b | IBM | Production | 13/06/2025 | 31/12/2026 |
-| granite3.2-vision:2b | IBM | Production | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b | IBM | Production | 13/06/2025 | 31/12/2026 |
-| granite3.3:8b | IBM | Production | 13/06/2025 | 31/12/2026 |
-| llama3.1:8b | Meta | Production | 13/06/2025 | 31/12/2025 |
-| llama3.3:70b | Meta | Production | 13/06/2025 | 31/12/2026 |
-| phi4-reasoning:14b | Microsoft | Production | 13/06/2025 | 31/12/2025 |
-| magistral:24b | Mistral AI | Production | 13/06/2025 | 31/12/2026 |
-| mistral-small3.1:24b | Mistral AI | Production | 13/06/2025 | 31/12/2026 |
-| mistral-small3.2:24b | Mistral AI | Production | 23/06/2025 | 30/03/2026 |
-| devstral:24b | Mistral AI & All Hands AI | Production | 13/06/2025 | 31/12/2026 |
-| lucie-instruct:7b | OpenLLM-France | Production | 13/06/2025 | 30/10/2025 |
-| qwen2.5:0.5b | Qwen Team | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5:1.5b | Qwen Team | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5:14b | Qwen Team | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5:32b | Qwen Team | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5:3b | Qwen Team | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:32b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:3b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:72b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:7b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:0.6b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:1.7b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:14b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:30b-a3b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:4b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:8b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:32b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwen3:235b | Qwen Team | Production | 13/06/2025 | 31/12/2026 |
-| qwq:32b | Qwen Team | Production | 13/06/2025 | 31/12/2025 |
+| Modèle                 | Éditeur                   | Phase      | DMP        | DSP        |
+| :--------------------- | :------------------------ | :--------- | :--------- | :--------- |
+| deepcoder:14b          | Agentica x Together AI    | Production | 13/06/2025 | 30/06/2026 |
+| cogito:32b             | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 |
+| cogito:3b              | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 |
+| cogito:8b              | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 |
+| deepseek-r1:14b        | DeepSeek AI               | Production | 13/06/2025 | 31/12/2025 |
+| deepseek-r1:32b        | DeepSeek AI               | Production | 13/06/2025 | 31/12/2025 |
+| gemma3:12b             | Google                    | Production | 13/06/2025 | 31/12/2026 |
+| gemma3:1b              | Google                    | Production | 13/06/2025 | 31/12/2026 |
+| gemma3:27b             | Google                    | Production | 13/06/2025 | 31/12/2026 |
+| gemma3:4b              | Google                    | Production | 13/06/2025 | 31/12/2026 |
+| granite-embedding:278m | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3-guardian:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3-guardian:8b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.2-vision:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.3:8b          | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| llama3.3:70b           | Meta                      | Production | 13/06/2025 | 31/12/2026 |
+| magistral:24b          | Mistral AI                | Production | 13/06/2025 | 31/12/2026 |
+| mistral-small3.1:24b   | Mistral AI                | Production | 13/06/2025 | 31/12/2026 |
+| mistral-small3.2:24b   | Mistral AI                | Production | 23/06/2025 | 30/03/2026 |
+| devstral:24b           | Mistral AI & All Hands AI | Production | 13/06/2025 | 31/12/2026 |
+| qwen2.5vl:32b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen2.5vl:3b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen2.5vl:72b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen2.5vl:7b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:0.6b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:1.7b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:14b              | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:30b-a3b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:4b               | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:8b               | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:32b              | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwen3:235b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2026 |
+| qwq:32b                | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+
+### Modèles Dépréciés
+
+Le monde des LLMs évolue très rapidement. Pour garantir à nos clients l'accès aux technologies les plus performantes, nous déprécions régulièrement les modèles qui ne sont plus au niveau des standards actuels ou qui ne sont pas utilisés. Les modèles listés ci-dessous ne sont plus disponibles sur la plateforme publique. Ils peuvent cependant être réactivés pour des projets spécifiques, à la demande.
+
+| Modèle             | Éditeur               | Phase    | Date de Dépréciation |
+| :----------------- | :-------------------- | :------- | :------------------- |
+| cogito:14b         | Deep Cogito           | Déprécié | 17/10/2025           |
+| deepseek-r1:671b   | DeepSeek AI           | Déprécié | 17/10/2025           |
+| deepseek-r1:70b    | DeepSeek AI           | Déprécié | 17/10/2025           |
+| foundation-sec:8b  | Foundation AI — Cisco | Déprécié | 17/10/2025           |
+| granite3.1-moe:3b  | IBM                   | Déprécié | 17/10/2025           |
+| llama3.1:8b        | Meta                  | Déprécié | 17/10/2025           |
+| phi4-reasoning:14b | Microsoft             | Déprécié | 17/10/2025           |
+| lucie-instruct:7b  | OpenLLM-France        | Déprécié | 17/10/2025           |
+| qwen2.5:0.5b       | Qwen Team             | Déprécié | 17/10/2025           |
+| qwen2.5:1.5b       | Qwen Team             | Déprécié | 17/10/2025           |
+| qwen2.5:14b        | Qwen Team             | Déprécié | 17/10/2025           |
+| qwen2.5:32b        | Qwen Team             | Déprécié | 17/10/2025           |
+| qwen2.5:3b         | Qwen Team             | Déprécié | 17/10/2025           |
 
 ## 💡 Bonnes Pratiques
 

@@ -55,10 +55,6 @@ La console intègre des fonctionnalités avancées pour :
 - Filtrer les accès pour répondre aux exigences réglementaires,
 - Renforcer vos politiques de sécurité.
 
-### Intégration multi-cloud
-
-Grâce à ses capacités d’hybridation, La console facilite la gestion des environnements multi-cloud en intégrant des services tiers tels que **Microsoft Azure** et **Amazon AWS**, le tout via une interface unique.
-
 ### Assistance technique et support client
 
 La console offre un accès direct à vos dossiers d’assistance technique. Vous bénéficiez :

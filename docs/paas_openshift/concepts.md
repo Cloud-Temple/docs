@@ -42,7 +42,9 @@ Red Hat OpenShift Data Foundation (ODF) est une solution intégrée de stockage 
 
 - **Haute Disponibilité et Résilience :** ODF utilise la réplication et le snapshotting des données pour assurer la haute disponibilité et la durabilité des données, essentielles pour la continuité des opérations d'entreprise.
 
-- **Sécurité des Données :** La solution intègre des fonctionnalités de sécurité avancées, telles que le chiffrement des données en repos et en transit, ainsi que des politiques de sécurité et de conformité personnalisables.
+- **Sécurité des Données :** La solution intègre des fonctionnalités de sécurité avancées, telles que le chiffrement des données au repos et en transit, ainsi que des politiques de sécurité et de conformité personnalisables. Notre implémentation SecNumCloud garantit une protection à plusieurs niveaux :
+    -   **Chiffrement des données au repos** : Le stockage persistant fourni par OpenShift Data Foundation s'appuie sur notre infrastructure de stockage bloc sous-jacente. À ce titre, toutes les données sont chiffrées au repos à l'aide de l'algorithme **XTS-AES 256**, conforme à la norme **FIPS 140-2**.
+    -   **Chiffrement des données en transit** : Tous les accès à la plateforme, incluant l'API, la console web et le trafic applicatif via les routes, sont systématiquement sécurisés et chiffrés à l'aide du protocole **TLS**.
 
 #### Avantages d'OpenShift Data Foundation :
 

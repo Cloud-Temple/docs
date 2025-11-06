@@ -260,6 +260,10 @@ Les référentiels externes suivants sont supportés :
 - Auth0
 - KeyCloak
 
+:::info[Important]
+Une adresse e-mail est requise pour tous les comptes issus d'une fédération d'identité. Les comptes créés sans adresse e-mail ne pourront pas se connecter et sont susceptibles d'être supprimés automatiquement.
+:::
+
 ## Tenant
 
 Le tenant est un __regroupement de ressources au sein d'une organisation__. Une [Organisation](#organisations) a au minimum un tenant (appelé __tenant par défaut__, pouvant être renommé). Généralement, plusieurs tenants sont utilisés pour segmenter les responsabilités ou les périmètres techniques.

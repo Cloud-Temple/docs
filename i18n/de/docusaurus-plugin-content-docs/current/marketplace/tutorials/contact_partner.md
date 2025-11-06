@@ -1,43 +1,42 @@
 ---
-title: Einen Partner kontaktieren
+title: Kontaktieren eines Partners
 ---
 import marketplaceContactAccess from '../images/marketplaceContactAccess.png'
 import marketplaceContactConfirm from '../images/marketplaceContactConfirm.png'
 import marketplaceContactEmail from '../images/marketplaceContactEmail.png'
 
-Dieses Tutorial führt Sie durch die Kontaktaufnahme mit einem Partner-Herausgeber über den Cloud Temple Marketplace.
+Dieses Tutorial führt Sie Schritt für Schritt durch den Prozess des Kontaktaufnahmes mit einem Publisher-Partner über die Cloud Temple Marketplace.
 
-## Nutzungskontext
+## Verwendungskontext
 
-Verwenden Sie diese Funktionalität, wenn:
-- Die Lösung eine Verbindung mit dem Partner erfordert
-- Sie zusätzliche Informationen erhalten möchten
-- Die Lösung nicht direkt bereitstellbar ist (kein VM Image)
+Verwenden Sie diese Funktion, wenn:
+- eine Verbindung mit dem Partner hergestellt werden muss
+- zusätzliche Informationen benötigt werden
+- die Lösung nicht direkt bereitgestellt werden kann (kein VM-Image)
 
-## Kontaktschritte
+## Contact steps
 
-### 1. Zugang zum Formular
+### 1. Zugriff auf das Formular
 
-Von der Detailseite einer Partner-Lösung aus klicken Sie auf **Partner kontaktieren**:
+Klicken Sie auf der Detailseite einer Partnerlösung auf **Partner kontaktieren**:
 <img src={marketplaceContactAccess} />
 
-### 2. Anfrage senden
+### 2. Sending the request
 
-Bestätigen und senden Sie Ihre Kontaktanfrage:
+Validate and send your contact request:
 <img src={marketplaceContactConfirm} />
 
-Sie erhalten eine E-Mail-Bestätigung über das Senden Ihrer Anfrage.
+You will receive an email confirmation of the submission of your request.
 
-### 3. Verbindung
+### 3. Connection
 
-Der Partner erhält automatisch eine E-Mail mit Ihren Informationen:
+The partner will automatically receive an email with your information:
 
-**Beispiel einer an den Partner gesendeten E-Mail:**
+**Example email sent to the partner:**
 <img src={marketplaceContactEmail} />
 
-
-## Bewährte Praktiken
+## Best Practices
 
 - **Seien Sie präzise** bei der Beschreibung Ihres Bedarfs
-- **Geben Sie den Kontext** der beabsichtigten Nutzung an
-- **Erwähnen Sie Ihre Einschränkungen** technischer oder regulatorischer Art
+- **Geben Sie den Nutzungskontext** an
+- **Nennen Sie Ihre technischen oder regulatorischen Einschränkungen**

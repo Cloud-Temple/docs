@@ -48,7 +48,7 @@ class CloudTempleLLM(LLM):
     Cette classe permet d'utiliser notre API comme un LLM standard dans LangChain.
     """
     
-    api_key: str = Field()
+    api_key: str = Field(default="")
     model_name: str = Field(default="granite3.3:8b")
     temperature: float = Field(default=0.7)
     max_tokens: int = Field(default=1000)

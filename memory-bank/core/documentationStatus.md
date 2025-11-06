@@ -12,7 +12,8 @@
 | PaaS OpenShift     | ✅ 100%   | ✅ 85%  | ✅ 80%  | ✅ 80%  | 🟢 **BON**          |
 | Housing            | ✅ 100%   | ✅ 90%  | ✅ 70%  | ✅ 80%  | 🟢 **BON**          |
 | Network Services   | 🔴 40%    | 🔴 20%  | 🔴 10%  | 🔴 15%  | 🔴 **CRITIQUE**     |
-| Storage OSS        | 🔴 30%    | 🔴 15%  | 🔴 5%   | 🔴 10%  | 🔴 **CRITIQUE**     |
+| Storage OSS        | 🔴 30%    | 🔴 20%  | 🔴 5%   | 🔴 10%  | 🔴 **CRITIQUE**     |
+| Managed Kubernetes | ✅ 100%   | ✅ 85%  | ✅ 100% | ✅ 80%  | 🟢 **BON**          |
 | LLMaaS             | ✅ 100%   | ✅ 100% | ✅ 95%  | ✅ 80%  | 🟢 **PARFAIT**      |
 
 ## Détail par Dossier
@@ -151,6 +152,18 @@
    - 📝 `tutorials.md` : Intégrations
    - 📝 `images/` : Captures interface
 
+### 📁 `/docs/managed_kubernetes/` - Managed Kubernetes
+
+#### Fichiers Principaux
+| Fichier                   | Complétude | Statut            |
+| ------------------------- | ---------- | ----------------- |
+| `managed_kubernetes.md`   | ✅ 95%     | 🟢 **EXCELLENT** |
+| `concepts.md`             | ✅ 100%    | 🟢 **PARFAIT**   |
+| `quickstart.md`           | ✅ 100%    | 🟢 **PARFAIT**   |
+| `tutorials.md`            | 🟡 60%     | 🟡 **À ENRICHIR** |
+| `images/`                 | ✅ 100%    | 🟢 **COMPLET**   |
+| `contractual/.../raci.md` | ✅ 100%    | 🟢 **COMPLET**   |
+
 ### 📁 `/docs/llmaas/` - LLM as a Service
 
 #### Fichiers Principaux
@@ -211,7 +224,7 @@
 - **Total fichiers** : ~150 fichiers markdown
 - **Images** : ~65 captures d'écran
 - **Langues** : 5 langues supportées
-- **Services** : 9 services principaux
+- **Services** : 10 services principaux
 
 ### Performance Docusaurus
 - **Build time** : < 30 secondes
@@ -224,12 +237,13 @@
 ### 🔴 Issues Critiques
 1. **Network Documentation** : Services non documentés
 2. **Storage OSS** : API non documentée
-3. **Traductions** : Retard mise à jour multilingue
 
 ### 🔶 Issues Moyennes
-1. **Console Metrics** : Module incomplet
-2. **Console Security** : Module incomplet
-3. **Screenshots** : Mise à jour Interface Shiva
+1. **Liens Brisés** : De nombreux liens et ancres brisés ont été détectés par le build Docusaurus. Une passe de correction est nécessaire.
+2. **Console Metrics** : Module incomplet
+3. **Console Security** : Module incomplet
+4. **Screenshots** : Mise à jour Interface Shiva
+
 
 ### 🔵 Améliorations
 1. **SEO Optimization** : Métadonnées avancées
@@ -256,18 +270,18 @@
 ## KPI Documentation
 
 ### Objectifs 2025
-- **Couverture services** : 100% (actuellement 87%)
-- **Complétude contenu** : 95% (actuellement 85%)
-- **Traductions** : 90% (actuellement 70%)
-- **Support visuel** : 95% (actuellement 85%)
+- **Couverture services** : 100% (actuellement 89%)
+- **Complétude contenu** : 95% (actuellement 86%)
+- **Traductions** : 90% (actuellement 71%)
+- **Support visuel** : 95% (actuellement 86%)
 
 ### Métriques de Suivi
-- ✅ **Services complets** : 7/9
-- 🔶 **Services partiels** : 2/9
-- 🔴 **Services manquants** : 0/9
-- 📊 **Progression globale** : 87%
+- ✅ **Services complets** : 8/10
+- 🔶 **Services partiels** : 2/10
+- 🔴 **Services manquants** : 0/10
+- 📊 **Progression globale** : 89%
 
 ---
 
-*Tableau de bord documentation - 05/06/2025*
+*Tableau de bord documentation - 18/10/2025*
 *Prochaine révision : Weekly*
