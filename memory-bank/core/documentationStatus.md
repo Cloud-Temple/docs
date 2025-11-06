@@ -13,6 +13,7 @@
 | Housing            | ✅ 100%   | ✅ 90%  | ✅ 70%  | ✅ 80%  | 🟢 **BON**          |
 | Network Services   | 🔴 40%    | 🔴 20%  | 🔴 10%  | 🔴 15%  | 🔴 **CRITIQUE**     |
 | Storage OSS        | 🔴 30%    | 🔴 20%  | 🔴 5%   | 🔴 10%  | 🔴 **CRITIQUE**     |
+| Managed Kubernetes | ✅ 100%   | ✅ 85%  | ✅ 100% | ✅ 80%  | 🟢 **BON**          |
 | LLMaaS             | ✅ 100%   | ✅ 100% | ✅ 95%  | ✅ 80%  | 🟢 **PARFAIT**      |
 
 ## Détail par Dossier
@@ -151,6 +152,18 @@
    - 📝 `tutorials.md` : Intégrations
    - 📝 `images/` : Captures interface
 
+### 📁 `/docs/managed_kubernetes/` - Managed Kubernetes
+
+#### Fichiers Principaux
+| Fichier                   | Complétude | Statut            |
+| ------------------------- | ---------- | ----------------- |
+| `managed_kubernetes.md`   | ✅ 95%     | 🟢 **EXCELLENT** |
+| `concepts.md`             | ✅ 100%    | 🟢 **PARFAIT**   |
+| `quickstart.md`           | ✅ 100%    | 🟢 **PARFAIT**   |
+| `tutorials.md`            | 🟡 60%     | 🟡 **À ENRICHIR** |
+| `images/`                 | ✅ 100%    | 🟢 **COMPLET**   |
+| `contractual/.../raci.md` | ✅ 100%    | 🟢 **COMPLET**   |
+
 ### 📁 `/docs/llmaas/` - LLM as a Service
 
 #### Fichiers Principaux
@@ -211,7 +224,7 @@
 - **Total fichiers** : ~150 fichiers markdown
 - **Images** : ~65 captures d'écran
 - **Langues** : 5 langues supportées
-- **Services** : 9 services principaux
+- **Services** : 10 services principaux
 
 ### Performance Docusaurus
 - **Build time** : < 30 secondes
@@ -257,16 +270,16 @@
 ## KPI Documentation
 
 ### Objectifs 2025
-- **Couverture services** : 100% (actuellement 87%)
-- **Complétude contenu** : 95% (actuellement 85%)
-- **Traductions** : 90% (actuellement 70%)
-- **Support visuel** : 95% (actuellement 85%)
+- **Couverture services** : 100% (actuellement 89%)
+- **Complétude contenu** : 95% (actuellement 86%)
+- **Traductions** : 90% (actuellement 71%)
+- **Support visuel** : 95% (actuellement 86%)
 
 ### Métriques de Suivi
-- ✅ **Services complets** : 7/9
-- 🔶 **Services partiels** : 2/9
-- 🔴 **Services manquants** : 0/9
-- 📊 **Progression globale** : 87%
+- ✅ **Services complets** : 8/10
+- 🔶 **Services partiels** : 2/10
+- 🔴 **Services manquants** : 0/10
+- 📊 **Progression globale** : 89%
 
 ---
 

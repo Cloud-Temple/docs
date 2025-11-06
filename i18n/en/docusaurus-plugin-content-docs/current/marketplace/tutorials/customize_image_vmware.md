@@ -22,7 +22,7 @@ Once the image is deployed, it becomes a virtual machine that you can configure.
 
 ### Step 1: Deploy the base image
 
-Follow the [Deploy an image on VMware](./deploy_vmware.md) tutorial to get started.
+Follow the [Deploy an image on VMware](deploy_vmware.md) tutorial to get started.
 
 ### Step 2: Configure the virtual machine
 

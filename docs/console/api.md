@@ -48,6 +48,15 @@ Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
 <img src={ShivaProfil005} />
 
+:::info Cycle de vie du token d'authentification
+Lorsque vous utilisez votre **Personal Access Token (PAT)** pour vous authentifier auprès de l'API, vous recevez en retour un token d'accès. Il est important de noter que ce token d'accès est un **JSON Web Token (JWT)** avec une durée de vie limitée.
+
+-   **Durée de vie** : Chaque token JWT est valide pour une durée de **5 minutes**.
+-   **Vérification** : Vous pouvez vérifier la date d'émission (`iat`) et la date d'expiration (`exp`) de votre token en le décodant. Des outils en ligne comme [jwt.io](https://jwt.io) vous permettent de le faire facilement.
+
+Une fois le token expiré, vous devrez vous ré-authentifier avec votre PAT pour en obtenir un nouveau. Il est donc recommandé de gérer ce cycle de vie dans vos scripts et applications en prévoyant un renouvellement automatique du token.
+:::
+
 ## Accès au portail API
 
 La documentation OpenAPI 3.0 (Swagger) des APIs de la console Cloud Temple est disponible directement dans l'application :

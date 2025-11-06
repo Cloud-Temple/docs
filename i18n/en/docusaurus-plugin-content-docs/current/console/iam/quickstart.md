@@ -33,13 +33,13 @@ The selection of a tenant is done from the main page of Shiva's console:
 ## Shiva Console Access Accounts
 
 Shiva console access accounts are created by the master commander's account on invitation (regardless of the authentication reference).
-The identification information is global to your [Organization](concepts.md#organizations).
+The identification information is global to your [Organization](./concepts.md#organizations).
 
 *__Note:__ Identity federation is managed at the organization level.*
 
 ### Creating a User Account in Your Organization
 
-Creating a user account within your organization involves an invitation process. To invite a user into an [Organization](concepts.md#organizations), navigate to the __'Administration'__ menu located on the left side of your screen, beneath the top bar. From there, select the __'Users'__ sub-menu.
+Creating a user account within your organization involves an invitation process. To invite a user into an [Organization](./concepts.md#organizations), navigate to the __'Administration'__ menu located on the left side of your screen, beneath the top bar. From there, select the __'Users'__ sub-menu.
 
 Click on the __'New User'__ button from the Users page.
 
@@ -70,7 +70,7 @@ The permission assignment menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration needs to be set for each [Tenant](concepts.md#tenant) within an [Organization](concepts.md#organizations).
+Permission configuration needs to be set for each [Tenant](./concepts.md#tenant) within an [Organization](./concepts.md#organizations).
 
 The list of permissions and their definitions can be accessed [here](#permissions).
 
@@ -80,7 +80,7 @@ To change a user's language, navigate to their __'Profile'__ in the upper right 
 
 <img src={shivaProfil_006} />
 
-This configuration is applied on a per-tenant basis [Tenant](concepts.md#tenant).
+This configuration is applied on a per-tenant basis [Tenant](./concepts.md#tenant).
 
 ### Subscription to Themed Notifications
 

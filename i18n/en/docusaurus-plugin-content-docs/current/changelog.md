@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Change Tracking
 
+### November 3, 2025: Kubernetes Tutorials Enhancements
+
+- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
+- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
+
+### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
+
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick-start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
+- **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
+- **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
+
 ### October 18, 2025: Maintenance and New Documentation
 
 - **LLMaaS**: Added a new FAQ entry to introduce the public status page ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), enabling real-time monitoring of the availability and performance of each model.
@@ -27,7 +38,7 @@ sidebar_position: 2
     - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
     - Added clarifications on storage account concepts and object locking (Object Lock).
 - **OpenSource IaaS**:
-    - Added detailed documentation on managing High Availability (HA) for resource pools and virtual machines.
+    - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
 - **Console**:
     - Updated the security alerts page with the latest vulnerabilities.
 - **Networking**:
