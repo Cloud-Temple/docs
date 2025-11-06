@@ -50,7 +50,7 @@ Elimine la política de copia de seguridad deseada y confirme la eliminación:
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Nota:*__ *¡Advertencia! __SecNumCloud requiere que haya al menos una política de copia de seguridad__ para cada máquina virtual.*
+__*Nota:*__ *¡Advertencia! __SecNumCloud exige que haya como mínimo una política de copia de seguridad asignada__ para cada máquina virtual.*
 
 ---
 

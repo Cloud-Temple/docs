@@ -50,7 +50,7 @@ Delete the desired backup policy and confirm the deletion:
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Note:*__ *Warning! __SecNumCloud requires that there is at least one backup policy__ for each virtual machine.*
+__*Note:*__ *Warning! __SecNumCloud requires that there be at least one assigned backup policy.__ for each virtual machine.*
 
 ---
 
