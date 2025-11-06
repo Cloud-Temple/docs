@@ -21,15 +21,17 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 ## Connecting to Your Cloud Temple Tenant
 
-Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or directly through the URL provided to you by email.
+Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or via the direct URL provided to you by email.
 
 The first page allows you to select the [organization](iam/concepts.md#organizations) in which your user was created.  
-Once you have entered the company name, click on __'Sign In'__.
+Once the company is specified, click on __'Sign In'__.
 
 <img src={shivaLogin} />
 
 You will then be redirected to a page prompting you to authenticate.  
 After logging in, you will land on this page.
+
+Here, you will find all metrics related to the products subscribed to within your scope. If there are any issues with your VMware and/or OpenIaaS products, alerts will be displayed—alert severity is indicated by color. 
 
 <img src={shivaHome} />
 
@@ -37,7 +39,7 @@ After logging in, you will land on this page.
 
 The console is available in __French__ and __English__. You can change the operating language using the __language__ icon located in the top-right corner of the screen.
 
-To change a user's language, go to their __'Profile'__, in the top-right corner of the screen, and select __'User Settings'__.
+To change a user's language, go to their __'Profile'__, in the top-right corner of the screen, within the __'User Settings'__.
 
 <img src={shivaProfil_006} />
 
@@ -71,7 +73,7 @@ __CRITICAL (P1)__:
 - Compromise of your administrative credentials
 - Complete unavailability of your critical services
 - Abnormal behavior on sensitive data
-- Breach of personal data
+- Violation of personal data
 
 __HIGH (P2)__:
 
@@ -86,7 +88,7 @@ __MEDIUM (P3)__:
 - Localized performance issue
 - Incident affecting a non-critical function
 - Configuration error with limited impact
-- Temporary access difficulties
+- Occasional access difficulties
 
 __LOW (P4)__:
 
@@ -121,10 +123,10 @@ Below is an overview of the available modules. New modules are regularly added t
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
 - __Dashboard__: provides a quick overview of the __total compute and storage resources__, backup __statistics__, and a __summary of support tickets__,
-- __Inventory__: offers a view of all your __virtual machines__ resources. If __tags__ are used, it enables filtering by __tag__ (e.g., business view, application view, ...),
-- __Managed Services__: provides access to the tracking of your __support requests__ and the __service metrics__,
-- __IaaS__: enables the __management of VMware-based IaaS infrastructures__ (Virtual machines, clusters, hypervisors, replication, backup, ...),
-- __OpenIaaS__: enables the __management of Xen Orchestra resources__ (Virtual machines, backup, ...),
+- __Inventory__: offers a view of all your __virtual machines__. If __tags__ are used, it enables filtering by __tag__ (e.g., business view, application view, ...),
+- __Managed Services__: provides access to the tracking of your __support requests__ and __service metrics__,
+- __IaaS__: enables the __management of VMware IaaS infrastructures__ (virtual machines, clusters, hypervisors, replication, backups, ...),
+- __OpenIaaS__: enables the __management of Xen Orchestra resources__ (virtual machines, backups, ...),
 - __OpenShift__: enables the management of your **RedHat OpenShift PaaS architecture** and container management across the three availability zones of the platform.
 - __Bastion__: allows deployment and management of SSH/RDP bastion appliances within your networks,
 - __Networking__: enables management of __Layer 2 and Layer 3 networks__, __public IPs__, and your __telecom circuits__,
@@ -180,11 +182,11 @@ The Activities page is designed to provide full visibility into all read and wri
 
 #### __Compliance Note__
 
-In accordance with the SecNumCloud certification, the retention period for Cloud Temple console event logs is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
+In accordance with the SecNumCloud certification, the retention period for Cloud Temple console events is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
 
-## Checking for Latest Updates
+## Checking for the latest updates
 
-Click on the __'New Features'__ icon at the bottom-left of the green banner. You will find detailed information about the changes for each version of the Cloud Temple console.
+Click on the __'New Features'__ icon at the bottom-left of the green banner. You will find details of the changes for each version of the Cloud Temple console.
 
 <img src={shivaOnboard_009} />
 

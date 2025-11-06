@@ -117,7 +117,7 @@ A network can be temporarily deactivated without being deleted, and then reactiv
 
 ### Network Sharing Between Tenants
 
-By default, **networks are only available within a single tenant**. You can choose to **share a network across multiple tenants** for technical or connectivity reasons. This allows you to share a network between your **[Tenant](../../console/iam/concepts.md#tenant)** within the same organization.
+By default, **networks are only available within a single tenant**. You can choose to **share a network across multiple tenants** for technical or connectivity reasons. This allows you to share a network between your **[Tenant](../console/iam/concepts.md#tenant)** within the same organization.
 
 To achieve this, simply enable sharing as shown below:
 

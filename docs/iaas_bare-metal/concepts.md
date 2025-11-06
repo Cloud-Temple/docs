@@ -81,6 +81,18 @@ Le stockage bloc distribué, basé sur **IBM Spectrum Virtualize**, offre une ga
 - **Disponibilité** : 99.99%, mesurée mensuellement.
 - **Restrictions** : Pas de limitation sur les lectures ou écritures. Pas de compression ou de déduplication automatique, garantissant l'utilisation intégrale des volumes réservés.
 
+### Sécurité et Chiffrement du Stockage Bloc
+
+Pour garantir la confidentialité de vos données au repos, l'ensemble de notre infrastructure de stockage bloc intègre un chiffrement matériel robuste.
+
+-   **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
+-   **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
+-   **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
+
+:::warning Point d'attention sur la réplication
+Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
+:::
+
 ---
 
 ## Accès Console Bare Metal

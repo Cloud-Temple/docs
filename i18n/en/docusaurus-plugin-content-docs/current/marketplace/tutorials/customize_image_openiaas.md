@@ -22,7 +22,7 @@ Once the image is deployed, it becomes a virtual machine that you can configure.
 
 ### Step 1: Deploy the base image
 
-Follow the tutorial [Deploy an image on OpenIaaS](./deploy_openiaas.md) to get started.
+Follow the tutorial [Deploy an image on OpenIaaS](deploy_openiaas.md) to get started.
 
 ### Step 2: Configure the virtual machine
 

@@ -4,7 +4,7 @@ title: Synchronizing a Directory with mc mirror
 
 The `mc mirror` command is a powerful tool for synchronizing the contents of a local directory to an S3 bucket. It can upload new or modified files, and optionally delete files from the bucket that no longer exist locally. This method is efficient for maintaining backups or deploying static websites.
 
-Please ensure your [MinIO client is configured as described in the quickstart guide](../quickstart.md).
+Please ensure your [MinIO client is configured as described in the quickstart guide](../quickstart).
 
 ### Exemple de base
 

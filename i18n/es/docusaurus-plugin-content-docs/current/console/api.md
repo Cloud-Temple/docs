@@ -13,7 +13,8 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## Claves API
 
-La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también conocida como __Personal Access Token (PAT)__, es una forma segura de conectarse a las API de Shiva sin necesidad de usar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
+La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también conocida como __Personal Access Token (PAT)__,
+es una forma segura de conectarse a las API de Shiva sin necesidad de utilizar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
 
 La creación de este token se realiza desde su cuenta. Es posible generar varias claves y configurar los permisos para cada una, dentro de los límites de sus derechos.
 
@@ -29,23 +30,32 @@ A continuación, verá en pantalla el conjunto de claves API que han sido creada
 
 <img src={ShivaProfil002} />
 
-A continuación, deberá:
+Debe entonces:
 
 - Indicar el nombre de este nuevo token,
-- Establecer una fecha de caducidad (máximo 12 meses de validez),
+- Indicar una fecha de expiración (máximo 12 meses de validez),
 - Seleccionar los permisos asociados al token.
 
-A continuación, se mostrarán los detalles de su token. __Atención, ya no será posible acceder a esta información posteriormente.__
+A continuación, se muestran los detalles de su token. __Atención, no será posible acceder a esta información posteriormente.__
 
-Si no anota esta información, deberá destruir y volver a crear el token.
+Si no anota esta información, deberá destruir y recrear el token.
 
 <img src={ShivaProfil004} />
 
 Por razones de seguridad, se recomienda crear varios tokens, cada uno con una función específica (un token para cada aplicación o proceso empresarial), en lugar de crear un solo token con todos los permisos.
 
-A continuación, verá el nuevo token creado y su fecha futura de caducidad.
+A continuación, verá el nuevo token creado y su fecha futura de expiración.
 
 <img src={ShivaProfil005} />
+
+:::info Ciclo de vida del token de autenticación
+Cuando utiliza su **Personal Access Token (PAT)** para autenticarse ante la API, recibe a cambio un token de acceso. Es importante destacar que este token de acceso es un **JSON Web Token (JWT)** con una duración limitada.
+
+-   **Duración de vida**: Cada token JWT es válido durante un período de **5 minutos**.
+-   **Verificación**: Puede verificar la fecha de emisión (`iat`) y la fecha de expiración (`exp`) de su token decodificándolo. Herramientas en línea como [jwt.io](https://jwt.io) le permiten hacerlo fácilmente.
+
+Una vez que el token ha expirado, deberá volver a autenticarse con su PAT para obtener uno nuevo. Por ello, se recomienda gestionar este ciclo de vida en sus scripts y aplicaciones, previendo una renovación automática del token.
+:::
 
 ## Acceso al portal de API
 
@@ -90,7 +100,7 @@ El contenido de la actividad incluye todas las informaciones esenciales para ide
 }
 ```
 
-El objeto __state__ puede tomar diferentes formas según el estado de la actividad, a saber:
+El objeto __state__ puede adoptar diferentes formas según el estado de la actividad, a saber:
 
 __waiting__, estado antes de que la operación haya comenzado:
 
@@ -143,7 +153,7 @@ Tomemos como ejemplo un script mal diseñado o ineficiente que realiza llamadas 
 Aplicamos restricciones cuantitativas sobre las interacciones de los usuarios con la consola  
 para cada producto.
 
-Los límites están definidos en __consultas por segundo (r/s) y por dirección IP de origen__. Más allá del umbral límite, el sistema responderá  
+Los límites están definidos en __consultas por segundo (r/s) y por dirección IP de origen__. Por encima del umbral límite, el sistema responderá  
 con un código de error HTTP 429, indicando que se ha superado el límite de consultas permitidas.
 
 A continuación se indican los límites establecidos:
@@ -166,7 +176,7 @@ A continuación se indican los límites establecidos:
 
 ### Specific routes
 
-Certain specific API endpoints, particularly those related to authentication or sensitive actions, have more restrictive limits to enhance security and ensure stability.
+Certain API endpoints, particularly those related to authentication or sensitive actions, have more restrictive limits to enhance security and ensure stability.
 
 | Route | Limit threshold |
 |---|---|
@@ -174,12 +184,12 @@ Certain specific API endpoints, particularly those related to authentication or 
 | IaaS - Storage (Datastores) | 20 r/s |
 | Marketplace (Contact) | 1 r/min - 5 r/h |
 
-### ¿Cómo funcionan los límites de tasa?
+### How do rate limits work?
 
-Si el número de solicitudes enviadas a un punto de API supera el límite permitido, el punto de API responderá devolviendo  
-__un código de respuesta HTTP 429__. Este código indica que el usuario ha excedido el número de solicitudes permitidas.  
-Cuando esto ocurre, el punto de API también proporcionará un objeto JSON como respuesta,  
-que contendrá información detallada sobre la limitación aplicada:
+If the number of requests sent to an API endpoint exceeds the allowed limit, the API endpoint will respond by returning  
+__an HTTP 429 status code__. This code indicates that the user has exceeded the permitted number of requests.  
+When this happens, the API endpoint will also provide a JSON object as a response,  
+containing detailed information about the applied rate limit:
 
 ```
     {
@@ -194,18 +204,18 @@ que contendrá información detallada sobre la limitación aplicada:
 
 Se recomienda limitar el número de llamadas a la API realizadas por su automatización para permanecer por debajo del límite de tasa establecido para el punto final.
 
-Esta situación suele ocurrir cuando se ejecutan varias solicitudes en paralelo, utilizando varios procesos o hilos.
+Esta situación suele ocurrir cuando varias solicitudes se ejecutan en paralelo, utilizando varios procesos o hilos.
 
-Existen varios métodos para mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __almacenamiento en caché__ y la implementación de un __sistema de reintento con amortiguación progresiva__. Este método consiste en realizar una breve pausa cuando se encuentra un error de límite de tasa, y luego intentar nuevamente la solicitud. Si la solicitud falla nuevamente, la duración de la pausa se aumenta progresivamente hasta que la solicitud tenga éxito o se alcance un número máximo de intentos.
+Existen varios métodos para mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de un __sistema de reintento con amortiguamiento progresivo__. Este método consiste en realizar una breve pausa cuando se detecta un error de límite de tasa, y luego intentar nuevamente la solicitud. Si la solicitud falla nuevamente, la duración de la pausa se aumenta progresivamente hasta que la solicitud tenga éxito o hasta que se alcance un número máximo de intentos.
 
 Esta aproximación ofrece numerosas ventajas:
 
-- La __amortiguación progresiva__ garantiza que los primeros intentos se realicen rápidamente, mientras que prevé tiempos de espera más largos en caso de fallos repetidos.
+- El __amortiguamiento progresivo__ garantiza que los primeros intentos se realicen rápidamente, mientras que prevé tiempos de espera más largos en caso de fallos repetidos.
 - La adición de una __variación aleatoria__ a la pausa ayuda a evitar que todos los intentos se produzcan simultáneamente.
 
 Es importante tener en cuenta que las __solicitudes fallidas no afectan su límite de tasa__. Sin embargo, reenviar continuamente una solicitud podría no ser una solución viable a largo plazo, ya que este comportamiento podría modificarse en el futuro. Por ello, le recomendamos no depender exclusivamente de este mecanismo.
 
-Las bibliotecas __[Backoff](https://pypi.org/project/backoff/)__ y __[Tenacity](https://pypi.org/project/tenacity/)__ en Python son buenos puntos de partida para implementar estrategias de amortiguación.
+Las bibliotecas __[Backoff](https://pypi.org/project/backoff/)__ y __[Tenacity](https://pypi.org/project/tenacity/)__ en Python son buenos puntos de partida para implementar estrategias de amortiguamiento.
 
 ## Lifecycle of an API endpoint
 
