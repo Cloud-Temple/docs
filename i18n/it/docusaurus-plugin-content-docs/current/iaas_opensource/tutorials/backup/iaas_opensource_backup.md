@@ -50,7 +50,7 @@ Elimina la politica di backup desiderata e conferma l'eliminazione:
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Nota:*__ *Attenzione! __SecNumCloud richiede che ci sia almeno una politica di backup__ per ogni macchina virtuale.*
+__*Nota:*__ *Attenzione! __SecNumCloud richiede che sia assegnata almeno una politica di backup__ per ogni macchina virtuale.*
 
 ---
 

@@ -50,7 +50,7 @@ Löschen Sie die gewünschte Sicherungsrichtlinie und bestätigen Sie die Lösch
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Hinweis:*__ *Achtung! __SecNumCloud schreibt vor, dass für jede virtuelle Maschine mindestens eine Sicherungsrichtlinie vorhanden sein muss__.*
+__*Hinweis:*__ *Achtung! __SecNumCloud verlangt, dass für jede virtuelle Maschine mindestens eine Backup-Richtlinie zugewiesen ist__.*
 
 ---
 

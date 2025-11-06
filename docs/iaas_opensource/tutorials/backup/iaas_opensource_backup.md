@@ -50,7 +50,7 @@ Supprimez la politique de sauvegarde voulue et confirmez la suppression :
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Remarque :*__ *Attention ! __SecNumCloud impose qu'il y ait au minimum une politique de sauvegarde__ pour chaque machine virtuelle.*
+__*Remarque :*__ *Attention ! __SecNumCloud impose qu'il y ait au minimum une politique de sauvegarde assignée__ pour chaque machine virtuelle.*
 
 ---
 
