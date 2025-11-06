@@ -70,7 +70,7 @@ Después de la autenticación, puede administrar su cluster:
 
 <img src={oshiftMenu_003} />
 
-### Recursos de su entorno
+### Resources of your environment
 
 Aquí están las informaciones de conexión y configuración específicas de su entorno OpenShift.
 
@@ -96,6 +96,7 @@ Para conectarse a través de la línea de comandos (CLI), utilice el siguiente c
 
 ```bash
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
+oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
 ```
 
 #### Acceso al registro
@@ -103,6 +104,8 @@ oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
 Para acceder al registro, conéctese utilizando los siguientes comandos:
 
 ```bash
+oc login https://api-ocp01-{su-id}.paas.cloud-temple.com --web
+docker login -u {su-usuario} -p $(oc whoami -t) registry-ocp01-{su-id}.paas.cloud-temple.com
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com --web
 docker login -u {su-usuario} -p $(oc whoami -t) registry-ocp01-{su-id}.paas.cloud-temple.com
 ```
@@ -113,14 +116,19 @@ Luego, pruebe la construcción y carga de una imagen Docker:
 docker build -t <namespace>/temp:latest .
 docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
+#### Configuración de routers y Load Balancers
 #### Configuración de routers y Load Balancers
 
 La plataforma ofrece opciones flexibles para el __enrutamiento de flujos__ y el __equilibrio de carga__:
 
 - Por defecto, se utilizan load balancers privados para las rutas y los ingresses.
 - Dominios:
+  - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
 

@@ -1,181 +1,38 @@
-
-
 ---
-title: Conceptos
----
-
-
-
-## Elastic Cloud Storage (ECS): una solución de referencia
-
-La oferta de almacenamiento objeto Cloud Temple se basa en la tecnología __Elastic Cloud Storage (ECS)__ de Dell, reconocida por su alta performance y su cumplimiento de las normas industriales. Con una compatibilidad del __97% con el protocolo AWS S3__, esta solución asegura:
-
-- Una integración fácil y estandarizada;
-- Una flexibilidad aumentada para los usuarios;
-- Una transición fluida hacia una infraestructura de almacenamiento moderna.
-
+title: Conceptos del Almacenamiento Objeto
+sidebar_position: 2
 ---
 
+# Conceptos del Almacenamiento Objeto (OSS)
 
+## Arquitectura Técnica
 
-## Compromisos de seguridad y certificaciones
+El servicio de almacenamiento de objetos de Cloud Temple está construido sobre una arquitectura distribuida que garantiza una alta durabilidad y disponibilidad de los datos. Los objetos se almacenan de forma redundante en múltiples nodos de almacenamiento dentro de nuestros datacenters certificados SecNumCloud.
 
-Cloud Temple se compromete a garantizar la seguridad de los datos mediante certificaciones reconocidas:
+El acceso al servicio se realiza a través de una API RESTful estándar, compatible con el protocolo S3, lo que le permite utilizar una amplia gama de herramientas y SDKs existentes.
 
-- __SecNumCloud__ : Calificación otorgada por la ANSSI, asegurando soberanía y seguridad de los datos en un marco francés y europeo.
-- __HDS (Almacenamiento de Datos de Salud)__ : Conformidad con los requisitos estrictos para datos médicos sensibles.
-- __ISO 27001__ : Adhesión a las mejores prácticas en materia de seguridad de la información.
+## Componentes Principales
 
+-   **Objetos**: Los datos fundamentales almacenados en el servicio. Un objeto está compuesto por datos (el archivo en sí) y metadatos (información descriptiva sobre el objeto).
+-   **Buckets (Contenedores)**: Los objetos se organizan en buckets. Un bucket es un contenedor para objetos, y su nombre debe ser único dentro del servicio.
+-   **Claves**: Cada objeto dentro de un bucket se identifica de forma única mediante una clave (un nombre de archivo).
+-   **Endpoints**: Las URL regionales que utiliza para acceder a la API del servicio de almacenamiento.
 
+## Seguridad y cifrado
 
-## Cifrado avanzado para una protección óptima
+La seguridad de sus datos es nuestra máxima prioridad. El servicio OSS integra mecanismos de cifrado robustos para proteger sus datos, ya sea cuando están almacenados (en reposo) o cuando se transmiten a través de la red.
 
-El cifrado de datos se aplica de manera sistemática, asegurando su seguridad en cada etapa:
+### Cifrado de Datos en Reposo (Data at Rest Encryption - D@RE)
 
-- __En tránsito__ : Protección mediante el protocolo __TLS 1.3__.
-- __En almacenamiento__ : Tres opciones adaptadas a las necesidades de los usuarios:
-  - __SSE-ECS__ : Claves gestionadas por Cloud Temple para una gestión simplificada.
-  - __SSE-C__ : Claves proporcionadas por el cliente para un control aumentado.
-  - __CSE__ : Cifrado realizado por el cliente para una seguridad máxima.
+Para proteger sus datos almacenados, nuestro servicio utiliza cifrado del lado del servidor.
 
-| Modelo de cifrado         | Ventajas                              | Desventajas                     |
-| ------------------------- | -------------------------------------- | ------------------------------- |
-| __SSE-ECS__              | Gestión simplificada y transparente     | Menos control sobre las claves   |
-| __SSE-C__                | Control total sobre las claves          | Gestión de las claves necesaria  |
-| __CSE__                  | Seguridad máxima                        | Complejidad e impacto en el rendimiento |
+-   **Activación**: El cifrado D@RE se activa a nivel de *namespace* (espacio de nombres).
+-   **Algoritmo**: Utilizamos el algoritmo **AES-256**, uno de los estándares de cifrado más seguros disponibles.
+-   **Funcionamiento**: Cuando escribe un objeto en un bucket donde D@RE está activado, el servicio cifra automáticamente sus datos antes de escribirlos en los discos. Cuando lee el objeto, se descifra de forma transparente para usted. La gestión de las claves de cifrado está completamente gestionada por el servicio.
 
+### Cifrado de Datos en Tránsito
 
+Todas las comunicaciones con la API del servicio de almacenamiento objeto, ya sea para subir, descargar o gestionar sus datos, deben estar protegidas.
 
-## Arquitectura y despliegue
-
-
-
-### Despliegue de tipo región
-
-El almacenamiento S3 Cloud Temple almacena los datos de forma nativa en [__tres zonas de disponibilidad distintas__](../../additional_content/concepts_az.md) dentro de la misma [región](../../additional_content/concepts_regional.md) de Cloud Temple. Esta arquitectura está diseñada para ofrecer alta disponibilidad y resiliencia máxima frente a fallos de hardware o software:
-
-- Codificación por Erasure (EC): Utilizamos por defecto un esquema EC 12+4, que divide los datos en 12 segmentos de datos y 4 segmentos de paridad. Esta técnica permite reconstruir los datos incluso en caso de pérdida de varios segmentos.
-- Distribución de los datos: Los segmentos EC se distribuyen en diferentes nodos y racks, garantizando protección contra fallos de discos, nodos e incluso racks completos.
-- Replicación geográfica: Para una protección adicional, los datos se replican en 3 zonas de disponibilidad, ofreciendo resiliencia frente a incidentes locales.
-
-Esta replicación asegura que incluso en caso de fallo en una zona, los datos permanezcan accesibles e integros, contribuyendo así a una infraestructura de almacenamiento altamente resiliente.
-
-
-
-## Rendimiento y niveles de servicio
-
-
-
-### Niveles de servicio garantizados
-
-Cloud Temple ofrece una infraestructura altamente confiable con compromisos claros :
-
-| Compromiso                      | Objetivo                         |
-| ------------------------------- | --------------------------------- |
-| Disponibilidad                   | 99,99% (incluye la mantenimiento)|
-| Durabilidad de los datos          | 99,99999999%                  |
-| Ancho de banda de red garantizado  | 1 Gbps/segundo                 |
-
-
-
-### Limitaciones del almacenamiento objeto
-
-Cloud Temple ofrece una solución de almacenamiento en objetos con las siguientes características técnicas:
-
-• __Número máximo de buckets por tenant__: El número máximo de buckets por tenant es de 999.
-
-• __Tamaño límite por bucket__: El tamaño máximo de un objeto es de 5 TB.
-
-• __Número de conexiones simultáneas__: Ningún límite específico.
-
-• __Rendimiento__:
-
-- Hasta 1 Gb/s en entrada
-- Hasta 1 Gb/s en salida
-
----
-
-
-
-## Conceptos y organización del almacenamiento
-
-
-
-### La cuenta de almacenamiento
-
-Un __Storage Account__ es una entidad lógica que tiene una __Clave de Acceso__ y una __Clave Secreta__ utilizadas para autenticar y proteger las interacciones con un bucket.  
-Es en esta cuenta donde se asignan los roles y permisos asociados a los __buckets__, permitiendo controlar con precisión los accesos y las acciones autorizadas para cada usuario o servicio.
-
-
-
-### Tipos de cuentas de almacenamiento
-
-La plataforma de Almacenamiento de objetos Cloud Temple distingue dos tipos de cuentas de almacenamiento, cada uno con un rol y un nivel de permisos específicos :
-
-
-
-#### 1. Cuenta de almacenamiento clásica
-
-Este es el tipo de cuenta estándar que crearás para la mayoría de tus usos.
-
-*   **Gestión de claves** : Para cada cuenta clásica, puedes generar un par de claves de acceso (`Access Key` y `Secret Key`).
-*   **Permisos granulares** : Los derechos de acceso de esta cuenta se definen a nivel de cada bucket mediante listas de control de acceso (ACL). Debes otorgar explícitamente permisos (lectura, escritura, etc.) a los buckets a los que debe acceder.
-
-
-
-#### 2. Cuenta de almacenamiento global (Root)
-
-Cada *namespace* (tenant) dispone de una única cuenta de almacenamiento global, a veces llamada "cuenta root". Esta cuenta dispone de privilegios administrativos extendidos.
-
-*   **Acceso total** : La cuenta global tiene acceso completo a todos los buckets dentro del namespace, sin necesidad de otorgarle permisos específicos. Puede realizar todas las operaciones posibles en todo el servicio de almacenamiento.
-*   **Uso administrativo** : Está principalmente destinado a tareas de configuración y administración globales.
-*   **Reinicio de claves** : Dada su importancia, si las claves de acceso y secreta de esta cuenta se pierden, la plataforma le permite reiniciarlas para generar nuevas.
-
-
-
-### El "bucket" en el ecosistema del almacenamiento objeto
-
-Un bucket S3, popularizado por el servicio Amazon Simple Storage Service (Amazon S3), es __un contenedor de almacenamiento público__ en la nube diseñado para conservar una cantidad ilimitada de datos de manera segura, confiable y altamente disponible. Cada bucket S3 puede almacenar archivos (llamados "objetos" en S3), desde documentos e imágenes hasta grandes bases de datos o archivos de video. Los buckets se utilizan para organizar el espacio de almacenamiento de manera lógica dentro del almacenamiento objeto Cloud Temple, y cada bucket se identifica por un nombre único proporcionado por el usuario. Los buckets S3 ofrecen funcionalidades avanzadas, como la gestión de versiones, la seguridad de los datos mediante políticas de control de acceso, y la posibilidad de inmutabilidad.
-
-
-
-### ¿La oferta S3 Cloud Temple utiliza el método 'PathStyle'?
-
-Debido a las restricciones asociadas a la calificación SecNumCloud, actualmente la oferta está prevista para utilizar el método '__PathStyle__'. Estamos trabajando para que el método '__UrlStyle__' esté disponible en el S2 2025.
-
-
-
-### Solicitudes prefirmadas
-
-El almacenamiento de objetos Cloud Temple soporta las __solicitudes prefirmadas__, una funcionalidad esencial que permite generar URLs temporales que dan acceso a objetos específicos durante un período limitado. Esta funcionalidad es especialmente útil para compartir archivos de manera segura con usuarios externos sin otorgarles derechos permanentes o credenciales de acceso al bucket. Las solicitudes prefirmadas pueden configurarse con una duración de validez precisa, ofreciendo así un control granular sobre el acceso a los datos.
-
-
-
-### Inmutabilidad de los objetos (Object Lock)
-
-El Almacenamiento de Objetos de Cloud Temple, basado en Dell ECS, soporta la funcionalidad de inmutabilidad mediante **Object Lock**, en conformidad con el estándar S3. Esta opción permite configurar los objetos en modo **WORM (Escribe una vez, Lee muchas veces)**, protegiéndolos así contra cualquier modificación o eliminación durante un período definido. Es una protección esencial para la conformidad normativa y la defensa contra los ransomwares.
-
-
-
-#### Funcionamiento
-
-La inmutabilidad se aplica a las versiones de los objetos y puede configurarse de dos maneras:
-*   **Período de retención fijo**: El objeto está bloqueado durante un período determinado (en días o en años).
-*   **Conservación legal (Legal Hold)**: El objeto está bloqueado indefinidamente, hasta que la conservación sea levantada explícitamente.
-
-
-
-#### Condiciones de implementación
-
-*   **Versionado obligatorio** : Para activar el Object Lock, el versionado debe estar activado en el bucket. Una vez que el Object Lock esté activo, el versionado no se puede desactivar.
-*   **Activación en la creación** : La inmutabilidad debe activarse en el momento de la creación del bucket, a través de la API S3 (por ejemplo, con el encabezado `x-amz-bucket-object-lock-enabled: true`).
-*   **Dos modos de protección** :
-    *   **Modo Gobernanza** : Los usuarios con permisos específicos pueden modificar o eliminar los parámetros de retención.
-    *   **Modo Cumplimiento** : Nadie, incluido el administrador raíz, puede modificar o eliminar los parámetros de retención. Es el nivel más alto de protección.
-
-
-
-#### Casos de uso principales
-
-*   **Protección contra ransomware** : Las copias de seguridad protegidas no pueden ser cifradas ni eliminadas por un ataque, garantizando una restauración confiable de los datos.
-*   **Cumplimiento normativo** : Cumple con los requisitos estrictos de conservación de datos en sectores como la finanza (FINRA, SEC 17a-4) o la salud.
+-   **Protocolo**: Exigimos el uso del protocolo **TLS (Transport Layer Security)**, versiones **1.2 y 1.3**.
+-   **Funcionamiento**: Al utilizar HTTPS para todas sus solicitudes de API, se asegura que los datos intercambiados entre su cliente y nuestros servidores estén cifrados, protegiéndolos así contra la interceptación o alteración durante su tránsito por la red.

@@ -72,13 +72,25 @@ Basé sur l'analyse de `/docs/additional_content/concepts_az.md` et `concepts_re
 - **Technologies** : vSphere, vCenter, vSAN
 - **Migration** : Processus de migration documentés
 
-## 🚀 Platform as a Service (`/docs/paas_openshift/`)
+## 🚀 Platform as a Service
 
-### État Documentation
+### PaaS OpenShift (`/docs/paas_openshift/`)
 - **Statut** : ✅ Complète avec tutorials
 - **Technologies** : OpenShift 4.x, Kubernetes
 - **Workflows** : DevOps et CI/CD
 - **Conteneurs** : Orchestration complète
+
+### Managed Kubernetes (`/docs/managed_kubernetes/`)
+- **Statut** : ✅ Bonne base, tutoriels à enrichir
+- **OS** : Talos Linux (immuable, sécurisé)
+- **Technologies Clés** :
+  - **Réseau** : Cilium, Hubble, MetalLB, Nginx
+  - **Stockage** : Rook-Ceph
+  - **Sécurité** : Kyverno, Capsule, Harbor
+  - **GitOps** : ArgoCD
+  - **Observabilité** : Prometheus, Grafana, Loki
+  - **Sauvegarde** : Veeam Kasten
+  - **FinOps** : KubeCost
 
 ## 🏢 Housing & Colocation (`/docs/housing/`)
 
