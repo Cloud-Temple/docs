@@ -21,9 +21,7 @@ import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_open
 
 ### ¿Cómo clonar una máquina virtual?
 
-Solo hay una forma de clonar una máquina virtual:
-
-- Directamente desde el icono __'Exportar'__ de su máquina virtual:
+Puede exportar una máquina virtual haciendo clic en el icono __'Exportar'__ :
 
 <img src={backupCloneOpenIaas_001} />
 <img src={backupCloneOpenIaas_002} />

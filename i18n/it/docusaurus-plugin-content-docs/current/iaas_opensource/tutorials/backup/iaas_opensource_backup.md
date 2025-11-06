@@ -21,9 +21,7 @@ import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_open
 
 ### Come clonare una macchina virtuale?
 
-C'è solo un modo per clonare una macchina virtuale:
-
-- Direttamente dall'icona __'Esporta'__ della tua macchina virtuale:
+È possibile esportare una macchina virtuale facendo clic sull'icona __'Esporta'__:
 
 <img src={backupCloneOpenIaas_001} />
 <img src={backupCloneOpenIaas_002} />
