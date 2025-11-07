@@ -13,6 +13,9 @@ Cette section contient des tutoriels pratiques pour utiliser efficacement la pla
 - [Gestion des pools de ressources](tutorials/high_availability/manage_pool.md)
 - [Gestion des machines virtuelles](tutorials/high_availability/manage_vm.md)
 
+### Sauvegarde
+- [Questions fréquentes concernant la sauvegarde](tutorials/backup/iaas_opensource_backup.md)
+
 ## Prérequis
 
 Avant de commencer ces tutoriels, assurez-vous d'avoir :

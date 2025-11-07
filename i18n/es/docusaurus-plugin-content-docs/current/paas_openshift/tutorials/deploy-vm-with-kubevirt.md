@@ -231,4 +231,4 @@ Necesitará los siguientes archivos para el despliegue:
 
 ## Conclusión
 
-Esta guía le ha permitido desplegar máquinas virtuales Fedora y Windows Server en KubeVirt con OpenShift. Usted ha aprendido a configurar los accesos a la red (SSH/RDP) y a exponer servicios web. Estos pasos pueden ser reproducidos para diversos escenarios donde se necesiten VM en un entorno en el PaaS Openshift **Cloud Temple**. 🚀
+Esta guía le ha permitido desplegar máquinas virtuales Fedora y Windows Server en KubeVirt con OpenShift. Usted ha aprendido a configurar los accesos a la red (SSH/RDP) y a exponer servicios web. Estos pasos pueden ser reproducidos para diversos escenarios donde se necesiten VM en un entorno en el PaaS OpenShift **Cloud Temple**. 🚀

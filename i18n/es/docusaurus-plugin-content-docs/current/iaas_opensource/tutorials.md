@@ -13,6 +13,9 @@ Esta sección contiene tutoriales prácticos para utilizar eficazmente la plataf
 - [Gestión de los pools de recursos](tutorials/high_availability/manage_pool.md)
 - [Gestión de las máquinas virtuales](tutorials/high_availability/manage_vm.md)
 
+### Copia de seguridad
+- [Preguntas frecuentes sobre la copia de seguridad](tutorials/backup/iaas_opensource_backup.md)
+
 ## Requisitos
 
 Antes de comenzar estos tutoriales, asegúrese de tener:

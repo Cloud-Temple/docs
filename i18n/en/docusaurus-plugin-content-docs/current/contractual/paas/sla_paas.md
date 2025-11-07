@@ -164,7 +164,7 @@ le principe de responsabilité partagée détaillé dans les normes établies
 par le référentiel SecNumCloud :
 
 - La provision d\'une plateforme de gestion des conteneurs Redhat
-    Openshift pilotée par le Prestataire.
+    OpenShift pilotée par le Prestataire.
 
 Il est entendu que le Prestataire mobilisera son expertise pour réaliser
 les Prestations selon les meilleures pratiques professionnelles,
@@ -197,7 +197,7 @@ Prestataire.
 Le service englobe la mise à disposition au sein d\'une région, sur 3
 zones de disponibilité,
 
-#### Infrastructure logiciel de pilotage de la plateforme Redhat Openshift
+#### Infrastructure logiciel de pilotage de la plateforme Redhat OpenShift
 
 Le Prestataire fournit au COMMANDITAIRE la console d\'administration et
 l\'API nécessaire à l\'exploitation de ses environnements PaaS RedHat
@@ -233,7 +233,7 @@ interprété comme une indisponibilité du service.
 
 Le Prestataire met à disposition du COMMANDITAIRE une plateforme de
 sauvegarde intégrée, dédiée et gérée, destinée à la protection des
-données de ses environnements RedHat Openshift. Le Prestataire assure le
+données de ses environnements RedHat OpenShift. Le Prestataire assure le
 maintien en condition opérationnelle et en condition de sécurité de
 cette plateforme intégrée de sauvegarde. Indépendamment du nombre de
 zones de disponibilité souscrites par le COMMANDITAIRE, le Prestataire

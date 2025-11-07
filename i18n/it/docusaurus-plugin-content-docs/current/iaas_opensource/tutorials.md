@@ -13,6 +13,9 @@ Questa sezione contiene tutorial pratici per utilizzare in modo efficace la piat
 - [Gestione dei pool di risorse](tutorials/high_availability/manage_pool.md)
 - [Gestione delle macchine virtuali](tutorials/high_availability/manage_vm.md)
 
+### Salvataggio
+- [Domande frequenti sul backup](tutorials/backup/iaas_opensource_backup.md)
+
 ## Prerequisiti
 
 Prima di iniziare questi tutorial, assicurati di avere:
