@@ -123,6 +123,8 @@ La piattaforma offre opzioni flessibili per il __routing dei flussi__ e il __bil
 - Domini:
   - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
+  - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
 
 Assicuratevi che le vostre rotte o ingress siano configurati con le etichette o le classi di ingress appropriate per garantire un routing corretto.
 

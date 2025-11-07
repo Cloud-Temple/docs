@@ -63,3 +63,12 @@ Notre modèle est basé sur la consommation réelle (**tokens** pour le langage,
 
 ### **Quel niveau de support et de SLA proposez-vous ?**
 Notre offre standard inclut un support technique en Français et Anglais, accessible via notre portail client, avec un engagement de première réponse en jour ouvré. La plateforme bénéficie d'un engagement de disponibilité de **99%**. Pour les besoins les plus critiques, nos **Services Professionnels** optionnels vous donnent accès à des SLAs renforcés, incluant un support prioritaire avec un temps de réponse jusqu'à 4h pour les incidents critiques, et un accompagnement stratégique sur mesure (ateliers d'innovation, gouvernance ITIL).
+
+### **Comment puis-je suivre l'état de santé de la plateforme LLMaaS ?**
+Nous croyons en une transparence totale sur la disponibilité de nos services. Vous pouvez consulter en temps réel le statut opérationnel de chaque modèle d'IA sur notre page de statut publique : **[https://llmaas.status.cloud-temple.app/](https://llmaas.status.cloud-temple.app/)**.
+
+Cette page fournit des informations détaillées sur :
+*   L'état général de la plateforme.
+*   La disponibilité de chaque modèle individuellement.
+*   Les métriques de performance comme le temps de réponse (TTFB) et le débit (tokens/s).
+*   L'historique des incidents pour un suivi complet.

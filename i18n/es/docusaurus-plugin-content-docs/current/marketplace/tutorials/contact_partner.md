@@ -1,43 +1,42 @@
 ---
-title: Contactar un socio
+title: Contactar a un socio
 ---
 import marketplaceContactAccess from '../images/marketplaceContactAccess.png'
 import marketplaceContactConfirm from '../images/marketplaceContactConfirm.png'
 import marketplaceContactEmail from '../images/marketplaceContactEmail.png'
 
-Este tutorial le guía para ponerse en contacto con un editor socio a través del Cloud Temple Marketplace.
+Este tutorial le guiará para ponerse en contacto con un socio editor a través de la Marketplace Cloud Temple.
 
 ## Contexto de uso
 
-Use esta funcionalidad cuando:
-- La solución requiere conexión con el socio
+Utilice esta funcionalidad cuando:
+- La solución requiera una conexión con el socio
 - Desea obtener información adicional
-- La solución no es directamente desplegable (sin VM Image)
+- La solución no sea directamente desplegable (sin imagen de VM)
 
 ## Pasos de contacto
 
 ### 1. Acceso al formulario
 
-Desde la página de detalles de una solución de socio, haga clic en **Contactar el socio**:
+Desde la página de detalle de una solución de socio, haga clic en **Contactar al socio**:
 <img src={marketplaceContactAccess} />
 
-### 2. Envío de solicitud
+### 2. Envío de la solicitud
 
 Valide y envíe su solicitud de contacto:
 <img src={marketplaceContactConfirm} />
 
 Recibirá una confirmación por correo electrónico del envío de su solicitud.
 
-### 3. Conexión
+### 3. Relación
 
-El socio recibirá automáticamente un correo electrónico con su información:
+El socio recibirá automáticamente un correo electrónico con sus datos:
 
 **Ejemplo de correo enviado al socio:**
 <img src={marketplaceContactEmail} />
 
+## Buenas prácticas
 
-## Mejores prácticas
-
-- **Sea preciso** en la descripción de su necesidad
-- **Indique el contexto** de uso previsto
-- **Mencione sus restricciones** técnicas o regulatorias
+- **Sé preciso** en la descripción de tu necesidad
+- **Indica el contexto** de uso previsto
+- **Menciona tus restricciones** técnicas o regulatorias

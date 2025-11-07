@@ -1,13 +1,21 @@
-
-
 ---
 title: Metrology
 ---
 import metricsHypervisorsCo2 from './images/metrics_hypervisors_co2.png'
+import shivaHome from './images/shiva_home.png'
 import shivaMetric_000 from './images/shiva_metric_000.png'
-import shivaMetric_003 from './images/shiva_metric_003.png'
 import shivaMetric_001 from './images/shiva_metric_001.png'
 import shivaMetric_002 from './images/shiva_metric_002.png'
+import shivaMetric_003 from './images/shiva_metric_003.png'
+import shivaMetric_004 from './images/shiva_metric_004.png'
+import shivaMetric_006 from './images/shiva_metric_006.png'
+import shivaMetric_007 from './images/shiva_metric_007.png'
+import shivaMetric_008 from './images/shiva_metric_008.png'
+import shivaMetric_009 from './images/shiva_metric_009.png'
+import shivaMetric_010 from './images/shiva_metric_010.png'
+import shivaMetric_011 from './images/shiva_metric_011.png'
+import shivaMetric_012 from './images/shiva_metric_012.png'
+import shivaMetric_013 from './images/shiva_metric_013.png'
 import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
@@ -18,71 +26,128 @@ import grafanaDatasourceAlerting from './images/grafana_datasource_alerting.png'
 import grafanaDatasourceWorking from './images/grafana_datasource_working.png'
 import grafanaDashboards_001 from './images/grafana_dashboards_001.png'
 
-Most of Cloud Temple's clients have visualization, monitoring, and metrology tools for tracking their operations.
+The majority of __Cloud Temple__ clients have visualization, monitoring, and metrology tools in place to track their operations.
 
-The philosophy of the Shiva console is to enable access to data in order to integrate into this tooling via an integrated Prometheus proxy.
+The philosophy behind the Shiva console is to provide access to data so it can be integrated into this tooling via an embedded Prometheus proxy.
 
-This proxy allows you to query and manipulate the data from a visualization tool like [Grafana](https://grafana.com).
+This proxy enables you to query and manipulate data using a visualization tool such as [Grafana](https://grafana.com).
 
-It is however possible to visualize some performance data of your Cloud resources in the web interface of the Shiva console.
+It is, however, possible to view some performance metrics of your Cloud resources directly within the Shiva web interface.
 
-*__Note:__ The Cloud Temple philosophy is not to integrate multiple graphs into the web interface, but to offer the maximum of information accessible via the API*
+*__Note:__ The __Cloud Temple__ philosophy is not limited to embedding graphs within the web interface, but also to providing maximum information accessible via the API*
 
+## Built-in dashboards in the web interface
 
+*__Note:__ To access these dashboards, you must have the __'metric_read'__ permission*
 
-## Integrated Dashboard in the Web Interface
+### Overview
 
-*__Note :__ To access these dashboards, you need to have the right __'metric_read'__*
+The Shiva console's home page displays the main dashboard, showing all metrics that provide an overview of each product you have subscribed to within your scope. If any issues arise with your VMware and/or OpenIaaS products, alerts will be visible—alert severity is indicated by color.
 
+These alerts are clickable and redirect to the corresponding product page.
 
+<img src={shivaHome} />
 
-### Carbon Emissions Tracking for the Calculation
+### VMware Metrics - Overview
 
-The Shiva console dashboard integrates by default a graph tracking your calculation's electricity consumption as well as the associated carbon emission estimate.
+In the **'VMware'** menu, a dedicated dashboard is available under the **'Metrics'** submenu. It includes 4 tabs:
 
-It is accessible directly on the home page of the Cloud Temple console's web interface by clicking on __'Metric'__ :
+#### Overview
 
-<img src={metricsHypervisorsCo2} />
-
-
-
-### Overview of Virtual Machine Health
-
-The summary of the virtual machine status is accessible in the __'IaaS'__ menu on the left of your screen, in the __'Health'__ sub-menu then __'Virtual Machines'__.
-
-This summary provides, for the selected time range in __'Filters'__:
-
-- the number of CPUs and the __average CPU usage__,
-- the number of GB of memory and the __average memory usage__,
-- the averages of __storage access latency__ for read and write operations,
-- the average __'CPU Ready'__ time of the virtual machine (which corresponds to the average waiting time for a physical core availability by the virtual machine).
+On this tab, you'll find some of the metrics already present in the global dashboard discussed at the beginning of this chapter.
 
 <img src={shivaMetric_000} />
 
-For each VM, you can access the performance history by clicking on the green __'History'__ icon of the virtual machine in the action column:
+#### Calculation
 
-<img src={shivaMetric_003} />
+On this tab, you'll find the number of **AZs**, **Clusters**, **ESXs**, **carbon emissions**, and **energy consumption**, along with 7 visual graphs providing a clear, graphical overview of your VMware environment.
 
-You then access the graphical visualization page of the historical data, including an __environmental performance view__:
+You can select the date range to cover, as well as the data aggregation type (by default, data is aggregated across your entire environment). For example, by choosing **Host**:
 
 <img src={shivaMetric_001} />
 
 <img src={shivaMetric_002} />
 
+#### Storage
 
+Just as on the "Compute" tab, you'll find various pieces of information: the number of **AZs**, **datastore clusters**, **datastores**, as well as two charts. The same filtering principles apply, but here you can group by **Cluster SDRS** and **Datastore**.
+
+<img src={shivaMetric_004} />
+
+#### Virtual Machines
+
+Here you can find an overview of the health status of virtual machines.
+
+This summary provides, over the selected time range:
+- the number of CPUs and the __average CPU utilization__,
+- the amount of memory in GB and the __average memory usage__,
+- the average __storage access latency__ for both read and write operations,
+- the average __'CPU Ready'__ time of the virtual machine (which represents the average wait time for a physical CPU core to become available for the virtual machine).
+
+<img src={shivaMetric_006} />
+
+For each VM, you can access its performance history by clicking the green __'History'__ icon in the Actions column:
+
+<img src={shivaMetric_003} />
+
+This will take you to the page displaying historical data in graphical form, including an __environmental performance__ view:
+
+<img src={shivaMetric_007} />
+
+### VMware Metrics - View by Resource
+
+It is also possible to view a portion of metrics related to VMware, this time more specifically for a given **Host** or **Datastore**.
+
+#### Host
+
+In the Host view, you can check the **energy consumption** and the estimated **carbon emissions** for a given period.
+
+<img src={shivaMetric_008} />
+
+#### Datastore
+
+In a Datastore view, you can check the **IOPS** for a given period.
+
+<img src={shivaMetric_009} />
+
+### OpenIaaS Metrics
+
+In the **'OpenIaaS'** menu, a dedicated dashboard is available under the **'Metrics'** submenu. It includes 3 tabs:
+
+#### Overview
+
+On this tab, you'll find some of the metrics already present in the global dashboard discussed at the beginning of this chapter.
+
+<img src={shivaMetric_010} />
+
+#### Calcul
+
+On this tab, you'll find the number of **AZs**, **Clusters**, and **Hosts**, along with five graphs providing a highly visual overview of your OpenIaaS environment.
+
+You can select the date range to cover, as well as the data grouping type (by default, data is grouped across your entire scope). For example, by choosing **Host**:
+
+<img src={shivaMetric_011} />
+
+<img src={shivaMetric_012} />
+
+#### Storage
+
+Just as on the "Compute" tab, various information is displayed: the number of **AZs**, **Clusters**, **Datastores**, as well as a chart. The same filtering principles apply, but here we can group by **Block Storage**.
+
+<img src={shivaMetric_013} />
 
 ## Usage with __Grafana__
 
 Integration of the Shiva console with Grafana
 
-The Shiva console from Cloud Temple can be used as a datasource for your infrastructure [Grafana](https://grafana.com/).
+The Shiva console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
 
-The console is compatible with Prometheus, allowing it to be added in Grafana as a Prometheus type datasource. You will then be able to:
+The console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
 
 - Visualize all your metrics.
-- Create your own custom dashboards tailored to your needs.
+- Create custom dashboards tailored to your specific needs.
 
-Cloud Temple also provides a [collection of dashboards](https://github.com/Cloud-Temple/console-grafana-iaas) ready to use, which you can use as a base or adapt according to your use cases.
+Cloud Temple also provides a [collection of ready-to-use dashboards](https://github.com/Cloud-Temple/console-grafana-iaas) that you can use as a starting point or adapt according to your use cases.
 
 <img src={grafanaDashboards_003} />
 
@@ -90,53 +155,45 @@ Cloud Temple also provides a [collection of dashboards](https://github.com/Cloud
 
 <img src={grafanaDashboards_002} />
 
-
-
 ### Configure the Console as a Data Source in Grafana
 
-The goal is to enhance the observability of your Cloud infrastructure via Cloud Temple metrics.
-
-
+The goal is to enhance the observability of your Cloud infrastructure through Cloud Temple metrics.
 
 #### Prerequisites
 
 - A Grafana instance with access to the Console APIs.
-- Administrator access on the Grafana instance to configure the *datasources*.
-- A personal access token with at least the `metrics_read` right.
-
-
+- Administrative access to the Grafana instance to configure *datasources*.
+- A personal access token with at least the `metrics_read` permission.
 
 #### Configuration
 
-In the __configuration__ of Grafana, go to the "__datasources__" tab and click on "__Add datasource__".
+In the __Grafana configuration__, go to the "__Datasources__" tab and click on "__Add datasource__".
 
-In the URL, provide the "__URL of the Console Metrics API__" without the version and ending with "__/prometheus__"
+In the URL field, provide the __Console Metrics API URL__ without the version, ending with "__/prometheus__"  
 (example: [https://shiva.cloud-temple.com/api/metric/prometheus](https://shiva.cloud-temple.com/api/metric/prometheus))
 
 <img src={grafanaDatasourceHttp} />
 
-In the __Authentication__, enable the option __Basic Auth__.
+In the "__Authentication__" section, enable the __Basic Auth__ option.
 
 <img src={grafanaDatasourceAuth} />
 
-In the "__Basic Auth Details__" section, configure the __username__ and __password__ using respectively the __id__ and __secret__ of a __Personal Access Token__ with the __metrics_read__ permission.
+In the "__Basic Auth Details__" section, configure the __username__ and __password__ using the __id__ and __secret__ of a __Personal Access Token__ with the __metrics_read__ permission.
 
 <img src={grafanaDatasourceBasicAuthDetails} />
 
-In the "__Alerting__" section, configure the __HTTP Method__ property to __GET__.
+In the "__Alerting__" section, set the __HTTP Method__ to __GET__.
 
 <img src={grafanaDatasourceAlerting} />
-
-
 
 #### Result
 
 To confirm that the configuration is correct and functional, click the "__Save & test__" button.
 
-You should see a banner informing you that the configuration was successful.
+You should see a banner indicating that the configuration was successful.
 
 <img src={grafanaDatasourceWorking} />
 
-You will find a set of example configurations for Grafana here: [https://github.com/Cloud-Temple/console-grafana-iaas](https://github.com/Cloud-Temple/console-grafana-iaas)
+You can find a comprehensive set of Grafana configuration examples here: [https://github.com/Cloud-Temple/console-grafana-iaas](https://github.com/Cloud-Temple/console-grafana-iaas)
 
 <img src={grafanaDashboards_001} />
