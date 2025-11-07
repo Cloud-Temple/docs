@@ -1,5 +1,6 @@
 ---
 title: Getting Started Guide
+title: Getting Started Guide
 ---
 import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
@@ -75,10 +76,12 @@ After authentication, you can administer your cluster:
 Here are the connection and configuration information specific to your OpenShift environment.
 
 #### Connection Details
+#### Connection Details
 
 To access the various OpenShift components, ensure your tenant is whitelisted in the console (refer to the documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
 - __Shiva Tenant URL__:
+  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
   [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__:
@@ -90,8 +93,9 @@ To access the various OpenShift components, ensure your tenant is whitelisted in
 - __GitOps (ARGOCD)__:
   [https://gitops-ocp01-__your-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)
 
-#### Connecting to the Cluster via CLI
+#### Connecting to the cluster via CLI
 
+To connect via the command line interface (CLI), use the following command:
 To connect via the command line interface (CLI), use the following command:
 
 ```bash
@@ -105,25 +109,35 @@ To access the registry, log in using the following commands:
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
 docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
+oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
+docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
 ```
 
+Then, test building and pushing a Docker image:
 Then, test building and pushing a Docker image:
 
 ```bash
 docker build -t <namespace>/temp:latest .
 docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
 #### Router and Load Balancer Configuration
+#### Router and Load Balancer Configuration
 
-The platform offers flexible options for __flow routing__ and __load balancing__:
+The platform provides flexible options for __traffic routing__ and __load balancing__:
 
+- By default, private load balancers are used for routes and ingresses.
 - By default, private load balancers are used for routes and ingresses.
 - Domains:
   - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
+  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
 
+Ensure your routes or ingresses are configured with the appropriate labels or ingress classes to guarantee correct routing.
 Ensure your routes or ingresses are configured with the appropriate labels or ingress classes to guarantee correct routing.
 
 Example:
@@ -136,6 +150,7 @@ metadata:
 
 #### IaaS Interconnection
 
+Network configurations play a crucial role in securing communications with OpenShift.
 Network configurations play a crucial role in securing communications with OpenShift.
 
 - __Interconnection network__: 100.67.0.0/28

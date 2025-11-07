@@ -1,5 +1,6 @@
 ---
 title: Schnellstartanleitung
+title: Schnellstartanleitung
 ---
 import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
@@ -67,6 +68,7 @@ Klicken Sie auf die **Zugriffs-URL** des Clusters, den Sie verwalten möchten. S
 <img src={oshiftMenu_002} />
 
 Nach der Authentifizierung können Sie Ihren Cluster verwalten:
+Nach der Authentifizierung können Sie Ihren Cluster verwalten:
 
 <img src={oshiftMenu_003} />
 
@@ -74,6 +76,7 @@ Nach der Authentifizierung können Sie Ihren Cluster verwalten:
 
 Hier finden Sie die Verbindungs- und Konfigurationsinformationen für Ihre OpenShift-Umgebung.
 
+#### Verbindungsdetails
 #### Verbindungsdetails
 
 Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, dass Ihr Tenant in der Konsole auf der Whitelist steht (siehe Dokumentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
@@ -90,7 +93,7 @@ Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, 
 - __GitOps (ARGOCD)__:
   [https://gitops-ocp01-__ihre-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**ihre-id**.paas.cloud-temple.com/applications)
 
-#### Verbindung zum Cluster über CLI
+#### Connection to the cluster via CLI
 
 Um sich über die Befehlszeile (CLI) zu verbinden, verwenden Sie folgenden Befehl:
 
@@ -100,6 +103,7 @@ oc login https://api-ocp01-{ihre-id}.paas.cloud-temple.com/ --web
 
 #### Zugriff auf die Registry
 
+Um auf die Registry zuzugreifen, melden Sie sich mit den folgenden Befehlen an:
 Um auf die Registry zuzugreifen, melden Sie sich mit den folgenden Befehlen an:
 
 ```bash
@@ -126,7 +130,7 @@ Die Plattform bietet flexible Optionen für das __Routing von Datenflüssen__ un
 
 Stellen Sie sicher, dass Ihre Routen oder Ingresses mit den entsprechenden Labels oder Ingress-Klassen konfiguriert sind, um ein korrektes Routing zu gewährleisten.
 
-Beispiel:
+Example:
 
 ```yaml
 metadata:

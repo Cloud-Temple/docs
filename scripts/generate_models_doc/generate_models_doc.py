@@ -429,9 +429,9 @@ def main():
     """Fonction principale du script"""
     # Chemins des fichiers
     script_dir = Path(__file__).parent
-    project_dir = script_dir.parent
+    project_dir = script_dir.parent.parent # Remonter de deux niveaux pour atteindre la racine
     
-    config_path = project_dir / ".." / "memory-bank" / "models_config.yaml"
+    config_path = project_dir / "memory-bank" / "models_config.yaml"
     output_path = project_dir / "docs" / "llmaas" / "models.md"
     
     # Génération de la documentation

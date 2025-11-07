@@ -78,7 +78,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Type    | Description                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | The model to use (see [model catalog](./models.md))            |
+| `model`       | string  | The model to use (see [model catalog](models.md))            |
 | `messages`    | array   | List of conversation messages                                 |
 | `max_tokens`  | integer | Maximum number of tokens to generate                          |
 | `temperature` | float   | Controls creativity (0.0-2.0)                                 |

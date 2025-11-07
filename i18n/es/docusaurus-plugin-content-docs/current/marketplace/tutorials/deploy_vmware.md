@@ -1,16 +1,16 @@
 ---
-title: Desplegar una imagen en VMware
+title: Deploy an image on VMware
 ---
 import marketplaceVmwareDeployment from '../images/marketplace_vmware_deploy.png'
 import marketplaceVmwareConfig from '../images/marketplace_vmware_config.png'
 
-Este tutorial le guía para desplegar una imagen de máquina virtual desde el Cloud Temple Marketplace a su entorno VMware.
+This tutorial guides you through deploying a virtual machine image from the Cloud Temple Marketplace to your VMware environment.
 
-## Prerrequisitos
+## Requis
 
-- Tener un entorno VMware configurado
-- Tener permisos de creación de máquinas virtuales
-- La imagen debe tener **VMware** en sus objetivos compatibles
+- Disponer de un entorno VMware configurado
+- Tener permisos para crear máquinas virtuales
+- La imagen debe tener **VMware** entre sus destinos compatibles
 
 ## Pasos de despliegue
 
@@ -29,19 +29,18 @@ Configure los parámetros básicos de su máquina virtual:
 
 <img src={marketplaceVmwareConfig} />
 
-El despliegue normalmente toma menos de 10 minutos dependiendo del tamaño de la imagen.
+El despliegue generalmente se realiza en menos de 10 minutos, según el tamaño de la imagen.
 
 ## Acceso alternativo
 
-También puede acceder a las plantillas del Marketplace directamente desde la interfaz VMware:
+También puede acceder directamente a las plantillas de Marketplace desde la interfaz de VMware:
 
-1. Vaya a **vSphere** > **Desplegar una VM**
-2. Seleccione **Plantilla del Marketplace** como origen
+1. Vaya a **vSphere** > **Implementar una VM**
+2. Seleccione **Plantilla Marketplace** como origen
 3. Navegue por las imágenes disponibles en el catálogo integrado
 
-## Monitoreo del despliegue
+## Deployment tracking
 
-Una vez lanzado el despliegue:
-- Siga el progreso desde la consola VMware
-- La VM aparecerá en su inventario vSphere
-- Conéctese una vez completado el despliegue
+Once the deployment is initiated:
+- Monitor the progress from the VMware console
+- The VM will appear in your vSphere inventory
