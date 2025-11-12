@@ -7,6 +7,9 @@ import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_o
 import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
 import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
 import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
 import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
@@ -87,7 +90,49 @@ De plus, vous pouvez modifier certaines options telles que :
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
-### Replication
+### Virtual Machine Console
+
+The virtual machine console can be accessed from the list of virtual machines by clicking on the __'Console'__ icon:
+
+<img src={openIaasVmConsoleBtn} />
+
+A new tab opens in your browser, displaying the console of your virtual machine, based on a VNC client:
+
+<img src={openIaasVmConsoleOpen} />
+
+Within the VNC menu, you can:
+- Request sending specific keys,
+- Force keyboard mapping (in case your virtual machine does not have the same keyboard layout as your web browser),
+- Open a text field that can be transmitted to the machine. This method replaces the old non-functional clipboard,
+- Switch to full-screen mode,
+- Change window size (scaling).
+
+#### Keyboard Layout Support
+Input typed in the console depends on the language of your web browser's keyboard, the virtual machine's keyboard language, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not. Here's a summary of possible scenarios with French language:
+
+| Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
+| ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |
+| French                                     | French                            | No                                 | ✅                     |
+| French                                     | French                            | Yes                                | Not recommended        |
+| French                                     | English                           | No                                 | English                |
+| French                                     | English                           | Yes                                | ✅                     |
+| English                                    | French                            | No                                 | French                 |
+| English                                    | French                            | Yes                                | ✅                     |
+| English                                    | English                           | No                                 | ✅                     |
+| English                                    | English                           | Yes                                | Not recommended        |
+
+__Note__:
+- If certain characters don't work with manual input, you can try using the clipboard.
+
+#### Clipboard Functionality
+This feature allows you to send an entire string of characters to your virtual machine. It's important to note that the "enforce keyboard" key affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is necessary, remember to enable it before using the clipboard.  
+This feature can be used to send a password, a command, or the contents of a configuration file, for example:
+
+<img src={openIaasVmConsoleClipboard} />
+
+Upon clicking the "Paste" button, the content of your text field is sent to your virtual machine.
+
+## Replication
 
 The term "replication" in the context of cloud computing and IT systems refers to the process of creating multiple copies or instances of data, applications, or services across different physical or virtual locations. This redundancy serves several purposes:
 

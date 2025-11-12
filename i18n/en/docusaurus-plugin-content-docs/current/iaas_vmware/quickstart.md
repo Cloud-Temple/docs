@@ -14,6 +14,7 @@ import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
 import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
 import shivaCpool_010 from './images/shiva_cpool_010.png'
 import shivaCpool_011 from './images/shiva_cpool_011.png'
+import shivaCpool_012 from './images/shiva_cpool_012.png'
 import shivaCatalogs from './images/shiva_catalogs.png'
 import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
 import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
@@ -161,42 +162,43 @@ The virtual machine console can be accessed from the list of virtual machines by
 
 <img src={shivaCpool_010} />
 
-A new tab opens in your browser, displaying the console of your virtual machine, based on a VNC client:
+A new tab opens in your browser, displaying the console of your virtual machine, based on a **VNC** client:
 
 <img src={shivaCpool_011} />
 
-Within the VNC menu, you can:
-
+Within the **VNC** menu, you can:
 - Request sending specific keys,
-- Perform copy-paste from your host OS's clipboard,
-- Switch to full-screen mode,
-- Adjust window size (scaling).
-
-Keyboard management with virtual machine consoles works flawlessly in an entirely English environment.
-
-The input typed into the console depends on:
-
-- The language of the keyboard on your physical machine,
-- The language of the virtual machine's keyboard,
-- Whether the 'enforce keyboard' option is enabled (left side of the screen).
-
-Here’s a summary of possible scenarios using French as an example:
-
-| Language of keyboard on physical machine (input) | Language of keyboard in virtual machine | 'Enforce keyboard' selected | Result (output)                                   |
-| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | --------------------------------------------------- |
-| French                                          | French                                  | No                                    | Discouraged (problem with special characters) |
-| French                                          | French                                  | Yes                                    | < and > do not function                      |
-| French                                          | English                                   | No                                    | Discouraged (problem with special characters) |
-| French                                          | English                                   | Yes                                    | English                                             |
-| English                                           | French                                  | No                                    | < and > do not function                      |
-| English                                           | French                                  | Yes                                    | < and > do not function                      |
-| English                                           | English                                   | No                                    | English                                             |
-| English                                           | English                                   | Yes                                    | English                                             |
+- Force keyboard mapping (in case we cannot correctly identify your keyboard),
+- Open a text field that can be transmitted to the machine. This method replaces the old non-functional clipboard,
+- Switch to full-screen mode.
 
 __Note__:
+Window scaling is automatic.
 
-- If the 'AltGr' + '@' combination on your keyboard doesn't work, enable the 'enforce key' option in the VNC console menu and try again.
-- If it still doesn’t work and your host OS is Windows, switch your physical keyboard to English and enter @ as usual *(output: Azerty - AltGr + number key or Qwerty - Shift + 2)*.
+#### Keyboard Layout Support
+Input typed in the console depends on the language of your web browser's keyboard, the virtual machine's keyboard language, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not. Here's a summary of possible scenarios with French language:
+
+| Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
+| ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |
+| French                                     | French                            | No                                 | ✅                     |
+| French                                     | French                            | Yes                                | Not recommended        |
+| French                                     | English                           | No                                 | English                |
+| French                                     | English                           | Yes                                | ✅                     |
+| English                                    | French                            | No                                 | French                 |
+| English                                    | French                            | Yes                                | ✅                     |
+| English                                    | English                           | No                                 | ✅                     |
+| English                                    | English                           | Yes                                | Not recommended        |
+
+__Note__:
+- If certain characters don't work with manual input, you can try using the clipboard.
+
+#### Clipboard Functionality
+This feature allows you to send an entire string of characters to your virtual machine. It's important to note that the "enforce keyboard" key affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is necessary, remember to enable it before using the clipboard.  
+This feature can be used to send a password, a command, or the contents of a configuration file, for example:
+
+<img src={shivaCpool_012} />
+
+Upon clicking the "Paste" button, the content of your text field is sent to your virtual machine.
 
 ### Cloud Temple Virtual Machine Catalogs
 
