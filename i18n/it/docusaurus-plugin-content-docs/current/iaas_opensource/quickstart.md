@@ -8,6 +8,9 @@ import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_o
 import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
 import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
 import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
 import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
@@ -85,6 +88,48 @@ Inoltre, si possono modificare alcune impostazioni, come:
 - Avvio automatico (impossibile se non è associata una politica di backup alla VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
+
+### Console della macchina virtuale
+
+La console della macchina virtuale è accessibile dalla lista delle macchine virtuali facendo clic sull'icona __'Console'__:
+
+<img src={openIaasVmConsoleBtn} />
+
+Si apre una nuova scheda nel tuo browser che mostra la console della tua macchina, basata su un client VNC:
+
+<img src={openIaasVmConsoleOpen} />
+
+Nel menu VNC, è possibile:
+- Richiedere l'invio di tasti particolari,
+- Forzare una mappatura della tastiera (nel caso in cui la tua macchina virtuale non abbia la stessa disposizione della tastiera del tuo browser web),
+- Aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce la vecchia clipboard non funzionale,
+- Passare in modalità schermo intero,
+- Modificare le dimensioni della finestra (ridimensionamento).
+
+#### Supporto disposizioni tastiera
+L'input effettuato nella console dipende dalla lingua della tastiera del tuo browser web, dalla lingua della tastiera della macchina virtuale e dall'attivazione o meno dell'opzione 'enforce keyboard' sul lato sinistro dello schermo. Ecco un riepilogo delle possibili situazioni con la lingua francese:
+
+| Lingua della tastiera della macchina fisica (input) | Lingua della tastiera della macchina virtuale | Opzione 'enforce keyboard' selezionata | Risultato (output)        |
+| -------------------------------------------------- | --------------------------------------------- | -------------------------------------- | ------------------------ |
+| Francese                                          | Francese                                      | No                                     | ✅                       |
+| Francese                                          | Francese                                      | Sì                                     | Non consigliato          |
+| Francese                                          | Inglese                                       | No                                     | Inglese                  |
+| Francese                                          | Inglese                                       | Sì                                     | ✅                       |
+| Inglese                                           | Francese                                      | No                                     | Francese                 |
+| Inglese                                           | Francese                                      | Sì                                     | ✅                       |
+| Inglese                                           | Inglese                                       | No                                     | ✅                       |
+| Inglese                                           | Inglese                                       | Sì                                     | Non consigliato          |
+
+__Nota__:
+- Se alcuni caratteri non funzionano con l'input manuale, puoi provare tramite la clipboard.
+
+#### Funzionamento della clipboard
+Questa funzionalità ti consente di inviare un'intera stringa di caratteri alla tua macchina virtuale. È importante notare che il tasto "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se noti durante l'input nella console che l'opzione "enforce keyboard" è necessaria, ricorda di attivarla prima di utilizzare la clipboard.  
+Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
+
+<img src={openIaasVmConsoleClipboard} />
+
+Facendo clic sul pulsante "Paste", il contenuto del tuo campo di testo viene inviato alla tua macchina virtuale.
 
 ### Riproduzione
 

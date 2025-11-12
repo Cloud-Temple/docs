@@ -2,52 +2,6 @@
 title: Leitfaden zum Einstieg
 ---
 
-![Shiva Vm Home](./images/shiva_vm_home.png)
-![Shiva Vm Home Description](./images/shiva_vm_home_desc.png)
-![Shiva Vm Alarm](./images/shiva_vm_home_alarme.png)
-![Shiva Vm Actions](./images/shiva_vm_actions.png)
-![Shiva Vm Informations](./images/shiva_vm_informations.png)
-![Shiva Vm Bandeau Rapide](./images/shiva_vm_bandeau_rapide.png)
-![Shiva Vm Vue Rapide](./images/shiva_vm_vue_rapide.png)
-![Shiva Vm Informations Générales](./images/shiva_vm_infos_generales.png)
-![Shiva Vm Informations Avancées](./images/shiva_vm_infos_avancees.png)
-![Édition de la mémoire et du RAM](./images/shiva_edit_cpu_ram.png)
-![Contrôle disque 001](./images/shiva_vm_diskctrl_001.png)
-![Catalogue 010](./images/shiva_cpool_010.png)
-![Catalogue 011](./images/shiva_cpool_011.png)
-![Catalogues](./images/shiva_catalogs.png)
-![Catalogues 002](./images/shiva_catalogs_002.png)
-![Templat VM 002](./images/shiva_vm_template_002.png)
-![Templat VM 001](./images/shiva_vm_template_001.png)
-![Politiques de sauvegarde avancées 001](./images/shiva_vm_adv_001.png)
-![Politiques de sauvegarde avancées 002](./images/shiva_vm_adv_002.png)
-![Politiques de sauvegarde avancées 003](./images/shiva_vm_adv_003.png)
-![Politiques de sauvegarde avancées 004](./images/shiva_vm_adv_004.png)
-![Catalogue 001](./images/shiva_cpool_001.png)
-![ESX 001](./images/shiva_esx_001.png)
-![ESX 002](./images/shiva_esx_002.png)
-![Catalogue 003](./images/shiva_cpool_003.png)
-![Catalogue 004](./images/shiva_cpool_004.png)
-![Catalogue 005](./images/shiva_cpool_005.png)
-![Catalogue 009](./images/shiva_cpool_009.png)
-![Catalogue 007](./images/shiva_cpool_007.png)
-![Construction du catalogue 008](./images/shiva_cpool_008_build.png)
-![Firming du catalogue 008](./images/shiva_cpool_008_firm.png)
-![Catalogue 006](./images/shiva_cpool_006.png)
-![Support](../console/images/shiva_support.png)
-![Politique de sauvegarde assignée obligatoire 001](./images/shiva_vm_politiques_backup_assign_mandatory.png)
-![Politique de sauvegarde](./images/shiva_vm_politiques_backup.png)
-![Politique des disques virtuels](./images/shiva_vm_disques_virtuels_politiques.png)
-![Exécution de la politique de sauvegarde 001](./images/shiva_vm_politiques_backup_execute.png)
-![Exécution de la politique de sauvegarde 002](./images/shiva_vm_politiques_backup_execute2.png)
-![Retirage de la politique de sauvegarde](./images/shiva_vm_politiques_backup_retirer.png)
-![Impossible de retirer la politique de sauvegarde](./images/shiva_vm_politiques_backup_retirer_impossible.png)
-![Boutique en attente 001](./images/shiva_backup_held_001.png)
-![Boutique en attente 002](./images/shiva_backup_held_002.png)
-![Restauration de la sauvegarde](./images/shiva_vm_backup_restaurer.png)
-![Test de la sauvegarde](./images/shiva_vm_backup_test.png)
-![Sauvegarde 2 productions](./images/shiva_vm_backup_2prod.png)
-
 ### Berechnung
 
 ### Management of Virtual Machines
@@ -162,36 +116,43 @@ The console of a virtual machine is accessible from the list of virtual machines
 
 ![Catalogue 010](./images/shiva_cpool_010.png)
 
-A new tab opens in your browser, displaying the console of your machine, based on a VNC client:
+Ein neuer Tab öffnet sich in Ihrem Browser und zeigt die Konsole Ihrer Maschine an, basierend auf einem VNC-Client:
 
 ![Catalogue 011](./images/shiva_cpool_011.png)
 
-Within the VNC menu, you can:
+Im **VNC-Menü** können Sie:
+- Das Senden bestimmter Tasten anfordern,
+- Eine Tastaturzuordnung erzwingen (falls wir Ihre Tastatur nicht korrekt identifizieren konnten),
+- Ein Textfeld öffnen, das an die Maschine übertragen werden kann. Diese Methode ersetzt die alte nicht funktionierende Zwischenablage,
+- In den Vollbildmodus wechseln.
 
-- Request sending specific keys,
-- Perform copy-paste from your host OS's clipboard,
-- Switch to full-screen mode,
-- Adjust window size (scaling).
+__Hinweis__:
+Die Fensterskalierung erfolgt automatisch.
 
-Keyboard management with virtual machine consoles works flawlessly in an entirely English environment.
+#### Unterstützung für Tastaturlayouts
+Die in der Konsole eingegebenen Eingaben hängen von der Sprache der Tastatur Ihres Webbrowsers, der Sprache der Tastatur der virtuellen Maschine und davon ab, ob die Option 'Tastatur erzwingen' auf der linken Seite des Bildschirms aktiviert ist oder nicht. Hier ist eine Zusammenfassung der möglichen Situationen mit der französischen Sprache:
 
-The input entered into the console depends on:
+| Sprache der physischen Tastatur (Eingabe) | Sprache der Tastatur der virtuellen Maschine | Option 'Tastatur erzwingen' ausgewählt | Ergebnis (Ausgabe)        |
+| ------------------------------------------ | -------------------------------------------- | -------------------------------------- | ------------------------ |
+| Französisch                                | Französisch                                  | Nein                                   | ✅                       |
+| Französisch                                | Französisch                                  | Ja                                     | Nicht empfohlen          |
+| Französisch                                | Englisch                                     | Nein                                   | Englisch                 |
+| Französisch                                | Englisch                                     | Ja                                     | ✅                       |
+| Englisch                                   | Französisch                                  | Nein                                   | Französisch              |
+| Englisch                                   | Französisch                                  | Ja                                     | ✅                       |
+| Englisch                                   | Englisch                                     | Nein                                   | ✅                       |
+| Englisch                                   | Englisch                                     | Ja                                     | Nicht empfohlen          |
 
-| Language of keyboard input (entry) | Language of virtual machine keyboard | 'enforce keyboard' option selected | Resultant output (output)                                   |
-| ------------------------------------ | ------------------------------------- | ---------------------------------- | --------------------------------------------------- |
-| French                               | French                                | No                                    | Discouraged (problem with special characters) |
-| French                               | French                                | Yes                                   | < and > do not function properly                      |
-| French                               | English                                 | No                                    | Discouraged (problem with special characters) |
-| French                               | English                                 | Yes                                   | English                                             |
-| English                                | French                                 | No                                    | < and > do not function properly                      |
-| English                                | French                                 | Yes                                   | < and > do not function properly                      |
-| English                                | English                                 | No                                    | English                                             |
-| English                                | English                                 | Yes                                   | English                                             |
+__Hinweis__:
+- Wenn bestimmte Zeichen bei der manuellen Eingabe nicht funktionieren, können Sie es über die Zwischenablage versuchen.
 
-__Note__:
+#### Funktionsweise der Zwischenablage
+Diese Funktion ermöglicht es Ihnen, eine gesamte Zeichenkette an Ihre virtuelle Maschine zu senden. Es ist wichtig zu beachten, dass die Taste "Tastatur erzwingen" beeinflusst, wie diese Zeichenkette an Ihre virtuelle Maschine übertragen wird. Wenn Sie während der Eingabe in der Konsole feststellen, dass die Option "Tastatur erzwingen" erforderlich ist, denken Sie daran, sie vor der Verwendung der Zwischenablage zu aktivieren.  
+Diese Funktion kann verwendet werden, um beispielsweise ein Passwort, einen Befehl oder den Inhalt einer Konfigurationsdatei zu senden:
 
-- If the 'AltGr' + '@' combination on your keyboard doesn't work, enable the 'enforce key' option in the VNC console menu and try again.
-- If it still doesn't work and your host OS is Windows, switch your physical keyboard to English and attempt entering @ as usual *(host OS AZERTY: AltGr + number key; host OS QWERTZ: number key)*.
+![Clipboard](./images/shiva_cpool_012.png)
+
+Durch Klicken auf die Schaltfläche "Einfügen" wird der Inhalt Ihres Textfelds an Ihre virtuelle Maschine gesendet.
 
 ### Cloud Temple Machine Templates Catalogue
 
