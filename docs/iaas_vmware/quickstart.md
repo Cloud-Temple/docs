@@ -14,6 +14,7 @@ import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
 import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
 import shivaCpool_010 from './images/shiva_cpool_010.png'
 import shivaCpool_011 from './images/shiva_cpool_011.png'
+import shivaCpool_012 from './images/shiva_cpool_012.png'
 import shivaCatalogs from './images/shiva_catalogs.png'
 import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
 import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
@@ -163,39 +164,44 @@ La console d'une machine virtuelle est accessible depuis la liste des machines v
 
 <img src={shivaCpool_010} />
 
-Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de votre machine, basée sur un client VNC :
+Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de votre machine, basée sur un client **VNC** :
 
 <img src={shivaCpool_011} />
 
-Il est possible dans le menu VNC :
-
-- de demander l'envoi de touche particulière,
-- de réaliser des copier/coller depuis le presse-papier de votre OS,
-- de passer en mode plein écran,
-- de changer la taille de la fenêtre (scaling).
-
-La gestion du clavier, avec la console des machines virtuelles, fonctionne parfaite dans un environnement entièrement *anglais*.
-
-La saisie effectuée dans la console dépend du langage du clavier de votre machine physique, du langage du clavier
-de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran.
-Voici une synthèse des situations possibles avec la langue française :
-
-| Langue du clavier de la machine physique (entrée) | Langue du clavier de la machine virtuelle | Option 'enforce keyboard' sélectionnée | Resultat (sortie)                                   |
-| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | --------------------------------------------------- |
-| Français                                          | Français                                  | Non                                    | Déconseillé (problème avec les caractères spéciaux) |
-| Français                                          | Français                                  | Oui                                    | < et > ne fonctionnent pas                      |
-| Français                                          | Anglais                                   | Non                                    | Déconseillé (problème avec les caractères spéciaux) |
-| Français                                          | Anglais                                   | Oui                                    | Anglais                                             |
-| Anglais                                           | Français                                  | Non                                    | < et > ne fonctionnent pas                      |
-| Anglais                                           | Français                                  | Oui                                    | < et > ne fonctionnent pas                      |
-| Anglais                                           | Anglais                                   | Non                                    | Anglais                                             |
-| Anglais                                           | Anglais                                   | Oui                                    | Anglais                                             |
+Il est possible dans le menu **VNC** :
+- de demander l'envoi de touches particulières,
+- de forcer un mapping de clavier (dans le cas où nous n'avons pas pu identifier correctement votre clavier),
+- d'ouvrir un champs texte transmissible à la machine. Cette méthode remplace l'ancien presse-papier non fonctionnel,
+- de passer en mode plein écran.
 
 __Note__ :
+Le scaling de la fenêtre est automatique.
 
-- Si la combinaison __'AltGr'__ et __'@'__ sur le clavier ne fonctionne pas, activez le bouton __'enforce key'__ dans le menu __'VNC'__ de la console et réessayez.
-- Si cela ne fonctionne toujours pas et que l'OS de la machine physique est __Windows, mettez le clavier de la machine physique en anglais
-et essayez d'entrer le @ de manière classique__ *(sortie azerty : AltGr + touche du 0 ou sortie qwerty : touche du 2)*.
+#### Support dispositions clavier
+La saisie effectuée dans la console dépend du langage du clavier de votre navigateur web, du langage du clavier de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran. Voici une synthèse des situations possibles avec la langue française :
+
+| Langue du clavier de la machine physique (entrée) | Langue du clavier de la machine virtuelle | Option 'enforce keyboard' sélectionnée | Resultat (sortie)        |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
+| Français                                          | Français                                  | Non                                    | ✅                       |
+| Français                                          | Français                                  | Oui                                    | Non conseillé            |
+| Français                                          | Anglais                                   | Non                                    | Anglais                  |
+| Français                                          | Anglais                                   | Oui                                    | ✅                       |
+| Anglais                                           | Français                                  | Non                                    | Français                 |
+| Anglais                                           | Français                                  | Oui                                    | ✅                       |
+| Anglais                                           | Anglais                                   | Non                                    | ✅                       |
+| Anglais                                           | Anglais                                   | Oui                                    | Non conseillé            |
+
+__Note__ :
+- Si certains caractères ne passent pas à la saisie manuelle, vous pouvez essayer via le clipboard.
+
+#### Fonctionnement du presse-papier
+Cette fonctionnalité vous permet d'envoyer toute une chaine de caractères vers votre machine virtuelle. Il est important de noter que la touche "enforce keyboard" influe sur la façon dont cette chaine de caractères
+sera transmise à votre machine virtuelle. Si vous constatez lors de la saisie dans la console que l'option "enforce keyboard" est nécessaire, pensez à l'activer avant d'utiliser le presse-papier.  
+Cette fonctionnalité peut être utilisée pour l'envoie d'un mot de passe, d'une commande, ou d'un contenu de fichier de configuration par exemple :
+
+<img src={shivaCpool_012} />
+
+Au clic sur le bouton "Paste", le contenu de votre champs texte est envoyé à votre machine virtuelle.
 
 ### Catalogues de machines virtuelles Cloud Temple
 
