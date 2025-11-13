@@ -1,28 +1,68 @@
 ---
 title: Guide de démarrage
 ---
-import oshiftRights from './images/oshift_rights.png'
 import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
+import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 
-## Déployer une plateforme Redhat Openshift au sein de votre tenant
+# QuickStart pour l'offre OpenShift
 
-### Affectation des droits d'accès
+Cette page vous guide à travers les étapes initiales pour utiliser l'offre **OpenShift** depuis la console Cloud Temple. Suivez ces instructions pour découvrir les menus et fonctionnalités disponibles.
 
-Il est indispensable que l'administrateur du [Tenant](../console/iam/concepts.md#tenant) accorde les droits de lecture et de gestion de la plateforme Openshift à l'utilisateur administrateur Openshift pour pouvoir y accéder :
+---
 
-<img src={oshiftRights} />
+## Prérequis
 
-### Accès à l'environnement Openshift au sein d'un tenant
+Avant de commencer, assurez-vous des points suivants :
 
-Après l'affectation des droits, le module '__Openshift__' apparaît alors dans le menu de la console Cloud Temple :
+1. **Souscription activée** : Votre organisation doit avoir souscrit à l'offre OpenShift.
+2. **Permissions utilisateur** : Votre compte utilisateur doit disposer des droits nécessaires pour accéder et gérer les ressources OpenShift.
+
+---
+
+## Accès à l'interface OpenShift
+
+Une fois la souscription activée et les permissions configurées, un nouveau menu intitulé **OpenShift** apparaît dans la console Cloud Temple. Ce menu contient un sous-menu principal : **Clusters**.
 
 <img src={oshiftMenu_001} />
 
-Vous voyez alors apparaître les clusters Openshift qui sont déployés au sein de votre tenant.
+---
 
-Cliquez sur le cluster que vous souhaitez administrer. Vous accéder à l'environnement d'administration du cluster :
+### 1. Sous-menu **Clusters**
+
+Le sous-menu **Clusters** vous présente un tableau listant tous les clusters OpenShift disponibles, déployés au sein de votre tenant. Ce tableau inclut les informations principales pour chaque cluster :
+
+- **Nom du cluster**
+- **URL d'accès**
+- **URL API**
+- **Version**
+- **Statut**
+- **Dernière mise à jour**
+
+<img src={oshiftSubMenu_001} />
+
+#### Fonctionnalité principale
+
+- **Nom cliquable** : En cliquant sur le nom d'un cluster OpenShift, une nouvelle page s'affiche avec les **détails complets** du cluster:
+  - Informations de connectivité pour la gestion (**URL d'accès**, **URL d'API**).
+  - Informations générales (**Statut**, **Dernière mise à jour**, **Version**)
+  - Tableau des noeuds incluant les informations:
+    - **Nom du noeud**
+    - **Type**
+    - **AZ**
+    - **Statut**
+    - **CPU**
+    - **RAM**
+
+<img src={oshiftClusterDetail_001} />
+
+---
+
+## Accès à l'interface d'administration OpenShift
+
+Cliquez sur l'**URL d'accès** du cluster que vous souhaitez administrer. Vous accédez à l'environnement d'administration du cluster :
 
 <img src={oshiftMenu_002} />
 
