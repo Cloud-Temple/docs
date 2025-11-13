@@ -107,7 +107,7 @@ Nel menu VNC, è possibile:
 - Modificare le dimensioni della finestra (ridimensionamento).
 
 #### Supporto disposizioni tastiera
-L'input effettuato nella console dipende dalla lingua della tastiera del tuo browser web, dalla lingua della tastiera della macchina virtuale e dall'attivazione o meno dell'opzione 'enforce keyboard' sul lato sinistro dello schermo. Ecco un riepilogo delle possibili situazioni con la lingua francese:
+L'input effettuato nella console dipende dalla lingua della tastiera del tuo browser web, dalla lingua della tastiera della macchina virtuale e dall'attivazione o meno dell'opzione 'enforce keyboard' sul lato sinistro dello schermo. Ecco un riepilogo delle possibili situazioni :
 
 | Lingua della tastiera della macchina fisica (input) | Lingua della tastiera della macchina virtuale | Opzione 'enforce keyboard' selezionata | Risultato (output)        |
 | -------------------------------------------------- | --------------------------------------------- | -------------------------------------- | ------------------------ |

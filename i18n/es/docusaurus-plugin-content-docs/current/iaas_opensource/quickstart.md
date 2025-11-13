@@ -106,7 +106,7 @@ En el menú VNC, es posible:
 - Cambiar el tamaño de la ventana (escalado).
 
 #### Soporte de disposiciones de teclado
-La entrada realizada en la consola depende del idioma del teclado de su navegador web, del idioma del teclado de la máquina virtual y de si la opción 'enforce keyboard' está activada o no en el lado izquierdo de la pantalla. Aquí hay un resumen de las situaciones posibles con el idioma francés:
+La entrada realizada en la consola depende del idioma del teclado de su navegador web, del idioma del teclado de la máquina virtual y de si la opción 'enforce keyboard' está activada o no en el lado izquierdo de la pantalla. Aquí hay un resumen de las situaciones posibles :
 
 | Idioma del teclado de la máquina física (entrada) | Idioma del teclado de la máquina virtual | Opción 'enforce keyboard' seleccionada | Resultado (salida)        |
 | ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |

@@ -108,7 +108,7 @@ Within the VNC menu, you can:
 - Change window size (scaling).
 
 #### Keyboard Layout Support
-Input typed in the console depends on the language of your web browser's keyboard, the virtual machine's keyboard language, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not. Here's a summary of possible scenarios with French language:
+Input typed in the console depends on the language of your web browser's keyboard, the virtual machine's keyboard language, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not. Here's a summary of possible scenarios :
 
 | Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
 | ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |

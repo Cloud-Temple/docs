@@ -178,7 +178,7 @@ __Note__ :
 Le scaling de la fenêtre est automatique.
 
 #### Support dispositions clavier
-La saisie effectuée dans la console dépend du langage du clavier de votre navigateur web, du langage du clavier de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran. Voici une synthèse des situations possibles avec la langue française :
+La saisie effectuée dans la console dépend du langage du clavier de votre navigateur web, du langage du clavier de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran. Voici une synthèse des situations possibles :
 
 | Langue du clavier de la machine physique (entrée) | Langue du clavier de la machine virtuelle | Option 'enforce keyboard' sélectionnée | Resultat (sortie)        |
 | ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
