@@ -130,7 +130,7 @@ __Hinweis__:
 Die Fensterskalierung erfolgt automatisch.
 
 #### Unterstützung für Tastaturlayouts
-Die in der Konsole eingegebenen Eingaben hängen von der Sprache der Tastatur Ihres Webbrowsers, der Sprache der Tastatur der virtuellen Maschine und davon ab, ob die Option 'Tastatur erzwingen' auf der linken Seite des Bildschirms aktiviert ist oder nicht. Hier ist eine Zusammenfassung der möglichen Situationen mit der französischen Sprache:
+Die in der Konsole eingegebenen Eingaben hängen von der Sprache der Tastatur Ihres Webbrowsers, der Sprache der Tastatur der virtuellen Maschine und davon ab, ob die Option 'Tastatur erzwingen' auf der linken Seite des Bildschirms aktiviert ist oder nicht. Hier ist eine Zusammenfassung der möglichen Situationen :
 
 | Sprache der physischen Tastatur (Eingabe) | Sprache der Tastatur der virtuellen Maschine | Option 'Tastatur erzwingen' ausgewählt | Ergebnis (Ausgabe)        |
 | ------------------------------------------ | -------------------------------------------- | -------------------------------------- | ------------------------ |
