@@ -14,6 +14,9 @@ import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_polic
 import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
 import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
 import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
+import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
 
 ## Calcul
 
@@ -84,6 +87,51 @@ Ainsi que modifier certaines options telles que :
 - Le démarrage automatique (impossible si aucune politique de sauvegarde n'est associée à la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
+
+### Console d'une machine virtuelle
+
+La console d'une machine virtuelle est accessible depuis la liste des machines virtuelles en cliquant sur l'icône __'Console'__ :
+
+<img src={openIaasVmConsoleBtn} />
+
+Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de votre machine, basée sur un client VNC :
+
+<img src={openIaasVmConsoleOpen} />
+
+Il est possible dans le menu VNC :
+- de demander l'envoi de touches particulières,
+- de forcer un mapping de clavier (dans le cas où votre machine virtuelle n'a pas la même disposition clavier que votre navigateur web),
+- d'ouvrir un champs texte transmissible à la machine. Cette méthode remplace l'ancien presse-papier non fonctionnel,
+- de passer en mode plein écran,
+- de changer la taille de la fenêtre (scaling).
+
+#### Support dispositions clavier
+La saisie effectuée dans la console dépend du langage du clavier de votre navigateur web, du langage du clavier
+de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran.
+Voici une synthèse des situations possibles :
+
+| Langue du clavier de la machine physique (entrée) | Langue du clavier de la machine virtuelle | Option 'enforce keyboard' sélectionnée | Resultat (sortie)        |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
+| Français                                          | Français                                  | Non                                    | ✅                       |
+| Français                                          | Français                                  | Oui                                    | Non conseillé            |
+| Français                                          | Anglais                                   | Non                                    | Anglais                  |
+| Français                                          | Anglais                                   | Oui                                    | ✅                       |
+| Anglais                                           | Français                                  | Non                                    | Français                 |
+| Anglais                                           | Français                                  | Oui                                    | ✅                       |
+| Anglais                                           | Anglais                                   | Non                                    | ✅                       |
+| Anglais                                           | Anglais                                   | Oui                                    | Non conseillé            |
+
+__Note__ :
+- Si certains caractères ne passent pas à la saisie manuelle, vous pouvez essayer via le clipboard.
+
+#### Fonctionnement du presse-papier
+Cette fonctionnalité vous permet d'envoyer toute une chaine de caractères vers votre machine virtuelle. Il est important de noter que la touche "enforce keyboard" influe sur la façon dont cette chaine de caractères
+sera transmise à votre machine virtuelle. Si vous constatez lors de la saisie dans la console que l'option "enforce keyboard" est nécessaire, pensez à l'activer avant d'utiliser le presse-papier.  
+Cette fonctionnalité peut être utilisée pour l'envoie d'un mot de passe, d'une commande, ou d'un contenu de fichier de configuration par exemple :
+
+<img src={openIaasVmConsoleClipboard} />
+
+Au clic sur le bouton "Paste", le contenu de votre champs texte est envoyé à votre machine virtuelle.
 
 ## Réplication
 

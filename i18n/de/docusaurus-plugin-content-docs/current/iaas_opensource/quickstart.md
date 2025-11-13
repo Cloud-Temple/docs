@@ -8,6 +8,9 @@ import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_o
 import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
 import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
 import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
 import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
@@ -85,6 +88,48 @@ Ainsi que modifier certaines options telles que :
 - Démarrage automatique (impossible si aucune politique de sauvegarde n'est associée à la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
+
+### Konsole einer virtuellen Maschine
+
+Die Konsole einer virtuellen Maschine ist über die Liste der virtuellen Maschinen zugänglich, indem Sie auf das Symbol __'Console'__ klicken:
+
+<img src={openIaasVmConsoleBtn} />
+
+Ein neuer Tab öffnet sich in Ihrem Browser und zeigt die Konsole Ihrer Maschine an, basierend auf einem VNC-Client:
+
+<img src={openIaasVmConsoleOpen} />
+
+Im VNC-Menü können Sie:
+- Das Senden bestimmter Tasten anfordern,
+- Eine Tastaturzuordnung erzwingen (falls Ihre virtuelle Maschine nicht dasselbe Tastaturlayout wie Ihr Webbrowser hat),
+- Ein Textfeld öffnen, das an die Maschine übertragen werden kann. Diese Methode ersetzt die alte nicht funktionierende Zwischenablage,
+- In den Vollbildmodus wechseln,
+- Die Fenstergröße ändern (Skalierung).
+
+#### Unterstützung für Tastaturlayouts
+Die in der Konsole eingegebenen Eingaben hängen von der Sprache der Tastatur Ihres Webbrowsers, der Sprache der Tastatur der virtuellen Maschine und davon ab, ob die Option 'Tastatur erzwingen' auf der linken Seite des Bildschirms aktiviert ist oder nicht. Hier ist eine Zusammenfassung der möglichen Situationen :
+
+| Sprache der physischen Tastatur (Eingabe) | Sprache der Tastatur der virtuellen Maschine | Option 'Tastatur erzwingen' ausgewählt | Ergebnis (Ausgabe)        |
+| ------------------------------------------ | -------------------------------------------- | -------------------------------------- | ------------------------ |
+| Französisch                                | Französisch                                  | Nein                                   | ✅                       |
+| Französisch                                | Französisch                                  | Ja                                     | Nicht empfohlen          |
+| Französisch                                | Englisch                                     | Nein                                   | Englisch                 |
+| Französisch                                | Englisch                                     | Ja                                     | ✅                       |
+| Englisch                                   | Französisch                                  | Nein                                   | Französisch              |
+| Englisch                                   | Französisch                                  | Ja                                     | ✅                       |
+| Englisch                                   | Englisch                                     | Nein                                   | ✅                       |
+| Englisch                                   | Englisch                                     | Ja                                     | Nicht empfohlen          |
+
+__Hinweis__:
+- Wenn bestimmte Zeichen bei der manuellen Eingabe nicht funktionieren, können Sie es über die Zwischenablage versuchen.
+
+#### Funktionsweise der Zwischenablage
+Diese Funktion ermöglicht es Ihnen, eine gesamte Zeichenkette an Ihre virtuelle Maschine zu senden. Es ist wichtig zu beachten, dass die Taste "Tastatur erzwingen" beeinflusst, wie diese Zeichenkette an Ihre virtuelle Maschine übertragen wird. Wenn Sie während der Eingabe in der Konsole feststellen, dass die Option "Tastatur erzwingen" erforderlich ist, denken Sie daran, sie vor der Verwendung der Zwischenablage zu aktivieren.  
+Diese Funktion kann verwendet werden, um beispielsweise ein Passwort, einen Befehl oder den Inhalt einer Konfigurationsdatei zu senden:
+
+<img src={openIaasVmConsoleClipboard} />
+
+Durch Klicken auf die Schaltfläche "Einfügen" wird der Inhalt Ihres Textfelds an Ihre virtuelle Maschine gesendet.
 
 ### Wiederholung
 

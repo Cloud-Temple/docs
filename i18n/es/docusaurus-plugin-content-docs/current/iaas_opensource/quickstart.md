@@ -7,6 +7,9 @@ import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_o
 import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
 import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
 import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
 import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
 import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
 import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
@@ -84,6 +87,48 @@ Además, se pueden modificar ciertos parámetros, como:
 - Arrancar automáticamente (imposible si no está asociada ninguna política de respaldo a la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
+
+### Consola de una máquina virtual
+
+La consola de una máquina virtual está accesible desde la lista de máquinas virtuales haciendo clic en el icono __'Consola'__:
+
+<img src={openIaasVmConsoleBtn} />
+
+Se abre una nueva pestaña en su navegador que muestra la consola de su máquina, basada en un cliente VNC:
+
+<img src={openIaasVmConsoleOpen} />
+
+En el menú VNC, es posible:
+- Solicitar el envío de teclas particulares,
+- Forzar un mapeo de teclado (en caso de que su máquina virtual no tenga la misma disposición de teclado que su navegador web),
+- Abrir un campo de texto transmisible a la máquina. Este método reemplaza el antiguo portapapeles no funcional,
+- Pasar a modo de pantalla completa,
+- Cambiar el tamaño de la ventana (escalado).
+
+#### Soporte de disposiciones de teclado
+La entrada realizada en la consola depende del idioma del teclado de su navegador web, del idioma del teclado de la máquina virtual y de si la opción 'enforce keyboard' está activada o no en el lado izquierdo de la pantalla. Aquí hay un resumen de las situaciones posibles :
+
+| Idioma del teclado de la máquina física (entrada) | Idioma del teclado de la máquina virtual | Opción 'enforce keyboard' seleccionada | Resultado (salida)        |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
+| Francés                                          | Francés                                  | No                                    | ✅                       |
+| Francés                                          | Francés                                  | Sí                                    | No recomendado            |
+| Francés                                          | Inglés                                   | No                                    | Inglés                  |
+| Francés                                          | Inglés                                   | Sí                                    | ✅                       |
+| Inglés                                           | Francés                                  | No                                    | Francés                 |
+| Inglés                                           | Francés                                  | Sí                                    | ✅                       |
+| Inglés                                           | Inglés                                   | No                                    | ✅                       |
+| Inglés                                           | Inglés                                   | Sí                                    | No recomendado            |
+
+__Nota__:
+- Si ciertos caracteres no funcionan con la entrada manual, puede intentar a través del portapapeles.
+
+#### Funcionamiento del portapapeles
+Esta funcionalidad le permite enviar toda una cadena de caracteres hacia su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la entrada en la consola que la opción "enforce keyboard" es necesaria, piense en activarla antes de usar el portapapeles.  
+Esta funcionalidad puede utilizarse para enviar una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
+
+<img src={openIaasVmConsoleClipboard} />
+
+Al hacer clic en el botón "Paste", el contenido de su campo de texto se envía a su máquina virtual.
 
 ## Replicación
 
