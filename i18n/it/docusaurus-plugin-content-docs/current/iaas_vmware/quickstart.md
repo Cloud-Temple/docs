@@ -16,6 +16,7 @@ import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
 import shivaVmNetctrl_001 from './images/shiva_vm_netctrl_001.png'
 import shivaCpool_010 from './images/shiva_cpool_010.png'
 import shivaCpool_011 from './images/shiva_cpool_011.png'
+import shivaCpool_012 from './images/shiva_cpool_012.png'
 import shivaCatalogs from './images/shiva_catalogs.png'
 import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
 import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
@@ -167,32 +168,39 @@ Un nuovo tab del tuo browser si apre e mostra la console della tua macchina, bas
 
 <img src={shivaCpool_011} />
 
-È possibile all'interno del menu VNC:
-
-- richiedere l'invio di una toccata specifica,
-- effettuare copiare/incollare dal bordo della tua OS,
-- passare in modalità piena schermo,
-- modificare la dimensione finestra (scaling).
-
-La gestione del tastiere con le console delle macchine virtuali funziona perfettamente in un ambiente interamente *inglese*.
-
-La scrittura effettuata nella console dipende dal linguaggio del tastiera della tua macchina fisica, dal linguaggio del tastiera della macchina virtuale e dall'attivazione o meno dell'opzione 'enforce keyboard' a sinistra dello schermo. Ecco una sintesi delle situazioni possibili con la lingua francese:
-
-| Lingua del tastiere della macchina fisica (ingresso) | Lingua del tastiere della macchina virtuale | Option 'enforce keyboard' selezionata | Risultato (uscita)                                   |
-| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | --------------------------------------------------- |
-| Francese                                          | Francese                                  | Non                                    | Sconsigliato (problemi con i caratteri speciali) |
-| Francese                                          | Francese                                  | Sì                                    | < e > non funzionano                          |
-| Francese                                          | Inglese                                   | Non                                    | Sconsigliato (problemi con i caratteri speciali) |
-| Francese                                          | Inglese                                   | Sì                                    | Anglais                                             |
-| Inglese                                           | Francese                                  | Non                                    | < e > non funzionano                          |
-| Inglese                                           | Francese                                  | Sì                                    | < e > non funzionano                          |
-| Inglese                                           | Inglese                                   | Non                                    | Inglese                                             |
-| Inglese                                           | Inglese                                   | Sì                                    | Inglese                                             |
+Nel menu **VNC**, è possibile:
+- Richiedere l'invio di tasti particolari,
+- Forzare una mappatura della tastiera (nel caso in cui non siamo riusciti a identificare correttamente la tua tastiera),
+- Aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce la vecchia clipboard non funzionale,
+- Passare in modalità schermo intero.
 
 __Nota__:
+Il ridimensionamento della finestra è automatico.
 
-- Se la combinazione __'AltGr'__ e __'@'__ sul tastiere non funziona, attiva il pulsante __'enforce key'__ nel menu __'VNC'__ della console e prova di nuovo.
-- Se questo non funziona ancora e che l'OS della macchina fisica è Windows, trasforma il tastiere della macchina fisica in inglese e prova ad inserire @ in modo classico *(uscita azerty: AltGr + toccata dello zero o uscita qwerty: toccata del due)*.
+#### Supporto disposizioni tastiera
+L'input effettuato nella console dipende dalla lingua della tastiera del tuo browser web, dalla lingua della tastiera della macchina virtuale e dall'attivazione o meno dell'opzione 'enforce keyboard' sul lato sinistro dello schermo. Ecco un riepilogo delle possibili situazioni :
+
+| Lingua della tastiera della macchina fisica (input) | Lingua della tastiera della macchina virtuale | Opzione 'enforce keyboard' selezionata | Risultato (output)        |
+| -------------------------------------------------- | --------------------------------------------- | -------------------------------------- | ------------------------ |
+| Francese                                          | Francese                                      | No                                     | ✅                       |
+| Francese                                          | Francese                                      | Sì                                     | Non consigliato          |
+| Francese                                          | Inglese                                       | No                                     | Inglese                  |
+| Francese                                          | Inglese                                       | Sì                                     | ✅                       |
+| Inglese                                           | Francese                                      | No                                     | Francese                 |
+| Inglese                                           | Francese                                      | Sì                                     | ✅                       |
+| Inglese                                           | Inglese                                       | No                                     | ✅                       |
+| Inglese                                           | Inglese                                       | Sì                                     | Non consigliato          |
+
+__Nota__:
+- Se alcuni caratteri non funzionano con l'input manuale, puoi provare tramite la clipboard.
+
+#### Funzionamento della clipboard
+Questa funzionalità ti consente di inviare un'intera stringa di caratteri alla tua macchina virtuale. È importante notare che il tasto "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se noti durante l'input nella console che l'opzione "enforce keyboard" è necessaria, ricorda di attivarla prima di utilizzare la clipboard.  
+Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
+
+<img src={shivaCpool_012} />
+
+Facendo clic sul pulsante "Paste", il contenuto del tuo campo di testo viene inviato alla tua macchina virtuale.
 
 ### Catalogo di Template Virtuali Cloud Temple
 

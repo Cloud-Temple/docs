@@ -14,6 +14,7 @@ import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
 import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
 import shivaCpool_010 from './images/shiva_cpool_010.png'
 import shivaCpool_011 from './images/shiva_cpool_011.png'
+import shivaCpool_012 from './images/shiva_cpool_012.png'
 import shivaCatalogs from './images/shiva_catalogs.png'
 import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
 import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
@@ -165,32 +166,39 @@ Se abre un nuevo tablero del navegador y se muestra entonces la consola de su m�
 
 <img src={shivaCpool_011} />
 
-En el menú VNC, es posible:
-
-- Solicitar enviar una tecla específica,
-- Realizar copiar-peinar desde el portapapeles de su sistema operativo,
-- Pasar a modo completo de pantalla,
-- Cambiar la tamaño de la ventana (scaling).
-
-La gestión del teclado con las consolas de máquinas virtuales funciona perfectamente en un entorno completamente *inglés*.
-
-La entrada efectuada en la consola depende del idioma del teclado de su máquina física, del idioma del teclado de la máquina virtual y de si está activada o no la opción 'enforcer clave'. Aquí hay una resumen de las posibles situaciones con el francés:
-
-| Idioma del teclado de la máquina física (entrada) | Idioma del teclado de la máquina virtual | Opción 'enforcer clave' seleccionada | Resultado (salida)                                   |
-| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | --------------------------------------------------- |
-| Francés                                          | Francés                                  | No                                    | Desaconsejado (problema con los caracteres especiales) |
-| Francés                                          | Francés                                  | Sí                                    | < y > no funcionan                          |
-| Francés                                          | Inglés                                   | No                                    | Desaconsejado (problema con los caracteres especiales) |
-| Francés                                          | Inglés                                   | Sí                                    | Anglais                                             |
-| Inglés                                           | Francés                                  | No                                    | < y > no funcionan                          |
-| Inglés                                           | Francés                                  | Sí                                    | < y > no funcionan                          |
-| Inglés                                           | Inglés                                   | No                                    | Anglais                                             |
-| Inglés                                           | Inglés                                   | Sí                                    | Anglais                                             |
+En el menú **VNC**, es posible:
+- Solicitar el envío de teclas particulares,
+- Forzar un mapeo de teclado (en caso de que no hayamos podido identificar correctamente su teclado),
+- Abrir un campo de texto transmisible a la máquina. Este método reemplaza el antiguo portapapeles no funcional,
+- Pasar a modo de pantalla completa.
 
 __Nota__:
+El escalado de la ventana es automático.
 
-- Si la combinación __'AltGr'__ y __'@'__ en el teclado no funciona, active el botón __'enforcer clave'__ en el menú __'VNC'__ de la consola y vuelva a intentarlo.
-- Si esto no funciona y su sistema operativo de la máquina física es __Windows__, cambie el teclado de su máquina física al inglés y intente escribir @ de manera clásica *(salida azerty: AltGr + tecla del 0 o salida qwerty: tecla del 2)*.
+#### Soporte de disposiciones de teclado
+La entrada realizada en la consola depende del idioma del teclado de su navegador web, del idioma del teclado de la máquina virtual y de si la opción 'enforce keyboard' está activada o no en el lado izquierdo de la pantalla. Aquí hay un resumen de las situaciones posibles :
+
+| Idioma del teclado de la máquina física (entrada) | Idioma del teclado de la máquina virtual | Opción 'enforce keyboard' seleccionada | Resultado (salida)        |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
+| Francés                                          | Francés                                  | No                                    | ✅                       |
+| Francés                                          | Francés                                  | Sí                                    | No recomendado            |
+| Francés                                          | Inglés                                   | No                                    | Inglés                  |
+| Francés                                          | Inglés                                   | Sí                                    | ✅                       |
+| Inglés                                           | Francés                                  | No                                    | Francés                 |
+| Inglés                                           | Francés                                  | Sí                                    | ✅                       |
+| Inglés                                           | Inglés                                   | No                                    | ✅                       |
+| Inglés                                           | Inglés                                   | Sí                                    | No recomendado            |
+
+__Nota__:
+- Si ciertos caracteres no funcionan con la entrada manual, puede intentar a través del portapapeles.
+
+#### Funcionamiento del portapapeles
+Esta funcionalidad le permite enviar toda una cadena de caracteres hacia su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la entrada en la consola que la opción "enforce keyboard" es necesaria, piense en activarla antes de usar el portapapeles.  
+Esta funcionalidad puede utilizarse para enviar una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
+
+<img src={shivaCpool_012} />
+
+Al hacer clic en el botón "Paste", el contenido de su campo de texto se envía a su máquina virtual.
 
 ### Catálogos de máquinas virtuales Cloud Temple
 
