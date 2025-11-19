@@ -6,6 +6,7 @@ import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
 import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
+import oshiftOrder_001 from './images/oshift_order_001.png'
 
 # QuickStart per l'offerta OpenShift
 
@@ -22,15 +23,29 @@ Prima di iniziare, assicuratevi dei seguenti punti:
 
 ---
 
+## Primo accesso e ordine
+
+Al primo accesso all'offerta OpenShift, dopo l'attivazione dell'abbonamento e la configurazione dei permessi, viene visualizzata una schermata di benvenuto:
+
+<img src={oshiftOrder_001} />
+
+Questa schermata indica che non avete ancora cluster OpenShift SecNumCloud distribuiti.
+
+**Per ordinare il vostro primo cluster OpenShift SecNumCloud, contattate il supporto Cloud Temple.**
+
+Una volta che il vostro ordine è stato elaborato dal supporto e il vostro cluster distribuito, potrete accedere al menu OpenShift.
+
+---
+
 ## Accesso all'interfaccia OpenShift
 
-Una volta attivato l'abbonamento e configurati i permessi, un nuovo menu intitolato **OpenShift** appare nella console Cloud Temple. Questo menu contiene un sottomenu principale: **Clusters**.
+Una volta distribuito il vostro primo cluster, un nuovo menu intitolato **OpenShift** appare nella console Cloud Temple. Questo menu contiene un sottomenu principale: **Clusters**.
 
 <img src={oshiftMenu_001} />
 
 ---
 
-### 1. Sottomenu **Clusters**
+### 1. Elenco dei cluster
 
 Il sottomenu **Clusters** vi presenta una tabella che elenca tutti i cluster OpenShift disponibili, distribuiti all'interno del vostro tenant. Questa tabella include le informazioni principali per ogni cluster:
 
@@ -43,18 +58,32 @@ Il sottomenu **Clusters** vi presenta una tabella che elenca tutti i cluster Ope
 
 <img src={oshiftSubMenu_001} />
 
-#### Funzionalità principale
+💡 **Per accedere ai dettagli completi di un cluster, fate clic sul suo nome nella tabella.**
 
-- **Nome cliccabile**: Cliccando sul nome di un cluster OpenShift, si apre una nuova pagina con i **dettagli completi** del cluster:
-  - Informazioni di connettività per la gestione (**URL di accesso**, **URL API**).
-  - Informazioni generali (**Stato**, **Ultimo aggiornamento**, **Versione**)
-  - Tabella dei nodi includendo le informazioni:
-    - **Nome del nodo**
-    - **Tipo**
-    - **AZ**
-    - **Stato**
-    - **CPU**
-    - **RAM**
+---
+
+### 2. Dettagli del cluster
+
+Quando fate clic sul **nome di un cluster** nell'elenco, viene visualizzata una pagina dettagliata con le informazioni complete del cluster:
+
+**Informazioni di connettività:**
+- **URL di accesso**: Interfaccia web del cluster
+- **URL API**: Endpoint API per operazioni CLI
+
+**Informazioni generali:**
+- **Stato**: Stato attuale del cluster
+- **Ultimo aggiornamento**: Data dell'ultima modifica
+- **Versione**: Versione di OpenShift distribuita
+
+**Nodi del cluster:**
+
+Una tabella dettaglia ogni nodo con le seguenti informazioni:
+- **Nome del nodo**
+- **Tipo**
+- **AZ** (Availability Zone)
+- **Stato**
+- **CPU**
+- **RAM**
 
 <img src={oshiftClusterDetail_001} />
 

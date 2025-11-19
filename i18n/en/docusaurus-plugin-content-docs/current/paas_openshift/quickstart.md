@@ -7,6 +7,7 @@ import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
 import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
+import oshiftOrder_001 from './images/oshift_order_001.png'
 
 # QuickStart for the OpenShift Offering
 
@@ -23,15 +24,29 @@ Before starting, ensure the following points:
 
 ---
 
+## First Access and Order
+
+When you first access the OpenShift offering, after subscription activation and permission configuration, a welcome screen is displayed:
+
+<img src={oshiftOrder_001} />
+
+This screen indicates that you do not yet have any deployed OpenShift SecNumCloud clusters.
+
+**To order your first OpenShift SecNumCloud cluster, please contact Cloud Temple support.**
+
+Once your order has been processed by support and your cluster deployed, you will be able to access the OpenShift menu.
+
+---
+
 ## Access to the OpenShift Interface
 
-Once the subscription is activated and permissions are configured, a new menu titled **OpenShift** appears in the Cloud Temple console. This menu contains a main submenu: **Clusters**.
+Once your first cluster is deployed, a new menu titled **OpenShift** appears in the Cloud Temple console. This menu contains a main submenu: **Clusters**.
 
 <img src={oshiftMenu_001} />
 
 ---
 
-### 1. **Clusters** Submenu
+### 1. Cluster List
 
 The **Clusters** submenu presents you with a table listing all available OpenShift clusters deployed within your tenant. This table includes the main information for each cluster:
 
@@ -44,18 +59,32 @@ The **Clusters** submenu presents you with a table listing all available OpenShi
 
 <img src={oshiftSubMenu_001} />
 
-#### Main Feature
+💡 **To access the complete details of a cluster, click on its name in the table.**
 
-- **Clickable name**: By clicking on the name of an OpenShift cluster, a new page displays with the **complete details** of the cluster:
-  - Connectivity information for management (**Access URL**, **API URL**).
-  - General information (**Status**, **Last update**, **Version**)
-  - Node table including the information:
-    - **Node name**
-    - **Type**
-    - **AZ**
-    - **Status**
-    - **CPU**
-    - **RAM**
+---
+
+### 2. Cluster Details
+
+When you click on a **cluster name** in the list, a detailed page displays with the cluster's complete information:
+
+**Connectivity information:**
+- **Access URL**: Cluster web interface
+- **API URL**: API endpoint for CLI operations
+
+**General information:**
+- **Status**: Current cluster state
+- **Last update**: Date of last modification
+- **Version**: Deployed OpenShift version
+
+**Cluster nodes:**
+
+A table details each node with the following information:
+- **Node name**
+- **Type**
+- **AZ** (Availability Zone)
+- **Status**
+- **CPU**
+- **RAM**
 
 <img src={oshiftClusterDetail_001} />
 
