@@ -1,6 +1,5 @@
 ---
 title: Schnellstartanleitung
-title: Schnellstartanleitung
 ---
 import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
