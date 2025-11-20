@@ -163,7 +163,7 @@ Ecco i limiti definiti:
 | IaaS VMware | 25 r/s |
 | OpenIaaS | 25 r/s |
 | S3 | 25 r/s |
-| Openshift | 25 r/s |
+| OpenShift | 25 r/s |
 | Bastion | 25 r/s |
 | Rete | 25 r/s |
 | Hosting | 25 r/s |

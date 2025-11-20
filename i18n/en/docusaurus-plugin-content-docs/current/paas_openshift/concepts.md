@@ -96,9 +96,9 @@ Cloud Temple’s Red Hat OpenShift offerings are available either on a pay-as-yo
 
 7. *Nodes are deployed evenly across the three Availability Zones (1 node per zone). It is not possible to imbalance a cluster by assigning more nodes to a single zone.*
 
-### Red Hat Offering Deployed Within the OpenShift Cloud Temple Platform
+### RedHat Offer Deployed on OpenShift Cloud Temple Platform
 
-The platform is a Red Hat OpenShift 4 based on [Red Hat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) and includes [OpenShift Data Foundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+The platform is a Redhat OpenShift 4, built upon [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) and includes [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={oshiftOffert} />
 
@@ -122,8 +122,8 @@ One of the primary use cases of Kasten K10 is **migrating clusters across differ
 
 Billing is based on the number of worker nodes.
 
-| Redhat Openshift 4 with Data Foundations - Worker Node Backup Solution | Unit | SKU |
-| :------------------------------------------------------------------------------------ | :--- | :-------------------------- |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit       | SKU                         |
+| :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
 | VEEAM - KASTEN K10 - Kubernetes data protection and application mobility              | 3 workers | csp:fr1:paas:kasten:3wkr:v1 |
 
 **Note**: *Please note that the required disk capacity for proper backup operation must be planned in the backup target environment—typically S3 storage. This is not included in the Openshift or Kasten service units.*
