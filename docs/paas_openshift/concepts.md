@@ -3,7 +3,7 @@ title: Concepts
 ---
 import oshiftOffert from './images/oshift_offert.png'
 
-## Présentation de RedHat Openshift
+## Présentation de RedHat OpenShift
 
 **Red Hat OpenShift** est une plateforme de conteneurs d'entreprise qui automatise le déploiement, la gestion et l'échelle des applications conteneurisées. C'est une plateforme construite autour de Docker, un système de conteneurisation qui permet de packager une application et ses dépendances dans un conteneur virtuel, et de Kubernetes, un système d'orchestration de conteneurs, qui gère l'exécution et la coordination des conteneurs sur un cluster de serveurs.
 
@@ -28,7 +28,7 @@ import oshiftOffert from './images/oshift_offert.png'
 
 Red Hat OpenShift est une solution complète pour le développement, le déploiement, et la gestion d'applications conteneurisées, offrant une plateforme robuste, sécurisée et flexible pour les entreprises qui adoptent des approches modernes de développement de logiciels.
 
-### RedHat Openshift Data Foundation
+### RedHat OpenShift Data Foundation
 
 Red Hat OpenShift Data Foundation (ODF) est une solution intégrée de stockage et de gestion des données conçue pour fonctionner de manière transparente avec l'écosystème OpenShift. Elle offre une infrastructure de données persistante, sécurisée et hautement disponible pour les applications conteneurisées, soutenant ainsi les environnements de développement modernes axés sur les conteneurs et les microservices. ODF est conçu pour simplifier et automatiser la gestion des données dans des environnements cloud hybrides et multicloud, fournissant une fondation solide pour les applications d'entreprise critiques.
 
@@ -69,7 +69,7 @@ La plateforme se compose d'un plan de contrôle et de noeuds de travail, tous g�
 
 Pour les noeuds de travail, plusieurs types de lames de calcul sont disponibles, permettant ainsi une adaptation flexible à divers besoins opérationnels :
 
-| Unités d'œuvre Redhat Openshift 4 with Data Foundations - On Demand - 1 month                                                | Unité                   | SKU                                   |
+| Unités d'œuvre Redhat OpenShift 4 with Data Foundations - On Demand - 1 month                                                | Unité                   | SKU                                   |
 | :--------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :------------------------------------ |
 | OPENSHIFT - Plan de contrôle - 3 nœuds - Région FR1                                                                          | 1 plan dédié            | csp:fr1:paas:oshift:plan:payg:v1      |
 | OPENSHIFT - WORKER NODES - TINY - 3 x ( 10 cores / 20 threads - 64 Go de ram - 512 Gio FLASH 1500 iops)                      | 3 workers dédiés        | csp:fr1:paas:oshift:wkr:tiny:payg:v1  |
@@ -91,21 +91,21 @@ Les produits Red Hat OpenShift Cloud Temple sont disponibles en paiement à l'us
 
 4. *Un nœud worker peut gérer jusqu'à 250 pods par défaut. Ce nombre est ajustable via le paramètre podsPerCore - par exemple, avec 10 pods par cœur sur un nœud 4 cœurs, vous aurez 40 pods maximum. Pour plus de détails techniques, consultez la [documentation sur la gestion des pods](https://docs.openshift.com/container-platform/4.16/nodes/nodes/nodes-nodes-managing-max-pods.html) et le [guide des limites OpenShift](https://docs.openshift.com/container-platform/4.16/scalability_and_performance/planning-your-environment-according-to-object-maximums.html).*
 
-5. *L'offre PaaS Openshift inclut nativement l'accès aux 3 zones de disponibilités, sans qu'il soit nécessaire d'y souscrire en plus.*
+5. *L'offre PaaS OpenShift inclut nativement l'accès aux 3 zones de disponibilités, sans qu'il soit nécessaire d'y souscrire en plus.*
 
-6. *Il est possible d'ajouter ultérieurement du stockage bloc au cluster Openshift.*
+6. *Il est possible d'ajouter ultérieurement du stockage bloc au cluster OpenShift.*
 
 7. *Les nœuds sont déployés de manière équilibrée entre les 3 zones de disponibilité (1 nœud par zone). Il n'est pas possible de déséquilibrer un cluster en attribuant un plus grand nombre de nœuds à une seule zone.*
 
-### Offre RedHat déployée dans le cadre de la plateforme Openshift Cloud Temple
+### Offre RedHat déployée dans le cadre de la plateforme OpenShift Cloud Temple
 
-La plateforme est une Redhat Openshift 4 basée sur [RedHat Openshift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) et inclut [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+La plateforme est une Redhat OpenShift 4 basée sur [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) et inclut [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={oshiftOffert} />
 
-## Stratégie de sauvegarde de votre plateforme PaaS Openshift
+## Stratégie de sauvegarde de votre plateforme PaaS OpenShift
 
-La sauvegarde et la restauration de la plateforme PaaS Openshift est de la responsabilité de Cloud Temple pour la partie **ETCD** au titre du management de la plateforme. **La sauvegarde et la restauration pour la partie déploiement et données applicatives est de la responsabilité du Commanditaire**.
+La sauvegarde et la restauration de la plateforme PaaS OpenShift est de la responsabilité de Cloud Temple pour la partie **ETCD** au titre du management de la plateforme. **La sauvegarde et la restauration pour la partie déploiement et données applicatives est de la responsabilité du Commanditaire**.
 
 Cloud Temple met à disposition pour ses clients l’offre **Veeam Kasten K10** (Veeam [**Kasten K10**](https://www.veeam.com/fr/kubernetes-native-backup-and-restore.html)), plateforme spécialisée dans la gestion des données pour les environnements Kubernetes. Conçue pour répondre aux besoins en matière de protection des données, elle offre des fonctionnalités robustes pour la sauvegarde, la restauration, la migration et la reprise après sinistre. Kasten K10 s’intègre de manière native aux environnements Kubernetes, qu'ils soient gérés sur des clusters cloud ou sur site, et peut s’adapter à différents cas d’usage, notamment la migration de clusters entre différentes distributions Kubernetes telles que Kubernetes Vanilla, VMware Tanzu, Red Hat Kubernetes Engine et Red Hat OpenShift.
 
@@ -123,11 +123,11 @@ L’un des cas d’utilisation majeurs de Kasten K10 est **la migration de clust
 
  La facturation se fait au nombre de worker node.
 
-| Unités d'œuvre Redhat Openshift 4 with Data Foundations - Worker Node Backup Solution | Unité     | SKU                         |
+| Unités d'œuvre Redhat OpenShift 4 with Data Foundations - Worker Node Backup Solution | Unité     | SKU                         |
 | :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
 | VEEAM - KASTEN K10 - Kubernetes data protection and application mobility              | 3 workers | csp:fr1:paas:kasten:3wkr:v1 |
 
-**Note** : *Attention, la volumétrie disque nécessaire au bon fonctionnement de votre backup est à prévoir sur l'environnement de réception de votre backup, généralement en stockage S3. Elle n'est pas incluse dans les unités d'oeuvre Openshift ou Kasten.*
+**Note** : *Attention, la volumétrie disque nécessaire au bon fonctionnement de votre backup est à prévoir sur l'environnement de réception de votre backup, généralement en stockage S3. Elle n'est pas incluse dans les unités d'oeuvre OpenShift ou Kasten.*
 
 **(1)** _OADP n'est pas installé nativement dans le cluster. Seul Kasten est activé pour la gestion des migrations, des sauvegardes et de la restauration_
 

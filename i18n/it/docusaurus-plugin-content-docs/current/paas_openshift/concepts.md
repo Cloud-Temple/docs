@@ -96,7 +96,7 @@ I prodotti Red Hat OpenShift di Cloud Temple sono disponibili con pagamento in b
 
 ### Offerta RedHat distribuita nell'ambito della piattaforma Openshift Cloud Temple
 
-La piattaforma è basata su Red Hat OpenShift 4 e si avvale di [Red Hat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus), con inclusa [OpenShift Data Foundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+La piattaforma si basa su Redhat OpenShift 4, integrata con [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) e include [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={require('./images/oshift_offert.png').default} alt="Offre OpenShift" />
 
@@ -120,9 +120,9 @@ Uno dei principali scenari d'uso di Kasten K10 è **la migrazione di cluster tra
 
  La fatturazione avviene in base al numero di worker node.
 
-| Unità di misura Redhat Openshift 4 with Data Foundations - Soluzione Backup Worker Node | Unità     | SKU                         |
-| :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
-| VEEAM - KASTEN K10 - Protezione dei dati Kubernetes e mobilità applicativa              | 3 worker  | csp:fr1:paas:kasten:3wkr:v1 |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit       | SKU                                                                   |
+| :-------------------------------------------------------------------- | :-------- | :------------------------------------------------------------ |
+| VEEAM - KASTEN K10 - Kubernetes data protection and application mobility | 3 workers  | csp:fr1:paas:kasten:3wkr:v1                               |
 
 **Nota**: *Attenzione, la volumetria disco necessaria per il corretto funzionamento del backup deve essere prevista nell'ambiente di ricezione del backup, di solito in storage S3. Non è inclusa nelle unità d'opera OpenShift o Kasten.*
 

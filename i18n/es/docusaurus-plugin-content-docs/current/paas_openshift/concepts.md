@@ -3,7 +3,7 @@ title: Conceptos
 ---
 import oshiftOffert from './images/oshift_offert.png'
 
-## Presentación de RedHat Openshift
+import oshiftOferta from './images/oshift_offert.png'
 
 **Red Hat OpenShift** es una plataforma de contenedores empresarial que automatiza el despliegue, gestión y escalado de aplicaciones contenedorizadas. Es una plataforma construida alrededor de Docker, un sistema de contenerización que permite empaquetar una aplicación y sus dependencias en un contenedor virtual, y Kubernetes, un sistema de orquestación de contenedores que gestiona la ejecución y coordinación de los contenedores en un clúster de servidores.
 
@@ -96,9 +96,9 @@ Los productos Red Hat OpenShift de Cloud Temple están disponibles con pago por 
 
 7. *Los nodos se despliegan de forma equilibrada entre las 3 zonas de disponibilidad (1 nodo por zona). No es posible desequilibrar un clúster asignando un mayor número de nodos a una sola zona.*
 
-### RedHat offering deployed within the OpenShift Cloud Temple platform
+### Oferta RedHat desplegada en la plataforma OpenShift Cloud Temple
 
-The platform is a RedHat OpenShift 4 based on [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) and includes [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
+La plataforma se basa en Redhat OpenShift 4, integrado con [RedHat OpenShift Platform Plus](https://www.redhat.com/en/technologies/cloud-computing/openshift/platform-plus) y cuenta con [OpenShift DataFoundation Essential](https://www.redhat.com/en/resources/add-capabilities-enterprise-deployments-datasheet).
 
 <img src={oshiftOffert} />
 
@@ -122,9 +122,9 @@ Uno de los usos principales de Kasten K10 es **la migración de clusters entre d
 
  La facturación se realiza según el número de nodos worker.
 
-| Unidades de obra Redhat Openshift 4 with Data Foundations - Solución de copia de seguridad para nodo worker | Unidad     | SKU                         |
-| :---------------------------------------------------------------------------------------------------- | :-------- | :-------------------------- |
-| VEEAM - KASTEN K10 - Protección de datos Kubernetes y movilidad de aplicaciones                              | 3 nodos   | csp:fr1:paas:kasten:3wkr:v1 |
+| Unit of Work - Redhat OpenShift 4 with Data Foundations Backup Solution | Unit | SKU                         |
+| :------------------------------------------------------------------------------------ | :-------- | :-------------------------- |
+| VEEAM - KASTEN K10 - Kubernetes data protection and application mobility              | 3 workers | csp:fr1:paas:kasten:3wkr:v1 |
 
 **Nota**: *Atención, la volumetría de disco necesaria para el correcto funcionamiento de su copia de seguridad debe preverse en el entorno de recepción de la copia de seguridad, generalmente en almacenamiento S3. No está incluida en las unidades de obra de OpenShift ni de Kasten.*
 
