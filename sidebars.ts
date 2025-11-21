@@ -313,6 +313,16 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'category',
+      label: 'Provider Terraform',
+      items: [
+        'terraform/terraform',
+        'terraform/concepts',
+        'terraform/quickstart',
+        'terraform/tutorials',
+      ],
+    },
+    {
       type: 'html', // Séparateur et titre
       value: `
         <hr class="sidebar-separator" />
