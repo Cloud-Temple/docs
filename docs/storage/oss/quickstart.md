@@ -284,7 +284,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Les associations de compte aux buckets et la configuration des restrictions d'accès sont réalisées dans l'onglet '__Politiques__' du bucket.
     <img src={S3AccountAssign} />
-    Cette interface vous permet de donner l'accès du compte de stockage au bucket selon quatre rôles prédéfinis (Mainteneur, Ecrivain et Lecteur, Ecrivain, Lecteur).
+    Cette interface vous permet de donner l'accès du compte de stockage au bucket selon quatre rôles prédéfinis (read_only, read_write, write_only, maintainer).
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
     La gestion fine des politiques d'accès via le client AWS (`put-bucket-policy`) est une opération avancée. Pour la majorité des cas d'usage, nous recommandons de passer par la console Cloud Temple pour une configuration simplifiée et sécurisée.
