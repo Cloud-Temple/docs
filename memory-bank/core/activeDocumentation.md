@@ -106,35 +106,29 @@
 ### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET ET VALIDÉ
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
 - ✅ `llmaas.md` : Vue d'ensemble du service.
-- ✅ `quickstart.md` : Guide de démarrage rapide, testé et enrichi.
-- ✅ `api.md` : Documentation API complète, alignée avec les tests.
-- ✅ `concepts.md` : Architecture et concepts de l'IA, enrichi avec les détails sur la sécurité des prompts et le cycle de vie des modèles.
-- ✅ `tutorials.md` : **MIS À JOUR (29/06/2025)** - Exemples enrichis et validés par la suite de tests.
-- ✅ `rag_explained.md` : **MIS À JOUR (29/06/2025)** - Explications détaillées sur le RAG et les modèles d'embedding.
-- ✅ `images/` : Ajout des images de benchmark.
-- ✅ `licences/` : Système de gestion des licences automatisé.
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
+- ✅ `api.md` : Documentation API complète (Tiers, Endpoints, Facturation).
+- ✅ `concepts.md` : Architecture, Tokens, Sécurité.
+- ✅ `quickstart.md` : Guide de démarrage (cURL, Python, Tool Calling, Vision).
+- ✅ `tutorials.md` : Guides avancés (LangChain, RAG, Qdrant, Agents).
+- ✅ `ocr.md` : **NOUVEAU** - Guide DeepSeek-OCR (compression contextuelle, parsing).
+- ✅ `rag_explained.md` : **NOUVEAU** - Explication détaillée du RAG et Embeddings.
+- ✅ `faq.md` : **NOUVEAU** - Questions fréquentes.
+- ✅ `images/` : Screenshots, benchmarks, schémas.
+- ✅ `licences/` : Licences des modèles.
 
 #### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (29/06/2025)
 - ✅ **9/9 suites de tests réussies** : Couverture complète des fonctionnalités de l'API.
-- ✅ **Tests RAG validés** :
-    - `test_rag_simple.py` : Pipeline de base fonctionnel.
-    - `test_rag_pipeline_detailed.py` : Pipeline avancé avec `LLMaaSEmbeddings` et FAISS, corrigé et validé.
-    - `test_qdrant_integration.py` : Intégration avec Qdrant, corrigée et validée (nécessite un conteneur Docker).
-- ✅ **Tests SDK et API** : `test_python_sdk.py`, `test_python_basic.py`, etc., tous corrigés et validés.
-- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble des 9 suites de tests.
-
-#### Documentation des Tutoriels (`/docs/llmaas/tutorials.md`) - ✅ ENRICHIE (29/06/2025)
-- ✅ **Explications détaillées** : Chaque exemple de code est maintenant accompagné d'explications didactiques sur son fonctionnement et son utilité.
-- ✅ **Cohérence avec les tests** : Les exemples de code, en particulier pour les pipelines RAG, ont été alignés sur les implémentations validées dans la suite de tests.
-- ✅ **Instructions Qdrant** : Ajout d'un encart clair expliquant comment lancer le conteneur Docker Qdrant, un prérequis pour le test d'intégration.
+- ✅ **Tests RAG validés** : Pipelines FAISS et Qdrant fonctionnels.
+- ✅ **Tests SDK et API** : Validés.
+- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble.
 
 #### Spécifications LLMaaS
-- ✅ **36 modèles** : 6 grande taille + 34 spécialisés
-- ✅ **Contexte** : 8k → 120k tokens  
-- ✅ **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
-- ✅ **6 cas d'usage** : Multilingue, documents, code, vision, sécurité, embarqué
+- ✅ **40 modèles** : 40+ modèles dont Vision, Code, Sécurité.
+- ✅ **Contexte** : 8k → 128k tokens  
+- ✅ **Pricing** : Tiers de facturation + pricing à l'usage.
+- ✅ **Fonctionnalités** : Tool Calling, Vision, Audio, OCR, RAG.
 
 ### 💾 Storage Solutions - Statut : 🔄 EN DÉVELOPPEMENT
 
@@ -233,6 +227,11 @@
 - 📝 **Storage OSS** : Documentation API
 - 📝 **Console Metrics** : Dashboards avancés
 
+### Corrections Récentes
+- ✅ **Rendu LaTeX** : Mise à jour du CSS KaTeX (v0.16.9) pour compatibilité avec rehype-katex v7 (fix affichage doublé).
+- ✅ **Génération Documentation Modèles** : Mise à jour automatisée de `docs/llmaas/models.md` via le script Python.
+- ✅ **Problèmes de compilation MDX (i18n)** : Correction des blocs de code Python mal formés dans les fichiers traduits (en, es, de, it) de `api.md`, `ocr.md` et `tutorials.md`.
+
 ### En Review
 - 🔄 **Cohérence terminologique** : Uniformisation
 - 🔄 **Mise à jour screenshots** : Console Shiva
@@ -289,7 +288,7 @@
 5. **Validation globale** : Cohérence et qualité
 
 ---
-*État de la documentation au 18/10/2025 - Memory Bank Cloud Temple*
+*État de la documentation au 22/11/2025 - Memory Bank Cloud Temple*
 
 ### 🐍 Système de Traduction Python - ✅ COMPLET ET OPÉRATIONNEL (17/06/2025)
 **Localisation** : `scripts/translate_py/`
@@ -355,4 +354,4 @@ scripts/translate_py/
 - ✅ **Workflow unifié** : Même commandes, interface améliorée
 
 ---
-*État de la documentation au 18/10/2025 - Memory Bank Cloud Temple*
+*État de la documentation au 22/11/2025 - Memory Bank Cloud Temple*
