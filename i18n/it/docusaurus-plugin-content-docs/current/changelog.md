@@ -1,14 +1,24 @@
 ---
-title: Tracciamento delle Modifiche
+title: Tracciamento delle modifiche
 sidebar_position: 2
 ---
 
 # Change Tracking
 
-### 3 November 2025: Kubernetes Tutorials Improvements
+### November 22, 2025: LLMaaS Updates and General Improvements
 
-- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment with **ArgoCD** and the GitOps approach.
-- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
+- **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
+- **Multilingual**: Resolved accessibility issues on the Italian and German versions of the documentation.
+- **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
+
+### 20 November 2025: Major PaaS OpenShift Update
+
+- **PaaS OpenShift (PR #194)**: Complete overhaul and update of the OpenShift documentation, including new screenshots and full translation into English, Spanish, German, and Italian to support our international expansion.
+
+### 3 novembre 2025: Miglioramenti ai tutorial Kubernetes
+
+- **Kubernetes gestito**: Aggiunta di un nuovo tutorial sul deployment continuo con **ArgoCD** e l'approccio GitOps.
+- **Kubernetes gestito**: Revisione e miglioramento dei tutorial esistenti. I guide sul deployment, sulla rete, sulla gestione dei permessi (Capsule) e sul backup (Kasten) sono state arricchite per affrontare in modo più efficace tematiche legate alla sicurezza, alla governance e ai costi, in risposta alle esigenze dei profili RSSI e Acquirente.
 
 ### 28 ottobre 2025: Nuova documentazione per Kubernetes gestito e miglioramenti vari
 
@@ -22,8 +32,8 @@ sidebar_position: 2
 - **Contrattuale**: Aggiornamento significativo dell'Accordo sul trattamento dei dati (DPA v2) per riflettere gli ultimi requisiti legali e di conformità.
 - **Console**: Miglioramento e chiarimento della documentazione relativa alla gestione dei comandi.
 - **Marketplace**: Aggiunta di un tutorial dettagliato sulla personalizzazione delle immagini delle macchine virtuali (VM) per creare modelli riutilizzabili.
-- **LLMaaS**: Aggiunta di una guida per configurare l'estensione VSCode CLINE e utilizzare direttamente dai modelli linguistici di Cloud Temple all'interno dell'editor.
-- **Archiviazione oggetti (OSS)**: Aggiunta di dettagli sulla politica del ciclo di vita (Lifecycle) per la cancellazione dei dati.
+- **LLMaaS**: Aggiunta di una guida per configurare l'estensione VSCode CLINE in modo da utilizzare direttamente dai modelli linguistici di Cloud Temple dall'editor.
+- **Archiviazione oggetti (OSS)**: Aggiunta di dettagli sulla politica del ciclo di vita (Lifecycle) per l'eliminazione dei dati.
 - **Archiviazione oggetti (OSS)**: Aggiunta di una guida alla risoluzione dei problemi relativi agli errori di checksum (`XAmzContentSHA256Mismatch`) con AWS CLI e Terraform.
 - **LLMaaS**: Aggiornamento dell'elenco dei modelli disponibili e ritrascrizione di oltre 50 documenti per garantire coerenza.
 
@@ -36,22 +46,22 @@ sidebar_position: 2
 
 - **Archiviazione oggetti (OSS)**:
     - Riscrittura completa della sezione tutorial con guide dedicate a strumenti popolari: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer e SDK Python Boto3.
-    - Aggiunta di informazioni dettagliate sui concetti di account di archiviazione e sul blocco degli oggetti (Object Lock).
+    - Aggiunta di ulteriori dettagli sui concetti di account di archiviazione e sul blocco degli oggetti (Object Lock).
 - **IaaS OpenSource**:
     - Aggiunta di una documentazione dettagliata sulla gestione dell'Alta Disponibilità (HA) per i pool di risorse e le macchine virtuali.
 - **Console**:
-    - Aggiornamento della pagina degli avvisi di sicurezza con le ultime vulnerabilità rilevate.
+    - Aggiornamento della pagina delle avvisi di sicurezza con le ultime vulnerabilità rilevate.
 - **Rete**:
     - Aggiunta di nuove schermate per illustrare la configurazione della connettività IPv6.
 
 ### June 29, 2025: Finalization of LLMaaS documentation
 
-- Full test suite validation.
+- Completion and validation of the full test suite.
 - Correction and validation of RAG pipelines with FAISS and Qdrant.
 - Enhancement of tutorials with more detailed technical explanations.
 - Addition of a section on prompt security and model lifecycle within the concepts.
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Addition of the forecasted model lifecycle timeline.
+- Addition of the projected model lifecycle roadmap.
 - Addition of the responsibility matrix for the LLMaaS offering.

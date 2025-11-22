@@ -9,7 +9,7 @@ WORKDIR /app
 
 RUN cd /app && yarn install
 
-RUN yarn add @docusaurus/faster docusaurus-plugin-search-local
+RUN yarn add @docusaurus/faster docusaurus-plugin-search-local remark-math@6 rehype-katex@7
 COPY . .
 
 CMD ["yarn", "start", "--host", "0.0.0.0"]

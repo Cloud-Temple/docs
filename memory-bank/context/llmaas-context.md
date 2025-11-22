@@ -2,184 +2,111 @@
 
 ## Service Overview
 
-**LLMaaS (Large Language Model as a Service)** est la nouvelle offre Cloud Temple dédiée à l'intelligence artificielle générative, proposant 45 modèles de langage large en conformité **SecNumCloud + HDS + Souveraineté + C5**.
+**LLMaaS (Large Language Model as a Service)** est l'offre Cloud Temple dédiée à l'intelligence artificielle générative, proposant **40 modèles** de langage large en conformité **SecNumCloud + HDS + Souveraineté + C5**.
 
 ### Positionnement Stratégique
 - **Premier cloud souverain français** proposant des LLM SecNumCloud
-- **45 modèles** : du micro-modèle (278M) au modèle extrêmement large (671B)
+- **40 modèles** : du micro-modèle (278M) au modèle extrêmement large (235B)
 - **Localisation 100% France** 🇫🇷
-- **Conformité maximale** : SecNumCloud ✅ HDS ✅ Souveraineté ✅ C5 ✅
+- **Conformité maximale** : SecNumCloud ✅ HDS ✅ Souveraineté ✅ C5 ❌
 
 ## Architecture Documentation
 
-### Structure docs/llmaas/
+### Structure `docs/llmaas/`
 ```
 docs/llmaas/
-├── llmaas.md              # [RÉDIGÉ] Vue d'ensemble service
-├── models.md              # ✅ AUTOMATISÉ - Catalogue 36 modèles
-├── api.md                 # [RÉDIGÉ] Documentation API REST
-├── concepts.md            # [RÉDIGÉ] Architecture IA
-├── quickstart.md          # [RÉDIGÉ] Premier déploiement
-├── tutorials.md           # [RÉDIGÉ] Guides avancés
-├── rag_explained.md       # [AJOUTÉ] Explication détaillée du RAG
-├── changelog.md           # [AJOUTÉ] Suivi des modifications
-└── images/               # Screenshots interface LLM
+├── llmaas.md              # Vue d'ensemble service
+├── models.md              # Catalogue des modèles
+├── api.md                 # Documentation API REST (Tiers, Endpoints, Facturation)
+├── concepts.md            # Architecture technique, Tokens, Sécurité
+├── quickstart.md          # Guide de démarrage (cURL, Python, Tool Calling, Vision)
+├── tutorials.md           # Guides avancés (LangChain, RAG, Qdrant, Agents)
+├── ocr.md                 # [NOUVEAU] Guide DeepSeek-OCR
+├── rag_explained.md       # [NOUVEAU] Explication détaillée du RAG
+├── faq.md                 # Foire aux questions
+├── images/                # Screenshots et schémas
+└── licences/              # Licences des modèles
 ```
 
-### Génération Automatique
-- **Source** : `memory-bank/models_config.yaml` (45 modèles)
-- **Script** : `scripts/generate_models_doc/generate_models_doc.py`
-- **Commande** : `yarn generate:models`
-- **Sortie** : `docs/llmaas/models.md` (documentation Docusaurus)
+## Modèle Économique et Tiers
 
-## Configuration Modèles
+### Le Principe des Tiers
+L'offre est structurée en 4 tiers définissant un équilibre entre :
+1.  **Crédit d'Achat (Upfront)** : Montant à régler pour activer le service.
+2.  **Limite Mensuelle** : Plafond de consommation pour maîtriser les coûts.
+3.  **Capacité Technique** : Limites de débit (tokens/jour et tokens/heure).
 
-### Statistiques Globales
-- **45 modèles** : 8 grande taille + 37 spécialisés
-- **Contexte** : 8k → 128k tokens
-- **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
+| Tier | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description |
+|------|----------------|-------------------|---------------------|--------------------|-----------|
+| **Tier 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Utilisation standard |
+| **Tier 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Usage professionnel |
+| **Tier 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Volume élevé |
+| **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Entreprise |
 
-### Catégories de Modèles
+### Tarification à l'Usage
+- **Tokens d'entrée** : 0.90 € / million
+- **Tokens de sortie (standard)** : 4.00 € / million
+- **Tokens de sortie (raisonneur)** : 21.00 € / million
+- **Transcription Audio** : 0.01 € / minute
 
-#### Modèles Grande Taille (6)
-- **Llama 3.3 70B** (Meta) - Dialogue multilingue
-- **Qwen3 235B** (Qwen Team) - Très large avec MCP
-- **DeepSeek-R1 671B** (DeepSeek AI) - Extrêmement large
-- **Gemma 3 27B** (Google) - Vision + Agent rapide
-- **Qwen3 30B-A3B FP8** (Qwen Team) - MoE efficace
-- **DeepSeek-R1 70B** (DeepSeek AI) - Raisonnement avancé
+## Fonctionnalités Techniques
 
-#### Modèles Spécialisés (34)
-- **Vision** : Granite 3.2 Vision, Gemma 3, Qwen2.5-VL
-- **Sécurité** : Granite Guardian, Foundation-Sec-8B
-- **Code** : DeepCoder, Devstral, QwQ-32B
-- **Français** : Lucie-7B-Instruct
-- **Embarqué** : Gemma 3 1B, Qwen 2.5 0.5B
+### Endpoints API
+- **Chat Completions** (`POST /v1/chat/completions`) : Génération de texte, compatible OpenAI. Supporte le mode "Tool Calling" et le Streaming (SSE).
+- **Completions** (`POST /v1/completions`) : Complétion de texte simple.
+- **Embeddings** (`POST /v1/embeddings`) : Vectorisation de texte (modèle `granite-embedding:278m`).
+- **Audio Transcription** (`POST /v1/audio/transcriptions`) : Speech-to-Text (Whisper).
+- **Vision Multimodale** : Support de l'analyse d'images via `image_url` dans les messages.
+- **OCR Avancé** : Support spécifique via DeepSeek-OCR pour l'analyse de documents complexes (tableaux, formules).
 
-### Cas d'Usage Documentés (6)
-1. **Dialogue multilingue** - Chatbots 8+ langues
-2. **Analyse documents longs** - Contexte 120k tokens
-3. **Programmation développement** - 15+ langages
-4. **Analyse visuelle** - OCR sans preprocessing
-5. **Sécurité conformité** - Filtrage + audit
-6. **Déploiements embarqués** - IoT + edge computing
+### Sécurité et Conformité
+- **Protection des Données** : Chiffrement TLS 1.3 (transit) et AES-256 (repos).
+- **Analyse des Prompts** : Système natif de détection d'injections de prompts (analyse structurelle, patterns suspects, comportementale).
+- **Non-conservation** : Pas de stockage des prompts/réponses (traitement volatile).
+- **Authentification** : Bearer tokens avec rotation automatique.
 
-## Conformité SecNumCloud IA
+### Intégrations
+- **Compatible OpenAI** : Drop-in replacement pour les SDKs existants.
+- **Frameworks supportés** : LangChain, LlamaIndex, Haystack, Semantic Kernel.
+- **Outils** : Jupyter, Streamlit, Gradio.
 
-### Exigences Spécifiques IA
-- **Localisation modèles** : 100% France
-- **Audit algorithmes** : Traçabilité inférences
-- **Protection données** : Chiffrement prompts/réponses
-- **Biais monitoring** : Détection discriminations
-- **Explicabilité** : Right to explanation
-- **RGPD-IA** : Conformité réglementations européennes
+## Catalogue de Modèles
 
-### Certifications
-- **SecNumCloud** : Qualification ANSSI
-- **HDS** : Hébergement Données Santé
-- **C5** : Conformité européenne
-- **Souveraineté** : 100% français
+### Résumé du Catalogue (40 modèles)
+- **Grande Taille** : Llama 3.3 70B, Qwen3 235B, Qwen2.5-VL 72B.
+- **Intermédiaire** : Gemma 3 27B, Qwen3 32B, DeepSeek-R1 32B, Cogito 32B.
+- **Code & Raisonnement** : QwQ 32B, Qwen3-Coder 30B, DeepCoder 14B, Magistral 24B.
+- **Compact & Efficient** : Gemma 3 4B/1B, Granite 3.3 8B/2B, Qwen3 4B/1.7B/0.6B.
+- **Vision** : Qwen2.5-VL, Granite 3.2 Vision, Mistral Small 3.2.
+- **Sécurité** : Granite Guardian.
+- **Embedding** : Granite Embedding 278m.
 
-## Technologies et Infrastructure
+### Cycle de Vie
+- **DMP (Mise en Production)** et **DSP (Fin de Support)** clairement définies.
+- Politique de dépréciation avec préavis de 3 mois.
+- Modèles dépréciés listés (ex: Llama 3.1, Qwen 2.5 anciens).
 
-### Stack Technique
-- **GPU** : NVIDIA A100, L40S dédiés
-- **Orchestration** : Kubernetes + VLLM
-- **API** : REST compatible OpenAI
-- **Monitoring** : Grafana + métriques personnalisées
-- **Chiffrement** : TLS 1.3 + AES-256
+## Architecture Technique
 
-### Pipelines RAG et Intégrations
-- ✅ **Pattern RAG validé** : Le service supporte des pipelines RAG complets.
-- ✅ **Embeddings LLMaaS** : Utilisation du modèle `granite-embedding:278m` via une classe wrapper `LLMaaSEmbeddings` pour la vectorisation de documents.
-- ✅ **Intégration FAISS** : L'exemple de tutoriel principal utilise FAISS pour un stockage vectoriel en mémoire, idéal pour les démonstrations rapides.
-- ✅ **Intégration Qdrant** : Un exemple avancé et un test d'intégration complet valident l'utilisation de Qdrant pour un stockage vectoriel persistant et scalable.
-- ✅ **Tests de bout en bout** : La suite de tests (`/tests/llmaas/`) inclut désormais des scripts dédiés (`test_rag_pipeline_detailed.py`, `test_qdrant_integration.py`) qui valident ces pipelines.
+### Infrastructure
+- **Localisation** : 100% France (Datacenters Cloud Temple).
+- **Matériel** : 12 machines GPU, Load Balancing intelligent.
+- **API Gateway** : Gestion du Rate Limiting, Auth, Monitoring.
 
-### Performance
-- **Vitesse** : 16-103 tokens/seconde
-- **Consommation** : 0.58-13.06 kWh/million tokens
-- **Latence** : <50ms pour modèles rapides
-- **Disponibilité** : SLA 99.9%
+### Schéma de Flux
+[Client] -> [API Gateway (Auth, RateLimit, Security Check)] -> [Load Balancer] -> [GPU Cluster (Inférence)]
 
-## Intégration Console Shiva
+## Workflows et Processus
 
-### Fonctionnalités
-- **Provisioning** : Déploiement modèles one-click
-- **Monitoring** : Vue consolidée infrastructure + IA
-- **IAM** : RBAC avec permissions IA
-- **Facturation** : Tracking usage par token
-- **Logs** : Audit complet des requêtes
+### Génération Documentation
+La documentation des modèles est générée automatiquement à partir de `memory-bank/models_config.yaml` via le script `scripts/generate_models_doc/generate_models_doc.py`.
 
-### API Management
-- **Authentication** : Bearer tokens SecNumCloud
-- **Rate limiting** : Quotas par tenant
-- **Load balancing** : Distribution intelligente
-- **Cost tracking** : Optimisation automatique
-
-## Workflows de Documentation
-
-### Génération Automatique
-```bash
-# Modification catalogue
-vim memory-bank/models_config.yaml
-
-# Génération propre
-yarn generate:models
-
-# Résultat : Documentation mise à jour !
-```
-
-### Structure Scripts
-- **generate_models_doc.py** : Générateur principal
-- **module integration** : `yarn generate:models`
-- **Documentation** : `scripts/README.md`
-- **Logging coloré** : Feedback développeur
-
-## Prochaines Étapes
-
-### Documentation
-Tous les documents principaux sont maintenant rédigés et disponibles.
-
-### Améliorations Prévues
-- **Templates Jinja2** pour autres pages
-- **Validation automatique** YAML
-- **Tests unitaires** scripts
-- **CI/CD integration** hooks Git
-- **Monitoring documentation** métriques
-
-## Différenciation Concurrentielle
-
-### vs AWS Bedrock
-- **Souveraineté** : 100% France vs USA
-- **SecNumCloud** : Qualification vs compliance générique
-- **Transparence** : Open source vs propriétaire
-
-### vs Azure OpenAI
-- **Localisation** : France vs global
-- **Audit** : Complet vs limité
-- **Conformité** : C5+SecNumCloud vs basique
-
-### vs Google Vertex AI
-- **Contrôle** : Total vs dépendance
-- **Réglementation** : EU-compliant vs global
-- **Performance** : Optimisé vs standard
-
-## Métriques Clés
-
-### Documentation
-- **36 modèles** automatiquement documentés
-- **6 cas d'usage** détaillés
-- **4 conformités** certifiées
-- **Génération** : 5 secondes vs heures manuelles
-
-### Impact Business
-- **Time-to-market** : Réduit de 80%
-- **Maintenance** : Automatisée 100%
-- **Qualité** : Cohérence garantie
-- **Évolutivité** : Ajout modèle = 1 ligne YAML
+### RAG Pipeline
+Documentation complète sur l'implémentation de RAG (Retrieval-Augmented Generation) :
+- Explication conceptuelle (Embeddings, Recherche vectorielle).
+- Tutoriels pratiques avec LangChain (FAISS, Qdrant).
 
 ---
 
 *Contexte LLMaaS Cloud Temple - Documentation technique complète*
-*Dernière mise à jour : 18/10/2025 - Validation complète du build et des traductions suite aux ajouts récents.*
+*Dernière mise à jour : 22/11/2025 - Intégration Tiers, OCR, RAG et mise à jour catalogue.*

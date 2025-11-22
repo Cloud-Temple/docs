@@ -14,7 +14,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 ## Claves API
 
 La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también conocida como __Personal Access Token (PAT)__,
-es una forma segura de conectarse a las API de Shiva sin necesidad de utilizar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
+es una forma segura de conectarse a las API de Shiva sin necesidad de usar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
 
 La creación de este token se realiza desde su cuenta. Es posible generar varias claves y configurar los permisos para cada una, dentro de los límites de sus derechos.
 
@@ -22,11 +22,11 @@ Para crear una clave API, simplemente __haga clic en su perfil__:
 
 <img src={ShivaProfil001} />
 
-En el menú del perfil, haga clic en __'Token de acceso personal'__.
+En el menú del perfil, haga clic en __'Token de acceso personal'__
 
 <img src={ShivaProfil003} />
 
-A continuación, verá en pantalla el conjunto de claves API que han sido creadas para este usuario en este inquilino. Haga clic en __'Nuevo token de acceso personal'__.
+A continuación, verá en pantalla el conjunto de claves API que han sido creadas para este usuario en este inquilino. Haga clic en __'Nuevo token de acceso personal'__
 
 <img src={ShivaProfil002} />
 
@@ -100,7 +100,7 @@ El contenido de la actividad incluye todas las informaciones esenciales para ide
 }
 ```
 
-El objeto __state__ puede adoptar diferentes formas según el estado de la actividad, a saber:
+El objeto __state__ puede tomar diferentes formas según el estado de la actividad, a saber:
 
 __waiting__, estado antes de que la operación haya comenzado:
 
@@ -141,7 +141,7 @@ __Nota: el identificador (UUIDv4) del recurso creado está disponible en el resu
 
 ### ¿Por qué límites?
 
-La consola Cloud Temple establece __límites en el volumen de solicitudes__ que un usuario puede enviar a la API durante un período determinado. La implementación de estos límites de frecuencia es una medida común en la gestión de APIs, adoptada por varios motivos esenciales:
+La consola Cloud Temple establece __límites en el volumen de solicitudes__ que un usuario puede enviar a la API durante un período determinado. La implementación de estos límites de frecuencia es una medida común en la gestión de APIs, adoptada por varias razones esenciales:
 
 - __Prevención de abusos__: Estos límites contribuyen a proteger la integridad de la API al prevenir usos indebidos o inadecuados que podrían comprometer su funcionamiento.
 - __Garantía de calidad de servicio__: Al regular el acceso a la API, aseguramos una distribución equitativa de los recursos, permitiendo que todos los usuarios disfruten de una experiencia estable y eficiente.
@@ -156,7 +156,7 @@ para cada producto.
 Los límites están definidos en __consultas por segundo (r/s) y por dirección IP de origen__. Por encima del umbral límite, el sistema responderá  
 con un código de error HTTP 429, indicando que se ha superado el límite de consultas permitidas.
 
-A continuación se indican los límites establecidos:
+A continuación se muestran los límites definidos:
 
 | Producto | Umbral límite |
 |---|---|
@@ -166,7 +166,7 @@ A continuación se indican los límites establecidos:
 | OpenIaaS | 25 r/s |
 | S3 | 25 r/s |
 | OpenShift | 25 r/s |
-| Bastion | 25 r/s |
+| Bastión | 25 r/s |
 | Red | 25 r/s |
 | Alojamiento | 25 r/s |
 | Marketplace | 25 r/s |
@@ -204,9 +204,9 @@ containing detailed information about the applied rate limit:
 
 Se recomienda limitar el número de llamadas a la API realizadas por su automatización para permanecer por debajo del límite de tasa establecido para el punto final.
 
-Esta situación suele ocurrir cuando varias solicitudes se ejecutan en paralelo, utilizando varios procesos o hilos.
+Esta situación suele ocurrir cuando se ejecutan varias solicitudes en paralelo, utilizando varios procesos o hilos.
 
-Existen varios métodos para mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de un __sistema de reintento con amortiguamiento progresivo__. Este método consiste en realizar una breve pausa cuando se detecta un error de límite de tasa, y luego intentar nuevamente la solicitud. Si la solicitud falla nuevamente, la duración de la pausa se aumenta progresivamente hasta que la solicitud tenga éxito o hasta que se alcance un número máximo de intentos.
+Existen varios métodos para mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de un __sistema de reintento con amortiguamiento progresivo__. Este método consiste en realizar una breve pausa cuando se encuentra un error de límite de tasa, y luego intentar nuevamente la solicitud. Si la solicitud falla nuevamente, la duración de la pausa se aumenta progresivamente hasta que la solicitud tenga éxito o hasta que se alcance un número máximo de reintentos.
 
 Esta aproximación ofrece numerosas ventajas:
 
