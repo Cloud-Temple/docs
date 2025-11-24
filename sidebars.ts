@@ -226,6 +226,7 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/tutorials/usingkubecosts',
             'managed_kubernetes/tutorials/usingkasten',
             'managed_kubernetes/tutorials/usingargocd',
+            'managed_kubernetes/tutorials/usingharbor',
           ],
         },
           ],
