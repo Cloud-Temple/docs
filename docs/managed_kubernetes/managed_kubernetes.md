@@ -84,7 +84,7 @@ L'offre inclus en détail les composants suivants:
 - Stockage distribué Rook-Ceph
 - Cert-Manager
 - ArgoCD
-- Stack prometheus (Prometheus, Grafana, Promtail, Loki)
+- Stack prometheus (Prometheus, Grafana, Loki)
 - Container registry Harbor
 - Cost management avec KubeCost
 - Stratégies de sécurité avancée avec Kyverno et Capsule
