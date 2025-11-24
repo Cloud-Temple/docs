@@ -110,3 +110,11 @@ Documentation complète sur l'implémentation de RAG (Retrieval-Augmented Genera
 
 *Contexte LLMaaS Cloud Temple - Documentation technique complète*
 *Dernière mise à jour : 22/11/2025 - Intégration Tiers, OCR, RAG et mise à jour catalogue.*
+
+## Modèles Dépréciés (mise à jour)
+
+| Modèle | Éditeur | Phase | Date de Dépréciation |
+| :--- | :--- | :--- | :--- |
+| qwen3:235b |  | Déprécié | 22/11/2025 |
+| qwen3-2507-think:30b-a3b |  | Déprécié | 14/11/2025 |
+| gemma3:12b |  | Déprécié | 21/11/2025 |
