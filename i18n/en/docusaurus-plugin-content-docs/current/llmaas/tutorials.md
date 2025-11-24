@@ -13,7 +13,7 @@ These advanced tutorials cover integration, optimization, and best practices for
 
 ### 1. Basic Integration with LangChain
 
-This first example demonstrates how to integrate our LLMaaS API with the popular LangChain framework by creating a custom "wrapper." A wrapper is a class that "envelops" our API to make it compatible with LangChain's internal mechanisms.
+This first example demonstrates how to integrate our LLMaaS API with the popular LangChain framework by creating a custom "wrapper." A wrapper is a class that "encapsulates" our API to make it compatible with LangChain's internal mechanisms.
 
 #### Code Explained
 
@@ -27,6 +27,7 @@ This approach is useful if you need full control over how LangChain interacts wi
 
 ```python
 # Installing dependencies
+
 # pip install langchain requests pydantic
 
 from langchain.llms.base import LLM
@@ -316,7 +317,7 @@ For production RAG applications, using a dedicated vector database such as **Qdr
 
 This tutorial adapts the previous RAG pipeline to use Qdrant.
 
-1. **Prerequisites**: The first step is to run a Qdrant instance. The easiest way is to use Docker.
+1. **Prerequisites**: The first step is to launch a Qdrant instance. The easiest way is to use Docker.
 2. **`setup_qdrant_rag_pipeline`**:
     * **Embeddings and Documents**: Creating embeddings and documents remains the same as in the previous example.
     * **Connecting to Qdrant**: Instead of creating a FAISS index, we use `Qdrant.from_documents`. This LangChain method handles several steps:
@@ -325,15 +326,15 @@ This tutorial adapts the previous RAG pipeline to use Qdrant.
         c. It calls our `LLMaaSEmbeddings` class to vectorize the documents.
         d. It inserts the documents and their vectors into the Qdrant collection.
     * **`force_recreate=True`**: For this tutorial, we use this parameter to ensure the collection is empty at each run. In production, you would set it to `False` to preserve your data.
-3. The rest of the pipeline (LLM configuration, creation of the `RetrievalQA` chain) remains identical, demonstrating LangChain's flexibility: simply changing the `retriever` (the information searcher) source from FAISS to Qdrant is sufficient.
+3. The rest of the pipeline (LLM configuration, creation of the `RetrievalQA` chain) remains identical, demonstrating LangChain's flexibility: simply changing the `retriever` (information retriever) source allows switching from FAISS to Qdrant.
 
-:::info Prerequisites: Running Qdrant
-For this tutorial, you'll need a Qdrant instance. You can easily launch it with Docker:
+:::info Prerequisites: Launch Qdrant
+For this tutorial, you'll need a Qdrant instance. You can launch it easily with Docker:
 
 ```bash
 
 
-# 1. Download the latest Qdrant image  
+# 1. Download the latest Qdrant image
 docker pull qdrant/qdrant
 
 # 2. Start the Qdrant container
@@ -355,8 +356,7 @@ from typing import List
 from langchain_core.embeddings import Embeddings
 
 # (The LLMaaSEmbeddings class is the same as in the previous example,
-
-# We reuse it here. Make sure it is defined in your script.
+# We reuse it here. Make sure it is defined in your script.)
 
 # --- Configuration ---
 load_dotenv()
@@ -393,7 +393,7 @@ def setup_qdrant_rag_pipeline():
     print("2. Preparing documents...")
     documents_content = [
         "Cloud Temple is a French sovereign cloud provider with SecNumCloud certification.",
-        "LLMaaS pricing is €0.9 per million input tokens and €4 per million output tokens."
+        "LLMaaS pricing is €0.9 for input and €4 for output per million tokens."
     ]
     documents = [Document(page_content=d) for d in documents_content]
     
@@ -468,7 +468,7 @@ This example builds a simple agent capable of using two tools: one to query a (s
 2. **`create_agent_with_tools`**:
     * **LLM Initialization**: We use our `CloudTempleLLM` wrapper defined in the first tutorial.
     * **Tool List**: We provide the agent with a list of tools it is allowed to use.
-    * **Agent Prompt**: The prompt is highly specific. It is a "reasoning prompt" that instructs the LLM on how to think (`Thought`), choose an action (`Action`), provide input for that action (`Action Input`), and observe the result (`Observation`). This is the core mechanism of the ReAct (Reasoning and Acting) framework used here.
+    * **Agent Prompt**: The prompt is highly specific. It's a "reasoning prompt" that instructs the LLM on how to think (`Thought`), choose an action (`Action`), provide input for that action (`Action Input`), and observe the result (`Observation`). This is the core mechanism of the ReAct framework (Reasoning and Acting) used here.
     * **Agent Creation**: `create_react_agent` assembles the LLM, tools, and prompt to create the agent.
     * **`AgentExecutor`**: This is the engine that runs the agent in a loop until it produces a `Final Answer`. The `verbose=True` parameter is very useful for seeing the agent's "inner dialogue" (its thoughts, actions, etc.).
 
@@ -497,7 +497,7 @@ class CloudTempleAPITool(BaseTool):
         return "Information not found."
 
     async def _arun(self, query: str) -> str:
-        # Asynchronous implementation is not necessary for this example.
+        # Asynchronous implementation is not needed for this example.
         raise NotImplementedError("The API tool does not support asynchronous execution.")
 
 class SimpleCalculatorTool(BaseTool):
@@ -533,7 +533,7 @@ def create_agent():
 
     Use the following format:
 
-    Question: the question you must answer
+    Question: the question you need to answer
     Thought: you must always think about what you will do
     Action: the action to take, must be one of [{tool_names}]
     Action Input: the input for the action
@@ -569,7 +569,7 @@ def run_agent():
     agent_executor = create_agent()
     
     print("\n--- Test 1: Question requiring an information tool ---")
-    question1 = "What services are offered by Cloud Temple?"
+    question1 = "What services does Cloud Temple offer?"
     response1 = agent_executor.invoke({"input": question1})
     print(f"\nFinal agent response: {response1['output']}")
     
@@ -589,7 +589,8 @@ if __name__ == "__main__":
 ```python
 from openai import OpenAI
 
-# Configuration for Cloud Temple LLMaaS
+# Cloud Temple LLMaaS Configuration
+
 def setup_cloud_temple_client():
     """OpenAI client configuration for Cloud Temple"""
     
@@ -601,7 +602,7 @@ def setup_cloud_temple_client():
     return client
 
 def test_openai_compatibility():
-    """Test compatibility with OpenAI SDK"""
+    """Compatibility test with OpenAI SDK"""
     
     client = setup_cloud_temple_client()
     
@@ -638,7 +639,7 @@ def test_openai_compatibility():
 test_openai_compatibility()
 ```
 
-### 5. Semantic Kernel (Microsoft)
+### 5. Semantic Kernel Integration (Microsoft)
 
 [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/) is an open-source SDK from Microsoft that enables integrating LLMs into .NET, Python, and Java applications. Although it is optimized for Azure OpenAI services, its flexibility allows it to be used with any OpenAI-compatible API, including our own.
 
@@ -650,7 +651,7 @@ This example does not require the full Semantic Kernel SDK. It demonstrates how 
 2. **Structured Prompt**: We use a `system` message to assign a role to the LLM ("You are an expert in summarization") and a `user` message containing the text to summarize. This is the core of the semantic function concept.
 3. **Direct API Call**: A simple `requests.post` call to our `/v1/chat/completions` endpoint is sufficient to execute the function.
 
-This example illustrates that using a heavy framework isn't always necessary. For simple, well-defined tasks, a direct call to the LLMaaS API is often the most efficient and performant solution.
+This example illustrates that it's not always necessary to use a heavy framework. For simple, well-defined tasks, a direct call to the LLMaaS API is often the most efficient and performant solution.
 
 ```python
 import requests
@@ -751,17 +752,17 @@ def haystack_simulation():
     context = """
     A sovereign cloud is a cloud computing infrastructure that is entirely contained 
     within the borders of a specific country and subject to its laws. 
-    The main advantages are ensuring data residency, compliance with local regulations 
+    The main advantages include guaranteed data residency, compliance with local regulations 
     (such as GDPR in Europe), and enhanced protection against access by foreign entities 
     under extraterritorial laws like the U.S. CLOUD Act.
     """
     
     question = "What are the benefits of a sovereign cloud?"
-
+    
     # The prompt guides the LLM to base its response solely on the provided context.
     prompt = f"""
     Answer the question based exclusively on the following context.
-
+    
     Context:
     ---
     {context}
@@ -774,7 +775,7 @@ def haystack_simulation():
         "model": "granite3.3:8b",
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 200,
-        "temperature": 0.2  # Low temperature for factual responses
+        "temperature": 0.2  # Low temperature for a factual response
     }
     
     try:
@@ -808,15 +809,18 @@ if __name__ == "__main__":
 This example demonstrates how to configure LlamaIndex to use the LLMaaS API for text generation, while using a local embedding model for vectorization.
 
 1. **`setup_and_run_llamaindex`**: This single function orchestrates the entire process.
-    * **LLM Configuration**: LlamaIndex provides an `OpenAILike` class that allows connecting to any API conforming to the OpenAI format. Simply provide your `api_base` and an `api_key`. This is the easiest way to make your LLM compatible.
-    * **Embedding Configuration**: For this example, we use a local embedding model (`HuggingFaceEmbedding`). This illustrates the flexibility of LlamaIndex, which allows mixing different components. You could just as easily use the `LLMaaSEmbeddings` class from previous examples to leverage our embedding API.
-    * **`Settings`**: The `Settings` object in LlamaIndex is a convenient way to set default components (LLM, embedding model, chunk size, etc.) that will be used by other LlamaIndex objects.
+    * **LLM Configuration**: LlamaIndex provides an `OpenAILike` class that allows connection to any API compatible with the OpenAI format. Simply provide your `api_base` and an `api_key`. This is the easiest way to make your LLM compatible.
+    * **Embedding Configuration**: For this example, we use a local embedding model (`HuggingFaceEmbedding`). This illustrates the flexibility of LlamaIndex, which allows mixing different components. You could just as easily use the `LLMaaSEmbeddings` class from previous examples to use our embedding API.
+    * **`Settings`**: The `Settings` object in LlamaIndex is a convenient way to configure default components (LLM, embedding model, chunk size, etc.) that will be used by other LlamaIndex objects.
     * **Data Ingestion**: `SimpleDirectoryReader` loads documents from a directory.
-    * **Index Creation**: `VectorStoreIndex.from_documents` is LlamaIndex’s high-level method. It automatically handles chunking, vectorizing the chunks (using the `embed_model` configured in `Settings`), and creating an in-memory index.
+    * **Index Creation**: `VectorStoreIndex.from_documents` is LlamaIndex’s high-level method. It automatically handles chunking, vectorization of chunks (using the `embed_model` configured in `Settings`), and in-memory index creation.
     * **Query Engine**: `.as_query_engine()` creates a simple interface for asking questions against your index. When you call `.query()`, the engine vectorizes your question, retrieves the most relevant documents from the index, and sends them to the LLM (configured in `Settings`) along with the question to generate a response.
 
 ```python
+
+
 # Dependencies:
+
 # pip install llama-index llama-index-llms-openai-like llama-index-embeddings-huggingface
 
 import os
@@ -853,7 +857,7 @@ def setup_and_run_llamaindex():
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-    # 3. Apply global settings via LlamaIndex's Settings object
+    # 3. Apply configurations globally via LlamaIndex's Settings object
     Settings.llm = llm
     Settings.embed_model = embed_model
     print("   -> LLM and embedding model configured.")
@@ -892,9 +896,9 @@ if __name__ == "__main__":
     setup_and_run_llamaindex()
 ```
 
-### 8. Setting up the CLINE extension for VSCode
+### 8. Configuring the CLINE Extension for VSCode
 
-This tutorial guides you through configuring the CLINE extension in Visual Studio Code to use Cloud Temple's language models directly from your editor.
+This tutorial guides you through setting up the CLINE extension in Visual Studio Code to use Cloud Temple's language models directly from your editor.
 
 #### Configuration Steps
 
@@ -926,23 +930,26 @@ You can now select a model in CLINE and use it to generate code, answer question
 
 ## 💡 Advanced Examples
 
-You'll find in the GitHub repository below a collection of code examples and scripts demonstrating the various features and use cases of Cloud Temple's LLM as a Service (LLMaaS) offering:
+The GitHub directory below contains a collection of code examples and scripts demonstrating the various features and use cases of Cloud Temple's LLM as a Service (LLMaaS) offering:
 
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
-It includes practical guides for:
+You'll find practical guides for:
+
 - __Information Extraction and Text Analysis:__ Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
 
-- __Conversational Interaction and Chatbots:__ Development of conversational agents capable of dialogue, maintaining conversation history, using system instructions (system prompts), and invoking external tools.
+- __Conversational Interaction and Chatbots:__ Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
 
 - __Audio Transcription (Speech-to-Text):__ Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
 
 - __Text Translation:__ Translation of documents from one language to another, managing context across multiple segments to improve coherence.
 
-- __Model Management and Evaluation:__ Listing available language models via the API, checking their specifications, and running tests to compare performance.
+- __Model Management and Evaluation:__ Listing available language models via the API, reviewing their specifications, and running tests to compare performance.
 
 - __Real-Time Response Streaming:__ Demonstration of the ability to receive and display model responses progressively (token by token), essential for interactive applications.
 
-- __RAG Pipeline with In-Memory Knowledge Base:__ Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
+- __RAG Pipeline with In-Memory Knowledge Base:__ Educational RAG demonstrator illustrating the Retrieval-Augmented Generation workflow. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the process.
 
-- __RAG Pipeline with Vector Database (Qdrant):__ Complete and containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
+- __RAG Pipeline with Vector Database (Qdrant):__ Complete, containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
+
+- __OCR & Document Analysis (DeepSeek-OCR):__ Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).

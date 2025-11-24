@@ -5,6 +5,16 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 22 Novembre 2025 : Nouveautés LLMaaS et améliorations globales
+
+- **LLMaaS (OCR)** : Ajout d'une documentation complète pour **DeepSeek-OCR**, notre nouveau modèle spécialisé dans l'analyse de documents (PDF, images), capable d'extraire du texte structuré, des tableaux et des formules mathématiques.
+- **Multilingue** : Résolution de problèmes d'accessibilité sur les versions italienne et allemande de la documentation.
+- **Qualité** : Correction de l'affichage des blocs de code dans les tutoriels LLMaaS et rétablissement des images manquantes dans le guide de démarrage IaaS VMware (version italienne).
+
+### 20 Novembre 2025 : Mise à jour majeure PaaS OpenShift
+
+- **PaaS OpenShift (PR #194)** : Refonte et mise à jour complète de la documentation OpenShift, incluant de nouvelles captures d'écran et une traduction intégrale en anglais, espagnol, allemand et italien pour accompagner notre expansion internationale.
+
 ### 3 Novembre 2025 : Amélioration des tutoriels Kubernetes
 
 - **Managed Kubernetes** : Ajout d'un nouveau tutoriel sur le déploiement continu avec **ArgoCD** et l'approche GitOps.

@@ -71,9 +71,9 @@ print(f"Geschätzter Kostenbetrag: {total_cost:.6f}€")
 
 ## 🔒 Security and Compliance
 
-### SecNumCloud Certification
+### SecNumCloud Qualification
 
-The LLMaaS service is hosted on a technical infrastructure that holds the **SecNumCloud 3.2 certification** from ANSSI, ensuring:
+The LLMaaS service is hosted on a technical infrastructure that holds the **SecNumCloud 3.2 qualification** from ANSSI, ensuring:
 
 #### **Data Protection**
 - **End-to-end Encryption**: TLS 1.3 for all communications
@@ -81,7 +81,7 @@ The LLMaaS service is hosted on a technical infrastructure that holds the **SecN
 - **Isolation**: Dedicated environments per tenant
 
 #### **Digital Sovereignty**
-- **Hosting in France**: Cloud Temple data centers with certified compliance  
+- **Hosting in France**: Cloud Temple data centers with certifications  
 - **French Law**: Native GDPR compliance  
 - **No Exposure**: No data transfers to foreign clouds
 
@@ -104,18 +104,18 @@ Prompt analysis is a **native and integrated** security feature of the LLMaaS pl
 It is possible to disable this security analysis for very specific use cases, although this is not recommended. For any questions regarding this or to request deactivation, please contact Cloud Temple support.
 :::
 
-#### 1. Strukturelle Analyse (`check_structure`)
-- **Überprüfung auf fehlerhaftes JSON**: Das System prüft, ob der Prompt mit einem `{` beginnt und versucht, ihn als JSON zu parsen. Wenn der Parsevorgang erfolgreich ist und der JSON verdächtige Schlüsselwörter enthält (z. B. "system", "bypass"), oder wenn der Parsevorgang unerwartet fehlschlägt, kann dies auf eine Injektionsversuch hinweisen.
-- **Unicode-Normalisierung**: Der Prompt wird mittels `unicodedata.normalize('NFKC', prompt)` normalisiert. Wenn sich der ursprüngliche Prompt von seiner normalisierten Version unterscheidet, kann dies auf die Verwendung von täuschenden Unicode-Zeichen (Homoglyphen) hindeuten, um Filter zu umgehen. Beispielsweise "аdmin" (kyrillisch) anstelle von "admin" (lateinisch).
+#### 1. Structural Analysis (`check_structure`)
+- **Malformed JSON detection**: The system checks whether the prompt starts with a `{` and attempts to parse it as JSON. If parsing succeeds and the JSON contains suspicious keywords (e.g., "system", "bypass"), or if parsing fails unexpectedly, this may indicate an injection attempt.
+- **Unicode normalization**: The prompt is normalized using `unicodedata.normalize('NFKC', prompt)`. If the original prompt differs from its normalized version, this may indicate the use of deceptive Unicode characters (homoglyphs) to bypass filters. For example, "аdmin" (Cyrillic) instead of "admin" (Latin).
 
 #### 2. Detection von verdächtigen Mustern (`check_patterns`)
-- Das System verwendet reguläre Ausdrücke (`regex`), um bekannte Angriffsmuster für Prompt-Injektionen zu erkennen, und zwar in mehreren Sprachen (Französisch, Englisch, Chinesisch, Japanisch).
+- Das System verwendet reguläre Ausdrücke (`regex`), um bekannte Angriffsmuster bei Prompt-Attacken zu erkennen, und zwar in mehreren Sprachen (Französisch, Englisch, Chinesisch, Japanisch).
 - **Beispiele für erkannte Muster**:
     - **Systembefehle**: Schlüsselwörter wie „ignore the instructions“, „ignore instructions“, „忽略指令“, „指示を無視“.
-    - **HTML-Injektion**: Versteckte oder schädliche HTML-Tags, beispielsweise `<div hidden>`, `<hidden div>`.
-    - **Markdown-Injektion**: Schädliche Markdown-Links, beispielsweise `[text](javascript:...)`, `[text](data:...)`.
-    - **Wiederholte Sequenzen**: Übermäßige Wiederholung von Wörtern oder Sätzen wie „forget forget forget“, „oublie oublie oublie“.
-    - **Spezielle/Sonstige Zeichen**: Verwendung ungewöhnlicher Unicode-Zeichen oder Mischung verschiedener Schriftsysteme, um Befehle zu verschleiern (z. B. „s\u0443stème“).
+    - **HTML-Injektion**: Versteckte oder schädliche HTML-Tags, beispielsweise `<div caché>`, `<hidden div>`.
+    - **Markdown-Injektion**: Schädliche Markdown-Links, beispielsweise `[texte](javascript:...)`, `[text](data:...)`.
+    - **Wiederholte Sequenzen**: Übermäßige Wiederholung von Wörtern oder Sätzen wie „oublie oublie oublie“, „forget forget forget“.
+    - **Spezielle/Sonderzeichen/Mischformen**: Verwendung ungewöhnlicher Unicode-Zeichen oder das Mischen von Schriftsystemen, um Befehle zu verschleiern (z. B. „s\u0443stème“).
 
 #### 3. Behavioral Analysis (`check_behavior`)
 - The load balancer maintains a history of recent prompts.
@@ -129,12 +129,12 @@ This multi-layered approach enables the detection of a wide range of prompt atta
 ### Real-time Monitoring
 
 Access via **Cloud Temple Console**:
-- Usage metrics by model
+- Usage metrics per model
 - Latency and throughput graphs
 - Alerts on performance thresholds
 - Request history
 
-## 🌐 Integration und Ökosystem
+## 🌐 Integration and Ecosystem
 
 ### OpenAI-Kompatibilität
 
@@ -179,7 +179,7 @@ response = client_ct.chat.completions.create(
 - ✅ **Make** : Visuelle Integrationen
 - ✅ **Bubble** : Webanwendungen
 
-## 🔄 Lebenszyklus von Modellen
+## 🔄 Model Lifecycle
 
 ### Model Updates
 
@@ -196,71 +196,86 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
 ### Projektierter Lebenszyklus
 
-Die folgende Tabelle zeigt den prognostizierten Lebenszyklus unserer Modelle. Der Ökosystem der generativen KI entwickelt sich sehr schnell, was zu scheinbar kurzen Lebenszyklen führen kann. Unser Ziel ist es, Ihnen Zugang zu den leistungsstärksten Modellen derzeit zu gewähren.
+Die folgende Tabelle zeigt den prognostizierten Lebenszyklus unserer Modelle. Das Ökosystem der generativen KI entwickelt sich sehr schnell, was zu scheinbar kurzen Lebenszyklen führen kann. Unser Ziel ist es, Ihnen Zugang zu den leistungsstärksten Modellen derzeit zu gewähren.
 
 Dennoch verpflichten wir uns, die Modelle, die am häufigsten von unseren Kunden genutzt werden, über einen längeren Zeitraum zu erhalten. Für kritische Anwendungsfälle, die eine langfristige Stabilität erfordern, sind **erweiterte Support-Phasen** möglich. Zögern Sie nicht, den **Support zu kontaktieren**, um Ihre spezifischen Anforderungen zu besprechen.
 
-Dieser Plan dient lediglich als Richtwert und wird **zu Beginn jedes Quartals überarbeitet**.
+Dieser Plan dient lediglich als Richtwert und wird **zu Beginn jedes Quartals überprüft**.
 
 - **DMP (Datum der Markteinführung)**: Das Datum, ab dem das Modell in der Produktion verfügbar ist.
 - **DSP (Datum des Support-Endes)**: Das prognostizierte Datum, ab dem das Modell nicht mehr gewartet wird. Ein Vorlaufzeitraum von 3 Monaten wird eingehalten, bevor das Modell endgültig entfernt wird.
 
 | Modell                  | Herausgeber               | Phase      | DMP        | DSP        |
 | :---------------------- | :------------------------ | :--------- | :--------- | :--------- |
-| deepcoder:14b           | Agentica x Together AI    | Produktion | 13/06/2025 | 30/06/2026 |
+| deepcoder:14b           | Agentica x Together AI    | Produktion | 13/06/2025 | 30/12/2025 |
 | cogito:32b              | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
-| cogito:3b               | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
-| cogito:8b               | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
+| cogito:3b               | Deep Cogito               | Produktion | 13/06/2025 | 30/12/2025 |
+| cogito:8b               | Deep Cogito               | Produktion | 13/06/2025 | 30/12/2025 |
 | deepseek-r1:14b         | DeepSeek AI               | Produktion | 13/06/2025 | 31/12/2025 |
 | deepseek-r1:32b         | DeepSeek AI               | Produktion | 13/06/2025 | 31/12/2025 |
+| deepseek-ocr            | Qwen Team                 | Produktion | 22/11/2025 | 31/12/2026 |
 | gemma3:12b              | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| gemma3:1b               | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| gemma3:27b              | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| gemma3:4b               | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
+| gemma3:1b               | Google                    | Produktion | 13/06/2025 | 31/12/2025 |
+| gemma3:27b              | Google                    | Produktion | 13/06/2025 | 30/03/2026 |
+| gemma3:4b               | Google                    | Produktion | 13/06/2025 | 31/12/2025 |
+| gpt-oss:120b            | Qwen Team                 | Produktion | 11/11/2025 | 30/06/2026 |
+| gpt-oss:20b             | Qwen Team                 | Produktion | 08/08/2025 | 30/03/2026 |
+| embeddinggemma:300m     | Google                    | Produktion | 10/09/2025 | 31/12/2026 |
 | granite-embedding:278m  | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
+| qwen3-embedding:0.6b    | Qwen Team                 | Produktion | 18/10/2025 | 31/12/2026 |
 | granite3-guardian:2b    | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
 | granite3-guardian:8b    | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
 | granite3.2-vision:2b    | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
 | granite3.3:2b           | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3.3:8b           | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
+| granite3.3:8b           | IBM                       | Produktion | 13/06/2025 | 31/12/2025 |
+| granite4-small-h:32b    | IBM                       | Produktion | 03/10/2025 | 30/09/2026 |
+| granite4-tiny-h:7b      | IBM                       | Produktion | 03/10/2025 | 30/09/2026 |
 | llama3.3:70b            | Meta                      | Produktion | 13/06/2025 | 31/12/2026 |
-| magistral:24b           | Mistral AI                | Produktion | 13/06/2025 | 31/12/2026 |
-| mistral-small3.1:24b    | Mistral AI                | Produktion | 13/06/2025 | 31/12/2026 |
-| mistral-small3.2:24b    | Mistral AI                | Produktion | 23/06/2025 | 30/03/2026 |
-| devstral:24b            | Mistral AI & All Hands AI | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:32b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:3b            | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:72b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:7b            | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:0.6b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:1.7b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:14b               | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:30b-a3b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:4b                | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:8b                | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:32b               | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:235b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
+| magistral:24b           | Mistral AI                | Produktion | 13/06/2025 | 30/03/2026 |
+| mistral-small3.1:24b    | Mistral AI                | Produktion | 13/06/2025 | 31/12/2025 |
+| mistral-small3.2:24b    | Mistral AI                | Produktion | 23/06/2025 | 30/06/2026 |
+| devstral:24b            | Mistral AI & All Hands AI | Produktion | 13/06/2025 | 30/03/2026 |
+| qwen2.5vl:32b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen2.5vl:3b            | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen2.5vl:72b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen2.5vl:7b            | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3:0.6b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3:1.7b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3:14b               | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3:30b-a3b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3-2507:30b-a3b      | Qwen Team                 | Produktion | 30/08/2025 | 30/03/2026 |
+| qwen3-2507-think:4b     | Qwen Team                 | Produktion | 31/08/2025 | 30/03/2026 |
+| qwen3-2507:4b           | Qwen Team                 | Produktion | 31/08/2025 | 30/03/2026 |
+| qwen3:4b                | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3:8b                | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3-coder:30b         | Qwen Team                 | Produktion | 02/08/2025 | 30/03/2026 |
+| qwen3-2507:235b         | Qwen Team                 | Produktion | 02/08/2025 | 30/03/2026 |
+| qwen3:32b               | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
 | qwq:32b                 | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| qwen3-next:80b          | Qwen Team                 | Produktion | 04/11/2025 | 30/03/2026 |
 
 ### Deprecated Models
 
 The world of LLMs is evolving rapidly. To ensure our customers have access to the most advanced technologies, we regularly deprecate models that no longer meet current standards or are no longer in use. The models listed below are no longer available on the public platform. However, they can be reactivated for specific projects upon request.
 
-| Model              | Provider              | Status   | Deprecation Date     |
-| :----------------- | :-------------------- | :------- | :------------------- |
-| cogito:14b         | Deep Cogito           | Deprecated | 17/10/2025           |
-| deepseek-r1:671b   | DeepSeek AI           | Deprecated | 17/10/2025           |
-| deepseek-r1:70b    | DeepSeek AI           | Deprecated | 17/10/2025           |
-| foundation-sec:8b  | Foundation AI — Cisco | Deprecated | 17/10/2025           |
-| granite3.1-moe:3b  | IBM                   | Deprecated | 17/10/2025           |
-| llama3.1:8b        | Meta                  | Deprecated | 17/10/2025           |
-| phi4-reasoning:14b | Microsoft             | Deprecated | 17/10/2025           |
-| lucie-instruct:7b  | OpenLLM-France        | Deprecated | 17/10/2025           |
-| qwen2.5:0.5b       | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:1.5b       | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:14b        | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:32b        | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:3b         | Qwen Team             | Deprecated | 17/10/2025           |
+| Model                    | Provider              | Status   | Deprecation Date     |
+| :----------------------- | :-------------------- | :------- | :------------------- |
+| cogito:14b               | Deep Cogito           | Deprecated | 17/10/2025           |
+| deepseek-r1:671b         | DeepSeek AI           | Deprecated | 17/10/2025           |
+| deepseek-r1:70b          | DeepSeek AI           | Deprecated | 17/10/2025           |
+| foundation-sec:8b        | Foundation AI — Cisco | Deprecated | 17/10/2025           |
+| granite3.1-moe:3b        | IBM                   | Deprecated | 17/10/2025           |
+| llama3.1:8b              | Meta                  | Deprecated | 17/10/2025           |
+| phi4-reasoning:14b       | Microsoft             | Deprecated | 17/10/2025           |
+| lucie-instruct:7b        | OpenLLM-France        | Deprecated | 17/10/2025           |
+| qwen2.5:0.5b             | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:1.5b             | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:14b              | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:32b              | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:3b               | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen3:235b               |                       | Deprecated | 22/11/2025           |
+| qwen3-2507-think:30b-a3b |                       | Deprecated | 14/11/2025           |
+| gemma3:12b               |                       | Deprecated | 21/11/2025           |
 
 ## 💡 Best Practices
 
@@ -285,7 +300,7 @@ Die Kostenkontrolle basiert auf einer intelligenten Nutzung von Tokens und Model
         model = "deepseek-r1:70b"
     ```
 
-2.  **Context-Management**: Der Gesprächsverlauf (`messages`) wird bei jedem Aufruf zurückgesendet und verbraucht Eingabetokens. Bei langen Gesprächen sollten Strategien wie Zusammenfassung oder Fensterung in Betracht gezogen werden, um nur relevante Informationen zu speichern.
+2.  **Context-Management**: Der Gesprächsverlauf (`messages`) wird bei jedem Aufruf zurückgesendet und verbraucht Eingabetokens. Bei langen Gesprächen sollten Strategien wie Zusammenfassung oder Fensterung (windowing) in Betracht gezogen werden, um nur relevante Informationen zu speichern.
     ```python
     # Bei langen Gesprächen kann man die ersten Austausche zusammenfassen.
     messages = [
@@ -298,7 +313,7 @@ Die Kostenkontrolle basiert auf einer intelligenten Nutzung von Tokens und Model
 
 3.  **Beschränkung der Ausgabetokens**: Verwenden Sie stets den Parameter `max_tokens`, um zu lange und kostspielige Antworten zu vermeiden. Legen Sie eine angemessene Obergrenze basierend auf Ihren Erwartungen fest.
     ```python
-    # Maximal 100 Wörter im Zusammenfassung erfordern.
+    # Maximal 100 Wörter im Zusammenfassungsergebnis anfordern.
     response = client.chat.completions.create(
         model="granite3.3:8b",
         messages=[{"role": "user", "content": "Fassen Sie dieses Dokument zusammen..."}],
@@ -328,7 +343,7 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie API-Aufrufe ver
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming für die Benutzererfahrung (UX)**: Für Benutzeroberflächen (Chatbots, Assistenten) ist Streaming unerlässlich. Es ermöglicht die Echtzeit-Anzeige der Modellantwort Buchstabe für Buchstabe, was den Eindruck einer sofortigen Reaktionsfähigkeit vermittelt, anstatt auf die vollständige Antwort warten zu müssen.
+2.  **Streaming für die Benutzererfahrung (UX)**: Für Benutzeroberflächen (Chatbots, Assistenten) ist Streaming unerlässlich. Es ermöglicht die Echtzeit-Anzeige der Modellantwort Buchstabe für Buchstabe, wodurch der Eindruck einer sofortigen Reaktionsfähigkeit entsteht, anstatt auf die vollständige Antwort warten zu müssen.
     ```python
     # Zeigt die Antwort in Echtzeit in einer Benutzeroberfläche an
     response_stream = client.chat.completions.create(
@@ -346,7 +361,7 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie API-Aufrufe ver
 
 Die Sicherheit Ihrer Anwendung ist von entscheidender Bedeutung, besonders wenn Sie Benutzereingaben verarbeiten.
 
-1.  **Validierung und Bereinigung von Eingaben (Sanitization)**: Vertrauen Sie niemals auf Benutzereingaben. Bereinigen Sie diese vor der Übertragung an die API, um potenziell schädlichen Code oder Anweisungen zur „Prompt-Injektion“ zu entfernen. Begrenzen Sie außerdem die Länge, um Missbrauch zu verhindern.
+1.  **Validierung und Bereinigung von Eingaben (Sanitization)**: Vertrauen Sie niemals auf Benutzereingaben. Bereinigen Sie diese vor der Übertragung an die API, um jeglichen potenziell schädlichen Code oder Anweisungen zur "Prompt-Injektion" zu entfernen. Begrenzen Sie außerdem die Länge, um Missbrauch zu verhindern.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Einfaches Beispiel: Entfernen von Code-Formatierungen und Begrenzung der Länge.
@@ -355,7 +370,7 @@ Die Sicherheit Ihrer Anwendung ist von entscheidender Bedeutung, besonders wenn 
         return cleaned[:2000]  # Begrenzt die Länge auf 2000 Zeichen
     ```
 
-2.  **Robuste Fehlerbehandlung**: Umgeben Sie alle API-Aufrufe immer mit `try...except`-Blöcken, um Netzwerkfehler, API-Fehler (z. B. 429 Rate Limit, 500 Internal Server Error) zu behandeln und eine degradierte, aber funktionale Benutzererfahrung zu gewährleisten.
+2.  **Robuste Fehlerbehandlung**: Umgeben Sie alle API-Aufrufe stets mit `try...except`-Blöcken, um Netzwerkfehler, API-Fehler (z. B. 429 Rate Limit, 500 Internal Server Error) zu behandeln und eine degradierte, aber funktionale Benutzererfahrung zu gewährleisten.
     ```python
     from openai import APIError, APITimeoutError
 
