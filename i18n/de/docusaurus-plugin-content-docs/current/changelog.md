@@ -5,14 +5,24 @@ sidebar_position: 2
 
 # Change Tracking
 
+### November 22, 2025: New LLMaaS Features and General Improvements
+
+- **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
+- **Multilingual**: Resolved accessibility issues in the Italian and German versions of the documentation.
+- **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
+
+### November 20, 2025: Major PaaS OpenShift Update
+
+- **PaaS OpenShift (PR #194)**: Complete overhaul and update of the OpenShift documentation, including new screenshots and full translation into English, Spanish, German, and Italian to support our international expansion.
+
 ### 3 November 2025: Enhancements to Kubernetes Tutorials
 
-- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment with **ArgoCD** and the GitOps approach.
+- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
 - **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
 
 ### 28 October 2025: New Managed Kubernetes Documentation and Various Improvements
 
-- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes an overview of the service, technical concepts, a quick-start guide, a first tutorial, and a RACI matrix. Content has been enriched to better meet the expectations of different user profiles.
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes an overview of the service, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. The content has been enriched to better meet the expectations of different user profiles.
 - **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
 - **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
 
@@ -50,8 +60,8 @@ sidebar_position: 2
 - Correction and validation of RAG pipelines using FAISS and Qdrant.
 - Enhancement of tutorials with more detailed technical explanations.
 - Addition of a section on prompt security and model lifecycle within the concepts.
-- Improved RAG explanation page with diagrams and details on embedding models.
-- Updated API documentation, quick start guide, and service presentation.
-- Added pricing for the Audio Transcription endpoint.
-- Added the projected model lifecycle roadmap.
-- Added the responsibility matrix for the LLMaaS offering.
+- Improvement of the RAG explanation page with diagrams and details on embedding models.
+- Update of the API documentation, quick start guide, and service presentation.
+- Addition of pricing for the Audio Transcription endpoint.
+- Inclusion of the projected model lifecycle roadmap.
+- Addition of the responsibility matrix for the LLMaaS offering.
