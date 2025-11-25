@@ -82,7 +82,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 #### IaaS OpenSource
 
 - `cloudtemple_compute_iaas_opensource_virtual_machine` : Machine virtuelle
-- `cloudtemple_compute_iaas_opensource_virtual_disk` : Disque
+- `cloudtemple_compute_iaas_opensource_virtual_disk` : Disque virtuel
 - `cloudtemple_compute_iaas_opensource_network_adapter` : Interface réseau 
 - `cloudtemple_compute_iaas_opensource_replication_policy` : Politique de réplication
 
