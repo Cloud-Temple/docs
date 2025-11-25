@@ -155,7 +155,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Backup',
+              label: 'OpenSource Backup',
               items: [
                 'iaas_opensource/tutorials/backup/iaas_opensource_backup',
               ],
@@ -177,7 +177,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Backup',
+              label: 'IaaS Backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
