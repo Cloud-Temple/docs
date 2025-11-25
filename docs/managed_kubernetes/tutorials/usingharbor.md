@@ -1,6 +1,5 @@
 ---
 title: Utiliser Harbor
-description: Utiliser Harbor (registre OCI) avec Managed Kubernetes Cloud Temple: login, push/pull, secrets d’image, Helm OCI, signatures, CI/CD.
 ---
 
 Harbor est un registre d’artefacts OCI (images de conteneur, charts Helm, SBOM, signatures, etc.) proposant une gestion fine des projets, un contrôle d’accès, des scans de vulnérabilités, des politiques de rétention et la gestion des signatures. Ce guide explique comment l’utiliser avec Cloud Temple Managed Kubernetes, de la connexion au registre jusqu’à l’intégration dans vos déploiements Kubernetes et vos pipelines CI/CD.
@@ -317,11 +316,3 @@ jobs:
 - Rétention stricte, suppression programmée des artefacts obsolètes
 - Journalisation/audit: exporter et conserver les logs d’accès/activité
 - Intégration SBOM et signatures pour la chaîne d’approvisionnement
-
-## Références
-
-- Concepts Managed Kubernetes: [../concepts.md](../concepts.md)
-- Quickstart Managed Kubernetes: [../quickstart.md](../quickstart.md)
-- Helm OCI Docs: https://helm.sh/docs/topics/registries/
-- Cosign: https://github.com/sigstore/cosign
-- Harbor Docs: https://goharbor.io/docs/
