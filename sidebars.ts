@@ -177,7 +177,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'IaaS Backup',
+              label: 'VMware Backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
