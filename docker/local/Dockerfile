@@ -13,3 +13,4 @@ RUN yarn add @docusaurus/faster docusaurus-plugin-search-local remark-math@6 reh
 COPY . .
 
 CMD ["yarn", "start", "--host", "0.0.0.0"]
+# CMD ["sh", "-c", "yarn build && yarn serve --host 0.0.0.0 --port 3000"] # DevNote : Use this to test all translated versions
