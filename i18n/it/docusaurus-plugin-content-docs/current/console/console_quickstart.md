@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Prerequisiti
 
@@ -21,7 +22,7 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 ## Accesso al tuo tenant Cloud Temple
 
-Shiva è accessibile tramite l'URL riportata di seguito: [Shiva](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via e-mail.
+Shiva è accessibile tramite l'URL seguente: [Shiva](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via email.
 
 La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organisations) in cui è stato creato il tuo utente.  
 Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
@@ -31,7 +32,7 @@ Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
 Successivamente verrai reindirizzato a una pagina in cui ti verrà chiesto di autenticarti.  
 Una volta effettuato l'accesso, arriverai a questa pagina.
 
-Qui troverai l'insieme delle metriche relative ai prodotti sottoscritti nel tuo ambito. In caso di problemi relativi ai tuoi prodotti VMware e/o OpenIaaS, verranno visualizzate delle avvisi, la cui colorazione indica il loro livello di gravità.
+Qui troverai l'insieme delle metriche relative ai prodotti sottoscritti nel tuo ambito. In caso di problemi relativi ai tuoi prodotti VMware e/o OpenIaaS, verranno visualizzate delle notifiche; il colore è correlato alla gravità dell'evento.
 
 <img src={shivaHome} />
 
@@ -58,13 +59,15 @@ La prima fase consiste nell'identificare il tipo di richiesta di supporto:
 - Richiedere un consiglio sull'utilizzo di un prodotto (fuori dal caso di incidente),
 - Richiedere assistenza legata al tuo account cliente,
 - Segnalare un incidente o richiedere supporto tecnico.
-- Richiedere l'assistenza di un servizio professionale (disponibilità di un ingegnere Cloud Temple per un problema specifico).
+- Richiedere l'assistenza di un servizio professionale (messaggio a disposizione di un ingegnere Cloud Temple su una problematica).
 
 <img src={shivaSupport_01} />
 
 Successivamente, potrai fornire ulteriori dettagli e allegare file (immagini o log, ad esempio).
 
-Il committente può inoltre specificare un livello di criticità (P1 a P4) nella descrizione del ticket, nel caso di un incidente di sicurezza, come indicato di seguito:
+Il committente può inoltre specificare un livello di criticità (P1 a P5) nella descrizione del ticket, nel caso di un incidente di sicurezza, come indicato di seguito:
+
+<img src={shivaSupportCriticities} />
 
 __CRITICO (P1)__:
 
@@ -97,6 +100,10 @@ __BASSO (P4)__:
 - Domanda di conformità
 - Bisogno di chiarimenti tecnici
 
+__SERVIZIO OPERATIVO (P5)__:
+
+- Servizio operativo senza rischi immediati
+
 <img src={shivaSupport_02} />
 
 Una volta inviata la tua richiesta, è possibile recuperare le tue richieste tramite __l'icona 'boa'__ situata in alto a destra dello schermo:
@@ -115,22 +122,21 @@ Le funzionalità sono raggruppate per modulo. Questi includono principalmente:
 - L'accesso ai __servizi aggiuntivi__ (Bastion, monitoraggio, ...),  
 - L'__amministrazione della propria organizzazione__ (Gestione dei tenant, dei diritti, ...).
 
-L'attivazione di un modulo per un utente dipende dai diritti assegnati. Ad esempio, il modulo __'Ordine'__ non sarà disponibile se l'utente non dispone del diritto __'ORDER'__.
+L'attivazione di un modulo per un utente dipende dai diritti dell'utente. Ad esempio, il modulo __'Ordine'__ non sarà disponibile se l'utente non dispone del diritto __'ORDER'__.
 
 Di seguito una presentazione dei diversi moduli disponibili. Nuovi moduli vengono regolarmente aggiunti alla console:
-
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__: consente di ottenere rapidamente una panoramica sul __totale delle risorse di calcolo e archiviazione__, sulle statistiche della __protezione dei dati__ e su una __sintesi dei ticket di supporto__,  
-- __Inventario__: consente di visualizzare l'insieme delle proprie risorse di tipo __'macchine virtuali'__. Se vengono utilizzati i __tag__, permette di visualizzare le risorse raggruppate per __tag__ (ad esempio, vista aziendale, vista applicativa, ...),  
+- __Dashboard__: permette di ottenere rapidamente una visione generale sul __totale delle risorse di calcolo e archiviazione__, sulle statistiche della __protezione dei dati__ e su una __sintesi dei ticket di supporto__,  
+- __Inventario__: permette di visualizzare l'insieme delle proprie risorse di tipo __'macchine virtuali'__. Se vengono utilizzati i __tag__, permette di visualizzare le risorse raggruppate per __tag__ (ad esempio, vista aziendale, vista applicativa, ...),  
 - __Infogestione__: fornisce l'accesso al tracciamento delle proprie __richieste di supporto__ e alla __metodologia dei servizi__,  
-- __IaaS__: consente il __pilotaggio delle infrastrutture IaaS VMware__ (macchine virtuali, cluster, iperhost, replicazioni, backup, ...),  
-- __OpenIaaS__: consente il __pilotaggio delle risorse Xen Orchestra__ (macchine virtuali, backup, ...),  
-- __OpenShift__: consente il pilotaggio dell'**architettura PaaS RedHat OpenShift** e la gestione dei container nelle 3 zone di disponibilità della piattaforma.  
+- __IaaS__: permette il __pilotaggio delle infrastrutture IaaS VMware__ (macchine virtuali, cluster, iperhost, replicazioni, backup, ...),  
+- __OpenIaaS__: permette il __pilotaggio delle risorse Xen Orchestra__ (macchine virtuali, backup, ...),  
+- __OpenShift__: permette il pilotaggio dell'**architettura PaaS RedHat OpenShift** e la gestione dei container nelle 3 zone di disponibilità della piattaforma.  
 - __Bastion__: permette il deployment e il pilotaggio di appliance bastion SSH/RDP nei propri reti,  
-- __Rete__: consente il pilotaggio dei __reti di livello 2 e 3__, delle __IP pubbliche__ e dei __circuiti telecom__,  
-- __Collocamento__: offre la visualizzazione degli apparati situati nelle zone di __collocamento condivise o dedicate__,  
+- __Rete__: permette il pilotaggio dei __reti di livello 2 e 3__, delle __IP pubbliche__ e dei propri __circuiti telecomunicazioni__,  
+- __Colocation__: offre la visione sugli apparati posizionati nelle zone di __colocazione condivisa o dedicata__,  
 - __Ordine__: permette l'ordine di risorse e il tracciamento dei deployment,  
 - __Amministrazione__: raggruppa le funzionalità di amministrazione degli utenti e dei tenant, nonché l'accesso alla registrazione globale.
 </div>
@@ -141,7 +147,7 @@ I pictogrammi __'NEW'__ indicano che il prodotto in questione è stato provision
 __Registrazione - Tracciamento delle attività__
 =====================================
 
-La pagina delle attività è pensata per fornire una visibilità completa su tutte le operazioni di lettura e scrittura eseguite all'interno della console, garantendo così una tracciabilità e una sicurezza maggiori. Mette in evidenza i due principali tab: Recenti e Archiviati.
+La pagina delle attività è pensata per fornire una visibilità completa su tutte le operazioni di lettura e scrittura effettuate all'interno della console, garantendo così una tracciabilità e una sicurezza maggiori. Essa mette in evidenza i due principali tab: Recenti e Archiviati.
 
 <img src={shivaLogs} />
 
@@ -182,7 +188,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Nota di Conformità__
 
-In conformità con la qualifica SecNumCloud, il periodo di conservazione degli eventi della console Cloud Temple è di almeno __6 mesi__, garantendo così il rispetto dei requisiti di sicurezza e tracciabilità.
+In conformità con la qualifica SecNumCloud, la conservazione degli eventi della console Cloud Temple è di durata minima di __6 mesi__, garantendo così il rispetto dei requisiti di sicurezza e tracciabilità.
 
 ## Consulta degli ultimi aggiornamenti
 
@@ -192,10 +198,10 @@ Fai clic sull'icona __'Novità'__ nell'angolo in basso a sinistra della barra ve
 
 ## Accesso alle funzionalità utente tramite l'API
 
-L'accesso a tutte le funzionalità della console Shiva è possibile tramite l'API Shiva. Puoi trovare ulteriori dettagli sui verbi e sulle configurazioni tramite __'Profilo'__ e __'API'__:
+L'accesso a tutte le funzionalità della console Shiva è possibile tramite l'API Shiva. È possibile trovare ulteriori informazioni sui verbi e sulle configurazioni tramite __'Profilo'__ e __'API'__:
 
 <img src={shivaOnboard_008} />
 
-## Terraform Provider
+## Provider Terraform
 
 Cloud Temple mette a vostra disposizione un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) per gestire la vostra piattaforma Cloud in modalità *"as code"*.

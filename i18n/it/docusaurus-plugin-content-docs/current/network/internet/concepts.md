@@ -77,7 +77,7 @@ L'ordine degli indirizzi IPv4 può essere effettuato dal menu __*'IP pubbliche'*
 
 | Riferimento                   | Unità  | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
-| Rete - IPv4 Pubblica dedicata | 1 IPv4 | csp:(region):network:ipv4:v2 |
+| Rete - IPv4 Pubblica dedicata | IPv4/32 | csp:(region):network:ipv4:v2 |
 
 
 
@@ -89,7 +89,7 @@ L'ordine dei prefissi IPv6 avviene dal menu __*'IP pubblici'*__ del menu Rete ne
 
 | Riferimento                            | Unità   | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |
-| Rete - Intervallo IPv6 Pubblico Dedicato | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Rete - Intervallo IPv6 Pubblico Dedicato | IPv6/48 | csp:(region):network:ipv6:v1 |
 
 
 

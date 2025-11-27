@@ -16,6 +16,7 @@ import shivaMetric_010 from './images/shiva_metric_010.png'
 import shivaMetric_011 from './images/shiva_metric_011.png'
 import shivaMetric_012 from './images/shiva_metric_012.png'
 import shivaMetric_013 from './images/shiva_metric_013.png'
+import shivaMetric_014 from './images/shiva_metric_014.png'
 import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
@@ -60,13 +61,16 @@ Su questa scheda sono presenti alcune delle metriche già disponibili nel dashbo
 
 #### Calcolo
 
-Su questa scheda è possibile visualizzare il numero di **AZ**, di **Cluster**, di **ESX**, l'**emissione di carbonio**, il **consumo**, nonché 7 grafici che forniscono una panoramica molto visiva del vostro ambiente VMware.
+Su questa scheda è possibile visualizzare il numero di **AZ**, di **Cluster**, di **ESX**, l'**emissione di carbonio**, la **stima del consumo**, nonché 7 grafici che forniscono una panoramica molto visiva del vostro ambiente VMware. La stima del consumo in kWh è calcolata sulla media delle rilevazioni che coprono il periodo selezionato, espressa su base oraria.
 
 È possibile selezionare l'intervallo di date da considerare, nonché il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero ambito). Ad esempio, scegliendo **Host**:
 
 <img src={shivaMetric_001} />
 
 <img src={shivaMetric_002} />
+
+Passando il mouse su ciascuno dei grafici, vengono visualizzati i dettagli dei nomi delle risorse e i loro valori. Cliccando su questi grafici, si apre un piccolo tooltip che permette di consultare più facilmente i dettagli corrispondenti alla data selezionata:
+<img src={shivaMetric_014} />
 
 #### Archiviazione
 

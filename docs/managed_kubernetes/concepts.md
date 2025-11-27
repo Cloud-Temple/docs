@@ -27,16 +27,16 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
     Pour les services "non web", un load-balancer **metalLB** permet d'exposer des services en interne ou sur des IP publiques. (ce qui permet de déployer des autres ingresses, comme par exemple un WAF)
 
 
-- **Stockage distribué Rook-Ceph** : pour le stockage des volumes persistents (PV), un stockage distribué **Ceph** OpenSource est intégré à la plateforme. Il permet d'utiliser les *storage-classes* *ceph-block*, *ceph-bucket*, et *ceph-filesystem*. Un stockage a **7500 IOPS/To** est utilisé, permettant des performances élevées. Dans les déploiements de production (sur 3 AZ), les noeuds de stockage sont dédiés (1 noeud par AZ) ; dans les déploiements hors-production (1 AZ), le stockage est mutualisé avec les workers nodes.
+- **Stockage distribué Rook-Ceph** : pour le stockage des volumes persistents (PV), un stockage distribué **Ceph** OpenSource est intégré à la plateforme. Il permet d'utiliser les *storage-classes* *ceph-block*, *ceph-bucket*, et *ceph-filesystem*. Un stockage a **7500 IOPS** est utilisé, permettant des performances élevées. Dans les déploiements de production (sur 3 AZ), les noeuds de stockage sont dédiés (1 noeud par AZ) ; dans les déploiements hors-production (1 AZ), le stockage est mutualisé avec les workers nodes.
 
 - **Cert-Manager**: le gestionnaire de certificats OpenSource **Cert-Manager** est intégré nativement dans la plateforme.
 
-- **ArgoCD**: nous utilisons **ArgoCD** pour les déploiements automatisés des différents composants via une chaine de **CI/CD**. 
+- **ArgoCD** est à votre disposition pour vos déploiements automatisés via une chaine de **CI/CD**. 
 
-- Stack **Prometheus** (Prometheus, Grafana, Promtail, Loki): les clusters Managed kubernetes sont livrés en standard avec une stack OpenSource complète **Prometheus** pour l'observabilité, incluant:
+- Stack **Prometheus** (Prometheus, Grafana, Loki): les clusters Managed kubernetes sont livrés en standard avec une stack OpenSource complète **Prometheus** pour l'observabilité, incluant:
     - **Prometheus**
     - **Grafana**, avec de nombreux dashboards
-    - **Loki** et **PromTail** : les journaux de la plateforme sont exportés vers le stockage S3 Cloud-Temple (et intégrés dans Grafana).
+    - **Loki** : les journaux de la plateforme sont exportés vers le stockage S3 Cloud-Temple (et intégrés dans Grafana).
 
     <img src={grafana} />
 

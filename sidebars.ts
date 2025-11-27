@@ -153,6 +153,13 @@ const sidebars: SidebarsConfig = {
                 'iaas_opensource/tutorials/high_availability/manage_vm',
               ],
             },
+            {
+              type: 'category',
+              label: 'OpenSource Backup',
+              items: [
+                'iaas_opensource/tutorials/backup/iaas_opensource_backup',
+              ],
+            },
           ],
         },
       ],
@@ -170,7 +177,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Backup',
+              label: 'VMware Backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
@@ -193,7 +200,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'PaaS Openshift',
+          label: 'PaaS OpenShift',
           items: [
             'paas_openshift/paas_openshift',
             'paas_openshift/concepts',
@@ -226,6 +233,7 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/tutorials/usingkubecosts',
             'managed_kubernetes/tutorials/usingkasten',
             'managed_kubernetes/tutorials/usingargocd',
+            'managed_kubernetes/tutorials/usingharbor',
           ],
         },
           ],
@@ -243,6 +251,7 @@ const sidebars: SidebarsConfig = {
         'llmaas/api',
         'llmaas/models',
         'llmaas/tutorials',
+        'llmaas/ocr',
         'llmaas/faq',
       ],
     },
@@ -310,6 +319,16 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Provider Terraform',
+      items: [
+        'terraform/terraform',
+        'terraform/concepts',
+        'terraform/quickstart',
+        'terraform/tutorials',
       ],
     },
     {

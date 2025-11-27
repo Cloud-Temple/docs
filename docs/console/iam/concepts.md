@@ -215,7 +215,7 @@ Dernière mise à jour le: 16/07/2025
 | object-storage_iam_management                 | Permet de gérer les compte de stockage sur le produit S3                                                                       |
 | object-storage_read                           | Permet de voir les buckets et les configurations des buckets                                                                   |
 | object-storage_write                          | Permet d'éditer les buckets et les configurations des buckets                                                                  |
-| openshift_management                          | Permet de se connecter sur les plateforms Openshift (scopé au tenant)                                                          |
+| openshift_management                          | Permet de se connecter sur les plateforms OpenShift (scopé au tenant)                                                          |
 | support_management                            | consultation de l'ensemble des tickets support du tenant                                                                       |
 | support_read                                  | Consultation de ses tickets support du tenant                                                                                  |
 | support_write                                 | Création d'un ticket support sur le tenant                                                                                     |
