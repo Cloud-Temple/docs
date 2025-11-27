@@ -77,19 +77,19 @@ Es ist möglich, die Ihnen zugewiesenen Adressbereiche in diesem Menü anzuzeige
 
 | Referenz                     | Einheit  | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
-| Netzwerk - Dedicated IPv4-Öffentlich | 1 IPv4 | csp:(region):network:ipv4:v2 |
+| Netzwerk - Dedicated IPv4-Öffentlich | IPv4/32 | csp:(region):network:ipv4:v2 |
 
 
 
 ## IPv6-Blöcke
 
-Die IPv6-Präfixe werden über das Menü __*'Öffentliche IPs'*__ im Netzwerk-Menü in der grünen Leiste auf der linken Seite über den Button __*"Adressen IPv4 oder IPv6-Präfixe bestellen"*__ bestellt.
+Die IPv6-Präfixe werden über das Menü __*'Öffentliche IPs'*__ im Netzwerk-Menü in der grünen Leiste auf der linken Seite über den Button __*"IPv4-Adressen oder IPv6-Präfixe bestellen"*__ bestellt.
 
 Es ist möglich, die Ihnen zugewiesenen Präfixe in diesem Menü anzuzeigen.
 
 | Referenz                             | Einheit   | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |
-| Netzwerk - Dedicated IPv6-Öffentliche Bereiche | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Netzwerk - Dedicated IPv6-Öffentliche Bereiche | IPv6/48 | csp:(region):network:ipv6:v1 |
 
 
 

@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Requis previos
 
@@ -64,7 +65,9 @@ La primera etapa consiste en identificar el tipo de solicitud de soporte:
 
 A continuación, tiene la posibilidad de proporcionar detalles adicionales e incluir archivos (por ejemplo, imágenes o registros).
 
-El cliente también puede especificar un nivel de criticidad (P1 a P4) en la descripción del ticket, en caso de un incidente de seguridad, tal como:
+El cliente también puede especificar un nivel de criticidad (P1 a P5) en la descripción del ticket, en caso de un incidente de seguridad, tal como:
+
+<img src={shivaSupportCriticities} />
 
 __CRÍTICO (P1)__:
 
@@ -96,6 +99,10 @@ __BAJO (P4)__:
 - Anomalía sin impacto directo
 - Consulta de conformidad
 - Necesidad de aclaración técnica
+
+__SERVICIO OPERATIVO (P5)__:
+
+- Servicio operativo sin riesgo inmediato
 
 <img src={shivaSupport_02} />
 
@@ -132,11 +139,6 @@ A continuación se presenta una descripción de los diferentes módulos disponib
 - __Colocación__: ofrece una vista de los equipos ubicados en zonas de __colocación compartida o dedicada__,
 - __Pedido__: permite realizar pedidos de recursos y seguir los despliegues,
 - __Administración__: agrupa las funciones de administración de usuarios y tenants, así como el acceso a la __registro global__.
-- __Bastión__: Permite desplegar y gestionar appliances bastión SSH/RDP en sus redes,
-- __Red__: permite el piloto de los __redes de nivel 2 y 3__, de las __IP públicas__ y de sus __circuitos de telecomunicaciones__,
-- __Colocación__: Ofrece la vista sobre los equipos ubicados en zonas de __colocación compartida o dedicada__,
-- __Pedido__: Permite realizar pedidos de recursos y seguir los despliegues,
-- __Administración__: Agrupa las funciones de administración de usuarios y tenants, así como el acceso a la bitácora global.
 </div>
 </div>
 Los pictogramas __'NUEVO'__ indican que el producto correspondiente ha sido provisionado pero aún no está calificado como __oferta SecNumCloud__, y los pictogramas __'BETA'__ indican que el producto ha sido provisionado y acaba de ser calificado como __oferta SecNumCloud__.
@@ -162,14 +164,14 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 - Operaciones durante un período más largo
 - Operaciones archivadas para trazabilidad y cumplimiento
 
-#### __Information displayed__
+#### __Información mostrada__
 
- + Date and Time
+ + Fecha y Hora
 
-- Operation type
-  - Status
-- User
-- Operation description
+- Tipo de operación
+  - Estado
+- Usuario
+- Descripción de la operación
 
 #### __Funcionalidad__
 
@@ -199,6 +201,6 @@ El acceso a todas las funciones de la consola Shiva es posible a través de la A
 
 <img src={shivaOnboard_008} />
 
-## Terraform Provider
+## Proveedor Terraform
 
-Cloud Temple vous met à disposition un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud via *"as code"*.
+Cloud Temple pone a su disposición un [proveedor Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) para gestionar su plataforma Cloud como *"código"*.
