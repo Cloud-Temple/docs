@@ -97,6 +97,7 @@ To access the various OpenShift components, ensure your tenant is whitelisted in
 
 - __Shiva Tenant URL__:
   [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__:
   [https://ui-ocp01-__your-tenant-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
@@ -110,6 +111,7 @@ To access the various OpenShift components, ensure your tenant is whitelisted in
 #### Connecting to the cluster via CLI
 
 To connect via the command line interface (CLI), use the following command:
+To connect via the command line interface (CLI), use the following command:
 
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com/ --web
@@ -122,22 +124,31 @@ To access the registry, log in using the following commands:
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
 docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
+oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
+docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
 ```
 
+Then, test building and pushing a Docker image:
 Then, test building and pushing a Docker image:
 
 ```bash
 docker build -t <namespace>/temp:latest .
 docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
+#### Router and Load Balancer Configuration
 #### Router and Load Balancer Configuration
 
 The platform provides flexible options for __traffic routing__ and __load balancing__:
 
 - By default, private load balancers are used for routes and ingresses.
+- By default, private load balancers are used for routes and ingresses.
 - Domains:
+  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
   - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
 

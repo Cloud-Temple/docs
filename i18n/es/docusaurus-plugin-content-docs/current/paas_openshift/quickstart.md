@@ -113,6 +113,7 @@ Para conectarse mediante la línea de comandos (CLI), utilice el siguiente coman
 
 ```bash
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
+oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
 ```
 
 #### Acceso al registro
@@ -120,6 +121,8 @@ oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
 Para acceder al registro, inicie sesión utilizando los siguientes comandos:
 
 ```bash
+oc login https://api-ocp01-{su-id}.paas.cloud-temple.com --web
+docker login -u {su-usuario} -p $(oc whoami -t) registry-ocp01-{su-id}.paas.cloud-temple.com
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com --web
 docker login -u {su-usuario} -p $(oc whoami -t) registry-ocp01-{su-id}.paas.cloud-temple.com
 ```
@@ -130,14 +133,19 @@ A continuación, pruebe la compilación y carga de una imagen Docker:
 docker build -t <namespace>/temp:latest .
 docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
+#### Configuración de routers y Load Balancers
 #### Configuración de routers y Load Balancers
 
 La plataforma ofrece opciones flexibles para el __enrutamiento de flujos__ y el __equilibrado de carga__:
 
 - Por defecto, se utilizan balanceadores de carga privados para rutas e ingresses.
 - Dominios:
+  - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
 

@@ -140,6 +140,8 @@ La piattaforma offre opzioni flessibili per il __routing dei flussi__ e l’__eq
 - Domini:
   - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
+  - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
 
 Assicurati che le tue route o ingresses siano configurati con le etichette o le classi di ingress appropriate per garantire un routing corretto.
 
