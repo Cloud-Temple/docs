@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Voraussetzungen
 
@@ -64,7 +65,9 @@ Der erste Schritt ist die Identifizierung der Art der Support-Anfrage:
 
 Anschließend können Sie zusätzliche Informationen angeben und Dateien beifügen (z. B. Bilder oder Protokolle).
 
-Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsgrad (P1 bis P4) angeben, falls es sich um einen Sicherheitsvorfall handelt, wie folgt:
+Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsgrad (P1 bis P5) angeben, falls es sich um einen Sicherheitsvorfall handelt, wie folgt:
+
+<img src={shivaSupportCriticities} />
 
 __KRITISCH (P1)__:
 
@@ -96,6 +99,10 @@ __NIEDRIG (P4)__:
 - Anomalie ohne direkten Einfluss
 - Frage zur Konformität
 - Bedarf an technischer Klärung
+
+__BETRIEBSBEREITER DIENST (P5)__:
+
+- Betriebsbereiter Dienst ohne unmittelbares Risiko
 
 <img src={shivaSupport_02} />
 
@@ -146,46 +153,46 @@ Die Aktivitätsseite dient dazu, eine vollständige Übersicht über alle Lese- 
 
 ### __Seitenstruktur__
 
-#### __Tabs__
+#### __Reiter__
 
- + **Recent**
+ + **Kürzlich**
 
-- Recent operations
-- Real-time monitoring
+- Kürzliche Operationen
+- Echtzeit-Überwachung
 
-- __Archived__
+- __Archiviert__
 
-- Operations over a longer period
-- Archived operations for traceability and compliance
+- Operationen über einen längeren Zeitraum
+- Archivierte Operationen für Nachvollziehbarkeit und Konformität
 
-#### __Displayed Information__
+#### __Angezeigte Informationen__
 
- + Date and Time
+ + Datum und Uhrzeit
 
-- Operation Type
+- Operationstyp
   - Status
-- User
-- Operation Description
+- Benutzer
+- Beschreibung der Operation
 
 #### __Funktion__
 
  + Suche/Filterung für spezifische Operationen
 
-### __Usage__
+### __Nutzung__
 
-- __Access:__ permission `activity_read`
+- __Zugriff:__ Berechtigung `activity_read`
 - __Navigation:__
-  - Select the "Recent" tab for real-time operations.
-  - Choose "Archived" to view the history.
-  - Use search and filtering features to locate specific operations.
+  - Wählen Sie den Reiter "Kürzlich" für Echtzeit-Operationen.
+  - Wählen Sie "Archiviert", um den Verlauf einzusehen.
+  - Nutzen Sie die Such- und Filterfunktionen, um spezifische Operationen zu finden.
 
-#### __Compliance Note__
+#### __Konformitätshinweis__
 
-In accordance with the SecNumCloud certification, the retention period for Cloud Temple console events is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
+In Übereinstimmung mit der SecNumCloud-Qualifizierung beträgt die Aufbewahrungsdauer für Ereignisse der Cloud Temple-Konsole mindestens __6 Monate__, wodurch die Einhaltung der Sicherheits- und Nachvollziehbarkeitsanforderungen gewährleistet wird.
 
-## Viewing the latest updates
+## Anzeigen der neuesten Updates
 
-Click on the __'New Features'__ icon in the bottom-left corner of the green banner. You will find details of the changes for each version of the Cloud Temple console.
+Klicken Sie auf das Symbol __'Neuigkeiten'__ unten links im grünen Banner. Dort finden Sie Details zu den Änderungen für jede Version der Cloud Temple-Konsole.
 
 <img src={shivaOnboard_009} />
 
@@ -197,4 +204,4 @@ Der Zugriff auf alle Funktionen der Shiva-Konsole ist über die Shiva-API mögli
 
 ## Terraform Provider
 
-Cloud Temple vous met à disposition un [Terraform-Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud *"as code"*.
+Cloud Temple stellt Ihnen einen [Terraform-Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu steuern.
