@@ -5,6 +5,16 @@ sidebar_position: 2
 
 # Change Tracking
 
+### November 22, 2025: LLMaaS Updates and General Improvements
+
+- **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
+- **Multilingual**: Resolved accessibility issues on the Italian and German versions of the documentation.
+- **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
+
+### November 20, 2025: Major PaaS OpenShift Update
+
+- **OpenShift PaaS (PR #194)**: Complete overhaul and update of the OpenShift documentation, including new screenshots and full translation into English, Spanish, German, and Italian to support our international expansion.
+
 ### November 3, 2025: Kubernetes Tutorials Enhancements
 
 - **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
@@ -46,8 +56,8 @@ sidebar_position: 2
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 
-- Full test suite validation.
-- Correction and validation of RAG pipelines with FAISS and Qdrant.
+- Full test suite validation completed.
+- Correction and validation of RAG pipelines using FAISS and Qdrant.
 - Enhanced tutorials with more detailed technical explanations.
 - Added a section on prompt security and model lifecycle within the concepts.
 - Improved the RAG explanation page with diagrams and details on embedding models.

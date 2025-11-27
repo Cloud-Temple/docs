@@ -77,19 +77,19 @@ Es posible visualizar los bloques de direcciones asignados en el mismo menú.
 
 | Referencia                     | Unidad  | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
-| Red - IPv4 Pública dedicada | 1 IPv4 | csp:(region):network:ipv4:v2 |
+| Red - IPv4 Pública dedicada | IPv4/32 | csp:(region):network:ipv4:v2 |
 
 
 
 ## Bloques IPv6
 
-El comando de prefijos IPv6 se realiza desde el menú __*'IPs públicas'*__ del menú Redes en la barra verde de la izquierda, mediante el botón __*"Solicitar direcciones IPv4 o prefijos IPv6"*__.
+El pedido de prefijos IPv6 se realiza desde el menú __*'IPs públicas'*__ del menú Redes en la barra verde de la izquierda, mediante el botón __*"Solicitar direcciones IPv4 o prefijos IPv6"*__.
 
 Es posible ver los prefijos asignados en el mismo menú.
 
 | Referencia                             | Unidad   | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |
-| Red - Rango de IPv6 públicas dedicadas | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Red - Rango de IPv6 públicas dedicadas | IPv6/48 | csp:(region):network:ipv6:v1 |
 
 
 

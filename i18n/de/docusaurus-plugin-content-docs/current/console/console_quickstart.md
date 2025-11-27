@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Voraussetzungen
 
@@ -47,7 +48,7 @@ The configuration is set individually for each tenant [Tenant](iam/concepts.md#t
 
 ## Technischer Support
 
-Sie können jederzeit die __Cloud Temple-Support-Team__ über die __"Boje"-Ikon__ rechts oben auf dem Bildschirm kontaktieren.
+Sie können jederzeit die __Cloud Temple-Support-Team__ über die __Schwimmring-Ikone__ rechts oben auf dem Bildschirm kontaktieren.
 
 <img src={shivaSupport} />
 
@@ -64,11 +65,13 @@ Der erste Schritt ist die Identifizierung der Art der Support-Anfrage:
 
 Anschließend können Sie zusätzliche Informationen angeben und Dateien beifügen (z. B. Bilder oder Protokolle).
 
-Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsgrad (P1 bis P4) angeben, insbesondere bei Sicherheitsvorfällen, wie folgt:
+Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsgrad (P1 bis P5) angeben, falls es sich um einen Sicherheitsvorfall handelt, wie folgt:
+
+<img src={shivaSupportCriticities} />
 
 __KRITISCH (P1)__:
 
-- Verdacht auf Datenleck sensibler Informationen
+- Verdacht auf Datenleak sensibler Informationen
 - Erkennung eines nicht autorisierten Zugriffs auf Ihre Daten
 - Kompromittierung Ihrer Administratoren-Zugangsdaten
 - Vollständige Unzugänglichkeit Ihrer kritischen Dienste
@@ -78,16 +81,16 @@ __KRITISCH (P1)__:
 __HOCH (P2)__:
 
 - Funktionsstörungen bei Benutzerzugängen
-- Anomalie im Verschlüsselungsverfahren Ihrer Daten
+- Anomalie im Verschlüsselungsprozess Ihrer Daten
 - Verlust des Zugriffs auf bestimmte kritische Funktionen
 - Inkonsistenzen in den Daten
-- Schwere Verzögerungen, die die Geschäftstätigkeit beeinträchtigen
+- Schwere Verzögerungen, die die Geschäftsaktivität beeinträchtigen
 
 __MITTEL (P3)__:
 
 - Lokal begrenztes Leistungsproblem
 - Incident an einer nicht-kritischen Funktion
-- Konfigurationsfehler mit begrenztem Auswirkungsbereich
+- Konfigurationsfehler mit begrenztem Auswirkungsumfang
 - Punktuelle Zugriffsschwierigkeiten
 
 __NIEDRIG (P4)__:
@@ -97,9 +100,13 @@ __NIEDRIG (P4)__:
 - Frage zur Konformität
 - Bedarf an technischer Klärung
 
+__BETRIEBSBEREITER DIENST (P5)__:
+
+- Betriebsbereiter Dienst ohne unmittelbares Risiko
+
 <img src={shivaSupport_02} />
 
-Nach Abschluss Ihrer Anfrage können Sie Ihre Anfragen über die __"Boje"-Ikon__ rechts oben auf dem Bildschirm wiederfinden:
+Nach Abschluss Ihrer Anfrage können Sie Ihre Anfragen über die __Schwimmring-Ikone__ rechts oben auf dem Bildschirm wiederfinden:
 
 <img src={shivaSupport_03} />
 
@@ -112,7 +119,7 @@ Alle für Ihren Benutzer (abhängig von seinen Berechtigungen) verfügbaren Funk
 - Die __Steuerung von IaaS-Ressourcen__ (Berechnung, Speicher, Netzwerk, ...),
 - Die __Steuerung von OpenIaaS-Ressourcen__ (Berechnung, Speicher, Netzwerk, ...),
 - Der Zugriff auf __zusätzliche Dienste__ (Bastion, Monitoring, ...),
-- Die __Verwaltung Ihrer Organisation__ (Verwaltung von Mandanten, Berechtigungen, ...).
+- Die __Verwaltung Ihrer Organisation__ (Verwaltung von Mietern, Berechtigungen, ...).
 
 Die Aktivierung eines Moduls für einen Benutzer hängt von dessen Berechtigungen ab. Zum Beispiel ist das Modul __'Bestellung'__ nicht verfügbar, wenn der Benutzer die Berechtigung __'ORDER'__ nicht besitzt.
 
@@ -121,17 +128,17 @@ Im Folgenden finden Sie eine Übersicht über die verfügbaren Module. Regelmä�
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__: ermöglicht eine schnelle Übersicht über den __Gesamtbestand an Rechen- und Speicherressourcen__, die Statistiken zur __Sicherung__ sowie eine __Zusammenfassung der Support-Fälle__,
+- __Dashboard__: ermöglicht eine schnelle Übersicht über den __Gesamtbestand an Rechen- und Speicherressourcen__, die Statistiken der __Sicherung__ sowie eine __Zusammenfassung der Support-Fälle__,
 - __Bestand__: bietet eine Übersicht über alle Ihre Ressourcen des Typs __'virtuelle Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z. B. Geschäftsbereich, Anwendung, ...),
 - __Infogérance__: gewährt Zugriff auf die Verfolgung Ihrer __Support-Anfragen__ und die __Metriken der Dienste__,
 - __IaaS__: ermöglicht die __Steuerung Ihrer VMware-IaaS-Infrastrukturen__ (virtuelle Maschinen, Cluster, Hypervisoren, Replikationen, Sicherungen, ...),
-- __OpenIaaS__: ermöglicht die __Steuerung der Xen Orchestra-Ressourcen__ (virtuelle Maschinen, Sicherungen, ...),
+- __OpenIaaS__: ermöglicht die __Steuerung von Xen Orchestra-Ressourcen__ (virtuelle Maschinen, Sicherungen, ...),
 - __OpenShift__: ermöglicht die Steuerung Ihrer **RedHat OpenShift-PaaS-Architektur** und die Verwaltung Ihrer Container über die drei Verfügbarkeitszonen der Plattform.
 - __Bastion__: ermöglicht das Bereitstellen und Steuern von Bastion-Appliances für SSH/RDP in Ihren Netzwerken,
-- __Netzwerk__: ermöglicht die Steuerung von __Netzwerken der Ebene 2 und 3__, __öffentlichen IPs__ sowie Ihrer __Telekommunikationsverbindungen__,
+- __Netzwerk__: ermöglicht die Steuerung von __Netzwerken der Ebene 2 und 3__, __öffentlichen IP-Adressen__ und Ihrer __Telekommunikationsverbindungen__,
 - __Colocation__: bietet eine Übersicht über die Geräte in den Bereichen der __gemeinsamen oder dedizierten Colocation__,
 - __Bestellung__: ermöglicht die Bestellung von Ressourcen und die Verfolgung der Bereitstellungen,
-- __Administration__: fasst die Administrationsfunktionen für Benutzer und Mandanten sowie den Zugriff auf die globale Protokollierung zusammen.
+- __Administration__: fasst die Administrationsfunktionen für Benutzer und Mietern sowie den Zugriff auf die globale Protokollierung zusammen.
 </div>
 </div>
 
@@ -144,57 +151,57 @@ Die Aktivitätsseite dient dazu, eine vollständige Übersicht über alle Lese- 
 
 <img src={shivaLogs} />
 
-### __Page Structure__
+### __Seitenstruktur__
 
-#### __Tabs__
+#### __Reiter__
 
- + **Recent**
+ + **Kürzlich**
 
-- Recent operations
-- Real-time monitoring
+- Kürzliche Operationen
+- Echtzeit-Überwachung
 
-- __Archived__
+- __Archiviert__
 
-- Operations over a longer period
-- Archived operations for traceability and compliance
+- Operationen über einen längeren Zeitraum
+- Archivierte Operationen für Nachvollziehbarkeit und Konformität
 
-#### __Displayed Information__
+#### __Angezeigte Informationen__
 
- + Date and Time
+ + Datum und Uhrzeit
 
-- Operation Type
+- Operationstyp
   - Status
-- User
-- Operation Description
+- Benutzer
+- Beschreibung der Operation
 
 #### __Funktion__
 
- + Suche/Filter für spezifische Operationen
+ + Suche/Filterung für spezifische Operationen
 
-### __Usage__
+### __Nutzung__
 
-- __Access:__ permission `activity_read`
+- __Zugriff:__ Berechtigung `activity_read`
 - __Navigation:__
-  - Select the "Recent" tab for real-time operations.
-  - Choose "Archived" to view the history.
-  - Use search and filtering features to locate specific operations.
+  - Wählen Sie den Reiter "Kürzlich" für Echtzeit-Operationen.
+  - Wählen Sie "Archiviert", um den Verlauf einzusehen.
+  - Nutzen Sie die Such- und Filterfunktionen, um spezifische Operationen zu finden.
 
-#### __Compliance Note__
+#### __Konformitätshinweis__
 
-In accordance with the SecNumCloud certification, the retention period for Cloud Temple console events is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
+In Übereinstimmung mit der SecNumCloud-Qualifizierung beträgt die Aufbewahrungsdauer für Ereignisse der Cloud Temple-Konsole mindestens __6 Monate__, wodurch die Einhaltung der Sicherheits- und Nachvollziehbarkeitsanforderungen gewährleistet wird.
 
-## Viewing the latest updates
+## Anzeigen der neuesten Updates
 
-Click on the __'New Features'__ icon in the bottom-left corner of the green banner. You will find details of the changes for each version of the Cloud Temple console.
+Klicken Sie auf das Symbol __'Neuigkeiten'__ unten links im grünen Banner. Dort finden Sie Details zu den Änderungen für jede Version der Cloud Temple-Konsole.
 
 <img src={shivaOnboard_009} />
 
-## Access to user features via the API
+## Zugriff auf Benutzerfunktionen über die API
 
-Access to all features of the Shiva console is possible via the Shiva API. You can find detailed information about verbs and configurations via __'Profile'__ and __'APIs'__:
+Der Zugriff auf alle Funktionen der Shiva-Konsole ist über die Shiva-API möglich. Sie finden detaillierte Informationen zu Verben und Konfigurationen unter __'Profil'__ und __'APIs'__:
 
 <img src={shivaOnboard_008} />
 
 ## Terraform Provider
 
-Cloud Temple vous met à disposition un [Terraform-Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud *"as code"*.
+Cloud Temple stellt Ihnen einen [Terraform-Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu steuern.

@@ -1,32 +1,91 @@
 ---
 title: Schnellstartanleitung
 ---
-import oshiftRights from './images/oshift_rights.png'
 import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
+import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
 import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
+import oshiftOrder_001 from './images/oshift_order_001.png'
 
-## Deploy a Red Hat OpenShift platform within your tenant
+# QuickStart für das OpenShift-Angebot
 
-### Zuweisung von Zugriffsrechten
+Diese Seite führt Sie durch die ersten Schritte zur Nutzung des **OpenShift**-Angebots über die Cloud Temple-Konsole. Befolgen Sie diese Anweisungen, um die verfügbaren Menüs und Funktionen kennenzulernen.
 
-Es ist unbedingt erforderlich, dass der Administrator des [Tenant](../console/iam/concepts.md#tenant) dem OpenShift-Administrator die Berechtigungen zum Lesen und Verwalten der OpenShift-Plattform erteilt, um darauf zugreifen zu können:
+---
 
-<img src={oshiftRights} />
+## Voraussetzungen
 
-### Zugriff auf die Openshift-Umgebung innerhalb eines Tenants
+Stellen Sie sicher, dass die folgenden Punkte erfüllt sind, bevor Sie beginnen:
 
-Nach der Zuweisung der Berechtigungen erscheint das Modul '__Openshift__' im Menü der Cloud Temple-Konsole:
+1. **Aktivierte Abonnement**: Ihre Organisation muss ein OpenShift-Abonnement abgeschlossen haben.
+2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Berechtigungen verfügen, um auf OpenShift-Ressourcen zuzugreifen und diese zu verwalten.
+
+## Erster Zugriff und Bestellung
+
+Beim ersten Zugriff auf das OpenShift-Angebot nach Aktivierung der Subscription und Konfiguration der Berechtigungen wird folgende Startseite angezeigt:
+
+<img src={oshiftOrder_001} />
+
+Diese Seite zeigt an, dass Sie noch keine OpenShift SecNumCloud-Cluster bereitgestellt haben.
+
+**Um Ihren ersten OpenShift SecNumCloud-Cluster zu bestellen, wenden Sie sich bitte an den Cloud Temple-Support.**
+
+Sobald Ihre Bestellung vom Support bearbeitet wurde und Ihr Cluster bereitgestellt ist, können Sie auf das OpenShift-Menü zugreifen.
+
+## Access to the OpenShift Interface
+
+Once your first cluster has been deployed, a new menu titled **OpenShift** appears in the Cloud Temple console. This menu contains a main submenu: **Clusters**.
 
 <img src={oshiftMenu_001} />
 
-Sie sehen nun die Openshift-Cluster, die innerhalb Ihres Tenants bereitgestellt wurden.
+### 1. Liste der Clusters
 
-Klicken Sie auf den Cluster, den Sie verwalten möchten. Sie gelangen dann in die Administrationsumgebung des Clusters:
+Das Untermenü **Clusters** zeigt Ihnen eine Tabelle mit allen verfügbaren OpenShift-Clustern an, die innerhalb Ihres Tenants bereitgestellt wurden. Die Tabelle enthält die wichtigsten Informationen für jeden Cluster:
+
+- **Cluster-Name**
+- **Zugriffs-URL**
+- **API-URL**
+- **Version**
+- **Status**
+- **Letzte Aktualisierung**
+
+<img src={oshiftSubMenu_001} />
+
+💡 **Um detaillierte Informationen zu einem Cluster anzuzeigen, klicken Sie auf dessen Namen in der Tabelle.**
+
+### 2. Cluster Details
+
+When you click on a **cluster name** in the list, a detailed page is displayed with complete cluster information:
+
+**Connectivity Information:**
+- **Access URL**: Web interface of the cluster
+- **API URL**: API endpoint for CLI operations
+
+**General Information:**
+- **Status**: Current state of the cluster
+- **Last Updated**: Date of the last modification
+- **Version**: OpenShift version deployed
+
+**Cluster Nodes:**
+
+A table provides detailed information for each node:
+- **Node Name**
+- **Type**
+- **AZ** (Availability Zone)
+- **Status**
+- **CPU**
+- **RAM**
+
+<img src={oshiftClusterDetail_001} />
+
+## Access to the OpenShift Administration Interface
+
+Click on the **Access URL** of the cluster you wish to manage. You will be directed to the cluster administration environment:
 
 <img src={oshiftMenu_002} />
 
-Nach der Authentifizierung können Sie Ihren Cluster verwalten:
+After authentication, you can manage your cluster:
 
 <img src={oshiftMenu_003} />
 
@@ -34,21 +93,21 @@ Nach der Authentifizierung können Sie Ihren Cluster verwalten:
 
 Here are the connection and configuration details specific to your OpenShift environment.
 
-#### Verbindungsdetails
+#### Connection Details
 
-Um auf die verschiedenen OpenShift-Komponenten zugreifen zu können, stellen Sie sicher, dass Ihr Mandant in der Liste der zugelassenen Mandanten in der Konsole aufgeführt ist (siehe Dokumentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __Shiva Mandant-URL__ :
-  [https://__Ihre-Mandanten-ID__.shiva.cloud-temple.com/](https://**Ihre-Mandanten-ID**.shiva.cloud-temple.com/)
+- __Shiva Tenant URL__:
+  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__ :
-  [https://ui-ocp01-__Ihre-Mandanten-ID__.paas.cloud-temple.com/](https://ui-ocp01-**Ihre-Mandanten-ID**.paas.cloud-temple.com/)
+- __OpenShift UI__:
+  [https://ui-ocp01-__your-tenant-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
 
-- __Externe API__ :
-  [https://api-ocp01-__Ihre-Mandanten-ID__.paas.cloud-temple.com](https://api-ocp01-**Ihre-Mandanten-ID**.paas.cloud-temple.com)
+- __External API__:
+  [https://api-ocp01-__your-tenant-id__.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-__Ihre-Mandanten-ID__.paas.cloud-temple.com/applications](https://gitops-ocp01-**Ihre-Mandanten-ID**.paas.cloud-temple.com/applications)
+- __GitOps (ARGOCD)__:
+  [https://gitops-ocp01-__your-tenant-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
 
 #### Connection to the cluster via CLI
 
@@ -99,6 +158,6 @@ metadata:
 Network configurations play a crucial role in securing communications with OpenShift.
 
 - __Connectivity Network__: 100.67.0.0/28  
-- __Private Load Balancer VIP__: 100.67.0.3  
+- __Private Load Balancer VIP__: 100.67.0.3
 
 Ensure your firewall has a dedicated interface and permits traffic between the specified networks.

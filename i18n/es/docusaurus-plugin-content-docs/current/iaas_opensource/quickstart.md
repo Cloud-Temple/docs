@@ -14,31 +14,34 @@ import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_polic
 import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
 import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
 import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
+import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
 
 ## Cálculo
 
-### Gestión de Máquinas Virtuales
+### Gestión de máquinas virtuales
 
-La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva, dentro del menú "OpenIaaS" ubicado en el barra lateral superior a la izquierda del escritorio.
+La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva en el menú __'OpenIaaS'__ situado en la barra verde a la izquierda de la pantalla.
 
 ### Lista de máquinas virtuales
 
-En la sección __'Máquinas Virtuales'__, tendrás acceso a la lista de tus máquinas virtuales alojadas en tu Cloud de confianza.
+En la sección __'Máquinas virtuales'__, tiene acceso a la lista de sus máquinas virtuales alojadas en su Cloud de confianza.
 
 <img src={openIaasVirtualMachinesList} />
 
-Para cada máquina virtual, podrás acceder a las siguientes informaciones:
+Tiene acceso a la siguiente información para cada máquina virtual:
 
 - Su nombre.
-- Su estado (encendido o apagado).
-- La zona de disponibilidad (AZ).
-- El sistema operativo.
-- La cantidad de unidades de procesador virtuales (vCPU).
+- Su estado (apagada, encendida).
+- Su zona de disponibilidad (AZ).
+- Su sistema operativo.
+- La cantidad de CPU virtuales (vCPU).
 - La cantidad de memoria virtual (vRAM).
 
-### Acciones sobre máquinas virtuales
+### Acciones sobre las máquinas virtuales
 
-Las siguientes acciones son posibles a partir de esta interfaz:
+Las siguientes acciones son posibles desde esta interfaz:
 
 - Actualizar la lista de máquinas virtuales.
 - Filtrar la lista.
@@ -47,15 +50,15 @@ Las siguientes acciones son posibles a partir de esta interfaz:
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Al hacer clic en el botón desplegable verde a la derecha de la lista para una máquina virtual, se accede a toda la información relacionada con ella.
+Cuando hace clic en la flecha desplegable verde a la derecha de la lista para una máquina virtual, accede a todas las informaciones relacionadas con ella.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Un barra rápida permite realizar las siguientes acciones:
+Una barra rápida permite realizar las siguientes acciones:
 
 <img src={openIaasVirtualMachineActions} />
 
-- Enciender la máquina virtual.
+- Encender la máquina virtual.
 - Apagarla.
 - Reiniciarla.
 - Abrir la consola.
@@ -66,61 +69,106 @@ Un barra rápida permite realizar las siguientes acciones:
 - Renombrarla.
 - Eliminarla.
 
-En el apartado '__Información general__', se encuentran detalles detallados sobre tu máquina virtual, como su ubicación física (AZ, Pool, Host), la RAM, el CPU, las direcciones IP y otros datos relevantes.
+En la pestaña de información '__Generales__', encontrará información detallada sobre su máquina virtual, como su ubicación física (AZ, Pool, Host), la RAM, el CPU, las direcciones IP y otras.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Un apartado '__Avanzado__' permite consultar información más específica:
+Una pestaña '__Avanzado__' permite consultar información más específica:
 
 - UUID de la máquina virtual
-- Herramientas del invitado
+- Herramientas invitadas
 - Sistema operativo invitado
-- Lector DVD
+- Unidad DVD
 
-Además, se pueden modificar ciertos parámetros, como:
+Así como modificar ciertas opciones, tales como:
 
-- El orden de inicio
-- El seguro de arranque
-- Arrancar automáticamente (imposible si no está asociada ninguna política de respaldo a la VM)
+- El orden de arranque
+- El arranque seguro (secure boot)
+- El arranque automático (imposible si no hay ninguna política de copia de seguridad asociada a la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
+### Consola de una máquina virtual
+
+La consola de una máquina virtual está disponible desde la lista de máquinas virtuales haciendo clic en el icono __'Consola'__:
+
+<img src={openIaasVmConsoleBtn} />
+
+Se abre un nuevo separador en su navegador y se muestra entonces la consola de su máquina, basada en un cliente VNC:
+
+<img src={openIaasVmConsoleOpen} />
+
+Es posible realizar las siguientes acciones en el menú VNC:
+- solicitar el envío de teclas especiales,
+- forzar un mapeo de teclado (en caso de que su máquina virtual no tenga la misma disposición de teclado que su navegador web),
+- abrir un campo de texto que se puede transmitir a la máquina. Este método reemplaza el antiguo portapapeles no funcional,
+- pasar al modo de pantalla completa,
+- cambiar el tamaño de la ventana (escalamiento).
+
+#### Keyboard layout support
+
+The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.
+
+Below is a summary of the possible scenarios:
+
+| Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
+| ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |
+| French                                     | French                            | No                                 | ✅                     |
+| French                                     | French                            | Yes                                | Not recommended        |
+| French                                     | English                           | No                                 | English                |
+| French                                     | English                           | Yes                                | ✅                     |
+| English                                    | French                            | No                                 | French                 |
+| English                                    | French                            | Yes                                | ✅                     |
+| English                                    | English                           | No                                 | ✅                     |
+| English                                    | English                           | Yes                                | Not recommended        |
+
+__Note__:
+- If certain characters do not appear during manual input, you can try using the clipboard.
+
+#### Funcionamiento del portapapeles
+Esta función le permite enviar una cadena completa de caracteres a su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la escritura en la consola que la opción "enforce keyboard" es necesaria, recuerde activarla antes de utilizar el portapapeles.  
+Esta función puede utilizarse para enviar una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
+
+<img src={openIaasVmConsoleClipboard} />
+
+Al hacer clic en el botón "Pegar", el contenido de su campo de texto se envía a su máquina virtual.
+
 ## Replicación
 
-### Acceso a la gestión de replicación
+### Access to replication management
 
-La interfaz de gestión de replicación está disponible en la consola Shiva, dentro del menú "OpenIaaS" > "Replicación", ubicado en el barra lateral superior izquierda del escritorio.
+The replication management interface is available in the Shiva console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
 
 <img src={openIaasReplicationMenu} />
 
 ### Creación de una política de replicación
 
-En la sección __'Replicación'__, puedes crear políticas que definan los parámetros de protección de tus máquinas virtuales.
+En la sección __'Replicación'__, puede crear políticas que definan los parámetros de protección de sus máquinas virtuales.
 
 <img src={openIaasReplicationPoliciesView} />
 
-Para crear una nueva política, haz clic en el botón __'Agregar una política'__. Se abrirá un formulario con las siguientes etapas:
+Para crear una nueva política, haga clic en el botón __'Agregar una política'__. Se abrirá un formulario con los siguientes pasos:
 
-#### Etapa 1: Información general
+#### Paso 1: Información general
 
-- __Nombre de la política__ : Proporciona un nombre claro para tu política de replicación de infraestructura en nube.
-- __Frecuencia__ : Selecciona el intervalo de replicación (de 1 a 59 minutos o de 1 a 24 horas).
+- __Nombre__: Asigne un nombre descriptivo a su política
+- __Frecuencia__: Seleccione el intervalo de replicación (1-59 minutos o 1-24 horas)
 
 <img src={openIaasReplicationPolicyForm1} />
 
-### Etapa 2: Selección del almacenamiento
+#### Step 2: Storage Selection
 
-- **Área de disponibilidad**: Seleccionar la zona de destino
-- **Piscina**: Elegir el conjunto de recursos
-- **Almacenamiento bloqueo**: Seleccionar el almacenamiento de destino
+- __Availability Zone__: Select the destination zone
+- __Pool__: Choose the resource pool
+- __Block Storage__: Select the destination storage
 
 <img src={openIaasReplicationPolicyForm2} />
 
-#### Etapa 3: Validación
+#### Paso 3: Validación
 
-Verifica los parámetros y haz clic en __Agregar__ para crear la política.
+Verifique los parámetros y haga clic en __'Agregar'__ para crear la política.
 
-### Asociación de una VM con la replicación
+### Asociación de una VM a la replicación
 
 Para proteger una máquina virtual, acceda a los detalles de su VM desde la lista de máquinas virtuales.
 
@@ -128,93 +176,50 @@ En la vista detallada de la VM, encontrará una sección __'Replicación'__:
 
 <img src={openIaasVmReplicationSection} />
 
-Las etapas para asociar una VM con la replicación:
+Pasos para asociar una VM a la replicación:
 
-1. Haga clic en __'Configurar política'__
-2. Seleccione la política de replicación deseada desde el listado desplegable
-3. Confirme su selección
+1. Haga clic en __'Configurar una política'__
+2. Seleccione la política de replicación deseada en el menú desplegable
+3. Valide su selección
 
-La replicación comienza automáticamente después de la confirmación.
+La replicación se iniciará automáticamente tras la validación.
 
-## Gestión de políticas y replicas
+### Gestión de políticas y réplicas
 
-La gestión de políticas y replicas es un aspecto crucial en el ámbito del cloud computing, especialmente cuando se trabaja con sistemas distribuidos y bases de datos. A continuación, se presenta una descripción detallada de este tema:
+#### Vista de las políticas
 
-### Políticas de Replicación
-
-Las políticas de replicación definen cómo se gestionan las copias de los datos en un sistema distribuido. Estas políticas pueden variar según el tipo de sistema, pero generalmente abarcan:
-
-1. **Nivel de replicación**: Determina cuántas copias de cada documento o bloque de datos se mantienen. Ejemplos incluyen replicación local (solo en el mismo servidor), replicación regional (en la misma región geográfica) y global (en diferentes continentes).
-
-2. **Consistencia**: Define cómo se garantiza que todas las copias de los datos estén sincronizadas. Los tipos de consistencia más comunes son:
-   - **Síndrome de lectura no bloqueada (Read Consistency)**: Asegura que una lectura reciente devuelva siempre la última versión escrita, independientemente del orden en el que se han aplicado las actualizaciones.
-   - **Síndrome de lectura con bloqueo (Read Commitment)**: Garantiza que una lectura reciente devuelva solo los datos que ya han sido comprometidos por otras transacciones, sin bloquearlas.
-   - **Síndrome de lectura no bloqueada (Eventual Consistency)**: No garantiza la consistencia inmediata; las actualizaciones pueden tardar en propagarse a todas las copias.
-
-3. **Tolerancia a fallos**: Define cómo el sistema maneja fallas, como el corte de energía o el desastre físico. Las políticas pueden incluir mecanismos de replicación asimétrica (donde algunas copias son más importantes que otras) y técnicas de recuperación ante fallos avanzadas.
-
-### Gestión de Replicas
-
-La gestión de replicas implica tareas como:
-
-- **Monitoreo**: Supervisar el estado de las replicas para detectar problemas temprano, como desynchronización o fallos del sistema.
-- **Mantenimiento**: Realizar operaciones de mantenimiento sin interrumpir el servicio, como actualizaciones de software, copias de seguridad y recuperación ante desastres.
-- **Optimización**: Ajustar las políticas de replicación para equilibrar rendimiento, costo y consistencia según los requisitos del sistema.
-
-### Herramientas y Sistemas
-
-Varios sistemas de cloud computing ofrecen herramientas integradas o APIs para gestionar políticas y replicas:
-
-- **Google Cloud**: Utiliza Google Cloud Dataflow, BigQuery, y Cloud Spanner para manejar la replicación y consistencia.
-- **Amazon Web Services (AWS)**: Ofrece Amazon DynamoDB, Amazon Aurora, y AWS Global Accelerator para gestionar replicas distribuidas.
-- **Microsoft Azure**: Utiliza Azure Cosmos DB, Azure SQL Database, y Azure Traffic Manager para administrar replicación y consistencia.
-
-### Consideraciones de Seguridad
-
-La gestión de políticas y replicas también implica consideraciones de seguridad:
-
-- **Cifrado**: Asegurar que los datos en reposo y en tránsito estén cifrados para proteger la información sensible.
-- **Autenticación y autorización**: Implementar controles de acceso robustos para limitar el acceso a las replicas y a los sistemas de gestión.
-- **Auditoría**: Mantener registros detallados de todas las operaciones relacionadas con la replicación para cumplir con requisitos regulatorios y mejorar la seguridad.
-
-En resumen, la gestión de políticas y replicas es un aspecto fundamental en el diseño y operación de sistemas distribuidos en cloud computing. Las políticas adecuadas pueden optimizar el rendimiento, garantizar la consistencia y proteger los datos contra fallas y amenazas de seguridad.
-
-#### Políticas visibles
-
-El encuadernador __'Políticas'__ te permite visualizar todas tus políticas de replicación:
+La pestaña __'Políticas'__ le permite visualizar todas sus políticas de replicación:
 
 <img src={openIaasReplicationPoliciesTable} />
 
-Tienes acceso a la siguiente información para cada política:
+Tiene acceso a la siguiente información para cada política:
 
 - Su nombre
-- Frecuencia de replicación
-- Zona de disponibilidad de destino
-- Piscina asociada
-- Almacenamiento bloqueado utilizado
+- Su frecuencia de replicación
+- La zona de disponibilidad de destino
+- El pool asociado
+- El almacenamiento en bloque utilizado
 
 Las acciones disponibles incluyen:
 
-- Consultar los detalles detallados de cada política
+- Consultar los detalles de cada política
 - Modificar los parámetros
 - Eliminar una política no utilizada
 
+#### Vista de réplicas
 
-
-#### Vista de Replicas
-
-El cuadro __'Replicas'__ muestra todas las máquinas virtuales en proceso de replicación:
+La pestaña __'Réplicas'__ muestra todas las máquinas virtuales en proceso de replicación:
 
 <img src={openIaasReplicationReplicasTable} />
 
-Puedes visualizar:
+Puede visualizar:
 
 - El nombre de las máquinas virtuales replicadas
-- El origen y el destino de la ubicación
+- La ubicación de origen y destino
 - La política de replicación asociada
 
 Las acciones disponibles incluyen:
 
-- Exportar los datos en formato CSV
-- Consultar los detalles de replicación
-- Gestionar las replicas por política
+- Exportación de datos en formato CSV
+- Consulta de los detalles de replicación
+- Gestión de réplicas por política

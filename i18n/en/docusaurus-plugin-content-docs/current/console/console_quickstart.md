@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Prerequisites
 
@@ -21,10 +22,10 @@ import shivaOnboard_008 from './images/shiva_onboard_008.png'
 
 ## Connecting to Your Cloud Temple Tenant
 
-Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or via the direct URL provided to you by email.
+Shiva is accessible via the URL below: [Shiva](https://shiva.cloud-temple.com) or directly through the URL provided to you by email.
 
 The first page allows you to select the [organization](iam/concepts.md#organizations) in which your user was created.  
-Once the company is specified, click on __'Sign In'__.
+Once you have entered the company name, click on __'Sign In'__.
 
 <img src={shivaLogin} />
 
@@ -39,11 +40,11 @@ Here, you will find all metrics related to the products subscribed to within you
 
 The console is available in __French__ and __English__. You can change the operating language using the __language__ icon located in the top-right corner of the screen.
 
-To change a user's language, go to their __'Profile'__, in the top-right corner of the screen, within the __'User Settings'__.
+To change a user's language, go to their __'Profile'__, in the top-right corner of the screen, and select __'User Settings'__.
 
 <img src={shivaProfil_006} />
 
-Configuration is set per tenant [Tenant](iam/concepts.md#tenant).
+This configuration is set individually for each tenant [Tenant](iam/concepts.md#tenant).
 
 ## Technical Support Access
 
@@ -58,13 +59,15 @@ The first step is identifying the type of support request:
 - Request advice on using a product (non-incident related),
 - Request assistance related to your customer account,
 - Report an incident or request technical support.
-- Request assistance from a professional service (deployment of a Cloud Temple engineer for a specific issue).
+- Request professional services assistance (provision of a Cloud Temple engineer for a specific issue).
 
 <img src={shivaSupport_01} />
 
 You can then provide additional details and attach files (e.g., images or logs).
 
-The requester may also specify a severity level (P1 to P4) in the ticket description, particularly in the case of a security incident, as follows:
+The requester may also specify a severity level (P1 to P5) in the ticket description, particularly in the case of a security incident, as follows:
+
+<img src={shivaSupportCriticities} />
 
 __CRITICAL (P1)__:
 
@@ -73,7 +76,7 @@ __CRITICAL (P1)__:
 - Compromise of your administrative credentials
 - Complete unavailability of your critical services
 - Abnormal behavior on sensitive data
-- Violation of personal data
+- Breach of personal data
 
 __HIGH (P2)__:
 
@@ -81,7 +84,7 @@ __HIGH (P2)__:
 - Anomaly in data encryption
 - Loss of access to certain critical features
 - Data inconsistency
-- Major performance degradation impacting operations
+- Significant performance degradation impacting operations
 
 __MEDIUM (P3)__:
 
@@ -97,6 +100,10 @@ __LOW (P4)__:
 - Compliance-related question
 - Need for technical clarification
 
+__OPERATIONAL SERVICE (P5)__:
+
+- Operational service with no immediate risk
+
 <img src={shivaSupport_02} />
 
 Once your request has been submitted, you can retrieve your requests via the __"buoy" icon__ located in the top-right corner of the screen:
@@ -105,7 +112,7 @@ Once your request has been submitted, you can retrieve your requests via the __"
 
 ## User Feature Access via the Web Interface
 
-All features available to your user (based on their permissions) are located on the left side of the screen, within the green sidebar.  
+All features accessible to your user (based on their permissions) are located on the left side of the screen, within the green sidebar.  
 Features are grouped by module. These primarily include:
 
 - The __inventory__ of your resources,  
@@ -125,8 +132,8 @@ Below is an overview of the available modules. New modules are regularly added t
 - __Dashboard__: provides a quick overview of the __total compute and storage resources__, backup __statistics__, and a __summary of support tickets__,
 - __Inventory__: offers a view of all your __virtual machines__. If __tags__ are used, it enables filtering by __tag__ (e.g., business view, application view, ...),
 - __Managed Services__: provides access to the tracking of your __support requests__ and __service metrics__,
-- __IaaS__: enables the __management of VMware IaaS infrastructures__ (virtual machines, clusters, hypervisors, replication, backups, ...),
-- __OpenIaaS__: enables the __management of Xen Orchestra resources__ (virtual machines, backups, ...),
+- __IaaS__: enables the __management of VMware IaaS infrastructures__ (virtual machines, clusters, hypervisors, replication, backup, ...),
+- __OpenIaaS__: enables the __management of Xen Orchestra resources__ (virtual machines, backup, ...),
 - __OpenShift__: enables the management of your **RedHat OpenShift PaaS architecture** and container management across the three availability zones of the platform.
 - __Bastion__: allows deployment and management of SSH/RDP bastion appliances within your networks,
 - __Networking__: enables management of __Layer 2 and Layer 3 networks__, __public IPs__, and your __telecom circuits__,
@@ -182,11 +189,11 @@ The Activities page is designed to provide full visibility into all read and wri
 
 #### __Compliance Note__
 
-In accordance with the SecNumCloud certification, the retention period for Cloud Temple console events is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
+In accordance with the SecNumCloud certification, the retention period for Cloud Temple console event logs is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
 
-## Checking for the latest updates
+## Checking for Latest Updates
 
-Click on the __'New Features'__ icon at the bottom-left of the green banner. You will find details of the changes for each version of the Cloud Temple console.
+Click on the __'New Features'__ icon at the bottom-left of the green banner. You will find detailed information about the changes for each version of the Cloud Temple console.
 
 <img src={shivaOnboard_009} />
 

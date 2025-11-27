@@ -16,6 +16,7 @@ import shivaMetric_010 from './images/shiva_metric_010.png'
 import shivaMetric_011 from './images/shiva_metric_011.png'
 import shivaMetric_012 from './images/shiva_metric_012.png'
 import shivaMetric_013 from './images/shiva_metric_013.png'
+import shivaMetric_014 from './images/shiva_metric_014.png'
 import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
@@ -58,17 +59,20 @@ Auf diesem Tab finden Sie einige der bereits im globalen Dashboard enthaltenen M
 
 <img src={shivaMetric_000} />
 
-#### Calculation
+#### Berechnung
 
-On this tab, you will find the number of **AZs**, **Clusters**, **ESXs**, **carbon emissions**, and **energy consumption**, as well as 7 graphs providing a highly visual overview of your VMware environment.
+Auf diesem Tab finden Sie die Anzahl der **AZs**, **Cluster**, **ESXs**, die **Kohlenstoffemissionen**, die **geschätzte Verbrauch**, sowie 7 Diagramme, die einen sehr visuellen Überblick über Ihre VMware-Umgebung bieten. Die Schätzung des Verbrauchs in kWh wird auf Basis des Durchschnitts der Messungen über den ausgewählten Zeitraum berechnet, bezogen auf eine Stunde.
 
-You can select the date range to cover, as well as the data grouping type (by default, data is aggregated across your entire environment). For example, by choosing **Host**:
+Sie können den abzudeckenden Datumsbereich sowie die Art der Datengruppierung auswählen (standardmäßig werden die Daten für Ihren gesamten Bereich gruppiert). Zum Beispiel, wenn Sie **Host** wählen:
 
 <img src={shivaMetric_001} />
 
 <img src={shivaMetric_002} />
 
-#### Storage
+Beim Überfahren mit der Maus über die Diagramme werden die Details der Ressourcennamen und ihre Werte angezeigt. Beim Klicken auf diese Diagramme öffnet sich ein kleines Tooltip, das es Ihnen ermöglicht, die Details zum angeklickten Datum einfacher einzusehen:
+<img src={shivaMetric_014} />
+
+#### Speicher
 
 Just as on the "Compute" tab, you will find various information: the number of **AZs**, **datastore clusters**, **datastores**, as well as two charts. The same filtering principles apply, but here you can group by **Cluster SDRS** and **Datastore**.
 
