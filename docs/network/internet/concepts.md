@@ -61,7 +61,7 @@ Il est possible de visualiser les blocs d'adresses qui vous sont affectés dans 
 
 | Référence                     | Unité  | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
-| Réseau - IPv4 Publique dédiée | 1 IPv4 | csp:(region):network:ipv4:v2 |
+| Réseau - IPv4 Publique dédiée | IPv4/32 | csp:(region):network:ipv4:v2 |
 
 ## Blocs IPv6
 
@@ -71,7 +71,7 @@ Il est possible de visualiser les prefixes qui vous sont affectés dans ce même
 
 | Référence                             | Unité   | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |
-| Réseau - Plage IPv6 Publiques dédiées | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Réseau - Plage IPv6 Publiques dédiées | IPv6/48 | csp:(region):network:ipv6:v1 |
 
 ## Migration de préfixes IP clients
 

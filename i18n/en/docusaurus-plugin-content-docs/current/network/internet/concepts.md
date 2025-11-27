@@ -77,7 +77,7 @@ It is possible to view the address blocks assigned to you in the same menu.
 
 | Reference                     | Unit   | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
-| Network - Dedicated Public IPv4 | 1 IPv4 | csp:(region):network:ipv4:v2 |
+| Network - Dedicated Public IPv4 | IPv4/32 | csp:(region):network:ipv4:v2 |
 
 
 
@@ -89,7 +89,7 @@ It is possible to view the prefixes assigned to you in the same menu.
 
 | Reference                             | Unit    | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |
-| Network - Dedicated Public IPv6 Ranges | 64 IPv6 | csp:(region):network:ipv6:v1 |
+| Network - Dedicated Public IPv6 Ranges | IPv6/48 | csp:(region):network:ipv6:v1 |
 
 
 
