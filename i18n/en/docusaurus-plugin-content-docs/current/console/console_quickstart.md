@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Prerequisites
 
@@ -64,7 +65,9 @@ The first step is identifying the type of support request:
 
 You can then provide additional details and attach files (e.g., images or logs).
 
-The requester may also specify a severity level (P1 to P4) in the ticket description, particularly in the case of a security incident, as follows:
+The requester may also specify a severity level (P1 to P5) in the ticket description, particularly in the case of a security incident, as follows:
+
+<img src={shivaSupportCriticities} />
 
 __CRITICAL (P1)__:
 
@@ -96,6 +99,10 @@ __LOW (P4)__:
 - Anomaly with no direct impact
 - Compliance-related question
 - Need for technical clarification
+
+__OPERATIONAL SERVICE (P5)__:
+
+- Operational service with no immediate risk
 
 <img src={shivaSupport_02} />
 

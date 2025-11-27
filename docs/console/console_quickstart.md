@@ -12,6 +12,7 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Prérequis
 
@@ -64,7 +65,9 @@ La première étape est l'identification du type de demande de support :
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
-Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident de sécurité, tel que:
+Le commanditaire peut également préciser un niveau de criticité (P1 à P5) dans la description du ticket, dans le cas d'un incident de sécurité, tel que:
+
+<img src={shivaSupportCriticities} />
 
 __CRITIQUE (P1)__:
 
@@ -96,6 +99,10 @@ __BASSE (P4)__:
 - Anomalie sans impact direct
 - Question de conformité
 - Besoin de clarification technique
+
+__SERVICE OPÉRATIONNEL (P5)__:
+
+- Service opérationnel sans risque immédiat
 
 <img src={shivaSupport_02} />
 
