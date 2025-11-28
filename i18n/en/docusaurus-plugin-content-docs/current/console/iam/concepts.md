@@ -19,7 +19,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Users
 
-Access accounts to the Shiva console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
+Access accounts to the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
 Credentials are global to your [Organization](#organizations).
 
@@ -149,7 +149,7 @@ The list of available themes may evolve and gradually expand to adapt to our ope
 
 ## Permissions
 
-The Shiva console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
+The Console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
 Initially, it is the primary account of the sponsor that enables the initial configuration of accounts and associated permissions.  
 Subsequently, the __'iam_write'__ permission allows an account to manage the permissions of other users.
 
@@ -238,7 +238,7 @@ An organization is linked to your __sponsor account__ and the associated __Cloud
 An organization has four main roles:
 
 - It represents the __contractual entity__ for tracking and billing purposes,
-- It defines the __global configuration of the authentication mechanism__: authentication can be local at the Shiva console level or remote via an identity federation service,
+- It defines the __global configuration of the authentication mechanism__: authentication can be local at the Console level or remote via an identity federation service,
 - It manages all __user accounts__,
 - It __federates tenants__ (Production, Staging, Dev, Application 1, Application 2, ...) that you define for your Cloud architecture needs.
 
@@ -246,7 +246,7 @@ User roles (rights/permissions) are configurable for each tenant defined within 
 
 ### Authentication Mechanisms
 
-The Shiva console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Shiva console's built-in local authentication directory, or connect your organization to one of your external authentication directories.
+The Console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Console's built-in local authentication directory, or connect your organization to one of your external authentication directories.
 
 The following external authentication directories are supported:
 

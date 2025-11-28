@@ -137,7 +137,7 @@ Al hacer clic en el botón "Pegar", el contenido de su campo de texto se envía 
 
 ### Access to replication management
 
-The replication management interface is available in the Shiva console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
+The replication management interface is available in the Console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
 
 <img src={openIaasReplicationMenu} />
 

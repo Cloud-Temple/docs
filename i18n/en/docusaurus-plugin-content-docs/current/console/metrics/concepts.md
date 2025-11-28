@@ -29,7 +29,7 @@ import grafanaDashboards_001 from './images/grafana_dashboards_001.png'
 
 The majority of __Cloud Temple__ clients have visualization, monitoring, and metrology tools in place to track their operations.
 
-The philosophy behind the Shiva console is to provide access to data so it can be integrated into this tooling via an embedded Prometheus proxy.
+The philosophy behind the Console is to provide access to data so it can be integrated into this tooling via an embedded Prometheus proxy.
 
 This proxy enables you to query and manipulate data using a visualization tool such as [Grafana](https://grafana.com).
 
@@ -43,7 +43,7 @@ It is, however, possible to view some performance metrics of your Cloud resource
 
 ### Overview
 
-The Shiva console's home page displays the main dashboard, showing all metrics that provide an overview of each product you have subscribed to within your scope. If any issues arise with your VMware and/or OpenIaaS products, alerts will be visible—alert severity is indicated by color.
+The Console's home page displays the main dashboard, showing all metrics that provide an overview of each product you have subscribed to within your scope. If any issues arise with your VMware and/or OpenIaaS products, alerts will be visible—alert severity is indicated by color.
 
 These alerts are clickable and redirect to the corresponding product page.
 
@@ -142,9 +142,9 @@ Just as on the "Compute" tab, various information is displayed: the number of **
 
 ## Usage with __Grafana__
 
-Integration of the Shiva console with Grafana
+Integration of the Console with Grafana
 
-The Shiva console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
+The Console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
 
 The console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
 

@@ -31,9 +31,9 @@ Die Auswahl des Tenants erfolgt von der Hauptseite der Shiva-Konsole:
 
 *Bitte beachten Sie: Die Ressourcen eines Tenants sind exklusiv und dürfen nicht mit anderen Tenants vermischt werden.*
 
-## Shiva Console Access Accounts
+## Console Access Accounts
 
-Shiva Console Access Accounts are created by the master account of the sponsor on invitation (regardless of the authentication reference).
+Console Access Accounts are created by the master account of the sponsor on invitation (regardless of the authentication reference).
 The identification information is global to your [Organization](concepts.md#organisationen).
 
 *__Note:__ The identity federation is managed at the organization level.*

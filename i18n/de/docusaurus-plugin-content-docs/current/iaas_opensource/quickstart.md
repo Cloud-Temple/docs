@@ -22,7 +22,7 @@ import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.
 
 ### Virtual Machine Management
 
-The interface for managing your virtual machines is available in the Shiva console under the __'OpenIaaS'__ menu located on the green bar on the left side of the screen.
+The interface for managing your virtual machines is available in the Console under the __'OpenIaaS'__ menu located on the green bar on the left side of the screen.
 
 ### Liste der virtuellen Maschinen
 
@@ -137,7 +137,7 @@ Upon clicking the "Paste" button, the content of your text field is sent to your
 
 ### Access to Replication Management
 
-The replication management interface is available in the Shiva console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
+The replication management interface is available in the Console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
 
 <img src={openIaasReplicationMenu} />
 

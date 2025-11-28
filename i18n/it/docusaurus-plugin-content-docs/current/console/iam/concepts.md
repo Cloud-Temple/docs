@@ -148,7 +148,7 @@ L'elenco delle tematiche disponibili può evolversi e arricchirsi progressivamen
 
 ## Permissions
 
-The Shiva console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
+The Console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
 Initially, it is the primary account of the sponsor that enables the initial configuration of accounts and associated permissions.  
 Subsequently, the __'iam_write'__ permission allows an account to manage the permissions of other users.
 
@@ -245,7 +245,7 @@ I ruoli (diritti/permessi) degli utenti sono configurabili per ciascun tenant de
 
 ### Authentication mechanisms
 
-The Shiva console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Shiva console's built-in local authentication repository, or connect your organization to one of your external authentication repositories.
+The Console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Console's built-in local authentication repository, or connect your organization to one of your external authentication repositories.
 
 The following external authentication repositories are supported:
 
