@@ -19,7 +19,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Utenti
 
-I conti di accesso alla console Shiva vengono creati dal conto principale del committente su invito (indipendentemente dal repository di autenticazione utilizzato).  
+I conti di accesso alla Console vengono creati dal conto principale del committente su invito (indipendentemente dal repository di autenticazione utilizzato).  
 Le credenziali sono globali per la tua [Organizzazione](#organizzazioni).
 
 *__Nota:__ [La federazione di identità viene gestita a livello di organizzazione](#meccanismi-dautenticazione)*
@@ -237,7 +237,7 @@ L'organizzazione è associata al tuo __account sponsor__ e al __contratto Cloud 
 L'organizzazione ha quattro ruoli principali:
 
 - Rappresenta __l'entità contrattuale__ per quanto riguarda i aspetti di tracciamento e fatturazione,
-- Definisce __la configurazione globale del meccanismo di autenticazione__: l'autenticazione può essere locale a livello della console Shiva o remota tramite un servizio di federazione dell'identità,
+- Definisce __la configurazione globale del meccanismo di autenticazione__: l'autenticazione può essere locale a livello della Console o remota tramite un servizio di federazione dell'identità,
 - Gestisce l'insieme di __tutti gli account utente__,
 - __Federizza i tenant__ (Produzione, Preproduzione, Sviluppo, Applicazione 1, Applicazione 2, ...) che definisci per i tuoi requisiti architetturali Cloud.
 

@@ -17,12 +17,12 @@ import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 ## Requis previos
 
 - Tener suscrito una oferta Cloud Temple. Para suscribirse fácilmente, puede [contactarnos](https://www.cloud-temple.com/contactez-nous/) o por correo electrónico a la dirección __contact@cloud-temple.com__.
-- Tener acceso a la consola Shiva
-- Tener su dirección IPv4 pública declarada en la zona de confianza Cloud Temple (el acceso a la consola Shiva está limitado a las direcciones de confianza identificadas)
+- Tener acceso a la consola Console
+- Tener su dirección IPv4 pública declarada en la zona de confianza Cloud Temple (el acceso a la consola Console está limitado a las direcciones de confianza identificadas)
 
 ## Conexión a su inquilino Cloud Temple
 
-Shiva está disponible a través de la siguiente URL: [Shiva](https://shiva.cloud-temple.com) o bien desde la URL directa que le fue comunicada por correo electrónico.
+Console está disponible a través de la siguiente URL: [Console](https://shiva.cloud-temple.com) o bien desde la URL directa que le fue comunicada por correo electrónico.
 
 La primera página le permite seleccionar la [organización](iam/concepts.md#organisations) en la que fue creado su usuario.  
 Una vez que haya indicado la empresa, haga clic en __'Conectarse'__.
@@ -197,7 +197,7 @@ Haga clic en la esquina inferior izquierda de la barra verde sobre el icono __'N
 
 ## Acceso a las funciones de usuario a través de la API
 
-El acceso a todas las funciones de la consola Shiva es posible a través de la API Shiva. Puede obtener detalles sobre los verbos y configuraciones mediante __'Perfil'__ y __'APIs'__:
+El acceso a todas las funciones de la consola Console es posible a través de la API Console. Puede obtener detalles sobre los verbos y configuraciones mediante __'Perfil'__ y __'APIs'__:
 
 <img src={shivaOnboard_008} />
 

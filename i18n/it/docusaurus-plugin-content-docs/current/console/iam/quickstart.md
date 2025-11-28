@@ -25,15 +25,15 @@ La creazione di un tenente viene eseguita tramite una richiesta di servizio che 
 
 ### Selezione del tenant
 
-La selezione del tenant avviene dalla pagina principale della console Shiva:
+La selezione del tenant avviene dalla pagina principale della Console:
 
 <img src={shivaTenant} />
 
 *__Nota__: Le materiale di un tenant è esclusivo e non può essere mescolato con quello di altri tenenti.*
 
-## Accesso i conti di accesso alla console Shiva
+## Accesso i conti di accesso alla Console
 
-I conti di accesso alla console Shiva vengono creati dal conto master del committente su invito (indipendentemente dal riferimento di autenticazione).
+I conti di accesso alla Console vengono creati dal conto master del committente su invito (indipendentemente dal riferimento di autenticazione).
 Le dati di identificazione sono globali per la tua [Organizzazione](concepts.md#organizzazioni).
 
 *__Nota__: La federazione dell'identità viene gestita al livello dell'organizzazione*
@@ -101,7 +101,7 @@ La lista dei temi disponibili può evolversi e arricchirsi progressivamente per 
 
 ## Permessi
 
-### Quali sono le permessi disponibili per gli account utente della console Shiva?
+### Quali sono le permessi disponibili per gli account utente della Console?
 
 Ecco la lista delle [permessi disponibili](#permessi).
 
@@ -132,7 +132,7 @@ Nel menu "Amministrazione" sulla barra laterale verticale sinistra dello schermo
 
 ### Come cambiare il proprio password?
 
-È possibile cambiare la propria password dal pulsante "Password dimenticata?" sulla pagina di accesso della console Shiva.
+È possibile cambiare la propria password dal pulsante "Password dimenticata?" sulla pagina di accesso della Console.
 
 ### Perché alcuni utenti sono grigi?
 
@@ -146,13 +146,13 @@ L'account è grigiato fino a quando la verifica non sarà stata completata.
 
 ### Cosa è un Personal Access Token (PAT)?
 
-La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__, rappresenta una modalità sicura per connettersi alle API Shiva senza passare attraverso un'interfaccia grafica.
+La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__, rappresenta una modalità sicura per connettersi alle API Console senza passare attraverso un'interfaccia grafica.
 
 ### Cosa è il MFA e è obbligatorio?
 
 Il MFA (multi-factor authentication) è un concetto di verifica dell'identità di un utente in due fasi, chiamato autenticazione a doppio fattore.
 
-L'utente deve fornire due prove d'identità distinte. Nel caso della console Shiva, l'autenticazione a doppio fattore è obbligatoria e richiede di inserire un codice unico una volta che l'utente ha digitato il password del proprio account.
+L'utente deve fornire due prove d'identità distinte. Nel caso della Console, l'autenticazione a doppio fattore è obbligatoria e richiede di inserire un codice unico una volta che l'utente ha digitato il password del proprio account.
 
 ### Gestione degli accessi e autenticazione
 

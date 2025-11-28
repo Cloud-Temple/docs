@@ -2,7 +2,7 @@
 title: Tutorial
 ---
 
-Questi tutorial vi aiutano a implementare e gestire l'Housing Cloud Temple dal portale Shiva.
+Questi tutorial vi aiutano a implementare e gestire l'Housing Cloud Temple dal portale Console.
 
 <div class="card">
   <h3>Tutorial</h3>

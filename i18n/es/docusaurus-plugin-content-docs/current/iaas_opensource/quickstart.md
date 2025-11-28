@@ -22,7 +22,7 @@ import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.
 
 ### Gestión de máquinas virtuales
 
-La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva en el menú __'OpenIaaS'__ situado en la barra verde a la izquierda de la pantalla.
+La interfaz de gestión de sus máquinas virtuales está disponible en la Consola en el menú __'OpenIaaS'__ situado en la barra verde a la izquierda de la pantalla.
 
 ### Lista de máquinas virtuales
 

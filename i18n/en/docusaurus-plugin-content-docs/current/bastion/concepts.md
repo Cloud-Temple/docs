@@ -20,15 +20,15 @@ The Cloud Temple Bastion is a managed service that provides secure RDP or SSH co
 
 | Advantage               |                                                                              Description                                                                               |
 |------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Centralized Management |                                              The Cloud Temple Bastion is directly accessible from the Shiva portal.                                               |
+| Centralized Management |                                              The Cloud Temple Bastion is directly accessible from the Console portal.                                               |
 | Security               | Devices managed via the Bastion are not exposed to the Internet, which protects them notably from port scanning by malicious users. |
 | Infrastructure as Code |          APIs allow managing the Cloud Temple Bastion entirely "as Code" (session creation, connection, modification, and deletion).          |
 
 ### Bastion Appliance
 
-The Bastion Appliance is a virtual machine deployed near your equipment. This Appliance allows a secure and direct flow from the Shiva platform to the equipment to be managed, which are located in the same virtual network.
+The Bastion Appliance is a virtual machine deployed near your equipment. This Appliance allows a secure and direct flow from the Console platform to the equipment to be managed, which are located in the same virtual network.
 
-The flow is encrypted and encapsulated in a VPN tunnel. The solution does not require opening a flow from the Internet to your infrastructure. It is sufficient for the Appliance to have access to the public IP of the Shiva Bastion module on port 443.
+The flow is encrypted and encapsulated in a VPN tunnel. The solution does not require opening a flow from the Internet to your infrastructure. It is sufficient for the Appliance to have access to the public IP of the Console Bastion module on port 443.
 
 A single Appliance can be used to quickly connect to a device. For each connection, the desired protocol, the machine's IP address, and your credentials must be specified. To avoid entering these details for each connection, it is possible to create sessions associated with regularly managed equipment.
 

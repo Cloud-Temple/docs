@@ -42,7 +42,7 @@ Varios flujos son necesarios para el correcto funcionamiento de la Appliance Bas
 ## Solicitar la creación de una Appliance
 
 Antes de poder desplegar una Appliance, es necesario realizar una solicitud de suscripción a una Appliance a través de un ticket al soporte.
-El soporte está disponible en la consola Shiva desde el icono de balsa en la barra superior a la derecha de la ventana.
+El soporte está disponible en la consola Console desde el icono de balsa en la barra superior a la derecha de la ventana.
 
 <img src={shivaSupport} />
 

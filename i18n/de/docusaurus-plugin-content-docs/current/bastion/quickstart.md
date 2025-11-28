@@ -40,7 +40,7 @@ Für den ordnungsgemäßen Betrieb der Bastion Appliance sind mehrere Datenflüs
 
 ## Beantragung der Erstellung einer Appliance
 Bevor Sie eine Appliance bereitstellen können, müssen Sie ein Appliance-Abonnement über eine Support-Anfrage beantragen.
-Der Support ist in der Shiva-Konsole über das Rettungsring-Symbol in der Leiste oben rechts im Fenster zugänglich.
+Der Support ist in der Konsole über das Rettungsring-Symbol in der Leiste oben rechts im Fenster zugänglich.
 
 <img src={shivaSupport} />
 

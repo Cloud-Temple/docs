@@ -14,7 +14,7 @@ import modifierSession from './images/modifier_session.png'
 import modifierSession2 from './images/modifier_session2.png'
 import supprimerSession from './images/supprimer_session.png'
 
-Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Shiva.
+Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Console.
 
 ## Prerequisiti
 
@@ -25,7 +25,7 @@ Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal p
 
 ## Interfaccia
 
-Una volta connesso al portale web Shiva, vai alla scheda "Bastion" del menu a sinistra.
+Una volta connesso al portale web Console, vai alla scheda "Bastion" del menu a sinistra.
 
 <img src={sessions} />
 

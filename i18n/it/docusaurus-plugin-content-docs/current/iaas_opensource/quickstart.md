@@ -22,7 +22,7 @@ import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.
 
 ### Gestione delle macchine virtuali
 
-L'interfaccia di gestione delle macchine virtuali è disponibile nella console Shiva nel menu __'OpenIaaS'__ situato sulla barra verde a sinistra dello schermo.
+L'interfaccia di gestione delle macchine virtuali è disponibile nella Console nel menu __'OpenIaaS'__ situato sulla barra verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 
@@ -135,7 +135,7 @@ Al clic sul pulsante "Incolla", il contenuto del campo di testo viene inviato al
 
 ### Accesso alla gestione della replica
 
-L'interfaccia di gestione della replica è disponibile nella console Shiva nel menu __'OpenIaaS'__ > __'Replica'__, situato sulla barra verde a sinistra dello schermo.
+L'interfaccia di gestione della replica è disponibile nella Console nel menu __'OpenIaaS'__ > __'Replica'__, situato sulla barra verde a sinistra dello schermo.
 
 <img src={openIaasReplicationMenu} />
 

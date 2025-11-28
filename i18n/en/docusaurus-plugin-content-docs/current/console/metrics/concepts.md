@@ -33,7 +33,7 @@ The philosophy behind the Console is to provide access to data so it can be inte
 
 This proxy enables you to query and manipulate data using a visualization tool such as [Grafana](https://grafana.com).
 
-It is, however, possible to view some performance metrics of your Cloud resources directly within the Shiva web interface.
+It is, however, possible to view some performance metrics of your Cloud resources directly within the Console web interface.
 
 *__Note:__ The __Cloud Temple__ philosophy is not limited to embedding graphs within the web interface, but also to providing maximum information accessible via the API*
 

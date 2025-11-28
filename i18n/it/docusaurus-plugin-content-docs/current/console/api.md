@@ -14,7 +14,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 ## Chiavi API
 
 La __chiave API__ permet di autenticarsi quando si desidera effettuare richieste all'API. La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__,
-è un modo sicuro per connettersi alle API Shiva senza dover passare attraverso un'interfaccia grafica. Ogni token è associato a un tenant e all'utente che lo ha creato.
+è un modo sicuro per connettersi alle API Console senza dover passare attraverso un'interfaccia grafica. Ogni token è associato a un tenant e all'utente che lo ha creato.
 
 La creazione di questo token avviene dal tuo account. È possibile generare più chiavi e configurare per ciascuna le autorizzazioni entro i limiti dei tuoi diritti.
 

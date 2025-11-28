@@ -40,7 +40,7 @@ Diversi flussi sono necessari per il corretto funzionamento dell'Appliance Basti
 
 ## Richiedere la creazione di un'Appliance
 Prima di poter distribuire un'Appliance, è necessario richiedere una sottoscrizione a un'Appliance tramite una richiesta al supporto.
-Il supporto è accessibile nella console Shiva dall'icona del salvagente sulla barra in alto a destra della finestra.
+Il supporto è accessibile nella Console dall'icona del salvagente sulla barra in alto a destra della finestra.
 
 <img src={shivaSupport} />
 

@@ -51,7 +51,7 @@ Once all steps are completed, your networks are created, and a command is genera
 
 - Through the __*Commands*__ tab in the main menu
 
-<img src={shivaOrderNetwork_001} alt="Shiva Network Order 001" />
+<img src={shivaOrderNetwork_001} alt="Console Network Order 001" />
 
 - By clicking on informational labels that redirect to related commands
 
@@ -69,8 +69,8 @@ All possible actions on your networks are available in the __*Actions*__ menu of
 
 > Network removal is currently not available.
 
-<img src={shivaNetwork_005} alt="Shiva Network 005" />
-<img src={shivaNetwork_006} alt="Shiva Network 006" />
+<img src={shivaNetwork_005} alt="Console Network 005" />
+<img src={shivaNetwork_006} alt="Console Network 006" />
 
 #### Visualization of Network Propagation
 
@@ -95,12 +95,12 @@ The removal of a propagation within a tenant is carried out through the option _
 
 You then select which propagation you wish to remove:
 
-<img src={shivaNetworkDeletePropagation} alt="Shiva Network Delete Propagation" />
+<img src={shivaNetworkDeletePropagation} alt="Console Network Delete Propagation" />
 
 A command is subsequently generated, similar to the initial creation with propagation.
 
-<img src={shivaNetworkDeletePropagationOrder} alt="Shiva Network Delete Propagation Order" />
-<img src={shivaNetworkDeletePropagationOrderValidate} alt="Shiva Network Delete Propagation Order Validate" />
+<img src={shivaNetworkDeletePropagationOrder} alt="Console Network Delete Propagation Order" />
+<img src={shivaNetworkDeletePropagationOrderValidate} alt="Console Network Delete Propagation Order Validate" />
 
 #### Delayed Network Propagation
 
@@ -113,7 +113,7 @@ It is feasible to separate the creation and propagation of networks into two dis
 
 A network can be temporarily deactivated without being deleted, and then reactivated later.
 
-<img src={shivaNetwork_010} alt="Shiva Network" />
+<img src={shivaNetwork_010} alt="Console Network" />
 
 ### Network Sharing Between Tenants
 
