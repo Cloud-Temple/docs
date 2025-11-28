@@ -18,7 +18,7 @@ Stellen Sie sicher, dass die folgenden Punkte erfüllt sind, bevor Sie beginnen:
 
 ## Access to the Marketplace
 
-### 1. Access via the Shiva Console
+### 1. Access via the Console
 
 After logging into the Cloud Temple console, you can access the Marketplace in several ways:
 

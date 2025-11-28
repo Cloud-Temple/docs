@@ -52,7 +52,7 @@ import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ### Gestione delle macchine virtuali
 
-L'interfaccia di gestione delle macchine virtuali è disponibile nella console Shiva nel menu __'IaaS'__ situato sulla barra verde a sinistra dello schermo.
+L'interfaccia di gestione delle macchine virtuali è disponibile nella Console nel menu __'IaaS'__ situato sulla barra verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 

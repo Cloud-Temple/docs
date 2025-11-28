@@ -13,7 +13,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## API Keys
 
-The __API key__ allows you to authenticate when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the Shiva APIs without using a graphical interface. Each of these tokens is linked to a specific tenant and the user who created it.
+The __API key__ allows you to authenticate when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the Console APIs without using a graphical interface. Each of these tokens is linked to a specific tenant and the user who created it.
 
 Creating this token is done from your account. You can generate multiple keys and configure permissions for each one, within the limits of your access rights.
 

@@ -14,7 +14,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 ## API-Schlüssel
 
 Der __API-Schlüssel__ ermöglicht die Authentifizierung, wenn Sie Anfragen an die API stellen möchten. Die Erstellung eines API-Schlüssels, auch bekannt als __Personal Access Token (PAT)__,
-ist eine sichere Methode, um sich an die Shiva-APIs anzumelden, ohne eine grafische Benutzeroberfläche nutzen zu müssen. Jeder dieser Tokens ist mit einem Tenant und dem Benutzer verknüpft, der ihn erstellt hat.
+ist eine sichere Methode, um sich an die Console-APIs anzumelden, ohne eine grafische Benutzeroberfläche nutzen zu müssen. Jeder dieser Tokens ist mit einem Tenant und dem Benutzer verknüpft, der ihn erstellt hat.
 
 Die Erstellung dieses Tokens erfolgt über Ihr Konto. Es ist möglich, mehrere Schlüssel zu generieren und für jeden die Berechtigungen entsprechend Ihren Rechten einzurichten.
 

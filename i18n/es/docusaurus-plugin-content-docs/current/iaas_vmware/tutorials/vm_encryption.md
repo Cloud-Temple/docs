@@ -10,7 +10,7 @@ import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
 import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
 
-Este tutorial le ayuda a cifrar una máquina virtual IaaS de VMWare desde el portal Shiva.
+Este tutorial le ayuda a cifrar una máquina virtual IaaS de VMWare desde el portal Console.
 
 ### Requisitos previos
 
@@ -27,7 +27,7 @@ Este tutorial le ayuda a cifrar una máquina virtual IaaS de VMWare desde el por
 
 ### Interfaz
 
-Una vez conectado al portal web Shiva, desde el menú **'IaaS'**, submenú **'Configuración'** y pestaña **'vCenters'**, encontrará la información que le indica si el cifrado está activado en la vStack en cuestión.
+Una vez conectado al portal web Console, desde el menú **'IaaS'**, submenú **'Configuración'** y pestaña **'vCenters'**, encontrará la información que le indica si el cifrado está activado en la vStack en cuestión.
 
 <img src={shivaHsmKms_000} />
 

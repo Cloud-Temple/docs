@@ -38,7 +38,7 @@ You can enter a name and description for the relying party, this part is optiona
 
 <img src={ssoAdfs_004} />
 
-By default, we allow everyone but it is possible to select __"Allow a specific group"__ to select the group or groups that will be allowed to access the Shiva console services via ADFS.
+By default, we allow everyone but it is possible to select __"Allow a specific group"__ to select the group or groups that will be allowed to access the Console services via ADFS.
 
 <img src={ssoAdfs_005} />
 
@@ -66,7 +66,7 @@ On your ADFS server, go to __"Add a Trusted Party Approval"__.
 
 ## Step 3: Finalization
 
-you can now test by going to the Shiva console and clicking on the button corresponding to the ADFS client authentication; in this example, it is here __"ADFS Test"__
+you can now test by going to the Console and clicking on the button corresponding to the ADFS client authentication; in this example, it is here __"ADFS Test"__
 
 <img src={ssoAdfs_012} />
 
@@ -92,9 +92,9 @@ import ssoAdfs_012 from './images/sso_adfs_012.png'
 
 Here is an example of configuring the authentication repository of a Cloud Temple organization with **Microsoft ADFS**.
 
-Configuring your Microsoft repository at the Cloud Temple organization level facilitates user authentication on the Shiva console.
+Configuring your Microsoft repository at the Cloud Temple organization level facilitates user authentication on the Console.
 This helps avoid the multiplication of authentication factors and reduce the attack surface.
-If your users are authenticated via their Microsoft account, authentication to the Shiva console services will be transparent.
+If your users are authenticated via their Microsoft account, authentication to the Console services will be transparent.
 
 Here are the different steps to perform this configuration:
 
@@ -113,7 +113,7 @@ Please provide the following information in the support request:
     (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
 
-Once the configuration is completed on the Shiva console side, the designated contact will be notified.
+Once the configuration is completed on the Console side, the designated contact will be notified.
 
 The Cloud Temple support team will send you a URL that will look like this: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
 

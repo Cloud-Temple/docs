@@ -14,7 +14,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 ## Claves API
 
 La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también conocida como __Personal Access Token (PAT)__,
-es una forma segura de conectarse a las API de Shiva sin necesidad de usar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
+es una forma segura de conectarse a las API de Console sin necesidad de usar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
 
 La creación de este token se realiza desde su cuenta. Es posible generar varias claves y configurar los permisos para cada una, dentro de los límites de sus derechos.
 

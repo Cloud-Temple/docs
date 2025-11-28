@@ -2,7 +2,7 @@
 title: Tutorials
 ---
 
-Diese Tutorials helfen Ihnen bei der Bereitstellung und Verwaltung von Cloud Temple Housing über das Shiva-Portal.
+Diese Tutorials helfen Ihnen bei der Bereitstellung und Verwaltung von Cloud Temple Housing über das Konsole-Portal.
 
 <div class="card">
   <h3>Tutorials</h3>

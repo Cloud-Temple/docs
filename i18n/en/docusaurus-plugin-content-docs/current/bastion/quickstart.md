@@ -5,7 +5,7 @@ Several flows are necessary for the proper operation of the Bastion Appliance.
 ## Request the creation of an Appliance
 
 Before being able to deploy an Appliance, a subscription request for an Appliance must be submitted to the support team.
-Support is accessible in the Shiva console from the buoy icon on the top right bar of the window.
+Support is accessible in the Console from the buoy icon on the top right bar of the window.
 
 <img src={shivaSupport} />
 

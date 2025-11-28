@@ -31,7 +31,7 @@ La plateforme est qualifiée __SecNumCloud__ par l'[ANSSI](https://www.ssi.gouv.
 - Ressources réseau (Internet, réseaux privés).
 - Sauvegardes croisées avec rétention configurable.
 - Réplication asynchrone pour le stockage ou les machines virtuelles.
-- Pilotage via la [Console Shiva](../console/console.md) ou en mode Infrastructure as Code grâce aux APIs et au provider Terraform.
+- Pilotage via la [Console](../console/console.md) ou en mode Infrastructure as Code grâce aux APIs et au provider Terraform.
 
 ## Avantages
 

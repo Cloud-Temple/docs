@@ -32,7 +32,7 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 - Networking resources (Internet, private networks).
 - Cross-backups with configurable retention.
 - Asynchronous replication for storage or virtual machines.
-- Management via the [Shiva Console](../console/console.md) or in Infrastructure as Code mode using APIs and the Terraform provider.
+- Management via the [Console](../console/console.md) or in Infrastructure as Code mode using APIs and the Terraform provider.
 
 ## Benefits
 
@@ -241,11 +241,11 @@ This mechanism may impact application performance by up to 10%. __Only storage c
 The VMware Cloud Temple offering qualified SecNumCloud is based on the __VMware vSphere__ technology.
 
 The platform is managed automatically by Cloud Temple (security compliance maintenance, operational readiness maintenance, etc.).  
-It can be controlled via the Shiva console's graphical interface or through the associated APIs.
+It can be controlled via the Console's graphical interface or through the associated APIs.
 
 *__Note__*: *For security reasons related to the SecNumCloud qualification,  
 __the customer is not allowed to access the VMware virtualization platform directly__ (no direct access to vCenter, for example).  
-Indeed, the SecNumCloud qualification requires __complete segregation__ between the technical assets' management interfaces and the customer's interface (the Shiva console).*
+Indeed, the SecNumCloud qualification requires __complete segregation__ between the technical assets' management interfaces and the customer's interface (the Console).*
 
 - The deployed products are VMware ESXi, VMware vCenter, and VMware Replication.
 - *The virtualization offering's network does not use VMware NSX technology, but is instead managed physically using Juniper technology and the VPLS protocol.*
@@ -443,7 +443,7 @@ The system uses a __cryptographic key hierarchy__ to ensure data security:
 
 ### Activation and Usage
 
-VM encryption can be activated __with a single click__ from the [Shiva Console](../console/console.md).
+VM encryption can be activated __with a single click__ from the [Console](../console/console.md).
 
 For a detailed step-by-step guide with screenshots, see the [VM Encryption Tutorial](tutorials/vm_encryption.md).
 

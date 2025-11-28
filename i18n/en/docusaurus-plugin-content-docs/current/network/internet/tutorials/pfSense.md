@@ -56,7 +56,7 @@ You must have the following information:
 
 You can then deploy your pfSense VM:
 
-1. __Install the firewall__ from the pfSense template in Shiva:
+1. __Install the firewall__ from the pfSense template in Console:
     - [(Deploy via the console)](../../../iaas_vmware/tutorials/deploy_vm_template)
     - [(Deploy via Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
 2. __Configure the LAN and WAN interfaces__ of the firewall: the WAN interface must be in your internet VLAN, with its IP address assigned from the IP range provided by the CDS, along with the default gateway.

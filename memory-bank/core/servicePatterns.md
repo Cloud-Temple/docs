@@ -144,7 +144,7 @@ images/
 ```
 
 ### Types de Captures
-- **Interface** : Screenshots console Shiva
+- **Interface** : Screenshots Console
 - **Workflow** : Séquences d'actions
 - **Architecture** : Diagrammes techniques
 - **Monitoring** : Dashboards Grafana

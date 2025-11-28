@@ -17,9 +17,9 @@ Dieser Leitfaden ermöglicht es Ihnen, innerhalb von 5 Minuten Ihre ersten Insta
 
 ## Eine virtuelle Maschine aus einer Vorlage bereitstellen
 
-Dieser Leitfaden zeigt Schritt für Schritt, wie Sie eine virtuelle Maschine aus einer Vorlage in der Shiva-Konsole bereitstellen.
+Dieser Leitfaden zeigt Schritt für Schritt, wie Sie eine virtuelle Maschine aus einer Vorlage in der Konsole bereitstellen.
 
-Gehen Sie im Shiva-Portal zum Reiter "Trusted Cloud" und dann zu "Kataloge". Bevor Sie eine Vorlage bereitstellen können, muss diese in Ihrem privaten Katalog im Reiter "Mein Katalog" geladen sein.
+Gehen Sie im Konsole-Portal zum Reiter "Trusted Cloud" und dann zu "Kataloge". Bevor Sie eine Vorlage bereitstellen können, muss diese in Ihrem privaten Katalog im Reiter "Mein Katalog" geladen sein.
 
 Dafür haben Sie zwei Möglichkeiten: Entweder importieren Sie Ihre eigene Vorlage direkt in Ihren privaten Katalog oder Sie importieren ein Modell aus dem öffentlichen Katalog von Cloud Temple.
 

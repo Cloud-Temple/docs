@@ -311,7 +311,7 @@ conformément aux exigences du référentiel SecNumCloud.
 | **Stockage objet S3** | mise à disposition d'une infrastructure de stockage objet souverain multi AZ et compatible avec les API S3 standard. |
 | **Sauvegarde** | Modulo souscription au mass-storage adéquat |
 | **Infrastructure réseau** | Ressource réseau du Tenant COMMANDITAIRE |
-| **Console COMMANDITAIRE** | Le service permettant au COMMANDITAIRE d'accéder à son service IaaS et de l'administrer via l'interface Shiva |
+| **Console COMMANDITAIRE** | Le service permettant au COMMANDITAIRE d'accéder à son service IaaS et de l'administrer via l'interface Console |
 | **Support** | Le service de support accompagnant les services précédents et uniquement ceux-ci (\*) |
 
 \_(\*) Dans la limite du périmètre du Service qualifié SNC et des
