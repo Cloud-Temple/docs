@@ -17,9 +17,9 @@ Ce guide va vous permettre de déployer en moins de 5 minutes vos premières ins
 
 ## Déployer une machine virtuelle depuis un Template
 
-Ce guide vous montre étape par étape comment déployer une machine virtuelle depuis un Template dans la console Shiva.
+Ce guide vous montre étape par étape comment déployer une machine virtuelle depuis un Template dans la Console.
 
-Sur le portail Shiva, rendez-vous dans l'onglet "Cloud de confiance", puis "Catalogues". Avant de pouvoir déployer un Template, celui-ci doit être chargé dans votre catalogue privé, dans l'onglet "Mon catalogue".
+Sur le portail Console, rendez-vous dans l'onglet "Cloud de confiance", puis "Catalogues". Avant de pouvoir déployer un Template, celui-ci doit être chargé dans votre catalogue privé, dans l'onglet "Mon catalogue".
 
 Pour cela, vous avez deux possibilités : importer votre propre Template directement dans votre catalogue privé ou bien importer un modèle depuis le catalogue public de Cloud Temple.
 

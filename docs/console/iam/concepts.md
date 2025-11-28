@@ -19,7 +19,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Utilisateurs
 
-Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
+Les comptes d'accès à la Console sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
 Les informations d'identification sont globales à votre [Organisation](#organisations).
 
 *__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#mécanismes-dauthentification)*
@@ -148,7 +148,7 @@ La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichi
 
 ## Permissions
 
-La console Shiva permet une gestion fine des droits des utilisateurs d'une organisation, avec une ségrégation par tenant.
+La Console permet une gestion fine des droits des utilisateurs d'une organisation, avec une ségrégation par tenant.
 Initialement, c'est le compte principal du commanditaire qui permet la configuration initiale des comptes et des permissions associées.
 Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les permissions des autres utilisateurs.
 
@@ -237,7 +237,7 @@ L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud
 L'organisation a quatre grands rôles :
 
 - Elle représente __l'entité contractuelle__ pour les aspects de suivi et de facturation,
-- Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la console Shiva ou distante via un service de fédération d'identité,
+- Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la Console ou distante via un service de fédération d'identité,
 - Elle porte l'ensemble des __comptes utilisateurs__,
 - Elle __fédère les tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...) que vous définissez pour les besoins de votre architecture Cloud.
 
@@ -245,8 +245,8 @@ Les rôles (droits/permissions) des utilisateurs sont configurables pour chaque 
 
 ### Mécanismes d'authentification
 
-La console Shiva permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
-utiliser le référentiel local d'authentification de la console Shiva ou bien accoster votre organisation à l'un
+La Console permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
+utiliser le référentiel local d'authentification de la Console ou bien accoster votre organisation à l'un
 de vos référentiels d'authentification.
 
 Les référentiels externes suivants sont supportés :

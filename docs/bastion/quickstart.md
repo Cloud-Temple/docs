@@ -42,7 +42,7 @@ Plusieurs flux sont nécessaires pour le bon fonctionnement de l'Appliance Basti
 ## Demander la création d'une Appliance
 
 Avant de pouvoir déployer une Appliance, il faut faire une demande de souscription à une Appliance via une demande au support.
-Le support est accessible dans la console Shiva depuis l'icône de bouée sur la barre en haut à droite de la fenêtre.
+Le support est accessible dans la Console depuis l'icône de bouée sur la barre en haut à droite de la fenêtre.
 
 <img src={shivaSupport} />
 

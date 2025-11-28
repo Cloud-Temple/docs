@@ -32,7 +32,7 @@ La plateforme est qualifiée __SecNumCloud__ par l'[ANSSI](https://www.ssi.gouv.
 - Ressources réseau (Internet, réseaux privés).
 - Sauvegardes croisées avec rétention configurable.
 - Réplication asynchrone pour le stockage ou les machines virtuelles.
-- Pilotage via la [Console Shiva](../console/console.md) ou en mode Infrastructure as Code grâce aux APIs et au provider Terraform.
+- Pilotage via la [Console](../console/console.md) ou en mode Infrastructure as Code grâce aux APIs et au provider Terraform.
 
 ## Avantages
 
@@ -279,11 +279,11 @@ L'usage de ce mécanisme peut impacter la performance de l'application à hauteu
 L'offre de virtualisation VMware Cloud Temple qualifiée SecNumCloud est basée sur la technologie __VMware Vsphere__.
 
 La plateforme est managées par Cloud Temple de façon automatique (maintien de condition de sécurité, maintien en condition opérationnelle, ...).
-Elle est pilotable via l'interface graphique de la console Shiva ou via les APIs associées.
+Elle est pilotable via l'interface graphique de la Console ou via les APIs associées.
 
 *__Remarque__* : *Pour des raisons de sécurité liées à la qualification SecNumCloud,
 __il n'est pas possible pour le commanditaire d'accéder directement à la plateforme de virtualisation VMware__ (aucun accès direct au vCenter notamment).
-En effet, la qualification SecNumCloud impose __une totale ségrégation__ entre les interfaces de pilotage des actifs techniques et l'interface du commanditaire (la console Shiva).*
+En effet, la qualification SecNumCloud impose __une totale ségrégation__ entre les interfaces de pilotage des actifs techniques et l'interface du commanditaire (la Console).*
 
 - Les produits misent en oeuvre sont VMware ESXi, VMware Vcenter et VMware Replication.
 - *Le réseau de l'offre de virtualisation n'utilise pas la technologie VMware NSX, mais est piloté matériellement par la technologie Juniper et le protocole VPLS.*
@@ -498,7 +498,7 @@ Le système utilise une __hiérarchie de clés cryptographiques__ pour assurer l
 
 ### Activation et utilisation
 
-Le chiffrement des machines virtuelles s'active __en un seul clic__ depuis la [Console Shiva](../console/console.md).
+Le chiffrement des machines virtuelles s'active __en un seul clic__ depuis la [Console](../console/console.md).
 
 Pour une procédure détaillée avec captures d'écran, consultez le [tutoriel de chiffrement des machines virtuelles](tutorials/vm_encryption.md).
 
