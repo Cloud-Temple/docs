@@ -17,9 +17,9 @@ Questa guida ti permetterà di distribuire le tue prime istanze sul Cloud di Con
 
 ## Distribuire una macchina virtuale da un Template
 
-Questa guida ti mostra passo dopo passo come distribuire una macchina virtuale da un Template nella console Shiva.
+Questa guida ti mostra passo dopo passo come distribuire una macchina virtuale da un Template nella Console.
 
-Sul portale Shiva, vai alla scheda "Cloud di fiducia", poi "Cataloghi". Prima di poter distribuire un Template, questo deve essere caricato nel tuo catalogo privato, nella scheda "Il mio catalogo".
+Sul portale Console, vai alla scheda "Cloud di fiducia", poi "Cataloghi". Prima di poter distribuire un Template, questo deve essere caricato nel tuo catalogo privato, nella scheda "Il mio catalogo".
 
 Per fare ciò, hai due possibilità: importare il tuo Template direttamente nel tuo catalogo privato o importare un modello dal catalogo pubblico di Cloud Temple.
 

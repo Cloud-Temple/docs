@@ -10,7 +10,7 @@ import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
 import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
 
-Questo tutorial ti aiuta a crittografare una macchina virtuale IaaS VMWare dal portale Shiva.
+Questo tutorial ti aiuta a crittografare una macchina virtuale IaaS VMWare dal portale Console.
 
 ### Prerequisiti
 
@@ -27,7 +27,7 @@ Questo tutorial ti aiuta a crittografare una macchina virtuale IaaS VMWare dal p
 
 ### Interfaccia
 
-Una volta connesso al portale web Shiva, dal menu **'IaaS'**, sottomenu **'Configurazione'** e poi la scheda **'vCenters'**, troverai l'informazione che ti indica se la crittografia è attivata sulla vstack in questione.
+Una volta connesso al portale web Console, dal menu **'IaaS'**, sottomenu **'Configurazione'** e poi la scheda **'vCenters'**, troverai l'informazione che ti indica se la crittografia è attivata sulla vstack in questione.
 
 <img src={shivaHsmKms_000} />
 

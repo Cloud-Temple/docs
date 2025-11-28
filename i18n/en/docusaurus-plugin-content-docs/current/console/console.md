@@ -69,7 +69,7 @@ Need expertise? Benefit from the support of our engineers for:
 - Assistance with cloud architecture implementation,
 - Training for your teams.
 
-The Cloud Temple Console **'Shiva'** is **Cloud Temple's integrated Cloud Management Platform (CMP)**.
+The Cloud Temple Console **'Console'** is **Cloud Temple's integrated Cloud Management Platform (CMP)**.
 
 The Cloud Temple Console enables you to manage cloud resources such as virtual servers, storage, networks, and application services.  
 It is a centralized management interface that allows you to design and operate your cloud infrastructure.
@@ -78,15 +78,15 @@ The Cloud Temple Console enables your teams to:
 
 - **Manage your Cloud Temple products and services**,
 - **Monitor and report on the performance of your cloud resources**,
-- **Automation and orchestration**: Thanks to its API, Shiva allows you to automate repetitive tasks and orchestrate complex workflows for deploying, managing, and scaling your cloud resources,
-- **Security and compliance**: Shiva enables identity management and access filtering to ensure regulatory compliance and adherence to your security policies,
+- **Automation and orchestration**: Thanks to its API, Console allows you to automate repetitive tasks and orchestrate complex workflows for deploying, managing, and scaling your cloud resources,
+- **Security and compliance**: Console enables identity management and access filtering to ensure regulatory compliance and adherence to your security policies,
 - **Integration with Cloud Adoption Frameworks (CAF)**: Thanks to its hybridization capabilities, you can maintain seamless operations with third-party cloud providers (Microsoft Azure and Amazon AWS) from a single interface, simplifying the integration and management of your multi-cloud application environments,
 - **Access and tracking of technical support tickets**: Dedicated technical support is also available, including customer support for troubleshooting technical issues as well as assistance with initial configuration,
 - **Subscription to professional services**: To effectively manage your cloud environments, your teams can benefit from our engineers’ expertise in consulting, architecture implementation support, or training.
 
 ## User Features Access via API
 
-Access to all features of the Console is available through the Shiva API.  
+Access to all features of the Console is available through the Console API.  
 You can find detailed information about verbs and configurations via **'Profile'** and **'APIs'**
 
 ## Terraform Provider

@@ -19,7 +19,7 @@ This guide will allow you to deploy your first instances on the Cloud of Trust i
 
 This guide shows you step by step how to deploy a virtual machine from a Template in the Console.
 
-On the Shiva portal, go to the "Cloud of Trust" tab, then "Catalogs". Before being able to deploy a Template, it must be uploaded to your private catalog, in the "My Catalog" tab.
+On the Console portal, go to the "Cloud of Trust" tab, then "Catalogs". Before being able to deploy a Template, it must be uploaded to your private catalog, in the "My Catalog" tab.
 
 For this, you have two options: import your own Template directly into your private catalog or import a model from the Cloud Temple public catalog.
 

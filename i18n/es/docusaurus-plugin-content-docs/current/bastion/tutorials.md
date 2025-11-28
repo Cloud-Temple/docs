@@ -14,7 +14,7 @@ import modifierSession from './images/modifier_session.png'
 import modifierSession2 from './images/modifier_session2.png'
 import supprimerSession from './images/supprimer_session.png'
 
-Estos tutoriales le ayudan a implementar y gestionar un Bastión Cloud Temple desde el portal Shiva.
+Estos tutoriales le ayudan a implementar y gestionar un Bastión Cloud Temple desde el portal Console.
 
 ## Requisitos previos
 
@@ -25,7 +25,7 @@ Estos tutoriales le ayudan a implementar y gestionar un Bastión Cloud Temple de
 
 ## Interfaz
 
-Una vez conectado al portal web Shiva, vaya a la pestaña "Bastión" del menú izquierdo.
+Una vez conectado al portal web Console, vaya a la pestaña "Bastión" del menú izquierdo.
 
 <img src={sessions} />
 

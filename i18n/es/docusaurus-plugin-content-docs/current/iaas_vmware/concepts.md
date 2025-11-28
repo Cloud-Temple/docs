@@ -32,7 +32,7 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 - Recursos de red (Internet, redes privadas).
 - Copias de seguridad cruzadas con retención configurable.
 - Replicación asíncrona para almacenamiento o máquinas virtuales.
-- Gestión mediante la [Consola Shiva](../console/console.md) o en modo Infraestructura como Código gracias a las APIs y al proveedor Terraform.
+- Gestión mediante la [Consola](../console/console.md) o en modo Infraestructura como Código gracias a las APIs y al proveedor Terraform.
 
 ## Ventajas
 
@@ -241,11 +241,11 @@ El uso de este mecanismo puede afectar el rendimiento de la aplicación hasta en
 La oferta de virtualización VMware Cloud Temple calificada SecNumCloud se basa en la tecnología __VMware Vsphere__.
 
 La plataforma es gestionada automáticamente por Cloud Temple (mantenimiento de condiciones de seguridad, mantenimiento en condiciones operativas, ...).  
-Puede ser controlada mediante la interfaz gráfica de la consola Shiva o a través de sus APIs asociadas.
+Puede ser controlada mediante la interfaz gráfica de la Consola o a través de sus APIs asociadas.
 
-*__Nota__*: *Por razones de seguridad vinculadas a la calificación SecNumCloud,  
-__no es posible para el cliente acceder directamente a la plataforma de virtualización VMware__ (ningún acceso directo al vCenter, por ejemplo).  
-De hecho, la calificación SecNumCloud exige __una total segregación__ entre las interfaces de control de los activos técnicos y la interfaz del cliente (la consola Shiva).*
+__no es posible para el cliente acceder directamente a la plataforma de virtualización VMware__ (ningún acceso directo al vCenter, por ejemplo).
+----
+De hecho, la calificación SecNumCloud exige __una total segregación__ entre las interfaces de control de los activos técnicos y la interfaz del cliente (la Consola).*
 
 - Los productos implementados son VMware ESXi, VMware vCenter y VMware Replication.  
 - *La red de la oferta de virtualización no utiliza la tecnología VMware NSX, sino que es gestionada físicamente mediante la tecnología Juniper y el protocolo VPLS.*  
@@ -455,7 +455,7 @@ El sistema utiliza una __jerarquía de claves criptográficas__ para garantizar 
 
 ### Activación y uso
 
-El cifrado de máquinas virtuales se activa __con un solo clic__ desde la [Consola Shiva](../console/console.md).
+El cifrado de máquinas virtuales se activa __con un solo clic__ desde la [Consola](../console/console.md).
 
 Para un procedimiento detallado con capturas de pantalla, consulte el [tutorial de cifrado de máquinas virtuales](tutorials/vm_encryption.md).
 

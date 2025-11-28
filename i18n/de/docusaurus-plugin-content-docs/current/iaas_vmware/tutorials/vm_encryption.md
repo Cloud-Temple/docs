@@ -10,7 +10,7 @@ import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
 import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
 
-Dieses Tutorial hilft Ihnen, eine IaaS VMWare virtuelle Maschine über das Shiva-Portal zu verschlüsseln.
+Dieses Tutorial hilft Ihnen, eine IaaS VMWare virtuelle Maschine über das Konsole-Portal zu verschlüsseln.
 
 ### Voraussetzungen
 
@@ -27,7 +27,7 @@ Dieses Tutorial hilft Ihnen, eine IaaS VMWare virtuelle Maschine über das Shiva
 
 ### Benutzeroberfläche
 
-Sobald Sie mit dem Shiva-Webportal verbunden sind, finden Sie im Menü **'IaaS'**, Untermenü **'Konfiguration'** und dann auf der Registerkarte **'vCenters'** Informationen darüber, ob die Verschlüsselung auf dem betreffenden vStack aktiviert ist.
+Sobald Sie mit dem Konsole-Webportal verbunden sind, finden Sie im Menü **'IaaS'**, Untermenü **'Konfiguration'** und dann auf der Registerkarte **'vCenters'** Informationen darüber, ob die Verschlüsselung auf dem betreffenden vStack aktiviert ist.
 
 <img src={shivaHsmKms_000} />
 

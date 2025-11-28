@@ -27,9 +27,9 @@ import ssoAad_018 from './images/sso_aad_018.png'
 
 Aquí hay un ejemplo de configuración del repositorio de autenticación de una organización Cloud Temple con __Microsoft EntraID__ (Azure Active Directory).
 
-La configuración de su repositorio Microsoft en el nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la consola Shiva. Esto permite evitar la multiplicación de los factores de autenticación y reducir la superficie de ataque.
+La configuración de su repositorio Microsoft en el nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la Consola. Esto permite evitar la multiplicación de los factores de autenticación y reducir la superficie de ataque.
 
-Si sus usuarios están autenticados en su cuenta de Microsoft, la autenticación en los servicios de la consola Shiva será transparente.
+Si sus usuarios están autenticados en su cuenta de Microsoft, la autenticación en los servicios de la Consola será transparente.
 
 A continuación, se detallan los diferentes pasos para realizar esta configuración:
 
@@ -155,7 +155,7 @@ Proporcione la siguiente información en la solicitud de asistencia:
     Directory ID (corresponde al identificador Azure AD del inquilino Azure)
     Secreto (Secreto asociado a la aplicación creada anteriormente)
 
-Una vez que la configuración se realice en la consola Shiva, el contacto indicado será informado.
+Una vez que la configuración se realice en la Consola, el contacto indicado será informado.
 
 
 

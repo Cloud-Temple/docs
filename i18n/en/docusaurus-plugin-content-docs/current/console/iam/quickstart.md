@@ -24,7 +24,7 @@ Creating a tenant involves submitting a service request that includes:
 
 ### Tenant Selection
 
-The selection of a tenant is done from the main page of Shiva's console:
+The selection of a tenant is done from the main page of the Console:
 
 <img src={shivaTenant} />
 
@@ -214,7 +214,7 @@ Once verification is complete, the user can log into the console. The account re
 
 ### What is a Personal Access Token (PAT)?
 
-Generating a Personal Access Token (PAT), also known as an API key, is a secure method to connect to Shiva's APIs without using a graphical interface.
+Generating a Personal Access Token (PAT), also known as an API key, is a secure method to connect to Console APIs without using a graphical interface.
 
 ### What is MFA and is it mandatory?
 
