@@ -48,4 +48,4 @@
 1.  **Tutoriels Avancés** : Un tutoriel sur la configuration d'un pipeline GitOps avec ArgoCD a été ajouté. Prochaines étapes :
     - Scénarios de sauvegarde/restauration avancés avec Veeam Kasten.
     - Gestion des secrets dans un environnement GitOps (Sealed Secrets/Vault).
-2.  **Intégration Console** : Documenter comment le service Managed Kubernetes apparaît et est géré (même de manière limitée) depuis la console Shiva.
+2.  **Intégration Console** : Documenter comment le service Managed Kubernetes apparaît et est géré (même de manière limitée) depuis la Console.
