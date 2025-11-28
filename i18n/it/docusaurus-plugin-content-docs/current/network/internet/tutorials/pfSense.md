@@ -56,7 +56,7 @@ Il primo passo consiste nel recuperare [le informazioni di accesso Internet qui]
 
 Successivamente, è possibile distribuire la VM pfSense:
 
-1. __Installazione del firewall__ dal modello pfSense in Shiva:
+1. __Installazione del firewall__ dal modello pfSense:
     - [(Distribuzione tramite console)](../../../iaas_vmware/tutorials/deploy_vm_template)
     - [(Distribuzione tramite Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
 2. __Configurazione delle interfacce LAN e WAN__ del firewall: l'interfaccia WAN deve essere nel vLAN Internet, con un indirizzo IP estratto dall'intervallo IP fornito dal CDS, nonché la default GW.

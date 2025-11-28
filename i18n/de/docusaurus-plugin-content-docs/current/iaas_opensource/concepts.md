@@ -31,7 +31,7 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 - Netzwerkressourcen (Internet, private Netzwerke).
 - Kreuzsicherungen mit konfigurierbarer Aufbewahrungszeit.
 - Asynchrone Replikation für Speicher oder virtuelle Maschinen.
-- Steuerung über die [Shiva-Konsole](../console/console.md) oder im Infrastructure-as-Code-Modus über APIs und den Terraform-Provider.
+- Steuerung über die [Konsole](../console/console.md) oder im Infrastructure-as-Code-Modus über APIs und den Terraform-Provider.
 
 ## Vorteile
 

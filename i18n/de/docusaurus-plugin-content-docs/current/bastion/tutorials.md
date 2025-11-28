@@ -14,7 +14,7 @@ import modifierSession from './images/modifier_session.png'
 import modifierSession2 from './images/modifier_session2.png'
 import supprimerSession from './images/supprimer_session.png'
 
-Diese Tutorials helfen Ihnen, einen Cloud Temple Bastion über das Shiva-Portal zu implementieren und zu verwalten.
+Diese Tutorials helfen Ihnen, einen Cloud Temple Bastion über das Konsole-Portal zu implementieren und zu verwalten.
 
 ## Voraussetzungen
 
@@ -25,7 +25,7 @@ Diese Tutorials helfen Ihnen, einen Cloud Temple Bastion über das Shiva-Portal 
 
 ## Benutzeroberfläche
 
-Sobald Sie sich am Shiva-Webportal angemeldet haben, gehen Sie zum Reiter "Bastion" im linken Menü.
+Sobald Sie sich am Konsole-Webportal angemeldet haben, gehen Sie zum Reiter "Bastion" im linken Menü.
 
 <img src={sessions} />
 

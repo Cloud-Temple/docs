@@ -52,7 +52,7 @@ import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ### Virtual Machine Management
 
-The interface for managing your virtual machines is available in the Shiva console under the __'IaaS'__ menu located on the green bar on the left side of the screen.
+The interface for managing your virtual machines is available in the Console under the __'IaaS'__ menu located on the green bar on the left side of the screen.
 
 ### Liste der virtuellen Maschinen
 

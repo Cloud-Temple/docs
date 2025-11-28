@@ -25,15 +25,15 @@ La creación de un teniente se realiza mediante una solicitud de servicio que in
 
 ### Selección del entorno
 
-La selección del entorno se realiza desde la página de inicio de la consola Shiva:
+La selección del entorno se realiza desde la página de inicio de la Consola:
 
 <img src={shivaTenant} />
 
 *__Nota:__ Las recursos de un entorno son exclusivos y no pueden mezclarse con otros entornos.*
 
-## Acceso a la consola Shiva
+## Acceso a la consola
 
-Los cuentas de acceso a la consola Shiva se crean por el cuenta matriz del cliente en invitación (independientemente del repositorio de autenticación).
+Los cuentas de acceso a la Consola se crean por el cuenta matriz del cliente en invitación (independientemente del repositorio de autenticación).
 Las información de identificación son globales para tu [Organización](concepts.md#organizaciones).
 
 *__Nota:__ El federicación de identidad se gestiona al nivel de la organización.*
@@ -116,7 +116,7 @@ En el menú "Administración" ubicado en la barra superior izquierda, bajo el su
 
 ### Cómo restablecer el contraseña
 
-Es posible restablecer la contraseña desde la página de inicio de sesión de la consola Shiva haciendo clic en 'Contraseña olvidada?'.
+Es posible restablecer la contraseña desde la página de inicio de sesión de la Consola haciendo clic en 'Contraseña olvidada?'.
 
 ### Por qué algunos usuarios están en gris
 
@@ -130,13 +130,13 @@ La cuenta permanecerá en gris hasta que se complete la verificación finalizada
 
 ### Qué significa un Token de Acceso Personal (PAT)?
 
-La generación de una clave API, también conocida como __Token de Acceso Personal (PAT)__, es una forma segura de conectarse a las APIs Shiva sin necesidad de una interfaz gráfica.
+La generación de una clave API, también conocida como __Token de Acceso Personal (PAT)__, es una forma segura de conectarse a las APIs Consola sin necesidad de una interfaz gráfica.
 
 ### ¿Qué es el MFA y está obligatorio?
 
 El MFA (autenticación de múltiples factores) es un concepto de verificación de la identidad del usuario en dos etapas, conocido como autenticación a doble factor.
 
-El usuario debe proporcionar dos pruebas de identidad distintas. En el caso de la consola Shiva, la autenticación a doble factor es obligatoria y requiere que ingrese un código único una vez que el usuario haya introducido el contraseña de su cuenta.
+El usuario debe proporcionar dos pruebas de identidad distintas. En el caso de la Consola, la autenticación a doble factor es obligatoria y requiere que ingrese un código único una vez que el usuario haya introducido el contraseña de su cuenta.
 
 ### Gestión de Acceso y Autenticación
 

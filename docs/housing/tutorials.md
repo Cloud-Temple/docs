@@ -2,7 +2,7 @@
 title: Tutoriels
 ---
 
-Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis le portail Shiva.
+Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis le portail Console.
 
 <div class="card">
   <h3>Tutorials</h3>

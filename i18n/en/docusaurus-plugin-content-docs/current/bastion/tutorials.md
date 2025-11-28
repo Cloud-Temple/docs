@@ -62,7 +62,7 @@ import modifierSession from './images/modifier_session.png'
 import modifierSession2 from './images/modifier_session2.png'
 import supprimerSession from './images/supprimer_session.png'
 
-These tutorials help you deploy and manage a Cloud Temple Bastion from the Shiva portal.
+These tutorials help you deploy and manage a Cloud Temple Bastion from the Console portal.
 
 ## Delete an equipment configuration
 
@@ -97,7 +97,7 @@ To create a new connection, you can also go through the "Appliances" tab by clic
 
 ## Interface
 
-Once connected to the Shiva web portal, go to the "Bastion" tab in the left menu.
+Once connected to the Console web portal, go to the "Bastion" tab in the left menu.
 
 <img src={sessions} />
 

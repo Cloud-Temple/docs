@@ -24,15 +24,15 @@ Creating a tenant involves submitting a service request that includes:
 
 ### Tenant Selection
 
-The selection of a tenant is done from the main page of Shiva's console:
+The selection of a tenant is done from the main page of the Console:
 
 <img src={shivaTenant} />
 
 *__Note:__ The resources of a tenant are exclusive to that tenant and cannot be mixed with other tenants.*
 
-## Shiva Console Access Accounts
+## Console Access Accounts
 
-Shiva console access accounts are created by the master commander's account on invitation (regardless of the authentication reference).
+Console access accounts are created by the master commander's account on invitation (regardless of the authentication reference).
 The identification information is global to your [Organization](./concepts.md#organizations).
 
 *__Note:__ Identity federation is managed at the organization level.*
@@ -173,7 +173,7 @@ This section outlines the access control mechanisms and permissions associated w
 
 By carefully managing permissions, organizations can maintain robust security postures, protect sensitive information, and ensure compliance with regulatory requirements in a cloud computing environment.
 
-### What are the available user account permissions in the Shiva Console?
+### What are the available user account permissions in the Console?
 
 Here is the list of [available permissions](#permissions).
 
@@ -202,7 +202,7 @@ In the 'Administration' menu located on the top left toolbar, under the 'User' s
 - *To add a user, you must have the __iam_write__ permission.*
 - *If it's a federated user, make sure they've been removed from their identity repository as well.*
 
-It is possible to reset your password by clicking on "Forgot Password?" from the login page of the Shiva console.
+It is possible to reset your password by clicking on "Forgot Password?" from the login page of the Console.
 
 ### Why are some users grayed out?
 
@@ -214,13 +214,13 @@ Once verification is complete, the user can log into the console. The account re
 
 ### What is a Personal Access Token (PAT)?
 
-Generating a Personal Access Token (PAT), also known as an API key, is a secure method to connect to Shiva's APIs without using a graphical interface.
+Generating a Personal Access Token (PAT), also known as an API key, is a secure method to connect to Console APIs without using a graphical interface.
 
 ### What is MFA and is it mandatory?
 
 MFA (multi-factor authentication) refers to the process of verifying an individual's identity through two or more factors, known as **two-factor authentication**.
 
-The user must provide two distinct forms of identification. For instance, in Shiva console, MFA is mandatory and requires entering a one-time password after initially entering the account's password.
+The user must provide two distinct forms of identification. For instance, in Console, MFA is mandatory and requires entering a one-time password after initially entering the account's password.
 
 ### Access and Authentication Management
 

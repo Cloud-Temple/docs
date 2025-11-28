@@ -106,7 +106,7 @@ Utilisation des secrets OpenShift/Kubernetes et recommandation d'intégrer des s
 
 ### Contrôle des accès (IAM)
 
-La revue des accès se réalise par l'intermédiaire de la console Shiva et du module "User Management" de la console OpenShift.
+La revue des accès se réalise par l'intermédiaire de la Console et du module "User Management" de la console OpenShift.
 
 Pour plus de détails sur cette fonctionnalité, se référer à notre [**guide**](../../console/iam/iam.md) et à la [**documentation**](https://docs.redhat.com/en/documentation/openshift_container_platform/) de l'éditeur.
 
@@ -129,7 +129,7 @@ Les vulnérabilités sur l'infrastructure et les services sous-jacents à l'offr
 
 **Responsabilité **Cloud Temple** :**
 
-- **Cloud Temple** est responsable de la communication des vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre dès leur détection via le module [**incident**](../../console/status.md) de la console SHIVA.
+- **Cloud Temple** est responsable de la communication des vulnérabilités sur l'infrastructure et les services sous-jacents à l'offre dès leur détection via le module [**incident**](../../console/status.md) de la Console.
 - **Cloud Temple** est responsable de l'application des correctifs sur ce périmètre.
 - **Cloud Temple** est responsable de la mise à disposition d'outils pour analyser les vulnérabilités des images Docker. Par défaut, **Cloud Temple** met en place **[Quay]** pour effectuer le scan automatique des images Docker.
 

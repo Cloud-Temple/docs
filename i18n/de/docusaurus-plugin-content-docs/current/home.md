@@ -7,7 +7,7 @@ tags:
 
 # Welcome to the documentation area
 
-Welcome to the **Cloud Temple** documentation area! This space has been designed to assist you in managing your Cloud Temple services via our **Cloud Temple Console**, also known as **Shiva**.
+Welcome to the **Cloud Temple** documentation area! This space has been designed to assist you in managing your Cloud Temple services via our **Cloud Temple Console**, also known as **Console**.
 
 ## Erste Schritte
 
@@ -40,4 +40,4 @@ This documentation is your guide to unlocking the full potential of our Cloud pr
 
 You'll find tutorials, technical guides, and references to simplify the management of your cloud resources.
 
-We hope you find this documentation helpful and make the most of the possibilities offered by **Shiva**.
+We hope you find this documentation helpful and make the most of the possibilities offered by **Console**.

@@ -10,7 +10,7 @@ import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
 import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
 
-This tutorial helps you encrypt a VMware IaaS virtual machine from the Shiva portal.
+This tutorial helps you encrypt a VMware IaaS virtual machine from the Console portal.
 
 ### Prerequisites
 
@@ -27,7 +27,7 @@ This tutorial helps you encrypt a VMware IaaS virtual machine from the Shiva por
 
 ### Interface
 
-Once connected to the Shiva web portal, from the **'IaaS'** menu, under the **'Configuration'** submenu and the **'vCenters'** tab, you will find information indicating whether encryption is enabled on the relevant vStack.
+Once connected to the Console web portal, from the **'IaaS'** menu, under the **'Configuration'** submenu and the **'vCenters'** tab, you will find information indicating whether encryption is enabled on the relevant vStack.
 
 <img src={shivaHsmKms_000} />
 

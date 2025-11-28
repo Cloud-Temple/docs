@@ -13,7 +13,7 @@ Der Cloud Temple Bastion ist ein verwalteter Dienst, der Ihnen sichere RDP- oder
 
 | Vorteil                |                                                                              Beschreibung                                                                               |
 |------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Zentralisierte Verwaltung |                                              Der Cloud Temple Bastion ist direkt über das Shiva-Portal zugänglich.                                                   |
+| Zentralisierte Verwaltung |                                              Der Cloud Temple Bastion ist direkt über das Konsole-Portal zugänglich.                                                   |
 | Sicherheit             | Über den Bastion verwaltete Geräte sind nicht dem Internet ausgesetzt, was sie insbesondere vor Port-Scans durch böswillige Benutzer schützt.                          |
 | Infrastructure as Code |          APIs ermöglichen die vollständige Verwaltung des Cloud Temple Bastion "as Code" (Sitzungserstellung, Verbindung, Änderung und Löschung von Sitzungen).        |
 
@@ -25,9 +25,9 @@ Der Cloud Temple Bastion ist ein verwalteter Dienst, der Ihnen sichere RDP- oder
 
 ### Die Bastion Appliance
 
-Die Bastion Appliance ist eine virtuelle Maschine, die in der Nähe Ihrer Geräte bereitgestellt wird. Diese Appliance ermöglicht einen sicheren und direkten Datenfluss von der Shiva-Plattform zu den zu verwaltenden Geräten, die sich im selben virtuellen Netzwerk befinden.
+Die Bastion Appliance ist eine virtuelle Maschine, die in der Nähe Ihrer Geräte bereitgestellt wird. Diese Appliance ermöglicht einen sicheren und direkten Datenfluss von der Konsole-Plattform zu den zu verwaltenden Geräten, die sich im selben virtuellen Netzwerk befinden.
 
-Der Datenfluss ist verschlüsselt und in einem VPN-Tunnel gekapselt. Die Lösung erfordert keine Öffnung eines Datenflusses vom Internet zu Ihren Infrastrukturen. Die Appliance benötigt lediglich Zugriff auf die öffentliche IP-Adresse des Shiva Bastion-Moduls über Port 443.
+Der Datenfluss ist verschlüsselt und in einem VPN-Tunnel gekapselt. Die Lösung erfordert keine Öffnung eines Datenflusses vom Internet zu Ihren Infrastrukturen. Die Appliance benötigt lediglich Zugriff auf die öffentliche IP-Adresse des Konsole Bastion-Moduls über Port 443.
 
 Eine Appliance kann für eine schnelle Verbindung zu einem Gerät verwendet werden. Bei jeder Verbindung müssen das gewünschte Protokoll, die IP-Adresse der Maschine und Ihre Anmeldedaten angegeben werden. Um diese Informationen nicht bei jeder Verbindung eingeben zu müssen, können Sitzungen erstellt werden, die mit regelmäßig zu verwaltenden Geräten verknüpft sind.
 

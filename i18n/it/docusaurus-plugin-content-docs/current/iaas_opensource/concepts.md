@@ -31,7 +31,7 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 - Risorse di rete (Internet, reti private).
 - Backup incrociati con conservazione configurabile.
 - Replica asincrona per l'archiviazione o le macchine virtuali.
-- Gestione tramite la [Console Shiva](../console/console.md) o in modalità Infrastructure as Code grazie alle API e al provider Terraform.
+- Gestione tramite la [Console](../console/console.md) o in modalità Infrastructure as Code grazie alle API e al provider Terraform.
 
 ## Vantaggi
 

@@ -56,7 +56,7 @@ You must have the following information:
 
 Anschließend können Sie Ihre pfSense-VM bereitstellen:
 
-1. __Installation der Firewall__ über den pfSense-Template in Shiva:
+1. __Installation der Firewall__ über den pfSense-Template in Konsole:
     - [(Über die Konsole bereitstellen)](../../../iaas_vmware/tutorials/deploy_vm_template)
     - [(Über Terraform bereitstellen)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
 2. __Konfiguration der LAN- und WAN-Schnittstellen__ der Firewall: Die WAN-Schnittstelle muss in Ihrem vLAN Internet liegen; ihre IP-Adresse wird aus dem Ihnen vom CDS bereitgestellten IP-Adressbereich entnommen sowie die Standard-Gateway-Adresse.

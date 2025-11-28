@@ -29,11 +29,11 @@ import grafanaDashboards_001 from './images/grafana_dashboards_001.png'
 
 La mayoría de los clientes de __Cloud Temple__ cuentan con herramientas de visualización, monitoreo y metrología para el seguimiento de sus operaciones.
 
-La filosofía de la consola Shiva es permitir el acceso a los datos para integrarse en estas herramientas mediante un proxy Prometheus integrado.
+La filosofía de la Consola es permitir el acceso a los datos para integrarse en estas herramientas mediante un proxy Prometheus integrado.
 
 Este proxy le permite consultar y manipular los datos desde una herramienta de visualización como [Grafana](https://grafana.com).
 
-Sin embargo, también es posible visualizar ciertos datos de rendimiento de sus recursos Cloud en la interfaz web de la consola Shiva.
+Sin embargo, también es posible visualizar ciertos datos de rendimiento de sus recursos Cloud en la interfaz web de la Consola.
 
 *__Nota:__ La filosofía __Cloud Temple__ no consiste únicamente en integrar gráficos en la interfaz web, sino también en ofrecer el máximo de información accesible a través de la API*
 
@@ -43,7 +43,7 @@ Sin embargo, también es posible visualizar ciertos datos de rendimiento de sus 
 
 ### Vista general
 
-La página de inicio de la consola Shiva muestra el panel principal, que presenta todas las métricas que permiten tener una visión general de cada producto al que usted ha suscrito dentro de su ámbito. En caso de problemas con sus productos VMware y/o OpenIaaS, se mostrarán alertas, cuyo color está relacionado con su gravedad.
+La página de inicio de la Consola muestra el panel principal, que presenta todas las métricas que permiten tener una visión general de cada producto al que usted ha suscrito dentro de su ámbito. En caso de problemas con sus productos VMware y/o OpenIaaS, se mostrarán alertas, cuyo color está relacionado con su gravedad.
 
 Estas alertas son clicables y redirigen a la página correspondiente al producto afectado.
 
@@ -142,9 +142,9 @@ Al igual que en la pestaña "Cálculo", se muestran diferentes información: el 
 
 ## Uso con __Grafana__
 
-Integración de la consola Shiva con Grafana
+Integración de la Consola con Grafana
 
-La consola Shiva de Cloud Temple puede utilizarse como fuente de datos para su infraestructura [Grafana](https://grafana.com/).
+La Consola de Cloud Temple puede utilizarse como fuente de datos para su infraestructura [Grafana](https://grafana.com/).
 
 La consola es compatible con Prometheus, lo que permite agregarla en Grafana como fuente de datos de tipo Prometheus. De esta forma podrá:
 

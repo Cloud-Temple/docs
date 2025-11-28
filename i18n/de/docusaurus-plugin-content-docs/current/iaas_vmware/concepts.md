@@ -32,7 +32,7 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 - Netzwerkressourcen (Internet, private Netzwerke).
 - Kreuzsicherungen mit konfigurierbarer Aufbewahrungsfrist.
 - Asynchrone Replikation für Speicher oder virtuelle Maschinen.
-- Steuerung über die [Shiva-Konsole](../console/console.md) oder im Infrastructure-as-Code-Modus über APIs und den Terraform-Provider.
+- Steuerung über die [Konsole](../console/console.md) oder im Infrastructure-as-Code-Modus über APIs und den Terraform-Provider.
 
 ## Vorteile
 
@@ -240,11 +240,11 @@ Die Nutzung dieses Mechanismus kann die Leistung der Anwendung um bis zu 10 % be
 
 The VMware Cloud Temple offering, certified SecNumCloud, is based on the __VMware vSphere__ technology.
 
-The platform is managed automatically by Cloud Temple (ensuring security conditions, operational readiness, etc.). It can be controlled via the Shiva console's graphical interface or through the associated APIs.
+The platform is managed automatically by Cloud Temple (ensuring security conditions, operational readiness, etc.). It can be controlled via the Console's graphical interface or through the associated APIs.
 
 *__Note__*: *For security reasons related to the SecNumCloud certification,  
 __the customer is not permitted to access the VMware virtualization platform directly__ (no direct access to vCenter, for example).  
-Indeed, the SecNumCloud certification requires __complete segregation__ between the technical asset management interfaces and the customer's interface (the Shiva console).*
+Indeed, the SecNumCloud certification requires __complete segregation__ between the technical asset management interfaces and the customer's interface (the Console).*
 
 - The implemented products are VMware ESXi, VMware vCenter, and VMware Replication.
 - *The virtualization offering's network does not use VMware NSX technology, but is instead managed physically using Juniper technology and the VPLS protocol.*
@@ -443,7 +443,7 @@ The system uses a __cryptographic key hierarchy__ to ensure data security:
 
 ### Activation and Usage
 
-VM encryption is activated __with a single click__ from the [Shiva Console](../console/console.md).
+VM encryption is activated __with a single click__ from the [Console](../console/console.md).
 
 For a detailed step-by-step guide with screenshots, see the [VM Encryption Tutorial](tutorials/vm_encryption.md).
 

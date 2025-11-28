@@ -95,7 +95,7 @@ Here are the connection and configuration details specific to your OpenShift env
 
 Per accedere ai diversi componenti OpenShift, assicurati che il tuo tenant sia registrato nell'elenco bianco nella console (consulta la documentazione: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Shiva Tenant__ :
+- __URL Console Tenant__ :
   [https://__il-tuo-id-tenant__.shiva.cloud-temple.com/](https://**il-tuo-id-tenant**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__ :

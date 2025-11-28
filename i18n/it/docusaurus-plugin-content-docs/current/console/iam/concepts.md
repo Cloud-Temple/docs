@@ -19,7 +19,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Utenti
 
-I conti di accesso alla console Shiva vengono creati dal conto principale del committente su invito (indipendentemente dal repository di autenticazione utilizzato).  
+I conti di accesso alla Console vengono creati dal conto principale del committente su invito (indipendentemente dal repository di autenticazione utilizzato).  
 Le credenziali sono globali per la tua [Organizzazione](#organizzazioni).
 
 *__Nota:__ [La federazione di identità viene gestita a livello di organizzazione](#meccanismi-dautenticazione)*
@@ -148,7 +148,7 @@ L'elenco delle tematiche disponibili può evolversi e arricchirsi progressivamen
 
 ## Permissions
 
-The Shiva console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
+The Console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
 Initially, it is the primary account of the sponsor that enables the initial configuration of accounts and associated permissions.  
 Subsequently, the __'iam_write'__ permission allows an account to manage the permissions of other users.
 
@@ -237,7 +237,7 @@ L'organizzazione è associata al tuo __account sponsor__ e al __contratto Cloud 
 L'organizzazione ha quattro ruoli principali:
 
 - Rappresenta __l'entità contrattuale__ per quanto riguarda i aspetti di tracciamento e fatturazione,
-- Definisce __la configurazione globale del meccanismo di autenticazione__: l'autenticazione può essere locale a livello della console Shiva o remota tramite un servizio di federazione dell'identità,
+- Definisce __la configurazione globale del meccanismo di autenticazione__: l'autenticazione può essere locale a livello della Console o remota tramite un servizio di federazione dell'identità,
 - Gestisce l'insieme di __tutti gli account utente__,
 - __Federizza i tenant__ (Produzione, Preproduzione, Sviluppo, Applicazione 1, Applicazione 2, ...) che definisci per i tuoi requisiti architetturali Cloud.
 
@@ -245,7 +245,7 @@ I ruoli (diritti/permessi) degli utenti sono configurabili per ciascun tenant de
 
 ### Authentication mechanisms
 
-The Shiva console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Shiva console's built-in local authentication repository, or connect your organization to one of your external authentication repositories.
+The Console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Console's built-in local authentication repository, or connect your organization to one of your external authentication repositories.
 
 The following external authentication repositories are supported:
 

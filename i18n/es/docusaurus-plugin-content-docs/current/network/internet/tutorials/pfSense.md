@@ -56,7 +56,7 @@ Debe contar con la siguiente información:
 
 A continuación, puede desplegar su máquina virtual pfSense:
 
-1. __Instalación del firewall__ a partir de la plantilla pfSense en Shiva:
+1. __Instalación del firewall__ a partir de la plantilla pfSense en Console:
     - [(Desplegar mediante la consola)](../../../iaas_vmware/tutorials/deploy_vm_template)
     - [(Desplegar mediante Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
 2. __Configuración de las interfaces LAN y WAN__ del firewall: la interfaz WAN debe estar en su vLAN de internet, su dirección IP se tomará de la gama IP que le fue proporcionada por el CDS, así como la puerta de enlace predeterminada.

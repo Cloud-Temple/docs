@@ -17,9 +17,9 @@ Este guía le permitirá desplegar sus primeras instancias en menos de 5 minutos
 
 ## Desplegar una máquina virtual desde una plantilla
 
-Este guía le muestra paso a paso cómo desplegar una máquina virtual desde una plantilla en la consola Shiva.
+Este guía le muestra paso a paso cómo desplegar una máquina virtual desde una plantilla en la consola Console.
 
-En el portal Shiva, vaya a la pestaña "Cloud de Confianza", luego a "Catálogos". Antes de poder desplegar una plantilla, esta debe estar cargada en su catálogo privado, en la pestaña "Mi catálogo".
+En el portal Console, vaya a la pestaña "Cloud de Confianza", luego a "Catálogos". Antes de poder desplegar una plantilla, esta debe estar cargada en su catálogo privado, en la pestaña "Mi catálogo".
 
 Para ello, tiene dos opciones: importar su propia plantilla directamente en su catálogo privado o bien importar un modelo desde el catálogo público de Cloud Temple.
 

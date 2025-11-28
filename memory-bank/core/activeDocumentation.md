@@ -24,7 +24,7 @@
 
 #### Ressources Visuelles
 - ✅ **40+ captures d'écran** dans `/images/`
-- ✅ **Interfaces Shiva** : Connexion, onboarding, API
+- ✅ **Interfaces Console** : Connexion, onboarding, API
 - ✅ **Workflows** : Commandes, incidents, métriques
 - ✅ **Dashboards Grafana** : Monitoring complet
 
@@ -234,7 +234,7 @@
 
 ### En Review
 - 🔄 **Cohérence terminologique** : Uniformisation
-- 🔄 **Mise à jour screenshots** : Console Shiva
+- 🔄 **Mise à jour screenshots** : Console
 - 🔄 **Validation technique** : Exactitude information
 
 ### Planifié

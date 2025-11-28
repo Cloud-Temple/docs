@@ -32,7 +32,7 @@ Basé sur l'analyse de `/docs/additional_content/concepts_az.md` et `concepts_re
 - **Security** (`/docs/console/security/`) : Sécurité console
 
 ### Technologies Utilisées
-- **Interface** : Console Shiva (40+ captures d'écran)
+- **Interface** : Console (40+ captures d'écran)
 - **API** : RESTful API avec authentification
 - **Monitoring** : Dashboards Grafana intégrés
 - **Processus** : Automatisation des commandes
@@ -117,7 +117,7 @@ Basé sur l'analyse de `/docs/additional_content/concepts_az.md` et `concepts_re
 ## Interconnexions Entre Services
 
 ### Console ↔ Tous Services
-- **Interface centralisée** : Gestion de tous les services via Console Shiva
+- **Interface centralisée** : Gestion de tous les services via Console
 - **API uniforme** : Accès programmatique à tous les services
 - **Monitoring global** : Métriques consolidées
 

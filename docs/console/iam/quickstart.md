@@ -24,15 +24,15 @@ La création d'un tenant est réalisée par une demande de service indiquant :
 
 ### Selection d'un tenant
 
-La selection du tenant se fait depuis la page principale de la console Shiva :
+La selection du tenant se fait depuis la page principale de la Console :
 
 <img src={shivaTenant} />
 
 *__Nota :__ Les ressources d'un tenant lui sont propres et ne sont pas mélangeable avec d'autres tenants.*
 
-## Comptes d'accès à la console Shiva
+## Comptes d'accès à la Console
 
-Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
+Les comptes d'accès à la Console sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
 Les informations d'identification sont globales à votre [Organisation](concepts.md#organisations).
 
 *__Nota :__ La fédération d'identité se gère au niveau de l'organisation*
@@ -94,7 +94,7 @@ La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichi
 
 ## Permissions
 
-### Quelles sont les permissions disponibles pour les comptes utilisateur de la console Shiva ?
+### Quelles sont les permissions disponibles pour les comptes utilisateur de la Console ?
 
 Voici la liste des [permissions disponibles](#permissions).
 
@@ -125,7 +125,7 @@ Dans le menu __'Administration'__ sur le bandeau vert à gauche de l'écran, dan
 
 ### Comment réinitialiser son mot de passe ?
 
-Il est possible de réinitialiser son mot de passe depuis la page de connexion de la console Shiva en cliquant sur __'Mot de passe oublié ?'__.
+Il est possible de réinitialiser son mot de passe depuis la page de connexion de la Console en cliquant sur __'Mot de passe oublié ?'__.
 
 ### Pourquoi certains utilisateurs sont grisés ?
 
@@ -140,13 +140,13 @@ Le compte est grisé tant que la vérification n'a pas été finalisée.
 ### Qu'est-ce qu'un Personal Access Token (PAT) ?
 
 La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
-est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique.
+est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique.
 
 ### Qu'est-ce que le MFA et est-il obligatoire ?
 
 Le MFA (multi-factor authentication) est un concept de vérification de l'identité d'un utilisateur en deux étapes, appelée __authentification à double facteur__.
 
-L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de la console Shiva, l'authentification à double facteur est obligatoire et requiert de rentrer un code à usage unique une fois que l'utilisateur a entré le mot de passe de son compte.
+L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de la Console, l'authentification à double facteur est obligatoire et requiert de rentrer un code à usage unique une fois que l'utilisateur a entré le mot de passe de son compte.
 
 ## Gestion des accès et authentification
 

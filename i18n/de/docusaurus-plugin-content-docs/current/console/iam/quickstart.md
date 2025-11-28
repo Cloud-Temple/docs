@@ -25,15 +25,15 @@ Die Erstellung eines Tenants erfolgt durch eine Service-Anfrage, die folgende In
 
 ### Tenant-Wahl
 
-Die Auswahl des Tenants erfolgt von der Hauptseite der Shiva-Konsole:
+Die Auswahl des Tenants erfolgt von der Hauptseite der Konsole:
 
 <img src={shivaTenant} />
 
 *Bitte beachten Sie: Die Ressourcen eines Tenants sind exklusiv und dürfen nicht mit anderen Tenants vermischt werden.*
 
-## Shiva Console Access Accounts
+## Console Access Accounts
 
-Shiva Console Access Accounts are created by the master account of the sponsor on invitation (regardless of the authentication reference).
+Console Access Accounts are created by the master account of the sponsor on invitation (regardless of the authentication reference).
 The identification information is global to your [Organization](concepts.md#organisationen).
 
 *__Note:__ The identity federation is managed at the organization level.*
@@ -110,7 +110,7 @@ Die Liste der verfügbaren Themen kann sich ständig weiterentwickeln und verbes
 
 Note: The Markdown structure and formatting are preserved as is. The text "Permissions" remains unchanged in the translation. No modifications were made to HTML elements or code blocks, adhering strictly to the provided rules.
 
-### Welche Berechtigungen stehen den Benutzerkonten der Shiva-Konsole zur Verfügung?
+### Welche Berechtigungen stehen den Benutzerkonten der Konsole zur Verfügung?
 
 Hier ist die Liste der verfügbaren [Berechtigungen](#berechtigungen).
 
@@ -141,7 +141,7 @@ In the 'Administration' menu located on the top left bar, under the 'User' subme
 
 ### Wie man seinen Passwort zurücksetzt
 
-Es ist möglich, Ihr Passwort wiederherzustellen, indem Sie auf die Seite der Anmeldeseite der Shiva-Console klicken und auf "Passwort vergessen?" klicken.
+Es ist möglich, Ihr Passwort wiederherzustellen, indem Sie auf die Seite der Anmeldeseite der Konsole klicken und auf "Passwort vergessen?" klicken.
 
 ### Warum sind einige Benutzer grau gefärbt?
 
@@ -156,13 +156,13 @@ Das Konto bleibt grau, bis die Validierung abgeschlossen ist.
 ### Was ist ein Personal Access Token (PAT)?
 
 Die Erzeugung eines API-Schlüssels, auch bekannt als __Personal Access Token (PAT)__,
-ist eine sichere Methode, um sich an die Shiva-APIs zu verbinden, ohne über eine grafische Benutzeroberfläche.
+ist eine sichere Methode, um sich an die Console-APIs zu verbinden, ohne über eine grafische Benutzeroberfläche.
 
 ### Was ist MFA und ist es verpflichtend?
 
 MFA, oder Multi-Factor Authentication (Mehrfach-Authentifizierung), bezeichnet ein Verfahren zur Identitätsüberprüfung eines Benutzers in zwei Schritten, auch als Authentifizierung zu zweifelnm Faktor bekannt.
 
-Der Benutzer muss zwei verschiedene Beweise seiner Identität vorlegen. Bei der Shiva-Konsole ist die MFA verpflichtend und erfordert, dass ein einmaligen Code eingegeben wird, nachdem der Passwort-Eingabe des Kontos bestätigt wurde.
+Der Benutzer muss zwei verschiedene Beweise seiner Identität vorlegen. Bei der Konsole ist die MFA verpflichtend und erfordert, dass ein einmaligen Code eingegeben wird, nachdem der Passwort-Eingabe des Kontos bestätigt wurde.
 
 ### Verwaltung von Zugriffen und Authentifizierung
 
