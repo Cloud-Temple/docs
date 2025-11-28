@@ -25,9 +25,9 @@ import ssoAad_018 from './images/sso_aad_018.png'
 
 Voici un exemple de configuration du référentiel d'authentification d'une organisation Cloud Temple avec __Microsoft EntraID__ (Azure Active Directory).
 
-La configuration de votre référentiel Microsoft au niveau d'une organisation Cloud Temple facilite l'authentification de vos utilisateurs sur la console Shiva. Cela permet d'éviter la multiplication des facteurs d'authentification et de diminuer la surface d'attaque.
+La configuration de votre référentiel Microsoft au niveau d'une organisation Cloud Temple facilite l'authentification de vos utilisateurs sur la Console. Cela permet d'éviter la multiplication des facteurs d'authentification et de diminuer la surface d'attaque.
 
-Si vos utilisateurs sont authentifiés à leur compte Microsoft, l'authentification aux services de la console Shiva sera transparente.
+Si vos utilisateurs sont authentifiés à leur compte Microsoft, l'authentification aux services de la Console sera transparente.
 
 Voici les différentes étapes pour réaliser cette configuration :
 
@@ -131,7 +131,7 @@ Veuillez donner les informations suivantes dans la demande d'assistance :
     Directory ID (correspond à l'identifiant Azure AD du tenant Azure)
     Secret (Secret associé à l'application créée précédemment)
 
-Dès que la configuration est réalisée coté console Shiva, le contact indiqué sera informé.
+Dès que la configuration est réalisée coté Console, le contact indiqué sera informé.
 
 ## Etape 3 : Finalisation de la configuration
 
