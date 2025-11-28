@@ -71,10 +71,10 @@ Need expertise? Benefit from the support of our engineers for:
 
 The Cloud Temple Console **'Shiva'** is **Cloud Temple's integrated cloud management platform** (Cloud Management Platform).
 
-The Cloud Temple Shiva console enables you to manage cloud resources such as virtual servers, storage, networks, and application services.  
+The Cloud Temple Console enables you to manage cloud resources such as virtual servers, storage, networks, and application services.  
 It is a centralized management interface that allows you to design and operate your cloud infrastructure.
 
-The Cloud Temple Shiva console enables your teams to:
+The Cloud Temple Console enables your teams to:
 
 - **Manage your Cloud Temple products and services**,
 - **Monitor and report on the performance of your cloud resources**,
@@ -86,7 +86,7 @@ The Cloud Temple Shiva console enables your teams to:
 
 ## Access to user features via the API
 
-Access to all features of the Shiva console is possible via the Shiva API.  
+Access to all features of the Console is possible via the Shiva API.  
 You can find detailed information about verbs and configurations via **'Profile'** and **'APIs'**.
 
 ## Terraform Provider

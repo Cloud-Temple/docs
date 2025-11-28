@@ -9,7 +9,7 @@ Each physical site within a region has one or more private rooms for our infrast
 __Each physical room corresponds to an availability zone (AZ / Availability Zone)__ and is completely autonomous in terms of electricity, cooling, computing, storage, and networking.
 Choosing an availability zone therefore means choosing a physical site and a region.
 
-The Shiva console automatically offers availability zones on distinct physical sites to spread your infrastructure across the maximum number of physical sites.
+The Console automatically offers availability zones on distinct physical sites to spread your infrastructure across the maximum number of physical sites.
 
 *__Note: If you require specific configuration for a particular context (multiple AZs on the same physical site), you need to submit a support request.__*
 

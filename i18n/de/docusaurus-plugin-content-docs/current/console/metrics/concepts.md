@@ -142,9 +142,9 @@ Just as on the "Compute" tab, you will find various information: the number of *
 
 ## Usage with __Grafana__
 
-Integration of the Shiva console with Grafana
+Integration of the Console with Grafana
 
-The Shiva console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
+The Console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
 
 The console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
 
