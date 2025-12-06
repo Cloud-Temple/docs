@@ -26,7 +26,7 @@ Ce tutoriel vous guidera pour :
 
 - Un cluster Managed Kubernetes Cloud Temple opérationnel.
 - L'outil `kubectl` configuré pour accéder à votre cluster.
-- Les CRDs Gateway API installées (généralement incluses par défaut avec Cilium récent).
+- L'outil `cilium`.
 
 ## Concepts Clés
 
