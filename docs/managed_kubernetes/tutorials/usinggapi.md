@@ -2,6 +2,8 @@
 title: Utiliser Cilium Gateway API
 ---
 
+import gapischema from './images/gapi.png'
+
 ## Introduction
 
 L'API Gateway est la nouvelle norme Kubernetes pour la gestion du trafic entrant. Elle succède à la ressource Ingress traditionnelle en offrant plus de flexibilité, de fonctionnalités (routage avancé, répartition de charge, etc.) et une meilleure séparation des responsabilités.
@@ -36,27 +38,15 @@ Gateway API décompose la configuration réseau en trois ressources principales 
 2.  **Gateway** : Instancie un point d'entrée réseau (load balancer).
 3.  **HTTPRoute** : Définit les règles de routage (chemins, headers) vers les Services Kubernetes.
 
-```mermaid
-graph TD
-    User([Utilisateur]) -->|http://GATEWAY_IP| LB[Gateway (LoadBalancer)]
-    LB -->|Règles de routage| Route[HTTPRoute]
-    
-    subgraph Cluster Kubernetes
-        Route -->|Path /| Svc[Service: echo-service]
-        Svc --> Pod1[Pod: echo-server]
-        Svc --> Pod2[Pod: echo-server]
-    end
-    
-    style LB fill:#d4e1f5,stroke:#333,stroke-width:2px
-    style Route fill:#ffe6cc,stroke:#333,stroke-width:2px
-```
+<img src={gapischema} alt="Schema GAPI"/>
 
 ## Étape 1 : Vérifier la version et la GatewayClass
 
-Vous pouvez vérifier que votre cluster utilise une version compatible de Cilium (1.8.4+) à l'aide de la commande :
+Vous pouvez vérifier que votre cluster utilise une version compatible de Cilium (1.8.4+) à l'aide des commandes :
 
 ```bash
 cilium status
+cilium config view | grep -w "enable-gateway-api"
 ```
 
 Assurez-vous ensuite que la `GatewayClass` de Cilium est disponible sur votre cluster :
@@ -196,14 +186,13 @@ kubectl apply -f httproute.yaml
 Récupérez l'adresse IP de votre Gateway :
 
 ```bash
-GATEWAY_IP=$(kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}')
-echo "Gateway IP: $GATEWAY_IP"
+kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}'
 ```
 
-Envoyez une requête pour tester :
+Envoyez une requête sur cette IP pour tester :
 
 ```bash
-curl http://$GATEWAY_IP
+curl http://10.200.205.2
 ```
 
 Vous devriez recevoir une réponse JSON de l'application `echo-server` indiquant les détails du pod qui a répondu.
