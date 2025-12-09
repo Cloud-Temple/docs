@@ -72,6 +72,10 @@ L'un des plus grands avantages de Capsule est que toutes les politiques de sécu
 
 Cela garantit que vos projets respectent les limites de consommation (CPU, mémoire, stockage) et les règles de sécurité (comme les politiques réseau par défaut ou les contraintes de sécurité définies par **Kyverno**) définies pour votre environnement, sans que vous ayez à les reconfigurer pour chaque Namespace.
 
+:::info
+Des quotas spécifiques ont été positionnés sur votre Tenant Capsule pour limiter l'utilisation du stockage persistant (Ceph-Block et Ceph-FileSystem) à l'espace total disponible dans le cluster. Si vous avez besoin de modifier ces quotas pour un projet spécifique, veuillez formuler une demande auprès du support Cloud Temple.
+:::
+
 ## Conclusion
 
 Grâce à Capsule, vous disposez d'une autonomie complète pour gérer les Namespaces de vos équipes tout en bénéficiant d'un cadre sécurisé et préconfiguré par les administrateurs du cluster. Vous pouvez créer, modifier et supprimer des Namespaces à volonté, sachant que les garde-fous nécessaires sont automatiquement appliqués.
