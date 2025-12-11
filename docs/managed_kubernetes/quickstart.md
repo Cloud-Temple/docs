@@ -36,7 +36,9 @@ Les urls sont:
   - k10.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - grafana.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - kubecost.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - opencost.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - opencost-mcp.external-secured.**identifiant**.mk.ms-cloud-temple.com
+
 
 :::info url sécurisées
 Les url ci dessus ne sont accessible que depuis des IP publiques connues, configurées dans le firewall de la solution. Si vous souhaitez ajouter une IP publique, il faut faire une demande de support.

@@ -1,6 +1,14 @@
 ---
 title: Suivre les coûts avec Kubecost
 ---
+:::info[Évolution de l'outil de FinOps]
+Le produit **KubeCost**, bien que toujours fonctionnel sur votre cluster, est progressivement remplacé par **OpenCost**, son successeur open-source.
+
+**OpenCost** est maintenant la solution recommandée et maintenue activement par la communauté Cloud Native (CNCF).
+
+Nous vous encourageons à commencer à utiliser OpenCost pour bénéficier des dernières fonctionnalités et d'une meilleure intégration.
+:::
+
 import kubecostsallocations from './images/kubecostsallocations.png'
 
 ## Objectifs
@@ -38,7 +46,7 @@ Par défaut, les coûts sont agrégés par **Namespace**. Vous pouvez utiliser l
 
 Vous pouvez également ajuster la période d'analyse (par défaut, "Last 7 days") pour visualiser les coûts sur une autre période.
 
-<img src={kubecostsallocations} />
+<img src={kubecostsallocations} alt="Kubecost UI"/>
 
 ## Analyser le coût des infrastructures (Assets)
 
