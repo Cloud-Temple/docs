@@ -24,8 +24,8 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 Le tableau de bord Kasten est accessible via une URL sécurisée, construite à partir de l'identifiant de votre cluster.
 
 1.  **Construisez l'URL d'accès** :
-    L'URL est basée sur le modèle suivant : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com`
-    Remplacez `<identifiant>` par l'identifiant de votre cluster. Par exemple, si votre identifiant est `ctodev`, l'URL sera : `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com`.
+    L'URL est basée sur le modèle suivant : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
+    Remplacez `<identifiant>` par l'identifiant de votre cluster. Par exemple, si votre identifiant est `ctodev`, l'URL sera : `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
 2.  **Accédez à l'URL** dans votre navigateur.
 
