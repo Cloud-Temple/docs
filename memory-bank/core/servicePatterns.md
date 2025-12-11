@@ -21,9 +21,9 @@ Chaque service Cloud Temple suit une structure documentaire cohérente dans `/do
 ```markdown
 ---
 title: [Nom du Service]
-sidebar_position: [numéro]
 ---
 ```
+*(Note: `sidebar_label` et `sidebar_position` sont interdits dans le frontmatter)*
 
 #### Navigation Hierarchy
 Basée sur `/sidebars.ts` existant :
@@ -130,6 +130,23 @@ housing/
 - **Procédures** : Installation et maintenance
 - **Sécurité** : Accès et surveillance
 - **SLA** : Niveaux de service
+
+## Conventions de Formatage et Linting
+
+### Règles Strictes
+- **Pas de Sidebar Metadata** : Ne JAMAIS utiliser `sidebar_label` ou `sidebar_position` dans le frontmatter des fichiers Markdown. La structure est gérée par le système de fichiers ou `sidebars.ts`.
+- **Espaces autour des listes (MD032)** : Toujours laisser une ligne vide avant le premier élément d'une liste et après le dernier élément.
+  - ❌ Incorrect :
+    ```markdown
+    Texte introductif :
+    - Item 1
+    ```
+  - ✅ Correct :
+    ```markdown
+    Texte introductif :
+
+    - Item 1
+    ```
 
 ## Conventions d'Images
 
