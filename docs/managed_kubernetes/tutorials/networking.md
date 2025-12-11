@@ -198,7 +198,8 @@ En vous basant sur les URLs fournies dans le guide de démarrage, vous pouvez co
         -   `k10.external-secured -> 10.20.1.129`
         -   `grafana.external-secured -> 10.20.1.129`
         -   `harbor.external-secured -> 10.20.1.129`
-        -   `kubecost.external-secured -> 10.20.1.129`
+        -   `opencost.external-secured -> 10.20.1.129`
+        -   `opencost-mcp.external-secured -> 10.20.1.129`
 
 Cette configuration garantit que le trafic vers l'API et les services internes reste confiné à votre réseau privé, conformément aux meilleures pratiques de sécurité.
 
