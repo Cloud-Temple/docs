@@ -1,12 +1,12 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva
 ---
 import marketplaceCatalog from './images/marketplace_catalog.png'
 import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
 
 # Guida rapida per la Marketplace Cloud Temple
 
-Questa pagina ti guida attraverso i passaggi iniziali per utilizzare la **Marketplace Cloud Temple** dalla console. Segui queste istruzioni per esplorare le soluzioni disponibili e distribuirle rapidamente.
+Questa pagina ti guida attraverso i passaggi iniziali per utilizzare la **Marketplace Cloud Temple** dalla console. Segui queste istruzioni per scoprire le soluzioni disponibili e distribuirle rapidamente.
 
 ## Prerequisiti
 
@@ -40,7 +40,7 @@ La pagina Marketplace presenta un catalogo delle soluzioni disponibili. Ogni sol
 
 ### Accesso alle informazioni dettagliate
 
-Faccendo clic su una soluzione, si accede a una pagina di dettagli che include:
+Facendo clic su una soluzione, si accede a una pagina di dettagli che include:
 
 - **Descrizione completa** della soluzione  
 - **Specifiche tecniche** (se applicabile)  
@@ -58,7 +58,7 @@ A seconda del tipo di soluzione, sono disponibili diverse azioni:
 
 Per le soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi effettuare il deployment direttamente dalla Marketplace.
 
-**Nota importante:** Il deployment diretto è disponibile solo per le immagini che includono il tuo ambiente tra i target compatibili.
+**Nota importante:** Il deployment diretto è disponibile solo per le immagini che includono il tuo ambiente tra i destinatari compatibili.
 
 **Guide dettagliate:**
 - [Come distribuire un'immagine su OpenIaaS?](tutorials/deploy_openiaas)

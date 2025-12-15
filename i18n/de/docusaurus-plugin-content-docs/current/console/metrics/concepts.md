@@ -29,23 +29,23 @@ import grafanaDashboards_001 from './images/grafana_dashboards_001.png'
 
 Die Mehrheit der __Cloud Temple__-Kunden verfügt über Tools zur Visualisierung, Überwachung und Metriken zur Verfolgung ihrer Operationen.
 
-Die Philosophie der Konsole besteht darin, den Zugriff auf Daten zu ermöglichen, um sich über einen integrierten Prometheus-Proxy in diese Tools einzubinden.
+Die Philosophie der Console besteht darin, den Zugriff auf Daten zu ermöglichen, um sich über einen integrierten Prometheus-Proxy in diese Tools einzubinden.
 
 Dieser Proxy ermöglicht es Ihnen, Daten über ein Visualisierungstool wie [Grafana](https://grafana.com) abzufragen und zu manipulieren.
 
-Es ist jedoch auch möglich, bestimmte Leistungsdaten Ihrer Cloud-Ressourcen direkt in der Web-Oberfläche der Konsole anzuzeigen.
+Es ist jedoch auch möglich, bestimmte Leistungsdaten Ihrer Cloud-Ressourcen direkt in der Web-Oberfläche der Console anzuzeigen.
 
-*__Hinweis:__ Die Philosophie von __Cloud Temple__ besteht nicht darin, ausschließlich Diagramme in der Web-Oberfläche zu integrieren, sondern auch, den maximalen Informationszugriff über die API anzubieten.*
+*__Hinweis:__ Die Philosophie von __Cloud Temple__ besteht nicht darin, ausschließlich Diagramme in der Web-Oberfläche zu integrieren, sondern auch, den maximalen Informationszugriff über die API anzubieten*
 
 ## Built-in dashboards in the web interface
 
 *__Note:__ To access these dashboards, you must have the __'metric_read'__ permission*
 
-### Überblick
+### Übersicht
 
-Die Startseite der Konsole zeigt das Hauptdashboard mit allen Metriken, die einen Überblick über Ihre Produkte innerhalb Ihres Bereichs bieten. Bei Problemen mit Ihren VMware- und/oder OpenIaaS-Produkten werden entsprechende Warnungen angezeigt, deren Farbe die Schwere der Meldung widerspiegelt.
+Die Startseite der Console zeigt das Hauptdashboard an, das alle Metriken enthält, die einen Überblick über die Produkte, für die Sie in Ihrem Bereich abonniert sind, ermöglichen. Bei Problemen mit Ihren VMware- und/oder OpenIaaS-Produkten werden Warnungen angezeigt, deren Farbe mit ihrer Dringlichkeit korreliert.
 
-Diese Warnungen sind klickbar und leiten Sie zur jeweiligen Produktseite weiter.
+Diese Warnungen sind klickbar und leiten Sie zur entsprechenden Produktseite weiter.
 
 <img src={shivaHome} />
 
@@ -59,20 +59,20 @@ Auf diesem Tab finden Sie einige der bereits im globalen Dashboard enthaltenen M
 
 <img src={shivaMetric_000} />
 
-#### Berechnung
+#### Calculation
 
-Auf diesem Tab finden Sie die Anzahl der **AZs**, **Cluster**, **ESXs**, die **Kohlenstoffemissionen**, die **geschätzte Verbrauch**, sowie 7 Diagramme, die einen sehr visuellen Überblick über Ihre VMware-Umgebung bieten. Die Schätzung des Verbrauchs in kWh wird auf Basis des Durchschnitts der Messungen über den ausgewählten Zeitraum berechnet, bezogen auf eine Stunde.
+On this tab, you will find the number of **AZs**, **Clusters**, **ESXs**, **carbon emissions**, and **power consumption estimates**, along with seven visual graphs providing a clear overview of your VMware environment. The power consumption estimate in kWh is calculated based on the average of the readings covering the selected period, normalized to a per-hour basis.
 
-Sie können den abzudeckenden Datumsbereich sowie die Art der Datengruppierung auswählen (standardmäßig werden die Daten für Ihren gesamten Bereich gruppiert). Zum Beispiel, wenn Sie **Host** wählen:
+You can select the date range to be displayed, as well as the data aggregation type (by default, data is aggregated across your entire environment). For example, by selecting **Host**:
 
 <img src={shivaMetric_001} />
 
 <img src={shivaMetric_002} />
 
-Beim Überfahren mit der Maus über die Diagramme werden die Details der Ressourcennamen und ihre Werte angezeigt. Beim Klicken auf diese Diagramme öffnet sich ein kleines Tooltip, das es Ihnen ermöglicht, die Details zum angeklickten Datum einfacher einzusehen:
+When hovering over each graph, details about the resource names and their values are displayed. Clicking on a graph opens a small tooltip, allowing you to easily view detailed information corresponding to the selected date:
 <img src={shivaMetric_014} />
 
-#### Speicher
+#### Storage
 
 Just as on the "Compute" tab, you will find various information: the number of **AZs**, **datastore clusters**, **datastores**, as well as two charts. The same filtering principles apply, but here you can group by **Cluster SDRS** and **Datastore**.
 
@@ -116,7 +116,7 @@ In der Ansicht eines Datastores können für einen bestimmten Zeitraum die **IOP
 
 ### OpenIaaS Metrics
 
-In the **'OpenIaaS'** menu, a dedicated dashboard is available in the **'Metrics'** submenu. It includes 3 tabs:
+In the **'OpenIaaS'** menu, a dedicated dashboard is available in the **'Metrics'** submenu. It contains 3 tabs:
 
 #### Übersicht
 
@@ -128,7 +128,7 @@ Auf diesem Tab finden Sie einige der bereits im globalen Dashboard enthaltenen M
 
 On this tab, you will find the number of **AZs**, **Clusters**, **Hosts**, as well as 5 graphs providing a highly visual overview of your OpenIaaS environment.
 
-You can select the date range to cover, as well as the data grouping type (by default, data is grouped across your entire environment). For example, by choosing **Host**:
+You can select the date range to cover, as well as the data aggregation type (by default, data is aggregated across your entire environment). For example, by selecting **Host**:
 
 <img src={shivaMetric_011} />
 
@@ -144,9 +144,9 @@ Just as on the "Compute" tab, you will find various information: the number of *
 
 Integration of the Console with Grafana
 
-The Console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
+The Cloud Temple Console can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
 
-The console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
+The Console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
 
 - Visualize all your metrics.
 - Create custom dashboards tailored to your specific needs.
@@ -161,7 +161,7 @@ Cloud Temple also provides a [collection of ready-to-use dashboards](https://git
 
 ### Configure the Console as a data source in Grafana
 
-The goal is to enhance the observability of your cloud infrastructure through Cloud Temple metrics.
+The goal is to enhance the observability of your Cloud infrastructure through Cloud Temple metrics.
 
 #### Voraussetzungen
 

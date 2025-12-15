@@ -2,10 +2,10 @@
 title: Tutorial
 ---
 
-Questi tutorial vi aiutano a implementare e gestire l'Housing Cloud Temple dal portale Console.
+These tutorials help you deploy and manage a Cloud Temple Bastion from the Console portal.
 
 <div class="card">
-  <h3>Tutorial</h3>
-  <p>Al momento non sono disponibili tutorial, ma ci stiamo lavorando attivamente. Tornate presto per saperne di più!</p>
-  <a href="../" class="card-link">Vai alla pagina iniziale &rarr;</a>
+  <h3>Tutorials</h3>
+  <p>No tutorials are currently available, but we are working on them actively. Please check back soon for more information!</p>
+  <a href="../" class="card-link">Go to the Home Page &rarr;</a>
 </div>

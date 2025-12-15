@@ -14,18 +14,18 @@ This page guides you through the initial steps to use the **Cloud Temple Marketp
 
 Before you begin, ensure the following points are met:
 
-1. **Active Subscription**: To enable deployments, your organization must have subscribed to at least one Cloud Temple service (OpenSource IaaS or VMware IaaS). During contact with our partners, no specific subscription is required.
+1. **Active Subscription**: Your organization must have an active subscription to at least one Cloud Temple service (OpenSource IaaS or VMware IaaS) to enable deployments. During contact with our partners, no specific subscription is required.
 2. **User Permissions**: Your user account must have the necessary permissions to access the console and write permissions on target environments when deploying resources.
-3. **Target Environment**: Have a tenant configured for deploying solutions.
+3. **Target Environment**: Have a tenant configured for solution deployments.
 
 ## Access to the Marketplace
 
 ### 1. Access from the Console
 
-Once connected to the Cloud Temple console, you can access the Marketplace in several ways:
+Once logged into the Cloud Temple console, you can access the Marketplace in several ways:
 
-- **Main Menu**: A **Marketplace** menu is available in the main navigation
-- **Virtual Machines Pages**: The Marketplace is also accessible from the virtual machine creation pages within OpenIaaS and VMware environments
+- **Main menu**: A **Marketplace** menu is available in the main navigation
+- **Virtual machine pages**: The Marketplace is also accessible from the virtual machine creation pages within OpenIaaS and VMware environments
 
 ### 2. Marketplace Page
 
@@ -40,9 +40,9 @@ The Marketplace page displays a catalog of available solutions. Each solution sh
 
 ## Viewing solution details
 
-### Access detailed information
+### Access to Detailed Information
 
-By clicking on a solution, you access a details page containing:
+Clicking on a solution takes you to a details page containing:
 
 - **Complete description** of the solution  
 - **Technical specifications** (if applicable)  
@@ -54,7 +54,7 @@ By clicking on a solution, you access a details page containing:
 
 ## Available actions
 
-Depending on the type of solution, different actions are possible:
+Depending on the type of solution, different actions are available:
 
 ### Deploying Virtual Machine Images
 

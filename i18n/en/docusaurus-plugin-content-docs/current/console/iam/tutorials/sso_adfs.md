@@ -1,77 +1,5 @@
-## Step 3: Implementation of the ADFS Configuration
-
-### Add claims
-
-Add a second rule using, this time, the "Send LDAP attributes as claims" template.
-
-<img src={ssoAdfs_010} />
-
-Select the attribute store and add the attributes "E-Mail Addresses, Given-Name, Name, and SAM-Account-Name" as shown in the screenshot below.
-
-<img src={ssoAdfs_011} />
-
-Simply apply the changes.
-
-### Authentication Federation Configuration
-
-## Prerequisites
-
-Your Microsoft ADFS server must be able to access [Cloud Temple's URL](https://keycloak-shiva.cloud-temple.com/auth/).
-
-ADFS must be accessible from Cloud Temple networks and __expose a TLS certificate from a public CA__.
-
-Users wishing to log in to the portal must have their email, last name, and first name filled in on the Active Directory.
-
-### Configure claims
-
-Claims allow you to provide information to the token that will be sent to the Cloud Temple console.
-
-They transmit the information of the connected user that is necessary for the proper functioning of the different services, such as their email, name and surname.
-
-<img src={ssoAdfs_002} />
-
-Select "Import data, published online or on a local network, concerning the relying party" and fill in the URL provided by Cloud Temple support.
-
-<img src={ssoAdfs_003} />
-
-You can enter a name and description for the relying party, this part is optional.
-
-<img src={ssoAdfs_004} />
-
-By default, we allow everyone but it is possible to select __"Allow a specific group"__ to select the group or groups that will be allowed to access the Console services via ADFS.
-
-<img src={ssoAdfs_005} />
-
-Once all these steps are completed, you have finished configuring the relying party.
-
-<img src={ssoAdfs_006} />
-
-You will then need to edit the claim issuance policy for this new relying party.
-
-<img src={ssoAdfs_007} />
-
-Click on "Add a rule" and specify the template, either "Transform an incoming claim".
-
-<img src={ssoAdfs_008} />
-
-You will only need to fill in the information as indicated in the screenshot below.
-
-<img src={ssoAdfs_009} />
-
-#### Adding a Trusted Party Approval
-
-On your ADFS server, go to __"Add a Trusted Party Approval"__.
-
-<img src={ssoAdfs_001} />
-
-## Step 3: Finalization
-
-you can now test by going to the Console and clicking on the button corresponding to the ADFS client authentication; in this example, it is here __"ADFS Test"__
-
-<img src={ssoAdfs_012} />
-
 ---
-title: Example of Identity Federation with Microsoft ADFS
+title: Identity Federation Example with Microsoft ADFS
 tags:
   - iam
   - tutorials
@@ -90,26 +18,34 @@ import ssoAdfs_010 from './images/sso_adfs_010.png'
 import ssoAdfs_011 from './images/sso_adfs_011.png'
 import ssoAdfs_012 from './images/sso_adfs_012.png'
 
-Here is an example of configuring the authentication repository of a Cloud Temple organization with **Microsoft ADFS**.
+Here is an example configuration of an organization's identity repository with __Microsoft ADFS__.
 
-Configuring your Microsoft repository at the Cloud Temple organization level facilitates user authentication on the Console.
-This helps avoid the multiplication of authentication factors and reduce the attack surface.
-If your users are authenticated via their Microsoft account, authentication to the Console services will be transparent.
+Configuring your Microsoft identity repository at the Cloud Temple organization level simplifies user authentication on the Console.  
+This helps avoid the proliferation of authentication factors and reduces the attack surface.  
+If your users are already authenticated to their Microsoft accounts, logging into the Console services will be seamless.
 
-Here are the different steps to perform this configuration:
+Below are the steps to complete this configuration:
 
-## Step 2: Request the SSO (Single Sign-On) configuration of your organization
+## Prerequisites
 
-This part of the configuration is done at the organization level by the Cloud temple team.
+Your Microsoft ADFS server must be able to access [Cloud Temple's URL](https://keycloak-shiva.cloud-temple.com/auth/).
 
-To do this, make a __support request__ in the console indicating your desire to configure your Microsoft ADFS authentication repository.
+ADFS must be accessible from Cloud Temple's networks and __must expose a TLS certificate issued by a public CA__.
 
-Please provide the following information in the support request:
+Users wishing to log in to the portal must have their email, last name, and first name filled in on Active Directory.
+
+## Step 2: Request SSO (Single Sign-On) Configuration for Your Organization
+
+This configuration step is performed at the organization level by the Cloud Temple team.
+
+To proceed, please __submit a support request__ in the console indicating your intent to set up your Microsoft ADFS authentication repository.
+
+Include the following information in your support request:
 
 ```
-    The name of your Organization
-    The name of a contact with their email and phone number to finalize the configuration
-    Public URL of the ADFS federation Metadata (<domain name of the adfs>/FederationMetadata/2007-06/FederationMetadata.xml)
+    Name of your Organization
+    Name of a contact person, along with their email address and phone number, to finalize the configuration
+    Public URL of the ADFS federation metadata (<ADFS domain name>/FederationMetadata/2007-06/FederationMetadata.xml)
     (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
 
@@ -117,4 +53,68 @@ Once the configuration is completed on the Console side, the designated contact 
 
 The Cloud Temple support team will send you a URL that will look like this: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
 
-*You can paste the URL in a browser to test it. If it works correctly, you should see an XML displayed*
+*You can paste the URL into a browser to test it. If it works correctly, you should see an XML document displayed.*
+
+## Step 3: ADFS Configuration Implementation
+
+### Authentication Federation Configuration
+
+#### Add a Trusted Party Approval
+
+On your ADFS server, go to __"Add a Trusted Party Approval"__.
+
+<img src={ssoAdfs_001} />
+
+### Configure the Claims
+
+Claims allow you to provide information to the token that will be sent to the Cloud Temple console.
+
+They transmit user information necessary for the proper functioning of various services, such as the user's email address, first name, and last name.
+
+<img src={ssoAdfs_002} />
+
+Select "Import data published online or on a local network regarding the relying party" and enter the URL provided by Cloud Temple support.
+
+<img src={ssoAdfs_003} />
+
+You may optionally enter a name and description for the relying party.
+
+<img src={ssoAdfs_004} />
+
+By default, we allow everyone, but you can select __"Allow a specific group"__ to choose the group or groups authorized to access the Console services via ADFS.
+
+<img src={ssoAdfs_005} />
+
+Once these steps are completed, you have finished configuring the relying party.
+
+<img src={ssoAdfs_006} />
+
+Next, you will need to edit the claim issuance policy for this new relying party.
+
+<img src={ssoAdfs_007} />
+
+Click on "Add Rule" and select the template: "Transform an incoming claim."
+
+<img src={ssoAdfs_008} />
+
+You will then only need to fill in the information as shown in the screenshot below.
+
+<img src={ssoAdfs_009} />
+
+### Add claims
+
+Add a second rule, this time using the template "Send LDAP attributes as claims".
+
+<img src={ssoAdfs_010} />
+
+Select the attribute store and add the attributes "E-Mail Addresses, Given-Name, Surname, and SAM-Account-Name" as shown in the screenshot below.
+
+<img src={ssoAdfs_011} />
+
+Simply apply the changes.
+
+## Step 3: Finalization
+
+You can now test by going to the Console and clicking the button corresponding to the ADFS client authentication; in this example, it is __"ADFS Test"__.
+
+<img src={ssoAdfs_012} />

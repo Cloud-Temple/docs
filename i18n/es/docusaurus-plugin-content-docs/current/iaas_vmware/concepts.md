@@ -6,13 +6,13 @@ The __IaaS (Infrastructure as a Service)__ offering from Cloud Temple is designe
 
 ## Una plataforma tecnológica de confianza
 
-La plataforma IaaS de Cloud Temple se basa en socios tecnológicos de renombre internacional:
+La plataforma IaaS de Cloud Temple se apoya en socios tecnológicos de renombre internacional:
 
 - Cálculo: __CISCO UCS__.
 - Almacenamiento: __IBM Spectrum Virtualize__, __IBM FlashSystem__ para almacenamiento en bloques.
 - Red: __JUNIPER__.
 - Virtualización: __VMware__, ofreciendo una base fiable y probada para gestionar sus entornos en la nube.
-- Copia de seguridad: __IBM Spectrum Protect Plus__, para la orquestación y almacenamiento de copias de seguridad.
+- Copias de seguridad: __IBM Spectrum Protect Plus__, para la orquestación y el almacenamiento de copias de seguridad.
 
 Esta arquitectura se basa en el modelo __VersaStack__, una alianza entre Cisco e IBM, garantizando una compatibilidad amplia con los principales editores de software.
 
@@ -20,7 +20,7 @@ Esta arquitectura se basa en el modelo __VersaStack__, una alianza entre Cisco e
 
 Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offering provides a unique infrastructure:
 
-- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared among clients.
+- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared between clients.
 - __Maximum predictability__: You have full control over virtualization rates, I/O pressure on storage, and benefit from clear, consumption-based monthly billing.
 
 The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr/), ensuring a high level of automation and security.
@@ -32,7 +32,7 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 - Recursos de red (Internet, redes privadas).
 - Copias de seguridad cruzadas con retención configurable.
 - Replicación asíncrona para almacenamiento o máquinas virtuales.
-- Gestión mediante la [Consola](../console/console.md) o en modo Infraestructura como Código gracias a las APIs y al proveedor Terraform.
+- Gestión mediante la [Consola](../console/console.md) o en modo Infraestructura como Código gracias a las APIs y al provider de Terraform.
 
 ## Ventajas
 
@@ -40,9 +40,9 @@ The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Confianza digital   | Almacenamiento de datos en Francia y cumplimiento del RGPD.                                                                                          |
 | Seguridad           | Plataforma altamente segura, certificada __SecNumCloud__, __HDS__ (Almacenamiento de Datos de Salud), __ISO 27001__ y __ISAE 3402 tipo II__. |  
-| Alta disponibilidad | Tasa de disponibilidad de la plataforma del 99,99%, medida mensualmente, incluyendo las ventanas de mantenimiento.                                        |
+| Alta disponibilidad | Tasa de disponibilidad de la plataforma del 99,99 %, medida mensualmente, incluyendo las ventanas de mantenimiento.                                        |
 | Resiliencia         | Implementación de planes de continuidad o recuperación de actividad según las necesidades.                                                               |
-| Automatización      | Plataforma completamente automatizada diseñada para integrarse en un programa de transformación digital.                                        |
+| Automatización      | Plataforma completamente automatizada, diseñada para integrarse en un programa de transformación digital.                                        |
 | Por demanda         | Recursos disponibles bajo demanda.                                                                                                          |
 
 ## Regions and Availability Zones
@@ -59,9 +59,9 @@ The blades provided by Cloud Temple are of type __CISCO UCS B200__ or __CISCO UC
 
 Several categories of computing blades are available in the catalog to support your workloads (virtualization, containerization, etc.). These blades have different characteristics and performance levels to best meet your needs. The computing blade catalog is regularly updated.
 
-When using with a virtualization offering, a hypervisor cluster must consist exclusively of blades of the same type (it is not possible to mix different blade types within the same cluster).
+When using an offer with virtualization, a hypervisor cluster must consist exclusively of blades of the same type (it is not possible to mix different blade types within the same cluster).
 
-| Reference             | RAM  __(1)__ | Frequency __(2)__                         | Number of Cores / Threads | Connectivity __(3)__ | GPU __(4)__          | SKU for VMware Offering         |
+| Reference             | RAM  __(1)__ | Frequency __(2)__                         | Number of Cores / Threads | Connectivity __(3)__ | GPU __(4)__          | SKU for VMware Offer         |
 | --------------------- | ------------ | ----------------------------------------- | -------------------------- | -------------------- | -------------------- | ------------------------------- |
 | ECO v3 Blade          | 384 GB       | 2.20/3.0 GHz (Silver 4114 or equivalent)  | 20 / 40 threads            | 2 × 10 Gbit/s        |                      | csp:fr1:iaas:vmware:eco:v3      |
 | STANDARD v3 Blade     | 384 GB       | 2.40/3.4 GHz (Silver 4314 or equivalent)  | 32 / 64 threads            | 2 × 25 Gbit/s        |                      | csp:fr1:iaas:vmware:standard:v3 |
@@ -94,8 +94,8 @@ Los VLANs disponibles en la oferta IaaS son de tipo __nivel 2__, ofreciendo una 
 
 #### Conceptos principales
 
-- __Compartición entre clusters y zonas de disponibilidad (AZ)__:
-  - Los VLANs pueden compartirse entre diferentes AZ y distintos clusters que pertenecen al mismo inquilino.
+- __Compartición entre clústeres y zonas de disponibilidad (AZ)__:
+  - Los VLANs pueden compartirse entre diferentes AZ y distintos clústeres que pertenecen al mismo inquilino.
 - __Propagación entre inquilinos__:
   - Los VLANs pueden propagarse entre varios inquilinos que pertenecen a la misma organización, facilitando las comunicaciones internas.
 
@@ -108,9 +108,9 @@ La infraestructura de red garantiza una baja latencia para un rendimiento óptim
 
 ### Puntos clave
 
-1. __Flexibilidad__ : Los VLAN pueden configurarse para adaptarse a entornos multi-clúster y multi-tenant.
-2. __Alto rendimiento__ : Una latencia mínima garantiza una comunicación rápida y eficaz entre las zonas de disponibilidad.
-3. __Aislamiento y seguridad__ : Los VLAN de nivel 2 ofrecen una segmentación de red estricta para proteger los datos y los flujos.
+1. __Flexibilidad__: Los VLANs pueden configurarse para adaptarse a entornos multi-clúster y multi-inquilinos.
+2. __Alto rendimiento__: Una latencia mínima garantiza una comunicación rápida y eficaz entre las zonas de disponibilidad.
+3. __Aislamiento y seguridad__: Los VLANs de nivel 2 ofrecen una segmentación de red estricta para proteger los datos y los flujos.
 
 ## Block Storage
 
@@ -128,7 +128,7 @@ Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraes
 
 -   **Tipo de cifrado**: Los datos se cifran directamente en los discos (`Datos en reposo`) utilizando el algoritmo **XTS-AES 256**.
 -   **Cumplimiento**: Este método de cifrado cumple con la norma **FIPS 140-2**, asegurando un alto nivel de seguridad validado.
--   **Funcionamiento**: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
+-   **Funcionamiento**: El cifrado se aplica en el momento de escritura de los datos en el soporte físico de almacenamiento.
 
 :::warning Punto de atención sobre la replicación
 Es importante destacar que este cifrado protege los datos almacenados en los discos. No está activo "en tiempo real" (on-the-fly), lo que significa que los datos no se cifran durante las operaciones de replicación de almacenamiento entre las zonas de disponibilidad. La seguridad de los transferencias se garantiza mediante canales de comunicación dedicados y seguros.
@@ -153,7 +153,7 @@ La clase de almacenamiento __'Mass Storage'__ ofrece discos mecánicos para nece
 > *De igual forma, un volumen de 10 To en la clase de rendimiento 'Ultra' tendrá un límite de IOPS de 150000 IOPS,*
 
 - *El límite de IOPS se aplica al volumen, por lo tanto, a la noción de Datastore en un entorno VMware,*
-- *La disponibilidad del almacenamiento es del 99,99 %, medida mensualmente, incluida la ventana de mantenimiento,*
+- *La disponibilidad del almacenamiento es del 99,99% medida mensualmente, incluida la ventana de mantenimiento,*
 - *No hay restricciones ni cuotas en lectura o escritura,*
 - *No hay facturación por IOPS,*
 - *No hay compromiso de rendimiento para la clase __'Mass Storage'__,*
@@ -174,7 +174,7 @@ En el marco del uso del almacenamiento en modo bloque como datastore en la ofert
 
 Una gestión proactiva del espacio en disco es esencial para garantizar el buen funcionamiento de sus máquinas virtuales y la fiabilidad de las copias de seguridad. Asegúrese siempre de disponer del espacio necesario para los archivos de intercambio, las instantáneas y el crecimiento de los discos dinámicos.
 
-## Storage in backup mode
+## Backup storage
 
 The storage dedicated to backing up your virtual machines is automatically provisioned by the platform, up to the quota ordered.
 
@@ -194,9 +194,9 @@ Cloud Temple ofrece dos tipos de mecanismos desplegados en una configuración ac
 
 - La replicación __asincrónica__ (o __'Global Mirror'__): *La función __'Global Mirror'__ proporciona un proceso de copia asincrónica. Cuando un host escribe en el volumen primario, la confirmación de finalización de la operación de E/S se recibe antes de que la operación de escritura se complete en el volumen secundario. Si se inicia una operación de conmutación, la aplicación debe recuperar y aplicar todas las actualizaciones que no se han confirmado en el volumen secundario. Si las operaciones de E/S en el volumen primario se pausan durante un breve periodo, el volumen secundario puede convertirse en una copia exacta del volumen primario. Esta función es comparable a un proceso de copia de seguridad continua en el que siempre faltan las últimas actualizaciones. Cuando utilice Global Mirror con fines de recuperación tras un siniestro, debe reflexionar sobre cómo desea gestionar estas actualizaciones pendientes.*
 
-- La replicación __sincrónica__ (o __'Metro Mirror'__): *La función __'Metro Mirror'__ es un tipo de copia remota que crea una copia sincrónica de los datos de un volumen primario hacia un volumen secundario. Con copias sincrónicas, los hosts de aplicaciones escriben en el volumen primario, pero no reciben confirmación de que la operación de escritura ha finalizado hasta que los datos se hayan escrito en el volumen secundario. Esto garantiza que ambos volúmenes contengan datos idénticos cuando finaliza la operación de copia. Tras finalizar la operación de copia inicial, la función Metro Mirror mantiene permanentemente una copia completamente sincronizada de los datos de origen en el sitio objetivo. __Desde el 1 de enero de 2024, la función 'Metro Mirror' ya no se comercializa.__*
+- La replicación __sincrónica__ (o __'Metro Mirror'__): *La función __'Metro Mirror'__ es un tipo de copia remota que crea una copia sincrónica de los datos de un volumen primario hacia un volumen secundario. Con copias sincrónicas, los hosts de aplicaciones escriben en el volumen primario, pero no reciben confirmación de que la operación de escritura ha finalizado hasta que los datos se han escrito en el volumen secundario. Esto garantiza que ambos volúmenes contengan datos idénticos cuando finaliza la operación de copia. Tras finalizar la operación de copia inicial, la función Metro Mirror mantiene permanentemente una copia completamente sincronizada de los datos de origen en el sitio objetivo. __Desde el 1 de enero de 2024, la función 'Metro Mirror' ya no se comercializa.__*
 
-Se define entonces un sitio denominado "activo" o "principal" y un sitio "pasivo" o "en espera". El plan de recuperación de actividad se activa en caso de siniestro o en el marco de una solicitud de prueba del PRA. A continuación, el sitio pasivo asume el control del sitio activo.
+Se define entonces un sitio denominado "activo" o "principal" y un sitio "pasivo" o "en espera". El plan de recuperación de actividad se activa en caso de siniestro o dentro del marco de una prueba del PRA. A continuación, el sitio pasivo asume el control del sitio activo.
 
 #### Replicación asíncrona
 
@@ -216,12 +216,12 @@ Los pasos de una operación de escritura son los siguientes:
 
 | SLA       | Descripción                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 15 min | En caso de siniestro en el centro de datos principal, la cantidad máxima de datos perdidos corresponde a lo máximo a los 15 últimos minutos de escritura |
-| RTO < 4 h | En caso de siniestro en el centro de datos principal, la recuperación de actividad está garantizada en menos de 4 horas según la complejidad de los entornos.          |
+| RPO 15 min | En caso de siniestro en el centro de datos principal, la cantidad máxima de datos perdidos corresponde a lo más a los 15 últimos minutos de escritura |
+| RTO < 4 h  | En caso de siniestro en el centro de datos principal, la recuperación de actividad está garantizada en menos de 4 horas según la complejidad de los entornos.          |
 
-En caso de activación del PRA, el equipo de Cloud Temple realiza una operación de presentación de la LUN __'Global Mirror'__ a los hipervisores remotos para que puedan acceder a los datos. La implementación de esta solución requiere, por tanto, tener reservados en el sitio 'standby' los recursos de cálculo y RAM necesarios para recuperar la actividad en caso de siniestro.
+En caso de activación del PRA, el equipo de Cloud Temple realiza una operación de presentación de la LUN __'Global Mirror'__ a los hipervisores remotos para que puedan acceder a los datos. La implementación de esta solución requiere, por tanto, haber reservado en el sitio 'standby' los recursos de cálculo y RAM necesarios para recuperar la actividad en caso de siniestro.
 
-El uso de esta tecnología también requiere duplicar el espacio de disco: es necesario disponer exactamente del mismo espacio en el sitio remoto que en el sitio local.
+El uso de esta tecnología también requiere duplicar el espacio de disco: es necesario tener exactamente el mismo espacio en el sitio remoto que en el sitio local.
 
 El uso de este mecanismo puede afectar el rendimiento de la aplicación hasta en un 10 %. __Solo las clases de almacenamiento 500 IOPS/To, 1500 IOPS/To y 3000 IOPS/To son compatibles.__
 
@@ -241,29 +241,29 @@ El uso de este mecanismo puede afectar el rendimiento de la aplicación hasta en
 La oferta de virtualización VMware Cloud Temple calificada SecNumCloud se basa en la tecnología __VMware Vsphere__.
 
 La plataforma es gestionada automáticamente por Cloud Temple (mantenimiento de condiciones de seguridad, mantenimiento en condiciones operativas, ...).  
-Puede ser controlada mediante la interfaz gráfica de la Consola o a través de sus APIs asociadas.
+Puede ser controlada a través de la interfaz gráfica de la Consola o mediante las APIs asociadas.
 
-__no es posible para el cliente acceder directamente a la plataforma de virtualización VMware__ (ningún acceso directo al vCenter, por ejemplo).
-----
+*__Nota__*: *Por razones de seguridad vinculadas a la calificación SecNumCloud,  
+__no es posible para el cliente acceder directamente a la plataforma de virtualización VMware__ (ningún acceso directo al vCenter, por ejemplo).  
 De hecho, la calificación SecNumCloud exige __una total segregación__ entre las interfaces de control de los activos técnicos y la interfaz del cliente (la Consola).*
 
 - Los productos implementados son VMware ESXi, VMware vCenter y VMware Replication.  
-- *La red de la oferta de virtualización no utiliza la tecnología VMware NSX, sino que es gestionada físicamente mediante la tecnología Juniper y el protocolo VPLS.*  
-- *El almacenamiento no utiliza la tecnología VMware vSAN, sino únicamente SANs IBM mediante fibra óptica de 32 G.*  
+- *La red de la oferta de virtualización no utiliza la tecnología VMware NSX, sino que es controlada físicamente mediante la tecnología Juniper y el protocolo VPLS.*  
+- *El almacenamiento no utiliza la tecnología VMware vSAN, sino únicamente SANs IBM en fibra canal de 32 G.*  
 - *No se implementa ninguna forma de optimización oculta (compresión, deduplicación, ...).*
 
-### Definición de un cluster de láminas de cálculo ('Cpool')
+### Definición de un cluster de nodos de cálculo ('Cpool')
 
 El __'Cpool'__ es un agrupamiento de hipervisores VMware ESXi, también conocido como *'cluster ESX'*.
 
-Los hosts presentes en un __'Cpool'* pertenecen todos al mismo *tenant* y a la misma zona de disponibilidad (AZ). Necesariamente deben tener la misma clase:  
-__no es posible mezclar modelos diferentes de láminas de cálculo dentro de un mismo cluster__.
+Los hosts incluidos en un __'Cpool'* pertenecen todos al mismo inquilino y a la misma zona de disponibilidad (AZ). Necesariamente deben tener la misma clase:  
+__no es posible mezclar modelos diferentes de nodos de cálculo dentro de un mismo cluster__.
 
-Dado que todas las láminas de cálculo se entregan con la memoria física máxima, se aplica una limitación de uso de RAM a nivel de cluster mediante software para asegurarse de que coincida con la RAM facturada.
+Dado que todos los nodos de cálculo se entregan con la memoria física máxima, se aplica una limitación de uso de RAM a nivel software dentro del cluster para asegurarse de que coincida con la RAM facturada.
 
-Por defecto, cada lámina dispone de 128 GB de memoria activada dentro del __'Cpool'__.
+Por defecto, cada nodo dispone de 128 GB de memoria activada dentro del __'Cpool'*.
 
-Un __'Cpool'__ puede contener como máximo 32 hipervisores. Más allá de esta limitación, será necesario crear un segundo cluster.
+Un __'Cpool'* puede contener como máximo 32 hipervisores. Si se supera este límite, será necesario crear un segundo cluster.
 
 El almacenamiento puede ser compartido entre los __'Cpool'__.
 
@@ -276,16 +276,16 @@ Indeed, VMware's technology will use a compression-based optimization method tha
 Similarly, excessive memory pressure on your compute nodes will force the hypervisor to offload part of its memory to disk to meet the needs of virtual machines.
 
 This situation, known as __'Ballooning'__, severely impacts the performance of all virtual machines located on the affected datastore.
-__Diagnosis becomes complicated in this context__, as your monitoring tools will detect issues at the CPU level rather than at the memory or storage level.
-Also keep in mind that the first action the hypervisor performs when starting a virtual machine is to create a __memory swap file (.vswap)__ on disk, with a size equal to the virtual machine's memory allocation. You must __account for this when sizing your storage__.
+__Diagnosis becomes complicated in this context__, as your monitoring will detect impacts at the CPU level rather than at the memory or storage level.
+Also keep in mind that the first action the hypervisor performs when starting a virtual machine is to create a __memory swap file (.vswap)__ on disk, with a size equal to the memory allocated to the virtual machine. You must __take this into account when sizing your storage__.
 
-Each compute node is delivered with 128 GB of memory enabled at the __'Cpool'__ level, although it physically has access to all allocated memory.
+Each compute node is delivered with 128 GB of memory enabled at the __'Cpool'__ level, but physically has access to all available memory.
 
-For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation at activation of the _'Cpool'_ will be 3 x 128 GB = 384 GB of RAM.
+For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation at activation of the _*'Cpool'*_ will be 3 x 128 GB = 384 GB of RAM.
 You can extend it up to a maximum of 3 x 384 GB = 1,152 GB of memory.
 
     Minimum memory for a 'Cpool' = number of hosts × 128 GB of memory  
-    Maximum memory for a 'Cpool' = number of hosts × physical memory capacity per compute node
+    Maximum memory for a 'Cpool' = number of hosts × total physical memory available per compute node
 
 ### Cloud Temple Virtual Machine Catalogs
 
@@ -297,7 +297,7 @@ To date, it includes dozens of `Templates` and images ready to be deployed on yo
 Cloud Temple proporciona regularmente builds para los hipervisores con el fin de aplicar parches de seguridad.  
 Sin embargo, la actualización de los hipervisores sigue siendo responsabilidad suya, ya que no tenemos visibilidad sobre sus restricciones empresariales.
 
-El proceso de actualización es completamente automatizado. Para garantizar la continuidad del servicio, se requiere un mínimo de dos hipervisores por clúster durante la actualización. Asegúrese de contar con los permisos necesarios para realizar estas acciones.
+El proceso de actualización es completamente automatizado. Para garantizar la continuidad del servicio, se requiere un mínimo de dos hipervisores por clúster durante la actualización. Asegúrese de disponer de los permisos necesarios para realizar estas acciones.
 
 ### Gestión de la afinidad de sus máquinas virtuales
 
@@ -331,28 +331,28 @@ su estado de activación (__'Estado'__) y las máquinas virtuales afectadas en s
 La replicación asíncrona de sus máquinas virtuales es un mecanismo que consiste en enviar, desde el hipervisor de origen, las operaciones de escritura al sitio de respaldo a intervalos de tiempo regulares.
 
 Tras una copia inicial en caliente de todo el almacenamiento activo al sitio de respaldo, únicamente se envían las escrituras a intervalos regulares al sitio en estado de espera.  
-Este intervalo depende del volumen de escritura (de cada hora a cada 24 horas).
+Este intervalo depende del volumen de escritura (desde cada hora hasta cada 24 horas).
 
 La replicación de máquinas virtuales se basa en el mecanismo de instantáneas del hipervisor. En este sentido,  
 esta solución presenta los mismos inconvenientes, especialmente la sensibilidad al volumen de escritura de la máquina virtual,  
-ya que el proceso de instantánea es un mecanismo recursivo para cerrar la instantánea.
+dado que el proceso de instantánea es un mecanismo recursivo para cerrar la instantánea.
 
 El ejemplo típico de máquina que no soporta el mecanismo de replicación de máquinas virtuales es un  
 servidor FTP que recibe flujos en tiempo real de cámaras de seguridad. __La máquina pasa todo su tiempo escribiendo y no podrá  
-cerrar una instantánea sin pausar el sistema operativo durante un período significativo  
+cerrar una instantánea sin pausar el sistema operativo durante un periodo significativo  
 (varios decenas de minutos)__. Si el hipervisor no logra cerrar la instantánea, exactamente eso hará,  
 sin posibilidad de intervención salvo corromper la máquina virtual.
 
 | SLA             | Descripción                                                                                                                                               |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO de 1H a 24H | En caso de siniestro en el centro de datos principal, la cantidad máxima de datos perdidos será la correspondiente a la última sincronización de escritura en el sitio de respaldo. |
-| RTO < 15 min    | Operación de arranque de la máquina virtual detenida en el sitio remoto.                                                                                   |
+| RPO de 1H a 24H | En caso de siniestro en el centro de datos principal, la cantidad máxima de datos perdidos será la correspondiente a la última sincronización de escritura al sitio de respaldo. |
+| RTO < 15 min    | Operación de arranque de la máquina virtual detenida en el sitio remoto                                                                                |
 
 En caso de necesidad, o en caso de fallo en una máquina del sitio principal, la máquina espejo en el sitio de respaldo se activa.  
 La recuperación de actividad requiere disponer de capacidad de cálculo y RAM reservada en el sitio de respaldo. Es  
 necesario contar con el mismo espacio de almacenamiento en el sitio pasivo que en el sitio activo.
 
-| Referencia                        | Unidad | SKU                                             |  
+| Referencia                         | Unidad | SKU                                             |  
 |-----------------------------------|--------|-------------------------------------------------|
 | PRA - Replicación VMware inter-AZ | 1 vm   | csp:(region):iaas:vmware:licence:replication:v1 |
 
@@ -391,7 +391,7 @@ Las velocidades de copia de seguridad y restauración dependen de la tasa de cam
 
 To create a new backup policy, you must submit a request to support. Support is accessible via the buoy icon in the top-right corner of the window.
 
-Creating a new backup policy is done through a __service request__ indicating:
+Creating a new backup policy is done through a __service request__ specifying:
 
     Your Organization's name
     A contact name, email address, and phone number to finalize the configuration
@@ -409,7 +409,7 @@ La solución se basa en una infraestructura de seguridad robusta compuesta por:
 
 - __HSM (Hardware Security Module)__ : Módulos __Thales Luna S790__ certificados __FIPS 140-3 nivel 3__
 - __KMS (Key Management System)__ : __Thales CipherTrust Manager__ para la gestión centralizada de claves
-- __Integración VMware__ : Comunicación a través del protocolo __KMIP__ (Key Management Interoperability Protocol)
+- __Integración VMware__ : Comunicación mediante el protocolo __KMIP__ (Key Management Interoperability Protocol)
 
 #### Alta disponibilidad
 
@@ -429,8 +429,8 @@ El sistema utiliza una __jerarquía de claves criptográficas__ para garantizar 
 |-------|---------------|-------------|-----------|
 | 1 | __Raíz de confianza (RoT)__ | Clave maestra gestionada por KMS | HSM Luna |
 | 2 | __Clave de dominio (DK)__ | Clave de dominio por cliente (aislamiento multiinquilino) | HSM Luna |
-| 3 | __Clave de cifrado (KEK)__ | Clave de cifrado por VM | CipherTrust Manager |
-| 4 | __Clave de datos (DEK)__ | Clave de datos por VM | VMware ESXi |
+| 3 | __Clave de cifrado de claves (KEK)__ | Clave de cifrado por VM | CipherTrust Manager |
+| 4 | __Clave de cifrado de datos (DEK)__ | Clave de datos por VM | VMware ESXi |
 
 #### Proceso de cifrado
 
@@ -447,11 +447,11 @@ El sistema utiliza una __jerarquía de claves criptográficas__ para garantizar 
 - __Common Criteria EAL4+__ : Evaluación avanzada de seguridad
 - __SecNumCloud__ : Calificación ANSSI integrada en el entorno Cloud Temple
 
-#### Multi-tenant isolation
+#### Aislamiento multiinquilino
 
-- __Cryptographic separation__: Each client has an isolated KMS domain
-- __Dedicated keys__: A specific Domain Key per client
-- __Audit and traceability__: Full logging of actions per domain
+- __Separación criptográfica__: Cada cliente dispone de un dominio KMS aislado
+- __Claves dedicadas__: Una clave de dominio específica por cliente
+- __Auditoría y trazabilidad__: Registro completo de las acciones por dominio
 
 ### Activación y uso
 
@@ -479,7 +479,7 @@ Para un procedimiento detallado con capturas de pantalla, consulte el [tutorial 
 
 #### Rendimiento
 
-- __Impacto mínimo__: El cifrado en hardware garantiza un rendimiento óptimo
+- __Impacto mínimo__: El cifrado en hardware garantiza un rendimiento óptimo  
 - __Transparencia__: Sin impacto en el funcionamiento de las aplicaciones
 
 ### Casos de uso recomendados
@@ -492,7 +492,7 @@ Esta solución de protección avanzada es especialmente adecuada para:
 - __Soberanía digital__: Protección contra accesos no autorizados, incluso en caso de compromiso  
 
 | Referencia | Unidad | SKU |
-|------------|--------|-----|
+|-----------|--------|-----|
 | PROTECCIÓN AVANZADA - Cifrado de VM mediante HSM/KMS | 1 VM | csp:(region):iaas:vmware:encryption:hsm:v1 |
 
 *__Nota__*:

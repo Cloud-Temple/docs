@@ -22,7 +22,7 @@ import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Accesso al tuo tenant Cloud Temple
 
-Console è accessibile tramite l'URL seguente: [Console](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via email.
+La Console è accessibile tramite l'URL seguente: [Console](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via email.
 
 La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organisations) in cui è stato creato il tuo utente.  
 Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
@@ -32,7 +32,7 @@ Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
 Successivamente verrai reindirizzato a una pagina in cui ti verrà chiesto di autenticarti.  
 Una volta effettuato l'accesso, arriverai a questa pagina.
 
-Qui troverai l'insieme delle metriche relative ai prodotti sottoscritti nel tuo ambito. In caso di problemi relativi ai tuoi prodotti VMware e/o OpenIaaS, verranno visualizzate delle notifiche; il colore è correlato alla gravità dell'evento.
+Qui troverai l'insieme delle metriche relative ai prodotti sottoscritti nel tuo ambito. In caso di problemi relativi ai tuoi prodotti VMware e/o OpenIaaS, verranno visualizzate delle avvisi, la cui colorazione indica il loro livello di gravità.
 
 <img src={shivaHome} />
 
@@ -56,10 +56,10 @@ Verrai guidato durante tutto il processo di richiesta di supporto.
 
 La prima fase consiste nell'identificare il tipo di richiesta di supporto:
 
-- Richiedere un consiglio sull'utilizzo di un prodotto (fuori dal caso di incidente),
-- Richiedere assistenza legata al tuo account cliente,
+- Richiedere un consiglio sull'utilizzo di un prodotto (fuori dal contesto di un incidente),
+- Richiedere assistenza relativa al tuo account cliente,
 - Segnalare un incidente o richiedere supporto tecnico.
-- Richiedere l'assistenza di un servizio professionale (messaggio a disposizione di un ingegnere Cloud Temple su una problematica).
+- Richiedere l'assistenza di un servizio professionale (messaggio a disposizione di un ingegnere Cloud Temple per un problema specifico).
 
 <img src={shivaSupport_01} />
 
@@ -100,9 +100,9 @@ __BASSO (P4)__:
 - Domanda di conformità
 - Bisogno di chiarimenti tecnici
 
-__SERVIZIO OPERATIVO (P5)__:
+__OPERATIVO (P5)__:
 
-- Servizio operativo senza rischi immediati
+- Servizio operativo senza rischio immediato
 
 <img src={shivaSupport_02} />
 
@@ -125,29 +125,30 @@ Le funzionalità sono raggruppate per modulo. Questi includono principalmente:
 L'attivazione di un modulo per un utente dipende dai diritti dell'utente. Ad esempio, il modulo __'Ordine'__ non sarà disponibile se l'utente non dispone del diritto __'ORDER'__.
 
 Di seguito una presentazione dei diversi moduli disponibili. Nuovi moduli vengono regolarmente aggiunti alla console:
+
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__: permette di ottenere rapidamente una visione generale sul __totale delle risorse di calcolo e archiviazione__, sulle statistiche della __protezione dei dati__ e su una __sintesi dei ticket di supporto__,  
-- __Inventario__: permette di visualizzare l'insieme delle proprie risorse di tipo __'macchine virtuali'__. Se vengono utilizzati i __tag__, permette di visualizzare le risorse raggruppate per __tag__ (ad esempio, vista aziendale, vista applicativa, ...),  
+- __Dashboard__: consente di ottenere rapidamente una panoramica sul __totale delle risorse di calcolo e archiviazione__, sulle statistiche della __protezione dei dati__ e su una __sintesi dei ticket di supporto__,  
+- __Inventario__: consente di visualizzare l'insieme delle proprie risorse di tipo __'macchine virtuali'__. Se vengono utilizzati i __tag__, permette di visualizzare le risorse raggruppate per __tag__ (ad esempio, vista aziendale, vista applicativa, ...),  
 - __Infogestione__: fornisce l'accesso al tracciamento delle proprie __richieste di supporto__ e alla __metodologia dei servizi__,  
-- __IaaS__: permette il __pilotaggio delle infrastrutture IaaS VMware__ (macchine virtuali, cluster, iperhost, replicazioni, backup, ...),  
-- __OpenIaaS__: permette il __pilotaggio delle risorse Xen Orchestra__ (macchine virtuali, backup, ...),  
-- __OpenShift__: permette il pilotaggio dell'**architettura PaaS RedHat OpenShift** e la gestione dei container nelle 3 zone di disponibilità della piattaforma.  
+- __IaaS__: consente il __pilotaggio delle infrastrutture IaaS VMware__ (macchine virtuali, cluster, iperhost, replicazioni, backup, ...),  
+- __OpenIaaS__: consente il __pilotaggio delle risorse Xen Orchestra__ (macchine virtuali, backup, ...),  
+- __OpenShift__: consente il pilotaggio dell'**architettura PaaS RedHat OpenShift** e la gestione dei container nelle 3 zone di disponibilità della piattaforma.  
 - __Bastion__: permette il deployment e il pilotaggio di appliance bastion SSH/RDP nei propri reti,  
-- __Rete__: permette il pilotaggio dei __reti di livello 2 e 3__, delle __IP pubbliche__ e dei propri __circuiti telecomunicazioni__,  
-- __Colocation__: offre la visione sugli apparati posizionati nelle zone di __colocazione condivisa o dedicata__,  
+- __Rete__: consente il pilotaggio delle __reti di livello 2 e 3__, delle __IP pubbliche__ e dei propri __circuiti telecomunicazioni__,  
+- __Colocation__: offre la visualizzazione degli apparati ubicati nelle zone di __collocazione condivisa o dedicata__,  
 - __Ordine__: permette l'ordine di risorse e il tracciamento dei deployment,  
 - __Amministrazione__: raggruppa le funzionalità di amministrazione degli utenti e dei tenant, nonché l'accesso alla registrazione globale.
 </div>
 </div>
 
-I pictogrammi __'NEW'__ indicano che il prodotto in questione è stato provisionato ma non è ancora qualificato come __offerta SecNumCloud__, mentre __'BETA'__ indica che il prodotto è stato provisionato e recentemente qualificato come __offerta SecNumCloud__.
+I pictogrammi __'NEW'__ indicano che il prodotto in questione è stato provisioningato ma non è ancora qualificato come __offerta SecNumCloud__, mentre __'BETA'__ indica che il prodotto è stato provisioningato ed è stato recentemente qualificato come __offerta SecNumCloud__.
 
 __Registrazione - Tracciamento delle attività__
 =====================================
 
-La pagina delle attività è pensata per fornire una visibilità completa su tutte le operazioni di lettura e scrittura effettuate all'interno della console, garantendo così una tracciabilità e una sicurezza maggiori. Essa mette in evidenza i due principali tab: Recenti e Archiviati.
+La pagina delle attività è pensata per fornire una visibilità completa su tutte le operazioni di lettura e scrittura eseguite all'interno della console, garantendo così una tracciabilità e una sicurezza maggiori. Essa mette in evidenza i due principali tab: Recenti e Archiviati.
 
 <img src={shivaLogs} />
 
@@ -188,7 +189,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Nota di Conformità__
 
-In conformità con la qualifica SecNumCloud, la conservazione degli eventi della console Cloud Temple è di durata minima di __6 mesi__, garantendo così il rispetto dei requisiti di sicurezza e tracciabilità.
+In conformità con la qualifica SecNumCloud, il periodo di conservazione degli eventi della console Cloud Temple è di almeno __6 mesi__, garantendo così il rispetto dei requisiti di sicurezza e tracciabilità.
 
 ## Consulta degli ultimi aggiornamenti
 
@@ -198,7 +199,7 @@ Fai clic sull'icona __'Novità'__ nell'angolo in basso a sinistra della barra ve
 
 ## Accesso alle funzionalità utente tramite l'API
 
-L'accesso a tutte le funzionalità della Console è possibile tramite l'API Console. È possibile trovare ulteriori informazioni sui verbi e sulle configurazioni tramite __'Profilo'__ e __'API'__:
+L'accesso a tutte le funzionalità della Console è possibile tramite l'API Console. È possibile ottenere ulteriori dettagli sui verbi e sulle configurazioni tramite __'Profilo'__ e __'API'__:
 
 <img src={shivaOnboard_008} />
 

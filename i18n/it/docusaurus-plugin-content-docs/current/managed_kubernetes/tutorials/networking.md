@@ -14,23 +14,23 @@ Questo tutorial ha lo scopo di familiarizzare con i concetti fondamentali di ret
 - Conoscere i diversi meccanismi per esporre le tue applicazioni (Ingress, LoadBalancer).
 - Visualizzare i flussi di rete e le politiche di sicurezza tramite Hubble.
 
-Utilizzeremo come **esempio** un cluster **"ctodev"**, il cui range assegnato è **10.20.0.0/22**.
+Utilizzeremo come **esempio** un cluster denominato **"ctodev"**, con un range assegnato di **10.20.0.0/22**.
 
 :::warning definizione dei range
- Questo range di indirizzi IP privati X.Y.Z.0/22 (RFC 1918) viene definito con il cliente al momento della creazione del cluster. Non può essere modificato in seguito.
+ Questo range di indirizzi IP privati X.Y.Z.0/22 (RFC 1918) viene definito con il cliente al momento della creazione del cluster. Non può essere modificato in un secondo momento.
 :::
 
-## Indirizzamento IP
+## IP Addressing Plan
 
-Il tuo cluster Kubernetes gestito dispone di un VLAN multi-zonale con un range di indirizzi IPv4 in /22.
+Your Managed Kubernetes cluster has a multi-zone VLAN with an IPv4 address range of /22.
 
-L'intervallo del nostro **esempio** 10.20.0.0/22 è suddiviso logicamente in sottoregni.
+The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
 
-    - 10.20.0.0/24 è assegnato ai nodi del cluster:
+    - 10.20.0.0/24 is assigned to cluster Nodes:
 
-        - 10.20.0.10 : ctodev-gitrunner (la macchina che gestisce l'infrastruttura)
+        - 10.20.0.10 : ctodev-gitrunner (the machine that manages the infrastructure)
 
-        - 10.20.0.20 : indirizzo virtuale (load balancer) del servizio API Kubernetes
+        - 10.20.0.20 : Virtual IP (load-balanced) for the Kubernetes API service
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -45,28 +45,28 @@ L'intervallo del nostro **esempio** 10.20.0.0/22 è suddiviso logicamente in sot
         - ...
         - 10.20.0.151 : ctodev-wrk-100 (Worker 100)
 
-    - MetalLB interno: 10.20.1.1 – 10.20.1.127
+    - Internal MetalLB: 10.20.1.1 – 10.20.1.127
 
       - 10.20.1.1 : ingress `nginx-internal`
     
-    - MetalLB esterno: 10.20.1.128 – 10.20.1.254
+    - External MetalLB: 10.20.1.128 – 10.20.1.254
 
       - 10.20.1.128 : ingress `nginx-external`
       - 10.20.1.129 : ingress `nginx-external-secure`
 
     - Pods: 10.241.0.0/16 
 
-    - Servizi: 10.95.0.0/12 
+    - Services: 10.95.0.0/12 
 
-:::warning Range Pods e Servizi
-I range per Pods e Servizi vengono definiti con il cliente al momento della creazione del cluster. Non possono essere modificati in seguito.
+:::warning Pods and Services Ranges
+The Pods and Services ranges are defined with the client during cluster setup and cannot be modified afterward.
 :::
 
 ## Utilizzo di MetalLB
 
 MetalLB è il componente che permette di esporre servizi a livello 3 (non web / L7) direttamente su un indirizzo IP, sia interno che esterno, utilizzando il tipo di servizio `LoadBalancer`. È un'alternativa agli Ingress per applicazioni non HTTP o in casi d'uso specifici.
 
-Per utilizzare MetalLB, è sufficiente creare un servizio del tipo `LoadBalancer`. MetalLB assegnerà automaticamente un indirizzo IP proveniente dalle fasce preconfigurate. La distinzione tra le fasce `interna` ed `esterna` è una misura di sicurezza per garantire che un'applicazione destinata a un uso interno non venga esposta accidentalmente su una rete pubblica.
+Per utilizzare MetalLB, è sufficiente creare un servizio del tipo `LoadBalancer`. MetalLB assegnerà automaticamente un indirizzo IP proveniente dalle fasce preconfigurate. La distinzione tra le fasce `interna` ed `esterna` rappresenta una misura di sicurezza per garantire che un'applicazione destinata a un uso interno non venga esposta accidentalmente su una rete pubblica.
 
 **Esempio: Esposizione di un servizio sulla rete interna**
 
@@ -114,7 +114,7 @@ spec:
 
 ## Indirizzi IP Pubblici
 
-Il tuo cluster Kubernetes Gestito è stato consegnato con 2 indirizzi IPv4 pubblici.
+Il tuo cluster Kubernetes Gestito è stato consegnato con 2 indirizzi IPv4 pubblici di default.
 
 La prima IP viene utilizzata sulla porta 6443 per l'API Kubernetes (nel nostro esempio: ctodev.mk.ms-cloud-temple.com:6443).
 
@@ -144,18 +144,18 @@ Ad esempio, un servizio denominato `api-backend` nel namespace `production` sar�
 
 La zona DNS pubblica utilizzata per i cluster Kubernetes gestiti è `.mk.ms-cloud-temple.com`.
 
-L'ingress *"nginx-external"* (mappato sull'IP pubblico n. 2) è accessibile tramite `"*.external.<il vostro identificativo del cluster>.mk.ms-cloud-temple.com"`.  
+L'ingress *"nginx-external"* (mappato sull'IP pubblico n.2) è accessibile tramite `"*.external.<il vostro identificativo del cluster>.mk.ms-cloud-temple.com"`.  
 Se pubblicate un'applicazione con questa ingress-class, potrete accedervi direttamente tramite questo nome di dominio. Vedi il tutorial: [Distribuire la vostra prima applicazione](./firstdeploy)
 
-## Hubble: Network observability within reach
+## Hubble: Observability di rete a portata di mano
 
-Hubble is a graphical and command-line interface to visualize and understand network traffic flows in your cluster. Built on Cilium, it provides real-time, detailed mapping of services, dependencies, and network policies.
+Hubble è un'interfaccia grafica e da riga di comando per visualizzare e comprendere i flussi di rete del tuo cluster. Basato su Cilium, ti offre una mappatura dettagliata dei servizi, delle dipendenze e delle politiche di rete in tempo reale.
 
-With Hubble, you can:
-- **Visualize traffic flows** between your pods and services.
-- **Identify connectivity issues** and network errors.
-- **Verify enforcement of your security policies** (Network Policies).
-- **Explore dependencies** between your various applications.
+Con Hubble puoi:
+- **Visualizzare i flussi di traffico** tra i tuoi pod e servizi.
+- **Identificare problemi di connettività** e errori di rete.
+- **Verificare l'applicazione delle tue politiche di sicurezza** (Network Policies).
+- **Esplorare le dipendenze** tra le tue diverse applicazioni.
 
 ### Accedere all'interfaccia Hubble
 
@@ -175,15 +175,15 @@ kubectl get ingress hubble-ui -n kube-system
 
 ### Creazione di zone DNS interne (cluster privato)
 
-Per rafforzare la sicurezza e semplificare l'accesso ai tuoi servizi e all'API Kubernetes dal tuo rete interna, si raccomanda di creare una zona DNS interna. Questa zona consentirà di risolvere i nomi di dominio dei tuoi Ingress e dell'API Kubernetes alle rispettive indirizzi IP privati, evitando così il transito attraverso reti pubbliche.
+Per rafforzare la sicurezza e semplificare l'accesso ai tuoi servizi e all'API Kubernetes dal tuo network interno, si raccomanda di creare una zona DNS interna. Questa zona consentirà di risolvere i nomi di dominio dei tuoi Ingress e dell'API Kubernetes alle rispettive indirizzi IP privati, evitando così il transito attraverso reti pubbliche.
 
-**Esempio di configurazione con il tuo cluster "ctodev", il cui range assegnato è 10.20.0.0/22:**
+**Esempio di configurazione con il tuo cluster "ctodev", il cui range assegnato è** **10.20.0.0/22 :**
 
 Basandoti sulle URL fornite nella guida di avvio, puoi configurare il tuo DNS interno come segue:
 
 1.  **Crea la zona DNS privata** sui tuoi server DNS interni per `.<identificativo del cluster>.mk.ms-cloud-temple.com`
 
-2.  **Aggiungi i seguenti record di tipo A:**
+2.  **Aggiungi i seguenti record di tipo A**:
 
     -   **Per l'API Kubernetes:**
         -   `. -> 10.20.0.20` (IP virtuale dell'API)
@@ -197,9 +197,10 @@ Basandoti sulle URL fornite nella guida di avvio, puoi configurare il tuo DNS in
         -   `k10.external-secured -> 10.20.1.129`
         -   `grafana.external-secured -> 10.20.1.129`
         -   `harbor.external-secured -> 10.20.1.129`
-        -   `kubecost.external-secured -> 10.20.1.129`
+        -   `opencost.external-secured -> 10.20.1.129`
+        -   `opencost-mcp.external-secured -> 10.20.1.129`
 
-Questa configurazione garantisce che il traffico verso l'API e i servizi interni rimanga confinato alla tua rete privata, in linea con le migliori pratiche di sicurezza.
+Questa configurazione garantisce che il traffico verso l'API e i servizi interni rimanga confinato al tuo network privato, in linea con le migliori pratiche di sicurezza.
 
 <div class="card">
   <div class="card__header">
@@ -218,7 +219,7 @@ Questa configurazione garantisce che il traffico verso l'API e i servizi interni
 :::warning Per andare oltre: sicurezza in produzione
 Questo documento spiega i concetti fondamentali di rete. Per un deployment in produzione, è fondamentale applicare misure di sicurezza aggiuntive:
 
--   **Utilizza immagini sicure**: preferisci immagini provenienti dal tuo registro aziendale sicuro come **Harbor**, piuttosto che immagini pubbliche.
--   **Controlla i flussi di rete**: implementa `NetworkPolicies` per controllare le comunicazioni solo ai flussi necessari tra le tue applicazioni.
--   **Applica politiche di governance**: utilizza strumenti come **Kyverno** per imporre regole di sicurezza (es. vietare i container "root", richiedere `requests` e `limits` per le risorse, ecc.).
+-   **Utilizza immagini sicure**: privilegia immagini provenienti dal tuo registro aziendale sicuro come **Harbor**, piuttosto che immagini pubbliche.
+-   **Controlla i flussi di rete**: implementa `NetworkPolicies` per controllare le comunicazioni ai soli flussi necessari tra le tue applicazioni.
+-   **Applica politiche di governance**: utilizza strumenti come **Kyverno** per imporre regole di sicurezza (es: vietare i container "root", richiedere `requests` e `limits` per le risorse, ecc.).
 :::

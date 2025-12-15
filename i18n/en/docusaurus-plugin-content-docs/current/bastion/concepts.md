@@ -1,14 +1,21 @@
-### Sessions
-
-A session is a connection configuration to a device via a Bastion. It consists of defining the device to manage and the Appliance to use for routing the traffic, thus allowing faster connection to this device.
-
-This solution is suitable for regular connections to a device to manage. Essential information is saved, only your credentials are required during the connection.
+---
+title: Concepts
+---
+import bastion from './images/bastion.svg'
 
 ## What is the Cloud Temple Bastion?
 
-The Cloud Temple Bastion is a managed service that provides secure RDP or SSH connectivity from the Cloud Temple console to your physical and virtual infrastructures, whether they are located in a trusted cloud, a public cloud, or on-premise. The Bastion solution allows you to manage your equipment without exposing them to the Internet.
+The Cloud Temple Bastion is a managed service that provides you with secure RDP or SSH connectivity from the Cloud Temple console to your physical and virtual infrastructures, whether they are located in the trusted cloud, a public cloud, or on-premise. The Bastion solution enables you to manage your equipment without exposing them to the internet.
 
 <img src={bastion} />
+
+## Benefits
+
+| Benefit                |                                                                                                                                                                        |
+|------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Centralized Management | The Cloud Temple Bastion is directly accessible from the Console.                                                                                                     |
+| Security               | Equipment managed via the Bastion is not exposed to the Internet, protecting it from malicious users scanning for open ports.                                        |
+| Infrastructure as Code | APIs enable full "as Code" management of the Cloud Temple Bastion (session creation, connection, modification, and deletion).                                        |
 
 ## References (SKU)
 
@@ -16,23 +23,16 @@ The Cloud Temple Bastion is a managed service that provides secure RDP or SSH co
 |------------------------------------|:--------:|:-----------------------:|
 | ADMINISTRATION - Bastion SSH & RDP | 1 Session | cmp:bastion:session:std |
 
-## Advantages
-
-| Advantage               |                                                                              Description                                                                               |
-|------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Centralized Management |                                              The Cloud Temple Bastion is directly accessible from the Console portal.                                               |
-| Security               | Devices managed via the Bastion are not exposed to the Internet, which protects them notably from port scanning by malicious users. |
-| Infrastructure as Code |          APIs allow managing the Cloud Temple Bastion entirely "as Code" (session creation, connection, modification, and deletion).          |
-
 ### Bastion Appliance
 
-The Bastion Appliance is a virtual machine deployed near your equipment. This Appliance allows a secure and direct flow from the Console platform to the equipment to be managed, which are located in the same virtual network.
+The Bastion Appliance is a virtual machine deployed close to your equipment. This appliance enables a secure, direct flow from the Console platform to the equipment being managed, which resides within the same virtual network.
 
-The flow is encrypted and encapsulated in a VPN tunnel. The solution does not require opening a flow from the Internet to your infrastructure. It is sufficient for the Appliance to have access to the public IP of the Console Bastion module on port 443.
+The traffic is encrypted and encapsulated within a VPN tunnel. The solution does not require opening any inbound traffic from the Internet to your infrastructure. It is sufficient for the appliance to have access to the public IP address of the Console Bastion module on port 443.
 
-A single Appliance can be used to quickly connect to a device. For each connection, the desired protocol, the machine's IP address, and your credentials must be specified. To avoid entering these details for each connection, it is possible to create sessions associated with regularly managed equipment.
+A single appliance can be used to quickly connect to a target device. For each connection, you must specify the desired protocol, the target machine's IP address, and your credentials. To avoid entering these details repeatedly, you can create sessions associated with equipment that you regularly manage.
 
----
-title: Concepts
----
-import bastion from './images/bastion.svg'
+### Sessions
+
+A session is a connection configuration to a device via a Bastion. It involves defining the device to manage and the Appliance used to route the traffic, enabling faster connections to that device.
+
+This solution is suitable for regular connections to a device that requires management. Essential information is retained, requiring only your credentials upon connection.

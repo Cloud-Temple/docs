@@ -26,13 +26,11 @@ import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_open
 <img src={backupCloneOpenIaas_001} />
 <img src={backupCloneOpenIaas_002} />
 
----
-
 ### Come aggiungere una politica di backup a una macchina virtuale?
 
-Vai alla pagina __'Macchine virtuali'__ nella sezione __'OpenIaaS'__ del banner del menu verde sul lato sinistro dello schermo.
+Vai alla pagina __'Macchine Virtuali'__ nella sezione __'OpenIaaS'__ del menu verticale sul lato sinistro dello schermo.
 
-Seleziona una macchina virtuale e poi la scheda __'Politiche di backup'__ di questa macchina:
+Seleziona una macchina virtuale, quindi l'opzione __'Politiche di backup'__ relativa a tale macchina:
 
 <img src={backupPolicyOpenIaas_001} />
 
@@ -40,41 +38,33 @@ Aggiungi la politica di backup desiderata:
 
 <img src={backupPolicyOpenIaas_002} />
 
----
+### Come eliminare una politica di backup da una macchina virtuale?
 
-### Come rimuovere una politica di backup da una macchina virtuale?
-
-Vai alla pagina __'Macchine virtuali'__, seleziona una macchina virtuale e poi la scheda __'Politiche di backup'__ di questa macchina.
+Vai alla pagina __'Macchine Virtuali'__, seleziona una macchina virtuale e poi l'opzione __'Politiche di backup'__ relativa a tale macchina.
 
 Elimina la politica di backup desiderata e conferma l'eliminazione:
 
 <img src={backupPolicyOpenIaas_003} />
 
-__*Nota:*__ *Attenzione! __SecNumCloud richiede che sia assegnata almeno una politica di backup__ per ogni macchina virtuale.*
+__*Nota:*__ *Attenzione! __SecNumCloud richiede che ogni macchina virtuale abbia almeno una politica di backup assegnata__.*
 
----
+### Come verificare che un backup sia stato eseguito correttamente?
 
-### Come sapere se un backup è stato eseguito correttamente?
-
-Vai alla pagina __'Rapporti'__ del menu __'Backup'__ nel menu di navigazione a sinistra dello schermo. Scegli la politica di tua scelta e selezionala.
+Vai alla pagina __'Report'__ del menu __'Backup'__ nel menu di navigazione a sinistra dello schermo. Seleziona la politica di backup desiderata.
 
 <img src={backupPolicyOpenIaas_004} />
 
-Una volta selezionata una politica, hai accesso ai backup ordinati per __Data di inizio__.
+Una volta selezionata una politica, potrai visualizzare i backup ordinati per __Data di avvio__.
 
 <img src={backupPolicyOpenIaas_005} />
 
-Hai a tua disposizione il dettaglio completo di ogni backup dall'azione __Visualizza__.
+Per ogni backup è disponibile il dettaglio completo tramite l’azione __Visualizza__.
 
 <img src={backupPolicyOpenIaas_006} />
 
----
-
 ### Come avviare un ripristino?
 
-Vai alla pagina __'Macchine virtuali'__, seleziona una macchina virtuale e poi la scheda __'Backup'__ di questa macchina. Per avviare il ripristino, seleziona il backup da ripristinare.
+Vai alla pagina __'Macchine Virtuali'__, seleziona una macchina virtuale e poi l'opzione __'Backup'__ relativa a questa macchina. Per avviare il ripristino, seleziona il backup da ripristinare.
 
 <img src={backupRestorationOpenIaas_001} />
 <img src={backupRestorationOpenIaas_002} />
-
----

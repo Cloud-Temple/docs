@@ -1,7 +1,6 @@
 ---
-title: guía de inicio
+title: Guía de inicio
 ---
-
 import shivaTenant from './images/shiva_tenant.png'
 import shivaOnboard_003 from './images/shiva_onboard_003.png'
 import shivaOnboard_004 from './images/shiva_onboard_004.png'
@@ -12,35 +11,36 @@ import shivaProfil_007 from './images/shiva_profil_007.png'
 import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
 import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
-## Propietario
+## Inquilino
 
-### Creación de un teniente
+### Creación de un tenant
 
-La creación de un teniente se realiza mediante una solicitud de servicio que incluye:
+La creación de un tenant se realiza mediante una solicitud de servicio que indica:
 
     El nombre de su Organización
-    El nombre de un contacto junto con su correo electrónico y número de teléfono para finalizar la configuración
-    El nombre del teniente
-    La zona de disponibilidad o, en su defecto, el sitio físico deseado para el teniente
+    El nombre de un contacto con su correo electrónico y número de teléfono para finalizar la configuración
+    El nombre del tenant
+    La zona de disponibilidad o, de no existir, el sitio físico deseado para el tenant
 
-### Selección del entorno
+### Selección de un tenant
 
-La selección del entorno se realiza desde la página de inicio de la Consola:
+La selección del tenant se realiza desde la página principal de la Consola:
 
 <img src={shivaTenant} />
 
-*__Nota:__ Las recursos de un entorno son exclusivos y no pueden mezclarse con otros entornos.*
+*__Nota:__ Los recursos de un tenant son propios y no se pueden mezclar con los de otros tenants.*
 
-## Acceso a la consola
+## Access accounts to the Console
 
-Los cuentas de acceso a la Consola se crean por el cuenta matriz del cliente en invitación (independientemente del repositorio de autenticación).
-Las información de identificación son globales para tu [Organización](concepts.md#organizaciones).
+Access accounts to the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
-*__Nota:__ El federicación de identidad se gestiona al nivel de la organización.*
+Credentials are global to your [Organization](concepts.md#organizations).
+
+*__Nota:__ Identity federation is managed at the organization level*
 
 ### Creación de una cuenta de usuario en su organización
 
-La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario dentro de una [Organización](https://docs.example.com/concepts#organizations), navegue al menú __'Administración'__ en la barra superior izquierda y luego al submenú __'Usuarios'.
+La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](concepts.md#organisations), vaya al menú __'Administración'__ en el lado izquierdo de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
 
 Haga clic en el botón __'Nuevo Usuario'__ desde la página de usuarios.
 
@@ -50,108 +50,117 @@ A continuación, indique la dirección de correo electrónico del usuario.
 
 <img src={shivaOnboard_004} />
 
-El usuario recibirá un correo de verificación.
+El usuario recibirá entonces un correo de verificación.
 
 <img src={shivaOnboard_001} />
 
-Una vez completada la verificación, el usuario podrá iniciar sesión en la consola.
-
+Una vez finalizada la verificación, el usuario podrá iniciar sesión en la consola.
 
 ### Asignación de permisos a un usuario
 
-La gestión de permisos se realiza desde la página del usuario.
+La gestión de los derechos de usuario se realiza desde la página de usuario.
 
 <img src={shivaOnboard_003} />
 
-Por defecto, un usuario no tiene permisos. Por lo tanto, es necesario que el administrador que invitó al usuario le otorgue los permisos necesarios para su actividad. Basta con hacer clic en el menú __'Acciones'__ del usuario y seleccionar la opción __'Modificar'__.
+Por defecto, un usuario no tiene derechos. Es necesario que el administrador que realizó la invitación le otorgue los derechos necesarios para su actividad. Basta con hacer clic en el menú __'Acciones'__ del usuario y seleccionar la opción __'Editar'__.
 
-El menú de activación de permisos aparece entonces:
+A continuación aparece el menú para activar los derechos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de los permisos se realiza para cada [Teniente](concepts.md#hosting) de la [Organización](concepts.md#organizaciones).
+La configuración de permisos debe realizarse para cada [Tenant](concepts.md#tenant) de la [Organización](concepts.md#organisations).
 
-La lista de permisos y su definición está disponible [aquí](#permisos).
+La lista de permisos y sus definiciones está disponible [aquí](#permissions).
 
-### Cambio de idioma del usuario
+### Cambiar el idioma de un usuario
 
-El cambio de idioma del usuario debe realizarse en el __'Perfil'__ del usuario, ubicado en la parte superior derecha del escritorio, dentro de los __'Configuraciones del usuario'__.
+El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte superior derecha de la pantalla, dentro de los __'Ajustes del usuario'__.
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza para cada tenant [Tenant](concepts.md#hosting).
+La configuración se realiza por cada inquilino [Tenant](concepts.md#tenant).
 
-### Abonnement a Notificaciones Thematicas
+### Suscripciones a notificaciones temáticas
 
-La gestión de los abonos permite recibir correos electrónicos relacionados con las temáticas activadas que se enviarán automáticamente en caso de ocurrir eventos correspondientes.
+La gestión de suscripciones permite recibir correos electrónicos relacionados con las temáticas activadas, que se enviarán automáticamente cuando ocurran eventos correspondientes.
 
-Esta opción está disponible en el perfil del usuario, dentro del apartado "Mis suscripciones":
+Está disponible en el perfil de usuario, en la pestaña "Mis suscripciones":
 
 <img src={shivaProfil_007} />
 
-Por ejemplo, en caso de un incidente, se generarán correos electrónicos específicos por esta temática.
+Por ejemplo, en caso de incidente, se generarán notificaciones por correo electrónico específicas para esta temática.
 
-La lista de las temáticas disponibles puede variar y mejorarse gradualmente para adaptarse a los necesidades y cambios en nuestro entorno operativo.
+La lista de temáticas disponibles puede evolucionar y enriquecerse progresivamente para adaptarse a las necesidades y cambios en nuestro entorno operativo.
 
-### Permisos
+## Permisos
 
-Para agregar un permiso, necesita tener el permiso __'iam_write'__ y el permiso específico que desea agregar.
+### ¿Cuáles son las permisos disponibles para las cuentas de usuario de la Consola?
 
-### ¿Cómo agregar a un usuario?
+Aquí tienes la lista de [permisos disponibles](#permissions).
 
-*__Nota__: Para agregar a un usuario, es necesario tener el permiso __'iam_write'__.*
+### ¿Cómo agregar un permiso?
 
-### ¿Cómo auditar los permisos de usuarios?
+Aquí se encuentra la [procedimiento de asignación de permiso disponible aquí](#permissions)
 
-Ve a la página de usuarios y haz clic en el botón __'Exportar CSV'__.
+### Why can't I add a permission?
 
-### ¿Cómo eliminar un usuario?
+To add a permission, you need to have the __'iam_write'__ permission as well as the __permission you want to add__.
 
-En el menú "Administración" ubicado en la barra superior izquierda, bajo el submenú "Usuario", haga clic en el icono "Acción" del usuario objetivo y seleccione "Eliminar".
+### ¿Cómo agregar un usuario?
 
-*Nota:*
+*__Nota__ : Para agregar un usuario, debe poseer el permiso __'iam_write'__.*
 
-- *Para agregar un usuario, debe tener el permiso __'iam_write'__.*
-- *Si es un usuario federado, asegúrese de que también haya sido eliminado de su repositorio de identidad.*
+### ¿Cómo auditar los accesos/permisos de los usuarios?
 
-### Cómo restablecer el contraseña
+Vaya a la página de usuarios y haga clic en el botón __'Exportar csv'__:
 
-Es posible restablecer la contraseña desde la página de inicio de sesión de la Consola haciendo clic en 'Contraseña olvidada?'.
+### How to delete a user?
 
-### Por qué algunos usuarios están en gris
+In the __'Administration'__ menu on the green bar on the left side of the screen, go to the __'User'__ submenu, click the __'Action'__ icon of the target user, and select __'Delete'__.
 
-Los usuarios en gris son aquellos cuyos cuentas no han sido verificadas. Al crear una cuenta, el usuario recibe un correo de confirmación.
+*__Note__:*  
+- *To add a user, you must have the __'iam_write'__ permission.*  
+- *If the user is federated, __make sure the user has also been deleted from the identity repository__.*
+
+### ¿Cómo restablecer la contraseña?
+
+Es posible restablecer la contraseña desde la página de inicio de sesión de la Consola haciendo clic en __'¿Olvidó la contraseña?'__.
+
+### ¿Por qué algunos usuarios aparecen grises?
+
+Los usuarios grises son aquellos que aún no han validado su cuenta. Al crear la cuenta, el usuario recibió un correo de verificación.
 
 <img src={shivaOnboard_001} />
 
-Una vez completada la verificación, el usuario podrá iniciar sesión en la consola.
+Una vez finalizada la verificación, el usuario podrá iniciar sesión en la consola.
 
-La cuenta permanecerá en gris hasta que se complete la verificación finalizada.
+La cuenta permanece grisácea hasta que la verificación no se haya completado.
 
-### Qué significa un Token de Acceso Personal (PAT)?
+### ¿Qué es un token de acceso personal (PAT)?
 
-La generación de una clave API, también conocida como __Token de Acceso Personal (PAT)__, es una forma segura de conectarse a las APIs Consola sin necesidad de una interfaz gráfica.
+La generación de una clave API, también conocida como __Token de acceso personal (PAT)__,
+es una forma segura de conectarse a las API de Console sin tener que utilizar una interfaz gráfica.
 
-### ¿Qué es el MFA y está obligatorio?
+### ¿Qué es el MFA y es obligatorio?
 
-El MFA (autenticación de múltiples factores) es un concepto de verificación de la identidad del usuario en dos etapas, conocido como autenticación a doble factor.
+El MFA (autenticación multifactor) es un concepto de verificación de identidad de un usuario en dos pasos, conocido como __autenticación de doble factor__.
 
-El usuario debe proporcionar dos pruebas de identidad distintas. En el caso de la Consola, la autenticación a doble factor es obligatoria y requiere que ingrese un código único una vez que el usuario haya introducido el contraseña de su cuenta.
+El usuario debe proporcionar dos pruebas de identidad distintas. En el caso de la Consola, la autenticación de doble factor es obligatoria y requiere ingresar un código de uso único una vez que el usuario ha introducido la contraseña de su cuenta.
 
-### Gestión de Acceso y Autenticación
+## Gestión de accesos y autenticación
 
-### Autorización de acceso a un teniente: IP autorizadas
+### Acceso al inquilino mediante direcciones IP autorizadas
 
-El acceso a la consola de gestión cloud está estrictamente limitado a las direcciones IP previamente autorizadas, en conformidad con los requisitos de la calificación SecNumCloud. Esta restricción garantiza un nivel de seguridad ampliado permitiendo el acceso solo a los usuarios provenientes de rangos de direcciones IP específicos, minimizando así los riesgos de acceso no autorizado y protegiendo la infraestructura cloud según los estándares de seguridad más altos.
+El acceso a la consola de gestión en la nube está estrictamente limitado a las direcciones IP previamente autorizadas, conforme a los requisitos de la certificación SecNumCloud. Esta restricción garantiza un nivel de seguridad reforzado al permitir el acceso únicamente a usuarios procedentes de rangos de IP específicos, minimizando así los riesgos de acceso no autorizado y protegiendo la infraestructura en la nube según los estándares de seguridad más elevados.
 
-Ahora es posible mostrar la lista de las direcciones IP públicas autorizadas en el teniente y agregar una nueva dirección IP pública directamente desde el panel "Administración > Acceso".
+Ahora es posible visualizar la lista de direcciones IP públicas autorizadas para el inquilino y añadir una nueva dirección IP pública a esta lista directamente desde la pestaña "Administración > Acceso".
 
 <img src={shivaIpAccessManagement_01} />
 
-Para ello, el usuario debe tener los permisos `console_public_access_read` para consultar las direcciones IP autorizadas y `console_public_access_write` para agregar una dirección IP pública a la lista.
+Para ello, el usuario debe contar con el permiso `console_public_access_read` para consultar las IPs autorizadas, y el permiso `console_public_access_write` para añadir una dirección IP pública a la lista.
 
-Luego, se puede agregar una nueva dirección:
+A continuación, es posible añadir una nueva IP:
 
 <img src={shivaIpAccessManagement_02} />
 
-Nota: *La eliminación de una dirección IP autorizada se realiza mediante una solicitud de soporte en la consola Cloud Temple.*
+Nota: *La eliminación de una IP autorizada se realiza mediante una solicitud al soporte técnico desde la consola Cloud Temple.*

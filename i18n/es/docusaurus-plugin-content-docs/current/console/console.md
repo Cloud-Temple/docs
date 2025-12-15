@@ -4,9 +4,9 @@ title: Visión general
 
 ## La Consola Cloud Temple
 
-La consola Cloud Temple es la plataforma de gestión en la nube (**Cloud Management Platform**) integrada de Cloud Temple. Constituye el punto central para gestionar todas sus recursos en la nube, ofreciéndole una interfaz única y potente.
+La consola Cloud Temple es la plataforma de gestión en la nube (**Cloud Management Platform**) integrada de Cloud Temple. Constituye el punto central para gestionar todo su conjunto de recursos en la nube, ofreciéndole una interfaz única y potente.
 
-Gracias a la **Consola**, puede supervisar y operar sus infraestructuras en la nube con gran facilidad. A continuación, se presenta un resumen de sus funciones principales:
+Gracias a la **Consola**, puede supervisar y operar sus infraestructuras en la nube con gran facilidad. A continuación, se presenta una visión general de sus funciones principales:
 
 <div class="card-grid">
   <div class="card">
@@ -36,7 +36,7 @@ Gracias a la **Consola**, puede supervisar y operar sus infraestructuras en la n
 
 ### Gestión de sus productos y servicios Cloud Temple
 
-La consola le permite gestionar de forma eficiente sus servidores virtuales, su almacenamiento, sus redes y sus servicios Cloud desde una interfaz centralizada.
+La consola le permite gestionar de forma eficiente sus servidores virtuales, su almacenamiento, sus redes y sus servicios en la nube desde una interfaz centralizada.
 
 ### Supervisión y informes
 
@@ -44,13 +44,13 @@ Disfrute de una visión completa de sus recursos gracias a herramientas integrad
 
 ### Automatización y orquestación
 
-Con su **API potente**, la consola simplifica la automatización de tareas repetitivas y la orquestación de flujos de trabajo complejos. Despliegue, gestione y escale sus recursos en unos pocos clics o mediante scripts personalizados.
+Con su **API potente**, la consola simplifica la automatización de tareas repetitivas y la orquestación de flujos de trabajo complejos. Despliegue, gestione y escalene sus recursos con solo unos clics o mediante scripts personalizados.
 
 ### Seguridad y cumplimiento
 
 La consola integra funciones avanzadas para:
 
-- Gestionar identidades y accesos,
+- Administrar identidades y accesos,
 - Filtrar accesos para cumplir con los requisitos regulatorios,
 - Reforzar sus políticas de seguridad.
 
@@ -69,26 +69,26 @@ The console provides direct access to your technical support cases. You benefit 
 - Ayuda en la implementación de arquitecturas en la nube,
 - Formación para tus equipos.
 
-La consola Cloud Temple **'Console'** es la **plataforma de gestión en la nube** (Cloud Management Platform) integrada de **Cloud Temple**.
+El portal Cloud Temple **'Console'** es la **plataforma de gestión en la nube** (Cloud Management Platform) integrada de **Cloud Temple**.
 
-La Consola Cloud Temple te permite gestionar recursos en la nube como servidores virtuales, almacenamiento, redes y servicios aplicativos.
+La Console Cloud Temple te permite gestionar recursos en la nube como servidores virtuales, almacenamiento, redes y servicios aplicativos.  
 Es una interfaz centralizada de gestión que te permite diseñar y operar tu infraestructura en la nube.
 
-La Consola Cloud Temple permite a tus equipos, entre otras cosas:
+La Console Cloud Temple permite a tus equipos, entre otras cosas:
 
-- **Gestión de tus productos y servicios** Cloud Temple,
+- **Gestión de tus productos y servicios** de Cloud Temple,
 - **Supervisión y generación de informes** sobre el funcionamiento de tus recursos en la nube,
 - **Automatización y orquestación**: gracias a su API, Console permite automatizar tareas repetitivas y orquestar flujos de trabajo complejos para desplegar, gestionar y escalar tus recursos en la nube,
-- **Seguridad y cumplimiento**: Console permite el control de identidad y el filtrado de accesos para garantizar el cumplimiento normativo y el respeto a tus políticas de seguridad,
+- **Seguridad y cumplimiento**: Console permite controlar la identidad y filtrar accesos para garantizar el cumplimiento normativo y el respeto a tus políticas de seguridad,
 - **Integración con marcos de adopción en la nube** (Cloud Adoption Framework): gracias a sus funciones de hibridación, puedes asegurar la continuidad operativa con proveedores de nube externos (Microsoft Azure y Amazon AWS) desde una única interfaz, facilitando la integración y gestión de tus entornos multi-nube,
 - **Acceso y seguimiento de los casos de soporte técnico**: también está disponible un soporte técnico dedicado, que incluye asistencia al cliente para resolver problemas técnicos, así como ayuda en la configuración inicial,
 - **Posibilidad de suscribirse a servicios profesionales**: para gestionar eficazmente tus entornos en la nube, tus equipos pueden beneficiarse del apoyo de nuestros ingenieros en asesoramiento, implementación de arquitecturas o formación.
 
-## Acceso a las funcionalidades de usuario a través de la API
+## Acceso a las funciones de usuario a través de la API
 
-El acceso a todas las funcionalidades de la Consola está disponible a través de la API Console.
+El acceso a todas las funciones de la Consola está disponible a través de la API de la Consola.  
 Puede obtener detalles sobre los verbos y configuraciones mediante **'Perfil'** y **'APIs'**
 
 ## Terraform Provider
 
-Cloud Temple vous met à disposition un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud selon le principe *"as code"*.
+Cloud Temple vous met à disposition un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud *"as code"*.

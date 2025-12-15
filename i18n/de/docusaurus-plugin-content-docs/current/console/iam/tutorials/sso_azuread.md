@@ -1,7 +1,5 @@
-
-
 ---
-title: Beispiel der Identitätsfederierung mit Microsoft EntraID
+title: Identity Federation Example with Microsoft EntraID
 tags:
   - iam
   - tutorials
@@ -25,159 +23,135 @@ import ssoAad_016 from './images/sso_aad_016.png'
 import ssoAad_017 from './images/sso_aad_017.png'
 import ssoAad_018 from './images/sso_aad_018.png'
 
-Hier ist ein Beispiel für die Konfiguration des Authentifizierungsrepositorys einer Cloud Temple-Organisation mit __Microsoft EntraID__ (Azure Active Directory).
+Here is an example configuration of the identity provider for a Cloud Temple organization using __Microsoft EntraID__ (Azure Active Directory).
 
-Die Konfiguration Ihres Microsoft-Repositorys auf Ebene einer Cloud Temple-Organisation erleichtert die Authentifizierung Ihrer Benutzer auf der Konsole. Dies vermeidet die Multiplikation der Authentifizierungsfaktoren und verringert die Angriffsfläche.
+Configuring your Microsoft identity provider at the Cloud Temple organization level simplifies user authentication on the Console. This helps avoid the proliferation of authentication factors and reduces the attack surface.
 
-Wenn Ihre Benutzer über ihre Microsoft-Konten authentifiziert werden, ist die Authentifizierung für die Dienste der Konsole transparent.
+If your users are already authenticated to their Microsoft accounts, logging into the Console services will be seamless and transparent.
 
-Hier sind die verschiedenen Schritte zur Durchführung dieser Konfiguration:
+Below are the steps to complete this configuration:
 
+## Step 1: SSO Configuration on Microsoft Azure Side
 
+### Register a new Azure application (Azure portal)
 
-## Schritt 1: Konfiguration des SSO auf Microsoft Azure
+To create the __app registration__, go to the Microsoft Azure portal, then navigate to Microsoft Entra ID, and select __"Add > App Registration"__.
 
-
-
-### Registrierung einer neuen Azure-Anwendung (Azure-Portal)
-
-Für die __Anwendungsregistrierung__ müssen Sie sich im Microsoft Azure-Portal begeben und dann in Microsoft EntraID auf __"Hinzufügen > Anwendung registrieren"__ klicken.
-
-Auf der Seite "Anwendung registrieren" geben Sie bitte folgende Informationen an:
+On the "Register an application" page, please specify:
 
 ```
-- __Name__: Geben Sie "__SHIVA__" an
-- __Unterstützte Kontotypen__: __Nur Konten in diesem Organisationsverzeichnis__ (__<Ihr Azure-Mandant>__ nur - Einzelmandant)
-- __Umleitungs-URL__: Nicht in der ersten Zeit konfigurieren. Die URL wird vom Cloud Temple-Support bereitgestellt und später in dieses Feld eingefügt.
+- __Name__ : Enter "__SHIVA__"
+- __Supported account types__ : __Accounts in this organizational directory only__ (__<Your Azure Tenant>__ only - Single tenant)
+- __Redirect URL__ : Do not configure this field at this time. The URL will be provided by Cloud Temple support and should be added to this field later.
 ```
 
 <img src={ssoEntra_001} />
 
-Die Informationen zur __Anwendungs-(Client-)ID__ und __Verzeichnis-(Mandanten-)ID__ sind die Informationen, die Sie bei der Supportanfrage an das Cloud Temple-Team zur Aktivierung der Microsoft EntraID-Authentifizierung in Ihrem Unternehmen bereitstellen müssen.
+The __Application (client) ID__ and __Directory (tenant) ID__ are the key details that must be provided in your support request to the Cloud Temple team to enable Microsoft Entra ID authentication for your organization.
 
 <img src={ssoEntra_002} />
 
+### Definition of a secret
 
+In the "Certificates & secrets" tab, create a new secret.
 
-### Definition eines Geheimnisses
-
-Im Tab "Zertifikate & Geheimnisse" ein neues Geheimnis erstellen.
-
-*Hinweis: Das Ablaufdatum des Geheimnisses darf nicht länger als 24 Monate betragen, auch bei einem benutzerdefinierten Ablaufdatum.*
+*Note: The expiration date of the secret cannot exceed 24 months, even with a custom expiration date.*
 
 <img src={ssoAad_004} />
 
-Das generierte Geheimnis muss in der Supportanfrage angegeben werden:
+The generated secret must be provided in the support request:
 
 <img src={ssoAad_005} />
-
-
 
 ### Definition des EntraID-Tokens
 
 Der EntraID-Token ist für die Konfiguration der Authentifizierung erforderlich.
 
-Im Menü __"Token Configuration"__ klicken Sie auf __"Add optional claim"__. Sie müssen „ID“ als Token-Typ auswählen und „E-Mail“ aktivieren.
+Klicken Sie im Menü __"Token Configuration"__ auf __"Add optional claim"__. Wählen Sie als Token-Typ "ID" aus und aktivieren Sie die Option "email".
 
 <img src={ssoAad_006} />
 
-Die Azure-Oberfläche fragt Sie, ob Sie eine Berechtigung hinzufügen möchten, die es Ihnen ermöglichen wird, die E-Mail eines Benutzers zu lesen (Microsoft Graph E-Mail), aktivieren Sie das Kontrollkästchen und bestätigen Sie.
+Die Azure-Oberfläche fragt Sie daraufhin, ob Sie eine Berechtigung hinzufügen möchten, die Ihnen das Lesen der E-Mail-Adresse eines Benutzers (Microsoft Graph email) ermöglicht. Aktivieren Sie das Kontrollkästchen und bestätigen Sie.
 
 <img src={ssoAad_007} />
 
-Danach gehen Sie zu „API-Berechtigungen“ und klicken Sie auf __"Grant admin consent for Cloud Temple"__.
+Wechseln Sie anschließend zu "API-Berechtigungen" und klicken Sie auf __"Grant admin consent for Cloud Temple"__.
 
 <img src={ssoAad_008} />
 
+### Additional Security Configurations (optional but recommended)
 
+By default, Microsoft Entra ID, as configured, will allow any user in your Azure tenant to sign in to your Cloud Temple organization.  
+It is possible to restrict access at the __"App Registration"__ level to allow only a specific list of users or groups to sign in to your Cloud Temple organization.
 
-### Zusätzliche Sicherheitskonfigurationen (optional, aber empfohlen)
+Follow these steps:
 
-Standardmäßig gewährt Microsoft EntraID, wie konfiguriert, jedem Benutzer Ihres Azure-Mandanten die Möglichkeit, sich bei Ihrer Cloud Temple-Organisation anzumelden.
-Es ist möglich, den Zugriff auf der Ebene von __"App Registration"__ zu beschränken, um nur eine Liste von Benutzern oder Gruppen zu autorisieren, sich bei Ihrer Cloud Temple-Organisation anzumelden.
-
-Hier ist die Vorgehensweise:
-
-
-
-#### Zugriff auf zusätzliche Einstellungen "App Registration"
-
-
+#### Access additional "App Registration" settings
 
 ##### Option 1
 
-Gehen Sie zu dem Tab "Overview" und klicken Sie auf den Namen der Anwendung (der Link direkt nach "Managed application").
+Gehen Sie zum Register „Übersicht“ und klicken Sie auf den Anwendungsnamen (den Link hinter „Verwaltete Anwendung“).
 
 <img src={ssoAad_009} />
 
-
-
 ##### Option 2
 
-Gehen Sie zu "Enterprise-Anwendungen" und suchen Sie mit dem Namen der zuvor erstellten Anwendung.
+Gehe zu den „Enterprise-Anwendungen“ und suche mithilfe des zuvor erstellten Anwendungsnamens.
 
 <img src={ssoAad_010} />
 
+#### Authentication restriction to users assigned to the application
 
-
-#### Authentifizierungsbeschränkung für benannte Benutzer der Anwendung
-
-Hier die Notwendigkeit angeben, dass ein Benutzer der Anwendung zugewiesen werden muss, um die Authentifizierung zu ermöglichen:
+Indicate here the requirement for user assignment to the application to allow authentication:
 
 <img src={ssoAad_011} />
 
+#### Assigning Users and Groups to the Application
 
-
-#### Zuweisung von Benutzern und Gruppen zur Anwendung
-
-Nur die zugewiesenen Gruppen und Benutzer können sich über die Anwendungsregistrierung bei Ihrer Cloud Temple-Organisation anmelden.
+Only users and groups assigned to the application will be able to sign in to your Cloud Temple organization via the app registration.
 
 <img src={ssoAad_012} />
 
-Schließlich müssen Sie nur noch die Zuweisung anwenden, indem Sie auf „Zuweisen“ klicken.
+Finally, simply apply the assignment by clicking "Assign".
 
 <img src={ssoAad_013} />
 
-Ab jetzt können die zugewiesenen Benutzer sich über die erstellte Anwendung bei Ihrer Cloud Temple-Organisation anmelden.
+From now on, users assigned to the application will be able to sign in to your Cloud Temple organization via the created application.
 
+## Step 2: Request SSO (Single Sign-On) Configuration for Your Organization
 
+This configuration step is performed at the organization level by the Cloud Temple team.
 
-## Schritt 2: Anfrage zur SSO-Konfiguration Ihrer Organisation
+To proceed, please __submit a support request__ in the console indicating your intention to set up Microsoft Entra ID SSO.
 
-Diese Konfigurationsphase erfolgt auf Ebene der Organisation durch das Cloud temple-Team.
+Please provide the following information in your support request:
+- Name of your Organization
+- Name of a contact person, including their email address and phone number, to finalize the configuration
+- Application ID (unique identifier associated with the previously created application)
+- Directory ID (corresponds to the Azure AD tenant ID of your Azure environment)
+- Secret (secret associated with the previously created application)
 
-Dazu senden Sie __eine Supportanfrage__ in der Konsole, in der Sie Ihr Interesse an der Einrichtung einer Microsoft EntraID-SSO angeben.
-
-Geben Sie bei der Supportanfrage folgende Informationen an:
-    Der Name Ihrer Organisation
-    Der Name einer Kontaktperson mit ihrer E-Mail-Adresse und Telefonnummer, um die Konfiguration abzuschließen
-    Anwendungs-ID (eindeutiger Bezeichner der zuvor erstellten Anwendung)
-    Verzeichnis-ID (entspricht der Azure AD-Tenant-ID des Azure-Verzeichnisses)
-    Geheimnis (dem Anwendungsobjekt zugeordnetes Geheimnis)
-
-Sobald die Konfiguration auf der Konsole durchgeführt wurde, wird die angegebene Kontaktperson benachrichtigt.
-
-
+Once the configuration is completed on the Console side, the designated contact will be notified.
 
 ## Schritt 3: Abschluss der Konfiguration
 
-Auf der Startseite der App-Registrierung im Übersichtsmenü klicken Sie auf "Redirect-URL hinzufügen".
+Auf der Startseite der App-Registrierung klicken Sie im Menü „Übersicht“ auf „Redirect-URL hinzufügen“.
 
 <img src={ssoAad_014} />
 
-Gehen Sie anschließend zu "Plattform hinzufügen" und fügen Sie eine Plattform des Typs Web hinzu.
+Wechseln Sie anschließend zum Abschnitt „Plattform hinzufügen“ und fügen Sie eine Plattform des Typs „Web“ hinzu.
 
 <img src={ssoAad_015} />
 
-Geben Sie einfach die von der Produktions-Team Applications bereitgestellte "Redirect-URL" ein.
+Geben Sie einfach die von der Produkt-Team Anwendungen bereitgestellte „Redirect-URL“ ein.
 
 <img src={ssoAad_016} />
 
-Sie sollten das folgende Ergebnis erhalten, nachdem die "Redirect-URL" hinzugefügt wurde.
+Nachdem die „Redirect-URL“ hinzugefügt wurde, sollte das folgende Ergebnis angezeigt werden.
 
 <img src={ssoAad_017} />
 
-Die Konfiguration der "Redirect-URL" kann einige Minuten dauern, bis sie wirksam wird.
-Nach Abschluss aller Schritte können Sie sich bei Ihrer Cloud Temple-Organisation über Ihr SSO authentifizieren.
+Die Konfiguration der „Redirect-URL“ kann einige Minuten in Anspruch nehmen, bis sie wirksam ist.  
+Nach Abschluss aller Schritte können Sie sich über Ihren SSO bei Ihrer Cloud Temple-Organisation authentifizieren.
 
 <img src={ssoAad_018} />

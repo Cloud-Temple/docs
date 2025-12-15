@@ -1,5 +1,5 @@
 ---
-title: Back up your applications with Veeam Kasten
+title: Ihre Anwendungen mit Veeam Kasten sichern
 ---
 
 import k10dashboard from './images/k10dashboard.png'
@@ -8,15 +8,15 @@ import k10infrabackups from './images/k10infrabackups.png'
 
 ## Einführung
 
-Veeam Kasten K10 ist eine Backup- und Wiederherstellungslösung, die speziell für Kubernetes-Umgebungen entwickelt wurde. Im Managed Kubernetes-Service von Cloud Temple ist Kasten integriert, sodass Sie Ihre Anwendungen schützen, im Bedarfsfall Daten wiederherstellen und die Kontinuität Ihrer Aktivitäten sicherstellen können.
+Veeam Kasten K10 ist eine Backup- und Wiederherstellungslösung, die speziell für Kubernetes-Umgebungen entwickelt wurde. Im Managed Kubernetes-Service von Cloud Temple ist Kasten integriert, damit Sie Ihre Anwendungen schützen, im Bedarfsfall Daten wiederherstellen und die Kontinuität Ihrer Aktivitäten sicherstellen können.
 
-Dieser Leitfaden führt Sie durch die grundlegenden Schritte zum Sichern und Wiederherstellen einer Anwendung mithilfe von Kasten.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch die grundlegenden Aktionen zum Sichern und Wiederherstellen einer Anwendung mit Kasten.
 
 ## Voraussetzungen
 
 Stellen Sie sicher, dass Sie Folgendes bereitstellen:
 - Ein aktiver Managed Kubernetes-Cluster.
-- Die ID Ihres Clusters (z. B. `ctodev`).
+- Die Bezeichnung Ihres Clusters (z. B. `ctodev`).
 - Eine in Ihrem Cluster bereitgestellte Anwendung, die Sie sichern möchten.
 
 ## 1. Access the Kasten Dashboard
@@ -24,8 +24,8 @@ Stellen Sie sicher, dass Sie Folgendes bereitstellen:
 The Kasten dashboard is accessible via a secure URL, constructed using your cluster's identifier.
 
 1.  **Build the access URL**:
-    The URL follows this pattern: `https://k10.external-secured.<identifier>.mk.ms-cloud-temple.com`  
-    Replace `<identifier>` with your cluster's identifier. For example, if your identifier is `ctodev`, the URL will be: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com`.
+    The URL follows this pattern: `https://k10.external-secured.<identifier>.mk.ms-cloud-temple.com/k10/`
+    Replace `<identifier>` with your cluster's identifier. For example, if your identifier is `ctodev`, the URL will be: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
 2.  **Access the URL** in your browser.
 
@@ -51,12 +51,12 @@ No configuration is required on your part. The storage location is already set u
 The Veeam Kasten service is included in the Managed Kubernetes offering. Backup storage on our sovereign S3 is billed on a pay-per-use basis. Please consult our pricing grid for more details.
 :::
 
-## 3. Create a backup policy
+## 3. Create a Backup Policy
 
 A backup policy (`Policy`) is a set of rules that define when and how to back up your applications.
 
-:::warning Existing backup policy
-A backup policy named `infra-backups` is already configured in your Kasten instance. This policy ensures that the essential components delivered with the cluster are backed up.
+:::warning Existing Backup Policy
+A backup policy named `infra-backups` is already configured in your Kasten instance. This policy ensures the backup of essential components included with the cluster.
 
 <img src={k10infrabackups} />
 

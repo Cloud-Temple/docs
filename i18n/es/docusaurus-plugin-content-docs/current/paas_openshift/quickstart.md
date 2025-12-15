@@ -10,7 +10,7 @@ import oshiftOrder_001 from './images/oshift_order_001.png'
 
 # Guía Rápida para la oferta OpenShift
 
-Esta página le guía a través de los pasos iniciales para utilizar la oferta **OpenShift** desde la consola Cloud Temple. Siga estas instrucciones para conocer los menús y funcionalidades disponibles.
+Esta página le guía a través de los pasos iniciales para utilizar la oferta **OpenShift** desde la consola Cloud Temple. Siga estas instrucciones para explorar los menús y funcionalidades disponibles.
 
 ## Requis previos
 
@@ -21,7 +21,7 @@ Antes de comenzar, asegúrese de cumplir los siguientes puntos:
 
 ## Primer acceso y comando
 
-Al realizar su primer acceso a la oferta OpenShift, tras activar la suscripción y configurar los permisos, se muestra una pantalla de inicio:
+Al realizar su primer acceso a la oferta OpenShift, tras activar la suscripción y configurar los permisos, se muestra una pantalla de bienvenida:
 
 <img src={oshiftOrder_001} />
 
@@ -67,7 +67,7 @@ When you click on a **cluster name** in the list, a detailed page appears with c
 
 **Cluster nodes:**
 
-A table lists each node with the following information:
+A table details each node with the following information:
 - **Node name**
 - **Type**
 - **AZ** (Availability Zone)
@@ -95,8 +95,8 @@ Here are the connection and configuration details specific to your OpenShift env
 
 Para acceder a los diferentes componentes de OpenShift, asegúrese de que su inquilino esté registrado en la lista blanca en la consola (consulte la documentación: [Documentación de Cloud Temple](https://docs.cloud-temple.com/)).
 
-- __URL Console Tenant__ :
-  [https://__su-id-de-inquilino__.shiva.cloud-temple.com/](https://**su-id-de-inquilino**.shiva.cloud-temple.com/)
+- __URL Consola Inquilino__ :
+  [https://__su-id-inquilino__.shiva.cloud-temple.com/](https://**su-id-inquilino**.shiva.cloud-temple.com/)
 
 - __Interfaz de usuario de OpenShift__ :
   [https://ui-ocp01-__su-id__.paas.cloud-temple.com/](https://ui-ocp01-**su-id**.paas.cloud-temple.com/)
@@ -113,7 +113,6 @@ Para conectarse mediante la línea de comandos (CLI), utilice el siguiente coman
 
 ```bash
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
-oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
 ```
 
 #### Acceso al registro
@@ -121,8 +120,6 @@ oc login https://api-ocp01-{su-id}.paas.cloud-temple.com/ --web
 Para acceder al registro, inicie sesión utilizando los siguientes comandos:
 
 ```bash
-oc login https://api-ocp01-{su-id}.paas.cloud-temple.com --web
-docker login -u {su-usuario} -p $(oc whoami -t) registry-ocp01-{su-id}.paas.cloud-temple.com
 oc login https://api-ocp01-{su-id}.paas.cloud-temple.com --web
 docker login -u {su-usuario} -p $(oc whoami -t) registry-ocp01-{su-id}.paas.cloud-temple.com
 ```
@@ -133,19 +130,14 @@ A continuación, pruebe la compilación y carga de una imagen Docker:
 docker build -t <namespace>/temp:latest .
 docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker tag <namespace>/temp:latest registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker push registry-ocp01-{su-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Configuración de routers y Load Balancers
 #### Configuración de routers y Load Balancers
 
 La plataforma ofrece opciones flexibles para el __enrutamiento de flujos__ y el __equilibrado de carga__:
 
 - Por defecto, se utilizan balanceadores de carga privados para rutas e ingresses.
 - Dominios:
-  - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-priv-ocp01-{su-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{su-id}.paas.cloud-temple.com`
 

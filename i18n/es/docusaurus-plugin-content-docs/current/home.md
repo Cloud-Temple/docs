@@ -5,9 +5,9 @@ tags:
   - incorporación
 ---
 
-# Bienvenido al espacio de documentación
+# Welcome to the documentation space
 
-¡Bienvenido al espacio de documentación de **Cloud Temple**! Este espacio ha sido diseñado para acompañarte en la gestión de tus servicios Cloud Temple a través de nuestra **Consola Cloud Temple**, también conocida como **Consola**.
+Welcome to the **Cloud Temple** documentation space! This area has been designed to assist you in managing your Cloud Temple services through our **Cloud Temple Console**.
 
 ## Primeros pasos
 
@@ -40,4 +40,4 @@ Esta documentación es su guía para aprovechar todo el potencial de nuestros pr
 
 Encontrará tutoriales, guías técnicas y referencias para simplificar la gestión de sus recursos en la nube.
 
-Esperamos que encuentre esta documentación útil y que aproveche plenamente las posibilidades ofrecidas por **Consola**.
+Esperamos que encuentre esta documentación útil y que aproveche al máximo las posibilidades ofrecidas por **la consola**.

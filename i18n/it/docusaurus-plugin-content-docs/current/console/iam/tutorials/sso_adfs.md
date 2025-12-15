@@ -20,101 +20,101 @@ import ssoAdfs_012 from './images/sso_adfs_012.png'
 
 Ecco un esempio di configurazione del repository di autenticazione di un'organizzazione Cloud Temple con __Microsoft ADFS__.
 
-La configurazione del vostro repository Microsoft a livello di un'organizzazione Cloud Temple facilita l'autenticazione dei vostri utenti sulla Console.
-Questo aiuta a evitare la moltiplicazione dei fattori di autenticazione e riduce la superficie di attacco.
-Se i vostri utenti sono autenticati al loro account Microsoft, l'autenticazione ai servizi della Console sarà trasparente.
+La configurazione del tuo repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console.  
+Questo permette di evitare la moltiplicazione dei fattori di autenticazione e di ridurre la superficie di attacco.  
+Se gli utenti sono già autenticati sul loro account Microsoft, l'autenticazione ai servizi della Console avverrà in modo trasparente.
 
-Ecco i diversi passaggi per realizzare questa configurazione:
+Di seguito sono riportati i diversi passaggi necessari per completare questa configurazione:
 
 ## Prerequisiti
 
-Il vostro server Microsoft ADFS deve poter accedere a [l'URL di Cloud Temple](https://keycloak-shiva.cloud-temple.com/auth/).
+Il server Microsoft ADFS deve essere in grado di accedere all'[URL Cloud Temple](https://keycloak-shiva.cloud-temple.com/auth/).
 
-L'ADFS deve essere accessibile dalle reti di Cloud Temple e __esporre un certificato TLS di una CA pubblica__.
+L'ADFS deve essere raggiungibile dai network di Cloud Temple e __deve esporre un certificato TLS rilasciato da una CA pubblica__.
 
-Gli utenti che desiderano connettersi al portale devono avere la loro email, nome e cognome compilati sull'Active Directory.
+Gli utenti che desiderano effettuare il login sul portale devono avere email, nome e cognome compilati nell'Active Directory.
 
-## Fase 2: Richiedere la configurazione SSO (Single Sign-On) per la vostra organizzazione
+## Step 2: Request the SSO (Single Sign-On) configuration for your organization
 
-Questa parte della configurazione viene effettuata a livello dell'organizzazione dal team Cloud Temple.
+This configuration step is performed at the organization level by the Cloud Temple team.
 
-Per fare ciò, effettuate una __richiesta di supporto__ nella console indicando il vostro desiderio di configurare il vostro repository di autenticazione Microsoft ADFS.
+To proceed, please __submit a support request__ in the console indicating your intention to set up your Microsoft ADFS authentication repository.
 
-Si prega di fornire le seguenti informazioni nella richiesta di supporto:
+Please provide the following information in your support request:
 
 ```
-    Il nome della vostra Organizzazione
-    Il nome di un contatto con la sua email e numero di telefono per finalizzare la configurazione
-    URL pubblica dei Metadata della federazione dell'ADFS (<nome di dominio dell'adfs>/FederationMetadata/2007-06/FederationMetadata.xml)
-    (Esempio: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
+    Name of your Organization
+    Name of a contact person, including their email and phone number, to finalize the configuration
+    Public URL of the ADFS federation metadata (<ADFS domain name>/FederationMetadata/2007-06/FederationMetadata.xml)
+    (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
 
-Non appena la configurazione sarà completata lato Console, il contatto indicato sarà informato.
+Once the configuration is completed on the Console side, the designated contact will be notified.
 
-Il team di supporto Cloud Temple vi fornirà un URL che assomiglierà a questo: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
+The Cloud Temple support team will send you a URL that will look like this: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
 
-*Potete incollare l'URL in un browser per testarlo. Se funziona correttamente, dovreste vedere un XML visualizzato*
+*You can paste the URL into a browser to test it. If it works correctly, you should see an XML document displayed.*
 
-## Fase 3: Implementazione della configurazione ADFS
+## Step 3: ADFS Configuration Implementation
 
 ### Configurazione della federazione di autenticazione
 
-#### Aggiunta di una relying party trust
+#### Aggiunta di un'affidabilità di parte fidata
 
-Sul vostro server ADFS, andate su __"Aggiungi una relying party trust"__.
+Sul tuo server ADFS, vai su __"Aggiungi un'affidabilità di parte fidata"__.
 
 <img src={ssoAdfs_001} />
 
 ### Configurare i "claims"
 
-I claims forniscono informazioni al token che sarà trasmesso alla console Cloud Temple.
+I claims consentono di fornire informazioni al token che verrà trasmesso alla console Cloud Temple.
 
-Trasmettono le informazioni dell'utente connesso che sono necessarie per il corretto funzionamento dei vari servizi, come la sua email, nome e cognome.
+Essi trasmettono le informazioni dell'utente connesso necessarie al corretto funzionamento dei diversi servizi, come ad esempio la sua email, nome e cognome.
 
 <img src={ssoAdfs_002} />
 
-Selezionate "Importa dati sulla relying party pubblicati online o su una rete locale" e inserite l'URL fornito dal supporto Cloud Temple.
+Selezionare "Importa dati pubblicati online o su una rete locale relativi alla parte di fiducia" e inserire l'URL fornita dal supporto Cloud Temple.
 
 <img src={ssoAdfs_003} />
 
-Potete inserire un nome e una descrizione per la relying party; questa parte è opzionale.
+È possibile inserire un nome e una descrizione per la parte di fiducia; tale campo è facoltativo.
 
 <img src={ssoAdfs_004} />
 
-Di default, permettiamo a tutti, ma è possibile selezionare __"Consenti un gruppo specifico"__ per scegliere il/i gruppo/i che saranno autorizzati ad accedere ai servizi della Console via l'ADFS.
+Per impostazione predefinita, si autorizza chiunque, ma è possibile selezionare __"Autorizza un gruppo specifico"__ per selezionare il o i gruppi autorizzati ad accedere ai servizi della Console tramite ADFS.
 
 <img src={ssoAdfs_005} />
 
-Una volta completati tutti questi passaggi, avete terminato la configurazione della relying party.
+Una volta completate queste operazioni, la configurazione della parte di fiducia è terminata.
 
 <img src={ssoAdfs_006} />
 
-Dovrete poi modificare la politica di emissione dei claim per questa nuova relying party.
+È quindi necessario modificare la strategia di emissione dei claims per questa nuova parte di fiducia.
 
 <img src={ssoAdfs_007} />
 
-Cliccate su "Aggiungi regola" e specificate il modello, che è "Trasforma un claim in entrata".
+Fare clic su "Aggiungi regola" e specificare il modello, ovvero "Trasforma un claim in ingresso".
 
 <img src={ssoAdfs_008} />
 
-Dovrete solo inserire le informazioni come mostrato nello screenshot qui sotto.
+Basterà quindi inserire le informazioni come indicato nella schermata riportata di seguito.
 
 <img src={ssoAdfs_009} />
 
-### Aggiungere i claims
+### Aggiungere i claim
 
-Aggiungete una seconda regola con il modello "Invia attributi LDAP come claims" questa volta.
+Aggiungete una seconda regola, questa volta con il modello "Invia gli attributi LDAP come claim".
 
 <img src={ssoAdfs_010} />
 
-Selezionate l'archivio degli attributi e aggiungete gli attributi "Indirizzi email, Nome, Cognome e Nome account SAM" come mostrato nello screenshot qui sotto.
+Selezionate il negozio di attributi e aggiungete gli attributi "Indirizzi E-Mail, Given-Name, Cognome e SAM-Account-Name", come indicato nell'immagine qui sotto.
 
 <img src={ssoAdfs_011} />
 
-Dovete solo applicare le modifiche.
+È sufficiente applicare le modifiche.
 
-## Fase 3: Finalizzazione
+## Step 3: Finalization
 
-Ora potete testare andando alla Console e cliccando sul pulsante corrispondente all'autenticazione client ADFS; in questo esempio, è __"ADFS Test"__
+You can now proceed to test by navigating to the Console and clicking the button corresponding to the ADFS client authentication; in this example, it is __"ADFS Test"__.
 
 <img src={ssoAdfs_012} />

@@ -25,7 +25,7 @@ The prerequisites for this guide are as follows:
 1. Have subscribed to the Cloud Temple offering: you must have your organization, tenant, and access credentials,
 2. Have permissions on the compute module.
 
-This document outlines the steps required to deploy a virtual pfSense firewall.
+This document describes the steps required to deploy a virtual pfSense firewall.
 
 ## Deploy an open source pfSense firewall
 
@@ -57,7 +57,7 @@ You must have the following information:
 You can then deploy your pfSense VM:
 
 1. __Install the firewall__ from the pfSense template in Console:
-    - [(Deploy via the console)](../../../iaas_vmware/tutorials/deploy_vm_template)
+    - [(Deploy via Console)](../../../iaas_vmware/tutorials/deploy_vm_template)
     - [(Deploy via Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
 2. __Configure the LAN and WAN interfaces__ of the firewall: the WAN interface must be in your internet VLAN, with its IP address assigned from the IP range provided by the CDS, along with the default gateway.
 3. __Deploy the second management machine__.
@@ -83,7 +83,7 @@ This step involves configuring the BGP neighbors on the firewall.
 
 <img src={pfSenseBgpRule} />
 
-- Navigate to __'Services > FRR BGP'__ to begin configuring your BGP session:
+- Go to __'Services > FRR BGP'__ to begin configuring your BGP session:
 
 <img src={pfSenseFrrPackage} />
 
@@ -103,11 +103,11 @@ In the Neighbors section, click **+Add** to start creating your BGP neighbors.
 
 <img src={bgpBasicOptions} />
 
-- Finally, in Advanced Options, perform the following:
+- Finally, in the Advanced Options, perform the following:
 
 <img src={ebgpConf} />
 
-- Check the box that defines the neighbor type. In our case, it is a ``route server``:
+- Check the box that defines the neighbor type. In our case, it is a **route server**:
 
 <img src={routeServerNeighbor} />
 
@@ -127,5 +127,5 @@ Ensure that the __BGP State__ is set to __established__.
 
 To announce your public prefix, you can create /32 routes and redistribute them as static:
 
-- In __*System > Routing > Static Routes*__: create your static routes as /32, setting the Gateway to Null4-127.0.0.1.
-- In __*Services > FRR package > BGP > Network Distribution*__: enable ``redistribution`` locally by selecting IPV4 in ``Redistribute`` FRR static routes.
+- In __*System > Routing > Static Routes*__ : create your static routes as /32, setting the Gateway to Null4-127.0.0.1.
+- In __*Services > FRR package > BGP > Network Distribution*__ : enable ``redistribution`` locally by selecting IPV4 in ``Redistribute`` FRR static routes.

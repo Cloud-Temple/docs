@@ -1,5 +1,5 @@
 ---
-title: Crittografare una macchina virtuale VMware
+title: Encrypt a VMware Virtual Machine
 tags:
   - iaas_vmware
   - tutorials
@@ -10,41 +10,41 @@ import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
 import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
 
-Questo tutorial ti aiuta a crittografare una macchina virtuale IaaS VMWare dal portale Console.
+This tutorial guides you through encrypting an IaaS VMware virtual machine from the Console portal.
 
 ### Prerequisiti
 
 1. **Fornitore di chiavi (HSM/KMS)**:
-   - Un fornitore di chiavi deve essere configurato sulla vStack. (Se nessun fornitore di chiavi è configurato, si prega di contattare il servizio di supporto tramite un ticket.)
-   - Assicurati che il fornitore di chiavi sia correttamente attivato.
+   - Un fornitore di chiavi deve essere configurato sulla vStack. (Se nessun fornitore di chiavi è configurato, contattare il servizio support tramite un ticket.)
+   - Assicurarsi che il fornitore di chiavi sia correttamente abilitato.
 
 2. **Stato della macchina virtuale**:
    - La macchina virtuale deve essere spenta.
    - La macchina virtuale non deve essere in modalità spp 'test'.
-   - La macchina virtuale non deve essere già crittografata.
+   - La macchina virtuale non deve già essere crittografata.
    - La macchina virtuale non deve avere snapshot.
    - La macchina virtuale non deve essere replicata.
 
 ### Interfaccia
 
-Una volta connesso al portale web Console, dal menu **'IaaS'**, sottomenu **'Configurazione'** e poi la scheda **'vCenters'**, troverai l'informazione che ti indica se la crittografia è attivata sulla vstack in questione.
+Dopo esserti collegato al portale web Console, dal menu **'IaaS'**, sottomenu **'Configurazione'** e successivamente dalla scheda **'vCenters'**, troverai le informazioni che indicano se il cifratura è abilitata sulla vStack in questione.
 
 <img src={shivaHsmKms_000} />
 
-Vai quindi nel sottomenu **'Macchine virtuali'** e seleziona la macchina che desideri crittografare.
+Successivamente, recati nel sottomenu **'Macchine virtuali'** e seleziona la macchina che desideri cifrare.
 
-Nelle informazioni generali della macchina virtuale, troverai l'informazione che indica se la macchina è già crittografata o meno.
+Nelle informazioni generali della macchina virtuale, troverai il dettaglio che indica se la macchina è già cifrata o meno.
 
 <img src={shivaHsmKms_001} />
 
-Se la macchina virtuale rispetta i prerequisiti, puoi continuare la procedura cliccando sul pulsante con un logo di lucchetto nella barra degli strumenti che indica **'Crittografa la macchina virtuale'**.
+Se la macchina virtuale soddisfa i prerequisiti, puoi proseguire la procedura facendo clic sul pulsante con l'icona di un lucchetto nella barra degli strumenti contrassegnato da **'Cifra la macchina virtuale'**.
 
 <img src={shivaHsmKms_002} />
 
-Apparirà una finestra di conferma, seleziona Crittografa.
+Verrà visualizzata una finestra di conferma: seleziona **'Cifra'**.
 
 <img src={shivaHsmKms_003} />
 
-Una volta terminata l'azione, dovresti vedere l'informazione che è cambiata e che ti indica che la tua macchina è crittografata.
+Una volta completata l'azione, dovresti notare che l'informazione è cambiata, indicando che la tua macchina è ora cifrata.
 
 <img src={shivaHsmKms_004} />

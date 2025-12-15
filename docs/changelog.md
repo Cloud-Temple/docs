@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 15 Décembre 2025 : Stabilisation et corrections multilingues
+
+- **Multilingue (Terraform, LLMaaS, Harbor)** : Correction majeure des traductions en Espagnol, Italien et Allemand. Résolution des problèmes de syntaxe MDX (blocs de code vides, balises non échappées) qui empêchaient la compilation du site.
+- **Multilingue (Images)** : Rétablissement des chemins d'images corrects dans les versions italienne et allemande pour les sections Bastion et IaaS VMware.
+- **Build** : Validation du déploiement pour l'ensemble des 5 langues supportées.
+
+### 11 Décembre 2025 : Nouveautés Managed Kubernetes
+
+- **Managed Kubernetes** : Ajout d'un nouveau tutoriel sur l'utilisation de **Gateway API** pour la gestion avancée du trafic.
+- **Managed Kubernetes** : Mise à jour de la documentation sur la gestion des quotas (Ceph) et optimisation des outils de gestion des coûts (OpenCost).
+
 ### 22 Novembre 2025 : Nouveautés LLMaaS et améliorations globales
 
 - **LLMaaS (OCR)** : Ajout d'une documentation complète pour **DeepSeek-OCR**, notre nouveau modèle spécialisé dans l'analyse de documents (PDF, images), capable d'extraire du texte structuré, des tableaux et des formules mathématiques.

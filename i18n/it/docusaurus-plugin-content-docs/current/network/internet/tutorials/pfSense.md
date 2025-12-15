@@ -35,12 +35,12 @@ A pfSense firewall is managed via a web interface, so you need a second machine 
 
 We will need a set of two VMs:
 
-- The first will be the machine on which we will deploy the firewall
-- The second will be the machine from which we will administer the firewall.
+- The first one will be the machine where we deploy the firewall
+- The second one will be the machine from which we will administer the firewall
 
-### Richiedi una connessione Internet
+### Richiedi una consegna di accesso a Internet
 
-Il primo passo consiste nel recuperare [le informazioni di accesso Internet qui](https://docs.cloud-temple.com/network/internet/quickstart#gestion-de-vos-connectivites-internet).  
+Il primo passo consiste nel recuperare [le informazioni di accesso a Internet qui](https://docs.cloud-temple.com/network/internet/quickstart#gestion-de-vos-connectivites-internet).  
 È necessario disporre delle seguenti informazioni:
 
 - prefisso pubblico  
@@ -50,16 +50,16 @@ Il primo passo consiste nel recuperare [le informazioni di accesso Internet qui]
 - AS locale  
 - AS di Cloud Temple  
 - timer keepalive e timer hold-time  
-- indirizzi dei route servers
+- indirizzi dei route server
 
 ### Installazione e configurazione delle interfacce di rete
 
-Successivamente, è possibile distribuire la VM pfSense:
+Successivamente, è possibile distribuire la tua VM pfSense:
 
-1. __Installazione del firewall__ dal modello pfSense:
-    - [(Distribuzione tramite console)](../../../iaas_vmware/tutorials/deploy_vm_template)
-    - [(Distribuzione tramite Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
-2. __Configurazione delle interfacce LAN e WAN__ del firewall: l'interfaccia WAN deve essere nel vLAN Internet, con un indirizzo IP estratto dall'intervallo IP fornito dal CDS, nonché la default GW.
+1. __Installazione del firewall__ dal modello pfSense in Console:
+    - [(Distribuisci tramite la console)](../../../iaas_vmware/tutorials/deploy_vm_template)
+    - [(Distribuisci tramite Terraform)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
+2. __Configurazione delle interfacce LAN e WAN__ del firewall: l'interfaccia WAN deve essere nel tuo vLAN Internet, con un indirizzo IP estratto dall'intervallo IP fornito dal CDS, insieme alla gateway predefinita.
 3. __Installazione della seconda macchina di gestione__.
 4. __Configurazione dell'interfaccia__ della VM di gestione: questa macchina deve trovarsi nello stesso rete in cui è stata configurata l'interfaccia LAN del firewall.
 
@@ -67,10 +67,10 @@ Successivamente, è possibile distribuire la VM pfSense:
 
 Una volta installate correttamente le due VM, la seconda fase consiste nell'accedere al firewall per iniziare la sua configurazione.
 
-- Accedere all'interfaccia web del firewall dalla VM di gestione:
+- accedere all'interfaccia web del firewall dalla VM di gestione:
 
 <img src={pfSenseWebui} />
-- Accesso predefinito:
+- accesso predefinito:
     - nome utente: *admin*
     - password: *pfsense* (ricordarsi di modificare la password predefinita)
 
@@ -79,7 +79,7 @@ Una volta installate correttamente le due VM, la seconda fase consiste nell'acce
 ### Configurazione del firewall  
 Questa fase consiste nel configurare i vicini BGP del FW.
 
-- In primo luogo, assicurati di autorizzare il traffico BGP in TCP 179 in __'Firewall > Rules'__:
+- In primo luogo, assicurati di autorizzare il traffico BGP su TCP 179 in __'Firewall > Rules'__:
 
 <img src={pfSenseBgpRule} />
 
@@ -87,27 +87,27 @@ Questa fase consiste nel configurare i vicini BGP del FW.
 
 <img src={pfSenseFrrPackage} />
 
-- Seleziona le prime due caselle e inserisci il numero del tuo AS locale e i tempi forniti dal CDS.
+- Seleziona le prime due caselle e inserisci il numero del tuo AS locale e i tempi forniti dal CDS.  
 
 <img src={pfSenseGeneralConf} />
 
 ### Configurazione dei vicini BGP
 
-In **Neighbors**, fai clic su **+Add** per iniziare a creare i tuoi vicini BGP.
+In **Neighbors**, fare clic su **+Add** per iniziare a creare i propri vicini BGP.
 
-- Per ogni vicino: inserisci l'indirizzo IP nel campo __'General Options > Name/address'__:
+- Per ogni vicino: inserire l'indirizzo IP nel campo __'General Options > Name/address'__:
 
 <img src={pfSenseNeighborConf} />
 
-- Inserisci il **remote AS** (corrispondente al numero di AS di cloud temple) nelle opzioni di base come segue:
+- Inserire il numero di AS remoto (corrispondente al numero di AS di cloud temple) nelle opzioni di base come segue:
 
 <img src={bgpBasicOptions} />
 
-- Infine, nelle opzioni avanzate, procedi come segue:
+- Infine, nelle opzioni avanzate, effettuare le seguenti configurazioni:
 
 <img src={ebgpConf} />
 
-- Seleziona la casella che definisce il tipo di vicino. Nel nostro caso, si tratta di un server __route__:
+- Selezionare la casella che definisce il tipo di vicino. Nel nostro caso, si tratta di un ``route server``:
 
 <img src={routeServerNeighbor} />
 

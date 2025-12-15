@@ -4,9 +4,9 @@ title: Guía de inicio
 import marketplaceCatalog from './images/marketplace_catalog.png'
 import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
 
-# Guía Rápida para la Marketplace Cloud Temple
+# QuickStart para la Marketplace Cloud Temple
 
-Esta página le guía a través de los pasos iniciales para utilizar la **Marketplace Cloud Temple** desde la consola. Siga estas instrucciones para descubrir las soluciones disponibles y desplegarlas rápidamente.
+Esta página le guiará a través de los pasos iniciales para utilizar la **Marketplace Cloud Temple** desde la consola. Siga estas instrucciones para descubrir las soluciones disponibles y desplegarlas rápidamente.
 
 ---
 
@@ -16,13 +16,13 @@ Antes de comenzar, asegúrese de cumplir los siguientes puntos:
 
 1. **Suscripción activa**: Para permitir despliegues, su organización debe tener suscrito al menos un servicio Cloud Temple (IaaS OpenSource o IaaS VMware). En el marco del contacto con nuestros socios, no necesita una suscripción específica.
 2. **Permisos de usuario**: Su cuenta de usuario debe contar con los permisos necesarios para acceder a la consola y con permisos de escritura en los entornos de destino cuando desee desplegar recursos.
-3. **Entorno de destino**: Disponer de un inquilino configurado para el despliegue de soluciones.
+3. **Entorno de destino**: Disponer de un tenant configurado para el despliegue de soluciones.
 
 ## Acceso a la Marketplace
 
 ### 1. Access from the Console
 
-Once connected to the Cloud Temple console, you can access the Marketplace in several ways:
+Once logged into the Cloud Temple console, you can access the Marketplace in several ways:
 
 - **Main menu**: A **Marketplace** menu is available in the main navigation
 - **Virtual machines pages**: The Marketplace is also accessible from the virtual machine creation pages in OpenIaaS and VMware environments
@@ -54,7 +54,7 @@ Al hacer clic en una solución, accedes a una página de detalles que incluye:
 
 ## Acciones disponibles
 
-Según el tipo de solución, están disponibles diferentes acciones:
+Según el tipo de solución, están disponibles distintas acciones:
 
 ### Deployment of virtual machine images
 
