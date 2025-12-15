@@ -14,10 +14,10 @@ This tutorial will guide you through using **Capsule**, the built-in multi-tenan
 
 Capsule is a Kubernetes controller that introduces the concept of **Tenant** to group multiple Namespaces. In Cloud Temple's Managed Kubernetes offering, Capsule is used to delegate the management of your own Namespaces to you, allowing full autonomy without requiring intervention from a cluster administrator.
 
-Upon delivery of your cluster, the Cloud Temple teams have created a first Tenant for you and designated you as its **Tenant Owner**.
+Upon cluster provisioning, the Cloud Temple teams have created a first Tenant for you and designated you as its **Tenant Owner**.
 
 :::tip
-By default, your first Tenant is named `default`, and the owner service account is `defaultapp`.
+By default, your first Tenant is named `default`, and the owning service account is `defaultapp`.
 :::
 
 For more information about the project, you can visit the [official Capsule website](https://projectcapsule.dev/).
@@ -37,7 +37,7 @@ Look for the label `capsule.clastix.io/tenant`. The value of this label is your 
 ```bash
 ```
 
-# Once you know the name of your tenant, for example "my-tenant"
+# Once you know your tenant's name, for example "my-tenant"
 kubectl get ns -l capsule.clastix.io/tenant=my-tenant
 ```
 
@@ -55,7 +55,7 @@ Capsule will intercept this request. Since you are the owner of a Tenant, it wil
 
 ## Step 3: Verify Namespace Association
 
-Once the Namespace is created, you can verify that it has been correctly attached to your Tenant.
+Once the Namespace is created, you can verify that it has been successfully attached to your Tenant.
 
 ```bash
 kubectl get ns mon-projet-dev --show-labels
@@ -72,7 +72,11 @@ mon-projet-dev   Active   1m    capsule.clastix.io/tenant=your-tenant
 
 One of the greatest advantages of Capsule is that all security policies, resource quotas (`ResourceQuota`), and resource ranges (`LimitRange`) defined at the Tenant level by administrators are **automatically inherited** by every Namespace you create.
 
-This ensures your projects comply with consumption limits (CPU, memory, storage) and security rules (such as default network policies or security constraints defined by **Kyverno**) set for your environment, without needing to reconfigure them for each Namespace.
+This ensures your projects adhere to consumption limits (CPU, memory, storage) and security rules (such as default network policies or security constraints defined by **Kyverno**) set for your environment, without needing to reconfigure them for each Namespace.
+
+:::info
+Specific quotas have been set on your Capsule Tenant to limit the use of persistent storage (Ceph-Block and Ceph-FileSystem) to the total available space in the cluster. If you need to modify these quotas for a specific project, please submit a request to Cloud Temple support.
+:::
 
 ## Conclusion
 

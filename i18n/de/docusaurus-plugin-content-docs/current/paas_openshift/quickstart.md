@@ -8,11 +8,9 @@ import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 import oshiftOrder_001 from './images/oshift_order_001.png'
 
-# QuickStart für das OpenShift-Angebot
+# QuickStart for the OpenShift Offering
 
-Diese Seite führt Sie durch die ersten Schritte zur Nutzung des **OpenShift**-Angebots über die Cloud Temple-Konsole. Befolgen Sie diese Anweisungen, um die verfügbaren Menüs und Funktionen kennenzulernen.
-
----
+This page guides you through the initial steps to use the **OpenShift** offering from the Cloud Temple console. Follow these instructions to explore the available menus and features.
 
 ## Voraussetzungen
 
@@ -56,7 +54,7 @@ Das Untermenü **Clusters** zeigt Ihnen eine Tabelle mit allen verfügbaren Open
 
 ### 2. Cluster Details
 
-When you click on a **cluster name** in the list, a detailed page is displayed with complete cluster information:
+When you click on a **cluster name** in the list, a detailed page appears displaying complete cluster information:
 
 **Connectivity Information:**
 - **Access URL**: Web interface of the cluster
@@ -97,7 +95,7 @@ Here are the connection and configuration details specific to your OpenShift env
 
 To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __Konsole Tenant URL__:
+- __Tenant Console URL__:
   [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__:
@@ -109,12 +107,12 @@ To access the various OpenShift components, ensure your tenant is whitelisted in
 - __GitOps (ARGOCD)__:
   [https://gitops-ocp01-__your-tenant-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
 
-#### Connection to the cluster via CLI
+#### Verbindung zum Cluster über die Befehlszeile (CLI)
 
-To connect via the command line interface (CLI), use the following command:
+Verwenden Sie den folgenden Befehl, um sich über die Befehlszeile (CLI) zu verbinden:
 
 ```bash
-oc login https://api-ocp01-{your-id}.paas.cloud-temple.com/ --web
+oc login https://api-ocp01-{Ihre-ID}.paas.cloud-temple.com/ --web
 ```
 
 #### Zugriff auf den Registry
@@ -136,7 +134,7 @@ docker push registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:lates
 
 #### Configuration of Routers and Load Balancers
 
-The platform provides flexible options for __traffic routing__ and __load balancing__:
+The platform offers flexible options for __traffic routing__ and __load balancing__:
 
 - By default, private load balancers are used for routes and ingresses.
 - Domains:
@@ -153,11 +151,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### IaaS Connectivity
+#### IaaS Networking
 
 Network configurations play a crucial role in securing communications with OpenShift.
 
-- __Connectivity Network__: 100.67.0.0/28  
-- __Private Load Balancer VIP__: 100.67.0.3
+- __Interconnection Network__: 100.67.0.0/28  
+- __Private Load Balancer VIP__: 100.67.0.3  
 
 Ensure your firewall has a dedicated interface and permits traffic between the specified networks.

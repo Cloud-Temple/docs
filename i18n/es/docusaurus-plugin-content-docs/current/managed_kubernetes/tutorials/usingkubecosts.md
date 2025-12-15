@@ -1,11 +1,19 @@
 ---
-title: Monitorizar costos con Kubecost
+title: Track costs with Kubecost
 ---
+:::info[FinOps tool evolution]
+The **KubeCost** product, while still functional on your cluster, is gradually being replaced by **OpenCost**, its open-source successor.
+
+**OpenCost** is now the recommended and actively maintained solution by the Cloud Native Computing Foundation (CNCF) community.
+
+We encourage you to start using OpenCost to take advantage of the latest features and improved integration.
+:::
+
 import kubecostsallocations from './images/kubecostsallocations.png'
 
 ## Objetivos
 
-Este tutorial presenta **Kubecost**, la herramienta de supervisión y optimización de costos integrada en su clúster **Kubernetes gestionado**. Al final de esta guía, será capaz de:
+Este tutorial presenta **Kubecost**, la herramienta de supervisión y optimización de costos integrada en su clúster **Managed Kubernetes**. Al final de esta guía, será capaz de:
 
 - **Acceder** a la interfaz de Kubecost.
 - **Analizar** la distribución de costos de sus aplicaciones.
@@ -13,7 +21,7 @@ Este tutorial presenta **Kubecost**, la herramienta de supervisión y optimizaci
 
 ## ¿Qué es Kubecost?
 
-Kubecost es una solución de código abierto que proporciona visibilidad en tiempo real sobre los costos de sus entornos Kubernetes. Le ayuda a comprender con precisión qué consume recursos en su clúster y cómo esto se traduce en costos.
+Kubecost es una solución de código abierto que proporciona visibilidad en tiempo real sobre los costos de sus entornos Kubernetes. Le ayuda a comprender con precisión qué está consumiendo recursos en su clúster y cómo se traduce eso en costos.
 
 En la oferta de Kubernetes gestionado, Kubecost está preinstalado y configurado para ofrecerle una visión clara de sus gastos. Está directamente configurado con los costos reales de la infraestructura de Cloud Temple, lo que significa que las estimaciones mostradas son fieles a su factura.
 
@@ -24,23 +32,23 @@ The Kubecost interface is exposed on a secure URL specific to your cluster. To a
 `https://kubecost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
 :::info
-Access to this URL is restricted to the IP addresses you have declared with Cloud Temple support. If you are unable to access it, please contact support to verify your firewall rules.
+Access to this URL is restricted to the IP addresses you have declared to Cloud Temple support. If you are unable to access it, please contact support to verify your firewall rules.
 :::
 
-## Explorar la distribución de costos (Asignaciones)
+## Explore the cost distribution (Allocations)
 
-La página principal de Kubecost es el panel **Asignaciones**. Aquí puede visualizar el consumo de sus recursos.
+The main page in Kubecost is the **Allocations** dashboard. This is where you can visualize your resource consumption.
 
-Por defecto, los costos se agregan por **Namespace**. Puede utilizar el menú desplegable "Agrupar por" para cambiar la vista y analizar los costos por:
+By default, costs are aggregated by **Namespace**. Use the "Aggregate by" dropdown menu to change the view and analyze costs by:
 - `Deployment`, `StatefulSet`, etc.
 - `Controller`
-- `Label` (muy útil si utiliza etiquetas para identificar sus equipos o proyectos. Por ejemplo, puede utilizar la etiqueta del tenant de cápsula.)
+- `Label` (very useful if you use labels to identify your teams or projects. For example, you could use the capsule tenant label.)
 
-También puede ajustar el período de análisis (por defecto, "Últimos 7 días") para visualizar los costos en otro período.
+You can also adjust the analysis period (default: "Last 7 days") to visualize costs over a different timeframe.
 
-<img src={kubecostsallocations} />
+<img src={kubecostsallocations} alt="Kubecost UI"/>
 
-## Analyze the cost of infrastructure (Assets)
+## Analyze infrastructure costs (Assets)
 
 The **Assets** section provides a detailed view of the costs associated with the underlying infrastructure of your cluster:
 - Nodes (VMs)
@@ -51,7 +59,7 @@ This allows you to understand the cost distribution across computing, storage, a
 
 ## Identify optimization opportunities (Savings)
 
-Kubecost does more than just show costs—it also helps you reduce them. The **Savings** section continuously analyzes your cluster and provides concrete recommendations to optimize your expenses.
+Kubecost does more than just show costs — it also helps you reduce them. The **Savings** section continuously analyzes your cluster and provides concrete recommendations to optimize your spending.
 
 Common recommendations include:
 - **Right-sizing container requests:** Adjust CPU and memory requests for your containers to match their actual usage.

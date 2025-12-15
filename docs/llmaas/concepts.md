@@ -226,7 +226,7 @@ Ce planning est fourni à titre indicatif et est **revu au début de chaque trim
 | granite3-guardian:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
 | granite3-guardian:8b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
 | granite3.2-vision:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite3.3:8b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite4-small-h:32b   | IBM                       | Production | 03/10/2025 | 30/09/2026 |
 | granite4-tiny-h:7b     | IBM                       | Production | 03/10/2025 | 30/09/2026 |

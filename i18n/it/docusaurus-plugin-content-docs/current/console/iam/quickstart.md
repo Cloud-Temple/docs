@@ -1,7 +1,6 @@
 ---
-title: Guida di Partenza
+title: Guida di avvio
 ---
-
 import shivaTenant from './images/shiva_tenant.png'
 import shivaOnboard_003 from './images/shiva_onboard_003.png'
 import shivaOnboard_004 from './images/shiva_onboard_004.png'
@@ -12,162 +11,157 @@ import shivaProfil_007 from './images/shiva_profil_007.png'
 import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
 import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
 
-# Tenente
+## Tenant
 
-### Creazione di un tenente
+### Creazione di un tenant
 
-La creazione di un tenente viene eseguita tramite una richiesta di servizio che specifica:
+La creazione di un tenant viene effettuata tramite una richiesta di servizio che indica:
 
-    Il nome dell'organizzazione
-    Il nome di un contatto insieme al suo indirizzo email e numero di telefono per finalizzare la configurazione
-    Il nome del tenente
-    La zona di disponibilità o, in assenza, il sito fisico desiderato per il tenente
+    Il nome della vostra Organizzazione
+    Il nome di un referente con mail e numero di telefono per completare la configurazione
+    Il nome del tenant
+    La zona di disponibilità oppure, in mancanza, il sito fisico desiderato per il tenant
 
-### Selezione del tenant
+### Selezione di un tenant
 
 La selezione del tenant avviene dalla pagina principale della Console:
 
 <img src={shivaTenant} />
 
-*__Nota__: Le materiale di un tenant è esclusivo e non può essere mescolato con quello di altri tenenti.*
+*__Nota:__ Le risorse di un tenant sono esclusive e non possono essere condivise con altri tenant.*
 
-## Accesso i conti di accesso alla Console
+## Access accounts to the Console
 
-I conti di accesso alla Console vengono creati dal conto master del committente su invito (indipendentemente dal riferimento di autenticazione).
-Le dati di identificazione sono globali per la tua [Organizzazione](concepts.md#organizzazioni).
+Access accounts to the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
-*__Nota__: La federazione dell'identità viene gestita al livello dell'organizzazione*
+Credentials are global to your [Organization](concepts.md#organizations).
 
-### Creazione di un utente nell'organizzazione della tua azienda
+*__Nota:__ Identity federation is managed at the organization level*
 
-La creazione di un account utente all'interno dell'organizzazione della tua azienda avviene tramite invito. Per invitare un utente nell' [Organizzazione](concepts.md#organizzazioni), accedi al menu __'Amministrazione'__ situato a sinistra del bandetto superiore sul tuo schermo, poi al sotto-menu __'Utenti'.
+### Creazione di un account utente nella tua organizzazione
+
+La creazione di un account utente nella tua organizzazione avviene tramite invito. Per invitare un utente a un'[Organizzazione](concepts.md#organisations), vai nel menu __'Amministrazione'__ a sinistra nella barra verde, quindi nel sottomenu __'Utenti'__.
 
 Fai clic sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti.
 
 <img src={shivaOnboard_003} />
 
-Dopo di che, inserisci l'indirizzo email dell'utente.
+Indica quindi l'indirizzo email dell'utente.
 
 <img src={shivaOnboard_004} />
 
-L'utente riceverà quindi un messaggio di conferma via email.
+L'utente riceverà quindi un'email di verifica.
 
 <img src={shivaOnboard_001} />
 
 Una volta completata la verifica, l'utente potrà accedere alla console.
 
+### Assegnazione dei permessi a un utente
 
-### Note:
-- Il codice Markdown non contiene elementi HTML o Markdown strutturali da tradurre (ad esempio `<a>`, `<div>`, `<h1>`, `<ul>`, blocchi di codice).
-- I blocchi di codice Python, come descritto nelle regole 4, non sono presenti in questo testo.
-- Nessun elemento HTML bruto è stato modificato o tradotto.
-- La struttura e il formato del Markdown originale sono stati mantenuti.
+La gestione dei diritti utente avviene dalla pagina utente.
 
-### Assegnazione dei Permessi Utente
+<img src={shivaOnboard_003} />
 
-La gestione dei permessi utente viene gestita dalla pagina del profilo utente.
+Per impostazione predefinita, un utente non ha diritti. È quindi necessario che l'amministratore che ha inviato l'invito gli attribuisca i diritti necessari per la sua attività. Basta fare clic sul menu __'Azioni'__ dell'utente e selezionare l'opzione __'Modifica'__.
 
-<img src={shivaOnboard_003} alt="Assegnazione Permessi Utente" />
+Viene quindi visualizzato il menu per l'attivazione dei diritti:
 
-Per impostazione predefinita, un utente non ha alcun permesso. Pertanto, è necessario che l'amministratore che li ha invitati conceda i permessi richiesti in base al loro ruolo. Questo può essere fatto cliccando sul menu "Azioni" dell'utente e selezionando "Modifica".
+<img src={shivaOnboard_005} />
 
-Il menu di assegnazione dei permessi appare quindi:
+La configurazione dei permessi deve essere effettuata per ogni [Tenant](concepts.md#tenant) dell'[Organizzazione](concepts.md#organisations).
 
-<img src={shivaOnboard_005} alt="Assegnazione Permessi Utente" />
+L'elenco dei permessi e la loro definizione è disponibile [qui](#permissions).
 
-La configurazione dei permessi deve essere impostata per ogni [Tenant] all'interno di un'[Organizzazione].
+### Cambiare la lingua di un utente
 
-L'elenco dei permessi insieme alle loro definizioni può essere trovato [qui](#permessi).
-
-### Modifica la lingua di un utente
-
-Il cambio della lingua di un utente deve essere effettuato nel **Profilo** dell'utente, situato in alto a destra dello schermo, all'interno delle **Impostazioni utente**.
+La modifica della lingua di un utente deve essere effettuata nel suo __'Profilo'__, in alto a destra dello schermo, nelle __'Impostazioni utente'__.
 
 <img src={shivaProfil_006} />
 
-La configurazione è specifica per ogni tenant [Tenant](concepts.md#tenant).
+La configurazione viene effettuata per ogni tenant [Tenant](concepts.md#tenant).
 
-### Abbonamento alle notifiche tematiche
+### Iscrizione alle notifiche tematiche
 
-La gestione degli abbonamenti consente di ricevere gli email relativi ai temi attivi che verranno inviati automaticamente in caso di eventi corrispondenti.
+La gestione degli abbonamenti consente di ricevere email relative alle tematiche attivate, che vengono inviate automaticamente in caso di verificarsi di eventi corrispondenti.
 
-È accessibile nel profilo utente, nella scheda "Mie abbonamenti":
+È accessibile dal profilo utente, nella scheda "I miei abbonamenti":
 
 <img src={shivaProfil_007} />
 
-Ad esempio, in caso di incidente, saranno generate notifiche email specifiche per questo tema.
+Ad esempio, in caso di incidente, verranno generate notifiche via email specifiche per questa tematica.
 
-La lista dei temi disponibili può evolversi e arricchirsi progressivamente per adattarsi ai bisogni e ai cambiamenti nel nostro ambiente operativo.
+L'elenco delle tematiche disponibili può evolversi e arricchirsi progressivamente per adattarsi alle esigenze e ai cambiamenti nel nostro ambiente operativo.
 
 ## Permessi
 
-### Quali sono le permessi disponibili per gli account utente della Console?
+### Quali sono le autorizzazioni disponibili per gli account utente della Console?
 
-Ecco la lista delle [permessi disponibili](#permessi).
+Ecco l'elenco delle [autorizzazioni disponibili](#permissions).
 
-### Come aggiungere una permesso?
+### Come aggiungere un'autorizzazione?
 
-La procedura per l'assegnazione delle autorizzazioni è disponibile qui: [autorizzazioni](#permessi)
+La [procedura di assegnazione dell'autorizzazione è disponibile qui](#permissions)
 
-Perché non riesco ad aggiungere una permesso?
+### Why can't I add a permission?
 
-Per aggiungere una permesso, è necessario possedere sia la permesso `__iam_write__` che la permesso specifica che si desidera aggiungere.
+To add a permission, you need to have the __'iam_write'__ permission as well as the __permission you want to add__.
 
 ### Come aggiungere un utente?
 
-*__Nota__: Per aggiungere un utente è necessario possedere il diritto 'iam_write'.*
+*__Nota__ : Per aggiungere un utente, è necessario disporre del permesso __'iam_write'__.*
 
 ### Come auditare gli accessi/permessi degli utenti?
 
-Vai sulla pagina degli utenti e fai clic sul pulsante __'Esporta CSV'__.
+Vai alla pagina degli utenti e fai clic sul pulsante __'Esporta in CSV'__:
 
 ### Come eliminare un utente?
 
-Nel menu "Amministrazione" sulla barra laterale verticale sinistra dello schermo, all'interno del sotto-menu "Utenti", fare clic sull'icona di azione dell'utente da rimuovere e selezionare "Eliminare".
+Nel menu __'Amministrazione'__ sulla barra verde a sinistra dello schermo, nel sottomenu __'utente'__, fare clic sull'icona __'Azioni'__ dell'utente di interesse e scegliere __'Elimina'__.
 
-*NOTA:*
+*__Nota__ :*
 
-- *Per aggiungere un utente, è necessario possedere il diritto __iam_write__.*
-- *Se l'utente è federato, assicurati che sia stato rimosso anche dal repository di identità.*
+- *Per aggiungere un utente, è necessario disporre del permesso __'iam_write'__.*
+- *Se si tratta di un utente federato, __assicurarsi che l'utente sia stato eliminato anche dal repository di identità__.*
 
-### Come cambiare il proprio password?
+### Come reimpostare la password?
 
-È possibile cambiare la propria password dal pulsante "Password dimenticata?" sulla pagina di accesso della Console.
+È possibile reimpostare la password dalla pagina di accesso della Console facendo clic su __'Password dimenticata?'__.
 
 ### Perché alcuni utenti sono grigi?
 
-Gli utenti grigi sono quelli che non hanno ancora validato il proprio account. Durante la creazione dell'account, l'utente riceve un messaggio di conferma via email.
+Gli utenti grigi sono quelli che non hanno ancora confermato il loro account. Al momento della creazione del conto, l'utente ha ricevuto un'email di verifica.
 
 <img src={shivaOnboard_001} />
 
 Una volta completata la verifica, l'utente potrà accedere alla console.
 
-L'account è grigiato fino a quando la verifica non sarà stata completata.
+Il conto rimane grigio finché la verifica non è stata completata.
 
-### Cosa è un Personal Access Token (PAT)?
+### Cos'è un Personal Access Token (PAT)?
 
-La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__, rappresenta una modalità sicura per connettersi alle API Console senza passare attraverso un'interfaccia grafica.
+La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__,
+è un modo sicuro per connettersi alle API Console senza dover passare attraverso un'interfaccia grafica.
 
-### Cosa è il MFA e è obbligatorio?
+### Cos'è l'MFA e obbligatorio?
 
-Il MFA (multi-factor authentication) è un concetto di verifica dell'identità di un utente in due fasi, chiamato autenticazione a doppio fattore.
+L'MFA (multi-factor authentication) è un concetto di verifica dell'identità di un utente in due fasi, chiamato __autenticazione a due fattori__.
 
-L'utente deve fornire due prove d'identità distinte. Nel caso della Console, l'autenticazione a doppio fattore è obbligatoria e richiede di inserire un codice unico una volta che l'utente ha digitato il password del proprio account.
+L'utente deve fornire due prove di identità distinte. Nel caso della Console, l'autenticazione a due fattori è obbligatoria e richiede di inserire un codice a uso singolo una volta immesso la password del proprio account.
 
-### Gestione degli accessi e autenticazione
+## Gestione degli accessi e autenticazione
 
-### Accesso all'ambito tenant: IP autorizzate
+### Autorizzazione all'accesso a un tenant: IP autorizzate
 
-L'accesso alla console di gestione cloud è strettamente limitato alle indirizzi IP previste, in conformità con le requisiti di qualifica SecNumCloud. Questa restrizione garantisce un livello di sicurezza migliorato consentendo l'accesso solo agli utenti provenienti da fasce di indirizzi IP specificate, minimizzando così i rischi di accesso non autorizzato e proteggendo l'infrastruttura cloud secondo gli standard di sicurezza più elevati.
+L'accesso alla console di gestione cloud è strettamente limitato alle indirizzi IP precedentemente autorizzati, in conformità con i requisiti della qualifica SecNumCloud. Questa restrizione garantisce un livello di sicurezza rafforzato, consentendo l'accesso soltanto agli utenti provenienti da intervalli IP specifici, riducendo così i rischi di accessi non autorizzati e proteggendo l'infrastruttura cloud secondo gli standard di sicurezza più elevati.
 
-Ora è possibile visualizzare la lista delle indirizzi IP pubbliche autorizzate sul tenant e aggiungere una nuova indirizzo IP pubblico direttamente dall'angolo "Amministrazione > Accesso".
+È ora possibile visualizzare l'elenco degli indirizzi IP pubblici autorizzati sul tenant e aggiungere un nuovo indirizzo IP pubblico a tale elenco direttamente dall'opzione "Amministrazione > Accesso".
 
 <img src={shivaIpAccessManagement_01} />
 
-Per farlo, l'utente deve avere il diritto `console_public_access_read` per visualizzare gli indirizzi IP autorizzati e il diritto `console_public_access_write` per aggiungere un'indirizzo IP pubblico alla lista.
+Per effettuare queste operazioni, l'utente deve disporre del permesso `console_public_access_read` per consultare le IP autorizzate e del permesso `console_public_access_write` per aggiungere un indirizzo IP pubblico all'elenco.
 
 È quindi possibile aggiungere una nuova IP:
 
 <img src={shivaIpAccessManagement_02} />
 
-Nota: *La rimozione di un'indirizzo IP autorizzato richiede una richiesta di supporto tramite la console Cloud Temple.*
+Nota: *La rimozione di un indirizzo IP autorizzato avviene tramite richiesta di supporto nella console Cloud Temple.*

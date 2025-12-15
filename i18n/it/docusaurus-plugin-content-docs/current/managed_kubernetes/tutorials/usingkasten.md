@@ -19,24 +19,24 @@ Prima di iniziare, assicurati di disporre degli elementi seguenti:
 - L'identificativo del tuo cluster (ad esempio, `ctodev`).
 - Un'applicazione distribuita nel tuo cluster che desideri salvare.
 
-## 1. Access the Kasten Dashboard
+## 1. Accedere al pannello di controllo Kasten
 
-The Kasten dashboard is accessible via a secure URL, constructed using your cluster's identifier.
+Il pannello di controllo Kasten è accessibile tramite un URL sicuro, costruito in base all'identificativo del tuo cluster.
 
-1.  **Build the access URL**:
-    The URL follows this pattern: `https://k10.external-secured.<identifier>.mk.ms-cloud-temple.com`  
-    Replace `<identifier>` with your cluster's identifier. For example, if your identifier is `ctodev`, the URL will be: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com`.
+1.  **Costruisci l'URL di accesso**:
+    L'URL si basa sul seguente modello: `https://k10.external-secured.<identificativo>.mk.ms-cloud-temple.com/k10/`
+    Sostituisci `<identificativo>` con l'identificativo del tuo cluster. Ad esempio, se il tuo identificativo è `ctodev`, l'URL sarà: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
-2.  **Access the URL** in your browser.
+2.  **Accedi all'URL** nel tuo browser.
 
-    :::info Security Note
-    Access to this URL is restricted to the public IP addresses you have declared. If you are unable to connect, ensure your IP address is authorized by contacting Cloud Temple support.
+    :::info Nota sulla sicurezza
+    L'accesso a questo URL è limitato alle indirizzi IP pubblici che hai dichiarato. Se non riesci a collegarti, assicurati che il tuo indirizzo IP sia autorizzato contattando il supporto Cloud Temple.
     :::
 
 <img src={k10dashboard} />
 
-:::tip Integrated Quick Start Guide
-The Kasten console includes an interactive quick start guide on its home page. Feel free to follow it for a hands-on introduction directly from the interface.
+:::tip Guida rapida integrata
+La console Kasten include una guida rapida interattiva sulla sua pagina iniziale. Non esitare a seguirla per una prima introduzione diretta dall'interfaccia.
 :::
 
 ## 2. Understanding Backup Storage
@@ -96,15 +96,15 @@ Kasten makes it easy to restore an application to a previous state from a backup
     - You can choose to restore into a new namespace or overwrite the existing application. For this tutorial, we will overwrite the existing application.
     - Click **Restore** to start the process.
 
-Kasten will now restore the application to the state captured in the snapshot. You can monitor the progress in the dashboard.
+Kasten will now restore the application to the state captured in the snapshot. You can track the progress in the dashboard.
 
 ## 5. Backup Security
 
-Protecting your backup data is a top priority. Integrating Kasten into the Managed Kubernetes offering adheres to the highest security standards.
+Protecting your backup data is a top priority. The integration of Kasten into the Managed Kubernetes offering adheres to the highest security standards.
 
 -   **Encryption**: In compliance with SecNumCloud requirements, all your backups are encrypted. Data is encrypted in transit to the S3 storage using the **TLS 1.3** protocol and at rest in storage buckets using the **AES-256** algorithm.
 
--   **Permission Management**: Access to the Kasten interface and its features is controlled by a permission system based on Kubernetes RBAC. Only authorized users can create, modify, or execute backup and restore policies, ensuring strict governance over your backup operations.
+-   **Permission Management**: Access to the Kasten interface and its features is controlled by a permissions system based on Kubernetes RBAC. Only authorized users can create, modify, or execute backup and restore policies, ensuring strict governance over your backup operations.
 
 ## Conclusione
 

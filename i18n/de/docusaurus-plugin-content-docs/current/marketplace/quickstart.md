@@ -6,7 +6,7 @@ import marketplaceSolutionDetails from './images/marketplace_solution_details.pn
 
 # QuickStart für die Cloud Temple Marketplace
 
-Diese Seite führt Sie durch die ersten Schritte zur Nutzung der **Cloud Temple Marketplace** über die Konsole. Befolgen Sie diese Anweisungen, um die verfügbaren Lösungen kennenzulernen und diese schnell bereitzustellen.
+Diese Seite führt Sie durch die ersten Schritte zur Nutzung der **Cloud Temple Marketplace** über die Konsole. Befolgen Sie diese Anleitung, um die verfügbaren Lösungen kennenzulernen und diese schnell bereitzustellen.
 
 ## Voraussetzungen
 
@@ -14,7 +14,7 @@ Stellen Sie sicher, dass die folgenden Punkte erfüllt sind, bevor Sie beginnen:
 
 1. **Aktivierte Abonnement**: Um Bereitstellungen durchführen zu können, muss Ihre Organisation mindestens ein Cloud Temple-Service-Abonnement (IaaS OpenSource oder IaaS VMware) abgeschlossen haben. Im Rahmen der Zusammenarbeit mit unseren Partnern ist kein spezifisches Abonnement erforderlich.
 2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Berechtigungen verfügen, um auf die Konsole zugreifen zu können, sowie über Schreibrechte für die Zielumgebungen, wenn Sie Ressourcen bereitstellen möchten.
-3. **Zielumgebung**: Sie müssen über einen konfigurierten Tenant verfügen, der für die Bereitstellung von Lösungen verwendet werden kann.
+3. **Zielumgebung**: Sie müssen über einen konfigurierten Tenant verfügen, der für die Bereitstellung von Lösungen geeignet ist.
 
 ## Access to the Marketplace
 

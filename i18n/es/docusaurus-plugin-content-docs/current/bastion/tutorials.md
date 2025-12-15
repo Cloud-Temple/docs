@@ -14,101 +14,101 @@ import modifierSession from './images/modifier_session.png'
 import modifierSession2 from './images/modifier_session2.png'
 import supprimerSession from './images/supprimer_session.png'
 
-Estos tutoriales le ayudan a implementar y gestionar un Bastión Cloud Temple desde el portal Console.
+Estos tutoriales le ayudan a implementar y gestionar un Bastión Cloud Temple desde la Consola.
 
-## Requisitos previos
+## Requis
 
-1. Tener suscrito la oferta Cloud Temple (suscrito Appliance Bastión).
-2. Los equipos a administrar deben ser accesibles desde la red donde se despliega el Appliance Bastión.
-3. Tener permisos en el módulo Bastión.
-4. En el caso de un despliegue del Appliance onpremise, los flujos correspondientes deben estar abiertos.
+1. Tener suscrito a la oferta Cloud Temple (suscripción Appliance Bastion).
+2. Los equipos a administrar deben ser accesibles desde la red donde se despliega la Appliance Bastion.
+3. Tener permisos sobre el módulo Bastion.
+4. En el caso de un despliegue de la Appliance on-premise, los flujos correspondientes deben estar abiertos.
 
-## Interfaz
+## Interface
 
-Una vez conectado al portal web Console, vaya a la pestaña "Bastión" del menú izquierdo.
+Una vez conectado al portal web Console, dirígete al menú izquierdo y selecciona la pestaña "Bastion".
 
 <img src={sessions} />
 
-La pestaña "Equipos" le permite consultar la lista de sus equipos. Un equipo corresponde a una configuración de conexión a través de un Appliance Bastión. Para cada equipo, se indica su nombre, sus etiquetas, su descripción, el Appliance al que está asociado, el tipo de conexión (SSH o RDP), la IP del host y la configuración del teclado.
+La pestaña « Equipos » te permite consultar la lista de tus equipos. Un equipo corresponde a una configuración de conexión a través de una Appliance Bastion. Para cada equipo se indica su nombre, sus etiquetas, su descripción, la Appliance asociada, el tipo de conexión (SSH o RDP), la IP del host y finalmente la configuración del teclado.
 
-Puede filtrar la lista de sus equipos según las etiquetas que les correspondan, y un motor de búsqueda permite buscar una sesión por su nombre.
+Puedes filtrar la lista de tus equipos según las etiquetas asignadas, y un motor de búsqueda te permite buscar una sesión por su nombre.
 
 <img src={sessions2} />
 
-La pestaña "Appliances" le da la lista de sus Appliances Bastión. Para cada Appliance, se especifica el nombre del Appliance y su descripción.
+La pestaña « Appliances » te muestra la lista de tus Appliances Bastion. Para cada Appliance se especifica su nombre y su descripción.
 
-Un motor de búsqueda está disponible para que pueda buscar un Appliance por su nombre.
+Está disponible un motor de búsqueda para permitirte buscar una Appliance por su nombre.
 
 <img src={appliances} />
 
-## Implementar un Appliance
+## Deploy an Appliance
 
-Antes de poder implementar un Appliance, debe realizar una solicitud de suscripción a un Appliance a través de un ticket al soporte.
+Before deploying an Appliance, you must submit a subscription request for an Appliance through a support ticket.
 
 ## Abrir un flujo hacia un equipo
 
-En la pestaña "Appliances", haga clic en la barra de acción del Appliance que desee abrir. Luego, haga clic en el botón "Abrir".
+En la pestaña « Appliances », haga clic en la barra de acciones del appliance que desea abrir. A continuación, pulse el botón « Abrir ».
 
 <img src={ouvrirAppliance} />
 
-A continuación, ingrese la información necesaria para la conexión:
+A continuación, rellene la información necesaria para la conexión:
 
     - Selección del protocolo (SSH o RDP);
     - Dirección IP del host a administrar;
     - Información de identificación;
     - Configuración del teclado.
 
-Haga clic a continuación en "Conectar" para abrir el Appliance. A continuación, se abre la consola de la máquina virtual a administrar.
+A continuación, pulse « Conectar » para abrir el appliance. Se abrirá entonces la consola de la máquina virtual que se va a administrar.
 
-## Guardar un equipo
+## Registrar un equipo
 
-Para acceder con regularidad a un equipo a administrar, es más adecuado crear una configuración de equipo, que solo requerirá su nombre de usuario y contraseña en cada conexión.
+Para acceder con regularidad a un equipo que deba administrarse, es más conveniente crear una configuración de equipo, que solo le solicitará su nombre de usuario y su contraseña en cada conexión.
 
-Para ello, vaya a la pestaña "Equipos" del menú "Bastión" y haga clic en el botón "Nuevo equipo".
+Para ello, vaya al panel « Equipos » del menú « Bastión», y haga clic en el botón « Nuevo equipo ».
 
 <img src={creerSession} />
 
-A continuación, ingrese la información necesaria para crear su equipo:
+A continuación, rellene la información necesaria para crear su equipo:
 
     - Nombre del equipo;
     - Descripción;
-    - Appliance asociado;
+    - Appliance asociada;
     - Tipo de protocolo (SSH o RDP);
     - Dirección IP del host;
     - Idioma del teclado.
 
 <img src={creerSession2} />
 
-Una notificación le indicará la creación de su configuración de equipo que aparecerá en la parte superior derecha de la página. La configuración se añade a continuación a la lista de sus equipos.
+Debería aparecer una notificación en la parte superior derecha de la página indicándole la creación de su configuración de equipo. A continuación, la configuración se añadirá a la lista de sus equipos.
 
-También puede crear una nueva conexión pasando por la pestaña "Appliances" haciendo clic en la barra de acción del Appliance al que desee asociar una configuración de equipo.
+Para crear una nueva conexión, también puede pasar por el panel « Appliances », haciendo clic en la barra de acciones de la Appliance a la que desee asociar una configuración de equipo.
 
 <img src={creerSession3} />
 
 ## Conectarse a un equipo
 
-Vaya a la pestaña "Equipos" de la sección "Bastión". Haga clic en la barra de acciones del equipo que desee abrir y haga clic en el botón "Abrir".
+Diríjase al panel « Equipos » dentro del panel « Bastión ». Haga clic en la barra de acciones del equipo que desea abrir y luego en el botón « Abrir ».
 
 <img src={ouvrirSession} />
 
-En cada conexión al equipo, solo necesita ingresar sus datos de autenticación.
+En cada conexión al equipo, solo necesita proporcionar sus credenciales de autenticación.
 
 <img src={ouvrirSession2} />
 
-Después de ingresar sus credenciales, aparece una notificación confirmando el inicio de la sesión y se abre la consola hacia su máquina virtual.
+Después de ingresar sus identificadores, aparecerá una notificación que confirma el inicio de la sesión y se abrirá la consola hacia su máquina virtual.
 
-## Modificar una configuración de equipo
+## Modificar la configuración de un equipo
 
-Vaya a la pestaña "Equipos" de la sección "Bastión", haga clic en la barra de acción del equipo que desee modificar y haga clic en el botón "Modificar".
+Diríjase a la pestaña « Equipos » en la sección « Bastión», haga clic en la barra de acciones del equipo que desea modificar y luego en el botón « Modificar ».
 
 <img src={modifierSession} />
 
-A continuación, puede modificar el nombre del equipo, su descripción, el Appliance asociado, el protocolo (SSH o RDP), la dirección IP del host o el idioma del teclado.
+A continuación, puede modificar el nombre del equipo, su descripción, la Appliance asociada, el protocolo (SSH o RDP), la dirección IP del host o el idioma del teclado.
 
 <img src={modifierSession2} />
 
-## Eliminar una configuración de equipo
+## Delete a device configuration
 
-Vaya a la pestaña "Equipos" de la sección "Bastión", haga clic en la barra de acción del equipo que desee eliminar y haga clic en el botón "Eliminar".
+Go to the « Devices » tab in the « Bastion » section, click on the action bar of the device you want to delete, and click the « Delete » button.
 
 <img src={supprimerSession} />

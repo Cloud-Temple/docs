@@ -75,15 +75,15 @@ In the **General** tab, you find detailed information about your virtual machine
 
 The **Advanced** tab allows you to view more specific information:
 
-- Virtual machine UUID
-- Guest tools
-- Guest OS
-- DVD drive
+- Virtual machine UUID  
+- Guest tools  
+- Guest OS  
+- DVD drive  
 
 As well as modify certain settings such as:
 
-- Boot order
-- Secure Boot
+- Boot order  
+- Secure Boot  
 - Automatic startup (not possible if no backup policy is associated with the VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
@@ -112,14 +112,14 @@ Input entered in the console depends on the keyboard language of your web browse
 Here is a summary of the possible scenarios:
 
 | Physical Machine Keyboard Language (input) | Virtual Machine Keyboard Language | 'Enforce Keyboard' Option Selected | Result (output)        |
-|--------------------------------------------|-----------------------------------|------------------------------------|------------------------|
-| French                                     | French                            | No                                 | ✅                       |
+| ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |
+| French                                     | French                            | No                                 | ✅                     |
 | French                                     | French                            | Yes                                | Not recommended        |
 | French                                     | English                           | No                                 | English                |
-| French                                     | English                           | Yes                                | ✅                       |
+| French                                     | English                           | Yes                                | ✅                     |
 | English                                    | French                            | No                                 | French                 |
-| English                                    | French                            | Yes                                | ✅                       |
-| English                                    | English                           | No                                 | ✅                       |
+| English                                    | French                            | Yes                                | ✅                     |
+| English                                    | English                           | No                                 | ✅                     |
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
@@ -158,9 +158,9 @@ To create a new policy, click the __'Add Policy'__ button. A form opens with the
 
 #### Step 2: Storage Selection
 
-- __Availability Zone__: Select the destination zone  
-- __Pool__: Choose the resource pool  
-- __Block Storage__: Select the destination storage  
+- __Availability Zone__: Select the destination zone
+- __Pool__: Choose the resource pool
+- __Block Storage__: Select the destination storage
 
 <img src={openIaasReplicationPolicyForm2} />
 
@@ -215,11 +215,11 @@ The __'Replicas'__ tab displays all virtual machines currently being replicated:
 You can view:
 
 - The names of replicated virtual machines  
-- Source and target locations  
-- Associated replication policy  
+- The source and target locations  
+- The associated replication policy  
 
 Available actions include:
 
-- Export data in CSV format  
+- Export data to CSV format  
 - View replication details  
 - Manage replicas by policy

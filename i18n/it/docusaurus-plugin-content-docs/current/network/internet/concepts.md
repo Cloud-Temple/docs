@@ -1,149 +1,119 @@
-
-
 ---
 title: Concetti
 ---
 
+## Internet Infrastructure CloudTemple
 
+CloudTemple opera come **Cloud Service Provider (CSP)** con un'infrastruttura Internet autonoma, altamente resiliente e sicura. La nostra connettività di tipo operatore si basa su un numero di AS (Autonomous System Number) proprietario, che ci garantisce un controllo totale sul routing e assicura un'alta disponibilità per tutti i nostri servizi.
 
-## Infrastruttura Internet CloudTemple
-
-CloudTemple opera come **Fornitore di Servizi Cloud (CSP)** dotato di un'infrastruttura Internet autonoma, estremamente resiliente e sicura. La nostra connettività di tipo operatore si basa su un numero ASN (Autonomous System Number) proprietario che ci conferisce un controllo totale sul routing e garantisce un'alta disponibilità per tutti i nostri servizi.
-
-Questa infrastruttura autonoma ci permette di offrire una connettività Internet con funzionalità avanzate, adattate a tutti i tipi di offerte CloudTemple, dall'hosting dedicato alle soluzioni IaaS passando per i servizi PaaS.
-
-
+Questa infrastruttura autonoma ci permette di offrire una connettività Internet con funzionalità avanzate, adatte a tutte le tipologie di offerte CloudTemple, dall'hosting dedicato alle soluzioni IaaS passando per i servizi PaaS.
 
 ## Architettura di rete e ridondanza
 
-La nostra rete beneficia di un'architettura ridondante progettata per ottimizzare le prestazioni e garantire la continuità del servizio. CloudTemple dispone di un sistema autonomo indipendente con un insieme di prefissi IP pubblici assegnati, garantendo una connessione globale diretta.
+La nostra rete si avvale di un'architettura ridondante progettata per ottimizzare le prestazioni e garantire la continuità del servizio. CloudTemple dispone di un sistema autonomo indipendente con un insieme di prefissi IP pubblici assegnati, assicurando una connettività diretta globale.
 
 Questa connettività si basa su **due percorsi distinti** per massimizzare la resilienza:
 
-**Connessione di transito:** Due operatori principali di transito garantiscono la ridondanza a livello globale, consentendo un routing ottimale del traffico Internet verso le nostre infrastrutture.
+**Connessione di transit:** Due operatori principali di transit garantiscono la ridondanza a livello globale, consentendo un routing ottimale del traffico Internet verso le nostre infrastrutture.
 
-**Punti di scambio:** La nostra presenza su due punti di scambio (IXP) a Parigi ci permette di ridurre significativamente la latenza per gli utenti europei, migliorando le prestazioni dei servizi regionali. Questo approccio garantisce anche una ridondanza naturale contro i guasti del fornitore.
+**Punti di scambio:** La nostra presenza su due punti di scambio (IXP) a Parigi ci permette di ridurre significativamente la latenza per gli utenti europei, migliorando al contempo le prestazioni dei servizi regionali. Questa strategia garantisce inoltre una ridondanza naturale contro i guasti dei fornitori.
 
-L'utilizzo del protocollo BGP4 garantisce un routing efficace dei flussi Internet verso la gateway attiva della vostra architettura, particolarmente nei casi di distribuzione multi-zone di disponibilità, come ad esempio cluster di firewall distribuiti tra due zone di disponibilità.
+L'utilizzo del protocollo BGP4 garantisce un routing efficiente dei flussi Internet verso la gateway attiva della vostra architettura, in particolare nei scenari di distribuzione multi-zone di disponibilità, come nel caso di cluster di firewall distribuiti tra due zone di disponibilità.
 
+## Protezione DDoS integrata
 
+Tutto il traffico in entrata verso l'infrastruttura CloudTemple beneficia di una protezione DDoS avanzata garantita da **F5**, un leader mondiale nella sicurezza di rete. Questa protezione opera in modo trasparente e automatico.
 
-## Protezione anti-DDoS integrata
+Le attacchi volumetrici vengono rilevati e mitigati direttamente al bordo della rete F5, prima ancora di raggiungere la rete CloudTemple. Questo filtraggio in upstream garantisce che nessuna saturazione possa influenzare le nostre connessioni Internet, e solo le richieste legittime raggiungono le nostre infrastrutture.
 
-Tutto il traffico in entrata verso l'infrastruttura CloudTemple beneficia di una protezione anti-DDoS avanzata, garantita da **F5**, un leader mondiale nella sicurezza delle reti. Questa protezione funziona in modo trasparente e automatico.
+**Tutti i servizi CloudTemple** beneficiano di questa protezione senza costi aggiuntivi, inclusi i prefissi clienti che possono essere migrati verso la nostra infrastruttura. Questo approccio integrato trasforma un requisito di sicurezza in un vantaggio operativo per i nostri clienti.
 
-Gli attacchi volumetrici vengono rilevati e attenuati direttamente al bordo della rete F5, prima ancora di raggiungere la rete CloudTemple. Questo filtraggio a monte garantisce che nessun sovraccarico possa influenzare le nostre connessioni Internet, e solo le richieste legittime raggiungono le nostre infrastrutture.
+## Assignment of Public IP Addresses
 
-**Tutti i servizi CloudTemple** beneficiano di questa protezione senza costi aggiuntivi, inclusi i prefissi clienti che possono essere migrati verso la nostra infrastruttura. Questo approccio integrato trasforma un vincolo di sicurezza in un vantaggio operativo per i nostri clienti.
-
-
-
-## Assegnazione di indirizzi IP pubblici
-
-CloudTemple offre un sistema flessibile di assegnazione di indirizzi IP pubblici Provider Aggregated (PA), che permette ai clienti di prenotare indirizzi IP pubblici **a unità** in base alle loro esigenze specifiche.
-
-
+CloudTemple offers a flexible system for assigning Provider Aggregated (PA) public IP addresses, allowing clients to reserve public IP addresses **individually** according to their specific needs.
 
 ### Processo di prenotazione
 
-La prenotazione di indirizzi IP pubblici avviene direttamente dalla console CloudTemple, offrendo una gestione autonoma e immediata:
+La prenotazione di indirizzi IP pubblici avviene direttamente tramite la console CloudTemple, offrendo una gestione autonoma e immediata:
 
 **Attraverso l'API della console:** Integrazione possibile nei vostri flussi di automazione e provisioning.
 
-**Attraverso la console web:** Interfaccia intuitiva accessibile dalla sezione *Internet* del vostro spazio clienti.
+**Attraverso la console web:** Interfaccia intuitiva accessibile dalla sezione *Internet* del vostro spazio client.
 
-Il processo di prenotazione prevede questi semplici passaggi: accesso alla console, navigazione verso *Internet* > *Gestire gli indirizzi IP*, selezione di *Prenotare un nuovo indirizzo*, scelta tra IPv4 o IPv6, quindi conferma dell'ordine.
-
-
+Il processo di prenotazione segue queste semplici fasi: accesso alla console, navigazione verso *Internet* > *Gestisci gli indirizzi IP*, selezione di *Prenota un nuovo indirizzo*, scelta tra IPv4 o IPv6, quindi conferma dell'ordine.
 
 ### Fatturazione
 
-La fatturazione delle indirizzi IP pubblici avviene per unità di lavoro (UO) e inizia dalla prenotazione dell'indirizzo, garantendo una trasparenza totale dei costi.
+La fatturazione degli indirizzi IP pubblici avviene per unità di misura (UM) e ha inizio al momento della prenotazione dell'indirizzo, garantendo una trasparenza totale dei costi.
 
 | Riferimento | Unità | SKU |
-|-----------|-------|-----|
-| Rete - IPv4 Pubblico dedicato | 1 IPv4 | RSIP-IP4-UNIT |
-| Rete - IPv6 Pubblico dedicato | 1 IPv6 | RSIP-IP6-UNIT |
+|-------------|-------|-----|
+| Rete - IPv4 pubblico dedicato | 1 IPv4 | RSIP-IP4-UNIT |
+| Rete - IPv6 pubblico dedicato | 1 IPv6 | RSIP-IP6-UNIT |
 
+## IPv4 Blocks
 
+The delivery of IPv4 addresses is subject to __available stock__ for our customers, per IP address.
 
-## Blocchi IPv4
+To order IPv4 addresses, go to the __*'Public IPs'*__ menu under Networks in the green bar on the left, and click the __*"Order IPv4 addresses or IPv6 prefixes"*__ button.
 
-La consegna di una IPv4 avviene __entro la disponibilità dello stock__ per i nostri clienti, per indirizzo IP.
+You can also view the address blocks assigned to you in the same menu.
 
-L'ordine degli indirizzi IPv4 può essere effettuato dal menu __*'IP pubbliche'*__ del menu Rete nella barra verde a sinistra, tramite il pulsante __*"Ordina indirizzi IPv4 o prefissi IPv6"*__.
-
-È possibile visualizzare i blocchi di indirizzi assegnati nel medesimo menu.
-
-| Riferimento                   | Unità  | SKU                          |
+| Reference                     | Unit   | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
-| Rete - IPv4 Pubblica dedicata | IPv4/32 | csp:(region):network:ipv4:v2 |
-
-
+| Public IPv4 Dedicated Network | IPv4/32 | csp:(region):network:ipv4:v2 |
 
 ## Blocchi IPv6
 
-L'ordine dei prefissi IPv6 avviene dal menu __*'IP pubblici'*__ del menu Rete nella barra verde a sinistra, tramite il pulsante __*"Ordina indirizzi IPv4 o prefissi IPv6"*__.
+La richiesta di prefissi IPv6 avviene dal menu __*'IP pubblici'*__ del menu Reti nella barra verde a sinistra, tramite il pulsante __*"Richiedi indirizzi IPv4 o prefissi IPv6"*__.
 
-È possibile visualizzare i prefissi assegnati a te in questo stesso menu.
+È possibile visualizzare i prefissi assegnati a questo stesso menu.
 
-| Riferimento                            | Unità   | SKU                          |
+| Riferimento                             | Unità   | SKU                          |
 | ------------------------------------- | ------- | ---------------------------- |
-| Rete - Intervallo IPv6 Pubblico Dedicato | IPv6/48 | csp:(region):network:ipv6:v1 |
+| Rete - Intervallo di indirizzi IPv6 pubblici dedicati | IPv6/48 | csp:(region):network:ipv6:v1 |
 
+## IP prefix migration
 
-
-## Migrazione dei prefissi IP dei clienti
-
-CloudTemple accompagna i clienti che desiderano migrare i propri prefissi IP nella nostra infrastruttura, facilitando così i progetti di migrazione mantenendo l'identità di rete esistente.
-
-
+CloudTemple supports clients wishing to migrate their own IP prefixes to our infrastructure, facilitating migration projects while preserving their existing network identity.
 
 ### Vantaggi della migrazione
 
-Questa metodologia consente di mantenere la vostra identità IP durante la migrazione verso CloudTemple, garantendo una continuità perfetta per le vostre applicazioni e clienti. Mantieni il pieno controllo sull'utilizzo delle vostre indirizzi IP mentre beneficiate dell'infrastruttura CloudTemple.
-
-
+Questo approccio consente di mantenere il tuo indirizzo IP durante la migrazione verso CloudTemple, garantendo una continuità perfetta per le tue applicazioni e i tuoi clienti. Mantieni il pieno controllo sull'utilizzo dei tuoi indirizzi IP, beneficiando contemporaneamente dell'infrastruttura di CloudTemple.
 
 ### Processo di integrazione
 
-Il tuo prefisso IP (ad esempio `203.0.113.0/24`) viene integrato nella rete backbone CloudTemple e annunciato dal nostro AS. Una volta integrato, il prefisso può essere associato liberamente alle tue macchine virtuali, bilanciatori di carico o altri servizi.
+Il tuo prefisso IP (ad esempio `203.0.113.0/24`) viene integrato nella rete backbone di CloudTemple e annunciato dal nostro AS. Una volta integrato, il prefisso può essere associato liberamente alle tue macchine virtuali, bilanciatori di carico o altri servizi.
 
-**Tutte le indirizzi del prefisso migrato beneficiano automaticamente della protezione anti-DDoS F5**, senza configurazione aggiuntiva né costo aggiuntivo.
+**Tutte le indirizzi del prefisso migrato beneficiano automaticamente della protezione anti-DDoS F5**, senza configurazioni aggiuntive né costi aggiuntivi.
 
+### Requis
 
+La migrazione dei prefissi IP richiede che il prefisso sia registrato in un registro Internet riconosciuto (ARIN, RIPE, APNIC, ecc.) e che ne sia il proprietario legittimo. La gestione BGP può essere gestita dal vostro team oppure supportata tecnicamente da CloudTemple, a seconda delle vostre preferenze.
 
-### Requisiti necessari
+## Reserved Internet Bandwidth
 
-La migrazione dei prefissi IP richiede che il prefisso sia registrato in un registro Internet riconosciuto (ARIN, RIPE, APNIC, ecc.) e che ne sia il proprietario legittimo. La gestione BGP può essere gestita dal proprio team o beneficiare del supporto tecnico di CloudTemple in base alle proprie preferenze.
+Internet bandwidth is reservable in increments of 100 Mbps. The maximum available capacity for a gateway is 10 Gbps, potentially limited by the technical specifications of your gateway.
 
+Billing is based on the 95th percentile over the billing period, typically one month. You may therefore occasionally benefit from bursts exceeding your reserved capacity.
 
-
-## Prenotazione della larghezza di banda internet
-
-La larghezza di banda internet è prenotabile in blocchi di 100 Mbps. La capacità massima disponibile per una gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche della tua gateway.
-
-La fatturazione avviene al 95° percentile nel periodo di fatturazione, solitamente un mese. Puoi quindi occasionalmente beneficiare di un picco superiore alla tua capacità prenotata.
-
-| Riferimento                                 | Unità    | SKU                                     |
+| Reference                                 | Unit     | SKU                                     |
 | ----------------------------------------- | -------- | --------------------------------------- |
-| Rete - Larghezza di banda internet prenotata | 100 Mbps | csp:(region):network:trafic:internet:v1 |
+| Network - Reserved Internet Bandwidth     | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
-__*Nota:*__
-*Non c'è una __fatturazione volumetrica__ di tipo __'egress fees'. Paghi solo la prenotazione della larghezza di banda.__*
-
-
+__*Note:*__
+*There is no __volume-based billing__ of the type __'egress fees'__. You pay only for the bandwidth reservation.__*
 
 ## Disponibilità per offerta
 
-Tutte queste funzionalità di connettività Internet sono disponibili su tutte le offerte CloudTemple, garantendo un'esperienza omogenea indipendentemente dal tipo di servizio utilizzato.
+L'intera gamma di funzionalità di connettività Internet è disponibile su tutte le offerte CloudTemple, garantendo un'esperienza omogenea indipendentemente dal tipo di servizio utilizzato.
 
-| Offerta | Connettività Internet | Protezione DDoS | Gestione RSIP | Migrazione prefissi |
-|---------|------------------------|------------------|----------------|---------------------|
+| Offerta | Connessione Internet | Protezione DDoS | Gestione RSIP | Migrazione prefissi |
+|-------|----------------------|------------------|---------------|-------------------|
 | Hosting dedicato | ✓ | ✓ | ✓ | ✓ |
 | Hosting condiviso | ✓ | ✓ | ✓ | ✓ |
 | IaaS VMware | ✓ | ✓ | ✓ | ✓ |
 | IaaS OpenSource | ✓ | ✓ | ✓ | ✓ |
 | PaaS OpenShift | ✓ | ✓ | ✓ | ✓ |
 
-Questo approccio unificato garantisce che tutti i nostri clienti possano beneficiare di un accesso Internet di qualità operatore, con sicurezza integrata e funzionalità avanzate, indipendentemente dalla scelta tecnologica.
+Questa approccio unificato garantisce a tutti i nostri clienti l'accesso a una connettività Internet di qualità operatore, con sicurezza integrata e funzionalità avanzate, indipendentemente dalla scelta tecnologica.

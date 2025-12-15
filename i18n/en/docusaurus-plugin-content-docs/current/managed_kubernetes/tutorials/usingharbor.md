@@ -2,43 +2,43 @@
 title: Using Harbor
 ---
 
-Harbor is an OCI artifact registry (container images, Helm charts, SBOMs, signatures, etc.) offering fine-grained project management, access control, vulnerability scanning, retention policies, and signature management. This guide explains how to use it with Cloud Temple Managed Kubernetes, from registry connection to integration into your Kubernetes deployments and CI/CD pipelines.
+Harbor is an OCI artifacts registry (container images, Helm charts, SBOMs, signatures, etc.) offering fine-grained project management, access control, vulnerability scanning, retention policies, and signature management. This guide explains how to use Harbor with Cloud Temple Managed Kubernetes, from connecting to the registry to integrating it into your Kubernetes deployments and CI/CD pipelines.
 
 :::note
-In this guide, replace the following variables with your values:
+In this guide, replace the following variables with your own values:
 
-- `<IDENTIFIANT>`: your cluster code (e.g., `ctodev`)
-- `<HARBOR_URL>`: public Harbor URL constructed as follows: `harbor.external-secured.<IDENTIFIANT>.mk.ms-cloud-temple.com` (e.g., `harbor.external-secured.ctodev.mk.ms-cloud-temple.com`)
+- `<IDENTIFIANT>`: your cluster ID (e.g., `ctodev`)
+- `<HARBOR_URL>`: public Harbor URL built as: `harbor.external-secured.<IDENTIFIANT>.mk.ms-cloud-temple.com` (e.g., `harbor.external-secured.ctodev.mk.ms-cloud-temple.com`)
 - `<PROJET>`: your Harbor project name
 - `<NAMESPACE>`: target Kubernetes namespace
-- `<ROBOT_USERNAME>` / `<ROBOT_TOKEN>`: Harbor robot account credentials
+- `<ROBOT_USERNAME>` / `<ROBOT_TOKEN>`: credentials for a Harbor robot account
 
 :::
 
 ## Prerequisites
 
 - Access to the Console and Managed Kubernetes service
-- An existing Harbor project (or rights to create one)
+- An existing Harbor project (or permissions to create one)
 - Locally installed tools:
   - Docker or Podman
-  - kubectl (configured on your cluster)
+  - kubectl (configured for your cluster)
   - Helm v3.8+ (OCI support)
   - Optional: `cosign` for image signing
-- Outbound network access to `<HARBOR_URL>` via HTTPS (443)
-- No additional certificates required: the Harbor TLS certificate is public and recognized
+- Outbound network access to `<HARBOR_URL>` over HTTPS (port 443)
+- No additional certificates required: Harbor's TLS certificate is public and trusted
 
-## Key Concepts
+## Core Concepts
 
 - Project: logical space (public or private) containing repositories.
-- Repository: collection of tags for a given image (`<PROJET>/app-web:1.0.0`).
-- Robot Accounts: technical identities with limited privileges, intended for CI/CD.
-- Vulnerability Scanning: automatic analysis (e.g., Trivy) on upload and on demand.
+- Repository: collection of tags for a given image (`<PROJECT>/app-web:1.0.0`).
+- Robot accounts: technical identities with limited privileges, intended for CI/CD.
+- Vulnerability scans: automated analysis (e.g., Trivy) at upload and on demand.
 - Policies: tag immutability, retention, security rules.
-- OCI Artifacts: images, Helm charts (OCI), SBOM, signatures.
+- OCI artifacts: images, Helm charts (OCI), SBOMs, signatures.
 
-## Connecting to the Registry (Docker / Podman)
+## Connecting to the registry (Docker / Podman)
 
-Prefer a **robot account** attached to the project for CI/CD operations.
+Prefer a **robot account** linked to the project for CI/CD operations.
 
 ```bash
 # Docker
@@ -48,22 +48,22 @@ docker login <HARBOR_URL>
 podman login <HARBOR_URL>
 ```
 
-- Username: `<ROBOT_USERNAME>` (e.g., `robot$myproject+pusher`)
+- User: `<ROBOT_USERNAME>` (e.g., `robot$monprojet+pusher`)
 - Password: `<ROBOT_TOKEN>`
 
 :::tip Certificates
-The Cloud Temple managed Harbor instance presents a recognized public certificate. No additional CA configuration is normally required in Docker or Podman.
+The Harbor instance managed by Cloud Temple uses a publicly recognized certificate. No additional CA configuration is normally required in Docker or Podman.
 :::
 
-## Creating a Project
+## Create a project
 
 Via the Harbor UI:
 
 - Projects > New Project
-- Name: `<PROJET>`, visibility: Private (recommended)
+- Name: `<PROJECT>`, visibility: Private (recommended)
 - Options: enable tag immutability, auto-scan on push, etc.
 
-:::info Best Practices
+:::info Best practices
 
 - One project per application or functional domain.
 - Restrict roles (maintainer, developer, guest).
@@ -71,7 +71,7 @@ Via the Harbor UI:
 
 :::
 
-## Pushing an Image
+## Push an image
 
 Example with Docker:
 
@@ -79,30 +79,32 @@ Example with Docker:
 # Build locally
 docker build -t app-web:1.0.0 .
 
-# Tag for Harbor
+# Tag to Harbor
 docker tag app-web:1.0.0 <HARBOR_URL>/<PROJET>/app-web:1.0.0
 
 # Push
-docker push <HARBOR_URL>/<PROJET>/app-web:1.0.0
+
+```bash
+docker push <HARBOR_URL>/<PROJECT>/app-web:1.0.0
 ```
 
 Recommended organization:
 
-- `<PROJET>/<service>:<version>` (e.g., `payments/api:2.3.4`)
-- Tag immutability to avoid overwrites
+- `<PROJECT>/<service>:<version>` (e.g., `payments/api:2.3.4`)
+- Immutable tags to prevent overwrites
 - Semantic tags: `1.2.3`, `1.2`, `latest` (use `latest` with caution)
 
-## Pulling an Image
+## Pull an image
 
 ```bash
-docker pull <HARBOR_URL>/<PROJET>/app-web:1.0.0
+docker pull <HARBOR_URL>/<PROJECT>/app-web:1.0.0
 ```
 
-Check scan results and signature (if enabled) before promotion to production.
+Check the scan results and signature (if enabled) before promoting to production.
 
 ## Using Images in Kubernetes
 
-### 1) Create a Pull Secret
+### 1) Create a pull secret
 
 ```bash
 kubectl create secret docker-registry harbor-pull-secret \
@@ -113,12 +115,12 @@ kubectl create secret docker-registry harbor-pull-secret \
 ```
 
 :::tip
-The --docker-email parameter is no longer required on recent kubectl versions (and can be ignored).
+The `--docker-email` parameter is no longer required in recent versions of kubectl (and can be safely ignored).
 :::
 
-### 2) Reference the Secret in Your Workloads
+### 2) Reference the secret in your workloads
 
-- Via ServiceAccount:
+- Via the ServiceAccount:
 
 ```yaml
 apiVersion: v1
@@ -157,9 +159,9 @@ spec:
             - containerPort: 8080
 ```
 
-### 3) Test Pull from Cluster (Optional)
+### 3) Test pulling from the cluster (optional)
 
-Quickly verify that the node can pull your image with the secret:
+Quickly verify that the node can pull your image using the secret:
 
 ```bash
 kubectl run pull-check --rm -it --image=<HARBOR_URL>/<PROJET>/app-web:1.0.0 \
@@ -176,44 +178,44 @@ image: <HARBOR_URL>/<PROJET>/app-web@sha256:<DIGEST>
 ## Robot Accounts and Permissions
 
 - Projects > `<PROJET>` > Robot Accounts > New Robot
-- Scopes: limit to necessary actions (`pull` for runtime, `push` for CI)
-- Expiration: define a duration and rotation process
-- Store the token as a secret (Kubernetes/CI)
+- Scopes: restrict to necessary actions (`pull` for runtime, `push` for CI)
+- Expiration: set a duration and rotation process
+- Store the token securely (Kubernetes/CI)
 
 :::caution Least Privilege
-Do not use personal accounts for your pipelines. Prefer one robot per project, or even per environment.
+Do not use personal accounts for your pipelines. Prefer one robot account per project, or even per environment.
 :::
 
-## Vulnerability Scanning
+## Vulnerability Scans
 
-- Enable "Scan on push" at the project level
-- Trigger on demand from UI or API
-- Set policies: block pull if severity >= `High` (according to governance)
+- Enable "Scan on push" at the project level  
+- Trigger manually via UI or API  
+- Configure policies: block pull if severity >= `High` (according to governance)
 
-You can export reports (JSON) or view CVEs and affected layers.
+You can export reports (in JSON format) or view affected CVEs and layers.
 
 ## Retention and Immutability
 
-- Retention: keep, for example, the last `N` tags matching a pattern (e.g., `release-*`)
-- Immutability: prevent overwriting existing tags
-- Garbage Collection: scheduled by Harbor administration (deletes orphaned blobs)
+- Retention: keep, for example, the last `N` tags matching a pattern (e.g. `release-*`)
+- Immutability: prevent rewriting of existing tags
+- Garbage Collection: scheduled by Harbor administration (removes orphaned blobs)
 
-These mechanisms reduce storage costs and strengthen traceability.
+These mechanisms reduce storage costs and enhance traceability.
 
-## Helm Charts (OCI)
+## Charts Helm (OCI)
 
 Helm v3.8+ supports OCI natively.
 
 ```bash
-# Login
+# Connection
 helm registry login <HARBOR_URL> \
   --username '<ROBOT_USERNAME>' \
   --password '<ROBOT_TOKEN>'
 
-# Chart Packaging
+# Packaging the chart
 helm package charts/myapp
 
-# Push Chart
+# Push the chart
 helm push myapp-0.1.0.tgz oci://<HARBOR_URL>/<PROJET>/charts
 
 # Pull / Install
@@ -226,21 +228,22 @@ helm install myapp oci://<HARBOR_URL>/<PROJET>/charts/myapp --version 0.1.0 -n <
 With `cosign`:
 
 ```bash
-# Login (if necessary to fetch public key from Harbor)
+# Login (if required to fetch public key from Harbor)
 cosign login <HARBOR_URL>
 
 # Sign an image (local key or KMS)
-cosign sign <HARBOR_URL>/<PROJET>/app-web:1.0.0
+cosign sign <HARBOR_URL>/<PROJECT>/app-web:1.0.0
 
-# Verify signature
-cosign verify <HARBOR_URL>/<PROJET>/app-web:1.0.0
+# Verify the signature
+cosign verify <HARBOR_URL>/<PROJECT>/app-web:1.0.0
+
 ```
-
 :::note
-On older versions of cosign, exporting COSIGN_EXPERIMENTAL=1 might be necessary.
+On older versions of cosign, you may need to export COSIGN_EXPERIMENTAL=1.
 :::
 
-Harbor can display attestations (signatures, SBOM) and enforce signature policies.
+Harbor can display attestations (signatures, SBOMs) and enforce signing policies.
+```
 
 ## CI/CD Integration
 
@@ -251,7 +254,7 @@ stages: [build, push]
 
 variables:
   HARBOR_URL: "<HARBOR_URL>"
-  HARBOR_PROJECT: "<PROJET>"
+  HARBOR_PROJECT: "<PROJECT>"
 
 build:
   stage: build
@@ -296,22 +299,22 @@ jobs:
 ## Troubleshooting
 
 - `denied: requested access to the resource is denied`
-  - Check robot account rights on the project and/or repo name
+  - Check robot account permissions on the project and/or repository name
 - `name unknown` / `manifest unknown`
-  - Non-existent project, misspelled repo, non-existent tag
+  - Project does not exist, repository name misspelled, or tag does not exist
 - `x509: certificate signed by unknown authority`
-  - Update runner's certificate store (ca-certificates), check for intercepting TLS proxy; add proxy CA if necessary and/or sync system clock
-- 401/403 during pull in Kubernetes
-  - Missing `imagePullSecrets` or expired credentials
+  - Update the runner's certificate store (ca-certificates), verify no TLS proxy is intercepting traffic; add the proxy's CA if necessary and/or synchronize the system clock
+- 401/403 when pulling in Kubernetes
+  - Missing `imagePullSecrets` secret or expired credentials
 - `413 Request Entity Too Large`
-  - Image size too large for Ingress/Registry config; optimize image or adjust config (via Cloud Temple support)
+  - Image size too large compared to Ingress/Registry configuration; optimize the image or adjust the configuration (via Cloud Temple support)
 
 ## Best Practices
 
-- Private projects by default, dev/preprod/prod separation
-- Dedicated robot accounts, regular token rotation
-- Tag immutability and digest promotion
+- Private projects by default, separation of dev/preprod/prod environments
+- Dedicated robot accounts with regular token rotation
+- Immutable tags and promotion by digest
 - Scan policy: severity threshold and documented remediation
-- Strict retention, scheduled deletion of obsolete artifacts
-- Logging/Audit: export and retain access/activity logs
-- SBOM and signature integration for supply chain security
+- Strict retention with scheduled deletion of obsolete artifacts
+- Logging/auditing: export and retain access/activity logs
+- SBOM integration and signing for supply chain integrity

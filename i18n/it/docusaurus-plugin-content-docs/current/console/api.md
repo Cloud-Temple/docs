@@ -13,8 +13,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## Chiavi API
 
-La __chiave API__ permet di autenticarsi quando si desidera effettuare richieste all'API. La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__,
-è un modo sicuro per connettersi alle API Console senza dover passare attraverso un'interfaccia grafica. Ogni token è associato a un tenant e all'utente che lo ha creato.
+La __chiave API__ permet di autenticarsi quando si desidera effettuare richieste sull'API. La generazione di una chiave API, nota anche come __Personal Access Token (PAT)__, è un modo sicuro per connettersi alle API Console senza dover passare attraverso un'interfaccia grafica. Ogni token è associato a un tenant e all'utente che lo ha creato.
 
 La creazione di questo token avviene dal tuo account. È possibile generare più chiavi e configurare per ciascuna le autorizzazioni entro i limiti dei tuoi diritti.
 
@@ -26,7 +25,7 @@ Nel menu del profilo, fare clic su __'Token di accesso personale'__.
 
 <img src={ShivaProfil003} />
 
-A questo punto, sullo schermo verranno visualizzate tutte le chiavi API create per questo utente in questo tenant. Fare clic su __'Nuovo token personale'__.
+A questo punto, sullo schermo verranno visualizzate tutte le chiavi API create per questo utente in questo tenant. Fare clic su __'Nuovo token di accesso personale'__.
 
 <img src={ShivaProfil002} />
 
@@ -34,24 +33,24 @@ Devi quindi:
 
 - Inserire il nome di questo nuovo token,
 - Specificare una data di scadenza (massimo 12 mesi di validità),
-- Selezionare le autorizzazioni associate al token.
+- Scegliere le autorizzazioni associate al token.
 
-Verranno quindi visualizzati i dettagli relativi al tuo token. __Attenzione: non sarà più possibile accedervi successivamente.__
+Verranno quindi visualizzati i dettagli relativi al tuo token. __Attenzione, non sarà più possibile accedervi successivamente.__
 
 Se non annoti queste informazioni, dovrai distruggere e ricreare il token.
 
 <img src={ShivaProfil004} />
 
-Per ragioni di sicurezza, si raccomanda di creare più token, ognuno con una funzione specifica (un token per ogni applicazione o processo aziendale), piuttosto che creare un singolo token con tutti i permessi.
+Per ragioni di sicurezza, si raccomanda di creare più token, ciascuno con una funzione specifica (un token per ogni applicazione o processo aziendale), piuttosto che creare un singolo token con tutti i diritti.
 
-Vedi quindi il nuovo token creato e la relativa data di scadenza futura.
+Vedi quindi il nuovo token creato e la sua futura data di scadenza.
 
 <img src={ShivaProfil005} />
 
 :::info Ciclo di vita del token di autenticazione
-Quando utilizzi il tuo **Personal Access Token (PAT)** per autenticarti presso l'API, ricevi in risposta un token di accesso. È importante notare che questo token di accesso è un **JSON Web Token (JWT)** con una durata limitata.
+Quando utilizzi il tuo **Personal Access Token (PAT)** per autenticarti presso l'API, ricevi in risposta un token di accesso. È importante notare che questo token di accesso è un **JSON Web Token (JWT)** con una durata di vita limitata.
 
--   **Durata di vita**: Ogni token JWT è valido per un periodo di **5 minuti**.
+-   **Durata di vita**: Ogni token JWT è valido per una durata di **5 minuti**.
 -   **Verifica**: Puoi verificare la data di emissione (`iat`) e la data di scadenza (`exp`) del tuo token decodificandolo. Strumenti online come [jwt.io](https://jwt.io) ti permettono di farlo facilmente.
 
 Una volta scaduto il token, dovrai autenticarti nuovamente con il tuo PAT per ottenerne uno nuovo. È quindi consigliabile gestire questo ciclo di vita nei tuoi script e applicazioni prevedendo un aggiornamento automatico del token.
@@ -68,7 +67,7 @@ __'Authorization'__ con il bearer access token ottenuto durante la fase di auten
 
 L'URL dei punti di accesso è fornita direttamente in __Swagger__ (nell'oggetto "Servers" di ogni pagina API).
 
-## Attività
+## Le attività
 
 Il monitoraggio delle richieste di tipo scrittura (POST, PUT, PATCH, DELETE) avviene tramite la gestione delle attività. Ogni richiesta di questo tipo genera automaticamente un'attività associata. Un codice di stato HTTP 201 conferma la creazione avvenuta con successo dell'attività. L'identificativo univoco di questa attività viene restituito negli header della risposta, con la chiave 'Location'.
 
@@ -100,14 +99,14 @@ Il contenuto dell'attività include tutte le informazioni essenziali per identif
 }
 ```
 
-L'oggetto __state__ può assumere diverse forme in base allo stato dell'attività, ovvero:
+L'oggetto __state__ può assumere diverse forme a seconda dello stato dell'attività, ovvero:
 
 __waiting__, stato prima che l'operazione abbia iniziato:
 
 ```
     waiting: {}
 ```
-__running__, stato durante l'esecuzione dell'operazione:
+__running__, stato quando l'operazione è in corso:
 
 ```
     running: {
@@ -146,13 +145,13 @@ La console Cloud Temple definisce __un limite massima sul volume di richieste__ 
 - __Prevenzione degli abusi__: Questi limiti contribuiscono a preservare l'integrità dell'API prevenendo utilizzi abusivi o inadeguati che potrebbero comprometterne il funzionamento.
 - __Garanzia della qualità del servizio__: Regolando l'accesso all'API, garantiamo una distribuzione equa delle risorse, permettendo a tutti gli utenti di godere di un'esperienza stabile e performante.
 
-Consideriamo ad esempio uno script mal progettato o inefficiente che effettua chiamate ripetute all'API, con il rischio di saturare le risorse e degradare le prestazioni. Stabilendo soglie di richieste, preveniamo queste situazioni e assicuriamo il mantenimento di un __servizio fluido e continuativo__ per l'intera clientela.
+Prendiamo ad esempio uno script mal progettato o inefficiente che tenta chiamate ripetute all'API, con il rischio di saturare le risorse e degradare le prestazioni. Stabilendo soglie di richieste, preveniamo queste situazioni e garantiamo il mantenimento di un __servizio fluido e continuo__ per l'intera clientela.
 
 ### Quali sono i limiti di velocità per l'API della console Cloud Temple?
 
 Applichiamo restrizioni quantitative sulle interazioni degli utenti con la console per ogni prodotto.
 
-I limiti sono definiti in __richieste al secondo (r/s) e per indirizzo IP sorgente__. Oltre la soglia limite, il sistema risponderà con un codice di errore HTTP 429, indicando che il limite di richieste consentite è stato superato.
+I limiti sono definiti in __richieste al secondo (r/s) e per indirizzo IP sorgente__. Oltre la soglia limite, il sistema risponderà con un codice di errore HTTP 429, indicando che il limite massimo di richieste consentite è stato superato.
 
 Ecco i limiti definiti:
 
@@ -174,7 +173,7 @@ Ecco i limiti definiti:
 
 ### Specific routes
 
-Certain API endpoints, particularly those related to authentication or sensitive operations, have more restrictive limits to enhance security and ensure stability.
+Certain API endpoints, particularly those related to authentication or sensitive actions, have more restrictive limits to enhance security and ensure stability.
 
 | Route | Limit threshold |
 |---|---|
@@ -182,7 +181,7 @@ Certain API endpoints, particularly those related to authentication or sensitive
 | IaaS - Storage (Datastores) | 20 r/s |
 | Marketplace (Contact) | 1 r/min - 5 r/h |
 
-### Come funzionano i limiti di frequenza?
+### Come funzionano i limiti di velocità?
 
 Se il numero di richieste inviate a un endpoint API supera il limite consentito, l'endpoint API risponderà restituendo  
 __un codice di risposta HTTP 429__. Questo codice indica che l'utente ha superato il numero di richieste consentite.  
@@ -198,22 +197,22 @@ che conterrà informazioni dettagliate sulla limitazione applicata:
     }
 ```
 
-### Come evitare di effettuare troppe richieste?
+### Come evitare di effettuare troppi richieste?
 
-Si raccomanda di limitare il numero di chiamate API effettuate dalla propria automazione per rimanere al di sotto del limite di velocità impostato per l'endpoint.
+Si raccomanda di limitare il numero di chiamate all'API effettuate dalla propria automazione per rimanere al di sotto del limite di frequenza impostato per l'endpoint.
 
-Questa situazione si verifica spesso quando vengono eseguite più richieste in parallelo, utilizzando diversi processi o thread.
+Questa situazione si verifica spesso quando diverse richieste vengono eseguite in parallelo, utilizzando più processi o thread.
 
-Esistono diversi modi per migliorare l'efficienza della propria automazione, in particolare utilizzando meccanismi di __caching__ e implementando un __sistema di ripetizione con attenuazione progressiva__. Questo metodo consiste nel fare una breve pausa quando viene rilevato un errore di limite di velocità, quindi riprovare la richiesta. Se la richiesta fallisce nuovamente, la durata della pausa viene aumentata progressivamente fino a quando la richiesta ha successo o fino a raggiungere un numero massimo di tentativi.
+Esistono diversi modi per migliorare l'efficienza della propria automazione, in particolare utilizzando meccanismi di __caching__ e implementando un __sistema di ripetizione con attenuazione progressiva__. Questo metodo consiste nel fare una breve pausa quando viene rilevato un errore legato al limite di frequenza, quindi riprovare la richiesta. Se la richiesta fallisce nuovamente, la durata della pausa viene aumentata progressivamente fino al successo della richiesta o fino al raggiungimento del numero massimo di tentativi.
 
 Questo approccio presenta numerosi vantaggi:
 
-- L'__attenuazione progressiva__ garantisce che i primi tentativi vengano eseguiti rapidamente, prevedendo tempi di attesa più lunghi in caso di fallimenti ripetuti.
-- L'aggiunta di una __variazione casuale__ alla pausa contribuisce a evitare che tutti i tentativi avvengano simultaneamente.
+- L'__attenuazione progressiva__ garantisce che i primi tentativi vengano eseguiti rapidamente, prevedendo pause più lunghe in caso di fallimenti ripetuti.
+- L'aggiunta di una __variazione casuale__ alla pausa contribuisce a evitare che tutti i tentativi si verifichino simultaneamente.
 
-È importante notare che le __richieste non riuscite non influenzano il proprio limite di velocità__. Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione sostenibile a lungo termine, poiché questo comportamento potrebbe essere modificato in futuro. Vi raccomandiamo quindi di non basarvi esclusivamente su questo meccanismo.
+È importante notare che le __richieste non riuscite non influenzano il proprio limite di frequenza__. Tuttavia, inviare continuamente una richiesta potrebbe non essere una soluzione sostenibile a lungo termine, poiché questo comportamento potrebbe essere modificato in futuro. Vi raccomandiamo quindi di non basarvi esclusivamente su questo meccanismo.
 
-Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python sono ottime partenze per implementare strategie di attenuazione.
+Le librerie __[Backoff](https://pypi.org/project/backoff/)__ e __[Tenacity](https://pypi.org/project/tenacity/)__ in Python sono ottimi punti di partenza per implementare strategie di attenuazione.
 
 ## Ciclo di vita di un endpoint API
 

@@ -4,15 +4,15 @@ title: Concepts
 
 # Terraform Concepts in the Cloud Temple Provider
 
-This page presents the fundamental concepts necessary to understand and effectively use the Cloud Temple Terraform provider.
+This page presents the fundamental concepts required to understand and effectively use the Terraform Cloud Temple provider.
 
 ## Infrastructure as Code (IaC)
 
-Infrastructure as Code is an approach that consists of managing and provisioning IT infrastructure through human-readable configuration files, rather than through manual configuration or interactive tools.
+Infrastructure as Code is an approach that involves managing and provisioning computing infrastructure through human-readable configuration files, rather than through manual configuration or interactive tools.
 
-### Advantages of IaC with Terraform
+### Benefits of IaC with Terraform
 
-- **Versioning**: Infrastructure is defined in files that can be versioned (Git)
+- **Versioning**: Infrastructure is defined in files that can be versioned (e.g., Git)
 - **Collaboration**: Teams can work together on the same infrastructure
 - **Automation**: Reduction of human errors and time savings
 - **Documentation**: Code explicitly describes the infrastructure
@@ -20,11 +20,11 @@ Infrastructure as Code is an approach that consists of managing and provisioning
 
 ## Terraform Provider
 
-A Terraform provider is a plugin that allows Terraform to interact with a specific API. The Cloud Temple provider acts as an abstraction layer between your Terraform configuration files and the Cloud Temple APIs.
+A Terraform provider is a plugin that enables Terraform to interact with a specific API. The Cloud Temple provider acts as an abstraction layer between your Terraform configuration files and the Cloud Temple APIs.
 
 ### Provider Declaration
 
-The provider must be declared in a `terraform` block with `required_providers`:
+The provider must be declared within a `terraform` block using `required_providers`:
 
 ```hcl
 terraform {
@@ -44,14 +44,14 @@ provider "cloudtemple" {
 
 ### Authentication
 
-The provider authenticates with Cloud Temple APIs using:
+The provider authenticates to the Cloud Temple APIs using:
 
-1. **Client ID**: Unique identifier for your application
-2. **Secret ID**: Secret key associated with the Client ID
+1. **Client ID**: Unique identifier for your application  
+2. **Secret ID**: Secret key associated with the Client ID  
 
 These credentials are generated from the Cloud Temple Console and allow the provider to perform operations on your behalf.
 
-:::info Best Practices
+:::info Best practices
     Store your credentials in environment variables or a secrets manager, never directly in the code.
 :::
 
@@ -72,26 +72,26 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ### Cloud Temple Resource Types
 
-#### VMware IaaS
+#### IaaS VMware
 
-- `cloudtemple_compute_virtual_machine`: Virtual machine
-- `cloudtemple_compute_virtual_disk`: Virtual disk
-- `cloudtemple_compute_network_adapter`: Network interface
-- `cloudtemple_compute_virtual_controller`: Device controller
+- `cloudtemple_compute_virtual_machine` : Virtual machine
+- `cloudtemple_compute_virtual_disk` : Virtual disk
+- `cloudtemple_compute_network_adapter` : Network adapter
+- `cloudtemple_compute_virtual_controller` : Virtual device controller
 
-#### OpenSource IaaS
+#### IaaS Open Source
 
-- `cloudtemple_compute_iaas_opensource_virtual_machine`: Virtual machine
-- `cloudtemple_compute_iaas_opensource_virtual_disk`: Disk
-- `cloudtemple_compute_iaas_opensource_network_adapter`: Network interface
-- `cloudtemple_compute_iaas_opensource_replication_policy`: Replication policy
+- `cloudtemple_compute_iaas_opensource_virtual_machine` : Virtual machine
+- `cloudtemple_compute_iaas_opensource_virtual_disk` : Virtual disk
+- `cloudtemple_compute_iaas_opensource_network_adapter` : Network interface
+- `cloudtemple_compute_iaas_opensource_replication_policy` : Replication policy
 
 #### Object Storage
 
-- `cloudtemple_object_storage_bucket`: S3 bucket
-- `cloudtemple_object_storage_storage_account`: Storage account
+- `cloudtemple_object_storage_bucket`: S3 Bucket
+- `cloudtemple_object_storage_storage_account`: Storage Account
 - `cloudtemple_object_storage_acl_entry`: Bucket ACL
-- `cloudtemple_object_storage_global_access_key`: Global access key to namespace
+- `cloudtemple_object_storage_global_access_key`: Global Access Key for the namespace
 
 ### Attributes and Arguments
 
@@ -117,44 +117,43 @@ output "vm_id" {
 }
 ```
 
-## Datasources
+## Data sources
 
-Datasources allow you to retrieve information about existing resources without managing them. They are **read-only**.
+Data sources allow you to retrieve information about existing resources without managing them. They are **read-only**.
 
-### Using Datasources
+### Using data sources
 
 ```hcl
-# Retrieve an existing datacenter
+# Retrieving an existing datacenter
 data "cloudtemple_compute_virtual_datacenter" "dc" {
   name = "DC-EQX6"
 }
 
-# Retrieve a cluster
+# Cluster Retrieval
 data "cloudtemple_compute_host_cluster" "cluster" {
   name = "clu002-ucs01"
 }
 
-# Use in a resource
+# Usage in a resource
 resource "cloudtemple_compute_virtual_machine" "web" {
   name            = "web-server"
   datacenter_id   = data.cloudtemple_compute_virtual_datacenter.dc.id
   host_cluster_id = data.cloudtemple_compute_host_cluster.cluster.id
   # ...
 }
-```
 
 ### Main Datasources
 
-You can find the complete list of available datasources in the Cloud Temple Terraform provider on [Terraform documentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+You can find the complete list of available datasources in the Terraform Cloud Temple provider on [Terraform Documentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
 
 #### Compute Infrastructure
 
 | Datasource | Description |
 |------------|-------------|
-| `cloudtemple_compute_virtual_datacenter` | Virtual datacenter |
-| `cloudtemple_compute_host_cluster` | Host cluster |
-| `cloudtemple_compute_datastore_cluster` | Datastore cluster |
-| `cloudtemple_compute_datastore` | Individual datastore |
+| `cloudtemple_compute_virtual_datacenter` | Virtual Datacenter |
+| `cloudtemple_compute_host_cluster` | Host Cluster |
+| `cloudtemple_compute_datastore_cluster` | Datastore Cluster |
+| `cloudtemple_compute_datastore` | Individual Datastore |
 | `cloudtemple_compute_network` | Network (VLAN, VXLAN) |
 | `cloudtemple_compute_machine_manager` | Machine Manager (vCenter) |
 
@@ -165,7 +164,7 @@ You can find the complete list of available datasources in the Cloud Temple Terr
 | `cloudtemple_compute_content_library` | Content library |
 | `cloudtemple_compute_content_library_item` | Library item |
 | `cloudtemple_marketplace_item` | Cloud Temple Marketplace item |
-| `cloudtemple_compute_iaas_opensource_template` | Template in OpenSource IaaS catalog |
+| `cloudtemple_compute_iaas_opensource_template` | Template in the OpenSource IaaS catalog |
 
 #### Backup
 
@@ -178,15 +177,15 @@ You can find the complete list of available datasources in the Cloud Temple Terr
 
 | Datasource | Description |
 |------------|-------------|
-| `cloudtemple_object_storage_role` | Available roles for ACLs |
-| `cloudtemple_object_storage_bucket_files` | Files in a bucket |
+| `cloudtemple_object_storage_role` | Roles available for ACL |
+| `cloudtemple_object_storage_bucket_files` | Files within a bucket |
 | `cloudtemple_object_storage_storage_account` | Existing storage account |
 
 ## Terraform State
 
 The Terraform state is a file that maintains the mapping between your configuration and the actual resources in the cloud.
 
-### terraform.tfstate File
+### terraform.tfstate file
 
 ```json
 {
@@ -223,7 +222,7 @@ terraform {
 :::
 
 :::info
-    OpenTofu offers state encryption by default ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
+    OpenTofu enables state and plan encryption by default ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
 
 ## Terraform Lifecycle
@@ -243,7 +242,7 @@ This command:
 
 ### 2. Planning (terraform plan)
 
-Generate an execution plan showing the changes to be applied:
+Generate an execution plan showing the changes that will be applied:
 
 ```bash
 terraform plan
@@ -257,7 +256,7 @@ The plan indicates:
 
 ### 3. Application (terraform apply)
 
-Apply changes to reach the desired state:
+Apply the changes to reach the desired state:
 
 ```bash
 terraform apply
@@ -265,38 +264,40 @@ terraform apply
 
 Terraform:
 1. Generates a plan
-2. Asks for confirmation (unless `--auto-approve`)
-3. Applies changes
+2. Requests confirmation (unless using `--auto-approve`)
+3. Applies the changes
 4. Updates the state
 
 ### 4. Destruction (terraform destroy)
 
-Destroy all managed resources:
+Destroys all managed resources:
 
 ```bash
 terraform destroy
 ```
 
-:::danger Warning
+:::danger Attention
   This command permanently deletes all resources. Use with caution.
 :::
 
-### 5. Other Useful Commands
+### 5. Other useful commands
 
 ```bash
-# Show current state
+```
+
+# Display current state
 terraform show
 
 # List resources
 terraform state list
 
-# Validate configuration
+# Verify configuration
 terraform validate
 
 # Format files
 terraform fmt
 
-# Show outputs
+# Display outputs
 terraform output
 ```
 
@@ -304,7 +305,7 @@ terraform output
 
 Terraform automatically analyzes dependencies between resources.
 
-### Implicit Dependencies
+### Implicit dependencies
 
 Terraform detects references between resources:
 
@@ -327,11 +328,10 @@ resource "cloudtemple_compute_virtual_disk" "data" {
   virtual_machine_id = cloudtemple_compute_virtual_machine.web.id
   capacity           = 100 * 1024 * 1024 * 1024
 }
-```
 
-### Explicit Dependencies
+### Explicit dependencies
 
-To force a specific order, use `depends_on`:
+To enforce a specific order, use `depends_on`:
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -344,15 +344,15 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-## Variables and Outputs
+## Variables and outputs
 
-### Input Variables
+### Input variables
 
 Make your configuration reusable:
 
 ```hcl
 variable "vm_name" {
-  description = "Virtual machine name"
+  description = "Name of the virtual machine"
   type        = string
   default     = "my-vm"
 }
@@ -372,11 +372,11 @@ resource "cloudtemple_compute_virtual_machine" "example" {
 
 ### Outputs
 
-Expose information after application:
+Expose information after the application:
 
 ```hcl
 output "vm_id" {
-  description = "Virtual machine ID"
+  description = "ID of the virtual machine"
   value       = cloudtemple_compute_virtual_machine.example.id
 }
 
@@ -415,9 +415,8 @@ module "db_server" {
   memory = 16 * 1024 * 1024 * 1024
   cpu    = 8
 }
-```
 
-## Best Practices
+## Best practices
 
 ### File Organization
 
@@ -435,10 +434,10 @@ module "db_server" {
         └── outputs.tf
 ```
 
-### Secrets Management
+### Secret Management
 
 ```hcl
-# ❌ To avoid
+# ❌ Do not do this
 provider "cloudtemple" {
   client_id = "12345678-1234-1234-1234-123456789abc"
   secret_id = "plaintext-secret"
@@ -449,9 +448,8 @@ provider "cloudtemple" {
   client_id = var.cloudtemple_client_id
   secret_id = var.cloudtemple_secret_id
 }
-```
 
-### Using Tags
+### Using tags
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -469,5 +467,5 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ## Next Steps
 
-- [Getting Started Guide](quickstart.md): Create your first infrastructure with Terraform
+- [Quick Start Guide](quickstart.md): Set up your first infrastructure with Terraform
 - [Tutorials](tutorials.md): Practical examples for each service

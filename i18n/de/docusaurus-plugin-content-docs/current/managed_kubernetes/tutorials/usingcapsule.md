@@ -1,5 +1,5 @@
 ---
-title: Permissions mit Capsule verwalten
+title: Manage Permissions with Capsule
 ---
 
 ## Ziele
@@ -17,7 +17,7 @@ Capsule is a Kubernetes controller that introduces the concept of **Tenant** to 
 Upon delivery of your cluster, the Cloud Temple teams have created a first Tenant for you and appointed you as its **Tenant Owner**.
 
 :::tip
-By default, your first Tenant is called `default`, and the owner service account is `defaultapp`.
+By default, your first Tenant is named `default`, and the owner service account is `defaultapp`.
 :::
 
 For more information about the project, you can visit the [official Capsule website](https://projectcapsule.dev/).
@@ -26,7 +26,7 @@ For more information about the project, you can visit the [official Capsule webs
 
 As a `Tenant Owner`, you do not have the permissions to list the `Tenant` resource directly. The name of your Tenant is provided to you by the Cloud Temple teams during service delivery.
 
-If you have forgotten your Tenant name, you can retrieve it by inspecting the labels of the Namespaces you have access to. The following command lists all namespaces that are attached to a Capsule Tenant and displays their labels:
+If you have forgotten your Tenant name, you can retrieve it by inspecting the labels of the Namespaces you have access to. The following command lists all namespaces that are associated with a Capsule Tenant and displays their labels:
 
 ```bash
 kubectl get ns -l capsule.clastix.io/tenant --show-labels
@@ -74,8 +74,12 @@ One of the greatest advantages of Capsule is that all security policies, resourc
 
 This ensures your projects adhere to consumption limits (CPU, memory, storage) and security rules (such as default network policies or security constraints defined by **Kyverno**) set for your environment, without needing to reconfigure them for each Namespace.
 
+:::info
+Specific quotas have been set on your Capsule Tenant to limit the use of persistent storage (Ceph-Block and Ceph-FileSystem) to the total available space within the cluster. If you need to modify these quotas for a specific project, please submit a request to Cloud Temple support.
+:::
+
 ## Schlussfolgerung
 
-Mit Capsule verfügen Sie über vollständige Autonomie zur Verwaltung der Namespaces Ihrer Teams, gleichzeitig profitieren Sie von einem sicheren und vorab konfigurierten Rahmen, der von den Cluster-Administratoren bereitgestellt wird. Sie können Namespaces beliebig erstellen, ändern und löschen, wobei die erforderlichen Sicherheitsmaßnahmen automatisch angewendet werden.
+Mit Capsule verfügen Sie über vollständige Autonomie zur Verwaltung der Namespaces Ihrer Teams, während Sie gleichzeitig einen sicheren und vorab konfigurierten Rahmen durch die Cluster-Administratoren nutzen. Sie können Namespaces beliebig erstellen, ändern und löschen, wobei die erforderlichen Sicherheitsmaßnahmen automatisch angewendet werden.
 
 Wenn Sie einen neuen Tenant erstellen müssen, um einen weiteren Satz von Projekten oder Teams zu isolieren, können Sie dies beim Cloud Temple-Support beantragen.

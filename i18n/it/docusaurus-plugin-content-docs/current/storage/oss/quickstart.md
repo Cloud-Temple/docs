@@ -100,18 +100,18 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
 ## Esplorare un bucket S3
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
-    Quando fai clic sul nome di un bucket, accedi per primo alla scheda '__File__' per visualizzare il suo contenuto:
+    Quando fai clic sul nome di un bucket, hai accesso per primo alla scheda '__File__' per visualizzarne il contenuto:
     <img src={S3Files} />
     Nella scheda '__Impostazioni__' puoi visualizzare i dettagli delle informazioni del tuo bucket S3:
     <img src={S3Params} />
 
-    **Nota importante**: il concetto di '__Protezione dalla cancellazione__' si riferisce alla durata di protezione dei dati, e non a una cancellazione programmata. I dati rimangono accessibili per tutta la durata configurata. Per attivare la cancellazione automatica dei dati al termine del periodo di conservazione, è necessario definire una politica di ciclo di vita (lifecycle).
+    **Nota importante**: il concetto di '__Protezione dalla cancellazione__' si riferisce alla durata di protezione dei dati, e non a una cancellazione programmata. I dati rimangono accessibili per l'intera durata configurata. Per attivare la cancellazione automatica dei dati al termine del periodo di conservazione, è necessario definire una politica di ciclo di vita (lifecycle).
 
     **Esempio di politica di ciclo di vita** (`lifecycle.json`):
 
     **Prerequisiti**:
 
-    - è necessario utilizzare il conto di archiviazione '__chiave di accesso globale__', che deve disporre dei permessi '__s3:PutLifecycleConfiguration__' e '__s3:GetLifecycleConfiguration__' sul bucket.
+    - deve essere utilizzato il conto di archiviazione '__chiave di accesso globale__', poiché deve disporre dei permessi '__s3:PutLifecycleConfiguration__' e '__s3:GetLifecycleConfiguration__' sul bucket.
 
     ```json
     {
@@ -205,7 +205,7 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
 
   <TabItem value="AWS CLI" label="AWS CLI">
     ```bash
-    ❯ aws s3 rm s3://demo-app/version.txt --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
+    ❯ aws s3 rm s3://demo-app/version.txt --endpoint-url https://VOTRO_NAMESPACE.s3.fr1.cloud-temple.com
     eliminato: s3://demo-app/version.txt
     ```
   </TabItem>
@@ -282,7 +282,7 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     L'associazione del conto ai bucket e la configurazione delle restrizioni di accesso vengono eseguite nell'interfaccia '__Politiche__' del bucket.
     <img src={S3AccountAssign} />
-    Questa interfaccia consente di concedere l'accesso al conto di archiviazione al bucket in base a quattro ruoli predefiniti (Manutentore, Scrittore e Lettore, Scrittore, Lettore).
+    Questa interfaccia consente di concedere l'accesso al conto di archiviazione al bucket in base a quattro ruoli predefiniti (read_only, read_write, write_only, maintainer).
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
     La gestione avanzata delle politiche di accesso tramite il client AWS (`put-bucket-policy`) è un'operazione complessa. Per la maggior parte dei casi d'uso, raccomandiamo di utilizzare la console Cloud Temple per una configurazione semplificata e sicura.

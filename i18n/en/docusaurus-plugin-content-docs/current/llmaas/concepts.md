@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Overview
 
-The **LLMaaS** (Large Language Models as a Service) offering from Cloud Temple provides secure and sovereign access to the most advanced artificial intelligence models, with the **SecNumCloud certification** from ANSSI.
+The **LLMaaS** (Large Language Models as a Service) service from Cloud Temple provides secure and sovereign access to the most advanced artificial intelligence models, with the **SecNumCloud certification** from ANSSI.
 
 ## 🏗️ Technical Architecture
 
@@ -21,7 +21,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 #### 1. **API Gateway LLMaaS**
 - **OpenAI Compatible**: Seamless integration with existing ecosystem
-- **Rate Limiting**: Quota management per billing tier
+- **Rate Limiting**: Quota management by billing tier
 - **Load Balancing**: Intelligent distribution across 12 GPU machines
 - **Monitoring**: Real-time metrics and alerting
 
@@ -34,7 +34,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 ### Model Catalog
 
-*Complete catalog: [Model List](./models)*
+*Complete catalog: [List of models](./models)*
 
 ### Token Management
 
@@ -55,8 +55,8 @@ Total cost = (Input tokens × 0.9€/M) + (Output tokens × 4€/M) + (Reasoning
 
 ### Tokenization
 
-# Token Estimation Example
 ```python
+# Example token estimation
 def estimate_tokens(text: str) -> int:
     """Approximate estimation: 1 token ≈ 4 characters"""
     return len(text) // 4
@@ -115,7 +115,7 @@ It is possible to disable this security analysis for very specific use cases, al
     - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
     - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
     - **Repeated Sequences**: Excessive repetition of words or phrases such as "forget forget forget", "oublie oublie oublie".
-    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing scripts to obfuscate commands (e.g., "s\u0443stème").
+    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obfuscate commands (e.g., "s\u0443stème").
 
 #### 3. Behavioral Analysis (`check_behavior`)
 - The load balancer maintains a history of recent prompts.
@@ -141,7 +141,6 @@ Access via **Cloud Temple Console**:
 The LLMaaS service is **compatible** with the OpenAI API:
 
 ```python
-
 # Transparent migration
 from openai import OpenAI
 
@@ -159,7 +158,7 @@ response = client_ct.chat.completions.create(
     model="granite3.3:8b",  # Cloud Temple model
     messages=[{"role": "user", "content": "Hello"}]
 )
-```
+
 ### Supported Ecosystem
 
 #### **AI Frameworks**
@@ -226,7 +225,7 @@ This planning is provided for informational purposes only and is **reviewed at t
 | granite3-guardian:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
 | granite3-guardian:8b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
 | granite3.2-vision:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite3.3:8b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite4-small-h:32b   | IBM                       | Production | 03/10/2025 | 30/09/2026 |
 | granite4-tiny-h:7b     | IBM                       | Production | 03/10/2025 | 30/09/2026 |
@@ -254,28 +253,28 @@ This planning is provided for informational purposes only and is **reviewed at t
 | qwq:32b                | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
 | qwen3-next:80b         | Qwen Team                 | Production | 04/11/2025 | 30/03/2026 |
 
-### Depreciated Models
+### Deprecated Models
 
 The world of LLMs is evolving rapidly. To ensure our clients have access to the most advanced technologies, we regularly deprecate models that no longer meet current standards or are no longer in use. The models listed below are no longer available on the public platform. However, they can be reactivated for specific projects upon request.
 
-| Model                    | Provider              | Status   | Depreciation Date |
-| :----------------------- | :-------------------- | :------- | :---------------- |
-| cogito:14b               | Deep Cogito           | Deprecated | 17/10/2025        |
-| deepseek-r1:671b         | DeepSeek AI           | Deprecated | 17/10/2025        |
-| deepseek-r1:70b          | DeepSeek AI           | Deprecated | 17/10/2025        |
-| foundation-sec:8b        | Foundation AI — Cisco | Deprecated | 17/10/2025        |
-| granite3.1-moe:3b        | IBM                   | Deprecated | 17/10/2025        |
-| llama3.1:8b              | Meta                  | Deprecated | 17/10/2025        |
-| phi4-reasoning:14b       | Microsoft             | Deprecated | 17/10/2025        |
-| lucie-instruct:7b        | OpenLLM-France        | Deprecated | 17/10/2025        |
-| qwen2.5:0.5b             | Qwen Team             | Deprecated | 17/10/2025        |
-| qwen2.5:1.5b             | Qwen Team             | Deprecated | 17/10/2025        |
-| qwen2.5:14b              | Qwen Team             | Deprecated | 17/10/2025        |
-| qwen2.5:32b              | Qwen Team             | Deprecated | 17/10/2025        |
-| qwen2.5:3b               | Qwen Team             | Deprecated | 17/10/2025        |
-| qwen3:235b               |                       | Deprecated | 22/11/2025        |
-| qwen3-2507-think:30b-a3b |                       | Deprecated | 14/11/2025        |
-| gemma3:12b               |                       | Deprecated | 21/11/2025        |
+| Model                    | Provider              | Status   | Deprecation Date     |
+| :----------------------- | :-------------------- | :------- | :------------------- |
+| cogito:14b               | Deep Cogito           | Deprecated | 17/10/2025           |
+| deepseek-r1:671b         | DeepSeek AI           | Deprecated | 17/10/2025           |
+| deepseek-r1:70b          | DeepSeek AI           | Deprecated | 17/10/2025           |
+| foundation-sec:8b        | Foundation AI — Cisco | Deprecated | 17/10/2025           |
+| granite3.1-moe:3b        | IBM                   | Deprecated | 17/10/2025           |
+| llama3.1:8b              | Meta                  | Deprecated | 17/10/2025           |
+| phi4-reasoning:14b       | Microsoft             | Deprecated | 17/10/2025           |
+| lucie-instruct:7b        | OpenLLM-France        | Deprecated | 17/10/2025           |
+| qwen2.5:0.5b             | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:1.5b             | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:14b              | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:32b              | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen2.5:3b               | Qwen Team             | Deprecated | 17/10/2025           |
+| qwen3:235b               |                       | Deprecated | 22/11/2025           |
+| qwen3-2507-think:30b-a3b |                       | Deprecated | 14/11/2025           |
+| gemma3:12b               |                       | Deprecated | 21/11/2025           |
 
 ## 💡 Best Practices
 
@@ -285,7 +284,7 @@ To get the most out of the LLMaaS API, it is essential to adopt strategies for o
 
 Mastering costs relies on intelligent use of tokens and models.
 
-1.  **Model Selection**: Don't use an overly powerful model for simple tasks. Larger models are more capable, but they are also slower and consume significantly more energy, directly impacting cost. Match the model size to the complexity of your task for optimal balance.
+1.  **Model Selection**: Avoid using an overly powerful model for simple tasks. Larger models are more capable, but they are also slower and consume significantly more energy, directly impacting cost. Match the model size to the complexity of your task for optimal balance.
 
     For example, processing one million tokens:
     - **`Gemma 3 1B`** consumes **0.15 kWh**.
@@ -345,7 +344,7 @@ The responsiveness of your application depends on how you manage API calls.
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming for User Experience (UX)**: For user interfaces (chatbots, assistants), streaming is essential. It enables displaying the model's response word by word, creating an impression of immediate responsiveness instead of waiting for the full response.
+2.  **Streaming for User Experience (UX)**: For user interfaces (chatbots, assistants), streaming is essential. It allows the model's response to be displayed word by word in real time, creating the impression of immediate responsiveness instead of waiting for the full response.
     ```python
     # Display the response in real time in a user interface
     response_stream = client.chat.completions.create(

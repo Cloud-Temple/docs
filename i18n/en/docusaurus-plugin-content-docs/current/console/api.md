@@ -13,9 +13,9 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## API Keys
 
-The __API key__ allows you to authenticate when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the Console APIs without using a graphical interface. Each of these tokens is linked to a specific tenant and the user who created it.
+The __API key__ allows you to authenticate when making requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the Console API without using a graphical interface. Each of these tokens is linked to a specific tenant and the user who created it.
 
-Creating this token is done from your account. You can generate multiple keys and configure permissions for each one, within the limits of your access rights.
+Creating this token is done from your account. You can generate multiple keys and configure permissions for each one, within the limits of your rights.
 
 To create an API key, simply __click on your profile__:
 
@@ -53,7 +53,7 @@ When you use your **Personal Access Token (PAT)** to authenticate with the API, 
 -   **Lifespan**: Each JWT token is valid for **5 minutes**.
 -   **Verification**: You can check the issuance date (`iat`) and expiration date (`exp`) of your token by decoding it. Online tools such as [jwt.io](https://jwt.io) make this easy.
 
-Once the token expires, you must re-authenticate using your PAT to obtain a new one. Therefore, it is recommended to manage this lifecycle in your scripts and applications by implementing automatic token renewal.
+Once the token expires, you will need to re-authenticate using your PAT to obtain a new one. Therefore, it is recommended to manage this lifecycle in your scripts and applications by implementing automatic token renewal.
 :::
 
 ## API Portal Access
@@ -99,14 +99,14 @@ The activity content includes all essential information to identify the operatio
 }
 ```
 
-The __state__ object can take different forms depending on the activity status, as follows:
+The __state__ object can take different forms depending on the activity status:
 
 __waiting__, status before the operation has started:
 
 ```
     waiting: {}
 ```
-__running__, status while the operation is in progress:
+__running__, status when the operation is in progress:
 
 ```
     running: {
@@ -124,7 +124,7 @@ __failed__, status if the operation has failed:
     reason: string;
     };
 ```
-__completed__, status if the operation has finished successfully:
+__completed__, status if the operation has finished:
 
 ```
     completed: {
@@ -134,20 +134,20 @@ __completed__, status if the operation has finished successfully:
     };
 ```
 
-__Note: The resource's UUIDv4 identifier is available in the activity result once the activity has completed.__
+__Note: The resource's UUIDv4 identifier is available in the activity result once the activity is completed.__
 
 ## API Limits
 
-### Why limits?
+### Why Limits?
 
-The Cloud Temple console sets __caps on the number of requests__ an individual user can send to the API within a given time period. Implementing these rate limits is a common practice in API management, adopted for several essential reasons:
+The Cloud Temple console sets __caps on the volume of requests__ an individual user can send to the API within a given time period. Implementing these rate limits is a common practice in API management, adopted for several essential reasons:
 
 - __Prevention of abuse__: These limits help safeguard the API's integrity by preventing abusive or poorly designed usage that could compromise its operation.
 - __Guarantee of service quality__: By regulating API access, we ensure a fair distribution of resources, allowing all users to enjoy a stable and high-performing experience.
 
-Consider a poorly designed or inefficient script making repeated API calls—this could overwhelm system resources and degrade performance. By setting request thresholds, we prevent such scenarios and ensure a __smooth, uninterrupted service__ for our entire user base.
+Consider a poorly designed or inefficient script making repeated calls to the API—this could overwhelm system resources and degrade performance. By establishing request thresholds, we prevent such scenarios and ensure __a smooth, uninterrupted service__ for our entire user base.
 
-### What are the rate limits for the Cloud Temple console API?
+### What are the rate limits for the Cloud Temple Console API?
 
 We apply quantitative restrictions on user interactions with the console for each product.
 
@@ -155,7 +155,7 @@ Limits are defined in __requests per second (r/s) and per source IP__. Once the 
 
 Here are the defined limits:
 
-| Product | Limit Threshold |
+| Product | Threshold |
 |---|---|
 | Cloud Temple Console | 25 r/s |
 | Identity (IAM) | 25 r/s |
@@ -207,16 +207,16 @@ There are several ways to improve the efficiency of your automation, including u
 
 This approach offers several advantages:
 
-- __Exponential backoff__ ensures that initial attempts are made quickly, while longer delays are scheduled in case of repeated failures.
+- __Exponential backoff__ ensures that initial attempts are made quickly, while longer delays are applied in case of repeated failures.
 - Adding a __random variation__ to the pause helps prevent all retry attempts from occurring simultaneously.
 
-It is important to note that __failed requests do not count toward your rate limit__. However, continuously retrying a request may not be a sustainable long-term solution, as this behavior could change in the future. Therefore, we recommend against relying solely on this mechanism.
+It is important to note that __failed requests do not count toward your rate limit__. However, continuously retrying a request may not be a sustainable long-term solution, as this behavior could change in the future. Therefore, we recommend not relying solely on this mechanism.
 
-Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are excellent starting points for implementing retry strategies with backoff.
+Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are excellent starting points for implementing retry strategies.
 
 ## API Endpoint Lifecycle
 
-Information about API endpoint evolution is available in the release notes:
+Information about the evolution of API endpoints is available in the release notes:
 
 <img src={ShivaApi004} />
 

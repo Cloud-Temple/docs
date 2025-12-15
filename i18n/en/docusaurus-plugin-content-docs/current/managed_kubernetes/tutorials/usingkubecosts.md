@@ -1,6 +1,14 @@
 ---
 title: Track Costs with Kubecost
 ---
+:::info[FinOps Tool Evolution]
+The **KubeCost** product, while still functional on your cluster, is gradually being replaced by **OpenCost**, its open-source successor.
+
+**OpenCost** is now the recommended and actively maintained solution by the Cloud Native Computing Foundation (CNCF) community.
+
+We encourage you to start using OpenCost to take advantage of the latest features and improved integration.
+:::
+
 import kubecostsallocations from './images/kubecostsallocations.png'
 
 ## Objectives
@@ -24,21 +32,21 @@ The Kubecost interface is exposed on a secure URL specific to your cluster. To a
 `https://kubecost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
 :::info
-Access to this URL is restricted to the IP addresses you have declared with Cloud Temple support. If you are unable to access it, please contact support to verify your firewall rules.
+Access to this URL is restricted to the IP addresses you have declared to Cloud Temple support. If you are unable to access it, please contact support to verify your firewall rules.
 :::
 
 ## Explore Cost Allocation
 
 The main page in Kubecost is the **Allocations** dashboard. This is where you can visualize your resource consumption.
 
-By default, costs are aggregated by **Namespace**. Use the "Aggregate by" dropdown menu to switch views and analyze costs by:
+By default, costs are aggregated by **Namespace**. Use the "Aggregate by" dropdown menu to change the view and analyze costs by:
 - `Deployment`, `StatefulSet`, etc.
 - `Controller`
 - `Label` (very useful if you use labels to identify your teams or projects. For example, you could use the capsule tenant label.)
 
-You can also adjust the analysis period (default: "Last 7 days") to view costs over a different timeframe.
+You can also adjust the analysis period (default: "Last 7 days") to visualize costs over a different timeframe.
 
-<img src={kubecostsallocations} />
+<img src={kubecostsallocations} alt="Kubecost UI"/>
 
 ## Analyze Infrastructure Costs (Assets)
 
