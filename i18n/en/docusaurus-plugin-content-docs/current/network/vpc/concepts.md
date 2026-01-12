@@ -1,0 +1,49 @@
+---
+title: Concepts
+---
+
+# VPC Concepts
+
+## Definition and Positioning
+
+The **VPC (Virtual Private Cloud)** is a managed network service allowing the creation of isolated, secure, and controllable private networks via the Cloud Temple console. It is designed to offer a cloud-native experience, automating network configuration and security.
+
+As of January 2026, VPC private networks allow interconnection between **IaaS Open Source** and **IaaS VMware** services. Interconnection with **Bare Metal** servers will be available in a future update.
+
+## Architecture
+
+The VPC relies on redundant and highly available architecture, leveraging Cloud Temple's low-latency inter-AZ backbone.
+
+### Key Components
+
+*   **VPC Router**: At the heart of each VPC, it manages dynamic routing between different Private Networks (east-west traffic).
+*   **Private Networks (VLANs)**: Layer 2 network segments connecting your resources (VMs, servers). They natively extend across multiple Availability Zones (AZ) without IP reconfiguration.
+*   **External Gateway**: Optional entry and exit point for Internet traffic (north-south). It integrates NAT and flow management capabilities.
+
+### Isolation and Security
+
+The VPC guarantees strict isolation:
+*   Each VPC is an independent network entity.
+*   Deployment is done on dedicated resources (for IaaS Open Source clients), ensuring no network resources are shared.
+*   The service is currently undergoing **SecNumCloud** qualification.
+
+## Main Features
+
+| Feature | Description | Availability |
+|---------|-------------|--------------|
+| **Regional Private Networks** | Multi-AZ deployment and transparent L2 propagation. | H2 2025 |
+| **Native Routing** | Automatic communication between private networks of the same VPC. | H2 2025 |
+| **IPAM & DHCP** | Automatic IP pool management and dynamic assignment. | H2 2025 |
+| **Internet Access** | Configurable via Gateway (NAT, DNAT, Controlled Egress). | H2 2025 |
+| **Floating IPs** | Flexible exposure of services on the Internet. | H2 2025 |
+| **Micro-segmentation** | Network policy groups for advanced security. | H1 2026 |
+| **Observability** | Network performance logs and metrics. | H1 2026 |
+| **DNS Service** | Internal and external name resolution. | H2 2026 |
+| **VPN & Cloud Connect** | Secure connectivity to on-premise and public clouds. | H2 2026 |
+
+## Use Cases
+
+*   **Critical application hosting** requiring strong isolation.
+*   **Multi-project segmentation** (Prod, Pre-prod, Dev).
+*   **Test environments** ephemeral and isolated.
+*   **Sovereign network foundations** for sensitive data.
