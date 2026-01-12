@@ -51,6 +51,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Documentation
+        run: yarn build
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -68,7 +79,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/production/Dockerfile
+          file: ./docker/production/Dockerfile.prebuilt
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: cloudtempleinfra/docs:${{ env.BRANCH_NAME }}
@@ -80,6 +91,17 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Documentation
+        run: yarn build
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -94,7 +116,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/production/Dockerfile
+          file: ./docker/production/Dockerfile.prebuilt
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: cloudtempleinfra/docs:main
@@ -106,6 +128,17 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Documentation
+        run: yarn build
 
       - name: Extract Tag Name
         id: extract_tag
@@ -124,7 +157,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/production/Dockerfile
+          file: ./docker/production/Dockerfile.prebuilt
           push: true
           platforms: linux/amd64,linux/arm64/v8
           tags: |
