@@ -263,6 +263,16 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
+          label: 'VPC',
+          items: [
+            'network/vpc/vpc',
+            'network/vpc/concepts',
+            'network/vpc/quickstart',
+            'network/vpc/tutorials',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Privates Network',
           items: [
             'network/private_network/private_network',
