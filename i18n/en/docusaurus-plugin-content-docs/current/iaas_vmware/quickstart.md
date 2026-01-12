@@ -52,7 +52,7 @@ import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ### Virtual Machine Management
 
-The interface for managing your virtual machines is available in the Shiva console under the __'IaaS'__ menu located on the green bar on the left side of the screen.
+The interface for managing your virtual machines is available in the Console under the __'IaaS'__ menu located on the green bar on the left side of the screen.
 
 ### List of Virtual Machines
 
@@ -107,11 +107,11 @@ A quick action bar enables you to perform the following actions:
 - Mount an ISO;
 - Unmount an ISO;
 - Clone the virtual machine;
-- Migrate the virtual machine (vMotion);
+- Move the virtual machine (vMotion);
 - Rename the virtual machine;
 - Delete the virtual machine.
 
-A quick view provides visualization of the virtual machine’s __storage__, __CPU__, and __RAM__.
+A quick view provides a visualization of the virtual machine’s __storage__, __CPU__, and __RAM__.
 
 <img src={shivaVmVueRapide} />
 
@@ -125,7 +125,7 @@ From this view, you can perform the following actions:
 - Update the hardware version (the virtual machine must be powered off),
 - Modify RAM or CPU settings.
 
-An __'Advanced'__ tab allows you to view more specific information, such as "VMware Tools" details, hardware version, manager, and others.
+An __'Advanced'__ tab allows you to view more specific information, such as "VMware Tools" details, hardware version, manager, and so on.
 
 <img src={shivaVmInfosAvancees} />
 
@@ -192,7 +192,7 @@ The input entered in the console depends on the keyboard language of your web br
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
-- If certain characters do not appear during manual input, you may try copying them from the clipboard.
+- If certain characters do not appear during manual input, you may try using the clipboard.
 
 #### Clipboard Functionality
 This feature allows you to send an entire string of characters to your virtual machine. It is important to note that the "enforce keyboard" option affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is required, make sure to enable it before using the clipboard.  
@@ -209,7 +209,7 @@ To date, the catalog includes dozens of `Templates` and images ready to be deplo
 
 <img src={shivaCatalogs} />
 
-To publish an ISO/OVF file, navigate to the __'Catalogue'__ view and click the __'Publish Files'__ button at the top of the page:
+To publish an ISO/OVF, navigate to the __'Catalogue'__ view and click the __'Publish Files'__ button at the top of the page:
 
 <img src={shivaCatalogs_002} />
 
@@ -223,7 +223,7 @@ Select __'Export as vm-template'__:
 
 Then fill in the required information. Once completed, you’ll be able to deploy a new VM from the template using the __'New Virtual Machine'__ button or from the __'Catalogues'__ page. It is also possible to export the VM in OVF format.
 
-__Pro tip__: It is possible to convert between OVA and OVF files.  
+__Pro tip__: It is possible to convert between OVA and OVF formats.  
 The most common method uses VMware Converter, but a simple alternative exists using the ```tar``` command:
 
 Extracting an OVA file:
@@ -232,7 +232,7 @@ Extracting an OVA file:
 tar -xvf vmName.ova
 ```
 
-Creating an OVA file from an OVF file:
+Creating an OVA file from an OVF:
 
 ```
 tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
@@ -248,11 +248,11 @@ You can now directly modify __Extra Config__ properties in the advanced options 
 
 You can add a property from a predefined list of keys. Additionally, you can modify the value of a key you have added yourself. Pre-existing key=value pairs cannot be modified.
 
-Please contact support for any request to add new keys.
+Please contact support for any requests to add new keys.
 
 <img src={shivaVmAdv_002} />
 
-__Note__: *To enable GPU usage by the virtual machine, it is mandatory to enable the key 'pciPassthru.use64bitMMIO' and allocate the required MMIO (Memory-mapped I/O) space via 'pciPassthru.64bitMMIOSizeGB'. It is strongly recommended to refer to the [official Nvidia documentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Note__: *To enable GPU usage by the virtual machine, it is mandatory to enable the key 'pciPassthru.use64bitMMIO' and allocate the required MMIO (Memory-mapped I/O) space via 'pciPassthru.64bitMMIOSizeGB'. It is strongly recommended to refer to the [official NVIDIA documentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
 ### Advanced Virtual Machine Configuration: vAPP
 
@@ -268,7 +268,7 @@ __Note__: *The virtual machine must be stopped to modify its vAPP properties.*
 
 ### Management of __'hypervisors'__ and __'Cpool'__ (hypervisor clusters)
 
-Your hypervisor management is performed in the __'Compute'__ submenu under __'IaaS'__, located in the green bar on the left side of your screen.
+Your hypervisor management is performed in the __'Compute'__ submenu under the __'IaaS'__ menu, located in the green bar on the left side of your screen.
 
 <img src={shivaCpool_001} />
 
@@ -279,7 +279,7 @@ In this submenu, you have visibility on:
 
 As of January 2024, the available hypervisor offering on the Cloud Temple-qualified infrastructure is based on VMware. The backup software used is IBM Spectrum Protect Plus.
 
-### VMware Cluster Management
+### Managing VMware Clusters
 
 To access VMware cluster management, click on the __'Compute'__ submenu under the __'IaaS'__ menu:
 
@@ -300,28 +300,28 @@ When you click on a cluster, you see a summary of its composition:
 - Total computing power expressed in GHz,
 - Total available memory and usage ratio,
 - Total storage space (all types combined) and percentage used,
-- Automation mechanisms for handling compute node outages (__'vSphere DRS'_),
+- Automation mechanisms for handling compute host failures (__'vSphere DRS'_),
 - Number of virtual machines,
 - Number of hypervisors.
 
 <!-- TODO: Add missing page. -->
-<!-- When viewing a cluster's page, several tabs are available. The __'Rules'__ tab allows you to define [affinity/anti-affinity rules](compute.md#management-of-your-virtual-machine-affinity) -->
+<!-- When viewing a cluster's page, several tabs are available. The __'Rules'_ tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines) -->
 
 <img src={shivaCpool_004} />
 
-In the __'Hosts'__ tab, you see the following information for each hypervisor:
+In the __'Hosts'_ tab, you see the following information for each hypervisor:
 
 - CPU and Memory usage,
 - Number of assigned virtual machines,
 - Availability of a new OS build for the hypervisor, if applicable,
-- Hypervisor status (production, maintenance, powered off, etc.),
+- Hypervisor status (connected in production, in maintenance, powered off, etc.),
 - Action menu.
 
 <img src={shivaCpool_005} />
 
-Several actions are available from the __'Hosts'__ tab:
+Several actions are available from the __'Hosts'_ tab:
 
-- Request new hypervisors using the __'Add Host'__ button:
+- Request new hypervisors using the __'Add Host'_ button:
 
 <img src={shivaCpool_009} />
 
@@ -345,26 +345,26 @@ Several actions are available from the __'Hosts'__ tab:
 - Cloud Temple provides hypervisor builds at regular intervals.
 It is important to keep your hypervisors regularly updated, especially to apply security patches.
 However, __we do not automatically update your hypervisors__. Cloud Temple does not have visibility into your workload availability commitments.
-Therefore, we leave the change management process to you, allowing you to apply new builds at the most appropriate time.
+Therefore, we leave it to you to manage your change process and apply new builds at the most appropriate time.
 - The update process is fully automated. You must have at least two hypervisors in your cluster to ensure uninterrupted service during updates.
 
 <!-- TODO: Add missing page. -->
 <!-- - *You must have the appropriate [permissions](../console/permissions.md) to perform these actions.* -->
 
-You can also view all affinity/anti-affinity rules for your hypervisor cluster in the __'Rules'__ section.
+You can also view all affinity/anti-affinity rules for your hypervisor cluster in the __'Rules'_ section.
 
-### VM Affinity Management
+### Managing VM Affinity
 
 __Affinity and anti-affinity rules__ allow you to control the placement of virtual machines across your hypervisors.  
 They can be used to manage resource utilization within your __'Cpool'__.  
 For example, they can help balance workloads across servers or isolate resource-intensive workloads.  
-In a __'Cpool'__ VMware environment, these rules are often used to manage virtual machine behavior with vMotion.  
-vMotion enables the migration of virtual machines from one host to another without service interruption.
+In a VMware __'Cpool'__, these rules are often used to manage the behavior of virtual machines during vMotion.  
+vMotion enables moving virtual machines from one host to another without service interruption.
 
-You can configure the following rules through rule management:
+You can configure rules using the following options:
 
 - __Affinity Rules__: These rules ensure that certain virtual machines run on the same physical host.  
-  They are used to improve performance by keeping virtual machines that frequently communicate together on the same server, thus reducing network latency. Affinity rules are particularly useful in scenarios where performance is critical, such as in database systems or applications requiring fast inter-server communication.
+  They are used to improve performance by keeping virtual machines that frequently communicate together on the same server, thus reducing network latency. Affinity rules are particularly useful in scenarios where performance is critical, such as databases or applications requiring fast inter-server communication.
 
 - __Anti-Affinity Rules__: Conversely, these rules ensure that certain virtual machines do not run on the same physical host.  
   They are essential for availability and resilience—for example, to prevent all critical machines from being affected in the event of a single server failure. Anti-affinity rules are crucial for high-availability applications, such as in production environments where fault tolerance is a priority.  
@@ -400,7 +400,7 @@ SecNumCloud requires that a backup policy be assigned to a virtual machine befor
 
 <img src={shivaVmPolitiquesBackupAssignMandatory} />
 
-Click on the **Backup Policies** tab in your virtual machine's menu. You can view the backup policy or policies assigned to the VM here.
+Click on the **Backup Policies** tab in your virtual machine's menu. You can view the backup policy or policies assigned to this VM here.
 
 To assign a new backup policy to the virtual machine, click the **Add Policy** button and select the desired backup policy.
 
@@ -410,7 +410,7 @@ To assign a new backup policy to the virtual machine, click the **Add Policy** b
 
 It is also possible to assign an SLA directly to a specific virtual disk of a machine. In this case, the virtual machine does not inherit this SLA applied individually to the disk. However, it is not possible to manually trigger backup execution at the disk level, as this functionality is not supported in Spectrum Protect Plus.
 
-On the other hand, it is possible to exclude certain disks from one or more VM backup policies (SLAs), allowing you to unassign one or more SLAs on a per-disk basis. This approach provides the flexibility to manually initiate backup execution for a specific SLA without affecting all disks of the virtual machine, enabling more granular backup management.
+On the other hand, it is possible to exclude specific disks from one or more backup policies (SLAs) of the VM, thereby allowing the removal of one or more SLAs on a per-disk basis. This approach provides the flexibility to manually initiate backup execution for a specific SLA without affecting all disks of the virtual machine, enabling more granular backup management.
 
 Click on the action bar of the disk to which you want to assign a backup policy. Then, click on __'Policies'__ and select the desired backup policy.
 
@@ -444,7 +444,7 @@ When the last resource is disassociated from an SLA policy, the system automatic
 
 First, verify that the affected jobs are indeed in the "Held" state. Once confirmed, these jobs can be deleted. Only after removing these dependent jobs can the SLA policy be permanently erased from the system.
 
-A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not been deleted. In this scenario, the job identifiers will be retained. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
+A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not yet been deleted. In this scenario, the job identifiers will be preserved. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
 
 > **Note:** For any clarification regarding this situation, please contact Cloud Temple support.
 
@@ -458,21 +458,21 @@ Similarly, it is not possible to start a virtual machine associated with a suspe
 
 ### Restore a Backup
 
-The __'Backups'__ tab in your virtual machine menu allows you to access the list of backups for that machine.  
+The __'Backups'__ tab in your virtual machines menu allows you to access the list of backups for that machine.  
 To restore a backup, click the __'Restore'__ button on the row corresponding to the backup you wish to restore.
 
 <img src={shivaVmBackupRestaurer} />
 
-1. __Production Mode__: Production mode enables disaster recovery at the local site using primary storage or a remote disaster recovery site, replacing the original machine images with recovery images. All configurations are transferred during recovery, including names and identifiers, and all data copy jobs associated with the virtual machine continue to run. During a production restore, you can choose to replace the virtual machine's storage with a virtual disk from a previous virtual machine backup.
+1. __Production Mode__: Production mode enables disaster recovery at the local site using either the primary storage or a remote disaster recovery site, replacing the original machine images with recovery images. All configurations are transferred during recovery, including names and identifiers, and all data copy jobs associated with the virtual machine continue to run. During a production restore, you can choose to replace the virtual machine's storage with a virtual disk from a previous virtual machine backup.
 
 2. __Test Mode__: Test mode creates temporary virtual machines for development, testing, snapshot verification, and disaster recovery validation based on a repeatable schedule, without impacting production environments. Test machines run as long as needed for testing and verification, then are automatically cleaned up. Using isolated networking, you can establish a secure environment to test your work without interfering with production virtual machines. Virtual machines created in test mode have unique names and identifiers to prevent conflicts in your production environment.
 
 3. __Clone Mode__: Clone mode creates permanent or long-running copies of virtual machines for use cases requiring persistent duplicates, such as data exploration or duplicating a test environment on an isolated network. Virtual machines created in clone mode have unique names and identifiers to avoid conflicts in your production environment. In clone mode, be mindful of resource consumption, as this mode creates permanent or long-term virtual machines.
 
-__Restore is set to 'TEST' mode by default to protect production__, and you can specify the name of the restored VM:
+__Restore is set to 'TEST' mode by default to protect production__, and you can choose the name of the restored VM:
 
 <img src={shivaVmBackupTest} />
 
-Note that if testing is successful, you can promote a test virtual machine to production mode:
+Note that if testing is successful, you can promote a virtual machine from test mode to production mode:
 
 <img src={shivaVmBackup_2prod} />

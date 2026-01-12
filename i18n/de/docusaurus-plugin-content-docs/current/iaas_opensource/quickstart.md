@@ -22,7 +22,7 @@ import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.
 
 ### Virtual Machine Management
 
-The interface for managing your virtual machines is available in the Shiva console under the __'OpenIaaS'__ menu located on the green bar on the left side of the screen.
+The interface for managing your virtual machines is available in the Console under the __'OpenIaaS'__ menu located on the green bar on the left side of the screen.
 
 ### Liste der virtuellen Maschinen
 
@@ -33,10 +33,10 @@ In der Sektion __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer a
 Für jede virtuelle Maschine stehen Ihnen folgende Informationen zur Verfügung:
 
 - Der Name.
-- Der Status (ausgeschaltet, eingeschaltet).
+- Der Status (aus, an).
 - Die Verfügbarkeitszone (AZ).
 - Das Betriebssystem.
-- Die Anzahl virtueller CPUs (vCPU).
+- Die Anzahl der virtuellen CPU-Kerne (vCPU).
 - Die Menge an virtuellem Arbeitsspeicher (vRAM).
 
 ### Aktionen für virtuelle Maschinen
@@ -50,11 +50,11 @@ Die folgenden Aktionen sind über diese Schnittstelle möglich:
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Wenn Sie auf den grünen Dropdown-Pfeil rechts neben einer virtuellen Maschine klicken, erhalten Sie Zugriff auf alle verfügbaren Informationen zu dieser Maschine.
+Wenn Sie auf den grünen Dropdown-Pfeil rechts neben einer virtuellen Maschine in der Liste klicken, erhalten Sie Zugriff auf alle verfügbaren Informationen zu dieser Maschine.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Ein schneller Bereich ermöglicht die Ausführung folgender Aktionen:
+Ein Schnellleistenband ermöglicht die Durchführung folgender Aktionen:
 
 <img src={openIaasVirtualMachineActions} />
 
@@ -64,7 +64,7 @@ Ein schneller Bereich ermöglicht die Ausführung folgender Aktionen:
 - Konsole öffnen.
 - ISO-Medium einlegen.
 - ISO-Medium auswerfen.
-- Virtuelle Maschine in einen Template umwandeln.
+- Virtuelle Maschine in ein Template konvertieren.
 - Virtuelle Maschine verschieben.
 - Virtuelle Maschine umbenennen.
 - Virtuelle Maschine löschen.
@@ -84,7 +84,7 @@ Zusätzlich können bestimmte Einstellungen geändert werden, wie beispielsweise
 
 - Startreihenfolge
 - Secure Boot
-- Automatisches Starten (nicht möglich, wenn keiner Sicherungsrichtlinie eine VM zugeordnet ist)
+- Automatisches Starten (nicht möglich, wenn keine Sicherungspolitik mit der VM verknüpft ist)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
@@ -94,36 +94,36 @@ The console of a virtual machine is accessible from the list of virtual machines
 
 <img src={openIaasVmConsoleBtn} />
 
-A new tab opens in your browser and displays the console of your machine, based on a VNC client:
+A new tab opens in your browser, displaying the console of your machine, based on a VNC client:
 
 <img src={openIaasVmConsoleOpen} />
 
 In the VNC menu, you can:
 - request the transmission of specific keys,
 - force a keyboard mapping (in case your virtual machine uses a different keyboard layout than your web browser),
-- open a text field that can be transmitted to the machine. This method replaces the previous non-functional clipboard,
+- open a text field that can be sent to the machine. This method replaces the previous non-functional clipboard,
 - switch to full-screen mode,
 - change the window size (scaling).
 
 #### Keyboard Layout Support
 
-Input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.
+The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.
 
 Below is a summary of the possible scenarios:
 
 | Physical Machine Keyboard Language (input) | Virtual Machine Keyboard Language | 'Enforce Keyboard' Option Selected | Result (output)        |
-| ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |
-| French                                     | French                            | No                                 | ✅                     |
+|--------------------------------------------|-----------------------------------|------------------------------------|------------------------|
+| French                                     | French                            | No                                 | ✅                       |
 | French                                     | French                            | Yes                                | Not recommended        |
 | French                                     | English                           | No                                 | English                |
-| French                                     | English                           | Yes                                | ✅                     |
+| French                                     | English                           | Yes                                | ✅                       |
 | English                                    | French                            | No                                 | French                 |
-| English                                    | French                            | Yes                                | ✅                     |
-| English                                    | English                           | No                                 | ✅                     |
+| English                                    | French                            | Yes                                | ✅                       |
+| English                                    | English                           | No                                 | ✅                       |
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
-- If certain characters do not appear during manual input, you may try using the clipboard instead.
+- If certain characters do not appear during manual input, you may try copying them from the clipboard.
 
 #### Clipboard Functionality
 This feature allows you to send an entire string of characters to your virtual machine. It is important to note that the "enforce keyboard" option affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is required, make sure to enable it before using the clipboard.  
@@ -137,7 +137,7 @@ Upon clicking the "Paste" button, the content of your text field is sent to your
 
 ### Access to Replication Management
 
-The replication management interface is available in the Shiva console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
+The replication management interface is available in the Console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
 
 <img src={openIaasReplicationMenu} />
 
@@ -164,7 +164,7 @@ To create a new policy, click the __'Add policy'__ button. A form opens with the
 
 <img src={openIaasReplicationPolicyForm2} />
 
-#### Schritt 3: Validierung
+#### Schritt 3: Überprüfung
 
 Überprüfen Sie die Einstellungen und klicken Sie auf __'Hinzufügen'__, um die Richtlinie zu erstellen.
 
@@ -220,6 +220,6 @@ You can view:
 
 Available actions include:
 
-- Export data in CSV format  
+- Export data to CSV format  
 - View replication details  
 - Manage replicas by policy

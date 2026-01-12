@@ -22,13 +22,13 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 #### 1. **API Gateway LLMaaS**
 - **Compatible con OpenAI** : Integración transparente con el ecosistema existente
 - **Límite de tasa** : Gestión de cuotas por nivel de facturación
-- **Equilibrio de carga** : Distribución inteligente sobre 12 máquinas GPU
+- **Balanceo de carga** : Distribución inteligente sobre 12 máquinas GPU
 - **Monitoreo** : Métricas en tiempo real y alertas
 
 #### 2. **Authentication Service**
 - **Secure API Tokens**: Automatic rotation
 - **Access Control**: Granular permissions per model
-- **Audit Trails**: Full access traceability
+- **Audit Trails**: Full traceability of access
 
 ## 🤖 Modelos y tokens
 
@@ -43,9 +43,9 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 - **Tokens de salida**: Respuesta generada por el modelo
 - **Tokens del sistema**: Metadatos e instrucciones
 
-#### **Cálculo de Costos**
+#### **Cálculo de Costes**
 ```
-Coste total = (Tokens de entrada × 0,9€/M) + (Tokens de salida × 4€/M) + (Tokens de razonamiento de salida × 21€/M)
+Coste total = (Tokens entrada × 0,9€/M) + (Tokens salida × 4€/M) + (Tokens salida Razonamiento × 21€/M)
 ```
 
 #### **Optimización**
@@ -56,10 +56,7 @@ Coste total = (Tokens de entrada × 0,9€/M) + (Tokens de salida × 4€/M) + (
 ### Tokenización
 
 ```python
-```
-
 # Ejemplo de estimación de tokens
-```python
 def estimate_tokens(text: str) -> int:
     """Estimación aproximada: 1 token ≈ 4 caracteres"""
     return len(text) // 4
@@ -93,18 +90,18 @@ The LLMaaS service is hosted on a technical infrastructure that holds the **SecN
 - **Retención** : Conservación según políticas legales
 - **Cumplimiento** : Informes de auditoría disponibles
 
-### Security Controls
+### Controles de Seguridad
 
 import SecurityControls from './images/llmaas_security_002.png';
 
-<img src={SecurityControls} alt="Security Controls LLMaaS" />
+<img src={SecurityControls} alt="Controles de Seguridad LLMaaS" />
 
 ### Seguridad de los Prompts
 
-El análisis de prompts es una función de seguridad **integrada y nativa** en la plataforma LLMaaS. Habilitada por defecto, tiene como objetivo detectar y prevenir intentos de "jailbreak" o inyección de prompts maliciosos antes incluso de que lleguen al modelo. Esta protección se basa en un enfoque multicapa.
+El análisis de prompts es una función de seguridad **integrada y nativa** en la plataforma LLMaaS. Habilitada por defecto, su objetivo es detectar y prevenir intentos de "jailbreak" o inyección de prompts maliciosos antes incluso de que lleguen al modelo. Esta protección se basa en un enfoque multicapa.
 
-:::tip Contactar al soporte para desactivar
-Es posible desactivar este análisis de seguridad para casos de uso muy específicos, aunque no se recomienda. Para cualquier consulta sobre este tema o para solicitar una desactivación, póngase en contacto con el soporte de Cloud Temple.
+:::tip Contactar al soporte para la desactivación
+Es posible desactivar este análisis de seguridad para casos de uso muy específicos, aunque no se recomienda hacerlo. Para cualquier consulta sobre este tema o para solicitar una desactivación, póngase en contacto con el soporte de Cloud Temple.
 :::
 
 #### 1. Análisis estructural (`check_structure`)
@@ -127,9 +124,9 @@ Es posible desactivar este análisis de seguridad para casos de uso muy específ
 
 This multi-layered approach enables the detection of a wide range of prompt attacks, from the simplest to the most sophisticated, by combining static content analysis with dynamic behavioral analysis.
 
-## 📈 Rendimiento y Escalabilidad
+## 📈 Rendimiento y escalabilidad
 
-### Monitoreo en tiempo real
+### Monitoreo en Tiempo Real
 
 Acceso a través de **Console Cloud Temple**:
 - Métricas de uso por modelo
@@ -144,8 +141,6 @@ Acceso a través de **Console Cloud Temple**:
 El servicio LLMaaS es **compatible** con la API de OpenAI:
 
 ```python
-
-
 # Migración transparente
 from openai import OpenAI
 
@@ -231,7 +226,7 @@ Esta planificación se proporciona a título indicativo y se **revisa al inicio 
 | granite3-guardian:2b   | IBM                       | Producción | 13/06/2025 | 31/12/2026 |
 | granite3-guardian:8b   | IBM                       | Producción | 13/06/2025 | 31/12/2026 |
 | granite3.2-vision:2b   | IBM                       | Producción | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b          | IBM                       | Producción | 13/06/2025 | 31/12/2026 |
+| granite3.3:2b          | IBM                       | Producción | 13/06/2025 | 31/12/2025 |
 | granite3.3:8b          | IBM                       | Producción | 13/06/2025 | 31/12/2025 |
 | granite4-small-h:32b   | IBM                       | Producción | 03/10/2025 | 30/09/2026 |
 | granite4-tiny-h:7b     | IBM                       | Producción | 03/10/2025 | 30/09/2026 |
@@ -392,4 +387,3 @@ La seguridad de su aplicación es fundamental, especialmente cuando maneja entra
         # Manejar todos los demás errores (red, etc.)
         logger.error(f"Ha ocurrido un error inesperado: {e}")
         return "Lo sentimos, ha ocurrido un error inesperado."
-    ```

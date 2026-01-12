@@ -230,7 +230,9 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/tutorials/firstdeploy',
             'managed_kubernetes/tutorials/networking',
             'managed_kubernetes/tutorials/usingcapsule',
+            'managed_kubernetes/tutorials/usinggapi',
             'managed_kubernetes/tutorials/usingkubecosts',
+            'managed_kubernetes/tutorials/usingopencost',
             'managed_kubernetes/tutorials/usingkasten',
             'managed_kubernetes/tutorials/usingargocd',
             'managed_kubernetes/tutorials/usingharbor',
@@ -259,6 +261,16 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Network',
       items: [
+        {
+          type: 'category',
+          label: 'VPC',
+          items: [
+            'network/vpc/vpc',
+            'network/vpc/concepts',
+            'network/vpc/quickstart',
+            'network/vpc/tutorials',
+          ],
+        },
         {
           type: 'category',
           label: 'Privates Network',

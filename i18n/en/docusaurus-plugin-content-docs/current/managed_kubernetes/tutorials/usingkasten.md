@@ -1,5 +1,5 @@
 ---
-title: Back Up Your Applications with Veeam Kasten
+title: Back up your applications with Veeam Kasten
 ---
 
 import k10dashboard from './images/k10dashboard.png'
@@ -24,8 +24,8 @@ Before you begin, ensure you have the following:
 The Kasten dashboard is accessible via a secure URL, constructed using your cluster's identifier.
 
 1.  **Build the access URL**:
-    The URL follows this pattern: `https://k10.external-secured.<identifier>.mk.ms-cloud-temple.com`  
-    Replace `<identifier>` with your cluster's identifier. For example, if your identifier is `ctodev`, the URL will be: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com`.
+    The URL follows this pattern: `https://k10.external-secured.<identifier>.mk.ms-cloud-temple.com/k10/`
+    Replace `<identifier>` with your cluster's identifier. For example, if your identifier is `ctodev`, the URL will be: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
 2.  **Access the URL** in your browser.
 
@@ -83,7 +83,7 @@ The policy will run automatically at the defined frequency. You can also trigger
 
 ## 4. Restore an Application
 
-Kasten makes it easy to restore an application to a previous state from a backup point.
+Kasten simplifies restoring an application to a previous state from a backup point.
 
 1.  In the dashboard, go to the **Applications** section. You will see a list of your applications and their compliance status with backup policies.
 
@@ -102,12 +102,12 @@ Kasten will now restore the application to the state captured in the snapshot. Y
 
 Protecting your backup data is a top priority. Integrating Kasten into the Managed Kubernetes offering adheres to the highest security standards.
 
--   **Encryption**: In compliance with SecNumCloud requirements, all your backups are encrypted. Data is encrypted in transit to the S3 storage using the **TLS 1.3** protocol and at rest within storage buckets using the **AES-256** algorithm.
+-   **Encryption**: In compliance with SecNumCloud requirements, all your backups are encrypted. Data is encrypted in transit to S3 storage using the **TLS 1.3** protocol and at rest within storage buckets using the **AES-256** algorithm.
 
--   **Permission Management**: Access to the Kasten interface and its features is controlled by a role-based access control (RBAC) system integrated with Kubernetes. Only authorized users can create, modify, or execute backup and restore policies, ensuring strict governance over your backup operations.
+-   **Permission Management**: Access to the Kasten interface and its features is controlled by a role-based access control (RBAC) system native to Kubernetes. Only authorized users can create, modify, or execute backup and restore policies, ensuring strict governance over your backup operations.
 
 ## Conclusion
 
-You've learned how to use Veeam Kasten to perform basic backup and restore operations in your Managed Kubernetes cluster. Kasten offers many advanced features, such as application migration between clusters and granular retention policies, which you can explore to strengthen your data protection strategy.
+You've learned how to use Veeam Kasten to perform basic backup and restore operations in your Managed Kubernetes cluster. Kasten offers many advanced features, such as application migration across clusters and granular retention policies, which you can explore to strengthen your data protection strategy.
 
 For more information, refer to the [official Kasten K10 documentation](https://docs.kasten.io/latest/).

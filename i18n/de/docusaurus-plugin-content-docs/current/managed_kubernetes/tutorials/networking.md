@@ -11,10 +11,10 @@ import cillium from './images/cillium.png'
 Dieser Leitfaden soll Sie mit den grundlegenden Netzwerkkonzepten des Angebots **Managed Kubernetes** vertraut machen. Am Ende dieses Leitfadens können Sie:
 
 - Den IP-Adressraum Ihres Clusters (Knoten, Pods, Services) verstehen.
-- Die verschiedenen Mechanismen kennen, um Ihre Anwendungen verfügbar zu machen (Ingress, LoadBalancer).
+- Die verschiedenen Mechanismen kennen, um Ihre Anwendungen zugänglich zu machen (Ingress, LoadBalancer).
 - Netzwerkflüsse und Sicherheitsrichtlinien mit Hubble visualisieren.
 
-Als **Beispiel** verwenden wir einen Cluster namens **"ctodev"**, dessen zugeordneter Bereich **10.20.0.0/22** ist.
+Als **Beispiel** dient ein Cluster namens **"ctodev"**, dessen zugeordneter Bereich **10.20.0.0/22** ist.
 
 :::warning Definition der IP-Bereiche
  Der private IP-Bereich X.Y.Z.0/22 (RFC 1918) wird beim Einrichten des Clusters mit dem Kunden festgelegt und kann später nicht mehr geändert werden.
@@ -22,15 +22,15 @@ Als **Beispiel** verwenden wir einen Cluster namens **"ctodev"**, dessen zugeord
 
 ## IP Addressing Plan
 
-Your Managed Kubernetes cluster is equipped with a multi-zone VLAN with an IPv4 address range of /22.
+Your Managed Kubernetes cluster is provisioned with a multi-zone VLAN using an IPv4 address range of /22.
 
 The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
 
-    - 10.20.0.0/24 is assigned to cluster Nodes:
+    - 10.20.0.0/24 is allocated to cluster Nodes:
 
-        - 10.20.0.10 : ctodev-gitrunner (the machine that manages the infrastructure)
+        - 10.20.0.10 : ctodev-gitrunner (the machine managing the infrastructure)
 
-        - 10.20.0.20 : virtual IP (load-balanced) for the Kubernetes API service
+        - 10.20.0.20 : Virtual IP (load-balanced) for the Kubernetes API service
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -59,7 +59,7 @@ The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
     - Services: 10.95.0.0/12 
 
 :::warning Pod and Service Ranges
-The Pod and Service ranges are defined with the client during cluster setup and cannot be modified afterward.
+The Pod and Service ranges are defined during cluster setup with the client and cannot be modified afterward.
 :::
 
 ## Using MetalLB
@@ -114,7 +114,7 @@ spec:
 
 ## Public IPs
 
-Your Managed Kubernetes cluster was delivered with 2 public IPv4 addresses by default.
+Your Managed Kubernetes cluster was initially delivered with 2 public IPv4 addresses.
 
 The first IP is used on port 6443 for the Kubernetes API (in our example: ctodev.mk.ms-cloud-temple.com:6443).
 
@@ -125,7 +125,7 @@ The second public IP is NATed to the ingress controller *"nginx-external"* on po
 
 Applications exposed via the ingress class *"nginx-external"* will therefore be directly accessible from the internet using this IP.
 
-*If you wish to modify the firewall rules (add/remove allowed IPs), you must submit a support request.*
+*If you wish to modify firewall rules (add/remove allowed IPs), you must submit a support request.*
 
 *It is possible to add additional public IPs if desired.*
 
@@ -138,7 +138,7 @@ Für den internen DNS (CoreDNS) hat der Cluster folgende Einstellungen:
 
 Dieser interne Domain-Name ist entscheidend für die Kommunikation zwischen Services innerhalb des Clusters. Er ermöglicht es einer Anwendung, eine andere Anwendung über einfach nur ihren Kubernetes-Service-Namen aufzurufen, ohne die interne IP-Adresse kennen zu müssen.
 
-Beispielsweise ist ein Service namens `api-backend` im Namespace `production` automatisch über die Adresse `api-backend.production.svc.ctodev-cluster.local` auflösbar.
+Beispiel: Ein Service namens `api-backend` im Namespace `production` ist automatisch über die Adresse `api-backend.production.svc.ctodev-cluster.local` auflösbar.
 
 ---
 
@@ -149,7 +149,7 @@ Wenn Sie eine Anwendung mit dieser Ingress-Klasse bereitstellen, können Sie dar
 
 ## Hubble: Network Observability within Reach
 
-Hubble is a graphical and command-line interface to visualize and understand network traffic flows within your cluster. Built on Cilium, it provides real-time, detailed mapping of services, dependencies, and network policies.
+Hubble is a graphical and command-line interface to visualize and understand network traffic flows in your cluster. Built on Cilium, it provides real-time, detailed mapping of services, dependencies, and network policies.
 
 With Hubble, you can:
 - **Visualize traffic flows** between your pods and services.
@@ -159,9 +159,9 @@ With Hubble, you can:
 
 ### Access the Hubble Interface
 
-The Hubble graphical interface is exposed via an internal URL of your cluster. Access is not possible through `kubectl port-forwarding` because users do not have sufficient permissions on the `kube-system` namespace.
+The Hubble graphical interface is exposed via an internal URL of your cluster. Access is not possible through `kubectl port-forward` because users do not have sufficient permissions on the `kube-system` namespace.
 
-To access it, you must be connected to the cluster's internal network (for example, via a bastion host or a VPN). Use the following URL:
+To access it, you must be connected to the cluster's internal network (e.g., via a bastion host or VPN). Use the following URL:
 
 `http://hubble.internal.<your-cluster-identifier>.mk.ms-cloud-temple.com`
 
@@ -175,9 +175,9 @@ kubectl get ingress hubble-ui -n kube-system
 
 ### Erstellung interner DNS-Zonen (privater Cluster)
 
-Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste sowie die Kubernetes-API von Ihrem internen Netzwerk aus zu vereinfachen, wird empfohlen, eine interne DNS-Zone zu erstellen. Diese Zone ermöglicht die Auflösung der Domänennamen Ihrer Ingress-Ressourcen sowie der Kubernetes-API auf ihre jeweiligen privaten IP-Adressen und verhindert so den Datenverkehr über öffentliche Netzwerke.
+Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste sowie die Kubernetes-API von Ihrem internen Netzwerk aus zu vereinfachen, wird empfohlen, eine interne DNS-Zone zu erstellen. Diese Zone ermöglicht die Auflösung der Domänennamen Ihrer Ingress-Ressourcen und der Kubernetes-API auf ihre jeweiligen privaten IP-Adressen, wodurch der Datenverkehr nicht mehr über öffentliche Netzwerke geleitet werden muss.
 
-**Beispielkonfiguration für unseren Cluster „ctodev“ mit dem zugewiesenen Bereich 10.20.0.0/22:**
+**Beispielkonfiguration für unseren Cluster „ctodev“, dessen zugewiesener Bereich 10.20.0.0/22 ist:**
 
 Basierend auf den URLs im Schnellstartleitfaden können Sie Ihre interne DNS-Konfiguration wie folgt einrichten:
 
@@ -197,9 +197,10 @@ Basierend auf den URLs im Schnellstartleitfaden können Sie Ihre interne DNS-Kon
         -   `k10.external-secured -> 10.20.1.129`
         -   `grafana.external-secured -> 10.20.1.129`
         -   `harbor.external-secured -> 10.20.1.129`
-        -   `kubecost.external-secured -> 10.20.1.129`
+        -   `opencost.external-secured -> 10.20.1.129`
+        -   `opencost-mcp.external-secured -> 10.20.1.129`
 
-Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Diensten innerhalb Ihres privaten Netzwerks bleibt und den besten Sicherheitspraktiken entspricht.
+Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Diensten innerhalb Ihres privaten Netzwerks bleibt und den Sicherheitsbest Practices entspricht.
 
 <div class="card">
   <div class="card__header">
@@ -219,6 +220,6 @@ Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Die
 Dieses Dokument erläutert grundlegende Netzwerkkonzepte. Für einen Produktionsbetrieb ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu ergreifen:
 
 -   **Verwenden Sie sichere Images**: Verwenden Sie bevorzugt Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor**, anstatt öffentliche Images.
--   **Steuern Sie Netzwerkflüsse**: Implementieren Sie `NetworkPolicies`, um den Datenverkehr auf nur die für Ihre Anwendungen erforderlichen Kommunikationswege zu beschränken.
--   **Wenden Sie Governance-Politiken an**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Anforderung von Ressourcenanforderungen und -Grenzen).
+-   **Kontrollieren Sie Netzwerkflüsse**: Setzen Sie `NetworkPolicies` ein, um Kommunikationen auf nur die erforderlichen Datenströme zwischen Ihren Anwendungen zu beschränken.
+-   **Implementieren Sie Governance-Politiken**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Pflicht zur Angabe von `requests` und `limits` für Ressourcen usw.).
 :::

@@ -1,5 +1,5 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva
 ---
 import oshiftMenu_001 from './images/oshift_menu_001.png'
 import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
@@ -21,7 +21,7 @@ Prima di iniziare, assicurati dei seguenti punti:
 
 ## Primo accesso e comando
 
-Al primo accesso all'offerta OpenShift, dopo l'attivazione della sottoscrizione e la configurazione dei permessi, viene visualizzato uno schermo iniziale:
+Al primo accesso all'offerta OpenShift, dopo l'attivazione della sottoscrizione e la configurazione dei permessi, viene visualizzato uno schermo di benvenuto:
 
 <img src={oshiftOrder_001} />
 
@@ -29,7 +29,7 @@ Questo schermo indica che al momento non hai ancora nessun cluster OpenShift Sec
 
 **Per ordinare il tuo primo cluster OpenShift SecNumCloud, ti preghiamo di contattare il supporto Cloud Temple.**
 
-Una volta che la tua richiesta sarà elaborata dal supporto e il tuo cluster sarà distribuito, potrai accedere al menu OpenShift.
+Una volta che il tuo ordine sarà elaborato dal supporto e il tuo cluster sarà distribuito, potrai accedere al menu OpenShift.
 
 ## Accesso all'interfaccia OpenShift
 
@@ -39,7 +39,7 @@ Dopo aver distribuito il vostro primo cluster, un nuovo menu denominato **OpenSh
 
 ### 1. Elenco dei cluster
 
-Il sottomenu **Clusters** presenta una tabella con tutti i cluster OpenShift disponibili, distribuiti all'interno del tuo tenant. La tabella include le informazioni principali per ciascun cluster:
+Il sottomenu **Clusters** presenta una tabella con tutti i cluster OpenShift disponibili, distribuiti all'interno del vostro tenant. La tabella include le informazioni principali per ciascun cluster:
 
 - **Nome del cluster**
 - **URL di accesso**
@@ -50,7 +50,7 @@ Il sottomenu **Clusters** presenta una tabella con tutti i cluster OpenShift dis
 
 <img src={oshiftSubMenu_001} />
 
-💡 **Per accedere ai dettagli completi di un cluster, fai clic sul suo nome nella tabella.**
+💡 **Per accedere ai dettagli completi di un cluster, fate clic sul suo nome nella tabella.**
 
 ### 2. Cluster details
 
@@ -95,7 +95,7 @@ Here are the connection and configuration details specific to your OpenShift env
 
 Per accedere ai diversi componenti OpenShift, assicurati che il tuo tenant sia registrato nell'elenco bianco nella console (consulta la documentazione: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Shiva Tenant__ :
+- __URL Console Tenant__ :
   [https://__il-tuo-id-tenant__.shiva.cloud-temple.com/](https://**il-tuo-id-tenant**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__ :
@@ -109,7 +109,7 @@ Per accedere ai diversi componenti OpenShift, assicurati che il tuo tenant sia r
 
 #### Connessione al cluster tramite CLI
 
-Per connettersi tramite riga di comando (CLI), utilizza il comando seguente:
+Per connetterti tramite riga di comando (CLI), utilizza il comando seguente:
 
 ```bash
 oc login https://api-ocp01-{tuo-id}.paas.cloud-temple.com/ --web
@@ -124,7 +124,7 @@ oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
 docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
 ```
 
-Successivamente, verifica la creazione e il caricamento di un'immagine Docker:
+Successivamente, verifica la costruzione e il caricamento di un'immagine Docker:
 
 ```bash
 docker build -t <namespace>/temp:latest .
@@ -138,8 +138,6 @@ La piattaforma offre opzioni flessibili per il __routing dei flussi__ e l’__eq
 
 - Per impostazione predefinita, vengono utilizzati load balancer privati per le route e gli ingresses.
 - Domini:
-  - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
   - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
 

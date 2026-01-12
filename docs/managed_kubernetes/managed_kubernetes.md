@@ -29,7 +29,7 @@ Cette offre est conçue pour les experts Kubernetes et les adeptes de l'open sou
 ### Bénéfices Clés
 - **Souveraineté et Réversibilité** : La solution s'appuie sur des standards open source (Kubernetes CNCF) pour éviter toute dépendance technologique et garantir la portabilité de vos applications. L'outil de sauvegarde Veeam Kasten, inclus dans l'offre, est spécialement conçu pour faciliter les migrations d'un cloud à un autre.
 - **Sécurité "Zero-Trust" et Gouvernance** : L'architecture repose sur Talos OS, un système d'exploitation immuable sans accès direct (ni shell, ni SSH), ce qui réduit drastiquement la surface d'attaque. Cette approche est couplée à des outils de gouvernance comme Kyverno pour la gestion des politiques et Capsule pour la gestion fine des droits, constituant une base solide pour une stratégie de sécurité "Zero-Trust".
-- **Maîtrise des Coûts et Intégration** : La solution intègre nativement des outils de FinOps comme KubeCost pour un suivi précis des consommations. Le modèle économique est transparent, basé sur les ressources IaaS consommées, et l'utilisation de composants open source reconnus (Cilium, Ceph, ArgoCD) facilite l'intégration dans vos écosystèmes existants.
+- **Maîtrise des Coûts et Intégration** : La solution intègre nativement des outils de FinOps comme OpenCost pour un suivi précis des consommations. Le modèle économique est transparent, basé sur les ressources IaaS consommées, et l'utilisation de composants open source reconnus (Cilium, Ceph, ArgoCD) facilite l'intégration dans vos écosystèmes existants.
 
 ### Une plateforme complète et prête à l'emploi
 La solution inclut nativement une stack complète et cohérente d'outils open source de pointe pour couvrir tous les besoins du cycle de vie applicatif :
@@ -39,7 +39,7 @@ La solution inclut nativement une stack complète et cohérente d'outils open so
 - **Déploiement Continu (GitOps)** : ArgoCD
 - **Observabilité** : Prometheus, Grafana, Loki
 - **Sauvegarde et Migration** : Veeam Kasten
-- **Gestion des Coûts (FinOps)** : KubeCost
+- **Gestion des Coûts (FinOps)** : OpenCost
 
 ---
 
@@ -86,7 +86,7 @@ L'offre inclus en détail les composants suivants:
 - ArgoCD
 - Stack prometheus (Prometheus, Grafana, Loki)
 - Container registry Harbor
-- Cost management avec KubeCost
+- Cost management avec OpenCost
 - Stratégies de sécurité avancée avec Kyverno et Capsule
 - Veeam Kasten (sauvegarde, automatisations inter-environnements et réversibilité)
-- (optionnel): Authentification SSO avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
+- Authentification SSO avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)

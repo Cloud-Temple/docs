@@ -7,9 +7,9 @@ tags:
 ---
 Here is an example of configuring the authentication repository of a Cloud Temple organization with __Microsoft ADFS__.
 
-Configuring your Microsoft repository at the level of a Cloud Temple organization facilitates the authentication of your users on the Shiva console.
+Configuring your Microsoft repository at the level of a Cloud Temple organization facilitates the authentication of your users on the Console.
 This helps to avoid the multiplication of authentication factors and reduces the attack surface.
-If your users are authenticated to their Microsoft account, authentication to the Shiva console services will be seamless.
+If your users are authenticated to their Microsoft account, authentication to the Console services will be seamless.
 
 Here are the different steps to complete this configuration:
 
@@ -33,7 +33,7 @@ Please provide the following information in the support request:
     Public URL of the ADFS federation Metadata (<adfs domain>/FederationMetadata/2007-06/FederationMetadata.xml)
     (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
-As soon as the configuration is completed on the Shiva console side, the indicated contact will be informed.
+As soon as the configuration is completed on the Console side, the indicated contact will be informed.
 The Cloud Temple support team will send you a URL that looks like this: https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
 
 *You can paste the URL into a browser to test it. If it works correctly, you should see an XML displayed.*
@@ -63,7 +63,7 @@ You can enter a name and description for the relying party, this part is optiona
 
 ![](images/sso_adfs_004.png)
 
-By default, we allow everyone, but it is possible to select __"Allow a specific group"__ to select the group or groups that will be allowed to access the Shiva console services via ADFS.
+By default, we allow everyone, but it is possible to select __"Allow a specific group"__ to select the group or groups that will be allowed to access the Console services via ADFS.
 
 ![](images/sso_adfs_005.png)
 
@@ -95,6 +95,6 @@ Just apply the changes.
 
 ## Step 3: Finalization
 
-You can now test by going to the Shiva console and clicking on the button corresponding to the ADFS client authentication; in this example, it is __"ADFS Test"__
+You can now test by going to the Console and clicking on the button corresponding to the ADFS client authentication; in this example, it is __"ADFS Test"__
 
 ![](images/sso_adfs_012.png)

@@ -42,7 +42,7 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 
 - **Harbor** est une **Container registry** qui vous permet de stocker les images de vos containers ou vos charts helm directement dans le cluster. Elle effectue des **scan de vulnérabilité** sur vos images et peut les signer numériquement. **Harbor** permet aussi des synchronisations avec d'autres registries. (https://goharbor.io/)
 
-- **KubeCost** (https://github.com/kubecost) est un outil de gestion des couts (Finops) pour kubernetes. Il vous permet de suivre finement la consommations des ressources kubernetes et de faire de la sous-facturation par projet/namespace. 
+- **OpenCost** (https://github.com/opencost/opencost) est un outil de gestion des couts (Finops) pour kubernetes. Il vous permet de suivre finement la consommations des ressources kubernetes et de faire de la sous-facturation par projet/namespace. 
 
 - Stratégies de sécurité avancée avec **Kyverno** et **Capsule**: 
     - **Kyverno** (https://kyverno.io/) est un controleur d'admission pour Kubernetes qui permet d'appliquer des stratégies. C'est un outil essentiel pour la gouvernance et la sécurité dans kubernetes.

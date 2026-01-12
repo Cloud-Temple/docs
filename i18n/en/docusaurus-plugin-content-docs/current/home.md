@@ -7,7 +7,7 @@ tags:
 
 # Welcome to the Documentation Space
 
-Welcome to the **Cloud Temple** documentation space! This area has been designed to guide you through managing your Cloud Temple services via our **Cloud Temple Console**, also known as **Shiva**.
+Welcome to the **Cloud Temple** documentation space! This space has been designed to guide you through managing your Cloud Temple services via our **Cloud Temple Console**.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ Welcome to the **Cloud Temple** documentation space! This area has been designed
     <a href="iaas_vmware/quickstart" class="card-link">Get started &rarr;</a>
   </div>
   <div class="card">
-    <h3>Deploy with just a few clicks</h3>
+    <h3>Deploy with a few clicks</h3>
     <p>Set up your services easily with our detailed guides.</p>
     <a href="iaas_vmware/quickstart" class="card-link">Deploy &rarr;</a>
   </div>
@@ -36,8 +36,8 @@ Welcome to the **Cloud Temple** documentation space! This area has been designed
 
 ## How to use this documentation?
 
-This documentation is your guide to unlocking the full potential of our Cloud products and the **Cloud Temple** console.
+This documentation is your guide to unlocking the full potential of our Cloud products and the **Cloud Temple Console**.
 
 You'll find tutorials, technical guides, and references to simplify the management of your cloud resources.
 
-We hope you find this documentation helpful and fully take advantage of the possibilities offered by **Shiva**.
+We hope you find this documentation helpful and make the most of the opportunities offered by **Console**.

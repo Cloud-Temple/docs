@@ -19,9 +19,8 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Users
 
-Access accounts to the Shiva console are created by the sponsor's master account via invitation (regardless of the authentication repository).
-
-Credentials are global to your [Organization](#organisations).
+Access accounts for the Console are created by the sponsor's master account via invitation (regardless of the authentication repository used).  
+Credentials are global to your [Organization](#organizations).
 
 *__Note:__ [Identity federation is managed at the organization level](#authentication-mechanisms)*
 
@@ -51,7 +50,7 @@ Die Verwaltung von Benutzerberechtigungen erfolgt über die Benutzerseite.
 
 Standardmäßig hat ein Benutzer keine Berechtigungen. Der Administrator, der die Einladung versandt hat, muss daher die erforderlichen Berechtigungen für die Tätigkeit des Benutzers erteilen. Dazu klicken Sie einfach auf das Menü __'Aktionen'__ des Benutzers und wählen die Option __'Bearbeiten'__.
 
-Das Menü zur Aktivierung von Berechtigungen erscheint nun:
+Das Menü zur Aktivierung von Berechtigungen wird nun angezeigt:
 
 <img src={shivaOnboard_005} />
 
@@ -61,11 +60,11 @@ Die Liste der Berechtigungen und ihre Definitionen ist [hier](#permissions) verf
 
 ### Re-registration of a user
 
-When a user has been provisioned but did not validate their registration within the expiration period of the email sent by the Console, they can no longer confirm their registration. In such cases, it is possible to resend a link so that the user can renew their initial registration.
+When a user has been provisioned but did not validate their registration within the expiration period of the email sent by the Console, they can no longer confirm their registration. In such cases, it is possible to resend a link allowing the user to renew their initial registration.
 
 To re-register a user, go to the __'User'__ tab in the Administration panel, located in the lower-left corner of the screen.
 
-Select the user you wish to re-register, then click the action button at the end of the row and choose __'Re-registration'__.
+Select the user you wish to re-register, then click the action button at the end of the corresponding row and choose __'Re-registration'__.
 
 __Warning__: Make sure you are the original requester of the re-registration for your user account. Please report any requests that do not originate from you via a support ticket.
 
@@ -143,27 +142,27 @@ This feature is accessible in the user profile, under the "My Subscriptions" tab
 
 <img src={shivaProfil_007} />
 
-For example, in case of an incident, specific email notifications for this theme will be generated.
+For example, in the event of an incident, specific email notifications related to this theme will be generated.
 
 The list of available themes may evolve and gradually expand to adapt to changing operational needs and environment requirements.
 
 ## Permissions
 
-The Shiva console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
+The Console allows for fine-grained management of user rights within an organization, with segregation by tenant.  
 Initially, it is the primary account of the sponsor that enables the initial configuration of accounts and associated permissions.  
 Subsequently, the __'iam_write'__ permission allows an account to manage the permissions of other users.
 
 ### Available permissions for users in your organization
 
-When a user is created, they have no permissions by default. Each permission is assigned individually and operates in isolation, without overlap with other permissions. Permissions are applied in conjunction, meaning a user must possess all required permissions to perform a specific action.
+When a user is created, they have no permissions by default. Each permission is assigned individually and operates in isolation, without overlap with other permissions. Permissions are applied in conjunction, meaning a user must have all required permissions to perform a specific action.
 
 The following permissions are configurable for each user and for each tenant in your organization:
 
-- **"read" permissions**: Allow only the viewing of resources, without the ability to modify them.
-- **"write" permissions**: Permit modification of configurations.
-- **"management" permissions**: Enable advanced management of resources.
-- **"console_access" permissions**: Allow PMAD-style connections to resources.
-- **"virtual_machine_power" permissions**: Permit management of a virtual machine’s power state.
+- **"read" permissions**: allow only reading resources, without the ability to modify them.
+- **"write" permissions**: permit modification of configurations.
+- **"management" permissions**: enable advanced management of resources.
+- **"console_access" permissions**: allow PMAD-style connections to resources.
+- **"virtual_machine_power" permissions**: enable power management of a virtual machine.
 
 - __These are permissions, not roles.__ As such, both READ and WRITE permissions are required to modify a configuration.
 
@@ -171,63 +170,63 @@ Last updated: 16/07/2025
 
 | Permission name                               | Permission description                                                                                                         |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| activity_read                                 | Viewing of log and activity records                                                                                            |
-| activity_write                                | Management of log and activity records                                                                                         |
-| backup_iaas_opensource_read                   | Management of backup resources – OpenIaaS offering – read access                                                              |
-| backup_iaas_opensource_write                  | Management of backup resources – OpenIaaS offering – write access                                                             |
-| backup_iaas_spp_read                          | Management of backup resources – VMware offering – read access                                                                |
-| backup_iaas_spp_write                         | Management of backup resources – VMware offering – write access                                                               |
-| bastion_read                                  | Viewing of bastion resources                                                                                                   |
-| bastion_write                                 | Management of bastion resources (appliances, sessions, etc.)                                                                  |
-| bastion_console_access                        | Authorization to access the console (SSH/RDP) of a resource protected by a bastion appliance                                  |
-| compute_iaas_opensource_console_access        | OpenIaaS offering – Opening the console of a virtual machine                                                                   |
-| compute_iaas_opensource_infrastructure_read   | OpenIaaS offering – Viewing advanced data of Xen Orchestra resources                                                            |
-| compute_iaas_opensource_infrastructure_write  | OpenIaaS offering – Advanced management of Xen Orchestra resources                                                              |
-| compute_iaas_opensource_read                  | OpenIaaS offering – Viewing of virtual machine resources                                                                       |
-| compute_iaas_opensource_management            | OpenIaaS offering – Management of virtual machine resources                                                                    |
-| compute_iaas_opensource_virtual_machine_power | OpenIaaS offering – Power management of a virtual machine                                                                      |
-| compute_iaas_opensource_replication_recover   | OpenIaaS offering – Replication management                                                                                     |
-| compute_iaas_vmware_console_access            | VMware offering – Opening the console of a virtual machine                                                                     |
-| compute_iaas_vmware_infrastructure_read       | VMware offering – Viewing advanced data of VMware resources (affinity/anti-affinity rules, DRS configuration, etc.)         |
-| compute_iaas_vmware_infrastructure_write      | VMware offering – Advanced management of VMware resources                                                                      |
-| compute_iaas_vmware_read                      | VMware offering – Viewing of virtual machine resources                                                                         |
-| compute_iaas_vmware_management                | VMware offering – Management of virtual machine resources (including virtual machine encryption)                               |
-| compute_iaas_vmware_virtual_machine_power     | VMware offering – Power management of a virtual machine                                                                        |
-| baremetal_management                          | Bare Metal offering – Management of bare metal resources                                                                       |
-| baremetal_read                                | Bare Metal offering – Viewing of bare metal resources                                                                          |
-| baremetal_console_access                      | Bare Metal offering – Opening the console of a bare metal server                                                               |
-| console_public_access_read                    | Viewing of IP addresses authorized to access the console                                                                       |
-| console_public_access_write                   | Adding IP addresses authorized to access the console                                                                           |
-| documentation_read                            | Viewing of Confluence documentation resources                                                                                  |
-| housing_read                                  | Viewing of colocation resources                                                                                                |
-| iam_offline_access                            | Creation and deletion of Personal Access Tokens (PATs)                                                                         |
-| iam_read                                      | Viewing of user rights                                                                                                         |
-| iam_write                                     | Management of user rights                                                                                                      |
-| intervention_read                             | Viewing of planned changes and production deployments on the platform                                                          |
-| inventory_read                                | Viewing of inventory resources                                                                                                 |
-| inventory_write                               | Management of inventory resources                                                                                              |
-| monitoring_read                               | Viewing of monitoring data                                                                                                     |
-| monitoring_write                              | Management of monitoring                                                                                                       |
-| metric_read                                   | Viewing of health metrics for virtual machines and hosts                                                                       |
-| network_read                                  | Viewing of network resources                                                                                                   |
-| network_write                                 | Management of network resources                                                                                                |
-| order_read                                    | Viewing of infrastructure orders                                                                                               |
-| order_write                                   | Creation of infrastructure orders                                                                                              |
-| object-storage_iam_management                 | Ability to manage storage accounts on the S3 product                                                                           |
-| object-storage_read                           | Ability to view buckets and bucket configurations                                                                              |
-| object-storage_write                          | Ability to edit buckets and bucket configurations                                                                              |
-| openshift_management                          | Ability to connect to OpenShift platforms (scoped to tenant)                                                                   |
-| support_management                            | Viewing of all support tickets within the tenant                                                                               |
-| support_read                                  | Viewing of user’s own support tickets within the tenant                                                                        |
-| support_write                                 | Creation of a support ticket within the tenant                                                                                 |
-| tag_read                                      | Viewing of tags, excluding RTMS tags                                                                                           |
-| tag_write                                     | Management of tags, excluding RTMS tags                                                                                        |
-| ticket_comment_read                           | Viewing of comments                                                                                                            |
-| ticket_comment_write                          | Management of comments                                                                                                         |
-| ticket_read                                   | Viewing of tickets                                                                                                             |
-| ticket_write                                  | Management of tickets                                                                                                          |
-| incident_management                           | Management of incidents                                                                                                        |
-| incident_read                                 | Viewing of incidents                                                                                                           |
+| activity_read                                 | View logs and activity records                                                                                                 |
+| activity_write                                | Manage logs and activity records                                                                                               |
+| backup_iaas_opensource_read                   | View backup resources – OpenIaaS offering                                                                                      |
+| backup_iaas_opensource_write                  | Modify backup resources – OpenIaaS offering                                                                                    |
+| backup_iaas_spp_read                          | View backup resources – VMware offering                                                                                        |
+| backup_iaas_spp_write                         | Modify backup resources – VMware offering                                                                                      |
+| bastion_read                                  | View bastion resources                                                                                                         |
+| bastion_write                                 | Manage bastion resources (appliances, sessions, etc.)                                                                          |
+| bastion_console_access                        | Grant access to the console (SSH/RDP) of a resource protected by a bastion appliance                                            |
+| compute_iaas_opensource_console_access        | Open the console of a virtual machine – OpenIaaS offering                                                                      |
+| compute_iaas_opensource_infrastructure_read   | View advanced data of Xen Orchestra resources – OpenIaaS offering                                                              |
+| compute_iaas_opensource_infrastructure_write  | Advanced management of Xen Orchestra resources – OpenIaaS offering                                                             |
+| compute_iaas_opensource_read                  | View virtual machine resources – OpenIaaS offering                                                                             |
+| compute_iaas_opensource_management            | Manage virtual machine resources – OpenIaaS offering                                                                           |
+| compute_iaas_opensource_virtual_machine_power | Manage power state of a virtual machine – OpenIaaS offering                                                                    |
+| compute_iaas_opensource_replication_recover   | Manage replication – OpenIaaS offering                                                                                         |
+| compute_iaas_vmware_console_access            | Open the console of a virtual machine – VMware offering                                                                        |
+| compute_iaas_vmware_infrastructure_read       | View advanced data of VMware resources (affinity/anti-affinity rules, DRS configuration, etc.) – VMware offering              |
+| compute_iaas_vmware_infrastructure_write      | Advanced management of VMware resources – VMware offering                                                                      |
+| compute_iaas_vmware_read                      | View virtual machine resources – VMware offering                                                                               |
+| compute_iaas_vmware_management                | Manage virtual machine resources – VMware offering (includes virtual machine encryption)                                        |
+| compute_iaas_vmware_virtual_machine_power     | Manage power state of a virtual machine – VMware offering                                                                      |
+| baremetal_management                          | Manage bare metal resources – Bare Metal offering                                                                              |
+| baremetal_read                                | View bare metal resources – Bare Metal offering                                                                                |
+| baremetal_console_access                      | Open console of a bare metal server – Bare Metal offering                                                                      |
+| console_public_access_read                    | View IP addresses authorized to access the console                                                                             |
+| console_public_access_write                   | Add IP addresses authorized to access the console                                                                              |
+| documentation_read                            | View Confluence documentation resources                                                                                        |
+| housing_read                                  | View colocation resources                                                                                                      |
+| iam_offline_access                            | Create and delete Personal Access Tokens (PATs)                                                                                |
+| iam_read                                      | View user permissions                                                                                                          |
+| iam_write                                     | Manage user permissions                                                                                                        |
+| intervention_read                             | View planned changes and production deployments on the platform                                                                |
+| inventory_read                                | View inventory resources                                                                                                       |
+| inventory_write                               | Manage inventory resources                                                                                                     |
+| monitoring_read                               | View monitoring data                                                                                                           |
+| monitoring_write                              | Manage monitoring                                                                                                              |
+| metric_read                                   | View health metrics for virtual machines and hosts                                                                             |
+| network_read                                  | View network resources                                                                                                         |
+| network_write                                 | Manage network resources                                                                                                       |
+| order_read                                    | View infrastructure orders                                                                                                     |
+| order_write                                   | Create infrastructure orders                                                                                                   |
+| object-storage_iam_management                 | Manage storage accounts on the S3 product                                                                                      |
+| object-storage_read                           | View buckets and bucket configurations                                                                                         |
+| object-storage_write                          | Edit buckets and bucket configurations                                                                                         |
+| openshift_management                          | Connect to OpenShift platforms (scoped to tenant)                                                                              |
+| support_management                            | View all support tickets for the tenant                                                                                        |
+| support_read                                  | View own support tickets for the tenant                                                                                        |
+| support_write                                 | Create a support ticket for the tenant                                                                                         |
+| tag_read                                      | View tags, excluding RTMS tags                                                                                                 |
+| tag_write                                     | Manage tags, excluding RTMS tags                                                                                               |
+| ticket_comment_read                           | View comments                                                                                                                  |
+| ticket_comment_write                          | Manage comments                                                                                                                |
+| ticket_read                                   | View tickets                                                                                                                   |
+| ticket_write                                  | Manage tickets                                                                                                                 |
+| incident_management                           | Manage incidents                                                                                                               |
+| incident_read                                 | View incidents                                                                                                                 |
 
 ## Organizations
 
@@ -238,25 +237,25 @@ Die Organisation ist mit Ihrem __Sponsorenkonto__ und dem zugehörigen __Cloud T
 An organization has four major roles:
 
 - It represents the __contractual entity__ for tracking and billing purposes,
-- It defines the __global configuration of the authentication mechanism__: authentication can be local at the level of the Shiva console or remote via an identity federation service,
+- It defines the __global configuration of the authentication mechanism__: authentication can be local at the Console level or remote via an identity federation service,
 - It manages all __user accounts__,
-- It __federates tenants__ (Production, Staging, Dev, Application 1, Application 2, ...) that you define for your Cloud architecture needs.
+- It __federates tenants__ (Production, Preproduction, Dev, Application 1, Application 2, ...) that you define for your Cloud architecture needs.
 
 User roles (rights/permissions) are configurable for each tenant defined within your organization. For example, a user account may be authorized to provision resources in one tenant but not in another.
 
 ### Authentication Mechanisms
 
-The Shiva console allows organizations to __configure the authentication mechanism__ at the organization level. You can use the Shiva console's built-in local authentication directory, or connect your organization to one of your external authentication directories.
+The Console allows you to configure the __authentication mechanism at the organization level__. You can use the Console's built-in local authentication directory, or connect your organization to one of your external authentication directories.
 
 The following external authentication directories are supported:
 
-- __OpenID Connect__ compatible directories,
-- __SAML__ compatible directories,
-- __Microsoft ADFS__,
-- __Microsoft EntraID__ (Microsoft Azure Active Directory),
-- Amazon AWS Cognito,
-- Okta,
-- Auth0,
+- OpenID Connect-compatible directories,
+- SAML-compatible directories,
+- Microsoft ADFS
+- Microsoft EntraID (Microsoft Azure Active Directory)
+- Amazon AWS Cognito
+- Okta
+- Auth0
 - Keycloak
 
 :::info[Important]
@@ -265,7 +264,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisations) verfügt mindestens über einen Tenant (den sogenannten __Standard-Tenant__, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
+Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisations) verfügt mindestens über einen Tenant (der __Standard-Tenant__, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
 
 Beispiele:
 
@@ -274,7 +273,7 @@ Beispiele:
 - Ein Tenant __Test__
 - Ein Tenant __Qualifizierung__
 
-Es ist aber auch möglich, die Struktur anhand einer __Anwendungsperspektive__ oder nach __Kritikalität__ zu organisieren:
+Es ist jedoch auch möglich, die Struktur anhand einer __Anwendungsperspektive__ oder nach __Kritikalität__ zu organisieren:
 
 - Ein Tenant __Anwendung 1__ oder __Kritikalität 1__
 - Ein Tenant __Anwendung 2__ oder __Kritikalität 2__
@@ -282,11 +281,11 @@ Es ist aber auch möglich, die Struktur anhand einer __Anwendungsperspektive__ o
 
 Technische Ressourcen, die bestellt werden, werden einem bestimmten Tenant zugeordnet und sind mit anderen Tenants nicht geteilt. Zum Beispiel sind ein Hypervisor-Cluster und die zugehörigen L2-Netzwerke nur innerhalb eines einzelnen Tenants verfügbar.
 
-Bezüglich Netzwerke ist es möglich, sogenannte __"cross-tenant"-Netzwerke__ anzufordern, um die Netzwerkverbindung zwischen verschiedenen Tenants sicherzustellen.
+Bezüglich Netzwerke ist es möglich, __"cross-tenant"-Netzwerke__ anzufordern, um eine kontinuierliche Netzwerkverbindung zwischen verschiedenen Tenants sicherzustellen.
 
-Die Berechtigungen von Benutzern müssen in jedem Tenant separat definiert werden. Daher sollte jede Organisation sorgfältig über die gewünschten Tenants nachdenken. Dieser Punkt wird in der Regel in einem Initialisierungsworkshop behandelt, bei der Erstellung der Organisation.
+Die Berechtigungen von Benutzern müssen jeweils innerhalb jedes Tenants definiert werden. Daher sollte jede Organisation sorgfältig über die gewünschten Tenants nachdenken. Dieser Punkt wird in der Regel in einem Initialisierungsworkshop behandelt, zum Zeitpunkt der Organisationserstellung.
 
-Es ist möglich, die Architektur im Laufe der Zeit durch Hinzufügen oder Entfernen von Tenants zu erweitern.
+Es ist möglich, die Architektur durch Hinzufügen oder Entfernen von Tenants zu erweitern.
 
 Ein Tenant darf nicht leer sein. Er muss zwingend mit mindestens folgenden Ressourcen initialisiert werden:
 
@@ -326,16 +325,16 @@ Each tenant has at least one owner, ensuring clear accountability and efficient 
 * To remove an owner from the tenant, the user must submit a request to support.
 - This procedure ensures that changes to access rights are carried out securely and in accordance with best practices for access management.
 
-### Access Authorization for a Tenant: Allowed IP Addresses
+### Access Authorization for a Tenant: Allowed IPs
 
 Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with the SecNumCloud certification requirements. This restriction ensures a heightened level of security by allowing access only from specified IP ranges, thereby minimizing the risk of unauthorized access and protecting the cloud infrastructure according to the highest security standards.
 
-Note: *Removal of an authorized IP address must be requested via support directly in the Cloud Temple console.*
+Note: *Removing an authorized IP requires a support request via the Cloud Temple console.*
 
-### Resource consumption within a tenant
+### Resource Consumption within a Tenant
 
 It is possible to visualize the cloud resources consumed within a tenant, providing a detailed view of the usage of various deployed services. This feature enables users to monitor resource consumption in real time, identify the most heavily used services, and optimize their usage according to their needs.
 
-In the console menu, click on "Consumption Report" and then select the desired time period. You will then be able to view detailed cloud resource consumption over the specified period, allowing you to analyze service usage and optimize your management accordingly:
+In the console menu, click on "Consumption Report" and select the desired time period. You will then be able to view detailed cloud resource consumption over the specified period, allowing you to analyze service usage and optimize your management accordingly:
 
 <img src={shivaTenantRessources_01} />

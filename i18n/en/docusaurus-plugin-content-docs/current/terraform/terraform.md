@@ -2,72 +2,72 @@
 title: Overview
 ---
 
-The Cloud Temple Terraform provider allows you to manage your Cloud Temple account infrastructure using the Infrastructure as Code (IaC) approach. It offers complete integration with Cloud Temple infrastructure services, enabling you to provision, configure, and manage your cloud resources in a declarative and reproducible manner.
+The Terraform Cloud Temple provider enables you to manage your Cloud Temple account infrastructure using the Infrastructure as Code (IaC) approach. It offers full integration with Cloud Temple infrastructure services, allowing you to provision, configure, and manage your cloud resources in a declarative and reproducible manner.
 
 ## Key Features
 
-- **Infrastructure as Code**: Define your infrastructure in versionable configuration files
-- **Declarative Management**: Describe the desired state of your infrastructure, Terraform handles the rest
-- **Complete Automation**: Automate the provisioning and management of your resources
-- **Reproducibility**: Deploy identical environments reliably
-- **Dependency Management**: Terraform automatically manages resource creation order
+- **Infrastructure as Code**: Define your infrastructure in version-controlled configuration files
+- **Declarative Management**: Describe the desired state of your infrastructure; Terraform handles the rest
+- **Full Automation**: Automate provisioning and management of your resources
+- **Reproducibility**: Reliably deploy identical environments
+- **Dependency Management**: Terraform automatically manages the creation order of resources
 
-## Covered Products
+## Covered products
 
-The Cloud Temple Terraform provider supports the following services:
+The Terraform Cloud Temple provider supports the following services:
 
-### VMware IaaS
+### IaaS VMware
 
 Manage your VMware virtual machines with all advanced virtualization features:
 
-- **Virtual Machines**: Virtual machine creation and configuration
-- **Virtual Disks**: Virtual disk creation and configuration
-- **Network Adapters**: Virtual machine network adapter management
-- **Virtual Controllers**: Disk controller and other device management
-- **Cloud-Init**: Automated startup configuration
+- **Virtual Machines**: Creation and configuration of virtual machines  
+- **Virtual Disks**: Creation and configuration of virtual disks  
+- **Network Adapters**: Management of network adapters for virtual machines  
+- **Virtual Controllers**: Management of disk controllers and other devices  
+- **Cloud-Init**: Automated configuration at boot  
 - **Backup**: Integration with Cloud Temple backup policies
 
-### OpenSource IaaS
+### IaaS OpenSource
 
-Provision and manage virtual machines on OpenSource infrastructure based on XCP-ng:
+Provision and manage virtual machines on the OpenSource infrastructure based on XCP-ng:
 
-- **Virtual Machines**: Virtual machine creation and management
-- **Virtual Disks**: Virtual disk creation and configuration
-- **Network Adapters**: Virtual machine network adapter creation and configuration
-- **Replication**: Data replication policies
-- **High Availability**: HA configuration (disabled, restart, best-effort)
-- **Cloud-Init**: NoCloud-compatible automated configuration
+- **Virtual Machines**: Creation and management of virtual machines  
+- **Virtual Disks**: Creation and configuration of virtual disks  
+- **Network Adapters**: Creation and configuration of virtual machine network adapters  
+- **Replication**: Data replication policies  
+- **High Availability**: HA configuration (disabled, restart, best-effort)  
+- **Cloud-Init**: Automated configuration compatible with NoCloud  
 - **Backup**: Integration with Cloud Temple backup policies
 
 ### Object Storage
 
-Manage your S3-compatible object storage spaces:
+Manage your S3-compatible storage spaces:
 
-- **Buckets**: Bucket creation and configuration
-- **Storage Accounts**: S3 identity and credential management
-- **ACL**: Granular bucket access control
+- **Buckets**: Creation and configuration of buckets
+- **Storage accounts**: Management of S3 identities and credentials
+- **ACL**: Granular access control for buckets
 - **Versioning**: Object version management
 
 ## Prerequisites
 
-Before using the Cloud Temple Terraform provider, ensure you have:
+Before using the Terraform Cloud Temple provider, make sure you have:
 
-### Cloud Temple Console Access
+### Access to the Cloud Temple Console
 
-You must have access to the [Cloud Temple Console](https://shiva.cloud-temple.com) with appropriate rights on the tenant you wish to work on.
+You must have access to the [Cloud Temple Console](https://shiva.cloud-temple.com) with the appropriate permissions on the tenant you wish to work on.
 
 ### API Key
 
 The provider requires Cloud Temple API credentials:
 
 - **Client ID**: Client identifier for authentication
-- **Secret ID**: Secret associated with the client ID
+- **Secret ID**: Secret associated with the Client ID
 
-These credentials can be generated from the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#cl%C3%A9s-api).
+These credentials can be generated via the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#cl%C3%A9s-api).
 
-### Rights and Permissions
+### Rights and permissions
 
-Depending on the resources you want to manage, you must have the appropriate roles:
+Depending on the resources you want to manage, you need to have the appropriate roles:
 
 #### For VMware IaaS
 
@@ -91,7 +91,7 @@ Depending on the resources you want to manage, you must have the appropriate rol
 - `object-storage_read`
 - `object-storage_iam_management`
 
-#### Common Rights
+#### Common rights
 
 - `activity_read`
 - `tag_read` and `tag_write`
@@ -108,27 +108,27 @@ The Cloud Temple provider is compatible with:
 To enable detailed provider logging:
 
 ```bash
-# DEBUG level logging
+# DEBUG logging level
 export TF_LOG=DEBUG
 terraform apply
 
-# JSON format logging
+# Logging in JSON format
 export TF_LOG=JSON
 terraform apply
 
-# Save logs to a file
+# Log to a file
 export TF_LOG_PATH=./terraform.log
 terraform apply
 ```
 
-## Support and Resources
+## Support and resources
 
-- **Official Documentation**: [Terraform Registry](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
-- **Source Code**: [GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple)
-- **Issues**: [GitHub Issues](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues)
+- **Official documentation** : [Terraform Registry](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+- **Source code** : [GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple)
+- **Issues** : [GitHub Issues](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues)
 
 ## Next Steps
 
-- [Concepts](concepts.md): Understand key provider concepts
-- [Getting Started Guide](quickstart.md): Create your first infrastructure
+- [Concepts](concepts.md): Understand the key concepts of the provider
+- [Quickstart Guide](quickstart.md): Create your first infrastructure
 - [Tutorials](tutorials.md): Practical examples and use cases

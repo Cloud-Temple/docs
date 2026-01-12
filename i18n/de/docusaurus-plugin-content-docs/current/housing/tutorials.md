@@ -2,10 +2,10 @@
 title: Tutorials
 ---
 
-Diese Tutorials helfen Ihnen bei der Bereitstellung und Verwaltung von Cloud Temple Housing über das Shiva-Portal.
+These tutorials help you deploy and manage a Cloud Temple Bastion from the Console portal.
 
 <div class="card">
   <h3>Tutorials</h3>
-  <p>Derzeit sind keine Tutorials verfügbar, aber wir arbeiten aktiv daran. Schauen Sie bald wieder vorbei, um mehr zu erfahren!</p>
-  <a href="../" class="card-link">Zur Startseite &rarr;</a>
+  <p>No tutorials are currently available, but we are working on them actively. Please check back soon for more information!</p>
+  <a href="../" class="card-link">Go to the Home Page &rarr;</a>
 </div>

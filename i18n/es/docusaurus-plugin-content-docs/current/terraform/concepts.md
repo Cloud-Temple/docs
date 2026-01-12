@@ -2,29 +2,29 @@
 title: Conceptos
 ---
 
-# Conceptos de Terraform en el proveedor Cloud Temple
+# Conceptos de Terraform dans el proveedor Cloud Temple
 
 Esta página presenta los conceptos fundamentales necesarios para comprender y utilizar eficazmente el proveedor Terraform Cloud Temple.
 
-## Infraestructura como Código (IaC)
+## Infrastructure as Code (IaC)
 
-La Infraestructura como Código es un enfoque que consiste en gestionar y aprovisionar la infraestructura informática a través de archivos de configuración legibles por humanos, en lugar de mediante configuración manual o herramientas interactivas.
+Infrastructure as Code es un enfoque que consiste en gestionar y aprovisionar la infraestructura informática mediante archivos de configuración legibles por humanos, en lugar de una configuración manual o herramientas interactivas.
 
 ### Ventajas de IaC con Terraform
 
-- **Versionado**: La infraestructura se define en archivos que pueden ser versionados (Git)
-- **Colaboración**: Los equipos pueden trabajar juntos en la misma infraestructura
+- **Control de versiones**: La infraestructura se define en archivos que pueden ser controlados con Git
+- **Colaboración**: Los equipos pueden trabajar juntos sobre la misma infraestructura
 - **Automatización**: Reducción de errores humanos y ahorro de tiempo
 - **Documentación**: El código describe explícitamente la infraestructura
-- **Reproducibilidad**: Despliegue de entornos idénticos en pocos minutos
+- **Reproducibilidad**: Despliegue de entornos idénticos en unos pocos minutos
 
-## Proveedor Terraform
+## Terraform Provider
 
-Un proveedor Terraform es un plugin que permite a Terraform interactuar con una API específica. El proveedor Cloud Temple actúa como una capa de abstracción entre sus archivos de configuración Terraform y las APIs Cloud Temple.
+A Terraform provider is a plugin that enables Terraform to interact with a specific API. The Cloud Temple provider acts as an abstraction layer between your Terraform configuration files and the Cloud Temple APIs.
 
-### Declaración del proveedor
+### Declaración del provider
 
-El proveedor debe declararse en un bloque `terraform` con `required_providers`:
+El provider debe declararse dentro de un bloque `terraform` con `required_providers`:
 
 ```hcl
 terraform {
@@ -44,20 +44,20 @@ provider "cloudtemple" {
 
 ### Autenticación
 
-El proveedor se autentica con las APIs Cloud Temple utilizando:
+El proveedor se autentica ante las APIs de Cloud Temple utilizando:
 
 1. **Client ID**: Identificador único de su aplicación
-2. **Secret ID**: Clave secreta asociada con el Client ID
+2. **Secret ID**: Clave secreta asociada al Client ID
 
-Estas credenciales se generan desde la Consola Cloud Temple y permiten al proveedor realizar operaciones en su nombre.
+Estos identificadores se generan desde la Consola de Cloud Temple y permiten al proveedor realizar operaciones en su nombre.
 
 :::info Buenas prácticas
-    Almacene sus credenciales en variables de entorno o un gestor de secretos, nunca directamente en el código.
+    Almacene sus credenciales en variables de entorno o en un gestor de secretos, nunca directamente en el código.
 :::
 
 ## Recursos
 
-Un recurso representa un componente de infraestructura que puede ser creado, leído, actualizado o eliminado (operaciones CRUD).
+Un recurso representa un componente de infraestructura que puede crearse, leerse, actualizarse o eliminarse (operaciones CRUD).
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -70,32 +70,32 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-### Tipos de recursos Cloud Temple
+### Types de recursos Cloud Temple
 
 #### IaaS VMware
 
-- `cloudtemple_compute_virtual_machine`: Máquina virtual
-- `cloudtemple_compute_virtual_disk`: Disco virtual
-- `cloudtemple_compute_network_adapter`: Interfaz de red
-- `cloudtemple_compute_virtual_controller`: Controlador de dispositivo
+- `cloudtemple_compute_virtual_machine` : Máquina virtual
+- `cloudtemple_compute_virtual_disk` : Disco virtual
+- `cloudtemple_compute_network_adapter` : Adaptador de red
+- `cloudtemple_compute_virtual_controller` : Controlador de dispositivo
 
 #### IaaS OpenSource
 
-- `cloudtemple_compute_iaas_opensource_virtual_machine`: Máquina virtual
-- `cloudtemple_compute_iaas_opensource_virtual_disk`: Disco
-- `cloudtemple_compute_iaas_opensource_network_adapter`: Interfaz de red
-- `cloudtemple_compute_iaas_opensource_replication_policy`: Política de replicación
+- `cloudtemple_compute_iaas_opensource_virtual_machine` : Máquina virtual
+- `cloudtemple_compute_iaas_opensource_virtual_disk` : Disco virtual
+- `cloudtemple_compute_iaas_opensource_network_adapter` : Adaptador de red
+- `cloudtemple_compute_iaas_opensource_replication_policy` : Política de replicación
 
-#### Object Storage
+#### Almacenamiento de objetos
 
-- `cloudtemple_object_storage_bucket`: Bucket S3
-- `cloudtemple_object_storage_storage_account`: Cuenta de almacenamiento
-- `cloudtemple_object_storage_acl_entry`: ACL de un bucket
+- `cloudtemple_object_storage_bucket` : Bucket S3
+- `cloudtemple_object_storage_storage_account` : Cuenta de almacenamiento
+- `cloudtemple_object_storage_acl_entry` : ACL de un bucket
 - `cloudtemple_object_storage_global_access_key`: Clave de acceso global al namespace
 
 ### Atributos y argumentos
 
-Cada recurso tiene:
+Cada recurso posee:
 
 - **Argumentos**: Valores que usted configura (entradas)
 - **Atributos**: Valores devueltos por el recurso (salidas)
@@ -111,7 +111,7 @@ resource "cloudtemple_compute_virtual_machine" "example" {
   # id, moref, machine_manager_id, etc.
 }
 
-# Referencia a un atributo
+# Reference to an attribute
 output "vm_id" {
   value = cloudtemple_compute_virtual_machine.example.id
 }
@@ -119,9 +119,9 @@ output "vm_id" {
 
 ## Datasources
 
-Los datasources permiten recuperar información sobre recursos existentes sin gestionarlos. Son de **solo lectura**.
+Las datasources permiten recuperar información sobre recursos existentes sin gestionarlos. Son de **solo lectura**.
 
-### Uso de datasources
+### Uso de los datasources
 
 ```hcl
 # Recuperación de un datacenter existente
@@ -143,48 +143,48 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-### Datasources principales
+### Principales fuentes de datos
 
-Puede encontrar la lista completa de datasources disponibles en el proveedor Terraform Cloud Temple en [documentación Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+Puede encontrar la lista completa de las fuentes de datos disponibles en el proveedor Terraform Cloud Temple en la [documentación de Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
 
 #### Infraestructura Compute
 
 | Datasource | Descripción |
 |------------|-------------|
-| `cloudtemple_compute_virtual_datacenter` | Datacenter virtual |
-| `cloudtemple_compute_host_cluster` | Clúster de hosts |
-| `cloudtemple_compute_datastore_cluster` | Clúster de datastores |
+| `cloudtemple_compute_virtual_datacenter` | Centro de datos virtual |
+| `cloudtemple_compute_host_cluster` | Cluster de hosts |
+| `cloudtemple_compute_datastore_cluster` | Cluster de datastores |
 | `cloudtemple_compute_datastore` | Datastore individual |
 | `cloudtemple_compute_network` | Red (VLAN, VXLAN) |
 | `cloudtemple_compute_machine_manager` | Machine Manager (vCenter) |
 
-#### Templates y Marketplace
+#### Plantillas y Marketplace
 
 | Datasource | Descripción |
 |------------|-------------|
 | `cloudtemple_compute_content_library` | Biblioteca de contenido |
-| `cloudtemple_compute_content_library_item` | Elemento de biblioteca |
-| `cloudtemple_marketplace_item` | Elemento de Marketplace Cloud Temple |
-| `cloudtemple_compute_iaas_opensource_template` | Template en el catálogo IaaS OpenSource |
+| `cloudtemple_compute_content_library_item` | Elemento de la biblioteca |
+| `cloudtemple_marketplace_item` | Elemento del Marketplace Cloud Temple |
+| `cloudtemple_compute_iaas_opensource_template` | Plantilla en el catálogo del IaaS OpenSource |
 
 #### Backup
 
-| Datasource | Descripción |
+| Datasource | Description |
 |------------|-------------|
-| `cloudtemple_backup_sla_policy` | Política SLA de backup VMware |
-| `cloudtemple_backup_iaas_opensource_policy` | Política de backup OpenSource |
+| `cloudtemple_backup_sla_policy` | VMware backup SLA policy |
+| `cloudtemple_backup_iaas_opensource_policy` | OpenSource backup policy |
 
-#### Object Storage
+#### Almacenamiento de objetos
 
-| Datasource | Descripción |
-|------------|-------------|
-| `cloudtemple_object_storage_role` | Roles disponibles para ACLs |
+| Origen de datos | Descripción |
+|-----------------|-------------|
+| `cloudtemple_object_storage_role` | Roles disponibles para las ACL |
 | `cloudtemple_object_storage_bucket_files` | Archivos en un bucket |
 | `cloudtemple_object_storage_storage_account` | Cuenta de almacenamiento existente |
 
-## Estado Terraform (State)
+## Estado de Terraform (State)
 
-El state Terraform es un archivo que mantiene la correspondencia entre su configuración y los recursos reales en la nube.
+El estado de Terraform es un archivo que mantiene la correspondencia entre su configuración y los recursos reales en la nube.
 
 ### Archivo terraform.tfstate
 
@@ -206,7 +206,7 @@ El state Terraform es un archivo que mantiene la correspondencia entre su config
 
 ### Backend remoto
 
-Para trabajo en equipo, almacene el state en un backend remoto:
+Para un trabajo en equipo, almacena el estado en un backend remoto:
 
 ```hcl
 terraform {
@@ -219,41 +219,41 @@ terraform {
 ```
 
 :::warning
-    El archivo `terraform.tfstate` contiene información sensible. Nunca lo haga commit en Git y utilice un backend seguro para el almacenamiento.
+    El archivo `terraform.tfstate` contiene información sensible. Nunca lo commits en Git y utiliza un backend seguro para su almacenamiento.
 :::
 
 :::info
-    OpenTofu proporciona cifrado del state por defecto ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
+    OpenTofu ofrece cifrado del estado por defecto ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
 
-## Ciclo de vida Terraform
+## Ciclo de vida de Terraform
 
 ### 1. Inicialización (terraform init)
 
-Inicializa el directorio de trabajo y descarga el proveedor Cloud Temple:
+Inicializa el directorio de trabajo y descarga el provider Cloud Temple:
 
 ```bash
 terraform init
 ```
 
 Este comando:
-- Descarga el proveedor desde Terraform Registry
+- Descarga el provider desde el Terraform Registry
 - Inicializa el backend (si está configurado)
 - Crea el directorio `.terraform/`
 
 ### 2. Planificación (terraform plan)
 
-Genera un plan de ejecución mostrando los cambios que se aplicarán:
+Genera un plan de ejecución que muestra los cambios que se aplicarán:
 
 ```bash
 terraform plan
 ```
 
 El plan indica:
-- **Recursos a crear** (`+`)
-- **Recursos a modificar** (`~`)
-- **Recursos a destruir** (`-`)
-- **Recursos a recrear** (`-/+`)
+- **Recursos que se crearán** (`+`)
+- **Recursos que se modificarán** (`~`)
+- **Recursos que se destruirán** (`-`)
+- **Recursos que se recrearán** (`-/+`)
 
 ### 3. Aplicación (terraform apply)
 
@@ -267,36 +267,36 @@ Terraform:
 1. Genera un plan
 2. Solicita confirmación (excepto con `--auto-approve`)
 3. Aplica los cambios
-4. Actualiza el state
+4. Actualiza el estado
 
 ### 4. Destrucción (terraform destroy)
 
-Destruye todos los recursos gestionados:
+Elimina todas las recursos gestionados:
 
 ```bash
 terraform destroy
 ```
 
 :::danger Atención
-  Este comando elimina permanentemente todos los recursos. Úselo con precaución.
+  Este comando elimina definitivamente todos los recursos. Úsalo con precaución.
 :::
 
-### 5. Otros comandos útiles
+### 5. Otras órdenes útiles
 
 ```bash
 # Mostrar el estado actual
 terraform show
 
-# Listar recursos
+# Listar los recursos
 terraform state list
 
 # Verificar la configuración
 terraform validate
 
-# Formatear archivos
+# Formate los archivos
 terraform fmt
 
-# Mostrar outputs
+# Mostrar las salidas
 terraform output
 ```
 
@@ -306,22 +306,22 @@ Terraform analiza automáticamente las dependencias entre recursos.
 
 ### Dependencias implícitas
 
-Terraform detecta referencias entre recursos:
+Terraform detecta las referencias entre recursos:
 
 ```hcl
-# El datasource se evalúa primero
+# La datasource se evalúa en primer lugar
 data "cloudtemple_compute_virtual_datacenter" "dc" {
   name = "DC-EQX6"
 }
 
-# Luego se crea la VM (dependencia implícita vía datacenter_id)
+# Then the VM is created (implicit dependency via datacenter_id)
 resource "cloudtemple_compute_virtual_machine" "web" {
   name          = "web-server"
   datacenter_id = data.cloudtemple_compute_virtual_datacenter.dc.id
   # ...
 }
 
-# Finalmente se adjunta el disco (dependencia vía virtual_machine_id)
+# Finally, the disk is attached (dependency via virtual_machine_id)
 resource "cloudtemple_compute_virtual_disk" "data" {
   name               = "data-disk"
   virtual_machine_id = cloudtemple_compute_virtual_machine.web.id
@@ -331,7 +331,7 @@ resource "cloudtemple_compute_virtual_disk" "data" {
 
 ### Dependencias explícitas
 
-Para forzar un orden específico, use `depends_on`:
+Para forzar un orden específico, utilice `depends_on`:
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -348,7 +348,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ### Variables de entrada
 
-Hacen que su configuración sea reutilizable:
+Haga que su configuración sea reutilizable:
 
 ```hcl
 variable "vm_name" {
@@ -372,16 +372,16 @@ resource "cloudtemple_compute_virtual_machine" "example" {
 
 ### Outputs
 
-Exponen información después de la aplicación:
+Expose information after the application:
 
 ```hcl
 output "vm_id" {
-  description = "ID de la máquina virtual"
+  description = "ID of the virtual machine"
   value       = cloudtemple_compute_virtual_machine.example.id
 }
 
 output "vm_moref" {
-  description = "Managed Object Reference VMware"
+  description = "VMware Managed Object Reference"
   value       = cloudtemple_compute_virtual_machine.example.moref
 }
 ```
@@ -426,8 +426,8 @@ module "db_server" {
 ├── main.tf              # Recursos principales
 ├── variables.tf         # Declaraciones de variables
 ├── outputs.tf           # Declaraciones de outputs
-├── versions.tf          # Versiones Terraform y proveedores
-├── terraform.tfvars     # Valores de variables (no hacer commit)
+├── versions.tf          # Versiones de Terraform y providers
+├── terraform.tfvars     # Valores de las variables (no commitear)
 └── modules/             # Módulos reutilizables
     └── vm/
         ├── main.tf
@@ -438,10 +438,10 @@ module "db_server" {
 ### Gestión de secretos
 
 ```hcl
-# ❌ A evitar
+# ❌ To avoid
 provider "cloudtemple" {
   client_id = "12345678-1234-1234-1234-123456789abc"
-  secret_id = "secreto-en-claro"
+  secret_id = "secret-en-clair"
 }
 
 # ✅ Recomendado
@@ -451,7 +451,7 @@ provider "cloudtemple" {
 }
 ```
 
-### Uso de tags
+### Uso de etiquetas
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -469,5 +469,5 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ## Próximos pasos
 
-- [Guía de inicio](quickstart.md): Cree su primera infraestructura con Terraform
-- [Tutoriales](tutorials.md): Ejemplos prácticos para cada servicio
+- [Guía de inicio](quickstart.md) : Cree su primera infraestructura con Terraform
+- [Tutoriales](tutorials.md) : Ejemplos prácticos para cada servicio

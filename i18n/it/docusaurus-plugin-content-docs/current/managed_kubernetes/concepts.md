@@ -9,13 +9,13 @@ import archi_overview_1az from './images/archi_overview_1az.png'
 
 ## Presentazione di Managed Kubernetes
 
-L'offerta **Managed Kubernetes** (noto anche come "Kub Managé" o "KM") è una soluzione di containerizzazione Kubernetes gestita da Cloud-Temple, distribuita sotto forma di Macchine Virtuali che operano sull'infrastruttura IaaS Cloud-Temple OpenIaaS.
+L'offerta **Managed Kubernetes** (nota anche come "Kub Managé" o "KM") è una soluzione di containerizzazione Kubernetes gestita da Cloud-Temple, distribuita sotto forma di Macchine Virtuali che operano sull'infrastruttura IaaS Cloud-Temple OpenIaaS.
 
-**Managed Kubernetes** si basa su **Talos Linux** (https://www.talos.dev/), un sistema operativo dedicato a Kubernetes, leggero e sicuro. È immutabile, privo di shell e accesso SSH, e configurato esclusivamente in modo dichiarativo tramite API gRPC.
+**Managed Kubernetes** si basa su Talos Linux (https://www.talos.dev/), un sistema operativo dedicato a Kubernetes, leggero e sicuro. È immutabile, privo di shell e accesso SSH, e configurato esclusivamente in modo dichiarativo tramite API gRPC.
 
 L'installazione standard include un insieme di componenti, principalmente Open Source e validati dal CNCF:
 
-- **CNI Cillium**, con interfaccia di osservabilità (**Hubble**): Cillium è una soluzione di rete per container Kubernetes (*Container Network Interface*). Gestisce sicurezza, load balancing, service mesh, osservabilità, crittografia, ecc. È un componente di rete fondamentale presente nella maggior parte delle varianti di Kubernetes (OpenShift, AKS, GKE, EKS, ...). Abbiamo integrato l'interfaccia grafica **Hubble** per la visualizzazione dei flussi Cillium.
+- **CNI Cillium**, con interfaccia di osservabilità (**Hubble**): Cillium è una soluzione di rete per container Kubernetes (*Container Network Interface*). Gestisce sicurezza, load balancing, service mesh, osservabilità, crittografia, ecc. È un componente di rete fondamentale presente nella maggior parte delle varianti di Kubernetes (OpenShift, AKS, GKE, EKS, ...). Abbiamo integrato l'interfaccia grafica **Hubble** per una visualizzazione dei flussi Cillium.
 
     <img src={cillium} />
 
@@ -23,25 +23,25 @@ L'installazione standard include un insieme di componenti, principalmente Open S
     - *nginx-external-secured*: esposizione su un'IP pubblica, filtrata dal firewall per consentire solo IP noti (utilizzato per le interfacce grafiche dei diversi prodotti e per l'API Kubernetes)
     - *nginx-external*: esposizione su una seconda IP pubblica non filtrata (o con filtraggio specifico per il cliente)
     - *nginx-internal*: esposizione su un'IP interna esclusivamente
-    
-    Per i servizi "non web", un load-balancer **MetalLB** permette di esporre servizi internamente o su IP pubbliche (consentendo il deployment di altri ingress, ad esempio un WAF).
 
-- **Archiviazione distribuita Rook-Ceph**: per l'archiviazione dei volumi persistenti (PV), è integrata nella piattaforma un'archiviazione distribuita **Ceph** Open Source. Permette l'uso delle *storage-classes* *ceph-block*, *ceph-bucket* e *ceph-filesystem*. Viene utilizzata un'archiviazione con **7500 IOPS/To**, garantendo prestazioni elevate. Nei deployment di produzione (su 3 AZ), i nodi di archiviazione sono dedicati (1 nodo per AZ); nei deployment non di produzione (1 AZ), l'archiviazione è condivisa con i nodi worker.
+    Per i servizi "non web", un load-balancer **MetalLB** permette di esporre servizi internamente o su IP pubbliche (consentendo così il deployment di altri ingress, ad esempio un WAF)
+
+- **Archiviazione distribuita Rook-Ceph**: per l'archiviazione dei volumi persistenti (PV), è integrata nella piattaforma un'archiviazione distribuita **Ceph** Open Source. Permette l'uso delle *storage-classes* *ceph-block*, *ceph-bucket* e *ceph-filesystem*. Viene utilizzata un'archiviazione con **7500 IOPS**, garantendo prestazioni elevate. Nei deployment di produzione (su 3 AZ), i nodi di archiviazione sono dedicati (1 nodo per AZ); nei deployment non di produzione (1 AZ), l'archiviazione è condivisa con i nodi worker.
 
 - **Cert-Manager**: il gestore di certificati Open Source **Cert-Manager** è integrato nativamente nella piattaforma.
 
-- **ArgoCD**: utilizziamo **ArgoCD** per i deployment automatizzati dei diversi componenti tramite una catena di **CI/CD**.
+- **ArgoCD** è a vostra disposizione per i deployment automatizzati tramite una pipeline di **CI/CD**.
 
-- Stack **Prometheus** (Prometheus, Grafana, Promtail, Loki): i cluster Managed Kubernetes vengono forniti di default con uno stack Open Source completo **Prometheus** per l'osservabilità, che include:
+- Stack **Prometheus** (Prometheus, Grafana, Loki): i cluster Managed Kubernetes vengono forniti di default con uno stack Open Source completo **Prometheus** per l'osservabilità, che include:
     - **Prometheus**
     - **Grafana**, con numerosi dashboard
-    - **Loki** e **PromTail**: i log della piattaforma vengono esportati nel storage S3 Cloud-Temple (e integrati in Grafana).
+    - **Loki**: i log della piattaforma vengono esportati nel storage S3 di Cloud-Temple (e integrati in Grafana).
 
     <img src={grafana} />
 
-- **Harbor** è un **Container registry** che ti permette di archiviare immagini dei tuoi container o i tuoi chart Helm direttamente nel cluster. Esegue **scan di vulnerabilità** sulle tue immagini e può firmarle digitalmente. **Harbor** permette anche sincronizzazioni con altri registri. (https://goharbor.io/)
+- **Harbor** è un **Container registry** che vi permette di archiviare immagini dei vostri container o i vostri chart Helm direttamente nel cluster. Esegue **scan di vulnerabilità** sulle vostre immagini e può firmarle digitalmente. **Harbor** permette anche sincronizzazioni con altri registri. (https://goharbor.io/)
 
-- **KubeCost** (https://github.com/kubecost) è uno strumento per la gestione dei costi (Finops) in Kubernetes. Ti permette di monitorare con precisione il consumo delle risorse Kubernetes e di effettuare la sottofatturazione per progetto/namespace.
+- **OpenCost** (https://github.com/opencost/opencost) è uno strumento per la gestione dei costi (Finops) per Kubernetes. Vi permette di monitorare in modo dettagliato il consumo delle risorse Kubernetes e di effettuare la sottofatturazione per progetto/namespace.
 
 - Strategie di sicurezza avanzate con **Kyverno** e **Capsule**:
     - **Kyverno** (https://kyverno.io/) è un controller di ammissione per Kubernetes che permette di applicare strategie. È uno strumento essenziale per la governance e la sicurezza in Kubernetes.
@@ -49,9 +49,9 @@ L'installazione standard include un insieme di componenti, principalmente Open S
 
 - **Veeam Kasten** (noto anche come 'k10') è una soluzione per la **protezione** dei carichi di lavoro Kubernetes.
 
-    Permette di eseguire backup completi: manifesti, volumi, ecc. verso il storage oggetto S3 Cloud-Temple. **Kasten** utilizza **Kanister** per consentire backup applicativi coerenti, ad esempio per database (https://docs.kasten.io/latest/usage/blueprints/). 
-    
-    **Kasten** è uno strumento cross-platform che può funzionare con altri cluster Kubernetes (OpenShift, Hyperscaler, ...). Può quindi essere utilizzato per scenari di reversibilità o migrazione (K10 gestisce le eventuali adattamenti tramite *trasformazioni*, ad esempio un cambiamento di ingress-class), ma anche per il "refresh" (esempio: ripristino pianificato di un ambiente di produzione in pre-produzione).
+    Permette di eseguire backup completi: manifesti, volumi, ecc. verso il storage oggetto S3 di Cloud-Temple. **Kasten** utilizza **Kanister** per consentire backup coerenti a livello applicativo, ad esempio per database (https://docs.kasten.io/latest/usage/blueprints/).
+
+    **Kasten** è uno strumento cross-platform che può funzionare con altri cluster Kubernetes (OpenShift, Hyperscaler, ...). Può quindi essere utilizzato per scenari di reversibilità o migrazione (K10 gestisce le eventuali adattamenti tramite *trasformazioni*, ad esempio un cambiamento di ingress-class), ma anche per "refresh" (esempio: ripristino pianificato di un ambiente di produzione in pre-produzione).
 
 - (opzionale): **Autenticazione SSO** con un Identity Provider esterno OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
 
@@ -63,17 +63,18 @@ L'installazione standard include un insieme di componenti, principalmente Open S
 
 I tempi di intervento e ripristino dipendono dalla gravità dell'incidente, conformemente alla griglia di supporto (P1 a P4).
 
-## Politica delle versioni e ciclo di vita
-- **Kubernetes supportato:** N-2 (3 rilasci principali all'anno, circa ogni 4 mesi). Ogni rilascio è ufficialmente supportato per 12 mesi, garantendo una finestra di supporto Cloud Temple di massimo ~16 mesi per versione.
-- **Talos OS:** allineato alle versioni stabili di Kubernetes.
-  - Ogni branca è mantenuta per circa 12 mesi (inclusi aggiornamenti di sicurezza).
-  - Frequenza raccomandata di aggiornamento: 3 volte all'anno, in coerenza con gli aggiornamenti di Kubernetes.
-  - Gli aggiornamenti critici (CVE, kernel) vengono applicati tramite rolling update, senza interruzioni del servizio.
-- **Operatori standard:** aggiornati entro 90 giorni dal rilascio stabile.
-- **Aggiornamenti:**
-  - **Principali** (Kubernetes N+1, Talos X+1): pianificati 3 volte all'anno, tramite aggiornamento rolling.
-  - **Secondari:** applicati automaticamente entro un periodo di 30-60 giorni.
-- **Deprecazione:** versione N-3 → fine del supporto entro 90 giorni dall'uscita della versione N.
+## Version policy & lifecycle
+
+- **Supported Kubernetes:** N-2 (3 major releases per year, approximately every 4 months). Each release is officially supported for 12 months, ensuring a maximum Cloud Temple support window of ~16 months per version.
+- **Talos OS:** aligned with stable Kubernetes releases.
+  - Each branch is maintained for approximately 12 months (including security patches).
+  - Recommended upgrade frequency: 3 times per year, in alignment with Kubernetes upgrades.
+  - Critical patches (CVE, kernel) are applied via rolling upgrade, without service interruption.
+- **Standard operators:** updated within 90 days following stable release.
+- **Updates:**
+  - **Major** (Kubernetes N+1, Talos X+1): scheduled 3 times per year, via rolling update.
+  - **Minor:** applied automatically within 30 to 60 days.
+- **Deprecation:** version N-3 → end of support within 90 days after the release of N.
 
 ## Nodi Kubernetes
 
@@ -108,27 +109,27 @@ Per una versione "dev/test", vengono distribuite le seguenti macchine:
 |---------|----------------|------------|---------|--------------------------|
 | AZ0n  | Git Runner     | 4          | 8 GB    | OS: 30 GB                |
 | AZ0n  | Control Plane  | 8          | 12 GB   | OS: 64 GB                |
-| AZ0n  | Worker Node 1 (**) | 12       | 24 GB   | OS: 64 GB + Ceph 300 GB minimo (*) |
-| AZ0n  | Worker Node 2 (**) | 12       | 24 GB   | OS: 64 GB + Ceph 300 GB minimo (*) |
-| AZ0n  | Worker Node 3 (**) | 12       | 24 GB   | OS: 64 GB + Ceph 300 GB minimo (*) |
+| AZ0n  | Worker Node 1 (**) | 12       | 24 GB   | OS: 64 GB + Ceph min. 300 GB (*) |
+| AZ0n  | Worker Node 2 (**) | 12       | 24 GB   | OS: 64 GB + Ceph min. 300 GB (*) |
+| AZ0n  | Worker Node 3 (**) | 12       | 24 GB   | OS: 64 GB + Ceph min. 300 GB (*) |
 
-(*) : 3 nodi Worker vengono utilizzati come nodi di archiviazione e sono forniti con un minimo di 300 GB di spazio disco, per un'archiviazione utile distribuita di 300 GB (i dati sono replicati tre volte). Lo spazio libero disponibile per il cliente è di circa 150 GB. Questa dimensione iniziale può essere aumentata al momento della costruzione o in un secondo momento, in base alle esigenze.
+(*) : 3 nodi Worker vengono utilizzati come nodi di archiviazione e sono forniti con almeno 300 GB di spazio disco, per un archiviazione utile distribuita di 300 GB (i dati sono replicati tre volte). Lo spazio disponibile per il cliente è di circa 150 GB. Questa dimensione iniziale può essere aumentata al momento della costruzione o in un secondo momento, in base alle esigenze.
 
-(**) : La dimensione e il numero dei nodi Worker possono essere adattati in base alle esigenze di capacità di calcolo del cliente. Il numero minimo di nodi Worker è di 3 (a causa della replica dell'archiviazione). La dimensione dei nodi Worker può essere modificata, con un minimo di 12 core e 24 GB di RAM; il limite superiore per nodo Worker è determinato dalla dimensione degli hypervisor utilizzati (potenzialmente fino a 112 core/1536 GB di RAM con le lame Performance 3). Il numero massimo di nodi Worker è limitato a 250. Il CNCF raccomanda di utilizzare nodi Worker della stessa dimensione. Il limite massimo di pod per nodo Worker è di 110.
+(**) : La dimensione e il numero dei nodi Worker possono essere adattati in base alle esigenze di capacità di calcolo del cliente. Il numero minimo di nodi Worker è 3 (a causa della replica del dato). La dimensione dei nodi Worker può essere personalizzata, con un minimo di 12 core e 24 GB di RAM; il limite superiore per nodo Worker è determinato dalla dimensione degli hypervisor utilizzati (potenzialmente fino a 112 core/1536 GB di RAM con blade Performance 3). Il numero massimo di nodi Worker è 250. Il CNCF raccomanda di utilizzare nodi Worker della stessa dimensione. Il limite massimo di pod per nodo Worker è 110.
 
 ## RACI
 
-### Architettura e Infrastruttura
+### Architecture & Infrastructure
 
-| **Attività**                                                                 | **Cliente** | **Cloud Temple** |
-|------------------------------------------------------------------------------|-------------|------------------------|
-| Definire l'architettura generale del servizio Kubernetes                      | C           | RA                     |
-| Dimensionare il servizio Kubernetes (numero di nodi, risorse)                 | C           | RA                     |
-| Installare il servizio Kubernetes con una configurazione predefinita          | I           | RA                     |
-| Configurare il servizio Kubernetes                                            | C           | RA                     |
-| Configurare la rete di base del servizio Kubernetes                           | I           | RA                     |
-| Distribuire la configurazione iniziale per identità e accessi                 | C           | RA                     |
-| Definire la strategia di scalabilità e disponibilità elevata                  | C           | RA                     |
+| **Activity**                                                                 | **Client** | **Cloud Temple** |
+|------------------------------------------------------------------------------|------------|------------------------|
+| Define the overall architecture of the Kubernetes service                   | C          | RA                     |
+| Size the Kubernetes service (number of nodes, resources)                    | C          | RA                     |
+| Install the Kubernetes service with default configuration                   | I          | RA                     |
+| Configure the Kubernetes service                                            | C          | RA                     |
+| Set up the base network for the Kubernetes service                          | I          | RA                     |
+| Deploy initial configuration for identities and access                      | C          | RA                     |
+| Define scaling and high availability strategy                               | C          | RA                     |
 
 ### Gestione dei progetti e delle applicazioni aziendali
 
@@ -137,7 +138,7 @@ Per una versione "dev/test", vengono distribuite le seguenti macchine:
 | Creare e gestire i progetti Kubernetes                | RA          | I*                     |
 | Distribuire e gestire le applicazioni in Kubernetes   | RA          | I*                     |
 | Configurare i pipeline CI/CD                          | RA          | I*                     |
-| Gestire le immagini dei container e i registri        | RA          | I*                     |
+| Gestire le immagini dei contenitori e i registri      | RA          | I*                     |
 
 *può passare a "C" in base al contratto di infrastruttura gestita
 
@@ -148,9 +149,9 @@ Per una versione "dev/test", vengono distribuite le seguenti macchine:
 | Monitorare le prestazioni del servizio Kubernetes       | I           | RA*                    |
 | Monitorare le prestazioni delle applicazioni            | RA          |                        |
 | Gestire le allerte relative al servizio Kubernetes       | I           | RA*                    |
-| Gestire le allerte relative alle applicazioni            | RA          |                        |
+| Gestire le allerte relative alle applicazioni           | RA          |                        |
 
-(*) : *Solo cluster di Produzione. In Dev/Test il cliente è completamente autonomo e responsabile.*
+(*) : *Solo cluster di produzione. In ambiente di sviluppo/test il cliente è completamente autonomo e responsabile.*
 
 ### Manutenzione e aggiornamenti Infrastrutture
 
@@ -160,7 +161,7 @@ Per una versione "dev/test", vengono distribuite le seguenti macchine:
 | Applicare i patch di sicurezza a Kubernetes              | C           | RA                     |
 | Aggiornare le applicazioni distribuite (operatori*)      | C           | RA                     |
 
-*Pacchetto operatore incluso nel Kube gestito - vedere capitoli: Pacchetti Helm gestiti
+*Pacchetto operatore incluso nel Managed Kube - vedere capitoli: Pacchetti Helm gestiti
 
 ### Security
 
@@ -216,26 +217,26 @@ Per una versione "dev/test", vengono distribuite le seguenti macchine:
 | Mantenere la documentazione delle applicazioni                | RA          | I                      |
 | Garantire la conformità del servizio Kubernetes                | I           | RA                     |
 | Garantire la conformità delle applicazioni                    | RA          | I                      |
-| Effettuare audit del servizio Kubernetes                      | I           | RA                     |
-| Effettuare audit delle applicazioni                          | RA          | I                      |
+| Eseguire audit del servizio Kubernetes                        | I           | RA                     |
+| Eseguire audit delle applicazioni                             | RA          | I                      |
 
 ### Operator/CRD Kubernetes Management (included in the offer)
 
 | **Activity**                                                              | **Client** | **Cloud Temple** |
 |---------------------------------------------------------------------------|------------|------------------------|
-| Provisioning of the default Operators catalog                             | CI         | RA                     |
-| Updating Operators                                                        | CI         | RA                     |
-| Monitoring Operators status                                               | CI         | RA                     |
-| Troubleshooting Operator-related issues                                   | CI         | RA                     |
-| Managing Operator permissions                                             | CI         | RA                     |
-| Managing Operator resources (addition/removal)                            | CI         | RA                     |
-| Backup of Operator resources data                                         | CI         | RA                     |
-| Monitoring Operator resources                                             | CI         | RA                     |
-| Restoration of Operator resources data                                    | CI         | RA                     |
-| Security audit of Operators                                               | CI         | RA                     |
-| Operator support                                                          | CI         | RA                     |
-| License management for operators                                          | CI         | RA                     |
-| Management of specific support plans for operators                        | CI         | RA                     |
+| Provisioning of default Operators catalog                                   | CI         | RA                     |
+| Updating Operators                                                         | CI         | RA                     |
+| Monitoring Operators status                                                | CI         | RA                     |
+| Troubleshooting Operator-related issues                                    | CI         | RA                     |
+| Managing Operator permissions                                              | CI         | RA                     |
+| Managing Operator resources (addition/removal)                             | CI         | RA                     |
+| Backup of Operator resources data                                          | CI         | RA                     |
+| Monitoring Operator resources                                              | CI         | RA                     |
+| Restoration of Operator resources data                                     | CI         | RA                     |
+| Security audit of Operators                                                | CI         | RA                     |
+| Operator support                                                           | CI         | RA                     |
+| License management for operators                                           | CI         | RA                     |
+| Management of specific support plans for operators                         | CI         | RA                     |
 
 *Operator package included in Managed Kube – see chapters: Managed Helm Packages
 
@@ -259,9 +260,9 @@ Per una versione "dev/test", vengono distribuite le seguenti macchine:
 | Gestione delle licenze sugli operatori                                     | RA          | I                      |
 | Gestione dei piani di supporto specifici sugli operatori                  | RA          | I                      |
 
-Alcuni servizi operatori possono essere gestiti in base al contratto di infogestione.
+Alcuni servizi operatori possono essere gestiti in base al contratto di infrastruttura gestita.
 
-*può passare a "A | RC" in base al contratto di infogestione
+*può passare a "A | RC" in base al contratto di infrastruttura gestita
 
 ### Support applicativo
 
@@ -271,7 +272,7 @@ Alcuni servizi operatori possono essere gestiti in base al contratto di infogest
 
 Un support applicativo può essere fornito tramite una prestazione complementare.
 
-### RACI (synthétique)
+### RACI (sintetico)
 
 - Cloud Temple: responsabile e attore (RA) per la base Kubernetes, sicurezza del cluster, backup infrastruttura, monitoraggio, CRD.
 - Cliente: responsabile e attore (RA) per i progetti applicativi, operatori aziendali, pipeline CI/CD, backup applicativi.

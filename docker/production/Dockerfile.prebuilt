@@ -1,0 +1,14 @@
+# Serve static site with a simple nginx
+FROM nginx:1.27.4-alpine AS deploy
+
+ARG APP_FOLDER=/var/www
+
+WORKDIR ${APP_FOLDER}
+
+# Copy nginx configuration
+ADD docker/production/root /
+
+# Copy docusaurus static site from build context
+COPY build/ ${APP_FOLDER}
+
+CMD ["nginx", "-g", "daemon off;"]

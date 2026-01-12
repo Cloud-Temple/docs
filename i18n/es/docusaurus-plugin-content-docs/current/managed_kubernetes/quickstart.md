@@ -8,7 +8,7 @@ El objetivo de esta sección es orientarte hacia los recursos necesarios para co
 
 ## Antes de comenzar
 
-Para interactuar con su clúster, son indispensables varios elementos:
+Para interactuar con su clúster, son indispensables los siguientes elementos:
 
 1.  **El archivo `kubeconfig`**: Este archivo, que le es proporcionado por los equipos de Cloud Temple al entregar el servicio, contiene toda la información necesaria para conectarse de forma segura.
 2.  **La herramienta `kubectl`**: Se trata de la interfaz de línea de comandos estándar para gestionar un clúster de Kubernetes.
@@ -21,36 +21,37 @@ Algunos de nuestros tutoriales utilizarán Lens para ilustrar las manipulaciones
 
 ## Acceder a su cluster Kubernetes gestionado
 
-Su cluster de producción está identificado por un código de 5 letras (6 letras en Dev/Test). Este código se utiliza para construir las URL de las diferentes interfaces. En los tutoriales, usaremos **"ctodev"**.
+Su cluster de producción está identificado por un código de 5 letras (6 letras en Dev/Test). Este código se utiliza para construir las URLs de las diferentes interfaces. En los tutoriales, usaremos **"ctodev"**.
 
-Las URL son:
+Las URLs son:
 
-- API de Kubernetes (utilizada en kubeconfig):
+- API de Kubernetes (usada en kubeconfig):
   - **identificador**.mk.ms-cloud-temple.com:6443 (por lo tanto, en nuestro ejemplo: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443))
 
-- URL públicas:
+- URLs públicas:
   - k10.external-secured.**identificador**.mk.ms-cloud-temple.com
   - grafana.external-secured.**identificador**.mk.ms-cloud-temple.com
   - harbor.external-secured.**identificador**.mk.ms-cloud-temple.com
-  - kubecost.external-secured.**identificador**.mk.ms-cloud-temple.com
+  - opencost.external-secured.**identificador**.mk.ms-cloud-temple.com
+  - opencost-mcp.external-secured.**identificador**.mk.ms-cloud-temple.com
 
-:::info URL seguras
-Las URL anteriores solo son accesibles desde direcciones IP públicas conocidas, configuradas en el firewall de la solución. Si desea agregar una IP pública, debe solicitar soporte.
+:::info URLs seguras
+Las URLs anteriores solo son accesibles desde direcciones IP públicas conocidas, configuradas en el firewall de la solución. Si desea agregar una IP pública, debe solicitar soporte.
 :::
 
-- URL internas:
+- URLs internas:
   - ceph.internal.**identificador**.mk.ms-cloud-temple.com
   - argocd.internal.**identificador**.mk.ms-cloud-temple.com
   - hubble.internal.**identificador**.mk.ms-cloud-temple.com
 
-:::info URL internas
-Las URL anteriores no están expuestas en Internet. Solo son accesibles desde la red interna del Kubernetes gestionado.
+:::info URLs internas
+Las URLs anteriores no están expuestas en Internet. Solo son accesibles desde la red interna del Kubernetes gestionado.
 :::
 
 ## Sus permisos
 
 :::warning Dev/Test
-Para los clústeres Kubernetes gestionados **"Dev/Test"**, la cuenta de servicio que se le ha proporcionado tiene todos los permisos en todo el clúster (ClusterAdmin).
+Para los clústeres Kubernetes **"Dev/Test"**, la cuenta de servicio que se le ha proporcionado tiene todos los permisos en todo el clúster (ClusterAdmin).
 :::
 
 En los clústeres **"Producción"**, sus permisos están limitados. Usted cuenta con el permiso **"Viewer Extendido"** sobre los recursos del clúster. Este permiso otorga acceso de solo lectura a recursos clave, tanto a nivel de clúster como para diagnóstico:
@@ -58,21 +59,21 @@ En los clústeres **"Producción"**, sus permisos están limitados. Usted cuenta
 - **Namespaces**: permiten a los inquilinos listar los espacios de nombres para herramientas y paneles de control.
 - **Pods, deployments, replicaset...**: permiten a los inquilinos listar los recursos desplegados en el clúster.
 - **Nodes**: ofrecen visibilidad sobre la capacidad, los taints y las etiquetas de los nodos para comprender el comportamiento del planificador.
-- **StorageClasses, PVs, PVCs, VolumeAttachments y CSIDrivers**: permiten a los inquilinos identificar las clases de almacenamiento disponibles y resolver problemas de enlace entre PVC y PV o errores relacionados con controladores CSI.
+- **StorageClasses, PVs, PVCs, VolumeAttachments y CSIDrivers**: permiten a los inquilinos identificar las clases de almacenamiento disponibles y resolver problemas de vinculación entre PVC y PV o errores relacionados con controladores CSI.
 - **IngressClasses**: informan a los usuarios sobre los controladores de Ingress disponibles para el enrutamiento de aplicaciones.
 - **NetworkPolicies, ResourceQuotas, LimitRanges y Events**: esenciales para diagnosticar restricciones de red, fallos de planificación o violaciones de cuotas de recursos.
 
 La cuenta de servicio que se le ha asignado también ha sido configurada como **propietaria de un primer *tenant* Capsule**.  
-Puede crear namespaces, que se vincularán a su tenant Capsule.  
-Los usuarios externos (OIDC) son miembros de este mismo tenant Capsule, lo que les permite interactuar libremente dentro de los **namespaces** asociados al tenant. (Ver el tutorial "Gestionar permisos con Capsule")
+Puede crear espacios de nombres (namespaces), que se vincularán a su tenant Capsule.  
+Los usuarios externos (OIDC) son miembros de este mismo tenant Capsule, lo que les permite interactuar libremente dentro de los **espacios de nombres** asociados al tenant. (Ver el tutorial "Gestionar permisos con Capsule").
 
 Algunas acciones no están permitidas:
 
   - Listar / crear tenants Capsule
-  - Crear CRD: Si necesita desplegar una aplicación con CRD (por ejemplo, un chart Helm de un operador), deberá contactar al soporte para que importen estos CRD (mediante extracción de los archivos YAML desde el chart Helm). Luego podrá desplegar su chart Helm con la opción `--skip-crds`. Ver: [Documentación Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+  - Crear CRD: Si necesita desplegar una aplicación con CRD (por ejemplo, un chart Helm de un operador), deberá contactar al soporte para que importen estos CRD (mediante extracción de los archivos YAML desde el chart Helm). A continuación, podrá desplegar su chart Helm con la opción `--skip-crds`. Ver: [Documentación Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
- 
+
 <div class="row">
   <div class="col col--4">
     <div className="card">
@@ -85,14 +86,14 @@ Algunas acciones no están permitidas:
         </p>
       </div>
       <div className="card__footer">
-        <a href="./tutorials/firstdeploy" className="button button--primary button--block">Empezar el tutorial &rarr;</a>
+        <a href="./tutorials/firstdeploy" className="button button--primary button--block">Comenzar el tutorial &rarr;</a>
       </div>
     </div>
   </div>
   <div class="col col--4">
     <div className="card">
       <div className="card__header">
-        <h3>Tutorial: Comprender la red</h3>
+        <h3>Tutorial: Entender la red</h3>
       </div>
       <div className="card__body">
         <p>

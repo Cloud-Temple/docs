@@ -29,7 +29,7 @@ Ces termes restent en français ou anglais technique dans toutes les langues :
 
 #### **Marque et Services**
 - **Cloud Temple** → Cloud Temple (invariant)
-- **Console Shiva** → Console Shiva (nom propre)
+- **Console** → Console (nom propre)
 - **SecNumCloud** → SecNumCloud (certification ANSSI)
 - **ANSSI** → ANSSI (organisme français)
 
@@ -170,7 +170,7 @@ Le script de traduction doit respecter :
 ```javascript
 // Termes à ne JAMAIS traduire
 const INVARIANT_TERMS = [
-  'Cloud Temple', 'Console Shiva', 'SecNumCloud', 'ANSSI',
+  'Cloud Temple', 'Console', 'SecNumCloud', 'ANSSI',
   'API', 'endpoint', 'cluster', 'namespace', 'container',
   'IaaS', 'PaaS', 'SaaS', 'DevOps', 'CI/CD'
 ];

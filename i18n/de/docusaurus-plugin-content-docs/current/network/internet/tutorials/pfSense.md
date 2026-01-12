@@ -22,25 +22,25 @@ This guide will help you deploy your __open source pfSense firewall__ in the Clo
 
 Die Voraussetzungen für diese Anleitung sind:
 
-1. Ein abgeschlossener Cloud Temple-Vertrag: Sie müssen über Ihre Organisation, Ihren Mandanten und Ihre Zugangsdaten verfügen,
+1. Ein Abonnement für das Cloud Temple-Angebot: Sie müssen über Ihre Organisation, Ihren Mandanten und Ihre Zugangsdaten verfügen.
 2. Berechtigungen für das Compute-Modul.
 
-In diesem Dokument werden die Schritte zur Bereitstellung eines virtuellen Firewalls mit pfSense beschrieben.
+In diesem Dokument werden die Schritte beschrieben, die zum Bereitstellen eines virtuellen Firewalls pfSense erforderlich sind.
 
 ## Deploy a pfSense open source firewall
 
 [pfSense](https://www.pfsense.org) is an open source project based on FreeBSD that enables the deployment of a virtual firewall.
 
-A pfSense firewall is managed via a web interface, so you need a second machine with a graphical interface that has an IP address in the same LAN network as the firewall in order to configure it.
+A pfSense firewall is managed via a web interface, so you need a second machine with a graphical interface that has an IP address within the same LAN network as the firewall in order to configure it.
 
 We will need a set of two virtual machines:
 
 - The first one will be the machine on which we deploy the firewall.
 - The second one will be the machine from which we administer the firewall.
 
-### Request an internet access delivery
+### Request an internet connectivity delivery
 
-The first step is to retrieve [the internet access information here](https://docs.cloud-temple.com/network/internet/quickstart#gestion-de-vos-connectivites-internet).  
+The first step is to retrieve [your internet access information here](https://docs.cloud-temple.com/network/internet/quickstart#gestion-de-vos-connectivites-internet).  
 You must have the following information:
 
 - public prefix  
@@ -56,12 +56,12 @@ You must have the following information:
 
 Anschließend können Sie Ihre pfSense-VM bereitstellen:
 
-1. __Installation der Firewall__ über den pfSense-Template in Shiva:
+1. __Installation der Firewall__ über den pfSense-Vorlage in der Konsole:
     - [(Über die Konsole bereitstellen)](../../../iaas_vmware/tutorials/deploy_vm_template)
     - [(Über Terraform bereitstellen)](../../../iaas_vmware/tutorials/deploy_vm_terraform).
-2. __Konfiguration der LAN- und WAN-Schnittstellen__ der Firewall: Die WAN-Schnittstelle muss in Ihrem vLAN Internet liegen; ihre IP-Adresse wird aus dem Ihnen vom CDS bereitgestellten IP-Adressbereich entnommen sowie die Standard-Gateway-Adresse.
-3. __Bereitstellung der zweiten Management-Maschine__.
-4. __Konfiguration der Schnittstelle__ der Management-VM: Diese Maschine muss sich im selben Netzwerk befinden wie die LAN-Schnittstelle der Firewall.
+2. __Konfiguration der LAN- und WAN-Schnittstellen__ der Firewall: Die WAN-Schnittstelle muss in Ihrem vLAN Internet befinden; ihre IP-Adresse wird aus dem Ihnen vom CDS bereitgestellten IP-Adressbereich entnommen sowie die Standard-Gateway-Adresse.
+3. __Installation der zweiten Management-Maschine__.
+4. __Konfiguration der Schnittstelle__ der Management-VM: Diese Maschine muss sich im selben Netzwerk befinden wie das Netzwerk, in dem die LAN-Schnittstelle der Firewall konfiguriert wurde.
 
 ### Zugriff auf die Firewall
 
@@ -95,11 +95,11 @@ This step involves configuring the BGP neighbors on the firewall.
 
 In the Neighbors section, click on **+Add** to start creating your BGP neighbors.
 
-- For each neighbor: enter its IP address in __'General Options > Name/address'__:
+- For each neighbor: enter its IP address in **'General Options > Name/address'**:
 
 <img src={pfSenseNeighborConf} />
 
-- Enter the remote AS (corresponding to the cloud temple's AS number) in the Basic Options as follows:
+- Enter the remote AS (corresponding to the Cloud Temple AS number) in the Basic Options as follows:
 
 <img src={bgpBasicOptions} />
 
@@ -107,11 +107,11 @@ In the Neighbors section, click on **+Add** to start creating your BGP neighbors
 
 <img src={ebgpConf} />
 
-- Check the box that defines the neighbor type. In our case, it is a ``route`` server:
+- Check the box that defines the neighbor type. In our case, it is a **route server**:
 
 <img src={routeServerNeighbor} />
 
-- Lastly, don't forget to save your changes by clicking on __'Save'__:
+- Lastly, don't forget to save your changes by clicking on **'Save'**:
 
 <img src={neighborsOverview} />
 

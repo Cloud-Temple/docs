@@ -13,8 +13,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 
 ## Claves API
 
-La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también conocida como __Personal Access Token (PAT)__,
-es una forma segura de conectarse a las API de Shiva sin necesidad de usar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
+La __clave API__ permite autenticarse cuando desea realizar solicitudes a la API. La generación de una clave API, también conocida como __Personal Access Token (PAT)__, es una forma segura de conectarse a las API de Console sin tener que utilizar una interfaz gráfica. Cada uno de estos tokens está vinculado a un inquilino y al usuario que lo creó.
 
 La creación de este token se realiza desde su cuenta. Es posible generar varias claves y configurar los permisos para cada una, dentro de los límites de sus derechos.
 
@@ -22,21 +21,21 @@ Para crear una clave API, simplemente __haga clic en su perfil__:
 
 <img src={ShivaProfil001} />
 
-En el menú del perfil, haga clic en __'Token de acceso personal'__
+En el menú del perfil, haga clic en __'Token de acceso personal'__.
 
 <img src={ShivaProfil003} />
 
-A continuación, verá en pantalla el conjunto de claves API que han sido creadas para este usuario en este inquilino. Haga clic en __'Nuevo token de acceso personal'__
+A continuación, verá en pantalla el conjunto de claves API que han sido creadas para este usuario en este inquilino. Haga clic en __'Nuevo token de acceso personal'__.
 
 <img src={ShivaProfil002} />
 
-Debe entonces:
+A continuación, deberá:
 
 - Indicar el nombre de este nuevo token,
-- Indicar una fecha de expiración (máximo 12 meses de validez),
+- Establecer una fecha de expiración (máximo 12 meses de validez),
 - Seleccionar los permisos asociados al token.
 
-A continuación, se muestran los detalles de su token. __Atención, no será posible acceder a esta información posteriormente.__
+A continuación, se mostrarán los detalles de su token. __Atención, no será posible acceder a esta información posteriormente.__
 
 Si no anota esta información, deberá destruir y recrear el token.
 
@@ -51,7 +50,7 @@ A continuación, verá el nuevo token creado y su fecha futura de expiración.
 :::info Ciclo de vida del token de autenticación
 Cuando utiliza su **Personal Access Token (PAT)** para autenticarse ante la API, recibe a cambio un token de acceso. Es importante destacar que este token de acceso es un **JSON Web Token (JWT)** con una duración limitada.
 
--   **Duración de vida**: Cada token JWT es válido durante un período de **5 minutos**.
+-   **Duración**: Cada token JWT es válido durante un período de **5 minutos**.
 -   **Verificación**: Puede verificar la fecha de emisión (`iat`) y la fecha de expiración (`exp`) de su token decodificándolo. Herramientas en línea como [jwt.io](https://jwt.io) le permiten hacerlo fácilmente.
 
 Una vez que el token ha expirado, deberá volver a autenticarse con su PAT para obtener uno nuevo. Por ello, se recomienda gestionar este ciclo de vida en sus scripts y aplicaciones, previendo una renovación automática del token.
@@ -100,7 +99,7 @@ El contenido de la actividad incluye todas las informaciones esenciales para ide
 }
 ```
 
-El objeto __state__ puede tomar diferentes formas según el estado de la actividad, a saber:
+El objeto __state__ puede adoptar diferentes formas según el estado de la actividad, a saber:
 
 __waiting__, estado antes de que la operación haya comenzado:
 
@@ -141,12 +140,12 @@ __Nota: el identificador (UUIDv4) del recurso creado está disponible en el resu
 
 ### ¿Por qué límites?
 
-La consola Cloud Temple establece __límites en el volumen de solicitudes__ que un usuario puede enviar a la API durante un período determinado. La implementación de estos límites de frecuencia es una medida común en la gestión de APIs, adoptada por varias razones esenciales:
+La consola Cloud Temple establece __límites en el volumen de solicitudes__ que un usuario puede enviar a la API durante un período determinado. La implementación de estos límites de frecuencia es una medida común en la gestión de APIs, adoptada por varios motivos esenciales:
 
-- __Prevención de abusos__: Estos límites contribuyen a proteger la integridad de la API al prevenir usos indebidos o inadecuados que podrían comprometer su funcionamiento.
+- __Prevención de abusos__: Estos límites contribuyen a preservar la integridad de la API al prevenir usos abusivos o inadecuados que podrían comprometer su funcionamiento.
 - __Garantía de calidad de servicio__: Al regular el acceso a la API, aseguramos una distribución equitativa de los recursos, permitiendo que todos los usuarios disfruten de una experiencia estable y eficiente.
 
-Tomemos como ejemplo un script mal diseñado o ineficiente que realiza llamadas repetidas a la API, con riesgo de saturar los recursos y degradar el rendimiento. Al establecer umbrales de solicitudes, prevenimos estas situaciones y garantizamos el mantenimiento de un __servicio fluido e ininterrumpido__ para toda nuestra clientela.
+Tomemos como ejemplo un script mal diseñado o ineficiente que realiza llamadas repetidas a la API, arriesgando saturar los recursos y degradar el rendimiento. Al establecer umbrales de solicitudes, prevenimos estas situaciones y garantizamos el mantenimiento de un __servicio fluido e ininterrumpido__ para toda nuestra clientela.
 
 ### ¿Cuáles son los límites de tasa para la API de la consola Cloud Temple?
 
@@ -156,7 +155,7 @@ para cada producto.
 Los límites están definidos en __consultas por segundo (r/s) y por dirección IP de origen__. Por encima del umbral límite, el sistema responderá  
 con un código de error HTTP 429, indicando que se ha superado el límite de consultas permitidas.
 
-A continuación se muestran los límites definidos:
+A continuación se indican los límites establecidos:
 
 | Producto | Umbral límite |
 |---|---|
@@ -188,7 +187,7 @@ Certain API endpoints, particularly those related to authentication or sensitive
 
 If the number of requests sent to an API endpoint exceeds the allowed limit, the API endpoint will respond by returning  
 __an HTTP 429 status code__. This code indicates that the user has exceeded the permitted number of requests.  
-When this happens, the API endpoint will also provide a JSON object as a response,  
+When this occurs, the API endpoint will also provide a JSON object as a response,  
 containing detailed information about the applied rate limit:
 
 ```
@@ -206,9 +205,9 @@ Se recomienda limitar el número de llamadas a la API realizadas por su automati
 
 Esta situación suele ocurrir cuando se ejecutan varias solicitudes en paralelo, utilizando varios procesos o hilos.
 
-Existen varios métodos para mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de un __sistema de reintento con amortiguamiento progresivo__. Este método consiste en realizar una breve pausa cuando se encuentra un error de límite de tasa, y luego intentar nuevamente la solicitud. Si la solicitud falla nuevamente, la duración de la pausa se aumenta progresivamente hasta que la solicitud tenga éxito o hasta que se alcance un número máximo de reintentos.
+Existen varios métodos para mejorar la eficiencia de su automatización, incluyendo el uso de mecanismos de __caché__ y la implementación de un __sistema de reintento con amortiguamiento progresivo__. Este método consiste en realizar una breve pausa cuando se detecta un error de límite de tasa, y luego intentar nuevamente la solicitud. Si la solicitud falla nuevamente, la duración de la pausa se aumenta progresivamente hasta que la solicitud tenga éxito o hasta que se alcance un número máximo de intentos.
 
-Esta aproximación ofrece numerosas ventajas:
+Esta aproximación ofrece múltiples ventajas:
 
 - El __amortiguamiento progresivo__ garantiza que los primeros intentos se realicen rápidamente, mientras que prevé tiempos de espera más largos en caso de fallos repetidos.
 - La adición de una __variación aleatoria__ a la pausa ayuda a evitar que todos los intentos se produzcan simultáneamente.

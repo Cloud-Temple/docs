@@ -52,7 +52,7 @@ import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
 
 ### Gestione delle macchine virtuali
 
-L'interfaccia di gestione delle macchine virtuali è disponibile nella console Shiva nel menu __'IaaS'__ situato sulla barra verde a sinistra dello schermo.
+L'interfaccia di gestione delle macchine virtuali è disponibile nella Console nel menu __'IaaS'__ situato sulla barra verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 
@@ -115,7 +115,7 @@ Una vista rapida offre una visualizzazione del __storage__, del __CPU__ e della 
 
 <img src={shivaVmVueRapide} />
 
-Nella scheda __'Informazioni generali'__, trovi informazioni dettagliate relative alla tua macchina virtuale, come il sistema operativo, la posizione fisica (datacenter, datastore, ecc.), la RAM, il CPU, gli indirizzi IP, i log e altro.
+Nella scheda __'Informazioni generali'__, trovi informazioni dettagliate relative alla tua macchina virtuale, come il sistema operativo, il posizionamento fisico (datacenter, datastore, ecc.), la RAM, il CPU, gli indirizzi IP, i log e altro.
 
 <img src={shivaVmInfosGenerales} />
 
@@ -163,7 +163,7 @@ La console di una macchina virtuale è accessibile dalla lista delle macchine vi
 
 <img src={shivaCpool_010} />
 
-Si apre un nuovo tab del tuo browser, che mostra la console della tua macchina, basata su un client **VNC**:
+Si aprirà un nuovo tab del tuo browser, che mostrerà la console della tua macchina, basata su un client **VNC**:
 
 <img src={shivaCpool_011} />
 
@@ -171,7 +171,7 @@ Nel menu **VNC** è possibile:
 - richiedere l'invio di tasti particolari,
 - forzare un mapping della tastiera (nel caso in cui non sia stato possibile identificare correttamente la tua tastiera),
 - aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio appunti non funzionante,
-- passare alla modalità a schermo intero.
+- passare alla modalità schermo intero.
 
 __Nota__:
 Lo scaling della finestra avviene automaticamente.
@@ -180,58 +180,58 @@ Lo scaling della finestra avviene automaticamente.
 The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled. Below is a summary of the possible scenarios:
 
 | Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
-| -------------------------------------------- | --------------------------------- | ---------------------------------- | ---------------------- |
-| French                                       | French                            | No                                 | ✅                     |
-| French                                       | French                            | Yes                                | Not recommended        |
-| French                                       | English                           | No                                 | English                |
-| French                                       | English                           | Yes                                | ✅                     |
-| English                                      | French                            | No                                 | French                 |
-| English                                      | French                            | Yes                                | ✅                     |
-| English                                      | English                           | No                                 | ✅                     |
-| English                                      | English                           | Yes                                | Not recommended        |
+| -------------------------------------------- | --------------------------------- | ---------------------------------- | ------------------------ |
+| French                                       | French                            | No                                 | ✅                       |
+| French                                       | French                            | Yes                                | Not recommended          |
+| French                                       | English                           | No                                 | English                  |
+| French                                       | English                           | Yes                                | ✅                       |
+| English                                      | French                            | No                                 | French                   |
+| English                                      | French                            | Yes                                | ✅                       |
+| English                                      | English                           | No                                 | ✅                       |
+| English                                      | English                           | Yes                                | Not recommended          |
 
 __Note__:
-- If certain characters do not appear when typed manually, you can try pasting them from the clipboard.
+- If certain characters do not appear during manual input, you can try using the clipboard.
 
 #### Funzionamento degli appunti
-Questa funzionalità ti consente di inviare una stringa completa di caratteri alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare gli appunti.  
+Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare la funzione degli appunti.  
 Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
 
 <img src={shivaCpool_012} />
 
 Al clic sul pulsante "Incolla", il contenuto del campo di testo viene inviato alla tua macchina virtuale.
 
-### Cataloghi delle macchine virtuali Cloud Temple
+### Cloud Temple Virtual Machine Catalogs
 
-Cloud Temple mette a disposizione un catalogo di `Template` costantemente arricchito e aggiornato dai nostri team.  
-Al momento, include diverse decine di `Template` e immagini pronte per essere montate sulle vostre macchine virtuali.
+Cloud Temple vous met à disposition un catalogue de `Templates` régulièrement enrichi et mis à jour par nos équipes.  
+Il comprend actuellement plusieurs dizaines de `Templates` et images pouvant être déployées sur vos machines virtuelles.
 
 <img src={shivaCatalogs} />
 
-Per pubblicare un ISO/OVF, è necessario accedere alla vista __'Catalogo'__ e fare clic sul pulsante __'Pubblica file'__ in alto a destra:
+Pour publier un ISO/OVF, rendez-vous dans la vue __'Catalogue'__ et cliquez sur le bouton __'Publier des fichiers'__ en haut de la page :
 
 <img src={shivaCatalogs_002} />
 
-È possibile trasformare una VM in un modello e esportarlo nel catalogo. Per farlo, selezionate una macchina virtuale e utilizzate il pulsante di azione __'Clona'__:
+Il est possible de transformer une machine virtuelle en modèle et de l'exporter dans le catalogue. Pour ce faire, sélectionnez une machine virtuelle et utilisez le bouton d'action __'Clone'__ :
 
 <img src={shivaVmTemplate_002} />
 
-Selezionate __'Esporta come vm-template'__:
+Sélectionnez __'Exporter en vm-template'__ :
 
 <img src={shivaVmTemplate_001} />
 
-Compilate quindi le informazioni richieste. A questo punto sarà possibile distribuire una nuova VM a partire dal modello tramite il pulsante __'Nuova macchina virtuale'__ oppure dalla pagina __'Cataloghi'__. È inoltre possibile esportare la VM nel formato OVF.
+Renseignez ensuite les informations nécessaires. Il sera alors possible de déployer une nouvelle machine virtuelle à partir du modèle depuis le bouton __'Nouvelle machine virtuelle'__ ou depuis la page __'Catalogues'__. Il est également possible d'exporter la machine virtuelle au format OVF.
 
-__Consiglio utile__: è possibile convertire un file OVA in OVF e viceversa.  
-Il metodo più comune utilizzato è VMware Converter, ma esiste anche un metodo semplice basato su ```tar```.
+__Informations utiles__: il est possible de convertir un fichier OVA en OVF et inversement.  
+La méthode la plus couramment utilisée est VMware Converter, mais une méthode simple existe également en utilisant ```tar```.
 
-Estrazione del file OVA:
+Extraction du fichier OVA :
 
 ```
 tar -xvf vmName.ova
 ```
 
-Creazione di un file OVA da un file OVF:
+Création d'un fichier OVA à partir d'un fichier OVF :
 
 ```
 tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
@@ -241,17 +241,17 @@ tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 
 Le impostazioni Extra Config forniscono un metodo flessibile per includere coppie chiave=valore nella configurazione di una macchina virtuale. Le chiavi e i valori vengono interpretati dal sistema al momento del deployment della macchina virtuale.
 
-Ora è possibile modificare autonomamente le proprietà di tipo __Extra Config__ nelle opzioni avanzate di una macchina virtuale:
+Ora puoi modificare autonomamente le proprietà di tipo __Extra Config__ nelle opzioni avanzate di una macchina virtuale:
 
 <img src={shivaVmAdv_001} />
 
-È possibile aggiungere una proprietà selezionandola da un elenco di chiavi. Inoltre, è possibile modificare il valore di una chiave precedentemente aggiunta. Le coppie chiave=valore già esistenti non sono modificabili.
+Puoi aggiungere una proprietà scegliendola da un elenco di chiavi. Inoltre, puoi modificare il valore di una chiave che hai aggiunto tu stesso. Le coppie chiave=valore già esistenti non sono modificabili.
 
-Per richieste di aggiunta di nuove chiavi, contattare il supporto tecnico.
+Per richieste di aggiunta di nuove chiavi, contatta il supporto tecnico.
 
 <img src={shivaVmAdv_002} />
 
-__Nota__ : *Per l'utilizzo del GPU da parte della macchina virtuale, è obbligatorio abilitare la chiave 'pciPassthru.use64bitMMIO' e allocare la quantità di spazio MMIO (Memory-mapped I/O) necessaria tramite 'pciPassthru.64bitMMIOSizeGB'. Si raccomanda vivamente di fare riferimento alla [documentazione ufficiale NVIDIA](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Nota__ : *Per l'utilizzo del GPU da parte della macchina virtuale, è obbligatorio abilitare la chiave 'pciPassthru.use64bitMMIO' e allocare la quantità di spazio MMIO (Memory-mapped I/O) necessaria tramite 'pciPassthru.64bitMMIOSizeGB'. È fortemente consigliato fare riferimento alla [documentazione ufficiale NVIDIA](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
 ### Advanced virtual machine configuration: vAPP
 
@@ -273,14 +273,14 @@ The management of your hypervisors is performed in the __'Compute'__ submenu und
 
 In this submenu, you have visibility on:
 
-- The hypervisor software stack, their AZs and their resources,
+- The hypervisor software stack, their AZs and resources,
 - The backup software stack.
 
 As of January 2024, the available hypervisor offering on the Cloud Temple qualified infrastructure is based on VMware. The backup software used is IBM Spectrum Protect Plus.
 
 ### Gestione dei cluster VMware
 
-Per accedere alla gestione dei cluster VMware, fare clic nel sottomenu __'Calcolo'__ del menu __'IaaS'__:
+Per accedere alla gestione dei cluster VMware, fare clic nel sotto-menu __'Calcolo'__ del menu __'IaaS'__:
 
 Per impostazione predefinita, la prima scheda elenca tutti gli hypervisor (inclusi tutti i cluster):
 
@@ -294,7 +294,7 @@ Esiste una scheda per ogni cluster di hypervisor per consultare i dettagli di ci
 
 <img src={shivaCpool_003} />
 
-Se si fa clic su un cluster, viene visualizzata una sintesi della sua composizione:
+Facendo clic su un cluster, viene visualizzata una sintesi della sua composizione:
 
 - Il totale della potenza di calcolo espressa in GHz,
 - Il totale della memoria disponibile e il rapporto di utilizzo,
@@ -304,7 +304,7 @@ Se si fa clic su un cluster, viene visualizzata una sintesi della sua composizio
 - Il numero di hypervisor.
 
 <!-- TODO: Add missing page. -->
-<!-- Consultando la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali) -->
+<!-- Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali) -->
 
 <img src={shivaCpool_004} />
 
@@ -343,39 +343,39 @@ Dalla scheda __'Hosts'__ sono disponibili diverse azioni:
 
 - Cloud Temple mette a disposizione i build per gli hypervisor a intervalli regolari.
 È importante aggiornare regolarmente gli hypervisor, in particolare per applicare i correttivi di sicurezza.
-Tuttavia, __non aggiorniamo noi stessi gli hypervisor per conto vostro__. Cloud Temple non ha visibilità sugli impegni di disponibilità dei vostri carichi di lavoro.
+Tuttavia, __non aggiorniamo automaticamente gli hypervisor per conto vostro__. Cloud Temple non ha visibilità sugli impegni di disponibilità dei vostri carichi di lavoro.
 Vi lasciamo quindi gestire autonomamente il processo di cambiamento e applicare i nuovi build al momento più opportuno.
 - Il processo di aggiornamento è completamente automatizzato. È necessario disporre di almeno due hypervisor nel cluster per consentire un aggiornamento senza interruzioni del servizio.
 
 <!-- TODO: Add missing page. -->
 <!-- - *È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.* -->
 
-Vengono inoltre visualizzate tutte le regole di affinità/anti-affinità per il vostro cluster di hypervisor nella sezione __'Regole'__.
+Nella sezione __'Regole'__ è inoltre possibile visualizzare l'insieme delle regole di affinità/anti-affinità per il cluster di hypervisor.
 
 ### Gestione dell'affinità delle macchine virtuali
 
-Le __regole di affinità e anti-affinità__ consentono di controllare la posizione delle macchine virtuali sugli iperhost.  
-Possono essere utilizzate per gestire l'utilizzo delle risorse del tuo __'Cpool'__.  
-Ad esempio, possono aiutare a bilanciare il carico tra i server o a isolare carichi di lavoro intensivi in termini di risorse.  
-In un __'Cpool'__ VMware, queste regole vengono spesso utilizzate per gestire il comportamento delle macchine virtuali con vMotion.  
+Le __regole di affinità e anti-affinità__ consentono di controllare la posizione delle macchine virtuali sugli iperhost.
+Possono essere utilizzate per gestire l'utilizzo delle risorse del tuo __'Cpool'__.
+Ad esempio, possono aiutare a bilanciare il carico tra i server o a isolare carichi di lavoro intensivi in termini di risorse.
+In un __'Cpool'__ VMware, queste regole sono spesso utilizzate per gestire il comportamento delle macchine virtuali con vMotion.
 vMotion permette di spostare macchine virtuali da un host all'altro senza interruzioni del servizio.
 
 Puoi configurare tramite la gestione delle regole:
 
-- __Regole di affinità__: queste regole garantiscono che alcune macchine virtuali vengano eseguite sullo stesso host fisico.  
-  Vengono utilizzate per migliorare le prestazioni mantenendo insieme le macchine virtuali che comunicano frequentemente,  
-  riducendo così la latenza di rete. Le regole di affinità sono utili in scenari in cui le prestazioni sono critiche,  
+- __Regole di affinità__: queste regole garantiscono che alcune macchine virtuali vengano eseguite sullo stesso host fisico.
+  Vengono utilizzate per migliorare le prestazioni mantenendo insieme le macchine virtuali che comunicano frequentemente,
+  riducendo così la latenza di rete. Le regole di affinità sono utili in scenari in cui le prestazioni sono critiche,
   come nel caso di database o applicazioni che richiedono una comunicazione rapida tra i server.
 
-- __Regole di anti-affinità__: al contrario, queste regole garantiscono che alcune macchine virtuali non vengano eseguite  
-  sullo stesso host fisico. Sono fondamentali per la disponibilità e la resilienza, ad esempio  
-  per evitare che tutte le macchine critiche vengano colpite in caso di guasto di un singolo server.  
-  Le regole di anti-affinità sono essenziali per applicazioni che richiedono un'alta disponibilità,  
-  come negli ambienti di produzione in cui la tolleranza ai guasti è una priorità.  
+- __Regole di anti-affinità__: al contrario, queste regole garantiscono che alcune macchine virtuali non vengano eseguite
+  sullo stesso host fisico. Sono fondamentali per la disponibilità e la resilienza, ad esempio,
+  per evitare che tutte le macchine critiche vengano colpite in caso di guasto di un singolo server.
+  Le regole di anti-affinità sono essenziali per applicazioni che richiedono un'alta disponibilità,
+  come negli ambienti di produzione dove la tolleranza ai guasti è una priorità.
   Ad esempio, non desideri che i tuoi due server Active Directory si trovino sullo stesso iperhost.
 
-Durante la creazione di una regola, definisci il tipo di regola (affinità / anti-affinità), il nome della regola,  
-il suo stato di attivazione (__'Statut'__) e le macchine coinvolte nel cluster degli iperhost.
+Durante la creazione di una regola, definisci il tipo di regola (affinità / anti-affinità), il nome della regola,
+lo stato di attivazione (__'Stato'__) e le macchine coinvolte nel cluster degli iperhost.
 
 <img src={shivaCpool_006} />
 
@@ -401,7 +401,7 @@ Creating a new backup policy is done through a __service request__ specifying:
 
 Quando una SLA viene assegnata a una macchina virtuale (VM), tutti i dischi associati a tale VM ereditano automaticamente la stessa SLA. In seguito, è possibile avviare manualmente il backup tramite la scheda "Politiche di backup". In assenza di un avvio manuale, il backup verrà eseguito automaticamente secondo il piano configurato dalla SLA.
 
-SecNumCloud rende obbligatorio l'assegnamento di una politica di backup a una macchina virtuale prima del suo avvio. In caso contrario, verrà visualizzato il seguente messaggio di avviso:
+SecNumCloud rende obbligatorio assegnare una politica di backup a una macchina virtuale prima del suo avvio. In caso contrario, verrà visualizzato il seguente messaggio di avviso:
 
 <img src={shivaVmPolitiquesBackupAssignMandatory} />
 
@@ -415,7 +415,7 @@ Per assegnare una nuova politica di backup alla macchina virtuale, fai clic sul 
 
 It is also possible to assign an SLA directly to a specific virtual disk of a machine. In this case, the virtual machine does not inherit this SLA applied individually to the disk. However, it is not possible to manually trigger backup execution at the disk level, as this functionality is not supported in Spectrum Protect Plus.
 
-On the other hand, it is possible to exclude certain disks from one or more backup policies (SLAs) of the VM, which allows unassigning one or more SLAs on a per-disk basis. This approach provides the flexibility to manually trigger backup execution for a specific SLA without affecting all disks of the virtual machine, enabling finer control over backups.
+On the other hand, it is possible to exclude certain disks from one or more backup policies (SLAs) of the VM, which allows unassigning one or more SLAs on a per-disk basis. This approach provides the flexibility to manually trigger the backup execution of an SLA without affecting all disks of the virtual machine, enabling more granular backup management.
 
 Click on the action bar of the disk to which you want to assign a backup policy. Then, click on __'Policies'__ and select the desired backup policy.
 
@@ -443,15 +443,15 @@ __Attenzione, non è possibile rimuovere l'ultima SLA su una macchina virtuale a
 
 <img src={shivaVmPolitiquesBackupRetirerImpossible} />
 
-### Deletion of a backup policy: case of a held (suspended) backup policy
+### Deletion of a backup policy: case of a suspended backup policy ("held")
 
-When the last resource is disassociated from an SLA policy, the system automatically detects this situation. As a result, all jobs associated with this SLA policy are automatically moved to the "Held" (Suspended) state. It is important to note that direct deletion of the SLA policy is not possible at this stage due to the presence of dependent jobs. To proceed with the deletion of the policy, a specific sequence of steps must be followed.
+When the last resource is disassociated from an SLA policy, the system automatically detects this situation. As a result, all jobs associated with this SLA policy are automatically moved to the "Held" state. It is important to note that direct deletion of the SLA policy is not possible at this stage due to the presence of dependent jobs. To proceed with the deletion of the policy, a series of steps must be followed.
 
-First, verify that the affected jobs are indeed in the "Held" state. Once confirmed, these jobs can be deleted. Only after removing these dependent jobs can the SLA policy be permanently erased from the system.
+First, verify that the affected jobs are indeed in the "Held" state. Once this verification is complete, these jobs can be deleted. Only after removing these dependent jobs can the SLA policy be permanently erased from the system.
 
 A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not been deleted. In this scenario, the job identifiers will be preserved. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
 
-> **Note**: For any clarification regarding this situation, please contact Cloud Temple support.
+note: For any clarification regarding this situation, contact Cloud Temple support.
 
 The Cloud Temple console prevents assigning a virtual machine to a suspended policy:
 
@@ -469,11 +469,11 @@ Per ripristinare un backup, fai clic sul pulsante __'Ripristina'__ nella riga co
 
 <img src={shivaVmBackupRestaurer} />
 
-1. __Modalità produzione__: La modalità produzione consente il ripristino dopo un incidente sul sito locale dallo storage primario o da un sito di ripristino remoto, sostituendo le immagini originali della macchina con le immagini di recupero. Tutte le configurazioni vengono trasferite durante il ripristino, inclusi nomi e identificatori, e tutti i processi di copia dati associati alla macchina virtuale continuano a essere eseguiti. Nella modalità di ripristino in produzione, puoi scegliere di sostituire lo storage della macchina virtuale con un disco virtuale proveniente da un backup precedente della macchina virtuale.
+1. __Modalità produzione__: La modalità produzione consente il ripristino dopo un incidente sul sito locale dallo storage primario o da un sito di ripristino remoto, sostituendo le immagini originali della macchina con le immagini di ripristino. Tutte le configurazioni vengono trasferite durante il ripristino, inclusi nomi e identificatori, e tutti i processi di copia dati associati alla macchina virtuale continuano a essere eseguiti. Nella modalità di ripristino in produzione, puoi scegliere di sostituire lo storage della macchina virtuale con un disco virtuale proveniente da un backup precedente della macchina virtuale.
 
-2. __Modalità test__: La modalità test crea macchine virtuali temporanee per sviluppo, test, verifica di snapshot e verifica del ripristino dopo incidenti, secondo un piano ripetibile, senza alcun impatto sugli ambienti di produzione. Le macchine di test vengono eseguite per il tempo necessario per completare il test e la verifica, dopodiché vengono eliminate. Grazie alla rete isolata, puoi creare un ambiente sicuro per testare i tuoi lavori senza interferire con le macchine virtuali utilizzate per la produzione. Le macchine virtuali create in modalità test dispongono di nomi e identificatori univoci per evitare conflitti nel tuo ambiente di produzione.
+2. __Modalità test__: La modalità test crea macchine virtuali temporanee per sviluppo, test, verifica di snapshot e verifica del ripristino dopo incidenti, secondo un piano ripetibile, senza alcun impatto sugli ambienti di produzione. Le macchine di test vengono eseguite per il tempo necessario per completare il test e la verifica, dopodiché vengono eliminate. Grazie alla rete isolata, puoi creare un ambiente sicuro per testare i tuoi lavori senza interferire con le macchine virtuali utilizzate per la produzione. Le macchine virtuali create in modalità test hanno nomi e identificatori univoci per evitare conflitti nel tuo ambiente di produzione.
 
-3. __Modalità clone__: La modalità Clone crea copie delle macchine virtuali per scenari che richiedono copie permanenti o a lungo termine, ad esempio per l'esplorazione dei dati o la duplicazione di un ambiente di test su una rete isolata. Le macchine virtuali create in modalità clone dispongono di nomi e identificatori univoci per evitare conflitti nel tuo ambiente di produzione. In modalità clone, devi prestare attenzione al consumo delle risorse poiché questa modalità crea macchine permanenti o a lungo termine.
+3. __Modalità clone__: La modalità clone crea copie delle macchine virtuali per casi d'uso che richiedono copie permanenti o a lungo termine, ad esempio per l'esplorazione dei dati o la duplicazione di un ambiente di test su una rete isolata. Le macchine virtuali create in modalità clone hanno nomi e identificatori univoci per evitare conflitti nel tuo ambiente di produzione. In modalità clone, devi prestare attenzione al consumo delle risorse poiché questa modalità crea macchine permanenti o a lungo termine.
 
 __Il ripristino è impostato per impostazione predefinita in modalità "TEST" per preservare la produzione__, e puoi scegliere il nome della macchina virtuale ripristinata:
 

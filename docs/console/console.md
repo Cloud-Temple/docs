@@ -70,24 +70,24 @@ Besoin d’expertise ? Profitez de l’accompagnement de nos ingénieurs pour :
 - De l’aide à l’implémentation d’architectures cloud,
 - De la formation pour vos équipes.
 
-La console Cloud Temple **'Shiva'** est **la plateforme de gestion cloud** (Cloud Management Plateform) intégrée de **Cloud Temple**.
+Le portail Cloud Temple **'Console'** est **la plateforme de gestion cloud** (Cloud Management Plateform) intégrée de **Cloud Temple**.
 
-La console Cloud Temple Shiva vous permet de gérer les ressources clouds telles que les serveurs virtuels, le stockage, les réseaux et les services applicatifs.
+La Console Cloud Temple vous permet de gérer les ressources clouds telles que les serveurs virtuels, le stockage, les réseaux et les services applicatifs.
 C'est une interface de management centralisée qui vous permet de concevoir et d'exploiter votre infrastructure cloud.
 
-La console Cloud Temple Shiva permet notamment à vos équipes :
+La Console Cloud Temple permet notamment à vos équipes :
 
 - **La gestion de vos produits et services** Cloud Temple,
 - **La surveillance et le reporting** du fonctionnement de vos ressources cloud,
-- **L'automatisation et l'orchestration** : Shiva, grâce à son API, permet d'automatiser des tâches répétitives et d'orchestrer des workflows complexes pour déployer, gérer et mettre à l'échelle vos ressources clouds,
-- **La sécurité et la conformité** : Shiva permet le contrôle de l'identité et le filtrage des accès afin d'assurer la conformité réglementaire et le respect de vos politiques de sécurité,
+- **L'automatisation et l'orchestration** : Console, grâce à son API, permet d'automatiser des tâches répétitives et d'orchestrer des workflows complexes pour déployer, gérer et mettre à l'échelle vos ressources clouds,
+- **La sécurité et la conformité** : Console permet le contrôle de l'identité et le filtrage des accès afin d'assurer la conformité réglementaire et le respect de vos politiques de sécurité,
 - **Intégration des référentiels d'adoption Cloud** (Cloud Adoption Framework) : grâce à ses fonctions d'hybridation, vous pouvez assurer une continuité de fonctionnement avec les fournisseurs de cloud tiers (Microsoft Azure et Amazon AWS) à partir d'une seule interface, facilitant l'intégration et la gestion de vos environnements applicatifs multi-cloud.
 - **L'accès et le suivi des dossiers d'assistance technique** : Une assistance technique dédiée est également disponible. Cela inclut le support client pour la résolution des problèmes techniques ainsi que l'assistance à la configuration initiale.
 - **La possibilité de souscrire à des services professionnels** : afin de gérer efficacement vos environnements Cloud, vos équipes peuvent bénéficier de l'assistance de nos ingénieurs pour du conseil, de l'aide à l'implémentation d'architecture ou la formation.
 
 ## Accès aux fonctionnalités utilisateur via l'API
 
-L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva.
+L'accès à l'ensemble des fonctionnalités de la Console est possible via l'API Console.
 Vous pouvez avoir le détail des verbes et des configurations via **'Profil'** et **'APIs'**
 
 ## Provider Terraform

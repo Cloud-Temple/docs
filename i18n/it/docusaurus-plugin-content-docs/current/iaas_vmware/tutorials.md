@@ -2,7 +2,7 @@
 title: Tutoriels
 ---
 
-Ces tutoriels vous aident à utiliser et paramétrer la partie IaaS VMWare depuis le portail Shiva.
+Ces tutoriels vous aident à utiliser et paramétrer la partie IaaS VMWare depuis le portail Console.
 
 ## Chiffrer une machine virtuelle VMWare
 
@@ -19,7 +19,7 @@ Ces tutoriels vous aident à utiliser et paramétrer la partie IaaS VMWare depui
 
 ## Interface
 
-Une fois connecté au portail web Shiva, depuis le menu __'IaaS'__, sous-menu __'Configuration'__ puis l'onglet __'vCenters'__, vous trouverez l'information vous indiquant si le chiffrement est activé sur la vstack en question.
+Une fois connecté au portail web Console, depuis le menu __'IaaS'__, sous-menu __'Configuration'__ puis l'onglet __'vCenters'__, vous trouverez l'information vous indiquant si le chiffrement est activé sur la vstack en question.
 
 ![](images/shiva_hsm_kms_000.png)
 

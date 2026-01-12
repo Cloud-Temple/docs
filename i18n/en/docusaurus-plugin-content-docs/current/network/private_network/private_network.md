@@ -1,5 +1,6 @@
 ---
 title: Overview
+slug: /network/private_network
 ---
 
 Cloud Temple offers a Private Networks solution designed to meet the needs of businesses for secure, high-performance, and flexible connectivity. Based on an innovative architecture using VPLS technology, this solution provides a level 2 private network, transparent and scalable across all availability zones.

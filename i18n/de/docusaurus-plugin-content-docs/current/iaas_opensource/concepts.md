@@ -17,30 +17,30 @@ This architecture is based on the __VersaStack__ model, a collaboration between 
 
 ## A dedicated and automated infrastructure
 
-Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offering provides a unique infrastructure:
+Although fully automated via APIs and a Terraform provider, Cloud Temple's IaaS offering provides a unique infrastructure:
 
-- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared between clients.
+- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared among clients.
 - __Maximum predictability__: You have full control over virtualization rates, storage IOPS load, and benefit from clear, consumption-based monthly billing.
 
 The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr/), ensuring a high level of automation and security.
 
 ## Hauptfunktionen
 
-- Dedicated und nach Bedarf verfügbare Rechenressourcen (CPU, RAM).
-- Nach Bedarf bereitgestellter Speicher (mehrere Klassen verfügbar).
+- Dedicated und on-demand Rechenressourcen (CPU, RAM).
+- On-demand Speicher (mehrere Klassen verfügbar).
 - Netzwerkressourcen (Internet, private Netzwerke).
 - Kreuzsicherungen mit konfigurierbarer Aufbewahrungszeit.
 - Asynchrone Replikation für Speicher oder virtuelle Maschinen.
-- Steuerung über die [Shiva-Konsole](../console/console.md) oder im Infrastructure-as-Code-Modus über APIs und den Terraform-Provider.
+- Steuerung über die [Console](../console/console.md) oder im Infrastructure-as-Code-Modus über APIs und den Terraform-Provider.
 
 ## Vorteile
 
 | Vorteil              | Beschreibung                                                                                                                                    |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| Digitale Vertrauenswürdigkeit | Speicherung von Daten in Frankreich und Einhaltung der DSGVO.                                                                                   |
-| Sicherheit           | Hochsichere Plattform, zertifiziert __SecNumCloud__, __HDS__ (Gesundheitsdaten-Hosting), __ISO 27001__ und __ISAE 3402 Typ II__.                 |
+| Digitale Vertrauenswürdigkeit | Speicherung von Daten in Frankreich und Einhaltung der DSGVO.                                                                                  |
+| Sicherheit           | Hochsichere Plattform, zertifiziert __SecNumCloud__, __HDS__ (Hospizierung sensibler Gesundheitsdaten), __ISO 27001__ und __ISAE 3402 Typ II__. |
 | Hohe Verfügbarkeit   | Plattformverfügbarkeit von 99,99 %, monatlich gemessen, inklusive Wartungszeiträume.                                                             |
-| Resilienz            | Implementierung von Kontinuitäts- oder Wiederherstellungsplänen je nach Bedarf.                                                                  |
+| Resilienz            | Implementierung von Kontinuitäts- oder Wiederherstellungsplänen je nach Bedarf.                                                                   |
 | Automatisierung      | Vollständig automatisierte Plattform, entwickelt für die Integration in ein digitales Transformationsprogramm.                                 |
 | On-Demand            | Ressourcen sind nach Bedarf verfügbar.                                                                                                          |
 
@@ -69,7 +69,7 @@ The available compute blades for the Bare Metal offering provide a range of perf
 ### Notes
 
 - __(1)__ The amount of memory is the physically available memory on the blades and cannot be modified.
-- __(2)__ The frequencies indicated correspond to the minimum base frequency and the turbo frequency.
+- __(2)__ The frequencies listed correspond to the minimum base frequency and the turbo frequency.
 - __(3)__ Physical connectivity is shared for network access and block storage access, thanks to a converged Cisco UCS architecture.
 - __(4)__ Available GPUs evolve with the latest technologies. As of May 1, 2024, the offering includes NVIDIA LOVELACE L40S GPUs.
 - __(5)__ High availability on a cluster is available only with a minimum of 2 nodes.
@@ -97,7 +97,7 @@ Distributed block storage, based on __IBM Spectrum Virtualize__, offers a range 
 
 ### Storage Block Security and Encryption
 
-To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates a robust hardware-based encryption solution.
+To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates a robust hardware-based encryption.
 
 -   **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
 -   **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
@@ -130,7 +130,7 @@ The VLAN Trunk allows all your VLANs to pass through a single network interface.
 
 Cloud Temple offers a __native, non-disruptive distributed backup architecture__, a mandatory requirement for French SecNumCloud certification.
 
-Backups are stored on the [SecNumCloud-certified Object Storage solution](../storage/oss), ensuring optimal protection in case of major datacenter failure. This approach enables data restoration on a secondary datacenter, even in critical incidents such as fires.
+Backups are stored on the [SecNumCloud-certified Object Storage solution](../storage/oss), ensuring optimal protection in the event of a major failure at the production datacenter. This approach enables data restoration on a secondary datacenter, even in critical incidents such as fires.
 
 This comprehensive solution includes:
 
@@ -143,31 +143,31 @@ Backup and restore speeds depend on the rate of change within the environments. 
 
 __Important note:__
 
-*Some virtual machines are incompatible with this backup technology*, which relies on the hypervisor’s snapshot mechanisms. This typically applies to machines with constant disk write workloads. In such cases, the hypervisor cannot complete the snapshot, requiring the virtual machine to be frozen to finalize the operation. This freeze can last several hours and cannot be interrupted.
+*Some virtual machines are not compatible with this backup technology*, which relies on the hypervisor's snapshot mechanisms. This typically applies to machines with constant disk write workloads. In such cases, the hypervisor cannot complete the snapshot, requiring the virtual machine to be frozen to finalize the operation. This freeze can last several hours and cannot be interrupted.
 
-The recommended solution is to exclude the disk subject to continuous writes and instead back up the data using an alternative method.
+The recommended solution is then to exclude the disk subject to continuous writes and back up the data using an alternative method.
 
 | Reference                                     | Unit  | SKU                            |
 | ----------------------------------------------| ----- | ------------------------------ |
-| BACKUP - Service Access                       | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
+| BACKUP - Service access                       | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
 
-### Creating a Backup Policy
+### Creating a backup policy
 
-To create a new backup policy, a request must be submitted to support, accessible via the buoy icon located in the top-right corner of the interface.
+To create a new backup policy, a request must be submitted to support, accessible via the buoy icon located in the top right corner of the interface.
 
 Creating a new backup policy is done through a __service request__ specifying:
 
-- Your Organization's name  
-- Contact details (email and phone number) to finalize the configuration  
-- The tenant name  
-- The backup policy name  
-- Desired retention characteristics (x days, y weeks, z months, ...)
+- Your Organization's name
+- Contact details (email and phone number) to finalize the configuration
+- The tenant name
+- The backup policy name
+- Desired characteristics (x days, y weeks, z months, ...)
 
 ## Virtual Machines
 
 ### vCPU Resource Management
 
-vCPU resource modifications are performed while the machine is powered off (cold). The platform supports up to 254 vCPUs per virtual machine (theoretical limit), with successful testing conducted on Linux VMs equipped with 128 vCPUs.
+vCPU resource modifications are performed while the machine is powered off (cold). The platform supports up to 254 vCPUs per virtual machine (theoretical limit), with successful tests conducted on Linux VMs equipped with 128 vCPUs.
 
 It is important to note that guest operating system support is a determining factor when allocating resources. Allocating resources beyond the limits supported by the guest operating system may result in significant performance issues.
 
@@ -177,7 +177,7 @@ Memory modifications are also performed cold. The following limits apply:
 
 - 1.5 TiB with memory snapshot support
 - 8 TiB without memory snapshot support
-- 16 TiB (theoretical maximum without security support, minus RAM allocated to Xen and the control domain)
+- 16 TiB (theoretical maximum, without security support, minus RAM allocated to Xen and the control domain)
 
 The actual usable memory may be limited by the guest operating system. Exceeding the limits supported by the guest OS can result in performance degradation.
 
@@ -190,7 +190,7 @@ The actual usable memory may be limited by the guest operating system. Exceeding
 It is not possible to resize disks after they have been created. To increase storage capacity, a new disk must be created.
 
 ### Tools for Virtual Machines
-These tools are used to ensure optimal performance of virtual machines. When you need to perform an action requiring one of these tools, a message will appear on the Cloud Temple console.
+These tools are used to ensure optimal operation of virtual machines. When you wish to perform an action requiring one of these tools, a message will appear on the Cloud Temple console.
 
 To install these tools, you can consult the official Xen Server websites to obtain precise instructions based on your OS.
 
@@ -200,7 +200,7 @@ The Management Agent is a component installed on each virtual machine. It enable
 #### PV Treiber (Paravirtualisierungstreiber)
 Die PV-Treiber sind Treiber, die in der virtuellen Maschine installiert werden, um deren Leistung zu verbessern.  
 Ohne diese Treiber funktioniert die Maschine zwar, ist aber langsamer. Außerdem ermöglichen sie erweiterte Funktionen.  
-Die PV-Treiber sind standardmäßig in den meisten aktuellen Linux-Kernen integriert.
+Die PV-Treiber sind in der Regel nativ in den meisten aktuellen Linux-Kernen enthalten.
 
 #### Tools  
 Tools sind eine Reihe von Softwarekomponenten, die die Integration der virtuellen Maschine mit der Virtualisierungsinfrastruktur verbessern.
@@ -213,7 +213,7 @@ The catalog allows you to manage three essential types of items:
 - Configuration templates
 - Pre-installed virtual machine templates
 
-In the detailed view of a virtual machine template, you can review crucial information such as location, number of disks, or number of network adapters.
+In the detailed view of a virtual machine template, you can review crucial information such as location, number of disks, and number of network adapters.
 
 When the number of virtual disks is listed as 0, this indicates a configuration template without a preinstalled operating system, allowing you to deploy your own customized environment.
 
@@ -236,9 +236,9 @@ Cloud Temple replication is based on a __SecNumCloud-certified__ infrastructure,
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Business Continuity     | Protection of your critical services in the event of a major incident at the primary site.                                                    |
 | Geographic Protection   | Replication to a distinct availability zone, safeguarding against localized disasters.                                                         |
-| Temporal Flexibility    | Choose the replication interval according to your needs: from 1 minute to 24 hours.                                                            |
-| Easy Management         | Configuration and monitoring fully integrated into the Cloud Temple Console.                                                                  |
-| SecNumCloud Compliance  | Qualified infrastructure ensuring the highest level of security for your sensitive data.                                                      |
+| Temporal Flexibility    | Choice of replication interval according to your needs: from 1 minute to 24 hours.                                                            |
+| Ease of Management      | Configuration and monitoring fully integrated into the Cloud Temple Console.                                                                  |
+| SecNumCloud Compliance  | Qualified infrastructure ensuring the highest level of security for your sensitive data.                                                     |
 
 ### Replication configuration
 
@@ -246,16 +246,16 @@ Cloud Temple replication is based on a __SecNumCloud-certified__ infrastructure,
 
 Creating a replication policy defines the protection settings for your virtual machines:
 
-- __Destination__: Select the target storage within the replication availability zone
-- __Frequency__: Replication interval tailored to your recovery needs (RPO)
+- __Destination__: Selection of the target storage within the replication availability zone  
+- __Frequency__: Replication interval tailored to your recovery point objective (RPO) requirements  
 - __Retention__: Number of recovery points to retain
 
-#### Available intervals
+#### Verfügbare Intervalle
 
-| Interval              | Recommended usage                           | RPO (Maximum data loss) |
-|-----------------------|---------------------------------------------|--------------------------|
-| __1 to 59 minutes__   | Real-time critical applications             | < 1 hour                 |
-| __1 to 24 hours__     | Business applications and standard environments | < 24 hours            |
+| Intervall               | Empfehlung für den Einsatz                | RPO (maximale Datenverlustgrenze) |
+|-------------------------|-------------------------------------------|------------------------------------|
+| __1 bis 59 Minuten__    | Kritische Echtzeit-Anwendungen            | < 1 Stunde                         |
+| __1 bis 24 Stunden__    | Geschäftsanwendungen und Standardumgebungen | < 24 Stunden                     |
 
 #### Association of Virtual Machines
 
@@ -304,22 +304,22 @@ __Important Note:__
 
 *Replication does not replace a full backup strategy. It serves as an essential complement to ensure business continuity in the event of a major incident at your primary site.*
 
-## High Availability
+## Hochverfügbarkeit
 
-High availability ensures the continuity of virtual machine (VM) services in the event of a physical host failure within an OpenIaaS pool.  
-With high availability (HA), each host in the pool regularly sends heartbeat signals to its peers via shared storage (Block Storage Heartbeat). If a host fails to respond for an extended period, it is considered failed.
+Die Hochverfügbarkeit stellt die kontinuierliche Dienstverfügbarkeit virtueller Maschinen (VMs) sicher, falls ein physischer Host innerhalb eines OpenIaaS-Pools ausfällt.  
+Mit der Hochverfügbarkeit (HA) sendet jeder Host im Pool regelmäßig Lebenszeichen an seine Partner über den gemeinsam genutzten Speicher (Block Storage Heartbeat). Falls über einen längeren Zeitraum keine Antwort mehr erfolgt, wird der Host als ausgefallen betrachtet.
 
-A designated Block Storage used for heartbeat purposes means it will serve as the basis for authenticating hosts that no longer respond.
+Ein als Heartbeat vorgesehener Block-Speicher bedeutet, dass er als Grundlage zur Authentifizierung von Hosts dient, die nicht mehr antworten.
 
-To properly configure high availability within an OpenIaaS pool, it is mandatory to have **at least two hosts** connected.
+Damit die Hochverfügbarkeit in einem OpenIaaS-Pool korrekt konfiguriert werden kann, ist es unbedingt erforderlich, über **mindestens zwei Hosts** zu verfügen, die miteinander verbunden sind.
 
-Each VM must be configured with a high availability restart priority level:
+Jede VM muss mit einer Priorität für den Neustart im Rahmen der Hochverfügbarkeit konfiguriert werden:
 
 #### Disabled  
 High availability is not configured. In the event of host failure, the virtual machine will not be restarted.
 
-#### Restart  
-In the event of a host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
+#### Restart
+In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
 
 #### Best-Effort  
 In the event of host failure, the virtual machine will be automatically restarted only if resources remain available after processing all virtual machines configured in "restart" mode. The "Best-effort" mode performs only a single attempt; therefore, if resources are insufficient, the virtual machine will not be restarted.
