@@ -53,7 +53,6 @@ Une fois votre VPC actif :
 4.  Configurez votre réseau :
     *   **Nom** : Nom du segment réseau (ex: `backend`, `frontend`).
     *   **CIDR** : Plage d'adresses IP (ex: `192.168.1.0/24`).
-    *   **DHCP** : Activez ou désactivez le service DHCP natif.
 
 <img src={vpcNewPrivateNetwork} />
 

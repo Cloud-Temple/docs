@@ -53,7 +53,6 @@ Una volta che il tuo VPC è attivo:
 4.  Configura la tua rete:
     *   **Nome**: Nome del segmento di rete (es: `backend`, `frontend`).
     *   **CIDR**: Intervallo di indirizzi IP (es: `192.168.1.0/24`).
-    *   **DHCP**: Attiva o disattiva il servizio DHCP nativo.
 
 <img src={vpcNewPrivateNetwork} />
 
