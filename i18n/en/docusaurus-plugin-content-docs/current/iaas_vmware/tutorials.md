@@ -2,7 +2,7 @@
 title: Tutorials
 ---
 
-These tutorials help you use and configure the VMWare IaaS part from the Shiva portal.
+These tutorials help you use and configure the VMWare IaaS part from the Console portal.
 
 ## Encrypt a VMWare virtual machine
 
@@ -19,7 +19,7 @@ These tutorials help you use and configure the VMWare IaaS part from the Shiva p
 
 ## Interface
 
-Once logged into the Shiva web portal, from the __'IaaS'__ menu, sub-menu __'Configuration'__ then the __'vCenters'__ tab, you will find the information indicating whether encryption is enabled on the vstack in question.
+Once logged into the Console web portal, from the __'IaaS'__ menu, sub-menu __'Configuration'__ then the __'vCenters'__ tab, you will find the information indicating whether encryption is enabled on the vstack in question.
 
 ![](images/shiva_hsm_kms_000.png)
 

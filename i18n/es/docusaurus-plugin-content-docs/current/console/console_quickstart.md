@@ -14,22 +14,22 @@ import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
 import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
-## Requis previos
+## Requis
 
-- Tener suscrito una oferta Cloud Temple. Para suscribirse fácilmente, puede [contactarnos](https://www.cloud-temple.com/contactez-nous/) o por correo electrónico a la dirección __contact@cloud-temple.com__.
-- Tener acceso a la consola Shiva
-- Tener su dirección IPv4 pública declarada en la zona de confianza Cloud Temple (el acceso a la consola Shiva está limitado a las direcciones de confianza identificadas)
+- Tener suscrito a una oferta Cloud Temple. Para suscribirse de forma sencilla, puede [contactarnos](https://www.cloud-temple.com/contactez-nous/) o por correo electrónico a la dirección __contact@cloud-temple.com__.
+- Tener acceso a la Consola
+- Tener su dirección IPv4 pública declarada en la zona de confianza Cloud Temple (el acceso a la Consola está limitado a las direcciones de confianza identificadas)
 
 ## Conexión a su inquilino Cloud Temple
 
-Shiva está disponible a través de la siguiente URL: [Shiva](https://shiva.cloud-temple.com) o bien desde la URL directa que le fue comunicada por correo electrónico.
+La consola está disponible a través de la siguiente URL: [Console](https://shiva.cloud-temple.com) o bien desde la URL directa que le fue proporcionada por correo electrónico.
 
 La primera página le permite seleccionar la [organización](iam/concepts.md#organisations) en la que fue creado su usuario.  
-Una vez que haya indicado la empresa, haga clic en __'Conectarse'__.
+Una vez que haya especificado la empresa, haga clic en __'Conectarse'__.
 
 <img src={shivaLogin} />
 
-A continuación, será redirigido a una página donde se le solicitará que se autentique.  
+A continuación, se le redirigirá a una página donde se le pedirá que se autentique.  
 Una vez conectado, llegará a esta página.
 
 Aquí encontrará todas las métricas relacionadas con los productos suscritos en su ámbito. En caso de problemas con sus productos VMware y/o OpenIaaS, se mostrarán alertas, cuyo color está relacionado con su gravedad.
@@ -44,11 +44,11 @@ El cambio de idioma de un usuario debe realizarse en su __'Perfil'__, en la part
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](iam/concepts.md#tenant).
+La configuración se realiza para cada inquilino [Tenant](iam/concepts.md#tenant).
 
 ## Acceso al soporte técnico
 
-En cualquier momento, puede contactar al __equipo de soporte Cloud Temple__ a través del __icono 'balsa'__ situado en la parte superior derecha de la pantalla.
+En cualquier momento, puede contactar al __equipo de soporte Cloud Temple__ a través del __icono de 'balsa'__ situado en la parte superior derecha de la pantalla.
 
 <img src={shivaSupport} />
 
@@ -80,7 +80,7 @@ __CRÍTICO (P1)__:
 
 __ALTO (P2)__:
 
-- Fallos en los accesos de usuarios
+- Fallos en el acceso de usuarios
 - Anomalía en el cifrado de sus datos
 - Pérdida de acceso a ciertas funciones críticas
 - Incoherencia en los datos
@@ -106,14 +106,14 @@ __SERVICIO OPERATIVO (P5)__:
 
 <img src={shivaSupport_02} />
 
-Una vez realizada su solicitud, podrá recuperar sus solicitudes a través del __icono 'balsa'__ situado en la parte superior derecha de la pantalla:
+Una vez realizada su solicitud, podrá recuperar sus solicitudes a través del __icono de 'balsa'__ situado en la parte superior derecha de la pantalla:
 
 <img src={shivaSupport_03} />
 
 ## Acceso a las funcionalidades del usuario a través de la interfaz web
 
 Todas las funcionalidades accesibles para su usuario (según sus permisos) se encuentran a la izquierda de la pantalla, en la barra verde.  
-Las funcionalidades están agrupadas por módulo. Estos agrupan principalmente:
+Las funcionalidades están agrupadas por módulo. Principalmente, esto incluye:
 
 - El __inventario__ de sus recursos,
 - El __seguimiento de operaciones__,
@@ -122,7 +122,7 @@ Las funcionalidades están agrupadas por módulo. Estos agrupan principalmente:
 - El acceso a los __servicios complementarios__ (Bastión, monitorización, ...),
 - La __administración de su organización__ (Gestión de tenants, permisos, ...).
 
-La activación de un módulo para un usuario depende de los permisos del usuario. Por ejemplo, el módulo __'Pedido'__ no estará disponible si el usuario no dispone del permiso __'ORDER'__.
+La activación de un módulo para un usuario depende de sus permisos. Por ejemplo, el módulo __'Pedido'__ no estará disponible si el usuario no dispone del permiso __'ORDER'__.
 
 A continuación se presenta una descripción de los diferentes módulos disponibles. Nuevos módulos se añaden regularmente a la consola:
 <div style={{display: 'flex'}}>
@@ -134,19 +134,19 @@ A continuación se presenta una descripción de los diferentes módulos disponib
 - __IaaS__: permite el __piloto de infraestructuras IaaS VMware__ (máquinas virtuales, clústeres, hipervisores, replicaciones, copias de seguridad, ...),
 - __OpenIaaS__: permite el __piloto de recursos Xen Orchestra__ (máquinas virtuales, copias de seguridad, ...),
 - __OpenShift__: permite el piloto de su **arquitectura PaaS RedHat OpenShift** y la gestión de sus contenedores en las 3 zonas de disponibilidad de la plataforma.
-- __Bastión__: permite desplegar y gestionar appliances de bastión SSH/RDP en sus redes,
-- __Red__: permite gestionar los __redes de nivel 2 y 3__, las __IP públicas__ y sus __circuitos de telecomunicaciones__,
-- __Colocación__: ofrece una vista de los equipos ubicados en zonas de __colocación compartida o dedicada__,
-- __Pedido__: permite realizar pedidos de recursos y seguir los despliegues,
-- __Administración__: agrupa las funciones de administración de usuarios y tenants, así como el acceso a la __registro global__.
+- __Bastión__: Permite desplegar y gestionar appliances bastión SSH/RDP en sus redes,
+- __Red__: permite el piloto de los __redes de nivel 2 y 3__, de las __IP públicas__ y de sus __circuitos de telecomunicaciones__,
+- __Colocación__: Ofrece la vista sobre los equipos ubicados en zonas de __colocación compartida o dedicada__,
+- __Pedido__: Permite realizar pedidos de recursos y seguir los despliegues,
+- __Administración__: Agrupa las funciones de administración de usuarios y tenants, así como el acceso a la auditoría global.
 </div>
 </div>
-Los pictogramas __'NUEVO'__ indican que el producto correspondiente ha sido provisionado pero aún no está calificado como __oferta SecNumCloud__, y los pictogramas __'BETA'__ indican que el producto ha sido provisionado y acaba de ser calificado como __oferta SecNumCloud__.
+Los pictogramas __'NEW'__ indican que el producto correspondiente ha sido provisionado pero aún no está calificado como __oferta SecNumCloud__, y los pictogramas __'BETA'__ indican que el producto ha sido provisionado y acaba de ser calificado como __oferta SecNumCloud__.
 
-__Registro - Seguimiento de Actividades__
+__Auditoría - Seguimiento de Actividades__
 =====================================
 
-La página de actividades tiene como objetivo proporcionar una visibilidad completa sobre todas las operaciones de lectura y escritura realizadas dentro de la consola, garantizando así una trazabilidad y seguridad mejoradas. Destaca los dos pestañas principales: Recientes y Archivados.
+La página de actividades tiene como objetivo proporcionar una visibilidad completa sobre todas las operaciones de lectura y escritura realizadas dentro de la consola, garantizando así una trazabilidad y seguridad mejoradas. Destaca dos pestañas principales: Recientes y Archivados.
 
 <img src={shivaLogs} />
 
@@ -164,14 +164,14 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 - Operaciones durante un período más largo
 - Operaciones archivadas para trazabilidad y cumplimiento
 
-#### __Información mostrada__
+#### __Information Displayed__
 
- + Fecha y Hora
+ + Date and Time
 
-- Tipo de operación
-  - Estado
-- Usuario
-- Descripción de la operación
+- Operation Type
+  - Status
+- User
+- Operation Description
 
 #### __Funcionalidad__
 
@@ -195,12 +195,12 @@ Haga clic en la esquina inferior izquierda de la barra verde sobre el icono __'N
 
 <img src={shivaOnboard_009} />
 
-## Acceso a las funciones de usuario a través de la API
+## Acceso a las funcionalidades de usuario a través de la API
 
-El acceso a todas las funciones de la consola Shiva es posible a través de la API Shiva. Puede obtener detalles sobre los verbos y configuraciones mediante __'Perfil'__ y __'APIs'__:
+El acceso a todas las funcionalidades de la Consola está disponible a través de la API de la Consola. Puede obtener detalles sobre los verbos y configuraciones mediante __'Perfil'__ y __'APIs'__:
 
 <img src={shivaOnboard_008} />
 
-## Proveedor Terraform
+## Terraform Provider
 
-Cloud Temple pone a su disposición un [proveedor Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) para gestionar su plataforma Cloud como *"código"*.
+Cloud Temple vous met à disposition un [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud *"as code"*.

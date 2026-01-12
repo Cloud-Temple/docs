@@ -1,5 +1,5 @@
 ---
-title: Bereitstellung aus einer Vorlage
+title: Deployment from a Template
 tags:
   - iaas_vmware
   - tutorials
@@ -8,40 +8,42 @@ import shivaCatalogsCharger from './images/shiva_catalogs_charger.png';
 import shivaCatalogsAjout from './images/shiva_catalogs_ajout.png';
 import shivaCatalogsDeployer from './images/shiva_catalogs_deployer.png';
 
-Dieser Leitfaden ermöglicht es Ihnen, innerhalb von 5 Minuten Ihre ersten Instanzen in der Trusted Cloud bereitzustellen.
+This guide will enable you to deploy your first instances on the Cloud of Trust in less than 5 minutes.
 
 ## __Voraussetzungen__
 
-1. Ein Abonnement für das Cloud Temple-Angebot (IaaS-Abonnement).
-2. Aktivierte Berechtigungen für den Objektziel __'IaaS'__
+1. Ein abonniertes Cloud Temple-Angebot (Unterzeichnung des IaaS-Angebots).
+2. Aktivierte Berechtigungen für den Objekttreiber __'IaaS'__
 
-## Eine virtuelle Maschine aus einer Vorlage bereitstellen
+## Deploy a virtual machine from a Template
 
-Dieser Leitfaden zeigt Schritt für Schritt, wie Sie eine virtuelle Maschine aus einer Vorlage in der Shiva-Konsole bereitstellen.
+This guide walks you through the steps to deploy a virtual machine from a Template in the Console.
 
-Gehen Sie im Shiva-Portal zum Reiter "Trusted Cloud" und dann zu "Kataloge". Bevor Sie eine Vorlage bereitstellen können, muss diese in Ihrem privaten Katalog im Reiter "Mein Katalog" geladen sein.
+In the Console portal, go to the **"Trusted Cloud"** tab, then **"Catalogs"**. Before you can deploy a Template, it must be uploaded to your private catalog, under the **"My Catalog"** tab.
 
-Dafür haben Sie zwei Möglichkeiten: Entweder importieren Sie Ihre eigene Vorlage direkt in Ihren privaten Katalog oder Sie importieren ein Modell aus dem öffentlichen Katalog von Cloud Temple.
+To do this, you have two options:  
+- Import your own Template directly into your private catalog, or  
+- Import a template from the public Cloud Temple catalog.
 
-### Eine persönliche Vorlage in den privaten Katalog importieren
+### Import a custom template into your private catalog
 
-Klicken Sie im Reiter "Mein Katalog" auf "Dateien veröffentlichen".
+In the "My catalog" tab, click on "Publish files".
 
 <img src={shivaCatalogsCharger} />
 
-Folgen Sie dann den Schritten zur Veröffentlichung der Vorlage, indem Sie ihren Namen und eine Beschreibung eingeben und den Speicherort in einer Bibliothek auswählen.
+Then follow the template publishing steps by entering its name and description, and selecting its location within a library.
 
-Die Vorlage muss dann in Ihrem privaten Katalog erscheinen.
+The template should then appear in your private catalog.
 
-### Eine Vorlage aus dem öffentlichen Katalog importieren
+### Import template from public catalog
 
-Klicken Sie im Reiter "Öffentlicher Katalog" auf die Schaltfläche "Zu meinem Katalog hinzufügen" der Vorlage Ihrer Wahl, um sie in Ihren privaten Katalog zu importieren. Diese muss dann in Ihrem privaten Katalog erscheinen.
+In the "Public catalog" tab, click the "Add to my catalog" button of the desired template to import it into your private catalog. It should then appear in your private catalog.
 <img src={shivaCatalogsAjout} />
 
-### Die Vorlage bereitstellen
+### Deploy Template
 
-Sobald die Vorlage in Ihrem privaten Katalog importiert ist, können Sie sie bereitstellen, indem Sie auf "Bereitstellen" klicken.
+After importing the template into your private catalog, you can deploy it by clicking on "Deploy".
 
 <img src={shivaCatalogsDeployer} />
 
-Folgen Sie dann den verschiedenen Schritten zur Bereitstellung der Ressource, indem Sie ihren physischen Standort (Rechenzentrum, Cluster, Datenspeicher) und andere optionale Konfigurationsparameter auswählen.
+Then follow the various steps of resource deployment, selecting its physical location (datacenter, compute cluster, datastore) and other optional configuration parameters.

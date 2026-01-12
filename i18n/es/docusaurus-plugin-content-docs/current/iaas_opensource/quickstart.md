@@ -22,7 +22,7 @@ import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.
 
 ### Gestión de máquinas virtuales
 
-La interfaz de gestión de sus máquinas virtuales está disponible en la consola Shiva en el menú __'OpenIaaS'__ situado en la barra verde a la izquierda de la pantalla.
+La interfaz de gestión de sus máquinas virtuales está disponible en la Consola, en el menú __'OpenIaaS'__ situado en la barra verde a la izquierda de la pantalla.
 
 ### Lista de máquinas virtuales
 
@@ -50,7 +50,7 @@ Las siguientes acciones son posibles desde esta interfaz:
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Cuando hace clic en la flecha desplegable verde a la derecha de la lista para una máquina virtual, accede a todas las informaciones relacionadas con ella.
+Cuando hace clic en la flecha desplegable verde a la derecha de la lista para una máquina virtual, accede a todas las informaciones relativas a esta.
 
 <img src={openIaasVirtualMachineOverview} />
 
@@ -82,9 +82,9 @@ Una pestaña '__Avanzado__' permite consultar información más específica:
 
 Así como modificar ciertas opciones, tales como:
 
-- El orden de arranque
-- El arranque seguro (secure boot)
-- El arranque automático (imposible si no hay ninguna política de copia de seguridad asociada a la VM)
+- Orden de arranque
+- Secure Boot
+- Arranque automático (imposible si no hay ninguna política de copia de seguridad asociada a la VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
@@ -123,7 +123,7 @@ Below is a summary of the possible scenarios:
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
-- If certain characters do not appear during manual input, you can try using the clipboard.
+- If certain characters do not appear when typed manually, you can try pasting them from the clipboard.
 
 #### Funcionamiento del portapapeles
 Esta función le permite enviar una cadena completa de caracteres a su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la escritura en la consola que la opción "enforce keyboard" es necesaria, recuerde activarla antes de utilizar el portapapeles.  
@@ -137,7 +137,7 @@ Al hacer clic en el botón "Pegar", el contenido de su campo de texto se envía 
 
 ### Access to replication management
 
-The replication management interface is available in the Shiva console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
+The replication management interface is available in the Console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
 
 <img src={openIaasReplicationMenu} />
 
@@ -152,7 +152,7 @@ Para crear una nueva política, haga clic en el botón __'Agregar una política'
 #### Paso 1: Información general
 
 - __Nombre__: Asigne un nombre descriptivo a su política
-- __Frecuencia__: Seleccione el intervalo de replicación (1-59 minutos o 1-24 horas)
+- __Frecuencia__: Seleccione el intervalo de replicación (de 1 a 59 minutos o de 1 a 24 horas)
 
 <img src={openIaasReplicationPolicyForm1} />
 
@@ -180,13 +180,13 @@ Pasos para asociar una VM a la replicación:
 
 1. Haga clic en __'Configurar una política'__
 2. Seleccione la política de replicación deseada en el menú desplegable
-3. Valide su selección
+3. Valide su elección
 
 La replicación se iniciará automáticamente tras la validación.
 
 ### Gestión de políticas y réplicas
 
-#### Vista de las políticas
+#### Vista de políticas
 
 La pestaña __'Políticas'__ le permite visualizar todas sus políticas de replicación:
 

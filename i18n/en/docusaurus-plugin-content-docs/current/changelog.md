@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Change Tracking
 
+### December 15, 2025: Stabilization and Multilingual Fixes
+
+- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
+- **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
+- **Build**: Validation of deployment across all 5 supported languages.
+
+### December 11, 2025: Managed Kubernetes Updates
+
+- **Managed Kubernetes**: Added a new tutorial on using **Gateway API** for advanced traffic management.
+- **Managed Kubernetes**: Updated documentation on quota management (Ceph) and cost management tool optimizations (OpenCost).
+
 ### November 22, 2025: LLMaaS Updates and General Improvements
 
 - **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
@@ -56,8 +67,8 @@ sidebar_position: 2
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 
-- Full test suite validation completed.
-- Correction and validation of RAG pipelines using FAISS and Qdrant.
+- Full test suite validation.
+- Correction and validation of RAG pipelines with FAISS and Qdrant.
 - Enhanced tutorials with more detailed technical explanations.
 - Added a section on prompt security and model lifecycle within the concepts.
 - Improved the RAG explanation page with diagrams and details on embedding models.

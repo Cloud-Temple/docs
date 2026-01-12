@@ -10,51 +10,51 @@ import ouvrirSession2 from './images/ouvrir_session2.png'
 
 Esta guía de inicio le presenta cómo solicitar la creación de una Appliance y cómo registrar una nueva sesión y conectarse a ella.
 
-## Requisitos previos
+## Requis
 
-1. Haber suscrito a la oferta Cloud Temple (suscripción Appliance Bastion).
+1. Tener suscrito a la oferta Cloud Temple (suscripción Appliance Bastion).
 2. Los equipos a administrar deben ser accesibles desde la red donde se despliega la Appliance Bastion.
-3. Tener los permisos en el módulo Bastion.
-4. En el caso de un despliegue de la Appliance onpremise, los flujos correspondientes deben estar abiertos.
+3. Tener permisos sobre el módulo Bastion.
+4. En el caso de un despliegue de la Appliance on-premise, los flujos correspondientes deben estar abiertos.
 
 ## Los flujos necesarios para el funcionamiento del producto Bastion
 
 Varios flujos son necesarios para el correcto funcionamiento de la Appliance Bastion.
 
-### La puerta de enlace bastión
+### Puerta de enlace bastión
 
-| Fuente                   | Destino                                 | Protocolo |
+| Origen                   | Destino                                 | Protocolo |
 |--------------------------|-----------------------------------------|-----------|
-| Appliance bastión cliente | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242  |
+| Appliance bastion cliente | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242  |
 
-### Flujos de administración RDP
+### RDP Administration Flow
 
-| Fuente                   | Destino                 | Protocolo |
-|--------------------------|-------------------------|-----------|
-| Appliance bastión cliente | Las instancias a administrar | TCP/3389  |
+| Source                   | Destination                 | Protocol  |
+|--------------------------|-----------------------------|-----------|
+| Client bastion appliance | Instances to administer     | TCP/3389  |
 
-### Flujos de administración SSH
+### SSH administration flow
 
-| Fuente                   | Destino                 | Protocolo |
-|--------------------------|-------------------------|-----------|
-| Appliance bastión cliente | Las instancias a administrar | TCP/22    |
+| Source                   | Destination                 | Protocol  |
+|--------------------------|-----------------------------|-----------|
+| Client bastion appliance | Instances to administer       | TCP/22    |
 
 ## Solicitar la creación de una Appliance
 
-Antes de poder desplegar una Appliance, es necesario realizar una solicitud de suscripción a una Appliance a través de un ticket al soporte.
-El soporte está disponible en la consola Shiva desde el icono de balsa en la barra superior a la derecha de la ventana.
+Antes de poder desplegar una Appliance, es necesario realizar una solicitud de suscripción a una Appliance mediante un ticket al soporte técnico.  
+El soporte técnico está disponible en la Consola a través del ícono de balsa en la barra superior derecha de la ventana.
 
 <img src={shivaSupport} />
 
 ## Registrar un equipo
 
-Para acceder con regularidad a un equipo a administrar, es más conveniente crear una sesión, que solo requerirá su nombre de usuario y contraseña en cada conexión.
+Para acceder con regularidad a un equipo que deba administrarse, es más conveniente crear una sesión, que solo le solicitará su nombre de usuario y contraseña en cada conexión.
 
-Para ello, vaya al menú « Equipos » del menú « Bastion », y haga clic en el botón « Nuevo equipo ».
+Para ello, vaya al panel « Equipos » del menú « Bastión» y haga clic en el botón « Nuevo equipo ».
 
 <img src={creerSession} />
 
-A continuación, complete la información necesaria para crear su equipo:
+A continuación, rellene la información necesaria para crear su equipo:
 
     - Nombre del equipo;
     - Descripción;
@@ -65,15 +65,15 @@ A continuación, complete la información necesaria para crear su equipo:
 
 <img src={creerSession2} />
 
-Una notificación le indicará la creación del equipo que aparecerá en la parte superior derecha de la página. La sesión se agregará luego a la lista de sus equipos.
+Debería aparecer una notificación en la parte superior derecha de la página indicando la creación del equipo. A continuación, la sesión se añadirá a la lista de sus equipos.
 
-También puede crear un nuevo equipo a través del menú « Appliances » haciendo clic en la barra de acciones de la Appliance a la que desea asociar un equipo.
+Para crear un nuevo equipo, también puede pasar por el panel « Appliances », haciendo clic en la barra de acciones de la Appliance a la que desea asociar un equipo.
 
 <img src={creerSession3} />
 
 ## Conectarse a un equipo
 
-Vaya al menú « Equipos » del menú « Bastion ». Haga clic en la barra de acciones del equipo que desea abrir y haga clic en el botón « Abrir ».
+Diríjase al panel « Equipos » del panel « Bastión ». Haga clic en la barra de acciones del equipo que desea abrir y luego en el botón « Abrir ».
 
 <img src={ouvrirSession} />
 
@@ -81,4 +81,4 @@ En cada conexión al equipo, solo necesita proporcionar sus credenciales de aute
 
 <img src={ouvrirSession2} />
 
-Después de ingresar sus identificadores, una notificación confirmando el inicio de la conexión a su equipo aparecerá y se abrirá la consola hacia su máquina virtual.
+Después de ingresar sus identificadores, aparecerá una notificación que confirma el inicio de la conexión con su equipo y se abrirá la consola hacia su máquina virtual.

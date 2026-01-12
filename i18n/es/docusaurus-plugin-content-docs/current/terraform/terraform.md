@@ -1,73 +1,73 @@
 ---
-title: Descripción general
+title: Visión general
 ---
 
-El proveedor de Terraform Cloud Temple le permite gestionar la infraestructura de su cuenta Cloud Temple utilizando el enfoque de Infraestructura como Código (IaC). Ofrece una integración completa con los servicios de infraestructura Cloud Temple, permitiéndole aprovisionar, configurar y gestionar sus recursos en la nube de manera declarativa y reproducible.
+El proveedor Terraform Cloud Temple le permite gestionar la infraestructura de su cuenta Cloud Temple utilizando el enfoque Infrastructure as Code (IaC). Ofrece una integración completa con los servicios de infraestructura de Cloud Temple, permitiendo aprovisionar, configurar y gestionar sus recursos en la nube de forma declarativa y reproducible.
 
 ## Características principales
 
-- **Infraestructura como Código**: Defina su infraestructura en archivos de configuración versionables
+- **Infraestructura como código**: Defina su infraestructura en archivos de configuración versionables
 - **Gestión declarativa**: Describa el estado deseado de su infraestructura, Terraform se encarga del resto
-- **Automatización completa**: Automatice el aprovisionamiento y la gestión de sus recursos
-- **Reproducibilidad**: Implemente entornos idénticos de manera fiable
-- **Gestión de dependencias**: Terraform gestiona automáticamente el orden de creación de recursos
+- **Automatización completa**: Automatice el aprovisionamiento y gestión de sus recursos
+- **Reproducibilidad**: Despliegue entornos idénticos de forma fiable
+- **Gestión de dependencias**: Terraform gestiona automáticamente el orden de creación de los recursos
 
-## Productos cubiertos
+## Products covered
 
-El proveedor de Terraform Cloud Temple admite los siguientes servicios:
+The Terraform Cloud Temple provider supports the following services:
 
 ### IaaS VMware
 
-Gestione sus máquinas virtuales VMware con todas las características avanzadas de virtualización:
+Manage your VMware virtual machines with all advanced virtualization features:
 
-- **Máquinas virtuales**: Creación y configuración de máquinas virtuales
-- **Discos virtuales**: Creación y configuración de discos virtuales
-- **Adaptadores de red**: Gestión de adaptadores de red de máquinas virtuales
-- **Controladores virtuales**: Gestión de controladores de disco y otros dispositivos
-- **Cloud-Init**: Configuración automatizada al inicio
-- **Copia de seguridad**: Integración con políticas de copia de seguridad de Cloud Temple
+- **Virtual Machines**: Creation and configuration of virtual machines  
+- **Virtual Disks**: Creation and configuration of virtual disks  
+- **Network Adapters**: Management of network adapters for virtual machines  
+- **Virtual Controllers**: Management of disk controllers and other devices  
+- **Cloud-Init**: Automated configuration at boot  
+- **Backup**: Integration with Cloud Temple backup policies
 
 ### IaaS OpenSource
 
-Aprovisione y gestione máquinas virtuales en infraestructura OpenSource basada en XCP-ng:
+Provision and manage virtual machines on the OpenSource infrastructure based on XCP-ng:
 
-- **Máquinas virtuales**: Creación y gestión de máquinas virtuales
-- **Discos virtuales**: Creación y configuración de discos virtuales
-- **Adaptadores de red**: Creación y configuración de adaptadores de red de máquinas virtuales
-- **Replicación**: Políticas de replicación de datos
-- **Alta disponibilidad**: Configuración HA (disabled, restart, best-effort)
-- **Cloud-Init**: Configuración automatizada compatible con NoCloud
-- **Copia de seguridad**: Integración con políticas de copia de seguridad de Cloud Temple
+- **Virtual Machines**: Creation and management of virtual machines
+- **Virtual Disks**: Creation and configuration of virtual disks
+- **Network Adapters**: Creation and configuration of network adapters for virtual machines
+- **Replication**: Data replication policies
+- **High Availability**: HA configuration (disabled, restart, best-effort)
+- **Cloud-Init**: Automated configuration compatible with NoCloud
+- **Backup**: Integration with Cloud Temple backup policies
 
-### Almacenamiento de objetos
+### Almacenamiento objeto
 
-Gestione sus espacios de almacenamiento de objetos compatibles con S3:
+Administre sus espacios de almacenamiento objeto compatibles con S3:
 
 - **Buckets**: Creación y configuración de buckets
 - **Cuentas de almacenamiento**: Gestión de identidades y credenciales S3
-- **ACL**: Control de acceso granular a buckets
-- **Control de versiones**: Gestión de versiones de objetos
+- **ACL**: Control de acceso granular a los buckets
+- **Versionado**: Gestión de versiones de objetos
 
-## Requisitos previos
+## Requis previos
 
-Antes de usar el proveedor de Terraform Cloud Temple, asegúrese de tener:
+Antes de utilizar el proveedor Terraform Cloud Temple, asegúrese de contar con:
 
-### Acceso a la consola Cloud Temple
+### Acceso a la Consola Cloud Temple
 
-Debe tener acceso a la [Consola Cloud Temple](https://shiva.cloud-temple.com) con los derechos apropiados en el tenant en el que desea trabajar.
+Debe tener acceso a la [Consola Cloud Temple](https://shiva.cloud-temple.com) con los permisos adecuados en el inquilino en el que desea trabajar.
 
-### Clave API
+### API Key
 
-El proveedor requiere credenciales de API de Cloud Temple:
+The provider requires Cloud Temple API credentials:
 
-- **Client ID**: Identificador de cliente para autenticación
-- **Secret ID**: Secreto asociado con el Client ID
+- **Client ID**: Client identifier for authentication
+- **Secret ID**: Secret associated with the Client ID
 
-Estas credenciales se pueden generar desde la Consola Cloud Temple siguiendo [este procedimiento](https://docs.cloud-temple.com/console/api#cl%C3%A9s-api).
+These credentials can be generated via the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#cl%C3%A9s-api).
 
-### Derechos y permisos
+### Rights and permissions
 
-Dependiendo de los recursos que desee gestionar, debe tener los roles apropiados:
+Depending on the resources you want to manage, you must have the appropriate roles:
 
 #### Para IaaS VMware
 
@@ -76,16 +76,16 @@ Dependiendo de los recursos que desee gestionar, debe tener los roles apropiados
 - `compute_iaas_vmware_management`
 - `compute_iaas_vmware_read`
 - `compute_iaas_vmware_virtual_machine_power`
-- `backup_iaas_spp_read` y `backup_iaas_spp_write` (para copia de seguridad)
+- `backup_iaas_spp_read` y `backup_iaas_spp_write` (para la copia de seguridad)
 
-#### Para IaaS OpenSource
+#### Para IaaS de código abierto
 
 - `compute_iaas_opensource_management`
 - `compute_iaas_opensource_read`
 - `compute_iaas_opensource_virtual_machine_power`
-- `backup_iaas_opensource_read` y `backup_iaas_opensource_write` (para copia de seguridad)
+- `backup_iaas_opensource_read` y `backup_iaas_opensource_write` (para la copia de seguridad)
 
-#### Para almacenamiento de objetos
+#### Para Object Storage
 
 - `object-storage_write`
 - `object-storage_read`
@@ -96,16 +96,16 @@ Dependiendo de los recursos que desee gestionar, debe tener los roles apropiados
 - `activity_read`
 - `tag_read` y `tag_write`
 
-## Compatibilidad con Terraform
+## Terraform Compatibility
 
-El proveedor Cloud Temple es compatible con:
+The Cloud Temple provider is compatible with:
 
-- **Terraform**: Versión 1.0 y superiores
-- **OpenTofu**: Compatible con versiones recientes
+- **Terraform**: Version 1.0 and above
+- **OpenTofu**: Compatible with recent versions
 
 ## Registro y depuración
 
-Para habilitar el registro detallado del proveedor:
+Para activar el registro detallado del proveedor:
 
 ```bash
 # Registro nivel DEBUG
@@ -116,19 +116,19 @@ terraform apply
 export TF_LOG=JSON
 terraform apply
 
-# Guardar registros en un archivo
+# Guardar los registros en un archivo
 export TF_LOG_PATH=./terraform.log
 terraform apply
 ```
 
 ## Soporte y recursos
 
-- **Documentación oficial**: [Terraform Registry](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
-- **Código fuente**: [GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple)
-- **Issues**: [GitHub Issues](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues)
+- **Documentación oficial** : [Terraform Registry](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+- **Código fuente** : [GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple)
+- **Problemas** : [GitHub Issues](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues)
 
 ## Próximos pasos
 
-- [Conceptos](concepts.md): Comprenda los conceptos clave del proveedor
-- [Guía de inicio](quickstart.md): Cree su primera infraestructura
-- [Tutoriales](tutorials.md): Ejemplos prácticos y casos de uso
+- [Conceptos](concepts.md) : Comprender los conceptos clave del proveedor
+- [Guía de inicio](quickstart.md) : Crear su primera infraestructura
+- [Tutoriales](tutorials.md) : Ejemplos prácticos y casos de uso

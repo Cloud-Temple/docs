@@ -11,10 +11,10 @@ import cillium from './images/cillium.png'
 This tutorial aims to familiarize you with the fundamental networking concepts of the **Managed Kubernetes** offering. By the end of this guide, you will be able to:
 
 - Understand your cluster's IP addressing scheme (nodes, pods, services).
-- Know the different mechanisms for exposing your applications (Ingress, LoadBalancer).
+- Know the various mechanisms for exposing your applications (Ingress, LoadBalancer).
 - Visualize network flows and security policies using Hubble.
 
-We will use as an **example** a cluster named **"ctodev"**, with an assigned range of **10.20.0.0/22**.
+We will use as an **example** a cluster named **"ctodev"**, with the assigned range **10.20.0.0/22**.
 
 :::warning IP range definition
  This private IP range X.Y.Z.0/22 (RFC 1918) is defined with the client during cluster setup and cannot be modified afterward.
@@ -28,7 +28,7 @@ The **example** range 10.20.0.0/22 is logically divided into sub-ranges:
 
     - 10.20.0.0/24 is assigned to cluster Nodes:
 
-        - 10.20.0.10 : ctodev-gitrunner (the machine that orchestrates the infrastructure)
+        - 10.20.0.10 : ctodev-gitrunner (the machine that manages the infrastructure)
 
         - 10.20.0.20 : Virtual IP (load-balanced) for the Kubernetes API service
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
@@ -66,7 +66,7 @@ The Pods and Services ranges are defined with the client during cluster setup an
 
 MetalLB is the component that enables exposing layer 3 (non-web / L7) services directly on an IP address—either internal or external—using the `LoadBalancer` service type. It serves as an alternative to Ingress for non-HTTP applications or specific use cases.
 
-To use MetalLB, simply create a `LoadBalancer`-type service. MetalLB will automatically assign an IP address from the preconfigured pools. The distinction between `internal` and `external` pools is a security measure to ensure that an internal-facing application is not accidentally exposed on a public network.
+To use MetalLB, simply create a `LoadBalancer` type service. MetalLB will automatically assign an IP address from the pre-configured pools. The distinction between `internal` and `external` pools is a security measure to ensure that an application intended for internal use is not accidentally exposed on a public network.
 
 **Example: Exposing a service on the internal network**
 
@@ -110,11 +110,11 @@ spec:
   type: LoadBalancer
 ```
 
-> **Important**: This range remains within a **private address space**. For **public exposure**, you must create a **NAT rule (DNAT)** on your infrastructure's firewall to redirect traffic from one of your public external IPs to the private IP assigned by MetalLB.
+> **Important**: This range remains within a **private address space**. For **public exposure**, you must create a **NAT (DNAT) rule** on your infrastructure's firewall to redirect traffic from one of your public external IPs to the private IP assigned by MetalLB.
 
 ## Public IPs
 
-Your Managed Kubernetes cluster was initially delivered with 2 public IPv4 addresses.
+Your Managed Kubernetes cluster was originally delivered with 2 public IPv4 addresses.
 
 The first IP is used on port 6443 for the Kubernetes API (in our example: ctodev.mk.ms-cloud-temple.com:6443).
 
@@ -123,7 +123,7 @@ This same IP is also NATed to the ingress controller *"nginx-external-secured"* 
 ---
 The second public IP is NATed to the ingress controller *"nginx-external"* on ports 80 and 443.
 
-Applications exposed via the ingress class *"nginx-external"* will therefore be directly accessible from the Internet using this IP.
+Applications exposed using the ingress class *"nginx-external"* will therefore be directly accessible from the Internet via this IP.
 
 *If you wish to modify the firewall rules (add/remove allowed IPs), you must submit a support request.*
 
@@ -131,7 +131,7 @@ Applications exposed via the ingress class *"nginx-external"* will therefore be 
 
 ## DNS
 
-For the internal DNS (CoreDNS), the cluster will use the following settings:
+For the internal DNS (CoreDNS), the cluster will have the following settings:
 
 - Cluster name: ` <cluster identifier>`
 - Internal domain: `<cluster identifier>-cluster.local` (in our example: ctodev-cluster.local)
@@ -159,9 +159,9 @@ With Hubble, you can:
 
 ### Accessing the Hubble Interface
 
-The Hubble graphical interface is exposed on an internal URL of your cluster. Access via `kubectl port-forward` is not possible, as users do not have sufficient permissions on the `kube-system` namespace.
+The Hubble graphical interface is exposed via an internal URL of your cluster. Access is not possible through `kubectl port-forward` because users do not have sufficient permissions on the `kube-system` namespace.
 
-To access it, you must be connected to the cluster's internal network (e.g., via a bastion host or a VPN). Use the following URL:
+To access it, you must be connected to the cluster's internal network (for example, via a bastion host or a VPN). Use the following URL:
 
 `http://hubble.internal.<your-cluster-identifier>.mk.ms-cloud-temple.com`
 
@@ -175,13 +175,13 @@ kubectl get ingress hubble-ui -n kube-system
 
 ### Creating Internal DNS Zones (Private Cluster)
 
-To enhance security and simplify access to your services and the Kubernetes API from within your internal network, it is recommended to create an internal DNS zone. This zone will resolve domain names for your Ingresses and the Kubernetes API to their respective private IP addresses, avoiding transit through public networks.
+To enhance security and simplify access to your services and the Kubernetes API from your internal network, it is recommended to set up an internal DNS zone. This zone will resolve domain names for your Ingresses and the Kubernetes API to their respective private IP addresses, avoiding transit through public networks.
 
-**Example configuration using our cluster "ctodev", which has been assigned the range** **10.20.0.0/22:**
+**Example configuration for our cluster "ctodev", which has the assigned range `10.20.0.0/22`:**
 
 Based on the URLs provided in the quick start guide, you can configure your internal DNS as follows:
 
-1.  **Create a private DNS zone** on your internal DNS servers for `.<cluster identifier>.mk.ms-cloud-temple.com`
+1.  **Create a private DNS zone** on your internal DNS servers for `.<cluster-identifier>.mk.ms-cloud-temple.com`
 
 2.  **Add the following A records:**
 
@@ -197,9 +197,10 @@ Based on the URLs provided in the quick start guide, you can configure your inte
         -   `k10.external-secured -> 10.20.1.129`
         -   `grafana.external-secured -> 10.20.1.129`
         -   `harbor.external-secured -> 10.20.1.129`
-        -   `kubecost.external-secured -> 10.20.1.129`
+        -   `opencost.external-secured -> 10.20.1.129`
+        -   `opencost-mcp.external-secured -> 10.20.1.129`
 
-This configuration ensures that traffic to the API and internal services remains confined to your private network, in line with security best practices.
+This configuration ensures that traffic to the API and internal services remains confined within your private network, in line with security best practices.
 
 <div class="card">
   <div class="card__header">

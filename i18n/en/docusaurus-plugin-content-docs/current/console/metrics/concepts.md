@@ -27,13 +27,13 @@ import grafanaDatasourceAlerting from './images/grafana_datasource_alerting.png'
 import grafanaDatasourceWorking from './images/grafana_datasource_working.png'
 import grafanaDashboards_001 from './images/grafana_dashboards_001.png'
 
-The majority of __Cloud Temple__ clients have visualization, monitoring, and metrology tools in place to track their operations.
+Most __Cloud Temple__ customers have visualization, monitoring, and metrology tools in place to track their operations.
 
-The philosophy behind the Shiva console is to provide access to data so it can be integrated into this tooling via an embedded Prometheus proxy.
+The Console's philosophy is to enable access to data so it can be integrated into this tooling via an embedded Prometheus proxy.
 
-This proxy enables you to query and manipulate data using a visualization tool such as [Grafana](https://grafana.com).
+This proxy allows you to query and manipulate data using a visualization tool such as [Grafana](https://grafana.com).
 
-It is, however, possible to view some performance metrics of your Cloud resources directly within the Shiva web interface.
+However, it is also possible to view certain performance metrics of your Cloud resources directly within the Console's web interface.
 
 *__Note:__ The __Cloud Temple__ philosophy is not limited to embedding graphs within the web interface, but also to providing maximum information accessible via the API*
 
@@ -43,7 +43,7 @@ It is, however, possible to view some performance metrics of your Cloud resource
 
 ### Overview
 
-The Shiva console's home page displays the main dashboard, showing all metrics that provide an overview of each product you have subscribed to within your scope. If any issues arise with your VMware and/or OpenIaaS products, alerts will be visible—alert severity is indicated by color.
+The home page of the Console displays the main dashboard, showing all metrics that provide an overview of each product you have subscribed to within your scope. If any issues occur with your VMware and/or OpenIaaS products, alerts will be visible—alert color indicates their severity.
 
 These alerts are clickable and redirect to the corresponding product page.
 
@@ -61,15 +61,15 @@ On this tab, you'll find some of the metrics already present in the global dashb
 
 #### Calculation
 
-On this tab, you'll find the number of **AZs**, **Clusters**, **ESXs**, **carbon emissions**, and **estimated consumption**, along with 7 visual graphs providing a clear, graphical overview of your VMware environment. The estimated consumption in kWh is calculated based on the average of readings covering the selected period, expressed per hour.
+On this tab, you'll find the number of **AZs**, **Clusters**, **ESXs**, **carbon emissions**, **power consumption estimates**, as well as 7 visual graphs providing a clear, graphical overview of your VMware environment. The power consumption estimate in kWh is calculated based on the average of readings covering the selected period, normalized to a per-hour basis.
 
-You can select the date range to cover, as well as the data aggregation type (by default, data is aggregated across your entire environment). For example, by choosing **Host**:
+You can select the date range to analyze, as well as the data grouping type (by default, data is aggregated across your entire environment). For example, selecting **Host**:
 
 <img src={shivaMetric_001} />
 
 <img src={shivaMetric_002} />
 
-When hovering over each graph, the details of resource names and their values are displayed. When clicking on these graphs, a small tooltip opens, allowing you to more easily view the details corresponding to the clicked date:
+When hovering over each graph, resource names and their corresponding values are displayed. Clicking on a graph opens a small tooltip, allowing you to easily view detailed information for the selected date:
 <img src={shivaMetric_014} />
 
 #### Storage
@@ -86,7 +86,7 @@ This summary provides, over the selected time range:
 - the number of CPUs and the __average CPU utilization__,
 - the amount of memory in GB and the __average memory usage__,
 - the average __storage access latency__ for both read and write operations,
-- the average __'CPU Ready'__ time of the virtual machine (which represents the average wait time for a physical CPU core to become available for the virtual machine).
+- the average __'CPU Ready'__ time of the virtual machine (i.e., the average wait time for a physical CPU core to become available for the VM).
 
 <img src={shivaMetric_006} />
 
@@ -100,7 +100,7 @@ This will take you to the page displaying historical data in graphical form, inc
 
 ### VMware Metrics - View by Resource
 
-It is also possible to view a portion of metrics related to VMware, this time more specifically for a given **Host** or **Datastore**.
+It is also possible to view a subset of metrics related to VMware, this time more specifically for a given **Host** or **Datastore**.
 
 #### Host
 
@@ -116,7 +116,7 @@ In a Datastore view, you can check the **IOPS** for a given period.
 
 ### OpenIaaS Metrics
 
-In the **'OpenIaaS'** menu, a dedicated dashboard is available under the **'Metrics'** submenu. It includes 3 tabs:
+In the **'OpenIaaS'** menu, a dedicated dashboard is available in the **'Metrics'** submenu. It includes 3 tabs:
 
 #### Overview
 
@@ -126,9 +126,9 @@ On this tab, you'll find some of the metrics already present in the global dashb
 
 #### Calcul
 
-On this tab, you'll find the number of **AZs**, **Clusters**, and **Hosts**, along with five graphs providing a highly visual overview of your OpenIaaS environment.
+On this tab, you'll find the number of **AZs**, **Clusters**, **Hosts**, as well as 5 graphs providing a highly visual overview of your OpenIaaS environment.
 
-You can select the date range to cover, as well as the data grouping type (by default, data is grouped across your entire scope). For example, by choosing **Host**:
+You can select the date range to cover, as well as the data grouping type (by default, data is grouped across your entire environment). For example, by choosing **Host**:
 
 <img src={shivaMetric_011} />
 
@@ -136,22 +136,22 @@ You can select the date range to cover, as well as the data grouping type (by de
 
 #### Storage
 
-Just as on the "Compute" tab, various information is displayed: the number of **AZs**, **Clusters**, **Datastores**, as well as a chart. The same filtering principles apply, but here we can group by **Block Storage**.
+Just as on the "Compute" tab, you'll find various information: the number of **AZs**, **Clusters**, **Datastores**, as well as a chart. The same filtering principles apply, but here we can group by **Block Storage**.
 
 <img src={shivaMetric_013} />
 
 ## Usage with __Grafana__
 
-Integration of the Shiva console with Grafana
+Integrating the Console with Grafana
 
-The Shiva console from Cloud Temple can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
+The Cloud Temple Console can be used as a data source for your [Grafana](https://grafana.com/) infrastructure.
 
-The console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
+The Console is Prometheus-compatible, allowing you to add it to Grafana as a Prometheus-type data source. You will then be able to:
 
 - Visualize all your metrics.
 - Create custom dashboards tailored to your specific needs.
 
-Cloud Temple also provides a [collection of ready-to-use dashboards](https://github.com/Cloud-Temple/console-grafana-iaas) that you can use as a starting point or adapt according to your use cases.
+Cloud Temple also provides a [collection of ready-to-use dashboards](https://github.com/Cloud-Temple/console-grafana-iaas) that you can use as a starting point or adapt to your use cases.
 
 <img src={grafanaDashboards_003} />
 

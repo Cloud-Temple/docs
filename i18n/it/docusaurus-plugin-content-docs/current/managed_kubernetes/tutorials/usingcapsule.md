@@ -37,7 +37,7 @@ Look for the label `capsule.clastix.io/tenant`. The value of this label is your 
 ```bash
 
 
-# Once you know your tenant's name, for example "my-tenant"
+# Once you know the name of your tenant, for example "my-tenant"
 kubectl get ns -l capsule.clastix.io/tenant=my-tenant
 ```
 
@@ -74,8 +74,12 @@ One of the greatest advantages of Capsule is that all security policies, resourc
 
 This ensures your projects comply with consumption limits (CPU, memory, storage) and security rules (such as default network policies or security constraints defined by **Kyverno**) set for your environment, without needing to reconfigure them for each Namespace.
 
+:::info
+Specific quotas have been set on your Capsule Tenant to limit the use of persistent storage (Ceph-Block and Ceph-FileSystem) to the total available space in the cluster. If you need to modify these quotas for a specific project, please submit a request to the Cloud Temple support team.
+:::
+
 ## Conclusione
 
-Grazie a Capsule, hai un'autonomia completa nella gestione degli spazi dei nomi (Namespaces) delle tue squadre, beneficiando contemporaneamente di un ambiente sicuro e preconfigurato da parte degli amministratori del cluster. Puoi creare, modificare e eliminare spazi dei nomi in qualsiasi momento, sapendo che i controlli necessari vengono applicati automaticamente.
+Grazie a Capsule, hai un'intera autonomia per gestire gli spazi dei nomi (Namespaces) delle tue squadre, beneficiando contemporaneamente di un ambiente sicuro e preconfigurato dagli amministratori del cluster. Puoi creare, modificare e eliminare spazi dei nomi in qualsiasi momento, sapendo che i controlli necessari vengono applicati automaticamente.
 
 Se hai bisogno di creare un nuovo Tenant per isolare un altro insieme di progetti o squadre, puoi richiederlo al supporto Cloud Temple.

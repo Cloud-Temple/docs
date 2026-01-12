@@ -2,29 +2,29 @@
 title: Konzepte
 ---
 
-# Terraform-Konzepte im Cloud Temple Provider
+# Konzepte von Terraform im Cloud Temple Provider
 
-Diese Seite präsentiert die grundlegenden Konzepte, die notwendig sind, um den Cloud Temple Terraform Provider effektiv zu verstehen und zu nutzen.
+Diese Seite stellt die grundlegenden Konzepte vor, die notwendig sind, um den Terraform Cloud Temple Provider zu verstehen und effektiv zu nutzen.
 
 ## Infrastructure as Code (IaC)
 
-Infrastructure as Code ist ein Ansatz, bei dem IT-Infrastruktur durch menschenlesbare Konfigurationsdateien verwaltet und bereitgestellt wird, anstatt durch manuelle Konfiguration oder interaktive Tools.
+Infrastructure as Code ist ein Ansatz, bei dem die Verwaltung und Bereitstellung von IT-Infrastruktur mithilfe von für Menschen lesbaren Konfigurationsdateien erfolgt, anstatt manuell oder über interaktive Tools.
 
 ### Vorteile von IaC mit Terraform
 
-- **Versionierung**: Infrastruktur wird in Dateien definiert, die versioniert werden können (Git)
+- **Versionskontrolle**: Die Infrastruktur wird in Dateien definiert, die versioniert werden können (Git)
 - **Zusammenarbeit**: Teams können gemeinsam an derselben Infrastruktur arbeiten
 - **Automatisierung**: Reduzierung menschlicher Fehler und Zeitersparnis
 - **Dokumentation**: Der Code beschreibt die Infrastruktur explizit
-- **Reproduzierbarkeit**: Bereitstellung identischer Umgebungen in Minuten
+- **Reproduzierbarkeit**: Bereitstellung identischer Umgebungen innerhalb weniger Minuten
 
-## Terraform Provider
+## Terraform-Provider
 
-Ein Terraform Provider ist ein Plugin, das Terraform die Interaktion mit einer spezifischen API ermöglicht. Der Cloud Temple Provider fungiert als Abstraktionsschicht zwischen Ihren Terraform-Konfigurationsdateien und den Cloud Temple APIs.
+Ein Terraform-Provider ist ein Plugin, das es Terraform ermöglicht, mit einer bestimmten API zu interagieren. Der Cloud Temple Provider fungiert als Abstraktionsschicht zwischen Ihren Terraform-Konfigurationsdateien und den Cloud Temple APIs.
 
 ### Provider-Deklaration
 
-Der Provider muss in einem `terraform`-Block mit `required_providers` deklariert werden:
+Der Provider muss innerhalb eines `terraform`-Blocks mit `required_providers` deklariert werden:
 
 ```hcl
 terraform {
@@ -46,10 +46,10 @@ provider "cloudtemple" {
 
 Der Provider authentifiziert sich bei den Cloud Temple APIs mit:
 
-1. **Client ID**: Eindeutiger Identifikator für Ihre Anwendung
-2. **Secret ID**: Geheimer Schlüssel, der mit der Client ID verknüpft ist
+1. **Client ID**: Eindeutige Kennung für Ihre Anwendung
+2. **Secret ID**: Geheimer Schlüssel, der mit der Client ID verbunden ist
 
-Diese Anmeldeinformationen werden über die Cloud Temple Konsole generiert und ermöglichen es dem Provider, Operationen in Ihrem Namen auszuführen.
+Diese Anmeldeinformationen werden über die Cloud Temple-Konsole generiert und ermöglichen es dem Provider, Operationen in Ihrem Namen durchzuführen.
 
 :::info Best Practices
     Speichern Sie Ihre Anmeldeinformationen in Umgebungsvariablen oder einem Secrets-Manager, niemals direkt im Code.
@@ -57,7 +57,7 @@ Diese Anmeldeinformationen werden über die Cloud Temple Konsole generiert und e
 
 ## Ressourcen
 
-Eine Ressource repräsentiert eine Infrastrukturkomponente, die erstellt, gelesen, aktualisiert oder gelöscht werden kann (CRUD-Operationen).
+Eine Ressource stellt eine Infrastrukturkomponente dar, die erstellt, gelesen, aktualisiert oder gelöscht werden kann (CRUD-Operationen).
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -70,32 +70,32 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-### Cloud Temple Ressourcentypen
+### Cloud Temple-Ressourcentypen
 
-#### VMware IaaS
+#### IaaS VMware
 
-- `cloudtemple_compute_virtual_machine`: Virtuelle Maschine
-- `cloudtemple_compute_virtual_disk`: Virtuelle Festplatte
-- `cloudtemple_compute_network_adapter`: Netzwerkschnittstelle
-- `cloudtemple_compute_virtual_controller`: Gerätecontroller
+- `cloudtemple_compute_virtual_machine` : Virtuelle Maschine
+- `cloudtemple_compute_virtual_disk` : Virtuelle Festplatte
+- `cloudtemple_compute_network_adapter` : Netzwerkadapter
+- `cloudtemple_compute_virtual_controller` : Gerätecontroller
 
-#### OpenSource IaaS
+#### IaaS Open Source
 
-- `cloudtemple_compute_iaas_opensource_virtual_machine`: Virtuelle Maschine
-- `cloudtemple_compute_iaas_opensource_virtual_disk`: Festplatte
-- `cloudtemple_compute_iaas_opensource_network_adapter`: Netzwerkschnittstelle
-- `cloudtemple_compute_iaas_opensource_replication_policy`: Replikationsrichtlinie
+- `cloudtemple_compute_iaas_opensource_virtual_machine` : Virtuelle Maschine
+- `cloudtemple_compute_iaas_opensource_virtual_disk` : Virtuelle Festplatte
+- `cloudtemple_compute_iaas_opensource_network_adapter` : Netzwerkschnittstelle
+- `cloudtemple_compute_iaas_opensource_replication_policy` : Replikationsrichtlinie
 
 #### Object Storage
 
-- `cloudtemple_object_storage_bucket`: S3-Bucket
-- `cloudtemple_object_storage_storage_account`: Speicherkonto
-- `cloudtemple_object_storage_acl_entry`: Bucket-ACL
-- `cloudtemple_object_storage_global_access_key`: Globaler Zugriffsschlüssel für Namespace
+- `cloudtemple_object_storage_bucket` : S3-Bucket
+- `cloudtemple_object_storage_storage_account` : Speicherkonto
+- `cloudtemple_object_storage_acl_entry` : ACL eines Buckets
+- `cloudtemple_object_storage_global_access_key`: Globale Zugriffsschlüssel für den Namespace
 
 ### Attribute und Argumente
 
-Jede Ressource hat:
+Jede Ressource verfügt über:
 
 - **Argumente**: Werte, die Sie konfigurieren (Eingaben)
 - **Attribute**: Werte, die von der Ressource zurückgegeben werden (Ausgaben)
@@ -108,23 +108,23 @@ resource "cloudtemple_compute_virtual_machine" "example" {
   cpu    = 4
   
   # Attribute (automatisch berechnet)
-  # id, moref, machine_manager_id, etc.
+  # id, moref, machine_manager_id, usw.
 }
 
-# Verweis auf ein Attribut
+# Referenz auf ein Attribut
 output "vm_id" {
   value = cloudtemple_compute_virtual_machine.example.id
 }
 ```
 
-## Datasources
+## Datenquellen
 
-Datasources ermöglichen es Ihnen, Informationen über bestehende Ressourcen abzurufen, ohne sie zu verwalten. Sie sind **nur lesbar**.
+Datenquellen ermöglichen die Abfrage von Informationen zu vorhandenen Ressourcen, ohne diese zu verwalten. Sie sind **schreibgeschützt**.
 
-### Verwendung von Datasources
+### Verwendung von Datenquellen
 
 ```hcl
-# Abrufen eines bestehenden Datacenters
+# Abrufen eines vorhandenen Datacenters
 data "cloudtemple_compute_virtual_datacenter" "dc" {
   name = "DC-EQX6"
 }
@@ -143,14 +143,14 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-### Hauptdatasources
+### Hauptdatenquellen
 
-Die vollständige Liste der verfügbaren Datasources im Cloud Temple Terraform Provider finden Sie in der [Terraform-Dokumentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+Sie finden die vollständige Liste der verfügbaren Datenquellen im Terraform Cloud Temple Provider in der [Terraform-Dokumentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
 
 #### Compute-Infrastruktur
 
-| Datasource | Beschreibung |
-|------------|-------------|
+| Datenquelle | Beschreibung |
+|-------------|--------------|
 | `cloudtemple_compute_virtual_datacenter` | Virtuelles Datacenter |
 | `cloudtemple_compute_host_cluster` | Host-Cluster |
 | `cloudtemple_compute_datastore_cluster` | Datastore-Cluster |
@@ -160,33 +160,33 @@ Die vollständige Liste der verfügbaren Datasources im Cloud Temple Terraform P
 
 #### Templates und Marketplace
 
-| Datasource | Beschreibung |
-|------------|-------------|
+| Datenquelle | Beschreibung |
+|-------------|--------------|
 | `cloudtemple_compute_content_library` | Inhaltsbibliothek |
-| `cloudtemple_compute_content_library_item` | Bibliothekselement |
+| `cloudtemple_compute_content_library_item` | Element einer Bibliothek |
 | `cloudtemple_marketplace_item` | Cloud Temple Marketplace-Element |
-| `cloudtemple_compute_iaas_opensource_template` | Template im OpenSource IaaS-Katalog |
+| `cloudtemple_compute_iaas_opensource_template` | Template im IaaS OpenSource-Katalog |
 
 #### Backup
 
-| Datasource | Beschreibung |
-|------------|-------------|
-| `cloudtemple_backup_sla_policy` | VMware Backup-SLA-Richtlinie |
-| `cloudtemple_backup_iaas_opensource_policy` | OpenSource Backup-Richtlinie |
+| Datenquelle | Beschreibung |
+|-------------|--------------|
+| `cloudtemple_backup_sla_policy` | SLA-Richtlinie für VMware-Backup |
+| `cloudtemple_backup_iaas_opensource_policy` | Backup-Richtlinie für OpenSource |
 
 #### Object Storage
 
-| Datasource | Beschreibung |
-|------------|-------------|
-| `cloudtemple_object_storage_role` | Verfügbare Rollen für ACLs |
+| Datenquelle | Beschreibung |
+|-------------|--------------|
+| `cloudtemple_object_storage_role` | Verfügbare Rollen für ACL |
 | `cloudtemple_object_storage_bucket_files` | Dateien in einem Bucket |
-| `cloudtemple_object_storage_storage_account` | Bestehendes Speicherkonto |
+| `cloudtemple_object_storage_storage_account` | Vorhandenes Speicherkonto |
 
-## Terraform State
+## Terraform-State
 
-Der Terraform State ist eine Datei, die die Zuordnung zwischen Ihrer Konfiguration und den tatsächlichen Ressourcen in der Cloud aufrechterhält.
+Der Terraform-State ist eine Datei, die die Zuordnung zwischen Ihrer Konfiguration und den tatsächlichen Ressourcen in der Cloud verwaltet.
 
-### terraform.tfstate Datei
+### Terraform-State-Datei
 
 ```json
 {
@@ -204,9 +204,9 @@ Der Terraform State ist eine Datei, die die Zuordnung zwischen Ihrer Konfigurati
 }
 ```
 
-### Remote Backend
+### Remote-Backend
 
-Für die Teamzusammenarbeit speichern Sie den State in einem Remote-Backend:
+Für ein Teamprojekt speichern Sie den State in einem entfernten Backend:
 
 ```hcl
 terraform {
@@ -219,18 +219,18 @@ terraform {
 ```
 
 :::warning
-    Die `terraform.tfstate`-Datei enthält sensible Informationen. Committen Sie sie niemals in Git und verwenden Sie ein sicheres Backend für die Speicherung.
+    Die Datei `terraform.tfstate` enthält sensible Informationen. Commiten Sie sie niemals in Git und verwenden Sie ein sicheres Backend für die Speicherung.
 :::
 
 :::info
-    OpenTofu bietet standardmäßig State-Verschlüsselung ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
+    OpenTofu bietet die Verschlüsselung des States standardmäßig an ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
 
 ## Terraform-Lebenszyklus
 
 ### 1. Initialisierung (terraform init)
 
-Initialisieren Sie das Arbeitsverzeichnis und laden Sie den Cloud Temple Provider herunter:
+Initialisiert das Arbeitsverzeichnis und lädt den Cloud Temple Provider herunter:
 
 ```bash
 terraform init
@@ -239,52 +239,52 @@ terraform init
 Dieser Befehl:
 - Lädt den Provider aus dem Terraform Registry herunter
 - Initialisiert das Backend (falls konfiguriert)
-- Erstellt das `.terraform/`-Verzeichnis
+- Erstellt das Verzeichnis `.terraform/`
 
 ### 2. Planung (terraform plan)
 
-Erzeugen Sie einen Ausführungsplan, der die anzuwendenden Änderungen zeigt:
+Erstellt einen Ausführungsplan, der die Änderungen anzeigt, die angewendet werden:
 
 ```bash
 terraform plan
 ```
 
-Der Plan zeigt:
-- **Zu erstellende Ressourcen** (`+`)
-- **Zu ändernde Ressourcen** (`~`)
-- **Zu löschende Ressourcen** (`-`)
-- **Neu zu erstellende Ressourcen** (`-/+`)
+Der Plan zeigt an:
+- **Ressourcen, die erstellt werden** (`+`)
+- **Ressourcen, die geändert werden** (`~`)
+- **Ressourcen, die entfernt werden** (`-`)
+- **Ressourcen, die neu erstellt werden** (`-/+`)
 
 ### 3. Anwendung (terraform apply)
 
-Wenden Sie Änderungen an, um den gewünschten Zustand zu erreichen:
+Wendet die Änderungen an, um den gewünschten Zustand zu erreichen:
 
 ```bash
 terraform apply
 ```
 
 Terraform:
-1. Erzeugt einen Plan
-2. Fragt nach Bestätigung (außer mit `--auto-approve`)
-3. Wendet Änderungen an
+1. Generiert einen Plan
+2. Fordert Bestätigung an (außer bei Verwendung von `--auto-approve`)
+3. Wendet die Änderungen an
 4. Aktualisiert den State
 
 ### 4. Zerstörung (terraform destroy)
 
-Zerstören Sie alle verwalteten Ressourcen:
+Zerstört alle verwalteten Ressourcen:
 
 ```bash
 terraform destroy
 ```
 
 :::danger Achtung
-  Dieser Befehl löscht alle Ressourcen dauerhaft. Mit Vorsicht verwenden.
+  Dieser Befehl löscht alle Ressourcen endgültig. Verwenden Sie ihn vorsichtig.
 :::
 
-### 5. Weitere nützliche Befehle
+### 5. Andere nützliche Befehle
 
 ```bash
-# Aktuellen State anzeigen
+# Aktuellen Zustand anzeigen
 terraform show
 
 # Ressourcen auflisten
@@ -309,7 +309,7 @@ Terraform analysiert automatisch Abhängigkeiten zwischen Ressourcen.
 Terraform erkennt Referenzen zwischen Ressourcen:
 
 ```hcl
-# Die Datasource wird zuerst ausgewertet
+# Die Datenquelle wird zuerst ausgewertet
 data "cloudtemple_compute_virtual_datacenter" "dc" {
   name = "DC-EQX6"
 }
@@ -344,7 +344,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-## Variablen und Outputs
+## Variablen und Ausgaben
 
 ### Eingabevariablen
 
@@ -370,9 +370,9 @@ resource "cloudtemple_compute_virtual_machine" "example" {
 }
 ```
 
-### Outputs
+### Ausgaben
 
-Geben Sie Informationen nach der Anwendung preis:
+Exponieren Sie Informationen nach der Anwendung:
 
 ```hcl
 output "vm_id" {
@@ -388,7 +388,7 @@ output "vm_moref" {
 
 ## Module
 
-Module ermöglichen es Ihnen, Konfigurationen zu gruppieren und wiederzuverwenden:
+Module ermöglichen die Gruppierung und Wiederverwendung von Konfigurationen:
 
 ```hcl
 # modules/vm/main.tf
@@ -419,15 +419,15 @@ module "db_server" {
 
 ## Best Practices
 
-### Dateiorganisation
+### Dateistruktur
 
 ```
 .
 ├── main.tf              # Hauptressourcen
 ├── variables.tf         # Variablendeklarationen
-├── outputs.tf           # Output-Deklarationen
+├── outputs.tf           # Ausgabedeklarationen
 ├── versions.tf          # Terraform- und Provider-Versionen
-├── terraform.tfvars     # Variablenwerte (nicht committen)
+├── terraform.tfvars     # Variablenwerte (nicht commiten)
 └── modules/             # Wiederverwendbare Module
     └── vm/
         ├── main.tf
@@ -435,13 +435,13 @@ module "db_server" {
         └── outputs.tf
 ```
 
-### Secrets-Verwaltung
+### Geheimnisverwaltung
 
 ```hcl
 # ❌ Zu vermeiden
 provider "cloudtemple" {
   client_id = "12345678-1234-1234-1234-123456789abc"
-  secret_id = "klartext-secret"
+  secret_id = "klartext-geheimnis"
 }
 
 # ✅ Empfohlen
@@ -469,5 +469,5 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ## Nächste Schritte
 
-- [Erste Schritte](quickstart.md): Erstellen Sie Ihre erste Infrastruktur mit Terraform
-- [Tutorials](tutorials.md): Praktische Beispiele für jeden Service
+- [Schnellstartanleitung](quickstart.md): Erstellen Sie Ihre erste Infrastruktur mit Terraform
+- [Tutorials](tutorials.md): Praktische Beispiele für jeden Dienst

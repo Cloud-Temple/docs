@@ -29,7 +29,7 @@ Thanks to the **Console**, you can monitor and operate your cloud infrastructure
 
   <div class="card">
     <h3>Metrics</h3>
-    <p>Order and track the deployment of new resources.</p>
+    <p>Monitor and analyze performance metrics for your resources.</p>
     <a href="console/metrics/concepts" class="card-link">Discover the menus &rarr;</a>
   </div>
 </div>
@@ -66,27 +66,27 @@ The console provides direct access to your technical support cases. You benefit 
 Need expertise? Benefit from the support of our engineers for:
 
 - Personalized consulting,
-- Assistance with cloud architecture implementation,
+- Assistance with implementing cloud architectures,
 - Training for your teams.
 
-The Cloud Temple Console **'Shiva'** is **Cloud Temple's integrated Cloud Management Platform (CMP)**.
+The Cloud Temple **'Console'** portal is **the integrated cloud management platform** (Cloud Management Platform) of **Cloud Temple**.
 
-The Cloud Temple Shiva console enables you to manage cloud resources such as virtual servers, storage, networks, and application services.  
+The Cloud Temple Console enables you to manage cloud resources such as virtual servers, storage, networks, and application services.  
 It is a centralized management interface that allows you to design and operate your cloud infrastructure.
 
-The Cloud Temple Shiva console enables your teams to:
+The Cloud Temple Console enables your teams to:
 
 - **Manage your Cloud Temple products and services**,
 - **Monitor and report on the performance of your cloud resources**,
-- **Automation and orchestration**: Thanks to its API, Shiva allows you to automate repetitive tasks and orchestrate complex workflows for deploying, managing, and scaling your cloud resources,
-- **Security and compliance**: Shiva enables identity management and access filtering to ensure regulatory compliance and adherence to your security policies,
+- **Automation and orchestration**: Through its API, the Console allows you to automate repetitive tasks and orchestrate complex workflows for deploying, managing, and scaling your cloud resources,
+- **Security and compliance**: The Console enables identity management and access filtering to ensure regulatory compliance and adherence to your security policies,
 - **Integration with Cloud Adoption Frameworks (CAF)**: Thanks to its hybridization capabilities, you can maintain seamless operations with third-party cloud providers (Microsoft Azure and Amazon AWS) from a single interface, simplifying the integration and management of your multi-cloud application environments,
 - **Access and tracking of technical support tickets**: Dedicated technical support is also available, including customer support for troubleshooting technical issues as well as assistance with initial configuration,
-- **Subscription to professional services**: To effectively manage your cloud environments, your teams can benefit from our engineers’ expertise in consulting, architecture implementation support, or training.
+- **Subscription to professional services**: To effectively manage your cloud environments, your teams can benefit from our engineers’ expertise in consulting, architectural implementation support, or training.
 
 ## User Features Access via API
 
-Access to all features of the Shiva console is available through the Shiva API.  
+Access to all Console features is available through the Console API.  
 You can find detailed information about verbs and configurations via **'Profile'** and **'APIs'**
 
 ## Terraform Provider

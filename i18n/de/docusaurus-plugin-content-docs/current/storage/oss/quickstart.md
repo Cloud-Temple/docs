@@ -38,7 +38,7 @@ Der Cloud Object Storage Temple ist ein hochsicherer und SecNumCloud-zertifizier
     Added `cloudtemple-fr1` successfully.
     ```
     - Ersetzen Sie `VOTRE_NAMESPACE` durch Ihren Namespace. Dieser Wert ist in der Cloud Temple-Konsole im Detail eines Buckets verfügbar.
-    - Ersetzen Sie `VOTRE_CLE_ACCES` und `VOTRE_CLE_SECRETE` durch Ihre Zugriffsschlüssel für das Speicherkonto.
+    - Ersetzen Sie `VOTRE_CLE_ACCES` und `VOTRE_CLE_SECRETE` durch die Zugriffsschlüssel Ihres Speicherkontos.
 
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
@@ -106,7 +106,7 @@ Der Cloud Object Storage Temple ist ein hochsicherer und SecNumCloud-zertifizier
     Im Tab '__Einstellungen__' können Sie die detaillierten Informationen Ihres S3-Buckets einsehen:
     <img src={S3Params} />
 
-    **Wichtiger Hinweis**: Der Begriff '__Löschschutz__' bezieht sich auf die Schutzdauer der Daten und nicht auf eine geplante Löschung. Die Daten bleiben während der gesamten konfigurierten Dauer zugänglich. Um eine automatische Löschung der Daten nach Ablauf der Aufbewahrungsfrist zu erreichen, ist die Definition einer Lebenszyklusrichtlinie (lifecycle) erforderlich.
+    **Wichtiger Hinweis**: Der Begriff '__Löschschutz__' bezieht sich auf die Schutzdauer der Daten und nicht auf eine geplante Löschung. Die Daten bleiben während der gesamten konfigurierten Periode zugänglich. Um eine automatische Löschung der Daten nach Ablauf der Aufbewahrungsfrist zu ermöglichen, ist die Definition einer Lebenszyklusrichtlinie (lifecycle) erforderlich.
 
     **Beispiel für eine Lebenszyklusrichtlinie** (`lifecycle.json`):
 
@@ -125,7 +125,7 @@ Der Cloud Object Storage Temple ist ein hochsicherer und SecNumCloud-zertifizier
             "Days": 30  // löscht nach 30 Tagen
           },
           "NoncurrentVersionExpiration": {
-            "NoncurrentDays": 7  // löscht ältere Versionen 7 Tage nach Erstellung einer neuen Version
+            "NoncurrentDays": 7  // löscht alte Versionen 7 Tage nach Erstellung einer neuen Version
           }
         }
       ]
@@ -234,7 +234,7 @@ Der Cloud Object Storage Temple ist ein hochsicherer und SecNumCloud-zertifizier
 ## Erstellung eines S3-Buckets
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
-    Die Erstellung eines neuen Buckets erfolgt durch Klicken auf die Schaltfläche '__Neuer Bucket__' oben rechts auf dem Bildschirm:
+    Die Erstellung eines neuen Buckets erfolgt durch Klicken auf die Schaltfläche '__Neuer Bucket__' in der oberen rechten Ecke des Bildschirms:
     <img src={S3Create} />
     Es öffnet sich ein Fenster, in dem Sie folgende Angaben machen müssen:
     1. Die **Region** für die Erstellung Ihres Buckets,
@@ -282,12 +282,12 @@ Der Cloud Object Storage Temple ist ein hochsicherer und SecNumCloud-zertifizier
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Account associations with buckets and access restriction configurations are performed in the '__Policies__' tab of the bucket.
     <img src={S3AccountAssign} />
-    This interface allows you to grant storage account access to the bucket according to four predefined roles (Maintainer, Writer and Reader, Writer, Reader).
+    This interface allows you to grant storage account access to the bucket according to four predefined roles (read_only, read_write, write_only, maintainer).
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
-    Fine-grained access policy management via the AWS client (`put-bucket-policy`) is an advanced operation. For most use cases, we recommend using the Cloud Temple console for simplified and secure configuration.
+    Fine-grained access policy management via the AWS client (`put-bucket-policy`) is an advanced operation. For most use cases, we recommend using the Cloud Temple console for a simplified and secure configuration.
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
-    Fine-grained access policy management via the `mc` client (`policy` commands) is an advanced operation. For most use cases, we recommend using the Cloud Temple console for simplified and secure configuration.
+    Fine-grained access policy management via the `mc` client (`policy` commands) is an advanced operation. For most use cases, we recommend using the Cloud Temple console for a simplified and secure configuration.
   </TabItem>
 </Tabs>

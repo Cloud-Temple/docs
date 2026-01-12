@@ -19,9 +19,9 @@ Before you begin, ensure the following points:
 1. **Active subscription**: Your organization must have subscribed to the OpenShift offering.
 2. **User permissions**: Your user account must have the necessary permissions to access and manage OpenShift resources.
 
-## First Access and Order
+## First Access and Ordering
 
-Upon your first access to the OpenShift offering, after subscription activation and permission configuration, a home screen appears:
+Upon your first access to the OpenShift offering, after subscription activation and permission configuration, a landing screen appears:
 
 <img src={oshiftOrder_001} />
 
@@ -39,7 +39,7 @@ Once your first cluster is deployed, a new menu titled **OpenShift** appears in 
 
 ### 1. List of Clusters
 
-The **Clusters** submenu displays a table listing all OpenShift clusters available within your tenant, deployed across your environment. The table includes the following key information for each cluster:
+The **Clusters** submenu displays a table listing all OpenShift clusters available within your tenant, deployed across your environment. This table includes the main information for each cluster:
 
 - **Cluster Name**
 - **Access URL**
@@ -50,7 +50,7 @@ The **Clusters** submenu displays a table listing all OpenShift clusters availab
 
 <img src={oshiftSubMenu_001} />
 
-💡 **To access detailed information about a cluster, click on its name in the table.**
+💡 **To access the full details of a cluster, click on its name in the table.**
 
 ### 2. Cluster Details
 
@@ -67,7 +67,7 @@ When you click on a **cluster name** in the list, a detailed page appears displa
 
 **Cluster Nodes:**
 
-A table lists each node with the following details:
+A table provides detailed information for each node:
 - **Node Name**
 - **Type**
 - **AZ** (Availability Zone)
@@ -95,64 +95,53 @@ Here are the connection and configuration details specific to your OpenShift env
 
 To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __Shiva Tenant URL__:
-  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+- __Tenant Console URL__:
   [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
 - __OpenShift UI__:
-  [https://ui-ocp01-__your-tenant-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
+  [https://ui-ocp01-__your-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-id**.paas.cloud-temple.com/)
 
 - __External API__:
-  [https://api-ocp01-__your-tenant-id__.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
+  [https://api-ocp01-__your-id__.paas.cloud-temple.com](https://api-ocp01-**your-id**.paas.cloud-temple.com)
 
 - __GitOps (ARGOCD)__:
-  [https://gitops-ocp01-__your-tenant-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
+  [https://gitops-ocp01-__your-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)
 
 #### Connecting to the cluster via CLI
 
-To connect via the command line interface (CLI), use the following command:
 To connect via the command line interface (CLI), use the following command:
 
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com/ --web
 ```
 
-#### Accessing the Registry
+#### Access to the Registry
 
 To access the registry, log in using the following commands:
 
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
 docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
-oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
-docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
 ```
 
-Then, test building and pushing a Docker image:
 Then, test building and pushing a Docker image:
 
 ```bash
 docker build -t <namespace>/temp:latest .
 docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Router and Load Balancer Configuration
 #### Router and Load Balancer Configuration
 
 The platform provides flexible options for __traffic routing__ and __load balancing__:
 
 - By default, private load balancers are used for routes and ingresses.
-- By default, private load balancers are used for routes and ingresses.
 - Domains:
   - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
-  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
 
-Ensure your routes or ingresses are configured with the appropriate ingress labels or classes to guarantee correct routing.
+Ensure your routes or ingresses are configured with the appropriate labels or ingress classes to guarantee correct routing.
 
 Example:
 

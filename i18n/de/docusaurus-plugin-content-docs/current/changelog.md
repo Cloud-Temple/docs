@@ -5,19 +5,30 @@ sidebar_position: 2
 
 # Change Tracking
 
-### November 22, 2025: New LLMaaS Features and General Improvements
+### December 15, 2025: Stabilization and Multilingual Fixes
+
+- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolution of MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
+- **Multilingual (Images)**: Restoration of correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
+- **Build**: Validation of deployment across all 5 supported languages.
+
+### December 11, 2025: Managed Kubernetes Updates
+
+- **Managed Kubernetes**: Added a new tutorial on using **Gateway API** for advanced traffic management.
+- **Managed Kubernetes**: Updated documentation on quota management (Ceph) and enhanced cost management tools (OpenCost).
+
+### November 22, 2025: LLMaaS Updates and General Improvements
 
 - **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
 - **Multilingual**: Resolved accessibility issues in the Italian and German versions of the documentation.
 - **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
 
-### November 20, 2025: Major PaaS OpenShift Update
+### 20 November 2025: Major PaaS OpenShift Update
 
 - **PaaS OpenShift (PR #194)**: Complete overhaul and update of the OpenShift documentation, including new screenshots and full translation into English, Spanish, German, and Italian to support our international expansion.
 
 ### 3 November 2025: Enhancements to Kubernetes Tutorials
 
-- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
+- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment with **ArgoCD** and the GitOps approach.
 - **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
 
 ### 28 October 2025: New Managed Kubernetes Documentation and Various Improvements
@@ -42,17 +53,17 @@ sidebar_position: 2
 - **LLMaaS**: Updated and clarified FAQ responses to better address technical and strategic questions. Added FAQ to navigation.
 - **General**: Fixed several internal navigation links throughout the documentation for a smoother experience.
 
-### July 2025: New Features and Major Updates
+### Juli 2025: Neuerungen und wichtige Updates
 
-- **Object Storage (OSS)**:
-    - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
-    - Added clarifications on storage account concepts and object locking (Object Lock).
-- **OpenSource IaaS**:
-    - Added detailed documentation on managing High Availability (HA) for resource pools and virtual machines.
-- **Console**:
-    - Updated the security alerts page with the latest vulnerabilities.
-- **Networking**:
-    - Added new screenshots to illustrate IPv6 connectivity configuration.
+- **Objektspeicher (OSS)**:
+    - Komplette Überarbeitung des Bereichs „Tutorials“ mit speziellen Anleitungen für beliebte Tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer und das Python SDK Boto3.
+    - Ergänzung von Erklärungen zu Konzepten wie Speicherkonten und Objekt-Sperre (Object Lock).
+- **IaaS OpenSource**:
+    - Hinzufügen einer detaillierten Dokumentation zur Verwaltung der Hochverfügbarkeit (HA) für Ressourcenpools und virtuelle Maschinen.
+- **Konsole**:
+    - Aktualisierung der Sicherheitswarnungsseite mit den neuesten bekannten Schwachstellen.
+- **Netzwerk**:
+    - Hinzufügen neuer Bildschirmfotos zur Veranschaulichung der IPv6-Verbindungs-Konfiguration.
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 
@@ -63,5 +74,5 @@ sidebar_position: 2
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Inclusion of the projected model lifecycle roadmap.
+- Inclusion of the projected model lifecycle timeline.
 - Addition of the responsibility matrix for the LLMaaS offering.

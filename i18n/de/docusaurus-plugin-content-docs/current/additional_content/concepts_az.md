@@ -1,19 +1,18 @@
 ---
-title: Konzepte - Verfügbarkeitsbereiche
+title: Concepts - Verfügbarkeitszonen
 ---
 
-## Verfügbarkeitszonen
+## Availability Zones
 
-Jeder physische Standort innerhalb einer Region verfügt über einen oder mehrere private Räume für unsere Infrastrukturen. Diese Räume werden ausschließlich von Cloud Temple genutzt.
+Each physical site within a region has one or more dedicated rooms for our infrastructure. These rooms are exclusively used by Cloud Temple.
 
-__Jeder physische Raum entspricht einer Verfügbarkeitszone (AZ / Availability Zone)__ und ist in Bezug auf Strom, Kühlung, Rechenleistung, Speicher und Netzwerk vollständig autonom.
-Die Wahl einer Verfügbarkeitszone impliziert daher die Wahl eines physischen Standorts und einer Region.
+__Each physical room corresponds to an availability zone (AZ / Availability Zone)__ and is completely independent in terms of power, cooling, computing, storage, and networking.  
+Therefore, selecting an availability zone means choosing both a physical site and a region.
 
-Die Shiva-Konsole bietet Ihnen automatisch Verfügbarkeitszonen an verschiedenen physischen Standorten an, um Ihre Infrastruktur auf möglichst vielen physischen Standorten zu verteilen.
+The Console automatically suggests availability zones located on distinct physical sites, in order to distribute your infrastructure across the maximum number of physical sites.
 
-*__Hinweis: Wenn Sie eine spezifische Konfiguration für einen bestimmten Kontext benötigen (mehrere AZs am selben physischen Standort), ist es notwendig, eine Support-Anfrage zu stellen.__*
+*__Note: If you require a specific configuration for a particular use case (multiple AZs on the same physical site), please submit a support request.__*
 
-
-| Bestellreferenz                                                      | Einheit         | SKU                       |
-|---------------------------------------------------------------------|-----------------|---------------------------|
-| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 AZ pro Tenant | csp:*(REGION)*:iaas:az:v1 |
+| Order Reference                                        | Unit           | SKU                       |  
+|--------------------------------------------------------|----------------|---------------------------|
+| TENANT - *(REGION)* - Activation of an availability zone | 1 AZ per tenant | csp:*(REGION)*:iaas:az:v1 |

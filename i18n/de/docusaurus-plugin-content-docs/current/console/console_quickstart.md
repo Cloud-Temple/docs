@@ -16,13 +16,13 @@ import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Voraussetzungen
 
-- Eine Cloud Temple-Angebot abgeschlossen haben. Um einfach abzuschließen, können Sie uns [kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an die Adresse __contact@cloud-temple.com__.
-- Zugriff auf die Shiva-Konsole haben
-- Ihre öffentliche IPv4-Adresse in der vertrauenswürdigen Zone von Cloud Temple angegeben haben (der Zugriff auf die Shiva-Konsole ist auf identifizierte vertrauenswürdige Adressen beschränkt)
+- Eine Cloud Temple-Angebot abgeschlossen haben. Um einfach abzuschließen, können Sie uns [kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an die Adresse __contact@cloud-temple.com__ erreichen.
+- Zugriff auf die Console haben.
+- Ihre öffentliche IPv4-Adresse in der vertrauenswürdigen Zone von Cloud Temple angegeben haben (der Zugriff auf die Console ist auf identifizierte vertrauenswürdige Adressen beschränkt).
 
 ## Verbindung mit Ihrem Cloud Temple-Mandanten
 
-Shiva ist über die folgende URL erreichbar: [Shiva](https://shiva.cloud-temple.com) oder über die direkte URL, die Ihnen per E-Mail mitgeteilt wurde.
+Die Konsole ist über die folgende URL erreichbar: [Console](https://shiva.cloud-temple.com) oder über die direkte URL, die Ihnen per E-Mail mitgeteilt wurde.
 
 Auf der ersten Seite können Sie die [Organisation](iam/concepts.md#organisations) auswählen, in der Ihr Benutzer erstellt wurde.  
 Nach Eingabe der Firma klicken Sie auf __'Anmelden'__.
@@ -48,7 +48,7 @@ The configuration is set individually for each tenant [Tenant](iam/concepts.md#t
 
 ## Technischer Support
 
-Sie können jederzeit die __Cloud Temple-Support-Team__ über die __Schwimmring-Ikone__ rechts oben auf dem Bildschirm kontaktieren.
+Sie können jederzeit die __Cloud Temple-Support-Team__ über die __Schwimmring-Ikone__ oben rechts auf dem Bildschirm kontaktieren.
 
 <img src={shivaSupport} />
 
@@ -65,14 +65,14 @@ Der erste Schritt ist die Identifizierung der Art der Support-Anfrage:
 
 Anschließend können Sie zusätzliche Informationen angeben und Dateien beifügen (z. B. Bilder oder Protokolle).
 
-Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsgrad (P1 bis P5) angeben, falls es sich um einen Sicherheitsvorfall handelt, wie folgt:
+Der Auftraggeber kann außerdem in der Ticket-Beschreibung einen Kritikalitätsgrad (P1 bis P5) angeben, insbesondere bei Sicherheitsvorfällen, wie z. B.:
 
 <img src={shivaSupportCriticities} />
 
 __KRITISCH (P1)__:
 
 - Verdacht auf Datenleak sensibler Informationen
-- Erkennung eines nicht autorisierten Zugriffs auf Ihre Daten
+- Erkennung eines unerlaubten Zugriffs auf Ihre Daten
 - Kompromittierung Ihrer Administratoren-Zugangsdaten
 - Vollständige Unzugänglichkeit Ihrer kritischen Dienste
 - Anomalies im Verhalten sensibler Daten
@@ -80,8 +80,8 @@ __KRITISCH (P1)__:
 
 __HOCH (P2)__:
 
-- Funktionsstörungen bei Benutzerzugängen
-- Anomalie im Verschlüsselungsprozess Ihrer Daten
+- Störungen bei Benutzerzugängen
+- Anomalie im Verschlüsselungsverfahren Ihrer Daten
 - Verlust des Zugriffs auf bestimmte kritische Funktionen
 - Inkonsistenzen in den Daten
 - Schwere Verzögerungen, die die Geschäftsaktivität beeinträchtigen
@@ -100,13 +100,13 @@ __NIEDRIG (P4)__:
 - Frage zur Konformität
 - Bedarf an technischer Klärung
 
-__BETRIEBSBEREITER DIENST (P5)__:
+__OPERATIV (P5)__:
 
-- Betriebsbereiter Dienst ohne unmittelbares Risiko
+- Operativer Service ohne unmittelbares Risiko
 
 <img src={shivaSupport_02} />
 
-Nach Abschluss Ihrer Anfrage können Sie Ihre Anfragen über die __Schwimmring-Ikone__ rechts oben auf dem Bildschirm wiederfinden:
+Nach Abschluss Ihrer Anfrage können Sie Ihre Anfragen über die __Schwimmring-Ikone__ oben rechts auf dem Bildschirm wiederfinden:
 
 <img src={shivaSupport_03} />
 
@@ -119,7 +119,7 @@ Alle für Ihren Benutzer (abhängig von seinen Berechtigungen) verfügbaren Funk
 - Die __Steuerung von IaaS-Ressourcen__ (Berechnung, Speicher, Netzwerk, ...),
 - Die __Steuerung von OpenIaaS-Ressourcen__ (Berechnung, Speicher, Netzwerk, ...),
 - Der Zugriff auf __zusätzliche Dienste__ (Bastion, Monitoring, ...),
-- Die __Verwaltung Ihrer Organisation__ (Verwaltung von Mietern, Berechtigungen, ...).
+- Die __Verwaltung Ihrer Organisation__ (Verwaltung von Mandanten, Berechtigungen, ...).
 
 Die Aktivierung eines Moduls für einen Benutzer hängt von dessen Berechtigungen ab. Zum Beispiel ist das Modul __'Bestellung'__ nicht verfügbar, wenn der Benutzer die Berechtigung __'ORDER'__ nicht besitzt.
 
@@ -128,17 +128,17 @@ Im Folgenden finden Sie eine Übersicht über die verfügbaren Module. Regelmä�
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__: ermöglicht eine schnelle Übersicht über den __Gesamtbestand an Rechen- und Speicherressourcen__, die Statistiken der __Sicherung__ sowie eine __Zusammenfassung der Support-Fälle__,
-- __Bestand__: bietet eine Übersicht über alle Ihre Ressourcen des Typs __'virtuelle Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z. B. Geschäftsbereich, Anwendung, ...),
+- __Dashboard__: ermöglicht eine schnelle Übersicht über den __Gesamtbestand an Rechen- und Speicherressourcen__, die Statistiken zur __Sicherung__ sowie eine __Zusammenfassung der Support-Fälle__,
+- __Bestand__: bietet eine Übersicht über alle Ihre Ressourcen des Typs __'virtuelle Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z. B. geschäftlich, anwendungsbezogen, ...),
 - __Infogérance__: gewährt Zugriff auf die Verfolgung Ihrer __Support-Anfragen__ und die __Metriken der Dienste__,
 - __IaaS__: ermöglicht die __Steuerung Ihrer VMware-IaaS-Infrastrukturen__ (virtuelle Maschinen, Cluster, Hypervisoren, Replikationen, Sicherungen, ...),
-- __OpenIaaS__: ermöglicht die __Steuerung von Xen Orchestra-Ressourcen__ (virtuelle Maschinen, Sicherungen, ...),
-- __OpenShift__: ermöglicht die Steuerung Ihrer **RedHat OpenShift-PaaS-Architektur** und die Verwaltung Ihrer Container über die drei Verfügbarkeitszonen der Plattform.
+- __OpenIaaS__: ermöglicht die __Steuerung der Xen Orchestra-Ressourcen__ (virtuelle Maschinen, Sicherungen, ...),
+- __OpenShift__: ermöglicht die Steuerung Ihrer **RedHat OpenShift-PaaS-Architektur** sowie die Verwaltung Ihrer Container über die drei Verfügbarkeitszonen der Plattform.
 - __Bastion__: ermöglicht das Bereitstellen und Steuern von Bastion-Appliances für SSH/RDP in Ihren Netzwerken,
-- __Netzwerk__: ermöglicht die Steuerung von __Netzwerken der Ebene 2 und 3__, __öffentlichen IP-Adressen__ und Ihrer __Telekommunikationsverbindungen__,
+- __Netzwerk__: ermöglicht die Steuerung von __Netzwerken der Ebene 2 und 3__, __öffentlichen IP-Adressen__ sowie Ihrer __Telekommunikationsverbindungen__,
 - __Colocation__: bietet eine Übersicht über die Geräte in den Bereichen der __gemeinsamen oder dedizierten Colocation__,
 - __Bestellung__: ermöglicht die Bestellung von Ressourcen und die Verfolgung der Bereitstellungen,
-- __Administration__: fasst die Administrationsfunktionen für Benutzer und Mietern sowie den Zugriff auf die globale Protokollierung zusammen.
+- __Administration__: fasst die Administrationsfunktionen für Benutzer und Mandanten sowie den Zugriff auf die globale Protokollierung zusammen.
 </div>
 </div>
 
@@ -147,61 +147,61 @@ Die Piktogramme __'NEW'__ bedeuten, dass das betreffende Produkt bereitgestellt 
 __Protokollierung – Verfolgung von Aktivitäten__
 =====================================
 
-Die Aktivitätsseite dient dazu, eine vollständige Übersicht über alle Lese- und Schreibvorgänge innerhalb der Konsole bereitzustellen und somit eine erhöhte Nachvollziehbarkeit und Sicherheit zu gewährleisten. Sie hebt die beiden Hauptregisterkarten hervor: Kürzlich und Archiviert.
+Die Seite „Aktivitäten“ dient dazu, eine vollständige Übersicht über alle Lese- und Schreibvorgänge innerhalb der Konsole bereitzustellen und so eine erhöhte Nachvollziehbarkeit und Sicherheit zu gewährleisten. Sie hebt die beiden Hauptregisterkarten „Kürzlich“ und „Archiviert“ hervor.
 
 <img src={shivaLogs} />
 
-### __Seitenstruktur__
+### __Page Structure__
 
-#### __Reiter__
+#### __Tabs__
 
- + **Kürzlich**
+ + **Recent**
 
-- Kürzliche Operationen
-- Echtzeit-Überwachung
+- Recent operations
+- Real-time monitoring
 
-- __Archiviert__
+- __Archived__
 
-- Operationen über einen längeren Zeitraum
-- Archivierte Operationen für Nachvollziehbarkeit und Konformität
+- Operations over a longer period
+- Archived operations for traceability and compliance
 
-#### __Angezeigte Informationen__
+#### __Displayed Information__
 
- + Datum und Uhrzeit
+ + Date and Time
 
-- Operationstyp
+- Operation Type
   - Status
-- Benutzer
-- Beschreibung der Operation
+- User
+- Operation Description
 
 #### __Funktion__
 
- + Suche/Filterung für spezifische Operationen
+ + Suche/Filter für spezifische Operationen
 
-### __Nutzung__
+### __Usage__
 
-- __Zugriff:__ Berechtigung `activity_read`
+- __Access:__ permission `activity_read`
 - __Navigation:__
-  - Wählen Sie den Reiter "Kürzlich" für Echtzeit-Operationen.
-  - Wählen Sie "Archiviert", um den Verlauf einzusehen.
-  - Nutzen Sie die Such- und Filterfunktionen, um spezifische Operationen zu finden.
+  - Select the "Recent" tab for real-time operations.
+  - Choose "Archived" to view the history.
+  - Use search and filtering features to locate specific operations.
 
-#### __Konformitätshinweis__
+#### __Compliance Note__
 
-In Übereinstimmung mit der SecNumCloud-Qualifizierung beträgt die Aufbewahrungsdauer für Ereignisse der Cloud Temple-Konsole mindestens __6 Monate__, wodurch die Einhaltung der Sicherheits- und Nachvollziehbarkeitsanforderungen gewährleistet wird.
+In accordance with the SecNumCloud certification, the retention period for Cloud Temple console events is a minimum of __6 months__, ensuring compliance with security and traceability requirements.
 
-## Anzeigen der neuesten Updates
+## Viewing the latest updates
 
-Klicken Sie auf das Symbol __'Neuigkeiten'__ unten links im grünen Banner. Dort finden Sie Details zu den Änderungen für jede Version der Cloud Temple-Konsole.
+Click on the __'New Features'__ icon at the bottom left of the green banner. You will find detailed information about the changes for each version of the Cloud Temple console.
 
 <img src={shivaOnboard_009} />
 
 ## Zugriff auf Benutzerfunktionen über die API
 
-Der Zugriff auf alle Funktionen der Shiva-Konsole ist über die Shiva-API möglich. Sie finden detaillierte Informationen zu Verben und Konfigurationen unter __'Profil'__ und __'APIs'__:
+Der Zugriff auf alle Funktionen der Console ist über die Console-API möglich. Sie können die Verben und Konfigurationen detailliert über __'Profil'__ und __'APIs'__ einsehen:
 
 <img src={shivaOnboard_008} />
 
 ## Terraform Provider
 
-Cloud Temple stellt Ihnen einen [Terraform-Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu steuern.
+Cloud Temple vous met à disposition un [Terraform-Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) pour piloter votre plateforme Cloud *"as code"*.
