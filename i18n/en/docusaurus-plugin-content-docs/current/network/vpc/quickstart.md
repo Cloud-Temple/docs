@@ -10,6 +10,10 @@ import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
 import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
 import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
 import vpcOrders from './images/vpc_orders.png'
+import vpcStaticIps from './images/vpc_static_ips.png'
+import vpcNewStaticIps from './images/vpc_new_static_ips.png'
+import vpcNewStaticIpsModale from './images/vpc_new_static_ips_modale.png'
+import vpcStaticIpsAssociate from './images/vpc_static_ips_associate_png.png'
 
 # VPC Quickstart
 
@@ -26,9 +30,9 @@ Currently, activating the VPC service requires an **IaaS Open Source** subscript
 
 <img src={newTabNetwork} />
 
-## Step 2: Create a VPC
+## Step 2: Order a VPC
 
-1.  Click the **Create a VPC** button.
+1.  Click the **New VPC** button.
 <img src={vpcCreateButton} />
 
 2.  Fill in the guided form:
@@ -60,20 +64,31 @@ Once your VPC is active:
 4.  Configure your network:
     *   **Name**: Network segment name (e.g., `backend`, `frontend`).
     *   **CIDR**: IP address range (e.g., `192.168.1.0/24`).
-    *   **DHCP**: Enable or disable the native DHCP service.
 
 <img src={vpcNewPrivateNetwork} />
 
-## Step 4: Activate Gateway (Optional)
+## Step 4: Activate Gateway and Order Public IPs
 
-To provide Internet access to your private networks via a secure gateway:
+To enable Internet access and expose services:
 
-1. Click on the gateway activation button.
+1.  Check if the gateway is activated. If not, click the activation button.
 <img src={vpcActivateGatewayButton} />
-
-2. Confirm activation in the modal window.
 <img src={vpcActivateGatewayModal} />
+
+2.  Once the gateway is active, go to the **Public IPs** tab.
+<img src={vpcStaticIps} />
+
+> **Note**: The **Public IPs** list at the root of the VPC menu displays all public IPs (associated or not). The **Public IPs** tab in a VPC detail allows managing those associated with this VPC (requires active gateway).
+
+3.  Click the button to order new IPs, or click the "Associate" action to associate one of the IP addresses in the list that is not yet associated.
+<img src={vpcNewStaticIps} />
+<img src={vpcStaticIpsAssociate} />
+<img src={vpcNewStaticIpsModale} />
+
+4.  Select the number of IPs you want to order then confirm your order.
 
 ## Step 5: Connect your resources
 
 Your private networks are now available in all Availability Zones (AZ) of the region. You can connect your IaaS Open Source virtual machines or servers directly from their respective configuration interfaces.
+
+To learn how to configure a VPC network on a virtual machine, check our tutorial: [Configure a Static IP and a VM](./tutorials/vm_configuration).

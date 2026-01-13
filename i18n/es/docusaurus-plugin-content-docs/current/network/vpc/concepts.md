@@ -46,11 +46,11 @@ El VPC garantiza un aislamiento estricto:
 
 | Funcionalidad | Descripción | Disponibilidad |
 |---------------|-------------|----------------|
-| **Redes privadas regionales** | Despliegue multi-AZ y propagación L2 transparente. | S2 2025 |
-| **Enrutamiento nativo** | Comunicación automática entre las redes privadas de un mismo VPC. | S2 2025 |
-| **IPAM & DHCP** | Gestión automática de pools de direcciones y asignación dinámica. | S2 2025 |
-| **Acceso a Internet** | Configurable a través del Gateway (NAT, DNAT, Egress controlado). | S2 2025 |
-| **IP Flotantes** | Exposición flexible de servicios en Internet. | S2 2025 |
+| **Redes privadas regionales** | Despliegue multi-AZ y propagación L2 transparente. | Disponible |
+| **Enrutamiento nativo** | Comunicación automática entre las redes privadas de un mismo VPC. | Disponible |
+| **IPAM & DHCP** | Gestión automática de pools de direcciones y asignación dinámica. | Disponible |
+| **Acceso a Internet** | Configurable a través del Gateway (NAT, DNAT, Egress controlado). | Disponible |
+| **IP Flotantes** | Exposición flexible de servicios en Internet. | Disponible |
 | **Micro-segmentación** | Grupos de políticas de red para una seguridad avanzada. | S1 2026 |
 | **Observabilidad** | Logs y métricas de rendimiento de la red. | S1 2026 |
 | **Servicio DNS** | Resolución de nombres interna y externa. | S2 2026 |

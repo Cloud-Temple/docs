@@ -46,11 +46,11 @@ The VPC guarantees strict isolation:
 
 | Feature | Description | Availability |
 |---------|-------------|--------------|
-| **Regional Private Networks** | Multi-AZ deployment and transparent L2 propagation. | H2 2025 |
-| **Native Routing** | Automatic communication between private networks of the same VPC. | H2 2025 |
-| **IPAM & DHCP** | Automatic IP pool management and dynamic assignment. | H2 2025 |
-| **Internet Access** | Configurable via Gateway (NAT, DNAT, Controlled Egress). | H2 2025 |
-| **Floating IPs** | Flexible exposure of services on the Internet. | H2 2025 |
+| **Regional Private Networks** | Multi-AZ deployment and transparent L2 propagation. | Available |
+| **Native Routing** | Automatic communication between private networks of the same VPC. | Available |
+| **IPAM & DHCP** | Automatic IP pool management and dynamic assignment. | Available |
+| **Internet Access** | Configurable via Gateway (NAT, DNAT, Controlled Egress). | Available |
+| **Floating IPs** | Flexible exposure of services on the Internet. | Available |
 | **Micro-segmentation** | Network policy groups for advanced security. | H1 2026 |
 | **Observability** | Network performance logs and metrics. | H1 2026 |
 | **DNS Service** | Internal and external name resolution. | H2 2026 |

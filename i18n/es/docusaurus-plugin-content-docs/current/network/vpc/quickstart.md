@@ -10,6 +10,10 @@ import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
 import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
 import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
 import vpcOrders from './images/vpc_orders.png'
+import vpcStaticIps from './images/vpc_static_ips.png'
+import vpcNewStaticIps from './images/vpc_new_static_ips.png'
+import vpcNewStaticIpsModale from './images/vpc_new_static_ips_modale.png'
+import vpcStaticIpsAssociate from './images/vpc_static_ips_associate_png.png'
 
 # Inicio Rápido VPC
 
@@ -26,9 +30,9 @@ Actualmente, la activación del servicio VPC requiere tener una suscripción a u
 
 <img src={newTabNetwork} />
 
-## Paso 2: Crear un VPC
+## Paso 2: Solicitar un VPC
 
-1.  Haga clic en el botón **Crear un VPC**.
+1.  Haga clic en el botón **Nuevo VPC**.
 <img src={vpcCreateButton} />
 
 2.  Complete el formulario guiado:
@@ -60,20 +64,31 @@ Una vez que su VPC esté activo:
 4.  Configure su red:
     *   **Nombre**: Nombre del segmento de red (ej: `backend`, `frontend`).
     *   **CIDR**: Rango de direcciones IP (ej: `192.168.1.0/24`).
-    *   **DHCP**: Active o desactive el servicio DHCP nativo.
 
 <img src={vpcNewPrivateNetwork} />
 
-## Paso 4: Activar la Pasarela (Opcional)
+## Paso 4: Activar la Pasarela y Solicitar IPs Públicas
 
-Para dar acceso a Internet a sus redes privadas a través de una pasarela segura:
+Para permitir el acceso a Internet y la exposición de servicios:
 
-1. Haga clic en el botón de activación de la pasarela.
+1.  Compruebe si la pasarela está activada. Si no, haga clic en el botón de activación.
 <img src={vpcActivateGatewayButton} />
-
-2. Confirme la activación en la ventana modal.
 <img src={vpcActivateGatewayModal} />
+
+2.  Una vez que la pasarela esté activa, vaya a la pestaña **IPs Públicas**.
+<img src={vpcStaticIps} />
+
+> **Nota**: La lista "IPs Públicas" en la raíz del menú VPC muestra todas las IPs públicas disponibles, ya sean asociadas a un VPC o no. La pestaña "IPs Públicas" en el detalle de un VPC permite gestionar las asociadas a este VPC (requiere pasarela activa).
+
+3.  Haga clic en el botón para solicitar nuevas IPs, o haga clic en la acción "Asociar" para asociar una de las direcciones IP de la lista que aún no lo está.
+<img src={vpcNewStaticIps} />
+<img src={vpcStaticIpsAssociate} />
+<img src={vpcNewStaticIpsModale} />
+
+4.  Seleccione el número de IPs que desea solicitar y confirme su pedido.
 
 ## Paso 5: Conectar sus recursos
 
 Sus redes privadas ahora están disponibles en todas las zonas de disponibilidad (AZ) de la región. Puede conectar sus máquinas virtuales IaaS Open Source o sus servidores directamente desde sus respectivas interfaces de configuración.
+
+Para aprender a configurar una red VPC en una máquina virtual, consulte nuestro tutorial: [Configurar una IP Estática y una VM](./tutorials/vm_configuration).

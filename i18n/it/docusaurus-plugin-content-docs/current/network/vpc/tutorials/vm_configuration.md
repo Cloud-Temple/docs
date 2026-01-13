@@ -1,44 +1,68 @@
 ---
-title: Configurare un IP Statico e una VM
+title: Configurazione di Rete della VM
 ---
 import vpcCreateNetworkAdaptersVmModale from '../images/vpc_create_network_adapters_vm_modale.png'
 import vpcCreateNetworkAdaptersVmSelectNetworks from '../images/vpc_create_network_adapters_vm_select_networks.png'
 import vpcCreateNetworkAdaptersVm from '../images/vpc_create_network_adapters_vm.png'
-import vpcStaticIps from '../images/vpc_static_ips.png'
+import vpcDetailIpsPub from '../images/vpc_detail_ips_pub.png'
+import vpcIpPubAssociate from '../images/vpc_ip_pub_associate.png'
 import vpcMacAddressAssociateModale from '../images/vpc_mac_address_associate_modale.png'
 
-# Configurare un IP Statico e una VM
+# Configurazione di Rete della VM
 
-Questo tutorial ti guida nel collegare una macchina virtuale IaaS Open Source a una rete VPC e assegnarle un IP statico.
+Questo tutorial ti guida nel collegare una macchina virtuale a una rete VPC e assegnarle un IP statico (privato), così come un IP pubblico se necessario.
 
 ## Prerequisiti
 *   Avere un VPC e una rete privata creati.
-*   Avere una VM IaaS Open Source distribuita.
+*   Avere una VM distribuita.
 
-## Passo 1: Creare l'adattatore di rete sulla VM
+## 1. Assegnazione di un IP Privato Statico
+
+Puoi fissare l'IP privato della tua VM in due modi.
+
+### Metodo A: Dalla Macchina Virtuale (Consigliato)
+
+Questo metodo ti permette di configurare la rete e l'IP in un unico passaggio durante la creazione dell'interfaccia.
 
 1.  Accedi alla visualizzazione dei dettagli della tua macchina virtuale.
-2.  Vai alla scheda **Interfacce di Rete**.
-3.  Clicca sul pulsante per aggiungere un'interfaccia.
+2.  Vai alla scheda **Adattatori di rete**.
+3.  Clicca sul pulsante **Nuovo adattatore di rete** per aggiungere un'interfaccia.
 <img src={vpcCreateNetworkAdaptersVm} />
 
 4.  Nella finestra modale, seleziona la tua rete VPC.
 <img src={vpcCreateNetworkAdaptersVmModale} />
+
+5.  Una volta selezionata la rete, scegli uno degli IP statici disponibili.
 <img src={vpcCreateNetworkAdaptersVmSelectNetworks} />
 
-5.  Convalida la creazione. Annota l'indirizzo MAC generato per l'interfaccia.
+6.  Convalida la creazione.
 
-## Passo 2: Creare un IP Statico nel VPC
+> **Nota**: Puoi modificare l'adattatore di rete successivamente per cambiare rete se necessario.
 
-1.  Accedi al tuo VPC, scheda **IP Statici**.
-2.  Se necessario, crea un nuovo pool o un nuovo IP statico.
-<img src={vpcStaticIps} />
+### Metodo B: Dalla vista Reti Private
 
-## Passo 3: Associare l'IP all'indirizzo MAC
+Questo metodo è utile per riservare un IP prima di creare la VM o per modificare un'associazione esistente.
 
-1.  Seleziona l'IP statico che desideri assegnare.
-2.  Clicca sull'azione di associazione (o "Associa un indirizzo MAC").
-3.  Nella finestra modale, inserisci o seleziona l'indirizzo MAC dell'interfaccia di rete creata nel passo 1.
+1.  Accedi alla visualizzazione dettagliata del tuo VPC, scheda **Reti Private**.
+2.  Espandi il pool di indirizzi IP della rete interessata.
+3.  Clicca sull'azione "Associa a un indirizzo MAC" per un IP disponibile.
+4.  Nella finestra modale, associa uno degli IP statici a un indirizzo MAC di una VM.
 <img src={vpcMacAddressAssociateModale} />
 
-4.  Convalida.
+## 2. Associazione di un IP Pubblico (Opzionale)
+
+Se desideri rendere la tua VM accessibile da Internet.
+
+1.  Dalla visualizzazione dettagliata del tuo VPC, vai alla scheda **IP Pubblici**.
+<img src={vpcDetailIpsPub} />
+
+2.  Clicca sul pulsante **Associa un IP pubblico**.
+
+3.  Nella finestra modale, seleziona la rete privata e l'IP statico di destinazione, quindi convalida l'associazione.
+<img src={vpcIpPubAssociate} />
+
+4.  Una volta effettuata l'associazione, puoi utilizzare questo indirizzo IP pubblico per raggiungere la tua VM.
+
+## Configurazione del SO Ospite
+
+**Importante**: Per garantire che l'IP statico (privato) venga assegnato correttamente, assicurati che l'interfaccia di rete del tuo sistema operativo ospite (OS) sia configurata in modalità **DHCP**. Il servizio DHCP del VPC assegnerà l'indirizzo riservato.
