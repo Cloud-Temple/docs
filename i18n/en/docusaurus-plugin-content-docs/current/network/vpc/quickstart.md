@@ -9,6 +9,7 @@ import vpcDetailsView from './images/vpc_details_view.png'
 import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
 import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
 import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
+import vpcOrders from './images/vpc_orders.png'
 
 # VPC Quickstart
 
@@ -39,6 +40,12 @@ Currently, activating the VPC service requires an **IaaS Open Source** subscript
 
 > **Note**: VPC provisioning is fully automated and typically takes less than an hour.
 
+### Alternative: Via the Orders tab
+
+You can also initiate the ordering of VPC resources directly from the **Orders** menu.
+
+<img src={vpcOrders} />
+
 <img src={vpcOverview} />
 
 ## Step 3: Create Private Networks
@@ -53,6 +60,7 @@ Once your VPC is active:
 4.  Configure your network:
     *   **Name**: Network segment name (e.g., `backend`, `frontend`).
     *   **CIDR**: IP address range (e.g., `192.168.1.0/24`).
+    *   **DHCP**: Enable or disable the native DHCP service.
 
 <img src={vpcNewPrivateNetwork} />
 

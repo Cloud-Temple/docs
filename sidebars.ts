@@ -58,7 +58,7 @@ const sidebars: SidebarsConfig = {
         'console/iam/quickstart',
         {
           type: 'category',
-          label: 'IAM Tutorials',
+          label: 'IAM Tutoriels',
           items: [
             'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
@@ -103,7 +103,7 @@ const sidebars: SidebarsConfig = {
         'marketplace/quickstart',
         {
           type: 'category',
-          label: 'Marketplace Tutorials',
+          label: 'Marketplace Tutoriels',
           items: [
             'marketplace/tutorials/deploy_openiaas',
             'marketplace/tutorials/deploy_vmware',
@@ -143,7 +143,7 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/quickstart',
         {
           type: 'category',
-          label: 'OpenSource Tutorials',
+          label: 'OpenSource Tutoriels',
           items: [
             {
               type: 'category',
@@ -173,7 +173,7 @@ const sidebars: SidebarsConfig = {
         'iaas_vmware/quickstart',
         {
           type: 'category',
-          label: 'VMware Tutorials',
+          label: 'VMware Tutoriels',
           items: [
             {
               type: 'category',
@@ -207,7 +207,7 @@ const sidebars: SidebarsConfig = {
             'paas_openshift/quickstart',
         {
           type: 'category',
-          label: 'Openshift Tutorials',
+          label: 'Openshift Tutoriels',
           items: [
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
@@ -225,7 +225,7 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/quickstart',
             {
           type: 'category',
-          label: 'Tutorials MK',
+          label: 'Tutoriels MK',
           items: [
             'managed_kubernetes/tutorials/firstdeploy',
             'managed_kubernetes/tutorials/networking',
@@ -268,7 +268,13 @@ const sidebars: SidebarsConfig = {
             'network/vpc/vpc',
             'network/vpc/concepts',
             'network/vpc/quickstart',
-            'network/vpc/tutorials',
+            {
+              type: 'category',
+              label: 'VPC Tutoriels',
+              items: [
+                'network/vpc/tutorials/vm_configuration',
+              ],
+            },
           ],
         },
         {
@@ -290,7 +296,7 @@ const sidebars: SidebarsConfig = {
             'network/internet/quickstart',
             {
               type: 'category',
-              label: 'Internet Tutorials',
+              label: 'Internet Tutoriels',
               items: [
                 'network/internet/tutorials/forti',
                 'network/internet/tutorials/pfSense',
@@ -313,7 +319,7 @@ const sidebars: SidebarsConfig = {
             'storage/oss/quickstart',
             {
               type: 'category',
-              label: 'Object Storage Tutorials',
+              label: 'Object Storage Tutoriels',
               link: {
                 type: 'doc',
                 id: 'storage/oss/tutorials',
