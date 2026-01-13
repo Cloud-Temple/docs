@@ -10,6 +10,21 @@ El **VPC (Virtual Private Cloud)** es un servicio de red gestionado que permite 
 
 A fecha de enero de 2026, las redes privadas del VPC permiten interconectar los servicios **IaaS Open Source** e **IaaS VMware**. La interconexión con servidores **Bare Metal** estará disponible próximamente.
 
+### VPC vs Backbone Privado
+
+Cloud Temple ofrece dos modos de consumo de red:
+
+*   **Backbone Privado (Oferta histórica)**:
+    *   Ideal para expertos que buscan la máxima autonomía y configuraciones de red específicas (L2 extendido).
+    *   Requiere instalación y gestión manual de equipos de seguridad (firewalls, routers).
+    *   Gestión manual del plan de direccionamiento.
+
+*   **VPC (Nueva oferta)**:
+    *   Diseñado para una experiencia nativa de la nube y automatizada.
+    *   Seguridad integrada (Gateway, Firewalling, NAT) sin gestión de equipos de terceros.
+    *   Servicio gestionado con alta disponibilidad garantizada por Cloud Temple.
+    *   Ideal para proyectos modernos, DevOps y alojamiento de aplicaciones web.
+
 ## Arquitectura
 
 El VPC se basa en una arquitectura redundante y de alta disponibilidad, aprovechando el backbone inter-AZ de baja latencia de Cloud Temple.
@@ -31,11 +46,11 @@ El VPC garantiza un aislamiento estricto:
 
 | Funcionalidad | Descripción | Disponibilidad |
 |---------------|-------------|----------------|
-| **Redes privadas regionales** | Despliegue multi-AZ y propagación L2 transparente. | S2 2025 |
-| **Enrutamiento nativo** | Comunicación automática entre las redes privadas de un mismo VPC. | S2 2025 |
-| **IPAM & DHCP** | Gestión automática de pools de direcciones y asignación dinámica. | S2 2025 |
-| **Acceso a Internet** | Configurable a través del Gateway (NAT, DNAT, Egress controlado). | S2 2025 |
-| **IP Flotantes** | Exposición flexible de servicios en Internet. | S2 2025 |
+| **Redes privadas regionales** | Despliegue multi-AZ y propagación L2 transparente. | Disponible |
+| **Enrutamiento nativo** | Comunicación automática entre las redes privadas de un mismo VPC. | Disponible |
+| **IPAM & DHCP** | Gestión automática de pools de direcciones y asignación dinámica. | Disponible |
+| **Acceso a Internet** | Configurable a través del Gateway (NAT, DNAT, Egress controlado). | Disponible |
+| **IP Flotantes** | Exposición flexible de servicios en Internet. | Disponible |
 | **Micro-segmentación** | Grupos de políticas de red para una seguridad avanzada. | S1 2026 |
 | **Observabilidad** | Logs y métricas de rendimiento de la red. | S1 2026 |
 | **Servicio DNS** | Resolución de nombres interna y externa. | S2 2026 |
