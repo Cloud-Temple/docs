@@ -9,6 +9,7 @@ import vpcDetailsView from './images/vpc_details_view.png'
 import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
 import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
 import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
+import vpcOrders from './images/vpc_orders.png'
 
 # VPC-Schnellstart
 
@@ -39,6 +40,12 @@ Derzeit erfordert die Aktivierung des VPC-Dienstes ein Abonnement für ein **Iaa
 
 > **Hinweis**: Die VPC-Bereitstellung ist vollautomatisch und dauert in der Regel weniger als eine Stunde.
 
+### Alternative: Über den Reiter Bestellungen
+
+Sie können die Bestellung von VPC-Ressourcen auch direkt über das Menü **Bestellungen** initiieren.
+
+<img src={vpcOrders} />
+
 <img src={vpcOverview} />
 
 ## Schritt 3: Erstellen privater Netzwerke
@@ -53,6 +60,7 @@ Sobald Ihre VPC aktiv ist:
 4.  Konfigurieren Sie Ihr Netzwerk:
     *   **Name**: Name des Netzwerksegments (z. B. `backend`, `frontend`).
     *   **CIDR**: IP-Adressbereich (z. B. `192.168.1.0/24`).
+    *   **DHCP**: Aktivieren oder deaktivieren Sie den nativen DHCP-Dienst.
 
 <img src={vpcNewPrivateNetwork} />
 

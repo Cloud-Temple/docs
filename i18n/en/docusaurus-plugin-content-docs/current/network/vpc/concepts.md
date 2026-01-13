@@ -10,6 +10,21 @@ The **VPC (Virtual Private Cloud)** is a managed network service allowing the cr
 
 As of January 2026, VPC private networks allow interconnection between **IaaS Open Source** and **IaaS VMware** services. Interconnection with **Bare Metal** servers will be available in a future update.
 
+### VPC vs Private Backbone
+
+Cloud Temple offers two network consumption modes:
+
+*   **Private Backbone (Legacy Offering)**:
+    *   Ideal for experts seeking maximum autonomy and specific network configurations (Extended L2).
+    *   Requires manual installation and management of security equipment (firewalls, routers).
+    *   Manual management of the addressing plan.
+
+*   **VPC (New Offering)**:
+    *   Designed for a cloud-native and automated experience.
+    *   Integrated security (Gateway, Firewalling, NAT) without third-party equipment management.
+    *   Managed service with high availability guaranteed by Cloud Temple.
+    *   Ideal for modern projects, DevOps, and web application hosting.
+
 ## Architecture
 
 The VPC relies on redundant and highly available architecture, leveraging Cloud Temple's low-latency inter-AZ backbone.

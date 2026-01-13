@@ -9,6 +9,7 @@ import vpcDetailsView from './images/vpc_details_view.png'
 import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
 import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
 import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
+import vpcOrders from './images/vpc_orders.png'
 
 # Démarrage Rapide VPC
 
@@ -39,6 +40,12 @@ Actuellement, l'activation du service VPC nécessite d'avoir souscrit à une off
 
 > **Note** : Le provisionnement du VPC est entièrement automatisé et prend généralement moins d'une heure.
 
+### Alternative : Via l'onglet Commandes
+
+Vous pouvez également initier la commande de ressources VPC directement depuis le menu **Commandes**.
+
+<img src={vpcOrders} />
+
 <img src={vpcOverview} />
 
 ## Étape 3 : Créer des Réseaux Privés (Private Networks)
@@ -53,6 +60,7 @@ Une fois votre VPC actif :
 4.  Configurez votre réseau :
     *   **Nom** : Nom du segment réseau (ex: `backend`, `frontend`).
     *   **CIDR** : Plage d'adresses IP (ex: `192.168.1.0/24`).
+    *   **DHCP** : Activez ou désactivez le service DHCP natif.
 
 <img src={vpcNewPrivateNetwork} />
 
