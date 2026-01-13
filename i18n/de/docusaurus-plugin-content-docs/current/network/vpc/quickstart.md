@@ -10,6 +10,10 @@ import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
 import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
 import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
 import vpcOrders from './images/vpc_orders.png'
+import vpcStaticIps from './images/vpc_static_ips.png'
+import vpcNewStaticIps from './images/vpc_new_static_ips.png'
+import vpcNewStaticIpsModale from './images/vpc_new_static_ips_modale.png'
+import vpcStaticIpsAssociate from './images/vpc_static_ips_associate_png.png'
 
 # VPC-Schnellstart
 
@@ -26,9 +30,9 @@ Derzeit erfordert die Aktivierung des VPC-Dienstes ein Abonnement für ein **Iaa
 
 <img src={newTabNetwork} />
 
-## Schritt 2: Erstellen einer VPC
+## Schritt 2: Eine VPC bestellen
 
-1.  Klicken Sie auf die Schaltfläche **VPC erstellen**.
+1.  Klicken Sie auf die Schaltfläche **Neue VPC**.
 <img src={vpcCreateButton} />
 
 2.  Füllen Sie das geführte Formular aus:
@@ -60,20 +64,31 @@ Sobald Ihre VPC aktiv ist:
 4.  Konfigurieren Sie Ihr Netzwerk:
     *   **Name**: Name des Netzwerksegments (z. B. `backend`, `frontend`).
     *   **CIDR**: IP-Adressbereich (z. B. `192.168.1.0/24`).
-    *   **DHCP**: Aktivieren oder deaktivieren Sie den nativen DHCP-Dienst.
 
 <img src={vpcNewPrivateNetwork} />
 
-## Schritt 4: Gateway aktivieren (Optional)
+## Schritt 4: Gateway aktivieren und öffentliche IPs bestellen
 
-Um Ihren privaten Netzwerken über ein sicheres Gateway Internetzugang zu gewähren:
+Um den Internetzugang und die Bereitstellung von Diensten zu ermöglichen:
 
-1. Klicken Sie auf die Schaltfläche zur Gateway-Aktivierung.
+1.  Prüfen Sie, ob das Gateway aktiviert ist. Wenn nicht, klicken Sie auf die Schaltfläche zur Aktivierung.
 <img src={vpcActivateGatewayButton} />
-
-2. Bestätigen Sie die Aktivierung im modalen Fenster.
 <img src={vpcActivateGatewayModal} />
+
+2.  Sobald das Gateway aktiv ist, können Sie öffentliche IP-Adressen (Floating IPs) über den Reiter **Öffentliche IPs** bestellen.
+<img src={vpcStaticIps} />
+
+> **Hinweis**: Die Liste "Öffentliche IPs" zeigt alle verfügbaren öffentlichen IPs an, unabhängig davon, ob sie bereits einer VPC zugeordnet sind oder nicht. Der Reiter "Öffentliche IPs" in der VPC-Detailansicht ermöglicht die Verwaltung der diesem VPC zugeordneten IPs (erfordert aktives Gateway).
+
+3.  Klicken Sie auf die Schaltfläche, um neue IPs zu bestellen, oder klicken Sie auf die Aktion "Zuordnen", um eine der IP-Adressen in der Liste zuzuordnen, die noch nicht zugeordnet ist.
+<img src={vpcNewStaticIps} />
+<img src={vpcStaticIpsAssociate} />
+<img src={vpcNewStaticIpsModale} />
+
+4.  Wählen Sie die Anzahl der IPs, die Sie bestellen möchten, und bestätigen Sie Ihre Bestellung.
 
 ## Schritt 5: Verbinden Ihrer Ressourcen
 
 Ihre privaten Netzwerke sind jetzt in allen Verfügbarkeitszonen (AZ) der Region verfügbar. Sie können Ihre IaaS Open Source-VMs oder Server direkt über deren jeweilige Konfigurationsschnittstellen verbinden.
+
+Um zu erfahren, wie Sie ein VPC-Netzwerk auf einer virtuellen Maschine konfigurieren, lesen Sie unser Tutorial: [Statische IP und VM konfigurieren](./tutorials/vm_configuration).
