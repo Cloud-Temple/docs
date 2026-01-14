@@ -5,7 +5,7 @@ slug: /network/vpc
 
 El VPC (Virtual Private Cloud) de Cloud Temple es un servicio de red gestionado que permite crear entornos privados, aislados y seguros de manera totalmente automatizada. Diseñado para una experiencia nativa de la nube, simplifica la gestión de flujos, el acceso a Internet y el direccionamiento IP, garantizando al mismo tiempo la soberanía de sus datos.
 
-El servicio le permite desplegar y gestionar sus redes privadas sin preocuparse por la complejidad de las configuraciones manuales, con una alta disponibilidad del 99,99%.
+El servicio le permite desplegar y gestionar sus redes privadas sin preocuparse por la complejidad de las configuraciones manuales, con una alta disponibilidad del 99,99%, medida mensualmente.
 
 <div class="card-grid">
   <div class="card">
