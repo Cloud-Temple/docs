@@ -3,19 +3,22 @@ title: Tutorial IaaS Open Source
 sidebar_position: 4
 ---
 
-# Tutorial IaaS OpenSource
+# IaaS OpenSource Tutorials
 
-Questa sezione contiene tutorial pratici per utilizzare in modo efficace la piattaforma IaaS OpenSource di Cloud Temple.
+This section contains practical tutorials to effectively use Cloud Temple's OpenSource IaaS platform.
 
 ## Tutorial disponibili
 
-### Alta Disponibilità
+### Alta disponibilità
 - [Gestione dei pool di risorse](tutorials/high_availability/manage_pool.md)
 - [Gestione delle macchine virtuali](tutorials/high_availability/manage_vm.md)
 
+### Backup
+- [Domande frequenti sul backup](tutorials/backup/iaas_opensource_backup.md)
+
 ## Prerequisiti
 
-Prima di iniziare questi tutorial, assicurati di avere:
+Prima di iniziare questi tutorial, assicurati di disporre di:
 
 - Un accesso alla console Cloud Temple
 - Le autorizzazioni necessarie per gestire le risorse IaaS OpenSource

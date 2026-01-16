@@ -2,43 +2,42 @@
 tags:
   - home
   - inicio
-  - onboarding
+  - incorporación
 ---
 
+# Welcome to the documentation space
 
-# Bienvenido al espacio de documentación
-
-Bienvenido al espacio de documentación de **Cloud Temple** ! Este espacio ha sido diseñado para acompañarte en la gestión de tus servicios Cloud Temple a través de nuestra **Consola Cloud Temple**, también conocida como **Shiva**.
+Welcome to the **Cloud Temple** documentation space! This area has been designed to assist you in managing your Cloud Temple services through our **Cloud Temple Console**.
 
 ## Primeros pasos
 
 <div class="card-grid">
   <div class="card">
     <h3>Explore la consola</h3>
-    <p>Aprende a utilizar nuestra consola para gestionar tus recursos Cloud.</p>
+    <p>Aprende a utilizar nuestra consola para gestionar tus recursos en la nube.</p>
     <a href="console" class="card-link">Descubrir la consola &rarr;</a>
   </div>
-    <div class="card">
-    <h3>Comenzar con el Almacenamiento de Objetos</h3>
-    <p>Aprende a utilizar el almacenamiento de objetos</p>
+  <div class="card">
+    <h3>Comienza con el almacenamiento objeto</h3>
+    <p>Aprende a utilizar el almacenamiento objeto.</p>
     <a href="storage/oss" class="card-link">Configurar un Bucket &rarr;</a>
   </div>
   <div class="card">
-    <h3>Provisione sus recursos</h3>
-    <p>Cree sus primeros recursos Cloud rápidamente y de manera eficiente.</p>
-    <a href="iaas_vmware/quickstart" class="card-link">Comenzar &rarr;</a>
+    <h3>Provisiona tus recursos</h3>
+    <p>Crea tus primeros recursos en la nube de forma rápida y eficiente.</p>
+    <a href="iaas_vmware/quickstart" class="card-link">Empezar &rarr;</a>
   </div>
   <div class="card">
-    <h3>Implemente con unos clics</h3>
-    <p>Configure sus servicios de forma sencilla gracias a nuestros guías detallados.</p>
-    <a href="iaas_vmware/quickstart" class="card-link">Implementar &rarr;</a>
+    <h3>Despliega con unos pocos clics</h3>
+    <p>Configura tus servicios con facilidad gracias a nuestras guías detalladas.</p>
+    <a href="iaas_vmware/quickstart" class="card-link">Desplegar &rarr;</a>
   </div>
 </div>
 
-## ¿Cómo utilizar esta documentación?
+## Cómo utilizar esta documentación?
 
-Esta documentación es su guía para aprovechar todo el potencial de nuestros productos Cloud y de **la consola** Cloud Temple.
+Esta documentación es su guía para aprovechar todo el potencial de nuestros productos en la nube y de **la consola** Cloud Temple.
 
 Encontrará tutoriales, guías técnicas y referencias para simplificar la gestión de sus recursos en la nube.
 
-Esperamos que encuentre esta documentación útil y que aproveche al máximo las posibilidades ofrecidas por **Shiva**.
+Esperamos que encuentre esta documentación útil y que aproveche al máximo las posibilidades ofrecidas por **la consola**.

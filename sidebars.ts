@@ -58,7 +58,7 @@ const sidebars: SidebarsConfig = {
         'console/iam/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'IAM Tutoriels',
           items: [
             'console/iam/tutorials/sso_azuread',
             'console/iam/tutorials/sso_adfs',
@@ -96,6 +96,26 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Marketplace',
+      items: [
+        'marketplace/marketplace',
+        'marketplace/concepts',
+        'marketplace/quickstart',
+        {
+          type: 'category',
+          label: 'Marketplace Tutoriels',
+          items: [
+            'marketplace/tutorials/deploy_openiaas',
+            'marketplace/tutorials/deploy_vmware',
+            'marketplace/tutorials/contact_partner',
+            'marketplace/tutorials/customize_image_openiaas',
+            'marketplace/tutorials/customize_image_vmware',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Bastion',
       items: [
         'bastion/bastion',
@@ -123,7 +143,7 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'OpenSource Tutoriels',
           items: [
             {
               type: 'category',
@@ -133,24 +153,31 @@ const sidebars: SidebarsConfig = {
                 'iaas_opensource/tutorials/high_availability/manage_vm',
               ],
             },
+            {
+              type: 'category',
+              label: 'OpenSource Backup',
+              items: [
+                'iaas_opensource/tutorials/backup/iaas_opensource_backup',
+              ],
+            },
           ],
         },
       ],
     },
     {
       type: 'category',
-      label: 'IaaS by VMware',
+      label: 'IaaS VMware',
       items: [
         'iaas_vmware/iaas_vmware',
         'iaas_vmware/concepts',
         'iaas_vmware/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'VMware Tutoriels',
           items: [
             {
               type: 'category',
-              label: 'Backup',
+              label: 'VMware Backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
@@ -165,20 +192,54 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'PaaS Openshift',
+      label: 'Containers',
+      link: {
+        type: 'doc',
+        id: 'containers_overview',
+      },
       items: [
-        'paas_openshift/paas_openshift',
-        'paas_openshift/concepts',
-        'paas_openshift/quickstart',
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'PaaS OpenShift',
+          items: [
+            'paas_openshift/paas_openshift',
+            'paas_openshift/concepts',
+            'paas_openshift/quickstart',
+        {
+          type: 'category',
+          label: 'Openshift Tutoriels',
           items: [
             'paas_openshift/tutorials/deploy-through-helmfile',
             'paas_openshift/tutorials/deploy-vm-with-kubevirt',
             'paas_openshift/tutorials/using-kasten'
           ]
         }
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Managed Kubernetes',
+          items: [
+            'managed_kubernetes/managed_kubernetes',
+            'managed_kubernetes/concepts',
+            'managed_kubernetes/quickstart',
+            {
+          type: 'category',
+          label: 'Tutoriels MK',
+          items: [
+            'managed_kubernetes/tutorials/firstdeploy',
+            'managed_kubernetes/tutorials/networking',
+            'managed_kubernetes/tutorials/usingcapsule',
+            'managed_kubernetes/tutorials/usinggapi',
+            'managed_kubernetes/tutorials/usingkubecosts',
+            'managed_kubernetes/tutorials/usingopencost',
+            'managed_kubernetes/tutorials/usingkasten',
+            'managed_kubernetes/tutorials/usingargocd',
+            'managed_kubernetes/tutorials/usingharbor',
+          ],
+        },
+          ],
+        },
       ],
     },
     {
@@ -192,6 +253,7 @@ const sidebars: SidebarsConfig = {
         'llmaas/api',
         'llmaas/models',
         'llmaas/tutorials',
+        'llmaas/ocr',
         'llmaas/faq',
       ],
     },
@@ -199,6 +261,22 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Network',
       items: [
+        {
+          type: 'category',
+          label: 'VPC',
+          items: [
+            'network/vpc/vpc',
+            'network/vpc/concepts',
+            'network/vpc/quickstart',
+            {
+              type: 'category',
+              label: 'VPC Tutoriels',
+              items: [
+                'network/vpc/tutorials/vm_configuration',
+              ],
+            },
+          ],
+        },
         {
           type: 'category',
           label: 'Privates Network',
@@ -218,7 +296,7 @@ const sidebars: SidebarsConfig = {
             'network/internet/quickstart',
             {
               type: 'category',
-              label: 'Tutorials',
+              label: 'Internet Tutoriels',
               items: [
                 'network/internet/tutorials/forti',
                 'network/internet/tutorials/pfSense',
@@ -241,22 +319,34 @@ const sidebars: SidebarsConfig = {
             'storage/oss/quickstart',
             {
               type: 'category',
-              label: 'Tutoriels',
+              label: 'Object Storage Tutoriels',
               link: {
                 type: 'doc',
                 id: 'storage/oss/tutorials',
               },
               items: [
+                'storage/oss/tutorials/bucket-access',
                 'storage/oss/tutorials/cloudberry-explorer',
                 'storage/oss/tutorials/winscp',
                 'storage/oss/tutorials/mc-mirror',
                 'storage/oss/tutorials/aws-s3-sync',
                 'storage/oss/tutorials/python-boto3',
                 'storage/oss/tutorials/file-hashing',
+                'storage/oss/tutorials/restic',
               ],
             },
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Provider Terraform',
+      items: [
+        'terraform/terraform',
+        'terraform/concepts',
+        'terraform/quickstart',
+        'terraform/tutorials',
       ],
     },
     {
@@ -284,7 +374,8 @@ const sidebars: SidebarsConfig = {
         'contractual/iaas/raci_s3',
         'contractual/paas/raci',
         'contractual/paas/raci_ocp_std',
-        'contractual/llmaas/raci'
+        'contractual/llmaas/raci',
+        'contractual/kubernetes/raci'
       ],
     },
   ],

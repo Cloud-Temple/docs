@@ -14,7 +14,7 @@ import ShivaApi004 from './images/shiva_api_004.png'
 ## Clés API
 
 La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
-est une manière sécurisée de se connecter aux API Shiva sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
+est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
 
 La création de ce token se fait depuis votre compte. Il est possible de générer plusieurs clés et de configurer pour chacune les autorisations dans la limite de vos droits.
 
@@ -47,6 +47,15 @@ Pour une question de sécurité, il est recommandé de créer plusieurs tokens a
 Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
 <img src={ShivaProfil005} />
+
+:::info Cycle de vie du token d'authentification
+Lorsque vous utilisez votre **Personal Access Token (PAT)** pour vous authentifier auprès de l'API, vous recevez en retour un token d'accès. Il est important de noter que ce token d'accès est un **JSON Web Token (JWT)** avec une durée de vie limitée.
+
+-   **Durée de vie** : Chaque token JWT est valide pour une durée de **5 minutes**.
+-   **Vérification** : Vous pouvez vérifier la date d'émission (`iat`) et la date d'expiration (`exp`) de votre token en le décodant. Des outils en ligne comme [jwt.io](https://jwt.io) vous permettent de le faire facilement.
+
+Une fois le token expiré, vous devrez vous ré-authentifier avec votre PAT pour en obtenir un nouveau. Il est donc recommandé de gérer ce cycle de vie dans vos scripts et applications en prévoyant un renouvellement automatique du token.
+:::
 
 ## Accès au portail API
 
@@ -154,17 +163,31 @@ par un code d'erreur HTTP 429, signalant que la limite de requêtes autorisées 
 
 Voici les limites définies :
 
-| Produit              | Seuil limite |
-|----------------------|--------------|
-| Console Cloud Temple | 60 r/s       |
-| Identité (IAM)       | 60 r/s       |
-| IaaS - Calcul        | 60 r/s       |
-| IaaS - Stockage      | 20 r/s       |
-| IaaS - Sauvegarde    | 60 r/s       |
-| PaaS - S3            | 60 r/s       |
-| PaaS - Openshift     | 60 r/s       |
-| Réseau               | 60 r/s       |
-| Hébergement          | 60 r/s       |
+| Produit | Seuil limite |
+|---|---|
+| Console Cloud Temple | 25 r/s |
+| Identité (IAM) | 25 r/s |
+| IaaS VMware | 25 r/s |
+| OpenIaaS | 25 r/s |
+| S3 | 25 r/s |
+| OpenShift | 25 r/s |
+| Bastion | 25 r/s |
+| Réseau | 25 r/s |
+| Hébergement | 25 r/s |
+| Marketplace | 25 r/s |
+| Support | 25 r/s |
+| Notification | 25 r/s |
+| LLMaaS | 25 r/s |
+
+### Routes spécifiques
+
+Certains points d'API spécifiques, notamment ceux liés à l'authentification ou à des actions sensibles, ont des limites plus restrictives pour renforcer la sécurité et garantir la stabilité.
+
+| Route | Seuil limite |
+|---|---|
+| Authentification (IAM) | 5 r/s |
+| IaaS - Stockage (Datastores) | 20 r/s |
+| Marketplace (Contact) | 1 r/min - 5 r/h |
 
 ### Comment fonctionnent les limites de taux ?
 

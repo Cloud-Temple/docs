@@ -2,512 +2,489 @@
 title: Concepts
 ---
 
-The Cloud Temple's __IaaS (Infrastructure As A Service)__ offering is designed to meet critical continuity and disaster recovery needs, with a particular focus on demanding sectors such as manufacturing, finance, and insurance. Built on cutting-edge technologies, this infrastructure ensures maximum uptime and optimal performance for your critical workloads.
+Cloud Temple's __IaaS (Infrastructure as a Service)__ offering is designed to meet the critical needs of business continuity and disaster recovery, with a particular focus on demanding sectors such as industry, banking, and insurance. Built on cutting-edge technologies, this infrastructure ensures maximum availability and optimal performance for your critical workloads.
 
-## A Trusted Technological Platform
+## A Trusted Technology Platform
 
-Cloud Temple's IaaS platform leverages renowned international technology partners:
+Cloud Temple's IaaS platform is built on internationally recognized technology partners:
 
-- Computing: __CISCO UCS__.
+- Compute: __CISCO UCS__.
 - Storage: __IBM Spectrum Virtualize__, __IBM FlashSystem__ for block storage.
 - Networking: __JUNIPER__.
 - Virtualization: __VMware__, providing a reliable and proven foundation for managing your cloud environments.
-- Backup: __IBM Spectrum Protect Plus__, for orchestrating and storing backup data.
+- Backup: __IBM Spectrum Protect Plus__, for backup orchestration and storage.
 
-This architecture is built upon the __VersaStack__ model, an alliance between Cisco and IBM, ensuring broad compatibility with leading software vendors.
+This architecture is based on the __VersaStack__ model, a collaboration between Cisco and IBM, ensuring broad compatibility with leading software vendors.
 
-## A Dedicated and Automated Infrastructure
+## A dedicated and automated infrastructure
 
-Despite being entirely automated through APIs and a provider Terraform, Cloud Temple's IaaS offering provides a unique infrastructure:
+Although fully automated through APIs and a Terraform provider, Cloud Temple's IaaS offering provides a unique infrastructure:
 
-- **Dedicated Resources**: Compute instances, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared among clients.
-- **Maximum Predictability**: You have full control over virtualization rates, storage IOPS pressure, and benefit from clear billing based on monthly consumption.
+- __Dedicated resources__: Compute blades, storage volumes, and software stacks (virtualization, backup, firewalling, etc.) are never shared among clients.
+- __Maximum predictability__: You control virtualization rates, IOPS pressure on storage, and benefit from clear, consumption-based monthly billing.
 
 The platform is certified __SecNumCloud__ by the [ANSSI](https://www.ssi.gouv.fr/), ensuring a high level of automation and security.
 
-## Primary Features
+## Key Features
 
 - Dedicated and on-demand computing resources (CPU, RAM).
 - On-demand storage (multiple classes available).
 - Networking resources (Internet, private networks).
-- Cross-region replication with configurable retention.
+- Cross-backups with configurable retention.
 - Asynchronous replication for storage or virtual machines.
-- Management via [Shiva Console](../console/console.md) or Infrastructure as Code using APIs and Terraform provider.
+- Management via the [Console](../console/console.md) or in Infrastructure as Code mode using APIs and the Terraform provider.
 
 ## Benefits
 
-| Advantage            | Description                                                                                                                                    |
+| Benefit             | Description                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Trust in the Digital | Data storage in France, GDPR compliance.                                                                                          |
-| Security            | Highly secure platform, certified __SecNumCloud__, __HDS__ (Health Data Storage), __ISO 27001__ and __ISAE 3402 type II__. |  
-| Uptime             | Platform uptime of 99.99%, measured monthly, including maintenance periods.                                                        |
-| Resilience         | Implementation of business continuity/disaster recovery plans as needed.                                                               |
-| Automation         | Fully automated platform designed for integration into a digital transformation program.                                        |
-| On-demand           | Resources available on demand.                                                                                                          |
+| Digital Trust       | Data hosting in France and GDPR compliance.                                                                                                    |
+| Security            | Highly secure platform, certified __SecNumCloud__, __HDS__ (Health Data Hosting), __ISO 27001__, and __ISAE 3402 Type II__.                  |
+| High Availability   | Platform availability rate of 99.99%, measured monthly, including maintenance windows.                                                          |
+| Resilience          | Business continuity and disaster recovery plans implemented as needed.                                                                         |
+| Automation          | Fully automated platform designed to integrate into a digital transformation program.                                                          |
+| On Demand           | Resources available on demand.                                                                                                                 |
 
 ## Regions and Availability Zones
 
-The VMware IaaS product is deployed within a availability zone.
-A [availability zone](../additional_content/concepts_az.md) is part of a [region](../additional_content/concepts_regional.md).
+The VMware IaaS product is deployed within an availability zone.  
+An [availability zone](../additional_content/concepts_az.md) is part of a [region](../additional_content/concepts_regional.md).
 
-This type of deployment allows you to choose the location of the cluster and distribute it across different availability zones (AZs). This provides better load distribution, maximizes redundancy, and simplifies the implementation of a Disaster Recovery Plan (DRP) in case of an incident.
+This deployment model allows you to choose the location of clusters and enables their distribution across different availability zones (AZ).  
+This provides better load distribution, maximizes redundancy, and simplifies the implementation of a disaster recovery plan (DRP) in the event of an incident.
 
----
+## Compute
 
-## Calcul
+The blades provided by Cloud Temple are of type __CISCO UCS B200__ or __CISCO UCS X210c__. They are fully managed by Cloud Temple (firmware, OS version, etc.) through the Cloud Temple console.
 
-The compute nodes provided by Cloud Temple are of type __CISCO UCS B200__ or __CISCO UCS X210c__. They are fully managed by Cloud Temple (firmware, OS version, etc.) through the Cloud Temple console.
+Several categories of compute blades are available in the catalog to support your workloads (virtualization, containerization, etc.). These blades feature different characteristics and performance levels to best meet your needs. The compute blade catalog is regularly updated.
 
-Various categories of compute nodes are available in our catalog to support your workloads (Virtualization, Containerization, etc.). These nodes feature different characteristics and performance levels tailored to meet your needs. Our compute node catalog is regularly updated.
+When using with a virtualization offering, a hypervisor cluster must consist exclusively of compute blades of the same type (mixing different blade types within a single cluster is not allowed).
 
-In the context of virtualization usage, a VMware hypervisor cluster is exclusively composed of nodes of the same type; mixing nodes of different types within one cluster is not possible.
+| Reference             | RAM  __(1)__ | Frequency __(2)__                         | Number of Cores / Threads | Connectivity __(3)__ | GPU __(4)__          | SKU for VMware Offering         |
+| --------------------- | ------------ | ----------------------------------------- | -------------------------- | -------------------- | -------------------- | ------------------------------- |
+| ECO v3 Blade          | 384 GB       | 2.20/3.0 GHz (Silver 4114 or equivalent)  | 20 / 40 threads            | 2 × 10 Gbit/s        |                      | csp:fr1:iaas:vmware:eco:v3      |
+| STANDARD v3 Blade     | 384 GB       | 2.40/3.4 GHz (Silver 4314 or equivalent)  | 32 / 64 threads            | 2 × 25 Gbit/s        |                      | csp:fr1:iaas:vmware:standard:v3 |
+| ADVANCE v3 Blade      | 768 GB       | 2.80/3.5 GHz (Gold 6342 or equivalent)    | 48 / 96 threads            | 2 × 25 Gbit/s        |                      | csp:fr1:iaas:vmware:advance:v3  |
+| PERFORMANCE 1 v3 Blade| 384 GB       | 3.20/3.6 GHz (Xeon E-53I5Y or equivalent) | 16 / 32 threads            | 2 × 25 Gbit/s        |                      | csp:fr1:iaas:vmware:perf1:v3    |
+| PERFORMANCE 2 v3 Blade| 768 GB       | 3.00/3.6 GHz (Gold 6354 or equivalent)    | 36 / 72 threads            | 2 × 25 Gbit/s        |                      | csp:fr1:iaas:vmware:perf2:v3    |
+| PERFORMANCE 3 v3 Blade| 1536 GB      | 2.60/3.5 GHz (Gold 6348 or equivalent)    | 56 / 112 threads           | 2 × 25 Gbit/s        |                      | csp:fr1:iaas:vmware:perf3:v3    |
+| PERFORMANCE 4 v3 Blade| 512 GB       | 2.50/4.1 GHz (Intel 6426Y or equivalent)  | 32 / 64 threads            | 2 × 25 Gbit/s        | 2 × NVIDIA L40S 48GB | csp:fr1:iaas:vmware:perf4:v3    |
 
-| Reference             | RAM (Go) | Frequency (GHz) | Cores/Threads | Connectivity | GPU | SKU for VMware Offer |
-|-----------------------|-----------|---------------|--------------|-------------|-----|---------------------------------|
-| ECO v3                | 384        | 2.20/3.0 GHz   | 20 / 40       | 2 x 10 Gbit/s |          | csp:fr1:iaas:vmware:eco:v3      |
-| STANDARD v3           | 384        | 2.40/3.4 GHz   | 32 / 64       | 2 x 25 Gbit/s |          | csp:fr1:iaas:vmware:standard:v3 |
-| ADVANCE v3            | 768        | 2.80/3.5 GHz   | 48 / 96       | 2 x 25 Gbit/s |          | csp:fr1:iaas:vmware:advance:v3  |
-| PERFORMANCE 1 v3       | 384        | 3.20/3.6 GHz   | 16 / 32       | 2 x 25 Gbit/s |          | csp:fr1:iaas:vmware:perf1:v3    |
-| PERFORMANCE 2 v3       | 768        | 3.00/3.6 GHz   | 36 / 72       | 2 x 25 Gbit/s |          | csp:fr1:iaas:vmware:perf2:v3    |
-| PERFORMANCE 3 v3       | 1536       | 2.60/3.5 GHz   | 56 / 112      | 2 x 25 Gbit/s |          | csp:fr1:iaas:vmware:perf3:v3    |
-| PERFORMANCE 4 v3       | 512        | 2.50/4.1 GHz   | 32 / 64       | 2 x 25 Gbit/s | 2 x NVIDIA L40S 48 Go | csp:fr1:iaas:vmware:perf4:v3    |
+__Notes__:
 
-**Notes:**
+- __(1)__ The memory amount delivered corresponds to the physical memory available on the blades. It is not possible to change the physical memory capacity of a blade.
 
-- (1) The physically available memory delivered is that on the nodes themselves. It's not possible to change the physical memory quantity of a node.
+- __(2)__ Minimum base frequency / turbo frequency, expressed in GHz. By default, processors are configured in the BIOS for maximum performance.
 
-- (2) Base frequency and turbo frequency, expressed in GHz. By default, processors are configured for maximum performance at BIOS level.
+- __(3)__ Physical connectivity is shared between network and block storage access, as the underlying Cisco platform is converged.
 
-- (3) Physical connectivity is shared for network access and storage block access, as CISCO platform is converged.
+- __(4)__ The available GPU offering is continuously evolving. As of May 1, 2024, the offering is based on NVIDIA LOVELACE L40S GPUs. By default, the PERF4 blade is delivered with two 48 GB L40S GPUs. Contact support for further details if needed.
 
-- (4) The actual GPU offering continuously evolves. As of May 1, 2024, the offer is based on NVIDIA LOVELACE L40S GPUs. By default, the PERF4 node comes with 2 NVIDIA L40S cards, 48 Go of RAM each. For more precision, please contact support.
-
-Compute node availability is 99.99% (calculated monthly, including maintenance window), with a plage de maintenance incluse. Eligibility in case of SLA non-compliance requires the creation of an incident ticket. You must also have at least two hosts per cluster and enable the __High Availability__ (HA) feature. This feature allows your architecture to automatically restart virtual machines on the secondary hypervisor. In cases where a availability zone contains only one hypervisor, automatic restart is not possible.
+The compute offering availability is 99.99%, calculated monthly, including maintenance windows. Eligibility for SLA non-compliance claims requires the creation of an incident ticket. You must also have at least two hosts per cluster and enable the __High Availability__ (HA) feature.  
+This feature allows your architecture to automatically restart your virtual machines on the second hypervisor in case of failure. If a zone of availability contains only one hypervisor, automatic restart is not possible.
 
 ## Network
 
-The network service on Cloud Temple's IaaS platform leverages a VPLS-based infrastructure, providing flexible and high-performance segmentation to meet clients' connectivity and isolation needs.
+The networking service on Cloud Temple's IaaS platform is built on a VPLS-based network infrastructure, providing flexible and high-performance segmentation to meet client requirements for connectivity and network isolation.
 
-### Level 2 VLANs
+### Layer 2 VLANs
 
-The Level 2 VLANs provided in our IaaS offering are of this type, providing complete network isolation and a highly configurable setup tailored to specific needs.
+The VLANs provided in the IaaS offering are __layer 2__ types, delivering full network isolation and configurable adaptability according to your needs.
 
-### Main Concepts
+#### Key Concepts
 
-- **Shared Between Clusters and Availability Zones (AZ)**:
-  - VLANs can be shared across different AZs and clusters belonging to the same tenant, enabling inter-cluster communication.
-- **Inter-Tenant Propagation**:
-  - VLANs can be propagated between multiple tenants within the same organization, facilitating internal communications.
+- __Cross-cluster and Availability Zone (AZ) sharing__:
+  - VLANs can be shared across different AZs and clusters belonging to the same tenant.
+- __Cross-tenant propagation__:
+  - VLANs can be propagated across multiple tenants within the same organization, enabling internal communications.
 
 ### Network Performance
 
 The network infrastructure ensures low latency for optimal performance:
 
-- **Latency within AZ**: Below __3 ms__.
-- **Latency between AZs**: Below __5 ms__.
-
----
+- __Intra-AZ latency__: Less than __3 ms__.
+- __Inter-AZ latency__: Less than __5 ms__.
 
 ### Key Points
 
-1. **Flexibility**: VLANs can be configured to adapt to multi-cluster and multi-tenant environments.
-2. **High Performance**: Minimal latency ensures rapid and efficient communication between availability zones.
-3. **Isolation and Security**: Level 2 VLANs provide strict network segmentation, safeguarding data and traffic flow.
+1. __Flexibility__: VLANs can be configured to adapt to multi-cluster and multi-tenant environments.  
+2. __High performance__: Minimal latency ensures fast and efficient communication between availability zones.  
+3. __Isolation and security__: Layer 2 VLANs provide strict network segmentation to protect data and traffic.
 
-## Storage Block
+## Block Storage
 
-Cloud Temple offers several storage tiers based on [IBM FlashSystem](https://www.ibm.com/flashsystem/) and [IBM SVC](https://www.ibm.com/products/san-volume-controller) technology.
+Cloud Temple offers several classes of block storage based on [IBM FlashSystem](https://www.ibm.com/flashsystem/) and [IBM SVC](https://www.ibm.com/products/san-volume-controller) technology.
 
-The __IBM SVC__ technology delivers the required performance for our clients' environments through the large amount of embedded cache in controllers and the ability to distribute a server's IOPS across multiple SANs. It is also utilized for block storage replication between availability zones or facilitating maintenance on storage enclosures.
+The __IBM SVC__ technology enables delivering the required performance levels for our clients' environments, thanks to the large amount of embedded memory cache in the controllers and the ability to distribute a server's total IOPS across multiple SANs.
 
-Storage primarily consists of high-performance NVMe flash storage, dedicated to professional workloads. Disks are employed by storage enclosures using [Distributed RAID 6](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
+It is also used to enable replication of your block storage LUNs across availability zones or to facilitate maintenance operations on storage arrays.
 
-The __'Mass Storage'__ tier provides mechanical disks for archival purposes, offering economic efficiency. Multiple performance levels are available:
+The storage is primarily NVMe flash-based, dedicated to professional workloads. The drives are used by the storage arrays in [__'Distributed RAID 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
 
-| Reference                         | Unit   | SKU                                         |
-|-----------------------------------|---------|-------------------------------------------------|
-| FLASH - Essentiel - 500 IOPS/To   | 1 Gio   | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To   | 1 Gio   | csp:(region):iaas:storage:bloc:medium:v1     |
-| FLASH - Premium - 3000 IOPS/To    | 1 Gio   | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 Gio   | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 Gio   | csp:(region):iaas:storage:bloc:ultra:v1      |
-| MASS STORAGE - Archivage          | 1 Tio   | csp:(region):iaas:storage:bloc:mass:v1       |
+### Storage Block Security and Encryption
 
-*__Note:__
+To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates a robust hardware-based encryption solution.
 
-- The actual performance of a storage tier is linked to the volume commanded, based on "IOPS/To", meaning "limit of IOPS per Terabyte allocated."*
-> *For instance, a 0.5To volume in the 'Standard' tier will have an IOPS limit capped at 750 IOPS,*
-> *Similarly, a 10To volume in the 'Ultra' tier will have an IOPS limit of up to 150,000 IOPS,*
-- The IOPS limitation applies to the volume itself, i.e., Datastore for VMware environments,
-- Storage availability is 99.99% monthly, including maintenance window,
-- There are no restrictions or quotas on read/write operations,
-- No billing based on IOPS,
-- No performance guarantee on the __'Mass Storage'__ tier,
-- The minimum size of a storage volume is 500Gio,
-- When using storage replication mechanisms, performance must be identical across both availability zones,
-- No intelligent optimization mechanisms such as compression or deduplication are implemented: when you reserve 10Tio of storage, you physically have 10Tio of usable storage deployed on IBM machines.
-- Storage volumes are dedicated to the client's environment.*
+-   **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
+-   **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
+-   **Operation**: Encryption is applied at the time data is written to the physical storage medium.
 
-### Utilization of Block Storage in VMware Cloud Temple Offering
+:::warning Attention Point on Replication
+It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated, secure communication channels.
+:::
 
-When utilizing block storage as datastores within the VMware Cloud Temple offering, you must consider several critical factors:
+The __'Mass Storage'__ storage class offers mechanical disks for archival needs in an economically efficient context. Several performance tiers are available:
 
-1. **Swap File Space (.VSWP) During VM Startup**: When a virtual machine starts, it creates a .VSWP file on the disk equal to its memory size. Therefore, you need sufficient free space in your datastore equal to the sum of all VMs' memory sizes for their startup. For instance, if your datastore has 1 TiB of block storage and you aim to start 10 virtual machines each with 64 GiB of memory, you'll require 640 GiB of disk space. Insufficient free space can limit VM startup due to the inability to create swap files.
+| Reference                         | Unit  | SKU                                          |
+|-----------------------------------|-------|----------------------------------------------|
+| FLASH - Essential - 500 IOPS/To   | 1 GiB | csp:(region):iaas:storage:bloc:live:v1       |
+| FLASH - Standard - 1500 IOPS/To   | 1 GiB | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 GiB | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 GiB | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 GiB | csp:(region):iaas:storage:bloc:ultra:v1      |
+| MASS STORAGE - Archival           | 1 TiB | csp:(region):iaas:storage:bloc:mass:v1       |
 
-2. **Free Space for Snapshot Backups**: The backup service uses instantaneous snapshots (snapshots). You must ensure sufficient free space for creating these snapshots during VM backups. The snapshot size depends on the virtual machine's write activity and the time required for the backup. Generally, it’s advisable to maintain at least 10% free space for this operation.
+*__Note__ :*
 
-3. **Management of Dynamic Disks**: Be cautious with dynamic disks. Without proper management, insufficient physical space can lead to VM freeze or even corruption in extreme cases. It's crucial to closely monitor available disk space on your datastores when using this type of disk.
+- *Actual performance for a storage class is tied to the volume actually ordered, based on the "IOPS/To" metric, meaning "maximum IOPS per allocated terabyte",*
 
-Proactive disk space management is vital for ensuring smooth VM operation and reliable backups. Always ensure you have the necessary free space for swap files, snapshots, and dynamic disk growth.
+> *Thus, a 0.5 TiB volume in the 'Standard' performance class will have an IOPS limit capped at 750 IOPS,*
+> *Similarly, a 10 TiB volume in the 'Ultra' performance class will have an IOPS limit of 150,000 IOPS,*
 
-## Backup Storage Allocation
+- *The IOPS limit is applied per volume, thus per Datastore in a VMware environment,*
+- *Storage availability is 99.99% measured monthly, including maintenance windows,*
+- *There are no restrictions or quotas on read or write operations,*
+- *There is no billing based on IOPS,*
+- *No performance commitment is provided for the __'Mass Storage'__ class,*
+- *The minimum size for a storage LUN is 500 GiB,*
+- *When using storage replication, performance must be identical across both availability zones,*
+- *No intelligent optimization mechanisms such as compression or deduplication are implemented: when you reserve 10 TiB of storage, you physically have 10 TiB of usable storage deployed on IBM machines.*
+- *Storage LUNs are dedicated to the client environment.*
 
-Backup storage for your virtual machines is automatically provisioned by the platform, within the allocated quota.
+### Usage within the VMware Compute Offering
 
-| Reference                | Unit   | SKU                                      |
-|--------------------------|--------|------------------------------------------|
-| MASS STORAGE - BACKUP    | 1 TiB  | csp:(region):iaas:storage:block:backup:v1 |
+Within the context of using block storage in the form of a datastore in Cloud Temple’s VMware compute offering, __you must take several important considerations into account__:
+
+1. __Swap file (.VSWP) creation during VM startup__: When a virtual machine starts up, it creates a .VSWP file equal in size to its allocated memory on disk. Therefore, to successfully start your virtual machines, you must always have free space in your datastore equivalent to the total memory size of all your virtual machines. For example, if your datastore has 1 TiB of block storage and you want to start 10 virtual machines each with 64 GiB of memory, 640 GiB of disk space will be required. Without sufficient free space, VM startup will be limited by the available capacity to create swap files.
+
+2. __Free space required for backup snapshots__: The backup service uses instant snapshots. You must therefore always have sufficient free space to allow the creation of a snapshot during a VM backup. The size of the snapshot depends on the amount of write activity from the virtual machine and the time required to perform the backup. Generally, it is recommended to maintain at least 10% free space for this operation.
+
+3. __Management of dynamic disks__: Exercise caution when using dynamic disks. If you do not properly manage their growth, a lack of physical space can result in the virtual machine freezing (in the best case), or crashing with data corruption (in the worst case). It is crucial to closely monitor available space on your datastores when using this type of disk.
+
+Proactive disk space management is essential to ensure the proper operation of your virtual machines and the reliability of backups. Always ensure you have sufficient space available for swap files, snapshots, and dynamic disk growth.
+
+## Backup Storage
+
+The dedicated storage for backing up your virtual machines is automatically provisioned by the platform, up to the quota ordered.
+
+| Reference                | Unit  | SKU                                      |
+|--------------------------|-------|------------------------------------------|
+| MASS STORAGE - Archiving | 1 TiB | csp:(region):iaas:storage:bloc:backup:v1 |
 
 ### Block Storage Replication
 
 #### Principles
 
-To facilitate the implementation of your disaster recovery plans, when it's not feasible to maintain continuity of operations with application-level replication and virtual machine replication isn't suitable, Cloud Temple offers __storage block replication mechanisms between availability zones within a region__.
+To enable the implementation of your business continuity plans, when it is not possible to maintain business continuity using application-level mechanisms and virtual machine replication is not suitable, Cloud Temple offers __block-level storage replication mechanisms between availability zones within a region__.
 
-These replication mechanisms are applied to your storage LUNs (Logical Unit Numbers) in addition to backups. The decision to use replication on an environment depends on several factors including its criticality, the acceptable data loss tolerance, and the performance goals for the application.
+These replication mechanisms are applied to the storage LUNs of your environments, complementing backup solutions. The decision to use a replication mechanism for a given environment __depends on multiple factors, including its criticality, acceptable data loss tolerance, and performance requirements for the application__.
 
-Cloud Temple provides two types of deployed mechanisms in an active/passive configuration:
+Cloud Temple provides two types of replication mechanisms deployed in an active/passive configuration:
 
-- **Asynchronous Replication** (or 'Global Mirror'): *The 'Global Mirror' function provides an asynchronous replication process. When a host writes to the primary volume, confirmation of the write completion is received before the write operation on the secondary volume completes. If a failover is initiated, the application must retrieve and apply all unconfirmed updates from the secondary volume. Even if primary volume I/O operations are paused briefly, the secondary volume can become an exact replica of the primary volume. This process is comparable to continuous backup where the latest updates are always missing.*
+- **Asynchronous replication** (or **'Global Mirror'**): *The **'Global Mirror'** function provides an asynchronous copy process. When a host writes to the primary volume, the confirmation of the I/O completion is received before the write operation finishes on the secondary volume. If a failover operation is initiated, the application must recover and apply all updates that were not confirmed on the secondary volume. If I/O operations on the primary volume are paused briefly, the secondary volume can become an exact match of the primary volume. This function is comparable to a continuous backup process in which the latest updates are always missing. When using Global Mirror for disaster recovery purposes, you must consider how you intend to handle these missing updates.*
 
-- **Synchronous Replication** (or 'Metro Mirror'): *The 'Metro Mirror' function creates a remote synchronous copy of data from one primary volume to another secondary volume. With synchronous replication, applications write to the primary volume but don't receive confirmation that the write operation is complete until the data is written to the secondary volume. This ensures both volumes contain identical data once the initial copy operation is finished. After the initial copy operation completes, 'Metro Mirror' maintains a continuous, fully synchronized copy of source data on the target site.*
+- **Synchronous replication** (or **'Metro Mirror'**): *The **'Metro Mirror'** function is a type of remote copy that creates a synchronous copy of data from a primary volume to a secondary volume. With synchronous copies, host applications write to the primary volume but do not receive confirmation that the write operation is complete until the data has been written to the secondary volume. This ensures that both volumes contain identical data when the copy operation completes. After the initial copy operation finishes, the Metro Mirror function maintains a fully synchronized copy of the source data at the target site at all times. **As of January 1, 2024, the 'Metro Mirror' function is no longer available for sale.***
 
-A "primary" or "active" site and a "passive" or "standby" site are defined. The disaster recovery plan activates in case of an incident or during a PRA (Planned Response Activity) test. The passive site then takes over from the active site.
+An "active" or "primary" site and a "passive" or "standby" site are then defined. The business continuity plan is activated in the event of a disaster or during a PRA test. The passive site then takes over from the active site.
 
 #### Asynchronous Replication
 
-When your workloads require short downtime and using application-level or VM replication mechanisms is not feasible or suitable, you can replicate a SAN LUN (Logical Unit Number) between two availability zones within the same region.
+When your workloads require short recovery times and application-level replication or virtual machine replication mechanisms are not acceptable or suitable, it is possible to replicate a SAN storage LUN between two Availability Zones within the same region.
 
-This offering provides a __RPO (Recovery Point Objective) of 15 minutes__ and an __RTO (Recovery Time Objective) below 4 hours__. It allows for faster recovery compared to traditional backup restoration processes.
+This solution provides a __RPO of 15 minutes__ and an __RTO under 4 hours__. It enables much faster recovery than implementing a backup restoration process.
 
-In a storage volume replication setup (__Global Mirror__), the SAN virtualization controllers in both availability zones collaborate to perform write operations on both sites simultaneously. The primary site does not wait for the remote site's write confirmation.
+In an asynchronously replicated storage volume (__Global Mirror__), the SAN virtualization controllers from both Availability Zones collaborate to perform write operations across both sites. The primary site does not wait for write acknowledgment from the secondary site.
 
 The steps of a write operation are as follows:
 
-1. A hypervisor intends to perform a __write operation on a Global-Mirror volume__: It sends the request to the SAN controller in its local zone,
-2. The local SAN controller requests the remote SAN controller to execute the write operation,
-3. The local SAN controller does not wait for the remote site's confirmation and performs the write locally,
-4. It issues __write acknowledgment__ to the hypervisor that initiated the request,
-5. __Hypervisors on the distant site do not directly access the Global Mirror LUN__: A service request is necessary.
+1. An hypervisor wishes to perform a __write operation on a Global-Mirror volume__: it sends its request to the SAN controller in its Availability Zone,
+2. The local SAN controller requests the remote SAN controller to perform the write operation,
+3. The local SAN controller does not wait for acknowledgment from the remote SAN and proceeds to perform the write locally,
+4. It then sends the __acknowledgment__ back to the hypervisor that issued the request,
+5. __Hypervisors at the remote site do not directly access the Global Mirror LUN__: a service request is required.
 
 | SLA       | Description                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 15mn  | In case of a disaster at the primary data center, the maximum amount of lost data corresponds to the maximum of 15 minutes of writing. |
-| RTO < 4H  | In case of a disaster at the primary data center, recovery is guaranteed within 4 hours, considering the complexity of environments.          |
+| RPO 15 min | In the event of a disaster at the primary datacenter, the maximum amount of data lost corresponds to at most the last 15 minutes of writes.         |
+| RTO < 4 h  | In the event of a disaster at the primary datacenter, business continuity is guaranteed within 4 hours, depending on environment complexity.     |
 
-Upon activation of the PRA (Planned Recovery Action), Cloud Temple's team replicates the 'Global Mirror' LUN to the distant hypervisors for them to access the data. This setup requires reserving compute and RAM resources on the standby site for recovery in case of a disaster.
+In the event of a PRA activation, the Cloud Temple team performs a presentation operation of the __'Global Mirror'__ LUN to the remote hypervisors, enabling them to access the data. Therefore, this solution requires reserving compute resources and RAM at the 'standby' site to resume operations in case of disaster.
 
-Using this technology also necessitates doubling the storage space: it is essential to have exactly the same amount of space on the distant site as on the local site.
+Using this technology also requires doubling the disk space: the remote site must have exactly the same disk capacity as the local site.
 
-This method can impact application performance by 10%. Compatible storage classes are 500 IOPS/TB, 1500 IOPS/TB, and 3000 IOPS/TB.
+This mechanism may impact application performance by up to 10%. __Only storage classes 500 IOPS/To, 1500 IOPS/To, and 3000 IOPS/To are compatible.__
 
-| Reference                          | Unité  | SKU                                               |  
+| Reference                          | Unit  | SKU                                               |  
 |------------------------------------|--------|---------------------------------------------------|
-| STORAGE - Global Replication SAN    | 1 Tio  | csp:(region):iaas:storage:licence:globalmirror:v1 |
+| STORAGE - Global Replication SAN  | 1 TiB  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
-*__Note__:
+*__Note__*:
 
-- Since the offering is asynchronous, there's a possibility during a disaster that some disk operations are not written to the distant site. This could lead to data inconsistency, mitigated through risk assessment in the disaster recovery plan.
-- Block storage replication is performed transparently for virtual machines and applications,
-- Consequently, it's advisable to favor application-level or VM replication scenarios,
-- Compute and memory resources on the recovery site can be reduced to optimize costs if a degraded state is acceptable during the disaster recovery process.*
+- *Since this offering is asynchronous, there is a possibility that some disk operations were not written to the remote site during a disaster. There may therefore be a risk to data consistency, which should be mitigated in the risk assessment of the business continuity plan.*
+- *Block-level storage replication is transparent to virtual machines and applications.*
+- *For this reason, it is important to prioritize application-level replication scenarios, or alternatively virtual machine replication.*
+- *Compute and memory resources at the recovery site may be reduced to optimize costs, provided that a degraded operational state is acceptable for the business during the execution of the business continuity plan.*
 
-## Virtualization with VMware Cloud Temple by SecNumCloud
+## VMware Virtualization
 
-The qualified VMware virtualization offering from Cloud Temple, known as VMware Cloud Temple SecNumCloud, is built upon the technology __VMware vSphere__.
+The VMware Cloud Temple offering qualified SecNumCloud is based on the __VMware vSphere__ technology.
 
-The platform is managed automatically by Cloud Temple for security maintenance and operational readiness. It can be controlled via Shiva's graphical console interface or through associated APIs.
+The platform is managed automatically by Cloud Temple (security compliance maintenance, operational readiness maintenance, etc.).  
+It can be controlled via the Console's graphical interface or through the associated APIs.
 
-***Note**: Due to security requirements stemming from SecNumCloud qualification, the sponsor cannot directly access the VMware virtualization platform (neither vCenter, in particular). This is because SecNumCloud mandates a complete segregation between technical asset management interfaces and the commander's interface (Shiva console).*
+*__Note__*: *For security reasons related to the SecNumCloud qualification,  
+__the customer is not permitted to access the VMware virtualization platform directly__ (no direct access to vCenter, for example).  
+Indeed, the SecNumCloud qualification requires __complete segregation__ between the technical assets' management interfaces and the customer's interface (the Console).*
 
-- The implemented products include VMware ESXi, VMware vCenter, and VMware Site Recovery Manager.
-- *The virtualization offering's network does not utilize VMware NSX technology but is physically managed by Juniper hardware and VPLS protocol.*
-- *Storage does not employ VMware vSAN but exclusively uses IBM Fiber Channel 32G SANs.*
-- *No hidden optimizations (compression, deduplication, etc.) are implemented.*
+- The implemented products are VMware ESXi, VMware vCenter, and VMware Replication.
+- *The virtualization offering's network does not use VMware NSX technology, but is instead managed physically using Juniper technology and the VPLS protocol.*
+- *The storage does not use VMware vSAN technology, but exclusively IBM SANs over 32G Fiber Channel.*
+- *No hidden optimization techniques are applied (compression, deduplication, etc.).*
 
-### Definition of a Compute Pool ('Cpool')
+### Definition of a Compute Blade Cluster ('Cpool')
 
-The `__Cpool__` is a grouping of VMware ESXi hypervisors, also known as a *cluster ESX*.
+The __'Cpool'__ is a grouping of VMware ESXi hypervisors, also known as an *'ESX cluster'*.
 
-All hosts within an `__Cpool__` belong to the same tenant and availability zone (AZ). They must inherently share the same hardware class:
-__it's not possible to mix different types of compute nodes within the same cluster__.
+All hosts within a __'Cpool'* belong to the **same tenant and the same availability zone (AZ)**. They must necessarily have the same class:  
+__It is not possible to mix different types of compute blades within the same cluster__.
 
-Since all compute nodes come with the maximum physical memory, a software RAM usage limit is applied at the cluster level to ensure it matches the physically purchased RAM.
+Since all compute blades are delivered with the maximum physical memory, a software-level RAM usage limit is applied at the cluster level to ensure it matches the billed RAM.
 
-By default, each node in an `__Cpool__` has 128 GB of activated memory.
+By default, each compute blade has 128 GB of memory enabled within the __'Cpool'*.
 
-A `__Cpool__` can contain up to 32 hypervisors by default. Beyond this limit, a second cluster would need to be created.
+A __'Cpool'* can contain a maximum of 32 hypervisors. Beyond this limit, a second cluster must be created.
 
-Storage can be shared between the `__Cpool__`.
+Storage can be shared among __'Cpool'* clusters.
 
 ### Memory Allocation for a 'Cpool'
 
-Memory reservation per cluster is configurable. You can adjust the amount of RAM to match your needs at the cluster level, either reducing or increasing it accordingly.
+RAM reservation is configurable per cluster. You can reduce or increase the amount of RAM to match your cluster-wide requirements.
 
-**Important: Do not exceed an average memory usage of 85% per compute node.**
+__Be careful not to exceed an average memory utilization of 85% per compute node__.  
+Indeed, VMware's technology uses a compression-based optimization method that can significantly impact the performance of your workloads and complicate diagnostics.  
+Similarly, excessive memory pressure on your compute nodes will force the hypervisor to offload part of its memory to disk to meet the needs of virtual machines.
 
-The VMware technology employs a compression optimization method that significantly impacts workload performance and complicates diagnostics. Similarly, excessive memory pressure on compute nodes will force the hypervisor to offload some memory onto disk to accommodate virtual machine needs.
+This situation, known as __'Ballooning'__, severely impacts the performance of all virtual machines located on the affected datastore.  
+__Diagnosis becomes complex in this context__, as your monitoring will show performance impacts at the CPU level rather than at the memory or storage level.  
+Also keep in mind that the first action the hypervisor performs when starting a virtual machine is to create a __memory swap file (.vswap)__ on disk, sized exactly to the amount of memory assigned to the virtual machine. You must __account for this when sizing your storage__.
 
-This scenario, known as __'Ballooning'__, severely affects the overall performance of all virtual machines (VMs) on the affected datastore. Diagnosis becomes complex in this context because monitoring tools will show CPU impacts rather than memory or storage issues.
+Each compute node is delivered with 128 GB of memory enabled at the __'Cpool'__ level, but physically has access to the full amount of allocatable memory.
 
-Remember that upon VM startup, the hypervisor automatically creates a __swap memory file__ (.vswap) on the disk, equal to the size of the compute node's memory. This should be considered when determining your storage capacity.
+For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation upon activation of the _*'Cpool'*_ will be 3 × 128 GB = 384 GB of RAM.  
+You can extend this up to a maximum of 3 × 384 GB = 1,152 GB of memory.
 
-Each compute node comes with 128GB of software-activated memory in the __'Cpool'__, but physically has access to the full allocated memory.
-
-For instance, for a VMware cluster of three hosts (`vmware:standard:v2`), memory reservation for _*'Cpool'* activation would be 3 x 128GB = 384GB. You can extend this up to 3 x 384GB = 1152GB.
-
-    Minimum memory for a 'Cpool' = number of hosts x 128GB
-    Maximum memory for a 'Cpool' = number of hosts x the physical memory capacity of the compute node
-
----
+    Minimum memory for a 'Cpool' = number of hosts × 128 GB of memory  
+    Maximum memory for a 'Cpool' = number of hosts × physical memory capacity per compute node
 
 ### Cloud Temple Virtual Machine Catalogs
 
-Cloud Temple provides you with a regularly updated and enriched catalog of `Templates`. This catalog currently includes several dozens of `Templates` and images to deploy on your virtual machines.
+Cloud Temple provides you with a catalog of `Templates` regularly enriched and updated by our teams.  
+To date, it includes dozens of `Templates` and images ready to be deployed on your virtual machines.
 
 ### Hypervisor Updates
 
-Cloud Temple regularly provides updates for hypervisors to ensure the application of security patches. However, the responsibility for updating your hypervisors lies with you, as we do not have visibility into your business constraints.
+Cloud Temple regularly provides updated builds for hypervisors to ensure security patches are applied.  
+However, updating hypervisors remains your responsibility, as we do not have visibility into your business constraints.
 
-The update process is fully automated. To maintain service continuity, a minimum of two hypervisors per cluster must be available during the update. Ensure that you have the necessary permissions to carry out these actions.
+The update process is fully automated. To ensure service continuity, a minimum of two hypervisors is required per cluster during the update. Make sure you have the necessary permissions to perform these actions.
 
-### Management of Virtual Machine Affinity
+### VM Affinity Management
 
-__Affinity and anti-affinity rules__ enable control over the placement of virtual machines on your hypervisors. They can be used to manage utilization of your __'Cpool'__. For instance, they help balance workload distribution across servers or isolate resource-intensive workloads. In a VMware __'Cpool',__ these rules are frequently employed for managing vMotion behavior.
+__Affinity and anti-affinity rules__ allow you to control the placement of virtual machines across your hypervisors.  
+They can be used to manage resource utilization within your __'Cpool'__.  
+For example, they help balance workloads across servers or isolate resource-intensive workloads.  
+In a VMware __'Cpool'__, these rules are commonly used to manage virtual machine behavior during vMotion.  
+vMotion enables moving virtual machines from one host to another without service interruption.
 
-vMotion allows moving virtual machines between hosts without service interruption.
+You can configure the following rules through rule management:
 
-You can configure using affinity/anti-affinity rule management:
+- __Affinity Rules__: These rules ensure that certain virtual machines run on the same physical host.  
+  They are used to improve performance by keeping virtual machines that frequently communicate together on the same server, thus reducing network latency. Affinity rules are particularly useful in scenarios where performance is critical, such as databases or applications requiring fast inter-server communication.
 
-- **Affinity Rules**: These ensure certain virtual machines run on the same physical host. They enhance performance by keeping communication-heavy VMs on the same server, reducing network latency. Affinity rules are beneficial in high-performance scenarios, such as databases or applications requiring rapid server-to-server communication.
+- __Anti-Affinity Rules__: Conversely, these rules ensure that certain virtual machines do not run on the same physical host.  
+  They are essential for availability and resilience—for example, to prevent all critical machines from being affected in the event of a single host failure. Anti-affinity rules are crucial for high-availability applications, such as in production environments where fault tolerance is a priority.  
+  For instance, you wouldn’t want both of your Active Directory servers located on the same hypervisor.
 
-- **Anti-affinity Rules**: Conversely, these ensure certain virtual machines aren't placed on the same physical host. They're crucial for availability and resilience, preventing all critical VMs from being affected by a single server failure. Anti-affinity rules are vital for applications demanding high uptime, like production environments prioritizing fault tolerance. For example, you wouldn’t want both your Active Directory instances on the same hypervisor.
+When creating a rule, you define the rule type (affinity / anti-affinity), the rule name, its activation status (__'Status'__), and the virtual machines involved within your hypervisor cluster.
 
-When creating a rule, you specify the rule type (affinity/anti-affinity), its name, activation status (__'Status'__), and the VMs involved in your cluster of hypervisors.
+*Note: The affinity/anti-affinity rules available in the console are rules between virtual machines (not between hypervisors and virtual machines).*
 
-*Note: The affinity/anti-affinity rules provided in the console pertain to VM-to-VM interactions; no rules exist between hypervisors and virtual machines.*
+### Asynchronous Replication of Your Virtual Machines in VMware Environment
 
-### Asynchronous Replication of Virtual Machines in VMware Environment
+Asynchronous replication of your virtual machines is a mechanism that pushes write operations from the source hypervisor to the standby site at regular intervals.
 
-Asynchronous replication of your virtual machines involves pushing write operations from the source hypervisor to the standby site at regular intervals.
+After an initial hot copy of all active storage to the standby site, only write operations are pushed at regular intervals to the dormant site.  
+The interval depends on the volume of writes (ranging from every hour to every 24 hours).
 
-Following an initial hot copy of all active storage on the standby site, only writes are pushed to the standby machine (in sleep mode) at regular intervals. The interval varies depending on the volume of writes (from hourly to every 24 hours).
+VM replication relies on the hypervisor’s snapshot mechanism. As such, this solution shares the same drawbacks, particularly sensitivity to the VM’s write volume, since the snapshot process is recursive and requires closing the snapshot.
 
-Virtual machine replication leverages the instant cloning mechanism provided by the hypervisor. This solution shares similar drawbacks, particularly sensitivity to the virtual machine's write volume, as the instant clone process is a recursive closure mechanism for the instant clone.
-
-An example of a machine that typically does not support virtual machine replication is an FTP server receiving real-time video feeds from surveillance cameras. Such a machine spends most of its time writing and would be unable to complete an instant clone without pausing the operating system for a significant period (several tens of minutes). If the hypervisor cannot close the instant clone, it will do so automatically, potentially corrupting the virtual machine with no intervention possible.
+A typical example of a machine that does not support VM replication is an FTP server receiving real-time video streams from surveillance cameras. __The machine is constantly writing data and will not be able to close a snapshot without pausing the operating system for a significant period (several tens of minutes).__ If the hypervisor fails to close the snapshot, it will proceed to do so anyway—without any possibility to intervene, except by corrupting the virtual machine.
 
 | SLA             | Description                                                                                                                                               |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPO 1H to 24H    | In case of a disaster at the primary data center, the maximum amount of lost data is that of the last pushed write on the standby site. |
-| RTO < 15mn      | Operation to stop the mirrored virtual machine on the distant site                                                                                |
+| RPO of 1H to 24H | In the event of a disaster at the primary datacenter, the maximum amount of data lost corresponds to the last write push to the standby site.                   |
+| RTO < 15 min    | Virtual machine startup operation on the remote site after stopping the VM at the primary site.                                                          |
 
-In case of need or in case of failure on a machine at the primary site, the mirror machine on the standby site is activated. Recovery requires reserving compute and memory resources on the standby site as well as having identical storage capacity on the passive site as on the active site.
+In case of need or failure on a machine at the primary site, the mirrored machine at the standby site is activated.  
+Recovery requires reserving compute and RAM capacity at the standby site. It is also necessary to have the same storage space available at the passive site as at the active site.
 
-| Reference                         | Unité | SKU                                             |  
-|-----------------------------------|-------|-------------------------------------------------|
-| PRA - Replication VMware inter-AZ | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
+| Reference                         | Unit | SKU                                             |  
+|-----------------------------------|------|-------------------------------------------------|
+| PRA - VMware Inter-AZ Replication | 1 VM | csp:(region):iaas:vmware:licence:replication:v1 |
 
-*__Note__: The minimum RPO must be defined based on the virtual machine's write rate.*
+*__Note__: The minimum RPO must be defined based on the rate of change on the virtual machine.*
 
-## Virtual Machine Backups
+## Virtual Machine Backup
 
-Cloud Temple offers an **native, non-disruptive cross-architecture backup** (it's mandatory for the secnumcloud French certification).
+Cloud Temple offers a __native, non-optional cross-architecture backup solution__ (mandatory for French secnumcloud certification).
 
-Backups are stored in a high availability zone and on a physically separate datacenter from where the virtual machine is hosted.
+Backups are stored in a different availability zone and on a physically distinct datacenter from the one hosting the virtual machine. They are encrypted using the AES 256-bit symmetric key algorithm (cipher mode `xts-plain64`) to ensure data confidentiality.
 
-This setup safeguards against major failures at the production datacenter and allows restoration onto a secondary datacenter (e.g., due to fire) by leveraging another infrastructure.
+This setup protects against major failures in the production datacenter and enables restoration on a secondary datacenter (e.g., in case of fire).
 
-This solution encompasses:
+This solution includes:
 
-- **Hot, on-site backup of the entire disk array**,
-- **Instantaneous presentation and startup of a virtual machine from mass storage infrastructure and hot reload onto production SANs**,
-- **Partial file restoration from the backup**,
-- **Limited retention based solely on mass storage allocation**.
+- Hot off-site backup of all disks,
+- Instant presentation and boot of a virtual machine from the mass storage infrastructure, followed by hot reloading onto production SANs,
+- Partial file restoration from backups,
+- Retention limited solely by allocated mass storage space.
 
-This backup infrastructure is built upon IBM Spectrum Protect Plus, an agentless architecture solution known for its simplicity, ease of use, and capability to automate backup processes while optimizing mass storage usage.
+The backup infrastructure is based on *IBM Spectrum Protect Plus*, a no-agent architecture solution that is easy to use, enables automation of backup processes, and optimizes mass storage usage.
 
-Backup speeds and restoration times are contingent on the rate of data change within environments. The backup policy can be configured via [Cloud Temple Console](../console/console.md) for each virtual machine.
+Backup and restore speeds depend on the change rate within the environments.  
+Backup policies are configurable per virtual machine via the [Cloud Temple Console](../console/console.md).
 
-*Note:*
+*__Note:__*
 
-* Some virtual machines may not be compatible with this instantaneous snapshot technology, which relies on hypervisor-level snapshots. These are typically VMs with constant disk write operations. Since the hypervisor cannot immediately close a snapshot, it necessitates freezing the VM to complete the closure process, which can take several hours and is unstoppable.
+*__Some virtual machines are incompatible with this backup technology__, which relies on the hypervisor’s snapshot mechanisms. These typically include VMs with constant disk write workloads. The hypervisor cannot close the snapshot, which forces the virtual machine to be frozen to complete the closure operation. This freeze can last several hours and cannot be stopped.*
 
-In such cases, the solution involves excluding the target persistent disk and backing up data through an alternative method.
+*In such cases, the recommended approach is to exclude the disk subject to continuous writes and back up the data using an alternative method.*
 
-| Reference                                               | Unité | SKU                            |
+| Reference                                               | Unit  | SKU                            |
 | ------------------------------------------------------- | ----- | ------------------------------ |
-| BACKUP - Access to IBM Spectrum Protect Plus service     | 1 VM   | csp:(region):iaas:backup:vm:v1 |
+| BACKUP - Access to IBM Spectrum Protect Plus service    | 1 VM  | csp:(region):iaas:backup:vm:v1 |
 
-To create a new backup policy, you need to submit a service request to the support team. The support team can be reached via the anchor icon located at the top right corner of the window.
+#### Create a backup policy
 
-The process for creating a new backup policy involves submitting a service request that includes:
+To create a new backup policy, you must submit a request to support. Support is accessible via the buoy icon in the top-right corner of the window.
+
+Creating a new backup policy is done through a __service request__ specifying:
 
     Your Organization's name
-    Contact information (name, email, phone) for finalizing configuration
-    Tenant's name
-    Backup policy's name
-    Policy specifications (e.g., x days, y weeks, z months, etc.)
+    A contact name, email address, and phone number to finalize the configuration
+    The tenant name
+    The backup policy name
+    The retention characteristics (x days, y weeks, z months, ...)
 
 ## Advanced Data Protection (HSM/KMS)
 
-Cloud Temple offers an advanced virtual machine encryption solution based on hardware security modules (HSMs) and a key management service (KMS). This feature strengthens the protection of sensitive data through centralized and secure key management, directly integrated into the SecNumCloud environment.
+Cloud Temple offers an __advanced virtual machine encryption solution__ based on Hardware Security Modules (HSM) and a Key Management Service (KMS). This feature enhances the protection of sensitive data through centralized and secure key management, seamlessly integrated into the SecNumCloud environment.
 
 ### Technical Architecture
 
-The solution leverages a robust security infrastructure composed of:
+The solution is built on a robust security infrastructure composed of:
 
-- **HSM (Hardware Security Module)**
-  - Modules **Thales Luna S790** certified at **FIPS 140-3 level 3**
-- **KMS (Key Management System)**
-  - **Thales CipherTrust Manager** for centralized key management
-- **VMware Integration**
-  - Communication via the protocol **KMIP (Key Management Interoperability Protocol)**
+- __HSM (Hardware Security Module)__ : __Thales Luna S790__ modules certified __FIPS 140-3 Level 3__
+- __KMS (Key Management System)__ : __Thales CipherTrust Manager__ for centralized key management
+- __VMware Integration__ : Communication via the __KMIP__ (Key Management Interoperability Protocol)
 
 #### High Availability Deployment
 
-The HSM infrastructure is deployed across **three availability zones** in the FR1 region:
+The HSM infrastructure is deployed across __three availability zones__ in the FR1 region:
 
-- PAR7S
+- PAR7S  
 - TH3S  
 - AZ07
 
-This distribution ensures maximum high availability and resilience for the encryption service.
+This distribution ensures maximum __high availability__ and __resilience__ of the encryption service.
 
-### Functionality and Key Hierarchy
+### Key Hierarchy and Operation
 
-The system employs a **key hierarchy** for data security:
+The system uses a __cryptographic key hierarchy__ to ensure data security:
 
-| Level | Type of Key | Description | Location |
-|--------|-------------|-------------|--------------|
-| 1 | Root of Trust (RoT) | Master key by KMS | HSM Luna |
-| 2 | Domain Key (DK) | Client-defined domain key (multi-tenant isolation) | HSM Luna |
-| 3 | Key Encryption Key (KEK) | VM encryption key | CipherTrust Manager |
-| 4 | Data Encryption Key (DEK) | VM data encryption key | VMware ESXi |
+| Level | Key Type | Description | Location |
+|-------|----------|-------------|----------|
+| 1 | __Root of Trust (RoT)__ | Master key managed by KMS | HSM Luna |
+| 2 | __Domain Key (DK)__ | Domain key per client (multi-tenant isolation) | HSM Luna |
+| 3 | __Key Encryption Key (KEK)__ | Key encryption key per VM | CipherTrust Manager |
+| 4 | __Data Encryption Key (DEK)__ | Data encryption key per VM | VMware ESXi |
 
 #### Encryption Process
 
-1. **Key Generation**: VMware ESXi generates a unique DEK (Data Encryption Key) for each virtual machine
-2. **Protection**: The DEK is encrypted using the KEK (Key Encryption Key) stored in CipherTrust Manager
-3. **Security**: The KEK is itself secured by the HSM (Hardware Security Module) hierarchy
-4. **Storage**: The encrypted DEK is stored alongside the VM's configuration files
+1. __Generation__: VMware ESXi generates a unique DEK for each virtual machine  
+2. __Protection__: The DEK is encrypted by the KEK stored in CipherTrust Manager  
+3. __Securing__: The KEK is itself protected by the HSM key hierarchy  
+4. __Storage__: The encrypted DEK is stored alongside the VM's configuration files
 
-## Security and Compliance
-
-This section covers security measures and compliance requirements relevant to our cloud infrastructure. It includes details on data protection, access controls, encryption methods, auditing, and adherence to industry standards such as GDPR, HIPAA, and ISO 27001.
+### Security and Compliance
 
 #### Certifications
 
-- **FIPS 140-3 Level 3**: Highest level certification for HSMs
-- **Common Criteria EAL4+**: Advanced security evaluation
-- **SecNumCloud**: Integrated ANSSI qualification within the Cloud Temple environment
+- __FIPS 140-3 Level 3__ : Highest level certification for HSMs
+- __Common Criteria EAL4+__ : Advanced security evaluation
+- __SecNumCloud__ : ANSSI qualification integrated into the Cloud Temple environment
 
-### Multi-Tenant Isolation
+#### Multi-tenant Isolation
 
-- **Cryptographic Separation**: Each tenant has an isolated KMS domain
-- **Dedicated Keys**: A unique Domain Key per tenant
-- **Auditing and Traceability**: Comprehensive logging of actions by tenant
+- __Cryptographic Separation__: Each client has an isolated KMS domain  
+- __Dedicated Keys__: A specific Domain Key per client  
+- __Audit and Traceability__: Full logging of actions per domain
 
 ### Activation and Usage
 
-Virtual machine encryption can be activated **with a single click** from the [Shiva Console](../console/console.md).
+VM encryption can be activated __with a single click__ from the [Console](../console/console.md).
 
-For a detailed procedure with screenshots, refer to the [VM Encryption Tutorial](tutorials/vm_encryption.md).
+For a detailed step-by-step guide with screenshots, see the [VM Encryption Tutorial](tutorials/vm_encryption.md).
 
 #### Prerequisites
 
-- **Key Provider Configured**: An HSM/KMS provider must be enabled on the vStack.
-- **VM Shut Down**: The VM should be powered off before encryption.
-- **No Active Replication**: The VM should not be replicated (incompatible with Global Mirror).
-- **No Snapshots**: No instantaneous snapshots should be present.
-- **Subscription to Service**: Advanced protection service must be subscribed to.
+- __Key provider configured__: A HSM/KMS provider must be enabled on the vStack
+- __Virtual machine powered off__: The VM must be stopped before encryption
+- __No active replication__: The VM must not be replicated (incompatible with Global Mirror)
+- __No snapshots__: No snapshots must be present
+- __Service subscription__: Advanced protection service must be subscribed
 
-*__Note__: For detailed prerequisites and the complete procedure, refer to the [VM Encryption Guide](tutorials/vm_encryption.md).*
+*__Note__: For more details on prerequisites and the complete procedure, refer to the [VM Encryption Guide](tutorials/vm_encryption.md).*
 
-## Limitations and Considerations
-
-This section outlines the constraints and considerations relevant to our cloud computing, IT systems, and software engineering projects. These limitations are crucial for ensuring project success, maintaining security, and adhering to industry standards.
-
-1. **Resource Constraints**:
-   - **Compute Capacity**: Limited processing power or memory can restrict the scalability of applications.
-   - **Network Bandwidth**: Insufficient bandwidth may hinder data transfer rates and application performance.
-   - **Storage Limitations**: Storage capacity constraints might affect data retention and retrieval capabilities.
-
-2. **Security Considerations**:
-   - **Data Protection**: Ensuring compliance with regulations like GDPR, HIPAA, etc., for sensitive data handling.
-   - **Access Control**: Implementing robust authentication mechanisms to prevent unauthorized access.
-   - **Network Security**: Employing firewalls and intrusion detection systems to safeguard against cyber threats.
-
-3. **Compliance Requirements**:
-   - Adherence to industry-specific regulations (e.g., financial, healthcare) is essential for legal operations.
-   - Compliance with data privacy laws impacts how we handle user information.
-
-4. **Performance and Reliability**:
-   - Ensuring high availability through redundancy and failover mechanisms.
-   - Optimizing application performance to meet service level agreements (SLAs).
-
-5. **Cost Management**:
-   - Balancing resource utilization with cost efficiency, avoiding over-provisioning or under-utilization of resources.
-   - Monitoring and optimizing cloud spending through tools like AWS Cost Explorer or Azure Cost Management.
-
-6. **Scalability and Elasticity**:
-   - Designing systems that can scale dynamically based on demand without compromising performance.
-   - Leveraging auto-scaling features provided by cloud platforms (e.g., AWS Auto Scaling, Azure Autoscale).
-
-7. **Integration Challenges**:
-   - Ensuring seamless integration with existing legacy systems or third-party applications.
-   - Managing interoperability issues across different technologies and platforms.
-
-8. **Maintenance and Updates**:
-   - Planning for regular system updates, patches, and maintenance to mitigate security vulnerabilities.
-   - Establishing robust monitoring and alerting systems for proactive issue resolution.
-
-9. **Vendor Lock-in Mitigation**:
-   - Avoiding dependency on a single cloud provider by adopting multi-cloud or hybrid strategies where feasible.
-   - Ensuring portability of applications across different cloud environments.
-
-10. **Talent and Skills Gap**:
-    - Addressing the shortage of skilled professionals in emerging technologies like AI, machine learning, and DevOps practices.
-    - Investing in continuous training and development to keep up with evolving IT landscapes.
-
-These considerations are critical for navigating the complexities of cloud computing projects while ensuring efficiency, security, compliance, and scalability. Each limitation requires a tailored approach that balances technical requirements with business objectives.
+### Limitations and considerations
 
 #### Compatibility
 
-- **Global Mirror**: Encrypted virtual machines are NOT compatible with Global Mirror replication.
-- **Restore**: Encrypted VM backups maintain their cryptographic protection.
-- **Export**: Exporting encrypted VMs requires specific procedures.
+- __Global Mirror__: Encrypted virtual machines are __not compatible__ with Global Mirror replication  
+- __Restore__: Backups of encrypted VMs retain their cryptographic protection  
+- __Export__: Exporting encrypted VMs requires specific procedures
 
-### Performance
+#### Performance
 
-- **Minimal Impact**: Hardware encryption ensures optimal performance
-- **Transparency**: No effect on application functionality
+- __Minimal impact__: Hardware encryption ensures optimal performance
+- __Transparency__: No impact on application operation
 
 ### Recommended Use Cases
 
 This advanced protection solution is particularly well-suited for:
 
-- **Sensitive Data**: Personal information, financial data, industrial secrets
-- **Regulatory Compliance**: RGPD, HIPAA, PCI-DSS, ISO 27001, PDIS requirements
-- **Critical Sectors**: Banking, insurance, healthcare, defense
-- **Digital Sovereignty**: Protection against unauthorized access, even in case of compromise
+- __Sensitive Data__: Personal information, financial data, trade secrets  
+- __Regulatory Compliance__: GDPR, HIPAA, PCI-DSS, ISO 27001, PDIS requirements  
+- __Critical Sectors__: Banking, insurance, healthcare, defense  
+- __Digital Sovereignty__: Protection against unauthorized access, even in case of compromise  
 
-| Reference | Unité | SKU |
-|------------|-------|-----|
-| PROTECTION AVANCÉE - Chiffrement VM via HSM/KMS | 1 VM | `csp:(region):iaas:vmware:encryption:hsm:v1`
+| Reference | Unit | SKU |
+|-----------|------|-----|
+| ADVANCED PROTECTION - VM Encryption via HSM/KMS | 1 VM | csp:(region):iaas:vmware:encryption:hsm:v1 |
 
-*Note*:
+*__Note__:*  
 
-- *This service requires a specific subscription and is not included in the standard IaaS offering*
-- *Key management remains entirely under Cloud Temple's control within the SecNumCloud environment*
+- *The service requires a specific subscription and is not included in the standard IaaS offering*  
+- *Key management remains fully under Cloud Temple’s control within the SecNumCloud environment*  
 - *Encryption keys never leave the French, sovereign infrastructure*

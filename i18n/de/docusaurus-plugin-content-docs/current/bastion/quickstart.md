@@ -8,75 +8,77 @@ import creerSession3 from './images/creer_session3.png'
 import ouvrirSession from './images/ouvrir_session.png'
 import ouvrirSession2 from './images/ouvrir_session2.png'
 
-Diese Schnellstartanleitung zeigt Ihnen, wie Sie die Erstellung einer Appliance beantragen und wie Sie eine neue Sitzung registrieren und sich damit verbinden können.
+Diese Schnellstartanleitung zeigt Ihnen, wie Sie die Erstellung einer Appliance anfordern und wie Sie eine neue Session erstellen und daran teilnehmen.
 
 ## Voraussetzungen
 
-1. Sie haben das Cloud Temple-Angebot abonniert (Bastion Appliance-Abonnement).
-2. Die zu verwaltenden Geräte müssen über das Netzwerk erreichbar sein, in dem die Bastion Appliance bereitgestellt wird.
-3. Sie haben die Rechte für das Bastion-Modul.
-4. Bei der Bereitstellung der On-Premise-Appliance müssen die entsprechenden Datenflüsse geöffnet sein.
+1. Ein Abonnement für das Cloud Temple-Angebot (Bastion Appliance-Abonnement) abgeschlossen haben.
+2. Die zu verwaltenden Geräte müssen vom Netzwerk aus erreichbar sein, in dem die Bastion Appliance bereitgestellt ist.
+3. Die entsprechenden Berechtigungen für das Bastion-Modul besitzen.
+4. Bei einer On-Premise-Bereitstellung der Appliance müssen die entsprechenden Netzwerkflüsse freigegeben sein.
 
-## Für den Betrieb des Bastion-Produkts erforderliche Datenflüsse
+## Required flows for the proper operation of the Bastion product
 
-Für den ordnungsgemäßen Betrieb der Bastion Appliance sind mehrere Datenflüsse erforderlich.
+Several flows are necessary for the proper operation of the Bastion Appliance.
 
-### Das Bastion-Gateway
-| Quelle                   | Ziel                                        | Protokoll |
+### Bastion Gateway
+
+| Source                   | Destination                                 | Protocol  |
 |--------------------------|---------------------------------------------|-----------|
-| Bastion-Client-Appliance | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242  |
+| Client bastion appliance | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242  |
 
-### RDP-Verwaltungsdatenflüsse
+### RDP Administration Traffic
 
-| Quelle                   | Ziel                        | Protokoll |
-|--------------------------|----------------------------|-----------|
-| Bastion-Client-Appliance | Zu verwaltende Instanzen   | TCP/3389  |
+| Source                   | Destination                 | Protocol  |
+|--------------------------|-----------------------------|-----------|
+| Client bastion appliance | Instances to administer     | TCP/3389  |
 
-### SSH-Verwaltungsdatenflüsse
+### SSH Administration Flow
 
-| Quelle                   | Ziel                        | Protokoll |
-|--------------------------|----------------------------|-----------|
-| Bastion-Client-Appliance | Zu verwaltende Instanzen   | TCP/22    |
+| Source                   | Destination                 | Protocol  |
+|--------------------------|-----------------------------|-----------|
+| Client bastion appliance | Instances to administer       | TCP/22    |
 
-## Beantragung der Erstellung einer Appliance
-Bevor Sie eine Appliance bereitstellen können, müssen Sie ein Appliance-Abonnement über eine Support-Anfrage beantragen.
-Der Support ist in der Shiva-Konsole über das Rettungsring-Symbol in der Leiste oben rechts im Fenster zugänglich.
+## Requesting the Creation of an Appliance
+
+Before you can deploy an Appliance, you must submit a subscription request for an Appliance via a support ticket.  
+The support portal is accessible from the Console using the buoy icon in the top-right corner of the window.
 
 <img src={shivaSupport} />
 
-## Gerät registrieren
+## Gerät speichern
 
-Um regelmäßig auf ein zu verwaltendes Gerät zuzugreifen, ist es sinnvoller, eine Sitzung zu erstellen, die bei jeder Verbindung nur Ihren Benutzernamen und Ihr Passwort erfordert.
+Um ein Gerät, das verwaltet werden soll, regelmäßig zu nutzen, ist es sinnvoller, eine Session zu erstellen, die Sie bei jeder Anmeldung nur mit Ihrem Benutzernamen und Ihrem Passwort authentifiziert.
 
-Gehen Sie dazu auf die Registerkarte "Geräte" im Menü "Bastion" und klicken Sie dann auf die Schaltfläche "Neues Gerät".
+Gehen Sie hierzu im Menü „Bastion“ zum Tab „Geräte“ und klicken Sie auf die Schaltfläche „Neues Gerät“.
 
 <img src={creerSession} />
 
-Füllen Sie dann die notwendigen Informationen für die Erstellung Ihres Geräts aus:
+Geben Sie nun die erforderlichen Informationen für die Erstellung Ihres Geräts ein:
 
-    - Gerätename;
-    - Beschreibung;
-    - Zugehörige Appliance;
-    - Protokolltyp (SSH oder RDP);
-    - Host-IP-Adresse;
-    - Tastaturkonfiguration.
+- Gerätename;
+- Beschreibung;
+- zugeordnete Appliance;
+- Protokolltyp (SSH oder RDP);
+- IP-Adresse des Hosts;
+- Tastaturkonfiguration.
 
 <img src={creerSession2} />
 
-Eine Benachrichtigung, die die Erstellung des Geräts anzeigt, sollte oben rechts auf der Seite erscheinen. Die Sitzung wird dann zur Liste Ihrer Geräte hinzugefügt.
+Eine Benachrichtigung sollte oben rechts auf der Seite erscheinen, die die Erstellung des Geräts anzeigt. Die Session wird anschließend der Liste Ihrer Geräte hinzugefügt.
 
-Um ein neues Gerät zu erstellen, können Sie auch über die Registerkarte "Appliances" gehen, indem Sie auf die Aktionsleiste der Appliance klicken, mit der Sie ein Gerät verknüpfen möchten.
+Sie können ein neues Gerät auch über den Tab „Appliances“ erstellen, indem Sie auf die Aktionsschaltfläche der Appliance klicken, der Sie ein Gerät zuordnen möchten.
 
 <img src={creerSession3} />
 
-## Verbindung zu einem Gerät herstellen
+## Connect to a device
 
-Gehen Sie zur Registerkarte "Geräte" der Registerkarte "Bastion". Klicken Sie auf die Aktionsleiste des Geräts, das Sie öffnen möchten, und klicken Sie auf die Schaltfläche "Öffnen".
+Go to the "Devices" tab in the "Bastion" tab. Click on the action bar of the device you want to open, and then click the "Open" button.
 
 <img src={ouvrirSession} />
 
-Bei jeder Verbindung zum Gerät müssen Sie nur Ihre Authentifizierungsinformationen eingeben.
+For each connection to a device, you only need to provide your authentication credentials.
 
 <img src={ouvrirSession2} />
 
-Nach der Eingabe Ihrer Anmeldedaten erscheint eine Benachrichtigung, die den Beginn der Verbindung mit Ihrem Gerät bestätigt, und die Konsole zu Ihrer virtuellen Maschine wird geöffnet.
+After entering your credentials, a notification confirming the start of the connection to your device appears, and the console to your virtual machine opens.

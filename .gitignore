@@ -10,6 +10,8 @@
 
 # Python
 __pycache__/
+scripts/translate_py/__pycache__/
+scripts/translate_py/venv/
 *.pyc
 
 # Misc

@@ -2,7 +2,7 @@
 title: Tutorials
 ---
 
-These tutorials help you deploy and manage a Cloud Temple Bastion from the Shiva portal.
+These tutorials help you deploy and manage a Cloud Temple Bastion from the Console portal.
 
 
 <div class="card">

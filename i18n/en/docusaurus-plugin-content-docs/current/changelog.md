@@ -3,33 +3,76 @@ title: Change Tracking
 sidebar_position: 2
 ---
 
-# Tracking Changes
+# Change Tracking
 
-### August 14, 2025: Improvements and corrections
+### December 15, 2025: Stabilization and Multilingual Fixes
 
-- **LLMaaS** : Update and clarification of FAQ answers to better address technical and strategic questions. Added the FAQ to the navigation.
-- **General** : Correction of several internal navigation links throughout the documentation for a smoother experience.
+- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
+- **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
+- **Build**: Validation of deployment across all 5 supported languages.
+
+### December 11, 2025: Managed Kubernetes Updates
+
+- **Managed Kubernetes**: Added a new tutorial on using **Gateway API** for advanced traffic management.
+- **Managed Kubernetes**: Updated documentation on quota management (Ceph) and cost management tool optimizations (OpenCost).
+
+### November 22, 2025: LLMaaS Updates and General Improvements
+
+- **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
+- **Multilingual**: Resolved accessibility issues on the Italian and German versions of the documentation.
+- **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
+
+### November 20, 2025: Major PaaS OpenShift Update
+
+- **OpenShift PaaS (PR #194)**: Complete overhaul and update of the OpenShift documentation, including new screenshots and full translation into English, Spanish, German, and Italian to support our international expansion.
+
+### November 3, 2025: Kubernetes Tutorials Enhancements
+
+- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
+- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
+
+### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
+
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick-start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
+- **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
+- **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
+
+### October 18, 2025: Maintenance and New Documentation
+
+- **LLMaaS**: Added a new FAQ entry to introduce the public status page ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), enabling real-time monitoring of the availability and performance of each model.
+- **Contractual**: Major update to the Data Processing Agreement (DPA v2) to reflect the latest legal and compliance requirements.
+- **Console**: Improved and clarified documentation regarding order management.
+- **Marketplace**: Added a detailed tutorial on customizing virtual machine (VM) images to create reusable templates.
+- **LLMaaS**: Added a guide to configure the VSCode CLINE extension for using Cloud Temple's language models directly from the editor.
+- **Object Storage (OSS)**: Added clarifications on the lifecycle policy for data deletion.
+- **Object Storage (OSS)**: Added a troubleshooting guide for checksum errors (`XAmzContentSHA256Mismatch`) with AWS CLI and Terraform.
+- **LLMaaS**: Updated the list of available models and retranslated over 50 documents to ensure consistency.
+
+### August 14, 2025: Improvements and Fixes
+
+- **LLMaaS**: Updated and clarified FAQ responses to better address technical and strategic questions. Added the FAQ to the navigation.
+- **General**: Fixed several internal navigation links throughout the documentation for a smoother experience.
 
 ### July 2025: New Features and Major Updates
 
 - **Object Storage (OSS)**:
     - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
-    - Additions to the concepts of storage accounts and object locking (Object Lock).
+    - Added clarifications on storage account concepts and object locking (Object Lock).
 - **OpenSource IaaS**:
-    - Addition of detailed documentation on High Availability (HA) management for resource pools and virtual machines.
+    - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
 - **Console**:
-    - Update to the security alerts page with the latest vulnerabilities.
-- **Network**:
-    - Addition of new screenshots to illustrate IPv6 connectivity configuration.
+    - Updated the security alerts page with the latest vulnerabilities.
+- **Networking**:
+    - Added new screenshots to illustrate IPv6 connectivity configuration.
 
-### June 29, 2025: Finalization of the LLMaaS Documentation
+### June 29, 2025: Finalization of LLMaaS Documentation
 
-- Completion of the full test suite validation.
+- Full test suite validation.
 - Correction and validation of RAG pipelines with FAISS and Qdrant.
-- Enrichment of tutorials with more detailed technical explanations.
-- Addition of a section on prompt security and model lifecycle within the concepts.
-- Improvement of the RAG explanation page with diagrams and details on embedding models.
-- Update of the API documentation, quick start guide, and service presentation.
-- Addition of pricing for the Audio Transcription endpoint.
-- Addition of the model lifecycle forecast plan.
-- Addition of the responsibility matrix for the LLMaaS offer.
+- Enhanced tutorials with more detailed technical explanations.
+- Added a section on prompt security and model lifecycle within the concepts.
+- Improved the RAG explanation page with diagrams and details on embedding models.
+- Updated API documentation, quick start guide, and service presentation.
+- Added pricing for the Audio Transcription endpoint.
+- Added the projected model lifecycle roadmap.
+- Added the responsibility matrix for the LLMaaS offering.

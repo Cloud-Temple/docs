@@ -32,7 +32,7 @@ La plateforme est qualifiée __SecNumCloud__ par l'[ANSSI](https://www.ssi.gouv.
 - Ressources réseau (Internet, réseaux privés).
 - Sauvegardes croisées avec rétention configurable.
 - Réplication asynchrone pour le stockage ou les machines virtuelles.
-- Pilotage via la [Console Shiva](../console/console.md) ou en mode Infrastructure as Code grâce aux APIs et au provider Terraform.
+- Pilotage via la [Console](../console/console.md) ou en mode Infrastructure as Code grâce aux APIs et au provider Terraform.
 
 ## Avantages
 
@@ -137,6 +137,18 @@ les zones de disponibilité ou faciliter les interventions sur les baies de stoc
 
 Le stockage est principalement du stockage de type FLASH NVME dédié aux charges de travail professionnelles.
 Les disques sont utilisés par les baies de stockage en [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
+
+### Sécurité et Chiffrement du Stockage Bloc
+
+Pour garantir la confidentialité de vos données au repos, l'ensemble de notre infrastructure de stockage bloc intègre un chiffrement matériel robuste.
+
+-   **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
+-   **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
+-   **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
+
+:::warning Point d'attention sur la réplication
+Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
+:::
 
 Le classe de stockage __'Mass Storage'__ propose des disques mécaniques pour les besoins d'archivages
 dans un contexte d'efficience économique. Plusieurs niveaux de performances sont disponibles :
@@ -267,11 +279,11 @@ L'usage de ce mécanisme peut impacter la performance de l'application à hauteu
 L'offre de virtualisation VMware Cloud Temple qualifiée SecNumCloud est basée sur la technologie __VMware Vsphere__.
 
 La plateforme est managées par Cloud Temple de façon automatique (maintien de condition de sécurité, maintien en condition opérationnelle, ...).
-Elle est pilotable via l'interface graphique de la console Shiva ou via les APIs associées.
+Elle est pilotable via l'interface graphique de la Console ou via les APIs associées.
 
 *__Remarque__* : *Pour des raisons de sécurité liées à la qualification SecNumCloud,
 __il n'est pas possible pour le commanditaire d'accéder directement à la plateforme de virtualisation VMware__ (aucun accès direct au vCenter notamment).
-En effet, la qualification SecNumCloud impose __une totale ségrégation__ entre les interfaces de pilotage des actifs techniques et l'interface du commanditaire (la console Shiva).*
+En effet, la qualification SecNumCloud impose __une totale ségrégation__ entre les interfaces de pilotage des actifs techniques et l'interface du commanditaire (la Console).*
 
 - Les produits misent en oeuvre sont VMware ESXi, VMware Vcenter et VMware Replication.
 - *Le réseau de l'offre de virtualisation n'utilise pas la technologie VMware NSX, mais est piloté matériellement par la technologie Juniper et le protocole VPLS.*
@@ -389,7 +401,7 @@ est nécessaire d'avoir le même espace de stockage sur le site passif que sur l
 
 Cloud Temple propose __une architecture de sauvegarde croisée native et non débrayable__ (elle est obligatoire dans la qualification secnumcloud francaise).
 
-Les sauvegardes sont stockées dans une zone de disponibilité et sur un datacenter physique différent de celui qui héberge la machine virtuelle.
+Les sauvegardes sont stockées dans une zone de disponibilité et sur un datacenter physique différent de celui qui héberge la machine virtuelle. Elles sont chiffrées via un algorithme à clés symétriques AES 256 bits (cipher mode `xts-plain64`) pour garantir la confidentialité des données.
 
 Cela permet de se protéger en cas de défaut majeur sur le datacenter de production et de restaurer sur un datacenter secondaire (incendie par exemple).
 
@@ -486,7 +498,7 @@ Le système utilise une __hiérarchie de clés cryptographiques__ pour assurer l
 
 ### Activation et utilisation
 
-Le chiffrement des machines virtuelles s'active __en un seul clic__ depuis la [Console Shiva](../console/console.md).
+Le chiffrement des machines virtuelles s'active __en un seul clic__ depuis la [Console](../console/console.md).
 
 Pour une procédure détaillée avec captures d'écran, consultez le [tutoriel de chiffrement des machines virtuelles](tutorials/vm_encryption.md).
 

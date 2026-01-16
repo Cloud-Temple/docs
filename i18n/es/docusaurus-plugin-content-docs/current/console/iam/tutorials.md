@@ -2,7 +2,7 @@
 title: Tutorials
 ---
 
-Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Shiva.
+Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Console.
 
 
 <div class="card">
