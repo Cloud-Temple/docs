@@ -1,44 +1,43 @@
 ---
 tags:
   - home
-  - accueil
-  - onboarding
+  - startseite
+  - einrichtung
 ---
 
+# Welcome to the documentation area
 
-# Willkommen im Dokumentationsbereich
-
-Willkommen im Dokumentationsbereich von **Cloud Temple**! Dieser Bereich wurde entwickelt, um Sie bei der Verwaltung Ihrer Cloud Temple-Dienste über unsere **Cloud Temple Konsole**, auch bekannt als **Shiva**, zu unterstützen.
+Welcome to the **Cloud Temple** documentation area! This space has been designed to assist you in managing your Cloud Temple services through our **Cloud Temple Console**.
 
 ## Erste Schritte
 
 <div class="card-grid">
   <div class="card">
-    <h3>Erkunden Sie die Konsole</h3>
-    <p>Lernen Sie, wie Sie unsere Konsole zur Verwaltung Ihrer Cloud-Ressourcen nutzen können.</p>
+    <h3>Erkunden der Konsole</h3>
+    <p>Lernen Sie, wie Sie unsere Konsole zur Verwaltung Ihrer Cloud-Ressourcen nutzen.</p>
     <a href="console" class="card-link">Konsole entdecken &rarr;</a>
   </div>
-    <div class="card">
-    <h3>Erste Schritte mit Object Storage</h3>
-    <p>Lernen Sie, wie Sie Object Storage verwenden</p>
+  <div class="card">
+    <h3>Erste Schritte mit dem Objektspeicher</h3>
+    <p>Lernen Sie, wie Sie den Objektspeicher verwenden.</p>
     <a href="storage/oss" class="card-link">Bucket konfigurieren &rarr;</a>
   </div>
   <div class="card">
-    <h3>Ressourcen bereitstellen</h3>
+    <h3>Bereitstellen Ihrer Ressourcen</h3>
     <p>Erstellen Sie Ihre ersten Cloud-Ressourcen schnell und effizient.</p>
     <a href="iaas_vmware/quickstart" class="card-link">Loslegen &rarr;</a>
   </div>
   <div class="card">
-    <h3>Mit wenigen Klicks bereitstellen</h3>
-    <p>Konfigurieren Sie Ihre Dienste ganz einfach mit unseren detaillierten Anleitungen.</p>
+    <h3>In wenigen Klicks bereitstellen</h3>
+    <p>Konfigurieren Sie Ihre Dienste einfach mithilfe unserer detaillierten Anleitungen.</p>
     <a href="iaas_vmware/quickstart" class="card-link">Bereitstellen &rarr;</a>
   </div>
 </div>
 
-## Wie nutzt man diese Dokumentation?
+## How to use this documentation?
 
-Diese Dokumentation ist Ihr Leitfaden, um das volle Potenzial unserer Cloud-Produkte und der Cloud Temple **Konsole** auszuschöpfen.
+This documentation is your guide to unlocking the full potential of our Cloud products and the **Cloud Temple console**.
 
-Sie finden hier Tutorials, technische Anleitungen und Referenzen, die die Verwaltung Ihrer Cloud-Ressourcen vereinfachen.
+You'll find tutorials, technical guides, and references to simplify the management of your cloud resources.
 
-Wir hoffen, dass Sie diese Dokumentation nützlich finden und die von **Shiva** gebotenen Möglichkeiten voll ausschöpfen können.
+We hope you find this documentation helpful and make the most of the possibilities offered by **Console**.

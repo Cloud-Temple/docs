@@ -2,7 +2,7 @@
 title: Tutorials
 ---
 
-Diese Tutorien helfen Ihnen, die IaaS VMWare-Komponente über das Shiva-Portal zu nutzen und zu konfigurieren.
+Diese Tutorien helfen Ihnen, die IaaS VMWare-Komponente über das Konsole-Portal zu nutzen und zu konfigurieren.
 
 ## Eine VMWare-VM verschlüsseln
 
@@ -19,7 +19,7 @@ Diese Tutorien helfen Ihnen, die IaaS VMWare-Komponente über das Shiva-Portal z
 
 ## Schnittstelle
 
-Nach der Anmeldung am Shiva-Webportal finden Sie im Menü __'IaaS'__, Untermenü __'Konfiguration'__ und dem Tab __'vCenters'__, Informationen darüber, ob die Verschlüsselung auf dem betreffenden vStack aktiviert ist.
+Nach der Anmeldung am Konsole-Webportal finden Sie im Menü __'IaaS'__, Untermenü __'Konfiguration'__ und dem Tab __'vCenters'__, Informationen darüber, ob die Verschlüsselung auf dem betreffenden vStack aktiviert ist.
 
 ![](images/shiva_hsm_kms_000.png)
 

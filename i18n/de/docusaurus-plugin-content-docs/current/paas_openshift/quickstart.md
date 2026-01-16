@@ -1,183 +1,149 @@
 ---
-title: Leitfaden zum Einstieg
+title: Schnellstartanleitung
 ---
+import oshiftMenu_001 from './images/oshift_menu_001.png'
+import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
+import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
+import oshiftMenu_002 from './images/oshift_menu_002.png'
+import oshiftMenu_003 from './images/oshift_menu_003.png'
+import oshiftOrder_001 from './images/oshift_order_001.png'
 
-import oshiftRights from './images/oshift_rights.png';
-import oshiftMenu_001 from './images/oshift_menu_001.png';
-import oshiftMenu_002 from './images/oshift_menu_002.png';
-import oshiftMenu_003 from './images/oshift_menu_003.png';
+# QuickStart for the OpenShift Offering
 
-## Deployment of a Red Hat OpenShift Environment within Your Tenant
+This page guides you through the initial steps to use the **OpenShift** offering from the Cloud Temple console. Follow these instructions to explore the available menus and features.
 
----
+## Voraussetzungen
 
-### Schritt 1: Préparation du Conteneur OpenShift
+Stellen Sie sicher, dass die folgenden Punkte erfüllt sind, bevor Sie beginnen:
 
-1. **Création d'un Conteneur OpenShift** :
-   - Utilisez l'interface de ligne de commande (CLI) `oc` pour créer un nouveau conteneur OpenShift.
-   ```bash
-   oc create -f <your-openshift-config-file>.yaml
-   ```
+1. **Aktivierte Abonnement**: Ihre Organisation muss ein OpenShift-Abonnement abgeschlossen haben.
+2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Berechtigungen verfügen, um auf OpenShift-Ressourcen zuzugreifen und diese zu verwalten.
 
-2. **Configuration des Ressources** :
-   - Définissez les ressources nécessaires telles que le CPU, la mémoire, etc., dans le fichier de configuration YAML.
-   ```yaml
-   resources:
-     requests:
-       memory: "512Mi"
-       cpu: "500m"
-     limits:
-       memory: "1Gi"
-       cpu: "1"
-   ```
+## Erster Zugriff und Bestellung
 
-### Schritt 2: Déploiement des Applications
+Beim ersten Zugriff auf das OpenShift-Angebot nach Aktivierung der Subscription und Konfiguration der Berechtigungen wird folgende Startseite angezeigt:
 
-1. **Création d'un Image Docker** :
-   - Construisez un image Docker pour votre application en utilisant un fichier Dockerfile.
-   ```Dockerfile
-   FROM node:14
-   WORKDIR /app
-   COPY package*.json ./
-   RUN npm install
-   COPY . .
-   EXPOSE 8080
-   CMD ["npm", "start"]
-   ```
+<img src={oshiftOrder_001} />
 
-2. **Déploiement de l'Image** :
-   - Utilisez `oc` pour déployer votre image sur le conteneur OpenShift.
-   ```bash
-   oc new-app <your-docker-image> --name=<your-application-name>
-   ```
+Diese Seite zeigt an, dass Sie noch keine OpenShift SecNumCloud-Cluster bereitgestellt haben.
 
-### Schritt 3: Configuration des Services et Routes
+**Um Ihren ersten OpenShift SecNumCloud-Cluster zu bestellen, wenden Sie sich bitte an den Cloud Temple-Support.**
 
-1. **Services** :
-   - Créez un service pour exposer votre application à l'extérieur du conteneur OpenShift.
-   ```yaml
-   services:
-     - name: <your-service-name>
-       port: 8080
-       targetPort: 8080
-   ```
+Sobald Ihre Bestellung vom Support bearbeitet wurde und Ihr Cluster bereitgestellt ist, können Sie auf das OpenShift-Menü zugreifen.
 
-2. **Routes** :
-   - Configurez les routes pour accéder à votre application via le service.
-   ```yaml
-   routes:
-     - host: your-domain.com
-       route: <your-route-name>
-   ```
+## Access to the OpenShift Interface
 
-### Schritt 4: Sauvegarde et Récupération
-
-1. **Sauvegardes** :
-   - Utilisez les outils de sauvegarde fournis par OpenShift pour protéger vos données.
-   ```bash
-   oc adm backup create <backup-name> --namespace=<your-namespace>
-   ```
-
-2. **Récupération** :
-   - Récupérez des instances ou des applications en utilisant les commandes de récupération fournies par OpenShift.
-   ```bash
-   oc restore <backup-name> --namespace=<your-namespace>
-   ```
-
-### Schritt 5: Surveillance et Gestion
-
-1. **Surveillance** :
-   - Intégrez des outils de surveillance comme Prometheus pour surveiller les performances de votre application.
-   ```yaml
-   spec:
-     serviceMonitor:
-       enabled: true
-   ```
-
-2. **Gestion** :
-   - Utilisez les interfaces de gestion fournies par OpenShift pour gérer vos applications, ressources et configurations.
-
----
-
-### Zugriffsrechtezuweisung
-
-Es ist unbedingt notwendig, dass der Tenant-Administrator ([Tenant](../console/iam/concepts.md#tenant)) den Zugriff auf die Plattform Openshift für das Administrativen Benutzer Openshift genehmigt, damit dieser diese zugreifen kann:
-
-<img src={oshiftRights} />
-
-### Zugriff auf das Openshift-Umgebung innerhalb eines Tenants
-
-Nach der Zuweisung der Berechtigungen erscheint das Modul `__Openshift__` in der Menüleiste der Cloud Temple Console:
+Once your first cluster has been deployed, a new menu titled **OpenShift** appears in the Cloud Temple console. This menu contains a main submenu: **Clusters**.
 
 <img src={oshiftMenu_001} />
 
-Sie sehen dann die Openshift-Clusters, die innerhalb Ihres Tenants bereitgestellt wurden.
+### 1. Liste der Clusters
 
-Klicken Sie auf das Cluster, das Sie verwalten möchten. Dadurch gelangen Sie in die Administrationsumgebung des Clusters:
+Das Untermenü **Clusters** zeigt Ihnen eine Tabelle mit allen verfügbaren OpenShift-Clustern an, die innerhalb Ihres Tenants bereitgestellt wurden. Die Tabelle enthält die wichtigsten Informationen für jeden Cluster:
+
+- **Cluster-Name**
+- **Zugriffs-URL**
+- **API-URL**
+- **Version**
+- **Status**
+- **Letzte Aktualisierung**
+
+<img src={oshiftSubMenu_001} />
+
+💡 **Um detaillierte Informationen zu einem Cluster anzuzeigen, klicken Sie auf dessen Namen in der Tabelle.**
+
+### 2. Cluster Details
+
+When you click on a **cluster name** in the list, a detailed page appears displaying complete cluster information:
+
+**Connectivity Information:**
+- **Access URL**: Web interface of the cluster
+- **API URL**: API endpoint for CLI operations
+
+**General Information:**
+- **Status**: Current state of the cluster
+- **Last Updated**: Date of the last modification
+- **Version**: OpenShift version deployed
+
+**Cluster Nodes:**
+
+A table provides detailed information for each node:
+- **Node Name**
+- **Type**
+- **AZ** (Availability Zone)
+- **Status**
+- **CPU**
+- **RAM**
+
+<img src={oshiftClusterDetail_001} />
+
+## Access to the OpenShift Administration Interface
+
+Click on the **Access URL** of the cluster you wish to manage. You will be directed to the cluster administration environment:
 
 <img src={oshiftMenu_002} />
 
-Nach der Authentifizierung können Sie Ihr Cluster verwalten:
+After authentication, you can manage your cluster:
 
 <img src={oshiftMenu_003} />
 
-### Ressourcen Ihres Umgebungs
+### Resources of your environment
 
-Hier sind die Informationen zur Verbindung und Konfiguration Ihrer OpenShift-Umgebung.
+Here are the connection and configuration details specific to your OpenShift environment.
 
-#### Anmeldeinformationen
+#### Connection Details
 
-Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, dass Ihr Mieter in der Weißliste der Konsole (siehe Dokumentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)) aufgeführt ist.
+To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL des Shiva-Tenants__ :
-  [https://__votre-id-mieter__.shiva.cloud-temple.com/](https://**votre-id-mieter**.shiva.cloud-temple.com/)
+- __Tenant Console URL__:
+  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__ :
-  [https://ui-ocp01-__votre-id__.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
+- __OpenShift UI__:
+  [https://ui-ocp01-__your-tenant-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
 
-- __API externe__ :
-  [https://api-ocp01-__votre-id__.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
+- __External API__:
+  [https://api-ocp01-__your-tenant-id__.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-__votre-id__.paas.cloud-temple.com/anwendungen](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/anwendungen)
+- __GitOps (ARGOCD)__:
+  [https://gitops-ocp01-__your-tenant-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
 
-#### Verbindung zum Cluster über CLI
+#### Verbindung zum Cluster über die Befehlszeile (CLI)
 
-Um sich über die Kommandozeile (CLI) anzuschließen, verwenden Sie bitte die folgende Befehlszeile:
-
-```bash
-oc login https://api-ocp01-{votre-id}.paas.cloud-temple.com/ --web
-```
-
-#### Zugriff auf das Logbuch
-
-Um auf das Logbuch zuzugreifen, melden Sie sich mit den folgenden Befehlen an:
+Verwenden Sie den folgenden Befehl, um sich über die Befehlszeile (CLI) zu verbinden:
 
 ```bash
-oc login https://api-ocp01-{Ihre-ID}.paas.cloud-temple.com --web
-docker login -u {Ihr-Benutzer} -p $(oc whoami -t) registry-ocp01-{Ihre-ID}.paas.cloud-temple.com
+oc login https://api-ocp01-{Ihre-ID}.paas.cloud-temple.com/ --web
 ```
 
-Nachdem Sie sich angemeldet haben, testen Sie die Bildung und das Herunterladen einer Docker-Image-Datei:
+#### Zugriff auf den Registry
+
+Um auf die Registry zuzugreifen, melden Sie sich mit den folgenden Befehlen an:
 
 ```bash
-docker build -t <Namespace>/temp:latest .
-docker tag <Namespace>/temp:latest registry-ocp01-{Ihre-ID}.paas.cloud-temple.com/<Namespace>/temp:latest
-docker push registry-ocp01-{Ihre-ID}.paas.cloud-temple.com/<Namespace>/temp:latest
+oc login https://api-ocp01-{Ihr-ID}.paas.cloud-temple.com --web
+docker login -u {Ihr-Benutzername} -p $(oc whoami -t) registry-ocp01-{Ihr-ID}.paas.cloud-temple.com
 ```
 
-#### Konfiguration von Routern und Load Balancer
+Testen Sie anschließend die Erstellung und das Hochladen eines Docker-Images:
 
-Die Plattform bietet flexible Optionen für den __Flow Routing__ und den __Load Balancing__:
+```bash
+docker build -t <namespace>/temp:latest .
+docker tag <namespace>/temp:latest registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:latest
+```
 
-- Standardmäßig werden privat gelöste Load Balancer für Routen und Ingress verwendet.
+#### Configuration of Routers and Load Balancers
+
+The platform offers flexible options for __traffic routing__ and __load balancing__:
+
+- By default, private load balancers are used for routes and ingresses.
 - Domains:
-  - `*.apps-priv-ocp01-{your_id}.paas.cloud-temple.com`
-  - `*.apps-ocp01-{your_id}.paas.cloud-temple.com`
+  - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
+  - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
 
-Stellen Sie sicher, dass Ihre Routen oder Ingress so konfiguriert sind, dass sie die entsprechenden Etiketten oder Ingress-Klassen verwenden, um einen korrekten Routing zu gewährleisten.
+Ensure your routes or ingresses are configured with the appropriate ingress labels or classes to guarantee correct routing.
 
-Beispiel:
+Example:
 
 ```yaml
 metadata:
@@ -185,11 +151,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### Verbindung IaaS
+#### IaaS Networking
 
-Die Netzwerkkonfigurationen spielen eine entscheidende Rolle für die Sicherung der Kommunikation mit OpenShift.
+Network configurations play a crucial role in securing communications with OpenShift.
 
-- __Verbindungsnetzwerk__ : 100.67.0.0/28
-- __VIP des privaten Load Balancer__ : 100.67.0.3
+- __Interconnection Network__: 100.67.0.0/28  
+- __Private Load Balancer VIP__: 100.67.0.3  
 
-Überprüfen Sie, ob Ihr Firewall eine eigene Schnittstelle hat und den Verkehr zwischen den angegebenen Netzwerken erlaubt.
+Ensure your firewall has a dedicated interface and permits traffic between the specified networks.

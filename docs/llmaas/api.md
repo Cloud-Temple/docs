@@ -244,6 +244,10 @@ Le format pour une image est un objet avec `type: "image_url"` et un champ `imag
 Bien que le format standard et recommandé soit `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporte également par souci de flexibilité un format simplifié `{"type": "image", "image": "data:..."}`. Il est cependant conseillé d'utiliser le format `image_url` standard pour une meilleure compatibilité avec l'écosystème OpenAI.
 :::
 
+:::tip OCR et Analyse de Documents
+Pour des tâches spécifiques d'analyse de documents (PDF, scans, tableaux), nous recommandons l'utilisation du modèle spécialisé **DeepSeek-OCR**. Voir la [documentation dédiée](./ocr).
+:::
+
 #### Exemple de Requête Vision
 
 ```bash

@@ -1,220 +1,81 @@
+
+
 ---
-title: Configurazione SSO con Okta
-sidebar_position: 2
+title: Esempio di federazione dell'identità con Okta
+tags:
+  - identità e accesso
+  - tutorial
+  - onboarding
 ---
 
-# Configurazione Single Sign-On (SSO) con Okta
+Questo tutorial ti guida nella configurazione della federazione dell'identità con Okta per la tua organizzazione Cloud Temple.
 
-Questa guida vi accompagna nella configurazione dell'autenticazione Single Sign-On (SSO) utilizzando Okta come provider di identità per accedere alla console Cloud Temple.
 
-## Prerequisiti
 
-Prima di iniziare la configurazione, assicuratevi di avere:
+## Requisiti
 
-- Un account amministratore Okta con i privilegi necessari per creare applicazioni
-- Accesso alla console Cloud Temple con diritti di amministrazione IAM
-- Le informazioni di configurazione fornite dal team Cloud Temple
+- Accesso amministratore alla tua istanza Okta
+- Diritti di proprietario sulla tua organizzazione Cloud Temple
+- Accesso alla console Cloud Temple
 
-## Configurazione in Okta
 
-### Passo 1: Creazione dell'applicazione SAML
 
-1. **Accedere alla console di amministrazione Okta**
-   - Connettersi al vostro tenant Okta come amministratore
-   - Navigare verso **Applications** > **Applications**
+## Configuration
 
-2. **Creare una nuova applicazione**
-   - Cliccare su **Create App Integration**
-   - Selezionare **SAML 2.0** come metodo di sign-in
-   - Cliccare su **Next**
+La configurazione della federazione di identità con Okta consente di integrare il tuo directory Okta con la console Cloud Temple per un'autenticazione centralizzata.
 
-3. **Configurazione generale**
-   - **App name**: `Cloud Temple Console`
-   - **App logo**: (Opzionale) Caricare il logo Cloud Temple
-   - Cliccare su **Next**
 
-### Passo 2: Configurazione SAML
 
-1. **Impostazioni SAML**
-   - **Single sign on URL**: `https://console.cloud-temple.com/api/iam/v1/saml/acs`
-   - **Audience URI (SP Entity ID)**: `https://console.cloud-temple.com`
-   - **Default RelayState**: (Lasciare vuoto)
-   - **Name ID format**: `EmailAddress`
-   - **Application username**: `Email`
+### Passo 1: Configurazione lato Okta
 
-2. **Mappatura degli attributi**
-   Configurare i seguenti attributi:
-   
-   | Nome attributo | Formato nome | Valore |
-   |----------------|--------------|--------|
-   | `email` | Basic | `user.email` |
-   | `firstName` | Basic | `user.firstName` |
-   | `lastName` | Basic | `user.lastName` |
-   | `groups` | Basic | `user.groups` |
+1. Accedi alla tua console di amministrazione Okta
+2. Vai a **Applicazioni** > **Applicazioni**
+3. Fai clic su **Crea Integrazione App**
+4. Seleziona **SAML 2.0** come metodo di autenticazione
+5. Configura le impostazioni SAML per Cloud Temple
 
-3. **Finalizzazione**
-   - Cliccare su **Next**
-   - Selezionare **I'm an Okta customer adding an internal app**
-   - Cliccare su **Finish**
 
-### Passo 3: Recupero dei metadati
 
-1. **Accesso ai metadati SAML**
-   - Nell'applicazione appena creata, andare alla scheda **Sign On**
-   - Nella sezione **SAML 2.0**, cliccare su **View Setup Instructions**
-   - Copiare l'URL dei metadati o scaricare il file XML dei metadati
+### Passo 2: Configurazione dei parametri SAML
 
-## Configurazione nella Console Cloud Temple
+Configurate i seguenti parametri in Okta:
 
-### Passo 1: Accesso alla configurazione IAM
+- **URL di accesso unico** : Fornito dall'équipe Cloud Temple
+- **URI dell'audience (ID dell'entità SP)** : Fornito dall'équipe Cloud Temple
+- **Dichiarazioni di attributi** : Configurate gli attributi utente necessari
 
-1. **Connessione alla console**
-   - Accedere a [https://console.cloud-temple.com](https://console.cloud-temple.com)
-   - Autenticarsi con un account amministratore
 
-2. **Navigazione verso IAM**
-   - Nel menu principale, cliccare su **Identity and Access Management**
-   - Selezionare **Identity Providers**
 
-### Passo 2: Aggiunta del provider Okta
+### Passo 3: Richiesta di configurazione Cloud Temple
 
-1. **Creazione del provider**
-   - Cliccare su **Add Identity Provider**
-   - Selezionare **SAML 2.0** come tipo
-   - Inserire un nome descrittivo: `Okta SSO`
+Per configurare l'autenticazione federata con Okta, si prega di creare una richiesta di supporto nella console Cloud Temple specificando:
 
-2. **Configurazione SAML**
-   - **Metadata URL**: Incollare l'URL dei metadati Okta
-   - Oppure caricare il file XML dei metadati
-   - **Entity ID**: Verificare che corrisponda all'Entity ID di Okta
-   - **SSO URL**: Verificare che corrisponda all'SSO URL di Okta
+- Il nome della vostra Organizzazione
+- Il nome di un contatto con la sua email e numero di telefono
+- L'URL delle metadati SAML della vostra applicazione Okta
+- Il certificato di firma SAML
+- Gli attributi utente configurati
 
-3. **Mappatura degli attributi**
-   Configurare la mappatura degli attributi:
-   
-   | Attributo Cloud Temple | Attributo SAML | Obbligatorio |
-   |------------------------|----------------|--------------|
-   | Email | `email` | Sì |
-   | Nome | `firstName` | Sì |
-   | Cognome | `lastName` | Sì |
-   | Gruppi | `groups` | No |
 
-### Passo 3: Configurazione dei gruppi e ruoli
 
-1. **Mappatura dei gruppi**
-   - Definire la corrispondenza tra i gruppi Okta e i ruoli Cloud Temple
-   - Esempio:
-     - Gruppo Okta `CloudTemple-Admins` → Ruolo `Administrator`
-     - Gruppo Okta `CloudTemple-Users` → Ruolo `User`
+### Fase 4: Test e validazione
 
-2. **Regole di autorizzazione**
-   - Configurare le regole per determinare l'accesso basato sui gruppi
-   - Definire i permessi per ogni ruolo mappato
+Una volta completata la configurazione:
 
-## Assegnazione degli utenti in Okta
+1. Testa l'autenticazione con un utente di prova
+2. Verifica che gli attributi utente siano correttamente mappati
+3. Conferma l'accesso alle risorse Cloud Temple
 
-### Passo 1: Assegnazione individuale
 
-1. **Accesso all'applicazione**
-   - Nella console Okta, andare all'applicazione Cloud Temple
-   - Cliccare sulla scheda **Assignments**
 
-2. **Assegnazione utenti**
-   - Cliccare su **Assign** > **Assign to People**
-   - Selezionare gli utenti da assegnare
-   - Cliccare su **Assign** per ogni utente
-   - Cliccare su **Done**
+## Buone pratiche
 
-### Passo 2: Assegnazione per gruppi
+- Configurate i gruppi Okta per gestire le autorizzazioni per tenant
+- Attivate l'autenticazione a due fattori (MFA) in Okta
+- Monitorate i log di autenticazione per rilevare le anomalie
 
-1. **Assegnazione di gruppo**
-   - Cliccare su **Assign** > **Assign to Groups**
-   - Selezionare i gruppi appropriati
-   - Cliccare su **Assign** per ogni gruppo
-   - Cliccare su **Done**
 
-## Test della configurazione
-
-### Passo 1: Test di connessione
-
-1. **Test dal lato Okta**
-   - Nella console Okta, andare all'applicazione Cloud Temple
-   - Cliccare su **View Setup Instructions**
-   - Utilizzare il link di test fornito
-
-2. **Test dal lato Cloud Temple**
-   - Disconnettersi dalla console Cloud Temple
-   - Cliccare su **Sign in with SSO**
-   - Inserire il dominio Okta configurato
-   - Verificare il reindirizzamento verso Okta
-
-### Passo 2: Verifica dell'autenticazione
-
-1. **Processo di login**
-   - Autenticarsi con le credenziali Okta
-   - Verificare il reindirizzamento verso la console Cloud Temple
-   - Controllare che i permessi siano applicati correttamente
-
-2. **Verifica degli attributi**
-   - Controllare che le informazioni utente siano popolate correttamente
-   - Verificare l'appartenenza ai gruppi e i ruoli assegnati
-
-## Risoluzione dei problemi
-
-### Problemi comuni
-
-1. **Errore di reindirizzamento**
-   - Verificare che gli URL configurati siano corretti
-   - Controllare che non ci siano caratteri extra o spazi
-
-2. **Attributi mancanti**
-   - Verificare la mappatura degli attributi in Okta
-   - Controllare che gli attributi richiesti siano popolati per l'utente
-
-3. **Problemi di autorizzazione**
-   - Verificare l'assegnazione dell'utente all'applicazione Okta
-   - Controllare la mappatura dei gruppi nella console Cloud Temple
-
-### Log e diagnostica
-
-1. **Log Okta**
-   - Consultare i log di sistema in Okta per errori SAML
-   - Verificare i log dell'applicazione per problemi specifici
-
-2. **Log Cloud Temple**
-   - Controllare i log di autenticazione nella console Cloud Temple
-   - Contattare il supporto per assistenza nella diagnostica
-
-## Sicurezza e best practice
-
-### Configurazione di sicurezza
-
-1. **Certificati**
-   - Utilizzare certificati validi e aggiornati
-   - Configurare la rotazione automatica dei certificati quando possibile
-
-2. **Timeout di sessione**
-   - Configurare timeout appropriati per le sessioni
-   - Implementare politiche di riautenticazione per operazioni sensibili
-
-### Monitoraggio
-
-1. **Audit trail**
-   - Attivare il logging delle autenticazioni
-   - Monitorare gli accessi anomali o non autorizzati
-
-2. **Revisioni periodiche**
-   - Rivedere regolarmente le assegnazioni degli utenti
-   - Aggiornare i gruppi e i ruoli secondo necessità
 
 ## Supporto
 
-Per assistenza con la configurazione SSO Okta:
-
-- **Documentazione Okta**: [https://developer.okta.com/docs/](https://developer.okta.com/docs/)
-- **Supporto Cloud Temple**: Aprire un ticket tramite la console
-- **Community**: Consultare i forum della community Cloud Temple
-
----
-
-*Questa guida è stata aggiornata per riflettere le ultime versioni di Okta e della console Cloud Temple. Per informazioni specifiche sulla vostra configurazione, consultare la documentazione più recente o contattare il supporto.*
+Per qualsiasi assistenza con la configurazione di Okta, contatta il supporto Cloud Temple tramite la console.

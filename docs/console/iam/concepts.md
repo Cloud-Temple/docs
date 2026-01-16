@@ -19,7 +19,7 @@ import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
 
 ## Utilisateurs
 
-Les comptes d'accès à la console Shiva sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
+Les comptes d'accès à la Console sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
 Les informations d'identification sont globales à votre [Organisation](#organisations).
 
 *__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#mécanismes-dauthentification)*
@@ -148,7 +148,7 @@ La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichi
 
 ## Permissions
 
-La console Shiva permet une gestion fine des droits des utilisateurs d'une organisation, avec une ségrégation par tenant.
+La Console permet une gestion fine des droits des utilisateurs d'une organisation, avec une ségrégation par tenant.
 Initialement, c'est le compte principal du commanditaire qui permet la configuration initiale des comptes et des permissions associées.
 Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les permissions des autres utilisateurs.
 
@@ -215,7 +215,7 @@ Dernière mise à jour le: 16/07/2025
 | object-storage_iam_management                 | Permet de gérer les compte de stockage sur le produit S3                                                                       |
 | object-storage_read                           | Permet de voir les buckets et les configurations des buckets                                                                   |
 | object-storage_write                          | Permet d'éditer les buckets et les configurations des buckets                                                                  |
-| openshift_management                          | Permet de se connecter sur les plateforms Openshift (scopé au tenant)                                                          |
+| openshift_management                          | Permet de se connecter sur les plateforms OpenShift (scopé au tenant)                                                          |
 | support_management                            | consultation de l'ensemble des tickets support du tenant                                                                       |
 | support_read                                  | Consultation de ses tickets support du tenant                                                                                  |
 | support_write                                 | Création d'un ticket support sur le tenant                                                                                     |
@@ -237,7 +237,7 @@ L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud
 L'organisation a quatre grands rôles :
 
 - Elle représente __l'entité contractuelle__ pour les aspects de suivi et de facturation,
-- Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la console Shiva ou distante via un service de fédération d'identité,
+- Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la Console ou distante via un service de fédération d'identité,
 - Elle porte l'ensemble des __comptes utilisateurs__,
 - Elle __fédère les tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...) que vous définissez pour les besoins de votre architecture Cloud.
 
@@ -245,8 +245,8 @@ Les rôles (droits/permissions) des utilisateurs sont configurables pour chaque 
 
 ### Mécanismes d'authentification
 
-La console Shiva permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
-utiliser le référentiel local d'authentification de la console Shiva ou bien accoster votre organisation à l'un
+La Console permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
+utiliser le référentiel local d'authentification de la Console ou bien accoster votre organisation à l'un
 de vos référentiels d'authentification.
 
 Les référentiels externes suivants sont supportés :
@@ -259,6 +259,10 @@ Les référentiels externes suivants sont supportés :
 - Okta
 - Auth0
 - KeyCloak
+
+:::info[Important]
+Une adresse e-mail est requise pour tous les comptes issus d'une fédération d'identité. Les comptes créés sans adresse e-mail ne pourront pas se connecter et sont susceptibles d'être supprimés automatiquement.
+:::
 
 ## Tenant
 

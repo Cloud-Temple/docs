@@ -24,7 +24,7 @@
 
 #### Ressources Visuelles
 - ✅ **40+ captures d'écran** dans `/images/`
-- ✅ **Interfaces Shiva** : Connexion, onboarding, API
+- ✅ **Interfaces Console** : Connexion, onboarding, API
 - ✅ **Workflows** : Commandes, incidents, métriques
 - ✅ **Dashboards Grafana** : Monitoring complet
 
@@ -74,6 +74,15 @@
 - ✅ `images/` : Screenshots OpenShift
 - ✅ `tutorials/` : Workflows DevOps
 
+### 📦 Managed Kubernetes - Statut : ✅ BON
+
+#### Documentation Container (`/docs/managed_kubernetes/`)
+- ✅ `managed_kubernetes.md` : Vue d'ensemble du service
+- ✅ `concepts.md` : Concepts techniques et prérequis
+- ✅ `quickstart.md` : Guide de démarrage
+- 🟡 `tutorials.md` : Premier tutoriel "Hello World" créé, à enrichir
+- ✅ `images/` : Diagrammes d'architecture
+
 ### 🏢 Housing & Colocation - Statut : ✅ COMPLET
 
 #### Infrastructure Physique (`/docs/housing/`)
@@ -97,35 +106,29 @@
 ### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET ET VALIDÉ
 
 #### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
 - ✅ `llmaas.md` : Vue d'ensemble du service.
-- ✅ `quickstart.md` : Guide de démarrage rapide, testé et enrichi.
-- ✅ `api.md` : Documentation API complète, alignée avec les tests.
-- ✅ `concepts.md` : Architecture et concepts de l'IA, enrichi avec les détails sur la sécurité des prompts et le cycle de vie des modèles.
-- ✅ `tutorials.md` : **MIS À JOUR (29/06/2025)** - Exemples enrichis et validés par la suite de tests.
-- ✅ `rag_explained.md` : **MIS À JOUR (29/06/2025)** - Explications détaillées sur le RAG et les modèles d'embedding.
-- ✅ `images/` : Ajout des images de benchmark.
-- ✅ `licences/` : Système de gestion des licences automatisé.
+- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
+- ✅ `api.md` : Documentation API complète (Tiers, Endpoints, Facturation).
+- ✅ `concepts.md` : Architecture, Tokens, Sécurité.
+- ✅ `quickstart.md` : Guide de démarrage (cURL, Python, Tool Calling, Vision).
+- ✅ `tutorials.md` : Guides avancés (LangChain, RAG, Qdrant, Agents).
+- ✅ `ocr.md` : **NOUVEAU** - Guide DeepSeek-OCR (compression contextuelle, parsing).
+- ✅ `rag_explained.md` : **NOUVEAU** - Explication détaillée du RAG et Embeddings.
+- ✅ `faq.md` : **NOUVEAU** - Questions fréquentes.
+- ✅ `images/` : Screenshots, benchmarks, schémas.
+- ✅ `licences/` : Licences des modèles.
 
 #### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (29/06/2025)
 - ✅ **9/9 suites de tests réussies** : Couverture complète des fonctionnalités de l'API.
-- ✅ **Tests RAG validés** :
-    - `test_rag_simple.py` : Pipeline de base fonctionnel.
-    - `test_rag_pipeline_detailed.py` : Pipeline avancé avec `LLMaaSEmbeddings` et FAISS, corrigé et validé.
-    - `test_qdrant_integration.py` : Intégration avec Qdrant, corrigée et validée (nécessite un conteneur Docker).
-- ✅ **Tests SDK et API** : `test_python_sdk.py`, `test_python_basic.py`, etc., tous corrigés et validés.
-- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble des 9 suites de tests.
-
-#### Documentation des Tutoriels (`/docs/llmaas/tutorials.md`) - ✅ ENRICHIE (29/06/2025)
-- ✅ **Explications détaillées** : Chaque exemple de code est maintenant accompagné d'explications didactiques sur son fonctionnement et son utilité.
-- ✅ **Cohérence avec les tests** : Les exemples de code, en particulier pour les pipelines RAG, ont été alignés sur les implémentations validées dans la suite de tests.
-- ✅ **Instructions Qdrant** : Ajout d'un encart clair expliquant comment lancer le conteneur Docker Qdrant, un prérequis pour le test d'intégration.
+- ✅ **Tests RAG validés** : Pipelines FAISS et Qdrant fonctionnels.
+- ✅ **Tests SDK et API** : Validés.
+- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble.
 
 #### Spécifications LLMaaS
-- ✅ **36 modèles** : 6 grande taille + 34 spécialisés
-- ✅ **Contexte** : 8k → 120k tokens  
-- ✅ **Pricing** : 0.9€ input, 4€ output, 21€ reasoning
-- ✅ **6 cas d'usage** : Multilingue, documents, code, vision, sécurité, embarqué
+- ✅ **40 modèles** : 40+ modèles dont Vision, Code, Sécurité.
+- ✅ **Contexte** : 8k → 128k tokens  
+- ✅ **Pricing** : Tiers de facturation + pricing à l'usage.
+- ✅ **Fonctionnalités** : Tool Calling, Vision, Audio, OCR, RAG.
 
 ### 💾 Storage Solutions - Statut : 🔄 EN DÉVELOPPEMENT
 
@@ -152,7 +155,8 @@
 - ✅ `iaas/` : Contrats IaaS
 - ✅ `network/` : Contrats réseau
 - ✅ `paas/` : Contrats PaaS
-- ✅ `llmaas/` : **NOUVEAU** - Matrice de responsabilité (RACI)
+- ✅ `llmaas/` : Matrice de responsabilité (RACI)
+- ✅ `kubernetes/` : **NOUVEAU** - Matrice de responsabilité (RACI)
 
 ## Internationalisation - Statut : ✅ STRUCTURE COMPLÈTE
 
@@ -172,7 +176,8 @@
 
 ### Documentation Globale (`/docs/`)
 - ✅ `home.md` : Page d'accueil
-- ✅ `changelog.md` : **NOUVEAU** - Suivi des modifications
+- ✅ `changelog.md` : Suivi des modifications
+- ✅ `containers_overview.md` : **NOUVEAU** - Comparaison des offres Containers
 - ✅ `market_place_public.md` : Marketplace public
 - ✅ `privacy.md` : Politique de confidentialité
 
@@ -197,12 +202,14 @@
    - Cas d'usage et bonnes pratiques
 
 ### 🔶 Priorité MOYENNE
-1. **Console Metrics** (`/docs/console/metrics/`)
+1. **Enrichissement Managed Kubernetes** (`/docs/managed_kubernetes/`)
+   - Ajouter des tutoriels avancés (sécurité, stockage, etc.).
+   - Détailler le modèle de pricing.
+2. **Console Metrics** (`/docs/console/metrics/`)
    - Dashboards Grafana avancés
    - Métriques custom et alerting
    - Intégration monitoring
-
-2. **Console Security** (`/docs/console/security/`)
+3. **Console Security** (`/docs/console/security/`)
    - Contrôles de sécurité avancés
    - Audit et compliance
    - Gestion des incidents
@@ -220,9 +227,14 @@
 - 📝 **Storage OSS** : Documentation API
 - 📝 **Console Metrics** : Dashboards avancés
 
+### Corrections Récentes
+- ✅ **Rendu LaTeX** : Mise à jour du CSS KaTeX (v0.16.9) pour compatibilité avec rehype-katex v7 (fix affichage doublé).
+- ✅ **Génération Documentation Modèles** : Mise à jour automatisée de `docs/llmaas/models.md` via le script Python.
+- ✅ **Problèmes de compilation MDX (i18n)** : Correction des blocs de code Python mal formés dans les fichiers traduits (en, es, de, it) de `api.md`, `ocr.md` et `tutorials.md`.
+
 ### En Review
 - 🔄 **Cohérence terminologique** : Uniformisation
-- 🔄 **Mise à jour screenshots** : Console Shiva
+- 🔄 **Mise à jour screenshots** : Console
 - 🔄 **Validation technique** : Exactitude information
 
 ### Planifié
@@ -240,8 +252,9 @@
 - **Housing** : 100%
 - **Network** : 30% (structure créée)
 - **Storage** : 20% (structure créée)
+- **Managed Kubernetes**: 85%
 
-### Couverture Globale : 87%
+### Couverture Globale : 89%
 
 ### Par Type de Documentation
 - **Pages principales** : 100%
@@ -268,12 +281,14 @@
 
 ## Prochaines Actions Immédiates
 
-1. **Traduire la documentation LLMaaS** : L'ensemble de la section `docs/llmaas` a été mis à jour et doit être traduit.
-2. **Compléter Network** : Internet et Private Network
-3. **Développer Storage OSS** : Documentation API S3
-4. **Finaliser Console** : Metrics et Security modules
+1. **Compléter Network** : Internet et Private Network
+2. **Développer Storage OSS** : Documentation API S3
+3. **Finaliser Console** : Metrics et Security modules
+4. **Maintenance Générale** : Poursuivre la correction des liens et ancres cassés dans les traductions.
 5. **Validation globale** : Cohérence et qualité
-6. **Traductions** : Mise à jour multilingue générale
+
+---
+*État de la documentation au 22/11/2025 - Memory Bank Cloud Temple*
 
 ### 🐍 Système de Traduction Python - ✅ COMPLET ET OPÉRATIONNEL (17/06/2025)
 **Localisation** : `scripts/translate_py/`
@@ -339,5 +354,4 @@ scripts/translate_py/
 - ✅ **Workflow unifié** : Même commandes, interface améliorée
 
 ---
-
-*État de la documentation au 05/06/2025 - Memory Bank Cloud Temple*
+*État de la documentation au 22/11/2025 - Memory Bank Cloud Temple*

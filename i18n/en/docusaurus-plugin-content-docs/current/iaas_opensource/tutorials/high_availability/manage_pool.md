@@ -15,7 +15,7 @@ To enable high availability on a pool, you must select a Block Storage as a Hear
 <img src={open_iaas_pool_ha_how_to_modify} />
 <img src={open_iaas_pool_enable_ha} />
 
-Once enabled, you can see the number of [virtual machines that do not have a high availability configuration](manage_vm.md):
+Once enabled, you can see the number of [virtual machines that do not have a high availability configuration](./manage_vm.md):
 <img src={open_iaas_pool_ha_enabled} />
 
 If the [number of available hosts](../../concepts.md#high-availability) does not allow high availability to function, an alert message will be displayed:

@@ -8,7 +8,7 @@ tags:
 
 # Bienvenue sur l'espace documentation
 
-Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été conçu pour vous accompagner dans la gestion de vos services Cloud Temple via notre **Console Cloud Temple**, également connue sous le nom de **Shiva**.
+Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été conçu pour vous accompagner dans la gestion de vos services Cloud Temple via notre **Console Cloud Temple**.
 
 ## Premiers pas
 
@@ -37,8 +37,8 @@ Bienvenue dans l’espace documentation de **Cloud Temple** ! Cet espace a été
 
 ## Comment utiliser cette documentation ?
 
-Cette documentation est votre guide pour exploiter tout le potentiel de nos produits CLoud et de **la console** Cloud Temple.
+Cette documentation est votre guide pour exploiter tout le potentiel de nos produits Cloud et de **la console** Cloud Temple.
 
 Vous y trouverez des tutoriels, des guides techniques et des références pour simplifier la gestion de vos ressources cloud.
 
-Nous espérons que vous trouverez cette documentation utile et que vous tirerez pleinement parti des possibilités offertes par **Shiva**.
+Nous espérons que vous trouverez cette documentation utile et que vous tirerez pleinement parti des possibilités offertes par **Console**.

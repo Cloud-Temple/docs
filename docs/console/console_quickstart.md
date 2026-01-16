@@ -12,16 +12,17 @@ import shivaOnboard_007 from './images/shiva_onboard_007.png'
 import shivaLogs from './images/shiva_logs.png'
 import shivaOnboard_009 from './images/shiva_onboard_009.png'
 import shivaOnboard_008 from './images/shiva_onboard_008.png'
+import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Prérequis
 
 - Avoir souscrit à une offre Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
-- Avoir un accès à la console Shiva
-- Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la console shiva est limité aux adresses de confiances identifiées)
+- Avoir un accès à la Console
+- Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la Console est limité aux adresses de confiances identifiées)
 
 ## Connexion à votre tenant Cloud Temple
 
-Shiva est accessible via l'URL ci-dessous: [Shiva](https://shiva.cloud-temple.com) ou bien depuis l'URL directe qui vous a été communiquée par mail.
+Console est accessible via l'URL ci-dessous: [Console](https://shiva.cloud-temple.com) ou bien depuis l'URL directe qui vous a été communiquée par mail.
 
 La première page vous permet de sélectionner [l'organisation](iam/concepts.md#organisations) dans laquelle votre utilisateur a été créé.
 Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
@@ -29,7 +30,9 @@ Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
 <img src={shivaLogin} />
 
 Vous allez ensuite être redirigé vers une page vous demandant de vous authentifier.
-Une fois connecté, vous arrivez sur cette page.
+Une fois connecté, vous arrivez sur cette page. 
+
+Vous y trouverez l'ensemble des métriques concernant les produits souscrits sur votre périmètre. En cas de problème(s) sur vos produits VMware et/ou OpenIaaS, des alertes seront visibles, la couleur est liée à leur importance.
 
 <img src={shivaHome} />
 
@@ -62,7 +65,9 @@ La première étape est l'identification du type de demande de support :
 
 Vous avez ensuite la possibilité de donner des précisions et d'inclure des fichiers (image ou journaux par exemple).
 
-Le commanditaire peut également préciser un niveau de criticité (P1 à P4) dans la description du ticket, dans le cas d'un incident, tel que:
+Le commanditaire peut également préciser un niveau de criticité (P1 à P5) dans la description du ticket, dans le cas d'un incident de sécurité, tel que:
+
+<img src={shivaSupportCriticities} />
 
 __CRITIQUE (P1)__:
 
@@ -95,6 +100,10 @@ __BASSE (P4)__:
 - Question de conformité
 - Besoin de clarification technique
 
+__SERVICE OPÉRATIONNEL (P5)__:
+
+- Service opérationnel sans risque immédiat
+
 <img src={shivaSupport_02} />
 
 Une fois votre demande effectuée, il est possible de retrouver vos demandes via __l'icône 'bouée'__ situé en haut à droite de l'écran :
@@ -124,7 +133,7 @@ Voici une présentation des différents modules disponibles. De nouveaux modules
 - __Infogérance__ : donne accès au suivi de vos __demandes de support__ et à la __métrologie des services__,
 - __IaaS__ : permet le __pilotage des infrastructures IaaS VMware__ (Machines virtuelles, clusters, hyperviseurs, réplications, sauvegarde, ...),
 - __OpenIaaS__ : permet le __pilotage des ressources Xen Orchestra__ (Machines virtuelles, sauvegarde, ...),
-- __OpenShift__ : permet le pilotage de votre **architecture PaaS RedHat Openshift** et le management de vos containers sur les 3 zones de disponibilité de la plateforme.
+- __OpenShift__ : permet le pilotage de votre **architecture PaaS RedHat OpenShift** et le management de vos containers sur les 3 zones de disponibilité de la plateforme.
 - __Bastion__ : Permet de déployer et de piloter des appliances bastion SSH/RDP dans vos réseaux,
 - __Réseau__ : permet le pilotage des __réseaux de niveau 2 et 3__, des __IP publiques__ et de vos __circuits télécoms__,
 - __Colocation__ : Offre la vue sur les équipements situés en zone de __collocation mutualisée ou dédiée__,
@@ -188,7 +197,7 @@ Cliquez en bas à gauche du bandeau vert sur l'icône __'Nouveautés'__. Vous au
 
 ## Accès aux fonctionnalités utilisateur via l'API
 
-L'accès à l'ensemble des fonctionnalités de la console Shiva est possible via l'API Shiva. Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__ :
+L'accès à l'ensemble des fonctionnalités de la Console est possible via l'API Console. Vous pouvez avoir le détail des verbes et des configurations via __'Profil'__ et __'APIs'__ :
 
 <img src={shivaOnboard_008} />
 

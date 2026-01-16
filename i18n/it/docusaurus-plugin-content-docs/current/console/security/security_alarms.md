@@ -1,13 +1,17 @@
+
+
 ---
 title: Avvisi di sicurezza
 ---
 
 Trova qui gli avvisi di sicurezza relativi ai nostri servizi cloud.  
-Questa pagina viene aggiornata quotidianamente per tenere conto delle vulnerabilità identificate recentemente.
+Questa pagina viene aggiornata quotidianamente per tenere conto delle vulnerabilità recentemente identificate.
+
+
 
 ## Vulnerabilità
 
-| Data | Riferimento(i) | CVSS | Titolo | Descrizione | Servizio(i) | Gravità | Trattamento |
+| Data | Riferimento(i) | CVSS | Titolo | Descrizione | Servizio(i) | Gravità | Intervento |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 23/12/2025 | [CVE-2025-14443](https://access.redhat.com/security/cve/CVE-2025-14443) | 8.5 | **Vulnerabilità in Red Hat OpenShift (CVE-2025-14443)** | Una vulnerabilità nel componente `openshift-apiserver` consente l'escalation dei privilegi. Lo sfruttamento richiede un'autenticazione precedente. | PaaS OpenShift | 🟠 Importante | ⚠️ Nessuna patch attuale. Siamo in attesa della patch dal fornitore Red Hat. |
 | 30/09/2025 | [VMSA-2025-0016](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36150) | 8.5 | **VMSA-2025-0016 : Vulnerabilità in VMware vCenter** | Una vulnerabilità (CVE-2025-41250) consente a un attaccante autenticato di modificare le email di notifica delle attività pianificate. | IaaS By VMware | 🟠 Importante | ⚠️ Raccomandiamo di pianificare un aggiornamento di versione di vCenter (alla 8.0 U3g o 7.0 U3w). |
@@ -24,15 +28,16 @@ Questa pagina viene aggiornata quotidianamente per tenere conto delle vulnerabil
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005: Vulnerabilità di bypass dell’autenticazione in VMware Tools per Windows (CVE-2025-22230)** | È stata segnalata una vulnerabilità di bypass dell’autenticazione in VMware Tools per Windows. Patch correttive sono fornite dal fornitore. | IaaS By VMware | 🟠 Importante | ⚠️ Si consiglia di aggiornare VMware Tools sulle vostre macchine virtuali. |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004: Molteplici vulnerabilità in VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Sono state segnalate diverse vulnerabilità in VMware ESXi: vulnerabilità di overflow dell’heap VMCI (CVE-2025-22224) valutata come Critica da VMware, vulnerabilità di scrittura arbitraria in VMware ESXi (CVE-2025-22225), vulnerabilità di divulgazione di informazioni HGFS (CVE-2025-22226). Patch correttive sono fornite dal fornitore. | IaaS By VMware | 🟠 Importante | ⚠️ Si consiglia di aggiornare i vostri hypervisor. Le versioni corrette di ESXi sono disponibili al momento della validazione da parte di Cloud Temple. La Console indica gli ESXi che necessitano di aggiornamento. |
 
+
 ## Informazioni
 
 - **Data** : Data di pubblicazione iniziale dell'avviso di sicurezza Cloud Temple.
 - **Riferimento(i)** : ID CVE, se disponibile.
-- **CVSS** : Punteggio CVSS v3 base come riportato dal produttore o dal CVE, non contestualizzato. La contestualizzazione è espressa dalla severità CT. Se l'avviso riguarda più vulnerabilità, sono indicati i punteggi CVSS minimo e massimo.
-- **Titolo** : Titolo dell'avviso, con riferimento del produttore se disponibile.
+- **CVSS** : Punteggio CVSS v3 di base come riportato dall'editore o dal CVE, non contestualizzato. La contestualizzazione è espressa dalla gravità CT. Se l'avviso riguarda più vulnerabilità, sono indicati i punteggi CVSS minimo e massimo.
+- **Titolo** : Titolo dell'avviso, con riferimento all'editore se disponibile.
 - **Descrizione** : Descrizione sintetica, con collegamento(i) alle informazioni dettagliate.
 - **Servizio(i)** : Servizio(i) Cloud Temple potenzialmente interessato(i).
-- **Severità** : Livello di severità nel contesto dei servizi Cloud Temple (per la vulnerabilità più critica in caso di più vulnerabilità). I criteri di sfruttamento sono presi in considerazione nel contesto tecnico delle nostre infrastrutture e servizi Cloud.
+- **Gravità** : Livello di gravità nel contesto dei servizi Cloud Temple (per la vulnerabilità più critica in caso di più vulnerabilità). I criteri di sfruttamento sono presi in considerazione nel contesto tecnico delle nostre infrastrutture e servizi Cloud.
 
 | Livello | Descrizione |
 |--------|-------------|

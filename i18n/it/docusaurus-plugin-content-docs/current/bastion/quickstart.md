@@ -1,5 +1,5 @@
 ---
-title: Guida rapida
+title: Guida di avvio
 ---
 import shivaSupport from './images/shiva_support.png'
 import creerSession from './images/creer_session.png'
@@ -8,75 +8,77 @@ import creerSession3 from './images/creer_session3.png'
 import ouvrirSession from './images/ouvrir_session.png'
 import ouvrirSession2 from './images/ouvrir_session2.png'
 
-Questa guida rapida ti mostra come richiedere la creazione di un'Appliance e come registrare una nuova sessione e connetterti ad essa.
+Questa guida di avvio ti mostra come richiedere la creazione di un'Appliance e come registrare una nuova sessione e connetterti a essa.
 
 ## Prerequisiti
 
 1. Aver sottoscritto l'offerta Cloud Temple (sottoscrizione Appliance Bastion).
-2. I dispositivi da amministrare devono essere accessibili dalla rete in cui è distribuita l'Appliance Bastion.
-3. Avere i diritti sul modulo Bastion.
-4. Nel contesto di una distribuzione dell'Appliance on-premise, i flussi corrispondenti devono essere aperti.
+2. Gli apparati da gestire devono essere accessibili dal network in cui è distribuita l'Appliance Bastion.
+3. Disporre dei diritti sul modulo Bastion.
+4. Nel caso di distribuzione dell'Appliance on-premise, i flussi corrispondenti devono essere aperti.
 
-## I flussi necessari per il funzionamento del prodotto Bastion
+## I flussi necessari per il funzionamento dell'appliance Bastion
 
-Diversi flussi sono necessari per il corretto funzionamento dell'Appliance Bastion.
+Sono necessari diversi flussi per il corretto funzionamento dell'appliance Bastion.
 
-### Il gateway bastion
-| Fonte                    | Destinazione                                | Protocollo |
+### Gateway bastion
+
+| Source                   | Destination                                 | Protocollo |
 |--------------------------|---------------------------------------------|------------|
 | Appliance bastion client | 91.223.207.71 (botg.shiva.cloud-temple.com) | UDP/4242   |
 
-### Flussi di amministrazione RDP
+### RDP Administration Flow
 
-| Fonte                    | Destinazione               | Protocollo |
-|--------------------------|-----------------------------|------------|
-| Appliance bastion client | Le istanze da amministrare  | TCP/3389   |
+| Source                   | Destination                 | Protocol |
+|--------------------------|-----------------------------|----------|
+| Client bastion appliance | Instances to administer     | TCP/3389 |
 
-### Flussi di amministrazione SSH
+### SSH Administration Flow
 
-| Fonte                    | Destinazione               | Protocollo |
-|--------------------------|-----------------------------|------------|
-| Appliance bastion client | Le istanze da amministrare  | TCP/22     |
+| Source                   | Destination                 | Protocol |
+|--------------------------|-----------------------------|----------|
+| Client bastion appliance | Instances to administer     | TCP/22   |
 
 ## Richiedere la creazione di un'Appliance
+
 Prima di poter distribuire un'Appliance, è necessario richiedere una sottoscrizione a un'Appliance tramite una richiesta al supporto.
-Il supporto è accessibile nella console Shiva dall'icona del salvagente sulla barra in alto a destra della finestra.
+Il supporto è accessibile dalla Console tramite l'icona del salvagente nella barra in alto a destra della finestra.
 
 <img src={shivaSupport} />
 
 ## Registrare un dispositivo
 
-Per accedere regolarmente a un dispositivo da amministrare, è più appropriato creare una sessione, che richiederà solo il tuo nome utente e la tua password ad ogni connessione.
+Per accedere regolarmente a un dispositivo da gestire, è più conveniente creare una sessione, che richiederà solo il tuo nome utente e la tua password a ogni connessione.
 
-Per fare ciò, vai nella scheda "Dispositivi" del menu "Bastion", quindi clicca sul pulsante "Nuovo dispositivo".
+Per fare ciò, vai alla scheda « Dispositivi » nel menu « Bastion», quindi fai clic sul pulsante « Nuovo dispositivo ».
 
 <img src={creerSession} />
 
-Quindi inserisci le informazioni necessarie per la creazione del tuo dispositivo:
+Compila quindi le informazioni necessarie per la creazione del tuo dispositivo:
 
     - Nome del dispositivo;
     - Descrizione;
     - Appliance associata;
     - Tipo di protocollo (SSH o RDP);
     - Indirizzo IP dell'host;
-    - Configurazione della tastiera.
+    - Configurazione del tastierino.
 
 <img src={creerSession2} />
 
-Una notifica che indica la creazione del dispositivo dovrebbe apparire in alto a destra della pagina. La sessione viene quindi aggiunta all'elenco dei tuoi dispositivi.
+Dovrebbe apparire una notifica in alto a destra della pagina che indica la creazione del dispositivo. La sessione verrà quindi aggiunta all'elenco dei tuoi dispositivi.
 
-Per creare un nuovo dispositivo, puoi anche passare attraverso la scheda "Appliances" cliccando sulla barra di azione dell'Appliance a cui vuoi associare un dispositivo.
+Per creare un nuovo dispositivo, puoi anche passare alla scheda « Appliance » e fare clic sull'azione della barra dell'Appliance a cui desideri associare un dispositivo.
 
 <img src={creerSession3} />
 
 ## Connettersi a un dispositivo
 
-Vai nella scheda "Dispositivi" della scheda "Bastion". Clicca sulla barra di azione del dispositivo che vuoi aprire e clicca sul pulsante "Apri".
+Recati nell’opzione « Dispositivi » nell’area « Bastione ». Clicca sull’area delle azioni del dispositivo che desideri aprire e premi il pulsante « Apri ».
 
 <img src={ouvrirSession} />
 
-Ad ogni connessione al dispositivo, devi solo inserire le tue informazioni di autenticazione.
+Ad ogni connessione al dispositivo, è necessario inserire soltanto le proprie credenziali di autenticazione.
 
 <img src={ouvrirSession2} />
 
-Dopo aver inserito le tue credenziali, appare una notifica che conferma l'inizio della connessione al tuo dispositivo e si apre la console verso la tua macchina virtuale.
+Dopo aver inserito le proprie credenziali, verrà visualizzata una notifica che conferma l’inizio della connessione al dispositivo e si aprirà la console verso la tua macchina virtuale.

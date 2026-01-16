@@ -14,7 +14,7 @@ Cloud Temple est un fournisseur de cloud souverain français spécialisé dans l
 ## Architecture de Services
 
 ### 🖥️ Console Management (`/docs/console/`)
-- **Console Shiva** : Interface de gestion centralisée
+- **Console** : Interface de gestion centralisée
 - **API Management** : Documentation API complète
 - **IAM** : Identity & Access Management
 - **Monitoring** : Métriques et dashboards Grafana
