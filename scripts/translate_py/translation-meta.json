@@ -907,10 +907,10 @@
       "it": "983844e51bd33596d3eaa296289d2f8900894dd6a329f803fa37ed96b6029f27"
     },
     "managed_kubernetes/managed_kubernetes.md": {
-      "en": "446b91355767b364d2db74412f134ef574f2a68e6a7949b4545f480ec9051027",
-      "de": "446b91355767b364d2db74412f134ef574f2a68e6a7949b4545f480ec9051027",
-      "es": "446b91355767b364d2db74412f134ef574f2a68e6a7949b4545f480ec9051027",
-      "it": "446b91355767b364d2db74412f134ef574f2a68e6a7949b4545f480ec9051027"
+      "en": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
+      "de": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
+      "es": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
+      "it": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17"
     },
     "managed_kubernetes/tutorials.md": {
       "en": "ec7dca39ba811c8947882f464dab93081b191fc8ac5a740d48f6e6c10a6d7eff",
@@ -991,10 +991,10 @@
       "it": "0878368929e7cbe62688404fab60e338e8970c593b219c3a21cc2eeebcbdd46b"
     },
     "managed_kubernetes/tutorials/usingopencost.md": {
-      "en": "4abc583b356a0762e20f1563dfb2bee62c30d1c7cda28923a9d5360158b7aee9",
-      "de": "4abc583b356a0762e20f1563dfb2bee62c30d1c7cda28923a9d5360158b7aee9",
-      "es": "4abc583b356a0762e20f1563dfb2bee62c30d1c7cda28923a9d5360158b7aee9",
-      "it": "4abc583b356a0762e20f1563dfb2bee62c30d1c7cda28923a9d5360158b7aee9"
+      "en": "b6e4edc0b60e5070a2d922f603250d1a2651271046c2ac24f0c92d8326c68e82",
+      "de": "b6e4edc0b60e5070a2d922f603250d1a2651271046c2ac24f0c92d8326c68e82",
+      "es": "b6e4edc0b60e5070a2d922f603250d1a2651271046c2ac24f0c92d8326c68e82",
+      "it": "b6e4edc0b60e5070a2d922f603250d1a2651271046c2ac24f0c92d8326c68e82"
     },
     "terraform/terraform.md": {
       "en": "dce44f42bac9d5e4f060cbaa02232f42f5d2018a5ef041d41005f9d6bb46bb02",
@@ -1043,8 +1043,14 @@
       "de": "5a3315d46830d98be0a522cd91b0bae0ac87a7495ad75b291901316dbcfb2b4b",
       "it": "5a3315d46830d98be0a522cd91b0bae0ac87a7495ad75b291901316dbcfb2b4b",
       "es": "5a3315d46830d98be0a522cd91b0bae0ac87a7495ad75b291901316dbcfb2b4b"
+    },
+    "managed_kubernetes/tutorials/usinggpu.md": {
+      "en": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
+      "de": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
+      "es": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
+      "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-01-19T11:04:47.258770",
+  "last_update": "2026-01-19T20:14:15.966950",
   "version": "2.0"
 }
