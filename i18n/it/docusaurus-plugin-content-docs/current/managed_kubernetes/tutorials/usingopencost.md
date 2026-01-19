@@ -16,13 +16,13 @@ Questo tutorial vi presenta **OpenCost**, lo strumento di monitoraggio e ottimiz
 
 ## Cos'è OpenCost?
 
-OpenCost è una soluzione open-source, standard della CNCF (Cloud Native Computing Foundation), che fornisce una visibilità in tempo reale sui costi dei tuoi ambienti Kubernetes. Ti aiuta a comprendere con precisione cosa sta consumando risorse nel tuo cluster e come ciò si traduce in termini di costi.
+OpenCost è una soluzione open-source, standard della CNCF (Cloud Native Computing Foundation), che fornisce una visibilità in tempo reale sui costi dei tuoi ambienti Kubernetes. Ti aiuta a comprendere con precisione cosa consuma risorse nel tuo cluster e come ciò si traduce in termini di costi.
 
 Nell'offerta Kubernetes gestito, OpenCost è già preinstallato e configurato per offrirti una visione chiara delle tue spese. È direttamente impostato con i costi effettivi dell'infrastruttura Cloud Temple.
 
 ## Accedere all'interfaccia OpenCost
 
-L'interfaccia di OpenCost è esposta su un URL sicuro, specifico per il tuo cluster. Per accedervi, utilizza l'URL seguente sostituendo `identifiant` con l'identificativo del tuo cluster (ad esempio, `ctodev`):
+L'interfaccia di OpenCost è esposta tramite un URL sicuro, specifico per il tuo cluster. Per accedervi, utilizza l'URL seguente sostituendo `identifiant` con l'identificativo del tuo cluster (ad esempio, `ctodev`):
 
 `https://opencost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
@@ -44,7 +44,7 @@ Questa vista vi permette di suddividere i costi in base ai concetti nativi di Ku
 
 ### Aggregazione per Label
 
-Per un'analisi finanziaria ancora più approfondita, OpenCost può aggregare i costi basandosi sui **label Kubernetes**. Non esiste un'opzione "Label" diretta nel menu, ma OpenCost importa i tuoi label e ti permette di creare aggregazioni personalizzate. A questo scopo, è fondamentale adottare una strategia di labeling coerente. Ad esempio, utilizzando label come `team: backend` o `product: api-gateway`, potrai analizzare i costi in modo preciso in relazione alla tua organizzazione.  
+Per un'analisi finanziaria ancora più approfondita, OpenCost può aggregare i costi basandosi sui **label Kubernetes**. Non esiste un'opzione "Label" diretta nel menu, ma OpenCost importa i tuoi label e ti permette di creare aggregazioni personalizzate. A questo scopo, è fondamentale adottare una strategia di labeling coerente. Ad esempio, utilizzando label come `team: backend` o `product: api-gateway`, potrai analizzare i costi in modo preciso in base alla tua organizzazione.  
 Per questo tipo di analisi, è necessario passare attraverso l'integrazione IA di OpenCost.
 
 ## Uso avanzato: Integrazione con un'IA (server MCP)
@@ -75,7 +75,7 @@ Ad esempio, per il cluster "bestie":
 }
 ```
 
-Per generare il valore `<TOKEN>` a partire dai tuoi identificativi, utilizza uno dei seguenti comandi:
+Per generare il valore `<TOKEN>` a partire dai tuoi identificativi, utilizza una delle seguenti comandi:
 
 **Per Linux/macOS:**
 ```bash
@@ -88,12 +88,12 @@ $credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:VOTRE_MOT_DE_PAS
 [System.Convert]::ToBase64String($credentials)
 ```
 
-Una volta salvato questo file, Cline caricherà automaticamente il MCP `opencost-xxxxx` all'avvio.
+Una volta salvato il file, Cline caricherà automaticamente il MCP `opencost-xxxxx` all'avvio.
 
 ### 2. Query OpenCost with MCP
 
 :::tip Prerequisiti
-Per interagire con il MCP in linguaggio naturale, l'IA sottostante deve avere accesso a modelli di linguaggio (LLM), oppure in locale (LMStudio, ecc.), oppure tramite una connessione a servizi pubblici come GPT-5 o Gemini, oppure utilizzando la nostra offerta **[LLM-as-a-Service](/docs/llmaas/llmaas)** sovrana.
+Per interagire con il MCP in linguaggio naturale, il modello di intelligenza artificiale sottostante deve avere accesso a modelli linguistici (LLM), sia localmente (LMStudio, ecc.), sia tramite connessione a servizi pubblici come GPT-5 o Gemini, oppure utilizzando la nostra offerta **[LLM-as-a-Service](/llmaas/llmaas)** sovrana.
 :::
 
 Dopo la configurazione, puoi utilizzare gli strumenti LLM per effettuare query in linguaggio naturale su questo server MCP.
@@ -106,7 +106,7 @@ Otterrai quanto segue:
 
 #### Example 2:
 
-"usa il MCP 'opencost-bestie' e elencami i costi associati ai volumi persistenti della giornata di ieri"
+"utilizza il MCP 'opencost-bestie' e elencami i costi associati ai volumi persistenti della giornata di ieri"
 
 <img src={opencostmcp2} alt="risposta IA opencost 2"/>
 
