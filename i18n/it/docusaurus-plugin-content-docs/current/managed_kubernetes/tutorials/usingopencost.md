@@ -2,6 +2,7 @@
 title: Monitorare i costi con OpenCost
 ---
 import opencostui from './images/opencost.png'
+import opencostgrafana from './images/opencostgrafana.png'
 import opencostmcp from './images/opencostmcp.png'
 import opencostmcp2 from './images/opencostmcp2.png'
 import opencostmcp3 from './images/opencostmcp3.png'
@@ -18,7 +19,7 @@ Questo tutorial vi presenta **OpenCost**, lo strumento di monitoraggio e ottimiz
 
 OpenCost è una soluzione open-source, standard della CNCF (Cloud Native Computing Foundation), che fornisce una visibilità in tempo reale sui costi dei tuoi ambienti Kubernetes. Ti aiuta a comprendere con precisione cosa consuma risorse nel tuo cluster e come ciò si traduce in termini di costi.
 
-Nell'offerta Kubernetes gestito, OpenCost è già preinstallato e configurato per offrirti una visione chiara delle tue spese. È direttamente impostato con i costi effettivi dell'infrastruttura Cloud Temple.
+Nell'offerta Kubernetes gestito, OpenCost è preinstallato e preconfigurato per offrirti una visione chiara delle tue spese. È direttamente configurato con i costi effettivi dell'infrastruttura Cloud Temple.
 
 ## Accedere all'interfaccia OpenCost
 
@@ -44,8 +45,14 @@ Questa vista vi permette di suddividere i costi in base ai concetti nativi di Ku
 
 ### Aggregazione per Label
 
-Per un'analisi finanziaria ancora più approfondita, OpenCost può aggregare i costi basandosi sui **label Kubernetes**. Non esiste un'opzione "Label" diretta nel menu, ma OpenCost importa i tuoi label e ti permette di creare aggregazioni personalizzate. A questo scopo, è fondamentale adottare una strategia di labeling coerente. Ad esempio, utilizzando label come `team: backend` o `product: api-gateway`, potrai analizzare i costi in modo preciso in base alla tua organizzazione.  
+Per un'analisi finanziaria ancora più approfondita, OpenCost può aggregare i costi basandosi sui **label Kubernetes**. Non esiste un'opzione "Label" diretta nel menu, ma OpenCost importa i tuoi label e ti permette di creare aggregazioni personalizzate. A tal fine, è fondamentale adottare una strategia di labeling coerente. Ad esempio, utilizzando label come `team: backend` o `product: api-gateway`, potrai analizzare i costi in modo preciso in relazione alla tua organizzazione.  
 Per questo tipo di analisi, è necessario passare attraverso l'integrazione IA di OpenCost.
+
+## Dashboard Grafana
+
+Un dashboard Grafana è inoltre disponibile per visualizzare i dati di OpenCost. Questo dashboard offre una visione alternativa e complementare rispetto all'interfaccia di OpenCost, mantenendo l'intero storico delle metriche dei costi, consentendoti di analizzare le tendenze nel lungo periodo.
+
+<img src={opencostgrafana} alt="Dashboard Grafana OpenCost"/>
 
 ## Uso avanzato: Integrazione con un'IA (server MCP)
 
@@ -93,7 +100,7 @@ Una volta salvato il file, Cline caricherà automaticamente il MCP `opencost-xxx
 ### 2. Query OpenCost with MCP
 
 :::tip Prerequisiti
-Per interagire con il MCP in linguaggio naturale, il modello di intelligenza artificiale sottostante deve avere accesso a modelli linguistici (LLM), sia localmente (LMStudio, ecc.), sia tramite connessione a servizi pubblici come GPT-5 o Gemini, oppure utilizzando la nostra offerta **[LLM-as-a-Service](/llmaas/llmaas)** sovrana.
+Per interagire con il MCP in linguaggio naturale, l'IA sottostante deve avere accesso a modelli linguistici (LLM), oppure in locale (LMStudio, ecc.), oppure tramite una connessione a servizi pubblici come GPT-5 o Gemini, oppure utilizzando la nostra offerta **[LLM-as-a-Service](/llmaas/llmaas)** sovrana.
 :::
 
 Dopo la configurazione, puoi utilizzare gli strumenti LLM per effettuare query in linguaggio naturale su questo server MCP.
@@ -106,13 +113,13 @@ Otterrai quanto segue:
 
 #### Example 2:
 
-"utilizza il MCP 'opencost-bestie' e elencami i costi associati ai volumi persistenti della giornata di ieri"
+"usa il MCP 'opencost-bestie' e elencami i costi associati ai volumi persistenti della giornata di ieri"
 
 <img src={opencostmcp2} alt="risposta IA opencost 2"/>
 
 #### Example 3:
 
-"Use the OpenCost MCP opencost-bestie, and tell me what percentage of the cluster costs are allocated to the application with the label 'nginx' (filter of the form filter: 'label:app:frontend')."
+"Use the OpenCost MCP opencost-bestie, and tell me what percentage of the cluster costs is allocated to the application with the label 'nginx' (filter of the form filter: 'label:app:frontend')."
 
 <img src={opencostmcp3} alt="IA response opencost 3"/>
 
