@@ -8,7 +8,7 @@ import opencostmcp3 from './images/opencostmcp3.png'
 
 ## Objetivos
 
-Este tutorial presenta **OpenCost**, la herramienta de supervisión y optimización de costos integrada en su clúster **Kubernetes gestionado**. Al final de esta guía, será capaz de:
+Este tutorial presenta **OpenCost**, la herramienta de supervisión y optimización de costos integrada en su clúster **Managed Kubernetes**. Al final de esta guía, será capaz de:
 
 - **Acceder** a la interfaz de OpenCost.
 - **Comprender** la estructura de la interfaz y las vistas disponibles.
@@ -16,7 +16,7 @@ Este tutorial presenta **OpenCost**, la herramienta de supervisión y optimizaci
 
 ## ¿Qué es OpenCost?
 
-OpenCost es una solución open-source, estándar de la CNCF (Cloud Native Computing Foundation), que proporciona visibilidad en tiempo real sobre los costos de sus entornos Kubernetes. Le ayuda a comprender con precisión qué consume recursos en su clúster y cómo se traduce esto en términos de costos.
+OpenCost es una solución open-source, estándar de la CNCF (Cloud Native Computing Foundation), que proporciona visibilidad en tiempo real sobre los costos de sus entornos Kubernetes. Le ayuda a comprender con precisión qué consume recursos en su clúster y cómo esto se traduce en términos de costos.
 
 En la oferta de Kubernetes gestionado, OpenCost está preinstalado y configurado para ofrecerle una visión clara de sus gastos. Está directamente configurado con los costos reales de la infraestructura Cloud Temple.
 
@@ -44,12 +44,13 @@ Esta vista le permite descomponer los costos según conceptos nativos de Kuberne
 
 ### Aggregation by Labels
 
-For even more granular financial analysis, OpenCost can aggregate costs based on **Kubernetes labels**. There isn't a direct "Label" option in the menu, but OpenCost ingests your labels and allows you to create custom aggregations. For this, a consistent labeling strategy is essential. For example, using labels such as `team: backend` or `product: api-gateway` enables you to analyze costs precisely aligned with your organizational structure.  
+For even more granular financial analysis, OpenCost can aggregate costs based on **Kubernetes labels**. There isn't a direct "Label" option in the menu, but OpenCost ingests your labels and allows you to create custom aggregations. For this, a consistent labeling strategy is essential. For example, using labels such as `team: backend` or `product: api-gateway` enables you to analyze costs precisely aligned with your organization's structure.
+
 For this type of analysis, you must go through OpenCost's AI integration.
 
 ## Uso avanzado: Integración con una IA (servidor MCP)
 
-Para usuarios avanzados, OpenCost puede consultarse directamente desde el asistente conversacional Cline (o cualquier otro) gracias al sistema de **servidores MCP (Multi-purpose Co-processor)**. Esto le permite crear consultas mediante scripts y obtener datos de costos directamente en sus conversaciones.
+Para usuarios avanzados, OpenCost puede consultarse directamente desde el asistente conversacional Cline (u otro) gracias al sistema de **servidores MCP (Multi-purpose Co-processor)**. Esto le permite scriptear consultas y obtener datos de costos directamente en sus conversaciones.
 
 ### 1. Configuración del MCP OpenCost en Cline
 
@@ -80,21 +81,21 @@ Para generar el valor `<TOKEN>` a partir de sus credenciales, utilice una de las
 
 **Para Linux/macOS:**
 ```bash
-echo -n 'finopsadm:SU_CONTRASEÑA' | base64
+echo -n 'finopsadm:VUESTRA_CONTRASEÑA' | base64
 ```
 
 **Para Windows (PowerShell):**
 ```powershell
-$credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:SU_CONTRASEÑA")
+$credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:VUESTRA_CONTRASEÑA")
 [System.Convert]::ToBase64String($credentials)
 ```
 
 Una vez guardado este archivo, Cline cargará automáticamente el MCP `opencost-xxxxx` al iniciar.
 
-### 2. Query OpenCost with MCP
+### 2. Query OpenCost using MCP
 
 :::tip Prerequisites
-To interact with MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (e.g., LMStudio) or via connections to public services such as GPT-5 or Gemini, or by using our **[LLM-as-a-Service](/docs/llmaas/llmaas)** sovereign offering.
+To interact with MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (e.g., LMStudio) or via connections to public services such as GPT-5 or Gemini, or by using our sovereign **[LLM-as-a-Service](/llmaas/llmaas)** offering.
 :::
 
 After configuration, you can use LLM tools to perform natural language queries against this MCP server.
@@ -111,11 +112,11 @@ Obtendrás lo siguiente:
 
 <img src={opencostmcp2} alt="IA response opencost 2"/>
 
-#### Ejemplo 3:
+#### Example 3:
 
-"Utiliza el MCP opencost-bestie y dime qué porcentaje de los costos del clúster se asigna a la aplicación con la etiqueta 'nginx' (filtro del tipo filter: 'label:app:frontend')."
+"Use the OpenCost MCP opencost-bestie, and tell me what percentage of the cluster costs are allocated to the application with the label 'nginx' (filter of the form filter: 'label:app:frontend')."
 
-<img src={opencostmcp3} alt="respuesta IA opencost 3"/>
+<img src={opencostmcp3} alt="IA response opencost 3"/>
 
 ## Conclusión
 

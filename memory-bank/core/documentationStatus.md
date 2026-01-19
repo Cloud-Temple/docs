@@ -43,7 +43,11 @@
 - **Traduction** : Complète
 - **Note** : Correction systématique des blocs de code vides et de la syntaxe HCL dans `concepts.md`, `quickstart.md`, `terraform.md`, `tutorials.md` pour toutes les langues.
 
-### Network & Storage
+### Network (`/docs/network/`)
+- **État** : ✅ Stable (VPC) / 🔄 En développement (Internet, Private Network)
+- **Traduction** : VPC traduit (en, de, es, it)
+
+### Storage (`/docs/storage/`)
 - **État** : 🔄 En développement
 
 ## 🌍 Internationalisation (i18n)
