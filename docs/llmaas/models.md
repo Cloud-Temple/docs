@@ -706,7 +706,7 @@ Modèle MoE hybride ultra-efficace d'IBM, conçu pour la faible latence, les app
 
 **Cas d'usage :**
 - Applications embarquées et "edge" nécessitant une faible latence.
-- {'Tâches rapides au sein de workflows agentiques plus larges (ex': 'function calling).'}
+- Tâches rapides au sein de workflows agentiques plus larges (ex : function calling).
 - Analyse de documents sur du matériel grand public.
 - Déploiements nécessitant une empreinte mémoire minimale.
 
@@ -1082,4 +1082,3 @@ Applications nécessitant une empreinte minimale en ressources, déploiement sur
 - Gemma 3n
 - Granite 4 tiny
 - Qwen 3 VL (2B)
-
