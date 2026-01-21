@@ -35,10 +35,10 @@ Cloud Temple LLMaaS offers **42 carefully selected and optimized large language 
 Advanced version of the Cogito model offering significantly enhanced reasoning and analytical capabilities, designed for the most demanding AI analytical applications.
 
 **Technical Specifications:**
-- **Speed** : 20 tokens/second
-- **Consumption** : 6.67 kWh/million tokens
-- **License** : [LLAMA 3.2 Community License](./licences/llama_3.2_community_licence.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 20 tokens/second
+- **Consumption**: 6.67 kWh/million tokens
+- **License**: [LLAMA 3.2 Community License](./licences/llama_3.2_community_licence.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
@@ -70,7 +70,7 @@ Revolutionary model from Google offering an optimal balance between power and ef
 
 **Use cases:**
 - Document analysis with extended context up to 120K tokens (approximately 400 pages)
-- Semantic indexing and search within large document databases
+- Semantic indexing and search within large document repositories
 - Simultaneous processing of images and text thanks to multimodal capabilities
 - Structured data extraction from PDFs and scanned documents
 - Integration with external tools via function calling API
@@ -104,7 +104,7 @@ State-of-the-art open-weight language model from OpenAI, delivering strong perfo
 **Technical Specifications:**
 - **Speed**: 104 tokens/second
 - **Energy Consumption**: 2.19 kWh per million tokens
-- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
 **Capabilities:**
@@ -123,9 +123,9 @@ State-of-the-art open-weight language model from OpenAI, delivering strong perfo
 
 State-of-the-art multilingual model developed by Meta, designed to excel in natural dialogue, complex reasoning, and nuanced instruction understanding.
 
-**Technical specifications:**
+**Technical Specifications:**
 - **Speed**: 29 tokens/second
-- **Energy consumption**: 7.85 kWh per million tokens
+- **Energy Consumption**: 7.85 kWh per million tokens
 - **License**: [LLAMA 3.3 Community License](./licences/llama_3.3_community_licence.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -134,7 +134,7 @@ State-of-the-art multilingual model developed by Meta, designed to excel in natu
 
 **Tags:** `Agent` `Dialogue` `Multilingual`
 
-**Use cases:**
+**Use Cases:**
 - Multilingual chatbots supporting 8 languages simultaneously
 - Execution of complex, chained instructions (prompt chaining)
 - Processing a 60K-token dialogue window for conversational history
@@ -147,10 +147,10 @@ State-of-the-art multilingual model developed by Meta, designed to excel in natu
 The most powerful model in the Ministral family, designed for complex tasks on local infrastructure.
 
 **Technical Specifications:**
-- **Speed** : 31 tokens/second
-- **Energy Consumption** : 4.30 kWh per million tokens
-- **License** : [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 31 tokens/second
+- **Consumption**: 4.30 kWh per million tokens
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
@@ -210,10 +210,10 @@ The first fully open reasoning model at this scale, competing with the best prop
 Reference "Fully Open" model, offering complete transparency (data, code, weights) and remarkable efficiency.
 
 **Technical Specifications:**
-- **Speed** : 37 tokens/second
-- **Energy Consumption** : 1.65 kWh per million tokens
-- **License** : [Apache 2.0](./licenses/apache_2.0.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 37 tokens/second
+- **Energy Consumption**: 1.65 kWh per million tokens
+- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
@@ -250,7 +250,7 @@ Massive MoE model with 235 billion parameters, activating only 22 billion at a t
 ### qwen3-2507:30b-a3b
 **Qwen Team • 30B parameters • Context: 250,000 tokens**
 
-Improved version of the non-thinking mode from Qwen3-30B, featuring enhanced general capabilities, broader knowledge coverage, and better user alignment.
+Enhanced version of the non-thinking mode from Qwen3-30B, featuring improved general capabilities, broader knowledge coverage, and better user alignment.
 
 **Technical Specifications:**
 - **Speed**: 104 tokens/second
@@ -272,7 +272,7 @@ Improved version of the non-thinking mode from Qwen3-30B, featuring enhanced gen
 ### qwen3-coder:30b
 **Qwen Team • 30B parameters • Context: 250,000 tokens**
 
-MoE-optimized model for software engineering tasks, featuring an extremely long context.
+MoE-optimized model designed for software engineering tasks, featuring an extremely long context.
 
 **Technical Specifications:**
 - **Speed**: 104 tokens/second
@@ -298,7 +298,7 @@ Qwen's Next 80B model, optimized for large contexts and reasoning, served via vL
 
 **Technical Specifications:**
 - **Speed**: 148 tokens/second
-- **Energy Consumption**: 1.54 kWh per million tokens
+- **Consumption**: 1.54 kWh per million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -340,7 +340,7 @@ The most powerful multimodal model in the catalog, combining state-of-the-art vi
 
 **Technical Specifications:**
 - **Speed**: 31 tokens/second
-- **Energy Consumption**: 7.35 kWh per million tokens
+- **Consumption**: 7.35 kWh/million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -361,10 +361,10 @@ The most powerful multimodal model in the catalog, combining state-of-the-art vi
 State-of-the-art multimodal model (Qwen3-VL) offering exceptional visual understanding and precise temporal reasoning.
 
 **Technical Specifications:**
-- **Speed**: 43 tokens/second
-- **Energy Consumption**: 3.10 kWh per million tokens
-- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Location**: FR 🇫🇷
+- **Speed** : 43 tokens/second
+- **Energy Consumption** : 3.10 kWh per million tokens
+- **License** : [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Location** : FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ✅ Vision • ❌ Reasoning • ❌ Security
@@ -427,10 +427,10 @@ Balanced Qwen3 14B model, delivering strong general performance with good infere
 State-of-the-art multilingual embedding model (BGE-M3), delivering exceptional semantic search capabilities across more than 100 languages.
 
 **Technical Specifications:**
-- **Speed** : 171 tokens/second
-- **Energy Consumption** : 0.36 kWh per million tokens
-- **License** : [MIT](./licences/mit.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 171 tokens/second
+- **Energy Consumption**: 0.36 kWh per million tokens
+- **License**: [MIT](./licences/mit.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
@@ -531,9 +531,9 @@ State-of-the-art embedding model from Google, optimized for its size, ideal for 
 
 Ultra-fast and efficient micro-model Gemma 3.
 
-**Technical specifications:**
+**Technical Specifications:**
 - **Speed**: 53 tokens/second
-- **Energy consumption**: 1.15 kWh per million tokens
+- **Energy Consumption**: 1.15 kWh per million tokens
 - **License**: [Google Gemma Terms of Use](./licences/google_gemma_terms_of_use.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -542,7 +542,7 @@ Ultra-fast and efficient micro-model Gemma 3.
 
 **Tags:** `Compact` `Efficient` `Edge`
 
-**Use cases:**
+**Use Cases:**
 - Fast text classification
 - Simple chatbots
 - Rapid prototyping
@@ -611,7 +611,7 @@ Ultra-compact IBM Granite embedding model, designed for maximum efficiency.
 - Document clustering
 
 ### granite4-small-h:32b
-**IBM • 32B (9B active) parameters • Context: 128,000 tokens**
+**IBM • 32B parameters (9B active) • Context: 128,000 tokens**
 
 IBM's MoE (Mixture-of-Experts) model, designed as a "workhorse" for daily enterprise tasks, featuring excellent efficiency for long contexts.
 
@@ -630,16 +630,16 @@ IBM's MoE (Mixture-of-Experts) model, designed as a "workhorse" for daily enterp
 - Conversational agents for customer support with access to extensive knowledge bases.
 - Enterprise workflow automation requiring the use of multiple tools.
 - Analysis of long documents with optimized resource consumption.
-- Deployment on medium-sized infrastructures thanks to its efficiency.
+- Deployment on medium-scale infrastructures thanks to its efficiency.
 
 ### granite4-tiny-h:7b
-**IBM • 7B parameters (1B active) • Context: 128,000 tokens**
+**IBM • 7B (1B active) parameters • Context: 128,000 tokens**
 
 Ultra-efficient hybrid MoE model from IBM, designed for low latency, edge and local applications, and as a foundational component for agent workflows.
 
 **Technical Specifications:**
 - **Speed**: 58 tokens/second
-- **Energy Consumption**: 1.05 kWh per million tokens
+- **Power Consumption**: 1.05 kWh per million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -650,7 +650,7 @@ Ultra-efficient hybrid MoE model from IBM, designed for low latency, edge and lo
 
 **Use Cases:**
 - Embedded and edge applications requiring low latency.
-- {'Fast tasks within larger agent workflows (e.g.': 'function calling).'}
+- Fast tasks within larger agent workflows (e.g., function calling).
 - Document analysis on consumer-grade hardware.
 - Deployments requiring minimal memory footprint.
 
@@ -704,7 +704,7 @@ Intermediate-sized model from the Ministral family, offering an optimal balance 
 
 **Technical Specifications:**
 - **Speed** : 55 tokens/second
-- **Energy Consumption** : 2.42 kWh per million tokens
+- **Consumption** : 2.42 kWh per million tokens
 - **License** : [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location** : FR 🇫🇷
 
@@ -759,7 +759,7 @@ Qwen3-4B model optimized for reasoning, with improved performance on logical tas
 **Use Cases:**
 - Highly complex reasoning tasks (logic, math, science, code).
 - Conversational agents with extremely long conversation history (256k tokens).
-- Deep reasoning analysis of very large documents.
+- Deep reasoning on very large documents.
 - Integration with external tools via function calling over very large contexts.
 
 ### qwen3-2507:4b
@@ -831,10 +831,10 @@ Ultra-performant embedding model Qwen3-4B, offering deep semantic understanding 
 Ultra-compact multimodal Qwen3-VL model, bringing advanced vision capabilities to edge devices.
 
 **Technical Specifications:**
-- **Speed** : 64 tokens/second
-- **Energy Consumption** : 0.95 kWh per million tokens
-- **License** : [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 64 tokens/second
+- **Power Consumption**: 0.95 kWh per million tokens
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ✅ Vision • ❌ Reasoning • ❌ Security
@@ -934,14 +934,14 @@ Ultra-light Qwen3 model with 0.6 billion parameters, delivering exceptional infe
 
 ### Multilingual Dialogue
 
-Chatbots and assistants capable of communicating in multiple languages with automatic language detection, context preservation throughout the entire conversation, and understanding of linguistic nuances
+Chatbots and assistants capable of communicating in multiple languages with automatic language detection, context preservation throughout the conversation, and understanding of linguistic nuances.
 
 **Recommended Models:**
 
-- Llama 3.3
-- Mistral Small 3.2
-- Qwen 3
-- Openai OSS
+- Llama 3.3  
+- Mistral Small 3.2  
+- Qwen 3  
+- Openai OSS  
 - Granite 4
 
 ### Long Document Analysis
@@ -957,7 +957,7 @@ Processing large documents (>100 pages) while preserving context across the enti
 
 ### Programming and Development
 
-Code generation and optimization across multiple languages, debugging, refactoring, full feature development, understanding of complex algorithmic implementations, and unit test creation
+Code generation and optimization across multiple languages, debugging, refactoring, full feature development, understanding complex algorithmic implementations, and writing unit tests
 
 **Recommended models:**
 

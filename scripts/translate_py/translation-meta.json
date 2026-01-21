@@ -619,10 +619,10 @@
       "it": "c982586c414e83ea3f3c62707801272b7903fbe9dad5b4a4d447c7da7892c5d6"
     },
     "llmaas/models.md": {
-      "en": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b",
-      "de": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b",
-      "es": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b",
-      "it": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b"
+      "en": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
+      "de": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
+      "es": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
+      "it": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548"
     },
     "network/private_network/tutorials.md": {
       "en": "3129859075ff7dde2682afa48dd26621529a60e627c5ddff45268dcddd88c203",
@@ -1051,6 +1051,6 @@
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-01-21T09:25:31.659369",
+  "last_update": "2026-01-21T10:08:38.128482",
   "version": "2.0"
 }
