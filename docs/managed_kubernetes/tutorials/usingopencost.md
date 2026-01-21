@@ -2,6 +2,7 @@
 title: Suivre les coûts avec OpenCost
 ---
 import opencostui from './images/opencost.png'
+import opencostgrafana from './images/opencostgrafana.png'
 import opencostmcp from './images/opencostmcp.png'
 import opencostmcp2 from './images/opencostmcp2.png'
 import opencostmcp3 from './images/opencostmcp3.png'
@@ -46,6 +47,12 @@ Cette vue vous permet de décomposer les coûts par concepts natifs Kubernetes. 
 
 Pour une analyse financière encore plus fine, OpenCost peut agréger les coûts en se basant sur les **labels Kubernetes**. Il n'y a pas une option "Label" directe dans le menu, mais OpenCost ingère vos labels et vous permet de créer des agrégations personnalisées. Pour cela, une stratégie de labeling cohérente est essentielle. Par exemple, en utilisant des labels comme `team: backend` ou `product: api-gateway`, vous pourrez analyser les coûts qui correspondent précisément à votre organisation.
 Pour ce type d'analyse, vous devez passer par l'intégration IA d'opencost.
+
+## Dashboard Grafana
+
+Un dashboard Grafana est également disponible pour visualiser les données d'OpenCost. Ce dashboard offre une vue alternative et complémentaire à l'interface d'OpenCost, et il conserve l'historique complet des métriques de coûts, vous permettant d'analyser les tendances sur le long terme.
+
+<img src={opencostgrafana} alt="OpenCost Grafana Dashboard"/>
 
 ## Utilisation Avancée : Intégration avec une IA (Serveur MCP)
 
@@ -93,7 +100,7 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 ### 2. Interroger OpenCost avec le MCP
 
 :::tip Prérequis
-Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre offre **[LLM-as-a-Service](/docs/llmaas/llmaas)** souveraine.
+Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre offre **[LLM-as-a-Service](/llmaas/llmaas)** souveraine.
 :::
 
 Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requetes en langage natuel sur ce serveur MCP.

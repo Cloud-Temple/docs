@@ -6,59 +6,59 @@ title: Konzepte
 
 ## Definition und Positionierung
 
-Die **VPC (Virtual Private Cloud)** ist ein verwalteter Netzwerkdienst, der die Erstellung isolierter, sicherer und kontrollierbarer privater Netzwerke über die Cloud Temple-Konsole ermöglicht. Sie wurde entwickelt, um ein Cloud-natives Erlebnis zu bieten und die Netzwerk- und Sicherheitskonfiguration zu automatisieren.
+Der **VPC (Virtual Private Cloud)** ist ein verwalteter Netzwerkservice, der die Erstellung isolierter, sicherer und steuerbarer privater Netzwerke über die Cloud Temple-Konsole ermöglicht. Er ist darauf ausgelegt, eine cloud-native Erfahrung zu bieten, indem er die Netzwerk- und Sicherheitskonfiguration automatisiert.
 
-Stand Januar 2026 ermöglichen VPC-Privatnetzwerke die Verbindung von **IaaS Open Source**- und **IaaS VMware**-Diensten. Die Verbindung mit **Bare Metal**-Servern wird in einem zukünftigen Update verfügbar sein.
+Stand Januar 2026 ermöglichen die privaten Netzwerke des VPC die Interkonnektivität zwischen den Diensten **IaaS Open Source** und **IaaS VMware**. Die Interkonnektivität mit den **Bare Metal**-Servern wird in einer kommenden Aktualisierung verfügbar sein.
 
 ### VPC vs Private Backbone
 
-Cloud Temple bietet zwei Netzwerkverbrauchsmodi an:
+Cloud Temple offers two network consumption modes:
 
-*   **Private Backbone (Historisches Angebot)**:
-    *   Ideal für Experten, die maximale Autonomie und spezifische Netzwerkkonfigurationen (Extended L2) suchen.
-    *   Erfordert manuelle Installation und Verwaltung von Sicherheitsgeräten (Firewalls, Router).
-    *   Manuelle Verwaltung des Adressplans.
+*   **Private Backbone (Legacy offering)**:
+    *   Ideal for experts seeking maximum autonomy and specific network configurations (extended L2).
+    *   Requires manual installation and management of security equipment (firewalls, routers).
+    *   Manual management of IP addressing.
 
-*   **VPC (Neues Angebot)**:
-    *   Entwickelt für ein Cloud-natives und automatisiertes Erlebnis.
-    *   Integrierte Sicherheit (Gateway, Firewalling, NAT) ohne Verwaltung von Drittanbietergeräten.
-    *   Managed Service mit garantierter Hochverfügbarkeit durch Cloud Temple.
-    *   Ideal für moderne Projekte, DevOps und Webanwendungs-Hosting.
+*   **VPC (New offering)**:
+    *   Designed for a cloud-native and automated experience.
+    *   Built-in security (Gateway, Firewalling, NAT) without the need to manage third-party equipment.
+    *   Fully managed service with high availability guaranteed by Cloud Temple.
+    *   Ideal for modern projects, DevOps workflows, and hosting web applications.
 
-## Architektur
+## Architecture
 
-Die VPC basiert auf einer redundanten und hochverfügbaren Architektur, die den inter-AZ-Backbone mit geringer Latenz von Cloud Temple nutzt.
+The VPC is based on a redundant and highly available architecture, leveraging Cloud Temple's low-latency inter-AZ backbone.
 
 ### Schlüsselkomponenten
 
-*   **VPC-Router**: Im Herzen jeder VPC verwaltet er das dynamische Routing zwischen verschiedenen privaten Netzwerken (Ost-West-Verkehr).
-*   **Private Netzwerke (VLANs)**: Layer-2-Netzwerksegmente, die Ihre Ressourcen (VMs, Server) verbinden. Sie erstrecken sich nativ über mehrere Verfügbarkeitszonen (AZ) ohne IP-Rekonfiguration.
-*   **Externes Gateway**: Optionaler Ein- und Ausgangspunkt für Internetverkehr (Nord-Süd). Es integriert NAT- und Flussmanagementfunktionen.
+*   **VPC-Router**: Im Zentrum jedes VPCs verwaltet er den dynamischen Routingverkehr zwischen den verschiedenen Private Networks (Ost-West-Traffic).
+*   **Private Networks (VLANs)**: L2-Netzwerksegmente, die Ihre Ressourcen (VMs, Server) verbinden. Sie erstrecken sich natürlicherweise über mehrere Verfügbarkeitszonen (AZ) ohne IP-Neukonfiguration.
+*   **Externe Gateway (External Gateway)**: Optionaler Eingangs- und Ausgangspunkt für Internet-Traffic (Nord-Süd). Sie integriert Funktionen für NAT und Flussverwaltung.
 
-### Isolierung und Sicherheit
+### Isolation und Sicherheit
 
-Die VPC garantiert eine strikte Isolierung:
-*   Jede VPC ist eine unabhängige Netzwerkentität.
-*   Die Bereitstellung erfolgt auf dedizierten Ressourcen (für IaaS Open Source-Kunden), wodurch sichergestellt wird, dass keine Netzwerkressourcen geteilt werden.
-*   Der Dienst durchläuft derzeit die **SecNumCloud**-Qualifizierung.
+Das VPC gewährleistet eine strenge Isolation:
+*   Jedes VPC ist eine eigenständige Netzwerkeinheit.
+*   Die Bereitstellung erfolgt auf dedizierten Ressourcen (für IaaS-Open-Source-Kunden), wodurch sichergestellt wird, dass keine Netzwerkressourcen geteilt werden.
+*   Der Dienst befindet sich derzeit in der Zertifizierung **SecNumCloud**.
 
 ## Hauptfunktionen
 
 | Funktion | Beschreibung | Verfügbarkeit |
-|----------|--------------|---------------|
+|--------|-------------|---------------|
 | **Regionale private Netzwerke** | Multi-AZ-Bereitstellung und transparente L2-Weiterleitung. | Verfügbar |
-| **Natives Routing** | Automatische Kommunikation zwischen privaten Netzwerken derselben VPC. | Verfügbar |
-| **IPAM & DHCP** | Automatische Verwaltung von Adresspools und dynamische Zuweisung. | Verfügbar |
-| **Internetzugang** | Konfigurierbar über Gateway (NAT, DNAT, Kontrollierter Egress). | Verfügbar |
-| **Floating IPs** | Flexible Bereitstellung von Diensten im Internet. | Verfügbar |
-| **Mikro-Segmentierung** | Netzwerkrichtliniengruppen für erweiterte Sicherheit. | H1 2026 |
-| **Beobachtbarkeit** | Protokolle und Metriken zur Netzwerkleistung. | H1 2026 |
-| **DNS-Dienst** | Interne und externe Namensauflösung. | H2 2026 |
-| **VPN & Cloud Connect** | Sichere Konnektivität zu On-Premise und Public Clouds. | H2 2026 |
+| **Nativer Routing** | Automatisierte Kommunikation zwischen privaten Netzwerken innerhalb eines VPC. | Verfügbar |
+| **IPAM & DHCP** | Automatisierte Verwaltung von Adresspools und dynamische Zuweisung. | Verfügbar |
+| **Internetzugriff** | Konfigurierbar über Gateway (NAT, DNAT, kontrollierter Egress). | Verfügbar |
+| **Flottierende IP-Adressen** | Flexible Exposition von Diensten im Internet. | Verfügbar |
+| **Micro-Segmentation** | Netzwerkrichtliniengruppen für erweiterte Sicherheit. | S1 2026 |
+| **Beobachtbarkeit** | Logs und Leistungsmetriken des Netzwerks. | S1 2026 |
+| **Service DNS** | Namensauflösung intern und extern. | S2 2026 |
+| **VPN & Cloud Connect** | Sichere Verbindung zu On-Premise-Infrastrukturen und öffentlichen Clouds. | S2 2026 |
 
-## Anwendungsfälle
+## Use Cases
 
-*   **Hosting kritischer Anwendungen**, die eine starke Isolierung erfordern.
-*   **Multi-Projekt-Segmentierung** (Prod, Pre-Prod, Dev).
-*   **Testumgebungen**, flüchtig und isoliert.
-*   **Souveräne Netzwerkbasis** für sensible Daten.
+*   Critical application hosting requiring strong isolation.
+*   Multi-project segmentation (Prod, Pre-prod, Dev).
+*   Ephemeral and isolated test environments.
+*   Sovereign networking foundations for sensitive data.

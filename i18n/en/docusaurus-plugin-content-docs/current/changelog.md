@@ -5,11 +5,19 @@ sidebar_position: 2
 
 # Change Tracking
 
+### January 19, 2026: Managed Kubernetes and VPC Enhancements
+
+- **Managed Kubernetes**: Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
+- **Managed Kubernetes**: New tutorial on using GPUs within a Kubernetes cluster.
+- **Managed Kubernetes**: Replaced KubeCost with a more up-to-date guide on **OpenCost**.
+- **Network (VPC)**: Comprehensive documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, quick start guides, and tutorials.
+- **Multilingual**: Full translation of the VPC service and new Kubernetes content into English, German, Spanish, and Italian.
+
 ### December 15, 2025: Stabilization and Multilingual Fixes
 
-- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
+- **Multilingual (Terraform, LLMaaS, Harbor)**: Major fixes to translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
 - **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
-- **Build**: Validation of deployment across all 5 supported languages.
+- **Build**: Verified deployment across all 5 supported languages.
 
 ### December 11, 2025: Managed Kubernetes Updates
 
@@ -33,7 +41,7 @@ sidebar_position: 2
 
 ### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
 
-- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick-start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
 - **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
 - **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
 
@@ -74,5 +82,5 @@ sidebar_position: 2
 - Improved the RAG explanation page with diagrams and details on embedding models.
 - Updated API documentation, quick start guide, and service presentation.
 - Added pricing for the Audio Transcription endpoint.
-- Added the projected model lifecycle roadmap.
+- Added the projected model lifecycle timeline.
 - Added the responsibility matrix for the LLMaaS offering.
