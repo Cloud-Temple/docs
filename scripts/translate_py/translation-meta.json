@@ -313,10 +313,10 @@
       "it": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb"
     },
     "llmaas/concepts.md": {
-      "en": "07f09431746ef29b20989c27b02c1b31bbd4f26441ebf4329e9abd33b6f75410",
-      "de": "07f09431746ef29b20989c27b02c1b31bbd4f26441ebf4329e9abd33b6f75410",
-      "es": "07f09431746ef29b20989c27b02c1b31bbd4f26441ebf4329e9abd33b6f75410",
-      "it": "07f09431746ef29b20989c27b02c1b31bbd4f26441ebf4329e9abd33b6f75410"
+      "en": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
+      "de": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
+      "es": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
+      "it": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8"
     },
     "iaas_vmware/tutorials/deploy_vm_terraform.md": {
       "en": "9465c1d0aa7e2189becbe648bdd5ec7c069412c6f6b67ff1a2a3f945bafbb664",
@@ -1051,6 +1051,6 @@
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-01-21T10:25:53.809370",
+  "last_update": "2026-01-21T10:42:48.432083",
   "version": "2.0"
 }
