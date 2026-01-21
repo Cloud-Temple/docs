@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Overview
 
-The **LLMaaS** (Large Language Models as a Service) service from Cloud Temple provides secure and sovereign access to the most advanced artificial intelligence models, with the **SecNumCloud certification** from ANSSI.
+The **LLMaaS** (Large Language Models as a Service) offering from Cloud Temple provides secure and sovereign access to the most advanced artificial intelligence models, with the **SecNumCloud certification** from ANSSI.
 
 ## 🏗️ Technical Architecture
 
@@ -34,7 +34,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 ### Model Catalog
 
-*Complete catalog: [List of models](./models)*
+*Complete catalog: [Model List](./models)*
 
 ### Token Management
 
@@ -56,7 +56,10 @@ Total cost = (Input tokens × 0.9€/M) + (Output tokens × 4€/M) + (Reasoning
 ### Tokenization
 
 ```python
-# Example token estimation
+```
+
+# Token Estimation Example
+```python
 def estimate_tokens(text: str) -> int:
     """Approximate estimation: 1 token ≈ 4 characters"""
     return len(text) // 4
@@ -100,8 +103,8 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 Prompt analysis is a **native and built-in** security feature of the LLMaaS platform. Enabled by default, it aims to detect and prevent attempts at "jailbreaking" or injecting malicious prompts before they even reach the model. This protection is based on a multi-layered approach.
 
-:::tip Contact Support for Disabling
-It is possible to disable this security analysis for very specific use cases, although this is not recommended. For any questions regarding this or to request deactivation, please contact Cloud Temple Support.
+:::tip Contact support for deactivation
+It is possible to disable this security analysis for very specific use cases, although this is not recommended. For any questions regarding this or to request deactivation, please contact Cloud Temple support.
 :::
 
 #### 1. Structural Analysis (`check_structure`)
@@ -114,8 +117,8 @@ It is possible to disable this security analysis for very specific use cases, al
     - **System Commands**: Keywords such as "ignore the instructions", "ignore instructions", "忽略指令", "指示を無視".
     - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
     - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
-    - **Repeated Sequences**: Excessive repetition of words or phrases such as "forget forget forget", "oublie oublie oublie".
-    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obfuscate commands (e.g., "s\u0443stème").
+    - **Repeated Sequences**: Excessive repetition of words or phrases, such as "forget forget forget", "oublie oublie oublie".
+    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing scripts to obfuscate commands (e.g., "s\u0443stème").
 
 #### 3. Behavioral Analysis (`check_behavior`)
 - The load balancer maintains a history of recent prompts.
@@ -158,6 +161,7 @@ response = client_ct.chat.completions.create(
     model="granite3.3:8b",  # Cloud Temple model
     messages=[{"role": "user", "content": "Hello"}]
 )
+```
 
 ### Supported Ecosystem
 
@@ -195,86 +199,103 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
 ### Projected Lifecycle Planning
 
-The table below outlines the projected lifecycle of our models. The generative AI ecosystem is evolving rapidly, which explains why lifecycle durations may appear short. Our goal is to provide you with the most performant models available at any given time.
+The table below outlines the projected lifecycle of our models. The generative AI ecosystem evolves rapidly, which explains why lifecycle durations may appear short. Our goal is to provide you with the most performant models available at any given time.
 
-That said, we are committed to maintaining models that are most widely used by our clients over time. For critical use cases requiring long-term stability, extended **support phases** are available. Please **contact support** to discuss your specific requirements.
+That said, we are committed to preserving models that are most widely used by our clients over time. For critical use cases requiring long-term stability, extended **support phases** are available. Please **contact support** to discuss your specific requirements.
 
 This planning is provided for informational purposes only and is **reviewed at the beginning of each quarter**.
 
-- **DMP (Date of Production Launch)**: The date when the model becomes available in production.
+- **DMP (Date of Market Placement)**: The date when the model becomes available in production.
 - **DSP (Date of Support End)**: The projected date from which the model will no longer be maintained. A 3-month notice period is observed before any actual deprecation.
 
 | Model                  | Publisher                 | Phase      | DMP        | DSP        |
 | :--------------------- | :------------------------ | :--------- | :--------- | :--------- |
-| deepcoder:14b          | Agentica x Together AI    | Production | 13/06/2025 | 30/12/2025 |
+| bge-m3:567m            | BAAI                      | Production | 18/10/2025 | 31/12/2026 |
 | cogito:32b             | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 |
-| cogito:3b              | Deep Cogito               | Production | 13/06/2025 | 30/12/2025 |
-| cogito:8b              | Deep Cogito               | Production | 13/06/2025 | 30/12/2025 |
-| deepseek-r1:14b        | DeepSeek AI               | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:32b        | DeepSeek AI               | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-ocr           | Qwen Team                 | Production | 22/11/2025 | 31/12/2026 |
-| gemma3:12b             | Google                    | Production | 13/06/2025 | 31/12/2026 |
+| deepseek-ocr           | DeepSeek AI               | Production | 22/11/2025 | 31/12/2026 |
+| devstral-small-2:24b   | Mistral AI & All Hands AI | Production | 30/12/2025 | 30/06/2026 |
+| devstral:24b           | Mistral AI & All Hands AI | Production | 13/06/2025 | 30/03/2026 |
+| embeddinggemma:300m    | Google                    | Production | 10/09/2025 | 31/12/2026 |
+| functiongemma:270m     | Google                    | Production | 30/12/2025 | 30/12/2026 |
 | gemma3:1b              | Google                    | Production | 13/06/2025 | 31/12/2025 |
 | gemma3:27b             | Google                    | Production | 13/06/2025 | 30/03/2026 |
-| gemma3:4b              | Google                    | Production | 13/06/2025 | 31/12/2025 |
-| gpt-oss:120b           | Qwen Team                 | Production | 11/11/2025 | 30/06/2026 |
-| gpt-oss:20b            | Qwen Team                 | Production | 08/08/2025 | 30/03/2026 |
-| embeddinggemma:300m    | Google                    | Production | 10/09/2025 | 31/12/2026 |
+| glm-4.7:358b           | Zhipu AI                  | Production | 05/01/2026 | 30/03/2026 |
+| gpt-oss:120b           | OpenAI                    | Production | 11/11/2025 | 30/06/2026 |
+| gpt-oss:20b            | OpenAI                    | Production | 08/08/2025 | 30/03/2026 |
 | granite-embedding:278m | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| qwen3-embedding:0.6b   | Qwen Team                 | Production | 18/10/2025 | 31/12/2026 |
-| granite3-guardian:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| granite3-guardian:8b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.1-moe:2b      | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite3.2-vision:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
-| granite3.3:8b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite4-small-h:32b   | IBM                       | Production | 03/10/2025 | 30/09/2026 |
 | granite4-tiny-h:7b     | IBM                       | Production | 03/10/2025 | 30/09/2026 |
 | llama3.3:70b           | Meta                      | Production | 13/06/2025 | 31/12/2026 |
 | magistral:24b          | Mistral AI                | Production | 13/06/2025 | 30/03/2026 |
-| mistral-small3.1:24b   | Mistral AI                | Production | 13/06/2025 | 31/12/2025 |
+| medgemma:27b           | Google                    | Production | 02/12/2025 | 30/06/2026 |
+| ministral-3:14b        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 |
+| ministral-3:3b         | Mistral AI                | Production | 30/12/2025 | 30/06/2026 |
+| ministral-3:8b         | Mistral AI                | Production | 30/12/2025 | 30/06/2026 |
 | mistral-small3.2:24b   | Mistral AI                | Production | 23/06/2025 | 30/06/2026 |
-| devstral:24b           | Mistral AI & All Hands AI | Production | 13/06/2025 | 30/03/2026 |
-| qwen2.5vl:32b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:3b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:72b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:7b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:0.6b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:1.7b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:14b              | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:30b-a3b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3-2507:30b-a3b     | Qwen Team                 | Production | 30/08/2025 | 30/03/2026 |
+| nemotron3-nano:30b     | NVIDIA                    | Production | 04/01/2026 | 30/06/2026 |
+| olmo-3:32b             | AllenAI                   | Production | 30/12/2025 | 30/06/2026 |
+| olmo-3:7b              | AllenAI                   | Production | 30/12/2025 | 30/06/2026 |
+| qwen2.5:0.5b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+| qwen3-coder:30b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 |
+| qwen3-2507-gptq:235b   | Qwen Team                 | Production | 04/01/2026 | 30/06/2026 |
 | qwen3-2507-think:4b    | Qwen Team                 | Production | 31/08/2025 | 30/03/2026 |
 | qwen3-2507:4b          | Qwen Team                 | Production | 31/08/2025 | 30/03/2026 |
-| qwen3:4b               | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:8b               | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3-coder:30b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 |
-| qwen3-2507:235b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 |
-| qwen3:32b              | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwq:32b                | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+| qwen3:30b-a3b          | Qwen Team                 | Production | 30/08/2025 | 30/03/2026 |
 | qwen3-next:80b         | Qwen Team                 | Production | 04/11/2025 | 30/03/2026 |
+| qwen3-omni:30b         | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 |
+| qwen3-vl:2b            | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:30b           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:32b           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:4b            | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:8b            | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 |
+| qwen3-vl:235b          | Qwen Team                 | Production | 04/01/2026 | 30/06/2026 |
+| qwen3:0.6b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+| rnj-1:8b               | Essential AI              | Production | 30/12/2025 | 30/06/2026 |
 
-### Deprecated Models
+### Depreciated Models
 
 The world of LLMs is evolving rapidly. To ensure our clients have access to the most advanced technologies, we regularly deprecate models that no longer meet current standards or are no longer in use. The models listed below are no longer available on the public platform. However, they can be reactivated for specific projects upon request.
 
-| Model                    | Provider              | Status   | Deprecation Date     |
-| :----------------------- | :-------------------- | :------- | :------------------- |
-| cogito:14b               | Deep Cogito           | Deprecated | 17/10/2025           |
-| deepseek-r1:671b         | DeepSeek AI           | Deprecated | 17/10/2025           |
-| deepseek-r1:70b          | DeepSeek AI           | Deprecated | 17/10/2025           |
-| foundation-sec:8b        | Foundation AI — Cisco | Deprecated | 17/10/2025           |
-| granite3.1-moe:3b        | IBM                   | Deprecated | 17/10/2025           |
-| llama3.1:8b              | Meta                  | Deprecated | 17/10/2025           |
-| phi4-reasoning:14b       | Microsoft             | Deprecated | 17/10/2025           |
-| lucie-instruct:7b        | OpenLLM-France        | Deprecated | 17/10/2025           |
-| qwen2.5:0.5b             | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:1.5b             | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:14b              | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:32b              | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen2.5:3b               | Qwen Team             | Deprecated | 17/10/2025           |
-| qwen3:235b               |                       | Deprecated | 22/11/2025           |
-| qwen3-2507-think:30b-a3b |                       | Deprecated | 14/11/2025           |
-| gemma3:12b               |                       | Deprecated | 21/11/2025           |
+| Model                    | Status   | Depreciation Date |
+| :----------------------- | :------- | :---------------- |
+| deepseek-r1:14b          | Deprecated | 30/12/2025        |
+| deepseek-r1:32b          | Deprecated | 30/12/2025        |
+| gemma3:1b                | Deprecated | 30/12/2025        |
+| gemma3:4b                | Deprecated | 30/12/2025        |
+| qwen3:0.6b               | Deprecated | 30/12/2025        |
+| qwen3:1.7b               | Deprecated | 30/12/2025        |
+| qwen3:14b                | Deprecated | 30/12/2025        |
+| qwen3:30b-a3b            | Deprecated | 30/12/2025        |
+| qwen3:4b                 | Deprecated | 30/12/2025        |
+| qwen3:8b                 | Deprecated | 30/12/2025        |
+| qwen3:32b                | Deprecated | 30/12/2025        |
+| qwq:32b                  | Deprecated | 30/12/2025        |
+| granite3.3:2b            | Deprecated | 30/12/2025        |
+| granite3.3:8b            | Deprecated | 30/12/2025        |
+| mistral-small3.1:24b     | Deprecated | 30/12/2025        |
+| qwen2.5vl:32b            | Deprecated | 30/12/2025        |
+| qwen2.5vl:3b             | Deprecated | 30/12/2025        |
+| qwen2.5vl:72b            | Deprecated | 30/12/2025        |
+| qwen2.5vl:7b             | Deprecated | 30/12/2025        |
+| cogito:8b                | Deprecated | 30/12/2025        |
+| deepcoder:14b            | Deprecated | 30/12/2025        |
+| cogito:3b                | Deprecated | 30/12/2025        |
+| qwen3:235b               | Deprecated | 22/11/2025        |
+| qwen3-2507-think:30b-a3b | Deprecated | 14/11/2025        |
+| gemma3:12b               | Deprecated | 21/11/2025        |
+| cogito:14b               | Deprecated | 17/10/2025        |
+| deepseek-r1:70b          | Deprecated | 17/10/2025        |
+| granite3.1-moe:3b        | Deprecated | 17/10/2025        |
+| llama3.1:8b              | Deprecated | 17/10/2025        |
+| phi4-reasoning:14b       | Deprecated | 17/10/2025        |
+| qwen2.5:0.5b             | Deprecated | 17/10/2025        |
+| qwen2.5:1.5b             | Deprecated | 17/10/2025        |
+| qwen2.5:14b              | Deprecated | 17/10/2025        |
+| qwen2.5:32b              | Deprecated | 17/10/2025        |
+| qwen2.5:3b               | Deprecated | 17/10/2025        |
+| deepseek-r1:671b         | Deprecated | 17/10/2025        |
 
 ## 💡 Best Practices
 
@@ -284,7 +305,7 @@ To get the most out of the LLMaaS API, it is essential to adopt strategies for o
 
 Mastering costs relies on intelligent use of tokens and models.
 
-1.  **Model Selection**: Avoid using an overly powerful model for simple tasks. Larger models are more capable, but they are also slower and consume significantly more energy, directly impacting cost. Match the model size to the complexity of your task for optimal balance.
+1.  **Model Selection**: Don't use an overly powerful model for simple tasks. Larger models are more capable, but they are also slower and consume significantly more energy, directly impacting cost. Match the model size to the complexity of your task for optimal balance.
 
     For example, processing one million tokens:
     - **`Gemma 3 1B`** consumes **0.15 kWh**.
@@ -314,7 +335,7 @@ Mastering costs relies on intelligent use of tokens and models.
 3.  **Output Token Limitation**: Always use the `max_tokens` parameter to prevent excessively long and costly responses. Set a reasonable limit based on your expected output.
 
     ```python
-    # Request a summary of at most 100 words.
+    # Request a summary of up to 100 words.
     response = client.chat.completions.create(
         model="granite3.3:8b",
         messages=[{"role": "user", "content": "Summarize this document..."}],
@@ -344,7 +365,7 @@ The responsiveness of your application depends on how you manage API calls.
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming for User Experience (UX)**: For user interfaces (chatbots, assistants), streaming is essential. It allows the model's response to be displayed word by word in real time, creating the impression of immediate responsiveness instead of waiting for the full response.
+2.  **Streaming for User Experience (UX)**: For user interfaces (chatbots, assistants), streaming is essential. It enables displaying the model's response word by word, creating an impression of immediate responsiveness instead of waiting for the full response.
     ```python
     # Display the response in real time in a user interface
     response_stream = client.chat.completions.create(
