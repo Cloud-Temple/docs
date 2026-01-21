@@ -52,6 +52,8 @@
 
 ## 🌍 Internationalisation (i18n)
 
+**Dernière mise à jour des traductions** : 21/01/2026 (Managed Kubernetes, VPC, Changelog)
+
 | Langue | Statut Build | Qualité Traduction | Actions Requises |
 |--------|--------------|-------------------|------------------|
 | **FR** | ✅ Succès | Native | Source de vérité |
