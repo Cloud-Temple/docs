@@ -109,10 +109,10 @@
       "it": "59b047c5604017f6d8db80f68f39657f2e75f1ebc5a8dc4e3a11aa2a33211306"
     },
     "console/security/security_alarms.md": {
-      "en": "b3c83ac30b1601c8ea7bf23ea2a468a0dd1376b4c76ccffa40fa0dcc7cc38790",
-      "de": "b3c83ac30b1601c8ea7bf23ea2a468a0dd1376b4c76ccffa40fa0dcc7cc38790",
-      "es": "b3c83ac30b1601c8ea7bf23ea2a468a0dd1376b4c76ccffa40fa0dcc7cc38790",
-      "it": "b3c83ac30b1601c8ea7bf23ea2a468a0dd1376b4c76ccffa40fa0dcc7cc38790"
+      "en": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84",
+      "de": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84",
+      "es": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84",
+      "it": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84"
     },
     "console/status.md": {
       "en": "a42aee84154bd76af9f334553dc5c188043dd4f2abe210cdf193b02153f6ec9d",
@@ -1051,6 +1051,6 @@
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-01-21T10:08:38.128482",
+  "last_update": "2026-01-21T10:25:53.809370",
   "version": "2.0"
 }
