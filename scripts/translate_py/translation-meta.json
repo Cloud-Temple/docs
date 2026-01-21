@@ -619,10 +619,10 @@
       "it": "c982586c414e83ea3f3c62707801272b7903fbe9dad5b4a4d447c7da7892c5d6"
     },
     "llmaas/models.md": {
-      "en": "ed5194fa7aa8b5933784cf36f425d177c99ef201c4bc8cbd33237f81c2f43d4c",
-      "de": "ed5194fa7aa8b5933784cf36f425d177c99ef201c4bc8cbd33237f81c2f43d4c",
-      "es": "ed5194fa7aa8b5933784cf36f425d177c99ef201c4bc8cbd33237f81c2f43d4c",
-      "it": "ed5194fa7aa8b5933784cf36f425d177c99ef201c4bc8cbd33237f81c2f43d4c"
+      "en": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b",
+      "de": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b",
+      "es": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b",
+      "it": "7ffbb2c4ffab9eb7cadaf84f02bf49f23d7544e4a54b1c107eec1b78c86a250b"
     },
     "network/private_network/tutorials.md": {
       "en": "3129859075ff7dde2682afa48dd26621529a60e627c5ddff45268dcddd88c203",
@@ -745,10 +745,10 @@
       "it": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad"
     },
     "changelog.md": {
-      "en": "db65941aa293e0a3679272630a79972b63103df98fc6e6268ee8f27d0747a5c2",
-      "es": "db65941aa293e0a3679272630a79972b63103df98fc6e6268ee8f27d0747a5c2",
-      "de": "db65941aa293e0a3679272630a79972b63103df98fc6e6268ee8f27d0747a5c2",
-      "it": "db65941aa293e0a3679272630a79972b63103df98fc6e6268ee8f27d0747a5c2"
+      "en": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
+      "es": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
+      "de": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
+      "it": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808"
     },
     "contractual/llmaas/raci.md": {
       "en": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
@@ -1051,6 +1051,6 @@
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-01-19T20:14:15.966950",
+  "last_update": "2026-01-21T09:25:31.659369",
   "version": "2.0"
 }
