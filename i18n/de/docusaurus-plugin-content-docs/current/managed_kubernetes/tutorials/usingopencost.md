@@ -1,7 +1,8 @@
 ---
-title: Cost Tracking with OpenCost
+title: Kostenverfolgung mit OpenCost
 ---
 import opencostui from './images/opencost.png'
+import opencostgrafana from './images/opencostgrafana.png'
 import opencostmcp from './images/opencostmcp.png'
 import opencostmcp2 from './images/opencostmcp2.png'
 import opencostmcp3 from './images/opencostmcp3.png'
@@ -18,7 +19,7 @@ Dieser Leitfaden führt Sie in **OpenCost** ein, das integrierte Kostenüberwach
 
 OpenCost is an open-source, CNCF (Cloud Native Computing Foundation) standard solution that provides real-time visibility into the costs of your Kubernetes environments. It helps you precisely understand what is consuming resources within your cluster and how this translates into cost.
 
-In the Managed Kubernetes offering, OpenCost is pre-installed and pre-configured to give you a clear view of your expenses. It is directly configured with the actual infrastructure costs from Temple Cloud.
+In the Managed Kubernetes offering, OpenCost is pre-installed and pre-configured to give you a clear view of your expenses. It is directly set up with the actual infrastructure costs from Temple Cloud.
 
 ## Access the OpenCost Interface
 
@@ -32,7 +33,7 @@ Access to this URL is restricted to the IP addresses you have declared with Clou
 
 <img src={opencostui} alt="OpenCost UI"/>
 
-## Explore Cost Distribution (Allocations)
+## Explore Cost Allocation (Allocations)
 
 The main and most detailed view in OpenCost is the **Allocations** dashboard. This is where you can visualize your resource consumption in real time.
 
@@ -48,17 +49,23 @@ For even more granular financial analysis, OpenCost can aggregate costs based on
 
 For this type of analysis, you must use OpenCost's AI integration.
 
+## Grafana Dashboard
+
+Ein Grafana-Dashboard ist ebenfalls verfügbar, um die Daten von OpenCost zu visualisieren. Dieses Dashboard bietet eine alternative und ergänzende Ansicht gegenüber der OpenCost-Oberfläche und behält den vollständigen Verlauf der Kostenmetriken bei, sodass Sie langfristige Trends analysieren können.
+
+<img src={opencostgrafana} alt="OpenCost Grafana Dashboard"/>
+
 ## Advanced Usage: Integration with an AI (MCP Server)
 
-For advanced users, OpenCost can be directly queried from the conversational assistant Cline (or others) via the **MCP (Multi-purpose Co-processor) server** system. This enables you to script requests and retrieve cost data directly within your conversations.
+For advanced users, OpenCost can be directly queried from the conversational assistant Cline (or others) via the **MCP (Multi-purpose Co-processor) server** system. This enables you to script queries and retrieve cost data directly within your conversations.
 
-### 1. Configuration du MCP OpenCost dans Cline
+### 1. Configuring OpenCost MCP in Cline
 
-Um Cline mit Ihrer OpenCost-Instanz zu verbinden, müssen Sie die folgende Konfiguration in Ihre Datei `cline_mcp_settings.json` hinzufügen. Diese Datei befindet sich normalerweise im Konfigurationsverzeichnis von Cline.
+To connect Cline to your OpenCost instance, add the following configuration to your `cline_mcp_settings.json` file. This file is typically located in the Cline configuration directory.
 
-Wir empfehlen, einen MCP-Server mit dem Namen „opencost-xxxxx“ zu erstellen, wobei xxxxx der Name Ihres verwalteten Kubernetes-Clusters ist.  
-Die URL des MCP-Servers hat folgendes Format: `https://opencost-mcp.external-secured.identifiant.mk.ms-cloud-temple.com`  
-Beispiel für den Cluster „bestie“:
+We recommend creating an MCP server named "opencost-xxxxx", where xxxxx is the name of your managed Kubernetes cluster.  
+The MCP server URL has the format: `https://opencost-mcp.external-secured.identifiant.mk.ms-cloud-temple.com`  
+For example, for the cluster "bestie":
 
 ```json
 {
@@ -76,25 +83,25 @@ Beispiel für den Cluster „bestie“:
 }
 ```
 
-Um den Wert für `<TOKEN>` aus Ihren Anmeldeinformationen zu generieren, verwenden Sie eine der folgenden Befehle:
+To generate the `<TOKEN>` value from your credentials, use one of the following commands:
 
-**Für Linux/macOS:**
+**For Linux/macOS:**
 ```bash
 echo -n 'finopsadm:VOTRE_MOT_DE_PASSE' | base64
 ```
 
-**Für Windows (PowerShell):**
+**For Windows (PowerShell):**
 ```powershell
 $credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:VOTRE_MOT_DE_PASSE")
 [System.Convert]::ToBase64String($credentials)
 ```
 
-Nachdem Sie diese Datei gespeichert haben, lädt Cline den MCP `opencost-xxxxx` automatisch beim Start.
+Once this file is saved, Cline will automatically load the `opencost-xxxxx` MCP at startup.
 
 ### 2. Query OpenCost using MCP
 
 :::tip Prerequisites
-To interact with MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (e.g., LMStudio) or via connections to public services such as GPT-5 or Gemini, or by using our **[LLM-as-a-Service](/docs/llmaas/llmaas)** sovereign offering.
+To interact with MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (e.g., LMStudio) or via connections to public services such as GPT-5 or Gemini, or by using our sovereign **[LLM-as-a-Service](/llmaas/llmaas)** offering.
 :::
 
 After setup, you can use LLM tools to perform natural language queries against this MCP server.
@@ -109,11 +116,11 @@ Sie erhalten Folgendes:
 
 "Use the MCP 'opencost-bestie', and list me the costs associated with persistent volumes from yesterday"
 
-<img src={opencostmcp2} alt="IA response opencost 2"/>
+<img src={opencostmcp2} alt="IA response opencost 2" />
 
 #### Beispiel 3:
 
-"Verwende den MCP opencost-bestie und gib mir den Prozentsatz der Clusterkosten an, die der Anwendung mit dem Label »nginx« zugewiesen sind. (Filter der Form filter: »label:app:frontend«)"
+"Verwende den MCP opencost-bestie und gib an, welcher Prozentsatz der Clusterkosten der Anwendung mit dem Label »nginx« zugewiesen ist. (Filter der Form filter: »label:app:frontend«)"
 
 <img src={opencostmcp3} alt="IA-Antwort opencost 3" />
 

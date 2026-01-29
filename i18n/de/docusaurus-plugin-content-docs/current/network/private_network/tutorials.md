@@ -2,10 +2,10 @@
 title: Tutorials
 ---
 
-Diese Tutorials helfen Ihnen bei der Konfiguration und Nutzung unserer Private-Networks-Dienste.
+These tutorials help you set up and use our private networking services.
 
 <div class="card">
   <h3>Tutorials</h3>
-  <p>Derzeit sind keine Tutorials verfügbar, aber wir arbeiten aktiv daran. Schauen Sie bald wieder vorbei, um mehr zu erfahren!</p>
-  <a href="./" class="card-link">Zur Startseite &rarr;</a>
+  <p>No tutorials are currently available, but we are working on them actively. Please check back soon for more information!</p>
+  <a href="./" class="card-link">Go to the homepage &rarr;</a>
 </div>

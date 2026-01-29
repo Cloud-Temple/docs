@@ -54,10 +54,10 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
     
     **Kasten** est un outil cross-platform qui peut fonctionner avec d'autres clusters Kubernetes (OpenShift, Hyperscaler,...). Il peut donc être utilisé pour des scénarii de réversibilité ou de migration (K10 gère les adaptations éventuelles via des *transformations*, par exemple un changement d'ingress-class), mais aussi de "refresh" (exemple : restauration planifiée d'un environnement de production en pré-production).
 
-- (optionnel): **Authentification SSO** avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
+- **Authentification SSO** avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
 
 ## SLA & Information sur le support 
-- **Disponibilité garantie (production 3 AZ)** : 99.90 %
+- **Disponibilité garantie (production 3 AZ)** : 99.90 % si la plateforme openIaaS est en HA (2 hyperviseurs ou + par AZ), sinon 99.5% (1 seul hyperviseur par AZ)
 - **Support** : N1/N2/N3 inclus pour le périmètre socle (infrastructure et opérateurs standards).
 - **Engagement de temps de rétablissement (ETR)** : selon contrat cadre Cloud Temple.
 - **Maintenance (MCO)** : patching régulier Talos / Kubernetes / opérateurs standards par MSP, sans interruption de service (rolling upgrade).

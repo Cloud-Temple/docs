@@ -1,5 +1,5 @@
 ---
-title: VM-Netzwerkkonfiguration
+title: Netzwerkkonfiguration der VM
 ---
 import vpcCreateNetworkAdaptersVmModale from '../images/vpc_create_network_adapters_vm_modale.png'
 import vpcCreateNetworkAdaptersVmSelectNetworks from '../images/vpc_create_network_adapters_vm_select_networks.png'
@@ -8,61 +8,61 @@ import vpcDetailIpsPub from '../images/vpc_detail_ips_pub.png'
 import vpcIpPubAssociate from '../images/vpc_ip_pub_associate.png'
 import vpcMacAddressAssociateModale from '../images/vpc_mac_address_associate_modale.png'
 
-# VM-Netzwerkkonfiguration
+# Network Configuration of the VM
 
-Dieses Tutorial führt Sie durch die Verbindung einer virtuellen Maschine mit einem VPC-Netzwerk und die Zuweisung einer statischen IP (privat) sowie einer öffentlichen IP bei Bedarf.
+This tutorial guides you through connecting a virtual machine to a VPC network and assigning it a static (private) IP address, as well as a public IP address if required.
 
 ## Voraussetzungen
-*   Eine VPC und ein privates Netzwerk wurden erstellt.
-*   Eine VM wurde bereitgestellt.
+*   Ein VPC und ein privates Netzwerk erstellt haben.
+*   Eine VM bereitgestellt haben (IaaS Open Source oder VMware).
 
-## 1. Zuweisung einer privaten statischen IP
+## 1. Assigning a Static Private IP Address
 
-Sie können die private IP Ihrer VM auf zwei Arten festlegen.
+You can set the private IP address of your VM in two ways.
 
-### Methode A: Von der virtuellen Maschine (Empfohlen)
+### Methode A: Von der virtuellen Maschine aus (Empfohlen)
 
-Mit dieser Methode können Sie das Netzwerk und die IP in einem einzigen Schritt bei der Erstellung der Schnittstelle konfigurieren.
+Diese Methode ermöglicht die Konfiguration von Netzwerk und IP in einem einzigen Schritt bei der Erstellung der Schnittstelle.
 
-1.  Greifen Sie auf die Detailansicht Ihrer virtuellen Maschine zu.
-2.  Gehen Sie zum Reiter **Netzwerkadapter**.
-3.  Klicken Sie auf die Schaltfläche **Neuer Netzwerkadapter**, um eine Schnittstelle hinzuzufügen.
+1.  Öffnen Sie die Detailansicht Ihrer virtuellen Maschine.
+2.  Gehen Sie zum Tab **Netzwerkadapter**.
+3.  Klicken Sie auf die Schaltfläche **Neuen Netzwerkadapter hinzufügen**, um eine Schnittstelle hinzuzufügen.
 <img src={vpcCreateNetworkAdaptersVm} />
 
-4.  Wählen Sie im modalen Fenster Ihr VPC-Netzwerk aus.
+4.  Wählen Sie in der Modalauswahl Ihr VPC-Netzwerk aus.
 <img src={vpcCreateNetworkAdaptersVmModale} />
 
-5.  Sobald das Netzwerk ausgewählt ist, wählen Sie eine der verfügbaren statischen IPs aus.
+5.  Nach der Auswahl des Netzwerks wählen Sie eine der verfügbaren statischen IPs aus.
 <img src={vpcCreateNetworkAdaptersVmSelectNetworks} />
 
 6.  Bestätigen Sie die Erstellung.
 
-> **Hinweis**: Sie können den Netzwerkadapter später bearbeiten, um das Netzwerk bei Bedarf zu ändern.
+> **Hinweis**: Sie können den Netzwerkadapter später bearbeiten, um das Netzwerk zu wechseln, falls erforderlich.
 
-### Methode B: Aus der Ansicht Private Netzwerke
+### Method B: From the Private Networks View
 
-Diese Methode ist nützlich, um eine IP zu reservieren, bevor die VM erstellt wird, oder um eine bestehende Zuordnung zu ändern.
+This method is useful for reserving an IP address before creating the VM or for modifying an existing association.
 
-1.  Gehen Sie in der Detailansicht Ihrer VPC zum Reiter **Private Netzwerke**.
-2.  Erweitern Sie den IP-Adresspool des betreffenden Netzwerks.
-3.  Klicken Sie bei einer verfügbaren IP auf die Aktion "Einer MAC-Adresse zuordnen".
-4.  Ordnen Sie im modalen Fenster eine der statischen IPs einer MAC-Adresse einer VM zu.
+1.  Go to the detailed view of your VPC, tab **Private Networks**.
+2.  Expand the IP address pool of the relevant network.
+3.  Click the action "Associate with MAC address" for an available IP.
+4.  In the modal, associate one of the static IPs with the MAC address of a VM.
 <img src={vpcMacAddressAssociateModale} />
 
-## 2. Zuordnung einer öffentlichen IP (Optional)
+## 2. Associating a Public IP (Optional)
 
-Wenn Sie Ihre VM über das Internet erreichbar machen möchten.
+If you want to make your VM accessible from the internet.
 
-1.  Gehen Sie in der Detailansicht Ihrer VPC zum Reiter **Öffentliche IPs**.
+1.  From the detailed view of your VPC, go to the **Public IPs** tab.  
 <img src={vpcDetailIpsPub} />
 
-2.  Klicken Sie auf die Schaltfläche **Öffentliche IP zuordnen**.
+2.  Click the **Associate a public IP** button.
 
-3.  Wählen Sie im modalen Fenster das private Netzwerk und die statische Ziel-IP aus und bestätigen Sie die Zuordnung.
+3.  In the modal, select the target private network and static IP, then confirm the association.  
 <img src={vpcIpPubAssociate} />
 
-4.  Sobald die Zuordnung erfolgt ist, können Sie diese öffentliche IP-Adresse verwenden, um Ihre VM zu erreichen.
+4.  Once the association is complete, you can use this public IP address to access your VM.
 
-## Konfiguration des Gastbetriebssystems
+## Guest OS Configuration
 
-**Wichtig**: Um sicherzustellen, dass die statische IP (privat) korrekt zugewiesen wird, stellen Sie sicher, dass die Netzwerkschnittstelle Ihres Gastbetriebssystems (OS) im **DHCP**-Modus konfiguriert ist. Der VPC-DHCP-Dienst weist die reservierte Adresse zu.
+**Important**: To ensure the static (private) IP address is correctly assigned, make sure the network interface of your guest operating system (OS) is configured in **DHCP** mode. The VPC's DHCP service will assign the reserved address.

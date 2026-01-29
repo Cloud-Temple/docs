@@ -1,5 +1,3 @@
-
-
 ---
 title: Security Alerts
 ---
@@ -9,7 +7,7 @@ This page is updated daily to account for newly identified vulnerabilities.
 
 ## Vulnerabilities
 
-| Date | Reference(s) | CVSS | Title | Description | Service(s) | Severity | Treatment |
+| Date | Reference(s) | CVSS | Title | Description | Service(s) | Severity | Remediation |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 23/12/2025 | [CVE-2025-14443](https://access.redhat.com/security/cve/CVE-2025-14443) | 8.5 | **Vulnerability in Red Hat OpenShift (CVE-2025-14443)** | A vulnerability in the `openshift-apiserver` component allows for privilege escalation. Exploitation requires prior authentication. | PaaS OpenShift | 🟠 Important | ✅ The update of your OpenShift instances is scheduled as soon as the patches are validated by Cloud Temple. No action on your part is required. |
 | 30/09/2025 | [VMSA-2025-0016](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36150) | 8.5 | **VMSA-2025-0016: Vulnerability in VMware vCenter (CVE-2025-41250)** | A vulnerability (CVE-2025-41250) allows an authenticated attacker to modify notification emails for scheduled tasks. | IaaS By VMware | 🟠 Important | ✅ The update of your vCenter instances is scheduled as soon as the patches are validated by Cloud Temple. No action on your part is required. The update is indicated in the Console notifications. |
@@ -26,22 +24,21 @@ This page is updated daily to account for newly identified vulnerabilities.
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005: Authentication bypass vulnerability in VMware Tools for Windows (CVE-2025-22230)** | An authentication bypass vulnerability in VMware Tools for Windows has been reported. Fixes are provided by the vendor. | IaaS By VMware | 🟠 Important | ⚠️ We recommend that you update VMware Tools on your virtual machines. |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004: Multiple vulnerabilities in VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Multiple vulnerabilities have been reported in VMware ESXi: VMCI heap overflow vulnerability (CVE-2025-22224) rated Critical by VMware, Arbitrary write vulnerability in VMware ESXi (CVE-2025-22225), HGFS information disclosure vulnerability (CVE-2025-22226). Fixes are provided by the vendor. | IaaS By VMware | 🟠 Important | ⚠️ We recommend that you update your hypervisors. The patched ESXi versions are available once validated by Cloud Temple. The Console indicates which ESXi instances require an update. |
 
-
 ## Information
 
 - **Date** : Initial publication date of the Cloud Temple security alert.
 - **Reference(s)** : CVE ID, if available.
-- **CVSS** : Base CVSS v3 score as reported by the vendor or the CVE, uncontextualized. Contextualization is expressed through the CT severity. If the alert concerns multiple vulnerabilities, the minimum and maximum CVSS scores are indicated.
-- **Title** : Title of the alert, with vendor reference if available.
-- **Description** : Summary description, with links to detailed information.
+- **CVSS** : Base CVSS v3 score as reported by the vendor or the CVE, uncontextualized. Contextualization is expressed through the severity CT. If the alert covers multiple vulnerabilities, minimum and maximum CVSS scores are provided.
+- **Title** : Alert title, with vendor reference if available.
+- **Description** : Summary description, with link(s) to detailed information.
 - **Service(s)** : Cloud Temple service(s) potentially affected.
-- **Severity** : Severity level within the context of Cloud Temple services (for the most critical vulnerability in case of multiple vulnerabilities). Exploitation criteria are considered within the technical context of our cloud infrastructure and services.
+- **Severity** : Severity level within the context of Cloud Temple services (for the most critical vulnerability in case of multiple vulnerabilities). Exploitation criteria are considered in the technical context of our cloud infrastructure and services.
 
 | Level | Description |
-|--------|-------------|
-| 🔴 **Critical** | Vulnerability CVSS 7+ presenting a significant risk of exploitation (high exposure, ease of exploitation). A fix or mitigation is strongly recommended as soon as possible.|
-| 🟠 **Important** | Vulnerability CVSS 7+ not presenting a significant risk of exploitation (limited exposure or exploitation constraints) |
-| 🟡 **Moderate** | Vulnerability CVSS 4+ |
-| 🔵 **Low** | Vulnerability CVSS below 4, or non-exploitable. |
+|-------|-------------|
+| 🔴 **Critical** | CVSS score 7+ vulnerability presenting a significant risk of exploitation (high exposure, ease of exploitation). Immediate correction or mitigation is strongly recommended. |
+| 🟠 **Important** | CVSS score 7+ vulnerability not presenting a significant risk of exploitation (limited exposure or exploitation constraints). |
+| 🟡 **Moderate** | CVSS score 4+ vulnerability. |
+| 🔵 **Low** | CVSS score below 4, or non-exploitable vulnerability. |
 
-- **Treatment** : Information and recommendations within the context of Cloud Temple services. ⚠️ indicates that user action is required to address the vulnerability. ✅ indicates that the vulnerability is addressed by Cloud Temple.
+- **Treatment** : Information and recommendations in the context of Cloud Temple services. ⚠️ indicates that user action is required to address the vulnerability. ✅ indicates that Cloud Temple is handling the vulnerability resolution.

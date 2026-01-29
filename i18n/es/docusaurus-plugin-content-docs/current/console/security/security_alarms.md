@@ -1,10 +1,8 @@
-
-
 ---
 title: Alertas de seguridad
 ---
 
-Encuentre aquí las alertas de seguridad relacionadas con nuestros servicios en la nube.
+Encuentre aquí las alertas de seguridad relacionadas con nuestros servicios en la nube.  
 Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades recién identificadas.
 
 ## Vulnerabilidades
@@ -26,22 +24,21 @@ Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades 
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005 : Vulnerabilidad de omisión de autenticación en VMware Tools para Windows (CVE-2025-22230)** | Se ha reportado una vulnerabilidad de omisión de autenticación en VMware Tools para Windows. Se proporcionan parches por parte del proveedor. | IaaS By VMware | 🟠 Importante | ⚠️ Le recomendamos actualizar VMware Tools en sus máquinas virtuales. |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004 : Múltiples vulnerabilidades en VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Se han reportado varias vulnerabilidades en VMware ESXi: Vulnerabilidad de desbordamiento de pila VMCI (CVE-2025-22224) evaluada como Crítica por VMware, vulnerabilidad de escritura arbitraria en VMware ESXi (CVE-2025-22225), vulnerabilidad de divulgación de información HGFS (CVE-2025-22226). Se proporcionan parches por parte del proveedor. | IaaS By VMware | 🟠 Importante | ⚠️ Le recomendamos actualizar sus hipervisores. Las versiones corregidas de ESXi están disponibles tan pronto como sean validadas por Cloud Temple. Console le indica los ESXi que requieren actualización. |
 
-
 ## Información
 
-- **Fecha** : Fecha de publicación inicial de la alerta de seguridad Cloud Temple.
+- **Fecha** : Fecha de publicación inicial de la alerta de seguridad de Cloud Temple.
 - **Referencia(s)** : ID CVE, según disponibilidad.
-- **CVSS** : Puntuación CVSS v3 básica tal como informada por el editor o el CVE, no contextualizada. La contextualización se expresa mediante la severidad CT. Si la alerta afecta a múltiples vulnerabilidades, se indican las puntuaciones CVSS mínima y máxima.
-- **Título** : Título de la alerta, con referencia del editor si está disponible.
+- **CVSS** : Puntuación CVSS v3 base tal como informada por el editor o el CVE, sin contextualización. La contextualización se expresa mediante la severidad CT. Si la alerta afecta a múltiples vulnerabilidades, se indican las puntuaciones CVSS mínima y máxima.
+- **Título** : Título de la alerta, con referencia al editor si está disponible.
 - **Descripción** : Descripción sintética, con enlace(s) a información detallada.
-- **Servicio(s)** : Servicio(s) de Cloud Temple que pueden estar afectado(s).
-- **Severidad** : Nivel de severidad en el contexto de los servicios Cloud Temple (para la vulnerabilidad más crítica en caso de múltiples vulnerabilidades). Los criterios de explotación se tienen en cuenta en el contexto técnico de nuestras infraestructuras y servicios Cloud.
+- **Servicio(s)** : Servicio(s) de Cloud Temple que podrían verse afectados.
+- **Severidad** : Nivel de severidad en el contexto de los servicios Cloud Temple (para la vulnerabilidad más crítica en caso de múltiples vulnerabilidades). Se tienen en cuenta los criterios de explotación en el contexto técnico de nuestras infraestructuras y servicios Cloud.
 
 | Nivel | Descripción |
-|--------|-------------|
-| 🔴 **Crítico** | Vulnerabilidad CVSS 7+ que presenta un riesgo importante de explotación (alta exposición, facilidad de explotación). Se recomienda fuertemente aplicar una corrección o mitigación lo antes posible.|
-| 🟠 **Importante** | Vulnerabilidad CVSS 7+ que no presenta un riesgo importante de explotación (exposición limitada o restricciones de explotación) |
-| 🟡 **Moderado** | Vulnerabilidad CVSS 4+ |
-| 🔵 **Bajo** | Vulnerabilidad CVSS inferior a 4, o no explotable. |
+|-------|-------------|
+| 🔴 **Crítica** | Vulnerabilidad con CVSS 7+ que presenta un riesgo importante de explotación (alta exposición, facilidad de explotación). Se recomienda fuertemente aplicar una corrección o mitigación lo antes posible. |
+| 🟠 **Importante** | Vulnerabilidad con CVSS 7+ que no presenta un riesgo importante de explotación (exposición limitada o restricciones para la explotación). |
+| 🟡 **Moderada** | Vulnerabilidad con CVSS 4+ |
+| 🔵 **Baja** | Vulnerabilidad con CVSS inferior a 4, o no explotable. |
 
-- **Tratamiento** : Información y recomendaciones en el contexto de los servicios Cloud Temple. ⚠️ indica que se requiere una acción por parte de los usuarios para tratar la vulnerabilidad. ✅ indica que el tratamiento de la vulnerabilidad es gestionado por Cloud Temple.
+- **Tratamiento** : Información y recomendaciones en el contexto de los servicios Cloud Temple. ⚠️ indica que se requiere una acción por parte de los usuarios para tratar la vulnerabilidad. ✅ indica que el tratamiento de la vulnerabilidad está gestionado por Cloud Temple.
