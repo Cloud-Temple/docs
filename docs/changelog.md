@@ -5,6 +5,14 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 19 Janvier 2026 : Extension Managed Kubernetes et VPC
+
+- **Managed Kubernetes** : Ajout du support pour les nœuds **Bare Metal** et les **GPUs** (NVIDIA).
+- **Managed Kubernetes** : Nouveau tutoriel sur l'utilisation des GPUs dans un cluster Kubernetes.
+- **Managed Kubernetes** : Remplacement de KubeCost par un guide plus récent sur **OpenCost**.
+- **Network (VPC)** : Documentation complète du service Virtual Private Cloud (VPC), incluant les concepts de haute disponibilité (HA), les guides de démarrage et les tutoriels.
+- **Multilingue** : Traduction intégrale du service VPC et des nouveaux contenus Kubernetes vers l'anglais, l'allemand, l'espagnol et l'italien.
+
 ### 15 Décembre 2025 : Stabilisation et corrections multilingues
 
 - **Multilingue (Terraform, LLMaaS, Harbor)** : Correction majeure des traductions en Espagnol, Italien et Allemand. Résolution des problèmes de syntaxe MDX (blocs de code vides, balises non échappées) qui empêchaient la compilation du site.

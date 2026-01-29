@@ -1,17 +1,13 @@
-
-
 ---
-title: Sicherheitswarnungen
+title: Security Alerts
 ---
 
-Finden Sie hier die Sicherheitswarnungen zu unseren Cloud-Diensten.  
-Diese Seite wird täglich aktualisiert, um neu identifizierte Schwachstellen zu berücksichtigen.
+Find here the security alerts related to our cloud services.
+This page is updated daily to account for newly identified vulnerabilities.
 
+## Vulnerabilities
 
-
-## Schwachstellen
-
-| Datum | Referenz(en) | CVSS | Titel | Beschreibung | Dienst(e) | Schwere | Behandlung |
+| Date | Reference(s) | CVSS | Title | Description | Service(s) | Severity | Treatment |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 23/12/2025 | [CVE-2025-14443](https://access.redhat.com/security/cve/CVE-2025-14443) | 8.5 | **Schwachstelle in Red Hat OpenShift (CVE-2025-14443)** | Eine Schwachstelle in der Komponente `openshift-apiserver` ermöglicht eine Ausweitung von Berechtigungen. Die Ausnutzung erfordert eine vorherige Authentifizierung. | PaaS OpenShift | 🟠 Wichtig | ✅ Die Aktualisierung Ihrer OpenShift-Instanzen ist geplant, sobald die Patches von Cloud Temple validiert wurden. Es ist keine Aktion Ihrerseits erforderlich. |
 | 30/09/2025 | [VMSA-2025-0016](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36150) | 8.5 | **VMSA-2025-0016: Schwachstelle in VMware vCenter (CVE-2025-41250)** | Eine Schwachstelle (CVE-2025-41250) ermöglicht es einem authentifizierten Angreifer, Benachrichtigungs-E-Mails für geplante Aufgaben zu ändern. | IaaS By VMware | 🟠 Wichtig | ✅ Die Aktualisierung Ihrer vCenter-Instanzen ist geplant, sobald die Patches von Cloud Temple validiert wurden. Es ist keine Aktion Ihrerseits erforderlich. Das Update wird in den Konsolen-Benachrichtigungen angezeigt. |
@@ -28,22 +24,21 @@ Diese Seite wird täglich aktualisiert, um neu identifizierte Schwachstellen zu 
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005: Authentifizierungsumgehung in VMware Tools für Windows (CVE-2025-22230)** | Es wurde eine Schwachstelle zur Umgehung der Authentifizierung in VMware Tools für Windows gemeldet. Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟠 Wichtig | ⚠️ Wir empfehlen Ihnen, VMware Tools auf Ihren virtuellen Maschinen zu aktualisieren. |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004: Mehrere Schwachstellen in VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Es wurden mehrere Schwachstellen in VMware ESXi gemeldet: Heap-Überlauf-Schwachstelle in VMCI (CVE-2025-22224), von VMware als kritisch eingestuft, Arbiträrer Schreibzugriff in VMware ESXi (CVE-2025-22225), HGFS-Informationsleck-Schwachstelle (CVE-2025-22226). Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟠 Wichtig | ⚠️ Wir empfehlen Ihnen, Ihre Hypervisoren zu aktualisieren. Die gepatchten ESXi-Versionen sind verfügbar, sobald sie von Cloud Temple validiert wurden. Die Konsole zeigt Ihnen an, welche ESXi aktualisiert werden müssen. |
 
-
 ## Informationen
 
-- **Datum** : Datum der ursprünglichen Veröffentlichung der Cloud Temple Sicherheitsmeldung.
+- **Datum** : Datum der ursprünglichen Veröffentlichung der Sicherheitswarnung von Cloud Temple.
 - **Referenz(en)** : CVE-ID, falls verfügbar.
-- **CVSS** : Grundscore CVSS v3 gemäß dem Herausgeber oder der CVE, nicht kontextualisiert. Die Kontextualisierung wird durch den Schweregrad CT ausgedrückt. Falls die Meldung mehrere Schwachstellen betrifft, werden die minimalen und maximalen CVSS-Scores angegeben.
-- **Titel** : Titel der Meldung mit Herausgeber-Referenz, falls verfügbar.
-- **Beschreibung** : Kurzbeschreibung mit Link(en) zu detaillierten Informationen.
+- **CVSS** : CVSS v3-Basisbewertung gemäß dem Herausgeber oder der CVE, nicht kontextualisiert. Die Kontextualisierung wird durch die Schwere CT ausgedrückt. Falls mehrere Schwachstellen betroffen sind, werden die minimalen und maximalen CVSS-Werte angegeben.
+- **Titel** : Titel der Warnung, mit Herausgeber-Referenz falls verfügbar.
+- **Beschreibung** : Zusammenfassende Beschreibung mit Link(en) zu detaillierten Informationen.
 - **Dienst(e)** : Cloud Temple-Dienst(e), die betroffen sein könnten.
-- **Schweregrad** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren Schwachstellen). Die Ausnutzbarkeit wird im technischen Kontext unserer Infrastruktur und Cloud-Dienste berücksichtigt.
+- **Schwere** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren betroffenen Schwachstellen). Die Ausnutzbarkeitskriterien werden im technischen Kontext unserer Infrastrukturen und Dienste berücksichtigt.
 
 | Ebene | Beschreibung |
-|--------|-------------|
-| 🔴 **Kritisch** | Schwachstelle mit CVSS 7+ mit einem wichtigen Ausnutzungsrisiko (hohe Exposition, einfache Ausnutzung). Eine Korrektur oder Minderung ist dringend empfohlen.|
-| 🟠 **Wichtig** | Schwachstelle mit CVSS 7+, die kein wichtiges Ausnutzungsrisiko darstellt (begrenzte Exposition oder Ausnutzungsbeschränkungen) |
+|-------|--------------|
+| 🔴 **Kritisch** | Schwachstelle mit CVSS 7+ und erheblichem Ausnutzungsrisiko (hohe Exposition, einfache Ausnutzbarkeit). Eine Korrektur oder Minderung der Auswirkungen wird dringend empfohlen. |
+| 🟠 **Wichtig** | Schwachstelle mit CVSS 7+, die jedoch kein erhebliches Ausnutzungsrisiko darstellt (begrenzte Exposition oder Ausnutzungsbedingungen). |
 | 🟡 **Mäßig** | Schwachstelle mit CVSS 4+ |
 | 🔵 **Gering** | Schwachstelle mit CVSS unter 4 oder nicht ausnutzbar. |
 
-- **Behandlung** : Informationen und Empfehlungen im Kontext der Cloud Temple-Dienste. ⚠️ zeigt an, dass eine Aktion der Benutzer erforderlich ist, um die Schwachstelle zu behandeln. ✅ zeigt an, dass die Behandlung der Schwachstelle durch Cloud Temple übernommen wird.
+- **Behandlung** : Informationen und Empfehlungen im Kontext der Cloud Temple-Dienste. ⚠️ zeigt an, dass eine Aktion durch die Nutzer erforderlich ist, um die Schwachstelle zu behandeln. ✅ zeigt an, dass Cloud Temple die Behandlung der Schwachstelle übernimmt.

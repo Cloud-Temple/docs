@@ -2,12 +2,12 @@
 title: Visión general
 ---
 
-# Kubernetes gestionado
+# Kubernetes gestionné
 
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para dominar nuestra infraestructura.</p>
+    <p>Descubra los fundamentos y principios esenciales para dominar nuestra infraestructura.</p>
     <a href="managed_kubernetes/concepts" class="card-link">Explorar conceptos &rarr;</a>
   </div>
   <div class="card">
@@ -24,26 +24,28 @@ title: Visión general
 
 Kubernetes gestionado por Cloud Temple es una solución de orquestación de contenedores basada en productos de código abierto y diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización en las plataformas SecNumcloud de Cloud Temple. Cada clúster se despliega en un entorno IaaS Cloud-Temple OpenIaaS completamente dedicado al cliente.
 
-Esta oferta está diseñada para expertos en Kubernetes y entusiastas del código abierto que buscan una solución nativa, portable, sin capas adicionales del fabricante, sobre un sistema operativo minimalista e inmutable, diseñado para la automatización y la seguridad.
+Esta oferta está diseñada para equipos con un buen conocimiento de Kubernetes y los entusiastas del código abierto que buscan una solución nativa, portable, sin capas adicionales del fabricante, sobre un sistema operativo minimalista e inmutable, diseñado para la automatización y la seguridad.
 
 ### Beneficios Clave
-- **Soberanía y reversibilidad**: La solución se basa en estándares de código abierto (Kubernetes CNCF) para evitar cualquier dependencia tecnológica y garantizar la portabilidad de sus aplicaciones. La herramienta de copia de seguridad Veeam Kasten, incluida en la oferta, está especialmente diseñada para facilitar las migraciones entre diferentes nubes.
-- **Seguridad "Zero-Trust" y gobernanza**: La arquitectura se apoya en Talos OS, un sistema operativo inmutable sin acceso directo (ni shell, ni SSH), lo que reduce drásticamente la superficie de ataque. Este enfoque se combina con herramientas de gobernanza como Kyverno para la gestión de políticas y Capsule para la gestión detallada de permisos, constituyendo una base sólida para una estrategia de seguridad "Zero-Trust".
+
+- **Soberanía y reversibilidad**: La solución se basa en estándares de código abierto (Kubernetes CNCF) para evitar cualquier dependencia tecnológica y garantizar la portabilidad de sus aplicaciones. La herramienta de copia de seguridad Veeam Kasten, incluida en la oferta, está especialmente diseñada para facilitar las migraciones entre nubes.
+- **Seguridad "Zero-Trust" y gobernanza**: La arquitectura se apoya en Talos OS, un sistema operativo inmutable sin acceso directo (ni shell, ni SSH), lo que reduce drásticamente la superficie de ataque. Este enfoque se combina con herramientas de gobernanza como Kyverno para la gestión de políticas y Capsule para el control detallado de permisos, constituyendo una base sólida para una estrategia de seguridad "Zero-Trust".
 - **Control de costos e integración**: La solución incluye de forma nativa herramientas de FinOps como OpenCost para un seguimiento preciso del consumo. El modelo económico es transparente, basado en los recursos IaaS consumidos, y el uso de componentes de código abierto reconocidos (Cilium, Ceph, ArgoCD) facilita su integración en sus ecosistemas existentes.
 
-### A complete and ready-to-use platform  
-The solution natively includes a full, cohesive stack of cutting-edge open-source tools to cover all requirements across the application lifecycle:
+### A complete and ready-to-use platform
 
-- **Networking and Security**: Cilium, Hubble, Kyverno, Capsule  
-- **Storage**: Rook-Ceph  
-- **Continuous Deployment (GitOps)**: ArgoCD  
-- **Observability**: Prometheus, Grafana, Loki  
-- **Backup and Migration**: Veeam Kasten  
+The solution natively includes a full and coherent stack of cutting-edge open source tools to cover all needs throughout the application lifecycle:
+
+- **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
+- **Storage**: Rook-Ceph
+- **Continuous Deployment (GitOps)**: ArgoCD
+- **Observability**: Prometheus, Grafana, Loki
+- **Backup and Migration**: Veeam Kasten
 - **Cost Management (FinOps)**: OpenCost
 
 ## Arquitecturas de Despliegue
 
-Proponemos dos arquitecturas distintas para satisfacer sus necesidades, ya sea para entornos de desarrollo o de producción críticos.
+Ofrecemos dos arquitecturas distintas para satisfacer sus necesidades, ya sea para entornos de desarrollo o de producción críticos.
 
 ### Dev/Test Architecture
 
@@ -68,11 +70,13 @@ Diseñada para producción y aplicaciones críticas, esta arquitectura distribuy
     - **Alta disponibilidad**: 3 nodos de Control Plane distribuidos en 3 AZ.
     - **Almacenamiento dedicado**: 3 nodos de almacenamiento dedicados y distribuidos para rendimiento y resiliencia.
     - **Workers distribuidos**: Mínimo 3 nodos workers, uno por AZ.
+    - **Nodos Bare Metal (Opcional)**: Posible integración de nodos workers tipo **"Bare Metal"** para necesidades específicas de rendimiento, especialmente el **soporte de GPU**.
     - **SLA del 99,90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Arquitectura Multi-AZ" />
 
 ### Componentes técnicos detallados
+
 La oferta incluye detalladamente los siguientes componentes:
 
 - CNI Cillium, con interfaz de observabilidad (Hubble)

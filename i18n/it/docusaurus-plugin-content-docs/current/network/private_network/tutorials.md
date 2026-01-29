@@ -2,10 +2,10 @@
 title: Tutorial
 ---
 
-Questi tutorial ti aiutano a configurare e utilizzare i nostri servizi di Reti Private.
+These tutorials help you set up and use our private networking services.
 
 <div class="card">
   <h3>Tutorials</h3>
-  <p>Al momento non sono disponibili tutorial, ma ci stiamo lavorando attivamente. Torna presto per saperne di più!</p>
-  <a href="./" class="card-link">Vai alla pagina iniziale &rarr;</a>
+  <p>No tutorials are currently available, but we are working on them actively. Come back soon for more information!</p>
+  <a href="./" class="card-link">Go to the homepage &rarr;</a>
 </div>

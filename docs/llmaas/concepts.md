@@ -207,75 +207,92 @@ Ce planning est fourni à titre indicatif et est **revu au début de chaque trim
 
 | Modèle                 | Éditeur                   | Phase      | DMP        | DSP        |
 | :--------------------- | :------------------------ | :--------- | :--------- | :--------- |
-| deepcoder:14b          | Agentica x Together AI    | Production | 13/06/2025 | 30/12/2025 |
+| bge-m3:567m            | BAAI                      | Production | 18/10/2025 | 31/12/2026 |
 | cogito:32b             | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 |
-| cogito:3b              | Deep Cogito               | Production | 13/06/2025 | 30/12/2025 |
-| cogito:8b              | Deep Cogito               | Production | 13/06/2025 | 30/12/2025 |
-| deepseek-r1:14b        | DeepSeek AI               | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:32b        | DeepSeek AI               | Production | 13/06/2025 | 31/12/2025 |
-| deepseek-ocr           | Qwen Team                 | Production | 22/11/2025 | 31/12/2026 |
-| gemma3:12b             | Google                    | Production | 13/06/2025 | 31/12/2026 |
+| deepseek-ocr           | DeepSeek AI               | Production | 22/11/2025 | 31/12/2026 |
+| devstral-small-2:24b   | Mistral AI & All Hands AI | Production | 30/12/2025 | 30/06/2026 |
+| devstral:24b           | Mistral AI & All Hands AI | Production | 13/06/2025 | 30/03/2026 |
+| embeddinggemma:300m    | Google                    | Production | 10/09/2025 | 31/12/2026 |
+| functiongemma:270m     | Google                    | Production | 30/12/2025 | 30/12/2026 |
 | gemma3:1b              | Google                    | Production | 13/06/2025 | 31/12/2025 |
 | gemma3:27b             | Google                    | Production | 13/06/2025 | 30/03/2026 |
-| gemma3:4b              | Google                    | Production | 13/06/2025 | 31/12/2025 |
-| gpt-oss:120b           | Qwen Team                 | Production | 11/11/2025 | 30/06/2026 |
-| gpt-oss:20b            | Qwen Team                 | Production | 08/08/2025 | 30/03/2026 |
-| embeddinggemma:300m    | Google                    | Production | 10/09/2025 | 31/12/2026 |
+| glm-4.7:358b           | Zhipu AI                  | Production | 05/01/2026 | 30/03/2026 |
+| gpt-oss:120b           | OpenAI                    | Production | 11/11/2025 | 30/06/2026 |
+| gpt-oss:20b            | OpenAI                    | Production | 08/08/2025 | 30/03/2026 |
 | granite-embedding:278m | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| qwen3-embedding:0.6b   | Qwen Team                 | Production | 18/10/2025 | 31/12/2026 |
-| granite3-guardian:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| granite3-guardian:8b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
+| granite3.1-moe:2b      | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite3.2-vision:2b   | IBM                       | Production | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
-| granite3.3:8b          | IBM                       | Production | 13/06/2025 | 31/12/2025 |
 | granite4-small-h:32b   | IBM                       | Production | 03/10/2025 | 30/09/2026 |
 | granite4-tiny-h:7b     | IBM                       | Production | 03/10/2025 | 30/09/2026 |
 | llama3.3:70b           | Meta                      | Production | 13/06/2025 | 31/12/2026 |
 | magistral:24b          | Mistral AI                | Production | 13/06/2025 | 30/03/2026 |
-| mistral-small3.1:24b   | Mistral AI                | Production | 13/06/2025 | 31/12/2025 |
+| medgemma:27b           | Google                    | Production | 02/12/2025 | 30/06/2026 |
+| ministral-3:14b        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 |
+| ministral-3:3b         | Mistral AI                | Production | 30/12/2025 | 30/06/2026 |
+| ministral-3:8b         | Mistral AI                | Production | 30/12/2025 | 30/06/2026 |
 | mistral-small3.2:24b   | Mistral AI                | Production | 23/06/2025 | 30/06/2026 |
-| devstral:24b           | Mistral AI & All Hands AI | Production | 13/06/2025 | 30/03/2026 |
-| qwen2.5vl:32b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:3b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:72b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:7b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:0.6b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:1.7b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:14b              | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:30b-a3b          | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3-2507:30b-a3b     | Qwen Team                 | Production | 30/08/2025 | 30/03/2026 |
+| nemotron3-nano:30b     | NVIDIA                    | Production | 04/01/2026 | 30/06/2026 |
+| olmo-3:32b             | AllenAI                   | Production | 30/12/2025 | 30/06/2026 |
+| olmo-3:7b              | AllenAI                   | Production | 30/12/2025 | 30/06/2026 |
+| qwen2.5:0.5b           | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+| qwen3-coder:30b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 |
+| qwen3-2507-gptq:235b   | Qwen Team                 | Production | 04/01/2026 | 30/06/2026 |
 | qwen3-2507-think:4b    | Qwen Team                 | Production | 31/08/2025 | 30/03/2026 |
 | qwen3-2507:4b          | Qwen Team                 | Production | 31/08/2025 | 30/03/2026 |
-| qwen3:4b               | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3:8b               | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwen3-coder:30b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 |
-| qwen3-2507:235b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 |
-| qwen3:32b              | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
-| qwq:32b                | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+| qwen3:30b-a3b          | Qwen Team                 | Production | 30/08/2025 | 30/03/2026 |
 | qwen3-next:80b         | Qwen Team                 | Production | 04/11/2025 | 30/03/2026 |
+| qwen3-omni:30b         | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 |
+| qwen3-vl:2b            | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:30b           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:32b           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:4b            | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 |
+| qwen3-vl:8b            | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 |
+| qwen3-vl:235b          | Qwen Team                 | Production | 04/01/2026 | 30/06/2026 |
+| qwen3:0.6b             | Qwen Team                 | Production | 13/06/2025 | 31/12/2025 |
+| rnj-1:8b               | Essential AI              | Production | 30/12/2025 | 30/06/2026 |
 
 ### Modèles Dépréciés
 
 Le monde des LLMs évolue très rapidement. Pour garantir à nos clients l'accès aux technologies les plus performantes, nous déprécions régulièrement les modèles qui ne sont plus au niveau des standards actuels ou qui ne sont pas utilisés. Les modèles listés ci-dessous ne sont plus disponibles sur la plateforme publique. Ils peuvent cependant être réactivés pour des projets spécifiques, à la demande.
 
-| Modèle                   | Éditeur               | Phase    | Date de Dépréciation |
-| :----------------------- | :-------------------- | :------- | :------------------- |
-| cogito:14b               | Deep Cogito           | Déprécié | 17/10/2025           |
-| deepseek-r1:671b         | DeepSeek AI           | Déprécié | 17/10/2025           |
-| deepseek-r1:70b          | DeepSeek AI           | Déprécié | 17/10/2025           |
-| foundation-sec:8b        | Foundation AI — Cisco | Déprécié | 17/10/2025           |
-| granite3.1-moe:3b        | IBM                   | Déprécié | 17/10/2025           |
-| llama3.1:8b              | Meta                  | Déprécié | 17/10/2025           |
-| phi4-reasoning:14b       | Microsoft             | Déprécié | 17/10/2025           |
-| lucie-instruct:7b        | OpenLLM-France        | Déprécié | 17/10/2025           |
-| qwen2.5:0.5b             | Qwen Team             | Déprécié | 17/10/2025           |
-| qwen2.5:1.5b             | Qwen Team             | Déprécié | 17/10/2025           |
-| qwen2.5:14b              | Qwen Team             | Déprécié | 17/10/2025           |
-| qwen2.5:32b              | Qwen Team             | Déprécié | 17/10/2025           |
-| qwen2.5:3b               | Qwen Team             | Déprécié | 17/10/2025           |
-| qwen3:235b               |                       | Déprécié | 22/11/2025           |
-| qwen3-2507-think:30b-a3b |                       | Déprécié | 14/11/2025           |
-| gemma3:12b               |                       | Déprécié | 21/11/2025           |
+| Modèle                   | Phase    | Date de Dépréciation |
+| :----------------------- | :------- | :------------------- |
+| deepseek-r1:14b          | Déprécié | 30/12/2025           |
+| deepseek-r1:32b          | Déprécié | 30/12/2025           |
+| gemma3:1b                | Déprécié | 30/12/2025           |
+| gemma3:4b                | Déprécié | 30/12/2025           |
+| qwen3:0.6b               | Déprécié | 30/12/2025           |
+| qwen3:1.7b               | Déprécié | 30/12/2025           |
+| qwen3:14b                | Déprécié | 30/12/2025           |
+| qwen3:30b-a3b            | Déprécié | 30/12/2025           |
+| qwen3:4b                 | Déprécié | 30/12/2025           |
+| qwen3:8b                 | Déprécié | 30/12/2025           |
+| qwen3:32b                | Déprécié | 30/12/2025           |
+| qwq:32b                  | Déprécié | 30/12/2025           |
+| granite3.3:2b            | Déprécié | 30/12/2025           |
+| granite3.3:8b            | Déprécié | 30/12/2025           |
+| mistral-small3.1:24b     | Déprécié | 30/12/2025           |
+| qwen2.5vl:32b            | Déprécié | 30/12/2025           |
+| qwen2.5vl:3b             | Déprécié | 30/12/2025           |
+| qwen2.5vl:72b            | Déprécié | 30/12/2025           |
+| qwen2.5vl:7b             | Déprécié | 30/12/2025           |
+| cogito:8b                | Déprécié | 30/12/2025           |
+| deepcoder:14b            | Déprécié | 30/12/2025           |
+| cogito:3b                | Déprécié | 30/12/2025           |
+| qwen3:235b               | Déprécié | 22/11/2025           |
+| qwen3-2507-think:30b-a3b | Déprécié | 14/11/2025           |
+| gemma3:12b               | Déprécié | 21/11/2025           |
+| cogito:14b               | Déprécié | 17/10/2025           |
+| deepseek-r1:70b          | Déprécié | 17/10/2025           |
+| granite3.1-moe:3b        | Déprécié | 17/10/2025           |
+| llama3.1:8b              | Déprécié | 17/10/2025           |
+| phi4-reasoning:14b       | Déprécié | 17/10/2025           |
+| qwen2.5:0.5b             | Déprécié | 17/10/2025           |
+| qwen2.5:1.5b             | Déprécié | 17/10/2025           |
+| qwen2.5:14b              | Déprécié | 17/10/2025           |
+| qwen2.5:32b              | Déprécié | 17/10/2025           |
+| qwen2.5:3b               | Déprécié | 17/10/2025           |
+| deepseek-r1:671b         | Déprécié | 17/10/2025           |
 
 ## 💡 Bonnes Pratiques
 

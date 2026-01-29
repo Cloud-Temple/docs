@@ -43,10 +43,16 @@
 - **Traduction** : Complète
 - **Note** : Correction systématique des blocs de code vides et de la syntaxe HCL dans `concepts.md`, `quickstart.md`, `terraform.md`, `tutorials.md` pour toutes les langues.
 
-### Network & Storage
+### Network (`/docs/network/`)
+- **État** : ✅ Stable (VPC) / 🔄 En développement (Internet, Private Network)
+- **Traduction** : VPC traduit (en, de, es, it)
+
+### Storage (`/docs/storage/`)
 - **État** : 🔄 En développement
 
 ## 🌍 Internationalisation (i18n)
+
+**Dernière mise à jour des traductions** : 21/01/2026 (Managed Kubernetes, VPC, Changelog)
 
 | Langue | Statut Build | Qualité Traduction | Actions Requises |
 |--------|--------------|-------------------|------------------|

@@ -1,7 +1,8 @@
 ---
-title: Tracking Costs with OpenCost
+title: Track Costs with OpenCost
 ---
 import opencostui from './images/opencost.png'
+import opencostgrafana from './images/opencostgrafana.png'
 import opencostmcp from './images/opencostmcp.png'
 import opencostmcp2 from './images/opencostmcp2.png'
 import opencostmcp3 from './images/opencostmcp3.png'
@@ -22,7 +23,7 @@ In the Managed Kubernetes offering, OpenCost is pre-installed and pre-configured
 
 ## Access the OpenCost Interface
 
-The OpenCost interface is exposed via a secure URL specific to your cluster. To access it, use the following URL, replacing `identifiant` with your cluster's identifier (for example, `ctodev`):
+The OpenCost interface is exposed on a secure URL specific to your cluster. To access it, use the following URL, replacing `identifiant` with your cluster's identifier (for example, `ctodev`):
 
 `https://opencost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
@@ -36,7 +37,7 @@ Access to this URL is restricted to the IP addresses you have declared with Clou
 
 The main and most detailed view in OpenCost is the **Allocations** dashboard. This is where you can visualize your resource consumption in real time.
 
-This view allows you to break down costs by native Kubernetes concepts. The "Aggregate by" dropdown is your primary tool for analysis, enabling you to group costs by:
+This view allows you to break down costs by native Kubernetes concepts. The "Aggregate by" dropdown is your primary analytical tool, enabling you to group costs by:
 
 - **Namespace**: To get a view by environment or team.
 - **Deployment**, **StatefulSet**, etc.: To analyze the cost of a specific application.
@@ -47,16 +48,22 @@ This view allows you to break down costs by native Kubernetes concepts. The "Agg
 For even more granular financial analysis, OpenCost can aggregate costs based on **Kubernetes labels**. There isn't a direct "Label" option in the menu, but OpenCost ingests your labels and enables you to create custom aggregations. For this, a consistent labeling strategy is essential. For example, using labels such as `team: backend` or `product: api-gateway` allows you to analyze costs precisely aligned with your organizational structure.  
 For this type of analysis, you must use OpenCost's AI integration.
 
+## Grafana Dashboard
+
+A Grafana dashboard is also available to visualize OpenCost data. This dashboard provides an alternative and complementary view to the OpenCost interface, and it retains the complete history of cost metrics, enabling you to analyze long-term trends.
+
+<img src={opencostgrafana} alt="OpenCost Grafana Dashboard"/>
+
 ## Advanced Usage: Integration with an AI (MCP Server)
 
-For advanced users, OpenCost can be directly queried from the conversational assistant Cline (or others) through the **MCP (Multi-purpose Co-processor) servers** system. This allows you to script queries and retrieve cost data directly within your conversations.
+For advanced users, OpenCost can be directly queried from the Cline conversational assistant (or others) through the **MCP (Multi-purpose Co-processor) servers** system. This enables you to script queries and retrieve cost data directly within your conversations.
 
 ### 1. Configuring OpenCost MCP in Cline
 
 To connect Cline to your OpenCost instance, add the following configuration to your `cline_mcp_settings.json` file. This file is typically located in the Cline configuration directory.
 
 We recommend creating an MCP server named "opencost-xxxxx", where xxxxx is the name of your managed Kubernetes cluster.  
-The MCP server URL follows the format: `https://opencost-mcp.external-secured.identifiant.mk.ms-cloud-temple.com`.
+The MCP server URL is in the format: `https://opencost-mcp.external-secured.identifiant.mk.ms-cloud-temple.com`
 
 For example, for the cluster "bestie":
 
@@ -94,20 +101,20 @@ Once this file is saved, Cline will automatically load the `opencost-xxxxx` MCP 
 ### 2. Query OpenCost with MCP
 
 :::tip Prerequisites
-To interact with MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (e.g., LMStudio) or via connections to public services such as GPT-5 or Gemini, or by using our **[LLM-as-a-Service](/docs/llmaas/llmaas)** sovereign offering.
+To interact with MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (e.g., LMStudio) or via connections to public services such as GPT-5 or Gemini, or by using our sovereign **[LLM-as-a-Service](/llmaas/llmaas)** offering.
 :::
 
 After setup, you can use LLM tools to perform natural language queries against this MCP server.
 
 #### Example:
 
-"Use the MCP 'opencost-bestie', and tell me what percentage of the cluster costs are not allocated to resources"
+"Use the MCP 'opencost-bestie', and tell me what percentage of the cluster's costs are not allocated to resources"
 You will get this:
 <img src={opencostmcp} alt="IA response opencost"/>
 
 #### Example 2:
 
-"Use the MCP 'opencost-bestie', and list me the costs associated with persistent volumes from yesterday"
+"Use the MCP 'opencost-bestie', and list me the costs associated with persistent volumes for yesterday"
 
 <img src={opencostmcp2} alt="IA response opencost 2"/>
 
@@ -119,4 +126,4 @@ You will get this:
 
 ## Conclusion
 
-OpenCost provides you with powerful tools for detailed, real-time cost analysis of your Kubernetes cluster. By primarily using the **Allocations** view and combining it with a solid labeling strategy, you can gain a clear understanding of your expenses, aligned with both your technical deployments and internal organizational structure. Leveraging LLMs and the OpenCost MCP server enables you to take data utilization even further.
+OpenCost provides you with powerful tools for fine-grained, real-time analysis of your Kubernetes cluster costs. By primarily using the **Allocations** view and combining it with a solid labeling strategy, you can gain a clear understanding of your spending, aligned both with your technical deployments and internal organizational structure. Leveraging LLMs and the OpenCost MCP server enables you to take data exploitation even further.

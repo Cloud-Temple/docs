@@ -5,6 +5,14 @@ sidebar_position: 2
 
 # Change Tracking
 
+### January 19, 2026: Managed Kubernetes and VPC Enhancements
+
+- **Managed Kubernetes**: Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
+- **Managed Kubernetes**: New tutorial on using GPUs within a Kubernetes cluster.
+- **Managed Kubernetes**: Replaced KubeCost with a more recent guide on **OpenCost**.
+- **Network (VPC)**: Comprehensive documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, quick start guides, and tutorials.
+- **Multilingual**: Full translation of the VPC service and new Kubernetes content into English, German, Spanish, and Italian.
+
 ### December 15, 2025: Stabilization and Multilingual Fixes
 
 - **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolution of MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
@@ -14,7 +22,7 @@ sidebar_position: 2
 ### December 11, 2025: Managed Kubernetes Updates
 
 - **Managed Kubernetes**: Added a new tutorial on using **Gateway API** for advanced traffic management.
-- **Managed Kubernetes**: Updated documentation on quota management (Ceph) and enhanced cost management tools (OpenCost).
+- **Managed Kubernetes**: Updated documentation on quota management (Ceph) and optimization of cost management tools (OpenCost).
 
 ### November 22, 2025: LLMaaS Updates and General Improvements
 
@@ -28,8 +36,8 @@ sidebar_position: 2
 
 ### 3 November 2025: Enhancements to Kubernetes Tutorials
 
-- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment with **ArgoCD** and the GitOps approach.
-- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
+- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment using **ArgoCD** and the GitOps approach.
+- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the expectations of RSSI and Procurement profiles.
 
 ### 28 October 2025: New Managed Kubernetes Documentation and Various Improvements
 
@@ -43,8 +51,8 @@ sidebar_position: 2
 - **Contractual**: Major update to the Data Processing Agreement (DPA v2) to reflect the latest legal and compliance requirements.
 - **Console**: Improved and clarified documentation regarding order management.
 - **Marketplace**: Added a detailed tutorial on customizing virtual machine (VM) images to create reusable templates.
-- **LLMaaS**: Added a guide to configure the VSCode CLINE extension for using Cloud Temple's language models directly from the editor.
-- **Object Storage (OSS)**: Added clarifications regarding the lifecycle policy for data deletion.
+- **LLMaaS**: Added a guide to configure the VSCode CLINE extension for using Cloud Temple’s language models directly from the editor.
+- **Object Storage (OSS)**: Added clarifications on the lifecycle policy for data deletion.
 - **Object Storage (OSS)**: Added a troubleshooting guide for checksum errors (`XAmzContentSHA256Mismatch`) with AWS CLI and Terraform.
 - **LLMaaS**: Updated the list of available models and retranslated over 50 documents to ensure consistency.
 
@@ -74,5 +82,5 @@ sidebar_position: 2
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Inclusion of the projected model lifecycle timeline.
+- Incorporation of the projected model lifecycle roadmap.
 - Addition of the responsibility matrix for the LLMaaS offering.

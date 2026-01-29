@@ -15,80 +15,80 @@ import vpcNewStaticIps from './images/vpc_new_static_ips.png'
 import vpcNewStaticIpsModale from './images/vpc_new_static_ips_modale.png'
 import vpcStaticIpsAssociate from './images/vpc_static_ips_associate_png.png'
 
-# VPC-Schnellstart
+# Quick Start VPC
 
-Dieser Leitfaden führt Sie durch die Erstellung Ihrer ersten Virtual Private Cloud (VPC) und die Bereitstellung Ihrer ersten privaten Netzwerke.
+This guide walks you through creating your first Virtual Private Cloud (VPC) and deploying your first private networks.
 
 ## Voraussetzungen
 
-Derzeit erfordert die Aktivierung des VPC-Dienstes ein Abonnement für ein **IaaS Open Source**-Angebot. (Diese Bedingung wird später aufgehoben).
+Derzeit ist die Aktivierung des VPC-Dienstes nur möglich, wenn Sie ein **IaaS Open Source**-Angebot abonniert haben. (Diese Bedingung wird später aufgehoben werden.)
 
-## Schritt 1: Zugriff auf die Konsole
+## Step 1: Access the Console
 
-1.  Melden Sie sich an der Cloud Temple-Konsole an.
-2.  Wählen Sie im Navigationsmenü **Network** und dann **VPC**.
+1.  Sign in to the Cloud Temple Console.
+2.  In the navigation menu, select **Network** then **VPC**.
 
 <img src={newTabNetwork} />
 
-## Schritt 2: Eine VPC bestellen
+## Step 2: Create a VPC
 
-1.  Klicken Sie auf die Schaltfläche **Neue VPC**.
+1.  Click the **Create VPC** button.
 <img src={vpcCreateButton} />
 
-2.  Füllen Sie das geführte Formular aus:
-    *   **VPC-Name**: Wählen Sie einen eindeutigen Namen zur Identifizierung Ihrer Umgebung.
-    *   **Beschreibung**: (Optional) Fügen Sie eine Beschreibung hinzu.
+2.  Fill out the guided form:
+    *   **VPC Name**: Choose a unique name to identify your environment.
+    *   **Description**: (Optional) Add a description.
 <img src={vpcCreateModal} />
 
-3.  Bestätigen Sie die Erstellung.
+3.  Confirm creation.
 
-> **Hinweis**: Die VPC-Bereitstellung ist vollautomatisch und dauert in der Regel weniger als eine Stunde.
+> **Note**: VPC provisioning is fully automated and typically takes less than one hour.
 
-### Alternative: Über den Reiter Bestellungen
+### Alternative: Via the Commands Tab
 
-Sie können die Bestellung von VPC-Ressourcen auch direkt über das Menü **Bestellungen** initiieren.
+You can also initiate the VPC resource command directly from the **Commands** menu.
 
 <img src={vpcOrders} />
 
 <img src={vpcOverview} />
 
-## Schritt 3: Erstellen privater Netzwerke
+## Step 3: Create Private Networks
 
-Sobald Ihre VPC aktiv ist:
+Once your VPC is active:
 
-1.  Greifen Sie auf die Details Ihrer VPC zu, indem Sie auf deren Namen klicken.
+1.  Go to your VPC details by clicking on its name.
 <img src={vpcDetailsView} />
 
-2.  Gehen Sie zum Reiter **Private Netzwerke**.
-3.  Klicken Sie auf **Netzwerk hinzufügen**.
-4.  Konfigurieren Sie Ihr Netzwerk:
-    *   **Name**: Name des Netzwerksegments (z. B. `backend`, `frontend`).
-    *   **CIDR**: IP-Adressbereich (z. B. `192.168.1.0/24`).
+2.  Navigate to the **Private Networks** tab.
+3.  Click **Add Network**.
+4.  Configure your network:
+    *   **Name**: Name of the network segment (e.g., `backend`, `frontend`).
+    *   **CIDR**: IP address range (e.g., `192.168.1.0/24`).
 
 <img src={vpcNewPrivateNetwork} />
 
-## Schritt 4: Gateway aktivieren und öffentliche IPs bestellen
+## Step 4: Activate the Gateway and Request Public IPs
 
-Um den Internetzugang und die Bereitstellung von Diensten zu ermöglichen:
+To enable Internet access and expose services:
 
-1.  Prüfen Sie, ob das Gateway aktiviert ist. Wenn nicht, klicken Sie auf die Schaltfläche zur Aktivierung.
+1.  Check whether the gateway is activated. If not, click the activation button.
 <img src={vpcActivateGatewayButton} />
 <img src={vpcActivateGatewayModal} />
 
-2.  Sobald das Gateway aktiv ist, können Sie öffentliche IP-Adressen (Floating IPs) über den Reiter **Öffentliche IPs** bestellen.
+2.  Once the gateway is active, go to the **Public IPs** tab.
 <img src={vpcStaticIps} />
 
-> **Hinweis**: Die Liste "Öffentliche IPs" zeigt alle verfügbaren öffentlichen IPs an, unabhängig davon, ob sie bereits einer VPC zugeordnet sind oder nicht. Der Reiter "Öffentliche IPs" in der VPC-Detailansicht ermöglicht die Verwaltung der diesem VPC zugeordneten IPs (erfordert aktives Gateway).
+> **Note**: The **Public IPs** list at the root of the VPC menu displays all public IPs (assigned or unassigned). The **Public IPs** tab within a VPC's details allows you to manage only those IPs assigned to that specific VPC (requires the gateway to be active).
 
-3.  Klicken Sie auf die Schaltfläche, um neue IPs zu bestellen, oder klicken Sie auf die Aktion "Zuordnen", um eine der IP-Adressen in der Liste zuzuordnen, die noch nicht zugeordnet ist.
+3.  Click the button to request new IPs, or click the "Assign" action to assign an IP from the list that is not yet assigned.
 <img src={vpcNewStaticIps} />
 <img src={vpcStaticIpsAssociate} />
 <img src={vpcNewStaticIpsModale} />
 
-4.  Wählen Sie die Anzahl der IPs, die Sie bestellen möchten, und bestätigen Sie Ihre Bestellung.
+4.  Select the number of IPs you wish to request, then confirm your request.
 
-## Schritt 5: Verbinden Ihrer Ressourcen
+## Step 5: Connect your resources
 
-Ihre privaten Netzwerke sind jetzt in allen Verfügbarkeitszonen (AZ) der Region verfügbar. Sie können Ihre IaaS Open Source-VMs oder Server direkt über deren jeweilige Konfigurationsschnittstellen verbinden.
+Your private networks are now available across all Availability Zones (AZ) in the region. You can connect your Open Source IaaS virtual machines or your servers directly from their respective configuration interfaces.
 
-Um zu erfahren, wie Sie ein VPC-Netzwerk auf einer virtuellen Maschine konfigurieren, lesen Sie unser Tutorial: [Statische IP und VM konfigurieren](./tutorials/vm_configuration).
+To learn how to set up a VPC network on a virtual machine, refer to our tutorial: [Configure a Static IP and a VM](./tutorials/vm_configuration).
