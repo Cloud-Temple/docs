@@ -51,7 +51,7 @@ Nous proposons deux architectures distinctes pour répondre à vos besoins, que 
 
 ### Architecture "Dev/Test"
 
-Idéale pour les environnements hors production, cette architecture compacte déploie toutes les ressources au sein d'une seule zone de disponibilité (AZ). Elle est conçue pour l'agilité et la maîtrise des coûts.
+Idéale pour les environnements de POC, cette architecture compacte déploie toutes les ressources au sein d'une seule zone de disponibilité (AZ).
 
 - **Cas d'usage** : Développement, tests, proof-of-concept (POC).
 - **Points clés** :
@@ -73,7 +73,7 @@ Conçue pour la production et les applications critiques, cette architecture dis
     - **Stockage Dédié** : 3 nœuds de stockage dédiés et répartis pour la performance et la résilience.
     - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
     - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-    - **SLA de 99.90%**. (avec 2 hyperviseurs par AZ minimum)
+    - **SLA de 99.90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
 
