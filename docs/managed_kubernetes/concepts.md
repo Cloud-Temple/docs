@@ -57,7 +57,7 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 - **Authentification SSO** avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
 
 ## SLA & Information sur le support 
-- **Disponibilité garantie (production 3 AZ)** : 99.90 % si la plateforme openIaaS est en HA (2 hyperviseurs ou + par AZ), sinon 99.5% (1 seul hyperviseur par AZ)
+- **Disponibilité garantie (production 3 AZ)** : 99.90 %
 - **Support** : N1/N2/N3 inclus pour le périmètre socle (infrastructure et opérateurs standards).
 - **Engagement de temps de rétablissement (ETR)** : selon contrat cadre Cloud Temple.
 - **Maintenance (MCO)** : patching régulier Talos / Kubernetes / opérateurs standards par MSP, sans interruption de service (rolling upgrade).
@@ -86,7 +86,7 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
 |---------|---------------|------------|---------|--------------------|
-| AZ07  | Git Runner   | 4  | 8 Go | OS: 30 Go  |
+| AZ07  | Git Runner   | 4  | 8 Go | OS: 64 Go  |
 | AZ05  | Control Plane 1   | 8  | 12 Go | OS: 64 Go  |
 | AZ06  | Control Plane 2   | 8  | 12 Go | OS: 64 Go  |
 | AZ07  | Control Plane 3   | 8  | 12 Go | OS: 64 Go  |
@@ -97,7 +97,7 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 | AZ06  | Worker Node 2 (**)   | 12 | 24 Go | OS: 64 Go |
 | AZ07  | Worker Node 3 (**)   | 12 | 24 Go | OS: 64 Go |
 
-(*) : Chaque noeud de stockage est livré avec un minimum de 500 Go d'espace disque, pour un stockage utile Ceph distribué de 500 Go (les données sont répliquées sur chaque AZ, donc x3). L'espace libre disponible pour le client est d'environ 350 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins.
+(*) : Chaque noeud de stockage est livré avec un minimum de 500 Go d'espace disque, pour un stockage utile Ceph distribué de 500 Go (les données sont répliquées sur chaque AZ, donc x3). L'espace libre disponible pour le client est d'environ 350 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins. Des quotas sont appliqués sur Ceph, avec une répartition Block/File.
 
 (**) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (1 par AZ), et nous conseillons d'augmenter leur nombre par lot de 3 pour conserver une distribution multi zonale cohérente. La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 100. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
 
