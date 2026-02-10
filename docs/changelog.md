@@ -5,6 +5,18 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 10 Février 2026 : Mise à jour des tarifs LLMaaS
+
+- **LLMaaS** : Mise à jour globale des tarifs de l'API (Input : 1,9€/M, Output : 8€/M, Raisonneur : 8€/M) dans l'ensemble de la documentation technique et commerciale.
+
+### 5 Février 2026 : Précisions sur les engagements de service (SLA)
+
+- **Managed Kubernetes** : Mise à jour complète et finalisation des engagements de niveau de service (SLA) pour l'offre Managed Kubernetes.
+
+### 21 Janvier 2026 : Améliorations et traductions de sécurité
+
+- **Console Management** : Mise à jour des traductions internationales (anglais, allemand, espagnol, italien) pour les alertes de sécurité dans la console de gestion.
+
 ### 19 Janvier 2026 : Extension Managed Kubernetes et VPC
 
 - **Managed Kubernetes** : Ajout du support pour les nœuds **Bare Metal** et les **GPUs** (NVIDIA).
@@ -37,11 +49,11 @@ sidebar_position: 2
 ### 3 Novembre 2025 : Amélioration des tutoriels Kubernetes
 
 - **Managed Kubernetes** : Ajout d'un nouveau tutoriel sur le déploiement continu avec **ArgoCD** et l'approche GitOps.
-- **Managed Kubernetes** : Revue et amélioration des tutoriels existants. Les guides sur le déploiement, le réseau, la gestion des permissions (Capsule) et la sauvegarde (Kasten) ont été enrichis pour mieux adresser les questions de sécurité, de gouvernance et de coût, en réponse aux attentes des profils RSSI et Acheteur.
+- **Managed Kubernetes** : Revue et améioration des tutoriels existants. Les guides sur le déploiement, le réseau, la gestion des permissions (Capsule) et la sauvegarde (Kasten) ont été enrichis pour mieux adresser les questions de sécurité, de gouvernance et de coût, en réponse aux attentes des profils RSSI et Acheteur.
 
 ### 28 Octobre 2025 : Nouvelle documentation Managed Kubernetes et améliorations diverses
 
-- **Managed Kubernetes (PR #193 & améliorations)**: Ajout d'une documentation complète pour le nouveau service Managed Kubernetes. La section inclut une présentation du service, les concepts techniques, un guide de démarrage, un premier tutoriel, et la matrice de responsabilités (RACI). Le contenu a été enrichi pour mieux répondre aux attentes des différents profils d'utilisateurs.
+- **Managed Kubernetes (PR #193 & améliorations)**: Ajout d'une documentation complète pour le nouveau service Managed Kubernetes. La section inclut une presentazione del service, i concetti tecnici, un guide di démarrage, un primo tutoriel, e la matrice di responsabilités (RACI). Le contenu a été enrichi pour mieux répondre aux attentes des différents profils d'utilisateurs.
 - **Stockage Objet (PR #190, #189)**: Ajout de deux nouveaux tutoriels pour le service de Stockage Objet : un sur la gestion des accès aux buckets S3 et un autre sur l'utilisation de Restic pour les sauvegardes.
 - **Contractuel (PR #191)**: Correction et mise à jour du document "Data Processing Agreement" (DPA).
 
@@ -59,7 +71,7 @@ sidebar_position: 2
 ### 14 Août 2025 : Améliorations et corrections
 
 - **LLMaaS** : Mise à jour et clarification des réponses de la FAQ pour mieux adresser les questions techniques et stratégiques. Ajout de la FAQ à la navigation.
-- **Général** : Correction de plusieurs liens de navigation internes à travers la documentation pour une expérience plus fluide.
+- **Général** : Correction de several liens de navigation internes à travers la documentation pour une expérience plus fluide.
 
 ### Juillet 2025 : Nouveautés et mises à jour majeures
 
@@ -76,7 +88,7 @@ sidebar_position: 2
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 
 - Validation de la suite de tests complète.
-- Correction et validation des pipelines RAG avec FAISS et Qdrant.
+- Correction et validation des pipelines RAG with FAISS et Qdrant.
 - Enrichissement des tutoriels avec des explications techniques plus détaillées.
 - Ajout d'une section sur la sécurité des prompts et le cycle de vie des modèles dans les concepts.
 - Amélioration de la page d'explication du RAG avec schémas et détails sur les modèles d'embedding.
