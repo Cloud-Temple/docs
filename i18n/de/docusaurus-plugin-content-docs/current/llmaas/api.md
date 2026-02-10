@@ -34,7 +34,7 @@ Choosing a tier therefore involves balancing your initial investment, your proje
 ### Third Parties Table
 
 | Tier | Purchase Credit | Monthly Limit | Tokens Output/Hour | Tokens Output/Day | Description |
-|------|------------------|----------------|--------------------|-------------------|-----------|
+|------|-----------------|----------------|--------------------|-------------------|-----------|
 | **Tier 1** | 200 € | 1,000 € | 150,000 | 3,600,000 | Standard usage |
 | **Tier 2** | 500 € | 3,000 € | 300,000 | 7,200,000 | Professional use |
 | **Tier 3** | 1,000 € | 5,000 € | 450,000 | 10,800,000 | High volume |
@@ -42,9 +42,9 @@ Choosing a tier therefore involves balancing your initial investment, your proje
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
-- **Input tokens**: 0.90 € / million
-- **Output tokens (standard)**: 4.00 € / million
-- **Output tokens (reasoner)**: 21.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
+- **Input tokens**: 1.90 € / million
+- **Output tokens (standard)**: 8.00 € / million
+- **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Audio Billing**
 - **Audio Transcription**: 0.01 € / minute (every started minute is billable)
@@ -59,12 +59,12 @@ X-RateLimit-Remaining-Requests: 999
 X-RateLimit-Reset-Requests: 1640995200
 ```
 
-### Error 429 - Limit Reached
+### Fehler 429 - Limit erreicht
 
 ```json
 {
   "error": {
-    "message": "Rate limit exceeded. Please upgrade your tier or try again later.",
+    "message": "Ratenlimit überschritten. Bitte aktualisieren Sie Ihren Tarif oder versuchen Sie es später erneut.",
     "type": "rate_limit_error",
     "code": "rate_limit_exceeded"
   }
@@ -281,10 +281,10 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 :::warning
 **Hinweis**: Der Endpunkt `/v1/completions` verwendet dasselbe Format wie `/v1/chat/completions` mit Nachrichten.  
-Für einfache Textkompletierungen verwenden Sie eine Benutzernachricht mit Ihrem Prompt.
+Für einfache Textkompletierung verwenden Sie eine Benutzer-Nachricht mit Ihrem Prompt.
 :::
 
-Textkompletierungen über das Chat-Format.
+Textkompletierung über das Chat-Format.
 
 #### Anfrage
 
@@ -309,13 +309,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/completions" \
 
 Identisch zu `/v1/chat/completions` – siehe vorherige Section.
 
-#### Antwort
+#### Answer
 
 Same format as `/v1/chat/completions`.
 
 ### POST /v1/audio/transcriptions
 
-Audio-Transkription in Text (Whisper).
+Audio in Text transkribieren (Whisper).
 
 #### Anfrage
 
@@ -334,21 +334,21 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 | `file` | binary | ✅ | Audio file (wav, mp3, m4a). |
 | `language` | string | ❌ | ISO 639-1 language code (e.g., "fr"). Automatic detection if not provided. |
 | `initial_prompt` | string | ❌ | Context or specific words to improve transcription accuracy. |
-| `task` | string | ❌ | Task to perform: `transcribe` (default) or `translate` (translate into English). |
+| `task` | string | ❌ | Task to perform: `transcribe` (default) or `translate` (translate to English). |
 | `response_format` | string | ❌ | `json` (default, equivalent to `verbose_json`). Formats `text`, `srt`, `vtt` are currently not supported. |
 
 #### Answer (`json`)
 
 ```json
 {
-  "text": "Hello, this is an audio transcription test.",
+  "text": "Hello, this is a test of audio transcription.",
   "segments": [
     {
       "id": 0,
       "seek": 0,
       "start": 0.0,
       "end": 4.0,
-      "text": " Hello, this is an audio transcription test.",
+      "text": " Hello, this is a test of audio transcription.",
       "tokens": [ 50364, 40365, 33, 2373, 359, 456, 2373, 323, 1330, 2373, 2264, 50564 ],
       "temperature": 0.0,
       "avg_logprob": -0.25,
@@ -528,9 +528,7 @@ import requests
 import json
 
 # Konfiguration
-
-# Es wird empfohlen, Ihren API-Schlüssel mithilfe von Umgebungsvariablen zu schützen.
-
+# It is recommended to protect your API key by using environment variables.
 # Beispiel: API_KEY = os.getenv("LLMAAS_API_KEY")
 API_KEY = "IHRE_API_TOKEN"  
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -569,6 +567,7 @@ except json.JSONDecodeError:
     print(f"Fehler beim Decodieren von JSON: {response.text}")
 except Exception as e:
     print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
+```
 
 ### Python mit Streaming
 
@@ -752,7 +751,6 @@ The LLMaaS API is compatible with existing OpenAI SDKs by simply changing the ba
 from openai import OpenAI
 
 # It is recommended to protect your API key by using environment variables.
-
 # Beispiel: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="IHRE_API_TOKEN",
@@ -781,9 +779,7 @@ from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
 # Chat Model Configuration (LLMaaS-compatible)
-
 # It is recommended to protect your API key by using environment variables.
-
 # Example: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="YOUR_API_TOKEN",
@@ -859,4 +855,19 @@ class LLMaaSEmbeddings(Embeddings):
 
     def embed_query(self, text: str) -> List[float]:
         return self._embed([text])[0]
+
+# Usage
+# embeddings = LLMaaSEmbeddings(
+#     api_key="YOUR_API_TOKEN",
+#     base_url="https://api.ai.cloud-temple.com/v1",
+#     model_name="granite-embedding:278m"
+# )
+# vector = embeddings.embed_query("My text to vectorize")
 ```
+
+## Support
+
+- **Documentation** : [Quickstart Guide](./quickstart)
+- **Model Catalog** : [Complete List](./models)
+- **Console** : Management and monitoring via Cloud Temple Console
+- **Support** : Via Cloud Temple Console

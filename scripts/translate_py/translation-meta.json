@@ -307,16 +307,16 @@
       "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
     },
     "llmaas/api.md": {
-      "en": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb",
-      "de": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb",
-      "es": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb",
-      "it": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb"
+      "en": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc",
+      "de": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc",
+      "es": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc",
+      "it": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc"
     },
     "llmaas/concepts.md": {
-      "en": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
-      "de": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
-      "es": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
-      "it": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8"
+      "en": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6",
+      "de": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6",
+      "es": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6",
+      "it": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6"
     },
     "iaas_vmware/tutorials/deploy_vm_terraform.md": {
       "en": "9465c1d0aa7e2189becbe648bdd5ec7c069412c6f6b67ff1a2a3f945bafbb664",
@@ -583,10 +583,10 @@
       "it": "39eed24555f539e7758c0223096d31fa618c8044af1d296ff49e77880984887e"
     },
     "llmaas/tutorials.md": {
-      "en": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a",
-      "de": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a",
-      "es": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a",
-      "it": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a"
+      "en": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e",
+      "de": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e",
+      "es": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e",
+      "it": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e"
     },
     "network/internet/concepts.md": {
       "en": "23b2568cc386be4030c6227e3e1de4eacce38a6d47ea39a67e9e74b36824e436",
@@ -619,10 +619,10 @@
       "it": "c982586c414e83ea3f3c62707801272b7903fbe9dad5b4a4d447c7da7892c5d6"
     },
     "llmaas/models.md": {
-      "en": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
-      "de": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
-      "es": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
-      "it": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548"
+      "en": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6",
+      "de": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6",
+      "es": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6",
+      "it": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6"
     },
     "network/private_network/tutorials.md": {
       "en": "3129859075ff7dde2682afa48dd26621529a60e627c5ddff45268dcddd88c203",
@@ -895,10 +895,10 @@
       "it": "45ccc020dead1978dff5b6d24a083705f0a44e258242530f353f22d2c07a43c4"
     },
     "managed_kubernetes/concepts.md": {
-      "en": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f",
-      "de": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f",
-      "es": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f",
-      "it": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f"
+      "en": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895",
+      "de": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895",
+      "es": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895",
+      "it": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895"
     },
     "managed_kubernetes/quickstart.md": {
       "en": "983844e51bd33596d3eaa296289d2f8900894dd6a329f803fa37ed96b6029f27",
@@ -907,10 +907,10 @@
       "it": "983844e51bd33596d3eaa296289d2f8900894dd6a329f803fa37ed96b6029f27"
     },
     "managed_kubernetes/managed_kubernetes.md": {
-      "en": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
-      "de": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
-      "es": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
-      "it": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17"
+      "en": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796",
+      "de": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796",
+      "es": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796",
+      "it": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796"
     },
     "managed_kubernetes/tutorials.md": {
       "en": "ec7dca39ba811c8947882f464dab93081b191fc8ac5a740d48f6e6c10a6d7eff",
@@ -1051,6 +1051,6 @@
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-01-21T10:42:48.432083",
+  "last_update": "2026-02-10T11:05:16.839317",
   "version": "2.0"
 }
