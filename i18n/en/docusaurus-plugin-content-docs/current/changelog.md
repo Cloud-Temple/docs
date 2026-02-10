@@ -5,6 +5,18 @@ sidebar_position: 2
 
 # Change Tracking
 
+### February 10, 2026: LLMaaS Pricing Update
+
+- **LLMaaS**: Global API pricing update (Input: €1.9/M, Output: €8/M, Reasoner: €8/M) across all technical and commercial documentation.
+
+### February 5, 2026: Clarifications on Service Level Agreements (SLAs)
+
+- **Managed Kubernetes**: Complete update and finalization of Service Level Agreements (SLAs) for the Managed Kubernetes offering.
+
+### January 21, 2026: Security Improvements and Translations
+
+- **Console Management**: Updated international translations (English, German, Spanish, Italian) for security alerts in the management console.
+
 ### January 19, 2026: Managed Kubernetes and VPC Enhancements
 
 - **Managed Kubernetes**: Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
@@ -15,9 +27,9 @@ sidebar_position: 2
 
 ### December 15, 2025: Stabilization and Multilingual Fixes
 
-- **Multilingual (Terraform, LLMaaS, Harbor)**: Major fixes to translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
+- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
 - **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
-- **Build**: Verified deployment across all 5 supported languages.
+- **Build**: Validation of deployment across all 5 supported languages.
 
 ### December 11, 2025: Managed Kubernetes Updates
 
@@ -41,7 +53,7 @@ sidebar_position: 2
 
 ### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
 
-- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of various user profiles.
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. The content has been enhanced to better meet the expectations of various user profiles.
 - **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
 - **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
 
@@ -82,5 +94,5 @@ sidebar_position: 2
 - Improved the RAG explanation page with diagrams and details on embedding models.
 - Updated API documentation, quick start guide, and service presentation.
 - Added pricing for the Audio Transcription endpoint.
-- Added the projected model lifecycle timeline.
+- Added the projected model lifecycle roadmap.
 - Added the responsibility matrix for the LLMaaS offering.

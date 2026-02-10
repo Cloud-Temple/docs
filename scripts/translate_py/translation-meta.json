@@ -745,10 +745,10 @@
       "it": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad"
     },
     "changelog.md": {
-      "en": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
-      "es": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
-      "de": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
-      "it": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808"
+      "en": "7ddc6e879e434c8c23909f8a48138d3be37a1020596166ec8e1691c7f8500d4d",
+      "es": "7ddc6e879e434c8c23909f8a48138d3be37a1020596166ec8e1691c7f8500d4d",
+      "de": "7ddc6e879e434c8c23909f8a48138d3be37a1020596166ec8e1691c7f8500d4d",
+      "it": "7ddc6e879e434c8c23909f8a48138d3be37a1020596166ec8e1691c7f8500d4d"
     },
     "contractual/llmaas/raci.md": {
       "en": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
@@ -1051,6 +1051,6 @@
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
     }
   },
-  "last_update": "2026-02-10T11:05:16.839317",
+  "last_update": "2026-02-10T12:08:22.804201",
   "version": "2.0"
 }
