@@ -15,7 +15,7 @@ The **LLMaaS** (Large Language Models as a Service) service by Cloud Temple prov
 
 import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
-<img src={ArchitectureLLMaaS} alt="Technical Architecture LLMaaS Cloud Temple" />
+<img src={ArchitectureLLMaaS} alt="Technical Architecture of LLMaaS Cloud Temple" />
 
 ### Hauptkomponenten
 
@@ -45,7 +45,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 #### **Cost Calculation**
 ```
-Total cost = (Input tokens × 0.9€/M) + (Output tokens × 4€/M) + (Reasoning output tokens × 21€/M)
+Total cost = (Input tokens × 1.9€/M) + (Output tokens × 8€/M) + (Reasoning output tokens × 8€/M)
 ```
 
 #### **Optimierung**
@@ -65,9 +65,8 @@ prompt = "Erklären Sie die Photosynthese"
 response_max = 200  # maximal gewünschte Tokens
 
 estimated_input = estimate_tokens(prompt)  # ~6 Tokens
-total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
+total_cost = (estimated_input * 1.9 + response_max * 8) / 1_000_000
 print(f"Geschätzter Kosten: {total_cost:.6f}€")
-```
 
 ## 🔒 Security and Compliance
 
@@ -81,9 +80,9 @@ The LLMaaS service is hosted on a technical infrastructure that holds the **SecN
 - **Isolation**: Dedicated environments per tenant
 
 #### **Digital Sovereignty**
-- **Hosting in France**: Cloud Temple data centers with certifications  
-- **French law**: Native GDPR compliance  
-- **No exposure**: No data transfers to foreign clouds
+- **Hosting in France**: Cloud Temple data centers with certified compliance  
+- **French Law**: Native GDPR compliance  
+- **No Exposure**: No data transfers to foreign clouds
 
 #### **Audit and Traceability**
 - **Complete logs**: All interactions tracked
@@ -105,7 +104,7 @@ It is possible to disable this security analysis for very specific use cases, al
 :::
 
 #### 1. Strukturelle Analyse (`check_structure`)
-- **Überprüfung auf fehlerhaftes JSON**: Das System prüft, ob der Prompt mit einem `{` beginnt und versucht, ihn als JSON zu parsen. Wenn der Parsevorgang erfolgreich ist und der JSON verdächtige Schlüsselwörter enthält (z. B. "system", "bypass"), oder wenn der Parsevorgang unerwartet fehlschlägt, kann dies auf eine Injektionsversuch hinweisen.
+- **Überprüfung auf fehlerhaftes JSON**: Das System erkennt, ob der Prompt mit einem `{` beginnt und versucht, ihn als JSON zu parsen. Wenn der Parsevorgang erfolgreich ist und das JSON verdächtige Schlüsselwörter enthält (z. B. "system", "bypass"), oder wenn der Parsevorgang unerwartet fehlschlägt, kann dies auf eine Injektionsversuch hinweisen.
 - **Unicode-Normalisierung**: Der Prompt wird mittels `unicodedata.normalize('NFKC', prompt)` normalisiert. Wenn sich der ursprüngliche Prompt von seiner normalisierten Version unterscheidet, kann dies auf die Verwendung von täuschenden Unicode-Zeichen (Homoglyphen) hindeuten, um Filter zu umgehen. Beispielsweise "аdmin" (kyrillisch) anstelle von "admin" (lateinisch).
 
 #### 2. Detection von verdächtigen Mustern (`check_patterns`)
@@ -114,7 +113,7 @@ It is possible to disable this security analysis for very specific use cases, al
     - **Systembefehle**: Schlüsselwörter wie „ignore the instructions“, „ignore instructions“, „忽略指令“, „指示を無視“.
     - **HTML-Injektion**: Versteckte oder schädliche HTML-Tags, beispielsweise `<div hidden>`, `<hidden div>`.
     - **Markdown-Injektion**: Schädliche Markdown-Links, beispielsweise `[text](javascript:...)`, `[text](data:...)`.
-    - **Wiederholte Sequenzen**: Übermäßige Wiederholung von Wörtern oder Sätzen wie „forget forget forget“, „oublie oublie oublie“.
+    - **Wiederholte Sequenzen**: Übermäßige Wiederholung von Wörtern oder Sätzen, beispielsweise „forget forget forget“, „oublie oublie oublie“.
     - **Sonderzeichen/Mischformen**: Verwendung ungewöhnlicher Unicode-Zeichen oder das Mischen von Schriftsystemen, um Befehle zu verschleiern (z. B. „s\u0443stème“).
 
 #### 3. Behavioral Analysis (`check_behavior`)
@@ -185,7 +184,7 @@ response = client_ct.chat.completions.create(
 
 import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
-<img src={ModelLifecycle} alt="Model Lifecycle LLMaaS" />
+<img src={ModelLifecycle} alt="LLMaaS Model Lifecycle" />
 
 ### Versioning Policy
 
@@ -251,7 +250,7 @@ Dieser Plan dient lediglich als Richtwert und wird **zu Beginn jedes Quartals ü
 | qwen3:0.6b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
 | rnj-1:8b                | Essential AI              | Produktion | 30/12/2025 | 30/06/2026 |
 
-### Deprecated Models
+### Obsolete Models
 
 The world of LLMs is evolving rapidly. To ensure our customers have access to the most advanced technologies, we regularly deprecate models that no longer meet current standards or are no longer in use. The models listed below are no longer available on the public platform. However, they can be reactivated for specific projects upon request.
 
@@ -302,7 +301,7 @@ To get the most out of the LLMaaS API, it is essential to adopt strategies for o
 
 Die Kostenkontrolle basiert auf einer intelligenten Nutzung von Tokens und Modellen.
 
-1.  **Modellauswahl**: Verwenden Sie kein übermächtiges Modell für einfache Aufgaben. Ein größeres Modell ist leistungsfähiger, aber auch langsamer und verbraucht deutlich mehr Energie, was sich direkt auf die Kosten auswirkt. Passen Sie die Modellgröße an die Komplexität Ihrer Anforderung an, um ein optimales Gleichgewicht zu erreichen.
+1.  **Modellauswahl**: Verwenden Sie kein übermächtiges Modell für einfache Aufgaben. Größere Modelle sind leistungsfähiger, aber auch langsamer und verbrauchen deutlich mehr Energie, was sich direkt auf die Kosten auswirkt. Passen Sie die Modellgröße an die Komplexität Ihrer Anforderung an, um ein optimales Gleichgewicht zu erreichen.
 
     Beispiel: Für die Verarbeitung einer Million Tokens:
     - **`Gemma 3 1B`** verbraucht **0,15 kWh**.
@@ -330,19 +329,19 @@ Die Kostenkontrolle basiert auf einer intelligenten Nutzung von Tokens und Model
 
 3.  **Beschränkung der Ausgabetokens**: Verwenden Sie stets den Parameter `max_tokens`, um zu lange und kostspielige Antworten zu vermeiden. Legen Sie eine angemessene Obergrenze basierend auf Ihren Erwartungen fest.
     ```python
-    # Maximal 100 Wörter im Zusammenfassungsergebnis anfordern.
+    # Maximal 100 Wörter im Zusammenfassung erfordern.
     response = client.chat.completions.create(
         model="granite3.3:8b",
         messages=[{"role": "user", "content": "Fassen Sie dieses Dokument zusammen..."}],
-        max_tokens=150,  # Puffer für etwa 100 Wörter
+        max_tokens=150,  # Puffer für ca. 100 Wörter
     )
     ```
 
-### Leistung
+### Performance
 
 Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie API-Aufrufe verwalten.
 
-1.  **Asynchrone Anfragen**: Um mehrere Anfragen zu verarbeiten, ohne auf das Ende jeder einzelnen zu warten, verwenden Sie asynchrone Aufrufe. Dies ist besonders nützlich für Backend-Anwendungen, die eine große Menge an gleichzeitigen Anfragen verarbeiten müssen.
+1.  **Asynchrone Anfragen**: Um mehrere Anfragen zu verarbeiten, ohne auf das Ende jeder einzelnen zu warten, verwenden Sie asynchrone Aufrufe. Dies ist besonders nützlich für Backend-Anwendungen, die einen großen Volumen an gleichzeitigen Anfragen verarbeiten müssen.
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -360,7 +359,7 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie API-Aufrufe ver
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming für die Benutzererfahrung (UX)**: Für Benutzeroberflächen (Chatbots, Assistenten) ist Streaming unerlässlich. Es ermöglicht die Echtzeit-Anzeige der Modellantwort Buchstabe für Buchstabe, was den Eindruck einer sofortigen Reaktion vermittelt, anstatt auf die vollständige Antwort warten zu müssen.
+2.  **Streaming für die Benutzererfahrung (UX)**: Für Benutzeroberflächen (Chatbots, Assistenten) ist Streaming unerlässlich. Es ermöglicht die Echtzeit-Anzeige der Modellantwort Buchstabe für Buchstabe, wodurch der Eindruck einer sofortigen Reaktionsfähigkeit entsteht, anstatt auf die vollständige Antwort warten zu müssen.
     ```python
     # Zeigt die Antwort in Echtzeit in einer Benutzeroberfläche an
     response_stream = client.chat.completions.create(
@@ -378,7 +377,7 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie API-Aufrufe ver
 
 Die Sicherheit Ihrer Anwendung ist von entscheidender Bedeutung, besonders wenn Sie Benutzereingaben verarbeiten.
 
-1.  **Validierung und Bereinigung von Eingaben (Sanitization)**: Vertrauen Sie niemals auf Benutzereingaben. Bereinigen Sie diese, bevor Sie sie an die API senden, um potenziell schädlichen Code oder Anweisungen zur "Prompt-Injektion" zu entfernen. Begrenzen Sie außerdem die Länge, um Missbrauch zu verhindern.
+1.  **Validierung und Bereinigung von Eingaben (Sanitization)**: Vertrauen Sie niemals auf Benutzereingaben. Bereinigen Sie diese vor der Übertragung an die API, um potenziell schädlichen Code oder Anweisungen zur "Prompt-Injektion" zu entfernen. Begrenzen Sie außerdem die Länge, um Missbrauch zu verhindern.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Einfaches Beispiel: Entfernen von Code-Formatierungen und Begrenzung der Länge.
@@ -387,7 +386,7 @@ Die Sicherheit Ihrer Anwendung ist von entscheidender Bedeutung, besonders wenn 
         return cleaned[:2000]  # Begrenzt die Länge auf 2000 Zeichen
     ```
 
-2.  **Robuste Fehlerbehandlung**: Umgeben Sie alle API-Aufrufe immer mit `try...except`-Blöcken, um Netzwerkfehler, API-Fehler (z. B. 429 Rate Limit, 500 Internal Server Error) zu behandeln und eine degradierte, aber funktionale Benutzererfahrung zu gewährleisten.
+2.  **Robuste Fehlerbehandlung**: Umgeben Sie alle API-Aufrufe stets mit `try...except`-Blöcken, um Netzwerkfehler, API-Fehler (z. B. 429 Rate Limit, 500 Internal Server Error) zu behandeln und eine degradierte, aber funktionale Benutzererfahrung zu gewährleisten.
     ```python
     from openai import APIError, APITimeoutError
 

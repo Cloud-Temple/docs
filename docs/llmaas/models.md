@@ -23,9 +23,9 @@ Cloud Temple LLMaaS propose **42 modèles de langage large** soigneusement séle
 
 | Type d'utilisation | Prix |
 |-------------------|------|
-| **Tokens d'entrée** | 0.9€ / million de tokens |
-| **Tokens de sortie** | 4€ / million de tokens |
-| **Raisonnement avancé** | 21€ / million de tokens |
+| **Tokens d'entrée** | 1.9€ / million de tokens |
+| **Tokens de sortie** | 8€ / million de tokens |
+| **Raisonnement avancé** | 8€ / million de tokens |
 
 ## Modèles de Grande Taille
 

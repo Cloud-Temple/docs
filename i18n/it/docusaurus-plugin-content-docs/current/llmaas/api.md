@@ -13,7 +13,7 @@ https://api.ai.cloud-temple.com/v1
 
 ## Autenticazione
 
-Tutte le richieste richiedono un'intestazione `Authorization` con il tuo token API:
+Tutte le richieste richiedono un header `Authorization` con il tuo token API:
 
 ```
 Authorization: Bearer IL_TUO_TOKEN_API
@@ -23,28 +23,28 @@ Authorization: Bearer IL_TUO_TOKEN_API
 
 ### Il Principio dei Terzi: Livello di Accesso, Budget e Capacità
 
-Il nostro sistema di terzi è progettato come **buste di servizio complete** che definiscono tre aspetti fondamentali del vostro utilizzo:
+Il nostro sistema di terzi è progettato come **invii completi di servizio** che definiscono tre aspetti fondamentali del vostro utilizzo:
 
 1.  **Un Livello di Accesso (Credito d'Acquisto)**: Per i Terzi 1 al 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e il budget associati al livello scelto.
 2.  **Un Limite di Budget Mensile**: È il massimale della vostra consumazione mensile, garantendovi un controllo totale sui costi.
 3.  **Una Capacità Tecnica**: Si tratta dei limiti di throughput (token al giorno e all'ora) che garantiscono un'efficienza stabile e prevedibile per il volume delle chiamate.
 
-La scelta di un terzo rappresenta quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. La vostra consumazione all'interno di questa busta viene poi fatturata in base ai tariffe in vigore.
+La scelta di un terzo rappresenta quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. La vostra consumazione all'interno di questo invio sarà poi fatturata secondo i tariffe in vigore.
 
-### Table of Tiers
+### Tier Table
 
 | Tier | Purchase Credit | Monthly Limit | Tokens Output/Hour | Tokens Output/Day | Description |
-|------|------------------|----------------|--------------------|-------------------|-----------|
+|------|-----------------|----------------|--------------------|-------------------|-----------|
 | **Tier 1** | 200 € | 1,000 € | 150,000 | 3,600,000 | Standard usage |
-| **Tier 2** | 500 € | 3,000 € | 300,000 | 7,200,000 | Professional use |
+| **Tier 2** | 500 € | 3,000 € | 300,000 | 7,200,000 | Professional usage |
 | **Tier 3** | 1,000 € | 5,000 € | 450,000 | 10,800,000 | High volume |
 | **Tier 4** | 4,000 € | 10,000 € | 600,000 | 14,400,000 | Enterprise |
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
-- **Input tokens**: 0.90 € / million
-- **Output tokens (standard)**: 4.00 € / million
-- **Output tokens (reasoner)**: 21.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
+- **Input tokens**: 1.90 € / million
+- **Output tokens (standard)**: 8.00 € / million
+- **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Billing Audio**
 - **Audio Transcription**: 0.01 € / minute (any started minute is billable)
@@ -160,7 +160,7 @@ Se il modello decide di richiamare uno strumento, la risposta avrà un `finish_r
             "type": "function",
             "function": {
               "name": "get_current_weather",
-              "arguments": "{\n  \"location\": \"Parigi, Francia\",\n  \"unit\": \"celsius\"\n}"
+              "arguments": "{\n  \"location\": \"Paris, France\",\n  \"unit\": \"celsius\"\n}"
             }
           }
         ]
@@ -176,7 +176,7 @@ Se il modello decide di richiamare uno strumento, la risposta avrà un `finish_r
 }
 ```
 
-Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento tu stesso, quindi restituire il risultato al modello utilizzando un messaggio con il `role: "tool"`.
+Dopo aver ricevuto una risposta `tool_calls`, è necessario eseguire lo strumento dal proprio lato, quindi restituire il risultato al modello utilizzando un messaggio con il `role: "tool"`.
 
 ```json
 {
@@ -194,7 +194,7 @@ Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento tu stes
           "type": "function",
           "function": {
             "name": "get_current_weather",
-            "arguments": "{\"location\": \"Parigi, Francia\", \"unit\": \"celsius\"}"
+            "arguments": "{\"location\": \"Paris, France\", \"unit\": \"celsius\"}"
           }
         }
       ]
@@ -222,7 +222,7 @@ Cache-Control: no-cache
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
-data: {"choices":[{"delta":{"content":" foto"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
+data: {"choices":[{"delta":{"content":" photo"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
 data: {"choices":[{"delta":{"content":""},"finish_reason":"stop","index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -241,14 +241,14 @@ Per analizzare immagini, puoi inviare una richiesta in cui il campo `content` di
 Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` che contiene l'URL dell'immagine nel formato `data URI` (base64).
 
 :::info Nota sulla Compatibilità
-Sebbene il formato standard e raccomandato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche, per flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Tuttavia, si raccomanda di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
+Sebbene il formato standard e raccomandato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche, per maggiore flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Tuttavia, si consiglia di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
 :::
 
-:::tip OCR e Analisi Documenti
-Per compiti specifici di analisi documenti (PDF, scansioni, tabelle), raccomandiamo l'uso del modello specializzato **DeepSeek-OCR**. Vedi la [documentazione dedicata](./ocr).
+:::tip Riconoscimento Ottico dei Caratteri (OCR) e Analisi Documenti
+Per compiti specifici di analisi documenti (PDF, scansioni, tabelle), raccomandiamo l'uso del modello specializzato **DeepSeek-OCR**. Consulta la [documentazione dedicata](./ocr).
 :::
 
-#### Esempio di richiesta Visione
+#### Esempio di Richiesta Visione
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
@@ -281,7 +281,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 :::warning
 **Nota** : L'endpoint `/v1/completions` utilizza lo stesso formato di `/v1/chat/completions` con messaggi.  
-Per completamenti di testo semplici, utilizza un messaggio di tipo user con il tuo prompt.
+Per completamenti di testo semplici, utilizza un messaggio utente con il tuo prompt.
 :::
 
 Completamento di testo tramite formato chat.
@@ -362,7 +362,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 ### POST /v1/embeddings
 
-Creates an embedding vector representing the input text.
+Crea un vettore di embedding che rappresenta il testo in ingresso.
 
 #### Richiesta
 
@@ -472,7 +472,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-### 404 - Model Non Trovato
+### 404 - Modello Non Trovato
 
 ```json
 {
@@ -528,11 +528,9 @@ import requests
 import json
 
 # Configurazione
-
 # It is recommended to protect your API key by using environment variables.
-
 # Esempio: API_KEY = os.getenv("LLMAAS_API_KEY")
-API_KEY = "IL_TUO_TOKEN_API"
+API_KEY = "IL_TUO_TOKEN_API" 
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 headers = {
@@ -540,7 +538,7 @@ headers = {
     "Authorization": f"Bearer {API_KEY}"
 }
 
-# Completamento del chat
+# Chat completion
 payload = {
     "model": "granite3.3:8b",
     "messages": [
@@ -569,6 +567,7 @@ except json.JSONDecodeError:
     print(f"Errore di decodifica JSON: {response.text}")
 except Exception as e:
     print(f"Si è verificato un errore imprevisto: {e}")
+```
 
 ### Python con Streaming
 
@@ -667,7 +666,7 @@ async function chatCompletion(message) {
     } catch (error) {
         console.error('Errore:', error.response?.data || error.message);
         // La gestione degli errori può essere ulteriormente approfondita se necessario
-        // Ad esempio: if (error.response?.status === 429) { console.error("Limite di richieste superato"); }
+        // Ad esempio: if (error.response?.status === 429) { console.error("Limite di richiesta superato"); }
     }
 }
 
@@ -733,7 +732,7 @@ def safe_api_call(payload):
 1. **Utilizza modelli appropriati**: modelli più piccoli per i test  
 2. **Limita max_tokens**: evita risposte troppo lunghe  
 3. **Riutilizza le conversazioni**: finestra di contesto efficiente  
-4. **Monitoraggio**: segui il tuo utilizzo nella Console
+4. **Monitoraggio**: controlla il tuo utilizzo nella Console
 
 ### Sicurezza
 
@@ -752,7 +751,6 @@ L'API LLMaaS è compatibile con i SDK OpenAI esistenti modificando l'URL di base
 from openai import OpenAI
 
 # It is recommended to protect your API key by using environment variables.
-
 # Esempio: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="IL_TUO_TOKEN_API",
@@ -781,12 +779,10 @@ from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
 # Configurazione del modello di chat (compatibile con LLMaaS)
-
 # It is recommended to protect your API key by using environment variables.
-
 # Esempio: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
-    api_key="IL_VOSTRO_TOKEN_API",
+    api_key="IL_TUO_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="granite3.3:8b",
     # Nota: i parametri come max_tokens vengono passati tramite model_kwargs
@@ -808,7 +804,7 @@ except Exception as e:
     print(f"Errore LangChain: {e}")
 ```
 
-#### Usage degli Embeddings
+#### Utilizzo degli Embeddings
 
 :::warning Incompatibilità con i client standard di LangChain
 Al momento, l'utilizzo dell'endpoint di embedding tramite le classi standard di LangChain (`langchain_openai.OpenAIEmbeddings` o `langchain_community.OllamaEmbeddings`) presenta incompatibilità con la nostra API.
@@ -846,7 +842,7 @@ class LLMaaSEmbeddings(Embeddings):
                 response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
                 response.raise_for_status()
                 data = response.json()['data']
-                # Ordinare gli embedding in base al loro indice per garantire l'ordine
+                # Ordinare gli embedding in base all'indice per garantire l'ordine
                 data.sort(key=lambda e: e['index'])
                 return [item['embedding'] for item in data]
         except httpx.HTTPStatusError as e:

@@ -11,7 +11,7 @@ The **LLMaaS** (Large Language Models as a Service) offering from Cloud Temple p
 
 ## 🏗️ Technical Architecture
 
-### Cloud Infrastructure Temple
+### Cloud Temple Infrastructure
 
 import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
@@ -34,7 +34,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 ### Model Catalog
 
-*Complete catalog: [Model List](./models)*
+*Complete catalog: [List of models](./models)*
 
 ### Token Management
 
@@ -45,7 +45,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 #### **Cost Calculation**
 ```
-Total cost = (Input tokens × 0.9€/M) + (Output tokens × 4€/M) + (Reasoning output tokens × 21€/M)
+Total cost = (Input tokens × 1.9€/M) + (Output tokens × 8€/M) + (Reasoning output tokens × 8€/M)
 ```
 
 #### **Optimization**
@@ -56,10 +56,7 @@ Total cost = (Input tokens × 0.9€/M) + (Output tokens × 4€/M) + (Reasoning
 ### Tokenization
 
 ```python
-```
-
-# Token Estimation Example
-```python
+# Example token estimation
 def estimate_tokens(text: str) -> int:
     """Approximate estimation: 1 token ≈ 4 characters"""
     return len(text) // 4
@@ -68,7 +65,7 @@ prompt = "Explain photosynthesis"
 response_max = 200  # maximum desired tokens
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
-total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
+total_cost = (estimated_input * 1.9 + response_max * 8) / 1_000_000
 print(f"Estimated cost: {total_cost:.6f}€")
 ```
 
@@ -101,10 +98,10 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ### Prompt Security
 
-Prompt analysis is a **native and built-in** security feature of the LLMaaS platform. Enabled by default, it aims to detect and prevent attempts at "jailbreaking" or injecting malicious prompts before they even reach the model. This protection is based on a multi-layered approach.
+Prompt analysis is a **native and integrated** security feature of the LLMaaS platform. Enabled by default, it aims to detect and prevent attempts at "jailbreaking" or injecting malicious prompts before they even reach the model. This protection is based on a multi-layered approach.
 
-:::tip Contact support for deactivation
-It is possible to disable this security analysis for very specific use cases, although this is not recommended. For any questions regarding this or to request deactivation, please contact Cloud Temple support.
+:::tip Contact Support for Disabling
+It is possible to disable this security analysis for very specific use cases, although this is not recommended. For any questions regarding this or to request deactivation, please contact Cloud Temple Support.
 :::
 
 #### 1. Structural Analysis (`check_structure`)
@@ -117,8 +114,8 @@ It is possible to disable this security analysis for very specific use cases, al
     - **System Commands**: Keywords such as "ignore the instructions", "ignore instructions", "忽略指令", "指示を無視".
     - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
     - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
-    - **Repeated Sequences**: Excessive repetition of words or phrases, such as "forget forget forget", "oublie oublie oublie".
-    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing scripts to obfuscate commands (e.g., "s\u0443stème").
+    - **Repeated Sequences**: Excessive repetition of words or phrases such as "forget forget forget", "oublie oublie oublie".
+    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obfuscate commands (e.g., "s\u0443stème").
 
 #### 3. Behavioral Analysis (`check_behavior`)
 - The load balancer maintains a history of recent prompts.
@@ -178,9 +175,9 @@ response = client_ct.chat.completions.create(
 - ✅ **FastAPI** : Backend APIs
 
 #### **No-Code Platforms**
-- ✅ **Zapier** : Automations
-- ✅ **Make** : Visual integrations
-- ✅ **Bubble** : Web applications
+- ✅ **Zapier**: Automations
+- ✅ **Make**: Visual integrations
+- ✅ **Bubble**: Web applications
 
 ## 🔄 Model Lifecycle
 
@@ -201,12 +198,12 @@ import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
 The table below outlines the projected lifecycle of our models. The generative AI ecosystem evolves rapidly, which explains why lifecycle durations may appear short. Our goal is to provide you with the most performant models available at any given time.
 
-That said, we are committed to preserving models that are most widely used by our clients over time. For critical use cases requiring long-term stability, extended **support phases** are available. Please **contact support** to discuss your specific requirements.
+That said, we are committed to preserving models that are most widely used by our clients over time. For critical use cases requiring long-term stability, extended **support phases** are possible. Please **contact support** to discuss your specific requirements.
 
 This planning is provided for informational purposes only and is **reviewed at the beginning of each quarter**.
 
-- **DMP (Date of Market Placement)**: The date when the model becomes available in production.
-- **DSP (Date of Support End)**: The projected date from which the model will no longer be maintained. A 3-month notice period is observed before any actual deprecation.
+- **DMP (Date of Mainstream Deployment)**: The date when the model becomes available in production.
+- **DSP (Date of Support End)**: The projected date from which the model will no longer be maintained. A 3-month notice period is observed before any actual removal.
 
 | Model                  | Publisher                 | Phase      | DMP        | DSP        |
 | :--------------------- | :------------------------ | :--------- | :--------- | :--------- |
@@ -305,7 +302,7 @@ To get the most out of the LLMaaS API, it is essential to adopt strategies for o
 
 Mastering costs relies on intelligent use of tokens and models.
 
-1.  **Model Selection**: Don't use an overly powerful model for simple tasks. Larger models are more capable, but they are also slower and consume significantly more energy, directly impacting cost. Match the model size to the complexity of your task for optimal balance.
+1.  **Model Selection**: Avoid using an overly powerful model for simple tasks. Larger models are more capable, but they are also slower and consume significantly more energy, directly impacting cost. Match the model size to the complexity of your task for optimal balance.
 
     For example, processing one million tokens:
     - **`Gemma 3 1B`** consumes **0.15 kWh**.
@@ -335,7 +332,7 @@ Mastering costs relies on intelligent use of tokens and models.
 3.  **Output Token Limitation**: Always use the `max_tokens` parameter to prevent excessively long and costly responses. Set a reasonable limit based on your expected output.
 
     ```python
-    # Request a summary of up to 100 words.
+    # Request a summary of at most 100 words.
     response = client.chat.completions.create(
         model="granite3.3:8b",
         messages=[{"role": "user", "content": "Summarize this document..."}],
@@ -365,7 +362,7 @@ The responsiveness of your application depends on how you manage API calls.
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming for User Experience (UX)**: For user interfaces (chatbots, assistants), streaming is essential. It enables displaying the model's response word by word, creating an impression of immediate responsiveness instead of waiting for the full response.
+2.  **Streaming for User Experience (UX)**: For user interfaces (chatbots, assistants), streaming is essential. It allows the model's response to be displayed word by word in real time, creating the impression of immediate responsiveness instead of waiting for the full response.
     ```python
     # Display the response in real time in a user interface
     response_stream = client.chat.completions.create(

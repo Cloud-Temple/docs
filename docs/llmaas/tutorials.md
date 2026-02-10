@@ -277,7 +277,7 @@ def main():
     try:
         documents_content = {
             "overview.txt": "Cloud Temple est un fournisseur de cloud souverain français qualifié SecNumCloud.",
-            "pricing.txt": "Les tarifs de l'API LLMaaS sont de 0.9€/million de tokens en entrée et 4€/million en sortie."
+            "pricing.txt": "Les tarifs de l'API LLMaaS sont de 1.9€/million de tokens en entrée et 8€/million en sortie."
         }
         for filename, content in documents_content.items():
             with open(Path(temp_dir) / filename, 'w', encoding='utf-8') as f:
@@ -388,7 +388,7 @@ def setup_qdrant_rag_pipeline():
     print("2. Préparation des documents...")
     documents_content = [
         "Cloud Temple est un fournisseur de cloud souverain français avec la qualification SecNumCloud.",
-        "Les tarifs LLMaaS sont de 0.9€ pour l'input et 4€ pour l'output par million de tokens."
+        "Les tarifs LLMaaS sont de 1.9€ pour l'input et 8€ pour l'output par million de tokens."
     ]
     documents = [Document(page_content=d) for d in documents_content]
     

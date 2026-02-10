@@ -42,9 +42,9 @@ Le choix d'un tier est donc un équilibre entre l'investissement initial, le bud
 | **Facturation Mensuelle** | N/A | Illimitée | Priorité élevée | Priorité élevée | Contact commercial |
 
 **Note** : Les limites de débit sont calculées sur la base des tokens de sortie. La tarification des tokens varie selon l'usage :
-- **Tokens d'entrée** : 0.90 € / million
-- **Tokens de sortie (standard)** : 4.00 € / million
-- **Tokens de sortie (raisonneur)** : 21.00 € / million (s'applique aux modèles les plus avancés pour les tâches complexes de type agent ou raisonnement)
+- **Tokens d'entrée** : 1.90 € / million
+- **Tokens de sortie (standard)** : 8.00 € / million
+- **Tokens de sortie (raisonneur)** : 8.00 € / million (s'applique aux modèles les plus avancés pour les tâches complexes de type agent ou raisonnement)
 
 #### **Facturation Audio**
 - **Transcription Audio** : 0.01 € / minute (toute minute commencée est due)

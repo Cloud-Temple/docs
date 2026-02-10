@@ -1,7 +1,7 @@
 # Statut de la Documentation
 
 ## 🚦 État Global du Build
-- **Dernier build** : ✅ SUCCÈS (12/11/2025)
+- **Dernier build** : ✅ SUCCÈS (10/02/2026)
 - **Langues compilées** : fr, en, es, it, de
 - **Problèmes résolus** :
   - Correction des erreurs de syntaxe MDX (blocs de code vides, balises non échappées, expressions JSX mal formées) dans toutes les langues.
@@ -52,7 +52,7 @@
 
 ## 🌍 Internationalisation (i18n)
 
-**Dernière mise à jour des traductions** : 21/01/2026 (Managed Kubernetes, VPC, Changelog)
+**Dernière mise à jour des traductions** : 10/02/2026 (Mise à jour Tarifs LLMaaS, VPC, Changelog)
 
 | Langue | Statut Build | Qualité Traduction | Actions Requises |
 |--------|--------------|-------------------|------------------|

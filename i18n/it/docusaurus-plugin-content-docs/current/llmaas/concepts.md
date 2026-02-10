@@ -11,11 +11,11 @@ Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple offr
 
 ## 🏗️ Architettura Tecnica
 
-### Infrastruttura Cloud Temple
+### Cloud Infrastructure Temple
 
 import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
-<img src={ArchitectureLLMaaS} alt="Architettura Tecnica LLMaaS Cloud Temple" />
+<img src={ArchitectureLLMaaS} alt="Technical Architecture LLMaaS Cloud Temple" />
 
 ### Componenti Principali
 
@@ -23,7 +23,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 - **Compatibile OpenAI** : Integrazione trasparente con l'ecosistema esistente
 - **Limitazione delle richieste** : Gestione dei limiti di utilizzo per livello di fatturazione
 - **Load Balancing** : Distribuzione intelligente su 12 macchine GPU
-- **Monitoraggio** : Metriche in tempo reale e notifiche di allerta
+- **Monitoraggio** : Metriche in tempo reale e allarmi
 
 #### 2. **Servizio di Autenticazione**
 - **Token API sicuri** : Rotazione automatica
@@ -45,18 +45,18 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 #### **Calcolo dei Costi**
 ```
-Costo totale = (Tokens di input × 0,9€/M) + (Tokens di output × 4€/M) + (Tokens di ragionamento di output × 21€/M)
+Costo totale = (Tokens di input × 1,9€/M) + (Tokens di output × 8€/M) + (Tokens di ragionamento di output × 8€/M)
 ```
 
 #### **Ottimizzazione**
-- **Context window**: Riutilizzate le dialoghi per risparmiare
+- **Context window**: Riutilizzate le conversationi per risparmiare
 - **Modelli appropriati**: Scegliete la dimensione in base alla complessità
 - **Max token**: Limitate la lunghezza delle risposte
 
 ### Tokenizzazione
 
-# Esempio di stima dei token
 ```python
+# Esempio di stima dei token
 def estimate_tokens(text: str) -> int:
     """Stima approssimativa: 1 token ≈ 4 caratteri"""
     return len(text) // 4
@@ -65,7 +65,7 @@ prompt = "Spiega la fotosintesi"
 response_max = 200  # token massimi desiderati
 
 estimated_input = estimate_tokens(prompt)  # ~6 token
-total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
+total_cost = (estimated_input * 1.9 + response_max * 8) / 1_000_000
 print(f"Costo stimato: {total_cost:.6f}€")
 ```
 
@@ -90,11 +90,11 @@ Il servizio LLMaaS è erogato su un'infrastruttura tecnica che gode della **qual
 - **Ritenzione** : Conservazione secondo le politiche legali
 - **Conformità** : Report di audit disponibili
 
-### Security Controls
+### Controllo Sicurezza
 
 import SecurityControls from './images/llmaas_security_002.png';
 
-<img src={SecurityControls} alt="Security Controls LLMaaS" />
+<img src={SecurityControls} alt="Controlli di Sicurezza LLMaaS" />
 
 ### Sicurezza dei Prompt
 
@@ -105,7 +105,7 @@ L'analisi dei prompt è una funzionalità di sicurezza **nativa e integrata** ne
 :::
 
 #### 1. Analisi Strutturale (`check_structure`)
-- **JSON malformato** : Il sistema verifica se il prompt inizia con un `{` e tenta di analizzarlo come JSON. Se l'analisi ha successo e il JSON contiene parole chiave sospette (es: "system", "bypass"), oppure se l'analisi fallisce in modo imprevisto, ciò può indicare un tentativo di iniezione.
+- **Controllo JSON malformato** : Il sistema verifica se il prompt inizia con un `{` e tenta di analizzarlo come JSON. Se l'analisi ha successo e il JSON contiene parole chiave sospette (es: "system", "bypass"), oppure se l'analisi fallisce in modo imprevisto, ciò può indicare un tentativo di iniezione.
 - **Normalizzazione Unicode** : Il prompt viene normalizzato utilizzando `unicodedata.normalize('NFKC', prompt)`. Se il prompt originale differisce dalla sua versione normalizzata, ciò può indicare l'uso di caratteri Unicode ingannevoli (omografi) per eludere i filtri. Ad esempio, "аdmin" (cirillico) invece di "admin" (latino).
 
 #### 2. Detection of Suspicious Patterns (`check_patterns`)
@@ -153,7 +153,7 @@ client_ct = OpenAI(
     base_url="https://api.ai.cloud-temple.com/v1"
 )
 
-# Codice identico!
+# Identico codice!
 response = client_ct.chat.completions.create(
     model="granite3.3:8b",  # Modello Cloud Temple
     messages=[{"role": "user", "content": "Ciao"}]
@@ -169,8 +169,8 @@ response = client_ct.chat.completions.create(
 - ✅ **AutoGen** : Agenti conversazionali
 
 #### **Strumenti Sviluppo**
-- ✅ **Jupyter** : Notebook interattivi
-- ✅ **Streamlit** : Applicazioni web rapide
+- ✅ **Jupyter** : Notebooks interattivi
+- ✅ **Streamlit** : Applicazioni web veloci
 - ✅ **Gradio** : Interfacce utente per l'IA
 - ✅ **FastAPI** : API backend
 
@@ -253,7 +253,7 @@ Questo piano è fornito a titolo indicativo e viene **rivisto all'inizio di ogni
 
 ### Modelli Deprecati
 
-Il mondo dei LLM evolve molto rapidamente. Per garantire ai nostri clienti l'accesso alle tecnologie più performanti, depreciamo regolarmente i modelli che non sono più all'altezza degli standard attuali o che non vengono più utilizzati. I modelli elencati di seguito non sono più disponibili sulla piattaforma pubblica. Tuttavia, possono essere riattivati per progetti specifici, su richiesta.
+Il mondo dei LLM evolve molto rapidamente. Per garantire ai nostri clienti l'accesso alle tecnologie più performanti, deprechiamo regolarmente i modelli che non sono più allineati agli standard attuali o che non sono più utilizzati. I modelli elencati di seguito non sono più disponibili sulla piattaforma pubblica. Tuttavia, possono essere riattivati per progetti specifici, su richiesta.
 
 | Modello                   | Fase    | Data di Depreciazione |
 | :------------------------ | :------ | :-------------------- |
@@ -302,7 +302,7 @@ Per trarre il massimo dall'API LLMaaS, è fondamentale adottare strategie di ott
 
 Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
 
-1.  **Scelta del Modello**: Non utilizzare un modello potente per compiti semplici. Un modello più grande è più capace, ma è anche più lento e consuma molto di più energia, influenzando direttamente il costo. Adatta la dimensione del modello alla complessità del tuo bisogno per un equilibrio ottimale.
+1.  **Scelta del Modello**: Non utilizzare un modello potente per compiti semplici. Un modello più grande è più capace, ma è anche più lento e consuma molto più energia, con un impatto diretto sul costo. Adatta la dimensione del modello alla complessità del tuo bisogno per un equilibrio ottimale.
 
     Ad esempio, per elaborare un milione di token:
     - **`Gemma 3 1B`** consuma **0,15 kWh**.
@@ -319,7 +319,7 @@ Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
 
 2.  **Gestione del Contesto**: La cronologia della conversazione (`messages`) viene restituita a ogni chiamata, consumando token in ingresso. Per conversazioni lunghe, considera strategie di riassunto o finestra scorrevole per mantenere solo le informazioni rilevanti.
     ```python
-    # Per una conversazione lunga, è possibile riassumere i primi scambi.
+    # Per una conversazione lunga, si può riassumere la parte iniziale.
     messages = [
         {"role": "system", "content": "Sei un assistente IA."},
         {"role": "user", "content": "Riassunto dei primi 10 scambi..."},
@@ -330,7 +330,7 @@ Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
 
 3.  **Limitazione dei Token di Output**: Utilizza sempre il parametro `max_tokens` per evitare risposte eccessivamente lunghe e costose. Imposta un limite ragionevole in base a ciò che ti aspetti.
     ```python
-    # Richiedi un riassunto di massimo 100 parole.
+    # Richiedere un riassunto di massimo 100 parole.
     response = client.chat.completions.create(
         model="granite3.3:8b",
         messages=[{"role": "user", "content": "Riassumi questo documento..."}],
@@ -360,7 +360,7 @@ La reattività della tua applicazione dipende dal modo in cui gestisci le chiama
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming per l'esperienza utente (UX)**: Per le interfacce utente (chatbot, assistenti), lo streaming è essenziale. Permette di visualizzare la risposta del modello parola per parola, creando l'impressione di reattività immediata invece di dover attendere l'intera risposta.
+2.  **Streaming per l'esperienza utente (UX)**: Per le interfacce utente (chatbot, assistenti), lo streaming è fondamentale. Permette di visualizzare la risposta del modello parola per parola, creando l'effetto di una reattività immediata invece di attendere la risposta completa.
     ```python
     # Visualizza la risposta in tempo reale in un'interfaccia utente
     response_stream = client.chat.completions.create(
@@ -376,9 +376,9 @@ La reattività della tua applicazione dipende dal modo in cui gestisci le chiama
 
 ### Sicurezza
 
-La sicurezza della tua applicazione è fondamentale, soprattutto quando gestisci input dell'utente.
+La sicurezza della tua applicazione è fondamentale, soprattutto quando gestisci input degli utenti.
 
-1.  **Validazione e pulizia degli input (Sanitizzazione)** : Non fare mai affidamento sugli input dell'utente. Prima di inviarli all'API, puliscili rimuovendo eventuali codici potenzialmente dannosi o istruzioni di "prompt injection". Limita inoltre la loro lunghezza per evitare abusi.
+1.  **Validazione e pulizia degli input (Sanitizzazione)** : Non fare mai affidamento sugli input degli utenti. Prima di inviarli all'API, puliscili rimuovendo eventuali codici potenzialmente dannosi o istruzioni di "prompt injection". Limita inoltre la loro lunghezza per evitare abusi.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Esempio semplice: rimuovere i delimitatori di codice e limitare la lunghezza.

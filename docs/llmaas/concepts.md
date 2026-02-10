@@ -45,7 +45,7 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 
 #### **Calcul des Coûts**
 ```
-Coût total = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M) +  (Tokens sortie Raisonnement × 21€/M)
+Coût total = (Tokens entrée × 1.9€/M) + (Tokens sortie × 8€/M) +  (Tokens sortie Raisonnement × 8€/M)
 ```
 
 #### **Optimisation**
@@ -65,7 +65,7 @@ prompt = "Expliquez la photosynthèse"
 response_max = 200  # tokens max souhaités
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
-total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
+total_cost = (estimated_input * 1.9 + response_max * 8) / 1_000_000
 print(f"Coût estimé: {total_cost:.6f}€")
 ```
 

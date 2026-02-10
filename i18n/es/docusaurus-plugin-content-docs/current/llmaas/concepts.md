@@ -28,9 +28,9 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 #### 2. **Authentication Service**
 - **Secure API Tokens**: Automatic rotation
 - **Access Control**: Granular permissions per model
-- **Audit Trails**: Full access traceability
+- **Audit Trails**: Full traceability of access
 
-## 🤖 Modelos y tokens
+## 🤖 Modelos y Tokens
 
 ### Catálogo de Modelos
 
@@ -43,9 +43,9 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 - **Tokens de salida**: Respuesta generada por el modelo
 - **Tokens del sistema**: Metadatos e instrucciones
 
-#### **Cálculo de Costes**
+#### **Cálculo de Costos**
 ```
-Coste total = (Tokens entrada × 0,9€/M) + (Tokens salida × 4€/M) + (Tokens salida Razonamiento × 21€/M)
+Coste total = (Tokens entrada × 1,9€/M) + (Tokens salida × 8€/M) + (Tokens salida Razonamiento × 8€/M)
 ```
 
 #### **Optimización**
@@ -56,10 +56,7 @@ Coste total = (Tokens entrada × 0,9€/M) + (Tokens salida × 4€/M) + (Tokens
 ### Tokenización
 
 ```python
-```
-
 # Ejemplo de estimación de tokens
-```python
 def estimate_tokens(text: str) -> int:
     """Estimación aproximada: 1 token ≈ 4 caracteres"""
     return len(text) // 4
@@ -68,11 +65,11 @@ prompt = "Expliquez la photosynthèse"
 response_max = 200  # tokens máximos deseados
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
-total_cost = (estimated_input * 0.9 + response_max * 4) / 1_000_000
+total_cost = (estimated_input * 1.9 + response_max * 8) / 1_000_000
 print(f"Coste estimado: {total_cost:.6f}€")
 ```
 
-## 🔒 Security and Compliance
+## 🔒 Seguridad y Cumplimiento
 
 ### SecNumCloud Certification
 
@@ -101,15 +98,15 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 ### Seguridad de los Prompts
 
-El análisis de prompts es una función de seguridad **integrada y nativa** en la plataforma LLMaaS. Habilitada por defecto, su objetivo es detectar y prevenir intentos de "jailbreak" o inyección de prompts maliciosos antes incluso de que lleguen al modelo. Esta protección se basa en un enfoque multicapa.
+El análisis de prompts es una función de seguridad **integrada y nativa** en la plataforma LLMaaS. Habilitada por defecto, tiene como objetivo detectar y prevenir intentos de "jailbreak" o inyección de prompts maliciosos antes incluso de que lleguen al modelo. Esta protección se basa en un enfoque multicapa.
 
 :::tip Contactar al soporte para la desactivación
-Es posible desactivar este análisis de seguridad para casos de uso muy específicos, aunque no se recomienda hacerlo. Para cualquier consulta sobre este tema o para solicitar una desactivación, póngase en contacto con el soporte de Cloud Temple.
+Es posible desactivar este análisis de seguridad para casos de uso muy específicos, aunque no se recomienda. Para cualquier consulta sobre este tema o para solicitar una desactivación, póngase en contacto con el soporte de Cloud Temple.
 :::
 
 #### 1. Análisis estructural (`check_structure`)
-- **JSON malformado** : El sistema detecta si el prompt comienza con un `{` y trata de analizarlo como JSON. Si el análisis tiene éxito y el JSON contiene palabras clave sospechosas (por ejemplo, "system", "bypass"), o si el análisis falla de manera inesperada, esto puede indicar una tentativa de inyección.
-- **Normalización Unicode** : El prompt se normaliza utilizando `unicodedata.normalize('NFKC', prompt)`. Si el prompt original difiere de su versión normalizada, esto puede indicar el uso de caracteres Unicode engañosos (homógrafos) para evadir los filtros. Por ejemplo, "аdmin" (cirílico) en lugar de "admin" (latino).
+- **JSON malformado**: El sistema detecta si el prompt comienza con un `{` y trata de analizarlo como JSON. Si el análisis tiene éxito y el JSON contiene palabras clave sospechosas (por ejemplo, "system", "bypass"), o si el análisis falla de manera inesperada, esto puede indicar una tentativa de inyección.
+- **Normalización Unicode**: El prompt se normaliza utilizando `unicodedata.normalize('NFKC', prompt)`. Si el prompt original difiere de su versión normalizada, esto puede indicar el uso de caracteres Unicode engañosos (homógrafos) para evadir los filtros. Por ejemplo, "аdmin" (cirílico) en lugar de "admin" (latino).
 
 #### 2. Detection of Suspicious Patterns (`check_patterns`)
 - The system uses regular expressions (`regex`) to identify known attack patterns in prompts, across multiple languages (French, English, Chinese, Japanese).
@@ -118,7 +115,7 @@ Es posible desactivar este análisis de seguridad para casos de uso muy específ
     - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
     - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
     - **Repeated Sequences**: Excessive repetition of words or phrases such as "forget forget forget", "oublie oublie oublie".
-    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obscure commands (e.g., "s\u0443stème").
+    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing scripts to obscure commands (e.g., "s\u0443stème").
 
 #### 3. Behavioral Analysis (`check_behavior`)
 - The load balancer maintains a history of recent prompts.
@@ -184,17 +181,17 @@ response = client_ct.chat.completions.create(
 
 ## 🔄 Ciclo de Vida de los Modelos
 
-### Actualización de Modelos
+### Actualización de modelos
 
 import ModelLifecycle from './images/llmaas_lifecycle_003.png';
 
-<img src={ModelLifecycle} alt="Ciclo de Vida de los Modelos LLMaaS" />
+<img src={ModelLifecycle} alt="Ciclo de vida de los modelos LLMaaS" />
 
 ### Política de versionado
 
 - **Modelos estables**: Versiones fijas disponibles durante 6 meses  
 - **Modelos experimentales**: Versiones beta para usuarios tempranos  
-- **Depreciación**: Aviso previo de 3 meses antes de su retirada  
+- **Depreciación**: Aviso previo de 3 meses antes de su eliminación  
 - **Migración**: Servicios profesionales disponibles para garantizar sus transiciones
 
 ### Planificación Proyectada del Ciclo de Vida
@@ -256,7 +253,7 @@ Esta planificación se proporciona a título indicativo y se **revisa al inicio 
 
 ### Modelos Obsoletos
 
-El mundo de los LLM evoluciona muy rápidamente. Para garantizar a nuestros clientes el acceso a las tecnologías más potentes, depreciamos periódicamente los modelos que ya no cumplen con los estándares actuales o que no se utilizan. Los modelos enumerados a continuación ya no están disponibles en la plataforma pública. Sin embargo, pueden reactivarse para proyectos específicos, bajo solicitud.
+El mundo de los LLM evoluciona muy rápidamente. Para garantizar a nuestros clientes el acceso a las tecnologías más potentes, depreciamos periódicamente los modelos que ya no cumplen con los estándares actuales o que no se utilizan. Los modelos enumerados a continuación ya no están disponibles en la plataforma pública. Sin embargo, pueden ser reactivados para proyectos específicos, bajo solicitud.
 
 | Modelo                   | Fase     | Fecha de Depreciación |
 | :----------------------- | :------- | :-------------------- |
@@ -320,7 +317,7 @@ El control de costos se basa en un uso inteligente de los tokens y de los modelo
         model = "deepseek-r1:70b"
     ```
 
-2.  **Gestión del Contexto**: El historial de la conversación (`messages`) se devuelve en cada llamada, consumiendo tokens de entrada. Para conversaciones largas, considera estrategias de resumen o ventana deslizante para conservar solo la información relevante.
+2.  **Gestión del Contexto**: El historial de la conversación (`messages`) se devuelve en cada llamada, consumiendo tokens de entrada. Para conversaciones largas, considera estrategias de resumen o ventana deslizante para conservar únicamente la información relevante.
     ```python
     # Para una conversación larga, se puede resumir el inicio de los intercambios.
     messages = [
@@ -381,7 +378,7 @@ La reactividad de su aplicación depende de la forma en que gestiona las llamada
 
 La seguridad de su aplicación es fundamental, especialmente cuando maneja entradas de usuarios.
 
-1.  **Validación y limpieza de entradas (Sanitización)**: Nunca confíe en las entradas de los usuarios. Antes de enviarlas a la API, limínelas para eliminar cualquier código potencialmente malicioso o instrucciones de "inyección de prompt". Además, limite su tamaño para evitar abusos.
+1.  **Validación y limpieza de entradas (Sanitización)**: Nunca confíe en las entradas de los usuarios. Antes de enviarlas a la API, limítelas para eliminar cualquier código potencialmente malicioso o instrucciones de "inyección de prompt". Además, limite su tamaño para evitar abusos.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Ejemplo simple: eliminar los delimitadores de código y limitar la longitud.
@@ -390,7 +387,7 @@ La seguridad de su aplicación es fundamental, especialmente cuando maneja entra
         return cleaned[:2000]  # Limita la longitud a 2000 caracteres
     ```
 
-2.  **Gestión robusta de errores**: Siempre envuelva sus llamadas a la API dentro de bloques `try...except` para manejar errores de red, errores de la API (por ejemplo, 429 Rate Limit, 500 Internal Server Error) y proporcionar una experiencia de usuario funcional aunque degradada.
+2.  **Gestión robusta de errores**: Siempre envuelva sus llamadas a la API dentro de bloques `try...except` para manejar errores de red, errores de la API (por ejemplo, 429 Rate Limit, 500 Internal Server Error) y proporcionar una experiencia de usuario funcional, aunque degradada.
     ```python
     from openai import APIError, APITimeoutError
 
@@ -398,7 +395,7 @@ La seguridad de su aplicación es fundamental, especialmente cuando maneja entra
         response = client.chat.completions.create(...)
     except APITimeoutError:
         # Manejar el caso en que la solicitud tarda demasiado
-        return "El servicio tarda más de lo esperado, por favor inténtelo de nuevo."
+        return "El servicio tarda más de lo previsto, por favor inténtelo de nuevo."
     except APIError as e:
         # Manejar errores específicos de la API
         logger.error(f"Error de API LLMaaS: {e.status_code} - {e.message}")

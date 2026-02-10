@@ -13,43 +13,43 @@ title: Panoramica
   <div class="card">
     <h3>Guida introduttiva</h3>
     <p>Inizia rapidamente seguendo istruzioni chiare e semplici.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Avvia l'intro &rarr;</a>
+    <a href="managed_kubernetes/quickstart" class="card-link">Avvia la guida introduttiva &rarr;</a>
   </div>
   <div class="card">
-    <h3>Guide pratiche</h3>
+    <h3>Tutorial</h3>
     <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Scopri le guide pratiche &rarr;</a>
+    <a href="managed_kubernetes/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>
 
 Kubernetes gestito da Cloud Temple è una soluzione di orchestrazione dei contenitori basata su software open source, progettata per offrire un elevato livello di sicurezza, resilienza e automazione sulle piattaforme SecNumcloud di Cloud Temple. Ogni cluster viene distribuito in un ambiente IaaS Cloud-Temple OpenIaaS completamente dedicato al cliente.
 
-Questo servizio è pensato per team con una solida conoscenza di Kubernetes e per gli appassionati di open source che cercano una soluzione nativa, portabile, priva di componenti aggiuntivi del costruttore, su un sistema operativo minimalista e immutabile, progettato per l'automazione e la sicurezza.
+Questo servizio è pensato per team con una buona conoscenza di Kubernetes e per gli appassionati di open source che cercano una soluzione nativa, portabile, priva di componenti aggiuntivi del costruttore, basata su un sistema operativo minimalista e immutabile, progettato per l'automazione e la sicurezza.
 
 ### Principali Benefici
 
 - **Sovranità e Reversibilità**: La soluzione si basa su standard open source (Kubernetes CNCF) per evitare qualsiasi dipendenza tecnologica e garantire la portabilità delle applicazioni. Lo strumento di backup Veeam Kasten, incluso nell'offerta, è specificamente progettato per semplificare le migrazioni da un cloud a un altro.
-- **Sicurezza "Zero-Trust" e Governance**: L'architettura si basa su Talos OS, un sistema operativo immutabile senza accesso diretto (né shell, né SSH), che riduce drasticamente la superficie di attacco. Questa approccio è integrato con strumenti di governance come Kyverno per la gestione delle policy e Capsule per una gestione fine dei diritti, costituendo una base solida per una strategia di sicurezza "Zero-Trust".
-- **Controllo dei Costi e Integrazione**: La soluzione include nativamente strumenti FinOps come OpenCost per un monitoraggio preciso dei consumi. Il modello economico è trasparente, basato sulle risorse IaaS consumate, e l'utilizzo di componenti open source riconosciuti (Cilium, Ceph, ArgoCD) facilita l'integrazione nei vostri ecosistemi esistenti.
+- **Sicurezza "Zero-Trust" e Governance**: L'architettura si basa su Talos OS, un sistema operativo immutabile senza accesso diretto (né shell, né SSH), che riduce drasticamente la superficie d'attacco. Questo approccio è integrato con strumenti di governance come Kyverno per la gestione delle policy e Capsule per una gestione fine dei diritti, costituendo una base solida per una strategia di sicurezza "Zero-Trust".
+- **Controllo dei Costi e Integrazione**: La soluzione include nativamente strumenti FinOps come OpenCost per un monitoraggio preciso dei consumi. Il modello economico è trasparente, basato sulle risorse IaaS consumate, e l'uso di componenti open source riconosciuti (Cilium, Ceph, ArgoCD) facilita l'integrazione nei vostri ecosistemi esistenti.
 
 ### A complete and ready-to-use platform
 
-The solution natively includes a full, coherent stack of cutting-edge open-source tools to cover all needs throughout the application lifecycle:
+The solution natively includes a full, consistent stack of cutting-edge open-source tools to cover all needs throughout the application lifecycle:
 
-- **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule  
-- **Storage**: Rook-Ceph  
-- **Continuous Deployment (GitOps)**: ArgoCD  
-- **Observability**: Prometheus, Grafana, Loki  
-- **Backup and Migration**: Veeam Kasten  
+- **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
+- **Storage**: Rook-Ceph
+- **Continuous Deployment (GitOps)**: ArgoCD
+- **Observability**: Prometheus, Grafana, Loki
+- **Backup and Migration**: Veeam Kasten
 - **Cost Management (FinOps)**: OpenCost
 
 ## Architetture di Distribuzione
 
-Proponiamo due architetture distinte per rispondere alle vostre esigenze, sia per ambienti di sviluppo che per ambienti di produzione critici.
+Proponiamo due architetture distinte per rispondere alle vostre esigenze, sia in ambienti di sviluppo che in ambienti di produzione critici.
 
-### Architecture "Dev/Test"
+### Architettura "Dev/Test"
 
-Ideale per ambienti non di produzione, questa architettura compatta distribuisce tutte le risorse all'interno di una singola zona di disponibilità (AZ). È progettata per agilità e controllo dei costi.
+Ideale per ambienti di POC, questa architettura compatta distribuisce tutte le risorse all'interno di una singola zona di disponibilità (AZ).
 
 - **Casi d'uso**: Sviluppo, test, proof-of-concept (POC).
 - **Punti chiave**:
@@ -59,7 +59,7 @@ Ideale per ambienti non di produzione, questa architettura compatta distribuisce
     - Non beneficia di un SLA di alta disponibilità.
     - Nessuna restrizione di sicurezza
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={require('./images/archi_overview_1az.png').default} alt="Architettura Mono-AZ" />
 
 ### Architettura Produzione (Multi-AZ)
 
@@ -70,7 +70,7 @@ Progettata per l'ambiente di produzione e per applicazioni critiche, questa arch
     - **Alta disponibilità**: 3 nodi Control Plane distribuiti su 3 AZ.
     - **Archiviazione dedicata**: 3 nodi di archiviazione dedicati e distribuiti per prestazioni e resilienza.
     - **Nodi Worker distribuiti**: Almeno 3 nodi worker, uno per AZ.
-    - **Nodi Bare Metal (opzionale)**: Integrazione possibile di nodi worker di tipo **"Bare Metal"** per esigenze prestazionali specifiche, in particolare il **supporto per GPU**.
+    - **Nodi Bare Metal (Opzionale)**: Possibile integrazione di nodi worker di tipo **"Bare Metal"** per esigenze specifiche di prestazioni, in particolare il **supporto per GPU**.
     - **SLA del 99,90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Architettura Multi-AZ" />
