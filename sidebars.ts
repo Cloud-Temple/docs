@@ -77,24 +77,23 @@ const sidebars: SidebarsConfig = {
         'additional_content/concepts_az',
       ],
     },
-        {
-          type: 'category',
-          label: 'Internet',
-          items: [
-            'network/internet/internet',
-            'network/internet/concepts',
-            'network/internet/advanced_concepts',
-            'network/internet/quickstart',
-            {
-              type: 'category',
-              label: 'Internet Tutoriels',
-              items: [
-                'network/internet/tutorials/forti',
-                'network/internet/tutorials/pfSense',
-              ],
-            },
-          ],
-        },
+    {
+      type: 'html',
+      value: `
+        <br>
+        <h3 class="sidebar-title">Products</h3>
+      `,
+    },
+    {
+      type: 'category',
+      label: 'Bare Metal',
+      items: [
+        'iaas_bare-metal/iaas_bare-metal',
+        'iaas_bare-metal/concepts',
+        'iaas_bare-metal/quickstart',
+        'iaas_bare-metal/tutorials',
+      ],
+    },
     {
       type: 'category',
       label: 'Marketplace',
