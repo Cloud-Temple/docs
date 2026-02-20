@@ -293,6 +293,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'network/internet/internet',
             'network/internet/concepts',
+            'network/internet/advanced_concepts',
             'network/internet/quickstart',
             {
               type: 'category',
