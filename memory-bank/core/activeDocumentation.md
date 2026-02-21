@@ -96,7 +96,8 @@
 #### Documentation Réseau (`/docs/network/`)
 - ✅ `vpc/` : Virtual Private Cloud (Concepts, Quickstart, Tutorials)
 - ✅ `private_network/` : Réseaux privés (Concepts, Quickstart, Tutorials)
-- 🔄 `internet/` : Connectivité Internet (structure créée, contenu à enrichir)
+- ✅ `internet/advanced_concepts.md` : Concepts avancés (communautés BGP, Local Preference)
+- 🔄 `internet/` : Connectivité Internet base (structure créée, contenu à enrichir)
 
 #### Support Visuel
 - ✅ **Diagrammes VPC** : Architecture et configuration
@@ -232,6 +233,8 @@
 - ✅ **Génération Documentation Modèles** : Mise à jour automatisée de `docs/llmaas/models.md` via le script Python.
 - ✅ **Traduction Network (VPC)** : Traduction complète du service VPC et mise à jour de Private Network vers en, de, es, it. Correction des liens LLMaaS dans `usingopencost.md`.
 - ✅ **Fix Build MDX Multi-langues** : Correction des erreurs de parsing MDX dans toutes les langues pour LLMaaS et Network. Restauration des blocs de code et suppression des doublons dans le catalogue de modèles.
+- ✅ **Concepts Avancés Réseau** (21/02/2026) : Ajout page communautés BGP et Local Preference (PR #249). Traduction vers en, de, es, it.
+- ✅ **Qualité Traductions** (21/02/2026) : Amélioration des traductions security_alarms.md et models.md (4 langues). Mise à jour changelog.
 
 ### En Review
 - 🔄 **Cohérence terminologique** : Uniformisation
