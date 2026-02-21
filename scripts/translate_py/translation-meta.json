@@ -733,10 +733,10 @@
       "it": "82169a5d37eeffe57709fdb364cfa605905aac9ed80ea87e812abd49954a756e"
     },
     "storage/oss/tutorials.md": {
-      "en": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601",
-      "de": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601",
-      "es": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601",
-      "it": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601"
+      "en": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161",
+      "de": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161",
+      "es": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161",
+      "it": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161"
     },
     "llmaas/rag_explained.md": {
       "en": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad",
@@ -781,10 +781,10 @@
       "it": "a64eb325a35b2b36436ba69c903e25cb279f5d70f03116f2b44bda79fcabc3c2"
     },
     "storage/oss/tutorials/python-boto3.md": {
-      "en": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
-      "de": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
-      "es": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
-      "it": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9"
+      "en": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8",
+      "de": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8",
+      "es": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8",
+      "it": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8"
     },
     "storage/oss/tutorials/winscp.md": {
       "en": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
@@ -1061,8 +1061,14 @@
       "de": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6",
       "it": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6",
       "es": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6"
+    },
+    "storage/oss/tutorials/rclone.md": {
+      "en": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9",
+      "es": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9",
+      "it": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9",
+      "de": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9"
     }
   },
-  "last_update": "2026-02-21T15:51:14.145241",
+  "last_update": "2026-02-21T16:00:32.911398",
   "version": "2.0"
 }

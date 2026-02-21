@@ -14,6 +14,7 @@ Cette section regroupe un ensemble de tutoriels pour vous aider à prendre en ma
 
 *   [Synchroniser un dossier avec mc mirror](./tutorials/mc-mirror.md)
 *   [Synchroniser un dossier avec AWS CLI](./tutorials/aws-s3-sync.md)
+*   [Copier et synchroniser avec Rclone](./tutorials/rclone.md)
 *   [Utiliser le SDK Python (Boto3)](./tutorials/python-boto3.md)
 
 ### Gestion des accès

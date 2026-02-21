@@ -3,7 +3,7 @@ title: Tutorials
 sidebar_position: 4
 ---
 
-This section gathers a set of tutorials to help you get started with and use the Cloud Temple Object Storage service with various tools.
+This section contains a set of tutorials to help you get started with and use the Cloud Temple Object Storage service with various tools.
 
 ### Graphical Clients
 
@@ -14,6 +14,7 @@ This section gathers a set of tutorials to help you get started with and use the
 
 *   [Synchronize a directory with mc mirror](./tutorials/mc-mirror.md)
 *   [Synchronize a directory with AWS CLI](./tutorials/aws-s3-sync.md)
+*   [Copy and synchronize with Rclone](./tutorials/rclone.md)
 *   [Use the Python SDK (Boto3)](./tutorials/python-boto3.md)
 
 ### Zugriffsverwaltung
