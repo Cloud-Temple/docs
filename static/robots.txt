@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://docs.cloud-temple.com/sitemap.xml
+Sitemap: https://docs.cloud-temple.com/docs/sitemap.xml
