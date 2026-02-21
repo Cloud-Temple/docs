@@ -8,9 +8,11 @@ sidebar_position: 2
 ### February 21, 2026: Advanced Networking Concepts and Multilingual Enhancements
 
 - **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with a Bird example.
-- **LLMaaS**: Updated model catalog and added model lifecycle management. Introduced LTS (Long Term Support) models.
+- **LLMaaS**: Updated model catalog with the addition of model lifecycle management. Introduced LTS (Long Term Support) models.
 - **Console (Security)**: Improved quality of security alert translations (English, German, Spanish, Italian).
-- **Multilingual**: Translated the new advanced networking concepts page into 4 languages (en, de, es, it) and enhanced overall quality of existing translations.
+- **Multilingual**: Translation of the new advanced networking concepts page into four languages (en, de, es, it), along with overall enhancement of existing translation quality.
+- **IaaS Bare Metal**: Added clarifications regarding the BFS (Boot from SAN) volume in the quick start guide: Volume 1 is dedicated to OS installation, non-shareable within the same AZ, with recommendation to store data on an additional LUN volume.
+- **Object Storage (OSS)**: Added a new **FAQ** page covering S3 access, IP whitelisting, pre-signed links, and recommended usage scenarios.
 
 ### February 10, 2026: LLMaaS Pricing Update
 
