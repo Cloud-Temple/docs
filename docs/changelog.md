@@ -11,6 +11,8 @@ sidebar_position: 2
 - **LLMaaS** : Mise à jour du catalogue de modèles et ajout du cycle de vie des modèles. Ajout des modèles LTS (Long Term Support).
 - **Console (Sécurité)** : Amélioration de la qualité des traductions des alertes de sécurité (anglais, allemand, espagnol, italien).
 - **Multilingue** : Traduction de la nouvelle page concepts avancés réseau vers les 4 langues (en, de, es, it) et amélioration globale de la qualité des traductions existantes.
+- **IaaS Bare Metal** : Ajout de précisions sur le volume BFS (Boot from SAN) dans le guide de démarrage : le Volume 1 est dédié à l'installation de l'OS, non partageable au sein d'une même AZ, avec recommandation de stocker les données sur un volume LUN additionnel.
+- **Stockage Objet (OSS)** : Ajout d'une page **FAQ** couvrant l'accès S3, les whitelists IP, les liens pré-signés et les scénarios d'usage recommandés.
 
 ### 10 Février 2026 : Mise à jour des tarifs LLMaaS
 
