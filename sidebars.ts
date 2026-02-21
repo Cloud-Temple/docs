@@ -332,6 +332,7 @@ const sidebars: SidebarsConfig = {
                 'storage/oss/tutorials/winscp',
                 'storage/oss/tutorials/mc-mirror',
                 'storage/oss/tutorials/aws-s3-sync',
+                'storage/oss/tutorials/rclone',
                 'storage/oss/tutorials/python-boto3',
                 'storage/oss/tutorials/file-hashing',
                 'storage/oss/tutorials/restic',
