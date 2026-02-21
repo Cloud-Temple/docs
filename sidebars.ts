@@ -318,6 +318,7 @@ const sidebars: SidebarsConfig = {
             'storage/oss/oss',
             'storage/oss/concepts',
             'storage/oss/quickstart',
+            'storage/oss/faq',
             {
               type: 'category',
               label: 'Object Storage Tutoriels',

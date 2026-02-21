@@ -5,9 +5,16 @@ sidebar_position: 2
 
 # Change Tracking
 
+### February 21, 2026: Advanced Networking Concepts and Multilingual Enhancements
+
+- **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with Bird example.
+- **LLMaaS**: Updated model catalog and added model lifecycle management. Introduced LTS (Long Term Support) models.
+- **Console (Security)**: Improved quality of security alert translations (English, German, Spanish, Italian).
+- **Multilingual**: Translation of the new advanced networking concepts page into four languages (en, de, es, it), and overall enhancement of existing translation quality.
+
 ### February 10, 2026: LLMaaS Pricing Update
 
-- **LLMaaS**: Global update of API pricing (Input: €1.90/M, Output: €8.00/M, Reasoner: €8.00/M) across all technical and commercial documentation.
+- **LLMaaS**: Global API pricing update (Input: €1.90/M, Output: €8.00/M, Reasoner: €8.00/M) across all technical and commercial documentation.
 
 ### February 5, 2026: Clarifications on Service Level Agreements (SLAs)
 
@@ -21,7 +28,7 @@ sidebar_position: 2
 
 - **Managed Kubernetes**: Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
 - **Managed Kubernetes**: New tutorial on using GPUs within a Kubernetes cluster.
-- **Managed Kubernetes**: Replaced KubeCost with a more up-to-date guide on **OpenCost**.
+- **Managed Kubernetes**: Replaced KubeCost with a more recent guide on **OpenCost**.
 - **Network (VPC)**: Comprehensive documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, quick start guides, and tutorials.
 - **Multilingual**: Full translation of the VPC service and new Kubernetes content into English, German, Spanish, and Italian.
 
@@ -33,7 +40,7 @@ sidebar_position: 2
 
 ### 11. Dezember 2025: Neuerungen bei Managed Kubernetes
 
-- **Managed Kubernetes**: Hinzufügen eines neuen Tutorials zur Nutzung der **Gateway API** für die erweiterte Verkehrssteuerung.
+- **Managed Kubernetes**: Hinzufügen eines neuen Tutorials zur Verwendung der **Gateway API** für die erweiterte Verkehrssteuerung.
 - **Managed Kubernetes**: Aktualisierung der Dokumentation zur Verwaltung von Quoten (Ceph) und Optimierung der Kostenverwaltungstools (OpenCost).
 
 ### November 22, 2025: LLMaaS Updates and General Improvements
@@ -53,7 +60,7 @@ sidebar_position: 2
 
 ### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
 
-- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. Content has been enhanced to better meet the expectations of different user profiles.
+- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. The content has been enhanced to better meet the expectations of different user profiles.
 - **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
 - **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
 
@@ -64,7 +71,7 @@ sidebar_position: 2
 - **Console**: Improved and clarified documentation regarding order management.
 - **Marketplace**: Added a detailed tutorial on customizing virtual machine (VM) images to create reusable templates.
 - **LLMaaS**: Added a guide to configure the VSCode CLINE extension for using Cloud Temple's language models directly from the editor.
-- **Object Storage (OSS)**: Added clarifications on the lifecycle policy for data deletion.
+- **Object Storage (OSS)**: Added clarifications regarding the lifecycle policy for data deletion.
 - **Object Storage (OSS)**: Added a troubleshooting guide for checksum errors (`XAmzContentSHA256Mismatch`) with AWS CLI and Terraform.
 - **LLMaaS**: Updated the list of available models and retranslated over 50 documents to ensure consistency.
 
@@ -94,5 +101,5 @@ sidebar_position: 2
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Inclusion of the projected model lifecycle timeline.
+- Incorporation of the projected model lifecycle timeline.
 - Addition of the responsibility matrix for the LLMaaS offering.
