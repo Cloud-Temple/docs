@@ -313,10 +313,10 @@
       "it": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc"
     },
     "llmaas/concepts.md": {
-      "en": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6",
-      "de": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6",
-      "es": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6",
-      "it": "25c71ef1c57b4a48ca7e445a2c2ad33dbb04f6d7d6972dc7117ebe1e5bef6de6"
+      "en": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5",
+      "de": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5",
+      "es": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5",
+      "it": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5"
     },
     "iaas_vmware/tutorials/deploy_vm_terraform.md": {
       "en": "9465c1d0aa7e2189becbe648bdd5ec7c069412c6f6b67ff1a2a3f945bafbb664",
@@ -619,10 +619,10 @@
       "it": "c982586c414e83ea3f3c62707801272b7903fbe9dad5b4a4d447c7da7892c5d6"
     },
     "llmaas/models.md": {
-      "en": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6",
-      "de": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6",
-      "es": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6",
-      "it": "8f0e34ffa2a0dd085f856b048ae4cc8c4326febcae0f9f96f7b3783f790607b6"
+      "en": "fb3d00fb3aae51e38aa83c59caf1a6751995e5bcba3ea741760e587a63ea9eaa",
+      "de": "fb3d00fb3aae51e38aa83c59caf1a6751995e5bcba3ea741760e587a63ea9eaa",
+      "es": "fb3d00fb3aae51e38aa83c59caf1a6751995e5bcba3ea741760e587a63ea9eaa",
+      "it": "fb3d00fb3aae51e38aa83c59caf1a6751995e5bcba3ea741760e587a63ea9eaa"
     },
     "network/private_network/tutorials.md": {
       "en": "3129859075ff7dde2682afa48dd26621529a60e627c5ddff45268dcddd88c203",
@@ -1049,8 +1049,14 @@
       "de": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
       "es": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
+    },
+    "network/internet/advanced_concepts.md": {
+      "en": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02",
+      "de": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02",
+      "es": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02",
+      "it": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02"
     }
   },
-  "last_update": "2026-02-10T12:08:22.804201",
+  "last_update": "2026-02-21T12:02:52.992910",
   "version": "2.0"
 }

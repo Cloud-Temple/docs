@@ -7,22 +7,22 @@ sidebar_position: 2
 
 ## Visión general
 
-Cloud Temple LLMaaS ofrece **42 modelos de lenguaje grande** cuidadosamente seleccionados y optimizados para satisfacer los requisitos más estrictos de **SecNumCloud**. Nuestro catálogo cubre todo el espectro, desde micromodelos altamente eficientes hasta modelos extremadamente grandes.
+Cloud Temple LLMaaS ofrece **46 modelos de lenguaje grande** cuidadosamente seleccionados y optimizados para satisfacer los requisitos más estrictos de **SecNumCloud**. Nuestro catálogo cubre todo el espectro, desde micromodelos altamente eficientes hasta modelos extremadamente grandes.
 
 ### Estadísticas Generales
 
 | Métrica | Valor |
 |--------|-------|
-| **Número total de modelos** | 42 modelos |
+| **Número total de modelos** | 46 modelos |
 | **Contexto mínimo** | 2.048 tokens |
 | **Contexto máximo** | 262.144 tokens |
 | **Conformidad** | SecNumCloud ✅ HDS ✅ Soberanía ✅ C5 ✅ |
 | **Localización** | 100% Francia 🇫🇷 |
 
-### Precios
+### Tarifación
 
 | Tipo de uso | Precio |
-|-------------------|------|
+|-------------|--------|
 | **Tokens de entrada** | 1,90 € / millón de tokens |
 | **Tokens de salida** | 8 € / millón de tokens |
 | **Razonamiento avanzado** | 8 € / millón de tokens |
@@ -52,6 +52,8 @@ Advanced version of the Cogito model offering significantly enhanced reasoning a
 - Expert systems in specialized domains (legal, medical, technical)
 - Multi-step reasoning analysis with full explainability of conclusions
 
+---
+
 ### gemma3:27b
 **Google • 27B parameters • Context: 120,000 tokens**
 
@@ -70,12 +72,39 @@ Revolutionary model from Google offering an optimal balance between power and ef
 
 **Use cases:**
 - Document analysis with extended context up to 120K tokens (approximately 400 pages)
-- Indexing and semantic search in large document databases
+- Semantic indexing and search in large document databases
 - Simultaneous processing of images and text thanks to multimodal capabilities
 - Structured data extraction from PDFs and scanned documents
 - Integration with external tools via function calling API
 
+---
+
+### glm-4.7-flash:30b
+**Zhipu AI • 30B parameters • Context: 120,000 tokens**
+
+Flash version of the GLM-4.7 model, optimized for speed and efficiency.
+
+**Technical specifications:**
+- **Speed**: 103 tokens/second
+- **Energy consumption**: 1.41 kWh per million tokens
+- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
+
+**Capabilities:**
+✅ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
+
+**Tags:** `Agent` `Fast` `Large Context` `Multilingual`
+
+**Use cases:**
+- Fast conversational assistants
+- Long document analysis (up to 200k)
+- Reasoning tasks with low latency
+
+---
+
 ### glm-4.7:358b
+> ⚠️ **WARNING: This model is deprecated.** Model removed from the catalog on 03/30/2026.
+
 **Zhipu AI • 358B parameters • Context: 120,000 tokens**
 
 High-performance versatile model developed by Zhipu AI, excelling in logical reasoning, multilingual understanding, and complex tasks.
@@ -83,7 +112,7 @@ High-performance versatile model developed by Zhipu AI, excelling in logical rea
 **Technical specifications:**
 - **Speed**: 18 tokens/second
 - **Consumption**: 7.41 kWh per million tokens
-- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
 **Capabilities:**
@@ -95,6 +124,8 @@ High-performance versatile model developed by Zhipu AI, excelling in logical rea
 - Complex reasoning tasks
 - Long document analysis
 - Advanced conversational assistants
+
+---
 
 ### gpt-oss:120b
 **OpenAI • 120B parameters • Context: 120,000 tokens**
@@ -118,6 +149,8 @@ State-of-the-art open-weight language model from OpenAI, delivering strong perfo
 - Commercial scenarios needing a permissive license (Apache 2.0).
 - Fine-tuning for specialized tasks requiring a powerful base model.
 
+---
+
 ### llama3.3:70b
 **Meta • 70B parameters • Context: 132,000 tokens**
 
@@ -125,7 +158,7 @@ State-of-the-art multilingual model developed by Meta, designed to excel in natu
 
 **Technical specifications:**
 - **Speed**: 29 tokens/second
-- **Energy consumption**: 7.85 kWh per million tokens
+- **Consumption**: 7.85 kWh per million tokens
 - **License**: [LLAMA 3.3 Community License](./licences/llama_3.3_community_licence.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -140,6 +173,8 @@ State-of-the-art multilingual model developed by Meta, designed to excel in natu
 - Processing of 60K-token dialogue windows for conversational history
 - Analysis of large legal or technical documents (>100 pages)
 - Generation of structured text with strict adherence to stylistic guidelines
+
+---
 
 ### ministral-3:14b
 **Mistral AI • 14B parameters • Context: 250,000 tokens**
@@ -162,6 +197,8 @@ The most powerful model in the Ministral family, designed for complex tasks on l
 - Coding and engineering assistants
 - Deep document analysis with reasoning
 
+---
+
 ### nemotron-3-nano:30b
 **NVIDIA • 30B parameters • Context: 250,000 tokens**
 
@@ -181,28 +218,32 @@ NVIDIA-optimized model for complex reasoning and tool utilization, deployed with
 **Use cases:**
 - Complex autonomous agents with multiple tool calls
 - Logical reasoning and problem solving
-- Analysis of long documents with precise extraction
+- Long document analysis with precise extraction
+
+---
 
 ### olmo-3:32b
-**AllenAI • 32B parámetros • Contexto: 65.536 tokens**
+**AllenAI • 32B parameters • Context: 65,536 tokens**
 
-El primer modelo de razonamiento completamente abierto a esta escala, rivalizando con los mejores modelos propietarios.
+The first fully open reasoning model at this scale, competing with the best proprietary models.
 
-**Especificaciones técnicas:**
-- **Velocidad**: 19 tokens/segundo
-- **Consumo**: 7,02 kWh/millón de tokens
-- **Licencia**: [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Localización**: FR 🇫🇷
+**Technical specifications:**
+- **Speed**: 19 tokens/second
+- **Energy consumption**: 7.02 kWh per million tokens
+- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
-**Capacidades:**
-❌ Herramientas/Agente • ❌ Visión • ✅ Razonamiento • ❌ Seguridad
+**Capabilities:**
+❌ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
 
-**Etiquetas:** `Open-Source` `Gran Contexto` `Razonamiento` `Transparencia` `Código` `Alto Rendimiento`
+**Tags:** `Open-Source` `Large Context` `Reasoning` `Transparent` `Code` `High Performance`
 
-**Casos de uso:**
-- Razonamiento complejo y resolución de problemas multi-etapa
-- Desarrollo de software avanzado y generación de código
-- Análisis profundo que requiere transparencia sobre el proceso de toma de decisiones
+**Use cases:**
+- Complex reasoning and multi-step problem solving
+- Advanced software development and code generation
+- In-depth analysis requiring transparency in decision-making processes
+
+---
 
 ### olmo-3:7b
 **AllenAI • 7B parameters • Context: 65,536 tokens**
@@ -210,10 +251,10 @@ El primer modelo de razonamiento completamente abierto a esta escala, rivalizand
 Reference "Fully Open" model, offering complete transparency (data, code, weights) and remarkable efficiency.
 
 **Technical specifications:**
-- **Speed** : 37 tokens/second
-- **Consumption** : 1.65 kWh/million tokens
-- **License** : [Apache 2.0](./licenses/apache_2.0.license.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 37 tokens/second
+- **Energy consumption**: 1.65 kWh per million tokens
+- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
@@ -224,6 +265,31 @@ Reference "Fully Open" model, offering complete transparency (data, code, weight
 - Academic and scientific research requiring full reproducibility
 - Programming tasks and mathematical problem solving
 - Analysis of medium-sized documents with full traceability
+
+---
+
+### qwen-coder-next:80b
+**Qwen Team • 80B parameters • Context: 250,000 tokens**
+
+State-of-the-art MoE model optimized for code and complex reasoning.
+
+**Technical specifications:**
+- **Speed**: 98 tokens/second
+- **Consumption**: 1.47 kWh/million tokens
+- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
+
+**Capabilities:**
+✅ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
+
+**Tags:** `Agent` `Programming` `MoE` `Large Context` `AWQ`
+
+**Use cases:**
+- Advanced coding assistant (repo-scale)
+- Complex code analysis and refactoring
+- Autonomous software engineering agents
+
+---
 
 ### qwen3-2507:235b
 **Qwen Team • 235B parameters • Context: 130,000 tokens**
@@ -247,15 +313,17 @@ Massive MoE model with 235 billion parameters, activating only 22 billion at a t
 - Advanced coding assistant
 - In-depth document analysis
 
+---
+
 ### qwen3-2507:30b-a3b
 **Qwen Team • 30B parameters • Context: 250,000 tokens**
 
-Improved version of the non-thinking mode of Qwen3-30B, with enhanced general capabilities, broader knowledge coverage, and better user alignment.
+Improved version of the non-thinking mode of Qwen3-30B, featuring enhanced general capabilities, broader knowledge coverage, and better user alignment.
 
 **Technical specifications:**
 - **Speed**: 104 tokens/second
-- **Consumption**: 1.39 kWh per million tokens
-- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **Energy consumption**: 1.39 kWh per million tokens
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
 **Capabilities:**
@@ -264,21 +332,25 @@ Improved version of the non-thinking mode of Qwen3-30B, with enhanced general ca
 **Tags:** `Agent` `Large Context` `MoE` `Multilingual`
 
 **Use cases:**
-- Complex tasks requiring precise instruction tracking and logical reasoning.
+- Complex tasks requiring precise instruction following and logical reasoning.
 - Multilingual applications with extensive knowledge coverage.
 - High-quality text generation for open-ended and subjective tasks.
-- Analysis of very large documents thanks to a 250k-token context.
+- Analysis of very large documents thanks to the 250k-token context.
+
+---
 
 ### qwen3-coder:30b
+> ⚠️ **WARNING: This model is deprecated.** Recommendation to migrate to qwen-coder-next:80b.
+
 **Qwen Team • 30B parameters • Context: 250,000 tokens**
 
-MoE-optimized model for software engineering tasks, with very long context.
+MoE-optimized model for software engineering tasks, featuring a very long context.
 
 **Technical specifications:**
-- **Speed** : 104 tokens/second
-- **Consumption** : 1.39 kWh per million tokens
-- **License** : [Apache 2.0](./licenses/apache_2.0.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 104 tokens/second
+- **Energy consumption**: 1.39 kWh per million tokens
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
@@ -291,19 +363,21 @@ MoE-optimized model for software engineering tasks, with very long context.
 - Reasoning tasks over extended contexts
 - Code improvement via reinforcement learning
 
-### qwen3-next:80b
-**Qwen Team • 80B parameters • Context: 262,144 tokens**
+---
 
-Next 80B model from Qwen, optimized for large contexts and reasoning, served via vLLM (A100).
+### qwen3-next:80b
+**Qwen Team • 80B parameters • Context: 250,000 tokens**
+
+Next 80B model from Qwen, optimized for large contexts and reasoning.
 
 **Technical specifications:**
-- **Speed**: 148 tokens/second
-- **Consumption**: 1.54 kWh per million tokens
-- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Speed**: 98 tokens/second
+- **Consumption**: 1.47 kWh/million tokens
+- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
 **Capabilities:**
-✅ Tools/Agent • ❌ Vision • ✅ Reasoning • ❌ Security
+✅ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
 
 **Tags:** `Agent` `Reasoning` `Large Context` `MoE`
 
@@ -311,6 +385,8 @@ Next 80B model from Qwen, optimized for large contexts and reasoning, served via
 - Advanced conversational agents with tool integration
 - Analysis of very large documents (up to 260k tokens)
 - Code generation and complex tasks requiring structured reasoning
+
+---
 
 ### qwen3-omni:30b
 **Qwen Team • 30B parameters • Context: 32,768 tokens**
@@ -332,6 +408,8 @@ Qwen3-Omni 30B is a native multimodal model, capable of understanding text, imag
 - Fluid multimodal interactions (speaks, sees, listens)
 - Combined video and audio analysis
 - Next-generation intelligent assistants
+
+---
 
 ### qwen3-vl:235b
 **Qwen Team • 235B parameters • Context: 200,000 tokens**
@@ -355,16 +433,18 @@ The most powerful multimodal model in the catalog, combining state-of-the-art vi
 - Advanced scientific and technical analysis (STEM, 3D spatial reasoning)
 - Multimodal RAG on large documents (>200k tokens) and videos
 
+---
+
 ### qwen3-vl:30b
 **Qwen Team • 30B parameters • Context: 250,000 tokens**
 
 State-of-the-art multimodal model (Qwen3-VL) offering exceptional visual understanding and precise temporal reasoning.
 
 **Technical specifications:**
-- **Speed** : 43 tokens/second
-- **Consumption** : 3.10 kWh per million tokens
-- **License** : [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 43 tokens/second
+- **Consumption**: 3.10 kWh/million tokens
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ✅ Vision • ❌ Reasoning • ❌ Security
@@ -377,6 +457,8 @@ State-of-the-art multimodal model (Qwen3-VL) offering exceptional visual underst
 - Advanced visual assistants with spatial understanding
 - Multimodal reasoning over sequences of events
 
+---
+
 ### qwen3-vl:32b
 **Qwen Team • 32B parameters • Context: 250,000 tokens**
 
@@ -384,7 +466,7 @@ High-performance variant of Qwen3-VL, optimized for the most demanding vision ta
 
 **Technical specifications:**
 - **Speed**: 17 tokens/second
-- **Consumption**: 7.84 kWh/million tokens
+- **Energy consumption**: 7.84 kWh per million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -398,6 +480,8 @@ High-performance variant of Qwen3-VL, optimized for the most demanding vision ta
 - Automation of complex visual processes
 - Detailed understanding of dynamic scenes
 
+---
+
 ### qwen3:14b
 **Qwen Team • 14B parameters • Context: 131,072 tokens**
 
@@ -406,7 +490,7 @@ Balanced Qwen3 14B model, delivering strong general performance with good infere
 **Technical specifications:**
 - **Speed**: 68.2 tokens/second
 - **Consumption**: 0.90 kWh per million tokens
-- **License**: [Apache 2.0](./licenses/apache_2.0.licence.md)
+- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
 **Capabilities:**
@@ -418,6 +502,8 @@ Balanced Qwen3 14B model, delivering strong general performance with good infere
 - High-performance virtual assistants
 - High-quality content generation
 - Classification and extraction tasks
+
+---
 
 ## Modelos especializados
 
@@ -442,16 +528,18 @@ State-of-the-art multilingual embedding model (BGE-M3), offering exceptional sem
 - Retrieval-Augmented Generation (RAG)
 - Document clustering and classification
 
+---
+
 ### deepseek-ocr
 **DeepSeek AI • 3B parameters • Context: 8,192 tokens**
 
 Specialized OCR model from DeepSeek, designed for high-precision text extraction with formatting preservation.
 
 **Technical specifications:**
-- **Speed** : 79 tokens/second
-- **Consumption** : 1.01 kWh/million tokens
-- **License** : [MIT License](./licences/mit_licence.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 79 tokens/second
+- **Consumption**: 1.01 kWh/million tokens
+- **License**: [MIT License](./licences/mit_licence.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ❌ Tools/Agent • ✅ Vision • ❌ Reasoning • ❌ Security
@@ -459,31 +547,37 @@ Specialized OCR model from DeepSeek, designed for high-precision text extraction
 **Tags:** `Vision` `OCR` `Efficient`
 
 **Use cases:**
-- Structured text (Markdown/LaTeX) extraction from images/PDFs
+- Structured text (Markdown/latex) extraction from images/PDFs
 - Document digitization with complex tables and formulas
 
-### devstral-small-2:24b
-**Mistral AI & All Hands AI • 24B parameters • Context: 380,000 tokens**
+---
 
-Second iteration of Devstral (Small 2), state-of-the-art agent model for software engineering, deployed on Mac Studio with massive context.
+### devstral-small-2:24b
+**Mistral AI & All Hands AI • 24B parameters • Context: 200,000 tokens**
+
+Second iteration of Devstral (Small 2), state-of-the-art agent model for software engineering, deployed on high-performance GPU server.
 
 **Technical specifications:**
-- **Speed**: 23 tokens/second
-- **Consumption**: 5.80 kWh per million tokens
+- **Speed**: 38 tokens/second
+- **Consumption**: 3.80 kWh per million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
 **Capabilities:**
 ✅ Tools/Agent • ✅ Vision • ❌ Reasoning • ✅ Security
 
-**Tags:** `Agent` `Programming` `Vision` `Open-Source` `Very Large Context`
+**Tags:** `Agent` `Programming` `Vision` `Open-Source` `Large Context` `FP8` `Fast`
 
 **Use cases:**
-- Autonomous coding agents on very large codebases
-- Modernization of legacy systems
-- Fixing complex bugs requiring a holistic view of the project
+- Autonomous coding agents requiring low latency
+- Rapid code refactoring
+- Iterative engineering tasks
+
+---
 
 ### devstral:24b
+> ⚠️ **WARNING: This model is deprecated.** Recommendation to migrate to devstral-small-2:24b.
+
 **Mistral AI & All Hands AI • 24B parameters • Context: 120,000 tokens**
 
 Devstral 24b is an agent-based LLM specialized in software engineering, co-developed by Mistral AI and All Hands AI.
@@ -503,6 +597,8 @@ Devstral 24b is an agent-based LLM specialized in software engineering, co-devel
 - Codebase exploration and modification
 - Autonomous software engineering agents
 - Complex code refactoring and generation
+
+---
 
 ### embeddinggemma:300m
 **Google • 300M parameters • Context: 2,048 tokens**
@@ -526,16 +622,18 @@ State-of-the-art embedding model from Google, optimized for its size, ideal for 
 - Semantic similarity search
 - Deployment on resource-constrained devices (mobile, laptop)
 
+---
+
 ### gemma3:1b
 **Google • 1B parameters • Context: 120,000 tokens**
 
 Micro-model Gemma 3, ultra-fast and efficient.
 
 **Technical specifications:**
-- **Speed** : 53 tokens/second
-- **Consumption** : 1.15 kWh/million tokens
-- **License** : [Google Gemma Terms of Use](./licences/google_gemma_terms_of_use.licence.md)
-- **Location** : FR 🇫🇷
+- **Speed**: 53 tokens/second
+- **Consumption**: 1.15 kWh/million tokens
+- **License**: [Google Gemma Terms of Use](./licences/google_gemma_terms_of_use.licence.md)
+- **Location**: FR 🇫🇷
 
 **Capabilities:**
 ❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
@@ -547,31 +645,35 @@ Micro-model Gemma 3, ultra-fast and efficient.
 - Simple chatbots
 - Rapid prototyping
 
+---
+
 ### gemma3:4b
-**Google • 4B parameters • Context: 120,000 tokens**
+**Google • 4B parámetros • Contexto: 120.000 tokens**
 
-Compact Gemma 3 4B model, offering an excellent performance-to-size ratio.
+Modelo compacto Gemma 3 de 4B, ofreciendo un excelente ratio rendimiento/tamaño.
 
-**Technical specifications:**
-- **Speed** : 48.0 tokens/second
-- **Consumption** : 1.27 kWh per million tokens
-- **License** : [Google Gemma Terms of Use](./licences/google_gemma_terms_of_use.licence.md)
-- **Location** : FR 🇫🇷
+**Especificaciones técnicas:**
+- **Velocidad**: 48,0 tokens por segundo
+- **Consumo**: 1,27 kWh por millón de tokens
+- **Licencia**: [Términos de uso de Google Gemma](./licences/google_gemma_terms_of_use.licence.md)
+- **Localización**: FR 🇫🇷
 
-**Capabilities:**
-❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
+**Capacidades:**
+❌ Herramientas/Agente • ❌ Visión • ❌ Razonamiento • ❌ Seguridad
 
-**Tags:** `Compact` `Efficient` `Edge`
+**Etiquetas:** `Compacto` `Eficiente` `Edge`
 
-**Use cases:**
-- Personal assistants on laptops
-- Text summarization
-- Light translation
+**Casos de uso:**
+- Asistentes personales en portátiles
+- Resumen de texto
+- Traducción ligera
+
+---
 
 ### gpt-oss:20b
 **OpenAI • 20B parameters • Context: 120,000 tokens**
 
-Open-weight language model from OpenAI, optimized for efficiency and deployment on consumer-grade hardware.
+Open-source language model from OpenAI, optimized for efficiency and deployment on consumer-grade hardware.
 
 **Technical specifications:**
 - **Speed**: 9 tokens/second
@@ -589,6 +691,8 @@ Open-weight language model from OpenAI, optimized for efficiency and deployment 
 - Applications requiring fast inference with strong reasoning capabilities.
 - Agent-based use cases involving function calls, web navigation, and code execution.
 - Fine-tuning for specialized tasks on consumer hardware.
+
+---
 
 ### granite-embedding:278m
 **IBM • 278M parameters • Context: 8,192 tokens**
@@ -610,14 +714,16 @@ Ultra-compact IBM Granite embedding model, designed for maximum efficiency.
 - Semantic search
 - Document clustering
 
+---
+
 ### granite4-small-h:32b
 **IBM • 32B (9B activos) parámetros • Contexto: 128,000 tokens**
 
 Modelo MoE (Mixture-of-Experts) de IBM, diseñado como un "caballo de batalla" para tareas diarias empresariales, con una excelente eficiencia en contextos largos.
 
 **Especificaciones técnicas:**
-- **Velocidad**: 33 tokens por segundo
-- **Consumo**: 4,04 kWh por millón de tokens
+- **Velocidad**: 49 tokens/segundo
+- **Consumo**: 2,95 kWh/millón de tokens
 - **Licencia**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Localización**: FR 🇫🇷
 
@@ -632,14 +738,16 @@ Modelo MoE (Mixture-of-Experts) de IBM, diseñado como un "caballo de batalla" p
 - Análisis de documentos largos con un consumo de recursos optimizado.
 - Despliegues en infraestructuras de tamaño medio gracias a su eficiencia.
 
-### granite4-tiny-h:7b
-**IBM • 7B (1B activos) parámetros • Contexto: 128,000 tokens**
+---
 
-Modelo híbrido MoE ultraeficiente de IBM, diseñado para baja latencia, aplicaciones "edge" y locales, y como bloque base para flujos de trabajo de agentes.
+### granite4-tiny-h:7b
+**IBM • 7B (1B activos) parámetros • Contexto: 128.000 tokens**
+
+Modelo híbrido MoE ultraeficiente de IBM, diseñado para baja latencia, aplicaciones en "edge" y locales, y como bloque base para flujos de trabajo de agentes.
 
 **Especificaciones técnicas:**
 - **Velocidad**: 58 tokens por segundo
-- **Consumo**: 1,05 kWh por millón de tokens
+- **Consumo**: 2,30 kWh por millón de tokens
 - **Licencia**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Localización**: FR 🇫🇷
 
@@ -649,10 +757,12 @@ Modelo híbrido MoE ultraeficiente de IBM, diseñado para baja latencia, aplicac
 **Etiquetas:** `Agente` `Razonamiento` `Seguridad` `MoE` `Gran contexto` `Eficiente` `Rápido` `Compacto`
 
 **Casos de uso:**
-- Aplicaciones embebidas y "edge" que requieren baja latencia.
+- Aplicaciones embebidas y en "edge" que requieren baja latencia.
 - Tareas rápidas dentro de flujos de trabajo de agentes más amplios (por ejemplo: llamadas a funciones).
-- Análisis de documentos en hardware de consumo común.
+- Análisis de documentos en hardware de consumo general.
 - Despliegues que requieren una huella de memoria mínima.
+
+---
 
 ### medgemma:27b
 **Google • 27B parameters • Context: 128,000 tokens**
@@ -676,6 +786,8 @@ MedGemma is one of Google's most advanced open models for understanding medical 
 - Patient interaction (Interviews and medical triage)
 - Medical record synthesis and literature search
 
+---
+
 ### ministral-3:3b
 **Mistral AI • 3B parameters • Context: 250,000 tokens**
 
@@ -683,7 +795,7 @@ Cutting-edge compact model from Mistral AI, designed for efficiency in local and
 
 **Technical specifications:**
 - **Speed**: 50 tokens/second
-- **Consumption**: 1.22 kWh per million tokens
+- **Energy consumption**: 1.22 kWh per million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Location**: FR 🇫🇷
 
@@ -696,6 +808,8 @@ Cutting-edge compact model from Mistral AI, designed for efficiency in local and
 - Local inference on mobile devices or edge devices
 - Responsive personal assistants
 - Fast routing and classification tasks
+
+---
 
 ### ministral-3:8b
 **Mistral AI • 8B parameters • Context: 250,000 tokens**
@@ -718,6 +832,8 @@ Intermediate-sized model from the Ministral family, offering an optimal balance 
 - Document analysis and information extraction
 - Tasks requiring a good balance between speed and quality
 
+---
+
 ### mistral-small3.2:24b
 **Mistral AI • 24B parameters • Context: 128,000 tokens**
 
@@ -738,7 +854,9 @@ Minor update to Mistral Small 3.1, improving instruction following, function cal
 - Conversational agents with improved instruction following
 - Robust integration with external tools via function calling
 - Applications requiring high reliability to avoid repetitions
-- Use cases identical to Mistral Small 3.1, with enhanced performance
+- Use cases identical to Mistral Small 3.1, with improved performance
+
+---
 
 ### qwen3-2507-think:4b
 **Qwen Team • 4B parameters • Context: 250,000 tokens**
@@ -762,27 +880,33 @@ Qwen3-4B model optimized for reasoning, with improved performance on logical tas
 - Deep reasoning analysis of very large documents.
 - Integration with external tools via function calling on extremely large contexts.
 
+---
+
 ### qwen3-2507:4b
-**Qwen Team • 4B parameters • Context: 250,000 tokens**
+> ⚠️ **ATENCIÓN: Este modelo está obsoleto.** Obsoleto.
 
-Updated version of the Qwen3-4B non-thinking mode, featuring significant improvements in general capabilities, expanded knowledge coverage, and better alignment with user preferences.
+**Equipo Qwen • 4B parámetros • Contexto: 250.000 tokens**
 
-**Technical specifications:**
-- **Speed**: 30 tokens/second
-- **Consumption**: 4.44 kWh per million tokens
-- **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Location**: FR 🇫🇷
+Versión actualizada del modo sin pensamiento de Qwen3-4B, con mejoras significativas en capacidades generales, amplia cobertura de conocimientos y un mejor alineamiento con las preferencias de los usuarios.
 
-**Capabilities:**
-✅ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
+**Especificaciones técnicas:**
+- **Velocidad**: 30 tokens por segundo
+- **Consumo**: 4,44 kWh por millón de tokens
+- **Licencia**: [Apache 2.0](./licences/apache_2.0.licence.md)
+- **Localización**: FR 🇫🇷
 
-**Tags:** `Agent` `Large Context` `Compact` `Fast` `Multilingual`
+**Capacidades:**
+✅ Herramientas/Agente • ❌ Visión • ❌ Razonamiento • ❌ Seguridad
 
-**Use cases:**
-- General tasks requiring precise instruction following and logical reasoning.
-- Multilingual applications with broad knowledge coverage.
-- High-quality text generation for open-ended and subjective tasks.
-- Analysis of very large documents thanks to a 256k-token context.
+**Etiquetas:** `Agente` `Gran contexto` `Compacto` `Rápido` `Multilingüe`
+
+**Casos de uso:**
+- Tareas generales que requieren un seguimiento preciso de instrucciones y razonamiento lógico.
+- Aplicaciones multilingües con amplia cobertura de conocimientos.
+- Generación de texto de alta calidad para tareas abiertas y subjetivas.
+- Análisis de documentos muy voluminosos gracias al contexto de 256k tokens.
+
+---
 
 ### qwen3-embedding:0.6b
 **Qwen Team • 0.6B parameters • Context: 32,768 tokens**
@@ -793,7 +917,7 @@ Ultra-lightweight Qwen3 embedding model, optimized for speed and efficiency on r
 - **Speed**: N/A
 - **Energy consumption**: 0.57 kWh per million tokens
 - **License**: [Apache 2.0](./licences/apache_2.0.licence.md)
-- **Location**: FR 🇫🇷
+- **Localization**: FR 🇫🇷
 
 **Capabilities:**
 ❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
@@ -803,6 +927,8 @@ Ultra-lightweight Qwen3 embedding model, optimized for speed and efficiency on r
 **Use cases:**
 - Fast semantic search
 - Real-time text classification
+
+---
 
 ### qwen3-embedding:4b
 **Qwen Team • 4B parameters • Context: 40,000 tokens**
@@ -823,7 +949,9 @@ Ultra-performant modelo de embedding Qwen3-4B, ofreciendo una comprensión semá
 **Casos de uso:**
 - Búsqueda semántica en documentos largos
 - RAG con ventanas de contexto ampliadas
-- Análisis semántico de precisión
+- Análisis semántico de alta precisión
+
+---
 
 ### qwen3-vl:2b
 **Qwen Team • 2 millones de parámetros • Contexto: 250.000 tokens**
@@ -846,14 +974,16 @@ Modelo multimodal ultracompacto Qwen3-VL, que ofrece capacidades avanzadas de vi
 - OCR y lectura de documentos ligeros
 - Clasificación y ordenación visual rápida
 
+---
+
 ### qwen3-vl:4b
 **Qwen Team • 4B parámetros • Contexto: 250.000 tokens**
 
 Modelo multimodal Qwen3-VL equilibrado, que ofrece un rendimiento sólido en visión con una huella reducida.
 
 **Especificaciones técnicas:**
-- **Velocidad**: 57 tokens/segundo
-- **Consumo**: 2,34 kWh/millón de tokens
+- **Velocidad**: 57 tokens por segundo
+- **Consumo**: 2,34 kWh por millón de tokens
 - **Licencia**: [Apache 2.0](./licences/apache_2.0.licence.md)
 - **Localización**: FR 🇫🇷
 
@@ -867,10 +997,12 @@ Modelo multimodal Qwen3-VL equilibrado, que ofrece un rendimiento sólido en vis
 - Comprensión de contenido de vídeo
 - Asistentes visuales interactivos
 
+---
+
 ### qwen3-vl:8b
 **Qwen Team • 8B parámetros • Contexto: 250.000 tokens**
 
-Modelo multimodal Qwen3-VL (8B), ofreciendo un rendimiento avanzado en visión con una huella razonable.
+Modelo multimodal Qwen3-VL (8B), que ofrece un rendimiento avanzado en visión con una huella razonable.
 
 **Especificaciones técnicas:**
 - **Velocidad**: 44 tokens por segundo
@@ -887,6 +1019,8 @@ Modelo multimodal Qwen3-VL (8B), ofreciendo un rendimiento avanzado en visión c
 - Análisis automatizado de documentos
 - Comprensión de contenido de vídeo
 - Asistentes visuales interactivos
+
+---
 
 ### qwen3:0.6b
 **Qwen Team • 0.6B parameters • Context: 40,000 tokens**
@@ -909,6 +1043,8 @@ Ultra-light Qwen3 model with 0.6 billion parameters, offering exceptional infere
 - Fast classification and sorting
 - Lightweight assistants with low latency
 
+---
+
 ### rnj-1:8b
 **Essential AI • 8B parameters • Context: 32,000 tokens**
 
@@ -930,7 +1066,78 @@ Ultra-light Qwen3 model with 0.6 billion parameters, offering exceptional infere
 - Solving complex mathematical problems
 - Scientific and technical tasks (STEM)
 
-## Cas de Uso Recomendados
+---
+
+### translategemma:12b
+**Google • 12B parameters • Context: 128,000 tokens**
+
+State-of-the-art open translation model based on Gemma 3, covering 55 languages.
+
+**Technical specifications:**
+- **Speed** : 30 tokens/second
+- **Consumption** : 4.44 kWh/million tokens
+- **License** : [Gemma Terms of Use](./licences/gemma_terms_of_use.licence.md)
+- **Location** : FR 🇫🇷
+
+**Capabilities:**
+❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
+
+**Tags:** `Translation` `Multilingual` `Specialized`
+
+**Use cases:**
+- Translation of long documents
+- Inter-language communication
+- Content localization
+
+---
+
+### translategemma:27b
+**Google • 27B parámetros • Contexto: 120.000 tokens**
+
+Modelo de traducción de alto rendimiento basado en Gemma 3 27B.
+
+**Especificaciones técnicas:**
+- **Velocidad**: 44 tokens por segundo
+- **Consumo**: 6,35 kWh por millón de tokens
+- **Licencia**: [Términos de uso de Gemma](./licences/gemma_terms_of_use.licence.md)
+- **Localización**: FR 🇫🇷
+
+**Capacidades:**
+❌ Herramientas/Agente • ❌ Visión • ❌ Razonamiento • ❌ Seguridad
+
+**Etiquetas:** `Traducción` `Multilingüe` `Especializado` `Alto rendimiento`
+
+**Casos de uso:**
+- Traducción de alta precisión
+- Traducción de documentos técnicos
+- Matrices literarias y culturales
+
+---
+
+### translategemma:4b
+**Google • 4B parameters • Context: 128,000 tokens**
+
+Compact version of the TranslateGemma translation model, optimized for speed.
+
+**Technical specifications:**
+- **Speed**: 38 tokens/second
+- **Consumption**: 1.27 kWh per million tokens
+- **License**: [Gemma Terms of Use](./licences/gemma_terms_of_use.licence.md)
+- **Location**: FR 🇫🇷
+
+**Capabilities:**
+❌ Tools/Agent • ❌ Vision • ❌ Reasoning • ❌ Security
+
+**Tags:** `Translation` `Multilingual` `Specialized` `Efficient`
+
+**Use cases:**
+- Fast text translation
+- Translation on devices with limited resources
+- Real-time localization
+
+---
+
+## Cas de uso recomendados
 
 ### Multilingual dialogue
 
@@ -966,7 +1173,7 @@ Generación y optimización de código en múltiples lenguajes, depuración, ref
 - Granite 4
 - Devstral
 
-### Visual analysis
+### Visual Analysis
 
 Direct processing of images and visual documents without prior OCR preprocessing, interpretation of technical diagrams, charts, tables, drawings, and photos, with generation of detailed textual explanations of the visual content.
 
@@ -979,7 +1186,7 @@ Direct processing of images and visual documents without prior OCR preprocessing
 
 ### Seguridad y cumplimiento
 
-Aplicaciones que requieren capacidades específicas en materia de seguridad; filtrado de contenido sensible, trazabilidad de razonamientos, verificación del RGPD/HDS, minimización de riesgos, análisis de vulnerabilidades y cumplimiento de regulaciones sectoriales.
+Aplicaciones que requieren capacidades específicas en materia de seguridad; filtrage de contenido sensible, trazabilidad de razonamientos, verificación del RGPD/HDS, minimización de riesgos, análisis de vulnerabilidades y cumplimiento de regulaciones sectoriales.
 
 **Modelos recomendados:**
 
