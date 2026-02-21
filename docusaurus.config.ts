@@ -1,4 +1,4 @@
-import { themes as prismThemes } from 'prism-react-renderer';
+eimport { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
@@ -25,8 +25,9 @@ const config: Config = {
 
   // Production URL of the documentation site
   url: 'https://docs.cloud-temple.com',
-  // Site is served at the root of the domain
-  baseUrl: process.env.BASE_URL ?? "/",
+  // Default baseUrl for GitHub Pages deployment (/docs/ = repo name)
+  // Override with BASE_URL=/ environment variable for custom domain deployments
+  baseUrl: process.env.BASE_URL ?? "/docs/",
 
   // GitHub repository config (used for "Edit this page" links)
   organizationName: 'Cloud-Temple',
