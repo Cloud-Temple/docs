@@ -1,10 +1,14 @@
 # Statut de la Documentation
 
 ## 🚦 État Global du Build
-- **Dernier build** : ✅ SUCCÈS (10/02/2026)
+- **Dernier build** : ✅ SUCCÈS (21/02/2026)
 - **Langues compilées** : fr, en, es, it, de
 - **Problèmes résolus** :
-  - Correction des erreurs de syntaxe MDX (blocs de code vides, balises non échappées, expressions JSX mal formées) dans toutes les langues.
+  - Correction des erreurs de compilation MDX (Acorn) dans `llmaas/models.md` et `llmaas/concepts.md` pour toutes les langues (fr, en, es, it, de).
+  - Restauration des blocs de code Python manquants dans les traductions de `llmaas/concepts.md`.
+  - Suppression d'une duplication du modèle `devstral-small-2:24b` dans toutes les versions du catalogue de modèles.
+  - Correction d'un bloc de code mal fermé dans `network/internet/advanced_concepts.md` (version en, es, it, de).
+  - Validation finale par un build complet réussi pour les 5 langues.
   - Correction des imports d'images incorrects dans les traductions (it, de) qui causaient des erreurs de build ("Module not found").
   - Validation du build pour l'ensemble des 5 langues.
 
@@ -52,7 +56,7 @@
 
 ## 🌍 Internationalisation (i18n)
 
-**Dernière mise à jour des traductions** : 10/02/2026 (Mise à jour Tarifs LLMaaS, VPC, Changelog)
+**Dernière mise à jour des traductions** : 21/02/2026 (Fix Build MDX, Catalogue Modèles, Concepts Réseau)
 
 | Langue | Statut Build | Qualité Traduction | Actions Requises |
 |--------|--------------|-------------------|------------------|

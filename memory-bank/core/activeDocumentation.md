@@ -231,6 +231,7 @@
 - ✅ **Fix Build MDX (i18n)** : Résolution des erreurs de compilation MDX dans toutes les langues (en, es, it, de) causées par des blocs de code Python/JSON corrompus lors de la traduction.
 - ✅ **Génération Documentation Modèles** : Mise à jour automatisée de `docs/llmaas/models.md` via le script Python.
 - ✅ **Traduction Network (VPC)** : Traduction complète du service VPC et mise à jour de Private Network vers en, de, es, it. Correction des liens LLMaaS dans `usingopencost.md`.
+- ✅ **Fix Build MDX Multi-langues** : Correction des erreurs de parsing MDX dans toutes les langues pour LLMaaS et Network. Restauration des blocs de code et suppression des doublons dans le catalogue de modèles.
 
 ### En Review
 - 🔄 **Cohérence terminologique** : Uniformisation
