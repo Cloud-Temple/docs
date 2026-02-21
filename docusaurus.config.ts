@@ -23,16 +23,14 @@ const config: Config = {
 
   trailingSlash: false,
 
-  // Set the production url of your site here
-  url: 'https://github.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL ?? "/docs/",
+  // Production URL of the documentation site
+  url: 'https://docs.cloud-temple.com',
+  // Site is served at the root of the domain
+  baseUrl: process.env.BASE_URL ?? "/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Cloud-Temple', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  // GitHub repository config (used for "Edit this page" links)
+  organizationName: 'Cloud-Temple',
+  projectName: 'docs',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -98,6 +96,12 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
         blog: false, // Optional: disable the blog plugin
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
+        },
       },
     ],
   ],
