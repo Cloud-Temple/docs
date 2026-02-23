@@ -27,7 +27,7 @@ Our third-party system is designed as **complete service envelopes** that define
 
 1.  **An Access Tier (Purchase Credit):** For Tiers 1 to 4, this is an upfront amount to be paid in advance to activate the service and unlock the technical and budgetary capabilities of the selected tier.
 2.  **A Monthly Budget Limit:** This is the cap on your monthly consumption, ensuring full control over your costs.
-3.  **Technical Capacity:** These are throughput limits (tokens per day and per hour) that guarantee stable and predictable performance for your call volume.
+3.  **Technical Capacity:** These are the throughput limits (tokens per day and per hour) that guarantee stable and predictable performance for your call volume.
 
 Choosing a tier therefore involves balancing your initial investment, your projected monthly budget, and the required technical capacity. Your consumption within this envelope is then billed according to the current pricing rates.
 
@@ -36,15 +36,15 @@ Choosing a tier therefore involves balancing your initial investment, your proje
 | Tier | Purchase Credit | Monthly Limit | Tokens Output/Hour | Tokens Output/Day | Description |
 |------|------------------|----------------|--------------------|-------------------|-----------|
 | **Tier 1** | 200 € | 1,000 € | 150,000 | 3,600,000 | Standard usage |
-| **Tier 2** | 500 € | 3,000 € | 300,000 | 7,200,000 | Professional use |
+| **Tier 2** | 500 € | 3,000 € | 300,000 | 7,200,000 | Professional usage |
 | **Tier 3** | 1,000 € | 5,000 € | 450,000 | 10,800,000 | High volume |
 | **Tier 4** | 4,000 € | 10,000 € | 600,000 | 14,400,000 | Enterprise |
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
-- **Input tokens**: 0.90 € / million
-- **Output tokens (standard)**: 4.00 € / million
-- **Output tokens (reasoner)**: 21.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
+- **Input tokens**: 1.90 € / million
+- **Output tokens (standard)**: 8.00 € / million
+- **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Audio Billing**
 - **Audio Transcription**: 0.01 € / minute (any started minute is billable)
@@ -176,7 +176,7 @@ If the model decides to call a tool, the response will have a `finish_reason` of
 }
 ```
 
-After receiving a `tool_calls` response, you must execute the tool on your side and then send the result back to the model using a message with `role: "tool"`.
+After receiving a `tool_calls` response, you must execute the tool on your side, then send the result back to the model using a message with `role: "tool"`.
 
 ```json
 {
@@ -220,7 +220,7 @@ Cache-Control: no-cache
 
 **Event Format:**
 ```
-data: {"choices":[{"delta":{"content":"The"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
+data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
 data: {"choices":[{"delta":{"content":" photo"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -315,7 +315,7 @@ Same format as `/v1/chat/completions`.
 
 ### POST /v1/audio/transcriptions
 
-Audio-to-text transcription (Whisper).
+Audio transcription to text (Whisper).
 
 #### Request
 
@@ -337,7 +337,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 | `task` | string | ❌ | Task to perform: `transcribe` (default) or `translate` (translate to English). |
 | `response_format` | string | ❌ | `json` (default, equivalent to `verbose_json`). Formats `text`, `srt`, `vtt` are not currently supported. |
 
-#### Answer (`json`)
+#### Response (`json`)
 
 ```json
 {
@@ -383,7 +383,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 | `model` | string | ✅ | ID of the embedding model (see [catalog](./models)) |
 | `input` | string or array of strings | ✅ | The text or list of texts to vectorize. |
 
-#### Response
+#### Answer
 
 ```json
 {
@@ -419,7 +419,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
 
-#### Response
+#### Answer
 
 ```json
 {
@@ -528,9 +528,7 @@ import requests
 import json
 
 # Configuration
-
 # It is recommended to protect your API key by using environment variables.
-
 # Example: API_KEY = os.getenv("LLMAAS_API_KEY")
 API_KEY = "YOUR_API_TOKEN"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -572,6 +570,7 @@ except Exception as e:
 ```
 
 ### Python with Streaming
+### Python with Streaming
 
 ```python
 import requests
@@ -601,7 +600,7 @@ def stream_chat(message, model="granite3.3:8b"):
             headers=headers,
             json=payload,
             stream=True,
-            timeout=30  # Added a timeout for the request
+            timeout=30  # Added timeout for the request
         )
         
         response.raise_for_status()  # Raises an exception for HTTP error codes (4xx, 5xx)
@@ -628,10 +627,10 @@ def stream_chat(message, model="granite3.3:8b"):
         print(f"Network Error: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-```
 
 # Usage
 stream_chat("Explain quantum physics")
+```
 
 ### JavaScript/Node.js
 
@@ -660,7 +659,7 @@ async function chatCompletion(message) {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${API_KEY}`
                 },
-                timeout: 30000 // Added timeout for the request (30 seconds)
+                timeout: 30000 // Added a timeout for the request (30 seconds)
             }
         );
         
@@ -738,7 +737,7 @@ def safe_api_call(payload):
 
 ### Security
 
-1. **Protect your token**: Use environment variables  
+1. **Protect your token**: Environment variables  
 2. **Regular rotation**: Rotate your keys periodically  
 3. **Input validation**: Sanitize user data  
 4. **Client rate limiting**: Implement your own limits
@@ -753,7 +752,6 @@ The LLMaaS API is compatible with existing OpenAI SDKs by simply changing the ba
 from openai import OpenAI
 
 # It is recommended to protect your API key by using environment variables.
-
 # Example: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="YOUR_API_TOKEN",
@@ -781,10 +779,8 @@ except Exception as e:
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
-# Chat model configuration (LLMaaS compatible)
-
+# Chat Model Configuration (LLMaaS Compatible)
 # It is recommended to protect your API key by using environment variables.
-
 # Example: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="YOUR_API_TOKEN",
@@ -862,23 +858,17 @@ class LLMaaSEmbeddings(Embeddings):
         return self._embed([text])[0]
 
 # Usage
-
 # embeddings = LLMaaSEmbeddings(
-
 #     api_key="YOUR_API_TOKEN",
-
 #     base_url="https://api.ai.cloud-temple.com/v1",
-
 #     model_name="granite-embedding:278m"
-
 # )
-
 # vector = embeddings.embed_query("My text to vectorize")
 ```
 
 ## Support
 
 - **Documentation** : [Quick Start Guide](./quickstart)
-- **Models Catalog** : [Full List](./models)
+- **Model Catalog** : [Full List](./models)
 - **Console** : Management and monitoring via Cloud Temple Console
 - **Support** : Through Cloud Temple Console

@@ -63,8 +63,18 @@ Le sous-menu **Volumes** affiche un tableau listant tous les volumes de stockage
 
 <img src={shivaBareMetalStoragelist} />
 
+:::info Volume BFS (Boot from SAN)
+Le **Volume 1** est le volume **BFS (Boot from SAN)** et doit être utilisé pour installer le système d'exploitation.
+
+**Important :** Ce volume n'est pas partageable avec les autres Bare Metal de la même zone de disponibilité (AZ).
+:::
+
+:::tip Bonne pratique
+Privilégiez l'installation de l'OS sur le volume **BFS**, et stockez vos données sur un volume **LUN** additionnel. Cette séparation facilite la maintenance, les sauvegardes et la réinstallation du système si nécessaire.
+:::
+
 #### Fonctionnalités principales
 
-- Gestion des volumes : Depuis ce tableau, vous pouvez mapper les volumes à vos instances Bare Metal.
+- **Gestion des volumes** : Depuis ce tableau, vous pouvez mapper les volumes à vos instances Bare Metal.
 
 ---

@@ -96,7 +96,8 @@
 #### Documentation Réseau (`/docs/network/`)
 - ✅ `vpc/` : Virtual Private Cloud (Concepts, Quickstart, Tutorials)
 - ✅ `private_network/` : Réseaux privés (Concepts, Quickstart, Tutorials)
-- 🔄 `internet/` : Connectivité Internet (structure créée, contenu à enrichir)
+- ✅ `internet/advanced_concepts.md` : Concepts avancés (communautés BGP, Local Preference)
+- 🔄 `internet/` : Connectivité Internet base (structure créée, contenu à enrichir)
 
 #### Support Visuel
 - ✅ **Diagrammes VPC** : Architecture et configuration
@@ -227,10 +228,13 @@
 - 📝 **Console Metrics** : Dashboards avancés
 
 ### Corrections Récentes
-- ✅ **Rendu LaTeX** : Mise à jour du CSS KaTeX (v0.16.9) pour compatibilité avec rehype-katex v7 (fix affichage doublé).
+- ✅ **Mise à jour Tarifs LLMaaS** : Mise à jour des prix dans tous les fichiers sources et la Memory Bank (Input: 1.9€/M, Output: 8€/M, Raisonneur: 8€/M).
+- ✅ **Fix Build MDX (i18n)** : Résolution des erreurs de compilation MDX dans toutes les langues (en, es, it, de) causées par des blocs de code Python/JSON corrompus lors de la traduction.
 - ✅ **Génération Documentation Modèles** : Mise à jour automatisée de `docs/llmaas/models.md` via le script Python.
-- ✅ **Problèmes de compilation MDX (i18n)** : Correction des blocs de code Python mal formés dans les fichiers traduits (en, es, de, it) de `api.md`, `ocr.md` et `tutorials.md`.
 - ✅ **Traduction Network (VPC)** : Traduction complète du service VPC et mise à jour de Private Network vers en, de, es, it. Correction des liens LLMaaS dans `usingopencost.md`.
+- ✅ **Fix Build MDX Multi-langues** : Correction des erreurs de parsing MDX dans toutes les langues pour LLMaaS et Network. Restauration des blocs de code et suppression des doublons dans le catalogue de modèles.
+- ✅ **Concepts Avancés Réseau** (21/02/2026) : Ajout page communautés BGP et Local Preference (PR #249). Traduction vers en, de, es, it.
+- ✅ **Qualité Traductions** (21/02/2026) : Amélioration des traductions security_alarms.md et models.md (4 langues). Mise à jour changelog.
 
 ### En Review
 - 🔄 **Cohérence terminologique** : Uniformisation

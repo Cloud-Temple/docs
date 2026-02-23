@@ -28,13 +28,13 @@ This offering is tailored for teams with solid Kubernetes expertise and open-sou
 
 ### Key Benefits
 
-- **Sovereignty and Reversibility**: The solution is built on open-source standards (CNCF Kubernetes) to avoid technological lock-in and ensure application portability. The Veeam Kasten backup tool included in the offering is specifically designed to simplify migrations between clouds.
-- **Zero-Trust Security and Governance**: The architecture is based on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
+- **Sovereignty and Reversibility**: The solution leverages open-source standards (CNCF Kubernetes) to avoid technological lock-in and ensure application portability. The Veeam Kasten backup tool, included in the offering, is specifically designed to simplify migrations between clouds.
+- **Zero-Trust Security and Governance**: The architecture is built on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is complemented by governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
 - **Cost Control and Integration**: The solution natively integrates FinOps tools like OpenCost for precise consumption tracking. The pricing model is transparent, based on consumed IaaS resources, and the use of well-established open-source components (Cilium, Ceph, ArgoCD) facilitates seamless integration into your existing ecosystems.
 
 ### A complete and ready-to-use platform
 
-The solution natively includes a full, cohesive stack of cutting-edge open-source tools to address all needs across the application lifecycle:
+The solution natively includes a full, cohesive stack of cutting-edge open-source tools to cover all needs across the application lifecycle:
 
 - **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
 - **Storage**: Rook-Ceph
@@ -49,14 +49,14 @@ We offer two distinct architectures to meet your needs, whether for development 
 
 ### Dev/Test Architecture
 
-Ideal for non-production environments, this compact architecture deploys all resources within a single Availability Zone (AZ). It is designed for agility and cost efficiency.
+Ideal for POC environments, this compact architecture deploys all resources within a single Availability Zone (AZ).
 
 - **Use cases**: Development, testing, proof-of-concept (POC).
-- **Key features**:
+- **Key points**:
     - 1 Control Plane node.
     - 3 Worker nodes (or more).
     - Distributed storage (Ceph) is co-located on the Worker nodes.
-    - Does not benefit from a High Availability SLA.
+    - Does not benefit from high availability SLA.
     - No security restrictions.
 
 <img src={require('./images/archi_overview_1az.png').default} alt="Mono-AZ Architecture" />
@@ -65,12 +65,12 @@ Ideal for non-production environments, this compact architecture deploys all res
 
 Designed for production and critical applications, this architecture distributes resources across three Availability Zones (AZs) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
 
-- **Use Case**: Production applications, critical services, platforms requiring an SLA.
+- **Use Cases**: Production applications, critical services, platforms requiring an SLA.
 - **Key Features**:
     - **High Availability**: 3 Control Plane nodes distributed across 3 AZs.
     - **Dedicated Storage**: 3 dedicated storage nodes distributed for performance and resilience.
     - **Distributed Workers**: Minimum of 3 worker nodes, one per AZ.
-    - **Bare Metal Nodes (Optional)**: Optional integration of **"Bare Metal"** worker nodes for specific performance needs, particularly **GPU support**.
+    - **Bare Metal Nodes (Optional)**: Optional integration of **"Bare Metal"** worker nodes for specific performance requirements, particularly **GPU support**.
     - **SLA of 99.90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Multi-AZ Architecture" />

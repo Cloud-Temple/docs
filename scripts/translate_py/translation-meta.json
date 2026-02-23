@@ -109,10 +109,10 @@
       "it": "59b047c5604017f6d8db80f68f39657f2e75f1ebc5a8dc4e3a11aa2a33211306"
     },
     "console/security/security_alarms.md": {
-      "en": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84",
-      "de": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84",
-      "es": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84",
-      "it": "affc923ac9cbd7714ece8a2c1beb7f9f3631bfc14b827f0e5311965cc4659a84"
+      "en": "b3b17a8d94029ff13cc8a8e5985a129261aa519b87af50daad7d719c07bb2ec2",
+      "de": "b3b17a8d94029ff13cc8a8e5985a129261aa519b87af50daad7d719c07bb2ec2",
+      "es": "b3b17a8d94029ff13cc8a8e5985a129261aa519b87af50daad7d719c07bb2ec2",
+      "it": "b3b17a8d94029ff13cc8a8e5985a129261aa519b87af50daad7d719c07bb2ec2"
     },
     "console/status.md": {
       "en": "a42aee84154bd76af9f334553dc5c188043dd4f2abe210cdf193b02153f6ec9d",
@@ -277,10 +277,10 @@
       "it": "4e03aeb3cb65cf26b2a3c3e7d5a0629a4b65faa981d1ff4de051757d0c84ff0e"
     },
     "iaas_bare-metal/quickstart.md": {
-      "en": "07a8672b97f6e5ee05173035f85734217aa6c2d8ee62f1684a9182b7865718fa",
-      "de": "07a8672b97f6e5ee05173035f85734217aa6c2d8ee62f1684a9182b7865718fa",
-      "es": "07a8672b97f6e5ee05173035f85734217aa6c2d8ee62f1684a9182b7865718fa",
-      "it": "07a8672b97f6e5ee05173035f85734217aa6c2d8ee62f1684a9182b7865718fa"
+      "en": "a0814a6030c000e298d47269bd3ded18e9b65f03db838f6afd44dbfb4df116e3",
+      "de": "a0814a6030c000e298d47269bd3ded18e9b65f03db838f6afd44dbfb4df116e3",
+      "es": "a0814a6030c000e298d47269bd3ded18e9b65f03db838f6afd44dbfb4df116e3",
+      "it": "a0814a6030c000e298d47269bd3ded18e9b65f03db838f6afd44dbfb4df116e3"
     },
     "iaas_vmware/concepts.md": {
       "en": "760ec5526a7849762cab1f39b75c4f38dfdf7df9d8e62a3390a53e8a551249d3",
@@ -307,16 +307,16 @@
       "it": "9a2f5e9bd37f8c5a70d0997dcf34e26a6805cddb4b8a52131e5f1765e03890aa"
     },
     "llmaas/api.md": {
-      "en": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb",
-      "de": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb",
-      "es": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb",
-      "it": "962a2c658aef659fb3e1c99947a7a7f84bfcfeabada904d4e134ee383b03f7fb"
+      "en": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc",
+      "de": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc",
+      "es": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc",
+      "it": "1fe3c91b8f2f42f3c555bbe311d3536239e52dff8a4ba35ae97d9f663b9b95fc"
     },
     "llmaas/concepts.md": {
-      "en": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
-      "de": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
-      "es": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8",
-      "it": "97d45a728d79283e560b527faae40c3291345ea74764fd36a8d5335ab1feb4f8"
+      "en": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5",
+      "de": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5",
+      "es": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5",
+      "it": "adc9da6055aa875fe4d70deb266ec519f86744ed0c6f2153354fd3da67799ea5"
     },
     "iaas_vmware/tutorials/deploy_vm_terraform.md": {
       "en": "9465c1d0aa7e2189becbe648bdd5ec7c069412c6f6b67ff1a2a3f945bafbb664",
@@ -583,10 +583,10 @@
       "it": "39eed24555f539e7758c0223096d31fa618c8044af1d296ff49e77880984887e"
     },
     "llmaas/tutorials.md": {
-      "en": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a",
-      "de": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a",
-      "es": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a",
-      "it": "f0dadec8f93e468b1d6ec47952a18c9d77f7b1db269076fd35f038f81e8ad84a"
+      "en": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e",
+      "de": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e",
+      "es": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e",
+      "it": "f2b2cc8a50af27d3d6eac4b74795cd4f933e380cef7f25d9fd92c5d2f424881e"
     },
     "network/internet/concepts.md": {
       "en": "23b2568cc386be4030c6227e3e1de4eacce38a6d47ea39a67e9e74b36824e436",
@@ -619,10 +619,10 @@
       "it": "c982586c414e83ea3f3c62707801272b7903fbe9dad5b4a4d447c7da7892c5d6"
     },
     "llmaas/models.md": {
-      "en": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
-      "de": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
-      "es": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548",
-      "it": "e6ec4a0edb69ccc40942a7f30baa443d56d166a059134e3eff0428307ebdd548"
+      "en": "4feb1ee60b7e1edbbb1b7c63ad6ec224e5777f668275965a2ab8bc334bb184a5",
+      "de": "4feb1ee60b7e1edbbb1b7c63ad6ec224e5777f668275965a2ab8bc334bb184a5",
+      "es": "4feb1ee60b7e1edbbb1b7c63ad6ec224e5777f668275965a2ab8bc334bb184a5",
+      "it": "4feb1ee60b7e1edbbb1b7c63ad6ec224e5777f668275965a2ab8bc334bb184a5"
     },
     "network/private_network/tutorials.md": {
       "en": "3129859075ff7dde2682afa48dd26621529a60e627c5ddff45268dcddd88c203",
@@ -733,10 +733,10 @@
       "it": "82169a5d37eeffe57709fdb364cfa605905aac9ed80ea87e812abd49954a756e"
     },
     "storage/oss/tutorials.md": {
-      "en": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601",
-      "de": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601",
-      "es": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601",
-      "it": "b4237f07d077ca7cdc02f1b52f8c29ad45318a956eb0700982032f1e10ac5601"
+      "en": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161",
+      "de": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161",
+      "es": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161",
+      "it": "458bfcabce2a2b35d387a7438085bd4ab933ee115a307851366cc06e2f34e161"
     },
     "llmaas/rag_explained.md": {
       "en": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad",
@@ -745,10 +745,10 @@
       "it": "b33cc1e218480ed3b838dc681c23a5c75cb3cf281b94d3622f260f2e9425b3ad"
     },
     "changelog.md": {
-      "en": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
-      "es": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
-      "de": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808",
-      "it": "67514839cdc987cef7bf2d1292d86c32eb66adaf15eefb723c46ac2c1c2f8808"
+      "en": "d94e79dc26be7da84c05d6a7981865a1dfd534e792163d64d58c7c86cc4f8a84",
+      "es": "d94e79dc26be7da84c05d6a7981865a1dfd534e792163d64d58c7c86cc4f8a84",
+      "de": "d94e79dc26be7da84c05d6a7981865a1dfd534e792163d64d58c7c86cc4f8a84",
+      "it": "d94e79dc26be7da84c05d6a7981865a1dfd534e792163d64d58c7c86cc4f8a84"
     },
     "contractual/llmaas/raci.md": {
       "en": "49ed11511db1a57d1181e20ef4c8784748390c98045d71a2977a6ba408ac998f",
@@ -781,10 +781,10 @@
       "it": "a64eb325a35b2b36436ba69c903e25cb279f5d70f03116f2b44bda79fcabc3c2"
     },
     "storage/oss/tutorials/python-boto3.md": {
-      "en": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
-      "de": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
-      "es": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9",
-      "it": "9c01ba7231585a263efab5a5496da0a0820bb5d4dd4a426988fe71199569f3b9"
+      "en": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8",
+      "de": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8",
+      "es": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8",
+      "it": "1da04a66bedd3cd01eaf56867448cb1f65a8457cacc017f6fd0c890b2c0b13b8"
     },
     "storage/oss/tutorials/winscp.md": {
       "en": "918bc04a8b747caced46dfb070934af45c12a8b1ab52a09036224a397c8c0444",
@@ -895,10 +895,10 @@
       "it": "45ccc020dead1978dff5b6d24a083705f0a44e258242530f353f22d2c07a43c4"
     },
     "managed_kubernetes/concepts.md": {
-      "en": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f",
-      "de": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f",
-      "es": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f",
-      "it": "c53c775c9caad7a276eb694cb5f81f64fb7d6b8ca5216936249129f639e1671f"
+      "en": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895",
+      "de": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895",
+      "es": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895",
+      "it": "576fb78559b06f26aba5064711a797aa87b4220c1a4d87b22eb90ac76c527895"
     },
     "managed_kubernetes/quickstart.md": {
       "en": "983844e51bd33596d3eaa296289d2f8900894dd6a329f803fa37ed96b6029f27",
@@ -907,10 +907,10 @@
       "it": "983844e51bd33596d3eaa296289d2f8900894dd6a329f803fa37ed96b6029f27"
     },
     "managed_kubernetes/managed_kubernetes.md": {
-      "en": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
-      "de": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
-      "es": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17",
-      "it": "6114c11ef8a7e4cd7bb5f049d93421c7c4cac86fdab151c32f1301ceb1e5fa17"
+      "en": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796",
+      "de": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796",
+      "es": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796",
+      "it": "0f17ea40f36dd50d68d949a246ca81a9102ffa06d03f65704199c9a53fc61796"
     },
     "managed_kubernetes/tutorials.md": {
       "en": "ec7dca39ba811c8947882f464dab93081b191fc8ac5a740d48f6e6c10a6d7eff",
@@ -1049,8 +1049,26 @@
       "de": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
       "es": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c",
       "it": "d7d259db6096fc47338988d7158fc0fb0095a2ee0b6ff6a21288aeb32c5c2e4c"
+    },
+    "network/internet/advanced_concepts.md": {
+      "en": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02",
+      "de": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02",
+      "es": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02",
+      "it": "1f51b44309457a8659d04ba50367875cc96bdb4e9036265e1a25107c560dde02"
+    },
+    "storage/oss/faq.md": {
+      "en": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6",
+      "de": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6",
+      "it": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6",
+      "es": "52af4e1fcefcb28a2549d7756c176fbd2ad1aebe6c676e55312e806ae97ba5d6"
+    },
+    "storage/oss/tutorials/rclone.md": {
+      "en": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9",
+      "es": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9",
+      "it": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9",
+      "de": "6aefa4331cc80bf8ea10cc04f009fd12934361a11d0d992bdbe680ea4bc5d2c9"
     }
   },
-  "last_update": "2026-01-21T10:42:48.432083",
+  "last_update": "2026-02-21T16:00:32.911398",
   "version": "2.0"
 }

@@ -51,7 +51,7 @@ Nous proposons deux architectures distinctes pour répondre à vos besoins, que 
 
 ### Architecture "Dev/Test"
 
-Idéale pour les environnements hors production, cette architecture compacte déploie toutes les ressources au sein d'une seule zone de disponibilité (AZ). Elle est conçue pour l'agilité et la maîtrise des coûts.
+Idéale pour les environnements de POC, cette architecture compacte déploie toutes les ressources au sein d'une seule zone de disponibilité (AZ).
 
 - **Cas d'usage** : Développement, tests, proof-of-concept (POC).
 - **Points clés** :
