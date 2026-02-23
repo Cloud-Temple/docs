@@ -7,59 +7,59 @@ title: Übersicht
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
-    <a href="managed_kubernetes/concepts" class="card-link">Explore concepts &rarr;</a>
+    <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur sicher zu beherrschen.</p>
+    <a href="managed_kubernetes/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart Guide</h3>
-    <p>Get started quickly with clear and simple instructions.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <h3>Quickstart</h3>
+    <p>Starten Sie schnell mit klaren und einfachen Anweisungen.</p>
+    <a href="managed_kubernetes/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step by step how to set up and use our services with detailed guides.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Discover tutorials &rarr;</a>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
+    <a href="managed_kubernetes/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
 
-Managed Kubernetes by Cloud Temple is a container orchestration solution based on open-source products, designed to deliver a high level of security, resilience, and automation on Cloud Temple’s SecNumcloud platforms. Each cluster is deployed in a dedicated IaaS Cloud-Temple OpenIaaS environment fully dedicated to the customer.
+Managed Kubernetes by Cloud Temple ist eine Container-Orchestrierungslösung auf Basis von Open-Source-Produkten und wurde speziell entwickelt, um ein hohes Maß an Sicherheit, Resilienz und Automatisierung auf den SecNumcloud-Plattformen von Cloud Temple zu gewährleisten. Jeder Cluster wird in einer vollständig dedizierten IaaS-Umgebung von Cloud-Temple OpenIaaS für den Kunden bereitgestellt.
 
-This offering is tailored for teams with solid Kubernetes expertise and open-source enthusiasts seeking a native, portable solution without vendor-specific overlays, running on a minimal, immutable operating system designed for automation and security.
+Diese Lösung ist für Teams konzipiert, die über fundierte Kenntnisse von Kubernetes verfügen und Anhänger des Open Source-Paradigmas sind, die eine native, portierbare Lösung ohne Hersteller-spezifische Zusatzschichten suchen, die auf einem minimalen und unveränderlichen Betriebssystem basiert, das speziell für Automatisierung und Sicherheit entwickelt wurde.
 
 ### Key Benefits
 
-- **Sovereignty and Reversibility**: The solution is based on open-source standards (CNCF Kubernetes) to avoid any technological lock-in and ensure application portability. The Veeam Kasten backup tool included in the offering is specifically designed to simplify migrations between clouds.
-- **Zero-Trust Security and Governance**: The architecture is built on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
-- **Cost Control and Integration**: The solution natively integrates FinOps tools like OpenCost for precise consumption tracking. The pricing model is transparent, based on consumed IaaS resources, and the use of well-established open-source components (Cilium, Ceph, ArgoCD) facilitates seamless integration into your existing ecosystems.
+- **Sovereignty and Reversibility**: The solution is built on open-source standards (CNCF Kubernetes) to avoid any technological lock-in and ensure application portability. The Veeam Kasten backup tool included in the offering is specifically designed to simplify migrations between clouds.
+- **Zero-Trust Security and Governance**: The architecture is based on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
+- **Cost Control and Integration**: The solution natively integrates FinOps tools like OpenCost for precise consumption tracking. The economic model is transparent, based on consumed IaaS resources, and the use of well-established open-source components (Cilium, Ceph, ArgoCD) facilitates seamless integration into your existing ecosystems.
 
 ### A complete and ready-to-use platform
 
 The solution natively includes a comprehensive and consistent stack of cutting-edge open-source tools to cover all requirements throughout the application lifecycle:
 
-- **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
-- **Storage**: Rook-Ceph
-- **Continuous Deployment (GitOps)**: ArgoCD
-- **Observability**: Prometheus, Grafana, Loki
-- **Backup and Migration**: Veeam Kasten
+- **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule  
+- **Storage**: Rook-Ceph  
+- **Continuous Deployment (GitOps)**: ArgoCD  
+- **Observability**: Prometheus, Grafana, Loki  
+- **Backup and Migration**: Veeam Kasten  
 - **Cost Management (FinOps)**: OpenCost
 
 ## Deployment Architectures
 
 We offer two distinct architectures to meet your needs, whether for development environments or critical production setups.
 
-### Dev/Test Architecture
+### Architecture "Dev/Test"
 
-Ideal for non-production environments, this compact architecture deploys all resources within a single availability zone (AZ). It is designed for agility and cost efficiency.
+Ideal für POC-Umgebungen, diese kompakte Architektur stellt alle Ressourcen innerhalb einer einzigen Verfügbarkeitszone (AZ) bereit.
 
-- **Use cases**: Development, testing, proof-of-concept (POC).
-- **Key features**:
-    - 1 Control Plane node.
-    - 3 Worker nodes (or more).
-    - Distributed storage (Ceph) is co-located on the Worker nodes.
-    - No high availability SLA.
-    - No security restrictions.
+- **Verwendungszweck**: Entwicklung, Tests, Proof-of-Concept (POC).
+- **Wichtige Merkmale**:
+    - 1 Control-Plane-Knoten.
+    - 3 Worker-Knoten (oder mehr).
+    - Der verteilte Speicher (Ceph) ist auf den Worker-Knoten ko-lokalisiert.
+    - Kein SLA für hohe Verfügbarkeit.
+    - Keine Sicherheitsbeschränkungen.
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Mono-AZ Architecture" />
+<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
 
 ### Production Architecture (Multi-AZ)
 

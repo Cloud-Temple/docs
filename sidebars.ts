@@ -293,6 +293,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'network/internet/internet',
             'network/internet/concepts',
+            'network/internet/advanced_concepts',
             'network/internet/quickstart',
             {
               type: 'category',
@@ -317,6 +318,7 @@ const sidebars: SidebarsConfig = {
             'storage/oss/oss',
             'storage/oss/concepts',
             'storage/oss/quickstart',
+            'storage/oss/faq',
             {
               type: 'category',
               label: 'Object Storage Tutoriels',
@@ -330,6 +332,7 @@ const sidebars: SidebarsConfig = {
                 'storage/oss/tutorials/winscp',
                 'storage/oss/tutorials/mc-mirror',
                 'storage/oss/tutorials/aws-s3-sync',
+                'storage/oss/tutorials/rclone',
                 'storage/oss/tutorials/python-boto3',
                 'storage/oss/tutorials/file-hashing',
                 'storage/oss/tutorials/restic',

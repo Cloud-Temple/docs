@@ -5,17 +5,38 @@ sidebar_position: 2
 
 # Tracking Changes
 
+### 21 February 2026: Advanced networking concepts and multilingual improvements
+
+- **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with Bird example.
+- **LLMaaS**: Updated model catalog and added model lifecycle management. Introduced LTS (Long Term Support) models.
+- **Console (Security)**: Improved quality of security alert translations (English, German, Spanish, Italian).
+- **Multilingual**: Translation of the new advanced networking concepts page into 4 languages (en, de, es, it), and overall enhancement of existing translation quality.
+- **IaaS Bare Metal**: Added clarifications regarding the BFS (Boot from SAN) volume in the quick start guide: Volume 1 is dedicated to OS installation, not shareable within the same AZ, with recommendation to store data on an additional LUN volume.
+- **Object Storage (OSS)**: Added a **FAQ** page covering S3 access, IP whitelists, pre-signed links, and recommended usage scenarios.
+
+### 10 de febrero de 2026: Actualización de tarifas de LLMaaS
+
+- **LLMaaS**: Actualización general de las tarifas de la API (Entrada: 1,9€/M, Salida: 8€/M, Razonador: 8€/M) en toda la documentación técnica y comercial.
+
+### 5 de febrero de 2026: Aclaraciones sobre los compromisos de servicio (SLA)
+
+- **Kubernetes administrado**: Actualización completa y finalización de los compromisos de nivel de servicio (SLA) para la oferta de Kubernetes administrado.
+
+### 21 January 2026: Security Improvements and Translations
+
+- **Console Management**: Updated international translations (English, German, Spanish, Italian) for security alerts in the management console.
+
 ### January 19, 2026: Managed Kubernetes and VPC Enhancements
 
 - **Managed Kubernetes**: Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
 - **Managed Kubernetes**: New tutorial on using GPUs within a Kubernetes cluster.
-- **Managed Kubernetes**: Replaced KubeCost with a more recent guide on **OpenCost**.
-- **Network (VPC)**: Complete documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, quick start guides, and tutorials.
+- **Managed Kubernetes**: Replaced KubeCost with a more up-to-date guide on **OpenCost**.
+- **Network (VPC)**: Comprehensive documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, quick start guides, and tutorials.
 - **Multilingual**: Full translation of the VPC service and new Kubernetes content into English, German, Spanish, and Italian.
 
 ### December 15, 2025: Stabilization and Multilingual Fixes
 
-- **Multilingual (Terraform, LLMaaS, Harbor)**: Major fixes to translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
+- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
 - **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
 - **Build**: Validation of deployment across all 5 supported languages.
 
@@ -30,7 +51,7 @@ sidebar_position: 2
 - **Multilingual**: Resolved accessibility issues in the Italian and German versions of the documentation.
 - **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
 
-### 20 de noviembre de 2025: Actualización principal del PaaS OpenShift
+### 20 de noviembre de 2025: Actualización mayor del PaaS OpenShift
 
 - **PaaS OpenShift (PR #194)**: Reestructuración y actualización completa de la documentación de OpenShift, incluyendo nuevas capturas de pantalla y una traducción integral al inglés, español, alemán e italiano para acompañar nuestra expansión internacional.
 
@@ -42,8 +63,8 @@ sidebar_position: 2
 ### 28 de octubre de 2025: Nueva documentación para Kubernetes administrado y mejoras diversas
 
 - **Kubernetes administrado (PR #193 y mejoras)**: Se ha añadido una documentación completa para el nuevo servicio de Kubernetes administrado. La sección incluye una presentación del servicio, conceptos técnicos, una guía de inicio, un primer tutorial y una matriz de responsabilidades (RACI). El contenido se ha enriquecido para responder mejor a las expectativas de los distintos perfiles de usuarios.
-- **Almacenamiento objeto (PR #190, #189)**: Se han añadido dos nuevos tutoriales para el servicio de Almacenamiento objeto: uno sobre la gestión de accesos a los buckets S3 y otro sobre el uso de Restic para las copias de seguridad.
-- **Contractual (PR #191)**: Corrección y actualización del documento "Acuerdo de tratamiento de datos" (DPA).
+- **Almacenamiento objeto (PR #190, #189)**: Se han añadido dos nuevos tutoriales para el servicio de Almacenamiento objeto: uno sobre la gestión de accesos a los buckets S3 y otro sobre el uso de Restic para copias de seguridad.
+- **Contrato (PR #191)**: Corrección y actualización del documento "Acuerdo de tratamiento de datos" (DPA).
 
 ### 18 de octubre de 2025: Mantenimiento y nuevas documentaciones
 
@@ -52,8 +73,8 @@ sidebar_position: 2
 - **Consola**: Mejora y aclaración de la documentación relacionada con la gestión de órdenes.
 - **Marketplace**: Adición de un tutorial detallado sobre la personalización de imágenes de máquinas virtuales (VM) para crear plantillas reutilizables.
 - **LLMaaS**: Adición de una guía para configurar la extensión VSCode CLINE y utilizar los modelos de lenguaje de Cloud Temple directamente desde el editor.
-- **Almacenamiento Objeto (OSS)**: Adición de precisiones sobre la política de ciclo de vida (Lifecycle) para la eliminación de datos.
-- **Almacenamiento Objeto (OSS)**: Adición de una guía de solución de problemas para errores de checksum (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
+- **Almacenamiento Objeto (OSS)**: Añadidas precisiones sobre la política de ciclo de vida (Lifecycle) para la eliminación de datos.
+- **Almacenamiento Objeto (OSS)**: Incorporación de una guía de solución de problemas para errores de suma de verificación (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
 - **LLMaaS**: Actualización de la lista de modelos disponibles y retraducción de más de 50 documentos para garantizar la coherencia.
 
 ### 14 de agosto de 2025: Mejoras y correcciones
@@ -73,7 +94,7 @@ sidebar_position: 2
 - **Red**:
     - Adición de nuevas capturas de pantalla para ilustrar la configuración de conectividad IPv6.
 
-### 29 June 2025: Finalization of LLMaaS documentation
+### June 29, 2025: Finalization of LLMaaS documentation
 
 - Full test suite validation.
 - Correction and validation of RAG pipelines with FAISS and Qdrant.
@@ -82,5 +103,5 @@ sidebar_position: 2
 - Improvement of the RAG explanation page with diagrams and details on embedding models.
 - Update of the API documentation, quick start guide, and service presentation.
 - Addition of pricing for the Audio Transcription endpoint.
-- Addition of the forecasted model lifecycle planning.
+- Addition of the projected model lifecycle timeline.
 - Addition of the responsibility matrix for the LLMaaS offering.

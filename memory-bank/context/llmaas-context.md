@@ -44,9 +44,9 @@ L'offre est structurée en 4 tiers définissant un équilibre entre :
 | **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Entreprise |
 
 ### Tarification à l'Usage
-- **Tokens d'entrée** : 0.90 € / million
-- **Tokens de sortie (standard)** : 4.00 € / million
-- **Tokens de sortie (raisonneur)** : 21.00 € / million
+- **Tokens d'entrée** : 1.90 € / million
+- **Tokens de sortie (standard)** : 8.00 € / million
+- **Tokens de sortie (raisonneur)** : 8.00 € / million
 - **Transcription Audio** : 0.01 € / minute
 
 ## Fonctionnalités Techniques

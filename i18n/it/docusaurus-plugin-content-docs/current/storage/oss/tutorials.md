@@ -10,10 +10,11 @@ This section gathers a set of tutorials to help you get started and use the Clou
 *   [Utilizzare Cloud Berry Explorer](./tutorials/cloudberry-explorer.md)
 *   [Utilizzare WinSCP](./tutorials/winscp.md)
 
-### Command Line Interface (CLI) e SDK
+### Client da riga di comando (CLI) e SDK
 
 *   [Sincronizzare una cartella con mc mirror](./tutorials/mc-mirror.md)
 *   [Sincronizzare una cartella con AWS CLI](./tutorials/aws-s3-sync.md)
+*   [Copiare e sincronizzare con Rclone](./tutorials/rclone.md)
 *   [Utilizzare il SDK Python (Boto3)](./tutorials/python-boto3.md)
 
 ### Gestione degli accessi

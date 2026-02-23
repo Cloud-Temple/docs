@@ -1,0 +1,8 @@
+# robots.txt - Cloud Temple Documentation
+# https://docs.cloud-temple.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://docs.cloud-temple.com/docs/sitemap.xml
