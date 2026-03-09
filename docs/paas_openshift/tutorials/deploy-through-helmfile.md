@@ -79,9 +79,7 @@ helmfile sync
 ### 4. Vérifier le déploiement
 
 ```bash
-oc get pods -n poc-helmfile
-oc get routes -n poc-helmfile
-oc get pvc -n poc-helmfile
+oc get pods,routes,pvc -n poc-helmfile
 ```
 
 ### 5. Tester Nginx
