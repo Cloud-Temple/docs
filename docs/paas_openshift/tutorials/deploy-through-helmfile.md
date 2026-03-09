@@ -63,12 +63,12 @@ cd product-openshift-how-to/examples/deploy-through-helmfile
 ### 2. Connexion et création du namespace
 
 ```bash
-oc login --server=https://api.openshift.example.com:6443 --web
+oc login --server=https://api.openshift.example.com --web
 oc new-project poc-helmfile
 ```
 
 > **Attention** :
-> Modifiez `--server=url` avec l'url de votre instance Cloud Temple PaaS.
+> Modifiez `--server=url` avec l'url api de votre cluster Cloud Temple PaaS, récupérable depuis la console Cloud Temple/Shiva.
 
 ### 3. Déployer avec Helmfile
 
