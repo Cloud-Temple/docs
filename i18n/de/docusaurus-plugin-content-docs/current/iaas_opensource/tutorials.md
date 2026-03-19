@@ -1,20 +1,23 @@
 ---
-title: IaaS Open Source Tutorials
+title: Tutorials
 sidebar_position: 4
 ---
 
-# IaaS OpenSource Tutorials
+# Tutorials
 
 This section contains practical tutorials to effectively use Cloud Temple's OpenSource IaaS platform.
 
 ## Available tutorials
 
+### Verwaltung virtueller Maschinen
+- [Eine virtuelle Maschine erstellen](tutorials/create_vm)
+
 ### Hochverfügbarkeit
-- [Verwaltung von Ressourcenpools](tutorials/high_availability/manage_pool.md)
-- [Verwaltung von virtuellen Maschinen](tutorials/high_availability/manage_vm.md)
+- [Verwaltung von Ressourcenpools](tutorials/high_availability/manage_pool)
+- [Verwaltung von virtuellen Maschinen](tutorials/high_availability/manage_vm)
 
 ### Backup
-- [Frequently Asked Questions about Backup](tutorials/backup/iaas_opensource_backup.md)
+- [Frequently Asked Questions about Backup](tutorials/backup/iaas_opensource_backup)
 
 ## Voraussetzungen
 

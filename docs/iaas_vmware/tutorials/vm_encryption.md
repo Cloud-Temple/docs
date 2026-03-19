@@ -1,5 +1,5 @@
 ---
-title: Chiffrer une machine virtuelle VMware
+title: Chiffrer une machine virtuelle
 tags:
   - iaas_vmware
   - tutorials
