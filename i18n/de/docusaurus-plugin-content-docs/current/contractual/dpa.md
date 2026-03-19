@@ -2,15 +2,15 @@
 
 ## Artikel 1: Definitionen
 
-**Personenbezogene Daten**: Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“) beziehen, wie in der Datenschutz-Grundverordnung (DSGVO) definiert.
-**Verantwortlicher**: Die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
-**Auftragsverarbeiter**: Die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.
-**Verarbeitung**: Jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten.
-**Verletzung des Schutzes personenbezogener Daten**: Eine Verletzung der Sicherheit, die zur versehentlichen oder unrechtmäßigen Vernichtung, zum Verlust, zur Veränderung oder zur unbefugten Offenlegung von beziehungsweise zum unbefugten Zugang zu personenbezogenen Daten führt, die übermittelt, gespeichert oder auf sonstige Weise verarbeitet wurden.
-**Datenübermittlung**: Jede Übermittlung personenbezogener Daten außerhalb des Europäischen Wirtschaftsraums (EWR), einschließlich an ein Drittland oder eine internationale Organisation.
-**Cloud-Dienst**: Jeder Dienst zur Verarbeitung, Speicherung oder Verwaltung personenbezogener Daten, der vom Auftragsverarbeiter über Cloud-Infrastrukturen bereitgestellt wird.
-**Für den Dienst erforderlicher Zugriff**: Jeder Zugriff auf personenbezogene Daten, der für die Erbringung der definierten vertraglichen Dienste zwingend erforderlich ist, einschließlich Bereitstellung, Wartung, technischer Support, Systemüberwachung und Störungsbehebung, unter Ausschluss jeglichen Zugriffs für kommerzielle Analysen, Profiling oder Direktmarketing.
-**HDS** (Hébergeur de Données de Santé): Spezifischer Status in Frankreich für Hosting-Anbieter von Gesundheitsdaten, der eine Zertifizierung durch eine akkreditierte Stelle erfordert.
+- **Personenbezogene Daten**: Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“) beziehen, wie in der Datenschutz-Grundverordnung (DSGVO) definiert.
+- **Verantwortlicher**: Die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+- **Auftragsverarbeiter**: Die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.
+- **Verarbeitung**: Jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten.
+- **Verletzung des Schutzes personenbezogener Daten**: Eine Verletzung der Sicherheit, die zur versehentlichen oder unrechtmäßigen Vernichtung, zum Verlust, zur Veränderung oder zur unbefugten Offenlegung von beziehungsweise zum unbefugten Zugang zu personenbezogenen Daten führt, die übermittelt, gespeichert oder auf sonstige Weise verarbeitet wurden.
+- **Datenübermittlung**: Jede Übermittlung personenbezogener Daten außerhalb des Europäischen Wirtschaftsraums (EWR), einschließlich an ein Drittland oder eine internationale Organisation.
+- **Cloud-Dienst**: Jeder Dienst zur Verarbeitung, Speicherung oder Verwaltung personenbezogener Daten, der vom Auftragsverarbeiter über Cloud-Infrastrukturen bereitgestellt wird.
+- **Für den Dienst erforderlicher Zugriff**: Jeder Zugriff auf personenbezogene Daten, der für die Erbringung der definierten vertraglichen Dienste zwingend erforderlich ist, einschließlich Bereitstellung, Wartung, technischer Support, Systemüberwachung und Störungsbehebung, unter Ausschluss jeglichen Zugriffs für kommerzielle Analysen, Profiling oder Direktmarketing.
+- **HDS** (Hébergeur de Données de Santé): Spezifischer Status in Frankreich für Hosting-Anbieter von Gesundheitsdaten, der eine Zertifizierung durch eine akkreditierte Stelle erfordert.
 
 ## Artikel 2: Gegenstand
 
