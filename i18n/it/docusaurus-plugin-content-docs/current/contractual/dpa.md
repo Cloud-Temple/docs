@@ -2,15 +2,15 @@
 
 ## Articolo 1: Definizioni
 
-**Dati personali**: Qualsiasi informazione riguardante una persona fisica identificata o identificabile («interessato»), come definita dal Regolamento Generale sulla Protezione dei Dati (GDPR).
-**Titolare del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che, singolarmente o insieme ad altri, determina le finalità e i mezzi del trattamento di dati personali.
-**Responsabile del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che tratta dati personali per conto del Titolare del trattamento.
-**Trattamento**: Qualsiasi operazione o insieme di operazioni compiute con o senza l'ausilio di processi automatizzati e applicate a dati personali o insiemi di dati personali.
-**Violazione dei dati personali**: Una violazione della sicurezza che comporta accidentalmente o in modo illecito la distruzione, la perdita, la modifica, la divulgazione non autorizzata o l'accesso non autorizzato a dati personali trasmessi, conservati o comunque trattati.
-**Trasferimento dei dati**: Qualsiasi trasferimento di dati personali al di fuori dello Spazio Economico Europeo (SEE), compreso verso un paese terzo o un'organizzazione internazionale.
-**Servizio Cloud**: Qualsiasi servizio di trattamento, archiviazione o gestione di dati personali fornito dal Responsabile del trattamento tramite infrastrutture cloud.
-**Accesso necessario per il servizio**: Qualsiasi accesso ai dati personali strettamente richiesto per l'esecuzione dei servizi contrattuali definiti, inclusi fornitura, manutenzione, supporto tecnico, monitoraggio dei sistemi e risoluzione degli incidenti, escludendo qualsiasi accesso per fini di analisi commerciale, profilazione o marketing diretto.
-**HDS** (Hébergeur di Dati Sanitari): Status specifico in Francia per gli host di dati sanitari, che richiede una certificazione rilasciata da un ente accreditato.
+- **Dati personali**: Qualsiasi informazione riguardante una persona fisica identificata o identificabile («interessato»), come definita dal Regolamento Generale sulla Protezione dei Dati (GDPR).
+- **Titolare del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che, singolarmente o insieme ad altri, determina le finalità e i mezzi del trattamento di dati personali.
+- **Responsabile del trattamento**: La persona fisica o giuridica, l'autorità pubblica, il servizio o qualsiasi altro organismo che tratta dati personali per conto del Titolare del trattamento.
+- **Trattamento**: Qualsiasi operazione o insieme di operazioni compiute con o senza l'ausilio di processi automatizzati e applicate a dati personali o insiemi di dati personali.
+- **Violazione dei dati personali**: Una violazione della sicurezza che comporta accidentalmente o in modo illecito la distruzione, la perdita, la modifica, la divulgazione non autorizzata o l'accesso non autorizzato a dati personali trasmessi, conservati o comunque trattati.
+- **Trasferimento dei dati**: Qualsiasi trasferimento di dati personali al di fuori dello Spazio Economico Europeo (SEE), compreso verso un paese terzo o un'organizzazione internazionale.
+- **Servizio Cloud**: Qualsiasi servizio di trattamento, archiviazione o gestione di dati personali fornito dal Responsabile del trattamento tramite infrastrutture cloud.
+- **Accesso necessario per il servizio**: Qualsiasi accesso ai dati personali strettamente richiesto per l'esecuzione dei servizi contrattuali definiti, inclusi fornitura, manutenzione, supporto tecnico, monitoraggio dei sistemi e risoluzione degli incidenti, escludendo qualsiasi accesso per fini di analisi commerciale, profilazione o marketing diretto.
+- **HDS** (Hébergeur di Dati Sanitari): Status specifico in Francia per gli host di dati sanitari, che richiede una certificazione rilasciata da un ente accreditato.
 
 ## Articolo 2: Oggetto
 

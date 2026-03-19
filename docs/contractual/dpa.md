@@ -2,15 +2,15 @@
 
 ## Article 1 : Définitions
 
-**Données à caractère personnel** : Toute information se rapportant à une personne physique identifiée ou identifiable (« personne concernée »), telle que définie par le Règlement Général sur la Protection des Données (RGPD).
-**Responsable de traitement** : La personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui, seul ou conjointement avec d'autres, détermine les finalités et les moyens du traitement des données à caractère personnel.
-**Sous-traitant** : La personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui traite des données à caractère personnel pour le compte du Responsable de traitement.
-**Traitement** : Toute opération ou ensemble d'opérations effectuées ou non à l'aide de procédés automatisés et appliquées à des données ou des ensembles de données à caractère personnel.
-**Violation de données** : Une violation de la sécurité entraînant de manière accidentelle ou illicite la destruction, la perte, l'altération, la divulgation non autorisée de données à caractère personnel transmises, conservées ou autrement traitées, ou l'accès non autorisé à de telles données.
-**Transfert de données** : Tout transfert de données à caractère personnel en dehors de l'Espace Économique Européen (EEE), y compris vers un pays tiers ou une organisation internationale.
-**Service Cloud** : Tout service de traitement, stockage, ou gestion de données à caractère personnel fourni par le Sous-traitant via des infrastructures cloud.
-**Accès nécessaire au service** : Tout accès aux données à caractère personnel strictement requis pour l'exécution des services contractuels définis, incluant la fourniture, la maintenance, le support technique, la supervision des systèmes, et la résolution d'incidents, à l'exclusion de tout accès à des fins d'analyse commerciale, de profilage, ou de marketing direct.
-**HDS** (Hébergeur de Données de Santé) : Statut spécifique en France pour les hébergeurs de données de santé, nécessitant une certification délivrée par un organisme accrédité.
+- **Données à caractère personnel** : Toute information se rapportant à une personne physique identifiée ou identifiable (« personne concernée »), telle que définie par le Règlement Général sur la Protection des Données (RGPD).
+- **Responsable de traitement** : La personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui, seul ou conjointement avec d'autres, détermine les finalités et les moyens du traitement des données à caractère personnel.
+- **Sous-traitant** : La personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui traite des données à caractère personnel pour le compte du Responsable de traitement.
+- **Traitement** : Toute opération ou ensemble d'opérations effectuées ou non à l'aide de procédés automatisés et appliquées à des données ou des ensembles de données à caractère personnel.
+- **Violation de données** : Une violation de la sécurité entraînant de manière accidentelle ou illicite la destruction, la perte, l'altération, la divulgation non autorisée de données à caractère personnel transmises, conservées ou autrement traitées, ou l'accès non autorisé à de telles données.
+- **Transfert de données** : Tout transfert de données à caractère personnel en dehors de l'Espace Économique Européen (EEE), y compris vers un pays tiers ou une organisation internationale.
+- **Service Cloud** : Tout service de traitement, stockage, ou gestion de données à caractère personnel fourni par le Sous-traitant via des infrastructures cloud.
+- **Accès nécessaire au service** : Tout accès aux données à caractère personnel strictement requis pour l'exécution des services contractuels définis, incluant la fourniture, la maintenance, le support technique, la supervision des systèmes, et la résolution d'incidents, à l'exclusion de tout accès à des fins d'analyse commerciale, de profilage, ou de marketing direct.
+- **HDS** (Hébergeur de Données de Santé) : Statut spécifique en France pour les hébergeurs de données de santé, nécessitant une certification délivrée par un organisme accrédité.
 
 ## Article 2 : Objet
 

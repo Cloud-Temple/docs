@@ -2,15 +2,15 @@
 
 ## Article 1: Definitions
 
-**Personal data**: Any information relating to an identified or identifiable natural person ('data subject'), as defined by the General Data Protection Regulation (GDPR).
-**Data Controller**: The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.
-**Data Processor**: The natural or legal person, public authority, agency or other body which processes personal data on behalf of the Data Controller.
-**Processing**: Any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means.
-**Personal data breach**: A breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed.
-**Data transfer**: Any transfer of personal data outside the European Economic Area (EEA), including to a third country or an international organisation.
-**Cloud Service**: Any personal data processing, storage, or management service provided by the Processor via cloud infrastructures.
-**Access necessary for the service**: Any access to personal data strictly required for the performance of the defined contractual services, including provisioning, maintenance, technical support, system monitoring, and incident resolution, excluding any access for commercial analysis, profiling, or direct marketing purposes.
-**HDS** (Health Data Hosting): Specific status in France for health data hosts, requiring certification issued by an accredited body.
+- **Personal data**: Any information relating to an identified or identifiable natural person ('data subject'), as defined by the General Data Protection Regulation (GDPR).
+- **Data Controller**: The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.
+- **Data Processor**: The natural or legal person, public authority, agency or other body which processes personal data on behalf of the Data Controller.
+- **Processing**: Any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means.
+- **Personal data breach**: A breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed.
+- **Data transfer**: Any transfer of personal data outside the European Economic Area (EEA), including to a third country or an international organisation.
+- **Cloud Service**: Any personal data processing, storage, or management service provided by the Processor via cloud infrastructures.
+- **Access necessary for the service**: Any access to personal data strictly required for the performance of the defined contractual services, including provisioning, maintenance, technical support, system monitoring, and incident resolution, excluding any access for commercial analysis, profiling, or direct marketing purposes.
+- **HDS** (Health Data Hosting): Specific status in France for health data hosts, requiring certification issued by an accredited body.
 
 ## Article 2: Purpose
 
