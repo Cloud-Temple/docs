@@ -1,42 +1,30 @@
 ---
 title: Tutorials
+sidebar_position: 4
 ---
 
-Diese Tutorien helfen Ihnen, die IaaS VMWare-Komponente über das Konsole-Portal zu nutzen und zu konfigurieren.
+# Tutorials
 
-## Eine VMWare-VM verschlüsseln
+This section contains practical tutorials to effectively use Cloud Temple's VMware IaaS platform.
+
+## Available tutorials
+
+### Konfiguration
+- [Eine virtuelle Verwaltungsmaschine konfigurieren](tutorials/configure_management_vm)
+
+### Bereitstellung
+- [Eine VM aus einem Template bereitstellen](tutorials/deploy_vm_template)
+- [Eine VM mit Terraform bereitstellen](tutorials/deploy_vm_terraform)
+
+### Sicherheit
+- [Eine virtuelle Maschine verschlüsseln](tutorials/vm_encryption)
+
+### Backup
+- [Frequently Asked Questions about Backup](tutorials/backup/iaas_backup)
 
 ## Voraussetzungen
 
-1. **Schlüsselanbieter (HSM/KMS)**:
-   - Ein Schlüsselanbieter muss auf dem vStack konfiguriert sein. (Falls kein Schlüsselanbieter konfiguriert ist, wenden Sie sich bitte über ein Ticket an den Support-Service.)
-   - Stellen Sie sicher, dass der Schlüsselanbieter ordnungsgemäß aktiviert ist.
+Bevor Sie mit diesen Tutorials beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-2. **Status der virtuellen Maschine**:
-   - Die virtuelle Maschine muss ausgeschaltet sein.
-   - Die virtuelle Maschine darf sich nicht im 'Test'-Modus befinden.
-   - Die virtuelle Maschine darf nicht bereits verschlüsselt sein.
-
-## Schnittstelle
-
-Nach der Anmeldung am Konsole-Webportal finden Sie im Menü __'IaaS'__, Untermenü __'Konfiguration'__ und dem Tab __'vCenters'__, Informationen darüber, ob die Verschlüsselung auf dem betreffenden vStack aktiviert ist.
-
-![](images/shiva_hsm_kms_000.png)
-
-Navigieren Sie anschließend zum Untermenü __'Virtuelle Maschinen'__ und wählen Sie die Maschine aus, die Sie verschlüsseln möchten.
-
-In den allgemeinen Informationen der virtuellen Maschine finden Sie die Angabe, ob die Maschine bereits verschlüsselt ist oder nicht.
-
-![](images/shiva_hsm_kms_001.png)
-
-Wenn die virtuelle Maschine die Voraussetzungen erfüllt, können Sie den Vorgang fortsetzen, indem Sie auf die Schaltfläche mit einem Schloss-Logo in der Werkzeugleiste klicken, die __'Virtuelle Maschine verschlüsseln'__ anzeigt.
-
-![](images/shiva_hsm_kms_002.png)
-
-Ein Bestätigungsfenster erscheint, wählen Sie Verschlüsseln.
-
-![](images/shiva_hsm_kms_003.png)
-
-Nach Abschluss der Aktion sollten Sie sehen, dass sich die Information geändert hat und angibt, dass Ihre Maschine verschlüsselt ist.
-
-![](images/shiva_hsm_kms_004.png)
+- Zugriff auf die Cloud Temple-Konsole
+- Die erforderlichen Berechtigungen zum Verwalten von VMware IaaS-Ressourcen
