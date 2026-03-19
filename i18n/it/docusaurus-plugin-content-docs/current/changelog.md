@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Change Tracking
 
+### 19 marzo 2026: Aggiornamento DPA e conformità HDS
+
+- **Contrattuale**: Aggiornamento dell'Accordo sul Trattamento dei Dati (DPA) alla versione 1.0. Integrazione degli ultimi requisiti per la certificazione HDS (Hosting di Dati Sanitari) e aggiornamento dell'elenco dei sub-responsabili autorizzati. Traduzione completa in inglese, tedesco, spagnolo e italiano.
+
 ### 21 February 2026: Advanced Networking Concepts and Multilingual Enhancements
 
 - **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with Bird example.
