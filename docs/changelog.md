@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 19 Mars 2026 : Mise à jour DPA et conformité HDS
+
+- **Contractuel** : Mise à jour de l'Annexe Contractuelle sur les Données à Caractère Personnel (DPA) vers la version 1.0. Intégration des dernières exigences de la certification HDS (Hébergeur de Données de Santé) et actualisation de la liste des sous-traitants autorisés. Traduction complète en anglais, allemand, espagnol et italien.
+
 ### 21 Février 2026 : Amélioration du référencement SEO
 
 - **SEO** : Correction de l'URL de production (`https://docs.cloud-temple.com`) et du chemin de base (`/`) dans la configuration Docusaurus, garantissant des URLs canoniques correctes pour l'indexation Google.

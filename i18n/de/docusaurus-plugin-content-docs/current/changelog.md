@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Change Tracking
 
+### 19. März 2026: DPA-Update und HDS-Konformität
+
+- **Vertragliches**: Aktualisierung der Vereinbarung zur Auftragsverarbeitung (AVV bzw. DPA) auf Version 1.0. Integration der neuesten Anforderungen für die HDS-Zertifizierung (Health Data Hosting) und Aktualisierung der Liste der zugelassenen Unterauftragsverarbeiter. Vollständige Übersetzung in Englisch, Deutsch, Spanisch und Italienisch.
+
 ### February 21, 2026: Advanced Networking Concepts and Multilingual Enhancements
 
 - **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with a Bird example.
