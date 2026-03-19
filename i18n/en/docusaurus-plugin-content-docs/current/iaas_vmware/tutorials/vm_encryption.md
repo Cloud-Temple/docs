@@ -1,5 +1,5 @@
 ---
-title: Encrypt a VMware Virtual Machine
+title: Encrypt a Virtual Machine
 tags:
   - iaas_vmware
   - tutorials

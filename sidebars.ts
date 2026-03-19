@@ -143,8 +143,10 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/quickstart',
         {
           type: 'category',
-          label: 'OpenSource Tutoriels',
+          label: 'Tutoriels',
+          key: 'iaas_opensource_tutorials',
           items: [
+            'iaas_opensource/tutorials/create_vm',
             {
               type: 'category',
               label: 'High Availability',
@@ -155,7 +157,8 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'OpenSource Backup',
+              label: 'Backup',
+              key: 'iaas_opensource_backup',
               items: [
                 'iaas_opensource/tutorials/backup/iaas_opensource_backup',
               ],
@@ -173,11 +176,13 @@ const sidebars: SidebarsConfig = {
         'iaas_vmware/quickstart',
         {
           type: 'category',
-          label: 'VMware Tutoriels',
+          label: 'Tutoriels',
+          key: 'iaas_vmware_tutorials',
           items: [
             {
               type: 'category',
-              label: 'VMware Backup',
+              label: 'Backup',
+              key: 'iaas_vmware_backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
