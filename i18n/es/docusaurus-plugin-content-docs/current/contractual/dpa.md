@@ -2,15 +2,15 @@
 
 ## Artículo 1: Definiciones
 
-**Datos personales**: Toda información sobre una persona física identificada o identificable («el interesado»), según lo definido por el Reglamento General de Protección de Datos (RGPD).
-**Responsable del tratamiento**: La persona física o jurídica, autoridad pública, servicio u otro organismo que, solo o junto con otros, determine los fines y medios del tratamiento de datos personales.
-**Encargado del tratamiento**: La persona física o jurídica, autoridad pública, servicio u otro organismo que trate datos personales por cuenta del responsable del tratamiento.
-**Tratamiento**: Cualquier operación o conjunto de operaciones realizadas sobre datos personales o conjuntos de datos personales, ya sea por procedimientos automatizados o no.
-**Violación de la seguridad de los datos**: Toda violación de la seguridad que ocasione la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizados a dichos datos.
-**Transferencia de datos**: Toda transferencia de datos personales fuera del Espacio Económico Europeo (EEE), incluso a un tercer país o una organización internacional.
-**Servicio Cloud**: Cualquier servicio de procesamiento, almacenamiento o gestión de datos personales proporcionado por el Encargado del tratamiento a través de infraestructuras en la nube.
-**Acceso necesario para el servicio**: Cualquier acceso a datos personales estrictamente requerido para la ejecución de los servicios contractuales definidos, incluyendo el aprovisionamiento, mantenimiento, soporte técnico, supervisión de sistemas y resolución de incidentes, excluyendo cualquier acceso para fines de análisis comercial, elaboración de perfiles o marketing directo.
-**HDS** (Alojamiento de Datos de Salud): Estatus específico en Francia para los proveedores de alojamiento de datos de salud, que requiere una certificación emitida por un organismo acreditado.
+- **Datos personales**: Toda información sobre una persona física identificada o identificable («el interesado»), según lo definido por el Reglamento General de Protección de Datos (RGPD).
+- **Responsable del tratamiento**: La persona física o jurídica, autoridad pública, servicio u otro organismo que, solo o junto con otros, determine los fines y medios del tratamiento de datos personales.
+- **Encargado del tratamiento**: La persona física o jurídica, autoridad pública, servicio u otro organismo que trate datos personales por cuenta del responsable del tratamiento.
+- **Tratamiento**: Cualquier operación o conjunto de operaciones realizadas sobre datos personales o conjuntos de datos personales, ya sea por procedimientos automatizados o no.
+- **Violación de la seguridad de los datos**: Toda violación de la seguridad que ocasione la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizados a dichos datos.
+- **Transferencia de datos**: Toda transferencia de datos personales fuera del Espacio Económico Europeo (EEE), incluso a un tercer país o una organización internacional.
+- **Servicio Cloud**: Cualquier servicio de procesamiento, almacenamiento o gestión de datos personales proporcionado por el Encargado del tratamiento a través de infraestructuras en la nube.
+- **Acceso necesario para el servicio**: Cualquier acceso a datos personales estrictamente requerido para la ejecución de los servicios contractuales definidos, incluyendo el aprovisionamiento, mantenimiento, soporte técnico, supervisión de sistemas y resolución de incidentes, excluyendo cualquier acceso para fines de análisis comercial, elaboración de perfiles o marketing directo.
+- **HDS** (Alojamiento de Datos de Salud): Estatus específico en Francia para los proveedores de alojamiento de datos de salud, que requiere una certificación emitida por un organismo acreditado.
 
 ## Artículo 2: Objeto
 
