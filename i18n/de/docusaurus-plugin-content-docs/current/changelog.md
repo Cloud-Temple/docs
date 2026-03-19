@@ -1,107 +1,123 @@
 ---
-title: Änderungsverfolgung
+title: Änderungsprotokoll
 sidebar_position: 2
 ---
 
-# Change Tracking
+# Änderungsprotokoll
 
-### February 21, 2026: Advanced Networking Concepts and Multilingual Enhancements
+### 19. März 2026: Verbesserungen der IaaS- und Terraform-Dokumentation
 
-- **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with a Bird example.
-- **LLMaaS**: Updated model catalog and added model lifecycle management. Introduced LTS (Long Term Support) models.
-- **Console (Security)**: Improved quality of security alert translations (English, German, Spanish, Italian).
-- **Multilingual**: Translation of the new advanced networking concepts page into four languages (en, de, es, it), along with overall enhancement of existing translation quality.
-- **IaaS Bare Metal**: Added clarifications regarding the BFS (Boot from SAN) volume in the quick start guide: Volume 1 is dedicated to OS installation, not shareable within the same AZ, with recommendation to store data on an additional LUN volume.
-- **Object Storage (OSS)**: Added a new **FAQ** page covering S3 access, IP whitelisting, pre-signed links, and recommended usage scenarios.
+- **IaaS OpenSource**: Vollständige Anleitung zur Erstellung einer virtuellen Maschine hinzugefügt. Das Tutorial umfasst die drei verfügbaren Bereitstellungsmethoden (Vorlage, XVA-Import, Marketplace) mit Schritt-für-Schritt-Anleitungen und Best-Practice-Empfehlungen.
+- **IaaS VMware**: Indexseite mit allen verfügbaren Tutorials hinzugefügt, um die Navigation und das Auffinden der Anleitungen zu erleichtern.
+- **Terraform**: Neuer Abschnitt, der erklärt, wie Sie automatisch Benachrichtigungen über neue Versionen des Terraform-Providers über GitHub erhalten können.
 
-### February 10, 2026: LLMaaS Pricing Update
+### 19. März 2026: DPA-Aktualisierung und HDS-Konformität
 
-- **LLMaaS**: Global API pricing update (Input: €1.90/M, Output: €8.00/M, Reasoner: €8.00/M) across all technical and commercial documentation.
+- **Contractuel** : Mise à jour de l'Annexe Contractuelle sur les Données à Caractère Personnel (DPA) vers la version 1.0. Intégration des dernières exigences de la certification HDS (Hébergeur de Données de Santé) et actualisation de la liste des sous-traitants autorisés. Traduction complète en anglais, allemand, espagnol et italien.
 
-### February 5, 2026: Clarifications on Service Level Agreements (SLAs)
+### 21 Février 2026 : Amélioration du référencement SEO
 
-- **Managed Kubernetes**: Complete update and finalization of Service Level Agreements (SLAs) for the Managed Kubernetes offering.
+- **SEO** : Correction de l'URL de production (`https://docs.cloud-temple.com`) et du chemin de base (`/`) dans la configuration Docusaurus, garantissant des URLs canoniques correctes pour l'indexation Google.
+- **Sitemap** : Activation de la génération automatique du sitemap (`/sitemap.xml`) pour améliorer le crawling et l'indexation par les moteurs de recherche.
+- **Robots.txt** : Ajout d'un fichier `robots.txt` autorisant le crawling complet du site et pointant vers le sitemap.
 
-### January 21, 2026: Security Improvements and Translations
+### 21 Février 2026 : Concepts avancés réseau et améliorations multilingues
 
-- **Console Management**: Updated international translations (English, German, Spanish, Italian) for security alerts in the management console.
+- **Réseau (Internet)** : Nouvelle page de **concepts avancés** documentant les communautés BGP et le contrôle de la Local Preference sur le backbone Internet Cloud Temple (AS33930). Inclut un guide de configuration avec exemple Bird.
+- **LLMaaS** : Mise à jour du catalogue de modèles et ajout du cycle de vie des modèles. Ajout des modèles LTS (Long Term Support).
+- **Console (Sécurité)** : Amélioration de la qualité des traductions des alertes de sécurité (anglais, allemand, espagnol, italien).
+- **Multilingue** : Traduction de la nouvelle page concepts avancés réseau vers les 4 langues (en, de, es, it) et amélioration globale de la qualité des traductions existantes.
+- **IaaS Bare Metal** : Ajout de précisions sur le volume BFS (Boot from SAN) dans le guide de démarrage : le Volume 1 est dédié à l'installation de l'OS, non partageable au sein d'une même AZ, avec recommandation de stocker les données sur un volume LUN additionnel.
+- **Stockage Objet (OSS)** : Ajout d'une page **FAQ** couvrant l'accès S3, les whitelists IP, les liens pré-signés et les scénarios d'usage recommandés.
 
-### January 19, 2026: Managed Kubernetes and VPC Enhancements
+### 10 Février 2026 : Mise à jour des tarifs LLMaaS
 
-- **Managed Kubernetes**: Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
-- **Managed Kubernetes**: New tutorial on using GPUs within a Kubernetes cluster.
-- **Managed Kubernetes**: Replaced KubeCost with a more recent guide on **OpenCost**.
-- **Network (VPC)**: Comprehensive documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, quick start guides, and tutorials.
-- **Multilingual**: Full translation of the VPC service and new Kubernetes content into English, German, Spanish, and Italian.
+- **LLMaaS** : Mise à jour globale des tarifs de l'API (Input : 1,9€/M, Output : 8€/M, Raisonneur : 8€/M) dans l'ensemble de la documentation technique et commerciale.
 
-### December 15, 2025: Stabilization and Multilingual Fixes
+### 5 Février 2026 : Précisions sur les engagements de service (SLA)
 
-- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of translations in Spanish, Italian, and German. Resolution of MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
-- **Multilingual (Images)**: Restoration of correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
-- **Build**: Validation of deployment across all 5 supported languages.
+- **Managed Kubernetes** : Mise à jour complète et finalisation des engagements de niveau de service (SLA) pour l'offre Managed Kubernetes.
 
-### 11. Dezember 2025: Neuerungen bei Managed Kubernetes
+### 21 Janvier 2026 : Améliorations et traductions de sécurité
 
-- **Managed Kubernetes**: Hinzufügen eines neuen Tutorials zur Verwendung der **Gateway API** für die erweiterte Verkehrssteuerung.
-- **Managed Kubernetes**: Aktualisierung der Dokumentation zur Verwaltung von Quoten (Ceph) und Optimierung der Kostenverwaltungstools (OpenCost).
+- **Console Management** : Mise à jour des traductions internationales (anglais, allemand, espagnol, italien) pour les alertes de sécurité dans la console de gestion.
 
-### November 22, 2025: LLMaaS Updates and General Improvements
+### 19 Janvier 2026 : Extension Managed Kubernetes et VPC
 
-- **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
-- **Multilingual**: Resolved accessibility issues in the Italian and German versions of the documentation.
-- **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
+- **Managed Kubernetes** : Ajout du support pour les nœuds **Bare Metal** et les **GPUs** (NVIDIA).
+- **Managed Kubernetes** : Nouveau tutoriel sur l'utilisation des GPUs dans un cluster Kubernetes.
+- **Managed Kubernetes** : Remplacement de KubeCost par un guide plus récent sur **OpenCost**.
+- **Network (VPC)** : Documentation complète du service Virtual Private Cloud (VPC), incluant les concepts de haute disponibilité (HA), les guides de démarrage et les tutoriels.
+- **Multilingue** : Traduction intégrale du service VPC et des nouveaux contenus Kubernetes vers l'anglais, l'allemand, l'espagnol et l'italien.
 
-### November 20, 2025: Major PaaS OpenShift Update
+### 15 Décembre 2025 : Stabilisation et corrections multilingues
 
-- **PaaS OpenShift (PR #194)**: Complete overhaul and update of the OpenShift documentation, including new screenshots and full translation into English, Spanish, German, and Italian to support our international expansion.
+- **Multilingue (Terraform, LLMaaS, Harbor)** : Correction majeure des traductions en Espagnol, Italien et Allemand. Résolution des problèmes de syntaxe MDX (blocs de code vides, balises non échappées) qui empêchaient la compilation du site.
+- **Multilingue (Images)** : Rétablissement des chemins d'images corrects dans les versions italienne et allemande pour les sections Bastion et IaaS VMware.
+- **Build** : Validation du déploiement pour l'ensemble des 5 langues supportées.
 
-### 3 November 2025: Improvements to Kubernetes Tutorials
+### 11 Décembre 2025 : Nouveautés Managed Kubernetes
 
-- **Managed Kubernetes**: Introduction of a new tutorial on continuous deployment with **ArgoCD** and the GitOps approach.
-- **Managed Kubernetes**: Review and enhancement of existing tutorials. Guides on deployment, networking, permission management (Capsule), and backup (Kasten) have been enriched to better address security, governance, and cost concerns, in response to the needs of RSSI and Procurement profiles.
+- **Managed Kubernetes** : Ajout d'un nouveau tutoriel sur l'utilisation de **Gateway API** pour la gestion avancée du trafic.
+- **Managed Kubernetes** : Mise à jour de la documentation sur la gestion des quotas (Ceph) et optimisation des outils de gestion des coûts (OpenCost).
 
-### October 28, 2025: New Managed Kubernetes Documentation and Various Improvements
+### 22 Novembre 2025 : Nouveautés LLMaaS et améliorations globales
 
-- **Managed Kubernetes (PR #193 & improvements)**: Added comprehensive documentation for the new Managed Kubernetes service. The section includes a service overview, technical concepts, a quick start guide, a first tutorial, and a RACI matrix. The content has been enhanced to better meet the expectations of different user profiles.
-- **Object Storage (PR #190, #189)**: Added two new tutorials for the Object Storage service: one on managing S3 bucket access and another on using Restic for backups.
-- **Contractual (PR #191)**: Corrected and updated the "Data Processing Agreement" (DPA) document.
+- **LLMaaS (OCR)** : Ajout d'une documentation complète pour **DeepSeek-OCR**, notre nouveau modèle spécialisé dans l'analyse de documents (PDF, images), capable d'extraire du texte structuré, des tableaux et des formules mathématiques.
+- **Multilingue** : Résolution de problèmes d'accessibilité sur les versions italienne et allemande de la documentation.
+- **Qualité** : Correction de l'affichage des blocs de code dans les tutoriels LLMaaS et rétablissement des images manquantes dans le guide de démarrage IaaS VMware (version italienne).
 
-### 18 October 2025: Maintenance and New Documentation
+### 20 Novembre 2025 : Mise à jour majeure PaaS OpenShift
 
-- **LLMaaS**: Added a new question to the FAQ to introduce the public status page ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), enabling real-time monitoring of the availability and performance of each model.
-- **Contractual**: Major update to the Data Processing Agreement (DPA v2) to reflect the latest legal and compliance requirements.
-- **Console**: Improved and clarified documentation regarding order management.
-- **Marketplace**: Added a detailed tutorial on customizing virtual machine (VM) images to create reusable templates.
-- **LLMaaS**: Added a guide to configure the VSCode CLINE extension for using Cloud Temple's language models directly from the editor.
-- **Object Storage (OSS)**: Added clarifications regarding the lifecycle policy for data deletion.
-- **Object Storage (OSS)**: Added a troubleshooting guide for checksum errors (`XAmzContentSHA256Mismatch`) with AWS CLI and Terraform.
-- **LLMaaS**: Updated the list of available models and retranslated over 50 documents to ensure consistency.
+- **PaaS OpenShift (PR #194)** : Refonte et mise à jour complète de la documentation OpenShift, incluant de nouvelles captures d'écran et une traduction intégrale en anglais, espagnol, allemand et italien pour accompagner notre expansion internationale.
 
-### 14. August 2025: Verbesserungen und Korrekturen
+### 3 Novembre 2025 : Amélioration des tutoriels Kubernetes
 
-- **LLMaaS**: Aktualisierung und Klärung der FAQ-Antworten, um technische und strategische Fragen besser zu adressieren. Hinzufügen der FAQ zur Navigation.
-- **Allgemein**: Korrektur mehrerer interner Navigationslinks innerhalb der Dokumentation für eine flüssigere Benutzererfahrung.
+- **Managed Kubernetes** : Ajout d'un nouveau tutoriel sur le déploiement continu avec **ArgoCD** et l'approche GitOps.
+- **Managed Kubernetes** : Revue et améioration des tutoriels existants. Les guides sur le déploiement, le réseau, la gestion des permissions (Capsule) et la sauvegarde (Kasten) ont été enrichis pour mieux adresser les questions de sécurité, de gouvernance et de coût, en réponse aux attentes des profils RSSI et Acheteur.
 
-### Juli 2025: Neuerungen und wichtige Updates
+### 28 Octobre 2025 : Nouvelle documentation Managed Kubernetes et améliorations diverses
 
-- **Objektspeicher (OSS)**:
-    - Komplette Überarbeitung des Bereichs „Tutorials“ mit speziellen Anleitungen für beliebte Tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer und das Python SDK Boto3.
-    - Ergänzung von Erklärungen zu Konzepten wie Speicherkonten und Objektverschlüsselung (Object Lock).
-- **IaaS OpenSource**:
-    - Hinzufügen einer detaillierten Dokumentation zur Verwaltung der Hochverfügbarkeit (HA) für Ressourcenpools und virtuelle Maschinen.
-- **Konsole**:
-    - Aktualisierung der Sicherheitswarnungsseite mit den neuesten bekannten Schwachstellen.
-- **Netzwerk**:
-    - Hinzufügen neuer Bildschirmfotos zur Veranschaulichung der IPv6-Verbindungs-Konfiguration.
+- **Managed Kubernetes (PR #193 & améliorations)**: Ajout d'une documentation complète pour le nouveau service Managed Kubernetes. La section inclut une presentazione del service, i concetti tecnici, un guide di démarrage, un primo tutoriel, e la matrice di responsabilités (RACI). Le contenu a été enrichi pour mieux répondre aux attentes des différents profils d'utilisateurs.
+- **Stockage Objet (PR #190, #189)**: Ajout de deux nouveaux tutoriels pour le service de Stockage Objet : un sur la gestion des accès aux buckets S3 et un autre sur l'utilisation de Restic pour les sauvegardes.
+- **Contractuel (PR #191)**: Correction et mise à jour du document "Data Processing Agreement" (DPA).
 
-### June 29, 2025: Finalization of LLMaaS Documentation
+### 18 Octobre 2025 : Maintenance et nouvelles documentations
 
-- Completion and validation of the full test suite.
-- Correction and validation of RAG pipelines with FAISS and Qdrant.
-- Enhancement of tutorials with more detailed technical explanations.
-- Addition of a section on prompt security and model lifecycle within the concepts.
-- Improvement of the RAG explanation page with diagrams and details on embedding models.
-- Update of the API documentation, quick start guide, and service presentation.
-- Addition of pricing for the Audio Transcription endpoint.
-- Incorporation of the projected model lifecycle timeline.
-- Addition of the responsibility matrix for the LLMaaS offering.
+- **LLMaaS** : Ajout d'une nouvelle question à la FAQ pour présenter la page de statut publique ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), permettant de suivre en temps réel la disponibilité et les performances de chaque modèle.
+- **Contractuel** : Mise à jour majeure du Data Processing Agreement (DPA v2) pour refléter les dernières exigences légales et de conformité.
+- **Console** : Amélioration et clarification de la documentation concernant la gestion des commandes.
+- **Marketplace** : Ajout d'un tutoriel détaillé sur la personnalisation des images de machines virtuelles (VM) pour créer des templates réutilisables.
+- **LLMaaS** : Ajout d'un guide pour configurer l'extension VSCode CLINE afin d'utiliser les modèles de langage de Cloud Temple directement depuis l'éditeur.
+- **Stockage Objet (OSS)** : Ajout de précisions sur la politique de cycle de vie (Lifecycle) pour la suppression des données.
+- **Stockage Objet (OSS)** : Ajout d'un guide de dépannage pour les erreurs de checksum (`XAmzContentSHA256Mismatch`) avec AWS CLI et Terraform.
+- **LLMaaS** : Mise à jour de la liste des modèles disponibles et retraduction de plus de 50 documents pour assurer la cohérence.
+
+### 14 Août 2025 : Améliorations et corrections
+
+- **LLMaaS** : Mise à jour et clarification des réponses de la FAQ pour mieux adresser les questions techniques et stratégiques. Ajout de la FAQ à la navigation.
+- **Général** : Correction de several liens de navigation internes à travers la documentation pour une expérience plus fluide.
+
+### Juillet 2025 : Nouveautés et mises à jour majeures
+
+- **Stockage Objet (OSS)** :
+    - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
+    - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
+- **IaaS OpenSource** :
+    - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
+- **Console** :
+    - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
+- **Réseau** :
+    - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
+
+### 29 Juin 2025 : finalisation de la documentation LLMaaS
+
+- Validation de la suite de tests complète.
+- Correction et validation des pipelines RAG with FAISS et Qdrant.
+- Enrichissement des tutoriels avec des explications techniques plus détaillées.
+- Ajout d'une section sur la sécurité des prompts et le cycle de vie des modèles dans les concepts.
+- Amélioration de la page d'explication du RAG avec schémas et détails sur les modèles d'embedding.
+- Mise à jour de la documentation de l'API, du guide de démarrage et de la présentation du service.
+- Ajout du princing pour l'endpoint Transcription Audio.
+- Ajout du planning prévisionnel de cycle de vie des modeles.
+- Ajout de la matrice de responsabilité pour l'offre LLMaaS.

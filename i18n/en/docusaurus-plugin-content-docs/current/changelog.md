@@ -1,9 +1,19 @@
 ---
-title: Change Tracking
+title: Change Log
 sidebar_position: 2
 ---
 
-# Change Tracking
+# Change Log
+
+### March 19, 2026: IaaS and Terraform Documentation Improvements
+
+- **IaaS OpenSource**: Added a complete guide for creating a virtual machine. The tutorial covers the three available deployment methods (template, XVA import, Marketplace) with step-by-step instructions and best practice recommendations.
+- **IaaS VMware**: Added an index page listing all available tutorials for easier navigation and guide discovery.
+- **Terraform**: New section explaining how to automatically receive notifications for new Terraform Provider versions via GitHub.
+
+### March 19, 2026: DPA Update and HDS Compliance
+
+- **Contractual**: Update of the Data Processing Agreement (DPA) to version 1.0. Integration of the latest requirements for HDS (Health Data Hosting) certification and update of the authorized sub-processors list. Complete translation in English, German, Spanish, and Italian.
 
 ### February 21, 2026: Advanced Networking Concepts and Multilingual Enhancements
 
