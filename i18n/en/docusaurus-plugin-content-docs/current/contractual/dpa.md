@@ -229,14 +229,12 @@ In the event of failure of the subsequent sub-processor to comply with its data 
 
 The list of authorized subsequent sub-processors is as follows:
 
-| Sub-processor | Activity | Location |
-|---|---|---|
-| Digital Realty | Datacenter hosting | France / EU |
-| Data4 | Datacenter hosting | France / EU |
-| Telehouse | Datacenter hosting | France / EU |
-| Iron Mountain | Datacenter hosting | France / EU |
-| Microsoft Azure | Datacenter hosting | France / EU |
-| Amazon Web Services | Datacenter hosting | France / EU |
+| Sub-processor | Activity | Location | Authorization Date |
+|---|---|---|---|
+| Digital Realty | Datacenter hosting | France / EU | 15/01/2025 |
+| Data4 | Datacenter hosting | France / EU | 15/01/2025 |
+| Telehouse | Datacenter hosting | France / EU | 15/01/2025 |
+| Iron Mountain | Tape outsourcing | France / EU | 15/01/2025 |
 
 :::note
 Iron Mountain is not HDS certified.

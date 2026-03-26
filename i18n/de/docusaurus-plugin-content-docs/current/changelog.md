@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Änderungsprotokoll
 
+### 26. März 2026: Aktualisierung der Unterauftragsverarbeiter-Liste (DPA)
+
+- **Vertraglich**: Aktualisierung des Vertrags über die Auftragsverarbeitung (DPA) - Überarbeitung der Liste der Unterauftragsverarbeiter (Entfernung von Microsoft Azure und Amazon Web Services, Änderung der Tätigkeit für Iron Mountain) und Hinzufügung des Genehmigungsdatums. Ausbreitung der Änderungen auf Englisch, Deutsch, Spanisch und Italienisch.
+
 ### 19. März 2026: Verbesserungen der IaaS- und Terraform-Dokumentation
 
 - **IaaS OpenSource**: Vollständige Anleitung zur Erstellung einer virtuellen Maschine hinzugefügt. Das Tutorial umfasst die drei verfügbaren Bereitstellungsmethoden (Vorlage, XVA-Import, Marketplace) mit Schritt-für-Schritt-Anleitungen und Best-Practice-Empfehlungen.
