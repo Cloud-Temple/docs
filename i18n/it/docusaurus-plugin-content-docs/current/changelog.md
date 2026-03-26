@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Registro delle Modifiche
 
+### 26 marzo 2026: Aggiornamento dell'elenco dei sub-responsabili (DPA)
+
+- **Contrattuale**: Aggiornamento dell'Accordo sul Trattamento dei Dati (DPA) - revisione dell'elenco dei sub-responsabili (rimozione di Microsoft Azure e Amazon Web Services, modifica dell'attività per Iron Mountain) e aggiunta della data di autorizzazione. Propagazione delle modifiche in inglese, tedesco, spagnolo e italiano.
+
 ### 19 marzo 2026: Miglioramenti alla documentazione IaaS e Terraform
 
 - **IaaS OpenSource**: Aggiunta una guida completa per la creazione di una macchina virtuale. Il tutorial copre i tre metodi di distribuzione disponibili (modello, importazione XVA, Marketplace) con istruzioni dettagliate e raccomandazioni sulle migliori pratiche.
