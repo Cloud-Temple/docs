@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Change Log
 
+### March 26, 2026: Sub-processors List Update (DPA)
+
+- **Contractual**: Update of the Data Processing Agreement (DPA) - revised the list of sub-processors (removal of Microsoft Azure and Amazon Web Services, modification of activity for Iron Mountain) and addition of the authorization date. Propagation of changes in English, German, Spanish, and Italian.
+
 ### March 19, 2026: IaaS and Terraform Documentation Improvements
 
 - **IaaS OpenSource**: Added a complete guide for creating a virtual machine. The tutorial covers the three available deployment methods (template, XVA import, Marketplace) with step-by-step instructions and best practice recommendations.
