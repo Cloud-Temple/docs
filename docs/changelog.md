@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 26 Mars 2026 : Mise à jour de la liste des sous-traitants (DPA)
+
+- **Contractuel** : Mise à jour de l'Annexe Contractuelle sur les Données à Caractère Personnel (DPA) - révision de la liste des sous-traitants (retrait de Microsoft Azure et Amazon Web Services, modification de l'activité pour Iron Mountain) et ajout de la date d'autorisation.
+
 ### 19 Mars 2026 : Améliorations documentation IaaS et Terraform
 
 - **IaaS OpenSource** : Ajout d'un guide complet pour créer une machine virtuelle. Le tutoriel couvre les trois méthodes de déploiement disponibles (modèle, import XVA, Marketplace) avec des instructions pas à pas et des recommandations de bonnes pratiques.
