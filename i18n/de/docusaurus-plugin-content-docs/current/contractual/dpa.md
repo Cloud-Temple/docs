@@ -229,14 +229,12 @@ Falls der weitere Unterauftragsverarbeiter seinen Datenschutzpflichten nicht nac
 
 Die Liste der zugelassenen weiteren Unterauftragsverarbeiter ist wie folgt:
 
-| Unterauftragsverarbeiter | Tätigkeit | Standort |
-|---|---|---|
-| Digital Realty | Datacenter-Hosting | Frankreich / EU |
-| Data4 | Datacenter-Hosting | Frankreich / EU |
-| Telehouse | Datacenter-Hosting | Frankreich / EU |
-| Iron Mountain | Datacenter-Hosting | Frankreich / EU |
-| Microsoft Azure | Datacenter-Hosting | Frankreich / EU |
-| Amazon Web Services | Datacenter-Hosting | Frankreich / EU |
+| Unterauftragsverarbeiter | Tätigkeit | Standort | Genehmigungsdatum |
+|---|---|---|---|
+| Digital Realty | Datacenter-Hosting | Frankreich / EU | 15/01/2025 |
+| Data4 | Datacenter-Hosting | Frankreich / EU | 15/01/2025 |
+| Telehouse | Datacenter-Hosting | Frankreich / EU | 15/01/2025 |
+| Iron Mountain | Band-Outsourcing | Frankreich / EU | 15/01/2025 |
 
 :::note
 Iron Mountain ist nicht HDS-zertifiziert.

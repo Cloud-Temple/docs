@@ -229,14 +229,12 @@ In caso di inadempimento da parte del sub-responsabile successivo dei propri obb
 
 L'elenco dei sub-responsabili successivi autorizzati è il seguente:
 
-| Sub-responsabile | Attività | Sede |
-|---|---|---|
-| Digital Realty | Hosting di data center | Francia / UE |
-| Data4 | Hosting di data center | Francia / UE |
-| Telehouse | Hosting di data center | Francia / UE |
-| Iron Mountain | Hosting di data center | Francia / UE |
-| Microsoft Azure | Hosting di data center | Francia / UE |
-| Amazon Web Services | Hosting di data center | Francia / UE |
+| Sub-responsabile | Attività | Sede | Data di autorizzazione |
+|---|---|---|---|
+| Digital Realty | Hosting di data center | Francia / UE | 15/01/2025 |
+| Data4 | Hosting di data center | Francia / UE | 15/01/2025 |
+| Telehouse | Hosting di data center | Francia / UE | 15/01/2025 |
+| Iron Mountain | Esternalizzazione su nastro | Francia / UE | 15/01/2025 |
 
 :::note
 Iron Mountain non è certificato HDS.

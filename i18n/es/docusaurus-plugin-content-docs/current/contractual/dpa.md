@@ -229,14 +229,12 @@ En caso de incumplimiento por parte del subencargado posterior de sus obligacion
 
 La lista de subencargados posteriores autorizados es la siguiente:
 
-| Subencargado | Actividad | Localización |
-|---|---|---|
-| Digital Realty | Alojamiento de centro de datos | Francia / UE |
-| Data4 | Alojamiento de centro de datos | Francia / UE |
-| Telehouse | Alojamiento de centro de datos | Francia / UE |
-| Iron Mountain | Alojamiento de centro de datos | Francia / UE |
-| Microsoft Azure | Alojamiento de centro de datos | Francia / UE |
-| Amazon Web Services | Alojamiento de centro de datos | Francia / UE |
+| Subencargado | Actividad | Localización | Fecha de autorización |
+|---|---|---|---|
+| Digital Realty | Alojamiento de centro de datos | Francia / UE | 15/01/2025 |
+| Data4 | Alojamiento de centro de datos | Francia / UE | 15/01/2025 |
+| Telehouse | Alojamiento de centro de datos | Francia / UE | 15/01/2025 |
+| Iron Mountain | Externalización en cinta | Francia / UE | 15/01/2025 |
 
 :::note
 Iron Mountain no tiene certificación HDS.

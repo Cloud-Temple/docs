@@ -229,14 +229,12 @@ En cas de défaillance du sous-traitant ultérieur dans le respect de ses obliga
 
 La liste des sous-traitants subséquents autorisés est la suivante :
 
-| Sous-traitant | Activité | Localisation |
-|---|---|---|
-| Digital Realty | Hébergement datacenter | France / UE |
-| Data4 | Hébergement datacenter | France / UE |
-| Telehouse | Hébergement datacenter | France / UE |
-| Iron Mountain | Hébergement datacenter | France / UE |
-| Microsoft Azure | Hébergement datacenter | France / UE |
-| Amazon Web Services | Hébergement datacenter | France / UE |
+| Sous-traitant | Activité | Localisation | Date d'autorisation |
+|---|---|---|---|
+| Digital Realty | Hébergement datacenter | France / UE | 15/01/2025 |
+| Data4 | Hébergement datacenter | France / UE | 15/01/2025 |
+| Telehouse | Hébergement datacenter | France / UE | 15/01/2025 |
+| Iron Mountain | Externalisation sur bande | France / UE | 15/01/2025 |
 
 :::note
 Iron Mountain n'est pas certifié HDS.
