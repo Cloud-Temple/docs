@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Registro de Cambios
 
+### 26 de marzo de 2026: Actualización de la lista de subencargados (DPA)
+
+- **Contractual**: Actualización del Acuerdo de Procesamiento de Datos (DPA) - revisión de la lista de subencargados (eliminación de Microsoft Azure y Amazon Web Services, modificación de la actividad de Iron Mountain) y adición de la fecha de autorización. Propagación de los cambios en inglés, alemán, español e italiano.
+
 ### 19 de marzo de 2026: Mejoras en la documentación de IaaS y Terraform
 
 - **IaaS OpenSource**: Se ha añadido una guía completa para crear una máquina virtual. El tutorial cubre los tres métodos de implementación disponibles (plantilla, importación XVA, Marketplace) con instrucciones paso a paso y recomendaciones de mejores prácticas.
