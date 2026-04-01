@@ -47,6 +47,10 @@ import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
 import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+import iaasVmwareClusterProvisionedMemory from './images/iaas_vmware_cluster_provisioned_memory.png'
+import iaasVmwareClusterUsedMemory from './images/iaas_vmware_cluster_used_memory.png'
+import iaasVmwareClusterWorstCaseAllocationMemory from './images/iaas_vmware_cluster_worst_case_allocation_memory.png'
+import iaasVmwareEsxMemory from './images/iaas_vmware_esx_memory.png'
 
 ## Cálculo
 
@@ -356,19 +360,19 @@ También puede ver todas las reglas de afinidad/anti-afinidad para su cluster de
 
 #### Interpretar los datos de consumo mostrados
 
-<img src={iaas_vmware_cluster_provisioned_memory} />
+<img src={iaasVmwareClusterProvisionedMemory} />
 
-**Memoria aprovisionada (Clúster):** Este gráfico representa la cantidad total de memoria aprovisionada para el clúster. Puede modificar la cantidad de memoria aprovisionada para el clúster mediante un comando.
+**Memoria aprovisionada (Clúster):** Representa la cantidad total de memoria aprovisionada para el clúster.
 
-<img src={iaas_vmware_cluster_used_memory} />
+<img src={iaasVmwareClusterUsedMemory} />
 
-**Memoria consumida (Clúster):** Esta vista muestra la memoria consumida activamente solo por las máquinas virtuales del clúster. Esto corresponde a la memoria física realmente utilizada por las máquinas virtuales para sus operaciones, lo cual es un indicador clave de la carga de trabajo actual.
+**Memoria consumida (Clúster):** Muestra la memoria consumida activamente solo por las máquinas virtuales del clúster. Esto corresponde a la memoria física realmente utilizada por las máquinas virtuales para sus operaciones, lo cual es un indicador clave de la carga de trabajo actual.
 
-<img src={iaas_vmware_cluster_worst_case_allocation_memory} />
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
 
-**Asignación en el peor de los casos (Clúster):** Este gráfico ilustra la memoria que se requeriría si todas las máquinas virtuales del clúster consumieran simultáneamente toda la memoria que se les ha asignado (el peor escenario de consumo). Esto ayuda a anticipar las necesidades de recursos críticos y a prevenir el agotamiento de la memoria.
+**Asignación en el peor de los casos (Clúster):** Ilustra la memoria que se requeriría si todas las máquinas virtuales del clúster consumieran simultáneamente toda la memoria que se les ha asignado (el peor escenario de consumo). Esto ayuda a anticipar las necesidades de recursos críticos y a prevenir el agotamiento de la memoria.
 
-<img src={iaas_vmware_esx_memory} />
+<img src={iaasVmwareEsxMemory} />
 
 **Memoria consumida (ESX):** A diferencia de los gráficos del clúster, este muestra el consumo total de memoria en un host ESX específico. Esto incluye no solo la memoria utilizada por las máquinas virtuales alojadas en este host, sino también la memoria consumida por el propio sistema hipervisor (sobrecarga de ESXi).
 

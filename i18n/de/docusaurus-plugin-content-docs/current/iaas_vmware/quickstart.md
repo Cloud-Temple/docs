@@ -47,6 +47,10 @@ import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
 import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+import iaasVmwareClusterProvisionedMemory from './images/iaas_vmware_cluster_provisioned_memory.png'
+import iaasVmwareClusterUsedMemory from './images/iaas_vmware_cluster_used_memory.png'
+import iaasVmwareClusterWorstCaseAllocationMemory from './images/iaas_vmware_cluster_worst_case_allocation_memory.png'
+import iaasVmwareEsxMemory from './images/iaas_vmware_esx_memory.png'
 
 ## Calculation
 
@@ -355,19 +359,19 @@ Sie sehen auch alle Affinitäts- und Anti-Affinitätsregeln für Ihren Hyperviso
 
 #### Interpretation der angezeigten Verbrauchsdaten
 
-<img src={iaas_vmware_cluster_provisioned_memory} />
+<img src={iaasVmwareClusterProvisionedMemory} />
 
-**Zugewiesener Speicher (Cluster):** Dieses Diagramm zeigt die Gesamtmenge des Speichers, der dem Cluster zugewiesen ist. Sie können die für den Cluster bereitgestellte Speichermenge über einen Befehl ändern.
+**Zugewiesener Speicher (Cluster):** Dieses Diagramm zeigt die Gesamtmenge des Speichers, der dem Cluster zugewiesen ist.
 
-<img src={iaas_vmware_cluster_used_memory} />
+<img src={iaasVmwareClusterUsedMemory} />
 
 **Verbrauchter Speicher (Cluster):** Diese Ansicht zeigt den Speicher, der aktiv und ausschließlich von den virtuellen Maschinen des Clusters verbraucht wird. Dies entspricht dem physischen Speicher, der tatsächlich von den VMs für ihre Operationen genutzt wird, was ein wichtiger Indikator für die aktuelle Arbeitslast ist.
 
-<img src={iaas_vmware_cluster_worst_case_allocation_memory} />
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
 
 **Zuteilung im schlimmsten Fall (Cluster):** Dieses Diagramm veranschaulicht den Speicher, der erforderlich wäre, wenn alle virtuellen Maschinen des Clusters gleichzeitig den gesamten ihnen zugewiesenen Speicher verbrauchen würden (das Worst-Case-Szenario für den Verbrauch). Dies hilft dabei, den Bedarf an kritischen Ressourcen vorherzusehen und eine Erschöpfung des Speichers zu verhindern.
 
-<img src={iaas_vmware_esx_memory} />
+<img src={iaasVmwareEsxMemory} />
 
 **Verbrauchter Speicher (ESX):** Im Gegensatz zu den Cluster-Diagrammen zeigt dieses Diagramm den gesamten Speicherverbrauch auf einem bestimmten ESX-Host. Dies schließt nicht nur den Speicher ein, der von den auf diesem Host gehosteten virtuellen Maschinen verwendet wird, sondern auch den Speicher, der vom Hypervisor-System selbst verbraucht wird (ESXi-Overhead).
 
