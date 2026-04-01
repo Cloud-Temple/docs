@@ -352,6 +352,24 @@ Vi lasciamo quindi gestire autonomamente il processo di cambiamento e applicare 
 
 Nella sezione __'Regole'__ è inoltre possibile visualizzare l'insieme delle regole di affinità/anti-affinità per il cluster di hypervisor.
 
+#### Interpretare i dati di consumo visualizzati
+
+<img src={iaas_vmware_cluster_provisioned_memory} />
+
+**Memoria allocata (Cluster):** Questo grafico rappresenta la quantità totale di memoria allocata al cluster. Puoi modificare la quantità di memoria fornita per il cluster tramite un comando.
+
+<img src={iaas_vmware_cluster_used_memory} />
+
+**Memoria consumata (Cluster):** Questa vista mostra la memoria attivamente consumata unicamente dalle macchine virtuali del cluster. Ciò corrisponde alla memoria fisica realmente utilizzata dalle VM per le loro operazioni, che è un indicatore chiave del carico di lavoro attuale.
+
+<img src={iaas_vmware_cluster_worst_case_allocation_memory} />
+
+**Allocazione nel caso peggiore (Cluster):** Questo grafico illustra la memoria che sarebbe richiesta se tutte le macchine virtuali del cluster consumassero contemporaneamente l'intera memoria loro allocata (il peggior scenario di consumo). Questo aiuta ad anticipare il fabbisogno di risorse critiche e a prevenire l'esaurimento della memoria.
+
+<img src={iaas_vmware_esx_memory} />
+
+**Memoria consumata (ESX):** A differenza dei grafici del cluster, questo mostra la memoria totale consumata su uno specifico host ESX. Ciò include non solo la memoria utilizzata dalle macchine virtuali ospitate su questo host, ma anche la memoria consumata dal sistema hypervisor stesso (overhead di ESXi).
+
 ### Gestione dell'affinità delle macchine virtuali
 
 Le __regole di affinità e anti-affinità__ consentono di controllare la posizione delle macchine virtuali sugli iperhost.
