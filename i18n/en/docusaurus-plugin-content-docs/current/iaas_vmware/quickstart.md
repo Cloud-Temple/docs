@@ -47,6 +47,10 @@ import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
 import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+import iaasVmwareClusterProvisionedMemory from './images/iaas_vmware_cluster_provisioned_memory.png'
+import iaasVmwareClusterUsedMemory from './images/iaas_vmware_cluster_used_memory.png'
+import iaasVmwareClusterWorstCaseAllocationMemory from './images/iaas_vmware_cluster_worst_case_allocation_memory.png'
+import iaasVmwareEsxMemory from './images/iaas_vmware_esx_memory.png'
 
 ## Calculation
 
@@ -355,19 +359,19 @@ You can also view all affinity/anti-affinity rules for your hypervisor cluster i
 
 #### Interpreting the displayed consumption data
 
-<img src={iaas_vmware_cluster_provisioned_memory} />
+<img src={iaasVmwareClusterProvisionedMemory} />
 
-**Provisioned Memory (Cluster):** This graph represents the total amount of memory provisioned for the cluster. You can modify the amount of memory provisioned for the cluster via a command.
+**Provisioned Memory (Cluster):** This graph represents the total amount of memory provisioned for the cluster.
 
-<img src={iaas_vmware_cluster_used_memory} />
+<img src={iaasVmwareClusterUsedMemory} />
 
 **Consumed Memory (Cluster):** This view displays the memory actively consumed solely by the virtual machines in the cluster. This corresponds to the physical memory actually used by the VMs for their operations, which is a key indicator of the current workload.
 
-<img src={iaas_vmware_cluster_worst_case_allocation_memory} />
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
 
 **Worst Case Allocation (Cluster):** This graph illustrates the memory that would be required if all the virtual machines in the cluster were to simultaneously consume all of the memory allocated to them (the worst-case consumption scenario). This helps anticipate critical resource needs and prevent memory exhaustion.
 
-<img src={iaas_vmware_esx_memory} />
+<img src={iaasVmwareEsxMemory} />
 
 **Consumed Memory (ESX):** Unlike the cluster graphs, this one shows the total memory consumed on a specific ESX host. This includes not only the memory used by the virtual machines hosted on this host, but also the memory consumed by the hypervisor system itself (ESXi overhead).
 
