@@ -353,6 +353,24 @@ Therefore, we leave it to you to manage your change process and apply new builds
 
 You can also view all affinity/anti-affinity rules for your hypervisor cluster in the __'Rules'_ section.
 
+#### Interpreting the displayed consumption data
+
+<img src={iaas_vmware_cluster_provisioned_memory} />
+
+**Provisioned Memory (Cluster):** This graph represents the total amount of memory provisioned for the cluster. You can modify the amount of memory provisioned for the cluster via a command.
+
+<img src={iaas_vmware_cluster_used_memory} />
+
+**Consumed Memory (Cluster):** This view displays the memory actively consumed solely by the virtual machines in the cluster. This corresponds to the physical memory actually used by the VMs for their operations, which is a key indicator of the current workload.
+
+<img src={iaas_vmware_cluster_worst_case_allocation_memory} />
+
+**Worst Case Allocation (Cluster):** This graph illustrates the memory that would be required if all the virtual machines in the cluster were to simultaneously consume all of the memory allocated to them (the worst-case consumption scenario). This helps anticipate critical resource needs and prevent memory exhaustion.
+
+<img src={iaas_vmware_esx_memory} />
+
+**Consumed Memory (ESX):** Unlike the cluster graphs, this one shows the total memory consumed on a specific ESX host. This includes not only the memory used by the virtual machines hosted on this host, but also the memory consumed by the hypervisor system itself (ESXi overhead).
+
 ### Managing VM Affinity
 
 __Affinity and anti-affinity rules__ allow you to control the placement of virtual machines across your hypervisors.  
