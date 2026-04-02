@@ -309,6 +309,24 @@ Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
 - Le nombre de machines virtuelles,
 - Le nombre d'hyperviseurs.
 
+#### Interpréter les données de consommation affichées
+
+<img src={iaasVmwareClusterProvisionedMemory} />
+
+**Mémoire allouée (Cluster) :** Ce graphique représente la quantité totale de mémoire allouée au cluster.
+
+<img src={iaasVmwareClusterUsedMemory} />
+
+**Mémoire consommée (Cluster) :** Cette vue affiche la mémoire activement consommée uniquement par les machines virtuelles du cluster. Cela correspond à la mémoire physique réellement utilisée par les VMs pour leurs opérations, ce qui est un indicateur clé de la charge de travail actuelle.
+
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
+
+**Allocation dans le pire des cas (Cluster) :** Ce graphique illustre la mémoire qui serait requise si toutes les machines virtuelles du cluster venaient à consommer simultanément la totalité de la mémoire qui leur a été allouée (le scénario de consommation maximale). Le résultat intègre également la mémoire nécessaire au fonctionnement du cluster ainsi que différents paramètres propres à VMware (le calcul n'est pas simplement égal à la somme de la RAM de toutes les machines virtuelles). Cela permet d'anticiper les besoins en ressources critiques et de prévenir l'épuisement de la mémoire.
+
+<img src={iaasVmwareEsxMemory} />
+
+**Mémoire consommée (ESX) :** Contrairement aux graphiques du cluster, celui-ci montre l'ensemble de la mémoire consommée sur un hôte ESX spécifique. Cela inclut non seulement la mémoire utilisée par les machines virtuelles hébergées sur cet hôte, mais également la mémoire consommée par le système de l'hyperviseur lui-même (overhead de l'ESXi).
+
 <!-- TODO: Add missing page. -->
 <!-- En consultant la page d'un cluster, plusieurs onglets sont disponibles. L'onglet __'Règles'__ vous permet de définir les [règles d'affinité / anti-affinité](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
 
@@ -357,24 +375,6 @@ Nous vous laissons donc mettre en œuvre votre gestion du changement et applique
 <!-- - *Il est nécessaire d'avoir [les permissions adéquates](../console/permissions.md) pour effectuer les différentes actions.* -->
 
 Vous voyez aussi l'ensemble des règles d'affinité/anti-affinité pour votre cluster d'hyperviseurs dans la partie __'Règles'__.
-
-#### Interpréter les données de consommation affichées
-
-<img src={iaasVmwareClusterProvisionedMemory} />
-
-**Mémoire allouée (Cluster) :** Représente la quantité totale de mémoire allouée au cluster. Vous pouvez modifier la quantité de mémoire provisionnée pour le cluster via une commande.
-
-<img src={iaasVmwareClusterUsedMemory} />
-
-**Mémoire consommée (Cluster) :** Affiche la mémoire activement consommée uniquement par les machines virtuelles du cluster. Cela correspond à la mémoire physique réellement utilisée par les VMs pour leurs opérations, ce qui est un indicateur clé de la charge de travail actuelle.
-
-<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
-
-**Allocation dans le pire des cas (Cluster) :** Illustre la mémoire qui serait requise si toutes les machines virtuelles du cluster venaient à consommer la totalité de la mémoire qui leur a été allouée simultanément (le pire scénario de consommation). Cela aide à anticiper les besoins en ressources critiques et à prévenir l'épuisement de la mémoire.
-
-<img src={iaasVmwareEsxMemory} />
-
-**Mémoire consommée (ESX) :** Contrairement aux graphiques du cluster, celui-ci montre l'ensemble de la mémoire consommée sur un hôte ESX spécifique. Cela inclut non seulement la mémoire utilisée par les machines virtuelles hébergées sur cet hôte, mais également la mémoire consommée par le système de l'hyperviseur lui-même (overhead de l'ESXi).
 
 ### Gestion de l'affinité de vos machines virtuelles
 

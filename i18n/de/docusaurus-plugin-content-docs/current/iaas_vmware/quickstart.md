@@ -308,6 +308,24 @@ Wenn Sie auf einen Cluster klicken, sehen Sie eine Zusammenfassung seiner Zusamm
 - Anzahl der virtuellen Maschinen,
 - Anzahl der Hypervisoren.
 
+#### Interpréter les données de consommation affichées
+
+<img src={iaasVmwareClusterProvisionedMemory} />
+
+**Zugewiesener Speicher (Cluster):** Dieses Diagramm zeigt die Gesamtmenge des Speichers, der dem Cluster zugewiesen ist.
+
+<img src={iaasVmwareClusterUsedMemory} />
+
+**Verbrauchter Speicher (Cluster):** Diese Ansicht zeigt den Speicher, der aktiv und ausschließlich von den virtuellen Maschinen des Clusters verbraucht wird. Dies entspricht dem physischen Speicher, der tatsächlich von den VMs für ihre Operationen genutzt wird, was ein wichtiger Indikator für die aktuelle Arbeitslast ist.
+
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
+
+**Zuteilung im schlimmsten Fall (Cluster):** Dieses Diagramm veranschaulicht den Speicher, der erforderlich wäre, wenn alle virtuellen Maschinen des Clusters gleichzeitig den gesamten ihnen zugewiesenen Speicher verbrauchen würden (das Worst-Case-Szenario für den Verbrauch). Das Ergebnis umfasst auch den für den Betrieb des Clusters erforderlichen Speicher sowie verschiedene VMware-spezifische Parameter (die Berechnung ist nicht einfach die Summe des RAMs aller virtuellen Maschinen). Dies hilft dabei, den Bedarf an kritischen Ressourcen vorherzusehen und eine Erschöpfung des Speichers zu verhindern.
+
+<img src={iaasVmwareEsxMemory} />
+
+**Verbrauchter Speicher (ESX):** Im Gegensatz zu den Cluster-Diagrammen zeigt dieses Diagramm den gesamten Speicherverbrauch auf einem bestimmten ESX-Host. Dies schließt nicht nur den Speicher ein, der von den auf diesem Host gehosteten virtuellen Maschinen verwendet wird, sondern auch den Speicher, der vom Hypervisor-System selbst verbraucht wird (ESXi-Overhead).
+
 <!-- TODO: Add missing page. -->
 <!-- Bei der Betrachtung einer Cluster-Seite sind mehrere Tabs verfügbar. Der Tab __'Regeln'__ ermöglicht die Definition von [Affinitäts- / Anti-Affinitätsregeln](compute.md#verwaltung-der-affinitaet-ihrer-virtuellen-maschinen) -->
 
@@ -356,24 +374,6 @@ Daher überlassen wir Ihnen die Umsetzung Ihrer Änderungsmanagement-Prozesse un
 <!-- - *Für die Durchführung der verschiedenen Aktionen sind die entsprechenden Berechtigungen erforderlich [siehe hier](../console/permissions.md).* -->
 
 Sie sehen auch alle Affinitäts- und Anti-Affinitätsregeln für Ihren Hypervisor-Cluster im Bereich __'Regeln'__.
-
-#### Interpretation der angezeigten Verbrauchsdaten
-
-<img src={iaasVmwareClusterProvisionedMemory} />
-
-**Zugewiesener Speicher (Cluster):** Dieses Diagramm zeigt die Gesamtmenge des Speichers, der dem Cluster zugewiesen ist.
-
-<img src={iaasVmwareClusterUsedMemory} />
-
-**Verbrauchter Speicher (Cluster):** Diese Ansicht zeigt den Speicher, der aktiv und ausschließlich von den virtuellen Maschinen des Clusters verbraucht wird. Dies entspricht dem physischen Speicher, der tatsächlich von den VMs für ihre Operationen genutzt wird, was ein wichtiger Indikator für die aktuelle Arbeitslast ist.
-
-<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
-
-**Zuteilung im schlimmsten Fall (Cluster):** Dieses Diagramm veranschaulicht den Speicher, der erforderlich wäre, wenn alle virtuellen Maschinen des Clusters gleichzeitig den gesamten ihnen zugewiesenen Speicher verbrauchen würden (das Worst-Case-Szenario für den Verbrauch). Dies hilft dabei, den Bedarf an kritischen Ressourcen vorherzusehen und eine Erschöpfung des Speichers zu verhindern.
-
-<img src={iaasVmwareEsxMemory} />
-
-**Verbrauchter Speicher (ESX):** Im Gegensatz zu den Cluster-Diagrammen zeigt dieses Diagramm den gesamten Speicherverbrauch auf einem bestimmten ESX-Host. Dies schließt nicht nur den Speicher ein, der von den auf diesem Host gehosteten virtuellen Maschinen verwendet wird, sondern auch den Speicher, der vom Hypervisor-System selbst verbraucht wird (ESXi-Overhead).
 
 ### VM Affinity Management
 
