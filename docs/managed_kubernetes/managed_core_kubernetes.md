@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble Managed Core Kubernetes
 ---
 
 # Managed Core Kubernetes
