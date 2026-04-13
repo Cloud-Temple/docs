@@ -304,8 +304,8 @@ Si hace clic en un cluster, verá un resumen de su composición:
 - El número de máquinas virtuales,
 - El número de hipervisores.
 
-<!-- TODO: Add missing page. -->
-<!-- Al consultar la página de un cluster, están disponibles varias pestañas. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
+{/* TODO: Add missing page. */}
+{/* Al consultar la página de un cluster, están disponibles varias pestañas. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) */}
 
 <img src={shivaCpool_004} />
 
@@ -349,8 +349,8 @@ Por ello, le dejamos gestionar su cambio y aplicar las nuevas versiones en el mo
 
 - El proceso de actualización es completamente automatizado. Debe disponer de al menos dos hipervisores en su cluster para permitir una actualización sin interrupción del servicio.
 
-<!-- TODO: Add missing page. -->
-<!-- - *Es necesario contar con los permisos adecuados* [permisos adecuados](../console/permissions.md) para realizar las distintas acciones. -->
+{/* TODO: Add missing page. */}
+{/* - *Es necesario contar con los permisos adecuados* [permisos adecuados](../console/permissions.md) para realizar las distintas acciones. */}
 
 También puede ver todas las reglas de afinidad/anti-afinidad para su cluster de hipervisores en la sección __'Reglas'__.
 

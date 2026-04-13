@@ -98,11 +98,9 @@ Die nachfolgend verwendeten Ausdrücke im vorliegenden Servicevertrag werden gem
 
 - **Service OpenIaaS:** Bezeichnet den IaaS-Service, der auf Open-Source-Technologie basiert, der derzeit SecNumCloud-zertifizierung unterzogen wird, und dem Auftraggeber vom Dienstleister über technische Infrastrukturen bereitgestellt wird, die vom Dienstleister betreut werden, wie in der „Beschreibung des Services“ dieses Servicevertrags beschrieben.
 
-<!-- -->
 
 - **Schaden:** Bezeichnet ein schwerwiegendes Ereignis, das durch natürliche oder menschliche Ursache, zufällig oder vorsätzlich verursacht wurde und erhebliche Verluste und Schäden für die betroffene Partei verursacht.
 
-<!-- -->
 
 - **Überwachung:** Überwachung eines Informationssystems oder eines Services, die die Erfassung verschiedener Daten wie Messwerte und Alarme beinhaltet. Diese Tätigkeit beschränkt sich auf Beobachtung und Verfolgung, ohne direkt in die überwachten Elemente eingreifen zu können – eine Befugnis, die den Administrationsaufgaben vorbehalten ist.
 

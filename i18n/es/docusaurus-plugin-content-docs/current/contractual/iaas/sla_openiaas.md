@@ -98,11 +98,9 @@ Las expresiones siguientes utilizadas en el presente Acuerdo de Servicio se inte
 
 - **Servicio OpenIaaS:** Designa el servicio IaaS basado en tecnología open source, en proceso de calificación SecNumCloud, entregado al COMITENTE por el Prestador desde infraestructuras técnicas mantenidas por el Prestador, tal como se describe en la sección « Descripción del Servicio » del presente Acuerdo de Servicio.
 
-<!-- -->
 
 - **Siniestro:** Designa un evento grave de origen natural o humano, accidental o intencional, que causa pérdidas y daños importantes para la Parte afectada.
 
-<!-- -->
 
 - **Supervisión:** Vigilancia de un Sistema de Información o de un Servicio, que implica la recopilación de diversos datos tales como mediciones y alarmas. Esta actividad se limita a la observación y seguimiento, sin intervenir directamente sobre los elementos supervisados, una prerrogativa que corresponde a las operaciones de Administración.
 
