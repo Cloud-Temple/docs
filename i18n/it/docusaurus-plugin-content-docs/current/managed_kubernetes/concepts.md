@@ -2,10 +2,10 @@
 title: Concetti
 ---
 
-import cillium from './images/cillium.png'
-import grafana from './images/grafana.png'
-import archi_overview from './images/archi_overview.png'
-import archi_overview_1az from './images/archi_overview_1az.png'
+import cillium from '@site/docs/managed_kubernetes/images/cillium.png'
+import grafana from '@site/docs/managed_kubernetes/images/grafana.png'
+import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
+import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 
 ## Presentazione di Managed Kubernetes
 

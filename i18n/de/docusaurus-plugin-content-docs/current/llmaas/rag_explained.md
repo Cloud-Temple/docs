@@ -15,12 +15,13 @@ Ein großes Sprachmodell (LLM) wie Mistral oder Granite ist sehr leistungsstark,
 **RAG** ist eine Technik, die dem LLM ein „externes Gedächtnis“ verleiht, indem sie ihm bei der Fragestellung die relevantesten Dokumentenauszüge liefert, um ihm bei der Formulierung der Antwort zu helfen.
 
 Der Prozess erfolgt in zwei Schritten:
+
 1. **Retrieval (Abruf)**: Die richtigen Dokumente finden.
 2. **Augmented Generation (Erweiterte Generierung)**: Diese Dokumente zur Generierung einer Antwort nutzen.
 
 Dieser **Retrieval**-Schritt steht im Mittelpunkt unseres Themas. Wie gelingt es einem Computer, „zu verstehen“, dass eine Frage und ein Absatz dasselbe behandeln? Die Magie geschieht durch **Vektoren**.
 
-![Konzeptdiagramm des RAG](./images/rag_concept_overview.png)
+![Konzeptdiagramm des RAG](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ## Schritt 1: Das Embedding: Wörter in Zahlen umwandeln
 
@@ -32,7 +33,7 @@ Im einfachsten Sinne ist ein Vektor eine Liste von Zahlen, die einen Punkt in ei
 
 `"Le chat est sur le tapis."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Beispiel eines Embedding-Vektors](./images/embedding_vector_example.png)
+![Beispiel eines Embedding-Vektors](@site/docs/llmaas/images/embedding_vector_example.png)
 
 Dieser Vektor ist nicht zufällig. Er stellt die „Position“ des Textes in einem mehrdimensionalen semantischen Raum dar. Texte mit ähnlicher Bedeutung haben Vektoren, die in ähnliche Richtungen zeigen.
 
@@ -61,10 +62,10 @@ Die Benchmarks unten zeigen zwei entscheidende Vorteile:
 -   **Genauigkeit der Suche**: Das erste Diagramm zeigt, dass die Granite-Modelle (blau) auf semantischen Suchaufgaben (`Retrieval Tasks`) sehr wettbewerbsfähig, manchmal sogar überlegen sind, im Vergleich zu Modellen ähnlicher Größe.
 -   **Inferengeschwindigkeit**: Das zweite Diagramm zeigt, dass die Granite-Modelle **deutlich schneller** sind (geringerer Zeitbedarf pro Anfrage) als die meisten populären Alternativen, was ein großes Plus für Anwendungen ist, die Echtzeitantworten erfordern.
 
-![Leistungsbenchmark der Granite-Modelle](./images/granite_benchmark_performance.png)
+![Leistungsbenchmark der Granite-Modelle](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Vergleich der Leistungsfähigkeit bei Suchaufgaben (BEIR) und Code-Suche (CoIR).*
 
-![Geschwindigkeitsbenchmark der Granite-Modelle](./images/granite_benchmark_speed.png)
+![Geschwindigkeitsbenchmark der Granite-Modelle](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Vergleich der Latenz (Zeit pro Anfrage in Sekunden) zwischen verschiedenen Embedding-Modellen.*
 
 Aus diesem Gleichgewicht zwischen **Leistung, Geschwindigkeit, rechtlicher Sicherheit und Ethik** haben wir uns dafür entschieden, das Modell `granite-embedding:278m` (die leistungsstärkste multilinguale Version) als Standard-Embedding-Dienst zu integrieren.
@@ -82,15 +83,17 @@ Es gibt mehrere Möglichkeiten, diese "Nähe" zu messen. Unser Skript verwendet 
 -   **Warum wird sie so häufig verwendet ?** Für Texte ist die **semantische Richtung** viel wichtiger als die **Magnitude** (die Länge) des Vektors. Die Kosinus-Ähnlichkeit ignoriert die Magnitude und konzentriert sich ausschließlich auf die Richtung.
 
 **Einfaches Beispiel in 2D :**
+
 -   Frage : `v_q = [2, 2]`
 -   Dokument A : `v_a = [4, 4]` (gleiche Richtung, länger)
 -   Dokument B : `v_b = [-2, 2]` (andere Richtung)
 
 Die Berechnung der Kosinus-Ähnlichkeit ergibt:
+
 -   `cos(v_q, v_a) = 1,0` → Winkel von 0°. Perfekte Ähnlichkeit.
 -   `cos(v_q, v_b) = 0,0` → Winkel von 90°. Keine Ähnlichkeit.
 
-![Illustration der Kosinus-Ähnlichkeit](./images/cosine_similarity_concept.png)
+![Illustration der Kosinus-Ähnlichkeit](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 Das ist das Ergebnis, das wir wollen: Dokument A ist semantisch identisch mit der Frage, auch wenn seine Formulierung länger ist.
 
@@ -100,7 +103,7 @@ Das ist das Ergebnis, das wir wollen: Dokument A ist semantisch identisch mit de
 -   **Score** : Ein Score von 0 bedeutet, dass die Vektoren identisch sind. Je höher der Score, desto weiter entfernt sind sie.
 -   **Nachteil bei Texten** : Sie ist empfindlich gegenüber der Magnitude. In unserem Beispiel oben wäre die Distanz zwischen `v_q` und `v_a` nicht null, da die Vektoren nicht die gleiche Länge haben, auch wenn sie die gleiche Richtung haben.
 
-![Illustration der euklidischen Distanz](./images/euclidean_distance_concept.png)
+![Illustration der euklidischen Distanz](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ## Fazit
 

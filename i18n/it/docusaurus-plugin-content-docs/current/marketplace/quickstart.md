@@ -1,8 +1,8 @@
 ---
 title: Guida introduttiva
 ---
-import marketplaceCatalog from './images/marketplace_catalog.png'
-import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
+import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
+import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
 # Guida rapida per la Marketplace Cloud Temple
 

@@ -9,7 +9,7 @@ Il prodotto **KubeCost**, sebbene ancora funzionale sul tuo cluster, viene progr
 Ti invitiamo a iniziare a utilizzare OpenCost per beneficiare delle ultime funzionalità e di una migliore integrazione.
 :::
 
-import kubecostsallocations from './images/kubecostsallocations.png'
+import kubecostsallocations from '@site/docs/managed_kubernetes/tutorials/images/kubecostsallocations.png'
 
 ## Obiettivi
 
