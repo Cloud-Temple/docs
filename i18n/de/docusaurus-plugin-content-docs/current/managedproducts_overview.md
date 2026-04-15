@@ -1,43 +1,43 @@
 ---
-title: Vue d'ensemble des offres de produits managés
+title: Übersicht der verwalteten Produktangebote
 ---
 
-## Qu'est ce qu'un produit managé ?
+## Was ist ein verwaltetes Produkt?
 
-Les produits managés chez Cloud Temple sont des services cloud entièrement gérés par le fournisseur, permettant aux clients de se concentrer sur leurs applications sans gérer l'infrastructure sous-jacente.
+Verwaltete Produkte bei Cloud Temple sind Cloud-Dienste, die vollständig vom Anbieter betrieben werden, sodass sich Kunden auf ihre Anwendungen konzentrieren können, ohne die zugrunde liegende Infrastruktur verwalten zu müssen.
 
-Ces produits incluent des solutions comme le Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall ou encore Managed SOC, où Cloud Temple assure la configuration, la surveillance, la maintenance et la scalabilité.
+Diese Produkte umfassen Lösungen wie Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall oder Managed SOC, bei denen Cloud Temple die Konfiguration, Überwachung, Wartung und Skalierbarkeit übernimmt.
 
-Ils s'appuient sur une infrastructure souveraine qualifiée SecNumCloud, avec haute disponibilité (multi-AZ), automatisation et support SLA.
+Sie basieren auf einer souveränen SecNumCloud-qualifizierten Infrastruktur mit Hochverfügbarkeit (Multi-AZ), Automatisierung und SLA-gestütztem Support.
 
-**Avantages clés**
+**Wesentliche Vorteile**
 
-- Libération des opérations : Cloud Temple gère le control plane, les backups, la sécurité et les mises à jour, simplifiant l'orchestration pour vos déploiements.
+- Betriebliche Entlastung: Cloud Temple verwaltet die Control Plane, Backups, Sicherheit und Updates und vereinfacht so die Orchestrierung Ihrer Deployments.
 
-- Des standards du marché : des produits simples, reconnus, éprouvés et open-source.
+- Industriestandards: einfache, bewährte, getestete und Open-Source-Produkte.
 
-## Notre portefeuille de produits managés
+## Unser Portfolio an verwalteten Produkten
 
-### Bases de données managées
+### Verwaltete Datenbanken
 
-- **Managed MariaDB (on Kubernetes)** : une solution de moteur de bases de données MariaDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_mariadb)
+- **Managed MariaDB (on Kubernetes)**: Eine MariaDB-Datenbanklösung, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. [Zur Produktseite](./managed_mariadb)
 
-- **Managed PostgreSQL (on Kubernetes)** : une solution de moteur de bases de données PostgreSQL qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_postgresql).
+- **Managed PostgreSQL (on Kubernetes)**: Eine PostgreSQL-Datenbanklösung, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. [Zur Produktseite](./managed_postgresql).
 
-- **Managed MongoDB (on Kubernetes)** : une solution de moteur de bases de données MongoDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Managed MongoDB (on Kubernetes)**: Eine MongoDB-Datenbanklösung, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. (Dokumentation in Erstellung)
 
-### Produits pour la data
+### Datenprodukte
 
-- **Managed Kafka (on Kubernetes)** : Une solution Apache Kafka, avec schema registry qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Managed Kafka (on Kubernetes)**: Eine Apache-Kafka-Lösung mit Schema-Registry, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. (Dokumentation in Erstellung)
 
-- **Managed Airflow** : *arrive prochainement !*
+- **Managed Airflow**: *demnächst verfügbar!*
 
-- **Managed Superset** : *arrive prochainement !*
+- **Managed Superset**: *demnächst verfügbar!*
 
-### Produits pour la sécurité
+### Sicherheitsprodukte
 
-- **Managed KMS** : *arrive prochainement !*
+- **Managed KMS**: *demnächst verfügbar!*
 
-- **Managed SIEM** : *arrive prochainement !*
+- **Managed SIEM**: *demnächst verfügbar!*
 
 ---
