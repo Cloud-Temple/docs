@@ -164,11 +164,12 @@ La console d'une machine virtuelle est accessible depuis la liste des machines v
 
 <img src={shivaCpool_010} />
 
-Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de votre machine, basée sur un client **VNC** :
+Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de votre machine, basée sur un client __VNC__ :
 
 <img src={shivaCpool_011} />
 
-Il est possible dans le menu **VNC** :
+Il est possible dans le menu __VNC__ :
+
 - de demander l'envoi de touches particulières,
 - de forcer un mapping de clavier (dans le cas où nous n'avons pas pu identifier correctement votre clavier),
 - d'ouvrir un champs texte transmissible à la machine. Cette méthode remplace l'ancien presse-papier non fonctionnel,
@@ -178,6 +179,7 @@ __Note__ :
 Le scaling de la fenêtre est automatique.
 
 #### Support dispositions clavier
+
 La saisie effectuée dans la console dépend du langage du clavier de votre navigateur web, du langage du clavier de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran. Voici une synthèse des situations possibles :
 
 | Langue du clavier de la machine physique (entrée) | Langue du clavier de la machine virtuelle | Option 'enforce keyboard' sélectionnée | Resultat (sortie)        |
@@ -192,9 +194,11 @@ La saisie effectuée dans la console dépend du langage du clavier de votre navi
 | Anglais                                           | Anglais                                   | Oui                                    | Non conseillé            |
 
 __Note__ :
+
 - Si certains caractères ne passent pas à la saisie manuelle, vous pouvez essayer via le clipboard.
 
 #### Fonctionnement du presse-papier
+
 Cette fonctionnalité vous permet d'envoyer toute une chaine de caractères vers votre machine virtuelle. Il est important de noter que la touche "enforce keyboard" influe sur la façon dont cette chaine de caractères
 sera transmise à votre machine virtuelle. Si vous constatez lors de la saisie dans la console que l'option "enforce keyboard" est nécessaire, pensez à l'activer avant d'utiliser le presse-papier.  
 Cette fonctionnalité peut être utilisée pour l'envoie d'un mot de passe, d'une commande, ou d'un contenu de fichier de configuration par exemple :
@@ -305,8 +309,8 @@ Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
 - Le nombre de machines virtuelles,
 - Le nombre d'hyperviseurs.
 
-{/* TODO: Add missing page. */}
-{/* En consultant la page - voir TODO ci-dessus */}
+{/*TODO: Add missing page. */}
+{/* En consultant la page - voir TODO ci-dessus*/}
 
 <img src={shivaCpool_004} />
 
@@ -337,7 +341,7 @@ Plusieurs actions sont possibles depsuis l'onglet __'Hosts'__ :
 
 <img src={shivaCpool_008Build} />
 
-2. La mise à jour du firmware de votre lame de calcul (bios et firmware cartes filles):
+1. La mise à jour du firmware de votre lame de calcul (bios et firmware cartes filles):
 
 <img src={shivaCpool_008Firm} />
 
@@ -349,8 +353,8 @@ Cependant, __nous ne mettons pas de nous même à jour vos hyperviseurs__. Cloud
 Nous vous laissons donc mettre en œuvre votre gestion du changement et appliquer au meilleur moment les nouveaux builds.*
 - *Le processus de mise à jour est entièrement automatisé. Vous devez disposer d'au moins deux hyperviseurs dans votre cluster pour permettre une mise à jour sans interruption de service.*
 
-{/* TODO: Add missing page. */}
-{/* - *Il est nécessaire d'avoir les permissions adéquates pour effectuer les différentes actions.* */}
+{/*TODO: Add missing page. */}
+{/* -*Il est nécessaire d'avoir les permissions adéquates pour effectuer les différentes actions.**/}
 
 Vous voyez aussi l'ensemble des règles d'affinité/anti-affinité pour votre cluster d'hyperviseurs dans la partie __'Règles'__.
 

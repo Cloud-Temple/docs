@@ -16,8 +16,8 @@ Pour synchroniser le contenu du dossier local `./mon-site` vers le bucket `demo-
 
 ### Options utiles
 
-*   `--overwrite` : Force le remplacement des fichiers existants sur la destination, même s'ils sont plus récents.
-*   `--remove` : Supprime les fichiers de la destination qui n'existent plus dans le dossier source. **À utiliser avec prudence**, car cela peut entraîner une perte de données irréversible.
+* `--overwrite` : Force le remplacement des fichiers existants sur la destination, même s'ils sont plus récents.
+* `--remove` : Supprime les fichiers de la destination qui n'existent plus dans le dossier source. **À utiliser avec prudence**, car cela peut entraîner une perte de données irréversible.
 
 ```bash
 # Synchronisation complète avec suppression des fichiers distants obsolètes

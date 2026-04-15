@@ -11,7 +11,7 @@ Assicurati di utilizzare una **versione recente di Rclone** per garantire la com
 ## Prerequisiti
 
 - Un account di archiviazione S3 Cloud Temple con le chiavi di accesso (Access Key e Secret Key).
-- L'endpoint S3 del tuo account (disponibile nella [console Cloud Temple](../../console/console.md)).
+- L'endpoint S3 del tuo account (disponibile nella [console Cloud Temple](../../../console/console.md)).
 
 ## Installazione di Rclone
 

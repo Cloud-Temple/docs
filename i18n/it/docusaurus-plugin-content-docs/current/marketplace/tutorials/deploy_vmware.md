@@ -22,6 +22,7 @@ Dalla pagina di dettaglio di una soluzione compatibile con VMware, seleziona l'a
 ### 2. Configurazione della macchina virtuale
 
 Configurate i parametri di base della vostra macchina virtuale:
+
 - **Nome** della VM
 - **Risorse** (CPU, RAM)
 - **Archiviazione**
@@ -42,5 +43,6 @@ Il provisioning viene solitamente completato in meno di 10 minuti, in base alle 
 ## Deployment tracking
 
 Once the deployment is started:
+
 - Monitor the progress from the VMware console
 - The VM will appear in your vSphere inventory

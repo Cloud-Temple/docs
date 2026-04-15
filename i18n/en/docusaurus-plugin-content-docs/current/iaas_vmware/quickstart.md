@@ -163,11 +163,12 @@ The console of a virtual machine is accessible from the list of virtual machines
 
 <img src={shivaCpool_010} />
 
-A new tab opens in your browser, displaying the console of your machine, based on a **VNC** client:
+A new tab opens in your browser, displaying the console of your machine, based on a __VNC__ client:
 
 <img src={shivaCpool_011} />
 
-In the **VNC** menu, you can:
+In the __VNC__ menu, you can:
+
 - request the transmission of specific keys,
 - force a keyboard mapping (in case we were unable to correctly identify your keyboard),
 - open a text field that can be sent to the machine. This method replaces the previous non-functional clipboard,
@@ -192,9 +193,11 @@ The input entered in the console depends on the keyboard language of your web br
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you may try using the clipboard.
 
 #### Clipboard Functionality
+
 This feature allows you to send an entire string of characters to your virtual machine. It is important to note that the "enforce keyboard" option affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is required, make sure to enable it before using the clipboard.  
 This functionality can be used to send a password, a command, or the content of a configuration file, for example:
 
@@ -304,12 +307,12 @@ When you click on a cluster, you see a summary of its composition:
 - Number of virtual machines,
 - Number of hypervisors.
 
-{/* TODO: Add missing page. */}
-{/* When viewing a cluster's page, several tabs are available. The __'Rules'_ tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines) */}
+{/*TODO: Add missing page. */}
+{/* When viewing a cluster's page, several tabs are available. The _*'Rules'*tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines)*/}
 
 <img src={shivaCpool_004} />
 
-In the __'Hosts'_ tab, you see the following information for each hypervisor:
+In the _*'Hosts'* tab, you see the following information for each hypervisor:
 
 - CPU and Memory usage,
 - Number of assigned virtual machines,
@@ -319,9 +322,9 @@ In the __'Hosts'_ tab, you see the following information for each hypervisor:
 
 <img src={shivaCpool_005} />
 
-Several actions are available from the __'Hosts'_ tab:
+Several actions are available from the _*'Hosts'* tab:
 
-- Request new hypervisors using the __'Add Host'_ button:
+- Request new hypervisors using the _*'Add Host'* button:
 
 <img src={shivaCpool_009} />
 
@@ -336,7 +339,7 @@ Several actions are available from the __'Hosts'_ tab:
 
 <img src={shivaCpool_008Build} />
 
-2. Firmware update for your compute node (BIOS and daughter card firmware):
+1. Firmware update for your compute node (BIOS and daughter card firmware):
 
 <img src={shivaCpool_008Firm} />
 
@@ -348,10 +351,10 @@ However, __we do not automatically update your hypervisors__. Cloud Temple does 
 Therefore, we leave it to you to manage your change process and apply new builds at the most appropriate time.
 - The update process is fully automated. You must have at least two hypervisors in your cluster to ensure uninterrupted service during updates.
 
-{/* TODO: Add missing page. */}
-{/* - *You must have the appropriate [permissions](../console/permissions.md) to perform these actions.* */}
+{/*TODO: Add missing page. */}
+{/* -*You must have the appropriate [permissions](../console/permissions.md) to perform these actions.**/}
 
-You can also view all affinity/anti-affinity rules for your hypervisor cluster in the __'Rules'_ section.
+You can also view all affinity/anti-affinity rules for your hypervisor cluster in the _*'Rules'* section.
 
 ### Managing VM Affinity
 
@@ -394,15 +397,15 @@ Creating a new backup policy is done through a __service request__ specifying:
 
 ### Assign a Backup Policy to a Virtual Machine
 
-When an SLA is assigned to a virtual machine (VM), all disks associated with that VM automatically inherit the same SLA. Subsequently, you can manually trigger a backup execution via the **Backup Policies** tab. If no manual launch is performed, the backup will run automatically according to the schedule defined by the SLA.
+When an SLA is assigned to a virtual machine (VM), all disks associated with that VM automatically inherit the same SLA. Subsequently, you can manually trigger a backup execution via the __Backup Policies__ tab. If no manual launch is performed, the backup will run automatically according to the schedule defined by the SLA.
 
 SecNumCloud requires that a backup policy be assigned to a virtual machine before it is started. Otherwise, you will receive the following notification:
 
 <img src={shivaVmPolitiquesBackupAssignMandatory} />
 
-Click on the **Backup Policies** tab in your virtual machine's menu. You can view the backup policy or policies assigned to this VM here.
+Click on the __Backup Policies__ tab in your virtual machine's menu. You can view the backup policy or policies assigned to this VM here.
 
-To assign a new backup policy to the virtual machine, click the **Add Policy** button and select the desired backup policy.
+To assign a new backup policy to the virtual machine, click the __Add Policy__ button and select the desired backup policy.
 
 <img src={shivaVmPolitiquesBackup} />
 
@@ -446,7 +449,7 @@ First, verify that the affected jobs are indeed in the "Held" state. Once confir
 
 A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not yet been deleted. In this scenario, the job identifiers will be preserved. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
 
-> **Note:** For any clarification regarding this situation, please contact Cloud Temple support.
+> __Note:__ For any clarification regarding this situation, please contact Cloud Temple support.
 
 The Cloud Temple console prevents assigning a virtual machine to a suspended policy:
 

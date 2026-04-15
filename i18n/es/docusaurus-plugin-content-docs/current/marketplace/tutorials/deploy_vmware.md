@@ -22,6 +22,7 @@ Desde la página de detalles de una solución compatible con VMware, seleccione 
 ### 2. Configuración de la máquina virtual
 
 Configure los parámetros básicos de su máquina virtual:
+
 - **Nombre** de la VM
 - **Recursos** (CPU, RAM)
 - **Almacenamiento**
@@ -42,5 +43,6 @@ También puede acceder directamente a las plantillas de Marketplace desde la int
 ## Deployment tracking
 
 Once the deployment is initiated:
+
 - Monitor the progress from the VMware console
 - The VM will appear in your vSphere inventory

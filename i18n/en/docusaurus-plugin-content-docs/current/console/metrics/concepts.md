@@ -51,7 +51,7 @@ These alerts are clickable and redirect to the corresponding product page.
 
 ### VMware Metrics - Overview
 
-In the **'VMware'** menu, a dedicated dashboard is available under the **'Metrics'** submenu. It includes 4 tabs:
+In the __'VMware'__ menu, a dedicated dashboard is available under the __'Metrics'__ submenu. It includes 4 tabs:
 
 #### Overview
 
@@ -61,9 +61,9 @@ On this tab, you'll find some of the metrics already present in the global dashb
 
 #### Calculation
 
-On this tab, you'll find the number of **AZs**, **Clusters**, **ESXs**, **carbon emissions**, **power consumption estimates**, as well as 7 visual graphs providing a clear, graphical overview of your VMware environment. The power consumption estimate in kWh is calculated based on the average of readings covering the selected period, normalized to a per-hour basis.
+On this tab, you'll find the number of __AZs__, __Clusters__, __ESXs__, __carbon emissions__, __power consumption estimates__, as well as 7 visual graphs providing a clear, graphical overview of your VMware environment. The power consumption estimate in kWh is calculated based on the average of readings covering the selected period, normalized to a per-hour basis.
 
-You can select the date range to analyze, as well as the data grouping type (by default, data is aggregated across your entire environment). For example, selecting **Host**:
+You can select the date range to analyze, as well as the data grouping type (by default, data is aggregated across your entire environment). For example, selecting __Host__:
 
 <img src={shivaMetric_001} />
 
@@ -74,7 +74,7 @@ When hovering over each graph, resource names and their corresponding values are
 
 #### Storage
 
-Just as on the "Compute" tab, you'll find various pieces of information: the number of **AZs**, **datastore clusters**, **datastores**, as well as two charts. The same filtering principles apply, but here you can group by **Cluster SDRS** and **Datastore**.
+Just as on the "Compute" tab, you'll find various pieces of information: the number of __AZs__, __datastore clusters__, __datastores__, as well as two charts. The same filtering principles apply, but here you can group by __Cluster SDRS__ and __Datastore__.
 
 <img src={shivaMetric_004} />
 
@@ -83,6 +83,7 @@ Just as on the "Compute" tab, you'll find various pieces of information: the num
 Here you can find an overview of the health status of virtual machines.
 
 This summary provides, over the selected time range:
+
 - the number of CPUs and the __average CPU utilization__,
 - the amount of memory in GB and the __average memory usage__,
 - the average __storage access latency__ for both read and write operations,
@@ -100,23 +101,23 @@ This will take you to the page displaying historical data in graphical form, inc
 
 ### VMware Metrics - View by Resource
 
-It is also possible to view a subset of metrics related to VMware, this time more specifically for a given **Host** or **Datastore**.
+It is also possible to view a subset of metrics related to VMware, this time more specifically for a given __Host__ or __Datastore__.
 
 #### Host
 
-In the Host view, you can check the **energy consumption** and the estimated **carbon emissions** for a given period.
+In the Host view, you can check the __energy consumption__ and the estimated __carbon emissions__ for a given period.
 
 <img src={shivaMetric_008} />
 
 #### Datastore
 
-In a Datastore view, you can check the **IOPS** for a given period.
+In a Datastore view, you can check the __IOPS__ for a given period.
 
 <img src={shivaMetric_009} />
 
 ### OpenIaaS Metrics
 
-In the **'OpenIaaS'** menu, a dedicated dashboard is available in the **'Metrics'** submenu. It includes 3 tabs:
+In the __'OpenIaaS'__ menu, a dedicated dashboard is available in the __'Metrics'__ submenu. It includes 3 tabs:
 
 #### Overview
 
@@ -126,9 +127,9 @@ On this tab, you'll find some of the metrics already present in the global dashb
 
 #### Calcul
 
-On this tab, you'll find the number of **AZs**, **Clusters**, **Hosts**, as well as 5 graphs providing a highly visual overview of your OpenIaaS environment.
+On this tab, you'll find the number of __AZs__, __Clusters__, __Hosts__, as well as 5 graphs providing a highly visual overview of your OpenIaaS environment.
 
-You can select the date range to cover, as well as the data grouping type (by default, data is grouped across your entire environment). For example, by choosing **Host**:
+You can select the date range to cover, as well as the data grouping type (by default, data is grouped across your entire environment). For example, by choosing __Host__:
 
 <img src={shivaMetric_011} />
 
@@ -136,7 +137,7 @@ You can select the date range to cover, as well as the data grouping type (by de
 
 #### Storage
 
-Just as on the "Compute" tab, you'll find various information: the number of **AZs**, **Clusters**, **Datastores**, as well as a chart. The same filtering principles apply, but here we can group by **Block Storage**.
+Just as on the "Compute" tab, you'll find various information: the number of __AZs__, __Clusters__, __Datastores__, as well as a chart. The same filtering principles apply, but here we can group by __Block Storage__.
 
 <img src={shivaMetric_013} />
 

@@ -18,7 +18,6 @@ import S3Delete from '@site/docs/storage/oss/images/S3_delete.png'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object storage service based on the Amazon S3 protocol. It enables you to store all types of data, including the most sensitive, in compliance with the highest security standards. You can manage your storage directly from the Cloud Temple console and integrate with numerous existing libraries or CLI clients for programmatic usage.
 
 ## Before You Begin
@@ -98,6 +97,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Browse an S3 Bucket
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     When you click on a bucket's name, you first access the '__Files__' tab to view its contents:
@@ -159,6 +159,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Write a file to a bucket (upload)
+
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
@@ -177,6 +178,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Download a file from a bucket
+
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
@@ -195,6 +197,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Remove a file from a bucket
+
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
@@ -213,6 +216,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Creating a New Storage Account
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     To create a storage account in your tenant, click the '__New Storage Account__' button in the top-right corner under the '__Storage Accounts__' tab:
@@ -232,6 +236,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Creating an S3 bucket
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     To create a new bucket, click the '__New bucket__' button in the top right corner of the screen:
@@ -257,6 +262,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Deleting an S3 Bucket
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     To delete a bucket, go to the actions associated with the bucket and select the __'Delete'__ option.
@@ -278,6 +284,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
 </Tabs>
 
 ## Access Policy Management
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Account associations with buckets and access restriction configurations are performed in the '__Policies__' tab of the bucket.

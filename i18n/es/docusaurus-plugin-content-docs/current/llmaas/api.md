@@ -25,9 +25,9 @@ Authorization: Bearer SU_TOKEN_API
 
 Nuestro sistema de tiers está diseñado como **envolturas completas de servicio** que definen tres aspectos clave de su uso:
 
-1.  **Un Nivel de Acceso (Crédito de Compra)**: Para los Tiers 1 a 4, se trata de una cantidad que debe pagarse de forma anticipada (upfront) para activar el servicio y desbloquear las capacidades técnicas y presupuestarias del nivel elegido.
-2.  **Un Límite de Presupuesto Mensual**: Es el tope de su consumo mensual, asegurándole un control total sobre sus costos.
-3.  **Una Capacidad Técnica**: Son los límites de rendimiento (tokens por día y por hora) que garantizan un rendimiento estable y predecible para su volumen de llamadas.
+1. **Un Nivel de Acceso (Crédito de Compra)**: Para los Tiers 1 a 4, se trata de una cantidad que debe pagarse de forma anticipada (upfront) para activar el servicio y desbloquear las capacidades técnicas y presupuestarias del nivel elegido.
+2. **Un Límite de Presupuesto Mensual**: Es el tope de su consumo mensual, asegurándole un control total sobre sus costos.
+3. **Una Capacidad Técnica**: Son los límites de rendimiento (tokens por día y por hora) que garantizan un rendimiento estable y predecible para su volumen de llamadas.
 
 La elección de un tier, por tanto, representa un equilibrio entre la inversión inicial, el presupuesto mensual previsto y la capacidad técnica requerida. Su consumo dentro de esta envoltura se facturará posteriormente según las tarifas vigentes.
 
@@ -42,11 +42,13 @@ La elección de un tier, por tanto, representa un equilibrio entre la inversión
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
+
 - **Input tokens**: 1.90 € / million
 - **Output tokens (standard)**: 8.00 € / million
 - **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Facturación de audio**
+
 - **Transcripción de audio**: 0,01 € / minuto (cada minuto comenzado está sujeto a cargo)
 
 ### Límites de encabezados
@@ -213,12 +215,14 @@ Después de recibir una respuesta `tool_calls`, usted debe ejecutar la herramien
 Con `"stream": true`, la respuesta llega token por token:
 
 **Encabezados de respuesta:**
+
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
 **Formato de los eventos:**
+
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -230,6 +234,7 @@ data: [DONE]
 ```
 
 **Estructura de los chunks:**
+
 - `choices[].delta.content`: Contenido incremental
 - `finish_reason`: `null` durante el streaming, luego `"stop"`
 - Señal de finalización: `data: [DONE]`
@@ -629,6 +634,7 @@ def stream_chat(message, model="granite3.3:8b"):
 ```
 
 # Uso
+
 stream_chat("Explique la física cuántica")
 
 ### JavaScript/Node.js

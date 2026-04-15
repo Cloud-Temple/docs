@@ -43,6 +43,7 @@ This chart allows you to visualize:
 **Reading the chart for the current month**
 
 For the current month, the chart shows two visual zones:
+
 - The **blue (solid) part** represents the **actual consumption to date**, i.e. resources actually consumed since the beginning of the month,
 - The **orange (hatched) part** represents the **forecast** estimated until the end of the month, calculated based on your current consumption rate.
 

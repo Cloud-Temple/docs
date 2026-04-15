@@ -671,6 +671,7 @@ Any modification to the Service Agreement is subject to acceptance by the **CLIE
 In addition, Cloud Temple undertakes to allow the revision of this Service Agreement (including its termination) without penalty for the CLIENT in the event of loss of SecNumCloud qualification.
 
 The Services do not include a reversibility obligation (i.e., assistance to the CLIENT to enable migration of its system to another "Provider"), except for the provision by the Provider to the CLIENT of the CLIENT interface, allowing the CLIENT to back up and retrieve its data—including configuration data of its information system—through one of the following technical options, at the CLIENT’s discretion:  
+
 - Provision of files in one or more documented and usable formats outside the service provided by the Provider; or  
 - Implementation of technical interfaces enabling access to data according to a documented and usable schema (API).
 

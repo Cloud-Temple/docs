@@ -13,8 +13,9 @@ import vpcMacAddressAssociateModale from '@site/docs/network/vpc/images/vpc_mac_
 This tutorial guides you through connecting a virtual machine to a VPC network and assigning it a static (private) IP address, as well as a public IP address if required.
 
 ## Prerequisites
-*   Have a VPC and a private network created.
-*   Have a VM deployed (Open Source IaaS or VMware).
+
+* Have a VPC and a private network created.
+* Have a VM deployed (Open Source IaaS or VMware).
 
 ## 1. Assigning a Static Private IP Address
 
@@ -24,18 +25,18 @@ You can set the private IP address of your VM in two ways.
 
 This method allows you to configure the network and IP in a single step during interface creation.
 
-1.  Access the detailed view of your virtual machine.
-2.  Go to the **Network Adapters** tab.
-3.  Click the **Add Network Adapter** button to add an interface.
+1. Access the detailed view of your virtual machine.
+2. Go to the **Network Adapters** tab.
+3. Click the **Add Network Adapter** button to add an interface.
 <img src={vpcCreateNetworkAdaptersVm} />
 
-4.  In the modal, select your VPC network.
+4. In the modal, select your VPC network.
 <img src={vpcCreateNetworkAdaptersVmModale} />
 
-5.  Once the network is selected, choose one of the available static IPs.
+5. Once the network is selected, choose one of the available static IPs.
 <img src={vpcCreateNetworkAdaptersVmSelectNetworks} />
 
-6.  Confirm the creation.
+6. Confirm the creation.
 
 > **Note**: You can edit the network adapter later to switch networks if needed.
 
@@ -43,25 +44,25 @@ This method allows you to configure the network and IP in a single step during i
 
 This method is useful for reserving an IP address before creating a VM or for modifying an existing association.
 
-1.  Go to the detailed view of your VPC, tab **Private Networks**.
-2.  Expand the IP address pool of the relevant network.
-3.  Click the "Associate with MAC address" action for an available IP.
-4.  In the modal, associate one of the static IPs with a VM's MAC address.
+1. Go to the detailed view of your VPC, tab **Private Networks**.
+2. Expand the IP address pool of the relevant network.
+3. Click the "Associate with MAC address" action for an available IP.
+4. In the modal, associate one of the static IPs with a VM's MAC address.
 <img src={vpcMacAddressAssociateModale} />
 
 ## 2. Associating a Public IP (Optional)
 
 If you want to make your VM accessible from the internet.
 
-1.  From the detailed view of your VPC, go to the **Public IPs** tab.  
+1. From the detailed view of your VPC, go to the **Public IPs** tab.  
 <img src={vpcDetailIpsPub} />
 
-2.  Click the **Associate a public IP** button.
+2. Click the **Associate a public IP** button.
 
-3.  In the modal, select the target private network and static IP, then confirm the association.  
+3. In the modal, select the target private network and static IP, then confirm the association.  
 <img src={vpcIpPubAssociate} />
 
-4.  Once the association is complete, you can use this public IP address to access your VM.
+4. Once the association is complete, you can use this public IP address to access your VM.
 
 ## Guest OS Configuration
 

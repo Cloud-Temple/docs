@@ -22,6 +22,7 @@ From the detail page of a compatible OpenIaaS solution, select your target envir
 ### 2. Virtual Machine Configuration
 
 Set up the basic parameters of your virtual machine:
+
 - **VM Name**
 - **Resources** (CPU, RAM)
 - **Storage**
@@ -42,5 +43,6 @@ You can also access Marketplace images directly from the **Virtual Machines** pa
 ## Deployment Tracking
 
 Once the deployment is initiated:
+
 - Monitor the progress from the OpenIaaS console
 - The VM will appear in your list of virtual machines

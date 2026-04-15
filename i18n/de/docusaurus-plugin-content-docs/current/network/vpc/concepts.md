@@ -14,16 +14,16 @@ Stand Januar 2026 ermöglichen die privaten Netzwerke des VPC die Interkonnektiv
 
 Cloud Temple offers two network consumption modes:
 
-*   **Private Backbone (Legacy offering)**:
-    *   Ideal for experts seeking maximum autonomy and specific network configurations (extended L2).
-    *   Requires manual installation and management of security equipment (firewalls, routers).
-    *   Manual management of IP addressing.
+* **Private Backbone (Legacy offering)**:
+  * Ideal for experts seeking maximum autonomy and specific network configurations (extended L2).
+  * Requires manual installation and management of security equipment (firewalls, routers).
+  * Manual management of IP addressing.
 
-*   **VPC (New offering)**:
-    *   Designed for a cloud-native and automated experience.
-    *   Built-in security (Gateway, Firewalling, NAT) without the need to manage third-party equipment.
-    *   Fully managed service with high availability guaranteed by Cloud Temple.
-    *   Ideal for modern projects, DevOps workflows, and hosting web applications.
+* **VPC (New offering)**:
+  * Designed for a cloud-native and automated experience.
+  * Built-in security (Gateway, Firewalling, NAT) without the need to manage third-party equipment.
+  * Fully managed service with high availability guaranteed by Cloud Temple.
+  * Ideal for modern projects, DevOps workflows, and hosting web applications.
 
 ## Architecture
 
@@ -31,16 +31,17 @@ The VPC is based on a redundant and highly available architecture, leveraging Cl
 
 ### Schlüsselkomponenten
 
-*   **VPC-Router**: Im Zentrum jedes VPCs verwaltet er den dynamischen Routingverkehr zwischen den verschiedenen Private Networks (Ost-West-Traffic).
-*   **Private Networks (VLANs)**: L2-Netzwerksegmente, die Ihre Ressourcen (VMs, Server) verbinden. Sie erstrecken sich natürlicherweise über mehrere Verfügbarkeitszonen (AZ) ohne IP-Neukonfiguration.
-*   **Externe Gateway (External Gateway)**: Optionaler Eingangs- und Ausgangspunkt für Internet-Traffic (Nord-Süd). Sie integriert Funktionen für NAT und Flussverwaltung.
+* **VPC-Router**: Im Zentrum jedes VPCs verwaltet er den dynamischen Routingverkehr zwischen den verschiedenen Private Networks (Ost-West-Traffic).
+* **Private Networks (VLANs)**: L2-Netzwerksegmente, die Ihre Ressourcen (VMs, Server) verbinden. Sie erstrecken sich natürlicherweise über mehrere Verfügbarkeitszonen (AZ) ohne IP-Neukonfiguration.
+* **Externe Gateway (External Gateway)**: Optionaler Eingangs- und Ausgangspunkt für Internet-Traffic (Nord-Süd). Sie integriert Funktionen für NAT und Flussverwaltung.
 
 ### Isolation und Sicherheit
 
 Das VPC gewährleistet eine strenge Isolation:
-*   Jedes VPC ist eine eigenständige Netzwerkeinheit.
-*   Die Bereitstellung erfolgt auf dedizierten Ressourcen (für IaaS-Open-Source-Kunden), wodurch sichergestellt wird, dass keine Netzwerkressourcen geteilt werden.
-*   Der Dienst befindet sich derzeit in der Zertifizierung **SecNumCloud**.
+
+* Jedes VPC ist eine eigenständige Netzwerkeinheit.
+* Die Bereitstellung erfolgt auf dedizierten Ressourcen (für IaaS-Open-Source-Kunden), wodurch sichergestellt wird, dass keine Netzwerkressourcen geteilt werden.
+* Der Dienst befindet sich derzeit in der Zertifizierung **SecNumCloud**.
 
 ## Hauptfunktionen
 
@@ -58,7 +59,7 @@ Das VPC gewährleistet eine strenge Isolation:
 
 ## Use Cases
 
-*   Critical application hosting requiring strong isolation.
-*   Multi-project segmentation (Prod, Pre-prod, Dev).
-*   Ephemeral and isolated test environments.
-*   Sovereign networking foundations for sensitive data.
+* Critical application hosting requiring strong isolation.
+* Multi-project segmentation (Prod, Pre-prod, Dev).
+* Ephemeral and isolated test environments.
+* Sovereign networking foundations for sensitive data.

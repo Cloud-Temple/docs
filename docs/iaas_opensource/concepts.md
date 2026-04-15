@@ -103,9 +103,9 @@ Le stockage bloc distribué, basé sur __IBM Spectrum Virtualize__, offre une ga
 
 Pour garantir la confidentialité de vos données au repos, l'ensemble de notre infrastructure de stockage bloc intègre un chiffrement matériel robuste.
 
--   **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
--   **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 1-40-2**, assurant un haut niveau de sécurité validé.
--   **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
+- __Type de Chiffrement__ : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme __XTS-AES 256__.
+- __Conformité__ : Cette méthode de chiffrement est conforme à la norme __FIPS 1-40-2__, assurant un haut niveau de sécurité validé.
+- __Fonctionnement__ : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
 
 :::warning Point d'attention sur la réplication
 Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
@@ -194,18 +194,22 @@ La mémoire réellement utilisable peut être limitée par le système d'exploit
 Il n'est pas possible de redimensionner les disques une fois créés. Pour étendre la capacité de stockage, il est nécessaire de créer un nouveau disque.
 
 ### Outils pour les machines virtuelles
+
 Ces outils sont utilisés pour avoir un fonctionnement optimal des machines virtuelles. Lorsque vous souhaiterez effectuer une action et qu'un de ces outils est nécessaire, un message s'affichera sur la console Cloud Temple.
 Pour installer ces outils, vous pouvez consulter les sites officiels de Xen Server afin d'obtenir une démarche précise selon votre OS.
 
 #### Management Agent
+
 Le Management Agent est un composant installé dans chaque machine virtuelle. Il permet à l'hyperviseur de mieux gérer la machine en ayant accés à plus d'informations et permet de réaliser certaines actions plus proprement.
 
 #### PV Drivers (Paravirtualization Drivers)
+
 Les PV Drivers sont des pilotes installés dans la machine virtuelle pour améliorer ses performances.
 Sans ces pilotes, la machine fonctionne, mais plus lentement. De plus, ils permettent certaines actions avancées.
 Les PV Drivers sont installés nativement sur la majorité des noyaux Linux actuels.
 
 #### Tools
+
 Les Tools sont un ensemble de composants logiciels qui améliorent l'intégration de la machine virtuelle avec l'infrastructure de virtualisation.
 
 ## Catalogues
@@ -314,15 +318,18 @@ Avec la haute disponibilité (HA), chaque host dans le pool envoie régulièreme
 
 Un Block Storage désigné comme heartbeat signifie qu'il servira de base pour authentifier les hosts qui ne répondraient plus.
 
-Pour que la haute disponibilité soit correctement configurée dans un pool OpenIaaS, il est indispensable de disposer **d'au moins deux hosts** connectés.
+Pour que la haute disponibilité soit correctement configurée dans un pool OpenIaaS, il est indispensable de disposer __d'au moins deux hosts__ connectés.
 
 Chaque VM doit être configurée avec un niveau de priorité de redémarrage en haute disponibilité :
 
 #### Disabled
+
   La haute disponibilité n'est pas configurée. En cas de défaillance de l'hôte, la machine virtuelle ne sera pas redémarrée.
 
 #### Restart
+
   En cas de défaillance de l'hôte, la machine virtuelle sera automatiquement redémarrée dès que des ressources seront disponibles dans le pool. Les machines virtuelles configurées en mode "restart" sont traitées en priorité, avant celles configurées en mode "best-effort".
 
 #### Best-Effort  
+
   En cas de défaillance de l'hôte, la machine virtuelle ne sera automatiquement redémarrée que si des ressources restent disponibles après le traitement de toutes les machines virtuelles configurées en mode "restart". Le mode "Best-effort" ne fait qu'une seule tentative, donc si les ressources sont insuffisantes, la machine virtuelle ne sera pas redémarrée.

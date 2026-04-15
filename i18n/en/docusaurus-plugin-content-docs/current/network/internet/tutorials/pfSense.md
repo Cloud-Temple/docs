@@ -77,6 +77,7 @@ Once both VMs are properly installed, the next step is to access the firewall to
 <img src={pfSenseHomePage} />
 
 ### Firewall Configuration  
+
 This step involves configuring the BGP neighbors on the firewall.
 
 - First, make sure to allow BGP traffic over TCP port 179 in __'Firewall > Rules'__:
@@ -93,9 +94,9 @@ This step involves configuring the BGP neighbors on the firewall.
 
 ### BGP Neighbor Configuration
 
-In the Neighbors section, click **+Add** to start creating your BGP neighbors.
+In the Neighbors section, click __+Add__ to start creating your BGP neighbors.
 
-- For each neighbor: enter its IP address in **'General Options > Name/address'**:
+- For each neighbor: enter its IP address in __'General Options > Name/address'__:
 
 <img src={pfSenseNeighborConf} />
 
@@ -107,11 +108,11 @@ In the Neighbors section, click **+Add** to start creating your BGP neighbors.
 
 <img src={ebgpConf} />
 
-- Check the box that defines the neighbor type. In our case, it is a **route server**:
+- Check the box that defines the neighbor type. In our case, it is a __route server__:
 
 <img src={routeServerNeighbor} />
 
-- Lastly, don't forget to save your changes by clicking **'Save'**:
+- Lastly, don't forget to save your changes by clicking __'Save'__:
 
 <img src={neighborsOverview} />
 

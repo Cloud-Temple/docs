@@ -12,7 +12,6 @@ This tutorial guides you through configuring single sign-on (SSO) between JumpCl
 
 For detailed information directly from JumpCloud, refer to their official SSO OIDC documentation: [SSO with OIDC](https://jumpcloud.com/support/sso-with-oidc).
 
-
 Note: The images referenced in the Markdown file (`ssoJumpcloud001.png` and `ssoJumpcloud002.png`) are not included in this translation as they are external media files, and their inclusion would require actual image content which is not provided here.
 
 ## Prerequisites
@@ -36,9 +35,11 @@ Follow these steps to configure a new OIDC application in your JumpCloud admin c
 
 3. **Enter Redirection URIs:**
     * In the appropriate field (often labeled "Redirect URIs" or "Callback URLs"), enter the URI provided by Cloud Temple. It typically follows this format:
+
         ```
         https://keycloak-shiva.cloud-temple.com/auth/realms/<company specific>/broker/<company specific>/endpoint
         ```
+
         * Replace `<company specific>` with your company-specific identifiers provided by Cloud Temple.
 
 4. **Select Authentication Client Type:**
@@ -46,9 +47,11 @@ Follow these steps to configure a new OIDC application in your JumpCloud admin c
 
 5. **Enter Login URL:**
     * In the "Login URL" field, enter the URL you use to access your Cloud Temple console. For example:
+
         ```
         https://<unique-identifier>.shiva.cloud-temple.com
         ```
+
         * Replace `<unique-identifier>` with the unique identifier of your Cloud Temple instance.
 
 6. **Configure Attribute Mapping:**
