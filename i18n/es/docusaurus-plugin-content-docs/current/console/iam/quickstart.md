@@ -34,13 +34,13 @@ La selección del tenant se realiza desde la página principal de la Consola:
 
 Access accounts to the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
-Credentials are global to your [Organization](concepts.md#organizations).
+Credentials are global to your [Organization](concepts.md#organizaciones).
 
 *__Nota:__ Identity federation is managed at the organization level*
 
 ### Creación de una cuenta de usuario en su organización
 
-La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](concepts.md#organisations), vaya al menú __'Administración'__ en el lado izquierdo de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
+La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](concepts.md#organizaciones), vaya al menú __'Administración'__ en el lado izquierdo de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
 
 Haga clic en el botón __'Nuevo Usuario'__ desde la página de usuarios.
 
@@ -68,9 +68,9 @@ A continuación aparece el menú para activar los derechos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe realizarse para cada [Tenant](concepts.md#tenant) de la [Organización](concepts.md#organisations).
+La configuración de permisos debe realizarse para cada [Tenant](concepts.md#management-of-owners-on-a-tenant) de la [Organización](concepts.md#organizaciones).
 
-La lista de permisos y sus definiciones está disponible [aquí](#permissions).
+La lista de permisos y sus definiciones está disponible [aquí](#permisos).
 
 ### Cambiar el idioma de un usuario
 
@@ -78,7 +78,7 @@ El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte sup
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](concepts.md#tenant).
+La configuración se realiza por cada inquilino [Tenant](concepts.md#management-of-owners-on-a-tenant).
 
 ### Suscripciones a notificaciones temáticas
 
@@ -96,11 +96,11 @@ La lista de temáticas disponibles puede evolucionar y enriquecerse progresivame
 
 ### ¿Cuáles son las permisos disponibles para las cuentas de usuario de la Consola?
 
-Aquí tienes la lista de [permisos disponibles](#permissions).
+Aquí tienes la lista de [permisos disponibles](#permisos).
 
 ### ¿Cómo agregar un permiso?
 
-Aquí se encuentra la [procedimiento de asignación de permiso disponible aquí](#permissions)
+Aquí se encuentra la [procedimiento de asignación de permiso disponible aquí](#permisos)
 
 ### Why can't I add a permission?
 

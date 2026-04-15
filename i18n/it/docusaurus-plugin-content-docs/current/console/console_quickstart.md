@@ -24,7 +24,7 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 
 La Console è accessibile tramite l'URL seguente: [Console](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via email.
 
-La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organisations) in cui è stato creato il tuo utente.  
+La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organizzazioni) in cui è stato creato il tuo utente.  
 Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
 
 <img src={shivaLogin} />

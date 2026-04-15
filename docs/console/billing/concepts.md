@@ -3,105 +3,82 @@ title: Gestionnaire des coûts
 ---
 
 import billingDashboardPreview from './images/billing_dashboard_preview.png'
-import billingDashboardTotal from './images/billing_dashboard_consumption_total.png'
-import billingDashboardPerProduct from './images/billing_dashboard_consumption_per_product.png'
-import billingDashboardPerService from './images/billing_dashboard_consumption_per_service.png'
+import billingDashboardConsumptionTotal from './images/billing_dashboard_consumption_total.png'
+import billingDashboardConsumptionPerProduct from './images/billing_dashboard_consumption_per_product.png'
+import billingDashboardConsumptionPerService from './images/billing_dashboard_consumption_per_service.png'
 import billingConsumptionDetails from './images/billing_consumption_details.png'
 import billingPricesList from './images/billing_prices_list.png'
 
-Le **Gestionnaire des coûts** est accessible depuis le menu principal de la Console Cloud Temple. Il vous offre une vision complète et transparente de votre consommation de ressources cloud, vous permettant de piloter vos dépenses en toute autonomie.
+## Présentation
+
+Le **Gestionnaire des coûts** est le module de la Console Cloud Temple dédié à la **visibilité de votre consommation**. Il vous permet de suivre en temps réel l'utilisation de vos ressources cloud au sein d'un tenant et d'avoir une vision claire de vos dépenses.
+
+Ce module répond à un besoin fondamental : **comprendre ce que vous consommez, quand vous le consommez, et à quel coût**, sans avoir à naviguer dans des tableaux complexes ou des factures détaillées.
 
 :::info
-L'accès au Gestionnaire des coûts nécessite de disposer des droits appropriés sur votre tenant. Contactez votre responsable commercial pour obtenir plus d'informations et connaître les conditions d'accès au service.
+Le Gestionnaire des coûts présente la **consommation effective** de vos ressources sur le tenant sélectionné. Les données sont actualisées régulièrement pour refléter votre utilisation en cours.
 :::
 
-## Tableau de bord
+## Tableau de bord principal
 
-Le tableau de bord du Gestionnaire des coûts est la page d'accueil du module. Il vous offre une vue synthétique de l'ensemble de votre consommation sur la période sélectionnée.
+La page d'accueil du Gestionnaire des coûts présente une synthèse visuelle de votre consommation. Dès l'ouverture, vous disposez d'une vue d'ensemble permettant d'identifier rapidement les tendances de consommation et les postes les plus importants.
 
-<img src={billingDashboardPreview} alt="Tableau de bord du Gestionnaire des coûts" />
+<img src={billingDashboardPreview} />
 
-Depuis ce tableau de bord, vous pouvez :
+Le tableau de bord est organisé autour de plusieurs axes complémentaires, accessibles via les onglets disponibles en haut de la page.
 
-- **Sélectionner une période** d'analyse (mois en cours, mois précédent, ou plage de dates personnalisée),
-- **Naviguer entre les différents onglets** pour affiner l'analyse de votre consommation,
-- **Exporter vos données** de consommation pour les intégrer à vos outils de reporting internes.
+## Consommation totale
 
-## Consommation globale
+L'onglet **Consommation totale** offre une vue agrégée de l'ensemble de votre consommation sur la période sélectionnée. Ce graphique vous permet d'observer l'évolution de vos dépenses dans le temps et d'identifier d'éventuels pics ou tendances.
 
-L'onglet **Consommation globale** présente le montant total consommé sur la période sélectionnée. Il constitue le point d'entrée pour comprendre l'évolution générale de vos dépenses cloud.
+<img src={billingDashboardConsumptionTotal} />
 
-<img src={billingDashboardTotal} alt="Consommation globale sur la période" />
-
-Ce graphique vous permet de visualiser :
-
-- Le **montant total** consommé sur la période,
-- L'**évolution temporelle** de votre consommation (jour par jour ou mois par mois selon la granularité choisie),
-- Les **pics de consommation** éventuels pour identifier rapidement les anomalies ou les montées en charge.
-
-:::info
-**Lecture du graphique sur le mois en cours**
-
-Pour le mois en cours, le graphique distingue deux zones visuelles :
-- La partie **bleue (pleine)** représente la consommation **réelle à date**, c'est-à-dire les ressources effectivement consommées depuis le début du mois,
-- La partie **orange (hachurée)** représente le **prévisionnel** estimé jusqu'à la fin du mois, calculé sur la base de votre rythme de consommation actuel.
-
-Cette projection vous permet d'anticiper votre budget de fin de mois en temps réel.
-:::
+Vous pouvez ajuster la **période d'affichage** pour affiner votre analyse : jour, semaine, mois ou plage personnalisée. La courbe de consommation totale est directement lisible et ne nécessite pas d'expertise technique particulière.
 
 ## Consommation par produit
 
-L'onglet **Consommation par produit** vous permet d'identifier la répartition de vos dépenses selon les produits Cloud Temple auxquels vous avez souscrit.
+L'onglet **Consommation par produit** décompose votre consommation selon les grandes familles de services Cloud Temple auxquels vous avez souscrit : compute, stockage, réseau, etc.
 
-<img src={billingDashboardPerProduct} alt="Répartition de la consommation par produit" />
+<img src={billingDashboardConsumptionPerProduct} />
 
-Chaque produit (IaaS, Stockage, Réseau, etc.) est présenté avec :
-
-- Sa **part relative** dans la consommation totale,
-- Son **montant en valeur absolue** sur la période,
-- La **tendance** par rapport à la période précédente.
-
-Cette vue est particulièrement utile pour identifier quels produits représentent les postes de dépenses les plus importants et orienter vos décisions d'optimisation.
+Cette vue est particulièrement utile pour **identifier les postes de dépenses les plus significatifs** et orienter les décisions d'optimisation. Chaque produit est représenté avec sa part relative dans la consommation globale, ce qui facilite la lecture et la comparaison.
 
 ## Consommation par service
 
-L'onglet **Consommation par service** affine l'analyse en décomposant la consommation au niveau des services individuels au sein de chaque produit.
+L'onglet **Consommation par service** offre un niveau de détail supplémentaire en ventilant la consommation par **service spécifique** au sein de chaque produit.
 
-<img src={billingDashboardPerService} alt="Répartition de la consommation par service" />
+<img src={billingDashboardConsumptionPerService} />
 
-Cette vue détaillée vous permet de :
+Ce niveau de granularité vous permet d'aller plus loin dans l'analyse : vous pouvez par exemple distinguer la consommation de vos machines virtuelles, de votre stockage bloc, de vos snapshots ou de votre bande passante réseau, et ainsi identifier précisément les ressources générant le plus de coûts.
 
-- Identifier précisément **quels services** contribuent le plus à votre facturation,
-- Comparer la consommation de services similaires,
-- Détecter des services sous-utilisés ou sur-dimensionnés afin d'**optimiser votre empreinte cloud**.
+## Détail de la consommation
 
-## Détails de consommation
+La vue **Détail de la consommation** présente un tableau exhaustif listant l'ensemble des ressources consommées sur la période. Chaque ligne correspond à une ressource identifiable (machine virtuelle, volume de stockage, adresse IP publique, etc.) avec son niveau de consommation associé.
 
-La section **Détails de consommation** liste l'ensemble des lignes de facturation individuelles sur la période sélectionnée. Il s'agit de la vue la plus granulaire du Gestionnaire des coûts.
+<img src={billingConsumptionDetails} />
 
-<img src={billingConsumptionDetails} alt="Détails des lignes de consommation" />
+Ce détail est précieux pour les équipes souhaitant effectuer une **répartition analytique** de leurs coûts ou pour identifier des ressources potentiellement inutilisées qui pourraient être désactivées afin d'optimiser les dépenses.
 
-Pour chaque ligne de consommation, vous retrouvez :
+## Grille tarifaire
 
-- Le **nom de la ressource** consommée,
-- La **quantité** consommée et l'**unité de mesure** associée (heures, Go, requêtes, etc.),
-- Le **prix unitaire** appliqué,
-- Le **montant total** pour cette ligne sur la période.
+L'onglet **Grille tarifaire** (ou **Liste des prix**) référence l'ensemble des tarifs unitaires applicables aux ressources disponibles dans votre tenant. Il s'agit du catalogue de prix en vigueur vous permettant d'anticiper le coût de nouvelles ressources avant leur déploiement.
 
-Cette vue est indispensable pour effectuer un rapprochement comptable précis ou pour analyser en détail l'utilisation de ressources spécifiques.
+<img src={billingPricesList} />
 
-## Catalogue des prix
-
-Le **Catalogue des prix** recense les tarifs unitaires de l'ensemble des ressources et services disponibles sur votre tenant Cloud Temple.
-
-<img src={billingPricesList} alt="Catalogue des prix unitaires" />
-
-Ce catalogue vous permet de :
-
-- **Anticiper le coût** d'une nouvelle ressource avant de la commander,
-- Réaliser des **simulations budgétaires** pour vos projets cloud,
-- Comparer les tarifs entre différentes gammes ou configurations de ressources.
+Chaque entrée de la grille indique :
+- Le **type de ressource** concernée
+- L'**unité de facturation** (par heure, par Go, par unité, etc.)
+- Le **prix unitaire** applicable
 
 :::tip
-Les prix affichés dans le catalogue sont les tarifs contractuels applicables à votre tenant. Ils peuvent différer des tarifs publics en fonction de votre contrat Cloud Temple.
+La grille tarifaire est votre référence pour **simuler le coût** d'une infrastructure avant de la commander. Combinez ces informations avec les données de consommation pour identifier les leviers d'optimisation.
 :::
+
+## Bonnes pratiques
+
+Pour tirer le meilleur parti du Gestionnaire des coûts, voici quelques recommandations :
+
+- **Consultez régulièrement** votre consommation pour détecter rapidement toute dérive budgétaire.
+- **Comparez les périodes** : l'outil vous permet d'analyser l'évolution mois par mois pour identifier les tendances.
+- **Utilisez la vue par service** pour identifier des ressources sous-utilisées ou oubliées (snapshots anciens, volumes déconnectés, etc.).
+- **Croisez avec la grille tarifaire** pour évaluer l'impact financier de tout changement d'infrastructure avant de le réaliser.

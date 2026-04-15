@@ -32,7 +32,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 Die Überwachung des Bereitstellungsprozesses neuer Ressourcen erfolgt im Menü __'Befehle'__, das im grünen Balken links auf dem Bildschirm zugänglich ist.
 
-Es ermöglicht die Anzeige der angeforderten Cloud-Ressourcen, der Ressourcen, die sich im Bereitstellungsprozess befinden, sowie etwaiger Fehler innerhalb eines [Tenant](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organisations).
+Es ermöglicht die Anzeige der angeforderten Cloud-Ressourcen, der Ressourcen, die sich im Bereitstellungsprozess befinden, sowie etwaiger Fehler innerhalb eines [Tenant](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organizations).
 
 <img src={shivaOrdersList} />
 

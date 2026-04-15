@@ -26,7 +26,7 @@ Credentials are global to your [Organization](#organizations).
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](#organisations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](#organizations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
 
 Klicken Sie auf die Schaltfläche __'Neuer Benutzer'__ auf der Benutzerseite.
 
@@ -54,7 +54,7 @@ Das Menü zur Aktivierung von Berechtigungen wird nun angezeigt:
 
 <img src={shivaOnboard_005} />
 
-Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organisations) separat durchgeführt werden.
+Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organizations) separat durchgeführt werden.
 
 Die Liste der Berechtigungen und ihre Definitionen ist [hier](#permissions) verfügbar.
 
@@ -264,7 +264,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisations) verfügt mindestens über einen Tenant (der __Standard-Tenant__, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
+Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organizations) verfügt mindestens über einen Tenant (der __Standard-Tenant__, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
 
 Beispiele:
 

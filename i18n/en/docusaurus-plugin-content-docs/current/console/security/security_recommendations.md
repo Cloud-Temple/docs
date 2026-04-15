@@ -30,7 +30,7 @@ Access to the Console is the entry point to all your Cloud Temple services. It i
 
 Access to the cloud management console is limited to previously authorized IP addresses. This restriction allows access only to users from specified IP ranges, thereby minimizing the risk of unauthorized access.
 
-You can configure these IP restrictions in your organization's settings. To learn how to set up IP filtering, see the [Access Management and Authentication | Cloud Temple Documentation](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+You can configure these IP restrictions in your organization's settings. To learn how to set up IP filtering, see the [Access Management and Authentication | Cloud Temple Documentation](../../console/iam/quickstart#permissions).
 
 To maximize the effectiveness of this mechanism, ensure that:
 
@@ -74,7 +74,7 @@ For accounts managed locally by the Console (without federation), MFA is enabled
 
 For more information:  
 
-- [What is MFA and is it mandatory? | Cloud Temple Documentation](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [What is MFA and is it mandatory? | Cloud Temple Documentation](../../console/iam/quickstart#permissions)
 - [Tutorial: Identity Federation with Microsoft EntraID | Cloud Temple Documentation](../../console/iam/tutorials/sso_azuread)
 - [Tutorial: Identity Federation with Microsoft ADFS | Cloud Temple Documentation](../../console/iam/tutorials/sso_adfs)
 
@@ -116,13 +116,13 @@ For secure and efficient management:
 - **Ensure direct control** by adding an owner who is a member of your organization, even if you delegate the management of your cloud service, to be able to monitor notifications and critical decisions.
 - **Limit the number of owners** to 3 to reduce the exposure surface and facilitate auditing of critical actions.
 
-For more information on managing tenant owners, see the [Tenant Owners Guide | Cloud Temple Documentation](../../console/iam/concepts#gestion-des-propri%C3%A9taires-sur-un-tenant).
+For more information on managing tenant owners, see the [Tenant Owners Guide | Cloud Temple Documentation](../../console/iam/concepts#tenant).
 
 
 
 ### Managing permissions on your cloud services
 
-The Cloud Temple Console allows granular access management by assigning each user one or more permission levels, which precisely define the authorized actions. Refer to the permissions documentation ([Available permissions for users in your organization | Cloud Temple Documentation](../../console/iam/concepts#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) to understand in detail the different permissions and assign them appropriately.
+The Cloud Temple Console allows granular access management by assigning each user one or more permission levels, which precisely define the authorized actions. Refer to the permissions documentation ([Available permissions for users in your organization | Cloud Temple Documentation](../../console/iam/concepts#available-permissions-for-users-in-your-organization)) to understand in detail the different permissions and assign them appropriately.
 
 For effective and secure permission management, we recommend following these best practices:
 
@@ -154,7 +154,7 @@ Therefore, we recommend:
 To ensure effective monitoring of your cloud environment and quick response to anomalies, it is essential to implement an active monitoring strategy. We particularly recommend:
 
 - **Monitoring service availability** via the [Status page | Cloud Temple](https://status.cloud-temple.com/), to be alerted in case of incidents or global outages;
-- **Enabling relevant thematic notifications** for your usage from the Console, to receive real-time important alerts (see [Subscribing to Thematic Notifications | Cloud Temple Documentation](../../console/iam/concepts#abonnement-aux-notifications-thématiques));
+- **Enabling relevant thematic notifications** for your usage from the Console, to receive real-time important alerts (see [Subscribing to Thematic Notifications | Cloud Temple Documentation](../../console/iam/concepts#thematic-notifications-subscription));
 - **Leveraging Cloud activity logs** to identify sensitive or suspicious actions on your resources (see section "Logging - Activity Tracking" of the [Quick Start Guide | Cloud Temple Documentation](../../iaas_vmware/quickstart)). The collection and analysis of activity logs can be automated via the Console APIs, to integrate events into your monitoring or incident detection tools.
 
 
@@ -195,7 +195,7 @@ Here are some best practices when using VM encryption:
 
 To limit the attack surface of your virtual machines, it is strongly recommended to restrict to the minimum necessary the services exposed. In particular, make sure to configure your resources so as **not to publicly expose the administration interfaces and consoles** of the deployed systems and applications.
 
-If you use Cloud Temple's Object Storage services, it is also recommended to **not configure your buckets for public access**, unless strictly necessary (see [Limiting access to your S3 buckets | Cloud Temple Documentation](../../storage/oss/quickstart#gestion-des-politiques-daccès)).
+If you use Cloud Temple's Object Storage services, it is also recommended to **not configure your buckets for public access**, unless strictly necessary (see [Limiting access to your S3 buckets | Cloud Temple Documentation](../../storage/oss/quickstart#access-policy-management)).
 
 
 

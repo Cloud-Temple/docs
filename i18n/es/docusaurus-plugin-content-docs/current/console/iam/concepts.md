@@ -21,13 +21,13 @@ import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant
 
 Las cuentas de acceso a la Consola se crean mediante invitación por parte de la cuenta principal del patrocinador (independientemente del repositorio de autenticación).
 
-Las credenciales son globales para su [Organización](#organisations).
+Las credenciales son globales para su [Organización](#organizaciones).
 
-*__Nota:__ [La federación de identidad se gestiona a nivel de organización](#mecanismos-de-autenticacion)*
+*__Nota:__ [La federación de identidad se gestiona a nivel de organización](#authentication-mechanisms)*
 
 ### Creación de una cuenta de usuario en su organización
 
-La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](#organisations), vaya al menú __'Administración'__ situado en la parte izquierda de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
+La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](#organizaciones), vaya al menú __'Administración'__ situado en la parte izquierda de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
 
 Haga clic en el botón __'Nuevo Usuario'__ desde la página de usuarios.
 
@@ -55,7 +55,7 @@ A continuación aparece el menú para activar los derechos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe realizarse para cada [Tenant](#tenant) de la [Organización](#organisations).
+La configuración de permisos debe realizarse para cada [Tenant](#management-of-owners-on-a-tenant) de la [Organización](#organizaciones).
 
 La lista de permisos y sus definiciones está disponible [aquí](#permissions).
 
@@ -133,7 +133,7 @@ El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte sup
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](#tenant).
+La configuración se realiza por cada inquilino [Tenant](#management-of-owners-on-a-tenant).
 
 ### Suscripciones a notificaciones temáticas
 
@@ -265,7 +265,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Inquilino
 
-El inquilino es un __agrupamiento de recursos dentro de una organización__. Una [Organización](#organisations) tiene al menos un inquilino (llamado __inquilino predeterminado__, que puede renombrarse). Normalmente, se utilizan varios inquilinos para segmentar responsabilidades o perímetros técnicos.
+El inquilino es un __agrupamiento de recursos dentro de una organización__. Una [Organización](#organizaciones) tiene al menos un inquilino (llamado __inquilino predeterminado__, que puede renombrarse). Normalmente, se utilizan varios inquilinos para segmentar responsabilidades o perímetros técnicos.
 
 Por ejemplo:
 
