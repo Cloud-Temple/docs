@@ -68,12 +68,24 @@
   margin-bottom: 2px;
 }
 
-/* Conteneur pour les cartes en grille */
+/* Conteneur pour les cartes en grille — 4 colonnes par défaut */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonnes responsives */
-  gap: 20px; /* Espacement entre les cartes */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   margin: 20px 0;
+}
+
+@media (max-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Style des cartes */
@@ -278,3 +290,40 @@ article img:not(.platform-logo) {
   display: block;
   margin: 1rem auto 1rem auto;
 }
+
+/* ─── Footer : blanc pleine largeur ────────────────────────────────────────── */
+
+footer.footer--dark {
+  background-color: var(--ifm-background-surface-color, #f8f8f8) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+footer.footer--dark .footer__title {
+  color: var(--ifm-font-color-base);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+footer.footer--dark .footer__link-item {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+footer.footer--dark a.footer__link-item:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+footer.footer--dark .footer__copyright {
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: 1rem;
+}
+
+footer.footer--dark .footer__copyright a {
+  color: var(--ifm-color-primary);
+}
+/* ─────────────────────────────────────────────────────────────────────────── */
