@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Änderungsprotokoll
 
+### 15. April 2026: Dokumentation Managed MariaDB, Managed PostgreSQL und mehrsprachige Korrekturen
+
+- **Managed MariaDB**: Erstveröffentlichung der Dokumentation für den Managed MariaDB-Dienst (Vorschau): Dienstübersicht, technische Konzepte (StandAlone- und Distributed-Architekturen), Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **Managed PostgreSQL**: Erstveröffentlichung der Dokumentation für den Managed PostgreSQL-Dienst (Vorschau): Dienstübersicht, technische Konzepte, Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **Mehrsprachige Korrekturen (Bilder)**: Korrektur der Bildreferenzen in den Übersetzungen der Abschnitte Managed Kubernetes und Managed MariaDB für alle Sprachen (EN, DE, ES, IT) — Konvertierung relativer `./images/`-Pfade in absolute `@site/docs/...`-Pfade für korrekte Darstellung in allen Sprachen.
+- **Korrekturen defekter Links**: Behebung mehrerer defekter Links: LLMaaS-Lizenzreferenzen, Konsolenlink im rclone-Tutorial (OSS), IAM-Link in der Netzwerkdokumentation (EN), relative Links im Terraform-Abschnitt (EN).
+
+### 15. April 2026: Neues Kostenverwaltungsmodul
+
+- **Konsole (Kostenverwaltung)**: Vollständige Dokumentation des neuen Verbrauchsverfolgungsmoduls der Cloud Temple Konsole hinzugefügt. Umfasst das Dashboard, den Gesamtverbrauch (mit Prognose für Monatsende), die Aufschlüsselung nach Produkt und Service, detaillierte Abrechnungszeilen und den Preiskatalog. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+
 ### 26. März 2026: Aktualisierung der Unterauftragsverarbeiter-Liste (DPA)
 
 - **Vertraglich**: Aktualisierung des Vertrags über die Auftragsverarbeitung (DPA) - Überarbeitung der Liste der Unterauftragsverarbeiter (Entfernung von Microsoft Azure und Amazon Web Services, Änderung der Tätigkeit für Iron Mountain) und Hinzufügung des Genehmigungsdatums. Ausbreitung der Änderungen auf Englisch, Deutsch, Spanisch und Italienisch.

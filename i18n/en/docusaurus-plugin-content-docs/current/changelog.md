@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Change Log
 
+### April 15, 2026: Managed MariaDB, Managed PostgreSQL Documentation and Multilingual Fixes
+
+- **Managed MariaDB**: Initial release of the Managed MariaDB service documentation (preview): service overview, technical concepts (StandAlone and Distributed architectures), quick start guide. Available in French, English, German, Spanish, and Italian.
+- **Managed PostgreSQL**: Initial release of the Managed PostgreSQL service documentation (preview): service overview, technical concepts, quick start guide. Available in French, English, German, Spanish, and Italian.
+- **Multilingual Fixes (images)**: Fixed image references in translations for the Managed Kubernetes and Managed MariaDB sections across all languages (EN, DE, ES, IT) — converting relative `./images/` paths to absolute `@site/docs/...` paths ensuring correct rendering in all languages.
+- **Broken Link Fixes**: Resolved several broken links: LLMaaS licence references, console link in the rclone tutorial (OSS), IAM link in the network documentation (EN), relative links in the Terraform section (EN).
+
+### April 15, 2026: New Cost Manager Module
+
+- **Console (Cost Manager)**: Added complete documentation for the new consumption tracking module accessible from the Cloud Temple Console. Covers the dashboard, global consumption (with end-of-month projection), breakdown by product and service, line-by-line billing details, and the price catalog. Available in French, English, German, Spanish, and Italian.
+
 ### March 26, 2026: Sub-processors List Update (DPA)
 
 - **Contractual**: Update of the Data Processing Agreement (DPA) - revised the list of sub-processors (removal of Microsoft Azure and Amazon Web Services, modification of activity for Iron Mountain) and addition of the authorization date. Propagation of changes in English, German, Spanish, and Italian.

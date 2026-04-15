@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Registro de Cambios
 
+### 15 de abril de 2026: Documentación Managed MariaDB, Managed PostgreSQL y correcciones multilingües
+
+- **Managed MariaDB**: Publicación inicial de la documentación del servicio Managed MariaDB (vista previa): descripción general del servicio, conceptos técnicos (arquitecturas StandAlone y Distributed), guía de inicio rápido. Disponible en francés, inglés, alemán, español e italiano.
+- **Managed PostgreSQL**: Publicación inicial de la documentación del servicio Managed PostgreSQL (vista previa): descripción general del servicio, conceptos técnicos, guía de inicio rápido. Disponible en francés, inglés, alemán, español e italiano.
+- **Correcciones multilingües (imágenes)**: Corrección de referencias de imágenes en las traducciones de las secciones Managed Kubernetes y Managed MariaDB para todos los idiomas (EN, DE, ES, IT) — conversión de rutas relativas `./images/` a rutas absolutas `@site/docs/...` para una correcta visualización en todos los idiomas.
+- **Corrección de enlaces rotos**: Resolución de varios enlaces rotos: referencias a licencias LLMaaS, enlace a la consola en el tutorial rclone (OSS), enlace IAM en la documentación de red (EN), enlaces relativos en la sección Terraform (EN).
+
+### 15 de abril de 2026: Nuevo módulo Gestor de costos
+
+- **Consola (Gestor de costos)**: Añadida documentación completa del nuevo módulo de seguimiento del consumo accesible desde la Consola Cloud Temple. Cubre el panel de control, el consumo global (con proyección de fin de mes), el desglose por producto y servicio, los detalles de facturación línea por línea y el catálogo de precios. Disponible en francés, inglés, alemán, español e italiano.
+
 ### 26 de marzo de 2026: Actualización de la lista de subencargados (DPA)
 
 - **Contractual**: Actualización del Acuerdo de Procesamiento de Datos (DPA) - revisión de la lista de subencargados (eliminación de Microsoft Azure y Amazon Web Services, modificación de la actividad de Iron Mountain) y adición de la fecha de autorización. Propagación de los cambios en inglés, alemán, español e italiano.
