@@ -536,6 +536,7 @@ Error: failed to login: Unexpected response code: 401
 **Cause**: Credenciales inválidas o caducadas.
 
 **Solution**:
+
 1. Verifique sus variables de entorno
 2. Genere una nueva clave API en la consola
 3. Verifique los permisos de su clave API
@@ -549,6 +550,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 **Cause**: The referenced resource (datacenter, cluster, etc.) does not exist or you do not have access to it.
 
 **Solution**:
+
 1. Verify the exact name (or UUID) in the Cloud Temple console
 2. Check your access rights to this resource
 

@@ -19,6 +19,7 @@ This page gathers practical tutorials for using the Terraform Cloud Temple provi
 **Ziel**: Erstellen einer einfachen VMware-VM ohne Betriebssystem.
 
 **Voraussetzungen**:
+
 - Zugriff auf ein Cloud Temple Datacenter
 - Konfigurierte API-Anmeldeinformationen
 - Erforderliche Berechtigungen
@@ -77,6 +78,7 @@ resource "cloudtemple_compute_virtual_machine" "empty_vm" {
 ```
 
 **Erklärungen**:
+
 - `guest_operating_system_moref`: Definiert den OS-Typ für VMware Tools-Treiber
 - Die VM wird ohne Festplatte oder Netzwerk erstellt (separat hinzuzufügen)
 - Hot-add-Optionen ermöglichen das Hinzufügen von CPU/RAM im laufenden Betrieb
@@ -138,6 +140,7 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 ```
 
 **Explanations**:
+
 - `marketplace_item_id`: References a ready-to-use image
 - `datastore_id`: Specific datastore required for Marketplace deployment
 - The image already includes a pre-configured operating system
@@ -210,6 +213,7 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 ```
 
 **Explanations**:
+
 - The `os_disk` and `os_network_adapter` blocks configure the template's resources
 - These blocks can only be used at creation (see dedicated section)
 
@@ -301,6 +305,7 @@ resource "cloudtemple_compute_virtual_machine" "cloudinit_vm" {
 ```
 
 **Unterstützte Cloud-Init-Schlüssel (VMware)**:
+
 - `user-data`: Hauptkonfiguration (Base64)
 - `network-config`: Netzwerkkonfiguration (Base64)
 - `public-keys`: Öffentliche SSH-Schlüssel
@@ -344,11 +349,13 @@ resource "cloudtemple_compute_virtual_disk" "data_disk" {
 ```
 
 **Available disk modes**:
+
 - `persistent`: Changes are immediately and permanently written to the virtual disk.
 - `independent_nonpersistent`: Changes made to the virtual disk are recorded in a rollback journal and discarded upon shutdown.
 - `independent_persistent`: Changes are immediately and permanently written to the virtual disk. Unaffected by snapshots.
 
 **Provisioning types**:
+
 - `dynamic`: Saves storage space by dynamically allocating space as needed. Creation is fast.
 - `staticImmediate`: Allocates all disk space during creation, but blocks are zeroed out on first write.
 - `staticDiffered`: Allocates and zeros out all disk space during creation.
@@ -390,6 +397,7 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
   # mac_address = "00:50:56:xx:xx:xx"
 }
 ```
+
 :::info Supported Network Adapter Types
   The supported adapter types depend on the operating system running on the virtual machine as well as the version of VMware.
 :::
@@ -421,6 +429,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 ```
 
 **Controller types**:
+
 - `USB2`
 - `USB3`
 - `SCSI`
@@ -435,6 +444,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 **Ziel**: Bereitstellen einer virtuellen Maschine aus einem Template im Katalog.
 
 **Voraussetzungen**:
+
 - Zugriff auf die OpenSource Cloud Temple-Infrastruktur
 - Erforderliche Berechtigungen:
   - `compute_iaas_opensource_read`
@@ -529,6 +539,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "openstack_vm" {
 ```
 
 **Erläuterungen**:
+
 - `high_availability`: Verfügbare Optionen: `disabled`, `restart`, `best-effort` (siehe [Dokumentation](https://docs.cloud-temple.com/iaas_opensource/concepts#haute-disponibilit%C3%A9) zur Hochverfügbarkeit)
 - `boot_firmware`: `bios` oder `uefi`
 - `secure_boot`: Nur mit UEFI möglich
@@ -635,6 +646,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
 ```
 
 **Explanations**:
+
 - `interval`: Replication interval. Can be specified in `minutes` or `hours`.
 - `storage_repository_id`: Storage repository to which the VM's disks will be replicated. Must be located in a different AZ than the original VM.
 
@@ -809,6 +821,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "cloudinit_vm" {
 ```
 
 **Unterschied zu VMware**:
+
 - OpenSource verwendet die Datasource **NoCloud**
 - Unterstützte Schlüssel: `cloud_config` und `network_config`
 - Kein `filebase64()`, stattdessen direkt `file()` verwenden
@@ -829,7 +842,7 @@ The `os_disk` and `os_network_adapter` blocks are special blocks that can be use
 **Important characteristics**:
 
 1. **Creation only**: These blocks can only be defined during the initial `terraform apply`  
-3. **Alternative**: Use the `terraform import` command to manually import them
+2. **Alternative**: Use the `terraform import` command to manually import them
 
 ### os_disk verwenden
 
@@ -938,6 +951,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "vm_with_network"
 ---
 
 **Best Practices**:
+
 1. Verwenden Sie `os_disk` und `os_network_adapter` für die ursprüngliche Konfiguration des Templates
 2. Verwenden Sie die spezialisierten Ressourcen, um zusätzliche Ressourcen hinzuzufügen
 
@@ -995,11 +1009,13 @@ output "bucket_namespace" {
 ```
 
 **Access types**:
+
 - `private`: Restricted access to tenant IP addresses
 - `public`: Public read access
 - `custom`: Limited access to IPs on the whitelist
 
 **Versioning**:
+
 - `Enabled`: Enables object versioning
 - `Suspended`: Suspends versioning (preserves existing versions)
 
@@ -1086,6 +1102,7 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
 ```
 
 **Available roles**:
+
 - `read_write`: Read and write
 - `write_only`: Write only
 - `read_only`: Read only
@@ -1134,6 +1151,7 @@ resource "cloudtemple_object_storage_bucket" "bucket_with_acl" {
 ```
 
 **Difference compared to dedicated ACL resources**:
+
 - **Inline**: ACLs defined directly inside the bucket (simpler for static configurations)
 - **Dedicated resource**: ACLs managed separately (more flexible, allows independent modifications)
 

@@ -77,6 +77,7 @@ Sobald die beiden VMs ordnungsgemäß installiert sind, folgt Schritt zwei: der 
 <img src={pfSenseHomePage} />
 
 ### Firewall Configuration  
+
 This step involves configuring the BGP neighbors on the firewall.
 
 - First, make sure to allow BGP traffic over TCP port 179 in __'Firewall > Rules'__:

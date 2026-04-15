@@ -72,12 +72,13 @@ Una vez que las dos máquinas virtuales estén correctamente instaladas, la segu
 <img src={pfSenseWebui} />
 
 - Inicio de sesión por defecto:
-    - nombre de usuario: *admin*
-    - contraseña: *pfsense* (no olvide cambiar la contraseña predeterminada)
+  - nombre de usuario: *admin*
+  - contraseña: *pfsense* (no olvide cambiar la contraseña predeterminada)
 
 <img src={pfSenseHomePage} />
 
 ### Configuración del firewall  
+
 Esta etapa consiste en configurar los vecinos BGP del FW.
 
 - En primer lugar, asegúrese de permitir el tráfico BGP mediante TCP 179 en __'Firewall > Rules'__:
@@ -94,9 +95,9 @@ Esta etapa consiste en configurar los vecinos BGP del FW.
 
 ### Configuración de los vecinos BGP
 
-En la sección *Neighbors*, haga clic en **+Add** para comenzar a crear sus vecinos BGP.
+En la sección *Neighbors*, haga clic en __+Add__ para comenzar a crear sus vecinos BGP.
 
-- Para cada vecino: complete su dirección IP en **'Opciones generales > Nombre/dirección'**:
+- Para cada vecino: complete su dirección IP en __'Opciones generales > Nombre/dirección'__:
 
 <img src={pfSenseNeighborConf} />
 
@@ -108,11 +109,11 @@ En la sección *Neighbors*, haga clic en **+Add** para comenzar a crear sus veci
 
 <img src={ebgpConf} />
 
-- Marque la casilla que define el tipo de su vecino. En nuestro caso, se trata de un **servidor de rutas**:
+- Marque la casilla que define el tipo de su vecino. En nuestro caso, se trata de un __servidor de rutas__:
 
 <img src={routeServerNeighbor} />
 
-- Finalmente, no olvide guardar sus modificaciones haciendo clic en **'Guardar'**:
+- Finalmente, no olvide guardar sus modificaciones haciendo clic en __'Guardar'__:
 
 <img src={neighborsOverview} />
 

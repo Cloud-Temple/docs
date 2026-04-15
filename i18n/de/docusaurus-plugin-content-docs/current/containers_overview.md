@@ -41,10 +41,10 @@ Beyond positioning, each offering is based on distinct technological choices tha
 
 Choosing a containerization platform is a strategic decision. Here are some key points to help you select the most suitable offering for your context.
 
-*   **If regulatory compliance is your absolute priority...**  
+* **If regulatory compliance is your absolute priority...**  
     ...and you operate in a highly regulated sector (public, healthcare, finance) or need to certify your own solution, the **OpenShift PaaS offering** is the reference solution, providing the highest level of market assurance.
 
-*   **If you value open source, modernity, and "zero-trust" security...**  
+* **If you value open source, modernity, and "zero-trust" security...**  
     ...and your company culture strongly emphasizes open source, independence from vendors, and next-generation security approaches (immutable systems, API-driven management), the **Managed Kubernetes offering** best aligns with your vision.
 
 Our advisory role is to support you in making this decision. Our architects are available to analyze your context and define the optimal path together with you.

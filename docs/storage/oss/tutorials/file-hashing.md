@@ -28,6 +28,7 @@ Encryption: SSE-S3
 Metadata  :
     Content-Type: text/plain
 ```
+
 L'`ETag` correspond bien au hash MD5 du fichier local.
 
 ### 2. Ajout manuel d'un hash SHA-256
@@ -55,6 +56,7 @@ Metadata  :
     X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
     Content-Type              : text/plain
 ```
+
 Le hash SHA-256 est maintenant présent dans les métadonnées personnalisées de l'objet.
 
 ---
@@ -77,16 +79,19 @@ Ces versions intègrent un SDK AWS qui inclut automatiquement l'en-tête `x-amz-
 La solution la plus simple est de désactiver ce nouveau comportement via une variable d'environnement.
 
 Pour **AWS CLI**:
+
 ```bash
 AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED aws s3 cp fichier.txt s3://mon-bucket/
 ```
 
 Pour **Terraform**:
+
 ```bash
 AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED terraform apply
 ```
 
 Pour rendre ce paramètre permanent dans votre session shell :
+
 ```bash
 export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
 ```
@@ -95,8 +100,8 @@ export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
 
 Vous pouvez configurer ce paramètre de façon permanente dans votre profil AWS CLI.
 
-1.  Ouvrez votre fichier de configuration AWS : `~/.aws/config`
-2.  Ajoutez le paramètre suivant dans votre profil :
+1. Ouvrez votre fichier de configuration AWS : `~/.aws/config`
+2. Ajoutez le paramètre suivant dans votre profil :
 
 ```ini
 [default]
@@ -110,6 +115,7 @@ Cette solution est idéale si vous utilisez régulièrement AWS CLI.
 En dernier recours, vous pouvez revenir à une version antérieure des outils.
 
 Pour **AWS CLI**, revenir à la version 2.22.35 :
+
 ```bash
 pip install awscli==2.22.35
 ```

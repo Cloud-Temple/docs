@@ -22,6 +22,7 @@ From the detail page of a compatible VMware solution, select your target environ
 ### 2. Virtual Machine Configuration
 
 Set up the basic parameters of your virtual machine:
+
 - **VM Name**
 - **Resources** (CPU, RAM)
 - **Storage**
@@ -42,5 +43,6 @@ You can also access Marketplace templates directly from the VMware interface:
 ## Deployment Tracking
 
 Once the deployment is initiated:
+
 - Monitor progress from the VMware console
 - The VM will appear in your vSphere inventory

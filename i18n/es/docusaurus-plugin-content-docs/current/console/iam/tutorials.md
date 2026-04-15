@@ -4,7 +4,6 @@ title: Tutorials
 
 Estos tutoriales te ayudan a desplegar y gestionar un Bastion Cloud Temple desde el portal Console.
 
-
 <div class="card">
   <h3>Tutorials</h3>
   <p>Ningún Tutorial está disponible por el momento, pero estamos trabajando activamente en ello. ¡Vuelve pronto para saber más!</p>

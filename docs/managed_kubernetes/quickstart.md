@@ -12,11 +12,11 @@ L'objectif de cette section est de vous orienter vers les ressources nécessaire
 
 Pour interagir avec votre cluster, plusieurs éléments sont indispensables :
 
-1.  **Le fichier `kubeconfig`** : Ce fichier, qui vous est fourni par les équipes Cloud Temple à la livraison du service, contient toutes les informations pour vous connecter de manière sécurisée.
-2.  **L'outil `kubectl`** : Il s'agit de l'interface en ligne de commande standard pour piloter un cluster Kubernetes.
-3.  **L'outil `kubelogin`** (si OIDC est utilisé) : Si votre cluster est configuré pour s'authentifier via un fournisseur d'identité OIDC (comme Entra ID/Azure AD), vous devez installer l'outil `kubelogin` pour gérer le flux d'authentification. Suivez le [guide d'installation de kubelogin](https://github.com/int128/kubelogin).
+1. **Le fichier `kubeconfig`** : Ce fichier, qui vous est fourni par les équipes Cloud Temple à la livraison du service, contient toutes les informations pour vous connecter de manière sécurisée.
+2. **L'outil `kubectl`** : Il s'agit de l'interface en ligne de commande standard pour piloter un cluster Kubernetes.
+3. **L'outil `kubelogin`** (si OIDC est utilisé) : Si votre cluster est configuré pour s'authentifier via un fournisseur d'identité OIDC (comme Entra ID/Azure AD), vous devez installer l'outil `kubelogin` pour gérer le flux d'authentification. Suivez le [guide d'installation de kubelogin](https://github.com/int128/kubelogin).
 
-:::info Outils graphiques recommandés: 
+:::info Outils graphiques recommandés:
 Pour une expérience plus visuelle et une gestion simplifiée de vos ressources, nous vous recommandons l'utilisation de **Lens**. C'est un outil puissant pour Kubernetes qui vous permet d'explorer votre cluster, de gérer vos applications et de visualiser leur état de manière graphique.
 Certains de nos tutoriels utiliseront Lens pour illustrer les manipulations. Vous pouvez le télécharger ici : [https://k8slens.dev/](https://k8slens.dev/).
 :::
@@ -32,13 +32,12 @@ Les urls sont:
 - API kubernetes (utilisée dans kubeconfig):
   - **identifiant**.mk.ms-cloud-temple.com:6443  (donc dans notre exemple: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
 
-- url publiques : 
+- url publiques :
   - k10.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - grafana.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - opencost.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**identifiant**.mk.ms-cloud-temple.com
-
 
 :::info url sécurisées
 Les url ci dessus ne sont accessible que depuis des IP publiques connues, configurées dans le firewall de la solution. Si vous souhaitez ajouter une IP publique, il faut faire une demande de support.
@@ -74,13 +73,13 @@ Le compte de service qui vous a été confié a aussi été rendu **propriétair
 Vous pouvez créer des Namespaces, qui seront rattachés à votre tenant Capsule.
 Les comptes externes (OIDC) sont des membres de ce même tenant Capsule, ce qui leur permet d'interagir librement à l'intérieur des **namespaces** qui sont associés au tenant. (Voir le tutoriel "Gérer les permissions avec Capsule")
 
-Certaines actions ne sont pas permises : 
+Certaines actions ne sont pas permises :
 
-  - lister / créer des tenant Capsule
-  - créer des CRD: Si vous devez déployer une application avec des CRD (helm chart d'un opérateur par exemple), vous devrez interagir avec le support pour que ces CRD soient importées (via extraction des yaml depuis le chart helm). Vous pourrez ensuite déployer votre chart helm avec l'option --skip-crds. Voir : [Documentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+- lister / créer des tenant Capsule
+- créer des CRD: Si vous devez déployer une application avec des CRD (helm chart d'un opérateur par exemple), vous devrez interagir avec le support pour que ces CRD soient importées (via extraction des yaml depuis le chart helm). Vous pourrez ensuite déployer votre chart helm avec l'option --skip-crds. Voir : [Documentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
- 
+
 <div class="row">
   <div class="col col--4">
     <div className="card">

@@ -8,11 +8,11 @@ Restic es una herramienta de copia de seguridad rápida, segura y eficiente, com
 
 ## Requis
 
-*   Un bucket S3 existente
-*   Las credenciales de acceso (Access Key y Secret Key)
-*   El nombre de la región (para AWS)
-*   La URL del endpoint S3 (en caso de un proveedor no-AWS)
-*   Restic instalado en su máquina
+* Un bucket S3 existente
+* Las credenciales de acceso (Access Key y Secret Key)
+* El nombre de la región (para AWS)
+* La URL del endpoint S3 (en caso de un proveedor no-AWS)
+* Restic instalado en su máquina
 
 ## Instalación de Restic
 
@@ -113,7 +113,7 @@ Asegúrese de que todas las variables de entorno estén exportadas en un archivo
 
 ## Más información
 
-*   Documentación oficial: [https://restic.readthedocs.io](https://restic.readthedocs.io)
-*   Restic con otros backends: B2, Azure, Google Cloud, etc.
+* Documentación oficial: [https://restic.readthedocs.io](https://restic.readthedocs.io)
+* Restic con otros backends: B2, Azure, Google Cloud, etc.
 
 Este tutorial le proporciona una base sólida para integrar Restic en una política de copia de seguridad fiable, cifrada y compatible con almacenamientos modernos como S3.

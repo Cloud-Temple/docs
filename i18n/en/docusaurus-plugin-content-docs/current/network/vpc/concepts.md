@@ -14,16 +14,16 @@ As of today (January 2026), VPC private networks allow connectivity between **Op
 
 Cloud Temple offers two network consumption modes:
 
-*   **Private Backbone (Legacy Offering)**:
-    *   Ideal for experts seeking maximum autonomy and specific network configurations (extended L2).
-    *   Requires manual installation and management of security equipment (firewalls, routers).
-    *   Manual management of IP addressing.
+* **Private Backbone (Legacy Offering)**:
+  * Ideal for experts seeking maximum autonomy and specific network configurations (extended L2).
+  * Requires manual installation and management of security equipment (firewalls, routers).
+  * Manual management of IP addressing.
 
-*   **VPC (New Offering)**:
-    *   Designed for a cloud-native and automated experience.
-    *   Built-in security (Gateway, Firewalling, NAT) without the need to manage third-party equipment.
-    *   Fully managed service with high availability guaranteed by Cloud Temple.
-    *   Ideal for modern projects, DevOps workflows, and hosting web applications.
+* **VPC (New Offering)**:
+  * Designed for a cloud-native and automated experience.
+  * Built-in security (Gateway, Firewalling, NAT) without the need to manage third-party equipment.
+  * Fully managed service with high availability guaranteed by Cloud Temple.
+  * Ideal for modern projects, DevOps workflows, and hosting web applications.
 
 ## Architecture
 
@@ -31,16 +31,17 @@ The VPC is built on a redundant and highly available architecture, leveraging Cl
 
 ### Key Components
 
-*   **VPC Router**: At the heart of each VPC, it manages dynamic routing between different Private Networks (east-west traffic).
-*   **Private Networks (VLANs)**: Layer 2 network segments connecting your resources (VMs, servers). They natively span multiple Availability Zones (AZs) without requiring IP reconfiguration.
-*   **External Gateway**: Optional entry and exit point for Internet traffic (north-south). It includes NAT capabilities and traffic flow management.
+* **VPC Router**: At the heart of each VPC, it manages dynamic routing between different Private Networks (east-west traffic).
+* **Private Networks (VLANs)**: Layer 2 network segments connecting your resources (VMs, servers). They natively span multiple Availability Zones (AZs) without requiring IP reconfiguration.
+* **External Gateway**: Optional entry and exit point for Internet traffic (north-south). It includes NAT capabilities and traffic flow management.
 
 ### Isolation and Security
 
 The VPC ensures strict isolation:
-*   Each VPC is an independent network entity.
-*   Deployment occurs on dedicated resources (for Open Source IaaS clients), ensuring no network resources are shared.
-*   The service is currently undergoing **SecNumCloud** qualification.
+
+* Each VPC is an independent network entity.
+* Deployment occurs on dedicated resources (for Open Source IaaS clients), ensuring no network resources are shared.
+* The service is currently undergoing **SecNumCloud** qualification.
 
 ## Key Features
 
@@ -58,7 +59,7 @@ The VPC ensures strict isolation:
 
 ## Use Cases
 
-*   Critical application hosting requiring strong isolation.
-*   Multi-project segmentation (Prod, Pre-prod, Dev).
-*   Ephemeral and isolated test environments.
-*   Sovereign networking foundations for sensitive data.
+* Critical application hosting requiring strong isolation.
+* Multi-project segmentation (Prod, Pre-prod, Dev).
+* Ephemeral and isolated test environments.
+* Sovereign networking foundations for sensitive data.

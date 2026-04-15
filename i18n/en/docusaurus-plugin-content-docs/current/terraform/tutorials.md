@@ -19,6 +19,7 @@ This page gathers practical tutorials for using the Terraform Cloud Temple provi
 **Objective**: Create a basic VMware virtual machine without an operating system.
 
 **Prerequisites**:
+
 - Access to a Cloud Temple datacenter
 - API credentials configured
 - Required permissions
@@ -139,6 +140,7 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 ```
 
 **Explanations**:
+
 - `marketplace_item_id`: References a ready-to-use image
 - `datastore_id`: Specific datastore required for Marketplace deployment
 - The image already includes a pre-configured operating system
@@ -212,6 +214,7 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 ```
 
 **Explanations**:
+
 - The `os_disk` and `os_network_adapter` blocks configure the template's resources
 - These blocks can only be used at creation (see dedicated section)
 
@@ -303,6 +306,7 @@ resource "cloudtemple_compute_virtual_machine" "cloudinit_vm" {
 ```
 
 **Supported Cloud-Init Keys (VMware)**:
+
 - `user-data`: Main configuration (base64)
 - `network-config`: Network configuration (base64)
 - `public-keys`: Public SSH keys
@@ -347,11 +351,13 @@ resource "cloudtemple_compute_virtual_disk" "data_disk" {
 ```
 
 **Available Disk Modes**:
+
 - `persistent`: Changes are immediately and permanently written to the virtual disk.
 - `independent_nonpersistent`: Changes made to the virtual disk are recorded in a rollback journal and discarded upon shutdown.
 - `independent_persistent`: Changes are immediately and permanently written to the virtual disk. Unaffected by snapshots.
 
 **Provisioning Types**:
+
 - `dynamic`: Saves storage space by allocating space dynamically as needed. Creation is fast.
 - `staticImmediate`: Allocates all disk space at creation time, but blocks are zeroed out during the first write.
 - `staticDiffered`: Allocates and zeros out all disk space at creation time.
@@ -394,6 +400,7 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
   # mac_address = "00:50:56:xx:xx:xx"
 }
 ```
+
 :::info Supported Network Adapter Types
   The supported adapter types depend on the operating system running on the virtual machine as well as the version of VMware.
 :::
@@ -424,6 +431,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 ```
 
 **Controller Types**:
+
 - `USB2`
 - `USB3`
 - `SCSI`
@@ -438,6 +446,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 **Objective**: Deploy a virtual machine from a template in the catalog.
 
 **Prerequisites**:
+
 - Access to the OpenSource Cloud Temple infrastructure
 - Required permissions:
   - `compute_iaas_opensource_read`
@@ -534,6 +543,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "openstack_vm" {
 ```
 
 **Explanations**:
+
 - `high_availability`: Available options are `disabled`, `restart`, `best-effort` (See [documentation](https://docs.cloud-temple.com/iaas_opensource/concepts#haute-disponibilit%C3%A9) on High Availability)
 - `boot_firmware`: `bios` or `uefi`
 - `secure_boot`: Only available with UEFI
@@ -646,6 +656,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
 ```
 
 **Explanations**:
+
 - `interval`: Replication interval. Can be specified in `minutes` or `hours`.
 - `storage_repository_id`: Storage Repository to which the VM's disks will be replicated. Must be located in a different Availability Zone (AZ) than the original VM.
 
@@ -823,6 +834,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "cloudinit_vm" {
 ```
 
 **Difference with VMware**:
+
 - OpenSource uses the **NoCloud** datasource
 - Supported keys: `cloud_config` and `network_config`
 - No need for `filebase64()`, use `file()` directly
@@ -843,7 +855,7 @@ The `os_disk` and `os_network_adapter` blocks are special blocks that can be use
 **Important characteristics**:
 
 1. **Creation only**: These blocks can only be defined during the initial `terraform apply`
-3. **Alternative**: Use the `terraform import` command to manually import them
+2. **Alternative**: Use the `terraform import` command to manually import them
 
 ### Use os_disk
 
@@ -952,6 +964,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "vm_with_network"
 ---
 
 **Best practices**:
+
 1. Use `os_disk` and `os_network_adapter` for initial template configuration
 2. Use dedicated resources to add additional resources
 
@@ -1016,11 +1029,13 @@ output "bucket_namespace" {
 ```
 
 **Access Types**:
+
 - `private`: Restricted access to tenant IP addresses
 - `public`: Public read access
 - `custom`: Limited access to IPs on the whitelist
 
 **Versioning**:
+
 - `Enabled`: Enables object versioning
 - `Suspended`: Suspends versioning (preserves existing versions)
 
@@ -1159,6 +1174,7 @@ resource "cloudtemple_object_storage_bucket" "bucket_with_acl" {
 ```
 
 **Difference with dedicated ACL resources**:
+
 - **Inline**: ACLs defined directly inside the bucket (simpler for static configurations)
 - **Dedicated resource**: ACLs managed separately (more flexible, allows independent modifications)
 

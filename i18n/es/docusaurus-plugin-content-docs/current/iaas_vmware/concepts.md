@@ -126,9 +126,9 @@ The storage is primarily NVMe flash storage dedicated to professional workloads.
 
 Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraestructura de almacenamiento en bloques integra un cifrado hardware robusto.
 
--   **Tipo de cifrado**: Los datos se cifran directamente en los discos (`Datos en reposo`) utilizando el algoritmo **XTS-AES 256**.
--   **Cumplimiento**: Este método de cifrado cumple con la norma **FIPS 140-2**, asegurando un alto nivel de seguridad validado.
--   **Funcionamiento**: El cifrado se aplica en el momento de escritura de los datos en el soporte físico de almacenamiento.
+- __Tipo de cifrado__: Los datos se cifran directamente en los discos (`Datos en reposo`) utilizando el algoritmo __XTS-AES 256__.
+- __Cumplimiento__: Este método de cifrado cumple con la norma __FIPS 140-2__, asegurando un alto nivel de seguridad validado.
+- __Funcionamiento__: El cifrado se aplica en el momento de escritura de los datos en el soporte físico de almacenamiento.
 
 :::warning Punto de atención sobre la replicación
 Es importante destacar que este cifrado protege los datos almacenados en los discos. No está activo "en tiempo real" (on-the-fly), lo que significa que los datos no se cifran durante las operaciones de replicación de almacenamiento entre las zonas de disponibilidad. La seguridad de los transferencias se garantiza mediante canales de comunicación dedicados y seguros.
@@ -281,7 +281,7 @@ Also keep in mind that the first action the hypervisor performs when starting a 
 
 Each compute node is delivered with 128 GB of memory enabled at the __'Cpool'__ level, but physically has access to all available memory.
 
-For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation at activation of the _*'Cpool'*_ will be 3 x 128 GB = 384 GB of RAM.
+For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation at activation of the __'Cpool'__ will be 3 x 128 GB = 384 GB of RAM.
 You can extend it up to a maximum of 3 x 384 GB = 1,152 GB of memory.
 
     Minimum memory for a 'Cpool' = number of hosts × 128 GB of memory  

@@ -10,6 +10,7 @@ Questo tutorial ti guida nel contattare un partner sviluppatore tramite la Marke
 ## Contesto d'uso
 
 Utilizzate questa funzionalità quando:
+
 - la soluzione richiede un collegamento con il partner
 - desiderate ottenere informazioni aggiuntive
 - la soluzione non è direttamente implementabile (nessuna immagine VM)
