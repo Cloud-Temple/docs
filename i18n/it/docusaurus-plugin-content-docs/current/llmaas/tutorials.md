@@ -896,7 +896,7 @@ Questo tutorial vi guida nella configurazione dell'estensione CLINE in Visual St
 2. **Creare un nuovo modello**: Aggiungete una nuova configurazione di modello.
 3. **Compilare i campi**: Configurate i campi come segue, basandovi sull'immagine qui sotto.
 
-    ![Configurazione di CLINE per LLMaaS](./images/cline_configuration.png)
+    ![Configurazione di CLINE per LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
     * **API Provider**: Selezionate `OpenAI Compatible`.
     * **Base URL**: Inserite l'endpoint dell'API LLMaaS di Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
@@ -905,7 +905,7 @@ Questo tutorial vi guida nella configurazione dell'estensione CLINE in Visual St
     :::tip Generazione della chiave API
     Per generare la vostra chiave API, andate nella console Cloud Temple, sezione **LLMaaS** > **Chiavi API**, quindi cliccate su **"Crea una chiave API"**.
     
-    ![Creazione di una chiave API dalla console](./images/console_create_api_key.png)
+    ![Creazione di una chiave API dalla console](@site/docs/llmaas/images/console_create_api_key.png)
     :::
     
     * **Model ID**: Specificate il modello che desiderate utilizzare, ad esempio `qwen3-coder:30b`. Potete trovare l'elenco dei modelli disponibili nella sezione [Modelli](./models.md).

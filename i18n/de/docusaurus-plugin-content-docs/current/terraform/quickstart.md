@@ -557,7 +557,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 Nachdem Sie die Grundlagen beherrschen, erkunden Sie nun die fortgeschrittenen Tutorials:
 
 - [IaaS VMware-Tutorials](tutorials.md#iaas-vmware): Fortgeschrittener VM-Deploy, Disk-Management, Netzwerkkonfiguration
-- [IaaS OpenSource-Tutorials](tutorials.md#iaas-opensource): Virtuelle Maschinen mit XCP-ng, Replikation, Hochverfügbarkeit
+- [IaaS OpenSource-Tutorials](tutorials.md): Virtuelle Maschinen mit XCP-ng, Replikation, Hochverfügbarkeit
 - [Object Storage-Tutorials](tutorials.md#object-storage): Erstellung von Buckets, Verwaltung von ACLs, S3-Integration
 
 ## Zusätzliche Ressourcen

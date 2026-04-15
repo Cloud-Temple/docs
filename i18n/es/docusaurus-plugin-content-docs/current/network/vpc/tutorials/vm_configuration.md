@@ -1,12 +1,12 @@
 ---
 title: Configuración de Red de la VM
 ---
-import vpcCreateNetworkAdaptersVmModale from '../images/vpc_create_network_adapters_vm_modale.png'
-import vpcCreateNetworkAdaptersVmSelectNetworks from '../images/vpc_create_network_adapters_vm_select_networks.png'
-import vpcCreateNetworkAdaptersVm from '../images/vpc_create_network_adapters_vm.png'
-import vpcDetailIpsPub from '../images/vpc_detail_ips_pub.png'
-import vpcIpPubAssociate from '../images/vpc_ip_pub_associate.png'
-import vpcMacAddressAssociateModale from '../images/vpc_mac_address_associate_modale.png'
+import vpcCreateNetworkAdaptersVmModale from '@site/docs/network/vpc/images/vpc_create_network_adapters_vm_modale.png'
+import vpcCreateNetworkAdaptersVmSelectNetworks from '@site/docs/network/vpc/images/vpc_create_network_adapters_vm_select_networks.png'
+import vpcCreateNetworkAdaptersVm from '@site/docs/network/vpc/images/vpc_create_network_adapters_vm.png'
+import vpcDetailIpsPub from '@site/docs/network/vpc/images/vpc_detail_ips_pub.png'
+import vpcIpPubAssociate from '@site/docs/network/vpc/images/vpc_ip_pub_associate.png'
+import vpcMacAddressAssociateModale from '@site/docs/network/vpc/images/vpc_mac_address_associate_modale.png'
 
 # Network Configuration of the VM
 

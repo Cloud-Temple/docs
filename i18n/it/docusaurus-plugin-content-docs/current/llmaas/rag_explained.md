@@ -20,7 +20,7 @@ Il processo si svolge in due fasi:
 
 È questa fase di **Recupero** che è al centro del nostro argomento. Come fa un computer a "capire" che una domanda e un paragrafo parlano della stessa cosa? La magia avviene grazie ai **vettori**.
 
-![Schéma conceptuel du RAG](./images/rag_concept_overview.png)
+![Schéma conceptuel du RAG](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ## Fase 1: L'Embedding: Trasformare le parole in numeri
 
@@ -32,7 +32,7 @@ In termini semplici, un vettore è una lista di numeri che rappresenta un punto 
 
 `"Il gatto è sul tappeto."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Esempio di vettore di embedding](./images/embedding_vector_example.png)
+![Esempio di vettore di embedding](@site/docs/llmaas/images/embedding_vector_example.png)
 
 Questo vettore non è casuale. Rappresenta la "posizione" del testo in uno spazio semantico multidimensionale. Testi con significati simili avranno vettori che puntano in direzioni simili.
 
@@ -61,10 +61,10 @@ I benchmark seguenti illustrano due vantaggi chiave:
 -   **Precisione della Ricerca**: Il primo grafico mostra che i modelli Granite (in blu) sono molto competitivi, se non superiori, rispetto a modelli di dimensioni simili su compiti di ricerca semantica (`Retrieval Tasks`).
 -   **Velocità di Inferenza**: Il secondo grafico mostra che i modelli Granite sono **significativamente più veloci** (tempo per richiesta più basso) rispetto alla maggior parte delle alternative popolari, un vantaggio considerevole per le applicazioni che richiedono risposte in tempo reale.
 
-![Benchmark delle Prestazioni dei Modelli Granite](./images/granite_benchmark_performance.png)
+![Benchmark delle Prestazioni dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Confronto delle prestazioni su compiti di ricerca (BEIR) e ricerca di codice (CoIR).*
 
-![Benchmark della Velocità dei Modelli Granite](./images/granite_benchmark_speed.png)
+![Benchmark della Velocità dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Confronto della latenza (tempo per richiesta in secondi) tra diversi modelli di embedding.*
 
 È per questo equilibrio tra **prestazioni, velocità, sicurezza giuridica ed etica** che abbiamo scelto di integrare il modello `granite-embedding:278m` (la versione multilingue più potente) come servizio di embedding predefinito.
@@ -90,7 +90,7 @@ Il calcolo della similarità cosinus darà :
 -   `cos(v_q, v_a) = 1.0` → Angolo di 0°. Similarità perfetta.
 -   `cos(v_q, v_b) = 0.0` → Angolo di 90°. Nessuna similarità.
 
-![Illustrazione della Similarità Cosinus](./images/cosine_similarity_concept.png)
+![Illustrazione della Similarità Cosinus](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 È questo il risultato che vogliamo: il Documento A è semanticamente identico alla domanda, anche se la sua formulazione è più lunga.
 
@@ -100,7 +100,7 @@ Il calcolo della similarità cosinus darà :
 -   **Punteggio** : Un punteggio di 0 indica che i vettori sono identici. Più alto è il punteggio, più sono distanti.
 -   **Svantaggio per il testo** : È sensibile alla magnitudine. Nel nostro esempio sopra, la distanza tra `v_q` e `v_a` non sarebbe nulla, perché i vettori non hanno la stessa lunghezza, anche se hanno la stessa direzione.
 
-![Illustrazione della Distanza Euclidea](./images/euclidean_distance_concept.png)
+![Illustrazione della Distanza Euclidea](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ## Conclusione
 

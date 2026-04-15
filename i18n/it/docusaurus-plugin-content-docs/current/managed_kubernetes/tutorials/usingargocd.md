@@ -2,7 +2,7 @@
 title: Usare ArgoCD per i tuoi deployment GitOps
 ---
 
-import argocdguestbook from './images/argocdguestbook.png'
+import argocdguestbook from '@site/docs/managed_kubernetes/tutorials/images/argocdguestbook.png'
 
 ## Obiettivi
 

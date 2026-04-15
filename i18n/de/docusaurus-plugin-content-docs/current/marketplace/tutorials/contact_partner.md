@@ -1,15 +1,16 @@
 ---
 title: Kontaktieren eines Partners
 ---
-import marketplaceContactAccess from '../images/marketplaceContactAccess.png'
-import marketplaceContactConfirm from '../images/marketplaceContactConfirm.png'
-import marketplaceContactEmail from '../images/marketplaceContactEmail.png'
+import marketplaceContactAccess from '@site/docs/marketplace/images/marketplaceContactAccess.png'
+import marketplaceContactConfirm from '@site/docs/marketplace/images/marketplaceContactConfirm.png'
+import marketplaceContactEmail from '@site/docs/marketplace/images/marketplaceContactEmail.png'
 
 Dieses Tutorial führt Sie Schritt für Schritt durch den Prozess des Kontaktaufnahmes mit einem Publisher-Partner über die Cloud Temple Marketplace.
 
 ## Verwendungskontext
 
 Verwenden Sie diese Funktion, wenn:
+
 - eine Verbindung mit dem Partner hergestellt werden muss
 - zusätzliche Informationen benötigt werden
 - die Lösung nicht direkt bereitgestellt werden kann (kein VM-Image)

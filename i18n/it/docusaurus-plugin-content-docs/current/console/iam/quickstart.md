@@ -1,15 +1,15 @@
 ---
 title: Guida di avvio
 ---
-import shivaTenant from './images/shiva_tenant.png'
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
-import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Tenant
 
@@ -34,13 +34,13 @@ La selezione del tenant avviene dalla pagina principale della Console:
 
 Access accounts to the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
-Credentials are global to your [Organization](concepts.md#organizations).
+Credentials are global to your [Organization](concepts.md#organizzazioni).
 
 *__Nota:__ Identity federation is managed at the organization level*
 
 ### Creazione di un account utente nella tua organizzazione
 
-La creazione di un account utente nella tua organizzazione avviene tramite invito. Per invitare un utente a un'[Organizzazione](concepts.md#organisations), vai nel menu __'Amministrazione'__ a sinistra nella barra verde, quindi nel sottomenu __'Utenti'__.
+La creazione di un account utente nella tua organizzazione avviene tramite invito. Per invitare un utente a un'[Organizzazione](concepts.md#organizzazioni), vai nel menu __'Amministrazione'__ a sinistra nella barra verde, quindi nel sottomenu __'Utenti'__.
 
 Fai clic sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti.
 
@@ -68,9 +68,9 @@ Viene quindi visualizzato il menu per l'attivazione dei diritti:
 
 <img src={shivaOnboard_005} />
 
-La configurazione dei permessi deve essere effettuata per ogni [Tenant](concepts.md#tenant) dell'[Organizzazione](concepts.md#organisations).
+La configurazione dei permessi deve essere effettuata per ogni [Tenant](concepts.md#tenant) dell'[Organizzazione](concepts.md#organizzazioni).
 
-L'elenco dei permessi e la loro definizione è disponibile [qui](#permissions).
+L'elenco dei permessi e la loro definizione è disponibile [qui].
 
 ### Cambiare la lingua di un utente
 
@@ -96,11 +96,11 @@ L'elenco delle tematiche disponibili può evolversi e arricchirsi progressivamen
 
 ### Quali sono le autorizzazioni disponibili per gli account utente della Console?
 
-Ecco l'elenco delle [autorizzazioni disponibili](#permissions).
+Ecco l'elenco delle [autorizzazioni disponibili].
 
 ### Come aggiungere un'autorizzazione?
 
-La [procedura di assegnazione dell'autorizzazione è disponibile qui](#permissions)
+La [procedura di assegnazione dell'autorizzazione è disponibile qui]
 
 ### Why can't I add a permission?
 
