@@ -7,7 +7,33 @@ import grafana from './images/grafana.png'
 import archi_overview from './images/archi_overview.png'
 import archi_overview_1az from './images/archi_overview_1az.png'
 
-## Présentation de Managed Kubernetes
+## Nos offres Managed Kubernetes
+
+Cloud Temple propose deux offres distinctes pour répondre à vos besoins en matière d'orchestration de conteneurs :
+
+- **Managed Core Kubernetes** : Une offre minimaliste qui vous fournit un socle Kubernetes robuste et sécurisé, basé sur des composants open-source de pointe. Elle est idéale pour les équipes expertes qui souhaitent construire leur propre plateforme sur-mesure.
+- **Managed Kubernetes** : Une solution complète et prête à l'emploi qui inclut une stack complète d'outils pour le réseau, la sécurité, le stockage, le déploiement continu, l'observabilité, la sauvegarde et la gestion des coûts.
+
+### Tableau comparatif des offres
+
+| Composant | Managed Core Kubernetes | Managed Kubernetes |
+|---|---|---|
+| **OS** | Talos | Talos |
+| **CNI** | Cilium | Cilium |
+| **Observabilité CNI** | ❌ | Hubble |
+| **Load Balancer** | MetalLB | MetalLB |
+| **Ingress** | ❌ | Ingress Nginx |
+| **Stockage** | Rook-Ceph | Rook-Ceph |
+| **Déploiement Continu (GitOps)** | ❌ | ArgoCD |
+| **Observabilité** | ❌ | Prometheus, Grafana, Loki |
+| **Sauvegarde et Migration** | ❌ | Veeam Kasten |
+| **Gestion des Coûts (FinOps)** | ❌ | OpenCost |
+| **Gouvernance et Sécurité**| ❌ | Kyverno, Capsule |
+| **Container Registry**| ❌ | Harbor |
+| **Gestion des certificats**| ❌ | Cert-Manager |
+| **Authentification SSO**| ❌ | Intégration OIDC |
+
+## Présentation de l'offre Managed Kubernetes (complète)
 
 L'offre **Managed Kubernetes** (aussi appelée "Kub Managé", ou "KM") est une solution de containeurisation Kubernetes managée par Cloud-Temple déployée sous forme de Machines Virtuelles fonctionnant sur les infrastructures IaaS Cloud-Temple OpenIaaS.
 
@@ -85,7 +111,7 @@ Les délais de prise en charge et de rétablissement dépendent de la sévérit�
 Pour un déploiement "de production" (multi-zonal), les machines suivantes sont utilisées:
 
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
-|---------|---------------|------------|---------|--------------------|
+|---|---|---|---|---|
 | AZ07  | Git Runner   | 4  | 8 Go | OS: 64 Go  |
 | AZ05  | Control Plane 1   | 8  | 12 Go | OS: 64 Go  |
 | AZ06  | Control Plane 2   | 8  | 12 Go | OS: 64 Go  |
@@ -107,7 +133,7 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 Pour une version "dev/test", les machines suivantes sont déployées:
 
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
-|---------|---------------|------------|---------|--------------------|
+|---|---|---|---|---|
 | AZ0n  | Git Runner   | 4  | 8 Go | OS: 30 Go  |
 | AZ0n  | Control Plane    | 8  | 12 Go | OS: 64 Go  |
 | AZ0n  | Worker Node 1 (**)   | 12 | 24 Go | OS: 64 Go + Ceph 300 Go minimum (*) |
@@ -122,7 +148,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Architecture & Infrastructure
 
 | **Activité**                                                                 | **Client** | **Cloud Temple** |
-|------------------------------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Définir l'architecture globale du service Kubernetes                         | C          | RA                     |
 | Dimensionner le service Kubernetes (nombre de noeuds, ressources)            | C          | RA                     |
 | Installer le service Kubernetes avec une configuration par défaut            | I          | RA                     |
@@ -134,7 +160,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Gestion des projets et applications métiers 
 
 | **Activité**                                          | **Client** | **Cloud Temple** |
-|-------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Créer et gérer les projets Kubernetes                 | RA         | I*                     |
 | Déployer et gérer les applications dans Kubernetes    | RA         | I*                     |
 | Configurer les pipelines CI/CD                        | RA         | I*                     |
@@ -145,7 +171,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Surveillance et performance
 
 | **Activité**                                            | **Client** | **Cloud Temple** |
-|---------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Surveiller la performance du service Kubernetes         | I          | RA*                    |
 | Surveiller la performance des applications              | RA         |                        |
 | Gérer les alertes liées au service Kubernetes           | I          | RA*                    |
@@ -156,7 +182,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Maintenance et mises à jour Infrastructures
 
 | **Activité**                                             | **Client** | **Cloud Temple** |
-|----------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Mettre à jour le service Kubernetes/OS                   | C          | RA                     |
 | Appliquer les correctifs de sécurité à Kubernetes        | C          | RA                     |
 | Mettre à jour les applications déployées (opérateurs*)   | C          | RA                     |
@@ -166,7 +192,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Sécurité
 
 | **Activité**                                                              | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Gérer la sécurité du service Kubernetes                                   | RA         | RA*                    |
 | Configurer et gérer les politiques de sécurité des pods                   | RA         | I                      |
 | Gérer les certificats SSL/TLS pour le service Kubernetes                  | C          | RA*                    |
@@ -179,7 +205,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Sauvegarde et reprise après sinistre
 
 | **Activité**                                                                 | **Client** | **Cloud Temple** |
-|------------------------------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Définir la stratégie de sauvegarde pour le service Kubernetes                | I         | RA                    |
 | Mettre en oeuvre et gérer les sauvegardes du service Kubernetes              | I         | RA                    |
 | Définir la stratégie de sauvegarde pour les applications                     | RA*         | I*                   |
@@ -192,7 +218,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Support et résolution des problèmes
 
 | **Activité**                                              | **Client** | **Cloud Temple** |
-|-----------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Fournir un support de niveau 1 pour l'infrastructure      | I          | RA                     |
 | Fournir un support de niveau 2 et 3 pour l'infrastructure | I          | RA                     |
 | Résoudre les problèmes liés au service Kubernetes         | C          | RA                     |
@@ -203,7 +229,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 *Cluster de Production seulement. En Dev/Test le client est entièrement en autonomie et en responsabilité.*
 
 | **Activité**                                              | **Client** | **Cloud Temple** |
-|-----------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Surveiller l'utilisation des ressources Kubernetes         | C         | RA                     |
 | Planifier l’évolution des capacités du service            | RA         | C                      |
 | Implémenter les changements de capacité                   | I          | RA                     |
@@ -212,7 +238,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Documentation et conformité
 
 | **Activité**                                                  | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Maintenir la documentation du service Kubernetes              | I          | RA                     |
 | Maintenir la documentation des applications                   | RA         | I                      |
 | Assurer la conformité du service Kubernetes                   | I          | RA                     |
@@ -223,7 +249,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 ### Gestion des opérateurs/CRD Kubernetes (inclus dans l'offre)
 
 | **Activité**                                                              | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Mise à disposition du catalogue d'Opérateurs par défaut                   | CI         | RA                     |
 | Mise à jour des Opérateurs                                                | CI         | RA                     |
 | Surveillance de l’état des Opérateurs                                     | CI         | RA                     |
@@ -245,7 +271,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 *Cluster de Production seulement. En Dev/Test le client est entièrement en autonomie et en responsabilité.*
 
 | **Activité**                                                              | **Client** | **Cloud Temple** |
-|---------------------------------------------------------------------------|------------|------------------------|
+|---|---|---|
 | Déploiement des CRDs                                                      | I*         | RA*                    |
 | Mise à jour des Opérateurs                                                | RA         | I                     |
 | Surveillance de l’état des Opérateurs                                     | RA         | I                     |
@@ -268,7 +294,7 @@ Certains services opérateurs peuvent être pris en charge en fonction du contra
 ### Assistance applicative
 
 | **Activité**                                | **Client** | **Cloud Temple** |
-|---------------------------------------------|------------|------------------------|
+|---|---|---|
 | Assistance applicative (prestation externe) | RA         | I                      |
 
 Un support applicatif peut être fourni via une prestation complémentaire.
