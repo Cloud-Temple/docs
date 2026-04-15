@@ -330,7 +330,7 @@ __Worst Case Allocation (Cluster):__ This graph illustrates the memory that woul
 __Consumed Memory (ESX):__ Unlike the cluster graphs, this one shows the total memory consumed on a specific ESX host. This includes not only the memory used by the virtual machines hosted on this host, but also the memory consumed by the hypervisor system itself (ESXi overhead).
 
 {/*TODO: Add missing page. */}
-{/* When viewing a cluster's page, several tabs are available. The _*'Rules'* tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines)*/}
+{/* When viewing a cluster's page, several tabs are available. The _*'Rules'*tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines)*/}
 
 <img src={shivaCpool_004} />
 
