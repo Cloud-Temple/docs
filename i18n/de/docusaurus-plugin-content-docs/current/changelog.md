@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Änderungsprotokoll
 
+### 15. April 2026: Verbesserung der IaaS VMware-Dokumentation — Cluster-Metriken
+
+- **IaaS VMware**: Detaillierte Dokumentation der in der VMware-Cluster-Ansicht der Cloud Temple Konsole angezeigten Metriken hinzugefügt. Umfasst die drei Cluster-Speicher-Diagramme: **Bereitgestellter Speicher** (insgesamt den VMs zugewiesener Speicher), **Verwendeter Speicher** (physischer Speicher, der aktiv von den VMs genutzt wird) und **Worst-Case-Zuweisung** (Projektion des maximalen gleichzeitigen Verbrauchs), mit einer präzisen Beschreibung der Bedeutung jedes Indikators zur Vorwegnahme des Ressourcenbedarfs. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+
 ### 15. April 2026: Dokumentation Managed MariaDB, Managed PostgreSQL und mehrsprachige Korrekturen
 
 - **Managed MariaDB**: Erstveröffentlichung der Dokumentation für den Managed MariaDB-Dienst (Vorschau): Dienstübersicht, technische Konzepte (StandAlone- und Distributed-Architekturen), Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.

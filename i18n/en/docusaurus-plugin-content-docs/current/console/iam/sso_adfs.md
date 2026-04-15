@@ -15,7 +15,7 @@ Here are the different steps to complete this configuration:
 
 ## Prerequisites
 
-Your Microsoft ADFS server must be able to access the following Cloud Temple URL: <https://keycloak-shiva.cloud-temple.com/auth/>.
+Your Microsoft ADFS server must be able to access the following Cloud Temple URL: https://keycloak-shiva.cloud-temple.com/auth/.
 
 The ADFS must be accessible from Cloud Temple networks and __expose a TLS certificate from a public CA__.
 Users wishing to log in to the portal must have their email, first name, and last name specified in the Active Directory.
@@ -36,7 +36,7 @@ Please provide the following information in the support request:
 ```
 
 As soon as the configuration is completed on the Console side, the indicated contact will be informed.
-The Cloud Temple support team will send you a URL that looks like this: <https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor>
+The Cloud Temple support team will send you a URL that looks like this: https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
 
 *You can paste the URL into a browser to test it. If it works correctly, you should see an XML displayed.*
 
