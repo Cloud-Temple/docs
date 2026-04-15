@@ -11,24 +11,24 @@ L'interfaccia di configurazione dei bucket propone tre modalità di gestione deg
 
 <img src={S3PublicAccess} />
 
-  - Funzionamento: Non viene applicata alcuna restrizione basata sull'indirizzo IP.
-  - Conseguenza: Il bucket è accessibile da qualsiasi indirizzo IP, senza filtraggio.
+- Funzionamento: Non viene applicata alcuna restrizione basata sull'indirizzo IP.
+- Conseguenza: Il bucket è accessibile da qualsiasi indirizzo IP, senza filtraggio.
 
 ### **Accesso Privato (automatico)**
 
 <img src={S3PrivateAccess} />
 
-  - Funzionamento: Tutte le sottoreti CIDR assegnate al tenant vengono aggiunte automaticamente dall'editor, senza intervento manuale.
-  - Caratteristica della Console: Gli indirizzi di rete (primo indirizzo del blocco) e di broadcast (ultimo indirizzo del blocco), che di solito sono riservati in una rete IP, vengono anch'essi aggiunti automaticamente.
-  - Conseguenza: L'utente non deve gestire queste sottigliezze, tutto viene preso in considerazione dallo strumento.
+- Funzionamento: Tutte le sottoreti CIDR assegnate al tenant vengono aggiunte automaticamente dall'editor, senza intervento manuale.
+- Caratteristica della Console: Gli indirizzi di rete (primo indirizzo del blocco) e di broadcast (ultimo indirizzo del blocco), che di solito sono riservati in una rete IP, vengono anch'essi aggiunti automaticamente.
+- Conseguenza: L'utente non deve gestire queste sottigliezze, tutto viene preso in considerazione dallo strumento.
 
 ### **Accesso Custom (manuale)**
 
 <img src={S3CustomAccess} />
 
-  - Funzionamento: L'utente deve fornire esplicitamente tutte le gamme CIDR, nonché gli indirizzi di rete e di broadcast da autorizzare.
-  - Esempio: Se si desidera autorizzare il prefisso `80.75.153.200/29`, è necessario aggiungere anche gli indirizzi `80.75.153.200/32` (indirizzo di rete) e `80.75.153.207/32` (indirizzo di broadcast) in modo esplicito, affinché questi ultimi siano inclusi nella politica di accesso.
-  - Conseguenza: Offre una libertà totale, ma impone una configurazione completa e rigorosa.
+- Funzionamento: L'utente deve fornire esplicitamente tutte le gamme CIDR, nonché gli indirizzi di rete e di broadcast da autorizzare.
+- Esempio: Se si desidera autorizzare il prefisso `80.75.153.200/29`, è necessario aggiungere anche gli indirizzi `80.75.153.200/32` (indirizzo di rete) e `80.75.153.207/32` (indirizzo di broadcast) in modo esplicito, affinché questi ultimi siano inclusi nella politica di accesso.
+- Conseguenza: Offre una libertà totale, ma impone una configurazione completa e rigorosa.
 
 :::info
 

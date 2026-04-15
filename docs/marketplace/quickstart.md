@@ -69,6 +69,7 @@ Pour les solutions compatibles avec vos environnements OpenIaaS ou VMware, vous 
 **Note importante :** Le déploiement direct n'est disponible que pour les images ayant votre environnement dans leurs cibles compatibles.
 
 **Guides détaillés :**
+
 - [Comment déployer une image sur OpenIaaS ?](tutorials/deploy_openiaas)
 - [Comment déployer une image sur VMware ?](tutorials/deploy_vmware)
 
@@ -77,6 +78,7 @@ Pour les solutions compatibles avec vos environnements OpenIaaS ou VMware, vous 
 Pour les solutions nécessitant une mise en relation, vous pouvez contacter directement le partenaire éditeur.
 
 **Guide détaillé :**
+
 - [Comment contacter un partenaire ?](tutorials/contact_partner)
 
 ---

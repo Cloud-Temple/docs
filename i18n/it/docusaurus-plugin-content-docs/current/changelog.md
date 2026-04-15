@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Registro delle Modifiche
 
+### 15 aprile 2026: Documentazione Managed MariaDB, Managed PostgreSQL e correzioni multilingua
+
+- **Managed MariaDB**: Prima pubblicazione della documentazione del servizio Managed MariaDB (anteprima): panoramica del servizio, concetti tecnici (architetture StandAlone e Distributed), guida rapida. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
+- **Managed PostgreSQL**: Prima pubblicazione della documentazione del servizio Managed PostgreSQL (anteprima): panoramica del servizio, concetti tecnici, guida rapida. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
+- **Correzioni multilingua (immagini)**: Correzione dei riferimenti alle immagini nelle traduzioni delle sezioni Managed Kubernetes e Managed MariaDB per tutte le lingue (EN, DE, ES, IT) — conversione dei percorsi relativi `./images/` in percorsi assoluti `@site/docs/...` per una corretta visualizzazione in tutte le lingue.
+- **Correzione link interrotti**: Risoluzione di diversi link interrotti: riferimenti alle licenze LLMaaS, link alla console nel tutorial rclone (OSS), link IAM nella documentazione di rete (EN), link relativi nella sezione Terraform (EN).
+
+### 15 aprile 2026: Nuovo modulo Gestore dei costi
+
+- **Console (Gestore dei costi)**: Aggiunta la documentazione completa del nuovo modulo di monitoraggio del consumo accessibile dalla Console Cloud Temple. Copre il dashboard, il consumo globale (con proiezione di fine mese), la ripartizione per prodotto e servizio, i dettagli di fatturazione riga per riga e il catalogo dei prezzi. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
+
 ### 26 marzo 2026: Aggiornamento dell'elenco dei sub-responsabili (DPA)
 
 - **Contrattuale**: Aggiornamento dell'Accordo sul Trattamento dei Dati (DPA) - revisione dell'elenco dei sub-responsabili (rimozione di Microsoft Azure e Amazon Web Services, modifica dell'attività per Iron Mountain) e aggiunta della data di autorizzazione. Propagazione delle modifiche in inglese, tedesco, spagnolo e italiano.
@@ -105,14 +116,14 @@ sidebar_position: 2
 ### Juillet 2025 : Nouveautés et mises à jour majeures
 
 - **Stockage Objet (OSS)** :
-    - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
-    - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
+  - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
+  - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
 - **IaaS OpenSource** :
-    - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
+  - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
 - **Console** :
-    - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
+  - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
 - **Réseau** :
-    - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
+  - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
 
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 

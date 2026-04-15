@@ -236,6 +236,7 @@ terraform init
 ```
 
 This command:
+
 - Downloads the provider from the Terraform Registry
 - Initializes the backend (if configured)
 - Creates the `.terraform/` directory
@@ -249,6 +250,7 @@ terraform plan
 ```
 
 The plan indicates:
+
 - **Resources to create** (`+`)
 - **Resources to modify** (`~`)
 - **Resources to destroy** (`-`)
@@ -263,6 +265,7 @@ terraform apply
 ```
 
 Terraform:
+
 1. Generates a plan
 2. Requests confirmation (unless using `--auto-approve`)
 3. Applies the changes
@@ -286,19 +289,25 @@ terraform destroy
 ```
 
 # Display current state
+
 terraform show
 
 # List resources
+
 terraform state list
 
 # Verify configuration
+
 terraform validate
 
 # Format files
+
 terraform fmt
 
 # Display outputs
+
 terraform output
+
 ```
 
 ## Dependencies and Execution Order
@@ -421,6 +430,7 @@ module "db_server" {
 ### File Organization
 
 ```
+
 .
 ├── main.tf              # Main resources
 ├── variables.tf         # Variable declarations
@@ -432,6 +442,7 @@ module "db_server" {
         ├── main.tf
         ├── variables.tf
         └── outputs.tf
+
 ```
 
 ### Secret Management

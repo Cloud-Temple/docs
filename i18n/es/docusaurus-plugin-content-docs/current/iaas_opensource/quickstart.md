@@ -99,6 +99,7 @@ Se abre un nuevo separador en su navegador y se muestra entonces la consola de s
 <img src={openIaasVmConsoleOpen} />
 
 Es posible realizar las siguientes acciones en el menú VNC:
+
 - solicitar el envío de teclas especiales,
 - forzar un mapeo de teclado (en caso de que su máquina virtual no tenga la misma disposición de teclado que su navegador web),
 - abrir un campo de texto que se puede transmitir a la máquina. Este método reemplaza el antiguo portapapeles no funcional,
@@ -123,9 +124,11 @@ Below is a summary of the possible scenarios:
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
+
 - If certain characters do not appear when typed manually, you can try pasting them from the clipboard.
 
 #### Funcionamiento del portapapeles
+
 Esta función le permite enviar una cadena completa de caracteres a su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la escritura en la consola que la opción "enforce keyboard" es necesaria, recuerde activarla antes de utilizar el portapapeles.  
 Esta función puede utilizarse para enviar una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
 

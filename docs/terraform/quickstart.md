@@ -61,6 +61,7 @@ Ces credentials peuvent être générés depuis la Console Cloud Temple en suiva
 :::warning Sécurité
     Conservez ces credentials en lieu sûr. Le Secret ID ne sera affiché qu'une seule fois.
 :::
+
 ### Configuration des variables d'environnement
 
 Exportez vos credentials en variables d'environnement :
@@ -533,7 +534,8 @@ Error: failed to login: Unexpected response code: 401
 
 **Cause** : Credentials invalides ou expirés.
 
-**Solution** : 
+**Solution** :
+
 1. Vérifiez vos variables d'environnement
 2. Générez une nouvelle clé API dans la console
 3. Vérifiez les permissions de votre Clé API
@@ -546,7 +548,8 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 
 **Cause** : La ressource référencée (datacenter, cluster, etc.) n'existe pas ou vous n'y avez pas accès.
 
-**Solution** : 
+**Solution** :
+
 1. Vérifiez le nom exact (ou l'uuid) dans la console Cloud Temple
 2. Vérifiez vos droits d'accès sur cette ressource
 

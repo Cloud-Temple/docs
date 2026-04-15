@@ -40,6 +40,7 @@ Access to this URL is restricted to the IP addresses you have declared to Cloud 
 The main page in Kubecost is the **Allocations** dashboard. This is where you can visualize your resource consumption.
 
 By default, costs are aggregated by **Namespace**. Use the "Aggregate by" dropdown menu to change the view and analyze costs by:
+
 - `Deployment`, `StatefulSet`, etc.
 - `Controller`
 - `Label` (very useful if you use labels to identify your teams or projects. For example, you could use the capsule tenant label.)
@@ -51,6 +52,7 @@ You can also adjust the analysis period (default: "Last 7 days") to visualize co
 ## Analyze infrastructure costs (Assets)
 
 The **Assets** section provides a detailed view of the costs associated with the underlying infrastructure of your cluster:
+
 - Nodes (VMs)
 - Persistent disks
 - Network costs
@@ -62,6 +64,7 @@ This allows you to understand the cost distribution across computing, storage, a
 Kubecost does more than just show costs — it also helps you reduce them. The **Savings** section continuously analyzes your cluster and provides concrete recommendations to optimize your spending.
 
 Common recommendations include:
+
 - **Right-sizing container requests:** Adjust CPU and memory requests for your containers to match their actual usage.
 - **Manage abandoned workloads:** Identify deployments that are no longer in use but still consume resources.
 - **Manage unclaimed volumes:** Find persistent disks that are no longer attached to any pod.

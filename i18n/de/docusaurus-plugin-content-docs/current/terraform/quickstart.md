@@ -536,6 +536,7 @@ Error: failed to login: Unexpected response code: 401
 **Cause**: Invalid or expired credentials.
 
 **Solution**:
+
 1. Check your environment variables
 2. Generate a new API key in the console
 3. Verify the permissions of your API key
@@ -549,6 +550,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 **Ursache**: Die referenzierte Ressource (Datacenter, Cluster usw.) existiert nicht oder Sie haben keinen Zugriff darauf.
 
 **Lösung**:
+
 1. Überprüfen Sie den genauen Namen (oder die UUID) in der Cloud Temple-Konsole
 2. Überprüfen Sie Ihre Zugriffsrechte für diese Ressource
 

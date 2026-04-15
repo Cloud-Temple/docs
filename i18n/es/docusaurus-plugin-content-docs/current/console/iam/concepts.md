@@ -307,22 +307,26 @@ Each tenant has at least one owner, ensuring clear accountability and efficient 
 
 #### 1. Number of owners
 
-* There is no technical limit on the number of owners that can be defined for the tenant.
+- There is no technical limit on the number of owners that can be defined for the tenant.
+
 - The management interface (UI) issues a warning when more than 3 owners are present, encouraging the limitation of the number of owners for security reasons and optimal access management.
 
 #### 2. Adding a new owner
 
-* When adding a new owner, updating their permissions may take up to 60 minutes.
+- When adding a new owner, updating their permissions may take up to 60 minutes.
+
 - This propagation time is normal and ensures that access rights are correctly applied across all associated services and resources.
 
 #### 2. Permissions de un propietario
 
-* Un propietario recibirá todas las permisos asociados a los productos habilitados en su inquilino.
+- Un propietario recibirá todas las permisos asociados a los productos habilitados en su inquilino.
+
 - No es posible modificar los permisos de un propietario.
 
 #### 3. Removal of a owner
 
-* To remove an owner from the tenant, the user must submit a request to support.
+- To remove an owner from the tenant, the user must submit a request to support.
+
 - This procedure ensures that changes to access rights are carried out securely and in accordance with best practices for access management.
 
 ### Access authorization to a tenant: Allowed IPs

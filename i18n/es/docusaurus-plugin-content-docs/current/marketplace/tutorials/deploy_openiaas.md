@@ -22,6 +22,7 @@ Desde la página de detalle de una solución compatible con OpenIaaS, seleccione
 ### 2. Configuración de la máquina virtual
 
 Configure los parámetros básicos de su máquina virtual:
+
 - **Nombre** de la VM
 - **Recursos** (CPU, RAM)
 - **Almacenamiento**
@@ -42,5 +43,6 @@ También puede acceder directamente a las imágenes de Marketplace desde la pág
 ## Seguimiento del despliegue
 
 Una vez iniciado el despliegue:
+
 - Siga el avance desde la consola OpenIaaS
 - La VM aparecerá en su lista de máquinas virtuales

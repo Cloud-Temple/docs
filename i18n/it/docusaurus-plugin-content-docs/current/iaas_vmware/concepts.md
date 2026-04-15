@@ -128,9 +128,9 @@ I dischi vengono utilizzati dalle baie di archiviazione in modalità [__'Distrib
 
 Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrastruttura di storage blocco è dotata di un robusto crittografia hardware.
 
--   **Tipo di Crittografia**: I dati vengono crittografati direttamente sui dischi (`Data At Rest`) utilizzando l'algoritmo **XTS-AES 256**.
--   **Conformità**: Questo metodo di crittografia è conforme allo standard **FIPS 140-2**, garantendo un elevato livello di sicurezza certificato.
--   **Funzionamento**: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
+- __Tipo di Crittografia__: I dati vengono crittografati direttamente sui dischi (`Data At Rest`) utilizzando l'algoritmo __XTS-AES 256__.
+- __Conformità__: Questo metodo di crittografia è conforme allo standard __FIPS 140-2__, garantendo un elevato livello di sicurezza certificato.
+- __Funzionamento__: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
 
 :::warning Osservazione sulla replica
 È importante sottolineare che questa crittografia protegge i dati archiviati sui dischi. Non è attiva "on-the-fly", il che significa che i dati non vengono crittografati durante le operazioni di replica dello storage tra le zone di disponibilità. La sicurezza dei trasferimenti è garantita tramite canali di comunicazione dedicati e protetti.
@@ -285,7 +285,7 @@ Also keep in mind that the first action the hypervisor performs when starting a 
 
 Each compute node is delivered with 128 GB of memory enabled at the __'Cpool'__ level, although it physically has access to all allocated memory.
 
-For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation at activation of the _*'Cpool'*_ will be 3 x 128 GB = 384 GB of RAM.
+For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation at activation of the __'Cpool'__ will be 3 x 128 GB = 384 GB of RAM.
 You can extend it up to a maximum of 3 x 384 GB = 1152 GB of memory.
 
     Minimum memory for a 'Cpool' = number of hosts × 128 GB of memory  

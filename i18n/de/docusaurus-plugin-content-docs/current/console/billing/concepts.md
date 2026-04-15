@@ -43,6 +43,7 @@ Dieses Diagramm ermöglicht es Ihnen zu visualisieren:
 **Diagramm für den aktuellen Monat lesen**
 
 Für den aktuellen Monat zeigt das Diagramm zwei visuelle Bereiche:
+
 - Der **blaue (ausgefüllte) Bereich** stellt den **tatsächlichen Verbrauch bis dato** dar, d.h. die seit Monatsbeginn tatsächlich verbrauchten Ressourcen,
 - Der **orange (schraffierte) Bereich** stellt die **Prognose** bis zum Monatsende dar, berechnet auf Basis Ihrer aktuellen Verbrauchsrate.
 

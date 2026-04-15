@@ -99,6 +99,7 @@ Un nouvel onglet de votre navigateur s'ouvre et s'affiche alors la console de vo
 <img src={openIaasVmConsoleOpen} />
 
 Il est possible dans le menu VNC :
+
 - de demander l'envoi de touches particulières,
 - de forcer un mapping de clavier (dans le cas où votre machine virtuelle n'a pas la même disposition clavier que votre navigateur web),
 - d'ouvrir un champs texte transmissible à la machine. Cette méthode remplace l'ancien presse-papier non fonctionnel,
@@ -106,6 +107,7 @@ Il est possible dans le menu VNC :
 - de changer la taille de la fenêtre (scaling).
 
 #### Support dispositions clavier
+
 La saisie effectuée dans la console dépend du langage du clavier de votre navigateur web, du langage du clavier
 de la machine virtuelle et de l'activation ou non de l'option 'enforce keyboard' à gauche de l'écran.
 Voici une synthèse des situations possibles :
@@ -122,9 +124,11 @@ Voici une synthèse des situations possibles :
 | Anglais                                           | Anglais                                   | Oui                                    | Non conseillé            |
 
 __Note__ :
+
 - Si certains caractères ne passent pas à la saisie manuelle, vous pouvez essayer via le clipboard.
 
 #### Fonctionnement du presse-papier
+
 Cette fonctionnalité vous permet d'envoyer toute une chaine de caractères vers votre machine virtuelle. Il est important de noter que la touche "enforce keyboard" influe sur la façon dont cette chaine de caractères
 sera transmise à votre machine virtuelle. Si vous constatez lors de la saisie dans la console que l'option "enforce keyboard" est nécessaire, pensez à l'activer avant d'utiliser le presse-papier.  
 Cette fonctionnalité peut être utilisée pour l'envoie d'un mot de passe, d'une commande, ou d'un contenu de fichier de configuration par exemple :

@@ -237,6 +237,7 @@ terraform init
 ```
 
 Este comando:
+
 - Descarga el provider desde el Terraform Registry
 - Inicializa el backend (si está configurado)
 - Crea el directorio `.terraform/`
@@ -250,6 +251,7 @@ terraform plan
 ```
 
 El plan indica:
+
 - **Recursos que se crearán** (`+`)
 - **Recursos que se modificarán** (`~`)
 - **Recursos que se destruirán** (`-`)
@@ -264,6 +266,7 @@ terraform apply
 ```
 
 Terraform:
+
 1. Genera un plan
 2. Solicita confirmación (excepto con `--auto-approve`)
 3. Aplica los cambios

@@ -43,6 +43,7 @@ Este gráfico le permite visualizar:
 **Lectura del gráfico para el mes en curso**
 
 Para el mes en curso, el gráfico distingue dos zonas visuales:
+
 - La parte **azul (sólida)** representa el **consumo real hasta la fecha**, es decir, los recursos efectivamente consumidos desde el inicio del mes,
 - La parte **naranja (rayada)** representa la **previsión** estimada hasta el final del mes, calculada en base a su ritmo de consumo actual.
 

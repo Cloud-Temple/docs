@@ -13,9 +13,9 @@ If your users are authenticated to their Microsoft account, authentication to th
 
 Here are the different steps to complete this configuration:
 
-
 ## Prerequisites
-Your Microsoft ADFS server must be able to access the following Cloud Temple URL: https://keycloak-shiva.cloud-temple.com/auth/.
+
+Your Microsoft ADFS server must be able to access the following Cloud Temple URL: <https://keycloak-shiva.cloud-temple.com/auth/>.
 
 The ADFS must be accessible from Cloud Temple networks and __expose a TLS certificate from a public CA__.
 Users wishing to log in to the portal must have their email, first name, and last name specified in the Active Directory.
@@ -27,18 +27,21 @@ This part of the configuration is performed at the organization level by the Clo
 To do this, submit a __support request__ in the console indicating your desire to configure your authentication repository with Microsoft ADFS.
 
 Please provide the following information in the support request:
+
 ```
     The name of your Organization
     The name of a contact along with their email and phone number to finalize the configuration
     Public URL of the ADFS federation Metadata (<adfs domain>/FederationMetadata/2007-06/FederationMetadata.xml)
     (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
+
 As soon as the configuration is completed on the Console side, the indicated contact will be informed.
-The Cloud Temple support team will send you a URL that looks like this: https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor
+The Cloud Temple support team will send you a URL that looks like this: <https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor>
 
 *You can paste the URL into a browser to test it. If it works correctly, you should see an XML displayed.*
 
 ## Step 3: ADFS Configuration
+
 ### Authentication Federation Configuration
 
 #### Adding a Relying Party Trust
@@ -48,12 +51,12 @@ On your ADFS server, go to __"Add a Relying Party Trust"__.
 ![](images/sso_adfs_001.png)
 
 ### Configure Claims
+
 Claims provide information to the token that will be sent to the Cloud Temple console.
 
 They transmit the connected user's information necessary for the proper functioning of various services, such as their email, first and last name.
 
 ![](images/sso_adfs_002.png)
-
 
 Select "Import data, published online or on a local network, concerning the relying party" and enter the URL provided by Cloud Temple support.
 
@@ -83,6 +86,7 @@ You just need to enter the information as shown in the screenshot below.
 ![](images/sso_adfs_009.png)
 
 ### Add the claims
+
 Add a second rule, this time using the "Send LDAP Attributes as Claims" template.
 
 ![](images/sso_adfs_010.png)

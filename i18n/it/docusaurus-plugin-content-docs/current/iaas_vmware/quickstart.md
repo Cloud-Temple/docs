@@ -163,11 +163,12 @@ La console di una macchina virtuale è accessibile dalla lista delle macchine vi
 
 <img src={shivaCpool_010} />
 
-Si aprirà un nuovo tab del tuo browser, che mostrerà la console della tua macchina, basata su un client **VNC**:
+Si aprirà un nuovo tab del tuo browser, che mostrerà la console della tua macchina, basata su un client __VNC__:
 
 <img src={shivaCpool_011} />
 
-Nel menu **VNC** è possibile:
+Nel menu __VNC__ è possibile:
+
 - richiedere l'invio di tasti particolari,
 - forzare un mapping della tastiera (nel caso in cui non sia stato possibile identificare correttamente la tua tastiera),
 - aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio appunti non funzionante,
@@ -177,6 +178,7 @@ __Nota__:
 Lo scaling della finestra avviene automaticamente.
 
 #### Keyboard layout support
+
 The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled. Below is a summary of the possible scenarios:
 
 | Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
@@ -191,9 +193,11 @@ The input entered in the console depends on the keyboard language of your web br
 | English                                      | English                           | Yes                                | Not recommended          |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you can try using the clipboard.
 
 #### Funzionamento degli appunti
+
 Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare la funzione degli appunti.  
 Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
 
@@ -303,8 +307,8 @@ Facendo clic su un cluster, viene visualizzata una sintesi della sua composizion
 - Il numero di macchine virtuali,
 - Il numero di hypervisor.
 
-{/* TODO: Add missing page. */}
-{/* Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali) */}
+{/*TODO: Add missing page. */}
+{/* Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali)*/}
 
 <img src={shivaCpool_004} />
 
@@ -335,7 +339,7 @@ Dalla scheda __'Hosts'__ sono disponibili diverse azioni:
 
 <img src={shivaCpool_008Build} />
 
-2. L'aggiornamento del firmware del nodo di calcolo (BIOS e firmware delle schede aggiuntive):
+1. L'aggiornamento del firmware del nodo di calcolo (BIOS e firmware delle schede aggiuntive):
 
 <img src={shivaCpool_008Firm} />
 
@@ -347,8 +351,8 @@ Tuttavia, __non aggiorniamo automaticamente gli hypervisor per conto vostro__. C
 Vi lasciamo quindi gestire autonomamente il processo di cambiamento e applicare i nuovi build al momento più opportuno.
 - Il processo di aggiornamento è completamente automatizzato. È necessario disporre di almeno due hypervisor nel cluster per consentire un aggiornamento senza interruzioni del servizio.
 
-{/* TODO: Add missing page. */}
-{/* - *È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.* */}
+{/*TODO: Add missing page. */}
+{/* -*È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.**/}
 
 Nella sezione __'Regole'__ è inoltre possibile visualizzare l'insieme delle regole di affinità/anti-affinità per il cluster di hypervisor.
 

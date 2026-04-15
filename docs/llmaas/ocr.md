@@ -12,11 +12,14 @@ Ce guide détaille l'utilisation du modèle **DeepSeek-OCR**, une solution de po
 Contrairement aux OCR traditionnels, DeepSeek-OCR est un modèle Vision-Langage de bout en bout conçu pour "lire" et "comprendre" visuellement les documents.
 
 ### Architecture technique
+
 Il combine deux composants innovants :
-1.  **DeepEncoder (380M)** : Un encodeur visuel hybride qui combine **SAM-base** (pour la perception locale) et **CLIP-large** (pour la connaissance globale), reliés par un compresseur convolutif 16x. Cela permet de traiter des images haute résolution avec très peu de tokens visuels.
-2.  **Décodeur MoE (3B)** : Basé sur DeepSeek3B-MoE (570M paramètres actifs), il génère le texte structuré à partir des tokens visuels compressés.
+
+1. **DeepEncoder (380M)** : Un encodeur visuel hybride qui combine **SAM-base** (pour la perception locale) et **CLIP-large** (pour la connaissance globale), reliés par un compresseur convolutif 16x. Cela permet de traiter des images haute résolution avec très peu de tokens visuels.
+2. **Décodeur MoE (3B)** : Basé sur DeepSeek3B-MoE (570M paramètres actifs), il génère le texte structuré à partir des tokens visuels compressés.
 
 ### Modes de résolution et consommation
+
 Le modèle adapte sa consommation de tokens à la résolution de l'image. Plus l'image est grande, plus elle consomme de tokens, mais meilleure est la précision.
 
 | Mode | Résolution (px) | Vision Tokens | Usage Recommandé |
@@ -32,6 +35,7 @@ Pour optimiser vos coûts et la latence, redimensionnez vos images à la résolu
 :::
 
 ### Support multilingue
+
 Le modèle a été entraîné sur un vaste corpus de documents multilingues et supporte la reconnaissance de près de **100 langues** (dont le français, l'anglais, le chinois, l'arabe, etc.), avec ou sans préservation de la mise en page.
 
 ## Guide des prompts (Prompt engineering)
@@ -39,6 +43,7 @@ Le modèle a été entraîné sur un vaste corpus de documents multilingues et s
 La qualité du résultat dépend directement du prompt utilisé. DeepSeek-OCR réagit à des instructions spécifiques pour activer ses différentes capacités.
 
 ### 1. OCR standard (Markdown)
+
 Pour extraire le texte avec sa structure (titres, paragraphes, tableaux).
 
 **Prompt :**
@@ -47,17 +52,20 @@ Pour extraire le texte avec sa structure (titres, paragraphes, tableaux).
 **Résultat :** Texte structuré, tableaux formatés, mise en page préservée.
 
 ### 2. "Deep parsing" (Figures, graphiques, formules)
+
 Pour analyser le contenu sémantique de graphiques, de formules chimiques ou géométriques.
 
 **Prompt :**
 > `Parse the figure.`
 
 **Capacités :**
--   **Graphiques (Bar/Line/Pie)** : Convertit en table HTML ou Markdown.
--   **Formules Chimiques** : Convertit en format SMILES.
--   **Géométrie** : Décrit les éléments géométriques.
+
+- **Graphiques (Bar/Line/Pie)** : Convertit en table HTML ou Markdown.
+- **Formules Chimiques** : Convertit en format SMILES.
+- **Géométrie** : Décrit les éléments géométriques.
 
 ### 3. Grounding (localisation)
+
 Pour trouver les coordonnées d'un élément spécifique dans l'image.
 
 **Prompt :**
@@ -67,6 +75,7 @@ Pour trouver les coordonnées d'un élément spécifique dans l'image.
 **Résultat :** Retourne les coordonnées de la boîte englobante (bounding box) de l'élément.
 
 ### 4. Détection d'objets
+
 Pour lister et localiser tous les objets visibles.
 
 **Prompt :**
@@ -77,12 +86,14 @@ Pour lister et localiser tous les objets visibles.
 Voici un exemple complet montrant comment structurer votre appel API pour utiliser ces capacités.
 
 ### Prérequis : format de l'image et dépendances
--   **Format** : JPEG ou PNG.
--   **Mode** : RGB (pas de transparence Alpha).
--   **PDF** : Doivent être convertis en images au préalable (150-300 DPI).
--   **Taille** : Il est recommandé de redimensionner les images très haute résolution pour éviter les erreurs de limite de taille (413 Payload Too Large).
+
+- **Format** : JPEG ou PNG.
+- **Mode** : RGB (pas de transparence Alpha).
+- **PDF** : Doivent être convertis en images au préalable (150-300 DPI).
+- **Taille** : Il est recommandé de redimensionner les images très haute résolution pour éviter les erreurs de limite de taille (413 Payload Too Large).
 
 Installez les librairies nécessaires :
+
 ```bash
 pip install requests Pillow
 ```
@@ -170,6 +181,7 @@ else:
 ```
 
 **Exemple de sortie :**
+
 ```markdown
 # Berghotel
 **Grosse Scheidegg**
@@ -202,6 +214,7 @@ Le modèle retournera une représentation textuelle ou tabulaire des données du
 ## Cas d'usage avancés
 
 ### Extraction de tableaux complexes
+
 DeepSeek-OCR excelle dans la conversion de tableaux, même sans lignes de démarcation claires.
 
 **Image Entrée :**
@@ -209,6 +222,7 @@ DeepSeek-OCR excelle dans la conversion de tableaux, même sans lignes de démar
 ![Tableau financier](./images/tableau.png)
 
 **Sortie Modèle (Prompt: "Convert the document to markdown table.") :**
+
 ```markdown
 # RESSOURCES PaaS
 
@@ -250,6 +264,7 @@ DeepSeek-OCR excelle dans la conversion de tableaux, même sans lignes de démar
 ```
 
 ### Formules mathématiques (LaTeX)
+
 Idéal pour les documents académiques. Le modèle reconnaît les équations et les sort en syntaxe LaTeX standard.
 
 **Image Entrée :**
@@ -288,6 +303,6 @@ $$
 
 ## Limitations connues
 
--   **Orientation** : Le modèle ne gère pas la rotation automatique. Assurez-vous que vos images sont bien orientées (texte horizontal).
--   **Texte manuscrit** : Bien que performant, le taux d'erreur est plus élevé sur l'écriture manuscrite cursive complexe que sur le texte imprimé.
--   **Très haute résolution** : Les images dépassant les dimensions du mode "Gundam" (~2000x2000) sont redimensionnées, ce qui peut rendre illisible le texte microscopique. Découpez les très grands plans en plusieurs images.
+- **Orientation** : Le modèle ne gère pas la rotation automatique. Assurez-vous que vos images sont bien orientées (texte horizontal).
+- **Texte manuscrit** : Bien que performant, le taux d'erreur est plus élevé sur l'écriture manuscrite cursive complexe que sur le texte imprimé.
+- **Très haute résolution** : Les images dépassant les dimensions du mode "Gundam" (~2000x2000) sont redimensionnées, ce qui peut rendre illisible le texte microscopique. Découpez les très grands plans en plusieurs images.

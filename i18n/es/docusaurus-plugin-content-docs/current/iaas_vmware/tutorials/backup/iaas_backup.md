@@ -79,7 +79,7 @@ Estas acciones permiten obtener los registros detallados de la ejecución de la 
 
 <img src={backupPolicyIaas_005} />
 
-2. Vaya a la página __'Informes de copias de seguridad'__ y seleccione la política que le interesa:
+1. Vaya a la página __'Informes de copias de seguridad'__ y seleccione la política que le interesa:
 
 <img src={backupPolicyIaas_004} />
 
