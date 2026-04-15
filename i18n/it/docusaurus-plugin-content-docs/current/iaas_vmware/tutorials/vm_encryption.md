@@ -4,11 +4,11 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-import shivaHsmKms_000 from './images/shiva_hsm_kms_000.png'
-import shivaHsmKms_001 from './images/shiva_hsm_kms_001.png'
-import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
-import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
-import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
+import shivaHsmKms_000 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_000.png'
+import shivaHsmKms_001 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_001.png'
+import shivaHsmKms_002 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_002.png'
+import shivaHsmKms_003 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_003.png'
+import shivaHsmKms_004 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_004.png'
 
 This tutorial guides you through encrypting an IaaS VMware virtual machine from the Console portal.
 

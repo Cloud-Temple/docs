@@ -4,7 +4,7 @@
 title: Concetti - Regioni
 ---
 
-import iaasAz001 from './images/iaas_az_001.png';
+import iaasAz001 from '@site/docs/additional_content/images/iaas_az_001.png';
 
 
 

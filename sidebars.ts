@@ -39,6 +39,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
+      id: 'console/billing/concepts',
+    },
+    {
+      type: 'doc',
       id: 'console/api',
     },
     {

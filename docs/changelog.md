@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 15 Avril 2026 : Nouveau module Gestionnaire des coûts
+
+- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix. Disponible en français, anglais, allemand, espagnol et italien.
+
 ### 26 Mars 2026 : Mise à jour de la liste des sous-traitants (DPA)
 
 - **Contractuel** : Mise à jour de l'Annexe Contractuelle sur les Données à Caractère Personnel (DPA) - révision de la liste des sous-traitants (retrait de Microsoft Azure et Amazon Web Services, modification de l'activité pour Iron Mountain) et ajout de la date d'autorisation.

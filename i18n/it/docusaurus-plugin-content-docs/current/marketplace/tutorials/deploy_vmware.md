@@ -1,8 +1,8 @@
 ---
 title: Distribuire un'immagine su VMware
 ---
-import marketplaceVmwareDeployment from '../images/marketplace_vmware_deploy.png'
-import marketplaceVmwareConfig from '../images/marketplace_vmware_config.png'
+import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
+import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
 
 Questo tutorial ti guida nel distribuire un'immagine di macchina virtuale dalla Marketplace Cloud Temple nel tuo ambiente VMware.
 

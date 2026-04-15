@@ -2,7 +2,7 @@
 title: Usare una GPU nVidia
 ---
 
-import nvidiasmi from './images/nvidiasmi.png'
+import nvidiasmi from '@site/docs/managed_kubernetes/tutorials/images/nvidiasmi.png'
 
 # Utilizzare una GPU su Kubernetes Gestito
 

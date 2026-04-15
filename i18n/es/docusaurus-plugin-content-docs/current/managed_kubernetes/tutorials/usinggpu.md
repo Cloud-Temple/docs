@@ -2,7 +2,7 @@
 title: Using an NVIDIA GPU
 ---
 
-import nvidiasmi from './images/nvidiasmi.png'
+import nvidiasmi from '@site/docs/managed_kubernetes/tutorials/images/nvidiasmi.png'
 
 # Using a GPU on Managed Kubernetes
 
