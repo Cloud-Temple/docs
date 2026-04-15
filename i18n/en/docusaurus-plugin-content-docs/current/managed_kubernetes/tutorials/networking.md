@@ -2,7 +2,7 @@
 title: The Network in Managed Kubernetes
 ---
 
-import cillium from './images/cillium.png'
+import cillium from '@site/docs/managed_kubernetes/tutorials/images/cillium.png'
 
 ---
 

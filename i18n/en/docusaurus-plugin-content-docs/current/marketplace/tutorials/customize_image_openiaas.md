@@ -1,9 +1,9 @@
 ---
 title: Customize an OpenIaaS Image
 ---
-import marketplaceOpenIaasExportTemplate from '../images/marketplace_openiaas_export_template.png'
-import marketplaceOpenIaasExportTemplateButton from '../images/marketplace_openiaas_export_template_button.png'
-import marketplaceOpeniaasDeployFromTemplate from '../images/marketplace_openiaas_deploy_from_template.png'
+import marketplaceOpenIaasExportTemplate from '@site/docs/marketplace/images/marketplace_openiaas_export_template.png'
+import marketplaceOpenIaasExportTemplateButton from '@site/docs/marketplace/images/marketplace_openiaas_export_template_button.png'
+import marketplaceOpeniaasDeployFromTemplate from '@site/docs/marketplace/images/marketplace_openiaas_deploy_from_template.png'
 
 This tutorial explains how to customize a virtual machine image (VMI) provided by OpenIaaS through the Marketplace to create your own reusable templates.
 

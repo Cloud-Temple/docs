@@ -1,8 +1,8 @@
 ---
 title: Desplegar una imagen en OpenIaaS
 ---
-import marketplaceOpeniaasDeployment from '../images/marketplace_openiaas_deploy.png'
-import marketplaceOpeniaasConfig from '../images/marketplace_openiaas_config.png'
+import marketplaceOpeniaasDeployment from '@site/docs/marketplace/images/marketplace_openiaas_deploy.png'
+import marketplaceOpeniaasConfig from '@site/docs/marketplace/images/marketplace_openiaas_config.png'
 
 Este tutorial le guiará para desplegar una imagen de máquina virtual desde la Marketplace Cloud Temple hacia su entorno OpenIaaS.
 

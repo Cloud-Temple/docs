@@ -30,7 +30,7 @@ El acceso a la Consola es la puerta de entrada a todos sus servicios Cloud Templ
 
 El acceso a la consola de gestión en la nube está limitado a las direcciones IP previamente autorizadas. Esta restricción permite autorizar el acceso únicamente a los usuarios provenientes de las rangos de IP especificados, minimizando así los riesgos de acceso no autorizado.
 
-Puede configurar estas restricciones IP en los parámetros de su organización. Para saber cómo configurar el filtrado de IP, consulte la [Gestión de accesos y autenticación | Documentación Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+Puede configurar estas restricciones IP en los parámetros de su organización. Para saber cómo configurar el filtrado de IP, consulte la [Gestión de accesos y autenticación | Documentación Cloud Temple](../../console/iam/quickstart#permisos).
 
 Para maximizar la eficacia de este mecanismo, tenga en cuenta lo siguiente:
 
@@ -74,7 +74,7 @@ Para las cuentas gestionadas localmente desde la Consola (sin federación), el M
 
 Para más información:  
 
-- [¿Qué es la autenticación de dos factores y es obligatoria? | Documentación Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [¿Qué es la autenticación de dos factores y es obligatoria? | Documentación Cloud Temple](../../console/iam/quickstart#permisos)
 - [Tutorial: Federación de identidad con Microsoft EntraID | Documentación Cloud Temple](../../console/iam/tutorials/sso_azuread)
 - [Tutorial: Federación de identidad con Microsoft ADFS | Documentación Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
@@ -116,13 +116,13 @@ Para una gestión segura y eficaz:
 - **Asegúrese de tener un control directo**, agregando un propietario miembro de su organización, incluso si confía la gestión de su servicio en la nube, para poder supervisar las notificaciones y decisiones importantes.
 - **Limite el número de propietarios** a 3 para reducir la superficie de exposición y facilitar el auditoría de las acciones críticas.
 
-Para más información sobre la gestión de los propietarios del inquilino, consulte el [Guía de propietarios en un inquilino | Documentación Cloud Temple](../../console/iam/concepts#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Para más información sobre la gestión de los propietarios del inquilino, consulte el [Guía de propietarios en un inquilino | Documentación Cloud Temple](../../console/iam/concepts#management-of-owners-on-a-tenant).
 
 
 
 ### Gestionar los permisos en sus servicios en la nube
 
-La Consola Cloud Temple permite gestionar los accesos de forma granular asignando a cada usuario uno o varios niveles de permiso, que determinan exactamente las acciones autorizadas. Consulte la documentación sobre permisos ([Permisos disponibles para los usuarios de su organización | Documentación Cloud Temple](../../console/iam/concepts#permissions-disponibles-para-los-usuarios-de-su-organización)) para comprender en detalle los diferentes permisos y asignarlos de manera adecuada.
+La Consola Cloud Temple permite gestionar los accesos de forma granular asignando a cada usuario uno o varios niveles de permiso, que determinan exactamente las acciones autorizadas. Consulte la documentación sobre permisos ([Permisos disponibles para los usuarios de su organización | Documentación Cloud Temple](../../console/iam/concepts#permisos-disponibles-para-los-usuarios-de-su-organización)) para comprender en detalle los diferentes permisos y asignarlos de manera adecuada.
 
 Para una gestión eficaz y segura de los permisos, le recomendamos seguir estas buenas prácticas:
 
@@ -154,7 +154,7 @@ Por lo tanto, le recomendamos que:
 Para garantizar una supervisión eficaz de su entorno en la nube y reaccionar rápidamente ante anomalías, es esencial implementar una estrategia de vigilancia activa. Recomendamos especialmente:
 
 - **Supervisar la disponibilidad de los servicios** a través de la [Página de estado | Cloud Temple](https://status.cloud-temple.com/), para recibir notificaciones en caso de incidentes o fallos globales;
-- **Activar las notificaciones temáticas** relevantes para su uso desde la Consola, para recibir alertas importantes en tiempo real (ver [Suscripción a las notificaciones temáticas | Documentación Cloud Temple](../../console/iam/concepts#abonnement-aux-notifications-thématiques));
+- **Activar las notificaciones temáticas** relevantes para su uso desde la Consola, para recibir alertas importantes en tiempo real (ver [Suscripción a las notificaciones temáticas | Documentación Cloud Temple](../../console/iam/concepts#suscripciones-a-notificaciones-temáticas));
 - **Utilizar los registros de actividad de Cloud** para identificar acciones sensibles o sospechosas en sus recursos (ver sección « Registro - Seguimiento de Actividades » del [Guía de inicio | Documentación Cloud Temple](../../iaas_vmware/quickstart)). La recopilación y análisis de registros de actividad puede automatizarse mediante las API de la Consola, para integrar los eventos en sus herramientas de supervisión o detección de incidentes.
 
 
@@ -195,7 +195,7 @@ Estas son algunas buenas prácticas en caso de utilizar el cifrado de VM:
 
 Para limitar la superficie de ataque de sus máquinas virtuales, se recomienda fuertemente restringir al mínimo necesario los servicios expuestos. En particular, asegúrese de configurar sus recursos de manera a **no exponer públicamente las interfaces de administración y consolas** de los sistemas y aplicaciones desplegados.
 
-Si utiliza los servicios de Almacenamiento de Objetos de Cloud Temple, también se recomienda **no configurar sus buckets con acceso público**, excepto en casos estrictamente necesarios (ver [Limitación del acceso a sus buckets S3 | Documentación Cloud Temple](../../storage/oss/quickstart#gestion-des-politiques-daccès)).
+Si utiliza los servicios de Almacenamiento de Objetos de Cloud Temple, también se recomienda **no configurar sus buckets con acceso público**, excepto en casos estrictamente necesarios (ver [Limitación del acceso a sus buckets S3 | Documentación Cloud Temple](../../storage/oss/quickstart#gestión-de-políticas-de-acceso)).
 
 
 

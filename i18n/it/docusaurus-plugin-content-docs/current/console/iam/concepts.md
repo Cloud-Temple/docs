@@ -1,28 +1,28 @@
 ---
 title: Concetti
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
 ## Utenti
 
 I conti di accesso alla Console vengono creati dal conto principale del committente su invito (indipendentemente dal repository di autenticazione utilizzato).  
 Le credenziali sono globali per la tua [Organizzazione](#organizzazioni).
 
-*__Nota:__ [La federazione di identità viene gestita a livello di organizzazione](#meccanismi-dautenticazione)*
+*__Nota:__ [La federazione di identità viene gestita a livello di organizzazione](#authentication-mechanisms)*
 
 ### Creazione di un account utente nella tua organizzazione
 
@@ -54,9 +54,9 @@ Viene quindi visualizzato il menu per l'attivazione dei diritti:
 
 <img src={shivaOnboard_005} />
 
-La configurazione dei permessi deve essere effettuata per ogni [Tenant](#tenant) dell'[Organizzazione](#organisations).
+La configurazione dei permessi deve essere effettuata per ogni [Tenant](#tenant) dell'[Organizzazione](#organizzazioni).
 
-L'elenco dei permessi e la loro definizione è disponibile [qui](#permissions).
+L'elenco dei permessi e la loro definizione è disponibile [qui].
 
 ### Re-registration of a user
 
@@ -264,7 +264,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-Il tenant è un __raggruppamento di risorse all'interno di un'organizzazione__. Un'[Organizzazione](#organisations) ha almeno un tenant (chiamato __tenant predefinito__, che può essere rinominato). Di solito, vengono utilizzati più tenant per suddividere responsabilità o ambiti tecnici.
+Il tenant è un __raggruppamento di risorse all'interno di un'organizzazione__. Un'[Organizzazione](#organizzazioni) ha almeno un tenant (chiamato __tenant predefinito__, che può essere rinominato). Di solito, vengono utilizzati più tenant per suddividere responsabilità o ambiti tecnici.
 
 Ad esempio:
 

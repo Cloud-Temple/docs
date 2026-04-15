@@ -1,21 +1,21 @@
 ---
 title: Concepts
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
 ## Users
 
@@ -55,7 +55,7 @@ The permissions activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](#tenant) within the [Organization](#organisations).
+Permission configuration must be done for each [Tenant](#tenant) within the [Organization](#organizations).
 
 The list of permissions and their definitions is available [here](#permissions).
 
@@ -161,11 +161,11 @@ When a user is created, they have no permissions by default. Each permission is 
 
 The following permissions are configurable for each user and for each tenant in your organization:
 
-- **"read" permissions**: Allow only viewing of resources, with no ability to modify them.
-- **"write" permissions**: Permit modification of configurations.
-- **"management" permissions**: Enable advanced management of resources.
-- **"console_access" permissions**: Allow PMAD-style connections to resources.
-- **"virtual_machine_power" permissions**: Permit management of a virtual machine's power state.
+- __"read" permissions__: Allow only viewing of resources, with no ability to modify them.
+- __"write" permissions__: Permit modification of configurations.
+- __"management" permissions__: Enable advanced management of resources.
+- __"console_access" permissions__: Allow PMAD-style connections to resources.
+- __"virtual_machine_power" permissions__: Permit management of a virtual machine's power state.
 
 - __These are permissions, not roles.__ As such, both READ and WRITE permissions are required to modify a configuration.
 
@@ -248,7 +248,7 @@ User roles (rights/permissions) are configurable for each tenant defined within 
 
 ### Authentication Mechanisms
 
-The Console allows you to configure the **authentication mechanism at the organization level**. You can use the Console's built-in local authentication directory, or connect your organization to one of your external authentication directories.
+The Console allows you to configure the __authentication mechanism at the organization level__. You can use the Console's built-in local authentication directory, or connect your organization to one of your external authentication directories.
 
 The following external authentication directories are supported:
 
@@ -267,7 +267,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-A tenant is a __grouping of resources within an organization__. An [Organization](#organisations) has at least one tenant (called the __default tenant__, which can be renamed). Typically, multiple tenants are used to segment responsibilities or technical boundaries.
+A tenant is a __grouping of resources within an organization__. An [Organization](#organizations) has at least one tenant (called the __default tenant__, which can be renamed). Typically, multiple tenants are used to segment responsibilities or technical boundaries.
 
 For example:
 
@@ -309,22 +309,26 @@ Each tenant has at least one owner, ensuring clear accountability and efficient 
 
 #### 1. Number of Owners
 
-* There is no technical limit on the number of owners that can be defined for the tenant.
+- There is no technical limit on the number of owners that can be defined for the tenant.
+
 - The management interface (UI) issues a warning when more than 3 owners are present, encouraging the limitation of the number of owners for security reasons and optimal access management.
 
 #### 2. Adding a new owner
 
-* When adding a new owner, updating their permissions may take up to 60 minutes.
+- When adding a new owner, updating their permissions may take up to 60 minutes.
+
 - This propagation time is normal and ensures that access rights are correctly applied across all associated services and resources.
 
 #### 2. Owner Permissions
 
-* An owner will be granted all permissions associated with the products enabled in their tenant.
+- An owner will be granted all permissions associated with the products enabled in their tenant.
+
 - It is not possible to modify the permissions of an owner.
 
 #### 3. Removing a Owner
 
-* To remove an owner from the tenant, the user must submit a request to support.
+- To remove an owner from the tenant, the user must submit a request to support.
+
 - This procedure ensures that changes to access rights are made securely and in compliance with best practices for access management.
 
 ### Access Permission to a Tenant: Allowed IPs

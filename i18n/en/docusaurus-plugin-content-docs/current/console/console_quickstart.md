@@ -1,18 +1,18 @@
 ---
 title: Quickstart
 ---
-import shivaLogin from './images/shiva_login.png'
-import shivaHome from './images/shiva_home.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaSupport from './images/shiva_support.png'
-import shivaSupport_01 from './images/shiva_support_01.png'
-import shivaSupport_02 from './images/shiva_support_02.png'
-import shivaSupport_03 from './images/shiva_support_03.png'
-import shivaOnboard_007 from './images/shiva_onboard_007.png'
-import shivaLogs from './images/shiva_logs.png'
-import shivaOnboard_009 from './images/shiva_onboard_009.png'
-import shivaOnboard_008 from './images/shiva_onboard_008.png'
-import shivaSupportCriticities from './images/shiva_incident_criticities.png'
+import shivaLogin from '@site/docs/console/images/shiva_login.png'
+import shivaHome from '@site/docs/console/images/shiva_home.png'
+import shivaProfil_006 from '@site/docs/console/images/shiva_profil_006.png'
+import shivaSupport from '@site/docs/console/images/shiva_support.png'
+import shivaSupport_01 from '@site/docs/console/images/shiva_support_01.png'
+import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
+import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
+import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
+import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
+import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
+import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 
 ## Prerequisites
 
@@ -156,7 +156,7 @@ The Activities page is designed to provide full visibility into all read and wri
 
 #### __Tabs__
 
- + **Recent**
+- __Recent__
 
 - Recent operations
 - Real-time tracking
@@ -168,7 +168,7 @@ The Activities page is designed to provide full visibility into all read and wri
 
 #### __Displayed Information__
 
- + Date and Time
+- Date and Time
 
 - Operation Type
   - Status
@@ -177,7 +177,7 @@ The Activities page is designed to provide full visibility into all read and wri
 
 #### __Feature__
 
- + Search/Filter for specific operations
+- Search/Filter for specific operations
 
 ### __Usage__
 
