@@ -350,6 +350,34 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Managed Products',
+      link: {
+        type: 'doc',
+        id: 'managedproducts_overview',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'Managed MariaDB (Preview)',
+          items: [
+            'managed_mariadb/managed_mariadb',
+            'managed_mariadb/concepts',
+            'managed_mariadb/quickstart',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Managed PostgreSQL (Preview)',
+          items: [
+            'managed_postgresql/managed_postgresql',
+            'managed_postgresql/concepts',
+            'managed_postgresql/quickstart',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Provider Terraform',
       items: [
         'terraform/terraform',
