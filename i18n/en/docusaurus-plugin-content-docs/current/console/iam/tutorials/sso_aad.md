@@ -44,7 +44,7 @@ Go to the "Overview" tab and click on the application name (the link following "
 
 This part of the configuration is done at the organization level by the Cloud temple team.
 
-To do this, make a **support request** in the console indicating your desire to configure a Microsoft EntraID SSO.
+To do this, make a __support request__ in the console indicating your desire to configure a Microsoft EntraID SSO.
 
 Please provide the following information in the support request:
 
@@ -119,9 +119,11 @@ The "Redirect URL" configuration may take a few minutes to take effect. Once all
 ---
 title: Example of Identity Federation with Microsoft EntraID
 tags:
-  - iam
-  - tutorials
-  - onboarding
+
+- iam
+- tutorials
+- onboarding
+
 ---
 import ssoEntra_001 from '@site/docs/console/iam/tutorials/images/sso_entra_001.png'
 import ssoEntra_002 from '@site/docs/console/iam/tutorials/images/sso_entra_002.png'

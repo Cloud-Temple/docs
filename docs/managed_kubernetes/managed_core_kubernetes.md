@@ -52,10 +52,10 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
 
 - **Cas d'usage** : Développement, tests, proof-of-concept (POC).
 - **Points clés** :
-    - 1 nœud Control Plane.
-    - 3 nœuds Workers (ou plus).
-    - Ne bénéficie pas de SLA de haute disponibilité.
-    - aucune restriction de sécurité
+  - 1 nœud Control Plane.
+  - 3 nœuds Workers (ou plus).
+  - Ne bénéficie pas de SLA de haute disponibilité.
+  - aucune restriction de sécurité
 
 <img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
 
@@ -65,10 +65,10 @@ Conçue pour la production et les applications critiques, cette architecture dis
 
 - **Cas d'usage** : Applications de production, services critiques, plateformes nécessitant un SLA.
 - **Points clés** :
-    - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
-    - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
-    - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-    - **SLA de 99.90%**.
+  - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
+  - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
+  - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
+  - **SLA de 99.90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
 

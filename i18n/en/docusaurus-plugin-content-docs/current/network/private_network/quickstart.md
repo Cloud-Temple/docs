@@ -55,7 +55,7 @@ Once all steps are completed, your networks are created, and a command is genera
 
 - By clicking on informational labels that redirect to related commands
 
-> **Important:** It is not possible to generate multiple commands of the same resource type simultaneously. You must wait for the current command to be processed before creating a new one.
+> __Important:__ It is not possible to generate multiple commands of the same resource type simultaneously. You must wait for the current command to be processed before creating a new one.
 
 All possible actions on your networks are available in the __*Actions*__ menu of each one:
 
@@ -106,8 +106,8 @@ A command is subsequently generated, similar to the initial creation with propag
 
 It is feasible to separate the creation and propagation of networks into two distinct stages:
 
-1. **Propagate an existing network**: Click on the action __*Propagate*__ for a network that has already been created.
-2. **Select the target for propagation**: A command is then generated, similar to how it was done initially with propagation.
+1. __Propagate an existing network__: Click on the action __*Propagate*__ for a network that has already been created.
+2. __Select the target for propagation__: A command is then generated, similar to how it was done initially with propagation.
 
 #### Activation and Deactivation of Networks
 
@@ -117,7 +117,7 @@ A network can be temporarily deactivated without being deleted, and then reactiv
 
 ### Network Sharing Between Tenants
 
-By default, **networks are only available within a single tenant**. You can choose to **share a network across multiple tenants** for technical or connectivity reasons. This allows you to share a network between your **[Tenant](../console/iam/concepts.md#tenant)** within the same organization.
+By default, __networks are only available within a single tenant__. You can choose to __share a network across multiple tenants__ for technical or connectivity reasons. This allows you to share a network between your __[Tenant](../../console/iam/concepts.md#tenant)__ within the same organization.
 
 To achieve this, simply enable sharing as shown below:
 

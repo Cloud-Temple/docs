@@ -99,14 +99,14 @@ sidebar_position: 2
 ### July 2025: New Features and Major Updates
 
 - **Object Storage (OSS)**:
-    - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
-    - Added clarifications on storage account concepts and object locking (Object Lock).
+  - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
+  - Added clarifications on storage account concepts and object locking (Object Lock).
 - **OpenSource IaaS**:
-    - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
+  - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
 - **Console**:
-    - Updated the security alerts page with the latest vulnerabilities.
+  - Updated the security alerts page with the latest vulnerabilities.
 - **Networking**:
-    - Added new screenshots to illustrate IPv6 connectivity configuration.
+  - Added new screenshots to illustrate IPv6 connectivity configuration.
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 

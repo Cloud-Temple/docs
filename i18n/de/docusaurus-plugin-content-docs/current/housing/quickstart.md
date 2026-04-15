@@ -31,6 +31,7 @@ Diese **Housing Schnellstartanleitung** hilft Ihnen, schnell mit dem physischen 
 ## Schritt 4: Hands & Eyes-Dienste aktivieren
 
 Bei Bedarf können Sie technische Unterstützung anfordern für:
+
 - Installation Ihrer Geräte.
 - Konfiguration der Verkabelung.
 - Durchführung spezifischer Aktionen (Neustart, Fotos usw.).

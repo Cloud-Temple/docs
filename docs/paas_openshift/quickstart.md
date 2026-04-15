@@ -29,7 +29,7 @@ Lors de votre premier accès à l'offre OpenShift, après activation de la sousc
 
 <img src={oshiftOrder_001} />
 
-Cet écran indique que vous n'avez pas encore de clusters OpenShift SecNumCloud déployés. 
+Cet écran indique que vous n'avez pas encore de clusters OpenShift SecNumCloud déployés.
 
 **Pour commander votre premier cluster OpenShift SecNumCloud, veuillez contacter le support Cloud Temple.**
 
@@ -67,10 +67,12 @@ Le sous-menu **Clusters** vous présente un tableau listant tous les clusters Op
 Lorsque vous cliquez sur le **nom d'un cluster** dans la liste, une page détaillée s'affiche avec les informations complètes du cluster :
 
 **Informations de connectivité :**
+
 - **URL d'accès** : Interface web du cluster
 - **URL d'API** : Point d'entrée API pour les opérations CLI
 
 **Informations générales :**
+
 - **Statut** : État actuel du cluster
 - **Dernière mise à jour** : Date de la dernière modification
 - **Version** : Version d'OpenShift déployée
@@ -78,6 +80,7 @@ Lorsque vous cliquez sur le **nom d'un cluster** dans la liste, une page détail
 **Nœuds du cluster :**
 
 Un tableau détaille chaque nœud avec les informations suivantes :
+
 - **Nom du noeud**
 - **Type**
 - **AZ** (Availability Zone)
@@ -107,17 +110,17 @@ Voici les informations de connexion et de configuration propres à votre environ
 
 Pour accéder aux différents composants OpenShift, veillez à ce que votre locataire soit inscrit sur la liste blanche dans la console (consultez la documentation : [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Console Tenant__ :
-  [https://__votre-id-locataire__.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
+- **URL Console Tenant** :
+  [https://**votre-id-locataire**.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__ :
-  [https://ui-ocp01-__votre-id__.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
+- **OpenShift UI** :
+  [https://ui-ocp01-**votre-id**.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
 
-- __API externe__ :
-  [https://api-ocp01-__votre-id__.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
+- **API externe** :
+  [https://api-ocp01-**votre-id**.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-__votre-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
+- **GitOps (ARGOCD)** :
+  [https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
 
 #### Connexion au cluster via CLI
 
@@ -146,7 +149,7 @@ docker push registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:lat
 
 #### Configuration des routeurs et Load Balancers
 
-La plateforme propose des options flexibles pour le __roulage des flux__ et l’__équilibrage de charge__ :
+La plateforme propose des options flexibles pour le **roulage des flux** et l’**équilibrage de charge** :
 
 - Par défaut, des load balancers privés sont utilisés pour les routes et les ingresses.
 - Domaines :
@@ -167,7 +170,7 @@ metadata:
 
 Les configurations réseau jouent un rôle crucial pour sécuriser les communications avec OpenShift.
 
-- __Réseau d’interconnexion__ : 100.67.0.0/28
-- __VIP du load balancer privé__ : 100.67.0.3
+- **Réseau d’interconnexion** : 100.67.0.0/28
+- **VIP du load balancer privé** : 100.67.0.3
 
 Vérifiez que votre pare-feu dispose d’une interface dédiée et autorise le trafic entre les réseaux spécifiés.

@@ -41,10 +41,10 @@ Más allá del posicionamiento, cada oferta se basa en elecciones tecnológicas 
 
 La elección de la plataforma de contenerización es una decisión fundamental. A continuación, se presentan algunas claves para orientarle hacia la oferta más adecuada para su contexto.
 
-*   **Si la conformidad normativa es su prioridad absoluta...**
+* **Si la conformidad normativa es su prioridad absoluta...**
     ...y debe operar en un sector altamente regulado (público, salud, OIV) o certificar su propia solución, la **Oferta PaaS OpenShift** es la solución de referencia que le ofrece el mayor nivel de garantía del mercado.
 
-*   **Si prioriza el software libre, la modernidad y la seguridad "zero-trust"...**
+* **Si prioriza el software libre, la modernidad y la seguridad "zero-trust"...**
     y su cultura empresarial está fuertemente orientada hacia el software libre, la ausencia de dependencia de un proveedor y las metodologías de seguridad de nueva generación (sistemas inmutables, gestión mediante API), la **Oferta Managed Kubernetes** es la más alineada con su visión.
 
 Nuestro papel como asesores es acompañarle en esta decisión. Nuestros arquitectos están a su disposición para analizar su contexto y definir conjuntamente la mejor trayectoria.

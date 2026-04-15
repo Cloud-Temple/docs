@@ -34,9 +34,9 @@ Ce tutoriel vous guidera pour :
 
 Gateway API décompose la configuration réseau en trois ressources principales :
 
-1.  **GatewayClass** : Définit le type de contrôleur (ici, `io.cilium/gateway`).
-2.  **Gateway** : Instancie un point d'entrée réseau (load balancer).
-3.  **HTTPRoute** : Définit les règles de routage (chemins, headers) vers les Services Kubernetes.
+1. **GatewayClass** : Définit le type de contrôleur (ici, `io.cilium/gateway`).
+2. **Gateway** : Instancie un point d'entrée réseau (load balancer).
+3. **HTTPRoute** : Définit les règles de routage (chemins, headers) vers les Services Kubernetes.
 
 <img src={gapischema} alt="Schema GAPI"/>
 

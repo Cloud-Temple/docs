@@ -6,7 +6,7 @@ import iaasAz001 from './images/iaas_az_001.png';
 
 ## Régions
 
-L'infrastructure Cloud Temple est prévue pour permettre la continuité d'activité de vos applications et de vos plateformes. 
+L'infrastructure Cloud Temple est prévue pour permettre la continuité d'activité de vos applications et de vos plateformes.
 Au sein d'une région, vous bénéficiez d'une continuité réseau de niveau 2.
 
 Ainsi, il est possible de définir une architecture technique sur la région Paris, utilisant 3 sites physiques pour permettre la mise en place d'une plateforme en haute disponibilité avec quorum.

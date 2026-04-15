@@ -14,13 +14,14 @@ If your users are authenticated to their Microsoft account, authentication to Co
 
 Here are the different steps to perform this configuration:
 
-
 ## Step 1: Configuration of SSO on the Microsoft Azure side
 
 ### Registering a new Azure application (Azure portal)
+
 To create the __app registration__, go to the Microsoft Azure portal, then to Microsoft EntraID, __"ADD > App Registration"__
 
 On the "Register an application" page, please indicate:
+
 ```
 - __Name__: Indicate "__SHIVA__"
 - __Supported account types__: __Accounts in this organizational directory only__ (__<Your Azure Tenant>__ only - Single tenant)
@@ -29,11 +30,12 @@ On the "Register an application" page, please indicate:
 
 ![](images/sso_entra_001.png)
 
-The information **Application (client) ID** and **Directory (tenant) ID** are the useful details to provide when requesting support from the Cloud Temple team to enable Microsoft EntraID authentication at your organization.
+The information __Application (client) ID__ and __Directory (tenant) ID__ are the useful details to provide when requesting support from the Cloud Temple team to enable Microsoft EntraID authentication at your organization.
 
 ![](images/sso_entra_002.png)
 
 ### Defining a secret
+
 In the "Certificates & secrets" tab, create a new secret.
 *Note: The secret's expiration date cannot exceed 24 months, even with a custom expiration date.*
 
@@ -42,7 +44,6 @@ In the "Certificates & secrets" tab, create a new secret.
 The generated secret must be provided in the support request:
 
 ![](images/sso_aad_005.png)
-
 
 ### EntraID Token Definition
 
@@ -61,18 +62,22 @@ Next, go to "API permissions" and click on __"Grant admin consent for Cloud Temp
 ![](images/sso_aad_008.png)
 
 ### Additional Security Configurations (optional but recommended)
-By default, Microsoft EntraID as configured will grant any user in your Azure tenant the ability to log into your Cloud Temple organization. 
+
+By default, Microsoft EntraID as configured will grant any user in your Azure tenant the ability to log into your Cloud Temple organization.
 It is possible to restrict access at the __"App Registration"__ level to allow only a list of users or groups to connect to your Cloud Temple organization.
 
 Here's the procedure to follow:
 
 #### Access the "App Registration" additional settings
+
 ##### Option 1
+
 Go to the "Overview" tab and click on the application name (the link located next to "Managed application").
 
 ![](images/sso_aad_009.png)
 
 ##### Option 2
+
 Go to "Enterprise applications" and search using the name of the previously created application.
 
 ![](images/sso_aad_010.png)
@@ -83,6 +88,7 @@ Indicate here the need for user assignment to the application to authorize their
 ![](images/sso_aad_011.png)
 
 #### Assignment of Users and Groups to the Application
+
 Only the groups and users assigned to the application will be able to connect to your Cloud Temple organization via the app registration.
 
 ![](images/sso_aad_012.png)

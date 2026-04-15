@@ -335,6 +335,7 @@ docker pull qdrant/qdrant
 # 2. Start the Qdrant container
 docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
+
 :::
 
 The code below shows how to adapt the RAG pipeline to use Qdrant as the vector database.
@@ -924,20 +925,20 @@ The GitHub directory below contains a collection of code examples and scripts de
 
 You'll find practical guides for:
 
-- **Information Extraction and Text Analysis:** Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
+* **Information Extraction and Text Analysis:** Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
 
-- **Conversational Interaction and Chatbots:** Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
+* **Conversational Interaction and Chatbots:** Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
 
-- **Audio Transcription (Speech-to-Text):** Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
+* **Audio Transcription (Speech-to-Text):** Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
 
-- **Text Translation:** Translation of documents from one language to another, managing context across multiple segments to improve coherence.
+* **Text Translation:** Translation of documents from one language to another, managing context across multiple segments to improve coherence.
 
-- **Model Management and Evaluation:** Listing available language models via the API, reviewing their specifications, and running tests to compare performance.
+* **Model Management and Evaluation:** Listing available language models via the API, reviewing their specifications, and running tests to compare performance.
 
-- **Real-Time Response Streaming:** Demonstration of the capability to receive and display model responses progressively (token by token), essential for interactive applications.
+* **Real-Time Response Streaming:** Demonstration of the capability to receive and display model responses progressively (token by token), essential for interactive applications.
 
-- **RAG Pipeline with In-Memory Knowledge Base:** Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
+* **RAG Pipeline with In-Memory Knowledge Base:** Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
 
-- **RAG Pipeline with Vector Database (Qdrant):** Complete, containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
+* **RAG Pipeline with Vector Database (Qdrant):** Complete, containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
 
-- **OCR & Document Analysis (DeepSeek-OCR):** Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).
+* **OCR & Document Analysis (DeepSeek-OCR):** Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).

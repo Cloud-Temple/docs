@@ -53,9 +53,9 @@ La facturation des adresses IP publiques s'effectue par unité d'œuvre (UO) et 
 
 ## Blocs IPv4
 
-La livraison d'une IPv4 se fait dans __la limite des stocks disponibles__ pour nos clients, par adresse IP.
+La livraison d'une IPv4 se fait dans **la limite des stocks disponibles** pour nos clients, par adresse IP.
 
-La commande d'adresses IPv4 s'effectue depuis le menu __*'IPs publiques'*__ du menu Réseaux dans le bandeau vert à gauche, via le bouton __*"Commander des adresses IPv4 ou préfixes IPv6"*__.
+La commande d'adresses IPv4 s'effectue depuis le menu ***'IPs publiques'*** du menu Réseaux dans le bandeau vert à gauche, via le bouton ***"Commander des adresses IPv4 ou préfixes IPv6"***.
 
 Il est possible de visualiser les blocs d'adresses qui vous sont affectés dans ce même menu.
 
@@ -65,7 +65,7 @@ Il est possible de visualiser les blocs d'adresses qui vous sont affectés dans 
 
 ## Blocs IPv6
 
-La commande de préfixes IPv6 s'effectue depuis le menu __*'IPs publiques'*__ du menu Réseaux dans le bandeau vert à gauche, via le bouton __*"Commander des adresses IPv4 ou préfixes IPv6"*__.
+La commande de préfixes IPv6 s'effectue depuis le menu ***'IPs publiques'*** du menu Réseaux dans le bandeau vert à gauche, via le bouton ***"Commander des adresses IPv4 ou préfixes IPv6"***.
 
 Il est possible de visualiser les prefixes qui vous sont affectés dans ce même menu.
 
@@ -101,8 +101,8 @@ La facturation s'effectue au 95e percentile sur la période de facturation, habi
 | ----------------------------------------- | -------- | --------------------------------------- |
 | Réseau - Bande passante internet réservée | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
-__*Remarque :*__
-*Il n'y pas de __facturation volumétrique__ de type __'egress fees'. Vous ne payez que la réservation de bande passante.__*
+***Remarque :***
+*Il n'y pas de **facturation volumétrique** de type **'egress fees'. Vous ne payez que la réservation de bande passante.***
 
 ## Disponibilité par offre
 

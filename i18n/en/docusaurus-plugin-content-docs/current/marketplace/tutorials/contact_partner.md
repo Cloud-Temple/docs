@@ -10,6 +10,7 @@ This tutorial guides you through contacting an editor partner via the Cloud Temp
 ## Usage Context
 
 Use this feature when:
+
 - The solution requires coordination with the partner
 - You want to obtain additional information
 - The solution is not directly deployable (no VM image available)

@@ -2,7 +2,7 @@
 title: Concepts - Zones de disponibilité
 ---
 
-## Zones de disponibilité 
+## Zones de disponibilité
 
 Chaque site physique au sein d'une région dispose d'une ou plusieurs salles privatives pour nos infrastructures. Ces salles sont à l'usage exclusif de Cloud Temple.
 
@@ -12,7 +12,6 @@ Le choix d'une zone de disponibilité implique donc le choix d'un site physique 
 La Console vous propose automatiquement des zones de disponibilités sur des sites physiques distincts de manière à répartir votre infrastructure sur le maximum de site physique.
 
 *__Nota : Si vous souhaitez un paramétrage spécifique pour un contexte particulier (plusieurs AZ sur le même site physique), il est nécessaire de faire une demande de support.__*
-
 
 | Référence de commande                                        | Unité           | SKU                       |  
 |--------------------------------------------------------------|-----------------|---------------------------|

@@ -132,26 +132,33 @@ Per iniziare, utilizza questi parametri :
 ## Gestione degli errori comuni
 
 ### Errore 401 - Non autorizzato
+
 ```json
 {"error": {"message": "Invalid API key", "type": "invalid_request_error"}}
 ```
+
 **Soluzione** : Verifica la tua chiave API nella Console Cloud Temple.
 
 ### Errore 400 - Modello non trovato
+
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
+
 **Soluzione** : Utilizza `/v1/models` per elencare i modelli disponibili.
 
 ### Errore 429 - Limite di velocità
+
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
+
 **Soluzione** : Aspetta alcuni secondi e riprova.
 
 ## Monitoraggio dell'uso
 
 Nella Console Cloud Temple, puoi:
+
 - Visualizzare le tue richieste in tempo reale
 - Verificare il tuo consumo di token
 - Configurare gli avvisi di costo
@@ -172,6 +179,7 @@ Questa sezione fornisce esempi di script Python semplici e autonomi per illustra
 Il "Tool Calling" (o chiamata di funzione) permette a un modello linguistico di richiedere l'esecuzione di una funzione definita nel tuo codice. È una funzionalità potente per collegare i modelli linguistici (LLMs) a strumenti esterni (API, database, ecc.).
 
 Il flusso è il seguente:
+
 1. L'utente pone una domanda che richiede un strumento (es: "che tempo fa ?").
 2. Invii la domanda e l'elenco degli strumenti disponibili all'API.
 3. Il modello, invece di rispondere direttamente, restituisce una richiesta `tool_calls` che richiede l'esecuzione di una funzione specifica con alcuni argomenti.
@@ -183,17 +191,19 @@ Il flusso è il seguente:
 
 Per questo esempio, crea una directory `simple_tool_calling` con i seguenti file:
 
--   `test_tool_calling.py`: Lo script principale.
--   `requirements.txt`: Le dipendenze Python.
--   `.env`: Un modello per il tuo file di configurazione.
+- `test_tool_calling.py`: Lo script principale.
+- `requirements.txt`: Le dipendenze Python.
+- `.env`: Un modello per il tuo file di configurazione.
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
 ```
 
 **`.env`**
+
 ```env
 
 # URL di base dell'API LLMaaS
@@ -412,13 +422,16 @@ if __name__ == "__main__":
 
 **Utilizzo**
 
-1.  **Installa le dipendenze :**
+1. **Installa le dipendenze :**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Configura la tua chiave API :**
+
+2. **Configura la tua chiave API :**
     Copia `tests/llmaas/.env.example` in `tests/llmaas/.env` e sostituisci `"la_tua_chiave_api_qui"` con la tua chiave API LLMaaS.
-3.  **Esegui lo script :**
+3. **Esegui lo script :**
+
     ```bash
     python tests/llmaas/test_tool_calling.py
     ```
@@ -431,12 +444,13 @@ I modelli multimodali possono analizzare sia testo che immagini. Questo esempio 
 
 Crea una directory `simple_vision` con i seguenti file:
 
--   `test_vision.py`: Lo script principale.
--   `requirements.txt`: Le dipendenze (incluse `Pillow` per generare l'immagine).
--   `.env.example`: Il modello di configurazione.
--   `image_example.png`: L'immagine da analizzare (lo script la genererà per te se manca).
+- `test_vision.py`: Lo script principale.
+- `requirements.txt`: Le dipendenze (incluse `Pillow` per generare l'immagine).
+- `.env.example`: Il modello di configurazione.
+- `image_example.png`: L'immagine da analizzare (lo script la genererà per te se manca).
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
@@ -444,6 +458,7 @@ Pillow
 ```
 
 **`.env.example`**
+
 ```env
 
 # URL di base dell'API LLMaaS
@@ -600,16 +615,20 @@ if __name__ == "__main__":
 
 **Utilizzo**
 
-1.  **Installa le dipendenze :**
+1. **Installa le dipendenze :**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Configura la tua chiave API :**
+
+2. **Configura la tua chiave API :**
     Copia `tests/llmaas/.env.example` in `tests/llmaas/.env` e sostituisci `"votre_cle_api_ici"` con la tua chiave API LLMaaS.
-3.  **Esegui lo script :**
+3. **Esegui lo script :**
+
     ```bash
     python tests/llmaas/test_vision.py
     ```
+
     Lo script genererà automaticamente un'immagine `image_example.png` se non esiste.
 
 ## Passi successivi
@@ -624,6 +643,7 @@ Dopo aver effettuato con successo il primo test:
 ## Supporto
 
 In caso di problema:
+
 - Consulta la [documentazione API completa](./api)
 - Verifica lo stato del servizio nella Console
 - Contatta il supporto tramite la Console Cloud Temple

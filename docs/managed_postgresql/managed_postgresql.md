@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble Managed PostgreSQL
+title: Vue d'ensemble
 ---
 
-# Managed PostgreSQL (preview)
+# PostgreSQL Managé (preview)
 
 <div class="card-grid">
   <div class="card">
@@ -18,25 +18,26 @@ title: Vue d'ensemble Managed PostgreSQL
 </div>
 
 ---
+
 ### Aperçu
+>
 > Ce produit est en version préliminaire, et sa documentation peut comporter des erreurs ou des approximations.
 
-**Managed PostgreSQL (on Kubernetes) by Cloud Temple** est une solution managée de moteur de base de données PostgreSQL, hébergée sur Kubernetes. Elle vient en complément des offres de moteur de base de données managés sur machines virtuelles (nommées ici **Managed PostgreSQL (on IaaS)**)
+**PostgreSQL Managé (on Kubernetes) by Cloud Temple** est une solution managée de moteur de base de données PostgreSQL, hébergée sur Kubernetes. Elle vient en complément des offres de moteur de base de données managés sur machines virtuelles (nommées ici **PostgreSQL Managé (on IaaS)**)
 
-Cette offre est adaptée pour les clients qui disposent de charges de travail Kubernetes nécessitant des bases de données PostgreSQL, ou de clients qui souhaitent mutualiser de nombreux moteurs de bases de données PostgreSQL sur un même cluster kubernetes (mutualisation). Elle convient particulièrement bien aux bases de données de petite et moyenne dimensions ne nécessitant pas de tuning ou de fonctionnalités spécifiques. Pour les bases de grande dimension ou nécessitant un tuning particulier, il est préférable d'opter pour l'offre **Managed PostgreSQL (on IaaS)** qui permet plus d'adaptations par nos équipes d'experts DBA.
+Cette offre est adaptée pour les clients qui disposent de charges de travail Kubernetes nécessitant des bases de données PostgreSQL, ou de clients qui souhaitent mutualiser de nombreux moteurs de bases de données PostgreSQL sur un même cluster kubernetes (mutualisation). Elle convient particulièrement bien aux bases de données de petite et moyenne dimensions ne nécessitant pas de tuning ou de fonctionnalités spécifiques. Pour les bases de grande dimension ou nécessitant un tuning particulier, il est préférable d'opter pour l'offre **PostgreSQL Managé (on IaaS)** qui permet plus d'adaptations par nos équipes d'experts DBA.
 
 ### Bénéfices Clés
 
 - **Souveraineté et Réversibilité** : La solution s'appuie exclusivement sur des standards open source pour éviter toute dépendance technologique et garantir la portabilité de vos applications.
 - **Simplicité et délégation** : La solution permet de déléguer à Cloud-Temple la gestion des moteurs de bases de données, en particulier : mises à jour et sauvegardes.
 
-
-
 ## Modèles de Déploiement
 
 Nous proposons deux modèles de déploiement pour répondre à vos besoins:  ***StandAlone*** ou ***Distributed***.
 
 ### StandAlone
+
 Le modèle ***StandAlone*** déploie une instance unique du moteur PostgreSQL dans une infrastructure multi-AZ.
 
 Le stockage utilisé par cette instance est répliqué sur 3 AZ, et permet un redémarrage automatique de l'instance PostgreSQL sur une autre AZ en cas de panne.
@@ -49,6 +50,7 @@ Le stockage utilisé par cette instance est répliqué sur 3 AZ, et permet un re
   - SLA 99.9 % (hors plages de maintenance)
 
 ### Distributed
+
 Le modèle ***Distributed*** déploie un cluster de 3 instances du moteur PostgreSQL, avec Patroni en mode "single primary" et PgBouncer:
 
 - un endpoint PgBouncer permet un routage vers les différentes instances suivant le type de requete (read ou write).
@@ -65,12 +67,14 @@ Ainsi, les applicatifs peuvent au choix utiliser des connexions RW ou RO, ou lai
   - sauvegardes PiTR et Logiques
   - SLA 99.9 % (hors plages de maintenance)
 
-### Fonctionnalités communes:
+### Fonctionnalités communes
 
 #### Versions
+
 Les moteurs PostgreSQL peuvent être choisis parmis toutes les versions supportées (actuellement 14 à 18) [Voir "versionning policy" sur le site officiel PostgreSQL](https://www.postgresql.org/support/versioning/)
 
 #### Sauvegarde
+
 2 types de sauvegardes sont mises en oeuvre:
 
 - Point in Time Restoration (PiTR) : sauvegarde physique quotidienne de l'ensemble du moteur et de ses journaux de transactions (WAL), permettant de restaurer l'ensemble du serveur à une date antérieure précise sans perte des transactions.

@@ -10,16 +10,20 @@ This section contains practical tutorials to effectively use Cloud Temple's VMwa
 ## Available tutorials
 
 ### Konfiguration
+
 - [Eine virtuelle Verwaltungsmaschine konfigurieren](tutorials/configure_management_vm)
 
 ### Bereitstellung
+
 - [Eine VM aus einem Template bereitstellen](tutorials/deploy_vm_template)
 - [Eine VM mit Terraform bereitstellen](tutorials/deploy_vm_terraform)
 
 ### Sicherheit
+
 - [Eine virtuelle Maschine verschlüsseln](tutorials/vm_encryption)
 
 ### Backup
+
 - [Frequently Asked Questions about Backup](tutorials/backup/iaas_backup)
 
 ## Voraussetzungen

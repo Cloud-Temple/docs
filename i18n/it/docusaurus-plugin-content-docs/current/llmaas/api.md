@@ -25,9 +25,9 @@ Authorization: Bearer IL_TUO_TOKEN_API
 
 Il nostro sistema di terzi è progettato come **invii completi di servizio** che definiscono tre aspetti fondamentali del vostro utilizzo:
 
-1.  **Un Livello di Accesso (Credito d'Acquisto)**: Per i Terzi 1 al 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e il budget associati al livello scelto.
-2.  **Un Limite di Budget Mensile**: È il massimale della vostra consumazione mensile, garantendovi un controllo totale sui costi.
-3.  **Una Capacità Tecnica**: Si tratta dei limiti di throughput (token al giorno e all'ora) che garantiscono un'efficienza stabile e prevedibile per il volume delle chiamate.
+1. **Un Livello di Accesso (Credito d'Acquisto)**: Per i Terzi 1 al 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e il budget associati al livello scelto.
+2. **Un Limite di Budget Mensile**: È il massimale della vostra consumazione mensile, garantendovi un controllo totale sui costi.
+3. **Una Capacità Tecnica**: Si tratta dei limiti di throughput (token al giorno e all'ora) che garantiscono un'efficienza stabile e prevedibile per il volume delle chiamate.
 
 La scelta di un terzo rappresenta quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. La vostra consumazione all'interno di questo invio sarà poi fatturata secondo i tariffe in vigore.
 
@@ -42,11 +42,13 @@ La scelta di un terzo rappresenta quindi un equilibrio tra l'investimento inizia
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
+
 - **Input tokens**: 1.90 € / million
 - **Output tokens (standard)**: 8.00 € / million
 - **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Billing Audio**
+
 - **Audio Transcription**: 0.01 € / minute (any started minute is billable)
 
 ### Limit Headers
@@ -213,12 +215,14 @@ Dopo aver ricevuto una risposta `tool_calls`, è necessario eseguire lo strument
 Con `"stream": true`, la risposta arriva token per token:
 
 **Intestazioni della risposta:**
+
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
 **Formato degli eventi:**
+
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -230,6 +234,7 @@ data: [DONE]
 ```
 
 **Struttura dei chunk:**
+
 - `choices[].delta.content` : Contenuto incrementale
 - `finish_reason` : `null` durante lo streaming, poi `"stop"`
 - Segnale di fine: `data: [DONE]`
@@ -629,6 +634,7 @@ def stream_chat(message, model="granite3.3:8b"):
 ```
 
 # Utilizzo
+
 stream_chat("Spiega la fisica quantistica")
 
 ### JavaScript/Node.js

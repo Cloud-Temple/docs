@@ -16,8 +16,9 @@ mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
 
 ### Optionen zum Nutzen
 
-*   `--overwrite`: Erzwingt das Überschreiben von Dateien auf der Ziel-Destination, selbst wenn diese neuer sind als die entsprechenden Dateien im Quellverzeichnis. **Nutzen Sie dies mit Vorsicht, da es zu einer unwiderruhbaren Datenverlust führen kann.**
-*   `--remove`: Entfernt von der Ziel-Destination Dateien, die im Quellverzeichnis nicht mehr vorhanden sind. **Verwenden Sie dies sorgfältig, da es zu einer irreversiblen Datenverlust führen kann.**
+* `--overwrite`: Erzwingt das Überschreiben von Dateien auf der Ziel-Destination, selbst wenn diese neuer sind als die entsprechenden Dateien im Quellverzeichnis. **Nutzen Sie dies mit Vorsicht, da es zu einer unwiderruhbaren Datenverlust führen kann.**
+* `--remove`: Entfernt von der Ziel-Destination Dateien, die im Quellverzeichnis nicht mehr vorhanden sind. **Verwenden Sie dies sorgfältig, da es zu einer irreversiblen Datenverlust führen kann.**
 
 # Komplette Synchronisation mit Entfernung von abgelegten Dateien auf dem Ziel
+>
 > mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/

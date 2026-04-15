@@ -16,8 +16,8 @@ Per sincronizzare il contenuto del percorso locale `./mon-sito` con il bucket `d
 
 ### Opzioni utili
 
-*   `--overwrite`: Forza il sostituzione dei file esistenti nella destinazione, anche se sono più recenti.
-*   `--remove`: Elimina i file dalla destinazione che non esistono nel directory di origine. **Utilizzare con cautela**, poiché può portare a una perdita di dati irreversibili.
+* `--overwrite`: Forza il sostituzione dei file esistenti nella destinazione, anche se sono più recenti.
+* `--remove`: Elimina i file dalla destinazione che non esistono nel directory di origine. **Utilizzare con cautela**, poiché può portare a una perdita di dati irreversibili.
 
 ```bash
 

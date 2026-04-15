@@ -63,6 +63,7 @@ For solutions compatible with your OpenIaaS or VMware environments, you can depl
 **Important Note:** Direct deployment is only available for images that list your environment among their compatible targets.
 
 **Detailed Guides:**
+
 - [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
 - [How to deploy an image on VMware?](tutorials/deploy_vmware)
 
@@ -71,4 +72,5 @@ For solutions compatible with your OpenIaaS or VMware environments, you can depl
 For solutions requiring coordination, you can contact the publisher partner directly.
 
 **Detailed guide:**
+
 - [How to contact a partner?](tutorials/contact_partner)

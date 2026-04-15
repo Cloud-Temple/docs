@@ -8,11 +8,11 @@ Restic is a fast, secure, and efficient backup tool, compatible with many backen
 
 ## Prerequisites
 
-*   An existing S3 bucket
-*   Access credentials (Access Key and Secret Key)
-*   The region name (for AWS)
-*   The S3 endpoint URL (in the case of a non-AWS provider)
-*   Restic installed on your machine
+* An existing S3 bucket
+* Access credentials (Access Key and Secret Key)
+* The region name (for AWS)
+* The S3 endpoint URL (in the case of a non-AWS provider)
+* Restic installed on your machine
 
 ## Restic Installation
 
@@ -113,7 +113,7 @@ Make sure all environment variables are exported in a file loaded by cron (e.g.,
 
 ## Going Further
 
-*   Official documentation: [https://restic.readthedocs.io](https://restic.readthedocs.io)
-*   Restic with other backends: B2, Azure, Google Cloud, etc.
+* Official documentation: [https://restic.readthedocs.io](https://restic.readthedocs.io)
+* Restic with other backends: B2, Azure, Google Cloud, etc.
 
 This tutorial provides you with a solid foundation to integrate Restic into a reliable, encrypted backup strategy compatible with modern storage solutions such as S3.

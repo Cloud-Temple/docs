@@ -87,6 +87,7 @@ A continuación, obtendrá un resumen de las opciones seleccionadas antes de val
 ## Solicitar recursos adicionales de almacenamiento
 
 La lógica de asignación de almacenamiento en modo de bloque en los clústeres de cálculo se basa en la tecnología __IBM SVC (San Volume Controller)__ y __IBM FlashSystem__. El almacenamiento se organiza en __LUNs de al menos 500 GiB__, presentadas según la tecnología utilizada:
+
 - Para __VMware__: en forma de __datastores__ agrupados en __clústeres SDRS (Storage Distributed Resource Scheduler)__
 - Para __Bare Metal__: en forma de __volúmenes__
 - Para __Open IaaS__: en forma de __Storage Repository (SR)__

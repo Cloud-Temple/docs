@@ -46,6 +46,7 @@ Identity federation allows you to integrate the Cloud Temple Console with your i
 For these reasons, **identity federation is recommended**, especially for large-scale environments or those with high security requirements.
 
 Follow our step-by-step guides to integrate your identity provider:
+
 - [Configure federation with Azure AD | Cloud Temple Documentation](../console/iam/tutorials/sso_aad)
 - [Configure federation with ADFS | Cloud Temple Documentation](../console/iam/tutorials/sso_adfs)
 
@@ -113,6 +114,7 @@ Controlled permission assignment limits risks of error or malicious action and s
 Cloud Temple regularly provides builds for hypervisors to ensure the application of security patches. However, updating hypervisors remains your responsibility, as we do not have visibility into your business constraints.  
 
 Therefore, we recommend that you:
+
 - Regularly check in the Console for the availability of new builds for your hypervisors;  
 - **Regularly deploy new builds across all your hypervisors**, especially if they address security vulnerabilities;
 - Regularly deploy new versions of vmtools on your virtual machines.

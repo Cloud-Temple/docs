@@ -56,7 +56,7 @@ Des que todas las etapas se hayan completado, tus redes se crearán y luego se g
 
 - Al hacer clic en los etiquetas de información que redirigen a las comandos relacionadas.
 
-> **Importante:** No es posible generar múltiples comandos del mismo tipo de recurso al mismo tiempo. Deberás esperar a que se confirme la orden en curso antes de crear una nueva.
+> __Importante:__ No es posible generar múltiples comandos del mismo tipo de recurso al mismo tiempo. Deberás esperar a que se confirme la orden en curso antes de crear una nueva.
 
 Todas las acciones posibles sobre tus redes se encuentran en el menú __Acciones*__ de cada uno:
 
@@ -68,7 +68,7 @@ Todas las acciones posibles sobre tus redes se encuentran en el menú __Acciones
 - La eliminación de la propagación en un teniente.
 - La modificación de la propagación en un teniente.
 
-> **La eliminación de una red aún no está disponible.**
+> __La eliminación de una red aún no está disponible.__
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />
@@ -107,8 +107,8 @@ Se genera una comanda, al igual que en la creación inicial con propagación.
 
 Es posible separar la creación y propagación de redes en dos pasos distintos:
 
-1. **Propagar un red existente**: Haga clic en la acción __*Propagar*__ sobre una red ya creada
-2. **Seleccionar el destino de propagación**: Se generará entonces una orden, similar a cuando se creó inicialmente con propagación.
+1. __Propagar un red existente__: Haga clic en la acción __*Propagar*__ sobre una red ya creada
+2. __Seleccionar el destino de propagación__: Se generará entonces una orden, similar a cuando se creó inicialmente con propagación.
 
 ### Activación y desactivación de redes
 
