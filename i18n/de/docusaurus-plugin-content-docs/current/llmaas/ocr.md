@@ -83,6 +83,7 @@ Hier ist ein vollständiges Beispiel, das zeigt, wie Sie Ihren API-Aufruf strukt
 -   **Größe**: Es wird empfohlen, sehr hochauflösende Bilder zu verkleinern, um Fehler aufgrund von Größenbeschränkungen (413 Payload Too Large) zu vermeiden.
 
 Installieren Sie die erforderlichen Bibliotheken:
+
 ```bash
 pip install requests Pillow
 ```
@@ -91,7 +92,7 @@ pip install requests Pillow
 
 Nehmen wir das Beispiel dieses Schweizer Kassenbons:
 
-![Beispiel Kassenbon](./images/ReceiptSwiss.jpg)
+![Beispiel Kassenbon](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
 Hier ist ein robustes Skript, das die Bildgrößenänderung und die optimale Codierung verwaltet:
 
@@ -114,17 +115,17 @@ def encode_image_optimized(path):
         # 1. Konvertierung in RGB (um Probleme mit PNG/Alpha zu vermeiden)
         if img.mode != 'RGB':
             img = img.convert('RGB')
-        
+
         # 2. Intelligente Größenänderung, wenn zu groß (> 2048px)
         # Dies verhindert 413 (Payload Too Large) Fehler und beschleunigt die Verarbeitung
         max_size = 2048
         if max(img.size) > max_size:
             img.thumbnail((max_size, max_size))
-            
+
         # 3. JPEG-Kompression im Speicher
         buffer = io.BytesIO()
         img.save(buffer, format="JPEG", quality=85)
-        
+
         return base64.b64encode(buffer.getvalue()).decode('utf-8')
 
 # 1. Aufbau der multimodalen Nachricht
@@ -170,6 +171,7 @@ else:
 ```
 
 **Beispielausgabe:**
+
 ```markdown
 
 # Berghotel
@@ -207,9 +209,10 @@ DeepSeek-OCR zeichnet sich durch die Konvertierung von Tabellen aus, selbst ohne
 
 **Eingabebild:**
 
-![Finanztabelle](./images/tableau.png)
+![Finanztabelle](@site/docs/llmaas/images/tableau.png)
 
 **Modellausgabe (Prompt: "Convert the document to markdown table."):**
+
 ```markdown
 
 
@@ -252,7 +255,7 @@ Ideal für wissenschaftliche Dokumente. Das Modell erkennt Gleichungen und gibt 
 
 **Eingabebild:**
 
-![Gleichung](./images/equation.png)
+![Gleichung](@site/docs/llmaas/images/equation.png)
 
 **Modellausgabe (Prompt: "Convert to latex."):**
 

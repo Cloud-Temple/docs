@@ -13,7 +13,7 @@ Il servizio **LLMaaS** (Large Language Models as a Service) di Cloud Temple offr
 
 ### Infrastruttura Cloud Temple
 
-import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
+import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001.png';
 
 <img src={ArchitectureLLMaaS} alt="Architettura Tecnica LLMaaS Cloud Temple" />
 
@@ -92,7 +92,7 @@ Il servizio LLMaaS è erogato su un'infrastruttura tecnica che gode della **qual
 
 ### Security Controls
 
-import SecurityControls from './images/llmaas_security_002.png';
+import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 <img src={SecurityControls} alt="Security Controls LLMaaS" />
 
@@ -183,7 +183,7 @@ response = client_ct.chat.completions.create(
 
 ### Aggiornamento dei Modelli
 
-import ModelLifecycle from './images/llmaas_lifecycle_003.png';
+import ModelLifecycle from '@site/docs/llmaas/images/llmaas_lifecycle_003.png';
 
 <img src={ModelLifecycle} alt="Ciclo di vita dei modelli LLMaaS" />
 

@@ -4,9 +4,9 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-import shivaCatalogsCharger from './images/shiva_catalogs_charger.png';
-import shivaCatalogsAjout from './images/shiva_catalogs_ajout.png';
-import shivaCatalogsDeployer from './images/shiva_catalogs_deployer.png';
+import shivaCatalogsCharger from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_charger.png';
+import shivaCatalogsAjout from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_ajout.png';
+import shivaCatalogsDeployer from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_deployer.png';
 
 This guide will allow you to deploy your first instances on the Cloud of Trust in less than 5 minutes.
 

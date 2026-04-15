@@ -93,7 +93,7 @@ pip install requests Pillow
 
 Take the example of this Swiss receipt:
 
-![Example receipt](./images/ReceiptSwiss.jpg)
+![Example receipt](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
 Here is a robust script that handles image resizing and optimal encoding:
 
@@ -208,7 +208,7 @@ DeepSeek-OCR excels at converting tables, even those without clear border lines.
 
 **Input Image:**
 
-![Financial Table](./images/tableau.png)
+![Financial Table](@site/docs/llmaas/images/tableau.png)
 
 **Model Output (Prompt: "Convert the document to markdown table."):**
 ```markdown
@@ -253,7 +253,7 @@ Ideal for academic documents. The model recognizes equations and outputs them in
 
 **Input Image:**
 
-![Equation](./images/equation.png)
+![Equation](@site/docs/llmaas/images/equation.png)
 
 **Model Output (Prompt: "Convert to latex."):**
 

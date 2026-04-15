@@ -4,8 +4,8 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-import statusCloudInit from './images/status_cloud_init.png';
-import cloudInitOutput from './images/cloud-init-output.png';
+import statusCloudInit from '@site/docs/iaas_vmware/tutorials/images/status_cloud_init.png';
+import cloudInitOutput from '@site/docs/iaas_vmware/tutorials/images/cloud-init-output.png';
 
 Este guía le permitirá desplegar sus primeras instancias en menos de 5 minutos en el Cloud de Confianza.
 

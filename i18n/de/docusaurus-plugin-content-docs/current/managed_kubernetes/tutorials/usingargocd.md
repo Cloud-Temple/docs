@@ -2,11 +2,12 @@
 title: ArgoCD für Ihre GitOps-Deployments nutzen
 ---
 
-import argocdguestbook from './images/argocdguestbook.png'
+import argocdguestbook from '@site/docs/managed_kubernetes/tutorials/images/argocdguestbook.png'
 
 ## Ziele
 
 In diesem Tutorial erfahren Sie, wie Sie **ArgoCD**, das integrierte GitOps-Tool für kontinuierliche Bereitstellung in Ihrem **Managed Kubernetes**-Cluster, verwenden. Am Ende dieses Leitfadens wissen Sie:
+
 - Was die GitOps-Methodik ist.
 - Wie Sie auf die ArgoCD-Oberfläche zugreifen.
 - Wie Sie eine Anwendung mithilfe von ArgoCD bereitstellen, um einen Git-Repository mit dem Cluster zu synchronisieren.
@@ -18,6 +19,7 @@ In diesem Tutorial erfahren Sie, wie Sie **ArgoCD**, das integrierte GitOps-Tool
 **ArgoCD** is the tool that implements this principle. It continuously monitors a Git repository and compares the state defined there (via Kubernetes manifests) with the actual state of your cluster. If it detects any discrepancies, it automatically applies the necessary changes to align the cluster with what is declared in Git.
 
 The benefits are numerous:
+
 - **Reliable and reproducible deployments.**
 - **Full traceability** of all changes through Git history.
 - **Fast recovery** after incidents by rolling back to a previous commit.

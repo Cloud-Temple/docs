@@ -2,9 +2,9 @@
 title: Back up your applications with Veeam Kasten
 ---
 
-import k10dashboard from './images/k10dashboard.png'
-import k10s3location from './images/k10s3location.png'
-import k10infrabackups from './images/k10infrabackups.png'
+import k10dashboard from '@site/docs/managed_kubernetes/tutorials/images/k10dashboard.png'
+import k10s3location from '@site/docs/managed_kubernetes/tutorials/images/k10s3location.png'
+import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10infrabackups.png'
 
 ## Introduction
 
