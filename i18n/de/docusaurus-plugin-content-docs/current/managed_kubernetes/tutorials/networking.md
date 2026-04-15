@@ -1,36 +1,36 @@
 ---
-title: The Network in Managed Kubernetes
+title: Netzwerk in Managed Kubernetes
 ---
 
-import cillium from './images/cillium.png'
+import cillium from '@site/docs/managed_kubernetes/tutorials/images/cillium.png'
 
 ---
 
 ## Ziele
 
-Dieser Leitfaden soll Sie mit den grundlegenden Netzwerkkonzepten des Angebots **Managed Kubernetes** vertraut machen. Am Ende dieses Leitfadens können Sie:
+Ziel dieses Tutorials ist es, Sie mit den grundlegenden Netzwerkkonzepten des **Managed Kubernetes**-Angebots vertraut zu machen. Am Ende dieses Leitfadens werden Sie in der Lage sein:
 
-- Den IP-Adressraum Ihres Clusters (Knoten, Pods, Services) verstehen.
-- Die verschiedenen Mechanismen kennen, um Ihre Anwendungen zugänglich zu machen (Ingress, LoadBalancer).
-- Netzwerkflüsse und Sicherheitsrichtlinien mit Hubble visualisieren.
+- Den IP-Adressierungsplan Ihres Clusters (Knoten, Pods, Services) zu verstehen.
+- Die verschiedenen Mechanismen zur Exponierung Ihrer Anwendungen (Ingress, LoadBalancer) zu kennen.
+- Netzwerkflüsse und Sicherheitsrichtlinien mit Hubble zu visualisieren.
 
-Als **Beispiel** dient ein Cluster namens **"ctodev"**, dessen zugeordneter Bereich **10.20.0.0/22** ist.
+Wir werden als **Beispiel** einen Cluster **"ctodev"** verwenden, dem der Bereich **10.20.0.0/22** zugewiesen ist.
 
-:::warning Definition der IP-Bereiche
- Der private IP-Bereich X.Y.Z.0/22 (RFC 1918) wird beim Einrichten des Clusters mit dem Kunden festgelegt und kann später nicht mehr geändert werden.
+:::warning Definition der Bereiche
+ Dieser private IP-Bereich X.Y.Z.0/22 (RFC 1918) wird mit dem Kunden bei der Einrichtung des Clusters festgelegt. Er kann später nicht mehr geändert werden.
 :::
 
-## IP Addressing Plan
+## IP-Adressierungsplan
 
-Your Managed Kubernetes cluster is provisioned with a multi-zone VLAN using an IPv4 address range of /22.
+Ihr Managed Kubernetes Cluster verfügt über ein multi-zonales VLAN mit einem IPv4-Adressbereich in /22.
 
-The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
+Der Bereich unseres **Beispiels** 10.20.0.0/22 ist logisch in Teilbereiche unterteilt.
 
-    - 10.20.0.0/24 is allocated to cluster Nodes:
+    - 10.20.0.0/24 ist den Clusterknoten zugewiesen:
 
-        - 10.20.0.10 : ctodev-gitrunner (the machine managing the infrastructure)
+        - 10.20.0.10 : ctodev-gitrunner (die Maschine, die die Infrastruktur steuert)
 
-        - 10.20.0.20 : Virtual IP (load-balanced) for the Kubernetes API service
+        - 10.20.0.20 : virtuelle IP (load balanced) des Kubernetes-API-Dienstes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -45,11 +45,11 @@ The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
         - ...
         - 10.20.0.151 : ctodev-wrk-100 (Worker 100)
 
-    - Internal MetalLB: 10.20.1.1 – 10.20.1.127
+    - Internes MetalLB : 10.20.1.1 – 10.20.1.127
 
       - 10.20.1.1 : ingress `nginx-internal`
     
-    - External MetalLB: 10.20.1.128 – 10.20.1.254
+    - Externes MetalLB : 10.20.1.128 – 10.20.1.254
 
       - 10.20.1.128 : ingress `nginx-external`
       - 10.20.1.129 : ingress `nginx-external-secure`
@@ -58,17 +58,17 @@ The **example** range 10.20.0.0/22 is logically divided into sub-ranges.
 
     - Services: 10.95.0.0/12 
 
-:::warning Pod and Service Ranges
-The Pod and Service ranges are defined during cluster setup with the client and cannot be modified afterward.
+:::warning Pods- und Services-Bereiche
+Die Pods- und Services-Bereiche werden mit dem Kunden bei der Einrichtung des Clusters festgelegt. Sie können später nicht mehr geändert werden.
 :::
 
-## Using MetalLB
+## Verwendung von MetalLB
 
-MetalLB is the component that enables exposing layer 3 (non-web / L7) services directly on an IP address—whether internal or external—using the `LoadBalancer` service type. It serves as an alternative to Ingress for non-HTTP applications or specific use cases.
+MetalLB ist die Komponente, die es ermöglicht, Layer-3-Dienste (nicht-web / L7) direkt auf einer IP-Adresse zu exponieren, sei es intern oder extern, unter Verwendung des Service-Typs `LoadBalancer`. Es ist eine Alternative zu Ingress für Nicht-HTTP-Anwendungen oder für spezifische Anwendungsfälle.
 
-To use MetalLB, simply create a `LoadBalancer`-type service. MetalLB will automatically assign an IP address from the preconfigured pools. The distinction between `internal` and `external` pools is a security measure to ensure that an application intended for internal use is not accidentally exposed on a public network.
+Um MetalLB zu verwenden, müssen Sie lediglich einen Service vom Typ `LoadBalancer` erstellen. MetalLB weist ihm automatisch eine IP-Adresse aus den vorkonfigurierten Bereichen zu. Die Unterscheidung zwischen `internen` und `externen` Bereichen ist eine Sicherheitsmaßnahme, um sicherzustellen, dass eine für den internen Gebrauch bestimmte Anwendung nicht versehentlich in einem öffentlichen Netzwerk exponiert wird.
 
-**Example: Exposing a service on the internal network**
+**Beispiel: Exponieren eines Dienstes im internen Netzwerk**
 
 ```yaml
 apiVersion: v1
@@ -86,11 +86,11 @@ spec:
   type: LoadBalancer
 ```
 
-After applying this manifest, your service will be assigned an IP address within the range `10.20.1.1 – 10.20.1.127` and will be accessible from your internal network connected to the cluster.
+Nach dem Anwenden dieses Manifests wird Ihrem Dienst eine IP-Adresse im Bereich `10.20.1.1 – 10.20.1.127` zugewiesen und ist über Ihr internes Netzwerk, das mit dem Cluster verbunden ist, erreichbar.
 
-**Example: Exposing a service on the external network**
+**Beispiel: Exponieren eines Dienstes im externen Netzwerk**
 
-To request an IP address from the external pool (`10.20.1.128 – 10.20.1.254`), you must add the label `lb-type: external` to your service.
+Um eine IP-Adresse aus dem externen Bereich (`10.20.1.128 – 10.20.1.254`) anzufordern, müssen Sie das Label `lb-type: external` zu Ihrem Dienst hinzufügen.
 
 ```yaml
 apiVersion: v1
@@ -110,62 +110,63 @@ spec:
   type: LoadBalancer
 ```
 
-> **Important**: This range remains within a **private address space**. For **public exposure**, it is necessary to create a **NAT rule (DNAT)** on your infrastructure's firewall to redirect traffic from one of your public external IPs to the private IP assigned by MetalLB.
+> **Wichtig**: Dieser Bereich bleibt **in einem privaten Adressraum**. Für eine **öffentliche Exposition** ist es notwendig, eine **NAT-Regel (DNAT)** auf der Firewall Ihrer Infrastruktur zu erstellen, um den Datenverkehr von einer Ihrer externen öffentlichen IPs an die von MetalLB zugewiesene private IP-Adresse umzuleiten.
 
-## Public IPs
+## Öffentliche IPs
 
-Your Managed Kubernetes cluster was initially delivered with 2 public IPv4 addresses.
+Ihr Managed Kubernetes Cluster wurde mit 2 öffentlichen IPv4-Adressen geliefert.
 
-The first IP is used on port 6443 for the Kubernetes API (in our example: ctodev.mk.ms-cloud-temple.com:6443).
+Die 1. IP wird auf Port 6443 für die Kubernetes-API verwendet (in unserem Beispiel ctodev.mk.ms-cloud-temple.com:6443)
 
-This same IP is also NATed to the ingress controller *"nginx-external-secured"* on port 443. This enables access to the various consoles provided to you (see the quickstart guide). Access to this public IP is **filtered** using an allowed IP list.
+Diese IP ist auch auf dem *"nginx-external-secured"*-Ingress-Controller für Port 443 geNATet. Dies ermöglicht die Exposition der verschiedenen Konsolen, die Ihnen zur Verfügung gestellt werden (siehe Schnellstartleitfaden). Der Zugang zu dieser öffentlichen IP wird mit einer Liste erlaubter IPs **gefiltert**.
 
 ---
-The second public IP is NATed to the ingress controller *"nginx-external"* on ports 80 and 443.
+Die 2. öffentliche IP ist auf dem *"nginx-external"*-Ingress-Controller, auf den Ports 80 und 443, geNATet.
 
-Applications exposed via the ingress class *"nginx-external"* will therefore be directly accessible from the internet using this IP.
+Mit der Ingress-Klasse *"nginx-external"* exponierte Anwendungen sind daher direkt über diese IP aus dem Internet erreichbar.
 
-*If you wish to modify firewall rules (add/remove allowed IPs), you must submit a support request.*
+*Wenn Sie eine Änderung der Firewall-Regeln wünschen (Hinzufügen/Entfernen erlaubter IPs), müssen Sie eine Support-Anfrage stellen.*
 
-*It is possible to add additional public IPs if desired.*
+*Es ist möglich, weitere öffentliche IPs hinzuzufügen, falls gewünscht.*
 
 ## DNS
 
-Für den internen DNS (CoreDNS) hat der Cluster folgende Einstellungen:
+Für internes DNS (CoreDNS) wird der Cluster diese Parameter haben:
 
-- Cluster-Name: ` <Cluster-Identifikator>`
-- Internes Domain-Name: `<Cluster-Identifikator>-cluster.local` (in unserem Beispiel: ctodev-cluster.local)
+- Clustername: `<Cluster-Bezeichner>`
+- Interne Domain: `<Cluster-Bezeichner>-cluster.local` (in unserem Beispiel: ctodev-cluster.local)
 
-Dieser interne Domain-Name ist entscheidend für die Kommunikation zwischen Services innerhalb des Clusters. Er ermöglicht es einer Anwendung, eine andere Anwendung über einfach nur ihren Kubernetes-Service-Namen aufzurufen, ohne die interne IP-Adresse kennen zu müssen.
+Diese interne Domain ist entscheidend für die Inter-Service-Kommunikation innerhalb des Clusters. Sie ermöglicht es einer Anwendung, eine andere Anwendung einfach über ihren Kubernetes-Servicenamen zu kontaktieren, ohne ihre interne IP-Adresse kennen zu müssen.
 
-Beispiel: Ein Service namens `api-backend` im Namespace `production` ist automatisch über die Adresse `api-backend.production.svc.ctodev-cluster.local` auflösbar.
+Beispielsweise ist ein Dienst namens `api-backend` im Namespace `production` automatisch unter der Adresse `api-backend.production.svc.ctodev-cluster.local` auflösbar.
 
 ---
 
-Die öffentliche DNS-Zone, die für die Kubernetes-Managed-Cluster verwendet wird, lautet `.mk.ms-cloud-temple.com`.
+Die für Managed Kubernetes Cluster verwendete öffentliche DNS-Zone ist `.mk.ms-cloud-temple.com`
 
-Der Ingress *"nginx-external"* (zugeordnet zu der öffentlichen IP-Adresse Nr. 2) ist erreichbar unter `"*.external.<Ihr Cluster-Identifikator>.mk.ms-cloud-temple.com"`.  
-Wenn Sie eine Anwendung mit dieser Ingress-Klasse bereitstellen, können Sie darauf direkt über diesen Domain-Namen zugreifen. Weitere Informationen finden Sie im Tutorial: [Ihre erste Anwendung bereitstellen](./firstdeploy)
+Der *"nginx-external"*-Ingress (zugeordnet zu öffentlicher IP Nr. 2) ist erreichbar unter `"*.external.<Ihr Cluster-Bezeichner>.mk.ms-cloud-temple.com"`.
+Wenn Sie eine Anwendung mit dieser Ingress-Klasse veröffentlichen, können Sie direkt über diesen Domainnamen darauf zugreifen. Siehe Tutorial: [Ihre erste Anwendung bereitstellen](./firstdeploy)
 
-## Hubble: Network Observability within Reach
+## Hubble: Netzwerkobservabilität auf einen Blick
 
-Hubble is a graphical and command-line interface to visualize and understand network traffic flows in your cluster. Built on Cilium, it provides real-time, detailed mapping of services, dependencies, and network policies.
+Hubble ist eine grafische und Befehlszeilenschnittstelle zur Visualisierung und zum Verstehen der Netzwerkflüsse Ihres Clusters. Basierend auf Cilium bietet es eine detaillierte Übersicht über Dienste, Abhängigkeiten und Netzwerkrichtlinien in Echtzeit.
 
-With Hubble, you can:
-- **Visualize traffic flows** between your pods and services.
-- **Identify connectivity issues** and network errors.
-- **Verify enforcement of your security policies** (Network Policies).
-- **Explore dependencies** between your various applications.
+Mit Hubble können Sie:
 
-### Access the Hubble Interface
+- **Datenverkehrsflüsse** zwischen Ihren Pods und Diensten **visualisieren**.
+- **Konnektivitätsprobleme** und Netzwerkfehler **identifizieren**.
+- **Die Durchsetzung Ihrer Sicherheitsrichtlinien** (Network Policies) **überprüfen**.
+- **Die Abhängigkeiten** zwischen Ihren verschiedenen Anwendungen **erkunden**.
 
-The Hubble graphical interface is exposed via an internal URL of your cluster. Access is not possible through `kubectl port-forward` because users do not have sufficient permissions on the `kube-system` namespace.
+### Zugriff auf die Hubble-Oberfläche
 
-To access it, you must be connected to the cluster's internal network (e.g., via a bastion host or VPN). Use the following URL:
+Die grafische Oberfläche von Hubble ist auf einer internen URL Ihres Clusters exponiert. Der Zugriff ist nicht über `kubectl`-Port-Forwarding möglich, da Benutzer nicht über ausreichende Rechte im Namespace `kube-system` verfügen.
 
-`http://hubble.internal.<your-cluster-identifier>.mk.ms-cloud-temple.com`
+Um darauf zuzugreifen, müssen Sie mit dem internen Netzwerk des Clusters verbunden sein (z.B. über einen Bastion-Host oder ein VPN). Die zu verwendende URL lautet wie folgt:
 
-To make this URL resolvable from your workstation, you may need to add an entry to your `hosts` file or to your internal DNS. You can obtain the internal IP address of the Hubble Ingress using the following command:
+`http://hubble.internal.<ihr-cluster-bezeichner>.mk.ms-cloud-temple.com`
+
+Damit diese URL von Ihrer Workstation aufgelöst werden kann, müssen Sie wahrscheinlich einen Eintrag in Ihrer `hosts`-Datei oder in Ihrem internen DNS hinzufügen. Sie können die interne IP-Adresse des Hubble Ingress mit folgendem Befehl abrufen:
 
 ```bash
 kubectl get ingress hubble-ui -n kube-system
@@ -173,53 +174,53 @@ kubectl get ingress hubble-ui -n kube-system
 
 <img src={cillium} />
 
-### Erstellung interner DNS-Zonen (privater Cluster)
+### Erstellen interner DNS-Zonen (privater Cluster)
 
-Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste sowie die Kubernetes-API von Ihrem internen Netzwerk aus zu vereinfachen, wird empfohlen, eine interne DNS-Zone zu erstellen. Diese Zone ermöglicht die Auflösung der Domänennamen Ihrer Ingress-Ressourcen und der Kubernetes-API auf ihre jeweiligen privaten IP-Adressen, wodurch der Datenverkehr nicht mehr über öffentliche Netzwerke geleitet werden muss.
+Um die Sicherheit zu stärken und den Zugriff auf Ihre Dienste und die Kubernetes-API aus Ihrem internen Netzwerk zu vereinfachen, empfiehlt es sich, eine interne DNS-Zone zu erstellen. Diese Zone ermöglicht die Auflösung der Domainnamen Ihrer Ingresses und der Kubernetes-API zu ihren jeweiligen privaten IP-Adressen, wodurch der Transit über öffentliche Netzwerke vermieden wird.
 
-**Beispielkonfiguration für unseren Cluster „ctodev“, dessen zugewiesener Bereich 10.20.0.0/22 ist:**
+**Beispielkonfiguration mit unserem Cluster "ctodev", dem der Bereich** **10.20.0.0/22 zugewiesen ist:**
 
-Basierend auf den URLs im Schnellstartleitfaden können Sie Ihre interne DNS-Konfiguration wie folgt einrichten:
+Basierend auf den im Schnellstartleitfaden bereitgestellten URLs können Sie Ihr internes DNS wie folgt konfigurieren:
 
-1.  **Erstellen Sie die private DNS-Zone** auf Ihren internen DNS-Servern für `.<Cluster-Identifikator>.mk.ms-cloud-temple.com`
+1. **Erstellen Sie die private DNS-Zone** auf Ihren internen DNS-Servern für `.<Cluster-Bezeichner>.mk.ms-cloud-temple.com`
 
-2.  **Fügen Sie die folgenden A-Einträge hinzu:**
+2. **Fügen Sie die folgenden Typ-A-Einträge hinzu**:
 
-    -   **Für die Kubernetes-API:**
-        -   `. -> 10.20.0.20` (virtuelle IP der API)
+    - **Für die Kubernetes-API:**
+        - `. -> 10.20.0.20` (virtuelle IP der API)
 
-    -   **Für interne Dienste (über den Ingress `nginx-internal`):**
-        -   `hubble.internal -> 10.20.1.1`
-        -   `argocd.internal -> 10.20.1.1`
-        -   `ceph.internal -> 10.20.1.1`
+    - **Für interne Dienste (über den `nginx-internal`-Ingress):**
+        - `hubble.internal -> 10.20.1.1`
+        - `argocd.internal -> 10.20.1.1`
+        - `ceph.internal -> 10.20.1.1`
 
-    -   **Für gesicherte Dienste (über den Ingress `nginx-external-secure`):**
-        -   `k10.external-secured -> 10.20.1.129`
-        -   `grafana.external-secured -> 10.20.1.129`
-        -   `harbor.external-secured -> 10.20.1.129`
-        -   `opencost.external-secured -> 10.20.1.129`
-        -   `opencost-mcp.external-secured -> 10.20.1.129`
+    - **Für gesicherte Dienste (über den `nginx-external-secure`-Ingress):**
+        - `k10.external-secured -> 10.20.1.129`
+        - `grafana.external-secured -> 10.20.1.129`
+        - `harbor.external-secured -> 10.20.1.129`
+        - `opencost.external-secured -> 10.20.1.129`
+        - `opencost-mcp.external-secured -> 10.20.1.129`
 
-Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Diensten innerhalb Ihres privaten Netzwerks bleibt und den Sicherheitsbest Practices entspricht.
+Diese Konfiguration stellt sicher, dass der Datenverkehr zur API und zu internen Diensten in Ihrem privaten Netzwerk verbleibt, in Übereinstimmung mit den Best Practices der Sicherheit.
 
 <div class="card">
   <div class="card__header">
-    <h3>Anleitung: Bereitstellung Ihrer ersten Anwendung</h3>
+    <h3>Tutorial: Ihre erste Anwendung bereitstellen</h3>
   </div>
   <div class="card__body">
     <p>
-      Folgen Sie unserem detaillierten Leitfaden, um zu lernen, wie Sie eine Anwendung über einen Ingress verfügbar machen.
+      Folgen Sie unserem detaillierten Leitfaden, um zu lernen, wie Sie eine Anwendung mit einem Ingress exponieren.
     </p>
   </div>
   <div class="card__footer">
-    <a href="./firstdeploy" class="button button--primary button--block">Anleitung anzeigen &rarr;</a>
+    <a href="./firstdeploy" class="button button--primary button--block">Tutorial ansehen &rarr;</a>
   </div>
 </div>
 
 :::warning Weiterführend: Sicherheit in der Produktion
-Dieses Dokument erläutert grundlegende Netzwerkkonzepte. Für einen Produktionsbetrieb ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu ergreifen:
+Dieses Dokument erklärt die grundlegenden Netzwerkkonzepte. Für eine Produktionsbereitstellung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen anzuwenden:
 
--   **Verwenden Sie sichere Images**: Verwenden Sie bevorzugt Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor**, anstatt öffentliche Images.
--   **Kontrollieren Sie Netzwerkflüsse**: Setzen Sie `NetworkPolicies` ein, um Kommunikationen auf nur die erforderlichen Datenströme zwischen Ihren Anwendungen zu beschränken.
--   **Implementieren Sie Governance-Politiken**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Pflicht zur Angabe von `requests` und `limits` für Ressourcen usw.).
+- **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrer sicheren Unternehmens-Registry wie **Harbor** anstelle von öffentlichen Images.
+- **Kontrollieren Sie Netzwerkflüsse**: Implementieren Sie `NetworkPolicies`, um die Kommunikation auf die notwendigen Flüsse zwischen Ihren Anwendungen zu steuern.
+- **Wenden Sie Governance-Richtlinien an**: Verwenden Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z.B. "root"-Container verbieten, Ressourcen `requests` und `limits` erfordern, usw.).
 :::

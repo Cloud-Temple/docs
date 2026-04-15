@@ -53,9 +53,9 @@ La facturación de las direcciones IP públicas se realiza por unidad de obra (U
 
 ## IPv4 Blocks
 
-The delivery of IPv4 addresses is subject to __available stock__ for our customers, per IP address.
+The delivery of IPv4 addresses is subject to **available stock** for our customers, per IP address.
 
-To order IPv4 addresses, go to the __*'Public IPs'*__ menu under Networks in the green bar on the left, and click the __*"Order IPv4 addresses or IPv6 prefixes"*__ button.
+To order IPv4 addresses, go to the ***'Public IPs'*** menu under Networks in the green bar on the left, and click the ***"Order IPv4 addresses or IPv6 prefixes"*** button.
 
 You can also view the address blocks assigned to you within the same menu.
 
@@ -65,7 +65,7 @@ You can also view the address blocks assigned to you within the same menu.
 
 ## Bloques IPv6
 
-La ordenación de prefijos IPv6 se realiza desde el menú __*'IPs públicas'*__ del menú Redes en la barra verde de la izquierda, mediante el botón __*"Solicitar direcciones IPv4 o prefijos IPv6"*__.
+La ordenación de prefijos IPv6 se realiza desde el menú ***'IPs públicas'*** del menú Redes en la barra verde de la izquierda, mediante el botón ***"Solicitar direcciones IPv4 o prefijos IPv6"***.
 
 Es posible visualizar los prefijos asignados a su cuenta en el mismo menú.
 
@@ -101,8 +101,8 @@ Billing is based on the 95th percentile over the billing period, typically one m
 | ----------------------------------------- | -------- | --------------------------------------- |
 | Network - Reserved Internet Bandwidth     | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
-__*Note:*__
-*There is no __volume-based billing__ of the type __'egress fees'__. You only pay for the reserved bandwidth.*
+***Note:***
+*There is no **volume-based billing** of the type **'egress fees'**. You only pay for the reserved bandwidth.*
 
 ## Disponibilidad por oferta
 

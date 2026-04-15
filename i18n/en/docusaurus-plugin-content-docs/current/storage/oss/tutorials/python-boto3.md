@@ -100,6 +100,7 @@ s3 = boto3.client(
     config=config
 )
 ```
+
 :::
 
 ## 1. List files in an S3 bucket

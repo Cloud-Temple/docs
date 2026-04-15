@@ -83,7 +83,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 - `cloudtemple_compute_iaas_opensource_virtual_machine` : Machine virtuelle
 - `cloudtemple_compute_iaas_opensource_virtual_disk` : Disque virtuel
-- `cloudtemple_compute_iaas_opensource_network_adapter` : Interface réseau 
+- `cloudtemple_compute_iaas_opensource_network_adapter` : Interface réseau
 - `cloudtemple_compute_iaas_opensource_replication_policy` : Politique de réplication
 
 #### Object Storage
@@ -225,6 +225,7 @@ terraform {
 :::info
     OpenTofu propose le chiffrement du state par défaut ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
+
 ## Cycle de vie Terraform
 
 ### 1. Initialisation (terraform init)
@@ -236,6 +237,7 @@ terraform init
 ```
 
 Cette commande :
+
 - Télécharge le provider depuis le Terraform Registry
 - Initialise le backend (si configuré)
 - Crée le répertoire `.terraform/`
@@ -249,6 +251,7 @@ terraform plan
 ```
 
 Le plan indique :
+
 - **Ressources à créer** (`+`)
 - **Ressources à modifier** (`~`)
 - **Ressources à détruire** (`-`)
@@ -263,6 +266,7 @@ terraform apply
 ```
 
 Terraform :
+
 1. Génère un plan
 2. Demande confirmation (sauf avec `--auto-approve`)
 3. Applique les changements
@@ -279,6 +283,7 @@ terraform destroy
 :::danger Attention
   Cette commande supprime définitivement toutes les ressources. Utilisez-la avec précaution.
 :::
+
 ### 5. Autres commandes utiles
 
 ```bash

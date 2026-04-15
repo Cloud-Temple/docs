@@ -87,6 +87,7 @@ Vous obtenez ensuite un résumé des options sélectionnées avant de valider vo
 ## Commander de la ressource stockage supplémentaire
 
 La logique d'allocation du stockage en mode bloc sur les clusters de calcul repose sur la technologie __IBM SVC (San Volume Controller)__ et __IBM FlashSystem__. Le stockage est organisé en __LUNs de 500 Gio minimum__, présentées selon la technologie utilisée :
+
 - Pour __VMware__ : sous forme de __datastores__ regroupés dans des __clusters SDRS (Storage Distributed Resource Scheduler)__
 - Pour __Bare Metal__ : sous forme de __volumes__
 - Pour __Open IaaS__ : sous forme de __Storage Repository (SR)__

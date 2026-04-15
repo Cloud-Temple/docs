@@ -10,16 +10,20 @@ Cette section contient des tutoriels pratiques pour utiliser efficacement la pla
 ## Tutoriels disponibles
 
 ### Configuration
+
 - [Configurer une machine virtuelle de gestion](tutorials/configure_management_vm)
 
 ### Déploiement
+
 - [Déployer une VM depuis un template](tutorials/deploy_vm_template)
 - [Déployer une VM avec Terraform](tutorials/deploy_vm_terraform)
 
 ### Sécurité
+
 - [Chiffrer une machine virtuelle](tutorials/vm_encryption)
 
 ### Sauvegarde
+
 - [Questions fréquentes concernant la sauvegarde](tutorials/backup/iaas_backup)
 
 ## Prérequis

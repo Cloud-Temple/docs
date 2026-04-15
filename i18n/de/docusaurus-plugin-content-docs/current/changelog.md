@@ -5,6 +5,21 @@ sidebar_position: 2
 
 # Änderungsprotokoll
 
+### 15. April 2026: Verbesserung der IaaS VMware-Dokumentation — Cluster-Metriken
+
+- **IaaS VMware**: Detaillierte Dokumentation der in der VMware-Cluster-Ansicht der Cloud Temple Konsole angezeigten Metriken hinzugefügt. Umfasst die drei Cluster-Speicher-Diagramme: **Bereitgestellter Speicher** (insgesamt den VMs zugewiesener Speicher), **Verwendeter Speicher** (physischer Speicher, der aktiv von den VMs genutzt wird) und **Worst-Case-Zuweisung** (Projektion des maximalen gleichzeitigen Verbrauchs), mit einer präzisen Beschreibung der Bedeutung jedes Indikators zur Vorwegnahme des Ressourcenbedarfs. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+
+### 15. April 2026: Dokumentation Managed MariaDB, Managed PostgreSQL und mehrsprachige Korrekturen
+
+- **Managed MariaDB**: Erstveröffentlichung der Dokumentation für den Managed MariaDB-Dienst (Vorschau): Dienstübersicht, technische Konzepte (StandAlone- und Distributed-Architekturen), Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **Managed PostgreSQL**: Erstveröffentlichung der Dokumentation für den Managed PostgreSQL-Dienst (Vorschau): Dienstübersicht, technische Konzepte, Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **Mehrsprachige Korrekturen (Bilder)**: Korrektur der Bildreferenzen in den Übersetzungen der Abschnitte Managed Kubernetes und Managed MariaDB für alle Sprachen (EN, DE, ES, IT) — Konvertierung relativer `./images/`-Pfade in absolute `@site/docs/...`-Pfade für korrekte Darstellung in allen Sprachen.
+- **Korrekturen defekter Links**: Behebung mehrerer defekter Links: LLMaaS-Lizenzreferenzen, Konsolenlink im rclone-Tutorial (OSS), IAM-Link in der Netzwerkdokumentation (EN), relative Links im Terraform-Abschnitt (EN).
+
+### 15. April 2026: Neues Kostenverwaltungsmodul
+
+- **Konsole (Kostenverwaltung)**: Vollständige Dokumentation des neuen Verbrauchsverfolgungsmoduls der Cloud Temple Konsole hinzugefügt. Umfasst das Dashboard, den Gesamtverbrauch (mit Prognose für Monatsende), die Aufschlüsselung nach Produkt und Service, detaillierte Abrechnungszeilen und den Preiskatalog. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+
 ### 26. März 2026: Aktualisierung der Unterauftragsverarbeiter-Liste (DPA)
 
 - **Vertraglich**: Aktualisierung des Vertrags über die Auftragsverarbeitung (DPA) - Überarbeitung der Liste der Unterauftragsverarbeiter (Entfernung von Microsoft Azure und Amazon Web Services, Änderung der Tätigkeit für Iron Mountain) und Hinzufügung des Genehmigungsdatums. Ausbreitung der Änderungen auf Englisch, Deutsch, Spanisch und Italienisch.
@@ -105,14 +120,14 @@ sidebar_position: 2
 ### Juillet 2025 : Nouveautés et mises à jour majeures
 
 - **Stockage Objet (OSS)** :
-    - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
-    - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
+  - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
+  - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
 - **IaaS OpenSource** :
-    - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
+  - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
 - **Console** :
-    - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
+  - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
 - **Réseau** :
-    - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
+  - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
 
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 

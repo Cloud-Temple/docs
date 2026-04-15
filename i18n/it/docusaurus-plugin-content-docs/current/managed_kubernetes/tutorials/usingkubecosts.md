@@ -9,7 +9,7 @@ Il prodotto **KubeCost**, sebbene ancora funzionale sul tuo cluster, viene progr
 Ti invitiamo a iniziare a utilizzare OpenCost per beneficiare delle ultime funzionalità e di una migliore integrazione.
 :::
 
-import kubecostsallocations from './images/kubecostsallocations.png'
+import kubecostsallocations from '@site/docs/managed_kubernetes/tutorials/images/kubecostsallocations.png'
 
 ## Obiettivi
 
@@ -40,6 +40,7 @@ Access to this URL is restricted to the IP addresses you have declared to Cloud 
 La pagina principale di Kubecost è il dashboard **Allocations**. È qui che puoi visualizzare il consumo delle tue risorse.
 
 Per impostazione predefinita, i costi sono aggregati per **Namespace**. Puoi utilizzare il menu a discesa "Aggregate by" per modificare la visualizzazione e analizzare i costi per:
+
 - `Deployment`, `StatefulSet`, ecc.
 - `Controller`
 - `Label` (molto utile se utilizzi i label per identificare i tuoi team o progetti. Puoi ad esempio utilizzare il label del tenant capsule.)
@@ -51,6 +52,7 @@ Puoi inoltre modificare il periodo di analisi (predefinito: "Ultimi 7 giorni") p
 ## Analyze the cost of infrastructure (Assets)
 
 The **Assets** section provides a detailed view of the costs associated with the underlying infrastructure of your cluster:
+
 - Nodes (VMs)
 - Persistent disks
 - Network costs
@@ -62,6 +64,7 @@ This allows you to understand the cost distribution across computing, storage, a
 Kubecost non si limita a mostrare i costi, ma ti aiuta anche a ridurli. La sezione **Savings** analizza continuamente il tuo cluster e ti fornisce raccomandazioni concrete per ottimizzare le spese.
 
 Le raccomandazioni più comuni includono:
+
 - **Right-sizing delle richieste dei container:** Regolare le richieste di CPU e memoria dei tuoi container in modo che corrispondano al consumo effettivo.
 - **Gestione dei carichi di lavoro abbandonati:** Identificare i deployment che non sono più utilizzati ma continuano a consumare risorse.
 - **Gestione dei volumi non assegnati:** Trovare i volumi persistenti che non sono più collegati a nessun pod.

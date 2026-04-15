@@ -5,22 +5,22 @@ tags:
   - tutorials
   - iaas_backup
 ---
-import backupCloneIaas_001 from './images/backup_clone_iaas_001.png'
-import backupCloneIaas_002 from './images/backup_clone_iaas_002.png'
-import backupRestoIaas_001 from './images/backup_resto_iaas_001.png'
-import backupCloneIaas_004 from './images/backup_clone_iaas_004.png'
-import backupPolicyIaas_001 from './images/backup_policy_iaas_001.png'
-import backupPolicyIaas_002 from './images/backup_policy_iaas_002.png'
-import backupPolicyIaas_003 from './images/backup_policy_iaas_003.png'
-import backupPolicyIaas_006 from './images/backup_policy_iaas_006.png'
-import backupPolicyIaas_005 from './images/backup_policy_iaas_005.png'
-import backupPolicyIaas_004 from './images/backup_policy_iaas_004.png'
-import backupCloneIaas_003 from './images/backup_clone_iaas_003.png'
-import backupPolicyIaas_007 from './images/backup_policy_iaas_007.png'
-import backupRestoreIaas_001 from './images/backup_restore_iaas_001.png'
-import backupRestoreIaas_003 from './images/backup_restore_iaas_003.png'
-import backupRestoreIaas_002 from './images/backup_restore_iaas_002.png'
-import backupInvIaas_001 from './images/backup_inv_iaas_001.png'
+import backupCloneIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_clone_iaas_001.png'
+import backupCloneIaas_002 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_clone_iaas_002.png'
+import backupRestoIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_resto_iaas_001.png'
+import backupCloneIaas_004 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_clone_iaas_004.png'
+import backupPolicyIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_001.png'
+import backupPolicyIaas_002 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_002.png'
+import backupPolicyIaas_003 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_003.png'
+import backupPolicyIaas_006 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_006.png'
+import backupPolicyIaas_005 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_005.png'
+import backupPolicyIaas_004 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_004.png'
+import backupCloneIaas_003 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_clone_iaas_003.png'
+import backupPolicyIaas_007 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_policy_iaas_007.png'
+import backupRestoreIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_restore_iaas_001.png'
+import backupRestoreIaas_003 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_restore_iaas_003.png'
+import backupRestoreIaas_002 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_restore_iaas_002.png'
+import backupInvIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/backup_inv_iaas_001.png'
 
 #### How to clone a virtual machine?
 
@@ -79,7 +79,7 @@ These actions allow you to get detailed logs of the backup execution. You can se
 
 <img src={backupPolicyIaas_005} />
 
-2. Go to the __'Backup Reports'__ page and select the policy that interests you:
+1. Go to the __'Backup Reports'__ page and select the policy that interests you:
 
 <img src={backupPolicyIaas_004} />
 

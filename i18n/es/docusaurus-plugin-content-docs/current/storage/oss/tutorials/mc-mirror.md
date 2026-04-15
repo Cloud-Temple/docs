@@ -16,8 +16,9 @@ Para sincronizar el contenido del directorio local `./mon-site` hacia el bucket 
 
 ### Opciones útiles
 
-*   `--overwrite`: Reemplaza los archivos existentes en la destino, incluso si son más recientes.
-*   `--remove`: Elimina los archivos de la destino que no existen en el directorio fuente. **Utilizar con precaución**, ya que esto puede causar una pérdida de datos irreversible.
+* `--overwrite`: Reemplaza los archivos existentes en la destino, incluso si son más recientes.
+* `--remove`: Elimina los archivos de la destino que no existen en el directorio fuente. **Utilizar con precaución**, ya que esto puede causar una pérdida de datos irreversible.
 
 # Sincronización completa con eliminación de archivos remotos obsoletos
+>
 > mc mirror --eliminar ./mon-sitio/ cloudtemple-fr1/demo-app/

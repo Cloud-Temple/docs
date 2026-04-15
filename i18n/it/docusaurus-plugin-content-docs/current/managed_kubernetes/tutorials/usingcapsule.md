@@ -1,85 +1,83 @@
 ---
-title: Gestire i permessi con Capsule
+title: Gestire le autorizzazioni con Capsule
 ---
 
 ## Obiettivi
 
 Questo tutorial vi guiderà nell'utilizzo di **Capsule**, lo strumento di multi-tenancy integrato nel vostro cluster **Managed Kubernetes**. Al termine di questa guida, saprete:
 
-- Cos'è un **Tenant Capsule** e come organizza i vostri permessi.
-- Come **creare e gestire Namespace** all'interno del vostro Tenant.
-- Come le **politiche di sicurezza e i limiti (quotas)** vengono applicati ai vostri progetti.
+- Cos'è un **Tenant Capsule** e come organizza le vostre autorizzazioni.
+- Come **creare e gestire i Namespace** all'interno del vostro Tenant.
+- Come vengono applicate le **politiche di sicurezza e le quote** ai vostri progetti.
 
 ## Cos'è Capsule?
 
-Capsule è un controller Kubernetes che introduce il concetto di **Tenant** per raggruppare più Namespaces. Nell'offerta Kubernetes gestito di Cloud Temple, Capsule viene utilizzato per delegarti la gestione dei tuoi Namespaces in totale autonomia, senza la necessità di interventi da parte di un amministratore cluster.
+Capsule è un controller Kubernetes che introduce il concetto di **Tenant** per raggruppare più Namespace. Nell'offerta Managed Kubernetes di Cloud Temple, Capsule viene utilizzato per delegarvi la gestione autonoma dei vostri Namespace, senza necessità dell'intervento di un amministratore del cluster.
 
-All'attivazione del tuo cluster, i team Cloud Temple hanno creato un primo Tenant per te e ti hanno designato come **proprietario (Tenant Owner)**.
+Alla consegna del vostro cluster, i team di Cloud Temple hanno creato un primo Tenant per voi e vi hanno designato come suo **proprietario (Tenant Owner)**.
 
 :::tip
-Per impostazione predefinita, il tuo primo Tenant si chiama `default` e il conto di servizio proprietario è `defaultapp`.
+Per impostazione predefinita, il vostro primo Tenant si chiama `default` e l'account di servizio proprietario è `defaultapp`.
 :::
 
-Per ulteriori informazioni sul progetto, puoi consultare il [sito ufficiale di Capsule](https://projectcapsule.dev/).
+Per saperne di più sul progetto, potete consultare il [sito web ufficiale di Capsule](https://projectcapsule.dev/).
 
-## Step 1: Identify your Tenant name
+## Passo 1: Conoscere il nome del proprio Tenant
 
-As a `Tenant Owner`, you do not have the permissions to list the `Tenant` resource directly. The name of your Tenant is provided to you by the Cloud Temple teams during service delivery.
+Come `Tenant Owner`, non avete i permessi per elencare direttamente la risorsa `Tenant`. Il nome del vostro Tenant vi viene comunicato dai team di Cloud Temple al momento della consegna del servizio.
 
-If you have forgotten your Tenant name, you can retrieve it by inspecting the labels of the Namespaces you have access to. The following command lists all namespaces that are attached to a Capsule Tenant and displays their labels:
+Se avete dimenticato il nome del vostro Tenant, potete trovarlo ispezionando le etichette dei Namespace a cui avete accesso. Il seguente comando elenca tutti i namespace collegati a un tenant Capsule e ne visualizza le etichette:
 
 ```bash
 kubectl get ns -l capsule.clastix.io/tenant --show-labels
 ```
 
-Look for the label `capsule.clastix.io/tenant`. The value of this label is your Tenant name. You can then use this name to filter and display only the Namespaces belonging to your Tenant:
+Cercate l'etichetta `capsule.clastix.io/tenant`. Il valore di questa etichetta è il nome del vostro Tenant. Potete quindi usare questo nome per filtrare e vedere solo i Namespace del vostro Tenant:
 
 ```bash
-
-
-# Once you know the name of your tenant, for example "my-tenant"
+# Una volta che conoscete il nome del vostro tenant, ad esempio "my-tenant"
 kubectl get ns -l capsule.clastix.io/tenant=my-tenant
 ```
 
-## Step 2: Create a new Namespace
+## Passo 2: Creare un nuovo Namespace
 
-Your main advantage as a `Tenant Owner` is the ability to create Namespaces yourself. You can do this directly with a single `kubectl` command.
+Il vostro principale vantaggio come `Tenant Owner` è poter creare Namespace da soli. Potete farlo direttamente con un singolo comando `kubectl`.
 
-Run the following command to create a namespace named `mon-projet-dev`:
+Eseguite il seguente comando per creare un namespace chiamato `mon-projet-dev`:
 
 ```bash
 kubectl create namespace mon-projet-dev
 ```
 
-Capsule will intercept this request. Since you are the owner of a Tenant, it will allow the creation of the Namespace and automatically associate it with your Tenant.
+Capsule intercetterà questa richiesta. Poiché siete proprietari di un Tenant, autorizzerà la creazione del Namespace e lo associerà automaticamente al vostro Tenant.
 
-## Step 3: Verify Namespace Association
+## Passo 3: Verificare l'associazione del Namespace
 
-Once the Namespace has been created, you can verify that it has been correctly assigned to your Tenant.
+Una volta creato il Namespace, potete verificare che sia stato correttamente collegato al vostro Tenant.
 
 ```bash
 kubectl get ns mon-projet-dev --show-labels
 ```
 
-You will notice that Capsule has added a label to your Namespace, indicating which Tenant it belongs to. This mechanism ensures isolation between the different Tenants in the cluster.
+Noterete che Capsule ha aggiunto un'etichetta al vostro Namespace, indicando a quale Tenant appartiene. Questo è il meccanismo che garantisce l'isolamento tra i diversi Tenant del cluster.
 
 ```
 NAME             STATUS   AGE   LABELS
 mon-projet-dev   Active   1m    capsule.clastix.io/tenant=votre-tenant
 ```
 
-## Step 4: Understand policy inheritance
+## Passo 4: Comprendere l'ereditarietà delle politiche
 
-One of the greatest advantages of Capsule is that all security policies, resource quotas (`ResourceQuota`), and resource ranges (`LimitRange`) defined at the Tenant level by administrators are **automatically inherited** by all Namespaces you create.
+Uno dei maggiori vantaggi di Capsule è che tutte le politiche di sicurezza, le quote di risorse (`ResourceQuota`) e gli intervalli di risorse (`LimitRange`) definiti a livello di Tenant dagli amministratori vengono **automaticamente ereditati** da tutti i Namespace che create.
 
-This ensures your projects comply with consumption limits (CPU, memory, storage) and security rules (such as default network policies or security constraints defined by **Kyverno**) set for your environment, without needing to reconfigure them for each Namespace.
+Questo garantisce che i vostri progetti rispettino i limiti di consumo (CPU, memoria, storage) e le regole di sicurezza (come le politiche di rete predefinite o i vincoli di sicurezza definiti da **Kyverno**) stabiliti per il vostro ambiente, senza che dobbiate riconfigurarli per ogni Namespace.
 
 :::info
-Specific quotas have been set on your Capsule Tenant to limit the use of persistent storage (Ceph-Block and Ceph-FileSystem) to the total available space in the cluster. If you need to modify these quotas for a specific project, please submit a request to the Cloud Temple support team.
+Quote specifiche sono state impostate sul vostro Tenant Capsule per limitare l'utilizzo dello storage persistente (Ceph-Block e Ceph-FileSystem) allo spazio totale disponibile nel cluster. Se avete bisogno di modificare queste quote per un progetto specifico, vi preghiamo di formulare una richiesta al supporto di Cloud Temple.
 :::
 
 ## Conclusione
 
-Grazie a Capsule, hai un'intera autonomia per gestire gli spazi dei nomi (Namespaces) delle tue squadre, beneficiando contemporaneamente di un ambiente sicuro e preconfigurato dagli amministratori del cluster. Puoi creare, modificare e eliminare spazi dei nomi in qualsiasi momento, sapendo che i controlli necessari vengono applicati automaticamente.
+Grazie a Capsule, disponete di completa autonomia per gestire i Namespace dei vostri team, beneficiando al contempo di un framework sicuro e preconfigurato dagli amministratori del cluster. Potete creare, modificare ed eliminare Namespace a piacimento, sapendo che i necessari controlli vengono applicati automaticamente.
 
-Se hai bisogno di creare un nuovo Tenant per isolare un altro insieme di progetti o squadre, puoi richiederlo al supporto Cloud Temple.
+Se avete bisogno di creare un nuovo Tenant per isolare un altro insieme di progetti o team, potete farne richiesta al supporto di Cloud Temple.

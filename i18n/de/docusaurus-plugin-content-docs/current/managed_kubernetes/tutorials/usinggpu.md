@@ -1,20 +1,20 @@
 ---
-title: NVIDIA GPU verwenden
+title: Eine NVIDIA GPU verwenden
 ---
 
-import nvidiasmi from './images/nvidiasmi.png'
+import nvidiasmi from '@site/docs/managed_kubernetes/tutorials/images/nvidiasmi.png'
 
-# Using a GPU on Managed Kubernetes
+# Eine GPU auf Managed Kubernetes verwenden
 
-This tutorial shows you how to deploy a pod that uses a GPU resource on a Managed Kubernetes cluster configured with "Bare Metal" nodes equipped with NVIDIA GPUs.
+Dieses Tutorial zeigt Ihnen, wie Sie einen Pod bereitstellen, der eine GPU-Ressource auf einem Managed Kubernetes-Cluster verwendet, der mit „Bare Metal"-Knoten ausgestattet ist, die mit NVIDIA GPUs ausgestattet sind.
 
 ## Voraussetzungen
 
-- Ein Managed Kubernetes-Cluster mit mindestens einem Worker-Knoten vom Typ "Bare Metal" mit GPU.
+- Ein Managed Kubernetes-Cluster mit mindestens einem „Bare Metal"-Worker-Knoten mit GPU.
 
-## Example Pod Manifest
+## Beispiel-Pod-Manifest
 
-Here is an example pod manifest that runs the `nvidia-smi` command to check the presence and status of the GPU card.
+Hier ist ein Beispiel-Pod-Manifest, das den Befehl `nvidia-smi` ausführt, um die Anwesenheit und den Status der GPU-Karte zu überprüfen.
 
 ```yaml
 apiVersion: v1
@@ -22,7 +22,7 @@ kind: Pod
 metadata:
   name: nvidia-cuda-check
 spec:
-  runtimeClassName: nvidia  # Key for Talos NVIDIA
+  runtimeClassName: nvidia  # Schlüssel für Talos NVIDIA
   restartPolicy: Never
   containers:
   - name: nvidia-version-check
@@ -31,27 +31,29 @@ spec:
     command: ["nvidia-smi"]
 ```
 
-### Explanation of the Manifest
+### Erklärung des Manifests
 
-- **`runtimeClassName: nvidia`**: This is the most important part. It instructs Kubernetes to use the NVIDIA runtime. The NVIDIA toolkit then injects the NVIDIA drivers directly into the pod, enabling the container to access the GPU.
-- **`restartPolicy: Never`**: Since this pod is just a verification command, we don't want it to restart after execution.
-- **`image: "nvidia/cuda:..."`**: We use an image provided by NVIDIA that includes the necessary tools to interact with the GPU.
-- **`command: ["nvidia-smi"]`**: This is the command executed inside the container. `nvidia-smi` is a command-line tool that provides information about NVIDIA GPUs.
+- **`runtimeClassName: nvidia`**: Dies ist der wichtigste Teil. Er weist Kubernetes an, die NVIDIA-Laufzeitumgebung zu verwenden. Das NVIDIA-Toolkit injiziert dann die NVIDIA-Treiber direkt in den Pod, sodass der Container auf die GPU zugreifen kann.
+- **`restartPolicy: Never`**: Da es sich bei diesem Pod nur um einen Überprüfungsbefehl handelt, soll er nach der Ausführung nicht neu gestartet werden.
+- **`image: "nvidia/cuda:..."`**: Wir verwenden ein von NVIDIA bereitgestelltes Image, das die notwendigen Werkzeuge für die Interaktion mit der GPU enthält.
+- **`command: ["nvidia-smi"]`**: Dies ist der Befehl, der im Container ausgeführt wird. `nvidia-smi` ist ein Befehlszeilenwerkzeug, das Informationen über NVIDIA GPUs liefert.
 
-For more information about how the NVIDIA toolkit works, refer to the [official documentation on GitHub](https://github.com/NVIDIA/nvidia-container-toolkit).
+Weitere Informationen zur Funktionsweise des NVIDIA-Toolkits finden Sie in der [offiziellen Dokumentation auf GitHub](https://github.com/NVIDIA/nvidia-container-toolkit).
 
 ## Bereitstellung und Überprüfung
 
-1.  **Stellen Sie den Pod bereit** mit dem Befehl `kubectl apply`:
+1. **Stellen Sie den Pod bereit** mit dem Befehl `kubectl apply`:
+
     ```shell
     kubectl apply -f nvidia-smi.yaml
     ```
 
-2.  **Überprüfen Sie die Protokolle des Pods**, um die Ausgabe des Befehls `nvidia-smi` anzuzeigen:
+2. **Überprüfen Sie die Pod-Logs**, um die Ausgabe des Befehls `nvidia-smi` zu sehen:
+
     ```shell
     kubectl logs nvidia-cuda-check
     ```
 
-Wenn die Konfiguration korrekt durchgeführt wurde, sollten Sie eine Ausgabe ähnlich der folgenden sehen, die Details Ihrer GPU zeigt:
+Wenn alles korrekt konfiguriert ist, sollten Sie eine Ausgabe ähnlich der folgenden sehen, die die Details Ihrer GPU-Karte anzeigt:
 
-<img src={nvidiasmi} alt="Ergebnis des nvidia-smi-Befehls"/>
+<img src={nvidiasmi} alt="nvidia-smi command result"/>

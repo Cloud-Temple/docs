@@ -1,18 +1,18 @@
 ---
 title: Avvio rapido
 ---
-import shivaLogin from './images/shiva_login.png'
-import shivaHome from './images/shiva_home.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaSupport from './images/shiva_support.png'
-import shivaSupport_01 from './images/shiva_support_01.png'
-import shivaSupport_02 from './images/shiva_support_02.png'
-import shivaSupport_03 from './images/shiva_support_03.png'
-import shivaOnboard_007 from './images/shiva_onboard_007.png'
-import shivaLogs from './images/shiva_logs.png'
-import shivaOnboard_009 from './images/shiva_onboard_009.png'
-import shivaOnboard_008 from './images/shiva_onboard_008.png'
-import shivaSupportCriticities from './images/shiva_incident_criticities.png'
+import shivaLogin from '@site/docs/console/images/shiva_login.png'
+import shivaHome from '@site/docs/console/images/shiva_home.png'
+import shivaProfil_006 from '@site/docs/console/images/shiva_profil_006.png'
+import shivaSupport from '@site/docs/console/images/shiva_support.png'
+import shivaSupport_01 from '@site/docs/console/images/shiva_support_01.png'
+import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
+import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
+import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
+import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
+import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
+import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 
 ## Prerequisiti
 
@@ -24,7 +24,7 @@ import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 La Console è accessibile tramite l'URL seguente: [Console](https://shiva.cloud-temple.com) oppure dall'URL diretta che ti è stata inviata via email.
 
-La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organisations) in cui è stato creato il tuo utente.  
+La prima pagina ti permette di selezionare l'[organizzazione](iam/concepts.md#organizzazioni) in cui è stato creato il tuo utente.  
 Dopo aver inserito l'azienda, fai clic su __'Accedi'__.
 
 <img src={shivaLogin} />
@@ -156,7 +156,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Schede__
 
- + **Recenti**
+- __Recenti__
 
 - Operazioni recenti
 - Monitoraggio in tempo reale
@@ -168,7 +168,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Informazioni Visualizzate__
 
- + Data e Ora
+- Data e Ora
 
 - Tipo di operazione
   - Stato
@@ -177,7 +177,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Funzionalità__
 
- + Ricerca/Filtraggio per operazioni specifiche
+- Ricerca/Filtraggio per operazioni specifiche
 
 ### __Utilizzo__
 

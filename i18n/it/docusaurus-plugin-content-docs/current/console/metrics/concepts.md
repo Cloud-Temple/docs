@@ -1,31 +1,31 @@
 ---
 title: Metrologia
 ---
-import metricsHypervisorsCo2 from './images/metrics_hypervisors_co2.png'
-import shivaHome from './images/shiva_home.png'
-import shivaMetric_000 from './images/shiva_metric_000.png'
-import shivaMetric_001 from './images/shiva_metric_001.png'
-import shivaMetric_002 from './images/shiva_metric_002.png'
-import shivaMetric_003 from './images/shiva_metric_003.png'
-import shivaMetric_004 from './images/shiva_metric_004.png'
-import shivaMetric_006 from './images/shiva_metric_006.png'
-import shivaMetric_007 from './images/shiva_metric_007.png'
-import shivaMetric_008 from './images/shiva_metric_008.png'
-import shivaMetric_009 from './images/shiva_metric_009.png'
-import shivaMetric_010 from './images/shiva_metric_010.png'
-import shivaMetric_011 from './images/shiva_metric_011.png'
-import shivaMetric_012 from './images/shiva_metric_012.png'
-import shivaMetric_013 from './images/shiva_metric_013.png'
-import shivaMetric_014 from './images/shiva_metric_014.png'
-import grafanaDashboards_003 from './images/grafana_dashboards_003.png'
-import grafanaDashboards_004 from './images/grafana_dashboards_004.png'
-import grafanaDashboards_002 from './images/grafana_dashboards_002.png'
-import grafanaDatasourceHttp from './images/grafana_datasource_http.png'
-import grafanaDatasourceAuth from './images/grafana_datasource_auth.png'
-import grafanaDatasourceBasicAuthDetails from './images/grafana_datasource_basic_auth_details.png'
-import grafanaDatasourceAlerting from './images/grafana_datasource_alerting.png'
-import grafanaDatasourceWorking from './images/grafana_datasource_working.png'
-import grafanaDashboards_001 from './images/grafana_dashboards_001.png'
+import metricsHypervisorsCo2 from '@site/docs/console/metrics/images/metrics_hypervisors_co2.png'
+import shivaHome from '@site/docs/console/metrics/images/shiva_home.png'
+import shivaMetric_000 from '@site/docs/console/metrics/images/shiva_metric_000.png'
+import shivaMetric_001 from '@site/docs/console/metrics/images/shiva_metric_001.png'
+import shivaMetric_002 from '@site/docs/console/metrics/images/shiva_metric_002.png'
+import shivaMetric_003 from '@site/docs/console/metrics/images/shiva_metric_003.png'
+import shivaMetric_004 from '@site/docs/console/metrics/images/shiva_metric_004.png'
+import shivaMetric_006 from '@site/docs/console/metrics/images/shiva_metric_006.png'
+import shivaMetric_007 from '@site/docs/console/metrics/images/shiva_metric_007.png'
+import shivaMetric_008 from '@site/docs/console/metrics/images/shiva_metric_008.png'
+import shivaMetric_009 from '@site/docs/console/metrics/images/shiva_metric_009.png'
+import shivaMetric_010 from '@site/docs/console/metrics/images/shiva_metric_010.png'
+import shivaMetric_011 from '@site/docs/console/metrics/images/shiva_metric_011.png'
+import shivaMetric_012 from '@site/docs/console/metrics/images/shiva_metric_012.png'
+import shivaMetric_013 from '@site/docs/console/metrics/images/shiva_metric_013.png'
+import shivaMetric_014 from '@site/docs/console/metrics/images/shiva_metric_014.png'
+import grafanaDashboards_003 from '@site/docs/console/metrics/images/grafana_dashboards_003.png'
+import grafanaDashboards_004 from '@site/docs/console/metrics/images/grafana_dashboards_004.png'
+import grafanaDashboards_002 from '@site/docs/console/metrics/images/grafana_dashboards_002.png'
+import grafanaDatasourceHttp from '@site/docs/console/metrics/images/grafana_datasource_http.png'
+import grafanaDatasourceAuth from '@site/docs/console/metrics/images/grafana_datasource_auth.png'
+import grafanaDatasourceBasicAuthDetails from '@site/docs/console/metrics/images/grafana_datasource_basic_auth_details.png'
+import grafanaDatasourceAlerting from '@site/docs/console/metrics/images/grafana_datasource_alerting.png'
+import grafanaDatasourceWorking from '@site/docs/console/metrics/images/grafana_datasource_working.png'
+import grafanaDashboards_001 from '@site/docs/console/metrics/images/grafana_dashboards_001.png'
 
 La maggior parte dei clienti __Cloud Temple__ dispone di strumenti di visualizzazione, monitoraggio e metrologia per il tracciamento delle proprie operazioni.
 
@@ -51,7 +51,7 @@ Questi avvisi sono cliccabili e reindirizzano alla pagina del prodotto corrispon
 
 ### Metriche VMware - Panoramica generale
 
-Nel menu **'VMware'**, è disponibile un dashboard specifico nel sottomenu **'Metriche'**. Esso raggruppa 4 schede:
+Nel menu __'VMware'__, è disponibile un dashboard specifico nel sottomenu __'Metriche'__. Esso raggruppa 4 schede:
 
 #### Panoramica
 
@@ -61,9 +61,9 @@ Su questa scheda sono presenti alcune delle metriche già visualizzate nel dashb
 
 #### Calcolo
 
-Su questa scheda sono disponibili il numero di **AZ**, di **Cluster**, di **ESX**, l'**emissione di carbonio**, la **stima del consumo**, nonché 7 grafici che forniscono una visione molto visiva del vostro ambiente VMware. La stima del consumo in kWh viene calcolata sulla base della media dei rilevamenti relativi al periodo selezionato, rapportata a un'ora.
+Su questa scheda sono disponibili il numero di __AZ__, di __Cluster__, di __ESX__, l'__emissione di carbonio__, la __stima del consumo__, nonché 7 grafici che forniscono una visione molto visiva del vostro ambiente VMware. La stima del consumo in kWh viene calcolata sulla base della media dei rilevamenti relativi al periodo selezionato, rapportata a un'ora.
 
-Potete scegliere l'intervallo di date da includere, nonché il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero ambito). Ad esempio, selezionando **Host**:
+Potete scegliere l'intervallo di date da includere, nonché il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero ambito). Ad esempio, selezionando __Host__:
 
 <img src={shivaMetric_001} />
 
@@ -74,7 +74,7 @@ Passando il mouse sopra ciascun grafico, vengono visualizzati i nomi delle risor
 
 #### Archiviazione
 
-Come nell'ottica "Calcolo", vengono visualizzate diverse informazioni: il numero di **AZ**, di **datastore clusters**, di **datastores**, nonché due grafici. Lo stesso principio di filtraggio si applica, ma qui è possibile raggruppare per **Cluster SDRS** e **Datastore**.
+Come nell'ottica "Calcolo", vengono visualizzate diverse informazioni: il numero di __AZ__, di __datastore clusters__, di __datastores__, nonché due grafici. Lo stesso principio di filtraggio si applica, ma qui è possibile raggruppare per __Cluster SDRS__ e __Datastore__.
 
 <img src={shivaMetric_004} />
 
@@ -83,6 +83,7 @@ Come nell'ottica "Calcolo", vengono visualizzate diverse informazioni: il numero
 Qui qui si trova una panoramica generale sulla salute delle macchine virtuali.
 
 Questa sintesi fornisce, nell'intervallo di tempo selezionato:
+
 - il numero di CPU e la __media di utilizzo CPU__,
 - la quantità di RAM in GB e la __media di utilizzo della memoria__,
 - le medie della __latenza di accesso allo storage__ in lettura e scrittura,
@@ -100,23 +101,23 @@ Si accede così alla pagina di visualizzazione grafica dei dati storici, che inc
 
 ### VMware Metrics - View by resource
 
-It is also possible to view some metrics related to VMware, this time more specifically for a given **Host** or **Datastore**.
+It is also possible to view some metrics related to VMware, this time more specifically for a given __Host__ or __Datastore__.
 
 #### Host
 
-Nella vista di un Host, è possibile consultare, per un periodo specifico, il **consumo energetico** e la stima delle **emissioni di carbonio**.
+Nella vista di un Host, è possibile consultare, per un periodo specifico, il __consumo energetico__ e la stima delle __emissioni di carbonio__.
 
 <img src={shivaMetric_008} />
 
 #### Datastore
 
-Nella vista di un Datastore, è possibile consultare per un periodo specifico le **IOPS**.
+Nella vista di un Datastore, è possibile consultare per un periodo specifico le __IOPS__.
 
 <img src={shivaMetric_009} />
 
 ### OpenIaaS Metrics
 
-In the **'OpenIaaS'** menu, a dedicated dashboard is available in the **'Metrics'** submenu. It includes 3 tabs:
+In the __'OpenIaaS'__ menu, a dedicated dashboard is available in the __'Metrics'__ submenu. It includes 3 tabs:
 
 #### Panoramica
 
@@ -126,9 +127,9 @@ Su questa scheda sono presenti alcune delle metriche già visualizzate nel dashb
 
 #### Calcolo
 
-Su questa scheda è possibile visualizzare il numero di **AZ**, di **Cluster**, di **Host**, nonché 5 grafici che forniscono una panoramica molto visiva del vostro ambiente OpenIaaS.
+Su questa scheda è possibile visualizzare il numero di __AZ__, di __Cluster__, di __Host__, nonché 5 grafici che forniscono una panoramica molto visiva del vostro ambiente OpenIaaS.
 
-È possibile selezionare l'intervallo di date da coprire, nonché il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero ambito). Ad esempio, scegliendo **Host**:
+È possibile selezionare l'intervallo di date da coprire, nonché il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero ambito). Ad esempio, scegliendo __Host__:
 
 <img src={shivaMetric_011} />
 
@@ -136,7 +137,7 @@ Su questa scheda è possibile visualizzare il numero di **AZ**, di **Cluster**, 
 
 #### Archiviazione
 
-Allo stesso modo dell'ottica "Calcolo", vengono visualizzate diverse informazioni: il numero di **AZ**, di **Cluster**, di **Datastore** e un grafico. Lo stesso principio di filtraggio si applica, ma qui è possibile raggruppare per **Block Storage**.
+Allo stesso modo dell'ottica "Calcolo", vengono visualizzate diverse informazioni: il numero di __AZ__, di __Cluster__, di __Datastore__ e un grafico. Lo stesso principio di filtraggio si applica, ma qui è possibile raggruppare per __Block Storage__.
 
 <img src={shivaMetric_013} />
 

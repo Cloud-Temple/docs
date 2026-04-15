@@ -9,8 +9,8 @@ This page gathers practical tutorials for using the Terraform Cloud Temple provi
 ## Índice
 
 - [IaaS VMware](#iaas-vmware)
-- [IaaS Open Source](#iaas-opensource)
-- [Almacenamiento objeto](#stockage-objet)
+- [IaaS Open Source]
+- [Almacenamiento objeto](#almacenamiento-objeto)
 
 ## IaaS VMware
 
@@ -19,6 +19,7 @@ This page gathers practical tutorials for using the Terraform Cloud Temple provi
 **Objetivo**: Crear una máquina virtual VMware básica sin sistema operativo.
 
 **Requisitos previos**:
+
 - Acceso a un datacenter Cloud Temple
 - Credenciales API configuradas
 - Permisos necesarios
@@ -77,6 +78,7 @@ resource "cloudtemple_compute_virtual_machine" "empty_vm" {
 ```
 
 **Explicaciones** :
+
 - `guest_operating_system_moref` : Define el tipo de SO para los controladores de VMware Tools
 - La VM se crea sin disco ni red (que se deben añadir por separado)
 - Las opciones de hot-add permiten añadir CPU/RAM en caliente
@@ -138,6 +140,7 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 ```
 
 **Explanations**:
+
 - `marketplace_item_id`: References a ready-to-use image
 - `datastore_id`: Specific datastore required for Marketplace deployment
 - The image already includes a pre-configured operating system
@@ -210,6 +213,7 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 ```
 
 **Explanations**:
+
 - The `os_disk` and `os_network_adapter` blocks configure the template's resources
 - These blocks can only be used at creation (see dedicated section)
 
@@ -301,6 +305,7 @@ resource "cloudtemple_compute_virtual_machine" "cloudinit_vm" {
 ```
 
 **Claves de Cloud-Init compatibles (VMware)** :
+
 - `user-data` : Configuración principal (codificada en base64)
 - `network-config` : Configuración de red (codificada en base64)
 - `public-keys` : Claves SSH públicas
@@ -344,11 +349,13 @@ resource "cloudtemple_compute_virtual_disk" "data_disk" {
 ```
 
 **Modos de disco disponibles**:
+
 - `persistent`: Los cambios se guardan de inmediato y de forma definitiva en el disco virtual.
 - `independent_nonpersistent`: Los cambios realizados en el disco virtual se guardan en un registro de recuperación y se eliminan al apagar la máquina.
 - `independent_persistent`: Los cambios se guardan de inmediato y de forma definitiva en el disco virtual. No se ve afectado por las instantáneas (snapshots).
 
 **Tipos de aprovisionamiento**:
+
 - `dynamic`: Ahorra espacio de almacenamiento al asignar espacio de forma dinámica según las necesidades. La creación es rápida.
 - `staticImmediate`: Asigna todo el espacio del disco durante la creación, pero los bloques se inicializan a cero en la primera escritura.
 - `staticDiffered`: Asigna y inicializa a cero todo el espacio del disco durante la creación.
@@ -390,6 +397,7 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
   # mac_address = "00:50:56:xx:xx:xx"
 }
 ```
+
 :::info Supported network adapter types
   The compatible adapter types that can be used depend on the OS running on the virtual machine as well as the version of VMware.
 :::
@@ -421,6 +429,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 ```
 
 **Controller types**:
+
 - `USB2`
 - `USB3`
 - `SCSI`
@@ -435,6 +444,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 **Objetivo**: Desplegar una máquina virtual a partir de una plantilla del catálogo.
 
 **Requisitos previos**:
+
 - Acceso a la infraestructura OpenSource Cloud Temple
 - Permisos necesarios:
   - `compute_iaas_opensource_read`
@@ -529,6 +539,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "openstack_vm" {
 ```
 
 **Explicaciones** :
+
 - `high_availability` : Opciones disponibles: `disabled`, `restart`, `best-effort` (Ver [documentación](https://docs.cloud-temple.com/iaas_opensource/concepts#alta-disponibilidad) sobre Alta Disponibilidad)
 - `boot_firmware` : `bios` o `uefi`
 - `secure_boot` : Solo disponible con UEFI
@@ -635,6 +646,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
 ```
 
 **Explanations**:
+
 - `interval`: Replication interval. Can be specified in `minutes` or `hours`.
 - `storage_repository_id`: Storage Repository to which the VM's disks will be replicated. Must be located in a different AZ than the original VM.
 
@@ -808,6 +820,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "cloudinit_vm" {
 ```
 
 **Diferencia con VMware**:
+
 - OpenSource utiliza la fuente de datos **NoCloud**
 - Claves admitidas: `cloud_config` y `network_config`
 - No se utiliza `filebase64()`, se emplea `file()` directamente
@@ -828,7 +841,7 @@ Los bloques `os_disk` y `os_network_adapter` son bloques especiales que se puede
 **Características importantes**:
 
 1. **Creación únicamente**: Estos bloques solo pueden definirse durante el `terraform apply` inicial
-3. **Alternativa**: Utilice el comando `terraform import` para importarlos manualmente
+2. **Alternativa**: Utilice el comando `terraform import` para importarlos manualmente
 
 ### Usar os_disk
 
@@ -937,6 +950,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "vm_with_network"
 ---
 
 **Buenas prácticas**:
+
 1. Usa `os_disk` y `os_network_adapter` para la configuración inicial del template
 2. Usa los recursos dedicados para añadir recursos adicionales
 
@@ -994,11 +1008,13 @@ output "bucket_namespace" {
 ```
 
 **Tipos de acceso**:
+
 - `private`: Acceso restringido a las direcciones IP del inquilino
 - `public`: Acceso público en lectura
 - `custom`: Acceso limitado a las IPs de la lista blanca
 
 **Versionado**:
+
 - `Enabled`: Habilita el versionado de objetos
 - `Suspended`: Suspender el versionado (mantiene las versiones existentes)
 
@@ -1085,6 +1101,7 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
 ```
 
 **Available roles**:
+
 - `read_write`: Read and write
 - `write_only`: Write only
 - `read_only`: Read only
@@ -1133,6 +1150,7 @@ resource "cloudtemple_object_storage_bucket" "bucket_with_acl" {
 ```
 
 **Diferencia con los recursos ACL dedicados**:
+
 - **Inline**: ACL definidas directamente en el bucket (más sencillo para configuraciones estáticas)
 - **Recurso dedicado**: ACL gestionadas de forma independiente (más flexible, permite modificaciones independientes)
 

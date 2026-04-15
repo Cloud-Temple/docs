@@ -13,13 +13,10 @@ const config: Config = {
   onBrokenLinks: 'log',
 
   // enable faster build time https://docusaurus.io/blog/releases/3.6
-  // Temporarily disabled due to configuration error, will re-enable if needed
-  // future: {
-  //   experimental_faster: true,
-  //   v4: {
-  //     removeLegacyPostBuildHeadAttribute: true,
-  //   },
-  // },
+  future: {
+    faster: true,
+    v4: true,
+  },
 
   trailingSlash: false,
 
@@ -32,7 +29,11 @@ const config: Config = {
   // GitHub repository config (used for "Edit this page" links)
   organizationName: 'Cloud-Temple',
   projectName: 'docs',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

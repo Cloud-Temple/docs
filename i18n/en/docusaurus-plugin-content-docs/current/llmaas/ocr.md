@@ -12,10 +12,11 @@ This guide details the use of the **DeepSeek-OCR** model, a cutting-edge solutio
 Unlike traditional OCR systems, DeepSeek-OCR is an end-to-end Vision-Language model designed to "read" and "understand" documents visually.
 
 ### Technical Architecture
+
 It combines two innovative components:
 
-1.  **DeepEncoder (380M)**: A hybrid visual encoder that integrates **SAM-base** (for local perception) and **CLIP-large** (for global knowledge), connected by a 16x convolutive compressor. This enables processing high-resolution images with very few visual tokens.
-2.  **MoE Decoder (3B)**: Based on DeepSeek3B-MoE (570M active parameters), it generates structured text from the compressed visual tokens.
+1. **DeepEncoder (380M)**: A hybrid visual encoder that integrates **SAM-base** (for local perception) and **CLIP-large** (for global knowledge), connected by a 16x convolutive compressor. This enables processing high-resolution images with very few visual tokens.
+2. **MoE Decoder (3B)**: Based on DeepSeek3B-MoE (570M active parameters), it generates structured text from the compressed visual tokens.
 
 ### Resolution Modes and Token Consumption
 
@@ -34,6 +35,7 @@ To optimize costs and latency, resize your images to the minimum resolution nece
 :::
 
 ### Multilingual Support
+
 The model has been trained on a large corpus of multilingual documents and supports recognition of nearly **100 languages** (including French, English, Chinese, Arabic, etc.), with or without layout preservation.
 
 ## Prompt Guide (Prompt Engineering)
@@ -41,6 +43,7 @@ The model has been trained on a large corpus of multilingual documents and suppo
 The quality of the output directly depends on the prompt used. DeepSeek-OCR responds to specific instructions to activate its various capabilities.
 
 ### 1. Standard OCR (Markdown)  
+
 To extract text with its structure (headings, paragraphs, tables).
 
 **Prompt:**  
@@ -49,17 +52,20 @@ To extract text with its structure (headings, paragraphs, tables).
 **Result:** Structured text, formatted tables, layout preserved.
 
 ### 2. "Deep parsing" (Figures, graphs, formulas)
+
 To analyze the semantic content of graphs, chemical formulas, or geometric diagrams.
 
 **Prompt:**
 > `Parse the figure.`
 
 **Capabilities:**
--   **Graphs (Bar/Line/Pie)**: Converts into HTML or Markdown table.
--   **Chemical Formulas**: Converts into SMILES format.
--   **Geometry**: Describes geometric elements.
+
+- **Graphs (Bar/Line/Pie)**: Converts into HTML or Markdown table.
+- **Chemical Formulas**: Converts into SMILES format.
+- **Geometry**: Describes geometric elements.
 
 ### 3. Grounding (Localization)
+
 To find the coordinates of a specific element in the image.
 
 **Prompt:**
@@ -69,6 +75,7 @@ To find the coordinates of a specific element in the image.
 **Result:** Returns the bounding box coordinates of the element.
 
 ### 4. Object Detection
+
 To list and locate all visible objects.
 
 **Prompt:**
@@ -79,12 +86,14 @@ To list and locate all visible objects.
 Here is a complete example showing how to structure your API call to use these capabilities.
 
 ### Prerequisites: image format and dependencies
--   **Format**: JPEG or PNG.
--   **Mode**: RGB (no alpha transparency).
--   **PDF**: Must be converted to images beforehand (150–300 DPI).
--   **Size**: It is recommended to resize very high-resolution images to avoid size limit errors (413 Payload Too Large).
+
+- **Format**: JPEG or PNG.
+- **Mode**: RGB (no alpha transparency).
+- **PDF**: Must be converted to images beforehand (150–300 DPI).
+- **Size**: It is recommended to resize very high-resolution images to avoid size limit errors (413 Payload Too Large).
 
 Install the required libraries:
+
 ```bash
 pip install requests Pillow
 ```
@@ -93,7 +102,7 @@ pip install requests Pillow
 
 Take the example of this Swiss receipt:
 
-![Example receipt](./images/ReceiptSwiss.jpg)
+![Example receipt](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
 Here is a robust script that handles image resizing and optimal encoding:
 
@@ -172,6 +181,7 @@ else:
 ```
 
 **Example output:**
+
 ```markdown
 
 # Berghotel
@@ -204,13 +214,15 @@ The model will return a textual or tabular representation of the chart's data.
 ## Advanced Use Cases
 
 ### Extraction of Complex Tables
+
 DeepSeek-OCR excels at converting tables, even those without clear border lines.
 
 **Input Image:**
 
-![Financial Table](./images/tableau.png)
+![Financial Table](@site/docs/llmaas/images/tableau.png)
 
 **Model Output (Prompt: "Convert the document to markdown table."):**
+
 ```markdown
 
 
@@ -253,7 +265,7 @@ Ideal for academic documents. The model recognizes equations and outputs them in
 
 **Input Image:**
 
-![Equation](./images/equation.png)
+![Equation](@site/docs/llmaas/images/equation.png)
 
 **Model Output (Prompt: "Convert to latex."):**
 

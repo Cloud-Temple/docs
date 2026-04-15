@@ -158,13 +158,9 @@ attribuées ci-dessous :
     décrit dans la section « Description du Service » de la présente
     Convention de service.
 
-<!-- -->
-
 - **Sinistre :** désigne un événement grave d'origine naturelle ou
     humaine, accidentelle ou intentionnelle, occasionnant des pertes et
     des dommages importants à la Partie sinistrée.
-
-<!-- -->
 
 - **Supervision :** Surveillance d'un Système d'Information ou d'un
     Service, impliquant la collecte de diverses données telles que

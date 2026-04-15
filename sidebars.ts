@@ -39,6 +39,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
+      id: 'console/billing/concepts',
+    },
+    {
+      type: 'doc',
       id: 'console/api',
     },
     {
@@ -225,8 +229,9 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Managed Kubernetes',
           items: [
-            'managed_kubernetes/managed_kubernetes',
             'managed_kubernetes/concepts',
+            'managed_kubernetes/managed_kubernetes',
+            'managed_kubernetes/managed_core_kubernetes',
             'managed_kubernetes/quickstart',
             {
           type: 'category',
@@ -343,6 +348,34 @@ const sidebars: SidebarsConfig = {
                 'storage/oss/tutorials/restic',
               ],
             },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Produits Managés',
+      link: {
+        type: 'doc',
+        id: 'managedproducts_overview',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'MariaDB Managé (Preview)',
+          items: [
+            'managed_mariadb/managed_mariadb',
+            'managed_mariadb/concepts',
+            'managed_mariadb/quickstart',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'PostgreSQL Managé (Preview)',
+          items: [
+            'managed_postgresql/managed_postgresql',
+            'managed_postgresql/concepts',
+            'managed_postgresql/quickstart',
           ],
         },
       ],

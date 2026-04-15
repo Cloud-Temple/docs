@@ -335,6 +335,7 @@ docker pull qdrant/qdrant
 # 2. Start the Qdrant container
 docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
+
 :::
 
 The code below shows how to adapt the RAG pipeline to use Qdrant as the vector database.
@@ -894,7 +895,7 @@ This tutorial guides you through configuring the CLINE extension in Visual Studi
 2. **Neues Modell erstellen**: Fügen Sie eine neue Modellkonfiguration hinzu.
 3. **Felder ausfüllen**: Konfigurieren Sie die Felder wie unten dargestellt, basierend auf dem Bild unten.
 
-    ![CLINE-Konfiguration für LLMaaS](./images/cline_configuration.png)
+    ![CLINE-Konfiguration für LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
     * **API-Anbieter**: Wählen Sie `OpenAI-kompatibel`.
     * **Basis-URL**: Geben Sie den API-Endpunkt von LLMaaS von Cloud Temple ein: `https://api.ai.cloud-temple.com/v1`.
@@ -903,7 +904,7 @@ This tutorial guides you through configuring the CLINE extension in Visual Studi
     :::tip API-Schlüssel generieren
     Um Ihren API-Schlüssel zu generieren, gehen Sie in die Cloud Temple-Konsole, Bereich **LLMaaS** > **API-Schlüssel**, und klicken Sie auf **"API-Schlüssel erstellen"**.
 
-    ![Erstellung eines API-Schlüssels über die Konsole](./images/console_create_api_key.png)
+    ![Erstellung eines API-Schlüssels über die Konsole](@site/docs/llmaas/images/console_create_api_key.png)
     :::
 
     * **Modell-ID**: Geben Sie das Modell an, das Sie verwenden möchten, beispielsweise `qwen3-coder:30b`. Eine Liste der verfügbaren Modelle finden Sie im Abschnitt [Modelle](./models.md).
@@ -924,20 +925,20 @@ The GitHub directory below contains a collection of code examples and scripts de
 
 You'll find practical guides for:
 
-- __Information Extraction and Text Analysis:__ Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
+* **Information Extraction and Text Analysis:** Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
 
-- __Conversational Interaction and Chatbots:__ Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
+* **Conversational Interaction and Chatbots:** Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
 
-- __Audio Transcription (Speech-to-Text):__ Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
+* **Audio Transcription (Speech-to-Text):** Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
 
-- __Text Translation:__ Translation of documents from one language to another, managing context across multiple segments to improve coherence.
+* **Text Translation:** Translation of documents from one language to another, managing context across multiple segments to improve coherence.
 
-- __Model Management and Evaluation:__ Listing available language models via the API, reviewing their specifications, and running tests to compare performance.
+* **Model Management and Evaluation:** Listing available language models via the API, reviewing their specifications, and running tests to compare performance.
 
-- __Real-Time Response Streaming:__ Demonstration of the capability to receive and display model responses progressively (token by token), essential for interactive applications.
+* **Real-Time Response Streaming:** Demonstration of the capability to receive and display model responses progressively (token by token), essential for interactive applications.
 
-- __RAG Pipeline with In-Memory Knowledge Base:__ Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
+* **RAG Pipeline with In-Memory Knowledge Base:** Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
 
-- __RAG Pipeline with Vector Database (Qdrant):__ Complete, containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
+* **RAG Pipeline with Vector Database (Qdrant):** Complete, containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
 
-- __OCR & Document Analysis (DeepSeek-OCR):__ Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).
+* **OCR & Document Analysis (DeepSeek-OCR):** Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).

@@ -98,11 +98,7 @@ Las expresiones siguientes utilizadas en el presente Acuerdo de Servicio se inte
 
 - **Servicio OpenIaaS:** Designa el servicio IaaS basado en tecnología open source, en proceso de calificación SecNumCloud, entregado al COMITENTE por el Prestador desde infraestructuras técnicas mantenidas por el Prestador, tal como se describe en la sección « Descripción del Servicio » del presente Acuerdo de Servicio.
 
-<!-- -->
-
 - **Siniestro:** Designa un evento grave de origen natural o humano, accidental o intencional, que causa pérdidas y daños importantes para la Parte afectada.
-
-<!-- -->
 
 - **Supervisión:** Vigilancia de un Sistema de Información o de un Servicio, que implica la recopilación de diversos datos tales como mediciones y alarmas. Esta actividad se limita a la observación y seguimiento, sin intervenir directamente sobre los elementos supervisados, una prerrogativa que corresponde a las operaciones de Administración.
 
@@ -674,6 +670,7 @@ Any modification to the Service Agreement must be accepted by the **CLIENT**. It
 In addition, Cloud Temple undertakes to allow the revision of this Service Agreement (including its termination) without penalty for the CLIENT in the event of loss of SecNumCloud qualification.
 
 The Services do not include a reversibility obligation (i.e., assistance to the CLIENT to enable migration of its system to another "Provider"), except for the provision by the Provider to the CLIENT of the CLIENT interface, allowing the CLIENT to back up and retrieve its data—including configuration data of its information system—through one of the following technical options, at the CLIENT’s discretion:  
+
 - Provision of files in one or more documented and usable formats outside the service provided by the Provider; or  
 - Implementation of technical interfaces enabling access to data according to a documented and usable schema (API).
 

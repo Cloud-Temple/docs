@@ -98,11 +98,7 @@ Die nachfolgend verwendeten Ausdrücke im vorliegenden Servicevertrag werden gem
 
 - **Service OpenIaaS:** Bezeichnet den IaaS-Service, der auf Open-Source-Technologie basiert, der derzeit SecNumCloud-zertifizierung unterzogen wird, und dem Auftraggeber vom Dienstleister über technische Infrastrukturen bereitgestellt wird, die vom Dienstleister betreut werden, wie in der „Beschreibung des Services“ dieses Servicevertrags beschrieben.
 
-<!-- -->
-
 - **Schaden:** Bezeichnet ein schwerwiegendes Ereignis, das durch natürliche oder menschliche Ursache, zufällig oder vorsätzlich verursacht wurde und erhebliche Verluste und Schäden für die betroffene Partei verursacht.
-
-<!-- -->
 
 - **Überwachung:** Überwachung eines Informationssystems oder eines Services, die die Erfassung verschiedener Daten wie Messwerte und Alarme beinhaltet. Diese Tätigkeit beschränkt sich auf Beobachtung und Verfolgung, ohne direkt in die überwachten Elemente eingreifen zu können – eine Befugnis, die den Administrationsaufgaben vorbehalten ist.
 
@@ -555,13 +551,13 @@ Due to the definitions and conditions outlined in this Service Agreement, the Pr
 1. The shared responsibility model, described in the section “Shared Responsibility Model” of this Service Agreement, effectively limits the Provider’s involvement in operational layers “above” the provision of computing, networking, storage, and backup resources. This specifically excludes, without limitation:
 
     - Management of what is installed on virtual machines (OS, middleware, applications, etc.);
-    
+
     - Maintenance and updating of the OS and other software installed by the CLIENT on its machines within its Tenants;
-    
+
     - Security of programs, software, and applications installed on virtual machines;
-    
+
     - Updating of virtual machines;
-    
+
     - Application-level data backup.
 
 2. The Provider cannot commit to backing up the CLIENT’s Tenants without prior subscription by the CLIENT to the appropriate work units.
@@ -661,6 +657,7 @@ Any modification to the Service Agreement requires acceptance by the **CLIENT**.
 In addition, Cloud Temple undertakes to allow the revision of this Service Agreement (including its termination) without penalty for the CLIENT in the event of loss of SecNumCloud qualification.
 
 The Services do not include an obligation of reversibility (i.e., assistance to the CLIENT to enable migration of its system to another provider), except for the provision by the Provider to the CLIENT of the CLIENT interface, allowing the CLIENT to back up and retrieve its data—including configuration data of its information system—through one of the following technical options, at the CLIENT’s discretion:  
+
 - Provision of files in one or more documented and usable formats outside the service provided by the Provider; or  
 - Implementation of technical interfaces enabling access to data according to a documented and usable schema (API).
 
