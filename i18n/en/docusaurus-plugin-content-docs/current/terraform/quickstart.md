@@ -555,7 +555,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 Now that you've mastered the basics, explore the advanced tutorials:
 
 - [VMware IaaS Tutorials](tutorials.md#iaas-vmware): Advanced VM deployment, disk management, network configuration
-- [Open Source IaaS Tutorials](tutorials.md#iaas-opensource): XCP-ng virtual machines, replication, high availability
+- [Open Source IaaS Tutorials](tutorials.md): XCP-ng virtual machines, replication, high availability
 - [Object Storage Tutorials](tutorials.md#object-storage): Bucket creation, ACL management, S3 integration
 
 ## Additional Resources

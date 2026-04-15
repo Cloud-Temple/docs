@@ -190,7 +190,7 @@ Automatic recording of critical cluster events.
 **Procedura "Ripristino dopo evento catastrofico"**
 
 - In caso di perdita completa dell'accesso a un cluster, il **Cliente** deve segnalare un incidente al supporto **Cloud Temple** tramite il modulo di supporto della console.  
-Vedere la [**procedura per la richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico)
+Vedere la [**procedura per la richiesta di supporto tecnico**](../../console/console_quickstart.md)
 
 ## Raccomandazioni generali
 
@@ -198,6 +198,6 @@ Vedere la [**procedura per la richiesta di supporto tecnico**](../../console/con
 2. **Convalidare le configurazioni**: testare le applicazioni in ambienti di staging prima del rilascio in produzione.
 3. **Monitorare regolarmente**: utilizzare gli strumenti integrati per seguire l'uso delle risorse e rilevare i problemi il prima possibile.
 4. **Stare aggiornati**: seguire la roadmap e le guide per evitare funzionalità obsoleti.
-5. **Contattare il supporto**: per i problemi non risolti, contattare il supporto tramite la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico) o via email all'indirizzo [**contact**](mailto:contact@cloud-temple.com).
+5. **Contattare il supporto**: per i problemi non risolti, contattare il supporto tramite la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md) o via email all'indirizzo [**contact**](mailto:contact@cloud-temple.com).
 
 Per ulteriori dettagli sulle responsabilità, si prega di consultare la nostra [**matrice di responsabilità**](../../contractual/paas/raci.md).

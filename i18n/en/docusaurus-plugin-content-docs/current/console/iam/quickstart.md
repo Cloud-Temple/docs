@@ -40,7 +40,7 @@ Credentials are global to your [Organization](concepts.md#organizations).
 
 ### Creating a User Account in Your Organization
 
-Creating a user account in your organization is done through invitation. To invite a user to an [Organization](concepts.md#organisations), go to the __'Administration'__ menu on the left side of your screen, along the green banner, then select the __'Users'__ submenu.
+Creating a user account in your organization is done through invitation. To invite a user to an [Organization](concepts.md#organizations), go to the __'Administration'__ menu on the left side of your screen, along the green banner, then select the __'Users'__ submenu.
 
 Click the __'New User'__ button from the users page.
 
@@ -69,7 +69,7 @@ The rights activation menu then appears:
 <img src={shivaOnboard_005} />
 
 Permission configuration must be done for each [Tenant](concepts.md#tenant) within the
-[Organization](concepts.md#organisations).
+[Organization](concepts.md#organizations).
 
 The list of permissions and their definitions is available [here](#permissions).
 

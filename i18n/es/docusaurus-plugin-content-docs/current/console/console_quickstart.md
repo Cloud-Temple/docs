@@ -24,7 +24,7 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 
 La consola está disponible a través de la siguiente URL: [Console](https://shiva.cloud-temple.com) o bien desde la URL directa que le fue proporcionada por correo electrónico.
 
-La primera página le permite seleccionar la [organización](iam/concepts.md#organisations) en la que fue creado su usuario.  
+La primera página le permite seleccionar la [organización](iam/concepts.md#organizaciones) en la que fue creado su usuario.  
 Una vez que haya especificado la empresa, haga clic en __'Conectarse'__.
 
 <img src={shivaLogin} />
@@ -44,7 +44,7 @@ El cambio de idioma de un usuario debe realizarse en su __'Perfil'__, en la part
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza para cada inquilino [Tenant](iam/concepts.md#tenant).
+La configuración se realiza para cada inquilino [Tenant](iam/concepts.md#management-of-owners-on-a-tenant).
 
 ## Acceso al soporte técnico
 

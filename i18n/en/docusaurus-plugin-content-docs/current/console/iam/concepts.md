@@ -55,7 +55,7 @@ The permissions activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](#tenant) within the [Organization](#organisations).
+Permission configuration must be done for each [Tenant](#tenant) within the [Organization](#organizations).
 
 The list of permissions and their definitions is available [here](#permissions).
 
@@ -267,7 +267,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-A tenant is a __grouping of resources within an organization__. An [Organization](#organisations) has at least one tenant (called the __default tenant__, which can be renamed). Typically, multiple tenants are used to segment responsibilities or technical boundaries.
+A tenant is a __grouping of resources within an organization__. An [Organization](#organizations) has at least one tenant (called the __default tenant__, which can be renamed). Typically, multiple tenants are used to segment responsibilities or technical boundaries.
 
 For example:
 
