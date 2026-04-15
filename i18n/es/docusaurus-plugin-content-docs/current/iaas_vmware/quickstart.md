@@ -47,6 +47,10 @@ import shivaBackupHeld_002 from '@site/docs/iaas_vmware/images/shiva_backup_held
 import shivaVmBackupRestaurer from '@site/docs/iaas_vmware/images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from '@site/docs/iaas_vmware/images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from '@site/docs/iaas_vmware/images/shiva_vm_backup_2prod.png'
+import iaasVmwareClusterProvisionedMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_provisioned_memory.png'
+import iaasVmwareClusterUsedMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_used_memory.png'
+import iaasVmwareClusterWorstCaseAllocationMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_worst_case_allocation_memory.png'
+import iaasVmwareEsxMemory from '@site/docs/iaas_vmware/images/iaas_vmware_esx_memory.png'
 
 ## Cálculo
 
@@ -306,6 +310,24 @@ Si hace clic en un cluster, verá un resumen de su composición:
 - Los mecanismos de automatización ante la inactividad de un nodo de cálculo (__'vSphere DRS'__),
 - El número de máquinas virtuales,
 - El número de hipervisores.
+
+#### Interpretar los datos de consumo que se muestran
+
+<img src={iaasVmwareClusterProvisionedMemory} />
+
+__Memoria aprovisionada (Clúster):__ Representa la cantidad total de memoria aprovisionada para el clúster.
+
+<img src={iaasVmwareClusterUsedMemory} />
+
+__Memoria consumida (Clúster):__ Muestra la memoria consumida activamente solo por las máquinas virtuales del clúster. Esto corresponde a la memoria física realmente utilizada por las máquinas virtuales para sus operaciones, lo cual es un indicador clave de la carga de trabajo actual.
+
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
+
+__Asignación en el peor de los casos (Clúster):__ Ilustra la memoria que se requeriría si todas las máquinas virtuales del clúster consumieran simultáneamente toda la memoria que se les ha asignado (el escenario de consumo máximo). El resultado también integra la memoria necesaria para el funcionamiento del clúster, así como diferentes parámetros propios de VMware (el cálculo no es simplemente igual a la suma de la RAM de todas las máquinas virtuales). Esto ayuda a anticipar las necesidades de recursos críticos y a prevenir el agotamiento de la memoria.
+
+<img src={iaasVmwareEsxMemory} />
+
+__Memoria consumida (ESX):__ A diferencia de los gráficos del clúster, este muestra el consumo total de memoria en un host ESX específico. Esto incluye no solo la memoria utilizada por las máquinas virtuales alojadas en este host, sino también la memoria consumida por el propio sistema hipervisor (sobrecarga de ESXi).
 
 {/*TODO: Add missing page. */}
 {/* Al consultar la página de un cluster, están disponibles varias pestañas. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles)*/}
