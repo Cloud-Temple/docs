@@ -315,22 +315,22 @@ When you click on a cluster, you see a summary of its composition:
 
 <img src={iaasVmwareClusterProvisionedMemory} />
 
-**Provisioned Memory (Cluster):** This graph represents the total amount of memory provisioned for the cluster.
+__Provisioned Memory (Cluster):__ This graph represents the total amount of memory provisioned for the cluster.
 
 <img src={iaasVmwareClusterUsedMemory} />
 
-**Consumed Memory (Cluster):** This view displays the memory actively consumed solely by the virtual machines in the cluster. This corresponds to the physical memory actually used by the VMs for their operations, which is a key indicator of the current workload.
+__Consumed Memory (Cluster):__ This view displays the memory actively consumed solely by the virtual machines in the cluster. This corresponds to the physical memory actually used by the VMs for their operations, which is a key indicator of the current workload.
 
 <img src={iaasVmwareClusterWorstCaseAllocationMemory} />
 
-**Worst Case Allocation (Cluster):** This graph illustrates the memory that would be required if all the virtual machines in the cluster were to simultaneously consume all of the memory allocated to them (the maximum consumption scenario). The result also includes the memory necessary for the operation of the cluster as well as various VMware-specific parameters (the calculation is not simply equal to the sum of the RAM of all virtual machines). This helps anticipate critical resource needs and prevent memory exhaustion.
+__Worst Case Allocation (Cluster):__ This graph illustrates the memory that would be required if all the virtual machines in the cluster were to simultaneously consume all of the memory allocated to them (the maximum consumption scenario). The result also includes the memory necessary for the operation of the cluster as well as various VMware-specific parameters (the calculation is not simply equal to the sum of the RAM of all virtual machines). This helps anticipate critical resource needs and prevent memory exhaustion.
 
 <img src={iaasVmwareEsxMemory} />
 
-**Consumed Memory (ESX):** Unlike the cluster graphs, this one shows the total memory consumed on a specific ESX host. This includes not only the memory used by the virtual machines hosted on this host, but also the memory consumed by the hypervisor system itself (ESXi overhead).
+__Consumed Memory (ESX):__ Unlike the cluster graphs, this one shows the total memory consumed on a specific ESX host. This includes not only the memory used by the virtual machines hosted on this host, but also the memory consumed by the hypervisor system itself (ESXi overhead).
 
-{/* TODO: Add missing page. */}
-{/* When viewing a cluster's page, several tabs are available. The __'Rules'_ tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines) */}
+{/*TODO: Add missing page. */}
+{/* When viewing a cluster's page, several tabs are available. The _*'Rules'* tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines)*/}
 
 <img src={shivaCpool_004} />
 
