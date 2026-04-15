@@ -99,9 +99,9 @@ Distributed block storage, based on __IBM Spectrum Virtualize__, offers a range 
 
 To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates a robust hardware-based encryption solution.
 
--   **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
--   **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
--   **Operation**: Encryption is applied at the time data is written to the physical storage medium.
+- __Encryption Type__: Data is encrypted directly on the disks (`Data At Rest`) using the __XTS-AES 256__ algorithm.
+- __Compliance__: This encryption method complies with the __FIPS 140-2__ standard, ensuring a high level of validated security.
+- __Operation__: Encryption is applied at the time data is written to the physical storage medium.
 
 :::warning Attention Point on Replication
 It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated and secure communication channels.
@@ -188,19 +188,23 @@ The actual usable memory may be limited by the guest operating system. Exceeding
 It is not possible to resize disks after they are created. To increase storage capacity, a new disk must be created.
 
 ### Virtual Machine Tools
+
 These tools are used to ensure optimal performance of virtual machines. When you need to perform an action requiring one of these tools, a message will appear on the Cloud Temple console.
 
 To install these tools, refer to the official Xen Server websites to obtain precise instructions based on your OS.
 
 #### Management Agent
+
 The Management Agent is a component installed on each virtual machine. It enables the hypervisor to better manage the machine by providing access to more information and allows certain actions to be performed more cleanly.
 
 #### PV Drivers (Paravirtualization Drivers)
+
 PV Drivers are drivers installed within the virtual machine to enhance its performance.  
 Without these drivers, the machine still functions, but at a slower speed. Additionally, they enable certain advanced operations.  
 PV Drivers are natively included in most current Linux kernels.
 
 #### Tools
+
 Tools are a set of software components that enhance the integration of the virtual machine with the virtualization infrastructure.
 
 ## Catalogs
@@ -309,15 +313,18 @@ With high availability (HA), each host in the pool regularly sends heartbeat sig
 
 A designated Block Storage used as a heartbeat means it will serve as the basis for authenticating hosts that no longer respond.
 
-To properly configure high availability within an OpenIaaS pool, it is mandatory to have **at least two hosts** connected.
+To properly configure high availability within an OpenIaaS pool, it is mandatory to have __at least two hosts__ connected.
 
 Each VM must be configured with a high availability restart priority level:
 
 #### Disabled
+
 High availability is not configured. In the event of host failure, the virtual machine will not be restarted.
 
 #### Restart
+
 In the event of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
 
 #### Best-effort  
+
 In the event of host failure, the virtual machine will be automatically restarted only if resources remain available after processing all virtual machines configured in "restart" mode. The "best-effort" mode performs only one attempt; therefore, if resources are insufficient, the virtual machine will not be restarted.

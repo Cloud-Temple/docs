@@ -16,7 +16,7 @@ La hiérarchie des documents contractuels est établie selon un ordre de priorit
 5. [Convention de Service spécifique - Bare Metal](baremetal.docx).
 6. Convention spécifique particulière (**)
 7. Plan d'Assurance Sécurité (PAS) (***)
-8. Conditions Particulières d’Utilisation (CPU) 
+8. Conditions Particulières d’Utilisation (CPU)
 9. [Data Protection Agreement](dpa.docx). (DPA)
 
 (*) Il est spécifié que la présente Convention de services PaaS est valide uniquement si le CLIENT a signé la Convention concernant les services IaaS SecNumCloud.

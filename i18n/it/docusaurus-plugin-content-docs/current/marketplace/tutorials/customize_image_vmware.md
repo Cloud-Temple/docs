@@ -15,10 +15,10 @@ Una volta che l'immagine è stata distribuita, diventa una macchina virtuale che
 
 ## Passaggi di personalizzazione
 
-1.  **Distribuire l'immagine di base** dalla Marketplace.
-2.  **Configurare la macchina virtuale** secondo le proprie esigenze.
-3.  **Creare un modello** a partire dalla macchina virtuale configurata.
-4.  **Distribuire una nuova macchina virtuale** dal proprio modello personalizzato.
+1. **Distribuire l'immagine di base** dalla Marketplace.
+2. **Configurare la macchina virtuale** secondo le proprie esigenze.
+3. **Creare un modello** a partire dalla macchina virtuale configurata.
+4. **Distribuire una nuova macchina virtuale** dal proprio modello personalizzato.
 
 ### Step 1: Deploy the base image
 
@@ -42,6 +42,7 @@ Once the virtual machine is deployed, configure it according to your needs (soft
 You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
 To deploy from the **Virtual Machines** page:
+
 1. Click on **"Create a virtual machine"**.
 2. Choose **"Deploy from a template"**.
 3. Select your new template from the list.

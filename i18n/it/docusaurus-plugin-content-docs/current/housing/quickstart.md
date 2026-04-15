@@ -31,6 +31,7 @@ Questa **Guida rapida Housing** vi aiuta a iniziare rapidamente con l'offerta di
 ## Fase 4: Attivare i servizi Hands & Eyes
 
 Se necessario, richiedete assistenza tecnica per:
+
 - Installare le vostre apparecchiature.
 - Configurare il cablaggio.
 - Eseguire azioni specifiche (riavvio, foto, ecc.).

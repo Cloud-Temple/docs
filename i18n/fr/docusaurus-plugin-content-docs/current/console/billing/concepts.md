@@ -43,6 +43,7 @@ Ce graphique vous permet de visualiser :
 **Lecture du graphique sur le mois en cours**
 
 Pour le mois en cours, le graphique distingue deux zones visuelles :
+
 - La partie **bleue (pleine)** représente la consommation **réelle à date**, c'est-à-dire les ressources effectivement consommées depuis le début du mois,
 - La partie **orange (hachurée)** représente le **prévisionnel** estimé jusqu'à la fin du mois, calculé sur la base de votre rythme de consommation actuel.
 

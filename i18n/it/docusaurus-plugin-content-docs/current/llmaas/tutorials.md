@@ -335,6 +335,7 @@ docker pull qdrant/qdrant
 # 2. Avviare il container Qdrant
 docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
+
 :::
 
 Il codice seguente mostra come adattare la pipeline RAG per utilizzare Qdrant come database vettoriale.
@@ -901,13 +902,13 @@ Questo tutorial vi guida nella configurazione dell'estensione CLINE in Visual St
     * **API Provider**: Selezionate `OpenAI Compatible`.
     * **Base URL**: Inserite l'endpoint dell'API LLMaaS di Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
     * **OpenAI Compatible API Key**: Incollate la chiave API che avete generato dalla console Cloud Temple.
-    
+
     :::tip Generazione della chiave API
     Per generare la vostra chiave API, andate nella console Cloud Temple, sezione **LLMaaS** > **Chiavi API**, quindi cliccate su **"Crea una chiave API"**.
-    
+
     ![Creazione di una chiave API dalla console](@site/docs/llmaas/images/console_create_api_key.png)
     :::
-    
+
     * **Model ID**: Specificate il modello che desiderate utilizzare, ad esempio `qwen3-coder:30b`. Potete trovare l'elenco dei modelli disponibili nella sezione [Modelli](./models.md).
     * **Model Configuration**:
         * **Supports Images**: Spuntate questa casella se il modello supporta le immagini.
@@ -927,17 +928,18 @@ Troverete nella directory GitHub qui sotto una collezione di esempi di codice e 
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
 Vi troverete guide pratiche per :
-- __Estrazione di Informazioni e Analisi di Testo :__ Capacità di analizzare documenti per estrarne dati strutturati come entità, eventi, relazioni e attributi, basandosi su ontologie specifiche per settori (es: legale, RU, IT).
 
-- __Interazione Conversazionale e Chatbot :__ Sviluppo di agenti conversazionali capaci di dialogare, di mantenere una cronologia degli scambi, di utilizzare istruzioni di sistema (prompt di sistema) e di invocare strumenti esterni.
+* **Estrazione di Informazioni e Analisi di Testo :** Capacità di analizzare documenti per estrarne dati strutturati come entità, eventi, relazioni e attributi, basandosi su ontologie specifiche per settori (es: legale, RU, IT).
 
-- __Trascrizione Audio (Speech-to-Text) :__ Conversione di contenuti audio in testo, inclusi file voluminosi, grazie a tecniche di suddivisione, normalizzazione e elaborazione in lotti.
+* **Interazione Conversazionale e Chatbot :** Sviluppo di agenti conversazionali capaci di dialogare, di mantenere una cronologia degli scambi, di utilizzare istruzioni di sistema (prompt di sistema) e di invocare strumenti esterni.
 
-- __Traduzione di Testo :__ Traduzione di documenti da una lingua all'altra, gestendo il contesto su più segmenti per migliorare la coerenza.
+* **Trascrizione Audio (Speech-to-Text) :** Conversione di contenuti audio in testo, inclusi file voluminosi, grazie a tecniche di suddivisione, normalizzazione e elaborazione in lotti.
 
-- __Gestione e Valutazione dei Modelli :__ Elenco dei modelli di linguaggio disponibili tramite l'API, consultazione delle loro specifiche ed esecuzione di test per confrontare le loro prestazioni.
+* **Traduzione di Testo :** Traduzione di documenti da una lingua all'altra, gestendo il contesto su più segmenti per migliorare la coerenza.
 
-- __Streaming di Risposte in Tempo Reale :__ Dimostrazione della capacità di ricevere e visualizzare le risposte dei modelli in modo progressivo (token per token), essenziale per le applicazioni interattive.
-- __Pipeline RAG con Base di Conoscenza in Memoria :__ Dimostratore RAG pedagogico per illustrare il funzionamento del Retrieval-Augmented Generation. Utilizza l'API LLMaaS per l'embedding e la generazione, con memorizzazione dei vettori in memoria (FAISS) per una comprensione chiara del processo.
-- __Pipeline RAG con Database Vettoriale (Qdrant) :__ Dimostratore RAG completo e containerizzato che utilizza Qdrant come database vettoriale. L'API LLMaaS è utilizzata per l'embedding dei documenti e la generazione di risposte aumentate.
-- __OCR & Analisi di Documenti (DeepSeek-OCR) :__ Guida completa e strumento di dimostrazione per convertire immagini e PDF in Markdown strutturato, estrarre tabelle e trascrivere formule matematiche. Vedere la [documentazione dedicata](./ocr).
+* **Gestione e Valutazione dei Modelli :** Elenco dei modelli di linguaggio disponibili tramite l'API, consultazione delle loro specifiche ed esecuzione di test per confrontare le loro prestazioni.
+
+* **Streaming di Risposte in Tempo Reale :** Dimostrazione della capacità di ricevere e visualizzare le risposte dei modelli in modo progressivo (token per token), essenziale per le applicazioni interattive.
+* **Pipeline RAG con Base di Conoscenza in Memoria :** Dimostratore RAG pedagogico per illustrare il funzionamento del Retrieval-Augmented Generation. Utilizza l'API LLMaaS per l'embedding e la generazione, con memorizzazione dei vettori in memoria (FAISS) per una comprensione chiara del processo.
+* **Pipeline RAG con Database Vettoriale (Qdrant) :** Dimostratore RAG completo e containerizzato che utilizza Qdrant come database vettoriale. L'API LLMaaS è utilizzata per l'embedding dei documenti e la generazione di risposte aumentate.
+* **OCR & Analisi di Documenti (DeepSeek-OCR) :** Guida completa e strumento di dimostrazione per convertire immagini e PDF in Markdown strutturato, estrarre tabelle e trascrivere formule matematiche. Vedere la [documentazione dedicata](./ocr).

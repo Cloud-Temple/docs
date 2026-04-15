@@ -15,10 +15,10 @@ Una vez desplegada la imagen, se convierte en una máquina virtual que puede con
 
 ## Pasos de personalización
 
-1.  **Desplegar la imagen base** desde la Marketplace.
-2.  **Configurar la máquina virtual** según sus necesidades.
-3.  **Crear un modelo** a partir de la máquina virtual configurada.
-4.  **Desplegar una nueva máquina virtual** desde su modelo personalizado.
+1. **Desplegar la imagen base** desde la Marketplace.
+2. **Configurar la máquina virtual** según sus necesidades.
+3. **Crear un modelo** a partir de la máquina virtual configurada.
+4. **Desplegar una nueva máquina virtual** desde su modelo personalizado.
 
 ### Paso 1: Desplegar la imagen base
 
@@ -42,6 +42,7 @@ Una vez desplegada la máquina virtual, configúrela según sus necesidades (ins
 You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
 To deploy from the **Virtual Machines** page:
+
 1. Click on **"Create a virtual machine"**.
 2. Choose **"Deploy from a template"**.
 3. Select your new template from the list.

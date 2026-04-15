@@ -154,7 +154,7 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 
 #### __Pestañas__
 
- + **Recientes**
+- __Recientes__
 
 - Operaciones recientes
 - Seguimiento en tiempo real
@@ -166,7 +166,7 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 
 #### __Information Displayed__
 
- + Date and Time
+- Date and Time
 
 - Operation Type
   - Status
@@ -175,7 +175,7 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 
 #### __Funcionalidad__
 
- + Búsqueda/Filtrado para operaciones específicas
+- Búsqueda/Filtrado para operaciones específicas
 
 ### __Uso__
 

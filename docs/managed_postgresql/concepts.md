@@ -1,15 +1,15 @@
 ---
-title: Concepts Clés de Managed PostgreSQL
+title: Concepts
 sidebar_position: 1
 ---
 
-# Concepts Clés de Managed PostgreSQL
+# Concepts Clés de PostgreSQL Managé
 
-Cette section présente les concepts fondamentaux de notre service **Managed PostgreSQL**. Comprendre ces principes vous aidera à tirer le meilleur parti de votre base de données managée, en alignant ses capacités avec vos besoins applicatifs et vos exigences de sécurité.
+Cette section présente les concepts fondamentaux de notre service **PostgreSQL Managé**. Comprendre ces principes vous aidera à tirer le meilleur parti de votre base de données managée, en alignant ses capacités avec vos besoins applicatifs et vos exigences de sécurité.
 
 ## Souveraineté et Conformité SecNumCloud
 
-Au cœur de notre offre se trouve la **souveraineté numérique**. Le service Managed PostgreSQL est entièrement hébergé sur l'infrastructure Cloud Temple, qualifiée **SecNumCloud 3.2** par l'ANSSI.
+Au cœur de notre offre se trouve la **souveraineté numérique**. Le service PostgreSQL Managé est entièrement hébergé sur l'infrastructure Cloud Temple, qualifiée **SecNumCloud 3.2** par l'ANSSI.
 
 - **Hébergement 100% en France** : Vos données restent sur le territoire national, à l'abri des lois extraterritoriales.
 - **Conformité native** : La solution est conçue pour répondre aux exigences réglementaires les plus strictes (RGPD, HDS, LPM, NIS2, PCI-DSS).
@@ -41,8 +41,8 @@ Ce modèle déploie un **cluster Patroni de 3 instances** du moteur PostgreSQL, 
 
 - **Cas d'usage** : Ce modèle de déploiement convient parfaitement pour les applications avec des accès distribués, comme les applications de data ou de business intelligence, qui bénéficient d'accès en lecture seule sans impact sur l'ingestion des données.
 - **Composants** :
-    - **3 Nœuds PostgreSQL** : Un nœud primaire en lecture-écriture (RW) et deux nœuds secondaires en lecture seule (RO).
-    - **Proxy PgBouncer** : Un routeur intelligent qui distribue les requêtes. Il envoie les écritures vers le nœud primaire et répartit les lectures sur les nœuds secondaires (*read/write splitting*), optimisant ainsi les performances.
+  - **3 Nœuds PostgreSQL** : Un nœud primaire en lecture-écriture (RW) et deux nœuds secondaires en lecture seule (RO).
+  - **Proxy PgBouncer** : Un routeur intelligent qui distribue les requêtes. Il envoie les écritures vers le nœud primaire et répartit les lectures sur les nœuds secondaires (*read/write splitting*), optimisant ainsi les performances.
 - **SLA** : 99.9% (hors plages de maintenance).
 
 > **Remarque Importante** : Il n'est pas possible de modifier le modèle de déploiement d'un cluster existant (par exemple, de passer de *StandAlone* à *Distributed*). Cette opération nécessite la création d'un nouveau cluster dans le modèle souhaité, via une restauration PiTR.
@@ -51,12 +51,12 @@ Ce modèle déploie un **cluster Patroni de 3 instances** du moteur PostgreSQL, 
 
 La protection de vos données est assurée par une double stratégie de sauvegarde.
 
-1.  **Sauvegarde Physique (Point-in-Time Recovery - PITR)** :
+1. **Sauvegarde Physique (Point-in-Time Recovery - PITR)** :
     - Nous réalisons des sauvegardes physiques quotidiennes complètes avec `pg_basebackup` (sans interruption de service).
     - Les journaux de transactions (*WAL*) sont archivés en continu.
     - Cette combinaison permet une restauration "à la seconde près" jusqu'au moment juste avant un incident.
 
-2.  **Sauvegarde Logique (`pg_dump`)** :
+2. **Sauvegarde Logique (`pg_dump`)** :
     - Des exports logiques des bases de données sont également effectués.
     - Ils offrent une granularité fine pour restaurer ou exporter une base de données individuelle.
 
@@ -68,13 +68,13 @@ La sécurité est intégrée à chaque couche du service.
 
 - **Isolation Réseau** : Les instances de base de données ne sont **jamais exposées sur Internet**. L'accès se fait exclusivement via le réseau privé du client.
 - **Chiffrement de bout en bout** :
-    - **En transit** : Toutes les connexions (client vers base de données et entre les nœuds du cluster) sont chiffrées en TLS 1.3.
-    - **Au repos** : Les données sur disque et les sauvegardes sont chiffrées en AES-256.
+  - **En transit** : Toutes les connexions (client vers base de données et entre les nœuds du cluster) sont chiffrées en TLS 1.3.
+  - **Au repos** : Les données sur disque et les sauvegardes sont chiffrées en AES-256.
 - **Gestion des Accès** : L'authentification est sécurisée et les droits sont gérés selon le principe du moindre privilège.
 
 ## Service Managé ("Zéro Ops")
 
-L'objectif de Managed PostgreSQL est de vous décharger de la complexité opérationnelle. Nos équipes assurent :
+L'objectif de PostgreSQL Managé est de vous décharger de la complexité opérationnelle. Nos équipes assurent :
 
 - Le provisionnement et la configuration initiale.
 - La gestion complète du cycle de vie : mises à jour mineures, application des patchs de sécurité.
@@ -95,7 +95,6 @@ La communauté PostgreSQL publie des versions avec un support à long terme (LTS
 - **Mises à jour mineures** : Les patchs de sécurité et les corrections de bugs sont appliqués par nos équipes en *rolling update* (nœud par nœud) pour ne causer aucune interruption de service.
 - **Mises à jour majeures** : Les montées de version majeures sont planifiées en collaboration avec vous pour s'aligner sur votre calendrier.
 - **Fin de support** : Nous vous notifions au moins 180 jours avant la fin de support d'une version LTS pour planifier la migration vers la version suivante.
-
 
 ## Tailles des instances
 

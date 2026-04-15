@@ -15,7 +15,6 @@ Nous rappelons ici les différents rôles du RACI :
 | (C) Consulte | __C__onsulté pendant le processus                                                     |
 | (I) Informé  | __I__nformé des résultats du processus (via l'outillage, le portail ou la messagerie) |
 
-
 ## Mise en place initiale
 
 | Activité                                                             | Rôle Client | Rôle Cloud Temple |

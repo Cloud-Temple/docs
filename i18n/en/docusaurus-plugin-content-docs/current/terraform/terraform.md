@@ -139,7 +139,7 @@ To be automatically notified of new releases of the Cloud Temple Terraform provi
 
 ![GitHub Watch Button](@site/docs/terraform/images/provider_terraform_notify.png)
 
-3. Select **Custom** then check **Releases**
+1. Select **Custom** then check **Releases**
 
 ![Notification Configuration](@site/docs/terraform/images/provider_terraform_subscribe.png)
 
@@ -147,6 +147,6 @@ You will now receive an email notification for each new provider release.
 
 ## Next Steps
 
-- [Concepts](concepts) : Understand the provider's key concepts
-- [Getting Started](quickstart) : Create your first infrastructure
-- [Tutorials](tutorials) : Practical examples and use cases
+- [Concepts](concepts.md) : Understand the provider's key concepts
+- [Getting Started](quickstart.md) : Create your first infrastructure
+- [Tutorials](tutorials.md) : Practical examples and use cases

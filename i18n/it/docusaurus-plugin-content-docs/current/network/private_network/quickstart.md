@@ -56,7 +56,7 @@ Dopo aver completato tutte le fasi, i tuoi reti saranno create e una comando ver
 
 - Cliccando sui pulsanti informativi che indirizzano versi i comandi correlati
 
-> **Importante**: Non è possibile generare più comandi dello stesso tipo di risorsa contemporaneamente. Dovrai aspettare che la comando corrente venga elaborata prima di creare una nuova.
+> __Importante__: Non è possibile generare più comandi dello stesso tipo di risorsa contemporaneamente. Dovrai aspettare che la comando corrente venga elaborata prima di creare una nuova.
 
 Tutte le azioni possibili sui tuoi reti sono disponibili nel menu __*Azioni*__ di ciascuno:
 
@@ -90,7 +90,7 @@ La modifica di una propagazione all'interno di un tenant viene eseguita tramite 
 
 __*Nota:*__ *La modifica della propagazione è limitata a 20 reti per azione.*
 
-#### Suppression della propagazione all'interno di un ambiente è eseguita tramite l'opzione *Eliminare una propagazione*:
+#### Suppression della propagazione all'interno di un ambiente è eseguita tramite l'opzione *Eliminare una propagazione*
 
 Seleziona quindi la propagazione che desideri eliminare:
 
@@ -105,8 +105,8 @@ Viene successivamente creata una comanda, proprio come durante la creazione iniz
 
 È possibile separare la creazione e la propagazione dei reti in due fasi distinte:
 
-1. **Propagare un rete esistente**: Fai clic sull'azione "Propagare" su un rete già creata
-2. **Selezionare la destinazione della propagazione**: Verrà poi generata una comanda, proprio come durante la creazione iniziale con la propagazione.
+1. __Propagare un rete esistente__: Fai clic sull'azione "Propagare" su un rete già creata
+2. __Selezionare la destinazione della propagazione__: Verrà poi generata una comanda, proprio come durante la creazione iniziale con la propagazione.
 
 ### Attivazione e disattivazione dei reti
 
@@ -116,13 +116,13 @@ Una rete può essere temporaneamente disattivata senza essere rimossa e poi riat
 
 ### Condivisione di rete tra tenenti
 
-Per default, i **reti sono disponibili solo all'interno di un tenente**. È possibile scegliere di **condividere un rete tra più tenenti** per ragioni tecniche o di connettività. Pertanto, è possibile condividere un rete tra i vostri **tenenti all'interno della stessa organizzazione**.
+Per default, i __reti sono disponibili solo all'interno di un tenente__. È possibile scegliere di __condividere un rete tra più tenenti__ per ragioni tecniche o di connettività. Pertanto, è possibile condividere un rete tra i vostri __tenenti all'interno della stessa organizzazione__.
 
 Per farlo, basta attivare la condivisione come indicato di seguito.
 
 <img src={shivaNetworkVnShareEnabled} />
 
-Dopo l'attivazione della condivisione, è necessario aggiungere un **condivisione** come indicato di seguito.
+Dopo l'attivazione della condivisione, è necessario aggiungere un __condivisione__ come indicato di seguito.
 
 <img src={shivaNetworkVnShared} />
 

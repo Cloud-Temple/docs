@@ -25,9 +25,9 @@ Authorization: Bearer IHR_API_TOKEN
 
 Our third-party system is designed as **complete service envelopes** that define three key aspects of your usage:
 
-1.  **An Access Tier (Purchase Credit):** For Tiers 1 to 4, this is an upfront amount to be paid in advance to activate the service and unlock the technical and budgetary capabilities of the selected tier.
-2.  **A Monthly Budget Limit:** This is the cap on your monthly consumption, ensuring full control over your costs.
-3.  **Technical Capacity:** These are the throughput limits (tokens per day and per hour) that guarantee stable and predictable performance for your call volume.
+1. **An Access Tier (Purchase Credit):** For Tiers 1 to 4, this is an upfront amount to be paid in advance to activate the service and unlock the technical and budgetary capabilities of the selected tier.
+2. **A Monthly Budget Limit:** This is the cap on your monthly consumption, ensuring full control over your costs.
+3. **Technical Capacity:** These are the throughput limits (tokens per day and per hour) that guarantee stable and predictable performance for your call volume.
 
 Choosing a tier therefore involves balancing your initial investment, your projected monthly budget, and the required technical capacity. Your consumption within this envelope is then billed according to the current pricing rates.
 
@@ -42,11 +42,13 @@ Choosing a tier therefore involves balancing your initial investment, your proje
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
+
 - **Input tokens**: 1.90 € / million
 - **Output tokens (standard)**: 8.00 € / million
 - **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Audio Billing**
+
 - **Audio Transcription**: 0.01 € / minute (every started minute is billable)
 
 ### Rate Limit Headers
@@ -213,12 +215,14 @@ After receiving a `tool_calls` response, you must execute the tool on your side 
 Mit `"stream": true` wird die Antwort tokenweise geliefert:
 
 **Antwort-Header:**
+
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
 **Format der Ereignisse:**
+
 ```
 data: {"choices":[{"delta":{"content":"Die"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -230,6 +234,7 @@ data: [DONE]
 ```
 
 **Struktur der Chunks:**
+
 - `choices[].delta.content`: Inkrementeller Inhalt
 - `finish_reason`: `null` während des Streamings, danach `"stop"`
 - Ende-Signal: `data: [DONE]`
@@ -629,6 +634,7 @@ def stream_chat(message, model="granite3.3:8b"):
 ```
 
 # Usage
+
 stream_chat("Erklären Sie die Quantenphysik")
 
 ### JavaScript/Node.js

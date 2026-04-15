@@ -99,6 +99,7 @@ Si apre un nuovo tab del browser, che mostra la console della tua macchina virtu
 <img src={openIaasVmConsoleOpen} />
 
 Nel menu VNC è possibile:
+
 - richiedere l'invio di tasti particolari,
 - forzare un mapping della tastiera (nel caso in cui la macchina virtuale abbia una disposizione della tastiera diversa da quella del tuo browser web),
 - aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio appunti non funzionante,
@@ -106,6 +107,7 @@ Nel menu VNC è possibile:
 - modificare la dimensione della finestra (scaling).
 
 #### Keyboard layout support
+
 The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.  
 Here is a summary of the possible scenarios:
 
@@ -121,9 +123,11 @@ Here is a summary of the possible scenarios:
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you can try using the clipboard.
 
 #### Funzionamento degli appunti
+
 Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare la funzione degli appunti.  
 Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
 

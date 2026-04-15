@@ -125,6 +125,7 @@ This configuration step is performed at the organization level by the Cloud Temp
 To proceed, please __submit a support request__ in the console indicating your intention to set up Microsoft Entra ID SSO.
 
 Please include the following information in your support request:
+
 - Name of your Organization
 - Name of a contact person, along with their email address and phone number, to finalize the configuration
 - Application ID (unique identifier associated with the previously created application)

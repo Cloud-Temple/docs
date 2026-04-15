@@ -25,22 +25,22 @@ Actuellement, l'activation du service VPC nécessite d'avoir souscrit à une off
 
 ## Étape 1 : Accéder à la Console
 
-1.  Connectez-vous à la Console Cloud Temple.
-2.  Dans le menu de navigation, sélectionnez **Network** puis **VPC**.
+1. Connectez-vous à la Console Cloud Temple.
+2. Dans le menu de navigation, sélectionnez **Network** puis **VPC**.
 
 <img src={newTabNetwork} />
 
 ## Étape 2 : Commander un VPC
 
-1.  Cliquez sur le bouton **Nouveau VPC**.
+1. Cliquez sur le bouton **Nouveau VPC**.
 <img src={vpcCreateButton} />
 
-2.  Remplissez le formulaire guidé :
-    *   **Nom du VPC** : Choisissez un nom unique pour identifier votre environnement.
-    *   **Description** : (Optionnel) Ajoutez une description.
+2. Remplissez le formulaire guidé :
+    * **Nom du VPC** : Choisissez un nom unique pour identifier votre environnement.
+    * **Description** : (Optionnel) Ajoutez une description.
 <img src={vpcCreateModal} />
 
-3.  Validez la création.
+3. Validez la création.
 
 > **Note** : Le provisionnement du VPC est entièrement automatisé et prend généralement moins d'une heure.
 
@@ -56,14 +56,14 @@ Vous pouvez également initier la commande de ressources VPC directement depuis 
 
 Une fois votre VPC actif :
 
-1.  Accédez au détail de votre VPC en cliquant sur son nom.
+1. Accédez au détail de votre VPC en cliquant sur son nom.
 <img src={vpcDetailsView} />
 
-2.  Allez dans l'onglet **Réseaux Privés**.
-3.  Cliquez sur **Ajouter un réseau**.
-4.  Configurez votre réseau :
-    *   **Nom** : Nom du segment réseau (ex: `backend`, `frontend`).
-    *   **CIDR** : Plage d'adresses IP (ex: `192.168.1.0/24`).
+2. Allez dans l'onglet **Réseaux Privés**.
+3. Cliquez sur **Ajouter un réseau**.
+4. Configurez votre réseau :
+    * **Nom** : Nom du segment réseau (ex: `backend`, `frontend`).
+    * **CIDR** : Plage d'adresses IP (ex: `192.168.1.0/24`).
 
 <img src={vpcNewPrivateNetwork} />
 
@@ -71,21 +71,23 @@ Une fois votre VPC actif :
 
 Pour permettre l'accès Internet et l'exposition de services :
 
-1.  Vérifiez si la passerelle est activée. Sinon, cliquez sur le bouton d'activation.
+1. Vérifiez si la passerelle est activée. Sinon, cliquez sur le bouton d'activation.
 <img src={vpcActivateGatewayButton} />
+
 <img src={vpcActivateGatewayModal} />
 
-2.  Une fois la passerelle active, allez dans l'onglet **IPs publiques**.
+1. Une fois la passerelle active, allez dans l'onglet **IPs publiques**.
 <img src={vpcStaticIps} />
 
 > **Note** : La liste **IPs publiques** à la racine du menu VPC affiche toutes les IPs publiques (associées ou non). L'onglet **IPs publiques** dans le détail d'un VPC permet de gérer celles associées à ce VPC (nécessite la passerelle active).
 
-3.  Cliquez sur le bouton pour commander de nouvelles IPs, ou cliquez sur l'action "Associer" pour associer une des adresses IPs de la liste qui ne l'est pas encore.
+1. Cliquez sur le bouton pour commander de nouvelles IPs, ou cliquez sur l'action "Associer" pour associer une des adresses IPs de la liste qui ne l'est pas encore.
 <img src={vpcNewStaticIps} />
+
 <img src={vpcStaticIpsAssociate} />
 <img src={vpcNewStaticIpsModale} />
 
-4.  Sélectionnez le nombre d'IPs que vous souhaitez commander puis confirmez votre commande.
+1. Sélectionnez le nombre d'IPs que vous souhaitez commander puis confirmez votre commande.
 
 ## Étape 5 : Connecter vos ressources
 

@@ -156,7 +156,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Schede__
 
- + **Recenti**
+- __Recenti__
 
 - Operazioni recenti
 - Monitoraggio in tempo reale
@@ -168,7 +168,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Informazioni Visualizzate__
 
- + Data e Ora
+- Data e Ora
 
 - Tipo di operazione
   - Stato
@@ -177,7 +177,7 @@ La pagina delle attività è pensata per fornire una visibilità completa su tut
 
 #### __Funzionalità__
 
- + Ricerca/Filtraggio per operazioni specifiche
+- Ricerca/Filtraggio per operazioni specifiche
 
 ### __Utilizzo__
 

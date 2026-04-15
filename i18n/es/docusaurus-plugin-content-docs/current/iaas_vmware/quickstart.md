@@ -163,11 +163,12 @@ La consola de una máquina virtual está disponible desde la lista de máquinas 
 
 <img src={shivaCpool_010} />
 
-Se abre un nuevo separador en su navegador y se muestra entonces la consola de su máquina, basada en un cliente **VNC**:
+Se abre un nuevo separador en su navegador y se muestra entonces la consola de su máquina, basada en un cliente __VNC__:
 
 <img src={shivaCpool_011} />
 
-Es posible, desde el menú **VNC**:
+Es posible, desde el menú __VNC__:
+
 - solicitar el envío de teclas especiales,
 - forzar un mapeo de teclado (en caso de que no hayamos podido identificar correctamente su teclado),
 - abrir un campo de texto que se puede transmitir a la máquina. Este método reemplaza el antiguo portapapeles no funcional,
@@ -192,9 +193,11 @@ The input entered in the console depends on the keyboard language of your web br
 | English                                      | English                           | Yes                                | Not recommended          |
 
 __Note__:
+
 - If certain characters do not appear when typed manually, you can try pasting them from the clipboard.
 
 #### Funcionamiento del portapapeles
+
 Esta función le permite enviar una cadena completa de caracteres a su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la entrada en la consola que la opción "enforce keyboard" es necesaria, recuerde activarla antes de utilizar el portapapeles.  
 Esta función puede utilizarse para enviar una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
 
@@ -304,8 +307,8 @@ Si hace clic en un cluster, verá un resumen de su composición:
 - El número de máquinas virtuales,
 - El número de hipervisores.
 
-{/* TODO: Add missing page. */}
-{/* Al consultar la página de un cluster, están disponibles varias pestañas. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) */}
+{/*TODO: Add missing page. */}
+{/* Al consultar la página de un cluster, están disponibles varias pestañas. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles)*/}
 
 <img src={shivaCpool_004} />
 
@@ -336,7 +339,7 @@ Desde la pestaña __'Hosts'__ se pueden realizar varias acciones:
 
 <img src={shivaCpool_008Build} />
 
-2. La actualización del firmware de su nodo de cálculo (BIOS y firmware de tarjetas secundarias):
+1. La actualización del firmware de su nodo de cálculo (BIOS y firmware de tarjetas secundarias):
 
 <img src={shivaCpool_008Firm} />
 
@@ -349,8 +352,8 @@ Por ello, le dejamos gestionar su cambio y aplicar las nuevas versiones en el mo
 
 - El proceso de actualización es completamente automatizado. Debe disponer de al menos dos hipervisores en su cluster para permitir una actualización sin interrupción del servicio.
 
-{/* TODO: Add missing page. */}
-{/* - *Es necesario contar con los permisos adecuados* [permisos adecuados](../console/permissions.md) para realizar las distintas acciones. */}
+{/*TODO: Add missing page. */}
+{/* - *Es necesario contar con los permisos adecuados* [permisos adecuados](../console/permissions.md) para realizar las distintas acciones.*/}
 
 También puede ver todas las reglas de afinidad/anti-afinidad para su cluster de hipervisores en la sección __'Reglas'__.
 
@@ -453,7 +456,7 @@ First, verify that the affected jobs are indeed in the "Held" state. Once this v
 
 A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not been deleted. In this scenario, job identifiers will be preserved. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
 
-> **Note:** For any clarification regarding this situation, please contact Cloud Temple support.
+> __Note:__ For any clarification regarding this situation, please contact Cloud Temple support.
 
 The Cloud Temple console prevents assigning a virtual machine to a suspended policy:
 

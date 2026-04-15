@@ -1,18 +1,19 @@
 ---
-title: Tutorial - Deploy Your First Application
+title: Tutorial - Deploy your first application
 ---
 
 ## Objectives
 
 This tutorial guides you step by step through your first deployment on a **Managed Kubernetes** cluster. By the end of this guide, you will have:
+
 - Deployed a simple web application.
-- Exposed this application within the cluster via a Service.
-- Made the application accessible from the internet via an Ingress.
+- Exposed that application inside the cluster via a Service.
+- Made the application accessible from the Internet via an Ingress.
 
 ## Prerequisites
 
-- You have set up access to the cluster as described in the [Quick Start Guide](../quickstart.md).
-- You have a namespace where you have deployment permissions. In this tutorial, we will use a namespace named `hello-world`.
+- You have configured your cluster access as described in the [quick-start guide](../quickstart.md).
+- You have a namespace on which you have deployment rights. In this tutorial, we will use a namespace named `hello-world`.
 
 ## Step 1: Create a namespace
 
@@ -22,11 +23,11 @@ If not already done, create a namespace to isolate your application.
 kubectl create namespace hello-world
 ```
 
-## Step 2: Deploy a "Hello World" Application
+## Step 2: Deploy a "Hello World" application
 
-We will deploy a sample application that displays a simple web page.
+We will deploy a demo application that displays a simple web page.
 
-1.  Create a file named `deployment.yaml` with the following content:
+1. Create a file named `deployment.yaml` with the following content:
 
     ```yaml
     apiVersion: apps/v1
@@ -53,13 +54,13 @@ We will deploy a sample application that displays a simple web page.
             - containerPort: 80
     ```
 
-2.  Apply this manifest to your cluster:
+2. Apply this manifest to your cluster:
 
     ```bash
     kubectl apply -f deployment.yaml
     ```
 
-3.  Verify that the deployment has been created and that the pods are running:
+3. Verify that the deployment has been created and that the pods are running:
 
     ```bash
     kubectl get deployment -n hello-world
@@ -68,17 +69,17 @@ We will deploy a sample application that displays a simple web page.
     hello-world-deployment   2/2     2            2           102s
 
     kubectl get pods -n hello-world
-    # You should see two pods with the status "Running".
+    # You should see two pods with the "Running" status.
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-world-deployment-669dfbd799-294zz   1/1     Running   0          2m21s
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
     ```
 
-## Step 3: Expose the application in the cluster (Service)
+## Step 3: Expose the application inside the cluster (Service)
 
-To enable communication between different components of the cluster and our application, we need to create a **Service**.
+To allow the various components of the cluster to communicate with our application, we need to create a **Service**.
 
-1.  Create a file named `service.yaml`:
+1. Create a file named `service.yaml`:
 
     ```yaml
     apiVersion: v1
@@ -96,18 +97,19 @@ To enable communication between different components of the cluster and our appl
       type: ClusterIP
     ```
 
-2.  Apply the manifest:
+2. Apply the manifest:
 
     ```bash
     kubectl apply -f service.yaml
     ```
+
     Your application is now accessible via the name `hello-world-service.hello-world` from any other pod in the cluster.
 
-## Step 4: Make the application accessible from the internet (Ingress)
+## Step 4: Make the application accessible from the Internet (Ingress)
 
-To expose our service to the internet, we will use an **Ingress** resource. The Managed Kubernetes offering provides several pre-configured `ingressClassName` values. We will use `nginx-external` for public exposure.
+To expose our service on the Internet, we will use an **Ingress** resource. The Managed Kubernetes offering provides several pre-configured `ingressClassName` values. We will use `nginx-external` for public exposure.
 
-1.  Create a file named `ingress.yaml`. **Remember to replace `your-cluster-id`** with your cluster ID (e.g., `ctodev`).
+1. Create an `ingress.yaml` file. **Remember to replace `your-cluster-id`** with your cluster identifier (e.g. `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -130,19 +132,19 @@ To expose our service to the internet, we will use an **Ingress** resource. The 
                   number: 80
     ```
 
-2.  Apply the manifest:
+2. Apply the manifest:
 
     ```bash
     kubectl apply -f ingress.yaml
     ```
 
-## Step 5: Verify Access
+## Step 5: Verify access
 
-A DNS entry "*" already routes all URLs ending with ".external.votre-cluster-id.mk.ms-cloud-temple.com" to the IP address of the "external" ingress.  
-Applications published under this DNS suffix are therefore directly accessible.
+A wildcard DNS entry already points all URLs ending in ".external.your-cluster-id.mk.ms-cloud-temple.com" to the IP of the "external" ingress.
+Applications published on this DNS suffix are therefore directly accessible.
 
 ```bash
-curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
+curl http://hello-world.external.your-cluster-id.mk.ms-cloud-temple.com
 ```
 
 You should receive a response from the demo NGINX server.
@@ -165,12 +167,13 @@ RawContent        : HTTP/1.1 200 OK
                     Expires: Wed, 29 Oct 2025 15:40:03 GMT
                     Server: ng...
 ```
-:::warning Going further: Security in production
-This tutorial has shown you the basics of deployment. For a production environment, it is essential to apply additional security measures:
 
--   **Use secure images**: Prefer images from your enterprise secure registry such as **Harbor**, rather than public images.
--   **Control network traffic**: Implement `NetworkPolicies` to restrict communications to only the necessary flows between your applications.
--   **Enforce governance policies**: Use tools like **Kyverno** to enforce security rules (e.g., prohibit "root" containers, require resource `requests` and `limits`, etc.).
+:::warning Going further: security in production
+This tutorial has shown you the basics of deployment. For a production environment, it is crucial to apply additional security measures:
+
+- **Use secure images**: Prefer images from your secure corporate registry such as **Harbor** rather than public images.
+- **Control network flows**: Implement `NetworkPolicies` to restrict communications to only the necessary flows between your applications.
+- **Apply governance policies**: Use tools like **Kyverno** to enforce security rules (e.g. prohibit "root" containers, require resource `requests` and `limits`, etc.).
 :::
 
 ## Cleanup
@@ -181,4 +184,4 @@ To delete all the resources you created during this tutorial, you can simply del
 kubectl delete namespace hello-world
 ```
 
-Congratulations, you've deployed and exposed your first application on Managed Kubernetes!
+Congratulations, you have deployed and exposed your first application on Managed Kubernetes!

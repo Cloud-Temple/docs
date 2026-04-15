@@ -2,7 +2,7 @@
 title: Guide de démarrage
 ---
 
-Bienvenue sur le guide de démarrage de **Managed PostgreSQL** Cloud Temple.
+Bienvenue sur le guide de démarrage de **PostgreSQL Managé** Cloud Temple.
 
 L'objectif de cette section est de vous orienter vers les ressources nécessaires pour prendre en main votre produit.
 
@@ -13,7 +13,7 @@ L'objectif de cette section est de vous orienter vers les ressources nécessaire
 > en cours de rédaction
 ---
 
-## Accéder à votre cluster Managed PostgreSQL
+## Accéder à votre cluster PostgreSQL Managé
 
 > en cours de rédaction
 ---
@@ -22,4 +22,3 @@ L'objectif de cette section est de vous orienter vers les ressources nécessaire
 
 > en cours de rédaction
 ---
-

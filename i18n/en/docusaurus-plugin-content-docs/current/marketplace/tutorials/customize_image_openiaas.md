@@ -15,10 +15,10 @@ Once the image is deployed, it becomes a virtual machine that you can configure.
 
 ## Customization Steps
 
-1.  **Deploy the base image** from the Marketplace.
-2.  **Configure the virtual machine** according to your requirements.
-3.  **Create a template** from the configured virtual machine.
-4.  **Deploy a new virtual machine** from your customized template.
+1. **Deploy the base image** from the Marketplace.
+2. **Configure the virtual machine** according to your requirements.
+3. **Create a template** from the configured virtual machine.
+4. **Deploy a new virtual machine** from your customized template.
 
 ### Step 1: Deploy the base image
 
@@ -42,6 +42,7 @@ Once the virtual machine is deployed, configure it according to your needs (soft
 You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
 To deploy from the **Virtual Machines** page:
+
 1. Click on **"Create a virtual machine"**.
 2. Choose **"Deploy from a template"**.
 3. Select your new template from the list.

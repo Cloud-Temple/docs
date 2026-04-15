@@ -11,24 +11,24 @@ The bucket configuration interface offers three access management modes accordin
 
 <img src={S3PublicAccess} />
 
-  - Functionality: No IP address restrictions are applied.
-  - Consequence: The bucket is accessible from any IP address, without filtering.
+- Functionality: No IP address restrictions are applied.
+- Consequence: The bucket is accessible from any IP address, without filtering.
 
 ### **Private Access (automatic)**
 
 <img src={S3PrivateAccess} />
 
-  - How it works: All CIDR ranges assigned to the tenant are automatically added by the editor, without requiring manual intervention.
-  - Console specificity: Network addresses (first address of the block) and broadcast addresses (last address of the block), which are typically reserved on an IP network, are also automatically included.
-  - Consequence: The user does not need to manage these subtleties—everything is handled automatically by the tool.
+- How it works: All CIDR ranges assigned to the tenant are automatically added by the editor, without requiring manual intervention.
+- Console specificity: Network addresses (first address of the block) and broadcast addresses (last address of the block), which are typically reserved on an IP network, are also automatically included.
+- Consequence: The user does not need to manage these subtleties—everything is handled automatically by the tool.
 
 ### **Custom Access (Manual)**
 
 <img src={S3CustomAccess} />
 
-  - How it works: The user must explicitly provide all CIDR ranges as well as the network and broadcast addresses to be authorized.
-  - Example: If you want to allow the prefix `80.75.153.200/29`, you must also explicitly add the addresses `80.75.153.200/32` (network address) and `80.75.153.207/32` (broadcast address) so that these are included in the access policy.
-  - Consequence: Offers full flexibility, but requires complete and rigorous configuration.
+- How it works: The user must explicitly provide all CIDR ranges as well as the network and broadcast addresses to be authorized.
+- Example: If you want to allow the prefix `80.75.153.200/29`, you must also explicitly add the addresses `80.75.153.200/32` (network address) and `80.75.153.207/32` (broadcast address) so that these are included in the access policy.
+- Consequence: Offers full flexibility, but requires complete and rigorous configuration.
 
 :::info
 

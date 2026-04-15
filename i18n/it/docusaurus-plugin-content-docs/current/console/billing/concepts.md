@@ -43,6 +43,7 @@ Questo grafico consente di visualizzare:
 **Lettura del grafico per il mese corrente**
 
 Per il mese corrente, il grafico distingue due zone visive:
+
 - La parte **blu (piena)** rappresenta il **consumo reale fino ad oggi**, ovvero le risorse effettivamente consumate dall'inizio del mese,
 - La parte **arancione (tratteggiata)** rappresenta la **previsione** stimata fino alla fine del mese, calcolata sulla base del ritmo di consumo attuale.
 

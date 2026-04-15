@@ -2,10 +2,9 @@
 title: Guide de démarrage
 ---
 
-Bienvenue sur le guide de démarrage de **Managed MariaDB** Cloud Temple.
+Bienvenue sur le guide de démarrage de **MariaDB Managé** Cloud Temple.
 
 L'objectif de cette section est de vous orienter vers les ressources nécessaires pour prendre en main votre produit.
-
 
 ## Avant de commencer
 
@@ -13,7 +12,7 @@ Assurez vous de disposer des accès qui vous ont été fournis par Cloud-Temple.
 
 Assurez vous que les flux réseaux sont ouverts vers les IP qui vous ont été fournies.
 
-## Accéder à votre cluster Managed MariaDB
+## Accéder à votre cluster MariaDB Managé
 
 Suivant le modèle de déploiement choisi, vous disposez d'un ou plusieurs endpoints.
 
@@ -31,5 +30,4 @@ Vous ne disposez d'aucune permission au niveau du moteur de base de données (ni
 
 Vous ne pouvez pas reconfigurer le moteur ou ses options, ni installer le performance_schema.
 
-Les demandes d'ajouts de base de données, d'utilisteurs ou de grants sont a effectuer auprès des équipes Cloud-Temple. 
-
+Les demandes d'ajouts de base de données, d'utilisteurs ou de grants sont a effectuer auprès des équipes Cloud-Temple.

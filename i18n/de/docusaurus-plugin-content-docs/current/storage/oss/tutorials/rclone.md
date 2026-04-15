@@ -11,7 +11,7 @@ Make sure you are using a **recent version of Rclone** to ensure compatibility w
 ## Voraussetzungen
 
 - Ein S3-Speicherkonto von Cloud Temple mit Zugriffsschlüsseln (Access Key und Secret Key).
-- Der S3-Endpoint Ihres Kontos (verfügbar in der [Cloud Temple-Konsole](../../console/console.md)).
+- Der S3-Endpoint Ihres Kontos (verfügbar in der [Cloud Temple-Konsole](../../../console/console.md)).
 
 ## Rclone-Installation
 

@@ -354,7 +354,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Managed Products',
+      label: 'Produits Managés',
       link: {
         type: 'doc',
         id: 'managedproducts_overview',
@@ -362,7 +362,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'Managed MariaDB (Preview)',
+          label: 'MariaDB Managé (Preview)',
           items: [
             'managed_mariadb/managed_mariadb',
             'managed_mariadb/concepts',
@@ -371,7 +371,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Managed PostgreSQL (Preview)',
+          label: 'PostgreSQL Managé (Preview)',
           items: [
             'managed_postgresql/managed_postgresql',
             'managed_postgresql/concepts',
