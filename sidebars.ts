@@ -201,6 +201,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Cloud Public',
+      items: [
+        {
+          type: 'category',
+          label: 'VMaaS (Preview)',
+          items: [
+            'vmaas/vmaas',
+            'vmaas/concepts',
+            'vmaas/quickstart',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Containers',
       link: {
         type: 'doc',

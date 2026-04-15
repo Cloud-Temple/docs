@@ -5,20 +5,25 @@ sidebar_position: 2
 
 # Registro delle Modifiche
 
+### 15 aprile 2026: Nuova documentazione VMaaS (Cloud Public)
+
+- **VMaaS**: Pubblicazione della documentazione iniziale del servizio VMaaS (in anteprima), la nuova offerta di macchine virtuali condivise di Cloud Temple. La documentazione copre la panoramica del servizio, i concetti tecnici (classi di servizio Development/General Purpose/Performance, flavor predefiniti e personalizzati, storage, rete VPC, backup) e una guida introduttiva completa. Il servizio è organizzato sotto una nuova categoria **Cloud Public** nella navigazione.
+
+
 ### 15 aprile 2026: Miglioramento della documentazione IaaS VMware — metriche del cluster
 
-- **IaaS VMware**: Aggiunta documentazione dettagliata sulle metriche visualizzate nella vista di un cluster VMware dalla Console Cloud Temple. Copre i tre grafici di memoria del cluster: **Memoria allocata** (quantità totale di memoria assegnata alle VM), **Memoria consumata** (memoria fisica attivamente utilizzata dalle VM) e **Allocazione nel caso peggiore** (proiezione del consumo massimo simultaneo), con una descrizione precisa di ciò che rappresenta ogni indicatore per anticipare le esigenze di risorse. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
+- **IaaS VMware**: Aggiunta documentazione dettagliata sulle metriche visualizzate nella vista di un cluster VMware dalla Console Cloud Temple. Copre i tre grafici di memoria del cluster: **Memoria allocata** (quantità totale di memoria assegnata alle VM), **Memoria consumata** (memoria fisica attivamente utilizzata dalle VM) e **Allocazione nel caso peggiore** (proiezione del consumo massimo simultaneo), con una descrizione precisa di ciò che rappresenta ogni indicatore per anticipare le esigenze di risorse.
 
 ### 15 aprile 2026: Documentazione Managed MariaDB, Managed PostgreSQL e correzioni multilingua
 
-- **Managed MariaDB**: Prima pubblicazione della documentazione del servizio Managed MariaDB (anteprima): panoramica del servizio, concetti tecnici (architetture StandAlone e Distributed), guida rapida. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
-- **Managed PostgreSQL**: Prima pubblicazione della documentazione del servizio Managed PostgreSQL (anteprima): panoramica del servizio, concetti tecnici, guida rapida. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
+- **Managed MariaDB**: Prima pubblicazione della documentazione del servizio Managed MariaDB (anteprima): panoramica del servizio, concetti tecnici (architetture StandAlone e Distributed), guida rapida.
+- **Managed PostgreSQL**: Prima pubblicazione della documentazione del servizio Managed PostgreSQL (anteprima): panoramica del servizio, concetti tecnici, guida rapida.
 - **Correzioni multilingua (immagini)**: Correzione dei riferimenti alle immagini nelle traduzioni delle sezioni Managed Kubernetes e Managed MariaDB per tutte le lingue (EN, DE, ES, IT) — conversione dei percorsi relativi `./images/` in percorsi assoluti `@site/docs/...` per una corretta visualizzazione in tutte le lingue.
 - **Correzione link interrotti**: Risoluzione di diversi link interrotti: riferimenti alle licenze LLMaaS, link alla console nel tutorial rclone (OSS), link IAM nella documentazione di rete (EN), link relativi nella sezione Terraform (EN).
 
 ### 15 aprile 2026: Nuovo modulo Gestore dei costi
 
-- **Console (Gestore dei costi)**: Aggiunta la documentazione completa del nuovo modulo di monitoraggio del consumo accessibile dalla Console Cloud Temple. Copre il dashboard, il consumo globale (con proiezione di fine mese), la ripartizione per prodotto e servizio, i dettagli di fatturazione riga per riga e il catalogo dei prezzi. Disponibile in francese, inglese, tedesco, spagnolo e italiano.
+- **Console (Gestore dei costi)**: Aggiunta la documentazione completa del nuovo modulo di monitoraggio del consumo accessibile dalla Console Cloud Temple. Copre il dashboard, il consumo globale (con proiezione di fine mese), la ripartizione per prodotto e servizio, i dettagli di fatturazione riga per riga e il catalogo dei prezzi.
 
 ### 26 marzo 2026: Aggiornamento dell'elenco dei sub-responsabili (DPA)
 
