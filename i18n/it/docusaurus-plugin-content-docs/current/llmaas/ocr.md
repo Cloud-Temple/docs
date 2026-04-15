@@ -91,7 +91,7 @@ pip install requests Pillow
 
 Prendiamo ad esempio questa ricevuta svizzera:
 
-![Esempio di ricevuta](./images/ReceiptSwiss.jpg)
+![Esempio di ricevuta](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
 Ecco uno script robusto che gestisce il ridimensionamento e la codifica ottimale dell'immagine:
 
@@ -207,7 +207,7 @@ DeepSeek-OCR eccelle nella conversione di tabelle, anche senza linee di demarcaz
 
 **Immagine di input:**
 
-![Tabella finanziaria](./images/tableau.png)
+![Tabella finanziaria](@site/docs/llmaas/images/tableau.png)
 
 **Output del modello (Prompt: "Convert the document to markdown table."):**
 ```markdown
@@ -252,7 +252,7 @@ Ideale per documenti accademici. Il modello riconosce le equazioni e le esporta 
 
 **Immagine di input:**
 
-![Equazione](./images/equation.png)
+![Equazione](@site/docs/llmaas/images/equation.png)
 
 **Output del modello (Prompt: "Convert to latex.") :**
 

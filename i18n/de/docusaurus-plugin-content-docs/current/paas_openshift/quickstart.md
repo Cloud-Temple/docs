@@ -1,12 +1,12 @@
 ---
 title: Schnellstartanleitung
 ---
-import oshiftMenu_001 from './images/oshift_menu_001.png'
-import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
-import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
-import oshiftMenu_002 from './images/oshift_menu_002.png'
-import oshiftMenu_003 from './images/oshift_menu_003.png'
-import oshiftOrder_001 from './images/oshift_order_001.png'
+import oshiftMenu_001 from '@site/docs/paas_openshift/images/oshift_menu_001.png'
+import oshiftSubMenu_001 from '@site/docs/paas_openshift/images/oshift_sub_menu_001.png'
+import oshiftClusterDetail_001 from '@site/docs/paas_openshift/images/oshift_cluster_detail_001.png'
+import oshiftMenu_002 from '@site/docs/paas_openshift/images/oshift_menu_002.png'
+import oshiftMenu_003 from '@site/docs/paas_openshift/images/oshift_menu_003.png'
+import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.png'
 
 # QuickStart for the OpenShift Offering
 
@@ -57,10 +57,12 @@ Das Untermenü **Clusters** zeigt Ihnen eine Tabelle mit allen verfügbaren Open
 When you click on a **cluster name** in the list, a detailed page appears displaying complete cluster information:
 
 **Connectivity Information:**
+
 - **Access URL**: Web interface of the cluster
 - **API URL**: API endpoint for CLI operations
 
 **General Information:**
+
 - **Status**: Current state of the cluster
 - **Last Updated**: Date of the last modification
 - **Version**: OpenShift version deployed
@@ -68,6 +70,7 @@ When you click on a **cluster name** in the list, a detailed page appears displa
 **Cluster Nodes:**
 
 A table provides detailed information for each node:
+
 - **Node Name**
 - **Type**
 - **AZ** (Availability Zone)
@@ -95,17 +98,17 @@ Here are the connection and configuration details specific to your OpenShift env
 
 To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __Tenant Console URL__:
-  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+- **Tenant Console URL**:
+  [https://**your-tenant-id**.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__:
-  [https://ui-ocp01-__your-tenant-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
+- **OpenShift UI**:
+  [https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
 
-- __External API__:
-  [https://api-ocp01-__your-tenant-id__.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
+- **External API**:
+  [https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__:
-  [https://gitops-ocp01-__your-tenant-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
+- **GitOps (ARGOCD)**:
+  [https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-tenant-id**.paas.cloud-temple.com/applications)
 
 #### Verbindung zum Cluster über die Befehlszeile (CLI)
 
@@ -134,7 +137,7 @@ docker push registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:lates
 
 #### Configuration of Routers and Load Balancers
 
-The platform offers flexible options for __traffic routing__ and __load balancing__:
+The platform offers flexible options for **traffic routing** and **load balancing**:
 
 - By default, private load balancers are used for routes and ingresses.
 - Domains:
@@ -155,7 +158,7 @@ metadata:
 
 Network configurations play a crucial role in securing communications with OpenShift.
 
-- __Interconnection Network__: 100.67.0.0/28  
-- __Private Load Balancer VIP__: 100.67.0.3  
+- **Interconnection Network**: 100.67.0.0/28  
+- **Private Load Balancer VIP**: 100.67.0.3  
 
 Ensure your firewall has a dedicated interface and permits traffic between the specified networks.

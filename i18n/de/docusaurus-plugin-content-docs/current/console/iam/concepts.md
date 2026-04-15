@@ -1,21 +1,21 @@
 ---
 title: Konzepte
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
 ## Users
 
@@ -26,7 +26,7 @@ Credentials are global to your [Organization](#organizations).
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](#organisations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](#organizations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
 
 Klicken Sie auf die Schaltfläche __'Neuer Benutzer'__ auf der Benutzerseite.
 
@@ -54,7 +54,7 @@ Das Menü zur Aktivierung von Berechtigungen wird nun angezeigt:
 
 <img src={shivaOnboard_005} />
 
-Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organisations) separat durchgeführt werden.
+Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organizations) separat durchgeführt werden.
 
 Die Liste der Berechtigungen und ihre Definitionen ist [hier](#permissions) verfügbar.
 
@@ -158,11 +158,11 @@ When a user is created, they have no permissions by default. Each permission is 
 
 The following permissions are configurable for each user and for each tenant in your organization:
 
-- **"read" permissions**: allow only reading resources, without the ability to modify them.
-- **"write" permissions**: permit modification of configurations.
-- **"management" permissions**: enable advanced management of resources.
-- **"console_access" permissions**: allow PMAD-style connections to resources.
-- **"virtual_machine_power" permissions**: enable power management of a virtual machine.
+- __"read" permissions__: allow only reading resources, without the ability to modify them.
+- __"write" permissions__: permit modification of configurations.
+- __"management" permissions__: enable advanced management of resources.
+- __"console_access" permissions__: allow PMAD-style connections to resources.
+- __"virtual_machine_power" permissions__: enable power management of a virtual machine.
 
 - __These are permissions, not roles.__ As such, both READ and WRITE permissions are required to modify a configuration.
 
@@ -264,7 +264,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisations) verfügt mindestens über einen Tenant (der __Standard-Tenant__, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
+Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organizations) verfügt mindestens über einen Tenant (der __Standard-Tenant__, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
 
 Beispiele:
 
@@ -307,22 +307,26 @@ Each tenant has at least one owner, ensuring clear accountability and efficient 
 
 #### 1. Number of Owners
 
-* There is no technical limit on the number of owners that can be defined for the tenant.
+- There is no technical limit on the number of owners that can be defined for the tenant.
+
 - The management interface (UI) issues a warning when more than 3 owners are present, encouraging the limitation of the number of owners for security reasons and optimal access management.
 
 #### 2. Adding a new owner
 
-* When adding a new owner, updating their permissions may take up to 60 minutes.
+- When adding a new owner, updating their permissions may take up to 60 minutes.
+
 - This propagation time is normal and ensures that access rights are correctly applied across all associated services and resources.
 
 #### 2. Permissions of a owner
 
-* An owner will be assigned all permissions associated with the products enabled in their tenant.
+- An owner will be assigned all permissions associated with the products enabled in their tenant.
+
 - It is not possible to modify the permissions of an owner.
 
 #### 3. Removal of a owner
 
-* To remove an owner from the tenant, the user must submit a request to support.
+- To remove an owner from the tenant, the user must submit a request to support.
+
 - This procedure ensures that changes to access rights are carried out securely and in accordance with best practices for access management.
 
 ### Access Authorization for a Tenant: Allowed IPs

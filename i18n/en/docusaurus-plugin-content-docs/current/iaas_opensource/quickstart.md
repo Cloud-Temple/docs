@@ -1,22 +1,22 @@
 ---
 title: Getting Started Guide
 ---
-import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
-import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
-import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
-import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
-import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
-import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
-import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
-import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
-import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
-import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_policy_form2.png'
-import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
-import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
-import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
-import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
-import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
-import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
+import openIaasVirtualMachinesList from '@site/docs/iaas_opensource/images/open_iaas_virtual_machines_list.png'
+import openIaasVirtualMachinesListActions from '@site/docs/iaas_opensource/images/open_iaas_virtual_machines_list_actions.png'
+import openIaasVirtualMachineOverview from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_overview.png'
+import openIaasVirtualMachineActions from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_actions.png'
+import openIaasVirtualMachineOverviewInformations from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_overview_informations.png'
+import openIaasVirtualMachineAdvancedOverview from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasReplicationMenu from '@site/docs/iaas_opensource/images/open_iaas_replication_menu.png'
+import openIaasReplicationPoliciesView from '@site/docs/iaas_opensource/images/open_iaas_replication_policies_view.png'
+import openIaasReplicationPolicyForm1 from '@site/docs/iaas_opensource/images/open_iaas_replication_policy_form1.png'
+import openIaasReplicationPolicyForm2 from '@site/docs/iaas_opensource/images/open_iaas_replication_policy_form2.png'
+import openIaasVmReplicationSection from '@site/docs/iaas_opensource/images/open_iaas_vm_replication_section.png'
+import openIaasReplicationPoliciesTable from '@site/docs/iaas_opensource/images/open_iaas_replication_policies_table.png'
+import openIaasReplicationReplicasTable from '@site/docs/iaas_opensource/images/open_iaas_replication_replicas_table.png'
+import openIaasVmConsoleBtn from '@site/docs/iaas_opensource/images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from '@site/docs/iaas_opensource/images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from '@site/docs/iaas_opensource/images/open_iaas_vm_console_clipboard.png'
 
 ## Calculation
 

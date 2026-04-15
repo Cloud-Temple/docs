@@ -20,7 +20,7 @@ The process occurs in two steps:
 
 It is this **Retrieval** step that is at the heart of our subject. How does a computer manage to "understand" that a question and a paragraph are talking about the same thing? The magic happens through **vectors**.
 
-![RAG Conceptual Diagram](./images/rag_concept_overview.png)
+![RAG Conceptual Diagram](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ## Step 1: Embedding: Transforming Words into Numbers
 
@@ -32,7 +32,7 @@ In simple terms, a vector is a list of numbers that represents a point in a mult
 
 `"The cat is on the mat."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Example of an embedding vector](./images/embedding_vector_example.png)
+![Example of an embedding vector](@site/docs/llmaas/images/embedding_vector_example.png)
 
 This vector is not random. It represents the "position" of the text in a multi-dimensional semantic space. Texts with similar meanings will have vectors that point in similar directions.
 
@@ -61,10 +61,10 @@ The benchmarks below illustrate two key advantages:
 -   **Search Accuracy**: The first graph shows that Granite models (in blue) are highly competitive, and even superior, to models of similar size on semantic search tasks (`Retrieval Tasks`).
 -   **Inference Speed**: The second graph shows that Granite models are **significantly faster** (lower time per request) than most popular alternatives, which is a considerable advantage for real-time applications.
 
-![Granite Models Performance Benchmark](./images/granite_benchmark_performance.png)
+![Granite Models Performance Benchmark](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Comparison of performance on retrieval (BEIR) and code retrieval (CoIR) tasks.*
 
-![Granite Models Speed Benchmark](./images/granite_benchmark_speed.png)
+![Granite Models Speed Benchmark](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Comparison of latency (time per request in seconds) between different embedding models.*
 
 It is this balance between **performance, speed, legal security, and ethics** that led us to choose the `granite-embedding:278m` model (the most powerful multilingual version) as the default embedding service.
@@ -90,7 +90,7 @@ The cosine similarity calculation will give:
 -   `cos(v_q, v_a) = 1.0` → 0° angle. Perfect similarity.
 -   `cos(v_q, v_b) = 0.0` → 90° angle. No similarity.
 
-![Cosine Similarity Illustration](./images/cosine_similarity_concept.png)
+![Cosine Similarity Illustration](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 This is the result we want: Document A is semantically identical to the question, even though its formulation is longer.
 
@@ -100,7 +100,7 @@ This is the result we want: Document A is semantically identical to the question
 -   **Score** : A score of 0 means that the vectors are identical. The higher the score, the farther they are.
 -   **Inconvenience for text** : It is sensitive to magnitude. In our example above, the distance between `v_q` and `v_a` would not be zero, as the vectors do not have the same length, even if they have the same direction.
 
-![Illustration de la Distance Euclidienne](./images/euclidean_distance_concept.png)
+![Illustration de la Distance Euclidienne](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ## Conclusion
 

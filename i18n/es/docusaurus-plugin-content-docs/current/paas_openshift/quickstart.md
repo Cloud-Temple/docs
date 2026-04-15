@@ -1,12 +1,12 @@
 ---
 title: Guía de inicio
 ---
-import oshiftMenu_001 from './images/oshift_menu_001.png'
-import oshiftSubMenu_001 from './images/oshift_sub_menu_001.png'
-import oshiftClusterDetail_001 from './images/oshift_cluster_detail_001.png'
-import oshiftMenu_002 from './images/oshift_menu_002.png'
-import oshiftMenu_003 from './images/oshift_menu_003.png'
-import oshiftOrder_001 from './images/oshift_order_001.png'
+import oshiftMenu_001 from '@site/docs/paas_openshift/images/oshift_menu_001.png'
+import oshiftSubMenu_001 from '@site/docs/paas_openshift/images/oshift_sub_menu_001.png'
+import oshiftClusterDetail_001 from '@site/docs/paas_openshift/images/oshift_cluster_detail_001.png'
+import oshiftMenu_002 from '@site/docs/paas_openshift/images/oshift_menu_002.png'
+import oshiftMenu_003 from '@site/docs/paas_openshift/images/oshift_menu_003.png'
+import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.png'
 
 # Guía Rápida para la oferta OpenShift
 

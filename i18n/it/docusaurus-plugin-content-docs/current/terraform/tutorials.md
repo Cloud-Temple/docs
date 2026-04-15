@@ -9,8 +9,8 @@ This page gathers practical tutorials for using the Terraform Cloud Temple provi
 ## Sommario
 
 - [IaaS VMware](#iaas-vmware)
-- [IaaS OpenSource](#iaas-opensource)
-- [Archiviazione oggetto](#stockage-oggetto)
+- [IaaS OpenSource]
+- [Archiviazione oggetto]()
 
 ## IaaS VMware
 

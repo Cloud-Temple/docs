@@ -32,8 +32,8 @@ Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades 
 
 - **Fecha** : Fecha de publicación inicial de la alerta de seguridad de Cloud Temple.
 - **Referencia(s)** : ID CVE, según disponibilidad.
-- **CVSS** : Puntuación CVSS v3 base tal como informada por el editor o el CVE, sin contextualización. La contextualización se expresa mediante la severidad CT. Si la alerta afecta a múltiples vulnerabilidades, se indican las puntuaciones CVSS mínima y máxima.
-- **Título** : Título de la alerta, con referencia al editor si está disponible.
+- **CVSS** : Puntuación CVSS v3 base tal como informada por el editor o el CVE, sin contextualización. La contextualización se expresa mediante la severidad CT. Si la alerta abarca múltiples vulnerabilidades, se indican las puntuaciones CVSS mínima y máxima.
+- **Título** : Título de la alerta, con referencia del editor si está disponible.
 - **Descripción** : Descripción sintética, con enlace(s) a información detallada.
 - **Servicio(s)** : Servicio(s) de Cloud Temple que podrían verse afectados.
 - **Severidad** : Nivel de severidad en el contexto de los servicios Cloud Temple (para la vulnerabilidad más crítica en caso de múltiples vulnerabilidades). Se tienen en cuenta los criterios de explotación en el contexto técnico de nuestras infraestructuras y servicios Cloud.

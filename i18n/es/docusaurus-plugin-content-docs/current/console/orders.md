@@ -1,38 +1,38 @@
 ---
 title: Desplegar recursos
 ---
-import shivaOrdersList from './images/shiva_orders_list.png'
-import shivaOrderNotif_001 from './images/shiva_order_notif_001.png'
-import shivaOrderStatus from './images/shiva_order_status.png'
-import shivaOrderAz_01 from './images/shiva_order_az_01.png'
-import shivaOrderAz_02 from './images/shiva_order_az_02.png'
-import shivaOrderAz_03 from './images/shiva_order_az_03.png'
-import shivaOrderAz_04 from './images/shiva_order_az_04.png'
-import shivaOrderAz_05 from './images/shiva_order_az_05.png'
-import shivaOrderAz_06 from './images/shiva_order_az_06.png'
-import shivaOrderAz_07 from './images/shiva_order_az_07.png'
-import shivaOrderAz_08 from './images/shiva_order_az_08.png'
-import shivaOrderClucalc_01 from './images/shiva_order_clucalc_01.png'
-import shivaOrderClucalc_02 from './images/shiva_order_clucalc_02.png'
-import shivaOrderClucalc_03 from './images/shiva_order_clucalc_03.png'
-import shivaOrderClucalc_04 from './images/shiva_order_clucalc_04.png'
-import shivaOrderClucalc_05 from './images/shiva_order_clucalc_05.png'
-import shivaOrderClusto_01 from './images/shiva_order_clusto_01.png'
-import shivaOrderClusto_02 from './images/shiva_order_clusto_02.png'
-import shivaOrderClusto_03 from './images/shiva_order_clusto_03.png'
-import shivaOrderClusto_04 from './images/shiva_order_clusto_04.png'
-import shivaOrdersIaasSpoolDs from './images/shiva_orders_iaas_spool_ds.png'
-import shivaOrdersNet_002 from './images/shiva_orders_net_002.png'
-import shivaOrdersNet_003 from './images/shiva_orders_net_003.png'
-import shivaOrdersNet_004 from './images/shiva_orders_net_004.png'
-import shivaOrdersIaasCpoolEsx from './images/shiva_orders_iaas_cpool_esx.png'
-import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrderNotif_001 from '@site/docs/console/images/shiva_order_notif_001.png'
+import shivaOrderStatus from '@site/docs/console/images/shiva_order_status.png'
+import shivaOrderAz_01 from '@site/docs/console/images/shiva_order_az_01.png'
+import shivaOrderAz_02 from '@site/docs/console/images/shiva_order_az_02.png'
+import shivaOrderAz_03 from '@site/docs/console/images/shiva_order_az_03.png'
+import shivaOrderAz_04 from '@site/docs/console/images/shiva_order_az_04.png'
+import shivaOrderAz_05 from '@site/docs/console/images/shiva_order_az_05.png'
+import shivaOrderAz_06 from '@site/docs/console/images/shiva_order_az_06.png'
+import shivaOrderAz_07 from '@site/docs/console/images/shiva_order_az_07.png'
+import shivaOrderAz_08 from '@site/docs/console/images/shiva_order_az_08.png'
+import shivaOrderClucalc_01 from '@site/docs/console/images/shiva_order_clucalc_01.png'
+import shivaOrderClucalc_02 from '@site/docs/console/images/shiva_order_clucalc_02.png'
+import shivaOrderClucalc_03 from '@site/docs/console/images/shiva_order_clucalc_03.png'
+import shivaOrderClucalc_04 from '@site/docs/console/images/shiva_order_clucalc_04.png'
+import shivaOrderClucalc_05 from '@site/docs/console/images/shiva_order_clucalc_05.png'
+import shivaOrderClusto_01 from '@site/docs/console/images/shiva_order_clusto_01.png'
+import shivaOrderClusto_02 from '@site/docs/console/images/shiva_order_clusto_02.png'
+import shivaOrderClusto_03 from '@site/docs/console/images/shiva_order_clusto_03.png'
+import shivaOrderClusto_04 from '@site/docs/console/images/shiva_order_clusto_04.png'
+import shivaOrdersIaasSpoolDs from '@site/docs/console/images/shiva_orders_iaas_spool_ds.png'
+import shivaOrdersNet_002 from '@site/docs/console/images/shiva_orders_net_002.png'
+import shivaOrdersNet_003 from '@site/docs/console/images/shiva_orders_net_003.png'
+import shivaOrdersNet_004 from '@site/docs/console/images/shiva_orders_net_004.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
+import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_iaas_cpool_memory.png'
 
 ## Concepto
 
 El seguimiento del despliegue de nuevas recursos se realiza en el menú __'Órdenes'__, accesible desde la barra verde a la izquierda de la pantalla.
 
-Permite visualizar los recursos Cloud ordenados, en proceso de despliegue y posibles errores dentro de un [Tenant](iam/concepts.md#tenant) de su [Organización](iam/concepts.md#organizaciones).
+Permite visualizar los recursos Cloud ordenados, en proceso de despliegue y posibles errores dentro de un [Tenant](iam/concepts.md#management-of-owners-on-a-tenant) de su [Organización](iam/concepts.md#organizaciones).
 
 <img src={shivaOrdersList} />
 

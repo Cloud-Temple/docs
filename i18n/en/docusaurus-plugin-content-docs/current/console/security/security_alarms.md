@@ -32,7 +32,7 @@ This page is updated daily to account for newly identified vulnerabilities.
 
 - **Date** : Initial publication date of the Cloud Temple security alert.
 - **Reference(s)** : CVE ID, if available.
-- **CVSS** : Base CVSS v3 score as reported by the vendor or the CVE, uncontextualized. Contextualization is expressed through the severity CT. If the alert covers multiple vulnerabilities, minimum and maximum CVSS scores are provided.
+- **CVSS** : Base CVSS v3 score as reported by the vendor or the CVE, uncontextualized. Contextualization is expressed through the CT severity. If the alert covers multiple vulnerabilities, minimum and maximum CVSS scores are indicated.
 - **Title** : Alert title, with vendor reference if available.
 - **Description** : Summary description, with link(s) to detailed information.
 - **Service(s)** : Cloud Temple service(s) potentially affected.

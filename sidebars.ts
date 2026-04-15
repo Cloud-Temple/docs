@@ -39,6 +39,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
+      id: 'console/billing/concepts',
+    },
+    {
+      type: 'doc',
       id: 'console/api',
     },
     {
@@ -143,8 +147,10 @@ const sidebars: SidebarsConfig = {
         'iaas_opensource/quickstart',
         {
           type: 'category',
-          label: 'OpenSource Tutoriels',
+          label: 'Tutoriels',
+          key: 'iaas_opensource_tutorials',
           items: [
+            'iaas_opensource/tutorials/create_vm',
             {
               type: 'category',
               label: 'High Availability',
@@ -155,7 +161,8 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'OpenSource Backup',
+              label: 'Backup',
+              key: 'iaas_opensource_backup',
               items: [
                 'iaas_opensource/tutorials/backup/iaas_opensource_backup',
               ],
@@ -173,11 +180,13 @@ const sidebars: SidebarsConfig = {
         'iaas_vmware/quickstart',
         {
           type: 'category',
-          label: 'VMware Tutoriels',
+          label: 'Tutoriels',
+          key: 'iaas_vmware_tutorials',
           items: [
             {
               type: 'category',
-              label: 'VMware Backup',
+              label: 'Backup',
+              key: 'iaas_vmware_backup',
               items: [
                 'iaas_vmware/tutorials/backup/iaas_backup',
               ],
@@ -220,8 +229,9 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Managed Kubernetes',
           items: [
-            'managed_kubernetes/managed_kubernetes',
             'managed_kubernetes/concepts',
+            'managed_kubernetes/managed_kubernetes',
+            'managed_kubernetes/managed_core_kubernetes',
             'managed_kubernetes/quickstart',
             {
           type: 'category',
@@ -293,6 +303,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'network/internet/internet',
             'network/internet/concepts',
+            'network/internet/advanced_concepts',
             'network/internet/quickstart',
             {
               type: 'category',
@@ -317,6 +328,7 @@ const sidebars: SidebarsConfig = {
             'storage/oss/oss',
             'storage/oss/concepts',
             'storage/oss/quickstart',
+            'storage/oss/faq',
             {
               type: 'category',
               label: 'Object Storage Tutoriels',
@@ -330,6 +342,7 @@ const sidebars: SidebarsConfig = {
                 'storage/oss/tutorials/winscp',
                 'storage/oss/tutorials/mc-mirror',
                 'storage/oss/tutorials/aws-s3-sync',
+                'storage/oss/tutorials/rclone',
                 'storage/oss/tutorials/python-boto3',
                 'storage/oss/tutorials/file-hashing',
                 'storage/oss/tutorials/restic',

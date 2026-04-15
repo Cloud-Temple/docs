@@ -1,8 +1,8 @@
 ---
 title: Deploy an image on OpenIaaS
 ---
-import marketplaceOpeniaasDeployment from '../images/marketplace_openiaas_deploy.png'
-import marketplaceOpeniaasConfig from '../images/marketplace_openiaas_config.png'
+import marketplaceOpeniaasDeployment from '@site/docs/marketplace/images/marketplace_openiaas_deploy.png'
+import marketplaceOpeniaasConfig from '@site/docs/marketplace/images/marketplace_openiaas_config.png'
 
 This tutorial guides you through deploying a virtual machine image from the Cloud Temple Marketplace to your OpenIaaS environment.
 

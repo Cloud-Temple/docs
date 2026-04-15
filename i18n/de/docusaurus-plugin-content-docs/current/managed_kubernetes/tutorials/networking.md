@@ -2,7 +2,7 @@
 title: The Network in Managed Kubernetes
 ---
 
-import cillium from './images/cillium.png'
+import cillium from '@site/docs/managed_kubernetes/tutorials/images/cillium.png'
 
 ---
 
@@ -133,7 +133,7 @@ Applications exposed via the ingress class *"nginx-external"* will therefore be 
 
 Für den internen DNS (CoreDNS) hat der Cluster folgende Einstellungen:
 
-- Cluster-Name: ` <Cluster-Identifikator>`
+- Cluster-Name: `<Cluster-Identifikator>`
 - Internes Domain-Name: `<Cluster-Identifikator>-cluster.local` (in unserem Beispiel: ctodev-cluster.local)
 
 Dieser interne Domain-Name ist entscheidend für die Kommunikation zwischen Services innerhalb des Clusters. Er ermöglicht es einer Anwendung, eine andere Anwendung über einfach nur ihren Kubernetes-Service-Namen aufzurufen, ohne die interne IP-Adresse kennen zu müssen.
@@ -152,6 +152,7 @@ Wenn Sie eine Anwendung mit dieser Ingress-Klasse bereitstellen, können Sie dar
 Hubble is a graphical and command-line interface to visualize and understand network traffic flows in your cluster. Built on Cilium, it provides real-time, detailed mapping of services, dependencies, and network policies.
 
 With Hubble, you can:
+
 - **Visualize traffic flows** between your pods and services.
 - **Identify connectivity issues** and network errors.
 - **Verify enforcement of your security policies** (Network Policies).
@@ -181,24 +182,24 @@ Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste sowie die Kuberne
 
 Basierend auf den URLs im Schnellstartleitfaden können Sie Ihre interne DNS-Konfiguration wie folgt einrichten:
 
-1.  **Erstellen Sie die private DNS-Zone** auf Ihren internen DNS-Servern für `.<Cluster-Identifikator>.mk.ms-cloud-temple.com`
+1. **Erstellen Sie die private DNS-Zone** auf Ihren internen DNS-Servern für `.<Cluster-Identifikator>.mk.ms-cloud-temple.com`
 
-2.  **Fügen Sie die folgenden A-Einträge hinzu:**
+2. **Fügen Sie die folgenden A-Einträge hinzu:**
 
-    -   **Für die Kubernetes-API:**
-        -   `. -> 10.20.0.20` (virtuelle IP der API)
+    - **Für die Kubernetes-API:**
+        - `. -> 10.20.0.20` (virtuelle IP der API)
 
-    -   **Für interne Dienste (über den Ingress `nginx-internal`):**
-        -   `hubble.internal -> 10.20.1.1`
-        -   `argocd.internal -> 10.20.1.1`
-        -   `ceph.internal -> 10.20.1.1`
+    - **Für interne Dienste (über den Ingress `nginx-internal`):**
+        - `hubble.internal -> 10.20.1.1`
+        - `argocd.internal -> 10.20.1.1`
+        - `ceph.internal -> 10.20.1.1`
 
-    -   **Für gesicherte Dienste (über den Ingress `nginx-external-secure`):**
-        -   `k10.external-secured -> 10.20.1.129`
-        -   `grafana.external-secured -> 10.20.1.129`
-        -   `harbor.external-secured -> 10.20.1.129`
-        -   `opencost.external-secured -> 10.20.1.129`
-        -   `opencost-mcp.external-secured -> 10.20.1.129`
+    - **Für gesicherte Dienste (über den Ingress `nginx-external-secure`):**
+        - `k10.external-secured -> 10.20.1.129`
+        - `grafana.external-secured -> 10.20.1.129`
+        - `harbor.external-secured -> 10.20.1.129`
+        - `opencost.external-secured -> 10.20.1.129`
+        - `opencost-mcp.external-secured -> 10.20.1.129`
 
 Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Diensten innerhalb Ihres privaten Netzwerks bleibt und den Sicherheitsbest Practices entspricht.
 
@@ -219,7 +220,7 @@ Diese Konfiguration stellt sicher, dass der Datenverkehr zu API und internen Die
 :::warning Weiterführend: Sicherheit in der Produktion
 Dieses Dokument erläutert grundlegende Netzwerkkonzepte. Für einen Produktionsbetrieb ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu ergreifen:
 
--   **Verwenden Sie sichere Images**: Verwenden Sie bevorzugt Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor**, anstatt öffentliche Images.
--   **Kontrollieren Sie Netzwerkflüsse**: Setzen Sie `NetworkPolicies` ein, um Kommunikationen auf nur die erforderlichen Datenströme zwischen Ihren Anwendungen zu beschränken.
--   **Implementieren Sie Governance-Politiken**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Pflicht zur Angabe von `requests` und `limits` für Ressourcen usw.).
+- **Verwenden Sie sichere Images**: Verwenden Sie bevorzugt Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor**, anstatt öffentliche Images.
+- **Kontrollieren Sie Netzwerkflüsse**: Setzen Sie `NetworkPolicies` ein, um Kommunikationen auf nur die erforderlichen Datenströme zwischen Ihren Anwendungen zu beschränken.
+- **Implementieren Sie Governance-Politiken**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. Verbote von „root“-Containern, Pflicht zur Angabe von `requests` und `limits` für Ressourcen usw.).
 :::

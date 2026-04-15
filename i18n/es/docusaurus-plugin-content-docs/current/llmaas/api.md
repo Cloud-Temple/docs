@@ -21,33 +21,33 @@ Authorization: Bearer SU_TOKEN_API
 
 ## Límite de tasas y facturación
 
-### El Principio de los Terceros: Nivel de Acceso, Presupuesto y Capacidad
+### El Principio de los Tiers: Nivel de Acceso, Presupuesto y Capacidad
 
-Nuestro sistema de terceros está diseñado como **envolturas completas de servicio** que definen tres aspectos clave de su uso:
+Nuestro sistema de tiers está diseñado como **envolturas completas de servicio** que definen tres aspectos clave de su uso:
 
-1.  **Un Nivel de Acceso (Crédito de Compra)**: Para los Terceros 1 a 4, se trata de una cantidad que debe pagarse de forma anticipada (upfront) para activar el servicio y desbloquear las capacidades técnicas y presupuestarias del nivel seleccionado.
+1.  **Un Nivel de Acceso (Crédito de Compra)**: Para los Tiers 1 a 4, se trata de una cantidad que debe pagarse de forma anticipada (upfront) para activar el servicio y desbloquear las capacidades técnicas y presupuestarias del nivel elegido.
 2.  **Un Límite de Presupuesto Mensual**: Es el tope de su consumo mensual, asegurándole un control total sobre sus costos.
 3.  **Una Capacidad Técnica**: Son los límites de rendimiento (tokens por día y por hora) que garantizan un rendimiento estable y predecible para su volumen de llamadas.
 
-La elección de un nivel es, por tanto, un equilibrio entre la inversión inicial, el presupuesto mensual previsto y la capacidad técnica requerida. Su consumo dentro de esta envoltura se facturará posteriormente según las tarifas vigentes.
+La elección de un tier, por tanto, representa un equilibrio entre la inversión inicial, el presupuesto mensual previsto y la capacidad técnica requerida. Su consumo dentro de esta envoltura se facturará posteriormente según las tarifas vigentes.
 
-### Tabla de Tiers
+### Table of Tiers
 
-| Tier | Crédito de Compra | Límite Mensual | Tokens de Salida/Hora | Tokens de Salida/Día | Descripción |
-|------|-------------------|------------------|------------------------|------------------------|-------------|
-| **Tier 1** | 200 € | 1.000 € | 150.000 | 3.600.000 | Uso estándar |
-| **Tier 2** | 500 € | 3.000 € | 300.000 | 7.200.000 | Uso profesional |
-| **Tier 3** | 1.000 € | 5.000 € | 450.000 | 10.800.000 | Alto volumen |
-| **Tier 4** | 4.000 € | 10.000 € | 600.000 | 14.400.000 | Empresa |
-| **Facturación Mensual** | N/A | Ilimitada | Alta prioridad | Alta prioridad | Contacto comercial |
+| Tier | Purchase Credit | Monthly Limit | Tokens Output/Hour | Tokens Output/Day | Description |
+|------|-----------------|----------------|--------------------|-------------------|-----------|
+| **Tier 1** | 200 € | 1,000 € | 150,000 | 3,600,000 | Standard usage |
+| **Tier 2** | 500 € | 3,000 € | 300,000 | 7,200,000 | Professional usage |
+| **Tier 3** | 1,000 € | 5,000 € | 450,000 | 10,800,000 | High volume |
+| **Tier 4** | 4,000 € | 10,000 € | 600,000 | 14,400,000 | Enterprise |
+| **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
-**Nota**: Los límites de tasa se calculan en función de los tokens de salida. La tarificación de los tokens varía según el uso:
-- **Tokens de entrada**: 0,90 € / millón
-- **Tokens de salida (estándar)**: 4,00 € / millón
-- **Tokens de salida (razonador)**: 21,00 € / millón (aplicable a los modelos más avanzados para tareas complejas de tipo agente o razonamiento)
+**Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
+- **Input tokens**: 1.90 € / million
+- **Output tokens (standard)**: 8.00 € / million
+- **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Facturación de audio**
-- **Transcripción de audio**: 0,01 € / minuto (cada minuto comenzado es facturable)
+- **Transcripción de audio**: 0,01 € / minuto (cada minuto comenzado está sujeto a cargo)
 
 ### Límites de encabezados
 
@@ -64,7 +64,7 @@ X-RateLimit-Reset-Requests: 1640995200
 ```json
 {
   "error": {
-    "message": "Se ha superado el límite de tasa. Por favor, actualice su nivel o inténtelo de nuevo más tarde.",
+    "message": "Se ha excedido el límite de tasa. Por favor, actualice su nivel o inténtelo de nuevo más tarde.",
     "type": "rate_limit_error",
     "code": "rate_limit_exceeded"
   }
@@ -109,8 +109,8 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 | `presence_penalty` | float | ❌ | Penalización de presencia -2.0 a 2.0 (por defecto: 0) |
 | `frequency_penalty` | float | ❌ | Penalización de frecuencia -2.0 a 2.0 (por defecto: 0) |
 | `user` | string | ❌ | ID de usuario único |
-| `tools` | array | ❌ | Lista de herramientas que el modelo puede llamar. |
-| `tool_choice` | string/object | ❌ | Controla si el modelo debe llamar a una herramienta. "none", "auto", o `{"type": "function", "function": {"name": "my_function"}}`. |
+| `tools` | array | ❌ | Lista de herramientas que el modelo puede invocar. |
+| `tool_choice` | string/object | ❌ | Controla si el modelo debe invocar una herramienta. "none", "auto", o `{"type": "function", "function": {"name": "my_function"}}`. |
 
 #### Respuesta estándar
 
@@ -222,7 +222,7 @@ Cache-Control: no-cache
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
-data: {"choices":[{"delta":{"content":" photo"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
+data: {"choices":[{"delta":{"content":" foto"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
 data: {"choices":[{"delta":{"content":""},"finish_reason":"stop","index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -284,7 +284,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 Para completar texto simple, utiliza un mensaje de tipo user con tu prompt.
 :::
 
-Completado de texto mediante formato chat.
+Completado de texto mediante formato de chat.
 
 #### Petición
 
@@ -447,7 +447,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-## Códigos de Error
+## Códigos de error
 
 ### 400 - Petición Inválida
 
@@ -503,7 +503,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 {
   "error": {
     "message": "Error interno del servidor",
-    "type": "error_servidor"
+    "type": "error_del_servidor"
   }
 }
 ```
@@ -528,9 +528,7 @@ import requests
 import json
 
 # Configuración
-
 # It is recommended to protect your API key by using environment variables.
-
 # Ejemplo: API_KEY = os.getenv("LLMAAS_API_KEY")
 API_KEY = "SU_TOKEN_API" 
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -631,7 +629,7 @@ def stream_chat(message, model="granite3.3:8b"):
 ```
 
 # Uso
-stream_chat("Expliquez la física cuántica")
+stream_chat("Explique la física cuántica")
 
 ### JavaScript/Node.js
 
@@ -740,7 +738,7 @@ def safe_api_call(payload):
 
 1. **Proteja su token**: Variables de entorno  
 2. **Rotación regular**: Cambie sus claves periódicamente  
-3. **Validación de entrada**: Limpie los datos de usuario  
+3. **Validación de entrada**: Limpie los datos del usuario  
 4. **Límite de tasa para el cliente**: Implemente sus propios límites
 
 ## SDK and Integrations
@@ -753,7 +751,6 @@ The LLMaaS API is compatible with existing OpenAI SDKs by simply changing the ba
 from openai import OpenAI
 
 # It is recommended to protect your API key by using environment variables.
-
 # Ejemplo: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="SU_TOKEN_API",
@@ -782,9 +779,7 @@ from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
 # Configuración del modelo de chat (compatible con LLMaaS)
-
 # It is recommended to protect your API key by using environment variables.
-
 # Example: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="SU_TOKEN_API",
@@ -817,7 +812,7 @@ Actualmente, el uso del endpoint de embeddings con las clases estándar de LangC
 - `OpenAIEmbeddings` envía tokens precalculados en lugar de texto sin procesar, lo cual es rechazado.
 - `OllamaEmbeddings` no gestiona la autenticación mediante Bearer Token requerida.
 
-Mientras se encuentra una solución permanente, se recomienda crear una clase de embeddings personalizada o llamar directamente a la API, como se muestra en el ejemplo `exemplos/simple-rag-demo`.
+Mientras se encuentra una solución permanente, se recomienda crear una clase de embeddings personalizada o llamar a la API directamente, como se muestra en el ejemplo `exemplos/simple-rag-demo`.
 :::
 
 ```python
@@ -860,21 +855,15 @@ class LLMaaSEmbeddings(Embeddings):
 
     def embed_query(self, text: str) -> List[float]:
         return self._embed([text])[0]
-```
 
 # Uso
-
 # embeddings = LLMaaSEmbeddings(
-
 #     api_key="SU_TOKEN_API",
-
 #     base_url="https://api.ai.cloud-temple.com/v1",
-
 #     model_name="granite-embedding:278m"
-
-#)
-
+# )
 # vector = embeddings.embed_query("Mi texto a vectorizar")
+```
 
 ## Soporte
 

@@ -2,7 +2,7 @@
 title: Cilium Gateway API verwenden
 ---
 
-import gapischema from './images/gapi.png'
+import gapischema from '@site/docs/managed_kubernetes/tutorials/images/gapi.png'
 
 ## Introduction
 
@@ -34,9 +34,9 @@ Dieser Leitfaden führt Sie Schritt für Schritt durch:
 
 Gateway API breaks down network configuration into three main resources:
 
-1.  **GatewayClass**: Defines the type of controller (here, `io.cilium/gateway`).
-2.  **Gateway**: Instantiates a network entry point (load balancer).
-3.  **HTTPRoute**: Defines routing rules (paths, headers) to Kubernetes Services.
+1. **GatewayClass**: Defines the type of controller (here, `io.cilium/gateway`).
+2. **Gateway**: Instantiates a network entry point (load balancer).
+3. **HTTPRoute**: Defines routing rules (paths, headers) to Kubernetes Services.
 
 <img src={gapischema} alt="Schema GAPI"/>
 
