@@ -200,10 +200,10 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/governance">Contracts</a> |
+        <a href="/contracts">Contrats</a> |
         <a href="/privacy">Privacy Policy</a>
         <br />
-        Copyright © ${new Date().getFullYear()} Cloud Temple.
+        Copyright © 2026 Cloud Temple.
       </div>
     `,
     },
