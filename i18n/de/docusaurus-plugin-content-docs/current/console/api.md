@@ -1,15 +1,15 @@
 ---
 title: API-Dokumentation
 ---
-import ShivaProfil001 from './images/shiva_profil_001.png'
-import ShivaProfil002 from './images/shiva_profil_002.png'
-import ShivaProfil003 from './images/shiva_profil_003.png'
-import ShivaProfil004 from './images/shiva_profil_004.png'
-import ShivaProfil005 from './images/shiva_profil_005.png'
-import ShivaApi001 from './images/shiva_api_001.png'
-import ShivaApi002 from './images/shiva_api_002.png'
-import ShivaApi003 from './images/shiva_api_003.png'
-import ShivaApi004 from './images/shiva_api_004.png'
+import ShivaProfil001 from '@site/docs/console/images/shiva_profil_001.png'
+import ShivaProfil002 from '@site/docs/console/images/shiva_profil_002.png'
+import ShivaProfil003 from '@site/docs/console/images/shiva_profil_003.png'
+import ShivaProfil004 from '@site/docs/console/images/shiva_profil_004.png'
+import ShivaProfil005 from '@site/docs/console/images/shiva_profil_005.png'
+import ShivaApi001 from '@site/docs/console/images/shiva_api_001.png'
+import ShivaApi002 from '@site/docs/console/images/shiva_api_002.png'
+import ShivaApi003 from '@site/docs/console/images/shiva_api_003.png'
+import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
 ## API-Schlüssel
 
@@ -49,10 +49,10 @@ Sie sehen nun den neu erstellten Token und sein zukünftiges Ablaufdatum.
 <img src={ShivaProfil005} />
 
 :::info Lebenszyklus des Authentifizierungstokens
-Wenn Sie Ihren **Personal Access Token (PAT)** verwenden, um sich bei der API zu authentifizieren, erhalten Sie daraufhin einen Zugangstoken zurück. Es ist wichtig zu beachten, dass dieser Zugangstoken ein **JSON Web Token (JWT)** mit begrenzter Gültigkeitsdauer ist.
+Wenn Sie Ihren __Personal Access Token (PAT)__ verwenden, um sich bei der API zu authentifizieren, erhalten Sie daraufhin einen Zugangstoken zurück. Es ist wichtig zu beachten, dass dieser Zugangstoken ein __JSON Web Token (JWT)__ mit begrenzter Gültigkeitsdauer ist.
 
--   **Gültigkeitsdauer**: Jeder JWT-Token ist **5 Minuten** gültig.
--   **Überprüfung**: Sie können Datum der Ausstellung (`iat`) und Ablaufdatum (`exp`) Ihres Tokens überprüfen, indem Sie den Token decodieren. Online-Tools wie [jwt.io](https://jwt.io) ermöglichen dies einfach.
+- __Gültigkeitsdauer__: Jeder JWT-Token ist __5 Minuten__ gültig.
+- __Überprüfung__: Sie können Datum der Ausstellung (`iat`) und Ablaufdatum (`exp`) Ihres Tokens überprüfen, indem Sie den Token decodieren. Online-Tools wie [jwt.io](https://jwt.io) ermöglichen dies einfach.
 
 Sobald der Token abgelaufen ist, müssen Sie sich erneut mit Ihrem PAT authentifizieren, um einen neuen Token zu erhalten. Es wird daher empfohlen, diesen Lebenszyklus in Ihren Skripten und Anwendungen zu verwalten, indem Sie eine automatische Erneuerung des Tokens vorsehen.
 :::
@@ -107,6 +107,7 @@ __waiting__, status before the operation has started:
 ```
     waiting: {}
 ```
+
 __running__, status while the operation is in progress:
 
 ```
@@ -116,6 +117,7 @@ __running__, status while the operation is in progress:
     progression: number;
     };
 ```
+
 __failed__, status if the operation has failed:
 
 ```
@@ -125,6 +127,7 @@ __failed__, status if the operation has failed:
     reason: string;
     };
 ```
+
 __completed__, status if the operation has finished successfully:
 
 ```

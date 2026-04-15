@@ -5,53 +5,53 @@ tags:
   - tutorials
 ---
 
-import fortiSupport from '../images/forti_support.png';
-import fortiSupportVm01 from '../images/forti_support_vm_01.png';
-import fortiSupportVm02 from '../images/forti_support_vm_02.png';
-import asn from '../images/asn.png';
-import ipsPub from '../images/ips_pub.png';
-import ipsInterco from '../images/ips_interco.png';
-import fortiVmType01 from '../images/forti_vm_type_01.png';
-import shivaCatalogues from '../images/shiva_catalogues.png';
-import imgImport01 from '../images/img_import_01.png';
-import imgImport02 from '../images/img_import_02.png';
-import imgImport03 from '../images/img_import_03.png';
-import imgImport04 from '../images/img_import_04.png';
-import imgImport05 from '../images/img_import_05.png';
-import imgImport06 from '../images/img_import_06.png';
-import imgImport07 from '../images/img_import_07.png';
-import imgImport08 from '../images/img_import_08.png';
-import imgImport09 from '../images/img_import_09.png';
-import imgImport10 from '../images/img_import_10.png';
-import imgImport11 from '../images/img_import_11.png';
-import imgImport12 from '../images/img_import_12.png';
-import ipPlan01 from '../images/ip_plan_01.png';
-import ipPlan02 from '../images/ip_plan_02.png';
-import ipPlan03 from '../images/ip_plan_03.png';
-import ipPlan04 from '../images/ip_plan_04.png';
-import ipPlan05 from '../images/ip_plan_05.png';
-import imgDeploy01 from '../images/img_deploy_01.png';
-import imgDeploy02 from '../images/img_deploy_02.png';
-import imgDeploy03 from '../images/img_deploy_03.png';
-import imgDeploy04 from '../images/img_deploy_04.png';
-import imgDeploy05 from '../images/img_deploy_05.png';
-import imgDeploy06 from '../images/img_deploy_06.png';
-import imgDeploy07 from '../images/img_deploy_07.png';
-import imgDeploy08 from '../images/img_deploy_08.png';
-import imgDeploy09 from '../images/img_deploy_09.png';
-import imgDeploy10 from '../images/img_deploy_10.png';
-import imgDeploy11 from '../images/img_deploy_11.png';
-import imgBackup01 from '../images/img_backup_01.png';
-import imgBackup02 from '../images/img_backup_02.png';
-import imgBackup03 from '../images/img_backup_03.png';
-import imgBackup04 from '../images/img_backup_04.png';
-import vmStart01 from '../images/vm_start_01.png';
-import vmStart02 from '../images/vm_start_02.png';
-import vmConsole01 from '../images/vm_console_01.png';
-import vmBoot01 from '../images/vm_boot_01.png';
-import vmBoot02 from '../images/vm_boot_02.png';
-import vmBoot03 from '../images/vm_boot_03.png';
-import vmBoot04 from '../images/vm_boot_04.png';
+import fortiSupport from '@site/docs/network/internet/images/forti_support.png';
+import fortiSupportVm01 from '@site/docs/network/internet/images/forti_support_vm_01.png';
+import fortiSupportVm02 from '@site/docs/network/internet/images/forti_support_vm_02.png';
+import asn from '@site/docs/network/internet/images/asn.png';
+import ipsPub from '@site/docs/network/internet/images/ips_pub.png';
+import ipsInterco from '@site/docs/network/internet/images/ips_interco.png';
+import fortiVmType01 from '@site/docs/network/internet/images/forti_vm_type_01.png';
+import shivaCatalogues from '@site/docs/network/internet/images/shiva_catalogues.png';
+import imgImport01 from '@site/docs/network/internet/images/img_import_01.png';
+import imgImport02 from '@site/docs/network/internet/images/img_import_02.png';
+import imgImport03 from '@site/docs/network/internet/images/img_import_03.png';
+import imgImport04 from '@site/docs/network/internet/images/img_import_04.png';
+import imgImport05 from '@site/docs/network/internet/images/img_import_05.png';
+import imgImport06 from '@site/docs/network/internet/images/img_import_06.png';
+import imgImport07 from '@site/docs/network/internet/images/img_import_07.png';
+import imgImport08 from '@site/docs/network/internet/images/img_import_08.png';
+import imgImport09 from '@site/docs/network/internet/images/img_import_09.png';
+import imgImport10 from '@site/docs/network/internet/images/img_import_10.png';
+import imgImport11 from '@site/docs/network/internet/images/img_import_11.png';
+import imgImport12 from '@site/docs/network/internet/images/img_import_12.png';
+import ipPlan01 from '@site/docs/network/internet/images/ip_plan_01.png';
+import ipPlan02 from '@site/docs/network/internet/images/ip_plan_02.png';
+import ipPlan03 from '@site/docs/network/internet/images/ip_plan_03.png';
+import ipPlan04 from '@site/docs/network/internet/images/ip_plan_04.png';
+import ipPlan05 from '@site/docs/network/internet/images/ip_plan_05.png';
+import imgDeploy01 from '@site/docs/network/internet/images/img_deploy_01.png';
+import imgDeploy02 from '@site/docs/network/internet/images/img_deploy_02.png';
+import imgDeploy03 from '@site/docs/network/internet/images/img_deploy_03.png';
+import imgDeploy04 from '@site/docs/network/internet/images/img_deploy_04.png';
+import imgDeploy05 from '@site/docs/network/internet/images/img_deploy_05.png';
+import imgDeploy06 from '@site/docs/network/internet/images/img_deploy_06.png';
+import imgDeploy07 from '@site/docs/network/internet/images/img_deploy_07.png';
+import imgDeploy08 from '@site/docs/network/internet/images/img_deploy_08.png';
+import imgDeploy09 from '@site/docs/network/internet/images/img_deploy_09.png';
+import imgDeploy10 from '@site/docs/network/internet/images/img_deploy_10.png';
+import imgDeploy11 from '@site/docs/network/internet/images/img_deploy_11.png';
+import imgBackup01 from '@site/docs/network/internet/images/img_backup_01.png';
+import imgBackup02 from '@site/docs/network/internet/images/img_backup_02.png';
+import imgBackup03 from '@site/docs/network/internet/images/img_backup_03.png';
+import imgBackup04 from '@site/docs/network/internet/images/img_backup_04.png';
+import vmStart01 from '@site/docs/network/internet/images/vm_start_01.png';
+import vmStart02 from '@site/docs/network/internet/images/vm_start_02.png';
+import vmConsole01 from '@site/docs/network/internet/images/vm_console_01.png';
+import vmBoot01 from '@site/docs/network/internet/images/vm_boot_01.png';
+import vmBoot02 from '@site/docs/network/internet/images/vm_boot_02.png';
+import vmBoot03 from '@site/docs/network/internet/images/vm_boot_03.png';
+import vmBoot04 from '@site/docs/network/internet/images/vm_boot_04.png';
 
 ## Objekt dieser Anleitung
 
@@ -516,6 +516,7 @@ Zum Beispiel, wenn Ihre erste öffentliche IP Ihres ersten Bereichs 80.75.159.90
 In der Befehlszeile Ihrer Appliance geben Sie ein (**Achtung 80.75.159.90/32 ist hier ein Beispiel!**):
 
 ```
+
     config system interface 
         edit "LOOP_159_90"
         set vdom "root"
@@ -543,6 +544,7 @@ In der Befehlszeile Ihrer Appliance geben Sie ein (**Achtung 80.75.159.90/32 ist
         set ntpsync enable
         set source-ip 80.75.159.90
     end
+
 ```
 
 Dies ermöglicht die ursprüngliche Konfiguration von NAT, DNS, Intrusion Prevention und Uhrzeit. Ihre Appliance sollte nun in der Lage sein, nach außen zu pingen, wenn die Quell-IP-Adresse die NAT-IP ist (hier in diesem Beispiel 80.57.159.90).
@@ -556,6 +558,7 @@ Um die Lesbarkeit der Schnittstellen in der Verwaltung der Geräte zu vereinfach
 Port1 ist als WAN definiert und Port2 wird in HA umbenannt. Für den HA-Port wird eine IP-Adresse im APIPA-Subnetz definiert, damit die Geräte auf diese Weise in einem Cluster verbunden werden können.
 
 ```
+
 config system interface
         edit "port1"
                 set alias "WAN"
@@ -568,6 +571,7 @@ config system interface
                 set snmp-index 2
         next
 end
+
 ```
 
 ### Bereitstellung eines zweiten Mitglieds
@@ -589,6 +593,7 @@ Wir empfehlen, das Namensschema der VM beizubehalten, nämlich FGT-VM-0X-ROLE-AZ
 Um die Lesbarkeit der Schnittstellen zu vereinfachen, sollten diese beim zweiten Mitglied ebenfalls umbenannt werden. Auch in diesem Schritt muss die IP-Adresse der HA-Schnittstelle konfiguriert werden, damit die Geräte für das Clustering kommunizieren können.
 
 ```
+
 config system interface
         edit "port1"
                 set alias "WAN"
@@ -601,6 +606,7 @@ config system interface
                 set snmp-index 2
         next
 end
+
 ```
 
 ### Clustering
@@ -610,6 +616,7 @@ Wir werden ein aktives/passives Clustering konfigurieren. Das Passwort dient als
 Bei der ersten Einheit ergibt sich daraus diese Konfiguration:
 
 ```
+
 config system ha
     set mode a-p
  set group-name "FTG-HA-INTERNET"
@@ -620,12 +627,14 @@ config system ha
     set monitor "HA" "WAN"
     set unicast-hb enable
     set unicast-hb-peerip 169.254.254.2
-end 
+end
+
 ```
 
 Schließlich werden wir bei der zweiten Einheit die Peer-IP-Adresse ändern und die Priorität senken, damit das erste Gerät standardmäßig als aktives Mitglied des Clusters gewählt wird:
 
 ```
+
 config system ha
     set mode a-p
  set group-name "FTG-HA-INTERNET"
@@ -636,11 +645,13 @@ config system ha
     set monitor "HA" "WAN"
     set unicast-hb enable
     set unicast-hb-peerip 169.254.254.1
-end 
+end
+
 ```
 
 Die Synchronisation kann einige Minuten dauern.
 ```
+
 Pour eine vollständige Überprüfung ist der Befehl *get sys ha status* der richtige Befehl. Um dies kürzer zu überprüfen, solltest du *diag sys ha checksum cluster* verwenden.
 Wenn die Synchronisation funktioniert, müssen die Prüfprüfungen der Zeile *all* auf beiden Geräten identisch sein.
 

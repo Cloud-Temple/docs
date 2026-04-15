@@ -1,9 +1,9 @@
 ---
 title: Contact a Partner
 ---
-import marketplaceContactAccess from '../images/marketplaceContactAccess.png'
-import marketplaceContactConfirm from '../images/marketplaceContactConfirm.png'
-import marketplaceContactEmail from '../images/marketplaceContactEmail.png'
+import marketplaceContactAccess from '@site/docs/marketplace/images/marketplaceContactAccess.png'
+import marketplaceContactConfirm from '@site/docs/marketplace/images/marketplaceContactConfirm.png'
+import marketplaceContactEmail from '@site/docs/marketplace/images/marketplaceContactEmail.png'
 
 This tutorial guides you through contacting an editor partner via the Cloud Temple Marketplace.
 

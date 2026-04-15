@@ -98,11 +98,9 @@ Le espressioni seguenti utilizzate nel presente Accordo di servizio saranno inte
 
 - **Servizio OpenIaaS**: indica il servizio IaaS basato su tecnologia open source, in corso di qualifica SecNumCloud, erogato dal Fornitore al Committente da infrastrutture tecniche gestite dal Fornitore, come descritto nella sezione « Descrizione del Servizio » del presente Accordo di servizio.
 
-<!-- -->
 
 - **Sinistro**: indica un evento grave di origine naturale o umana, accidentale o intenzionale, che causa perdite e danni significativi alla Parte colpita.
 
-<!-- -->
 
 - **Supervisione**: sorveglianza di un Sistema Informativo o di un Servizio, che implica la raccolta di diverse tipologie di dati quali misurazioni e allarmi. Questa attività si limita all'osservazione e al monitoraggio, senza intervenire direttamente sugli elementi sorvegliati, una prerogativa che spetta alle operazioni di Amministrazione.
 

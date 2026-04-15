@@ -1,9 +1,44 @@
 ---
-title: Change Tracking
+title: Change Log
 sidebar_position: 2
 ---
 
-# Change Tracking
+# Change Log
+
+### March 26, 2026: Sub-processors List Update (DPA)
+
+- **Contractual**: Update of the Data Processing Agreement (DPA) - revised the list of sub-processors (removal of Microsoft Azure and Amazon Web Services, modification of activity for Iron Mountain) and addition of the authorization date. Propagation of changes in English, German, Spanish, and Italian.
+
+### March 19, 2026: IaaS and Terraform Documentation Improvements
+
+- **IaaS OpenSource**: Added a complete guide for creating a virtual machine. The tutorial covers the three available deployment methods (template, XVA import, Marketplace) with step-by-step instructions and best practice recommendations.
+- **IaaS VMware**: Added an index page listing all available tutorials for easier navigation and guide discovery.
+- **Terraform**: New section explaining how to automatically receive notifications for new Terraform Provider versions via GitHub.
+
+### March 19, 2026: DPA Update and HDS Compliance
+
+- **Contractual**: Update of the Data Processing Agreement (DPA) to version 1.0. Integration of the latest requirements for HDS (Health Data Hosting) certification and update of the authorized sub-processors list. Complete translation in English, German, Spanish, and Italian.
+
+### February 21, 2026: Advanced Networking Concepts and Multilingual Enhancements
+
+- **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with a Bird example.
+- **LLMaaS**: Updated model catalog with the addition of model lifecycle management. Introduced LTS (Long Term Support) models.
+- **Console (Security)**: Improved quality of security alert translations (English, German, Spanish, Italian).
+- **Multilingual**: Translation of the new advanced networking concepts page into four languages (en, de, es, it), along with overall enhancement of existing translation quality.
+- **IaaS Bare Metal**: Added clarifications regarding the BFS (Boot from SAN) volume in the quick start guide: Volume 1 is dedicated to OS installation, non-shareable within the same AZ, with recommendation to store data on an additional LUN volume.
+- **Object Storage (OSS)**: Added a new **FAQ** page covering S3 access, IP whitelisting, pre-signed links, and recommended usage scenarios.
+
+### February 10, 2026: LLMaaS Pricing Update
+
+- **LLMaaS**: Global API pricing update (Input: €1.9/M, Output: €8/M, Reasoner: €8/M) across all technical and commercial documentation.
+
+### February 5, 2026: Clarifications on Service Level Agreements (SLAs)
+
+- **Managed Kubernetes**: Complete update and finalization of Service Level Agreements (SLAs) for the Managed Kubernetes offering.
+
+### January 21, 2026: Security Improvements and Translations
+
+- **Console Management**: Updated international translations (English, German, Spanish, Italian) for security alerts in the management console.
 
 ### January 19, 2026: Managed Kubernetes and VPC Enhancements
 
@@ -17,7 +52,7 @@ sidebar_position: 2
 
 - **Multilingual (Terraform, LLMaaS, Harbor)**: Major fixes to translations in Spanish, Italian, and German. Resolved MDX syntax issues (empty code blocks, unescaped tags) that were preventing site compilation.
 - **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
-- **Build**: Verified deployment across all 5 supported languages.
+- **Build**: Validation of deployment across all 5 supported languages.
 
 ### December 11, 2025: Managed Kubernetes Updates
 
@@ -27,7 +62,7 @@ sidebar_position: 2
 ### November 22, 2025: LLMaaS Updates and General Improvements
 
 - **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
-- **Multilingual**: Resolved accessibility issues on the Italian and German versions of the documentation.
+- **Multilingual**: Resolved accessibility issues in the Italian and German versions of the documentation.
 - **Quality**: Fixed code block display in LLMaaS tutorials and restored missing images in the Italian version of the VMware IaaS quick start guide.
 
 ### November 20, 2025: Major PaaS OpenShift Update
@@ -77,10 +112,10 @@ sidebar_position: 2
 
 - Full test suite validation.
 - Correction and validation of RAG pipelines with FAISS and Qdrant.
-- Enhanced tutorials with more detailed technical explanations.
-- Added a section on prompt security and model lifecycle within the concepts.
-- Improved the RAG explanation page with diagrams and details on embedding models.
-- Updated API documentation, quick start guide, and service presentation.
-- Added pricing for the Audio Transcription endpoint.
-- Added the projected model lifecycle timeline.
-- Added the responsibility matrix for the LLMaaS offering.
+- Enhancement of tutorials with more detailed technical explanations.
+- Addition of a section on prompt security and model lifecycle within the concepts.
+- Improvement of the RAG explanation page with diagrams and details on embedding models.
+- Update of the API documentation, quick start guide, and service presentation.
+- Addition of pricing for the Audio Transcription endpoint.
+- Addition of the projected model lifecycle roadmap.
+- Addition of the responsibility matrix for the LLMaaS offering.

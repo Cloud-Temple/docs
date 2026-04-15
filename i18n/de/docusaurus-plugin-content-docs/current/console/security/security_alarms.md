@@ -33,14 +33,14 @@ This page is updated daily to account for newly identified vulnerabilities.
 - **Datum** : Datum der ursprünglichen Veröffentlichung der Sicherheitswarnung von Cloud Temple.
 - **Referenz(en)** : CVE-ID, falls verfügbar.
 - **CVSS** : CVSS v3-Basisbewertung gemäß dem Herausgeber oder der CVE, nicht kontextualisiert. Die Kontextualisierung wird durch die Schwere CT ausgedrückt. Falls mehrere Schwachstellen betroffen sind, werden die minimalen und maximalen CVSS-Werte angegeben.
-- **Titel** : Titel der Warnung, mit Herausgeber-Referenz falls verfügbar.
+- **Titel** : Titel der Warnung, mit Herausgeber-Referenz, falls verfügbar.
 - **Beschreibung** : Zusammenfassende Beschreibung mit Link(en) zu detaillierten Informationen.
 - **Dienst(e)** : Cloud Temple-Dienst(e), die betroffen sein könnten.
 - **Schwere** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren betroffenen Schwachstellen). Die Ausnutzbarkeitskriterien werden im technischen Kontext unserer Infrastrukturen und Dienste berücksichtigt.
 
 | Ebene | Beschreibung |
 |-------|--------------|
-| 🔴 **Kritisch** | Schwachstelle mit CVSS 7+ und erheblichem Ausnutzungsrisiko (hohe Exposition, einfache Ausnutzbarkeit). Eine Korrektur oder Minderung der Auswirkungen wird dringend empfohlen. |
+| 🔴 **Kritisch** | Schwachstelle mit CVSS 7+ mit erheblichem Ausnutzungsrisiko (hohe Exposition, einfache Ausnutzbarkeit). Eine Korrektur oder Minderung der Auswirkungen wird dringend empfohlen. |
 | 🟠 **Wichtig** | Schwachstelle mit CVSS 7+, die jedoch kein erhebliches Ausnutzungsrisiko darstellt (begrenzte Exposition oder Ausnutzungsbedingungen). |
 | 🟡 **Mäßig** | Schwachstelle mit CVSS 4+ |
 | 🔵 **Gering** | Schwachstelle mit CVSS unter 4 oder nicht ausnutzbar. |

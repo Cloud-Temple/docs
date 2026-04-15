@@ -305,8 +305,8 @@ Si vous cliquez sur un cluster, vous voyez la synthèse de sa composition :
 - Le nombre de machines virtuelles,
 - Le nombre d'hyperviseurs.
 
-<!-- TODO: Add missing page. -->
-<!-- En consultant la page d'un cluster, plusieurs onglets sont disponibles. L'onglet __'Règles'__ vous permet de définir les [règles d'affinité / anti-affinité](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) -->
+{/* TODO: Add missing page. */}
+{/* En consultant la page - voir TODO ci-dessus */}
 
 <img src={shivaCpool_004} />
 
@@ -349,8 +349,8 @@ Cependant, __nous ne mettons pas de nous même à jour vos hyperviseurs__. Cloud
 Nous vous laissons donc mettre en œuvre votre gestion du changement et appliquer au meilleur moment les nouveaux builds.*
 - *Le processus de mise à jour est entièrement automatisé. Vous devez disposer d'au moins deux hyperviseurs dans votre cluster pour permettre une mise à jour sans interruption de service.*
 
-<!-- TODO: Add missing page. -->
-<!-- - *Il est nécessaire d'avoir [les permissions adéquates](../console/permissions.md) pour effectuer les différentes actions.* -->
+{/* TODO: Add missing page. */}
+{/* - *Il est nécessaire d'avoir les permissions adéquates pour effectuer les différentes actions.* */}
 
 Vous voyez aussi l'ensemble des règles d'affinité/anti-affinité pour votre cluster d'hyperviseurs dans la partie __'Règles'__.
 

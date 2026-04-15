@@ -1,52 +1,52 @@
 ---
 title: Schnellstartanleitung
 ---
-import shivaVmHome from './images/shiva_vm_home.png'
-import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
-import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
-import shivaVmActions from './images/shiva_vm_actions.png'
-import shivaVmInformations from './images/shiva_vm_informations.png'
-import shivaVmBandeauRapide from './images/shiva_vm_bandeau_rapide.png'
-import shivaVmVueRapide from './images/shiva_vm_vue_rapide.png'
-import shivaVmInfosGenerales from './images/shiva_vm_infos_generales.png'
-import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
-import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
-import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
-import shivaCpool_010 from './images/shiva_cpool_010.png'
-import shivaCpool_011 from './images/shiva_cpool_011.png'
-import shivaCpool_012 from './images/shiva_cpool_012.png'
-import shivaCatalogs from './images/shiva_catalogs.png'
-import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
-import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
-import shivaVmTemplate_001 from './images/shiva_vm_template_001.png'
-import shivaVmAdv_001 from './images/shiva_vm_adv_001.png'
-import shivaVmAdv_002 from './images/shiva_vm_adv_002.png'
-import shivaVmAdv_003 from './images/shiva_vm_adv_003.png'
-import shivaVmAdv_004 from './images/shiva_vm_adv_004.png'
-import shivaCpool_001 from './images/shiva_cpool_001.png'
-import shivaEsx_001 from './images/shiva_esx_001.png'
-import shivaEsx_002 from './images/shiva_esx_002.png'
-import shivaCpool_003 from './images/shiva_cpool_003.png'
-import shivaCpool_004 from './images/shiva_cpool_004.png'
-import shivaCpool_005 from './images/shiva_cpool_005.png'
-import shivaCpool_009 from './images/shiva_cpool_009.png'
-import shivaCpool_007 from './images/shiva_cpool_007.png'
-import shivaCpool_008Build from './images/shiva_cpool_008_build.png'
-import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
-import shivaCpool_006 from './images/shiva_cpool_006.png'
-import shivaSupport from '../console/images/shiva_support.png'
-import shivaVmPolitiquesBackupAssignMandatory from './images/shiva_vm_politiques_backup_assign_mandatory.png'
-import shivaVmPolitiquesBackup from './images/shiva_vm_politiques_backup.png'
-import shivaVmDisquesVirtuelsPolitiques from './images/shiva_vm_disques_virtuels_politiques.png'
-import shivaVmPolitiquesBackupExecute from './images/shiva_vm_politiques_backup_execute.png'
-import shivaVmPolitiquesBackupExecute2 from './images/shiva_vm_politiques_backup_execute2.png'
-import shivaVmPolitiquesBackupRetirer from './images/shiva_vm_politiques_backup_retirer.png'
-import shivaVmPolitiquesBackupRetirerImpossible from './images/shiva_vm_politiques_backup_retirer_impossible.png'
-import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
-import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
-import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
-import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
-import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+import shivaVmHome from '@site/docs/iaas_vmware/images/shiva_vm_home.png'
+import shivaVmHomeDesc from '@site/docs/iaas_vmware/images/shiva_vm_home_desc.png'
+import shivaVmHomeAlarme from '@site/docs/iaas_vmware/images/shiva_vm_home_alarme.png'
+import shivaVmActions from '@site/docs/iaas_vmware/images/shiva_vm_actions.png'
+import shivaVmInformations from '@site/docs/iaas_vmware/images/shiva_vm_informations.png'
+import shivaVmBandeauRapide from '@site/docs/iaas_vmware/images/shiva_vm_bandeau_rapide.png'
+import shivaVmVueRapide from '@site/docs/iaas_vmware/images/shiva_vm_vue_rapide.png'
+import shivaVmInfosGenerales from '@site/docs/iaas_vmware/images/shiva_vm_infos_generales.png'
+import shivaVmInfosAvancees from '@site/docs/iaas_vmware/images/shiva_vm_infos_avancees.png'
+import shivaEditCpuRam from '@site/docs/iaas_vmware/images/shiva_edit_cpu_ram.png'
+import shivaVmDiskctrl_001 from '@site/docs/iaas_vmware/images/shiva_vm_diskctrl_001.png'
+import shivaCpool_010 from '@site/docs/iaas_vmware/images/shiva_cpool_010.png'
+import shivaCpool_011 from '@site/docs/iaas_vmware/images/shiva_cpool_011.png'
+import shivaCpool_012 from '@site/docs/iaas_vmware/images/shiva_cpool_012.png'
+import shivaCatalogs from '@site/docs/iaas_vmware/images/shiva_catalogs.png'
+import shivaCatalogs_002 from '@site/docs/iaas_vmware/images/shiva_catalogs_002.png'
+import shivaVmTemplate_002 from '@site/docs/iaas_vmware/images/shiva_vm_template_002.png'
+import shivaVmTemplate_001 from '@site/docs/iaas_vmware/images/shiva_vm_template_001.png'
+import shivaVmAdv_001 from '@site/docs/iaas_vmware/images/shiva_vm_adv_001.png'
+import shivaVmAdv_002 from '@site/docs/iaas_vmware/images/shiva_vm_adv_002.png'
+import shivaVmAdv_003 from '@site/docs/iaas_vmware/images/shiva_vm_adv_003.png'
+import shivaVmAdv_004 from '@site/docs/iaas_vmware/images/shiva_vm_adv_004.png'
+import shivaCpool_001 from '@site/docs/iaas_vmware/images/shiva_cpool_001.png'
+import shivaEsx_001 from '@site/docs/iaas_vmware/images/shiva_esx_001.png'
+import shivaEsx_002 from '@site/docs/iaas_vmware/images/shiva_esx_002.png'
+import shivaCpool_003 from '@site/docs/iaas_vmware/images/shiva_cpool_003.png'
+import shivaCpool_004 from '@site/docs/iaas_vmware/images/shiva_cpool_004.png'
+import shivaCpool_005 from '@site/docs/iaas_vmware/images/shiva_cpool_005.png'
+import shivaCpool_009 from '@site/docs/iaas_vmware/images/shiva_cpool_009.png'
+import shivaCpool_007 from '@site/docs/iaas_vmware/images/shiva_cpool_007.png'
+import shivaCpool_008Build from '@site/docs/iaas_vmware/images/shiva_cpool_008_build.png'
+import shivaCpool_008Firm from '@site/docs/iaas_vmware/images/shiva_cpool_008_firm.png'
+import shivaCpool_006 from '@site/docs/iaas_vmware/images/shiva_cpool_006.png'
+import shivaSupport from '@site/docs/./console/images/shiva_support.png'
+import shivaVmPolitiquesBackupAssignMandatory from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_assign_mandatory.png'
+import shivaVmPolitiquesBackup from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup.png'
+import shivaVmDisquesVirtuelsPolitiques from '@site/docs/iaas_vmware/images/shiva_vm_disques_virtuels_politiques.png'
+import shivaVmPolitiquesBackupExecute from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_execute.png'
+import shivaVmPolitiquesBackupExecute2 from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_execute2.png'
+import shivaVmPolitiquesBackupRetirer from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_retirer.png'
+import shivaVmPolitiquesBackupRetirerImpossible from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_retirer_impossible.png'
+import shivaBackupHeld_001 from '@site/docs/iaas_vmware/images/shiva_backup_held_001.png'
+import shivaBackupHeld_002 from '@site/docs/iaas_vmware/images/shiva_backup_held_002.png'
+import shivaVmBackupRestaurer from '@site/docs/iaas_vmware/images/shiva_vm_backup_restaurer.png'
+import shivaVmBackupTest from '@site/docs/iaas_vmware/images/shiva_vm_backup_test.png'
+import shivaVmBackup_2prod from '@site/docs/iaas_vmware/images/shiva_vm_backup_2prod.png'
 
 ## Calculation
 
@@ -163,11 +163,12 @@ The console of a virtual machine is accessible from the list of virtual machines
 
 <img src={shivaCpool_010} />
 
-A new tab opens in your browser, displaying the console of your machine, based on a **VNC** client:
+A new tab opens in your browser, displaying the console of your machine, based on a __VNC__ client:
 
 <img src={shivaCpool_011} />
 
-In the **VNC** menu, you can:
+In the __VNC__ menu, you can:
+
 - request the transmission of special keys,
 - force a keyboard mapping (in case we were unable to correctly identify your keyboard),
 - open a text field that can be transmitted to the machine. This method replaces the previous non-functional clipboard,
@@ -192,9 +193,11 @@ The input entered in the console depends on the keyboard language of your web br
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you may try copying them from the clipboard.
 
 #### Clipboard Functionality  
+
 This feature allows you to send an entire string of characters to your virtual machine. It is important to note that the "enforce keyboard" setting affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is required, make sure to enable it before using the clipboard.  
 
 This functionality can be used to send a password, a command, or the content of a configuration file, for example:
@@ -304,8 +307,8 @@ Wenn Sie auf einen Cluster klicken, sehen Sie eine Zusammenfassung seiner Zusamm
 - Anzahl der virtuellen Maschinen,
 - Anzahl der Hypervisoren.
 
-<!-- TODO: Add missing page. -->
-<!-- Bei der Betrachtung einer Cluster-Seite sind mehrere Tabs verfügbar. Der Tab __'Regeln'__ ermöglicht die Definition von [Affinitäts- / Anti-Affinitätsregeln](compute.md#verwaltung-der-affinitaet-ihrer-virtuellen-maschinen) -->
+{/*TODO: Add missing page. */}
+{/* Bei der Betrachtung einer Cluster-Seite sind mehrere Tabs verfügbar. Der Tab __'Regeln'__ ermöglicht die Definition von [Affinitäts- / Anti-Affinitätsregeln](compute.md#verwaltung-der-affinitaet-ihrer-virtuellen-maschinen)*/}
 
 <img src={shivaCpool_004} />
 
@@ -336,7 +339,7 @@ Im Tab __'Hosts'__ stehen mehrere Aktionen zur Verfügung:
 
 <img src={shivaCpool_008Build} />
 
-2. Aktualisierung des Firmware-Images Ihres Rechenknotens (BIOS und Firmware von Erweiterungskarten):
+1. Aktualisierung des Firmware-Images Ihres Rechenknotens (BIOS und Firmware von Erweiterungskarten):
 
 <img src={shivaCpool_008Firm} />
 
@@ -348,8 +351,8 @@ __Allerdings führen wir die Aktualisierung Ihrer Hypervisoren nicht automatisch
 Daher überlassen wir Ihnen die Umsetzung Ihrer Änderungsmanagement-Prozesse und die Anwendung der neuen Builds zum optimalen Zeitpunkt.
 - Der Aktualisierungsprozess ist vollständig automatisiert. Sie müssen mindestens zwei Hypervisoren in Ihrem Cluster haben, um eine Update-Operation ohne Dienstunterbrechung durchführen zu können.
 
-<!-- TODO: Add missing page. -->
-<!-- - *Für die Durchführung der verschiedenen Aktionen sind die entsprechenden Berechtigungen erforderlich [siehe hier](../console/permissions.md).* -->
+{/*TODO: Add missing page. */}
+{/* - *Für die Durchführung der verschiedenen Aktionen sind die entsprechenden Berechtigungen erforderlich [siehe hier](../console/permissions.md).**/}
 
 Sie sehen auch alle Affinitäts- und Anti-Affinitätsregeln für Ihren Hypervisor-Cluster im Bereich __'Regeln'__.
 
@@ -373,6 +376,7 @@ You can configure the following rules via the rule management interface:
   For example, you would not want both of your Active Directory servers located on the same hypervisor.
 
 When creating a rule, you define:
+
 - The rule type (affinity / anti-affinity),
 - The rule name,
 - Its activation status (__'Status'__),
@@ -400,7 +404,7 @@ Creating a new backup policy is done through a __service request__ specifying:
 
 ### Assign a backup policy to a virtual machine
 
-When an SLA is assigned to a virtual machine (VM), all disks associated with this VM automatically inherit the same SLA. Subsequently, you can manually trigger a backup execution via the **Backup Policies** tab. If no manual launch is performed, the backup will run automatically according to the schedule defined by the SLA.
+When an SLA is assigned to a virtual machine (VM), all disks associated with this VM automatically inherit the same SLA. Subsequently, you can manually trigger a backup execution via the __Backup Policies__ tab. If no manual launch is performed, the backup will run automatically according to the schedule defined by the SLA.
 
 SecNumCloud requires that a backup policy be assigned to a virtual machine before it is started. Otherwise, you will receive the following notification:
 
@@ -452,7 +456,7 @@ First, verify that the affected jobs are indeed in the "Held" state. Once confir
 
 A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not been deleted. In this scenario, the job identifiers will be retained. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
 
-> **Note:** For any clarification regarding this situation, please contact Cloud Temple support.
+> __Note:__ For any clarification regarding this situation, please contact Cloud Temple support.
 
 The Cloud Temple console prevents assigning a virtual machine to a suspended policy:
 

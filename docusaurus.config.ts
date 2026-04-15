@@ -13,27 +13,27 @@ const config: Config = {
   onBrokenLinks: 'log',
 
   // enable faster build time https://docusaurus.io/blog/releases/3.6
-  // Temporarily disabled due to configuration error, will re-enable if needed
-  // future: {
-  //   experimental_faster: true,
-  //   v4: {
-  //     removeLegacyPostBuildHeadAttribute: true,
-  //   },
-  // },
+  future: {
+    faster: true,
+    v4: true,
+  },
 
   trailingSlash: false,
 
-  // Set the production url of your site here
-  url: 'https://github.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // Production URL of the documentation site
+  url: 'https://docs.cloud-temple.com',
+  // Default baseUrl for GitHub Pages deployment (/docs/ = repo name)
+  // Override with BASE_URL=/ environment variable for custom domain deployments
   baseUrl: process.env.BASE_URL ?? "/docs/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Cloud-Temple', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
-  onBrokenMarkdownLinks: 'warn',
+  // GitHub repository config (used for "Edit this page" links)
+  organizationName: 'Cloud-Temple',
+  projectName: 'docs',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -98,6 +98,12 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
         blog: false, // Optional: disable the blog plugin
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
+        },
       },
     ],
   ],

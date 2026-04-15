@@ -1,35 +1,110 @@
 ---
-title: Utilizzare il SDK Python (Boto3)
+title: Usare il SDK Python (Boto3)
 ---
 
-Boto3 è il kit di sviluppo software (SDK) AWS per Python. Vi consente di creare, configurare e gestire i servizi AWS, inclusi i servizi di archiviazione compatibili con S3 come quello di Cloud Temple, direttamente dalle vostre applicazioni Python.
+Boto3 è il kit di sviluppo software (SDK) AWS per Python. Ti permette di creare, configurare e gestire i servizi compatibili con S3, come il storage oggetti Cloud Temple, direttamente dalle tue applicazioni Python.
 
-### Installazione
+## Installazione
 
-L'installazione della libreria avviene semplicemente tramite pip, il gestore di pacchetti Python:
+L'installatione della libreria avviene semplicemente tramite pip, il gestore di pacchetti Python:
 
 ```bash
 pip install boto3
 ```
 
-### Configurazione del client Boto3
+## Configurazione del client Boto3
 
-Per interagire con il servizio, è necessario inizializzare prima un client Boto3 fornendo le proprie credenziali e l'endpoint specifico per Cloud Temple. Ecco un esempio di configurazione:
+Per interagire con il servizio, è necessario inizializzare un client Boto3 fornendo le proprie credenziali e l'endpoint specifico per Cloud Temple.
 
 ```python
+import boto3
+from botocore.config import Config
+
 # Le tue credenziali
-access_key = 'LA_TUA_CLEF_ACCESSO'
-secret_key = 'LA_TUA_CLEF_SEGRETA'
+access_key = 'LA_TUA_ACCESS_KEY'
+secret_key = 'LA_TUA_SECRET_KEY'
 endpoint_url = 'https://IL_TUO_NAMESPACE.s3.fr1.cloud-temple.com'
-region = 'eu-west-1' # Valore predefinito, può essere adattato
+region = 'fr1'
 
 # Nome del bucket per gli esempi
-bucket_name = 'mon-bucket-test'
+bucket_name = 'il-mio-bucket-test'
 ```
 
-### 1. Elencare i file di un bucket S3
+:::info Regione
+La regione da utilizzare per l'archiviazione oggetti Cloud Temple è **`fr1`**. Assicurati di impostare correttamente questo valore nel parametro `region_name`.
+:::
 
-Per elencare tutti gli oggetti di un bucket, è possibile utilizzare un `paginator`. È il metodo più robusto per esplorare un gran numero di oggetti senza rischiare di superare i limiti di risposta dell'API.
+### Specificità della firma (SigV2 / SigV4)
+
+L'archiviazione oggetti Cloud Temple, basata su **Dell ECS**, supporta due versioni della firma AWS:
+
+- **SigV4** (`signature_version='s3v4'`): raccomandato per le operazioni di **metadati** (LIST, HEAD)
+- **SigV2** (`signature_version='s3'`): raccomandato per le operazioni di **dati** (PUT, GET, DELETE)
+
+:::caution Approccio ibrido raccomandato
+Per una compatibilità ottimale, si raccomanda di utilizzare **due client Boto3** con configurazioni di firma diverse in base al tipo di operazione. Ciò evita gli errori `XAmzContentSHA256Mismatch` che possono verificarsi con SigV4 durante le operazioni di scrittura.
+:::
+
+```python
+import boto3
+from botocore.config import Config
+
+# Client SigV2 per operazioni sui dati (PUT/GET/DELETE)
+config_v2 = Config(
+    region_name='fr1',
+    signature_version='s3',       # SigV2 (legacy)
+    s3={'addressing_style': 'path'},
+    retries={'max_attempts': 3, 'mode': 'adaptive'}
+)
+
+client_data = boto3.client(
+    's3',
+    aws_access_key_id=access_key,
+    aws_secret_access_key=secret_key,
+    endpoint_url=endpoint_url,
+    config=config_v2
+)
+
+# Client SigV4 per operazioni metadati (HEAD/LIST)
+config_v4 = Config(
+    region_name='fr1',
+    signature_version='s3v4',
+    s3={'addressing_style': 'path', 'payload_signing_enabled': False},
+    retries={'max_attempts': 3, 'mode': 'adaptive'}
+)
+
+client_metadata = boto3.client(
+    's3',
+    aws_access_key_id=access_key,
+    aws_secret_access_key=secret_key,
+    endpoint_url=endpoint_url,
+    config=config_v4
+)
+```
+
+:::tip Configurazione semplificata
+Se desideri utilizzare un solo client, preferisci **SigV2** (`signature_version='s3'`) con l'indirizzamento in stile path, che funziona per la maggior parte delle operazioni:
+
+```python
+config = Config(
+    region_name='fr1',
+    signature_version='s3',
+    s3={'addressing_style': 'path'}
+)
+
+s3 = boto3.client(
+    's3',
+    aws_access_key_id=access_key,
+    aws_secret_access_key=secret_key,
+    endpoint_url=endpoint_url,
+    config=config
+)
+```
+:::
+
+## 1. Elencare i file di un bucket S3
+
+Per elencare tutti gli oggetti di un bucket, è possibile utilizzare un `paginator`. Questa è il metodo più robusto per scorrere un gran numero di oggetti senza rischiare di superare i limiti di risposta dell'API.
 
 ```python
 #!/usr/bin/env python3
@@ -37,28 +112,30 @@ Per elencare tutti gli oggetti di un bucket, è possibile utilizzare un `paginat
 import boto3
 from botocore.config import Config
 
-# Inizializzazione del client S3
+# Inizializzazione del client S3 (SigV4 consigliato per LIST)
 s3_client = boto3.client(
     's3',
     aws_access_key_id=access_key,
     aws_secret_access_key=secret_key,
     endpoint_url=endpoint_url,
-    region_name=region,
-    config=Config(signature_version='s3v4')
+    config=Config(
+        region_name='fr1',
+        signature_version='s3v4',
+        s3={'addressing_style': 'path'}
+    )
 )
 
 paginator = s3_client.get_paginator('list_objects_v2')
 operation_parameters = {'Bucket': bucket_name}
-all_files = []
 
 for page in paginator.paginate(**operation_parameters):
     for obj in page.get('Contents', []):
-        print(obj['Key'])
+        print(f"{obj['Key']} - {obj['Size']} byte")
 ```
 
-### 2. Caricare un oggetto (Upload)
+## 2. Caricare un oggetto (Upload)
 
-La méthode `put_object` è un modo flessibile per caricare dati in un bucket. È particolarmente utile quando i dati non provengono direttamente da un file, ma vengono generati o manipolati in memoria, come in questo esempio in cui un oggetto JSON viene caricato.
+Il metodo `put_object` permette di caricare dati in un bucket. È particolarmente utile quando i dati vengono generati o manipolati in memoria.
 
 ```python
 #!/usr/bin/env python3
@@ -67,57 +144,60 @@ import boto3
 import json
 from botocore.config import Config
 
-# Configurazione S3
+# Configurazione S3 (SigV2 consigliato per PUT)
 s3 = boto3.client(
     's3',
     aws_access_key_id=access_key,
     aws_secret_access_key=secret_key,
     endpoint_url=endpoint_url,
-    region_name=region,
-    config=Config(signature_version='s3')
+    config=Config(
+        region_name='fr1',
+        signature_version='s3',
+        s3={'addressing_style': 'path'}
+    )
 )
 
 json_file = {
     "id": 12345,
-    "nom": "Dupont",
-    "prenom": "Claire",
+    "nome": "Dupont",
+    "cognome": "Claire",
     "email": "claire.dupont@example.com",
-    "actif": True,
-    "date_creation": "2024-10-15T08:30:00Z"
+    "attivo": True,
+    "data_creazione": "2024-10-15T08:30:00Z"
 }
 
-key = f"users/dupond_claire.json"
+key = "users/dupont_claire.json"
 
-# Conversione in stringa JSON poi in byte
+# Converti in stringa JSON e poi in byte
 json_str = json.dumps(json_file, indent=2)
 body_bytes = json_str.encode("utf-8")
 
-put_object_result = s3.put_object(
+result = s3.put_object(
     Bucket=bucket_name,
     Key=key,
     Body=body_bytes,
     ContentType="application/json"
 )
-print(put_object_result)
+print(f"Upload riuscito : {result['ResponseMetadata']['HTTPStatusCode']}")
 ```
 
-#### Definire le autorizzazioni (ACL) durante l'upload
+### Definire i permessi (ACL) durante l'upload
 
-È possibile specificare le autorizzazioni di accesso (ACL) direttamente durante la chiamata a `put_object` per rendere, ad esempio, un oggetto immediatamente leggibile pubblicamente.
+È possibile specificare i permessi di accesso (ACL) direttamente durante la chiamata a `put_object`:
 
 ```python
-put_object_result = s3.put_object(
-        Bucket=bucket_name,
-        Key=key,
-        Body=body_bytes,
-        ContentType="application/json",
-        ACL="public-read"  # Rendere l'oggetto leggibile pubblicamente
-    )
+result = s3.put_object(
+    Bucket=bucket_name,
+    Key=key,
+    Body=body_bytes,
+    ContentType="application/json",
+    ACL="public-read"  # Rende l'oggetto leggibile pubblicamente
+)
 ```
 
-### 3. Leggere un oggetto (Download)
+## 3. Leggere un oggetto (Download)
 
-Per recuperare il contenuto di un oggetto, utilizza il metodo `get_object`. Esso restituisce un oggetto di tipo `StreamingBody` che puoi quindi leggere per ottenere i dati grezzi in byte.
+Per recuperare il contenuto di un oggetto, utilizza il metodo `get_object`. Esso restituisce un oggetto di tipo `StreamingBody` che puoi leggere per ottenere i dati grezzi.
 
 ```python
 #!/usr/bin/env python3
@@ -125,22 +205,25 @@ Per recuperare il contenuto di un oggetto, utilizza il metodo `get_object`. Esso
 import boto3
 from botocore.config import Config
 
-# Inizializzazione del client S3
-s3_client = boto3.client(
+# Inizializzazione del client S3 (SigV2 consigliato per GET)
+s3 = boto3.client(
     's3',
     aws_access_key_id=access_key,
     aws_secret_access_key=secret_key,
     endpoint_url=endpoint_url,
-    region_name=region,
-    config=Config(signature_version='s3v4')
+    config=Config(
+        region_name='fr1',
+        signature_version='s3',
+        s3={'addressing_style': 'path'}
+    )
 )
 
-response = s3_client.get_object(Bucket=bucket_name, Key='kb_data/agents/cisco-ucs-specialist.json')
+response = s3.get_object(Bucket=bucket_name, Key='users/dupont_claire.json')
 content = response['Body'].read().decode('utf-8')
 print(content)
 ```
 
-### 4. Eliminare un oggetto
+## 4. Eliminare un oggetto
 
 Il metodo `delete_object` consente di eliminare definitivamente un oggetto da un bucket.
 
@@ -150,32 +233,36 @@ Il metodo `delete_object` consente di eliminare definitivamente un oggetto da un
 import boto3
 from botocore.config import Config
 
-# Inizializzare il client S3
+# Inizializzare il client S3 (SigV2 consigliato per DELETE)
 s3 = boto3.client(
     's3',
     aws_access_key_id=access_key,
     aws_secret_access_key=secret_key,
     endpoint_url=endpoint_url,
-    region_name=region,
-    config=Config(signature_version='s3')
+    config=Config(
+        region_name='fr1',
+        signature_version='s3',
+        s3={'addressing_style': 'path'}
+    )
 )
 
-key = f"users/dupond_claire.json"
-delete_object_result = s3.delete_object(Bucket=bucket_name, Key=key)
-print(f"action result : {delete_object_result}")
+key = "users/dupont_claire.json"
+result = s3.delete_object(Bucket=bucket_name, Key=key)
+print(f"Eliminazione: {result['ResponseMetadata']['HTTPStatusCode']}")
 ```
 
-### 5. Rendere un oggetto pubblico (Read All)
+## 5. Rendere un oggetto pubblico (Read All)
 
-Se un oggetto esiste già, è possibile modificare le sue autorizzazioni per renderlo accessibile pubblicamente utilizzando il metodo `put_object_acl`.
+Se un oggetto esiste già, puoi modificare i suoi permessi per renderlo accessibile in lettura da chiunque utilizzando il metodo `put_object_acl`.
 
-**Attenzione:** Rendere un oggetto pubblico significa che chiunque disponga dell'URL può accedervi. Utilizzare questa opzione con prudenza.
+:::danger Attenzione
+Rendere un oggetto pubblico significa che chiunque disponga dell'URL potrà accedervi. Utilizza questa opzione con cautela e in conformità con la tua politica di sicurezza.
+:::
 
 ```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import boto3
-import os
 from botocore.config import Config
 
 # Configurazione S3
@@ -184,11 +271,50 @@ s3 = boto3.client(
     aws_access_key_id=access_key,
     aws_secret_access_key=secret_key,
     endpoint_url=endpoint_url,
-    region_name=region,
-    config=Config(signature_version='s3')
+    config=Config(
+        region_name='fr1',
+        signature_version='s3',
+        s3={'addressing_style': 'path'}
+    )
 )
-key = f"users/dupond_claire.json"
-put_object_acl_result = s3.put_object_acl(Bucket=bucket_name, Key=key, ACL="public-read")
 
-public_url = f"{os.getenv('S3_ENDPOINT_URL').rstrip('/')}/{bucket_name}/{key}"
-print("URL pubblico:", public_url)
+key = "users/dupont_claire.json"
+s3.put_object_acl(Bucket=bucket_name, Key=key, ACL="public-read")
+
+public_url = f"{endpoint_url.rstrip('/')}/{bucket_name}/{key}"
+print("URL pubblica :", public_url)
+```
+
+## Risoluzione dei problemi
+
+### Errore `XAmzContentSHA256Mismatch`
+
+Se si verifica questo errore durante operazioni `PUT`:
+
+```
+An error occurred (XAmzContentSHA256Mismatch) when calling the PutObject operation
+```
+
+**Causa**: L'infrastruttura di archiviazione oggetti Cloud Temple (Dell ECS) può presentare incompatibilità con il calcolo dell'hash SHA-256 utilizzato da SigV4 per le operazioni di scrittura.
+
+**Soluzione**: Utilizzare la firma SigV2 per le operazioni sui dati:
+
+```python
+config = Config(
+    region_name='fr1',
+    signature_version='s3',       # Utilizzare SigV2 invece di s3v4
+    s3={'addressing_style': 'path'}
+)
+```
+
+### Errore `SignatureDoesNotMatch`
+
+Se ricevi questo errore, verifica:
+
+1. Che le tue chiavi di accesso (`access_key_id` e `secret_access_key`) siano corrette
+2. Che la regione sia correttamente impostata su `fr1`
+3. Che tu stia utilizzando il giusto endpoint (formato: `https://IL_TUO_NAMESPACE.s3.fr1.cloud-temple.com`)
+
+### Il bucket non trovato
+
+Assicurati di utilizzare lo **stile di indirizzamento per percorso** (`s3={'addressing_style': 'path'}`) nella configurazione. Lo stile di indirizzamento con host virtuale sarà supportato a partire dal S2 2026.

@@ -33,6 +33,12 @@ Grâce à la **Console**, vous pouvez superviser et exploiter vos infrastructure
     <p>Commander et suivre le déploiement de nouvelles ressources.</p>
     <a href="console/metrics/concepts" class="card-link">Découvrir les menus &rarr;</a>
   </div>
+
+  <div class="card">
+    <h3>Gestionnaire des coûts</h3>
+    <p>Suivez et analysez votre consommation de ressources cloud par produit et par service.</p>
+    <a href="console/billing/concepts" class="card-link">Accéder au module &rarr;</a>
+  </div>
 </div>
 
 ### Gestion de vos produits et services Cloud Temple

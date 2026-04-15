@@ -127,6 +127,24 @@ terraform apply
 - **Code source** : [GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple)
 - **Issues** : [GitHub Issues](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues)
 
+## Rester informé
+
+Pour être notifié automatiquement des nouvelles releases du provider Terraform Cloud Temple, vous pouvez vous abonner aux notifications depuis le repository GitHub.
+
+### S'abonner aux notifications de release
+
+1. Rendez-vous sur le [repository GitHub du provider](https://github.com/Cloud-Temple/terraform-provider-cloudtemple)
+
+2. Cliquez sur le bouton **Watch** en haut à droite du repository
+
+![Bouton Watch GitHub](./images/provider_terraform_notify.png)
+
+3. Sélectionnez **Custom** puis cochez **Releases**
+
+![Configuration des notifications](./images/provider_terraform_subscribe.png)
+
+Vous recevrez désormais une notification par email à chaque nouvelle release du provider.
+
 ## Prochaines étapes
 
 - [Concepts](concepts.md) : Comprendre les concepts clés du provider

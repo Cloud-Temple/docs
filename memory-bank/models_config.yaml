@@ -6,9 +6,9 @@ stats:
   total_models: 41 # Mis à jour
   min_context: 8192 # Granite Guardian 2B
   max_context: 262144 # Qwen3 4B
-  pricing_input: 0.9
-  pricing_output: 4
-  pricing_reasoning: 21
+  pricing_input: 1.9
+  pricing_output: 8
+  pricing_reasoning: 8
   pricing_audio: 0.01 # Par minutes
   secnumcloud: true
   hds: true
