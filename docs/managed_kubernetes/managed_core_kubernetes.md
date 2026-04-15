@@ -22,7 +22,7 @@ title: Vue d'ensemble Managed Core Kubernetes
   </div>
 </div>
 
-Managed **Core** Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs reposant sur une sélection de produits Open Source, conçue pour offrir un socle de base sécurisé, résilient et automatisé sur les plateformes SecNumCloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple OpenIaaS entièrement dédié au client.
+Managed **Core** Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs reposant sur une sélection de produits Open Source, conçue pour offrir un socle de base sécurisé, résilient et automatisé sur les plateformes SecNumCloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
 Cette offre est conçue pour les équipes ayant une excellente maîtrise de Kubernetes et des outils Cloud Native, qui souhaitent construire leur propre plateforme sur des fondations minimalistes et robustes. Elle s'adresse aux adeptes de l'open source qui recherchent une solution épurée, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
@@ -38,7 +38,7 @@ L'offre "Managed Core" inclut nativement une stack minimale et cohérente d'outi
 
 - **OS et Réseau** : Talos, Cilium, MetalLB
 
-A partir de ce socle, vous êtes libre d'intégrer vos propres outils pour le stockage, le déploiement continu, l'observabilité, la sauvegarde et la gestion des coûts.
+A partir de ce socle, vous êtes libre d'intégrer vos propres outils pour le déploiement continu, l'observabilité, la sauvegarde et la gestion des coûts.
 
 ---
 
