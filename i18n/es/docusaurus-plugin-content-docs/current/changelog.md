@@ -5,20 +5,24 @@ sidebar_position: 2
 
 # Registro de Cambios
 
+### 15 de abril de 2026: Nueva documentación de VMaaS (Cloud Public)
+
+- **VMaaS**: Publicación de la documentación inicial del servicio VMaaS (en preview), la nueva oferta de máquinas virtuales compartidas de Cloud Temple. La documentación cubre la descripción general del servicio, los conceptos técnicos (clases de servicio Development/General Purpose/Performance, flavors predefinidos y personalizados, almacenamiento, red VPC, copia de seguridad) y una guía de inicio completa. El servicio está organizado bajo una nueva categoría **Cloud Public** en la navegación.
+
 ### 15 de abril de 2026: Mejora de la documentación IaaS VMware — métricas de clúster
 
-- **IaaS VMware**: Añadida documentación detallada sobre las métricas mostradas en la vista de un clúster VMware desde la Consola Cloud Temple. Cubre los tres gráficos de memoria del clúster: **Memoria aprovisionada** (total de memoria asignada a las VMs), **Memoria consumida** (memoria física activamente utilizada por las VMs) y **Asignación en el peor caso** (proyección del consumo máximo simultáneo), con una descripción precisa de lo que representa cada indicador para anticipar las necesidades de recursos. Disponible en francés, inglés, alemán, español e italiano.
+- **IaaS VMware**: Añadida documentación detallada sobre las métricas mostradas en la vista de un clúster VMware desde la Consola Cloud Temple. Cubre los tres gráficos de memoria del clúster: **Memoria aprovisionada** (total de memoria asignada a las VMs), **Memoria consumida** (memoria física activamente utilizada por las VMs) y **Asignación en el peor caso** (proyección del consumo máximo simultáneo), con una descripción precisa de lo que representa cada indicador para anticipar las necesidades de recursos.
 
 ### 15 de abril de 2026: Documentación Managed MariaDB, Managed PostgreSQL y correcciones multilingües
 
-- **Managed MariaDB**: Publicación inicial de la documentación del servicio Managed MariaDB (vista previa): descripción general del servicio, conceptos técnicos (arquitecturas StandAlone y Distributed), guía de inicio rápido. Disponible en francés, inglés, alemán, español e italiano.
-- **Managed PostgreSQL**: Publicación inicial de la documentación del servicio Managed PostgreSQL (vista previa): descripción general del servicio, conceptos técnicos, guía de inicio rápido. Disponible en francés, inglés, alemán, español e italiano.
+- **Managed MariaDB**: Publicación inicial de la documentación del servicio Managed MariaDB (vista previa): descripción general del servicio, conceptos técnicos (arquitecturas StandAlone y Distributed), guía de inicio rápido.
+- **Managed PostgreSQL**: Publicación inicial de la documentación del servicio Managed PostgreSQL (vista previa): descripción general del servicio, conceptos técnicos, guía de inicio rápido.
 - **Correcciones multilingües (imágenes)**: Corrección de referencias de imágenes en las traducciones de las secciones Managed Kubernetes y Managed MariaDB para todos los idiomas (EN, DE, ES, IT) — conversión de rutas relativas `./images/` a rutas absolutas `@site/docs/...` para una correcta visualización en todos los idiomas.
 - **Corrección de enlaces rotos**: Resolución de varios enlaces rotos: referencias a licencias LLMaaS, enlace a la consola en el tutorial rclone (OSS), enlace IAM en la documentación de red (EN), enlaces relativos en la sección Terraform (EN).
 
 ### 15 de abril de 2026: Nuevo módulo Gestor de costos
 
-- **Consola (Gestor de costos)**: Añadida documentación completa del nuevo módulo de seguimiento del consumo accesible desde la Consola Cloud Temple. Cubre el panel de control, el consumo global (con proyección de fin de mes), el desglose por producto y servicio, los detalles de facturación línea por línea y el catálogo de precios. Disponible en francés, inglés, alemán, español e italiano.
+- **Consola (Gestor de costos)**: Añadida documentación completa del nuevo módulo de seguimiento del consumo accesible desde la Consola Cloud Temple. Cubre el panel de control, el consumo global (con proyección de fin de mes), el desglose por producto y servicio, los detalles de facturación línea por línea y el catálogo de precios.
 
 ### 26 de marzo de 2026: Actualización de la lista de subencargados (DPA)
 

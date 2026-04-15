@@ -5,20 +5,25 @@ sidebar_position: 2
 
 # Änderungsprotokoll
 
+### 15. April 2026: Neue VMaaS-Dokumentation (Cloud Public)
+
+- **VMaaS**: Veröffentlichung der ersten Dokumentation für den VMaaS-Dienst (Vorschau), Cloud Temples neues Angebot für gemeinsam genutzte virtuelle Maschinen. Die Dokumentation umfasst die Dienstübersicht, technische Konzepte (Service-Klassen Development/General Purpose/Performance, vordefinierte und Custom-Flavors, Speicher, VPC-Netzwerk, Backup) sowie einen vollständigen Leitfaden für den Einstieg. Der Dienst ist unter einer neuen Kategorie **Cloud Public** in der Navigation organisiert.
+
+
 ### 15. April 2026: Verbesserung der IaaS VMware-Dokumentation — Cluster-Metriken
 
-- **IaaS VMware**: Detaillierte Dokumentation der in der VMware-Cluster-Ansicht der Cloud Temple Konsole angezeigten Metriken hinzugefügt. Umfasst die drei Cluster-Speicher-Diagramme: **Bereitgestellter Speicher** (insgesamt den VMs zugewiesener Speicher), **Verwendeter Speicher** (physischer Speicher, der aktiv von den VMs genutzt wird) und **Worst-Case-Zuweisung** (Projektion des maximalen gleichzeitigen Verbrauchs), mit einer präzisen Beschreibung der Bedeutung jedes Indikators zur Vorwegnahme des Ressourcenbedarfs. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **IaaS VMware**: Detaillierte Dokumentation der in der VMware-Cluster-Ansicht der Cloud Temple Konsole angezeigten Metriken hinzugefügt. Umfasst die drei Cluster-Speicher-Diagramme: **Bereitgestellter Speicher** (insgesamt den VMs zugewiesener Speicher), **Verwendeter Speicher** (physischer Speicher, der aktiv von den VMs genutzt wird) und **Worst-Case-Zuweisung** (Projektion des maximalen gleichzeitigen Verbrauchs), mit einer präzisen Beschreibung der Bedeutung jedes Indikators zur Vorwegnahme des Ressourcenbedarfs.
 
 ### 15. April 2026: Dokumentation Managed MariaDB, Managed PostgreSQL und mehrsprachige Korrekturen
 
-- **Managed MariaDB**: Erstveröffentlichung der Dokumentation für den Managed MariaDB-Dienst (Vorschau): Dienstübersicht, technische Konzepte (StandAlone- und Distributed-Architekturen), Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
-- **Managed PostgreSQL**: Erstveröffentlichung der Dokumentation für den Managed PostgreSQL-Dienst (Vorschau): Dienstübersicht, technische Konzepte, Schnellstartanleitung. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **Managed MariaDB**: Erstveröffentlichung der Dokumentation für den Managed MariaDB-Dienst (Vorschau): Dienstübersicht, technische Konzepte (StandAlone- und Distributed-Architekturen), Schnellstartanleitung.
+- **Managed PostgreSQL**: Erstveröffentlichung der Dokumentation für den Managed PostgreSQL-Dienst (Vorschau): Dienstübersicht, technische Konzepte, Schnellstartanleitung.
 - **Mehrsprachige Korrekturen (Bilder)**: Korrektur der Bildreferenzen in den Übersetzungen der Abschnitte Managed Kubernetes und Managed MariaDB für alle Sprachen (EN, DE, ES, IT) — Konvertierung relativer `./images/`-Pfade in absolute `@site/docs/...`-Pfade für korrekte Darstellung in allen Sprachen.
 - **Korrekturen defekter Links**: Behebung mehrerer defekter Links: LLMaaS-Lizenzreferenzen, Konsolenlink im rclone-Tutorial (OSS), IAM-Link in der Netzwerkdokumentation (EN), relative Links im Terraform-Abschnitt (EN).
 
 ### 15. April 2026: Neues Kostenverwaltungsmodul
 
-- **Konsole (Kostenverwaltung)**: Vollständige Dokumentation des neuen Verbrauchsverfolgungsmoduls der Cloud Temple Konsole hinzugefügt. Umfasst das Dashboard, den Gesamtverbrauch (mit Prognose für Monatsende), die Aufschlüsselung nach Produkt und Service, detaillierte Abrechnungszeilen und den Preiskatalog. Verfügbar auf Französisch, Englisch, Deutsch, Spanisch und Italienisch.
+- **Konsole (Kostenverwaltung)**: Vollständige Dokumentation des neuen Verbrauchsverfolgungsmoduls der Cloud Temple Konsole hinzugefügt. Umfasst das Dashboard, den Gesamtverbrauch (mit Prognose für Monatsende), die Aufschlüsselung nach Produkt und Service, detaillierte Abrechnungszeilen und den Preiskatalog.
 
 ### 26. März 2026: Aktualisierung der Unterauftragsverarbeiter-Liste (DPA)
 
