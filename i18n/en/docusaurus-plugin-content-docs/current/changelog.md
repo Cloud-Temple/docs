@@ -5,20 +5,24 @@ sidebar_position: 2
 
 # Change Log
 
+### April 15, 2026: New VMaaS documentation (Cloud Public)
+
+- **VMaaS**: Initial documentation release for the VMaaS service (in preview), Cloud Temple's new shared virtual machine offering. The documentation covers the service overview, technical concepts (Development/General Purpose/Performance service classes, predefined and custom flavors, storage, VPC networking, backup), and a complete getting started guide. The service is organised under a new **Cloud Public** category in the navigation.
+
 ### April 15, 2026: IaaS VMware Documentation Improvement — Cluster Metrics
 
-- **IaaS VMware**: Added detailed documentation on the metrics displayed in the VMware cluster view from the Cloud Temple Console. Covers the three cluster memory graphs: **Provisioned Memory** (total memory allocated to VMs), **Used Memory** (physical memory actively consumed by VMs) and **Worst-Case Allocation** (projection of maximum simultaneous consumption), with a precise description of what each indicator represents to help anticipate resource needs. Available in French, English, German, Spanish, and Italian.
+- **IaaS VMware**: Added detailed documentation on the metrics displayed in the VMware cluster view from the Cloud Temple Console. Covers the three cluster memory graphs: **Provisioned Memory** (total memory allocated to VMs), **Used Memory** (physical memory actively consumed by VMs) and **Worst-Case Allocation** (projection of maximum simultaneous consumption), with a precise description of what each indicator represents to help anticipate resource needs.
 
 ### April 15, 2026: Managed MariaDB, Managed PostgreSQL Documentation and Multilingual Fixes
 
-- **Managed MariaDB**: Initial release of the Managed MariaDB service documentation (preview): service overview, technical concepts (StandAlone and Distributed architectures), quick start guide. Available in French, English, German, Spanish, and Italian.
-- **Managed PostgreSQL**: Initial release of the Managed PostgreSQL service documentation (preview): service overview, technical concepts, quick start guide. Available in French, English, German, Spanish, and Italian.
+- **Managed MariaDB**: Initial release of the Managed MariaDB service documentation (preview): service overview, technical concepts (StandAlone and Distributed architectures), quick start guide.
+- **Managed PostgreSQL**: Initial release of the Managed PostgreSQL service documentation (preview): service overview, technical concepts, quick start guide.
 - **Multilingual Fixes (images)**: Fixed image references in translations for the Managed Kubernetes and Managed MariaDB sections across all languages (EN, DE, ES, IT) — converting relative `./images/` paths to absolute `@site/docs/...` paths ensuring correct rendering in all languages.
 - **Broken Link Fixes**: Resolved several broken links: LLMaaS licence references, console link in the rclone tutorial (OSS), IAM link in the network documentation (EN), relative links in the Terraform section (EN).
 
 ### April 15, 2026: New Cost Manager Module
 
-- **Console (Cost Manager)**: Added complete documentation for the new consumption tracking module accessible from the Cloud Temple Console. Covers the dashboard, global consumption (with end-of-month projection), breakdown by product and service, line-by-line billing details, and the price catalog. Available in French, English, German, Spanish, and Italian.
+- **Console (Cost Manager)**: Added complete documentation for the new consumption tracking module accessible from the Cloud Temple Console. Covers the dashboard, global consumption (with end-of-month projection), breakdown by product and service, line-by-line billing details, and the price catalog.
 
 ### March 26, 2026: Sub-processors List Update (DPA)
 

@@ -5,20 +5,24 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 15 Avril 2026 : Nouvelle documentation VMaaS (Cloud Public)
+
+- **VMaaS** : Mise en ligne de la documentation initiale du service VMaaS (en preview), nouvelle offre de machines virtuelles mutualisées de Cloud Temple. La documentation couvre la vue d'ensemble du service, les concepts techniques (classes de service Development/General Purpose/Performance, gabarits prédéfinis et custom, stockage, réseau VPC, sauvegarde), ainsi qu'un guide de démarrage complet. Le service est organisé sous une nouvelle catégorie **Cloud Public** dans la navigation.
+
 ### 15 Avril 2026 : Amélioration de la documentation IaaS VMware — métriques cluster
 
-- **IaaS VMware** : Ajout d'une documentation détaillée sur les métriques affichées dans la vue d'un cluster VMware depuis la Console Cloud Temple. Couvre les trois graphiques de mémoire du cluster : **Mémoire allouée** (quantité totale allouée aux VMs), **Mémoire consommée** (mémoire physique réellement utilisée par les VMs) et **Allocation dans le pire des cas** (projection de consommation maximale simultanée), avec la description précise de ce que chaque indicateur représente pour anticiper les besoins en ressources. Disponible en français, anglais, allemand, espagnol et italien.
+- **IaaS VMware** : Ajout d'une documentation détaillée sur les métriques affichées dans la vue d'un cluster VMware depuis la Console Cloud Temple. Couvre les trois graphiques de mémoire du cluster : **Mémoire allouée** (quantité totale allouée aux VMs), **Mémoire consommée** (mémoire physique réellement utilisée par les VMs) et **Allocation dans le pire des cas** (projection de consommation maximale simultanée), avec la description précise de ce que chaque indicateur représente pour anticiper les besoins en ressources.
 
 ### 15 Avril 2026 : Documentation Managed MariaDB, Managed PostgreSQL et corrections multilingues
 
-- **Managed MariaDB** : Mise en ligne de la documentation initiale du service Managed MariaDB (en preview) : présentation du service, concepts techniques (architectures StandAlone et Distributed), guide de démarrage. Disponible en français, anglais, allemand, espagnol et italien.
-- **Managed PostgreSQL** : Mise en ligne de la documentation initiale du service Managed PostgreSQL (en preview) : présentation du service, concepts techniques, guide de démarrage. Disponible en français, anglais, allemand, espagnol et italien.
+- **Managed MariaDB** : Mise en ligne de la documentation initiale du service Managed MariaDB (en preview) : présentation du service, concepts techniques (architectures StandAlone et Distributed), guide de démarrage. 
+- **Managed PostgreSQL** : Mise en ligne de la documentation initiale du service Managed PostgreSQL (en preview) : présentation du service, concepts techniques, guide de démarrage.
 - **Corrections multilingues (images)** : Correction des références d'images dans les traductions des sections Managed Kubernetes et Managed MariaDB pour toutes les langues (EN, DE, ES, IT) — conversion des chemins relatifs `./images/` vers des chemins absolus `@site/docs/...` assurant un rendu correct dans toutes les langues.
 - **Corrections liens brisés** : Résolution de plusieurs liens brisés dans la documentation : références aux licences LLMaaS, lien vers la console dans le tutoriel rclone (OSS), lien IAM dans la documentation réseau (EN), liens relatifs dans la section Terraform (EN).
 
 ### 15 Avril 2026 : Nouveau module Gestionnaire des coûts
 
-- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix. Disponible en français, anglais, allemand, espagnol et italien.
+- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix.
 
 ### 26 Mars 2026 : Mise à jour de la liste des sous-traitants (DPA)
 
