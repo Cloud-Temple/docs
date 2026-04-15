@@ -53,13 +53,13 @@ Ideal für POC-Umgebungen, diese kompakte Architektur stellt alle Ressourcen inn
 
 - **Verwendungszweck**: Entwicklung, Tests, Proof-of-Concept (POC).
 - **Wichtige Merkmale**:
-    - 1 Control-Plane-Knoten.
-    - 3 Worker-Knoten (oder mehr).
-    - Der verteilte Speicher (Ceph) ist auf den Worker-Knoten ko-lokalisiert.
-    - Kein SLA für hohe Verfügbarkeit.
-    - Keine Sicherheitsbeschränkungen.
+  - 1 Control-Plane-Knoten.
+  - 3 Worker-Knoten (oder mehr).
+  - Der verteilte Speicher (Ceph) ist auf den Worker-Knoten ko-lokalisiert.
+  - Kein SLA für hohe Verfügbarkeit.
+  - Keine Sicherheitsbeschränkungen.
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
 
 ### Production Architecture (Multi-AZ)
 
@@ -67,13 +67,13 @@ Designed for production and critical applications, this architecture distributes
 
 - **Use Case**: Production applications, critical services, platforms requiring an SLA.
 - **Key Features**:
-    - **High Availability**: 3 Control Plane nodes distributed across 3 AZs.
-    - **Dedicated Storage**: 3 dedicated storage nodes distributed for performance and resilience.
-    - **Distributed Workers**: Minimum of 3 worker nodes, one per AZ.
-    - **Bare Metal Nodes (Optional)**: Optional integration of **"Bare Metal"** worker nodes for specific performance requirements, particularly **GPU support**.
-    - **SLA of 99.90%**.
+  - **High Availability**: 3 Control Plane nodes distributed across 3 AZs.
+  - **Dedicated Storage**: 3 dedicated storage nodes distributed for performance and resilience.
+  - **Distributed Workers**: Minimum of 3 worker nodes, one per AZ.
+  - **Bare Metal Nodes (Optional)**: Optional integration of **"Bare Metal"** worker nodes for specific performance requirements, particularly **GPU support**.
+  - **SLA of 99.90%**.
 
-<img src={require('./images/archi_overview.png').default} alt="Multi-AZ Architecture" />
+<img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Multi-AZ Architecture" />
 
 ### Detailed Technical Components
 

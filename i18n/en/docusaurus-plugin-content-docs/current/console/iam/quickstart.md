@@ -1,15 +1,15 @@
 ---
 title: Getting Started Guide
 ---
-import shivaTenant from './images/shiva_tenant.png'
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
-import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Tenant
 
@@ -40,7 +40,7 @@ Credentials are global to your [Organization](concepts.md#organizations).
 
 ### Creating a User Account in Your Organization
 
-Creating a user account in your organization is done through invitation. To invite a user to an [Organization](concepts.md#organisations), go to the __'Administration'__ menu on the left side of your screen, along the green banner, then select the __'Users'__ submenu.
+Creating a user account in your organization is done through invitation. To invite a user to an [Organization](concepts.md#organizations), go to the __'Administration'__ menu on the left side of your screen, along the green banner, then select the __'Users'__ submenu.
 
 Click the __'New User'__ button from the users page.
 
@@ -68,8 +68,8 @@ The rights activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](concepts.md#tenant) within the 
-[Organization](concepts.md#organisations).
+Permission configuration must be done for each [Tenant](concepts.md#tenant) within the
+[Organization](concepts.md#organizations).
 
 The list of permissions and their definitions is available [here](#permissions).
 
@@ -120,6 +120,7 @@ Go to the users page and click the __'Export CSV'__ button:
 In the __'Administration'__ menu on the green bar on the left side of the screen, under the __'User'__ submenu, click the __'Action'__ icon of the target user and select __'Delete'__.
 
 *__Note__:*  
+
 - *To add a user, you must have the __'iam_write'__ permission.*  
 - *If this is a federated user, __make sure the user has also been deleted from the identity repository__.*
 
@@ -154,7 +155,7 @@ The user must provide two distinct proofs of identity. In the case of the Consol
 
 Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with the SecNumCloud certification requirements. This restriction ensures a heightened level of security by allowing access only from specified IP ranges, thereby minimizing the risk of unauthorized access and protecting the cloud infrastructure according to the highest security standards.
 
-It is now possible to view the list of authorized public IP addresses for the tenant and to add a new public IP address directly from the **Administration > Access** tab.
+It is now possible to view the list of authorized public IP addresses for the tenant and to add a new public IP address directly from the __Administration > Access__ tab.
 
 <img src={shivaIpAccessManagement_01} />
 
