@@ -2,7 +2,7 @@
 title: Il networking in Kubernetes Gestito
 ---
 
-import cillium from './images/cillium.png'
+import cillium from '@site/docs/managed_kubernetes/tutorials/images/cillium.png'
 
 ---
 

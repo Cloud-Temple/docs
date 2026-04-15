@@ -137,11 +137,11 @@ Pour être notifié automatiquement des nouvelles releases du provider Terraform
 
 2. Cliquez sur le bouton **Watch** en haut à droite du repository
 
-![Bouton Watch GitHub](./images/provider_terraform_notify.png)
+![Bouton Watch GitHub](@site/docs/terraform/images/provider_terraform_notify.png)
 
 3. Sélectionnez **Custom** puis cochez **Releases**
 
-![Configuration des notifications](./images/provider_terraform_subscribe.png)
+![Configuration des notifications](@site/docs/terraform/images/provider_terraform_subscribe.png)
 
 Vous recevrez désormais une notification par email à chaque nouvelle release du provider.
 

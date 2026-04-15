@@ -59,7 +59,7 @@ Für lokal über die Konsole verwaltete Accounts (ohne Föderation) ist MFA stan
 
 Weitere Informationen:  
 
-- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../console/iam/quickstart#berechtigungen)
 - [Tutoriel : Fédération d'identité avec Microsoft EntraID | Documentation Cloud Temple](../console/iam/tutorials/sso_aad)
 - [Tutoriel : Fédération d'identité avec Microsoft ADFS | Documentation Cloud Temple](../console/iam/tutorials/sso_adfs)
 
@@ -124,7 +124,7 @@ Eine in der Konsole verfügbare Sicherheitsinformationsseite ermöglicht die Ide
 Um eine effektive Überwachung Ihrer Cloud-Umgebung sicherzustellen und im Falle von Anomalien schnell reagieren zu können, ist es wichtig, eine aktive Monitoring-Strategie einzurichten. Wir empfehlen insbesondere:
 
 - **Verfolgung der Dienstverfügbarkeit** über die [Status page | Cloud Temple](https://status.cloud-temple.com/), um bei globalen Vorfällen oder Ausfällen benachrichtigt zu werden;
-- **Aktivieren Sie thematische Benachrichtigungen**, die für Ihre Nutzung relevant sind, direkt in der Konsole, um wichtige Warnmeldungen in Echtzeit zu erhalten (siehe [Abonnement aux notifications thématiques | Documentation Cloud Temple](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Aktivieren Sie thematische Benachrichtigungen**, die für Ihre Nutzung relevant sind, direkt in der Konsole, um wichtige Warnmeldungen in Echtzeit zu erhalten (siehe [Abonnement aux notifications thématiques | Documentation Cloud Temple](../console/iam/concepts#thematic-notifications-subscription));
 - **Nutzen Sie die Cloud-Aktivitätsprotokolle**, um sensible oder verdächtige Aktionen an Ihren Ressourcen zu identifizieren (siehe Abschnitt „Protokollierung - Aktivitätsüberwachung“ im [Guide de démarrage | Documentation Cloud Temple](../iaas_vmware/quickstart)). Das Sammeln und die Analyse der Aktivitätsprotokolle kann über die Console-APIs automatisiert werden, um Ereignisse in Ihre Überwachungs- oder Incident-Detection-Tools zu integrieren.
 
 ## Absicherung der gehosteten Ressourcen

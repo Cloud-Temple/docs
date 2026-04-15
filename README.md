@@ -98,16 +98,16 @@ The documentation supports 5 languages: __French (default)__, English, Spanish, 
 
    ```bash
    # Start in English
-   yarn start -- --locale en
-   
+   yarn start --locale en
+
    # Start in Spanish
-   yarn start -- --locale es
-   
+   yarn start --locale es
+
    # Start in Italian
-   yarn start -- --locale it
-   
+   yarn start --locale it
+
    # Start in German
-   yarn start -- --locale de
+   yarn start --locale de
    ```
 
 🎉 Your local environment is ready!

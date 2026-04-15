@@ -1,9 +1,9 @@
 ---
 title: Customize a VMware Image
 ---
-import marketplaceVMwareExportTemplate from '../images/marketplace_vmware_export_template.png'
-import marketplaceVMwareExportTemplateButton from '../images/marketplace_vmware_export_template_button.png'
-import marketplaceVMwareDeployFromTemplate from '../images/marketplace_vmware_deploy_from_template.png'
+import marketplaceVMwareExportTemplate from '@site/docs/marketplace/images/marketplace_vmware_export_template.png'
+import marketplaceVMwareExportTemplateButton from '@site/docs/marketplace/images/marketplace_vmware_export_template_button.png'
+import marketplaceVMwareDeployFromTemplate from '@site/docs/marketplace/images/marketplace_vmware_deploy_from_template.png'
 
 This tutorial explains how to customize a VMware virtual machine image (VMI) provided by the Marketplace to create your own reusable templates.
 

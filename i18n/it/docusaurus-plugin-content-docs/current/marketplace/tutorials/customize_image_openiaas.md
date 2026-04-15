@@ -1,9 +1,9 @@
 ---
 title: Personalizzare un'immagine OpenIaaS
 ---
-import marketplaceOpenIaasExportTemplate from '../images/marketplace_openiaas_export_template.png'
-import marketplaceOpenIaasExportTemplateButton from '../images/marketplace_openiaas_export_template_button.png'
-import marketplaceOpeniaasDeployFromTemplate from '../images/marketplace_openiaas_deploy_from_template.png'
+import marketplaceOpenIaasExportTemplate from '@site/docs/marketplace/images/marketplace_openiaas_export_template.png'
+import marketplaceOpenIaasExportTemplateButton from '@site/docs/marketplace/images/marketplace_openiaas_export_template_button.png'
+import marketplaceOpeniaasDeployFromTemplate from '@site/docs/marketplace/images/marketplace_openiaas_deploy_from_template.png'
 
 Questo tutorial spiega come personalizzare un'immagine di macchina virtuale (VMI) OpenIaaS fornita dal Marketplace per creare modelli riutilizzabili personalizzati.
 
