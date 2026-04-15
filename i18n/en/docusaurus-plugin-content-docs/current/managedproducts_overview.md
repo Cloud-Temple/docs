@@ -1,43 +1,43 @@
 ---
-title: Vue d'ensemble des offres de produits managés
+title: Overview of Managed Product Offerings
 ---
 
-## Qu'est ce qu'un produit managé ?
+## What is a managed product?
 
-Les produits managés chez Cloud Temple sont des services cloud entièrement gérés par le fournisseur, permettant aux clients de se concentrer sur leurs applications sans gérer l'infrastructure sous-jacente.
+Managed products at Cloud Temple are cloud services fully operated by the provider, allowing customers to focus on their applications without managing the underlying infrastructure.
 
-Ces produits incluent des solutions comme le Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall ou encore Managed SOC, où Cloud Temple assure la configuration, la surveillance, la maintenance et la scalabilité.
+These products include solutions such as Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall, or Managed SOC, where Cloud Temple handles configuration, monitoring, maintenance, and scalability.
 
-Ils s'appuient sur une infrastructure souveraine qualifiée SecNumCloud, avec haute disponibilité (multi-AZ), automatisation et support SLA.
+They are built on a sovereign SecNumCloud-qualified infrastructure, with high availability (multi-AZ), automation, and SLA-backed support.
 
-**Avantages clés**
+**Key benefits**
 
-- Libération des opérations : Cloud Temple gère le control plane, les backups, la sécurité et les mises à jour, simplifiant l'orchestration pour vos déploiements.
+- Operational freedom: Cloud Temple manages the control plane, backups, security, and updates, simplifying orchestration for your deployments.
 
-- Des standards du marché : des produits simples, reconnus, éprouvés et open-source.
+- Industry standards: simple, well-known, battle-tested, and open-source products.
 
-## Notre portefeuille de produits managés
+## Our managed product portfolio
 
-### Bases de données managées
+### Managed databases
 
-- **Managed MariaDB (on Kubernetes)** : une solution de moteur de bases de données MariaDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_mariadb)
+- **Managed MariaDB (on Kubernetes)**: a MariaDB database engine solution that runs "on-top" of our *Managed Kubernetes* / *Managed Core Kubernetes* offerings. [View the page](./managed_mariadb)
 
-- **Managed PostgreSQL (on Kubernetes)** : une solution de moteur de bases de données PostgreSQL qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_postgresql).
+- **Managed PostgreSQL (on Kubernetes)**: a PostgreSQL database engine solution that runs "on-top" of our *Managed Kubernetes* / *Managed Core Kubernetes* offerings. [View the page](./managed_postgresql).
 
-- **Managed MongoDB (on Kubernetes)** : une solution de moteur de bases de données MongoDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Managed MongoDB (on Kubernetes)**: a MongoDB database engine solution that runs "on-top" of our *Managed Kubernetes* / *Managed Core Kubernetes* offerings. (documentation in progress)
 
-### Produits pour la data
+### Data products
 
-- **Managed Kafka (on Kubernetes)** : Une solution Apache Kafka, avec schema registry qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Managed Kafka (on Kubernetes)**: An Apache Kafka solution with schema registry that runs "on-top" of our *Managed Kubernetes* / *Managed Core Kubernetes* offerings. (documentation in progress)
 
-- **Managed Airflow** : *arrive prochainement !*
+- **Managed Airflow**: *coming soon!*
 
-- **Managed Superset** : *arrive prochainement !*
+- **Managed Superset**: *coming soon!*
 
-### Produits pour la sécurité
+### Security products
 
-- **Managed KMS** : *arrive prochainement !*
+- **Managed KMS**: *coming soon!*
 
-- **Managed SIEM** : *arrive prochainement !*
+- **Managed SIEM**: *coming soon!*
 
 ---

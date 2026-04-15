@@ -1,43 +1,43 @@
 ---
-title: Vue d'ensemble des offres de produits managés
+title: Visión general de los productos gestionados
 ---
 
-## Qu'est ce qu'un produit managé ?
+## ¿Qué es un producto gestionado?
 
-Les produits managés chez Cloud Temple sont des services cloud entièrement gérés par le fournisseur, permettant aux clients de se concentrer sur leurs applications sans gérer l'infrastructure sous-jacente.
+Los productos gestionados en Cloud Temple son servicios cloud completamente operados por el proveedor, permitiendo a los clientes centrarse en sus aplicaciones sin tener que gestionar la infraestructura subyacente.
 
-Ces produits incluent des solutions comme le Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall ou encore Managed SOC, où Cloud Temple assure la configuration, la surveillance, la maintenance et la scalabilité.
+Estos productos incluyen soluciones como Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall o Managed SOC, donde Cloud Temple se encarga de la configuración, supervisión, mantenimiento y escalabilidad.
 
-Ils s'appuient sur une infrastructure souveraine qualifiée SecNumCloud, avec haute disponibilité (multi-AZ), automatisation et support SLA.
+Se basan en una infraestructura soberana con certificación SecNumCloud, con alta disponibilidad (multi-AZ), automatización y soporte respaldado por SLA.
 
-**Avantages clés**
+**Ventajas clave**
 
-- Libération des opérations : Cloud Temple gère le control plane, les backups, la sécurité et les mises à jour, simplifiant l'orchestration pour vos déploiements.
+- Liberación operacional: Cloud Temple gestiona el plano de control, las copias de seguridad, la seguridad y las actualizaciones, simplificando la orquestación para sus despliegues.
 
-- Des standards du marché : des produits simples, reconnus, éprouvés et open-source.
+- Estándares del mercado: productos simples, reconocidos, probados y de código abierto.
 
-## Notre portefeuille de produits managés
+## Nuestra cartera de productos gestionados
 
-### Bases de données managées
+### Bases de datos gestionadas
 
-- **Managed MariaDB (on Kubernetes)** : une solution de moteur de bases de données MariaDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_mariadb)
+- **Managed MariaDB (on Kubernetes)**: una solución de motor de base de datos MariaDB que funciona "on-top" de nuestras ofertas *Managed Kubernetes* / *Managed Core Kubernetes*. [Ver la ficha](./managed_mariadb)
 
-- **Managed PostgreSQL (on Kubernetes)** : une solution de moteur de bases de données PostgreSQL qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_postgresql).
+- **Managed PostgreSQL (on Kubernetes)**: una solución de motor de base de datos PostgreSQL que funciona "on-top" de nuestras ofertas *Managed Kubernetes* / *Managed Core Kubernetes*. [Ver la ficha](./managed_postgresql).
 
-- **Managed MongoDB (on Kubernetes)** : une solution de moteur de bases de données MongoDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Managed MongoDB (on Kubernetes)**: una solución de motor de base de datos MongoDB que funciona "on-top" de nuestras ofertas *Managed Kubernetes* / *Managed Core Kubernetes*. (documentación en curso de elaboración)
 
-### Produits pour la data
+### Productos para datos
 
-- **Managed Kafka (on Kubernetes)** : Une solution Apache Kafka, avec schema registry qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Managed Kafka (on Kubernetes)**: Una solución Apache Kafka con schema registry que funciona "on-top" de nuestras ofertas *Managed Kubernetes* / *Managed Core Kubernetes*. (documentación en curso de elaboración)
 
-- **Managed Airflow** : *arrive prochainement !*
+- **Managed Airflow**: *¡próximamente!*
 
-- **Managed Superset** : *arrive prochainement !*
+- **Managed Superset**: *¡próximamente!*
 
-### Produits pour la sécurité
+### Productos de seguridad
 
-- **Managed KMS** : *arrive prochainement !*
+- **Managed KMS**: *¡próximamente!*
 
-- **Managed SIEM** : *arrive prochainement !*
+- **Managed SIEM**: *¡próximamente!*
 
 ---
