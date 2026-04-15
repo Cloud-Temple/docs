@@ -14,18 +14,18 @@ Before you begin, make sure you have the following:
 
 ### 1. Access the Service
 
-Log in to the **Cloud Temple Console** and navigate to the **VMaaS** section from the main menu.
+Log in to the **Cloud Temple Console** and navigate to the **VM instances** section from the main menu.
 
-### 2. Select the Project and Availability Zone
+### 2. Select the Tenant and Availability Zone
 
-- Choose the **project** in which you want to deploy the virtual machine.
+- Choose the **tenant** in which you want to deploy the virtual machine.
 - Select the target **availability zone (AZ)** from those available in the FR1 region.
 
-### 3. Choose a Template from the Marketplace
+### 3. Choose an Image from the Marketplace
 
-Virtual machines are deployed exclusively from **official Cloud Temple Marketplace templates**.
+Virtual machines are deployed exclusively from **official Cloud Temple Marketplace images**.
 
-- Browse the catalogue of available templates.
+- Browse the catalogue of available images.
 - Select the desired operating system and version.
 
 ### 4. Configure the Virtual Machine
@@ -61,7 +61,7 @@ From the console, you can perform the following actions on your virtual machines
 
 ## Automation and Infrastructure as Code
 
-The VMaaS service is fully automatable:
+The VM instances service is fully automatable:
 
 ### Via the REST API
 
@@ -71,10 +71,10 @@ API reference: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.
 
 ### Via Terraform
 
-The Cloud Temple Terraform provider allows you to manage your VMaaS instances as Infrastructure as Code.
+The Cloud Temple Terraform provider allows you to manage your VM instances as Infrastructure as Code.
 
 ```hcl
-# Example VMaaS resource with Terraform
+# Example VM instances resource with Terraform
 # Refer to the provider documentation for available attributes
 resource "cloudtemple_compute_vmaas_instance" "example" {
   # ...

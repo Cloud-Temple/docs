@@ -1,5 +1,6 @@
 ---
 title: Hiérarchie des documents contractuels
+slug: /contractual/order
 ---
 
 |           | Références                 |

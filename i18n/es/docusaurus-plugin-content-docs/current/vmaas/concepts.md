@@ -2,21 +2,11 @@
 title: Conceptos
 ---
 
-El servicio **VMaaS** de Cloud Temple es una oferta de cómputo compartido que permite desplegar máquinas virtuales bajo demanda, sin gestionar la infraestructura subyacente. Esta página presenta los conceptos fundamentales del servicio.
-
-## Arquitectura técnica
-
-El servicio se basa en una infraestructura compartida compuesta por:
-
-- **Hipervisor**: Infraestructura completamente gestionada por Cloud Temple (sin elección de hipervisor por parte del cliente).
-- **Hardware de cómputo**: Blades Cisco UCS.
-- **Almacenamiento**: Almacenamiento en bloque compartido de alto rendimiento.
-
-La infraestructura está alojada en Francia.
+El servicio **VM instances** de Cloud Temple es una oferta de cómputo compartido que permite desplegar máquinas virtuales bajo demanda, sin gestionar la infraestructura subyacente. Esta página presenta los conceptos fundamentales del servicio.
 
 ## Regiones y zonas de disponibilidad
 
-El servicio VMaaS se despliega en la región **FR1**. Al crear una máquina virtual, puede elegir la **zona de disponibilidad (AZ)** en la que se alojará.
+El servicio VM instances se despliega en la región **FR1**. Al crear una máquina virtual, puede elegir la **zona de disponibilidad (AZ)** en la que se alojará.
 
 Para más información sobre las zonas de disponibilidad y las regiones de Cloud Temple, consulte:
 
@@ -85,6 +75,8 @@ Las especificaciones de los flavors pueden evolucionar. Consulte la consola de C
 
 ## Almacenamiento
 
+Todos los volúmenes del servicio VM instances son **volúmenes Flash persistentes montados en red** (*network-attached*). No existe almacenamiento local efímero: sus datos se conservan independientemente del estado de la máquina virtual.
+
 ### Disco del sistema
 
 Cada máquina virtual dispone de un **disco del sistema Flash incluido por defecto**, cuyo tamaño depende del sistema operativo elegido:
@@ -102,13 +94,24 @@ Es posible añadir volúmenes de almacenamiento adicionales a cada máquina virt
 
 ## Red
 
-Cada máquina virtual está equipada con **una tarjeta de red**.
+### Interfaz de red
 
-El servicio es nativamente compatible con el servicio **VPC (Virtual Private Cloud)** de Cloud Temple, permitiendo el aislamiento de red y la segmentación de sus entornos.
+Cada VM instance dispone de **una única interfaz de red**.
+
+### Compatibilidad de red
+
+Esta interfaz puede conectarse a dos tipos de redes Cloud Temple:
+
+- **Red privada de backbone**: red privada compartida con aislamiento lógico estricto entre tenants. Ideal para interconectar sus recursos Cloud Temple en un entorno controlado. [Más información](../network/private_network/private_network.md)
+- **VPC (Virtual Private Cloud)**: red privada completamente gestionada que permite una segmentación avanzada y una configuración de red detallada de sus entornos. [Más información](../network/vpc/vpc.md)
+
+### IP flotante (Floating IP)
+
+En una red **VPC**, es posible asociar una **IP flotante** a una VM instance. Una IP flotante es una dirección IP pública que puede adjuntar o separar libremente de una instancia, independientemente de su ciclo de vida.
 
 ## Despliegue e imágenes
 
-Las máquinas virtuales se despliegan **exclusivamente desde las plantillas oficiales del Marketplace de Cloud Temple**. No es posible utilizar imágenes personalizadas de terceros.
+Las VM instances se despliegan desde las **imágenes oficiales del Marketplace de Cloud Temple**. Este catálogo de imágenes seleccionadas garantiza entornos probados, mantenidos y listos para usar para cada sistema operativo compatible.
 
 El servicio soporta **Cloud-init** para la preconfiguración automática de instancias en el arranque (inyección de claves SSH, configuración de red, scripts de inicialización, etc.).
 
@@ -129,19 +132,6 @@ La replicación de VM no está incluida por defecto. Su estudio está previsto p
 | Disponibilidad de la infraestructura | 99,9% (medida mensualmente) |
 | Garantía de recursos | Según la clase de servicio elegida |
 
-## Seguridad y cumplimiento
-
-| Certificación |
-|---------------|
-| ISO 27001:2022 |
-| ISAE 3402 |
-
-:::info Cualificación SecNumCloud
-Este servicio está en proceso de cualificación SecNumCloud por parte de la ANSSI.
-:::
-
-Los datos están alojados en **Francia**, en un entorno compartido con **aislamiento lógico estricto** entre los clientes.
-
 ## Automatización
 
 El servicio es completamente gestionable mediante:
@@ -149,10 +139,3 @@ El servicio es completamente gestionable mediante:
 - **Consola Cloud Temple**: interfaz gráfica para la gestión diaria
 - **API REST Cloud Temple**: control programático del ciclo de vida de las VM
 - **Proveedor Terraform Cloud Temple**: Infrastructure as Code
-
-## Requisitos previos
-
-Para utilizar el servicio VMaaS, debe disponer de:
-
-- Un **Tenant Cloud Temple** activo
-- Una suscripción mínima al **Soporte Estándar** ([ver documentación de soporte](https://docs.cloud-temple.com))

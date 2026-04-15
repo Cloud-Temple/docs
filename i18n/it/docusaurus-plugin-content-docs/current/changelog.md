@@ -5,9 +5,9 @@ sidebar_position: 2
 
 # Registro delle Modifiche
 
-### 15 aprile 2026: Nuova documentazione VMaaS (Cloud Public)
+### 15 aprile 2026: Nuova documentazione VM instances (Cloud Public)
 
-- **VMaaS**: Pubblicazione della documentazione iniziale del servizio VMaaS (in anteprima), la nuova offerta di macchine virtuali condivise di Cloud Temple. La documentazione copre la panoramica del servizio, i concetti tecnici (classi di servizio Development/General Purpose/Performance, flavor predefiniti e personalizzati, storage, rete VPC, backup) e una guida introduttiva completa. Il servizio è organizzato sotto una nuova categoria **Cloud Public** nella navigazione.
+- **VM instances**: Pubblicazione della documentazione iniziale del servizio VM instances (in anteprima), la nuova offerta di macchine virtuali condivise di Cloud Temple. La documentazione copre la panoramica del servizio, i concetti tecnici (classi di servizio Development/General Purpose/Performance, flavor predefiniti e personalizzati, storage, rete VPC, backup) e una guida introduttiva completa. Il servizio è organizzato sotto una nuova categoria **Cloud Public** nella navigazione.
 
 
 ### 15 aprile 2026: Miglioramento della documentazione IaaS VMware — metriche del cluster

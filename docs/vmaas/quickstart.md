@@ -14,18 +14,18 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 ### 1. Accéder au service
 
-Connectez-vous à la **Console Cloud Temple** et naviguez vers la section **VMaaS** depuis le menu principal.
+Connectez-vous à la **Console Cloud Temple** et naviguez vers la section **VM instances** depuis le menu principal.
 
-### 2. Sélectionner le projet et la zone de disponibilité
+### 2. Sélectionner le tenant et la zone de disponibilité
 
-- Choisissez le **projet** dans lequel vous souhaitez déployer la machine virtuelle.
+- Choisissez le **tenant** dans lequel vous souhaitez déployer la machine virtuelle.
 - Sélectionnez la **zone de disponibilité (AZ)** cible parmi celles disponibles en région FR1.
 
-### 3. Choisir un template depuis la Marketplace
+### 3. Choisir une image depuis la Marketplace
 
-Les machines virtuelles sont déployées exclusivement depuis les **templates officiels de la Marketplace Cloud Temple**.
+Les machines virtuelles sont déployées exclusivement depuis les **images officielles de la Marketplace Cloud Temple**.
 
-- Parcourez le catalogue de templates disponibles.
+- Parcourez le catalogue d'images disponibles.
 - Sélectionnez le système d'exploitation et la version souhaités.
 
 ### 4. Configurer la machine virtuelle
@@ -61,7 +61,7 @@ Depuis la console, vous pouvez effectuer les actions suivantes sur vos machines 
 
 ## Automatisation et Infrastructure as Code
 
-Le service VMaaS est entièrement automatisable :
+Le service VM instances est entièrement automatisable :
 
 ### Via l'API REST
 
@@ -71,21 +71,21 @@ Référence API : [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temp
 
 ### Via Terraform
 
-Le provider Terraform Cloud Temple permet de gérer vos VMaaS en Infrastructure as Code.
+Le provider Terraform Cloud Temple permet de gérer vos VM instances en Infrastructure as Code.
 
 ```hcl
-# Exemple de ressource VMaaS avec Terraform
+# Exemple de ressource VM instances avec Terraform
 # Consultez la documentation du provider pour les attributs disponibles
 resource "cloudtemple_compute_vmaas_instance" "example" {
   # ...
 }
 ```
 
-Consultez la [documentation Terraform](../terraform/terraform.md) pour l'installation et la configuration du provider.
+Consultez la [documentation Terraform](../terraform/terraform) pour l'installation et la configuration du provider.
 
 ## Ressources utiles
 
 - [Documentation publique Cloud Temple](https://docs.cloud-temple.com/home)
 - [Référence API](https://shiva.cloud-temple.com/api/)
-- [Documentation Terraform](../terraform/terraform.md)
+- [Documentation Terraform](../terraform/terraform)
 - [Concepts des zones de disponibilité](../additional_content/concepts_az.md)

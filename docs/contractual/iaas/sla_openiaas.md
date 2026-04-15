@@ -1,5 +1,6 @@
 ---
 title: Convention de Service SecNumCloud OpenIaaS
+slug: /contractual/iaas/sla-openiaas
 ---
 
 # CONVENTION DE SERVICES OpenIaaS

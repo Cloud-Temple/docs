@@ -1,5 +1,6 @@
 ---
 title: Matrice de responsabilité - OpenShift Standard
+slug: /contractual/paas/raci-ocp-standard
 ---
 
 Voici le modèle RACI définissant la répartition des responsabilités entre le client et Cloud Temple pour l'utilisation de l'offre **OpenShift Standard**.

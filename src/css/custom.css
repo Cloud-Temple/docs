@@ -188,6 +188,69 @@
   text-decoration: underline;
 }
 
+/* ─── Grille de documents contractuels ─────────────────────────────────────── */
+
+.contract-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin: 16px 0 32px 0;
+}
+
+@media (max-width: 768px) {
+  .contract-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contract-card {
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contract-card:nth-child(odd) {
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  padding-right: 32px;
+}
+
+.contract-card:nth-child(even) {
+  padding-left: 32px;
+}
+
+.contract-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  line-height: 1.4;
+}
+
+.contract-card-desc {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.contract-read-link {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.contract-read-link:hover {
+  text-decoration: underline;
+  color: var(--ifm-color-primary-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+
 /* Style global pour les images dans la documentation */
 .markdown img:not(.platform-logo),
 article img:not(.platform-logo) {
