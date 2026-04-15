@@ -307,7 +307,7 @@ Facendo clic su un cluster, viene visualizzata una sintesi della sua composizion
 - Il numero di macchine virtuali,
 - Il numero di hypervisor.
 
-#### Interpréter les données de consommation affichées
+#### Interpretare i dati di consumo visualizzati
 
 <img src={iaasVmwareClusterProvisionedMemory} />
 
@@ -325,8 +325,8 @@ Facendo clic su un cluster, viene visualizzata una sintesi della sua composizion
 
 **Memoria consumata (ESX):** A differenza dei grafici del cluster, questo mostra la memoria totale consumata su uno specifico host ESX. Ciò include non solo la memoria utilizzata dalle macchine virtuali ospitate su questo host, ma anche la memoria consumata dal sistema hypervisor stesso (overhead di ESXi).
 
-<!-- TODO: Add missing page. -->
-<!-- Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali) -->
+{/* TODO: Add missing page. */}
+{/* Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali) */}
 
 <img src={shivaCpool_004} />
 
@@ -369,8 +369,8 @@ Tuttavia, __non aggiorniamo automaticamente gli hypervisor per conto vostro__. C
 Vi lasciamo quindi gestire autonomamente il processo di cambiamento e applicare i nuovi build al momento più opportuno.
 - Il processo di aggiornamento è completamente automatizzato. È necessario disporre di almeno due hypervisor nel cluster per consentire un aggiornamento senza interruzioni del servizio.
 
-<!-- TODO: Add missing page. -->
-<!-- - *È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.* -->
+{/* TODO: Add missing page. */}
+{/* - *È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.* */}
 
 Nella sezione __'Regole'__ è inoltre possibile visualizzare l'insieme delle regole di affinità/anti-affinità per il cluster di hypervisor.
 

@@ -308,7 +308,7 @@ When you click on a cluster, you see a summary of its composition:
 - Number of virtual machines,
 - Number of hypervisors.
 
-#### Interpréter les données de consommation affichées
+#### Interpreting the displayed usage data
 
 <img src={iaasVmwareClusterProvisionedMemory} />
 
@@ -326,8 +326,8 @@ When you click on a cluster, you see a summary of its composition:
 
 **Consumed Memory (ESX):** Unlike the cluster graphs, this one shows the total memory consumed on a specific ESX host. This includes not only the memory used by the virtual machines hosted on this host, but also the memory consumed by the hypervisor system itself (ESXi overhead).
 
-<!-- TODO: Add missing page. -->
-<!-- When viewing a cluster's page, several tabs are available. The __'Rules'_ tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines) -->
+{/* TODO: Add missing page. */}
+{/* When viewing a cluster's page, several tabs are available. The __'Rules'_ tab allows you to define [affinity / anti-affinity rules](compute.md#managing-affinity-of-your-virtual-machines) */}
 
 <img src={shivaCpool_004} />
 
@@ -370,8 +370,8 @@ However, __we do not automatically update your hypervisors__. Cloud Temple does 
 Therefore, we leave it to you to manage your change process and apply new builds at the most appropriate time.
 - The update process is fully automated. You must have at least two hypervisors in your cluster to ensure uninterrupted service during updates.
 
-<!-- TODO: Add missing page. -->
-<!-- - *You must have the appropriate [permissions](../console/permissions.md) to perform these actions.* -->
+{/* TODO: Add missing page. */}
+{/* - *You must have the appropriate [permissions](../console/permissions.md) to perform these actions.* */}
 
 You can also view all affinity/anti-affinity rules for your hypervisor cluster in the __'Rules'_ section.
 

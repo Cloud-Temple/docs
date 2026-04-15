@@ -308,7 +308,7 @@ Wenn Sie auf einen Cluster klicken, sehen Sie eine Zusammenfassung seiner Zusamm
 - Anzahl der virtuellen Maschinen,
 - Anzahl der Hypervisoren.
 
-#### Interpréter les données de consommation affichées
+#### Die angezeigten Verbrauchsdaten interpretieren
 
 <img src={iaasVmwareClusterProvisionedMemory} />
 
@@ -326,8 +326,8 @@ Wenn Sie auf einen Cluster klicken, sehen Sie eine Zusammenfassung seiner Zusamm
 
 **Verbrauchter Speicher (ESX):** Im Gegensatz zu den Cluster-Diagrammen zeigt dieses Diagramm den gesamten Speicherverbrauch auf einem bestimmten ESX-Host. Dies schließt nicht nur den Speicher ein, der von den auf diesem Host gehosteten virtuellen Maschinen verwendet wird, sondern auch den Speicher, der vom Hypervisor-System selbst verbraucht wird (ESXi-Overhead).
 
-<!-- TODO: Add missing page. -->
-<!-- Bei der Betrachtung einer Cluster-Seite sind mehrere Tabs verfügbar. Der Tab __'Regeln'__ ermöglicht die Definition von [Affinitäts- / Anti-Affinitätsregeln](compute.md#verwaltung-der-affinitaet-ihrer-virtuellen-maschinen) -->
+{/* TODO: Add missing page. */}
+{/* Bei der Betrachtung einer Cluster-Seite sind mehrere Tabs verfügbar. Der Tab __'Regeln'__ ermöglicht die Definition von [Affinitäts- / Anti-Affinitätsregeln](compute.md#verwaltung-der-affinitaet-ihrer-virtuellen-maschinen) */}
 
 <img src={shivaCpool_004} />
 
@@ -370,8 +370,8 @@ __Allerdings führen wir die Aktualisierung Ihrer Hypervisoren nicht automatisch
 Daher überlassen wir Ihnen die Umsetzung Ihrer Änderungsmanagement-Prozesse und die Anwendung der neuen Builds zum optimalen Zeitpunkt.
 - Der Aktualisierungsprozess ist vollständig automatisiert. Sie müssen mindestens zwei Hypervisoren in Ihrem Cluster haben, um eine Update-Operation ohne Dienstunterbrechung durchführen zu können.
 
-<!-- TODO: Add missing page. -->
-<!-- - *Für die Durchführung der verschiedenen Aktionen sind die entsprechenden Berechtigungen erforderlich [siehe hier](../console/permissions.md).* -->
+{/* TODO: Add missing page. */}
+{/* - *Für die Durchführung der verschiedenen Aktionen sind die entsprechenden Berechtigungen erforderlich [siehe hier](../console/permissions.md).* */}
 
 Sie sehen auch alle Affinitäts- und Anti-Affinitätsregeln für Ihren Hypervisor-Cluster im Bereich __'Regeln'__.
 
