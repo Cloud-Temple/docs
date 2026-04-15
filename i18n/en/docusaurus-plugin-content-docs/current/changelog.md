@@ -5,9 +5,9 @@ sidebar_position: 2
 
 # Change Log
 
-### April 15, 2026: New VMaaS documentation (Cloud Public)
+### April 15, 2026: New VM instances documentation (Cloud Public)
 
-- **VMaaS**: Initial documentation release for the VMaaS service (in preview), Cloud Temple's new shared virtual machine offering. The documentation covers the service overview, technical concepts (Development/General Purpose/Performance service classes, predefined and custom flavors, storage, VPC networking, backup), and a complete getting started guide. The service is organised under a new **Cloud Public** category in the navigation.
+- **VM instances**: Initial documentation release for the VM instances service (in preview), Cloud Temple's new shared virtual machine offering. The documentation covers the service overview, technical concepts (Development/General Purpose/Performance service classes, predefined and custom flavors, storage, VPC networking, backup), and a complete getting started guide. The service is organised under a new **Cloud Public** category in the navigation.
 
 ### April 15, 2026: IaaS VMware Documentation Improvement — Cluster Metrics
 

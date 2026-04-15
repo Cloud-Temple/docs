@@ -184,6 +184,19 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Contractuel',
+          items: [
+            {
+              label: 'Documents contractuels',
+              to: '/contracts',
+            },
+            {
+              label: 'Modèle de responsabilité partagée',
+              to: '/shared-responsibility',
+            },
+          ],
+        },
       ],
       copyright: `
       <div style="text-align: center;">

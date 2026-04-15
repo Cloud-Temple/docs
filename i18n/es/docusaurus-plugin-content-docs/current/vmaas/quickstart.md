@@ -14,18 +14,18 @@ Antes de comenzar, asegúrese de disponer de lo siguiente:
 
 ### 1. Acceder al servicio
 
-Inicie sesión en la **Consola Cloud Temple** y navegue a la sección **VMaaS** desde el menú principal.
+Inicie sesión en la **Consola Cloud Temple** y navegue a la sección **VM instances** desde el menú principal.
 
-### 2. Seleccionar el proyecto y la zona de disponibilidad
+### 2. Seleccionar el tenant y la zona de disponibilidad
 
-- Elija el **proyecto** en el que desea desplegar la máquina virtual.
+- Elija el **tenant** en el que desea desplegar la máquina virtual.
 - Seleccione la **zona de disponibilidad (AZ)** de destino entre las disponibles en la región FR1.
 
-### 3. Elegir una plantilla desde el Marketplace
+### 3. Elegir una imagen desde el Marketplace
 
-Las máquinas virtuales se despliegan exclusivamente desde las **plantillas oficiales del Marketplace de Cloud Temple**.
+Las máquinas virtuales se despliegan exclusivamente desde las **imágenes oficiales del Marketplace de Cloud Temple**.
 
-- Explore el catálogo de plantillas disponibles.
+- Explore el catálogo de imágenes disponibles.
 - Seleccione el sistema operativo y la versión deseados.
 
 ### 4. Configurar la máquina virtual
@@ -61,7 +61,7 @@ Desde la consola, puede realizar las siguientes acciones en sus máquinas virtua
 
 ## Automatización e Infrastructure as Code
 
-El servicio VMaaS es totalmente automatizable:
+El servicio VM instances es totalmente automatizable:
 
 ### A través de la API REST
 
@@ -71,10 +71,10 @@ Referencia de API: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-tem
 
 ### A través de Terraform
 
-El proveedor Terraform de Cloud Temple permite gestionar sus instancias VMaaS como Infrastructure as Code.
+El proveedor Terraform de Cloud Temple permite gestionar sus VM instances como Infrastructure as Code.
 
 ```hcl
-# Ejemplo de recurso VMaaS con Terraform
+# Ejemplo de recurso VM instances con Terraform
 # Consulte la documentación del proveedor para los atributos disponibles
 resource "cloudtemple_compute_vmaas_instance" "example" {
   # ...

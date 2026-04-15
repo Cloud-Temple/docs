@@ -1,5 +1,6 @@
 ---
 title: Matrice de responsabilité IaaS - Stockage Objet S3
+slug: /contractual/storage/raci
 ---
 
 Voici le RACI du partage de responsabilité entre le client et Cloud Temple pour l'usage de la plateforme de Stockage Objets S3 Cloud Temple.

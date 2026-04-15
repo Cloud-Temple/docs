@@ -205,7 +205,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'VMaaS (Preview)',
+          label: 'VM instances (Preview)',
           items: [
             'vmaas/vmaas',
             'vmaas/concepts',
@@ -403,35 +403,6 @@ const sidebars: SidebarsConfig = {
         'terraform/concepts',
         'terraform/quickstart',
         'terraform/tutorials',
-      ],
-    },
-    {
-      type: 'html', // Séparateur et titre
-      value: `
-        <hr class="sidebar-separator" />
-        <h3 class="sidebar-title">Contractuel</h3>
-      `,
-    },
-    {
-      type: 'doc',
-      id: 'contractual/orderdoc',
-    },
-    {
-      type: 'category',
-      label: 'Contractual documents',
-      items: [
-        'contractual/cgvu',
-        'contractual/iaas/sla_iaas',
-        'contractual/iaas/sla_openiaas',
-        'contractual/paas/sla_paas',
-        'contractual/baremetal',
-        'contractual/dpa',
-        'contractual/iaas/raci',
-        'contractual/iaas/raci_s3',
-        'contractual/paas/raci',
-        'contractual/paas/raci_ocp_std',
-        'contractual/llmaas/raci',
-        'contractual/kubernetes/raci'
       ],
     },
   ],

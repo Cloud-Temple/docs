@@ -14,18 +14,18 @@ Stellen Sie vor dem Start sicher, dass Sie folgendes haben:
 
 ### 1. Auf den Dienst zugreifen
 
-Melden Sie sich bei der **Cloud Temple-Konsole** an und navigieren Sie über das Hauptmenü zum Bereich **VMaaS**.
+Melden Sie sich bei der **Cloud Temple-Konsole** an und navigieren Sie über das Hauptmenü zum Bereich **VM instances**.
 
-### 2. Projekt und Verfügbarkeitszone auswählen
+### 2. Tenant und Verfügbarkeitszone auswählen
 
-- Wählen Sie das **Projekt**, in dem Sie die virtuelle Maschine bereitstellen möchten.
+- Wählen Sie den **Tenant**, in dem Sie die virtuelle Maschine bereitstellen möchten.
 - Wählen Sie die Ziel-**Verfügbarkeitszone (AZ)** aus den in der Region FR1 verfügbaren aus.
 
-### 3. Ein Template vom Marketplace auswählen
+### 3. Ein Image vom Marketplace auswählen
 
-Virtuelle Maschinen werden ausschließlich aus **offiziellen Cloud Temple Marketplace-Templates** bereitgestellt.
+Virtuelle Maschinen werden ausschließlich aus **offiziellen Cloud Temple Marketplace-Images** bereitgestellt.
 
-- Durchsuchen Sie den Katalog der verfügbaren Templates.
+- Durchsuchen Sie den Katalog der verfügbaren Images.
 - Wählen Sie das gewünschte Betriebssystem und die Version aus.
 
 ### 4. Die virtuelle Maschine konfigurieren
@@ -61,7 +61,7 @@ Von der Konsole aus können Sie folgende Aktionen auf Ihren virtuellen Maschinen
 
 ## Automatisierung und Infrastructure as Code
 
-Der VMaaS-Dienst ist vollständig automatisierbar:
+Der VM instances-Dienst ist vollständig automatisierbar:
 
 ### Über die REST API
 
@@ -71,10 +71,10 @@ API-Referenz: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.c
 
 ### Über Terraform
 
-Der Cloud Temple Terraform-Provider ermöglicht die Verwaltung von VMaaS-Instanzen als Infrastructure as Code.
+Der Cloud Temple Terraform-Provider ermöglicht die Verwaltung von VM instances als Infrastructure as Code.
 
 ```hcl
-# Beispiel VMaaS-Ressource mit Terraform
+# Beispiel VM instances-Ressource mit Terraform
 # Weitere Attribute finden Sie in der Provider-Dokumentation
 resource "cloudtemple_compute_vmaas_instance" "example" {
   # ...
