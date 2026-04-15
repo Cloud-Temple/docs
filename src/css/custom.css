@@ -13,7 +13,26 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 90%;
+
+  /* ── Densification globale ───────────────────────────────────────────────── */
+  --ifm-font-size-base: 14px;
+  --ifm-line-height-base: 1.55;
+
+  /* Titres */
+  --ifm-h1-font-size: 1.8rem;
+  --ifm-h2-font-size: 1.35rem;
+  --ifm-h3-font-size: 1.1rem;
+  --ifm-h4-font-size: 1rem;
+
+  /* Sidebar */
+  --ifm-menu-link-padding-vertical: 0.28rem;
+  --ifm-menu-link-padding-horizontal: 0.75rem;
+
+  /* Espacements */
+  --ifm-spacing-horizontal: 1rem;
+  --ifm-global-spacing: 0.75rem;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -45,8 +64,8 @@
 
 /* Style général des sous-items */
 .menu__list-item {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 /* Conteneur pour les cartes en grille */
