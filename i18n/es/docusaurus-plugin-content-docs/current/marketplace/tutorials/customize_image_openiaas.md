@@ -1,9 +1,9 @@
 ---
 title: Customizar una imagen OpenIaaS
 ---
-import marketplaceOpenIaasExportTemplate from '../images/marketplace_openiaas_export_template.png'
-import marketplaceOpenIaasExportTemplateButton from '../images/marketplace_openiaas_export_template_button.png'
-import marketplaceOpenIaasDeployFromTemplate from '../images/marketplace_openiaas_deploy_from_template.png'
+import marketplaceOpenIaasExportTemplate from '@site/docs/marketplace/images/marketplace_openiaas_export_template.png'
+import marketplaceOpenIaasExportTemplateButton from '@site/docs/marketplace/images/marketplace_openiaas_export_template_button.png'
+import marketplaceOpenIaasDeployFromTemplate from '@site/docs/marketplace/images/marketplace_openiaas_deploy_from_template.png'
 
 Este tutorial explica cómo personalizar una imagen de máquina virtual (VMI) OpenIaaS proporcionada por la Marketplace para crear sus propios modelos reutilizables.
 
@@ -15,10 +15,10 @@ Una vez desplegada la imagen, se convierte en una máquina virtual que puede con
 
 ## Pasos de personalización
 
-1.  **Desplegar la imagen base** desde la Marketplace.
-2.  **Configurar la máquina virtual** según sus necesidades.
-3.  **Crear un modelo** a partir de la máquina virtual configurada.
-4.  **Desplegar una nueva máquina virtual** desde su modelo personalizado.
+1. **Desplegar la imagen base** desde la Marketplace.
+2. **Configurar la máquina virtual** según sus necesidades.
+3. **Crear un modelo** a partir de la máquina virtual configurada.
+4. **Desplegar una nueva máquina virtual** desde su modelo personalizado.
 
 ### Paso 1: Desplegar la imagen base
 
@@ -42,6 +42,7 @@ Una vez desplegada la máquina virtual, configúrela según sus necesidades (ins
 You can deploy from the **Catalog** page or from the **Virtual Machines** page.
 
 To deploy from the **Virtual Machines** page:
+
 1. Click on **"Create a virtual machine"**.
 2. Choose **"Deploy from a template"**.
 3. Select your new template from the list.

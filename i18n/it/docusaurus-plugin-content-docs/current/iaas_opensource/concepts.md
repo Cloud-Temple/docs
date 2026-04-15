@@ -99,9 +99,9 @@ L'archiviazione in blocco distribuita, basata su __IBM Spectrum Virtualize__, of
 
 Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrastruttura di storage a blocchi è dotata di un robusto crittografia hardware.
 
--   **Tipo di Crittografia**: I dati vengono crittografati direttamente sui dischi (`Data At Rest`) utilizzando l'algoritmo **XTS-AES 256**.
--   **Conformità**: Questo metodo di crittografia è conforme allo standard **FIPS 140-2**, garantendo un elevato livello di sicurezza certificato.
--   **Funzionamento**: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
+- __Tipo di Crittografia__: I dati vengono crittografati direttamente sui dischi (`Data At Rest`) utilizzando l'algoritmo __XTS-AES 256__.
+- __Conformità__: Questo metodo di crittografia è conforme allo standard __FIPS 140-2__, garantendo un elevato livello di sicurezza certificato.
+- __Funzionamento__: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
 
 :::warning Osservazione sulla replica
 È importante sottolineare che questa crittografia protegge i dati memorizzati sui dischi. Non è attiva "on-the-fly", il che significa che i dati non vengono crittografati durante le operazioni di replica dello storage tra le zone di disponibilità. La sicurezza dei trasferimenti è garantita tramite canali di comunicazione dedicati e protetti.
@@ -188,19 +188,23 @@ La memoria effettivamente utilizzabile può essere limitata dal sistema operativ
 Non è possibile ridimensionare i dischi una volta creati. Per aumentare la capacità di archiviazione, è necessario creare un nuovo disco.
 
 ### Strumenti per le macchine virtuali
+
 Questi strumenti sono utilizzati per garantire un funzionamento ottimale delle macchine virtuali. Quando si desidera eseguire un'azione e uno di questi strumenti è necessario, un messaggio verrà visualizzato sulla console Cloud Temple.
 
 Per installare questi strumenti, è possibile consultare i siti ufficiali di Xen Server per ottenere una procedura precisa in base al proprio sistema operativo.
 
 #### Management Agent
+
 Il Management Agent è un componente installato in ogni macchina virtuale. Permet all'ipervisore di gestire meglio la macchina grazie all'accesso a maggiori informazioni e consente di eseguire alcune azioni in modo più pulito.
 
 #### PV Drivers (Drivers di paravirtualizzazione)
+
 I driver PV sono driver installati nella macchina virtuale per migliorarne le prestazioni.  
 Senza questi driver, la macchina funziona, ma in modo più lento. Inoltre, consentono alcune operazioni avanzate.  
 I driver PV sono installati nativamente nella maggior parte dei kernel Linux attuali.
 
 #### Tools  
+
 I Tools sono un insieme di componenti software che migliorano l'integrazione della macchina virtuale con l'infrastruttura di virtualizzazione.
 
 ## Catalogs
@@ -309,15 +313,18 @@ Con l'alta disponibilità (HA), ogni host del pool invia regolarmente segnali di
 
 Un Block Storage designato come heartbeat significa che verrà utilizzato come base per autenticare gli host che non risponderanno più.
 
-Per configurare correttamente l'alta disponibilità in un pool OpenIaaS, è indispensabile disporre di **almeno due host** connessi.
+Per configurare correttamente l'alta disponibilità in un pool OpenIaaS, è indispensabile disporre di __almeno due host__ connessi.
 
 Ogni VM deve essere configurata con un livello di priorità di riavvio in caso di alta disponibilità:
 
 #### Disabled
+
  High availability is not configured. In the event of host failure, the virtual machine will not be restarted.
 
 #### Restart  
+
 In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
 
 #### Best-effort  
+
 In caso di guasto dell'host, la macchina virtuale verrà riavviata automaticamente solo se delle risorse rimangono disponibili dopo il trattamento di tutte le macchine virtuali configurate in modalità "restart". La modalità "Best-effort" effettua un solo tentativo, quindi, se le risorse sono insufficienti, la macchina virtuale non verrà riavviata.

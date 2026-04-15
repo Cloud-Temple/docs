@@ -7,20 +7,20 @@ Cette section regroupe un ensemble de tutoriels pour vous aider à prendre en ma
 
 ### Clients graphiques
 
-*   [Utiliser Cloud Berry Explorer](./tutorials/cloudberry-explorer.md)
-*   [Utiliser WinSCP](./tutorials/winscp.md)
+* [Utiliser Cloud Berry Explorer](./tutorials/cloudberry-explorer.md)
+* [Utiliser WinSCP](./tutorials/winscp.md)
 
 ### Clients en ligne de commande (CLI) et SDK
 
-*   [Synchroniser un dossier avec mc mirror](./tutorials/mc-mirror.md)
-*   [Synchroniser un dossier avec AWS CLI](./tutorials/aws-s3-sync.md)
-*   [Copier et synchroniser avec Rclone](./tutorials/rclone.md)
-*   [Utiliser le SDK Python (Boto3)](./tutorials/python-boto3.md)
+* [Synchroniser un dossier avec mc mirror](./tutorials/mc-mirror.md)
+* [Synchroniser un dossier avec AWS CLI](./tutorials/aws-s3-sync.md)
+* [Copier et synchroniser avec Rclone](./tutorials/rclone.md)
+* [Utiliser le SDK Python (Boto3)](./tutorials/python-boto3.md)
 
 ### Gestion des accès
 
-*   [Gérer les accès a mon bucket](./tutorials/bucket-access.md)
+* [Gérer les accès a mon bucket](./tutorials/bucket-access.md)
 
 ### Cas d'usage avancés
 
-*   [Ajouter le HASH d'un fichier (Checksum)](./tutorials/file-hashing.md)
+* [Ajouter le HASH d'un fichier (Checksum)](./tutorials/file-hashing.md)

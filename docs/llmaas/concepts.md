@@ -20,12 +20,14 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 ### Composants Principaux
 
 #### 1. **API Gateway LLMaaS**
+
 - **Compatible OpenAI** : Intégration transparente avec écosystème existant
 - **Rate Limiting** : Gestion des quotas par tier de facturation
 - **Load Balancing** : Distribution intelligente sur 12 machines GPU
 - **Monitoring** : Métriques temps réel et alerting
 
 #### 2. **Service d'Authentification**
+
 - **Tokens API sécurisés** : Rotation automatique
 - **Contrôle d'accès** : Permissions granulaires par modèle
 - **Audit trails** : Traçabilité complète des accès
@@ -39,16 +41,19 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 ### Gestion des Tokens
 
 #### **Types de Tokens**
+
 - **Tokens d'entrée** : Votre prompt et contexte
 - **Tokens de sortie** : Réponse générée par le modèle
 - **Tokens système** : Metadata et instructions
 
 #### **Calcul des Coûts**
+
 ```
 Coût total = (Tokens entrée × 1.9€/M) + (Tokens sortie × 8€/M) +  (Tokens sortie Raisonnement × 8€/M)
 ```
 
 #### **Optimisation**
+
 - **Context window** : Réutilisez les conversations pour économiser
 - **Modèles appropriés** : Choisissez la taille selon la complexité
 - **Max tokens** : Limitez la longueur des réponses
@@ -76,16 +81,19 @@ print(f"Coût estimé: {total_cost:.6f}€")
 Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
 
 #### **Protection des Données**
+
 - **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
 - **Stockage sécurisé** : Données chiffrées au repos (AES-256)
 - **Isolation** : Environnements dédiés par tenant
 
 #### **Souveraineté Numérique**
+
 - **Hébergement France** : Datacenters Cloud Temple certifiés
 - **Droit français** : Conformité RGPD native
 - **Pas d'exposition** : Aucun transfert vers clouds étrangers
 
 #### **Audit et Traçabilité**
+
 - **Logs complets** : Toutes les interactions tracées
 - **Rétention** : Conservation selon politiques légales
 - **Compliance** : Rapports d'audit disponibles
@@ -105,19 +113,22 @@ Il est possible de désactiver cette analyse de sécurité pour des cas d'usage 
 :::
 
 #### 1. Analyse Structurelle (`check_structure`)
+
 - **Vérification JSON malformé** : Le système détecte si le prompt commence par un `{` et tente de le parser comme du JSON. Si le parsing réussit et que le JSON contient des mots-clés suspects (ex: "system", "bypass"), ou si le parsing échoue de manière inattendue, cela peut indiquer une tentative d'injection.
 - **Normalisation Unicode** : Le prompt est normalisé en utilisant `unicodedata.normalize('NFKC', prompt)`. Si le prompt original diffère de sa version normalisée, cela peut indiquer l'utilisation de caractères Unicode trompeurs (homoglyphes) pour contourner les filtres. Par exemple, "аdmin" (cyrillique) au lieu de "admin" (latin).
 
 #### 2. Détection de Patterns Suspects (`check_patterns`)
+
 - Le système utilise des expressions régulières (`regex`) pour identifier des motifs connus d'attaques de prompts, et ce, dans plusieurs langues (français, anglais, chinois, japonais).
 - **Exemples de patterns détectés** :
-    - **Commandes Système** : Mots-clés comme "ignore les instructions", "ignore instructions", "忽略指令", "指示を無視".
-    - **Injection HTML** : Balises HTML cachées ou malveillantes, par exemple `<div caché>`, `<hidden div>`.
-    - **Injection Markdown** : Liens Markdown malveillants, par exemple `[texte](javascript:...)`, `[text](data:...)`.
-    - **Séquences Répétées** : Répétition excessive de mots ou de phrases comme "oublie oublie oublie", "forget forget forget".
-    - **Caractères Spéciaux/Mixtes** : Utilisation de caractères Unicode inhabituels ou mélange de scripts pour masquer des commandes (ex: "s\u0443stème").
+  - **Commandes Système** : Mots-clés comme "ignore les instructions", "ignore instructions", "忽略指令", "指示を無視".
+  - **Injection HTML** : Balises HTML cachées ou malveillantes, par exemple `<div caché>`, `<hidden div>`.
+  - **Injection Markdown** : Liens Markdown malveillants, par exemple `[texte](javascript:...)`, `[text](data:...)`.
+  - **Séquences Répétées** : Répétition excessive de mots ou de phrases comme "oublie oublie oublie", "forget forget forget".
+  - **Caractères Spéciaux/Mixtes** : Utilisation de caractères Unicode inhabituels ou mélange de scripts pour masquer des commandes (ex: "s\u0443stème").
 
 #### 3. Analyse Comportementale (`check_behavior`)
+
 - Le load balancer maintient un historique des prompts récents.
 - **Détection de Fragmentation** : Il combine les prompts récents pour voir si une attaque est fragmentée sur plusieurs requêtes. Par exemple, si "ignore" est envoyé dans un prompt et "instructions" dans le suivant, le système peut les détecter ensemble.
 - **Détection de Répétition** : Il identifie si le même prompt est répété de manière excessive. Le seuil actuel pour la détection de répétition est de 30 prompts consécutifs identiques.
@@ -129,6 +140,7 @@ Cette approche multicouche permet de détecter un large éventail d'attaques de 
 ### Monitoring en Temps Réel
 
 Access via **Console Cloud Temple** :
+
 - Métriques d'utilisation par modèle
 - Graphiques de latence et débit
 - Alertes sur seuils de performance
@@ -163,18 +175,21 @@ response = client_ct.chat.completions.create(
 ### Écosystème Supporté
 
 #### **Frameworks IA**
+
 - ✅ **LangChain** : Intégration native
 - ✅ **Haystack** : Pipeline de documents
 - ✅ **Semantic Kernel** : Orchestration Microsoft
 - ✅ **AutoGen** : Agents conversationnels
 
 #### **Outils Développement**
+
 - ✅ **Jupyter** : Notebooks interactifs
 - ✅ **Streamlit** : Applications web rapides
 - ✅ **Gradio** : Interfaces utilisateur IA
 - ✅ **FastAPI** : APIs backend
 
 #### **Plateformes No-Code**
+
 - ✅ **Zapier** : Automatisations
 - ✅ **Make** : Intégrations visuelles
 - ✅ **Bubble** : Applications web
@@ -314,7 +329,7 @@ Pour tirer le meilleur parti de l'API LLMaaS, il est essentiel d'adopter des str
 
 La maîtrise des coûts repose sur une utilisation intelligente des tokens et des modèles.
 
-1.  **Choix du Modèle** : N'utilisez pas un modèle surpuissant pour une tâche simple. Un modèle plus grand est plus capable, mais il est aussi plus lent et consomme beaucoup plus d'énergie, ce qui impacte directement le coût. Adaptez la taille du modèle à la complexité de votre besoin pour un équilibre optimal.
+1. **Choix du Modèle** : N'utilisez pas un modèle surpuissant pour une tâche simple. Un modèle plus grand est plus capable, mais il est aussi plus lent et consomme beaucoup plus d'énergie, ce qui impacte directement le coût. Adaptez la taille du modèle à la complexité de votre besoin pour un équilibre optimal.
 
     Par exemple, pour traiter un million de tokens :
     - **`Gemma 3 1B`** consomme **0.15 kWh**.
@@ -329,7 +344,8 @@ La maîtrise des coûts repose sur une utilisation intelligente des tokens et de
         model = "deepseek-r1:70b"
     ```
 
-2.  **Gestion du Contexte** : L'historique de la conversation (`messages`) est renvoyé à chaque appel, consommant des tokens d'entrée. Pour des conversations longues, envisagez des stratégies de résumé ou de fenêtrage pour ne conserver que les informations pertinentes.
+2. **Gestion du Contexte** : L'historique de la conversation (`messages`) est renvoyé à chaque appel, consommant des tokens d'entrée. Pour des conversations longues, envisagez des stratégies de résumé ou de fenêtrage pour ne conserver que les informations pertinentes.
+
     ```python
     # Pour une conversation longue, on peut résumer les premiers échanges.
     messages = [
@@ -340,7 +356,8 @@ La maîtrise des coûts repose sur une utilisation intelligente des tokens et de
     ]
     ```
 
-3.  **Limitation des Tokens de Sortie** : Utilisez toujours le paramètre `max_tokens` pour éviter des réponses excessivement longues et coûteuses. Fixez une limite raisonnable en fonction de ce que vous attendez.
+3. **Limitation des Tokens de Sortie** : Utilisez toujours le paramètre `max_tokens` pour éviter des réponses excessivement longues et coûteuses. Fixez une limite raisonnable en fonction de ce que vous attendez.
+
     ```python
     # Demander un résumé de 100 mots maximum.
     response = client.chat.completions.create(
@@ -354,7 +371,8 @@ La maîtrise des coûts repose sur une utilisation intelligente des tokens et de
 
 La réactivité de votre application dépend de la manière dont vous gérez les appels à l'API.
 
-1.  **Requêtes Asynchrones** : Pour traiter plusieurs requêtes sans attendre la fin de chacune, utilisez des appels asynchrones. C'est particulièrement utile pour les applications backend traitant un grand volume de requêtes simultanées.
+1. **Requêtes Asynchrones** : Pour traiter plusieurs requêtes sans attendre la fin de chacune, utilisez des appels asynchrones. C'est particulièrement utile pour les applications backend traitant un grand volume de requêtes simultanées.
+
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -372,7 +390,8 @@ La réactivité de votre application dépend de la manière dont vous gérez les
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming pour l'Expérience Utilisateur (UX)** : Pour les interfaces utilisateur (chatbots, assistants), le streaming est essentiel. Il permet d'afficher la réponse du modèle mot par mot, donnant une impression de réactivité immédiate au lieu d'attendre la réponse complète.
+2. **Streaming pour l'Expérience Utilisateur (UX)** : Pour les interfaces utilisateur (chatbots, assistants), le streaming est essentiel. Il permet d'afficher la réponse du modèle mot par mot, donnant une impression de réactivité immédiate au lieu d'attendre la réponse complète.
+
     ```python
     # Affiche la réponse en temps réel dans une interface utilisateur
     response_stream = client.chat.completions.create(
@@ -390,7 +409,8 @@ La réactivité de votre application dépend de la manière dont vous gérez les
 
 La sécurité de votre application est primordiale, surtout lorsque vous traitez des entrées utilisateur.
 
-1.  **Validation et Nettoyage des Entrées (Sanitization)** : Ne faites jamais confiance aux entrées utilisateur. Avant de les envoyer à l'API, nettoyez-les pour retirer tout code potentiellement malveillant ou instructions de "prompt injection". Limitez également leur taille pour éviter les abus.
+1. **Validation et Nettoyage des Entrées (Sanitization)** : Ne faites jamais confiance aux entrées utilisateur. Avant de les envoyer à l'API, nettoyez-les pour retirer tout code potentiellement malveillant ou instructions de "prompt injection". Limitez également leur taille pour éviter les abus.
+
     ```python
     def sanitize_input(user_input: str) -> str:
         # Exemple simple : retirer les démarqueurs de code et limiter la longueur.
@@ -399,7 +419,8 @@ La sécurité de votre application est primordiale, surtout lorsque vous traitez
         return cleaned[:2000]  # Limite la taille à 2000 caractères
     ```
 
-2.  **Gestion Robuste des Erreurs** : Encadrez toujours vos appels API dans des blocs `try...except` pour gérer les erreurs réseau, les erreurs de l'API (ex: 429 Rate Limit, 500 Internal Server Error) et fournir une expérience utilisateur dégradée mais fonctionnelle.
+2. **Gestion Robuste des Erreurs** : Encadrez toujours vos appels API dans des blocs `try...except` pour gérer les erreurs réseau, les erreurs de l'API (ex: 429 Rate Limit, 500 Internal Server Error) et fournir une expérience utilisateur dégradée mais fonctionnelle.
+
     ```python
     from openai import APIError, APITimeoutError
 

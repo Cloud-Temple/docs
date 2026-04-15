@@ -1,22 +1,22 @@
 ---
 title: Guida di avvio
 ---
-import openIaasVirtualMachinesList from './images/open_iaas_virtual_machines_list.png'
-import openIaasVirtualMachinesListActions from './images/open_iaas_virtual_machines_list_actions.png'
-import openIaasVirtualMachineOverview from './images/open_iaas_virtual_machine_overview.png'
-import openIaasVirtualMachineActions from './images/open_iaas_virtual_machine_actions.png'
-import openIaasVirtualMachineOverviewInformations from './images/open_iaas_virtual_machine_overview_informations.png'
-import openIaasVirtualMachineAdvancedOverview from './images/open_iaas_virtual_machine_advanced_overview.png'
-import openIaasReplicationMenu from './images/open_iaas_replication_menu.png'
-import openIaasReplicationPoliciesView from './images/open_iaas_replication_policies_view.png'
-import openIaasReplicationPolicyForm1 from './images/open_iaas_replication_policy_form1.png'
-import openIaasReplicationPolicyForm2 from './images/open_iaas_replication_policy_form2.png'
-import openIaasVmReplicationSection from './images/open_iaas_vm_replication_section.png'
-import openIaasReplicationPoliciesTable from './images/open_iaas_replication_policies_table.png'
-import openIaasReplicationReplicasTable from './images/open_iaas_replication_replicas_table.png'
-import openIaasVmConsoleBtn from './images/open_iaas_vm_console_btn.png'
-import openIaasVmConsoleOpen from './images/open_iaas_vm_console_open.png'
-import openIaasVmConsoleClipboard from './images/open_iaas_vm_console_clipboard.png'
+import openIaasVirtualMachinesList from '@site/docs/iaas_opensource/images/open_iaas_virtual_machines_list.png'
+import openIaasVirtualMachinesListActions from '@site/docs/iaas_opensource/images/open_iaas_virtual_machines_list_actions.png'
+import openIaasVirtualMachineOverview from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_overview.png'
+import openIaasVirtualMachineActions from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_actions.png'
+import openIaasVirtualMachineOverviewInformations from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_overview_informations.png'
+import openIaasVirtualMachineAdvancedOverview from '@site/docs/iaas_opensource/images/open_iaas_virtual_machine_advanced_overview.png'
+import openIaasReplicationMenu from '@site/docs/iaas_opensource/images/open_iaas_replication_menu.png'
+import openIaasReplicationPoliciesView from '@site/docs/iaas_opensource/images/open_iaas_replication_policies_view.png'
+import openIaasReplicationPolicyForm1 from '@site/docs/iaas_opensource/images/open_iaas_replication_policy_form1.png'
+import openIaasReplicationPolicyForm2 from '@site/docs/iaas_opensource/images/open_iaas_replication_policy_form2.png'
+import openIaasVmReplicationSection from '@site/docs/iaas_opensource/images/open_iaas_vm_replication_section.png'
+import openIaasReplicationPoliciesTable from '@site/docs/iaas_opensource/images/open_iaas_replication_policies_table.png'
+import openIaasReplicationReplicasTable from '@site/docs/iaas_opensource/images/open_iaas_replication_replicas_table.png'
+import openIaasVmConsoleBtn from '@site/docs/iaas_opensource/images/open_iaas_vm_console_btn.png'
+import openIaasVmConsoleOpen from '@site/docs/iaas_opensource/images/open_iaas_vm_console_open.png'
+import openIaasVmConsoleClipboard from '@site/docs/iaas_opensource/images/open_iaas_vm_console_clipboard.png'
 
 ## Calcolo
 
@@ -99,6 +99,7 @@ Si apre un nuovo tab del browser, che mostra la console della tua macchina virtu
 <img src={openIaasVmConsoleOpen} />
 
 Nel menu VNC è possibile:
+
 - richiedere l'invio di tasti particolari,
 - forzare un mapping della tastiera (nel caso in cui la macchina virtuale abbia una disposizione della tastiera diversa da quella del tuo browser web),
 - aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio appunti non funzionante,
@@ -106,6 +107,7 @@ Nel menu VNC è possibile:
 - modificare la dimensione della finestra (scaling).
 
 #### Keyboard layout support
+
 The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.  
 Here is a summary of the possible scenarios:
 
@@ -121,9 +123,11 @@ Here is a summary of the possible scenarios:
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you can try using the clipboard.
 
 #### Funzionamento degli appunti
+
 Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare la funzione degli appunti.  
 Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
 

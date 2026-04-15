@@ -308,22 +308,26 @@ Chaque tenant possède au moins un propriétaire, garantissant ainsi une respons
 
 #### 1. Nombre de propriétaires
 
-* Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
+- Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
+
 - L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
 
 #### 2. Ajout d'un nouveau propriétaire
 
-* Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
+- Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
+
 - Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
 
 #### 2. Permissions d'un propriétaire
 
-* Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
+- Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
+
 - Il n'est pas possible de modifier les permissions d'un propriétaire.
 
 #### 3. Retrait d'un propriétaire
 
-* Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
+- Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
+
 - Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
 
 ### Autorisation d'accès à un tenant : IP autorisées

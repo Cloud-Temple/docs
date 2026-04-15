@@ -1,33 +1,33 @@
 ---
 title: Conceptos
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
 ## Usuarios
 
 Las cuentas de acceso a la Consola se crean mediante invitación por parte de la cuenta principal del patrocinador (independientemente del repositorio de autenticación).
 
-Las credenciales son globales para su [Organización](#organisations).
+Las credenciales son globales para su [Organización](#organizaciones).
 
-*__Nota:__ [La federación de identidad se gestiona a nivel de organización](#mecanismos-de-autenticacion)*
+*__Nota:__ [La federación de identidad se gestiona a nivel de organización](#authentication-mechanisms)*
 
 ### Creación de una cuenta de usuario en su organización
 
-La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](#organisations), vaya al menú __'Administración'__ situado en la parte izquierda de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
+La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](#organizaciones), vaya al menú __'Administración'__ situado en la parte izquierda de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
 
 Haga clic en el botón __'Nuevo Usuario'__ desde la página de usuarios.
 
@@ -55,7 +55,7 @@ A continuación aparece el menú para activar los derechos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe realizarse para cada [Tenant](#tenant) de la [Organización](#organisations).
+La configuración de permisos debe realizarse para cada [Tenant](#management-of-owners-on-a-tenant) de la [Organización](#organizaciones).
 
 La lista de permisos y sus definiciones está disponible [aquí](#permissions).
 
@@ -133,7 +133,7 @@ El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte sup
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](#tenant).
+La configuración se realiza por cada inquilino [Tenant](#management-of-owners-on-a-tenant).
 
 ### Suscripciones a notificaciones temáticas
 
@@ -265,7 +265,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Inquilino
 
-El inquilino es un __agrupamiento de recursos dentro de una organización__. Una [Organización](#organisations) tiene al menos un inquilino (llamado __inquilino predeterminado__, que puede renombrarse). Normalmente, se utilizan varios inquilinos para segmentar responsabilidades o perímetros técnicos.
+El inquilino es un __agrupamiento de recursos dentro de una organización__. Una [Organización](#organizaciones) tiene al menos un inquilino (llamado __inquilino predeterminado__, que puede renombrarse). Normalmente, se utilizan varios inquilinos para segmentar responsabilidades o perímetros técnicos.
 
 Por ejemplo:
 
@@ -307,22 +307,26 @@ Each tenant has at least one owner, ensuring clear accountability and efficient 
 
 #### 1. Number of owners
 
-* There is no technical limit on the number of owners that can be defined for the tenant.
+- There is no technical limit on the number of owners that can be defined for the tenant.
+
 - The management interface (UI) issues a warning when more than 3 owners are present, encouraging the limitation of the number of owners for security reasons and optimal access management.
 
 #### 2. Adding a new owner
 
-* When adding a new owner, updating their permissions may take up to 60 minutes.
+- When adding a new owner, updating their permissions may take up to 60 minutes.
+
 - This propagation time is normal and ensures that access rights are correctly applied across all associated services and resources.
 
 #### 2. Permissions de un propietario
 
-* Un propietario recibirá todas las permisos asociados a los productos habilitados en su inquilino.
+- Un propietario recibirá todas las permisos asociados a los productos habilitados en su inquilino.
+
 - No es posible modificar los permisos de un propietario.
 
 #### 3. Removal of a owner
 
-* To remove an owner from the tenant, the user must submit a request to support.
+- To remove an owner from the tenant, the user must submit a request to support.
+
 - This procedure ensures that changes to access rights are carried out securely and in accordance with best practices for access management.
 
 ### Access authorization to a tenant: Allowed IPs

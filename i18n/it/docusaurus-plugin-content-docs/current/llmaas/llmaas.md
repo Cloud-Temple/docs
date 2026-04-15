@@ -27,6 +27,7 @@ L'API LLMaaS include i seguenti headers in ogni risposta:
 ## Esempi
 
 ### Richiesta cURL
+
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
@@ -45,6 +46,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ```
 
 ### Risposta
+
 ```json
 {
   "backend": {
@@ -89,6 +91,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ## URL di base
 
 L'URL di base per tutte le richieste API è :
+
 ```
 https://api.ai.cloud-temple.com/v1/
 ```
@@ -108,6 +111,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```
 
 **Risposta** :
+
 ```json
 {
   "object": "list",

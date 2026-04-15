@@ -237,6 +237,7 @@ terraform init
 ```
 
 Dieser Befehl:
+
 - Lädt den Provider aus dem Terraform Registry herunter
 - Initialisiert das Backend (falls konfiguriert)
 - Erstellt das Verzeichnis `.terraform/`
@@ -250,6 +251,7 @@ terraform plan
 ```
 
 Der Plan zeigt an:
+
 - **Ressourcen, die erstellt werden** (`+`)
 - **Ressourcen, die geändert werden** (`~`)
 - **Ressourcen, die entfernt werden** (`-`)
@@ -264,6 +266,7 @@ terraform apply
 ```
 
 Terraform:
+
 1. Generiert einen Plan
 2. Fordert Bestätigung an (außer bei Verwendung von `--auto-approve`)
 3. Wendet die Änderungen an

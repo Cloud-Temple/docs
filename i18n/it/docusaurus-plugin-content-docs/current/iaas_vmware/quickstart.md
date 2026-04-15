@@ -1,52 +1,56 @@
 ---
 title: Guida di avvio
 ---
-import shivaVmHome from './images/shiva_vm_home.png'
-import shivaVmHomeDesc from './images/shiva_vm_home_desc.png'
-import shivaVmHomeAlarme from './images/shiva_vm_home_alarme.png'
-import shivaVmActions from './images/shiva_vm_actions.png'
-import shivaVmInformations from './images/shiva_vm_informations.png'
-import shivaVmBandeauRapide from './images/shiva_vm_bandeau_rapide.png'
-import shivaVmVueRapide from './images/shiva_vm_vue_rapide.png'
-import shivaVmInfosGenerales from './images/shiva_vm_infos_generales.png'
-import shivaVmInfosAvancees from './images/shiva_vm_infos_avancees.png'
-import shivaEditCpuRam from './images/shiva_edit_cpu_ram.png'
-import shivaVmDiskctrl_001 from './images/shiva_vm_diskctrl_001.png'
-import shivaCpool_010 from './images/shiva_cpool_010.png'
-import shivaCpool_011 from './images/shiva_cpool_011.png'
-import shivaCpool_012 from './images/shiva_cpool_012.png'
-import shivaCatalogs from './images/shiva_catalogs.png'
-import shivaCatalogs_002 from './images/shiva_catalogs_002.png'
-import shivaVmTemplate_002 from './images/shiva_vm_template_002.png'
-import shivaVmTemplate_001 from './images/shiva_vm_template_001.png'
-import shivaVmAdv_001 from './images/shiva_vm_adv_001.png'
-import shivaVmAdv_002 from './images/shiva_vm_adv_002.png'
-import shivaVmAdv_003 from './images/shiva_vm_adv_003.png'
-import shivaVmAdv_004 from './images/shiva_vm_adv_004.png'
-import shivaCpool_001 from './images/shiva_cpool_001.png'
-import shivaEsx_001 from './images/shiva_esx_001.png'
-import shivaEsx_002 from './images/shiva_esx_002.png'
-import shivaCpool_003 from './images/shiva_cpool_003.png'
-import shivaCpool_004 from './images/shiva_cpool_004.png'
-import shivaCpool_005 from './images/shiva_cpool_005.png'
-import shivaCpool_009 from './images/shiva_cpool_009.png'
-import shivaCpool_007 from './images/shiva_cpool_007.png'
-import shivaCpool_008Build from './images/shiva_cpool_008_build.png'
-import shivaCpool_008Firm from './images/shiva_cpool_008_firm.png'
-import shivaCpool_006 from './images/shiva_cpool_006.png'
-import shivaSupport from '../console/images/shiva_support.png'
-import shivaVmPolitiquesBackupAssignMandatory from './images/shiva_vm_politiques_backup_assign_mandatory.png'
-import shivaVmPolitiquesBackup from './images/shiva_vm_politiques_backup.png'
-import shivaVmDisquesVirtuelsPolitiques from './images/shiva_vm_disques_virtuels_politiques.png'
-import shivaVmPolitiquesBackupExecute from './images/shiva_vm_politiques_backup_execute.png'
-import shivaVmPolitiquesBackupExecute2 from './images/shiva_vm_politiques_backup_execute2.png'
-import shivaVmPolitiquesBackupRetirer from './images/shiva_vm_politiques_backup_retirer.png'
-import shivaVmPolitiquesBackupRetirerImpossible from './images/shiva_vm_politiques_backup_retirer_impossible.png'
-import shivaBackupHeld_001 from './images/shiva_backup_held_001.png'
-import shivaBackupHeld_002 from './images/shiva_backup_held_002.png'
-import shivaVmBackupRestaurer from './images/shiva_vm_backup_restaurer.png'
-import shivaVmBackupTest from './images/shiva_vm_backup_test.png'
-import shivaVmBackup_2prod from './images/shiva_vm_backup_2prod.png'
+import shivaVmHome from '@site/docs/iaas_vmware/images/shiva_vm_home.png'
+import shivaVmHomeDesc from '@site/docs/iaas_vmware/images/shiva_vm_home_desc.png'
+import shivaVmHomeAlarme from '@site/docs/iaas_vmware/images/shiva_vm_home_alarme.png'
+import shivaVmActions from '@site/docs/iaas_vmware/images/shiva_vm_actions.png'
+import shivaVmInformations from '@site/docs/iaas_vmware/images/shiva_vm_informations.png'
+import shivaVmBandeauRapide from '@site/docs/iaas_vmware/images/shiva_vm_bandeau_rapide.png'
+import shivaVmVueRapide from '@site/docs/iaas_vmware/images/shiva_vm_vue_rapide.png'
+import shivaVmInfosGenerales from '@site/docs/iaas_vmware/images/shiva_vm_infos_generales.png'
+import shivaVmInfosAvancees from '@site/docs/iaas_vmware/images/shiva_vm_infos_avancees.png'
+import shivaEditCpuRam from '@site/docs/iaas_vmware/images/shiva_edit_cpu_ram.png'
+import shivaVmDiskctrl_001 from '@site/docs/iaas_vmware/images/shiva_vm_diskctrl_001.png'
+import shivaCpool_010 from '@site/docs/iaas_vmware/images/shiva_cpool_010.png'
+import shivaCpool_011 from '@site/docs/iaas_vmware/images/shiva_cpool_011.png'
+import shivaCpool_012 from '@site/docs/iaas_vmware/images/shiva_cpool_012.png'
+import shivaCatalogs from '@site/docs/iaas_vmware/images/shiva_catalogs.png'
+import shivaCatalogs_002 from '@site/docs/iaas_vmware/images/shiva_catalogs_002.png'
+import shivaVmTemplate_002 from '@site/docs/iaas_vmware/images/shiva_vm_template_002.png'
+import shivaVmTemplate_001 from '@site/docs/iaas_vmware/images/shiva_vm_template_001.png'
+import shivaVmAdv_001 from '@site/docs/iaas_vmware/images/shiva_vm_adv_001.png'
+import shivaVmAdv_002 from '@site/docs/iaas_vmware/images/shiva_vm_adv_002.png'
+import shivaVmAdv_003 from '@site/docs/iaas_vmware/images/shiva_vm_adv_003.png'
+import shivaVmAdv_004 from '@site/docs/iaas_vmware/images/shiva_vm_adv_004.png'
+import shivaCpool_001 from '@site/docs/iaas_vmware/images/shiva_cpool_001.png'
+import shivaEsx_001 from '@site/docs/iaas_vmware/images/shiva_esx_001.png'
+import shivaEsx_002 from '@site/docs/iaas_vmware/images/shiva_esx_002.png'
+import shivaCpool_003 from '@site/docs/iaas_vmware/images/shiva_cpool_003.png'
+import shivaCpool_004 from '@site/docs/iaas_vmware/images/shiva_cpool_004.png'
+import shivaCpool_005 from '@site/docs/iaas_vmware/images/shiva_cpool_005.png'
+import shivaCpool_009 from '@site/docs/iaas_vmware/images/shiva_cpool_009.png'
+import shivaCpool_007 from '@site/docs/iaas_vmware/images/shiva_cpool_007.png'
+import shivaCpool_008Build from '@site/docs/iaas_vmware/images/shiva_cpool_008_build.png'
+import shivaCpool_008Firm from '@site/docs/iaas_vmware/images/shiva_cpool_008_firm.png'
+import shivaCpool_006 from '@site/docs/iaas_vmware/images/shiva_cpool_006.png'
+import shivaSupport from '@site/docs/./console/images/shiva_support.png'
+import shivaVmPolitiquesBackupAssignMandatory from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_assign_mandatory.png'
+import shivaVmPolitiquesBackup from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup.png'
+import shivaVmDisquesVirtuelsPolitiques from '@site/docs/iaas_vmware/images/shiva_vm_disques_virtuels_politiques.png'
+import shivaVmPolitiquesBackupExecute from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_execute.png'
+import shivaVmPolitiquesBackupExecute2 from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_execute2.png'
+import shivaVmPolitiquesBackupRetirer from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_retirer.png'
+import shivaVmPolitiquesBackupRetirerImpossible from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_retirer_impossible.png'
+import shivaBackupHeld_001 from '@site/docs/iaas_vmware/images/shiva_backup_held_001.png'
+import shivaBackupHeld_002 from '@site/docs/iaas_vmware/images/shiva_backup_held_002.png'
+import shivaVmBackupRestaurer from '@site/docs/iaas_vmware/images/shiva_vm_backup_restaurer.png'
+import shivaVmBackupTest from '@site/docs/iaas_vmware/images/shiva_vm_backup_test.png'
+import shivaVmBackup_2prod from '@site/docs/iaas_vmware/images/shiva_vm_backup_2prod.png'
+import iaasVmwareClusterProvisionedMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_provisioned_memory.png'
+import iaasVmwareClusterUsedMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_used_memory.png'
+import iaasVmwareClusterWorstCaseAllocationMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_worst_case_allocation_memory.png'
+import iaasVmwareEsxMemory from '@site/docs/iaas_vmware/images/iaas_vmware_esx_memory.png'
 
 ## Calcolo
 
@@ -163,11 +167,12 @@ La console di una macchina virtuale è accessibile dalla lista delle macchine vi
 
 <img src={shivaCpool_010} />
 
-Si aprirà un nuovo tab del tuo browser, che mostrerà la console della tua macchina, basata su un client **VNC**:
+Si aprirà un nuovo tab del tuo browser, che mostrerà la console della tua macchina, basata su un client __VNC__:
 
 <img src={shivaCpool_011} />
 
-Nel menu **VNC** è possibile:
+Nel menu __VNC__ è possibile:
+
 - richiedere l'invio di tasti particolari,
 - forzare un mapping della tastiera (nel caso in cui non sia stato possibile identificare correttamente la tua tastiera),
 - aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio appunti non funzionante,
@@ -177,6 +182,7 @@ __Nota__:
 Lo scaling della finestra avviene automaticamente.
 
 #### Keyboard layout support
+
 The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled. Below is a summary of the possible scenarios:
 
 | Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
@@ -191,9 +197,11 @@ The input entered in the console depends on the keyboard language of your web br
 | English                                      | English                           | Yes                                | Not recommended          |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you can try using the clipboard.
 
 #### Funzionamento degli appunti
+
 Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare la funzione degli appunti.  
 Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
 
@@ -303,8 +311,26 @@ Facendo clic su un cluster, viene visualizzata una sintesi della sua composizion
 - Il numero di macchine virtuali,
 - Il numero di hypervisor.
 
-<!-- TODO: Add missing page. -->
-<!-- Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali) -->
+#### Interpretare i dati di consumo visualizzati
+
+<img src={iaasVmwareClusterProvisionedMemory} />
+
+__Memoria allocata (Cluster):__ Rappresenta la quantità totale di memoria allocata al cluster.
+
+<img src={iaasVmwareClusterUsedMemory} />
+
+__Memoria consumata (Cluster):__ Mostra la memoria attivamente consumata unicamente dalle macchine virtuali del cluster. Ciò corrisponde alla memoria fisica realmente utilizzata dalle VM per le loro operazioni, che è un indicatore chiave del carico di lavoro attuale.
+
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
+
+__Allocazione nel caso peggiore (Cluster):__ Illustra la memoria che sarebbe richiesta se tutte le macchine virtuali del cluster consumassero contemporaneamente l'intera memoria loro allocata (lo scenario di consumo massimo). Il risultato integra anche la memoria necessaria per il funzionamento del cluster e diversi parametri specifici di VMware (il calcolo non è semplicemente pari alla somma della RAM di tutte le macchine virtuali). Questo aiuta ad anticipare il fabbisogno di risorse critiche e a prevenire l'esaurimento della memoria.
+
+<img src={iaasVmwareEsxMemory} />
+
+__Memoria consumata (ESX):__ A differenza dei grafici del cluster, questo mostra la memoria totale consumata su uno specifico host ESX. Ciò include non solo la memoria utilizzata dalle macchine virtuali ospitate su questo host, ma anche la memoria consumata dal sistema hypervisor stesso (overhead di ESXi).
+
+{/*TODO: Add missing page. */}
+{/* Al consultare la pagina di un cluster, sono disponibili diverse schede. La scheda __'Regole'__ consente di definire le [regole di affinità/anti-affinità](compute.md#gestione-dellaffinità-delle-tue-macchine-virtuali)*/}
 
 <img src={shivaCpool_004} />
 
@@ -335,7 +361,7 @@ Dalla scheda __'Hosts'__ sono disponibili diverse azioni:
 
 <img src={shivaCpool_008Build} />
 
-2. L'aggiornamento del firmware del nodo di calcolo (BIOS e firmware delle schede aggiuntive):
+1. L'aggiornamento del firmware del nodo di calcolo (BIOS e firmware delle schede aggiuntive):
 
 <img src={shivaCpool_008Firm} />
 
@@ -347,8 +373,8 @@ Tuttavia, __non aggiorniamo automaticamente gli hypervisor per conto vostro__. C
 Vi lasciamo quindi gestire autonomamente il processo di cambiamento e applicare i nuovi build al momento più opportuno.
 - Il processo di aggiornamento è completamente automatizzato. È necessario disporre di almeno due hypervisor nel cluster per consentire un aggiornamento senza interruzioni del servizio.
 
-<!-- TODO: Add missing page. -->
-<!-- - *È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.* -->
+{/*TODO: Add missing page. */}
+{/* -*È necessario disporre delle [autorizzazioni appropriate](../console/permissions.md) per eseguire le diverse azioni.**/}
 
 Nella sezione __'Regole'__ è inoltre possibile visualizzare l'insieme delle regole di affinità/anti-affinità per il cluster di hypervisor.
 

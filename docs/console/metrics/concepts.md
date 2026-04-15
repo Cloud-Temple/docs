@@ -51,7 +51,7 @@ Ces alertes sont clicables, et redirigent vers la page produit concerné.
 
 ### Métriques VMware - Vue globale
 
-Dans le menu **'VMware'**, un tableau de bord spécifique est disponible dans le sous menu **'Métriques'**. Il regroupe 4 onglets :
+Dans le menu __'VMware'__, un tableau de bord spécifique est disponible dans le sous menu __'Métriques'__. Il regroupe 4 onglets :
 
 #### Aperçu
 
@@ -61,10 +61,10 @@ Sur cet onglet, on retrouve une partie des métriques déjà présentes dans le 
 
 #### Calcul
 
-Sur cet onglet, on retrouve le nombre d'**AZ**, de **Clusters**, d'**ESXs**, l'**émission carbone**, l'**estimation de la consommation**, ainsi que 7 graphiques 
+Sur cet onglet, on retrouve le nombre d'__AZ__, de __Clusters__, d'__ESXs__, l'__émission carbone__, l'__estimation de la consommation__, ainsi que 7 graphiques
 dressant un état des lieux très visuel de votre environnement VMware. L'estimation de la consommation en kw/h est calculée sur la moyenne des relevés couvrant la période choisie, rapportée à une heure.
 
-Vous pouvez choisir l'intervalle de dates à couvrir, ainsi que le type de regroupement de données (par défaut, les données sont regroupées pour l'ensemble de votre périmètre). En choisissant **Host** par ex:
+Vous pouvez choisir l'intervalle de dates à couvrir, ainsi que le type de regroupement de données (par défaut, les données sont regroupées pour l'ensemble de votre périmètre). En choisissant __Host__ par ex:
 
 <img src={shivaMetric_001} />
 
@@ -75,15 +75,16 @@ Au passage de la souris sur chacun des graphs, les détails des noms de resource
 
 #### Stockage
 
-De la même manière que sur l'onglet "Calcul", on retrouve différentes informations : le nombre d'**AZ**, de **datastore clusters**, de **datastores** ainsi que 2 graphiques. Le même principe de filtres s'applique, mais ici, nous pouvons grouper par **Cluster SDRS** et **Datastore**.
+De la même manière que sur l'onglet "Calcul", on retrouve différentes informations : le nombre d'__AZ__, de __datastore clusters__, de __datastores__ ainsi que 2 graphiques. Le même principe de filtres s'applique, mais ici, nous pouvons grouper par __Cluster SDRS__ et __Datastore__.
 
 <img src={shivaMetric_004} />
 
 #### Machines virtuelles
 
-On retrouve ici une vue globale de la santé des machines virtuelles. 
+On retrouve ici une vue globale de la santé des machines virtuelles.
 
 Cette synthèse donne, sur la plage de temps sélectionnée :
+
 - le nombre de CPU et la __moyenne d'utilisation CPU__,
 - le nombre de Go de mémoire et la __moyenne d'usage de la mémoire__,
 - Les moyennes de __latence d'accès au stockage__ en lecture et en écriture,
@@ -101,23 +102,23 @@ Vous accédez alors à la page de visualisation graphique des données historis�
 
 ### Métriques VMware - Vue par resource
 
-Il est possible de consulter également une partie des métriques liées à VMware, mais cette fois plus spécifiquement pour un **Host** ou un **Datastore** donné. 
+Il est possible de consulter également une partie des métriques liées à VMware, mais cette fois plus spécifiquement pour un __Host__ ou un __Datastore__ donné.
 
 #### Host
 
-Dans la vue d'un Host, on peut consulter pour une période donnée, la **consommation énergétique** ainsi que l'estimation d'**émissions de carbone**.
+Dans la vue d'un Host, on peut consulter pour une période donnée, la __consommation énergétique__ ainsi que l'estimation d'__émissions de carbone__.
 
 <img src={shivaMetric_008} />
 
 #### Datastore
 
-Dans la vue d'un Datastore, on peut consulter pour une période donnée les **IOPS**.
+Dans la vue d'un Datastore, on peut consulter pour une période donnée les __IOPS__.
 
 <img src={shivaMetric_009} />
 
 ### Métriques OpenIaaS
 
-Dans le menu **'OpenIaaS'**, un tableau de bord spécifique est disponible dans le sous menu **'Métriques'**. Il regroupe 3 onglets :
+Dans le menu __'OpenIaaS'__, un tableau de bord spécifique est disponible dans le sous menu __'Métriques'__. Il regroupe 3 onglets :
 
 #### Aperçu
 
@@ -127,10 +128,10 @@ Sur cet onglet, on retrouve une partie des métriques déjà présentes dans le 
 
 #### Calcul
 
-Sur cet onglet, on retrouve le nombre d'**AZ**, de **Clusters**, d'**Hosts**, ainsi que 5 graphiques 
+Sur cet onglet, on retrouve le nombre d'__AZ__, de __Clusters__, d'__Hosts__, ainsi que 5 graphiques
 dressant un état des lieux très visuel de votre environnement OpenIaaS.
 
-Vous pouvez choisir l'intervalle de dates à couvrir, ainsi que le type de regroupement de données (par défaut, les données sont regroupées pour l'ensemble de votre périmètre). En choisissant **Host** par ex:
+Vous pouvez choisir l'intervalle de dates à couvrir, ainsi que le type de regroupement de données (par défaut, les données sont regroupées pour l'ensemble de votre périmètre). En choisissant __Host__ par ex:
 
 <img src={shivaMetric_011} />
 
@@ -138,7 +139,7 @@ Vous pouvez choisir l'intervalle de dates à couvrir, ainsi que le type de regro
 
 #### Stockage
 
-De la même manière que sur l'onglet "Calcul", on retrouve différentes informations : le nombre d'**AZ**, de **Clusters**, de **Datastores** ainsi qu'un graphique. Le même principe de filtres s'applique, mais ici, nous pouvons grouper par **Block Storage**.
+De la même manière que sur l'onglet "Calcul", on retrouve différentes informations : le nombre d'__AZ__, de __Clusters__, de __Datastores__ ainsi qu'un graphique. Le même principe de filtres s'applique, mais ici, nous pouvons grouper par __Block Storage__.
 
 <img src={shivaMetric_013} />
 

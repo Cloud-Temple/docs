@@ -1,92 +1,96 @@
 ---
-title: Übersicht
+title: Managed Kubernetes Übersicht
 ---
 
 # Managed Kubernetes
 
 <div class="card-grid">
   <div class="card">
-    <h3>Concepts</h3>
-    <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur sicher zu beherrschen.</p>
+    <h3>Konzepte</h3>
+    <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu meistern.</p>
     <a href="managed_kubernetes/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Starten Sie schnell mit klaren und einfachen Anweisungen.</p>
+    <h3>Einstiegsleitfaden</h3>
+    <p>Starten Sie schnell, indem Sie klaren und einfachen Anleitungen folgen.</p>
     <a href="managed_kubernetes/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
-  <div class="card">
+    <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Leitfäden konfigurieren und nutzen.</p>
     <a href="managed_kubernetes/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
 
-Managed Kubernetes by Cloud Temple ist eine Container-Orchestrierungslösung auf Basis von Open-Source-Produkten und wurde speziell entwickelt, um ein hohes Maß an Sicherheit, Resilienz und Automatisierung auf den SecNumcloud-Plattformen von Cloud Temple zu gewährleisten. Jeder Cluster wird in einer vollständig dedizierten IaaS-Umgebung von Cloud-Temple OpenIaaS für den Kunden bereitgestellt.
+Managed Kubernetes by Cloud Temple ist eine Container-Orchestrierungslösung, die auf Open-Source-Produkten basiert und darauf ausgelegt ist, ein hohes Maß an Sicherheit, Resilienz und Automatisierung auf den SecNumCloud-Plattformen von Cloud Temple zu bieten. Jeder Cluster wird in einer Cloud Temple IaaS-Umgebung bereitgestellt, die vollständig dem Kunden gewidmet ist.
 
-Diese Lösung ist für Teams konzipiert, die über fundierte Kenntnisse von Kubernetes verfügen und Anhänger des Open Source-Paradigmas sind, die eine native, portierbare Lösung ohne Hersteller-spezifische Zusatzschichten suchen, die auf einem minimalen und unveränderlichen Betriebssystem basiert, das speziell für Automatisierung und Sicherheit entwickelt wurde.
+Dieses Angebot richtet sich an Teams mit guten Kubernetes-Kenntnissen und Open-Source-Enthusiasten, die eine native, portable Lösung ohne Hersteller-Overlay suchen, auf einem minimalistischen und unveränderlichen OS, das für Automatisierung und Sicherheit ausgelegt ist.
 
-### Key Benefits
+### Wesentliche Vorteile
 
-- **Sovereignty and Reversibility**: The solution is built on open-source standards (CNCF Kubernetes) to avoid any technological lock-in and ensure application portability. The Veeam Kasten backup tool included in the offering is specifically designed to simplify migrations between clouds.
-- **Zero-Trust Security and Governance**: The architecture is based on Talos OS, an immutable operating system with no direct access (no shell, no SSH), drastically reducing the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained access control, forming a solid foundation for a Zero-Trust security strategy.
-- **Cost Control and Integration**: The solution natively integrates FinOps tools like OpenCost for precise consumption tracking. The economic model is transparent, based on consumed IaaS resources, and the use of well-established open-source components (Cilium, Ceph, ArgoCD) facilitates seamless integration into your existing ecosystems.
+- **Souveränität und Reversibilität**: Die Lösung stützt sich auf Open-Source-Standards (Kubernetes CNCF), um jede technologische Abhängigkeit zu vermeiden und die Portabilität Ihrer Anwendungen zu gewährleisten. Das Backup-Tool Veeam Kasten, das im Angebot enthalten ist, wurde speziell entwickelt, um Migrationen von einer Cloud zur anderen zu erleichtern.
+- **"Zero-Trust"-Sicherheit und Governance**: Die Architektur basiert auf Talos OS, einem unveränderlichen Betriebssystem ohne direkten Zugang (kein Shell, kein SSH), was die Angriffsfläche drastisch reduziert. Dieser Ansatz ist mit Governance-Tools wie Kyverno für das Richtlinienmanagement und Capsule für die fein granulierte Rechteverwaltung gekoppelt und bildet eine solide Grundlage für eine "Zero-Trust"-Sicherheitsstrategie.
+- **Kostenkontrolle und Integration**: Die Lösung integriert nativ FinOps-Tools wie OpenCost für eine präzise Verbrauchsverfolgung. Das Preismodell ist transparent, basiert auf verbrauchten IaaS-Ressourcen, und die Verwendung anerkannter Open-Source-Komponenten (Cilium, Ceph, ArgoCD) erleichtert die Integration in Ihre bestehenden Ökosysteme.
 
-### A complete and ready-to-use platform
+### Eine vollständige und einsatzbereite Plattform
 
-The solution natively includes a comprehensive and consistent stack of cutting-edge open-source tools to cover all requirements throughout the application lifecycle:
+Die Lösung enthält nativ einen vollständigen und kohärenten Stack modernster Open-Source-Tools, um alle Bedürfnisse des Anwendungslebenszyklus abzudecken:
 
-- **Networking and Security**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule  
-- **Storage**: Rook-Ceph  
-- **Continuous Deployment (GitOps)**: ArgoCD  
-- **Observability**: Prometheus, Grafana, Loki  
-- **Backup and Migration**: Veeam Kasten  
-- **Cost Management (FinOps)**: OpenCost
+- **Netzwerk und Sicherheit**: Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
+- **Speicher**: Rook-Ceph
+- **Continuous Deployment (GitOps)**: ArgoCD
+- **Observability**: Prometheus, Grafana, Loki
+- **Backup und Migration**: Veeam Kasten
+- **Kostenmanagement (FinOps)**: OpenCost
 
-## Deployment Architectures
+---
 
-We offer two distinct architectures to meet your needs, whether for development environments or critical production setups.
+## Deployment-Architekturen
 
-### Architecture "Dev/Test"
+Wir bieten zwei unterschiedliche Architekturen an, um Ihren Anforderungen gerecht zu werden, sei es für Entwicklungsumgebungen oder kritische Produktionsumgebungen.
 
-Ideal für POC-Umgebungen, diese kompakte Architektur stellt alle Ressourcen innerhalb einer einzigen Verfügbarkeitszone (AZ) bereit.
+### "Dev/Test"-Architektur
 
-- **Verwendungszweck**: Entwicklung, Tests, Proof-of-Concept (POC).
-- **Wichtige Merkmale**:
-    - 1 Control-Plane-Knoten.
-    - 3 Worker-Knoten (oder mehr).
-    - Der verteilte Speicher (Ceph) ist auf den Worker-Knoten ko-lokalisiert.
-    - Kein SLA für hohe Verfügbarkeit.
-    - Keine Sicherheitsbeschränkungen.
+Ideal für POC-Umgebungen – diese kompakte Architektur stellt alle Ressourcen innerhalb einer einzigen Verfügbarkeitszone (AZ) bereit.
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+- **Anwendungsfälle**: Entwicklung, Tests, Proof-of-Concept (POC).
+- **Wesentliche Punkte**:
+  - 1 Control Plane-Knoten.
+  - 3 Worker-Knoten (oder mehr).
+  - Verteilter Speicher (Ceph) ist auf den Worker-Knoten co-lokalisiert.
+  - Kein Hochverfügbarkeits-SLA.
+  - Keine Sicherheitsbeschränkungen.
 
-### Production Architecture (Multi-AZ)
+<img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Mono-AZ-Architektur" />
 
-Designed for production and critical applications, this architecture distributes resources across three Availability Zones (AZ) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
+### Produktionsarchitektur (Multi-AZ)
 
-- **Use Case**: Production applications, critical services, platforms requiring an SLA.
-- **Key Features**:
-    - **High Availability**: 3 Control Plane nodes distributed across 3 AZs.
-    - **Dedicated Storage**: 3 dedicated storage nodes distributed for performance and resilience.
-    - **Distributed Workers**: Minimum of 3 worker nodes, one per AZ.
-    - **Bare Metal Nodes (Optional)**: Optional integration of **"Bare Metal"** worker nodes for specific performance requirements, particularly **GPU support**.
-    - **SLA of 99.90%**.
+Für Produktion und kritische Anwendungen konzipiert, verteilt diese Architektur Ressourcen auf drei Verfügbarkeitszonen (AZ), um hohe Verfügbarkeit und maximale Resilienz gemäß SecNumCloud-Anforderungen zu gewährleisten.
 
-<img src={require('./images/archi_overview.png').default} alt="Multi-AZ Architecture" />
+- **Anwendungsfälle**: Produktionsanwendungen, kritische Dienste, Plattformen, die ein SLA benötigen.
+- **Wesentliche Punkte**:
+  - **Hohe Verfügbarkeit**: 3 Control Plane-Knoten, verteilt auf 3 AZs.
+  - **Dedizierter Speicher**: 3 dedizierte und verteilte Speicherknoten für Leistung und Resilienz.
+  - **Verteilte Worker**: Mindestens 3 Worker-Knoten, einer pro AZ.
+  - **Bare Metal-Knoten (Optional)**: Mögliche Integration von Worker-Knoten des Typs **"Bare Metal"** für spezifische Leistungsanforderungen, insbesondere **GPU-Unterstützung**.
+  - **SLA von 99,90%**.
 
-### Detailed Technical Components
+<img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Multi-AZ-Architektur" />
 
-The offering includes the following components in detail:
+---
 
-- CNI Cilium, with observability interface (Hubble)
-- Internal and external ingresses via MetalLB and nginx
-- Distributed storage with Rook-Ceph
+### Detaillierte technische Komponenten
+
+Das Angebot umfasst im Detail die folgenden Komponenten:
+
+- CNI Cilium, mit Observability-Schnittstelle (Hubble)
+- Interne und externe Ingresses MetalLB und nginx
+- Verteilter Speicher Rook-Ceph
 - Cert-Manager
 - ArgoCD
-- Prometheus stack (Prometheus, Grafana, Loki)
-- Container registry Harbor
-- Cost management with OpenCost
-- Advanced security policies with Kyverno and Capsule
-- Veeam Kasten (backup, cross-environment automation, and reversibility)
-- SSO authentication with external Identity Provider OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
+- Prometheus-Stack (Prometheus, Grafana, Loki)
+- Container-Registry Harbor
+- Kostenmanagement mit OpenCost
+- Erweiterte Sicherheitsrichtlinien mit Kyverno und Capsule
+- Veeam Kasten (Backup, umgebungsübergreifende Automatisierungen und Reversibilität)
+- SSO-Authentifizierung mit einem externen OIDC Identity Provider (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)

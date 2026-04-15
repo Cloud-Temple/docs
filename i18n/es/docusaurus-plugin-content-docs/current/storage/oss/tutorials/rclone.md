@@ -11,7 +11,7 @@ Asegúrese de utilizar una **versión reciente de Rclone** para garantizar la co
 ## Requis
 
 - Una cuenta de almacenamiento S3 de Cloud Temple con las claves de acceso (Access Key y Secret Key).
-- El endpoint S3 de su cuenta (disponible en la [consola Cloud Temple](../../console/console.md)).
+- El endpoint S3 de su cuenta (disponible en la [consola Cloud Temple](../../../console/console.md)).
 
 ## Instalación de Rclone
 
@@ -139,5 +139,7 @@ Para automatizar una copia de seguridad diaria, añada una entrada cron:
 ```
 
 # Daily backup at 2 AM
-0 2 * * * rclone sync /data/backup cloudtemple-s3:bucket-name/ --log-file=/var/log/rclone-backup.log --log-level INFO
+
+0 2 ** * rclone sync /data/backup cloudtemple-s3:bucket-name/ --log-file=/var/log/rclone-backup.log --log-level INFO
+
 ```

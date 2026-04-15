@@ -29,6 +29,7 @@ Nell'ambito di questa configurazione:
 ## Versioni dei software
 
 Assicuratevi che le seguenti versioni di software e strumenti siano installate per garantire una compatibilità ottimale:  
+
 - **Kasten K10**: v5.5.10 o superiore  
 - **OpenShift CLI**: v4.15.6 o superiore  
 - **Kubernetes**: v1.24 o superiore (via OpenShift)  
@@ -61,6 +62,7 @@ Per seguire questa guida, assicuratevi di avere i seguenti elementi:
 ## File necessari
 
 Non sono necessari file specifici per questa configurazione, ma avrete bisogno delle seguenti informazioni fornite da Cloud Temple:  
+
 - **Chiave di accesso S3**  
 - **Chiave segreta S3**  
 - **URL dell’endpoint S3 SNC**: Per esempio, `xxxxx.s3.fr1.cloud-temple.com`.  
@@ -140,6 +142,7 @@ Per confermare che il backup sia correttamente configurato:
 Seguendo questa guida, avete configurato con successo una posizione di backup S3 compatibile SecNumCloud in Kasten con l’infrastruttura Cloud Temple. Questo workflow consente di gestire efficacemente i vostri backup, sfruttando uno storage certificato e sicuro.  
 
 Per ulteriori approfondimenti, potete:  
+
 - Aggiungere altri workload da salvare.  
 - Configurare politiche di retention avanzate in Kasten.  
 - Automatizzare i test di ripristino per validare i vostri dati.  

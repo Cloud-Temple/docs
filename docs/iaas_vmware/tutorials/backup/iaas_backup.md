@@ -80,7 +80,7 @@ Ces actions permettent d'avoir les logs détaillés de l'exécution de la sauveg
 
 <img src={backupPolicyIaas_005} />
 
-2. Allez sur la page __'Rapports de sauvegarde'__ et sélectionnez la politique qui vous intéresse :
+1. Allez sur la page __'Rapports de sauvegarde'__ et sélectionnez la politique qui vous intéresse :
 
 <img src={backupPolicyIaas_004} />
 

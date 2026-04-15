@@ -13,19 +13,21 @@ El servicio **LLMaaS** (Large Language Models as a Service) de Cloud Temple ofre
 
 ### Infraestructura Cloud Temple
 
-import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
+import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001.png';
 
 <img src={ArchitectureLLMaaS} alt="Arquitectura Técnica LLMaaS Cloud Temple" />
 
 ### Componentes Principales
 
 #### 1. **API Gateway LLMaaS**
+
 - **Compatible con OpenAI** : Integración transparente con el ecosistema existente
 - **Límite de tasas** : Gestión de cuotas por nivel de facturación
 - **Equilibrio de carga** : Distribución inteligente sobre 12 máquinas GPU
 - **Monitoreo** : Métricas en tiempo real y alertas
 
 #### 2. **Authentication Service**
+
 - **Secure API Tokens**: Automatic rotation
 - **Access Control**: Granular permissions per model
 - **Audit Trails**: Full access traceability
@@ -39,16 +41,19 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 ### Gestión de Tokens
 
 #### **Tipos de tokens**
+
 - **Tokens de entrada**: Su prompt y contexto
 - **Tokens de salida**: Respuesta generada por el modelo
 - **Tokens del sistema**: Metadatos e instrucciones
 
 #### **Cálculo de Costos**
+
 ```
 Coste total = (Tokens entrada × 1,9€/M) + (Tokens salida × 8€/M) + (Tokens salida Razonamiento × 8€/M)
 ```
 
 #### **Optimización**
+
 - **Ventana de contexto**: Reutilice las conversaciones para ahorrar
 - **Modelos adecuados**: Elija el tamaño según la complejidad
 - **Tokens máximos**: Limite la longitud de las respuestas
@@ -76,23 +81,26 @@ print(f"Coste estimado: {total_cost:.6f}€")
 The LLMaaS service is hosted on a technical infrastructure that holds the **SecNumCloud 3.2 certification** from ANSSI, ensuring:
 
 #### **Protección de Datos**
+
 - **Cifrado extremo a extremo**: TLS 1.3 para todos los intercambios
 - **Almacenamiento seguro**: Datos cifrados en reposo (AES-256)
 - **Aislamiento**: Entornos dedicados por inquilino
 
 #### **Soberanía Digital**
+
 - **Almacenamiento en Francia**: Centros de datos Cloud Temple certificados
 - **Derecho francés**: Cumplimiento nativo del RGPD
 - **Sin exposición**: Sin transferencias a nubes extranjeras
 
 #### **Auditoría y trazabilidad**
+
 - **Registros completos** : Todas las interacciones registradas
 - **Retención** : Conservación según políticas legales
 - **Cumplimiento** : Informes de auditoría disponibles
 
 ### Security Controls
 
-import SecurityControls from './images/llmaas_security_002.png';
+import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 <img src={SecurityControls} alt="Security Controls LLMaaS" />
 
@@ -105,19 +113,22 @@ Es posible desactivar este análisis de seguridad para casos de uso muy específ
 :::
 
 #### 1. Análisis estructural (`check_structure`)
+
 - **JSON malformado** : El sistema detecte si el prompt comienza con un `{` y trata de analizarlo como JSON. Si el análisis tiene éxito y el JSON contiene palabras clave sospechosas (por ejemplo, "system", "bypass"), o si el análisis falla de manera inesperada, esto puede indicar una tentativa de inyección.
 - **Normalización Unicode** : El prompt se normaliza utilizando `unicodedata.normalize('NFKC', prompt)`. Si el prompt original difiere de su versión normalizada, esto puede indicar el uso de caracteres Unicode engañosos (homógrafos) para evadir los filtros. Por ejemplo, "аdmin" (cirílico) en lugar de "admin" (latino).
 
 #### 2. Detection of Suspicious Patterns (`check_patterns`)
+
 - The system uses regular expressions (`regex`) to identify known attack patterns in prompts, across multiple languages (French, English, Chinese, Japanese).
 - **Examples of detected patterns**:
-    - **System Commands**: Keywords such as "ignore the instructions", "ignore instructions", "忽略指令", "指示を無視".
-    - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
-    - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
-    - **Repeated Sequences**: Excessive repetition of words or phrases, such as "forget forget forget", "oublie oublie oublie".
-    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obscure commands (e.g., "s\u0443stème").
+  - **System Commands**: Keywords such as "ignore the instructions", "ignore instructions", "忽略指令", "指示を無視".
+  - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
+  - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
+  - **Repeated Sequences**: Excessive repetition of words or phrases, such as "forget forget forget", "oublie oublie oublie".
+  - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obscure commands (e.g., "s\u0443stème").
 
 #### 3. Behavioral Analysis (`check_behavior`)
+
 - The load balancer maintains a history of recent prompts.
 - **Fragmentation Detection**: It combines recent prompts to check if an attack is fragmented across multiple requests. For example, if "ignore" is sent in one prompt and "instructions" in the next, the system can detect them together.
 - **Repetition Detection**: It identifies if the same prompt is repeated excessively. The current threshold for repetition detection is 30 consecutive identical prompts.
@@ -129,6 +140,7 @@ This multi-layered approach enables the detection of a wide range of prompt atta
 ### Monitoreo en tiempo real
 
 Acceso a través de **Console Cloud Temple**:
+
 - Métricas de uso por modelo
 - Gráficos de latence y tasa de transferencia
 - Alertas sobre umbrales de rendimiento
@@ -163,18 +175,21 @@ response = client_ct.chat.completions.create(
 ### Ecosistema compatible
 
 #### **Frameworks de IA**
+
 - ✅ **LangChain** : Integración nativa
 - ✅ **Haystack** : Pipeline de documentos
 - ✅ **Semantic Kernel** : Orquestación de Microsoft
 - ✅ **AutoGen** : Agentes conversacionales
 
 #### **Herramientas de Desarrollo**
+
 - ✅ **Jupyter** : Cuadernos interactivos
 - ✅ **Streamlit** : Aplicaciones web rápidas
 - ✅ **Gradio** : Interfaces de usuario para IA
 - ✅ **FastAPI** : APIs backend
 
 #### **Plataformas No-Code**
+
 - ✅ **Zapier** : Automatizaciones
 - ✅ **Make** : Integraciones visuales
 - ✅ **Bubble** : Aplicaciones web
@@ -183,7 +198,7 @@ response = client_ct.chat.completions.create(
 
 ### Actualización de modelos
 
-import ModelLifecycle from './images/llmaas_lifecycle_003.png';
+import ModelLifecycle from '@site/docs/llmaas/images/llmaas_lifecycle_003.png';
 
 <img src={ModelLifecycle} alt="Ciclo de vida de los modelos LLMaaS" />
 
@@ -312,7 +327,7 @@ Para obtener el máximo provecho de la API LLMaaS, es fundamental adoptar estrat
 
 El control de costos se basa en un uso inteligente de los tokens y de los modelos.
 
-1.  **Elección del Modelo**: No utilices un modelo demasiado potente para una tarea sencilla. Un modelo más grande es más capaz, pero también es más lento y consume mucho más energía, lo que afecta directamente al costo. Ajusta el tamaño del modelo a la complejidad de tu necesidad para lograr un equilibrio óptimo.
+1. **Elección del Modelo**: No utilices un modelo demasiado potente para una tarea sencilla. Un modelo más grande es más capaz, pero también es más lento y consume mucho más energía, lo que afecta directamente al costo. Ajusta el tamaño del modelo a la complejidad de tu necesidad para lograr un equilibrio óptimo.
 
     Por ejemplo, para procesar un millón de tokens:
     - **`Gemma 3 1B`** consume **0,15 kWh**.
@@ -327,7 +342,8 @@ El control de costos se basa en un uso inteligente de los tokens y de los modelo
         model = "deepseek-r1:70b"
     ```
 
-2.  **Gestión del Contexto**: El historial de la conversación (`messages`) se devuelve en cada llamada, consumiendo tokens de entrada. Para conversaciones largas, considera estrategias de resumen o ventana deslizante para conservar solo la información relevante.
+2. **Gestión del Contexto**: El historial de la conversación (`messages`) se devuelve en cada llamada, consumiendo tokens de entrada. Para conversaciones largas, considera estrategias de resumen o ventana deslizante para conservar solo la información relevante.
+
     ```python
     # Para una conversación larga, se puede resumir los primeros intercambios.
     messages = [
@@ -338,7 +354,8 @@ El control de costos se basa en un uso inteligente de los tokens y de los modelo
     ]
     ```
 
-3.  **Limitación de Tokens de Salida**: Siempre utiliza el parámetro `max_tokens` para evitar respuestas excesivamente largas y costosas. Establece un límite razonable según lo que esperas.
+3. **Limitación de Tokens de Salida**: Siempre utiliza el parámetro `max_tokens` para evitar respuestas excesivamente largas y costosas. Establece un límite razonable según lo que esperas.
+
     ```python
     # Solicitar un resumen de máximo 100 palabras.
     response = client.chat.completions.create(
@@ -352,7 +369,8 @@ El control de costos se basa en un uso inteligente de los tokens y de los modelo
 
 La reactividad de su aplicación depende de la forma en que gestiona las llamadas a la API.
 
-1.  **Consultas asíncronas**: Para procesar múltiples solicitudes sin esperar la finalización de cada una, utilice llamadas asíncronas. Esto es especialmente útil para aplicaciones backend que manejan un gran volumen de solicitudes simultáneas.
+1. **Consultas asíncronas**: Para procesar múltiples solicitudes sin esperar la finalización de cada una, utilice llamadas asíncronas. Esto es especialmente útil para aplicaciones backend que manejan un gran volumen de solicitudes simultáneas.
+
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -370,7 +388,8 @@ La reactividad de su aplicación depende de la forma en que gestiona las llamada
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming para la experiencia del usuario (UX)**: Para interfaces de usuario (chatbots, asistentes), el streaming es esencial. Permite mostrar la respuesta del modelo palabra a palabra, dando la impresión de reactividad inmediata en lugar de esperar la respuesta completa.
+2. **Streaming para la experiencia del usuario (UX)**: Para interfaces de usuario (chatbots, asistentes), el streaming es esencial. Permite mostrar la respuesta del modelo palabra a palabra, dando la impresión de reactividad inmediata en lugar de esperar la respuesta completa.
+
     ```python
     # Muestra la respuesta en tiempo real en una interfaz de usuario
     response_stream = client.chat.completions.create(
@@ -388,7 +407,8 @@ La reactividad de su aplicación depende de la forma en que gestiona las llamada
 
 La seguridad de tu aplicación es fundamental, especialmente cuando manejas entradas de usuario.
 
-1.  **Validation and Input Cleaning (Sanitización)**: Never trust user inputs. Before sending them to the API, clean them to remove any potentially malicious code or "prompt injection" instructions. Also limit their size to avoid abuse.
+1. **Validation and Input Cleaning (Sanitización)**: Never trust user inputs. Before sending them to the API, clean them to remove any potentially malicious code or "prompt injection" instructions. Also limit their size to avoid abuse.
+
     ```python
     def sanitize_input(user_input: str) -> str:
         # Simple example: remove code delimiters and limit length.
@@ -397,7 +417,8 @@ La seguridad de tu aplicación es fundamental, especialmente cuando manejas entr
         return cleaned[:2000]  # Limita la longitud a 2000 caracteres
     ```
 
-2.  **Gestión robusta de errores**: Siempre envuelve tus llamadas a la API dentro de bloques `try...except` para manejar errores de red, errores de la API (por ejemplo, 429 Rate Limit, 500 Internal Server Error) y proporcionar una experiencia de usuario funcional, aunque degradada.
+2. **Gestión robusta de errores**: Siempre envuelve tus llamadas a la API dentro de bloques `try...except` para manejar errores de red, errores de la API (por ejemplo, 429 Rate Limit, 500 Internal Server Error) y proporcionar una experiencia de usuario funcional, aunque degradada.
+
     ```python
     from openai import APIError, APITimeoutError
 

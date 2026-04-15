@@ -30,7 +30,7 @@ Esta política detalla las responsabilidades y recomendaciones para el Mantenimi
 - Planificar los despliegues aplicativos fuera de las ventanas de mantenimiento para evitar conflictos con las actualizaciones automáticas del cluster.
 - Seguir las comunicaciones de **Cloud Temple** sobre actualizaciones importantes para planificar los ajustes necesarios.
 - Seguir las actualizaciones próximas a través de la [**Roadmap producto**](https://github.com/orgs/Cloud-Temple/projects/2)
-- Suscribirse a las notificaciones [**de incidentes**](../../console/status.md#gestion-des-notifications)
+- Suscribirse a las notificaciones [**de incidentes**](../../console/status.md#gestión-de-notificaciones)
 
 ### Supervisión y monitoreo
 
@@ -133,7 +133,7 @@ Las vulnerabilidades en la infraestructura y los servicios subyacentes a la ofer
 **Recomendación:**
 
 - Utilizar la función de alertas del clúster proporcionada por **[Quay]** para analizar vulnerabilidades y detectar comportamientos anómalos en las imágenes utilizadas por el **Cliente**.
-- Suscribirse a las notificaciones de [**incidentes**](../../console/status.md#gestion-de-las-notificaciones).
+- Suscribirse a las notificaciones de [**incidentes**](../../console/status.md#gestión-de-notificaciones).
 
 ### Cifrado
 

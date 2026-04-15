@@ -1,15 +1,15 @@
 ---
 title: Schnellstartanleitung
 ---
-import shivaTenant from './images/shiva_tenant.png'
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
-import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Mandant
 
@@ -40,7 +40,7 @@ Credentials are global to your [Organization](concepts.md#organizations).
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](concepts.md#organisations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](concepts.md#organizations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
 
 Klicken Sie auf die Schaltfläche __'Neuer Benutzer'__ auf der Benutzerseite.
 
@@ -68,10 +68,9 @@ The rights activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](concepts.md#tenant) within the 
-[Organization](concepts.md#organisations).
+Permission configuration must be done for each [Tenant](concepts.md#tenant) within the [Organization](concepts.md#organizations).
 
-The list of permissions and their definitions is available [here](#permissions).
+The list of permissions and their definitions is available [here](#berechtigungen).
 
 ### Change the language of a user
 
@@ -97,11 +96,11 @@ The list of available themes may evolve and gradually expand to adapt to changin
 
 ### Welche Berechtigungen sind für Benutzerkonten in der Konsole verfügbar?
 
-Hier finden Sie die Liste der verfügbaren [Berechtigungen](#permissions).
+Hier finden Sie die Liste der verfügbaren [Berechtigungen](#berechtigungen).
 
 ### How to add a permission?
 
-The [procedure for assigning permissions is available here](#permissions)
+The [procedure for assigning permissions is available here](#berechtigungen)
 
 ### Why can't I add a permission?
 

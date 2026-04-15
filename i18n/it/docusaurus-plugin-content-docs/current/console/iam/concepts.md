@@ -1,28 +1,28 @@
 ---
 title: Concetti
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
 ## Utenti
 
 I conti di accesso alla Console vengono creati dal conto principale del committente su invito (indipendentemente dal repository di autenticazione utilizzato).  
 Le credenziali sono globali per la tua [Organizzazione](#organizzazioni).
 
-*__Nota:__ [La federazione di identità viene gestita a livello di organizzazione](#meccanismi-dautenticazione)*
+*__Nota:__ [La federazione di identità viene gestita a livello di organizzazione](#authentication-mechanisms)*
 
 ### Creazione di un account utente nella tua organizzazione
 
@@ -54,9 +54,9 @@ Viene quindi visualizzato il menu per l'attivazione dei diritti:
 
 <img src={shivaOnboard_005} />
 
-La configurazione dei permessi deve essere effettuata per ogni [Tenant](#tenant) dell'[Organizzazione](#organisations).
+La configurazione dei permessi deve essere effettuata per ogni [Tenant](#tenant) dell'[Organizzazione](#organizzazioni).
 
-L'elenco dei permessi e la loro definizione è disponibile [qui](#permissions).
+L'elenco dei permessi e la loro definizione è disponibile [qui].
 
 ### Re-registration of a user
 
@@ -264,7 +264,7 @@ An email address is required for all accounts originating from an identity feder
 
 ## Tenant
 
-Il tenant è un __raggruppamento di risorse all'interno di un'organizzazione__. Un'[Organizzazione](#organisations) ha almeno un tenant (chiamato __tenant predefinito__, che può essere rinominato). Di solito, vengono utilizzati più tenant per suddividere responsabilità o ambiti tecnici.
+Il tenant è un __raggruppamento di risorse all'interno di un'organizzazione__. Un'[Organizzazione](#organizzazioni) ha almeno un tenant (chiamato __tenant predefinito__, che può essere rinominato). Di solito, vengono utilizzati più tenant per suddividere responsabilità o ambiti tecnici.
 
 Ad esempio:
 
@@ -306,22 +306,26 @@ Ogni tenant ha almeno un proprietario, garantendo così una responsabilità chia
 
 #### 1. Number of owners
 
-* There is no technical limit on the number of owners that can be defined for the tenant.
+- There is no technical limit on the number of owners that can be defined for the tenant.
+
 - The management interface (UI) issues a warning when there are more than 3 owners, to encourage limiting the number of owners for security reasons and optimal access management.
 
 #### 2. Aggiunta di un nuovo proprietario
 
-* Durante l'aggiunta di un nuovo proprietario, l'aggiornamento dei suoi permessi potrebbe richiedere un tempo di attesa fino a 60 minuti.
+- Durante l'aggiunta di un nuovo proprietario, l'aggiornamento dei suoi permessi potrebbe richiedere un tempo di attesa fino a 60 minuti.
+
 - Questo intervallo di propagazione è normale e garantisce che i diritti di accesso vengano correttamente applicati a tutti i servizi e le risorse associati.
 
 #### 2. Permissions di un proprietario
 
-* Un proprietario riceverà tutte le autorizzazioni correlate ai prodotti abilitati nel suo tenant.
+- Un proprietario riceverà tutte le autorizzazioni correlate ai prodotti abilitati nel suo tenant.
+
 - Non è possibile modificare le autorizzazioni di un proprietario.
 
 #### 3. Rimozione di un proprietario
 
-* Per rimuovere un proprietario dal tenant, l'utente deve inviare una richiesta al supporto.
+- Per rimuovere un proprietario dal tenant, l'utente deve inviare una richiesta al supporto.
+
 - Questa procedura garantisce che le modifiche ai diritti di accesso vengano effettuate in modo sicuro e conforme alle migliori pratiche di gestione degli accessi.
 
 ### Access authorization to a tenant: Allowed IPs

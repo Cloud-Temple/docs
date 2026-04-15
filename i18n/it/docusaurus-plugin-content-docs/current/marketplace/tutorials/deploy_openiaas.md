@@ -1,8 +1,8 @@
 ---
 title: Distribuire un'immagine su OpenIaaS
 ---
-import marketplaceOpeniaasDeployment from '../images/marketplace_openiaas_deploy.png'
-import marketplaceOpeniaasConfig from '../images/marketplace_openiaas_config.png'
+import marketplaceOpeniaasDeployment from '@site/docs/marketplace/images/marketplace_openiaas_deploy.png'
+import marketplaceOpeniaasConfig from '@site/docs/marketplace/images/marketplace_openiaas_config.png'
 
 Questo tutorial ti guida nel distribuire un'immagine di macchina virtuale dalla Marketplace Cloud Temple nel tuo ambiente OpenIaaS.
 
@@ -22,6 +22,7 @@ Dalla pagina di dettaglio di una soluzione compatibile con OpenIaaS, seleziona l
 ### 2. Configurazione della macchina virtuale
 
 Configurate i parametri di base della vostra macchina virtuale:
+
 - **Nome** della VM
 - **Risorse** (CPU, RAM)
 - **Archiviazione**
@@ -42,5 +43,6 @@ Il provisioning viene solitamente completato in meno di 10 minuti, in base alle 
 ## Monitoraggio del deployment
 
 Dopo aver avviato il deployment:
+
 - Segui l'avanzamento dalla console OpenIaaS
 - La VM apparirà nella tua lista delle macchine virtuali

@@ -1,16 +1,16 @@
 ---
 title: Scheduled Operations and Incident Management
 ---
-import shivaInterventionMenu01 from './images/shiva_intervention_menu01.png'
-import shivaInterventionMenu03 from './images/shiva_intervention_menu03.png'
-import shivaInterventionMenu04 from './images/shiva_intervention_menu04.png'
-import shivaInterventionMenu05 from './images/shiva_intervention_menu05.png'
-import shivaIncident_001 from './images/shiva_incident_001.png'
-import shivaIncident_002 from './images/shiva_incident_002.png'
-import shivaIncident_003 from './images/shiva_incident_003.png'
-import shivaIncident_004 from './images/shiva_incident_004.png'
-import shivaIncident_005 from './images/shiva_incident_005.png'
-import shivaIncident_006 from './images/shiva_incident_006.png'
+import shivaInterventionMenu01 from '@site/docs/console/images/shiva_intervention_menu01.png'
+import shivaInterventionMenu03 from '@site/docs/console/images/shiva_intervention_menu03.png'
+import shivaInterventionMenu04 from '@site/docs/console/images/shiva_intervention_menu04.png'
+import shivaInterventionMenu05 from '@site/docs/console/images/shiva_intervention_menu05.png'
+import shivaIncident_001 from '@site/docs/console/images/shiva_incident_001.png'
+import shivaIncident_002 from '@site/docs/console/images/shiva_incident_002.png'
+import shivaIncident_003 from '@site/docs/console/images/shiva_incident_003.png'
+import shivaIncident_004 from '@site/docs/console/images/shiva_incident_004.png'
+import shivaIncident_005 from '@site/docs/console/images/shiva_incident_005.png'
+import shivaIncident_006 from '@site/docs/console/images/shiva_incident_006.png'
 
 As with any cloud infrastructure platform, the Temple Cloud platform regularly undergoes maintenance and hardware/software updates.
 

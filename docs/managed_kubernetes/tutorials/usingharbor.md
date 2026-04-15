@@ -15,7 +15,6 @@ Dans ce guide, remplacez les variables suivantes par vos valeurs:
 
 :::
 
-
 ## Prérequis
 
 - Accès à la Console et au service Managed Kubernetes

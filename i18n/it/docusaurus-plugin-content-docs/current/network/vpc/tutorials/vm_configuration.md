@@ -1,20 +1,21 @@
 ---
 title: Configurazione della rete della VM
 ---
-import vpcCreateNetworkAdaptersVmModale from '../images/vpc_create_network_adapters_vm_modale.png'
-import vpcCreateNetworkAdaptersVmSelectNetworks from '../images/vpc_create_network_adapters_vm_select_networks.png'
-import vpcCreateNetworkAdaptersVm from '../images/vpc_create_network_adapters_vm.png'
-import vpcDetailIpsPub from '../images/vpc_detail_ips_pub.png'
-import vpcIpPubAssociate from '../images/vpc_ip_pub_associate.png'
-import vpcMacAddressAssociateModale from '../images/vpc_mac_address_associate_modale.png'
+import vpcCreateNetworkAdaptersVmModale from '@site/docs/network/vpc/images/vpc_create_network_adapters_vm_modale.png'
+import vpcCreateNetworkAdaptersVmSelectNetworks from '@site/docs/network/vpc/images/vpc_create_network_adapters_vm_select_networks.png'
+import vpcCreateNetworkAdaptersVm from '@site/docs/network/vpc/images/vpc_create_network_adapters_vm.png'
+import vpcDetailIpsPub from '@site/docs/network/vpc/images/vpc_detail_ips_pub.png'
+import vpcIpPubAssociate from '@site/docs/network/vpc/images/vpc_ip_pub_associate.png'
+import vpcMacAddressAssociateModale from '@site/docs/network/vpc/images/vpc_mac_address_associate_modale.png'
 
 # Network Configuration of the VM
 
 This tutorial guides you through connecting a virtual machine to a VPC network and assigning it a static (private) IP address, as well as a public IP address if required.
 
 ## Prerequisiti
-*   Disporre di un VPC e di una rete privata creati.
-*   Disporre di una VM distribuita (IaaS Open Source o VMware).
+
+* Disporre di un VPC e di una rete privata creati.
+* Disporre di una VM distribuita (IaaS Open Source o VMware).
 
 ## 1. Assegnazione di un indirizzo IP privato statico
 
@@ -24,18 +25,18 @@ This tutorial guides you through connecting a virtual machine to a VPC network a
 
 Questo metodo ti permette di configurare rete e indirizzo IP in un'unica operazione durante la creazione dell'interfaccia.
 
-1.  Accedi alla vista dettagliata della tua macchina virtuale.
-2.  Vai alla scheda **Adattatori di rete**.
-3.  Clicca sul pulsante **Nuovo adattatore di rete** per aggiungere un'interfaccia.
+1. Accedi alla vista dettagliata della tua macchina virtuale.
+2. Vai alla scheda **Adattatori di rete**.
+3. Clicca sul pulsante **Nuovo adattatore di rete** per aggiungere un'interfaccia.
 <img src={vpcCreateNetworkAdaptersVm} />
 
-4.  Nella finestra modale, seleziona il tuo rete VPC.
+4. Nella finestra modale, seleziona il tuo rete VPC.
 <img src={vpcCreateNetworkAdaptersVmModale} />
 
-5.  Una volta selezionata la rete, scegli una delle IP statiche disponibili.
+5. Una volta selezionata la rete, scegli una delle IP statiche disponibili.
 <img src={vpcCreateNetworkAdaptersVmSelectNetworks} />
 
-6.  Conferma la creazione.
+6. Conferma la creazione.
 
 > **Nota**: Puoi modificare in seguito l'adattatore di rete per cambiare rete, se necessario.
 
@@ -53,15 +54,15 @@ Questo metodo è utile per prenotare un indirizzo IP prima della creazione della
 
 If you want to make your VM accessible from the internet.
 
-1.  From the detailed view of your VPC, go to the **Public IPs** tab.  
+1. From the detailed view of your VPC, go to the **Public IPs** tab.  
 <img src={vpcDetailIpsPub} />
 
-2.  Click the **Associate a public IP** button.
+2. Click the **Associate a public IP** button.
 
-3.  In the modal, select the target private network and static IP, then confirm the association.  
+3. In the modal, select the target private network and static IP, then confirm the association.  
 <img src={vpcIpPubAssociate} />
 
-4.  Once the association is complete, you can use this public IP address to access your VM.
+4. Once the association is complete, you can use this public IP address to access your VM.
 
 ## Configurazione del sistema operativo ospite
 
