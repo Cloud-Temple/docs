@@ -5,6 +5,21 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 15 Avril 2026 : Documentation Managed MariaDB, Managed PostgreSQL et corrections multilingues
+
+- **Managed MariaDB** : Mise en ligne de la documentation initiale du service Managed MariaDB (en preview) : présentation du service, concepts techniques (architectures StandAlone et Distributed), guide de démarrage. Disponible en français, anglais, allemand, espagnol et italien.
+- **Managed PostgreSQL** : Mise en ligne de la documentation initiale du service Managed PostgreSQL (en preview) : présentation du service, concepts techniques, guide de démarrage. Disponible en français, anglais, allemand, espagnol et italien.
+- **Corrections multilingues (images)** : Correction des références d'images dans les traductions des sections Managed Kubernetes et Managed MariaDB pour toutes les langues (EN, DE, ES, IT) — conversion des chemins relatifs `./images/` vers des chemins absolus `@site/docs/...` assurant un rendu correct dans toutes les langues.
+- **Corrections liens brisés** : Résolution de plusieurs liens brisés dans la documentation : références aux licences LLMaaS, lien vers la console dans le tutoriel rclone (OSS), lien IAM dans la documentation réseau (EN), liens relatifs dans la section Terraform (EN).
+
+### 15 Avril 2026 : Nouveau module Gestionnaire des coûts
+
+- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix. Disponible en français, anglais, allemand, espagnol et italien.
+
+### 26 Mars 2026 : Mise à jour de la liste des sous-traitants (DPA)
+
+- **Contractuel** : Mise à jour de l'Annexe Contractuelle sur les Données à Caractère Personnel (DPA) - révision de la liste des sous-traitants (retrait de Microsoft Azure et Amazon Web Services, modification de l'activité pour Iron Mountain) et ajout de la date d'autorisation.
+
 ### 19 Mars 2026 : Améliorations documentation IaaS et Terraform
 
 - **IaaS OpenSource** : Ajout d'un guide complet pour créer une machine virtuelle. Le tutoriel couvre les trois méthodes de déploiement disponibles (modèle, import XVA, Marketplace) avec des instructions pas à pas et des recommandations de bonnes pratiques.
