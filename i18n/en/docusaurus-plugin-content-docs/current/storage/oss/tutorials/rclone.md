@@ -11,7 +11,7 @@ Make sure you are using a **recent version of Rclone** to ensure compatibility w
 ## Prerequisites
 
 - A Cloud Temple S3 storage account with access keys (Access Key and Secret Key).
-- The S3 endpoint for your account (available in the [Cloud Temple console](../../console/console.md)).
+- The S3 endpoint for your account (available in the [Cloud Temple console](../../../console/console.md)).
 
 ## Installing Rclone
 
@@ -139,5 +139,7 @@ To automate a daily backup, add a cron entry:
 ```
 
 # Daily backup at 2 AM
-0 2 * * * rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ --log-file=/var/log/rclone-backup.log --log-level INFO
+
+0 2 ** * rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ --log-file=/var/log/rclone-backup.log --log-level INFO
+
 ```

@@ -16,9 +16,9 @@ Pour synchroniser le contenu du dossier local `./mon-site` vers le bucket `s3://
 
 ### Options utiles
 
-*   `--delete` : Supprime les fichiers du bucket qui n'existent plus dans le dossier local. C'est l'équivalent de l'option `--remove` de `mc mirror`.
-*   `--exact-timestamps` : Lors de la synchronisation, ne copie le fichier que si l'horodatage de modification est différent.
-*   `--dryrun` : Affiche les opérations qui seraient effectuées sans réellement les exécuter. Très utile pour vérifier une commande avant de la lancer.
+* `--delete` : Supprime les fichiers du bucket qui n'existent plus dans le dossier local. C'est l'équivalent de l'option `--remove` de `mc mirror`.
+* `--exact-timestamps` : Lors de la synchronisation, ne copie le fichier que si l'horodatage de modification est différent.
+* `--dryrun` : Affiche les opérations qui seraient effectuées sans réellement les exécuter. Très utile pour vérifier une commande avant de la lancer.
 
 ```bash
 # Simulation d'une synchronisation avec suppression pour vérifier les changements

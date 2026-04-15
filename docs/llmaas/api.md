@@ -25,16 +25,16 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 Notre système de tiers est conçu comme des **enveloppes de service complètes** qui définissent trois aspects clés de votre utilisation :
 
-1.  **Un Palier d'Accès (Crédit d'Achat)** : Pour les Tiers 1 à 4, il s'agit d'un montant à régler de manière anticipée (upfront) pour activer le service et débloquer les capacités techniques et budgétaires du palier choisi.
-2.  **Une Limite de Budget Mensuel** : C'est le plafond de votre consommation mensuelle, vous assurant une maîtrise totale de vos coûts.
-3.  **Une Capacité Technique** : Ce sont les limites de débit (tokens par jour et par heure) qui garantissent une performance stable et prévisible pour votre volume d'appels.
+1. **Un Palier d'Accès (Crédit d'Achat)** : Pour les Tiers 1 à 4, il s'agit d'un montant à régler de manière anticipée (upfront) pour activer le service et débloquer les capacités techniques et budgétaires du palier choisi.
+2. **Une Limite de Budget Mensuel** : C'est le plafond de votre consommation mensuelle, vous assurant une maîtrise totale de vos coûts.
+3. **Une Capacité Technique** : Ce sont les limites de débit (tokens par jour et par heure) qui garantissent une performance stable et prévisible pour votre volume d'appels.
 
 Le choix d'un tier est donc un équilibre entre l'investissement initial, le budget mensuel prévisionnel et la capacité technique requise. Votre consommation au sein de cette enveloppe est ensuite facturée selon les tarifs en vigueur.
 
 ### Tableau des Tiers
 
 | Tier | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description |
-|------|----------------|-------------------|---------------------|--------------------|-----------| 
+|------|----------------|-------------------|---------------------|--------------------|-----------|
 | **Tier 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Utilisation standard |
 | **Tier 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Usage professionnel |
 | **Tier 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Volume élevé |
@@ -42,11 +42,13 @@ Le choix d'un tier est donc un équilibre entre l'investissement initial, le bud
 | **Facturation Mensuelle** | N/A | Illimitée | Priorité élevée | Priorité élevée | Contact commercial |
 
 **Note** : Les limites de débit sont calculées sur la base des tokens de sortie. La tarification des tokens varie selon l'usage :
+
 - **Tokens d'entrée** : 1.90 € / million
 - **Tokens de sortie (standard)** : 8.00 € / million
 - **Tokens de sortie (raisonneur)** : 8.00 € / million (s'applique aux modèles les plus avancés pour les tâches complexes de type agent ou raisonnement)
 
 #### **Facturation Audio**
+
 - **Transcription Audio** : 0.01 € / minute (toute minute commencée est due)
 
 ### Headers de Limite
@@ -213,12 +215,14 @@ Après avoir reçu une réponse `tool_calls`, vous devez exécuter l'outil de vo
 Avec `"stream": true`, la réponse arrive token par token :
 
 **Headers de réponse :**
+
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
 **Format des événements :**
+
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -230,6 +234,7 @@ data: [DONE]
 ```
 
 **Structure des chunks :**
+
 - `choices[].delta.content` : Contenu incrémental
 - `finish_reason` : `null` pendant le streaming, puis `"stop"`
 - Signal de fin : `data: [DONE]`
@@ -280,7 +285,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ### POST /v1/completions
 
 :::warning
-**Note** : L'endpoint `/v1/completions` utilise le même format que `/v1/chat/completions` avec des messages. 
+**Note** : L'endpoint `/v1/completions` utilise le même format que `/v1/chat/completions` avec des messages.
 Pour la complétion de texte simple, utilisez un message user avec votre prompt.
 :::
 
@@ -359,7 +364,6 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
   "language": "fr"
 }
 ```
-
 
 ### POST /v1/embeddings
 

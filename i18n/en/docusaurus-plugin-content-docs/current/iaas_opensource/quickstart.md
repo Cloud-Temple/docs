@@ -69,11 +69,11 @@ A quick action bar allows you to perform the following actions:
 - Rename the virtual machine.
 - Delete the virtual machine.
 
-In the **General** tab, you find detailed information about your virtual machine, such as its physical location (AZ, Pool, Host), RAM, CPU, IP addresses, and other details.
+In the __General__ tab, you find detailed information about your virtual machine, such as its physical location (AZ, Pool, Host), RAM, CPU, IP addresses, and other details.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-The **Advanced** tab allows you to view more specific information:
+The __Advanced__ tab allows you to view more specific information:
 
 - Virtual machine UUID  
 - Guest tools  
@@ -99,6 +99,7 @@ A new browser tab opens, displaying the console of your machine, based on a VNC 
 <img src={openIaasVmConsoleOpen} />
 
 Within the VNC menu, you can:
+
 - request the transmission of specific key presses,
 - force a keyboard mapping (in cases where your virtual machine uses a different keyboard layout than your web browser),
 - open a text field that can be sent to the machine. This method replaces the previous non-functional clipboard,
@@ -123,9 +124,11 @@ Here is a summary of the possible scenarios:
 | English                                    | English                           | Yes                                | Not recommended        |
 
 __Note__:
+
 - If certain characters do not appear during manual input, you may try using the clipboard instead.
 
 #### Clipboard Functionality
+
 This feature allows you to send an entire string of characters to your virtual machine. It is important to note that the "enforce keyboard" option affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is required, make sure to enable it before using the clipboard.  
 This functionality can be used to send a password, a command, or the content of a configuration file, for example:
 

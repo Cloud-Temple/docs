@@ -22,6 +22,7 @@ Depuis la page de détail d'une solution compatible VMware, sélectionnez votre 
 ### 2. Configuration de la machine virtuelle
 
 Configurez les paramètres de base de votre machine virtuelle :
+
 - **Nom** de la VM
 - **Ressources** (CPU, RAM)
 - **Stockage**
@@ -42,5 +43,6 @@ Vous pouvez également accéder aux templates Marketplace directement depuis l'i
 ## Suivi du déploiement
 
 Une fois le déploiement lancé :
+
 - Suivez l'avancement depuis la console VMware
 - La VM apparaîtra dans votre inventaire vSphere

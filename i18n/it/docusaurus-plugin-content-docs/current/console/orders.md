@@ -87,6 +87,7 @@ Otterrai quindi un riepilogo delle opzioni selezionate prima di confermare il tu
 ## Richiedere risorse di archiviazione aggiuntive
 
 La logica di allocazione dello storage in modalità blocco sui cluster di calcolo si basa sulla tecnologia __IBM SVC (San Volume Controller)__ e __IBM FlashSystem__. Lo storage è organizzato in __LUN da almeno 500 GiB__, presentate secondo la tecnologia utilizzata:
+
 - Per __VMware__: in forma di __datastore__ raggruppati in __cluster SDRS (Storage Distributed Resource Scheduler)__
 - Per __Bare Metal__: in forma di __volumi__
 - Per __Open IaaS__: in forma di __Storage Repository (SR)__

@@ -66,6 +66,7 @@ L'onglet **Grille tarifaire** (ou **Liste des prix**) référence l'ensemble des
 <img src={billingPricesList} />
 
 Chaque entrée de la grille indique :
+
 - Le **type de ressource** concernée
 - L'**unité de facturation** (par heure, par Go, par unité, etc.)
 - Le **prix unitaire** applicable

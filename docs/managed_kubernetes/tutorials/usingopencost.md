@@ -85,11 +85,13 @@ Par exemple, pour le cluster "bestie" :
 Pour générer la valeur `<TOKEN>` à partir de vos identifiants, utilisez une des commandes suivantes :
 
 **Pour Linux/macOS :**
+
 ```bash
 echo -n 'finopsadm:VOTRE_MOT_DE_PASSE' | base64
 ```
 
 **Pour Windows (PowerShell) :**
+
 ```powershell
 $credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:VOTRE_MOT_DE_PASSE")
 [System.Convert]::ToBase64String($credentials)
@@ -100,30 +102,28 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 ### 2. Interroger OpenCost avec le MCP
 
 :::tip Prérequis
-Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre offre **[LLM-as-a-Service](/llmaas/llmaas)** souveraine.
+Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre offre **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
 :::
 
 Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requetes en langage natuel sur ce serveur MCP.
 
-#### Exemple:
+#### Exemple
 
 "utilise le MCP "opencost-bestie", et dis moi quelle pourcentage des couts du cluster ne sont pas alloués à des ressources"
 Vous obtiendrez ceci:
 <img src={opencostmcp} alt="réponse IA opencost"/>
 
-#### Exemple 2:
+#### Exemple 2
 
 "utilise le MCP "opencost-bestie",  et liste moi les couts associés aux volumes persistents sur la journée d'hier"
 
 <img src={opencostmcp2} alt="réponse IA opencost 2"/>
 
-
-#### Exemple 3:
+#### Exemple 3
 
 "utilise le MCP opencost-bestie, et dis moi quelle pourcentage des couts du cluster alloués à l'application avec le label "nginx" . (filtre de la forme filter: "label:app:frontend" )"
 
 <img src={opencostmcp3} alt="réponse IA opencost 3"/>
-
 
 ## Conclusion
 

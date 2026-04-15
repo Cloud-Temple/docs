@@ -5,6 +5,7 @@ title: Tutoriel - Déployer votre première application
 ## Objectifs
 
 Ce tutoriel vous guide pas à pas pour réaliser votre premier déploiement sur un cluster **Managed Kubernetes**. À la fin de ce guide, vous aurez :
+
 - Déployé une application web simple.
 - Exposé cette application à l'intérieur du cluster via un Service.
 - Rendu l'application accessible depuis Internet via un Ingress.
@@ -26,7 +27,7 @@ kubectl create namespace hello-world
 
 Nous allons déployer une application de démonstration qui affiche une simple page web.
 
-1.  Créez un fichier nommé `deployment.yaml` avec le contenu suivant :
+1. Créez un fichier nommé `deployment.yaml` avec le contenu suivant :
 
     ```yaml
     apiVersion: apps/v1
@@ -53,13 +54,13 @@ Nous allons déployer une application de démonstration qui affiche une simple p
             - containerPort: 80
     ```
 
-2.  Appliquez ce manifeste à votre cluster :
+2. Appliquez ce manifeste à votre cluster :
 
     ```bash
     kubectl apply -f deployment.yaml
     ```
 
-3.  Vérifiez que le déploiement a été créé et que les pods sont en cours d'exécution :
+3. Vérifiez que le déploiement a été créé et que les pods sont en cours d'exécution :
 
     ```bash
     kubectl get deployment -n hello-world
@@ -78,7 +79,7 @@ Nous allons déployer une application de démonstration qui affiche une simple p
 
 Pour permettre aux différents composants du cluster de communiquer avec notre application, nous devons créer un **Service**.
 
-1.  Créez un fichier nommé `service.yaml` :
+1. Créez un fichier nommé `service.yaml` :
 
     ```yaml
     apiVersion: v1
@@ -96,18 +97,19 @@ Pour permettre aux différents composants du cluster de communiquer avec notre a
       type: ClusterIP
     ```
 
-2.  Appliquez le manifeste :
+2. Appliquez le manifeste :
 
     ```bash
     kubectl apply -f service.yaml
     ```
+
     Votre application est maintenant accessible via le nom `hello-world-service.hello-world` depuis n'importe quel autre pod du cluster.
 
 ## Étape 4 : Rendre l'application accessible depuis Internet (Ingress)
 
 Pour exposer notre service sur Internet, nous allons utiliser une ressource **Ingress**. L'offre Managed Kubernetes fournit plusieurs `ingressClassName` préconfigurés. Nous utiliserons `nginx-external` pour une exposition publique.
 
-1.  Créez un fichier `ingress.yaml`. **Pensez à remplacer `votre-cluster-id`** par l'identifiant de votre cluster (ex: `ctodev`).
+1. Créez un fichier `ingress.yaml`. **Pensez à remplacer `votre-cluster-id`** par l'identifiant de votre cluster (ex: `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -130,7 +132,7 @@ Pour exposer notre service sur Internet, nous allons utiliser une ressource **In
                   number: 80
     ```
 
-2.  Appliquez le manifeste :
+2. Appliquez le manifeste :
 
     ```bash
     kubectl apply -f ingress.yaml
@@ -165,12 +167,13 @@ RawContent        : HTTP/1.1 200 OK
                     Expires: Wed, 29 Oct 2025 15:40:03 GMT
                     Server: ng...
 ```
+
 :::warning Pour aller plus loin : la sécurité en production
 Ce tutoriel vous a montré les bases du déploiement. Pour un environnement de production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
 
--   **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
--   **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour restreindre les communications aux seuls flux nécessaires entre vos applications.
--   **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
+- **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
+- **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour restreindre les communications aux seuls flux nécessaires entre vos applications.
+- **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
 :::
 
 ## Nettoyage

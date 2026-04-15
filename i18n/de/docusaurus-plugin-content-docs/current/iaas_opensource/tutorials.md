@@ -10,13 +10,16 @@ This section contains practical tutorials to effectively use Cloud Temple's Open
 ## Available tutorials
 
 ### Verwaltung virtueller Maschinen
+
 - [Eine virtuelle Maschine erstellen](tutorials/create_vm)
 
 ### Hochverfügbarkeit
+
 - [Verwaltung von Ressourcenpools](tutorials/high_availability/manage_pool)
 - [Verwaltung von virtuellen Maschinen](tutorials/high_availability/manage_vm)
 
 ### Backup
+
 - [Frequently Asked Questions about Backup](tutorials/backup/iaas_opensource_backup)
 
 ## Voraussetzungen

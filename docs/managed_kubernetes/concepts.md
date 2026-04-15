@@ -37,7 +37,7 @@ Cloud Temple propose deux offres distinctes pour répondre à vos besoins en mat
 
 L'offre **Managed Kubernetes** (aussi appelée "Kub Managé", ou "KM") est une solution de containeurisation Kubernetes managée par Cloud-Temple déployée sous forme de Machines Virtuelles fonctionnant sur les infrastructures IaaS Cloud-Temple OpenIaaS.
 
-**Managed Kubernetes** est basé sur Talos Linux (https://www.talos.dev/), un système d'exploitation dédié à Kubernetes qui est léger et sécurisé. Il est immuable, sans aucun shell ni accès ssh, et configuré uniquement de manière déclarative via API gRPC.
+**Managed Kubernetes** est basé sur Talos Linux ([https://www.talos.dev/](https://www.talos.dev/)), un système d'exploitation dédié à Kubernetes qui est léger et sécurisé. Il est immuable, sans aucun shell ni accès ssh, et configuré uniquement de manière déclarative via API gRPC.
 
 L'installation standardisée inclus un ensemble de composants, majoritairement OpenSource et validés par le CNCF:
 
@@ -46,43 +46,43 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
     <img src={cillium} />
 
 - **MetalLB** et **nginx** : Pour l'exposition des applications Web, 3 *ingress-class* **nginx** sont intégrées de base:
-    - *nginx-external-secured* : exposition sur une IP publique, filtrée sur le firewall pour n'autoriser que des IP connues (utilisé pour les interfaces graphiques des différents produits, et l'API Kubernetes)
-    - *nginx-external* : exposition sur une seconde IP publique non filtrée (ou filtrage spécifique au client)
-    - *nginx-internal* : exposition sur une IP interne uniquement
-    
-    Pour les services "non web", un load-balancer **metalLB** permet d'exposer des services en interne ou sur des IP publiques. (ce qui permet de déployer des autres ingresses, comme par exemple un WAF)
+  - *nginx-external-secured* : exposition sur une IP publique, filtrée sur le firewall pour n'autoriser que des IP connues (utilisé pour les interfaces graphiques des différents produits, et l'API Kubernetes)
+  - *nginx-external* : exposition sur une seconde IP publique non filtrée (ou filtrage spécifique au client)
+  - *nginx-internal* : exposition sur une IP interne uniquement
 
+    Pour les services "non web", un load-balancer **metalLB** permet d'exposer des services en interne ou sur des IP publiques. (ce qui permet de déployer des autres ingresses, comme par exemple un WAF)
 
 - **Stockage distribué Rook-Ceph** : pour le stockage des volumes persistents (PV), un stockage distribué **Ceph** OpenSource est intégré à la plateforme. Il permet d'utiliser les *storage-classes* *ceph-block*, *ceph-bucket*, et *ceph-filesystem*. Un stockage a **7500 IOPS** est utilisé, permettant des performances élevées. Dans les déploiements de production (sur 3 AZ), les noeuds de stockage sont dédiés (1 noeud par AZ) ; dans les déploiements hors-production (1 AZ), le stockage est mutualisé avec les workers nodes.
 
 - **Cert-Manager**: le gestionnaire de certificats OpenSource **Cert-Manager** est intégré nativement dans la plateforme.
 
-- **ArgoCD** est à votre disposition pour vos déploiements automatisés via une chaine de **CI/CD**. 
+- **ArgoCD** est à votre disposition pour vos déploiements automatisés via une chaine de **CI/CD**.
 
 - Stack **Prometheus** (Prometheus, Grafana, Loki): les clusters Managed kubernetes sont livrés en standard avec une stack OpenSource complète **Prometheus** pour l'observabilité, incluant:
-    - **Prometheus**
-    - **Grafana**, avec de nombreux dashboards
-    - **Loki** : les journaux de la plateforme sont exportés vers le stockage S3 Cloud-Temple (et intégrés dans Grafana).
+  - **Prometheus**
+  - **Grafana**, avec de nombreux dashboards
+  - **Loki** : les journaux de la plateforme sont exportés vers le stockage S3 Cloud-Temple (et intégrés dans Grafana).
 
     <img src={grafana} />
 
-- **Harbor** est une **Container registry** qui vous permet de stocker les images de vos containers ou vos charts helm directement dans le cluster. Elle effectue des **scan de vulnérabilité** sur vos images et peut les signer numériquement. **Harbor** permet aussi des synchronisations avec d'autres registries. (https://goharbor.io/)
+- **Harbor** est une **Container registry** qui vous permet de stocker les images de vos containers ou vos charts helm directement dans le cluster. Elle effectue des **scan de vulnérabilité** sur vos images et peut les signer numériquement. **Harbor** permet aussi des synchronisations avec d'autres registries. ([https://goharbor.io/](https://goharbor.io/))
 
-- **OpenCost** (https://github.com/opencost/opencost) est un outil de gestion des couts (Finops) pour kubernetes. Il vous permet de suivre finement la consommations des ressources kubernetes et de faire de la sous-facturation par projet/namespace. 
+- **OpenCost** ([https://github.com/opencost/opencost](https://github.com/opencost/opencost)) est un outil de gestion des couts (Finops) pour kubernetes. Il vous permet de suivre finement la consommations des ressources kubernetes et de faire de la sous-facturation par projet/namespace.
 
-- Stratégies de sécurité avancée avec **Kyverno** et **Capsule**: 
-    - **Kyverno** (https://kyverno.io/) est un controleur d'admission pour Kubernetes qui permet d'appliquer des stratégies. C'est un outil essentiel pour la gouvernance et la sécurité dans kubernetes.
-    - **Capsule** (https://projectcapsule.dev/) est un outil de gestion des permissions qui facilite la gestion des droits dans Kubernetes. Il introduit la notion de *tenant* qui permet de centraliser et déléguer des permissions sur plusieurs namespaces. Via **Capsule**, les utilisateurs de la plateforme Kubernetes Managé disposent donc de droits restreints à leurs seuls namespaces.
+- Stratégies de sécurité avancée avec **Kyverno** et **Capsule**:
+  - **Kyverno** ([https://kyverno.io/](https://kyverno.io/)) est un controleur d'admission pour Kubernetes qui permet d'appliquer des stratégies. C'est un outil essentiel pour la gouvernance et la sécurité dans kubernetes.
+  - **Capsule** ([https://projectcapsule.dev/](https://projectcapsule.dev/)) est un outil de gestion des permissions qui facilite la gestion des droits dans Kubernetes. Il introduit la notion de *tenant* qui permet de centraliser et déléguer des permissions sur plusieurs namespaces. Via **Capsule**, les utilisateurs de la plateforme Kubernetes Managé disposent donc de droits restreints à leurs seuls namespaces.
 
-- **Veeam Kasten** (aka 'k10') est une solution pour la **sauvegarde** des workloads Kubernetes. 
+- **Veeam Kasten** (aka 'k10') est une solution pour la **sauvegarde** des workloads Kubernetes.
 
-    Il permet de sauvegarder un déploiement complet : manifestes, volumes, etc... vers le stockage objet S3 Cloud-Temple. **Kasten** utilise **Kanister** pour permettre des sauvegardes applicatives cohérentes, par exemple pour les bases de données (https://docs.kasten.io/latest/usage/blueprints/). 
-    
+    Il permet de sauvegarder un déploiement complet : manifestes, volumes, etc... vers le stockage objet S3 Cloud-Temple. **Kasten** utilise **Kanister** pour permettre des sauvegardes applicatives cohérentes, par exemple pour les bases de données ([https://docs.kasten.io/latest/usage/blueprints/](https://docs.kasten.io/latest/usage/blueprints/)).
+
     **Kasten** est un outil cross-platform qui peut fonctionner avec d'autres clusters Kubernetes (OpenShift, Hyperscaler,...). Il peut donc être utilisé pour des scénarii de réversibilité ou de migration (K10 gère les adaptations éventuelles via des *transformations*, par exemple un changement d'ingress-class), mais aussi de "refresh" (exemple : restauration planifiée d'un environnement de production en pré-production).
 
 - **Authentification SSO** avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
 
-## SLA & Information sur le support 
+## SLA & Information sur le support
+
 - **Disponibilité garantie (production 3 AZ)** : 99.90 %
 - **Support** : N1/N2/N3 inclus pour le périmètre socle (infrastructure et opérateurs standards).
 - **Engagement de temps de rétablissement (ETR)** : selon contrat cadre Cloud Temple.
@@ -90,8 +90,8 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 
 Les délais de prise en charge et de rétablissement dépendent de la sévérité de l’incident, conformément à la grille de support (P1 à P4).
 
-
 ## Politique de versions & cycle de vie
+
 - **Kubernetes supporté :** N-2 (3 releases majeures par an, environ tous les 4 mois). Chaque release est supportée officiellement 12 mois, ce qui assure une fenêtre de support Cloud Temple de ~16 mois maximum par version.
 - **Talos OS :** aligné sur les versions stables de Kubernetes.
   - Chaque branche est maintenue environ 12 mois (patchs sécurité inclus).
@@ -106,6 +106,7 @@ Les délais de prise en charge et de rétablissement dépendent de la sévérit�
 ## Noeuds Kubernetes
 
 ### Production (multi-zonal)
+
 <img src={archi_overview} />
 
 Pour un déploiement "de production" (multi-zonal), les machines suivantes sont utilisées:
@@ -128,6 +129,7 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 (**) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (1 par AZ), et nous conseillons d'augmenter leur nombre par lot de 3 pour conserver une distribution multi zonale cohérente. La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 100. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
 
 ### Dev/Test
+
 <img src={archi_overview_1az} />
 
 Pour une version "dev/test", les machines suivantes sont déployées:
@@ -145,6 +147,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 (**) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (du fait de la réplication du stockage). La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 250. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
 
 ## RACI
+
 ### Architecture & Infrastructure
 
 | **Activité**                                                                 | **Client** | **Cloud Temple** |
@@ -157,7 +160,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 | Déploiement de la configuration initiale des identités et des accès          | C          | RA                     |
 | Définir la stratégie de mise à l’échelle et de haute disponibilité           | C          | RA                     |
 
-### Gestion des projets et applications métiers 
+### Gestion des projets et applications métiers
 
 | **Activité**                                          | **Client** | **Cloud Temple** |
 |---|---|---|
@@ -265,7 +268,7 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 | Gestion des plans de support spécifiques sur les opérateurs               | CI         | RA                     |
 
 *Package opérateur inclus sur Managed Kube - voir chapitres : Packages Helm managés
- 
+
 ### Gestion des applications/opérateurs/CRD Kubernetes (du client)
 
 *Cluster de Production seulement. En Dev/Test le client est entièrement en autonomie et en responsabilité.*
@@ -289,7 +292,6 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 Certains services opérateurs peuvent être pris en charge en fonction du contrat d'infogérance.
 
 *peut passer à "A | RC" en fonction du contrat d'infogérance
-
 
 ### Assistance applicative
 

@@ -43,8 +43,8 @@ Red Hat OpenShift Data Foundation (ODF) is an integrated storage and data manage
 - **High Availability and Resilience:** ODF leverages data replication and snapshotting to ensure high availability and data durability—critical for maintaining business continuity.
 
 - **Data Security:** The solution includes advanced security features such as encryption at rest and in transit, along with customizable security and compliance policies. Our SecNumCloud implementation ensures multi-layered protection:
-    - **Encryption at Rest:** The persistent storage provided by OpenShift Data Foundation relies on our underlying block storage infrastructure. As such, all data is encrypted at rest using the **XTS-AES 256** algorithm, compliant with the **FIPS 140-2** standard.
-    - **Encryption in Transit:** All access to the platform—including the API, web console, and application traffic via routes—is systematically secured and encrypted using the **TLS** protocol.
+  - **Encryption at Rest:** The persistent storage provided by OpenShift Data Foundation relies on our underlying block storage infrastructure. As such, all data is encrypted at rest using the **XTS-AES 256** algorithm, compliant with the **FIPS 140-2** standard.
+  - **Encryption in Transit:** All access to the platform—including the API, web console, and application traffic via routes—is systematically secured and encrypted using the **TLS** protocol.
 
 #### Benefits of OpenShift Data Foundation
 
@@ -128,7 +128,7 @@ Die Abrechnung erfolgt nach Anzahl der Worker Nodes.
 
 **Hinweis**: *Bitte beachten Sie, dass der erforderliche Speicherplatz für die ordnungsgemäße Funktion Ihrer Sicherung auf dem Zielumfeld (in der Regel S3-Speicher) vorab bereitzustellen ist. Dieser Speicherplatz ist nicht in den OpenShift- oder Kasten-Einheiten enthalten.*
 
-**(1)** _OADP ist nicht nativ im Cluster installiert. Nur Kasten ist aktiviert für die Verwaltung von Migrationen, Sicherungen und Wiederherstellungen._
+**(1)** *OADP ist nicht nativ im Cluster installiert. Nur Kasten ist aktiviert für die Verwaltung von Migrationen, Sicherungen und Wiederherstellungen.*
 
 ## Load Balancers
 

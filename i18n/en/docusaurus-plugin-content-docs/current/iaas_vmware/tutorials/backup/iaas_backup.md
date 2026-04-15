@@ -79,7 +79,7 @@ These actions allow you to get detailed logs of the backup execution. You can se
 
 <img src={backupPolicyIaas_005} />
 
-2. Go to the __'Backup Reports'__ page and select the policy that interests you:
+1. Go to the __'Backup Reports'__ page and select the policy that interests you:
 
 <img src={backupPolicyIaas_004} />
 

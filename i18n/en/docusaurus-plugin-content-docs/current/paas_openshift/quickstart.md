@@ -57,10 +57,12 @@ The **Clusters** submenu displays a table listing all OpenShift clusters availab
 When you click on a **cluster name** in the list, a detailed page appears displaying complete cluster information:
 
 **Connectivity Information:**
+
 - **Access URL**: Web interface of the cluster
 - **API URL**: API endpoint for CLI operations
 
 **General Information:**
+
 - **Status**: Current state of the cluster
 - **Last Updated**: Date of the last modification
 - **Version**: OpenShift version deployed
@@ -68,6 +70,7 @@ When you click on a **cluster name** in the list, a detailed page appears displa
 **Cluster Nodes:**
 
 A table provides detailed information for each node:
+
 - **Node Name**
 - **Type**
 - **AZ** (Availability Zone)
@@ -95,17 +98,17 @@ Here are the connection and configuration details specific to your OpenShift env
 
 To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __Tenant Console URL__:
-  [https://__your-tenant-id__.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
+- **Tenant Console URL**:
+  [https://**your-tenant-id**.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__:
-  [https://ui-ocp01-__your-id__.paas.cloud-temple.com/](https://ui-ocp01-**your-id**.paas.cloud-temple.com/)
+- **OpenShift UI**:
+  [https://ui-ocp01-**your-id**.paas.cloud-temple.com/](https://ui-ocp01-**your-id**.paas.cloud-temple.com/)
 
-- __External API__:
-  [https://api-ocp01-__your-id__.paas.cloud-temple.com](https://api-ocp01-**your-id**.paas.cloud-temple.com)
+- **External API**:
+  [https://api-ocp01-**your-id**.paas.cloud-temple.com](https://api-ocp01-**your-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__:
-  [https://gitops-ocp01-__your-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)
+- **GitOps (ARGOCD)**:
+  [https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**your-id**.paas.cloud-temple.com/applications)
 
 #### Connecting to the cluster via CLI
 
@@ -134,7 +137,7 @@ docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:late
 
 #### Router and Load Balancer Configuration
 
-The platform provides flexible options for __traffic routing__ and __load balancing__:
+The platform provides flexible options for **traffic routing** and **load balancing**:
 
 - By default, private load balancers are used for routes and ingresses.
 - Domains:
@@ -155,7 +158,7 @@ metadata:
 
 Network configurations play a crucial role in securing communications with OpenShift.
 
-- __Connectivity Network__: 100.67.0.0/28  
-- __Private Load Balancer VIP__: 100.67.0.3
+- **Connectivity Network**: 100.67.0.0/28  
+- **Private Load Balancer VIP**: 100.67.0.3
 
 Ensure your firewall has a dedicated interface and permits traffic between the specified networks.

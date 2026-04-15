@@ -31,6 +31,7 @@ Ce guide **Quickstart Housing** vous accompagne pour démarrer rapidement avec l
 ## Étape 4 : Activer les services Hands & Eyes
 
 Si besoin, demandez une assistance technique pour :
+
 - Installer vos équipements.
 - Configurer le câblage.
 - Effectuer des actions ponctuelles (redémarrage, photos, etc.).

@@ -7,20 +7,20 @@ This section gathers a set of tutorials to help you get started and use the Clou
 
 ### Interfacce grafica client
 
-*   [Utilizzare Cloud Berry Explorer](./tutorials/cloudberry-explorer.md)
-*   [Utilizzare WinSCP](./tutorials/winscp.md)
+* [Utilizzare Cloud Berry Explorer](./tutorials/cloudberry-explorer.md)
+* [Utilizzare WinSCP](./tutorials/winscp.md)
 
 ### Client da riga di comando (CLI) e SDK
 
-*   [Sincronizzare una cartella con mc mirror](./tutorials/mc-mirror.md)
-*   [Sincronizzare una cartella con AWS CLI](./tutorials/aws-s3-sync.md)
-*   [Copiare e sincronizzare con Rclone](./tutorials/rclone.md)
-*   [Utilizzare il SDK Python (Boto3)](./tutorials/python-boto3.md)
+* [Sincronizzare una cartella con mc mirror](./tutorials/mc-mirror.md)
+* [Sincronizzare una cartella con AWS CLI](./tutorials/aws-s3-sync.md)
+* [Copiare e sincronizzare con Rclone](./tutorials/rclone.md)
+* [Utilizzare il SDK Python (Boto3)](./tutorials/python-boto3.md)
 
 ### Gestione degli accessi
 
-*   [Gestire l'accesso al mio bucket](./tutorials/bucket-access.md)
+* [Gestire l'accesso al mio bucket](./tutorials/bucket-access.md)
 
 ### Use case avanzati
 
-*   [Aggiungere l'hash di un file (Checksum)](./tutorials/file-hashing.md)
+* [Aggiungere l'hash di un file (Checksum)](./tutorials/file-hashing.md)

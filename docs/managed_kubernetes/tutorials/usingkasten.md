@@ -15,6 +15,7 @@ Ce tutoriel vous guidera à travers les étapes de base pour sauvegarder et rest
 ## Prérequis
 
 Avant de commencer, assurez-vous de disposer des éléments suivants :
+
 - Un cluster Managed Kubernetes actif.
 - L'identifiant de votre cluster (par exemple, `ctodev`).
 - Une application déployée dans votre cluster que vous souhaitez sauvegarder.
@@ -23,11 +24,11 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 Le tableau de bord Kasten est accessible via une URL sécurisée, construite à partir de l'identifiant de votre cluster.
 
-1.  **Construisez l'URL d'accès** :
+1. **Construisez l'URL d'accès** :
     L'URL est basée sur le modèle suivant : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
     Remplacez `<identifiant>` par l'identifiant de votre cluster. Par exemple, si votre identifiant est `ctodev`, l'URL sera : `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
-2.  **Accédez à l'URL** dans votre navigateur.
+2. **Accédez à l'URL** dans votre navigateur.
 
     :::info Note sur la sécurité
     L'accès à cette URL est restreint aux adresses IP publiques que vous avez déclarées. Si vous ne parvenez pas à vous connecter, assurez-vous que votre adresse IP est autorisée en contactant le support Cloud Temple.
@@ -65,19 +66,19 @@ Une politique de sauvegarde nommée `infra-backups` est déjà configurée dans 
 Vous devez créer vos propres politiques pour sauvegarder les applications que vous déployez.
 :::
 
-1.  Dans le tableau de bord Kasten, accédez à la section **Policies** et cliquez sur **Create New Policy**.
+1. Dans le tableau de bord Kasten, accédez à la section **Policies** et cliquez sur **Create New Policy**.
 
-2.  **Nommez votre politique** : Donnez un nom descriptif, par exemple `backup-my-app-daily`.
+2. **Nommez votre politique** : Donnez un nom descriptif, par exemple `backup-my-app-daily`.
 
-3.  **Définissez la fréquence (Action)** :
+3. **Définissez la fréquence (Action)** :
     - **Action**: `Snapshot` (instantané).
     - **Frequency**: Choisissez la fréquence qui vous convient (par exemple, `Daily` à `02:00`).
 
-4.  **Sélectionnez les ressources à sauvegarder** :
+4. **Sélectionnez les ressources à sauvegarder** :
     - **Select resources by**: Vous pouvez sélectionner des applications par nom (`Application Name`), par namespace (`Namespace`), ou par labels.
     - Pour sauvegarder toutes les applications d'un namespace, choisissez `Namespace` et sélectionnez le namespace souhaité.
 
-5.  **Cliquez sur `Create Policy`** pour enregistrer.
+5. **Cliquez sur `Create Policy`** pour enregistrer.
 
 La politique s'exécutera automatiquement à la fréquence définie. Vous pouvez également lancer une exécution manuelle en cliquant sur le bouton "Play" (▶️) à côté de la politique.
 
@@ -85,14 +86,14 @@ La politique s'exécutera automatiquement à la fréquence définie. Vous pouvez
 
 Kasten facilite la restauration d'une application à son état précédent à partir d'un point de restauration.
 
-1.  Dans le tableau de bord, allez dans la section **Applications**. Vous y verrez la liste de vos applications et leur état de conformité par rapport aux politiques de sauvegarde.
+1. Dans le tableau de bord, allez dans la section **Applications**. Vous y verrez la liste de vos applications et leur état de conformité par rapport aux politiques de sauvegarde.
 
-2.  **Sélectionnez l'application** que vous souhaitez restaurer.
+2. **Sélectionnez l'application** que vous souhaitez restaurer.
 
-3.  **Choisissez un point de restauration** :
+3. **Choisissez un point de restauration** :
     La page de l'application affiche une liste des points de restauration disponibles. Choisissez celui que vous souhaitez utiliser et cliquez sur **Restore**.
 
-4.  **Configurez la restauration** :
+4. **Configurez la restauration** :
     - Vous pouvez choisir de restaurer dans un nouveau namespace ou de remplacer l'application existante. Pour ce tutoriel, nous allons remplacer l'application existante.
     - Cliquez sur **Restore** pour lancer le processus.
 
@@ -102,9 +103,9 @@ Kasten va maintenant restaurer l'application à l'état capturé dans le snapsho
 
 La protection de vos données de sauvegarde est une priorité. L'intégration de Kasten dans l'offre Managed Kubernetes respecte les plus hauts standards de sécurité.
 
--   **Chiffrement** : Conformément aux exigences SecNumCloud, toutes vos sauvegardes sont chiffrées. Les données sont chiffrées en transit vers le stockage S3 avec le protocole **TLS 1.3** et au repos dans les buckets de stockage avec l'algorithme **AES-256**.
+- **Chiffrement** : Conformément aux exigences SecNumCloud, toutes vos sauvegardes sont chiffrées. Les données sont chiffrées en transit vers le stockage S3 avec le protocole **TLS 1.3** et au repos dans les buckets de stockage avec l'algorithme **AES-256**.
 
--   **Gestion des permissions** : L'accès à l'interface Kasten et à ses fonctionnalités est contrôlé par un système de permissions basé sur le RBAC de Kubernetes. Seuls les utilisateurs autorisés peuvent créer, modifier ou exécuter des politiques de sauvegarde et de restauration, garantissant ainsi une gouvernance stricte de vos opérations de sauvegarde.
+- **Gestion des permissions** : L'accès à l'interface Kasten et à ses fonctionnalités est contrôlé par un système de permissions basé sur le RBAC de Kubernetes. Seuls les utilisateurs autorisés peuvent créer, modifier ou exécuter des politiques de sauvegarde et de restauration, garantissant ainsi une gouvernance stricte de vos opérations de sauvegarde.
 
 ## Conclusion
 

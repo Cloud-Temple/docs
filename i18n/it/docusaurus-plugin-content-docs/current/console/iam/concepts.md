@@ -306,22 +306,26 @@ Ogni tenant ha almeno un proprietario, garantendo così una responsabilità chia
 
 #### 1. Number of owners
 
-* There is no technical limit on the number of owners that can be defined for the tenant.
+- There is no technical limit on the number of owners that can be defined for the tenant.
+
 - The management interface (UI) issues a warning when there are more than 3 owners, to encourage limiting the number of owners for security reasons and optimal access management.
 
 #### 2. Aggiunta di un nuovo proprietario
 
-* Durante l'aggiunta di un nuovo proprietario, l'aggiornamento dei suoi permessi potrebbe richiedere un tempo di attesa fino a 60 minuti.
+- Durante l'aggiunta di un nuovo proprietario, l'aggiornamento dei suoi permessi potrebbe richiedere un tempo di attesa fino a 60 minuti.
+
 - Questo intervallo di propagazione è normale e garantisce che i diritti di accesso vengano correttamente applicati a tutti i servizi e le risorse associati.
 
 #### 2. Permissions di un proprietario
 
-* Un proprietario riceverà tutte le autorizzazioni correlate ai prodotti abilitati nel suo tenant.
+- Un proprietario riceverà tutte le autorizzazioni correlate ai prodotti abilitati nel suo tenant.
+
 - Non è possibile modificare le autorizzazioni di un proprietario.
 
 #### 3. Rimozione di un proprietario
 
-* Per rimuovere un proprietario dal tenant, l'utente deve inviare una richiesta al supporto.
+- Per rimuovere un proprietario dal tenant, l'utente deve inviare una richiesta al supporto.
+
 - Questa procedura garantisce che le modifiche ai diritti di accesso vengano effettuate in modo sicuro e conforme alle migliori pratiche di gestione degli accessi.
 
 ### Access authorization to a tenant: Allowed IPs

@@ -48,10 +48,10 @@ Vedi quindi il nuovo token creato e la sua futura data di scadenza.
 <img src={ShivaProfil005} />
 
 :::info Ciclo di vita del token di autenticazione
-Quando utilizzi il tuo **Personal Access Token (PAT)** per autenticarti presso l'API, ricevi in risposta un token di accesso. È importante notare che questo token di accesso è un **JSON Web Token (JWT)** con una durata di vita limitata.
+Quando utilizzi il tuo __Personal Access Token (PAT)__ per autenticarti presso l'API, ricevi in risposta un token di accesso. È importante notare che questo token di accesso è un __JSON Web Token (JWT)__ con una durata di vita limitata.
 
--   **Durata di vita**: Ogni token JWT è valido per una durata di **5 minuti**.
--   **Verifica**: Puoi verificare la data di emissione (`iat`) e la data di scadenza (`exp`) del tuo token decodificandolo. Strumenti online come [jwt.io](https://jwt.io) ti permettono di farlo facilmente.
+- __Durata di vita__: Ogni token JWT è valido per una durata di __5 minuti__.
+- __Verifica__: Puoi verificare la data di emissione (`iat`) e la data di scadenza (`exp`) del tuo token decodificandolo. Strumenti online come [jwt.io](https://jwt.io) ti permettono di farlo facilmente.
 
 Una volta scaduto il token, dovrai autenticarti nuovamente con il tuo PAT per ottenerne uno nuovo. È quindi consigliabile gestire questo ciclo di vita nei tuoi script e applicazioni prevedendo un aggiornamento automatico del token.
 :::
@@ -106,6 +106,7 @@ __waiting__, stato prima che l'operazione abbia iniziato:
 ```
     waiting: {}
 ```
+
 __running__, stato quando l'operazione è in corso:
 
 ```
@@ -115,6 +116,7 @@ __running__, stato quando l'operazione è in corso:
     progression: number;
     };
 ```
+
 __failed__, stato se l'operazione ha fallito:
 
 ```
@@ -124,6 +126,7 @@ __failed__, stato se l'operazione ha fallito:
     reason: string;
     };
 ```
+
 __completed__, stato se l'operazione è terminata:
 
 ```

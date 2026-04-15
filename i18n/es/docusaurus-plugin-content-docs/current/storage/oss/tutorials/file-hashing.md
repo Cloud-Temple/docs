@@ -30,6 +30,7 @@ Encryption: SSE-S3
 Metadata  :
     Content-Type: text/plain
 ```
+
 The `ETag` matches the MD5 hash of the local file.
 
 ### 2. Manual addition of a SHA-256 hash
@@ -40,14 +41,17 @@ You can also manually add a hash (for example, SHA-256) as an S3 attribute durin
 ```
 
 # Cálculo local del SHA-256
+
 ❯ shasum -a 256 test.txt
 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
 
 # Upload del archivo pasando el hash como atributo
+
 ❯ mc cp test.txt cloudtemple-fr1/demo-app/ --attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"
 ...test.txt: 18 B / 18 B [================] 100.00% 141 B/s 0s
 
 # Verificación de metadatos
+
 ❯ mc stat cloudtemple-fr1/demo-app/test.txt
 Name      : test.txt
 Date      : 2024-06-08 10:41:17 CEST
@@ -58,6 +62,7 @@ Encryption: SSE-S3
 Metadata  :
     X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
     Content-Type              : text/plain
+
 ```
 El hash SHA-256 ahora está presente en los metadatos personalizados del objeto.
 
@@ -84,11 +89,13 @@ AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED aws s3 cp archivo.txt s3://mi-buc
 ```
 
 Para **Terraform**:
+
 ```bash
 AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED terraform apply
 ```
 
 Para hacer que este parámetro sea permanente en su sesión de shell:
+
 ```bash
 export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
 ```
@@ -97,8 +104,8 @@ export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
 
 Puede configurar este parámetro de forma permanente en su perfil de AWS CLI.
 
-1.  Abra su archivo de configuración de AWS: `~/.aws/config`
-2.  Agregue el siguiente parámetro en su perfil:
+1. Abra su archivo de configuración de AWS: `~/.aws/config`
+2. Agregue el siguiente parámetro en su perfil:
 
 ```ini
 [default]
@@ -112,6 +119,7 @@ Esta solución es ideal si utiliza con frecuencia la CLI de AWS.
 Como último recurso, puedes volver a una versión anterior de las herramientas.
 
 Para **AWS CLI**, regresa a la versión 2.22.35:
+
 ```bash
 pip install awscli==2.22.35
 ```
@@ -127,7 +135,9 @@ aws s3 ls
 ```
 
 # or
+
 terraform plan
+
 ```
 
 Si les commandes s'executan sin error de checksum, el problema está resuelto.

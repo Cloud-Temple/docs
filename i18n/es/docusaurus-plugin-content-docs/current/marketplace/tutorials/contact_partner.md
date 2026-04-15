@@ -10,6 +10,7 @@ Este tutorial le guiará para ponerse en contacto con un socio editor a través 
 ## Contexto de uso
 
 Utilice esta funcionalidad cuando:
+
 - La solución requiera una conexión con el socio
 - Desea obtener información adicional
 - La solución no sea directamente desplegable (sin imagen de VM)

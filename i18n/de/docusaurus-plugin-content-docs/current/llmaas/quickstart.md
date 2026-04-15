@@ -132,26 +132,33 @@ Für den Start verwenden Sie diese Parameter:
 ## Häufige Fehlerbehandlung
 
 ### Fehler 401 – Nicht autorisiert
+
 ```json
 {"error": {"message": "Ungültiger API-Schlüssel", "type": "invalid_request_error"}}
 ```
+
 **Lösung** : Überprüfen Sie Ihre API-Schlüssel in der Cloud Temple Console.
 
 ### Fehler 400 - Modell nicht gefunden
+
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
+
 **Lösung** : Verwenden Sie /v1/models, um die verfügbaren Modelle aufzulisten.
 
 ### Fehler 429 - Anfragerate überschritten
+
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
+
 **Lösung**: Warten Sie einige Sekunden und versuchen Sie es erneut.
 
 ## Monitoring der Nutzung
 
 In der Cloud Temple-Konsole können Sie:
+
 - Ihre Anfragen in Echtzeit ansehen
 - Ihren Token-Verbrauch einsehen
 - Kostenbenachrichtigungen einrichten
@@ -170,28 +177,31 @@ Diese Abschnitt bietet einfache und eigene Python-Skripte, um spezifische Funkti
 "Tool Calling" (oder Funktionsaufruf) ermöglicht es einem Sprachmodell, die Ausführung einer Funktion anzufordern, die Sie in Ihrem Code definiert haben. Dies ist eine leistungsstarke Funktion, um LLMs mit externen Tools (APIs, Datenbanken usw.) zu verbinden.
 
 Der Ablauf ist wie folgt:
-1.  Der Benutzer stellt eine Frage, die ein Tool erfordert (z. B. „Wie ist das Wetter?“).
-2.  Sie senden die Frage und die Liste der verfügbaren Tools an die API.
-3.  Das Modell gibt anstelle einer direkten Antwort eine Anfrage `tool_calls` zurück, die die Ausführung einer spezifischen Funktion mit bestimmten Argumenten verlangt.
-4.  Ihr Code führt die angeforderte Funktion aus.
-5.  Sie senden das Ergebnis der Funktion zurück an das Modell.
-6.  Das Modell verwendet dieses Ergebnis, um eine endgültige Antwort an den Benutzer zu formulieren.
+
+1. Der Benutzer stellt eine Frage, die ein Tool erfordert (z. B. „Wie ist das Wetter?“).
+2. Sie senden die Frage und die Liste der verfügbaren Tools an die API.
+3. Das Modell gibt anstelle einer direkten Antwort eine Anfrage `tool_calls` zurück, die die Ausführung einer spezifischen Funktion mit bestimmten Argumenten verlangt.
+4. Ihr Code führt die angeforderte Funktion aus.
+5. Sie senden das Ergebnis der Funktion zurück an das Modell.
+6. Das Modell verwendet dieses Ergebnis, um eine endgültige Antwort an den Benutzer zu formulieren.
 
 **Dateistruktur**
 
 Für dieses Beispiel erstellen Sie ein Verzeichnis `simple_tool_calling` mit den folgenden Dateien:
 
--   `test_tool_calling.py`: Der Hauptskript.
--   `requirements.txt`: Die Python-Abhängigkeiten.
--   `.env`: Ein Muster für Ihre Konfigurationsdatei.
+- `test_tool_calling.py`: Der Hauptskript.
+- `requirements.txt`: Die Python-Abhängigkeiten.
+- `.env`: Ein Muster für Ihre Konfigurationsdatei.
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
 ```
 
 **`.env`**
+
 ```env
 
 # Basis-URL der API LLMaaS
@@ -415,13 +425,16 @@ if __name__ == "__main__":
 
 **Verwendung**
 
-1.  **Installieren Sie die Abhängigkeiten :**
+1. **Installieren Sie die Abhängigkeiten :**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Konfigurieren Sie Ihren API-Schlüssel :**
+
+2. **Konfigurieren Sie Ihren API-Schlüssel :**
     Kopieren Sie `tests/llmaas/.env.example` nach `tests/llmaas/.env` und ersetzen Sie `"votre_cle_api_ici"` durch Ihren LLMaaS-API-Schlüssel.
-3.  **Führen Sie das Skript aus :**
+3. **Führen Sie das Skript aus :**
+
     ```bash
     python tests/llmaas/test_tool_calling.py
     ```
@@ -434,12 +447,13 @@ Multimodale Modelle können sowohl Text als auch Bilder analysieren. Dieses Beis
 
 Erstellen Sie ein Verzeichnis `simple_vision` mit den folgenden Dateien:
 
--   `test_vision.py`: Der Hauptskript.
--   `requirements.txt`: Die Abhängigkeiten (einschließlich `Pillow` zum Generieren des Bildes).
--   `.env.example`: Das Konfigurationsmodell.
--   `image_example.png`: Das zu analysierende Bild (das Skript generiert es für Sie, falls es fehlt).
+- `test_vision.py`: Der Hauptskript.
+- `requirements.txt`: Die Abhängigkeiten (einschließlich `Pillow` zum Generieren des Bildes).
+- `.env.example`: Das Konfigurationsmodell.
+- `image_example.png`: Das zu analysierende Bild (das Skript generiert es für Sie, falls es fehlt).
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
@@ -447,6 +461,7 @@ Pillow
 ```
 
 **`.env.example`**
+
 ```env
 
 # Basis-URL der LLMaaS-API
@@ -603,16 +618,20 @@ if __name__ == "__main__":
 
 **Verwendung**
 
-1.  **Installieren Sie die Abhängigkeiten:**
+1. **Installieren Sie die Abhängigkeiten:**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Konfigurieren Sie Ihre API-Schlüssel:**
+
+2. **Konfigurieren Sie Ihre API-Schlüssel:**
     Kopieren Sie `tests/llmaas/.env.example` in `tests/llmaas/.env` und ersetzen Sie `"votre_cle_api_ici"` durch Ihren LLMaaS-API-Schlüssel.
-3.  **Führen Sie das Skript aus:**
+3. **Führen Sie das Skript aus:**
+
     ```bash
     python tests/llmaas/test_vision.py
     ```
+
     Das Skript generiert automatisch eine Datei `image_example.png`, wenn sie nicht vorhanden ist.
 
 ---
@@ -629,6 +648,7 @@ Nachdem Ihr erster Test erfolgreich war:
 ## Support
 
 Bei Problemen:
+
 - Siehe die [vollständige API-Dokumentation](./api)
 - Überprüfen Sie den Status des Dienstes in der Konsole
 - Kontaktieren Sie den Support über die Cloud Temple-Konsole

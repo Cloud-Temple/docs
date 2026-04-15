@@ -67,7 +67,7 @@ The generated secret will need to be provided in the support request:
 
 The EntraID token is required for authentication configuration.
 
-In the __"Token Configuration"_ menu, click on __"Add optional claim"__. You will need to select "ID" as the token type and check "email".
+In the _*"Token Configuration"* menu, click on __"Add optional claim"__. You will need to select "ID" as the token type and check "email".
 
 <img src={ssoAad_006} />
 
@@ -125,6 +125,7 @@ This configuration step is performed at the organization level by the Cloud Temp
 To proceed, submit a __support request__ in the console indicating your intent to set up Microsoft Entra ID SSO.
 
 Please include the following information in your support request:
+
 - Name of your Organization
 - Name of a contact person, along with their email address and phone number, to finalize the configuration
 - Application ID (unique identifier associated with the previously created application)

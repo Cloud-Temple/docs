@@ -31,6 +31,7 @@ This **Quickstart Housing** guide will help you get started with the Cloud Templ
 ## Step 4: Activate Hands & Eyes Services
 
 If needed, request technical assistance for :
+
 - Installing your equipment.
 - Configuring cabling.
 - Performing occasional actions (reboot, photos, etc.).
