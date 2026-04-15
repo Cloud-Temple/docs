@@ -897,7 +897,7 @@ This tutorial guides you through setting up the CLINE extension in Visual Studio
 2. **Create a New Model**: Add a new model configuration.
 3. **Fill in the Fields**: Configure the fields as shown below, based on the image below.
 
-    ![CLINE Configuration for LLMaaS](./images/cline_configuration.png)
+    ![CLINE Configuration for LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
     * **API Provider**: Select `OpenAI Compatible`.
     * **Base URL**: Enter the LLMaaS API endpoint from Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
@@ -906,7 +906,7 @@ This tutorial guides you through setting up the CLINE extension in Visual Studio
     :::tip Generate API Key
     To generate your API key, go to the Cloud Temple console, navigate to **LLMaaS** > **API Keys**, then click **"Create API Key"**.
     
-    ![Creating an API Key from the Console](./images/console_create_api_key.png)
+    ![Creating an API Key from the Console](@site/docs/llmaas/images/console_create_api_key.png)
     :::
     
     * **Model ID**: Specify the model you want to use, for example `qwen3-coder:30b`. You can find the list of available models in the [Models](./models.md) section.

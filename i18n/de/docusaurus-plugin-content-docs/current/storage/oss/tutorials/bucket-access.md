@@ -1,9 +1,9 @@
 ---
 title: Access Management for S3 Buckets via the Cloud Temple Console
 ---
-import S3CustomAccess from '../images/S3_access_custom.png'
-import S3PrivateAccess from '../images/S3_access_private.png'
-import S3PublicAccess from '../images/S3_access_public.png'
+import S3CustomAccess from '@site/docs/storage/oss/images/S3_access_custom.png'
+import S3PrivateAccess from '@site/docs/storage/oss/images/S3_access_private.png'
+import S3PublicAccess from '@site/docs/storage/oss/images/S3_access_public.png'
 
 The bucket configuration interface offers three access management modes according to the desired IP restriction type:
 
@@ -11,24 +11,24 @@ The bucket configuration interface offers three access management modes accordin
 
 <img src={S3PublicAccess} />
 
-  - Functionality: No IP address restrictions are applied.
-  - Consequence: The bucket is accessible from all IP addresses, without filtering.
+- Functionality: No IP address restrictions are applied.
+- Consequence: The bucket is accessible from all IP addresses, without filtering.
 
 ### **Private Access (automatic)**
 
 <img src={S3PrivateAccess} />
 
-  - Functionality: All CIDR ranges assigned to the tenant are automatically added by the editor, without requiring manual intervention.
-  - Specificity of the Console: Network addresses (first address of the block) and broadcast addresses (last address of the block), which are typically reserved on an IP network, are also automatically included.
-  - Consequence: The user does not need to manage these subtleties—everything is handled automatically by the tool.
+- Functionality: All CIDR ranges assigned to the tenant are automatically added by the editor, without requiring manual intervention.
+- Specificity of the Console: Network addresses (first address of the block) and broadcast addresses (last address of the block), which are typically reserved on an IP network, are also automatically included.
+- Consequence: The user does not need to manage these subtleties—everything is handled automatically by the tool.
 
 ### **Custom Access (manual)**
 
 <img src={S3CustomAccess} />
 
-  - How it works: The user must explicitly provide all CIDR ranges as well as the network and broadcast addresses to be authorized.
-  - Example: If you want to allow the prefix `80.75.153.200/29`, you must also explicitly add the addresses `80.75.153.200/32` (network address) and `80.75.153.207/32` (broadcast address) so that these are included in the access policy.
-  - Consequence: Offers full flexibility, but requires complete and rigorous configuration.
+- How it works: The user must explicitly provide all CIDR ranges as well as the network and broadcast addresses to be authorized.
+- Example: If you want to allow the prefix `80.75.153.200/29`, you must also explicitly add the addresses `80.75.153.200/32` (network address) and `80.75.153.207/32` (broadcast address) so that these are included in the access policy.
+- Consequence: Offers full flexibility, but requires complete and rigorous configuration.
 
 :::info
 

@@ -1,11 +1,11 @@
 ---
 title: Seguimiento de costos con OpenCost
 ---
-import opencostui from './images/opencost.png'
-import opencostgrafana from './images/opencostgrafana.png'
-import opencostmcp from './images/opencostmcp.png'
-import opencostmcp2 from './images/opencostmcp2.png'
-import opencostmcp3 from './images/opencostmcp3.png'
+import opencostui from '@site/docs/managed_kubernetes/tutorials/images/opencost.png'
+import opencostgrafana from '@site/docs/managed_kubernetes/tutorials/images/opencostgrafana.png'
+import opencostmcp from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp.png'
+import opencostmcp2 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp2.png'
+import opencostmcp3 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp3.png'
 
 ## Objetivos
 

@@ -137,11 +137,11 @@ To be automatically notified of new releases of the Cloud Temple Terraform provi
 
 2. Click the **Watch** button at the top right of the repository
 
-![GitHub Watch Button](./images/provider_terraform_notify.png)
+![GitHub Watch Button](@site/docs/terraform/images/provider_terraform_notify.png)
 
 3. Select **Custom** then check **Releases**
 
-![Notification Configuration](./images/provider_terraform_subscribe.png)
+![Notification Configuration](@site/docs/terraform/images/provider_terraform_subscribe.png)
 
 You will now receive an email notification for each new provider release.
 

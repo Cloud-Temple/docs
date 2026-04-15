@@ -1,15 +1,15 @@
 ---
 title: Schnellstartanleitung
 ---
-import shivaTenant from './images/shiva_tenant.png'
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
-import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Mandant
 
@@ -68,8 +68,7 @@ The rights activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](concepts.md#tenant) within the 
-[Organization](concepts.md#organisations).
+Permission configuration must be done for each [Tenant](concepts.md#tenant) within the [Organization](concepts.md#organisations).
 
 The list of permissions and their definitions is available [here](#permissions).
 

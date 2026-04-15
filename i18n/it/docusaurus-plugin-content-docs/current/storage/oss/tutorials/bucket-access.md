@@ -1,9 +1,9 @@
 ---
 title: Gestione degli accessi ai bucket S3 dalla Console Cloud Temple
 ---
-import S3CustomAccess from '../images/S3_access_custom.png'
-import S3PrivateAccess from '../images/S3_access_private.png'
-import S3PublicAccess from '../images/S3_access_public.png'
+import S3CustomAccess from '@site/docs/storage/oss/images/S3_access_custom.png'
+import S3PrivateAccess from '@site/docs/storage/oss/images/S3_access_private.png'
+import S3PublicAccess from '@site/docs/storage/oss/images/S3_access_public.png'
 
 L'interfaccia di configurazione dei bucket propone tre modalità di gestione degli accessi in base al tipo di restrizione IP desiderato:
 

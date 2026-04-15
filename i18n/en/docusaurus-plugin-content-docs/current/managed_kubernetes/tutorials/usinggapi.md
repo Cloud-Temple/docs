@@ -2,7 +2,7 @@
 title: Using Cilium Gateway API
 ---
 
-import gapischema from './images/gapi.png'
+import gapischema from '@site/docs/managed_kubernetes/tutorials/images/gapi.png'
 
 ## Introduction
 

@@ -1,19 +1,19 @@
 ---
 title: Guía rápida
 ---
-import newTabNetwork from './images/new_tab_network.png'
-import vpcCreateButton from './images/vpc_create_button.png'
-import vpcCreateModal from './images/vpc_create_modale.png'
-import vpcOverview from './images/vpc.png'
-import vpcDetailsView from './images/vpc_details_view.png'
-import vpcNewPrivateNetwork from './images/vpc_new_private_network.png'
-import vpcActivateGatewayButton from './images/vpc_activate_gateway_button.png'
-import vpcActivateGatewayModal from './images/vpc_activate_gatewat_modale.png'
-import vpcOrders from './images/vpc_orders.png'
-import vpcStaticIps from './images/vpc_static_ips.png'
-import vpcNewStaticIps from './images/vpc_new_static_ips.png'
-import vpcNewStaticIpsModale from './images/vpc_new_static_ips_modale.png'
-import vpcStaticIpsAssociate from './images/vpc_static_ips_associate_png.png'
+import newTabNetwork from '@site/docs/network/vpc/images/new_tab_network.png'
+import vpcCreateButton from '@site/docs/network/vpc/images/vpc_create_button.png'
+import vpcCreateModal from '@site/docs/network/vpc/images/vpc_create_modale.png'
+import vpcOverview from '@site/docs/network/vpc/images/vpc.png'
+import vpcDetailsView from '@site/docs/network/vpc/images/vpc_details_view.png'
+import vpcNewPrivateNetwork from '@site/docs/network/vpc/images/vpc_new_private_network.png'
+import vpcActivateGatewayButton from '@site/docs/network/vpc/images/vpc_activate_gateway_button.png'
+import vpcActivateGatewayModal from '@site/docs/network/vpc/images/vpc_activate_gatewat_modale.png'
+import vpcOrders from '@site/docs/network/vpc/images/vpc_orders.png'
+import vpcStaticIps from '@site/docs/network/vpc/images/vpc_static_ips.png'
+import vpcNewStaticIps from '@site/docs/network/vpc/images/vpc_new_static_ips.png'
+import vpcNewStaticIpsModale from '@site/docs/network/vpc/images/vpc_new_static_ips_modale.png'
+import vpcStaticIpsAssociate from '@site/docs/network/vpc/images/vpc_static_ips_associate_png.png'
 
 # Guía Rápida de VPC
 

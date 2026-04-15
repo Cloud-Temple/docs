@@ -2,16 +2,16 @@
 title: Konzepte
 ---
 
-import cillium from './images/cillium.png'
-import grafana from './images/grafana.png'
-import archi_overview from './images/archi_overview.png'
-import archi_overview_1az from './images/archi_overview_1az.png'
+import cillium from '@site/docs/managed_kubernetes/images/cillium.png'
+import grafana from '@site/docs/managed_kubernetes/images/grafana.png'
+import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
+import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 
 ## Übersicht über Managed Kubernetes
 
 Das Angebot **Managed Kubernetes** (auch „Kub Managé“ oder „KM“ genannt) ist eine von Cloud-Temple verwaltete Kubernetes-Lösung, die als virtuelle Maschinen auf den IaaS-Infrastrukturen von Cloud-Temple OpenIaaS bereitgestellt wird.
 
-**Managed Kubernetes** basiert auf **Talos Linux** (https://www.talos.dev/), einem spezialisierten Betriebssystem für Kubernetes, das leichtgewichtig und sicher ist. Es ist immutabel, verfügt über keinen Shell-Zugriff und keinen SSH-Zugang, und wird ausschließlich deklarativ über die gRPC-API konfiguriert.
+**Managed Kubernetes** basiert auf **Talos Linux** ([https://www.talos.dev/](https://www.talos.dev/)), einem spezialisierten Betriebssystem für Kubernetes, das leichtgewichtig und sicher ist. Es ist immutabel, verfügt über keinen Shell-Zugriff und keinen SSH-Zugang, und wird ausschließlich deklarativ über die gRPC-API konfiguriert.
 
 Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponenten, die vom CNCF validiert wurden:
 
@@ -20,9 +20,9 @@ Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponent
     <img src={cillium} />
 
 - **MetalLB** und **nginx**: Für die Exposition von Web-Anwendungen sind standardmäßig drei *ingress-class* **nginx** integriert:
-    - *nginx-external-secured*: Exposition über eine öffentliche IP, mit Firewall-Filterung, die nur bekannte IPs erlaubt (z. B. für grafische Oberflächen der Produkte und die Kubernetes-API)
-    - *nginx-external*: Exposition über eine zweite öffentliche IP ohne Filterung (oder spezifische Filterung pro Kunde)
-    - *nginx-internal*: Exposition nur über eine interne IP
+  - *nginx-external-secured*: Exposition über eine öffentliche IP, mit Firewall-Filterung, die nur bekannte IPs erlaubt (z. B. für grafische Oberflächen der Produkte und die Kubernetes-API)
+  - *nginx-external*: Exposition über eine zweite öffentliche IP ohne Filterung (oder spezifische Filterung pro Kunde)
+  - *nginx-internal*: Exposition nur über eine interne IP
 
     Für nicht-webbasierte Dienste ermöglicht **MetalLB** die Exposition von Diensten intern oder über öffentliche IPs (z. B. zur Bereitstellung weiterer Ingresses wie z. B. eines WAF).
 
@@ -33,29 +33,30 @@ Die standardisierte Installation beinhaltet eine Reihe von Open-Source-Komponent
 - **ArgoCD** steht Ihnen für automatisierte Bereitstellungen über eine **CI/CD**-Pipeline zur Verfügung.
 
 - **Prometheus-Stack** (Prometheus, Grafana, Loki): Managed Kubernetes-Cluster werden standardmäßig mit einem vollständigen Open-Source-**Prometheus**-Stack zur Observability ausgeliefert, der folgende Komponenten enthält:
-    - **Prometheus**
-    - **Grafana** mit zahlreichen Dashboards
-    - **Loki**: Die Protokolle der Plattform werden in das S3-Speicher-System von Cloud-Temple exportiert (und in Grafana integriert).
+  - **Prometheus**
+  - **Grafana** mit zahlreichen Dashboards
+  - **Loki**: Die Protokolle der Plattform werden in das S3-Speicher-System von Cloud-Temple exportiert (und in Grafana integriert).
 
     <img src={grafana} />
 
-- **Harbor** ist eine **Container-Registry**, mit der Sie Container-Images oder Helm-Charts direkt im Cluster speichern können. Sie führt **Vulnerability-Scans** Ihrer Images durch und unterstützt digitale Signierungen. **Harbor** ermöglicht zudem Synchronisationen mit anderen Registries. (https://goharbor.io/)
+- **Harbor** ist eine **Container-Registry**, mit der Sie Container-Images oder Helm-Charts direkt im Cluster speichern können. Sie führt **Vulnerability-Scans** Ihrer Images durch und unterstützt digitale Signierungen. **Harbor** ermöglicht zudem Synchronisationen mit anderen Registries. ([https://goharbor.io/](https://goharbor.io/))
 
-- **OpenCost** (https://github.com/opencost/opencost) ist ein Werkzeug zur Kostenverwaltung (FinOps) für Kubernetes. Es ermöglicht eine detaillierte Verfolgung der Ressourcennutzung in Kubernetes und die Kostenabrechnung pro Projekt/Namespace.
+- **OpenCost** ([https://github.com/opencost/opencost](https://github.com/opencost/opencost)) ist ein Werkzeug zur Kostenverwaltung (FinOps) für Kubernetes. Es ermöglicht eine detaillierte Verfolgung der Ressourcennutzung in Kubernetes und die Kostenabrechnung pro Projekt/Namespace.
 
 - Erweiterte Sicherheitsstrategien mit **Kyverno** und **Capsule**:
-    - **Kyverno** (https://kyverno.io/) ist ein Admission Controller für Kubernetes, der Strategien anwenden kann. Es ist ein essenzielles Werkzeug für Governance und Sicherheit in Kubernetes.
-    - **Capsule** (https://projectcapsule.dev/) ist ein Werkzeug zur Verwaltung von Berechtigungen, das die Verwaltung von Rechten in Kubernetes vereinfacht. Es führt das Konzept des *Tenant* ein, das die zentrale Verwaltung und Delegation von Berechtigungen über mehrere Namespaces ermöglicht. Über **Capsule** verfügen die Benutzer der verwalteten Kubernetes-Plattform somit über eingeschränkte Rechte, die sich nur auf ihre eigenen Namespaces beziehen.
+  - **Kyverno** ([https://kyverno.io/](https://kyverno.io/)) ist ein Admission Controller für Kubernetes, der Strategien anwenden kann. Es ist ein essenzielles Werkzeug für Governance und Sicherheit in Kubernetes.
+  - **Capsule** ([https://projectcapsule.dev/](https://projectcapsule.dev/)) ist ein Werkzeug zur Verwaltung von Berechtigungen, das die Verwaltung von Rechten in Kubernetes vereinfacht. Es führt das Konzept des *Tenant* ein, das die zentrale Verwaltung und Delegation von Berechtigungen über mehrere Namespaces ermöglicht. Über **Capsule** verfügen die Benutzer der verwalteten Kubernetes-Plattform somit über eingeschränkte Rechte, die sich nur auf ihre eigenen Namespaces beziehen.
 
 - **Veeam Kasten** (auch „k10“ genannt) ist eine Lösung für die **Sicherung** von Kubernetes-Workloads.
 
-    Sie ermöglicht die Sicherung eines kompletten Deployments: Manifeste, Volumes usw. – in das Objektspeicher-S3-System von Cloud-Temple. **Kasten** nutzt **Kanister**, um anwendungs-konsistente Sicherungen zu ermöglichen, beispielsweise für Datenbanken (https://docs.kasten.io/latest/usage/blueprints/). 
+    Sie ermöglicht die Sicherung eines kompletten Deployments: Manifeste, Volumes usw. – in das Objektspeicher-S3-System von Cloud-Temple. **Kasten** nutzt **Kanister**, um anwendungs-konsistente Sicherungen zu ermöglichen, beispielsweise für Datenbanken ([https://docs.kasten.io/latest/usage/blueprints/](https://docs.kasten.io/latest/usage/blueprints/)).
 
     **Kasten** ist eine plattformübergreifende Lösung, die mit anderen Kubernetes-Clustern (OpenShift, Hyperscaler usw.) funktioniert. Sie kann daher für Szenarien der Wiederherstellung oder Migration genutzt werden (K10 verwaltet mögliche Anpassungen über *Transformations*, z. B. Änderung der Ingress-Class), aber auch für „Refresh“-Szenarien (z. B. geplante Wiederherstellung eines Produktionsumfelds in ein Vorbereitungs- oder Testumfeld).
 
 - **SSO-Authentifizierung** mit externem Identity Provider (OIDC): Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce usw.
 
 ## SLA and Support Information
+
 - **Guaranteed Availability (production 3 AZ):** 99.90%
 - **Support:** N1/N2/N3 included for the core scope (infrastructure and standard operators).
 - **Mean Time to Recovery (MTTR) Commitment:** As per the Cloud Temple framework agreement.
@@ -79,6 +80,7 @@ Response and recovery times depend on the incident severity, according to the su
 ## Kubernetes Nodes
 
 ### Production (multi-zonal)
+
 <img src={archi_overview} />
 
 For a "production" (multi-zone) deployment, the following machines are used:
@@ -101,6 +103,7 @@ For a "production" (multi-zone) deployment, the following machines are used:
 (**) The size and number of Worker Nodes can be adjusted according to the client’s compute capacity needs. The minimum number of Worker Nodes is 3 (1 per AZ), and we recommend increasing the number in batches of 3 to maintain consistent multi-zone distribution. The Worker Node size can be adapted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially up to 112 cores / 1536 GB RAM with Performance 3 blade servers). The total number of Worker Nodes is limited to 100. The CNCF recommends using Worker Nodes of identical size. The maximum number of pods per Worker Node is 110.
 
 ### Dev/Test
+
 <img src={archi_overview_1az} />
 
 Für eine "Dev/Test"-Version werden die folgenden Maschinen bereitgestellt:

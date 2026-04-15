@@ -1,7 +1,7 @@
 ---
 title: Concepts
 ---
-import oshiftOffert from './images/oshift_offert.png'
+import oshiftOffert from '@site/docs/paas_openshift/images/oshift_offert.png'
 
 ## Introduction to Red Hat OpenShift
 

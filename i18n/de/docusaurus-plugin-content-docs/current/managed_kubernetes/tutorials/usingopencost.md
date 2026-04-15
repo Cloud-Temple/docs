@@ -1,11 +1,11 @@
 ---
 title: Kostenverfolgung mit OpenCost
 ---
-import opencostui from './images/opencost.png'
-import opencostgrafana from './images/opencostgrafana.png'
-import opencostmcp from './images/opencostmcp.png'
-import opencostmcp2 from './images/opencostmcp2.png'
-import opencostmcp3 from './images/opencostmcp3.png'
+import opencostui from '@site/docs/managed_kubernetes/tutorials/images/opencost.png'
+import opencostgrafana from '@site/docs/managed_kubernetes/tutorials/images/opencostgrafana.png'
+import opencostmcp from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp.png'
+import opencostmcp2 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp2.png'
+import opencostmcp3 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp3.png'
 
 ## Ziele
 
@@ -106,19 +106,19 @@ To interact with MCP using natural language, the underlying AI must have access 
 
 After setup, you can use LLM tools to perform natural language queries against this MCP server.
 
-#### Beispiel:
+#### Beispiel
 
 "Verwende den MCP 'opencost-bestie' und sag mir, welcher Prozentsatz der Clusterkosten nicht einer Ressource zugewiesen ist."
 Sie erhalten Folgendes:
 <img src={opencostmcp} alt="IA-Antwort opencost"/>
 
-#### Example 2:
+#### Example 2
 
 "Use the MCP 'opencost-bestie', and list me the costs associated with persistent volumes from yesterday"
 
 <img src={opencostmcp2} alt="IA response opencost 2" />
 
-#### Beispiel 3:
+#### Beispiel 3
 
 "Verwende den MCP opencost-bestie und gib an, welcher Prozentsatz der Clusterkosten der Anwendung mit dem Label »nginx« zugewiesen ist. (Filter der Form filter: »label:app:frontend«)"
 

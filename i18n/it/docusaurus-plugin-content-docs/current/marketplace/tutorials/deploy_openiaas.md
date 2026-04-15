@@ -1,8 +1,8 @@
 ---
 title: Distribuire un'immagine su OpenIaaS
 ---
-import marketplaceOpeniaasDeployment from '../images/marketplace_openiaas_deploy.png'
-import marketplaceOpeniaasConfig from '../images/marketplace_openiaas_config.png'
+import marketplaceOpeniaasDeployment from '@site/docs/marketplace/images/marketplace_openiaas_deploy.png'
+import marketplaceOpeniaasConfig from '@site/docs/marketplace/images/marketplace_openiaas_config.png'
 
 Questo tutorial ti guida nel distribuire un'immagine di macchina virtuale dalla Marketplace Cloud Temple nel tuo ambiente OpenIaaS.
 

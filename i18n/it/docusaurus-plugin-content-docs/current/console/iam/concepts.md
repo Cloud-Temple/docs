@@ -1,21 +1,21 @@
 ---
 title: Concetti
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
 ## Utenti
 

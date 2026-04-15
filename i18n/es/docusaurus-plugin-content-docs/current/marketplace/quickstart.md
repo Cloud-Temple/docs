@@ -1,8 +1,8 @@
 ---
 title: Guía de inicio
 ---
-import marketplaceCatalog from './images/marketplace_catalog.png'
-import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
+import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
+import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
 # QuickStart para la Marketplace Cloud Temple
 
