@@ -81,11 +81,11 @@ resource "cloudtemple_compute_vm_instance" "example" {
 }
 ```
 
-Weitere Informationen zur Installation und Konfiguration des Providers finden Sie in der [Terraform-Dokumentation](../../terraform/terraform.md).
+Weitere Informationen zur Installation und Konfiguration des Providers finden Sie in der [Terraform-Dokumentation](/docs/terraform/terraform).
 
 ## Nützliche Ressourcen
 
 - [Öffentliche Cloud Temple-Dokumentation](https://docs.cloud-temple.com/home)
 - [API-Referenz](https://shiva.cloud-temple.com/api/)
-- [Terraform-Dokumentation](../../terraform/terraform.md)
+- [Terraform-Dokumentation](/docs/terraform/terraform)
 - [Konzepte der Verfügbarkeitszonen](../../additional_content/concepts_az.md)
