@@ -1,7 +1,7 @@
 ---
 title: Modèle de responsabilité partagée
 slug: /shared-responsibility
-displayed_sidebar: null
+displayed_sidebar: docSidebar
 hide_table_of_contents: true
 ---
 

@@ -6,7 +6,7 @@ import stack from './images/stack.png'
 import StandAlone from './images/StandAlone.png'
 import Distributed from './images/Distributed.png'
 
-# MariaDB Managé (preview)
+# MariaDB Managé <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

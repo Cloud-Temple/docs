@@ -158,7 +158,8 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'VM Instances (Preview)',
+          label: 'VM Instances',
+          className: 'sidebar-preview',
           link: { type: 'generated-index' },
           items: [
             'public_cloud/vm_instances/vm_instances',
@@ -500,7 +501,8 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'MariaDB Managé (Preview)',
+          label: 'MariaDB Managé',
+          className: 'sidebar-preview',
           link: { type: 'doc', id: 'managed_mariadb/managed_mariadb' },
           items: [
             'managed_mariadb/managed_mariadb',
@@ -510,7 +512,8 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'PostgreSQL Managé (Preview)',
+          label: 'PostgreSQL Managé',
+          className: 'sidebar-preview',
           link: { type: 'doc', id: 'managed_postgresql/managed_postgresql' },
           items: [
             'managed_postgresql/managed_postgresql',
