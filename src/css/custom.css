@@ -500,7 +500,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   padding: 48px 40px;
   margin: 0 0 2.5rem 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-banner::after {
@@ -551,6 +551,76 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 
 [data-theme='dark'] .hero-banner {
   background: linear-gradient(135deg, #1a4a2e 0%, #1e6640 60%, #2e8555 100%);
+}
+
+/* ─── Certification chips ────────────────────────────────────────────────────── */
+
+.cert-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.cert-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cert-chip:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.98);
+  text-decoration: none !important;
+}
+
+/* Lien "Toutes nos certifications" — chip outline tiretée, aligné à droite */
+.cert-row-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  text-decoration: none !important;
+  margin-left: auto;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.cert-row-link:hover {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none !important;
+}
+
+.cert-row-link svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.cert-row-link:hover svg {
+  opacity: 1;
 }
 
 /* ─── Quickstart Cards ──────────────────────────────────────────────────────── */

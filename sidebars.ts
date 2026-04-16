@@ -152,7 +152,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Compute',
+      label: 'IaaS',
       className: 'sidebar-cat-compute',
       link: { type: 'doc', id: 'compute_overview' },
       items: [
@@ -169,7 +169,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'IaaS OpenSource',
+          label: 'OpenSource',
           link: { type: 'doc', id: 'iaas_opensource/iaas_opensource' },
           items: [
             'iaas_opensource/iaas_opensource',
@@ -206,7 +206,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'IaaS VMware',
+          label: 'VMware',
           link: { type: 'doc', id: 'iaas_vmware/iaas_vmware' },
           items: [
             'iaas_vmware/iaas_vmware',

@@ -9,9 +9,17 @@ hide_table_of_contents: true
 
 <div class="hero-banner">
   <div class="hero-content">
-    <div class="hero-badge">🛡️ Qualifié SecNumCloud 3.2</div>
     <h1 class="hero-title">Documentation Cloud Temple</h1>
     <p class="hero-subtitle">Tout ce dont vous avez besoin pour exploiter les services cloud souverains Cloud Temple.</p>
+    <div class="cert-row">
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">Gaia-X</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">CISPE</a>
+    </div>
   </div>
 </div>
 

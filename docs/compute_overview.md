@@ -1,11 +1,11 @@
 ---
-title: Compute
+title: IaaS
 displayed_sidebar: docSidebar
 ---
 
-# Compute
+# IaaS
 
-Les services Compute de Cloud Temple vous permettent de déployer et d'opérer des machines virtuelles sur une infrastructure souveraine et sécurisée. Choisissez la technologie qui correspond à vos besoins : instances cloud mutualisées, infrastructure open source ou virtualisation VMware.
+Les offres IaaS de Cloud Temple vous permettent de déployer et d'opérer des machines virtuelles sur une infrastructure souveraine et sécurisée. Choisissez la technologie qui correspond à vos besoins : instances cloud mutualisées, infrastructure open source ou virtualisation VMware.
 
 <div class="card-grid">
   <div class="card">
@@ -14,12 +14,12 @@ Les services Compute de Cloud Temple vous permettent de déployer et d'opérer d
     <a href="./public_cloud/vm_instances/vm_instances" class="card-link">Découvrir VM Instances →</a>
   </div>
   <div class="card">
-    <h3>IaaS OpenSource</h3>
+    <h3>OpenSource</h3>
     <p>Infrastructure virtualisée open source (OpenStack). Contrôle total sur vos VMs, réseaux et stockage sur un socle SecNumCloud.</p>
     <a href="./iaas_opensource/iaas_opensource" class="card-link">Découvrir IaaS OpenSource →</a>
   </div>
   <div class="card">
-    <h3>IaaS VMware</h3>
+    <h3>VMware</h3>
     <p>Infrastructure VMware managée. Compatible avec votre existant vSphere, avec les garanties d'un cloud souverain qualifié.</p>
     <a href="./iaas_vmware/iaas_vmware" class="card-link">Découvrir IaaS VMware →</a>
   </div>
