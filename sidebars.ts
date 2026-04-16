@@ -50,7 +50,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Billing',
       className: 'sidebar-cat-billing',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'console/billing/concepts' },
       items: [
         'console/billing/concepts',
       ],
@@ -59,7 +59,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Security & Identity',
       className: 'sidebar-cat-security-identity',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'security_identity_overview' },
       items: [
         {
           type: 'category',
@@ -154,13 +154,13 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Compute',
       className: 'sidebar-cat-compute',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'compute_overview' },
       items: [
         {
           type: 'category',
           label: 'VM Instances',
           className: 'sidebar-preview',
-          link: { type: 'generated-index' },
+          link: { type: 'doc', id: 'public_cloud/vm_instances/vm_instances' },
           items: [
             'public_cloud/vm_instances/vm_instances',
             'public_cloud/vm_instances/concepts',
@@ -241,7 +241,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Network',
       className: 'sidebar-cat-network',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'network/network_overview' },
       items: [
         {
           type: 'category',
@@ -302,7 +302,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Storage',
       className: 'sidebar-cat-storage',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'storage/oss/oss' },
       items: [
         {
           type: 'category',
@@ -341,7 +341,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Monitoring',
       className: 'sidebar-cat-monitoring',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'console/metrics/concepts' },
       items: [
         'console/metrics/concepts',
       ],
@@ -399,7 +399,7 @@ const sidebars: SidebarsConfig = {
       label: 'Containers',
       className: 'sidebar-cat-containers',
       key: 'containers_products',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'paas_openshift/paas_openshift' },
       items: [
         {
           type: 'category',
@@ -428,7 +428,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Developer Tools',
       className: 'sidebar-cat-devtools',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'terraform/terraform' },
       items: [
         {
           type: 'category',
@@ -497,7 +497,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Databases',
       className: 'sidebar-cat-databases',
-      link: { type: 'generated-index' },
+      link: { type: 'doc', id: 'databases_overview' },
       items: [
         {
           type: 'category',
@@ -522,6 +522,37 @@ const sidebars: SidebarsConfig = {
           ],
         },
       ],
+    },
+    // ─────────────────────────────────────────
+    // QUICK LINKS
+    // ─────────────────────────────────────────
+    {
+      type: 'html',
+      value: '<hr class="sidebar-divider" />',
+    },
+    {
+      type: 'html',
+      value: `<p class="sidebar-section-label">Quick Links</p>`,
+    },
+    {
+      type: 'link',
+      label: 'Tarifs publics',
+      href: 'https://www.cloud-temple.com/nos-tarifs-publics/',
+    },
+    {
+      type: 'link',
+      label: 'GitHub Cloud Temple',
+      href: 'https://github.com/cloud-temple',
+    },
+    {
+      type: 'link',
+      label: 'Roadmap produit',
+      href: 'https://github.com/orgs/Cloud-Temple/projects/2',
+    },
+    {
+      type: 'link',
+      label: 'Status page',
+      href: 'https://status.cloud-temple.com/',
     },
   ],
 };
