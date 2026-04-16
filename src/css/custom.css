@@ -16,8 +16,8 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* ── Typographie système (lisible, neutre, proche Scaleway) ── */
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  /* ── Typographie Nunito (proche Cloud Temple Console) ── */
+  --ifm-font-family-base: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --ifm-font-size-base: 15px;
   --ifm-line-height-base: 1.65;
   --ifm-font-weight-normal: 400;
@@ -271,14 +271,18 @@ h3 { font-size: 1.15rem; }
 }
 
 .sidebar-section-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--ifm-color-emphasis-500);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #555;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin: 6px 0 4px 0;
+  letter-spacing: 0.1em;
+  margin: 8px 0 10px 0;
   padding: 0 var(--ifm-menu-link-padding-horizontal);
   line-height: 1.4;
+}
+
+[data-theme='dark'] .sidebar-section-label {
+  color: #aaa;
 }
 
 /* Style du titre legacy */
@@ -592,9 +596,13 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   line-height: 1.4;
 }
 
-/* ─── Lucide SVG icons dans la sidebar (mask-image, zéro dépendance) ─────── */
+/* ─── Icônes sidebar style Console Cloud Temple ─────────────────────────────
+   Icône blanche sur fond coloré arrondi (comme dans la Console Cloud Temple)
+   Technique : background-image layeré (SVG blanc + couleur de fond)
+   — pas de mask-image → pas de conflit avec la flèche Docusaurus
+──────────────────────────────────────────────────────────────────────────── */
 
-/* Base commune */
+/* Base commune : icône discrète (mask-image, couleur primaire) */
 .sidebar-cat-console > .menu__list-item-collapsible > .menu__link::before,
 .sidebar-cat-billing > .menu__list-item-collapsible > .menu__link::before,
 .sidebar-cat-security-identity > .menu__list-item-collapsible > .menu__link::before,
@@ -628,7 +636,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   flex-shrink: 0;
 }
 
-/* Icônes individuelles — Lucide SVG inline data URIs */
+/* Icônes individuelles — SVG stroke='black' via mask-image */
 .sidebar-cat-console > .menu__list-item-collapsible > .menu__link::before { -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='20' height='14' x='2' y='3' rx='2'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/></svg>"); mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='20' height='14' x='2' y='3' rx='2'/><line x1='8' x2='16' y1='21' y2='21'/><line x1='12' x2='12' y1='17' y2='21'/></svg>"); }
 .sidebar-cat-billing > .menu__list-item-collapsible > .menu__link::before { -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='20' height='14' x='2' y='5' rx='2'/><line x1='2' x2='22' y1='10' y2='10'/></svg>"); mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='20' height='14' x='2' y='5' rx='2'/><line x1='2' x2='22' y1='10' y2='10'/></svg>"); }
 .sidebar-cat-security-identity > .menu__list-item-collapsible > .menu__link::before { -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/><path d='m9 12 2 2 4-4'/></svg>"); mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/><path d='m9 12 2 2 4-4'/></svg>"); }
@@ -645,6 +653,27 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 .sidebar-cat-devtools > .menu__list-item-collapsible > .menu__link::before { -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>"); mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>"); }
 .sidebar-cat-k8s > .menu__list-item-collapsible > .menu__link::before { -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z'/><path d='M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12'/><path d='M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17'/></svg>"); mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z'/><path d='M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12'/><path d='M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17'/></svg>"); }
 .sidebar-cat-databases > .menu__list-item-collapsible > .menu__link::before { -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v18'/><rect width='18' height='18' x='3' y='3' rx='2'/><path d='M3 9h18'/><path d='M3 15h18'/></svg>"); mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v18'/><rect width='18' height='18' x='3' y='3' rx='2'/><path d='M3 9h18'/><path d='M3 15h18'/></svg>"); }
+
+/* ─── Quick Links sidebar ───────────────────────────────────────────────────
+   Liens externes en bas de la sidebar : discrets, avec icône ↗ auto Docusaurus
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Les items "link" dans la sidebar ont la classe .menu__link (pas collapsible) */
+/* On cible les liens qui suivent le sidebar-section-label "Quick Links"
+   via le sélecteur de frère ~ — mais comme c'est un html item on utilise
+   une approche plus robuste : on style tous les .menu__link externes */
+
+/* Liens externes sidebar (href commence par http) — rendu plus discret */
+.menu__list > .menu__list-item > a.menu__link[href^="http"] {
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.menu__list > .menu__list-item > a.menu__link[href^="http"]:hover {
+  color: var(--ifm-color-primary);
+  background: var(--ifm-menu-color-background-hover);
+}
 
 /* ─────────────────────────────────────────────────────────────────────────── */
 
