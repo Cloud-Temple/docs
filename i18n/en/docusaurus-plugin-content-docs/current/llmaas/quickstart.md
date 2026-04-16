@@ -113,7 +113,7 @@ For your first test, use one of these recommended models:
 
 Check the [complete model catalog](./models) for more options.
 
-:::tip Tip for Qwen models
+:::tip[Tip for Qwen models]
 Some models from the **Qwen** family (like `qwen3:14b` or `qwen3:30b-a3b`) have an advanced reasoning mode. You can force its activation by adding `/think` at the beginning of your prompt, or disable it for a more direct and faster response with `/nothink`.
 :::
 

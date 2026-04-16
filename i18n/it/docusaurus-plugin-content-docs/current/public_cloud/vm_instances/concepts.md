@@ -2,16 +2,16 @@
 title: Concetti
 ---
 
-Il servizio **VM instances** di Cloud Temple è un'offerta di calcolo condiviso che consente di distribuire macchine virtuali su richiesta, senza gestire l'infrastruttura sottostante. Questa pagina presenta i concetti fondamentali del servizio.
+Il servizio **VM Instances** di Cloud Temple è un'offerta di calcolo condiviso che consente di distribuire macchine virtuali su richiesta, senza gestire l'infrastruttura sottostante. Questa pagina presenta i concetti fondamentali del servizio.
 
 ## Regioni e zone di disponibilità
 
-Il servizio VM instances è distribuito nella regione **FR1**. Durante la creazione di una macchina virtuale, è possibile scegliere la **zona di disponibilità (AZ)** in cui verrà ospitata.
+Il servizio VM Instances è distribuito nella regione **FR1**. Durante la creazione di una macchina virtuale, è possibile scegliere la **zona di disponibilità (AZ)** in cui verrà ospitata.
 
 Per ulteriori informazioni sulle zone di disponibilità e le regioni Cloud Temple, consultare:
 
-- [Concetti sulle zone di disponibilità](../additional_content/concepts_az.md)
-- [Concetti regionali](../additional_content/concepts_regional.md)
+- [Concetti sulle zone di disponibilità](../../additional_content/concepts_az.md)
+- [Concetti regionali](../../additional_content/concepts_regional.md)
 
 ## Classi di servizio
 
@@ -75,7 +75,7 @@ Le specifiche dei flavor possono evolversi. Consultare la console Cloud Temple p
 
 ## Storage
 
-Tutti i volumi del servizio VM instances sono **volumi Flash persistenti montati in rete** (*network-attached*). Non esiste storage locale effimero: i dati vengono conservati indipendentemente dallo stato della macchina virtuale.
+Tutti i volumi del servizio VM Instances sono **volumi Flash persistenti montati in rete** (*network-attached*). Non esiste storage locale effimero: i dati vengono conservati indipendentemente dallo stato della macchina virtuale.
 
 ### Disco di sistema
 
@@ -102,8 +102,8 @@ Ogni VM instance dispone di **un'unica interfaccia di rete**.
 
 Questa interfaccia può essere connessa a due tipi di reti Cloud Temple:
 
-- **Rete privata backbone**: rete privata condivisa con isolamento logico rigoroso tra i tenant. Ideale per interconnettere le risorse Cloud Temple in un ambiente controllato. [Ulteriori informazioni](../network/private_network/private_network.md)
-- **VPC (Virtual Private Cloud)**: rete privata completamente gestita che consente una segmentazione avanzata e una configurazione di rete dettagliata degli ambienti. [Ulteriori informazioni](../network/vpc/vpc.md)
+- **Rete privata backbone**: rete privata condivisa con isolamento logico rigoroso tra i tenant. Ideale per interconnettere le risorse Cloud Temple in un ambiente controllato. [Ulteriori informazioni](../../network/private_network/private_network.md)
+- **VPC (Virtual Private Cloud)**: rete privata completamente gestita che consente una segmentazione avanzata e una configurazione di rete dettagliata degli ambienti. [Ulteriori informazioni](../../network/vpc/vpc.md)
 
 ### IP mobile (Floating IP)
 
@@ -111,7 +111,7 @@ Su una rete **VPC**, è possibile associare un **IP mobile** a una VM instance. 
 
 ## Distribuzione e immagini
 
-Le VM instances vengono distribuite dalle **immagini ufficiali del Marketplace di Cloud Temple**. Questo catalogo di immagini selezionate garantisce ambienti testati, mantenuti e pronti all'uso per ogni sistema operativo supportato.
+Le VM Instances vengono distribuite dalle **immagini ufficiali del Marketplace di Cloud Temple**. Questo catalogo di immagini selezionate garantisce ambienti testati, mantenuti e pronti all'uso per ogni sistema operativo supportato.
 
 Il servizio supporta **Cloud-init** per la preconfigurazione automatica delle istanze all'avvio (iniezione di chiavi SSH, configurazione di rete, script di inizializzazione, ecc.).
 

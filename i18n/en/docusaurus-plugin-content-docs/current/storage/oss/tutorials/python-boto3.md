@@ -30,7 +30,7 @@ region = 'fr1'
 bucket_name = 'mon-bucket-test'
 ```
 
-:::info Region
+:::info[Region]
 The region to use for Cloud Temple object storage is **`fr1`**. Make sure to properly set this value in the `region_name` parameter.
 :::
 
@@ -41,7 +41,7 @@ Cloud Temple Object Storage, based on **Dell ECS**, supports two versions of AWS
 - **SigV4** (`signature_version='s3v4'`): recommended for **metadata** operations (LIST, HEAD)
 - **SigV2** (`signature_version='s3'`): recommended for **data** operations (PUT, GET, DELETE)
 
-:::caution Recommended hybrid approach
+:::caution[Recommended hybrid approach]
 For optimal compatibility, it is recommended to use **two Boto3 clients** with different signing configurations depending on the operation type. This avoids `XAmzContentSHA256Mismatch` errors that can occur with SigV4 during write operations.
 :::
 
@@ -82,7 +82,7 @@ client_metadata = boto3.client(
 )
 ```
 
-:::tip Simplified Configuration
+:::tip[Simplified Configuration]
 If you want to use a single client, prefer **SigV2** (`signature_version='s3'`) with path-style addressing, which works for most operations:
 
 ```python
@@ -256,7 +256,7 @@ print(f"Deletion: {result['ResponseMetadata']['HTTPStatusCode']}")
 
 If an object already exists, you can modify its permissions to make it publicly readable using the `put_object_acl` method.
 
-:::danger Attention
+:::danger[Attention]
 Making an object public means that anyone with the URL can access it. Use this option with caution and in accordance with your security policy.
 :::
 

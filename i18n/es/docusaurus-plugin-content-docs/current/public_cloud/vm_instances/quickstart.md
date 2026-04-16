@@ -14,7 +14,7 @@ Antes de comenzar, asegúrese de disponer de lo siguiente:
 
 ### 1. Acceder al servicio
 
-Inicie sesión en la **Consola Cloud Temple** y navegue a la sección **VM instances** desde el menú principal.
+Inicie sesión en la **Consola Cloud Temple** y navegue a la sección **VM Instances** desde el menú principal.
 
 ### 2. Seleccionar el tenant y la zona de disponibilidad
 
@@ -40,7 +40,7 @@ Complete los parámetros de su instancia:
 | **Red (VPC)** | Asocie la VM a su red VPC |
 | **Cloud-init** | Opcional: inyecte un script de preconfiguración en el arranque (claves SSH, configuración de red, etc.) |
 
-:::info Disco del sistema
+:::info[Disco del sistema]
 El disco del sistema (Flash) se incluye automáticamente. Su tamaño (entre 15 y 100 GB) depende del sistema operativo elegido.
 :::
 
@@ -61,7 +61,7 @@ Desde la consola, puede realizar las siguientes acciones en sus máquinas virtua
 
 ## Automatización e Infrastructure as Code
 
-El servicio VM instances es totalmente automatizable:
+El servicio VM Instances es totalmente automatizable:
 
 ### A través de la API REST
 
@@ -71,21 +71,21 @@ Referencia de API: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-tem
 
 ### A través de Terraform
 
-El proveedor Terraform de Cloud Temple permite gestionar sus VM instances como Infrastructure as Code.
+El proveedor Terraform de Cloud Temple permite gestionar sus VM Instances como Infrastructure as Code.
 
 ```hcl
-# Ejemplo de recurso VM instances con Terraform
+# Ejemplo de recurso VM Instances con Terraform
 # Consulte la documentación del proveedor para los atributos disponibles
-resource "cloudtemple_compute_vmaas_instance" "example" {
+resource "cloudtemple_compute_vm_instance" "example" {
   # ...
 }
 ```
 
-Consulte la [documentación de Terraform](../terraform/terraform.md) para la instalación y configuración del proveedor.
+Consulte la [documentación de Terraform](/docs/terraform/terraform) para la instalación y configuración del proveedor.
 
 ## Recursos útiles
 
 - [Documentación pública de Cloud Temple](https://docs.cloud-temple.com/home)
 - [Referencia de API](https://shiva.cloud-temple.com/api/)
-- [Documentación de Terraform](../terraform/terraform.md)
-- [Conceptos de zonas de disponibilidad](../additional_content/concepts_az.md)
+- [Documentación de Terraform](/docs/terraform/terraform)
+- [Conceptos de zonas de disponibilidad](../../additional_content/concepts_az.md)

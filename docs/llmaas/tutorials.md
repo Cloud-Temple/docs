@@ -325,7 +325,7 @@ Ce tutoriel adapte le pipeline RAG précédent pour utiliser Qdrant.
     * **`force_recreate=True`** : Pour ce tutoriel, nous utilisons ce paramètre pour nous assurer que la collection est vide à chaque exécution. En production, vous le mettriez à `False` pour conserver vos données.
 3. **Le reste du pipeline** (configuration du LLM, création de la chaîne `RetrievalQA`) est identique, ce qui démontre la flexibilité de LangChain : il suffit de changer la source du `retriever` (le chercheur d'informations) pour passer de FAISS à Qdrant.
 
-:::info Prérequis : Lancer Qdrant
+:::info[Prérequis : Lancer Qdrant]
 Pour ce tutoriel, vous aurez besoin d'une instance Qdrant. Vous pouvez la lancer facilement avec Docker :
 
 ```bash

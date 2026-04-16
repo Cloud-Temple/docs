@@ -16,7 +16,7 @@ Para interactuar con su clúster, varios elementos son indispensables:
 2. **La herramienta `kubectl`**: Es la interfaz de línea de comandos estándar para gestionar un clúster Kubernetes.
 3. **La herramienta `kubelogin`** (si se utiliza OIDC): Si su clúster está configurado para autenticarse a través de un proveedor de identidad OIDC (como Entra ID/Azure AD), debe instalar la herramienta `kubelogin` para gestionar el flujo de autenticación. Siga la [guía de instalación de kubelogin](https://github.com/int128/kubelogin).
 
-:::info Herramientas gráficas recomendadas:
+:::info[Herramientas gráficas recomendadas:]
 Para una experiencia más visual y una gestión simplificada de sus recursos, le recomendamos el uso de **Lens**. Es una herramienta potente para Kubernetes que le permite explorar su clúster, gestionar sus aplicaciones y visualizar su estado de forma gráfica.
 Algunos de nuestros tutoriales utilizarán Lens para ilustrar las operaciones. Puede descargarlo aquí: [https://k8slens.dev/](https://k8slens.dev/).
 :::
@@ -39,7 +39,7 @@ Las URLs son:
   - opencost.external-secured.**identificador**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**identificador**.mk.ms-cloud-temple.com
 
-:::info URLs seguras
+:::info[URLs seguras]
 Las URLs anteriores solo son accesibles desde IPs públicas conocidas, configuradas en el firewall de la solución. Si desea añadir una IP pública, debe realizar una solicitud de soporte.
 :::
 
@@ -48,7 +48,7 @@ Las URLs anteriores solo son accesibles desde IPs públicas conocidas, configura
   - argocd.internal.**identificador**.mk.ms-cloud-temple.com
   - hubble.internal.**identificador**.mk.ms-cloud-temple.com
 
-:::info URLs internas
+:::info[URLs internas]
 Las URLs anteriores no están expuestas en Internet. Solo son accesibles en la red interna de Managed Kubernetes.
 :::
 
@@ -56,7 +56,7 @@ Las URLs anteriores no están expuestas en Internet. Solo son accesibles en la r
 
 ## Sus Permisos
 
-:::warning Dev/Test
+:::warning[Dev/Test]
 Para los clústeres Managed Kubernetes **"Dev/Test"**, la cuenta de servicio que se le ha proporcionado tiene todos los permisos sobre el clúster completo (ClusterAdmin)
 :::
 

@@ -36,7 +36,7 @@ The Kasten dashboard is accessible via a secure URL, built from your cluster ide
 
 <img src={k10dashboard} />
 
-:::tip Built-in Quick Start Guide
+:::tip[Built-in Quick Start Guide]
 The Kasten console includes an interactive quick start guide on its home page. Feel free to follow it for a first hands-on experience directly from the interface.
 :::
 
@@ -48,7 +48,7 @@ No configuration is required on your part. The storage location is already defin
 
 <img src={k10s3location} />
 
-:::info Cost Model
+:::info[Cost Model]
 The Veeam Kasten service is included in the Managed Kubernetes offering. Backup storage on our sovereign S3 is billed on a usage basis. See our pricing grid for more details.
 :::
 
@@ -56,7 +56,7 @@ The Veeam Kasten service is included in the Managed Kubernetes offering. Backup 
 
 A backup policy (`Policy`) is a set of rules that define when and how to back up your applications.
 
-:::warning Existing Backup Policy
+:::warning[Existing Backup Policy]
 A backup policy named `infra-backups` is already configured in your Kasten instance. This policy ensures the backup of the essential components delivered with the cluster.
 
 <img src={k10infrabackups} />

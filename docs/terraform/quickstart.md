@@ -58,8 +58,8 @@ Terraform v1.6.0
 
 Ces credentials peuvent être générés depuis la Console Cloud Temple en suivant [cette procédure](https://docs.cloud-temple.com/console/api#cl%C3%A9s-api).
 
-:::warning Sécurité
-    Conservez ces credentials en lieu sûr. Le Secret ID ne sera affiché qu'une seule fois.
+:::warning[Sécurité]
+Conservez ces credentials en lieu sûr. Le Secret ID ne sera affiché qu'une seule fois.
 :::
 
 ### Configuration des variables d'environnement
@@ -98,10 +98,10 @@ terraform {
   required_version = ">= 1.0"
   
   required_providers {
-    cloudtemple = {
-      source  = "Cloud-Temple/cloudtemple"
-      version = "~> 1.0"
-    }
+cloudtemple = {
+  source  = "Cloud-Temple/cloudtemple"
+  version = "~> 1.0"
+}
   }
 }
 
@@ -186,14 +186,14 @@ resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   
   # Politique de sauvegarde
   backup_sla_policies = [
-    data.cloudtemple_backup_sla_policy.daily.id
+data.cloudtemple_backup_sla_policy.daily.id
   ]
   
   # Tags
   tags = {
-    environment = "demo"
-    managed_by  = "terraform"
-    owner       = "quickstart"
+environment = "demo"
+managed_by  = "terraform"
+owner       = "quickstart"
   }
 }
 
@@ -209,8 +209,8 @@ output "vm_moref" {
 }
 ```
 
-:::note Adaptation des noms
-    Les noms des datacenters, clusters et datastores doivent correspondre à ceux disponibles dans votre environnement Cloud Temple. Consultez la console pour identifier les ressources disponibles.
+:::note[Adaptation des noms]
+Les noms des datacenters, clusters et datastores doivent correspondre à ceux disponibles dans votre environnement Cloud Temple. Consultez la console pour identifier les ressources disponibles.
 :::
 
 ## Étape 6 : Planifier les changements
@@ -228,15 +228,15 @@ Terraform will perform the following actions:
 
   # cloudtemple_compute_virtual_machine.my_first_vm will be created
   + resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
-      + cpu                    = 2
-      + datacenter_id          = "xxxx-xxxx-xxxx"
-      + guest_operating_system = "ubuntu64Guest"
-      + id                     = (known after apply)
-      + memory                 = 4294967296
-      + name                   = "terraform-vm-01"
-      + moref                  = (known after apply)
-      ...
-    }
+  + cpu                    = 2
+  + datacenter_id          = "xxxx-xxxx-xxxx"
+  + guest_operating_system = "ubuntu64Guest"
+  + id                     = (known after apply)
+  + memory                 = 4294967296
+  + name                   = "terraform-vm-01"
+  + moref                  = (known after apply)
+  ...
+}
 
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
@@ -277,8 +277,8 @@ vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
 ```
 
-:::success Félicitations !
-    Vous venez de créer votre première machine virtuelle Cloud Temple avec Terraform !
+:::success[Félicitations !]
+Vous venez de créer votre première machine virtuelle Cloud Temple avec Terraform !
 :::
 
 ## Étape 8 : Vérifier la création

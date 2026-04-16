@@ -51,7 +51,7 @@ Der Provider authentifiziert sich bei den Cloud Temple APIs mit:
 
 Diese Anmeldeinformationen werden über die Cloud Temple-Konsole generiert und ermöglichen es dem Provider, Operationen in Ihrem Namen durchzuführen.
 
-:::info Best Practices
+:::info[Best Practices]
     Speichern Sie Ihre Anmeldeinformationen in Umgebungsvariablen oder einem Secrets-Manager, niemals direkt im Code.
 :::
 
@@ -280,7 +280,7 @@ Zerstört alle verwalteten Ressourcen:
 terraform destroy
 ```
 
-:::danger Achtung
+:::danger[Achtung]
   Dieser Befehl löscht alle Ressourcen endgültig. Verwenden Sie ihn vorsichtig.
 :::
 
