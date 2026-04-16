@@ -5,8 +5,9 @@ title: Vue d'ensemble
 import stack from './images/stack.png'
 import StandAlone from './images/StandAlone.png'
 import Distributed from './images/Distributed.png'
+import maxscale from './images/maxscale.png'
 
-# MariaDB Managé <span class="title-preview-badge">Preview</span>
+# MariaDB Managé (preview)
 
 <div class="card-grid">
   <div class="card">
@@ -66,6 +67,8 @@ Le stockage utilisé par cette instance est répliqué sur 3 AZ, et permet un re
 Le modèle ***Distributed*** déploie un cluster de 3 instances du moteur MariaDB, avec Galera en mode "single primary" et MaxScale:
 
 - un endpoint MaxScale permet un routage vers les différentes instances suivant le type de requete (read ou write).
+![MaxScale](./images/maxscale.png)
+
 - l'instance en lecture-écriture (RW) est accessible via un endpoint spécifique.
 - Les 2 instances en lecture seule (RO) sont accessibles via un autre endpoint spécifique.
 
