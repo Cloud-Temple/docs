@@ -51,8 +51,8 @@ Le provider s'authentifie auprès des APIs Cloud Temple en utilisant :
 
 Ces identifiants sont générés depuis la Console de Cloud Temple et permettent au provider d'effectuer des opérations en votre nom.
 
-:::info Bonnes pratiques
-    Stockez vos credentials dans des variables d'environnement ou un gestionnaire de secrets, jamais directement dans le code.
+:::info[Bonnes pratiques]
+Stockez vos credentials dans des variables d'environnement ou un gestionnaire de secrets, jamais directement dans le code.
 :::
 
 ## Ressources
@@ -83,7 +83,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 - `cloudtemple_compute_iaas_opensource_virtual_machine` : Machine virtuelle
 - `cloudtemple_compute_iaas_opensource_virtual_disk` : Disque virtuel
-- `cloudtemple_compute_iaas_opensource_network_adapter` : Interface réseau 
+- `cloudtemple_compute_iaas_opensource_network_adapter` : Interface réseau
 - `cloudtemple_compute_iaas_opensource_replication_policy` : Politique de réplication
 
 #### Object Storage
@@ -193,13 +193,13 @@ Le state Terraform est un fichier qui maintient la correspondance entre votre co
   "version": 4,
   "terraform_version": "1.5.0",
   "resources": [
-    {
-      "mode": "managed",
-      "type": "cloudtemple_compute_virtual_machine",
-      "name": "web",
-      "provider": "provider[\"registry.terraform.io/Cloud-Temple/cloudtemple\"]",
-      "instances": [...]
-    }
+{
+  "mode": "managed",
+  "type": "cloudtemple_compute_virtual_machine",
+  "name": "web",
+  "provider": "provider[\"registry.terraform.io/Cloud-Temple/cloudtemple\"]",
+  "instances": [...]
+}
   ]
 }
 ```
@@ -211,20 +211,21 @@ Pour un travail d'équipe, stockez le state dans un backend distant :
 ```hcl
 terraform {
   backend "s3" {
-    bucket = "terraform-state"
-    key    = "prod/terraform.tfstate"
-    region = "eu-west-1"
+bucket = "terraform-state"
+key    = "prod/terraform.tfstate"
+region = "eu-west-1"
   }
 }
 ```
 
 :::warning
-    Le fichier `terraform.tfstate` contient des informations sensibles. Ne le commitez jamais dans Git et utilisez un backend sécurisé pour le stockage.
+Le fichier `terraform.tfstate` contient des informations sensibles. Ne le commitez jamais dans Git et utilisez un backend sécurisé pour le stockage.
 :::
 
 :::info
-    OpenTofu propose le chiffrement du state par défaut ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
+OpenTofu propose le chiffrement du state par défaut ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
+
 ## Cycle de vie Terraform
 
 ### 1. Initialisation (terraform init)
@@ -236,6 +237,7 @@ terraform init
 ```
 
 Cette commande :
+
 - Télécharge le provider depuis le Terraform Registry
 - Initialise le backend (si configuré)
 - Crée le répertoire `.terraform/`
@@ -249,6 +251,7 @@ terraform plan
 ```
 
 Le plan indique :
+
 - **Ressources à créer** (`+`)
 - **Ressources à modifier** (`~`)
 - **Ressources à détruire** (`-`)
@@ -263,6 +266,7 @@ terraform apply
 ```
 
 Terraform :
+
 1. Génère un plan
 2. Demande confirmation (sauf avec `--auto-approve`)
 3. Applique les changements
@@ -276,9 +280,10 @@ Détruit toutes les ressources gérées :
 terraform destroy
 ```
 
-:::danger Attention
+:::danger[Attention]
   Cette commande supprime définitivement toutes les ressources. Utilisez-la avec précaution.
 :::
+
 ### 5. Autres commandes utiles
 
 ```bash

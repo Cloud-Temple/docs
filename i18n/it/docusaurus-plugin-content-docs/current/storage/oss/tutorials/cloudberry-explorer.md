@@ -1,9 +1,9 @@
 ---
 title: Utilizzare Cloud Berry Explorer
 ---
-import S3Cloudberry_001 from '../images/S3_cloudberry_001.png'
-import S3Cloudberry_002 from '../images/S3_cloudberry_002.png'
-import S3Cloudberry_003 from '../images/S3_cloudberry_003.png'
+import S3Cloudberry_001 from '@site/docs/storage/oss/images/S3_cloudberry_001.png'
+import S3Cloudberry_002 from '@site/docs/storage/oss/images/S3_cloudberry_002.png'
+import S3Cloudberry_003 from '@site/docs/storage/oss/images/S3_cloudberry_003.png'
 
 È possibile utilizzare il client grafico [Cloud Berry Explorer](https://www.msp360.com/explorer/) per gestire i propri dati.
 

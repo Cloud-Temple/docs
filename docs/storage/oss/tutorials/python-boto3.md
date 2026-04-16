@@ -30,7 +30,7 @@ region = 'fr1'
 bucket_name = 'mon-bucket-test'
 ```
 
-:::info Région
+:::info[Région]
 La région à utiliser pour le stockage objet Cloud Temple est **`fr1`**. Assurez-vous de bien configurer cette valeur dans le paramètre `region_name`.
 :::
 
@@ -41,7 +41,7 @@ Le stockage objet Cloud Temple, basé sur **Dell ECS**, supporte deux versions d
 - **SigV4** (`signature_version='s3v4'`) : recommandé pour les opérations de **métadonnées** (LIST, HEAD)
 - **SigV2** (`signature_version='s3'`) : recommandé pour les opérations de **données** (PUT, GET, DELETE)
 
-:::caution Approche hybride recommandée
+:::caution[Approche hybride recommandée]
 Pour une compatibilité optimale, il est recommandé d'utiliser **deux clients Boto3** avec des configurations de signature différentes selon le type d'opération. Cela évite les erreurs `XAmzContentSHA256Mismatch` qui peuvent survenir avec SigV4 lors des opérations d'écriture.
 :::
 
@@ -51,55 +51,56 @@ from botocore.config import Config
 
 # Client SigV2 pour opérations sur données (PUT/GET/DELETE)
 config_v2 = Config(
-    region_name='fr1',
-    signature_version='s3',       # SigV2 (legacy)
-    s3={'addressing_style': 'path'},
-    retries={'max_attempts': 3, 'mode': 'adaptive'}
+region_name='fr1',
+signature_version='s3',       # SigV2 (legacy)
+s3={'addressing_style': 'path'},
+retries={'max_attempts': 3, 'mode': 'adaptive'}
 )
 
 client_data = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=config_v2
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=config_v2
 )
 
 # Client SigV4 pour opérations métadonnées (HEAD/LIST)
 config_v4 = Config(
-    region_name='fr1',
-    signature_version='s3v4',
-    s3={'addressing_style': 'path', 'payload_signing_enabled': False},
-    retries={'max_attempts': 3, 'mode': 'adaptive'}
+region_name='fr1',
+signature_version='s3v4',
+s3={'addressing_style': 'path', 'payload_signing_enabled': False},
+retries={'max_attempts': 3, 'mode': 'adaptive'}
 )
 
 client_metadata = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=config_v4
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=config_v4
 )
 ```
 
-:::tip Configuration simplifiée
+:::tip[Configuration simplifiée]
 Si vous souhaitez utiliser un seul client, privilégiez **SigV2** (`signature_version='s3'`) avec le path-style addressing, qui fonctionne pour la majorité des opérations :
 
 ```python
 config = Config(
-    region_name='fr1',
-    signature_version='s3',
-    s3={'addressing_style': 'path'}
+region_name='fr1',
+signature_version='s3',
+s3={'addressing_style': 'path'}
 )
 
 s3 = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=config
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=config
 )
 ```
+
 :::
 
 ## 1. Lister les fichiers d'un bucket S3
@@ -114,23 +115,23 @@ from botocore.config import Config
 
 # Initialisation du client S3 (SigV4 recommandé pour LIST)
 s3_client = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=Config(
-        region_name='fr1',
-        signature_version='s3v4',
-        s3={'addressing_style': 'path'}
-    )
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=Config(
+region_name='fr1',
+signature_version='s3v4',
+s3={'addressing_style': 'path'}
+)
 )
 
 paginator = s3_client.get_paginator('list_objects_v2')
 operation_parameters = {'Bucket': bucket_name}
 
 for page in paginator.paginate(**operation_parameters):
-    for obj in page.get('Contents', []):
-        print(f"{obj['Key']} - {obj['Size']} octets")
+for obj in page.get('Contents', []):
+print(f"{obj['Key']} - {obj['Size']} octets")
 ```
 
 ## 2. Téléverser un objet (Upload)
@@ -146,24 +147,24 @@ from botocore.config import Config
 
 # Configuration S3 (SigV2 recommandé pour PUT)
 s3 = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=Config(
-        region_name='fr1',
-        signature_version='s3',
-        s3={'addressing_style': 'path'}
-    )
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=Config(
+region_name='fr1',
+signature_version='s3',
+s3={'addressing_style': 'path'}
+)
 )
 
 json_file = {
-    "id": 12345,
-    "nom": "Dupont",
-    "prenom": "Claire",
-    "email": "claire.dupont@example.com",
-    "actif": True,
-    "date_creation": "2024-10-15T08:30:00Z"
+"id": 12345,
+"nom": "Dupont",
+"prenom": "Claire",
+"email": "claire.dupont@example.com",
+"actif": True,
+"date_creation": "2024-10-15T08:30:00Z"
 }
 
 key = "users/dupont_claire.json"
@@ -173,10 +174,10 @@ json_str = json.dumps(json_file, indent=2)
 body_bytes = json_str.encode("utf-8")
 
 result = s3.put_object(
-    Bucket=bucket_name,
-    Key=key,
-    Body=body_bytes,
-    ContentType="application/json"
+Bucket=bucket_name,
+Key=key,
+Body=body_bytes,
+ContentType="application/json"
 )
 print(f"Upload réussi : {result['ResponseMetadata']['HTTPStatusCode']}")
 ```
@@ -187,11 +188,11 @@ Vous pouvez spécifier les permissions d'accès (ACL) directement lors de l'appe
 
 ```python
 result = s3.put_object(
-    Bucket=bucket_name,
-    Key=key,
-    Body=body_bytes,
-    ContentType="application/json",
-    ACL="public-read"  # Rendre l'objet lisible publiquement
+Bucket=bucket_name,
+Key=key,
+Body=body_bytes,
+ContentType="application/json",
+ACL="public-read"  # Rendre l'objet lisible publiquement
 )
 ```
 
@@ -207,15 +208,15 @@ from botocore.config import Config
 
 # Initialisation du client S3 (SigV2 recommandé pour GET)
 s3 = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=Config(
-        region_name='fr1',
-        signature_version='s3',
-        s3={'addressing_style': 'path'}
-    )
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=Config(
+region_name='fr1',
+signature_version='s3',
+s3={'addressing_style': 'path'}
+)
 )
 
 response = s3.get_object(Bucket=bucket_name, Key='users/dupont_claire.json')
@@ -235,15 +236,15 @@ from botocore.config import Config
 
 # Initialiser le client S3 (SigV2 recommandé pour DELETE)
 s3 = boto3.client(
-    's3',
-    aws_access_key_id=access_key,
-    aws_secret_access_key=secret_key,
-    endpoint_url=endpoint_url,
-    config=Config(
-        region_name='fr1',
-        signature_version='s3',
-        s3={'addressing_style': 'path'}
-    )
+'s3',
+aws_access_key_id=access_key,
+aws_secret_access_key=secret_key,
+endpoint_url=endpoint_url,
+config=Config(
+region_name='fr1',
+signature_version='s3',
+s3={'addressing_style': 'path'}
+)
 )
 
 key = "users/dupont_claire.json"
@@ -255,7 +256,7 @@ print(f"Suppression : {result['ResponseMetadata']['HTTPStatusCode']}")
 
 Si un objet existe déjà, vous pouvez modifier ses permissions pour le rendre publiquement lisible en utilisant la méthode `put_object_acl`.
 
-:::danger Attention
+:::danger[Attention]
 Rendre un objet public signifie que n'importe qui disposant de l'URL peut y accéder. Utilisez cette option avec prudence et conformément à votre politique de sécurité.
 :::
 

@@ -5,6 +5,25 @@ sidebar_position: 2
 
 # Change Log
 
+### April 15, 2026: New VM instances documentation (Cloud Public)
+
+- **VM instances**: Initial documentation release for the VM instances service (in preview), Cloud Temple's new shared virtual machine offering. The documentation covers the service overview, technical concepts (Development/General Purpose/Performance service classes, predefined and custom flavors, storage, VPC networking, backup), and a complete getting started guide. The service is organised under a new **Cloud Public** category in the navigation.
+
+### April 15, 2026: IaaS VMware Documentation Improvement — Cluster Metrics
+
+- **IaaS VMware**: Added detailed documentation on the metrics displayed in the VMware cluster view from the Cloud Temple Console. Covers the three cluster memory graphs: **Provisioned Memory** (total memory allocated to VMs), **Used Memory** (physical memory actively consumed by VMs) and **Worst-Case Allocation** (projection of maximum simultaneous consumption), with a precise description of what each indicator represents to help anticipate resource needs.
+
+### April 15, 2026: Managed MariaDB, Managed PostgreSQL Documentation and Multilingual Fixes
+
+- **Managed MariaDB**: Initial release of the Managed MariaDB service documentation (preview): service overview, technical concepts (StandAlone and Distributed architectures), quick start guide.
+- **Managed PostgreSQL**: Initial release of the Managed PostgreSQL service documentation (preview): service overview, technical concepts, quick start guide.
+- **Multilingual Fixes (images)**: Fixed image references in translations for the Managed Kubernetes and Managed MariaDB sections across all languages (EN, DE, ES, IT) — converting relative `./images/` paths to absolute `@site/docs/...` paths ensuring correct rendering in all languages.
+- **Broken Link Fixes**: Resolved several broken links: LLMaaS licence references, console link in the rclone tutorial (OSS), IAM link in the network documentation (EN), relative links in the Terraform section (EN).
+
+### April 15, 2026: New Cost Manager Module
+
+- **Console (Cost Manager)**: Added complete documentation for the new consumption tracking module accessible from the Cloud Temple Console. Covers the dashboard, global consumption (with end-of-month projection), breakdown by product and service, line-by-line billing details, and the price catalog.
+
 ### March 26, 2026: Sub-processors List Update (DPA)
 
 - **Contractual**: Update of the Data Processing Agreement (DPA) - revised the list of sub-processors (removal of Microsoft Azure and Amazon Web Services, modification of activity for Iron Mountain) and addition of the authorization date. Propagation of changes in English, German, Spanish, and Italian.
@@ -99,14 +118,14 @@ sidebar_position: 2
 ### July 2025: New Features and Major Updates
 
 - **Object Storage (OSS)**:
-    - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
-    - Added clarifications on storage account concepts and object locking (Object Lock).
+  - Complete overhaul of the tutorials section with dedicated guides for popular tools: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, and the Python Boto3 SDK.
+  - Added clarifications on storage account concepts and object locking (Object Lock).
 - **OpenSource IaaS**:
-    - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
+  - Added detailed documentation on High Availability (HA) management for resource pools and virtual machines.
 - **Console**:
-    - Updated the security alerts page with the latest vulnerabilities.
+  - Updated the security alerts page with the latest vulnerabilities.
 - **Networking**:
-    - Added new screenshots to illustrate IPv6 connectivity configuration.
+  - Added new screenshots to illustrate IPv6 connectivity configuration.
 
 ### June 29, 2025: Finalization of LLMaaS Documentation
 

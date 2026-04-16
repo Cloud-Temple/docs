@@ -1,8 +1,8 @@
 ---
 title: Schnellstartanleitung
 ---
-import marketplaceCatalog from './images/marketplace_catalog.png'
-import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
+import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
+import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
 # QuickStart für die Cloud Temple Marketplace
 
@@ -61,6 +61,7 @@ For solutions compatible with your OpenIaaS or VMware environments, you can depl
 **Important note:** Direct deployment is only available for images that list your environment among their compatible targets.
 
 **Detailed guides:**
+
 - [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
 - [How to deploy an image on VMware?](tutorials/deploy_vmware)
 
@@ -69,4 +70,5 @@ For solutions compatible with your OpenIaaS or VMware environments, you can depl
 Für Lösungen, die eine Vermittlung erfordern, können Sie den jeweiligen Partner-Editor direkt kontaktieren.
 
 **Detaillierter Leitfaden:**
+
 - [Wie kontaktiert man einen Partner?](tutorials/contact_partner)

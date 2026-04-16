@@ -22,7 +22,7 @@ title: Vue d'ensemble Managed Kubernetes
   </div>
 </div>
 
-Managed Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs basée sur des produits OpenSources et conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple OpenIaaS entièrement dédié au client. 
+Managed Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs basée sur des produits OpenSources et conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
 Cette offre est conçue pour les équipes ayant une bonne connaissance de Kubernetes et les adeptes de l'open source qui recherchent une solution native, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
@@ -55,11 +55,11 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
 
 - **Cas d'usage** : Développement, tests, proof-of-concept (POC).
 - **Points clés** :
-    - 1 nœud Control Plane.
-    - 3 nœuds Workers (ou plus).
-    - Le stockage distribué (Ceph) est co-localisé sur les nœuds workers.
-    - Ne bénéficie pas de SLA de haute disponibilité.
-    - aucune restriction de sécurité
+  - 1 nœud Control Plane.
+  - 3 nœuds Workers (ou plus).
+  - Le stockage distribué (Ceph) est co-localisé sur les nœuds workers.
+  - Ne bénéficie pas de SLA de haute disponibilité.
+  - aucune restriction de sécurité
 
 <img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
 
@@ -69,11 +69,11 @@ Conçue pour la production et les applications critiques, cette architecture dis
 
 - **Cas d'usage** : Applications de production, services critiques, plateformes nécessitant un SLA.
 - **Points clés** :
-    - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
-    - **Stockage Dédié** : 3 nœuds de stockage dédiés et répartis pour la performance et la résilience.
-    - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
-    - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-    - **SLA de 99.90%**.
+  - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
+  - **Stockage Dédié** : 3 nœuds de stockage dédiés et répartis pour la performance et la résilience.
+  - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
+  - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
+  - **SLA de 99.90%**.
 
 <img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
 

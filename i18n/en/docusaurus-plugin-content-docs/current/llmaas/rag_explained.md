@@ -2,7 +2,7 @@
 
 This document explains the fundamental concepts behind the **Retrieval-Augmented Generation (RAG)** technique.
 
-:::tip Example Code Available
+:::tip[Example Code Available]
 The concepts discussed here are illustrated in a complete and functional demonstrator available on our GitHub. It serves as an excellent starting point to understand the practical implementation of a RAG pipeline.
 
 ➡️ **[Access the Simple RAG Demo code](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -15,28 +15,29 @@ A large language model (LLM) like Mistral or Granite is very powerful, but it on
 **RAG** is a technique that allows the LLM to have an "external memory" by providing, at the time of the question, the most relevant document excerpts to help it formulate its response.
 
 The process occurs in two steps:
+
 1. **Retrieval (Recovery):** Find the right documents.
 2. **Augmented Generation (Augmented Generation):** Use these documents to generate a response.
 
 It is this **Retrieval** step that is at the heart of our subject. How does a computer manage to "understand" that a question and a paragraph are talking about the same thing? The magic happens through **vectors**.
 
-![RAG Conceptual Diagram](./images/rag_concept_overview.png)
+![RAG Conceptual Diagram](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ## Step 1: Embedding: Transforming Words into Numbers
 
 A computer does not understand words, but it is excellent at manipulating numbers. The **embedding** is the process that translates a text (a word, a sentence, a document) into a list of numbers, called a **vector**.
 
-:::tip What is a vector?
+:::tip[What is a vector?]
 In simple terms, a vector is a list of numbers that represents a point in a multi-dimensional space. Each number in the vector corresponds to a coordinate on an "axis" of this space. For text embeddings, these axes are not `x`, `y`, `z` but abstract semantic dimensions (for example, one axis could represent the concept of "royalty", another the concept of "cat", etc.).
 :::
 
 `"The cat is on the mat."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Example of an embedding vector](./images/embedding_vector_example.png)
+![Example of an embedding vector](@site/docs/llmaas/images/embedding_vector_example.png)
 
 This vector is not random. It represents the "position" of the text in a multi-dimensional semantic space. Texts with similar meanings will have vectors that point in similar directions.
 
-:::tip Geographical Analogy
+:::tip[Geographical Analogy]
 Imagine a geographical map. "Paris" and "France" would be very close, just like "Rome" and "Italy". "Paris" would be farther from "Rome" than from "France", but closer than from "Tokyo". Embedding does the same thing, but with thousands of "dimensions" instead of two, to capture complex semantic nuances.
 :::
 
@@ -52,19 +53,19 @@ While the past two years have seen the proliferation of increasingly competitive
 
 The new **Granite Embedding** models from IBM, which we are making available to you, represent an improved evolution of the Slate family of RoBERTa-based only language encoder models. They stand out on several key points crucial for enterprise use:
 
-1.  **Ethical and Commercially Safe Training**: While the majority of open-source embedding models in the Hugging Face MTEB ranking rely on research-only licensed training datasets (such as MS-MARCO), IBM has verified the commercial eligibility of all data sources used to train Granite Embedding.
-2.  **Intellectual Property Indemnification**: Highlighting the care taken for its enterprise use, IBM supports Granite Embedding with the same unlimited indemnification for third-party intellectual property claims as that provided for the use of other models developed by IBM.
-3.  **Performance and Efficiency**: IBM's efforts in organizing and filtering training data have not prevented the Granite Embedding models from keeping pace with the leading open-source embedding models of similar size.
+1. **Ethical and Commercially Safe Training**: While the majority of open-source embedding models in the Hugging Face MTEB ranking rely on research-only licensed training datasets (such as MS-MARCO), IBM has verified the commercial eligibility of all data sources used to train Granite Embedding.
+2. **Intellectual Property Indemnification**: Highlighting the care taken for its enterprise use, IBM supports Granite Embedding with the same unlimited indemnification for third-party intellectual property claims as that provided for the use of other models developed by IBM.
+3. **Performance and Efficiency**: IBM's efforts in organizing and filtering training data have not prevented the Granite Embedding models from keeping pace with the leading open-source embedding models of similar size.
 
 The benchmarks below illustrate two key advantages:
 
--   **Search Accuracy**: The first graph shows that Granite models (in blue) are highly competitive, and even superior, to models of similar size on semantic search tasks (`Retrieval Tasks`).
--   **Inference Speed**: The second graph shows that Granite models are **significantly faster** (lower time per request) than most popular alternatives, which is a considerable advantage for real-time applications.
+- **Search Accuracy**: The first graph shows that Granite models (in blue) are highly competitive, and even superior, to models of similar size on semantic search tasks (`Retrieval Tasks`).
+- **Inference Speed**: The second graph shows that Granite models are **significantly faster** (lower time per request) than most popular alternatives, which is a considerable advantage for real-time applications.
 
-![Granite Models Performance Benchmark](./images/granite_benchmark_performance.png)
+![Granite Models Performance Benchmark](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Comparison of performance on retrieval (BEIR) and code retrieval (CoIR) tasks.*
 
-![Granite Models Speed Benchmark](./images/granite_benchmark_speed.png)
+![Granite Models Speed Benchmark](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Comparison of latency (time per request in seconds) between different embedding models.*
 
 It is this balance between **performance, speed, legal security, and ethics** that led us to choose the `granite-embedding:278m` model (the most powerful multilingual version) as the default embedding service.
@@ -77,30 +78,32 @@ There are several ways to measure this "closeness". Our script uses two of them:
 
 ### Cosine Similarity (The Standard)
 
--   **Concept** : It does not measure distance, but the **angle** between two vectors. A small angle (close to 0°) means the vectors point in the same direction, and therefore the texts have a very similar meaning.
--   **Score** : The cosine of a 0° angle is 1 (perfect similarity). The cosine of a 90° angle is 0 (no similarity).
--   **Why is it so widely used?** For text, the *semantic direction* is much more important than the *magnitude* (length) of the vector. Cosine similarity ignores magnitude and focuses only on direction.
+- **Concept** : It does not measure distance, but the **angle** between two vectors. A small angle (close to 0°) means the vectors point in the same direction, and therefore the texts have a very similar meaning.
+- **Score** : The cosine of a 0° angle is 1 (perfect similarity). The cosine of a 90° angle is 0 (no similarity).
+- **Why is it so widely used?** For text, the *semantic direction* is much more important than the *magnitude* (length) of the vector. Cosine similarity ignores magnitude and focuses only on direction.
 
 **Simple example in 2D:**
--   Question : `v_q = [2, 2]`
--   Doc A : `v_a = [4, 4]` (same direction, longer)
--   Doc B : `v_b = [-2, 2]` (different direction)
+
+- Question : `v_q = [2, 2]`
+- Doc A : `v_a = [4, 4]` (same direction, longer)
+- Doc B : `v_b = [-2, 2]` (different direction)
 
 The cosine similarity calculation will give:
--   `cos(v_q, v_a) = 1.0` → 0° angle. Perfect similarity.
--   `cos(v_q, v_b) = 0.0` → 90° angle. No similarity.
 
-![Cosine Similarity Illustration](./images/cosine_similarity_concept.png)
+- `cos(v_q, v_a) = 1.0` → 0° angle. Perfect similarity.
+- `cos(v_q, v_b) = 0.0` → 90° angle. No similarity.
+
+![Cosine Similarity Illustration](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 This is the result we want: Document A is semantically identical to the question, even though its formulation is longer.
 
 ### The Euclidean Distance (The Rule)
 
--   **Concept** : It is the "straight-line" distance between the endpoints of the two vectors.
--   **Score** : A score of 0 means that the vectors are identical. The higher the score, the farther they are.
--   **Inconvenience for text** : It is sensitive to magnitude. In our example above, the distance between `v_q` and `v_a` would not be zero, as the vectors do not have the same length, even if they have the same direction.
+- **Concept** : It is the "straight-line" distance between the endpoints of the two vectors.
+- **Score** : A score of 0 means that the vectors are identical. The higher the score, the farther they are.
+- **Inconvenience for text** : It is sensitive to magnitude. In our example above, the distance between `v_q` and `v_a` would not be zero, as the vectors do not have the same length, even if they have the same direction.
 
-![Illustration de la Distance Euclidienne](./images/euclidean_distance_concept.png)
+![Illustration de la Distance Euclidienne](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ## Conclusion
 

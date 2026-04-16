@@ -6,16 +6,16 @@ tags:
   - iaas_opensource_backup
 ---
 
-import backupCloneOpenIaas_001 from './images/backup_clone_iaas_opensource_001.png'
-import backupCloneOpenIaas_002 from './images/backup_clone_iaas_opensource_002.png'
-import backupPolicyOpenIaas_001 from './images/backup_policy_iaas_opensource_001.png'
-import backupPolicyOpenIaas_002 from './images/backup_policy_iaas_opensource_002.png'
-import backupPolicyOpenIaas_003 from './images/backup_policy_iaas_opensource_003.png'
-import backupPolicyOpenIaas_004 from './images/backup_policy_iaas_opensource_004.png'
-import backupPolicyOpenIaas_005 from './images/backup_policy_iaas_opensource_005.png'
-import backupPolicyOpenIaas_006 from './images/backup_policy_iaas_opensource_006.png'
-import backupRestorationOpenIaas_001 from './images/backup_restoration_iaas_opensource_001.png'
-import backupRestorationOpenIaas_002 from './images/backup_restoration_iaas_opensource_002.png'
+import backupCloneOpenIaas_001 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_clone_iaas_opensource_001.png'
+import backupCloneOpenIaas_002 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_clone_iaas_opensource_002.png'
+import backupPolicyOpenIaas_001 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_policy_iaas_opensource_001.png'
+import backupPolicyOpenIaas_002 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_policy_iaas_opensource_002.png'
+import backupPolicyOpenIaas_003 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_policy_iaas_opensource_003.png'
+import backupPolicyOpenIaas_004 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_policy_iaas_opensource_004.png'
+import backupPolicyOpenIaas_005 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_policy_iaas_opensource_005.png'
+import backupPolicyOpenIaas_006 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_policy_iaas_opensource_006.png'
+import backupRestorationOpenIaas_001 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_restoration_iaas_opensource_001.png'
+import backupRestorationOpenIaas_002 from '@site/docs/iaas_opensource/tutorials/backup/images/backup_restoration_iaas_opensource_002.png'
 
 ---
 

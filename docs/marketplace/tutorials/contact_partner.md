@@ -10,6 +10,7 @@ Ce tutoriel vous guide pour entrer en contact avec un partenaire éditeur via la
 ## Contexte d'utilisation
 
 Utilisez cette fonctionnalité lorsque :
+
 - La solution nécessite une mise en relation avec le partenaire
 - Vous souhaitez obtenir des informations complémentaires
 - La solution n'est pas directement déployable (pas de VM Image)
@@ -34,7 +35,6 @@ Le partenaire recevra automatiquement un email avec vos informations :
 
 **Exemple d'email envoyé au partenaire :**
 <img src={marketplaceContactEmail} />
-
 
 ## Bonnes pratiques
 

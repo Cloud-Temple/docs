@@ -1,24 +1,24 @@
 ---
 title: Getting Started Guide
 ---
-import shivaNetwork_001 from './images/shiva_network_001.png';
-import shivaNetwork_002 from './images/shiva_network_002.png';
-import shivaNetwork_003 from './images/shiva_network_003.png';
-import shivaNetwork_004 from './images/shiva_network_004.png';
-import shivaNetwork_005 from './images/shiva_network_005.png';
-import shivaNetwork_006 from './images/shiva_network_006.png';
-import shivaNetwork_007 from './images/shiva_network_007.png';
-import shivaNetwork_008 from './images/shiva_network_008.png';
-import shivaNetwork_009 from './images/shiva_network_009.png';
-import shivaNetwork_010 from './images/shiva_network_010.png';
-import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png';
-import shivaNetworkVnShared from './images/shiva_network_vn_shared.png';
-import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png';
-import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png';
-import shivaOrderNetwork_001 from './images/shiva_order_network_001.png';
-import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png';
-import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png';
-import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png';
+import shivaNetwork_001 from '@site/docs/network/private_network/images/shiva_network_001.png';
+import shivaNetwork_002 from '@site/docs/network/private_network/images/shiva_network_002.png';
+import shivaNetwork_003 from '@site/docs/network/private_network/images/shiva_network_003.png';
+import shivaNetwork_004 from '@site/docs/network/private_network/images/shiva_network_004.png';
+import shivaNetwork_005 from '@site/docs/network/private_network/images/shiva_network_005.png';
+import shivaNetwork_006 from '@site/docs/network/private_network/images/shiva_network_006.png';
+import shivaNetwork_007 from '@site/docs/network/private_network/images/shiva_network_007.png';
+import shivaNetwork_008 from '@site/docs/network/private_network/images/shiva_network_008.png';
+import shivaNetwork_009 from '@site/docs/network/private_network/images/shiva_network_009.png';
+import shivaNetwork_010 from '@site/docs/network/private_network/images/shiva_network_010.png';
+import shivaNetworkVnShareEnabled from '@site/docs/network/private_network/images/shiva_network_vn_share_enabled.png';
+import shivaNetworkVnShared from '@site/docs/network/private_network/images/shiva_network_vn_shared.png';
+import shivaNetworkVnSharedTenant from '@site/docs/network/private_network/images/shiva_network_vn_shared_tenant.png';
+import shivaNetworkVnSharedWithMe from '@site/docs/network/private_network/images/shiva_network_vn_shared_with_me.png';
+import shivaOrderNetwork_001 from '@site/docs/network/private_network/images/shiva_order_network_001.png';
+import shivaNetworkDeletePropagation from '@site/docs/network/private_network/images/shiva_network_delete_propagation.png';
+import shivaNetworkDeletePropagationOrder from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order.png';
+import shivaNetworkDeletePropagationOrderValidate from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order_validate.png';
 
 ### Private Regional Networks
 
@@ -55,7 +55,7 @@ Once all steps are completed, your networks are created, and a command is genera
 
 - By clicking on informational labels that redirect to related commands
 
-> **Important:** It is not possible to generate multiple commands of the same resource type simultaneously. You must wait for the current command to be processed before creating a new one.
+> __Important:__ It is not possible to generate multiple commands of the same resource type simultaneously. You must wait for the current command to be processed before creating a new one.
 
 All possible actions on your networks are available in the __*Actions*__ menu of each one:
 
@@ -106,8 +106,8 @@ A command is subsequently generated, similar to the initial creation with propag
 
 It is feasible to separate the creation and propagation of networks into two distinct stages:
 
-1. **Propagate an existing network**: Click on the action __*Propagate*__ for a network that has already been created.
-2. **Select the target for propagation**: A command is then generated, similar to how it was done initially with propagation.
+1. __Propagate an existing network__: Click on the action __*Propagate*__ for a network that has already been created.
+2. __Select the target for propagation__: A command is then generated, similar to how it was done initially with propagation.
 
 #### Activation and Deactivation of Networks
 
@@ -117,7 +117,7 @@ A network can be temporarily deactivated without being deleted, and then reactiv
 
 ### Network Sharing Between Tenants
 
-By default, **networks are only available within a single tenant**. You can choose to **share a network across multiple tenants** for technical or connectivity reasons. This allows you to share a network between your **[Tenant](../console/iam/concepts.md#tenant)** within the same organization.
+By default, __networks are only available within a single tenant__. You can choose to __share a network across multiple tenants__ for technical or connectivity reasons. This allows you to share a network between your __[Tenant](../../console/iam/concepts.md#tenant)__ within the same organization.
 
 To achieve this, simply enable sharing as shown below:
 

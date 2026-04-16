@@ -30,7 +30,7 @@ This policy outlines the responsibilities and recommendations for Operational Re
 - Schedule application deployments outside maintenance windows to avoid conflicts with automatic cluster updates.
 - Monitor **Cloud Temple** communications regarding major updates to plan necessary adjustments.
 - Follow upcoming updates via the [**Product Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
-- Subscribe to [**incident notifications**](../../console/status.md#management-of-notifications)
+- Subscribe to [**incident notifications**](../../console/status.md#notification-management)
 
 ### Monitoring and Supervision
 
@@ -133,7 +133,7 @@ Vulnerabilities on the infrastructure and underlying services supporting the off
 **Recommendation:**
 
 - Use the cluster alerting provided by **[Quay]** to analyze vulnerabilities and detect anomalous behaviors in the images used by the **Customer**.
-- Subscribe to notifications from [**incidents**](../../console/status.md#management-of-notifications).
+- Subscribe to notifications from [**incidents**](../../console/status.md#notification-management).
 
 ### Encryption
 
@@ -190,7 +190,7 @@ Automatic recording of critical cluster events.
 **"Disaster Recovery" Procedure**
 
 - In case of complete loss of access to a cluster, the **Customer** must report an incident to **Cloud Temple** support via the support module in the console.  
-See the [**technical support request procedure**](../../console/console_quickstart.md#accessing-technical-support)
+See the [**technical support request procedure**](../../console/console_quickstart.md#technical-support-access)
 
 ## General Recommendations
 
@@ -198,6 +198,6 @@ See the [**technical support request procedure**](../../console/console_quicksta
 2. **Validate configurations**: Test applications in staging environments before deploying to production.
 3. **Monitor regularly**: Use built-in tools to track resource usage and detect issues as early as possible.
 4. **Stay informed**: Follow the roadmap and guides to avoid deprecated features.
-5. **Contact support**: For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#access-to-technical-support) or by email at [**contact**](mailto:contact@cloud-temple.com).
+5. **Contact support**: For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#technical-support-access) or by email at [**contact**](mailto:contact@cloud-temple.com).
 
 For detailed responsibilities, please review our [**responsibility matrix**](../../contractual/paas/raci.md).

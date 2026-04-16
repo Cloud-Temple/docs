@@ -39,6 +39,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
+      id: 'console/billing/concepts',
+    },
+    {
+      type: 'doc',
       id: 'console/api',
     },
     {
@@ -191,6 +195,21 @@ const sidebars: SidebarsConfig = {
             'iaas_vmware/tutorials/deploy_vm_template',
             'iaas_vmware/tutorials/deploy_vm_terraform',
             'iaas_vmware/tutorials/vm_encryption',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Cloud Public',
+      items: [
+        {
+          type: 'category',
+          label: 'VM Instances (Preview)',
+          items: [
+            'public_cloud/vm_instances/vm_instances',
+            'public_cloud/vm_instances/concepts',
+            'public_cloud/vm_instances/quickstart',
           ],
         },
       ],
@@ -350,41 +369,40 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Produits Managés',
+      link: {
+        type: 'doc',
+        id: 'managedproducts_overview',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'MariaDB Managé (Preview)',
+          items: [
+            'managed_mariadb/managed_mariadb',
+            'managed_mariadb/concepts',
+            'managed_mariadb/quickstart',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'PostgreSQL Managé (Preview)',
+          items: [
+            'managed_postgresql/managed_postgresql',
+            'managed_postgresql/concepts',
+            'managed_postgresql/quickstart',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Provider Terraform',
       items: [
         'terraform/terraform',
         'terraform/concepts',
         'terraform/quickstart',
         'terraform/tutorials',
-      ],
-    },
-    {
-      type: 'html', // Séparateur et titre
-      value: `
-        <hr class="sidebar-separator" />
-        <h3 class="sidebar-title">Contractuel</h3>
-      `,
-    },
-    {
-      type: 'doc',
-      id: 'contractual/orderdoc',
-    },
-    {
-      type: 'category',
-      label: 'Contractual documents',
-      items: [
-        'contractual/cgvu',
-        'contractual/iaas/sla_iaas',
-        'contractual/iaas/sla_openiaas',
-        'contractual/paas/sla_paas',
-        'contractual/baremetal',
-        'contractual/dpa',
-        'contractual/iaas/raci',
-        'contractual/iaas/raci_s3',
-        'contractual/paas/raci',
-        'contractual/paas/raci_ocp_std',
-        'contractual/llmaas/raci',
-        'contractual/kubernetes/raci'
       ],
     },
   ],

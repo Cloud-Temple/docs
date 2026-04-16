@@ -1,15 +1,15 @@
 ---
 title: Guía de inicio
 ---
-import shivaTenant from './images/shiva_tenant.png'
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from './images/shiva_ip_access_management_01.png'
-import shivaIpAccessManagement_02 from './images/shiva_ip_access_management_02.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Inquilino
 
@@ -34,13 +34,13 @@ La selección del tenant se realiza desde la página principal de la Consola:
 
 Access accounts to the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
-Credentials are global to your [Organization](concepts.md#organizations).
+Credentials are global to your [Organization](concepts.md#organizaciones).
 
 *__Nota:__ Identity federation is managed at the organization level*
 
 ### Creación de una cuenta de usuario en su organización
 
-La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](concepts.md#organisations), vaya al menú __'Administración'__ en el lado izquierdo de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
+La creación de una cuenta de usuario en su organización se realiza mediante invitación. Para invitar a un usuario a una [Organización](concepts.md#organizaciones), vaya al menú __'Administración'__ en el lado izquierdo de su pantalla, en la barra verde, y luego al submenú __'Usuarios'__.
 
 Haga clic en el botón __'Nuevo Usuario'__ desde la página de usuarios.
 
@@ -68,9 +68,9 @@ A continuación aparece el menú para activar los derechos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe realizarse para cada [Tenant](concepts.md#tenant) de la [Organización](concepts.md#organisations).
+La configuración de permisos debe realizarse para cada [Tenant](concepts.md#management-of-owners-on-a-tenant) de la [Organización](concepts.md#organizaciones).
 
-La lista de permisos y sus definiciones está disponible [aquí](#permissions).
+La lista de permisos y sus definiciones está disponible [aquí](#permisos).
 
 ### Cambiar el idioma de un usuario
 
@@ -78,7 +78,7 @@ El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte sup
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](concepts.md#tenant).
+La configuración se realiza por cada inquilino [Tenant](concepts.md#management-of-owners-on-a-tenant).
 
 ### Suscripciones a notificaciones temáticas
 
@@ -96,11 +96,11 @@ La lista de temáticas disponibles puede evolucionar y enriquecerse progresivame
 
 ### ¿Cuáles son las permisos disponibles para las cuentas de usuario de la Consola?
 
-Aquí tienes la lista de [permisos disponibles](#permissions).
+Aquí tienes la lista de [permisos disponibles](#permisos).
 
 ### ¿Cómo agregar un permiso?
 
-Aquí se encuentra la [procedimiento de asignación de permiso disponible aquí](#permissions)
+Aquí se encuentra la [procedimiento de asignación de permiso disponible aquí](#permisos)
 
 ### Why can't I add a permission?
 
@@ -119,6 +119,7 @@ Vaya a la página de usuarios y haga clic en el botón __'Exportar csv'__:
 In the __'Administration'__ menu on the green bar on the left side of the screen, go to the __'User'__ submenu, click the __'Action'__ icon of the target user, and select __'Delete'__.
 
 *__Note__:*  
+
 - *To add a user, you must have the __'iam_write'__ permission.*  
 - *If the user is federated, __make sure the user has also been deleted from the identity repository__.*
 

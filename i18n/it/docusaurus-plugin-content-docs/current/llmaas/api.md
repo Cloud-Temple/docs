@@ -25,9 +25,9 @@ Authorization: Bearer IL_TUO_TOKEN_API
 
 Il nostro sistema di terzi è progettato come **invii completi di servizio** che definiscono tre aspetti fondamentali del vostro utilizzo:
 
-1.  **Un Livello di Accesso (Credito d'Acquisto)**: Per i Terzi 1 al 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e il budget associati al livello scelto.
-2.  **Un Limite di Budget Mensile**: È il massimale della vostra consumazione mensile, garantendovi un controllo totale sui costi.
-3.  **Una Capacità Tecnica**: Si tratta dei limiti di throughput (token al giorno e all'ora) che garantiscono un'efficienza stabile e prevedibile per il volume delle chiamate.
+1. **Un Livello di Accesso (Credito d'Acquisto)**: Per i Terzi 1 al 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e il budget associati al livello scelto.
+2. **Un Limite di Budget Mensile**: È il massimale della vostra consumazione mensile, garantendovi un controllo totale sui costi.
+3. **Una Capacità Tecnica**: Si tratta dei limiti di throughput (token al giorno e all'ora) che garantiscono un'efficienza stabile e prevedibile per il volume delle chiamate.
 
 La scelta di un terzo rappresenta quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. La vostra consumazione all'interno di questo invio sarà poi fatturata secondo i tariffe in vigore.
 
@@ -42,11 +42,13 @@ La scelta di un terzo rappresenta quindi un equilibrio tra l'investimento inizia
 | **Monthly Billing** | N/A | Unlimited | High priority | High priority | Contact sales |
 
 **Note**: Rate limits are calculated based on output tokens. Token pricing varies by usage:
+
 - **Input tokens**: 1.90 € / million
 - **Output tokens (standard)**: 8.00 € / million
 - **Output tokens (reasoner)**: 8.00 € / million (applies to most advanced models for complex agent-like or reasoning tasks)
 
 #### **Billing Audio**
+
 - **Audio Transcription**: 0.01 € / minute (any started minute is billable)
 
 ### Limit Headers
@@ -213,12 +215,14 @@ Dopo aver ricevuto una risposta `tool_calls`, è necessario eseguire lo strument
 Con `"stream": true`, la risposta arriva token per token:
 
 **Intestazioni della risposta:**
+
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
 **Formato degli eventi:**
+
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
 
@@ -230,6 +234,7 @@ data: [DONE]
 ```
 
 **Struttura dei chunk:**
+
 - `choices[].delta.content` : Contenuto incrementale
 - `finish_reason` : `null` durante lo streaming, poi `"stop"`
 - Segnale di fine: `data: [DONE]`
@@ -240,11 +245,11 @@ Per analizzare immagini, puoi inviare una richiesta in cui il campo `content` di
 
 Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` che contiene l'URL dell'immagine nel formato `data URI` (base64).
 
-:::info Nota sulla Compatibilità
+:::info[Nota sulla Compatibilità]
 Sebbene il formato standard e raccomandato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche, per maggiore flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Tuttavia, si consiglia di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
 :::
 
-:::tip Riconoscimento Ottico dei Caratteri (OCR) e Analisi Documenti
+:::tip[Riconoscimento Ottico dei Caratteri (OCR) e Analisi Documenti]
 Per compiti specifici di analisi documenti (PDF, scansioni, tabelle), raccomandiamo l'uso del modello specializzato **DeepSeek-OCR**. Consulta la [documentazione dedicata](./ocr).
 :::
 
@@ -629,6 +634,7 @@ def stream_chat(message, model="granite3.3:8b"):
 ```
 
 # Utilizzo
+
 stream_chat("Spiega la fisica quantistica")
 
 ### JavaScript/Node.js
@@ -806,7 +812,7 @@ except Exception as e:
 
 #### Utilizzo degli Embeddings
 
-:::warning Incompatibilità con i client standard di LangChain
+:::warning[Incompatibilità con i client standard di LangChain]
 Al momento, l'utilizzo dell'endpoint di embedding tramite le classi standard di LangChain (`langchain_openai.OpenAIEmbeddings` o `langchain_community.OllamaEmbeddings`) presenta incompatibilità con la nostra API.
 
 - `OpenAIEmbeddings` invia token pre-calcolati invece di testo grezzo, che viene rifiuto.

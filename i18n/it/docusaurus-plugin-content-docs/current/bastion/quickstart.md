@@ -1,12 +1,12 @@
 ---
 title: Guida di avvio
 ---
-import shivaSupport from './images/shiva_support.png'
-import creerSession from './images/creer_session.png'
-import creerSession2 from './images/creer_session2.png'
-import creerSession3 from './images/creer_session3.png'
-import ouvrirSession from './images/ouvrir_session.png'
-import ouvrirSession2 from './images/ouvrir_session2.png'
+import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
+import creerSession from '@site/docs/bastion/images/creer_session.png'
+import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
+import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
+import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
+import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
 Questa guida di avvio ti mostra come richiedere la creazione di un'Appliance e come registrare una nuova sessione e connetterti a essa.
 

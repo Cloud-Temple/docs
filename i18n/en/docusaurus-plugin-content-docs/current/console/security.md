@@ -46,6 +46,7 @@ Identity federation allows you to integrate the Cloud Temple Console with your i
 For these reasons, **identity federation is recommended**, especially for large-scale environments or those with high security requirements.
 
 Follow our step-by-step guides to integrate your identity provider:
+
 - [Configure federation with Azure AD | Cloud Temple Documentation](../console/iam/tutorials/sso_aad)
 - [Configure federation with ADFS | Cloud Temple Documentation](../console/iam/tutorials/sso_adfs)
 
@@ -59,7 +60,7 @@ For accounts managed locally by the Console (without federation), MFA is enabled
 
 To learn more:  
 
-- [What is MFA and is it mandatory? | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [What is MFA and is it mandatory? | Cloud Temple Documentation](../console/iam/quickstart#permissions)
 - [Tutorial: Identity Federation with Microsoft EntraID | Cloud Temple Documentation](../console/iam/tutorials/sso_aad)
 - [Tutorial: Identity Federation with Microsoft ADFS | Cloud Temple Documentation](../console/iam/tutorials/sso_adfs)
 
@@ -113,6 +114,7 @@ Controlled permission assignment limits risks of error or malicious action and s
 Cloud Temple regularly provides builds for hypervisors to ensure the application of security patches. However, updating hypervisors remains your responsibility, as we do not have visibility into your business constraints.  
 
 Therefore, we recommend that you:
+
 - Regularly check in the Console for the availability of new builds for your hypervisors;  
 - **Regularly deploy new builds across all your hypervisors**, especially if they address security vulnerabilities;
 - Regularly deploy new versions of vmtools on your virtual machines.
@@ -124,7 +126,7 @@ A security information page available in the Console allows you to identify know
 To ensure effective monitoring of your cloud environment and respond promptly to anomalies, it is essential to implement an active monitoring strategy. We particularly recommend:
 
 - **Monitoring service availability** via the [Status page | Cloud Temple](https://status.cloud-temple.com/), to be alerted in case of incidents or widespread outages;
-- **Enabling relevant topic notifications** for your usage from the Console, to receive important alerts in real time (see [Topic Notifications Subscription | Cloud Temple Documentation](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Enabling relevant topic notifications** for your usage from the Console, to receive important alerts in real time (see [Topic Notifications Subscription | Cloud Temple Documentation](../console/iam/concepts#thematic-notifications-subscription));
 - **Using Cloud activity logs** to identify sensitive or suspicious actions on your resources (see section “Logging - Activity Tracking” of the [Quickstart Guide | Cloud Temple Documentation](../iaas_vmware/quickstart)). The collection and analysis of activity logs can be automated using Console APIs, enabling the integration of events into your monitoring or incident detection tools.
 
 ## Secure hosted resources

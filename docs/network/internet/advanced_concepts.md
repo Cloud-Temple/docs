@@ -8,7 +8,7 @@ Cette page présente les fonctionnalités avancées de routage BGP disponibles s
 
 ## Communautés BGP
 
-Cloud Temple offre une variété de communautés BGP permettant de contrôler la sélection du chemin emprunté par votre trafic. 
+Cloud Temple offre une variété de communautés BGP permettant de contrôler la sélection du chemin emprunté par votre trafic.
 
 ### Qu'est-ce qu'une communauté BGP ?
 
@@ -22,11 +22,11 @@ Vous pouvez modifier la local preference d'un préfixe à l'intérieur du backbo
 
 | Communauté BGP | Priorité | Local Preference |
 |:---------------|:------------|:----------------:|
-| 33930:40010 | Priorité basse | 10 | 
-| *Par défaut* | Backbone Cloud Temple (défaut) | 100 | 
-| 33930:40150 | Priorité moyenne | 150 | 
-| 33930:40200 | Priorité haute | 200 | 
-| 33930:40250 | Priorité maximale  | 250 | 
+| 33930:40010 | Priorité basse | 10 |
+| *Par défaut* | Backbone Cloud Temple (défaut) | 100 |
+| 33930:40150 | Priorité moyenne | 150 |
+| 33930:40200 | Priorité haute | 200 |
+| 33930:40250 | Priorité maximale  | 250 |
 
 **Note :** Plus la valeur de local preference est élevée, plus le chemin est préféré dans les décisions de routage BGP. Par défaut, sans communauté spécifique, vos préfixes utilisent la local preference standard de 100.
 

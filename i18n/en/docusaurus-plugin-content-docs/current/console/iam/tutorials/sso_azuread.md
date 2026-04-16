@@ -5,23 +5,23 @@ tags:
   - tutorials
   - onboarding
 ---
-import ssoEntra_001 from './images/sso_entra_001.png'
-import ssoEntra_002 from './images/sso_entra_002.png'
-import ssoAad_004 from './images/sso_aad_004.png'
-import ssoAad_005 from './images/sso_aad_005.png'
-import ssoAad_006 from './images/sso_aad_006.png'
-import ssoAad_007 from './images/sso_aad_007.png'
-import ssoAad_008 from './images/sso_aad_008.png'
-import ssoAad_009 from './images/sso_aad_009.png'
-import ssoAad_010 from './images/sso_aad_010.png'
-import ssoAad_011 from './images/sso_aad_011.png'
-import ssoAad_012 from './images/sso_aad_012.png'
-import ssoAad_013 from './images/sso_aad_013.png'
-import ssoAad_014 from './images/sso_aad_014.png'
-import ssoAad_015 from './images/sso_aad_015.png'
-import ssoAad_016 from './images/sso_aad_016.png'
-import ssoAad_017 from './images/sso_aad_017.png'
-import ssoAad_018 from './images/sso_aad_018.png'
+import ssoEntra_001 from '@site/docs/console/iam/tutorials/images/sso_entra_001.png'
+import ssoEntra_002 from '@site/docs/console/iam/tutorials/images/sso_entra_002.png'
+import ssoAad_004 from '@site/docs/console/iam/tutorials/images/sso_aad_004.png'
+import ssoAad_005 from '@site/docs/console/iam/tutorials/images/sso_aad_005.png'
+import ssoAad_006 from '@site/docs/console/iam/tutorials/images/sso_aad_006.png'
+import ssoAad_007 from '@site/docs/console/iam/tutorials/images/sso_aad_007.png'
+import ssoAad_008 from '@site/docs/console/iam/tutorials/images/sso_aad_008.png'
+import ssoAad_009 from '@site/docs/console/iam/tutorials/images/sso_aad_009.png'
+import ssoAad_010 from '@site/docs/console/iam/tutorials/images/sso_aad_010.png'
+import ssoAad_011 from '@site/docs/console/iam/tutorials/images/sso_aad_011.png'
+import ssoAad_012 from '@site/docs/console/iam/tutorials/images/sso_aad_012.png'
+import ssoAad_013 from '@site/docs/console/iam/tutorials/images/sso_aad_013.png'
+import ssoAad_014 from '@site/docs/console/iam/tutorials/images/sso_aad_014.png'
+import ssoAad_015 from '@site/docs/console/iam/tutorials/images/sso_aad_015.png'
+import ssoAad_016 from '@site/docs/console/iam/tutorials/images/sso_aad_016.png'
+import ssoAad_017 from '@site/docs/console/iam/tutorials/images/sso_aad_017.png'
+import ssoAad_018 from '@site/docs/console/iam/tutorials/images/sso_aad_018.png'
 
 Here is an example configuration of the identity provider for a Cloud Temple organization using __Microsoft EntraID__ (Azure Active Directory).
 
@@ -67,7 +67,7 @@ The generated secret will need to be provided in the support request:
 
 The EntraID token is required for authentication configuration.
 
-In the __"Token Configuration"_ menu, click on __"Add optional claim"__. You will need to select "ID" as the token type and check "email".
+In the _*"Token Configuration"* menu, click on __"Add optional claim"__. You will need to select "ID" as the token type and check "email".
 
 <img src={ssoAad_006} />
 
@@ -125,6 +125,7 @@ This configuration step is performed at the organization level by the Cloud Temp
 To proceed, submit a __support request__ in the console indicating your intent to set up Microsoft Entra ID SSO.
 
 Please include the following information in your support request:
+
 - Name of your Organization
 - Name of a contact person, along with their email address and phone number, to finalize the configuration
 - Application ID (unique identifier associated with the previously created application)

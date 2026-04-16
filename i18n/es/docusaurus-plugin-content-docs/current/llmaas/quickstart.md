@@ -112,7 +112,7 @@ Para su primer prueba, utilice uno de estos modelos recomendados:
 
 Consulte el [catálogo completo de modelos](./models) para más opciones.
 
-:::tip Consejo para los modelos Qwen
+:::tip[Consejo para los modelos Qwen]
 Algunos modelos de la familia **Qwen** (como `qwen3:14b` o `qwen3:30b-a3b`) cuentan con un modo de razonamiento avanzado. Puede forzar su activación agregando `/think` al inicio de su prompt, o desactivarlo para una respuesta más directa y rápida con `/nothink`.
 :::
 
@@ -132,26 +132,33 @@ Para comenzar, utilice estos parámetros:
 ## Gestión de errores comunes
 
 ### Error 401 - No autorizado
+
 ```json
 {"error": {"message": "Invalid API key", "type": "invalid_request_error"}}
 ```
+
 **Solución** : Verifique su clave API en la Consola Cloud Temple.
 
 ### Error 400 - Modelo no encontrado
+
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
+
 **Solución** : Use /v1/models para listar los modelos disponibles.
 
 ### Error 429 - Límite de tasa
+
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
+
 **Solución**: Espera unos segundos y vuelve a intentarlo.
 
 ## Monitoreo del uso
 
 En la Consola Cloud Temple, puedes:
+
 - Ver tus consultas en tiempo real
 - Consultar tu consumo de tokens
 - Configurar alertas de costo
@@ -172,6 +179,7 @@ Esta sección proporciona ejemplos de scripts Python simples y autónomos para i
 La "Llamada a Herramientas" (o llamada a función) permite a un modelo de lenguaje solicitar la ejecución de una función que ha definido en su código. Es una funcionalidad poderosa para conectar los modelos de lenguaje (LLMs) con herramientas externas (API, bases de datos, etc.).
 
 El flujo es el siguiente:
+
 1. El usuario plantea una pregunta que requiere una herramienta (ej: "¿qué tiempo hace?").
 2. Envía la pregunta y la lista de herramientas disponibles a la API.
 3. En lugar de responder directamente, el modelo devuelve una solicitud `tool_calls` pidiendo ejecutar una función específica con ciertos argumentos.
@@ -183,11 +191,12 @@ El flujo es el siguiente:
 
 Para este ejemplo, cree un directorio `simple_tool_calling` con los siguientes archivos:
 
--   `test_tool_calling.py`: El script principal.
--   `requirements.txt`: Las dependencias de Python.
--   `.env`: Un modelo para su archivo de configuración.
+- `test_tool_calling.py`: El script principal.
+- `requirements.txt`: Las dependencias de Python.
+- `.env`: Un modelo para su archivo de configuración.
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
@@ -411,13 +420,16 @@ if __name__ == "__main__":
 
 **Uso**
 
-1.  **Instale las dependencias :**
+1. **Instale las dependencias :**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Configure su clave API :**
+
+2. **Configure su clave API :**
     Copie `tests/llmaas/.env.example` a `tests/llmaas/.env` y reemplace `"su_clave_api_aqui"` por su clave API LLMaaS.
-3.  **Ejecute el script :**
+3. **Ejecute el script :**
+
     ```bash
     python tests/llmaas/test_tool_calling.py
     ```
@@ -430,12 +442,13 @@ Los modelos multimodales pueden analizar tanto texto como imágenes. Este ejempl
 
 Cree un directorio `simple_vision` con los siguientes archivos:
 
--   `test_vision.py`: El script principal.
--   `requirements.txt`: Las dependencias (incluyendo `Pillow` para generar la imagen).
--   `.env.example`: El modelo de configuración.
--   `image_example.png`: La imagen a analizar (el script la generará para usted si falta).
+- `test_vision.py`: El script principal.
+- `requirements.txt`: Las dependencias (incluyendo `Pillow` para generar la imagen).
+- `.env.example`: El modelo de configuración.
+- `image_example.png`: La imagen a analizar (el script la generará para usted si falta).
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
@@ -443,6 +456,7 @@ Pillow
 ```
 
 **`.env.example`**
+
 ```env
 
 # URL base de la API LLMaaS
@@ -598,16 +612,20 @@ if __name__ == "__main__":
 
 **Uso**
 
-1.  **Instale las dependencias :**
+1. **Instale las dependencias :**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Configure su clave API :**
+
+2. **Configure su clave API :**
     Copie `tests/llmaas/.env.example` en `tests/llmaas/.env` y reemplace `"su_clave_api_aqui"` por su clave API LLMaaS.
-3.  **Ejecute el script :**
+3. **Ejecute el script :**
+
     ```bash
     python tests/llmaas/test_vision.py
     ```
+
     El script generará automáticamente una imagen `image_example.png` si no existe.
 
 ---
@@ -624,6 +642,7 @@ Una vez que su primer test sea exitoso:
 ## Soporte
 
 En caso de problema:
+
 - Consulte la [documentación de la API completa](./api)
 - Verifique el estado del servicio en la Consola
 - Contacte al soporte a través de la Consola Cloud Temple

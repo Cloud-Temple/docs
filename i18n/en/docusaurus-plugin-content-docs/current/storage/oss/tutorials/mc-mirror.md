@@ -16,8 +16,9 @@ mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
 
 ### Useful Options
 
-*   `--overwrite`: Forces the replacement of existing files on the destination, even if they are more recent.
-*   `--remove`: Removes files from the destination that do not exist in the source directory. **Use with caution**, as this can lead to irreversible data loss.
+* `--overwrite`: Forces the replacement of existing files on the destination, even if they are more recent.
+* `--remove`: Removes files from the destination that do not exist in the source directory. **Use with caution**, as this can lead to irreversible data loss.
 
 ## Complete synchronization with removal of remote obsolete files
+>
 > `mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/`

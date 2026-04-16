@@ -1,15 +1,15 @@
 ---
 title: API Documentation
 ---
-import ShivaProfil001 from './images/shiva_profil_001.png'
-import ShivaProfil002 from './images/shiva_profil_002.png'
-import ShivaProfil003 from './images/shiva_profil_003.png'
-import ShivaProfil004 from './images/shiva_profil_004.png'
-import ShivaProfil005 from './images/shiva_profil_005.png'
-import ShivaApi001 from './images/shiva_api_001.png'
-import ShivaApi002 from './images/shiva_api_002.png'
-import ShivaApi003 from './images/shiva_api_003.png'
-import ShivaApi004 from './images/shiva_api_004.png'
+import ShivaProfil001 from '@site/docs/console/images/shiva_profil_001.png'
+import ShivaProfil002 from '@site/docs/console/images/shiva_profil_002.png'
+import ShivaProfil003 from '@site/docs/console/images/shiva_profil_003.png'
+import ShivaProfil004 from '@site/docs/console/images/shiva_profil_004.png'
+import ShivaProfil005 from '@site/docs/console/images/shiva_profil_005.png'
+import ShivaApi001 from '@site/docs/console/images/shiva_api_001.png'
+import ShivaApi002 from '@site/docs/console/images/shiva_api_002.png'
+import ShivaApi003 from '@site/docs/console/images/shiva_api_003.png'
+import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
 ## API Keys
 
@@ -47,11 +47,11 @@ You will then see the newly created token and its future expiration date.
 
 <img src={ShivaProfil005} />
 
-:::info Token Authentication Lifecycle
-When you use your **Personal Access Token (PAT)** to authenticate with the API, you receive in return an access token. It is important to note that this access token is a **JSON Web Token (JWT)** with a limited lifespan.
+:::info[Token Authentication Lifecycle]
+When you use your __Personal Access Token (PAT)__ to authenticate with the API, you receive in return an access token. It is important to note that this access token is a __JSON Web Token (JWT)__ with a limited lifespan.
 
--   **Lifespan**: Each JWT token is valid for **5 minutes**.
--   **Verification**: You can check the issuance date (`iat`) and expiration date (`exp`) of your token by decoding it. Online tools such as [jwt.io](https://jwt.io) make this easy.
+- __Lifespan__: Each JWT token is valid for __5 minutes__.
+- __Verification__: You can check the issuance date (`iat`) and expiration date (`exp`) of your token by decoding it. Online tools such as [jwt.io](https://jwt.io) make this easy.
 
 Once the token expires, you will need to re-authenticate using your PAT to obtain a new one. Therefore, it is recommended to manage this lifecycle in your scripts and applications by implementing automatic token renewal.
 :::
@@ -106,6 +106,7 @@ __waiting__, status before the operation has started:
 ```
     waiting: {}
 ```
+
 __running__, status when the operation is in progress:
 
 ```
@@ -115,6 +116,7 @@ __running__, status when the operation is in progress:
     progression: number;
     };
 ```
+
 __failed__, status if the operation has failed:
 
 ```
@@ -124,6 +126,7 @@ __failed__, status if the operation has failed:
     reason: string;
     };
 ```
+
 __completed__, status if the operation has finished:
 
 ```

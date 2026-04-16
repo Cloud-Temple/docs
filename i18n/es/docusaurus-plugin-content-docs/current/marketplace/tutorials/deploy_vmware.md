@@ -1,8 +1,8 @@
 ---
 title: Deploy an image on VMware
 ---
-import marketplaceVmwareDeployment from '../images/marketplace_vmware_deploy.png'
-import marketplaceVmwareConfig from '../images/marketplace_vmware_config.png'
+import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
+import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
 
 This tutorial guides you through deploying a virtual machine image from the Cloud Temple Marketplace to your VMware environment.
 
@@ -22,6 +22,7 @@ Desde la página de detalles de una solución compatible con VMware, seleccione 
 ### 2. Configuración de la máquina virtual
 
 Configure los parámetros básicos de su máquina virtual:
+
 - **Nombre** de la VM
 - **Recursos** (CPU, RAM)
 - **Almacenamiento**
@@ -42,5 +43,6 @@ También puede acceder directamente a las plantillas de Marketplace desde la int
 ## Deployment tracking
 
 Once the deployment is initiated:
+
 - Monitor the progress from the VMware console
 - The VM will appear in your vSphere inventory

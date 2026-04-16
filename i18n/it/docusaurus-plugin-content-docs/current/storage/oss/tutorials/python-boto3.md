@@ -30,7 +30,7 @@ region = 'fr1'
 bucket_name = 'il-mio-bucket-test'
 ```
 
-:::info Regione
+:::info[Regione]
 La regione da utilizzare per l'archiviazione oggetti Cloud Temple è **`fr1`**. Assicurati di impostare correttamente questo valore nel parametro `region_name`.
 :::
 
@@ -41,7 +41,7 @@ L'archiviazione oggetti Cloud Temple, basata su **Dell ECS**, supporta due versi
 - **SigV4** (`signature_version='s3v4'`): raccomandato per le operazioni di **metadati** (LIST, HEAD)
 - **SigV2** (`signature_version='s3'`): raccomandato per le operazioni di **dati** (PUT, GET, DELETE)
 
-:::caution Approccio ibrido raccomandato
+:::caution[Approccio ibrido raccomandato]
 Per una compatibilità ottimale, si raccomanda di utilizzare **due client Boto3** con configurazioni di firma diverse in base al tipo di operazione. Ciò evita gli errori `XAmzContentSHA256Mismatch` che possono verificarsi con SigV4 durante le operazioni di scrittura.
 :::
 
@@ -82,7 +82,7 @@ client_metadata = boto3.client(
 )
 ```
 
-:::tip Configurazione semplificata
+:::tip[Configurazione semplificata]
 Se desideri utilizzare un solo client, preferisci **SigV2** (`signature_version='s3'`) con l'indirizzamento in stile path, che funziona per la maggior parte delle operazioni:
 
 ```python
@@ -100,6 +100,7 @@ s3 = boto3.client(
     config=config
 )
 ```
+
 :::
 
 ## 1. Elencare i file di un bucket S3
@@ -255,7 +256,7 @@ print(f"Eliminazione: {result['ResponseMetadata']['HTTPStatusCode']}")
 
 Se un oggetto esiste già, puoi modificare i suoi permessi per renderlo accessibile in lettura da chiunque utilizzando il metodo `put_object_acl`.
 
-:::danger Attenzione
+:::danger[Attenzione]
 Rendere un oggetto pubblico significa che chiunque disponga dell'URL potrà accedervi. Utilizza questa opzione con cautela e in conformità con la tua politica di sicurezza.
 :::
 

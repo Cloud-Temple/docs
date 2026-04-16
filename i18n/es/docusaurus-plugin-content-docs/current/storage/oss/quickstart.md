@@ -1,23 +1,22 @@
 ---
 title: Guía de inicio
 ---
-import S3ListBucket from './images/S3_list_bucket.png'
-import S3Accounts from './images/S3_accounts.png'
-import S3CreateAccount from './images/S3_create_account.png'
-import S3StorageKeys from './images/S3_storage_keys.png'
-import S3Keyregen from './images/S3_keyregen.png'
-import S3Create from './images/S3_create.png'
-import S3CreatePopup_001 from './images/S3_create_popup_001.png'
-import S3AccountAssign from './images/S3_account_assign.png'
-import S3AccountAccess from './images/S3_account_access.png'
-import S3Files from './images/S3_files.png'
-import S3Params from './images/S3_params.png'
-import S3Lifecycle from './images/S3_lifecycle.png'
-import S3CreatePopup_002 from './images/S3_create_popup_002.png'
-import S3Delete from './images/S3_delete.png'
+import S3ListBucket from '@site/docs/storage/oss/images/S3_list_bucket.png'
+import S3Accounts from '@site/docs/storage/oss/images/S3_accounts.png'
+import S3CreateAccount from '@site/docs/storage/oss/images/S3_create_account.png'
+import S3StorageKeys from '@site/docs/storage/oss/images/S3_storage_keys.png'
+import S3Keyregen from '@site/docs/storage/oss/images/S3_keyregen.png'
+import S3Create from '@site/docs/storage/oss/images/S3_create.png'
+import S3CreatePopup_001 from '@site/docs/storage/oss/images/S3_create_popup_001.png'
+import S3AccountAssign from '@site/docs/storage/oss/images/S3_account_assign.png'
+import S3AccountAccess from '@site/docs/storage/oss/images/S3_account_access.png'
+import S3Files from '@site/docs/storage/oss/images/S3_files.png'
+import S3Params from '@site/docs/storage/oss/images/S3_params.png'
+import S3Lifecycle from '@site/docs/storage/oss/images/S3_lifecycle.png'
+import S3CreatePopup_002 from '@site/docs/storage/oss/images/S3_create_popup_002.png'
+import S3Delete from '@site/docs/storage/oss/images/S3_delete.png'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objetos altamente seguro y certificado SecNumCloud, basado en el protocolo Amazon S3. Le permite almacenar todo tipo de datos, incluidos los más sensibles, cumpliendo con los más altos requisitos de seguridad. Puede gestionar su almacenamiento directamente desde la consola Cloud Temple e integrar numerosas bibliotecas existentes o clientes CLI para su uso programático.
 
@@ -98,6 +97,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Navegar un bucket S3
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Cuando haces clic en el nombre de un bucket, accedes primero a la pestaña '__Archivos__' para ver su contenido:
@@ -159,6 +159,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Write a file to a bucket (upload)
+
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
@@ -177,6 +178,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Descargar un archivo desde un bucket
+
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
@@ -195,6 +197,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Eliminar un archivo de un bucket
+
 <Tabs>
   <TabItem value="MC CLI" label="MC CLI" default>
     ```bash
@@ -213,6 +216,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Creación de una nueva cuenta de almacenamiento
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     La creación de una cuenta de almacenamiento en su inquilino se realiza pulsando el botón '__Nueva cuenta de almacenamiento__' en la parte superior derecha, en la pestaña '__Cuentas de almacenamiento__':
@@ -232,6 +236,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Creación de un bucket S3
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     La creación de un nuevo bucket se realiza haciendo clic en el botón '__Nuevo bucket__' en la parte superior derecha de la pantalla:
@@ -257,6 +262,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Eliminación de un bucket S3
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     La eliminación de un bucket se realiza en las acciones asociadas al bucket eligiendo la opción __'Eliminar'__.
@@ -278,6 +284,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 </Tabs>
 
 ## Gestión de políticas de acceso
+
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
     Las asociaciones de cuentas a los buckets y la configuración de restricciones de acceso se realizan en la pestaña '__Políticas__' del bucket.

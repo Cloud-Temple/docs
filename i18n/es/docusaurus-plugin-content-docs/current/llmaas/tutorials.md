@@ -325,7 +325,7 @@ Este tutorial adapta el pipeline RAG anterior para utilizar Qdrant.
     * **`force_recreate=True`**: Para este tutorial, usamos este parámetro para asegurarnos de que la colección esté vacía en cada ejecución. En producción, lo establecerías en `False` para conservar tus datos.
 3. **El resto del pipeline** (configuración del LLM, creación de la cadena `RetrievalQA`) es idéntico, lo que demuestra la flexibilidad de LangChain: basta con cambiar la fuente del `retriever` (el buscador de información) para pasar de FAISS a Qdrant.
 
-:::info Requisitos previos: Iniciar Qdrant
+:::info[Requisitos previos: Iniciar Qdrant]
 Para este tutorial, necesitarás una instancia de Qdrant. Puedes iniciarla fácilmente con Docker:
 
 ```bash
@@ -335,6 +335,7 @@ docker pull qdrant/qdrant
 # 2. Iniciar el contenedor Qdrant
 docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
+
 :::
 
 El código siguiente muestra cómo adaptar el pipeline RAG para utilizar Qdrant como base de datos vectorial.
@@ -896,18 +897,18 @@ Este tutorial le guiará a configurar la extensión CLINE en Visual Studio Code 
 2. **Crear un nuevo modelo**: Agrega una nueva configuración de modelo.
 3. **Rellenar los campos**: Configura los campos como se indica a continuación, basándote en la imagen de abajo.
 
-    ![Configuración de CLINE para LLMaaS](./images/cline_configuration.png)
+    ![Configuración de CLINE para LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
     * **Proveedor de API**: Selecciona `Compatible con OpenAI`.
     * **URL base**: Ingresa el punto final de la API LLMaaS de Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
     * **Clave de API Compatible con OpenAI**: Pega la clave de API que generaste desde la consola Cloud Temple.
-    
+
     :::tip Generación de la clave de API
     Para generar tu clave de API, ve a la consola Cloud Temple, sección **LLMaaS** > **Claves API**, y haz clic en **"Crear una clave API"**.
-    
-    ![Creación de una clave API desde la consola](./images/console_create_api_key.png)
+
+    ![Creación de una clave API desde la consola](@site/docs/llmaas/images/console_create_api_key.png)
     :::
-    
+
     * **ID del modelo**: Especifica el modelo que deseas utilizar, por ejemplo `qwen3-coder:30b`. Puedes encontrar la lista de modelos disponibles en la sección [Modelos](./models.md).
     * **Configuración del modelo**:
         * **Soporta imágenes**: Marca esta casilla si el modelo admite imágenes.
@@ -925,20 +926,21 @@ You will find in the GitHub repository below a collection of code examples and s
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
 It includes practical guides for:
-- __Information Extraction and Text Analysis:__ Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
 
-- __Conversational Interaction and Chatbots:__ Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
+* **Information Extraction and Text Analysis:** Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
 
-- __Audio Transcription (Speech-to-Text):__ Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
+* **Conversational Interaction and Chatbots:** Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
 
-- __Text Translation:__ Translation of documents from one language to another, managing context across multiple segments to improve coherence.
+* **Audio Transcription (Speech-to-Text):** Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
 
-- __Model Management and Evaluation:__ Listing available language models via the API, checking their specifications, and running tests to compare performance.
+* **Text Translation:** Translation of documents from one language to another, managing context across multiple segments to improve coherence.
 
-- __Real-Time Response Streaming:__ Demonstration of the ability to receive and display model responses progressively (token by token), essential for interactive applications.
+* **Model Management and Evaluation:** Listing available language models via the API, checking their specifications, and running tests to compare performance.
 
-- __RAG Pipeline with In-Memory Knowledge Base:__ Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
+* **Real-Time Response Streaming:** Demonstration of the ability to receive and display model responses progressively (token by token), essential for interactive applications.
 
-- __RAG Pipeline with Vector Database (Qdrant):__ Complete and containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
+* **RAG Pipeline with In-Memory Knowledge Base:** Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
 
-- __OCR & Document Analysis (DeepSeek-OCR):__ Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).
+* **RAG Pipeline with Vector Database (Qdrant):** Complete and containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
+
+* **OCR & Document Analysis (DeepSeek-OCR):** Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).

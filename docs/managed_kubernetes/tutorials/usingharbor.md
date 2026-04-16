@@ -15,7 +15,6 @@ Dans ce guide, remplacez les variables suivantes par vos valeurs:
 
 :::
 
-
 ## Prérequis
 
 - Accès à la Console et au service Managed Kubernetes
@@ -52,7 +51,7 @@ podman login <HARBOR_URL>
 - Utilisateur: `<ROBOT_USERNAME>` (ex: `robot$monprojet+pusher`)
 - Mot de passe: `<ROBOT_TOKEN>`
 
-:::tip Certificats
+:::tip[Certificats]
 L’instance Harbor managée par Cloud Temple présente un certificat public reconnu. Aucune configuration de CA supplémentaire n’est normalement nécessaire dans Docker ou Podman.
 :::
 
@@ -64,7 +63,7 @@ Via l'UI Harbor:
 - Nom: `<PROJET>`, visibilité: Private (recommandé)
 - Options: activer l'immutabilité des tags, l'auto-scan on push, etc.
 
-:::info Bonnes pratiques
+:::info[Bonnes pratiques]
 
 - Un projet par application ou par domaine fonctionnel.
 - Restreindre les rôles (maintainer, developer, guest).
@@ -181,7 +180,7 @@ image: <HARBOR_URL>/<PROJET>/app-web@sha256:<DIGEST>
 - Expiration: définir une durée et un processus de rotation
 - Stocker le token en secret (Kubernetes/CI)
 
-:::caution Moindre privilège
+:::caution[Moindre privilège]
 N'utilisez pas de comptes personnels pour vos pipelines. Préférez un robot par projet, voire par environnement.
 :::
 

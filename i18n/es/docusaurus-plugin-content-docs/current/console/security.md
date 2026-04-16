@@ -46,6 +46,7 @@ La federación de identidad permite integrar la Consola Cloud Temple con su prov
 Por estas razones, **se recomienda la federación de identidades**, especialmente para entornos con un gran número de usuarios o con exigencias de seguridad elevadas.
 
 Siga nuestras guías paso a paso para integrar su proveedor de identidad:
+
 - [Configurer la fédération avec Azure AD | Documentation Cloud Temple](../console/iam/tutorials/sso_aad)
 - [Configurer la fédération avec ADFS | Documentation Cloud Temple](../console/iam/tutorials/sso_adfs)
 
@@ -59,7 +60,7 @@ Para las cuentas gestionadas localmente por la Consola (sin federación), el MFA
 
 Para saber más:  
 
-- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../console/iam/quickstart#permisos)
 - [Tutoriel : Fédération d'identité avec Microsoft EntraID | Documentation Cloud Temple](../console/iam/tutorials/sso_aad)
 - [Tutoriel : Fédération d'identité avec Microsoft ADFS | Documentation Cloud Temple](../console/iam/tutorials/sso_adfs)
 
@@ -113,6 +114,7 @@ Una asignación controlada de permisos limita los riesgos de error o acción mal
 Cloud Temple proporciona regularmente versiones para los hipervisores con el fin de asegurar la aplicación de los parches de seguridad. Sin embargo, la actualización de los hipervisores sigue siendo su responsabilidad, ya que no tenemos visibilidad sobre sus restricciones empresariales.  
 
 Por lo tanto, le recomendamos:
+
 - Controlar regularmente en la Consola la disponibilidad de nuevos builds para sus hipervisores;  
 - **Desplegar regularmente los nuevos builds en el conjunto de sus hipervisores**, en particular si corrigen vulnerabilidades de seguridad;
 - Desplegar regularmente en sus máquinas virtuales las nuevas versiones de vmtools.
@@ -124,7 +126,7 @@ Una página de información de seguridad disponible en la Consola permite identi
 Para garantizar una monitorización eficaz de su entorno cloud y reaccionar rápidamente en caso de anomalías, es esencial implementar una estrategia de vigilancia activa. Le recomendamos en particular:
 
 - **Supervisar la disponibilidad de los servicios** a través de la [Status page | Cloud Temple](https://status.cloud-temple.com/), para ser alertado en caso de incidentes o interrupciones generales;
-- **Activar las notificaciones temáticas** pertinentes para su uso desde la Consola, para recibir en tiempo real las alertas importantes (ver [Abonnement aux notifications thématiques | Documentation Cloud Temple](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Activar las notificaciones temáticas** pertinentes para su uso desde la Consola, para recibir en tiempo real las alertas importantes (ver [Abonnement aux notifications thématiques | Documentation Cloud Temple](../console/iam/concepts#suscripciones-a-notificaciones-tem%C3%A1ticas));
 - **Explotar los registros de actividad Cloud** para identificar acciones sensibles o sospechosas sobre sus recursos (ver sección « Journalisation - Suivi des Activités » del [Guide de démarrage | Documentation Cloud Temple](../iaas_vmware/quickstart)). La recopilación y análisis de los registros de actividad puede automatizarse mediante las API de la Consola, para integrar los eventos a sus herramientas de supervisión o detección de incidentes.
 
 ## Asegurar los recursos alojados

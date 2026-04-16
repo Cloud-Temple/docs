@@ -51,7 +51,7 @@ Der Provider authentifiziert sich bei den Cloud Temple APIs mit:
 
 Diese Anmeldeinformationen werden über die Cloud Temple-Konsole generiert und ermöglichen es dem Provider, Operationen in Ihrem Namen durchzuführen.
 
-:::info Best Practices
+:::info[Best Practices]
     Speichern Sie Ihre Anmeldeinformationen in Umgebungsvariablen oder einem Secrets-Manager, niemals direkt im Code.
 :::
 
@@ -237,6 +237,7 @@ terraform init
 ```
 
 Dieser Befehl:
+
 - Lädt den Provider aus dem Terraform Registry herunter
 - Initialisiert das Backend (falls konfiguriert)
 - Erstellt das Verzeichnis `.terraform/`
@@ -250,6 +251,7 @@ terraform plan
 ```
 
 Der Plan zeigt an:
+
 - **Ressourcen, die erstellt werden** (`+`)
 - **Ressourcen, die geändert werden** (`~`)
 - **Ressourcen, die entfernt werden** (`-`)
@@ -264,6 +266,7 @@ terraform apply
 ```
 
 Terraform:
+
 1. Generiert einen Plan
 2. Fordert Bestätigung an (außer bei Verwendung von `--auto-approve`)
 3. Wendet die Änderungen an
@@ -277,7 +280,7 @@ Zerstört alle verwalteten Ressourcen:
 terraform destroy
 ```
 
-:::danger Achtung
+:::danger[Achtung]
   Dieser Befehl löscht alle Ressourcen endgültig. Verwenden Sie ihn vorsichtig.
 :::
 

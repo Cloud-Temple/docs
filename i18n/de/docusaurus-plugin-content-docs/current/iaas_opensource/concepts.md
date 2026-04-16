@@ -99,11 +99,11 @@ Distributed block storage, based on __IBM Spectrum Virtualize__, offers a range 
 
 To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates a robust hardware-based encryption.
 
--   **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
--   **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
--   **Operation**: Encryption is applied at the time data is written to the physical storage medium.
+- __Encryption Type__: Data is encrypted directly on the disks (`Data At Rest`) using the __XTS-AES 256__ algorithm.
+- __Compliance__: This encryption method complies with the __FIPS 140-2__ standard, ensuring a high level of validated security.
+- __Operation__: Encryption is applied at the time data is written to the physical storage medium.
 
-:::warning Attention regarding replication
+:::warning[Attention regarding replication]
 It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated and secure communication channels.
 :::
 
@@ -190,19 +190,23 @@ The actual usable memory may be limited by the guest operating system. Exceeding
 It is not possible to resize disks after they have been created. To increase storage capacity, a new disk must be created.
 
 ### Tools for Virtual Machines
+
 These tools are used to ensure optimal operation of virtual machines. When you wish to perform an action requiring one of these tools, a message will appear on the Cloud Temple console.
 
 To install these tools, you can consult the official Xen Server websites to obtain precise instructions based on your OS.
 
 #### Management Agent  
+
 The Management Agent is a component installed on each virtual machine. It enables the hypervisor to better manage the machine by providing access to more information and allows certain actions to be performed more cleanly.
 
 #### PV Treiber (Paravirtualisierungstreiber)
+
 Die PV-Treiber sind Treiber, die in der virtuellen Maschine installiert werden, um deren Leistung zu verbessern.  
 Ohne diese Treiber funktioniert die Maschine zwar, ist aber langsamer. Außerdem ermöglichen sie erweiterte Funktionen.  
 Die PV-Treiber sind in der Regel nativ in den meisten aktuellen Linux-Kernen enthalten.
 
 #### Tools  
+
 Tools sind eine Reihe von Softwarekomponenten, die die Integration der virtuellen Maschine mit der Virtualisierungsinfrastruktur verbessern.
 
 ## Catalogs
@@ -311,15 +315,18 @@ Mit der Hochverfügbarkeit (HA) sendet jeder Host im Pool regelmäßig Lebenszei
 
 Ein als Heartbeat vorgesehener Block-Speicher bedeutet, dass er als Grundlage zur Authentifizierung von Hosts dient, die nicht mehr antworten.
 
-Damit die Hochverfügbarkeit in einem OpenIaaS-Pool korrekt konfiguriert werden kann, ist es unbedingt erforderlich, über **mindestens zwei Hosts** zu verfügen, die miteinander verbunden sind.
+Damit die Hochverfügbarkeit in einem OpenIaaS-Pool korrekt konfiguriert werden kann, ist es unbedingt erforderlich, über __mindestens zwei Hosts__ zu verfügen, die miteinander verbunden sind.
 
 Jede VM muss mit einer Priorität für den Neustart im Rahmen der Hochverfügbarkeit konfiguriert werden:
 
 #### Disabled  
+
 High availability is not configured. In the event of host failure, the virtual machine will not be restarted.
 
 #### Restart
+
 In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
 
 #### Best-Effort  
+
 In the event of host failure, the virtual machine will be automatically restarted only if resources remain available after processing all virtual machines configured in "restart" mode. The "Best-effort" mode performs only a single attempt; therefore, if resources are insufficient, the virtual machine will not be restarted.
