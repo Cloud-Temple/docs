@@ -353,10 +353,17 @@ const sidebars: SidebarsConfig = {
       className: 'sidebar-cat-security',
       link: { type: 'doc', id: 'bastion/bastion' },
       items: [
-        'bastion/bastion',
-        'bastion/concepts',
-        'bastion/quickstart',
-        'bastion/tutorials',
+        {
+          type: 'category',
+          label: 'Bastion',
+          link: { type: 'doc', id: 'bastion/bastion' },
+          items: [
+            'bastion/bastion',
+            'bastion/concepts',
+            'bastion/quickstart',
+            'bastion/tutorials',
+          ],
+        },
       ],
     },
     {
