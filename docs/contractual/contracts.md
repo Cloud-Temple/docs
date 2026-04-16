@@ -1,7 +1,6 @@
 ---
 title: Documents Contractuels
 slug: /contracts
-displayed_sidebar: null
 hide_table_of_contents: true
 ---
 

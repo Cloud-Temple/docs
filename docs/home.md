@@ -3,6 +3,7 @@ tags:
   - home
   - accueil
   - onboarding
+displayed_sidebar: docSidebar
 ---
 
 
