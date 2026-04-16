@@ -99,11 +99,11 @@ El almacenamiento en bloque distribuido, basado en __IBM Spectrum Virtualize__, 
 
 Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraestructura de almacenamiento en bloques integra un cifrado hardware robusto.
 
--   **Tipo de cifrado**: Los datos se cifran directamente en los discos (`Data At Rest`) utilizando el algoritmo **XTS-AES 256**.
--   **Cumplimiento**: Este método de cifrado cumple con la norma **FIPS 140-2**, asegurando un alto nivel de seguridad validado.
--   **Funcionamiento**: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
+- __Tipo de cifrado__: Los datos se cifran directamente en los discos (`Data At Rest`) utilizando el algoritmo __XTS-AES 256__.
+- __Cumplimiento__: Este método de cifrado cumple con la norma __FIPS 140-2__, asegurando un alto nivel de seguridad validado.
+- __Funcionamiento__: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
 
-:::warning Punto de atención sobre la replicación
+:::warning[Punto de atención sobre la replicación]
 Es importante destacar que este cifrado protege los datos almacenados en los discos. No está activo "en tiempo real" (on-the-fly), lo que significa que los datos no se cifran durante las operaciones de replicación de almacenamiento entre las zonas de disponibilidad. La seguridad de los transferencias se garantiza mediante canales de comunicación dedicados y seguros.
 :::
 
@@ -190,19 +190,23 @@ The actual usable memory may be limited by the guest operating system. Exceeding
 No es posible redimensionar los discos una vez creados. Para ampliar la capacidad de almacenamiento, es necesario crear un nuevo disco.
 
 ### Tools for virtual machines
+
 These tools are used to achieve optimal performance of virtual machines. When you want to perform an action that requires one of these tools, a message will appear on the Cloud Temple console.
 
 To install these tools, you can consult the official Xen Server websites to obtain a precise procedure according to your OS.
 
 #### Management Agent
+
 The Management Agent is a component installed in each virtual machine. It enables the hypervisor to better manage the machine by providing access to more information and allows certain actions to be performed more cleanly.
 
 #### PV Drivers (Drivers de paravirtualisation)
+
 Los drivers PV son controladores instalados en la máquina virtual para mejorar su rendimiento.  
 Sin estos controladores, la máquina funciona, pero más lentamente. Además, permiten realizar ciertas acciones avanzadas.  
 Los drivers PV se instalan de forma nativa en la mayoría de los kernels Linux actuales.
 
 #### Tools
+
 Las herramientas son un conjunto de componentes de software que mejoran la integración de la máquina virtual con la infraestructura de virtualización.
 
 ## Catalogs
@@ -311,15 +315,18 @@ Con la alta disponibilidad (HA), cada host del pool envía periódicamente seña
 
 Un almacenamiento en bloque designado como heartbeat significa que servirá como base para autenticar a los hosts que ya no respondan.
 
-Para que la alta disponibilidad se configure correctamente en un pool OpenIaaS, es imprescindible contar con **al menos dos hosts** conectados.
+Para que la alta disponibilidad se configure correctamente en un pool OpenIaaS, es imprescindible contar con __al menos dos hosts__ conectados.
 
 Cada VM debe configurarse con un nivel de prioridad de reinicio en alta disponibilidad:
 
 #### Disabled
+
  High availability is not configured. In the event of host failure, the virtual machine will not be restarted.
 
 #### Restart
+
 In case of host failure, the virtual machine will be automatically restarted as soon as resources become available in the pool. Virtual machines configured in "restart" mode are prioritized over those configured in "best-effort" mode.
 
 #### Best-effort  
+
 In the event of host failure, the virtual machine will be automatically restarted only if resources remain available after processing all virtual machines configured in "restart" mode. The "Best-effort" mode performs only one attempt; therefore, if resources are insufficient, the virtual machine will not be restarted.

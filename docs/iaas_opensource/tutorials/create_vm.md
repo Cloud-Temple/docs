@@ -82,7 +82,7 @@ Pour chaque adaptateur réseau :
 - **Réseau** : Sélectionnez le réseau virtuel (avec indication VPC ou Private Backbone)
 - **Adresse MAC** : Optionnelle, générée automatiquement si non spécifiée
 
-:::info VPC
+:::info[VPC]
 La configuration des réseaux VPC n'est disponible que depuis l'onglet Réseau de la machine virtuelle une fois l'opération terminée. La configuration depuis ce formulaire sera disponible prochainement.
 :::
 
@@ -101,6 +101,7 @@ Pour plus d'informations sur la configuration de la haute disponibilité et les 
 Vérifiez l'ensemble de votre configuration avant de créer la machine virtuelle.
 
 Le résumé affiche tous les paramètres configurés :
+
 - Informations générales (nom, CPU, RAM)
 - Modèle sélectionné
 - Cloud Init (si configuré)
@@ -147,6 +148,7 @@ Sélectionnez un Block Storage dans l'arborescence. Le système vérifie automat
 Vérifiez les informations avant de lancer l'import.
 
 Le résumé affiche :
+
 - Le nom de la VM
 - Le type de déploiement (XVA)
 - Le fichier XVA et sa taille

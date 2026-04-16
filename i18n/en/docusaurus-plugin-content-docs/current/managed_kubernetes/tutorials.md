@@ -10,8 +10,8 @@ This first tutorial guides you through deploying, exposing, and accessing a simp
 
 ### Prerequisites
 
-1.  **`kubectl` installed**: Ensure that the Kubernetes command-line tool, `kubectl`, is installed on your workstation. If not, follow the [official installation instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
-2.  **`kubeconfig` file**: The Cloud Temple team provided you with a `kubeconfig` file after your cluster deployment. Place it in the default location (`~/.kube/config`) or specify it using the `KUBECONFIG` environment variable.
+1. **`kubectl` installed**: Ensure that the Kubernetes command-line tool, `kubectl`, is installed on your workstation. If not, follow the [official installation instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
+2. **`kubeconfig` file**: The Cloud Temple team provided you with a `kubeconfig` file after your cluster deployment. Place it in the default location (`~/.kube/config`) or specify it using the `KUBECONFIG` environment variable.
 
 ### Step 1: Verify Connection to the Cluster
 
@@ -34,7 +34,7 @@ worker-node3   Ready    <none>   ...   ...
 
 We will deploy a simple web application that displays a home page.
 
-1.  Create a file named `hello-deployment.yaml` with the following content:
+1. Create a file named `hello-deployment.yaml` with the following content:
 
     ```yaml
     apiVersion: apps/v1
@@ -58,24 +58,25 @@ We will deploy a simple web application that displays a home page.
             - containerPort: 80
     ```
 
-2.  Apply this manifest to create the Deployment:
+2. Apply this manifest to create the Deployment:
 
     ```bash
     kubectl apply -f hello-deployment.yaml
     ```
 
-3.  Verify that the pods are running:
+3. Verify that the pods are running:
 
     ```bash
     kubectl get pods -l app=hello
     ```
+
     You should see two pods with the status `Running`.
 
 ### Step 3: Expose the Deployment with a Service
 
 To enable communication with our pods inside the cluster, we create a Service.
 
-1.  Create a file named `hello-service.yaml`:
+1. Create a file named `hello-service.yaml`:
 
     ```yaml
     apiVersion: v1
@@ -92,18 +93,19 @@ To enable communication with our pods inside the cluster, we create a Service.
           targetPort: 80
     ```
 
-2.  Apply the manifest:
+2. Apply the manifest:
 
     ```bash
     kubectl apply -f hello-service.yaml
     ```
+
     This service now exposes our application on an internal port within the cluster.
 
 ### Step 4: Expose the Service to the Outside World Using an Ingress
 
 To make our application accessible from the internet, we use an Ingress object. We will use the `nginx-external` ingress-class, which is provided by default.
 
-1.  Create a file named `hello-ingress.yaml`. **Remember to replace `your-domain.example.com`** with a domain name that points to the public IP address of your `nginx-external` ingress.
+1. Create a file named `hello-ingress.yaml`. **Remember to replace `your-domain.example.com`** with a domain name that points to the public IP address of your `nginx-external` ingress.
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -132,7 +134,7 @@ To make our application accessible from the internet, we use an Ingress object. 
         secretName: hello-tls-secret # Cert-Manager will create this secret with the certificate
     ```
 
-2.  Apply the manifest:
+2. Apply the manifest:
 
     ```bash
     kubectl apply -f hello-ingress.yaml

@@ -5,18 +5,18 @@ tags:
   - tutorials
   - onboarding
 ---
-import ssoAdfs_001 from './images/sso_adfs_001.png'
-import ssoAdfs_002 from './images/sso_adfs_002.png'
-import ssoAdfs_003 from './images/sso_adfs_003.png'
-import ssoAdfs_004 from './images/sso_adfs_004.png'
-import ssoAdfs_005 from './images/sso_adfs_005.png'
-import ssoAdfs_006 from './images/sso_adfs_006.png'
-import ssoAdfs_007 from './images/sso_adfs_007.png'
-import ssoAdfs_008 from './images/sso_adfs_008.png'
-import ssoAdfs_009 from './images/sso_adfs_009.png'
-import ssoAdfs_010 from './images/sso_adfs_010.png'
-import ssoAdfs_011 from './images/sso_adfs_011.png'
-import ssoAdfs_012 from './images/sso_adfs_012.png'
+import ssoAdfs_001 from '@site/docs/console/iam/tutorials/images/sso_adfs_001.png'
+import ssoAdfs_002 from '@site/docs/console/iam/tutorials/images/sso_adfs_002.png'
+import ssoAdfs_003 from '@site/docs/console/iam/tutorials/images/sso_adfs_003.png'
+import ssoAdfs_004 from '@site/docs/console/iam/tutorials/images/sso_adfs_004.png'
+import ssoAdfs_005 from '@site/docs/console/iam/tutorials/images/sso_adfs_005.png'
+import ssoAdfs_006 from '@site/docs/console/iam/tutorials/images/sso_adfs_006.png'
+import ssoAdfs_007 from '@site/docs/console/iam/tutorials/images/sso_adfs_007.png'
+import ssoAdfs_008 from '@site/docs/console/iam/tutorials/images/sso_adfs_008.png'
+import ssoAdfs_009 from '@site/docs/console/iam/tutorials/images/sso_adfs_009.png'
+import ssoAdfs_010 from '@site/docs/console/iam/tutorials/images/sso_adfs_010.png'
+import ssoAdfs_011 from '@site/docs/console/iam/tutorials/images/sso_adfs_011.png'
+import ssoAdfs_012 from '@site/docs/console/iam/tutorials/images/sso_adfs_012.png'
 
 Here is an example configuration of the identity repository for a Cloud Temple organization using __Microsoft ADFS__.
 

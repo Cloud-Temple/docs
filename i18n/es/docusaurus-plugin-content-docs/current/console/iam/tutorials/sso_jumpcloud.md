@@ -6,8 +6,8 @@ tags:
   - enrollado
 ---
 
-import ssoJumpcloud001 from './images/sso_jumpcloud_001.png'
-import ssoJumpcloud002 from './images/sso_jumpcloud_002.png'
+import ssoJumpcloud001 from '@site/docs/console/iam/tutorials/images/sso_jumpcloud_001.png'
+import ssoJumpcloud002 from '@site/docs/console/iam/tutorials/images/sso_jumpcloud_002.png'
 
 Este tutoría te guía a través de la configuración de la autenticación única (SSO) entre JumpCloud y la consola Cloud Temple utilizando el protocolo OpenID Connect (OIDC).
 
@@ -32,12 +32,13 @@ Sigue estos pasos para configurar una nueva aplicación OIDC en tu consola de ad
 
     <img src={ssoJumpcloud001} alt="Configuración SSO OIDC JumpCloud" />
 
-
 3. **Ingresar las URIs de redirección:**
     * En el campo apropiado (generalmente llamado "URI de redirección" o "URL de callback"), ingresa la URI proporcionada por Cloud Temple. Se seguirá generalmente este formato:
+
         ```
         https://keycloak-shiva.cloud-temple.com/auth/realms/<empresa específica>/broker/<empresa específica>/endpoint
         ```
+
         * Reemplaza `<empresa específica>` con los identificadores específicos de tu empresa proporcionados por Cloud Temple.
 
 4. **Seleccionar el tipo de autenticación del cliente:**
@@ -45,9 +46,11 @@ Sigue estos pasos para configurar una nueva aplicación OIDC en tu consola de ad
 
 5. **Ingresar la URL de inicio de sesión:**
     * En el campo "URL de inicio de sesión", ingresa la URL que utilizas para acceder a tu consola Cloud Temple. Por ejemplo:
+
         ```
         https://<identificador único>.shiva.cloud-temple.com
         ```
+
         * Reemplaza `<identificador único>` por el identificador único de tu instancia Cloud Temple.
 
 6. **Configurar el mapeo de atributos:**
@@ -56,7 +59,6 @@ Sigue estos pasos para configurar una nueva aplicación OIDC en tu consola de ad
         * `Perfil` (puede incluir nombre, apellido, etc.)
 
     <img src={ssoJumpcloud002} alt="Mapeo de atributos JumpCloud" />
-
 
 7. **Asociar grupos:**
     * Asocia los grupos de usuarios JumpCloud que deben tener acceso a la consola Cloud Temple a través de esta aplicación SSO.

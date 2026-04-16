@@ -49,12 +49,24 @@
   margin-bottom: 5px;
 }
 
-/* Conteneur pour les cartes en grille */
+/* Conteneur pour les cartes en grille — 4 colonnes par défaut */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonnes responsives */
-  gap: 20px; /* Espacement entre les cartes */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   margin: 20px 0;
+}
+
+@media (max-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Style des cartes */
@@ -188,6 +200,69 @@
   text-decoration: underline;
 }
 
+/* ─── Grille de documents contractuels ─────────────────────────────────────── */
+
+.contract-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin: 16px 0 32px 0;
+}
+
+@media (max-width: 768px) {
+  .contract-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contract-card {
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contract-card:nth-child(odd) {
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  padding-right: 32px;
+}
+
+.contract-card:nth-child(even) {
+  padding-left: 32px;
+}
+
+.contract-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  line-height: 1.4;
+}
+
+.contract-card-desc {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.contract-read-link {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.contract-read-link:hover {
+  text-decoration: underline;
+  color: var(--ifm-color-primary-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+
 /* Style global pour les images dans la documentation */
 .markdown img:not(.platform-logo),
 article img:not(.platform-logo) {
@@ -196,3 +271,40 @@ article img:not(.platform-logo) {
   display: block;
   margin: 1rem auto 1rem auto;
 }
+
+/* ─── Footer : blanc pleine largeur ────────────────────────────────────────── */
+
+footer.footer--dark {
+  background-color: var(--ifm-background-surface-color, #f8f8f8) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+footer.footer--dark .footer__title {
+  color: var(--ifm-font-color-base);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+footer.footer--dark .footer__link-item {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+footer.footer--dark a.footer__link-item:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+footer.footer--dark .footer__copyright {
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: 1rem;
+}
+
+footer.footer--dark .footer__copyright a {
+  color: var(--ifm-color-primary);
+}
+/* ─────────────────────────────────────────────────────────────────────────── */

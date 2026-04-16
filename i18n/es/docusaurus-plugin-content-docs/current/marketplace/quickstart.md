@@ -1,8 +1,8 @@
 ---
 title: Guía de inicio
 ---
-import marketplaceCatalog from './images/marketplace_catalog.png'
-import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
+import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
+import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
 # QuickStart para la Marketplace Cloud Temple
 
@@ -63,6 +63,7 @@ For solutions compatible with your OpenIaaS or VMware environments, you can depl
 **Important note:** Direct deployment is only available for images that include your environment in their compatible targets.
 
 **Detailed guides:**
+
 - [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
 - [How to deploy an image on VMware?](tutorials/deploy_vmware)
 
@@ -71,4 +72,5 @@ For solutions compatible with your OpenIaaS or VMware environments, you can depl
 Para soluciones que requieran una conexión directa, puede ponerse en contacto directamente con el socio editor.
 
 **Guía detallada:**
+
 - [Cómo contactar a un socio?](tutorials/contact_partner)

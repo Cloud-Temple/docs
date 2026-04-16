@@ -6,8 +6,8 @@ tags:
   - onboarding
 ---
 
-import ssoJumpcloud001 from './images/sso_jumpcloud_001.png';
-import ssoJumpcloud002 from './images/sso_jumpcloud_002.png';
+import ssoJumpcloud001 from '@site/docs/console/iam/tutorials/images/sso_jumpcloud_001.png';
+import ssoJumpcloud002 from '@site/docs/console/iam/tutorials/images/sso_jumpcloud_002.png';
 
 Questo tutorial guida attraverso la configurazione dell'autenticazione unica (SSO) tra JumpCloud e la console Cloud Temple utilizzando il protocollo OpenID Connect (OIDC).
 
@@ -34,9 +34,11 @@ Seguire queste istruzioni per configurare una nuova applicazione OIDC nella cons
 
 3. **Inserire le URI di reindirizzamento:**
     * Nel campo appropriato (spesso chiamato "URI di reindirizzamento" o "Callback URL"), inserisci l'URI fornita da Cloud Temple. Seguirà generalmente questo formato:
+
         ```
         https://keycloak-shiva.cloud-temple.com/auth/realms/<company specific>/broker/<company specific>/endpoint
         ```
+
         * Sostituisci `<company specific>` con gli identificativi specifici della tua azienda forniti da Cloud Temple.
 
 4. **Scegliere il tipo di autenticazione del client:**
@@ -44,9 +46,11 @@ Seguire queste istruzioni per configurare una nuova applicazione OIDC nella cons
 
 5. **Inserire l'URL di accesso:**
     * Nel campo "URL di accesso", inserisci l'URL che utilizzi per accedere alla tua console Cloud Temple. Ad esempio:
+
         ```
         https://<unique-identifier>.shiva.cloud-temple.com
         ```
+
         * Sostituisci `<unique-identifier>` con l'identificatore unico della tua istanza Cloud Temple.
 
 6. **Configurare il mappaggio degli attributi:**

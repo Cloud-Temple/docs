@@ -126,11 +126,11 @@ The storage is primarily NVMe flash storage dedicated to professional workloads.
 
 To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates robust hardware-based encryption.
 
--   **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
--   **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
--   **Operation**: Encryption is applied at the time data is written to the physical storage medium.
+- __Encryption Type__: Data is encrypted directly on the disks (`Data At Rest`) using the __XTS-AES 256__ algorithm.
+- __Compliance__: This encryption method complies with the __FIPS 140-2__ standard, ensuring a high level of validated security.
+- __Operation__: Encryption is applied at the time data is written to the physical storage medium.
 
-:::warning Attention regarding replication  
+:::warning[Attention regarding replication  ]
 It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly", meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated and secure communication channels.  
 :::
 
@@ -192,9 +192,9 @@ These replication mechanisms are applied to the storage LUNs of your environment
 
 Cloud Temple provides two types of replication mechanisms deployed in an active/passive configuration:
 
-- **Asynchronous replication** (or **'Global Mirror'**): *The **'Global Mirror'** function provides an asynchronous copy process. When a host writes to the primary volume, the confirmation of the I/O completion is received before the write operation finishes on the secondary volume. If a failover operation is initiated, the application must recover and apply all updates that were not confirmed on the secondary volume. If I/O operations on the primary volume are paused briefly, the secondary volume can become an exact match of the primary volume. This function is comparable to a continuous backup process in which the latest updates are always missing. When using Global Mirror for disaster recovery purposes, you must consider how you intend to handle these missing updates.*
+- __Asynchronous replication__ (or __'Global Mirror'__): *The __'Global Mirror'__ function provides an asynchronous copy process. When a host writes to the primary volume, the confirmation of the I/O completion is received before the write operation finishes on the secondary volume. If a failover operation is initiated, the application must recover and apply all updates that were not confirmed on the secondary volume. If I/O operations on the primary volume are paused briefly, the secondary volume can become an exact match of the primary volume. This function is comparable to a continuous backup process in which the latest updates are always missing. When using Global Mirror for disaster recovery purposes, you must consider how you intend to handle these missing updates.*
 
-- **Synchronous replication** (or **'Metro Mirror'**): *The **'Metro Mirror'** function is a type of remote copy that creates a synchronous copy of data from a primary volume to a secondary volume. With synchronous copies, host applications write to the primary volume but do not receive confirmation that the write operation is complete until the data has been written to the secondary volume. This ensures that both volumes contain identical data once the copy operation is complete. After the initial copy operation finishes, the Metro Mirror function continuously maintains a fully synchronized copy of the source data at the target site. **As of January 1, 2024, the 'Metro Mirror' function is no longer available for sale.***
+- __Synchronous replication__ (or __'Metro Mirror'__): *The __'Metro Mirror'__ function is a type of remote copy that creates a synchronous copy of data from a primary volume to a secondary volume. With synchronous copies, host applications write to the primary volume but do not receive confirmation that the write operation is complete until the data has been written to the secondary volume. This ensures that both volumes contain identical data once the copy operation is complete. After the initial copy operation finishes, the Metro Mirror function continuously maintains a fully synchronized copy of the source data at the target site. __As of January 1, 2024, the 'Metro Mirror' function is no longer available for sale.__*
 
 A site is then designated as "active" (or "primary") and another as "passive" (or "standby"). The business continuity plan is activated in the event of a disaster or during a PRA test. The passive site then takes over from the active site.
 
@@ -281,7 +281,7 @@ Also keep in mind that the first action the hypervisor performs when starting a 
 
 Each compute node is delivered with 128 GB of memory enabled at the __'Cpool'__ level, but physically has access to the full amount of allocatable memory.
 
-For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation upon activation of the _*'Cpool'*_ will be 3 × 128 GB = 384 GB of RAM.
+For example, in a cluster of three hosts of type ```vmware:standard:v2```, the RAM reservation upon activation of the __'Cpool'__ will be 3 × 128 GB = 384 GB of RAM.
 You can extend it up to a maximum of 3 × 384 GB = 1,152 GB of memory.
 
     Minimum memory for a 'Cpool' = number of hosts × 128 GB of memory  
@@ -319,6 +319,7 @@ You can configure the following rules via the rule management interface:
   For example, you would not want both of your Active Directory servers located on the same hypervisor.
 
 When creating a rule, you define:
+
 - The rule type (affinity / anti-affinity),
 - The rule name,
 - The activation status (__'Status'__),

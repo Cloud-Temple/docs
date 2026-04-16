@@ -32,6 +32,12 @@ Thanks to the **Console**, you can monitor and operate your cloud infrastructure
     <p>Monitor and analyze performance metrics for your resources.</p>
     <a href="console/metrics/concepts" class="card-link">Discover the menus &rarr;</a>
   </div>
+
+  <div class="card">
+    <h3>Cost Manager</h3>
+    <p>Track and analyze your cloud resource consumption by product and by service.</p>
+    <a href="console/billing/concepts" class="card-link">Access the module &rarr;</a>
+  </div>
 </div>
 
 ### Management of Your Cloud Temple Products and Services

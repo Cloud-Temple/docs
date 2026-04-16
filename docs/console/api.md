@@ -48,11 +48,11 @@ Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
 <img src={ShivaProfil005} />
 
-:::info Cycle de vie du token d'authentification
-Lorsque vous utilisez votre **Personal Access Token (PAT)** pour vous authentifier auprès de l'API, vous recevez en retour un token d'accès. Il est important de noter que ce token d'accès est un **JSON Web Token (JWT)** avec une durée de vie limitée.
+:::info[Cycle de vie du token d'authentification]
+Lorsque vous utilisez votre __Personal Access Token (PAT)__ pour vous authentifier auprès de l'API, vous recevez en retour un token d'accès. Il est important de noter que ce token d'accès est un __JSON Web Token (JWT)__ avec une durée de vie limitée.
 
--   **Durée de vie** : Chaque token JWT est valide pour une durée de **5 minutes**.
--   **Vérification** : Vous pouvez vérifier la date d'émission (`iat`) et la date d'expiration (`exp`) de votre token en le décodant. Des outils en ligne comme [jwt.io](https://jwt.io) vous permettent de le faire facilement.
+- __Durée de vie__ : Chaque token JWT est valide pour une durée de __5 minutes__.
+- __Vérification__ : Vous pouvez vérifier la date d'émission (`iat`) et la date d'expiration (`exp`) de votre token en le décodant. Des outils en ligne comme [jwt.io](https://jwt.io) vous permettent de le faire facilement.
 
 Une fois le token expiré, vous devrez vous ré-authentifier avec votre PAT pour en obtenir un nouveau. Il est donc recommandé de gérer ce cycle de vie dans vos scripts et applications en prévoyant un renouvellement automatique du token.
 :::
@@ -107,6 +107,7 @@ __waiting__, état avant que l'opération n'ait commencé :
 ```
     waiting: {}
 ```
+
 __running__, état lorsque l'opération est en cours :
 
 ```
@@ -116,6 +117,7 @@ __running__, état lorsque l'opération est en cours :
     progression: number;
     };
 ```
+
 __failed__, état si l'opération a échoué :
 
 ```
@@ -125,6 +127,7 @@ __failed__, état si l'opération a échoué :
     reason: string;
     };
 ```
+
 __completed__, état si l'opération est terminée :
 
 ```

@@ -4,9 +4,9 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-import shivaCatalogsCharger from './images/shiva_catalogs_charger.png';
-import shivaCatalogsAjout from './images/shiva_catalogs_ajout.png';
-import shivaCatalogsDeployer from './images/shiva_catalogs_deployer.png';
+import shivaCatalogsCharger from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_charger.png';
+import shivaCatalogsAjout from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_ajout.png';
+import shivaCatalogsDeployer from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_deployer.png';
 
 This guide will enable you to deploy your first instances on the Cloud of Trust in less than 5 minutes.
 
@@ -19,9 +19,10 @@ This guide will enable you to deploy your first instances on the Cloud of Trust 
 
 This guide walks you through the steps to deploy a virtual machine from a Template in the Console.
 
-In the Console portal, go to the **"Trusted Cloud"** tab, then **"Catalogs"**. Before you can deploy a Template, it must first be uploaded to your private catalog, under the **"My Catalog"** tab.
+In the Console portal, go to the __"Trusted Cloud"__ tab, then __"Catalogs"__. Before you can deploy a Template, it must first be uploaded to your private catalog, under the __"My Catalog"__ tab.
 
 To do this, you have two options:  
+
 - Import your own Template directly into your private catalog, or  
 - Import a template from Cloud Temple's public catalog.
 

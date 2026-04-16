@@ -76,11 +76,11 @@ El almacenamiento en bloque distribuido, basado en **IBM Spectrum Virtualize**, 
 
 Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraestructura de almacenamiento en bloques integra un cifrado hardware robusto.
 
--   **Tipo de cifrado**: Los datos se cifran directamente en los discos (`Data At Rest`) utilizando el algoritmo **XTS-AES 256**.
--   **Cumplimiento**: Este método de cifrado cumple con la norma **FIPS 140-2**, asegurando un alto nivel de seguridad validado.
--   **Funcionamiento**: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
+- **Tipo de cifrado**: Los datos se cifran directamente en los discos (`Data At Rest`) utilizando el algoritmo **XTS-AES 256**.
+- **Cumplimiento**: Este método de cifrado cumple con la norma **FIPS 140-2**, asegurando un alto nivel de seguridad validado.
+- **Funcionamiento**: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
 
-:::warning Punto de atención sobre la replicación
+:::warning[Punto de atención sobre la replicación]
 Es importante destacar que este cifrado protege los datos almacenados en los discos. No está activo "en tiempo real" (on-the-fly), lo que significa que los datos no se cifran durante las operaciones de replicación de almacenamiento entre las zonas de disponibilidad. La seguridad de los transferencias se garantiza mediante canales de comunicación dedicados y seguros.
 :::
 

@@ -22,11 +22,11 @@ You can adjust the local preference of a prefix within the Internet Cloud Temple
 
 | BGP Community | Priority | Local Preference |
 |:--------------|:---------|:----------------:|
-| 33930:40010 | Low priority | 10 | 
-| *Default* | Cloud Temple backbone (default) | 100 | 
-| 33930:40150 | Medium priority | 150 | 
-| 33930:40200 | High priority | 200 | 
-| 33930:40250 | Maximum priority | 250 | 
+| 33930:40010 | Low priority | 10 |
+| *Default* | Cloud Temple backbone (default) | 100 |
+| 33930:40150 | Medium priority | 150 |
+| 33930:40200 | High priority | 200 |
+| 33930:40250 | Maximum priority | 250 |
 
 **Note:** The higher the local preference value, the more preferred the path is in BGP routing decisions. By default, without a specific community, your prefixes use the standard local preference of 100.
 

@@ -142,11 +142,11 @@ Les disques sont utilisés par les baies de stockage en [__'Distributed Raid 6'_
 
 Pour garantir la confidentialité de vos données au repos, l'ensemble de notre infrastructure de stockage bloc intègre un chiffrement matériel robuste.
 
--   **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
--   **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
--   **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
+- __Type de Chiffrement__ : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme __XTS-AES 256__.
+- __Conformité__ : Cette méthode de chiffrement est conforme à la norme __FIPS 140-2__, assurant un haut niveau de sécurité validé.
+- __Fonctionnement__ : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
 
-:::warning Point d'attention sur la réplication
+:::warning[Point d'attention sur la réplication]
 Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
 :::
 

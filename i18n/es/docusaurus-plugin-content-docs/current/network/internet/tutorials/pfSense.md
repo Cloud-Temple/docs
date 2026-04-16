@@ -4,17 +4,17 @@ tags:
   - internet
   - tutoriales
 ---
-import pfSenseWebui from '../images/pfsense_webui.png';
-import pfSenseHomePage from '../images/pfsense_home_page.png';
-import pfSenseBgpRule from '../images/pfsense_bgp_rule.png';
-import pfSenseFrrPackage from '../images/pfsense_frr_package.png';
-import pfSenseGeneralConf from '../images/pfsense_general_conf.png';
-import pfSenseNeighborConf from '../images/pfsense_neighbor_conf.png';
-import bgpBasicOptions from '../images/bgp_basic_options.png';
-import ebgpConf from '../images/ebgp_conf.png';
-import routeServerNeighbor from '../images/route_server_neighbor.png';
-import neighborsOverview from '../images/neighbors_overview.png';
-import pfSenseBgpStatus from '../images/pfsense_bgp_status.png';
+import pfSenseWebui from '@site/docs/network/internet/images/pfsense_webui.png';
+import pfSenseHomePage from '@site/docs/network/internet/images/pfsense_home_page.png';
+import pfSenseBgpRule from '@site/docs/network/internet/images/pfsense_bgp_rule.png';
+import pfSenseFrrPackage from '@site/docs/network/internet/images/pfsense_frr_package.png';
+import pfSenseGeneralConf from '@site/docs/network/internet/images/pfsense_general_conf.png';
+import pfSenseNeighborConf from '@site/docs/network/internet/images/pfsense_neighbor_conf.png';
+import bgpBasicOptions from '@site/docs/network/internet/images/bgp_basic_options.png';
+import ebgpConf from '@site/docs/network/internet/images/ebgp_conf.png';
+import routeServerNeighbor from '@site/docs/network/internet/images/route_server_neighbor.png';
+import neighborsOverview from '@site/docs/network/internet/images/neighbors_overview.png';
+import pfSenseBgpStatus from '@site/docs/network/internet/images/pfsense_bgp_status.png';
 
 Esta guía le ayudará a desplegar su __firewall open source pfSense__ en la nube de Confianza en solo unos minutos.
 
@@ -72,12 +72,13 @@ Una vez que las dos máquinas virtuales estén correctamente instaladas, la segu
 <img src={pfSenseWebui} />
 
 - Inicio de sesión por defecto:
-    - nombre de usuario: *admin*
-    - contraseña: *pfsense* (no olvide cambiar la contraseña predeterminada)
+  - nombre de usuario: *admin*
+  - contraseña: *pfsense* (no olvide cambiar la contraseña predeterminada)
 
 <img src={pfSenseHomePage} />
 
 ### Configuración del firewall  
+
 Esta etapa consiste en configurar los vecinos BGP del FW.
 
 - En primer lugar, asegúrese de permitir el tráfico BGP mediante TCP 179 en __'Firewall > Rules'__:
@@ -94,9 +95,9 @@ Esta etapa consiste en configurar los vecinos BGP del FW.
 
 ### Configuración de los vecinos BGP
 
-En la sección *Neighbors*, haga clic en **+Add** para comenzar a crear sus vecinos BGP.
+En la sección *Neighbors*, haga clic en __+Add__ para comenzar a crear sus vecinos BGP.
 
-- Para cada vecino: complete su dirección IP en **'Opciones generales > Nombre/dirección'**:
+- Para cada vecino: complete su dirección IP en __'Opciones generales > Nombre/dirección'__:
 
 <img src={pfSenseNeighborConf} />
 
@@ -108,11 +109,11 @@ En la sección *Neighbors*, haga clic en **+Add** para comenzar a crear sus veci
 
 <img src={ebgpConf} />
 
-- Marque la casilla que define el tipo de su vecino. En nuestro caso, se trata de un **servidor de rutas**:
+- Marque la casilla que define el tipo de su vecino. En nuestro caso, se trata de un __servidor de rutas__:
 
 <img src={routeServerNeighbor} />
 
-- Finalmente, no olvide guardar sus modificaciones haciendo clic en **'Guardar'**:
+- Finalmente, no olvide guardar sus modificaciones haciendo clic en __'Guardar'__:
 
 <img src={neighborsOverview} />
 

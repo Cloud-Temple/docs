@@ -30,7 +30,7 @@ Une fois l'entreprise renseignée, veuillez cliquer sur __'Se connecter'__.
 <img src={shivaLogin} />
 
 Vous allez ensuite être redirigé vers une page vous demandant de vous authentifier.
-Une fois connecté, vous arrivez sur cette page. 
+Une fois connecté, vous arrivez sur cette page.
 
 Vous y trouverez l'ensemble des métriques concernant les produits souscrits sur votre périmètre. En cas de problème(s) sur vos produits VMware et/ou OpenIaaS, des alertes seront visibles, la couleur est liée à leur importance.
 
@@ -154,7 +154,7 @@ La page des activités est destinée à fournir une visibilité complète sur to
 
 #### __Onglets__
 
- + **Récents**
+- __Récents__
 
 - Opérations récentes
 - Suivi en temps réel
@@ -166,7 +166,7 @@ La page des activités est destinée à fournir une visibilité complète sur to
 
 #### __Informations Affichées__
 
- + Date et Heure
+- Date et Heure
 
 - Type d'opération
   - L'état
@@ -175,7 +175,7 @@ La page des activités est destinée à fournir une visibilité complète sur to
 
 #### __Fonctionnalité__
 
- + Recherche/Filtrage pour opérations spécifiques
+- Recherche/Filtrage pour opérations spécifiques
 
 ### __Utilisation__
 

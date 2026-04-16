@@ -4,7 +4,7 @@ title : Déployer une Machine Virtuelle (VM) avec KubeVirt
 
 ## Objectifs
 
-Ce tutoriel a pour objectif de fournir des étapes claires pour déployer et configurer des machines virtuelles (VM) dans **KubeVirt** sur votre cluster OpenShift. 
+Ce tutoriel a pour objectif de fournir des étapes claires pour déployer et configurer des machines virtuelles (VM) dans **KubeVirt** sur votre cluster OpenShift.
 
 Deux scénarios seront abordés :
 

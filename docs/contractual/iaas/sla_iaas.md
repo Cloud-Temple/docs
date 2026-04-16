@@ -1,5 +1,6 @@
 ---
 title: Convention de Service SecNumCloud IaaS
+slug: /contractual/iaas/sla
 ---
 
 

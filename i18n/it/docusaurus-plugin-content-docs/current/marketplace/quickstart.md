@@ -1,8 +1,8 @@
 ---
 title: Guida introduttiva
 ---
-import marketplaceCatalog from './images/marketplace_catalog.png'
-import marketplaceSolutionDetails from './images/marketplace_solution_details.png'
+import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
+import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
 # Guida rapida per la Marketplace Cloud Temple
 
@@ -61,6 +61,7 @@ Per le soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi effettu
 **Nota importante:** Il deployment diretto è disponibile solo per le immagini che includono il tuo ambiente tra i destinatari compatibili.
 
 **Guide dettagliate:**
+
 - [Come distribuire un'immagine su OpenIaaS?](tutorials/deploy_openiaas)
 - [Come distribuire un'immagine su VMware?](tutorials/deploy_vmware)
 
@@ -69,4 +70,5 @@ Per le soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi effettu
 Per le soluzioni che richiedono un collegamento diretto, è possibile contattare direttamente il partner editore.
 
 **Guida dettagliata:**
+
 - [Come contattare un partner?](tutorials/contact_partner)

@@ -53,9 +53,9 @@ Billing for public IP addresses is based on unit of work (UoW) and starts as soo
 
 ## IPv4 Blocks
 
-IPv4 addresses are delivered __within available stock limits__ for our customers, per IP address.
+IPv4 addresses are delivered **within available stock limits** for our customers, per IP address.
 
-To order IPv4 addresses, go to the __*'Public IPs'*__ menu under Networks in the green sidebar on the left, and click the __*"Order IPv4 addresses or IPv6 prefixes"*__ button.
+To order IPv4 addresses, go to the ***'Public IPs'*** menu under Networks in the green sidebar on the left, and click the ***"Order IPv4 addresses or IPv6 prefixes"*** button.
 
 You can also view the address blocks assigned to you within the same menu.
 
@@ -65,7 +65,7 @@ You can also view the address blocks assigned to you within the same menu.
 
 ## IPv6 Blocks
 
-IPv6 prefix allocation is performed from the __*'Public IPs'*__ menu under Networks in the green sidebar, using the __*"Order IPv4 addresses or IPv6 prefixes"*__ button.
+IPv6 prefix allocation is performed from the ***'Public IPs'*** menu under Networks in the green sidebar, using the ***"Order IPv4 addresses or IPv6 prefixes"*** button.
 
 You can also view the prefixes assigned to you within the same menu.
 
@@ -101,8 +101,8 @@ Billing is based on the 95th percentile over the billing period, typically one m
 | ----------------------------------------- | -------- | --------------------------------------- |
 | Network - Reserved Internet Bandwidth     | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
-__*Note:*__
-*There is no __volume-based billing__ of the type __'egress fees'__. You are charged only for the bandwidth reservation.__*
+***Note:***
+*There is no **volume-based billing** of the type **'egress fees'**. You are charged only for the bandwidth reservation.__*
 
 ## Availability by Offer
 

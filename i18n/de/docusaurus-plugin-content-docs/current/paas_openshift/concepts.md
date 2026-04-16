@@ -1,13 +1,13 @@
 ---
 title: Konzepte
 ---
-import oshiftOffert from './images/oshift_offert.png'
+import oshiftOffert from '@site/docs/paas_openshift/images/oshift_offert.png'
 
 ## Introduction to Red Hat OpenShift
 
 **Red Hat OpenShift** is an enterprise container platform that automates the deployment, management, and scaling of containerized applications. It is a platform built around Docker, a containerization system that enables packaging an application and its dependencies into a virtual container, and Kubernetes, a container orchestration system that manages the execution and coordination of containers across a cluster of servers.
 
-### Hauptfunktionen von Red Hat OpenShift:
+### Hauptfunktionen von Red Hat OpenShift
 
 - **Automatisiertes Bereitstellen und Management:** OpenShift vereinfacht den Prozess der Anwendungsbereitstellung, indem er Routineaufgaben wie Skalierung, Gesundheitsüberwachung und Lebenszyklusverwaltung von Containern automatisiert. Es bietet eine integrierte Umgebung für Entwicklung, Test und Produktion von Anwendungen.
 
@@ -19,7 +19,7 @@ import oshiftOffert from './images/oshift_offert.png'
 
 - **Erweiterte Sicherheit:** Die Plattform ist mit integrierter Sicherheit ausgelegt und bietet Rollenbasierten Zugriff, Aufgaben-Trennung sowie automatisierte Verwaltung von Geheimnissen, um Anwendungen und Daten zu schützen.
 
-### Vorteile von Red Hat OpenShift:
+### Vorteile von Red Hat OpenShift
 
 - **Flexibilität:** Entwickler können die Tools, Sprachen und Frameworks ihrer Wahl verwenden.
 - **Betriebseffizienz:** OpenShift optimiert die Ressourcennutzung, verkürzt die Time-to-Market und steigert die Produktivität der Entwickler.
@@ -32,7 +32,7 @@ Red Hat OpenShift ist eine umfassende Lösung für die Entwicklung, Bereitstellu
 
 Red Hat OpenShift Data Foundation (ODF) is an integrated storage and data management solution designed to seamlessly operate within the OpenShift ecosystem. It provides a persistent, secure, and highly available data infrastructure for containerized applications, supporting modern container- and microservices-oriented development environments. ODF is engineered to simplify and automate data management in hybrid and multi-cloud environments, delivering a robust foundation for mission-critical enterprise applications.
 
-#### Key Features of OpenShift Data Foundation:
+#### Key Features of OpenShift Data Foundation
 
 - **Persistent Storage:** ODF provides a persistent storage layer for containers, essential for enterprise applications such as databases, content management systems, and applications requiring stateful operations.
 
@@ -43,10 +43,10 @@ Red Hat OpenShift Data Foundation (ODF) is an integrated storage and data manage
 - **High Availability and Resilience:** ODF leverages data replication and snapshotting to ensure high availability and data durability—critical for maintaining business continuity.
 
 - **Data Security:** The solution includes advanced security features such as encryption at rest and in transit, along with customizable security and compliance policies. Our SecNumCloud implementation ensures multi-layered protection:
-    - **Encryption at Rest:** The persistent storage provided by OpenShift Data Foundation relies on our underlying block storage infrastructure. As such, all data is encrypted at rest using the **XTS-AES 256** algorithm, compliant with the **FIPS 140-2** standard.
-    - **Encryption in Transit:** All access to the platform—including the API, web console, and application traffic via routes—is systematically secured and encrypted using the **TLS** protocol.
+  - **Encryption at Rest:** The persistent storage provided by OpenShift Data Foundation relies on our underlying block storage infrastructure. As such, all data is encrypted at rest using the **XTS-AES 256** algorithm, compliant with the **FIPS 140-2** standard.
+  - **Encryption in Transit:** All access to the platform—including the API, web console, and application traffic via routes—is systematically secured and encrypted using the **TLS** protocol.
 
-#### Benefits of OpenShift Data Foundation:
+#### Benefits of OpenShift Data Foundation
 
 - **Operational Flexibility:** ODF enables organizations to efficiently manage their data across distributed environments, providing the flexibility needed to meet the evolving demands of modern applications.
 
@@ -128,7 +128,7 @@ Die Abrechnung erfolgt nach Anzahl der Worker Nodes.
 
 **Hinweis**: *Bitte beachten Sie, dass der erforderliche Speicherplatz für die ordnungsgemäße Funktion Ihrer Sicherung auf dem Zielumfeld (in der Regel S3-Speicher) vorab bereitzustellen ist. Dieser Speicherplatz ist nicht in den OpenShift- oder Kasten-Einheiten enthalten.*
 
-**(1)** _OADP ist nicht nativ im Cluster installiert. Nur Kasten ist aktiviert für die Verwaltung von Migrationen, Sicherungen und Wiederherstellungen._
+**(1)** *OADP ist nicht nativ im Cluster installiert. Nur Kasten ist aktiviert für die Verwaltung von Migrationen, Sicherungen und Wiederherstellungen.*
 
 ## Load Balancers
 

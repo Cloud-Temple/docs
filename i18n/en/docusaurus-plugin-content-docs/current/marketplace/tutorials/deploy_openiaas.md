@@ -1,8 +1,8 @@
 ---
 title: Deploy an image on OpenIaaS
 ---
-import marketplaceOpeniaasDeployment from '../images/marketplace_openiaas_deploy.png'
-import marketplaceOpeniaasConfig from '../images/marketplace_openiaas_config.png'
+import marketplaceOpeniaasDeployment from '@site/docs/marketplace/images/marketplace_openiaas_deploy.png'
+import marketplaceOpeniaasConfig from '@site/docs/marketplace/images/marketplace_openiaas_config.png'
 
 This tutorial guides you through deploying a virtual machine image from the Cloud Temple Marketplace to your OpenIaaS environment.
 
@@ -22,6 +22,7 @@ From the detail page of a compatible OpenIaaS solution, select your target envir
 ### 2. Virtual Machine Configuration
 
 Set up the basic parameters of your virtual machine:
+
 - **VM Name**
 - **Resources** (CPU, RAM)
 - **Storage**
@@ -42,5 +43,6 @@ You can also access Marketplace images directly from the **Virtual Machines** pa
 ## Deployment Tracking
 
 Once the deployment is initiated:
+
 - Monitor the progress from the OpenIaaS console
 - The VM will appear in your list of virtual machines

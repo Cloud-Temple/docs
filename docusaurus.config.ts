@@ -184,13 +184,26 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Contractuel',
+          items: [
+            {
+              label: 'Documents contractuels',
+              to: '/contracts',
+            },
+            {
+              label: 'Modèle de responsabilité partagée',
+              to: '/shared-responsibility',
+            },
+          ],
+        },
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/governance">Contracts</a> |
-        <a href="/privacy">Privacy Policy</a>
+        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contrats</a> |
+        <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Politique de confidentialité</a>
         <br />
-        Copyright © ${new Date().getFullYear()} Cloud Temple.
+        Copyright © 2026 Cloud Temple.
       </div>
     `,
     },

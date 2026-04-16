@@ -1,18 +1,18 @@
 ---
 title: Guía rápida
 ---
-import shivaLogin from './images/shiva_login.png'
-import shivaHome from './images/shiva_home.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaSupport from './images/shiva_support.png'
-import shivaSupport_01 from './images/shiva_support_01.png'
-import shivaSupport_02 from './images/shiva_support_02.png'
-import shivaSupport_03 from './images/shiva_support_03.png'
-import shivaOnboard_007 from './images/shiva_onboard_007.png'
-import shivaLogs from './images/shiva_logs.png'
-import shivaOnboard_009 from './images/shiva_onboard_009.png'
-import shivaOnboard_008 from './images/shiva_onboard_008.png'
-import shivaSupportCriticities from './images/shiva_incident_criticities.png'
+import shivaLogin from '@site/docs/console/images/shiva_login.png'
+import shivaHome from '@site/docs/console/images/shiva_home.png'
+import shivaProfil_006 from '@site/docs/console/images/shiva_profil_006.png'
+import shivaSupport from '@site/docs/console/images/shiva_support.png'
+import shivaSupport_01 from '@site/docs/console/images/shiva_support_01.png'
+import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
+import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
+import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
+import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
+import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
+import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 
 ## Requis
 
@@ -24,7 +24,7 @@ import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 La consola está disponible a través de la siguiente URL: [Console](https://shiva.cloud-temple.com) o bien desde la URL directa que le fue proporcionada por correo electrónico.
 
-La primera página le permite seleccionar la [organización](iam/concepts.md#organisations) en la que fue creado su usuario.  
+La primera página le permite seleccionar la [organización](iam/concepts.md#organizaciones) en la que fue creado su usuario.  
 Una vez que haya especificado la empresa, haga clic en __'Conectarse'__.
 
 <img src={shivaLogin} />
@@ -44,7 +44,7 @@ El cambio de idioma de un usuario debe realizarse en su __'Perfil'__, en la part
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza para cada inquilino [Tenant](iam/concepts.md#tenant).
+La configuración se realiza para cada inquilino [Tenant](iam/concepts.md#management-of-owners-on-a-tenant).
 
 ## Acceso al soporte técnico
 
@@ -154,7 +154,7 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 
 #### __Pestañas__
 
- + **Recientes**
+- __Recientes__
 
 - Operaciones recientes
 - Seguimiento en tiempo real
@@ -166,7 +166,7 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 
 #### __Information Displayed__
 
- + Date and Time
+- Date and Time
 
 - Operation Type
   - Status
@@ -175,7 +175,7 @@ La página de actividades tiene como objetivo proporcionar una visibilidad compl
 
 #### __Funcionalidad__
 
- + Búsqueda/Filtrado para operaciones específicas
+- Búsqueda/Filtrado para operaciones específicas
 
 ### __Uso__
 

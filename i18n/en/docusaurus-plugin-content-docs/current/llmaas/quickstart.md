@@ -113,7 +113,7 @@ For your first test, use one of these recommended models:
 
 Check the [complete model catalog](./models) for more options.
 
-:::tip Tip for Qwen models
+:::tip[Tip for Qwen models]
 Some models from the **Qwen** family (like `qwen3:14b` or `qwen3:30b-a3b`) have an advanced reasoning mode. You can force its activation by adding `/think` at the beginning of your prompt, or disable it for a more direct and faster response with `/nothink`.
 :::
 
@@ -133,26 +133,33 @@ For starters, use these parameters:
 ## Common Error Handling
 
 ### 401 Error - Unauthorized
+
 ```json
 {"error": {"message": "Invalid API key", "type": "invalid_request_error"}}
 ```
+
 **Solution**: Check your API key in the Cloud Temple Console.
 
 ### 400 Error - Model Not Found
+
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
+
 **Solution** : Use /v1/models to list available models.
 
 ### Error 429 - Rate Limit
+
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
+
 **Solution** : Wait a few seconds and try again.
 
 ## Usage Monitoring
 
 In the Cloud Temple Console, you can:
+
 - View your requests in real-time
 - Check your token consumption
 - Set up cost alerts
@@ -173,6 +180,7 @@ This section provides simple and self-contained Python scripts to illustrate spe
 "Tool Calling" (or function call) allows a language model to request the execution of a function you have defined in your code. This is a powerful feature to connect LLMs to external tools (APIs, databases, etc.).
 
 The flow is as follows:
+
 1. The user asks a question that requires a tool (e.g., "What's the weather like?").
 2. You send the question and the list of available tools to the API.
 3. The model, instead of answering directly, returns a `tool_calls` request asking to execute a specific function with certain arguments.
@@ -184,17 +192,19 @@ The flow is as follows:
 
 For this example, create a directory `simple_tool_calling` with the following files:
 
--   `test_tool_calling.py`: The main script.
--   `requirements.txt`: Python dependencies.
--   `.env`: A template for your configuration file.
+- `test_tool_calling.py`: The main script.
+- `requirements.txt`: Python dependencies.
+- `.env`: A template for your configuration file.
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
 ```
 
 **`.env`**
+
 ```env
 YOUR_API_KEY=your_api_key_here
 
@@ -420,13 +430,16 @@ if __name__ == "__main__":
 
 **Usage**
 
-1.  **Install dependencies:**
+1. **Install dependencies:**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Configure your API key:**
+
+2. **Configure your API key:**
     Copy `tests/llmaas/.env.example` to `tests/llmaas/.env` and replace `"your_api_key_here"` with your LLMaaS API key.
-3.  **Run the script:**
+3. **Run the script:**
+
     ```bash
     python tests/llmaas/test_tool_calling.py
     ```
@@ -439,12 +452,13 @@ Multimodal models can analyze both text and images. This example shows how to se
 
 Create a directory `simple_vision` with the following files:
 
--   `test_vision.py`: The main script.
--   `requirements.txt`: Dependencies (including `Pillow` to generate the image).
--   `.env.example`: The configuration template.
--   `image_example.png`: The image to analyze (the script will generate it for you if it's missing).
+- `test_vision.py`: The main script.
+- `requirements.txt`: Dependencies (including `Pillow` to generate the image).
+- `.env.example`: The configuration template.
+- `image_example.png`: The image to analyze (the script will generate it for you if it's missing).
 
 **`requirements.txt`**
+
 ```txt
 httpx
 python-dotenv
@@ -452,6 +466,7 @@ Pillow
 ```
 
 **`.env.example`**
+
 ```env
 
 
@@ -609,16 +624,20 @@ if __name__ == "__main__":
 
 **Usage**
 
-1.  **Install dependencies:**
+1. **Install dependencies:**
+
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-2.  **Configure your API key:**
+
+2. **Configure your API key:**
     Copy `tests/llmaas/.env.example` to `tests/llmaas/.env` and replace `"votre_cle_api_ici"` with your LLMaaS API key.
-3.  **Run the script:**
+3. **Run the script:**
+
     ```bash
     python tests/llmaas/test_vision.py
     ```
+
     The script will automatically generate an `image_example.png` file if it doesn't exist.
 
 ## Next Steps
@@ -633,6 +652,7 @@ Once your first test is successful:
 ## Support
 
 In case of an issue:
+
 - Consult the [complete API documentation](./api)
 - Check the service status in the Console
 - Contact support via the Cloud Temple Console

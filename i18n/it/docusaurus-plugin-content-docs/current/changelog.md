@@ -5,6 +5,26 @@ sidebar_position: 2
 
 # Registro delle Modifiche
 
+### 15 aprile 2026: Nuova documentazione VM instances (Cloud Public)
+
+- **VM instances**: Pubblicazione della documentazione iniziale del servizio VM instances (in anteprima), la nuova offerta di macchine virtuali condivise di Cloud Temple. La documentazione copre la panoramica del servizio, i concetti tecnici (classi di servizio Development/General Purpose/Performance, flavor predefiniti e personalizzati, storage, rete VPC, backup) e una guida introduttiva completa. Il servizio è organizzato sotto una nuova categoria **Cloud Public** nella navigazione.
+
+
+### 15 aprile 2026: Miglioramento della documentazione IaaS VMware — metriche del cluster
+
+- **IaaS VMware**: Aggiunta documentazione dettagliata sulle metriche visualizzate nella vista di un cluster VMware dalla Console Cloud Temple. Copre i tre grafici di memoria del cluster: **Memoria allocata** (quantità totale di memoria assegnata alle VM), **Memoria consumata** (memoria fisica attivamente utilizzata dalle VM) e **Allocazione nel caso peggiore** (proiezione del consumo massimo simultaneo), con una descrizione precisa di ciò che rappresenta ogni indicatore per anticipare le esigenze di risorse.
+
+### 15 aprile 2026: Documentazione Managed MariaDB, Managed PostgreSQL e correzioni multilingua
+
+- **Managed MariaDB**: Prima pubblicazione della documentazione del servizio Managed MariaDB (anteprima): panoramica del servizio, concetti tecnici (architetture StandAlone e Distributed), guida rapida.
+- **Managed PostgreSQL**: Prima pubblicazione della documentazione del servizio Managed PostgreSQL (anteprima): panoramica del servizio, concetti tecnici, guida rapida.
+- **Correzioni multilingua (immagini)**: Correzione dei riferimenti alle immagini nelle traduzioni delle sezioni Managed Kubernetes e Managed MariaDB per tutte le lingue (EN, DE, ES, IT) — conversione dei percorsi relativi `./images/` in percorsi assoluti `@site/docs/...` per una corretta visualizzazione in tutte le lingue.
+- **Correzione link interrotti**: Risoluzione di diversi link interrotti: riferimenti alle licenze LLMaaS, link alla console nel tutorial rclone (OSS), link IAM nella documentazione di rete (EN), link relativi nella sezione Terraform (EN).
+
+### 15 aprile 2026: Nuovo modulo Gestore dei costi
+
+- **Console (Gestore dei costi)**: Aggiunta la documentazione completa del nuovo modulo di monitoraggio del consumo accessibile dalla Console Cloud Temple. Copre il dashboard, il consumo globale (con proiezione di fine mese), la ripartizione per prodotto e servizio, i dettagli di fatturazione riga per riga e il catalogo dei prezzi.
+
 ### 26 marzo 2026: Aggiornamento dell'elenco dei sub-responsabili (DPA)
 
 - **Contrattuale**: Aggiornamento dell'Accordo sul Trattamento dei Dati (DPA) - revisione dell'elenco dei sub-responsabili (rimozione di Microsoft Azure e Amazon Web Services, modifica dell'attività per Iron Mountain) e aggiunta della data di autorizzazione. Propagazione delle modifiche in inglese, tedesco, spagnolo e italiano.
@@ -105,14 +125,14 @@ sidebar_position: 2
 ### Juillet 2025 : Nouveautés et mises à jour majeures
 
 - **Stockage Objet (OSS)** :
-    - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
-    - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
+  - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
+  - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
 - **IaaS OpenSource** :
-    - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
+  - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
 - **Console** :
-    - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
+  - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
 - **Réseau** :
-    - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
+  - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
 
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 

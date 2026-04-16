@@ -1,18 +1,18 @@
 ---
 title: Tutorial
 ---
-import sessions from './images/sessions.png'
-import sessions2 from './images/sessions2.png'
-import appliances from './images/appliances.png'
-import ouvrirAppliance from './images/ouvrir_appliance.png'
-import creerSession from './images/creer_session.png'
-import creerSession2 from './images/creer_session2.png'
-import creerSession3 from './images/creer_session3.png'
-import ouvrirSession from './images/ouvrir_session.png'
-import ouvrirSession2 from './images/ouvrir_session2.png'
-import modifierSession from './images/modifier_session.png'
-import modifierSession2 from './images/modifier_session2.png'
-import supprimerSession from './images/supprimer_session.png'
+import sessions from '@site/docs/bastion/images/sessions.png'
+import sessions2 from '@site/docs/bastion/images/sessions2.png'
+import appliances from '@site/docs/bastion/images/appliances.png'
+import ouvrirAppliance from '@site/docs/bastion/images/ouvrir_appliance.png'
+import creerSession from '@site/docs/bastion/images/creer_session.png'
+import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
+import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
+import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
+import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
+import modifierSession from '@site/docs/bastion/images/modifier_session.png'
+import modifierSession2 from '@site/docs/bastion/images/modifier_session2.png'
+import supprimerSession from '@site/docs/bastion/images/supprimer_session.png'
 
 Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dalla Console.
 

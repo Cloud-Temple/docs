@@ -51,7 +51,7 @@ El proveedor se autentica ante las APIs de Cloud Temple utilizando:
 
 Estos identificadores se generan desde la Consola de Cloud Temple y permiten al proveedor realizar operaciones en su nombre.
 
-:::info Buenas prácticas
+:::info[Buenas prácticas]
     Almacene sus credenciales en variables de entorno o en un gestor de secretos, nunca directamente en el código.
 :::
 
@@ -237,6 +237,7 @@ terraform init
 ```
 
 Este comando:
+
 - Descarga el provider desde el Terraform Registry
 - Inicializa el backend (si está configurado)
 - Crea el directorio `.terraform/`
@@ -250,6 +251,7 @@ terraform plan
 ```
 
 El plan indica:
+
 - **Recursos que se crearán** (`+`)
 - **Recursos que se modificarán** (`~`)
 - **Recursos que se destruirán** (`-`)
@@ -264,6 +266,7 @@ terraform apply
 ```
 
 Terraform:
+
 1. Genera un plan
 2. Solicita confirmación (excepto con `--auto-approve`)
 3. Aplica los cambios
@@ -277,7 +280,7 @@ Elimina todas las recursos gestionados:
 terraform destroy
 ```
 
-:::danger Atención
+:::danger[Atención]
   Este comando elimina definitivamente todos los recursos. Úsalo con precaución.
 :::
 

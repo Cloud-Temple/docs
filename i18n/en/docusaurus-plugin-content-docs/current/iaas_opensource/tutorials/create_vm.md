@@ -82,7 +82,7 @@ For each network adapter:
 - **Network**: Select the virtual network (with VPC or Private Backbone indication)
 - **MAC Address**: Optional, automatically generated if not specified
 
-:::info VPC
+:::info[VPC]
 VPC network configuration is only available from the Network tab of the virtual machine once the operation is complete. Configuration from this form will be available soon.
 :::
 
@@ -101,6 +101,7 @@ For more information on high availability configuration and the different modes 
 Review your entire configuration before creating the virtual machine.
 
 The summary displays all configured parameters:
+
 - General information (name, CPU, RAM)
 - Selected template
 - Cloud Init (if configured)
@@ -147,6 +148,7 @@ Select a Block Storage from the tree. The system automatically verifies that suf
 Verify the information before launching the import.
 
 The summary displays:
+
 - The VM name
 - The deployment type (XVA)
 - The XVA file and its size

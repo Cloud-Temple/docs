@@ -1,10 +1,10 @@
 ---
 title: Getting Started Guide
 ---
-import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
-import shivaBareMetalList from './images/shiva_bare-metal_list.png'
-import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
-import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
+import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
+import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
+import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
+import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
 # QuickStart for the Bare Metal Offering
 
@@ -55,13 +55,13 @@ The **Volumes** submenu displays a table listing all storage volumes associated 
 
 <img src={shivaBareMetalStoragelist} />
 
-:::info BFS Volume (Boot from SAN)
+:::info[BFS Volume (Boot from SAN)]
 **Volume 1** is the **BFS (Boot from SAN)** volume and must be used to install the operating system.
 
 **Important:** This volume cannot be shared with other Bare Metal servers in the same availability zone (AZ).
 :::
 
-:::tip Best Practice
+:::tip[Best Practice]
 Prefer installing the OS on the **BFS** volume, and store your data on an additional **LUN** volume. This separation simplifies maintenance, backups, and system reinstallation when needed.
 :::
 

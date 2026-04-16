@@ -2,24 +2,24 @@
 title: guía de inicio
 ---
 
-import shivaNetwork_001 from './images/shiva_network_001.png'
-import shivaNetwork_002 from './images/shiva_network_002.png'
-import shivaNetwork_003 from './images/shiva_network_003.png'
-import shivaNetwork_004 from './images/shiva_network_004.png'
-import shivaNetwork_005 from './images/shiva_network_005.png'
-import shivaNetwork_006 from './images/shiva_network_006.png'
-import shivaNetwork_007 from './images/shiva_network_007.png'
-import shivaNetwork_008 from './images/shiva_network_008.png'
-import shivaNetwork_009 from './images/shiva_network_009.png'
-import shivaNetwork_010 from './images/shiva_network_010.png'
-import shivaNetworkVnShareEnabled from './images/shiva_network_vn_share_enabled.png'
-import shivaNetworkVnShared from './images/shiva_network_vn_shared.png'
-import shivaNetworkVnSharedTenant from './images/shiva_network_vn_shared_tenant.png'
-import shivaNetworkVnSharedWithMe from './images/shiva_network_vn_shared_with_me.png'
-import shivaNetwork_order_001 from './images/shiva_order_network_001.png'
-import shivaNetworkDeletePropagation from './images/shiva_network_delete_propagation.png'
-import shivaNetworkDeletePropagationOrder from './images/shiva_network_delete_propagation_order.png'
-import shivaNetworkDeletePropagationOrderValidate from './images/shiva_network_delete_propagation_order_validate.png'
+import shivaNetwork_001 from '@site/docs/network/private_network/images/shiva_network_001.png'
+import shivaNetwork_002 from '@site/docs/network/private_network/images/shiva_network_002.png'
+import shivaNetwork_003 from '@site/docs/network/private_network/images/shiva_network_003.png'
+import shivaNetwork_004 from '@site/docs/network/private_network/images/shiva_network_004.png'
+import shivaNetwork_005 from '@site/docs/network/private_network/images/shiva_network_005.png'
+import shivaNetwork_006 from '@site/docs/network/private_network/images/shiva_network_006.png'
+import shivaNetwork_007 from '@site/docs/network/private_network/images/shiva_network_007.png'
+import shivaNetwork_008 from '@site/docs/network/private_network/images/shiva_network_008.png'
+import shivaNetwork_009 from '@site/docs/network/private_network/images/shiva_network_009.png'
+import shivaNetwork_010 from '@site/docs/network/private_network/images/shiva_network_010.png'
+import shivaNetworkVnShareEnabled from '@site/docs/network/private_network/images/shiva_network_vn_share_enabled.png'
+import shivaNetworkVnShared from '@site/docs/network/private_network/images/shiva_network_vn_shared.png'
+import shivaNetworkVnSharedTenant from '@site/docs/network/private_network/images/shiva_network_vn_shared_tenant.png'
+import shivaNetworkVnSharedWithMe from '@site/docs/network/private_network/images/shiva_network_vn_shared_with_me.png'
+import shivaNetwork_order_001 from '@site/docs/network/private_network/images/shiva_order_network_001.png'
+import shivaNetworkDeletePropagation from '@site/docs/network/private_network/images/shiva_network_delete_propagation.png'
+import shivaNetworkDeletePropagationOrder from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order.png'
+import shivaNetworkDeletePropagationOrderValidate from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order_validate.png'
 
 ### Redes Privados Regionales
 
@@ -56,7 +56,7 @@ Des que todas las etapas se hayan completado, tus redes se crearán y luego se g
 
 - Al hacer clic en los etiquetas de información que redirigen a las comandos relacionadas.
 
-> **Importante:** No es posible generar múltiples comandos del mismo tipo de recurso al mismo tiempo. Deberás esperar a que se confirme la orden en curso antes de crear una nueva.
+> __Importante:__ No es posible generar múltiples comandos del mismo tipo de recurso al mismo tiempo. Deberás esperar a que se confirme la orden en curso antes de crear una nueva.
 
 Todas las acciones posibles sobre tus redes se encuentran en el menú __Acciones*__ de cada uno:
 
@@ -68,7 +68,7 @@ Todas las acciones posibles sobre tus redes se encuentran en el menú __Acciones
 - La eliminación de la propagación en un teniente.
 - La modificación de la propagación en un teniente.
 
-> **La eliminación de una red aún no está disponible.**
+> __La eliminación de una red aún no está disponible.__
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />
@@ -107,8 +107,8 @@ Se genera una comanda, al igual que en la creación inicial con propagación.
 
 Es posible separar la creación y propagación de redes en dos pasos distintos:
 
-1. **Propagar un red existente**: Haga clic en la acción __*Propagar*__ sobre una red ya creada
-2. **Seleccionar el destino de propagación**: Se generará entonces una orden, similar a cuando se creó inicialmente con propagación.
+1. __Propagar un red existente__: Haga clic en la acción __*Propagar*__ sobre una red ya creada
+2. __Seleccionar el destino de propagación__: Se generará entonces una orden, similar a cuando se creó inicialmente con propagación.
 
 ### Activación y desactivación de redes
 
@@ -118,7 +118,7 @@ Una red puede estar temporalmente desactivada sin ser eliminada y luego reactiva
 
 ### Compartir red de redes entre tenantes
 
-De forma predeterminada, los redes están disponibles únicamente dentro de un teniente. Puedes optar por compartir una red entre múltiples tenientes para razones técnicas o necesidades de conectividad. De esta manera, es posible compartir una red entre tus [Tenentes](../../console/iam/concepts.md#hosting) dentro de la misma organización.
+De forma predeterminada, los redes están disponibles únicamente dentro de un teniente. Puedes optar por compartir una red entre múltiples tenientes para razones técnicas o necesidades de conectividad. De esta manera, es posible compartir una red entre tus [Tenentes](../../console/iam/concepts.md) dentro de la misma organización.
 
 Para ello, solo es necesario activar la compartición a continuación:
 

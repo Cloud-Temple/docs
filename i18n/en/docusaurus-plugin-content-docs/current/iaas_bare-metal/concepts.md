@@ -76,11 +76,11 @@ Distributed block storage, based on **IBM Spectrum Virtualize**, offers a range 
 
 To ensure the confidentiality of your data at rest, our entire block storage infrastructure integrates a robust hardware-based encryption solution.
 
--   **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
--   **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
--   **Operation**: Encryption is applied at the time data is written to the physical storage medium.
+- **Encryption Type**: Data is encrypted directly on the disks (`Data At Rest`) using the **XTS-AES 256** algorithm.
+- **Compliance**: This encryption method complies with the **FIPS 140-2** standard, ensuring a high level of validated security.
+- **Operation**: Encryption is applied at the time data is written to the physical storage medium.
 
-:::warning Attention Point on Replication
+:::warning[Attention Point on Replication]
 It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. The security of data transfers is ensured through dedicated and secure communication channels.
 :::
 

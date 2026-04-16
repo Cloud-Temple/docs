@@ -4,14 +4,14 @@ title: Copiar y sincronizar con Rclone
 
 [Rclone](https://rclone.org/) es una herramienta de línea de comandos de código abierto que permite copiar y sincronizar archivos hacia muchos servicios de almacenamiento en la nube, incluidos los almacenamientos compatibles con S3. Es especialmente adecuado para copias de seguridad, migraciones de datos y sincronización de directorios.
 
-:::caution Versión requerida
+:::caution[Versión requerida]
 Asegúrese de utilizar una **versión reciente de Rclone** para garantizar la compatibilidad con el almacenamiento objeto Cloud Temple. Puede verificar su versión con `rclone version`.
 :::
 
 ## Requis
 
 - Una cuenta de almacenamiento S3 de Cloud Temple con las claves de acceso (Access Key y Secret Key).
-- El endpoint S3 de su cuenta (disponible en la [consola Cloud Temple](../../console/console.md)).
+- El endpoint S3 de su cuenta (disponible en la [consola Cloud Temple](../../../console/console.md)).
 
 ## Instalación de Rclone
 
@@ -91,7 +91,7 @@ rclone copy /data/backup cloudtemple-s3:nom-du-bucket/ --verbose
 
 El comando `rclone sync` hace que el destino sea **idéntico** a la fuente. Los archivos presentes en el destino pero ausentes en la fuente serán **eliminados**.
 
-:::danger Atención
+:::danger[Atención]
 `rclone sync` **elimina** archivos del destino que ya no existen en la fuente. Siempre prueba con `--dry-run` antes de ejecutar el comando.
 :::
 
@@ -139,5 +139,7 @@ Para automatizar una copia de seguridad diaria, añada una entrada cron:
 ```
 
 # Daily backup at 2 AM
-0 2 * * * rclone sync /data/backup cloudtemple-s3:bucket-name/ --log-file=/var/log/rclone-backup.log --log-level INFO
+
+0 2 ** * rclone sync /data/backup cloudtemple-s3:bucket-name/ --log-file=/var/log/rclone-backup.log --log-level INFO
+
 ```
