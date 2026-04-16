@@ -30,11 +30,16 @@
   --ifm-menu-link-padding-vertical: 6px;
   --ifm-menu-link-padding-horizontal: 12px;
   --ifm-menu-link-sublist-icon-filter: none;
-  --ifm-sidebar-width: 260px;
+  --ifm-sidebar-width: 230px;
 
   /* ── Spacing ── */
   --ifm-global-spacing: 1rem;
+  --ifm-spacing-horizontal: 1rem;
   --ifm-paragraph-margin-bottom: 1.1rem;
+
+  /* ── Layout : container pleine largeur (pas de centrage avec marges auto) ── */
+  --ifm-container-width: 1800px;
+  --ifm-container-width-xl: 1800px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -339,65 +344,142 @@ h3 { font-size: 1.15rem; }
   text-decoration: underline;
 }
 
-/* ─── Grille de documents contractuels ─────────────────────────────────────── */
+/* ─── Lien retour pages contractuelles ─────────────────────────────────────── */
 
-.contract-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin: 16px 0 32px 0;
+.contractual-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: none;
+  padding: 5px 12px 5px 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  background: var(--ifm-background-surface-color);
+  margin-bottom: 1.5rem;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
-@media (max-width: 768px) {
-  .contract-grid {
+.contractual-back-link:hover {
+  color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .contractual-back-link {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* ─── Book Cards — Documents Contractuels ────────────────────────────────── */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+@media (max-width: 960px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .book-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.contract-card {
-  padding: 20px 16px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-  border-right: none;
+.book-card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  background: var(--ifm-background-surface-color);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+  min-height: 148px;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  text-decoration: none !important;
+}
+
+/* Tranche du livre */
+.book-card-spine {
+  width: 6px;
+  flex-shrink: 0;
+  background: var(--book-color, #2e8555);
+  transition: width 0.18s ease;
+}
+
+.book-card:hover .book-card-spine {
+  width: 9px;
+}
+
+/* Corps */
+.book-card-body {
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1;
 }
 
-.contract-card:nth-child(odd) {
-  border-right: 1px solid var(--ifm-color-emphasis-300);
-  padding-right: 32px;
+.book-card-icon {
+  color: var(--book-color, #2e8555);
+  margin-bottom: 2px;
 }
 
-.contract-card:nth-child(even) {
-  padding-left: 32px;
+.book-card-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
-.contract-card-title {
-  font-size: 1.05rem;
+.book-card-title {
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--ifm-font-color-base);
   line-height: 1.4;
 }
 
-.contract-card-desc {
-  font-size: 0.875rem;
+.book-card-desc {
+  font-size: 0.8rem;
   color: var(--ifm-color-emphasis-700);
   line-height: 1.5;
   flex-grow: 1;
 }
 
-.contract-read-link {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
-  margin-top: 4px;
+.book-card-cta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--book-color, #2e8555);
+  margin-top: 6px;
   display: inline-block;
 }
 
-.contract-read-link:hover {
-  text-decoration: underline;
-  color: var(--ifm-color-primary-dark);
+/* Couleurs par catégorie */
+.book-card--green  { --book-color: #2e8555; }
+.book-card--blue   { --book-color: #0e6ba8; }
+.book-card--violet { --book-color: #7c3aed; }
+.book-card--orange { --book-color: #d97706; }
+
+[data-theme='dark'] .book-card {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .book-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30);
 }
 
 /* Masque le titre H1 auto-généré par Docusaurus sur les pages avec hero banner */

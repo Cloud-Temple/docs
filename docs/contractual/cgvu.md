@@ -1,6 +1,8 @@
 ---
 title: Conditions Générales de Vente et Utilisation (CGVU)
+displayed_sidebar: docSidebar
 ---
+
 
 
 ## Cadre
