@@ -10,17 +10,17 @@ import archiOverview from './images/archi_overview.png'
   <div class="card">
     <h3>Concepts</h3>
     <p>Découvrez les bases et principes essentiels pour maîtriser notre infrastructure.</p>
-    <a href="managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
+    <a href="/docs/managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Guide de démarrage</h3>
     <p>Commencez rapidement en suivant des instructions claires et simples.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="/docs/managed_kubernetes/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="/docs/managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
 
