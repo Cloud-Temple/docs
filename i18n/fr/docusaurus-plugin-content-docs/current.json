@@ -72,7 +72,7 @@
     "description": "The label for category Storage in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Object Storage": {
-    "message": "Stockage objet",
+    "message": "Object Storage",
     "description": "The label for category Object Storage in sidebar docSidebar"
   },
   "sidebar.docSidebar.category.Contractual documents": {
