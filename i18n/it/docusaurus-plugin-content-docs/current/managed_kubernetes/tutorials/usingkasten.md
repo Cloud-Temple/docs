@@ -36,7 +36,7 @@ Il dashboard di Kasten è accessibile tramite un URL sicuro, costruito a partire
 
 <img src={k10dashboard} />
 
-:::tip Guida introduttiva rapida integrata
+:::tip[Guida introduttiva rapida integrata]
 La console Kasten include una guida introduttiva rapida interattiva nella sua pagina iniziale. Non esitare a seguirla per una prima esperienza pratica direttamente dall'interfaccia.
 :::
 
@@ -48,7 +48,7 @@ Non è necessaria alcuna configurazione. La posizione di archiviazione è già d
 
 <img src={k10s3location} />
 
-:::info Modello di costo
+:::info[Modello di costo]
 Il servizio Veeam Kasten è incluso nell'offerta Managed Kubernetes. L'archiviazione dei backup sul nostro S3 sovrano viene fatturata in base all'utilizzo. Consultare la griglia tariffaria per maggiori dettagli.
 :::
 
@@ -56,7 +56,7 @@ Il servizio Veeam Kasten è incluso nell'offerta Managed Kubernetes. L'archiviaz
 
 Una politica di backup (`Policy`) è un insieme di regole che definiscono quando e come eseguire il backup delle applicazioni.
 
-:::warning Politica di backup esistente
+:::warning[Politica di backup esistente]
 Una politica di backup denominata `infra-backups` è già configurata nell'istanza Kasten. Questa politica garantisce il backup dei componenti essenziali forniti con il cluster.
 
 <img src={k10infrabackups} />

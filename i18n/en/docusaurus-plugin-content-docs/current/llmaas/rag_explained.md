@@ -2,7 +2,7 @@
 
 This document explains the fundamental concepts behind the **Retrieval-Augmented Generation (RAG)** technique.
 
-:::tip Example Code Available
+:::tip[Example Code Available]
 The concepts discussed here are illustrated in a complete and functional demonstrator available on our GitHub. It serves as an excellent starting point to understand the practical implementation of a RAG pipeline.
 
 ➡️ **[Access the Simple RAG Demo code](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -27,7 +27,7 @@ It is this **Retrieval** step that is at the heart of our subject. How does a co
 
 A computer does not understand words, but it is excellent at manipulating numbers. The **embedding** is the process that translates a text (a word, a sentence, a document) into a list of numbers, called a **vector**.
 
-:::tip What is a vector?
+:::tip[What is a vector?]
 In simple terms, a vector is a list of numbers that represents a point in a multi-dimensional space. Each number in the vector corresponds to a coordinate on an "axis" of this space. For text embeddings, these axes are not `x`, `y`, `z` but abstract semantic dimensions (for example, one axis could represent the concept of "royalty", another the concept of "cat", etc.).
 :::
 
@@ -37,7 +37,7 @@ In simple terms, a vector is a list of numbers that represents a point in a mult
 
 This vector is not random. It represents the "position" of the text in a multi-dimensional semantic space. Texts with similar meanings will have vectors that point in similar directions.
 
-:::tip Geographical Analogy
+:::tip[Geographical Analogy]
 Imagine a geographical map. "Paris" and "France" would be very close, just like "Rome" and "Italy". "Paris" would be farther from "Rome" than from "France", but closer than from "Tokyo". Embedding does the same thing, but with thousands of "dimensions" instead of two, to capture complex semantic nuances.
 :::
 

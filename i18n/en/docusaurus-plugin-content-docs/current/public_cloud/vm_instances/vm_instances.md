@@ -10,12 +10,12 @@ It adapts to all needs through its different service classes — from cost-effec
   <div class="card">
     <h3>Concepts</h3>
     <p>Discover the architecture, service classes and features of the VM Instances service.</p>
-    <a href="/docs/vm_instances/concepts" class="card-link">Explore the concepts &rarr;</a>
+    <a href="/docs/public_cloud/vm_instances/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Deploy your first virtual machine in minutes from the Cloud Temple Marketplace.</p>
-    <a href="/docs/vm_instances/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="/docs/public_cloud/vm_instances/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
 </div>
 

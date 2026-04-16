@@ -51,7 +51,7 @@ podman login <HARBOR_URL>
 - Username: `<ROBOT_USERNAME>` (e.g.: `robot$myproject+pusher`)
 - Password: `<ROBOT_TOKEN>`
 
-:::tip Certificates
+:::tip[Certificates]
 The Harbor instance managed by Cloud Temple presents a publicly trusted certificate. No additional CA configuration is normally required in Docker or Podman.
 :::
 
@@ -63,7 +63,7 @@ Via the Harbor UI:
 - Name: `<PROJET>`, visibility: Private (recommended)
 - Options: enable tag immutability, auto-scan on push, etc.
 
-:::info Best Practices
+:::info[Best Practices]
 
 - One project per application or per functional domain.
 - Restrict roles (maintainer, developer, guest).
@@ -180,7 +180,7 @@ image: <HARBOR_URL>/<PROJET>/app-web@sha256:<DIGEST>
 - Expiration: set a duration and a rotation process
 - Store the token as a secret (Kubernetes/CI)
 
-:::caution Least Privilege
+:::caution[Least Privilege]
 Do not use personal accounts for your pipelines. Prefer one robot per project, or even per environment.
 :::
 

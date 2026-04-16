@@ -30,7 +30,7 @@ The model adjusts its token consumption based on image resolution. The higher th
 | **Large** | 1280 x 1280 | 400 | Dense documents, small text |
 | **Gundam** | Dynamic | ~800 | Newspapers, blueprints, complex scans |
 
-:::tip Optimization
+:::tip[Optimization]
 To optimize costs and latency, resize your images to the minimum resolution necessary for the text to remain readable.
 :::
 

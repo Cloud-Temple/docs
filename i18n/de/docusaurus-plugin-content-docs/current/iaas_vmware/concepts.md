@@ -130,7 +130,7 @@ To ensure the confidentiality of your data at rest, our entire block storage inf
 - __Compliance__: This encryption method complies with the __FIPS 140-2__ standard, ensuring a high level of validated security.
 - __Operation__: Encryption is applied at the time data is written to the physical storage medium.
 
-:::warning Attention regarding replication  
+:::warning[Attention regarding replication  ]
 It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly", meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated and secure communication channels.  
 :::
 

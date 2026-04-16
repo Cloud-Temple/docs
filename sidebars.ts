@@ -207,9 +207,9 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'VM Instances (Preview)',
           items: [
-            'vm_instances/vm_instances',
-            'vm_instances/concepts',
-            'vm_instances/quickstart',
+            'public_cloud/vm_instances/vm_instances',
+            'public_cloud/vm_instances/concepts',
+            'public_cloud/vm_instances/quickstart',
           ],
         },
       ],

@@ -325,7 +325,7 @@ Dieses Tutorial passt den vorherigen RAG-Pipeline-Ansatz an, um Qdrant zu verwen
     * **`force_recreate=True`**: Für dieses Tutorial verwenden wir diesen Parameter, um sicherzustellen, dass die Collection bei jeder Ausführung leer ist. In der Produktion setzen Sie ihn auf `False`, um Ihre Daten beizubehalten.
 3. **Der Rest des Pipelines** (Konfiguration des LLM, Erstellung der Kette `RetrievalQA`) bleibt unverändert, was die Flexibilität von LangChain verdeutlicht: Es genügt, die Quelle des `retriever` (Informationsrecherche-Modul) zu wechseln, um von FAISS auf Qdrant zu wechseln.
 
-:::info Voraussetzungen: Qdrant starten
+:::info[Voraussetzungen: Qdrant starten]
 Für dieses Tutorial benötigen Sie eine Qdrant-Instanz. Sie können sie einfach mit Docker starten:
 
 ```bash

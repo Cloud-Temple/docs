@@ -48,7 +48,7 @@ Sie sehen nun den neu erstellten Token und sein zukünftiges Ablaufdatum.
 
 <img src={ShivaProfil005} />
 
-:::info Lebenszyklus des Authentifizierungstokens
+:::info[Lebenszyklus des Authentifizierungstokens]
 Wenn Sie Ihren __Personal Access Token (PAT)__ verwenden, um sich bei der API zu authentifizieren, erhalten Sie daraufhin einen Zugangstoken zurück. Es ist wichtig zu beachten, dass dieser Zugangstoken ein __JSON Web Token (JWT)__ mit begrenzter Gültigkeitsdauer ist.
 
 - __Gültigkeitsdauer__: Jeder JWT-Token ist __5 Minuten__ gültig.

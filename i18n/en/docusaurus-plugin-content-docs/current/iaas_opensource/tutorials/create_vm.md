@@ -82,7 +82,7 @@ For each network adapter:
 - **Network**: Select the virtual network (with VPC or Private Backbone indication)
 - **MAC Address**: Optional, automatically generated if not specified
 
-:::info VPC
+:::info[VPC]
 VPC network configuration is only available from the Network tab of the virtual machine once the operation is complete. Configuration from this form will be available soon.
 :::
 

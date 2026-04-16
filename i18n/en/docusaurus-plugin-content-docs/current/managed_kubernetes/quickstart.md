@@ -16,7 +16,7 @@ To interact with your cluster, several elements are essential:
 2. **The `kubectl` tool**: This is the standard command-line interface for managing a Kubernetes cluster.
 3. **The `kubelogin` tool** (if OIDC is used): If your cluster is configured to authenticate via an OIDC identity provider (such as Entra ID/Azure AD), you must install the `kubelogin` tool to manage the authentication flow. Follow the [kubelogin installation guide](https://github.com/int128/kubelogin).
 
-:::info Recommended graphical tools:
+:::info[Recommended graphical tools:]
 For a more visual experience and simplified management of your resources, we recommend using **Lens**. It is a powerful tool for Kubernetes that allows you to explore your cluster, manage your applications, and visualize their status graphically.
 Some of our tutorials will use Lens to illustrate procedures. You can download it here: [https://k8slens.dev/](https://k8slens.dev/).
 :::
@@ -39,7 +39,7 @@ The URLs are:
   - opencost.external-secured.**identifier**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**identifier**.mk.ms-cloud-temple.com
 
-:::info Secured URLs
+:::info[Secured URLs]
 The URLs above are only accessible from known public IPs, configured in the solution's firewall. If you wish to add a public IP, you must submit a support request.
 :::
 
@@ -48,7 +48,7 @@ The URLs above are only accessible from known public IPs, configured in the solu
   - argocd.internal.**identifier**.mk.ms-cloud-temple.com
   - hubble.internal.**identifier**.mk.ms-cloud-temple.com
 
-:::info Internal URLs
+:::info[Internal URLs]
 The URLs above are not exposed on the Internet. They are only accessible on the Internal Managed Kubernetes network.
 :::
 
@@ -56,7 +56,7 @@ The URLs above are not exposed on the Internet. They are only accessible on the 
 
 ## Your Permissions
 
-:::warning Dev/Test
+:::warning[Dev/Test]
 For **"Dev/Test"** Managed Kubernetes clusters, the service account provided to you has all permissions across the entire cluster (ClusterAdmin)
 :::
 

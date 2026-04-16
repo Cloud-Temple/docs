@@ -103,7 +103,7 @@ Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraes
 - __Cumplimiento__: Este método de cifrado cumple con la norma __FIPS 140-2__, asegurando un alto nivel de seguridad validado.
 - __Funcionamiento__: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
 
-:::warning Punto de atención sobre la replicación
+:::warning[Punto de atención sobre la replicación]
 Es importante destacar que este cifrado protege los datos almacenados en los discos. No está activo "en tiempo real" (on-the-fly), lo que significa que los datos no se cifran durante las operaciones de replicación de almacenamiento entre las zonas de disponibilidad. La seguridad de los transferencias se garantiza mediante canales de comunicación dedicados y seguros.
 :::
 

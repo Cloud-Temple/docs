@@ -40,7 +40,7 @@ Geben Sie die Parameter für Ihre Instanz ein:
 | **Netzwerk (VPC)** | Verbinden Sie die VM mit Ihrem VPC-Netzwerk |
 | **Cloud-init** | Optional: Injizieren Sie beim Start ein Vorkonfigurationsskript (SSH-Schlüssel, Netzwerkkonfiguration usw.) |
 
-:::info Systemfestplatte
+:::info[Systemfestplatte]
 Die Systemfestplatte (Flash) ist automatisch enthalten. Ihre Größe (zwischen 15 und 100 GB) hängt vom gewählten Betriebssystem ab.
 :::
 
@@ -81,11 +81,11 @@ resource "cloudtemple_compute_vm_instance" "example" {
 }
 ```
 
-Weitere Informationen zur Installation und Konfiguration des Providers finden Sie in der [Terraform-Dokumentation](../terraform/terraform.md).
+Weitere Informationen zur Installation und Konfiguration des Providers finden Sie in der [Terraform-Dokumentation](../../terraform/terraform.md).
 
 ## Nützliche Ressourcen
 
 - [Öffentliche Cloud Temple-Dokumentation](https://docs.cloud-temple.com/home)
 - [API-Referenz](https://shiva.cloud-temple.com/api/)
-- [Terraform-Dokumentation](../terraform/terraform.md)
-- [Konzepte der Verfügbarkeitszonen](../additional_content/concepts_az.md)
+- [Terraform-Dokumentation](../../terraform/terraform.md)
+- [Konzepte der Verfügbarkeitszonen](../../additional_content/concepts_az.md)
