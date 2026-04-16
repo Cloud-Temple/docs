@@ -205,11 +205,11 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'VM instances (Preview)',
+          label: 'VM Instances (Preview)',
           items: [
-            'vmaas/vmaas',
-            'vmaas/concepts',
-            'vmaas/quickstart',
+            'public_cloud/vm_instances/vm_instances',
+            'public_cloud/vm_instances/concepts',
+            'public_cloud/vm_instances/quickstart',
           ],
         },
       ],

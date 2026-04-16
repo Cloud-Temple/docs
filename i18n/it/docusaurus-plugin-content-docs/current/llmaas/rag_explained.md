@@ -2,7 +2,7 @@
 
 Questo documento spiega i concetti fondamentali dietro la tecnica di **Retrieval-Augmented Generation (RAG)**.
 
-:::tip Codice di Esempio Disponibile
+:::tip[Codice di Esempio Disponibile]
 I concetti trattati qui vengono illustrati in un dimostratore completo e funzionante disponibile sul nostro GitHub. Costituisce una buona base di partenza per comprendere il funzionamento pratico di un pipeline RAG.
 
 ➡️ **[Accedi al codice del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -27,7 +27,7 @@ Il processo si svolge in due fasi:
 
 Un computer non comprende le parole, ma è eccellente nel manipolare i numeri. L'**embedding** è il processo che traduce un testo (una parola, una frase, un documento) in una lista di numeri, detta **vettore**.
 
-:::tip Cosa è un vettore?
+:::tip[Cosa è un vettore?]
 In termini semplici, un vettore è una lista di numeri che rappresenta un punto in uno spazio a più dimensioni. Ogni numero nel vettore corrisponde a una coordinata su un "asse" di questo spazio. Per gli embeddings di testo, questi assi non sono `x`, `y`, `z` ma dimensioni semantiche astratte (ad esempio, un asse potrebbe rappresentare il concetto di "regalità", un altro quello di "gatto", ecc.).
 :::
 
@@ -37,7 +37,7 @@ In termini semplici, un vettore è una lista di numeri che rappresenta un punto 
 
 Questo vettore non è casuale. Rappresenta la "posizione" del testo in uno spazio semantico multidimensionale. Testi con significati simili avranno vettori che puntano in direzioni simili.
 
-:::tip Analogia geografica
+:::tip[Analogia geografica]
 Immagina una mappa geografica. "Parigi" e "Francia" sarebbero molto vicine, così come "Roma" e "Italia". "Parigi" sarebbe più lontana da "Roma" rispetto a "Francia", ma più vicina rispetto a "Tokyo". L'embedding fa la stessa cosa, ma con migliaia di "dimensioni" invece di due, per catturare sfumature di significato complesse.
 :::
 

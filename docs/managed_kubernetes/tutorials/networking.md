@@ -16,7 +16,7 @@ Ce tutoriel a pour objectif de vous familiariser avec les concepts réseau fonda
 
 Nous prendrons comme **exemple** un cluster **"ctodev"**, dont le range attribué est **10.20.0.0/22**
 
-:::warning définition des ranges
+:::warning[définition des ranges]
  Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peut pas être modifié plus tard.
 :::
 
@@ -58,7 +58,7 @@ Le range de notre **exemple** 10.20.0.0/22 est découpé de manière logique en 
 
     - Services: 10.95.0.0/12 
 
-:::warning Ranges Pods et Services
+:::warning[Ranges Pods et Services]
 Les ranges Pods et Services sont définis avec le client lors de la mise en place du cluster. Ils ne peuvent pas être modifiés plus tard.
 :::
 
@@ -217,7 +217,7 @@ Cette configuration garantit que le trafic vers l'API et les services internes r
   </div>
 </div>
 
-:::warning Pour aller plus loin : la sécurité en production
+:::warning[Pour aller plus loin : la sécurité en production]
 Ce document explique les concepts réseau fondamentaux. Pour un déploiement en production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
 
 - **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.

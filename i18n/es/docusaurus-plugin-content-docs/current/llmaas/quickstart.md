@@ -112,7 +112,7 @@ Para su primer prueba, utilice uno de estos modelos recomendados:
 
 Consulte el [catálogo completo de modelos](./models) para más opciones.
 
-:::tip Consejo para los modelos Qwen
+:::tip[Consejo para los modelos Qwen]
 Algunos modelos de la familia **Qwen** (como `qwen3:14b` o `qwen3:30b-a3b`) cuentan con un modo de razonamiento avanzado. Puede forzar su activación agregando `/think` al inicio de su prompt, o desactivarlo para una respuesta más directa y rápida con `/nothink`.
 :::
 

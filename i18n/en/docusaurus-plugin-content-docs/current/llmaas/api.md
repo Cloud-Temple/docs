@@ -245,11 +245,11 @@ To analyze images, you can send a request where the `content` field of a user me
 
 The format for an image is an object with `type: "image_url"` and an `image_url` field containing the image URL in `data URI` (base64) format.
 
-:::info Compatibility Note
+:::info[Compatibility Note]
 Although the standard and recommended format is `{"type": "image_url", "image_url": {"url": "data:..."}}`, the API also supports, for flexibility, a simplified format `{"type": "image", "image": "data:..."}`. However, we recommend using the standard `image_url` format for better compatibility with the OpenAI ecosystem.
 :::
 
-:::tip OCR and Document Analysis
+:::tip[OCR and Document Analysis]
 For specific document analysis tasks (PDFs, scans, tables), we recommend using the specialized model **DeepSeek-OCR**. See the [dedicated documentation](./ocr).
 :::
 
@@ -813,7 +813,7 @@ except Exception as e:
 
 #### Using Embeddings
 
-:::warning Incompatibility with standard LangChain clients
+:::warning[Incompatibility with standard LangChain clients]
 Currently, using the embedding endpoint with standard LangChain classes (`langchain_openai.OpenAIEmbeddings` or `langchain_community.OllamaEmbeddings`) is incompatible with our API.
 
 - `OpenAIEmbeddings` sends pre-computed tokens instead of raw text, which is rejected.

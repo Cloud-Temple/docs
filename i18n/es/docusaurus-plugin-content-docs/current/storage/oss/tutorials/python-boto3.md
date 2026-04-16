@@ -30,7 +30,7 @@ region = 'fr1'
 bucket_name = 'mi-bucket-test'
 ```
 
-:::info Región
+:::info[Región]
 La región que debe utilizarse para el almacenamiento objeto Cloud Temple es **`fr1`**. Asegúrese de configurar correctamente este valor en el parámetro `region_name`.
 :::
 
@@ -41,7 +41,7 @@ El almacenamiento objeto Cloud Temple, basado en **Dell ECS**, admite dos versio
 - **SigV4** (`signature_version='s3v4'`): recomendado para operaciones de **metadatos** (LIST, HEAD)
 - **SigV2** (`signature_version='s3'`): recomendado para operaciones de **datos** (PUT, GET, DELETE)
 
-:::caution Enfoque híbrido recomendado
+:::caution[Enfoque híbrido recomendado]
 Para una compatibilidad óptima, se recomienda utilizar **dos clientes Boto3** con configuraciones de firma diferentes según el tipo de operación. Esto evita errores `XAmzContentSHA256Mismatch` que pueden ocurrir con SigV4 durante operaciones de escritura.
 :::
 
@@ -82,7 +82,7 @@ client_metadata = boto3.client(
 )
 ```
 
-:::tip Configuración simplificada
+:::tip[Configuración simplificada]
 Si desea utilizar un solo cliente, prefiera **SigV2** (`signature_version='s3'`) con el direccionamiento estilo path, que funciona para la mayoría de las operaciones:
 
 ```python
@@ -256,7 +256,7 @@ print(f"Eliminación: {result['ResponseMetadata']['HTTPStatusCode']}")
 
 Si un objeto ya existe, puede modificar sus permisos para que sea legible públicamente mediante el método `put_object_acl`.
 
-:::danger Atención
+:::danger[Atención]
 Hacer público un objeto significa que cualquier persona con la URL puede acceder a él. Use esta opción con precaución y de acuerdo con su política de seguridad.
 :::
 

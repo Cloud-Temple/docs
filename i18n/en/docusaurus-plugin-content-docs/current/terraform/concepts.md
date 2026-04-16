@@ -51,7 +51,7 @@ The provider authenticates to the Cloud Temple APIs using:
 
 These credentials are generated from the Cloud Temple Console and allow the provider to perform operations on your behalf.
 
-:::info Best practices
+:::info[Best practices]
     Store your credentials in environment variables or a secrets manager, never directly in the code.
 :::
 
@@ -279,7 +279,7 @@ Destroys all managed resources:
 terraform destroy
 ```
 
-:::danger Attention
+:::danger[Attention]
   This command permanently deletes all resources. Use with caution.
 :::
 

@@ -51,7 +51,7 @@ El proveedor se autentica ante las APIs de Cloud Temple utilizando:
 
 Estos identificadores se generan desde la Consola de Cloud Temple y permiten al proveedor realizar operaciones en su nombre.
 
-:::info Buenas prácticas
+:::info[Buenas prácticas]
     Almacene sus credenciales en variables de entorno o en un gestor de secretos, nunca directamente en el código.
 :::
 
@@ -280,7 +280,7 @@ Elimina todas las recursos gestionados:
 terraform destroy
 ```
 
-:::danger Atención
+:::danger[Atención]
   Este comando elimina definitivamente todos los recursos. Úsalo con precaución.
 :::
 

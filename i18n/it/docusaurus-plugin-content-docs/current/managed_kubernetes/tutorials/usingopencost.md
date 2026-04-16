@@ -101,7 +101,7 @@ Una volta salvato il file, Cline caricherà automaticamente il MCP `opencost-xxx
 
 ### 2. Interrogare OpenCost con l'MCP
 
-:::tip Prerequisiti
+:::tip[Prerequisiti]
 Per interagire con l'MCP in linguaggio naturale, l'AI sottostante deve avere accesso a modelli linguistici (LLM), sia localmente (LMStudio, ecc.), sia tramite una connessione a servizi pubblici come GPT-5 o Gemini, sia utilizzando la nostra offerta sovrana **[LLM-as-a-Service](pathname:///llmaas/llmaas)**.
 :::
 

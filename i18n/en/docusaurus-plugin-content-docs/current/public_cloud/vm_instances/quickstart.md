@@ -14,7 +14,7 @@ Before you begin, make sure you have the following:
 
 ### 1. Access the Service
 
-Log in to the **Cloud Temple Console** and navigate to the **VM instances** section from the main menu.
+Log in to the **Cloud Temple Console** and navigate to the **VM Instances** section from the main menu.
 
 ### 2. Select the Tenant and Availability Zone
 
@@ -40,7 +40,7 @@ Fill in the parameters for your instance:
 | **Network (VPC)** | Associate the VM with your VPC network |
 | **Cloud-init** | Optional: inject a pre-configuration script at startup (SSH keys, network configuration, etc.) |
 
-:::info System Disk
+:::info[System Disk]
 The system disk (Flash) is included automatically. Its size (between 15 and 100 GB) depends on the chosen operating system.
 :::
 
@@ -61,7 +61,7 @@ From the console, you can perform the following actions on your virtual machines
 
 ## Automation and Infrastructure as Code
 
-The VM instances service is fully automatable:
+The VM Instances service is fully automatable:
 
 ### Via the REST API
 
@@ -71,21 +71,21 @@ API reference: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.
 
 ### Via Terraform
 
-The Cloud Temple Terraform provider allows you to manage your VM instances as Infrastructure as Code.
+The Cloud Temple Terraform provider allows you to manage your VM Instances as Infrastructure as Code.
 
 ```hcl
-# Example VM instances resource with Terraform
+# Example VM Instances resource with Terraform
 # Refer to the provider documentation for available attributes
-resource "cloudtemple_compute_vmaas_instance" "example" {
+resource "cloudtemple_compute_vm_instance" "example" {
   # ...
 }
 ```
 
-See the [Terraform documentation](../terraform/terraform.md) for provider installation and configuration.
+See the [Terraform documentation](/docs/terraform/terraform) for provider installation and configuration.
 
 ## Useful Resources
 
 - [Cloud Temple public documentation](https://docs.cloud-temple.com/home)
 - [API Reference](https://shiva.cloud-temple.com/api/)
-- [Terraform documentation](../terraform/terraform.md)
-- [Availability Zone concepts](../additional_content/concepts_az.md)
+- [Terraform documentation](/docs/terraform/terraform)
+- [Availability Zone concepts](../../additional_content/concepts_az.md)

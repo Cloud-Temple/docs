@@ -108,7 +108,7 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 Prompt analysis is a **native and integrated** security feature of the LLMaaS platform. Enabled by default, it aims to detect and prevent attempts at "jailbreaking" or injecting malicious prompts before they even reach the model. This protection is based on a multi-layered approach.
 
-:::tip Contact Support for Disabling
+:::tip[Contact Support for Disabling]
 It is possible to disable this security analysis for very specific use cases, although this is not recommended. For any questions regarding this or to request deactivation, please contact Cloud Temple support.
 :::
 
