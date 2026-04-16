@@ -246,6 +246,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'VPC',
+          className: 'sidebar-preview',
           link: { type: 'doc', id: 'network/vpc/vpc' },
           items: [
             'network/vpc/vpc',
