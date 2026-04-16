@@ -167,6 +167,14 @@ La création d'une nouvelle politique de sauvegarde s'effectue par __une demande
 - Le nom de la politique de sauvegarde
 - Les caractéristiques souhaitées (x jours, y semaines, z mois, ...)
 
+:::info[Rétention longue durée — disponibilité future]
+**La rétention maximale est actuellement de 24 mois.** Une rétention longue durée (jusqu'à 10 ans) sera intégrée avec le lancement de notre produit **Glacier**, prévu au **premier trimestre 2027**, sous forme de souscription complémentaire.
+
+Pour des durées de rétention aussi longues, nous recommandons de sauvegarder **exclusivement des fichiers plats** (fichiers bruts, documents statiques) ainsi que des **dumps de bases de données**. La restauration d'un serveur complet après 10 ans comporte en effet des risques importants : de nombreux services ou dépendances peuvent être devenus obsolètes ou incompatibles avec l'environnement actuel.
+
+**Alternative disponible dès maintenant** : le service de **sauvegarde par agent**, disponible en souscription complémentaire. Contactez le support pour plus d'informations.
+:::
+
 ## Les machines virtuelles
 
 ### Gestion des ressources vCPU
