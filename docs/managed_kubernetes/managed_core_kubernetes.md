@@ -1,6 +1,8 @@
 ---
-title: Vue d'ensemble Managed Core Kubernetes
+title: Vue d'ensemble
 ---
+import archiOverview1az from './images/archi_overview_1az.png'
+import archiOverview from './images/archi_overview.png'
 
 # Managed Core Kubernetes
 
@@ -8,17 +10,17 @@ title: Vue d'ensemble Managed Core Kubernetes
   <div class="card">
     <h3>Concepts</h3>
     <p>Découvrez les bases et principes essentiels pour maîtriser notre infrastructure.</p>
-    <a href="managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
+    <a href="/docs/managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Guide de démarrage</h3>
     <p>Commencez rapidement en suivant des instructions claires et simples.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="/docs/managed_kubernetes/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="/docs/managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
 
@@ -57,7 +59,7 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
   - Ne bénéficie pas de SLA de haute disponibilité.
   - aucune restriction de sécurité
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={archiOverview1az} alt="Architecture Mono-AZ" />
 
 ### Architecture Production (Multi-AZ)
 
@@ -68,9 +70,9 @@ Conçue pour la production et les applications critiques, cette architecture dis
   - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
   - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
   - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-  - **SLA de 99.90%**.
+  - **SLA de 99.90%**, mesurée mensuellement.
 
-<img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
+<img src={archiOverview} alt="Architecture Multi-AZ" />
 
 ---
 

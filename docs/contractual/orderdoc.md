@@ -1,7 +1,9 @@
 ---
 title: Hiérarchie des documents contractuels
 slug: /contractual/order
+displayed_sidebar: docSidebar
 ---
+
 
 |           | Références                 |
 | --------- | -------------------------- |
