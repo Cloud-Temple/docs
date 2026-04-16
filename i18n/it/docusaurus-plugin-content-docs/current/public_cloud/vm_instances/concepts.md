@@ -129,7 +129,7 @@ La replica VM non è inclusa per impostazione predefinita. Il suo studio è prev
 
 | Impegno | Valore |
 |---------|--------|
-| Disponibilità dell'infrastruttura | 99,9% (misurata mensilmente) |
+| Disponibilità dell'infrastruttura | 99,95% (misurata mensilmente) |
 | Garanzia di risorse | In base alla classe di servizio scelta |
 
 ## Automazione

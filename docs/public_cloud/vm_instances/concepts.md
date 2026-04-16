@@ -129,7 +129,7 @@ La réplication de VM n'est pas incluse par défaut. Son étude est prévue pour
 
 | Engagement | Valeur |
 |------------|--------|
-| Disponibilité de l'infrastructure | 99,9% (mesurée mensuellement) |
+| Disponibilité de l'infrastructure | 99,95% (mesurée mensuellement) |
 | Garantie de ressources | Selon la classe de service choisie |
 
 ## Automatisation

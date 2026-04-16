@@ -129,7 +129,7 @@ VM replication is not included by default. Its study is planned for the second h
 
 | Commitment | Value |
 |------------|-------|
-| Infrastructure availability | 99.9% (measured monthly) |
+| Infrastructure availability | 99.95% (measured monthly) |
 | Resource guarantee | According to the chosen service class |
 
 ## Automation

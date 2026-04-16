@@ -129,7 +129,7 @@ VM-Replikation ist standardmäßig nicht enthalten. Ihre Untersuchung ist für d
 
 | Verpflichtung | Wert |
 |---------------|------|
-| Infrastrukturverfügbarkeit | 99,9% (monatlich gemessen) |
+| Infrastrukturverfügbarkeit | 99,95% (monatlich gemessen) |
 | Ressourcengarantie | Gemäß der gewählten Service-Klasse |
 
 ## Automatisierung

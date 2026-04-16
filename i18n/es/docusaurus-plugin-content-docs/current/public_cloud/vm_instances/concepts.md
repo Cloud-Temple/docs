@@ -129,7 +129,7 @@ La replicación de VM no está incluida por defecto. Su estudio está previsto p
 
 | Compromiso | Valor |
 |------------|-------|
-| Disponibilidad de la infraestructura | 99,9% (medida mensualmente) |
+| Disponibilidad de la infraestructura | 99,95% (medida mensualmente) |
 | Garantía de recursos | Según la clase de servicio elegida |
 
 ## Automatización
