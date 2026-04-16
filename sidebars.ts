@@ -44,6 +44,15 @@ const sidebars: SidebarsConfig = {
         'console/console_quickstart',
         'console/status',
         'console/orders',
+        {
+          type: 'category',
+          label: 'Contenu additionnel',
+          link: { type: 'generated-index' },
+          items: [
+            'additional_content/concepts_regional',
+            'additional_content/concepts_az',
+          ],
+        },
       ],
     },
     {
@@ -447,15 +456,6 @@ const sidebars: SidebarsConfig = {
             'terraform/concepts',
             'terraform/quickstart',
             'terraform/tutorials',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Concepts Globaux',
-          link: { type: 'generated-index' },
-          items: [
-            'additional_content/concepts_regional',
-            'additional_content/concepts_az',
           ],
         },
       ],
