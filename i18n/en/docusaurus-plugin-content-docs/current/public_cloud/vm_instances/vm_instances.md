@@ -18,16 +18,3 @@ It adapts to all needs through its different service classes — from cost-effec
     <a href="/docs/public_cloud/vm_instances/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
 </div>
-
-## Security and Compliance
-
-| Certification |
-|---------------|
-| ISO 27001:2022 |
-| ISAE 3402 |
-
-:::info
-This service is undergoing SecNumCloud qualification by ANSSI.
-:::
-
-Data is hosted in **France**, in a shared environment with **strict logical isolation** between clients.

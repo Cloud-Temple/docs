@@ -18,16 +18,3 @@ Se adapta a todas las necesidades gracias a sus diferentes clases de servicio �
     <a href="/docs/public_cloud/vm_instances/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
 </div>
-
-## Seguridad y cumplimiento
-
-| Certificación |
-|---------------|
-| ISO 27001:2022 |
-| ISAE 3402 |
-
-:::info
-Este servicio está en proceso de cualificación SecNumCloud por parte de la ANSSI.
-:::
-
-Los datos están alojados en **Francia**, en un entorno compartido con **aislamiento lógico estricto** entre los clientes.
