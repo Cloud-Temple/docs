@@ -76,7 +76,7 @@ Der Cloud Temple Terraform-Provider ermöglicht die Verwaltung von VM Instances 
 ```hcl
 # Beispiel VM Instances-Ressource mit Terraform
 # Weitere Attribute finden Sie in der Provider-Dokumentation
-resource "cloudtemple_compute_vmaas_instance" "example" {
+resource "cloudtemple_compute_vm_instance" "example" {
   # ...
 }
 ```
