@@ -1,7 +1,9 @@
 ---
 title: SLA VM Instances
 slug: /contractual/vm-instances/sla
+displayed_sidebar: docSidebar
 ---
+
 
 # Accord de Niveau de Service (SLA) – VM Instances
 

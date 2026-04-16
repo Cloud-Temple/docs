@@ -2,7 +2,7 @@
 title: Vue d'ensemble
 ---
 
-Le produit IaaS Open Source de Cloud Temple : une alliance unique entre performance, sécurité et transparence.
+L'**offre IaaS OpenSource de Cloud Temple** : une alliance unique entre performance, sécurité et transparence.
 
 Cette offre garantit une maîtrise totale de vos environnements critiques, tout en assurant sécurité, continuité et conformité réglementaire.
 Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d’une infrastructure performante et adaptée à vos besoins. Adoptez la puissance de l’Open Source avec la fiabilité et le support de Cloud Temple.
