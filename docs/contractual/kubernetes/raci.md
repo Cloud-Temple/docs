@@ -1,6 +1,8 @@
 ---
 title: Matrice de Responsabilités (RACI) - Managed Kubernetes
+displayed_sidebar: docSidebar
 ---
+
 
 ## RACI
 

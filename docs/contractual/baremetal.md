@@ -1,6 +1,8 @@
 ---
 title: Convention de Service spécifique - Bare Metal
+displayed_sidebar: docSidebar
 ---
+
 
 # CONVENTION DE SERVICES Bare Metal
 

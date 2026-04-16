@@ -1,7 +1,9 @@
 ---
 title: Convention de Service SecNumCloud PaaS
 slug: /contractual/paas/sla
+displayed_sidebar: docSidebar
 ---
+
 
 ## Cadre
 
