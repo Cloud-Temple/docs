@@ -28,6 +28,7 @@ The **IaaS Cloud Temple** offering, powered by VMware, is designed to meet the c
   <p>Are you a public sector actor? The <strong>IaaS Cloud Temple</strong> offering is accessible via:</p>
 
   <div class="platform-card">
+    <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
         The UGAP public procurement platform
@@ -36,6 +37,7 @@ The **IaaS Cloud Temple** offering, powered by VMware, is designed to meet the c
   </div>
 
   <div class="platform-card">
+      <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
         The CAIH marketplace for the healthcare sector

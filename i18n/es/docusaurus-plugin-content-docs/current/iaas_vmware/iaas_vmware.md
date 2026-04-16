@@ -28,6 +28,7 @@ La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para sati
   <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está disponible a través de:</p>
 
   <div class="platform-card">
+    <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
         La plataforma de compras públicas UGAP
@@ -36,6 +37,7 @@ La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para sati
   </div>
 
   <div class="platform-card">
+      <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
         El mercado CAIH para el sector sanitario
