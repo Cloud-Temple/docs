@@ -2,11 +2,11 @@
 title: Konzepte
 ---
 
-Der **VM instances**-Dienst von Cloud Temple ist ein gemeinsam genutztes Compute-Angebot, das die bedarfsgerechte Bereitstellung virtueller Maschinen ohne Verwaltung der zugrundeliegenden Infrastruktur ermöglicht. Diese Seite stellt die grundlegenden Konzepte des Dienstes vor.
+Der **VM Instances**-Dienst von Cloud Temple ist ein gemeinsam genutztes Compute-Angebot, das die bedarfsgerechte Bereitstellung virtueller Maschinen ohne Verwaltung der zugrundeliegenden Infrastruktur ermöglicht. Diese Seite stellt die grundlegenden Konzepte des Dienstes vor.
 
 ## Regionen und Verfügbarkeitszonen
 
-Der VM instances-Dienst wird in der Region **FR1** bereitgestellt. Bei der Erstellung einer virtuellen Maschine können Sie die **Verfügbarkeitszone (AZ)** auswählen, in der sie gehostet werden soll.
+Der VM Instances-Dienst wird in der Region **FR1** bereitgestellt. Bei der Erstellung einer virtuellen Maschine können Sie die **Verfügbarkeitszone (AZ)** auswählen, in der sie gehostet werden soll.
 
 Weitere Informationen zu Verfügbarkeitszonen und Cloud Temple-Regionen finden Sie unter:
 
@@ -75,7 +75,7 @@ Flavor-Spezifikationen können sich ändern. Prüfen Sie die Cloud Temple-Konsol
 
 ## Speicher
 
-Alle Volumes des VM instances-Dienstes sind **persistente Flash-Volumes, die über das Netzwerk eingebunden sind** (*network-attached*). Es gibt keinen flüchtigen lokalen Speicher: Ihre Daten bleiben unabhängig vom Zustand der virtuellen Maschine erhalten.
+Alle Volumes des VM Instances-Dienstes sind **persistente Flash-Volumes, die über das Netzwerk eingebunden sind** (*network-attached*). Es gibt keinen flüchtigen lokalen Speicher: Ihre Daten bleiben unabhängig vom Zustand der virtuellen Maschine erhalten.
 
 ### Systemfestplatte
 
@@ -111,7 +111,7 @@ In einem **VPC**-Netzwerk ist es möglich, einer VM instance eine **Floating IP*
 
 ## Bereitstellung und Images
 
-VM instances werden von den **offiziellen Images des Cloud Temple Marketplace** bereitgestellt. Dieser kuratierte Image-Katalog garantiert getestete, gepflegte und einsatzbereite Umgebungen für jedes unterstützte Betriebssystem.
+VM Instances werden von den **offiziellen Images des Cloud Temple Marketplace** bereitgestellt. Dieser kuratierte Image-Katalog garantiert getestete, gepflegte und einsatzbereite Umgebungen für jedes unterstützte Betriebssystem.
 
 Der Dienst unterstützt **Cloud-init** für die automatische Vorkonfiguration von Instanzen beim Start (SSH-Schlüssel-Injektion, Netzwerkkonfiguration, Initialisierungsskripte usw.).
 

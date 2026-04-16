@@ -14,7 +14,7 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 ### 1. Accéder au service
 
-Connectez-vous à la **Console Cloud Temple** et naviguez vers la section **VM instances** depuis le menu principal.
+Connectez-vous à la **Console Cloud Temple** et naviguez vers la section **VM Instances** depuis le menu principal.
 
 ### 2. Sélectionner le tenant et la zone de disponibilité
 
@@ -61,7 +61,7 @@ Depuis la console, vous pouvez effectuer les actions suivantes sur vos machines 
 
 ## Automatisation et Infrastructure as Code
 
-Le service VM instances est entièrement automatisable :
+Le service VM Instances est entièrement automatisable :
 
 ### Via l'API REST
 
@@ -71,10 +71,10 @@ Référence API : [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temp
 
 ### Via Terraform
 
-Le provider Terraform Cloud Temple permet de gérer vos VM instances en Infrastructure as Code.
+Le provider Terraform Cloud Temple permet de gérer vos VM Instances en Infrastructure as Code.
 
 ```hcl
-# Exemple de ressource VM instances avec Terraform
+# Exemple de ressource VM Instances avec Terraform
 # Consultez la documentation du provider pour les attributs disponibles
 resource "cloudtemple_compute_vmaas_instance" "example" {
   # ...
