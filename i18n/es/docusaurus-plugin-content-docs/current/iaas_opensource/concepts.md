@@ -163,6 +163,14 @@ La creación de una nueva política de copia de seguridad se realiza mediante __
 - El nombre de la política de copia de seguridad
 - Las características deseadas (x días, y semanas, z meses, ...)
 
+:::info[Retención a largo plazo — disponibilidad futura]
+**La retención máxima es actualmente de 24 meses.** Una retención a largo plazo (hasta 10 años) se integrará con el lanzamiento de nuestro producto **Glacier**, previsto para el **primer trimestre de 2027**, como suscripción complementaria.
+
+Para períodos de retención tan largos, recomendamos guardar **exclusivamente archivos planos** (archivos sin procesar, documentos estáticos) y **volcados de bases de datos**. La restauración de un servidor completo después de 10 años conlleva riesgos importantes: muchos servicios o dependencias pueden haberse vuelto obsoletos o incompatibles con el entorno actual.
+
+**Alternativa disponible ahora**: el servicio de **copia de seguridad por agente**, disponible como suscripción complementaria. Póngase en contacto con el soporte para más información.
+:::
+
 ## Máquinas virtuales
 
 ### Gestión de recursos vCPU
