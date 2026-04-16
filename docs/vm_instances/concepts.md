@@ -2,11 +2,11 @@
 title: Concepts
 ---
 
-Le service **VM instances** de Cloud Temple est une offre de compute mutualisée permettant de déployer des machines virtuelles à la demande, sans gestion de l'infrastructure sous-jacente. Cette page présente les concepts fondamentaux du service.
+Le service **VM Instances** de Cloud Temple est une offre de compute mutualisée permettant de déployer des machines virtuelles à la demande, sans gestion de l'infrastructure sous-jacente. Cette page présente les concepts fondamentaux du service.
 
 ## Régions et zones de disponibilité
 
-Le service VM instances est déployé dans la région **FR1**. Lors de la création d'une machine virtuelle, vous pouvez choisir la **zone de disponibilité (AZ)** dans laquelle elle sera hébergée.
+Le service VM Instances est déployé dans la région **FR1**. Lors de la création d'une machine virtuelle, vous pouvez choisir la **zone de disponibilité (AZ)** dans laquelle elle sera hébergée.
 
 Pour en savoir plus sur les zones de disponibilité et les régions Cloud Temple, consultez :
 
@@ -75,7 +75,7 @@ Les spécifications des gabarits peuvent évoluer. Consultez la console Cloud Te
 
 ## Stockage
 
-Tous les volumes du service VM instances sont des **volumes Flash persistants montés en réseau** (*network-attached*). Il n'existe pas de stockage local éphémère : vos données sont conservées indépendamment de l'état de la machine virtuelle.
+Tous les volumes du service VM Instances sont des **volumes Flash persistants montés en réseau** (*network-attached*). Il n'existe pas de stockage local éphémère : vos données sont conservées indépendamment de l'état de la machine virtuelle.
 
 ### Disque système
 
@@ -111,7 +111,7 @@ Sur un réseau **VPC**, il est possible d'associer une **IP flottante** à une V
 
 ## Déploiement et images
 
-Les VM instances sont déployées depuis les **images officielles de la Marketplace Cloud Temple**. Ce catalogue d'images sélectionnées garantit des environnements testés, maintenus et prêts à l'emploi pour chaque système d'exploitation supporté.
+Les VM Instances sont déployées depuis les **images officielles de la Marketplace Cloud Temple**. Ce catalogue d'images sélectionnées garantit des environnements testés, maintenus et prêts à l'emploi pour chaque système d'exploitation supporté.
 
 Le service supporte **Cloud-init** pour la pré-configuration automatique des instances au démarrage (injection de clés SSH, configuration réseau, scripts d'initialisation, etc.).
 

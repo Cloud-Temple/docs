@@ -2,11 +2,11 @@
 title: Concepts
 ---
 
-The **VM instances** service from Cloud Temple is a shared compute offering that enables virtual machines to be deployed on demand, without managing the underlying infrastructure. This page presents the fundamental concepts of the service.
+The **VM Instances** service from Cloud Temple is a shared compute offering that enables virtual machines to be deployed on demand, without managing the underlying infrastructure. This page presents the fundamental concepts of the service.
 
 ## Regions and Availability Zones
 
-The VM instances service is deployed in the **FR1** region. When creating a virtual machine, you can choose the **availability zone (AZ)** in which it will be hosted.
+The VM Instances service is deployed in the **FR1** region. When creating a virtual machine, you can choose the **availability zone (AZ)** in which it will be hosted.
 
 For more information on availability zones and Cloud Temple regions, see:
 
@@ -75,7 +75,7 @@ Flavor specifications may evolve. Check the Cloud Temple console for the up-to-d
 
 ## Storage
 
-All volumes in the VM instances service are **persistent Flash volumes mounted over the network** (*network-attached*). There is no ephemeral local storage: your data is preserved independently of the virtual machine's state.
+All volumes in the VM Instances service are **persistent Flash volumes mounted over the network** (*network-attached*). There is no ephemeral local storage: your data is preserved independently of the virtual machine's state.
 
 ### System Disk
 
@@ -111,7 +111,7 @@ On a **VPC** network, it is possible to associate a **floating IP** with a VM in
 
 ## Deployment and Images
 
-VM instances are deployed from **official Cloud Temple Marketplace images**. This curated image catalogue guarantees tested, maintained, and ready-to-use environments for each supported operating system.
+VM Instances are deployed from **official Cloud Temple Marketplace images**. This curated image catalogue guarantees tested, maintained, and ready-to-use environments for each supported operating system.
 
 The service supports **Cloud-init** for automatic pre-configuration of instances at startup (SSH key injection, network configuration, initialisation scripts, etc.).
 

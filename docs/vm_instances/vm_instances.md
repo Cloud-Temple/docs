@@ -2,14 +2,14 @@
 title: Vue d'ensemble
 ---
 
-Le service **VM instances** de Cloud Temple permet le déploiement rapide de machines virtuelles sur une infrastructure mutualisée et performante. Cette offre combine la souplesse du cloud public avec les garanties de sécurité d'un cloud souverain.
+Le service **VM Instances** de Cloud Temple permet le déploiement rapide de machines virtuelles sur une infrastructure mutualisée et performante. Cette offre combine la souplesse du cloud public avec les garanties de sécurité d'un cloud souverain.
 
 Elle s'adapte à tous les besoins grâce à ses différentes classes de service — du développement économique à la production critique — tout en s'intégrant nativement à l'écosystème Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Découvrez l'architecture, les classes de service et les fonctionnalités du service VM instances.</p>
+    <p>Découvrez l'architecture, les classes de service et les fonctionnalités du service VM Instances.</p>
     <a href="/docs/iaas_vmaas/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
