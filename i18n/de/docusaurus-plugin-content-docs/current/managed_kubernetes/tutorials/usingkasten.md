@@ -36,7 +36,7 @@ Das Kasten-Dashboard ist über eine sichere URL erreichbar, die aus dem Bezeichn
 
 <img src={k10dashboard} />
 
-:::tip Integrierter Schnellstart-Leitfaden
+:::tip[Integrierter Schnellstart-Leitfaden]
 Die Kasten-Konsole enthält einen interaktiven Schnellstart-Leitfaden auf ihrer Startseite. Folgen Sie ihm gerne für eine erste praktische Einführung direkt über die Oberfläche.
 :::
 
@@ -48,7 +48,7 @@ Sie müssen nichts konfigurieren. Der Speicherort ist bereits im Kasten-Dashboar
 
 <img src={k10s3location} />
 
-:::info Kostenmodell
+:::info[Kostenmodell]
 Der Veeam Kasten-Dienst ist im Managed Kubernetes-Angebot enthalten. Der Backup-Speicher auf unserem souveränen S3 wird nutzungsbasiert abgerechnet. Weitere Details finden Sie in unserer Preisliste.
 :::
 
@@ -56,7 +56,7 @@ Der Veeam Kasten-Dienst ist im Managed Kubernetes-Angebot enthalten. Der Backup-
 
 Eine Backup-Richtlinie (`Policy`) ist eine Reihe von Regeln, die definieren, wann und wie Ihre Anwendungen gesichert werden sollen.
 
-:::warning Vorhandene Backup-Richtlinie
+:::warning[Vorhandene Backup-Richtlinie]
 Eine Backup-Richtlinie namens `infra-backups` ist bereits in Ihrer Kasten-Instanz konfiguriert. Diese Richtlinie stellt die Sicherung der mit dem Cluster gelieferten wesentlichen Komponenten sicher.
 
 <img src={k10infrabackups} />

@@ -58,7 +58,7 @@ Terraform v1.6.0
 
 Estas credenciales se pueden generar desde la Consola Cloud Temple siguiendo [este procedimiento](https://docs.cloud-temple.com/console/api#claves-api).
 
-:::warning Seguridad
+:::warning[Seguridad]
     Guarde estas credenciales en un lugar seguro. El Secret ID solo se mostrará una vez.
 :::
 
@@ -209,7 +209,7 @@ output "vm_moref" {
 }
 ```
 
-:::note Adaptación de los nombres
+:::note[Adaptación de los nombres]
     Los nombres de los datacenters, clusters y datastores deben coincidir con los disponibles en su entorno Cloud Temple. Consulte la consola para identificar las recursos disponibles.
 :::
 
@@ -277,7 +277,7 @@ vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
 ```
 
-:::success ¡Felicidades!
+:::success[¡Felicidades!]
     ¡Acaba de crear su primera máquina virtual Cloud Temple con Terraform!
 :::
 

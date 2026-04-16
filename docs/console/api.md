@@ -48,7 +48,7 @@ Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 
 <img src={ShivaProfil005} />
 
-:::info Cycle de vie du token d'authentification
+:::info[Cycle de vie du token d'authentification]
 Lorsque vous utilisez votre __Personal Access Token (PAT)__ pour vous authentifier auprès de l'API, vous recevez en retour un token d'accès. Il est important de noter que ce token d'accès est un __JSON Web Token (JWT)__ avec une durée de vie limitée.
 
 - __Durée de vie__ : Chaque token JWT est valide pour une durée de __5 minutes__.

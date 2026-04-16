@@ -40,7 +40,7 @@ Renseignez les paramètres de votre instance :
 | **Réseau (VPC)** | Associez la VM à votre réseau VPC |
 | **Cloud-init** | Optionnel : injectez un script de pré-configuration au démarrage (clés SSH, configuration réseau, etc.) |
 
-:::info Disque système
+:::info[Disque système]
 Le disque système (Flash) est inclus automatiquement. Sa taille (entre 15 et 100 Go) dépend du système d'exploitation choisi.
 :::
 
@@ -81,11 +81,11 @@ resource "cloudtemple_compute_vm_instance" "example" {
 }
 ```
 
-Consultez la [documentation Terraform](../terraform/terraform) pour l'installation et la configuration du provider.
+Consultez la [documentation Terraform](../../terraform/terraform) pour l'installation et la configuration du provider.
 
 ## Ressources utiles
 
 - [Documentation publique Cloud Temple](https://docs.cloud-temple.com/home)
 - [Référence API](https://shiva.cloud-temple.com/api/)
-- [Documentation Terraform](../terraform/terraform)
-- [Concepts des zones de disponibilité](../additional_content/concepts_az.md)
+- [Documentation Terraform](../../terraform/terraform)
+- [Concepts des zones de disponibilité](../../additional_content/concepts_az.md)

@@ -10,12 +10,12 @@ Si adatta a tutte le esigenze grazie alle sue diverse classi di servizio — dal
   <div class="card">
     <h3>Concetti</h3>
     <p>Scoprite l'architettura, le classi di servizio e le funzionalità del servizio VM Instances.</p>
-    <a href="/docs/vm_instances/concepts" class="card-link">Esplorare i concetti &rarr;</a>
+    <a href="/docs/public_cloud/vm_instances/concepts" class="card-link">Esplorare i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Distribuite la vostra prima macchina virtuale in pochi minuti dal Marketplace di Cloud Temple.</p>
-    <a href="/docs/vm_instances/quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
+    <a href="/docs/public_cloud/vm_instances/quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
   </div>
 </div>
 

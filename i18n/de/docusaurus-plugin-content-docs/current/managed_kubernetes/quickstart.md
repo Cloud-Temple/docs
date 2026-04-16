@@ -16,7 +16,7 @@ Für die Interaktion mit Ihrem Cluster sind mehrere Elemente unverzichtbar:
 2. **Das `kubectl`-Tool**: Dies ist die Standard-Befehlszeilenschnittstelle zur Verwaltung eines Kubernetes-Clusters.
 3. **Das `kubelogin`-Tool** (falls OIDC verwendet wird): Wenn Ihr Cluster für die Authentifizierung über einen OIDC-Identitätsanbieter (wie Entra ID/Azure AD) konfiguriert ist, müssen Sie das `kubelogin`-Tool installieren, um den Authentifizierungsfluss zu verwalten. Folgen Sie dem [kubelogin-Installationsleitfaden](https://github.com/int128/kubelogin).
 
-:::info Empfohlene grafische Tools:
+:::info[Empfohlene grafische Tools:]
 Für ein visuelleres Erlebnis und eine vereinfachte Verwaltung Ihrer Ressourcen empfehlen wir die Verwendung von **Lens**. Es ist ein leistungsstarkes Tool für Kubernetes, mit dem Sie Ihren Cluster erkunden, Ihre Anwendungen verwalten und deren Status grafisch visualisieren können.
 Einige unserer Tutorials werden Lens zur Veranschaulichung der Vorgehensweisen verwenden. Sie können es hier herunterladen: [https://k8slens.dev/](https://k8slens.dev/).
 :::
@@ -39,7 +39,7 @@ Die URLs lauten:
   - opencost.external-secured.**bezeichner**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**bezeichner**.mk.ms-cloud-temple.com
 
-:::info Gesicherte URLs
+:::info[Gesicherte URLs]
 Die obigen URLs sind nur von bekannten öffentlichen IPs aus zugänglich, die in der Firewall der Lösung konfiguriert sind. Wenn Sie eine öffentliche IP hinzufügen möchten, müssen Sie eine Support-Anfrage stellen.
 :::
 
@@ -48,7 +48,7 @@ Die obigen URLs sind nur von bekannten öffentlichen IPs aus zugänglich, die in
   - argocd.internal.**bezeichner**.mk.ms-cloud-temple.com
   - hubble.internal.**bezeichner**.mk.ms-cloud-temple.com
 
-:::info Interne URLs
+:::info[Interne URLs]
 Die obigen URLs sind nicht über das Internet zugänglich. Sie sind nur im internen Managed Kubernetes-Netzwerk erreichbar.
 :::
 
@@ -56,7 +56,7 @@ Die obigen URLs sind nicht über das Internet zugänglich. Sie sind nur im inter
 
 ## Ihre Berechtigungen
 
-:::warning Dev/Test
+:::warning[Dev/Test]
 Für **"Dev/Test"** Managed Kubernetes-Cluster verfügt das Ihnen bereitgestellte Service-Konto über alle Berechtigungen auf dem gesamten Cluster (ClusterAdmin)
 :::
 

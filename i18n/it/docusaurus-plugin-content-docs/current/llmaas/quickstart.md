@@ -112,7 +112,7 @@ Per il vostro primo test, utilizzate uno di questi modelli consigliati:
 
 Consulta il [catalogo completo dei modelli](./models) per ulteriori opzioni.
 
-:::tip Suggerimento per i modelli Qwen
+:::tip[Suggerimento per i modelli Qwen]
 Alcuni modelli della famiglia **Qwen** (come `qwen3:14b` o `qwen3:30b-a3b`) dispongono di una modalità di ragionamento avanzata. È possibile attivarla forzatamente aggiungendo `/think` all'inizio del vostro prompt, o disattivarla per ottenere una risposta più diretta e veloce con `/nothink`.
 :::
 

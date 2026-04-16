@@ -82,7 +82,7 @@ Pour chaque adaptateur réseau :
 - **Réseau** : Sélectionnez le réseau virtuel (avec indication VPC ou Private Backbone)
 - **Adresse MAC** : Optionnelle, générée automatiquement si non spécifiée
 
-:::info VPC
+:::info[VPC]
 La configuration des réseaux VPC n'est disponible que depuis l'onglet Réseau de la machine virtuelle une fois l'opération terminée. La configuration depuis ce formulaire sera disponible prochainement.
 :::
 

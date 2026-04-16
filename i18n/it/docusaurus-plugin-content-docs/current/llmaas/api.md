@@ -245,11 +245,11 @@ Per analizzare immagini, puoi inviare una richiesta in cui il campo `content` di
 
 Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` che contiene l'URL dell'immagine nel formato `data URI` (base64).
 
-:::info Nota sulla Compatibilità
+:::info[Nota sulla Compatibilità]
 Sebbene il formato standard e raccomandato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche, per maggiore flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Tuttavia, si consiglia di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
 :::
 
-:::tip Riconoscimento Ottico dei Caratteri (OCR) e Analisi Documenti
+:::tip[Riconoscimento Ottico dei Caratteri (OCR) e Analisi Documenti]
 Per compiti specifici di analisi documenti (PDF, scansioni, tabelle), raccomandiamo l'uso del modello specializzato **DeepSeek-OCR**. Consulta la [documentazione dedicata](./ocr).
 :::
 
@@ -812,7 +812,7 @@ except Exception as e:
 
 #### Utilizzo degli Embeddings
 
-:::warning Incompatibilità con i client standard di LangChain
+:::warning[Incompatibilità con i client standard di LangChain]
 Al momento, l'utilizzo dell'endpoint di embedding tramite le classi standard di LangChain (`langchain_openai.OpenAIEmbeddings` o `langchain_community.OllamaEmbeddings`) presenta incompatibilità con la nostra API.
 
 - `OpenAIEmbeddings` invia token pre-calcolati invece di testo grezzo, che viene rifiuto.

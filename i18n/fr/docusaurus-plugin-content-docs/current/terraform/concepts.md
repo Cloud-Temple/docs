@@ -51,7 +51,7 @@ Le provider s'authentifie auprès des APIs Cloud Temple en utilisant :
 
 Ces identifiants sont générés depuis la Console de Cloud Temple et permettent au provider d'effectuer des opérations en votre nom.
 
-:::info Bonnes pratiques
+:::info[Bonnes pratiques]
     Stockez vos credentials dans des variables d'environnement ou un gestionnaire de secrets, jamais directement dans le code.
 :::
 
@@ -280,7 +280,7 @@ Détruit toutes les ressources gérées :
 terraform destroy
 ```
 
-:::danger Attention
+:::danger[Attention]
   Cette commande supprime définitivement toutes les ressources. Utilisez-la avec précaution.
 :::
 

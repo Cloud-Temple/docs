@@ -10,12 +10,12 @@ Es passt sich durch verschiedene Service-Klassen an alle Anforderungen an – vo
   <div class="card">
     <h3>Konzepte</h3>
     <p>Entdecken Sie die Architektur, Service-Klassen und Funktionen des VM Instances-Dienstes.</p>
-    <a href="/docs/vm_instances/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <a href="/docs/public_cloud/vm_instances/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Stellen Sie Ihre erste virtuelle Maschine in wenigen Minuten über den Cloud Temple Marketplace bereit.</p>
-    <a href="/docs/vm_instances/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="/docs/public_cloud/vm_instances/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
 </div>
 

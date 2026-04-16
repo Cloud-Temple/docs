@@ -16,7 +16,7 @@ Ziel dieses Tutorials ist es, Sie mit den grundlegenden Netzwerkkonzepten des **
 
 Wir werden als **Beispiel** einen Cluster **"ctodev"** verwenden, dem der Bereich **10.20.0.0/22** zugewiesen ist.
 
-:::warning Definition der Bereiche
+:::warning[Definition der Bereiche]
  Dieser private IP-Bereich X.Y.Z.0/22 (RFC 1918) wird mit dem Kunden bei der Einrichtung des Clusters festgelegt. Er kann später nicht mehr geändert werden.
 :::
 
@@ -58,7 +58,7 @@ Der Bereich unseres **Beispiels** 10.20.0.0/22 ist logisch in Teilbereiche unter
 
     - Services: 10.95.0.0/12 
 
-:::warning Pods- und Services-Bereiche
+:::warning[Pods- und Services-Bereiche]
 Die Pods- und Services-Bereiche werden mit dem Kunden bei der Einrichtung des Clusters festgelegt. Sie können später nicht mehr geändert werden.
 :::
 
@@ -217,7 +217,7 @@ Diese Konfiguration stellt sicher, dass der Datenverkehr zur API und zu internen
   </div>
 </div>
 
-:::warning Weiterführend: Sicherheit in der Produktion
+:::warning[Weiterführend: Sicherheit in der Produktion]
 Dieses Dokument erklärt die grundlegenden Netzwerkkonzepte. Für eine Produktionsbereitstellung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen anzuwenden:
 
 - **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrer sicheren Unternehmens-Registry wie **Harbor** anstelle von öffentlichen Images.

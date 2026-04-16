@@ -10,8 +10,8 @@ The VM Instances service is deployed in the **FR1** region. When creating a virt
 
 For more information on availability zones and Cloud Temple regions, see:
 
-- [Availability Zone Concepts](../additional_content/concepts_az.md)
-- [Regional Concepts](../additional_content/concepts_regional.md)
+- [Availability Zone Concepts](../../additional_content/concepts_az.md)
+- [Regional Concepts](../../additional_content/concepts_regional.md)
 
 ## Service Classes
 
@@ -102,8 +102,8 @@ Each VM instance has **a single network interface**.
 
 This interface can be connected to two types of Cloud Temple networks:
 
-- **Private backbone network**: shared private network with strict logical isolation between tenants. Ideal for interconnecting your Cloud Temple resources in a controlled environment. [Learn more](../network/private_network/private_network.md)
-- **VPC (Virtual Private Cloud)**: fully managed private network enabling advanced segmentation and fine-grained network configuration of your environments. [Learn more](../network/vpc/vpc.md)
+- **Private backbone network**: shared private network with strict logical isolation between tenants. Ideal for interconnecting your Cloud Temple resources in a controlled environment. [Learn more](../../network/private_network/private_network.md)
+- **VPC (Virtual Private Cloud)**: fully managed private network enabling advanced segmentation and fine-grained network configuration of your environments. [Learn more](../../network/vpc/vpc.md)
 
 ### Floating IP
 

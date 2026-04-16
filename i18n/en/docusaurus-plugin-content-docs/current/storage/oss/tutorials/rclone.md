@@ -4,7 +4,7 @@ title: Copy and synchronize with Rclone
 
 [Rclone](https://rclone.org/) is an open-source command-line tool that allows you to copy and synchronize files to numerous cloud storage services, including S3-compatible storage. It is particularly well-suited for backups, data migrations, and directory synchronization.
 
-:::caution Required version
+:::caution[Required version]
 Make sure you are using a **recent version of Rclone** to ensure compatibility with Cloud Temple object storage. You can check your version with `rclone version`.
 :::
 
@@ -91,7 +91,7 @@ rclone copy /data/backup cloudtemple-s3:bucket-name/ --verbose
 
 The `rclone sync` command makes the destination **identical** to the source. Files present on the destination but missing from the source will be **deleted**.
 
-:::danger Attention
+:::danger[Attention]
 `rclone sync` **deletes** files from the destination that no longer exist in the source. Always test with `--dry-run` before executing the command.
 :::
 

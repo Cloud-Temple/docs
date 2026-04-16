@@ -30,7 +30,7 @@ Le modèle adapte sa consommation de tokens à la résolution de l'image. Plus l
 | **Large** | 1280 x 1280 | 400 | Documents denses, petits caractères |
 | **Gundam** | Dynamique | ~800 | Journaux, plans, scans complexes |
 
-:::tip Optimisation
+:::tip[Optimisation]
 Pour optimiser vos coûts et la latence, redimensionnez vos images à la résolution minimale nécessaire pour que le texte reste lisible.
 :::
 
