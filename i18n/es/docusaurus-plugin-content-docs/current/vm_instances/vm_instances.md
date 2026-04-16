@@ -10,12 +10,12 @@ Se adapta a todas las necesidades gracias a sus diferentes clases de servicio ‚Ä
   <div class="card">
     <h3>Conceptos</h3>
     <p>Descubra la arquitectura, las clases de servicio y las funcionalidades del servicio VM Instances.</p>
-    <a href="/docs/iaas_vmaas/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+    <a href="/docs/vm_instances/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Despliegue su primera m√°quina virtual en minutos desde el Marketplace de Cloud Temple.</p>
-    <a href="/docs/iaas_vmaas/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="/docs/vm_instances/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
 </div>
 
