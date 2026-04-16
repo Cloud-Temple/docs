@@ -16,16 +16,15 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* ── Typographie Inter (proche Scaleway) ── */
-  --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* ── Typographie système (lisible, neutre, proche Scaleway) ── */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --ifm-font-size-base: 15px;
   --ifm-line-height-base: 1.65;
   --ifm-font-weight-normal: 400;
   --ifm-font-weight-semibold: 500;
-  --ifm-font-weight-bold: 600;
-  --ifm-heading-font-weight: 600;
+  --ifm-font-weight-bold: 700;
+  --ifm-heading-font-weight: 700;
   --ifm-heading-line-height: 1.25;
-  --ifm-letter-spacing: -0.01em;
 
   /* ── Sidebar ── */
   --ifm-menu-link-padding-vertical: 6px;
@@ -50,20 +49,98 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Appliquer Inter partout */
-html, body, * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1 { font-size: 1.9rem; }
 h2 { font-size: 1.4rem; }
 h3 { font-size: 1.15rem; }
+
+/* ── Sidebar : style unifié — une seule couleur, poids différencié ── */
+
+/* Tous les liens sidebar : couleur uniforme légèrement renforcée */
+.menu__link {
+  color: #3d3d3d;
+}
+
+[data-theme='dark'] .menu__link {
+  color: #ccc;
+}
+
+/* Catégories top-level : plus bold pour hiérarchiser sans changer de couleur */
+.sidebar-cat-console > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-billing > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-security-identity > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-ai > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-baremetal > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-compute > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-network > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-storage > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-monitoring > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-security > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-housing > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-marketplace > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-containers > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-devtools > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-k8s > .menu__list-item-collapsible > .menu__link,
+.sidebar-cat-databases > .menu__list-item-collapsible > .menu__link {
+  font-weight: 600;
+}
+
+/* ── Badge "Preview" pour les items en cours de preview ── */
+
+/*
+  On utilise ::before sur .menu__list-item-collapsible (pas ::after sur le lien)
+  car Docusaurus utilise ::after sur .menu__link--sublist pour la flèche rotate,
+  ce qui ferait tourner le badge à 90° quand l'item est replié.
+*/
+.sidebar-preview > .menu__list-item-collapsible {
+  position: relative;
+}
+
+/* Décale le texte du lien à droite pour laisser la place au badge */
+.sidebar-preview > .menu__list-item-collapsible > .menu__link {
+  padding-right: 5rem;
+}
+
+.sidebar-preview > .menu__list-item-collapsible::before {
+  content: 'Preview';
+  position: absolute;
+  right: 2.5rem; /* laisse la place au bouton caret */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #e87c0c;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* ── Badge "Preview" dans les titres H1 ── */
+
+.title-preview-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #e87c0c;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  vertical-align: 5px;
+  margin-left: 10px;
+  line-height: 1.4;
+}
 
 /* Style pour les titres principaux (non cliquables) */
 .sidebar-category-title > .menu__link {
