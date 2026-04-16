@@ -7,7 +7,8 @@ import StandAlone from './images/StandAlone.png'
 import Distributed from './images/Distributed.png'
 import maxscale from './images/maxscale.png'
 
-# MariaDB Managé (preview)
+# MariaDB Managé <span class="title-preview-badge">Preview</span>
+
 
 <div class="card-grid">
   <div class="card">
