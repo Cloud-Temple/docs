@@ -113,7 +113,7 @@ Le portail API vous permet de :
 Les URLs de l'API Cloud Temple suivent une structure cohérente :
 
 ```
-https://api.cloud-temple.com/{module}/v{version}/{ressource}
+https://shiva.cloud-temple.com/api/{module}/v{version}/{ressource}
 ```
 
 Où :
@@ -125,20 +125,20 @@ Où :
 
 ```
 # Machines virtuelles (Compute)
-GET    https://api.cloud-temple.com/compute/v1/virtual-machines
-POST   https://api.cloud-temple.com/compute/v1/virtual-machines
-GET    https://api.cloud-temple.com/compute/v1/virtual-machines/{id}
-PATCH  https://api.cloud-temple.com/compute/v1/virtual-machines/{id}
-DELETE https://api.cloud-temple.com/compute/v1/virtual-machines/{id}
+GET    https://shiva.cloud-temple.com/api/compute/v1/virtual-machines
+POST   https://shiva.cloud-temple.com/api/compute/v1/virtual-machines
+GET    https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
+PATCH  https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
+DELETE https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
 
 # Identité et accès (IAM)
-GET    https://api.cloud-temple.com/iam/v1/users
-POST   https://api.cloud-temple.com/iam/v1/users
-GET    https://api.cloud-temple.com/iam/v1/users/{id}
+GET    https://shiva.cloud-temple.com/api/iam/v1/users
+POST   https://shiva.cloud-temple.com/api/iam/v1/users
+GET    https://shiva.cloud-temple.com/api/iam/v1/users/{id}
 
 # Réseaux
-GET    https://api.cloud-temple.com/network/v1/virtual-networks
-POST   https://api.cloud-temple.com/network/v1/virtual-networks
+GET    https://shiva.cloud-temple.com/api/network/v1/virtual-networks
+POST   https://shiva.cloud-temple.com/api/network/v1/virtual-networks
 ```
 
 ### Organisation par module
@@ -160,105 +160,6 @@ L'API Cloud Temple est organisée en modules fonctionnels :
 | Support | Tickets et assistance | `/support/v1/` |
 | Notification | Système de notifications | `/notification/v1/` |
 | LLMaaS | Intelligence artificielle | `/llmaas/v1/` |
-
-## Requêtes API
-
-### Méthodes HTTP
-
-L'API Cloud Temple utilise les méthodes HTTP standard :
-
-| Méthode | Usage | Exemple |
-|---------|-------|---------|
-| **GET** | Récupérer une ressource ou liste de ressources | Lister vos machines virtuelles : `GET /compute/v1/virtual-machines` |
-| **POST** | Créer une nouvelle ressource | Créer une machine virtuelle : `POST /compute/v1/virtual-machines` |
-| **PATCH** | Modifier une ressource existante | Modifier une machine virtuelle : `PATCH /compute/v1/virtual-machines/{id}` |
-| **PUT** | Remplacer entièrement une ressource | Remplacer une configuration : `PUT /compute/v1/virtual-machines/{id}` |
-| **DELETE** | Supprimer une ressource | Supprimer une machine virtuelle : `DELETE /compute/v1/virtual-machines/{id}` |
-
-### Format des requêtes
-
-Toutes les requêtes et réponses de l'API Cloud Temple sont au format JSON.
-
-Les en-têtes HTTP requis sont :
-
-```
-Content-Type: application/json
-Authorization: Bearer <votre-token-jwt>
-```
-
-### Paramètres de requête
-
-#### Paramètres dans l'URL (Query parameters)
-
-Utilisés principalement avec les requêtes GET pour filtrer, paginer ou trier les résultats :
-
-```bash
-GET /compute/v1/virtual-machines?datacenterId=xxx&status=running&page=1&limit=50
-```
-
-#### Paramètres dans le corps (Body parameters)
-
-Utilisés avec POST, PATCH et PUT pour transmettre les données de la ressource :
-
-```bash
-POST /compute/v1/virtual-machines
-Content-Type: application/json
-
-{
-  "name": "ma-vm-production",
-  "cpu": 4,
-  "memory": 8192,
-  "datacenterId": "xxx-xxx-xxx"
-}
-```
-
-## Réponses API
-
-### Codes de statut HTTP
-
-L'API utilise les codes de statut HTTP standard :
-
-| Code | Signification | Description |
-|------|---------------|-------------|
-| **200** | OK | La requête a réussi |
-| **201** | Created | La ressource a été créée avec succès |
-| **202** | Accepted | La requête a été acceptée pour traitement (opération asynchrone) |
-| **204** | No Content | La requête a réussi mais ne retourne pas de contenu |
-| **400** | Bad Request | La requête est mal formée ou contient des paramètres invalides |
-| **401** | Unauthorized | Authentification requise ou token invalide/expiré |
-| **403** | Forbidden | L'utilisateur n'a pas les permissions nécessaires |
-| **404** | Not Found | La ressource demandée n'existe pas |
-| **409** | Conflict | Conflit avec l'état actuel de la ressource |
-| **422** | Unprocessable Entity | Les données sont valides mais ne peuvent être traitées |
-| **429** | Too Many Requests | Limite de taux dépassée |
-| **500** | Internal Server Error | Erreur interne du serveur |
-| **503** | Service Unavailable | Service temporairement indisponible |
-
-### Structure des réponses
-
-#### Réponse réussie
-
-```json
-{
-  "id": "550e8400-e29b-41d4-a716-446655440000",
-  "name": "ma-vm-production",
-  "status": "running",
-  "cpu": 4,
-  "memory": 8192,
-  "createdAt": "2024-01-15T10:30:00Z"
-}
-```
-
-#### Réponse d'erreur
-
-```json
-{
-  "error": {
-    "status": "400 Bad Request",
-    "message": "Invalid parameter: cpu must be a positive integer"
-  }
-}
-```
 
 ## Les activités
 
