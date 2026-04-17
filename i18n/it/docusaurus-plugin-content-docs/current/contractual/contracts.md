@@ -13,7 +13,7 @@ Qui trovi tutti i documenti contrattuali di Cloud Temple: condizioni generali, a
 ## Condizioni Generali
 
 <div class="book-grid">
-  <a class="book-card" href="contractual/cgvu">
+  <a class="book-card" href="/docs/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf" target="_blank">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -44,51 +44,17 @@ Qui trovi tutti i documenti contrattuali di Cloud Temple: condizioni generali, a
 
 ---
 
-## Condizioni Particolari
-
-<div class="book-grid">
-  <a class="book-card" href="contractual/baremetal">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Condizioni Particolari Bare Metal</div>
-      <div class="book-card-desc">Condizioni specifiche per i servizi di hosting dedicato Bare Metal.</div>
-      <div class="book-card-cta">Consulta il documento →</div>
-    </div>
-  </a>
-</div>
-
----
-
 ## Accordi di Servizio SecNumCloud
 
 Gli accordi di servizio definiscono il quadro contrattuale per la fornitura di servizi qualificati SecNumCloud: perimetro, impegni operativi, responsabilità e condizioni di servizio.
 
 <div class="book-grid">
-  <a class="book-card" href="contractual/iaas/sla">
+  <a class="book-card" href="/docs/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf" target="_blank">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Accordo di Servizio IaaS VMware SecNumCloud</div>
-      <div class="book-card-desc">Quadro contrattuale per l'infrastruttura IaaS VMware qualificata SecNumCloud.</div>
-      <div class="book-card-cta">Consulta il documento →</div>
-    </div>
-  </a>
-  <a class="book-card" href="contractual/iaas/sla-openiaas">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Accordo di Servizio Open IaaS SecNumCloud</div>
-      <div class="book-card-desc">Quadro contrattuale per l'infrastruttura Open IaaS qualificata SecNumCloud.</div>
-      <div class="book-card-cta">Consulta il documento →</div>
-    </div>
-  </a>
-  <a class="book-card" href="contractual/paas/sla">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Accordo di Servizio PaaS OpenShift SecNumCloud</div>
-      <div class="book-card-desc">Quadro contrattuale per la piattaforma PaaS OpenShift gestita SecNumCloud.</div>
+      <div class="book-card-title">Convenzione di Servizio SecNumCloud</div>
+      <div class="book-card-desc">Quadro contrattuale per la fornitura di servizi qualificati SecNumCloud: ambito, impegni operativi, responsabilità e condizioni di servizio.</div>
       <div class="book-card-cta">Consulta il documento →</div>
     </div>
   </a>
