@@ -175,21 +175,21 @@ Le contenu de l'activité inclut toutes les informations essentielles pour ident
 
 ```json
 {
+  "id": "UUIDV4",
   "tenantId": "UUIDV4",
   "description": "STRING",
   "type": "ComputeActivity" | "BackupActivity" | "IAMActivity" | "TagActivity" | "RTMSActivity" | "BastionActivity" | "SupportActivity",
   "tags": "STRING[]",
   "initiator": "UUIDV4",
+  "creationDate": "DATE",
   "concernedItems": [
     {
       "type": "string",
       "id": "string"
     }
   ],
-  "id": "UUIDV4",
-  "creationDate": "DATE",
-  "operationType": "read" | "write",
-  "state": "CompletedState | RunningState | WaitingState | FailedState"
+  "state": "CompletedState | RunningState | WaitingState | FailedState",
+  "operationType": "read" | "write"
 }
 ```
 
@@ -244,67 +244,6 @@ completed: {
 :::info[Identifiant de la ressource créée]
 L'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.
 :::
-
-## Pagination, filtrage et tri
-
-### Pagination
-
-Les endpoints qui retournent des listes de ressources supportent la pagination via les paramètres suivants :
-
-| Paramètre | Description | Valeur par défaut |
-|-----------|-------------|-------------------|
-| `page` | Numéro de la page (commence à 1) | 1 |
-| `limit` | Nombre d'éléments par page | 25 |
-| `offset` | Décalage (alternative à page) | 0 |
-
-Exemple :
-
-```bash
-GET /compute/v1/virtual-machines?page=2&limit=50
-```
-
-La réponse inclut des métadonnées de pagination :
-
-```json
-{
-  "data": [...],
-  "pagination": {
-    "page": 2,
-    "limit": 50,
-    "total": 150,
-    "pages": 3
-  }
-}
-```
-
-### Filtrage
-
-De nombreux endpoints acceptent des paramètres de filtrage pour affiner les résultats. Les filtres courants incluent :
-
-- `status` : Filtrer par état (running, stopped, etc.)
-- `datacenterId` : Filtrer par datacenter
-- `name` : Recherche par nom
-- `tags` : Filtrer par tags
-
-Exemple :
-
-```bash
-GET /compute/v1/virtual-machines?status=running&datacenterId=xxx
-```
-
-### Tri
-
-Utilisez le paramètre `sort` pour trier les résultats :
-
-```bash
-# Tri croissant par nom
-GET /compute/v1/virtual-machines?sort=name
-
-# Tri décroissant par date de création
-GET /compute/v1/virtual-machines?sort=-createdAt
-```
-
-Le préfixe `-` indique un tri décroissant.
 
 ## Limites API
 
@@ -413,54 +352,15 @@ La description de l'endpoint inclut :
 
 <img src={ShivaApi004} />
 
-#### Dans les notes de version
-
-Les informations d'évolution des endpoints de l'API sont disponibles dans les notes de mises à jour accessibles depuis la console :
-
-Vous trouverez la liste des endpoints qui sont dépréciés activité par activité, organisée par module :
-
-- **Compute** : Endpoints VMware et OpenIaaS
-- **IAM** : Endpoints d'identité et d'accès
-- **Network** : Endpoints réseau
-- **Support** : Endpoints de support
-- Etc.
-
-Chaque entrée de dépréciation indique :
-- L'endpoint concerné
-- La version dans laquelle il est déprécié
-- La date de dépréciation
-- La date de suppression prévue
-- L'endpoint de remplacement
-
-### Exemple de dépréciation
-
-```json
-{
-  "module": "Compute",
-  "deprecatedVersion": "1.8.0",
-  "deprecationDate": "2024-01-15",
-  "removalDate": "2024-04-15",
-  "endpoints": [
-    {
-      "path": "POST /v1/compute/virtual-machines/old-create",
-      "replacement": "POST /v1/compute/virtual-machines",
-      "reason": "Paramètres virtualDatacenterId, folderId et resourcePoolId dépréciés"
-    }
-  ]
-}
-```
-
 ### Bonnes pratiques pour gérer les dépréciations
 
-1. **Surveillez les notes de version** : Consultez régulièrement les notes de version dans la console pour être informé des dépréciations à venir.
+1. **Surveillez les fonctionnalités dépréciées** : Consultez régulièrement les fonctionnalités dépréciée dans la console pour être informé des dépréciations à venir.
 
 2. **Planifiez vos migrations** : Dès qu'une dépréciation est annoncée, planifiez la migration de votre code vers le nouvel endpoint dans les 3 mois.
 
 3. **Testez les nouveaux endpoints** : Testez les nouveaux endpoints dès leur disponibilité, même pendant la période de transition.
 
-4. **Mettez en place des alertes** : Surveillez les codes HTTP 410 (Gone) qui indiquent qu'un endpoint a été supprimé.
-
-5. **Documentez vos dépendances** : Maintenez une liste des endpoints que votre application utilise pour faciliter les migrations futures.
+4. **Documentez vos dépendances** : Maintenez une liste des endpoints que votre application utilise pour faciliter les migrations futures.
 
 ## Bonnes pratiques
 
@@ -481,8 +381,8 @@ import requests
 
 try:
     response = requests.get(
-        'https://api.cloud-temple.com/compute/v1/virtual-machines',
-        headers={'Authorization': f'Bearer {token}'}
+        'https://shiva.cloud-temple.com/api/compute/v1/virtual-machines',
+        headers={'Authorization': 'Bearer {token}'}
     )
     response.raise_for_status()  # Lève une exception pour les codes 4xx/5xx
     data = response.json()
@@ -536,148 +436,3 @@ def api_call_with_retry(url, headers, max_retries=3):
             wait_time = (2 ** attempt) + random.uniform(0, 1)
             time.sleep(wait_time)
 ```
-
-## Exemples d'utilisation
-
-### Créer une machine virtuelle
-
-```bash
-# 1. S'authentifier et récupérer le token
-TOKEN=$(curl -X POST \
-  -H "Content-Type: application/json" \
-  -d '{"login": "votre-email@exemple.com", "password": "votre-mot-de-passe"}' \
-  "https://api.cloud-temple.com/iam/v1/auth/login" | jq -r '.token')
-
-# 2. Créer la machine virtuelle
-ACTIVITY_URL=$(curl -X POST \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "ma-vm-production",
-    "cpu": 4,
-    "memory": 8192,
-    "datacenterId": "xxx-xxx-xxx",
-    "hostClusterId": "yyy-yyy-yyy"
-  }' \
-  "https://api.cloud-temple.com/compute/v1/virtual-machines" \
-  -i | grep -i "Location:" | awk '{print $2}' | tr -d '\r')
-
-# 3. Suivre l'activité de création
-curl -X GET \
-  -H "Authorization: Bearer $TOKEN" \
-  "$ACTIVITY_URL"
-```
-
-### Lister et filtrer des ressources
-
-```bash
-# Lister toutes les machines virtuelles en cours d'exécution dans un datacenter
-curl -X GET \
-  -H "Authorization: Bearer $TOKEN" \
-  "https://api.cloud-temple.com/compute/v1/virtual-machines?status=running&datacenterId=xxx&page=1&limit=50"
-```
-
-### Utilisation avec Python
-
-```python
-import requests
-import os
-
-class CloudTempleAPI:
-    def __init__(self, email, password):
-        self.base_url = "https://api.cloud-temple.com"
-        self.token = self._authenticate(email, password)
-    
-    def _authenticate(self, email, password):
-        """Authentification et récupération du token"""
-        response = requests.post(
-            f"{self.base_url}/iam/v1/auth/login",
-            json={"login": email, "password": password}
-        )
-        response.raise_for_status()
-        return response.json()['token']
-    
-    def _headers(self):
-        """En-têtes avec authentification"""
-        return {
-            'Authorization': f'Bearer {self.token}',
-            'Content-Type': 'application/json'
-        }
-    
-    def list_virtual_machines(self, status=None, datacenter_id=None):
-        """Lister les machines virtuelles avec filtres optionnels"""
-        params = {}
-        if status:
-            params['status'] = status
-        if datacenter_id:
-            params['datacenterId'] = datacenter_id
-        
-        response = requests.get(
-            f"{self.base_url}/compute/v1/virtual-machines",
-            headers=self._headers(),
-            params=params
-        )
-        response.raise_for_status()
-        return response.json()
-    
-    def create_virtual_machine(self, name, cpu, memory, datacenter_id, host_cluster_id):
-        """Créer une machine virtuelle"""
-        response = requests.post(
-            f"{self.base_url}/compute/v1/virtual-machines",
-            headers=self._headers(),
-            json={
-                "name": name,
-                "cpu": cpu,
-                "memory": memory,
-                "datacenterId": datacenter_id,
-                "hostClusterId": host_cluster_id
-            }
-        )
-        response.raise_for_status()
-        # Récupérer l'URL de l'activité depuis le header Location
-        activity_url = response.headers.get('Location')
-        return activity_url
-
-# Utilisation
-api = CloudTempleAPI(
-    email=os.getenv('CLOUD_TEMPLE_EMAIL'),
-    password=os.getenv('CLOUD_TEMPLE_PASSWORD')
-)
-
-# Lister les VMs
-vms = api.list_virtual_machines(status='running')
-print(f"Nombre de VMs en cours: {len(vms['data'])}")
-
-# Créer une nouvelle VM
-activity_url = api.create_virtual_machine(
-    name="ma-nouvelle-vm",
-    cpu=4,
-    memory=8192,
-    datacenter_id="xxx-xxx-xxx",
-    host_cluster_id="yyy-yyy-yyy"
-)
-print(f"VM en cours de création, activité: {activity_url}")
-```
-
-## Support et ressources
-
-### Documentation
-
-- [Documentation complète](https://docs.cloud-temple.com/) : Guides d'utilisation de tous les services
-- **Portail API** : Documentation interactive OpenAPI accessible depuis votre console à l'URL `https://<votre-tenant>.shiva.cloud-temple.com/swagger` (l'identifiant de tenant est disponible après connexion)
-
-### Assistance
-
-- **Support technique** : Accessible directement depuis la console dans la section "Support"
-- **Email** : support@cloud-temple.com
-- **Communauté** : Forums et discussions sur les bonnes pratiques
-
-### Outils et SDKs
-
-- **Terraform Provider** : Automatisation d'infrastructure avec Terraform
-- **CLI Cloud Temple** : Interface en ligne de commande (en développement)
-- **SDK Python** : Bibliothèque Python pour l'API (en développement)
-
----
-
-Pour toute question ou suggestion concernant cette documentation, n'hésitez pas à contacter notre équipe support.
