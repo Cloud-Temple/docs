@@ -5,6 +5,11 @@ sidebar_position: 2
 
 # Registro de Cambios
 
+### 17 de abril de 2026: VM Instances — Documentación ilustrada y tutoriales
+
+- **VM Instances — Actualización de documentación**: Revisión completa e ilustración de la documentación de VM Instances. La guía de inicio (`quickstart.md`) cubre ahora todo el recorrido del usuario ilustrado: acceso a la sección, lista de VMs, asistente de creación en 9 pasos (familia de instancia, zona de disponibilidad, plantilla de SO, flavor, nombre/copia de seguridad, Cloud Init, discos, red, resumen) y gestión de 4 pestañas (Información, Discos, Red, Snapshots).
+- **VM Instances — Tutoriales**: Creación de 3 tutoriales dedicados en una carpeta `tutorials/`: (1) **Crear su primera VM** (asistente completo ilustrado + Cloud Init + disco adicional), (2) **Gestionar los discos** (añadir disco desde la consola + particionado Linux), (3) **Tomar y gestionar snapshots** (crear, restaurar, eliminar + buenas prácticas y comparación snapshot/copia de seguridad). La navegación lateral se actualiza con 3 entradas individuales en la categoría Tutoriales.
+
 ### 17 de abril de 2026: Traducción de Private Backbone y armonización terminológica
 
 - **Private Backbone**: Traducción completa de la documentación del servicio Private Backbone al inglés, alemán, español e italiano.

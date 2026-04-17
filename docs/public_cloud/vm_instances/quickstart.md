@@ -10,54 +10,178 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 - Une souscription au **Support Standard** minimum
 - Les permissions nécessaires dans votre organisation Cloud Temple
 
+## Accéder au service VM Instances
+
+Connectez-vous à la **Console Cloud Temple** et naviguez vers **Cloud Public > VM Instances** depuis le menu principal.
+
+![Dashboard Console Cloud Temple](./images/vm_instances_dashboard_overview.png)
+
+Le tableau de bord vous présente un aperçu des ressources VM Instances consommées (stockage, CPU, RAM) ainsi que le nombre de machines virtuelles actives.
+
+Cliquez sur **Cloud Public** dans la sidebar gauche pour déployer le sous-menu, puis sélectionnez **VM Instances**.
+
+![Navigation vers VM Instances](./images/vm_instances_navigation_cloud_public.png)
+
+Vous arrivez sur la liste de vos VM Instances :
+
+![Liste des VM Instances](./images/vm_instances_liste.png)
+
+Le tableau affiche pour chaque VM : son nom, son statut (Allumée / Éteinte), la zone de disponibilité, la famille d'instance, le modèle, ainsi que les ressources allouées (CPU, RAM, Taille disque).
+
 ## Déployer une machine virtuelle
 
-### 1. Accéder au service
+Cliquez sur le bouton **+ Nouvelle machine virtuelle** en haut à droite pour ouvrir le wizard de création. Ce wizard se déroule en **9 étapes**.
 
-Connectez-vous à la **Console Cloud Temple** et naviguez vers la section **VM Instances** depuis le menu principal.
+### Étape 1 — Famille d'instance
 
-### 2. Sélectionner le tenant et la zone de disponibilité
+![Étape 1 : Famille d'instance](./images/vm_instances_creation_etape1_famille.png)
 
-- Choisissez le **tenant** dans lequel vous souhaitez déployer la machine virtuelle.
-- Sélectionnez la **zone de disponibilité (AZ)** cible parmi celles disponibles en région FR1.
+Choisissez la **famille d'instance** adaptée à votre charge de travail :
 
-### 3. Choisir une image depuis la Marketplace
+| Famille | Description | CPU |
+|---------|-------------|-----|
+| **Development** | Coût optimisé, pour les environnements de test et de recette | Mutualisés |
+| **General Purpose** | Équilibre optimal vCPU/RAM pour les charges standards | Mutualisés |
 
-Les machines virtuelles sont déployées exclusivement depuis les **images officielles de la Marketplace Cloud Temple**.
+:::info
+La famille **Performance** (vCPU dédiés) est disponible via le gabarit personnalisé.
+:::
 
-- Parcourez le catalogue d'images disponibles.
-- Sélectionnez le système d'exploitation et la version souhaités.
+### Étape 2 — Zone de disponibilité
 
-### 4. Configurer la machine virtuelle
+![Étape 2 : Zone de disponibilité](./images/vm_instances_creation_etape2_az.png)
 
-Renseignez les paramètres de votre instance :
+Sélectionnez la **zone de disponibilité (AZ)** dans laquelle votre VM sera hébergée (ex : `fr1-az01`).
+
+### Étape 3 — Choisir un template
+
+![Étape 3 : Choisir un template](./images/vm_instances_creation_etape3_template.png)
+
+Parcourez le catalogue d'images disponibles via les onglets **OS** et **Appliances** :
+
+- **Debian 13** (Trixie)
+- **Rocky Linux**
+- Et d'autres systèmes disponibles dans la Marketplace Cloud Temple
+
+Sélectionnez le système d'exploitation souhaité et choisissez la version dans le menu déroulant associé.
+
+### Étape 4 — Gabarit
+
+![Étape 4 : Gabarit](./images/vm_instances_creation_etape4_gabarit.png)
+
+Choisissez un **gabarit prédéfini** ou créez un **gabarit Custom** :
+
+- `dev-1` : 1 vCPU
+- `dev-2` : 2 vCPU / 8 Go RAM (sélectionné par défaut)
+- **Custom** : saisissez librement le nombre de vCPU et la quantité de RAM
+
+### Étape 5 — Nom et politique de sauvegarde
+
+![Étape 5 : Nom et politique de sauvegarde](./images/vm_instances_creation_etape5_nom_sauvegarde.png)
+
+Renseignez :
 
 | Paramètre | Description |
 |-----------|-------------|
-| **Classe de service** | Development, General Purpose ou Performance |
-| **Gabarit (Flavor)** | Choisissez parmi les gabarits prédéfinis ou créez un gabarit custom (vCPU + RAM) |
-| **Disques additionnels** | Ajoutez des volumes supplémentaires si nécessaire (jusqu'à 16 volumes, 2 To max par volume) |
-| **Réseau (VPC)** | Associez la VM à votre réseau VPC |
-| **Cloud-init** | Optionnel : injectez un script de pré-configuration au démarrage (clés SSH, configuration réseau, etc.) |
+| **Nom** | Nom unique de votre VM dans le tenant |
+| **Politique de sauvegarde** | `No Backup` par défaut, ou une politique de rétention si l'option sauvegarde est souscrite |
 
-:::info[Disque système]
-Le disque système (Flash) est inclus automatiquement. Sa taille (entre 15 et 100 Go) dépend du système d'exploitation choisi.
-:::
+Cette étape affiche également un récapitulatif du système d'exploitation sélectionné et de la taille du disque système.
 
-### 5. Lancer le déploiement
+### Étape 6 — Cloud Init
 
-Validez la configuration et lancez le provisionnement. Le déploiement est **automatisé et immédiat** (quelques minutes).
+![Étape 6 : Cloud Init](./images/vm_instances_creation_etape6_cloudinit.png)
+
+Cette étape est **optionnelle**. Elle permet de pré-configurer votre VM au premier démarrage via deux éditeurs :
+
+- **Cloud Config** : injection de clés SSH, configuration du hostname, installation de paquets, etc.
+- **Network Config** : configuration réseau statique (format Netplan)
+
+Exemple de Cloud Config minimal :
+
+```yaml
+#cloud-config
+hostname: mon-serveur-01
+ssh_authorized_keys:
+  - ssh-rsa AAAA...votre_cle_publique
+packages:
+  - htop
+```
+
+Une case à cocher permet de **supprimer le disque de configuration Cloud Init** après le premier démarrage (recommandé pour la sécurité).
+
+### Étape 7 — Disques
+
+![Étape 7 : Disques](./images/vm_instances_creation_etape7_disques.png)
+
+Configurez le ou les disques de votre VM :
+
+- **Disque système** : créé automatiquement (`system-disk-1`), taille déterminée par l'OS
+- **Disques additionnels** : ajoutez des volumes supplémentaires avec le nom, la capacité et le type de stockage souhaités
+
+Deux types de stockage sont disponibles :
+
+| Type | IOPS |
+|------|------|
+| **Standard** | ~1 500 IOPS/To |
+| **Enterprise** | ~7 500 IOPS/To |
+
+### Étape 8 — Adaptateurs Réseaux
+
+![Étape 8 : Adaptateurs Réseaux](./images/vm_instances_creation_etape8_reseau.png)
+
+Associez votre VM à un réseau depuis le menu déroulant. Deux types de réseaux sont disponibles :
+
+- **Backbone privé** (ex : PACKFR) : réseau privé mutualisé avec isolation logique
+- **VPC** : réseau privé entièrement dédié avec segmentation avancée
+
+### Étape 9 — Sommaire
+
+![Étape 9 : Sommaire](./images/vm_instances_creation_etape9_sommaire.png)
+
+Vérifiez le récapitulatif complet avant de lancer le provisionnement :
+
+- Informations générales (famille, AZ, modèle, nom, sauvegarde)
+- Gabarit (CPU, RAM)
+- Configuration Cloud Init
+- Disques virtuels
+- Réseau
+
+Cliquez sur **Créer** pour lancer le déploiement. La VM est provisionnée en quelques minutes.
 
 ## Gérer vos machines virtuelles
 
-Depuis la console, vous pouvez effectuer les actions suivantes sur vos machines virtuelles :
+Depuis la liste, cliquez sur une VM pour déployer son panneau de détail. Quatre onglets sont disponibles :
 
-- **Démarrer / Arrêter / Redémarrer** la machine virtuelle
-- **Ouvrir la console** pour accéder directement au système
-- **Modifier la configuration** (vCPU, RAM) — nécessite l'arrêt de la VM
-- **Ajouter des disques** supplémentaires
-- **Consulter les métriques** de performance (CPU, RAM, Disque)
-- **Configurer la sauvegarde** (option payante) avec rétention configurable
+### Onglet Informations
+
+![Détail VM - Informations](./images/vm_instances_detail_informations.png)
+
+Consultez et modifiez les paramètres de votre VM :
+- Nom, UUID, zone de disponibilité
+- Famille d'instance, modèle OS
+- CPU, RAM (modifiables à VM éteinte)
+- Politique de sauvegarde
+
+Des icônes d'actions permettent de **démarrer**, **arrêter**, **redémarrer** ou **ouvrir la console** de la VM.
+
+### Onglet Disques
+
+![Détail VM - Disques](./images/vm_instances_detail_disques.png)
+
+Consultez les disques attachés et ajoutez des volumes supplémentaires via le bouton **+ Ajouter un disque**.
+
+### Onglet Adaptateurs Réseaux
+
+![Détail VM - Réseau](./images/vm_instances_detail_reseau.png)
+
+Consultez les interfaces réseau de la VM (nom du réseau, adresse MAC, adresse IPv4/IPv6).
+
+### Onglet Snapshots
+
+![Détail VM - Snapshots](./images/vm_instances_detail_snapshots.png)
+
+Créez et gérez des snapshots de votre VM via le bouton **+ Créer un snapshot**.
 
 ## Automatisation et Infrastructure as Code
 

@@ -5,6 +5,11 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 17 Avril 2026 : VM Instances — documentation illustrée, tutoriels et traductions
+
+- **VM Instances — Enrichissement documentaire** : Refonte complète et illustration de la documentation VM Instances. Le guide de démarrage (`quickstart.md`) couvre désormais l'intégralité du parcours utilisateur illustré : accès à la section, liste des VMs, wizard de création en 9 étapes (famille d'instance, zone de disponibilité, template OS, gabarit, nom/sauvegarde, Cloud Init, disques, réseau, sommaire), et gestion des 4 onglets (Informations, Disques, Réseau, Snapshots).
+- **VM Instances — Tutoriels** : Création de 3 tutoriels dédiés dans un dossier `tutorials/` : (1) **Créer sa première VM** (wizard complet illustré + Cloud Init + disque additionnel), (2) **Gérer les disques** (ajout depuis la console + partitionnement Linux), (3) **Prendre et gérer les snapshots** (création, restauration, suppression + bonnes pratiques et comparaison snapshot/sauvegarde). La navigation latérale est mise à jour avec 3 entrées individuelles dans la catégorie Tutoriels.
+
 ### 15 Avril 2026 : Amélioration de la documentation IaaS VMware — métriques cluster
 
 - **IaaS VMware** : Ajout d'une documentation détaillée sur les métriques affichées dans la vue d'un cluster VMware depuis la Console Cloud Temple. Couvre les trois graphiques de mémoire du cluster : **Mémoire allouée** (quantité totale allouée aux VMs), **Mémoire consommée** (mémoire physique réellement utilisée par les VMs) et **Allocation dans le pire des cas** (projection de consommation maximale simultanée), avec la description précise de ce que chaque indicateur représente pour anticiper les besoins en ressources. Disponible en français, anglais, allemand, espagnol et italien.

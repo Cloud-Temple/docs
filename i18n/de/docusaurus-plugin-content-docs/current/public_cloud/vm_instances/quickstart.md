@@ -4,88 +4,109 @@ title: Erste Schritte
 
 ## Voraussetzungen
 
-Stellen Sie vor dem Start sicher, dass Sie folgendes haben:
+Stellen Sie sicher, dass Sie Folgendes haben:
 
-- Ein aktives **Cloud Temple-Tenant**
-- Ein Mindest-Abonnement für den **Standard-Support**
-- Die erforderlichen Berechtigungen in Ihrer Cloud Temple-Organisation
+- Ein aktiver **Cloud Temple Tenant**
+- Mindestens ein **Standard Support**-Abonnement
+- Die erforderlichen Berechtigungen in Ihrer Cloud Temple Organisation
 
-## Eine virtuelle Maschine bereitstellen
+## Zugriff auf den VM Instances-Dienst
 
-### 1. Auf den Dienst zugreifen
+Melden Sie sich bei der **Cloud Temple Console** an und navigieren Sie zu **Cloud Public > VM Instances**.
 
-Melden Sie sich bei der **Cloud Temple-Konsole** an und navigieren Sie über das Hauptmenü zum Bereich **VM Instances**.
+![Cloud Temple Console Dashboard](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
 
-### 2. Tenant und Verfügbarkeitszone auswählen
+Das Dashboard zeigt Ihnen eine Übersicht der verbrauchten VM Instances-Ressourcen (Speicher, CPU, RAM) sowie die Anzahl der aktiven virtuellen Maschinen.
 
-- Wählen Sie den **Tenant**, in dem Sie die virtuelle Maschine bereitstellen möchten.
-- Wählen Sie die Ziel-**Verfügbarkeitszone (AZ)** aus den in der Region FR1 verfügbaren aus.
+Klicken Sie in der linken Seitenleiste auf **Cloud Public** und wählen Sie **VM Instances**.
 
-### 3. Ein Image vom Marketplace auswählen
+![Navigation zu VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
 
-Virtuelle Maschinen werden ausschließlich aus **offiziellen Cloud Temple Marketplace-Images** bereitgestellt.
+Sie gelangen zur Liste Ihrer VM Instances:
 
-- Durchsuchen Sie den Katalog der verfügbaren Images.
-- Wählen Sie das gewünschte Betriebssystem und die Version aus.
+![VM Instances-Liste](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
-### 4. Die virtuelle Maschine konfigurieren
+Die Tabelle zeigt für jede VM: Name, Status (Ein / Aus), Verfügbarkeitszone, Instanzfamilie, Modell und zugewiesene Ressourcen (CPU, RAM, Festplattengröße).
 
-Geben Sie die Parameter für Ihre Instanz ein:
+## Virtuelle Maschine bereitstellen
 
-| Parameter | Beschreibung |
-|-----------|-------------|
-| **Service-Klasse** | Development, General Purpose oder Performance |
-| **Flavor** | Wählen Sie aus vordefinierten Flavors oder erstellen Sie einen Custom-Flavor (vCPU + RAM) |
-| **Zusätzliche Festplatten** | Fügen Sie bei Bedarf zusätzliche Volumes hinzu (bis zu 16 Volumes, max. 2 TB pro Volume) |
-| **Netzwerk (VPC)** | Verbinden Sie die VM mit Ihrem VPC-Netzwerk |
-| **Cloud-init** | Optional: Injizieren Sie beim Start ein Vorkonfigurationsskript (SSH-Schlüssel, Netzwerkkonfiguration usw.) |
+Klicken Sie auf **+ Neue virtuelle Maschine**, um den Erstellungsassistenten zu öffnen. Dieser läuft in **9 Schritten** ab.
 
-:::info[Systemfestplatte]
-Die Systemfestplatte (Flash) ist automatisch enthalten. Ihre Größe (zwischen 15 und 100 GB) hängt vom gewählten Betriebssystem ab.
+### Schritt 1 — Instanzfamilie
+
+![Schritt 1: Instanzfamilie](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
+
+Wählen Sie die passende **Instanzfamilie** für Ihre Arbeitslast:
+
+| Familie | Beschreibung | CPU |
+|---------|-------------|-----|
+| **Development** | Kostenoptimiert, für Test- und Staging-Umgebungen | Geteilt |
+| **General Purpose** | Optimales vCPU/RAM-Verhältnis für Standardlasten | Geteilt |
+
+:::info
+Die **Performance**-Familie (dedizierte vCPUs) ist über das benutzerdefinierte Flavor-Profil verfügbar.
 :::
 
-### 5. Bereitstellung starten
+### Schritt 2 — Verfügbarkeitszone
 
-Bestätigen Sie die Konfiguration und starten Sie die Provisionierung. Die Bereitstellung ist **automatisiert und sofort** (wenige Minuten).
+![Schritt 2: Verfügbarkeitszone](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
 
-## Ihre virtuellen Maschinen verwalten
+Wählen Sie die **Verfügbarkeitszone (AZ)**, in der Ihre VM gehostet wird (z.B. `fr1-az01`).
 
-Von der Konsole aus können Sie folgende Aktionen auf Ihren virtuellen Maschinen durchführen:
+### Schritt 3 — Template auswählen
 
-- **Starten / Stoppen / Neu starten** der virtuellen Maschine
-- **Konsole öffnen**, um direkt auf das System zuzugreifen
-- **Konfiguration ändern** (vCPU, RAM) — VM muss gestoppt sein
-- **Festplatten hinzufügen** (zusätzliche Volumes)
-- **Leistungsmetriken anzeigen** (CPU, RAM, Festplatte)
-- **Backup konfigurieren** (kostenpflichtige Option) mit konfigurierbarer Aufbewahrung
+![Schritt 3: Template auswählen](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
 
-## Automatisierung und Infrastructure as Code
+Durchsuchen Sie den Katalog verfügbarer Images über die Tabs **OS** und **Appliances**.
 
-Der VM Instances-Dienst ist vollständig automatisierbar:
+### Schritt 4 — Flavor
 
-### Über die REST API
+![Schritt 4: Flavor](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape4_gabarit.png)
 
-Die Cloud Temple REST API ermöglicht die vollständige programmatische Steuerung des Lebenszyklus virtueller Maschinen.
+Wählen Sie ein **vordefiniertes Flavor** oder erstellen Sie ein **benutzerdefiniertes Flavor** (vCPU + RAM).
 
-API-Referenz: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.com/api/)
+### Schritt 5 — Name und Sicherungsrichtlinie
 
-### Über Terraform
+![Schritt 5: Name und Sicherungsrichtlinie](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
 
-Der Cloud Temple Terraform-Provider ermöglicht die Verwaltung von VM Instances als Infrastructure as Code.
+Geben Sie einen eindeutigen **Namen** ein und wählen Sie die **Sicherungsrichtlinie** (`No Backup` standardmäßig).
 
-```hcl
-# Beispiel VM Instances-Ressource mit Terraform
-# Weitere Attribute finden Sie in der Provider-Dokumentation
-resource "cloudtemple_compute_vm_instance" "example" {
-  # ...
-}
-```
+### Schritt 6 — Cloud Init
 
-Weitere Informationen zur Installation und Konfiguration des Providers finden Sie in der [Terraform-Dokumentation](pathname:///docs/terraform/terraform).
+![Schritt 6: Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
 
-## Nützliche Ressourcen
+Optionaler Schritt. Vorkonfigurieren Sie Ihre VM beim ersten Start via **Cloud Config** (SSH-Schlüssel, Pakete) und **Network Config** (Netplan).
 
-- [Öffentliche Cloud Temple-Dokumentation](https://docs.cloud-temple.com/home)
-- [API-Referenz](https://shiva.cloud-temple.com/api/)
-- [Terraform-Dokumentation](pathname:///docs/terraform/terraform)
-- [Konzepte der Verfügbarkeitszonen](../../additional_content/concepts_az.md)
+### Schritt 7 — Festplatten
+
+![Schritt 7: Festplatten](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape7_disques.png)
+
+Die Systemfestplatte wird automatisch erstellt. Fügen Sie weitere Volumes hinzu (Standard ~1.500 IOPS/TB oder Enterprise ~7.500 IOPS/TB).
+
+### Schritt 8 — Netzwerkadapter
+
+![Schritt 8: Netzwerkadapter](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape8_reseau.png)
+
+Wählen Sie das Netzwerk: **Privates Backbone** oder **VPC**.
+
+### Schritt 9 — Zusammenfassung
+
+![Schritt 9: Zusammenfassung](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
+
+Überprüfen Sie die Zusammenfassung und klicken Sie auf **Erstellen**.
+
+## Virtuelle Maschinen verwalten
+
+Klicken Sie auf eine VM, um auf die 4 Tabs zuzugreifen:
+
+### Tab Informationen
+![VM-Detail - Informationen](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
+
+### Tab Festplatten
+![VM-Detail - Festplatten](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
+
+### Tab Netzwerkadapter
+![VM-Detail - Netzwerk](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_reseau.png)
+
+### Tab Snapshots
+![VM-Detail - Snapshots](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_snapshots.png)

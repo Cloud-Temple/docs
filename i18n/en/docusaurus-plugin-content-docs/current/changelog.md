@@ -5,6 +5,11 @@ sidebar_position: 2
 
 # Change Log
 
+### April 17, 2026: VM Instances — Illustrated Documentation and Tutorials
+
+- **VM Instances — Documentation update**: Complete overhaul and illustration of the VM Instances documentation. The getting started guide (`quickstart.md`) now covers the entire illustrated user journey: accessing the section, VM list, 9-step creation wizard (instance family, availability zone, OS template, flavor, name/backup, Cloud Init, disks, network, summary), and management of 4 tabs (Information, Disks, Network, Snapshots).
+- **VM Instances — Tutorials**: Creation of 3 dedicated tutorials in a `tutorials/` folder: (1) **Create your first VM** (full illustrated wizard + Cloud Init + additional disk), (2) **Manage disks** (add disk from the console + Linux partitioning), (3) **Take and manage snapshots** (create, restore, delete + best practices and snapshot/backup comparison). The sidebar navigation is updated with 3 individual entries in the Tutorials category.
+
 ### April 17, 2026: Private Backbone Translation and Terminology Update
 
 - **Private Backbone**: Complete translation of the Private Backbone service documentation into English, German, Spanish, and Italian.

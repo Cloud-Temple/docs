@@ -10,82 +10,103 @@ Antes de comenzar, asegúrese de disponer de lo siguiente:
 - Una suscripción mínima al **Soporte Estándar**
 - Los permisos necesarios en su organización Cloud Temple
 
+## Acceder al servicio VM Instances
+
+Inicie sesión en la **Consola Cloud Temple** y navegue a **Cloud Public > VM Instances** desde el menú principal.
+
+![Panel de la Consola Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
+
+El panel muestra un resumen de los recursos de VM Instances consumidos (almacenamiento, CPU, RAM) y el número de máquinas virtuales activas.
+
+Haga clic en **Cloud Public** en la barra lateral izquierda para expandir el submenú y seleccione **VM Instances**.
+
+![Navegación hacia VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
+
+Accederá a la lista de sus VM Instances:
+
+![Lista de VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
+
+La tabla muestra para cada VM: nombre, estado (Encendida / Apagada), zona de disponibilidad, familia de instancia, modelo y recursos asignados (CPU, RAM, tamaño de disco).
+
 ## Desplegar una máquina virtual
 
-### 1. Acceder al servicio
+Haga clic en el botón **+ Nueva máquina virtual** en la parte superior derecha para abrir el asistente de creación. Este asistente consta de **9 pasos**.
 
-Inicie sesión en la **Consola Cloud Temple** y navegue a la sección **VM Instances** desde el menú principal.
+### Paso 1 — Familia de instancia
 
-### 2. Seleccionar el tenant y la zona de disponibilidad
+![Paso 1: Familia de instancia](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
 
-- Elija el **tenant** en el que desea desplegar la máquina virtual.
-- Seleccione la **zona de disponibilidad (AZ)** de destino entre las disponibles en la región FR1.
+Elija la **familia de instancia** adecuada para su carga de trabajo:
 
-### 3. Elegir una imagen desde el Marketplace
+| Familia | Descripción | CPU |
+|---------|-------------|-----|
+| **Development** | Costo optimizado, para entornos de prueba | Compartidos |
+| **General Purpose** | Equilibrio óptimo vCPU/RAM para cargas estándar | Compartidos |
 
-Las máquinas virtuales se despliegan exclusivamente desde las **imágenes oficiales del Marketplace de Cloud Temple**.
-
-- Explore el catálogo de imágenes disponibles.
-- Seleccione el sistema operativo y la versión deseados.
-
-### 4. Configurar la máquina virtual
-
-Complete los parámetros de su instancia:
-
-| Parámetro | Descripción |
-|-----------|-------------|
-| **Clase de servicio** | Development, General Purpose o Performance |
-| **Flavor** | Elija entre flavors predefinidos o cree un flavor personalizado (vCPU + RAM) |
-| **Discos adicionales** | Añada volúmenes adicionales si es necesario (hasta 16 volúmenes, máximo 2 TB por volumen) |
-| **Red (VPC)** | Asocie la VM a su red VPC |
-| **Cloud-init** | Opcional: inyecte un script de preconfiguración en el arranque (claves SSH, configuración de red, etc.) |
-
-:::info[Disco del sistema]
-El disco del sistema (Flash) se incluye automáticamente. Su tamaño (entre 15 y 100 GB) depende del sistema operativo elegido.
+:::info
+La familia **Performance** (vCPUs dedicadas) está disponible a través del flavor personalizado.
 :::
 
-### 5. Lanzar el despliegue
+### Paso 2 — Zona de disponibilidad
 
-Valide la configuración y lance el aprovisionamiento. El despliegue es **automatizado e inmediato** (pocos minutos).
+![Paso 2: Zona de disponibilidad](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
+
+Seleccione la **zona de disponibilidad (AZ)** donde se alojará su VM (ej.: `fr1-az01`).
+
+### Paso 3 — Elegir una plantilla
+
+![Paso 3: Elegir una plantilla](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+
+Explore el catálogo de imágenes disponibles en las pestañas **OS** y **Appliances**.
+
+### Paso 4 — Flavor
+
+![Paso 4: Flavor](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape4_gabarit.png)
+
+Elija un **flavor predefinido** o cree un **flavor personalizado** (vCPU + RAM).
+
+### Paso 5 — Nombre y política de copias de seguridad
+
+![Paso 5: Nombre y política de copias de seguridad](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
+
+Introduzca el **Nombre** único y la **Política de copias de seguridad** (`No Backup` por defecto).
+
+### Paso 6 — Cloud Init
+
+![Paso 6: Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
+
+Paso opcional. Pre-configure su VM mediante **Cloud Config** (claves SSH, paquetes) y **Network Config** (Netplan).
+
+### Paso 7 — Discos
+
+![Paso 7: Discos](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape7_disques.png)
+
+El disco del sistema se crea automáticamente. Añada volúmenes adicionales (Standard ~1.500 IOPS/TB o Enterprise ~7.500 IOPS/TB).
+
+### Paso 8 — Adaptadores de red
+
+![Paso 8: Adaptadores de red](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape8_reseau.png)
+
+Seleccione la red: **Backbone privado** o **VPC**.
+
+### Paso 9 — Resumen
+
+![Paso 9: Resumen](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
+
+Verifique el resumen y haga clic en **Crear**.
 
 ## Gestionar sus máquinas virtuales
 
-Desde la consola, puede realizar las siguientes acciones en sus máquinas virtuales:
+Haga clic en una VM para acceder a sus 4 pestañas:
 
-- **Iniciar / Detener / Reiniciar** la máquina virtual
-- **Abrir la consola** para acceder directamente al sistema
-- **Modificar la configuración** (vCPU, RAM) — requiere detener la VM
-- **Añadir discos** adicionales
-- **Consultar las métricas de rendimiento** (CPU, RAM, Disco)
-- **Configurar la copia de seguridad** (opción de pago) con retención configurable
+### Pestaña Información
+![Detalle VM - Información](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
 
-## Automatización e Infrastructure as Code
+### Pestaña Discos
+![Detalle VM - Discos](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
 
-El servicio VM Instances es totalmente automatizable:
+### Pestaña Adaptadores de red
+![Detalle VM - Red](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_reseau.png)
 
-### A través de la API REST
-
-La API REST de Cloud Temple permite el control programático completo del ciclo de vida de las máquinas virtuales.
-
-Referencia de API: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.com/api/)
-
-### A través de Terraform
-
-El proveedor Terraform de Cloud Temple permite gestionar sus VM Instances como Infrastructure as Code.
-
-```hcl
-# Ejemplo de recurso VM Instances con Terraform
-# Consulte la documentación del proveedor para los atributos disponibles
-resource "cloudtemple_compute_vm_instance" "example" {
-  # ...
-}
-```
-
-Consulte la [documentación de Terraform](pathname:///docs/terraform/terraform) para la instalación y configuración del proveedor.
-
-## Recursos útiles
-
-- [Documentación pública de Cloud Temple](https://docs.cloud-temple.com/home)
-- [Referencia de API](https://shiva.cloud-temple.com/api/)
-- [Documentación de Terraform](pathname:///docs/terraform/terraform)
-- [Conceptos de zonas de disponibilidad](../../additional_content/concepts_az.md)
+### Pestaña Snapshots
+![Detalle VM - Snapshots](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_snapshots.png)
