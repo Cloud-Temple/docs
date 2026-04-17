@@ -113,7 +113,7 @@ SLAs define availability commitments, measurement methods, exclusions and servic
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
       <div class="book-card-title">VPC SLA</div>
-      <div class="book-card-desc">Data plane 99.99% — control plane 99.95% — service credits and exclusions.</div>
+      <div class="book-card-desc">Data plane 99.99% — control plane 99.9% — service credits and exclusions.</div>
       <div class="book-card-cta">Read document →</div>
       <div class="book-card-cta">Read document →</div>
     </div>

@@ -34,7 +34,7 @@ Cloud Temple verpflichtet sich zu den folgenden monatlichen Verfügbarkeitsnivea
 | Komponente | Garantierte monatliche Verfügbarkeitsrate |
 | :--- | :---: |
 | **VPC-Datenebene** (Netzwerk-Routing, NAT, DNAT) | **99,99 %** |
-| **VPC-Steuerungsebene** (API, Cloud Temple Konsole) | **99,95 %** |
+| **VPC-Steuerungsebene** (API, Cloud Temple Konsole) | **99,9 %** |
 
 Eine monatliche Verfügbarkeitsrate von **99,99 %** für die Datenebene entspricht maximal **4,4 Minuten** zulässiger Ausfallzeit pro Kalendermonat.
 
@@ -90,7 +90,7 @@ Wenn die monatliche Verfügbarkeitsrate von 99,99 % für die Datenebene nicht er
 
 ### 5.2 VPC-Steuerungsebene
 
-Wenn die monatliche Verfügbarkeitsrate von 99,95 % für die Steuerungsebene nicht erreicht wird, hat der Kunde Anspruch auf eine Service-Gutschrift von **10 %** des monatlich für den VPC-Dienst berechneten Betrags.
+Wenn die monatliche Verfügbarkeitsrate von 99,9 % für die Steuerungsebene nicht erreicht wird, hat der Kunde Anspruch auf eine Service-Gutschrift von **10 %** des monatlich für den VPC-Dienst berechneten Betrags.
 
 ### 5.3 Reklamationsverfahren
 

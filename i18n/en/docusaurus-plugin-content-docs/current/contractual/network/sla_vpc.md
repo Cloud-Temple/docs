@@ -34,7 +34,7 @@ Cloud Temple commits to the following monthly availability levels:
 | Component | Guaranteed Monthly Availability Rate |
 | :--- | :---: |
 | **VPC Data Plane** (inter-network routing, NAT, DNAT) | **99.99%** |
-| **VPC Control Plane** (API, Cloud Temple Console) | **99.95%** |
+| **VPC Control Plane** (API, Cloud Temple Console) | **99.9%** |
 
 A Monthly Availability Rate of **99.99%** for the data plane corresponds to a maximum of **4.4 minutes** of permitted downtime per calendar month.
 
@@ -90,7 +90,7 @@ If the Monthly Availability Rate of 99.99% is not achieved for the data plane, t
 
 ### 5.2 VPC Control Plane
 
-If the Monthly Availability Rate of 99.95% is not achieved for the control plane, the Client is eligible for a Service Credit of **10%** of the monthly amount billed for the VPC service.
+If the Monthly Availability Rate of 99.9% is not achieved for the control plane, the Client is eligible for a Service Credit of **10%** of the monthly amount billed for the VPC service.
 
 ### 5.3 Claim Procedure
 
