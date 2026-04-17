@@ -14,7 +14,7 @@ const config: Config = {
 
   // enable faster build time https://docusaurus.io/blog/releases/3.6
   future: {
-    experimental_faster: true,
+    faster: true,
     v4: true,
   },
 
