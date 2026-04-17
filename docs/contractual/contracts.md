@@ -4,6 +4,8 @@ slug: /contracts
 hide_table_of_contents: true
 ---
 
+import { ContractCard } from '@site/src/components/ContractCard';
+
 ## Hiérarchie des documents contractuels
 
 |           | Références                 |
@@ -41,24 +43,16 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
 ## Conditions générales
 
 <div class="book-grid">
-  <a class="book-card" href="/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf" target="_blank">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Conditions Générales de Vente et Utilisation (CGVU)</div>
-      <div class="book-card-desc">Conditions générales encadrant l'ensemble des services Cloud Temple.</div>
-      <div class="book-card-cta">Consulter le document →</div>
-    </div>
-  </a>
-  <a class="book-card" href="/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf" target="_blank">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Data Processing Agreement (DPA)</div>
-      <div class="book-card-desc">Accord encadrant le traitement des données personnelles conformément au RGPD.</div>
-      <div class="book-card-cta">Consulter le document →</div>
-    </div>
-  </a>
+  <ContractCard
+    href="/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
+    title="Conditions Générales de Vente et Utilisation (CGVU)"
+    desc="Conditions générales encadrant l'ensemble des services Cloud Temple."
+  />
+  <ContractCard
+    href="/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
+    title="Data Processing Agreement (DPA)"
+    desc="Accord encadrant le traitement des données personnelles conformément au RGPD."
+  />
 </div>
 
 ---
@@ -68,15 +62,11 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
 Les conventions de service définissent le cadre contractuel de fourniture des services qualifiés SecNumCloud : périmètre, engagements opérationnels, responsabilités et conditions de service.
 
 <div class="book-grid">
-  <a class="book-card" href="/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf" target="_blank">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Convention de services SecNumCloud</div>
-      <div class="book-card-desc">Cadre contractuel de fourniture des services qualifiés SecNumCloud : périmètre, engagements opérationnels, responsabilités et conditions de service.</div>
-      <div class="book-card-cta">Consulter le document →</div>
-    </div>
-  </a>
+  <ContractCard
+    href="/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf"
+    title="Convention de services SecNumCloud"
+    desc="Cadre contractuel de fourniture des services qualifiés SecNumCloud : périmètre, engagements opérationnels, responsabilités et conditions de service."
+  />
 </div>
 
 ---
