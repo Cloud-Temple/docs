@@ -3,7 +3,7 @@
 ## Principe fondamental
 
 Cloud Temple **met à disposition des produits**. Le terme central est **"produit"**.  
-Toute la documentation doit refléter ce positionnement, cohérent avec les standards du marché cloud (cf. Scaleway : "product" systématique).
+Toute la documentation doit refléter ce positionnement, cohérent avec les standards du marché cloud.
 
 ---
 
