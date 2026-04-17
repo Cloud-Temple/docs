@@ -11,16 +11,52 @@ import ShivaApi002 from './images/shiva_api_002.png'
 import ShivaApi003 from './images/shiva_api_003.png'
 import ShivaApi004 from './images/shiva_api_004.png'
 
-## Clés API
+## Introduction
 
-La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
-est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
+L'API Cloud Temple vous permet de créer et gérer l'ensemble de vos ressources cloud de manière programmatique. Tout ce que vous pouvez faire via la console Cloud Temple peut également être réalisé via l'API, de la création de machines virtuelles à la configuration de la gestion des identités et des accès.
+
+Cette documentation vous guide dans l'utilisation de l'API Cloud Temple, de l'authentification aux bonnes pratiques en passant par la gestion du cycle de vie des endpoints.
+
+## Quickstart : Votre première requête API
+
+:::info[En résumé - 3 étapes pour démarrer]
+1. 🔑 **Générer votre PAT** depuis la console
+2. 🚀 **Tester avec curl** sur `/iam/v2/roles`
+3. ✅ **Analyser la réponse** JSON
+:::
+
+### Prérequis
+
+Avant de commencer, vous devez disposer d'un compte Cloud Temple avec les permissions appropriées pour générer des clés API.
+
+### Étapes
+
+1. **Générer votre clé API** : Connectez-vous à la [console Cloud Temple](https://shiva.cloud-temple.com/login) et générez votre Personal Access Token (voir section [Clés API](#clés-api-personal-access-token) ci-dessous).
+
+2. **Tester votre première requête** : Exécutez la commande curl suivante en remplaçant `<votre-personal-access-token>` par votre token :
+
+```bash
+curl -X GET \
+  -H "Authorization: Bearer <votre-personal-access-token>" \
+  -H "Content-Type: application/json" \
+  "https://shiva.cloud-temple.com/api/iam/v2/roles"
+```
+
+3. **Analyser la réponse** : Vous recevrez la liste des rôles IAM disponibles dans votre tenant, ce qui vous permet de comprendre les permissions existantes.
+
+## Authentification
+
+### Clés API (Personal Access Token)
+
+La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__, est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
 
 La création de ce token se fait depuis votre compte. Il est possible de générer plusieurs clés et de configurer pour chacune les autorisations dans la limite de vos droits.
 
+#### Créer une clé API
+
 Pour créer une clef API, il suffit de __cliquer sur votre profil__ :
 
-<img src={ShivaProfil001} />
+<img src={ShivaProfil001} style={{maxWidth: '300px', width: '100%'}} />
 
 Dans le menu du profil, cliquer sur __'Jeton d'accès personnel'__
 
@@ -40,7 +76,7 @@ Les détails concernant votre jeton sont alors affichés. __Attention, il n'est 
 
 Si vous ne notez pas ces informations, vous devrez détruire et recréer le jeton.
 
-<img src={ShivaProfil004} />
+<img src={ShivaProfil004} style={{maxWidth: '600px', width: '100%'}} />
 
 Pour une question de sécurité, il est recommandé de créer plusieurs tokens ayant chacun une utilité spécifique (un token pour chaque application ou chaque processus métier) plutôt que de créer 1 token avec l'ensemble des droits.
 
@@ -63,10 +99,73 @@ La documentation OpenAPI 3.0 (Swagger) des APIs de la console Cloud Temple est d
 
 <img src={ShivaApi001} />
 
-L'accès aux APIs nécessite d'être authentifié. Une fois authentifié toutes les opérations doivent avoir le header
-__'Authorization'__ avec le bearer access token obtenu lors de la phase d'authentification.
+L'accès aux APIs nécessite d'être authentifié. Une fois authentifié toutes les opérations doivent avoir le header __'Authorization'__ avec le bearer access token obtenu lors de la phase d'authentification.
 
 L'URL des points d'accès est directement donnée dans __Swagger__ (dans l'objet "Servers" de chaque page APIs).
+
+### Explorer la documentation interactive
+
+Le portail API vous permet de :
+
+- Consulter l'ensemble des endpoints disponibles par module
+- Tester directement les requêtes depuis l'interface
+- Voir les modèles de données (schémas) pour chaque ressource
+- Consulter les codes de réponse possibles pour chaque endpoint
+
+## Structure des endpoints
+
+### Format des URLs
+
+Les URLs de l'API Cloud Temple suivent une structure cohérente :
+
+```
+https://shiva.cloud-temple.com/api/{module}/v{version}/{ressource}
+```
+
+Où :
+- `{module}` : Le module concerné (compute, iam, network, backup, etc.)
+- `{version}` : La version de l'API (v1, v2, etc.)
+- `{ressource}` : La ressource à manipuler (virtual-machines, users, networks, etc.)
+
+### Exemples d'endpoints
+
+```
+# Machines virtuelles (Compute)
+GET    https://shiva.cloud-temple.com/api/compute/v1/virtual-machines
+POST   https://shiva.cloud-temple.com/api/compute/v1/virtual-machines
+GET    https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
+PATCH  https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
+DELETE https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
+
+# Identité et accès (IAM)
+GET    https://shiva.cloud-temple.com/api/iam/v1/users
+POST   https://shiva.cloud-temple.com/api/iam/v1/users
+GET    https://shiva.cloud-temple.com/api/iam/v1/users/{id}
+
+# Réseaux
+GET    https://shiva.cloud-temple.com/api/network/v1/virtual-networks
+POST   https://shiva.cloud-temple.com/api/network/v1/virtual-networks
+```
+
+### Organisation par module
+
+L'API Cloud Temple est organisée en modules fonctionnels :
+
+| Module | Description | Base URL |
+|--------|-------------|----------|
+| Console Cloud Temple | Fonctionnalités générales | `/api/v1/` |
+| Identité (IAM) | Gestion des utilisateurs et accès | `/iam/v1/` |
+| IaaS VMware | Ressources de virtualisation VMware | `/compute/v1/` |
+| OpenIaaS | Ressources Xen Orchestra | `/openiaas/v1/` |
+| S3 | Stockage objet | `/s3/v1/` |
+| OpenShift | Plateforme PaaS | `/openshift/v1/` |
+| Bastion | Appliances bastion SSH/RDP | `/bastion/v1/` |
+| Réseau | Gestion réseau niveau 2 et 3 | `/network/v1/` |
+| Hébergement | Colocation et housing | `/housing/v1/` |
+| Marketplace | Catalogue de solutions | `/marketplace/v1/` |
+| Support | Tickets et assistance | `/support/v1/` |
+| Notification | Système de notifications | `/notification/v1/` |
+| LLMaaS | Intelligence artificielle | `/llmaas/v1/` |
 
 ## Les activités
 
@@ -80,89 +179,94 @@ Une fois l'identifiant récupéré, il est possible d'accéder aux détails de l
 
 Le contenu de l'activité inclut toutes les informations essentielles pour identifier l'opération, sa date d'exécution, ainsi que son état d'avancement. Voici le modèle d'une activité :
 
-```
+```json
+{
+  "id": "UUIDV4",
+  "tenantId": "UUIDV4",
+  "description": "STRING",
+  "type": "ComputeActivity" | "BackupActivity" | "IAMActivity" | "TagActivity" | "RTMSActivity" | "BastionActivity" | "SupportActivity",
+  "tags": "STRING[]",
+  "initiator": "UUIDV4",
+  "creationDate": "DATE",
+  "concernedItems": [
     {
-    "tenantId": "UUIDV4",
-    "description": "STRING",
-    "type": "ComputeActivity" | "BackupActivity" | "IAMActivity" | "TagActivity" | "RTMSActivity" | "BastionActivity" | "SupportActivity",
-    "tags": "STRING[]",
-    "initiator": "UUIDV4",
-    "concernedItems": [
-        {
-        "type": "string",
-        "id": "string"
-        }
-    ],
-    "id": "UUIDV4",
-    "creationDate": "DATE",
-    "operationType": "read" | "write",
-    "state": "CompletedState | RunningState | WaitingState | FailedState"
+      "type": "string",
+      "id": "string"
+    }
+  ],
+  "state": "CompletedState | RunningState | WaitingState | FailedState",
+  "operationType": "read" | "write"
 }
 ```
 
+### États d'une activité
+
 L'objet __state__ peut prendre différentes formes selon l'état de l'activité, à savoir :
 
-__waiting__, état avant que l'opération n'ait commencé :
+#### waiting
 
-```
-    waiting: {}
-```
+État avant que l'opération n'ait commencé :
 
-__running__, état lorsque l'opération est en cours :
-
-```
-    running: {
-    status: string;
-    startDate: Date;
-    progression: number;
-    };
+```json
+waiting: {}
 ```
 
-__failed__, état si l'opération a échoué :
+#### running
 
-```
-    failed: {
-    startDate: Date;
-    stopDate: Date;
-    reason: string;
-    };
-```
+État lorsque l'opération est en cours :
 
-__completed__, état si l'opération est terminée :
-
-```
-    completed: {
-    startDate: Date;
-    stopDate: Date;
-    result: string;
-    };
+```json
+running: {
+  "status": "string",
+  "startDate": "Date",
+  "progression": "number"
+}
 ```
 
-__Nota: l'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.__
+#### failed
+
+État si l'opération a échoué :
+
+```json
+failed: {
+  "startDate": "Date",
+  "stopDate": "Date",
+  "reason": "string"
+}
+```
+
+#### completed
+
+État si l'opération est terminée :
+
+```json
+completed: {
+  "startDate": "Date",
+  "stopDate": "Date",
+  "result": "string"
+}
+```
+
+:::info[Identifiant de la ressource créée]
+L'Identifiant (UUIDv4) de la ressource créée est disponible dans le résultat de l'activité une fois celle-ci complétée.
+:::
 
 ## Limites API
 
 ### Pourquoi des limites ?
 
-La console Cloud Temple définit __des plafonds sur le volume de requêtes__ qu'un utilisateur peut adresser
-à l'API sur une durée déterminée. L'instauration de ces plafonds de fréquence est une mesure courante dans la gestion des API, adoptée pour plusieurs motifs essentiels :
+La console Cloud Temple définit __des plafonds sur le volume de requêtes__ qu'un utilisateur peut adresser à l'API sur une durée déterminée. L'instauration de ces plafonds de fréquence est une mesure courante dans la gestion des API, adoptée pour plusieurs motifs essentiels :
 
-- __Prévention des abus__ : Ces limites contribuent à la sauvegarde de l'intégrité de l'API en prévenant les usages
-abusifs ou maladroits susceptibles de compromettre son fonctionnement.
-- __Assurance de la qualité de service__ : En régulant l'accès à l'API, nous veillons à une distribution équitable
-des ressources, permettant ainsi à tous les utilisateurs de bénéficier d'une expérience stable et performante.
+- __Prévention des abus__ : Ces limites contribuent à la sauvegarde de l'intégrité de l'API en prévenant les usages abusifs ou maladroits susceptibles de compromettre son fonctionnement.
+- __Assurance de la qualité de service__ : En régulant l'accès à l'API, nous veillons à une distribution équitable des ressources, permettant ainsi à tous les utilisateurs de bénéficier d'une expérience stable et performante.
 
-Prenons l'exemple d'un script mal conçu ou inefficace qui tente des appels répétitifs à l'API,
-risquant de saturer les ressources et de dégrader les performances. En établissant des seuils de requêtes,
-nous prévenons ces situations et assurons le maintien d'__un service fluide et sans interruption__ pour l'ensemble de notre clientèle.
+Prenons l'exemple d'un script mal conçu ou inefficace qui tente des appels répétitifs à l'API, risquant de saturer les ressources et de dégrader les performances. En établissant des seuils de requêtes, nous prévenons ces situations et assurons le maintien d'__un service fluide et sans interruption__ pour l'ensemble de notre clientèle.
 
 ### Quelles sont les limites de taux pour l'API de la console Cloud Temple ?
 
-Nous appliquons des restrictions quantitatives sur les interactions des utilisateurs avec la console
-pour chaque produit.
+Nous appliquons des restrictions quantitatives sur les interactions des utilisateurs avec la console pour chaque produit.
 
-Les limites sont définies en __requêtes par secondes (r/s) et par IP source__. Au-delà du seuil limite, le système répondra
-par un code d'erreur HTTP 429, signalant que la limite de requêtes autorisées a été dépassée.
+Les limites sont définies en __requêtes par secondes (r/s) et par IP source__. Au-delà du seuil limite, le système répondra par un code d'erreur HTTP 429, signalant que la limite de requêtes autorisées a été dépassée.
 
 Voici les limites définies :
 
@@ -194,53 +298,115 @@ Certains points d'API spécifiques, notamment ceux liés à l'authentification o
 
 ### Comment fonctionnent les limites de taux ?
 
-Si le nombre de requêtes envoyées à un point d'API excède la limite autorisée, le point d'API réagira en retournant
-__un code de réponse HTTP 429__. Ce code indique que l'utilisateur a dépassé le nombre de requêtes permises.
-Lorsque cela se produit, le point d'API fournira également un objet JSON en guise de réponse,
-lequel contiendra des informations détaillées sur la limitation appliquée :
+Si le nombre de requêtes envoyées à un point d'API excède la limite autorisée, le point d'API réagira en retournant __un code de réponse HTTP 429__. Ce code indique que l'utilisateur a dépassé le nombre de requêtes permises. Lorsque cela se produit, le point d'API fournira également un objet JSON en guise de réponse, lequel contiendra des informations détaillées sur la limitation appliquée :
 
-```
-    {
-        "error": {
-            "status": "429 Too Many Requests",
-            "message": "Too Many Requests"
-        }
-    }
+```json
+{
+  "error": {
+    "status": "429 Too Many Requests",
+    "message": "Too Many Requests"
+  }
+}
 ```
 
 ### Comment éviter d'effectuer trop de requêtes ?
 
-Il est recommandé de limiter le nombre d'appels d'API effectués par votre automatisation afin de rester en deçà
-de la limite de taux fixée pour le point de terminaison.
+Il est recommandé de limiter le nombre d'appels d'API effectués par votre automatisation afin de rester en deçà de la limite de taux fixée pour le point de terminaison.
 
-Cette situation survient souvent lorsque plusieurs requêtes sont exécutées en parallèle,
-à l'aide de plusieurs processus ou threads.
+Cette situation survient souvent lorsque plusieurs requêtes sont exécutées en parallèle, à l'aide de plusieurs processus ou threads.
 
-Il existe plusieurs moyens d'améliorer l'efficacité de votre automatisation, notamment en utilisant des mécanismes
-de __mise en cache__ et en mettant en place __un système de rejeu avec atténuation progressive__. Cette méthode consiste
-à effectuer une courte pause lorsqu'une erreur de limite de taux est rencontrée, puis à réessayer la requête.
-Si la requête échoue à nouveau, la durée de la pause est augmentée progressivement jusqu'à ce que la requête réussisse
-ou jusqu'à ce qu'un nombre maximum de réessais soit atteint.
+Il existe plusieurs moyens d'améliorer l'efficacité de votre automatisation, notamment en utilisant des mécanismes de __mise en cache__ et en mettant en place __un système de rejeu avec atténuation progressive__. Cette méthode consiste à effectuer une courte pause lorsqu'une erreur de limite de taux est rencontrée, puis à réessayer la requête. Si la requête échoue à nouveau, la durée de la pause est augmentée progressivement jusqu'à ce que la requête réussisse ou jusqu'à ce qu'un nombre maximum de réessais soit atteint.
 
 Cette approche présente de nombreux avantages :
 
-- __L'atténuation progressive__ garantit que les premieres tentatives sont jouées rapidement, tout en prévoyant des délais plus longs en cas d'échec répété.
+- __L'atténuation progressive__ garantit que les premières tentatives sont jouées rapidement, tout en prévoyant des délais plus longs en cas d'échec répété.
 - L'ajout d'__une variation aléatoire__ à la pause contribue à éviter que toutes les tentatives ne se produisent simultanément.
 
-Il est important de noter que __les requêtes infructueuses n'affectent pas votre limite de taux__.
-Cependant, renvoyer continuellement une requête pourrait ne pas être une solution viable à long terme,
-car ce comportement pourrait être modifié à l'avenir. Nous vous recommandons donc de ne pas dépendre exclusivement de ce mécanisme.
+Il est important de noter que __les requêtes infructueuses n'affectent pas votre limite de taux__. Cependant, renvoyer continuellement une requête pourrait ne pas être une solution viable à long terme, car ce comportement pourrait être modifié à l'avenir. Nous vous recommandons donc de ne pas dépendre exclusivement de ce mécanisme.
 
-Les bibliothèques __[Backoff](https://pypi.org/project/backoff/)__ et __[Tenacity](https://pypi.org/project/tenacity/)__ en Python
-sont des bons points de départ pour implémenter des stratégies d'attenuation.
+Les bibliothèques __[Backoff](https://pypi.org/project/backoff/)__ et __[Tenacity](https://pypi.org/project/tenacity/)__ en Python sont des bons points de départ pour implémenter des stratégies d'atténuation.
 
-## Cycle de vie d'un endpoint API
+## Cycle de vie et dépréciation des endpoints
 
-Les informations d'évolution des endpoint de l'API est disponible dans les notes de mises à jour :
+### Politique de dépréciation
+
+Cloud Temple s'engage à maintenir la compatibilité de son API dans le temps. Cependant, lorsqu'il est nécessaire de faire évoluer l'API (nouvelles fonctionnalités, optimisations, corrections de sécurité), certains endpoints peuvent être dépréciés puis supprimés.
+
+#### Règle des 3 mois minimum
+
+Lorsqu'un endpoint est marqué comme déprécié :
+
+1. **Annonce officielle** : La dépréciation est annoncée dans les notes de version de la console
+2. **Période de transition** : L'endpoint reste **accessible et fonctionnel pendant au minimum 3 mois** après l'annonce
+3. **Date de suppression** : Une date précise de suppression définitive est communiquée dès l'annonce
+4. **Alternative documentée** : Le nouvel endpoint de remplacement est documenté et disponible
+
+Cette règle des 3 mois vous laisse le temps nécessaire pour adapter votre code et migrer vers les nouveaux endpoints.
+
+### Comment identifier un endpoint déprécié ?
+
+#### Dans le portail API (Swagger)
+
+Les endpoints dépréciés apparaissent barrés dans la documentation Swagger :
+
+
+~~POST /v1/ancien/endpoint~~
+
+La description de l'endpoint inclut :
+- La date d'annonce de la dépréciation
+- La date de suppression prévue
+- L'endpoint de remplacement recommandé
 
 <img src={ShivaApi004} />
 
-Vous trouverez la liste des endpoints qui sont dépréciés activité par activité.
+### Bonnes pratiques pour gérer les dépréciations
 
-Par ailleurs, les endpoints qui sont dépréciés apparaitrons de telle manière sur nos API :
-__~~this/is/an/endpoint~~__ ainsi qu'une date de suppression définitive en description.
+1. **Surveillez les fonctionnalités dépréciées** : Consultez régulièrement les fonctionnalités dépréciée dans la console pour être informé des dépréciations à venir.
+
+2. **Planifiez vos migrations** : Dès qu'une dépréciation est annoncée, planifiez la migration de votre code vers le nouvel endpoint dans les 3 mois.
+
+3. **Testez les nouveaux endpoints** : Testez les nouveaux endpoints dès leur disponibilité, même pendant la période de transition.
+
+4. **Documentez vos dépendances** : Maintenez une liste des endpoints que votre application utilise pour faciliter les migrations futures.
+
+## Bonnes pratiques
+
+### Sécurité des tokens
+
+:::danger[Règles de sécurité essentielles]
+- 🚫 Ne jamais exposer vos tokens dans du code versionné (Git, etc.)
+- 🔐 Utiliser des variables d'environnement pour stocker les tokens
+- 🎯 Créer des tokens avec des permissions minimales (principe du moindre privilège)
+- 🔄 Renouveler régulièrement vos tokens (maximum 12 mois)
+- ⚠️ Révoquer immédiatement tout token compromis
+:::
+
+### Gestion des erreurs
+
+Toujours gérer les erreurs HTTP dans votre code. Portez une attention particulière aux codes suivants :
+
+| Code | Description | Action recommandée |
+|------|-------------|-------------------|
+| **401** Unauthorized | Token expiré ou invalide | Ré-authentifier avec votre PAT |
+| **403** Forbidden | Permissions insuffisantes | Vérifier les droits du token |
+| **429** Too Many Requests | Limite de taux atteinte | Attendre avant de réessayer (backoff) |
+| **500/503** Server Error | Erreur serveur temporaire | Réessayer plus tard |
+
+### Optimisation des appels API
+
+- Utiliser la pagination pour les listes volumineuses
+- Mettre en cache les données qui changent rarement
+- Utiliser les filtres pour limiter les données retournées
+- Grouper les opérations quand c'est possible
+- Suivre l'état des activités asynchrones au lieu de faire du polling intensif
+
+### Retry avec backoff exponentiel
+
+Pour gérer les erreurs temporaires ou le rate limiting (HTTP 429), implémentez une stratégie de retry avec backoff exponentiel :
+
+:::tip[Stratégie de retry recommandée]
+- ⏱️ **Attente progressive** : 1s, 2s, 4s, 8s...
+- 🎲 **Variation aléatoire** : Évite que tous les clients ne réessayent simultanément
+- 🔄 **Limite de tentatives** : Maximum 3-5 tentatives
+- 📚 **Bibliothèques Python** : [Backoff](https://pypi.org/project/backoff/) ou [Tenacity](https://pypi.org/project/tenacity/)
+:::
