@@ -19,6 +19,12 @@ Cette documentation vous guide dans l'utilisation de l'API Cloud Temple, de l'au
 
 ## Quickstart : Votre première requête API
 
+:::info[En résumé - 3 étapes pour démarrer]
+1. 🔑 **Générer votre PAT** depuis la console
+2. 🚀 **Tester avec curl** sur `/iam/v2/roles`
+3. ✅ **Analyser la réponse** JSON
+:::
+
 ### Prérequis
 
 Avant de commencer, vous devez disposer d'un compte Cloud Temple avec les permissions appropriées pour générer des clés API.
@@ -50,7 +56,7 @@ La création de ce token se fait depuis votre compte. Il est possible de génér
 
 Pour créer une clef API, il suffit de __cliquer sur votre profil__ :
 
-<img src={ShivaProfil001} />
+<img src={ShivaProfil001} style={{maxWidth: '300px', width: '100%'}} />
 
 Dans le menu du profil, cliquer sur __'Jeton d'accès personnel'__
 
@@ -70,7 +76,7 @@ Les détails concernant votre jeton sont alors affichés. __Attention, il n'est 
 
 Si vous ne notez pas ces informations, vous devrez détruire et recréer le jeton.
 
-<img src={ShivaProfil004} />
+<img src={ShivaProfil004} style={{maxWidth: '600px', width: '100%'}} />
 
 Pour une question de sécurité, il est recommandé de créer plusieurs tokens ayant chacun une utilité spécifique (un token pour chaque application ou chaque processus métier) plutôt que de créer 1 token avec l'ensemble des droits.
 
@@ -343,6 +349,7 @@ Cette règle des 3 mois vous laisse le temps nécessaire pour adapter votre code
 
 Les endpoints dépréciés apparaissent barrés dans la documentation Swagger :
 
+
 ~~POST /v1/ancien/endpoint~~
 
 La description de l'endpoint inclut :
@@ -366,20 +373,24 @@ La description de l'endpoint inclut :
 
 ### Sécurité des tokens
 
-- Ne jamais exposer vos tokens dans du code versionné (Git, etc.)
-- Utiliser des variables d'environnement pour stocker les tokens
-- Créer des tokens avec des permissions minimales (principe du moindre privilège)
-- Renouveler régulièrement vos tokens (maximum 12 mois)
-- Révoquer immédiatement tout token compromis
+:::danger[Règles de sécurité essentielles]
+- 🚫 Ne jamais exposer vos tokens dans du code versionné (Git, etc.)
+- 🔐 Utiliser des variables d'environnement pour stocker les tokens
+- 🎯 Créer des tokens avec des permissions minimales (principe du moindre privilège)
+- 🔄 Renouveler régulièrement vos tokens (maximum 12 mois)
+- ⚠️ Révoquer immédiatement tout token compromis
+:::
 
 ### Gestion des erreurs
 
 Toujours gérer les erreurs HTTP dans votre code. Portez une attention particulière aux codes suivants :
 
-- **401 Unauthorized** : Votre token est expiré ou invalide
-- **403 Forbidden** : Permissions insuffisantes 
-- **429 Too Many Requests** : Limite de taux atteinte, attendre avant de réessayer
-- **500/503** : Erreur serveur temporaire, réessayer plus tard
+| Code | Description | Action recommandée |
+|------|-------------|-------------------|
+| **401** Unauthorized | Token expiré ou invalide | Ré-authentifier avec votre PAT |
+| **403** Forbidden | Permissions insuffisantes | Vérifier les droits du token |
+| **429** Too Many Requests | Limite de taux atteinte | Attendre avant de réessayer (backoff) |
+| **500/503** Server Error | Erreur serveur temporaire | Réessayer plus tard |
 
 ### Optimisation des appels API
 
@@ -393,6 +404,9 @@ Toujours gérer les erreurs HTTP dans votre code. Portez une attention particuli
 
 Pour gérer les erreurs temporaires ou le rate limiting (HTTP 429), implémentez une stratégie de retry avec backoff exponentiel :
 
-- **Attente progressive** : 1s, 2s, 4s, 8s...
-- **Variation aléatoire** : Évite que tous les clients ne réessayent simultanément
-- **Limite de tentatives** : Maximum 3-5 tentatives
+:::tip[Stratégie de retry recommandée]
+- ⏱️ **Attente progressive** : 1s, 2s, 4s, 8s...
+- 🎲 **Variation aléatoire** : Évite que tous les clients ne réessayent simultanément
+- 🔄 **Limite de tentatives** : Maximum 3-5 tentatives
+- 📚 **Bibliothèques Python** : [Backoff](https://pypi.org/project/backoff/) ou [Tenacity](https://pypi.org/project/tenacity/)
+:::
