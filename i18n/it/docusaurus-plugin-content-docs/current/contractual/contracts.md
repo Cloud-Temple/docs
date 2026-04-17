@@ -4,6 +4,8 @@ slug: /contracts
 hide_table_of_contents: true
 ---
 
+import { ContractCard } from '@site/src/components/ContractCard';
+
 ## Gerarchia dei documenti contrattuali
 
 |           | Riferimenti                |
@@ -13,11 +15,11 @@ hide_table_of_contents: true
 
 La gerarchia dei documenti contrattuali è stabilita secondo un ordine di priorità definito:
 
-1. [Condizioni Generali di Vendita e Utilizzo (CGVU)](/docs/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf)
-2. [Convenzione di Servizio SecNumCloud](/docs/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf)
+1. [Condizioni Generali di Vendita e Utilizzo (CGVU)](/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf)
+2. [Convenzione di Servizio SecNumCloud](/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf)
 3. Accordo specifico particolare ¹
 4. Condizioni Particolari di Utilizzo (CPU) ²
-5. [Accordo sul Trattamento dei Dati](/docs/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf)
+5. [Accordo sul Trattamento dei Dati](/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf)
 
 :::info[Note contrattuali]
 
@@ -40,24 +42,18 @@ Qui trovi tutti i documenti contrattuali di Cloud Temple: condizioni generali, a
 ## Condizioni Generali
 
 <div class="book-grid">
-  <a class="book-card" href="/docs/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf" target="_blank">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Condizioni Generali di Vendita e Utilizzo (CGVU)</div>
-      <div class="book-card-desc">Condizioni generali che regolano tutti i servizi Cloud Temple.</div>
-      <div class="book-card-cta">Consulta il documento →</div>
-    </div>
-  </a>
-  <a class="book-card" href="/docs/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf" target="_blank">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Accordo di Trattamento dei Dati (DPA)</div>
-      <div class="book-card-desc">Accordo che disciplina il trattamento dei dati personali ai sensi del GDPR.</div>
-      <div class="book-card-cta">Consulta il documento →</div>
-    </div>
-  </a>
+  <ContractCard
+    href="/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
+    title="Condizioni Generali di Vendita e Utilizzo (CGVU)"
+    desc="Condizioni generali che regolano tutti i servizi Cloud Temple."
+    cta="Consulta il documento →"
+  />
+  <ContractCard
+    href="/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
+    title="Accordo di Trattamento dei Dati (DPA)"
+    desc="Accordo che disciplina il trattamento dei dati personali ai sensi del GDPR."
+    cta="Consulta il documento →"
+  />
 </div>
 
 ---
@@ -67,15 +63,12 @@ Qui trovi tutti i documenti contrattuali di Cloud Temple: condizioni generali, a
 Gli accordi di servizio definiscono il quadro contrattuale per la fornitura di servizi qualificati SecNumCloud: perimetro, impegni operativi, responsabilità e condizioni di servizio.
 
 <div class="book-grid">
-  <a class="book-card" href="/docs/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf" target="_blank">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
-      <div class="book-card-title">Convenzione di Servizio SecNumCloud</div>
-      <div class="book-card-desc">Quadro contrattuale per la fornitura di servizi qualificati SecNumCloud: ambito, impegni operativi, responsabilità e condizioni di servizio.</div>
-      <div class="book-card-cta">Consulta il documento →</div>
-    </div>
-  </a>
+  <ContractCard
+    href="/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf"
+    title="Convenzione di Servizio SecNumCloud"
+    desc="Quadro contrattuale per la fornitura di servizi qualificati SecNumCloud: ambito, impegni operativi, responsabilità e condizioni di servizio."
+    cta="Consulta il documento →"
+  />
 </div>
 
 ---
