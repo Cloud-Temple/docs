@@ -15,9 +15,4 @@ title: Tutoriels
     <p>Déployez et configurez pfSense avec FRR pour établir un peering BGP et gérer vos préfixes IP publics.</p>
     <a href="../internet/tutorials/pfSense" class="card-link">Voir le tutoriel →</a>
   </div>
-  <div class="card">
-    <h3>Réseaux Privés — Gestion avancée</h3>
-    <p>Création, propagation, partage inter-tenants et suppression de VLANs privés depuis la console.</p>
-    <a href="../private_network/tutorials" class="card-link">Voir le tutoriel →</a>
-  </div>
 </div>
