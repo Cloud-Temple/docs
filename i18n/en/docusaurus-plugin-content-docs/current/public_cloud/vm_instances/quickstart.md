@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Getting Started Guide
 ---
 
 ## Prerequisites
@@ -8,84 +8,143 @@ Before you begin, make sure you have the following:
 
 - An active **Cloud Temple Tenant**
 - A minimum **Standard Support** subscription
-- The necessary permissions in your Cloud Temple organisation
+- The necessary permissions in your Cloud Temple organization
 
-## Deploy a Virtual Machine
+## Accessing the VM Instances Service
 
-### 1. Access the Service
+Log in to the **Cloud Temple Console** and navigate to **Cloud Public > VM Instances** from the main menu.
 
-Log in to the **Cloud Temple Console** and navigate to the **VM Instances** section from the main menu.
+![Cloud Temple Console Dashboard](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
 
-### 2. Select the Tenant and Availability Zone
+The dashboard gives you an overview of the VM Instances resources consumed (storage, CPU, RAM) as well as the number of active virtual machines.
 
-- Choose the **tenant** in which you want to deploy the virtual machine.
-- Select the target **availability zone (AZ)** from those available in the FR1 region.
+Click on **Cloud Public** in the left sidebar to expand the submenu, then select **VM Instances**.
 
-### 3. Choose an Image from the Marketplace
+![Navigation to VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
 
-Virtual machines are deployed exclusively from **official Cloud Temple Marketplace images**.
+You will land on the list of your VM Instances:
 
-- Browse the catalogue of available images.
-- Select the desired operating system and version.
+![VM Instances List](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
-### 4. Configure the Virtual Machine
+The table displays for each VM: its name, status (On / Off), availability zone, instance family, model, and allocated resources (CPU, RAM, Disk size).
 
-Fill in the parameters for your instance:
+## Deploying a Virtual Machine
+
+Click the **+ New virtual machine** button at the top right to open the creation wizard. This wizard runs through **9 steps**.
+
+### Step 1 — Instance Family
+
+![Step 1: Instance Family](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
+
+Choose the **instance family** suited to your workload:
+
+| Family | Description | CPU |
+|--------|-------------|-----|
+| **Development** | Cost-optimised, for test and staging environments | Shared |
+| **General Purpose** | Optimal vCPU/RAM balance for standard workloads | Shared |
+
+:::info
+The **Performance** family (dedicated vCPUs) is available via the custom flavor option.
+:::
+
+### Step 2 — Availability Zone
+
+![Step 2: Availability Zone](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
+
+Select the **availability zone (AZ)** in which your VM will be hosted (e.g. `fr1-az01`).
+
+### Step 3 — Choose a Template
+
+![Step 3: Choose a Template](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+
+Browse the available image catalogue via the **OS** and **Appliances** tabs:
+
+- **Debian 13** (Trixie)
+- **Rocky Linux**
+- And other systems available in the Cloud Temple Marketplace
+
+Select the desired operating system and choose the version from the associated dropdown.
+
+### Step 4 — Flavor
+
+![Step 4: Flavor](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape4_gabarit.png)
+
+Choose a **predefined flavor** or create a **Custom flavor**:
+
+- `dev-1`: 1 vCPU
+- `dev-2`: 2 vCPU / 8 GB RAM
+- **Custom**: freely enter the number of vCPUs and the amount of RAM
+
+### Step 5 — Name and Backup Policy
+
+![Step 5: Name and Backup Policy](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
+
+Fill in:
 
 | Parameter | Description |
 |-----------|-------------|
-| **Service class** | Development, General Purpose or Performance |
-| **Flavor** | Choose from predefined flavors or create a custom flavor (vCPU + RAM) |
-| **Additional disks** | Add extra volumes if needed (up to 16 volumes, 2 TB max per volume) |
-| **Network (VPC)** | Associate the VM with your VPC network |
-| **Cloud-init** | Optional: inject a pre-configuration script at startup (SSH keys, network configuration, etc.) |
+| **Name** | Unique name for your VM in the tenant |
+| **Backup policy** | `No Backup` by default, or a retention policy if the backup option is subscribed |
 
-:::info[System Disk]
-The system disk (Flash) is included automatically. Its size (between 15 and 100 GB) depends on the chosen operating system.
-:::
+### Step 6 — Cloud Init
 
-### 5. Launch the Deployment
+![Step 6: Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
 
-Validate the configuration and launch provisioning. Deployment is **automated and immediate** (a few minutes).
+This step is **optional**. It allows you to pre-configure your VM at first boot via two editors:
 
-## Manage Your Virtual Machines
+- **Cloud Config**: SSH key injection, hostname configuration, package installation, etc.
+- **Network Config**: static network configuration (Netplan format)
 
-From the console, you can perform the following actions on your virtual machines:
+### Step 7 — Disks
 
-- **Start / Stop / Restart** the virtual machine
-- **Open the console** to access the system directly
-- **Modify the configuration** (vCPU, RAM) — requires stopping the VM
-- **Add disks** additional volumes
-- **View performance metrics** (CPU, RAM, Disk)
-- **Configure backup** (paid option) with configurable retention
+![Step 7: Disks](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape7_disques.png)
 
-## Automation and Infrastructure as Code
+Configure the disk(s) for your VM. Two storage types are available:
 
-The VM Instances service is fully automatable:
+| Type | IOPS |
+|------|------|
+| **Standard** | ~1,500 IOPS/TB |
+| **Enterprise** | ~7,500 IOPS/TB |
 
-### Via the REST API
+### Step 8 — Network Adapters
 
-The Cloud Temple REST API enables full programmatic control of the virtual machine lifecycle.
+![Step 8: Network Adapters](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape8_reseau.png)
 
-API reference: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.com/api/)
+Associate your VM with a network:
 
-### Via Terraform
+- **Private Backbone** (e.g. PACKFR): shared private network with logical isolation
+- **VPC**: fully dedicated private network with advanced segmentation
 
-The Cloud Temple Terraform provider allows you to manage your VM Instances as Infrastructure as Code.
+### Step 9 — Summary
 
-```hcl
-# Example VM Instances resource with Terraform
-# Refer to the provider documentation for available attributes
-resource "cloudtemple_compute_vm_instance" "example" {
-  # ...
-}
-```
+![Step 9: Summary](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
 
-See the [Terraform documentation](pathname:///docs/terraform/terraform) for provider installation and configuration.
+Review the full summary before launching provisioning and click **Create**.
 
-## Useful Resources
+## Managing Your Virtual Machines
 
-- [Cloud Temple public documentation](https://docs.cloud-temple.com/home)
-- [API Reference](https://shiva.cloud-temple.com/api/)
-- [Terraform documentation](pathname:///docs/terraform/terraform)
-- [Availability Zone concepts](../../additional_content/concepts_az.md)
+Click on a VM to open its detail panel. Four tabs are available:
+
+### Information Tab
+
+![VM Detail - Information](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
+
+View and modify VM parameters: name, UUID, availability zone, instance family, OS model, CPU, RAM, and backup policy.
+
+### Disks Tab
+
+![VM Detail - Disks](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
+
+View attached disks and add additional volumes via the **+ Add a disk** button.
+
+### Network Adapters Tab
+
+![VM Detail - Network](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_reseau.png)
+
+View the VM's network interfaces (network name, MAC address, IPv4/IPv6 address).
+
+### Snapshots Tab
+
+![VM Detail - Snapshots](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_snapshots.png)
+
+Create and manage snapshots of your VM via the **+ Create a snapshot** button.

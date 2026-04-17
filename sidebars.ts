@@ -174,6 +174,17 @@ const sidebars: SidebarsConfig = {
             'public_cloud/vm_instances/vm_instances',
             'public_cloud/vm_instances/concepts',
             'public_cloud/vm_instances/quickstart',
+            {
+              type: 'category',
+              label: 'Tutoriels',
+              key: 'vm_instances_tutorials',
+              link: { type: 'generated-index' },
+              items: [
+                'public_cloud/vm_instances/tutorials/create_vm',
+                'public_cloud/vm_instances/tutorials/manage_disks',
+                'public_cloud/vm_instances/tutorials/snapshots',
+              ],
+            },
           ],
         },
         {
