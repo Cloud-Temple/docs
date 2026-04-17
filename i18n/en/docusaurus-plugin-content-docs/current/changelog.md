@@ -5,20 +5,42 @@ sidebar_position: 2
 
 # Change Log
 
+### April 17, 2026: VM Instances — Illustrated Documentation and Tutorials
+
+- **VM Instances — Documentation update**: Complete overhaul and illustration of the VM Instances documentation. The getting started guide (`quickstart.md`) now covers the entire illustrated user journey: accessing the section, VM list, 9-step creation wizard (instance family, availability zone, OS template, flavor, name/backup, Cloud Init, disks, network, summary), and management of 4 tabs (Information, Disks, Network, Snapshots).
+- **VM Instances — Tutorials**: Creation of 3 dedicated tutorials in a `tutorials/` folder: (1) **Create your first VM** (full illustrated wizard + Cloud Init + additional disk), (2) **Manage disks** (add disk from the console + Linux partitioning), (3) **Take and manage snapshots** (create, restore, delete + best practices and snapshot/backup comparison). The sidebar navigation is updated with 3 individual entries in the Tutorials category.
+
+### April 17, 2026: Private Backbone Translation and Terminology Update
+
+- **Private Backbone**: Complete translation of the Private Backbone service documentation into English, German, Spanish, and Italian.
+- **Terminology**: Harmonisation of vocabulary in the French documentation — systematic replacement of "offre" and "service" with "produit" to align with Cloud Temple's commercial terminology.
+
+### April 16, 2026: Navigation Refactoring, Contractual Documents and Documentation Updates
+
+- **Navigation — Compute**: VM Instances (preview), IaaS OpenSource and IaaS VMware grouped under a single **Compute** category in the navigation (PR #277).
+- **Navigation — Network**: VPC (preview) and Private Backbone grouped under a single **Network** category in the navigation.
+- **Contractual Documents**: Complete restructuring of contractual documentation — creation of a `/contracts` hub page (general terms, specific terms, SecNumCloud service agreements, VM instances SLA) and a `/shared-responsibility` hub page (RACI matrices per service: IaaS, S3, PaaS, Kubernetes, LLMaaS, Network). The contractual left-side menu is replaced by a dedicated **Contractual** column in the footer. Translations available in EN/DE/ES/IT.
+- **VM Instances**: Updated the service level agreement (SLA) from 99.9% to 99.95%.
+- **IaaS OpenSource**: Added a note on the maximum backup retention period (24 months maximum, migration to Glacier planned for Q1 2027).
+
+### April 15, 2026: New VM instances documentation (Cloud Public)
+
+- **VM instances**: Initial documentation release for the VM instances service (in preview), Cloud Temple's new shared virtual machine offering. The documentation covers the service overview, technical concepts (Development/General Purpose/Performance service classes, predefined and custom flavors, storage, VPC networking, backup), and a complete getting started guide. The service is organised under a new **Cloud Public** category in the navigation.
+
 ### April 15, 2026: IaaS VMware Documentation Improvement — Cluster Metrics
 
-- **IaaS VMware**: Added detailed documentation on the metrics displayed in the VMware cluster view from the Cloud Temple Console. Covers the three cluster memory graphs: **Provisioned Memory** (total memory allocated to VMs), **Used Memory** (physical memory actively consumed by VMs) and **Worst-Case Allocation** (projection of maximum simultaneous consumption), with a precise description of what each indicator represents to help anticipate resource needs. Available in French, English, German, Spanish, and Italian.
+- **IaaS VMware**: Added detailed documentation on the metrics displayed in the VMware cluster view from the Cloud Temple Console. Covers the three cluster memory graphs: **Provisioned Memory** (total memory allocated to VMs), **Used Memory** (physical memory actively consumed by VMs) and **Worst-Case Allocation** (projection of maximum simultaneous consumption), with a precise description of what each indicator represents to help anticipate resource needs.
 
 ### April 15, 2026: Managed MariaDB, Managed PostgreSQL Documentation and Multilingual Fixes
 
-- **Managed MariaDB**: Initial release of the Managed MariaDB service documentation (preview): service overview, technical concepts (StandAlone and Distributed architectures), quick start guide. Available in French, English, German, Spanish, and Italian.
-- **Managed PostgreSQL**: Initial release of the Managed PostgreSQL service documentation (preview): service overview, technical concepts, quick start guide. Available in French, English, German, Spanish, and Italian.
+- **Managed MariaDB**: Initial release of the Managed MariaDB service documentation (preview): service overview, technical concepts (StandAlone and Distributed architectures), quick start guide.
+- **Managed PostgreSQL**: Initial release of the Managed PostgreSQL service documentation (preview): service overview, technical concepts, quick start guide.
 - **Multilingual Fixes (images)**: Fixed image references in translations for the Managed Kubernetes and Managed MariaDB sections across all languages (EN, DE, ES, IT) — converting relative `./images/` paths to absolute `@site/docs/...` paths ensuring correct rendering in all languages.
 - **Broken Link Fixes**: Resolved several broken links: LLMaaS licence references, console link in the rclone tutorial (OSS), IAM link in the network documentation (EN), relative links in the Terraform section (EN).
 
 ### April 15, 2026: New Cost Manager Module
 
-- **Console (Cost Manager)**: Added complete documentation for the new consumption tracking module accessible from the Cloud Temple Console. Covers the dashboard, global consumption (with end-of-month projection), breakdown by product and service, line-by-line billing details, and the price catalog. Available in French, English, German, Spanish, and Italian.
+- **Console (Cost Manager)**: Added complete documentation for the new consumption tracking module accessible from the Cloud Temple Console. Covers the dashboard, global consumption (with end-of-month projection), breakdown by product and service, line-by-line billing details, and the price catalog.
 
 ### March 26, 2026: Sub-processors List Update (DPA)
 

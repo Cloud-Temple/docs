@@ -63,6 +63,7 @@ The storage used by this instance is replicated across 3 AZs, and allows automat
 The ***Distributed*** model deploys a cluster of 3 instances of the MariaDB engine, with Galera in "single primary" mode and MaxScale:
 
 - a MaxScale endpoint allows routing to the different instances depending on the type of request (read or write).
+![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
 - the read-write (RW) instance is accessible via a specific endpoint.
 - The 2 read-only (RO) instances are accessible via another specific endpoint.
 

@@ -12,7 +12,7 @@ Ce tutoriel vous guidera dans l'utilisation de **Capsule**, l'outil de multi-ten
 
 ## Qu'est-ce que Capsule ?
 
-Capsule est un contrôleur Kubernetes qui introduit le concept de **Tenant** pour regrouper plusieurs Namespaces. Dans l'offre Managed Kubernetes de Cloud Temple, Capsule est utilisé pour vous déléguer la gestion de vos propres Namespaces en toute autonomie, sans avoir besoin de l'intervention d'un administrateur cluster.
+Capsule est un contrôleur Kubernetes qui introduit le concept de **Tenant** pour regrouper plusieurs Namespaces. Dans le produit Managed Kubernetes de Cloud Temple, Capsule est utilisé pour vous déléguer la gestion de vos propres Namespaces en toute autonomie, sans avoir besoin de l'intervention d'un administrateur cluster.
 
 À la livraison de votre cluster, les équipes Cloud Temple ont créé un premier Tenant pour vous et vous en ont désigné comme **propriétaire (Tenant Owner)**.
 

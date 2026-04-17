@@ -56,7 +56,7 @@ Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de per
 - **(1)** La quantité de mémoire est celle physiquement disponible sur les lames et ne peut être modifiée.
 - **(2)** Les fréquences indiquées correspondent à la fréquence de base minimum et à la fréquence turbo.
 - **(3)** La connectivité physique est mutualisée pour l'accès réseau et l'accès stockage bloc, grâce à une architecture convergée Cisco UCS.
-- **(4)** Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, l'offre inclut des GPU NVIDIA LOVELACE L40S.
+- **(4)** Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, le produit inclut des GPU NVIDIA LOVELACE L40S.
 
 La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellement, plages de maintenance incluses. Toute demande liée au SLA doit être déclarée via un ticket incident.
 
@@ -89,7 +89,7 @@ Pour garantir la confidentialité de vos données au repos, l'ensemble de notre 
 - **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
 - **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
 
-:::warning Point d'attention sur la réplication
+:::warning[Point d'attention sur la réplication]
 Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
 :::
 

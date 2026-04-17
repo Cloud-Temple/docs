@@ -10,7 +10,7 @@ L'API Gateway est la nouvelle norme Kubernetes pour la gestion du trafic entrant
 
 Dans votre cluster Managed Kubernetes Cloud Temple, **Cilium** est utilisé comme CNI et implémente nativement le support de Gateway API.
 
-:::info Versions supportées
+:::info[Versions supportées]
 Cette documentation s'applique aux clusters utilisant **Cilium 1.8.4 ou supérieur**.
 Les **Gateway API CRDs en version 1.4** sont préinstallées sur votre cluster.
 :::
@@ -62,7 +62,7 @@ NAME      CONTROLLER           ACCEPTED   AGE
 cilium    io.cilium/gateway    True       2d
 ```
 
-:::info Note
+:::info[Note]
 Si aucune GatewayClass n'est listée, assurez-vous que la fonctionnalité Gateway API est activée dans votre installation Cilium.
 :::
 

@@ -103,7 +103,7 @@ To ensure the confidentiality of your data at rest, our entire block storage inf
 - __Compliance__: This encryption method complies with the __FIPS 140-2__ standard, ensuring a high level of validated security.
 - __Operation__: Encryption is applied at the time data is written to the physical storage medium.
 
-:::warning Attention Point on Replication
+:::warning[Attention Point on Replication]
 It is important to note that this encryption protects data stored on disks. It is not active "on-the-fly," meaning data is not encrypted during storage replication operations between availability zones. Security of transfers is ensured through dedicated and secure communication channels.
 :::
 
@@ -160,6 +160,14 @@ Creating a new backup policy is done through a __service request__ specifying:
 - The tenant name  
 - The backup policy name  
 - Desired characteristics (x days, y weeks, z months, ...)
+
+:::info[Long-term retention — future availability]
+**The maximum retention is currently 24 months.** Long-term retention (up to 10 years) will be integrated with the launch of our **Glacier** product, planned for **Q1 2027**, as a complementary subscription.
+
+For such long retention periods, we recommend saving **only flat files** (raw files, static documents) and **database dumps**. Restoring a complete server after 10 years carries significant risks: many services or dependencies may have become obsolete or incompatible with the current environment.
+
+**Alternative available now**: the **agent-based backup** service, available as a complementary subscription. Contact support for more information.
+:::
 
 ## Virtual Machines
 

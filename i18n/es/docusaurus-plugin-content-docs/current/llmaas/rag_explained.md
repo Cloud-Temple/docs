@@ -2,7 +2,7 @@
 
 Este documento explica los conceptos fundamentales detrás de la técnica de **Retrieval-Augmented Generation (RAG)**.
 
-:::tip Código de ejemplo disponible
+:::tip[Código de ejemplo disponible]
 Los conceptos abordados aquí se ilustran en un demo completo y funcional disponible en nuestro GitHub. Es una excelente base de partida para comprender el funcionamiento práctico de un pipeline RAG.
 
 ➡️ **[Acceder al código del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -27,7 +27,7 @@ Es esta etapa de **Recuperación** la que está en el centro de nuestro tema. ¿
 
 Un ordenador no entiende las palabras, pero es excelente para manipular números. El **embedding** es el proceso que traduce un texto (una palabra, una frase, un documento) en una lista de números, llamada **vector**.
 
-:::tip ¿Qué es un vector?
+:::tip[¿Qué es un vector?]
 En términos simples, un vector es una lista de números que representa un punto en un espacio de múltiples dimensiones. Cada número en el vector corresponde a una coordenada en un "eje" de este espacio. Para los embeddings de texto, estos ejes no son `x`, `y`, `z` sino dimensiones semánticas abstractas (por ejemplo, un eje podría representar el concepto de "monarquía", otro el de "gato", etc.).
 :::
 
@@ -37,7 +37,7 @@ En términos simples, un vector es una lista de números que representa un punto
 
 Este vector no es aleatorio. Representa la "posición" del texto en un espacio semántico multidimensional. Textos con un significado similar tendrán vectores que apuntan en direcciones similares.
 
-:::tip Analogía Geográfica
+:::tip[Analogía Geográfica]
 Imagina un mapa geográfico. "París" y "Francia" estarían muy cerca, al igual que "Roma" e "Italia". "París" estaría más lejos de "Roma" que de "Francia", pero más cerca que de "Tokio". El embedding hace lo mismo, pero con miles de "dimensiones" en lugar de dos, para capturar matices de significado complejos.
 :::
 

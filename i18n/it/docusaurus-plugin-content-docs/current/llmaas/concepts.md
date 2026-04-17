@@ -108,7 +108,7 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 L'analisi dei prompt è una funzionalità de sicurezza **nativa e integrata** nella piattaforma LLMaaS. Abilitata per impostazione predefinita, ha lo scopo di rilevare e prevenire tentativi di "jailbreak" o di iniezione di prompt malevoli prima che raggiungano effettivamente il modello. Questa protezione si basa su un approccio multilivello.
 
-:::tip Contatta il supporto per la disattivazione
+:::tip[Contatta il supporto per la disattivazione]
 È possibile disattivare questa analisi di sicurezza in casi d'uso molto specifici, anche se ciò non è raccomandato. Per qualsiasi domanda in merito o per richiedere la disattivazione, ti preghiamo di contattare il supporto Cloud Temple.
 :::
 
@@ -318,6 +318,79 @@ Il mondo dei LLM evolve molto rapidamente. Per garantire ai nostri clienti l'acc
 | qwen2.5:32b               | Deprecato | 17/10/2025            |
 | qwen2.5:3b                | Deprecato | 17/10/2025            |
 | deepseek-r1:671b          | Deprecato | 17/10/2025            |
+
+---
+
+## RAG: Interrogare i Propri Dati con un LLM
+
+Questo documento spiega i concetti fondamentali della tecnica di **Retrieval-Augmented Generation (RAG)**.
+
+:::tip[Codice di Esempio Disponibile]
+I concetti trattati qui sono illustrati in una demo completa disponibile sul nostro GitHub.
+
+➡️ **[Accedi al codice del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+:::
+
+### Il problema: i LLM non hanno memoria a lungo termine
+
+Un LLM conosce solo i dati su cui è stato addestrato. **RAG** gli dà una "memoria esterna" fornendogli gli estratti di documenti più rilevanti al momento della domanda.
+
+1. **Retrieval (Recupero)**: Trovare i documenti giusti.
+2. **Augmented Generation**: Usare questi documenti per generare una risposta.
+
+![Schema concettuale del RAG](@site/docs/llmaas/images/rag_concept_overview.png)
+
+### Passo 1: Embedding: Trasformare le Parole in Numeri
+
+L'**embedding** traduce un testo in un elenco di numeri chiamato **vettore**.
+
+:::tip[Cos'è un vettore?]
+Un vettore è un elenco di numeri che rappresenta un punto in uno spazio multidimensionale con dimensioni semantiche astratte.
+:::
+
+`"Il gatto è sul tappeto."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
+
+![Esempio di vettore di embedding](@site/docs/llmaas/images/embedding_vector_example.png)
+
+:::tip[Analogia Geografica]
+"Parigi" e "Francia" sarebbero vicine, così come "Roma" e "Italia". L'embedding fa lo stesso con migliaia di dimensioni.
+:::
+
+#### Perché Granite Embedding?
+
+I modelli **Granite Embedding** di IBM si distinguono per:
+
+1. **Addestramento Etico e Commercialmente Sicuro**: IBM ha verificato l'idoneità commerciale di tutte le fonti di dati.
+2. **Indennizzazione della Proprietà Intellettuale**: Stesso livello di indennizzazione illimitata degli altri modelli IBM.
+3. **Prestazioni ed Efficienza**: Paragonabile ai principali modelli open source.
+
+![Benchmark delle Prestazioni dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
+*Confronto delle prestazioni su attività di ricerca (BEIR) e ricerca di codice (CoIR).*
+
+![Benchmark della Velocità dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
+*Confronto della latenza tra diversi modelli di embedding.*
+
+### Passo 2: Ricerca: Misurare la Prossimità Semantica
+
+#### Similarità Coseno (Lo Standard)
+
+- Misura l'**angolo** tra due vettori. Angolo piccolo = significato simile.
+- Score: 1 = similarità perfetta, 0 = nessuna similarità.
+
+![Illustrazione della Similarità Coseno](@site/docs/llmaas/images/cosine_similarity_concept.png)
+
+#### Distanza Euclidea (Il Righello)
+
+- La distanza "in linea d'aria" tra i punti terminali di due vettori.
+- Score 0 = identici. Più alto = più distanti.
+
+![Illustrazione della Distanza Euclidea](@site/docs/llmaas/images/euclidean_distance_concept.png)
+
+### Conclusione RAG
+
+La sfida più grande rimane la **qualità del modello di embedding**. Un buon modello produce vettori che catturano fedelmente il significato, rendendo il calcolo della prossimità molto più affidabile.
+
+---
 
 ## 💡 Best Practices
 

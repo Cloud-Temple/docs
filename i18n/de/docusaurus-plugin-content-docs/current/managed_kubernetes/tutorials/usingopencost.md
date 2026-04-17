@@ -101,7 +101,7 @@ Sobald diese Datei gespeichert ist, lädt Cline beim Start automatisch den `open
 
 ### 2. OpenCost mit dem MCP abfragen
 
-:::tip Voraussetzungen
+:::tip[Voraussetzungen]
 Um mit dem MCP in natürlicher Sprache zu interagieren, muss die zugrunde liegende KI Zugang zu Sprachmodellen (LLMs) haben, entweder lokal (LMStudio usw.) oder über eine Verbindung zu öffentlichen Diensten wie GPT-5 oder Gemini, oder durch die Nutzung unseres souveränen **[LLM-as-a-Service](pathname:///llmaas/llmaas)**-Angebots.
 :::
 

@@ -103,7 +103,7 @@ Para garantizar la confidencialidad de sus datos en reposo, toda nuestra infraes
 - __Cumplimiento__: Este método de cifrado cumple con la norma __FIPS 140-2__, asegurando un alto nivel de seguridad validado.
 - __Funcionamiento__: El cifrado se aplica en el momento de escritura de los datos en el soporte de almacenamiento físico.
 
-:::warning Punto de atención sobre la replicación
+:::warning[Punto de atención sobre la replicación]
 Es importante destacar que este cifrado protege los datos almacenados en los discos. No está activo "en tiempo real" (on-the-fly), lo que significa que los datos no se cifran durante las operaciones de replicación de almacenamiento entre las zonas de disponibilidad. La seguridad de los transferencias se garantiza mediante canales de comunicación dedicados y seguros.
 :::
 
@@ -162,6 +162,14 @@ La creación de una nueva política de copia de seguridad se realiza mediante __
 - El nombre del inquilino
 - El nombre de la política de copia de seguridad
 - Las características deseadas (x días, y semanas, z meses, ...)
+
+:::info[Retención a largo plazo — disponibilidad futura]
+**La retención máxima es actualmente de 24 meses.** Una retención a largo plazo (hasta 10 años) se integrará con el lanzamiento de nuestro producto **Glacier**, previsto para el **primer trimestre de 2027**, como suscripción complementaria.
+
+Para períodos de retención tan largos, recomendamos guardar **exclusivamente archivos planos** (archivos sin procesar, documentos estáticos) y **volcados de bases de datos**. La restauración de un servidor completo después de 10 años conlleva riesgos importantes: muchos servicios o dependencias pueden haberse vuelto obsoletos o incompatibles con el entorno actual.
+
+**Alternativa disponible ahora**: el servicio de **copia de seguridad por agente**, disponible como suscripción complementaria. Póngase en contacto con el soporte para más información.
+:::
 
 ## Máquinas virtuales
 

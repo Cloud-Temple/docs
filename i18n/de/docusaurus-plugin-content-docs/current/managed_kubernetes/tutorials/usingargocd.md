@@ -178,7 +178,7 @@ ArgoCD wird nun alle Komponenten der `guestbook`-Anwendung löschen. Sobald die 
 kubectl delete namespace guestbook
 ```
 
-:::info Weiterführend: Secrets-Verwaltung
+:::info[Weiterführend: Secrets-Verwaltung]
 Dieses Tutorial verwendet ein öffentliches Repository ohne sensible Daten. Für Ihre Produktionsanwendungen ist es entscheidend, niemals Secrets (Passwörter, API-Schlüssel) im Klartext in Ihrem Git-Repository zu speichern. Lösungen wie **Sealed Secrets** oder **HashiCorp Vault** integrieren sich mit ArgoCD, um Ihre Secrets sicher zu verwalten. Ein zukünftiges Tutorial wird diesen Ansatz detailliert beschreiben.
 :::
 

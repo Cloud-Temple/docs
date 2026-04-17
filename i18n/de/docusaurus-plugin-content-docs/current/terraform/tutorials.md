@@ -314,8 +314,8 @@ resource "cloudtemple_compute_virtual_machine" "cloudinit_vm" {
 - `instance-id`: Eindeutige Instanz-ID
 - `seedfrom`: URL der Konfigurationsquelle
 
-:::warning Einschränkung
-    Cloud-Init wird nur beim ersten Start der VM ausgeführt.
+:::warning[Einschränkung]
+Cloud-Init wird nur beim ersten Start der VM ausgeführt.
 :::
 
 ### Erstellen eines virtuellen Laufwerks und Anhängen an eine VM
@@ -398,7 +398,7 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
 }
 ```
 
-:::info Supported Network Adapter Types
+:::info[Supported Network Adapter Types]
   The supported adapter types depend on the operating system running on the virtual machine as well as the version of VMware.
 :::
 
@@ -507,33 +507,33 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "openstack_vm" {
   
   # Betriebssystem-Platte (muss mit dem Template übereinstimmen)
   os_disk {
-    name                  = "os-disk"
-    connected             = true
-    size                  = 20 * 1024 * 1024 * 1024  # 20 GB
-    storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
+name                  = "os-disk"
+connected             = true
+size                  = 20 * 1024 * 1024 * 1024  # 20 GB
+storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
   }
   
   # Netzwerkadapter für das Betriebssystem
   os_network_adapter {
-    network_id      = data.cloudtemple_compute_iaas_opensource_network.network.id
-    tx_checksumming = true
-    attached        = true
+network_id      = data.cloudtemple_compute_iaas_opensource_network.network.id
+tx_checksumming = true
+attached        = true
   }
   
   # Backup
   backup_sla_policies = [
-    data.cloudtemple_backup_iaas_opensource_policy.daily.id
+data.cloudtemple_backup_iaas_opensource_policy.daily.id
   ]
   
   # Boot-Reihenfolge
   boot_order = [
-    "Hard-Drive",
-    "DVD-Drive",
+"Hard-Drive",
+"DVD-Drive",
   ]
   
   tags = {
-    environment = "production"
-    os          = "almalinux"
+environment = "production"
+os          = "almalinux"
   }
 }
 ```
@@ -587,27 +587,27 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "marketplace_vm" 
   high_availability = "best-effort"
   
   os_network_adapter {
-    network_id      = data.cloudtemple_compute_iaas_opensource_network.network.id
-    tx_checksumming = true
-    attached        = true
+network_id      = data.cloudtemple_compute_iaas_opensource_network.network.id
+tx_checksumming = true
+attached        = true
   }
   
   os_disk {
-    connected             = true
-    storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
+connected             = true
+storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
   }
   
   backup_sla_policies = [
-    data.cloudtemple_backup_iaas_opensource_policy.nobackup.id
+data.cloudtemple_backup_iaas_opensource_policy.nobackup.id
   ]
   
   boot_order = [
-    "Hard-Drive",
-    "DVD-Drive",
+"Hard-Drive",
+"DVD-Drive",
   ]
   
   tags = {
-    source = "marketplace"
+source = "marketplace"
   }
 }
 ```
@@ -630,7 +630,7 @@ resource "cloudtemple_compute_iaas_opensource_replication_policy" "policy_hourly
   storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.replication_target.id
 
   interval {
-    hours = 1
+hours = 1
   }
 }
 
@@ -674,14 +674,14 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "backup_vm" {
   
   # Multiple policies can be applied
   backup_sla_policies = [
-    data.cloudtemple_backup_iaas_opensource_policy.daily.id,
-    data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
+data.cloudtemple_backup_iaas_opensource_policy.daily.id,
+data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
   ]
 }
 ```
 
-:::info Mandatory Backup
-    In a SecNumCloud environment, at least one backup policy must be defined in order to start the VM.
+:::info[Mandatory Backup]
+In a SecNumCloud environment, at least one backup policy must be defined in order to start the VM.
 :::
 ---
 
@@ -740,11 +740,11 @@ hostname: openiaas-server
 
 users:
   - name: cloudadmin
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    groups: sudo, docker
-    shell: /bin/bash
-    ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2E... your-key
+sudo: ALL=(ALL) NOPASSWD:ALL
+groups: sudo, docker
+shell: /bin/bash
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2E... your-key
 
 packages:
   - docker.io
@@ -763,18 +763,18 @@ Erstellen Sie `cloud-init/network-config.yml`:
 version: 2
 ethernets:
   ens160:
-    dhcp4: false
-    addresses:
-      - 0.0.0.0/24
-    routes:
-      - to: default
-        via: 0.0.0.0
-    nameservers:
-      addresses:
-        - 0.0.0.0
+dhcp4: false
+addresses:
+  - 0.0.0.0/24
+routes:
+  - to: default
+    via: 0.0.0.0
+nameservers:
+  addresses:
+    - 0.0.0.0
 ```
 
-:::important Hinweis
+:::important[Hinweis]
   Passen Sie die Cloud-Init-Konfiguration Ihren Anforderungen und der auf Ihrer Maschine installierten Cloud-Init-Version an. Das Format und die Syntax können je nach Version variieren.
 :::
 
@@ -796,24 +796,24 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "cloudinit_vm" {
   high_availability = "best-effort"
   
   os_disk {
-    connected             = true
-    size                  = 30 * 1024 * 1024 * 1024
-    storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
+connected             = true
+size                  = 30 * 1024 * 1024 * 1024
+storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
   }
   
   os_network_adapter {
-    network_id = data.cloudtemple_compute_iaas_opensource_network.network.id
-    attached   = true
+network_id = data.cloudtemple_compute_iaas_opensource_network.network.id
+attached   = true
   }
   
   # Cloud-Init-Konfiguration (NoCloud-Datasource)
   cloud_init = {
-    cloud_config   = file("./cloud-init/cloud-config.yml")
-    network_config = file("./cloud-init/network-config.yml")
+cloud_config   = file("./cloud-init/cloud-config.yml")
+network_config = file("./cloud-init/network-config.yml")
   }
   
   backup_sla_policies = [
-    data.cloudtemple_backup_iaas_opensource_policy.daily.id
+data.cloudtemple_backup_iaas_opensource_policy.daily.id
   ]
   
   boot_order = ["Hard-Drive"]
@@ -835,7 +835,7 @@ The `os_disk` and `os_network_adapter` blocks are special blocks that can be use
 - Marketplace Cloud Template  
 - Clone of an existing VM  
 
-:::info info  
+:::info[info  ]
   They are used to reference virtual disks and network adapters deployed by the template, allowing their parameters to be modified later without manually importing them. These blocks do **not** create any new resources.  
 :::
 
@@ -861,8 +861,8 @@ resource "cloudtemple_compute_virtual_machine" "vm_with_os_disk" {
   
   # Konfiguration der bestehenden Betriebssystemfestplatte im Template
   os_disk {
-    capacity = 100 * 1024 * 1024 * 1024  # Auf 100 GB vergrößern
-    disk_mode = "persistent"
+capacity = 100 * 1024 * 1024 * 1024  # Auf 100 GB vergrößern
+disk_mode = "persistent"
   }
 }
 ```
@@ -883,10 +883,10 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "vm_with_os_disk"
   
   # Konfiguration der Betriebssystemfestplatte
   os_disk {
-    name                  = "os-disk"
-    connected             = true
-    size                  = 50 * 1024 * 1024 * 1024  # 50 GB
-    storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
+name                  = "os-disk"
+connected             = true
+size                  = 50 * 1024 * 1024 * 1024  # 50 GB
+storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
   }
   
   # ... weitere Konfigurationen
@@ -910,10 +910,10 @@ resource "cloudtemple_compute_virtual_machine" "vm_with_network" {
   
   # Konfiguration des Netzwerkadapters des Templates
   os_network_adapter {
-    network_id   = data.cloudtemple_compute_network.vlan.id
-    auto_connect = true
-    connected    = true
-    mac_address  = "00:50:56:12:34:56"  # Optional
+network_id   = data.cloudtemple_compute_network.vlan.id
+auto_connect = true
+connected    = true
+mac_address  = "00:50:56:12:34:56"  # Optional
   }
 }
 ```
@@ -934,17 +934,17 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "vm_with_network"
   
   # Konfiguration des Netzwerkadapters
   os_network_adapter {
-    network_id      = data.cloudtemple_compute_iaas_opensource_network.network.id
-    mac_address     = "c2:db:4f:15:41:3e"  # Optional
-    tx_checksumming = true
-    attached        = true
+network_id      = data.cloudtemple_compute_iaas_opensource_network.network.id
+mac_address     = "c2:db:4f:15:41:3e"  # Optional
+tx_checksumming = true
+attached        = true
   }
   
   # ... weitere Konfigurationen
 }
 ```
 
-:::info Hinweis
+:::info[Hinweis]
   Sie können beide Ansätze problemlos kombinieren, indem Sie Festplatten und/oder Netzwerkadapter einer VM referenzieren und zusätzliche über die Ressourcen `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` und `cloudtemple_compute_iaas_vmware/opensource_network_adapter` hinzufügen.
 :::
 
@@ -985,9 +985,9 @@ resource "cloudtemple_object_storage_bucket" "custom_bucket" {
   
   # IP/CIDR Whitelist
   whitelist = [
-    "10.0.0.0/8",
-    "192.168.1.0/24",
-    "203.0.113.42/32"
+"10.0.0.0/8",
+"192.168.1.0/24",
+"203.0.113.42/32"
   ]
 }
 
@@ -1046,8 +1046,8 @@ output "s3_endpoint" {
 }
 ```
 
-:::warning Sensitive information
-    The credentials are displayed only once. Store them securely (e.g., HashiCorp Vault, AWS Secrets Manager).
+:::warning[Sensitive information]
+The credentials are displayed only once. Store them securely (e.g., HashiCorp Vault, AWS Secrets Manager).
 :::
 ---
 
@@ -1139,13 +1139,13 @@ resource "cloudtemple_object_storage_bucket" "bucket_with_acl" {
   
   # Define ACLs directly within the bucket
   acl_entry {
-    storage_account = data.cloudtemple_object_storage_storage_account.account1.name
-    role            = data.cloudtemple_object_storage_role.read_only.name
+storage_account = data.cloudtemple_object_storage_storage_account.account1.name
+role            = data.cloudtemple_object_storage_role.read_only.name
   }
   
   acl_entry {
-    storage_account = data.cloudtemple_object_storage_storage_account.account2.name
-    role            = data.cloudtemple_object_storage_role.maintainer.name
+storage_account = data.cloudtemple_object_storage_storage_account.account2.name
+role            = data.cloudtemple_object_storage_role.maintainer.name
   }
 }
 ```
@@ -1175,8 +1175,8 @@ output "all_files" {
 # Filter a specific file
 output "specific_file" {
   value = [
-    for file in data.cloudtemple_object_storage_bucket_files.my_bucket_files.files :
-    file if file.key == "config.json"
+for file in data.cloudtemple_object_storage_bucket_files.my_bucket_files.files :
+file if file.key == "config.json"
   ]
 }
 
@@ -1213,8 +1213,8 @@ resource "cloudtemple_object_storage_bucket" "upload_bucket" {
   access_type = "private"
   
   acl_entry {
-    storage_account = cloudtemple_object_storage_storage_account.upload_account.name
-    role            = data.cloudtemple_object_storage_role.maintainer.name
+storage_account = cloudtemple_object_storage_storage_account.upload_account.name
+role            = data.cloudtemple_object_storage_role.maintainer.name
   }
 }
 
@@ -1229,7 +1229,7 @@ provider "aws" {
   
   # Cloud Temple endpoint
   endpoints {
-    s3 = "https://${cloudtemple_object_storage_bucket.upload_bucket.namespace}.s3.fr1.cloud-temple.com"
+s3 = "https://${cloudtemple_object_storage_bucket.upload_bucket.namespace}.s3.fr1.cloud-temple.com"
   }
   
   # Configuration to bypass AWS validation
@@ -1279,6 +1279,6 @@ Diese Dokumentation behandelt die wichtigsten Anwendungsfälle des Terraform Clo
 - Erkunden Sie die [Beispiele auf GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
 - Verwenden Sie die [Cloud Temple-Konsole](https://shiva.cloud-temple.com), um verfügbare Ressourcen zu entdecken
 
-:::info Brauchen Sie Hilfe?
-    Bei Fragen oder Problemen schauen Sie in den [Bereich Issues auf GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues) oder kontaktieren Sie den Cloud Temple-Support.
+:::info[Brauchen Sie Hilfe?]
+Bei Fragen oder Problemen schauen Sie in den [Bereich Issues auf GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues) oder kontaktieren Sie den Cloud Temple-Support.
 :::

@@ -16,6 +16,8 @@ WORKDIR /opt/docusaurus
 
 # Production build
 FROM base AS prod
+## Suppress non-critical SSG warnings (broken links, etc.)
+ENV DOCUSAURUS_IGNORE_SSG_WARNINGS=true
 ## COPY dependencies
 COPY package*.json yarn.lock ./
 ## Install dependencies with `--immutable` to ensure reproducibility.
@@ -27,7 +29,7 @@ RUN yarn build
 
 
 # Serve static site with a simple nginx
-FROM nginx:1.27.4-alpine AS deploy
+FROM nginx:stable-alpine AS deploy
 
 ARG APP_FOLDER=/var/www
 

@@ -65,7 +65,7 @@ Ce guide détaille les étapes essentielles pour déployer efficacement un pare-
 
 Le déploiement des appliances virtuelles nécessite un accès au tenant du client dans la console Cloud Temple avec les permissions spécifiques suivantes :
 
-Si vous utilisez l'offre **OpenIaaS** :
+Si vous utilisez le produit **OpenIaaS** :
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -77,7 +77,7 @@ Si vous utilisez l'offre **OpenIaaS** :
 | compute_iaas_opensource_virtual_machine_power | Offre OpenIaaS -Gestion de l'alimentation d'une machine virtuelle                                                              |
 | activity_read                                 | Consultation des journaux logs et activités                                                                                    |
 
-Si vous utilisez l'offre **Vmware** :
+Si vous utilisez le produit **Vmware** :
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |

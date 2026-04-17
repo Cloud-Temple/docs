@@ -22,7 +22,7 @@ Ce guide va vous aider à déployer votre __firewall opensource pfSense__ dans l
 
 Les prérequis à ce guide sont les suivants :
 
-1. Avoir souscrit à l'offre Cloud Temple : vous devez disposer de votre organisation, de votre tenant et de vos accès,
+1. Avoir souscrit à le produit Cloud Temple : vous devez disposer de votre organisation, de votre tenant et de vos accès,
 2. Avoir les droits sur le module compute.
 
 Ce document décrit les étapes à suivre pour déployer un firewall virtuel pfSense.

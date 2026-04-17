@@ -2,7 +2,7 @@
 
 Dieses Dokument erklärt die grundlegenden Konzepte hinter der Technik der **Retrieval-Augmented Generation (RAG)**.
 
-:::tip Beispielcode verfügbar
+:::tip[Beispielcode verfügbar]
 Die hier besprochenen Konzepte werden in einem vollständigen und funktionsfähigen Demonstrator dargestellt, der auf unserem GitHub verfügbar ist. Es handelt sich um eine hervorragende Ausgangsbasis, um das praktische Funktionieren eines RAG-Pipelines zu verstehen.
 
 ➡️ **[Zum Code des Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -27,7 +27,7 @@ Dieser **Retrieval**-Schritt steht im Mittelpunkt unseres Themas. Wie gelingt es
 
 Ein Computer versteht keine Wörter, aber er ist sehr gut darin, mit Zahlen zu arbeiten. Das **Embedding** ist der Prozess, der einen Text (ein Wort, einen Satz, ein Dokument) in eine Liste von Zahlen umwandelt, die als **Vektor** bezeichnet wird.
 
-:::tip Was ist ein Vektor?
+:::tip[Was ist ein Vektor?]
 Im einfachsten Sinne ist ein Vektor eine Liste von Zahlen, die einen Punkt in einem mehrdimensionalen Raum darstellt. Jede Zahl im Vektor entspricht einer Koordinate auf einem „Achse“ dieses Raums. Bei Text-Embeddings sind diese Achsen nicht `x`, `y`, `z`, sondern abstrakte semantische Dimensionen (z. B. könnte eine Achse den Begriff „Königtum“ darstellen, eine andere den Begriff „Katze“ usw.).
 :::
 
@@ -37,7 +37,7 @@ Im einfachsten Sinne ist ein Vektor eine Liste von Zahlen, die einen Punkt in ei
 
 Dieser Vektor ist nicht zufällig. Er stellt die „Position“ des Textes in einem mehrdimensionalen semantischen Raum dar. Texte mit ähnlicher Bedeutung haben Vektoren, die in ähnliche Richtungen zeigen.
 
-:::tip Geografische Analogie
+:::tip[Geografische Analogie]
 Stellen Sie sich eine Karte vor. „Paris“ und „Frankreich“ wären sehr nahe beieinander, genauso wie „Rom“ und „Italien“. „Paris“ wäre weiter von „Rom“ entfernt als von „Frankreich“, aber näher als von „Tokio“. Das Embedding macht dasselbe, aber mit tausenden von „Dimensionen“ statt zwei, um komplexe Bedeutungsnuancen zu erfassen.
 :::
 

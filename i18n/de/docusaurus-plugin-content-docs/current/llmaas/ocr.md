@@ -30,7 +30,7 @@ Das Modell passt seinen Token-Verbrauch an die Bildauflösung an. Je größer da
 | **Large** | 1280 x 1280 | 400 | Dichte Dokumente, kleine Zeichen |
 | **Gundam** | Dynamisch | ~800 | Zeitungen, Baupläne, komplexe Scans |
 
-:::tip Optimierung  
+:::tip[Optimierung  ]
 Um Kosten und Latenz zu optimieren, ändern Sie die Größe Ihrer Bilder auf die minimale Auflösung, die erforderlich ist, damit der Text lesbar bleibt.  
 :::
 
