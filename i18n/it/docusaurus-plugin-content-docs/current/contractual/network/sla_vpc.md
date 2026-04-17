@@ -34,7 +34,7 @@ Cloud Temple si impegna ai seguenti livelli di disponibilità mensile:
 | Componente | Tasso di Disponibilità Mensile garantito |
 | :--- | :---: |
 | **Piano Dati VPC** (routing inter-rete, NAT, DNAT) | **99,99 %** |
-| **Piano di Controllo VPC** (API, Console Cloud Temple) | **99,95 %** |
+| **Piano di Controllo VPC** (API, Console Cloud Temple) | **99,9 %** |
 
 Un Tasso di Disponibilità Mensile del **99,99 %** per il piano dati corrisponde a un massimo di **4,4 minuti** di indisponibilità autorizzata per mese solare.
 
@@ -90,7 +90,7 @@ Se il Tasso di Disponibilità Mensile del 99,99 % non viene raggiunto per il pia
 
 ### 5.2 Piano di Controllo VPC
 
-Se il Tasso di Disponibilità Mensile del 99,95 % non viene raggiunto per il piano di controllo, il Cliente ha diritto a un Credito di Servizio del **10 %** dell'importo mensile fatturato per il servizio VPC.
+Se il Tasso di Disponibilità Mensile del 99,9 % non viene raggiunto per il piano di controllo, il Cliente ha diritto a un Credito di Servizio del **10 %** dell'importo mensile fatturato per il servizio VPC.
 
 ### 5.3 Modalità di reclamo
 
