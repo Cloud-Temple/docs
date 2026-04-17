@@ -10,9 +10,11 @@ sidebar_position: 2
 - **Private Backbone**: Complete translation of the Private Backbone service documentation into English, German, Spanish, and Italian.
 - **Terminology**: Harmonisation of vocabulary in the French documentation — systematic replacement of "offre" and "service" with "produit" to align with Cloud Temple's commercial terminology.
 
-### April 16, 2026: Navigation Refactoring, VM Instances and IaaS OpenSource Updates
+### April 16, 2026: Navigation Refactoring, Contractual Documents and Documentation Updates
 
-- **Navigation**: Complete refactoring of the navigation menu structure (PR #277) — grouping products by category (Compute, Network, Storage, AI, Managed Products…), adding a "preview" badge for early-access products, and clarifying the hierarchy between sections.
+- **Navigation — Compute**: VM Instances (preview), IaaS OpenSource and IaaS VMware grouped under a single **Compute** category in the navigation (PR #277).
+- **Navigation — Network**: VPC (preview) and Private Backbone grouped under a single **Network** category in the navigation.
+- **Contractual Documents**: Complete restructuring of contractual documentation — creation of a `/contracts` hub page (general terms, specific terms, SecNumCloud service agreements, VM instances SLA) and a `/shared-responsibility` hub page (RACI matrices per service: IaaS, S3, PaaS, Kubernetes, LLMaaS, Network). The contractual left-side menu is replaced by a dedicated **Contractual** column in the footer. Translations available in EN/DE/ES/IT.
 - **VM Instances**: Updated the service level agreement (SLA) from 99.9% to 99.95%.
 - **IaaS OpenSource**: Added a note on the maximum backup retention period (24 months maximum, migration to Glacier planned for Q1 2027).
 

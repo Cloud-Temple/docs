@@ -189,14 +189,14 @@ const config: Config = {
           ],
         },
         {
-          title: 'Contractuel',
+          title: 'Contractual',
           items: [
             {
-              label: 'Documents contractuels',
+              label: 'Contractual Documents',
               to: '/contracts',
             },
             {
-              label: 'Modèle de responsabilité partagée',
+              label: 'Shared Responsibility Model',
               to: '/shared-responsibility',
             },
           ],
@@ -204,8 +204,8 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contrats</a> |
-        <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Politique de confidentialité</a>
+        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contracts</a> |
+        <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
         <br />
         Copyright © 2026 Cloud Temple.
       </div>
