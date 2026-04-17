@@ -14,11 +14,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
-      id: 'contractual/contracts',
-      label: 'Contractuel',
-    },
-    {
-      type: 'doc',
       id: 'faq',
       label: 'FAQs',
     },

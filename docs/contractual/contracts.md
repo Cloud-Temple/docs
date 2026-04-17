@@ -13,7 +13,7 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
 ## Conditions générales
 
 <div class="book-grid">
-  <a class="book-card book-card--green" href="contractual/cgvu">
+  <a class="book-card" href="contractual/cgvu">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -22,7 +22,7 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
       <div class="book-card-cta">Consulter le document →</div>
     </div>
   </a>
-  <a class="book-card book-card--green" href="contractual/dpa">
+  <a class="book-card" href="contractual/dpa">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -31,7 +31,7 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
       <div class="book-card-cta">Consulter le document →</div>
     </div>
   </a>
-  <a class="book-card book-card--green" href="contractual/order">
+  <a class="book-card" href="contractual/order">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -47,7 +47,7 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
 ## Conditions particulières
 
 <div class="book-grid">
-  <a class="book-card book-card--blue" href="contractual/baremetal">
+  <a class="book-card" href="contractual/baremetal">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -65,7 +65,7 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
 Les conventions de service définissent le cadre contractuel de fourniture des services qualifiés SecNumCloud : périmètre, engagements opérationnels, responsabilités et conditions de service.
 
 <div class="book-grid">
-  <a class="book-card book-card--violet" href="contractual/iaas/sla">
+  <a class="book-card" href="contractual/iaas/sla">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -74,7 +74,7 @@ Les conventions de service définissent le cadre contractuel de fourniture des s
       <div class="book-card-cta">Consulter le document →</div>
     </div>
   </a>
-  <a class="book-card book-card--violet" href="contractual/iaas/sla-openiaas">
+  <a class="book-card" href="contractual/iaas/sla-openiaas">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -83,7 +83,7 @@ Les conventions de service définissent le cadre contractuel de fourniture des s
       <div class="book-card-cta">Consulter le document →</div>
     </div>
   </a>
-  <a class="book-card book-card--violet" href="contractual/paas/sla">
+  <a class="book-card" href="contractual/paas/sla">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -101,7 +101,7 @@ Les conventions de service définissent le cadre contractuel de fourniture des s
 Les SLA définissent les engagements de disponibilité, les méthodes de mesure, les exclusions et les crédits de service applicables en cas de non-respect.
 
 <div class="book-grid">
-  <a class="book-card book-card--orange" href="contractual/vm-instances/sla">
+  <a class="book-card" href="contractual/vm-instances/sla">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>

@@ -338,7 +338,7 @@ Un LLM conosce solo i dati su cui è stato addestrato. **RAG** gli dà una "memo
 1. **Retrieval (Recupero)**: Trovare i documenti giusti.
 2. **Augmented Generation**: Usare questi documenti per generare una risposta.
 
-![Schema concettuale del RAG](./images/rag_concept_overview.png)
+![Schema concettuale del RAG](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ### Passo 1: Embedding: Trasformare le Parole in Numeri
 
@@ -350,7 +350,7 @@ Un vettore è un elenco di numeri che rappresenta un punto in uno spazio multidi
 
 `"Il gatto è sul tappeto."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Esempio di vettore di embedding](./images/embedding_vector_example.png)
+![Esempio di vettore di embedding](@site/docs/llmaas/images/embedding_vector_example.png)
 
 :::tip[Analogia Geografica]
 "Parigi" e "Francia" sarebbero vicine, così come "Roma" e "Italia". L'embedding fa lo stesso con migliaia di dimensioni.
@@ -364,10 +364,10 @@ I modelli **Granite Embedding** di IBM si distinguono per:
 2. **Indennizzazione della Proprietà Intellettuale**: Stesso livello di indennizzazione illimitata degli altri modelli IBM.
 3. **Prestazioni ed Efficienza**: Paragonabile ai principali modelli open source.
 
-![Benchmark delle Prestazioni dei Modelli Granite](./images/granite_benchmark_performance.png)
+![Benchmark delle Prestazioni dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Confronto delle prestazioni su attività di ricerca (BEIR) e ricerca di codice (CoIR).*
 
-![Benchmark della Velocità dei Modelli Granite](./images/granite_benchmark_speed.png)
+![Benchmark della Velocità dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Confronto della latenza tra diversi modelli di embedding.*
 
 ### Passo 2: Ricerca: Misurare la Prossimità Semantica
@@ -377,14 +377,14 @@ I modelli **Granite Embedding** di IBM si distinguono per:
 - Misura l'**angolo** tra due vettori. Angolo piccolo = significato simile.
 - Score: 1 = similarità perfetta, 0 = nessuna similarità.
 
-![Illustrazione della Similarità Coseno](./images/cosine_similarity_concept.png)
+![Illustrazione della Similarità Coseno](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 #### Distanza Euclidea (Il Righello)
 
 - La distanza "in linea d'aria" tra i punti terminali di due vettori.
 - Score 0 = identici. Più alto = più distanti.
 
-![Illustrazione della Distanza Euclidea](./images/euclidean_distance_concept.png)
+![Illustrazione della Distanza Euclidea](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ### Conclusione RAG
 
