@@ -1,4 +1,4 @@
-# FAQ sur l'offre de service LLMaaS Cloud Temple
+# FAQ sur le produit LLMaaS Cloud Temple
 
 ## Offre et Capacités
 
@@ -31,7 +31,7 @@ Notre API, 100% compatible avec le standard OpenAI, vous permet de construire fa
 
 ### **Comment garantissez-vous la souveraineté et la confidentialité de nos données ?**
 
-La souveraineté est au cœur de notre offre. Elle repose sur plusieurs piliers :
+La souveraineté est au cœur de notre produit. Elle repose sur plusieurs piliers :
 
 1. **Hébergement en France** : Notre infrastructure est exclusivement en France, opérée par Cloud Temple, une société de droit français. Cela nous soustrait aux lois extraterritoriales comme le **CLOUD Act américain**.
 2. **Qualification SecNumCloud 3.2** : Le plus haut visa de sécurité de l'ANSSI garantit ce positionnement.
@@ -78,7 +78,7 @@ Notre modèle est basé sur la consommation réelle (**tokens** pour le langage,
 
 ### **Quel niveau de support et de SLA proposez-vous ?**
 
-Notre offre standard inclut un support technique en Français et Anglais, accessible via notre portail client, avec un engagement de première réponse en jour ouvré. La plateforme bénéficie d'un engagement de disponibilité de **99%**. Pour les besoins les plus critiques, nos **Services Professionnels** optionnels vous donnent accès à des SLAs renforcés, incluant un support prioritaire avec un temps de réponse jusqu'à 4h pour les incidents critiques, et un accompagnement stratégique sur mesure (ateliers d'innovation, gouvernance ITIL).
+Notre produit standard inclut un support technique en Français et Anglais, accessible via notre portail client, avec un engagement de première réponse en jour ouvré. La plateforme bénéficie d'un engagement de disponibilité de **99%**. Pour les besoins les plus critiques, nos **Services Professionnels** optionnels vous donnent accès à des SLAs renforcés, incluant un support prioritaire avec un temps de réponse jusqu'à 4h pour les incidents critiques, et un accompagnement stratégique sur mesure (ateliers d'innovation, gouvernance ITIL).
 
 ### **Comment puis-je suivre l'état de santé de la plateforme LLMaaS ?**
 

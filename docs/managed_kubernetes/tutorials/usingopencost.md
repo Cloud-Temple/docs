@@ -19,7 +19,7 @@ Ce tutoriel vous présente **OpenCost**, l'outil de monitoring et d'optimisation
 
 OpenCost est une solution open-source, standard de la CNCF (Cloud Native Computing Foundation), qui fournit une visibilité en temps réel sur les coûts de vos environnements Kubernetes. Il vous aide à comprendre précisément ce qui consomme des ressources dans votre cluster et comment cela se traduit en termes de coûts.
 
-Dans l'offre Managed Kubernetes, OpenCost est pré-installé et configuré pour vous donner une vision claire de vos dépenses. Il est directement paramétré avec les coûts réels de l'infrastructure Cloud Temple.
+Dans le produit Managed Kubernetes, OpenCost est pré-installé et configuré pour vous donner une vision claire de vos dépenses. Il est directement paramétré avec les coûts réels de l'infrastructure Cloud Temple.
 
 ## Accéder à l'interface OpenCost
 
@@ -102,7 +102,7 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 ### 2. Interroger OpenCost avec le MCP
 
 :::tip[Prérequis]
-Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre offre **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
+Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre produit **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
 :::
 
 Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requetes en langage natuel sur ce serveur MCP.

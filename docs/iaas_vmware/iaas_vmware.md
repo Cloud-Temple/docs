@@ -25,7 +25,7 @@ L'**offre IaaS VMware** est conçue pour répondre aux besoins critiques des ent
 ## Plateformes d'achat
 
 <div class="purchase-platforms">
-  <p>Vous êtes un acteur du secteur public ? L’offre <strong>IaaS Cloud Temple</strong> est accessible via :</p>
+  <p>Vous êtes un acteur du secteur public ? Le produit <strong>IaaS Cloud Temple</strong> est accessible via :</p>
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />

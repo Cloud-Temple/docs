@@ -26,7 +26,7 @@ import archiOverview from './images/archi_overview.png'
 
 Managed **Core** Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs reposant sur une sélection de produits Open Source, conçue pour offrir un socle de base sécurisé, résilient et automatisé sur les plateformes SecNumCloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
-Cette offre est conçue pour les équipes ayant une excellente maîtrise de Kubernetes et des outils Cloud Native, qui souhaitent construire leur propre plateforme sur des fondations minimalistes et robustes. Elle s'adresse aux adeptes de l'open source qui recherchent une solution épurée, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
+ce produit est conçue pour les équipes ayant une excellente maîtrise de Kubernetes et des outils Cloud Native, qui souhaitent construire leur propre plateforme sur des fondations minimalistes et robustes. Elle s'adresse aux adeptes de l'open source qui recherchent une solution épurée, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
 ### Bénéfices Clés
 

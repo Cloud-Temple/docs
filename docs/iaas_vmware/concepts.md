@@ -18,7 +18,7 @@ Cette architecture repose sur le modèle __VersaStack__, une alliance entre Cisc
 
 ## Une infrastructure dédiée et automatisée
 
-Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, l'offre IaaS de Cloud Temple propose une infrastructure unique :
+Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, le produit IaaS de Cloud Temple propose une infrastructure unique :
 
 - __Ressources dédiées__ : Les lames de calcul, volumes de stockage, et stacks logicielles (virtualisation, sauvegarde, firewalling, etc.) ne sont jamais mutualisées entre les clients.
 - __Prédictibilité maximale__ : Vous maîtrisez les taux de virtualisation, la pression en IOPS sur le stockage et bénéficiez d’une facturation claire, à la consommation mensuelle.
@@ -95,7 +95,7 @@ Le service réseau sur la plateforme IaaS de Cloud Temple repose sur une infrast
 
 ### VLANs de niveau 2
 
-Les VLANs mis à disposition dans l'offre IaaS sont de type __niveau 2__, offrant une isolation réseau complète et une configuration adaptable selon les besoins.
+Les VLANs mis à disposition dans le produit IaaS sont de type __niveau 2__, offrant une isolation réseau complète et une configuration adaptable selon les besoins.
 
 #### Principaux concepts
 
@@ -237,7 +237,7 @@ Lorsque vos charges de travail nécessitent des temps de reprise d'activité cou
 ou adapté d'utiliser des mécanismes de type réplications applicatives / réplication de machines virtuelles,
 il est possible de répliquer une LUN de stockage SAN entre deux zones de disponibilité d'une même région.
 
-Cette offre permet d'obtenir un __RPO de 15Mn__ et un __RTO inférieur à 4H__. Elle permet de repartir beaucoup plus rapidement que
+Ce produit permet d'obtenir un __RPO de 15Mn__ et un __RTO inférieur à 4H__. Elle permet de repartir beaucoup plus rapidement que
 la mise en œuvre d'une restauration de sauvegarde.
 
 Dans un volume de stockage en réplication asynchrone (__Global Mirror__), les contrôleurs de virtualisation SAN des
@@ -540,6 +540,6 @@ Cette solution de protection avancée est particulièrement adaptée pour :
 
 *__Nota__ :*
 
-- *Le service nécessite une souscription spécifique et n'est pas inclus dans l'offre IaaS standard*
+- *Le service nécessite une souscription spécifique et n'est pas inclus dans le produit IaaS standard*
 - *La gestion des clés reste entièrement sous contrôle de Cloud Temple dans l'environnement SecNumCloud*
 - *Les clés de chiffrement ne quittent jamais l'infrastructure française et souveraine*

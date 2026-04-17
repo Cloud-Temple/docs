@@ -8,9 +8,9 @@ import oshiftMenu_002 from './images/oshift_menu_002.png'
 import oshiftMenu_003 from './images/oshift_menu_003.png'
 import oshiftOrder_001 from './images/oshift_order_001.png'
 
-# QuickStart pour l'offre OpenShift
+# QuickStart pour le produit OpenShift
 
-Cette page vous guide à travers les étapes initiales pour utiliser l'offre **OpenShift** depuis la console Cloud Temple. Suivez ces instructions pour découvrir les menus et fonctionnalités disponibles.
+Cette page vous guide à travers les étapes initiales pour utiliser le produit **OpenShift** depuis la console Cloud Temple. Suivez ces instructions pour découvrir les menus et fonctionnalités disponibles.
 
 ---
 
@@ -18,14 +18,14 @@ Cette page vous guide à travers les étapes initiales pour utiliser l'offre **O
 
 Avant de commencer, assurez-vous des points suivants :
 
-1. **Souscription activée** : Votre organisation doit avoir souscrit à l'offre OpenShift.
+1. **Souscription activée** : Votre organisation doit avoir souscrit à le produit OpenShift.
 2. **Permissions utilisateur** : Votre compte utilisateur doit disposer des droits nécessaires pour accéder et gérer les ressources OpenShift.
 
 ---
 
 ## Premier accès et commande
 
-Lors de votre premier accès à l'offre OpenShift, après activation de la souscription et configuration des permissions, un écran d'accueil s'affiche :
+Lors de votre premier accès à le produit OpenShift, après activation de la souscription et configuration des permissions, un écran d'accueil s'affiche :
 
 <img src={oshiftOrder_001} />
 

@@ -17,7 +17,7 @@ Cette architecture repose sur le modèle __VersaStack__, une alliance entre Cisc
 
 ## Une infrastructure dédiée et automatisée
 
-Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, l'offre IaaS de Cloud Temple propose une infrastructure unique :
+Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, le produit IaaS de Cloud Temple propose une infrastructure unique :
 
 - __Ressources dédiées__ : Les lames de calcul, volumes de stockage, et stacks logicielles (virtualisation, sauvegarde, firewalling, etc.) ne sont jamais mutualisées entre les clients.
 - __Prédictibilité maximale__ : Vous maîtrisez les taux de virtualisation, la pression en IOPS sur le stockage et bénéficiez d'une facturation claire, à la consommation mensuelle.
@@ -73,7 +73,7 @@ Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de per
 - __(1)__ La quantité de mémoire est celle physiquement disponible sur les lames et ne peut être modifiée.
 - __(2)__ Les fréquences indiquées correspondent à la fréquence de base minimum et à la fréquence turbo.
 - __(3)__ La connectivité physique est mutualisée pour l'accès réseau et l'accès stockage bloc, grâce à une architecture convergée Cisco UCS.
-- __(4)__ Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, l'offre inclut des GPU NVIDIA LOVELACE L40S.
+- __(4)__ Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, le produit inclut des GPU NVIDIA LOVELACE L40S.
 - __(5)__ La haute disponibilité sur un cluster est disponible uniquement à partir de 2 nœuds.
 
 La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellement, plages de maintenance incluses. Toute demande liée au SLA doit être déclarée via un ticket incident.
@@ -234,7 +234,7 @@ Lorsque le nombre de disques virtuels est indiqué comme étant 0, cela signifie
 
 ## Réplication de machines virtuelles
 
-La __réplication de machines virtuelles__ de Cloud Temple garantit la protection et la continuité de vos données critiques grâce à une copie automatisée de vos environnements vers une zone de disponibilité distincte. Cette fonctionnalité, intégrée nativement à l'offre IaaS Open Source, répond aux exigences les plus strictes de continuité d'activité et de reprise après sinistre.
+La __réplication de machines virtuelles__ de Cloud Temple garantit la protection et la continuité de vos données critiques grâce à une copie automatisée de vos environnements vers une zone de disponibilité distincte. Cette fonctionnalité, intégrée nativement à le produit IaaS Open Source, répond aux exigences les plus strictes de continuité d'activité et de reprise après sinistre.
 
 ### Une protection automatisée et sécurisée
 

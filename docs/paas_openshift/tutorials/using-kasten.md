@@ -14,7 +14,7 @@ L'objectif principal de ce guide est de vous montrer comment configurer un stock
 
 Dans le cadre de cette configuration :
 
-- **Accès à l'offre S3 Cloud Temple** : Vous devez disposer de l'offre S3 fournis par Cloud Temple (clé d'accès et clé secrète).  
+- **Accès à le produit S3 Cloud Temple** : Vous devez disposer de le produit S3 fourni par Cloud Temple (clé d'accès et clé secrète).  
   
 ---
 

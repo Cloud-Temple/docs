@@ -7,7 +7,7 @@ slug: /network/private_backbone
 
 > **Prenez le contrôle total de votre réseau avec une connectivité de niveau 2 étendue, conçue pour les architectures hybrides et les configurations sur mesure.**
 
-Le **Backbone Privé** de Cloud Temple est notre offre de connectivité historique, conçue pour les experts. Basée sur une infrastructure réseau de niveau 2 (VPLS), elle permet de créer des réseaux privés étendus entre les zones de disponibilité d'une région. C'est la solution idéale pour les entreprises qui souhaitent construire des architectures cloud hybrides complexes et garder un contrôle total sur leur topologie réseau.
+Le **Backbone Privé** de Cloud Temple est notre produit de connectivité historique, conçue pour les experts. Basée sur une infrastructure réseau de niveau 2 (VPLS), elle permet de créer des réseaux privés étendus entre les zones de disponibilité d'une région. C'est la solution idéale pour les entreprises qui souhaitent construire des architectures cloud hybrides complexes et garder un contrôle total sur leur topologie réseau.
 
 <div class="card-grid">
   <div class="card">
@@ -29,7 +29,7 @@ Le **Backbone Privé** de Cloud Temple est notre offre de connectivité historiq
 
 ---
 
-## Présentation du service
+## Présentation du produit
 
 Le **Private Backbone** fournit un ensemble complet de services de bas niveau pour interconnecter et exposer vos infrastructures dans un cloud souverain. Il se compose de deux piliers :
 
@@ -37,7 +37,7 @@ Le **Private Backbone** fournit un ensemble complet de services de bas niveau po
 - **Accès Internet** : Connectivité Internet haute performance avec allocation d'adresses IP publiques (IPv4/IPv6) et protection Anti-DDoS native.
 
 :::tip[Pour une expérience réseau cloud-native]
-Pour une gestion réseau plus automatisée, notre offre **[VPC (Virtual Private Cloud)](/network/vpc)** est la solution recommandée.
+Pour une gestion réseau plus automatisée, notre produit **[VPC (Virtual Private Cloud)](/network/vpc)** est la solution recommandée.
 :::
 
 ---

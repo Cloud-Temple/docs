@@ -2,13 +2,13 @@
 title: Vue d'ensemble
 ---
 
-L’offre __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure.
+Le produit __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure.
 
 Conçue autour des technologies de pointe Cisco UCS pour le calcul et IBM Spectrum Virtualize/FlashSystem pour le stockage, cette solution garantit des performances optimales et une fiabilité exemplaire.
 
 Avec __Bare Metal__, vous bénéficiez d’un matériel exclusif, sans mutualisation, vous permettant d’installer et de gérer l’environnement logiciel de votre choix : hyperviseur, Linux, Windows ou autres.
 
-L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant une gestion simplifiée et une prise en main immédiate. Que vous cherchiez une infrastructure pour vos applications critiques ou des ressources matérielles pour vos projets spécifiques, l’offre Bare Metal vous assure flexibilité, contrôle total, et performances inégalées.
+L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant une gestion simplifiée et une prise en main immédiate. Que vous cherchiez une infrastructure pour vos applications critiques ou des ressources matérielles pour vos projets spécifiques, le produit Bare Metal vous assure flexibilité, contrôle total, et performances inégalées.
 
 <div class="card-grid">
   <div class="card">
@@ -31,7 +31,7 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
 ## Plateformes d'achat
 
 <div class="purchase-platforms">
-  <p>Vous êtes un acteur du secteur public ? L’offre <strong>Bare Metal</strong> est accessible via :</p>
+  <p>Vous êtes un acteur du secteur public ? Le produit <strong>Bare Metal</strong> est accessible via :</p>
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />

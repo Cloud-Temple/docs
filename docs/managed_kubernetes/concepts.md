@@ -11,7 +11,7 @@ import archi_overview_1az from './images/archi_overview_1az.png'
 
 Cloud Temple propose deux offres distinctes pour répondre à vos besoins en matière d'orchestration de conteneurs :
 
-- **Managed Core Kubernetes** : Une offre minimaliste qui vous fournit un socle Kubernetes robuste et sécurisé, basé sur des composants open-source de pointe. Elle est idéale pour les équipes expertes qui souhaitent construire leur propre plateforme sur-mesure.
+- **Managed Core Kubernetes** : Un produit minimaliste qui vous fournit un socle Kubernetes robuste et sécurisé, basé sur des composants open-source de pointe. Elle est idéale pour les équipes expertes qui souhaitent construire leur propre plateforme sur-mesure.
 - **Managed Kubernetes** : Une solution complète et prête à l'emploi qui inclut une stack complète d'outils pour le réseau, la sécurité, le stockage, le déploiement continu, l'observabilité, la sauvegarde et la gestion des coûts.
 
 ### Tableau comparatif des offres
@@ -33,7 +33,7 @@ Cloud Temple propose deux offres distinctes pour répondre à vos besoins en mat
 | **Gestion des certificats**| ❌ | Cert-Manager |
 | **Authentification SSO**| ❌ | Intégration OIDC |
 
-## Présentation de l'offre Managed Kubernetes (complète)
+## Présentation de le produit Managed Kubernetes (complète)
 
 L'offre **Managed Kubernetes** (aussi appelée "Kub Managé", ou "KM") est une solution de containeurisation Kubernetes managée par Cloud-Temple déployée sous forme de Machines Virtuelles fonctionnant sur les infrastructures IaaS Cloud-Temple OpenIaaS.
 
@@ -242,14 +242,14 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 
 | **Activité**                                                  | **Client** | **Cloud Temple** |
 |---|---|---|
-| Maintenir la documentation du service Kubernetes              | I          | RA                     |
+| Maintenir la documentation du produit Kubernetes              | I          | RA                     |
 | Maintenir la documentation des applications                   | RA         | I                      |
 | Assurer la conformité du service Kubernetes                   | I          | RA                     |
 | Assurer la conformité des applications                        | RA         | I                      |
 | Réaliser des audits du service Kubernetes                     | I          | RA                     |
 | Réaliser des audits des applications                          | RA         | I                      |
 
-### Gestion des opérateurs/CRD Kubernetes (inclus dans l'offre)
+### Gestion des opérateurs/CRD Kubernetes (inclus dans le produit)
 
 | **Activité**                                                              | **Client** | **Cloud Temple** |
 |---|---|---|
