@@ -7,7 +7,7 @@ displayed_sidebar: docSidebar
 
 # Shared Responsibility Model
 
-Cloud Temple operates under a **shared responsibility** model between the provider and the customer. These RACI matrices (*Responsible, Accountable, Consulted, Informed*) precisely define who does what for each service.
+Cloud Temple operates according to a model of **shared responsibility** between the provider and the client. These RACI matrices (*Responsible, Accountable, Consulted, Informed*) precisely define who does what for each service.
 
 ---
 
@@ -16,19 +16,19 @@ Cloud Temple operates under a **shared responsibility** model between the provid
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI IaaS (VMware & Open IaaS)</div>
-    <div class="contract-card-desc">Responsibility breakdown for VMware IaaS and OpenStack infrastructure services.</div>
+    <div class="contract-card-desc">Responsibility breakdown for VMware and OpenStack IaaS infrastructure services.</div>
     <a class="contract-read-link" href="contractual/iaas/raci">View document →</a>
   </div>
 </div>
 
 ---
 
-## VM instances
+## VM Instances
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">Responsibility Model — VM instances</div>
-    <div class="contract-card-desc">Responsibility breakdown for the shared virtual machines service VM instances.</div>
+    <div class="contract-card-title">Responsibility Model — VM Instances</div>
+    <div class="contract-card-desc">Responsibility breakdown for the shared virtual machine service VM instances.</div>
     <a class="contract-read-link" href="contractual/vm-instances/raci">View document →</a>
   </div>
 </div>
@@ -62,7 +62,7 @@ Cloud Temple operates under a **shared responsibility** model between the provid
   </div>
   <div class="contract-card">
     <div class="contract-card-title">MCO / MCS PaaS OpenShift</div>
-    <div class="contract-card-desc">Policy for maintaining the PaaS platform in operational and security conditions.</div>
+    <div class="contract-card-desc">Policy for maintaining operational and security conditions of the PaaS platform.</div>
     <a class="contract-read-link" href="contractual/paas/mco-mcs">View document →</a>
   </div>
 </div>
@@ -86,7 +86,7 @@ Cloud Temple operates under a **shared responsibility** model between the provid
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI LLMaaS</div>
-    <div class="contract-card-desc">Responsibility breakdown for the LLM as a Service offering.</div>
+    <div class="contract-card-desc">Responsibility breakdown for the LLM as a Service.</div>
     <a class="contract-read-link" href="contractual/llmaas/raci">View document →</a>
   </div>
 </div>
