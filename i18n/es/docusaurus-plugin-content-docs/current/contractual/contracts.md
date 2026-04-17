@@ -107,6 +107,14 @@ Los SLA definen los compromisos de disponibilidad, los métodos de medición, la
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
       <div class="book-card-title">SLA VM Instances</div>
       <div class="book-card-desc">Disponibilidad garantizada 99,95 % — créditos de servicio y exclusiones.</div>
+  </a>
+  <a class="book-card" href="contractual/network/sla-vpc">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">SLA VPC</div>
+      <div class="book-card-desc">Plano de datos 99,99 % — plano de control 99,95 % — créditos de servicio y exclusiones.</div>
+      <div class="book-card-cta">Consultar el documento →</div>
       <div class="book-card-cta">Consultar el documento →</div>
     </div>
   </a>
