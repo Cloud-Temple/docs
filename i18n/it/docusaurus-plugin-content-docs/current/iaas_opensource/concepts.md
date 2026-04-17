@@ -103,7 +103,7 @@ Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrast
 - __Conformità__: Questo metodo di crittografia è conforme allo standard __FIPS 140-2__, garantendo un elevato livello di sicurezza certificato.
 - __Funzionamento__: La crittografia viene applicata al momento della scrittura dei dati sul supporto di archiviazione fisico.
 
-:::warning Osservazione sulla replica
+:::warning[Osservazione sulla replica]
 È importante sottolineare che questa crittografia protegge i dati memorizzati sui dischi. Non è attiva "on-the-fly", il che significa che i dati non vengono crittografati durante le operazioni di replica dello storage tra le zone di disponibilità. La sicurezza dei trasferimenti è garantita tramite canali di comunicazione dedicati e protetti.
 :::
 
@@ -160,6 +160,14 @@ La creazione di una nuova politica di backup avviene tramite __una richiesta di 
 - Il nome del tenant
 - Il nome della politica di backup
 - Le caratteristiche desiderate (x giorni, y settimane, z mesi, ...)
+
+:::info[Conservazione a lungo termine — disponibilità futura]
+**La conservazione massima è attualmente di 24 mesi.** Una conservazione a lungo termine (fino a 10 anni) sarà integrata con il lancio del nostro prodotto **Glacier**, previsto per il **primo trimestre 2027**, come sottoscrizione complementare.
+
+Per durate di conservazione così lunghe, raccomandiamo di salvare **esclusivamente file piatti** (file grezzi, documenti statici) e **dump di database**. Il ripristino di un server completo dopo 10 anni comporta rischi significativi: molti servizi o dipendenze possono essere diventati obsoleti o incompatibili con l'ambiente attuale.
+
+**Alternativa disponibile ora**: il servizio di **backup tramite agente**, disponibile come sottoscrizione complementare. Contattate il supporto per ulteriori informazioni.
+:::
 
 ## Macchine virtuali
 

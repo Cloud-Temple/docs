@@ -19,7 +19,7 @@ Cloud Temple propose deux modes de consommation réseau :
   * Nécessite l'installation et la gestion manuelle d'équipements de sécurité (firewalls, routeurs).
   * Gestion manuelle du plan d'adressage.
 
-* **VPC (Nouvelle offre)** :
+* **VPC (Nouveau produit)** :
   * Conçu pour une expérience cloud-native et automatisée.
   * Sécurité intégrée (Gateway, Firewalling, NAT) sans gestion d'équipements tiers.
   * Service managé avec haute disponibilité garantie par Cloud Temple.

@@ -6,7 +6,7 @@ title: Vue d'ensemble des offres de produits managés
 
 Les produits managés chez Cloud Temple sont des services cloud entièrement gérés par le fournisseur, permettant aux clients de se concentrer sur leurs applications sans gérer l'infrastructure sous-jacente.
 
-Ces produits incluent des solutions comme le Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall ou encore Managed SOC, où Cloud Temple assure la configuration, la surveillance, la maintenance et la scalabilité.
+Ces produits incluent des solutions comme le Kubernetes managé, MariaDB managé, PostgreSQL managé, Firewall managé ou encore SOC managé, où Cloud Temple assure la configuration, la surveillance, la maintenance et la scalabilité.
 
 Ils s'appuient sur une infrastructure souveraine qualifiée SecNumCloud, avec haute disponibilité (multi-AZ), automatisation et support SLA.
 
@@ -20,24 +20,24 @@ Ils s'appuient sur une infrastructure souveraine qualifiée SecNumCloud, avec ha
 
 ### Bases de données managées
 
-- **Managed MariaDB (on Kubernetes)** : une solution de moteur de bases de données MariaDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_mariadb)
+- **MariaDB managé (on Kubernetes)** : une solution de moteur de bases de données MariaDB qui fonctionne "on-top" de nos offres *Kubernetes managé* / *Core Kubernetes managé*. [Voir la fiche](./managed_mariadb)
 
-- **Managed PostgreSQL (on Kubernetes)** : une solution de moteur de bases de données PostgreSQL qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. [Voir la fiche](./managed_postgresql).
+- **PostgreSQL managé (on Kubernetes)** : une solution de moteur de bases de données PostgreSQL qui fonctionne "on-top" de nos offres *Kubernetes managé* / *Core Kubernetes managé*. [Voir la fiche](./managed_postgresql).
 
-- **Managed MongoDB (on Kubernetes)** : une solution de moteur de bases de données MongoDB qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **MongoDB managé (on Kubernetes)** : une solution de moteur de bases de données MongoDB qui fonctionne "on-top" de nos offres *Kubernetes managé* / *Core Kubernetes managé*. (documentation en cours de réalisation)
 
 ### Produits pour la data
 
-- **Managed Kafka (on Kubernetes)** : Une solution Apache Kafka, avec schema registry qui fonctionne "on-top" de nos offres *Managed kubernetes* / *Managed Core Kubernetes*. (documentation en cours de réalisation)
+- **Kafka managé (on Kubernetes)** : Une solution Apache Kafka, avec schema registry qui fonctionne "on-top" de nos offres *Kubernetes managé* / *Core Kubernetes managé*. (documentation en cours de réalisation)
 
-- **Managed Airflow** : *arrive prochainement !*
+- **Airflow managé** : *arrive prochainement !*
 
-- **Managed Superset** : *arrive prochainement !*
+- **Superset managé** : *arrive prochainement !*
 
 ### Produits pour la sécurité
 
-- **Managed KMS** : *arrive prochainement !*
+- **KMS managé** : *arrive prochainement !*
 
-- **Managed SIEM** : *arrive prochainement !*
+- **SIEM managé** : *arrive prochainement !*
 
 ---

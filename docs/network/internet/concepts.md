@@ -104,7 +104,7 @@ La facturation s'effectue au 95e percentile sur la période de facturation, habi
 ***Remarque :***
 *Il n'y pas de **facturation volumétrique** de type **'egress fees'. Vous ne payez que la réservation de bande passante.***
 
-## Disponibilité par offre
+## Disponibilité par produit
 
 L'ensemble de ces fonctionnalités de connectivité Internet est disponible sur toutes les offres CloudTemple, garantissant une expérience homogène quel que soit le type de service utilisé.
 

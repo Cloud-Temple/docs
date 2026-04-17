@@ -2,7 +2,7 @@
 
 Ce document explique les concepts fondamentaux derrière la technique de **Retrieval-Augmented Generation (RAG)**.
 
-:::tip Code d'Exemple Disponible
+:::tip[Code d'Exemple Disponible]
 Les concepts abordés ici sont illustrés dans un démonstrateur complet et fonctionnel disponible sur notre GitHub. Il constitue une excellente base de départ pour comprendre le fonctionnement pratique d'un pipeline RAG.
 
 ➡️ **[Accéder au code du Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -27,7 +27,7 @@ C'est cette étape de **Retrieval** qui est au cœur de notre sujet. Comment un 
 
 Un ordinateur ne comprend pas les mots, mais il est excellent pour manipuler les nombres. L'**embedding** est le processus qui traduit un texte (un mot, une phrase, un document) en une liste de nombres, appelée **vecteur**.
 
-:::tip Qu'est-ce qu'un vecteur ?
+:::tip[Qu'est-ce qu'un vecteur ?]
 En termes simples, un vecteur est une liste de nombres qui représente un point dans un espace à plusieurs dimensions. Chaque nombre dans le vecteur correspond à une coordonnée sur un "axe" de cet espace. Pour les embeddings de texte, ces axes ne sont pas `x`, `y`, `z` mais des dimensions sémantiques abstraites (par exemple, un axe pourrait représenter le concept de "royauté", un autre celui de "félin", etc.).
 :::
 
@@ -37,7 +37,7 @@ En termes simples, un vecteur est une liste de nombres qui représente un point 
 
 Ce vecteur n'est pas aléatoire. Il représente la "position" du texte dans un espace sémantique multidimensionnel. Des textes ayant un sens similaire auront des vecteurs qui pointent dans des directions similaires.
 
-:::tip Analogie Géographique
+:::tip[Analogie Géographique]
 Imaginez une carte géographique. "Paris" et "France" seraient très proches, tout comme "Rome" et "Italie". "Paris" serait plus éloigné de "Rome" que de "France", mais plus proche que de "Tokyo". L'embedding fait la même chose, mais avec des milliers de "dimensions" au lieu de deux, pour capturer des nuances de sens complexes.
 :::
 

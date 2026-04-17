@@ -16,7 +16,7 @@ The goal of this tutorial is to familiarize you with the fundamental networking 
 
 We will use as an **example** a cluster **"ctodev"**, with the assigned range **10.20.0.0/22**
 
-:::warning Range definitions
+:::warning[Range definitions]
  This private IP range X.Y.Z.0/22 (RFC 1918) is defined with the client when the cluster is set up. It cannot be modified later.
 :::
 
@@ -58,7 +58,7 @@ The range of our **example** 10.20.0.0/22 is logically divided into sub-ranges.
 
     - Services: 10.95.0.0/12 
 
-:::warning Pods and Services Ranges
+:::warning[Pods and Services Ranges]
 The Pods and Services ranges are defined with the client when the cluster is set up. They cannot be modified later.
 :::
 
@@ -217,7 +217,7 @@ This configuration ensures that traffic to the API and internal services remains
   </div>
 </div>
 
-:::warning Going further: security in production
+:::warning[Going further: security in production]
 This document explains the fundamental networking concepts. For a production deployment, it is crucial to apply additional security measures:
 
 - **Use secure images**: Prefer images from your secure corporate registry such as **Harbor** rather than public images.

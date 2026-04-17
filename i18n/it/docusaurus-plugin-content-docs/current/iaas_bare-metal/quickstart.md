@@ -57,13 +57,13 @@ Il sottomenu **Volumi** visualizza una tabella che elenca tutti i volumi di arch
 
 <img src={shivaBareMetalStoragelist} />
 
-:::info Volume BFS (Avvio da SAN)
+:::info[Volume BFS (Avvio da SAN)]
 Il **Volume 1** è il volume **BFS (Avvio da SAN)** e deve essere utilizzato per installare il sistema operativo.
 
 **Importante:** Questo volume non può essere condiviso con altri server Bare Metal della stessa zona di disponibilità (AZ).
 :::
 
-:::tip Buona pratica
+:::tip[Buona pratica]
 Preferisci installare il sistema operativo sul volume **BFS**, e memorizza i tuoi dati su un volume **LUN** aggiuntivo. Questa separazione semplifica la manutenzione, i backup e la reinstallazione del sistema, se necessario.
 :::
 

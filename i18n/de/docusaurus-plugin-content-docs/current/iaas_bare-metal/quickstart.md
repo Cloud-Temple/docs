@@ -55,13 +55,13 @@ Der Submenü **Volumes** zeigt eine Tabelle mit allen Speichervolumes, die Ihrer
 
 <img src={shivaBareMetalStoragelist} />
 
-:::info Volume BFS (Boot from SAN)
+:::info[Volume BFS (Boot from SAN)]
 Der **Volume 1** ist das **BFS-Volume (Boot from SAN)** und muss zum Installieren des Betriebssystems verwendet werden.
 
 **Wichtig:** Dieses Volume kann nicht mit anderen Bare-Metal-Instanzen in derselben Verfügbarkeitszone (AZ) geteilt werden.
 :::
 
-:::tip Best Practice
+:::tip[Best Practice]
 Bevorzugen Sie die Installation des Betriebssystems auf dem **BFS-Volume** und speichern Sie Ihre Daten auf einem zusätzlichen **LUN-Volume**. Diese Trennung erleichtert Wartung, Sicherungen und die Neinstallation des Systems bei Bedarf.
 :::
 

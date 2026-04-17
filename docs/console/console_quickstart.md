@@ -16,7 +16,7 @@ import shivaSupportCriticities from './images/shiva_incident_criticities.png'
 
 ## Prérequis
 
-- Avoir souscrit à une offre Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
+- Avoir souscrit à un produit Cloud Temple. Pour souscrire simplement, vous pouvez [nous contacter](https://www.cloud-temple.com/contactez-nous/) ou par mail à l'adresse __contact@cloud-temple.com__.
 - Avoir un accès à la Console
 - Avoir son IPv4 publique déclarée dans la zone de confiance Cloud Temple (l'accès à la Console est limité aux adresses de confiances identifiées)
 

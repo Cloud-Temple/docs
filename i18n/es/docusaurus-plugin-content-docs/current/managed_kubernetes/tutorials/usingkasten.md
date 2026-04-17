@@ -36,7 +36,7 @@ El panel de control de Kasten es accesible a través de una URL segura, construi
 
 <img src={k10dashboard} />
 
-:::tip Guía de inicio rápido integrada
+:::tip[Guía de inicio rápido integrada]
 La consola de Kasten incluye una guía de inicio rápido interactiva en su página de inicio. No dude en seguirla para una primera toma de contacto directamente desde la interfaz.
 :::
 
@@ -48,7 +48,7 @@ No necesita realizar ninguna configuración. La ubicación de almacenamiento ya 
 
 <img src={k10s3location} />
 
-:::info Modelo de costos
+:::info[Modelo de costos]
 El servicio Veeam Kasten está incluido en la oferta Managed Kubernetes. El almacenamiento de copias de seguridad en nuestro S3 soberano se factura por uso. Consulte nuestra tarifa para más detalles.
 :::
 
@@ -56,7 +56,7 @@ El servicio Veeam Kasten está incluido en la oferta Managed Kubernetes. El alma
 
 Una política de copia de seguridad (`Policy`) es un conjunto de reglas que define cuándo y cómo respaldar sus aplicaciones.
 
-:::warning Política de copia de seguridad existente
+:::warning[Política de copia de seguridad existente]
 Una política de copia de seguridad llamada `infra-backups` ya está configurada en su instancia de Kasten. Esta política garantiza la copia de seguridad de los componentes esenciales entregados con el clúster.
 
 <img src={k10infrabackups} />

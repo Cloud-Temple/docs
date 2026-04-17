@@ -16,7 +16,7 @@ El objetivo de este tutorial es familiarizarle con los conceptos de red fundamen
 
 Tomaremos como **ejemplo** un clúster **"ctodev"**, con el rango asignado **10.20.0.0/22**
 
-:::warning Definición de rangos
+:::warning[Definición de rangos]
  Este rango de IP privadas X.Y.Z.0/22 (RFC 1918) se define con el cliente durante la configuración del clúster. No puede modificarse posteriormente.
 :::
 
@@ -58,7 +58,7 @@ El rango de nuestro **ejemplo** 10.20.0.0/22 se divide lógicamente en sub-rango
 
     - Services: 10.95.0.0/12 
 
-:::warning Rangos de Pods y Services
+:::warning[Rangos de Pods y Services]
 Los rangos de Pods y Services se definen con el cliente durante la configuración del clúster. No pueden modificarse posteriormente.
 :::
 
@@ -217,7 +217,7 @@ Esta configuración garantiza que el tráfico hacia la API y los servicios inter
   </div>
 </div>
 
-:::warning Para ir más lejos: seguridad en producción
+:::warning[Para ir más lejos: seguridad en producción]
 Este documento explica los conceptos de red fundamentales. Para un despliegue en producción, es fundamental aplicar medidas de seguridad adicionales:
 
 - **Utilice imágenes seguras**: Prefiera imágenes de su registro corporativo seguro como **Harbor** en lugar de imágenes públicas.

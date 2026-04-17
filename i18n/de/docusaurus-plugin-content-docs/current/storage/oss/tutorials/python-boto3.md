@@ -30,7 +30,7 @@ region = 'fr1'
 bucket_name = 'mein-test-bucket'
 ```
 
-:::info Region
+:::info[Region]
 Die für den Cloud Temple Objektspeicher zu verwendende Region ist **`fr1`**. Stellen Sie sicher, dass Sie diesen Wert im Parameter `region_name` korrekt konfigurieren.
 :::
 
@@ -41,7 +41,7 @@ Der auf **Dell ECS** basierende Cloud Temple Objektspeicher unterstützt zwei Ve
 - **SigV4** (`signature_version='s3v4'`): empfohlen für **Metadaten-Operationen** (LIST, HEAD)
 - **SigV2** (`signature_version='s3'`): empfohlen für **Datenoperationen** (PUT, GET, DELETE)
 
-:::caution Empfohlener hybrider Ansatz
+:::caution[Empfohlener hybrider Ansatz]
 Für eine optimale Kompatibilität wird empfohlen, **zwei Boto3-Clients** mit unterschiedlichen Signaturkonfigurationen je nach Operationstyp zu verwenden. Dies vermeidet `XAmzContentSHA256Mismatch`-Fehler, die bei SigV4 während Schreibvorgängen auftreten können.
 :::
 
@@ -82,7 +82,7 @@ client_metadata = boto3.client(
 )
 ```
 
-:::tip Vereinfachte Konfiguration
+:::tip[Vereinfachte Konfiguration]
 Wenn Sie nur einen einzigen Client verwenden möchten, bevorzugen Sie **SigV2** (`signature_version='s3'`) mit Path-Style Addressing, was für die meisten Operationen funktioniert:
 
 ```python
@@ -256,7 +256,7 @@ print(f"Löschung: {result['ResponseMetadata']['HTTPStatusCode']}")
 
 Wenn ein Objekt bereits existiert, können Sie seine Berechtigungen ändern, um es mit der Methode `put_object_acl` öffentlich lesbar zu machen.
 
-:::danger Achtung
+:::danger[Achtung]
 Ein Objekt öffentlich zu machen bedeutet, dass jeder mit der URL darauf zugreifen kann. Verwenden Sie diese Option mit Vorsicht und gemäß Ihrer Sicherheitsrichtlinie.
 :::
 

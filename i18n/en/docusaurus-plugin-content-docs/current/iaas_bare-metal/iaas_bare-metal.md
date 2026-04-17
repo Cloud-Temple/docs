@@ -34,7 +34,7 @@ Direct access to your servers is provided via the Cloud Temple console, offering
   <p>Are you a public sector actor? The <strong>Bare Metal</strong> offer is available via:</p>
 
   <div class="platform-card">
-    <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="UGAP Logo" class="platform-logo" />
+    <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
         The UGAP public procurement platform
@@ -43,7 +43,7 @@ Direct access to your servers is provided via the Cloud Temple console, offering
   </div>
 
   <div class="platform-card">
-      <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="CAIH Logo" class="platform-logo" />
+      <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
         The CAIH marketplace for the healthcare sector

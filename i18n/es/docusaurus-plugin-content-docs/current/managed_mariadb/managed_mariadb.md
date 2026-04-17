@@ -63,6 +63,7 @@ El almacenamiento utilizado por esta instancia se replica en 3 zonas de disponib
 El modelo ***Distributed*** despliega un clúster de 3 instancias del motor MariaDB, con Galera en modo "single primary" y MaxScale:
 
 - un endpoint MaxScale permite el enrutamiento a las diferentes instancias según el tipo de solicitud (lectura o escritura).
+![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
 - la instancia de lectura-escritura (RW) es accesible a través de un endpoint específico.
 - Las 2 instancias de solo lectura (RO) son accesibles a través de otro endpoint específico.
 

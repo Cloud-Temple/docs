@@ -108,7 +108,7 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 El análisis de prompts es una función de seguridad **integrada y nativa** en la plataforma LLMaaS. Habilitada por defecto, su objetivo es detectar y prevenir intentos de "jailbreak" o inyección de prompts maliciosos antes de que lleguen al modelo. Esta protección se basa en un enfoque multicapa.
 
-:::tip Contactar al soporte para desactivar
+:::tip[Contactar al soporte para desactivar]
 Es posible desactivar este análisis de seguridad para casos de uso muy específicos, aunque no se recomienda. Para cualquier consulta sobre este tema o para solicitar una desactivación, póngase en contacto con el soporte de Cloud Temple.
 :::
 
@@ -318,6 +318,79 @@ El mundo de los LLM evoluciona muy rápidamente. Para garantizar a nuestros clie
 | qwen2.5:32b              | Obsoleto  | 17/10/2025            |
 | qwen2.5:3b               | Obsoleto  | 17/10/2025            |
 | deepseek-r1:671b         | Obsoleto  | 17/10/2025            |
+
+---
+
+## RAG: Consultar sus Datos con un LLM
+
+Este documento explica los conceptos fundamentales de la técnica de **Retrieval-Augmented Generation (RAG)**.
+
+:::tip[Código de Ejemplo Disponible]
+Los conceptos tratados aquí se ilustran en una demo completa disponible en nuestro GitHub.
+
+➡️ **[Acceder al código del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+:::
+
+### El problema: Los LLMs no tienen memoria a largo plazo
+
+Un LLM solo conoce los datos con los que fue entrenado. **RAG** le da una "memoria externa" proporcionándole los extractos de documentos más relevantes en el momento de la pregunta.
+
+1. **Retrieval (Recuperación)**: Encontrar los documentos correctos.
+2. **Augmented Generation**: Usar estos documentos para generar una respuesta.
+
+![Diagrama conceptual del RAG](@site/docs/llmaas/images/rag_concept_overview.png)
+
+### Paso 1: Embedding: Transformar Palabras en Números
+
+El **embedding** traduce un texto en una lista de números llamada **vector**.
+
+:::tip[¿Qué es un vector?]
+Un vector es una lista de números que representa un punto en un espacio multidimensional con dimensiones semánticas abstractas.
+:::
+
+`"El gato está sobre la alfombra."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
+
+![Ejemplo de vector de embedding](@site/docs/llmaas/images/embedding_vector_example.png)
+
+:::tip[Analogía Geográfica]
+"París" y "Francia" están muy cerca, como "Roma" e "Italia". El embedding hace lo mismo con miles de dimensiones.
+:::
+
+#### ¿Por qué Granite Embedding?
+
+Los modelos **Granite Embedding** de IBM destacan por:
+
+1. **Entrenamiento Ético y Comercialmente Seguro**: IBM verificó la elegibilidad comercial de todas las fuentes de datos.
+2. **Indemnización de Propiedad Intelectual**: Mismo nivel de indemnización ilimitada que otros modelos IBM.
+3. **Rendimiento y Eficiencia**: Comparable a los principales modelos open source.
+
+![Benchmark de Rendimiento de los Modelos Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
+*Comparación del rendimiento en tareas de búsqueda (BEIR) y búsqueda de código (CoIR).*
+
+![Benchmark de Velocidad de los Modelos Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
+*Comparación de la latencia entre diferentes modelos de embedding.*
+
+### Paso 2: Búsqueda: Medir la Proximidad Semántica
+
+#### Similitud Coseno (El Estándar)
+
+- Mide el **ángulo** entre dos vectores. Ángulo pequeño = significado similar.
+- Score: 1 = similitud perfecta, 0 = ninguna similitud.
+
+![Ilustración de la Similitud Coseno](@site/docs/llmaas/images/cosine_similarity_concept.png)
+
+#### Distancia Euclidiana (La Regla)
+
+- La distancia "en línea recta" entre los puntos terminales de dos vectores.
+- Score 0 = idénticos. Más alto = más alejados.
+
+![Ilustración de la Distancia Euclidiana](@site/docs/llmaas/images/euclidean_distance_concept.png)
+
+### Conclusión RAG
+
+El mayor desafío es la **calidad del modelo de embedding**. Un buen modelo captura fielmente el significado, haciendo el cálculo de proximidad mucho más confiable.
+
+---
 
 ## 💡 Buenas Prácticas
 

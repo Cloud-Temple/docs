@@ -325,7 +325,7 @@ Ce tutoriel adapte le pipeline RAG précédent pour utiliser Qdrant.
     * **`force_recreate=True`** : Pour ce tutoriel, nous utilisons ce paramètre pour nous assurer que la collection est vide à chaque exécution. En production, vous le mettriez à `False` pour conserver vos données.
 3. **Le reste du pipeline** (configuration du LLM, création de la chaîne `RetrievalQA`) est identique, ce qui démontre la flexibilité de LangChain : il suffit de changer la source du `retriever` (le chercheur d'informations) pour passer de FAISS à Qdrant.
 
-:::info Prérequis : Lancer Qdrant
+:::info[Prérequis : Lancer Qdrant]
 Pour ce tutoriel, vous aurez besoin d'une instance Qdrant. Vous pouvez la lancer facilement avec Docker :
 
 ```bash
@@ -670,7 +670,7 @@ def semantic_kernel_simulation():
     text_to_summarize = """
     L'intelligence artificielle (IA) transforme de nombreux secteurs industriels en automatisant les tâches, 
     en optimisant les processus et en permettant des analyses prédictives avancées. 
-    Cloud Temple, avec son offre LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
+    Cloud Temple, avec son produit LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
     d'intégrer ces capacités d'IA tout en garantissant la sécurité et la confidentialité de leurs données.
     """
     
@@ -873,7 +873,7 @@ def setup_and_run_llamaindex():
     # 6. Création du moteur de requête et interrogation de la base de connaissances
     print("6. Création du moteur de requête et interrogation...")
     query_engine = index.as_query_engine()
-    question = "Quelles sont les garanties de souveraineté de l'offre LLMaaS ?"
+    question = "Quelles sont les garanties de souveraineté de le produit LLMaaS ?"
     response = query_engine.query(question)
     
     print(f"\nQuestion: {question}")

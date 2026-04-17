@@ -2,7 +2,7 @@
 title: Vue d'ensemble
 ---
 
-# PostgreSQL Managé (preview)
+# PostgreSQL Managé <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">
@@ -25,7 +25,7 @@ title: Vue d'ensemble
 
 **PostgreSQL Managé (on Kubernetes) by Cloud Temple** est une solution managée de moteur de base de données PostgreSQL, hébergée sur Kubernetes. Elle vient en complément des offres de moteur de base de données managés sur machines virtuelles (nommées ici **PostgreSQL Managé (on IaaS)**)
 
-Cette offre est adaptée pour les clients qui disposent de charges de travail Kubernetes nécessitant des bases de données PostgreSQL, ou de clients qui souhaitent mutualiser de nombreux moteurs de bases de données PostgreSQL sur un même cluster kubernetes (mutualisation). Elle convient particulièrement bien aux bases de données de petite et moyenne dimensions ne nécessitant pas de tuning ou de fonctionnalités spécifiques. Pour les bases de grande dimension ou nécessitant un tuning particulier, il est préférable d'opter pour l'offre **PostgreSQL Managé (on IaaS)** qui permet plus d'adaptations par nos équipes d'experts DBA.
+Ce produit est adapté pour les clients qui disposent de charges de travail Kubernetes nécessitant des bases de données PostgreSQL, ou de clients qui souhaitent mutualiser de nombreux moteurs de bases de données PostgreSQL sur un même cluster kubernetes (mutualisation). Il convient particulièrement bien aux bases de données de petite et moyenne dimensions ne nécessitant pas de tuning ou de fonctionnalités spécifiques. Pour les bases de grande dimension ou nécessitant un tuning particulier, il est préférable d'opter pour le produit **PostgreSQL Managé (on IaaS)** qui permet plus d'adaptations par nos équipes d'experts DBA.
 
 ### Bénéfices Clés
 

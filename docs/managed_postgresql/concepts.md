@@ -9,7 +9,7 @@ Cette section présente les concepts fondamentaux de notre service **PostgreSQL 
 
 ## Souveraineté et Conformité SecNumCloud
 
-Au cœur de notre offre se trouve la **souveraineté numérique**. Le service PostgreSQL Managé est entièrement hébergé sur l'infrastructure Cloud Temple, qualifiée **SecNumCloud 3.2** par l'ANSSI.
+Au cœur de notre produit se trouve la **souveraineté numérique**. Le service PostgreSQL Managé est entièrement hébergé sur l'infrastructure Cloud Temple, qualifiée **SecNumCloud 3.2** par l'ANSSI.
 
 - **Hébergement 100% en France** : Vos données restent sur le territoire national, à l'abri des lois extraterritoriales.
 - **Conformité native** : La solution est conçue pour répondre aux exigences réglementaires les plus strictes (RGPD, HDS, LPM, NIS2, PCI-DSS).
@@ -17,7 +17,7 @@ Au cœur de notre offre se trouve la **souveraineté numérique**. Le service Po
 
 ## Architecture Haute Disponibilité : Patroni Cluster
 
-Pour les environnements distribués, notre service s'appuie sur **Patroni Cluster** pour offrir une haute disponibilité sans perte de données.
+Pour les environnements distribués, notre produit s'appuie sur **Patroni Cluster** pour offrir une haute disponibilité sans perte de données.
 
 - **Réplication Synchrone** : Contrairement à la réplication asynchrone traditionnelle, chaque transaction est validée sur tous les nœuds du cluster *avant* d'être confirmée. Cela garantit un **Objectif de Point de Reprise (RPO) de zéro** : aucune donnée validée ne peut être perdue en cas de défaillance.
 - **Distribution Multi-AZ** : Le cluster est réparti sur trois Zones de Disponibilité (AZ) distinctes. La panne d'un datacenter entier n'entraîne aucune interruption de service ni perte de données.

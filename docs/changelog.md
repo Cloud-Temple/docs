@@ -5,20 +5,41 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 17 Avril 2026 : VM Instances — documentation illustrée, tutoriels et traductions
+
+- **VM Instances — Enrichissement documentaire** : Refonte complète et illustration de la documentation VM Instances. Le guide de démarrage (`quickstart.md`) couvre désormais l'intégralité du parcours utilisateur illustré : accès à la section, liste des VMs, wizard de création en 9 étapes (famille d'instance, zone de disponibilité, template OS, gabarit, nom/sauvegarde, Cloud Init, disques, réseau, sommaire), et gestion des 4 onglets (Informations, Disques, Réseau, Snapshots).
+- **VM Instances — Tutoriels** : Création de 3 tutoriels dédiés dans un dossier `tutorials/` : (1) **Créer sa première VM** (wizard complet illustré + Cloud Init + disque additionnel), (2) **Gérer les disques** (ajout depuis la console + partitionnement Linux), (3) **Prendre et gérer les snapshots** (création, restauration, suppression + bonnes pratiques et comparaison snapshot/sauvegarde). La navigation latérale est mise à jour avec 3 entrées individuelles dans la catégorie Tutoriels.
+
+### 17 Avril 2026 : Documents contractuels, traductions et harmonisation terminologique
+
+- **Documents contractuels — Restructuration** : La page `contracts.md` est reorganisée avec la hiérarchie des documents contractuels en haut de page, incluant la liste de priorité des 6 documents (CGVU, Convention SecNumCloud, Convention spécifique ¹, PAS ², CPU, DPA) et un encart de précisions contractuelles.
+
+### 16 Avril 2026 : Refonte de la navigation, documents contractuels et mises à jour
+
+- **Navigation — Compute** : Regroupement de VM Instances (preview), IaaS OpenSource et IaaS VMware sous une unique catégorie **Compute** dans la navigation (PR #277).
+- **Navigation — Network** : Regroupement de VPC (preview) et Private Backbone sous une unique catégorie **Network** dans la navigation.
+- **Documents contractuels** : Restructuration complète de la documentation contractuelle — création d'une page hub `/contracts` (conditions générales, conditions particulières, conventions de service SecNumCloud, SLA VM instances) et d'une page hub `/shared-responsibility` (matrices RACI par service : IaaS, S3, PaaS, Kubernetes, LLMaaS, Réseau). Le menu latéral contractuel est remplacé par une colonne dédiée **Contractuel** dans le footer. Traductions disponibles EN/DE/ES/IT.
+- **VM Instances** : Mise à jour de l'engagement de niveau de service (SLA) de 99,9 % à 99,95 %.
+- **IaaS OpenSource** : Ajout d'une note sur la durée maximale de rétention des sauvegardes (24 mois maximum, migration vers Glacier prévue au T1 2027).
+
+### 15 Avril 2026 : Nouvelle documentation VM instances (Cloud Public)
+
+- **VM instances** : Mise en ligne de la documentation initiale du service VM instances (en preview), nouvelle offre de machines virtuelles mutualisées de Cloud Temple. La documentation couvre la vue d'ensemble du service, les concepts techniques (classes de service Development/General Purpose/Performance, gabarits prédéfinis et custom, stockage, réseau VPC, sauvegarde), ainsi qu'un guide de démarrage complet. Le service est organisé sous une nouvelle catégorie **Cloud Public** dans la navigation.
+
 ### 15 Avril 2026 : Amélioration de la documentation IaaS VMware — métriques cluster
 
-- **IaaS VMware** : Ajout d'une documentation détaillée sur les métriques affichées dans la vue d'un cluster VMware depuis la Console Cloud Temple. Couvre les trois graphiques de mémoire du cluster : **Mémoire allouée** (quantité totale allouée aux VMs), **Mémoire consommée** (mémoire physique réellement utilisée par les VMs) et **Allocation dans le pire des cas** (projection de consommation maximale simultanée), avec la description précise de ce que chaque indicateur représente pour anticiper les besoins en ressources. Disponible en français, anglais, allemand, espagnol et italien.
+- **IaaS VMware** : Ajout d'une documentation détaillée sur les métriques affichées dans la vue d'un cluster VMware depuis la Console Cloud Temple. Couvre les trois graphiques de mémoire du cluster : **Mémoire allouée** (quantité totale allouée aux VMs), **Mémoire consommée** (mémoire physique réellement utilisée par les VMs) et **Allocation dans le pire des cas** (projection de consommation maximale simultanée), avec la description précise de ce que chaque indicateur représente pour anticiper les besoins en ressources.
 
 ### 15 Avril 2026 : Documentation Managed MariaDB, Managed PostgreSQL et corrections multilingues
 
-- **Managed MariaDB** : Mise en ligne de la documentation initiale du service Managed MariaDB (en preview) : présentation du service, concepts techniques (architectures StandAlone et Distributed), guide de démarrage. Disponible en français, anglais, allemand, espagnol et italien.
-- **Managed PostgreSQL** : Mise en ligne de la documentation initiale du service Managed PostgreSQL (en preview) : présentation du service, concepts techniques, guide de démarrage. Disponible en français, anglais, allemand, espagnol et italien.
+- **Managed MariaDB** : Mise en ligne de la documentation initiale du service Managed MariaDB (en preview) : présentation du service, concepts techniques (architectures StandAlone et Distributed), guide de démarrage. 
+- **Managed PostgreSQL** : Mise en ligne de la documentation initiale du service Managed PostgreSQL (en preview) : présentation du service, concepts techniques, guide de démarrage.
 - **Corrections multilingues (images)** : Correction des références d'images dans les traductions des sections Managed Kubernetes et Managed MariaDB pour toutes les langues (EN, DE, ES, IT) — conversion des chemins relatifs `./images/` vers des chemins absolus `@site/docs/...` assurant un rendu correct dans toutes les langues.
 - **Corrections liens brisés** : Résolution de plusieurs liens brisés dans la documentation : références aux licences LLMaaS, lien vers la console dans le tutoriel rclone (OSS), lien IAM dans la documentation réseau (EN), liens relatifs dans la section Terraform (EN).
 
 ### 15 Avril 2026 : Nouveau module Gestionnaire des coûts
 
-- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix. Disponible en français, anglais, allemand, espagnol et italien.
+- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix.
 
 ### 26 Mars 2026 : Mise à jour de la liste des sous-traitants (DPA)
 
