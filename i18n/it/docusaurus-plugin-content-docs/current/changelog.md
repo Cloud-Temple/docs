@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Registro delle Modifiche
 
+### 17 aprile 2026: Traduzione di Private Backbone e armonizzazione terminologica
+
+- **Private Backbone**: Traduzione completa della documentazione del servizio Private Backbone in inglese, tedesco, spagnolo e italiano.
+- **Terminologia**: Armonizzazione del vocabolario nella documentazione francese — sostituzione sistematica di "offre" e "service" con "produit" per allinearsi alla terminologia commerciale di Cloud Temple.
+
+### 16 aprile 2026: Riorganizzazione della navigazione, VM Instances e IaaS OpenSource
+
+- **Navigazione**: Riorganizzazione completa della struttura del menu di navigazione (PR #277) — raggruppamento dei prodotti per categoria (Compute, Network, Storage, AI, Managed Products…), aggiunta del badge "preview" per i prodotti in accesso anticipato, e chiarimento della gerarchia tra le sezioni.
+- **VM Instances**: Aggiornamento del contratto sul livello di servizio (SLA) dal 99,9 % al 99,95 %.
+- **IaaS OpenSource**: Nota sul periodo massimo di conservazione dei backup (24 mesi massimo, migrazione a Glacier prevista per Q1 2027).
+
 ### 15 aprile 2026: Nuova documentazione VM instances (Cloud Public)
 
 - **VM instances**: Pubblicazione della documentazione iniziale del servizio VM instances (in anteprima), la nuova offerta di macchine virtuali condivise di Cloud Temple. La documentazione copre la panoramica del servizio, i concetti tecnici (classi di servizio Development/General Purpose/Performance, flavor predefiniti e personalizzati, storage, rete VPC, backup) e una guida introduttiva completa. Il servizio è organizzato sotto una nuova categoria **Cloud Public** nella navigazione.

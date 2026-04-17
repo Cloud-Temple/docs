@@ -10,8 +10,49 @@ import re
 import sys
 from pathlib import Path
 
-INPUT = Path(__file__).parent.parent / "maj.js"
-OUTPUT = Path(__file__).parent.parent / "docs" / "changelog.md"
+ROOT    = Path(__file__).parent.parent
+INPUT   = ROOT / "maj.js"
+I18N    = ROOT / "i18n"
+DOCS    = ROOT / "docs"
+
+# (lang, output_path, title_fr, title_h1, intro)
+OUTPUTS = [
+    (
+        "fr",
+        DOCS / "changelog_produits.md",
+        "Nouveautés produits",
+        "Nouveautés produits & évolutions",
+        "Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.\nLes corrections de bugs sont volontairement exclues.",
+    ),
+    (
+        "en",
+        I18N / "en/docusaurus-plugin-content-docs/current/changelog_produits.md",
+        "Product Updates",
+        "Product Updates & Evolutions",
+        "This changelog lists only new features and significant evolutions of the Cloud Temple platform.\nBug fixes are intentionally excluded.",
+    ),
+    (
+        "de",
+        I18N / "de/docusaurus-plugin-content-docs/current/changelog_produits.md",
+        "Produktneuheiten",
+        "Produktneuheiten & Weiterentwicklungen",
+        "Dieses Changelog enthält ausschließlich neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple Plattform.\nFehlerbeseitigungen sind bewusst ausgeschlossen.",
+    ),
+    (
+        "es",
+        I18N / "es/docusaurus-plugin-content-docs/current/changelog_produits.md",
+        "Novedades del producto",
+        "Novedades del producto & Evoluciones",
+        "Este changelog lista únicamente las nuevas funcionalidades y evoluciones significativas de la plataforma Cloud Temple.\nLas correcciones de errores están excluidas intencionalmente.",
+    ),
+    (
+        "it",
+        I18N / "it/docusaurus-plugin-content-docs/current/changelog_produits.md",
+        "Novità del prodotto",
+        "Novità del prodotto & Evoluzioni",
+        "Questo changelog elenca solo le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.\nLe correzioni di bug sono intenzionalmente escluse.",
+    ),
+]
 
 # Mots clés qui signalent un bug fix → exclusion
 BUG_PREFIXES = (
@@ -28,55 +69,51 @@ def is_bugfix(text: str) -> bool:
     return any(text.strip().startswith(p) for p in BUG_PREFIXES)
 
 
-def extract_fr_text(ternary: str) -> str | None:
+def _extract_quoted(ternary: str, side: str) -> str | None:
     """
-    Extrait le texte FR depuis :
-      lang === 'fr' ? 'Texte FR' : 'EN text'
-    Gère : single-quoted (avec \\'), double-quoted, backtick (template literals).
+    Extrait un côté ('fr' = then, 'en' = else) d'une ternaire JS.
+    Gère backtick, single-quoted, double-quoted.
+    side : 'fr' → groupe capturant avant ':', 'en' → groupe capturant après ':'
     """
-    # Backtick : ` ... ` (les apostrophes internes ne sont pas échappées)
-    m = re.search(
-        r"lang\s*===\s*['\"]fr['\"]\s*\?\s*`([^`]*)`",
-        ternary,
-    )
-    if m:
-        return m.group(1)
-
-    # Single-quoted : ' ... ' (apostrophes internes échappées en \')
-    m = re.search(
-        r"lang\s*===\s*['\"]fr['\"]\s*\?\s*'((?:[^'\\]|\\.)*)'",
-        ternary,
-    )
-    if m:
-        return m.group(1).replace("\\'", "'")
-
-    # Double-quoted : " ... "
-    m = re.search(
-        r'lang\s*===\s*[\'"]fr[\'"]\s*\?\s*"((?:[^"\\]|\\.)*)"',
-        ternary,
-    )
-    if m:
-        return m.group(1).replace('\\"', '"')
-
+    # Patterns communs des deux côtés de la ternaire
+    # Format : lang === 'fr' ? <FR> : <EN>
+    for q_fr, q_en in [
+        (r"`([^`]*)`",            r"`([^`]*)`"),              # backtick / backtick
+        (r"'((?:[^'\\]|\\.)*)'", r"'((?:[^'\\]|\\.)*)'"),    # single / single
+        (r'"((?:[^"\\]|\\.)*)"', r'"((?:[^"\\]|\\.)*)"'),    # double / double
+    ]:
+        pat = rf"lang\s*===\s*['\"]fr['\"]\s*\?\s*{q_fr}\s*:\s*{q_en}"
+        m = re.search(pat, ternary, re.DOTALL)
+        if m:
+            grp = m.group(1) if side == "fr" else m.group(2)
+            return grp.replace("\\'", "'").replace('\\"', '"')
     return None
 
 
-def parse_maj_js(content: str) -> list[dict]:
+def extract_text(ternary: str, lang: str) -> str | None:
+    """Extrait le texte pour la langue donnée ('fr' ou 'en')."""
+    if lang == "fr":
+        return _extract_quoted(ternary, "fr")
+    # EN est la branche 'else' ; si absent on retombe sur FR
+    en = _extract_quoted(ternary, "en")
+    if en:
+        return en
+    return _extract_quoted(ternary, "fr")  # fallback FR
+
+
+def parse_maj_js(content: str, lang: str = "fr") -> list[dict]:
     """
     Retourne une liste de dicts :
       { version, date, entries: [ { tag, text } ] }
+    lang : 'fr' ou 'en' (et autres langues → fallback EN)
     """
     results = []
 
-    # Découpe le contenu en blocs par version
-    # Pattern : début d'un bloc de version (ex:  1.0: { ou '1.1.1': {)
     version_pattern = re.compile(
         r"""
-        ^\s*                          # indentation
-        (?P<ver>                      # clé de version
-            ['"]?[\d]+\.[\d]+(?:\.[\d]+)?['"]?
-        )
-        \s*:\s*\{                     # : {
+        ^\s*
+        (?P<ver>['"]?[\d]+\.[\d]+(?:\.[\d]+)?['"]?)
+        \s*:\s*\{
         """,
         re.MULTILINE | re.VERBOSE,
     )
@@ -89,89 +126,114 @@ def parse_maj_js(content: str) -> list[dict]:
         block_end = matches[i + 1].start() if i + 1 < len(matches) else len(content)
         block = content[block_start:block_end]
 
-        # Date
         date_m = re.search(r"new Date\(['\"]([^'\"]+)['\"]\)", block)
         date_str = date_m.group(1)[:10] if date_m else "?"
 
-        # Entrées data[]
         entries = []
-        # Chaque objet { text: ..., tag: '...' }
         entry_pattern = re.compile(
             r"\{\s*text\s*:\s*(?P<ternary>lang\s*===.*?),\s*tag\s*:\s*['\"](?P<tag>[A-Z_]+)['\"]",
             re.DOTALL,
         )
         for em in entry_pattern.finditer(block):
-            text = extract_fr_text(em.group("ternary"))
+            text = extract_text(em.group("ternary"), lang)
             tag = em.group("tag")
             if text and not is_bugfix(text):
                 entries.append({"tag": tag, "text": text})
 
-        if entries:  # on n'inclut que les versions avec au moins 1 feature
+        if entries:
             results.append({"version": version, "date": date_str, "entries": entries})
 
     return results
 
 
-TAG_LABELS = {
-    "GEN": "Général",
-    "CMP": "Compute / Machines virtuelles",
-    "BACK": "Sauvegarde",
-    "IAM": "Identité & Accès",
-    "ACT": "Activités",
-    "NET": "Réseau",
-    "STG": "Stockage",
-    "K8S": "Kubernetes",
-    "SEC": "Sécurité",
-    "BILL": "Facturation",
-    "OBJ": "Object Storage",
-    "LLM": "LLMaaS",
-    "CM": "Gestionnaire des coûts",
-    "ORDER": "Commandes",
-    "VPC": "VPC",
-    "SUPPORT": "Support",
-    "AI": "Intelligence Artificielle",
-    "MET": "Métriques",
-    "SNAP": "Snapshots",
-    "OKD": "OpenShift",
-    "KUB": "Kubernetes",
-    "VMAAS": "VM Instances",
-    "VM": "Machines virtuelles",
-    "S3": "Object Storage S3",
-    "PG": "PostgreSQL Managé",
-    "MDB": "MariaDB Managé",
-    "BM": "Bare Metal",
-    "BAST": "Bastion",
-    "OSS": "Object Storage",
-    # Tags supplémentaires
-    "BACKUP": "Sauvegarde",
-    "BST": "Bastion",
-    "DOC": "Documentation",
-    "HOUSING": "Hébergement physique",
-    "INF": "Infrastructure",
-    "INV": "Inventaire",
-    "MNT": "Maintenance & Opérations",
-    "MP": "Marketplace",
-    "NETWORK": "Réseau",
-    "NOTIF": "Notifications",
-    "OPENSHIFT": "OpenShift",
-    "OS": "Object Storage",
-    "STORAGE": "Stockage",
-    "TAG": "Étiquettes",
-    "TICKET": "Tickets de support",
+# Mapping tag → (label affiché, URL doc relative)
+# URL = None si pas de page dédiée dans /docs
+TAG_MAP: dict[str, tuple[str, str | None]] = {
+    # ── Console ──────────────────────────────────────────────────────────────
+    "GEN":      ("Console",                         "/console/console"),
+    "ACT":      ("Console — Activités",             "/console/console"),
+    "NOTIF":    ("Console — Notifications",          "/console/console"),
+    "IAM":      ("Identité & Accès (IAM)",          "/console/iam/iam"),
+    "SEC":      ("Sécurité",                        "/console/security/security_recommendations"),
+    "MET":      ("Métriques",                       "/console/metrics/concepts"),
+    "BILL":     ("Facturation",                     "/console/billing/concepts"),
+    "CM":       ("Gestionnaire des coûts",          "/console/billing/concepts"),
+    "ORDER":    ("Commandes",                       "/console/orders"),
+    "SUPPORT":  ("Support",                         "/console/console"),
+    "TICKET":   ("Tickets de support",              "/console/console"),
+    "DOC":      ("Documentation",                   None),
+    "TAG":      ("Étiquettes",                      None),
+    "INV":      ("Inventaire",                      None),
+    "MNT":      ("Maintenance & Opérations",        None),
+    # ── IaaS Compute ─────────────────────────────────────────────────────────
+    "CMP":      ("IaaS — Machines virtuelles",      "/iaas_vmware/iaas_vmware"),
+    "VM":       ("IaaS — Machines virtuelles",      "/iaas_vmware/iaas_vmware"),
+    "SNAP":     ("IaaS — Snapshots",                "/iaas_vmware/iaas_vmware"),
+    "BACK":     ("Sauvegarde",                      "/iaas_vmware/iaas_vmware"),
+    "BACKUP":   ("Sauvegarde",                      "/iaas_vmware/iaas_vmware"),
+    "INF":      ("Infrastructure IaaS",             "/iaas_vmware/iaas_vmware"),
+    # ── VM Instances (OpenIaaS / public cloud) ────────────────────────────────
+    "VMAAS":    ("VM Instances",                    "/public_cloud/vm_instances/vm_instances"),
+    # ── Bare Metal ───────────────────────────────────────────────────────────
+    "BM":       ("Bare Metal",                      "/iaas_bare-metal/iaas_bare-metal"),
+    # ── Kubernetes ───────────────────────────────────────────────────────────
+    "K8S":      ("Managed Kubernetes",              "/managed_kubernetes/managed_kubernetes"),
+    "KUB":      ("Managed Kubernetes",              "/managed_kubernetes/managed_kubernetes"),
+    # ── Bases de données managées ─────────────────────────────────────────────
+    "PG":       ("PostgreSQL Managé",               "/managed_postgresql/managed_postgresql"),
+    "MDB":      ("MariaDB Managé",                  "/managed_mariadb/managed_mariadb"),
+    # ── LLMaaS ───────────────────────────────────────────────────────────────
+    "LLM":      ("LLMaaS",                          "/llmaas/llmaas"),
+    "AI":       ("LLMaaS",                          "/llmaas/llmaas"),
+    # ── PaaS OpenShift ────────────────────────────────────────────────────────
+    "OKD":      ("PaaS OpenShift",                  "/paas_openshift/paas_openshift"),
+    "OPENSHIFT":("PaaS OpenShift",                  "/paas_openshift/paas_openshift"),
+    # ── Bastion ───────────────────────────────────────────────────────────────
+    "BAST":     ("Bastion",                         "/bastion/bastion"),
+    "BST":      ("Bastion",                         "/bastion/bastion"),
+    # ── Object Storage S3 ────────────────────────────────────────────────────
+    "OBJ":      ("Object Storage S3",               "/storage/oss/oss"),
+    "OSS":      ("Object Storage S3",               "/storage/oss/oss"),
+    "OS":       ("Object Storage S3",               "/storage/oss/oss"),
+    "S3":       ("Object Storage S3",               "/storage/oss/oss"),
+    "STORAGE":  ("Stockage",                        "/storage/oss/oss"),
+    "STG":      ("Stockage",                        "/storage/oss/oss"),
+    # ── Réseau ────────────────────────────────────────────────────────────────
+    "NET":      ("Réseau",                          "/network/network_overview"),
+    "NETWORK":  ("Réseau",                          "/network/network_overview"),
+    "VPC":      ("VPC",                             "/network/vpc/vpc"),
+    # ── Marketplace ───────────────────────────────────────────────────────────
+    "MP":       ("Marketplace",                     "/marketplace/marketplace"),
+    # ── Housing ───────────────────────────────────────────────────────────────
+    "HOUSING":  ("Hébergement physique (Housing)",  "/housing/housing"),
 }
 
 
-def render_markdown(versions: list[dict]) -> str:
+def tag_label(tag: str) -> str:
+    """Retourne le libellé d'un tag (avec lien vers la doc)."""
+    entry = TAG_MAP.get(tag)
+    if entry:
+        label, url = entry
+        return f"[{label}]({url})" if url else label
+    return tag
+
+
+def render_markdown(
+    versions: list[dict],
+    title: str,
+    title_h1: str,
+    intro: str,
+) -> str:
+    intro_lines = "\n".join(f"> {line}" for line in intro.splitlines())
     lines = [
         "---",
-        "title: Changelog — Nouvelles fonctionnalités",
+        f"title: {title}",
         "sidebar_position: 999",
         "---",
         "",
-        "# Changelog — Nouvelles fonctionnalités & évolutions",
+        f"# {title_h1}",
         "",
-        "> Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives.",
-        "> Les corrections de bugs sont volontairement exclues.",
+        intro_lines,
         "",
     ]
 
@@ -179,13 +241,12 @@ def render_markdown(versions: list[dict]) -> str:
         lines.append(f"## v{v['version']} — {v['date']}")
         lines.append("")
 
-        # Regroupe par tag
         by_tag: dict[str, list[str]] = {}
         for e in v["entries"]:
             by_tag.setdefault(e["tag"], []).append(e["text"])
 
         for tag, texts in by_tag.items():
-            label = TAG_LABELS.get(tag, tag)
+            label = tag_label(tag)
             lines.append(f"### {label}")
             for t in texts:
                 lines.append(f"- {t}")
@@ -202,13 +263,15 @@ def main():
     print(f"Lecture de {INPUT} …")
     content = INPUT.read_text(encoding="utf-8")
 
-    print("Extraction des versions …")
-    versions = parse_maj_js(content)
-    print(f"  {len(versions)} versions avec des fonctionnalités trouvées")
-
-    md = render_markdown(versions)
-    OUTPUT.write_text(md, encoding="utf-8")
-    print(f"Écrit dans {OUTPUT}")
+    for lang, output_path, title, title_h1, intro in OUTPUTS:
+        # DE/ES/IT → fallback sur EN (maj.js n'a que FR+EN)
+        extract_lang = lang if lang in ("fr", "en") else "en"
+        print(f"  [{lang}] extraction …")
+        versions = parse_maj_js(content, extract_lang)
+        md = render_markdown(versions, title, title_h1, intro)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(md, encoding="utf-8")
+        print(f"  [{lang}] {len(versions)} versions → {output_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

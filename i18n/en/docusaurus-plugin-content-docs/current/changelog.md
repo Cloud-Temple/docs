@@ -5,6 +5,17 @@ sidebar_position: 2
 
 # Change Log
 
+### April 17, 2026: Private Backbone Translation and Terminology Update
+
+- **Private Backbone**: Complete translation of the Private Backbone service documentation into English, German, Spanish, and Italian.
+- **Terminology**: Harmonisation of vocabulary in the French documentation — systematic replacement of "offre" and "service" with "produit" to align with Cloud Temple's commercial terminology.
+
+### April 16, 2026: Navigation Refactoring, VM Instances and IaaS OpenSource Updates
+
+- **Navigation**: Complete refactoring of the navigation menu structure (PR #277) — grouping products by category (Compute, Network, Storage, AI, Managed Products…), adding a "preview" badge for early-access products, and clarifying the hierarchy between sections.
+- **VM Instances**: Updated the service level agreement (SLA) from 99.9% to 99.95%.
+- **IaaS OpenSource**: Added a note on the maximum backup retention period (24 months maximum, migration to Glacier planned for Q1 2027).
+
 ### April 15, 2026: New VM instances documentation (Cloud Public)
 
 - **VM instances**: Initial documentation release for the VM instances service (in preview), Cloud Temple's new shared virtual machine offering. The documentation covers the service overview, technical concepts (Development/General Purpose/Performance service classes, predefined and custom flavors, storage, VPC networking, backup), and a complete getting started guide. The service is organised under a new **Cloud Public** category in the navigation.
