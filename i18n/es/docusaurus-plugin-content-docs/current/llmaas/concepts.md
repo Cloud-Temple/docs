@@ -338,7 +338,7 @@ Un LLM solo conoce los datos con los que fue entrenado. **RAG** le da una "memor
 1. **Retrieval (Recuperación)**: Encontrar los documentos correctos.
 2. **Augmented Generation**: Usar estos documentos para generar una respuesta.
 
-![Diagrama conceptual del RAG](./images/rag_concept_overview.png)
+![Diagrama conceptual del RAG](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ### Paso 1: Embedding: Transformar Palabras en Números
 
@@ -350,7 +350,7 @@ Un vector es una lista de números que representa un punto en un espacio multidi
 
 `"El gato está sobre la alfombra."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Ejemplo de vector de embedding](./images/embedding_vector_example.png)
+![Ejemplo de vector de embedding](@site/docs/llmaas/images/embedding_vector_example.png)
 
 :::tip[Analogía Geográfica]
 "París" y "Francia" están muy cerca, como "Roma" e "Italia". El embedding hace lo mismo con miles de dimensiones.
@@ -364,10 +364,10 @@ Los modelos **Granite Embedding** de IBM destacan por:
 2. **Indemnización de Propiedad Intelectual**: Mismo nivel de indemnización ilimitada que otros modelos IBM.
 3. **Rendimiento y Eficiencia**: Comparable a los principales modelos open source.
 
-![Benchmark de Rendimiento de los Modelos Granite](./images/granite_benchmark_performance.png)
+![Benchmark de Rendimiento de los Modelos Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Comparación del rendimiento en tareas de búsqueda (BEIR) y búsqueda de código (CoIR).*
 
-![Benchmark de Velocidad de los Modelos Granite](./images/granite_benchmark_speed.png)
+![Benchmark de Velocidad de los Modelos Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Comparación de la latencia entre diferentes modelos de embedding.*
 
 ### Paso 2: Búsqueda: Medir la Proximidad Semántica
@@ -377,14 +377,14 @@ Los modelos **Granite Embedding** de IBM destacan por:
 - Mide el **ángulo** entre dos vectores. Ángulo pequeño = significado similar.
 - Score: 1 = similitud perfecta, 0 = ninguna similitud.
 
-![Ilustración de la Similitud Coseno](./images/cosine_similarity_concept.png)
+![Ilustración de la Similitud Coseno](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 #### Distancia Euclidiana (La Regla)
 
 - La distancia "en línea recta" entre los puntos terminales de dos vectores.
 - Score 0 = idénticos. Más alto = más alejados.
 
-![Ilustración de la Distancia Euclidiana](./images/euclidean_distance_concept.png)
+![Ilustración de la Distancia Euclidiana](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ### Conclusión RAG
 

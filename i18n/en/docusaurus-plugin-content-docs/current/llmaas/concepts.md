@@ -344,7 +344,7 @@ The process takes place in two stages:
 
 It is this **Retrieval** step that is at the heart of our topic. How does a computer manage to "understand" that a question and a paragraph are talking about the same thing? The magic happens through **vectors**.
 
-![Conceptual diagram of RAG](./images/rag_concept_overview.png)
+![Conceptual diagram of RAG](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ### Step 1: Embedding: Transforming Words into Numbers
 
@@ -356,7 +356,7 @@ Simply put, a vector is a list of numbers that represents a point in a multi-dim
 
 `"The cat is on the mat."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Embedding vector example](./images/embedding_vector_example.png)
+![Embedding vector example](@site/docs/llmaas/images/embedding_vector_example.png)
 
 This vector is not random. It represents the "position" of the text in a multidimensional semantic space. Texts with similar meaning will have vectors pointing in similar directions.
 
@@ -380,10 +380,10 @@ IBM's new **Granite Embedding** models are an improved evolution of the Slate fa
 2. **Intellectual Property Indemnification**: IBM supports Granite Embedding with the same level of uncapped indemnification for third-party IP claims as other IBM models.
 3. **Performance and Efficiency**: Granite Embedding models keep pace with leading open-source embedding models of similar size.
 
-![Granite Model Performance Benchmark](./images/granite_benchmark_performance.png)
+![Granite Model Performance Benchmark](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Comparison of performance on search tasks (BEIR) and code search (CoIR).*
 
-![Granite Model Speed Benchmark](./images/granite_benchmark_speed.png)
+![Granite Model Speed Benchmark](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Comparison of latency (time per request in seconds) between different embedding models.*
 
 ### Step 2: Search: Measuring Semantic Proximity
@@ -401,7 +401,7 @@ Once our question and all our documents are transformed into vectors, the search
 - `cos(v_q=[2,2], v_a=[4,4]) = 1.0` → Perfect similarity.
 - `cos(v_q=[2,2], v_b=[-2,2]) = 0.0` → No similarity.
 
-![Cosine Similarity Illustration](./images/cosine_similarity_concept.png)
+![Cosine Similarity Illustration](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 #### Euclidean Distance (The Ruler)
 
@@ -409,7 +409,7 @@ Once our question and all our documents are transformed into vectors, the search
 - **Score**: 0 = identical vectors. Higher = more distant.
 - **Disadvantage for text**: Sensitive to magnitude.
 
-![Euclidean Distance Illustration](./images/euclidean_distance_concept.png)
+![Euclidean Distance Illustration](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ### RAG Conclusion
 
