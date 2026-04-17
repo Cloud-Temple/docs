@@ -1,7 +1,6 @@
 ---
 title: Contractual Documents
 slug: /contracts
-displayed_sidebar: null
 hide_table_of_contents: true
 ---
 
@@ -13,34 +12,50 @@ Find here all Cloud Temple contractual documents: general terms and conditions, 
 
 ## General Terms and Conditions
 
-<div class="contract-grid">
-  <div class="contract-card">
-    <div class="contract-card-title">General Terms of Sale and Use (GTSU)</div>
-    <div class="contract-card-desc">General terms governing all Cloud Temple services.</div>
-    <a class="contract-read-link" href="contractual/cgvu">Read document →</a>
-  </div>
-  <div class="contract-card">
-    <div class="contract-card-title">Data Processing Agreement (DPA)</div>
-    <div class="contract-card-desc">Agreement governing the processing of personal data in accordance with the GDPR.</div>
-    <a class="contract-read-link" href="contractual/dpa">Read document →</a>
-  </div>
-  <div class="contract-card">
-    <div class="contract-card-title">Order Process</div>
-    <div class="contract-card-desc">Documentation of the order and service provisioning process.</div>
-    <a class="contract-read-link" href="contractual/order">Read document →</a>
-  </div>
+<div class="book-grid">
+  <a class="book-card" href="contractual/cgvu">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">General Terms of Sale and Use (GTSU)</div>
+      <div class="book-card-desc">General terms governing all Cloud Temple services.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
+  <a class="book-card" href="contractual/dpa">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">Data Processing Agreement (DPA)</div>
+      <div class="book-card-desc">Agreement governing the processing of personal data in accordance with the GDPR.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
+  <a class="book-card" href="contractual/order">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">Order Process</div>
+      <div class="book-card-desc">Documentation of the order and service provisioning process.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
 </div>
 
 ---
 
 ## Specific Terms
 
-<div class="contract-grid">
-  <div class="contract-card">
-    <div class="contract-card-title">Bare Metal Specific Terms</div>
-    <div class="contract-card-desc">Specific terms for dedicated Bare Metal hosting services.</div>
-    <a class="contract-read-link" href="contractual/baremetal">Read document →</a>
-  </div>
+<div class="book-grid">
+  <a class="book-card" href="contractual/baremetal">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">Bare Metal Specific Terms</div>
+      <div class="book-card-desc">Specific terms for dedicated Bare Metal hosting services.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
 </div>
 
 ---
@@ -49,22 +64,34 @@ Find here all Cloud Temple contractual documents: general terms and conditions, 
 
 Service agreements define the contractual framework for delivering SecNumCloud qualified services: scope, operational commitments, responsibilities and service conditions.
 
-<div class="contract-grid">
-  <div class="contract-card">
-    <div class="contract-card-title">IaaS VMware SecNumCloud Service Agreement</div>
-    <div class="contract-card-desc">Contractual framework for the SecNumCloud qualified IaaS VMware infrastructure.</div>
-    <a class="contract-read-link" href="contractual/iaas/sla">Read document →</a>
-  </div>
-  <div class="contract-card">
-    <div class="contract-card-title">Open IaaS SecNumCloud Service Agreement</div>
-    <div class="contract-card-desc">Contractual framework for the SecNumCloud qualified Open IaaS infrastructure.</div>
-    <a class="contract-read-link" href="contractual/iaas/sla-openiaas">Read document →</a>
-  </div>
-  <div class="contract-card">
-    <div class="contract-card-title">PaaS OpenShift SecNumCloud Service Agreement</div>
-    <div class="contract-card-desc">Contractual framework for the SecNumCloud managed PaaS OpenShift platform.</div>
-    <a class="contract-read-link" href="contractual/paas/sla">Read document →</a>
-  </div>
+<div class="book-grid">
+  <a class="book-card" href="contractual/iaas/sla">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">IaaS VMware SecNumCloud Service Agreement</div>
+      <div class="book-card-desc">Contractual framework for the SecNumCloud qualified IaaS VMware infrastructure.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
+  <a class="book-card" href="contractual/iaas/sla-openiaas">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">Open IaaS SecNumCloud Service Agreement</div>
+      <div class="book-card-desc">Contractual framework for the SecNumCloud qualified Open IaaS infrastructure.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
+  <a class="book-card" href="contractual/paas/sla">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">PaaS OpenShift SecNumCloud Service Agreement</div>
+      <div class="book-card-desc">Contractual framework for the SecNumCloud managed PaaS OpenShift platform.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
 </div>
 
 ---
@@ -73,10 +100,14 @@ Service agreements define the contractual framework for delivering SecNumCloud q
 
 SLAs define availability commitments, measurement methods, exclusions and service credits applicable in case of non-compliance.
 
-<div class="contract-grid">
-  <div class="contract-card">
-    <div class="contract-card-title">VM Instances SLA</div>
-    <div class="contract-card-desc">Guaranteed availability 99.95% — service credits and exclusions.</div>
-    <a class="contract-read-link" href="contractual/vm-instances/sla">Read document →</a>
-  </div>
+<div class="book-grid">
+  <a class="book-card" href="contractual/vm-instances/sla">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
+      <div class="book-card-title">VM Instances SLA</div>
+      <div class="book-card-desc">Guaranteed availability 99.95% — service credits and exclusions.</div>
+      <div class="book-card-cta">Read document →</div>
+    </div>
+  </a>
 </div>
