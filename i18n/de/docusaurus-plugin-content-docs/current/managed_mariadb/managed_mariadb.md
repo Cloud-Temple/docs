@@ -63,6 +63,7 @@ Der von dieser Instanz verwendete Speicher wird auf 3 AZs repliziert und ermögl
 Das ***Distributed***-Modell stellt einen Cluster mit 3 MariaDB-Engine-Instanzen bereit, mit Galera im "Single Primary"-Modus und MaxScale:
 
 - Ein MaxScale-Endpunkt ermöglicht das Routing zu den verschiedenen Instanzen je nach Anfragetyp (Lesen oder Schreiben).
+![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
 - Die Lese-Schreib-Instanz (RW) ist über einen spezifischen Endpunkt zugänglich.
 - Die 2 schreibgeschützten Instanzen (RO) sind über einen anderen spezifischen Endpunkt zugänglich.
 

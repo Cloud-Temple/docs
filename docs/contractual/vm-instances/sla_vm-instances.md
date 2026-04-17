@@ -62,9 +62,11 @@ Le présent SLA ne constitue pas un engagement sur la disponibilité des éléme
 
 4. **Maintenance programmée** : Interventions matérielles ou logicielles sur l'infrastructure physique de Cloud Temple ayant fait l'objet d'une notification préalable dans le cadre des fenêtres de maintenance prévues par votre contrat de support.
 
-5. **Comportement abusif ou violation** : Suspension de la VM Instance par Cloud Temple suite à une violation des Conditions Générales ou des exigences de sécurité (ex : compromission, non-respect des règles de la Marketplace Cloud Temple).
+5. **Absence ou désactivation des tools VM** : Les agents de gestion de l'hyperviseur (*tools*) pré-installés par Cloud Temple sur chaque instance sont indispensables à la mesure et à la garantie de la disponibilité. Si ces tools ont été désactivés, supprimés ou rendus non fonctionnels par le client, Cloud Temple n'est plus en mesure d'assurer la surveillance de l'instance ni de constater objectivement une période d'indisponibilité. Le SLA est **immédiatement suspendu** pour la durée pendant laquelle les tools sont absents ou non opérationnels. La présence et le bon fonctionnement des tools sont sous l'entière responsabilité du client durant toute la vie de l'instance.
 
-6. **Force majeure** : Événements hors du contrôle raisonnable de Cloud Temple.
+6. **Comportement abusif ou violation** : Suspension de la VM Instance par Cloud Temple suite à une violation des Conditions Générales ou des exigences de sécurité (ex : compromission, non-respect des règles de la Marketplace Cloud Temple).
+
+7. **Force majeure** : Événements hors du contrôle raisonnable de Cloud Temple.
 
 ---
 

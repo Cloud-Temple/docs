@@ -23,6 +23,23 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
 
 ---
 
+## VM-Instanzen
+
+<div class="contract-grid">
+  <div class="contract-card">
+    <div class="contract-card-title">Modell der geteilten Verantwortung — VM-Instanzen</div>
+    <div class="contract-card-desc">Verantwortungsverteilung für den Dienst gemeinsam genutzter virtueller Maschinen (VM-Instanzen).</div>
+    <a class="contract-read-link" href="contractual/vm-instances/raci">Dokument lesen →</a>
+  </div>
+  <div class="contract-card">
+    <div class="contract-card-title">SLA VM-Instanzen</div>
+    <div class="contract-card-desc">Service Level Agreement für den VM-Instanzen-Dienst (Verfügbarkeit, Ausschlüsse, Service Credits).</div>
+    <a class="contract-read-link" href="contractual/vm-instances/sla">Dokument lesen →</a>
+  </div>
+</div>
+
+---
+
 ## Speicher
 
 <div class="contract-grid">
@@ -88,5 +105,10 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
     <div class="contract-card-title">RACI Netzwerk</div>
     <div class="contract-card-desc">Verantwortungsverteilung für Cloud Temple-Netzwerkdienste.</div>
     <a class="contract-read-link" href="contractual/network/raci">Dokument lesen →</a>
+  </div>
+  <div class="contract-card">
+    <div class="contract-card-title">Modell der geteilten Verantwortung — VPC</div>
+    <div class="contract-card-desc">Verantwortungsverteilung für den verwalteten Virtual Private Cloud (VPC)-Dienst.</div>
+    <a class="contract-read-link" href="contractual/network/raci-vpc">Dokument lesen →</a>
   </div>
 </div>

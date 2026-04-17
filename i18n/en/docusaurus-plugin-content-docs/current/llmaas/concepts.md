@@ -319,6 +319,104 @@ The world of LLMs is evolving rapidly. To ensure our customers have access to th
 | qwen2.5:3b               | Deprecated | 17/10/2025       |
 | deepseek-r1:671b         | Deprecated | 17/10/2025       |
 
+---
+
+## RAG: Querying Your Data with an LLM
+
+This document explains the fundamental concepts behind the **Retrieval-Augmented Generation (RAG)** technique.
+
+:::tip[Sample Code Available]
+The concepts covered here are illustrated in a complete, functional demo available on our GitHub. It is an excellent starting point for understanding the practical operation of a RAG pipeline.
+
+➡️ **[Access the Simple RAG Demo code](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+:::
+
+### The problem: LLMs have no long-term memory
+
+A large language model (LLM) like Mistral or Granite is very powerful, but it only knows the data it was trained on. It does not know your internal documents, the latest news articles, or the specifics of your business.
+
+**RAG** is a technique that gives the LLM an "external memory" by providing it, at the time of the question, with the most relevant document excerpts to help it formulate its response.
+
+The process takes place in two stages:
+
+1. **Retrieval**: Finding the right documents.
+2. **Augmented Generation**: Using these documents to generate a response.
+
+It is this **Retrieval** step that is at the heart of our topic. How does a computer manage to "understand" that a question and a paragraph are talking about the same thing? The magic happens through **vectors**.
+
+![Conceptual diagram of RAG](./images/rag_concept_overview.png)
+
+### Step 1: Embedding: Transforming Words into Numbers
+
+A computer does not understand words, but it excels at manipulating numbers. **Embedding** is the process that translates a text (a word, a sentence, a document) into a list of numbers, called a **vector**.
+
+:::tip[What is a vector?]
+Simply put, a vector is a list of numbers that represents a point in a multi-dimensional space. Each number in the vector corresponds to a coordinate on an "axis" of that space. For text embeddings, these axes are not `x`, `y`, `z` but abstract semantic dimensions (for example, one axis might represent the concept of "royalty", another that of "feline", etc.).
+:::
+
+`"The cat is on the mat."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
+
+![Embedding vector example](./images/embedding_vector_example.png)
+
+This vector is not random. It represents the "position" of the text in a multidimensional semantic space. Texts with similar meaning will have vectors pointing in similar directions.
+
+:::tip[Geographic Analogy]
+Imagine a geographic map. "Paris" and "France" would be very close, as would "Rome" and "Italy". "Paris" would be further from "Rome" than from "France", but closer than from "Tokyo". Embedding does the same thing, but with thousands of "dimensions" instead of two, to capture complex nuances of meaning.
+:::
+
+In our script, the `/v1/embeddings` endpoint and the `granite-embedding:278m` model are responsible for this translation.
+
+#### Focus on Granite Embedding Models
+
+Embeddings are an integral part of the LLM ecosystem. An accurate and efficient way to numerically represent words, queries, and documents is essential for a range of enterprise tasks, including semantic search, vector search, and RAG, as well as maintaining efficient vector databases.
+
+While the last two years have seen the proliferation of increasingly competitive open-source autoregressive LLMs for tasks like text generation and synthesis, open-source embedding models published by leading providers are relatively rare.
+
+##### Why Granite Embedding?
+
+IBM's new **Granite Embedding** models are an improved evolution of the Slate family of RoBERTa-based encoder-only language models, standing out on several points crucial for enterprise use:
+
+1. **Ethical and Commercially Safe Training**: IBM has verified the commercial eligibility of all data sources used to train Granite Embedding.
+2. **Intellectual Property Indemnification**: IBM supports Granite Embedding with the same level of uncapped indemnification for third-party IP claims as other IBM models.
+3. **Performance and Efficiency**: Granite Embedding models keep pace with leading open-source embedding models of similar size.
+
+![Granite Model Performance Benchmark](./images/granite_benchmark_performance.png)
+*Comparison of performance on search tasks (BEIR) and code search (CoIR).*
+
+![Granite Model Speed Benchmark](./images/granite_benchmark_speed.png)
+*Comparison of latency (time per request in seconds) between different embedding models.*
+
+### Step 2: Search: Measuring Semantic Proximity
+
+Once our question and all our documents are transformed into vectors, the search becomes a mathematical problem: **find the document vector "closest" to the question vector.**
+
+#### Cosine Similarity (The Standard)
+
+- **Concept**: It measures the **angle** between two vectors. A small angle (close to 0°) means the vectors point in the same direction.
+- **Score**: 1 = perfect similarity, 0 = no similarity.
+- **Why is it so widely used?** For text, semantic *direction* matters more than *magnitude*. Cosine similarity ignores magnitude.
+
+**Simple 2D example:**
+
+- `cos(v_q=[2,2], v_a=[4,4]) = 1.0` → Perfect similarity.
+- `cos(v_q=[2,2], v_b=[-2,2]) = 0.0` → No similarity.
+
+![Cosine Similarity Illustration](./images/cosine_similarity_concept.png)
+
+#### Euclidean Distance (The Ruler)
+
+- **Concept**: The "as-the-crow-flies" distance between the endpoints of two vectors.
+- **Score**: 0 = identical vectors. Higher = more distant.
+- **Disadvantage for text**: Sensitive to magnitude.
+
+![Euclidean Distance Illustration](./images/euclidean_distance_concept.png)
+
+### RAG Conclusion
+
+The greatest challenge remains the **quality of the embedding model**. A good model will produce vectors that faithfully capture meaning, making proximity calculation much more reliable.
+
+---
+
 ## 💡 Best Practices
 
 To get the most out of the LLMaaS API, it is essential to adopt strategies for optimizing costs, performance, and security.

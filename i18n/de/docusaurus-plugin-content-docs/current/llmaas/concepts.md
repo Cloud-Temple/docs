@@ -319,6 +319,81 @@ The world of LLMs is evolving rapidly. To ensure our customers have access to th
 | qwen2.5:3b               | Veraltet  | 17/10/2025           |
 | deepseek-r1:671b         | Veraltet  | 17/10/2025           |
 
+---
+
+## RAG: Abfragen Ihrer Daten mit einem LLM
+
+Dieses Dokument erklärt die grundlegenden Konzepte hinter der **Retrieval-Augmented Generation (RAG)**-Technik.
+
+:::tip[Beispielcode verfügbar]
+Die hier behandelten Konzepte werden in einem vollständigen, funktionalen Demo auf unserem GitHub veranschaulicht.
+
+➡️ **[Zum Simple RAG Demo Code](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+:::
+
+### Das Problem: LLMs haben kein Langzeitgedächtnis
+
+Ein großes Sprachmodell (LLM) wie Mistral oder Granite kennt nur die Daten, mit denen es trainiert wurde. Es kennt Ihre internen Dokumente nicht, die neuesten Nachrichten oder die Besonderheiten Ihres Unternehmens.
+
+**RAG** gibt dem LLM ein "externes Gedächtnis", indem es ihm die relevantesten Dokumentenausschnitte zur Verfügung stellt.
+
+1. **Retrieval (Abruf)**: Die richtigen Dokumente finden.
+2. **Augmented Generation (Erweiterte Generierung)**: Diese Dokumente verwenden, um eine Antwort zu generieren.
+
+![Konzeptionelles Diagramm von RAG](./images/rag_concept_overview.png)
+
+### Schritt 1: Embedding: Wörter in Zahlen umwandeln
+
+**Embedding** übersetzt einen Text in eine Liste von Zahlen, einen sogenannten **Vektor**.
+
+:::tip[Was ist ein Vektor?]
+Ein Vektor ist eine Liste von Zahlen, die einen Punkt in einem mehrdimensionalen Raum darstellt. Bei Text-Embeddings sind diese Dimensionen abstrakte semantische Achsen.
+:::
+
+`"Die Katze sitzt auf der Matte."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
+
+![Beispiel eines Embedding-Vektors](./images/embedding_vector_example.png)
+
+:::tip[Geographische Analogie]
+"Paris" und "Frankreich" wären sehr nah beieinander, ebenso wie "Rom" und "Italien". Embedding macht dasselbe mit Tausenden von Dimensionen.
+:::
+
+#### Fokus auf Granite Embedding-Modelle
+
+Die neuen **Granite Embedding**-Modelle von IBM sind eine verbesserte Weiterentwicklung der Slate-Familie:
+
+1. **Ethisches und kommerziell sicheres Training**: IBM hat die kommerzielle Zulässigkeit aller Datenquellen überprüft.
+2. **Schadloshaltung bei geistigem Eigentum**: Gleiche unbegrenzte Entschädigung wie bei anderen IBM-Modellen.
+3. **Leistung und Effizienz**: Hält mit führenden Open-Source-Embedding-Modellen mit.
+
+![Leistungs-Benchmark der Granite-Modelle](./images/granite_benchmark_performance.png)
+*Vergleich der Leistung bei Suchaufgaben (BEIR) und Codesuche (CoIR).*
+
+![Geschwindigkeits-Benchmark der Granite-Modelle](./images/granite_benchmark_speed.png)
+*Vergleich der Latenz zwischen verschiedenen Embedding-Modellen.*
+
+### Schritt 2: Suche: Semantische Nähe messen
+
+#### Kosinus-Ähnlichkeit (Der Standard)
+
+- Misst den **Winkel** zwischen zwei Vektoren. Kleiner Winkel = ähnliche Bedeutung.
+- Score: 1 = perfekte Ähnlichkeit, 0 = keine Ähnlichkeit.
+
+![Illustration der Kosinus-Ähnlichkeit](./images/cosine_similarity_concept.png)
+
+#### Euklidische Distanz (Das Lineal)
+
+- Die "Luftlinien"-Distanz zwischen den Endpunkten zweier Vektoren.
+- Score 0 = identisch. Höher = weiter entfernt.
+
+![Illustration der Euklidischen Distanz](./images/euclidean_distance_concept.png)
+
+### RAG-Fazit
+
+Die größte Herausforderung bleibt die **Qualität des Embedding-Modells**. Ein gutes Modell erzeugt Vektoren, die die Bedeutung getreu erfassen.
+
+---
+
 ## 💡 Best Practices
 
 To get the most out of the LLMaaS API, it is essential to adopt strategies for optimizing costs, performance, and security.

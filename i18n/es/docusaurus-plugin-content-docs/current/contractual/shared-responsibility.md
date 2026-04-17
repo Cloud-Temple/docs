@@ -23,6 +23,23 @@ Cloud Temple opera según un modelo de **responsabilidad compartida** entre el p
 
 ---
 
+## Instancias VM
+
+<div class="contract-grid">
+  <div class="contract-card">
+    <div class="contract-card-title">Modelo de Responsabilidad Compartida — Instancias VM</div>
+    <div class="contract-card-desc">Reparto de responsabilidades para el servicio de máquinas virtuales compartidas (Instancias VM).</div>
+    <a class="contract-read-link" href="contractual/vm-instances/raci">Consultar el documento →</a>
+  </div>
+  <div class="contract-card">
+    <div class="contract-card-title">SLA Instancias VM</div>
+    <div class="contract-card-desc">Acuerdo de Nivel de Servicio para el servicio Instancias VM (disponibilidad, exclusiones, créditos de servicio).</div>
+    <a class="contract-read-link" href="contractual/vm-instances/sla">Consultar el documento →</a>
+  </div>
+</div>
+
+---
+
 ## Almacenamiento
 
 <div class="contract-grid">
@@ -88,5 +105,10 @@ Cloud Temple opera según un modelo de **responsabilidad compartida** entre el p
     <div class="contract-card-title">RACI Red</div>
     <div class="contract-card-desc">Reparto de responsabilidades para los servicios de red Cloud Temple.</div>
     <a class="contract-read-link" href="contractual/network/raci">Consultar el documento →</a>
+  </div>
+  <div class="contract-card">
+    <div class="contract-card-title">Modelo de Responsabilidad Compartida — VPC</div>
+    <div class="contract-card-desc">Reparto de responsabilidades para el servicio Virtual Private Cloud (VPC) gestionado.</div>
+    <a class="contract-read-link" href="contractual/network/raci-vpc">Consultar el documento →</a>
   </div>
 </div>
