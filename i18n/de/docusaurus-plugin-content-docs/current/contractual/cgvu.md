@@ -6,7 +6,7 @@ displayed_sidebar: docSidebar
 
 # Allgemeine Verkaufs- und Nutzungsbedingungen (AVNB)
 
-:::warning Dokumentation migriert
+:::warning[Dokumentation migriert]
 
 Die Dokumentation der **Allgemeinen Verkaufs- und Nutzungsbedingungen (AVNB)** wurde migriert.
 
@@ -18,7 +18,7 @@ Alle Vertragsdokumente von Cloud Temple (AVNB, DPA, SecNumCloud-Servicevereinbar
 
 ## 18. Confidentialité
 
-:::warning Dokumentation migriert
+:::warning[Dokumentation migriert]
 
 Dieser Abschnitt wurde in die offiziellen Vertragsdokumente von Cloud Temple migriert.
 

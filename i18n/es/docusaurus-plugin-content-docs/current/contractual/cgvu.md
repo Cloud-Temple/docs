@@ -6,7 +6,7 @@ displayed_sidebar: docSidebar
 
 # Condiciones Generales de Venta y Uso (CGVU)
 
-:::warning Documentación migrada
+:::warning[Documentación migrada]
 
 La documentación de las **Condiciones Generales de Venta y Uso (CGVU)** ha sido migrada.
 
@@ -18,7 +18,7 @@ Todos los documentos contractuales de Cloud Temple (CGVU, DPA, Convenios de serv
 
 ## 18. Confidentialité
 
-:::warning Documentación migrada
+:::warning[Documentación migrada]
 
 Esta sección ha sido migrada a los documentos contractuales oficiales de Cloud Temple.
 
