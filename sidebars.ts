@@ -10,12 +10,12 @@ const sidebars: SidebarsConfig = {
     {
       type: 'doc',
       id: 'changelog',
-      label: 'Suivi de la documentation',
+      label: 'Documentation Changelog',
     },
     {
       type: 'doc',
       id: 'changelog_produits',
-      label: 'Nouveautés produits',
+      label: 'Product Updates',
     },
     {
       type: 'doc',
