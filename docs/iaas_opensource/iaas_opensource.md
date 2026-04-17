@@ -4,7 +4,7 @@ title: Vue d'ensemble
 
 L'**offre IaaS OpenSource de Cloud Temple** : une alliance unique entre performance, sécurité et transparence.
 
-Cette offre garantit une maîtrise totale de vos environnements critiques, tout en assurant sécurité, continuité et conformité réglementaire.
+Ce produit garantit une maîtrise totale de vos environnements critiques, tout en assurant sécurité, continuité et conformité réglementaire.
 Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d’une infrastructure performante et adaptée à vos besoins. Adoptez la puissance de l’Open Source avec la fiabilité et le support de Cloud Temple.
 
 <div class="card-grid">
@@ -28,7 +28,7 @@ Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d
 ## Plateformes d'achat
 
 <div class="purchase-platforms">
-  <p>Vous êtes un acteur du secteur public ? L’offre <strong>IaaS Cloud Temple</strong> est accessible via :</p>
+  <p>Vous êtes un acteur du secteur public ? Le produit <strong>IaaS Cloud Temple</strong> est accessible via :</p>
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />

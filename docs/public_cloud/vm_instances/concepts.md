@@ -2,7 +2,7 @@
 title: Concepts
 ---
 
-Le service **VM Instances** de Cloud Temple est une offre de compute mutualisée permettant de déployer des machines virtuelles à la demande, sans gestion de l'infrastructure sous-jacente. Cette page présente les concepts fondamentaux du service.
+Le service **VM Instances** de Cloud Temple est un produit de compute mutualisée permettant de déployer des machines virtuelles à la demande, sans gestion de l'infrastructure sous-jacente. Cette page présente les concepts fondamentaux du service.
 
 ## Régions et zones de disponibilité
 

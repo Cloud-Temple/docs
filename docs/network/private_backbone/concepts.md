@@ -105,6 +105,6 @@ Pour les organisations nécessitant un contrôle fin du routage :
 | Flexibilité | Maximum | Standard cloud |
 
 :::tip[VPC pour une expérience cloud-native]
-Pour une expérience réseau simplifiée et automatisée, privilégiez l'offre **[VPC](/network/vpc)**.  
+Pour une expérience réseau simplifiée et automatisée, privilégiez le produit **[VPC](/network/vpc)**.  
 Le Private Backbone est recommandé si vous avez des besoins d'extension L2 ou de contrôle fin de la topologie réseau.
 :::

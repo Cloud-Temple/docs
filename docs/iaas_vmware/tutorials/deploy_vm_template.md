@@ -12,7 +12,7 @@ Ce guide va vous permettre de déployer en moins de 5 minutes vos premières ins
 
 ## __Prérequis__
 
-1. Avoir souscrit à l'offre Cloud Temple (souscription à l'offre IaaS).
+1. Avoir souscrit à le produit Cloud Temple (souscription à le produit IaaS).
 2. Avoir les permissions activées pour le pilote des objets __'IaaS'__
 
 ## Déployer une machine virtuelle depuis un Template

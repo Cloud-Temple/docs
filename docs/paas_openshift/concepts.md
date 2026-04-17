@@ -62,7 +62,7 @@ Red Hat OpenShift Data Foundation est une solution de stockage de données avanc
 
 ### Généralités
 
-La plateforme Red Hat OpenShift de Cloud Temple est conçue comme une offre régionale, déployée nativement sur [**trois zones de disponibilité distinctes**](../additional_content/concepts_az.md) au sein d'une même [région](../additional_content/concepts_regional.md) de Cloud Temple. Cette architecture tri-zonale augmente significativement la disponibilité et la résilience des données.
+La plateforme Red Hat OpenShift de Cloud Temple est conçue comme un produit régional, déployée nativement sur [**trois zones de disponibilité distinctes**](../additional_content/concepts_az.md) au sein d'une même [région](../additional_content/concepts_regional.md) de Cloud Temple. Cette architecture tri-zonale augmente significativement la disponibilité et la résilience des données.
 
 La plateforme se compose d'un plan de contrôle et de noeuds de travail, tous gérés par l'infrastructure Cloud Temple. Le plan de contrôle est réparti équitablement sur les trois zones de disponibilité, assurant une gestion centralisée et sécurisée. Les noeuds de travail, quant à eux, sont représentés par des lames de calcul, disposées de manière à ce que chaque zone de disponibilité en contienne une.
 
@@ -223,7 +223,7 @@ Les applications nécessitant des privilèges élevés devront être adaptées, 
 
 ### Restrictions sur les ClusterRoles  
 
-Dans notre offre OpenShift, la gestion des droits d’accès au niveau du cluster est rigoureusement encadrée pour garantir **sécurité et conformité** avec SecNumCloud.  
+Dans notre produit OpenShift, la gestion des droits d’accès au niveau du cluster est rigoureusement encadrée pour garantir **sécurité et conformité** avec SecNumCloud.  
 
 Cela implique des **restrictions sur les ClusterRoles**, limitant les privilèges globaux. Bien que ces restrictions puissent imposer des ajustements techniques, elles sont essentielles pour renforcer la résilience et la stabilité de l’environnement.  
 

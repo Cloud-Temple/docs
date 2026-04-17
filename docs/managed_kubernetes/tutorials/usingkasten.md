@@ -8,7 +8,7 @@ import k10infrabackups from './images/k10infrabackups.png'
 
 ## Introduction
 
-Veeam Kasten K10 est une solution de sauvegarde et de restauration conçue spécifiquement pour les environnements Kubernetes. Dans le service Managed Kubernetes de Cloud Temple, Kasten est intégré pour vous permettre de protéger vos applications, de restaurer des données en cas de besoin et d'assurer la continuité de vos activités.
+Veeam Kasten K10 est une solution de sauvegarde et de restauration conçue spécifiquement pour les environnements Kubernetes. Dans le produit Managed Kubernetes de Cloud Temple, Kasten est intégré pour vous permettre de protéger vos applications, de restaurer des données en cas de besoin et d'assurer la continuité de vos activités.
 
 Ce tutoriel vous guidera à travers les étapes de base pour sauvegarder et restaurer une application à l'aide de Kasten.
 
@@ -49,7 +49,7 @@ Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est dé
 <img src={k10s3location} />
 
 :::info[Modèle de coût]
-Le service Veeam Kasten est inclus dans l'offre Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
+Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
 :::
 
 ## 3. Créer une politique de sauvegarde
@@ -101,7 +101,7 @@ Kasten va maintenant restaurer l'application à l'état capturé dans le snapsho
 
 ## 5. Sécurité des sauvegardes
 
-La protection de vos données de sauvegarde est une priorité. L'intégration de Kasten dans l'offre Managed Kubernetes respecte les plus hauts standards de sécurité.
+La protection de vos données de sauvegarde est une priorité. L'intégration de Kasten dans le produit Managed Kubernetes respecte les plus hauts standards de sécurité.
 
 - **Chiffrement** : Conformément aux exigences SecNumCloud, toutes vos sauvegardes sont chiffrées. Les données sont chiffrées en transit vers le stockage S3 avec le protocole **TLS 1.3** et au repos dans les buckets de stockage avec l'algorithme **AES-256**.
 

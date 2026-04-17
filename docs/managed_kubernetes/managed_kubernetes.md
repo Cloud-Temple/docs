@@ -24,11 +24,11 @@ title: Vue d'ensemble
 
 Managed Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs basée sur des produits OpenSources et conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
-Cette offre est conçue pour les équipes ayant une bonne connaissance de Kubernetes et les adeptes de l'open source qui recherchent une solution native, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
+ce produit est conçue pour les équipes ayant une bonne connaissance de Kubernetes et les adeptes de l'open source qui recherchent une solution native, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
 ### Bénéfices Clés
 
-- **Souveraineté et Réversibilité** : La solution s'appuie sur des standards open source (Kubernetes CNCF) pour éviter toute dépendance technologique et garantir la portabilité de vos applications. L'outil de sauvegarde Veeam Kasten, inclus dans l'offre, est spécialement conçu pour faciliter les migrations d'un cloud à un autre.
+- **Souveraineté et Réversibilité** : La solution s'appuie sur des standards open source (Kubernetes CNCF) pour éviter toute dépendance technologique et garantir la portabilité de vos applications. L'outil de sauvegarde Veeam Kasten, inclus dans le produit, est spécialement conçu pour faciliter les migrations d'un cloud à un autre.
 - **Sécurité "Zero-Trust" et Gouvernance** : L'architecture repose sur Talos OS, un système d'exploitation immuable sans accès direct (ni shell, ni SSH), ce qui réduit drastiquement la surface d'attaque. Cette approche est couplée à des outils de gouvernance comme Kyverno pour la gestion des politiques et Capsule pour la gestion fine des droits, constituant une base solide pour une stratégie de sécurité "Zero-Trust".
 - **Maîtrse des Coûts et Intégration** : La solution intègre nativement des outils de FinOps comme OpenCost pour un suivi précis des consommations. Le modèle économique est transparent, basé sur les ressources IaaS consommées, et l'utilisation de composants open source reconnus (Cilium, Ceph, ArgoCD) facilite l'intégration dans vos écosystèmes existants.
 

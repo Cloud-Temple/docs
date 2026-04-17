@@ -23,7 +23,7 @@ Elle permet de :
 
 ### Virtual Machine Images
 
-Les images de machines virtuelles constituent le cœur actuel de l'offre Marketplace. Ces images pré-configurées permettent un déploiement rapide d'environnements standardisés.
+Les images de machines virtuelles constituent le cœur actuel du produit Marketplace. Ces images pré-configurées permettent un déploiement rapide d'environnements standardisés.
 
 **Caractéristiques :**
 

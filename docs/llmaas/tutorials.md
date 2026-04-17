@@ -670,7 +670,7 @@ def semantic_kernel_simulation():
     text_to_summarize = """
     L'intelligence artificielle (IA) transforme de nombreux secteurs industriels en automatisant les tâches, 
     en optimisant les processus et en permettant des analyses prédictives avancées. 
-    Cloud Temple, avec son offre LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
+    Cloud Temple, avec son produit LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
     d'intégrer ces capacités d'IA tout en garantissant la sécurité et la confidentialité de leurs données.
     """
     
@@ -873,7 +873,7 @@ def setup_and_run_llamaindex():
     # 6. Création du moteur de requête et interrogation de la base de connaissances
     print("6. Création du moteur de requête et interrogation...")
     query_engine = index.as_query_engine()
-    question = "Quelles sont les garanties de souveraineté de l'offre LLMaaS ?"
+    question = "Quelles sont les garanties de souveraineté de le produit LLMaaS ?"
     response = query_engine.query(question)
     
     print(f"\nQuestion: {question}")
