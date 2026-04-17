@@ -63,6 +63,7 @@ Lo storage utilizzato da questa istanza è replicato su 3 AZ e consente il riavv
 Il modello ***Distributed*** distribuisce un cluster di 3 istanze del motore MariaDB, con Galera in modalità "single primary" e MaxScale:
 
 - un endpoint MaxScale consente il routing verso le diverse istanze in base al tipo di richiesta (lettura o scrittura).
+![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
 - l'istanza di lettura-scrittura (RW) è accessibile tramite un endpoint specifico.
 - Le 2 istanze di sola lettura (RO) sono accessibili tramite un altro endpoint specifico.
 

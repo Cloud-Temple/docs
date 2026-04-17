@@ -23,6 +23,23 @@ Cloud Temple operates on a **shared responsibility model** between the provider 
 
 ---
 
+## VM Instances
+
+<div class="contract-grid">
+  <div class="contract-card">
+    <div class="contract-card-title">Shared Responsibility Model — VM Instances</div>
+    <div class="contract-card-desc">Responsibility allocation for the shared virtual machines (VM Instances) service.</div>
+    <a class="contract-read-link" href="contractual/vm-instances/raci">Read document →</a>
+  </div>
+  <div class="contract-card">
+    <div class="contract-card-title">SLA VM Instances</div>
+    <div class="contract-card-desc">Service Level Agreement for the VM Instances service (availability, exclusions, service credits).</div>
+    <a class="contract-read-link" href="contractual/vm-instances/sla">Read document →</a>
+  </div>
+</div>
+
+---
+
 ## Storage
 
 <div class="contract-grid">
@@ -88,5 +105,10 @@ Cloud Temple operates on a **shared responsibility model** between the provider 
     <div class="contract-card-title">RACI Network</div>
     <div class="contract-card-desc">Responsibility allocation for Cloud Temple network services.</div>
     <a class="contract-read-link" href="contractual/network/raci">Read document →</a>
+  </div>
+  <div class="contract-card">
+    <div class="contract-card-title">Shared Responsibility Model — VPC</div>
+    <div class="contract-card-desc">Responsibility allocation for the managed Virtual Private Cloud (VPC) service.</div>
+    <a class="contract-read-link" href="contractual/network/raci-vpc">Read document →</a>
   </div>
 </div>
