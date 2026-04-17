@@ -374,30 +374,12 @@ La description de l'endpoint inclut :
 
 ### Gestion des erreurs
 
-Toujours gérer les erreurs HTTP dans votre code :
+Toujours gérer les erreurs HTTP dans votre code. Portez une attention particulière aux codes suivants :
 
-```python
-import requests
-
-try:
-    response = requests.get(
-        'https://shiva.cloud-temple.com/api/compute/v1/virtual-machines',
-        headers={'Authorization': 'Bearer {token}'}
-    )
-    response.raise_for_status()  # Lève une exception pour les codes 4xx/5xx
-    data = response.json()
-except requests.exceptions.HTTPError as e:
-    if e.response.status_code == 429:
-        # Gérer le rate limiting
-        print("Trop de requêtes, attendre avant de réessayer")
-    elif e.response.status_code == 401:
-        # Token expiré ou invalide
-        print("Authentification requise")
-    else:
-        print(f"Erreur HTTP: {e}")
-except requests.exceptions.RequestException as e:
-    print(f"Erreur de connexion: {e}")
-```
+- **401 Unauthorized** : Votre token est expiré ou invalide
+- **403 Forbidden** : Permissions insuffisantes 
+- **429 Too Many Requests** : Limite de taux atteinte, attendre avant de réessayer
+- **500/503** : Erreur serveur temporaire, réessayer plus tard
 
 ### Optimisation des appels API
 
@@ -409,30 +391,8 @@ except requests.exceptions.RequestException as e:
 
 ### Retry avec backoff exponentiel
 
-Implémentez une stratégie de retry avec backoff exponentiel pour gérer les erreurs temporaires :
+Pour gérer les erreurs temporaires ou le rate limiting (HTTP 429), implémentez une stratégie de retry avec backoff exponentiel :
 
-```python
-import time
-import random
-
-def api_call_with_retry(url, headers, max_retries=3):
-    for attempt in range(max_retries):
-        try:
-            response = requests.get(url, headers=headers)
-            
-            if response.status_code == 429:
-                # Calculer le délai avec backoff exponentiel
-                wait_time = (2 ** attempt) + random.uniform(0, 1)
-                print(f"Rate limit atteint, attente de {wait_time:.2f}s")
-                time.sleep(wait_time)
-                continue
-            
-            response.raise_for_status()
-            return response.json()
-            
-        except requests.exceptions.RequestException as e:
-            if attempt == max_retries - 1:
-                raise
-            wait_time = (2 ** attempt) + random.uniform(0, 1)
-            time.sleep(wait_time)
-```
+- **Attente progressive** : 1s, 2s, 4s, 8s...
+- **Variation aléatoire** : Évite que tous les clients ne réessayent simultanément
+- **Limite de tentatives** : Maximum 3-5 tentatives
