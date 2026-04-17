@@ -5,10 +5,9 @@ sidebar_position: 2
 
 # Suivi des Changements
 
-### 17 Avril 2026 : Traduction Private Backbone et harmonisation terminologique
+### 17 Avril 2026 : Documents contractuels, traductions et harmonisation terminologique
 
-- **Private Backbone** : Traduction complète de la documentation du service Private Backbone vers l'anglais, l'allemand, l'espagnol et l'italien.
-- **Terminologie** : Harmonisation du vocabulaire dans la documentation française — remplacement systématique de "offre" et "service" par "produit" pour assurer la cohérence avec la terminologie commerciale Cloud Temple.
+- **Documents contractuels — Restructuration** : La page `contracts.md` est reorganisée avec la hiérarchie des documents contractuels en haut de page, incluant la liste de priorité des 6 documents (CGVU, Convention SecNumCloud, Convention spécifique ¹, PAS ², CPU, DPA) et un encart de précisions contractuelles.
 
 ### 16 Avril 2026 : Refonte de la navigation, documents contractuels et mises à jour
 
