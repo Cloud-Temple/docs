@@ -17,7 +17,7 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">RACI IaaS (VMware & Open IaaS)</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für VMware- und OpenStack-IaaS-Infrastrukturdienste.</div>
-    <a class="contract-read-link" href="contractual/iaas/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/iaas/raci">Dokument ansehen →</a>
   </div>
 </div>
 
@@ -29,7 +29,7 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">Verantwortungsmodell — VM-Instanzen</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für den gemeinsam genutzten VM-Instanzen-Dienst.</div>
-    <a class="contract-read-link" href="contractual/vm-instances/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/vm-instances/raci">Dokument ansehen →</a>
   </div>
 </div>
 
@@ -41,7 +41,7 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">RACI Object Storage (S3)</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für den S3-kompatiblen Objektspeicherdienst.</div>
-    <a class="contract-read-link" href="contractual/storage/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/storage/raci">Dokument ansehen →</a>
   </div>
 </div>
 
@@ -53,17 +53,17 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">RACI PaaS OpenShift</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für die verwaltete PaaS-OpenShift-Plattform.</div>
-    <a class="contract-read-link" href="contractual/paas/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/paas/raci">Dokument ansehen →</a>
   </div>
   <div class="contract-card">
     <div class="contract-card-title">RACI PaaS OCP Standard</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für das OpenShift Container Platform Standard-Angebot.</div>
-    <a class="contract-read-link" href="contractual/paas/raci-ocp-standard">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/paas/raci-ocp-standard">Dokument ansehen →</a>
   </div>
   <div class="contract-card">
     <div class="contract-card-title">MCO / MCS PaaS OpenShift</div>
     <div class="contract-card-desc">Richtlinie zur Aufrechterhaltung der Betriebs- und Sicherheitsbedingungen der PaaS-Plattform.</div>
-    <a class="contract-read-link" href="contractual/paas/mco-mcs">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/paas/mco-mcs">Dokument ansehen →</a>
   </div>
 </div>
 
@@ -75,7 +75,7 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">RACI Managed Kubernetes</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für den verwalteten Kubernetes-Dienst.</div>
-    <a class="contract-read-link" href="contractual/kubernetes/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/kubernetes/raci">Dokument ansehen →</a>
   </div>
 </div>
 
@@ -87,7 +87,7 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">RACI LLMaaS</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für den LLM-as-a-Service.</div>
-    <a class="contract-read-link" href="contractual/llmaas/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/llmaas/raci">Dokument ansehen →</a>
   </div>
 </div>
 
@@ -99,11 +99,11 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
   <div class="contract-card">
     <div class="contract-card-title">RACI Netzwerk</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für Cloud Temple-Netzwerkdienste.</div>
-    <a class="contract-read-link" href="contractual/network/raci">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/network/raci">Dokument ansehen →</a>
   </div>
   <div class="contract-card">
     <div class="contract-card-title">Verantwortungsmodell — VPC</div>
     <div class="contract-card-desc">Verantwortungsaufteilung für den verwalteten Virtual Private Cloud (VPC)-Dienst.</div>
-    <a class="contract-read-link" href="contractual/network/raci-vpc">Dokument ansehen →</a>
+    <a class="contract-read-link" href="./contractual/network/raci-vpc">Dokument ansehen →</a>
   </div>
 </div>

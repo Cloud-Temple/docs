@@ -178,7 +178,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'Tutoriels',
               key: 'vm_instances_tutorials',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/public_cloud/vm_instances/tutorials' },
               items: [
                 'public_cloud/vm_instances/tutorials/create_vm',
                 'public_cloud/vm_instances/tutorials/manage_disks',
@@ -199,7 +199,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'Tutoriels',
               key: 'iaas_opensource_tutorials',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/iaas_opensource/tutorials' },
               items: [
                 'iaas_opensource/tutorials/create_vm',
                 {
@@ -236,7 +236,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'Tutoriels',
               key: 'iaas_vmware_tutorials',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/iaas_vmware/tutorials' },
               items: [
                 {
                   type: 'category',
@@ -276,11 +276,32 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'Tutoriels',
               key: 'vpc_tutorials',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/network/vpc/tutorials' },
               items: [
                 'network/vpc/tutorials/vm_configuration',
               ],
             },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Private Network',
+          link: { type: 'doc', id: 'network/private_network/private_network' },
+          items: [
+            'network/private_network/private_network',
+            'network/private_network/concepts',
+            'network/private_network/quickstart',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Internet',
+          link: { type: 'doc', id: 'network/internet/internet' },
+          items: [
+            'network/internet/internet',
+            'network/internet/concepts',
+            'network/internet/advanced_concepts',
+            'network/internet/quickstart',
           ],
         },
         {
@@ -399,7 +420,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Tutoriels',
           key: 'marketplace_tutorials',
-          link: { type: 'generated-index' },
+          link: { type: 'generated-index', slug: '/marketplace/tutorials' },
           items: [
             'marketplace/tutorials/deploy_openiaas',
             'marketplace/tutorials/deploy_vmware',
@@ -429,7 +450,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'Tutoriels',
               key: 'paas_openshift_tutorials',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/paas_openshift/tutorials' },
               items: [
                 'paas_openshift/tutorials/deploy-through-helmfile',
                 'paas_openshift/tutorials/deploy-vm-with-kubevirt',

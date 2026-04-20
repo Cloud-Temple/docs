@@ -8,17 +8,17 @@ L'offerta **IaaS Cloud Temple**, alimentata da VMware, è progettata per soddisf
   <div class="card">
     <h3>Concetti</h3>
     <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="iaas_vmware/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <a href="./iaas_vmware/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="iaas_vmware/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <a href="./iaas_vmware/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="iaas_vmware/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <a href="./iaas_vmware/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>
 

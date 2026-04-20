@@ -35,16 +35,16 @@ Bevor Sie Ihre Reise auf unserer Plattform beginnen, empfehlen wir Ihnen, sich m
   <div class="card">
     <h3>Durchführung über Helmfile</h3>
     <p>Entdecken Sie, wie Sie Ihre Anwendungen mit Helmfile bereitstellen.</p>
-    <a href="tutorials/deploy-through-helmfile" class="card-link">Beginnen &rarr;</a>
+    <a href="./tutorials/deploy-through-helmfile" class="card-link">Beginnen &rarr;</a>
   </div>
   <div class="card">
     <h3>Erkundung der Virtualisierung mit Kubevirt</h3>
     <p>Entdecken Sie kubevirt und seine Funktionen im Kontext von Cloud Temple.</p>
-    <a href="tutorials/deploy-vm-with-kubevirt" class="card-link">Beginnen &rarr;</a>
+    <a href="./tutorials/deploy-vm-with-kubevirt" class="card-link">Beginnen &rarr;</a>
   </div>
   <div class="card">
     <h3>Nutzung von Kasten</h3>
     <p>Entdecken Sie Kasten und konfigurieren Sie die Datenbackups.</p>
-    <a href="tutorials/using-kasten" class="card-link">Beginnen &rarr;</a>
+    <a href="./tutorials/using-kasten" class="card-link">Beginnen &rarr;</a>
   </div>
 </div>

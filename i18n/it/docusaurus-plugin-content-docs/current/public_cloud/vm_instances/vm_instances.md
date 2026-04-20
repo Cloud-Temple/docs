@@ -12,16 +12,16 @@ Il servizio **VM Instances** di Cloud Temple consente il rapido deployment di ma
   <div class="card">
     <h3>Concetti</h3>
     <p>Scoprite l'architettura, le classi di servizio e le funzionalità del servizio VM Instances.</p>
-    <a href="/docs/public_cloud/vm_instances/concepts" class="card-link">Esplorare i concetti &rarr;</a>
+    <a href="./public_cloud/vm_instances/concepts" class="card-link">Esplorare i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Distribuite la vostra prima macchina virtuale in pochi minuti dal Marketplace di Cloud Temple.</p>
-    <a href="/docs/public_cloud/vm_instances/quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
+    <a href="./public_cloud/vm_instances/quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorial</h3>
     <p>Guide pratiche: creare una VM, gestire i dischi, acquisire snapshot.</p>
-    <a href="/docs/public_cloud/vm_instances/tutorials" class="card-link">Vedere i tutorial &rarr;</a>
+    <a href="./public_cloud/vm_instances/tutorials" class="card-link">Vedere i tutorial &rarr;</a>
   </div>
 </div>
