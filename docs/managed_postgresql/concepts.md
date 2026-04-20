@@ -110,8 +110,5 @@ Les instances ***StandAlone*** et ***Distributed*** sont disponibles avec des ta
 | **X-Large** | 4 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
 | **2X-Large**| 8 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
 | **3X-Large**| 8 | **32.00 Gi** | **500** | **16-40 GiB** | **64-128 GiB** |
-| **4X-Large**| 16 | **32.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **5X-Large**| 16 | **64.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **6X-Large**| 32 | **128.00 Gi**| **500** | **64-160 GiB** | **256-512 GiB** |
 
-> **Remarque** : Le stockage est provisionné séparément et peut être augmenté à chaud (de 2Gi à 512Gi) (mais pas réduit, sauf en recréant une nouvelle instance.).
+> **Remarque** : Le stockage est provisionné séparément et peut être augmenté à chaud (de 2Gi à 128Gi) (mais pas réduit, sauf en recréant une nouvelle instance.).
