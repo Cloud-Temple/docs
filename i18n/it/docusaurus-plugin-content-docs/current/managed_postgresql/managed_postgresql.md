@@ -8,12 +8,12 @@ title: Panoramica
   <div class="card">
     <h3>Concetti</h3>
     <p>Scoprite le basi e i principi essenziali per padroneggiare la nostra infrastruttura.</p>
-    <a href="managed_postgresql/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <a href="./managed_postgresql/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Guida introduttiva</h3>
     <p>Iniziate rapidamente seguendo istruzioni chiare e semplici.</p>
-    <a href="managed_postgresql/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <a href="./managed_postgresql/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
   </div>
 </div>
 
