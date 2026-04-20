@@ -2,6 +2,8 @@
 title: Vue d'ensemble
 ---
 
+# Bare metal
+
 Le produit __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure.
 
 Conçue autour des technologies de pointe Cisco UCS pour le calcul et IBM Spectrum Virtualize/FlashSystem pour le stockage, cette solution garantit des performances optimales et une fiabilité exemplaire.
@@ -14,17 +16,17 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
   <div class="card">
     <h3>Concepts</h3>
     <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
-    <a href="iaas_bare-metal/concepts" class="card-link">Explorer les concepts &rarr;</a>
+    <a href="./iaas_bare-metal/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="iaas_bare-metal/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./iaas_bare-metal/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="iaas_bare-metal/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="./iaas_bare-metal/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
 

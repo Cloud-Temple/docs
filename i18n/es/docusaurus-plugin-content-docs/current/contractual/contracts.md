@@ -43,13 +43,13 @@ Encuentre aquí todos los documentos contractuales de Cloud Temple: condiciones 
 
 <div class="book-grid">
   <ContractCard
-    href="/contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
+    href="./contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
     title="Condiciones Generales de Venta y Uso (CGVU)"
     desc="Condiciones generales que rigen todos los servicios de Cloud Temple."
     cta="Consultar el documento →"
   />
   <ContractCard
-    href="/contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
+    href="./contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
     title="Acuerdo de Tratamiento de Datos (DPA)"
     desc="Acuerdo que regula el tratamiento de datos personales de conformidad con el RGPD."
     cta="Consultar el documento →"
@@ -64,7 +64,7 @@ Los acuerdos de servicio definen el marco contractual para la prestación de ser
 
 <div class="book-grid">
   <ContractCard
-    href="/contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf"
+    href="./contractual/files/CT.AM.JUR.ANX%20-Annexe_Convention%20de%20Services_SNC_v2.pdf"
     title="Convenio de Servicio SecNumCloud"
     desc="Marco contractual para la prestación de servicios calificados SecNumCloud: alcance, compromisos operativos, responsabilidades y condiciones de servicio."
     cta="Consultar el documento →"
@@ -78,7 +78,7 @@ Los acuerdos de servicio definen el marco contractual para la prestación de ser
 Los SLA definen los compromisos de disponibilidad, los métodos de medición, las exclusiones y los créditos de servicio aplicables en caso de incumplimiento.
 
 <div class="book-grid">
-  <a class="book-card" href="contractual/vm-instances/sla">
+  <a class="book-card" href="./contractual/vm-instances/sla">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -87,7 +87,7 @@ Los SLA definen los compromisos de disponibilidad, los métodos de medición, la
       <div class="book-card-cta">Consultar el documento →</div>
     </div>
   </a>
-  <a class="book-card" href="contractual/network/sla-vpc">
+  <a class="book-card" href="./contractual/network/sla-vpc">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>

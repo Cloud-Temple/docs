@@ -12,16 +12,16 @@ Durch Zusammenarbeit mit einem Netzwerk an anerkannten Technologiepartnern gewä
   <div class="card">
     <h3>Konzepte</h3>
     <p>Entdecken Sie die Grundlagen und zentralen Prinzipien, um die Marketplace zu verstehen und zu nutzen.</p>
-    <a href="marketplace/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <a href="./marketplace/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Starten Sie schnell mit der Marketplace, indem Sie klare und einfache Anleitungen befolgen.</p>
-    <a href="marketplace/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="./marketplace/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt, wie Sie die Marketplace mit detaillierten Anleitungen nutzen.</p>
-    <a href="marketplace/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+    <a href="./marketplace/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>

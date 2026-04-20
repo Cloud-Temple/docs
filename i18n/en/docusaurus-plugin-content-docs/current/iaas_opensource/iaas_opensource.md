@@ -10,17 +10,17 @@ This offering ensures total control over your critical environments, while guara
   <div class="card">
     <h3>Concepts</h3>
     <p>Discover the basic principles essential to understanding and mastering our infrastructure.</p>
-    <a href="iaas_opensource/concepts" class="card-link">Explore concepts &rarr;</a>
+    <a href="./iaas_opensource/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="iaas_opensource/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="./iaas_opensource/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step by step how to configure and use our services with detailed guides.</p>
-    <a href="iaas_opensource/tutorials" class="card-link">Discover tutorials &rarr;</a>
+    <a href="./iaas_opensource/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
 </div>
 

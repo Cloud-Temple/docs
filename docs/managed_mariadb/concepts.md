@@ -100,18 +100,16 @@ La fondation MariaDB publie des versions avec un support à long terme (LTS), ce
 
 Les instances ***StandAlone*** et ***Distributed*** sont disponibles avec des tailles prédéfinies:
 
-| Taille | vCPU/nœud | RAM/nœud | Max Conn | Working Set Max | DB Totale Max |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| **Micro** | 1 | **2.00 Gi** | **40** | **1-2 GiB** | **2-8 GiB** |
-| **Small** | 1 | **4.00 Gi** | **80** | **2-5 GiB** | **8-16 GiB** |
-| **Medium** | 2 | **4.00 Gi** | **80** | **2-5 GiB** | **8-16 GiB** |
-| **Med-Large**| 2 | **8.00 Gi** | **150** | **4-10 GiB** | **16-32 GiB** |
-| **Large** | 4 | **8.00 Gi** | **150** | **4-10 GiB** | **16-32 GiB** |
-| **X-Large** | 4 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
-| **2X-Large**| 8 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
-| **3X-Large**| 8 | **32.00 Gi** | **500** | **16-40 GiB** | **64-128 GiB** |
-| **4X-Large**| 16 | **32.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **5X-Large**| 16 | **64.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **6X-Large**| 32 | **128.00 Gi**| **500** | **64-160 GiB** | **256-512 GiB** |
+| Taille | vCPU | Mémoire | innodb_buffer_pool_size | innodb_buffer_pool_instances | max_allowed_packet | table_open_cache | maxconn |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **XS** | 1000m | 4096Mi | 2458M | 2 | 256M | 800 | 80 |
+| **S** | 1000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
+| **M** | 2000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
+| **L** | 2000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
+| **XL** | 4000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
+| **XXL** | 4000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
+| **3XL** | 8000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
+| **4XL** | 8000m | 65536Mi | 39320M | 16 | 1G | 10000 | 500 |
 
-> **Remarque** : Le stockage est provisionné séparément et peut être augmenté à chaud (de 2Gi à 512Gi) (mais pas réduit, sauf en recréant une nouvelle instance.).
+
+> **Remarque** : Le stockage est provisionné séparément et peut être augmenté à chaud (de 2Gi à 128Gi) (mais pas réduit, sauf en recréant une nouvelle instance.).
