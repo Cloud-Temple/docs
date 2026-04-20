@@ -166,67 +166,67 @@ The following permissions are configurable for each user and for each tenant in 
 
 - __These are permissions, not roles.__ As such, both READ and WRITE permissions are required to modify a configuration.
 
-Last updated: 16/07/2025
+Last updated: 20/04/2026
 
-| Permission name                               | Permission description                                                                                                         |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| activity_read                                 | View logs and activity records                                                                                                 |
-| activity_write                                | Manage logs and activity records                                                                                               |
-| backup_iaas_opensource_read                   | View backup resources – OpenIaaS offering                                                                                      |
-| backup_iaas_opensource_write                  | Modify backup resources – OpenIaaS offering                                                                                    |
-| backup_iaas_spp_read                          | View backup resources – VMware offering                                                                                        |
-| backup_iaas_spp_write                         | Modify backup resources – VMware offering                                                                                      |
-| bastion_read                                  | View bastion resources                                                                                                         |
-| bastion_write                                 | Manage bastion resources (appliances, sessions, etc.)                                                                          |
-| bastion_console_access                        | Grant access to the console (SSH/RDP) of a resource protected by a bastion appliance                                            |
-| compute_iaas_opensource_console_access        | Open the console of a virtual machine – OpenIaaS offering                                                                      |
-| compute_iaas_opensource_infrastructure_read   | View advanced data of Xen Orchestra resources – OpenIaaS offering                                                              |
-| compute_iaas_opensource_infrastructure_write  | Advanced management of Xen Orchestra resources – OpenIaaS offering                                                             |
-| compute_iaas_opensource_read                  | View virtual machine resources – OpenIaaS offering                                                                             |
-| compute_iaas_opensource_management            | Manage virtual machine resources – OpenIaaS offering                                                                           |
-| compute_iaas_opensource_virtual_machine_power | Manage power state of a virtual machine – OpenIaaS offering                                                                    |
-| compute_iaas_opensource_replication_recover   | Manage replication – OpenIaaS offering                                                                                         |
-| compute_iaas_vmware_console_access            | Open the console of a virtual machine – VMware offering                                                                        |
-| compute_iaas_vmware_infrastructure_read       | View advanced data of VMware resources (affinity/anti-affinity rules, DRS configuration, etc.) – VMware offering              |
-| compute_iaas_vmware_infrastructure_write      | Advanced management of VMware resources – VMware offering                                                                      |
-| compute_iaas_vmware_read                      | View virtual machine resources – VMware offering                                                                               |
-| compute_iaas_vmware_management                | Manage virtual machine resources – VMware offering (includes virtual machine encryption)                                        |
-| compute_iaas_vmware_virtual_machine_power     | Manage power state of a virtual machine – VMware offering                                                                      |
-| baremetal_management                          | Manage bare metal resources – Bare Metal offering                                                                              |
-| baremetal_read                                | View bare metal resources – Bare Metal offering                                                                                |
-| baremetal_console_access                      | Open console of a bare metal server – Bare Metal offering                                                                      |
-| console_public_access_read                    | View IP addresses authorized to access the console                                                                             |
-| console_public_access_write                   | Add IP addresses authorized to access the console                                                                              |
-| documentation_read                            | View Confluence documentation resources                                                                                        |
-| housing_read                                  | View colocation resources                                                                                                      |
-| iam_offline_access                            | Create and delete Personal Access Tokens (PATs)                                                                                |
-| iam_read                                      | View user permissions                                                                                                          |
-| iam_write                                     | Manage user permissions                                                                                                        |
-| intervention_read                             | View planned changes and production deployments on the platform                                                                |
-| inventory_read                                | View inventory resources                                                                                                       |
-| inventory_write                               | Manage inventory resources                                                                                                     |
-| monitoring_read                               | View monitoring data                                                                                                           |
-| monitoring_write                              | Manage monitoring                                                                                                              |
-| metric_read                                   | View health metrics for virtual machines and hosts                                                                             |
-| network_read                                  | View network resources                                                                                                         |
-| network_write                                 | Manage network resources                                                                                                       |
-| order_read                                    | View infrastructure orders                                                                                                     |
-| order_write                                   | Create infrastructure orders                                                                                                   |
-| object-storage_iam_management                 | Manage storage accounts on the S3 product                                                                                      |
-| object-storage_read                           | View buckets and bucket configurations                                                                                         |
-| object-storage_write                          | Edit buckets and bucket configurations                                                                                         |
-| openshift_management                          | Connect to OpenShift platforms (scoped to tenant)                                                                              |
-| support_management                            | View all support tickets for the tenant                                                                                        |
-| support_read                                  | View own support tickets for the tenant                                                                                        |
-| support_write                                 | Create a support ticket for the tenant                                                                                         |
-| tag_read                                      | View tags, excluding RTMS tags                                                                                                 |
-| tag_write                                     | Manage tags, excluding RTMS tags                                                                                               |
-| ticket_comment_read                           | View comments                                                                                                                  |
-| ticket_comment_write                          | Manage comments                                                                                                                |
-| ticket_read                                   | View tickets                                                                                                                   |
-| ticket_write                                  | Manage tickets                                                                                                                 |
-| incident_management                           | Manage incidents                                                                                                               |
-| incident_read                                 | View incidents                                                                                                                 |
+| Permission name                               | Permission description                                                                                                        |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| activity_read                                 | View logs and activity records                                                                                                |
+| activity_write                                | Manage logs and activity records                                                                                              |
+| backup_iaas_opensource_read                   | OpenIaaS offering – View backup resources                                                                                     |
+| backup_iaas_opensource_write                  | OpenIaaS offering – Modify backup resources                                                                                   |
+| backup_iaas_spp_read                          | VMware offering – View backup resources                                                                                       |
+| backup_iaas_spp_write                         | VMware offering – Modify backup resources                                                                                     |
+| bastion_read                                  | View bastion resources                                                                                                        |
+| bastion_write                                 | Manage bastion resources (appliances, sessions, etc.)                                                                         |
+| bastion_console_access                        | Grant access to the console (SSH/RDP) of a resource protected by a bastion appliance                                          |
+| compute_iaas_opensource_console_access        | OpenIaaS offering – Open the console of a virtual machine                                                                     |
+| compute_iaas_opensource_infrastructure_read   | OpenIaaS offering – View advanced data of Xen Orchestra resources                                                             |
+| compute_iaas_opensource_infrastructure_write  | OpenIaaS offering – Advanced management of Xen Orchestra resources                                                            |
+| compute_iaas_opensource_read                  | OpenIaaS offering – View virtual machine resources                                                                            |
+| compute_iaas_opensource_management            | OpenIaaS offering – Manage virtual machine resources                                                                          |
+| compute_iaas_opensource_virtual_machine_power | OpenIaaS offering – Manage the power state of a virtual machine                                                               |
+| compute_iaas_opensource_replication_recover   | OpenIaaS offering – Manage replication                                                                                        |
+| compute_iaas_vmware_console_access            | VMware offering – Open the console of a virtual machine                                                                       |
+| compute_iaas_vmware_infrastructure_read       | VMware offering – View advanced data of VMware resources (affinity/anti-affinity rules, DRS configuration, etc.)              |
+| compute_iaas_vmware_infrastructure_write      | VMware offering – Advanced management of VMware resources                                                                     |
+| compute_iaas_vmware_read                      | VMware offering – View virtual machine resources                                                                              |
+| compute_iaas_vmware_management                | VMware offering – Manage virtual machine resources (includes virtual machine encryption)                                      |
+| compute_iaas_vmware_virtual_machine_power     | VMware offering – Manage the power state of a virtual machine                                                                 |
+| baremetal_management                          | Bare Metal offering – Manage bare metal resources                                                                             |
+| baremetal_read                                | Bare Metal offering – View bare metal resources                                                                               |
+| baremetal_console_access                      | Bare Metal offering – Open the console of a bare metal server                                                                 |
+| console_public_access_read                    | View IP addresses authorized to access the console                                                                            |
+| console_public_access_write                   | Add IP addresses authorized to access the console                                                                             |
+| documentation_read                            | View Confluence documentation resources                                                                                       |
+| housing_read                                  | View colocation resources                                                                                                     |
+| iam_offline_access                            | Create and delete Personal Access Tokens (PATs)                                                                               |
+| iam_read                                      | View user permissions                                                                                                         |
+| iam_write                                     | Manage user permissions                                                                                                       |
+| intervention_read                             | View planned changes and production deployments on the platform                                                               |
+| inventory_read                                | View inventory resources                                                                                                      |
+| inventory_write                               | Manage inventory resources                                                                                                    |
+| monitoring_read                               | View monitoring data                                                                                                          |
+| monitoring_write                              | Manage monitoring                                                                                                             |
+| metric_read                                   | View health metrics for virtual machines and hosts                                                                            |
+| network_read                                  | View network resources                                                                                                        |
+| network_write                                 | Manage network resources                                                                                                      |
+| order_read                                    | View infrastructure orders                                                                                                    |
+| order_write                                   | Create infrastructure orders                                                                                                  |
+| object-storage_iam_management                 | Manage storage accounts on the S3 product                                                                                     |
+| object-storage_read                           | View buckets and bucket configurations                                                                                        |
+| object-storage_write                          | Edit buckets and bucket configurations                                                                                        |
+| openshift_management                          | Connect to OpenShift platforms (scoped to tenant)                                                                             |
+| support_management                            | View all support tickets for the tenant                                                                                       |
+| support_read                                  | View own support tickets for the tenant                                                                                       |
+| support_write                                 | Create a support ticket for the tenant                                                                                        |
+| tag_read                                      | View tags, excluding RTMS tags                                                                                                |
+| tag_write                                     | Manage tags, excluding RTMS tags                                                                                              |
+| ticket_comment_read                           | View comments                                                                                                                 |
+| ticket_comment_write                          | Manage comments                                                                                                               |
+| ticket_read                                   | View tickets                                                                                                                  |
+| ticket_write                                  | Manage tickets                                                                                                                |
+| incident_management                           | Manage incidents                                                                                                              |
+| incident_read                                 | View incidents                                                                                                                |
 
 ## Organizations
 

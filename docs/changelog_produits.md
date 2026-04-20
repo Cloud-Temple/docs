@@ -8,6 +8,12 @@ sidebar_position: 999
 > Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
 > Les corrections de bugs sont volontairement exclues.
 
+## v4.38.0 — 2026-04-20
+
+### [Identité & Accès (IAM)](/console/iam/iam)
+- Mise à jour de la liste des permissions : ajout des permissions `billing_read`, `vpc_read`, `vpc_write`, `public_cloud_vm_instances_management`, `public_cloud_vm_instances_read` et `public_cloud_vm_instances_console_access`
+- Mise à jour des descriptions des permissions pour faire apparaître le nom de l'offre en début de description
+
 ## v4.37.0 — 2026-04-02
 
 ### [Gestionnaire des coûts](/console/billing/concepts)
