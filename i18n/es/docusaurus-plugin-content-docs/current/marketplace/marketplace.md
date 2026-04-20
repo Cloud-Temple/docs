@@ -12,16 +12,16 @@ Al colaborar con una red de socios tecnológicos reconocidos, Cloud Temple garan
   <div class="card">
     <h3>Conceptos</h3>
     <p>Descubra las bases y principios esenciales para comprender y utilizar la Marketplace.</p>
-    <a href="marketplace/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+    <a href="./marketplace/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Comience rápidamente con la Marketplace siguiendo instrucciones claras y sencillas.</p>
-    <a href="marketplace/quickstart" class="card-link">Iniciar el inicio rápido &rarr;</a>
+    <a href="./marketplace/quickstart" class="card-link">Iniciar el inicio rápido &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a utilizar la Marketplace con guías detalladas.</p>
-    <a href="marketplace/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+    <a href="./marketplace/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>

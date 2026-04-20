@@ -8,17 +8,17 @@ title: Descripción general de Managed Kubernetes
   <div class="card">
     <h3>Conceptos</h3>
     <p>Descubra las bases y los principios esenciales para dominar nuestra infraestructura.</p>
-    <a href="managed_kubernetes/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+    <a href="./managed_kubernetes/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Guía de inicio rápido</h3>
     <p>Comience rápidamente siguiendo instrucciones claras y sencillas.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+    <a href="./managed_kubernetes/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>
 

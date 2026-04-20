@@ -12,16 +12,16 @@ Collaborando con una rete di partner tecnologici riconosciuti, Cloud Temple gara
   <div class="card">
     <h3>Concetti</h3>
     <p>Scopri le basi e i principi fondamentali per comprendere e utilizzare la Marketplace.</p>
-    <a href="marketplace/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <a href="./marketplace/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Avvio rapido</h3>
     <p>Inizia rapidamente con la Marketplace seguendo istruzioni chiare e semplici.</p>
-    <a href="marketplace/quickstart" class="card-link">Avvia l'Avvio rapido &rarr;</a>
+    <a href="./marketplace/quickstart" class="card-link">Avvia l'Avvio rapido &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorial</h3>
     <p>Impara passo dopo passo come utilizzare la Marketplace con guide dettagliate.</p>
-    <a href="marketplace/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <a href="./marketplace/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

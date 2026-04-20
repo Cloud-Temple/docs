@@ -13,17 +13,17 @@ Cloud Temple's **Private Backbone** is our legacy connectivity offering, built f
   <div class="card">
     <h3>Concepts</h3>
     <p>VPLS architecture, regional private networks, Internet access, public IPv4/IPv6 addressing.</p>
-    <a href="./concepts" class="card-link">Explore concepts →</a>
+    <a href="./private_backbone/concepts" class="card-link">Explore concepts →</a>
   </div>
   <div class="card">
     <h3>Getting Started</h3>
     <p>Create your first private network and configure your Internet access in a few steps.</p>
-    <a href="./quickstart" class="card-link">Get started →</a>
+    <a href="./private_backbone/quickstart" class="card-link">Get started →</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
     <p>Configure FortiGate or pfSense with BGP to manage your external connectivity.</p>
-    <a href="./tutorials" class="card-link">View tutorials →</a>
+    <a href="./private_backbone/tutorials" class="card-link">View tutorials →</a>
   </div>
 </div>
 
