@@ -9,12 +9,12 @@ title: Übersicht
   <div class="card">
     <h3>Konzepte</h3>
     <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien zur Beherrschung unserer Infrastruktur.</p>
-    <a href="managed_mariadb/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <a href="./managed_mariadb/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Erste Schritte</h3>
     <p>Starten Sie schnell, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="managed_mariadb/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="./managed_mariadb/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
 </div>
 

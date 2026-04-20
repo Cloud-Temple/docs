@@ -14,17 +14,17 @@ Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple-Konsole, die 
   <div class="card">
     <h3>Konzepte</h3>
     <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
-    <a href="iaas_bare-metal/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <a href="./iaas_bare-metal/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Schnellstart</h3>
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="iaas_bare-metal/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <a href="./iaas_bare-metal/quickstart" class="card-link">Schnellstart starten &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen können.</p>
-    <a href="iaas_bare-metal/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+    <a href="./iaas_bare-metal/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
 

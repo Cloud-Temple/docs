@@ -8,12 +8,12 @@ title: Overview
   <div class="card">
     <h3>Concepts</h3>
     <p>Discover the foundations and essential principles to master our infrastructure.</p>
-    <a href="managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
+    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Getting Started</h3>
     <p>Get started quickly by following clear and simple instructions.</p>
-    <a href="managed_postgresql/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="./managed_postgresql/quickstart" class="card-link">Launch Quickstart &rarr;</a>
   </div>
 </div>
 

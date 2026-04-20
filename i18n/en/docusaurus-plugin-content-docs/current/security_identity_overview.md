@@ -11,11 +11,11 @@ Manage identities, access rights, and the security of your Cloud Temple infrastr
   <div class="card">
     <h3>IAM</h3>
     <p>Identity & Access Management: manage users, roles, and permissions. SSO integration (Azure AD, Okta, ADFS, JumpCloud…).</p>
-    <a href="/docs/console/iam" class="card-link">Discover IAM →</a>
+    <a href="./console/iam" class="card-link">Discover IAM →</a>
   </div>
   <div class="card">
     <h3>Security</h3>
     <p>Security recommendations, alerts, and compliance policies to strengthen the security posture of your tenant.</p>
-    <a href="/docs/console/security/security_recommendations" class="card-link">Discover Security →</a>
+    <a href="./console/security/security_recommendations" class="card-link">Discover Security →</a>
   </div>
 </div>

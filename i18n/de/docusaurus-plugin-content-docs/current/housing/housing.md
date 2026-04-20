@@ -12,16 +12,16 @@ Mit flexiblen Optionen und einem hohen Maß an Sicherheit garantiert Cloud Templ
   <div class="card">
     <h3>Konzepte</h3>
     <p>Entdecken Sie die grundlegenden Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
-    <a href="housing/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <a href="./housing/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Schnellstart</h3>
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="housing/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <a href="./housing/quickstart" class="card-link">Schnellstart starten &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen können.</p>
-    <a href="housing/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+    <a href="./housing/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
