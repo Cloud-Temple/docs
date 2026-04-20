@@ -8,17 +8,17 @@ title: Managed Core Kubernetes Overview
   <div class="card">
     <h3>Concepts</h3>
     <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
-    <a href="managed_kubernetes/concepts" class="card-link">Explore the concepts &rarr;</a>
+    <a href="./managed_kubernetes/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Getting Started</h3>
     <p>Get up and running quickly by following clear and simple instructions.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step by step how to configure and use our services with detailed guides.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Discover the tutorials &rarr;</a>
+    <a href="./managed_kubernetes/tutorials" class="card-link">Discover the tutorials &rarr;</a>
   </div>
 </div>
 

@@ -12,29 +12,29 @@ Dank der **Konsole** können Sie Ihre Cloud-Infrastrukturen mit großer Einfachh
   <div class="card">
     <h3>Das IAM-Modul</h3>
     <p>Entdecken Sie das IAM-Modul (Identity and Access Management) der Cloud Temple-Konsole.</p>
-    <a href="console/iam" class="card-link">Hier entlang &rarr;</a>
+    <a href="./console/iam" class="card-link">Hier entlang &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Support</h3>
     <p>Anzeige geplanter Aktionen und Verwaltung von Incidenten</p>
-    <a href="console/status" class="card-link">Hier entlang &rarr;</a>
+    <a href="./console/status" class="card-link">Hier entlang &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Infrastruktur bereitstellen</h3>
     <p>Neue Ressourcen bestellen und den Bereitstellungsprozess verfolgen.</p>
-    <a href="console/orders" class="card-link">Menüs entdecken &rarr;</a>
+    <a href="./console/orders" class="card-link">Menüs entdecken &rarr;</a>
   </div>
 
   <div class="card">
     <h3>Metriken</h3>
     <p>Neue Ressourcen bestellen und den Bereitstellungsprozess verfolgen.</p>
-    <a href="console/metrics/concepts" class="card-link">Menüs entdecken &rarr;</a>
+    <a href="./console/metrics/concepts" class="card-link">Menüs entdecken &rarr;</a>
   </div>
   <div class="card">
     <h3>Kostenmanager</h3>
     <p>Verfolgen und analysieren Sie Ihren Cloud-Ressourcenverbrauch nach Produkt und Dienst.</p>
-    <a href="console/billing/concepts" class="card-link">Auf das Modul zugreifen &rarr;</a>
+    <a href="./console/billing/concepts" class="card-link">Auf das Modul zugreifen &rarr;</a>
   </div>
 </div>

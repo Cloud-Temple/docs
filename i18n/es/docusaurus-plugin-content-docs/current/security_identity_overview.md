@@ -11,11 +11,11 @@ Gestione identidades, derechos de acceso y la seguridad de su infraestructura Cl
   <div class="card">
     <h3>IAM</h3>
     <p>Identity & Access Management: gestione usuarios, roles y permisos. Integración SSO (Azure AD, Okta, ADFS, JumpCloud…).</p>
-    <a href="/docs/console/iam" class="card-link">Descubrir IAM →</a>
+    <a href="./console/iam" class="card-link">Descubrir IAM →</a>
   </div>
   <div class="card">
     <h3>Seguridad</h3>
     <p>Recomendaciones de seguridad, alertas y políticas de cumplimiento para reforzar la postura de seguridad de su tenant.</p>
-    <a href="/docs/console/security/security_recommendations" class="card-link">Descubrir Seguridad →</a>
+    <a href="./console/security/security_recommendations" class="card-link">Descubrir Seguridad →</a>
   </div>
 </div>

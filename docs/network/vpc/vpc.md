@@ -1,5 +1,5 @@
 ---
-title: VPC
+title: Vue d'ensemble
 slug: /network/vpc
 ---
 

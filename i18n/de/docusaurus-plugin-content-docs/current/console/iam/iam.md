@@ -11,16 +11,16 @@ Es ermöglicht die Verwaltung lokaler Konten und unterstützt gleichzeitig eine 
   <div class="card">
     <h3>Konzepten</h3>
     <p>Erfahren Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu meistern.</p>
-    <a href="iam/concepts" class="card-link">Entdecken Sie die Konzepte &rarr;</a>
+    <a href="./iam/concepts" class="card-link">Entdecken Sie die Konzepte &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Beginnen Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="iam/quickstart" class="card-link">Starten Sie den Quickstart &rarr;</a>
+    <a href="./iam/quickstart" class="card-link">Starten Sie den Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
     <p>Erlernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
-    <a href="iam/tutorials/sso_aad" class="card-link">Entdecken Sie die Tutorials &rarr;</a>
+    <a href="./iam/tutorials/sso_aad" class="card-link">Entdecken Sie die Tutorials &rarr;</a>
   </div>
 </div>
