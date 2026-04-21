@@ -3,9 +3,9 @@
 Welcome to the official documentation repository for Cloud Temple.
 Here, you’ll find guides and resources to help you better understand and utilize Cloud Temple’s services and solutions.
 
-A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com). This repository and the website are synchronized to ensure up-to-date content.
+A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
 
-A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/).
+A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/home).
 
 This project is continuously updated with new guides and improvements.
 
