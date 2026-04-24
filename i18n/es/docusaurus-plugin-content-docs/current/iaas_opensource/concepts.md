@@ -128,47 +128,184 @@ El VLAN Trunk permite pasar todos tus VLANs a través de una sola tarjeta. La co
 
 ## Copia de seguridad de máquinas virtuales
 
-Cloud Temple ofrece una __arquitectura nativa y no interrumpible de copia de seguridad distribuida__, un requisito obligatorio para la certificación francesa SecNumCloud.
+La oferta OpenIaaS incluye una __arquitectura nativa y no desactivable de copia de seguridad distribuida__, requisito obligatorio en el marco de la cualificación francesa SecNumCloud.
 
-Las copias de seguridad se almacenan en la solución [Almacenamiento Objeto certificado SecNumCloud](../storage/oss), garantizando una protección óptima en caso de fallo grave en el centro de datos de producción. Este enfoque permite restaurar sus datos en un centro de datos secundario, incluso en caso de incidente crítico como un incendio.
+Las copias de seguridad se almacenan en el [Almacenamiento Objeto cualificado SecNumCloud](../storage/oss), garantizando una protección óptima en caso de fallo grave en el centro de datos de producción. Este enfoque permite restaurar los datos en un centro de datos secundario, incluso en incidentes críticos como incendios.
 
-Esta solución completa incluye:
+### Servicios de protección de datos disponibles
 
-- Copia de seguridad en caliente fuera del sitio de todos los discos
-- Flexibilidad en la restauración, permitiendo elegir el punto de recuperación y la ubicación
-
-La infraestructura de copia de seguridad se basa en una tecnología de código abierto con arquitectura sin agente, que combina facilidad de uso y automatización de procesos. Esta solución optimiza el uso del espacio de almacenamiento manteniendo altas prestaciones.
+| Servicio | Descripción |
+|---|---|
+| **Copia de seguridad incremental (Agentless)** | Copia de seguridad sin agente mediante los mecanismos nativos del hipervisor, hacia un repositorio S3 remoto. |
+| **Copia de seguridad de metadatos** | Protección de las configuraciones del pool de virtualización y del orquestador de copias de seguridad — indispensable para la recuperación ante desastres. |
+| **Restauración granular** | Restauración a nivel de VM completa, disco virtual individual o archivo unitario. |
+| **Descarga S3 Multi-AZ** | Externalización hacia el almacenamiento de objetos S3 de Cloud Temple replicado entre zonas de disponibilidad. |
 
 Las velocidades de copia de seguridad y restauración dependen de la tasa de cambio en los entornos. La política de copia de seguridad es completamente configurable desde [la Consola Cloud Temple](../console/console.md) para cada máquina virtual.
 
-__Nota importante:__
+| Referencia | Unidad | SKU |
+|---|---|---|
+| BACKUP - Acceso al servicio | 1 VM | csp:(region):openiaas:backup:vm:v1 |
 
-*Algunas máquinas virtuales no son compatibles con esta tecnología de copia de seguridad*, que utiliza los mecanismos de instantáneas del hipervisor. Esto suele ocurrir con máquinas cuyas cargas de escritura en disco son constantes. En estos casos, el hipervisor no puede finalizar la instantánea, lo que requiere congelar la máquina virtual para completar la operación. Este congelamiento puede durar varias horas y no es interrumpible.
+---
 
-La solución recomendada consiste en excluir el disco afectado por escrituras permanentes y realizar la copia de seguridad de los datos mediante un método alternativo.
+### Arquitectura técnica de la copia de seguridad
 
-| Referencia                                    | Unidad | SKU                            |
-| ---------------------------------------------| ----- | ------------------------------ |
-| COPIA DE SEGURIDAD - Acceso al servicio       | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
+#### Visión general
+
+La arquitectura se basa en una separación estricta entre el **plano de control** (orquestador de copias de seguridad) y el **plano de datos** (almacenamiento S3 remoto): el orquestador está alojado en el clúster de gestión de Cloud Temple (separado e inaccesible para el cliente), mientras que los datos de copia de seguridad se almacenan en un repositorio S3 remoto, físicamente separado de la infraestructura de producción. Los datos se transmiten cifrados entre ambos componentes mediante HTTPS/TLS 1.3.
+
+#### Orquestador de copias de seguridad
+
+El orquestador se despliega en el clúster de gestión de Cloud Temple, **inaccesible directamente para el cliente**. Coordina todos los trabajos de copia de seguridad y gestiona el cifrado.
+
+- **Políticas estándar**: se aplican políticas de copia de seguridad por defecto a cada tenant.
+- **Políticas personalizadas**: el cliente puede solicitar frecuencias o retenciones específicas mediante un ticket de soporte en la consola de Cloud Temple.
+
+#### Almacenamiento S3 remoto
+
+Las copias de seguridad se envían al [Almacenamiento Objeto cualificado SecNumCloud](../storage/oss) de Cloud Temple, con replicación Multi-AZ para garantizar la resiliencia ante la pérdida de un sitio físico completo.
+
+---
+
+### Mecanismo de copia de seguridad: Backup Incremental
+
+El servicio utiliza un modo de copia de seguridad **incremental**. Este modo apunta a un **Backup Repository** (el almacenamiento S3 remoto) y nunca exporta una copia de seguridad completa después de la primera: solo se transfieren los **bloques de datos modificados** en cada ciclo.
+
+:::info[Copia de seguridad incremental vs Replicación]
+La **copia de seguridad incremental** apunta a un repositorio S3 remoto y está optimizada para la **protección a largo plazo**. No debe confundirse con la **replicación** (Disaster Recovery en caliente) que apunta a un Storage Repository local — este modo está cubierto por la funcionalidad de [replicación de máquinas virtuales](#replicación-de-máquinas-virtuales).
+:::
+
+#### Ciclo de vida técnico de una copia de seguridad incremental
+
+**1. Creación del snapshot local (Fuente)**
+
+Al inicio del trabajo, el orquestador solicita al hipervisor que cree un snapshot de la VM. Este snapshot sirve como punto de comparación para calcular el delta respecto al snapshot de referencia anterior.
+
+**2. Exportación diferencial mediante Changed Block Tracking (CBT)**
+
+El orquestador compara el nuevo snapshot con el snapshot de referencia anterior usando metadatos CBT. Solo se extraen los bloques de datos que han cambiado desde la última copia de seguridad.
+
+**3. Cifrado y transferencia a S3**
+
+Los bloques modificados se **cifran al vuelo por el orquestador** y luego se envían mediante HTTPS/TLS 1.3 al bucket S3 remoto.
+
+**4. Rotación de snapshots (Coalesce)**
+
+Una vez validada la transferencia, el antiguo snapshot de referencia se elimina y el nuevo snapshot se convierte en la referencia para el próximo ciclo. El hipervisor desencadena entonces un proceso de **coalesce** (fusión).
+
+:::warning[Impacto en I/O del Coalesce]
+La operación de coalesce es **intensiva en I/O** sobre el almacenamiento de producción. Se desencadena automáticamente tras cada copia de seguridad exitosa. Se recomienda planificar las ventanas de copia de seguridad durante períodos de baja carga aplicativa.
+:::
+
+**5. Gestión de la retención en S3 (Merge) y Key Backup Interval**
+
+En el almacenamiento S3, el orquestador gestiona la rotación de copias de seguridad fusionando los deltas antiguos. Una copia de seguridad completa se **fuerza periódicamente** (típicamente cada 20 incrementos — *Key Backup Interval*).
+
+---
+
+### Impacto en el dimensionamiento del almacenamiento de producción
+
+:::warning[Punto de atención crítico — Almacenamiento en bloque (Thick provisioning)]
+La oferta OpenIaaS se basa en almacenamiento en bloque de alto rendimiento (Fibre Channel / LVM). Los snapshots se aprovisionan en modo **Thick**: cada snapshot consume en el Storage Repository (SR) el **tamaño nominal completo del disco de la VM**, no solo el delta real.
+
+**Ejemplo de consumo para una VM con un disco de 50 GB:**
+
+| Elemento | Consumo en SR |
+|---|---|
+| Disco VM activo | 50 GB |
+| Snapshot de referencia permanente | 50 GB |
+| Snapshot temporal durante la exportación | 50 GB |
+| **Total requerido durante la ventana de copia de seguridad** | **hasta 150 GB** |
+
+**Regla de dimensionamiento recomendada**: prever **al menos el 50% de espacio libre** en el almacenamiento de producción.
+:::
+
+---
+
+### Seguridad y cifrado de las copias de seguridad
+
+#### Cifrado en tránsito
+
+Todas las comunicaciones entre el orquestador de copias de seguridad y el almacenamiento S3 se cifran mediante **HTTPS / TLS 1.3**.
+
+#### Cifrado en reposo y gestión de claves
+
+| Parámetro | Valor |
+|---|---|
+| **Algoritmo** | AES-256 o ChaCha20-Poly1305 |
+| **Generación de clave** | Automática al desplegar el orquestador de copias de seguridad |
+| **Almacenamiento de clave** | Vault centralizado de Cloud Temple (nunca expuesto en la interfaz del cliente) |
+| **Resiliencia** | En caso de pérdida del orquestador, la clave se reinyecta desde el Vault |
+
+#### Aislamiento de red (arquitectura SecNumCloud)
+
+- **Separación física**: las redes *Cliente*, *Administración* y *Backup* se basan en backbones físicos distintos y contextos de enrutamiento (VRF) separados.
+- **Imposibilidad de infección lateral**: una VM comprometida no puede alcanzar el almacenamiento S3 ni el orquestador de copias de seguridad.
+
+#### Administración segura
+
+| Control | Medida |
+|---|---|
+| **Bastión de acceso** | Paso obligatorio por un bastión de administración interno reforzado (Ubuntu Hardened) |
+| **Puesto de trabajo** | Acceso solo desde laptops de administración dedicados y asegurados |
+| **Autenticación** | MFA obligatorio mediante un directorio LDAP de administración dedicado |
+
+---
+
+### Monitorización y auditoría
+
+- **Registros de copia de seguridad**: visibles por el cliente directamente en la Consola Cloud Temple — estado (éxito/fallo), volumetría, marca de tiempo.
+- **Registros de acceso de administrador**: los accesos a la infraestructura de backup se registran y **se auditan mensualmente**.
+- **Pruebas de intrusión (PASSI)**: pruebas de penetración regulares por proveedores cualificados PASSI.
+- **Seguridad física**: todos los equipos alojados en zonas SecNumCloud (jaulas físicas dedicadas con control de acceso biométrico).
+
+---
+
+### Compatibilidad y casos especiales
+
+:::warning[VMs con escrituras en disco continuas]
+Algunas máquinas virtuales no son compatibles con esta tecnología de copia de seguridad cuando sus **cargas de escritura en disco son constantes** (bases de datos activas, registros de transacciones, etc.). El hipervisor no puede entonces finalizar el snapshot sin congelar la VM, lo que puede durar varias horas.
+
+Para estas cargas de trabajo, se recomienda **complementar o sustituir la copia de seguridad del hipervisor por una copia de seguridad aplicativa**: volcado de base de datos (pg_dump, mysqldump…), copia de seguridad por agente o exportación nativa de la aplicación.
+:::
+
+---
 
 ### Creación de una política de copia de seguridad
 
-Para agregar una nueva política de copia de seguridad, se debe presentar una solicitud al soporte, accesible a través del ícono de balsa ubicado en la parte superior derecha de la interfaz.
+La creación de una política de copia de seguridad es una operación de administración realizada **exclusivamente mediante una solicitud de soporte**, accesible a través del icono de salvavidas en la parte superior derecha de la interfaz.
 
-La creación de una nueva política de copia de seguridad se realiza mediante __una solicitud de servicio__ que incluya:
+La solicitud debe especificar:
 
 - El nombre de su Organización
-- Los datos de contacto (correo electrónico y teléfono) para finalizar la configuración
-- El nombre del inquilino
+- Datos de contacto (correo electrónico y teléfono) para finalizar la configuración
+- El nombre del tenant
 - El nombre de la política de copia de seguridad
-- Las características deseadas (x días, y semanas, z meses, ...)
+- Características deseadas: frecuencia, retención (x días, y semanas, z meses…)
+
+#### Restricciones de planificación
+
+| Restricción | Valor |
+|---|---|
+| **Intervalo mínimo entre dos ejecuciones** | 24 horas |
+| **Retención máxima** | 24 meses |
+| **Ejecuciones simultáneas por política** | 1 a la vez |
+
+:::warning[Una política solo puede ejecutarse una vez a la vez]
+Cada política de copia de seguridad es de **instancia única**: solo puede haber una ejecución activa simultáneamente.
+
+**Consecuencia práctica**: si agrega muchas máquinas virtuales a una política existente y la copia de seguridad del día anterior no ha terminado cuando se dispara la siguiente ejecución programada, **el nuevo ciclo no se iniciará** — se omitirá hasta la próxima ocurrencia.
+
+Para evitarlo: compruebe los tiempos de ejecución en los registros de la Consola, ajuste la frecuencia o el tamaño de la política, o distribuya las VMs en varias políticas con horarios escalonados.
+:::
 
 :::info[Retención a largo plazo — disponibilidad futura]
 **La retención máxima es actualmente de 24 meses.** Una retención a largo plazo (hasta 10 años) se integrará con el lanzamiento de nuestro producto **Glacier**, previsto para el **primer trimestre de 2027**, como suscripción complementaria.
 
-Para períodos de retención tan largos, recomendamos guardar **exclusivamente archivos planos** (archivos sin procesar, documentos estáticos) y **volcados de bases de datos**. La restauración de un servidor completo después de 10 años conlleva riesgos importantes: muchos servicios o dependencias pueden haberse vuelto obsoletos o incompatibles con el entorno actual.
+Para períodos de retención tan largos, recomendamos guardar **exclusivamente archivos planos** y **volcados de bases de datos**. La restauración de un servidor completo tras 10 años conlleva riesgos importantes de obsolescencia.
 
-**Alternativa disponible ahora**: el servicio de **copia de seguridad por agente**, disponible como suscripción complementaria. Póngase en contacto con el soporte para más información.
+**Alternativa disponible ahora**: el servicio de **copia de seguridad por agente**, disponible como suscripción complementaria. Contacte con el soporte para más información.
 :::
 
 ## Máquinas virtuales
