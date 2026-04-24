@@ -126,45 +126,182 @@ Il VLAN Trunk consente il passaggio di tutti i propri VLAN su un'unica scheda. L
 
 ## Backup delle macchine virtuali
 
-Cloud Temple offre un'__architettura nativa e non rimovibile per il backup distribuito__, elemento obbligatorio per il raggiungimento della qualifica SecNumCloud francese.
+L'offerta OpenIaaS include un'__architettura nativa e non disattivabile per il backup distribuito__, elemento obbligatorio nell'ambito della qualifica SecNumCloud francese.
 
-I backup vengono archiviati sulla soluzione [Storage oggetto qualificato SecNumCloud](../storage/oss), garantendo una protezione ottimale in caso di guasto grave del datacenter di produzione. Questo approccio permette il ripristino dei dati su un datacenter secondario, anche in caso di incidente critico come un incendio.
+I backup vengono archiviati sul [Storage Oggetti qualificato SecNumCloud](../storage/oss), garantendo una protezione ottimale in caso di guasto grave del datacenter di produzione. Questo approccio permette il ripristino dei dati su un datacenter secondario, anche in caso di incidenti critici come incendi.
 
-Questa soluzione completa include:
+### Servizi di protezione dei dati disponibili
 
-- Backup remoto in tempo reale di tutti i dischi
-- Flessibilità nel ripristino, con possibilità di scegliere il punto di recupero e la localizzazione
-
-L'infrastruttura di backup si basa su una tecnologia open source con architettura senza agente, che combina semplicità d'uso e automazione dei processi. Questa soluzione ottimizza l'utilizzo dello spazio di archiviazione mantenendo prestazioni elevate.
+| Servizio | Descrizione |
+|---|---|
+| **Backup incrementale (Agentless)** | Backup senza agente tramite i meccanismi nativi dell'ipervisore, verso un repository S3 remoto. |
+| **Backup dei metadati** | Protezione delle configurazioni del pool di virtualizzazione e dell'orchestratore di backup — indispensabile per il Disaster Recovery. |
+| **Ripristino granulare** | Ripristino a livello di VM completa, disco virtuale individuale o singolo file. |
+| **Offloading S3 Multi-AZ** | Esternalizzazione verso lo storage a oggetti S3 di Cloud Temple replicato tra zone di disponibilità. |
 
 Le velocità di backup e ripristino dipendono dal tasso di modifica negli ambienti. La politica di backup è completamente configurabile tramite [la Console Cloud Temple](../console/console.md) per ogni macchina virtuale.
 
-__Nota importante:__
+| Riferimento | Unità | SKU |
+|---|---|---|
+| BACKUP - Accesso al servizio | 1 VM | csp:(region):openiaas:backup:vm:v1 |
 
-*Alcune macchine virtuali non sono compatibili con questa tecnologia di backup*, che utilizza i meccanismi di snapshot istantanei dell'ipervisore. Si tratta tipicamente di macchine con carichi di scrittura costanti sul disco. In questi casi, l'ipervisore non riesce a completare lo snapshot istantaneo, il che richiede il congelamento della macchina virtuale per terminare l'operazione. Questo congelamento può durare diverse ore e non è interrompibile.
+---
 
-La soluzione raccomandata consiste quindi nell'escludere il disco interessato da scritture continue e nel salvare i dati tramite un metodo alternativo.
+### Architettura tecnica del backup
 
-| Riferimento                                    | Unità | SKU                            |
-| ---------------------------------------------| ----- | ------------------------------ |
-| SAUVEGARDE - Accesso al servizio                | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
+#### Panoramica
+
+L'architettura si basa su una separazione rigorosa tra il **piano di controllo** (orchestratore di backup) e il **piano dei dati** (storage S3 remoto): l'orchestratore è ospitato nel cluster di gestione di Cloud Temple (separato e inaccessibile al cliente), mentre i dati di backup sono archiviati in un repository S3 remoto, fisicamente separato dall'infrastruttura di produzione. I dati transitano cifrati tra i due componenti tramite HTTPS/TLS 1.3.
+
+#### Orchestratore di backup
+
+L'orchestratore è distribuito nel cluster di gestione di Cloud Temple, **direttamente inaccessibile al cliente**. Coordina tutti i job di backup e gestisce la cifratura.
+
+- **Politiche standard**: le politiche di backup vengono applicate per impostazione predefinita a ogni tenant.
+- **Politiche personalizzate**: il cliente può richiedere frequenze o periodi di conservazione specifici tramite un ticket di supporto nella console di Cloud Temple.
+
+#### Storage S3 remoto
+
+I backup vengono inviati allo [Storage Oggetti qualificato SecNumCloud](../storage/oss) di Cloud Temple, con replica Multi-AZ per garantire la resilienza in caso di perdita di un intero sito fisico.
+
+---
+
+### Meccanismo di backup: Backup Incrementale
+
+Il servizio utilizza una modalità di backup **incrementale**. Questa modalità punta a un **Backup Repository** (lo storage S3 remoto) e non esporta mai un backup completo dopo il primo: vengono trasferiti solo i **blocchi di dati modificati** a ogni ciclo.
+
+:::info[Backup incrementale vs Replica]
+Il **backup incrementale** punta a un repository S3 remoto ed è ottimizzato per la **protezione a lungo termine**. Non deve essere confuso con la **replica** (Disaster Recovery a caldo) che punta a un Storage Repository locale — questa modalità è coperta dalla funzionalità di [replica delle macchine virtuali](#replica-delle-macchine-virtuali).
+:::
+
+#### Ciclo di vita tecnico di un backup incrementale
+
+**1. Creazione dello snapshot locale (Sorgente)**
+
+All'avvio del job, l'orchestratore richiede all'ipervisore di creare uno snapshot della VM. Questo snapshot serve come punto di confronto per calcolare il delta rispetto allo snapshot di riferimento precedente.
+
+**2. Esportazione differenziale tramite Changed Block Tracking (CBT)**
+
+L'orchestratore confronta il nuovo snapshot con lo snapshot di riferimento precedente usando i metadati CBT. Vengono estratti solo i blocchi di dati cambiati dall'ultimo backup.
+
+**3. Cifratura e trasferimento verso S3**
+
+I blocchi modificati vengono **cifrati al volo dall'orchestratore** e poi inviati tramite HTTPS/TLS 1.3 al bucket S3 remoto.
+
+**4. Rotazione degli snapshot (Coalesce)**
+
+Una volta validato il trasferimento, il vecchio snapshot di riferimento viene eliminato e il nuovo snapshot diventa il riferimento per il ciclo successivo. L'ipervisore avvia quindi un processo di **coalesce** (fusione).
+
+:::warning[Impatto I/O del Coalesce]
+L'operazione di coalesce è **intensiva in I/O** sullo storage di produzione. Viene attivata automaticamente dopo ogni backup riuscito. Si raccomanda di pianificare le finestre di backup durante i periodi di basso carico applicativo.
+:::
+
+**5. Gestione della conservazione su S3 (Merge) e Key Backup Interval**
+
+Sullo storage S3, l'orchestratore gestisce la rotazione dei backup fondendo i vecchi delta. Un backup completo viene **forzato periodicamente** (tipicamente ogni 20 incrementi — *Key Backup Interval*).
+
+---
+
+### Impatto sul dimensionamento dello storage di produzione
+
+:::warning[Punto di attenzione critico — Storage a blocchi (Thick provisioning)]
+L'offerta OpenIaaS si basa su storage a blocchi ad alte prestazioni (Fibre Channel / LVM). Gli snapshot vengono provisionati in modalità **Thick**: ogni snapshot consuma sul Storage Repository (SR) la **dimensione nominale completa del disco della VM**, non solo il delta reale.
+
+**Esempio di consumo per una VM con un disco da 50 GB:**
+
+| Elemento | Consumo sul SR |
+|---|---|
+| Disco VM attivo | 50 GB |
+| Snapshot di riferimento permanente | 50 GB |
+| Snapshot temporaneo durante l'esportazione | 50 GB |
+| **Totale richiesto durante la finestra di backup** | **fino a 150 GB** |
+
+**Regola di dimensionamento raccomandata**: prevedere **almeno il 50% di spazio libero** sullo storage di produzione.
+:::
+
+---
+
+### Sicurezza e cifratura dei backup
+
+#### Cifratura in transito
+
+Tutte le comunicazioni tra l'orchestratore di backup e lo storage S3 sono cifrate tramite **HTTPS / TLS 1.3**.
+
+#### Cifratura a riposo e gestione delle chiavi
+
+| Parametro | Valore |
+|---|---|
+| **Algoritmo** | AES-256 o ChaCha20-Poly1305 |
+| **Generazione della chiave** | Automatica al momento del deployment dell'orchestratore di backup |
+| **Archiviazione della chiave** | Vault centralizzato di Cloud Temple (mai esposto nell'interfaccia cliente) |
+| **Resilienza** | In caso di perdita dell'orchestratore, la chiave viene reiniettata dal Vault |
+
+#### Isolamento di rete (architettura SecNumCloud)
+
+- **Separazione fisica**: le reti *Cliente*, *Amministrazione* e *Backup* si basano su backbone fisici distinti e contesti di routing (VRF) separati.
+- **Impossibilità di infezione laterale**: una VM compromessa non può raggiungere lo storage S3 né l'orchestratore di backup.
+
+#### Amministrazione sicura
+
+| Controllo | Misura |
+|---|---|
+| **Bastion di accesso** | Passaggio obbligatorio attraverso un bastion di amministrazione interno protetto (Ubuntu Hardened) |
+| **Postazione di lavoro** | Accesso solo da laptop di amministrazione dedicati e protetti |
+| **Autenticazione** | MFA obbligatorio tramite una directory LDAP di amministrazione dedicata |
+
+---
+
+### Monitoraggio e audit
+
+- **Log di backup**: visibili dal cliente direttamente nella Console Cloud Temple — stato (successo/errore), volumetria, timestamp.
+- **Log di accesso degli amministratori**: gli accessi all'infrastruttura di backup vengono registrati e **verificati mensilmente**.
+- **Test di intrusione (PASSI)**: pentest regolari da fornitori qualificati PASSI.
+- **Sicurezza fisica**: tutti i dispositivi ospitati nelle zone SecNumCloud (gabbie fisiche dedicate con controllo accessi biometrico).
+
+---
+
+### Compatibilità e casi particolari
+
+:::warning[VM con scritture su disco continue]
+Alcune macchine virtuali non sono compatibili con questa tecnologia di backup quando i loro **carichi di scrittura su disco sono costanti** (database attivi, log transazionali, ecc.). L'ipervisore non riesce a finalizzare lo snapshot senza congelare la VM, il che può durare diverse ore.
+
+Per questi carichi di lavoro, si raccomanda di **completare o sostituire il backup dell'ipervisore con un backup applicativo**: dump del database (pg_dump, mysqldump…), backup tramite agente o esportazione nativa dell'applicazione.
+:::
+
+---
 
 ### Creazione di una politica di backup
 
-Per aggiungere una nuova politica di backup, è necessario inviare una richiesta al supporto, accessibile tramite l'icona del salvagente situata in alto a destra dell'interfaccia.
+La creazione di una politica di backup è un'operazione di amministrazione eseguita **esclusivamente tramite una richiesta di supporto**, accessibile tramite l'icona del salvagente in alto a destra nell'interfaccia.
 
-La creazione di una nuova politica di backup avviene tramite __una richiesta di servizio__ che specifica:
+La richiesta deve specificare:
 
-- Il nome della tua Organizzazione
-- I dati di contatto di un referente (email e telefono) per completare la configurazione
+- Il nome della propria Organizzazione
+- I dati di contatto (email e telefono) per completare la configurazione
 - Il nome del tenant
 - Il nome della politica di backup
-- Le caratteristiche desiderate (x giorni, y settimane, z mesi, ...)
+- Caratteristiche desiderate: frequenza, conservazione (x giorni, y settimane, z mesi…)
+
+#### Vincoli di pianificazione
+
+| Vincolo | Valore |
+|---|---|
+| **Intervallo minimo tra due esecuzioni** | 24 ore |
+| **Conservazione massima** | 24 mesi |
+| **Esecuzioni simultanee per politica** | 1 alla volta |
+
+:::warning[Una politica può essere eseguita solo una volta alla volta]
+Ogni politica di backup è a **istanza singola**: può essere attiva una sola esecuzione alla volta.
+
+**Conseguenza pratica**: se si aggiungono molte macchine virtuali a una politica esistente e il backup del giorno precedente non è ancora terminato quando scatta il trigger pianificato successivo, **il nuovo ciclo non partirà** — verrà saltato fino alla prossima occorrenza.
+
+Per evitarlo: controllare i tempi di esecuzione nei log della Console, regolare la frequenza o la dimensione della politica, oppure distribuire le VM su più politiche con orari sfalsati.
+:::
 
 :::info[Conservazione a lungo termine — disponibilità futura]
 **La conservazione massima è attualmente di 24 mesi.** Una conservazione a lungo termine (fino a 10 anni) sarà integrata con il lancio del nostro prodotto **Glacier**, previsto per il **primo trimestre 2027**, come sottoscrizione complementare.
 
-Per durate di conservazione così lunghe, raccomandiamo di salvare **esclusivamente file piatti** (file grezzi, documenti statici) e **dump di database**. Il ripristino di un server completo dopo 10 anni comporta rischi significativi: molti servizi o dipendenze possono essere diventati obsoleti o incompatibili con l'ambiente attuale.
+Per durate di conservazione così lunghe, raccomandiamo di salvare **esclusivamente file piatti** e **dump di database**. Il ripristino di un server completo dopo 10 anni comporta rischi significativi di obsolescenza.
 
 **Alternativa disponibile ora**: il servizio di **backup tramite agente**, disponibile come sottoscrizione complementare. Contattate il supporto per ulteriori informazioni.
 :::

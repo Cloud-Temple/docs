@@ -126,49 +126,184 @@ A limitation exists regarding the maximum number of network cards that can be cr
 When you need to propagate more than 7 VLANs, you must use a VLAN Trunk.  
 The VLAN Trunk allows all your VLANs to pass through a single network interface. VLAN ID configuration must be performed via virtual VLAN interfaces from the VM's operating system. The VLAN IDs are the same as those present and visible from the console.
 
-## Virtual Machine Backup
+## Sicherung von virtuellen Maschinen
 
-Cloud Temple offers a __native, non-disruptive distributed backup architecture__, a mandatory requirement for French SecNumCloud certification.
+Das OpenIaaS-Angebot umfasst eine __native, nicht abschaltbare verteilte Backup-Architektur__, ein obligatorisches Element im Rahmen der französischen SecNumCloud-Qualifizierung.
 
-Backups are stored on the [SecNumCloud-certified Object Storage solution](../storage/oss), ensuring optimal protection in the event of a major failure at the production datacenter. This approach enables data restoration on a secondary datacenter, even in critical incidents such as fires.
+Sicherungen werden im [SecNumCloud-qualifizierten Objektspeicher](../storage/oss) gespeichert und gewährleisten optimalen Schutz bei einem schwerwiegenden Ausfall des Produktions-Rechenzentrums. Dieser Ansatz ermöglicht die Wiederherstellung Ihrer Daten in einem sekundären Rechenzentrum, selbst bei kritischen Vorfällen wie Bränden.
 
-This comprehensive solution includes:
+### Verfügbare Datenschutzdienste
 
-- Hot off-site backup of all virtual disks
-- Flexible recovery options allowing selection of both recovery point and location
+| Dienst | Beschreibung |
+|---|---|
+| **Inkrementelles Backup (Agentless)** | Agentenloses Backup über native Hypervisor-Mechanismen, in ein entferntes S3-Repository. |
+| **Metadaten-Backup** | Schutz der Konfigurationen des Virtualisierungspools und des Backup-Orchestrators — unverzichtbar für Disaster Recovery. |
+| **Granulare Wiederherstellung** | Wiederherstellung auf Ebene einer vollständigen VM, einzelner virtueller Festplatte oder einzelner Datei. |
+| **S3 Multi-AZ Offloading** | Auslagerung in den S3-Objektspeicher von Cloud Temple, repliziert über Verfügbarkeitszonen. |
 
-The backup infrastructure is based on an open-source, agentless architecture, combining ease of use with automated processes. This solution optimizes storage space utilization while maintaining high performance.
+Backup- und Wiederherstellungsgeschwindigkeiten hängen von der Änderungsrate in den Umgebungen ab. Die Backup-Richtlinie ist für jede virtuelle Maschine über die [Cloud Temple Konsole](../console/console.md) vollständig konfigurierbar.
 
-Backup and restore speeds depend on the rate of change within the environments. Backup policies are fully configurable per virtual machine via the [Cloud Temple Console](../console/console.md).
+| Referenz | Einheit | SKU |
+|---|---|---|
+| BACKUP - Servicezugang | 1 VM | csp:(region):openiaas:backup:vm:v1 |
 
-__Important note:__
+---
 
-*Some virtual machines are not compatible with this backup technology*, which relies on the hypervisor's snapshot mechanisms. This typically applies to machines with constant disk write workloads. In such cases, the hypervisor cannot complete the snapshot, requiring the virtual machine to be frozen to finalize the operation. This freeze can last several hours and cannot be interrupted.
+### Technische Backup-Architektur
 
-The recommended solution is then to exclude the disk subject to continuous writes and back up the data using an alternative method.
+#### Überblick
 
-| Reference                                     | Unit  | SKU                            |
-| ----------------------------------------------| ----- | ------------------------------ |
-| BACKUP - Service access                       | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
+Die Architektur basiert auf einer strikten Trennung zwischen der **Steuerungsebene** (Backup-Orchestrator) und der **Datenebene** (entfernter S3-Speicher): Der Backup-Orchestrator wird im Management-Cluster von Cloud Temple gehostet (vom Client getrennt und nicht direkt zugänglich), während die Backup-Daten in einem entfernten S3-Repository gespeichert werden, das physisch von der Produktionsinfrastruktur getrennt ist. Daten werden verschlüsselt über HTTPS/TLS 1.3 übertragen.
 
-### Creating a backup policy
+#### Backup-Orchestrator
 
-To create a new backup policy, a request must be submitted to support, accessible via the buoy icon located in the top right corner of the interface.
+Der Orchestrator wird im Management-Cluster von Cloud Temple bereitgestellt und ist **für den Client nicht direkt zugänglich**. Er koordiniert alle Backup-Jobs und verwaltet die Verschlüsselung.
 
-Creating a new backup policy is done through a __service request__ specifying:
+- **Standardrichtlinien**: Backup-Richtlinien werden standardmäßig auf jeden Mandanten angewendet.
+- **Benutzerdefinierte Richtlinien**: Der Client kann spezifische Häufigkeiten oder Aufbewahrungszeiten über ein Support-Ticket in der Cloud Temple Konsole anfordern.
 
-- Your Organization's name
-- Contact details (email and phone number) to finalize the configuration
-- The tenant name
-- The backup policy name
-- Desired characteristics (x days, y weeks, z months, ...)
+#### Entfernter S3-Speicher
 
-:::info[Long-term retention — future availability]
-**The maximum retention is currently 24 months.** Long-term retention (up to 10 years) will be integrated with the launch of our **Glacier** product, planned for **Q1 2027**, as a complementary subscription.
+Backups werden an den [SecNumCloud-qualifizierten Objektspeicher](../storage/oss) von Cloud Temple gesendet, mit Multi-AZ-Replikation für Resilienz beim Ausfall eines gesamten physischen Standorts.
 
-For such long retention periods, we recommend saving **only flat files** (raw files, static documents) and **database dumps**. Restoring a complete server after 10 years carries significant risks: many services or dependencies may have become obsolete or incompatible with the current environment.
+---
 
-**Alternative available now**: the **agent-based backup** service, available as a complementary subscription. Contact support for more information.
+### Backup-Mechanismus: Inkrementelles Backup
+
+Der Dienst verwendet einen **inkrementellen** Backup-Modus. Dieser Modus zielt auf ein **Backup Repository** (den entfernten S3-Speicher) ab und exportiert nach dem ersten Mal nie ein vollständiges Backup: Es werden nur die **geänderten Datenblöcke** bei jedem Zyklus übertragen.
+
+:::info[Inkrementelles Backup vs. Replikation]
+Das **inkrementelle Backup** zielt auf ein entferntes S3-Repository ab und ist für den **Langzeitschutz** optimiert. Es sollte nicht mit der **Replikation** (Hot Disaster Recovery) verwechselt werden, die auf ein lokales Storage Repository abzielt — dieser Modus wird durch die Funktion [Replikation virtueller Maschinen](#replikation-von-virtuellen-maschinen) abgedeckt.
+:::
+
+#### Lebenszyklus eines inkrementellen Backups
+
+**1. Erstellung des lokalen Snapshots (Quelle)**
+
+Beim Start des Jobs fordert der Orchestrator den Hypervisor auf, einen VM-Snapshot zu erstellen. Dieser Snapshot dient als Vergleichspunkt zur Berechnung des Deltas gegenüber dem vorherigen Referenz-Snapshot.
+
+**2. Differenzieller Export über Changed Block Tracking (CBT)**
+
+Der Orchestrator vergleicht den neuen Snapshot mit dem vorherigen Referenz-Snapshot anhand von CBT-Metadaten. Es werden nur Datenblöcke extrahiert, die sich seit dem letzten Backup geändert haben.
+
+**3. Verschlüsselung und Übertragung zu S3**
+
+Geänderte Blöcke werden **vom Orchestrator on-the-fly verschlüsselt** und dann über HTTPS/TLS 1.3 an den entfernten S3-Bucket gesendet.
+
+**4. Snapshot-Rotation (Coalesce)**
+
+Nach der Übertragung wird der alte Referenz-Snapshot gelöscht, und der neue Snapshot wird zur Referenz für den nächsten Zyklus. Der Hypervisor löst dann einen **Coalesce**-Prozess (Zusammenführung) aus.
+
+:::warning[I/O-Auswirkung des Coalesce]
+Der Coalesce-Vorgang ist **I/O-intensiv** auf dem Produktionsspeicher. Er wird automatisch nach jedem erfolgreichen Backup ausgelöst. Es wird empfohlen, Backup-Fenster in Zeiten geringer Anwendungslast zu planen.
+:::
+
+**5. S3-Aufbewahrungsverwaltung (Merge) und Key Backup Interval**
+
+Im S3-Speicher verwaltet der Orchestrator die Backup-Rotation durch das Zusammenführen alter Deltas. Ein vollständiges Backup wird **regelmäßig erzwungen** (typischerweise alle 20 Inkremente — *Key Backup Interval*).
+
+---
+
+### Auswirkungen auf die Dimensionierung des Produktionsspeichers
+
+:::warning[Kritischer Hinweis — Block-Speicher (Thick Provisioning)]
+Das OpenIaaS-Angebot basiert auf hochleistungsfähigem Block-Speicher (Fibre Channel / LVM). Snapshots werden im **Thick**-Modus bereitgestellt: Jeder Snapshot verbraucht auf dem Storage Repository (SR) die **vollständige Nominalgröße der VM-Festplatte**.
+
+**Verbrauchsbeispiel für eine VM mit einer 50-GB-Festplatte:**
+
+| Element | Verbrauch auf SR |
+|---|---|
+| Aktive VM-Festplatte | 50 GB |
+| Permanenter Referenz-Snapshot | 50 GB |
+| Temporärer Snapshot während des Exports | 50 GB |
+| **Gesamt während Backup-Fenster** | **bis zu 150 GB** |
+
+**Empfohlene Dimensionierungsregel**: mindestens **50% freien Speicherplatz** im Produktionsspeicher einplanen.
+:::
+
+---
+
+### Backup-Sicherheit und Verschlüsselung
+
+#### Verschlüsselung bei der Übertragung
+
+Alle Kommunikationen zwischen dem Backup-Orchestrator und S3-Speicher werden über **HTTPS / TLS 1.3** verschlüsselt.
+
+#### Verschlüsselung im Ruhezustand und Schlüsselverwaltung
+
+| Parameter | Wert |
+|---|---|
+| **Algorithmus** | AES-256 oder ChaCha20-Poly1305 |
+| **Schlüsselgenerierung** | Automatisch bei der Bereitstellung des Backup-Orchestrators |
+| **Schlüsselspeicherung** | Zentralisierter Vault von Cloud Temple (nie in der Client-Oberfläche sichtbar) |
+| **Resilienz** | Bei Verlust des Orchestrators wird der Schlüssel aus dem Vault neu eingespielt |
+
+#### Netzwerkisolierung (SecNumCloud-Architektur)
+
+- **Physische Trennung**: *Client*-, *Administrations*- und *Backup*-Netzwerke basieren auf separaten physischen Backbones und getrennten Routing-Kontexten (VRF).
+- **Kein laterales Infektionsrisiko**: Eine kompromittierte VM kann weder den S3-Speicher noch den Backup-Orchestrator erreichen.
+
+#### Sichere Administration
+
+| Kontrolle | Maßnahme |
+|---|---|
+| **Zugriffsbastion** | Pflichtdurchgang über eine gehärtete interne Administrationsbastion (Ubuntu Hardened) |
+| **Arbeitsstation** | Zugang nur von dedizierten und gesicherten Administrationslaptops |
+| **Authentifizierung** | Pflicht-MFA über ein dediziertes LDAP-Administrationsverzeichnis |
+
+---
+
+### Monitoring und Audit
+
+- **Backup-Protokolle**: für den Client direkt in der Cloud Temple Konsole sichtbar — Status (Erfolg/Fehler), Volumen, Zeitstempel.
+- **Administratorzugriffsprotokolle**: Zugriffe auf Backup-Infrastruktur werden protokolliert und **monatlich geprüft**.
+- **Penetrationstests (PASSI)**: regelmäßige Pentests durch PASSI-qualifizierte Anbieter.
+- **Physische Sicherheit**: Alle Geräte in SecNumCloud-Zonen (dedizierte physische Käfige mit biometrischer Zugangskontrolle).
+
+---
+
+### Kompatibilität und Sonderfälle
+
+:::warning[VMs mit kontinuierlichen Festplattenschreibvorgängen]
+Einige virtuelle Maschinen sind mit dieser Backup-Technologie nicht kompatibel, wenn ihre **Festplattenschreiblasten konstant** sind (aktive Datenbanken, Transaktionsprotokolle usw.). Der Hypervisor kann dann den Snapshot nicht ohne Einfrieren der VM abschließen.
+
+Für diese Workloads wird empfohlen, das Hypervisor-Backup durch ein **anwendungsbasiertes Backup zu ergänzen oder zu ersetzen**: Datenbank-Dump (pg_dump, mysqldump…), agentenbasiertes Backup oder nativer Anwendungsexport.
+:::
+
+---
+
+### Erstellen einer Backup-Richtlinie
+
+Das Erstellen einer Backup-Richtlinie ist ein Administrationsvorgang, der **ausschließlich über eine Support-Anfrage** durchgeführt wird, die über das Rettungsring-Symbol oben rechts in der Oberfläche zugänglich ist.
+
+Die Anfrage muss folgendes angeben:
+
+- Den Namen Ihrer Organisation
+- Kontaktdaten (E-Mail und Telefon)
+- Den Mandantennamen
+- Den Namen der Backup-Richtlinie
+- Gewünschte Eigenschaften: Häufigkeit, Aufbewahrung (x Tage, y Wochen, z Monate…)
+
+#### Planungsbeschränkungen
+
+| Einschränkung | Wert |
+|---|---|
+| **Mindestintervall zwischen zwei Ausführungen** | 24 Stunden |
+| **Maximale Aufbewahrung** | 24 Monate |
+| **Gleichzeitige Ausführungen pro Richtlinie** | 1 gleichzeitig |
+
+:::warning[Eine Richtlinie kann nur einmal gleichzeitig ausgeführt werden]
+Jede Backup-Richtlinie ist **Einzelinstanz**: Es kann nur eine Ausführung gleichzeitig aktiv sein.
+
+**Praktische Konsequenz**: Wenn das Backup des Vortags beim nächsten geplanten Auslöser noch nicht abgeschlossen ist, **wird der neue Zyklus nicht gestartet** — er wird bis zum nächsten Vorkommen übersprungen.
+
+Um dies zu vermeiden: Überprüfen Sie die Ausführungszeiten in den Konsolen-Protokollen, passen Sie die Häufigkeit oder Größe der Richtlinie an oder verteilen Sie VMs auf mehrere Richtlinien mit versetzten Zeitplänen.
+:::
+
+:::info[Langzeitaufbewahrung — zukünftige Verfügbarkeit]
+**Die maximale Aufbewahrung beträgt derzeit 24 Monate.** Eine Langzeitaufbewahrung (bis zu 10 Jahre) wird mit dem Start unseres Produkts **Glacier** integriert, geplant für **Q1 2027**, als ergänzendes Abonnement.
+
+**Jetzt verfügbare Alternative**: der **agentenbasierte Backup**-Dienst, als ergänzendes Abonnement verfügbar. Kontaktieren Sie den Support für weitere Informationen.
 :::
 
 ## Virtual Machines
