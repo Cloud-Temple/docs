@@ -14,16 +14,16 @@ Se adapta a todas las necesidades gracias a sus diferentes clases de servicio �
   <div class="card">
     <h3>Conceptos</h3>
     <p>Descubra la arquitectura, las clases de servicio y las funcionalidades del servicio VM Instances.</p>
-    <a href="/public_cloud/vm_instances/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+    <a href="./vm_instances/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Despliegue su primera máquina virtual en minutos desde el Marketplace de Cloud Temple.</p>
-    <a href="/public_cloud/vm_instances/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./vm_instances/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>
     <p>Guías prácticas: crear una VM, gestionar discos, tomar snapshots.</p>
-    <a href="/public_cloud/vm_instances/tutorials" class="card-link">Ver los tutoriales &rarr;</a>
+    <a href="./vm_instances/tutorials" class="card-link">Ver los tutoriales &rarr;</a>
   </div>
 </div>
