@@ -8,7 +8,7 @@ Il servizio **VM Instances** di Cloud Temple consente il rapido deployment di ma
 
 Si adatta a tutte le esigenze grazie alle sue diverse classi di servizio — dallo sviluppo economico alla produzione critica — integrandosi nativamente nell'ecosistema Cloud Temple.
 
-![Lista delle VM Instances nella Console Cloud Temple](./images/vm_instances_liste.png)
+![Lista delle VM Instances nella Console Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
 <div class="card-grid">
   <div class="card">
