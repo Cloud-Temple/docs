@@ -8,7 +8,7 @@ The **VM Instances** service from Cloud Temple enables rapid deployment of virtu
 
 It adapts to all needs through its various service classes — from cost-effective development to critical production — while natively integrating with the Cloud Temple ecosystem.
 
-![VM Instances list in the Cloud Temple Console](./images/vm_instances_liste.png)
+![VM Instances list in the Cloud Temple Console](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
 <div class="card-grid">
   <div class="card">

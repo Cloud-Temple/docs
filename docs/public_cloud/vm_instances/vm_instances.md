@@ -8,7 +8,7 @@ Le service **VM Instances** de Cloud Temple permet le déploiement rapide de mac
 
 Elle s'adapte à tous les besoins grâce à ses différentes classes de service — du développement économique à la production critique — tout en s'intégrant nativement à l'écosystème Cloud Temple.
 
-![Liste des VM Instances dans la Console Cloud Temple](./images/vm_instances_liste.png)
+![Liste des VM Instances dans la Console Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
 <div class="card-grid">
   <div class="card">
