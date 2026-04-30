@@ -139,10 +139,10 @@ The __'Mass Storage'__ storage class offers mechanical disks for archival needs 
 | Reference                         | Unit  | SKU                                          |
 |-----------------------------------|-------|----------------------------------------------|
 | FLASH - Essential - 500 IOPS/To   | 1 GiB | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To   | 1 GiB | csp:(region):iaas:storage:bloc:medium:v1     |
-| FLASH - Premium - 3000 IOPS/To    | 1 GiB | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 GiB | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 GiB | csp:(region):iaas:storage:bloc:ultra:v1      |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | MASS STORAGE - Archival           | 1 TiB | csp:(region):iaas:storage:bloc:mass:v1       |
 
 *__Note__:*  
@@ -178,9 +178,9 @@ Proactive disk space management is essential to ensure the proper operation of y
 
 Der von der Plattform automatisch bereitgestellte Speicher für die Sicherung Ihrer virtuellen Maschinen wird im Rahmen des bestellten Quotas bereitgestellt.
 
-| Referenz                 | Einheit | SKU                                      |
+| Referenz | Einheit | Max IOPS Limit / LUN | Max Bandbreite / LUN | SKU |
 |--------------------------|-------|------------------------------------------|
-| MASS STORAGE - Archivage | 1 Tio | csp:(region):iaas:storage:bloc:backup:v1 |
+| MASS STORAGE - Archivage          | 1 Tio | Non garanti               | Non garanti                 | csp:(region):iaas:storage:bloc:mass:v1       |
 
 ### Block Storage Replication
 
@@ -225,7 +225,7 @@ Die Nutzung dieser Technologie erfordert zudem eine Verdoppelung des Speicherpla
 
 Die Nutzung dieses Mechanismus kann die Leistung der Anwendung bis zu 10 % beeinträchtigen. __Nur die Speicherklassen 500 IOPS/To, 1500 IOPS/To und 3000 IOPS/To sind kompatibel.__
 
-| Referenz                           | Einheit | SKU                                               |  
+| Referenz | Einheit | Max IOPS Limit / LUN | Max Bandbreite / LUN | SKU |  
 |------------------------------------|--------|---------------------------------------------------|
 | STORAGE - Global Replication SAN   | 1 TiB  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 

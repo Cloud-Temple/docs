@@ -136,13 +136,13 @@ Es importante destacar que este cifrado protege los datos almacenados en los dis
 
 La clase de almacenamiento __'Mass Storage'__ ofrece discos mecánicos para necesidades de archivado en un contexto de eficiencia económica. Varios niveles de rendimiento están disponibles:
 
-| Referencia                         | Unidad | SKU                                          |
+| Referencia | Unidad | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | SKU |
 |-----------------------------------|--------|----------------------------------------------|
 | FLASH - Esencial - 500 IOPS/To   | 1 Gio  | csp:(region):iaas:storage:bloc:live:v1       |
 | FLASH - Estándar - 1500 IOPS/To   | 1 Gio  | csp:(region):iaas:storage:bloc:medium:v1     |
-| FLASH - Premium - 3000 IOPS/To    | 1 Gio  | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 Gio  | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 Gio  | csp:(region):iaas:storage:bloc:ultra:v1      |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | MASS STORAGE - Archivo            | 1 Tio  | csp:(region):iaas:storage:bloc:mass:v1       |
 
 *__Nota__ :*
@@ -225,7 +225,7 @@ El uso de esta tecnología también requiere duplicar el espacio de disco: es ne
 
 El uso de este mecanismo puede afectar el rendimiento de la aplicación hasta en un 10 %. __Solo las clases de almacenamiento 500 IOPS/To, 1500 IOPS/To y 3000 IOPS/To son compatibles.__
 
-| Referencia                          | Unidad  | SKU                                               |  
+| Referencia | Unidad | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | SKU |  
 |------------------------------------|--------|---------------------------------------------------|
 | ALMACENAMIENTO - Replicación Global SAN  | 1 TiB  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
@@ -352,7 +352,7 @@ En caso de necesidad, o en caso de fallo en una máquina del sitio principal, la
 La recuperación de actividad requiere disponer de capacidad de cálculo y RAM reservada en el sitio de respaldo. Es  
 necesario contar con el mismo espacio de almacenamiento en el sitio pasivo que en el sitio activo.
 
-| Referencia                         | Unidad | SKU                                             |  
+| Referencia | Unidad | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | SKU |  
 |-----------------------------------|--------|-------------------------------------------------|
 | PRA - Replicación VMware inter-AZ | 1 vm   | csp:(region):iaas:vmware:licence:replication:v1 |
 
@@ -383,7 +383,7 @@ Las velocidades de copia de seguridad y restauración dependen de la tasa de cam
 
 *La solución consiste entonces en excluir el disco que es objetivo de escrituras permanentes y realizar la copia de seguridad de los datos mediante otro método.*
 
-| Referencia                                               | Unidad | SKU                            |
+| Referencia | Unidad | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | SKU |
 | ------------------------------------------------------- | ------ | ------------------------------ |
 | SAUVEGARDE - Accès au service IBM Spectrum Protect Plus | 1 VM   | csp:(region):iaas:backup:vm:v1 |
 
@@ -491,7 +491,7 @@ Esta solución de protección avanzada es especialmente adecuada para:
 - __Sectores críticos__: Banca, seguros, salud, defensa  
 - __Soberanía digital__: Protección contra accesos no autorizados, incluso en caso de compromiso  
 
-| Referencia | Unidad | SKU |
+| Referencia | Unidad | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | SKU |
 |-----------|--------|-----|
 | PROTECCIÓN AVANZADA - Cifrado de VM mediante HSM/KMS | 1 VM | csp:(region):iaas:vmware:encryption:hsm:v1 |
 

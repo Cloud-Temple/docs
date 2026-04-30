@@ -83,10 +83,10 @@ Distributed block storage, based on __IBM Spectrum Virtualize__, offers a range 
 | Reference                         | IOPS/To                 | Primary Use Case                       |
 |-----------------------------------|-------------------------|----------------------------------------|
 | __FLASH - Essential__             | 500                     | Light workloads                        |
-| __FLASH - Standard__              | 1500                    | Standard workloads                     |
-| __FLASH - Premium__               | 3000                    | Intensive workloads                    |
-| __FLASH - Enterprise__            | 7500                    | Critical workloads                     |
-| __FLASH - Ultra__                 | 15000                   | Ultra-intensive workloads              |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | __MASS STORAGE - Archival__       | Not applicable          | Cost-effective storage for archival    |
 
 ### Features
@@ -141,7 +141,7 @@ Backups are stored on the [SecNumCloud-certified Object Storage](../storage/oss)
 
 Backup and restore speeds depend on the rate of change in the environments. Backup policies are fully configurable from the [Cloud Temple Console](../console/console.md) for each virtual machine.
 
-| Reference | Unit | SKU |
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |
 |---|---|---|
 | BACKUP - Service access | 1 VM | csp:(region):openiaas:backup:vm:v1 |
 
