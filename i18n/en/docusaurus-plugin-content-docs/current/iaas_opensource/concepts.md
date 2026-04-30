@@ -126,45 +126,184 @@ The VLAN Trunk allows all your VLANs to pass through a single network interface.
 
 ## Virtual Machine Backup
 
-Cloud Temple offers a __native, non-disruptive distributed backup architecture__, a mandatory requirement for compliance with the French SecNumCloud certification.
+The OpenIaaS offering includes a __native, non-bypassable distributed backup architecture__, a mandatory requirement for French SecNumCloud qualification.
 
-Backups are stored on the [SecNumCloud-certified Object Storage](../storage/oss) solution, ensuring optimal protection in the event of a major datacenter failure. This approach enables data restoration on a secondary datacenter, even in critical incidents such as fires.
+Backups are stored on the [SecNumCloud-certified Object Storage](../storage/oss), ensuring optimal protection in the event of a major datacenter failure. This approach allows data to be restored on a secondary datacenter, even in critical incidents such as fires.
 
-This comprehensive solution includes:
+### Available Data Protection Services
 
-- Hot off-site backup of all virtual disks
-- Flexible restoration options allowing selection of both recovery point and location
+| Service | Description |
+|---|---|
+| **Incremental Backup (Agentless)** | Agentless backup using native hypervisor mechanisms, to a remote S3 repository. |
+| **Metadata Backup** | Protection of virtualization pool configurations and the backup orchestrator — essential for Disaster Recovery. |
+| **Granular Restore** | Restore at the level of a full VM, individual virtual disk, or single file. |
+| **S3 Multi-AZ Offloading** | Offloading to Cloud Temple's S3 object storage replicated across availability zones. |
 
-The backup infrastructure is based on an open-source, agentless architecture, combining ease of use with automated processes. This solution optimizes storage space utilization while maintaining high performance.
+Backup and restore speeds depend on the rate of change in the environments. Backup policies are fully configurable from the [Cloud Temple Console](../console/console.md) for each virtual machine.
 
-Backup and restore speeds depend on the rate of change within the environments. Backup policies are fully configurable per virtual machine via the [Cloud Temple Console](../console/console.md).
+| Reference | Unit | SKU |
+|---|---|---|
+| BACKUP - Service access | 1 VM | csp:(region):openiaas:backup:vm:v1 |
 
-__Important note:__
+---
 
-*Some virtual machines are incompatible with this backup technology*, which relies on the hypervisor’s snapshot mechanisms. This typically applies to machines with continuous disk write workloads. In such cases, the hypervisor cannot complete the snapshot, requiring the virtual machine to be frozen to finalize the operation. This freeze can last several hours and cannot be interrupted.
+### Technical Backup Architecture
 
-The recommended solution is to exclude the disk subject to continuous writes and instead back up the data using an alternative method.
+#### Overview
 
-| Reference                                     | Unit  | SKU                            |
-| ----------------------------------------------| ----- | ------------------------------ |
-| BACKUP - Service access                       | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
+The architecture is based on a strict separation between the **control plane** (backup orchestrator) and the **data plane** (remote S3 storage): the backup orchestrator is hosted in Cloud Temple's management cluster (separate from and inaccessible to the client), while backup data is stored on a remote S3 repository, physically separated from the production infrastructure. Data transits encrypted between the two components via HTTPS/TLS 1.3.
+
+#### Backup Orchestrator
+
+The orchestrator is deployed in Cloud Temple's management cluster, **directly inaccessible to the client**. It orchestrates all backup jobs and manages encryption.
+
+- **Standard policies**: backup policies are applied by default to each tenant.
+- **Custom policies**: the client can request specific frequencies or retention periods via a support ticket in the Cloud Temple console.
+
+#### Remote S3 Storage
+
+Backups are sent to Cloud Temple's [SecNumCloud-certified Object Storage](../storage/oss), with Multi-AZ replication to ensure resilience against the loss of an entire physical site.
+
+---
+
+### Backup Mechanism: Incremental Backup
+
+The service uses an **incremental** backup mode. This mode targets a **Backup Repository** (the remote S3 storage) and never exports a full backup after the first one: only the **modified data blocks** are transferred at each cycle.
+
+:::info[Incremental Backup vs Replication]
+**Incremental backup** targets a remote S3 repository and is optimized for **long-term protection**. It should not be confused with **replication** (hot Disaster Recovery) which targets a local Storage Repository — this mode is covered by the [virtual machine replication](#virtual-machine-replication) feature.
+:::
+
+#### Incremental Backup Lifecycle
+
+**1. Local Snapshot Creation (Source)**
+
+At job launch, the orchestrator requests the hypervisor to create a VM snapshot. This snapshot serves as a comparison point to calculate the delta against the previous reference snapshot.
+
+**2. Differential Export via Changed Block Tracking (CBT)**
+
+The orchestrator compares the new snapshot with the previous reference snapshot using CBT metadata. Only data blocks that have changed since the last backup are extracted — not the entire disk.
+
+**3. Encryption and Transfer to S3**
+
+Modified blocks are **encrypted on-the-fly by the orchestrator** and then sent via HTTPS/TLS 1.3 to the remote S3 bucket.
+
+**4. Snapshot Rotation (Coalesce)**
+
+Once the transfer is validated, the old reference snapshot is deleted, and the new snapshot becomes the reference for the next cycle. The hypervisor then triggers a **coalesce** (merge) process to reintegrate the old delta data into the virtual disk chain.
+
+:::warning[Coalesce I/O Impact]
+The coalesce operation is **I/O-intensive** on the production storage. It is triggered automatically after each successful backup. It is recommended to schedule backup windows during periods of low application load.
+:::
+
+**5. S3 Retention Management (Merge) and Key Backup Interval**
+
+On the S3 storage, the orchestrator manages backup rotation by merging old deltas into the oldest full backup retained according to the retention policy. A full backup is **periodically forced** (typically every 20 increments — *Key Backup Interval*) to create a clean starting point.
+
+---
+
+### Impact on Production Storage Sizing
+
+:::warning[Critical Note — Block Storage (Thick Provisioning)]
+The OpenIaaS offering relies on high-performance Block storage (Fibre Channel / LVM). Snapshots used by incremental backup are provisioned in **Thick** mode: each snapshot consumes on the Storage Repository (SR) the **full nominal size of the VM disk**, not just the actual delta.
+
+**Consumption example for a VM with a 50 GB disk:**
+
+| Element | Consumption on SR |
+|---|---|
+| Active VM disk | 50 GB |
+| Permanent reference snapshot (for delta calculation) | 50 GB |
+| Temporary snapshot created during export | 50 GB |
+| **Total required during backup window** | **up to 150 GB** |
+
+**Recommended sizing rule**: provision **at least 50% free space** on production storage relative to the total volume of backed-up VMs.
+:::
+
+---
+
+### Backup Security and Encryption
+
+#### Encryption in Transit
+
+All communications between the backup orchestrator and S3 storage are encrypted via **HTTPS / TLS 1.3**.
+
+#### Encryption at Rest and Key Management
+
+Encryption is applied by the backup orchestrator, **before** sending data to S3.
+
+| Parameter | Value |
+|---|---|
+| **Algorithm** | AES-256 or ChaCha20-Poly1305 |
+| **Key Generation** | Automatic at backup orchestrator deployment |
+| **Key Storage** | Cloud Temple centralized Vault (never exposed in the client interface) |
+| **Resilience** | In case of orchestrator loss, the key is re-injected from the Vault to restore the service |
+
+#### Network Isolation (SecNumCloud Architecture)
+
+- **Physical separation**: *Client*, *Administration*, and *Backup* networks rely on separate physical backbones and distinct routing contexts (VRF).
+- **No lateral infection**: a compromised VM cannot reach the S3 storage or the backup orchestrator — no network path exists between them.
+
+#### Secure Administration
+
+| Control | Measure |
+|---|---|
+| **Access bastion** | Mandatory access through a hardened internal administration bastion (Ubuntu Hardened) |
+| **Workstation** | Access only from dedicated and secured administration laptops |
+| **Authentication** | Mandatory MFA via a dedicated administration LDAP directory (separate from the office LDAP) |
+
+---
+
+### Monitoring and Audit
+
+- **Backup logs**: visible to the client directly in the Cloud Temple Console — status (success/failure), volume, timestamp.
+- **Administrator access logs**: accesses to backup infrastructure (orchestrator, S3) are logged and **audited monthly**.
+- **Penetration testing (PASSI)**: regular pentests by PASSI-qualified providers under SecNumCloud qualification.
+- **Physical security**: all equipment hosted in SecNumCloud zones (dedicated physical cages with biometric access control).
+
+---
+
+### Compatibility and Special Cases
+
+:::warning[VMs with continuous disk writes]
+Some virtual machines are incompatible with this backup technology when their **disk write loads are constant** (active databases, transaction logs, etc.). The hypervisor cannot finalize the snapshot without freezing the VM, which can last several hours.
+
+For these workloads, it is recommended to **complement or replace the hypervisor backup with an application-level backup**: database dump (pg_dump, mysqldump…), agent-based backup, or native application export.
+:::
+
+---
 
 ### Creating a Backup Policy
 
-To add a new backup policy, a request must be submitted to support, accessible via the buoy icon located in the top-right corner of the interface.
+Creating a backup policy is an administration operation performed **exclusively via a support request**, accessible via the buoy icon in the top-right corner of the interface.
 
-Creating a new backup policy is done through a __service request__ specifying:
+The request must specify:
 
-- Your Organization's name  
-- Contact details (email and phone number) to finalize the configuration  
-- The tenant name  
-- The backup policy name  
-- Desired characteristics (x days, y weeks, z months, ...)
+- Your Organization's name
+- Contact details (email and phone) to finalize the configuration
+- The tenant name
+- The backup policy name
+- Desired characteristics: frequency, retention (x days, y weeks, z months…)
+
+#### Scheduling Constraints
+
+| Constraint | Value |
+|---|---|
+| **Minimum interval between two executions** | 24 hours |
+| **Maximum retention** | 24 months |
+| **Simultaneous executions per policy** | 1 at a time |
+
+:::warning[A policy can only run once at a time]
+Each backup policy is **single-instance**: only one execution can be active simultaneously.
+
+**Practical consequence**: if you add many virtual machines to an existing policy and the previous backup has not finished when the next scheduled trigger occurs, **the new cycle will not start** — it will be skipped until the next occurrence.
+
+To avoid this: check execution times in the Console logs, adjust the policy frequency or size, or split VMs across multiple policies with staggered schedules.
+:::
 
 :::info[Long-term retention — future availability]
 **The maximum retention is currently 24 months.** Long-term retention (up to 10 years) will be integrated with the launch of our **Glacier** product, planned for **Q1 2027**, as a complementary subscription.
 
-For such long retention periods, we recommend saving **only flat files** (raw files, static documents) and **database dumps**. Restoring a complete server after 10 years carries significant risks: many services or dependencies may have become obsolete or incompatible with the current environment.
+For such long retention periods, we recommend saving **exclusively flat files** and **database dumps**. Restoring a complete server after 10 years carries significant risks of obsolescence.
 
 **Alternative available now**: the **agent-based backup** service, available as a complementary subscription. Contact support for more information.
 :::

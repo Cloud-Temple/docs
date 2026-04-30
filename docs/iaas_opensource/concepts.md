@@ -132,40 +132,190 @@ Le VLAN Trunk laisse passer tous vos VLANs sur une seule carte. La configuration
 
 ## Sauvegarde de machines virtuelles
 
-Cloud Temple propose __une architecture de sauvegarde distribuée native et non débrayable__, élément obligatoire dans le cadre de la qualification SecNumCloud française.
+L'offre OpenIaaS intègre __une architecture de sauvegarde distribuée native et non débrayable__, élément obligatoire dans le cadre de la qualification SecNumCloud française.
 
-Les sauvegardes sont stockées sur la solution [Stockage Objet qualifié SecNumCloud](../storage/oss), garantissant une protection optimale en cas de défaillance majeure du datacenter de production. Cette approche permet de restaurer vos données sur un datacenter secondaire, même en cas d'incident critique comme un incendie.
+Les sauvegardes sont stockées sur le [Stockage Objet qualifié SecNumCloud](../storage/oss), garantissant une protection optimale en cas de défaillance majeure du datacenter de production. Cette approche permet de restaurer vos données sur un datacenter secondaire, même en cas d'incident critique comme un incendie.
 
-Cette solution complète comprend:
+### Services de protection des données disponibles
 
-- La sauvegarde hors site à chaud de l'ensemble des disques
-- Une flexibilité de restauration permettant de choisir le point de récupération et la localisation
-
-L'infrastructure de sauvegarde repose sur une technologie opensource à architecture sans agent, alliant simplicité d'utilisation et automatisation des processus. Cette solution optimise l'utilisation de l'espace de stockage tout en maintenant des performances élevées.
+| Service | Description |
+|---|---|
+| **Sauvegarde incrémentale (Agentless)** | Sauvegarde sans agent via les mécanismes natifs de l'hyperviseur, vers un dépôt S3 distant. |
+| **Sauvegarde des métadonnées** | Protection des configurations du pool de virtualisation et de l'orchestrateur de sauvegarde — indispensable pour le Disaster Recovery. |
+| **Restauration granulaire** | Restauration possible au niveau VM complète, disque virtuel individuel, ou fichier unitaire. |
+| **Offloading S3 Multi-AZ** | Externalisation vers le stockage objet S3 Cloud Temple répliqué entre zones de disponibilité. |
 
 Les vitesses de sauvegarde et de restauration dépendent du taux de changement sur les environnements. La politique de sauvegarde est entièrement configurable depuis [la Console Cloud Temple](../console/console.md) pour chaque machine virtuelle.
-
-__Remarque importante:__
-
-*Certaines machines virtuelles ne sont pas compatibles avec cette technologie de sauvegarde* qui utilise les mécanismes de clichés instantanés de l'hyperviseur. Il s'agit typiquement des machines dont les charges d'écriture sur disque sont constantes. Dans ces cas, l'hyperviseur ne peut pas finaliser le cliché instantané, ce qui nécessite le gel de la machine virtuelle pour terminer l'opération. Ce gel peut durer plusieurs heures et n'est pas interruptible.
-
-La solution recommandée consiste alors à exclure le disque ciblé par des écritures permanentes et à sauvegarder les données par une méthode alternative.
 
 | Référence                                    | Unité | SKU                            |
 | ---------------------------------------------| ----- | ------------------------------ |
 | SAUVEGARDE - Accès au service                | 1 VM  | csp:(region):openiaas:backup:vm:v1 |
 
+---
+
+### Architecture technique de la sauvegarde
+
+#### Vue globale
+
+L'architecture repose sur une séparation stricte entre le **plan de contrôle** et le **plan de données** : l'orchestrateur de sauvegarde est hébergé dans le cluster de management de Cloud Temple (distinct et inaccessible au client), tandis que les données de sauvegarde sont stockées sur un dépôt S3 distant, physiquement séparé de l'infrastructure de production. Les données transitent chiffrées entre les deux composants.
+
+#### Orchestrateur de sauvegarde
+
+L'orchestrateur est déployé dans le cluster de management de Cloud Temple, **inaccessible directement au client**. Il orchestre l'ensemble des jobs de sauvegarde et gère le chiffrement.
+
+- **Politiques standard** : des politiques de sauvegarde sont appliquées par défaut à chaque tenant.
+- **Politiques personnalisées** : le client peut demander des fréquences ou rétentions spécifiques via un ticket de support dans la console Cloud Temple.
+
+#### Stockage distant S3
+
+Les sauvegardes sont envoyées vers le [Stockage Objet qualifié SecNumCloud](../storage/oss) de Cloud Temple, avec réplication Multi-AZ pour garantir la résilience face à la perte d'un site physique entier.
+
+---
+
+### Mécanisme de sauvegarde : Incremental Backup
+
+Le service utilise un mode de sauvegarde **incrémentale**. Ce mode cible un **Backup Repository** (le stockage S3 distant) et n'exporte jamais un backup complet après le premier : seuls les **blocs de données modifiés** sont transférés à chaque cycle.
+
+:::info[Sauvegarde incrémentale vs Réplication]
+La **sauvegarde incrémentale** cible un dépôt S3 distant et est optimisée pour la **protection longue durée**. Elle ne doit pas être confondue avec la **réplication** (Disaster Recovery à chaud) qui cible un Storage Repository local — ce mode est couvert par la fonctionnalité de [réplication de machines virtuelles](#réplication-de-machines-virtuelles).
+:::
+
+#### Cycle de vie technique d'une sauvegarde incrémentale
+
+Voici les étapes successives déclenchées à chaque exécution d'un job de sauvegarde :
+
+**1. Création du snapshot local (Source)**
+
+Au lancement du job, l'orchestrateur demande à l'hyperviseur de créer un snapshot de la VM. Ce snapshot sert de point de comparaison pour calculer le delta par rapport au snapshot de référence précédent.
+
+**2. Export différentiel via Changed Block Tracking (CBT)**
+
+L'orchestrateur compare le nouveau snapshot avec le snapshot de référence précédent via les métadonnées CBT. Seuls les blocs de données ayant changé depuis le dernier backup sont extraits — pas l'intégralité du disque.
+
+**3. Chiffrement et transfert vers S3**
+
+Les blocs modifiés sont **chiffrés à la volée par l'orchestrateur** puis envoyés via HTTPS/TLS 1.3 vers le bucket S3 distant.
+
+**4. Rotation des snapshots (Coalesce)**
+
+Une fois le transfert validé, l'ancien snapshot de référence est supprimé, et le nouveau snapshot devient la référence pour le prochain cycle. L'hyperviseur déclenche alors un processus de **coalesce** (fusion) pour réintégrer les données de l'ancien delta dans la chaîne de disques virtuels.
+
+:::warning[Impact I/O du Coalesce]
+L'opération de coalesce est **intensive en I/O** sur le stockage de production. Elle est déclenchée automatiquement après chaque sauvegarde réussie. Il est recommandé de planifier les fenêtres de sauvegarde pendant les périodes de faible charge applicative.
+:::
+
+**5. Gestion de la rétention sur S3 (Merge) et Key Backup Interval**
+
+Sur le stockage S3, l'orchestrateur gère la rotation des sauvegardes par **fusion** (*merge*) des anciens deltas dans le backup complet le plus ancien conservé selon la politique de rétention.
+
+Pour garantir l'intégrité de la chaîne de sauvegarde, un backup complet est **forcé périodiquement** (typiquement tous les 20 incréments — *Key Backup Interval*). Cela crée un nouveau point de départ propre et limite l'impact d'une éventuelle corruption d'un maillon de la chaîne.
+
+---
+
+### Impact sur le dimensionnement du stockage de production
+
+:::warning[Point d'attention critique — Stockage Bloc (Thick provisioning)]
+L'offre OpenIaaS repose sur du stockage Bloc à haute performance (Fibre Channel / LVM). Les snapshots utilisés par la sauvegarde incrémentale sont provisionnés en mode **Thick** : chaque snapshot consomme sur le Storage Repository (SR) la **taille nominale complète du disque de la VM**, et non uniquement le delta réel.
+
+**Exemple de consommation pour une VM avec un disque de 50 Go :**
+
+| Élément | Consommation sur le SR |
+|---|---|
+| Disque VM actif | 50 Go |
+| Snapshot de référence permanent (pour le calcul du delta) | 50 Go |
+| Snapshot temporaire créé durant l'export | 50 Go |
+| **Total requis durant la fenêtre de sauvegarde** | **jusqu'à 150 Go** |
+
+**Règle de dimensionnement recommandée** : prévoir **au minimum 50% d'espace libre** sur le stockage de production par rapport au volume total des VMs sauvegardées, afin de supporter cette surcharge inhérente au stockage bloc haute performance.
+:::
+
+---
+
+### Sécurité et chiffrement des sauvegardes
+
+#### Chiffrement en transit
+
+Toutes les communications entre l'orchestrateur de sauvegarde et le stockage S3 sont chiffrées via **HTTPS / TLS 1.3**.
+
+#### Chiffrement au repos (At Rest) et gestion des clés
+
+Le chiffrement est appliqué par l'orchestrateur de sauvegarde, **avant** l'envoi des données vers le S3.
+
+| Paramètre | Valeur |
+|---|---|
+| **Algorithme** | AES-256 ou ChaCha20-Poly1305 |
+| **Génération de la clé** | Automatique au déploiement de l'orchestrateur de sauvegarde |
+| **Stockage de la clé** | Vault centralisé Cloud Temple (jamais exposé dans l'interface client) |
+| **Résilience** | En cas de perte de l'orchestrateur, la clé est réinjectée depuis le Vault pour restaurer le service |
+
+#### Isolation réseau (architecture SecNumCloud)
+
+L'infrastructure de sauvegarde est conçue pour être **strictement étanche** vis-à-vis des environnements clients :
+
+- **Séparation physique** : les réseaux *Client*, *Administration* et *Backup* reposent sur des backbones physiques distincts et des contextes de routage (VRF) séparés.
+- **Impossibilité d'infection latérale** : une VM compromise ne peut pas atteindre le stockage S3 ni l'orchestrateur de sauvegarde — aucun chemin réseau n'existe entre eux. Le S3 n'est jamais « monté » dans la VM.
+
+#### Administration sécurisée
+
+L'administration de la plateforme de sauvegarde est **réservée aux équipes Backup de Cloud Temple** et soumise aux exigences SecNumCloud :
+
+| Contrôle | Mesure |
+|---|---|
+| **Bastion d'accès** | Passage obligatoire par un bastion d'administration interne durci (Ubuntu Hardened) |
+| **Poste de travail** | Accès uniquement depuis des laptops d'administration dédiés et sécurisés |
+| **Authentification** | MFA obligatoire via un annuaire LDAP d'administration dédié (distinct du LDAP bureautique) |
+
+---
+
+### Monitoring et audit
+
+- **Journaux de sauvegarde** : visibles par le client directement dans la Console Cloud Temple — statut (succès/échec), volumétrie, horodatage.
+- **Logs d'accès administrateur** : les accès aux infrastructures de backup (orchestrateur, S3) sont journalisés et **audités mensuellement** pour détecter toute anomalie.
+- **Tests d'intrusion (Pentests PASSI)** : l'infrastructure fait l'objet de pentests réguliers par des prestataires qualifiés PASSI dans le cadre du maintien de la qualification SecNumCloud.
+- **Sécurité physique** : l'ensemble des équipements est hébergé dans les zones SecNumCloud (cages physiques dédiées avec contrôle d'accès biométrique) des datacenters Cloud Temple.
+
+---
+
+### Compatibilité et cas particuliers
+
+:::warning[VMs à écritures disque continues]
+Certaines machines virtuelles ne sont pas compatibles avec cette technologie de sauvegarde lorsque leurs **charges d'écriture disque sont constantes** (bases de données actives, journaux transactionnels, etc.). L'hyperviseur ne peut alors pas finaliser le cliché instantané sans geler la VM, ce qui peut durer plusieurs heures.
+
+Pour ces charges de travail, nous recommandons de **compléter ou remplacer la sauvegarde hyperviseur par une sauvegarde applicative** : dump de base de données (pg_dump, mysqldump…), sauvegarde par agent, ou export natif de l'application.
+:::
+
+---
+
 ### Création d'une politique de sauvegarde
 
-Pour ajouter une nouvelle politique de sauvegarde, une demande doit être soumise auprès du support, accessible via l'icône de bouée située en haut à droite de l'interface.
+La création d'une politique de sauvegarde est une opération d'administration réalisée **exclusivement via une demande de support**, accessible par l'icône de bouée en haut à droite de l'interface.
 
-La création d'une nouvelle politique de sauvegarde s'effectue par __une demande de service__ précisant:
+La demande doit préciser :
 
 - Le nom de votre Organisation
 - Les coordonnées d'un contact (email et téléphone) pour finaliser la configuration
 - Le nom du tenant
 - Le nom de la politique de sauvegarde
-- Les caractéristiques souhaitées (x jours, y semaines, z mois, ...)
+- Les caractéristiques souhaitées : fréquence, rétention (x jours, y semaines, z mois…)
+
+#### Contraintes de planification
+
+| Contrainte | Valeur |
+|---|---|
+| **Intervalle minimum entre deux exécutions** | 24 heures |
+| **Rétention maximale** | 24 mois |
+| **Exécutions simultanées par politique** | 1 seule à la fois |
+
+:::warning[Une politique ne peut tourner qu'une seule fois à la fois]
+Chaque politique de sauvegarde est **mono-instance** : une seule exécution peut être active simultanément.
+
+**Conséquence pratique** : si vous ajoutez de nombreuses machines virtuelles dans une politique existante et que le backup de la veille n'est pas encore terminé au moment du déclenchement planifié, **le nouveau cycle ne démarrera pas** — il sera ignoré jusqu'à la prochaine occurrence.
+
+Pour éviter ce cas de figure :
+- vérifiez les **durées d'exécution** de vos jobs depuis les journaux de la Console Cloud Temple,
+- ajustez la **fréquence** ou la **taille de la politique** si les sauvegardes débordent régulièrement sur la fenêtre suivante,
+- envisagez de **répartir les VMs sur plusieurs politiques** avec des horaires décalés pour les gros périmètres.
+:::
 
 :::info[Rétention longue durée — disponibilité future]
 **La rétention maximale est actuellement de 24 mois.** Une rétention longue durée (jusqu'à 10 ans) sera intégrée avec le lancement de notre produit **Glacier**, prévu au **premier trimestre 2027**, sous forme de souscription complémentaire.
