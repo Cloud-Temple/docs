@@ -138,13 +138,13 @@ Per garantire la riservatezza dei tuoi dati in stato di riposo, l'intera infrast
 
 La classe di storage __'Mass Storage'__ offre dischi meccanici per esigenze di archiviazione in un contesto di efficienza economica. Sono disponibili diversi livelli di prestazioni:
 
-| Riferimento                         | Unità | SKU                                          |
+| Riferimento | Unità | Limite massimo IOPS / LUN | Larghezza di banda max / LUN | SKU |
 |-----------------------------------|-------|----------------------------------------------|
 | FLASH - Essenziale - 500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:medium:v1     |
-| FLASH - Premium - 3000 IOPS/To    | 1 Gio | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | csp:(region):iaas:storage:bloc:ultra:v1      |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | MASS STORAGE - Archiviazione      | 1 Tio | csp:(region):iaas:storage:bloc:mass:v1       |
 
 *__Nota__ :*
@@ -182,7 +182,7 @@ Il storage dedicato al backup delle macchine virtuali viene automaticamente prov
 
 | Reference                | Unit | SKU                                      |
 |--------------------------|------|------------------------------------------|
-| MASS STORAGE - Archivage | 1 Tio | csp:(region):iaas:storage:bloc:backup:v1 |
+| MASS STORAGE - Archivage          | 1 Tio | Non garanti               | Non garanti                 | csp:(region):iaas:storage:bloc:mass:v1       |
 
 ### Replication dello storage in modalità blocco
 
@@ -229,7 +229,7 @@ L'uso di questa tecnologia richiede inoltre il doppio dello spazio su disco: è 
 
 L'uso di questo meccanismo può influire sulle prestazioni dell'applicazione fino al 10%. __Sono compatibili solo le classi di storage 500 IOPS/To, 1500 IOPS/To e 3000 IOPS/To.__
 
-| Riferimento                          | Unità  | SKU                                               |  
+| Riferimento | Unità | Limite massimo IOPS / LUN | Larghezza di banda max / LUN | SKU |  
 |------------------------------------|--------|---------------------------------------------------|
 | STORAGE - Global Replication SAN  | 1 TiB  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
@@ -356,7 +356,7 @@ In caso di necessità, oppure in caso di guasto su una macchina del sito princip
 Il ripristino dell'attività richiede che sul sito di standby sia stato riservato calcolo e RAM in standby. È  
 necessario disporre dello stesso spazio di storage sul sito passivo rispetto al sito attivo.
 
-| Riferimento                         | Unità | SKU                                             |  
+| Riferimento | Unità | Limite massimo IOPS / LUN | Larghezza di banda max / LUN | SKU |  
 |-----------------------------------|-------|-------------------------------------------------|
 | PRA - Replication VMware inter-AZ | 1 vm  | csp:(region):iaas:vmware:licence:replication:v1 |
 
@@ -387,7 +387,7 @@ Le velocità di backup e ripristino dipendono dal tasso di cambiamento negli amb
 
 *La soluzione consiste quindi nell'escludere il disco soggetto a scritture continue e nel salvare i dati tramite un'altra metodologia.*
 
-| Riferimento                                               | Unità | SKU                            |
+| Riferimento | Unità | Limite massimo IOPS / LUN | Larghezza di banda max / LUN | SKU |
 | ------------------------------------------------------- | ----- | ------------------------------ |
 | SAUVEGARDE - Accesso al servizio IBM Spectrum Protect Plus | 1 VM  | csp:(region):iaas:backup:vm:v1 |
 
@@ -495,7 +495,7 @@ Questa soluzione di protezione avanzata è particolarmente adatta per:
 - __Settori critici__: banche, assicurazioni, sanità, difesa  
 - __Sovranità digitale__: protezione contro accessi non autorizzati, anche in caso di compromissione  
 
-| Riferimento | Unità | SKU |
+| Riferimento | Unità | Limite massimo IOPS / LUN | Larghezza di banda max / LUN | SKU |
 |-------------|-------|-----|
 | PROTEZIONE AVANZATA - Crittografia VM tramite HSM/KMS | 1 VM | csp:(region):iaas:vmware:encryption:hsm:v1 |
 

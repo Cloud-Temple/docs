@@ -136,13 +136,13 @@ It is important to note that this encryption protects data stored on disks. It i
 
 The __'Mass Storage'__ storage class offers mechanical disks for archival needs in an economically efficient context. Several performance tiers are available:
 
-| Reference                         | Unit  | SKU                                          |
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |
 |-----------------------------------|-------|----------------------------------------------|
 | FLASH - Essential - 500 IOPS/To   | 1 GiB | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To   | 1 GiB | csp:(region):iaas:storage:bloc:medium:v1     |
-| FLASH - Premium - 3000 IOPS/To    | 1 GiB | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 GiB | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 GiB | csp:(region):iaas:storage:bloc:ultra:v1      |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | MASS STORAGE - Archival           | 1 TiB | csp:(region):iaas:storage:bloc:mass:v1       |
 
 *__Note__ :*
@@ -178,7 +178,7 @@ Proactive disk space management is essential to ensure the proper operation of y
 
 The dedicated storage for backing up your virtual machines is automatically provisioned by the platform, up to the quota ordered.
 
-| Reference                | Unit  | SKU                                      |
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |
 |--------------------------|-------|------------------------------------------|
 | MASS STORAGE - Archiving | 1 TiB | csp:(region):iaas:storage:bloc:backup:v1 |
 
@@ -225,7 +225,7 @@ Using this technology also requires doubling the disk space: the remote site mus
 
 This mechanism may impact application performance by up to 10%. __Only storage classes 500 IOPS/To, 1500 IOPS/To, and 3000 IOPS/To are compatible.__
 
-| Reference                          | Unit  | SKU                                               |  
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |  
 |------------------------------------|--------|---------------------------------------------------|
 | STORAGE - Global Replication SAN  | 1 TiB  | csp:(region):iaas:storage:licence:globalmirror:v1 |
 
@@ -339,7 +339,7 @@ A typical example of a machine that does not support VM replication is an FTP se
 In case of need or failure on a machine at the primary site, the mirrored machine at the standby site is activated.  
 Recovery requires reserving compute and RAM capacity at the standby site. It is also necessary to have the same storage space available at the passive site as at the active site.
 
-| Reference                         | Unit | SKU                                             |  
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |  
 |-----------------------------------|------|-------------------------------------------------|
 | PRA - VMware Inter-AZ Replication | 1 VM | csp:(region):iaas:vmware:licence:replication:v1 |
 
@@ -371,7 +371,7 @@ Backup policies are configurable per virtual machine via the [Cloud Temple Conso
 
 *In such cases, the recommended approach is to exclude the disk subject to continuous writes and back up the data using an alternative method.*
 
-| Reference                                               | Unit  | SKU                            |
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |
 | ------------------------------------------------------- | ----- | ------------------------------ |
 | BACKUP - Access to IBM Spectrum Protect Plus service    | 1 VM  | csp:(region):iaas:backup:vm:v1 |
 
@@ -479,7 +479,7 @@ This advanced protection solution is particularly well-suited for:
 - __Critical Sectors__: Banking, insurance, healthcare, defense  
 - __Digital Sovereignty__: Protection against unauthorized access, even in case of compromise  
 
-| Reference | Unit | SKU |
+| Reference | Unit | Max IOPS Ceiling / LUN | Max Bandwidth / LUN | SKU |
 |-----------|------|-----|
 | ADVANCED PROTECTION - VM Encryption via HSM/KMS | 1 VM | csp:(region):iaas:vmware:encryption:hsm:v1 |
 
