@@ -31,6 +31,9 @@ RUN yarn build
 # Serve static site with a simple nginx
 FROM nginx:stable-alpine AS deploy
 
+# Upgrade all Alpine packages to pick up latest security patches (CVE fixes)
+RUN apk upgrade --no-cache
+
 ARG APP_FOLDER=/var/www
 
 WORKDIR ${APP_FOLDER}
