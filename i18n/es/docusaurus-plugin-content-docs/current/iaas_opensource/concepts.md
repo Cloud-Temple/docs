@@ -80,13 +80,13 @@ Infrastructure availability is guaranteed at 99.9%, measured monthly, including 
 
 El almacenamiento en bloque distribuido, basado en __IBM Spectrum Virtualize__, ofrece una gama de rendimientos adecuada para diversos casos de uso:
 
-| Referencia                        | IOPS/To                 | Uso principal                           |
+| Referencia | IOPS/To | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | Uso principal |
 |-----------------------------------|-------------------------|-----------------------------------------|
 | __FLASH - Esencial__              | 500                     | Cargas de trabajo ligeras               |
 | __FLASH - Estándar__              | 1500                    | Cargas de trabajo estándar              |
-| __FLASH - Premium__               | 3000                    | Cargas intensivas                       |
-| __FLASH - Enterprise__            | 7500                    | Cargas críticas                         |
-| __FLASH - Ultra__                 | 15000                   | Cargas ultraintensivas                  |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | __MASS STORAGE - Archivo__        | No aplicable            | Almacenamiento económico para el archivo|
 
 ### Características
@@ -143,7 +143,7 @@ Las copias de seguridad se almacenan en el [Almacenamiento Objeto cualificado Se
 
 Las velocidades de copia de seguridad y restauración dependen de la tasa de cambio en los entornos. La política de copia de seguridad es completamente configurable desde [la Consola Cloud Temple](../console/console.md) para cada máquina virtual.
 
-| Referencia | Unidad | SKU |
+| Referencia | Unidad | Techo máximo IOPS / LUN | Ancho de banda máx / LUN | SKU |
 |---|---|---|
 | BACKUP - Acceso al servicio | 1 VM | csp:(region):openiaas:backup:vm:v1 |
 
