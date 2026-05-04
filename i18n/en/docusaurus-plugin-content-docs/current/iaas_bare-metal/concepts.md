@@ -60,10 +60,10 @@ Distributed block storage, based on **IBM Spectrum Virtualize**, offers a range 
 | Reference                         | IOPS/To                 | Primary Use Case                       |
 |-----------------------------------|-------------------------|----------------------------------------|
 | **FLASH - Essential**             | 500                     | Light workloads                        |
-| **FLASH - Standard**              | 1500                    | Standard workloads                     |
-| **FLASH - Premium**               | 3000                    | Intensive workloads                    |
-| **FLASH - Enterprise**            | 7500                    | Critical workloads                     |
-| **FLASH - Ultra**                 | 15000                   | Ultra-intensive workloads              |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | **MASS STORAGE - Archival**       | Not applicable          | Cost-effective storage for archival    |
 
 ### Features

@@ -57,13 +57,13 @@ La disponibilità dell'infrastruttura è garantita al 99,9%, misurata mensilment
 
 L'archiviazione in blocco distribuita, basata su **IBM Spectrum Virtualize**, offre una gamma di prestazioni adatta a diversi scenari di utilizzo:
 
-| Riferimento                       | IOPS/To                 | Uso principale                         |
+| Riferimento | IOPS/To | Limite massimo IOPS / LUN | Larghezza di banda max / LUN | Uso principale |
 |-----------------------------------|-------------------------|----------------------------------------|
 | **FLASH - Essenziale**            | 500                     | Carichi di lavoro leggeri              |
-| **FLASH - Standard**              | 1500                    | Carichi di lavoro standard             |
-| **FLASH - Premium**               | 3000                    | Carichi intensivi                      |
-| **FLASH - Enterprise**            | 7500                    | Carichi critici                        |
-| **FLASH - Ultra**                 | 15000                   | Carichi ultra-intensivi                |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS               | 1024 Mo/s                   | csp:(region):iaas:storage:bloc:ultra:v1      |
 | **MASS STORAGE - Archiviazione**  | Non applicabile         | Archiviazione economica                |
 
 ### Caratteristiche
