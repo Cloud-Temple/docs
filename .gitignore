@@ -22,6 +22,7 @@ scripts/translate_py/venv/
 .env.test.local
 .env.production.local
 .venv
+.maj.js
 
 npm-debug.log*
 yarn-debug.log*

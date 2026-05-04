@@ -134,6 +134,26 @@ Open your browser and go to: <http://localhost:8080>
 
 > Base url is set to "/" on production build
 
+## Docker Image Labels
+
+The production image (`nginx:stable-alpine` stage) embeds the following [OCI standard labels](https://github.com/opencontainers/image-spec/blob/main/annotations.md):
+
+| Label | Value |
+|---|---|
+| `org.opencontainers.image.title` | `Cloud Temple Documentation` |
+| `org.opencontainers.image.description` | `Cloud Temple official documentation site (Docusaurus static build served by nginx)` |
+| `org.opencontainers.image.vendor` | `Cloud Temple` |
+| `org.opencontainers.image.source` | `https://github.com/Cloud-Temple/docs` |
+| `org.opencontainers.image.licenses` | `proprietary` |
+
+You can inspect the labels of a built image with:
+
+```bash
+docker inspect docs:v3 --format '{{ json .Config.Labels }}' | jq
+```
+
+> **Security note:** Alpine packages in the final stage are upgraded at build time (`apk upgrade --no-cache`) to ensure all OS-level CVEs are patched. Rebuild the image regularly to pick up new security fixes.
+
 # Scripts for Automation
 
 This project includes several scripts to automate documentation and translation tasks. For complete technical details on all scripts, please refer to the [__Scripts README__](./scripts/README.md).
