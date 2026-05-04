@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 4 Mai 2026 : Correctifs de sécurité — image Docker (CVE Alpine)
+
+- **Sécurité (Docker)** : Ajout de `apk upgrade --no-cache` dans le stage final `nginx:stable-alpine` des Dockerfiles de production (`Dockerfile` et `Dockerfile.prebuilt`). Cette mise à jour corrige l'ensemble des CVE Critical et High détectées par Harbor/Trivy sur l'image `3.24.3`, liées aux packages Alpine figés : `libcrypto3`, `libssl3`, `libxml2`, `libxslt`, `libexpat`, `libpng`, `zlib`, `c-ares`, `musl`, `xz-libs`, `busybox`, `curl`. Le prochain build produira une image avec tous ces packages à leur dernière version corrigée.
+
 ### 17 Avril 2026 : VM Instances — documentation illustrée, tutoriels et traductions
 
 - **VM Instances — Enrichissement documentaire** : Refonte complète et illustration de la documentation VM Instances. Le guide de démarrage (`quickstart.md`) couvre désormais l'intégralité du parcours utilisateur illustré : accès à la section, liste des VMs, wizard de création en 9 étapes (famille d'instance, zone de disponibilité, template OS, gabarit, nom/sauvegarde, Cloud Init, disques, réseau, sommaire), et gestion des 4 onglets (Informations, Disques, Réseau, Snapshots).
