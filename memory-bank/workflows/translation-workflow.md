@@ -104,9 +104,16 @@ Nouvelles méthodes dans `ContentSplitter` :
 
 Test unitaire validé : un document avec des `# commentaires Python` et `## faux headers` dans des blocs ` ```python ` et ` ```bash ` produit des blocs avec des code fences toujours équilibrées.
 
+## 🔧 Correction du 14/05/2026 : suppression de la copie d'images
+
+Depuis avril 2026, les images dans la documentation utilisent des chemins absolus `@site/docs/...` au lieu de chemins relatifs `./images/...`. Les versions i18n référencent directement les images sources, donc **les images n'ont plus besoin d'être dupliquées** dans les dossiers `i18n/`.
+
+**Modification** : Dans `file_manager.py`, la méthode `_needs_translation()` retourne maintenant `False` pour tous les fichiers non-Markdown (images, .docx, .pdf, etc.). Cela économise ~2500 fichiers inutiles (613 images × 4 langues).
+
 ## 🚀 Prochaines Étapes / Améliorations Possibles
 
 - Relancer les traductions des fichiers modifiés avec le script corrigé.
+- Nettoyer les images orphelines dans les dossiers i18n (optionnel, pas bloquant).
 - Intégration dans un workflow CI/CD pour automatiser les traductions lors de modifications sur la branche principale.
 - Tableau de bord de l'état des traductions.
 - Mécanisme de relecture et validation humaine intégré.

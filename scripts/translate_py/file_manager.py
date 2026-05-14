@@ -438,9 +438,11 @@ class TaskBuilder:
         if init_mode:
             return translate_missing and not target_path.exists()
         
-        # Fichiers non-markdown : copie si manquant
+        # Fichiers non-markdown (images, documents, etc.) : ne plus copier.
+        # Depuis avril 2026, les images utilisent des chemins absolus @site/docs/...
+        # et n'ont plus besoin d'être dupliquées dans les dossiers i18n.
         if file_type != FileType.MARKDOWN:
-            return not target_path.exists()
+            return False
         
         # Fichiers markdown : vérification du hash
         if not target_path.exists():
