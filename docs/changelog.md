@@ -9,6 +9,18 @@ sidebar_position: 2
 
 - **Sécurité (Docker)** : Ajout de `apk upgrade --no-cache` dans le stage final `nginx:stable-alpine` des Dockerfiles de production (`Dockerfile` et `Dockerfile.prebuilt`). Cette mise à jour corrige l'ensemble des CVE Critical et High détectées par Harbor/Trivy sur l'image `3.24.3`, liées aux packages Alpine figés : `libcrypto3`, `libssl3`, `libxml2`, `libxslt`, `libexpat`, `libpng`, `zlib`, `c-ares`, `musl`, `xz-libs`, `busybox`, `curl`. Le prochain build produira une image avec tous ces packages à leur dernière version corrigée.
 
+### 30 Avril 2026 : Précisions sur les performances de stockage
+
+- **Stockage (IaaS VMware, OpenSource, Bare Metal)** : Ajout des plafonds absolus d'IOPS et de bande passante maximum pour toutes les classes de stockage. Ces informations permettent de mieux dimensionner les environnements en fonction des besoins de performance.
+
+### 24 Avril 2026 : Enrichissement de la documentation sauvegarde IaaS OpenSource
+
+- **IaaS OpenSource (Sauvegarde)** : Enrichissement de la section sauvegarde avec des précisions sur l'architecture technique (sauvegarde incrémentale, impact du Thick provisioning sur le stockage), la sécurité (chiffrement AES-256, isolation réseau), le monitoring et les contraintes de planification. Traductions disponibles EN/DE/ES/IT.
+
+### 20 Avril 2026 : Mise à jour du dimensionnement Managed Database
+
+- **Managed MariaDB & PostgreSQL** : Mise à jour des gabarits de dimensionnement maximum disponibles pour les services de bases de données managées.
+
 ### 17 Avril 2026 : VM Instances — documentation illustrée, tutoriels et traductions
 
 - **VM Instances — Enrichissement documentaire** : Refonte complète et illustration de la documentation VM Instances. Le guide de démarrage (`quickstart.md`) couvre désormais l'intégralité du parcours utilisateur illustré : accès à la section, liste des VMs, wizard de création en 9 étapes (famille d'instance, zone de disponibilité, template OS, gabarit, nom/sauvegarde, Cloud Init, disques, réseau, sommaire), et gestion des 4 onglets (Informations, Disques, Réseau, Snapshots).
