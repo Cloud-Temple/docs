@@ -80,7 +80,33 @@ Le script `scripts/translate_py/translate.py` est l'outil central de ce workflow
 -   Une relecture humaine des traductions générées est recommandée, surtout pour les contenus critiques ou complexes.
 -   Les erreurs de traduction ou les problèmes de formatage doivent être signalés pour améliorer le prompt système ou le script.
 
+## 🔧 Correction majeure du 14/05/2026 : chunking code-block-aware
+
+### Problème résolu
+
+Le `ContentSplitter` dans `translator.py` ne tenait pas compte des blocs de code délimités par ` ``` ` lors du découpage en chunks. Cela causait :
+
+1. **Headers dans le code traités comme des points de coupure** : Un `# commentaire Python` ou `## exemple` dans un bloc ` ```python ` était interprété comme un header Markdown, cassant le bloc de code en deux chunks séparés.
+2. **Coupures au milieu des blocs de code** : Le sous-découpage des gros blocs (`_split_large_block`) coupait sur les `.`, `!`, `?` ou espaces sans vérifier si le point de coupure était dans un bloc de code.
+3. **Résultat** : Les traductions produisaient des fichiers avec des blocs de code cassés (ouverture ` ``` ` sans fermeture), causant des erreurs MDX au build.
+
+### Solution implémentée
+
+Nouvelles méthodes dans `ContentSplitter` :
+
+- **`_find_code_block_ranges(text)`** : Identifie toutes les plages `(start, end)` des blocs de code ` ``` ... ``` ` dans le texte. Gère les fence de longueur variable et les blocs non fermés.
+- **`_is_inside_code_block(position, code_ranges)`** : Vérifie si une position donnée est à l'intérieur d'un bloc de code.
+- **`_find_safe_split_point(text, start, end, code_ranges)`** : Cherche un point de coupure sûr (hors bloc de code) avec priorité : ligne vide > fin de phrase > saut de ligne.
+- **`split_content()` modifié** : Filtre les headers qui sont à l'intérieur d'un bloc de code avant de découper.
+- **`_split_large_block()` modifié** : Utilise `_find_safe_split_point()` et ne coupe jamais au milieu d'un bloc de code. Si bloqué dans un code block, prend tout le bloc jusqu'à sa fermeture.
+
+### Validation
+
+Test unitaire validé : un document avec des `# commentaires Python` et `## faux headers` dans des blocs ` ```python ` et ` ```bash ` produit des blocs avec des code fences toujours équilibrées.
+
 ## 🚀 Prochaines Étapes / Améliorations Possibles
--   Intégration dans un workflow CI/CD pour automatiser les traductions lors de modifications sur la branche principale.
--   Tableau de bord de l'état des traductions.
--   Mécanisme de relecture et validation humaine intégré.
+
+- Relancer les traductions des fichiers modifiés avec le script corrigé.
+- Intégration dans un workflow CI/CD pour automatiser les traductions lors de modifications sur la branche principale.
+- Tableau de bord de l'état des traductions.
+- Mécanisme de relecture et validation humaine intégré.
