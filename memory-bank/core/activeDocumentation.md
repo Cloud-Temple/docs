@@ -1,5 +1,23 @@
 # Documentation Active - État Actuel
 
+## ⛔ AVERTISSEMENT CRITIQUE — NE RIEN FAIRE À LA MAIN DANS i18n/
+
+> **INTERDICTION ABSOLUE** : Ne JAMAIS modifier manuellement les fichiers dans les dossiers `i18n/`.
+> 
+> **Pourquoi** : Toutes les traductions sont gérées automatiquement par le script `scripts/translate_py/translate.py`. 
+> Toute modification manuelle sera **écrasée** lors de la prochaine exécution du script, et peut **casser le build** 
+> (blocs de code mal fermés, chemins d'images incorrects, doublons MDX).
+>
+> **Workflow obligatoire** :
+> 1. Modifier UNIQUEMENT les fichiers source en **français** dans `docs/`
+> 2. Lancer le script de traduction : `python scripts/translate_py/translate.py`
+> 3. Vérifier le build : `npx docusaurus build`
+> 4. Commiter l'ensemble (sources FR + traductions générées)
+>
+> **Attention aux images** : 63 fichiers source utilisent encore des chemins relatifs `./images/`. 
+> Le script copie automatiquement les images dans les dossiers i18n. Ne PAS supprimer ces copies.
+> La migration vers `@site/docs/...` (chemins absolus) est un chantier futur.
+
 ## Analyse de Complétude par Service
 
 ### 🖥️ Console Management - Statut : ✅ COMPLET
