@@ -430,19 +430,12 @@ class TaskBuilder:
         Returns:
             True si traduction nécessaire
         """
-        # En mode force, tout est à traduire
-        if force_retranslation:
-            return True
-        
-        # En mode init, on ne traduit que les manquants si demandé
-        if init_mode:
-            return translate_missing and not target_path.exists()
-        
-        # Fichiers non-markdown (images, documents, etc.) : copie si manquant.
-        # NOTE : 63 fichiers source utilisent encore ./images/ (relatif).
-        # La copie reste nécessaire tant que la migration vers @site/docs/ n'est pas complète.
+        # Fichiers non-markdown (images, documents, etc.) : JAMAIS copier.
+        # Les images déjà commitées dans i18n y restent.
+        # Le script ne doit PAS re-créer les dossiers d'images à chaque exécution.
+        # Pour les nouveaux contenus, utiliser @site/docs/... (chemins absolus).
         if file_type != FileType.MARKDOWN:
-            return not target_path.exists()
+            return False
         
         # Fichiers markdown : vérification du hash
         if not target_path.exists():
