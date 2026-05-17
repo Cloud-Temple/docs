@@ -1,25 +1,25 @@
 ---
-title: Modell der geteilten Verantwortung — VM-Instanzen
+title: Shared-Responsibility-Modell — VM-Instanzen
 slug: /contractual/vm-instances/raci
 ---
 
 # Modell der geteilten Verantwortung — VM-Instanzen
 
-Dieses **RACI**-Modell definiert die Verteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple für den **VM-Instanzen**-Dienst (gemeinsam genutzte virtuelle Maschinen).
+Dies ist das **RACI**-Modell, das die Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple für die Nutzung des **VM-Instanzen**-Services (geteilte virtuelle Maschinen) definiert.
 
-> **Besonderheiten des VM-Instanzen-Dienstes**  
-> Im Gegensatz zum dedizierten IaaS-Angebot basiert der VM-Instanzen-Dienst auf einer **gemeinsam genutzten und vollständig von Cloud Temple verwalteten** Compute-Infrastruktur. Cloud Temple übernimmt das vollständige Management des Hypervisors, der Systemimages und der Infrastrukturschicht. Der Kunde trägt die volle Verantwortung für alles, was innerhalb seiner Instanzen ausgeführt wird: Gast-Betriebssystem, Anwendungen, Daten und Anwendungssicherheit.
+> **Besonderheit des VM-Instanzen-Angebots**  
+> Im Gegensatz zum dedizierten IaaS-Angebot basiert der VM-Instanzen-Service auf einer **von Cloud Temple vollständig verwalteten und geteilten** Recheninfrastruktur. Cloud Temple übernimmt das vollständige Management des Hypervisors, der Systemimages und der Infrastrukturschicht. Der Kunde behält die volle Verantwortung für das, was innerhalb seiner Instanzen ausgeführt wird: Gastbetriebssystem, Anwendungen, Daten und Anwendungssicherheit.
 
 ---
 
-## Rollendefinitionen
+## Definition der Rollen
 
-| Rolle             | Beschreibung                                                                                  |
-|-------------------|-----------------------------------------------------------------------------------------------|
-| (R) Responsible   | __R__ealisiert den Prozess                                                                    |
-| (A) Accountable   | __V__erantwortlich für die erfolgreiche Durchführung des Prozesses                            |
-| (C) Consulted     | Wird __k__onsultiert während des Prozesses                                                    |
-| (I) Informed      | Wird über die Ergebnisse des Prozesses __i__nformiert (über Tools, Portal oder Messaging)     |
+| Rolle         | Beschreibung                                                                           |
+|--------------|---------------------------------------------------------------------------------------|
+| (R) Realisiert | __R__ealisiert den Prozess                                                              |
+| (A) Genehmigt | __G__enehmigt die Prozessdurchführung                                                  |
+| (C) Konsultiert | __K__onsultiert während des Prozesses                                                  |
+| (I) Informiert | __I__nformiert über die Ergebnisse des Prozesses (über die Tools, das Portal oder die Messaging-Plattform) |
 
 ---
 
@@ -27,207 +27,209 @@ Dieses **RACI**-Modell definiert die Verteilung der Verantwortlichkeiten zwische
 
 Cloud Temple ist vollständig für die Infrastruktur- und Hypervisor-Schicht verantwortlich. Der Kunde hat keinen Zugriff auf diese Schicht.
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
+| Aufgabe | Kunde | Cloud Temple |
 |--------------------------------------------------------------------------------------------------------|--------|--------------|
-| Implementierung und Wartung der **physischen Rechenzentren** sicherstellen                            |        | **RA**       |
-| Implementierung und Wartung der **gemeinsam genutzten Compute**-Infrastruktur sicherstellen           | **I**  | **RA**       |
-| Implementierung und Wartung der **Speicher**-Infrastruktur sicherstellen                              | **I**  | **RA**       |
-| Implementierung und Wartung der **Backbone-Netzwerk**-Konnektivität sicherstellen                     | **I**  | **RA**       |
-| **Hypervisoren** verwalten, aktualisieren und sicherheitstechnisch warten *(1)*                       | **I**  | **RA**       |
-| **Hochverfügbarkeit** der Hypervisor-Plattform sicherstellen                                          | **I**  | **RA**       |
-| Vorfälle, Probleme und Kapazitäten der Infrastruktur- und Hypervisor-Schicht verwalten               | **I**  | **RA**       |
-| Für den Betrieb der Plattform notwendige **Lizenzen** erwerben und aufrechterhalten                   |        | **RA**       |
+| Bereitstellung und Wartung der **physischen Rechenzentren** sicherstellen | | **RA** |
+| Bereitstellung und Wartung der **gemeinsam genutzten Recheninfrastrukturen** | **I** | **RA** |
+| Bereitstellung und Wartung der **Speicherinfrastrukturen** | **I** | **RA** |
+| Bereitstellung und Wartung der **Backbone-Netzwerk-Konnektivität** | **I** | **RA** |
+| Verwaltung, Aktualisierung und sicherer Betrieb der **Hypervisoren** *(1)* | **I** | **RA** |
+| Sicherstellung der **Hochverfügbarkeit** der Hypervisor-Plattform | **I** | **RA** |
+| Verwaltung von Incidents, Problemen und Kapazitäten der Infrastruktur- und Hypervisor-Schicht | **I** | **RA** |
+| Beschaffung und Verwaltung der für den Plattformbetrieb erforderlichen **Lizenzen** | | **RA** |
 
-*(1) Hypervisoren und die Virtualisierungsschicht liegen vollständig in der Verantwortung von Cloud Temple. Der Kunde hat weder Zugriff auf den Hypervisor noch auf die zugrunde liegende Verwaltungsschicht.*
+*(1) Die Hypervisoren und die Virtualisierungsschicht liegen vollständig in der Verantwortung von Cloud Temple. Der Kunde hat keinen Zugriff auf den Hypervisor oder die zugrunde liegende Management-Schicht.*
 
 ---
 
 ## Images, Templates & Katalog
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Offizielle Katalog-Images** erstellen, veröffentlichen und pflegen *(2)*                            | **I**  | **RA**       |
-| Sicherheits-Patches und Updates für **Katalog-Images** anwenden                                       |        | **RA**       |
-| Konformität und Sicherheit der veröffentlichten Katalog-Images validieren                             |        | **RA**       |
-| Ein offizielles Katalog-Image **ableiten** um ein benutzerdefiniertes Image zu erstellen *(3)*        | **RA** | **I**        |
-| Konformität, Lizenzen und Sicherheit jedes abgeleiteten benutzerdefinierten Images sicherstellen      | **RA** |              |
-| Abgeleitete benutzerdefinierte Images pflegen und aktualisieren (OS-Patches, integrierte Tools)      | **RA** |              |
+| Aktivität                                                                                                       | Kunde | Cloud Temple |
+|----------------------------------------------------------------------------------------------------------------|-------|--------------|
+| Offizielle **Katalog-Images** erstellen, veröffentlichen und pflegen *(2)*                                | **I**  | **RA**       |
+| Sicherheitspatches und Updates auf die **Katalog-Images** anwenden                      |        | **RA**       |
+| Konformität und Sicherheit der im Katalog veröffentlichten Images validieren                                    |        | **RA**       |
+| Ein offizielles **Katalog-Image** zur Erstellung eines benutzerdefinierten Images **ableiten** *(3)*                        | **RA** | **I**        |
+| Konformität, Lizenzen und Sicherheit jedes abgeleiteten benutzerdefinierten Images sicherstellen               | **RA** |              |
+| Abgeleitete benutzerdefinierte Images pflegen und aktualisieren (OS-Patches, integrierte Tools)                | **RA** |              |
 
-*(2) Offizielle Katalog-Images (Linux-Distributionen, Windows Server usw.) werden von Cloud Temple erstellt, gepflegt und aktualisiert. Ihr anfängliches Sicherheitsniveau liegt in der Verantwortung von Cloud Temple.*  
-*(3) Der Kunde kann ein offizielles Katalog-Image ableiten, um ein benutzerdefiniertes Image zu erstellen. Ab diesem Zeitpunkt liegt die **gesamte Verantwortung** für dieses Image beim Kunden: Konformität, Lizenzen, Sicherheitsupdates, Vorhandensein und Aktualisierung der Tools sowie Hardening. Cloud Temple übernimmt keine Pflege abgeleiteter Images.*
-
----
-
-## Bereitstellung & Instanz-Lebenszyklus
-
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| **VM-Instanzen** erstellen, starten, stoppen und löschen                                              | **RA** | **I**        |
-| Flavor und Start-Image der Instanz auswählen                                                          | **RA** |              |
-| Instanz skalieren (Flavor-Änderung) *(4)*                                                             | **RA** | **I**        |
-| **Metadaten und Tags** der Instanzen verwalten                                                        | **RA** |              |
-| **Lebenszyklus** der Instanzen verwalten (Erstellung, Änderung, Stilllegung)                          | **RA** |              |
-| Entscheidung über Hinzufügen oder Reduzieren von Ressourcen treffen                                  | **RA** |              |
-
-*(4) Eine Größenänderung kann einen Neustart der Instanz erfordern. Die Verfügbarkeit der gehosteten Anwendung während dieser Operation liegt in der Verantwortung des Kunden.*
+*(2) Die offiziellen Katalog-Images (Linux-Distributionen, Windows Server usw.) werden von Cloud Temple erstellt, gepflegt und aktualisiert. Das initiale Sicherheitsniveau liegt in der Verantwortung von Cloud Temple.*  
+*(3) Der Kunde kann ein offizielles Katalog-Image ableiten, um ein benutzerdefiniertes Image zu erstellen. Ab diesem Zeitpunkt trägt er **die volle Verantwortung** für dieses Image: Konformität, Lizenzen, Sicherheitsupdates, Vorhandensein und Aktualisierung der Tools sowie Hardening. Cloud Temple übernimmt keine Pflege dieser abgeleiteten Images.*
 
 ---
 
-## Gast-Betriebssystem (Guest OS) & Tools
+## Instanzbereitstellung & Lebenszyklus der Instanzen
+
+| Aktivität | Client | Cloud Temple |
+|--------------------------------------------------------------------------------------------------------|--------|--------------|
+| **VM-Instanzen** erstellen, starten, stoppen und löschen | **RA** | **I** |
+| Instanztyp (flavor) und Start-Image der Instanz auswählen | **RA** | |
+| Instanz skalieren (changement de gabarit) *(4)* | **RA** | **I** |
+| **Metadaten und Tags** der Instanzen verwalten | **RA** | |
+| **Lebenszyklus** der Instanzen verwalten (création, modification, décommissionnement) | **RA** | |
+| Entscheidung über das Hinzufügen oder Reduzieren von Ressourcen treffen. | **RA** | |
+
+*(4) Das Skalieren kann einen Neustart der Instanz erfordern. Die Verfügbarkeit der gehosteten Anwendung während dieses Vorgangs liegt in der Verantwortung des Clients.*
+
+---
+
+## Gastbetriebssystem (Guest OS) & Tools
 
 Der Kunde hat die volle Kontrolle und die volle Verantwortung für das Betriebssystem innerhalb seiner Instanzen.
 
-:::warning[SLA-Gültigkeitsbedingung — Obligatorische Tools]
-Die **VM-Instanzen-Tools** (Hypervisor-Management-Agenten) werden von Cloud Temple **bei der Bereitstellung** der Instanz aus dem Katalog **vorinstalliert**. Diese Agenten sind für den ordnungsgemäßen Betrieb der Plattform und die Verfügbarkeitsmessung unverzichtbar.
+:::warning[Bedingung für die SLA-Gültigkeit — Erforderliche Tools]
+Die **VM-Instance-Tools** (agents de gestion de l'hyperviseur) werden von **Cloud Temple bei der Bereitstellung der Instanz aus dem Katalog vorinstalliert**. Diese Agenten sind für den ordnungsgemäßen Betrieb der Plattform und die Verfügbarkeitsmessung unerlässlich.
 
-**Wenn der Kunde diese Tools deaktiviert oder entfernt, ist das SLA sofort hinfällig.** Cloud Temple kann die Verfügbarkeit der Instanz ohne diese Agenten weder garantieren noch messen. Das Vorhandensein und die ordnungsgemäße Funktion der Tools liegen während der gesamten Lebensdauer der Instanz in der ausschließlichen Verantwortung des Kunden.
+**Wenn der Kunde diese Tools deaktiviert oder löscht, erlischt das SLA sofort.** Cloud Temple kann ohne diese Agenten die Verfügbarkeit der Instanz weder garantieren noch messen. Das Vorhandensein und der einwandfreie Betrieb der Tools liegen während des Betriebs in der alleinigen Verantwortung des Kunden.
 :::
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Tools vorinstallieren** (Hypervisor-Agenten, PV-Treiber) bei der Bereitstellung aus dem Katalog *(5)*      |        | **RA**       |
-| Sicherstellen, dass **Tools installiert, aktiviert und aktuell** bleiben *(6)*                                | **RA** |              |
-| **Sicherheits-Patches und Updates** des Gast-Betriebssystems anwenden                                        | **RA** |              |
-| Konfiguration des Betriebssystems **absichern** (CIS, ANSSI-Empfehlungen usw.)                               | **RA** |              |
-| **Benutzerkonten, Passwörter und SSH-Schlüssel** innerhalb der Instanz verwalten *(7)*                        | **RA** |              |
-| **Monitoring-Agenten** installieren und konfigurieren (OS-Metriken, Systemprotokolle)                         | **RA** |              |
-| **Regulatorische Compliance** für gehostete OS und Daten aufrechterhalten                                     | **RA** |              |
+| Activité                                                                                                        | Client | Cloud Temple |
+|-----------------------------------------------------------------------------------------------------------------|--------|--------------|
+| **Tools vorinstallieren** (agents hyperviseur, PV drivers) bei der Bereitstellung aus dem Katalog *(5)*     |        | **RA**       |
+| Sicherstellen, dass die **Tools während der gesamten Lebensdauer der Instanz installiert, aktiviert und aktuell bleiben** *(6)*       | **RA** |              |
+| **Sicherheits-Patches und Updates** des Gastbetriebssystems anwenden                      | **RA** |              |
+| **Härten** der Betriebssystemkonfiguration (CIS, recommandations ANSSI, etc.)                       | **RA** |              |
+| Verwalten der **Benutzerkonten, Passwörter und SSH-Schlüssel** innerhalb der Instanz *(7)*                | **RA** |              |
+| Installieren und Konfigurieren der **Überwachungsagenten** (métriques OS, logs système)                              | **RA** |              |
+| Aufrechterhaltung der **gesetzlichen Konformität** für Betriebssysteme und gehostete Daten                            | **RA** |              |
 
-*(5) Cloud Temple stellt ein initiales Image aus dem Katalog mit vorinstallierten Tools bereit. Die Verantwortung für Konfiguration, Absicherung und nachfolgende OS-Updates liegt vollständig beim Kunden ab der ersten Verbindung zur Instanz.*  
-*(6) Das Entfernen oder Deaktivieren der Tools durch den Kunden führt zur sofortigen Aussetzung der Service-Level-Verpflichtungen (SLA) für die betroffene Instanz. Cloud Temple kann nicht für Fehlfunktionen verantwortlich gemacht werden, die auf das Fehlen dieser Agenten zurückzuführen sind.*  
-*(7) Die Zugangssicherheit zur Instanz (Passwortstärke, SSH-Schlüssel-Verwaltung, Prinzip der geringsten Berechtigung) liegt vollständig in der Verantwortung des Kunden. Cloud Temple kann nicht für eine Kompromittierung verantwortlich gemacht werden, die aus einer unzureichend gesicherten Zugriffskonfiguration resultiert.*
+*(5) Cloud Temple stellt ein initiales Image im Katalogzustand mit vorinstallierten Tools bereit. Die Verantwortung für die Konfiguration, das Hardening und die nachfolgenden Updates des Betriebssystems liegt ab der ersten Verbindungsherstellung zur Instanz vollständig beim Kunden.*  
+*(6) Das Löschen oder Deaktivieren der Tools durch den Kunden führt zur sofortigen Aussetzung der Service-Level-Agreement-(SLA)-Verpflichtungen für die betreffende Instanz. Cloud Temple kann nicht für Störungen verantwortlich gemacht werden, die auf das Fehlen dieser Agenten zurückzuführen sind.*  
+*(7) Die Sicherheit des Zugriffs auf die Instanz (solidité des mots de passe, gestion des clés SSH, principe de moindre privilège) liegt in der alleinigen Verantwortung des Kunden. Cloud Temple kann nicht für eine Kompromittierung verantwortlich gemacht werden, die auf eine unzureichend gesicherte Zugriffskonfiguration zurückzuführen ist.*
 
 ---
 
-## Instanz-Sicherheit & Internet-Exposition
+## Sicherheit von Instanzen & Internet-Exposition
 
-:::danger[Sicherheitsverantwortung des Kunden]
-Cloud Temple gewährleistet nur die **mandantenübergreifende Netzwerkisolierung** auf Plattformebene. Der Schutz jeder Instanz gegen Netzwerkbedrohungen (Internet, interne Datenströme) liegt **vollständig in der Verantwortung des Kunden**. Eine Instanz, die ohne ausreichende Filterung oder mit schwachen Zugangsdaten mit dem Internet verbunden ist, setzt den Kunden Kompromittierungsrisiken aus, für die Cloud Temple nicht verantwortlich gemacht werden kann.
+:::danger[Verantwortung für die Sicherheit des Kunden]
+Cloud Temple gewährleistet ausschließlich die **Mandantentrennung** auf Plattformebene. Der Schutz jeder Instanz vor Netzwerkbedrohungen (Internet, interner Datenverkehr) liegt **ausschließlich in der Verantwortung des Kunden**. Eine mit dem Internet verbundene Instanz ohne angemessene Filterung oder mit schwachen Zugangsdaten setzt den Kunden Risiken einer Kompromittierung aus, für die Cloud Temple nicht haftbar gemacht werden kann.
 :::
 
-| Aktivität                                                                                                            | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Mandantenübergreifende Netzwerkisolierung** auf Plattformebene sicherstellen                                      |        | **RA**       |
-| **Internet-exponierte Instanzen schützen** (Filterregeln, Sicherheitsgruppen, Firewalls) *(A)*                      | **RA** |              |
-| Sicherstellen, dass kein Dienst ohne **explizite Filterregel** im Internet exponiert wird                           | **RA** |              |
-| Eine **Application Firewall** (WAF, IDS/IPS) implementieren und pflegen, falls erforderlich                         | **RA** |              |
-| **Starke Passwörter und sichere SSH-Schlüssel** auf allen Instanzen konfigurieren *(B)*                             | **RA** |              |
-| Das **Prinzip der geringsten Berechtigung** bei OS-Konten und Remote-Zugriffen anwenden                             | **RA** |              |
-| Eine **Erkennungs- und Incident-Response-Lösung** (EDR, SIEM) implementieren, falls erforderlich                    | **RA** |              |
-| **Konfigurationshärtung** von Netzwerk und OS der Instanzen durchführen                                             | **RA** |              |
-| Cloud Temple bei **Verdacht auf Kompromittierung** der gemeinsam genutzten Plattform benachrichtigen                | **RA** | **C**        |
+| Aktivität                                                                                                              | Kunde | Cloud Temple |
+|-----------------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Gewährleistung der **Netzwerk-Mandantentrennung** auf Plattformebene                                              |        | **Cloud Temple**       |
+| **Schutz der über das Internet exponierten Instanzen** (Filterregeln, Security Groups, Firewall) *(A)*               | **Kunde** |              |
+| Sicherstellen, dass keine Dienste ohne **explizite Filterregel** über das Internet exponiert sont                            | **Kunde** |              |
+| Einrichtung und Wartung eines **Application Firewalls (WAF)** (WAF, IDS/IPS) bei Bedarf je nach Kritizitätsstufe          | **Kunde** |              |
+| Konfiguration **robuster Passwörter und sicherer SSH-Schlüssel** auf allen Instanzen *(B)*                  | **Kunde** |              |
+| Anwendung des **Prinzips der geringsten Rechte** auf OS-Konten und Remote-Zugänge (SSH, RDP)                   | **Kunde** |              |
+| Einrichtung einer Lösung zur **Ereigniserkennung und -reaktion** (EDR, SIEM) bei Bedarf                         | **Kunde** |              |
+| **Härtung der Konfiguration** von Instanzen (Netzwerk und OS) (Deaktivierung unnötiger Dienste)    | **Kunde** |              |
+| Cloud Temple im Falle eines **Verdachts auf Kompromittierung** der gemeinsam genutzten Plattform benachrichtigen                    | **Kunde** | **C**        |
 
-*(A) Jede Instanz, die ohne ausreichende Filterung über eine öffentliche IP oder NAT-Regel mit dem Internet verbunden ist, liegt ausschließlich in der Verantwortung des Kunden. Cloud Temple prüft oder filtert den eingehenden oder ausgehenden Datenverkehr des Mandanten nicht.*  
-*(B) Die Verwendung schwacher Passwörter, kompromittierter SSH-Schlüssel oder unbeschränkter Root-Zugänge verstößt gegen bewährte Sicherheitspraktiken. Cloud Temple kann nicht für eine Kompromittierung verantwortlich gemacht werden, die aus einer unzureichend gesicherten Zugriffskonfiguration des Kunden resultiert.*
-
----
+*(A) Jede über eine öffentliche IP oder eine NAT-Regel ohne angemessene Filterung mit dem Internet verbundene Instanz liegt in der alleinigen Verantwortung des Kunden. Cloud Temple führt keine Inspektion oder Filterung des ein- oder ausgehenden Datenverkehrs des Mandanten durch.*  
+*(B) Die Verwendung schwacher Passwörter, kompromittierter SSH-Schlüssel oder uneingeschränkter Root-Zugänge stellt einen Verstoß gegen die Sicherheitsbest Practices dar. Cloud Temple kann nicht für eine Kompromittierung verantwortlich gemacht werden, die auf eine vom Kunden unzureichend gesicherte Zugriffsconfigurationsresultiert.*
 
 ## Anwendungen & Middleware
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Anwendungen** und **Middleware** in Instanzen installieren, konfigurieren und pflegen               | **RA** |              |
-| **Sicherheits-Patches** für Anwendungen und Middleware anwenden                                       | **RA** |              |
-| **Software-Lizenzen** für gehostete Anwendungen erwerben und halten                                   | **RA** |              |
-| Eine **Antiviren-Strategie** auf Instanzen implementieren                                             | **RA** |              |
-| **Anwendungskontinuität** verwalten (Load Balancing, Replikation, Clustering)                         | **RA** |              |
+| Aktivität                                                                                               | Kunde | Cloud Temple |
+|--------------------------------------------------------------------------------------------------------|-------|--------------|
+| Anwendungen und Middleware in Instanzen installieren, konfigurieren und warten                          | **RA** |              |
+| **Sicherheitsupdates** für Anwendungen und Middleware anwenden                                          | **RA** |              |
+| **Softwarelizenzen** für gehostete Anwendungen erwerben und verwalten                                   | **RA** |              |
+| Eine **Antivirenstrategie** auf den Instanzen implementieren                                            | **RA** |              |
+| Die **Anwendungskontinuität** (Lastverteilung, Replikation, Clustering) verwalten                       | **RA** |              |
 
 ---
 
 ## Netzwerk & Konnektivität
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
+| Aktivität                                                                                               | Kunde | Cloud Temple |
 |--------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Backbone-Netzwerk** und gemeinsam genutzte Netzwerkinfrastruktur aufrechterhalten                   | **I**  | **RA**       |
-| **Netzwerkschnittstellen** der Instanzen konfigurieren                                                | **RA** |              |
-| **IP-Adressierungsplan** innerhalb des Mandanten verwalten                                            | **RA** | **I**        |
-| **Sicherheitsgruppen** (Filterregeln) konfigurieren und verwalten                                     | **RA** |              |
-| **Internet-Zugang** abonnieren und konfigurieren (öffentliche IPs, NAT)                               | **RA** |              |
-| Vorfälle bei **Backbone**-Netzwerkverbindungen (Cloud Temple-Schicht) verwalten                       | **I**  | **RA**       |
+| Sicherstellung des **Backbone-Netzwerks** und der gemeinsam genutzten Netzwerkinfrastruktur                    | **I**  | **RA**       |
+| Konfiguration der **Netzwerkschnittstellen** der Instanzen                                                     | **RA** |              |
+| Verwaltung des **IP-Adressierungsplans** im Tenant                                                        | **RA** | **I**        |
+| Konfiguration und Verwaltung der **Sicherheitsgruppen** (security groups / règles de filtrage) *(6)*           | **RA** |              |
+| Abschluss und Konfiguration des **Internetzugriffs** (IPs publiques, NAT)                                     | **RA** |         |
+| Management von Störungen auf den **Backbone**-Netzwerkverbindungen (couche Cloud Temple)                            | **I**  | **RA**       |
+
+*(6) Die Konfiguration der für Instanzen geltenden Netzwerkfilterregeln liegt in der Verantwortung des Kunden. Cloud Temple gewährleistet ausschließlich die Mandantentrennung auf Plattformebene.*
 
 ---
 
-## Instanz-Speicher
+## Instanzspeicher
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| Gemeinsam genutzte **Speicherinfrastruktur** betriebsbereit halten                                    | **I**  | **RA**       |
-| Speicherinfrastruktur sicherheitstechnisch in Betrieb halten                                          | **I**  | **RA**       |
-| **Zusätzliche Speicher-Volumes** erstellen, anhängen und verwalten                                    | **RA** | **I**        |
-| **Datenkonsistenz** in den Instanzen sicherstellen                                                    | **RA** |              |
-| Eine **Datenverschlüsselungsrichtlinie** innerhalb der Instanzen definieren und anwenden              | **RA** |              |
+| Aktivität                                                                                               | Kunde | Cloud Temple |
+|--------------------------------------------------------------------------------------------------------|-------|--------------|
+| Sicherstellung des Betriebs der **gemeinsam genutzten Speicherinfrastruktur**                          | **I**  | **RA**       |
+| Sicherstellung der Sicherheit der Speicherinfrastruktur                                               | **I**  | **RA**       |
+| Erstellen, Anhängen und Verwalten von **zusätzlichen Speicher-Volumes**                                 | **RA** | **I**        |
+| Sicherstellung der **Konsistenz der** in den Instanzen gespeicherten **Daten**                        | **RA** |              |
+| Definieren und Anwenden einer **Datenverschlüsselungsrichtlinie** innerhalb der Instanzen *(7)*        | **RA** |              |
 
----
-
-## Backup & Snapshots
-
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Backup-Infrastruktur** betriebsbereit halten                                                        | **I**  | **RA**       |
-| **Backup-Richtlinie** für eine Instanz aktivieren und konfigurieren                                   | **RA** |              |
-| **Point-in-Time-Snapshots** einer Instanz auslösen                                                    | **RA** |              |
-| **Konsistenz und Wiederherstellbarkeit** der durchgeführten Backups überprüfen                        | **RA** |              |
-| **Regelmäßige Wiederherstellungstests** durchführen                                                   | **RA** |              |
-| **Speicherkapazität** für Backups verwalten                                                           |        | **RC**       |
-| **Kontinuitäts- oder Wiederherstellungsstrategie** für gehostete Anwendungen definieren               | **RA** |              |
+*(7) Die Verschlüsselung ruhender Daten der zugrunde liegenden Speicherinfrastruktur wird von Cloud Temple gewährleistet. Die anwendungsspezifische Verschlüsselung der Daten (auf Dateisystem- oder Datenbankebene) liegt in der Verantwortung des Kunden.*
 
 ---
 
-## Monitoring & Performance
+## Sicherung & Snapshots
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
+| Aktivität                                                                                               | Kunde | Cloud Temple |
+|--------------------------------------------------------------------------------------------------------|-------|--------------|
+| Sicherstellung des Betriebs der **Sicherungsinfrastruktur**                 | **I**  | **RA**       |
+| **Aktivieren und Konfigurieren** der mit einer Instanz verknüpften Sicherungsrichtlinie                          | **RA** |       |
+| **Auslösen von einmaligen Snapshots** einer Instanz                                                  | **RA** |         |
+| Überprüfen der **Konsistenz und Wiederherstellbarkeit** der durchgeführten Sicherungen                             | **RA** |         |
+| Durchführen von **Wiederherstellungstests** in regelmäßigen Abständen                                                    | **RA** |              |
+| Verwalten der **Speicherkapazitäten** für Sicherungen                                            |  | **RC**       |
+| Festlegen der **Strategie für Kontinuität oder Wiederanlauf** für gehostete Anwendungen       | **RA** |        |
+
+---
+
+## Monitoring & Leistung
+
+| Aktivität                                                                                              | Client | Cloud Temple |
 |--------------------------------------------------------------------------------------------------------|--------|--------------|
-| Ordnungsgemäßes Funktionieren von **physischer Infrastruktur und Hypervisoren** überwachen            | **I**  | **RA**       |
-| Performance der **gemeinsam genutzten Ressourcen** überwachen (Compute, Storage, Netzwerk)           | **I**  | **RA**       |
-| **Instanz-Performance** überwachen (CPU, RAM, Disk I/O, Netzwerk auf Guest-Ebene)                    | **RA** |              |
-| Eine **Metriken- und Alarmlösung** für gehostete Anwendungen implementieren                           | **RA** |              |
+| Überwachung des einwandfreien Betriebs der **physischen Infrastruktur und der Hypervisor**             | **I**  | **RA**       |
+| Überwachung der **Leistung der gemeinsam genutzten Ressourcen** (Compute, Storage, Netzwerk)           | **I**  | **RA**       |
+| Überwachung der **Leistung der Instanzen** (CPU, RAM, Disk-I/O, Netzwerk auf Gast-Ebene)              | **RA** |              |
+| Implementierung einer **Metriken- und Alarmierungslösung** für gehostete Anwendungen                   | **RA** |              |
 
 ---
 
 ## Zugriffs- & Identitätsverwaltung
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
+| Aufgabe                                                                                               | Client | Cloud Temple |
 |--------------------------------------------------------------------------------------------------------|--------|--------------|
-| Zugänglichkeit der **Cloud Temple Console** und API sicherstellen                                     |        | **RA**       |
-| **Berechtigungen** der Cloud Temple Teams zur qualifizierten SecNumCloud-Infrastruktur verwalten      |        | **RA**       |
-| Zugriff auf die **Cloud Temple Console** verwalten (Benutzer, Rollen, IAM)                           | **RA** |              |
-| Zugriff **innerhalb der Instanzen** verwalten (OS-Konten, SSH-Schlüssel, Bastion)                    | **RA** |              |
-| Ein **externes Authentifizierungsverzeichnis** (SSO, LDAP) für die Console konfigurieren             | **RA** | **C**        |
+| Sicherstellung des Zugriffs auf die **Cloud Temple Konsole** und die API                                    |        | **RA**       |
+| Verwaltung der **Berechtigungen** der Cloud Temple-Teams für die SecNumCloud-zertifizierte Infrastruktur          |        | **RA**       |
+| Verwaltung der Zugriffsrechte auf die **Cloud Temple Konsole** (Benutzer, Rollen, IAM)                        | **RA** |              |
+| Verwaltung der Zugriffe **innerhalb der Instanzen** (OS-Konten, SSH-Schlüssel, Bastion)                              | **RA** |              |
+| Konfiguration einer **externen Authentifizierungsquelle** (SSO, LDAP) für die Konsole                  | **RA** | **C**        |
 
 ---
 
 ## Protokolle (Logs)
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Plattformprotokolle** der VM-Instanzen aufbewahren und bereitstellen *(8)*                          |        | **RA**       |
-| **System- und Anwendungsprotokolle** der Instanzen sammeln, aufbewahren und analysieren               | **RA** |              |
+| Aktivität                                                                                               | Kunde | Cloud Temple |
+|--------------------------------------------------------------------------------------------------------|-------|--------------|
+| **Plattformprotokolle** der VM-Instanzen speichern und bereitstellen *(8)*                            |       | **RA**       |
+| **System- und Anwendungsprotokolle** der Instanzen sammeln, speichern und analysieren                  | **RA** |              |
 
-*(8) Die Aufbewahrungsdauer der Plattformprotokolle ist in der VM-Instanzen-Dienstvereinbarung festgelegt.*
+*(8) Die Aufbewahrungsfrist für die Plattformprotokolle ist in der Servicevereinbarung für VM-Instanzen festgelegt.*
 
 ---
 
 ## Dokumentation & Vertragliches
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
+| Tätigkeit                                                                                               | Kunde | Cloud Temple |
 |--------------------------------------------------------------------------------------------------------|--------|--------------|
-| Kaufmännisches und vertragliches Management sicherstellen (Angebote, Bestellungen, Abrechnung)        | **I**  | **RA**       |
-| Vertragliche Leistungserbringung überwachen (Lieferungen, Abrechnung)                                 | **RA** | **I**        |
-| Technische Servicedokumentation pflegen und bereitstellen                                             | **I**  | **RA**       |
-| **CMDB** für im Mandanten bereitgestellte Instanzen aktuell halten                                    | **RA** |              |
-| Zugriffsrichtlinie für Console und API aktuell halten                                                 | **RA** |              |
+| Übernahme des kommerziellen und vertraglichen Managements (Angebote, Bestellungen, Rechnungsstellung)                        | **I**  | **RA**       |
+| Überwachung des Vertragsfortschritts der Dienstleistung (Lieferungen, Rechnungsstellung)                                | **RA** | **I**        |
+| Sicherstellung der Pflege und Verfügbarkeit der technischen Dokumentation des Dienstes                    | **I**  | **RA**       |
+| Aktualisierung der **CMDB** für die in seinem Tenant bereitgestellten Instanzen                              | **RA** |              |
+| Aktualisierung der Zugriffsrichtlinie für die Konsole und die API                                          | **RA** |              |
 
 ---
 
-## Reversibilität
+## Rückübertragbarkeit
 
-| Aktivität                                                                                              | Kunde  | Cloud Temple |
-|--------------------------------------------------------------------------------------------------------|--------|--------------|
-| Reversibilitätsprojekt planen und Zielinfrastrukturen auswählen                                       | **RA** | **I**        |
-| Daten und Instanz-Images über API oder bereitgestellte Tools exportieren                              | **RA** | **I**        |
-| Konfigurationen nach Vertragsbeendigung abbauen                                                       | **I**  | **RA**       |
-| Sichere Datenlöschung auf Speichermedien durchführen und Bescheinigung ausstellen                     | **I**  | **RA**       |
+| Aktivität                                                                                               | Kunde | Cloud Temple |
+|--------------------------------------------------------------------------------------------------------|-------|--------------|
+| Das Rückübertragbarkeitsprojekt planen und die Ziel-Infrastrukturen festlegen                             | **RA** | **I**        |
+| Daten und Instanz-Images über die API oder die bereitgestellten Tools exportieren                   | **RA** | **I**        |
+| Rückbau der Konfigurationen nach Vertragsbeendigung durchführen                              | **I**  | **RA**       |
+| Sichere Löschung der Daten auf den Speichermedien durchführen und eine Löschbescheinigung ausstellen     | **I**  | **RA**       |
 
 ---
 
-> *Professional Services stehen zur Verfügung, wenn Sie einige oder alle der als Kundenpflicht aufgeführten Verantwortlichkeiten an Cloud Temple delegieren möchten. Wenden Sie sich an Ihren Cloud Temple Account Manager.*
+> *Professionelle Dienstleistungen stehen zur Verfügung, wenn Sie die als Kundenverantwortung aufgeführten Aufgaben ganz oder teilweise delegieren möchten. Wenden Sie sich an Ihren Cloud Temple-Vertriebspartner.*

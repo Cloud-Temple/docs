@@ -4,16 +4,16 @@ title: Tutorial - Deploy your first application
 
 ## Objectives
 
-This tutorial guides you step by step through your first deployment on a **Managed Kubernetes** cluster. By the end of this guide, you will have:
+This tutorial guides you step by step to perform your first deployment on a **Managed Kubernetes** cluster. By the end of this guide, you will have:
 
 - Deployed a simple web application.
-- Exposed that application inside the cluster via a Service.
+- Exposed this application within the cluster via a Service.
 - Made the application accessible from the Internet via an Ingress.
 
 ## Prerequisites
 
-- You have configured your cluster access as described in the [quick-start guide](../quickstart.md).
-- You have a namespace on which you have deployment rights. In this tutorial, we will use a namespace named `hello-world`.
+- You have configured your cluster access as described in the [quickstart guide](../quickstart.md).
+- You have a namespace with deployment permissions. In this tutorial, we will use a namespace named `hello-world`.
 
 ## Step 1: Create a namespace
 
@@ -25,7 +25,7 @@ kubectl create namespace hello-world
 
 ## Step 2: Deploy a "Hello World" application
 
-We will deploy a demo application that displays a simple web page.
+We will deploy a demonstration application that displays a simple web page.
 
 1. Create a file named `deployment.yaml` with the following content:
 
@@ -60,24 +60,24 @@ We will deploy a demo application that displays a simple web page.
     kubectl apply -f deployment.yaml
     ```
 
-3. Verify that the deployment has been created and that the pods are running:
+3. Verify that the deployment was created and that the pods are running:
 
     ```bash
     kubectl get deployment -n hello-world
-    # You should see your deployment with 2/2 replicas ready.
+    # Vous devriez voir votre déploiement avec 2/2 replicas prêts.
     NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
     hello-world-deployment   2/2     2            2           102s
 
     kubectl get pods -n hello-world
-    # You should see two pods with the "Running" status.
+    # Vous devriez voir deux pods avec le statut "Running".
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-world-deployment-669dfbd799-294zz   1/1     Running   0          2m21s
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
     ```
 
-## Step 3: Expose the application inside the cluster (Service)
+## Step 3: Expose the application in the cluster (Service)
 
-To allow the various components of the cluster to communicate with our application, we need to create a **Service**.
+To allow the different components of the cluster to communicate with our application, we need to create a **Service**.
 
 1. Create a file named `service.yaml`:
 
@@ -107,9 +107,9 @@ To allow the various components of the cluster to communicate with our applicati
 
 ## Step 4: Make the application accessible from the Internet (Ingress)
 
-To expose our service on the Internet, we will use an **Ingress** resource. The Managed Kubernetes offering provides several pre-configured `ingressClassName` values. We will use `nginx-external` for public exposure.
+To expose our service to the Internet, we will use an **Ingress** resource. The Managed Kubernetes offering provides several preconfigured `ingressClassName`s. We will use `nginx-external` for public exposure.
 
-1. Create an `ingress.yaml` file. **Remember to replace `your-cluster-id`** with your cluster identifier (e.g. `ctodev`).
+1. Create a file `ingress.yaml`. **Remember to replace `votre-cluster-id`** with your cluster's identifier (e.g., `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -120,7 +120,7 @@ To expose our service on the Internet, we will use an **Ingress** resource. The 
     spec:
       ingressClassName: nginx-external
       rules:
-      - host: "hello-world.external.your-cluster-id.mk.ms-cloud-temple.com" # change me
+      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # changez moi
         http:
           paths:
           - path: /
@@ -138,13 +138,13 @@ To expose our service on the Internet, we will use an **Ingress** resource. The 
     kubectl apply -f ingress.yaml
     ```
 
-## Step 5: Verify access
+## Step 5: Verify Access
 
-A wildcard DNS entry already points all URLs ending in ".external.your-cluster-id.mk.ms-cloud-temple.com" to the IP of the "external" ingress.
+A DNS entry "*" already points all URLs ending with ".external.votre-cluster-id.mk.ms-cloud-temple.com" to the IP of the "external" ingress.
 Applications published on this DNS suffix are therefore directly accessible.
 
 ```bash
-curl http://hello-world.external.your-cluster-id.mk.ms-cloud-temple.com
+curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
 ```
 
 You should receive a response from the demo NGINX server.
@@ -168,12 +168,13 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Going further: security in production]
+:::warning[Going further: security in production
+]
 This tutorial has shown you the basics of deployment. For a production environment, it is crucial to apply additional security measures:
 
-- **Use secure images**: Prefer images from your secure corporate registry such as **Harbor** rather than public images.
-- **Control network flows**: Implement `NetworkPolicies` to restrict communications to only the necessary flows between your applications.
-- **Apply governance policies**: Use tools like **Kyverno** to enforce security rules (e.g. prohibit "root" containers, require resource `requests` and `limits`, etc.).
+- **Use secure images** : Prefer images from your secure enterprise registry such as **Harbor** rather than public images.
+- **Control network traffic** : Set up `NetworkPolicies` to restrict communications to only the necessary traffic between your applications.
+- **Apply governance policies** : Use tools like **Kyverno** to enforce security rules (e.g., forbid "root" containers, require resource `requests` and `limits`, etc.).
 :::
 
 ## Cleanup

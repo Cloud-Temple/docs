@@ -1,70 +1,72 @@
 ---
-title: Matrice de responsabilité - LLMaaS
+title: Verantwortlichkeitsmatrix - LLMaaS
+displayed_sidebar: docSidebar
 ---
 
-Voici le RACI du partage de responsabilité entre le client et Cloud Temple pour l'usage de la plateforme LLM as a Service (LLMaaS).
 
-## Définition des différents rôles
+Dies ist die RACI-Matrix zur Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple für die Nutzung der LLM as a Service (LLMaaS)-Plattform.
 
-Nous rappelons ici les différents rôle du RACI :
+## Definition der verschiedenen Rollen
 
-| Rôle         | Description                              |
+Hier werden die verschiedenen Rollen des RACI noch einmal erläutert:
+
+| Rolle        | Beschreibung                             |
 | ------------ | ---------------------------------------- |
-| (R) Réalise  | __R__éalise le processus                 |
-| (A) Approuve | __A__pprouve la réalisation du processus |
-| (C) Consulte | __C__onsulté pendant le processus        |
-| (I) Informé  | __I__nformé des résultats du processus   |
+| (R) Durchführt | __D__urchführt den Prozess             |
+| (A) Genehmigt | __G__enehmigt die Durchführung des Prozesses |
+| (C) Konsultiert | __K__onsultiert während des Prozesses  |
+| (I) Informiert | __I__nformiert über die Ergebnisse des Prozesses |
 
-## Définir votre besoin
+## Definieren Sie Ihre Anforderungen
 
-| Activité                                                              | Rôle Client | Rôle Cloud Temple |
+| Aktivität                                                              | Kundenrolle | Cloud Temple-Rolle |
 | --------------------------------------------------------------------- | ----------- | ----------------- |
-| Valider que le service LLMaaS est conforme au besoin de l'application | __RA__      | __CI__            |
-| Souscrire au service et sélectionner un tier de facturation           | __RA__      | __I__             |
+| Validieren, dass der LLMaaS-Service den Anforderungen der Anwendung entspricht | __RA__      | __CI__            |
+| Service abonnieren und eine Abrechnungsebene auswählen           | __RA__      | __I__             |
 
-## Mettre en oeuvre le service
+## Service implementieren
 
-| Activité                                                                           | Rôle Client | Rôle Cloud Temple |
-| ---------------------------------------------------------------------------------- | ----------- | ----------------- |
-| Assurer le maintien en condition opérationnelle de la plateforme LLMaaS (API, GPU) | __I__       | __RA__            |
-| Assurer le maintien en condition de sécurité de la plateforme LLMaaS               | __I__       | __RA__            |
-| Gérer les clés d'accès API (création, rotation, révocation)                        | __RA__      |                   |
-| Développer et maintenir le code de l'application cliente                           | __RA__      |                   |
+| Aktivität                                                                           | Kundenrolle | Cloud Temple-Rolle |
+| ---------------------------------------------------------------------------------- | ----------- | ------------------ |
+| Betrieb der LLMaaS-Plattform (API, GPU) gewährleisten                               | __I__       | __RA__             |
+| Sicherheit der LLMaaS-Plattform gewährleisten                                       | __I__       | __RA__             |
+| Verwaltung von API-Zugriffsschlüsseln (Erstellung, Rotation, Widerruf)              | __RA__      |                    |
+| Entwicklung und Wartung des Codes der Client-Anwendung                             | __RA__      |                    |
 
-## Opérations récurrentes
+## Wiederkehrende Operationen
 
-| Activité                                                         | Rôle Client | Rôle Cloud Temple |
-| ---------------------------------------------------------------- | ----------- | ----------------- |
-| Assurer la disponibilité de l'API LLMaaS                         | __I__       | __RA__            |
-| Superviser le bon fonctionnement de la plateforme et des modèles | __I__       | __RA__            |
-| Gérer les incidents sur la plateforme LLMaaS                     | __I__       | __RA__            |
-| Gérer les problèmes sur la plateforme LLMaaS                     | __I__       | __RA__            |
-| Gérer la capacité de l'infrastructure GPU                        | __I__       | __RA__            |
-| Gérer les évolutions des modèles (ajout, dépréciation)           | __C, I__    | __RA__            |
-| Suivre la consommation et la facturation                         | __RA__      | __I__             |
+| Tätigkeit                                                         | Kundenrolle | Cloud Temple-Rolle |
+| ---------------------------------------------------------------- | ----------- | ------------------ |
+| Verfügbarkeit der LLMaaS-API gewährleisten                       | __I__       | __RA__             |
+| Funktionstüchtigkeit der Plattform und der Modelle überwachen      | __I__       | __RA__             |
+| Incidents auf der LLMaaS-Plattform verwalten                      | __I__       | __RA__             |
+| Probleme auf der LLMaaS-Plattform verwalten                       | __I__       | __RA__             |
+| Kapazität der GPU-Infrastruktur verwalten                         | __I__       | __RA__             |
+| Modellentwicklungen verwalten (Hinzufügung, Deprecation)          | __C, I__    | __RA__             |
+| Verbrauch und Abrechnung nachverfolgen                             | __RA__      | __I__              |
 
-## Gestion de la sécurité
+## Sicherheitsmanagement
 
-| Activité                                                                    | Rôle Client | Rôle Cloud Temple |
+| Aufgabe                                                                    | Kundenrolle | Rolle Cloud Temple |
 | --------------------------------------------------------------------------- | ----------- | ----------------- |
-| Sécuriser l'infrastructure physique et la plateforme LLMaaS                 | __I__       | __RA__            |
-| Gérer les accès et les permissions des utilisateurs finaux de l'application | __RA__      |                   |
-| Sécuriser les données et les prompts envoyés à l'API                        | __RA__      | __C__             |
-| Assurer la confidentialité des données traitées par les modèles             | __R__       | __A__             |
-| Gérer la conformité de l'application finale (RGPD, etc.)                    | __RA__      | __I__             |
+| Absichern der physischen Infrastruktur und der LLMaaS-Plattform             | __I__       | __RA__            |
+| Verwalten der Zugriffsrechte und Berechtigungen der Endanwender der Anwendung | __RA__      |                   |
+| Absichern der an die API gesendeten Daten und Prompts                       | __RA__      | __C__             |
+| Gewährleistung der Vertraulichkeit der von den Modellen verarbeiteten Daten | __R__       | __A__             |
+| Sicherstellung der Konformität der Endanwendung (RGPD, etc.)                | __RA__      | __I__             |
 
-## Continuité d'activité
+## Geschäftskontinuität
 
-| Activité                                                              | Rôle Client | Rôle Cloud Temple |
+| Aktivität                                                              | Rolle Kunde | Rolle Cloud Temple |
 | --------------------------------------------------------------------- | ----------- | ----------------- |
-| Assurer la continuité d'activité de la plateforme LLMaaS              | __I__       | __RA__            |
-| Assurer la sauvegarde des données de l'application cliente            | __RA__      |                   |
-| Maintenir le plan de continuité d'activité pour l'application cliente | __RA__      |                   |
+| Sicherstellung der Geschäftskontinuität der LLMaaS-Plattform           | __I__       | __RA__            |
+| Sicherstellung der Datensicherung der Kundenanwendung                  | __RA__      |                   |
+| Aufrechterhaltung des Geschäftskontinuitätsplans für die Kundenanwendung | __RA__      |                   |
 
-## Réversibilité
+## Reversibilität
 
-| Activité                                                                    | Rôle Client | Rôle Cloud Temple |
+| Aktivität                                                                    | Kundenrolle | Cloud-Tempel-Rolle |
 | --------------------------------------------------------------------------- | ----------- | ----------------- |
-| Mettre en oeuvre le projet de réversibilité (planification, outils, cibles) | __RA__      | __C__             |
-| Exporter les données et le code de l'application cliente                    | __RA__      |                   |
-| Supprimer les clés d'API et les accès au service                            | __RA__      |                   |
+| Umsetzung des Reversibilitätsprojekts (Planung, Tools, Ziele)                | __RA__      | __C__             |
+| Exportieren der Daten und des Codes der Client-Anwendung                     | __RA__      |                   |
+| Löschen der API-Schlüssel und des Dienstzugriffs                             | __RA__      |                   |

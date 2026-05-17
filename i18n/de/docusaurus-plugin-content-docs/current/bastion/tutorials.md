@@ -14,101 +14,103 @@ import modifierSession from '@site/docs/bastion/images/modifier_session.png'
 import modifierSession2 from '@site/docs/bastion/images/modifier_session2.png'
 import supprimerSession from '@site/docs/bastion/images/supprimer_session.png'
 
-These tutorials help you deploy and manage a Cloud Temple Bastion from the Console.
+Diese Tutorials helfen Ihnen, einen Bastion Cloud Temple über die Konsole bereitzustellen und zu verwalten.
 
 ## Voraussetzungen
 
-1. Ein Abonnement für das Cloud Temple-Angebot (Bastion Appliance-Abonnement) abgeschlossen haben.
-2. Die zu verwaltenden Geräte müssen vom Netzwerk aus erreichbar sein, in dem die Bastion Appliance bereitgestellt ist.
-3. Die entsprechenden Berechtigungen für das Bastion-Modul besitzen.
+1. Das Cloud Temple-Produkt (Appliance Bastion-Abonnement) muss abonniert sein.
+2. Die zu verwaltenden Geräte müssen vom Netzwerk aus erreichbar sein, in dem die Appliance Bastion bereitgestellt ist.
+3. Es müssen die Berechtigungen für das Bastion-Modul vorhanden sein.
 4. Bei einer On-Premise-Bereitstellung der Appliance müssen die entsprechenden Netzwerkflüsse freigegeben sein.
 
 ## Interface
 
-Nach der Anmeldung am Web-Portal Console gehen Sie zum Menüpunkt „Bastion“ im linken Menü.
+Nach der Anmeldung im Web-Konsolenportal wechseln Sie zum Register „Bastion“ im linken Menü.
 
 <img src={sessions} />
 
-Der Reiter „Geräte“ ermöglicht Ihnen die Ansicht Ihrer Geräte. Ein Gerät entspricht einer Verbindungskonfiguration über eine Bastion-Appliance. Für jedes Gerät werden dessen Name, Tags, Beschreibung, die zugeordnete Appliance, der Verbindungstyp (SSH oder RDP), die IP-Adresse des Hosts sowie die Tastaturbelegung angezeigt.
+Über das Register „Geräte“ können Sie die Liste Ihrer Geräte einsehen. Ein Gerät entspricht einer Konfiguration für die
+Verbindung über eine Bastion-Appliance. Für jedes Gerät werden der Name, die Tags, die
+Beschreibung, die zugehörige Appliance, der Verbindungstyp (SSH oder RDP), die Host-IP und schließlich das Tastaturlayout angezeigt.
 
-Sie können die Liste Ihrer Geräte nach den zugeordneten Tags filtern, und ein Suchfeld ermöglicht die Suche nach einer Session anhand ihres Namens.
+Sie können die Liste Ihrer Geräte nach zugewiesenen Tags filtern, und über ein Suchfeld können Sie eine Sitzung nach deren Namen suchen.
 
 <img src={sessions2} />
 
-Der Reiter „Appliances“ zeigt Ihnen die Liste Ihrer Bastion-Appliances. Für jede Appliance werden deren Name und Beschreibung angegeben.
+Über das Register „Appliances“ erhalten Sie die Liste Ihrer Bastion-Appliances. Für jede Appliance werden der Name und die Beschreibung angegeben.
 
-Ein Suchfeld steht zur Verfügung, um eine Appliance anhand ihres Namens zu suchen.
+Ein Suchfeld steht zur Verfügung, um eine Appliance nach deren Namen zu suchen.
 
 <img src={appliances} />
 
-## Deploy an Appliance
+## Eine Appliance bereitstellen
 
-Before you can deploy an appliance, you must submit a subscription request for an appliance via a support ticket.
+Bevor eine Appliance bereitgestellt werden kann, muss ein Abonnement für eine Appliance über eine Anfrage an den Support beantragt werden.
 
-## Open a connection to a device
+## Eine Verbindung zu einem Gerät öffnen
 
-In the **Appliances** tab, click the action bar of the appliance you want to open. Then click the **Open** button.
+Im Register „Appliances“ klicken Sie auf die Aktionsleiste der Appliance, die Sie öffnen möchten. Klicken Sie anschließend auf die Schaltfläche „Öffnen“.
 
 <img src={ouvrirAppliance} />
 
-Next, enter the required connection information:
+Geben Sie anschließend die für die Verbindung erforderlichen Informationen ein:
 
-- Protocol selection (SSH or RDP);
-- IP address of the host to manage;
-- Credentials;
-- Keyboard configuration.
+    - Auswahl des Protokolls (SSH oder RDP);
+    - IP-Adresse des zu verwaltenden Hosts;
+    - Anmeldeinformationen;
+    - Tastaturlayout.
 
-Click **Connect** to open the appliance. The virtual machine's console will then open.
+Klicken Sie anschließend auf „Verbinden“, um die Appliance zu öffnen. Die Konsole der zu verwaltenden virtuellen Maschine öffnet sich daraufhin.
 
 ## Gerät speichern
 
-Um ein Gerät, das verwaltet werden soll, regelmäßig zugänglich zu machen, ist es sinnvoller, eine Gerätekonfiguration zu erstellen, die Sie bei jeder Verbindung nur mit Ihrem Benutzernamen und Passwort authentifiziert.
+Um regelmäßig auf ein zu verwaltendes Gerät zugreifen zu können, ist es empfehlenswert, eine Gerätekonfiguration anzulegen, die bei jeder Verbindung nur Ihren Benutzernamen und Ihr Passwort abfragt.
 
-Gehen Sie hierzu im Menü „Bastion“ zum Tab „Geräte“ und klicken Sie auf die Schaltfläche „Neues Gerät“.
+Für diesen Zweck navigieren Sie zum Reiter « Geräte » im Menü « Bastion » und klicken Sie auf die Schaltfläche « Neues Gerät ».
 
 <img src={creerSession} />
 
-Geben Sie nun die erforderlichen Informationen für die Erstellung Ihres Geräts ein:
+Geben Sie anschließend die für die Erstellung Ihres Geräts erforderlichen Informationen ein:
 
-- Gerätename;
-- Beschreibung;
-- zugeordnete Appliance;
-- Protokolltyp (SSH oder RDP);
-- IP-Adresse des Hosts;
-- Tastaturbelegung.
+    - Gerätename ;
+    - Beschreibung ;
+    - Zugehörige Appliance ;
+    - Protokolltyp (SSH oder RDP) ;
+    - IP-Adresse des Hosts ;
+    - Tastatursprache.
 
 <img src={creerSession2} />
 
-Eine Benachrichtigung sollte oben rechts auf der Seite erscheinen, die die Erstellung Ihrer Gerätekonfiguration bestätigt. Die Konfiguration wird anschließend Ihrer Liste von Geräten hinzugefügt.
+Eine Benachrichtigung über die erfolgreiche Erstellung Ihrer Gerätekonfiguration sollte oben rechts auf der Seite erscheinen. Die Konfiguration wird anschließend zur Liste Ihrer Geräte hinzugefügt.
 
-Sie können eine neue Verbindung auch über den Tab „Appliances“ herstellen, indem Sie auf die Aktionsschaltfläche der Appliance klicken, der Sie eine Gerätekonfiguration zuordnen möchten.
+Um eine neue Verbindung zu erstellen, können Sie alternativ den Reiter « Appliances » aufrufen und auf die Aktionsleiste der Appliance klicken, der Sie eine Gerätekonfiguration zuordnen möchten.
 
 <img src={creerSession3} />
 
-## Connect to a device
+## Verbindung zu einem Gerät herstellen
 
-Go to the "Devices" tab in the "Bastion" tab. Click on the action bar of the device you want to open, and then click the "Open" button.
+Navigieren Sie zur Registerkarte „Geräte“ in der Registerkarte „Bastion“. Klicken Sie auf die Aktionsleiste des Geräts, das Sie öffnen möchten, und klicken Sie auf die Schaltfläche „Öffnen“.
 
 <img src={ouvrirSession} />
 
-For each connection to a device, you only need to provide your authentication credentials.
+Bei jeder Verbindung zum Gerät müssen Sie lediglich Ihre Anmeldeinformationen eingeben.
 
 <img src={ouvrirSession2} />
 
-After entering your credentials, a notification confirming the start of the session appears, and the console to your virtual machine opens.
+Nach der Eingabe Ihrer Zugangsdaten erscheint eine Benachrichtigung, die den Beginn der Sitzung bestätigt, und die Konsole zu Ihrer virtuellen Maschine wird geöffnet.
 
-## Equipment configuration editieren
+## Eine Gerätekonfiguration bearbeiten
 
-Gehen Sie zum Tab „Geräte“ im Bereich „Bastion“, klicken Sie auf die Aktionsschaltfläche des Geräts, das Sie bearbeiten möchten, und drücken Sie die Schaltfläche „Bearbeiten“.
+Navigieren Sie zum Tab „Geräte“ im Bereich „Bastion“, klicken Sie auf die Aktionsleiste des Geräts, das Sie bearbeiten möchten, und klicken Sie auf die Schaltfläche „Bearbeiten“.
 
 <img src={modifierSession} />
 
-Anschließend können Sie den Gerätenamen, die Beschreibung, die zugeordnete Appliance, das Protokoll (SSH oder RDP), die IP-Adresse des Hosts oder die Tastaturbelegung ändern.
+Anschließend können Sie den Gerätenamen, die Beschreibung, die zugehörige Appliance, das Protokoll (SSH oder RDP), die Host-IP-Adresse oder die Tastatursprache ändern.
 
 <img src={modifierSession2} />
 
-## Delete a device configuration
+## Eine Gerätekonfiguration löschen
 
-Go to the "Devices" tab in the "Bastion" section, click the action bar of the device you want to delete, and then click the "Delete" button.
+Navigieren Sie zum Tab „Geräte“ im Abschnitt „Bastion“, klicken Sie auf die Aktionsleiste des Geräts, das Sie löschen möchten, und klicken Sie auf die Schaltfläche „Löschen“.
 
 <img src={supprimerSession} />

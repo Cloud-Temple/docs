@@ -1,156 +1,157 @@
 ---
-title: Matriz de Responsabilidades (RACI) - Kubernetes Administrado
+title: Matriz de Responsabilidades (RACI) - Kubernetes Gestionado
+displayed_sidebar: docSidebar
 ---
 
 ## RACI
 
-### Architecture & Infrastructure
+### Arquitectura e Infraestructura
 
-| **Activity**                                                        | **Client** | **Cloud Temple** |
+| **Actividad**                                                        | **Cliente** | **Cloud Temple** |
 | ------------------------------------------------------------------- | ---------- | ---------------- |
-| Define the overall architecture of the Kubernetes service           | C          | RA               |
-| Size the Kubernetes service (number of nodes, resources)           | C          | RA               |
-| Install the Kubernetes service with default configuration           | I          | RA               |
-| Configure the Kubernetes service                                    | C          | RA               |
-| Set up the base network for the Kubernetes service                  | I          | RA               |
-| Deploy initial configuration for identities and access              | C          | RA               |
-| Define scaling and high availability strategy                       | C          | RA               |
+| Definir la arquitectura global del servicio Kubernetes                | C          | RA               |
+| Dimensionar el servicio Kubernetes (número de nodos, recursos)   | C          | RA               |
+| Instalar el servicio Kubernetes con una configuración predeterminada   | I          | RA               |
+| Configuración del servicio Kubernetes                                 | C          | RA               |
+| Configurar la red base del servicio Kubernetes                  | I          | RA               |
+| Despliegue de la configuración inicial de identidades y accesos | C          | RA               |
+| Definir la estrategia de escalado y alta disponibilidad  | C          | RA               |
 
 ### Gestión de proyectos y aplicaciones empresariales
 
 | **Actividad**                                       | **Cliente** | **Cloud Temple** |
-| -------------------------------------------------- | ---------- | ---------------- |
-| Crear y gestionar los proyectos Kubernetes         | RA         | I*               |
-| Desplegar y gestionar las aplicaciones en Kubernetes | RA         | I*               |
-| Configurar las pipelines CI/CD                      | RA         | I*               |
-| Gestionar las imágenes de contenedores y los registros | RA         | I*               |
+| -------------------------------------------------- | ----------- | ---------------- |
+| Crear y gestionar proyectos de Kubernetes          | RA          | I*               |
+| Implementar y gestionar aplicaciones en Kubernetes  | RA          | I*               |
+| Configurar pipelines CI/CD                         | RA          | I*               |
+| Gestionar imágenes de contenedores y registros      | RA          | I*               |
 
-*Estas responsabilidades pueden ser delegadas a Cloud Temple mediante un contrato de gestión complementario.
+*Estas responsabilidades pueden delegarse en Cloud Temple mediante un contrato de gestión complementario.
 
-### Monitoreo y rendimiento
+### Supervisión y rendimiento
 
-| **Actividad**                                    | **Cliente** | **Cloud Temple** |
-| ------------------------------------------------ | ----------- | ---------------- |
-| Monitorear el rendimiento del servicio Kubernetes | I           | RA               |
-| Monitorear el rendimiento de las aplicaciones    | RA          |                  |
-| Gestionar las alertas relacionadas con el servicio Kubernetes | I | RA               |
-| Gestionar las alertas relacionadas con las aplicaciones | RA |                  |
+| **Actividad**                                   | **Cliente** | **Cloud Temple** |
+| ----------------------------------------------- | ----------- | ---------------- |
+| Supervisar el rendimiento del servicio Kubernetes | I          | RA               |
+| Supervisar el rendimiento de las aplicaciones   | RA         |                  |
+| Gestionar las alertas relacionadas con el servicio Kubernetes | I          | RA               |
+| Gestionar las alertas relacionadas con las aplicaciones | RA         |                  |
 
-### Maintenance and Infrastructure Updates
+### Mantenimiento y actualizaciones de infraestructuras
 
-| **Activity**                                           | **Client** | **Cloud Temple** |
+| **Actividad**                                          | **Cliente** | **Cloud Temple** |
 | ------------------------------------------------------ | ---------- | ---------------- |
-| Update Kubernetes/OS service                           | C          | RA               |
-| Apply security patches to Kubernetes                   | C          | RA               |
-| Update deployed applications (operators*)              | C          | RA               |
+| Actualizar el servicio Kubernetes/OS                   | C          | RA               |
+| Aplicar parches de seguridad a Kubernetes              | C          | RA               |
+| Actualizar las aplicaciones desplegadas (operadores*)  | C          | RA               |
 
-*Operator package included in Managed Kube - see sections: Managed Helm Packages
+*Paquete de operador incluido en Managed Kube - ver capítulos: Paquetes Helm gestionados
 
-### Security
+### Seguridad
 
-| **Activity**                                                               | **Client** | **Cloud Temple** |
+| **Actividad**                                                               | **Cliente** | **Cloud Temple** |
+| -------------------------------------------------------------------------- | ----------- | ---------------- |
+| Gestionar la seguridad del servicio Kubernetes                              | RA          | RA               |
+| Configurar y gestionar las políticas de seguridad de los pods               | RA          | I*               |
+| Gestionar los certificados SSL/TLS para el servicio Kubernetes              | C           | RA               |
+| Gestionar los certificados SSL/TLS para las aplicaciones                    | RA          | I*               |
+| Implementar y gestionar el control de acceso basado en roles básicos (RBAC) | C           | R                |
+| Implementar y gestionar el control de acceso basado en roles del cliente (RBAC) | RA      | I*               |
+
+*Estas responsabilidades pueden delegarse en Cloud Temple mediante un contrato de gestión complementario.
+
+### Copia de seguridad y recuperación ante desastres
+
+| **Actividad**                                                               | **Cliente** | **Cloud Temple** |
 | -------------------------------------------------------------------------- | ---------- | ---------------- |
-| Manage security for the Kubernetes service                                 | RA         | RA               |
-| Configure and manage pod security policies                                   | RA         | I*               |
-| Manage SSL/TLS certificates for the Kubernetes service                     | C          | RA               |
-| Manage SSL/TLS certificates for applications                                 | RA         | I*               |
-| Implement and manage Role-Based Access Control (RBAC) for base roles        | C          | R                |
-| Implement and manage Role-Based Access Control (RBAC) for client roles     | RA         | I*               |
+| Definir la estrategia de copia de seguridad para el servicio de Kubernetes              | I          | RA               |
+| Implementar y gestionar las copias de seguridad del servicio de Kubernetes            | I          | RA               |
+| Definir la estrategia de copia de seguridad para las aplicaciones                   | RA*        | I*               |
+| Implementar y gestionar las copias de seguridad de las aplicaciones                 | RA*        | I*               |
+| Probar los procedimientos de recuperación ante desastres para el servicio de Kubernetes | CI         | RA               |
+| Probar los procedimientos de recuperación ante desastres para las aplicaciones      | RA*        | CI*              |
 
-*These responsibilities may be delegated to Cloud Temple via a complementary managed services contract.
-
-### Backup and Disaster Recovery
-
-| **Activity**                                                               | **Client** | **Cloud Temple** |
-| -------------------------------------------------------------------------- | ---------- | ---------------- |
-| Define the backup strategy for the Kubernetes service                      | I          | RA               |
-| Implement and manage backups for the Kubernetes service                    | I          | RA               |
-| Define the backup strategy for applications                                | RA*        | I*               |
-| Implement and manage backups for applications                              | RA*        | I*               |
-| Test disaster recovery procedures for the Kubernetes service              | CI         | RA               |
-| Test disaster recovery procedures for applications                         | RA*        | CI*              |
-
-*These responsibilities may be delegated to Cloud Temple via a complementary managed services contract.
+*Estas responsabilidades pueden delegarse a Cloud Temple mediante un contrato de gestión externalizada complementario.
 
 ### Soporte y resolución de problemas
 
 | **Actividad**                                              | **Cliente** | **Cloud Temple** |
-| --------------------------------------------------------- | ---------- | ---------------- |
-| Proporcionar soporte de nivel 1 para la infraestructura   | I          | RA               |
+| --------------------------------------------------------- | ----------- | ---------------- |
+| Proporcionar soporte de nivel 1 para la infraestructura   | I           | RA               |
 | Proporcionar soporte de nivel 2 y 3 para la infraestructura | I          | RA               |
-| Resolver problemas relacionados con el servicio Kubernetes | C          | RA               |
-| Resolver problemas relacionados con las aplicaciones      | RA         | I                |
+| Resolver problemas relacionados con el servicio de Kubernetes | C          | RA               |
+| Resolver problemas relacionados con las aplicaciones      | RA          | I                |
 
 ### Gestión de capacidades y evolución
 
-| **Actividad**                                          | **Cliente** | **Cloud Temple** |
-| ------------------------------------------------------ | ----------- | ---------------- |
-| Supervisar el uso de los recursos de Kubernetes        | C           | RA               |
-| Planificar la evolución de las capacidades del servicio | RA          | C                |
-| Implementar los cambios de capacidad                   | I           | RA               |
-| Gestionar la evolución de las aplicaciones y sus recursos | RA          | I                |
+| **Actividad**                                           | **Cliente** | **Cloud Temple** |
+| ------------------------------------------------------ | ---------- | ---------------- |
+| Supervisar el uso de recursos de Kubernetes            | C          | RA               |
+| Planificar la evolución de la capacidad del servicio   | RA         | C                |
+| Implementar los cambios de capacidad                   | I          | RA               |
+| Gestionar la evolución de las aplicaciones y sus recursos | RA      | I                |
 
 ### Documentación y cumplimiento
 
 | **Actividad**                                     | **Cliente** | **Cloud Temple** |
 | ------------------------------------------------ | ----------- | ---------------- |
-| Mantener la documentación del servicio Kubernetes | I           | RA               |
-| Mantener la documentación de las aplicaciones     | RA          | I                |
-| Asegurar el cumplimiento del servicio Kubernetes  | I           | RA               |
-| Asegurar el cumplimiento de las aplicaciones      | RA          | I                |
-| Realizar auditorías del servicio Kubernetes       | I           | RA               |
-| Realizar auditorías de las aplicaciones           | RA          | I                |
+| Mantener la documentación del servicio de Kubernetes | I          | RA               |
+| Mantener la documentación de las aplicaciones      | RA         | I                |
+| Garantizar el cumplimiento del servicio de Kubernetes      | I          | RA               |
+| Garantizar el cumplimiento de las aplicaciones           | RA         | I                |
+| Realizar auditorías del servicio de Kubernetes        | I          | RA               |
+| Realizar auditorías de las aplicaciones             | RA         | I                |
 
-### Basic Kubernetes Operators/CRD Management
+### Gestión de operadores/CRD de Kubernetes básicos
 
-| **Activity**                                                | **Client** | **Cloud Temple** |
+| **Actividad**                                               | **Cliente** | **Cloud Temple** |
 | ----------------------------------------------------------- | ---------- | ---------------- |
-| Provisioning of default Operators catalog                   | CI         | RA               |
-| Updating Operators                                          | CI         | RA               |
-| Monitoring Operators status                                 | CI         | RA               |
-| Troubleshooting Operator-related issues                     | CI         | RA               |
-| Managing Operator permissions                               | CI         | RA               |
-| Managing Operator resources (addition/removal)              | CI         | RA               |
-| Backup of Operator resources data                           | CI         | RA               |
-| Monitoring Operator resources                               | CI         | RA               |
-| Restoration of Operator resources data                      | CI         | RA               |
-| Security auditing of Operators                              | CI         | RA               |
-| Operator support                                            | CI         | RA               |
-| License management for operators                            | CI         | RA               |
-| Management of specific support plans for operators          | CI         | RA               |
+| Puesta a disposición del catálogo de Operadores predeterminado | CI         | RA               |
+| Actualización de Operadores                                 | CI         | RA               |
+| Supervisión del estado de los Operadores                    | CI         | RA               |
+| Resolución de problemas relacionados con Operadores       | CI         | RA               |
+| Gestión de permisos de Operadores                           | CI         | RA               |
+| Gestión de recursos de Operadores (adición/eliminación)     | CI         | RA               |
+| Copia de seguridad de los datos de los recursos de Operadores | CI         | RA               |
+| Supervisión de recursos de Operadores                       | CI         | RA               |
+| Restauración de los datos de los recursos de Operadores     | CI         | RA               |
+| Auditoría de seguridad de Operadores                        | CI         | RA               |
+| Soporte de Operadores                                       | CI         | RA               |
+| Gestión de licencias de operadores                          | CI         | RA               |
+| Gestión de planes de soporte específicos para operadores    | CI         | RA               |
 
-*Operator package included in Managed Kube – see sections: Managed Helm Packages*
+*Paquete de operador incluido en Managed Kube - ver capítulos: Paquetes Helm gestionados
 
-### Management of Kubernetes applications/operators/CRDs (business)
+### Gestión de aplicaciones/operadores/CRD de Kubernetes (negocio)
 
-| **Activity**                                                | **Client** | **Cloud Temple** |
-| ----------------------------------------------------------- | ---------- | ---------------- |
-| Deployment of CRDs                                          | RA*        | I*               |
-| Updating operators                                          | RA         | I                |
-| Monitoring operator status                                  | RA         | I                |
-| Troubleshooting operator-related issues                     | RA         | I                |
-| Managing operator permissions                               | RA         | I                |
-| Managing operator resources (addition/removal)              | RA         | I                |
-| Backing up operator resource data                           | RA         | I                |
-| Monitoring operator resources                               | RA         | I                |
-| Restoring operator resource data                            | RA         | I                |
-| Security auditing of operators                              | RA         | I                |
-| Operator support                                            | RA         | I                |
-| License management for operators                            | RA         | I                |
-| Management of specific support plans for operators          | RA         | I                |
+| **Actividad**                                               | **Cliente** | **Cloud Temple** |
+| ----------------------------------------------------------- | ----------- | ---------------- |
+| Despliegue de CRDs                                          | RA*         | I*               |
+| Actualización de Operadores                                 | RA          | I                |
+| Supervisión del estado de los Operadores                    | RA          | I                |
+| Resolución de problemas relacionados con Operadores         | RA          | I                |
+| Gestión de permisos de Operadores                           | RA          | I                |
+| Gestión de recursos de Operadores (adición/eliminación)     | RA          | I                |
+| Copia de seguridad de datos de recursos de Operadores       | RA          | I                |
+| Supervisión de recursos de Operadores                       | RA          | I                |
+| Restauración de datos de recursos de Operadores             | RA          | I                |
+| Auditoría de seguridad de Operadores                        | RA          | I                |
+| Soporte de Operadores                                       | RA          | I                |
+| Gestión de licencias en operadores                          | RA          | I                |
+| Gestión de planes de soporte específicos para operadores    | RA          | I                |
 
-*These responsibilities may be delegated to Cloud Temple via a complementary managed services contract.
+*Estas responsabilidades pueden delegarse a Cloud Temple mediante un contrato de gestión complementario.
 
-### Aplicación de soporte
+### Soporte de aplicaciones
 
 | **Actividad**                                | **Cliente** | **Cloud Temple** |
-| ------------------------------------------- | ---------- | ---------------- |
-| Soporte aplicativo (prestación externa)     | RA         | I                |
+| ------------------------------------------- | ----------- | ---------------- |
+| Soporte de aplicaciones (servicio externo)  | RA          | I                |
 
-El soporte aplicativo también puede proporcionarse dentro de una prestación complementaria.
+El soporte de aplicaciones también puede proporcionarse en el marco de un servicio complementario.
 
 ### RACI (sintético)
 
-- Cloud Temple: responsable y actor (RA) del núcleo Kubernetes, seguridad del clúster, copias de seguridad de infraestructura y supervisión.
-- Cliente: responsable y actor (RA) de los proyectos aplicativos, operadores comerciales, pipelines CI/CD y copias de seguridad aplicativas.
-- Zona "gris": adaptaciones y extensiones (IAM, operadores específicos, fortalecimiento de conformidad/seguuridad del clúster) – facturadas en modalidad proyecto.
+- Cloud Temple : responsable y actor (RA) de la plataforma Kubernetes, seguridad del clúster, copia de seguridad de la infraestructura, supervisión.
+- Cliente : responsable y actor (RA) de los proyectos de aplicaciones, operadores de negocio, pipelines CI/CD, copias de seguridad de aplicaciones.
+- Zona "gris" : adaptaciones y extensiones (IAM, operadores específicos, endurecimiento del cumplimiento/seguridad del clúster) - facturadas en modo proyecto.

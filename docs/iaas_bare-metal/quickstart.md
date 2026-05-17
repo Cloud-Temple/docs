@@ -1,10 +1,10 @@
 ---
 title: Guide de démarrage
 ---
-import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
-import shivaBareMetalList from './images/shiva_bare-metal_list.png'
-import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
-import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
+import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
+import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
+import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
+import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
 # QuickStart pour l'offre Bare Metal
 

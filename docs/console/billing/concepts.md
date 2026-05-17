@@ -2,12 +2,12 @@
 title: Gestionnaire des coûts
 ---
 
-import billingDashboardPreview from './images/billing_dashboard_preview.png'
-import billingDashboardConsumptionTotal from './images/billing_dashboard_consumption_total.png'
-import billingDashboardConsumptionPerProduct from './images/billing_dashboard_consumption_per_product.png'
-import billingDashboardConsumptionPerService from './images/billing_dashboard_consumption_per_service.png'
-import billingConsumptionDetails from './images/billing_consumption_details.png'
-import billingPricesList from './images/billing_prices_list.png'
+import billingDashboardPreview from '@site/docs/console/billing/images/billing_dashboard_preview.png'
+import billingDashboardConsumptionTotal from '@site/docs/console/billing/images/billing_dashboard_consumption_total.png'
+import billingDashboardConsumptionPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
+import billingDashboardConsumptionPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
+import billingConsumptionDetails from '@site/docs/console/billing/images/billing_consumption_details.png'
+import billingPricesList from '@site/docs/console/billing/images/billing_prices_list.png'
 
 ## Présentation
 

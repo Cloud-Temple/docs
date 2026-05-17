@@ -7,19 +7,19 @@ tags:
 import statusCloudInit from '@site/docs/iaas_vmware/tutorials/images/status_cloud_init.png';
 import cloudInitOutput from '@site/docs/iaas_vmware/tutorials/images/cloud-init-output.png';
 
-This guide will allow you to deploy your first instances on the Trust Cloud in less than 5 minutes.
+This guide will enable you to deploy your first instances on the Cloud de Confiance in less than 5 minutes.
 
 ## __Prerequisites__
 
-1. Have subscribed to the Cloud Temple offer (subscription to the IaaS offer).
-2. Have the permissions enabled for the __'IaaS'__ object driver
+1. Have subscribed to the Cloud Temple product (subscription to the IaaS product).
+2. Have permissions enabled for the __'IaaS'__ object driver.
 
-## Deploy a Virtual Machine via Terraform
+## Deploy a virtual machine via Terraform
 
-In this section, we will see how to deploy a virtual machine on the Trust Cloud via the Cloud Temple Terraform provider in a few minutes.
-If you have not yet used the Cloud Temple provider, follow the instructions at [this address](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) to install it and authenticate to your tenant.
+In this section, we will see how to deploy a virtual machine on the Cloud de Confiance in a few minutes using the Terraform Cloud Temple provider.
+If you have not yet used the Cloud Temple provider, follow the instructions at [the following address](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) to install it and authenticate to your tenant.
 
-We will start by creating a .tf file that describes the instance we want to deploy.
+We will start by creating a .tf file that describes the instance we wish to deploy.
 The following script allows you to deploy a virtual machine from scratch.
 
 ```hcl
@@ -58,16 +58,16 @@ resource "cloudtemple_compute_virtual_machine" "scratch" {
 
 The parameters used in this script are as follows:
 
-- datacenter_id (required): datacenter in which the virtual machine is deployed
-- host_cluster_id (required): cluster in which the virtual machine is deployed
-- name (required): name of the machine
-- memory: RAM allocated to the machine initially
-- cpu: number of vCPU allocated to the machine initially
-- num_cores_per_socket: number of cores per socket
-- datastore_cluster_id: datastore to which the machine is attached
-- guest_operating_system_moref: guest operating system
+- datacenter_id (required) : datacenter in which the virtual machine is deployed
+- host_cluster_id (required) : cluster in which the virtual machine is deployed
+- name (required) : machine name
+- memory : RAM allocated to the machine initially
+- cpu : number of vCPUs allocated to the machine initially
+- num_cores_per_socket : number of cores per socket
+- datastore_cluster_id : datastore to which the machine is attached
+- guest_operating_system_moref : operating system of the machine
 
-Other parameters can be applied to a virtual machine during its deployment. You can find all these parameters on the following page of the [Terraform documentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
+Additional parameters can be applied to a virtual machine during its deployment. You can find all of these parameters on the following page of the [Terraform documentation](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
 
 Once the .tf file is created and saved, run the following command to verify your code:
 
@@ -75,7 +75,7 @@ Once the .tf file is created and saved, run the following command to verify your
 terraform validate
 ```
 
-Then, plan the deployment and check that the plan matches what you want to achieve:
+Then, plan the deployment and verify that the plan matches what you intend to do:
 
 ```
 terraform plan
@@ -89,14 +89,14 @@ terraform apply
 
 ## Use cloud-init to configure a virtual machine deployed from the Terraform provider
 
-The __'cloud-init'__ tool allows you to customize a virtual machine, or a cloud instance, during its first boot. It is a widely used standard.
+The __'cloud-init'__ tool enables customization of a virtual machine or cloud instance during its first boot. It is a widely adopted standard.
 For more information, refer to the [documentation](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Compatibility
 
-In order to be able to configure a virtual machine deployed from the Cloud Temple Terraform provider via cloud-init, the __OVF__ used to deploy it must be __compatible__ with __cloud-init__.
+To be able to configure a virtual machine deployed from the Terraform Cloud Temple provider via cloud-init, the __OVF__ used to deploy it must be __compatible__ with __cloud-init__.
 
-To check the compatibility of your virtual machine with cloud-init, enter the following command:
+To verify your virtual machine's compatibility with cloud-init, enter the following command:
 
 `systemctl status cloud-init.service`
 
@@ -104,12 +104,12 @@ If cloud-init is correctly installed on the machine, you should see a response l
 
 <img src={statusCloudInit}/>
 
-If needed, you can find cloud-init compatible images on the internet (for example [Ubuntu Cloud Image](https://cloud-images.ubuntu.com/)) or install it yourself on your machine before converting it to an OVF.
+If needed, you can find cloud-init compatible images online (for example [Ubuntu Cloud Image](https://cloud-images.ubuntu.com/)) or install it yourself on your machine before converting it to an OVF.
 
 ### Deployment
 
-Now that you are sure the deployed OVF is compatible with cloud-init, here is an example of a Terraform file (.tf) that you can use to configure your virtual machine.
-NB: All examples shown here can be found in the examples folder of the Cloud Temple Terraform provider repository here: [Examples](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
+Now that you are certain that the deployed OVF is fully compatible with cloud-init, here is an example of a Terraform (.tf) file that you can use to configure your virtual machine.
+Note: All examples shown here can be found in the examples folder of the Cloud Temple Terraform provider repository here: [Examples](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
 
 #### `main.tf`
 
@@ -177,27 +177,27 @@ users:
     plain_text_passwd: password
 ```
 
-The interesting element here is the presence of the cloud-init property, you can see that it is composed of two sub-properties: __network-config__, and __user-data__.
+The interesting aspect here is the presence of the cloud-init property; you can see that it consists of two sub-properties: __network-config__, and __user-data__.
 
-These last ones are part of a set of 7 properties that you can use to configure your virtual machine with cloud-init.
+These are part of a set of 7 properties that you can use to configure your virtual machine with cloud-init.
 
-- __user-data__: This value must be encoded in base64 and contains notably configuration information for the user accounts of the virtual machine. You can also add scripts to install or update packages.
-- __network-config__: This value must be encoded in base64 and contains notably network configuration information for the virtual machine.
-- __public-keys__: Indicates that the instance should fill the 'authorized_keys' of the default user with this value.
-- __instance-id__: Allows to define a unique instance identifier with cloud-init.
-- __password__: If defined, the default user's password will be set to this value to allow password-based connection. The password will only be valid for one connection. If the value is 'RANDOM', a random password will be generated and displayed on the console.
-- __hostname__: Specifies a hostname for the deployed instance.
-- __seedfrom__: Allows to define a URL where cloud-init will go to retrieve the configuration files it must use.
+- __user-data__ : This value must be base64 encoded and notably contains configuration information for the virtual machine's user accounts. You can also add scripts to install or update packages.
+- __network-config__ : This value must be base64 encoded and notably contains network configuration information for the virtual machine.
+- __public-keys__ : Indicates that the instance should populate the default user's 'authorized_keys' with this value.
+- __instance-id__ : Allows setting a unique instance identifier for cloud-init.
+- __password__ : If set, the default user's password will be set to this value to allow password-based login. The password will only be valid for a single login. If the value is 'RANDOM', a random password will be generated and displayed on the console.
+- __hostname__ : Specifies a hostname for the deployed instance.
+- __seedfrom__ : Allows setting a URL from which cloud-init will fetch the configuration files it needs to use.
 For more information on how cloud-init works, please refer to the [official documentation](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Execution
 
-To verify the correct execution of cloud-init, you should be able to connect with the user you configured in the user-data.yml file or the hostname should change to be set to the one you put in 'hostname'.
+To verify that cloud-init executed correctly, you should be able to log in using the user you configured in the user-data.yml file, or the hostname should have been updated to the one you specified in ‘hostname’.
 
-In case of issues, you can check the cloud-init logs using the following command:
+If you encounter any issues, you can check the cloud-init logs using the following command:
 
 `sudo cat /var/log/cloud-init-output.log`
 
-You should see various information about the execution of cloud-init. In the following screenshot, it can be seen that the network configuration was successfully completed.
+You should see various details regarding the cloud-init execution. As shown in the screenshot below, the network configuration completed successfully.
 
 <img src={cloudInitOutput} />

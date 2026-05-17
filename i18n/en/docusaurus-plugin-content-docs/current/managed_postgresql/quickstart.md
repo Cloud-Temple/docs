@@ -2,23 +2,23 @@
 title: Getting Started Guide
 ---
 
-Welcome to the **Managed PostgreSQL** Cloud Temple getting started guide.
+Welcome to the **Managed PostgreSQL** Cloud Temple Getting Started Guide.
 
-The goal of this section is to guide you towards the resources needed to get started with your product.
+The goal of this section is to guide you to the resources needed to get started with your product.
 
 ---
 
 ## Before you begin
 
-> being written
+> In progress
 ---
 
-## Accessing your Managed PostgreSQL cluster
+## Access your Managed PostgreSQL cluster
 
-> being written
+> Work in progress
 ---
 
 ## Your permissions
 
-> being written
+> In progress
 ---

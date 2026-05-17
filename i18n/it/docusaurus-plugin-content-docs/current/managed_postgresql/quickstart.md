@@ -2,9 +2,9 @@
 title: Guida introduttiva
 ---
 
-Benvenuti nella guida introduttiva di **PostgreSQL Gestito** di Cloud Temple.
+Benvenuti nella guida introduttiva di **PostgreSQL Gestito** Cloud Temple.
 
-L'obiettivo di questa sezione è orientarvi verso le risorse necessarie per iniziare a utilizzare il vostro prodotto.
+L'obiettivo di questa sezione è indirizzarvi verso le risorse necessarie per iniziare a utilizzare il vostro prodotto.
 
 ---
 
@@ -13,12 +13,12 @@ L'obiettivo di questa sezione è orientarvi verso le risorse necessarie per iniz
 > in fase di redazione
 ---
 
-## Accesso al vostro cluster PostgreSQL Gestito
+## Accedere al cluster PostgreSQL gestito
 
 > in fase di redazione
 ---
 
-## I vostri permessi
+## Le tue autorizzazioni
 
 > in fase di redazione
 ---

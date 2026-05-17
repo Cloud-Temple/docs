@@ -61,7 +61,7 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
   - Ne bénéficie pas de SLA de haute disponibilité.
   - aucune restriction de sécurité
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
 
 ### Architecture Production (Multi-AZ)
 
@@ -75,7 +75,7 @@ Conçue pour la production et les applications critiques, cette architecture dis
   - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
   - **SLA de 99.90%**.
 
-<img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
+<img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Architecture Multi-AZ" />
 
 ---
 

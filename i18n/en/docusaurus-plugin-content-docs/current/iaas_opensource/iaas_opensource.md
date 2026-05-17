@@ -2,24 +2,25 @@
 title: Overview
 ---
 
-The Cloud Temple Open Source IaaS product: a unique alliance between performance, security, and transparency.
+The **Cloud Temple Open Source IaaS offering**: a unique alliance between performance, security, and transparency.
 
-This offering ensures total control over your critical environments, while guaranteeing security, continuity, and regulatory compliance. With scalable resources and automated management, you benefit from a high-performance infrastructure tailored to your needs. Adopt the power of Open Source with the reliability and support of Cloud Temple.
+This product guarantees complete control over your critical environments, while ensuring security, continuity, and regulatory compliance.
+With scalable resources and automated management, you benefit from a high-performance infrastructure tailored to your needs. Embrace the power of Open Source with the reliability and support of Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the basic principles essential to understanding and mastering our infrastructure.</p>
+    <p>Discover the fundamentals and essential principles to understand and master our infrastructure.</p>
     <a href="./iaas_opensource/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Quickstart</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="./iaas_opensource/quickstart" class="card-link">Launch Quickstart &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step by step how to configure and use our services with detailed guides.</p>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
 </div>
@@ -27,22 +28,22 @@ This offering ensures total control over your critical environments, while guara
 ## Purchase Platforms
 
 <div class="purchase-platforms">
-  <p>Are you a public sector actor? The <strong>IaaS Cloud Temple</strong> offering is available via:</p>
+  <p>Are you a public sector entity? The <strong>IaaS Cloud Temple</strong> product is accessible via:</p>
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        The UGAP public procurement platform
+        UGAP public procurement platform
       </a>
     </p>
   </div>
 
   <div class="platform-card">
-      <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
+    <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        The CAIH market for the healthcare sector
+        CAIH procurement framework for the healthcare sector
       </a>
     </p>
   </div>

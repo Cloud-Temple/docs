@@ -1,21 +1,21 @@
 ---
-title: Tutorial - Ihre erste Anwendung bereitstellen
+title: Tutorial - Bereitstellen Ihrer ersten Anwendung
 ---
 
 ## Ziele
 
-Dieses Tutorial führt Sie Schritt für Schritt durch Ihre erste Bereitstellung auf einem **Managed Kubernetes**-Cluster. Am Ende dieses Leitfadens werden Sie:
+Dieses Tutorial führt Sie Schritt für Schritt durch die Bereitstellung Ihrer ersten Anwendung auf einem **Managed Kubernetes**-Cluster. Am Ende dieses Leitfadens haben Sie:
 
-- Eine einfache Webanwendung bereitgestellt haben.
-- Diese Anwendung innerhalb des Clusters über einen Service exponiert haben.
-- Die Anwendung über einen Ingress aus dem Internet erreichbar gemacht haben.
+- Eine einfache Webanwendung bereitgestellt.
+- Diese Anwendung innerhalb des Clusters über einen Service freigegeben.
+- Die Anwendung über einen Ingress von Internet aus zugänglich gemacht.
 
 ## Voraussetzungen
 
-- Sie haben Ihren Clusterzugang wie im [Schnellstartleitfaden](../quickstart.md) beschrieben konfiguriert.
-- Sie verfügen über einen Namespace, auf dem Sie Bereitstellungsrechte haben. In diesem Tutorial verwenden wir einen Namespace namens `hello-world`.
+- Sie haben Ihren Zugriff auf den Cluster wie in der [Schnellstartanleitung](../quickstart.md) beschrieben konfiguriert.
+- Sie verfügen über ein Namespace, in dem Sie über Bereitstellungsrechte verfügen. In diesem Tutorial verwenden wir ein Namespace mit dem Namen `hello-world`.
 
-## Schritt 1: Einen Namespace erstellen
+## Schritt 1: Namespace erstellen
 
 Falls noch nicht geschehen, erstellen Sie einen Namespace, um Ihre Anwendung zu isolieren.
 
@@ -23,11 +23,11 @@ Falls noch nicht geschehen, erstellen Sie einen Namespace, um Ihre Anwendung zu 
 kubectl create namespace hello-world
 ```
 
-## Schritt 2: Eine "Hello World"-Anwendung bereitstellen
+## Schritt 2: Bereitstellen einer "Hello World"-Anwendung
 
-Wir werden eine Demoanwendung bereitstellen, die eine einfache Webseite anzeigt.
+Wir stellen eine Demo-Anwendung bereit, die eine einfache Webseite anzeigt.
 
-1. Erstellen Sie eine Datei namens `deployment.yaml` mit folgendem Inhalt:
+1. Erstellen Sie eine Datei namens `deployment.yaml` mit dem folgenden Inhalt:
 
     ```yaml
     apiVersion: apps/v1
@@ -60,11 +60,11 @@ Wir werden eine Demoanwendung bereitstellen, die eine einfache Webseite anzeigt.
     kubectl apply -f deployment.yaml
     ```
 
-3. Überprüfen Sie, dass das Deployment erstellt wurde und die Pods laufen:
+3. Überprüfen Sie, ob das Deployment erstellt wurde und die Pods ausgeführt werden:
 
     ```bash
     kubectl get deployment -n hello-world
-    # Sie sollten Ihr Deployment mit 2/2 bereiten Replikas sehen.
+    # Sie sollten Ihr Deployment mit 2/2 einsatzbereiten Replikaten sehen.
     NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
     hello-world-deployment   2/2     2            2           102s
 
@@ -77,9 +77,9 @@ Wir werden eine Demoanwendung bereitstellen, die eine einfache Webseite anzeigt.
 
 ## Schritt 3: Die Anwendung im Cluster exponieren (Service)
 
-Um den verschiedenen Komponenten des Clusters die Kommunikation mit unserer Anwendung zu ermöglichen, müssen wir einen **Service** erstellen.
+Um die verschiedenen Komponenten des Clusters mit unserer Anwendung kommunizieren zu lassen, müssen wir einen **Service** erstellen.
 
-1. Erstellen Sie eine Datei namens `service.yaml`:
+1. Erstellen Sie eine Datei mit dem Namen `service.yaml` :
 
     ```yaml
     apiVersion: v1
@@ -97,19 +97,19 @@ Um den verschiedenen Komponenten des Clusters die Kommunikation mit unserer Anwe
       type: ClusterIP
     ```
 
-2. Wenden Sie das Manifest an:
+2. Wenden Sie das Manifest an :
 
     ```bash
     kubectl apply -f service.yaml
     ```
 
-    Ihre Anwendung ist nun über den Namen `hello-world-service.hello-world` von jedem anderen Pod im Cluster aus erreichbar.
+    Ihre Anwendung ist jetzt über den Namen `hello-world-service.hello-world` von jedem anderen Pod im Cluster aus erreichbar.
 
-## Schritt 4: Die Anwendung aus dem Internet erreichbar machen (Ingress)
+## Schritt 4: Die Anwendung über das Internet zugänglich machen (Ingress)
 
-Um unseren Service im Internet zu exponieren, verwenden wir eine **Ingress**-Ressource. Das Managed Kubernetes-Angebot stellt mehrere vorkonfigurierte `ingressClassName`-Werte bereit. Wir verwenden `nginx-external` für die öffentliche Exposition.
+Um unseren Dienst im Internet zugänglich zu machen, verwenden wir eine **Ingress**-Ressource. Das Managed Kubernetes-Angebot stellt mehrere vorkonfigurierte `ingressClassName`-Werte bereit. Wir verwenden `nginx-external` für den öffentlichen Zugriff.
 
-1. Erstellen Sie eine `ingress.yaml`-Datei. **Denken Sie daran, `ihre-cluster-id`** durch den Bezeichner Ihres Clusters zu ersetzen (z.B. `ctodev`).
+1. Erstellen Sie eine Datei `ingress.yaml`. **Ersetzen Sie `votre-cluster-id`** durch die ID Ihres Clusters (z. B. `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -120,7 +120,7 @@ Um unseren Service im Internet zu exponieren, verwenden wir eine **Ingress**-Res
     spec:
       ingressClassName: nginx-external
       rules:
-      - host: "hello-world.external.ihre-cluster-id.mk.ms-cloud-temple.com" # ändern Sie mich
+      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # changez moi
         http:
           paths:
           - path: /
@@ -138,13 +138,13 @@ Um unseren Service im Internet zu exponieren, verwenden wir eine **Ingress**-Res
     kubectl apply -f ingress.yaml
     ```
 
-## Schritt 5: Zugang überprüfen
+## Schritt 5: Zugriff überprüfen
 
-Ein Wildcard-DNS-Eintrag leitet bereits alle URLs, die auf ".external.ihre-cluster-id.mk.ms-cloud-temple.com" enden, an die IP des "external"-Ingress weiter.
+Ein DNS-Eintrag "*" leitet bereits alle URLs, die auf ".external.votre-cluster-id.mk.ms-cloud-temple.com" enden, auf die IP-Adresse des "external"-Ingresses weiter.
 Auf diesem DNS-Suffix veröffentlichte Anwendungen sind daher direkt erreichbar.
 
 ```bash
-curl http://hello-world.external.ihre-cluster-id.mk.ms-cloud-temple.com
+curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
 ```
 
 Sie sollten eine Antwort vom Demo-NGINX-Server erhalten.
@@ -168,20 +168,21 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Weiterführend: Sicherheit in der Produktion]
-Dieses Tutorial hat Ihnen die Grundlagen der Bereitstellung gezeigt. Für eine Produktionsumgebung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen anzuwenden:
+:::warning[Vertiefung: Sicherheit in der Produktion
+]
+Dieses Tutorial hat Ihnen die Grundlagen des Deployments gezeigt. Für eine Produktionsumgebung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen anzuwenden:
 
-- **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrer sicheren Unternehmens-Registry wie **Harbor** anstelle von öffentlichen Images.
-- **Kontrollieren Sie Netzwerkflüsse**: Implementieren Sie `NetworkPolicies`, um die Kommunikation auf die notwendigen Flüsse zwischen Ihren Anwendungen zu beschränken.
-- **Wenden Sie Governance-Richtlinien an**: Verwenden Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z.B. "root"-Container verbieten, Ressourcen `requests` und `limits` erfordern, usw.).
+- **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrer gesicherten Unternehmens-Registry wie **Harbor** anstelle von öffentlichen Images.
+- **Steuern Sie den Netzwerkverkehr**: Richten Sie `NetworkPolicies` ein, um die Kommunikation auf die für Ihre Anwendungen erforderlichen Flüsse zu beschränken.
+- **Wenden Sie Governance-Richtlinien an**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. das Verbot von "root"-Containern, die Anforderung von Ressourcenanfragen (`requests`) und -grenzen (`limits`) usw.).
 :::
 
 ## Bereinigung
 
-Um alle während dieses Tutorials erstellten Ressourcen zu löschen, können Sie einfach den Namespace löschen:
+Um alle Ressourcen zu löschen, die Sie während dieses Tutorials erstellt haben, können Sie einfach den Namespace löschen:
 
 ```bash
 kubectl delete namespace hello-world
 ```
 
-Herzlichen Glückwunsch, Sie haben Ihre erste Anwendung auf Managed Kubernetes bereitgestellt und exponiert!
+Herzlichen Glückwunsch, Sie haben Ihre erste Anwendung auf Managed Kubernetes bereitgestellt und freigegeben!

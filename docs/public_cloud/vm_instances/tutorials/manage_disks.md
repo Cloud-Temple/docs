@@ -12,7 +12,7 @@ Ce tutoriel explique comment ajouter un disque de stockage supplémentaire à un
 
 Depuis la liste des VM Instances, cliquez sur la ligne de votre VM pour ouvrir son panneau de détail.
 
-![Détail VM - Disques](../images/vm_instances_detail_disques.png)
+![Détail VM - Disques](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
 
 Naviguez vers l'onglet **Disques** (icône disque dans le panneau latéral gauche du détail). Vous voyez la liste des disques actuellement attachés à la VM, avec pour chaque disque son nom, sa taille et son type de stockage.
 
@@ -20,7 +20,7 @@ Naviguez vers l'onglet **Disques** (icône disque dans le panneau latéral gauch
 
 Cliquez sur le bouton **+ Ajouter un disque** en haut à droite du tableau des disques.
 
-![Modal ajout de disque](../images/vm_instances_ajout_disque_modal.png)
+![Modal ajout de disque](@site/docs/public_cloud/vm_instances/images/vm_instances_ajout_disque_modal.png)
 
 Le formulaire **Ajouter un disque** s'ouvre avec les champs suivants :
 

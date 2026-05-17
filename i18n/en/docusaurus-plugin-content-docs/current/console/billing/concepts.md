@@ -3,106 +3,83 @@ title: Cost Manager
 ---
 
 import billingDashboardPreview from '@site/docs/console/billing/images/billing_dashboard_preview.png'
-import billingDashboardTotal from '@site/docs/console/billing/images/billing_dashboard_consumption_total.png'
-import billingDashboardPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
-import billingDashboardPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
+import billingDashboardConsumptionTotal from '@site/docs/console/billing/images/billing_dashboard_consumption_total.png'
+import billingDashboardConsumptionPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
+import billingDashboardConsumptionPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
 import billingConsumptionDetails from '@site/docs/console/billing/images/billing_consumption_details.png'
 import billingPricesList from '@site/docs/console/billing/images/billing_prices_list.png'
 
-The **Cost Manager** is accessible from the main menu of the Cloud Temple Console. It gives you a complete and transparent view of your cloud resource consumption, enabling you to manage your expenses independently.
+## Overview
+
+The **Cost Manager** is the module of the Cloud Temple Console dedicated to **visibility into your consumption**. It allows you to track in real time the usage of your cloud resources within a tenant and gain a clear view of your expenses.
+
+This module addresses a fundamental need: **understand what you consume, when you consume it, and at what cost**, without having to navigate through complex tables or detailed invoices.
 
 :::info
-Access to the Cost Manager requires the appropriate rights on your tenant. Please contact your sales representative for more information and to learn about the conditions for accessing the service.
+The Cost Manager displays the **actual consumption** of your resources on the selected tenant. The data is updated regularly to reflect your current usage.
 :::
 
-## Dashboard
+## Main Dashboard
 
-The Cost Manager dashboard is the module's home page. It provides a summary view of all your consumption for the selected period.
+The Cost Manager home page provides a visual summary of your consumption. Upon opening, you have an overview that allows you to quickly identify consumption trends and the most significant cost categories.
 
-<img src={billingDashboardPreview} alt="Cost Manager Dashboard" />
+<img src={billingDashboardPreview} />
 
-From this dashboard, you can:
+The dashboard is organized around several complementary sections, accessible via the tabs available at the top of the page.
 
-- **Select a period** for analysis (current month, previous month, or a custom date range),
-- **Navigate between the different tabs** to refine your consumption analysis,
-- **Export your consumption data** to integrate into your internal reporting tools.
+## Total Consumption
 
-## Global Consumption
+The **Total Consumption** tab provides an aggregated view of all your consumption over the selected period. This chart allows you to observe the evolution of your spending over time and identify any potential spikes or trends.
 
-The **Global Consumption** tab shows the total amount consumed during the selected period. It is the starting point for understanding the overall trend of your cloud expenses.
+<img src={billingDashboardConsumptionTotal} />
 
-<img src={billingDashboardTotal} alt="Global consumption for the period" />
-
-This chart allows you to visualize:
-
-- The **total amount** consumed during the period,
-- The **time evolution** of your consumption (day by day or month by month depending on the chosen granularity),
-- Any **consumption spikes** to quickly identify anomalies or surges.
-
-:::info
-**Reading the chart for the current month**
-
-For the current month, the chart shows two visual zones:
-
-- The **blue (solid) part** represents the **actual consumption to date**, i.e. resources actually consumed since the beginning of the month,
-- The **orange (hatched) part** represents the **forecast** estimated until the end of the month, calculated based on your current consumption rate.
-
-This projection allows you to anticipate your end-of-month budget in real time.
-:::
+You can adjust the **display period** to refine your analysis: day, week, month, or custom range. The total consumption curve is directly readable and does not require any particular technical expertise.
 
 ## Consumption by Product
 
-The **Consumption by Product** tab lets you identify the breakdown of your expenses by the Cloud Temple products you have subscribed to.
+The **Consumption by Product** tab breaks down your consumption by the main Cloud Temple service categories you have subscribed to: compute, storage, networking, etc.
 
-<img src={billingDashboardPerProduct} alt="Consumption breakdown by product" />
+<img src={billingDashboardConsumptionPerProduct} />
 
-Each product (IaaS, Storage, Network, etc.) is presented with:
+This view is particularly useful for **identifying the most significant expense categories** and guiding optimization decisions. Each product is represented with its relative share of total consumption, which facilitates reading and comparison.
 
-- Its **relative share** of total consumption,
-- Its **absolute amount** for the period,
-- The **trend** compared to the previous period.
+## Consumption by service
 
-This view is particularly useful for identifying which products represent the largest cost items and directing your optimization decisions.
+The **Consumption by service** tab provides an additional level of detail by breaking down consumption by **specific service** within each product.
 
-## Consumption by Service
+<img src={billingDashboardConsumptionPerService} />
 
-The **Consumption by Service** tab refines the analysis by breaking down consumption at the level of individual services within each product.
-
-<img src={billingDashboardPerService} alt="Consumption breakdown by service" />
-
-This detailed view allows you to:
-
-- Precisely identify **which services** contribute most to your billing,
-- Compare the consumption of similar services,
-- Detect under-used or over-provisioned services to **optimize your cloud footprint**.
+This level of granularity allows you to go further in your analysis: for example, you can distinguish the consumption of your virtual machines, block storage, snapshots, or network bandwidth, and thus precisely identify the resources that generate the highest costs.
 
 ## Consumption Details
 
-The **Consumption Details** section lists all individual billing lines for the selected period. It is the most granular view of the Cost Manager.
+The **Consumption Details** view presents a comprehensive table listing all resources consumed during the period. Each row corresponds to an identifiable resource (virtual machine, storage volume, public IP address, etc.) with its associated consumption level.
 
-<img src={billingConsumptionDetails} alt="Consumption line details" />
+<img src={billingConsumptionDetails} />
 
-For each consumption line, you will find:
+This detail is valuable for teams wishing to perform an **analytical breakdown** of their costs or to identify potentially unused resources that could be disabled to optimize spending.
 
-- The **name of the consumed resource**,
-- The **quantity** consumed and the associated **unit of measure** (hours, GB, requests, etc.),
-- The **unit price** applied,
-- The **total amount** for this line during the period.
+## Pricing Grid
 
-This view is essential for precise accounting reconciliation or for analyzing the usage of specific resources in detail.
+The **Pricing Grid** (or **Price List**) tab lists all unit rates applicable to the resources available in your tenant. It is the current price catalog that allows you to estimate the cost of new resources before their deployment.
 
-## Price Catalog
+<img src={billingPricesList} />
 
-The **Price Catalog** lists the unit prices of all resources and services available on your Cloud Temple tenant.
+Each entry in the grid indicates:
 
-<img src={billingPricesList} alt="Unit price catalog" />
-
-This catalog allows you to:
-
-- **Anticipate the cost** of a new resource before ordering it,
-- Perform **budget simulations** for your cloud projects,
-- Compare prices between different resource tiers or configurations.
+- The **resource type** involved
+- The **billing unit** (per hour, per GB, per unit, etc.)
+- The applicable **unit price**
 
 :::tip
-The prices displayed in the catalog are the contractual rates applicable to your tenant. They may differ from public rates depending on your Cloud Temple contract.
+The pricing grid is your reference for **estimating the cost** of an infrastructure before ordering it. Combine this information with consumption data to identify optimization levers.
 :::
+
+## Best practices
+
+To get the most out of the Cost Manager, here are some recommendations:
+
+- **Regularly monitor** your usage to quickly detect any budget drift.
+- **Compare periods**: the tool allows you to analyze month-over-month changes to identify trends.
+- **Use the service view** to identify underutilized or forgotten resources (old snapshots, unattached volumes, etc.).
+- **Cross-reference with the pricing grid** to evaluate the financial impact of any infrastructure changes before implementing them.

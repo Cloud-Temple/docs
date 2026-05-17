@@ -1,18 +1,18 @@
 ---
-title: Concepts - Verfügbarkeitszonen
+title: Konzepte - Verfügbarkeitszonen
 ---
 
-## Availability Zones
+## Verfügbarkeitszonen
 
-Each physical site within a region has one or more dedicated rooms for our infrastructure. These rooms are exclusively used by Cloud Temple.
+Jeder physische Standort in einer Region verfügt über einen oder mehrere eigene Serverräume für unsere Infrastruktur. Diese Räume stehen ausschließlich Cloud Temple zur Verfügung.
 
-__Each physical room corresponds to an availability zone (AZ / Availability Zone)__ and is completely independent in terms of power, cooling, computing, storage, and networking.  
-Therefore, selecting an availability zone means choosing both a physical site and a region.
+__Jeder physische Raum entspricht einer Verfügbarkeitszone (AZ / Availability Zone)__ und ist in Bezug auf Stromversorgung, Kühlung, Rechenleistung, Speicher und Netzwerk vollständig autark.
+Die Wahl einer Verfügbarkeitszone bedeutet somit die Wahl eines physischen Standorts und einer Region.
 
-The Console automatically suggests availability zones located on distinct physical sites, in order to distribute your infrastructure across the maximum number of physical sites.
+Die Konsole schlägt Ihnen automatisch Verfügbarkeitszonen auf verschiedenen physischen Standorten vor, um Ihre Infrastruktur auf die größtmögliche Anzahl physischer Standorte zu verteilen.
 
-*__Note: If you require a specific configuration for a particular use case (multiple AZs on the same physical site), please submit a support request.__*
+*__Hinweis: Wenn Sie eine spezifische Konfiguration für einen bestimmten Anwendungsfall benötigen (plusieurs AZ sur le même site physique), ist eine Supportanfrage erforderlich.__*
 
-| Order Reference                                        | Unit           | SKU                       |  
-|--------------------------------------------------------|----------------|---------------------------|
-| TENANT - *(REGION)* - Activation of an availability zone | 1 AZ per tenant | csp:*(REGION)*:iaas:az:v1 |
+| Bestellreferenz                                        | Einheit           | SKU                       |  
+|--------------------------------------------------------------|-----------------|---------------------------|
+| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 AZ pro Tenant | csp:*(REGION)*:iaas:az:v1 |

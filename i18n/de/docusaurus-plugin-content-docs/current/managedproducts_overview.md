@@ -2,42 +2,42 @@
 title: Übersicht der verwalteten Produktangebote
 ---
 
-## Was ist ein verwaltetes Produkt?
+## Was ist ein Managed Product?
 
-Verwaltete Produkte bei Cloud Temple sind Cloud-Dienste, die vollständig vom Anbieter betrieben werden, sodass sich Kunden auf ihre Anwendungen konzentrieren können, ohne die zugrunde liegende Infrastruktur verwalten zu müssen.
+Managed Products bei Cloud Temple sind vollständig vom Anbieter verwaltete Cloud-Dienste, die es Kunden ermöglichen, sich auf ihre Anwendungen zu konzentrieren, ohne die zugrunde liegende Infrastruktur verwalten zu müssen.
 
-Diese Produkte umfassen Lösungen wie Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall oder Managed SOC, bei denen Cloud Temple die Konfiguration, Überwachung, Wartung und Skalierbarkeit übernimmt.
+Zu diesen Produkten gehören Lösungen wie Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall oder Managed SOC, wobei Cloud Temple für die Konfiguration, Überwachung, Wartung und Skalierbarkeit verantwortlich ist.
 
-Sie basieren auf einer souveränen SecNumCloud-qualifizierten Infrastruktur mit Hochverfügbarkeit (Multi-AZ), Automatisierung und SLA-gestütztem Support.
+Sie basieren auf einer souveränen, SecNumCloud-zertifizierten Infrastruktur mit hoher Verfügbarkeit (Multi-AZ), Automatisierung und SLA-Support.
 
-**Wesentliche Vorteile**
+**Hauptvorteile**
 
-- Betriebliche Entlastung: Cloud Temple verwaltet die Control Plane, Backups, Sicherheit und Updates und vereinfacht so die Orchestrierung Ihrer Deployments.
+- Entlastung der Betriebsabläufe: Cloud Temple übernimmt das Control Plane, Backups, Sicherheit und Updates, wodurch die Orchestrierung Ihrer Bereitstellungen vereinfacht wird.
 
-- Industriestandards: einfache, bewährte, getestete und Open-Source-Produkte.
+- Marktstandards: einfache, anerkannte, bewährte und Open-Source-Produkte.
 
-## Unser Portfolio an verwalteten Produkten
+## Unser Portfolio an Managed Products
 
 ### Verwaltete Datenbanken
 
-- **Managed MariaDB (on Kubernetes)**: Eine MariaDB-Datenbanklösung, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. [Zur Produktseite](./managed_mariadb)
+- **Veraltetes MariaDB (on Kubernetes)** : eine MariaDB-Datenbank-Engine-Lösung, die "on-top" auf unseren Angeboten *Veraltetes Kubernetes* / *Core Kubernetes* läuft. [Details zur Lösung](./managed_mariadb)
 
-- **Managed PostgreSQL (on Kubernetes)**: Eine PostgreSQL-Datenbanklösung, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. [Zur Produktseite](./managed_postgresql).
+- **Veraltetes PostgreSQL (on Kubernetes)** : eine PostgreSQL-Datenbank-Engine-Lösung, die "on-top" auf unseren Angeboten *Veraltetes Kubernetes* / *Core Kubernetes* läuft. [Details zur Lösung](./managed_postgresql).
 
-- **Managed MongoDB (on Kubernetes)**: Eine MongoDB-Datenbanklösung, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. (Dokumentation in Erstellung)
+- **Veraltetes MongoDB (on Kubernetes)** : eine MongoDB-Datenbank-Engine-Lösung, die "on-top" auf unseren Angeboten *Veraltetes Kubernetes* / *Core Kubernetes* läuft. (Dokumentation in Vorbereitung)
 
 ### Datenprodukte
 
-- **Managed Kafka (on Kubernetes)**: Eine Apache-Kafka-Lösung mit Schema-Registry, die „on-top" unserer *Managed Kubernetes* / *Managed Core Kubernetes* Angebote betrieben wird. (Dokumentation in Erstellung)
+- **Managed Kafka (on Kubernetes)** : Eine Apache Kafka-Lösung mit Schema Registry, die "on-top" unserer Angebote *Managed Kubernetes* / *Core Managed Kubernetes* läuft. (Dokumentation in Vorbereitung)
 
-- **Managed Airflow**: *demnächst verfügbar!*
+- **Managed Airflow** : *folgt bald!*
 
-- **Managed Superset**: *demnächst verfügbar!*
+- **Managed Superset** : *folgt bald!*
 
 ### Sicherheitsprodukte
 
-- **Managed KMS**: *demnächst verfügbar!*
+- **Verwaltetes KMS** : *kommt bald!*
 
-- **Managed SIEM**: *demnächst verfügbar!*
+- **Verwaltetes SIEM** : *kommt bald!*
 
 ---

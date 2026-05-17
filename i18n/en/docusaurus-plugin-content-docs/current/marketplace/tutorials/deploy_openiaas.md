@@ -8,29 +8,29 @@ This tutorial guides you through deploying a virtual machine image from the Clou
 
 ## Prerequisites
 
-- Have an OpenIaaS environment configured
+- Have a configured OpenIaaS environment
 - Have permissions to create virtual machines
-- The image must have **OpenIaaS** in its list of compatible targets
+- The image must have **OpenIaaS** in its compatible targets
 
 ## Deployment Steps
 
-### 1. Selection and Deployment
+### 1. Selection and deployment
 
-From the detail page of a compatible OpenIaaS solution, select your target environment and click **Deploy**:
+From the details page of an OpenIaaS-compatible solution, select your target environment and click **Deploy** :
 <img src={marketplaceOpeniaasDeployment} />
 
 ### 2. Virtual Machine Configuration
 
-Set up the basic parameters of your virtual machine:
+Configure the basic settings of your virtual machine:
 
-- **VM Name**
+- **Name** of the VM
 - **Resources** (CPU, RAM)
 - **Storage**
 - **Network**
 
 <img src={marketplaceOpeniaasConfig} />
 
-Deployment typically takes less than 10 minutes, depending on the image size.
+Deployment typically takes less than 10 minutes depending on the image size.
 
 ## Alternative Access
 
@@ -38,11 +38,11 @@ You can also access Marketplace images directly from the **Virtual Machines** pa
 
 1. Go to **Virtual Machines** > **Create a VM**
 2. Select **Marketplace Images** in the source options
-3. Choose your solution from the integrated catalog
+3. Choose your solution from the built-in catalog
 
 ## Deployment Tracking
 
-Once the deployment is initiated:
+Once the deployment is launched:
 
-- Monitor the progress from the OpenIaaS console
-- The VM will appear in your list of virtual machines
+- Track progress from the OpenIaaS console
+- The VM will appear in your virtual machines list

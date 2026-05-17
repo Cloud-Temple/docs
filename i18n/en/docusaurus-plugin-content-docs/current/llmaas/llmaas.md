@@ -5,9 +5,9 @@ sidebar_position: 1
 
 # LLM as a Service (LLMaaS)
 
-## Access to the API
+## API Access
 
-The API is accessible via the Cloud Temple Console. You can manage your API keys, monitor your usage, and configure your third parties in your account settings. The console also allows you to view the usage of your models.
+The API is accessible via the Cloud Temple Console. You can manage your API keys, monitor your usage, and configure your tiers in your account settings. The console also allows you to view the usage of your models.
 
 ## Authentication
 
@@ -15,7 +15,7 @@ All requests to the LLMaaS API must include an `Authorization` header with your 
 
 ## Content Types
 
-The LLMaaS API always accepts JSON in the request body and returns JSON in the response body. You must send the header `content-type: application/json` in your requests. If you use the client SDKs, this will be handled automatically.
+The LLMaaS API always accepts JSON in the request body and returns JSON in the response body. You must send the `content-type: application/json` header in your requests. If you are using client SDKs, this will be handled automatically.
 
 ## Response Headers
 
@@ -27,17 +27,16 @@ The LLMaaS API includes the following headers in each response:
 ## Examples
 
 ### cURL Request
-
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user", 
-        "content": "Hi! Can you introduce yourself in French?"
+        "content": "Salut ! Peux-tu te présenter en français ?"
       }
     ],
     "max_tokens": 200,
@@ -46,7 +45,6 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ```
 
 ### Response
-
 ```json
 {
   "backend": {
@@ -58,14 +56,14 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
       "finish_reason": "stop",
       "index": 0,
       "message": {
-        "content": "Hello! I am a virtual language model...",
+        "content": "Bonjour ! Je suis un modèle de langage virtuel...",
         "role": "assistant"
       }
     }
   ],
   "created": 1749110753,
   "id": "chatcmpl-ollama-14b812ef-b21f-430c-b93c-d0d1bf653806",
-  "model": "granite3.3:8b",
+  "model": "gpt-oss:120b",
   "object": "chat.completion",
   "usage": {
     "completion_tokens": 200,
@@ -80,18 +78,17 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Type    | Description                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | The model to use (see [model catalog](models.md))            |
+| `model`       | string  | The model to use (see [model catalog](./models.md))           |
 | `messages`    | array   | List of conversation messages                                 |
 | `max_tokens`  | integer | Maximum number of tokens to generate                          |
 | `temperature` | float   | Controls creativity (0.0-2.0)                                 |
-| `top_p`       | float   | Controls answer diversity                                     |
+| `top_p`       | float   | Controls response diversity                                   |
 | `stream`      | boolean | Enables response streaming                                    |
-| `user`        | string  | Unique identifier of the end user                             |
+| `user`        | string  | Unique identifier for the end user                            |
 
 ## Base URL
 
 The base URL for all API requests is:
-
 ```
 https://api.ai.cloud-temple.com/v1/
 ```
@@ -100,10 +97,14 @@ https://api.ai.cloud-temple.com/v1/
 
 - `/chat/completions` : Conversational response generation
 - `/completions` : Simple text completion
-- `/embeddings` : Creates an embedding vector representing the input text
+- `/embeddings` : Vectorization for semantic search and RAG
+- `/rerank` and `/v2/rerank` : Result reranking (Cohere SDK compatible)
+- `/audio/transcriptions` : Batch audio transcription (Whisper)
+- `/audio/speech` : Voice synthesis (TTS)
+- `/images/generations` : Image generation
 - `/models` : List of available models
 
-### Example: Model List
+### Example: List of models
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
@@ -111,18 +112,17 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```
 
 **Response**:
-
 ```json
 {
   "object": "list",
   "data": [
     {
-      "id": "granite3.3:8b",
+      "id": "gpt-oss:120b",
       "object": "model",
       "created": 1749110897,
       "owned_by": "CloudTemple",
-      "root": "granite3.3:8b",
-      "aliases": ["granite3.3:8b"],
+      "root": "gpt-oss:120b",
+      "aliases": ["gpt-oss:120b"],
       "parent": null,
       "max_model_len": 60000,
       "permission": [
@@ -146,4 +146,4 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-The response contains all available models with their specifications and permissions.
+The response contains all available models along with their specifications and permissions.

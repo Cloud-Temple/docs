@@ -1,11 +1,11 @@
 ---
 title: Suivre les coûts avec OpenCost
 ---
-import opencostui from './images/opencost.png'
-import opencostgrafana from './images/opencostgrafana.png'
-import opencostmcp from './images/opencostmcp.png'
-import opencostmcp2 from './images/opencostmcp2.png'
-import opencostmcp3 from './images/opencostmcp3.png'
+import opencostui from '@site/docs/managed_kubernetes/tutorials/images/opencost.png'
+import opencostgrafana from '@site/docs/managed_kubernetes/tutorials/images/opencostgrafana.png'
+import opencostmcp from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp.png'
+import opencostmcp2 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp2.png'
+import opencostmcp3 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp3.png'
 
 ## Objectifs
 
@@ -101,7 +101,8 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 
 ### 2. Interroger OpenCost avec le MCP
 
-:::tip[Prérequis]
+:::tip[Prérequis
+]
 Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre produit **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
 :::
 

@@ -7,11 +7,11 @@ import iaasAz001 from '@site/docs/additional_content/images/iaas_az_001.png';
 ## Regionen
 
 Die Cloud Temple-Infrastruktur ist darauf ausgelegt, die Betriebskontinuität Ihrer Anwendungen und Plattformen zu gewährleisten.
-Innerhalb einer Region profitieren Sie von einer Netzwerk-Continuity der Ebene 2.
+Innerhalb einer Region profitieren Sie von einer Netzwerkverfügbarkeit der Stufe 2.
 
-Somit ist es möglich, eine technische Architektur in der Region Paris zu definieren, wobei 3 physische Standorte verwendet werden, um eine hochverfügbare Plattform mit Quorum zu implementieren.
+Daher ist es möglich, eine technische Architektur in der Region Paris zu definieren, die 3 physische Standorte nutzt, um eine hochverfügbare Plattform mit Quorum einzurichten.
 
-Im Januar 2024 verfügt die IaaS-Plattform Cloud Temple über folgende Regionen:
+Im Januar 2024 bietet die IaaS-Plattform Cloud Temple die folgenden Regionen an:
 
 - Region FR1 (Paris)
 
@@ -25,8 +25,8 @@ Die Region FR1 basiert auf drei physischen Standorten in der Region Paris:
 
 <img src={iaasAz001} />
 
-Jeder Standort liegt mehr als 30 km in Luftlinie von den anderen entfernt. Im Durchschnitt beträgt die optische Distanz zwischen den Standorten 80 km. Die garantierte Latenz zwischen den Standorten beträgt weniger als 4 ms.
+Jeder Standort befindet sich mehr als 30 km Luftlinie von den anderen entfernt. Im Durchschnitt beträgt die optische Distanz zwischen jedem Standort 80 km. Die garantierte Latenz zwischen den Standorten liegt unter 4 ms.
 
 ### Regionale Erweiterungen
 
-Die Eröffnung neuer Regionen ist hauptsächlich mit Marktchancen verbunden. Im Januar 2024 werden die Eröffnung einer Region in Süd-Europa und einer Region in Nord-Europa geprüft.
+Die Eröffnung neuer Regionen ist hauptsächlich mit Marktchancen verbunden. Im Januar 2024 werden die Eröffnung einer Region in Südeuropa und eine Region in Nordeuropa geprüft.

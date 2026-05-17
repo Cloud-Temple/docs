@@ -5,113 +5,110 @@ sidebar_position: 1
 
 # Schlüsselkonzepte von Managed PostgreSQL
 
-Dieser Abschnitt stellt die grundlegenden Konzepte unseres **Managed PostgreSQL**-Dienstes vor. Das Verständnis dieser Prinzipien hilft Ihnen, das Beste aus Ihrer verwalteten Datenbank herauszuholen und ihre Fähigkeiten mit Ihren Anwendungsanforderungen und Sicherheitsanforderungen in Einklang zu bringen.
+Dieser Abschnitt erläutert die grundlegenden Konzepte unseres **Managed PostgreSQL**-Diensts. Das Verständnis dieser Prinzipien hilft Ihnen, das Beste aus Ihrer verwalteten Datenbank herauszuholen, indem Sie ihre Fähigkeiten an Ihre Anwendungsanforderungen und Sicherheitsrichtlinien anpassen.
 
 ## Souveränität und SecNumCloud-Konformität
 
-Im Mittelpunkt unseres Angebots steht die **digitale Souveränität**. Der Managed PostgreSQL-Dienst wird vollständig auf der Cloud Temple-Infrastruktur gehostet, die von der ANSSI mit **SecNumCloud 3.2** qualifiziert wurde.
+Im Kern unseres Produkts steht die **digitale Souveränität**. Der PostgreSQL-Managed-Service wird vollständig auf der Cloud-Temple-Infrastruktur gehostet, die von der ANSSI als **SecNumCloud 3.2** qualifiziert wurde.
 
-- **100% Hosting in Frankreich**: Ihre Daten verbleiben auf dem nationalen Territorium, geschützt vor extraterritorialen Gesetzen.
-- **Native Compliance**: Die Lösung ist so konzipiert, dass sie die strengsten regulatorischen Anforderungen erfüllt (DSGVO, HDS, LPM, NIS2, PCI-DSS).
-- **Open Source und Reversibilität**: Durch die Verwendung offener Standards wie PostgreSQL Community Server und Patroni garantieren wir die Abwesenheit von technologischer Abhängigkeit (*Vendor Lock-in*) und vollständige Datenportabilität.
+- **100 % Hosting in Frankreich** : Ihre Daten verbleiben auf nationalem Territorium und sind vor extraterritorialen Gesetzen geschützt.
+- **Native Konformität** : Die Lösung wurde entwickelt, um den strengsten regulatorischen Anforderungen zu entsprechen (RGPD, HDS, LPM, NIS2, PCI-DSS).
+- **Open Source und Reversibilität** : Durch die Nutzung offener Standards wie PostgreSQL Community Server und Patroni gewährleisten wir eine technologische Unabhängigkeit (*Vendor Lock-in*) und eine vollständige Portabilität Ihrer Daten.
 
 ## Hochverfügbarkeitsarchitektur: Patroni Cluster
 
-Für verteilte Umgebungen basiert unser Dienst auf **Patroni Cluster**, um Hochverfügbarkeit ohne Datenverlust zu bieten.
+Für verteilte Umgebungen stützt sich unser Produkt auf **Patroni Cluster**, um Hochverfügbarkeit ohne Datenverlust zu gewährleisten.
 
-- **Synchrone Replikation**: Im Gegensatz zur herkömmlichen asynchronen Replikation wird jede Transaktion auf allen Clusterknoten validiert, *bevor* sie bestätigt wird. Dies garantiert ein **Recovery Point Objective (RPO) von null**: Keine validierten Daten können bei einem Ausfall verloren gehen.
-- **Multi-AZ-Verteilung**: Der Cluster ist auf drei verschiedene Verfügbarkeitszonen (AZ) verteilt. Der Ausfall eines ganzen Rechenzentrums verursacht keine Dienstunterbrechung oder Datenverlust.
-- **Automatisches Failover**: Bei einem Vorfall auf einem Knoten wird der Datenverkehr automatisch auf gesunde Knoten umgeleitet, was ein **minimales Recovery Time Objective (RTO)** gewährleistet.
+- **Synchrone Replikation** : Im Gegensatz zur traditionellen asynchronen Replikation wird jede Transaktion auf allen Clusterknoten *vor* der Bestätigung validiert. Dies gewährleistet ein **Wiederherstellungszielpunkt (RPO) von null** : keine bestätigten Daten gehen im Fehlerfall verloren.
+- **Multi-AZ-Verteilung** : Der Cluster ist auf drei separate Verfügbarkeitszonen (AZ) verteilt. Der Ausfall eines gesamten Rechenzentrums führt weder zu Dienstunterbrechungen noch zu Datenverlust.
+- **Automatisches Failover** : Im Falle eines Vorfalls auf einem Knoten wird der Verkehr automatisch auf die gesunden Knoten umgeleitet, wodurch ein **minimales Wiederherstellungszeitziel (RTO)** sichergestellt wird.
 
 ## Bereitstellungsmodelle
 
-Wir bieten zwei Modelle an, um sich der Kritikalität Ihrer Workloads anzupassen.
+Wir bieten zwei Modelle an, die sich an die Kritikalität Ihrer Workloads anpassen.
 
 ### 1. StandAlone
 
-Dieses Modell stellt eine einzelne Instanz des PostgreSQL-Engines bereit.
+Dieses Modell stellt eine einzelne Instanz der PostgreSQL-Engine bereit.
 
-- **Anwendungsfall**: Dieses Bereitstellungsmodell eignet sich perfekt für einfache Anwendungen wie CMS, die nur einen einzigen Endpunkt für die Datenbankverbindung verwenden.
-- **Resilienz**: Obwohl es sich um eine einzelne Instanz handelt, wird der zugrunde liegende Speicher auf 3 AZs repliziert, was einen automatischen Neustart in einer anderen AZ bei einem Hardware-Ausfall ermöglicht.
-- **SLA**: 99,9% (außerhalb der Wartungsfenster).
+- **Anwendungsfall** : Dieses Bereitstellungsmodell eignet sich hervorragend für einfache Anwendungen wie CMS, die nur einen einzigen Endpoint zur Verbindung mit Datenbanken verwenden.
+- **Resilienz** : Obwohl es sich um eine einzelne Instanz handelt, wird der zugrunde liegende Speicher in 3 AZ repliziert, was einen automatischen Neustart in einer anderen AZ bei einem Hardwareausfall ermöglicht.
+- **SLA** : 99.9% (außerhalb der Wartungsfenster).
 
-### 2. Distributed
+### 2. Verteilt
 
-Dieses Modell stellt einen **Patroni-Cluster aus 3 Instanzen** des PostgreSQL-Engines bereit, ergänzt durch einen **PgBouncer**-Proxy.
+Dieses Modell stellt einen **Patroni-Cluster mit 3 Instanzen** der PostgreSQL-Engine bereit, ergänzt durch einen **PgBouncer**-Proxy.
 
-- **Anwendungsfall**: Dieses Bereitstellungsmodell eignet sich perfekt für Anwendungen mit verteiltem Zugriff, wie Daten- oder Business-Intelligence-Anwendungen, die von schreibgeschütztem Zugriff ohne Auswirkungen auf die Datenaufnahme profitieren.
+- **Anwendungsfall**: Dieses Bereitstellungsmodell eignet sich hervorragend für Anwendungen mit verteiltem Zugriff, wie Data- oder Business-Intelligence-Anwendungen, die von schreibgeschütztem Zugriff profitieren, ohne die Datenaufnahme zu beeinträchtigen.
 - **Komponenten**:
-  - **3 PostgreSQL-Knoten**: Ein primärer Lese-Schreib-Knoten (RW) und zwei sekundäre schreibgeschützte Knoten (RO).
-  - **PgBouncer-Proxy**: Ein intelligenter Router, der Anfragen verteilt. Er sendet Schreibvorgänge an den primären Knoten und verteilt Lesevorgänge auf die sekundären Knoten (*Read/Write Splitting*), was die Leistung optimiert.
-- **SLA**: 99,9% (außerhalb der Wartungsfenster).
+  - **3 PostgreSQL-Knoten**: Ein primärer Knoten für Lese-/Schreibzugriff (RW) und zwei sekundäre Knoten für Lesezugriff (RO).
+  - **PgBouncer-Proxy**: Ein intelligenter Router, der Anfragen verteilt. Er leitet Schreibvorgänge an den primären Knoten weiter und verteilt Lesevorgänge auf die sekundären Knoten (*read/write splitting*), wodurch die Leistung optimiert wird.
+- **SLA**: 99,9 % (außerhalb von Wartungsfenstern).
 
-> **Wichtiger Hinweis**: Es ist nicht möglich, das Bereitstellungsmodell eines vorhandenen Clusters zu ändern (z. B. von *StandAlone* zu *Distributed*). Dieser Vorgang erfordert die Erstellung eines neuen Clusters im gewünschten Modell über eine PiTR-Wiederherstellung.
+> **Wichtiger Hinweis**: Das Bereitstellungsmodell eines bestehenden Clusters kann nicht geändert werden (z. B. von *StandAlone* auf *Distributed*). Für diese Änderung muss ein neuer Cluster im gewünschten Modell erstellt werden, wobei eine PiTR-Wiederherstellung erforderlich ist.
 
-## Backup und Wiederherstellung (PITR)
+## Sicherung und Wiederherstellung (PITR)
 
-Der Schutz Ihrer Daten wird durch eine doppelte Backup-Strategie gewährleistet.
+Der Schutz Ihrer Daten wird durch eine zweistufige Sicherungsstrategie gewährleistet.
 
-1. **Physisches Backup (Point-in-Time Recovery - PITR)**:
-    - Wir führen täglich vollständige physische Backups mit `pg_basebackup` durch (ohne Dienstunterbrechung).
+1. **Physische Sicherung (Point-in-Time Recovery - PITR)** :
+    - Wir führen täglich vollständige physische Sicherungen mit `pg_basebackup` durch (ohne Dienstunterbrechung).
     - Transaktionsprotokolle (*WAL*) werden kontinuierlich archiviert.
-    - Diese Kombination ermöglicht eine Wiederherstellung "auf die Sekunde genau" bis zum Zeitpunkt kurz vor einem Vorfall.
+    - Diese Kombination ermöglicht eine Wiederherstellung „bis zur Sekunde genau“ bis zum Zeitpunkt unmittelbar vor einem Vorfall.
 
-2. **Logisches Backup (`pg_dump`)**:
-    - Logische Exporte von Datenbanken werden ebenfalls durchgeführt.
-    - Sie bieten eine feine Granularität zum Wiederherstellen oder Exportieren einer einzelnen Datenbank.
+2. **Logische Sicherung (`pg_dump`)** :
+    - Es werden zudem logische Exporte der Datenbanken erstellt.
+    - Sie bieten eine hohe Granularität, um einzelne Datenbanken wiederherzustellen oder zu exportieren.
 
-Alle Backups sind im Ruhezustand verschlüsselt und auf unserem S3 Object Storage gespeichert, der selbst SecNumCloud-qualifiziert ist.
+Alle Sicherungen sind bei der Speicherung verschlüsselt und werden in unserem Object Storage S3 abgelegt, der zudem SecNumCloud-zertifiziert ist.
 
 ## Mehrstufige Sicherheit
 
-Sicherheit ist in jede Schicht des Dienstes integriert.
+Die Sicherheit ist in jede Schicht des Dienstes integriert.
 
-- **Netzwerkisolierung**: Datenbankinstanzen sind **niemals im Internet exponiert**. Der Zugriff erfolgt ausschließlich über das private Netzwerk des Kunden.
-- **End-to-End-Verschlüsselung**:
-  - **Im Transit**: Alle Verbindungen (Client zu Datenbank und zwischen Clusterknoten) sind mit TLS 1.3 verschlüsselt.
-  - **Im Ruhezustand**: Daten auf Disk und Backups sind mit AES-256 verschlüsselt.
-- **Zugriffsverwaltung**: Die Authentifizierung ist sicher und die Rechte werden nach dem Prinzip der minimalen Berechtigung verwaltet.
+- **Netzwerkisolation** : Datenbankinstanzen werden **niemals im Internet freigegeben**. Der Zugriff erfolgt ausschließlich über das private Netzwerk des Kunden.
+- **End-to-End-Verschlüsselung** :
+  - **Bei der Übertragung** : Alle Verbindungen (Client zur Datenbank und zwischen den Clusterknoten) werden mit TLS 1.3 verschlüsselt.
+  - **Im Ruhezustand** : Daten auf der Festplatte und Backups werden mit AES-256 verschlüsselt.
+- **Zugriffsverwaltung** : Die Authentifizierung ist sicher und Berechtigungen werden nach dem Prinzip des geringsten Privilegs verwaltet.
 
-## Managed Service ("Zero Ops")
+## Managed Service ("Zéro Ops")
 
-Das Ziel von Managed PostgreSQL ist es, Sie von der operationellen Komplexität zu entlasten. Unsere Teams sorgen für:
+Das Ziel von PostgreSQL Managed ist es, Sie von der operativen Komplexität zu entlasten. Unsere Teams übernehmen:
 
-- Provisionierung und Erstkonfiguration.
-- Vollständiges Lebenszyklusmanagement: kleine Updates, Anwendung von Sicherheits-Patches.
-- 24/7-Überwachung der Infrastruktur und des Dienstes.
-- Verwaltung und Überprüfung der Backups.
+- Das Provisioning und die initiale Konfiguration.
+- Das vollständige Lifecycle-Management: Minor-Updates, Anwendung von Sicherheits-Patches.
+- Die 24/7-Überwachung der Infrastruktur und des Dienstes.
+- Das Management und die Prüfung von Backups.
 
-Dies ermöglicht es Ihren Teams, sich auf die Anwendungsentwicklung und die Nutzung Ihrer Daten zu konzentrieren.
+Dies ermöglicht es Ihren Teams, sich auf die Anwendungsentwicklung und die Nutzung ihrer Daten zu konzentrieren.
 
 ## Versionsrichtlinie & Lebenszyklus
 
-Die PostgreSQL-Community veröffentlicht Versionen mit Langzeitunterstützung (LTS), was Stabilität und Vorhersehbarkeit garantiert. Unser Dienst basiert auf diesen Versionen, um die Langlebigkeit Ihrer Infrastruktur zu gewährleisten.
+Die PostgreSQL-Community veröffentlicht Versionen mit Langzeitunterstützung (LTS), was Stabilität und Planbarkeit gewährleistet. Unser Service basiert auf diesen Versionen, um die langfristige Funktionsfähigkeit Ihrer Infrastruktur zu sichern.
 
 | Version | Typ | Unterstützt bis |
 | :--- | :--- | :--- |
 | **PostgreSQL 15** | LTS | Nov 2027 |
 | **PostgreSQL 16** | LTS | Nov 2028 |
 
-- **Kleine Updates**: Sicherheits-Patches und Bug-Fixes werden von unseren Teams in *Rolling Update* (Knoten für Knoten) angewendet, um keine Dienstunterbrechung zu verursachen.
-- **Große Updates**: Große Versionsupgrades werden in Zusammenarbeit mit Ihnen geplant, um sich an Ihren Zeitplan anzupassen.
-- **Supportende**: Wir benachrichtigen Sie mindestens 180 Tage vor dem Supportende einer LTS-Version, um die Migration zur nächsten Version zu planen.
+- **Kleinere Updates**: Sicherheits-Patches und Bugfixes werden von unseren Teams im *Rolling-Update*-Verfahren (Knoten für Knoten) eingespielt, um keine Dienstunterbrechungen zu verursachen.
+- **Größere Updates**: Major-Upgrade werden in Abstimmung mit Ihnen geplant, um sich an Ihren Zeitplan anzupassen.
+- **Ende der Unterstützung**: Wir informieren Sie mindestens 180 Tage vor dem Auslauf einer LTS-Version, um die Migration zur nächsten Version zu planen.
 
 ## Instanzgrößen
 
-***StandAlone***- und ***Distributed***-Instanzen sind in vordefinierten Größen verfügbar:
+Die Instanzen ***StandAlone*** und ***Distributed*** sind mit vordefinierten Größen verfügbar:
 
-| Größe | vCPU/Knoten | RAM/Knoten | Max Verb. | Working Set Max | DB Gesamt Max |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| **Micro** | 1 | **2.00 Gi** | **40** | **1-2 GiB** | **2-8 GiB** |
-| **Small** | 1 | **4.00 Gi** | **80** | **2-5 GiB** | **8-16 GiB** |
-| **Medium** | 2 | **4.00 Gi** | **80** | **2-5 GiB** | **8-16 GiB** |
-| **Med-Large**| 2 | **8.00 Gi** | **150** | **4-10 GiB** | **16-32 GiB** |
-| **Large** | 4 | **8.00 Gi** | **150** | **4-10 GiB** | **16-32 GiB** |
-| **X-Large** | 4 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
-| **2X-Large**| 8 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
-| **3X-Large**| 8 | **32.00 Gi** | **500** | **16-40 GiB** | **64-128 GiB** |
-| **4X-Large**| 16 | **32.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **5X-Large**| 16 | **64.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **6X-Large**| 32 | **128.00 Gi**| **500** | **64-160 GiB** | **256-512 GiB** |
+| Größe | vCPU | Arbeitsspeicher | innodb_buffer_pool_size | innodb_buffer_pool_instances | max_allowed_packet | table_open_cache | maxconn |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **XS** | 1000m | 4096Mi | 2458M | 2 | 256M | 800 | 80 |
+| **S** | 1000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
+| **M** | 2000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
+| **L** | 2000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
+| **XL** | 4000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
+| **XXL** | 4000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
+| **3XL** | 8000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
+| **4XL** | 8000m | 65536Mi | 39320M | 16 | 1G | 10000 | 500 |
 
-> **Hinweis**: Der Speicher wird separat provisioniert und kann im laufenden Betrieb erhöht werden (von 2Gi auf 512Gi) (aber nicht reduziert, außer durch Neuerstellen einer neuen Instanz).
+> **Hinweis** : Der Speicher wird separat bereitgestellt und kann online erweitert werden (von 2Gi bis 128Gi) (jedoch nicht verkleinert, außer durch das Erstellen einer neuen Instanz.).

@@ -2,7 +2,7 @@
 title: Guía de inicio
 ---
 
-Bienvenido a la guía de inicio de **PostgreSQL Administrado** de Cloud Temple.
+Bienvenido a la guía de inicio de **PostgreSQL Gestionado** Cloud Temple.
 
 El objetivo de esta sección es orientarle hacia los recursos necesarios para comenzar a utilizar su producto.
 
@@ -10,15 +10,15 @@ El objetivo de esta sección es orientarle hacia los recursos necesarios para co
 
 ## Antes de comenzar
 
-> en proceso de redacción
+> en redacción
 ---
 
-## Acceso a su clúster de PostgreSQL Administrado
+## Acceder a su clúster de PostgreSQL administrado
 
-> en proceso de redacción
+> en redacción
 ---
 
 ## Sus permisos
 
-> en proceso de redacción
+> en redacción
 ---

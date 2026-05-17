@@ -7,7 +7,7 @@ displayed_sidebar: docSidebar
 
 # Modello di responsabilità condivisa
 
-Cloud Temple opera secondo un modello di **responsabilità condivisa** tra fornitore e cliente. Queste matrici RACI (*Responsible, Accountable, Consulted, Informed*) definiscono con precisione chi fa cosa per ogni servizio.
+Cloud Temple opera secondo un modello di **responsabilità condivisa** tra il fornitore e il cliente. Queste matrici RACI (*Responsible, Accountable, Consulted, Informed*) definiscono precisamente chi fa cosa per ogni servizio.
 
 ---
 
@@ -16,19 +16,19 @@ Cloud Temple opera secondo un modello di **responsabilità condivisa** tra forni
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI IaaS (VMware & Open IaaS)</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per i servizi di infrastruttura IaaS VMware e OpenStack.</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per i servizi di infrastruttura IaaS VMware e OpenStack.</div>
     <a class="contract-read-link" href="./contractual/iaas/raci">Consulta il documento →</a>
   </div>
 </div>
 
 ---
 
-## VM Instances
+## Istanze VM
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">Modello di responsabilità — VM Instances</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per il servizio di macchine virtuali condivise VM instances.</div>
+    <div class="contract-card-title">Modello di responsabilità — Istanze VM</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per il servizio di istanze di macchine virtuali condivise VM instances.</div>
     <a class="contract-read-link" href="./contractual/vm-instances/raci">Consulta il documento →</a>
   </div>
 </div>
@@ -39,8 +39,8 @@ Cloud Temple opera secondo un modello di **responsabilità condivisa** tra forni
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">RACI Object Storage (S3)</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per il servizio di archiviazione oggetti compatibile S3.</div>
+    <div class="contract-card-title">RACI Archiviazione Oggetti (S3)</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per il servizio di archiviazione oggetti compatibile S3.</div>
     <a class="contract-read-link" href="./contractual/storage/raci">Consulta il documento →</a>
   </div>
 </div>
@@ -52,29 +52,29 @@ Cloud Temple opera secondo un modello di **responsabilità condivisa** tra forni
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI PaaS OpenShift</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per la piattaforma PaaS OpenShift gestita.</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per la piattaforma PaaS OpenShift gestita.</div>
     <a class="contract-read-link" href="./contractual/paas/raci">Consulta il documento →</a>
   </div>
   <div class="contract-card">
     <div class="contract-card-title">RACI PaaS OCP Standard</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per l'offerta OpenShift Container Platform Standard.</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per l'offerta OpenShift Container Platform Standard.</div>
     <a class="contract-read-link" href="./contractual/paas/raci-ocp-standard">Consulta il documento →</a>
   </div>
   <div class="contract-card">
     <div class="contract-card-title">MCO / MCS PaaS OpenShift</div>
-    <div class="contract-card-desc">Politica di mantenimento delle condizioni operative e di sicurezza della piattaforma PaaS.</div>
+    <div class="contract-card-desc">Politica di mantenimento in condizioni operative e di sicurezza della piattaforma PaaS.</div>
     <a class="contract-read-link" href="./contractual/paas/mco-mcs">Consulta il documento →</a>
   </div>
 </div>
 
 ---
 
-## Managed Kubernetes
+## Kubernetes gestito
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">RACI Managed Kubernetes</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per il servizio Kubernetes gestito.</div>
+    <div class="contract-card-title">RACI Kubernetes gestito</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per il servizio Kubernetes gestito.</div>
     <a class="contract-read-link" href="./contractual/kubernetes/raci">Consulta il documento →</a>
   </div>
 </div>
@@ -86,7 +86,7 @@ Cloud Temple opera secondo un modello di **responsabilità condivisa** tra forni
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI LLMaaS</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per il servizio LLM as a Service.</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per il servizio LLM as a Service.</div>
     <a class="contract-read-link" href="./contractual/llmaas/raci">Consulta il documento →</a>
   </div>
 </div>
@@ -98,12 +98,12 @@ Cloud Temple opera secondo un modello di **responsabilità condivisa** tra forni
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI Rete</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per i servizi di rete Cloud Temple.</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per i servizi di rete Cloud Temple.</div>
     <a class="contract-read-link" href="./contractual/network/raci">Consulta il documento →</a>
   </div>
   <div class="contract-card">
     <div class="contract-card-title">Modello di responsabilità — VPC</div>
-    <div class="contract-card-desc">Distribuzione delle responsabilità per il servizio Virtual Private Cloud (VPC) gestito.</div>
+    <div class="contract-card-desc">Ripartizione delle responsabilità per il servizio Virtual Private Cloud (VPC) gestito.</div>
     <a class="contract-read-link" href="./contractual/network/raci-vpc">Consulta il documento →</a>
   </div>
 </div>

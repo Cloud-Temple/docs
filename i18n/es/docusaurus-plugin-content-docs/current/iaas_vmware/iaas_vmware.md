@@ -2,7 +2,9 @@
 title: Visión general
 ---
 
-La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para satisfacer las necesidades críticas de las empresas en cuanto a rendimiento, seguridad y continuidad del negocio. Con recursos dedicados, una infraestructura calificada **SecNumCloud**, y opciones completamente automatizadas, esta solución garantiza una fiabilidad óptima para sus cargas de trabajo sensibles.
+# IaaS VMware
+
+La **oferta IaaS VMware** está diseñada para satisfacer las necesidades críticas de las empresas en materia de rendimiento, seguridad y continuidad operativa. Con recursos dedicados, una infraestructura certificada **SecNumCloud** y opciones totalmente automatizadas, este servicio garantiza una fiabilidad óptima para sus cargas de trabajo sensibles.
 
 <div class="card-grid">
   <div class="card">
@@ -11,7 +13,7 @@ La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para sati
     <a href="./iaas_vmware/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Inicio rápido</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
     <a href="./iaas_vmware/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
@@ -25,7 +27,7 @@ La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para sati
 ## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está disponible a través de:</p>
+  <p>¿Es usted un actor del sector público? El producto <strong>IaaS Cloud Temple</strong> es accesible a través de:</p>
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
@@ -40,7 +42,7 @@ La oferta **IaaS Cloud Temple**, impulsada por VMware, está diseñada para sati
       <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        El mercado CAIH para el sector sanitario
+        El contrato CAIH para el sector médico
       </a>
     </p>
   </div>

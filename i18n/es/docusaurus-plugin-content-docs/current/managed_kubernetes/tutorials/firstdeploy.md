@@ -1,19 +1,19 @@
 ---
-title: Tutorial - Desplegar su primera aplicación
+title: Tutorial - Desplegar tu primera aplicación
 ---
 
 ## Objetivos
 
-Este tutorial le guía paso a paso en su primer despliegue en un clúster de **Managed Kubernetes**. Al final de esta guía, habrá:
+Este tutorial le guía paso a paso para realizar su primer despliegue en un clúster de **Managed Kubernetes**. Al finalizar esta guía, habrá:
 
 - Desplegado una aplicación web sencilla.
-- Expuesto esa aplicación dentro del clúster mediante un Service.
-- Hecho la aplicación accesible desde Internet a través de un Ingress.
+- Expuesto esta aplicación dentro del clúster mediante un Service.
+- Hecho accesible la aplicación desde Internet mediante un Ingress.
 
 ## Requisitos previos
 
 - Ha configurado su acceso al clúster como se describe en la [guía de inicio rápido](../quickstart.md).
-- Dispone de un namespace sobre el que tiene derechos de despliegue. En este tutorial, utilizaremos un namespace llamado `hello-world`.
+- Dispone de un namespace en el que tiene permisos de despliegue. En este tutorial, utilizaremos un namespace llamado `hello-world`.
 
 ## Paso 1: Crear un namespace
 
@@ -25,7 +25,7 @@ kubectl create namespace hello-world
 
 ## Paso 2: Desplegar una aplicación "Hello World"
 
-Desplegaremos una aplicación de demostración que muestra una página web sencilla.
+Desplegaremos una aplicación de demostración que muestra una página web simple.
 
 1. Cree un archivo llamado `deployment.yaml` con el siguiente contenido:
 
@@ -64,22 +64,22 @@ Desplegaremos una aplicación de demostración que muestra una página web senci
 
     ```bash
     kubectl get deployment -n hello-world
-    # Debería ver su despliegue con 2/2 réplicas listas.
+    # Vous devriez voir votre déploiement avec 2/2 replicas prêts.
     NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
     hello-world-deployment   2/2     2            2           102s
 
     kubectl get pods -n hello-world
-    # Debería ver dos pods con el estado "Running".
+    # Vous devriez voir deux pods avec le statut "Running".
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-world-deployment-669dfbd799-294zz   1/1     Running   0          2m21s
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
     ```
 
-## Paso 3: Exponer la aplicación dentro del clúster (Service)
+## Paso 3: Exponer la aplicación en el clúster (Servicio)
 
-Para permitir que los diferentes componentes del clúster se comuniquen con nuestra aplicación, debemos crear un **Service**.
+Para permitir que los distintos componentes del clúster se comuniquen con nuestra aplicación, debemos crear un **Servicio**.
 
-1. Cree un archivo llamado `service.yaml`:
+1. Cree un archivo llamado `service.yaml` :
 
     ```yaml
     apiVersion: v1
@@ -97,19 +97,19 @@ Para permitir que los diferentes componentes del clúster se comuniquen con nues
       type: ClusterIP
     ```
 
-2. Aplique el manifiesto:
+2. Aplique el manifiesto :
 
     ```bash
     kubectl apply -f service.yaml
     ```
 
-    Su aplicación ahora es accesible mediante el nombre `hello-world-service.hello-world` desde cualquier otro pod del clúster.
+    Su aplicación es ahora accesible mediante el nombre `hello-world-service.hello-world` desde cualquier otro pod del clúster.
 
-## Paso 4: Hacer la aplicación accesible desde Internet (Ingress)
+## Paso 4: Hacer que la aplicación sea accesible desde Internet (Ingress)
 
-Para exponer nuestro servicio en Internet, utilizaremos un recurso **Ingress**. La oferta de Managed Kubernetes proporciona varios `ingressClassName` preconfigurados. Utilizaremos `nginx-external` para la exposición pública.
+Para exponer nuestro servicio en Internet, utilizaremos un recurso **Ingress**. La oferta Managed Kubernetes proporciona varios `ingressClassName` preconfigurados. Utilizaremos `nginx-external` para una exposición pública.
 
-1. Cree un archivo `ingress.yaml`. **Recuerde reemplazar `su-cluster-id`** por el identificador de su clúster (p. ej. `ctodev`).
+1. Crea un archivo `ingress.yaml`. **Recuerda reemplazar `votre-cluster-id`** por el identificador de tu clúster (ej: `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -120,7 +120,7 @@ Para exponer nuestro servicio en Internet, utilizaremos un recurso **Ingress**. 
     spec:
       ingressClassName: nginx-external
       rules:
-      - host: "hello-world.external.su-cluster-id.mk.ms-cloud-temple.com" # cámbiame
+      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # changez moi
         http:
           paths:
           - path: /
@@ -132,7 +132,7 @@ Para exponer nuestro servicio en Internet, utilizaremos un recurso **Ingress**. 
                   number: 80
     ```
 
-2. Aplique el manifiesto:
+2. Aplica el manifiesto :
 
     ```bash
     kubectl apply -f ingress.yaml
@@ -140,11 +140,11 @@ Para exponer nuestro servicio en Internet, utilizaremos un recurso **Ingress**. 
 
 ## Paso 5: Verificar el acceso
 
-Una entrada DNS comodín ya apunta todas las URLs que terminan en ".external.su-cluster-id.mk.ms-cloud-temple.com" a la IP del ingress "external".
-Las aplicaciones publicadas en este sufijo DNS son por lo tanto directamente accesibles.
+Una entrada DNS "*" ya apunta todas las URL que terminan en ".external.votre-cluster-id.mk.ms-cloud-temple.com" a la IP del ingress "external".
+las aplicaciones publicadas en este sufijo DNS son por lo tanto directamente accesibles.
 
 ```bash
-curl http://hello-world.external.su-cluster-id.mk.ms-cloud-temple.com
+curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
 ```
 
 Debería recibir una respuesta del servidor NGINX de demostración.
@@ -168,17 +168,18 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Para ir más lejos: seguridad en producción]
-Este tutorial le ha mostrado los conceptos básicos del despliegue. Para un entorno de producción, es fundamental aplicar medidas de seguridad adicionales:
+:::warning[Para ir más allá: la seguridad en producción
+]
+Este tutorial le ha mostrado las bases del despliegue. Para un entorno de producción, es crucial aplicar medidas de seguridad adicionales:
 
-- **Utilice imágenes seguras**: Prefiera imágenes de su registro corporativo seguro como **Harbor** en lugar de imágenes públicas.
-- **Controle los flujos de red**: Implemente `NetworkPolicies` para restringir las comunicaciones a los únicos flujos necesarios entre sus aplicaciones.
-- **Aplique políticas de gobernanza**: Utilice herramientas como **Kyverno** para imponer reglas de seguridad (p. ej. prohibir contenedores "root", exigir `requests` y `limits` de recursos, etc.).
+- **Utilice imágenes seguras** : Priorice imágenes provenientes de su registro de empresa seguro como **Harbor** en lugar de imágenes públicas.
+- **Controle los flujos de red** : Implemente `NetworkPolicies` para restringir las comunicaciones únicamente a los flujos necesarios entre sus aplicaciones.
+- **Aplique políticas de gobernanza** : Utilice herramientas como **Kyverno** para imponer reglas de seguridad (ej: prohibir contenedores "root", exigir `requests` y `limits` de recursos, etc.).
 :::
 
 ## Limpieza
 
-Para eliminar todos los recursos que creó durante este tutorial, puede simplemente eliminar el namespace:
+Para eliminar todos los recursos que ha creado durante este tutorial, simplemente puede eliminar el espacio de nombres:
 
 ```bash
 kubectl delete namespace hello-world

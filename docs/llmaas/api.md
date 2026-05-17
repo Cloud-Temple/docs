@@ -25,31 +25,33 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 Notre système de tiers est conçu comme des **enveloppes de service complètes** qui définissent trois aspects clés de votre utilisation :
 
-1. **Un Palier d'Accès (Crédit d'Achat)** : Pour les Tiers 1 à 4, il s'agit d'un montant à régler de manière anticipée (upfront) pour activer le service et débloquer les capacités techniques et budgétaires du palier choisi.
-2. **Une Limite de Budget Mensuel** : C'est le plafond de votre consommation mensuelle, vous assurant une maîtrise totale de vos coûts.
-3. **Une Capacité Technique** : Ce sont les limites de débit (tokens par jour et par heure) qui garantissent une performance stable et prévisible pour votre volume d'appels.
+1.  **Un Palier d'Accès (Crédit d'Achat)** : Pour les Tiers 1 à 4, il s'agit d'un montant à régler de manière anticipée (upfront) pour activer le service et débloquer les capacités techniques et budgétaires du palier choisi.
+2.  **Une Limite de Budget Mensuel** : C'est le plafond de votre consommation mensuelle, vous assurant une maîtrise totale de vos coûts.
+3.  **Une Capacité Technique** : Ce sont les limites de débit (tokens par jour et par heure) qui garantissent une performance stable et prévisible pour votre volume d'appels.
 
 Le choix d'un tier est donc un équilibre entre l'investissement initial, le budget mensuel prévisionnel et la capacité technique requise. Votre consommation au sein de cette enveloppe est ensuite facturée selon les tarifs en vigueur.
 
 ### Tableau des Tiers
 
-| Tier | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description |
-|------|----------------|-------------------|---------------------|--------------------|-----------|
-| **Tier 1** | 200 € | 1 000 € | 150 000 | 3 600 000 | Utilisation standard |
-| **Tier 2** | 500 € | 3 000 € | 300 000 | 7 200 000 | Usage professionnel |
-| **Tier 3** | 1 000 € | 5 000 € | 450 000 | 10 800 000 | Volume élevé |
-| **Tier 4** | 4 000 € | 10 000 € | 600 000 | 14 400 000 | Entreprise |
-| **Facturation Mensuelle** | N/A | Illimitée | Priorité élevée | Priorité élevée | Contact commercial |
+| Tier                      | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description          |
+| ------------------------- | -------------- | ---------------- | ------------------- | ------------------ | -------------------- |
+| **Tier 1**                | 200 €          | 1 000 €          | 150 000             | 3 600 000          | Utilisation standard |
+| **Tier 2**                | 500 €          | 3 000 €          | 300 000             | 7 200 000          | Usage professionnel  |
+| **Tier 3**                | 1 000 €        | 5 000 €          | 450 000             | 10 800 000         | Volume élevé         |
+| **Tier 4**                | 4 000 €        | 10 000 €         | 600 000             | 14 400 000         | Entreprise           |
+| **Facturation Mensuelle** | N/A            | Illimitée        | Priorité élevée     | Priorité élevée    | Contact commercial   |
 
-**Note** : Les limites de débit sont calculées sur la base des tokens de sortie. La tarification des tokens varie selon l'usage :
+**Note** : Les limites de débit sont calculées sur la base des tokens de sortie. La tarification varie selon l'usage :
 
-- **Tokens d'entrée** : 1.90 € / million
-- **Tokens de sortie (standard)** : 8.00 € / million
-- **Tokens de sortie (raisonneur)** : 8.00 € / million (s'applique aux modèles les plus avancés pour les tâches complexes de type agent ou raisonnement)
-
-#### **Facturation Audio**
-
-- **Transcription Audio** : 0.01 € / minute (toute minute commencée est due)
+| Type d'usage                           | Tarif                                            |
+| -------------------------------------- | ------------------------------------------------ |
+| **Tokens d'entrée**                    | 1.8 € / million                                  |
+| **Tokens de sortie (chat/completion)** | 8.00 € / million                                 |
+| **Tokens de raisonnement**             | 8.00 € / million                                 |
+| **Reranking**                          | 4.00 € / million de tokens rerankés              |
+| **Batch asynchrone (entrée)**          | 0.9 € / million (−50% vs standard)               |
+| **Batch asynchrone (sortie)**          | 4.00 € / million (−50% vs standard)              |
+| **Transcription Audio**                | 0.01 € / minute (toute minute commencée est due) |
 
 ### Headers de Limite
 
@@ -86,7 +88,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_TOKEN_API" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user",
@@ -100,19 +102,19 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 #### Paramètres
 
-| Paramètre | Type | Obligatoire | Description |
-|-----------|------|-------------|-------------|
-| `model` | string | ✅ | ID du modèle (voir [catalogue](./models)) |
-| `messages` | array | ✅ | Conversation (role: system/user/assistant) |
-| `stream` | boolean | ❌ | Active le streaming (défaut: false) |
-| `temperature` | float | ❌ | Créativité 0.0-2.0 (défaut: 0.7) |
-| `max_tokens` | integer | ❌ | Limite de tokens (défaut: 1024) |
-| `top_p` | float | ❌ | Échantillonnage nucleus 0.0-1.0 (défaut: 1.0) |
-| `presence_penalty` | float | ❌ | Pénalité présence -2.0 à 2.0 (défaut: 0) |
-| `frequency_penalty` | float | ❌ | Pénalité fréquence -2.0 à 2.0 (défaut: 0) |
-| `user` | string | ❌ | ID utilisateur unique |
-| `tools` | array | ❌ | Liste des outils que le modèle peut appeler. |
-| `tool_choice`| string/object | ❌ | Contrôle si le modèle doit appeler un outil. "none", "auto", ou `{"type": "function", "function": {"name": "my_function"}}`. |
+| Paramètre           | Type          | Obligatoire | Description                                                                                                                  |
+| ------------------- | ------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `model`             | string        | ✅          | ID du modèle (voir [catalogue](./models))                                                                                    |
+| `messages`          | array         | ✅          | Conversation (role: system/user/assistant)                                                                                   |
+| `stream`            | boolean       | ❌          | Active le streaming (défaut: false)                                                                                          |
+| `temperature`       | float         | ❌          | Créativité 0.0-2.0 (défaut: 0.7)                                                                                             |
+| `max_tokens`        | integer       | ❌          | Limite de tokens (défaut: 1024)                                                                                              |
+| `top_p`             | float         | ❌          | Échantillonnage nucleus 0.0-1.0 (défaut: 1.0)                                                                                |
+| `presence_penalty`  | float         | ❌          | Pénalité présence -2.0 à 2.0 (défaut: 0)                                                                                     |
+| `frequency_penalty` | float         | ❌          | Pénalité fréquence -2.0 à 2.0 (défaut: 0)                                                                                    |
+| `user`              | string        | ❌          | ID utilisateur unique                                                                                                        |
+| `tools`             | array         | ❌          | Liste des outils que le modèle peut appeler.                                                                                 |
+| `tool_choice`       | string/object | ❌          | Contrôle si le modèle doit appeler un outil. "none", "auto", ou `{"type": "function", "function": {"name": "my_function"}}`. |
 
 #### Réponse Standard
 
@@ -121,7 +123,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   "id": "chatcmpl-bc52de347f2e4068b7bde380c0f8db37",
   "object": "chat.completion",
   "created": 1749114814,
-  "model": "granite3.3:8b",
+  "model": "gpt-oss:120b",
   "choices": [
     {
       "index": 0,
@@ -149,7 +151,7 @@ Si le modèle décide d'appeler un outil, la réponse aura un `finish_reason` de
   "id": "chatcmpl-9f27a53f52b44a9693753f2a5e1f7a73",
   "object": "chat.completion",
   "created": 1749115200,
-  "model": "qwen3:14b",
+  "model": "gpt-oss:120b",
   "choices": [
     {
       "index": 0,
@@ -182,7 +184,7 @@ Après avoir reçu une réponse `tool_calls`, vous devez exécuter l'outil de vo
 
 ```json
 {
-  "model": "qwen3:14b",
+  "model": "gpt-oss:120b",
   "messages": [
     {
       "role": "user",
@@ -215,26 +217,23 @@ Après avoir reçu une réponse `tool_calls`, vous devez exécuter l'outil de vo
 Avec `"stream": true`, la réponse arrive token par token :
 
 **Headers de réponse :**
-
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
 **Format des événements :**
-
 ```
-data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
+data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"gpt-oss:120b","object":"chat.completion.chunk"}
 
-data: {"choices":[{"delta":{"content":" photo"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
+data: {"choices":[{"delta":{"content":" photo"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"gpt-oss:120b","object":"chat.completion.chunk"}
 
-data: {"choices":[{"delta":{"content":""},"finish_reason":"stop","index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"granite3.3:8b","object":"chat.completion.chunk"}
+data: {"choices":[{"delta":{"content":""},"finish_reason":"stop","index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"gpt-oss:120b","object":"chat.completion.chunk"}
 
 data: [DONE]
 ```
 
 **Structure des chunks :**
-
 - `choices[].delta.content` : Contenu incrémental
 - `finish_reason` : `null` pendant le streaming, puis `"stop"`
 - Signal de fin : `data: [DONE]`
@@ -245,11 +244,11 @@ Pour analyser des images, vous pouvez envoyer une requête où le champ `content
 
 Le format pour une image est un objet avec `type: "image_url"` et un champ `image_url` contenant l'URL de l'image au format `data URI` (base64).
 
-:::info[Note de Compatibilité]
+:::info Note de Compatibilité
 Bien que le format standard et recommandé soit `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporte également par souci de flexibilité un format simplifié `{"type": "image", "image": "data:..."}`. Il est cependant conseillé d'utiliser le format `image_url` standard pour une meilleure compatibilité avec l'écosystème OpenAI.
 :::
 
-:::tip[OCR et Analyse de Documents]
+:::tip OCR et Analyse de Documents
 Pour des tâches spécifiques d'analyse de documents (PDF, scans, tableaux), nous recommandons l'utilisation du modèle spécialisé **DeepSeek-OCR**. Voir la [documentation dédiée](./ocr).
 :::
 
@@ -285,7 +284,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ### POST /v1/completions
 
 :::warning
-**Note** : L'endpoint `/v1/completions` utilise le même format que `/v1/chat/completions` avec des messages.
+**Note** : L'endpoint `/v1/completions` utilise le même format que `/v1/chat/completions` avec des messages. 
 Pour la complétion de texte simple, utilisez un message user avec votre prompt.
 :::
 
@@ -298,7 +297,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_TOKEN_API" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user",
@@ -334,13 +333,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 #### Paramètres
 
-| Paramètre | Type | Obligatoire | Description |
-|-----------|------|-------------|-------------|
-| `file` | binary | ✅ | Fichier audio (wav, mp3, m4a). |
-| `language` | string | ❌ | Code langue ISO 639-1 (ex: "fr"). Détection automatique si non fourni. |
-| `initial_prompt` | string | ❌ | Contexte ou mots spécifiques pour améliorer la précision de la transcription. |
-| `task` | string | ❌ | Tâche à effectuer : `transcribe` (défaut) ou `translate` (traduire en anglais). |
-| `response_format` | string | ❌ | `json` (défaut, équivalent à `verbose_json`). Les formats `text`, `srt`, `vtt` ne sont pas supportés actuellement. |
+| Paramètre         | Type   | Obligatoire | Description                                                                                                        |
+| ----------------- | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| `file`            | binary | ✅          | Fichier audio (wav, mp3, m4a).                                                                                     |
+| `language`        | string | ❌          | Code langue ISO 639-1 (ex: "fr"). Détection automatique si non fourni.                                             |
+| `initial_prompt`  | string | ❌          | Contexte ou mots spécifiques pour améliorer la précision de la transcription.                                      |
+| `task`            | string | ❌          | Tâche à effectuer : `transcribe` (défaut) ou `translate` (traduire en anglais).                                    |
+| `response_format` | string | ❌          | `json` (défaut, équivalent à `verbose_json`). Les formats `text`, `srt`, `vtt` ne sont pas supportés actuellement. |
 
 #### Réponse (`json`)
 
@@ -365,6 +364,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 }
 ```
 
+
 ### POST /v1/embeddings
 
 Crée un vecteur d'embedding représentant le texte d'entrée.
@@ -383,10 +383,10 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 #### Paramètres
 
-| Paramètre | Type | Obligatoire | Description |
-|-----------|------|-------------|-------------|
-| `model` | string | ✅ | ID du modèle d'embedding (voir [catalogue](./models)) |
-| `input` | string or array of strings | ✅ | Le texte ou la liste de textes à vectoriser. |
+| Paramètre | Type                       | Obligatoire | Description                                           |
+| --------- | -------------------------- | ----------- | ----------------------------------------------------- |
+| `model`   | string                     | ✅          | ID du modèle d'embedding (voir [catalogue](./models)) |
+| `input`   | string or array of strings | ✅          | Le texte ou la liste de textes à vectoriser.          |
 
 #### Réponse
 
@@ -413,6 +413,96 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 }
 ```
 
+### POST /v1/rerank
+
+Réordonne une liste de documents par pertinence par rapport à une requête. Compatible avec l'API Cohere (v1 et v2).
+
+**Facturation** : 4€ / million de tokens rerankés. Idéal pour améliorer la précision des pipelines RAG.
+
+#### Requête
+
+```bash
+curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer VOTRE_TOKEN_API" \
+  -d '{
+    "model": "nvidia/llama-nemotron-rerank-vl-1b-v2",
+    "query": "Quelle est la capitale de la France ?",
+    "documents": [
+      "Paris est la capitale et la plus grande ville de France.",
+      "Lyon est une grande ville du sud-est de la France.",
+      "La France est un pays d'\''Europe occidentale."
+    ],
+    "top_n": 2
+  }'
+```
+
+#### Paramètres
+
+| Paramètre   | Type    | Obligatoire | Description                                                                 |
+| ----------- | ------- | ----------- | --------------------------------------------------------------------------- |
+| `model`     | string  | ✅          | ID du modèle de reranking (voir [catalogue](./models#modèles-de-reranking)) |
+| `query`     | string  | ✅          | La requête de recherche                                                     |
+| `documents` | array   | ✅          | Liste des documents à réordonner                                            |
+| `top_n`     | integer | ❌          | Nombre de résultats à retourner (défaut : tous)                             |
+
+#### Réponse
+
+```json
+{
+  "id": "rerank-7f3a2b1c",
+  "results": [
+    {
+      "index": 0,
+      "relevance_score": 0.9874,
+      "document": {
+        "text": "Paris est la capitale et la plus grande ville de France."
+      }
+    },
+    {
+      "index": 2,
+      "relevance_score": 0.5231,
+      "document": {
+        "text": "La France est un pays d'Europe occidentale."
+      }
+    }
+  ],
+  "usage": {
+    "billed_units": {
+      "search_units": 3
+    }
+  }
+}
+```
+
+L'endpoint `/v2/rerank` (Cohere SDK v2) est également disponible avec le même format de requête.
+
+#### Exemple Python (SDK Cohere)
+
+```python
+import cohere
+
+# Compatible avec le SDK Cohere en pointant vers l'API LLMaaS
+co = cohere.Client(
+    api_key="VOTRE_TOKEN_API",
+    base_url="https://api.ai.cloud-temple.com"
+)
+
+results = co.rerank(
+    model="nvidia/llama-nemotron-rerank-vl-1b-v2",
+    query="Quelle est la capitale de la France ?",
+    documents=[
+        "Paris est la capitale et la plus grande ville de France.",
+        "Lyon est une grande ville du sud-est de la France.",
+        "La France est un pays d'Europe occidentale."
+    ],
+    top_n=2
+)
+
+for result in results.results:
+    print(f"Index: {result.index}, Score: {result.relevance_score:.4f}")
+```
+
 ### GET /v1/models
 
 Liste des modèles disponibles.
@@ -431,16 +521,16 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   "object": "list",
   "data": [
     {
-      "id": "granite3.3:8b",
+      "id": "gpt-oss:120b",
       "object": "model",
       "created": 1749110897,
       "owned_by": "CloudTemple",
-      "root": "granite3.3:8b",
-      "aliases": ["granite3.3:8b"],
+      "root": "gpt-oss:120b",
+      "aliases": ["gpt-oss:120b"],
       "max_model_len": 60000,
       "permission": [
         {
-          "id": "modelperm-granite3.3:8b-1749110897",
+          "id": "modelperm-gpt-oss:120b-1749110897",
           "object": "model_permission",
           "allow_sampling": true,
           "allow_view": true,
@@ -545,7 +635,7 @@ headers = {
 
 # Chat completion
 payload = {
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
         {"role": "user", "content": "Bonjour !"}
     ],
@@ -580,7 +670,7 @@ except Exception as e:
 import requests
 import json
 
-def stream_chat(message, model="granite3.3:8b"):
+def stream_chat(message, model="gpt-oss:120b"):
     # Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
     # Exemple: API_KEY = os.getenv("LLMAAS_API_KEY")
     API_KEY = "VOTRE_TOKEN_API"
@@ -652,7 +742,7 @@ async function chatCompletion(message) {
         const response = await axios.post(
             `${BASE_URL}/chat/completions`,
             {
-                model: 'granite3.3:8b',
+                model: 'gpt-oss:120b',
                 messages: [
                     { role: 'user', content: message }
                 ],
@@ -694,7 +784,7 @@ async function fetchCompletion(message) {
             'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: 'granite3.3:8b',
+            model: 'gpt-oss:120b',
             messages: [
                 { role: 'user', content: message }
             ],
@@ -764,7 +854,7 @@ client = OpenAI(
 
 try:
     response = client.chat.completions.create(
-        model="granite3.3:8b",
+        model="gpt-oss:120b",
         messages=[
             {"role": "user", "content": "Bonjour !"}
         ],
@@ -789,7 +879,7 @@ from langchain.schema import HumanMessage
 chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
-    model="granite3.3:8b",
+    model="gpt-oss:120b",
     # Note: Les paramètres comme max_tokens sont passés via model_kwargs
     # pour assurer la compatibilité entre les versions de LangChain.
     model_kwargs={"max_tokens": 200}
@@ -811,7 +901,7 @@ except Exception as e:
 
 #### Utilisation des Embeddings
 
-:::warning[Incompatibilité avec les clients LangChain standards]
+:::warning Incompatibilité avec les clients LangChain standards
 Actuellement, l'utilisation de l'endpoint d'embedding via les classes standards de LangChain (`langchain_openai.OpenAIEmbeddings` ou `langchain_community.OllamaEmbeddings`) présente des incompatibilités avec notre API.
 
 - `OpenAIEmbeddings` envoie des tokens pré-calculés au lieu de texte brut, ce qui est rejeté.

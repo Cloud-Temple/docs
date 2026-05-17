@@ -1,81 +1,90 @@
 ---
-title: SLA VM-Instanzen
+title: SLA-VM-Instanzen
 slug: /contractual/vm-instances/sla
+displayed_sidebar: docSidebar
 ---
 
 # Service Level Agreement (SLA) – VM-Instanzen
 
 | | |
 | :--- | :--- |
-| **Letzte Aktualisierung** | 15. April 2026 |
+| **Letztes Änderungsdatum** | 15. April 2026 |
 
-Dieses Dokument definiert die Service Level Commitments (SLA), die für das Produkt **VM-Instanzen** von **Cloud Temple** gelten. Es ergänzt die Allgemeinen Geschäftsbedingungen von Cloud Temple und bildet mit diesen eine untrennbare Einheit.
+Dieses Dokument definiert die Service Level Agreements (SLAs), die für das Produkt **VM-Instanzen** gelten, das von **Cloud Temple** (nachfolgend „der Anbieter“ oder „Cloud Temple“ genannt) bereitgestellt wird. Es ergänzt die Allgemeinen Verkaufs- und Servicebedingungen von Cloud Temple und bildet mit diesen eine untrennbare Einheit.
 
 ---
 
 ## 1. Definitionen
 
-- **Monatliche Verfügbarkeitsrate**: Der garantierte Betriebszeit-Prozentsatz für eine VM-Instanz während eines Kalendermonats.
-- **VM-Instanz**: Der auf Anfrage des Kunden auf der Cloud-Infrastruktur von Cloud Temple bereitgestellte virtuelle private Server, der auf leistungsstarken gemeinsam genutzten Compute- und Speicherressourcen basiert.
-- **Nichtverfügbarkeitszeitraum**: Vollständiger Verlust des Zugangs und der externen Konnektivität zur VM-Instanz, ausschließlich auf der Ebene der zugrunde liegenden Cloud Temple-Infrastruktur gemessen.
-- **Nichtverfügbarkeitsdauer**: Ununterbrochene Zeit, während der der Nichtverfügbarkeitszeitraum festgestellt wird. Um im Rahmen dieses SLA angerechnet zu werden, muss eine Nichtverfügbarkeitsdauer mindestens **vier (4) aufeinanderfolgende Minuten** betragen.
+Im Rahmen dieses SLA haben die folgenden Begriffe mit Großschreibung die nachstehende Bedeutung:
+
+- **Monatlicher Verfügbarkeitsgrad** : Der garantierte Prozentsatz der Betriebszeit für eine VM-Instanz während eines Kalendermonats.
+- **VM-Instanz** : Der vom Kunden bei Bedarf bereitgestellte virtuelle private Server auf der Cloud-Infrastruktur von Cloud Temple, die auf hochleistungsfähigen, gemeinsam genutzten Rechen- und Speicherressourcen basiert.
+- **Ausfallzeit** : Totaler Verlust des Zugriffs und der externen Konnektivität zur VM-Instanz, gemessen ausschließlich auf Ebene der zugrunde liegenden Infrastruktur von Cloud Temple (Instanzstatus, der vom Cloud Temple Hypervisor als inaktiv, gestoppt oder fehlerhaft gemeldet wird).
+- **Ausfalldauer** : Ununterbrochene Zeit, in der die Ausfallzeit festgestellt wird. Um für dieses SLA angerechnet zu werden, muss eine Ausfalldauer mindestens **vier (4) aufeinanderfolgende Minuten** betragen.
 
 ---
 
-## 2. Service Level Commitments (SLA)
+## 2. Service Level Agreements (SLA)
 
-Cloud Temple verpflichtet sich, eine monatliche Verfügbarkeitsrate von **99,95 %** für jede aktive, dem Kunden berechnete VM-Instanz sicherzustellen.
+Cloud Temple verpflichtet sich, eine monatliche Verfügbarkeit von **99,95 %** für jede dem Kunden in Rechnung gestellte aktive VM-Instanz sicherzustellen.
 
-Diese Rate entspricht maximal **21,9 Minuten** autorisierter Nichtverfügbarkeitsdauer pro Kalendermonat. Bei Nichteinhaltung kann der Kunde Service Credits gemäß Artikel 5 beanspruchen.
+Dieser Wert entspricht maximal **21,9 Minuten** zulässiger Ausfallzeit pro Kalendermonat. Bei Nichteinhaltung dieser Verpflichtung kann der Kunde Serviceguthaben gemäß den in Artikel 5 festgelegten Bedingungen geltend machen.
 
 ---
 
 ## 3. Messung und Umfang der Verfügbarkeit
 
-Die Überwachung und Berechnung der monatlichen Verfügbarkeitsrate erfolgt **ausschließlich durch die Infrastruktur-Monitoring-Tools von Cloud Temple**.
+Die Überwachung und Berechnung der monatlichen Verfügbarkeitsrate erfolgt **ausschließlich durch die Monitoring-Tools der Cloud-Temple-Infrastruktur**, die den Status der Instanz auf der Virtualisierungsschicht abfragen.
 
-**Verantwortungsbereich:**  
-Dieses SLA deckt nur den Betrieb der Compute-Ressourcen (CPU, RAM) ab, die auf der Hardware-Infrastruktur von Cloud Temple zugewiesen sind.
+**Verantwortungsbereich :**  
+Dieses SLA deckt ausschließlich den Betrieb der auf der Cloud-Temple-Hardwareinfrastruktur bereitgestellten Compute-Ressourcen (Compute: CPU, RAM) ab.
 
 :::info
-Netzwerkkonnektivität (VPC, Routing) oder persistenter Speicher sind Gegenstand separater SLA-Dokumente.
+Die Netzwerkverbindung (VPC, Routing) oder der persistente Speicher sind Gegenstand separater SLA-Dokumente und werden durch diese Verpflichtung nicht abgedeckt.
 :::
 
-**Ausschlussprinzip des UP-Status:**  
-Sobald die VM-Instanz von der Cloud Temple-Plattform als „UP" oder „RUNNING" erkannt wird, gilt die SLA-Verpflichtung als erfüllt.
+**Ausschlussprinzip bei UP-Status :**  
+Sobald die VM-Instanz von der Cloud-Temple-Plattform als „UP“ oder „RUNNING“ eingestuft wird, gilt die SLA-Verpflichtung als erfüllt, unabhängig von der Erreichbarkeit der Anwendungsschicht des Kunden.
 
 ---
 
-## 4. Ausschlüsse von der Garantie
+## 4. Garantieausschlüsse
 
-1. **Betriebssystem- oder Software-Ausfälle**: Absturz des Gast-Betriebssystems, CPU- oder RAM-Überlastung durch Kundenprozesse, interne Dateisystemkorruption.
+Dieses SLA stellt keine Zusicherung zur Verfügbarkeit von Elementen dar, die unter der ausschließlichen Kontrolle des Kunden stehen. Daher gelten Unterbrechungen, Zugangsverluste oder Ausfälle, die aus folgenden Gründen resultieren, **nicht** als Ausfallzeiten:
 
-2. **Kundenkonfigurationen**: Netzwerk- oder lokale Firewall-Regeln, die Zugriffe blockieren, Netzwerkkonfigurationsfehler innerhalb des Betriebssystems.
+1. **Ausfälle des Betriebssystems (OS) oder softwarebedingte Ausfälle**: Absturz des Gast-OS (z. B. *Kernel Panic*, *Blue Screen of Death*), Überlastung der CPU oder des RAM durch Prozesse des Kunden oder Beschädigung des internen Dateisystems.
 
-3. **Anwendungsausfälle**: Abschaltung oder Absturz eines auf der VM-Instanz gehosteten Dienstes.
+2. **Kundenkonfigurationen**: Netzwerk- oder lokale Firewall-Regeln (iptables, firewalld), die Zugriffe blockieren, sowie Netzwerk-Konfigurationsfehler innerhalb des OS über Cloud-init oder nach der Bereitstellung.
 
-4. **Geplante Wartungen**: Hardware- oder Software-Eingriffe mit vorheriger Benachrichtigung.
+3. **Anwendungsausfälle**: Stilllegung oder Absturz eines auf der VM-Instanz gehosteten Dienstes (Webserver, Datenbank, Container usw.).
 
-5. **Abwesenheit oder Deaktivierung der VM-Tools**: Die von Cloud Temple auf jeder Instanz vorinstallierten Hypervisor-Management-Agenten (*Tools*) sind für die Messung und Garantie der Verfügbarkeit unerlässlich. Wenn diese Tools vom Kunden deaktiviert, entfernt oder nicht funktionsfähig gemacht wurden, kann Cloud Temple die Instanz nicht mehr überwachen und einen Nichtverfügbarkeitszeitraum nicht objektiv feststellen. Das SLA wird **sofort ausgesetzt**, solange die Tools fehlen oder nicht betriebsbereit sind. Das Vorhandensein und die ordnungsgemäße Funktion der Tools liegen während der gesamten Lebensdauer der Instanz in der ausschließlichen Verantwortung des Kunden.
+4. **Geplante Wartung**: Hardware- oder Softwareeingriffe auf der physischen Infrastruktur von Cloud Temple, die im Rahmen der in Ihrem Supportvertrag vorgesehenen Wartungsfenster vorher angekündigt wurden.
 
-6. **Missbräuchliches Verhalten oder Verstoß**: Aussetzung der VM-Instanz durch Cloud Temple aufgrund eines Verstoßes gegen die AGB.
+5. **Fehlen oder Deaktivierung der VM-Tools**: Die von Cloud Temple auf jeder Instanz vorinstallierten Hypervisor-Verwaltungsagenten (*tools*) sind unerlässlich für die Messung und Gewährleistung der Verfügbarkeit. Wenn diese Tools vom Kunden deaktiviert, gelöscht oder funktionsunfähig gemacht wurden, ist Cloud Temple nicht mehr in der Lage, die Überwachung der Instanz durchzuführen oder eine Ausfallzeit objektiv festzustellen. Das SLA wird **sofort ausgesetzt** für die Dauer, in der die Tools fehlen oder nicht betriebsbereit sind. Das Vorhandensein und die einwandfreie Funktion der Tools liegen während der gesamten Lebensdauer der Instanz in der alleinigen Verantwortung des Kunden.
 
-7. **Höhere Gewalt**: Ereignisse außerhalb des vernünftigen Einflussbereichs von Cloud Temple.
+6. **Missbräuchliches Verhalten oder Verstöße**: Sperrung der VM-Instanz durch Cloud Temple infolge eines Verstoßes gegen die Allgemeinen Geschäftsbedingungen oder Sicherheitsanforderungen (z. B. Kompromittierung, Nichteinhaltung der Regeln des Cloud Temple Marketplace).
+
+7. **Höhere Gewalt**: Ereignisse, die außerhalb der zumutbaren Kontrolle von Cloud Temple liegen.
 
 ---
 
-## 5. Service Credits und Strafen
+## 5. Serviceguthaben und Pönalen
 
-| Festgestellte monatliche Verfügbarkeitsrate | Service Credit |
+Wird die monatliche Verfügbarkeitsrate von 99,95 % für eine bestimmte VM-Instanz nicht erreicht, hat der Kunde Anspruch auf eine Entschädigung in Form eines Serviceguthabens.
+
+Das Serviceguthaben wird als Prozentsatz des monatlich in Rechnung gestellten Betrags für die betroffene VM-Instanz berechnet:
+
+| Festgestellte monatliche Verfügbarkeitsrate | Serviceguthaben |
 | :--- | :---: |
 | Zwischen 99,00 % und 99,94 % | 10 % |
 | Zwischen 95,00 % und 98,99 % | 25 % |
 | Unter 95,00 % | 100 % |
 
-### 5.1 Reklamationsverfahren
+### 5.1 Verfahren zur Geltendmachung
 
-Der Kunde muss eine begründete Anfrage über ein Support-Ticket bei Cloud Temple innerhalb von **dreißig (30) Kalendertagen** nach dem betreffenden Monat einreichen.
+Um eine Service-Gutschrift zu erhalten, muss der Kunde diese begründet beantragen, indem er ein Ticket beim Cloud Temple Support erstellt. Der Antrag muss innerhalb von **dreißig (30) Kalendertagen** nach dem Monat, in dem der Vorfall eingetreten ist, gestellt werden.
 
-Die Anfrage muss enthalten:
-- Die UUID der betroffenen VM-Instanz
-- Die genauen Zeitstempel des beobachteten Nichtverfügbarkeitszeitraums
+Der Antrag muss folgende Angaben enthalten:
+- Die Kennung (UUID) der betroffenen VM-Instanz
+- Die genauen Zeitstempel der festgestellten Ausfallzeit

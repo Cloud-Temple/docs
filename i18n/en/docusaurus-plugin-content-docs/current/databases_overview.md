@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Databases
 
-Cloud Temple's managed databases relieve you of operational management (backups, updates, high availability) while remaining hosted on a SecNumCloud-qualified sovereign infrastructure.
+Cloud Temple's managed databases relieve you of operational management (backups, updates, high availability) while remaining hosted on a qualified SecNumCloud sovereign infrastructure.
 
 <div class="card-grid">
   <div class="card">

@@ -13,48 +13,48 @@ import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
 ## Introduction
 
-The Cloud Temple API allows you to create and manage all your cloud resources programmatically. Everything you can do through the Cloud Temple console can also be done via the API, from creating virtual machines to configuring identity and access management.
+The Cloud Temple API enables you to create and manage all your cloud resources programmatically. Everything you can do via the Cloud Temple console can also be accomplished via the API, from creating virtual machines to configuring identity and access management.
 
-This documentation guides you through using the Cloud Temple API, from authentication to best practices, including endpoint lifecycle management.
+This documentation guides you through using the Cloud Temple API, covering authentication, best practices, and endpoint lifecycle management.
 
-## Quickstart: Your First API Request
+## Quickstart: Your first API request
 
 :::info[Summary - 3 steps to get started]
 1. 🔑 **Generate your PAT** from the console
 2. 🚀 **Test with curl** on `/iam/v2/roles`
-3. ✅ **Analyze the response** JSON
+3. ✅ **Analyze the JSON response**
 :::
 
 ### Prerequisites
 
-Before starting, you must have a Cloud Temple account with the appropriate permissions to generate API keys.
+Before you begin, you must have a Cloud Temple account with the appropriate permissions to generate API keys.
 
 ### Steps
 
-1. **Generate your API key**: Log in to the [Cloud Temple console](https://shiva.cloud-temple.com/login) and generate your Personal Access Token (see [API Keys](#api-keys-personal-access-token) section below).
+1. **Generate your API key**: Log in to the [Cloud Temple console](https://shiva.cloud-temple.com/login) and generate your Personal Access Token (see the [API Keys](#clés-api-personal-access-token) section below).
 
-2. **Test your first request**: Execute the following curl command, replacing `<your-personal-access-token>` with your token:
+2. **Test your first request**: Run the following curl command, replacing `<your-personal-access-token>` with your token:
 
 ```bash
 curl -X GET \
-  -H "Authorization: Bearer <your-personal-access-token>" \
+  -H "Authorization: Bearer <votre-personal-access-token>" \
   -H "Content-Type: application/json" \
   "https://shiva.cloud-temple.com/api/iam/v2/roles"
 ```
 
-3. **Analyze the response**: You will receive the list of IAM roles available in your tenant, allowing you to understand existing permissions.
+3. **Analyze the response**: You will receive the list of IAM roles available in your tenant, allowing you to understand the existing permissions.
 
 ## Authentication
 
 ### API Keys (Personal Access Token)
 
-The __API key__ allows you to authenticate when making API requests. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to Console APIs without using a graphical interface. Each of these tokens is linked to a tenant and the user who created it.
+The __API key__ allows you to authenticate when you want to make requests to the API. Generating an API key, also known as a __Personal Access Token (PAT)__, is a secure way to connect to the API Console without using a graphical interface. Each of these tokens is linked to a tenant and the user who created it.
 
-Creating this token is done from your account. You can generate multiple keys and configure permissions for each within the limits of your rights.
+Token creation is performed from your account. You can generate multiple keys and configure permissions for each, within the limits of your assigned privileges.
 
-#### Create an API Key
+#### Create an API key
 
-To create an API key, simply __click on your profile__:
+To create an API key, simply __click on your profile__ :
 
 <img src={ShivaProfil001} style={{maxWidth: '300px', width: '100%'}} />
 
@@ -62,87 +62,87 @@ In the profile menu, click on __'Personal Access Token'__
 
 <img src={ShivaProfil003} />
 
-You will then see all the API keys created for this user in this tenant. Click on __'New Personal Access Token'__
+You will then see on screen all the API keys that have been created for this user in this tenant. Click on __'New personal access token'__
 
 <img src={ShivaProfil002} />
 
 You must then:
 
 - Specify the name of this new token,
-- Set an expiration date (maximum 12 months validity),
+- Specify an expiration date (maximum 12 months validity),
 - Choose the permissions associated with the token.
 
-The details of your token are then displayed. __Warning: you will no longer be able to access these details afterward.__
+The details regarding your token are then displayed. __Warning, it will no longer be possible to access it afterwards.__
 
-If you don't record this information, you will need to delete and recreate the token.
+If you do not record this information, you will need to delete and recreate the token.
 
 <img src={ShivaProfil004} style={{maxWidth: '600px', width: '100%'}} />
 
-For security reasons, it is recommended to create multiple tokens, each with a specific purpose (one token per application or business process) rather than creating one token with all permissions.
+For security reasons, it is recommended to create multiple tokens, each with a specific purpose (one token for each application or each business process) rather than creating 1 token with all permissions.
 
-You will then see the newly created token and its future expiration date.
+You will then see the newly created token and its expiration date.
 
 <img src={ShivaProfil005} />
 
 :::info[Authentication Token Lifecycle]
-When you use your __Personal Access Token (PAT)__ to authenticate with the API, you receive an access token in return. It's important to note that this access token is a __JSON Web Token (JWT)__ with a limited lifespan.
+When you use your __Personal Access Token (PAT)__ to authenticate with the API, you receive an access token in return. It is important to note that this access token is a __JSON Web Token (JWT)__ with a limited lifespan.
 
-- __Lifespan__: Each JWT token is valid for __5 minutes__.
-- __Verification__: You can verify the issuance date (`iat`) and expiration date (`exp`) of your token by decoding it. Online tools like [jwt.io](https://jwt.io) make this easy.
+- __Lifespan__ : Each JWT token is valid for a duration of __5 minutes__.
+- __Verification__ : You can verify the issuance date (`iat`) and expiration date (`exp`) of your token by decoding it. Online tools such as [jwt.io](https://jwt.io) allow you to do this easily.
 
-Once the token expires, you will need to re-authenticate with your PAT to obtain a new one. Therefore, it's recommended to manage this lifecycle in your scripts and applications by planning for automatic token renewal.
+Once the token expires, you will need to re-authenticate with your PAT to obtain a new one. It is therefore recommended to manage this lifecycle in your scripts and applications by planning for automatic token renewal.
 :::
 
 ## API Portal Access
 
-The OpenAPI 3.0 (Swagger) documentation for Cloud Temple console APIs is available directly in the application:
+The OpenAPI 3.0 (Swagger) documentation for the Cloud Temple Console APIs is available directly within the application:
 
 <img src={ShivaApi001} />
 
-API access requires authentication. Once authenticated, all operations must include the __'Authorization'__ header with the bearer access token obtained during the authentication phase.
+Access to the APIs requires authentication. Once authenticated, all operations must include the __'Authorization'__ header with the bearer access token obtained during the authentication phase.
 
-The endpoint URLs are directly provided in __Swagger__ (in the "Servers" object on each API page).
+The URL for the endpoints is directly provided in __Swagger__ (in the "Servers" object on each APIs page).
 
-### Explore Interactive Documentation
+### Explore the interactive documentation
 
 The API portal allows you to:
 
 - View all available endpoints by module
 - Test requests directly from the interface
-- See data models (schemas) for each resource
+- View data models (schemas) for each resource
 - View possible response codes for each endpoint
 
-## Endpoint Structure
+## Endpoints structure
 
 ### URL Format
 
 Cloud Temple API URLs follow a consistent structure:
 
 ```
-https://shiva.cloud-temple.com/api/{module}/v{version}/{resource}
+https://shiva.cloud-temple.com/api/{module}/v{version}/{ressource}
 ```
 
 Where:
-- `{module}`: The module concerned (compute, iam, network, backup, etc.)
-- `{version}`: The API version (v1, v2, etc.)
-- `{resource}`: The resource to manipulate (virtual-machines, users, networks, etc.)
+- `{module}` : The relevant module (compute, iam, network, backup, etc.)
+- `{version}` : The API version (v1, v2, etc.)
+- `{ressource}` : The resource to manipulate (virtual-machines, users, networks, etc.)
 
-### Endpoint Examples
+### Example Endpoints
 
 ```
-# Virtual machines (Compute)
+# Machines virtuelles (Compute)
 GET    https://shiva.cloud-temple.com/api/compute/v1/virtual-machines
 POST   https://shiva.cloud-temple.com/api/compute/v1/virtual-machines
 GET    https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
 PATCH  https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
 DELETE https://shiva.cloud-temple.com/api/compute/v1/virtual-machines/{id}
 
-# Identity and access (IAM)
+# Identité et accès (IAM)
 GET    https://shiva.cloud-temple.com/api/iam/v1/users
 POST   https://shiva.cloud-temple.com/api/iam/v1/users
 GET    https://shiva.cloud-temple.com/api/iam/v1/users/{id}
 
-# Networks
+# Réseaux
 GET    https://shiva.cloud-temple.com/api/network/v1/virtual-networks
 POST   https://shiva.cloud-temple.com/api/network/v1/virtual-networks
 ```
@@ -160,24 +160,24 @@ The Cloud Temple API is organized into functional modules:
 | S3 | Object storage | `/s3/v1/` |
 | OpenShift | PaaS platform | `/openshift/v1/` |
 | Bastion | SSH/RDP bastion appliances | `/bastion/v1/` |
-| Network | Level 2 and 3 network management | `/network/v1/` |
-| Housing | Colocation and housing | `/housing/v1/` |
+| Network | Layer 2 and 3 network management | `/network/v1/` |
+| Hosting | Colocation and housing | `/housing/v1/` |
 | Marketplace | Solutions catalog | `/marketplace/v1/` |
-| Support | Tickets and support | `/support/v1/` |
+| Support | Tickets and assistance | `/support/v1/` |
 | Notification | Notification system | `/notification/v1/` |
 | LLMaaS | Artificial intelligence | `/llmaas/v1/` |
 
 ## Activities
 
-Tracking of write-type requests (POST, PUT, PATCH, DELETE) is handled through activity management. Each such request automatically generates an associated activity. An HTTP 201 status code confirms the successful creation of the activity. The unique identifier of this activity is returned in the response headers under the 'Location' key.
+Write requests (POST, PUT, PATCH, DELETE) are tracked via activity management. Each request of this type automatically generates an associated activity. An HTTP 201 status code confirms the successful creation of the activity. The unique identifier of this activity is returned in the response headers, under the 'Location' key.
 
 <img src={ShivaApi002} />
 
-Once the identifier is retrieved, it's possible to access the activity details using the Activity module API:
+Once the identifier is retrieved, the activity details can be accessed using the Activity module API:
 
 <img src={ShivaApi003} />
 
-The activity content includes all essential information to identify the operation, its execution date, and its progress status. Here is the activity model:
+The activity content includes all essential information to identify the operation, its execution date, as well as its progress status. Here is the activity model:
 
 ```json
 {
@@ -201,7 +201,7 @@ The activity content includes all essential information to identify the operatio
 
 ### Activity States
 
-The __state__ object can take different forms depending on the activity state:
+The __state__ object can take different forms depending on the state of the activity, namely:
 
 #### waiting
 
@@ -237,7 +237,7 @@ failed: {
 
 #### completed
 
-State if the operation is completed:
+Status if the operation is completed:
 
 ```json
 completed: {
@@ -247,26 +247,26 @@ completed: {
 }
 ```
 
-:::info[Created Resource Identifier]
-The identifier (UUIDv4) of the created resource is available in the activity result once it's completed.
+:::info[Identifiant de la ressource créée]
+The Identifier (UUIDv4) of the created resource is available in the activity result once it is completed.
 :::
 
 ## API Limits
 
-### Why Limits?
+### Why rate limits?
 
-The Cloud Temple console defines __caps on the volume of requests__ that a user can make to the API over a specified period. Implementing these rate limits is a common measure in API management, adopted for several essential reasons:
+The Cloud Temple console defines __caps on the request volume__ that a user can send to the API over a specified period. Implementing these rate limits is a common practice in API management, adopted for several key reasons:
 
-- __Abuse Prevention__: These limits help safeguard API integrity by preventing abusive or careless usage that could compromise its operation.
-- __Quality of Service Assurance__: By regulating API access, we ensure fair resource distribution, allowing all users to benefit from a stable and high-performing experience.
+- __Abuse prevention__ : These limits help safeguard API integrity by preventing abusive or clumsy usage that could compromise its operation.
+- __Service quality assurance__ : By regulating API access, we ensure an equitable distribution of resources, allowing all users to benefit from a stable and high-performing experience.
 
-Take for example a poorly designed or inefficient script that attempts repeated API calls, risking resource saturation and performance degradation. By establishing request thresholds, we prevent these situations and maintain __smooth, uninterrupted service__ for all our customers.
+Consider the example of a poorly designed or inefficient script that attempts repetitive API calls, risking resource saturation and performance degradation. By establishing request thresholds, we prevent these scenarios and ensure the maintenance of __a smooth and uninterrupted service__ for our entire customer base.
 
-### What are the Rate Limits for the Cloud Temple Console API?
+### What are the rate limits for the Cloud Temple Console API?
 
 We apply quantitative restrictions on user interactions with the console for each product.
 
-Limits are defined in __requests per second (r/s) and per source IP__. Beyond the limit threshold, the system will respond with an HTTP 429 error code, indicating that the authorized request limit has been exceeded.
+Limits are defined in __requests per second (r/s) per source IP__. Beyond the threshold, the system will respond with an HTTP 429 error code, indicating that the allowed request limit has been exceeded.
 
 Here are the defined limits:
 
@@ -274,13 +274,13 @@ Here are the defined limits:
 |---|---|
 | Cloud Temple Console | 25 r/s |
 | Identity (IAM) | 25 r/s |
-| VMware IaaS | 25 r/s |
+| IaaS VMware | 25 r/s |
 | OpenIaaS | 25 r/s |
 | S3 | 25 r/s |
 | OpenShift | 25 r/s |
 | Bastion | 25 r/s |
 | Network | 25 r/s |
-| Housing | 25 r/s |
+| Hosting | 25 r/s |
 | Marketplace | 25 r/s |
 | Support | 25 r/s |
 | Notification | 25 r/s |
@@ -290,15 +290,15 @@ Here are the defined limits:
 
 Certain specific API endpoints, particularly those related to authentication or sensitive actions, have more restrictive limits to enhance security and ensure stability.
 
-| Route | Limit Threshold |
+| Route | Rate Limit Threshold |
 |---|---|
 | Authentication (IAM) | 5 r/s |
 | IaaS - Storage (Datastores) | 20 r/s |
 | Marketplace (Contact) | 1 r/min - 5 r/h |
 
-### How Do Rate Limits Work?
+### How do rate limits work?
 
-If the number of requests sent to an API endpoint exceeds the authorized limit, the endpoint will respond with __an HTTP 429 response code__. This code indicates that the user has exceeded the allowed number of requests. When this occurs, the API endpoint will also provide a JSON object as a response, containing detailed information about the applied limitation:
+If the number of requests sent to an API endpoint exceeds the allowed limit, the endpoint will respond by returning __an HTTP 429 response code__. This code indicates that the user has exceeded the permitted number of requests. When this occurs, the endpoint will also provide a JSON object as a response, which will contain detailed information about the applied rate limit:
 
 ```json
 {
@@ -309,67 +309,67 @@ If the number of requests sent to an API endpoint exceeds the authorized limit, 
 }
 ```
 
-### How to Avoid Making Too Many Requests?
+### How to avoid making too many requests?
 
-It's recommended to limit the number of API calls made by your automation to stay below the rate limit set for the endpoint.
+It is recommended to limit the number of API calls made by your automation to stay below the rate limit set for the endpoint.
 
-This situation often occurs when multiple requests are executed in parallel using multiple processes or threads.
+This situation often occurs when multiple requests are executed in parallel, using multiple processes or threads.
 
-There are several ways to improve your automation's efficiency, including using __caching__ mechanisms and implementing __a retry system with exponential backoff__. This method involves taking a short pause when a rate limit error is encountered, then retrying the request. If the request fails again, the pause duration is gradually increased until the request succeeds or until a maximum number of retries is reached.
+There are several ways to improve the efficiency of your automation, including using __caching__ mechanisms and implementing __a retry system with exponential backoff__. This method involves taking a short pause when a rate limit error is encountered, then retrying the request. If the request fails again, the pause duration is gradually increased until the request succeeds or a maximum number of retries is reached.
 
-This approach has many advantages:
+This approach offers several benefits:
 
-- __Exponential backoff__ ensures that initial attempts are made quickly while providing longer delays in case of repeated failures.
-- Adding __random variation__ to the pause helps prevent all attempts from occurring simultaneously.
+- __Exponential backoff__ ensures that initial attempts are executed quickly, while allowing for longer delays in case of repeated failures.
+- Adding __jitter__ to the pause helps prevent all attempts from occurring simultaneously.
 
-It's important to note that __unsuccessful requests don't affect your rate limit__. However, continuously resending a request might not be a viable long-term solution, as this behavior could change in the future. We therefore recommend not relying exclusively on this mechanism.
+It is important to note that __failed requests do not count against your rate limit__. However, continuously retrying a request may not be a viable long-term solution, as this behavior could change in the future. Therefore, we recommend not relying exclusively on this mechanism.
 
-The __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ Python libraries are good starting points for implementing mitigation strategies.
+The Python libraries __[Backoff](https://pypi.org/project/backoff/)__ and __[Tenacity](https://pypi.org/project/tenacity/)__ are good starting points for implementing backoff strategies.
 
-## Endpoint Lifecycle and Deprecation
+## Lifecycle and deprecation of endpoints
 
 ### Deprecation Policy
 
-Cloud Temple is committed to maintaining API compatibility over time. However, when it's necessary to evolve the API (new features, optimizations, security fixes), some endpoints may be deprecated and then removed.
+Cloud Temple is committed to maintaining the compatibility of its API over time. However, when it is necessary to evolve the API (new features, optimizations, security fixes), certain endpoints may be deprecated and subsequently removed.
 
 #### 3-Month Minimum Rule
 
 When an endpoint is marked as deprecated:
 
-1. **Official Announcement**: Deprecation is announced in the console release notes
+1. **Official Announcement**: The deprecation is announced in the console release notes
 2. **Transition Period**: The endpoint remains **accessible and functional for at least 3 months** after the announcement
-3. **Removal Date**: A specific final removal date is communicated at the time of announcement
-4. **Documented Alternative**: The new replacement endpoint is documented and available
+3. **Removal Date**: A specific permanent removal date is communicated at the time of the announcement
+4. **Documented Alternative**: The replacement endpoint is documented and available
 
 This 3-month rule gives you the necessary time to adapt your code and migrate to the new endpoints.
 
-### How to Identify a Deprecated Endpoint?
+### How to identify a deprecated endpoint?
 
-#### In the API Portal (Swagger)
+#### In the API portal (Swagger)
 
-Deprecated endpoints appear crossed out in the Swagger documentation:
+Deprecated endpoints appear struck through in the Swagger documentation:
 
 
-~~POST /v1/old/endpoint~~
+~~POST /v1/ancien/endpoint~~
 
 The endpoint description includes:
 - The deprecation announcement date
-- The planned removal date
+- The scheduled removal date
 - The recommended replacement endpoint
 
 <img src={ShivaApi004} />
 
 ### Best Practices for Managing Deprecations
 
-1. **Monitor Deprecated Features**: Regularly check the deprecated features in the console to be informed of upcoming deprecations.
+1. **Monitor deprecated features**: Regularly check the console for deprecated features to stay informed about upcoming deprecations.
 
-2. **Plan Your Migrations**: As soon as a deprecation is announced, plan the migration of your code to the new endpoint within 3 months.
+2. **Plan your migrations**: As soon as a deprecation is announced, plan to migrate your code to the new endpoint within 3 months.
 
-3. **Test New Endpoints**: Test new endpoints as soon as they're available, even during the transition period.
+3. **Test new endpoints**: Test new endpoints as soon as they are available, even during the transition period.
 
-4. **Document Your Dependencies**: Maintain a list of endpoints your application uses to facilitate future migrations.
+4. **Document your dependencies**: Maintain a list of the endpoints your application uses to facilitate future migrations.
 
-## Best Practices
+## Best practices
 
 ### Token Security
 
@@ -383,30 +383,30 @@ The endpoint description includes:
 
 ### Error Handling
 
-Always handle HTTP errors in your code. Pay particular attention to the following codes:
+Always handle HTTP errors in your code. Pay special attention to the following codes:
 
 | Code | Description | Recommended Action |
 |------|-------------|-------------------|
 | **401** Unauthorized | Expired or invalid token | Re-authenticate with your PAT |
-| **403** Forbidden | Insufficient permissions | Check token rights |
+| **403** Forbidden | Insufficient permissions | Check token permissions |
 | **429** Too Many Requests | Rate limit reached | Wait before retrying (backoff) |
 | **500/503** Server Error | Temporary server error | Retry later |
 
 ### API Call Optimization
 
 - Use pagination for large lists
-- Cache data that changes rarely
+- Cache data that changes infrequently
 - Use filters to limit returned data
 - Group operations when possible
-- Track asynchronous activity status instead of intensive polling
+- Track the status of asynchronous activities instead of intensive polling
 
-### Retry with Exponential Backoff
+### Retry with exponential backoff
 
 To handle temporary errors or rate limiting (HTTP 429), implement a retry strategy with exponential backoff:
 
-:::tip[Recommended Retry Strategy]
-- ⏱️ **Progressive Wait**: 1s, 2s, 4s, 8s...
-- 🎲 **Random Variation**: Prevents all clients from retrying simultaneously
-- 🔄 **Retry Limit**: Maximum 3-5 attempts
-- 📚 **Python Libraries**: [Backoff](https://pypi.org/project/backoff/) or [Tenacity](https://pypi.org/project/tenacity/)
+:::tip[Recommended retry strategy]
+- ⏱️ **Progressive delay** : 1s, 2s, 4s, 8s...
+- 🎲 **Random jitter** : Prevents all clients from retrying simultaneously
+- 🔄 **Attempt limit** : Maximum 3-5 attempts
+- 📚 **Python libraries** : [Backoff](https://pypi.org/project/backoff/) or [Tenacity](https://pypi.org/project/tenacity/)
 :::

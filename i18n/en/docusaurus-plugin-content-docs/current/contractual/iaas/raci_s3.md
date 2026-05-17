@@ -1,74 +1,77 @@
 ---
-title: Matrice de responsabilité IaaS - Stockage Objet S3
+title: IaaS Responsibility Matrix - S3 Object Storage
+slug: /contractual/storage/raci
+displayed_sidebar: docSidebar
 ---
 
-Voici le RACI du partage de responsabilité entre le client et Cloud Temple pour l'usage de la plateforme de Stockage Objets S3 Cloud Temple.
 
-## Définition des différents rôles
+Here is the RACI matrix for the shared responsibility model between the client and Cloud Temple for using the Cloud Temple S3 Object Storage platform.
 
-Nous rappelons ici les différents rôle du RACI :
+## Definition of the different roles
 
-| Rôle         | Description                              |
+Here is a reminder of the different RACI roles:
+
+| Role         | Description                              |
 |--------------|------------------------------------------|
-| (R) Réalise  | __R__éalise le processus                 |
-| (A) Approuve | __A__pprouve la réalisation du processus |
-| (C) Consulte | __C__onsulté pendant le processus        |
-| (I) Informé  | __I__nformé des résultats du processus   |
+| (R) Executes  | __R__uns the process                 |
+| (A) Approves  | __A__pproves the process execution |
+| (C) Consults  | __C__onsulted during the process        |
+| (I) Informed  | __I__nformed of the process results   |
 
-## Définir votre besoin
+## Define your requirements
 
-| Activité                                                                            | Rôle Client | Rôle Cloud Temple |
+| Activity                                                                            | Client Role | Cloud Temple Role |
 |----------------------------------------------------------------------------------|-------------|-------------------|
-| Valider que le produit Stockage Objet S3 est conforme au besoin de l'application | __RA__      | __CI__            |
-| Souscrire au service avec les informations nécessaires                           | __RA__      | __I__             |
+| Validate that the S3 Object Storage product meets the application's requirements | __RA__      | __CI__            |
+| Subscribe to the service with the necessary information                          | __RA__      | __I__             |
 
-## Mettre en oeuvre le service
+## Implement the Service
 
-| Activité                                                                             | Rôle Client | Rôle Cloud Temple |
+| Activity                                                                             | Client Role | Cloud Temple Role |
 |------------------------------------------------------------------------------------|-------------|-------------------|
-| Assurer le maintien en condition opérationnelle de la plateforme Stockage Objet S3 | __I__       | __RA__            |
-| Assurer le maintien en condition de sécurité de la plateforme Stockage Objet S3    | __I__       | __RA__            |
-| Créer les objets                                                                   | __RA__      |                   |
-| Créer les clefs d'accès et affecter les droits associés                            | __RA__      |                   |
+| Maintain operational readiness of the S3 Object Storage platform | __I__       | __RA__            |
+| Maintain security readiness of the S3 Object Storage platform    | __I__       | __RA__            |
+| Create objects                                                                   | __RA__      |                   |
+| Create access keys and assign associated permissions                            | __RA__      |                   |
 
-## Opérations récurrentes
+## Recurring Operations
 
-| Activité                                                                           | Rôle Client | Rôle Cloud Temple |
+| Activity                                                                           | Client Role | Cloud Temple Role |
 |------------------------------------------------------------------------------------|-------------|-------------------|
-| Assurer le maintien en condition opérationnelle de la plateforme Stockage Objet S3 | __I__       | __RA__            |
-| Assurer le maintien en condition de sécurité de la plateforme Stockage Objet S3    | __I__       | __RA__            |
-| Assurer l'accessibilité du service Stockage Objet S3                               | __I__       | __RA__            |
-| Conserver et mettre à disposition les journaux de la plateforme Stockage Objet S3  |             | __RA__            |
-| Superviser le bon fonctionnement de la plateforme Stockage Objet S3                | __I__       | __RA__            |
-| Suivre le cycle de vie des objets                                                  | __RA__      |                   |
-| Suivre le cycle de vie des droits sur les objets                                   | __RA__      |                   |
-| Gérer la sécurité logique des objets                                               | __RA__      |                   |
-| Gérer les incidents sur le service Stockage objets S3                              | __I__       | __RA__            |
-| Gérer les problèmes sur le service Stockage objets S3                              | __I__       | __RA__            |
-| Gérer la capacité sur le service Stockage objets S3                                | __I__       | __RA__            |
-| Gérer les évolutions sur le service Stockage objets S3                             | __I__       | __RA__            |
+| Ensure operational maintenance of the S3 Object Storage platform | __I__       | __RA__            |
+| Ensure security maintenance of the S3 Object Storage platform    | __I__       | __RA__            |
+| Ensure accessibility of the S3 Object Storage service                               | __I__       | __RA__            |
+| Retain and make available the logs of the S3 Object Storage platform  |             | __RA__            |
+| Monitor the proper functioning of the S3 Object Storage platform                | __I__       | __RA__            |
+| Track the lifecycle of objects                                                  | __RA__      |                   |
+| Track the lifecycle of object permissions                                   | __RA__      |                   |
+| Manage logical security of objects                                               | __RA__      |                   |
+| Manage incidents on the S3 Object Storage service                              | __I__       | __RA__            |
+| Manage problems on the S3 Object Storage service                              | __I__       | __RA__            |
+| Manage capacity for the S3 Object Storage service                                | __I__       | __RA__            |
+| Manage changes for the S3 Object Storage service                             | __I__       | __RA__            |
 
-## Gestion du chiffrement
+## Encryption Management
 
-| Activité                                                                                 | Rôle Client | Rôle Cloud Temple |
+| Activity                                                                                 | Client Role | Cloud Temple Role |
 |------------------------------------------------------------------------------------------|-------------|-------------------|
-| Gérer le chiffrement des données avant déploiement sur le service Stockage Objet S3      | __RA__      |                   |
-| Gérer le chiffrement sur l'espace de stockage alloué par le service Stockage objet S3    | __A__       | __R__             |
+| Manage data encryption before deployment to the S3 Object Storage service                | __RA__      |                   |
+| Manage encryption on the storage space allocated by the S3 Object Storage service        | __A__       | __R__             |
 
-## Continuité d'activité
+## Business Continuity
 
-| Activité                                                                                  | Rôle Client | Rôle Cloud Temple |
+| Activity | Client Role | Cloud Temple Role |
+|---|---|---|
+| Ensure business continuity of the S3 object storage service | __I__ | __RA__ |
+| Ensure data backup | __RA__ | |
+| Perform periodic data restoration tests | __RA__ | |
+| Maintain the business continuity and disaster recovery plan for applications | __RA__ | |
+
+## Reversibility
+
+| Activity                                                                                  | Client Role | Cloud Temple Role |
 |-------------------------------------------------------------------------------------------|-------------|-------------------|
-| Assurer la continuité d'activité du service de stockage objets S3                         | __I__       | __RA__            |
-| Assurer la sauvegarde des données                                                         | __RA__      |                   |
-| Réaliser des tests périodiques de restauration des données                                | __RA__      |                   |
-| maintenir le plan de continuité d'activité et de reprise d'activité pour les applications | __RA__      |                   |
-
-## Réversibilité
-
-| Activité                                                                                  | Rôle Client | Rôle Cloud Temple |
-|-------------------------------------------------------------------------------------------|-------------|-------------------|
-| Mettre en oeuvre le projet de réversibilité (planification, outils, méthodes, cibles,...) | __RA__      |                   |
-| Exporter les données depuis le service de Stockage Objets S3                              | __RA__      |                   |
-| Supprimer les données sur le service de Stockage Objets S3                                | __RA__      |                   |
-| Détruite les supports de stockage en fin de vie ou en erreur                              |             | __RA__            |
+| Implement the reversibility project (planning, tools, methods, targets,...)               | __RA__      |                   |
+| Export data from the S3 Object Storage service                                            | __RA__      |                   |
+| Delete data on the S3 Object Storage service                                              | __RA__      |                   |
+| Destroy storage media at end of life or in case of error                                  |             | __RA__            |

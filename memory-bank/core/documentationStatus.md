@@ -79,7 +79,9 @@
 
 ## 🌍 Internationalisation (i18n)
 
-**Script de traduction** : `scripts/translate_py/translate.py` — **corrigé le 14/05/2026** (chunking code-block-aware)
+**Script de traduction** : `scripts/translate_py/translate.py`
+
+**État des hash** : ✅ 157/157 fichiers synchronisés (resync 17/05/2026)
 
 | Langue | Statut Build | Qualité Traduction | Actions Requises |
 |--------|--------------|-------------------|------------------|
@@ -88,6 +90,17 @@
 | **ES** | ✅ Succès | Moyenne | Aucune |
 | **IT** | ✅ Succès | Moyenne | Aucune |
 | **DE** | ✅ Succès | Moyenne | Aucune |
+
+### Scripts impactant les traductions
+
+| Script | Écrit docs/ | Écrit i18n/ | Met à jour hash |
+|--------|:-:|:-:|:-:|
+| `scripts/translate_py/translate.py` | ❌ | ✅ | ✅ |
+| `scripts/extract_changelog.py` | ✅ | ✅ | ✅ (corrigé 17/05/2026) |
+| `scripts/generate_models_doc/generate_models_doc.py` | ✅ | ❌ | N/A (déclenche re-traduction) |
+
+> ⚠️ **Règle** : Ne jamais éditer `i18n/` manuellement. Modifier `docs/` puis lancer `translate.py`.
+> L'ancien script `oldies/translate.js` a été supprimé le 17/05/2026.
 
 ## 🏗️ Navigation et Structure
 
@@ -105,19 +118,26 @@
 
 ## 🛠️ Maintenance Technique
 
+### Actions Récentes (session 17/05/2026)
+
+- [x] Resync des hash de traduction (102 mis à jour, 34 ajoutés, 55 orphelins nettoyés)
+- [x] Nettoyage changelog_produits.md (tronqué avant v4.0, ~2600 → ~420 lignes)
+- [x] Correction extract_changelog.py pour mettre à jour les hash après génération
+- [x] Suppression de l'ancien script oldies/translate.js
+- [x] Mise à jour README.md et scripts/README.md (doc traduction complète)
+- [x] Mise à jour Memory Bank
+
 ### Actions Récentes (session 14/05/2026)
 
 - [x] Fix permissions git (core.fileMode false)
 - [x] Mise à jour changelog (3 entrées manquantes : stockage IOPS, sauvegarde IaaS, DB sizing)
 - [x] Fix chunking traduction (code-block-aware dans ContentSplitter)
-- [x] Mise à jour Memory Bank
 
 ### Actions Futures
 
-- [ ] Relancer les traductions avec le script corrigé pour les fichiers modifiés
 - [ ] Ajouter des tutoriels pour Managed MariaDB et PostgreSQL
 - [ ] Enrichir VM Instances avec cas d'usage avancés
 
 ---
 
-*Dernière mise à jour : 14/05/2026*
+*Dernière mise à jour : 17/05/2026*

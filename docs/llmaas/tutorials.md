@@ -325,7 +325,7 @@ Ce tutoriel adapte le pipeline RAG précédent pour utiliser Qdrant.
     * **`force_recreate=True`** : Pour ce tutoriel, nous utilisons ce paramètre pour nous assurer que la collection est vide à chaque exécution. En production, vous le mettriez à `False` pour conserver vos données.
 3. **Le reste du pipeline** (configuration du LLM, création de la chaîne `RetrievalQA`) est identique, ce qui démontre la flexibilité de LangChain : il suffit de changer la source du `retriever` (le chercheur d'informations) pour passer de FAISS à Qdrant.
 
-:::info[Prérequis : Lancer Qdrant]
+:::info Prérequis : Lancer Qdrant
 Pour ce tutoriel, vous aurez besoin d'une instance Qdrant. Vous pouvez la lancer facilement avec Docker :
 
 ```bash
@@ -335,7 +335,6 @@ docker pull qdrant/qdrant
 # 2. Démarrer le conteneur Qdrant
 docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
-
 :::
 
 Le code ci-dessous montre comment adapter le pipeline RAG pour utiliser Qdrant comme base de données vectorielle.
@@ -670,7 +669,7 @@ def semantic_kernel_simulation():
     text_to_summarize = """
     L'intelligence artificielle (IA) transforme de nombreux secteurs industriels en automatisant les tâches, 
     en optimisant les processus et en permettant des analyses prédictives avancées. 
-    Cloud Temple, avec son produit LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
+    Cloud Temple, avec son offre LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
     d'intégrer ces capacités d'IA tout en garantissant la sécurité et la confidentialité de leurs données.
     """
     
@@ -873,7 +872,7 @@ def setup_and_run_llamaindex():
     # 6. Création du moteur de requête et interrogation de la base de connaissances
     print("6. Création du moteur de requête et interrogation...")
     query_engine = index.as_query_engine()
-    question = "Quelles sont les garanties de souveraineté de le produit LLMaaS ?"
+    question = "Quelles sont les garanties de souveraineté de l'offre LLMaaS ?"
     response = query_engine.query(question)
     
     print(f"\nQuestion: {question}")
@@ -897,18 +896,18 @@ Ce tutoriel vous guide pour configurer l'extension CLINE dans Visual Studio Code
 2. **Créer un nouveau modèle** : Ajoutez une nouvelle configuration de modèle.
 3. **Remplir les champs** : Configurez les champs comme suit, en vous basant sur l'image ci-dessous.
 
-    ![Configuration de CLINE pour LLMaaS](./images/cline_configuration.png)
+    ![Configuration de CLINE pour LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
     * **API Provider**: Sélectionnez `OpenAI Compatible`.
     * **Base URL**: Entrez l'endpoint de l'API LLMaaS de Cloud Temple : `https://api.ai.cloud-temple.com/v1`.
     * **OpenAI Compatible API Key**: Collez la clé d'API que vous avez générée depuis la console Cloud Temple.
-
+    
     :::tip Génération de la clé API
     Pour générer votre clé API, rendez-vous dans la console Cloud Temple, section **LLMaaS** > **Clés API**, puis cliquez sur **"Créer une clé API"**.
-
-    ![Création d'une clé API depuis la console](./images/console_create_api_key.png)
+    
+    ![Création d'une clé API depuis la console](@site/docs/llmaas/images/console_create_api_key.png)
     :::
-
+    
     * **Model ID**: Spécifiez le modèle que vous souhaitez utiliser, par exemple `qwen3-coder:30b`. Vous pouvez trouver la liste des modèles disponibles dans la section [Modèles](./models.md).
     * **Model Configuration**:
         * **Supports Images**: Cochez cette case si le modèle supporte les images.
@@ -928,18 +927,17 @@ Vous trouverez dans le répertoire GitHub ci-dessous une collection d'exemples d
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
 Vous y trouverez des guides pratiques pour :
+- __Extraction d'Informations et Analyse de Texte :__ Capacité à analyser des documents pour en extraire des données structurées telles que des entités, des événements, des relations et des attributs, en s'appuyant sur des ontologies spécifiques à des domaines (ex: juridique, RH, IT).
 
-* **Extraction d'Informations et Analyse de Texte :** Capacité à analyser des documents pour en extraire des données structurées telles que des entités, des événements, des relations et des attributs, en s'appuyant sur des ontologies spécifiques à des domaines (ex: juridique, RH, IT).
+- __Interaction Conversationnelle et Chatbots :__ Développement d'agents conversationnels capables de dialoguer, de maintenir un historique d'échange, d'utiliser des instructions système (prompts système) et d'invoquer des outils externes.
 
-* **Interaction Conversationnelle et Chatbots :** Développement d'agents conversationnels capables de dialoguer, de maintenir un historique d'échange, d'utiliser des instructions système (prompts système) et d'invoquer des outils externes.
+- __Transcription Audio (Speech-to-Text) :__ Conversion de contenu audio en texte, y compris pour des fichiers volumineux, grâce à des techniques de découpage, de normalisation et de traitement par lots.
 
-* **Transcription Audio (Speech-to-Text) :** Conversion de contenu audio en texte, y compris pour des fichiers volumineux, grâce à des techniques de découpage, de normalisation et de traitement par lots.
+- __Traduction de Texte :__ Traduction de documents d'une langue à une autre, en gérant le contexte sur plusieurs segments pour améliorer la cohérence.
 
-* **Traduction de Texte :** Traduction de documents d'une langue à une autre, en gérant le contexte sur plusieurs segments pour améliorer la cohérence.
+- __Gestion et Évaluation des Modèles :__ Listage des modèles de langage disponibles via l'API, consultation de leurs spécifications et exécution de tests pour comparer leurs performances.
 
-* **Gestion et Évaluation des Modèles :** Listage des modèles de langage disponibles via l'API, consultation de leurs spécifications et exécution de tests pour comparer leurs performances.
-
-* **Streaming de Réponses en Temps Réel :** Démonstration de la capacité à recevoir et afficher les réponses des modèles de manière progressive (token par token), essentielle pour les applications interactives.
-* **Pipeline RAG avec Base de Connaissances en Mémoire :** Démonstrateur RAG pédagogique pour illustrer le fonctionnement du Retrieval-Augmented Generation. Utilise l'API LLMaaS pour l'embedding et la génération, avec stockage des vecteurs en mémoire (FAISS) pour une compréhension claire du processus.
-* **Pipeline RAG avec Base de Données Vectorielle (Qdrant) :** Démonstrateur RAG complet et conteneurisé utilisant Qdrant comme base de données vectorielle. L'API LLMaaS est utilisée pour l'embedding des documents et la génération de réponses augmentées.
-* **OCR & Analyse de Documents (DeepSeek-OCR) :** Guide complet et outil de démonstration pour convertir des images et PDF en Markdown structuré, extraire des tableaux et transcrire des formules mathématiques. Voir la [documentation dédiée](./ocr).
+- __Streaming de Réponses en Temps Réel :__ Démonstration de la capacité à recevoir et afficher les réponses des modèles de manière progressive (token par token), essentielle pour les applications interactives.
+- __Pipeline RAG avec Base de Connaissances en Mémoire :__ Démonstrateur RAG pédagogique pour illustrer le fonctionnement du Retrieval-Augmented Generation. Utilise l'API LLMaaS pour l'embedding et la génération, avec stockage des vecteurs en mémoire (FAISS) pour une compréhension claire du processus.
+- __Pipeline RAG avec Base de Données Vectorielle (Qdrant) :__ Démonstrateur RAG complet et conteneurisé utilisant Qdrant comme base de données vectorielle. L'API LLMaaS est utilisée pour l'embedding des documents et la génération de réponses augmentées.
+- __OCR & Analyse de Documents (DeepSeek-OCR) :__ Guide complet et outil de démonstration pour convertir des images et PDF en Markdown structuré, extraire des tableaux et transcrire des formules mathématiques. Voir la [documentation dédiée](./ocr).

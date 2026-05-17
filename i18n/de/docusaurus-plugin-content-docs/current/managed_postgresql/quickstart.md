@@ -1,24 +1,24 @@
 ---
-title: Erste-Schritte-Leitfaden
+title: Schnellstartanleitung
 ---
 
-Willkommen beim Erste-Schritte-Leitfaden für **Managed PostgreSQL** von Cloud Temple.
+Willkommen zur Schnellstartanleitung für **PostgreSQL Managed** Cloud Temple.
 
-Das Ziel dieses Abschnitts ist es, Sie zu den notwendigen Ressourcen zu führen, um Ihr Produkt in Betrieb zu nehmen.
+Ziel dieses Abschnitts ist es, Sie zu den notwendigen Ressourcen zu leiten, damit Sie Ihr Produkt in die Hand nehmen können.
 
 ---
 
 ## Bevor Sie beginnen
 
-> wird gerade verfasst
+> in Bearbeitung
 ---
 
-## Zugriff auf Ihren Managed PostgreSQL-Cluster
+## Zugriff auf Ihren verwalteten PostgreSQL-Cluster
 
-> wird gerade verfasst
+> in Arbeit
 ---
 
 ## Ihre Berechtigungen
 
-> wird gerade verfasst
+> in Bearbeitung
 ---

@@ -27,13 +27,12 @@ L'API LLMaaS inclut les headers suivants dans chaque réponse :
 ## Exemples
 
 ### Requête cURL
-
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user", 
@@ -46,7 +45,6 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ```
 
 ### Réponse
-
 ```json
 {
   "backend": {
@@ -65,7 +63,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   ],
   "created": 1749110753,
   "id": "chatcmpl-ollama-14b812ef-b21f-430c-b93c-d0d1bf653806",
-  "model": "granite3.3:8b",
+  "model": "gpt-oss:120b",
   "object": "chat.completion",
   "usage": {
     "completion_tokens": 200,
@@ -91,7 +89,6 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ## URL de base
 
 L'URL de base pour toutes les requêtes API est :
-
 ```
 https://api.ai.cloud-temple.com/v1/
 ```
@@ -100,7 +97,11 @@ https://api.ai.cloud-temple.com/v1/
 
 - `/chat/completions` : Génération de réponses conversationnelles
 - `/completions` : Complétion de texte simple
-- `/embeddings` : Crée un vecteur d'embedding représentant le texte d'entrée
+- `/embeddings` : Vectorisation pour la recherche sémantique et RAG
+- `/rerank` et `/v2/rerank` : Réordonnancement de résultats (compatible Cohere SDK)
+- `/audio/transcriptions` : Transcription audio batch (Whisper)
+- `/audio/speech` : Synthèse vocale (TTS)
+- `/images/generations` : Génération d'images
 - `/models` : Liste des modèles disponibles
 
 ### Exemple : Liste des modèles
@@ -111,18 +112,17 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```
 
 **Réponse** :
-
 ```json
 {
   "object": "list",
   "data": [
     {
-      "id": "granite3.3:8b",
+      "id": "gpt-oss:120b",
       "object": "model",
       "created": 1749110897,
       "owned_by": "CloudTemple",
-      "root": "granite3.3:8b",
-      "aliases": ["granite3.3:8b"],
+      "root": "gpt-oss:120b",
+      "aliases": ["gpt-oss:120b"],
       "parent": null,
       "max_model_len": 60000,
       "permission": [
