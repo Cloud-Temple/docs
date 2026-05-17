@@ -14,17 +14,17 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 Connectez-vous à la **Console Cloud Temple** et naviguez vers **Cloud Public > VM Instances** depuis le menu principal.
 
-![Dashboard Console Cloud Temple](./images/vm_instances_dashboard_overview.png)
+![Dashboard Console Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
 
 Le tableau de bord vous présente un aperçu des ressources VM Instances consommées (stockage, CPU, RAM) ainsi que le nombre de machines virtuelles actives.
 
 Cliquez sur **Cloud Public** dans la sidebar gauche pour déployer le sous-menu, puis sélectionnez **VM Instances**.
 
-![Navigation vers VM Instances](./images/vm_instances_navigation_cloud_public.png)
+![Navigation vers VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
 
 Vous arrivez sur la liste de vos VM Instances :
 
-![Liste des VM Instances](./images/vm_instances_liste.png)
+![Liste des VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
 Le tableau affiche pour chaque VM : son nom, son statut (Allumée / Éteinte), la zone de disponibilité, la famille d'instance, le modèle, ainsi que les ressources allouées (CPU, RAM, Taille disque).
 
@@ -34,7 +34,7 @@ Cliquez sur le bouton **+ Nouvelle machine virtuelle** en haut à droite pour ou
 
 ### Étape 1 — Famille d'instance
 
-![Étape 1 : Famille d'instance](./images/vm_instances_creation_etape1_famille.png)
+![Étape 1 : Famille d'instance](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
 
 Choisissez la **famille d'instance** adaptée à votre charge de travail :
 
@@ -49,13 +49,13 @@ La famille **Performance** (vCPU dédiés) est disponible via le gabarit personn
 
 ### Étape 2 — Zone de disponibilité
 
-![Étape 2 : Zone de disponibilité](./images/vm_instances_creation_etape2_az.png)
+![Étape 2 : Zone de disponibilité](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
 
 Sélectionnez la **zone de disponibilité (AZ)** dans laquelle votre VM sera hébergée (ex : `fr1-az01`).
 
 ### Étape 3 — Choisir un template
 
-![Étape 3 : Choisir un template](./images/vm_instances_creation_etape3_template.png)
+![Étape 3 : Choisir un template](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
 
 Parcourez le catalogue d'images disponibles via les onglets **OS** et **Appliances** :
 
@@ -67,7 +67,7 @@ Sélectionnez le système d'exploitation souhaité et choisissez la version dans
 
 ### Étape 4 — Gabarit
 
-![Étape 4 : Gabarit](./images/vm_instances_creation_etape4_gabarit.png)
+![Étape 4 : Gabarit](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape4_gabarit.png)
 
 Choisissez un **gabarit prédéfini** ou créez un **gabarit Custom** :
 
@@ -77,7 +77,7 @@ Choisissez un **gabarit prédéfini** ou créez un **gabarit Custom** :
 
 ### Étape 5 — Nom et politique de sauvegarde
 
-![Étape 5 : Nom et politique de sauvegarde](./images/vm_instances_creation_etape5_nom_sauvegarde.png)
+![Étape 5 : Nom et politique de sauvegarde](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
 
 Renseignez :
 
@@ -90,7 +90,7 @@ Cette étape affiche également un récapitulatif du système d'exploitation sé
 
 ### Étape 6 — Cloud Init
 
-![Étape 6 : Cloud Init](./images/vm_instances_creation_etape6_cloudinit.png)
+![Étape 6 : Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
 
 Cette étape est **optionnelle**. Elle permet de pré-configurer votre VM au premier démarrage via deux éditeurs :
 
@@ -112,7 +112,7 @@ Une case à cocher permet de **supprimer le disque de configuration Cloud Init**
 
 ### Étape 7 — Disques
 
-![Étape 7 : Disques](./images/vm_instances_creation_etape7_disques.png)
+![Étape 7 : Disques](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape7_disques.png)
 
 Configurez le ou les disques de votre VM :
 
@@ -128,7 +128,7 @@ Deux types de stockage sont disponibles :
 
 ### Étape 8 — Adaptateurs Réseaux
 
-![Étape 8 : Adaptateurs Réseaux](./images/vm_instances_creation_etape8_reseau.png)
+![Étape 8 : Adaptateurs Réseaux](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape8_reseau.png)
 
 Associez votre VM à un réseau depuis le menu déroulant. Deux types de réseaux sont disponibles :
 
@@ -137,7 +137,7 @@ Associez votre VM à un réseau depuis le menu déroulant. Deux types de réseau
 
 ### Étape 9 — Sommaire
 
-![Étape 9 : Sommaire](./images/vm_instances_creation_etape9_sommaire.png)
+![Étape 9 : Sommaire](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
 
 Vérifiez le récapitulatif complet avant de lancer le provisionnement :
 
@@ -155,7 +155,7 @@ Depuis la liste, cliquez sur une VM pour déployer son panneau de détail. Quatr
 
 ### Onglet Informations
 
-![Détail VM - Informations](./images/vm_instances_detail_informations.png)
+![Détail VM - Informations](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
 
 Consultez et modifiez les paramètres de votre VM :
 - Nom, UUID, zone de disponibilité
@@ -167,19 +167,19 @@ Des icônes d'actions permettent de **démarrer**, **arrêter**, **redémarrer**
 
 ### Onglet Disques
 
-![Détail VM - Disques](./images/vm_instances_detail_disques.png)
+![Détail VM - Disques](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
 
 Consultez les disques attachés et ajoutez des volumes supplémentaires via le bouton **+ Ajouter un disque**.
 
 ### Onglet Adaptateurs Réseaux
 
-![Détail VM - Réseau](./images/vm_instances_detail_reseau.png)
+![Détail VM - Réseau](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_reseau.png)
 
 Consultez les interfaces réseau de la VM (nom du réseau, adresse MAC, adresse IPv4/IPv6).
 
 ### Onglet Snapshots
 
-![Détail VM - Snapshots](./images/vm_instances_detail_snapshots.png)
+![Détail VM - Snapshots](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_snapshots.png)
 
 Créez et gérez des snapshots de votre VM via le bouton **+ Créer un snapshot**.
 

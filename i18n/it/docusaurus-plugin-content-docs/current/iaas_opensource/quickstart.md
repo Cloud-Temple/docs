@@ -22,206 +22,207 @@ import openIaasVmConsoleClipboard from '@site/docs/iaas_opensource/images/open_i
 
 ### Gestione delle macchine virtuali
 
-L'interfaccia di gestione delle macchine virtuali è disponibile nella Console nel menu __'OpenIaaS'__ situato sulla barra verde a sinistra dello schermo.
+L'interfaccia di gestione delle tue macchine virtuali è disponibile nella Console nel menu __'OpenIaaS'__ situato nella barra verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 
-Nella sezione __'Macchine virtuali'__, puoi accedere all'elenco delle tue macchine virtuali ospitate sul tuo Cloud di fiducia.
+Nella sezione __'Macchine virtuali'__, ha accesso all'elenco delle sue macchine virtuali ospitate sul suo Cloud attendibile.
 
 <img src={openIaasVirtualMachinesList} />
 
-Per ogni macchina virtuale, hai accesso alle seguenti informazioni:
+Ha accesso alle seguenti informazioni, per ogni macchina virtuale:
 
-- Il nome.
-- Lo stato (spenta, accesa).
-- La zona di disponibilità (AZ).
-- Il sistema operativo.
+- Il suo nome.
+- Il suo stato (spento, acceso).
+- La sua zona di disponibilità (AZ).
+- Il suo sistema operativo.
 - La quantità di CPU virtuali (vCPU).
 - La quantità di memoria virtuale (vRAM).
 
 ### Azioni sulle macchine virtuali
 
-Le seguenti azioni sono disponibili da questa interfaccia:
+Le seguenti azioni sono possibili da questa interfaccia:
 
 - Aggiornare l'elenco delle macchine virtuali.
 - Filtrare l'elenco.
-- Cerca una macchina virtuale in base al nome.
+- Cercare una macchina virtuale per nome.
 - Creare una nuova macchina virtuale.
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Quando fai clic sulla freccia verde a destra della lista per una macchina virtuale, accedi a tutte le informazioni relative a tale macchina.
+Quando si fa clic sulla freccia a discesa verde sulla destra dell'elenco per una macchina virtuale, si accede a tutte le informazioni relative a essa.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Un banner rapido consente di eseguire le seguenti azioni:
+Una barra rapida consente di eseguire le seguenti azioni:
 
 <img src={openIaasVirtualMachineActions} />
 
 - Accendere la macchina virtuale.
-- Spegnere la macchina virtuale.
-- Riavviare la macchina virtuale.
+- Spegnerla.
+- Riavviarla.
 - Aprire la console.
 - Montare un ISO.
 - Smontare un ISO.
-- Convertire la macchina virtuale in un template.
-- Spostare la macchina virtuale.
-- Rinominare la macchina virtuale.
-- Eliminare la macchina virtuale.
+- Convertire la macchina virtuale in modello.
+- Spostarla.
+- Rinominarla.
+- Eliminarla.
 
-Nella scheda '__Generali__', trovi informazioni dettagliate sulla tua macchina virtuale, come la posizione fisica (AZ, Pool, Host), la RAM, il CPU, gli indirizzi IP e altri dati.
+Nella scheda di informazione '__Generali__', si trovano informazioni dettagliate relative alla propria macchina virtuale, come la posizione fisica (AZ, Pool, Host), la RAM, la CPU, gli indirizzi IP e altro.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Una scheda '__Avanzate__' permette di consultare informazioni più specifiche:
+Una scheda '__Avanzate__' consente di consultare informazioni più specifiche:
 
 - UUID della macchina virtuale
 - Guest tools
-- Sistema operativo ospite
-- Lettore DVD
+- Sistema operativo guest
+- Unità DVD
 
-Nonché di modificare alcune opzioni, come:
+Nonché modificare alcune opzioni quali:
 
 - Ordine di avvio
-- Secure Boot
+- Secure boot
 - Avvio automatico (impossibile se non è associata alcuna politica di backup alla VM)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
 ### Console di una macchina virtuale
 
-La console di una macchina virtuale è accessibile dalla lista delle macchine virtuali facendo clic sull'icona __'Console'__:
+La console di una macchina virtuale è accessibile dall'elenco delle macchine virtuali facendo clic sull'icona __'Console'__ :
 
 <img src={openIaasVmConsoleBtn} />
 
-Si apre un nuovo tab del browser, che mostra la console della tua macchina virtuale, basata su un client VNC:
+Si apre una nuova scheda del browser e viene visualizzata la console della tua macchina, basata su un client VNC :
 
 <img src={openIaasVmConsoleOpen} />
 
-Nel menu VNC è possibile:
+Nel menu VNC è possibile :
 
 - richiedere l'invio di tasti particolari,
-- forzare un mapping della tastiera (nel caso in cui la macchina virtuale abbia una disposizione della tastiera diversa da quella del tuo browser web),
-- aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio appunti non funzionante,
-- passare alla modalità schermo intero,
-- modificare la dimensione della finestra (scaling).
+- forzare la mappatura della tastiera (nel caso in cui la tua macchina virtuale non abbia la stessa disposizione della tastiera del tuo browser web),
+- aprire un campo di testo da inviare alla macchina. Questo metodo sostituisce il vecchio sistema di appunti non funzionante,
+- passare alla modalità a schermo intero,
+- modificare le dimensioni della finestra (ridimensionamento).
 
-#### Keyboard layout support
+#### Supporto layout tastiera
 
-The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.  
-Here is a summary of the possible scenarios:
+La digitazione eseguita nella console dipende dalla lingua della tastiera del browser web, dalla lingua della tastiera della macchina virtuale e dall'attivazione o meno dell'opzione 'enforce keyboard' a sinistra dello schermo.
+Di seguito una sintesi delle possibili situazioni:
 
-| Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
-| ------------------------------------------ | --------------------------------- | ---------------------------------- | ---------------------- |
-| French                                     | French                            | No                                 | ✅                     |
-| French                                     | French                            | Yes                                | Not recommended        |
-| French                                     | English                           | No                                 | English                |
-| French                                     | English                           | Yes                                | ✅                     |
-| English                                    | French                            | No                                 | French                 |
-| English                                    | French                            | Yes                                | ✅                     |
-| English                                    | English                           | No                                 | ✅                     |
-| English                                    | English                           | Yes                                | Not recommended        |
+| Lingua tastiera macchina fisica (input) | Lingua tastiera macchina virtuale | Opzione 'enforce keyboard' selezionata | Risultato (output) |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
+| Francese                                          | Francese                                  | No                                     | ✅                       |
+| Francese                                          | Francese                                  | Sì                                     | Non consigliato            |
+| Francese                                          | Inglese                                   | No                                     | Inglese                  |
+| Francese                                          | Inglese                                   | Sì                                     | ✅                       |
+| Inglese                                           | Francese                                  | No                                     | Francese                 |
+| Inglese                                           | Francese                                  | Sì                                     | ✅                       |
+| Inglese                                           | Inglese                                   | No                                     | ✅                       |
+| Inglese                                           | Inglese                                   | Sì                                     | Non consigliato            |
 
-__Note__:
+__Nota__ :
 
-- If certain characters do not appear during manual input, you can try using the clipboard.
+- Se alcuni caratteri non vengono immessi manualmente, puoi provare tramite gli appunti.
 
 #### Funzionamento degli appunti
 
-Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il pulsante "enforce keyboard" influisce sul modo in cui questa stringa di caratteri verrà trasmessa alla tua macchina virtuale. Se durante l'inserimento nella console riscontri che l'opzione "enforce keyboard" è necessaria, assicurati di attivarla prima di utilizzare la funzione degli appunti.  
-Questa funzionalità può essere utilizzata per inviare una password, un comando o il contenuto di un file di configurazione, ad esempio:
+Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il tasto "enforce keyboard" influenza il modo in cui questa stringa di caratteri
+verrà trasmessa alla tua macchina virtuale. Se durante la digitazione nella console riscontri che l'opzione "enforce keyboard" è necessaria, ricordati di attivarla prima di utilizzare gli appunti.  
+Questa funzionalità può essere utilizzata per l'invio di una password, di un comando o del contenuto di un file di configurazione, ad esempio:
 
 <img src={openIaasVmConsoleClipboard} />
 
-Al clic sul pulsante "Incolla", il contenuto del campo di testo viene inviato alla tua macchina virtuale.
+Al clic sul pulsante "Paste", il contenuto del tuo campo di testo viene inviato alla tua macchina virtuale.
 
-## Replica
+## Replicazione
 
-### Accesso alla gestione della replica
+### Accesso alla gestione della replicazione
 
-L'interfaccia di gestione della replica è disponibile nella Console nel menu __'OpenIaaS'__ > __'Replica'__, situato nella barra verde a sinistra dello schermo.
+L'interfaccia di gestione della replicazione è disponibile nella Console nel menu __'OpenIaaS'__ > __'Replicazione'__ situato nella barra verde a sinistra dello schermo.
 
 <img src={openIaasReplicationMenu} />
 
-### Creazione di una politica di replica
+### Creazione di una politica di replicazione
 
-Nella sezione __'Replica'__, è possibile creare politiche che definiscono i parametri di protezione delle proprie macchine virtuali.
+Nella sezione __'Replicazione'__, è possibile creare politiche che definiscono i parametri di protezione delle macchine virtuali.
 
 <img src={openIaasReplicationPoliciesView} />
 
-Per creare una nuova politica, fare clic sul pulsante __'Aggiungi una politica'__. Si aprirà un modulo con le seguenti fasi:
+Per creare una nuova politica, fai clic sul pulsante __'Aggiungi politica'__. Si apre un modulo con i passaggi seguenti:
 
-#### Step 1: General Information
+#### Passo 1 : Informazioni generali
 
-- __Name__ : Provide an explicit name for your policy
-- __Frequency__ : Select the replication interval (1-59 minutes or 1-24 hours)
+- __Nome__ : Assegna un nome esplicito alla tua politica
+- __Frequenza__ : Seleziona l'intervallo di replica (1-59 minuti o 1-24 ore)
 
 <img src={openIaasReplicationPolicyForm1} />
 
-#### Step 2: Storage Selection
+#### Fase 2: Selezione dello storage
 
-- __Availability Zone__: Select the destination zone
-- __Pool__: Choose the resource pool
-- __Block Storage__: Select the destination storage
+- __Zona di disponibilità__ : Seleziona la zona di destinazione
+- __Pool__ : Scegli il pool di risorse
+- __Block Storage__ : Seleziona lo storage di destinazione
 
 <img src={openIaasReplicationPolicyForm2} />
 
-#### Passo 3: Convalida
+#### Fase 3: Validazione
 
-Verifica le impostazioni e fai clic su __'Aggiungi'__ per creare la politica.
+Verificare i parametri e fare clic su __'Aggiungi'__ per creare la policy.
 
 ### Associazione di una VM alla replica
 
-Per proteggere una macchina virtuale, accedi ai dettagli della tua VM dalla lista delle macchine virtuali.
+Per proteggere una macchina virtuale, accedi ai dettagli della tua VM dall'elenco delle macchine virtuali.
 
-Nella vista dettagliata della VM, troverai una sezione __'Replica'__:
+Nella vista dettagliata della VM, troverai una sezione __'Replica'__ :
 
 <img src={openIaasVmReplicationSection} />
 
-Passaggi per associare una VM alla replica:
+I passaggi per associare una VM alla replica :
 
-1. Clicca su __'Configura una politica'__
-2. Seleziona la politica di replica desiderata dall'elenco a discesa
+1. Clicca su __'Configura una policy'__
+2. Seleziona la policy di replica desiderata dall'elenco a discesa
 3. Conferma la tua scelta
 
-La replica verrà avviata automaticamente dopo la conferma.
+La replica viene avviata automaticamente dopo la conferma.
 
-### Gestione delle politiche e dei replica
+### Gestione delle politiche e repliche
 
-#### Visualizzazione delle politiche
+#### Vista delle politiche
 
-L'opzione __'Politiche'__ ti permette di visualizzare tutte le tue politiche di replica:
+La scheda __'Politiche'__ consente di visualizzare tutte le proprie politiche di replicazione:
 
 <img src={openIaasReplicationPoliciesTable} />
 
-Per ogni politica hai accesso alle seguenti informazioni:
+Sono disponibili le seguenti informazioni per ogni politica:
 
-- Il nome della politica
-- La frequenza di replica
+- Il nome
+- La frequenza di replicazione
 - La zona di disponibilità di destinazione
 - Il pool associato
 - Lo storage a blocchi utilizzato
 
 Le azioni disponibili includono:
 
-- Visualizzare i dettagli di ciascuna politica
-- Modificare i parametri
+- Visualizzare i dettagli di ogni politica
+- Modificare le impostazioni
 - Eliminare una politica non utilizzata
 
-#### Vista dei repliche
+#### Vista delle repliche
 
-Il tab __'Repliche'__ mostra tutte le macchine virtuali in corso di replica:
+La scheda __'Repliche'__ visualizza tutte le macchine virtuali in fase di replica:
 
 <img src={openIaasReplicationReplicasTable} />
 
 È possibile visualizzare:
 
 - Il nome delle macchine virtuali replicate
-- Il percorso di origine e destinazione
+- La posizione di origine e destinazione
 - La politica di replica associata
 
 Le azioni disponibili includono:
 
-- Esportazione dei dati nel formato CSV
-- Consultazione dei dettagli di replica
+- Esportazione dei dati in formato CSV
+- Visualizzazione dei dettagli di replica
 - Gestione delle repliche per politica

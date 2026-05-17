@@ -5,113 +5,111 @@ sidebar_position: 1
 
 # Key Concepts of Managed MariaDB
 
-This section presents the fundamental concepts of our **Managed MariaDB** service. Understanding these principles will help you get the most out of your managed database, aligning its capabilities with your application needs and security requirements.
+This section outlines the core concepts of our **Managed MariaDB** service. Understanding these principles will help you get the most out of your managed database by aligning its capabilities with your application requirements and security requirements.
 
 ## Sovereignty and SecNumCloud Compliance
 
-At the heart of our offering is **digital sovereignty**. The Managed MariaDB service is entirely hosted on the Cloud Temple infrastructure, qualified **SecNumCloud 3.2** by the ANSSI.
+At the core of our product lies **digital sovereignty**. The MariaDB Managed service is fully hosted on the Cloud Temple infrastructure, certified **SecNumCloud 3.2** by ANSSI.
 
-- **100% French hosting**: Your data remains on national territory, protected from extraterritorial laws.
-- **Native compliance**: The solution is designed to meet the strictest regulatory requirements (GDPR, HDS, LPM, NIS2, PCI-DSS).
-- **Open Source and Reversibility**: By relying on open standards such as MariaDB Community Server and Galera, we guarantee the absence of technological dependency (*vendor lock-in*) and full data portability.
+- **100% Hosting in France**: Your data remains on national territory, shielded from extraterritorial laws.
+- **Native Compliance**: The solution is designed to meet the strictest regulatory requirements (RGPD, HDS, LPM, NIS2, PCI-DSS).
+- **Open Source and Reversibility**: By leveraging open standards such as MariaDB Community Server and Galera, we guarantee freedom from technological dependency (*vendor lock-in*) and complete portability of your data.
 
 ## High Availability Architecture: Galera Cluster + MaxScale
 
-For distributed environments, our service relies on **Galera Cluster** to offer high availability without data loss.
+For distributed environments, our product relies on **Galera Cluster** to provide high availability without data loss.
 
-- **Synchronous Replication**: Unlike traditional asynchronous replication, each transaction is validated on all cluster nodes *before* being confirmed. This guarantees a **Recovery Point Objective (RPO) of zero**: no validated data can be lost in the event of a failure.
-- **Multi-AZ Distribution**: The cluster is spread across three distinct Availability Zones (AZ). The failure of an entire datacenter causes no service interruption or data loss.
-- **Automatic Failover**: In the event of an incident on a node, traffic is automatically redirected to healthy nodes, ensuring a **minimal Recovery Time Objective (RTO)**.
-- **MaxScale Proxy**: MaxScale is an advanced proxy, router and load balancer for MariaDB. It manages automatic failover in replication, balances requests (writes to primary, reads to replicas via ReadWriteSplit) and offers filters for cache, audit (QLAfilter) or security (RegexFilter).
+- **Synchronous Replication** : Unlike traditional asynchronous replication, each transaction is validated across all cluster nodes *before* being confirmed. This ensures a **Recovery Point Objective (RPO) of zero** : no committed data can be lost in the event of a failure.
+- **Multi-AZ Distribution** : The cluster is distributed across three distinct Availability Zones (AZ). The failure of an entire datacenter causes no service interruption or data loss.
+- **Automatic Failover** : In the event of a node incident, traffic is automatically redirected to healthy nodes, ensuring a **minimal Recovery Time Objective (RTO)**.
+- **MaxScale Proxy** : MaxScale is an advanced proxy, router, and load balancer for MariaDB. It handles automatic replication failover, balances queries (writes vers primary, reads vers replicas via ReadWriteSplit), and provides filters for caching, auditing (QLAfilter), or security (RegexFilter).
 
 ## Deployment Models
 
-We offer two models to adapt to the criticality of your workloads.
+We offer two models to accommodate the criticality of your workloads.
 
 ### 1. StandAlone
 
 This model deploys a single instance of the MariaDB engine.
 
-- **Use case**: This deployment model is perfectly suited for simple applications, such as CMS, which use only a single endpoint to connect to databases.
-- **Resilience**: Although it is a single instance, the underlying storage is replicated across 3 AZs, allowing automatic restart on another AZ in the event of hardware failure.
-- **SLA**: 99.9% (outside maintenance windows).
+- **Use case**: This deployment model is perfectly suited for simple applications, such as CMSs, which use only a single endpoint to connect to databases.
+- **Resilience**: Although it is a single instance, the underlying storage is replicated across 3 AZs, allowing automatic restart on another AZ in case of hardware failure.
+- **SLA**: 99.9% (excluding maintenance windows).
 
 ### 2. Distributed
 
-This model deploys a **Galera cluster of 3 instances** of the MariaDB engine, supplemented by a **MaxScale** proxy.
+This model deploys a **Galera cluster of 3 instances** of the MariaDB engine, complemented by a **MaxScale** proxy.
 
-- **Use case**: This deployment model is perfectly suited for applications with distributed access, such as data or business intelligence applications, which benefit from read-only access without impact on data ingestion.
+- **Use Case**: This deployment model is ideally suited for applications with distributed access, such as data or business intelligence applications, which benefit from read-only access without impacting data ingestion.
 - **Components**:
   - **3 MariaDB Nodes**: One primary read-write (RW) node and two secondary read-only (RO) nodes.
-  - **MaxScale Proxy**: An intelligent router that distributes requests. It sends writes to the primary node and distributes reads across all nodes (`ReadWriteSplit`), thus optimising performance.
-- **SLA**: 99.9% (outside maintenance windows).
+  - **MaxScale Proxy**: An intelligent router that distributes queries. It routes writes to the primary node and distributes reads across all nodes (`ReadWriteSplit`), thereby optimizing performance.
+- **SLA**: 99.9% (excluding maintenance windows).
 
-> **Important Note**: It is not possible to change the deployment model of an existing cluster (for example, from *StandAlone* to *Distributed*). This operation requires the creation of a new cluster in the desired model, via a restore.
+> **Important Note**: It is not possible to change the deployment model of an existing cluster (for example, from *StandAlone* to *Distributed*). This operation requires creating a new cluster in the desired model via a restore.
 
 ## Backup and Restoration (PITR)
 
-The protection of your data is ensured by a dual backup strategy.
+Your data protection is ensured by a dual backup strategy.
 
-1. **Physical Backup and Point-in-Time Recovery**:
-    - We perform daily complete physical backups (`mariabackup`) (without service interruption).
-    - With the **distributed** version, transaction logs (*binary logs*) are continuously archived. This combination allows a PiTR restore up to the moment just before an incident.
+1. **Physical Backup and Point-in-Time Recovery** :
+    - We perform complete daily physical backups (`mariabackup`) (without service interruption).
+    - With the **distributed** version, transaction logs (*binary logs*) are continuously archived. This combination enables PiTR restoration up to the moment just before an incident.
 
-2. **Logical Backup (`mysqldump`)**:
-    - Logical exports of databases are also performed.
+2. **Logical Backup (`mysqldump`)** :
+    - Logical exports of the databases are also performed.
     - They offer fine granularity to restore or export an individual database.
 
-All backups are encrypted at rest and stored on our S3 Object Storage, itself SecNumCloud qualified.
+All backups are encrypted at rest and stored on our SecNumCloud-qualified S3 Object Storage.
 
 ## Multi-Level Security
 
-Security is integrated at every layer of the service.
+Security is integrated into every layer of the service.
 
-- **Network Isolation**: Database instances are **never exposed on the Internet**. Access is exclusively via the client's private network.
-- **End-to-end encryption**:
-  - **In transit**: All connections (client to database and between cluster nodes) are encrypted in TLS 1.3.
-  - **At rest**: Data on disk (InnoDB tablespaces) and backups are encrypted in AES-256.
-- **Access Management**: Authentication is secure (`ed25519` or `sha256_password` plugins), and rights are managed according to the principle of least privilege.
+- **Network Isolation**: Database instances are **never exposed to the Internet**. Access is exclusively via the client's private network.
+- **End-to-End Encryption**:
+  - **In transit**: All connections (client to database and between cluster nodes) are encrypted using TLS 1.3.
+  - **At rest**: Data on disk (InnoDB tablespaces) and backups are encrypted using AES-256.
+- **Access Management**: Authentication is secured (using `ed25519` or `sha256_password` plugins), and permissions are managed according to the principle of least privilege.
 
 ## Managed Service ("Zero Ops")
 
-The goal of Managed MariaDB is to relieve you of operational complexity. Our teams ensure:
+The goal of MariaDB Managed is to offload operational complexity. Our teams handle:
 
 - Provisioning and initial configuration.
-- Full lifecycle management: minor updates, application of security patches.
+- Complete lifecycle management: minor updates, applying security patches.
 - 24/7 monitoring of the infrastructure and service.
-- Management and verification of backups.
+- Backup management and verification.
 
-This allows your teams to focus on application development and data exploitation.
+This enables your teams to focus on application development and data operations.
 
 ## Version Policy & Lifecycle
 
-The MariaDB Foundation publishes versions with long-term support (LTS), which guarantees stability and predictability. Our service relies on these versions to ensure the longevity of your infrastructure.
+The MariaDB Foundation releases versions with long-term support (LTS), ensuring stability and predictability. Our service leverages these versions to ensure the long-term viability of your infrastructure.
 
-| Version | Type | Supported until |
+| Version | Type | Supported Until |
 | :--- | :--- | :--- |
 | **MariaDB 11.4** | LTS | May 2029 |
 | **MariaDB 11.8** | LTS | June 2028 |
 
-- **Minor updates**: Security patches and bug fixes are applied by our teams in *rolling update* (node by node) to cause no service interruption.
-- **Major updates**: Major version upgrades are planned in collaboration with you to align with your schedule.
-- **End of support**: We notify you at least 180 days before the end of support of an LTS version to plan the migration to the next version.
+- **Minor Updates** : Security patches and bug fixes are applied by our teams via *rolling update* (node by node) to ensure zero service interruption.
+- **Major Updates** : Major version upgrades are planned in collaboration with you to align with your schedule.
+- **End of Support** : We notify you at least 180 days before the end of support for an LTS version to plan the migration to the next version.
 
-## Instance sizes
+## Instance Sizes
 
-***StandAlone*** and ***Distributed*** instances are available in predefined sizes:
+***StandAlone*** and ***Distributed*** instances are available with predefined sizes:
 
-| Size | vCPU/node | RAM/node | Max Conn | Working Set Max | Total DB Max |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| **Micro** | 1 | **2.00 Gi** | **40** | **1-2 GiB** | **2-8 GiB** |
-| **Small** | 1 | **4.00 Gi** | **80** | **2-5 GiB** | **8-16 GiB** |
-| **Medium** | 2 | **4.00 Gi** | **80** | **2-5 GiB** | **8-16 GiB** |
-| **Med-Large**| 2 | **8.00 Gi** | **150** | **4-10 GiB** | **16-32 GiB** |
-| **Large** | 4 | **8.00 Gi** | **150** | **4-10 GiB** | **16-32 GiB** |
-| **X-Large** | 4 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
-| **2X-Large**| 8 | **16.00 Gi** | **250** | **8-20 GiB** | **32-64 GiB** |
-| **3X-Large**| 8 | **32.00 Gi** | **500** | **16-40 GiB** | **64-128 GiB** |
-| **4X-Large**| 16 | **32.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **5X-Large**| 16 | **64.00 Gi** | **500** | **32-80 GiB** | **128-256 GiB** |
-| **6X-Large**| 32 | **128.00 Gi**| **500** | **64-160 GiB** | **256-512 GiB** |
+| Size | vCPU | Memory | innodb_buffer_pool_size | innodb_buffer_pool_instances | max_allowed_packet | table_open_cache | maxconn |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **XS** | 1000m | 4096Mi | 2458M | 2 | 256M | 800 | 80 |
+| **S** | 1000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
+| **M** | 2000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
+| **L** | 2000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
+| **XL** | 4000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
+| **XXL** | 4000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
+| **3XL** | 8000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
+| **4XL** | 8000m | 65536Mi | 39320M | 16 | 1G | 10000 | 500 |
 
-> **Note**: Storage is provisioned separately and can be increased live (from 2Gi to 512Gi) (but not reduced, except by recreating a new instance).
+
+> **Note**: Storage is provisioned separately and can be scaled up dynamically (from 2Gi to 128Gi) (but not scaled down, except by recreating a new instance.).

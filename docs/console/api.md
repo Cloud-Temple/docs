@@ -1,15 +1,15 @@
 ---
 title: Documentation API
 ---
-import ShivaProfil001 from './images/shiva_profil_001.png'
-import ShivaProfil002 from './images/shiva_profil_002.png'
-import ShivaProfil003 from './images/shiva_profil_003.png'
-import ShivaProfil004 from './images/shiva_profil_004.png'
-import ShivaProfil005 from './images/shiva_profil_005.png'
-import ShivaApi001 from './images/shiva_api_001.png'
-import ShivaApi002 from './images/shiva_api_002.png'
-import ShivaApi003 from './images/shiva_api_003.png'
-import ShivaApi004 from './images/shiva_api_004.png'
+import ShivaProfil001 from '@site/docs/console/images/shiva_profil_001.png'
+import ShivaProfil002 from '@site/docs/console/images/shiva_profil_002.png'
+import ShivaProfil003 from '@site/docs/console/images/shiva_profil_003.png'
+import ShivaProfil004 from '@site/docs/console/images/shiva_profil_004.png'
+import ShivaProfil005 from '@site/docs/console/images/shiva_profil_005.png'
+import ShivaApi001 from '@site/docs/console/images/shiva_api_001.png'
+import ShivaApi002 from '@site/docs/console/images/shiva_api_002.png'
+import ShivaApi003 from '@site/docs/console/images/shiva_api_003.png'
+import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
 ## Introduction
 

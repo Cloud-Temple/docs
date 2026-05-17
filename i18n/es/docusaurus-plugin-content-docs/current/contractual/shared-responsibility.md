@@ -7,7 +7,7 @@ displayed_sidebar: docSidebar
 
 # Modelo de responsabilidad compartida
 
-Cloud Temple opera según un modelo de **responsabilidad compartida** entre el proveedor y el cliente. Estas matrices RACI (*Responsible, Accountable, Consulted, Informed*) definen con precisión quién hace qué para cada servicio.
+Cloud Temple opera bajo un modelo de **responsabilidad compartida** entre el proveedor y el cliente. Estas matrices RACI (*Responsible, Accountable, Consulted, Informed*) definen con precisión quién hace qué para cada servicio.
 
 ---
 
@@ -16,19 +16,19 @@ Cloud Temple opera según un modelo de **responsabilidad compartida** entre el p
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI IaaS (VMware & Open IaaS)</div>
-    <div class="contract-card-desc">Distribución de responsabilidades para los servicios de infraestructura IaaS VMware y OpenStack.</div>
+    <div class="contract-card-desc">Distribución de responsabilidades para los servicios de infraestructura IaaS de VMware y OpenStack.</div>
     <a class="contract-read-link" href="./contractual/iaas/raci">Consultar el documento →</a>
   </div>
 </div>
 
 ---
 
-## VM Instances
+## Instancias de VM
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">Modelo de responsabilidad — VM Instances</div>
-    <div class="contract-card-desc">Distribución de responsabilidades para el servicio de máquinas virtuales compartidas VM instances.</div>
+    <div class="contract-card-title">Modelo de responsabilidad — Instancias de VM</div>
+    <div class="contract-card-desc">Distribución de responsabilidades para el servicio de instancias de máquina virtual compartidas VM instances.</div>
     <a class="contract-read-link" href="./contractual/vm-instances/raci">Consultar el documento →</a>
   </div>
 </div>
@@ -62,19 +62,19 @@ Cloud Temple opera según un modelo de **responsabilidad compartida** entre el p
   </div>
   <div class="contract-card">
     <div class="contract-card-title">MCO / MCS PaaS OpenShift</div>
-    <div class="contract-card-desc">Política de mantenimiento de las condiciones operativas y de seguridad de la plataforma PaaS.</div>
+    <div class="contract-card-desc">Política de mantenimiento en condiciones operativas y de seguridad de la plataforma PaaS.</div>
     <a class="contract-read-link" href="./contractual/paas/mco-mcs">Consultar el documento →</a>
   </div>
 </div>
 
 ---
 
-## Managed Kubernetes
+## Kubernetes gestionado
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">RACI Managed Kubernetes</div>
-    <div class="contract-card-desc">Distribución de responsabilidades para el servicio Kubernetes gestionado.</div>
+    <div class="contract-card-title">RACI Kubernetes gestionado</div>
+    <div class="contract-card-desc">Distribución de responsabilidades para el servicio de Kubernetes gestionado.</div>
     <a class="contract-read-link" href="./contractual/kubernetes/raci">Consultar el documento →</a>
   </div>
 </div>
@@ -97,7 +97,7 @@ Cloud Temple opera según un modelo de **responsabilidad compartida** entre el p
 
 <div class="contract-grid">
   <div class="contract-card">
-    <div class="contract-card-title">RACI Red</div>
+    <div class="contract-card-title">RACI de Red</div>
     <div class="contract-card-desc">Distribución de responsabilidades para los servicios de red de Cloud Temple.</div>
     <a class="contract-read-link" href="./contractual/network/raci">Consultar el documento →</a>
   </div>

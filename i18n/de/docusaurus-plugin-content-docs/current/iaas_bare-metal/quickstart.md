@@ -1,70 +1,80 @@
 ---
-title: Schnellstartanleitung
+title: Schnellstart
 ---
 import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
 import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
 import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
 import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
-# QuickStart für das Bare-Metal-Angebot
+# Schnellstart für das Bare-Metal-Angebot
 
 Diese Seite führt Sie durch die ersten Schritte zur Nutzung des **Bare-Metal**-Angebots über die Cloud Temple-Konsole. Befolgen Sie diese Anleitung, um die verfügbaren Menüs und Funktionen kennenzulernen.
 
+---
+
 ## Voraussetzungen
 
-Stellen Sie sicher, dass die folgenden Punkte erfüllt sind, bevor Sie beginnen:
+Bevor Sie beginnen, stellen Sie sicher, dass folgende Punkte erfüllt sind:
 
-1. **Aktivierte Abonnement**: Ihre Organisation muss ein Abonnement für das Angebot Bare Metal abgeschlossen haben.
-2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Berechtigungen verfügen, um auf Bare-Metal-Ressourcen zuzugreifen und diese zu verwalten.
+1. **Abonnement aktiviert**: Ihre Organisation muss das Bare-Metal-Angebot abonniert haben.
+2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Rechte verfügen, um auf die Bare-Metal-Ressourcen zugreifen und sie verwalten zu können.
 
-## Access to the Bare Metal Interface
+---
 
-Once the subscription is activated and permissions are configured, a new menu titled **Bare Metal** appears in the Cloud Temple console. This menu contains two main submenus: **Bare Metal** and **Volumes**.
+## Zugriff auf die Bare-Metal-Oberfläche
+
+Sobald das Abonnement aktiviert und die Berechtigungen konfiguriert sind, erscheint in der Cloud Temple-Konsole ein neues Menü mit der Bezeichnung **Bare Metal**. Dieses Menü enthält zwei Hauptuntermenüs: **Bare Metal** und **Volumes**.
 
 <img src={shivaBareMetalMenu} />
 
-### 1. Submenu **Bare Metal**
+---
 
-Der Submenu **Bare Metal** zeigt Ihnen eine Tabelle mit allen verfügbaren Bare-Metal-Instanzen. Diese Tabelle enthält die wichtigsten Informationen für jede Instanz:
+### 1. Untermenü **Bare Metal**
 
-- **Name des Bare Metal**
+Das Untermenü **Bare Metal** zeigt eine Tabelle mit allen verfügbaren Bare-Metal-Instanzen. Diese Tabelle enthält die wichtigsten Informationen für jede Instanz:
+
+- **Name der Bare-Metal-Instanz**
 - **Status**
-- **Hardware-Konfiguration**
+- **Hardwarekonfiguration**
 - **IP-Adresse**
 
 <img src={shivaBareMetalList} />
 
 #### Hauptfunktionen
 
-- **Aktionsschaltfläche**: Ermöglicht direkten Zugriff auf die Verwaltungskonsole des Bare Metal-Systems.
-- **Klickbarer Name**: Durch Klicken auf den Namen einer Bare Metal-Instanz wird eine neue Seite mit den **umfassenden Details** der Instanz angezeigt:
-  - Hardwareinformationen (RAM, CPU, GPU usw.).
+- **Aktionsschaltfläche** : Ermöglicht den direkten Zugriff auf die Bare-Metal-Verwaltungskonsole.
+- **Klickbarer Name** : Beim Klicken auf den Namen einer Bare-Metal-Instanz wird eine neue Seite mit den **vollständigen Details** der Instanz angezeigt:
+  - Hardwareinformationen (RAM, CPU, GPU, usw.).
   - Netzwerkkonfiguration (zugeordnete IP-Adressen).
-  - Verbindungsinformationen für die Verwaltung.
+  - Konnektivitätsinformationen für das Management.
 
 <img src={shivaBareMetalDetails} />
 
-### 2. Submenu **Volumes**
+---
 
-Der Submenü **Volumes** zeigt eine Tabelle mit allen Speichervolumes, die Ihrer Bare-Metal-Unterzeichnung zugeordnet sind. Für jedes Volume sind folgende Informationen verfügbar:
+### 2. Untermenü **Volumes**
 
-- **Volume-Name**
+Das Untermenü **Volumes** zeigt eine Tabelle mit allen Speichervolumes, die Ihrem Bare-Metal-Abonnement zugeordnet sind. Für jedes Volume stehen die folgenden Informationen zur Verfügung:
+
+- **Name des Volumes**
 - **Kapazität**
-- **Leistungsklasse** (IOPS pro To)
-- **Status** (Verfügbar, Im Einsatz, usw.)
+- **Leistungsklasse** (IOPS par To)
+- **Status** (Verfügbar, In Bereitstellung, usw.)
 
 <img src={shivaBareMetalStoragelist} />
 
 :::info[Volume BFS (Boot from SAN)]
-Der **Volume 1** ist das **BFS-Volume (Boot from SAN)** und muss zum Installieren des Betriebssystems verwendet werden.
+**Volume 1** ist das **BFS (Boot from SAN)** und muss zur Installation des Betriebssystems verwendet werden.
 
 **Wichtig:** Dieses Volume kann nicht mit anderen Bare-Metal-Instanzen in derselben Verfügbarkeitszone (AZ) geteilt werden.
 :::
 
-:::tip[Best Practice]
-Bevorzugen Sie die Installation des Betriebssystems auf dem **BFS-Volume** und speichern Sie Ihre Daten auf einem zusätzlichen **LUN-Volume**. Diese Trennung erleichtert Wartung, Sicherungen und die Neinstallation des Systems bei Bedarf.
+:::tip[Bonne pratique]
+Installieren Sie das Betriebssystem vorzugsweise auf dem **BFS**-Volume und speichern Sie Ihre Daten auf einem zusätzlichen **LUN**-Volume. Diese Trennung erleichtert die Wartung, Sicherungen und die Neuinstallation des Systems, falls erforderlich.
 :::
 
 #### Hauptfunktionen
 
-- **Volumenverwaltung**: Von diesem Dashboard aus können Sie Volumes Ihren Bare-Metal-Instanzen zuordnen.
+- **Volumenverwaltung** : Über dieses Dashboard können Sie die Volumes Ihren Bare-Metal-Instanzen zuordnen.
+
+---

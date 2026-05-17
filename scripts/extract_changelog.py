@@ -6,14 +6,21 @@ Extrait les nouvelles fonctionnalités / évolutions depuis maj.js
 - Sortie : markdown
 """
 
+import hashlib
+import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 ROOT    = Path(__file__).parent.parent
 INPUT   = ROOT / "maj.js"
 I18N    = ROOT / "i18n"
 DOCS    = ROOT / "docs"
+META    = ROOT / "scripts" / "translate_py" / "translation-meta.json"
+
+# Langues cibles (hors FR qui est la source)
+TARGET_LANGUAGES = ["en", "de", "es", "it"]
 
 # (lang, output_path, title_fr, title_h1, intro)
 OUTPUTS = [
@@ -255,6 +262,57 @@ def render_markdown(
     return "\n".join(lines)
 
 
+def _compute_file_hash(file_path: Path) -> str:
+    """Calcule le hash SHA-256 d'un fichier."""
+    sha256 = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            sha256.update(chunk)
+    return sha256.hexdigest()
+
+
+def _update_translation_meta(source_path: Path) -> None:
+    """
+    Met à jour translation-meta.json avec le hash actuel du fichier source FR.
+
+    Pour chaque langue cible dont le fichier traduit existe dans i18n/,
+    enregistre le hash du fichier source. Cela évite que translate.py
+    ne considère ces fichiers comme « désynchronisés ».
+    """
+    if not META.exists():
+        print("  ⚠️  translation-meta.json introuvable, hash non mis à jour")
+        return
+
+    with open(META, "r", encoding="utf-8") as f:
+        meta = json.load(f)
+
+    files = meta.setdefault("files", {})
+    rel_path = str(source_path.relative_to(DOCS))
+    source_hash = _compute_file_hash(source_path)
+
+    entry = files.setdefault(rel_path, {})
+    updated_langs = []
+
+    for lang in TARGET_LANGUAGES:
+        target = (
+            I18N / lang / "docusaurus-plugin-content-docs" / "current" / rel_path
+        )
+        if target.exists():
+            entry[lang] = source_hash
+            updated_langs.append(lang)
+
+    if updated_langs:
+        meta["last_update"] = datetime.now().isoformat()
+        with open(META, "w", encoding="utf-8") as f:
+            json.dump(meta, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        print(f"  ✅ Hash mis à jour dans translation-meta.json "
+              f"[{', '.join(updated_langs)}]")
+    else:
+        print(f"  ⚠️  Aucun fichier traduit trouvé pour {rel_path}, "
+              f"hash non enregistré")
+
+
 def main():
     if not INPUT.exists():
         print(f"Fichier introuvable : {INPUT}", file=sys.stderr)
@@ -262,6 +320,8 @@ def main():
 
     print(f"Lecture de {INPUT} …")
     content = INPUT.read_text(encoding="utf-8")
+
+    source_path = None  # chemin du fichier FR (source)
 
     for lang, output_path, title, title_h1, intro in OUTPUTS:
         # DE/ES/IT → fallback sur EN (maj.js n'a que FR+EN)
@@ -272,6 +332,15 @@ def main():
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(md, encoding="utf-8")
         print(f"  [{lang}] {len(versions)} versions → {output_path.relative_to(ROOT)}")
+
+        # Mémoriser le chemin du fichier source FR
+        if lang == "fr":
+            source_path = output_path
+
+    # Mise à jour du hash dans translation-meta.json
+    if source_path and source_path.exists():
+        print("\nMise à jour des hash de traduction …")
+        _update_translation_meta(source_path)
 
 
 if __name__ == "__main__":

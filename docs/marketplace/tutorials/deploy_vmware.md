@@ -1,8 +1,8 @@
 ---
 title: Déployer une image sur VMware
 ---
-import marketplaceVmwareDeployment from '../images/marketplace_vmware_deploy.png'
-import marketplaceVmwareConfig from '../images/marketplace_vmware_config.png'
+import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
+import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
 
 Ce tutoriel vous guide pour déployer une image de machine virtuelle depuis la Marketplace Cloud Temple vers votre environnement VMware.
 

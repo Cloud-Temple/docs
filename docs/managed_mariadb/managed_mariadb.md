@@ -2,10 +2,10 @@
 title: Vue d'ensemble
 ---
 
-import stack from './images/stack.png'
-import StandAlone from './images/StandAlone.png'
-import Distributed from './images/Distributed.png'
-import maxscale from './images/maxscale.png'
+import stack from '@site/docs/managed_mariadb/images/stack.png'
+import StandAlone from '@site/docs/managed_mariadb/images/StandAlone.png'
+import Distributed from '@site/docs/managed_mariadb/images/Distributed.png'
+import maxscale from '@site/docs/managed_mariadb/images/maxscale.png'
 
 # MariaDB Managé <span class="title-preview-badge">Preview</span>
 
@@ -37,7 +37,7 @@ Les moteurs MariaDB peuvent être choisis en version 11.4 LTS ou 11.8 LTS.
 
 Toutes les sauvegardes utilisent le stockage S3 Cloud-Temple (qualifié SNC) avec chiffrement at-rest.
 
-![Architecture stack](./images/stack.png)
+![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
 ### Bénéfices Clés
 
@@ -61,14 +61,14 @@ Le stockage utilisé par cette instance est répliqué sur 3 AZ, et permet un re
   - sauvegardes physiques (`mariabackup`) et logiques (`mysqldump`)
   - SLA 99.9 % (hors plages de maintenance)
 
-![Architecture StandAlone](./images/StandAlone.png)
+![Architecture StandAlone](@site/docs/managed_mariadb/images/StandAlone.png)
 
 ### Distributed
 
 Le modèle ***Distributed*** déploie un cluster de 3 instances du moteur MariaDB, avec Galera en mode "single primary" et MaxScale:
 
 - un endpoint MaxScale permet un routage vers les différentes instances suivant le type de requete (read ou write).
-![MaxScale](./images/maxscale.png)
+![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
 
 - l'instance en lecture-écriture (RW) est accessible via un endpoint spécifique.
 - Les 2 instances en lecture seule (RO) sont accessibles via un autre endpoint spécifique.
@@ -83,4 +83,4 @@ Ainsi, les applicatifs peuvent au choix utiliser des connexions RW ou RO, ou lai
   - sauvegardes PiTR et Logiques
   - SLA 99.9 % (hors plages de maintenance)
 
-![Architecture Distributed](./images/Distributed.png)
+![Architecture Distributed](@site/docs/managed_mariadb/images/Distributed.png)

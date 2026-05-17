@@ -3,106 +3,83 @@ title: Kostenmanager
 ---
 
 import billingDashboardPreview from '@site/docs/console/billing/images/billing_dashboard_preview.png'
-import billingDashboardTotal from '@site/docs/console/billing/images/billing_dashboard_consumption_total.png'
-import billingDashboardPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
-import billingDashboardPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
+import billingDashboardConsumptionTotal from '@site/docs/console/billing/images/billing_dashboard_consumption_total.png'
+import billingDashboardConsumptionPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
+import billingDashboardConsumptionPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
 import billingConsumptionDetails from '@site/docs/console/billing/images/billing_consumption_details.png'
 import billingPricesList from '@site/docs/console/billing/images/billing_prices_list.png'
 
-Der **Kostenmanager** ist über das Hauptmenü der Cloud Temple Console zugänglich. Er bietet Ihnen einen vollständigen und transparenten Überblick über Ihren Cloud-Ressourcenverbrauch, sodass Sie Ihre Ausgaben eigenständig verwalten können.
+## Übersicht
+
+Der **Kostenmanager** ist das Modul der Cloud Temple Console, das sich der **Transparenz Ihres Verbrauchs** widmet. Er ermöglicht es Ihnen, die Nutzung Ihrer Cloud-Ressourcen innerhalb eines Tenants in Echtzeit zu verfolgen und einen klaren Überblick über Ihre Ausgaben zu erhalten.
+
+Dieses Modul erfüllt ein grundlegendes Bedürfnis: **zu verstehen, was Sie verbrauchen, wann Sie es verbrauchen und zu welchen Kosten**, ohne in komplexe Tabellen oder detaillierte Rechnungen navigieren zu müssen.
 
 :::info
-Der Zugriff auf den Kostenmanager erfordert die entsprechenden Rechte in Ihrem Tenant. Bitte kontaktieren Sie Ihren Vertriebsansprechpartner für weitere Informationen und um die Zugangsbedingungen zum Dienst zu erfahren.
+Der Kostenmanager zeigt den **tatsächlichen Verbrauch** Ihrer Ressourcen auf dem ausgewählten Tenant an. Die Daten werden regelmäßig aktualisiert, um Ihre aktuelle Nutzung widerzuspiegeln.
 :::
 
-## Dashboard
+## Haupt-Dashboard
 
-Das Dashboard des Kostenmanagers ist die Startseite des Moduls. Es bietet eine zusammenfassende Ansicht Ihres gesamten Verbrauchs für den ausgewählten Zeitraum.
+Die Startseite des Kostenmanagers bietet eine grafische Übersicht Ihres Verbrauchs. Beim Öffnen erhalten Sie eine Gesamtsicht, die es ermöglicht, Verbrauchstrends und die größten Kostenposten schnell zu identifizieren.
 
-<img src={billingDashboardPreview} alt="Kostenmanager Dashboard" />
+<img src={billingDashboardPreview} />
 
-Von diesem Dashboard aus können Sie:
-
-- **Einen Analysezeitraum auswählen** (aktueller Monat, vorheriger Monat oder ein benutzerdefinierter Datumsbereich),
-- **Zwischen den verschiedenen Tabs navigieren**, um Ihre Verbrauchsanalyse zu verfeinern,
-- **Ihre Verbrauchsdaten exportieren**, um sie in Ihre internen Reporting-Tools zu integrieren.
+Das Dashboard gliedert sich in mehrere ergänzende Bereiche, die über die Registerkarten oben auf der Seite erreichbar sind.
 
 ## Gesamtverbrauch
 
-Der Tab **Gesamtverbrauch** zeigt den im ausgewählten Zeitraum verbrauchten Gesamtbetrag. Er ist der Ausgangspunkt für das Verständnis der allgemeinen Entwicklung Ihrer Cloud-Ausgaben.
+Der Tab **Gesamtverbrauch** bietet eine aggregierte Übersicht über Ihren gesamten Verbrauch im ausgewählten Zeitraum. Dieses Diagramm ermöglicht es Ihnen, die Entwicklung Ihrer Ausgaben im Zeitverlauf zu beobachten und eventuelle Spitzen oder Trends zu identifizieren.
 
-<img src={billingDashboardTotal} alt="Gesamtverbrauch für den Zeitraum" />
+<img src={billingDashboardConsumptionTotal} />
 
-Dieses Diagramm ermöglicht es Ihnen zu visualisieren:
-
-- Den **Gesamtbetrag**, der im Zeitraum verbraucht wurde,
-- Die **zeitliche Entwicklung** Ihres Verbrauchs (täglich oder monatlich je nach gewählter Granularität),
-- Etwaige **Verbrauchsspitzen**, um Anomalien oder Lastspitzen schnell zu identifizieren.
-
-:::info
-**Diagramm für den aktuellen Monat lesen**
-
-Für den aktuellen Monat zeigt das Diagramm zwei visuelle Bereiche:
-
-- Der **blaue (ausgefüllte) Bereich** stellt den **tatsächlichen Verbrauch bis dato** dar, d.h. die seit Monatsbeginn tatsächlich verbrauchten Ressourcen,
-- Der **orange (schraffierte) Bereich** stellt die **Prognose** bis zum Monatsende dar, berechnet auf Basis Ihrer aktuellen Verbrauchsrate.
-
-Diese Projektion ermöglicht es Ihnen, Ihr Monatsendbudget in Echtzeit zu antizipieren.
-:::
+Sie können den **Anzeigezeitraum** anpassen, um Ihre Analyse zu verfeinern: Tag, Woche, Monat oder benutzerdefinierter Zeitraum. Die Kurve des Gesamtverbrauchs ist direkt ablesbar und erfordert keine besonderen technischen Kenntnisse.
 
 ## Verbrauch nach Produkt
 
-Der Tab **Verbrauch nach Produkt** ermöglicht es Ihnen, die Aufschlüsselung Ihrer Ausgaben nach den Cloud Temple-Produkten zu identifizieren, die Sie abonniert haben.
+Der Tab **Verbrauch nach Produkt** unterteilt Ihren Verbrauch nach den Hauptkategorien der Cloud Temple-Dienste, die Sie abonniert haben: Compute, Speicher, Netzwerk usw.
 
-<img src={billingDashboardPerProduct} alt="Verbrauchsaufschlüsselung nach Produkt" />
+<img src={billingDashboardConsumptionPerProduct} />
 
-Jedes Produkt (IaaS, Speicher, Netzwerk usw.) wird präsentiert mit:
+Diese Ansicht ist besonders nützlich, um **die bedeutendsten Kostenposten zu identifizieren** und Optimierungsentscheidungen gezielt zu treffen. Jedes Produkt wird mit seinem relativen Anteil am Gesamtverbrauch dargestellt, was die Übersicht und den Vergleich erleichtert.
 
-- Seinem **relativen Anteil** am Gesamtverbrauch,
-- Seinem **absoluten Betrag** für den Zeitraum,
-- Der **Tendenz** im Vergleich zum vorherigen Zeitraum.
+## Verbrauch nach Service
 
-Diese Ansicht ist besonders nützlich, um zu identifizieren, welche Produkte die größten Kostenpositionen darstellen, und um Ihre Optimierungsentscheidungen zu lenken.
+Der Tab **Verbrauch nach Service** bietet ein zusätzliches Detaillierungslevel, indem er den Verbrauch nach **spezifischem Service** innerhalb jedes Produkts aufschlüsselt.
 
-## Verbrauch nach Dienst
+<img src={billingDashboardConsumptionPerService} />
 
-Der Tab **Verbrauch nach Dienst** verfeinert die Analyse, indem der Verbrauch auf der Ebene der einzelnen Dienste innerhalb jedes Produkts aufgeschlüsselt wird.
-
-<img src={billingDashboardPerService} alt="Verbrauchsaufschlüsselung nach Dienst" />
-
-Diese detaillierte Ansicht ermöglicht es Ihnen:
-
-- Genau zu identifizieren, **welche Dienste** am meisten zu Ihrer Abrechnung beitragen,
-- Den Verbrauch ähnlicher Dienste zu vergleichen,
-- Untergenutzter oder überdimensionierter Dienste zu erkennen, um **Ihren Cloud-Fußabdruck zu optimieren**.
+Dieses Granularitätsniveau ermöglicht es Ihnen, die Analyse weiter zu vertiefen: Sie können beispielsweise den Verbrauch Ihrer virtuellen Maschinen, Ihres Blockspeichers, Ihrer Snapshots oder Ihrer Netzwerkbandbreite aufschlüsseln und so genau die Ressourcen identifizieren, die die höchsten Kosten verursachen.
 
 ## Verbrauchsdetails
 
-Der Abschnitt **Verbrauchsdetails** listet alle einzelnen Abrechnungszeilen für den ausgewählten Zeitraum auf. Es ist die detaillierteste Ansicht des Kostenmanagers.
+Die Ansicht **Verbrauchsdetails** zeigt eine umfassende Tabelle, die alle während des Zeitraums verbrauchten Ressourcen auflistet. Jede Zeile entspricht einer identifizierbaren Ressource (virtuelle Maschine, Speichervolumen, öffentliche IP-Adresse usw.) mit dem zugehörigen Verbrauchsniveau.
 
-<img src={billingConsumptionDetails} alt="Details der Verbrauchszeilen" />
+<img src={billingConsumptionDetails} />
 
-Für jede Verbrauchszeile finden Sie:
+Diese Details sind wertvoll für Teams, die eine **analytische Aufschlüsselung** ihrer Kosten durchführen oder potenziell ungenutzte Ressourcen identifizieren möchten, die deaktiviert werden können, um die Ausgaben zu optimieren.
 
-- Den **Namen der verbrauchten Ressource**,
-- Die verbrauchte **Menge** und die zugehörige **Maßeinheit** (Stunden, GB, Anfragen usw.),
-- Den angewendeten **Einheitspreis**,
-- Den **Gesamtbetrag** für diese Zeile im Zeitraum.
+## Preisliste
 
-Diese Ansicht ist unerlässlich für eine genaue buchhalterische Abstimmung oder für die detaillierte Analyse der Nutzung bestimmter Ressourcen.
+Der Tab **Preisliste** (oder **Preistabelle**) listet alle auf die in Ihrem Tenant verfügbaren Ressourcen anwendbaren Einheitspreise auf. Es handelt sich um den aktuellen Preiskatalog, der es Ihnen ermöglicht, die Kosten neuer Ressourcen vor deren Bereitstellung abzuschätzen.
 
-## Preiskatalog
+<img src={billingPricesList} />
 
-Der **Preiskatalog** listet die Einheitspreise aller Ressourcen und Dienste auf, die in Ihrem Cloud Temple-Tenant verfügbar sind.
+Jeder Eintrag der Tabelle zeigt Folgendes an:
 
-<img src={billingPricesList} alt="Einheitspreiskatalog" />
-
-Dieser Katalog ermöglicht es Ihnen:
-
-- Die **Kosten** einer neuen Ressource vor der Bestellung zu **antizipieren**,
-- **Budgetsimulationen** für Ihre Cloud-Projekte durchzuführen,
-- Preise zwischen verschiedenen Ressourcentiers oder -konfigurationen zu vergleichen.
+- Die **Ressourcenart**
+- Die **Abrechnungseinheit** (pro Stunde, pro GB, pro Einheit usw.)
+- Der **Einheitspreis**
 
 :::tip
-Die im Katalog angezeigten Preise sind die Vertragspreise, die für Ihren Tenant gelten. Sie können je nach Ihrem Cloud Temple-Vertrag von den öffentlichen Preisen abweichen.
+Die Preisliste dient als Referenz, um die **Kosten** einer Infrastruktur vor der Bestellung zu **simulieren**. Kombinieren Sie diese Informationen mit den Verbrauchsdaten, um Optimierungspotenziale zu identifizieren.
 :::
+
+## Best Practices
+
+Um den Kostenmanager optimal zu nutzen, finden Sie hier einige Empfehlungen:
+
+- **Überwachen Sie regelmäßig** Ihre Nutzung, um Budgetabweichungen schnell zu erkennen.
+- **Vergleichen Sie Zeiträume** : Das Tool ermöglicht es Ihnen, die Entwicklung von Monat zu Monat zu analysieren, um Trends zu identifizieren.
+- **Verwenden Sie die Service-Ansicht**, um untergenutzte oder vergessene Ressourcen zu identifizieren (alte Snapshots, abgetrennte Volumes usw.).
+- **Kreuzen Sie mit der Preistabelle**, um die finanziellen Auswirkungen von Infrastrukturänderungen vor der Umsetzung zu bewerten.

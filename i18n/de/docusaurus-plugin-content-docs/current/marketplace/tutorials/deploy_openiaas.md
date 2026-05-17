@@ -1,48 +1,48 @@
 ---
-title: Deploy an image on OpenIaaS
+title: Image auf OpenIaaS bereitstellen
 ---
 import marketplaceOpeniaasDeployment from '@site/docs/marketplace/images/marketplace_openiaas_deploy.png'
 import marketplaceOpeniaasConfig from '@site/docs/marketplace/images/marketplace_openiaas_config.png'
 
-This tutorial guides you through deploying a virtual machine image from the Cloud Temple Marketplace to your OpenIaaS environment.
+Dieses Tutorial zeigt Ihnen, wie Sie ein Image einer virtuellen Maschine aus der Cloud Temple Marketplace in Ihre OpenIaaS-Umgebung bereitstellen.
 
 ## Voraussetzungen
 
-- Ein eingerichtetes OpenIaaS-Umgebung bereitstellen
+- Verfügen über ein konfiguriertes OpenIaaS-Umfeld
 - Berechtigungen zum Erstellen von virtuellen Maschinen besitzen
 - Das Image muss **OpenIaaS** in seinen kompatiblen Zielen enthalten
 
-## Deployment steps
+## Deployment-Schritte
 
-### 1. Selection and Deployment
+### 1. Auswahl und Bereitstellung
 
-From the detail page of a compatible OpenIaaS solution, select your target environment and click **Deploy**:
+Wählen Sie auf der Detailseite einer OpenIaaS-kompatiblen Lösung Ihre Zielumgebung aus und klicken Sie auf **Bereitstellen** :
 <img src={marketplaceOpeniaasDeployment} />
 
-### 2. Virtual Machine Configuration
+### 2. Konfiguration der virtuellen Maschine
 
-Configure the basic settings of your virtual machine:
+Konfigurieren Sie die grundlegenden Einstellungen Ihrer virtuellen Maschine:
 
-- **VM Name**
-- **Resources** (CPU, RAM)
-- **Storage**
-- **Network**
+- **Name** der VM
+- **Ressourcen** (CPU, RAM)
+- **Speicher**
+- **Netzwerk**
 
 <img src={marketplaceOpeniaasConfig} />
 
-Deployment typically takes less than 10 minutes, depending on the image size.
+Die Bereitstellung dauert in der Regel weniger als 10 Minuten, abhängig von der Größe des Images.
 
-## Alternative Access
+## Alternativer Zugriff
 
-You can also access Marketplace images directly from the **Virtual Machines** page of your OpenIaaS environment:
+Sie können auf Marketplace-Images auch direkt über die Seite **Virtuelle Maschinen** Ihrer OpenIaaS-Umgebung zugreifen :
 
-1. Go to **Virtual Machines** > **Create a VM**
-2. Select **Marketplace Images** as the source option
-3. Choose your solution from the integrated catalog
+1. Navigieren Sie zu **Virtuelle Maschinen** > **VM erstellen**
+2. Wählen Sie **Marketplace-Images** in der Quellenauswahl aus
+3. Wählen Sie Ihre Lösung aus dem integrierten Katalog aus
 
-## Deployment-Verfolgung
+## Bereitstellungsstatus verfolgen
 
-Sobald der Deployment-Vorgang gestartet wurde:
+Sobald die Bereitstellung gestartet wurde:
 
 - Verfolgen Sie den Fortschritt über die OpenIaaS-Konsole
-- Die VM erscheint in Ihrer Liste virtueller Maschinen
+- Die VM wird in Ihrer Liste der virtuellen Maschinen angezeigt

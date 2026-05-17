@@ -2,9 +2,9 @@
 title: Sauvegarder vos applications avec Veeam Kasten
 ---
 
-import k10dashboard from './images/k10dashboard.png'
-import k10s3location from './images/k10s3location.png'
-import k10infrabackups from './images/k10infrabackups.png'
+import k10dashboard from '@site/docs/managed_kubernetes/tutorials/images/k10dashboard.png'
+import k10s3location from '@site/docs/managed_kubernetes/tutorials/images/k10s3location.png'
+import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10infrabackups.png'
 
 ## Introduction
 
@@ -36,7 +36,8 @@ Le tableau de bord Kasten est accessible via une URL sécurisée, construite à 
 
 <img src={k10dashboard} />
 
-:::tip[Guide de démarrage rapide intégré]
+:::tip[Guide de démarrage rapide intégré
+]
 La console Kasten inclut un guide de démarrage rapide interactif sur sa page d'accueil. N'hésitez pas à le suivre pour une première prise en main directement depuis l'interface.
 :::
 
@@ -48,7 +49,8 @@ Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est dé
 
 <img src={k10s3location} />
 
-:::info[Modèle de coût]
+:::info[Modèle de coût
+]
 Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
 :::
 
@@ -56,7 +58,8 @@ Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stocka
 
 Une politique de sauvegarde (`Policy`) est un ensemble de règles qui définissent quand et comment sauvegarder vos applications.
 
-:::warning[Politique de sauvegarde existante]
+:::warning[Politique de sauvegarde existante
+]
 Une politique de sauvegarde nommée `infra-backups` est déjà configurée dans votre instance Kasten. Cette politique assure la sauvegarde des composants essentiels livrés avec le cluster.
 
 <img src={k10infrabackups} />

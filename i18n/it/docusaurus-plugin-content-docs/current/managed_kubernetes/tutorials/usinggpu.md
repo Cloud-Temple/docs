@@ -1,5 +1,5 @@
 ---
-title: Utilizzare una GPU NVIDIA
+title: Utilizzare una GPU nVidia
 ---
 
 import nvidiasmi from '@site/docs/managed_kubernetes/tutorials/images/nvidiasmi.png'
@@ -10,11 +10,11 @@ Questo tutorial mostra come distribuire un pod che utilizza una risorsa GPU su u
 
 ## Prerequisiti
 
-- Un cluster Managed Kubernetes con almeno un nodo worker di tipo "Bare Metal" con GPU.
+- Un cluster Kubernetes gestito con almeno un nodo worker di tipo "Bare Metal" con GPU.
 
-## Manifesto Pod di esempio
+## Manifest di Pod di esempio
 
-Ecco un esempio di manifesto pod che esegue il comando `nvidia-smi` per verificare la presenza e lo stato della scheda GPU.
+Ecco un esempio di manifest di pod che esegue il comando `nvidia-smi` per verificare la presenza e lo stato della scheda GPU.
 
 ```yaml
 apiVersion: v1
@@ -22,7 +22,7 @@ kind: Pod
 metadata:
   name: nvidia-cuda-check
 spec:
-  runtimeClassName: nvidia  # Chiave per Talos NVIDIA
+  runtimeClassName: nvidia  # Clé pour Talos NVIDIA
   restartPolicy: Never
   containers:
   - name: nvidia-version-check
@@ -31,10 +31,10 @@ spec:
     command: ["nvidia-smi"]
 ```
 
-### Spiegazione del Manifesto
+### Spiegazione del Manifest
 
 - **`runtimeClassName: nvidia`**: Questa è la parte più importante. Indica a Kubernetes di utilizzare il runtime NVIDIA. Il toolkit NVIDIA si occupa quindi di iniettare i driver NVIDIA direttamente nel pod, consentendo al container di accedere alla GPU.
-- **`restartPolicy: Never`**: Poiché questo pod è solo un comando di verifica, non vogliamo che venga riavviato dopo l'esecuzione.
+- **`restartPolicy: Never`**: Poiché questo pod è solo un comando di verifica, non vogliamo che si riavvii dopo l'esecuzione.
 - **`image: "nvidia/cuda:..."`**: Utilizziamo un'immagine fornita da NVIDIA che contiene gli strumenti necessari per interagire con la GPU.
 - **`command: ["nvidia-smi"]`**: Questo è il comando che verrà eseguito all'interno del container. `nvidia-smi` è uno strumento da riga di comando che fornisce informazioni sulle GPU NVIDIA.
 
@@ -42,18 +42,18 @@ Per ulteriori informazioni sul funzionamento del toolkit NVIDIA, è possibile co
 
 ## Distribuzione e Verifica
 
-1. **Distribuire il pod** usando il comando `kubectl apply`:
+1. **Distribuisci il pod** utilizzando il comando `kubectl apply` :
 
     ```shell
     kubectl apply -f nvidia-smi.yaml
     ```
 
-2. **Verificare i log del pod** per vedere l'output del comando `nvidia-smi`:
+2. **Verifica i log del pod** per visualizzare l'output del comando `nvidia-smi` :
 
     ```shell
     kubectl logs nvidia-cuda-check
     ```
 
-Se tutto è configurato correttamente, si dovrebbe vedere un output simile al seguente, che mostra i dettagli della scheda GPU:
+Se tutto è configurato correttamente, dovresti vedere un output simile al seguente, che mostra i dettagli della tua scheda GPU :
 
 <img src={nvidiasmi} alt="nvidia-smi command result"/>

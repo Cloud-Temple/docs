@@ -1,188 +1,192 @@
 ---
-title: Modell der geteilten Verantwortung — VPC
+title: Modell der gemeinsamen Verantwortung — VPC
 slug: /contractual/network/raci-vpc
 ---
 
-# Modell der geteilten Verantwortung — VPC (Virtual Private Cloud)
+# Shared-Responsibility-Modell — VPC (Virtual Private Cloud)
 
-Dieses **RACI**-Modell definiert die Verteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple für den **VPC (Virtual Private Cloud)**-Dienst.
+Hier ist das **RACI**-Modell, das die Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple für die Nutzung des **VPC (Virtual Private Cloud)**-Services definiert.
 
-> **Besonderheiten des VPC-Dienstes**  
-> Der VPC ist ein **vollständig von Cloud Temple verwalteter** Netzwerkdienst mit einer cloud-nativen Erfahrung: automatisches Routing, integrierte Hochverfügbarkeit und natives IPAM/DHCP-Management. Cloud Temple garantiert den Betrieb und die Verfügbarkeit der zugrunde liegenden Netzwerkinfrastruktur (VPC-Router, Inter-AZ-Backbone, externe Gateway). Der Kunde ist für das Design, die Konfiguration und die Sicherheit seines Netzwerkraums verantwortlich: Subnetze, Adressierung, Filterrichtlinien und Verbindungen.
-
----
-
-## Rollendefinitionen
-
-| Rolle             | Beschreibung                                                                                  |
-|-------------------|-----------------------------------------------------------------------------------------------|
-| (R) Responsible   | __R__ealisiert den Prozess                                                                    |
-| (A) Accountable   | __V__erantwortlich für die erfolgreiche Durchführung des Prozesses                            |
-| (C) Consulted     | Wird __k__onsultiert während des Prozesses                                                    |
-| (I) Informed      | Wird über die Ergebnisse des Prozesses __i__nformiert                                         |
+> **Besonderheit des VPC-Angebots**  
+> Das VPC ist ein Netzwerk-Service, der **vollständig von Cloud Temple verwaltet wird** und eine cloud-native Erfahrung bietet: automatisches Routing, integrierte Hochverfügbarkeit und native IPAM/DHCP-Verwaltung. Cloud Temple garantiert den Betrieb und die Verfügbarkeit der zugrunde liegenden Netzwerkinfrastruktur (VPC-Router, inter-AZ-Backbone, externes Gateway). Der Kunde ist verantwortlich für das Design, die Konfiguration und die Sicherheit seines Netzwerksegments: Subnetze, Adressierung, Filterrichtlinien und Interconnections.
 
 ---
 
-## Physische Netzwerkinfrastruktur & Backbone
+## Definition der Rollen
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| Implementierung und Wartung der **physischen Netzwerkinfrastruktur** sicherstellen                            |        | **RA**       |
-| **Inter-Datacenter / Inter-AZ**-Backbone-Konnektivität von Cloud Temple sicherstellen                         | **I**  | **RA**       |
-| **Backbone-Netzwerk** betriebsbereit halten                                                                    | **I**  | **RA**       |
-| **Backbone-Netzwerk** sicherheitstechnisch in Betrieb halten                                                   | **I**  | **RA**       |
-| Vorfälle, Probleme und Kapazitäten des Backbone-Netzwerks verwalten                                           | **I**  | **RA**       |
-| Notwendige **Lizenzen** für den Betrieb der Netzwerkinfrastruktur erwerben und aufrechterhalten                |        | **RA**       |
+| Rolle         | Beschreibung                                                                           |
+|--------------|---------------------------------------------------------------------------------------|
+| (R) Realisiert | __R__ealisiert den Prozess                                                              |
+| (A) Genehmigt | __G__enehmigt die Prozessdurchführung                                                  |
+| (C) Konsultiert | __K__onsultiert während des Prozesses                                                  |
+| (I) Informiert | __I__nformiert über die Ergebnisse des Prozesses (über die Tools, das Portal oder die Messaging-Plattform) |
+
+---
+
+## Physische Netzwerk-Infrastruktur & Backbone
+
+Cloud Temple ist vollständig für die physische Infrastruktur und das Netzwerk-Backbone verantwortlich, auf dem das VPC basiert.
+
+| Tätigkeit                                                                                                    | Kunde | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Bereitstellung und Wartung der **physischen Netzwerk-Infrastrukturen** (Switches, Backbone-Router) |        | **RA**       |
+| Sicherstellung der **Rechenzentrum-übergreifenden / AZ-übergreifenden** Konnektivität des Cloud Temple Backbones | **I**  | **RA**       |
+| Sicherstellung der Betriebsbereitschaft des **Cloud Temple Netzwerk-Backbones** | **I**  | **RA**       |
+| Sicherstellung der Sicherheitskonformität des **Cloud Temple Netzwerk-Backbones** | **I**  | **RA**       |
+| Verwaltung von Incidents, Problemen und Kapazitäten des Netzwerk-Backbones | **I**  | **RA**       |
+| Beschaffung und Aufrechterhaltung der für den Betrieb der Netzwerk-Infrastruktur erforderlichen Lizenzen |        | **RA**       |
 
 ---
 
 ## VPC-Infrastruktur (Router, Gateway & IPAM)
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **VPC-Router** betriebsbereit halten *(1)*                                                                    | **I**  | **RA**       |
-| **Hochverfügbarkeit** des VPC-Routers sicherstellen                                                           | **I**  | **RA**       |
-| **Externe Gateway** betriebsbereit halten *(1)*                                                                | **I**  | **RA**       |
-| **Hochverfügbarkeit** der externen Gateway sicherstellen                                                       | **I**  | **RA**       |
-| Betrieb des zugrunde liegenden **IPAM & DHCP**-Dienstes sicherstellen                                        | **I**  | **RA**       |
-| Vorfälle und Probleme bei VPC-Kernkomponenten verwalten                                                        | **I**  | **RA**       |
-| VPC-Kernkomponenten aktualisieren und sicherheitstechnisch warten                                              | **I**  | **RA**       |
+Cloud Temple gewährleistet den Betrieb der Kernkomponenten des VPC. Der Kunde konfiguriert seinen Netzwerkbereich innerhalb dieser Infrastruktur.
 
-*(1) VPC-Router und externe Gateway sind vollständig von Cloud Temple verwaltete Komponenten. Ihre Verfügbarkeit wird von Cloud Temple im Rahmen des VPC-Service-SLA garantiert.*
+| Aktivität                                                                                                    | Kunde | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|-------|--------------|
+| Sicherstellung der Betriebsbereitschaft des **VPC-Routers** *(1)*                                          | **I** | **RA**       |
+| Sicherstellung der **Hochverfügbarkeit** des VPC-Routers                                                   | **I** | **RA**       |
+| Sicherstellung der Betriebsbereitschaft des **Externen Gateways (External Gateway)** *(1)*                 | **I** | **RA**       |
+| Sicherstellung der **Hochverfügbarkeit** des Externen Gateways                                             | **I** | **RA**       |
+| Sicherstellung des Betriebs des zugrunde liegenden **IPAM & DHCP**-Diensts                                 | **I** | **RA**       |
+| Verwaltung von Störungen und Problemen bei den Kernkomponenten des VPC                                     | **I** | **RA**       |
+| Aktualisierung und Aufrechterhaltung des Sicherheitszustands der Kernkomponenten des VPC                   | **I** | **RA**       |
+
+*(1) Der VPC-Router und das Externe Gateway sind vollständig von Cloud Temple verwaltete Komponenten. Ihre Verfügbarkeit wird von Cloud Temple im Rahmen des SLA des VPC-Dienstes garantiert.*
 
 ---
 
-## VPC-Bereitstellung & Konfiguration
+## VPC-Provisionierung und -Konfiguration
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **VPC** erstellen, ändern und löschen                                                                         | **RA** | **I**        |
-| VPC-Netzwerkarchitektur definieren (Anzahl der Subnetze, Topologie)                                           | **RA** |              |
-| **Private Netzwerke (Private Networks / VLANs)** im VPC erstellen, ändern und löschen                        | **RA** | **I**        |
-| **IP-Adressierungsplan** (CIDR-Bereiche) der privaten Netzwerke definieren                                    | **RA** | **I**        |
-| **DHCP-Pools** konfigurieren (dynamische Bereiche, DNS, Gateway)                                              | **RA** | **C**        |
-| **Externe Gateway** aktivieren und konfigurieren (Internet-Zugang, NAT, DNAT) *(2)*                           | **RA** | **C**        |
-| **Statische Routen** innerhalb des VPC verwalten                                                               | **RA** |              |
+Der Kunde ist für die Erstellung und Konfiguration seines VPC sowie der darin enthaltenen Netzwerkressourcen verantwortlich.
 
-*(2) Die Aktivierung der externen Gateway öffnet den Internet-Zugang für den VPC. Der Kunde ist für die zugehörigen Filterregeln und die Verkehrskontrolle verantwortlich.*
+| Aktivität                                                                                                   | Kunde  | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| **VPC** erstellen, ändern und löschen                                                                       | **RA** | **I**        |
+| VPC-Netzwerkarchitektur festlegen (nombre de sous-réseaux, topologie)                                       | **RA** |              |
+| **Private Networks / VLANs** im VPC erstellen, ändern und löschen                                           | **RA** | **I**        |
+| **IP-Adressplan** der privaten Netzwerke festlegen (plages CIDR)                                            | **RA** | **I**        |
+| **DHCP-Pools** konfigurieren (plages dynamiques, DNS, gateway)                                              | **RA** | **C**        |
+| **Externe Gateway** aktivieren und konfigurieren (accès Internet, NAT, DNAT) *(2)*                         | **RA** | **C**        |
+| **Statische Routen** innerhalb des VPC verwalten                                                            | **RA** |              |
+
+*(2) Die Aktivierung des externen Gateways ermöglicht den Internetzugriff für das VPC. Der Kunde ist für die Filterregeln und die Steuerung der damit verbundenen Datenflüsse verantwortlich.*
 
 ---
 
 ## Öffentliche IPs & Internet-Exposition
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Pool öffentlicher IPs** auf der Plattform bereitstellen                                                     | **I**  | **RA**       |
-| **Öffentliche IPs (Floating IPs)** bestellen und dem VPC zuweisen                                             | **RA** | **I**        |
-| **NAT / DNAT**-Regeln für die Dienstexposition konfigurieren                                                  | **RA** |              |
-| Lebenszyklus öffentlicher IPs verwalten (Zuordnung, Freigabe, Verschiebung)                                   | **RA** | **I**        |
-| Sicherstellen, dass im Internet exponierte Dienste die geltenden Sicherheitsrichtlinien einhalten             | **RA** |              |
+| Aktivität                                                                                                    | Client | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Zuweisung des **Pools öffentlicher IPs**, der auf der Plattform verfügbar ist                              | **I**  | **RA**       |
+| Anforderung und Zuordnung **öffentlicher IPs (Floating IPs)** an das eigene VPC                             | **RA** | **I**        |
+| Konfiguration der **NAT-/DNAT-Regeln** für die Exposition von Diensten                                      | **RA** |              |
+| Verwaltung des Lebenszyklus öffentlicher IPs (Zuordnung, Freigabe, Änderung)                                | **RA** | **I**        |
+| Gewährleistung, dass die über das Internet exponierten Dienste die geltenden Sicherheitsrichtlinien einhalten | **RA** |              |
 
 ---
 
 ## Netzwerksicherheit
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Mandantenübergreifende Netzwerkisolierung** auf Plattformebene sicherstellen *(3)*                          |        | **RA**       |
-| **Mikrosegmentierungsrichtlinien** (Sicherheitsgruppen) definieren und konfigurieren *(4)*                    | **RA** |              |
-| **Verkehrsfilterung** ein-/ausgehend implementieren (Anwendungs-Firewall, IDS/IPS) *(5)*                      | **RA** |              |
-| **TLS-Zertifikate** und SSL-Terminierung exponierter Dienste verwalten                                        | **RA** |              |
-| **Penetrationstests** für im VPC gehostete Ressourcen durchführen *(6)*                                       | **RA** | **C**        |
-| **Anomales Verhalten** bei Mandantennetzwerkflüssen überwachen                                                 | **RA** |              |
+| Aufgabe                                                                                                    | Kunde | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|-------|--------------|
+| Sicherstellung der **Netzwerktrennung zwischen Mandanten** auf Plattformebene *(3)*                              |       | **RA**       |
+| Definition und Konfiguration der **Richtlinien zur Mikrosegmentierung** (security groups) *(4)*                     | **RA** |              |
+| Einrichtung einer **Datenflussfilterung** ein-/ausgehend (pare-feu applicatif, IDS/IPS) *(5)*            | **RA** |              |
+| Verwaltung der **TLS-Zertifikate** und SSL-Terminierung exponierter Dienste                                    | **RA** |              |
+| Durchführung von **Penetrationstests** auf den im VPC gehosteten Ressourcen *(6)*                          | **RA** | **C**        |
+| Überwachung **anomaler Verhaltensweisen** im Mandantendatenverkehr                                     | **RA** |              |
 
-*(3) Cloud Temple garantiert die strikte Isolierung zwischen VPCs verschiedener Mandanten.*  
-*(4) Mikrosegmentierung (Sicherheitsgruppen) wird im H1 2026 verfügbar sein.*  
-*(5) Die Filterung von Anwendungsverkehr im VPC liegt in der Verantwortung des Kunden.*  
-*(6) Penetrationstests müssen Cloud Temple vorab gemeldet werden.*
+*(3) Cloud Temple garantiert die strikte Trennung zwischen VPCs verschiedener Mandanten. Kein Datenverkehr kann diese Barriere ohne explizite Aktion des Kunden durchlaufen.*  
+*(4) Die Mikrosegmentierung (security groups) ist im S1 2026 verfügbar. Vor dieser Verfügbarkeit geltende Filterrichtlinien sind vom Kunden über eine dedizierte Sicherheitsinfrastruktur umzusetzen.*  
+*(5) Die anwendungsbezogene Filterung des Datenverkehrs innerhalb des VPC liegt in der Verantwortung des Kunden. Cloud Temple führt keine Inhaltsprüfung des Mandantendatenverkehrs durch.*  
+*(6) Penetrationstests sind gemäß den Allgemeinen Geschäftsbedingungen vorab bei Cloud Temple anzumelden.*
 
----
+## Interkonnektion mit externen Netzwerken
 
-## Verbindung zu externen Netzwerken
-
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **Verbindungsstrategie** mit On-Premise-Umgebungen oder anderen Clouds definieren                             | **RA** | **C**        |
-| **Site-to-Site-VPN**-Zugang abonnieren und konfigurieren *(verfügbar H2 2026)*                                | **RA** | **C**        |
-| **Cloud Connect** (dedizierter Link) abonnieren und konfigurieren *(verfügbar H2 2026)*                       | **RA** | **C**        |
-| **BGP / Routen** für Betreiberverbindungen verwalten                                                           | **RA** | **CI**       |
-| **Sicherheit der Datenströme** über Verbindungen sicherstellen                                                 | **RA** |              |
+| Aktivität                                                                                                    | Client | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Strategie für die **Interkonnektion** mit On-Premise-Umgebungen oder anderen Clouds festlegen            | **RA** | **C**        |
+| Zugang zu einem **Site-to-Site-VPN** abonnieren und konfigurieren *(disponible S2 2026)*                                | **RA** | **C**        |
+| Zugang zu **Cloud Connect** (lien dédié) abonnieren und konfigurieren *(disponible S2 2026)*                     | **RA** | **CI**       |
+| Verwaltung der **BGP / Routes** im Zusammenhang mit Operator-Interkonnektionen                                          | **RA** | **CI**       |
+| Gewährleistung der **Sicherheit der Datenflüsse** über die Interkonnektionen                                         | **RA** |              |
 
 ---
 
-## Ressourcenverbindung mit dem VPC
+## Anbindung von Ressourcen an das VPC
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **VM-Instanzen** mit einem privaten VPC-Netzwerk verbinden                                                    | **RA** | **I**        |
-| **IaaS-Ressourcen** (VMware-VMs, OpenIaaS) mit privaten VPC-Netzwerken verbinden                              | **RA** | **C**        |
-| **Netzwerkschnittstellen** der mit dem VPC verbundenen Ressourcen konfigurieren                               | **RA** |              |
-| Sicherstellen, dass verbundene Ressourcen **konsistente Netzwerkkonfigurationen** anwenden                    | **RA** |              |
-
----
-
-## Netzwerküberwachung & Beobachtbarkeit
-
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| Betrieb der **VPC-Kernkomponenten** (Router, Gateway) überwachen                                              | **I**  | **RA**       |
-| **Performance des Cloud Temple**-Netzwerk-Backbones überwachen                                                | **I**  | **RA**       |
-| **Netzwerkflussprotokolle** (Flow Logs) des VPC sammeln und analysieren *(verfügbar H1 2026)*                 | **RA** | **I**        |
-| **Überwachung von Anwendungsflüssen** im VPC implementieren                                                    | **RA** |              |
-| **Latenz und Bandbreite** der Datenströme im VPC überwachen                                                    | **RA** | **I**        |
+| Aktivität                                                                                                    | Client | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| **VM-Instanzen** an ein privates VPC-Netzwerk anbinden                                                     | **RA** | **I**        |
+| **IaaS-Ressourcen** (VMware-VMs, OpenIaaS) an die privaten VPC-Netzwerke anbinden                         | **RA** | **C**        |
+| **Netzwerkschnittstellen** der mit dem VPC verbundenen Ressourcen konfigurieren                                       | **RA** |              |
+| Sicherstellen, dass die verbundenen Ressourcen **konsistente Netzwerkkonfigurationen** (Gateway, DNS) | **RA** |              |
 
 ---
 
-## Änderungsmanagement & Kapazitäten
+## Netzwerküberwachung & Observability
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| Entscheidung über Hinzufügen, Ändern oder Entfernen von Netzwerkressourcen im VPC                             | **RA** | **CI**       |
-| Kapazitäten und Skalierbarkeit der Backbone-Netzwerkinfrastruktur verwalten                                   |        | **RA**       |
-| Wachstum des IP-Adressierungsplans im VPC planen und verwalten                                                 | **RA** | **C**        |
+| Aktivität                                                                                                    | Kunde | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|-------|--------------|
+| Überwachung des Betriebs der **Kernkomponenten des VPC** (routeur, gateway)                             | **I**  | **RA**       |
+| Überwachung der **Backbone-Performance** des Cloud Temple-Netzwerks                                      | **I**  | **RA**       |
+| Sammlung und Analyse der **Netzwerkfluss-Logs** (flow logs) des VPC *(disponible S1 2026)*                | **RA** | **I**        |
+| Einrichtung eines **Monitorings der Anwendungsflüsse** im VPC                                        | **RA** |              |
+| Überwachung der **Latenz und Bandbreite** der Flüsse innerhalb des VPC                                       | **RA** | **I**        |
 
 ---
 
-## Zugriffs- & Identitätsverwaltung
+## Änderungs- und Kapazitätsmanagement
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| Zugänglichkeit der **Cloud Temple Console** und Netzwerk-API sicherstellen                                    |        | **RA**       |
-| Berechtigungen der Cloud Temple Teams zur Netzwerkinfrastruktur verwalten                                     |        | **RA**       |
-| VPC-Zugriffsrechte in der Cloud Temple Console (IAM) verwalten                                                 | **RA** |              |
+| Aktivität                                                                                                    | Client | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Entscheidung treffen, Netzwerkressourcen im eigenen VPC hinzuzufügen, zu ändern oder zu entfernen                       | **RA** | **CI**       |
+| Kapazitäten und Skalierbarkeit der Backbone-Netzwerkinfrastruktur verwalten                                    |        | **RA**       |
+| Wachstum des IP-Adressplans im VPC planen und verwalten                                         | **RA** | **C**        |
+
+---
+
+## Zugriffs- & Identitätsmanagement
+
+| Aktivität                                                                                                    | Client | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Sicherstellung der Erreichbarkeit der **Cloud Temple Console** und der Netzwerk-API                                  |        | **RA**       |
+| Verwaltung der Berechtigungen der Cloud Temple-Teams für die Netzwerk-Infrastruktur                                  |        | **RA**       |
+| Verwaltung der Zugriffsrechte auf das VPC in der Cloud Temple Console (IAM)                                    | **RA** |              |
 
 ---
 
 ## Protokolle (Logs)
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| **VPC-Plattformprotokolle** aufbewahren und bereitstellen *(7)*                                               |        | **RA**       |
-| **Fluss- und Anwendungsprotokolle** des Mandanten sammeln und aufbewahren                                      | **RA** |              |
+| Aktivität                                                                                                    | Client | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|--------|--------------|
+| Speichern und Bereitstellen der **VPC-Plattformprotokolle** *(7)*                                          |        | **RA**       |
+| Sammeln und Speichern der **Flow-Logs** und Anwendungsprotokolle des Tenants                                | **RA** |              |
 
-*(7) Die Aufbewahrungsdauer der VPC-Plattformprotokolle ist in der entsprechenden Dienstvereinbarung festgelegt.*
+*(7) Die Aufbewahrungsdauer der VPC-Plattformprotokolle wird in der entsprechenden Servicevereinbarung festgelegt.*
 
 ---
 
 ## Dokumentation & Vertragliches
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| Kaufmännisches und vertragliches Management sicherstellen                                                      | **I**  | **RA**       |
-| Vertragliche Leistungserbringung überwachen                                                                    | **RA** | **I**        |
-| Technische VPC-Servicedokumentation pflegen und bereitstellen                                                  | **I**  | **RA**       |
-| Im Mandanten bereitgestellte Netzwerkarchitektur dokumentieren (Diagramme, CMDB)                               | **RA** |              |
+| Aktivität                                                                                                    | Kunde | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|-------|--------------|
+| Übernahme des kommerziellen und vertraglichen Managements (devis, commandes, facturation)                  | **I**  | **RA**       |
+| Sicherstellung des vertraglichen Monitorings der Dienstleistung                                            | **RA** | **I**        |
+| Sicherstellung der Wartung und Verfügbarkeit der technischen Dokumentation des VPC-Dienstes                | **I**  | **RA**       |
+| Dokumentation der im Tenant bereitgestellten Netzwerkarchitektur (schémas, CMDB)                           | **RA** |              |
 
 ---
 
 ## Reversibilität
 
-| Aktivität                                                                                                      | Kunde  | Cloud Temple |
-|----------------------------------------------------------------------------------------------------------------|--------|--------------|
-| Netzwerk-Reversibilitätsprojekt planen und Zielarchitekturen auswählen                                        | **RA** | **I**        |
-| VPC-Konfiguration und Netzwerkressourcen über API oder bereitgestellte Tools exportieren                       | **RA** | **I**        |
-| VPC-Konfigurationen nach Vertragsbeendigung abbauen                                                            | **I**  | **RA**       |
+| Aktivität                                                                                                    | Kunde | Cloud Temple |
+|-------------------------------------------------------------------------------------------------------------|-------|--------------|
+| Das Projekt zur Netzwerk-Reversibilität planen und die Zielarchitekturen auswählen                         | **RA** | **I**        |
+| VPC-Konfiguration und Netzwerkressourcen über die API oder die bereitgestellten Tools exportieren            | **RA** | **I**        |
+| VPC-Konfigurationen nach Vertragsbeendigung zurückbauen                                                    | **I**  | **RA**       |
 
 ---
 
-> *Professional Services stehen zur Verfügung, wenn Sie einige oder alle Verantwortlichkeiten an Cloud Temple delegieren möchten. Wenden Sie sich an Ihren Cloud Temple Account Manager.*
+> *Professionelle Dienstleistungen stehen zur Verfügung, wenn Sie die als Kundenverantwortung aufgeführten Aufgaben ganz oder teilweise delegieren möchten. Kontaktieren Sie Ihren Cloud Temple-Vertriebspartner.*

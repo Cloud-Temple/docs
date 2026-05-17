@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Compute
 
-Cloud Temple's Compute services allow you to deploy and operate virtual machines on a sovereign and secure infrastructure. Choose the technology that suits your needs: shared cloud instances, open source infrastructure, or VMware virtualization.
+Cloud Temple's Compute services allow you to deploy and operate virtual machines on a sovereign and secure infrastructure. Choose the technology that best fits your needs: shared cloud instances, open source infrastructure, or VMware virtualization.
 
 <div class="card-grid">
   <div class="card">
@@ -15,7 +15,7 @@ Cloud Temple's Compute services allow you to deploy and operate virtual machines
   </div>
   <div class="card">
     <h3>IaaS OpenSource</h3>
-    <p>Open source virtualized infrastructure (OpenStack). Full control over your VMs, networks, and storage on a SecNumCloud-certified foundation.</p>
+    <p>Open source virtualized infrastructure (OpenStack). Full control over your VMs, networks, and storage on a SecNumCloud foundation.</p>
     <a href="./iaas_opensource" class="card-link">Discover IaaS OpenSource →</a>
   </div>
   <div class="card">

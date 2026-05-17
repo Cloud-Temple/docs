@@ -9,10 +9,10 @@ tags:
 ## Plataformas de compra
 
 <div class="purchase-platforms">
-  <p>¿Eres un actor del sector público? La oferta <strong>IaaS Cloud Temple</strong> está disponible a través de:</p>
+  <p>¿Es usted un actor del sector público? El producto <strong>IaaS Cloud Temple</strong> es accesible a través de:</p>
 
   <div class="platform-card">
-    <img src="https://www.medgest.fr/wp-content/uploads/sites/2/2021/09/nouveau-logo-ugap-2021.png" alt="Logo UGAP" class="platform-logo" />
+    <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
         La plataforma de compras públicas UGAP
@@ -21,10 +21,10 @@ tags:
   </div>
 
   <div class="platform-card">
-      <img src="https://i0.wp.com/www.activus-software.fr/wp-content/uploads/2022/09/20221212-GRP-CAIH-BC.png?fit=1300%2C827&ssl=1" alt="Logo UGAP" class="platform-logo" />
+      <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        El mercado CAIH para el sector médico
+        El contrato CAIH para el sector médico
       </a>
     </p>
   </div>

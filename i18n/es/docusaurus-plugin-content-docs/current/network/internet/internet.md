@@ -2,6 +2,8 @@
 title: Visión general
 ---
 
+# Internet
+
 Cloud Temple pone a disposición de sus clientes bloques de __direcciones IP públicas__ de al menos 1 IPv4, o 64 IPv6, declaradas en RIPE, para permitir su conectividad a Internet.
 
 <div class="card-grid">
@@ -13,7 +15,7 @@ Cloud Temple pone a disposición de sus clientes bloques de __direcciones IP pú
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./internet/quickstart" class="card-link">Iniciar el Inicio rápido &rarr;</a>
+    <a href="./internet/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>

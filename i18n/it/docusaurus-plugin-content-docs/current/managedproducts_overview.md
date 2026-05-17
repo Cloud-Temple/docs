@@ -4,40 +4,40 @@ title: Panoramica delle offerte di prodotti gestiti
 
 ## Che cos'è un prodotto gestito?
 
-I prodotti gestiti di Cloud Temple sono servizi cloud interamente gestiti dal fornitore, consentendo ai clienti di concentrarsi sulle proprie applicazioni senza dover gestire l'infrastruttura sottostante.
+I prodotti gestiti da Cloud Temple sono servizi cloud interamente gestiti dal fornitore, che permettono ai clienti di concentrarsi sulle proprie applicazioni senza dover gestire l'infrastruttura sottostante.
 
-Questi prodotti includono soluzioni come Managed Kubernetes, Managed MariaDB, Managed PostgreSQL, Managed Firewall o Managed SOC, dove Cloud Temple si occupa della configurazione, del monitoraggio, della manutenzione e della scalabilità.
+Questi prodotti includono soluzioni come Kubernetes gestito, MariaDB gestito, PostgreSQL gestito, Firewall gestito o SOC gestito, dove Cloud Temple si occupa della configurazione, del monitoraggio, della manutenzione e della scalabilità.
 
-Si basano su un'infrastruttura sovrana con qualificazione SecNumCloud, con alta disponibilità (multi-AZ), automazione e supporto garantito da SLA.
+Si basano su un'infrastruttura sovrana certificata SecNumCloud, con alta disponibilità (multi-AZ), automazione e supporto SLA.
 
-**Vantaggi principali**
+**Vantaggi chiave**
 
-- Liberazione operativa: Cloud Temple gestisce il control plane, i backup, la sicurezza e gli aggiornamenti, semplificando l'orchestrazione per i vostri deployment.
+- Liberazione dalle operazioni: Cloud Temple gestisce il control plane, i backup, la sicurezza e gli aggiornamenti, semplificando l'orchestrazione per i vostri deployment.
 
-- Standard del settore: prodotti semplici, riconosciuti, collaudati e open-source.
+- Standard di mercato: prodotti semplici, riconosciuti, collaudati e open-source.
 
-## Il nostro portfolio di prodotti gestiti
+## Il nostro portafoglio di prodotti gestiti
 
 ### Database gestiti
 
-- **Managed MariaDB (on Kubernetes)**: una soluzione di motore di database MariaDB che funziona "on-top" delle nostre offerte *Managed Kubernetes* / *Managed Core Kubernetes*. [Vedi la scheda](./managed_mariadb)
+- **MariaDB gestito (on Kubernetes)** : una soluzione del motore di database MariaDB che funziona "on-top" delle nostre offerte *Kubernetes gestito* / *Core Kubernetes gestito*. [Vedi la scheda](./managed_mariadb)
 
-- **Managed PostgreSQL (on Kubernetes)**: una soluzione di motore di database PostgreSQL che funziona "on-top" delle nostre offerte *Managed Kubernetes* / *Managed Core Kubernetes*. [Vedi la scheda](./managed_postgresql).
+- **PostgreSQL gestito (on Kubernetes)** : una soluzione del motore di database PostgreSQL che funziona "on-top" delle nostre offerte *Kubernetes gestito* / *Core Kubernetes gestito*. [Vedi la scheda](./managed_postgresql).
 
-- **Managed MongoDB (on Kubernetes)**: una soluzione di motore di database MongoDB che funziona "on-top" delle nostre offerte *Managed Kubernetes* / *Managed Core Kubernetes*. (documentazione in corso di realizzazione)
+- **MongoDB gestito (on Kubernetes)** : una soluzione del motore di database MongoDB che funziona "on-top" delle nostre offerte *Kubernetes gestito* / *Core Kubernetes gestito*. (documentazione in fase di realizzazione)
 
 ### Prodotti per i dati
 
-- **Managed Kafka (on Kubernetes)**: Una soluzione Apache Kafka con schema registry che funziona "on-top" delle nostre offerte *Managed Kubernetes* / *Managed Core Kubernetes*. (documentazione in corso di realizzazione)
+- **Kafka gestito (su Kubernetes)** : Una soluzione Apache Kafka, con schema registry che funziona "on-top" delle nostre offerte *Kubernetes gestito* / *Core Kubernetes gestito*. (documentazione in fase di realizzazione)
 
-- **Managed Airflow**: *in arrivo!*
+- **Airflow gestito** : *in arrivo a breve!*
 
-- **Managed Superset**: *in arrivo!*
+- **Superset gestito** : *in arrivo a breve!*
 
 ### Prodotti per la sicurezza
 
-- **Managed KMS**: *in arrivo!*
+- **KMS gestito** : *in arrivo presto!*
 
-- **Managed SIEM**: *in arrivo!*
+- **SIEM gestito** : *in arrivo presto!*
 
 ---

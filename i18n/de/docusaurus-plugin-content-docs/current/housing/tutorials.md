@@ -1,11 +1,13 @@
+
+
 ---
 title: Tutorials
 ---
 
-These tutorials help you deploy and manage a Cloud Temple Bastion from the Console portal.
+Diese Tutorials unterstützen Sie bei der Bereitstellung und Verwaltung eines Bastion Cloud Temple über das Console-Portal.
 
 <div class="card">
   <h3>Tutorials</h3>
-  <p>No tutorials are currently available, but we are working on them actively. Please check back soon for more information!</p>
-  <a href="./../" class="card-link">Go to the Home Page &rarr;</a>
+  <p>Für den Moment sind keine Tutorials verfügbar, aber wir arbeiten aktiv daran. Schauen Sie bald wieder vorbei, um mehr zu erfahren!</p>
+  <a href="./../" class="card-link">Zur Startseite &rarr;</a>
 </div>

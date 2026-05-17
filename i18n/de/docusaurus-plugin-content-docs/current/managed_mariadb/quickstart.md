@@ -1,33 +1,33 @@
 ---
-title: Erste-Schritte-Leitfaden
+title: Schnellstartanleitung
 ---
 
-Willkommen beim Erste-Schritte-Leitfaden für **Managed MariaDB** von Cloud Temple.
+Willkommen zur Schnellstartanleitung für **MariaDB Managed** Cloud Temple.
 
-Das Ziel dieses Abschnitts ist es, Sie zu den notwendigen Ressourcen zu führen, um Ihr Produkt in Betrieb zu nehmen.
+Ziel dieses Abschnitts ist es, Sie zu den erforderlichen Ressourcen zu leiten, damit Sie sich schnell mit Ihrem Produkt vertraut machen können.
 
 ## Bevor Sie beginnen
 
-Stellen Sie sicher, dass Sie über die von Cloud-Temple bereitgestellten Zugangsdaten verfügen.
+Stellen Sie sicher, dass Sie über die von Cloud-Temple bereitgestellten Zugriffsrechte verfügen.
 
-Stellen Sie sicher, dass die Netzwerkflüsse zu den Ihnen bereitgestellten IPs geöffnet sind.
+Stellen Sie sicher, dass die Netzwerkflüsse zu den Ihnen bereitgestellten IP-Adressen geöffnet sind.
 
-## Zugriff auf Ihren Managed MariaDB-Cluster
+## Zugriff auf Ihren verwalteten MariaDB-Cluster
 
-Je nach gewähltem Bereitstellungsmodell haben Sie einen oder mehrere Endpunkte.
+Je nach gewähltem Bereitstellungsmodell verfügen Sie über einen oder mehrere Endpunkte.
 
-**StandAlone**: Nur 1 Endpunkt (nur 1 IP), zugänglich auf Port 3306.
+**StandAlone** : 1 Endpunkt (1 IP), erreichbar über Port 3306.
 
-**Distributed**:
+**Distributed** :
 
-- 1 MaxScale-Endpunkt, zugänglich auf Port 3306, der Ihre Anfragen zu den am besten geeigneten Instanzen weiterleiten kann (dies ist der bevorzugte Endpunkt)
-- 1 R/W-Endpunkt, zugänglich auf Port 3306, der auf die primäre Instanz im Lese-Schreib-Modus zeigt.
-- 1 R/O-Endpunkt, zugänglich auf Port 3306, der auf alle Instanzen im schreibgeschützten Modus zeigt.
+- 1 Maxscale-Endpunkt, erreichbar über Port 3306, der Ihre Abfragen an die am besten geeigneten Instanzen verteilt (dieser Endpunkt ist zu bevorzugen)
+- 1 R/W-Endpunkt, erreichbar über Port 3306, der auf die primäre Instanz für Lese-/Schreibzugriffe verweist.
+- 1 R/O-Endpunkt, erreichbar über Port 3306, der auf alle Instanzen für Lesezugriffe verweist.
 
 ## Ihre Berechtigungen
 
-Sie haben keine Berechtigungen auf der Datenbankmotorebene (weder `SUPER` noch `ALL_PRIVILEGE`)
+Sie verfügen über keine Berechtigungen auf Ebene der Datenbank-Engine (weder `SUPER` noch `ALL_PRIVILEGE`).
 
-Sie können den Motor oder seine Optionen nicht neu konfigurieren und auch kein performance_schema installieren.
+Sie können die Engine oder deren Optionen nicht neu konfigurieren und das performance_schema nicht installieren.
 
-Anfragen zum Hinzufügen von Datenbanken, Benutzern oder Grants müssen an die Cloud-Temple-Teams gestellt werden.
+Anfragen zur Anlage von Datenbanken, Benutzern oder Grants sind an die Cloud-Temple-Teams zu richten.

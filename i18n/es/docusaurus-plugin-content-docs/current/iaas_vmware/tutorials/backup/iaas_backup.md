@@ -24,31 +24,32 @@ import backupInvIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/ba
 
 #### ¿Cómo clonar una máquina virtual?
 
-Existen 2 maneras de clonar una máquina virtual:
+Existen 2 formas de clonar una máquina virtual:
 
 - La primera opción permite clonar una máquina virtual directamente desde el icono __'Clonar'__ de su máquina virtual:
 
 <img src={backupCloneIaas_001} />
 <img src={backupCloneIaas_002} />
 
-- La segunda solución consiste en clonar la máquina virtual utilizando __una copia de seguridad__ de la máquina virtual y luego utilizando __la restauración en modo clon__ de una copia de seguridad.
-Vaya a la sección __'Copia de seguridad'__ de su máquina virtual y elija la acción __'Restaurar'__ :
+- La segunda opción consiste en clonar la máquina virtual utilizando __una copia de seguridad__ de la máquina virtual y, a continuación, utilizando __la restauración en modo clonar__ de una copia de seguridad.
+Ve a la sección __'Copia de seguridad'__ de su máquina virtual y selecciona la acción __'Restaurar'__:
 
 <img src={backupRestoIaas_001} />
 
-A continuación, elija la opción __'Clonar'__ de restauración:
+Selecciona a continuación la opción __'Clonar'__ de restauración:
 
 <img src={backupCloneIaas_004} />
 
-#### ¿Por qué cuando voy a la página "políticas de copia de seguridad" y selecciono una política, no veo las mismas máquinas virtuales que cuando voy a "informes de copias de seguridad" y selecciono la misma política?
+#### ¿Por qué, cuando voy a la página "políticas de copia de seguridad" y selecciono una política, no veo las mismas máquinas virtuales que cuando voy a "informe de copias de seguridad" y selecciono la misma política?
 
-Esto significa que las máquinas virtuales faltantes tuvieron la política en cuestión asignada durante un tiempo (explicando su presencia en los informes de copias de seguridad), pero que __actualmente no es el caso__.
+Esto significa que las máquinas virtuales que faltan tenían asignada la política en cuestión durante
+un tiempo (lo que explica su presencia en los informes de copias de seguridad), pero que __actualmente ya no es así__.
 
 #### ¿Cómo agregar una política de copia de seguridad a una máquina virtual?
 
-Vaya a la página __'Máquinas Virtuales'__ en la sección __'IaaS'__ del menú vertical en el lado izquierdo de la pantalla.
+Vaya a la página __'Máquinas Virtuales'__ en la sección __'IaaS'__ de la barra de menú verde en el lado izquierdo de la pantalla.
 
-Seleccione una máquina virtual y luego la pestaña __'Políticas de copias de seguridad'__ de esta máquina:
+Seleccione una máquina virtual y luego la pestaña __'Políticas de copia de seguridad'__ de esta máquina:
 
 <img src={backupPolicyIaas_001} />
 
@@ -58,20 +59,20 @@ Agregue la política de copia de seguridad deseada:
 
 ### ¿Cómo eliminar una política de copia de seguridad de una máquina virtual?
 
-Vaya a la página __'Máquinas Virtuales'__, seleccione una máquina virtual y luego la pestaña __'Políticas de copias de seguridad'__ de esta máquina.
+Vaya a la página __'Máquinas Virtuales'__, seleccione una máquina virtual y luego la pestaña __'Políticas de copia de seguridad'__ de esta máquina.
 
 Elimine la política de copia de seguridad deseada y confirme la eliminación:
 
 <img src={backupPolicyIaas_003} />
 
-__*Nota:*__ *¡Cuidado! __Secnumcloud exige que haya al menos una política de copia de seguridad__ para cada máquina virtual.*
+__*Nota:*__ *¡Atención! __Secnumcloud exige que haya al menos una política de copia de seguridad__ para cada máquina virtual.*
 
-### ¿Cómo saber si una copia de seguridad se ejecutó correctamente?
+### ¿Cómo saber si una copia de seguridad se ha ejecutado correctamente?
 
-Hay 2 soluciones posibles:
+Existen 2 soluciones posibles:
 
-1. Vaya a la página __'Trabajos'__ del menú __'Copia de seguridad'__ en el menú vertical a la izquierda de su pantalla. Elija el trabajo correspondiente a la copia de seguridad y selecciónelo.
-Luego, encuentre el *jobsession* correspondiente a su copia de seguridad, selecciónelo mediante el menú __'Acciones'__.
+1. Vaya a la página __'Jobs'__ del menú __'Copia de seguridad'__ en la barra verde a la izquierda de su pantalla. Seleccione la tarea correspondiente a la copia de seguridad y selecciónela.
+A continuación, busque la *sesión de trabajo* correspondiente a su copia de seguridad y selecciónela mediante el menú __'Acciones'__.
 
 <img src={backupPolicyIaas_006} />
 
@@ -79,104 +80,107 @@ Estas acciones permiten obtener los registros detallados de la ejecución de la 
 
 <img src={backupPolicyIaas_005} />
 
-1. Vaya a la página __'Informes de copias de seguridad'__ y seleccione la política que le interesa:
+1. Vaya a la página __'Informes de copia de seguridad'__ y seleccione la política que le interese:
 
 <img src={backupPolicyIaas_004} />
 
-Luego puede filtrar por fecha, descargar el informe en formato __PDF__ o __CSV__ para utilizarlo en herramientas externas.
+A continuación, puede filtrar por fecha, descargar el informe en formato __PDF__ o __CSV__ para procesarlo en herramientas de terceros.
 
 ### ¿Cómo iniciar una restauración?
 
-Vaya a la página __'Máquinas Virtuales'__, seleccione una máquina virtual y luego la pestaña __'Copias de seguridad'__ de esta máquina. Para iniciar la restauración, seleccione la copia de seguridad que desea restaurar.
+Acceda a la página __'Máquinas Virtuales'__, seleccione una máquina virtual y luego la pestaña __'Copias de seguridad'__ de esta máquina. Para iniciar la restauración, seleccione la copia de seguridad a restaurar.
 
 <img src={backupCloneIaas_003} />
 
 ### ¿Qué es la opción de quiescing?
 
-El __quiescing__ es un proceso que consiste en notificar al sistema para que se ponga en un estado adecuado antes del inicio del snapshot.
-Por defecto, el __quiescing está activado__. Puede desactivarlo manualmente en caso de que el sistema gestione mal el snapshot o si el agente del hipervisor no esté instalado en la máquina virtual.
+El __quiescing__ es un proceso que consiste en notificar al sistema para que se ponga en un estado adecuado antes de iniciar la instantánea.
+Por defecto, el __quiescing está activado__. Puede desactivarse manualmente en el caso de que el sistema gestione mal la instantánea o si el agente del hipervisor no está instalado en la máquina virtual.
 
-Para hacerlo, en la sección __'Copias de seguridad'__ de su máquina virtual, haga clic en __'Modificar las opciones'__ y desactive el __quiescing__ :
+Para ello, en la sección __'Copias de seguridad'__ de tu máquina virtual, haz clic en __'Modificar opciones'__ y desactiva el __quiescing__:
 
 <img src={backupPolicyIaas_007} />
 
 ### ¿Cuáles son las opciones de restauración de una máquina virtual?
 
-3 opciones principales para restaurar una VM, en su destino original o en un destino diferente:
+3 opciones principales para restaurar una vm, en su destino inicial o en un destino diferente:
 
-- __'CLONAR'__ : Restaura la máquina virtual y la renombra, sin reemplazar la máquina virtual original.
+- __'CLONE'__ : Restaura la máquina virtual renombrándola, sin reemplazar la máquina virtual original.
 
 <img src={backupRestoreIaas_001} />
 
-- __'PRODUCCIÓN'__ : Restaura y __reemplaza__ la máquina virtual de producción (la máquina virtual actualmente en producción se __destruye__).
+- __'PRODUCTION'__ : Restaura y __reemplaza__ la máquina virtual de producción (la máquina virtual actualmente en producción es __destruida__)
 
 <img src={backupRestoreIaas_003} />
 
-- __'PRUEBA'__ : Restaura la máquina virtual de producción __sin sobrescribirla__.
+- __'TEST'__ : Restaura la máquina virtual de producción __sin sobrescribirla__.
 
 <img src={backupRestoreIaas_002} />
 
 ### ¿Cómo restaurar y reemplazar la máquina virtual de producción, sin conservar la máquina virtual actualmente en producción?
 
-Elija el modo de restauración __'PRODUCCIÓN'__. La opción 'sobrescribir la máquina virtual' está activada por defecto.
+Seleccione el modo de restauración __'Producción'__. La opción 'sobrescribir la máquina virtual' es la opción predeterminada.
 
 <img src={backupRestoreIaas_003} />
 
-### ¿Por qué el número de máquinas virtuales es diferente entre los módulos copia de seguridad y cálculo?
+### ¿Por qué difiere el número de máquinas virtuales entre los módulos de copia de seguridad y de cómputo?
 
 La diferencia en el número de máquinas virtuales puede deberse a que el módulo de copias de seguridad no ha recuperado las últimas máquinas creadas.
 
-Para actualizar el módulo de copias de seguridad, debe solicitar a la capa de software de copia de seguridad que reinventorie las máquinas virtuales.
-Para ello, en el menú __'Infraestructura'__ del menú vertical a la izquierda de la pantalla, navegue hasta el submenú __'Spectrum Protect Plus'__ y utilice el botón __'Acción'__ del inventario :
+Para actualizar el módulo de copias de seguridad, es necesario solicitar a la capa de software de copia de seguridad que actualice el inventario de las máquinas virtuales.
+Para ello, en el menú __'Infrastructure'__ de la barra verde a la izquierda de la pantalla, navegue al submenú __'Spectrum Protect Plus'__ y utilice el botón __'Action'__ del inventario:
 
 <img src={backupInvIaas_001} />
 
-Tenga en cuenta que tiene la fecha del último inventario que se indica.
+Tenga en cuenta que se indica la fecha del último inventario.
 
-Si persiste la diferencia en la máquina virtual, puede deberse a las máquinas virtuales que albergan el sistema que permite las copias de seguridad. En efecto, estas no se cuentan a sí mismas en el cálculo del número de máquinas en el módulo de copias de seguridad.
+Si persiste una diferencia en el número de máquinas virtuales, puede deberse a las máquinas virtuales que alojan el sistema que permite
+las copias de seguridad. De hecho, estas no se incluyen en el cálculo del número de máquinas en el módulo de copias de seguridad.
 
 ### ¿Cómo realizar el inventario de las máquinas virtuales en el módulo de copia de seguridad?
 
-Para iniciar un inventario de las máquinas virtuales en el módulo de copia de seguridad, en el menú __'Infraestructura'__ del menú vertical a la izquierda de la pantalla, navegue hasta el submenú __'Spectrum Protect Plus'__ y utilice el botón __'Acción'__ del inventario :
+Para ejecutar un inventario de las máquinas virtuales en el módulo de copia de seguridad, en el menú __'Infrastructure'__ de la barra verde a la izquierda de la pantalla, navegue hasta el submenú __'Spectrum Protect Plus'__ y utilice el botón __'Action'__ del inventario:
 
 <img src={backupInvIaas_001} />
 
-Tenga en cuenta que tiene la fecha del último inventario que se indica.
+Tenga en cuenta que se muestra la fecha del último inventario.
 
-### ¿Por qué la copia de seguridad de mi máquina virtual falla indicando un problema de snapshot?
+### ¿Por qué falla la copia de seguridad de mi máquina virtual indicando un problema de instantánea?
 
-Este error significa que es la primera vez que su máquina intenta ser copiada.
+Este error indica que es la primera vez que su máquina intenta ser respaldada.
 
-__Durante la primera copia de seguridad de una máquina virtual, no debe haber ningún snapshot en la máquina.__
+__Durante la primera copia de seguridad de una máquina virtual, no debe haber ninguna instantánea presente en la máquina.__
 
 ### ¿Cómo restaurar y reemplazar la máquina virtual de producción, conservando y renombrando la máquina virtual de producción?
 
-Así es como proceder:
+A continuación se indica cómo proceder:
 
-- Elija el modo __'CLONAR'__ (el modo clon implica un cambio de dirección MAC y UUID de la máquina virtual),
-- Renombre la máquina virtual restaurada con el nombre definitivo (de la VM de producción),
+- Seleccione el modo __'CLONE'__ (el modo clon provoca un cambio en la dirección MAC y el UUID de la máquina virtual),
+- Renombre la máquina virtual restaurada con el nombre definitivo (de la vm de producción),
 - Renombre la antigua máquina virtual de producción (en _OLD).
 
 ### ¿Cómo restaurar una máquina virtual sin reemplazar la máquina virtual original?
 
-Así es como proceder:
+A continuación se indica cómo proceder:
 
-- Elija el modo __'CLONAR'__ (el modo clon implica un cambio de dirección MAC y UUID de la máquina virtual)
+- Seleccione el modo __'CLONE'__ (el modo clon provoca un cambio en la dirección MAC y el UUID de la máquina virtual)
 - Defina el nombre del clon (_REST u otros)
 
-### ¿Por qué no puedo eliminar un disco en modo acceso instantáneo en mi máquina virtual?
+### ¿Por qué no puedo eliminar un disco en modo instant access en mi máquina virtual?
 
-Ejecute el inventario de la copia de seguridad: en el menú __'Infraestructura'__ del menú vertical a la izquierda de la pantalla, navegue hasta el submenú __'Spectrum Protect Plus'__ y utilice el botón __'Acción'__ del inventario :
+Ejecute el inventario de la copia de seguridad: en el menú __'Infraestructura'__ de la barra verde a la izquierda de la pantalla, navegue
+hasta el submenú __'Spectrum Protect Plus'__ y utilice el botón __'Acción'__ del inventario:
 
 <img src={backupInvIaas_001} />
 
-Realice la eliminación del disco una vez finalizado el inventario. Actualice la máquina virtual para verificar que el disco haya sido eliminado correctamente.
+Elimine el disco una vez finalizado el inventario. Actualice la máquina virtual para verificar que el disco se haya eliminado correctamente.
 
 ### ¿Por qué no puedo iniciar una máquina virtual con una política en estado Held (política suspendida)?
 
-Una política en estado "Held" es una función que permite suspender temporalmente las acciones de retención y eliminación de datos, garantizando así que los datos permanezcan intactos y disponibles más allá de su período de retención estándar para razones específicas como la conformidad o las necesidades legales.
+Una política en estado "Held"  es una característica que permite suspender temporalmente las acciones de retención y eliminación de datos, garantizando así que los datos permanezcan intactos y disponibles más allá de su período de retención estándar por motivos específicos como el cumplimiento normativo o las necesidades legales.
 
-Supongamos que una empresa tiene una política de retención de copia de seguridad de 30 días para ciertos datos de producción. Debido a una investigación legal, reciben una solicitud para preservar todas las copias de seguridad pertinentes durante un período indeterminado. Tiene la posibilidad de suspender la política de copia de seguridad asociada mediante el estado "Held" para evitar la eliminación automática de estas copias de seguridad después de 30 días, asegurando así que los datos estén disponibles durante toda la duración de la investigación.
-Una política de copia de seguridad suspendida (en estado Held) no ejecutará las copias de seguridad del planificador asignado, por lo que la máquina virtual no podrá considerarse protegida, lo que no cumple con las normas SecNumCloud.
+Supongamos que una empresa tiene una política de retención de copias de seguridad de 30 días para ciertos datos de producción. Debido a una investigación legal, recibe una solicitud para preservar todas las copias de seguridad relevantes durante un período indeterminado. Puede suspender la política de copia de seguridad asociada mediante el estado "Held" para evitar la eliminación automática de estas copias de seguridad después de 30 días, asegurando así que los datos permanezcan disponibles durante toda la duración de la investigación.
 
-No dude en solicitar consejo a nuestro equipo de soporte sobre este tema.
+Una política de copia de seguridad suspendida (en estado Held) no ejecutará las copias de seguridad de la programación asignada, por lo que la máquina virtual no podrá considerarse protegida, lo cual no cumple con las normas SecNumCloud.
+
+No dude en solicitar asesoramiento a nuestro equipo de soporte sobre este tema.

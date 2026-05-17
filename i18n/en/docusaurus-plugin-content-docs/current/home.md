@@ -1,6 +1,7 @@
 ---
 tags:
   - home
+  - home
   - onboarding
 displayed_sidebar: docSidebar
 hide_table_of_contents: true
@@ -9,7 +10,7 @@ hide_table_of_contents: true
 <div class="hero-banner">
   <div class="hero-content">
     <h1 class="hero-title">Cloud Temple Documentation</h1>
-    <p class="hero-subtitle">Everything you need to make the most of Cloud Temple's sovereign cloud services.</p>
+    <p class="hero-subtitle">Everything you need to operate Cloud Temple's sovereign cloud services.</p>
     <div class="cert-row">
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
@@ -29,14 +30,14 @@ hide_table_of_contents: true
     <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
     <div>
       <div class="quickstart-title">Explore the Console</div>
-      <div class="quickstart-desc">Manage your resources, orders, and access from the central Cloud Temple interface.</div>
+      <div class="quickstart-desc">Manage your resources, orders, and access from the Cloud Temple central interface.</div>
     </div>
   </a>
   <a href="./storage/oss/quickstart" class="quickstart-card">
     <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span>
     <div>
       <div class="quickstart-title">S3 Object Storage</div>
-      <div class="quickstart-desc">Configure your first S3-compatible bucket in minutes.</div>
+      <div class="quickstart-desc">Set up your first S3-compatible bucket in minutes.</div>
     </div>
   </a>
   <a href="./iaas_vmware/quickstart" class="quickstart-card">
@@ -59,7 +60,7 @@ hide_table_of_contents: true
 
 <div class="popular-links-grid">
   <a class="popular-link" href="./console/console_quickstart">
-    <div class="popular-link-title">Console Quickstart <span>→</span></div>
+    <div class="popular-link-title">Quickstart Console <span>→</span></div>
     <div class="popular-link-desc">Quick start guide for the Cloud Temple Console</div>
   </a>
   <a class="popular-link" href="./managed_kubernetes/quickstart">
@@ -75,11 +76,11 @@ hide_table_of_contents: true
     <div class="popular-link-desc">Secure SSH connection to your resources</div>
   </a>
   <a class="popular-link" href="./iaas_vmware/concepts">
-    <div class="popular-link-title">IaaS VMware Architecture <span>→</span></div>
-    <div class="popular-link-desc">Understanding the Cloud Temple virtualized infrastructure</div>
+    <div class="popular-link-title">VMware IaaS Architecture <span>→</span></div>
+    <div class="popular-link-desc">Understand the Cloud Temple virtualized infrastructure</div>
   </a>
   <a class="popular-link" href="./console/iam">
     <div class="popular-link-title">IAM & Access Management <span>→</span></div>
-    <div class="popular-link-desc">Identities, roles and permissions on your tenant</div>
+    <div class="popular-link-desc">Identities, roles, and permissions on your tenant</div>
   </a>
 </div>

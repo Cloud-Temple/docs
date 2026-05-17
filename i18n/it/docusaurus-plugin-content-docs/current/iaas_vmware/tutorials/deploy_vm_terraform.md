@@ -7,20 +7,20 @@ tags:
 import statusCloudInit from '@site/docs/iaas_vmware/tutorials/images/status_cloud_init.png';
 import cloudInitOutput from '@site/docs/iaas_vmware/tutorials/images/cloud-init-output.png';
 
-Questa guida ti permetterà di distribuire le tue prime istanze sul Cloud di Confianza in meno di 5 minuti.
+Questa guida ti consentirà di distribuire le tue prime istanze sul Cloud di Fiducia in meno di 5 minuti.
 
 ## __Prerequisiti__
 
-1. Aver sottoscritto l'offerta Cloud Temple (sottoscrizione all'offerta IaaS).
-2. Avere i permessi attivati per il pilotaggio degli oggetti __'IaaS'__
+1. Avere sottoscritto il prodotto Cloud Temple (sottoscrizione al prodotto IaaS).
+2. Avere le autorizzazioni abilitate per il driver degli oggetti __'IaaS'__
 
 ## Distribuire una macchina virtuale tramite Terraform
 
-In questa sezione, vedremo come distribuire in pochi minuti una macchina virtuale sul Cloud di Confianza tramite il provider Terraform Cloud Temple.
-Se non hai ancora utilizzato il provider Cloud Temple, segui le istruzioni che si trovano al [seguente indirizzo](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) per installarlo e autenticarti al tuo tenant.
+In questa sezione, vedremo come distribuire in pochi minuti una macchina virtuale sul Cloud de Confiance tramite il provider Terraform Cloud Temple.
+Se non hai ancora utilizzato il provider Cloud Temple, segui le istruzioni riportate [al seguente indirizzo](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) per installarlo e autenticarti nel tuo tenant.
 
-Inizieremo creando un file .tf che descrive l'istanza che desideriamo distribuire.
-Lo script seguente permette di distribuire una macchina virtuale da zero.
+Inizieremo creando un file .tf che descriva l'istanza che si desidera distribuire.
+Lo script seguente consente di distribuire una macchina virtuale da zero.
 
 ```hcl
 data "cloudtemple_compute_virtual_datacenter" "dc" {
@@ -56,60 +56,60 @@ resource "cloudtemple_compute_virtual_machine" "scratch" {
 }
 ```
 
-I parametri utilizzati in questo script sono i seguenti:
+I parametri utilizzati in questo script sono i seguenti :
 
-- datacenter_id (obbligatorio): datacenter in cui viene distribuita la macchina virtuale
-- host_cluster_id (obbligatorio): cluster in cui viene distribuita la macchina virtuale
-- name (obbligatorio): nome della macchina
-- memory: RAM allocata alla macchina all'avvio
-- cpu: numero di vCPU allocate alla macchina all'avvio
-- num_cores_per_socket: numero di core per socket
-- datastore_cluster_id: datastore a cui è collegata la macchina
-- guest_operating_system_moref: sistema operativo della macchina
+- datacenter_id (obbligatorio) : datacenter in cui viene distribuita la macchina virtuale
+- host_cluster_id (obbligatorio) : cluster in cui viene distribuita la macchina virtuale
+- name (obbligatorio) : nome della macchina
+- memory : RAM assegnata alla macchina all'avvio
+- cpu : numero di vCPU assegnati alla macchina all'avvio
+- num_cores_per_socket : numero di core per socket
+- datastore_cluster_id : datastore a cui è associata la macchina
+- guest_operating_system_moref : sistema operativo della macchina
 
-Altri parametri possono essere applicati a una macchina virtuale durante la sua distribuzione. Puoi trovare l'elenco completo di questi parametri alla seguente pagina della [documentazione Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
+Altri parametri possono essere applicati a una macchina virtuale durante la distribuzione. È possibile trovare l'elenco completo di questi parametri nella pagina seguente della [documentazione Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
 
-Una volta creato e salvato il file .tf, esegui il seguente comando per verificare il tuo codice:
+Una volta creato e salvato il file .tf, esegui il comando seguente per verificare il codice :
 
 ```
 terraform validate
 ```
 
-Quindi, pianifica la distribuzione e verifica che il piano corrisponda a ciò che desideri realizzare:
+Successivamente, pianifica la distribuzione e verifica che il piano corrisponda a quanto desideri realizzare :
 
 ```
 terraform plan
 ```
 
-Infine, distribuisci la macchina virtuale eseguendo il seguente comando:
+Infine, distribuisci la macchina virtuale eseguendo il comando seguente :
 
 ```
 terraform apply
 ```
 
-## Utilizzare cloud-init per configurare una macchina virtuale distribuita dal provider Terraform
+## Utilizzare cloud-init per configurare una macchina virtuale distribuita tramite il provider Terraform
 
-Lo strumento __'cloud-init'__ permette di personalizzare una macchina virtuale, o un'istanza cloud, al suo primo avvio. Si tratta di uno standard molto diffuso.
-Per maggiori informazioni, fare riferimento alla [documentazione](https://cloudinit.readthedocs.io/en/latest/)
+Lo strumento __'cloud-init'__ consente di personalizzare una macchina virtuale, o un'istanza cloud, al primo avvio. Si tratta di uno standard molto diffuso.
+Per ulteriori informazioni, fare riferimento alla [documentazione](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Compatibilità
 
-Per poter configurare tramite cloud-init una macchina virtuale distribuita dal provider Terraform Cloud Temple, l'__OVF__ utilizzato per distribuire quest'ultima deve essere __compatibile__ con __cloud-init__.
+Per poter configurare tramite cloud-init una macchina virtuale distribuita tramite il provider Terraform Cloud Temple, l’__OVF__ utilizzato per distribuire quest'ultima deve essere __compatibile__ con __cloud-init__.
 
-Per verificare la compatibilità della tua macchina virtuale con cloud-init, inserisci il seguente comando:
+Per verificare la compatibilità della tua macchina virtuale con cloud-init, esegui il comando seguente:
 
 `systemctl status cloud-init.service`
 
-Se cloud-init è correttamente installato sulla macchina, dovresti vedere una risposta come questa. (Vedi screenshot qui sotto)
+Se cloud-init è installato correttamente sulla macchina, dovresti ottenere una risposta simile alla seguente. (Vedi screenshot di seguito)
 
 <img src={statusCloudInit}/>
 
-Se necessario, puoi trovare immagini compatibili con cloud-init su internet (ad esempio [Ubuntu Cloud Image](https://cloud-images.ubuntu.com/)) o installarlo tu stesso sulla tua macchina prima di trasformarla in OVF.
+Se necessario, è possibile trovare immagini compatibili con cloud-init su Internet (ad esempio [Ubuntu Cloud Image](https://cloud-images.ubuntu.com/)) o installarlo manualmente sulla propria macchina prima di convertirla in OVF.
 
 ### Distribuzione
 
-Ora che sei sicuro che l'OVF distribuito sia compatibile con cloud-init, ecco un esempio di file terraform (.tf) che puoi utilizzare per configurare la tua macchina virtuale.
-NB: Tutti gli esempi mostrati qui possono essere trovati nella cartella degli esempi del repository del provider Terraform Cloud Temple qui: [Esempi](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
+Una volta accertato che l’OVF distribuito è effettivamente compatibile con cloud-init, di seguito è riportato un esempio di file Terraform (.tf) che puoi utilizzare per configurare la tua macchina virtuale.
+NB : Tutti gli esempi mostrati qui possono essere trovati nella cartella esempi del repository del provider Terraform Cloud Temple qui: [Exemples](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
 
 #### `main.tf`
 
@@ -177,27 +177,27 @@ users:
     plain_text_passwd: password
 ```
 
-L'elemento interessante qui è la presenza della proprietà cloud-init, puoi notare che è composta da due sottoproprietà: __network-config__ e __user-data__.
+L'elemento interessante qui è la presenza della proprietà cloud-init, è possibile constatare che è composta da due sotto-proprietà: __network-config__ e __user-data__.
 
-Queste fanno parte di un insieme di 7 proprietà che puoi utilizzare per configurare la tua macchina virtuale con cloud-init.
+Queste ultime fanno parte di un insieme di 7 proprietà che è possibile utilizzare per configurare la propria macchina virtuale con cloud-init.
 
-- __user-data__: Questo valore deve essere codificato in base64 e contiene in particolare informazioni di configurazione per gli account utente della macchina virtuale. Puoi anche aggiungere script per installare o aggiornare pacchetti.
-- __network-config__: Questo valore deve essere codificato in base64 e contiene in particolare informazioni di configurazione di rete della macchina virtuale.
-- __public-keys__: Indica che l'istanza deve popolare le 'authorized_keys' dell'utente predefinito con questo valore.
-- __instance-id__: Permette di definire un identificatore univoco di istanza per cloud-init.
-- __password__: Se definito, la password dell'utente predefinito sarà impostata su questo valore per consentire una connessione basata su password. La password sarà valida solo per una singola connessione. Se il valore è 'RANDOM', verrà generata una password casuale e visualizzata sulla console.
-- __hostname__: Specifica un nome host per l'istanza distribuita.
-- __seedfrom__: Permette di definire un URL da cui cloud-init andrà a cercare i file di configurazione che deve utilizzare.
-Per maggiori informazioni sul funzionamento di cloud-init, si prega di fare riferimento alla [documentazione ufficiale](https://cloudinit.readthedocs.io/en/latest/)
+- __user-data__ : Questo valore deve essere codificato in base64 e contiene in particolare informazioni di configurazione per gli account utente della macchina virtuale. È inoltre possibile aggiungere script per installare o aggiornare i pacchetti.
+- __network-config__ : Questo valore deve essere codificato in base64 e contiene in particolare informazioni di configurazione di rete della macchina virtuale.
+- __public-keys__ : Indica che l'istanza deve popolare i 'authorized_keys' dell'utente predefinito con questo valore.
+- __instance-id__ : Consente di definire un identificativo univoco per l'istanza presso cloud-init.
+- __password__ : Se impostato, la password dell'utente predefinito verrà impostata su questo valore per consentire una connessione basata su password. La password sarà valida solo per una singola connessione. Se il valore è 'RANDOM', verrà generata una password casuale e visualizzata sulla console.
+- __hostname__ : Specifica un nome host per l'istanza distribuita.
+- __seedfrom__ : Consente di definire un URL da cui cloud-init recupererà i file di configurazione da utilizzare.
+Per ulteriori informazioni sul funzionamento di cloud-init, fare riferimento alla [documentazione ufficiale](https://cloudinit.readthedocs.io/en/latest/)
 
 ### Esecuzione
 
-Per verificare la corretta esecuzione di cloud-init, dovresti essere in grado di connetterti con l'utente che hai configurato nel file user-data.yml o il nome host dovrebbe essere cambiato in quello che hai impostato in 'hostname'.
+Per verificare il corretto avvio di cloud-init, dovresti poter accedere con l'utente configurato nel file user-data.yml o verificare che il nome host sia stato impostato su quello specificato in 'hostname'.
 
-In caso di problemi, puoi controllare i log di cloud-init utilizzando il seguente comando:
+In caso di problemi, puoi verificare i log di cloud-init utilizzando il comando seguente:
 
 `sudo cat /var/log/cloud-init-output.log`
 
-Dovresti vedere varie informazioni sull'esecuzione di cloud-init. Nello screenshot seguente, si può notare che la configurazione della rete è andata a buon fine.
+Dovresti visualizzare diverse informazioni relative all'esecuzione di cloud-init. Nella schermata seguente, si può constatare che la configurazione di rete è andata a buon fine.
 
 <img src={cloudInitOutput} />

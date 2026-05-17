@@ -1,8 +1,8 @@
 ---
 title: Vue d'ensemble
 ---
-import archiOverview1az from './images/archi_overview_1az.png'
-import archiOverview from './images/archi_overview.png'
+import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
+import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 
 # Managed Core Kubernetes
 

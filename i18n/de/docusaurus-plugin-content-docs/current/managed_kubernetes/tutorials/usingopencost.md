@@ -9,62 +9,62 @@ import opencostmcp3 from '@site/docs/managed_kubernetes/tutorials/images/opencos
 
 ## Ziele
 
-Dieses Tutorial stellt Ihnen **OpenCost** vor, das Kosten-Monitoring- und -Optimierungswerkzeug, das in Ihren **Managed Kubernetes**-Cluster integriert ist. Am Ende dieses Leitfadens werden Sie in der Lage sein:
+Dieses Tutorial stellt Ihnen **OpenCost** vor, das Monitoring- und Kostenoptimierungstool, das in Ihren **Managed Kubernetes**-Cluster integriert ist. Am Ende dieses Handbuchs sind Sie in der Lage:
 
-- Auf die OpenCost-Oberfläche **zuzugreifen**.
-- Die Struktur der Oberfläche und die verfügbaren Ansichten zu **verstehen**.
-- Die Kostenverteilung Ihrer Anwendungen und Infrastruktur zu **analysieren**.
+- **Zugreifen** auf die OpenCost-Oberfläche.
+- **Verstehen** der Struktur der Oberfläche und der verfügbaren Ansichten.
+- **Analysieren** der Kostenverteilung Ihrer Anwendungen und Ihrer Infrastruktur.
 
 ## Was ist OpenCost?
 
-OpenCost ist eine Open-Source-Lösung und ein CNCF-Standard (Cloud Native Computing Foundation), der Echtzeit-Einblick in die Kosten Ihrer Kubernetes-Umgebungen bietet. Es hilft Ihnen, genau zu verstehen, was Ressourcen in Ihrem Cluster verbraucht und wie sich das in Kosten niederschlägt.
+OpenCost ist eine Open-Source-Lösung, die als Standard der CNCF (Cloud Native Computing Foundation) gilt und Echtzeit-Einblicke in die Kosten Ihrer Kubernetes-Umgebungen bietet. Es hilft Ihnen genau zu verstehen, welche Ressourcen in Ihrem Cluster verbraucht werden und wie sich dies in Kosten niederschlägt.
 
-Im Managed Kubernetes-Angebot ist OpenCost vorinstalliert und konfiguriert, um Ihnen einen klaren Überblick über Ihre Ausgaben zu geben. Es ist direkt mit den tatsächlichen Kosten der Cloud Temple-Infrastruktur parametriert.
+Im Managed-Kubernetes-Produkt ist OpenCost vorinstalliert und konfiguriert, um Ihnen einen klaren Überblick über Ihre Ausgaben zu verschaffen. Es ist direkt mit den tatsächlichen Kosten der Cloud-Temple-Infrastruktur verknüpft.
 
-## Zugriff auf die OpenCost-Oberfläche
+## Zugriff auf die OpenCost-Benutzeroberfläche
 
-Die OpenCost-Oberfläche ist über eine sichere, cluster-spezifische URL verfügbar. Um darauf zuzugreifen, verwenden Sie die folgende URL und ersetzen Sie `bezeichner` durch den Bezeichner Ihres Clusters (z.B. `ctodev`):
+Die OpenCost-Benutzeroberfläche ist über eine sichere, cluster-spezifische URL verfügbar. Um darauf zuzugreifen, verwenden Sie die folgende URL, wobei Sie `identifiant` durch die Kennung Ihres Clusters (z. B. `ctodev`) ersetzen:
 
-`https://opencost.external-secured.bezeichner.mk.ms-cloud-temple.com`
+`https://opencost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
 :::info
-Der Zugriff auf diese URL ist auf die IP-Adressen beschränkt, die Sie dem Cloud Temple-Support mitgeteilt haben. Falls Sie keinen Zugriff haben, wenden Sie sich bitte an den Support, um die Firewall-Regeln zu überprüfen.
+Der Zugriff auf diese URL ist auf die IP-Adressen beschränkt, die Sie beim Cloud-Temple-Support angegeben haben. Falls der Zugriff nicht möglich ist, wenden Sie sich bitte an den Support, um die Firewall-Regeln überprüfen zu lassen.
 :::
 
 <img src={opencostui} alt="OpenCost UI"/>
 
-## Die Kostenverteilung erkunden (Allocations)
+## Kostenverteilung (Allocations) erkunden
 
-Die wichtigste und detaillierteste Ansicht von OpenCost ist das **Allocations**-Dashboard. Hier können Sie Ihren Ressourcenverbrauch in Echtzeit visualisieren.
+Die Haupt- und detaillierteste Ansicht von OpenCost ist das Dashboard **Allocations**. Hier können Sie den Echtzeit-Ressourcenverbrauch visualisieren.
 
-Diese Ansicht ermöglicht es Ihnen, Kosten nach nativen Kubernetes-Konzepten aufzuschlüsseln. Das Dropdown-Menü „Aggregate by" ist das Hauptwerkzeug für Ihre Analyse; es ermöglicht Ihnen, Kosten zu gruppieren nach:
+Diese Ansicht ermöglicht es Ihnen, die Kosten nach nativen Kubernetes-Konzepten aufzuschlüsseln. Das Dropdown-Menü "Aggregate by" ist das Hauptwerkzeug für Ihre Analyse und ermöglicht es Ihnen, die Kosten zu gruppieren nach :
 
-- **Namespace**: Für eine Ansicht nach Umgebung oder Team.
-- **Deployment**, **StatefulSet** usw.: Um die Kosten einer bestimmten Anwendung zu analysieren.
-- **Controller**: Für eine technischere Ansicht.
+- **Namespace** : Für eine Ansicht pro Umgebung oder Team.
+- **Deployment**, **StatefulSet** usw. : Zur Analyse der Kosten einer bestimmten Anwendung.
+- **Controller** : Für eine technischere Ansicht.
 
-### Aggregation nach Labels
+### Label-basierte Aggregation
 
-Für eine noch detailliertere Finanzanalyse kann OpenCost Kosten auf Basis von **Kubernetes-Labels** aggregieren. Im Menü gibt es keine direkte „Label"-Option, aber OpenCost nimmt Ihre Labels auf und ermöglicht benutzerdefinierte Aggregationen. Dafür ist eine konsistente Labeling-Strategie unerlässlich. Durch die Verwendung von Labels wie `team: backend` oder `product: api-gateway` können Sie z.B. Kosten analysieren, die Ihrer Organisation genau entsprechen.
+Für eine noch feinere Finanzanalyse kann OpenCost die Kosten basierend auf den **Kubernetes-Labels** aggregieren. Es gibt keine direkte „Label“-Option im Menü, aber OpenCost verarbeitet Ihre Labels und ermöglicht die Erstellung benutzerdefinierter Aggregationen. Dafür ist eine konsistente Labeling-Strategie unerlässlich. Durch die Verwendung von Labels wie `team: backend` oder `product: api-gateway` können Sie die Kosten analysieren, die genau zu Ihrer Organisation passen.
 Für diese Art der Analyse müssen Sie die KI-Integration von OpenCost nutzen.
 
-## Grafana-Dashboard
+## Grafana Dashboard
 
-Zur Visualisierung von OpenCost-Daten ist auch ein Grafana-Dashboard verfügbar. Dieses Dashboard bietet eine alternative und ergänzende Ansicht zur OpenCost-Oberfläche und bewahrt den vollständigen Verlauf der Kostenmetriken, sodass Sie Trends langfristig analysieren können.
+Ein Grafana-Dashboard ist ebenfalls verfügbar, um die OpenCost-Daten zu visualisieren. Dieses Dashboard bietet eine alternative und ergänzende Ansicht zur OpenCost-Benutzeroberfläche und speichert den vollständigen Verlauf der Kostenmetriken, sodass Sie langfristige Trends analysieren können.
 
-<img src={opencostgrafana} alt="OpenCost Grafana Dashboard"/>
+<img src={opencostgrafana} alt="OpenCost Grafana-Dashboard"/>
 
-## Erweiterte Nutzung: Integration mit KI (MCP-Server)
+## Erweiterte Nutzung: Integration mit einer KI (MCP-Server)
 
-Für fortgeschrittene Benutzer kann OpenCost dank des **MCP (Multi-purpose Co-processor) Servers**-Systems direkt vom Cline-Konversationsassistenten (oder anderen) abgefragt werden. Dies ermöglicht es Ihnen, Abfragen zu skripten und Kostendaten direkt in Ihren Konversationen zu erhalten.
+Für fortgeschrittene Benutzer kann OpenCost direkt über den Cline-Chat-Assistenten (oder andere) dank des **MCP (Multi-purpose Co-processor)-Server-Systems** abgefragt werden. Dies ermöglicht es Ihnen, Abfragen zu skripten und Kostendaten direkt in Ihren Konversationen abzurufen.
 
-### 1. Konfiguration des OpenCost MCP in Cline
+### 1. Konfiguration des MCP OpenCost in Cline
 
-Um Cline mit Ihrer OpenCost-Instanz zu verbinden, müssen Sie die folgende Konfiguration zu Ihrer Datei `cline_mcp_settings.json` hinzufügen. Diese Datei befindet sich normalerweise im Cline-Konfigurationsverzeichnis.
+Um Cline mit Ihrer OpenCost-Instanz zu verbinden, müssen Sie die folgende Konfiguration zu Ihrer Datei `cline_mcp_settings.json` hinzufügen. Diese Datei befindet sich normalerweise im Konfigurationsverzeichnis von Cline.
 
-Wir empfehlen, einen MCP-Server namens „opencost-xxxxx" zu erstellen, wobei xxxxx der Name Ihres verwalteten Kubernetes-Clusters ist.
-Die MCP-Server-URL hat folgendes Format: `https://opencost-mcp.external-secured.bezeichner.mk.ms-cloud-temple.com`
-Beispielsweise für den Cluster „bestie":
+Wir empfehlen, einen MCP-Server "opencost-xxxxx" zu erstellen, wobei xxxxx der Name Ihres verwalteten Kubernetes-Clusters ist.
+Die URL des MCP-Servers hat das Format `https://opencost-mcp.external-secured.identifiant.mk.ms-cloud-temple.com`
+Beispielsweise für den Cluster "bestie":
 
 ```json
 {
@@ -82,49 +82,50 @@ Beispielsweise für den Cluster „bestie":
 }
 ```
 
-Um den `<TOKEN>`-Wert aus Ihren Anmeldedaten zu generieren, verwenden Sie einen der folgenden Befehle:
+Um den Wert `<TOKEN>` aus Ihren Anmeldeinformationen zu generieren, verwenden Sie einen der folgenden Befehle:
 
 **Für Linux/macOS:**
 
 ```bash
-echo -n 'finopsadm:IHR_PASSWORT' | base64
+echo -n 'finopsadm:VOTRE_MOT_DE_PASSE' | base64
 ```
 
 **Für Windows (PowerShell):**
 
 ```powershell
-$credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:IHR_PASSWORT")
+$credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:VOTRE_MOT_DE_PASSE")
 [System.Convert]::ToBase64String($credentials)
 ```
 
-Sobald diese Datei gespeichert ist, lädt Cline beim Start automatisch den `opencost-xxxxx`-MCP.
+Nachdem diese Datei gespeichert wurde, lädt Cline den MCP `opencost-xxxxx` automatisch beim Start.
 
-### 2. OpenCost mit dem MCP abfragen
+### 2. OpenCost mit MCP abfragen
 
-:::tip[Voraussetzungen]
-Um mit dem MCP in natürlicher Sprache zu interagieren, muss die zugrunde liegende KI Zugang zu Sprachmodellen (LLMs) haben, entweder lokal (LMStudio usw.) oder über eine Verbindung zu öffentlichen Diensten wie GPT-5 oder Gemini, oder durch die Nutzung unseres souveränen **[LLM-as-a-Service](pathname:///llmaas/llmaas)**-Angebots.
+:::tip[Voraussetzungen
+]
+Um mit dem MCP in natürlicher Sprache zu interagieren, muss die zugrunde liegende KI Zugriff auf Sprachmodelle (LLMs) haben, entweder lokal (LMStudio, etc), über eine Verbindung zu öffentlichen Diensten wie GPT-5 oder Gemini oder unter Nutzung unseres souveränen Produkts **[LLM-as-a-Service](pathname:///llmaas/llmaas)**.
 :::
 
-Nach der Konfiguration können Sie LLM-Werkzeuge verwenden, um Abfragen in natürlicher Sprache an diesen MCP-Server zu stellen.
+Nach der Konfiguration können Sie die LLM-Tools verwenden, um Abfragen in natürlicher Sprache an diesen MCP-Server zu stellen.
 
 #### Beispiel
 
-„Verwende den MCP ‚opencost-bestie' und sag mir, welcher Prozentsatz der Cluster-Kosten keinen Ressourcen zugewiesen ist"
-Sie erhalten folgendes:
-<img src={opencostmcp} alt="KI opencost Antwort"/>
+"nutze den MCP "opencost-bestie" und sag mir, welcher Prozentsatz der Clusterkosten nicht an Ressourcen allokiert ist"
+Sie erhalten Folgendes:
+<img src={opencostmcp} alt="OpenCost-KI-Antwort"/>
 
 #### Beispiel 2
 
-„Verwende den MCP ‚opencost-bestie' und liste mir die mit persistenten Volumes verbundenen Kosten für gestern auf"
+"nutze den MCP "opencost-bestie",  und liste mir die Kosten für die persistenten Volumes für den gestrigen Tag auf"
 
-<img src={opencostmcp2} alt="KI opencost Antwort 2"/>
+<img src={opencostmcp2} alt="KI-Antwort opencost 2"/>
 
 #### Beispiel 3
 
-„Verwende den MCP opencost-bestie und sag mir, welcher Prozentsatz der Cluster-Kosten der Anwendung mit dem Label ‚nginx' zugewiesen ist. (Filter in der Form filter: ‚label:app:frontend')"
+"nutze den MCP opencost-bestie und sage mir, welchen Prozentsatz der Clusterkosten auf die Anwendung mit dem Label "nginx" . (Filter in der Form filter: "label:app:frontend" )
 
-<img src={opencostmcp3} alt="KI opencost Antwort 3"/>
+<img src={opencostmcp3} alt="KI-Antwort opencost 3"/>
 
 ## Fazit
 
-OpenCost stellt Ihnen leistungsstarke Werkzeuge für eine detaillierte Echtzeit-Analyse der Kosten Ihres Kubernetes-Clusters bereit. Durch die hauptsächliche Nutzung der **Allocations**-Ansicht in Kombination mit einer guten Labeling-Strategie erhalten Sie einen klaren Überblick über Ihre Ausgaben, der sowohl mit Ihren technischen Deployments als auch mit Ihrer internen Organisation übereinstimmt. Der Einsatz von LLMs und des OpenCost-MCP-Servers ermöglicht eine noch tiefgreifendere Nutzung der Daten.
+OpenCost bietet Ihnen leistungsstarke Werkzeuge für eine feingranulare und Echtzeit-Analyse der Kosten Ihres Kubernetes-Clusters. Durch die primäre Nutzung der Ansicht **Allokationen** in Kombination mit einer durchdachten Labeling-Strategie erhalten Sie einen klaren Überblick über Ihre Ausgaben, der sowohl Ihre technischen Bereitstellungen als auch Ihre interne Organisation widerspiegelt. Der Einsatz von LLMs und des OpenCost MCP-Servers ermöglicht eine vertiefte Datenauswertung.

@@ -5,45 +5,45 @@ sidebar_position: 3
 
 # Quick Start Guide
 
-This guide allows you to make your first request to the LLMaaS API in less than 5 minutes.
+This guide allows you to make your first request to the LLMaaS API in under 5 minutes.
 
 ## Prerequisites
 
 - Access to the Cloud Temple Console
 - Account with LLMaaS permissions enabled
 
-## Step 1: Generate an API Key
+## Step 1: Generate an API key
 
-1. Log in to the Cloud Temple Console  
-2. Access your account settings  
-3. Generate a new LLMaaS API key  
+1. Log in to the Cloud Temple Console
+2. Go to your account settings
+3. Generate a new LLMaaS API key
 4. Copy and save the key (it will only be displayed once)
 
 ## Step 2: Test the connection
 
-Check that your key works by listing the available models:
+Verify that your key works by listing the available models:
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer VOTRE_CLE_API"
 ```
 
-You should receive a JSON list of available models.
+You should receive a JSON list of the available models.
 
 ## Step 3: First Request
 
-Make your first text generation with a fast model:
+Run your first text generation with a fast model:
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_CLE_API" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user",
-        "content": "Write a haiku about technology."
+        "content": "Écris un haiku sur la technologie."
       }
     ],
     "max_tokens": 100,
@@ -63,9 +63,8 @@ pip install requests
 import requests
 import json
 
-
 # Configuration
-API_KEY = "YOUR_API_KEY"
+API_KEY = "VOTRE_CLE_API"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 # Headers
@@ -74,13 +73,13 @@ headers = {
     "Authorization": f"Bearer {API_KEY}"
 }
 
-# Request
+# Requête
 payload = {
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
         {
             "role": "user",
-            "content": "Explain photosynthesis in 3 sentences."
+            "content": "Explique-moi la photosynthèse en 3 phrases."
         }
     ],
     "max_tokens": 150,
@@ -97,7 +96,7 @@ if response.status_code == 200:
     result = response.json()
     print(result["choices"][0]["message"]["content"])
 else:
-    print(f"Error: {response.status_code}")
+    print(f"Erreur: {response.status_code}")
     print(response.text)
 ```
 
@@ -105,128 +104,114 @@ else:
 
 For your first test, use one of these recommended models:
 
-| Model | Usage | Speed | Rating |
+| Model | Usage | Speed | Notes |
 |--------|--------|---------|------|
-| `granite3.3:8b` | General, balanced | Fast | Recommended for beginners |
-| `qwen3:14b` | Complex tasks | Medium | Visible 'thinking' mode |
-| `gemma3:4b` | Quick tests, prototyping | Very fast | Detailed answers |
+| `gpt-oss:120b` | General purpose, balanced | Medium | **LTS** — recommended for production |
+| `qwen3-2507-think:4b` | Complex reasoning | Fast | **LTS** — compact with deep reasoning |
+| `qwen3.5:9b` | Chat and analysis | Fast | Good size/quality balance |
 
-Check the [complete model catalog](./models) for more options.
+Consult the [full model catalog](./models) for more options. Prefer models marked **LTS** for your production applications.
 
-:::tip[Tip for Qwen models]
-Some models from the **Qwen** family (like `qwen3:14b` or `qwen3:30b-a3b`) have an advanced reasoning mode. You can force its activation by adding `/think` at the beginning of your prompt, or disable it for a more direct and faster response with `/nothink`.
+:::tip Tip for Qwen models with reasoning
+Some models in the **Qwen** family (such as `qwen3-2507-think:4b`, `qwen3.5:9b`, or `qwen3.6:27b`) feature an advanced reasoning mode. You can force its activation by adding `/think` at the beginning of your prompt, or disable it for a more direct and faster response with `/nothink`.
 :::
 
-## Recommended Parameters
+## Recommended Settings
 
-For starters, use these parameters:
+To get started, use these settings:
 
 ```json
 {
-  "temperature": 0.7,    // Moderate creativity
-  "max_tokens": 200,     // Concise responses
-  "top_p": 1.0,         // Standard diversity
-  "stream": false       // Full response at once
+  "temperature": 0.7,    // Créativité modérée
+  "max_tokens": 200,     // Réponses concises
+  "top_p": 1.0,         // Diversité standard
+  "stream": false       // Réponse complète d'un coup
 }
 ```
 
 ## Common Error Handling
 
-### 401 Error - Unauthorized
-
+### Error 401 - Unauthorized
 ```json
 {"error": {"message": "Invalid API key", "type": "invalid_request_error"}}
 ```
+**Solution** : Check your API key in the Cloud Temple Console.
 
-**Solution**: Check your API key in the Cloud Temple Console.
-
-### 400 Error - Model Not Found
-
+### Error 400 - Model not found
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
+**Solution**: Use `/v1/models` to list available models.
 
-**Solution** : Use /v1/models to list available models.
-
-### Error 429 - Rate Limit
-
+### Error 429 - Rate limit
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
-
-**Solution** : Wait a few seconds and try again.
+**Solution**: Wait a few seconds and try again.
 
 ## Usage Monitoring
 
 In the Cloud Temple Console, you can:
-
-- View your requests in real-time
-- Check your token consumption
+- View your requests in real time
+- Check your token usage
 - Set up cost alerts
 - Analyze performance by model
 
 ## Going Further: Tool Calling and Vision Examples
 
-This section provides simple and standalone Python scripts to illustrate specific features of the LLMaaS API. Each example is designed to be run directly, with clear instructions for configuration and use.
+This section provides simple, standalone Python script examples to illustrate specific features of the LLMaaS API. Each example is designed to be run directly, with clear instructions for setup and usage.
 
 ---
 
-## 💡 Self-Contained Code Examples
+## 💡 Standalone Code Examples
 
-This section provides simple and self-contained Python scripts to illustrate specific features of the LLMaaS API. Each example is designed to be run directly, with clear instructions for configuration and usage.
+This section provides simple, standalone Python script examples to illustrate specific features of the LLMaaS API. Each example is designed to be run directly, with clear instructions for setup and usage.
 
 ### 1. Simple Tool Calling Example
 
-"Tool Calling" (or function call) allows a language model to request the execution of a function you have defined in your code. This is a powerful feature to connect LLMs to external tools (APIs, databases, etc.).
+Tool Calling (or function calling) allows a language model to request the execution of a function you have defined in your code. It is a powerful feature for connecting LLMs to external tools (APIs, databases, etc.).
 
-The flow is as follows:
-
-1. The user asks a question that requires a tool (e.g., "What's the weather like?").
-2. You send the question and the list of available tools to the API.
-3. The model, instead of answering directly, returns a `tool_calls` request asking to execute a specific function with certain arguments.
-4. Your code executes the requested function.
-5. You return the function's result to the model.
-6. The model uses this result to formulate a final answer to the user.
+The workflow is as follows:
+1.  The user asks a question that requires a tool (e.g., "what's the weather like?").
+2.  You send the question and the list of available tools to the API.
+3.  Instead of answering directly, the model returns a `tool_calls` request asking to execute a specific function with certain arguments.
+4.  Your code executes the requested function.
+5.  You send the function's result back to the model.
+6.  The model uses this result to formulate a final response to the user.
 
 **File Structure**
 
-For this example, create a directory `simple_tool_calling` with the following files:
+For this example, create a `simple_tool_calling` directory with the following files:
 
-- `test_tool_calling.py`: The main script.
-- `requirements.txt`: Python dependencies.
-- `.env`: A template for your configuration file.
+-   `test_tool_calling.py`: The main script.
+-   `requirements.txt`: Python dependencies.
+-   `.env`: A template for your configuration file.
 
 **`requirements.txt`**
-
 ```txt
 httpx
 python-dotenv
 ```
 
 **`.env`**
-
 ```env
-YOUR_API_KEY=your_api_key_here
-
-# Base URL of the LLMaaS API
+# Base URL for the LLMaaS API
 API_URL="https://api.ai.cloud-temple.com/v1"
 
-# Your LLMaaS API Key
-API_KEY="your_api_key_here"
+# Your LLMaaS API key
+API_KEY="votre_cle_api_ici"
 
-# Optional: Default model to use for the test
-
-# Make sure this model is compatible with "tool calling"
-DEFAULT_MODEL="qwen3:30b-a3b"
+# Optional: Default model to use for testing
+# Ensure this model is compatible with "tool calling"
+DEFAULT_MODEL="gpt-oss:120b"
 ```
 
-**Code Source (`test_tool_calling.py`)**
+**Source Code (`test_tool_calling.py`)**
 
 ```python
-
 # -*- coding: utf-8 -*-
 """
-Simple example of Tool Calling with the LLMaaS API.
+Simple Tool Calling example with the LLMaaS API.
 
 This script shows how to define a simple tool (a calculator),
 send it to a compatible model, and interpret the model's response
@@ -238,15 +223,13 @@ import httpx
 from dotenv import load_dotenv
 
 # --- Configuration ---
-
 # Load environment variables from a .env file
 load_dotenv()
 
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
-
-# Use a known model to effectively manage tool calling
-MODEL = os.getenv("DEFAULT_MODEL", "qwen3:30b-a3b")
+# Use a known model to properly handle tool calling
+MODEL = os.getenv("DEFAULT_MODEL", "gpt-oss:120b")
 
 # --- Tool Definition ---
 
@@ -256,16 +239,16 @@ def calculator(expression: str) -> str:
     Example: "2 + 2 * 10"
     """
     try:
-        # Security: Do not use eval() directly in production without strict validation.
-        # For this example, we limit the allowed characters.
+        # Security: do not use eval() directly in production without strict validation.
+        # For this example, we limit allowed characters.
         allowed_chars = "0123456789+-*/(). "
         if not all(char in allowed_chars for char in expression):
-            return "Error: The expression contains unauthorized characters."
-        # eval() is used here for the simplicity of the example.
+            return "Erreur: L'expression contient des caractères non autorisés."
+        # eval() is used here for example simplicity.
         result = eval(expression)
         return str(result)
     except Exception as e:
-        return f"Calculation error: {str(e)}"
+        return f"Erreur de calcul: {str(e)}"
 
 # Tool description in the format expected by the API
 TOOLS_AVAILABLE = [
@@ -273,13 +256,13 @@ TOOLS_AVAILABLE = [
         "type": "function",
         "function": {
             "name": "calculator",
-            "description": "Evaluates a mathematical expression. For example, '2+2*10'.",
+            "description": "Évalue une expression mathématique. Par exemple, '2+2*10'.",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "expression": {
                         "type": "string",
-                        "description": "The mathematical expression to evaluate."
+                        "description": "L'expression mathématique à évaluer."
                     }
                 },
                 "required": ["expression"],
@@ -293,27 +276,27 @@ TOOL_FUNCTIONS_MAP = {
     "calculator": calculator
 }
 
-# --- Main logic ---
+# --- Main Logic ---
 
 def run_chat_with_tool_calling():
     """
-    Main function that runs the test scenario.
+    Main function that executes the test scenario.
     """
     if not API_KEY:
-        print("❌ Error: The environment variable API_KEY is not defined.")
-        print("Please create a .env file or export it in your session.")
+        print("❌ Erreur: La variable d'environnement API_KEY n'est pas définie.")
+        print("Veuillez créer un fichier .env ou l'exporter dans votre session.")
         return
 
-    print(f"🤖 Model used : {MODEL}")
+    print(f"🤖 Modèle utilisé : {MODEL}")
     print("-" * 30)
 
     # 1. First API call with the user's question
     # ---------------------------------------------------------
-    print("➡️ Step 1: Sending the initial request to the LLM...")
+    print("➡️ Étape 1: Envoi de la requête initiale au LLM...")
 
     # The message history starts with the user's question
     messages = [
-        {"role": "user", "content": "Hello, can you calculate 15 + (3 * 5) ?"}
+        {"role": "user", "content": "Bonjour, peux-tu calculer 15 + (3 * 5) ?"}
     ]
 
     payload = {
@@ -335,24 +318,24 @@ def run_chat_with_tool_calling():
             response_data = response.json()
 
     except httpx.HTTPStatusError as e:
-        print(f"❌ API Error (HTTP Status) during step 1: {e}")
-        print(f"API response: {e.response.text}")
+        print(f"❌ Erreur API (HTTP Status) lors de l'étape 1: {e}")
+        print(f"Réponse de l'API : {e.response.text}")
         return
     except httpx.RequestError as e:
-        print(f"❌ API Error (Request) during step 1: {e}")
+        print(f"❌ Erreur API (Request) lors de l'étape 1: {e}")
         return
 
-    # The assistant's message contains the tool call request
+    # The assistant message contains the tool call request
     assistant_message = response_data["choices"][0]["message"]
     messages.append(assistant_message)
 
-    # 2. Check and execute the tool call
+    # 2. Verification and execution of the tool call
     # ------------------------------------------------
-    print("\n✅ The LLM requested to use a tool.")
+    print("\n✅ Le LLM a demandé d'utiliser un outil.")
 
     if "tool_calls" not in assistant_message:
-        print("🤔 The model did not request to use a tool. Direct response:")
-        print(assistant_message.get("content", "No content."))
+        print("🤔 Le modèle n'a pas demandé d'utiliser un outil. Réponse directe :")
+        print(assistant_message.get("content", "Pas de contenu."))
         return
 
     tool_call = assistant_message["tool_calls"][0]
@@ -360,28 +343,28 @@ def run_chat_with_tool_calling():
     function_args_str = tool_call["function"]["arguments"]
     tool_call_id = tool_call["id"]
 
-    print(f"   - Tool to call : {function_name}")
+    print(f"   - Outil à appeler : {function_name}")
     print(f"   - Arguments       : {function_args_str}")
 
     if function_name in TOOL_FUNCTIONS_MAP:
         function_to_call = TOOL_FUNCTIONS_MAP[function_name]
         try:
-            # The arguments are a JSON string, need to parse them
+            # Arguments are a JSON string, they need to be parsed
             function_args = json.loads(function_args_str)
             tool_result = function_to_call(**function_args)
-            print(f"   - Tool result : {tool_result}")
+            print(f"   - Résultat de l'outil : {tool_result}")
         except Exception as e:
-            print(f"❌ Error during tool execution: {e}")
-            tool_result = f"Error: {e}"
+            print(f"❌ Erreur lors de l'exécution de l'outil: {e}")
+            tool_result = f"Erreur: {e}"
     else:
-        print(f"❌ Unknown tool : {function_name}")
-        tool_result = f"Error: Tool '{function_name}' not found."
+        print(f"❌ Outil inconnu : {function_name}")
+        tool_result = f"Erreur: Outil '{function_name}' non trouvé."
 
-    # 3. Second API call with the tool result
+    # 3. Second API call with the tool's result
     # ----------------------------------------------------
-    print("\n➡️ Step 2: Sending the tool result to the LLM...")
+    print("\n➡️ Étape 2: Envoi du résultat de l'outil au LLM...")
 
-    # Add the tool result to the message history
+    # We add the tool's result to the message history
     messages.append(
         {
             "role": "tool",
@@ -390,7 +373,7 @@ def run_chat_with_tool_calling():
         }
     )
 
-    # Make another call WITHOUT tools this time to get the final response
+    # We make another call WITHOUT tools this time to get the final response
     payload_final = {
         "model": MODEL,
         "messages": messages,
@@ -405,22 +388,14 @@ def run_chat_with_tool_calling():
                 timeout=60,
             )
             response_final.raise_for_status()
-    except httpx.HTTPStatusError as e:
-        print(f"❌ API Error (HTTP Status) during step 2: {e}")
-        print(f"API response: {e.response.text}")
-        return
-    except httpx.RequestError as e:
-        print(f"❌ API Error (Request) during step 2: {e}")
-        return
-
-final_data = response_final.json()
+            final_data = response_final.json()
 
     except (httpx.HTTPStatusError, httpx.RequestError) as e:
-        print(f"❌ API Error during step 2: {e}")
+        print(f"❌ Erreur API lors de l'étape 2: {e}")
         return
 
     final_answer = final_data["choices"][0]["message"]["content"]
-    print("\n✅ Final LLM response:")
+    print("\n✅ Réponse finale du LLM :")
     print(f"💬 \"{final_answer}\"")
 
 
@@ -430,16 +405,13 @@ if __name__ == "__main__":
 
 **Usage**
 
-1. **Install dependencies:**
-
+1.  **Install the dependencies:**
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-
-2. **Configure your API key:**
-    Copy `tests/llmaas/.env.example` to `tests/llmaas/.env` and replace `"your_api_key_here"` with your LLMaaS API key.
-3. **Run the script:**
-
+2.  **Configure your API key:**
+    Copy `tests/llmaas/.env.example` to `tests/llmaas/.env` and replace `"votre_cle_api_ici"` with your LLMaaS API key.
+3.  **Run the script:**
     ```bash
     python tests/llmaas/test_tool_calling.py
     ```
@@ -450,15 +422,14 @@ Multimodal models can analyze both text and images. This example shows how to se
 
 **File Structure**
 
-Create a directory `simple_vision` with the following files:
+Create a `simple_vision` directory with the following files:
 
-- `test_vision.py`: The main script.
-- `requirements.txt`: Dependencies (including `Pillow` to generate the image).
-- `.env.example`: The configuration template.
-- `image_example.png`: The image to analyze (the script will generate it for you if it's missing).
+-   `test_vision.py`: The main script.
+-   `requirements.txt`: Dependencies (including `Pillow` for image generation).
+-   `.env.example`: Configuration template.
+-   `image_example.png`: The image to analyze (the script will generate it for you if missing).
 
 **`requirements.txt`**
-
 ```txt
 httpx
 python-dotenv
@@ -466,32 +437,27 @@ Pillow
 ```
 
 **`.env.example`**
-
 ```env
-
-
-# Base URL of the LLMaaS API
+# URL de base de l'API LLMaaS
 API_URL="https://api.ai.cloud-temple.com/v1"
 
-# Your API key LLMaaS
-API_KEY="your_api_key_here"
+# Votre clé API LLMaaS
+API_KEY="votre_cle_api_ici"
 
-# Optional: Default model to use for the test
-
-# Make sure this model is multimodal (vision)
+# Optionnel: Modèle par défaut à utiliser pour le test
+# Assurez-vous que ce modèle est multimodal (vision)
 DEFAULT_MODEL="granite3.2-vision:2b"
 ```
 
 **Source Code (`test_vision.py`)**
 
 ```python
-
 # -*- coding: utf-8 -*-
 """
-Simple example of using the LLMaaS Vision API.
+Exemple simple d'utilisation de l'API Vision de LLMaaS.
 
-This script shows how to send a local image with a question
-to a vision model (multimodal) and display its answer.
+Ce script montre comment envoyer une image locale avec une question
+à un modèle de vision (multimodal) et afficher sa réponse.
 """
 import os
 import base64
@@ -499,13 +465,11 @@ import httpx
 from dotenv import load_dotenv
 
 # --- Configuration ---
-
 # Load environment variables from a .env file
 load_dotenv()
 
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
-
 # Use a vision model.
 MODEL = os.getenv("DEFAULT_MODEL", "granite3.2-vision:2b")
 IMAGE_PATH = "image_example.png" # The image must be in the same directory
@@ -514,48 +478,49 @@ IMAGE_PATH = "image_example.png" # The image must be in the same directory
 
 def encode_image_to_base64(image_path: str) -> str:
     """
-    Encode an image in base64 to include in the API request.
+    Encode une image en base64 pour l'inclure dans la requête API.
     """
     try:
         with open(image_path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')
     except FileNotFoundError:
-        print(f"❌ Error: The image file '{image_path}' was not found.")
+        print(f"❌ Erreur: Le fichier image '{image_path}' n'a pas été trouvé.")
         return ""
     except Exception as e:
-        print(f"❌ Error during image encoding: {e}")
+        print(f"❌ Erreur lors de l'encodage de l'image: {e}")
         return ""
 
 def generate_example_image():
     """
-    Generates a simple image for testing if it doesn't exist.
-    Requires the Pillow (PIL) library.
+    Génère une image simple pour le test si elle n'existe pas.
+    Nécessite la bibliothèque Pillow (PIL).
     """
     try:
         from PIL import Image, ImageDraw
         if not os.path.exists(IMAGE_PATH):
-            print(f"🖼️ The image '{IMAGE_PATH}' does not exist, generating...")
+            print(f"🖼️  L'image '{IMAGE_PATH}' n'existe pas, génération en cours...")
             # Create a simple image: a red square on a white background
             img = Image.new('RGB', (200, 200), color = 'white')
             draw = ImageDraw.Draw(img)
             draw.rectangle([50, 50, 150, 150], fill='red', outline='black')
             img.save(IMAGE_PATH)
-            print("✅ Example image generated.")
+            print("✅ Image d'exemple générée.")
     except ImportError:
-        print("⚠️ Warning: The Pillow library is not installed.")
-        print("   Please install 'Pillow' (`pip install Pillow`) to generate the example image,")
-        print(f"   or manually place a file named '{IMAGE_PATH}' in this directory.")
+        print("⚠️  Avertissement: La bibliothèque Pillow n'est pas installée.")
+        print("   Veuillez installer 'Pillow' (`pip install Pillow`) pour générer l'image d'exemple,")
+        print(f"   ou placez manuellement un fichier nommé '{IMAGE_PATH}' dans ce répertoire.")
     except Exception as e:
-        print(f"❌ Error during image generation: {e}")
+        print(f"❌ Erreur lors de la génération de l'image: {e}")
 
-# --- Main logic ---
+
+# --- Main Logic ---
 
 def run_vision_test():
     """
-    Main function that runs the vision test scenario.
+    Fonction principale qui exécute le scénario de test de vision.
     """
     if not API_KEY:
-        print("❌ Error: The environment variable API_KEY is not set.")
+        print("❌ Erreur: La variable d'environnement API_KEY n'est pas définie.")
         return
 
     # Generate example image if necessary
@@ -566,11 +531,11 @@ def run_vision_test():
     if not base64_image:
         return
 
-    print(f"🤖 Model used : {MODEL}")
-    print(f"🖼️ Image sent : {IMAGE_PATH}")
+    print(f"🤖 Modèle utilisé : {MODEL}")
+    print(f"🖼️ Image envoyée : {IMAGE_PATH}")
     print("-" * 30)
 
-    # Building the multimodal payload
+    # Construct payload in multimodal format
     payload = {
         "model": MODEL,
         "messages": [
@@ -579,7 +544,7 @@ def run_vision_test():
                 "content": [
                     {
                         "type": "text",
-                        "text": "What do you see in this image? Describe the main shape and color."
+                        "text": "Que vois-tu sur cette image ? Décris la forme et la couleur principale."
                     },
                     {
                         "type": "image_url",
@@ -590,31 +555,31 @@ def run_vision_test():
                 ]
             }
         ],
-        "max_tokens": 500 # Limit the length of the description
+        "max_tokens": 500 # Limit description length
     }
 
-    print("➡️ Sending request to the vision LLM...")
+    print("➡️ Envoi de la requête au LLM de vision...")
     try:
         with httpx.Client() as client:
             response = client.post(
                 f"{API_URL}/chat/completions",
                 headers={"Authorization": f"Bearer {API_KEY}"},
                 json=payload,
-                timeout=120, # Vision models can be slower
+                timeout=120, # Vision models may take longer
             )
             response.raise_for_status()
             response_data = response.json()
 
     except httpx.HTTPStatusError as e:
-        print(f"❌ API Error (HTTP Status): {e}")
-        print(f"API response: {e.response.text}")
+        print(f"❌ Erreur API (HTTP Status): {e}")
+        print(f"Réponse de l'API : {e.response.text}")
         return
     except httpx.RequestError as e:
-        print(f"❌ API Error (Request): {e}")
+        print(f"❌ Erreur API (Request): {e}")
         return
 
     final_answer = response_data["choices"][0]["message"]["content"]
-    print("\n✅ Model response:")
+    print("\n✅ Réponse du modèle :")
     print(f"💬 \"{final_answer}\"")
 
 
@@ -624,35 +589,32 @@ if __name__ == "__main__":
 
 **Usage**
 
-1. **Install dependencies:**
-
+1.  **Install dependencies:**
     ```bash
     pip install -r tests/llmaas/requirements.txt
     ```
-
-2. **Configure your API key:**
+2.  **Configure your API key:**
     Copy `tests/llmaas/.env.example` to `tests/llmaas/.env` and replace `"votre_cle_api_ici"` with your LLMaaS API key.
-3. **Run the script:**
-
+3.  **Run the script:**
     ```bash
     python tests/llmaas/test_vision.py
     ```
+    The script will automatically generate an `image_example.png` image if it does not exist.
 
-    The script will automatically generate an `image_example.png` file if it doesn't exist.
+---
 
 ## Next Steps
 
 Once your first test is successful:
 
-1. **Explore the models**: Test different models according to your needs
-2. **Optimize the prompts**: Improve the quality of the responses
+1. **Explore models**: Test different models based on your requirements
+2. **Optimize prompts**: Improve response quality
 3. **Integrate into your application**: See the [API documentation](./api)
 4. **Advanced use cases**: See the [tutorials](./tutorials)
 
 ## Support
 
 In case of an issue:
-
 - Consult the [complete API documentation](./api)
 - Check the service status in the Console
 - Contact support via the Cloud Temple Console

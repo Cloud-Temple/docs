@@ -13,21 +13,19 @@ Le service **LLMaaS** (Large Language Models as a Service) de Cloud Temple fourn
 
 ### Infrastructure Cloud Temple
 
-import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
+import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001.png';
 
 <img src={ArchitectureLLMaaS} alt="Architecture Technique LLMaaS Cloud Temple" />
 
 ### Composants Principaux
 
 #### 1. **API Gateway LLMaaS**
-
 - **Compatible OpenAI** : Intégration transparente avec écosystème existant
 - **Rate Limiting** : Gestion des quotas par tier de facturation
 - **Load Balancing** : Distribution intelligente sur 12 machines GPU
 - **Monitoring** : Métriques temps réel et alerting
 
 #### 2. **Service d'Authentification**
-
 - **Tokens API sécurisés** : Rotation automatique
 - **Contrôle d'accès** : Permissions granulaires par modèle
 - **Audit trails** : Traçabilité complète des accès
@@ -41,19 +39,19 @@ import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
 ### Gestion des Tokens
 
 #### **Types de Tokens**
-
 - **Tokens d'entrée** : Votre prompt et contexte
 - **Tokens de sortie** : Réponse générée par le modèle
 - **Tokens système** : Metadata et instructions
 
 #### **Calcul des Coûts**
-
 ```
-Coût total = (Tokens entrée × 1.9€/M) + (Tokens sortie × 8€/M) +  (Tokens sortie Raisonnement × 8€/M)
+Chat/Completion = (Tokens entrée × 1.8€/M) + (Tokens sortie × 8€/M) + (Tokens sortie Raisonnement × 8€/M)
+Reranking       = Documents rerankés × 4€/M
+Batch (async)   = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M)
+Audio (ASR)     = 0.01€ / minute de transcription
 ```
 
 #### **Optimisation**
-
 - **Context window** : Réutilisez les conversations pour économiser
 - **Modèles appropriés** : Choisissez la taille selon la complexité
 - **Max tokens** : Limitez la longueur des réponses
@@ -70,7 +68,7 @@ prompt = "Expliquez la photosynthèse"
 response_max = 200  # tokens max souhaités
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
-total_cost = (estimated_input * 1.9 + response_max * 8) / 1_000_000
+total_cost = (estimated_input * 1.8 + response_max * 8) / 1_000_000
 print(f"Coût estimé: {total_cost:.6f}€")
 ```
 
@@ -81,26 +79,23 @@ print(f"Coût estimé: {total_cost:.6f}€")
 Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI, garantissant :
 
 #### **Protection des Données**
-
 - **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
 - **Stockage sécurisé** : Données chiffrées au repos (AES-256)
 - **Isolation** : Environnements dédiés par tenant
 
 #### **Souveraineté Numérique**
-
 - **Hébergement France** : Datacenters Cloud Temple certifiés
 - **Droit français** : Conformité RGPD native
 - **Pas d'exposition** : Aucun transfert vers clouds étrangers
 
 #### **Audit et Traçabilité**
-
 - **Logs complets** : Toutes les interactions tracées
 - **Rétention** : Conservation selon politiques légales
 - **Compliance** : Rapports d'audit disponibles
 
 ### Contrôles de Sécurité
 
-import SecurityControls from './images/llmaas_security_002.png';
+import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 <img src={SecurityControls} alt="Contrôles de Sécurité LLMaaS" />
 
@@ -108,27 +103,24 @@ import SecurityControls from './images/llmaas_security_002.png';
 
 L'analyse des prompts est une fonctionnalité de sécurité **native et intégrée** à la plateforme LLMaaS. Activée par défaut, elle vise à détecter et prévenir les tentatives de "jailbreak" ou d'injection de prompts malveillants avant même qu'ils n'atteignent le modèle. Cette protection repose sur une approche multicouche.
 
-:::tip[Contacter le support pour la désactivation]
+:::tip Contacter le support pour la désactivation
 Il est possible de désactiver cette analyse de sécurité pour des cas d'usage très spécifiques, bien que cela ne soit pas recommandé. Pour toute question à ce sujet ou pour demander une désactivation, veuillez contacter le support Cloud Temple.
 :::
 
 #### 1. Analyse Structurelle (`check_structure`)
-
 - **Vérification JSON malformé** : Le système détecte si le prompt commence par un `{` et tente de le parser comme du JSON. Si le parsing réussit et que le JSON contient des mots-clés suspects (ex: "system", "bypass"), ou si le parsing échoue de manière inattendue, cela peut indiquer une tentative d'injection.
 - **Normalisation Unicode** : Le prompt est normalisé en utilisant `unicodedata.normalize('NFKC', prompt)`. Si le prompt original diffère de sa version normalisée, cela peut indiquer l'utilisation de caractères Unicode trompeurs (homoglyphes) pour contourner les filtres. Par exemple, "аdmin" (cyrillique) au lieu de "admin" (latin).
 
 #### 2. Détection de Patterns Suspects (`check_patterns`)
-
 - Le système utilise des expressions régulières (`regex`) pour identifier des motifs connus d'attaques de prompts, et ce, dans plusieurs langues (français, anglais, chinois, japonais).
 - **Exemples de patterns détectés** :
-  - **Commandes Système** : Mots-clés comme "ignore les instructions", "ignore instructions", "忽略指令", "指示を無視".
-  - **Injection HTML** : Balises HTML cachées ou malveillantes, par exemple `<div caché>`, `<hidden div>`.
-  - **Injection Markdown** : Liens Markdown malveillants, par exemple `[texte](javascript:...)`, `[text](data:...)`.
-  - **Séquences Répétées** : Répétition excessive de mots ou de phrases comme "oublie oublie oublie", "forget forget forget".
-  - **Caractères Spéciaux/Mixtes** : Utilisation de caractères Unicode inhabituels ou mélange de scripts pour masquer des commandes (ex: "s\u0443stème").
+    - **Commandes Système** : Mots-clés comme "ignore les instructions", "ignore instructions", "忽略指令", "指示を無視".
+    - **Injection HTML** : Balises HTML cachées ou malveillantes, par exemple `<div caché>`, `<hidden div>`.
+    - **Injection Markdown** : Liens Markdown malveillants, par exemple `[texte](javascript:...)`, `[text](data:...)`.
+    - **Séquences Répétées** : Répétition excessive de mots ou de phrases comme "oublie oublie oublie", "forget forget forget".
+    - **Caractères Spéciaux/Mixtes** : Utilisation de caractères Unicode inhabituels ou mélange de scripts pour masquer des commandes (ex: "s\u0443stème").
 
 #### 3. Analyse Comportementale (`check_behavior`)
-
 - Le load balancer maintient un historique des prompts récents.
 - **Détection de Fragmentation** : Il combine les prompts récents pour voir si une attaque est fragmentée sur plusieurs requêtes. Par exemple, si "ignore" est envoyé dans un prompt et "instructions" dans le suivant, le système peut les détecter ensemble.
 - **Détection de Répétition** : Il identifie si le même prompt est répété de manière excessive. Le seuil actuel pour la détection de répétition est de 30 prompts consécutifs identiques.
@@ -140,7 +132,6 @@ Cette approche multicouche permet de détecter un large éventail d'attaques de 
 ### Monitoring en Temps Réel
 
 Access via **Console Cloud Temple** :
-
 - Métriques d'utilisation par modèle
 - Graphiques de latence et débit
 - Alertes sur seuils de performance
@@ -167,7 +158,7 @@ client_ct = OpenAI(
 
 # Code identique !
 response = client_ct.chat.completions.create(
-    model="granite3.3:8b",  # Modèle Cloud Temple
+    model="gpt-oss:120b",  # Modèle Cloud Temple
     messages=[{"role": "user", "content": "Bonjour"}]
 )
 ```
@@ -175,21 +166,18 @@ response = client_ct.chat.completions.create(
 ### Écosystème Supporté
 
 #### **Frameworks IA**
-
 - ✅ **LangChain** : Intégration native
 - ✅ **Haystack** : Pipeline de documents
 - ✅ **Semantic Kernel** : Orchestration Microsoft
 - ✅ **AutoGen** : Agents conversationnels
 
 #### **Outils Développement**
-
 - ✅ **Jupyter** : Notebooks interactifs
 - ✅ **Streamlit** : Applications web rapides
 - ✅ **Gradio** : Interfaces utilisateur IA
 - ✅ **FastAPI** : APIs backend
 
 #### **Plateformes No-Code**
-
 - ✅ **Zapier** : Automatisations
 - ✅ **Make** : Intégrations visuelles
 - ✅ **Bubble** : Applications web
@@ -198,7 +186,7 @@ response = client_ct.chat.completions.create(
 
 ### Mise à Jour des Modèles
 
-import ModelLifecycle from './images/llmaas_lifecycle_003.png';
+import ModelLifecycle from '@site/docs/llmaas/images/llmaas_lifecycle_003.png';
 
 <img src={ModelLifecycle} alt="Cycle de Vie des Modèles LLMaaS" />
 
@@ -220,51 +208,66 @@ Ce planning est fourni à titre indicatif et est **revu au début de chaque trim
 - **DMP (Date de Mise en Production)** : Date à laquelle le modèle devient disponible en production.
 - **DSP (Date de Fin de Support)** : Date prévisionnelle à partir de laquelle le modèle ne sera plus maintenu. Un préavis de 3 mois est respecté avant toute suppression effective.
 
-| Modèle                 | Éditeur                   | Phase      | DMP        | DSP        | LTS | Migration conseillée |
-| :--------------------- | :------------------------ | :--------- | :--------- | :--------- | :-- | :------------------- |
-| devstral:24b           | Mistral AI & All Hands AI | Production | 13/06/2025 | 30/03/2026 | Non | devstral-small-2:24b |
-| granite3.1-moe:2b      | IBM                       | Production | 13/06/2025 | 30/03/2026 | Non | granite4-tiny-h:7b   |
-| qwen3-coder:30b        | Qwen Team                 | Production | 02/08/2025 | 30/03/2026 | Non | qwen-coder-next:80b  |
-| qwen3:30b-a3b          | Qwen Team                 | Production | 30/08/2025 | 30/03/2026 | Non | qwen3-next:80b       |
-| cogito:32b             | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 | Non | gpt-oss:120b         |
-| gemma3:27b             | Google                    | Production | 13/06/2025 | 30/06/2026 | Non |                      |
-| glm-4.7-flash:30b      | Zhipu AI                  | Production | 22/01/2026 | 30/06/2026 | Non |                      |
-| medgemma:27b           | Google                    | Production | 02/12/2025 | 30/06/2026 | Non |                      |
-| ministral-3:14b        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| ministral-3:3b         | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| ministral-3:8b         | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| nemotron3-nano:30b     | NVIDIA                    | Production | 04/01/2026 | 30/06/2026 | Non |                      |
-| olmo-3:32b             | AllenAI                   | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| olmo-3:7b              | AllenAI                   | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| qwen3-omni:30b         | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 | Non |                      |
-| qwen3-vl:235b          | Qwen Team                 | Production | 04/01/2026 | 30/06/2026 | Non |                      |
-| qwen3-vl:2b            | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| qwen3-vl:32b           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| qwen3-vl:8b            | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 | Non |                      |
-| rnj-1:8b               | Essential AI              | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| devstral-small-2:24b   | Mistral AI & All Hands AI | Production | 02/02/2026 | 30/09/2026 | Non |                      |
-| gpt-oss:20b            | OpenAI                    | Production | 08/08/2025 | 30/09/2026 | Non |                      |
-| granite4-small-h:32b   | IBM                       | Production | 03/10/2025 | 30/09/2026 | Non |                      |
-| granite4-tiny-h:7b     | IBM                       | Production | 03/10/2025 | 30/09/2026 | Non |                      |
-| mistral-small3.2:24b   | Mistral AI                | Production | 23/06/2025 | 30/09/2026 | Non |                      |
-| deepseek-ocr           | DeepSeek AI               | Production | 22/11/2025 | 30/12/2026 | Non |                      |
-| functiongemma:270m     | Google                    | Production | 30/12/2025 | 30/12/2026 | Non |                      |
-| granite3.2-vision:2b   | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
-| qwen-coder-next:80b    | Qwen Team                 | Production | 04/02/2026 | 30/12/2026 | Non |                      |
-| qwen3-next:80b         | Qwen Team                 | Production | 02/02/2026 | 30/12/2026 | Non |                      |
-| qwen3-vl:30b           | Qwen Team                 | Production | 30/12/2025 | 30/12/2026 | Non |                      |
-| qwen3-vl:4b            | Qwen Team                 | Production | 30/12/2025 | 30/12/2026 | Non |                      |
-| qwen3:0.6b             | Qwen Team                 | Production | 13/06/2025 | 30/12/2026 | Non |                      |
-| translategemma:12b     | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
-| translategemma:27b     | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
-| translategemma:4b      | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
-| bge-m3:567m            | BAAI                      | Production | 18/10/2025 | 30/12/2027 | Oui |                      |
-| embeddinggemma:300m    | Google                    | Production | 10/09/2025 | 30/12/2027 | Oui |                      |
-| gpt-oss:120b           | OpenAI                    | Production | 11/11/2025 | 30/12/2027 | Oui |                      |
-| granite-embedding:278m | IBM                       | Production | 13/06/2025 | 30/12/2027 | Oui |                      |
-| llama3.3:70b           | Meta                      | Production | 13/06/2025 | 30/12/2027 | Oui |                      |
-| qwen3-2507-gptq:235b   | Qwen Team                 | Production | 04/01/2026 | 30/12/2027 | Oui |                      |
-| qwen3-2507-think:4b    | Qwen Team                 | Production | 31/08/2025 | 30/12/2027 | Oui |                      |
+| Modèle                                | Éditeur                   | Phase      | DMP        | DSP        | LTS | Migration conseillée |
+| :------------------------------------ | :------------------------ | :--------- | :--------- | :--------- | :-- | :------------------- |
+| cogito:32b                            | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 | Non | gpt-oss:120b         |
+| embeddinggemma:300m                   | Google                    | Production | 10/09/2025 | 30/06/2026 | Non |                      |
+| gemma3:27b                            | Google                    | Production | 13/06/2025 | 30/06/2026 | Non |                      |
+| glm-4.7-flash:30b                     | Zhipu AI                  | Production | 22/01/2026 | 30/06/2026 | Non |                      |
+| ministral-3:14b                       | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| ministral-3:3b                        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| ministral-3:8b                        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| olmo-3:32b                            | AllenAI                   | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| olmo-3:7b                             | AllenAI                   | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| qwen3-omni:30b                        | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 | Non |                      |
+| qwen3-vl:2b                           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| qwen3-vl:32b                          | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| qwen3-vl:8b                           | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 | Non |                      |
+| rnj-1:8b                              | Essential AI              | Production | 30/12/2025 | 30/06/2026 | Non |                      |
+| devstral-small-2:24b                  | Mistral AI & All Hands AI | Production | 02/02/2026 | 30/09/2026 | Non |                      |
+| gemma4:e2b                            | Google                    | Production | 19/04/2026 | 30/09/2026 | Non |                      |
+| gemma4:e4b                            | Google                    | Production | 19/04/2026 | 30/09/2026 | Non |                      |
+| gpt-oss:20b                           | OpenAI                    | Production | 08/08/2025 | 30/09/2026 | Non |                      |
+| mistral-small3.2:24b                  | Mistral AI                | Production | 23/06/2025 | 30/09/2026 | Non |                      |
+| qwen3.5:4b                            | Qwen Team                 | Production | 24/03/2026 | 30/09/2026 | Non |                      |
+| qwen3.5:9b                            | Qwen Team                 | Production | 24/03/2026 | 30/09/2026 | Non |                      |
+| bge-reranker-large                    | BAAI                      | Production | 13/05/2026 | 30/12/2026 | Non |                      |
+| deepseek-ocr                          | DeepSeek AI               | Production | 22/11/2025 | 30/12/2026 | Non |                      |
+| functiongemma:270m                    | Google                    | Production | 30/12/2025 | 30/12/2026 | Non |                      |
+| gemma4:31b                            | Google                    | Production | 14/04/2026 | 30/12/2026 | Non |                      |
+| granite3-guardian:2b                  | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
+| granite3-guardian:8b                  | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
+| granite3.2-vision:2b                  | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
+| mistral-small4:119b                   | Mistral AI                | Production | 13/05/2026 | 30/12/2026 | Non |                      |
+| nemotron-3-super:120b                 | NVIDIA                    | Production | 01/04/2026 | 30/12/2026 | Non |                      |
+| nemotron-cascade:30b                  | NVIDIA                    | Production | 01/04/2026 | 30/12/2026 | Non |                      |
+| nemotron3-nano:30b                    | NVIDIA                    | Production | 04/01/2026 | 30/12/2026 | Non |                      |
+| qwen-coder-next:80b                   | Qwen Team                 | Production | 04/02/2026 | 30/12/2026 | Non |                      |
+| qwen3-embedding:0.6b                  | Qwen Team                 | Production | 14/05/2026 | 30/12/2026 | Non |                      |
+| qwen3-embedding:4b                    | Qwen Team                 | Production | 14/05/2026 | 30/12/2026 | Non |                      |
+| qwen3-embedding:8b                    | Qwen Team                 | Production | 14/05/2026 | 30/12/2026 | Non |                      |
+| qwen3-next:80b                        | Qwen Team                 | Production | 02/02/2026 | 30/12/2026 | Non |                      |
+| qwen3-reranker:0.6b                   | Qwen Team                 | Production | 13/05/2026 | 30/12/2026 | Non |                      |
+| qwen3-reranker:4b                     | Qwen Team                 | Production | 13/05/2026 | 30/12/2026 | Non |                      |
+| qwen3-vl:235b                         | Qwen Team                 | Production | 04/01/2026 | 30/12/2026 | Non |                      |
+| qwen3-vl:30b                          | Qwen Team                 | Production | 30/12/2025 | 30/12/2026 | Non |                      |
+| qwen3-vl:4b                           | Qwen Team                 | Production | 30/12/2025 | 30/12/2026 | Non |                      |
+| qwen3.5:0.8b                          | Qwen Team                 | Production | 24/03/2026 | 30/12/2026 | Non |                      |
+| qwen3.6:27b                           | Qwen Team                 | Production | 01/05/2026 | 30/12/2026 | Non |                      |
+| qwen3.6:35b                           | Qwen Team                 | Production | 01/05/2026 | 30/12/2026 | Non |                      |
+| qwen3:0.6b                            | Qwen Team                 | Production | 13/06/2025 | 30/12/2026 | Oui |                      |
+| translategemma:12b                    | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
+| translategemma:27b                    | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
+| translategemma:4b                     | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
+| voxtral                               | Mistral AI                | Production | 01/04/2026 | 30/12/2026 | Non |                      |
+| z-image:16b                           | Community                 | Production | 01/04/2026 | 30/12/2026 | Non |                      |
+| nvidia/llama-nemotron-rerank-vl-1b-v2 | NVIDIA                    | Production | 13/05/2026 | 30/06/2027 | Non |                      |
+| bge-m3:567m                           | BAAI                      | Production | 18/10/2025 | 30/12/2027 | Oui |                      |
+| gpt-oss:120b                          | OpenAI                    | Production | 11/11/2025 | 30/12/2027 | Oui |                      |
+| granite-embedding:278m                | IBM                       | Production | 13/06/2025 | 30/12/2027 | Oui |                      |
+| llama3.3:70b                          | Meta                      | Production | 13/06/2025 | 30/12/2027 | Oui |                      |
+| qwen3-2507:235b                       | Qwen Team                 | Production | 04/01/2026 | 30/12/2027 | Oui |                      |
+| qwen3-2507-think:4b                   | Qwen Team                 | Production | 31/08/2025 | 30/12/2027 | Oui |                      |
 
 ### Légende
 
@@ -284,14 +287,20 @@ Le monde des LLMs évolue très rapidement. Pour garantir à nos clients l'accè
 
 | Modèle                   | Phase    | Date de Dépréciation |
 | :----------------------- | :------- | :------------------- |
+| devstral:24b             | Déprécié | 30/03/2026           |
+| granite3.1-moe:2b        | Déprécié | 30/03/2026           |
+| granite4-small-h:32b     | Déprécié | 15/05/2026           |
+| granite4-tiny-h:7b       | Déprécié | 15/05/2026           |
+| medgemma:27b             | Déprécié | 15/05/2026           |
+| qwen3-2507-gptq:235b     | Déprécié | 15/05/2026           |
+| qwen3-coder:30b          | Déprécié | 30/03/2026           |
+| qwen3:30b-a3b            | Déprécié | 30/03/2026           |
 | deepseek-r1:14b          | Déprécié | 30/12/2025           |
 | deepseek-r1:32b          | Déprécié | 30/12/2025           |
 | gemma3:1b                | Déprécié | 30/12/2025           |
 | gemma3:4b                | Déprécié | 30/12/2025           |
-| qwen3:0.6b               | Déprécié | 30/12/2025           |
 | qwen3:1.7b               | Déprécié | 30/12/2025           |
 | qwen3:14b                | Déprécié | 30/12/2025           |
-| qwen3:30b-a3b            | Déprécié | 30/12/2025           |
 | qwen3:4b                 | Déprécié | 30/12/2025           |
 | qwen3:8b                 | Déprécié | 30/12/2025           |
 | qwen3:32b                | Déprécié | 30/12/2025           |
@@ -321,121 +330,6 @@ Le monde des LLMs évolue très rapidement. Pour garantir à nos clients l'accè
 | qwen2.5:3b               | Déprécié | 17/10/2025           |
 | deepseek-r1:671b         | Déprécié | 17/10/2025           |
 
----
-
-## Le RAG : Interroger vos Données avec un LLM
-
-Ce document explique les concepts fondamentaux derrière la technique de **Retrieval-Augmented Generation (RAG)**.
-
-:::tip[Code d'Exemple Disponible]
-Les concepts abordés ici sont illustrés dans un démonstrateur complet et fonctionnel disponible sur notre GitHub. Il constitue une excellente base de départ pour comprendre le fonctionnement pratique d'un pipeline RAG.
-
-➡️ **[Accéder au code du Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
-:::
-
-### Le problème : Les LLMs n'ont pas de mémoire à long terme
-
-Un grand modèle de langage (LLM) comme Mistral ou Granite est très puissant, mais il ne connaît que les données sur lesquelles il a été entraîné. Il ne connaît pas vos documents internes, les derniers articles de presse, ou les spécificités de votre métier.
-
-Le **RAG** est une technique qui permet de donner au LLM un "mémoire externe" en lui fournissant, au moment de la question, les extraits de documents les plus pertinents pour l'aider à formuler sa réponse.
-
-Le processus se déroule en deux temps :
-
-1. **Retrieval (Récupération)** : Trouver les bons documents.
-2. **Augmented Generation (Génération Augmentée)** : Utiliser ces documents pour générer une réponse.
-
-C'est cette étape de **Retrieval** qui est au cœur de notre sujet. Comment un ordinateur parvient-il à "comprendre" qu'une question et un paragraphe parlent de la même chose ? La magie opère grâce aux **vecteurs**.
-
-![Schéma conceptuel du RAG](./images/rag_concept_overview.png)
-
-### Étape 1 : L'Embedding : Transformer les Mots en Nombres
-
-Un ordinateur ne comprend pas les mots, mais il est excellent pour manipuler les nombres. L'**embedding** est le processus qui traduit un texte (un mot, une phrase, un document) en une liste de nombres, appelée **vecteur**.
-
-:::tip[Qu'est-ce qu'un vecteur ?]
-En termes simples, un vecteur est une liste de nombres qui représente un point dans un espace à plusieurs dimensions. Chaque nombre dans le vecteur correspond à une coordonnée sur un "axe" de cet espace. Pour les embeddings de texte, ces axes ne sont pas `x`, `y`, `z` mais des dimensions sémantiques abstraites (par exemple, un axe pourrait représenter le concept de "royauté", un autre celui de "félin", etc.).
-:::
-
-`"Le chat est sur le tapis."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
-
-![Exemple de vecteur d'embedding](./images/embedding_vector_example.png)
-
-Ce vecteur n'est pas aléatoire. Il représente la "position" du texte dans un espace sémantique multidimensionnel. Des textes ayant un sens similaire auront des vecteurs qui pointent dans des directions similaires.
-
-:::tip[Analogie Géographique]
-Imaginez une carte géographique. "Paris" et "France" seraient très proches, tout comme "Rome" et "Italie". "Paris" serait plus éloigné de "Rome" que de "France", mais plus proche que de "Tokyo". L'embedding fait la même chose, mais avec des milliers de "dimensions" au lieu de deux, pour capturer des nuances de sens complexes.
-:::
-
-Dans notre script, l'endpoint `/v1/embeddings` et le modèle `granite-embedding:278m` sont responsables de cette traduction.
-
-#### Focus sur les Modèles Granite Embedding
-
-Les embeddings font partie intégrante de l'écosystème LLM. Un moyen précis et efficace de représenter les mots, les requêtes et les documents sous forme numérique est essentiel pour toute une série de tâches d'entreprise, y compris la recherche sémantique, la recherche vectorielle et la RAG, ainsi que pour maintenir des bases de données vectorielles efficaces. Un modèle d'embedding efficace peut notablement améliorer la compréhension de l'intention de l'utilisateur par le système et augmenter la pertinence des informations et des sources en réponse à une requête.
-
-Alors que les deux dernières années ont vu la prolifération de LLM autorégressifs open source de plus en plus compétitifs pour des tâches comme la génération et la synthèse de texte, les modèles d'embedding open source publiés par les principaux fournisseurs sont relativement rares.
-
-##### Pourquoi Granite Embedding ?
-
-Les nouveaux modèles **Granite Embedding** d'IBM, que nous mettons à votre disposition, sont une évolution améliorée de la famille Slate de modèles de langage encodeurs uniquement basés sur RoBERTa. Ils se distinguent sur plusieurs points cruciaux pour un usage en entreprise :
-
-1. **Entraînement Éthique et Commercialement Sûr** : Alors que la grande majorité des modèles d'embedding ouverts du classement MTEB Hugging Face s'appuient sur des ensembles de données d'entraînement uniquement sous licence à des fins de recherche (comme MS-MARCO), IBM a vérifié l'éligibilité commerciale de toutes les sources de données utilisées pour entraîner Granite Embedding.
-2. **Indemnisation de Propriété Intellectuelle** : Soulignant le soin apporté à son utilisation en entreprise, IBM prend en charge Granite Embedding avec le même niveau d'indemnisation non plafonnée pour les réclamations de tiers liées à la propriété intellectuelle que celle prévue pour l'utilisation d'autres modèles développés par IBM.
-3. **Performance et Efficacité** : Les efforts d'IBM dans l'organisation et le filtrage des données d'entraînement n'ont pas empêché les modèles Granite Embedding de suivre le rythme des principaux modèles d'embedding open source de taille similaire.
-
-Les benchmarks ci-dessous illustrent deux avantages clés :
-
-- **Précision de la Recherche** : Le premier graphique montre que les modèles Granite (en bleu) sont très compétitifs, voire supérieurs, à des modèles de taille similaire sur des tâches de recherche sémantique (`Retrieval Tasks`).
-- **Vitesse d'Inférence** : Le second graphique montre que les modèles Granite sont **nettement plus rapides** (temps par requête plus faible) que la plupart des alternatives populaires, ce qui est un avantage considérable pour les applications nécessitant des réponses en temps réel.
-
-![Benchmark de Performance des Modèles Granite](./images/granite_benchmark_performance.png)
-*Comparaison des performances sur des tâches de recherche (BEIR) et de recherche de code (CoIR).*
-
-![Benchmark de Vitesse des Modèles Granite](./images/granite_benchmark_speed.png)
-*Comparaison de la latence (temps par requête en secondes) entre différents modèles d'embedding.*
-
-C'est pour cet équilibre entre **performance, vitesse, sécurité juridique et éthique** que nous avons choisi d'intégrer le modèle `granite-embedding:278m` (la version multilingue la plus puissante) comme service d'embedding par défaut.
-
-### Étape 2 : La Recherche : Mesurer la Proximité Sémantique
-
-Une fois que notre question et tous nos documents sont transformés en vecteurs, la recherche devient un problème mathématique : **trouver le vecteur de document le plus "proche" du vecteur de la question.**
-
-Il existe plusieurs façons de mesurer cette "proximité". Notre script en utilise deux : la Similarité Cosinus et la Distance Euclidienne.
-
-#### La Similarité Cosinus (Le Standard)
-
-- **Concept** : Elle ne mesure pas la distance, mais l'**angle** entre deux vecteurs. Un angle faible (proche de 0°) signifie que les vecteurs pointent dans la même direction, et donc que les textes ont un sens très similaire.
-- **Score** : Le cosinus d'un angle de 0° est 1 (similarité parfaite). Le cosinus d'un angle de 90° est 0 (aucune similarité).
-- **Pourquoi est-elle si utilisée ?** Pour le texte, la *direction* sémantique est beaucoup plus importante que la *magnitude* (la longueur) du vecteur. La similarité cosinus ignore la magnitude et se concentre uniquement sur la direction.
-
-**Exemple simple en 2D :**
-
-- Question : `v_q = [2, 2]`
-- Doc A : `v_a = [4, 4]` (même sens, plus long)
-- Doc B : `v_b = [-2, 2]` (direction différente)
-
-Le calcul de la similarité cosinus donnera :
-
-- `cos(v_q, v_a) = 1.0` → Angle de 0°. Similarité parfaite.
-- `cos(v_q, v_b) = 0.0` → Angle de 90°. Aucune similarité.
-
-![Illustration de la Similarité Cosinus](./images/cosine_similarity_concept.png)
-
-C'est le résultat que nous voulons : le Document A est sémantiquement identique à la question, même si sa formulation est plus longue.
-
-#### La Distance Euclidienne (La Règle)
-
-- **Concept** : C'est la distance "à vol d'oiseau" entre les points terminaux des deux vecteurs.
-- **Score** : Un score de 0 signifie que les vecteurs sont identiques. Plus le score est élevé, plus ils sont éloignés.
-- **Inconvénient pour le texte** : Elle est sensible à la magnitude. Dans notre exemple ci-dessus, la distance entre `v_q` et `v_a` ne serait pas nulle, car les vecteurs n'ont pas la même longueur, même s'ils ont le même sens.
-
-![Illustration de la Distance Euclidienne](./images/euclidean_distance_concept.png)
-
-### Conclusion RAG
-
-Le plus grand défi reste la **qualité du modèle d'embedding**. Un bon modèle produira des vecteurs qui capturent fidèlement le sens, rendant le calcul de proximité, quelle que soit la méthode, beaucoup plus fiable.
-
----
-
 ## 💡 Bonnes Pratiques
 
 Pour tirer le meilleur parti de l'API LLMaaS, il est essentiel d'adopter des stratégies d'optimisation des coûts, de la performance et de la sécurité.
@@ -444,7 +338,7 @@ Pour tirer le meilleur parti de l'API LLMaaS, il est essentiel d'adopter des str
 
 La maîtrise des coûts repose sur une utilisation intelligente des tokens et des modèles.
 
-1. **Choix du Modèle** : N'utilisez pas un modèle surpuissant pour une tâche simple. Un modèle plus grand est plus capable, mais il est aussi plus lent et consomme beaucoup plus d'énergie, ce qui impacte directement le coût. Adaptez la taille du modèle à la complexité de votre besoin pour un équilibre optimal.
+1.  **Choix du Modèle** : N'utilisez pas un modèle surpuissant pour une tâche simple. Un modèle plus grand est plus capable, mais il est aussi plus lent et consomme beaucoup plus d'énergie, ce qui impacte directement le coût. Adaptez la taille du modèle à la complexité de votre besoin pour un équilibre optimal.
 
     Par exemple, pour traiter un million de tokens :
     - **`Gemma 3 1B`** consomme **0.15 kWh**.
@@ -453,14 +347,13 @@ La maîtrise des coûts repose sur une utilisation intelligente des tokens et de
     ```python
     # Pour une classification de sentiment, un modèle compact est suffisant et économique.
     if task == "sentiment_analysis":
-        model = "granite3.3:2b"
+        model = "qwen3.5:0.8b"
     # Pour une analyse juridique complexe, un modèle plus grand est nécessaire.
     elif task == "legal_analysis":
-        model = "deepseek-r1:70b"
+        model = "gpt-oss:120b"
     ```
 
-2. **Gestion du Contexte** : L'historique de la conversation (`messages`) est renvoyé à chaque appel, consommant des tokens d'entrée. Pour des conversations longues, envisagez des stratégies de résumé ou de fenêtrage pour ne conserver que les informations pertinentes.
-
+2.  **Gestion du Contexte** : L'historique de la conversation (`messages`) est renvoyé à chaque appel, consommant des tokens d'entrée. Pour des conversations longues, envisagez des stratégies de résumé ou de fenêtrage pour ne conserver que les informations pertinentes.
     ```python
     # Pour une conversation longue, on peut résumer les premiers échanges.
     messages = [
@@ -471,12 +364,11 @@ La maîtrise des coûts repose sur une utilisation intelligente des tokens et de
     ]
     ```
 
-3. **Limitation des Tokens de Sortie** : Utilisez toujours le paramètre `max_tokens` pour éviter des réponses excessivement longues et coûteuses. Fixez une limite raisonnable en fonction de ce que vous attendez.
-
+3.  **Limitation des Tokens de Sortie** : Utilisez toujours le paramètre `max_tokens` pour éviter des réponses excessivement longues et coûteuses. Fixez une limite raisonnable en fonction de ce que vous attendez.
     ```python
     # Demander un résumé de 100 mots maximum.
     response = client.chat.completions.create(
-        model="granite3.3:8b",
+        model="gpt-oss:120b",
         messages=[{"role": "user", "content": "Résume ce document..."}],
         max_tokens=150, # Marge de sécurité for ~100 mots
     )
@@ -486,8 +378,7 @@ La maîtrise des coûts repose sur une utilisation intelligente des tokens et de
 
 La réactivité de votre application dépend de la manière dont vous gérez les appels à l'API.
 
-1. **Requêtes Asynchrones** : Pour traiter plusieurs requêtes sans attendre la fin de chacune, utilisez des appels asynchrones. C'est particulièrement utile pour les applications backend traitant un grand volume de requêtes simultanées.
-
+1.  **Requêtes Asynchrones** : Pour traiter plusieurs requêtes sans attendre la fin de chacune, utilisez des appels asynchrones. C'est particulièrement utile pour les applications backend traitant un grand volume de requêtes simultanées.
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -496,7 +387,7 @@ La réactivité de votre application dépend de la manière dont vous gérez les
 
     async def process_prompt(prompt: str):
         # Traite une seule requête de manière asynchrone
-        response = await client.chat.completions.create(model="granite3.3:8b", messages=[{"role": "user", "content": prompt}])
+        response = await client.chat.completions.create(model="gpt-oss:120b", messages=[{"role": "user", "content": prompt}])
         return response.choices[0].message.content
 
     async def batch_requests(prompts: list):
@@ -505,12 +396,11 @@ La réactivité de votre application dépend de la manière dont vous gérez les
         return await asyncio.gather(*tasks)
     ```
 
-2. **Streaming pour l'Expérience Utilisateur (UX)** : Pour les interfaces utilisateur (chatbots, assistants), le streaming est essentiel. Il permet d'afficher la réponse du modèle mot par mot, donnant une impression de réactivité immédiate au lieu d'attendre la réponse complète.
-
+2.  **Streaming pour l'Expérience Utilisateur (UX)** : Pour les interfaces utilisateur (chatbots, assistants), le streaming est essentiel. Il permet d'afficher la réponse du modèle mot par mot, donnant une impression de réactivité immédiate au lieu d'attendre la réponse complète.
     ```python
     # Affiche la réponse en temps réel dans une interface utilisateur
     response_stream = client.chat.completions.create(
-        model="granite3.3:8b",
+        model="gpt-oss:120b",
         messages=[{"role": "user", "content": "Raconte-moi une histoire."}],
         stream=True
     )
@@ -524,8 +414,7 @@ La réactivité de votre application dépend de la manière dont vous gérez les
 
 La sécurité de votre application est primordiale, surtout lorsque vous traitez des entrées utilisateur.
 
-1. **Validation et Nettoyage des Entrées (Sanitization)** : Ne faites jamais confiance aux entrées utilisateur. Avant de les envoyer à l'API, nettoyez-les pour retirer tout code potentiellement malveillant ou instructions de "prompt injection". Limitez également leur taille pour éviter les abus.
-
+1.  **Validation et Nettoyage des Entrées (Sanitization)** : Ne faites jamais confiance aux entrées utilisateur. Avant de les envoyer à l'API, nettoyez-les pour retirer tout code potentiellement malveillant ou instructions de "prompt injection". Limitez également leur taille pour éviter les abus.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Exemple simple : retirer les démarqueurs de code et limiter la longueur.
@@ -534,8 +423,7 @@ La sécurité de votre application est primordiale, surtout lorsque vous traitez
         return cleaned[:2000]  # Limite la taille à 2000 caractères
     ```
 
-2. **Gestion Robuste des Erreurs** : Encadrez toujours vos appels API dans des blocs `try...except` pour gérer les erreurs réseau, les erreurs de l'API (ex: 429 Rate Limit, 500 Internal Server Error) et fournir une expérience utilisateur dégradée mais fonctionnelle.
-
+2.  **Gestion Robuste des Erreurs** : Encadrez toujours vos appels API dans des blocs `try...except` pour gérer les erreurs réseau, les erreurs de l'API (ex: 429 Rate Limit, 500 Internal Server Error) et fournir une expérience utilisateur dégradée mais fonctionnelle.
     ```python
     from openai import APIError, APITimeoutError
 

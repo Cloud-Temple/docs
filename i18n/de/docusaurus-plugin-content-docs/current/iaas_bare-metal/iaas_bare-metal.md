@@ -2,13 +2,15 @@
 title: Übersicht
 ---
 
-Das __Bare Metal__-Angebot von Cloud Temple bietet dedizierte, vollständig anpassbare Server, um die Bedürfnisse von Kunden zu erfüllen, die vollständige Autonomie über ihre Infrastruktur suchen.
+# Bare Metal
 
-Aufgebaut auf modernsten Technologien - Cisco UCS für die Rechenleistung und IBM Spectrum Virtualize/FlashSystem für den Speicher - garantiert diese Lösung optimale Leistung und vorbildliche Zuverlässigkeit.
+Das Produkt __Bare Metal__ von Cloud Temple bietet dedizierte, vollständig anpassbare Server, um den Bedürfnissen von Kunden gerecht zu werden, die nach vollständiger Autonomie in ihrer Infrastruktur streben.
 
-Mit __Bare Metal__ profitieren Sie von exklusiver Hardware ohne gemeinsame Nutzung, die es Ihnen ermöglicht, die Software-Umgebung Ihrer Wahl zu installieren und zu verwalten: Hypervisor, Linux, Windows oder andere.
+Entwickelt auf Basis modernster Cisco UCS-Technologien für die Rechenleistung und IBM Spectrum Virtualize/FlashSystem für die Datenspeicherung, gewährleistet diese Lösung optimale Leistung und beispielhafte Zuverlässigkeit.
 
-Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple-Konsole, die eine vereinfachte Verwaltung und sofortige Kontrolle bietet. Ob Sie nach einer Infrastruktur für Ihre kritischen Anwendungen oder nach Hardware-Ressourcen für Ihre spezifischen Projekte suchen, das Bare Metal-Angebot gewährleistet Flexibilität, vollständige Kontrolle und unübertroffene Leistung.
+Mit __Bare Metal__ profitieren Sie von exklusiver Hardware ohne Ressourcen-Sharing, die es Ihnen ermöglicht, Ihre bevorzugte Softwareumgebung zu installieren und zu verwalten: Hypervisor, Linux, Windows oder andere.
+
+Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple Konsole, die ein vereinfachtes Management und eine sofortige Inbetriebnahme ermöglicht. Ob Sie eine Infrastruktur für Ihre kritischen Anwendungen oder Hardware-Ressourcen für Ihre spezifischen Projekte suchen, das Produkt Bare Metal bietet Ihnen Flexibilität, volle Kontrolle und unübertroffene Leistung.
 
 <div class="card-grid">
   <div class="card">
@@ -23,21 +25,21 @@ Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple-Konsole, die 
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen können.</p>
-    <a href="./iaas_bare-metal/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
+    <a href="./iaas_bare-metal/tutorials" class="card-link">Anleitungen entdecken &rarr;</a>
   </div>
 </div>
 
-## Kaufplattformen
+## Einkaufsplattformen
 
 <div class="purchase-platforms">
-  <p>Sind Sie eine Organisation des öffentlichen Sektors? Das <strong>Bare Metal</strong>-Angebot ist zugänglich über:</p>
+  <p>Sind Sie ein Akteur im öffentlichen Sektor? Das Produkt <strong>Bare Metal</strong> ist verfügbar über:</p>
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
     <p>
       <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        Die UGAP-Plattform für öffentliche Beschaffung
+        Die UGAP-Einkaufsplattform für den öffentlichen Sektor
       </a>
     </p>
   </div>
@@ -46,7 +48,7 @@ Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple-Konsole, die 
       <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
     <p>
       <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        Den CAIH-Markt für den medizinischen Sektor
+        Das CAIH-Einkaufsprogramm für den Gesundheitssektor
       </a>
     </p>
   </div>

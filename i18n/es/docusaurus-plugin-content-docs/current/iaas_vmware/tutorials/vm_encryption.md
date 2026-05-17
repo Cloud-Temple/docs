@@ -1,5 +1,5 @@
 ---
-title: Encrypt a Virtual Machine
+title: Cifrar una máquina virtual
 tags:
   - iaas_vmware
   - tutorials
@@ -10,41 +10,41 @@ import shivaHsmKms_002 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_k
 import shivaHsmKms_003 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_004.png'
 
-This tutorial guides you through encrypting an IaaS VMware virtual machine from the Console portal.
+Este tutorial le ayuda a cifrar una máquina virtual IaaS de VMware desde el portal de la consola.
 
-### Requis
+### Requisitos
 
-1. **Proveedor de claves (HSM/KMS)**:
-   - Debe estar configurado un proveedor de claves en la vStack. (Si ningún proveedor de claves está configurado, póngase en contacto con el servicio de soporte mediante un ticket.)
-   - Asegúrese de que el proveedor de claves est correctamente activado.
+1. **Proveedor de claves (HSM/KMS)** :
+   - Debe configurarse un proveedor de claves en vStack. (Si no hay ningún proveedor de claves configurado, póngase en contacto con el servicio de soporte a través de un ticket.)
+   - Asegúrese de que el proveedor de claves esté correctamente activado.
 
-2. **Estado de la máquina virtual**:
+2. **Estado de la máquina virtual** :
    - La máquina virtual debe estar apagada.
    - La máquina virtual no debe estar en modo 'test' de spp.
    - La máquina virtual no debe estar ya cifrada.
-   - La máquina virtual no debe tener instantáneas (snapshots).
+   - La máquina virtual no debe tener ningún snapshot.
    - La máquina virtual no debe estar replicada.
 
 ### Interfaz
 
-Una vez conectado al portal web Console, desde el menú **'IaaS'**, submenú **'Configuración'** y luego la pestaña **'vCenters'**, encontrarás la información que indica si el cifrado está activado en la vStack correspondiente.
+Una vez conectado al portal web Console, desde el menú **'IaaS'**, submenú **'Configuración'** y la pestaña **'vCenters'**, encontrará la información que le indica si el cifrado está activado en la vstack en cuestión.
 
 <img src={shivaHsmKms_000} />
 
-A continuación, ve al submenú **'Máquinas virtuales'** y selecciona la máquina que deseas cifrar.
+A continuación, diríjase al submenú **'Máquinas virtuales'** y seleccione la máquina que desea cifrar.
 
-En la sección de información general de la máquina virtual, encontrarás el indicador que te muestra si la máquina ya está cifrada o no.
+En la información general de la máquina virtual, encontrará el dato que indica si la máquina ya está cifrada o no.
 
 <img src={shivaHsmKms_001} />
 
-Si la máquina virtual cumple con los requisitos previos, puedes continuar el procedimiento haciendo clic en el botón con el ícono de candado en la barra de herramientas que indica **'Cifrar la máquina virtual'**.
+Si la máquina virtual cumple con los requisitos previos, puede continuar el procedimiento haciendo clic en el botón con un icono de candado en la barra de herramientas que indica **'Cifrar la máquina virtual'**.
 
 <img src={shivaHsmKms_002} />
 
-Aparecerá una ventana de confirmación. Selecciona Cifrar.
+Aparecerá una ventana de confirmación; seleccione Cifrar.
 
 <img src={shivaHsmKms_003} />
 
-Una vez finalizada la acción, deberías ver que la información ha cambiado y te indica que tu máquina está cifrada.
+Una vez finalizada la acción, debería ver que la información ha cambiado y le indica que su máquina está cifrada.
 
 <img src={shivaHsmKms_004} />

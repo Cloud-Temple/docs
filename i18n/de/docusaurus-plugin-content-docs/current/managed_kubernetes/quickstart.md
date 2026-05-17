@@ -1,82 +1,86 @@
 ---
-title: Einstiegsanleitung
+title: Schnellstartanleitung
 ---
 
-Willkommen bei der Einstiegsanleitung für **Managed Kubernetes** von Cloud Temple.
+Willkommen zur Schnellstartanleitung für **Managed Kubernetes** Cloud Temple.
 
-Ziel dieses Abschnitts ist es, Sie zu den notwendigen Ressourcen zu führen, um Ihren Cluster in Betrieb zu nehmen.
+Ziel dieses Abschnitts ist es, Sie zu den erforderlichen Ressourcen zu leiten, damit Sie Ihren Cluster schnell in die Hand nehmen können.
 
 ---
 
 ## Bevor Sie beginnen
 
-Für die Interaktion mit Ihrem Cluster sind mehrere Elemente unverzichtbar:
+Um mit Ihrem Cluster zu interagieren, sind mehrere Elemente erforderlich:
 
-1. **Die `kubeconfig`-Datei**: Diese Datei, die Ihnen bei der Dienstbereitstellung von den Cloud Temple-Teams übergeben wird, enthält alle Informationen für eine sichere Verbindung.
-2. **Das `kubectl`-Tool**: Dies ist die Standard-Befehlszeilenschnittstelle zur Verwaltung eines Kubernetes-Clusters.
-3. **Das `kubelogin`-Tool** (falls OIDC verwendet wird): Wenn Ihr Cluster für die Authentifizierung über einen OIDC-Identitätsanbieter (wie Entra ID/Azure AD) konfiguriert ist, müssen Sie das `kubelogin`-Tool installieren, um den Authentifizierungsfluss zu verwalten. Folgen Sie dem [kubelogin-Installationsleitfaden](https://github.com/int128/kubelogin).
+1. **Die `kubeconfig`-Datei**: Diese Datei, die Ihnen von den Cloud Temple-Teams bei der Bereitstellung des Services bereitgestellt wird, enthält alle Informationen für eine sichere Verbindung.
+2. **Das `kubectl`-Tool**: Dies ist die Standard-Befehlszeilenschnittstelle zur Steuerung eines Kubernetes-Clusters.
+3. **L'outil `kubelogin`** (si OIDC est utilisé) : Wenn Ihr Cluster so konfiguriert ist, dass er sich über einen OIDC-Identitätsanbieter (wie Entra ID/Azure AD) authentifiziert, müssen Sie das `kubelogin`-Tool installieren, um den Authentifizierungsablauf zu verwalten. Folgen Sie dem [Installationsleitfaden für kubelogin](https://github.com/int128/kubelogin).
 
-:::info[Empfohlene grafische Tools:]
-Für ein visuelleres Erlebnis und eine vereinfachte Verwaltung Ihrer Ressourcen empfehlen wir die Verwendung von **Lens**. Es ist ein leistungsstarkes Tool für Kubernetes, mit dem Sie Ihren Cluster erkunden, Ihre Anwendungen verwalten und deren Status grafisch visualisieren können.
-Einige unserer Tutorials werden Lens zur Veranschaulichung der Vorgehensweisen verwenden. Sie können es hier herunterladen: [https://k8slens.dev/](https://k8slens.dev/).
+:::info[Empfohlene grafische Tools:
+]
+Für eine visuellere Darstellung und ein vereinfachtes Ressourcenmanagement empfehlen wir die Verwendung von **Lens**. Dies ist ein leistungsstarkes Tool für Kubernetes, mit dem Sie Ihren Cluster erkunden, Ihre Anwendungen verwalten und deren Status grafisch visualisieren können.
+Einige unserer Tutorials verwenden Lens, um die Vorgehensweise zu veranschaulichen. Sie können es hier herunterladen: [https://k8slens.dev/](https://k8slens.dev/).
 :::
 
 ---
 
-## Zugriff auf Ihren Managed Kubernetes-Cluster
+## Zugriff auf Ihren verwalteten Kubernetes-Cluster
 
-Ihr Produktionscluster wird durch einen 5-Buchstaben-Code identifiziert (6 Buchstaben in Dev/Test). Dieser Code wird verwendet, um die URLs der verschiedenen Schnittstellen zu erstellen. In den Tutorials verwenden wir **"ctodev"**.
+Ihr Produktionscluster wird durch einen Code aus 5 Buchstaben identifiziert (6 Buchstaben in Dev/Test). Dieser Code wird verwendet, um die URLs der verschiedenen Schnittstellen zu erstellen. In den Tutorials verwenden wir **"ctodev"**.
 
-Die URLs lauten:
+Die URLs sind:
 
-- Kubernetes-API (in kubeconfig verwendet):
-  - **bezeichner**.mk.ms-cloud-temple.com:6443  (in unserem Beispiel also: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
+- Kubernetes-API (wird in kubeconfig verwendet):
+  - **identifiant**.mk.ms-cloud-temple.com:6443  (also in unserem Beispiel: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
 
 - Öffentliche URLs:
-  - k10.external-secured.**bezeichner**.mk.ms-cloud-temple.com
-  - grafana.external-secured.**bezeichner**.mk.ms-cloud-temple.com
-  - harbor.external-secured.**bezeichner**.mk.ms-cloud-temple.com
-  - opencost.external-secured.**bezeichner**.mk.ms-cloud-temple.com
-  - opencost-mcp.external-secured.**bezeichner**.mk.ms-cloud-temple.com
+  - k10.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - grafana.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - opencost.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - opencost-mcp.external-secured.**identifiant**.mk.ms-cloud-temple.com
 
-:::info[Gesicherte URLs]
-Die obigen URLs sind nur von bekannten öffentlichen IPs aus zugänglich, die in der Firewall der Lösung konfiguriert sind. Wenn Sie eine öffentliche IP hinzufügen möchten, müssen Sie eine Support-Anfrage stellen.
+:::info[Sichere URLs
+]
+Die oben genannten URLs sind nur von bekannten öffentlichen IPs aus zugänglich, die in der Firewall der Lösung konfiguriert sind. Wenn Sie eine öffentliche IP hinzufügen möchten, müssen Sie eine Supportanfrage stellen.
 :::
 
 - Interne URLs:
-  - ceph.internal.**bezeichner**.mk.ms-cloud-temple.com
-  - argocd.internal.**bezeichner**.mk.ms-cloud-temple.com
-  - hubble.internal.**bezeichner**.mk.ms-cloud-temple.com
+  - ceph.internal.**identifiant**.mk.ms-cloud-temple.com
+  - argocd.internal.**identifiant**.mk.ms-cloud-temple.com
+  - hubble.internal.**identifiant**.mk.ms-cloud-temple.com
 
-:::info[Interne URLs]
-Die obigen URLs sind nicht über das Internet zugänglich. Sie sind nur im internen Managed Kubernetes-Netzwerk erreichbar.
+:::info[Interne URLs
+]
+Die oben genannten URLs sind nicht im Internet exponiert. Sie sind nur im internen Netzwerk des verwalteten Kubernetes-Clusters zugänglich.
 :::
 
 ---
 
 ## Ihre Berechtigungen
 
-:::warning[Dev/Test]
-Für **"Dev/Test"** Managed Kubernetes-Cluster verfügt das Ihnen bereitgestellte Service-Konto über alle Berechtigungen auf dem gesamten Cluster (ClusterAdmin)
+:::warning[Dev/Test
+]
+Für verwaltete Kubernetes-Cluster im Bereich **"Dev/Test"** verfügt das Ihnen bereitgestellte Dienstkonto über alle Berechtigungen im gesamten Cluster (ClusterAdmin)
 :::
 
-Auf **"Produktions"**-Clustern sind Ihre Berechtigungen eingeschränkt. Sie verfügen über ein **"Erweitertes Lesezugriff"**-Recht auf Cluster-Ressourcen. Dieses Recht gewährt einen Nur-Lese-Zugriff auf Schlüsselressourcen, sowohl auf Cluster-Ebene als auch für Diagnosezwecke:
+In **"Production"**-Clustern sind Ihre Berechtigungen eingeschränkt. Sie verfügen über ein Recht als **"Erweiterter Betrachter"** auf die Cluster-Ressourcen. Dieses Recht gewährt einen schreibgeschützten Zugriff auf Schlüsselressourcen, sowohl auf Cluster-Ebene als auch für Diagnosezwecke:
 
-- Namespaces: ermöglichen Tenants das Auflisten von Namespaces für Tools und Dashboards.
-- Pods, Deployments, Replicasets...: ermöglichen Tenants das Auflisten der im Cluster bereitgestellten Ressourcen.
-- Nodes: bieten Einblick in Kapazität, Taints und Labels der Knoten, um das Verhalten des Schedulers zu verstehen.
-- StorageClasses, PVs, PVCs, VolumeAttachments und CSIDrivers: ermöglichen Tenants die Identifizierung verfügbarer Storage-Klassen und die Fehlersuche bei PVC-zu-PV-Bindungsproblemen oder CSI-Treiberfehlern.
-- IngressClasses: informieren Benutzer über verfügbare Ingress-Controller für das Anwendungsrouting.
-- NetworkPolicies, ResourceQuotas, LimitRanges und Events: unverzichtbar für die Diagnose von Netzwerkeinschränkungen, Scheduling-Fehlern oder Ressourcenquoten-Verletzungen.
+- Namespaces: Ermöglichen es Tenants, Namespaces für Tools und Dashboards aufzulisten.
+- Pods, Deployments, ReplicaSets...: Ermöglichen es Tenants, auf dem Cluster bereitgestellte Ressourcen aufzulisten.
+- Nodes: Bieten Einblicke in die Kapazität, Taints und Labels der Nodes, um das Verhalten des Schedulers zu verstehen.
+- StorageClasses, PVs, PVCs, VolumeAttachments und CSIDrivers: Ermöglichen es Tenants, verfügbare Storage-Klassen zu identifizieren und Probleme bei der Bindung zwischen PVC und PV oder Treiberfehler (CSI) zu beheben.
+- IngressClasses: Informieren Benutzer über verfügbare Ingress-Controller für das Application-Routing.
+- NetworkPolicies, ResourceQuotas, LimitRanges und Events: Essentiell zur Diagnose von Netzwerkeinschränkungen, Scheduling-Fehlern oder Verletzungen von Ressourcen-Quotas.
 
-Das Ihnen übergebene Service-Konto wurde auch zum **Eigentümer eines ersten Capsule-*Tenants*** ernannt.
+Das Ihnen anvertraute Dienstkonto wurde zudem zum **Eigentümer eines ersten *Capsule*-Tenants***.
 Sie können Namespaces erstellen, die Ihrem Capsule-Tenant zugeordnet werden.
-Externe Konten (OIDC) sind Mitglieder desselben Capsule-Tenants, was es ihnen ermöglicht, innerhalb der dem Tenant zugeordneten **Namespaces** frei zu interagieren. (Siehe Tutorial „Berechtigungen mit Capsule verwalten")
+Externe Konten (OIDC) sind Mitglieder dieses gleichen Capsule-Tenants, was ihnen ermöglicht, sich frei innerhalb der **Namespaces** zu bewegen, die dem Tenant zugeordnet sind. (Siehe Tutorial „Berechtigungen mit Capsule verwalten“)
 
-Einige Aktionen sind nicht erlaubt:
+Bestimmte Aktionen sind nicht gestattet:
 
-- Capsule-Tenants auflisten / erstellen
-- CRDs erstellen: Wenn Sie eine Anwendung mit CRDs bereitstellen müssen (z. B. ein Operator-Helm-Chart), müssen Sie den Support kontaktieren, damit diese CRDs importiert werden (durch Extraktion der YAMLs aus dem Helm-Chart). Anschließend können Sie Ihr Helm-Chart mit der Option --skip-crds bereitstellen. Siehe: [Helm 3-Dokumentation](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+- Auflisten / Erstellen von Capsule-Tenants
+- Erstellen von CRDs: Wenn Sie eine Anwendung mit CRDs bereitstellen müssen (z. B. ein Helm-Chart eines Operators), müssen Sie den Support kontaktieren, damit diese CRDs importiert werden (durch Extrahieren der YAML-Dateien aus dem Helm-Chart). Anschließend können Sie Ihr Helm-Chart mit der Option `--skip-crds` bereitstellen. Siehe: [Dokumentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
 
@@ -84,11 +88,11 @@ Einige Aktionen sind nicht erlaubt:
   <div class="col col--4">
     <div className="card">
       <div className="card__header">
-        <h3>Tutorial: Ihre erste Anwendung bereitstellen</h3>
+        <h3>Tutorial: Bereitstellen Ihrer ersten Anwendung</h3>
       </div>
       <div className="card__body">
         <p>
-          Folgen Sie einer detaillierten Anleitung zum Verbinden, Bereitstellen einer „Hello World"-Anwendung und deren Veröffentlichung im Internet.
+          Folgen Sie einer detaillierten Anleitung, um sich zu verbinden, eine „Hello World“-Anwendung bereitzustellen und im Internet freizugeben.
         </p>
       </div>
       <div className="card__footer">
@@ -103,11 +107,11 @@ Einige Aktionen sind nicht erlaubt:
       </div>
       <div className="card__body">
         <p>
-          Entdecken Sie den Adressierungsplan, die Ingress Controller und wie Sie Ihre Dienste sicher bereitstellen.
+          Erfahren Sie mehr über den Adressplan, Ingress-Controller und wie Sie Ihre Dienste sicher freigeben können.
         </p>
       </div>
       <div className="card__footer">
-        <a href="./tutorials/networking" className="button button--primary button--block">Netzwerk-Tutorial ansehen &rarr;</a>
+        <a href="./tutorials/networking" className="button button--primary button--block">Netzwerk-Tutorial anzeigen &rarr;</a>
       </div>
     </div>
   </div>
@@ -118,7 +122,7 @@ Einige Aktionen sind nicht erlaubt:
       </div>
       <div className="card__body">
         <p>
-          Erfahren Sie, wie Sie Capsule verwenden, um Tenants zu erstellen und Berechtigungen an Ihre Teams zu delegieren.
+          Lernen Sie, wie Sie Capsule nutzen, um Tenants zu erstellen und Berechtigungen an Ihre Teams zu delegieren.
         </p>
       </div>
       <div className="card__footer">

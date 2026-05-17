@@ -30,243 +30,243 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Konzept
 
-Die Überwachung des Bereitstellungsprozesses neuer Ressourcen erfolgt im Menü __'Befehle'__, das im grünen Balken links auf dem Bildschirm zugänglich ist.
+Die Nachverfolgung der Bereitstellung neuer Ressourcen erfolgt im Menü __'Bestellungen'__, das im grünen Banner links auf dem Bildschirm verfügbar ist.
 
-Es ermöglicht die Anzeige der angeforderten Cloud-Ressourcen, der Ressourcen, die sich im Bereitstellungsprozess befinden, sowie etwaiger Fehler innerhalb eines [Tenant](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organizations).
+Dies ermöglicht die Anzeige der bestellten Cloud-Ressourcen, die sich in der Bereitstellung befinden, sowie eventueller Fehler innerhalb eines [Tenant](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organisations).
 
 <img src={shivaOrdersList} />
 
-*__Hinweis: Derzeit ist eine globale Übersicht über alle im Rahmen verschiedener Tenants bereitgestellten Ressourcen innerhalb einer Organisation noch nicht möglich.__ Dieses Thema wird später durch die Einführung eines speziellen Portals für den Auftraggeber (im Sinne des Unterzeichners) und die Steuerung seiner Organisation behandelt.*
+*__Hinweis: Derzeit ist die globale Ansicht aller innerhalb der verschiedenen Tenants bereitgestellten Ressourcen auf Organisationsebene noch nicht möglich.__ Dieses Thema wird später durch die Implementierung eines Portals für den Auftraggeber (im Sinne des Unterzeichners) und die Steuerung seiner Organisation behandelt.*
 
-Die Bereitstellung oder Löschung von Ressourcen erfolgt jeweils innerhalb der Produkte im Menü __'IaaS'__ und __'Netzwerk'__ im grünen Balken links auf dem Bildschirm.
+Die Bereitstellung von Ressourcen oder deren Löschung erfolgt in jedem Produkt über die Menüs __'IaaS'__ und __'Netzwerk'__ links auf dem Bildschirm im grünen Banner.
 
-Es ist ebenfalls möglich, die Bereitstellungen direkt über die Benachrichtigungen der Cloud-Temple-Konsole einzusehen:
+Die Bereitstellungen können auch direkt auf Ebene der Benachrichtigungen der Cloud Temple-Konsole eingesehen werden:
 
 <img src={shivaOrderNotif_001} />
 
-Von der Befehlsseite aus können Sie den Fortschritt einer Bereitstellung einsehen und gegebenenfalls mit dem Team über Kommentare oder Ergänzungen kommunizieren:
+Auf der Bestellseite können Sie den Fortschritt einer Bereitstellung einsehen und gegebenenfalls mit dem Team kommunizieren, indem Sie Kommentare oder Präzisierungen hinzufügen:
 
 <img src={shivaOrderStatus} />
 
-__Hinweis__: __Es ist nicht möglich, gleichzeitig mehrere Befehle derselben Ressourcentypen zu starten. Sie müssen daher warten, bis der laufende Befehl abgeschlossen ist, bevor Sie einen neuen ausführen können. Dies gewährleistet eine effiziente und geordnete Ressourcenverwaltung innerhalb Ihres Umfelds.__
+__Hinweis__: __Es ist nicht möglich, mehrere Bestellungen desselben Ressourcentyps gleichzeitig zu starten. Sie müssen daher warten, bis die aktuelle Bestellung bearbeitet und abgeschlossen ist, bevor Sie eine neue aufgeben können. Dies gewährleistet ein effizientes und geordnetes Ressourcenmanagement in Ihrer Umgebung.__
 
-## Order a new Availability Zone
+## Eine neue Verfügbarkeitszone bestellen
 
-It is possible to add a new availability zone by accessing the "__Order__" menu. This option allows you to expand your resources and enhance the availability and resilience of your applications with just a few clicks:
+Sie können eine neue Verfügbarkeitszone hinzufügen, indem Sie das Menü „__Bestellung__“ aufrufen. Diese Option ermöglicht es Ihnen, Ihre Ressourcen zu erweitern und die Verfügbarkeit und Resilienz Ihrer Anwendungen mit nur wenigen Klicks zu verbessern:
 
 <img src={shivaOrderAz_01} />
 
-Begin by selecting your desired location, first choosing the geographic region, then selecting the corresponding availability zone (AZ) from the available options. This step enables you to tailor your resource deployment according to your infrastructure's location and requirements:
+Zunächst wählen Sie den gewünschten Standort, indem Sie zuerst die geografische Region und anschließend die entsprechende Verfügbarkeitszone (AZ) aus den verfügbaren Optionen auswählen. Dieser Schritt ermöglicht es, die Bereitstellung Ihrer Ressourcen an den Standort und die Anforderungen Ihrer Infrastruktur anzupassen:
 
 <img src={shivaOrderAz_02} />
 
-Next, select the desired type of hypervisor cluster, choosing the one that best meets the performance and management needs of your cloud infrastructure:
+Wählen Sie anschließend den gewünschten Typ des Hypervisor-Clusters aus und entscheiden Sie sich für die Variante, die am besten zu den Leistungs- und Verwaltungsanforderungen Ihrer Cloud-Infrastruktur passt:
 
 <img src={shivaOrderAz_03} />
 
-Then, specify the number of hypervisors and the desired amount of memory to adapt resources to your workload and the specific requirements of your cloud environment:
+Legen Sie anschließend die Anzahl der Hypervisor-Instanzen sowie die gewünschte Speichermenge fest, um die Ressourcen an die Workload und die spezifischen Anforderungen Ihrer Cloud-Umgebung anzupassen:
 
 <img src={shivaOrderAz_04} />
 
-Next, select the number of datastores to provision within the cluster as well as their types. Note that the maximum number of allowed datastores is 10, with a minimum of 2 datastores required. Each different datastore type will result in the creation of an additional datastoreCluster. For example, selecting 2 "live" type datastores and 1 "mass" type datastore will create two distinct datastoreClusters:
+Wählen Sie anschließend die Anzahl der im Cluster bereitzustellenden Datastores sowie deren Typen. Bitte beachten Sie, dass maximal 10 Datastores erlaubt sind, wobei mindestens 2 Datastores erforderlich sind. Jeder unterschiedliche Datastore-Typ führt zur Erstellung eines zusätzlichen datastoreClusters. Wenn Sie beispielsweise 2 Datastores vom Typ „live“ und 1 Datastore vom Typ „mass“ auswählen, werden 2 separate datastoreClusters erstellt:
 
 <img src={shivaOrderAz_05} />
 
-Define the required storage size for backup, ensuring capacity equivalent to your production storage. Consider an average compression ratio of 2 to optimize backup space and ensure effective data protection:
+Legen Sie die für die Sicherung erforderliche Speicherkapazität fest und stellen Sie sicher, dass eine Kapazität vorgesehen wird, die der Ihres Produktions-Speichers entspricht. Berücksichtigen Sie einen durchschnittlichen Komprimierungsfaktor von 2, um den Sicherungsspeicher zu optimieren und einen effektiven Schutz Ihrer Daten zu gewährleisten:
 
 <img src={shivaOrderAz_06} />
 
-Select the networks to propagate based on your needs. You also have the option to enable "Internet Access" if required, specifying the desired number of IP addresses, with a range between 1 and a maximum of 8:
+Wählen Sie die zu propagierenden Netzwerke entsprechend Ihren Anforderungen aus. Falls erforderlich, können Sie zudem die Option „Internetzugriff“ aktivieren und dabei die gewünschte Anzahl an IP-Adressen festlegen (Wahl zwischen 1 und maximal 8):
 
 <img src={shivaOrderAz_07} />
 
-You will then receive a summary of your selected options before confirming your order:
+Anschließend erhalten Sie eine Zusammenfassung der ausgewählten Optionen, bevor Sie Ihre Bestellung bestätigen.
 
 <img src={shivaOrderAz_08} />
 
-## Request additional storage resources
+## Zusätzliche Speicherressourcen bestellen
 
-The block storage allocation logic on compute clusters is based on the __IBM SVC (San Volume Controller)__ and __IBM FlashSystem__ technologies. Storage is organized into __LUNs of at least 500 GiB__, presented according to the technology used:
+Die Logik der Block-Speicherzuweisung auf den Compute-Clustern basiert auf der __IBM SVC (San Volume Controller)__- und der __IBM FlashSystem__-Technologie. Der Speicher ist in __LUNs mit mindestens 500 GiB__ unterteilt, die je nach verwendeter Technologie wie folgt bereitgestellt werden:
 
-- For __VMware__: as __datastores__ grouped into __SDRS clusters (Storage Distributed Resource Scheduler)__
-- For __Bare Metal__: as __volumes__
-- For __Open IaaS__: as __Storage Repositories (SR)__
+- Für __VMware__: als __Datastores__, die in __SDRS-Clustern (Storage Distributed Resource Scheduler)__ gruppiert sind
+- Für __Bare Metal__: als __Volumes__
+- Für __Open IaaS__: als __Storage Repository (SR)__
 
-Each datastore inherits a __performance class__ defined in IOPS/To (ranging from 500 to 15,000 IOPS/To for FLASH, or no guarantee for MASS STORAGE). IOPS limitations are applied __at the datastore level__ (not per VM), meaning all virtual machines sharing the same datastore share the allocated IOPS quota.
+Jeder Datastore erbt eine __Performance-Klasse__, die in IOPS/To definiert ist (de 500 à 15000 IOPS/To pour le FLASH, ou sans garantie pour le MASS STORAGE). Die IOPS-Beschränkung wird __auf Datastore-Ebene__ (et non par VM), was bedeutet, dass sich alle virtuellen Maschinen, die denselben Datastore teilen, das zugewiesene IOPS-Quota teilen.
 
-__Key points to remember__:
+__Wichtige Punkte__ :
 
-- __Minimum size__: 500 GiB per LUN
-- __Performance__: Proportional to allocated volume (e.g., 2 TiB in Standard class = maximum 3,000 IOPS)
-- __Organization__: Datastores of the same type are automatically grouped into datastore clusters
-- __Availability__: 99.99% measured monthly, including maintenance windows
-- __Required space__: Always reserve 10% free space for backup snapshots and an amount equivalent to the total RAM of VMs for .VSWP files
+- __Mindestgröße__ : 500 GiB pro LUN
+- __Performance__: Proportional zum zugewiesenen Volumen, __bis zu einer absoluten physikalischen Obergrenze pro LUN__ (ex: 2 To en classe Standard = 3000 IOPS, mais une LUN de 10 To plafonnera à 30 000 IOPS maximum). Diese Obergrenze variiert je nach Klasse (10 000 IOPS / 512 Mo/s pour la classe Essentiel, et 30 000 IOPS / 1024 Mo/s pour les classes supérieures).
+- __Organisation__: Datastores desselben Typs werden automatisch zu Datastore-Clustern gruppiert
+- __Verfügbarkeit__: 99,99 % (monatlich gemessen, inklusive Wartungsfenster)
+- __Benötigter Speicherplatz__: Immer 10 % freien Speicherplatz für Backup-Snapshots sowie das Äquivalent der Summe der VM-RAMs für .VSWP-Dateien einplanen
 
-### Deploy a new compute cluster
+### Einen neuen Compute-Cluster bereitstellen
 
-Place a cluster order by selecting the options that best suit your virtualization requirements. Define key characteristics such as the number of hypervisors, cluster type, amount of memory, and required compute resources:
+Bestellen Sie einen Hypervisor-Cluster, indem Sie die Optionen auswählen, die Ihren Virtualisierungsanforderungen entsprechen. Legen Sie die wichtigsten Merkmale fest, wie die Anzahl der Hypervisoren, den Clustertyp, die Speichergröße sowie die erforderlichen Rechenressourcen:
 
 <img src={shivaOrderClucalc_01} />
 
-Select the availability zone:
+Wählen Sie die Verfügbarkeitszone:
 
 <img src={shivaOrderClucalc_02} />
 
-Choose the compute blade type:
+Wählen Sie den Typ der Compute-Lame:
 
 <img src={shivaOrderClucalc_03} />
 
-You can then select existing networks to propagate, or create new networks directly at this stage, depending on your infrastructure needs. Note that the total number of configurable networks is limited to a maximum of 20:
+Anschließend haben Sie die Möglichkeit, bereits vorhandene Netzwerke auszuwählen und zu propagieren, oder direkt in diesem Schritt neue zu erstellen, je nach den Anforderungen Ihrer Infrastruktur. Beachten Sie, dass die Gesamtzahl der konfigurierbaren Netzwerke auf maximal 20 begrenzt ist:
 
 <img src={shivaOrderClucalc_04} />
 
-You will then receive a summary of your selected options before confirming your order, after which you can view your ongoing order:
+Anschließend erhalten Sie eine Zusammenfassung der ausgewählten Optionen, bevor Sie Ihre Bestellung bestätigen, und können anschließend den Status Ihrer Bestellung einsehen:
 
 <img src={shivaOrderClucalc_05} />
 
-### Deploy a new storage cluster
+### Einen neuen Storage-Cluster bereitstellen
 
-In the "__command__" menu, proceed with ordering a __new storage cluster__ for your environment by selecting the options that match your requirements in terms of capacity, performance, and redundancy. Choose the location:
+Im Menü "__commande__" bestellen Sie einen __neuen Storage-Cluster__ für Ihre Umgebung, indem Sie die Optionen auswählen, die Ihren Anforderungen an Kapazität, Leistung und Redundanz entsprechen. Wählen Sie den Standort:
 
 <img src={shivaOrderClusto_01} />
 
-Define the number of datastores to provision within the cluster as well as their type, adhering to the following limits: a minimum of 2 datastores and a maximum of 10 can be configured. Select the datastore types that best meet your needs regarding performance, capacity, and usage, in order to optimize storage in your environment:
+Legen Sie die Anzahl der im Cluster bereitzustellenden Datastores sowie deren Typ fest und beachten Sie dabei die folgenden Grenzen: Es können mindestens 2 und maximal 10 Datastores konfiguriert werden. Wählen Sie die Datastore-Typen, die Ihren Anforderungen an Leistung, Kapazität und Nutzung am besten entsprechen, um die Speicherung in Ihrer Umgebung zu optimieren:
 
 <img src={shivaOrderClusto_02} />
 
-Select the desired storage type from the available options:
+Wählen Sie den gewünschten Speichertyp aus den verfügbaren Optionen aus:
 
 <img src={shivaOrderClusto_03} />
 
-You will then be presented with a complete summary of the options you have selected, allowing you to review all settings before definitively confirming your order:
+Anschließend gelangen Sie zu einer vollständigen Zusammenfassung der von Ihnen ausgewählten Optionen, mit der Sie alle Parameter überprüfen können, bevor Sie Ihre Bestellung endgültig bestätigen:
 
 <img src={shivaOrderClusto_04} />
 
-### Deploy a new datastore within a VMware SDRS cluster
+### Einen neuen Datastore in einem VMware SDRS-Cluster bereitstellen
 
-In this example, we will add block storage for a VMware infrastructure.  
-To add an additional datastore to your SDRS cluster, navigate to the __'Infrastructure'__ submenu, then select __'VMware'__.  
-Choose the appropriate VMware stack and availability zone, then go to the __'Storage'__ submenu.
+In diesem Beispiel fügen wir Block-Speicher für eine VMware-Infrastruktur hinzu.
+Um einen zusätzlichen Datastore in Ihrem SDRS-Speichercluster hinzuzufügen, navigieren Sie zum Untermenü __'Infrastructure'__ und dann zu __'VMWare'__.
+Wählen Sie anschließend den VMware-Stack und die Verfügbarkeitszone. Navigieren Sie dann zum Untermenü __'Stockage'__.
 
-Select the SDRS cluster that matches your desired performance characteristics, and click the __'Add a datastore'__ button located in the table displaying the list of datastores.
+Wählen Sie den SDRS-Cluster, der den gewünschten Leistungsmerkmalen entspricht, und klicken Sie auf die Schaltfläche __'Ajouter un datastore'__ in der
+Tabelle mit der Liste der Datastores.
 
 <img src={shivaOrdersIaasSpoolDs} />
 
-__Note__:
+__Hinweis__ :
 
-- *The smallest activatable LUN size on a cluster is __500 GiB__.*
-- *Datastore performance ranges from an average of 500 IOPS/TiB up to 15,000 IOPS/TiB on average. __This is a software-based limit enforced at the storage controller level__.*
-- *The disk volume consumption billing for your organization is the sum of all LUNs across all used availability zones.*
-- *The __'order'__ and __'compute'__ permissions are required for the account to perform this action.*
+- *Die Größe der kleinsten aktivierbaren LUN in einem Cluster beträgt __500 GiB__.*
+- *Die Leistung eines Datastore reicht von durchschnittlich 500 IOPS/TiB bis zu durchschnittlich 15000 IOPS/TiB. __Dies ist eine softwareseitige Drosselung auf Ebene der Speicherkontroller__, die einem absoluten Hardware-Limit von maximal 30.000 IOPS und 1024 MB/s pro LUN unterliegt.*
+- *Die Abrechnung des von Ihrer Organisation verbrauchten Datenvolumens entspricht der Summe aller LUNs in allen verwendeten AZs.*
+- *Für das Konto sind die Berechtigungen __'order'__ sowie __'compute'__ erforderlich, um diese Aktion durchzuführen.*
 
-### Order new networks
+### Neue Netzwerke bestellen
 
-The networking technology used on the Cloud Temple infrastructure is based on [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). It enables you to benefit from __Layer 2 networks seamlessly connected across your availability zones within a region__.
+Die in der Cloud-Temple-Infrastruktur verwendete Netzwerktechnologie basiert auf [VPLS](https://fr.wikipedia.org/wiki/Virtual_Private_LAN_Service). Sie ermöglicht Ihnen, __durchgängige Level-2-Netzwerke zwischen Ihren Verfügbarkeitszonen innerhalb einer Region__ zu nutzen.
+Es ist auch möglich, Netzwerke zwischen Ihren Mandanten zu teilen und sie in einer Hosting-Zone zu terminieren.
+Im Grunde können Sie sich ein Cloud-Temple-Netzwerk als ein 802.1q-VLAN vorstellen, das an jedem Punkt Ihres Mandanten verfügbar ist.
 
-It is also possible to share networks between your tenants and terminate them in hosting zones.  
-In essence, you can think of a Cloud Temple network as an 802.1q VLAN available at any point within your tenant.
+Die Netzwerke auf der Cloud-Temple-Plattform sind auf __Level 2 (VLANs)__ basierend auf der __VPLS-Technologie (Virtual Private LAN Service)__. Diese Technologie ermöglicht Ihnen eine __Netzwerkkontinuität zwischen Ihren Verfügbarkeitszonen__ innerhalb einer Region mit garantierten Leistungsdaten:
 
-Networks on the Cloud Temple platform are __Layer 2 (VLANs)__ based on the __VPLS (Virtual Private LAN Service)__ technology. This technology allows you to enjoy __seamless network connectivity across your availability zones__ within a region, with guaranteed performance:
+- __Intra-AZ-Latenz__ : < 3 ms
+- __Inter-AZ-Latenz__ : < 5 ms
 
-- __Intra-AZ latency__: < 3 ms  
-- __Inter-AZ latency__: < 5 ms  
+__Flexibilität der Netzwerke__ :
 
-__Network flexibility__:
+- Ein Netzwerk kann __zwischen mehreren Clustern__ derselben Verfügbarkeitszone __geteilt__ werden
+- Ein Netzwerk kann __zwischen mehreren Verfügbarkeitszonen__ derselben Region __propagiert__ werden
+- Ein Netzwerk kann __zwischen verschiedenen Mandanten__ Ihrer Organisation __geteilt__ werden
+- Ein Netzwerk kann __in einer Hosting-Zone terminiert__ werden, um Ihre physischen Geräte anzuschließen
+- __Begrenzung__ : Maximal 20 Netzwerke pro Bestellung. Sie können mehrere aufeinanderfolgende Bestellungen durchführen, um diese Anzahl nach Bedarf zu erweitern
 
-- A network can be __shared across multiple clusters__ within the same availability zone  
-- A network can be __propagated across multiple availability zones__ within the same region  
-- A network can be __shared between different tenants__ within your organization  
-- A network can be __terminated in a hosting zone__ for your physical equipment  
-- __Limit__: Maximum of 20 networks per order. You can place multiple successive orders to extend this number according to your needs  
-
-Ordering a new network and defining sharing options between your tenants is done in the __'Network'__ menu of the green sidebar on the left side of the screen. Networks are first created, then a separate order is generated to propagate them. You can track the progress of ongoing orders by accessing the "Order" tab in the menu, or by clicking on the information labels that redirect you to active or processing orders.
+Die Bestellung eines neuen Netzwerks und die Freigabeentscheidungen zwischen Ihren Mandanten werden im Menü __'Netzwerk'__ der grünen Leiste links auf dem Bildschirm durchgeführt. Die Netzwerke werden zunächst erstellt, anschließend wird eine separate Bestellung zur Propagierung generiert. Sie können den Fortschritt laufender Bestellungen nachverfolgen, indem Sie auf die Registerkarte „Bestellung“ im Menü zugreifen oder auf die Informationslabels klicken, die Sie zu aktiven oder in Bearbeitung befindlichen Bestellungen weiterleiten.
 
 <img src={shivaOrdersNet_002} />
 
-It is also possible to propagate existing networks or to separate the two steps—first creating the network, then propagating it later as needed. The propagation option is available in the settings of the selected network:
+Es ist auch möglich, bereits vorhandene Netzwerke zu propagieren oder die beiden Schritte zu trennen, indem zunächst das Netzwerk erstellt und die Propagierung später nach Bedarf durchgeführt wird. Die Propagierungsoption befindet sich in den Optionen des ausgewählten Netzwerks:
 
 <img src={shivaOrdersNet_003} />
 
-Click on the "Propagate" option for an existing network, then select your desired propagation target. This step allows you to define the location or resources where the network should be propagated:
+Klicken Sie für ein bereits vorhandenes Netzwerk auf die Option „Propagieren“ und wählen Sie dann das gewünschte Propagierungsziel aus. Dieser Schritt ermöglicht es Ihnen, den Standort oder die Ressourcen festzulegen, auf die das Netzwerk propagiert werden soll:
 
 <img src={shivaOrdersNet_004} />
 
-### Deactivation of a network
+### Deaktivierung eines Netzwerks
 
-A network can also be deactivated if necessary. This option allows you to temporarily pause access to or usage of the network without permanently deleting it, providing flexibility in managing your infrastructure according to your needs.
+Ein Netzwerk kann bei Bedarf ebenfalls deaktiviert werden. Diese Option ermöglicht es Ihnen, den Zugriff oder die Nutzung des Netzwerks vorübergehend zu pausieren, ohne es endgültig zu löschen, und bietet so Flexibilität bei der Verwaltung Ihrer Infrastruktur entsprechend Ihren Anforderungen.
 
-The deactivation option is located within the settings of the selected network.
+Die Deaktivierungsoption befindet sich in den Optionen des ausgewählten Netzwerks. '
 
-## Add additional hypervisors to a compute cluster
+## Weitere Hypervisor zu einem Rechencluster hinzufügen
 
-A __compute cluster__ is a grouping of hypervisors that must comply with the following rules:
+Ein __Rechencluster__ ist eine Gruppe von Hypervisoren, die folgenden Regeln erfüllen müssen:
 
-### For VMware ESXi clusters
+### Für VMware ESXi-Cluster
 
-__Homogeneity rules__:
+__Homogenitätsregeln__ :
 
-- All hosts within a cluster must be of the __same server type__ (ECO, STANDARD, ADVANCE, PERFORMANCE, etc.)
-- All hosts must belong to the __same tenant and the same availability zone__
-- __Limit__: Maximum of 32 hypervisors per cluster
+- Alle Hosts eines Clusters müssen vom __gleichen Bladentyp__ sein (ECO, STANDARD, ADVANCE, PERFORMANCE, usw.)
+- Alle Hosts gehören __zum selben Tenant und zur selben Verfügbarkeitszone__
+- __Grenze__ : Maximal 32 Hypervisor pro Cluster
 
-__Memory allocation__:
+__Speicherzuweisung__ :
 
-- Each server is delivered with __all physical memory activated from the start__
-- __Example__: A cluster of 3 STANDARD v3 servers (each with 384 GB of physical memory) = 3 × 384 GB = 1,152 GB available
-- __Recommendation__: Do not exceed 85% memory utilization per server to avoid VMware's compression and ballooning mechanisms
+- Jeder Blade wird ab Werk mit __der vollständigen aktivierten physischen Speicherkapazität__ ausgeliefert
+- __Beispiel__ : Ein Cluster aus 3 STANDARD v3 Blades (jeweils 384 Go physisch) = 3 × 384 Go = 1152 Go verfügbar
+- __Empfehlung__ : Die Speichernutzung pro Blade sollte 85 % nicht überschreiten, um den VMware-Komprimierungsmechanismus und Ballooning zu vermeiden
 
-__High Availability__:
+__Hohe Verfügbarkeit__ :
 
-- __Recommended minimum__: 2 hypervisors per cluster to benefit from the 99.99% SLA
-- Enable the __VMware HA__ (High Availability) feature to automatically restart VMs in case of host failure
+- __Empfohlenes Minimum__ : 2 Hypervisor pro Cluster, um die SLA von 99,99 % zu gewährleisten
+- Aktivieren Sie die Funktion __VMware HA__ (High Availability), um VMs im Falle eines Host-Ausfalls automatisch neu zu starten
 
-Adding hypervisors to a compute cluster is done in the __'IaaS'__ menu in the green sidebar on the left side of the screen.  
-In the following example, we will add compute capacity to a VMware-based hypervisor cluster.
+Das Hinzufügen von Hypervisor zu einem Rechencluster erfolgt im Menü __'IaaS'__ im grünen Bereich links auf dem Bildschirm.
+Im folgenden Beispiel fügen wir Rechenleistung zu einem Hypervisor-Cluster hinzu, der die VMware-Technologie verwendet.
 
-Go to the __'Infrastructure'__ submenu, then __'VMWare'__. Select the VMware stack, the availability zone, and the compute cluster.  
-In this example, it is __'clu001-ucs12'__. Click the __'Add host'__ button located in the top-right corner of the table listing the hosts.
+Gehen Sie in das Untermenü __'Infrastructure'__ und dann __'VMWare'__. Wählen Sie anschließend den VMware-Stack, die Verfügbarkeitszone und das Rechencluster.
+In diesem Beispiel handelt es sich um __'clu001-ucs12'__. Klicken Sie auf die Schaltfläche __'Host hinzufügen'__, die sich oben rechts in der Tabelle mit der Host-Liste befindet.
 
-__Note__:
+__Hinweis__ :
 
-- *__Cluster configuration must be homogeneous*. It is not allowed to mix different hypervisor types within a cluster. All servers must be of the same type.*
-- *The __'order'__ and __'compute'__ permissions are required for the account to perform this action.*
+- *__Die Konfiguration eines Clusters muss homogen sein__. Daher ist es nicht erlaubt, Hypervisortypen innerhalb eines Clusters zu mischen. Alle Blades müssen vom gleichen Typ sein.*
+- *Das Konto benötigt die Berechtigungen __'order'__ sowie __'compute'__, um diese Aktion durchzuführen.*
 
 <img src={shivaOrdersIaasCpoolEsx} />
 
-### For Open IaaS clusters
+### Für Open IaaS-Cluster
 
-Open IaaS clusters follow similar rules regarding homogeneity and high availability. Computing resource management is also performed via the __'OpenIaaS'__ menu, with the same access rights requirements.
+Für Open IaaS-Cluster gelten ähnliche Regeln hinsichtlich Homogenität und Hochverfügbarkeit. Die Verwaltung der Compute-Ressourcen erfolgt ebenfalls über das Menü __'OpenIaaS'__ mit denselben Anforderungen an die Zugriffsrechte.
 
-## Add additional memory resources to a compute cluster
+## Hinzufügen zusätzlicher Speicherressourcen zu einem Compute-Cluster
 
-Memory allocation on compute clusters works as follows:
+Die Speicherallokation auf Compute-Clustern funktioniert wie folgt:
 
-__Memory Allocation Principle__:
+__Prinzip der Speicherallokation__ :
 
-- All compute blades are delivered with the __maximum physical memory installed__
-- A __software-based limitation__ is applied at the VMware cluster level to match the billed RAM
-- Each blade has access to the __full amount of physically activated memory__ within the cluster
+- Alle Compute-Blades werden mit dem __physischen Maximalspeicher__ ausgeliefert
+- Auf Cluster-Ebene in VMware wird eine __softwareseitige Begrenzung__ angewendet, um der abgerechneten RAM-Menge zu entsprechen
+- Jede Blade verfügt über __den gesamten physischen Speicher__, der im Cluster aktiviert ist
 
-__Cluster-Scale Memory Sizing__:
+__Dimensionierung pro Cluster__ :
 
-- __Minimum__: number of hosts × 128 GB of memory
-- __Maximum__: number of hosts × physical memory capacity per blade
+- __Minimum__ : Anzahl der Hosts × 128 GB Speicher
+- __Maximum__ : Anzahl der Hosts × physische Speichermenge der Blade
 
-__Example__: For a three-host cluster using `STANDARD v3` hosts (384 GB physical memory per blade)
+__Beispiel__ : Für ein Cluster aus drei Hosts vom Typ `STANDARD v3` (384 GB physisch pro Blade)
 
-- Total available memory: 3 × 384 GB = 1152 GB
+- Verfügbarer Gesamtspeicher: 3 × 384 GB = 1152 GB
 
-__Important Recommendations__:
+__Wichtige Empfehlungen__ :
 
-- Do not exceed __85% average memory utilization per blade__ to avoid VMware ballooning and compression
-- Ensure sufficient disk space is available for swap files (.VSWP) created when each VM starts (size = VM memory allocation)
+- Die __durchschnittliche Speichernutzung pro Blade__ sollte __85 %__ nicht überschreiten, um VMware-Ballooning und -Komprimierung zu vermeiden
+- Festplattenspeicher für Swap-Dateien (.VSWP) einplanen, die beim Start jeder VM erstellt werden (Größe = Speicher der VM)
 
-To add additional RAM to a cluster, navigate to the cluster configuration (as previously described for adding a compute host) and click on __'Modify Memory'__.
+Um Arbeitsspeicher zu einem Cluster hinzuzufügen, navigieren Sie zur Cluster-Konfiguration (wie zuvor beim Hinzufügen eines Compute-Hosts beschrieben) und klicken Sie auf __'Speicher ändern'__.
 
 <img src={shivaOrdersIaasCpoolMemory} />
 
-__Note__:
+__Hinweis__ :
 
-- *__Machines are delivered with the full physical memory installed__. Memory resource unblocking is purely a software activation at the cluster level.*
-- *It is not possible to modify the physical memory capacity of a blade type. Always consider the maximum memory capacity of a blade when creating a cluster.*
-- *The __'order'__ and __'compute'__ permissions are required on the account to perform this action.*
+- *__Die Maschinen werden mit dem gesamten physischen Speicher ausgeliefert__. Die Freischaltung der Speicherressource ist lediglich eine softwareseitige Aktivierung auf Cluster-Ebene.*
+- *Die physische Speichermenge eines Bladetyps kann nicht geändert werden. Berücksichtigen Sie bei der Erstellung eines Clusters unbedingt die maximale Kapazität einer Blade.*
+- *Das Konto benötigt die Berechtigungen __'order'__ sowie __'compute'__, um diese Aktion durchzuführen.*

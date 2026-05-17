@@ -12,7 +12,7 @@ Les snapshots permettent de capturer l'état d'une VM à un instant T. Ils sont 
 
 Depuis la liste des VM Instances, cliquez sur la ligne de votre VM pour ouvrir son panneau de détail, puis naviguez vers l'onglet **Snapshots**.
 
-![Détail VM - Snapshots](../images/vm_instances_detail_snapshots.png)
+![Détail VM - Snapshots](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_snapshots.png)
 
 Vous voyez la liste des snapshots existants avec pour chaque entrée : le nom, le statut et la date de création.
 

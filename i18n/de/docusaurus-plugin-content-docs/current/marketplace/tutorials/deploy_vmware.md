@@ -1,48 +1,48 @@
 ---
-title: Deploy an image on VMware
+title: Bereitstellen eines Images auf VMware
 ---
 import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
 import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
 
-This tutorial guides you through deploying a virtual machine image from the Cloud Temple Marketplace to your VMware environment.
+Dieses Tutorial führt Sie bei der Bereitstellung eines Images einer virtuellen Maschine aus dem Cloud Temple Marketplace in Ihre VMware-Umgebung.
 
 ## Voraussetzungen
 
-- Ein konfiguriertes VMware-Umgebung bereitstellen
-- Berechtigungen zum Erstellen von virtuellen Maschinen besitzen
-- Das Image muss **VMware** in seinen kompatiblen Zielen enthalten
+- Verfügen über eine konfigurierte VMware-Umgebung
+- Über die Berechtigungen zum Erstellen von virtuellen Maschinen verfügen
+- Das Image muss **VMware** in den kompatiblen Zielen enthalten
 
-## Deployment steps
+## Deployment-Schritte
 
-### 1. Selection and Deployment
+### 1. Auswahl und Bereitstellung
 
-From the detail page of a compatible VMware solution, select your target environment and click **Deploy**:
+Wählen Sie auf der Detailseite einer VMware-kompatiblen Lösung Ihre Zielumgebung aus und klicken Sie auf **Bereitstellen** :
 <img src={marketplaceVmwareDeployment} />
 
-### 2. Virtual Machine Configuration
+### 2. Konfiguration der virtuellen Maschine
 
-Configure the basic settings of your virtual machine:
+Konfigurieren Sie die grundlegenden Parameter Ihrer virtuellen Maschine:
 
-- **VM Name**
-- **Resources** (CPU, RAM)
-- **Storage**
-- **Network**
+- **Name** der VM
+- **Ressourcen** (CPU, RAM)
+- **Speicher**
+- **Netzwerk**
 
 <img src={marketplaceVmwareConfig} />
 
-Deployment typically takes less than 10 minutes, depending on the image size.
+Die Bereitstellung dauert in der Regel weniger als 10 Minuten, abhängig von der Größe des Images.
 
-## Alternative Access
+## Alternativer Zugriff
 
-You can also access Marketplace templates directly from the VMware interface:
+Sie können auch direkt über die VMware-Oberfläche auf die Marketplace-Templates zugreifen:
 
-1. Go to **vSphere** > **Deploy a VM**
-2. Select **Marketplace Template** as the source
-3. Browse the available images in the integrated catalog
+1. Navigieren Sie zu **vSphere** > **VM bereitstellen**
+2. Wählen Sie **Marketplace-Templates** als Quelle
+3. Durchsuchen Sie die im integrierten Katalog verfügbaren Images
 
-## Deployment Monitoring
+## Deployment-Verfolgung
 
-Once the deployment has been initiated:
+Sobald das Deployment gestartet wurde:
 
-- Monitor the progress from the VMware console
-- The VM will appear in your vSphere inventory
+- Verfolgen Sie den Fortschritt über die VMware-Konsole
+- Die VM wird in Ihrem vSphere-Inventar angezeigt
