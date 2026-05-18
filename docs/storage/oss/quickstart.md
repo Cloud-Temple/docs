@@ -50,20 +50,28 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     Default region name [None]: fr1
     Default output format [None]: json
     ```
-    Contrairement à `mc`, le client AWS ne sauvegarde pas le point de terminaison (endpoint). Vous devrez le spécifier pour chaque commande avec l'option `--endpoint-url`.
 
-    Le point de terminaison de votre service est : `https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com`
+    Le stockage objet Cloud Temple repose sur Dell EMC ECS, une implémentation S3-compatible qui ne prend pas en charge certaines extensions récentes d'AWS CLI v2, notamment le mode de transfert chunked avec checksum `CRC64NVME` activé par défaut depuis la version 2.x. Sans configuration spécifique, les uploads échouent avec l'erreur `XAmzContentSHA256Mismatch`.
 
-    **Astuce :** Pour éviter de taper le endpoint à chaque fois, vous pouvez le définir dans le fichier de configuration AWS (`~/.aws/config`) en créant un profil dédié :
+    Il est nécessaire d'ajouter le paramètre suivant pour désactiver ce comportement :
+
+    ```bash
+    ❯ aws configure set request_checksum_calculation when_required
+    ```
+
+    **Astuce :** Pour éviter de taper le endpoint à chaque fois, vous pouvez le définir dans le fichier de configuration AWS (`~/.aws/config`) en créant un profil dédié qui intègre également ce paramètre :
+
     ```ini
     [profile cloudtemple]
     region = fr1
     output = json
+    request_checksum_calculation = when_required
     s3 =
       endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
     s3api =
       endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
     ```
+
     Vous pourrez ensuite utiliser ce profil avec l'option `--profile cloudtemple` sur chaque commande.
 
   </TabItem>
@@ -141,6 +149,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     --bucket <nom-du-bucket> \
     --lifecycle-configuration file://lifecycle.json
     ```
+
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
@@ -226,7 +235,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     La plateforme vous donne alors la clef d'accès et la clef secrète de votre bucket :
     <img src={S3StorageKeys} />
     __ATTENTION :__ Les clés secrète et d'accès sont présentées une seule fois. Après cette première apparition, il devient impossible de consulter à nouveau la clé secrète. Il est donc essentiel de noter ces informations immédiatement ; faute de quoi, il vous sera nécessaire de générer une nouvelle paire de clés.
-    La regeneration se fait au niveau des options de la clefs en choisissant l'option "Réinitialiser clé d'accès".
+    La regénération se fait au niveau des options de la clef en choisissant l'option "Réinitialiser clé d'accès".
     <img src={S3Keyregen} />
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
@@ -300,3 +309,30 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     La gestion fine des politiques d'accès via le client `mc` (`policy` commands) est une opération avancée. Pour la majorité des cas d'usage, nous recommandons de passer par la console Cloud Temple pour une configuration simplifiée et sécurisée.
   </TabItem>
 </Tabs>
+
+## Protection de suppression
+
+La **Protection de suppression** est un paramètre configurable au niveau du bucket, accessible dans l'onglet '__Paramètres__'. Elle permet de définir une durée pendant laquelle les objets stockés dans le bucket sont protégés contre toute modification ou suppression.
+
+<img src={S3Params} />
+
+### Comportement
+
+Lorsque la Protection de suppression est activée sur un bucket :
+
+- **Aucun objet ne peut être supprimé** dans le bucket pendant toute la durée configurée, y compris par le propriétaire du bucket.
+- **Aucun objet ne peut être modifié** (écrasement d'un objet existant interdit).
+- La protection s'applique à **tous les objets** présents dans le bucket au moment de l'activation, ainsi qu'à ceux ajoutés ultérieurement.
+- À l'expiration de la durée configurée, les objets redeviennent modifiables et supprimables normalement.
+
+:::warning
+La Protection de suppression ne déclenche **pas** de suppression automatique des données à son terme. Pour supprimer automatiquement des objets après une période donnée, il est nécessaire de configurer une politique de cycle de vie (lifecycle), décrite dans la section [Parcourir un bucket S3](#parcourir-un-bucket-s3).
+:::
+
+### Cas d'usage
+
+Ce mécanisme est particulièrement adapté aux contextes imposant une **immuabilité des données** sur une durée définie :
+
+- Conformité réglementaire (secteurs santé, finance, défense)
+- Protection contre les suppressions accidentelles ou malveillantes
+- Respect d'obligations d'archivage (ex. : durée légale de conservation des logs)
