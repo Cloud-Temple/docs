@@ -12,11 +12,14 @@ Questa guida dettaglia l'uso del modello **DeepSeek-OCR**, una soluzione di vang
 A differenza degli OCR tradizionali, DeepSeek-OCR è un modello di visione-linguaggio di estremo a estremo progettato per "leggere" e "comprendere" visivamente i documenti.
 
 ### Architettura tecnica
+
 Combina due componenti innovativi:
-1.  **DeepEncoder (380M)**: Un codificatore visuale ibrido che combina **SAM-base** (per la percezione locale) e **CLIP-large** (per la conoscenza globale), collegati mediante un compressore convoluzionale di 16x. Questo consente di processare immagini ad alta risoluzione con pochissimi token visuali.
-2.  **Decodificatore MoE (3B)**: Basato su DeepSeek3B-MoE (570M parametri attivi), genera testo strutturato a partire dai token visuali compressi.
+
+1. **DeepEncoder (380M)**: Un codificatore visuale ibrido che combina **SAM-base** (per la percezione locale) e **CLIP-large** (per la conoscenza globale), collegati mediante un compressore convoluzionale di 16x. Questo consente di processare immagini ad alta risoluzione con pochissimi token visuali.
+2. **Decodificatore MoE (3B)**: Basato su DeepSeek3B-MoE (570M parametri attivi), genera testo strutturato a partire dai token visuali compressi.
 
 ### Modos de resolución y consumo  
+
 Il modello adatta il suo consumo di token in base alla risoluzione dell'immagine. Maggiore è l'immagine, maggiore è il consumo di token, ma maggiore è anche la precisione.
 
 | Modo | Risoluzione (px) | Token di visione | Uso raccomandato |
@@ -27,11 +30,12 @@ Il modello adatta il suo consumo di token in base alla risoluzione dell'immagine
 | **Large** | 1280 x 1280 | 400 | Documenti densi, caratteri piccoli |
 | **Gundam** | Dinamico | ~800 | Giornali, progetti, scansioni complesse |
 
-:::tip Ottimizzazione  
+:::tip[Ottimizzazione  ]
 Per ottimizzare i costi e la latenza, ridimensionate le immagini alla risoluzione minima necessaria affinché il testo rimanga leggibile.  
 :::
 
 ### Supporto multilingue
+
 Il modello è stato addestrato su un vasto corpus di documenti multilingue e supporta il riconoscimento di quasi **100 lingue** (tra cui francese, inglese, cinese, arabo, ecc.), con o senza conservazione del layout.
 
 ## Guida ai prompt (Prompt engineering)
@@ -39,6 +43,7 @@ Il modello è stato addestrato su un vasto corpus di documenti multilingue e sup
 La qualità del risultato dipende direttamente dal prompt utilizzato. DeepSeek-OCR risponde a istruzioni specifiche per attivare le sue diverse capacità.
 
 ### 1. OCR standard (Markdown)
+
 Per estrarre il testo con la sua struttura (titoli, paragrafi, tabelle).
 
 **Prompt:**
@@ -47,17 +52,20 @@ Per estrarre il testo con la sua struttura (titoli, paragrafi, tabelle).
 **Risultato:** Testo strutturato, tabelle formattate, layout conservato.
 
 ### 2. "Analisi profonda" (Figure, grafici, formule)
+
 Per analizzare il contenuto semantico di grafici, formule chimiche o geometriche.
 
 **Prompt:**
 > `Analizza la figura.`
 
 **Capacità:**
--   **Grafici (a barre/a linee/a torta)** : Converte in tabella HTML o Markdown.
--   **Formule chimiche** : Converte in formato SMILES.
--   **Geometria** : Descrive gli elementi geometrici.
+
+- **Grafici (a barre/a linee/a torta)** : Converte in tabella HTML o Markdown.
+- **Formule chimiche** : Converte in formato SMILES.
+- **Geometria** : Descrive gli elementi geometrici.
 
 ### 3. Grounding (localizzazione)
+
 Per trovare le coordinate di un elemento specifico nell'immagine.
 
 **Prompt:**
@@ -67,6 +75,7 @@ Per trovare le coordinate di un elemento specifico nell'immagine.
 **Risultato:** Restituisce le coordinate del riquadro di delimitazione (bounding box) dell'elemento.
 
 ### 4. Rilevamento di oggetti  
+
 Per elencare e localizzare tutti gli oggetti visibili.
 
 **Prompt:**  
@@ -77,12 +86,14 @@ Per elencare e localizzare tutti gli oggetti visibili.
 Ecco un esempio completo che mostra come strutturare la chiamata API per utilizzare queste funzionalità.
 
 ### Prerequisiti: formato immagine e dipendenze
--   **Formato**: JPEG o PNG.
--   **Modalità**: RGB (nessuna trasparenza Alpha).
--   **PDF**: Devono essere convertiti in immagini in anticipo (150-300 DPI).
--   **Dimensione**: Si consiglia di ridimensionare le immagini ad altissima risoluzione per evitare errori di limite di dimensione (413 Payload Too Large).
+
+- **Formato**: JPEG o PNG.
+- **Modalità**: RGB (nessuna trasparenza Alpha).
+- **PDF**: Devono essere convertiti in immagini in anticipo (150-300 DPI).
+- **Dimensione**: Si consiglia di ridimensionare le immagini ad altissima risoluzione per evitare errori di limite di dimensione (413 Payload Too Large).
 
 Installare le librerie richieste:
+
 ```bash
 pip install requests Pillow
 ```
@@ -170,6 +181,7 @@ else:
 ```
 
 **Esempio di output:**
+
 ```markdown
 
 # Berghotel
@@ -203,6 +215,7 @@ Il modello restituirà una rappresentazione testuale o tabellare dei dati del gr
 ## Casi d'uso avanzati
 
 ### Estrazione di tabelle complesse  
+
 DeepSeek-OCR eccelle nella conversione di tabelle, anche senza linee di demarcazione chiare.
 
 **Immagine di input:**
@@ -210,6 +223,7 @@ DeepSeek-OCR eccelle nella conversione di tabelle, anche senza linee di demarcaz
 ![Tabella finanziaria](@site/docs/llmaas/images/tableau.png)
 
 **Output del modello (Prompt: "Convert the document to markdown table."):**
+
 ```markdown
 
 

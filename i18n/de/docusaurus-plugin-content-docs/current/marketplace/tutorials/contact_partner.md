@@ -1,43 +1,43 @@
 ---
-title: Kontaktieren eines Partners
+title: Einen Partner kontaktieren
 ---
 import marketplaceContactAccess from '@site/docs/marketplace/images/marketplaceContactAccess.png'
 import marketplaceContactConfirm from '@site/docs/marketplace/images/marketplaceContactConfirm.png'
 import marketplaceContactEmail from '@site/docs/marketplace/images/marketplaceContactEmail.png'
 
-Dieses Tutorial führt Sie Schritt für Schritt durch den Prozess des Kontaktaufnahmes mit einem Publisher-Partner über die Cloud Temple Marketplace.
+Dieses Tutorial zeigt Ihnen, wie Sie über den Cloud Temple Marketplace Kontakt mit einem Verlagspartner aufnehmen.
 
-## Verwendungskontext
+## Anwendungskontext
 
 Verwenden Sie diese Funktion, wenn:
 
-- eine Verbindung mit dem Partner hergestellt werden muss
-- zusätzliche Informationen benötigt werden
-- die Lösung nicht direkt bereitgestellt werden kann (kein VM-Image)
+- die Lösung eine Kontaktaufnahme mit dem Partner erfordert
+- Sie weitere Informationen erhalten möchten
+- die Lösung nicht direkt bereitstellbar ist (kein VM-Image)
 
-## Contact steps
+## Kontaktschritte
 
 ### 1. Zugriff auf das Formular
 
-Klicken Sie auf der Detailseite einer Partnerlösung auf **Partner kontaktieren**:
+Auf der Detailseite einer Partnerlösung klicken Sie auf **Partner kontaktieren** :
 <img src={marketplaceContactAccess} />
 
-### 2. Sending the request
+### 2. Senden der Anfrage
 
-Validate and send your contact request:
+Bestätigen und senden Sie Ihre Kontaktanfrage:
 <img src={marketplaceContactConfirm} />
 
-You will receive an email confirmation of the submission of your request.
+Sie erhalten eine Bestätigung per E-Mail über den Versand Ihrer Anfrage.
 
-### 3. Connection
+### 3. Kontaktvermittlung
 
-The partner will automatically receive an email with your information:
+Der Partner erhält automatisch eine E-Mail mit Ihren Informationen:
 
-**Example email sent to the partner:**
+**Beispiel der an den Partner gesendeten E-Mail:**
 <img src={marketplaceContactEmail} />
 
 ## Best Practices
 
-- **Seien Sie präzise** bei der Beschreibung Ihres Bedarfs
-- **Geben Sie den Nutzungskontext** an
-- **Nennen Sie Ihre technischen oder regulatorischen Einschränkungen**
+- **Seien Sie präzise** bei der Beschreibung Ihrer Anforderungen
+- **Geben Sie den vorgesehenen** Verwendungskontext an
+- **Nennen Sie Ihre** technischen oder regulatorischen Einschränkungen

@@ -1,5 +1,5 @@
 ---
-title: Ihre Anwendungen mit Veeam Kasten sichern
+title: Anwendungen mit Veeam Kasten sichern
 ---
 
 import k10dashboard from '@site/docs/managed_kubernetes/tutorials/images/k10dashboard.png'
@@ -8,107 +8,110 @@ import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10i
 
 ## Einführung
 
-Veeam Kasten K10 ist eine Backup- und Wiederherstellungslösung, die speziell für Kubernetes-Umgebungen entwickelt wurde. Im Managed Kubernetes-Service von Cloud Temple ist Kasten integriert, damit Sie Ihre Anwendungen schützen, im Bedarfsfall Daten wiederherstellen und die Kontinuität Ihrer Aktivitäten sicherstellen können.
+Veeam Kasten K10 ist eine Backup- und Wiederherstellungslösung, die speziell für Kubernetes-Umgebungen entwickelt wurde. Im Managed Kubernetes-Produkt von Cloud Temple ist Kasten integriert, um Ihnen den Schutz Ihrer Anwendungen, die Wiederherstellung von Daten bei Bedarf und die Sicherstellung Ihrer Geschäftskontinuität zu ermöglichen.
 
-In diesem Tutorial führen wir Sie Schritt für Schritt durch die grundlegenden Aktionen zum Sichern und Wiederherstellen einer Anwendung mit Kasten.
+Dieses Tutorial führt Sie durch die grundlegenden Schritte zum Sichern und Wiederherstellen einer Anwendung mit Kasten.
 
 ## Voraussetzungen
 
-Stellen Sie sicher, dass Sie Folgendes bereitstellen:
+Stellen Sie vor Beginn sicher, dass Sie über die folgenden Elemente verfügen:
 
 - Ein aktiver Managed Kubernetes-Cluster.
-- Die Bezeichnung Ihres Clusters (z. B. `ctodev`).
+- Die Cluster-ID (z. B. `ctodev`).
 - Eine in Ihrem Cluster bereitgestellte Anwendung, die Sie sichern möchten.
 
-## 1. Access the Kasten Dashboard
+## 1. Zugriff auf das Kasten-Dashboard
 
-The Kasten dashboard is accessible via a secure URL, constructed using your cluster's identifier.
+Das Kasten-Dashboard ist über eine sichere URL zugänglich, die auf der Basis Ihrer Cluster-ID erstellt wird.
 
-1.  **Build the access URL**:
-    The URL follows this pattern: `https://k10.external-secured.<identifier>.mk.ms-cloud-temple.com/k10/`
-    Replace `<identifier>` with your cluster's identifier. For example, if your identifier is `ctodev`, the URL will be: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
+1. **Erstellen Sie die Zugriffs-URL** :
+    Die URL basiert auf dem folgenden Muster: `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
+    Ersetzen Sie `<identifiant>` durch die ID Ihres Clusters. Wenn Ihre ID beispielsweise `ctodev` lautet, lautet die URL: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
-2.  **Access the URL** in your browser.
+2. **Rufen Sie die URL** in Ihrem Browser auf.
 
-    :::info Security Note
-    Access to this URL is restricted to the public IP addresses you have declared. If you are unable to connect, ensure your IP address is authorized by contacting Cloud Temple support.
+    :::info Hinweis zur Sicherheit
+    Der Zugriff auf diese URL ist auf die von Ihnen angegebenen öffentlichen IP-Adressen beschränkt. Falls Sie sich nicht anmelden können, stellen Sie sicher, dass Ihre IP-Adresse freigegeben ist, indem Sie den Cloud Temple Support kontaktieren.
     :::
 
 <img src={k10dashboard} />
 
-:::tip Integrated Quick Start Guide
-The Kasten console includes an interactive quick start guide on its home page. Feel free to follow it for a hands-on introduction directly from the interface.
+:::tip[Integrierter Schnellstart-Leitfaden
+]
+Die Kasten-Konsole enthält einen interaktiven Schnellstart-Leitfaden auf ihrer Startseite. Nutzen Sie diesen gerne für den ersten Einstieg direkt über die Oberfläche.
 :::
 
-## 2. Understanding Backup Storage
+## 2. Sicherungsspeicher verstehen
 
-By default, Kasten is preconfigured to use Cloud Temple's object storage service (S3) to securely and durably store your backups.
+Standardmäßig ist Kasten so vorkonfiguriert, dass der Objektspeicherdienst (S3) von Cloud Temple zur sicheren und dauerhaften Speicherung Ihrer Sicherungen verwendet wird.
 
-No configuration is required on your part. The storage location is already set up in the Kasten dashboard under **Settings > Locations**. This configuration ensures that your data is stored on sovereign infrastructure.
+Sie müssen keine Konfiguration vornehmen. Der Speicherort ist bereits im Kasten-Dashboard unter **Settings > Locations** festgelegt. Diese Konfiguration stellt sicher, dass Ihre Daten auf einer souveränen Infrastruktur gespeichert werden.
 
 <img src={k10s3location} />
 
-:::info Cost Model
-The Veeam Kasten service is included in the Managed Kubernetes offering. Backup storage on our sovereign S3 is billed on a pay-per-use basis. Please consult our pricing grid for more details.
+:::info[Kostenmodell
+]
+Der Veeam Kasten-Dienst ist im Produkt Managed Kubernetes enthalten. Die Speicherung der Sicherungen auf unserem souveränen S3 wird nutzungsbasiert abgerechnet. Weitere Details finden Sie in unserer Preisliste.
 :::
 
-## 3. Create a Backup Policy
+## 3. Eine Sicherungsrichtlinie erstellen
 
-A backup policy (`Policy`) is a set of rules that define when and how to back up your applications.
+Eine Sicherungsrichtlinie (`Policy`) ist eine Reihe von Regeln, die festlegen, wann und wie Ihre Anwendungen gesichert werden.
 
-:::warning Existing Backup Policy
-A backup policy named `infra-backups` is already configured in your Kasten instance. This policy ensures the backup of essential components included with the cluster.
+:::warning[Bestehende Sicherungsrichtlinie
+]
+Eine Sicherungsrichtlinie mit dem Namen `infra-backups` ist in Ihrer Kasten-Instanz bereits konfiguriert. Diese Richtlinie sichert die mit dem Cluster gelieferten Kernkomponenten.
 
 <img src={k10infrabackups} />
 
-**Do not modify or delete this policy.**
+**Ändern oder löschen Sie diese Richtlinie nicht.**
 
-You must create your own policies to back up the applications you deploy.
+Sie müssen Ihre eigenen Richtlinien erstellen, um die von Ihnen bereitgestellten Anwendungen zu sichern.
 :::
 
-1. In the Kasten dashboard, go to the **Policies** section and click **Create New Policy**.
+1. Navigieren Sie im Kasten-Dashboard zum Bereich **Policies** und klicken Sie auf **Create New Policy**.
 
-2. **Name your policy**: Provide a descriptive name, for example `backup-my-app-daily`.
+2. **Benennen Sie Ihre Richtlinie**: Vergeben Sie einen beschreibenden Namen, z. B. `backup-my-app-daily`.
 
-3. **Set the frequency (Action)**:
-    - **Action**: `Snapshot` (snapshot).
-    - **Frequency**: Choose the frequency that suits your needs (for example, `Daily` at `02:00`).
+3. **Legen Sie die Häufigkeit (Action) fest** :
+    - **Action**: `Snapshot` (instantané).
+    - **Frequency**: Wählen Sie die gewünschte Häufigkeit (par exemple, `Daily` à `02:00`).
 
-4. **Select the resources to back up**:
-    - **Select resources by**: You can select applications by name (`Application Name`), by namespace (`Namespace`), or by labels.
-    - To back up all applications in a namespace, choose `Namespace` and select the desired namespace.
+4. **Wählen Sie die zu sichernden Ressourcen aus** :
+    - **Select resources by**: Sie können Anwendungen nach Name (`Application Name`), Namespace (`Namespace`) oder Labels auswählen.
+    - Um alle Anwendungen eines Namespaces zu sichern, wählen Sie `Namespace` aus und wählen Sie den gewünschten Namespace.
 
-5. **Click `Create Policy`** to save.
+5. **Klicken Sie auf `Create Policy`**, um zu speichern.
 
-The policy will run automatically at the defined frequency. You can also trigger a manual execution by clicking the "Play" (▶️) button next to the policy.
+Die Richtlinie wird automatisch im festgelegten Intervall ausgeführt. Sie können auch eine manuelle Ausführung starten, indem Sie auf die Schaltfläche "Play" (▶️) neben der Richtlinie klicken.
 
-## 4. Restore an Application
+## 4. Eine Anwendung wiederherstellen
 
-Kasten makes it easy to restore an application to a previous state from a backup point.
+Kasten erleichtert die Wiederherstellung einer Anwendung auf ihren vorherigen Zustand aus einem Wiederherstellungspunkt.
 
-1.  In the dashboard, go to the **Applications** section. You will see a list of your applications and their compliance status with backup policies.
+1. Gehen Sie im Dashboard in den Bereich **Applications**. Dort sehen Sie die Liste Ihrer Anwendungen und deren Konformitätsstatus im Hinblick auf die Sicherungsrichtlinien.
 
-2.  **Select the application** you want to restore.
+2. **Wählen Sie die Anwendung** aus, die Sie wiederherstellen möchten.
 
-3.  **Choose a restore point**:
-    The application page displays a list of available restore points. Select the one you wish to use and click **Restore**.
+3. **Wählen Sie einen Wiederherstellungspunkt** :
+    Die Anwendungsseite zeigt eine Liste der verfügbaren Wiederherstellungspunkte. Wählen Sie den gewünschten Punkt aus und klicken Sie auf **Restore**.
 
-4.  **Configure the restore**:
-    - You can choose to restore into a new namespace or overwrite the existing application. For this tutorial, we will overwrite the existing application.
-    - Click **Restore** to start the process.
+4. **Konfigurieren Sie die Wiederherstellung** :
+    - Sie können wählen, ob Sie in einem neuen Namespace wiederherstellen oder die vorhandene Anwendung überschreiben möchten. Für dieses Tutorial werden wir die vorhandene Anwendung überschreiben.
+    - Klicken Sie auf **Restore**, um den Prozess zu starten.
 
-Kasten will now restore the application to the state captured in the snapshot. You can monitor the progress in the dashboard.
+Kasten stellt die Anwendung nun auf den im Snapshot erfassten Zustand wieder. Den Fortschritt können Sie im Dashboard verfolgen.
 
-## 5. Backup Security
+## 5. Backup-Sicherheit
 
-Protecting your backup data is a top priority. Integrating Kasten into the Managed Kubernetes offering adheres to the highest security standards.
+Der Schutz Ihrer Backup-Daten ist eine Priorität. Die Integration von Kasten in das Managed Kubernetes-Produkt entspricht den höchsten Sicherheitsstandards.
 
--   **Encryption**: In compliance with SecNumCloud requirements, all your backups are encrypted. Data is encrypted in transit to the S3 storage using the **TLS 1.3** protocol and at rest in storage buckets using the **AES-256** algorithm.
+- **Verschlüsselung** : Gemäß den SecNumCloud-Anforderungen werden alle Ihre Backups verschlüsselt. Die Daten werden während der Übertragung zum S3-Speicher mit dem Protokoll **TLS 1.3** und im Ruhezustand in den Storage-Buckets mit dem Algorithmus **AES-256** verschlüsselt.
 
--   **Permission Management**: Access to the Kasten interface and its features is controlled by a role-based access control (RBAC) system integrated with Kubernetes. Only authorized users can create, modify, or execute backup and restore policies, ensuring strict governance over your backup operations.
+- **Berechtigungsverwaltung** : Der Zugriff auf die Kasten-Oberfläche und deren Funktionen wird durch ein Berechtigungssystem gesteuert, das auf dem Kubernetes-RBAC basiert. Nur autorisierte Benutzer können Backup- und Wiederherstellungsrichtlinien erstellen, ändern oder ausführen, wodurch eine strenge Governance Ihrer Backup-Vorgänge gewährleistet ist.
 
-## Schlussfolgerung
+## Fazit
 
-Sie haben gelernt, wie Sie Veeam Kasten zum Ausführen grundlegender Sicherungs- und Wiederherstellungsvorgänge in Ihrem Managed Kubernetes-Cluster verwenden. Kasten bietet zahlreiche erweiterte Funktionen wie die Migration von Anwendungen zwischen Clustern und fein granulare Retentionsrichtlinien, die Sie erkunden können, um Ihre Daten-Schutzstrategie zu verstärken.
+Sie haben gelernt, wie Sie Veeam Kasten für grundlegende Backup- und Wiederherstellungsvorgänge in Ihrem Managed Kubernetes-Cluster verwenden. Kasten bietet zahlreiche erweiterte Funktionen, wie z. B. die Migration von Anwendungen zwischen Clustern und granulare Aufbewahrungsrichtlinien, die Sie erkunden können, um Ihre Datensicherungsstrategie zu stärken.
 
-Weitere Informationen finden Sie in der [offiziellen Kasten K10-Dokumentation](https://docs.kasten.io/latest/).
+Weitere Informationen finden Sie in der [offiziellen Dokumentation von Kasten K10](https://docs.kasten.io/latest/).

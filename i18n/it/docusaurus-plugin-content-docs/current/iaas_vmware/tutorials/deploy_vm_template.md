@@ -1,5 +1,5 @@
 ---
-title: Deployment from a template
+title: Distribuzione da un template
 tags:
   - iaas_vmware
   - tutorials
@@ -8,40 +8,40 @@ import shivaCatalogsCharger from '@site/docs/iaas_vmware/tutorials/images/shiva_
 import shivaCatalogsAjout from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_ajout.png';
 import shivaCatalogsDeployer from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_deployer.png';
 
-This guide will allow you to deploy your first instances on the Cloud of Trust in less than 5 minutes.
+Questa guida vi permetterà di distribuire in meno di 5 minuti le vostre prime istanze sul Cloud di Fiducia.
 
 ## __Prerequisiti__
 
-1. Aver sottoscritto l'offerta Cloud Temple (sottoscrizione all'offerta IaaS).
-2. Aver attivate le autorizzazioni per il driver degli oggetti __'IaaS'__
+1. Avere sottoscritto il prodotto Cloud Temple (sottoscrizione al prodotto IaaS).
+2. Avere le autorizzazioni abilitate per il driver degli oggetti __'IaaS'__
 
-## Deploy a virtual machine from a Template
+## Distribuire una macchina virtuale da un modello
 
-This guide shows you step by step how to deploy a virtual machine from a Template in the Console.
+Questa guida mostra passo dopo passo come distribuire una macchina virtuale da un modello nella Console.
 
-In the Console portal, go to the "Trusted Cloud" tab, then "Catalogs". Before you can deploy a Template, it must be uploaded to your private catalog, in the "My Catalog" tab.
+Nel portale Console, vai alla scheda "Cloud di fiducia", quindi a "Cataloghi". Prima di poter distribuire un modello, questo deve essere caricato nel tuo catalogo privato, nella scheda "Il mio catalogo".
 
-To do this, you have two options: import your own Template directly into your private catalog, or import a template from the public Cloud Temple catalog.
+A tal fine, hai due possibilità: importare il tuo modello direttamente nel tuo catalogo privato oppure importare un modello dal catalogo pubblico di Cloud Temple.
 
 ### Importare un modello personale nel catalogo privato
 
-Nella scheda "Il mio catalogo", fare clic su "Pubblica file".
+Nella scheda "Il mio catalogo", fai clic su "Pubblica file".
 
 <img src={shivaCatalogsCharger} />
 
-Seguire quindi i passaggi per la pubblicazione del modello, inserendo il nome e una descrizione, e scegliendo la posizione all'interno di una libreria.
+Quindi, segui i passaggi di pubblicazione del modello, inserendone il nome e una descrizione, e selezionando la posizione all'interno di una libreria.
 
-Il modello dovrà quindi apparire nel tuo catalogo privato.
+Il modello dovrebbe quindi essere visualizzato nel tuo catalogo privato.
 
 ### Importare un modello dal catalogo pubblico
 
-Nella scheda "Catalogo pubblico", fai clic sul pulsante "Aggiungi al mio catalogo" del modello desiderato per importarlo nel tuo catalogo privato. Esso dovrà quindi apparire nel tuo catalogo privato.
+Nella scheda "Catalogo pubblico", fai clic sul pulsante "Aggiungi al mio catalogo" del modello di tua scelta per importarlo nel tuo catalogo privato. Dovrebbe successivamente apparire nel tuo catalogo privato.
 <img src={shivaCatalogsAjout} />
 
-### Deploy the Template
+### Distribuire il Template
 
-Once the template has been imported into your private catalog, you can deploy it by clicking on "Deploy".
+Una volta importato il Template nel tuo catalogo privato, puoi distribuirlo facendo clic su "Distribuisci".
 
 <img src={shivaCatalogsDeployer} />
 
-Then follow the various steps of the resource deployment process, selecting its physical location (datacenter, compute cluster, datastore) and other optional configuration parameters.
+Segui quindi le diverse fasi di distribuzione della risorsa, selezionandone la posizione fisica (datacenter, cluster di calcolo, datastore) e altri parametri di configurazione opzionali.

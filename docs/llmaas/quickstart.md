@@ -39,7 +39,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_CLE_API" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user",
@@ -75,7 +75,7 @@ headers = {
 
 # Requête
 payload = {
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
         {
             "role": "user",
@@ -106,14 +106,14 @@ Pour votre premier test, utilisez un de ces modèles recommandés :
 
 | Modèle | Usage | Vitesse | Note |
 |--------|--------|---------|------|
-| `granite3.3:8b` | Usage général, équilibré | Rapide | Recommandé pour débuter |
-| `qwen3:14b` | Tâches complexes | Moyen | Mode "thinking" visible |
-| `gemma3:4b` | Tests rapides, prototypage | Très rapide | Réponses détaillées |
+| `gpt-oss:120b` | Usage général, équilibré | Moyen | **LTS** — recommandé pour la production |
+| `qwen3-2507-think:4b` | Raisonnement complexe | Rapide | **LTS** — compact avec raisonnement profond |
+| `qwen3.5:9b` | Chat et analyse | Rapide | Bon compromis taille/qualité |
 
-Consultez le [catalogue complet des modèles](./models) pour plus d'options.
+Consultez le [catalogue complet des modèles](./models) pour plus d'options. Préférez les modèles marqués **LTS** pour vos applications en production.
 
-:::tip Astuce pour les modèles Qwen
-Certains modèles de la famille **Qwen** (comme `qwen3:14b` ou `qwen3:30b-a3b`) disposent d'un mode de raisonnement avancé. Vous pouvez forcer son activation en ajoutant `/think` au début de votre prompt, ou le désactiver pour une réponse plus directe et rapide avec `/nothink`.
+:::tip Astuce pour les modèles Qwen avec raisonnement
+Certains modèles de la famille **Qwen** (comme `qwen3-2507-think:4b`, `qwen3.5:9b` ou `qwen3.6:27b`) disposent d'un mode de raisonnement avancé. Vous pouvez forcer son activation en ajoutant `/think` au début de votre prompt, ou le désactiver pour une réponse plus directe et rapide avec `/nothink`.
 :::
 
 ## Paramètres recommandés
@@ -203,7 +203,7 @@ API_KEY="votre_cle_api_ici"
 
 # Optionnel: Modèle par défaut à utiliser pour le test
 # Assurez-vous que ce modèle est compatible avec le "tool calling"
-DEFAULT_MODEL="qwen3:30b-a3b"
+DEFAULT_MODEL="gpt-oss:120b"
 ```
 
 **Code Source (`test_tool_calling.py`)**
@@ -229,7 +229,7 @@ load_dotenv()
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
 # Utiliser un modèle connu pour bien gérer le tool calling
-MODEL = os.getenv("DEFAULT_MODEL", "qwen3:30b-a3b")
+MODEL = os.getenv("DEFAULT_MODEL", "gpt-oss:120b")
 
 # --- Définition de l'outil ---
 

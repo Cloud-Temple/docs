@@ -8,106 +8,110 @@ import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10i
 
 ## Introduzione
 
-Veeam Kasten K10 è una soluzione di backup e ripristino progettata specificamente per gli ambienti Kubernetes. Nel servizio Managed Kubernetes di Cloud Temple, Kasten è integrato per consentirti di proteggere le tue applicazioni, ripristinare i dati quando necessario e garantire la continuità operativa.
+Veeam Kasten K10 è una soluzione di backup e ripristino progettata specificamente per gli ambienti Kubernetes. Nel prodotto Managed Kubernetes di Cloud Temple, Kasten è integrato per consentirti di proteggere le tue applicazioni, ripristinare i dati quando necessario e garantire la continuità operativa.
 
-Questo tutorial ti guiderà attraverso i passaggi fondamentali per eseguire il backup e il ripristino di un'applicazione utilizzando Kasten.
+Questo tutorial ti guiderà attraverso i passaggi di base per eseguire il backup e il ripristino di un'applicazione utilizzando Kasten.
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati di disporre degli elementi seguenti:
-- Un cluster Kubernetes gestito attivo.
-- L'identificativo del tuo cluster (ad esempio, `ctodev`).
+Prima di iniziare, assicurati di disporre dei seguenti elementi:
+
+- Un cluster Managed Kubernetes attivo.
+- L'ID del tuo cluster (ad esempio, `ctodev`).
 - Un'applicazione distribuita nel tuo cluster che desideri salvare.
 
-## 1. Accedere al pannello di controllo Kasten
+## 1. Accedere alla dashboard di Kasten
 
-Il pannello di controllo Kasten è accessibile tramite un URL sicuro, costruito in base all'identificativo del tuo cluster.
+La dashboard di Kasten è accessibile tramite un URL sicuro, costruito a partire dall'identificativo del proprio cluster.
 
-1.  **Costruisci l'URL di accesso**:
-    L'URL si basa sul seguente modello: `https://k10.external-secured.<identificativo>.mk.ms-cloud-temple.com/k10/`
-    Sostituisci `<identificativo>` con l'identificativo del tuo cluster. Ad esempio, se il tuo identificativo è `ctodev`, l'URL sarà: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
+1. **Comporre l'URL di accesso** :
+    L'URL si basa sul modello seguente: `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
+    Sostituire `<identifiant>` con l'identificativo del proprio cluster. Ad esempio, se l'identificativo è `ctodev`, l'URL sarà: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 
-2.  **Accedi all'URL** nel tuo browser.
+2. **Accedere all'URL** nel browser.
 
     :::info Nota sulla sicurezza
-    L'accesso a questo URL è limitato alle indirizzi IP pubblici che hai dichiarato. Se non riesci a collegarti, assicurati che il tuo indirizzo IP sia autorizzato contattando il supporto Cloud Temple.
+    L'accesso a questo URL è limitato agli indirizzi IP pubblici dichiarati. Se non si riesce ad accedere, assicurarsi che il proprio indirizzo IP sia autorizzato contattando il supporto di Cloud Temple.
     :::
 
 <img src={k10dashboard} />
 
-:::tip Guida rapida integrata
-La console Kasten include una guida rapida interattiva sulla sua pagina iniziale. Non esitare a seguirla per una prima introduzione diretta dall'interfaccia.
+:::tip[Guide de démarrage rapide intégré
+]
+La console Kasten include una guida rapida interattiva nella propria pagina iniziale. Si consiglia di seguirla per un primo utilizzo direttamente dall'interfaccia.
 :::
 
-## 2. Understanding Backup Storage
+## 2. Comprendere lo storage dei backup
 
-By default, Kasten is preconfigured to use Cloud Temple's object storage service (S3) to securely and durably store your backups.
+Per impostazione predefinita, Kasten è preconfigurato per utilizzare il servizio di storage oggetto (S3) di Cloud Temple per archiviare i tuoi backup in modo sicuro e persistente.
 
-No configuration is required. The storage location is already set up in the Kasten dashboard under **Settings > Locations**. This configuration ensures your data is stored on sovereign infrastructure.
+Non è necessaria alcuna configurazione. Il percorso di storage è già impostato nella dashboard di Kasten, sotto **Settings > Locations**. Questa configurazione garantisce che i tuoi dati vengano archiviati su un'infrastruttura sovrana.
 
 <img src={k10s3location} />
 
-:::info Cost Model
-The Veeam Kasten service is included in the Managed Kubernetes offering. Backup storage on our sovereign S3 is billed on a pay-per-use basis. Refer to our pricing grid for more details.
+:::info[Modello di costo
+]
+Il servizio Veeam Kasten è incluso nel prodotto Managed Kubernetes. Lo storage dei backup sul nostro S3 sovrano è fatturato a consumo. Consulta la nostra griglia tariffaria per maggiori dettagli.
 :::
 
-## 3. Create a backup policy
+## 3. Creare una politica di backup
 
-A backup policy (`Policy`) is a set of rules that define when and how to back up your applications.
+Una politica di backup (`Policy`) è un insieme di regole che definiscono quando e come eseguire il backup delle tue applicazioni.
 
-:::warning Existing backup policy
-A backup policy named `infra-backups` is already configured in your Kasten instance. This policy ensures the backup of essential components included with the cluster.
+:::warning[Politica di backup esistente
+]
+Una politica di backup denominata `infra-backups` è già configurata nella tua istanza Kasten. Questa politica garantisce il backup dei componenti essenziali forniti con il cluster.
 
 <img src={k10infrabackups} />
 
-**Do not modify or delete this policy.**
+**Non modificare e non eliminare questa politica.**
 
-You must create your own policies to back up the applications you deploy.
+Devi creare le tue politiche per eseguire il backup delle applicazioni che distribuisci.
 :::
 
-1. In the Kasten dashboard, go to the **Policies** section and click **Create New Policy**.
+1. Nella dashboard di Kasten, accedi alla sezione **Policies** e fai clic su **Create New Policy**.
 
-2. **Name your policy**: Provide a descriptive name, for example `backup-my-app-daily`.
+2. **Assegna un nome alla tua politica** : Assegna un nome descrittivo, ad esempio `backup-my-app-daily`.
 
-3. **Set the frequency (Action)**:
-    - **Action**: `Snapshot` (snapshot).
-    - **Frequency**: Choose the frequency that suits your needs (for example, `Daily` at `02:00`).
+3. **Definisci la frequenza (Action)** :
+    - **Action**: `Snapshot` (istantaneo).
+    - **Frequency**: Scegli la frequenza desiderata (ad esempio, `Daily` alle `02:00`).
 
-4. **Select the resources to back up**:
-    - **Select resources by**: You can select applications by name (`Application Name`), by namespace (`Namespace`), or by labels.
-    - To back up all applications in a namespace, choose `Namespace` and select the desired namespace.
+4. **Seleziona le risorse da salvare** :
+    - **Select resources by**: Puoi selezionare le applicazioni per nome (`Application Name`), per namespace (`Namespace`) o per etichette.
+    - Per salvare tutte le applicazioni di un namespace, scegli `Namespace` e seleziona il namespace desiderato.
 
-5. **Click `Create Policy`** to save.
+5. **Fai clic su `Create Policy`** per salvare.
 
-The policy will run automatically at the defined frequency. You can also trigger a manual execution by clicking the "Play" (▶️) button next to the policy.
+La politica verrà eseguita automaticamente alla frequenza impostata. Puoi anche avviare un'esecuzione manuale facendo clic sul pulsante "Play" (▶️) accanto alla politica.
 
-## 4. Restore an application
+## 4. Ripristinare un'applicazione
 
-Kasten makes it easy to restore an application to a previous state from a backup point.
+Kasten facilita il ripristino di un'applicazione al suo stato precedente a partire da un punto di ripristino.
 
-1.  In the dashboard, go to the **Applications** section. You will see a list of your applications and their compliance status with backup policies.
+1. Nella dashboard, vai alla sezione **Applicazioni**. Vedrai l'elenco delle tue applicazioni e il loro stato di conformità rispetto alle policy di backup.
 
-2.  **Select the application** you want to restore.
+2. **Seleziona l'applicazione** che desideri ripristinare.
 
-3.  **Choose a restore point**:
-    The application page displays a list of available restore points. Select the one you wish to use and click **Restore**.
+3. **Scegli un punto di ripristino** :
+    La pagina dell'applicazione visualizza un elenco dei punti di ripristino disponibili. Scegli quello che desideri utilizzare e fai clic su **Restore**.
 
-4.  **Configure the restore**:
-    - You can choose to restore into a new namespace or overwrite the existing application. For this tutorial, we will overwrite the existing application.
-    - Click **Restore** to start the process.
+4. **Configura il ripristino** :
+    - Puoi scegliere di ripristinare in un nuovo namespace o di sostituire l'applicazione esistente. Per questo tutorial, sostituiremo l'applicazione esistente.
+    - Fai clic su **Restore** per avviare il processo.
 
-Kasten will now restore the application to the state captured in the snapshot. You can track the progress in the dashboard.
+Kasten ripristinerà ora l'applicazione allo stato catturato nello snapshot. Puoi seguire l'avanzamento nella dashboard.
 
-## 5. Backup Security
+## 5. Sicurezza dei backup
 
-Protecting your backup data is a top priority. The integration of Kasten into the Managed Kubernetes offering adheres to the highest security standards.
+La protezione dei vostri dati di backup è una priorità. L'integrazione di Kasten nel prodotto Managed Kubernetes rispetta i più elevati standard di sicurezza.
 
--   **Encryption**: In compliance with SecNumCloud requirements, all your backups are encrypted. Data is encrypted in transit to the S3 storage using the **TLS 1.3** protocol and at rest in storage buckets using the **AES-256** algorithm.
+- **Crittografia** : In conformità ai requisiti SecNumCloud, tutti i vostri backup sono crittografati. I dati sono crittografati in transito verso l'archiviazione S3 tramite il protocollo **TLS 1.3** e a riposo nei bucket di storage con l'algoritmo **AES-256**.
 
--   **Permission Management**: Access to the Kasten interface and its features is controlled by a permissions system based on Kubernetes RBAC. Only authorized users can create, modify, or execute backup and restore policies, ensuring strict governance over your backup operations.
+- **Gestione dei permessi** : L'accesso all'interfaccia Kasten e alle relative funzionalità è controllato da un sistema di permessi basato sul RBAC di Kubernetes. Solo gli utenti autorizzati possono creare, modificare o eseguire le politiche di backup e ripristino, garantendo così una governance rigorosa delle vostre operazioni di backup.
 
 ## Conclusione
 
-Hai imparato a utilizzare Veeam Kasten per eseguire operazioni di backup e ripristino di base nel tuo cluster Kubernetes gestito. Kasten offre numerose funzionalità avanzate, come la migrazione di applicazioni tra cluster e politiche di conservazione granulari, che puoi esplorare per rafforzare la tua strategia di protezione dei dati.
+Avete imparato a utilizzare Veeam Kasten per eseguire operazioni di backup e ripristino di base nel vostro cluster Kubernetes gestito. Kasten offre numerose funzionalità avanzate, come la migrazione delle applicazioni tra cluster e politiche di retention granulari, che potete esplorare per rafforzare la vostra strategia di protezione dei dati.
 
-Per ulteriori informazioni, consulta la [documentazione ufficiale di Kasten K10](https://docs.kasten.io/latest/).
+Per ulteriori informazioni, consultate la [documentazione ufficiale di Kasten K10](https://docs.kasten.io/latest/).

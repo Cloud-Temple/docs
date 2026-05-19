@@ -29,6 +29,7 @@ In the context of this configuration:
 ## Software Versions
 
 Ensure the following software and tool versions are installed to guarantee optimal compatibility:  
+
 - **Kasten K10**: v5.5.10 or higher  
 - **OpenShift CLI**: v4.15.6 or higher  
 - **Kubernetes**: v1.24 or higher (via OpenShift)  
@@ -43,7 +44,7 @@ To follow this guide, ensure you have the following:
 2. **S3 keys provided by Cloud Temple**:
    - Access Key
    - Secret Key  
-3. **Preconfigured Bucket**: An S3 Cloud Temple Bucket, for example: `demobackup`.   
+3. **Preconfigured Bucket**: An S3 Cloud Temple Bucket, for example: `demobackup`.
 4. **Kubernetes Permissions**: You must have administrative permissions within the Kasten namespace (`kasten-io`) to perform configurations.  
 
 ---
@@ -61,6 +62,7 @@ To follow this guide, ensure you have the following:
 ## Required Files
 
 No specific file is required for this configuration, but you will need the following information from Cloud Temple:  
+
 - **S3 Access Key**  
 - **S3 Secret Key**  
 - **S3 SNC Endpoint URL**: For example, `xxxxx.s3.fr1.cloud-temple.com`.  
@@ -140,6 +142,7 @@ To confirm that the backup is correctly configured:
 By following this guide, you have successfully configured an S3-compatible SecNumCloud backup location in Kasten with the Cloud Temple infrastructure. This workflow allows you to efficiently manage your backups while leveraging a certified and secure storage solution.  
 
 To go further, you can:  
+
 - Add additional workloads to back up.  
 - Configure advanced retention policies in Kasten.  
 - Automate restore tests to validate your data.  

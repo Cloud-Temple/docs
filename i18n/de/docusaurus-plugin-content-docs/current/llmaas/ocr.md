@@ -12,11 +12,14 @@ Diese Anleitung beschreibt die Verwendung des **DeepSeek-OCR**-Modells, einer ho
 Im Gegensatz zu herkömmlichen OCR-Systemen ist DeepSeek-OCR ein End-to-End-Vision-Language-Modell, das entwickelt wurde, um Dokumente visuell zu "lesen" und zu "verstehen".
 
 ### Technische Architektur
+
 Es kombiniert zwei innovative Komponenten:
-1.  **DeepEncoder (380M)**: Ein hybrider visueller Encoder, der **SAM-base** (für die lokale Wahrnehmung) und **CLIP-large** (für das globale Wissen) kombiniert, verbunden durch einen 16x konvolutionellen Kompressor. Dies ermöglicht die Verarbeitung hochauflösender Bilder mit sehr wenigen visuellen Token.
-2.  **MoE-Decoder (3B)**: Basierend auf DeepSeek3B-MoE (570M aktive Parameter) generiert er strukturierten Text aus den komprimierten visuellen Token.
+
+1. **DeepEncoder (380M)**: Ein hybrider visueller Encoder, der **SAM-base** (für die lokale Wahrnehmung) und **CLIP-large** (für das globale Wissen) kombiniert, verbunden durch einen 16x konvolutionellen Kompressor. Dies ermöglicht die Verarbeitung hochauflösender Bilder mit sehr wenigen visuellen Token.
+2. **MoE-Decoder (3B)**: Basierend auf DeepSeek3B-MoE (570M aktive Parameter) generiert er strukturierten Text aus den komprimierten visuellen Token.
 
 ### Auflösungsmodi und Token-Verbrauch  
+
 Das Modell passt seinen Token-Verbrauch an die Bildauflösung an. Je größer das Bild ist, desto mehr Token verbraucht es, aber desto höher ist auch die Präzision.
 
 | Modus | Auflösung (px) | Vision-Token | Empfohlene Verwendung |
@@ -27,11 +30,12 @@ Das Modell passt seinen Token-Verbrauch an die Bildauflösung an. Je größer da
 | **Large** | 1280 x 1280 | 400 | Dichte Dokumente, kleine Zeichen |
 | **Gundam** | Dynamisch | ~800 | Zeitungen, Baupläne, komplexe Scans |
 
-:::tip Optimierung  
+:::tip[Optimierung  ]
 Um Kosten und Latenz zu optimieren, ändern Sie die Größe Ihrer Bilder auf die minimale Auflösung, die erforderlich ist, damit der Text lesbar bleibt.  
 :::
 
 ### Multilingualer Support
+
 Das Modell wurde an einem umfangreichen Korpus mehrsprachiger Dokumente trainiert und unterstützt die Erkennung von fast **100 Sprachen** (darunter Deutsch, Englisch, Chinesisch, Arabisch usw.), mit oder ohne Layout-Erhaltung.
 
 ## Prompt-Leitfaden (Prompt Engineering)
@@ -39,6 +43,7 @@ Das Modell wurde an einem umfangreichen Korpus mehrsprachiger Dokumente trainier
 Die Qualität des Ergebnisses hängt direkt vom verwendeten Prompt ab. DeepSeek-OCR reagiert auf spezifische Anweisungen, um seine verschiedenen Funktionen zu aktivieren.
 
 ### 1. Standard-OCR (Markdown)
+
 Um Text mit seiner Struktur (Überschriften, Absätze, Tabellen) zu extrahieren.
 
 **Prompt:**
@@ -47,17 +52,20 @@ Um Text mit seiner Struktur (Überschriften, Absätze, Tabellen) zu extrahieren.
 **Ergebnis:** Strukturierter Text, formatierte Tabellen, Layout erhalten.
 
 ### 2. "Deep Parsing" (Abbildungen, Grafiken, Formeln)
+
 Zur Analyse des semantischen Inhalts von Grafiken, chemischen Formeln oder geometrischen Diagrammen.
 
 **Prompt:**
 > `Analysieren Sie die Abbildung.`
 
 **Funktionen:**
--   **Grafiken (Balken/Linien/Kreisdiagramm)**: Konvertiert in HTML- oder Markdown-Tabelle.
--   **Chemische Formeln**: Konvertiert in das SMILES-Format.
--   **Geometrie**: Beschreibt geometrische Elemente.
+
+- **Grafiken (Balken/Linien/Kreisdiagramm)**: Konvertiert in HTML- oder Markdown-Tabelle.
+- **Chemische Formeln**: Konvertiert in das SMILES-Format.
+- **Geometrie**: Beschreibt geometrische Elemente.
 
 ### 3. Grounding (Lokalisierung)
+
 Um die Koordinaten eines bestimmten Elements im Bild zu finden.
 
 **Prompt:**
@@ -67,6 +75,7 @@ Um die Koordinaten eines bestimmten Elements im Bild zu finden.
 **Ergebnis:** Gibt die Koordinaten des Begrenzungsrahmens (Bounding Box) des Elements zurück.
 
 ### 4. Objekterkennung  
+
 Um alle sichtbaren Objekte aufzulisten und zu lokalisieren.
 
 **Prompt:**  
@@ -77,10 +86,11 @@ Um alle sichtbaren Objekte aufzulisten und zu lokalisieren.
 Hier ist ein vollständiges Beispiel, das zeigt, wie Sie Ihren API-Aufruf strukturieren, um diese Funktionen zu nutzen.
 
 ### Voraussetzungen: Bildformat und Abhängigkeiten
--   **Format**: JPEG oder PNG.
--   **Modus**: RGB (keine Alpha-Transparenz).
--   **PDF**: Müssen vorher in Bilder umgewandelt werden (150-300 DPI).
--   **Größe**: Es wird empfohlen, sehr hochauflösende Bilder zu verkleinern, um Fehler aufgrund von Größenbeschränkungen (413 Payload Too Large) zu vermeiden.
+
+- **Format**: JPEG oder PNG.
+- **Modus**: RGB (keine Alpha-Transparenz).
+- **PDF**: Müssen vorher in Bilder umgewandelt werden (150-300 DPI).
+- **Größe**: Es wird empfohlen, sehr hochauflösende Bilder zu verkleinern, um Fehler aufgrund von Größenbeschränkungen (413 Payload Too Large) zu vermeiden.
 
 Installieren Sie die erforderlichen Bibliotheken:
 
@@ -205,6 +215,7 @@ Das Modell gibt eine textliche oder tabellarische Darstellung der Diagrammdaten 
 ## Erweiterte Anwendungsfälle
 
 ### Extraktion komplexer Tabellen  
+
 DeepSeek-OCR zeichnet sich durch die Konvertierung von Tabellen aus, selbst ohne klare Trennlinien.
 
 **Eingabebild:**

@@ -1,23 +1,24 @@
 ---
-title: Usare Cilium Gateway API
+title: Utilizzare Cilium Gateway API
 ---
 
 import gapischema from '@site/docs/managed_kubernetes/tutorials/images/gapi.png'
 
 ## Introduzione
 
-L'API Gateway è lo standard Kubernetes per la gestione del traffico in entrata. Sostituisce la risorsa Ingress tradizionale offrendo maggiore flessibilità, funzionalità avanzate (routing avanzato, bilanciamento del carico, ecc.) e una migliore separazione delle responsabilità.
+L'API Gateway è il nuovo standard Kubernetes per la gestione del traffico in entrata. Sostituisce la tradizionale risorsa Ingress offrendo maggiore flessibilità, funzionalità (routing avanzato, bilanciamento del carico, ecc.) e una migliore separazione delle responsabilità.
 
-Nel tuo cluster Kubernetes gestito Cloud Temple, **Cilium** viene utilizzato come CNI e implementa nativamente il supporto per Gateway API.
+Nel tuo cluster Managed Kubernetes Cloud Temple, **Cilium** è utilizzato come CNI e implementa nativamente il supporto per la Gateway API.
 
-:::info Versioni supportate
-Questa documentazione si applica ai cluster che utilizzano **Cilium 1.8.4 o versioni successive**.
-Le **CRD Gateway API nella versione 1.4** sono già preinstallate sul tuo cluster.
+:::info[Versioni supportate
+]
+Questa documentazione si applica ai cluster che utilizzano **Cilium 1.8.4 o superiore**.
+I **CRD della Gateway API versione 1.4** sono preinstallati nel tuo cluster.
 :::
 
 ## Obiettivi
 
-Questo tutorial ti guiderà attraverso i seguenti passaggi:
+Questo tutorial vi guiderà per:
 
 - Comprendere le risorse di base di Gateway API (GatewayClass, Gateway, HTTPRoute).
 - Distribuire un'applicazione di test.
@@ -27,50 +28,51 @@ Questo tutorial ti guiderà attraverso i seguenti passaggi:
 ## Prerequisiti
 
 - Un cluster Kubernetes gestito Cloud Temple operativo.
-- Lo strumento `kubectl` configurato per accedere al cluster.
+- Lo strumento `kubectl` configurato per accedere al tuo cluster.
 - Lo strumento `cilium`.
 
 ## Concetti Chiave
 
-Gateway API suddivide la configurazione di rete in tre risorse principali:
+Gateway API scompone la configurazione di rete in tre risorse principali:
 
-1.  **GatewayClass**: definisce il tipo di controller (in questo caso, `io.cilium/gateway`).
-2.  **Gateway**: istanzia un punto di ingresso di rete (load balancer).
-3.  **HTTPRoute**: definisce le regole di routing (percorsi, intestazioni) verso i servizi Kubernetes.
+1. **GatewayClass** : Definisce il tipo di controller (qui, `io.cilium/gateway`).
+2. **Gateway** : Istanzia un punto di ingresso di rete (load balancer).
+3. **HTTPRoute** : Definisce le regole di routing (percorsi, header) verso i Servizi Kubernetes.
 
 <img src={gapischema} alt="Schema GAPI"/>
 
-## Step 1: Check the version and GatewayClass
+## Fase 1: Verificare la versione e la GatewayClass
 
-You can verify that your cluster is running a compatible version of Cilium (1.8.4+) using the following commands:
+È possibile verificare che il cluster utilizzi una versione compatibile di Cilium (1.8.4+) utilizzando i comandi:
 
 ```bash
 cilium status
 cilium config view | grep -w "enable-gateway-api"
 ```
 
-Then, ensure that the Cilium `GatewayClass` is available in your cluster:
+Assicurarsi quindi che la `GatewayClass` di Cilium sia disponibile sul cluster:
 
 ```bash
 kubectl get gatewayclass
 ```
 
-You should see output similar to:
+Si dovrebbe ottenere un output simile al seguente:
 
 ```text
 NAME      CONTROLLER           ACCEPTED   AGE
 cilium    io.cilium/gateway    True       2d
 ```
 
-:::info Note
-If no GatewayClass is listed, make sure the Gateway API feature is enabled in your Cilium installation.
+:::info[Nota
+]
+Se non viene elencata alcuna GatewayClass, assicurarsi che la funzionalità Gateway API sia abilitata nell'installazione di Cilium.
 :::
 
-## Step 2: Deploy a demonstration application
+## Fase 2 : Distribuire un'applicazione di dimostrazione
 
-We will deploy a simple application that returns information about the pod (echo-server).
+Distribuiremo un'applicazione semplice che restituisce informazioni sul pod (echo-server).
 
-Create a file named `apps.yaml`:
+Crea un file `apps.yaml` :
 
 ```yaml
 apiVersion: apps/v1
@@ -109,17 +111,17 @@ spec:
     targetPort: 80
 ```
 
-Apply the configuration:
+Applica la configurazione :
 
 ```bash
 kubectl apply -f apps.yaml
 ```
 
-## Step 3: Create the Gateway
+## Passo 3 : Creare il Gateway
 
-The Gateway will request the creation of a LoadBalancer to receive traffic.
+Il Gateway richiederà la creazione di un LoadBalancer per ricevere il traffico.
 
-Create a file named `gateway.yaml`:
+Crea un file `gateway.yaml` :
 
 ```yaml
 apiVersion: gateway.networking.k8s.io/v1
@@ -137,25 +139,25 @@ spec:
         from: Same
 ```
 
-Apply the configuration:
+Applica la configurazione :
 
 ```bash
 kubectl apply -f gateway.yaml
 ```
 
-Check that the Gateway has obtained an IP address (this may take a few moments while the LoadBalancer is provisioned by the Temple Cloud infrastructure):
+Verifica che il Gateway abbia ottenuto un indirizzo IP (potrebbero volerci alcuni istanti affinché il LoadBalancer venga provisionato dall'infrastruttura Cloud Temple) :
 
 ```bash
 kubectl get gateway my-gateway
 ```
 
-Wait until the `PROGRAMMED` field is `True` and the `ADDRESS` field displays an IP.
+Attendi che il campo `PROGRAMMED` sia `True` e che `ADDRESS` mostri un IP.
 
-## Step 4: Create an HTTPRoute
+## Passo 4 : Creare una HTTPRoute
 
-Now that we have a "gateway", we need to route traffic to our service.
+Ora che disponiamo di un "gateway" (Gateway), dobbiamo instradare il traffico verso il nostro servizio.
 
-Create a file named `httproute.yaml`:
+Crea un file `httproute.yaml` :
 
 ```yaml
 apiVersion: gateway.networking.k8s.io/v1
@@ -175,33 +177,33 @@ spec:
       port: 80
 ```
 
-Apply the configuration:
+Applica la configurazione :
 
 ```bash
 kubectl apply -f httproute.yaml
 ```
 
-## Step 5: Test the access
+## Fase 5: Testare l'accesso
 
-Retrieve the IP address of your Gateway:
+Recuperare l'indirizzo IP del Gateway:
 
 ```bash
 kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}'
 ```
 
-Send a request to this IP to test:
+Inviare una richiesta a questo IP per testare:
 
 ```bash
 curl http://10.200.205.2
 ```
 
-You should receive a JSON response from the `echo-server` application indicating the details of the pod that responded.
+Dovresti ricevere una risposta JSON dall'applicazione `echo-server` che indica i dettagli del pod che ha risposto.
 
-## Funzionalità avanzate (Esempio: Canary Release)
+## Funzionalità avanzate (Esempio : Canary Release)
 
-Gateway API semplifica notevolmente scenari di distribuzione avanzati, come il Canary Release (distribuzione ponderata del traffico).
+Gateway API facilita notevolmente gli scenari di deployment avanzati, come il Canary Release (distribuzione ponderata del traffico).
 
-Supponiamo di avere una versione v2 della nostra applicazione. Possiamo distribuire il traffico al 90% alla v1 e al 10% alla v2 semplicemente regolando i pesi in `backendRefs`:
+Supponiamo di avere una v2 della nostra applicazione. Possiamo distribuire il traffico al 90% verso v1 e al 10% verso v2 semplicemente regolando i pesi in `backendRefs` :
 
 ```yaml
 apiVersion: gateway.networking.k8s.io/v1
@@ -223,4 +225,4 @@ spec:
 
 ## Conclusione
 
-Hai implementato un'infrastruttura moderna per l'esposizione dei servizi tramite Cilium Gateway API. Questa soluzione standardizzata, più ricca dal punto di vista semantico rispetto agli Ingress, è raccomandata per sfruttare appieno le capacità avanzate della rete Kubernetes.
+Avete implementato un'infrastruttura moderna per l'esposizione dei servizi con Cilium Gateway API. Questo approccio standardizzato, semanticamente più ricco rispetto agli Ingress, è consigliato per sfruttare le funzionalità avanzate della rete Kubernetes.

@@ -20,12 +20,14 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 ### Componenti Principali
 
 #### 1. **API Gateway LLMaaS**
+
 - **Compatibile OpenAI** : Integrazione trasparente con l'ecosistema esistente
 - **Limitazione velocità** : Gestione dei limiti di utilizzo per livello di fatturazione
 - **Equilibrio carico** : Distribuzione intelligente su 12 macchine GPU
 - **Monitoraggio** : Metriche in tempo reale e allarmi
 
 #### 2. **Servizio di Autenticazione**
+
 - **Token API sicuri** : Rotazione automatica
 - **Controllo degli accessi** : Permessi granulari per modello
 - **Tracce di audit** : Tracciabilità completa degli accessi
@@ -39,16 +41,19 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 ### Gestione dei token
 
 #### **Tipi di token**
+
 - **Token di input**: Il tuo prompt e il contesto
 - **Token di output**: La risposta generata dal modello
 - **Token di sistema**: Metadati e istruzioni
 
 #### **Calcolo dei Costi**
+
 ```
 Costo totale = (Tokens di input × 1,9€/M) + (Tokens di output × 8€/M) + (Tokens di ragionamento di output × 8€/M)
 ```
 
 #### **Ottimizzazione**
+
 - **Context window**: Riutilizzate le contesto delle conversazioni per risparmiare
 - **Modelli appropriati**: Scegliete la dimensione in base alla complessità
 - **Max token**: Limitate la lunghezza delle risposte
@@ -76,16 +81,19 @@ print(f"Costo stimato: {total_cost:.6f}€")
 Il servizio LLMaaS è erogato su un'infrastruttura tecnica che gode della **qualifica SecNumCloud 3.2** dell'ANSSI, che garantisce:
 
 #### **Protezione dei Dati**
+
 - **Crittografia end-to-end**: TLS 1.3 per tutti gli scambi
 - **Archiviazione sicura**: Dati crittografati inattivi (AES-256)
 - **Isolamento**: Ambienti dedicati per ogni tenant
 
 #### **Sovranità Digitale**
+
 - **Hosting in Francia** : Datacenter Cloud Temple certificati
 - **Diritto francese** : Conformità nativa al RGPD
 - **Nessuna esposizione** : Nessun trasferimento verso cloud esteri
 
 #### **Audit e Tracciabilità**
+
 - **Log completi** : Tutte le interazioni tracciate
 - **Ritenzione** : Conservazione secondo le politiche legali
 - **Conformità** : Report di audit disponibili
@@ -100,24 +108,27 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 L'analisi dei prompt è una funzionalità de sicurezza **nativa e integrata** nella piattaforma LLMaaS. Abilitata per impostazione predefinita, ha lo scopo di rilevare e prevenire tentativi di "jailbreak" o di iniezione di prompt malevoli prima che raggiungano effettivamente il modello. Questa protezione si basa su un approccio multilivello.
 
-:::tip Contatta il supporto per la disattivazione
+:::tip[Contatta il supporto per la disattivazione]
 È possibile disattivare questa analisi di sicurezza in casi d'uso molto specifici, anche se ciò non è raccomandato. Per qualsiasi domanda in merito o per richiedere la disattivazione, ti preghiamo di contattare il supporto Cloud Temple.
 :::
 
 #### 1. Analisi Strutturale (`check_structure`)
+
 - **JSON malformato** : Il sistema verifica se il prompt inizia con un `{` e tenta di analizzarlo come JSON. Se l'analisi ha successo e il JSON contiene parole chiave sospette (es: "system", "bypass"), oppure se l'analisi fallisce in modo imprevisto, ciò può indicare un tentativo di iniezione.
 - **Normalizzazione Unicode** : Il prompt viene normalizzato utilizzando `unicodedata.normalize('NFKC', prompt)`. Se il prompt originale differisce dalla sua versione normalizzata, ciò può indicare l'uso di caratteri Unicode ingannevoli (omografi) per eludere i filtri. Ad esempio, "аdmin" (cirillico) invece di "admin" (latino).
 
 #### 2. Detection of Suspicious Patterns (`check_patterns`)
+
 - The system uses regular expressions (`regex`) to identify known attack patterns in prompts, across multiple languages (French, English, Chinese, Japanese).
 - **Examples of detected patterns**:
-    - **System Commands**: Keywords such as "ignore the instructions", "ignore instructions", "忽略指令", "指示を無視".
-    - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
-    - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
-    - **Repeated Sequences**: Excessive repetition of words or phrases, such as "forget forget forget", "oublie oublie oublie".
-    - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obscure commands (e.g., "s\u0443stème").
+  - **System Commands**: Keywords such as "ignore the instructions", "ignore instructions", "忽略指令", "指示を無視".
+  - **HTML Injection**: Hidden or malicious HTML tags, for example `<div hidden>`, `<hidden div>`.
+  - **Markdown Injection**: Malicious Markdown links, for example `[text](javascript:...)`, `[text](data:...)`.
+  - **Repeated Sequences**: Excessive repetition of words or phrases, such as "forget forget forget", "oublie oublie oublie".
+  - **Special/Mixed Characters**: Use of unusual Unicode characters or mixing of scripts to obscure commands (e.g., "s\u0443stème").
 
 #### 3. Behavioral Analysis (`check_behavior`)
+
 - The load balancer maintains a history of recent prompts.
 - **Fragmentation Detection**: It combines recent prompts to check whether an attack is fragmented across multiple requests. For example, if "ignore" is sent in one prompt and "instructions" in the next, the system can detect them together.
 - **Repetition Detection**: It identifies if the same prompt is repeated excessively. The current threshold for repetition detection is 30 consecutive identical prompts.
@@ -129,6 +140,7 @@ This multi-layered approach enables the detection of a wide range of prompt atta
 ### Monitoraggio in tempo reale
 
 Accesso tramite **Console Cloud Temple**:
+
 - Metriche di utilizzo per modello
 - Grafici di latenza e throughput
 - Allarmi sui limiti di prestazioni
@@ -163,18 +175,21 @@ response = client_ct.chat.completions.create(
 ### Ecosistema supportato
 
 #### **Frameworks IA**
+
 - ✅ **LangChain** : Integrazione nativa
 - ✅ **Haystack** : Pipeline di documenti
 - ✅ **Semantic Kernel** : Orchestrazione Microsoft
 - ✅ **AutoGen** : Agenti conversazionali
 
 #### **Strumenti Sviluppo**
+
 - ✅ **Jupyter** : Notebook interattivi
 - ✅ **Streamlit** : Applicazioni web veloci
 - ✅ **Gradio** : Interfacce utente per l'IA
 - ✅ **FastAPI** : API backend
 
 #### **Piattaforme No-Code**
+
 - ✅ **Zapier** : Automations
 - ✅ **Make** : Integrazioni visive
 - ✅ **Bubble** : Applicazioni web
@@ -304,6 +319,79 @@ Il mondo dei LLM evolve molto rapidamente. Per garantire ai nostri clienti l'acc
 | qwen2.5:3b                | Deprecato | 17/10/2025            |
 | deepseek-r1:671b          | Deprecato | 17/10/2025            |
 
+---
+
+## RAG: Interrogare i Propri Dati con un LLM
+
+Questo documento spiega i concetti fondamentali della tecnica di **Retrieval-Augmented Generation (RAG)**.
+
+:::tip[Codice di Esempio Disponibile]
+I concetti trattati qui sono illustrati in una demo completa disponibile sul nostro GitHub.
+
+➡️ **[Accedi al codice del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+:::
+
+### Il problema: i LLM non hanno memoria a lungo termine
+
+Un LLM conosce solo i dati su cui è stato addestrato. **RAG** gli dà una "memoria esterna" fornendogli gli estratti di documenti più rilevanti al momento della domanda.
+
+1. **Retrieval (Recupero)**: Trovare i documenti giusti.
+2. **Augmented Generation**: Usare questi documenti per generare una risposta.
+
+![Schema concettuale del RAG](@site/docs/llmaas/images/rag_concept_overview.png)
+
+### Passo 1: Embedding: Trasformare le Parole in Numeri
+
+L'**embedding** traduce un testo in un elenco di numeri chiamato **vettore**.
+
+:::tip[Cos'è un vettore?]
+Un vettore è un elenco di numeri che rappresenta un punto in uno spazio multidimensionale con dimensioni semantiche astratte.
+:::
+
+`"Il gatto è sul tappeto."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
+
+![Esempio di vettore di embedding](@site/docs/llmaas/images/embedding_vector_example.png)
+
+:::tip[Analogia Geografica]
+"Parigi" e "Francia" sarebbero vicine, così come "Roma" e "Italia". L'embedding fa lo stesso con migliaia di dimensioni.
+:::
+
+#### Perché Granite Embedding?
+
+I modelli **Granite Embedding** di IBM si distinguono per:
+
+1. **Addestramento Etico e Commercialmente Sicuro**: IBM ha verificato l'idoneità commerciale di tutte le fonti di dati.
+2. **Indennizzazione della Proprietà Intellettuale**: Stesso livello di indennizzazione illimitata degli altri modelli IBM.
+3. **Prestazioni ed Efficienza**: Paragonabile ai principali modelli open source.
+
+![Benchmark delle Prestazioni dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
+*Confronto delle prestazioni su attività di ricerca (BEIR) e ricerca di codice (CoIR).*
+
+![Benchmark della Velocità dei Modelli Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
+*Confronto della latenza tra diversi modelli di embedding.*
+
+### Passo 2: Ricerca: Misurare la Prossimità Semantica
+
+#### Similarità Coseno (Lo Standard)
+
+- Misura l'**angolo** tra due vettori. Angolo piccolo = significato simile.
+- Score: 1 = similarità perfetta, 0 = nessuna similarità.
+
+![Illustrazione della Similarità Coseno](@site/docs/llmaas/images/cosine_similarity_concept.png)
+
+#### Distanza Euclidea (Il Righello)
+
+- La distanza "in linea d'aria" tra i punti terminali di due vettori.
+- Score 0 = identici. Più alto = più distanti.
+
+![Illustrazione della Distanza Euclidea](@site/docs/llmaas/images/euclidean_distance_concept.png)
+
+### Conclusione RAG
+
+La sfida più grande rimane la **qualità del modello di embedding**. Un buon modello produce vettori che catturano fedelmente il significato, rendendo il calcolo della prossimità molto più affidabile.
+
+---
+
 ## 💡 Best Practices
 
 Per sfruttare al meglio l'API LLMaaS, è fondamentale adottare strategie di ottimizzazione dei costi, delle prestazioni e della sicurezza.
@@ -312,7 +400,7 @@ Per sfruttare al meglio l'API LLMaaS, è fondamentale adottare strategie di otti
 
 Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
 
-1.  **Scelta del Modello**: Non utilizzare un modello potente per compiti semplici. Un modello più grande è più capace, ma è anche più lento e consuma molto di più energia, influenzando direttamente il costo. Adatta la dimensione del modello alla complessità del tuo bisogno per un equilibrio ottimale.
+1. **Scelta del Modello**: Non utilizzare un modello potente per compiti semplici. Un modello più grande è più capace, ma è anche più lento e consuma molto di più energia, influenzando direttamente il costo. Adatta la dimensione del modello alla complessità del tuo bisogno per un equilibrio ottimale.
 
     Ad esempio, per elaborare un milione di token:
     - **`Gemma 3 1B`** consuma **0,15 kWh**.
@@ -327,7 +415,8 @@ Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
         model = "deepseek-r1:70b"
     ```
 
-2.  **Gestione del Contesto**: La cronologia della conversazione (`messages`) viene restituita a ogni chiamata, consumando token in ingresso. Per conversazioni lunghe, considera strategie di riassunto o finestra scorrevole per mantenere solo le informazioni rilevanti.
+2. **Gestione del Contesto**: La cronologia della conversazione (`messages`) viene restituita a ogni chiamata, consumando token in ingresso. Per conversazioni lunghe, considera strategie di riassunto o finestra scorrevole per mantenere solo le informazioni rilevanti.
+
     ```python
     # Per una conversazione lunga, si può riassumere la parte iniziale.
     messages = [
@@ -338,7 +427,8 @@ Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
     ]
     ```
 
-3.  **Limitazione dei Token di Output**: Utilizza sempre il parametro `max_tokens` per evitare risposte eccessivamente lunghe e costose. Imposta un limite ragionevole in base a ciò che ti aspetti.
+3. **Limitazione dei Token di Output**: Utilizza sempre il parametro `max_tokens` per evitare risposte eccessivamente lunghe e costose. Imposta un limite ragionevole in base a ciò che ti aspetti.
+
     ```python
     # Richiedi un riassunto di massimo 100 parole.
     response = client.chat.completions.create(
@@ -352,7 +442,8 @@ Il controllo dei costi si basa sull'uso intelligente dei token e dei modelli.
 
 La reattività della tua applicazione dipende dal modo in cui gestisci le chiamate all'API.
 
-1.  **Richieste asincrone**: Per elaborare più richieste senza attendere il completamento di ciascuna, utilizza chiamate asincrone. Questo è particolarmente utile per le applicazioni backend che elaborano un grande volume di richieste simultanee.
+1. **Richieste asincrone**: Per elaborare più richieste senza attendere il completamento di ciascuna, utilizza chiamate asincrone. Questo è particolarmente utile per le applicazioni backend che elaborano un grande volume di richieste simultanee.
+
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -370,7 +461,8 @@ La reattività della tua applicazione dipende dal modo in cui gestisci le chiama
         return await asyncio.gather(*tasks)
     ```
 
-2.  **Streaming per l'esperienza utente (UX)**: Per le interfacce utente (chatbot, assistenti), lo streaming è fondamentale. Permette di visualizzare la risposta del modello parola per parola, creando l'effetto di una reattività immediata invece di attendere l'intera risposta.
+2. **Streaming per l'esperienza utente (UX)**: Per le interfacce utente (chatbot, assistenti), lo streaming è fondamentale. Permette di visualizzare la risposta del modello parola per parola, creando l'effetto di una reattività immediata invece di attendere l'intera risposta.
+
     ```python
     # Mostra la risposta in tempo reale in un'interfaccia utente
     response_stream = client.chat.completions.create(
@@ -388,7 +480,8 @@ La reattività della tua applicazione dipende dal modo in cui gestisci le chiama
 
 La sicurezza della tua applicazione è fondamentale, soprattutto quando gestisci input dell'utente.
 
-1.  **Validazione e pulizia degli input (Sanitizzazione)** : Non fare mai affidamento sugli input dell'utente. Prima di inviarli all'API, puliscili per rimuovere qualsiasi codice potenzialmente dannoso o istruzioni di "prompt injection". Limita anche la loro lunghezza per evitare abusi.
+1. **Validazione e pulizia degli input (Sanitizzazione)** : Non fare mai affidamento sugli input dell'utente. Prima di inviarli all'API, puliscili per rimuovere qualsiasi codice potenzialmente dannoso o istruzioni di "prompt injection". Limita anche la loro lunghezza per evitare abusi.
+
     ```python
     def sanitize_input(user_input: str) -> str:
         # Esempio semplice: rimuovere i delimitatori di codice e limitare la lunghezza.
@@ -397,7 +490,8 @@ La sicurezza della tua applicazione è fondamentale, soprattutto quando gestisci
         return cleaned[:2000]  # Limite la lunghezza a 2000 caratteri
     ```
 
-2.  **Gestione robusta degli errori** : Racchiudi sempre le chiamate API all'interno di blocchi `try...except` per gestire errori di rete, errori dell'API (es. 429 Rate Limit, 500 Internal Server Error) e fornire un'esperienza utente degradata ma funzionale.
+2. **Gestione robusta degli errori** : Racchiudi sempre le chiamate API all'interno di blocchi `try...except` per gestire errori di rete, errori dell'API (es. 429 Rate Limit, 500 Internal Server Error) e fornire un'esperienza utente degradata ma funzionale.
+
     ```python
     from openai import APIError, APITimeoutError
 

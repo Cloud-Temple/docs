@@ -1,55 +1,59 @@
 ---
-title: Overview of Containerization Offerings
-sidebar_position: 10 # Position just before IaaS
+title: Übersicht der Containerisierungsangebote
+sidebar_position: 10 # Position direkt vor IaaS
 ---
 
-# Containerization – Accelerator for Your Digital Transformation
+# Containerisierung, Beschleuniger Ihrer digitalen Transformation
 
-In the context of accelerated digital transformation, the ability to rapidly develop, deploy, and evolve applications has become a decisive competitive advantage. Containerization, orchestrated by platforms such as Kubernetes and OpenShift, addresses this challenge by delivering unmatched agility, portability, and operational efficiency.
+In einem Umfeld beschleunigter digitaler Transformation ist die Fähigkeit, Anwendungen schnell zu entwickeln, bereitzustellen und weiterzuentwickeln, zu einem entscheidenden Wettbewerbsvorteil geworden. Die Containerisierung, orchestriert durch Plattformen wie Kubernetes und OpenShift, adressiert diese Herausforderung, indem sie eine unübertroffene Agilität, Portabilität und Betriebseffizienz bietet.
 
-However, the inherent complexity of these technologies can represent a barrier. That’s why Cloud Temple has developed a range of managed, "as a Service" solutions that enable you to harness the full power of containers while relieving you of the burden of managing their complexity. Our offerings are designed to allow you to focus on your core business: application innovation, on a sovereign and trustworthy foundation.
+Die inhärente Komplexität dieser Technologien kann jedoch ein Hemmnis darstellen. Aus diesem Grund hat Cloud Temple eine Palette von verwalteten "as a Service"-Lösungen entwickelt, die es Ihnen ermöglichen, die volle Leistungsfähigkeit von Containern zu nutzen, während Sie von der Komplexität ihres Managements entlastet werden. Unsere Angebote sind darauf ausgelegt, Ihnen die Konzentration auf Ihr Kerngeschäft zu ermöglichen: die Anwendungsinnovation, auf einer souveränen und vertrauenswürdigen Basis.
 
-## Unser Lösungsportfolio: Welche Richtung für Ihr Projekt?
+## Unser Lösungsportfolio: Welcher Weg für Ihr Projekt?
 
-Diese Tabelle hebt die Stärken und das Positioning jeder Lösung hervor, um eine schnelle Entscheidungsfindung zu ermöglichen.
+Diese Tabelle hebt die Stärken und die Positionierung jeder Lösung hervor, um eine schnelle Entscheidungsfindung zu ermöglichen.
 
 | Kriterium                      | PaaS OpenShift                                                                                                                | Managed Kubernetes                                                                                                   |
 | :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| **Schlüsselpositionierung**       | **Vertrauen ohne Kompromisse**<br/>_Plattform "as a Service", der schnellste Weg zur Modernisierung auf einer zertifizierten Basis._ | **Flexibilität durch Open Source**<br/>_Ein reiner, portabler Kubernetes ohne Zusatzschicht auf einer souveränen Infrastruktur._ |
-| **Service-Level**        | as a Service                                                                                                                  | Managé                                                                                                               |
-| **Konformität & Sicherheit**    | **100 % SecNumCloud**                                                                                                          | Hosted auf SNC-Infrastruktur                                                                                       |
-| **Zielgruppe**       | Entwicklungsteams, DevOps                                                                                              | DevOps-Teams, Kubernetes-Experten                                                                                   |
-| **Unterscheidungsmerkmal** | Einfachheit und schnelle Bereitstellung                                                                                         | Open Source, portabel und ohne Zusatzschicht                                                                              |
+| **Kernpositionierung**       | **Unkompromissiges Vertrauen**<br/>_Plattform "as a Service", der schnellste Weg zur Modernisierung auf einer zertifizierten Basis._ | **Open-Source-Flexibilität**<br/>_Ein reines, portables und schichtenfreies Kubernetes auf einer souveränen Infrastruktur._ |
+| **Servicelevel**        | as a Service                                                                                                                  | Managed                                                                                                               |
+| **Compliance & Sicherheit**    | **100 % SecNumCloud**                                                                                                          | Auf SNC-Infrastruktur gehostet                                                                                       |
+| **Ideale Zielgruppe**       | Entwicklungsteams, DevOps                                                                                              | DevOps-Teams, Kubernetes-Experten                                                                                   |
+| **Unterscheidungsmerkmal** | Einfachheit und schnelle Bereitstellung                                                                                         | Open-Source, portabel und schichtenfrei                                                                              |
 
-### Technical Component Comparison
+### Vergleich der technischen Komponenten
 
-Beyond positioning, each offering is based on distinct technological choices that address specific requirements. The table below details the fundamental software building blocks that make up each solution.
+Jenseits der Positionierung setzt jedes Produkt auf unterschiedliche technologische Entscheidungen, die spezifische Anforderungen erfüllen. Die folgende Tabelle listet die grundlegenden Softwarekomponenten auf, aus denen jede Lösung besteht.
 
-| Technical Component        | PaaS OpenShift                     | Managed Kubernetes          |
-| :------------------------- | :--------------------------------- | :-------------------------- |
-| **OS Base**                | Red Hat CoreOS (RHCOS)             | Talos OS (immutable)        |
+| Technische Komponente      | PaaS OpenShift                     | Managed Kubernetes          |
+| :--------------------------- | :--------------------------------- | :-------------------------- |
+| **OS-Grundlage**           | Red Hat CoreOS (RHCOS)             | Talos OS (immutable)        |
 | **Orchestrator**           | Red Hat OpenShift                  | Kubernetes (CNCF)           |
-| **Persistent Storage**     | OpenShift Data Foundation          | Rook-Ceph                   |
-| **Networking (CNI)**       | OVN-Kubernetes                     | Cilium                      |
-| **Ingress / Load Balancing** | HAProxy / MetalLB                | NGINX Ingress / MetalLB     |
-| **Security (Policy Engine)** | Security Context Constraints (SCC) | PSA + Kyverno + Capsule     |
-| **Backup**                 | Veeam Kasten K10 (optional)        | Veeam Kasten K10 (included) |
-| **Automation (GitOps)**    | OpenShift Pipelines                | ArgoCD                      |
+| **Persistenter Speicher**  | OpenShift Data Foundation          | Rook-Ceph                   |
+| **Netzwerk (CNI)**         | OVN-Kubernetes                     | Cilium                      |
+| **Ingress / Lastverteilung**| HAProxy / MetalLB                  | NGINX Ingress / MetalLB     |
+| **Sicherheit (Policy Engine)** | Security Context Constraints (SCC) | PSA + Kyverno + Capsule |
+| **Backup**                 | Veeam Kasten K10 (optional)        | Veeam Kasten K10 (inklusive)|
+| **Automatisierung (GitOps)** | OpenShift Pipelines              | ArgoCD                      |
 | **Observability**          | Prometheus / Grafana               | Prometheus / Grafana / Loki |
 
-## Which solution for your project?
+---
 
-Choosing a containerization platform is a strategic decision. Here are some key points to help you select the most suitable offering for your context.
+## Welche Lösung für Ihr Projekt?
 
-*   **If regulatory compliance is your absolute priority...**  
-    ...and you operate in a highly regulated sector (public, healthcare, finance) or need to certify your own solution, the **OpenShift PaaS offering** is the reference solution, providing the highest level of market assurance.
+Die Wahl der Containerisierungsplattform ist eine strategische Entscheidung. Hier sind einige Orientierungshilfen, um Sie zum für Ihren Kontext passendsten Produkt zu führen.
 
-*   **If you value open source, modernity, and "zero-trust" security...**  
-    ...and your company culture strongly emphasizes open source, independence from vendors, and next-generation security approaches (immutable systems, API-driven management), the **Managed Kubernetes offering** best aligns with your vision.
+* **Wenn die regulatorische Compliance Ihre absolute Priorität ist...**
+    ...und Sie in einem stark regulierten Sektor (Öffentlicher Dienst, Gesundheitswesen, OIV) tätig sein müssen oder Ihre eigene Lösung für den Produktiveinsatz qualifizieren wollen, ist das **OpenShift PaaS-Angebot** die Referenzlösung, die Ihnen das höchste Maß an Marktgarantien bietet.
 
-Our advisory role is to support you in making this decision. Our architects are available to analyze your context and define the optimal path together with you.
+* **Wenn Sie Open Source, Modernität und "Zero-Trust"-Sicherheit bevorzugen...**
+    und Ihre Unternehmenskultur stark auf Open Source, Herstellerunabhängigkeit sowie Sicherheitsansätze der neuen Generation (immutable Systeme, API-gesteuertes Management) ausgerichtet ist, ist das **Managed Kubernetes-Angebot** am besten mit Ihrer Vision vereinbar.
 
-## Unsere Lösungen entdecken
+Unsere Beratungsrolle besteht darin, Sie bei dieser Entscheidung zu begleiten. Unsere Architekten stehen Ihnen gerne zur Verfügung, um Ihren Kontext zu analysieren und gemeinsam mit Ihnen den optimalen Weg zu definieren.
+
+---
+
+## Entdecken Sie unsere Lösungen
 
 <div className="row">
   <div className="col col--6">
@@ -59,7 +63,7 @@ Our advisory role is to support you in making this decision. Our architects are 
       </div>
       <div className="card__body">
         <p>
-          Entdecken Sie unsere „as a Service“-Plattform zur Modernisierung Ihrer Anwendungen auf einer zertifizierten SecNumCloud-Infrastruktur.
+          Entdecken Sie unsere "as a Service"-Plattform zur Modernisierung Ihrer Anwendungen auf einer SecNumCloud-zertifizierten Basis.
         </p>
       </div>
       <div className="card__footer">
@@ -74,7 +78,7 @@ Our advisory role is to support you in making this decision. Our architects are 
       </div>
       <div className="card__body">
         <p>
-          Erkunden Sie unser reines, portables und schichtfreies Kubernetes-Angebot, betrieben auf einer souveränen Infrastruktur.
+          Entdecken Sie unser reines, portables Kubernetes-Produkt ohne Overhead, das auf einer souveränen Infrastruktur gehostet wird.
         </p>
       </div>
       <div className="card__footer">

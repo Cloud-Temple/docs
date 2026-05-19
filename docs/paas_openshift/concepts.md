@@ -1,13 +1,13 @@
 ---
 title: Concepts
 ---
-import oshiftOffert from './images/oshift_offert.png'
+import oshiftOffert from '@site/docs/paas_openshift/images/oshift_offert.png'
 
 ## Présentation de RedHat OpenShift
 
 **Red Hat OpenShift** est une plateforme de conteneurs d'entreprise qui automatise le déploiement, la gestion et l'échelle des applications conteneurisées. C'est une plateforme construite autour de Docker, un système de conteneurisation qui permet de packager une application et ses dépendances dans un conteneur virtuel, et de Kubernetes, un système d'orchestration de conteneurs, qui gère l'exécution et la coordination des conteneurs sur un cluster de serveurs.
 
-### Fonctionnalités principales de Red Hat OpenShift :
+### Fonctionnalités principales de Red Hat OpenShift
 
 - **Déploiement et gestion automatisés :** OpenShift simplifie le processus de déploiement des applications en automatisant les routines de gestion comme le scaling, la santé et la durée de vie des conteneurs. Il fournit un environnement intégré pour le développement, le test et la production des applications.
 
@@ -19,7 +19,7 @@ import oshiftOffert from './images/oshift_offert.png'
 
 - **Sécurité renforcée :** La plateforme est conçue avec une sécurité intégrée, offrant des contrôles d'accès basés sur les rôles, la séparation des tâches et la gestion automatisée des secrets pour protéger les applications et les données.
 
-### Avantages de Red Hat OpenShift :
+### Avantages de Red Hat OpenShift
 
 - **Flexibilité :** Les développeurs peuvent travailler avec les outils, langages et frameworks de leur choix.
 - **Efficacité opérationnelle :** OpenShift optimise l'utilisation des ressources, réduit le temps de mise sur le marché et améliore la productivité des développeurs.
@@ -32,7 +32,7 @@ Red Hat OpenShift est une solution complète pour le développement, le déploie
 
 Red Hat OpenShift Data Foundation (ODF) est une solution intégrée de stockage et de gestion des données conçue pour fonctionner de manière transparente avec l'écosystème OpenShift. Elle offre une infrastructure de données persistante, sécurisée et hautement disponible pour les applications conteneurisées, soutenant ainsi les environnements de développement modernes axés sur les conteneurs et les microservices. ODF est conçu pour simplifier et automatiser la gestion des données dans des environnements cloud hybrides et multicloud, fournissant une fondation solide pour les applications d'entreprise critiques.
 
-#### Fonctionnalités Clés d'OpenShift Data Foundation :
+#### Fonctionnalités Clés d'OpenShift Data Foundation
 
 - **Stockage Persistant :** ODF fournit une couche de stockage persistant pour les conteneurs, essentielle pour les applications d'entreprise comme les bases de données, les systèmes de gestion de contenu et les applications nécessitant un état persistant.
 
@@ -43,10 +43,10 @@ Red Hat OpenShift Data Foundation (ODF) est une solution intégrée de stockage 
 - **Haute Disponibilité et Résilience :** ODF utilise la réplication et le snapshotting des données pour assurer la haute disponibilité et la durabilité des données, essentielles pour la continuité des opérations d'entreprise.
 
 - **Sécurité des Données :** La solution intègre des fonctionnalités de sécurité avancées, telles que le chiffrement des données au repos et en transit, ainsi que des politiques de sécurité et de conformité personnalisables. Notre implémentation SecNumCloud garantit une protection à plusieurs niveaux :
-    -   **Chiffrement des données au repos** : Le stockage persistant fourni par OpenShift Data Foundation s'appuie sur notre infrastructure de stockage bloc sous-jacente. À ce titre, toutes les données sont chiffrées au repos à l'aide de l'algorithme **XTS-AES 256**, conforme à la norme **FIPS 140-2**.
-    -   **Chiffrement des données en transit** : Tous les accès à la plateforme, incluant l'API, la console web et le trafic applicatif via les routes, sont systématiquement sécurisés et chiffrés à l'aide du protocole **TLS**.
+  - **Chiffrement des données au repos** : Le stockage persistant fourni par OpenShift Data Foundation s'appuie sur notre infrastructure de stockage bloc sous-jacente. À ce titre, toutes les données sont chiffrées au repos à l'aide de l'algorithme **XTS-AES 256**, conforme à la norme **FIPS 140-2**.
+  - **Chiffrement des données en transit** : Tous les accès à la plateforme, incluant l'API, la console web et le trafic applicatif via les routes, sont systématiquement sécurisés et chiffrés à l'aide du protocole **TLS**.
 
-#### Avantages d'OpenShift Data Foundation :
+#### Avantages d'OpenShift Data Foundation
 
 - **Flexibilité Opérationnelle :** ODF permet aux entreprises de gérer efficacement leurs données dans des environnements distribués, offrant la flexibilité nécessaire pour répondre aux exigences changeantes des applications modernes.
 
@@ -62,8 +62,7 @@ Red Hat OpenShift Data Foundation est une solution de stockage de données avanc
 
 ### Généralités
 
-La plateforme Red Hat OpenShift de Cloud Temple est conçue comme une offre régionale, déployée nativement sur [**trois zones de disponibilité distinctes**](../additional_content/concepts_az.md) au sein d'une même [région](../additional_content/concepts_regional.md) de Cloud Temple. Cette architecture tri-zonale augmente significativement la disponibilité et la résilience des données.
-
+La plateforme Red Hat OpenShift de Cloud Temple est conçue comme un produit régional, déployée nativement sur [**trois zones de disponibilité distinctes**](../additional_content/concepts_az.md) au sein d'une même [région](../additional_content/concepts_regional.md) de Cloud Temple. Cette architecture tri-zonale augmente significativement la disponibilité et la résilience des données.
 
 La plateforme se compose d'un plan de contrôle et de noeuds de travail, tous gérés par l'infrastructure Cloud Temple. Le plan de contrôle est réparti équitablement sur les trois zones de disponibilité, assurant une gestion centralisée et sécurisée. Les noeuds de travail, quant à eux, sont représentés par des lames de calcul, disposées de manière à ce que chaque zone de disponibilité en contienne une.
 
@@ -111,15 +110,15 @@ Cloud Temple met à disposition pour ses clients l’offre **Veeam Kasten K10** 
 
 L’un des cas d’utilisation majeurs de Kasten K10 est **la migration de clusters entre différentes plateformes Kubernetes**. Que ce soit pour une transition vers une infrastructure plus robuste ou pour consolider les environnements existants, Kasten K10 offre des outils simples et efficaces pour gérer ces migrations :
 
- - **Sauvegarde et protection des données** : lors de la migration d'un cluster Kubernetes Vanilla ou VMware Tanzu vers Red Hat Kubernetes Engine ou OpenShift, la première étape est de sauvegarder les données des applications et leurs états. Kasten K10 s'intègre facilement avec les API Kubernetes pour identifier les applications, leurs dépendances, ainsi que les volumes de données associés. Cela inclut la sauvegarde des volumes persistants (Persistent Volumes - PV), des bases de données, des configurations et des secrets. Kasten K10 prend en charge une large variété de fournisseurs de stockage (S3, Google Cloud Storage, Azure Blob Storage, etc.), ce qui permet de créer des instantanés des applications à migrer. Ces sauvegardes sont ensuite stockées de manière sécurisée avec des options de chiffrement et de contrôle d'accès granulaires, garantissant la sécurité des données tout au long du processus.
+- **Sauvegarde et protection des données** : lors de la migration d'un cluster Kubernetes Vanilla ou VMware Tanzu vers Red Hat Kubernetes Engine ou OpenShift, la première étape est de sauvegarder les données des applications et leurs états. Kasten K10 s'intègre facilement avec les API Kubernetes pour identifier les applications, leurs dépendances, ainsi que les volumes de données associés. Cela inclut la sauvegarde des volumes persistants (Persistent Volumes - PV), des bases de données, des configurations et des secrets. Kasten K10 prend en charge une large variété de fournisseurs de stockage (S3, Google Cloud Storage, Azure Blob Storage, etc.), ce qui permet de créer des instantanés des applications à migrer. Ces sauvegardes sont ensuite stockées de manière sécurisée avec des options de chiffrement et de contrôle d'accès granulaires, garantissant la sécurité des données tout au long du processus.
 
- - **Portabilité et migration** : la migration entre des distributions Kubernetes comme Vanilla ou Tanzu et des solutions Red Hat comme OpenShift ou Kubernetes Engine peut être complexe en raison des différences d’architectures et des configurations spécifiques de chaque plateforme. Kasten K10 simplifie ce processus en fournissant une couche d’abstraction pour la portabilité des applications. Lors de la migration, Kasten K10 réplique les configurations et les données d’un cluster source vers un cluster cible, tout en tenant compte des spécificités de chaque environnement. Par exemple, les objets Kubernetes comme les ConfigMaps, les Secrets, les PV, ainsi que les CRDs (Custom Resource Definitions) peuvent être migrés en tenant compte des contraintes propres à chaque distribution Kubernetes, qu’il s’agisse d’un cluster Red Hat OpenShift ou Kubernetes Engine. Le processus est automatisé, ce qui réduit considérablement le risque d’erreurs manuelles. De plus, Kasten K10 permet une migration progressive ou complète, en fonction des besoins, et offre une visibilité en temps réel sur l’état de la migration, facilitant ainsi la gestion et la surveillance de la transition.
+- **Portabilité et migration** : la migration entre des distributions Kubernetes comme Vanilla ou Tanzu et des solutions Red Hat comme OpenShift ou Kubernetes Engine peut être complexe en raison des différences d’architectures et des configurations spécifiques de chaque plateforme. Kasten K10 simplifie ce processus en fournissant une couche d’abstraction pour la portabilité des applications. Lors de la migration, Kasten K10 réplique les configurations et les données d’un cluster source vers un cluster cible, tout en tenant compte des spécificités de chaque environnement. Par exemple, les objets Kubernetes comme les ConfigMaps, les Secrets, les PV, ainsi que les CRDs (Custom Resource Definitions) peuvent être migrés en tenant compte des contraintes propres à chaque distribution Kubernetes, qu’il s’agisse d’un cluster Red Hat OpenShift ou Kubernetes Engine. Le processus est automatisé, ce qui réduit considérablement le risque d’erreurs manuelles. De plus, Kasten K10 permet une migration progressive ou complète, en fonction des besoins, et offre une visibilité en temps réel sur l’état de la migration, facilitant ainsi la gestion et la surveillance de la transition.
 
- - **Compatibilité multi-cloud et multi-distribution** : Kasten K10 est conçu pour fonctionner dans des environnements hybrides et multi-clouds, ce qui en fait un outil idéal pour les organisations cherchant à migrer des applications de clusters Tanzu ou Vanilla vers des environnements Red Hat dans le cloud (Cloud Temple, Amazon EKS, Azure AKS, Google GKE) ou sur des infrastructures sur site. Cela garantit une flexibilité maximale et permet aux équipes DevOps de choisir le meilleur environnement en fonction des besoins métier ou des stratégies de modernisation d'infrastructure.
+- **Compatibilité multi-cloud et multi-distribution** : Kasten K10 est conçu pour fonctionner dans des environnements hybrides et multi-clouds, ce qui en fait un outil idéal pour les organisations cherchant à migrer des applications de clusters Tanzu ou Vanilla vers des environnements Red Hat dans le cloud (Cloud Temple, Amazon EKS, Azure AKS, Google GKE) ou sur des infrastructures sur site. Cela garantit une flexibilité maximale et permet aux équipes DevOps de choisir le meilleur environnement en fonction des besoins métier ou des stratégies de modernisation d'infrastructure.
 
- - **Gestion simplifiée et automatisation**: Kasten K10 offre une interface utilisateur intuitive qui permet aux administrateurs de gérer facilement les opérations de migration et de sauvegarde sans nécessiter une expertise approfondie de chaque plateforme Kubernetes. La solution est également équipée de fonctionnalités d’automatisation qui permettent de définir des politiques de migration et de sauvegarde récurrentes, s’intégrant aux pipelines CI/CD pour des opérations continues. Les utilisateurs peuvent planifier des migrations ou des restaurations en fonction de fenêtres de maintenance, effectuer des tests de validation après migration et automatiser les processus de basculement en cas de problème sur le cluster source.
+- **Gestion simplifiée et automatisation**: Kasten K10 offre une interface utilisateur intuitive qui permet aux administrateurs de gérer facilement les opérations de migration et de sauvegarde sans nécessiter une expertise approfondie de chaque plateforme Kubernetes. La solution est également équipée de fonctionnalités d’automatisation qui permettent de définir des politiques de migration et de sauvegarde récurrentes, s’intégrant aux pipelines CI/CD pour des opérations continues. Les utilisateurs peuvent planifier des migrations ou des restaurations en fonction de fenêtres de maintenance, effectuer des tests de validation après migration et automatiser les processus de basculement en cas de problème sur le cluster source.
 
- - **Sécurité et conformité**: dans le cadre de migrations vers des environnements critiques comme Red Hat OpenShift ou Kubernetes Engine, la sécurité des données et la conformité aux normes (ISO, SOC, GDPR, etc.) sont des aspects essentiels. Kasten K10 assure le chiffrement des données en transit et au repos, tout en offrant des options d'audit et de traçabilité des opérations de sauvegarde et de restauration. Ces capacités sont essentielles pour garantir la sécurité des données migrées, que ce soit dans des environnements de production ou de test. Kasten K10 est une solution incontournable pour les entreprises qui souhaitent migrer efficacement et en toute sécurité des clusters Kubernetes Vanilla ou VMware Tanzu vers Red Hat Kubernetes Engine ou OpenShift.
+- **Sécurité et conformité**: dans le cadre de migrations vers des environnements critiques comme Red Hat OpenShift ou Kubernetes Engine, la sécurité des données et la conformité aux normes (ISO, SOC, GDPR, etc.) sont des aspects essentiels. Kasten K10 assure le chiffrement des données en transit et au repos, tout en offrant des options d'audit et de traçabilité des opérations de sauvegarde et de restauration. Ces capacités sont essentielles pour garantir la sécurité des données migrées, que ce soit dans des environnements de production ou de test. Kasten K10 est une solution incontournable pour les entreprises qui souhaitent migrer efficacement et en toute sécurité des clusters Kubernetes Vanilla ou VMware Tanzu vers Red Hat Kubernetes Engine ou OpenShift.
 
  La facturation se fait au nombre de worker node.
 
@@ -129,7 +128,7 @@ L’un des cas d’utilisation majeurs de Kasten K10 est **la migration de clust
 
 **Note** : *Attention, la volumétrie disque nécessaire au bon fonctionnement de votre backup est à prévoir sur l'environnement de réception de votre backup, généralement en stockage S3. Elle n'est pas incluse dans les unités d'oeuvre OpenShift ou Kasten.*
 
-**(1)** _OADP n'est pas installé nativement dans le cluster. Seul Kasten est activé pour la gestion des migrations, des sauvegardes et de la restauration_
+**(1)** *OADP n'est pas installé nativement dans le cluster. Seul Kasten est activé pour la gestion des migrations, des sauvegardes et de la restauration*
 
 ## Répartiteurs de charge  
 
@@ -210,7 +209,6 @@ Voici les permissions principales misent en oeuvre :
 |      Security      |PodSecurityPolicyReviews|                                                                                               Create                                                                                               |
 |       Custom       |       Resources        |                                       Diverses ressources personnalisées liées à Kasten K10, Keycloak, etc. Create, Get, List, Watch, Update, Patch, Delete                                        |
 
-
 ## Restrictions et exigences de sécurité sur OpenShift SecNumCloud  
 
 ### Plan de contrôle dédié  
@@ -225,7 +223,7 @@ Les applications nécessitant des privilèges élevés devront être adaptées, 
 
 ### Restrictions sur les ClusterRoles  
 
-Dans notre offre OpenShift, la gestion des droits d’accès au niveau du cluster est rigoureusement encadrée pour garantir **sécurité et conformité** avec SecNumCloud.  
+Dans notre produit OpenShift, la gestion des droits d’accès au niveau du cluster est rigoureusement encadrée pour garantir **sécurité et conformité** avec SecNumCloud.  
 
 Cela implique des **restrictions sur les ClusterRoles**, limitant les privilèges globaux. Bien que ces restrictions puissent imposer des ajustements techniques, elles sont essentielles pour renforcer la résilience et la stabilité de l’environnement.  
 
@@ -256,7 +254,6 @@ Les **runners OpenShift SecNumCloud** doivent être configurés avec des **adres
 Cette exigence garantit l’accès sécurisé aux **API OpenShift**, aux interfaces d’administration et aux outils de gestion d’accès de la console **Cloud Temple**.  
 
 Les **adresses IP dynamiques ne sont pas prises en charge**, nécessitant une configuration adaptée pour assurer la connectivité et la sécurité des composants.  
-
 
 ## Bon à savoir
 

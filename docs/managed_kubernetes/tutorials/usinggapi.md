@@ -2,7 +2,7 @@
 title: Utiliser Cilium Gateway API
 ---
 
-import gapischema from './images/gapi.png'
+import gapischema from '@site/docs/managed_kubernetes/tutorials/images/gapi.png'
 
 ## Introduction
 
@@ -10,7 +10,8 @@ L'API Gateway est la nouvelle norme Kubernetes pour la gestion du trafic entrant
 
 Dans votre cluster Managed Kubernetes Cloud Temple, **Cilium** est utilisé comme CNI et implémente nativement le support de Gateway API.
 
-:::info Versions supportées
+:::info[Versions supportées
+]
 Cette documentation s'applique aux clusters utilisant **Cilium 1.8.4 ou supérieur**.
 Les **Gateway API CRDs en version 1.4** sont préinstallées sur votre cluster.
 :::
@@ -34,9 +35,9 @@ Ce tutoriel vous guidera pour :
 
 Gateway API décompose la configuration réseau en trois ressources principales :
 
-1.  **GatewayClass** : Définit le type de contrôleur (ici, `io.cilium/gateway`).
-2.  **Gateway** : Instancie un point d'entrée réseau (load balancer).
-3.  **HTTPRoute** : Définit les règles de routage (chemins, headers) vers les Services Kubernetes.
+1. **GatewayClass** : Définit le type de contrôleur (ici, `io.cilium/gateway`).
+2. **Gateway** : Instancie un point d'entrée réseau (load balancer).
+3. **HTTPRoute** : Définit les règles de routage (chemins, headers) vers les Services Kubernetes.
 
 <img src={gapischema} alt="Schema GAPI"/>
 
@@ -62,7 +63,8 @@ NAME      CONTROLLER           ACCEPTED   AGE
 cilium    io.cilium/gateway    True       2d
 ```
 
-:::info Note
+:::info[Note
+]
 Si aucune GatewayClass n'est listée, assurez-vous que la fonctionnalité Gateway API est activée dans votre installation Cilium.
 :::
 

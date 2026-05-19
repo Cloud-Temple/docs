@@ -5,53 +5,53 @@ tags:
   - tutorials
 ---
 
-import fortiSupport from '../images/forti_support.png';
-import fortiSupportVm01 from '../images/forti_support_vm_01.png';
-import fortiSupportVm02 from '../images/forti_support_vm_02.png';
-import asn from '../images/asn.png';
-import ipsPub from '../images/ips_pub.png';
-import ipsInterco from '../images/ips_interco.png';
-import fortiVmType01 from '../images/forti_vm_type_01.png';
-import shivaCatalogues from '../images/shiva_catalogues.png';
-import imgImport01 from '../images/img_import_01.png';
-import imgImport02 from '../images/img_import_02.png';
-import imgImport03 from '../images/img_import_03.png';
-import imgImport04 from '../images/img_import_04.png';
-import imgImport05 from '../images/img_import_05.png';
-import imgImport06 from '../images/img_import_06.png';
-import imgImport07 from '../images/img_import_07.png';
-import imgImport08 from '../images/img_import_08.png';
-import imgImport09 from '../images/img_import_09.png';
-import imgImport10 from '../images/img_import_10.png';
-import imgImport11 from '../images/img_import_11.png';
-import imgImport12 from '../images/img_import_12.png';
-import ipPlan01 from '../images/ip_plan_01.png';
-import ipPlan02 from '../images/ip_plan_02.png';
-import ipPlan03 from '../images/ip_plan_03.png';
-import ipPlan04 from '../images/ip_plan_04.png';
-import ipPlan05 from '../images/ip_plan_05.png';
-import imgDeploy01 from '../images/img_deploy_01.png';
-import imgDeploy02 from '../images/img_deploy_02.png';
-import imgDeploy03 from '../images/img_deploy_03.png';
-import imgDeploy04 from '../images/img_deploy_04.png';
-import imgDeploy05 from '../images/img_deploy_05.png';
-import imgDeploy06 from '../images/img_deploy_06.png';
-import imgDeploy07 from '../images/img_deploy_07.png';
-import imgDeploy08 from '../images/img_deploy_08.png';
-import imgDeploy09 from '../images/img_deploy_09.png';
-import imgDeploy10 from '../images/img_deploy_10.png';
-import imgDeploy11 from '../images/img_deploy_11.png';
-import imgBackup01 from '../images/img_backup_01.png';
-import imgBackup02 from '../images/img_backup_02.png';
-import imgBackup03 from '../images/img_backup_03.png';
-import imgBackup04 from '../images/img_backup_04.png';
-import vmStart01 from '../images/vm_start_01.png';
-import vmStart02 from '../images/vm_start_02.png';
-import vmConsole01 from '../images/vm_console_01.png';
-import vmBoot01 from '../images/vm_boot_01.png';
-import vmBoot02 from '../images/vm_boot_02.png';
-import vmBoot03 from '../images/vm_boot_03.png';
-import vmBoot04 from '../images/vm_boot_04.png';
+import fortiSupport from '@site/docs/network/internet/images/forti_support.png';
+import fortiSupportVm01 from '@site/docs/network/internet/images/forti_support_vm_01.png';
+import fortiSupportVm02 from '@site/docs/network/internet/images/forti_support_vm_02.png';
+import asn from '@site/docs/network/internet/images/asn.png';
+import ipsPub from '@site/docs/network/internet/images/ips_pub.png';
+import ipsInterco from '@site/docs/network/internet/images/ips_interco.png';
+import fortiVmType01 from '@site/docs/network/internet/images/forti_vm_type_01.png';
+import shivaCatalogues from '@site/docs/network/internet/images/shiva_catalogues.png';
+import imgImport01 from '@site/docs/network/internet/images/img_import_01.png';
+import imgImport02 from '@site/docs/network/internet/images/img_import_02.png';
+import imgImport03 from '@site/docs/network/internet/images/img_import_03.png';
+import imgImport04 from '@site/docs/network/internet/images/img_import_04.png';
+import imgImport05 from '@site/docs/network/internet/images/img_import_05.png';
+import imgImport06 from '@site/docs/network/internet/images/img_import_06.png';
+import imgImport07 from '@site/docs/network/internet/images/img_import_07.png';
+import imgImport08 from '@site/docs/network/internet/images/img_import_08.png';
+import imgImport09 from '@site/docs/network/internet/images/img_import_09.png';
+import imgImport10 from '@site/docs/network/internet/images/img_import_10.png';
+import imgImport11 from '@site/docs/network/internet/images/img_import_11.png';
+import imgImport12 from '@site/docs/network/internet/images/img_import_12.png';
+import ipPlan01 from '@site/docs/network/internet/images/ip_plan_01.png';
+import ipPlan02 from '@site/docs/network/internet/images/ip_plan_02.png';
+import ipPlan03 from '@site/docs/network/internet/images/ip_plan_03.png';
+import ipPlan04 from '@site/docs/network/internet/images/ip_plan_04.png';
+import ipPlan05 from '@site/docs/network/internet/images/ip_plan_05.png';
+import imgDeploy01 from '@site/docs/network/internet/images/img_deploy_01.png';
+import imgDeploy02 from '@site/docs/network/internet/images/img_deploy_02.png';
+import imgDeploy03 from '@site/docs/network/internet/images/img_deploy_03.png';
+import imgDeploy04 from '@site/docs/network/internet/images/img_deploy_04.png';
+import imgDeploy05 from '@site/docs/network/internet/images/img_deploy_05.png';
+import imgDeploy06 from '@site/docs/network/internet/images/img_deploy_06.png';
+import imgDeploy07 from '@site/docs/network/internet/images/img_deploy_07.png';
+import imgDeploy08 from '@site/docs/network/internet/images/img_deploy_08.png';
+import imgDeploy09 from '@site/docs/network/internet/images/img_deploy_09.png';
+import imgDeploy10 from '@site/docs/network/internet/images/img_deploy_10.png';
+import imgDeploy11 from '@site/docs/network/internet/images/img_deploy_11.png';
+import imgBackup01 from '@site/docs/network/internet/images/img_backup_01.png';
+import imgBackup02 from '@site/docs/network/internet/images/img_backup_02.png';
+import imgBackup03 from '@site/docs/network/internet/images/img_backup_03.png';
+import imgBackup04 from '@site/docs/network/internet/images/img_backup_04.png';
+import vmStart01 from '@site/docs/network/internet/images/vm_start_01.png';
+import vmStart02 from '@site/docs/network/internet/images/vm_start_02.png';
+import vmConsole01 from '@site/docs/network/internet/images/vm_console_01.png';
+import vmBoot01 from '@site/docs/network/internet/images/vm_boot_01.png';
+import vmBoot02 from '@site/docs/network/internet/images/vm_boot_02.png';
+import vmBoot03 from '@site/docs/network/internet/images/vm_boot_03.png';
+import vmBoot04 from '@site/docs/network/internet/images/vm_boot_04.png';
 
 ## Objet de ce guide
 
@@ -65,7 +65,7 @@ Ce guide détaille les étapes essentielles pour déployer efficacement un pare-
 
 Le déploiement des appliances virtuelles nécessite un accès au tenant du client dans la console Cloud Temple avec les permissions spécifiques suivantes :
 
-Si vous utilisez l'offre **OpenIaaS** :
+Si vous utilisez le produit **OpenIaaS** :
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -77,7 +77,7 @@ Si vous utilisez l'offre **OpenIaaS** :
 | compute_iaas_opensource_virtual_machine_power | Offre OpenIaaS -Gestion de l'alimentation d'une machine virtuelle                                                              |
 | activity_read                                 | Consultation des journaux logs et activités                                                                                    |
 
-Si vous utilisez l'offre **Vmware** :
+Si vous utilisez le produit **Vmware** :
 
 | Nom de la permission                          | Description de la permission                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |

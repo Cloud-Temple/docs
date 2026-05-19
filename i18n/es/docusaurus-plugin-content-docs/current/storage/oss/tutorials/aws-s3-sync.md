@@ -16,11 +16,12 @@ Para sincronizar el contenido del directorio local `./mon-sitio` hacia el bucket
 
 ### Opciones útiles
 
-*   `--delete`: Elimina los archivos del bucket que no existen en el directorio local, equivalente a la opción `--remove` de `mc mirror`.
-*   `--exact-timestamps`: Durante la sincronización, copia solo el archivo si la hora de modificación es diferente.
-*   `--dryrun`: Mostró las operaciones que se realizarían sin ejecutarlas realmente. Muy útil para verificar una comanda antes de ejecutarla.
+* `--delete`: Elimina los archivos del bucket que no existen en el directorio local, equivalente a la opción `--remove` de `mc mirror`.
+* `--exact-timestamps`: Durante la sincronización, copia solo el archivo si la hora de modificación es diferente.
+* `--dryrun`: Mostró las operaciones que se realizarían sin ejecutarlas realmente. Muy útil para verificar una comanda antes de ejecutarla.
 
 # Simulación de sincronización con eliminación para verificar cambios
+
 ❯ aws s3 sync ./mon-sitio/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
 (después del dry run) eliminación: s3://demo-app/antiguo-archivo.html
 (después del dry run) carga: mon-sitio/nuevo-archivo.css a s3://demo-app/nuevo-archivo.css

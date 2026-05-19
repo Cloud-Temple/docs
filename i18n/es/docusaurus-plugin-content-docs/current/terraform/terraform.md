@@ -139,7 +139,7 @@ Pour être notifié automatiquement des nouvelles releases du provider Terraform
 
 ![Bouton Watch GitHub](@site/docs/terraform/images/provider_terraform_notify.png)
 
-3. Sélectionnez **Custom** puis cochez **Releases**
+1. Sélectionnez **Custom** puis cochez **Releases**
 
 ![Configuration des notifications](@site/docs/terraform/images/provider_terraform_subscribe.png)
 

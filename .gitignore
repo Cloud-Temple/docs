@@ -22,7 +22,11 @@ scripts/translate_py/venv/
 .env.test.local
 .env.production.local
 .venv
+.maj.js
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# npm lock file (ce projet utilise yarn)
+package-lock.json

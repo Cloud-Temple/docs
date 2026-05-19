@@ -2,12 +2,12 @@
 title: Gestionnaire des coûts
 ---
 
-import billingDashboardPreview from './images/billing_dashboard_preview.png'
-import billingDashboardConsumptionTotal from './images/billing_dashboard_consumption_total.png'
-import billingDashboardConsumptionPerProduct from './images/billing_dashboard_consumption_per_product.png'
-import billingDashboardConsumptionPerService from './images/billing_dashboard_consumption_per_service.png'
-import billingConsumptionDetails from './images/billing_consumption_details.png'
-import billingPricesList from './images/billing_prices_list.png'
+import billingDashboardPreview from '@site/docs/console/billing/images/billing_dashboard_preview.png'
+import billingDashboardConsumptionTotal from '@site/docs/console/billing/images/billing_dashboard_consumption_total.png'
+import billingDashboardConsumptionPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
+import billingDashboardConsumptionPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
+import billingConsumptionDetails from '@site/docs/console/billing/images/billing_consumption_details.png'
+import billingPricesList from '@site/docs/console/billing/images/billing_prices_list.png'
 
 ## Présentation
 
@@ -66,6 +66,7 @@ L'onglet **Grille tarifaire** (ou **Liste des prix**) référence l'ensemble des
 <img src={billingPricesList} />
 
 Chaque entrée de la grille indique :
+
 - Le **type de ressource** concernée
 - L'**unité de facturation** (par heure, par Go, par unité, etc.)
 - Le **prix unitaire** applicable

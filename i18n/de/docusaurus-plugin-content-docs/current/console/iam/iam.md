@@ -1,26 +1,26 @@
 ---
-title: Identity Access Management
+title: Übersicht
 ---
 
-# Identity Access Management
+# Identitäts- und Zugriffsverwaltung
 
-Das IAM-Modul (Identity Access Management) der Cloud Temple-Konsole bietet eine umfassende Lösung für das Identitäts- und Zugriffsmanagement.
-Es ermöglicht die Verwaltung lokaler Konten und unterstützt gleichzeitig eine Hybridisierung mit externen Konfigurationen, die mit den marktüblichen Standards wie OIDC und SAML kompatibel sind, um den Flexibilitäts- und Sicherheitsanforderungen moderner Umgebungen gerecht zu werden.
+Das IAM-Modul (Identity Access Management) der Cloud Temple Console bietet eine umfassende Lösung für das Identitäts- und Zugriffsmanagement.
+Es ermöglicht die Verwaltung lokaler Konten und unterstützt gleichzeitig die Hybridisierung mit externen Konfigurationen, die mit marktüblichen Standardprotokollen wie OIDC und SAML kompatibel sind, um den Anforderungen an Flexibilität und Sicherheit moderner Umgebungen gerecht zu werden.
 
 <div class="card-grid">
   <div class="card">
-    <h3>Konzepten</h3>
-    <p>Erfahren Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu meistern.</p>
-    <a href="iam/concepts" class="card-link">Entdecken Sie die Konzepte &rarr;</a>
+    <h3>Konzepte</h3>
+    <p>Erfahren Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="./iam/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Beginnen Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="iam/quickstart" class="card-link">Starten Sie den Quickstart &rarr;</a>
+    <h3>Schnellstart</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./iam/quickstart" class="card-link">Schnellstart starten &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Erlernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
-    <a href="iam/tutorials/sso_aad" class="card-link">Entdecken Sie die Tutorials &rarr;</a>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste anhand detaillierter Anleitungen.</p>
+    <a href="./iam/tutorials/sso_aad" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>

@@ -1,13 +1,13 @@
 ---
-title: Security Alerts
+title: Sicherheitswarnungen
 ---
 
-Find here the security alerts related to our cloud services.
-This page is updated daily to account for newly identified vulnerabilities.
+Hier finden Sie die Sicherheitswarnungen zu unseren Cloud-Diensten.
+Diese Seite wird täglich aktualisiert, um neu identifizierte Schwachstellen zu berücksichtigen.
 
-## Vulnerabilities
+## Schwachstellen
 
-| Date | Reference(s) | CVSS | Title | Description | Service(s) | Severity | Treatment |
+| Datum | Referenz(en) | CVSS | Titel | Beschreibung | Dienst(e) | Schweregrad | Maßnahme |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 10/05/2026 | [DSA-2026-019](https://www.dell.com/support/kbdoc/en-us/000462117/dsa-2026-047-security-update-for-dell-ecs-and-objectscale-multiple-vulnerabilities-1) | 9.8-5.6 | **DSA-2026-019: Mehrere Schwachstellen in Dell ObjectScale** | Mehrere Schwachstellen betreffen Dell ObjectScale, darunter die Verwendung hartcodierter Anmeldeinformationen, die einem nicht authentifizierten Angreifer Zugriff auf das Dateisystem ermöglichen, eine fehlerhafte OS-Rechteverwaltung, eine CSV-Formelinjektion und eine Authentifizierungsumgehung | Object Storage | 🟠 Wichtig | ✅ Die Behebung Ihrer ObjectScale-Umgebungen wird von Cloud Temple übernommen. Es ist keine Maßnahme Ihrerseits erforderlich. |
 | 06/04/2026 | [DSA-2026-143](https://www.dell.com/support/kbdoc/en-us/000449325/dsa-2026-143-security-update-for-dell-objectscale-prior-to-4-1-0-3-and-4-2-0-0-insertion-of-sensitive-information-into-log-file-vulnerability) | 7.8 | **DSA-2026-143 : Schwachstelle in Dell ObjectScale (CVE-2026-28261)** | Eine Schwachstelle (CVE-2026-28261) in Dell ObjectScale im Zusammenhang mit dem Einfügen sensibler Informationen in Protokolldateien ermöglicht es einem lokalen Angreifer, Geheimnisse offenzulegen und seine Privilegien zu erweitern, um das System zu kompromittieren. | Object Storage | 🟡 Moderat | ✅ Die Behebung Ihrer ObjectScale-Umgebungen wird von Cloud Temple übernommen. Es ist keine Aktion Ihrerseits erforderlich. |
@@ -31,19 +31,19 @@ This page is updated daily to account for newly identified vulnerabilities.
 
 ## Informationen
 
-- **Datum** : Datum der ursprünglichen Veröffentlichung der Sicherheitswarnung von Cloud Temple.
-- **Referenz(en)** : CVE-ID, falls verfügbar.
-- **CVSS** : CVSS v3-Basisbewertung gemäß dem Herausgeber oder der CVE, nicht kontextualisiert. Die Kontextualisierung wird durch die Schwere CT ausgedrückt. Falls mehrere Schwachstellen betroffen sind, werden die minimalen und maximalen CVSS-Werte angegeben.
-- **Titel** : Titel der Warnung, mit Herausgeber-Referenz, falls verfügbar.
-- **Beschreibung** : Zusammenfassende Beschreibung mit Link(en) zu detaillierten Informationen.
+- **Datum** : Erstveröffentlichungsdatum der Cloud Temple-Sicherheitswarnung.
+- **Referenz(en)** : CVE-ID, sofern verfügbar.
+- **CVSS** : Basis-CVSS-v3-Score, wie vom Anbieter oder CVE gemeldet, ohne Kontext. Die Kontextualisierung erfolgt über den CT-Schweregrad. Betrifft die Warnung mehrere Schwachstellen, werden der minimale und maximale CVSS-Score angegeben.
+- **Titel** : Titel der Warnung, ggf. mit Anbieterreferenz, sofern verfügbar.
+- **Beschreibung** : Zusammenfassende Beschreibung mit Link(s) zu detaillierten Informationen.
 - **Dienst(e)** : Cloud Temple-Dienst(e), die betroffen sein könnten.
-- **Schwere** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren betroffenen Schwachstellen). Die Ausnutzbarkeitskriterien werden im technischen Kontext unserer Infrastrukturen und Dienste berücksichtigt.
+- **Schweregrad** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren Schwachstellen). Ausnutzbarkeitskriterien werden im technischen Kontext unserer Cloud-Infrastrukturen und -Dienste berücksichtigt.
 
-| Ebene | Beschreibung |
-|-------|--------------|
-| 🔴 **Kritisch** | Schwachstelle mit CVSS 7+ mit erheblichem Ausnutzungsrisiko (hohe Exposition, einfache Ausnutzbarkeit). Eine Korrektur oder Minderung der Auswirkungen wird dringend empfohlen. |
-| 🟠 **Wichtig** | Schwachstelle mit CVSS 7+, die jedoch kein erhebliches Ausnutzungsrisiko darstellt (begrenzte Exposition oder Ausnutzungsbedingungen). |
-| 🟡 **Mäßig** | Schwachstelle mit CVSS 4+ |
-| 🔵 **Gering** | Schwachstelle mit CVSS unter 4 oder nicht ausnutzbar. |
+| Schweregrad | Beschreibung |
+|--------|-------------|
+| 🔴 **Kritisch** | CVSS-Schwachstelle 7+ mit hohem Ausnutzungsrisiko (starke Exposition, einfache Ausnutzbarkeit). Eine Korrektur oder Minderung wird dringendst innerhalb kürzester Zeit empfohlen.|
+| 🟠 **Wichtig** | CVSS-Schwachstelle 7+ ohne hohes Ausnutzungsrisiko (begrenzte Exposition oder Ausnutzungsbeschränkungen) |
+| 🟡 **Mittel** | CVSS-Schwachstelle 4+ |
+| 🔵 **Gering** | CVSS-Schwachstelle unter 4 oder nicht ausnutzbar. |
 
-- **Behandlung** : Informationen und Empfehlungen im Kontext der Cloud Temple-Dienste. ⚠️ zeigt an, dass eine Aktion durch die Nutzer erforderlich ist, um die Schwachstelle zu behandeln. ✅ zeigt an, dass Cloud Temple die Behandlung der Schwachstelle übernimmt.
+- **Bearbeitung** : Informationen und Empfehlungen im Kontext der Cloud Temple-Dienste. ⚠️ zeigt an, dass eine Benutzeraktion zur Behandlung der Schwachstelle erforderlich ist. ✅ zeigt an, dass die Behandlung der Schwachstelle von Cloud Temple übernommen wird.

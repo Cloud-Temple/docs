@@ -77,6 +77,7 @@ Una volta installate correttamente le due VM, la seconda fase consiste nell'acce
 <img src={pfSenseHomePage} />
 
 ### Configurazione del firewall  
+
 Questa fase consiste nel configurare i vicini BGP del FW.
 
 - In primo luogo, assicurati di autorizzare il traffico BGP su TCP 179 in __'Firewall > Rules'__:
@@ -93,7 +94,7 @@ Questa fase consiste nel configurare i vicini BGP del FW.
 
 ### Configurazione dei vicini BGP
 
-In **Neighbors**, fare clic su **+Add** per iniziare a creare i propri vicini BGP.
+In __Neighbors__, fare clic su __+Add__ per iniziare a creare i propri vicini BGP.
 
 - Per ogni vicino: inserire l'indirizzo IP nel campo __'General Options > Name/address'__:
 

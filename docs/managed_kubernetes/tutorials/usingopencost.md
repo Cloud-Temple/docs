@@ -1,11 +1,11 @@
 ---
 title: Suivre les coûts avec OpenCost
 ---
-import opencostui from './images/opencost.png'
-import opencostgrafana from './images/opencostgrafana.png'
-import opencostmcp from './images/opencostmcp.png'
-import opencostmcp2 from './images/opencostmcp2.png'
-import opencostmcp3 from './images/opencostmcp3.png'
+import opencostui from '@site/docs/managed_kubernetes/tutorials/images/opencost.png'
+import opencostgrafana from '@site/docs/managed_kubernetes/tutorials/images/opencostgrafana.png'
+import opencostmcp from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp.png'
+import opencostmcp2 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp2.png'
+import opencostmcp3 from '@site/docs/managed_kubernetes/tutorials/images/opencostmcp3.png'
 
 ## Objectifs
 
@@ -19,7 +19,7 @@ Ce tutoriel vous présente **OpenCost**, l'outil de monitoring et d'optimisation
 
 OpenCost est une solution open-source, standard de la CNCF (Cloud Native Computing Foundation), qui fournit une visibilité en temps réel sur les coûts de vos environnements Kubernetes. Il vous aide à comprendre précisément ce qui consomme des ressources dans votre cluster et comment cela se traduit en termes de coûts.
 
-Dans l'offre Managed Kubernetes, OpenCost est pré-installé et configuré pour vous donner une vision claire de vos dépenses. Il est directement paramétré avec les coûts réels de l'infrastructure Cloud Temple.
+Dans le produit Managed Kubernetes, OpenCost est pré-installé et configuré pour vous donner une vision claire de vos dépenses. Il est directement paramétré avec les coûts réels de l'infrastructure Cloud Temple.
 
 ## Accéder à l'interface OpenCost
 
@@ -85,11 +85,13 @@ Par exemple, pour le cluster "bestie" :
 Pour générer la valeur `<TOKEN>` à partir de vos identifiants, utilisez une des commandes suivantes :
 
 **Pour Linux/macOS :**
+
 ```bash
 echo -n 'finopsadm:VOTRE_MOT_DE_PASSE' | base64
 ```
 
 **Pour Windows (PowerShell) :**
+
 ```powershell
 $credentials = [System.Text.Encoding]::UTF8.GetBytes("finopsadm:VOTRE_MOT_DE_PASSE")
 [System.Convert]::ToBase64String($credentials)
@@ -99,31 +101,30 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 
 ### 2. Interroger OpenCost avec le MCP
 
-:::tip Prérequis
-Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre offre **[LLM-as-a-Service](/llmaas/llmaas)** souveraine.
+:::tip[Prérequis
+]
+Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre produit **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
 :::
 
 Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requetes en langage natuel sur ce serveur MCP.
 
-#### Exemple:
+#### Exemple
 
 "utilise le MCP "opencost-bestie", et dis moi quelle pourcentage des couts du cluster ne sont pas alloués à des ressources"
 Vous obtiendrez ceci:
 <img src={opencostmcp} alt="réponse IA opencost"/>
 
-#### Exemple 2:
+#### Exemple 2
 
 "utilise le MCP "opencost-bestie",  et liste moi les couts associés aux volumes persistents sur la journée d'hier"
 
 <img src={opencostmcp2} alt="réponse IA opencost 2"/>
 
-
-#### Exemple 3:
+#### Exemple 3
 
 "utilise le MCP opencost-bestie, et dis moi quelle pourcentage des couts du cluster alloués à l'application avec le label "nginx" . (filtre de la forme filter: "label:app:frontend" )"
 
 <img src={opencostmcp3} alt="réponse IA opencost 3"/>
-
 
 ## Conclusion
 

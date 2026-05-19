@@ -1,10 +1,10 @@
 ---
 title: Guide de démarrage
 ---
-import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
-import shivaBareMetalList from './images/shiva_bare-metal_list.png'
-import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
-import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
+import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
+import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
+import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
+import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
 # QuickStart pour l'offre Bare Metal
 
@@ -63,13 +63,13 @@ Le sous-menu **Volumes** affiche un tableau listant tous les volumes de stockage
 
 <img src={shivaBareMetalStoragelist} />
 
-:::info Volume BFS (Boot from SAN)
+:::info[Volume BFS (Boot from SAN)]
 Le **Volume 1** est le volume **BFS (Boot from SAN)** et doit être utilisé pour installer le système d'exploitation.
 
 **Important :** Ce volume n'est pas partageable avec les autres Bare Metal de la même zone de disponibilité (AZ).
 :::
 
-:::tip Bonne pratique
+:::tip[Bonne pratique]
 Privilégiez l'installation de l'OS sur le volume **BFS**, et stockez vos données sur un volume **LUN** additionnel. Cette séparation facilite la maintenance, les sauvegardes et la réinstallation du système si nécessaire.
 :::
 

@@ -4,31 +4,31 @@ title: Conceptos avanzados
 
 ## Introducción
 
-Esta página presenta las funciones avanzadas de enrutamiento BGP disponibles en la infraestructura de Internet Cloud Temple.
+Esta página presenta las funcionalidades avanzadas de enrutamiento BGP disponibles en la infraestructura de Internet Cloud Temple.
 
-## BGP Communities
+## Comunidades BGP
 
-Cloud Temple ofrece una variedad de comunidades BGP que permiten controlar la selección de la ruta que tomará su tráfico.
+Cloud Temple ofrece una variedad de comunidades BGP que permiten controlar la selección de la ruta que siga su tráfico.
 
 ### ¿Qué es una comunidad BGP?
 
-Las comunidades BGP son atributos opcionales que se pueden asociar a rutas BGP para marcar, filtrar o influir en el enrutamiento.
+Las comunidades BGP son atributos opcionales que se pueden adjuntar a las rutas BGP para marcar, filtrar o influir en el enrutamiento.
 
-### Actions on Local Preference
+### Acciones sobre la Preferencia Local
 
-The following BGP communities allow you to modify the **local preference** of your prefixes, thereby influencing the path selection toward the machine announcing the prefix within AS33930.
+Las siguientes comunidades BGP le permiten modificar la **preferencia local** de sus prefijos, influyendo así en la selección de la ruta hacia la máquina que anuncia el prefijo dentro del AS33930.
 
-You can adjust the local preference of a prefix within the Cloud Temple Internet backbone in AS 33930 by using the following communities:
+Puede modificar la preferencia local de un prefijo dentro del backbone Internet Cloud Temple en el AS 33930 utilizando las siguientes comunidades :
 
-| BGP Community | Priority | Local Preference |
-|:--------------|:---------|:----------------:|
-| 33930:40010 | Low priority | 10 | 
-| *Default* | Cloud Temple Backbone (default) | 100 | 
-| 33930:40150 | Medium priority | 150 | 
-| 33930:40200 | High priority | 200 | 
-| 33930:40250 | Maximum priority | 250 | 
+| Comunidad BGP | Prioridad | Preferencia Local |
+|:---------------|:------------|:----------------:|
+| 33930:40010 | Prioridad baja | 10 |
+| *Por defecto* | Backbone Cloud Temple (predeterminado) | 100 |
+| 33930:40150 | Prioridad media | 150 |
+| 33930:40200 | Prioridad alta | 200 |
+| 33930:40250 | Prioridad máxima  | 250 |
 
-**Note:** The higher the local preference value, the more preferred the path is in BGP routing decisions. By default, without a specific community, your prefixes use the standard local preference of 100.
+**Nota :** Cuanto mayor sea el valor de la preferencia local, más preferente será la ruta en las decisiones de enrutamiento BGP. Por defecto, sin una comunidad específica, sus prefijos utilizan la preferencia local estándar de 100.
 
 ## Configuración
 
@@ -40,22 +40,22 @@ Para aplicar una comunidad BGP a sus anuncios:
 ### Ejemplo de configuración (bird)
 
 ```junos
-# Define a policy that tags the prefix with the community
+# Définir une policy qui tag le préfixe avec la communauté
 filter p_bkb_rs_001_export {
-    if net ~ [203.0.113.0/32]
-    then {
-        bgp_community.add((33930,40250));
-        accept;
-    }
-    if net ~ [203.0.113.1/32]
-    then {
-        accept;
-    }
-    else reject;
+if net ~ [203.0.113.0/32]
+        then {
+            bgp_community.add((33930,40250));
+            accept;
+        }
+if net ~ [203.0.113.1/32]
+        then {
+            accept;
+        }
+else reject;
 }
 
-# Apply this policy to the BGP session with Cloud Temple route servers
-protocol bgp p_bkb_rs_001 {
+# Appliquer cette policy à la session BGP avec les serveurs de routes Cloud Temple
+protocol bgp p_bkb_rs_001  {
         local 100.64.3.226 as 65551;
         neighbor 100.64.0.1 as 33930;
         multihop;
@@ -67,4 +67,4 @@ protocol bgp p_bkb_rs_001 {
 }
 ```
 
-The prefix 203.0.113.0/32 will be advertised with a **local preference of 250**, and the prefix 203.0.113.1/32 will be advertised with a **local preference of 100** (default) within AS33930.
+El prefijo 203.0.113.0/32 se anunciará con una **preferencia local de 250** y el prefijo 203.0.113.1/32 se anunciará con una **preferencia local de 100** (por defecto) dentro del AS33930.

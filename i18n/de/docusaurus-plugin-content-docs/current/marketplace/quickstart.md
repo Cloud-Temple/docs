@@ -4,71 +4,81 @@ title: Schnellstartanleitung
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# QuickStart für die Cloud Temple Marketplace
+# Schnellstart für die Cloud Temple Marketplace
 
-Diese Seite führt Sie durch die ersten Schritte zur Nutzung der **Cloud Temple Marketplace** über die Konsole. Befolgen Sie diese Anleitung, um die verfügbaren Lösungen kennenzulernen und diese schnell bereitzustellen.
+Diese Seite führt Sie durch die ersten Schritte zur Nutzung der **Cloud Temple Marketplace** über die Konsole. Befolgen Sie diese Anweisungen, um die verfügbaren Lösungen kennenzulernen und schnell bereitzustellen.
+
+---
 
 ## Voraussetzungen
 
-Stellen Sie sicher, dass die folgenden Punkte erfüllt sind, bevor Sie beginnen:
+Bevor Sie beginnen, stellen Sie sicher, dass folgende Punkte erfüllt sind:
 
-1. **Aktivierte Abonnement**: Um Bereitstellungen durchführen zu können, muss Ihre Organisation mindestens ein Cloud Temple-Service-Abonnement (IaaS OpenSource oder IaaS VMware) abgeschlossen haben. Im Rahmen der Zusammenarbeit mit unseren Partnern ist kein spezifisches Abonnement erforderlich.
-2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Berechtigungen verfügen, um auf die Konsole zugreifen zu können, sowie über Schreibrechte für die Zielumgebungen, wenn Sie Ressourcen bereitstellen möchten.
-3. **Zielumgebung**: Sie müssen über einen konfigurierten Tenant verfügen, der für die Bereitstellung von Lösungen geeignet ist.
+1. **Aktives Abonnement**: Um Bereitstellungen zu ermöglichen, muss Ihre Organisation mindestens einen Cloud Temple-Dienst (IaaS OpenSource ou IaaS VMware) abonniert haben. Im Rahmen der Kontaktaufnahme mit unseren Partnern ist kein spezifisches Abonnement erforderlich.
+2. **Benutzerberechtigungen**: Ihr Benutzerkonto muss über die erforderlichen Berechtigungen zum Zugriff auf die Konsole sowie über Schreibrechte für die Zielumgebungen verfügen, wenn Sie dort Ressourcen bereitstellen möchten.
+3. **Zielumgebung**: Eine für die Bereitstellung von Lösungen konfigurierte Tenant-Umgebung muss vorhanden sein.
 
-## Access to the Marketplace
+---
 
-### 1. Access via the Console
+## Zugriff auf den Marketplace
 
-After logging into the Cloud Temple console, you can access the Marketplace in several ways:
+### 1. Zugriff über die Konsole
 
-- **Main menu**: A **Marketplace** menu is available in the main navigation
-- **Virtual machine pages**: The Marketplace is also accessible from the virtual machine creation pages in OpenIaaS and VMware environments
+Nachdem Sie sich bei der Cloud Temple-Konsole angemeldet haben, können Sie auf den Marketplace auf verschiedene Weise zugreifen:
+
+- **Hauptmenü** : Ein **Marketplace**-Menü ist in der Hauptnavigation verfügbar
+- **Seiten für virtuelle Maschinen** : Der Marketplace ist auch über die Seiten zur Erstellung virtueller Maschinen in den OpenIaaS- und VMware-Umgebungen zugänglich
 
 ### 2. Marketplace-Seite
 
-Die Marketplace-Seite zeigt einen Katalog der verfügbaren Lösungen. Jede Lösung zeigt an:
+Die Marketplace-Seite stellt einen Katalog der verfügbaren Lösungen bereit. Jede Lösung zeigt folgende Informationen an:
 
-- **Name und Logo** der Lösung  
-- **Kurze Beschreibung**  
-- **Herausgeber/Partner**  
-- **Typ der Lösung** (VM-Image, SaaS-Lösung, usw.)
+- **Name und Logo** der Lösung
+- **Kurze Beschreibung**
+- **Anbieter/Partner**
+- **Lösungstyp** (VM-Image, SaaS-Lösung, usw.)
 
 <img src={marketplaceCatalog} />
 
-## Viewing solution details
+---
+
+## Details einer Lösung anzeigen
 
 ### Zugriff auf detaillierte Informationen
 
-Wenn Sie auf eine Lösung klicken, gelangen Sie zu einer Detailseite mit folgenden Informationen:
+Durch Klicken auf eine Lösung gelangen Sie zu einer Detailseite, die Folgendes umfasst:
 
-- **Vollständige Beschreibung** der Lösung  
-- **Technische Spezifikationen** (falls zutreffend)  
-- **Voraussetzungen** für die Bereitstellung  
-- **Dokumentation**, bereitgestellt durch den Anbieter  
-- **Verfügbare Bereitstellungsoptionen**  
+- **Vollständige Beschreibung** der Lösung
+- **Technische Spezifikationen** (falls zutreffend)
+- **Voraussetzungen** für die Bereitstellung
+- **Dokumentation** des Anbieters
+- **Bereitstellungsoptionen** verfügbar
 
 <img src={marketplaceSolutionDetails} />
 
-## Available actions
+---
 
-Depending on the type of solution, different actions are possible:
+## Verfügbare Aktionen
 
-### Deployment of Virtual Machine Images
+Je nach Lösungstyp sind verschiedene Aktionen möglich:
 
-For solutions compatible with your OpenIaaS or VMware environments, you can deploy directly from the Marketplace.
+### Bereitstellen von VM-Images
 
-**Important note:** Direct deployment is only available for images that list your environment among their compatible targets.
+Für Lösungen, die mit Ihren OpenIaaS- oder VMware-Umgebungen kompatibel sind, können Sie direkt aus dem Marketplace bereitstellen.
 
-**Detailed guides:**
+**Wichtiger Hinweis:** Die direkte Bereitstellung ist nur für Images verfügbar, die Ihre Umgebung in ihren kompatiblen Zielen unterstützen.
 
-- [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
-- [How to deploy an image on VMware?](tutorials/deploy_vmware)
+**Detaillierte Anleitungen:**
+
+- [Wie stelle ich ein Image auf OpenIaaS bereit?](tutorials/deploy_openiaas)
+- [Wie stelle ich ein Image auf VMware bereit?](tutorials/deploy_vmware)
 
 ### Kontakt zu Partnern
 
-Für Lösungen, die eine Vermittlung erfordern, können Sie den jeweiligen Partner-Editor direkt kontaktieren.
+Für Lösungen, die eine Vermittlung erfordern, können Sie den Publisher-Partner direkt kontaktieren.
 
-**Detaillierter Leitfaden:**
+**Detaillierte Anleitung:**
 
-- [Wie kontaktiert man einen Partner?](tutorials/contact_partner)
+- [Wie kontaktiere ich einen Partner?](tutorials/contact_partner)
+
+---

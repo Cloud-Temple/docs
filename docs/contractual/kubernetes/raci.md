@@ -1,8 +1,11 @@
 ---
 title: Matrice de Responsabilités (RACI) - Managed Kubernetes
+displayed_sidebar: docSidebar
 ---
 
+
 ## RACI
+
 ### Architecture & Infrastructure
 
 | **Activité**                                                        | **Client** | **Cloud Temple** |
@@ -15,7 +18,7 @@ title: Matrice de Responsabilités (RACI) - Managed Kubernetes
 | Déploiement de la configuration initiale des identités et des accès | C          | RA               |
 | Définir la stratégie de mise à l’échelle et de haute disponibilité  | C          | RA               |
 
-### Gestion des projets et applications métiers 
+### Gestion des projets et applications métiers
 
 | **Activité**                                       | **Client** | **Cloud Temple** |
 | -------------------------------------------------- | ---------- | ---------------- |
@@ -34,7 +37,6 @@ title: Matrice de Responsabilités (RACI) - Managed Kubernetes
 | Surveiller la performance des applications      | RA         |                  |
 | Gérer les alertes liées au service Kubernetes   | I          | RA               |
 | Gérer les alertes liées aux applications        | RA         |                  |
-
 
 ### Maintenance et mises à jour Infrastructures
 
@@ -120,7 +122,7 @@ title: Matrice de Responsabilités (RACI) - Managed Kubernetes
 | Gestion des plans de support spécifiques sur les opérateurs | CI         | RA               |
 
 *Package opérateur inclus sur Managed Kube - voir chapitres : Packages Helm managés
- 
+
 ### Gestion des applications/opérateurs/CRD Kubernetes (métiers)
 
 | **Activité**                                                | **Client** | **Cloud Temple** |

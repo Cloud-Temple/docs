@@ -1,9 +1,9 @@
 ---
 title: Customiser une image VMware
 ---
-import marketplaceVMwareExportTemplate from '../images/marketplace_vmware_export_template.png'
-import marketplaceVMwareExportTemplateButton from '../images/marketplace_vmware_export_template_button.png'
-import marketplaceVMwareDeployFromTemplate from '../images/marketplace_vmware_deploy_from_template.png'
+import marketplaceVMwareExportTemplate from '@site/docs/marketplace/images/marketplace_vmware_export_template.png'
+import marketplaceVMwareExportTemplateButton from '@site/docs/marketplace/images/marketplace_vmware_export_template_button.png'
+import marketplaceVMwareDeployFromTemplate from '@site/docs/marketplace/images/marketplace_vmware_deploy_from_template.png'
 
 Ce tutoriel explique comment personnaliser une image de machine virtuelle (VMI) VMware fournie par la Marketplace pour créer vos propres modèles réutilisables.
 
@@ -17,10 +17,10 @@ Une fois l'image déployée, elle devient une machine virtuelle que vous pouvez 
 
 ## Étapes de personnalisation
 
-1.  **Déployer l'image** de base depuis la Marketplace.
-2.  **Configurer la machine virtuelle** selon vos besoins.
-3.  **Créer un modèle** à partir de la machine virtuelle configurée.
-4.  **Déployer une nouvelle machine virtuelle** depuis votre modèle personnalisé.
+1. **Déployer l'image** de base depuis la Marketplace.
+2. **Configurer la machine virtuelle** selon vos besoins.
+3. **Créer un modèle** à partir de la machine virtuelle configurée.
+4. **Déployer une nouvelle machine virtuelle** depuis votre modèle personnalisé.
 
 ---
 
@@ -38,9 +38,9 @@ Une fois la machine virtuelle déployée, configurez-la selon vos besoins (insta
 
 ### Étape 3 : Créer un modèle à partir de la machine virtuelle
 
-1.  Depuis la liste de vos machines virtuelles, sélectionnez la machine virtuelle configurée.
-2.  Sélectionnez **"Exporter"** depuis la barre d'action.
-3.  Suivez les étapes de la Console pour exporter le modèle.
+1. Depuis la liste de vos machines virtuelles, sélectionnez la machine virtuelle configurée.
+2. Sélectionnez **"Exporter"** depuis la barre d'action.
+3. Suivez les étapes de la Console pour exporter le modèle.
 
 <img src={marketplaceVMwareExportTemplateButton} />
 <img src={marketplaceVMwareExportTemplate} />
@@ -52,8 +52,9 @@ Une fois la machine virtuelle déployée, configurez-la selon vos besoins (insta
 Vous pouvez déployer depuis la page "Catalogue" ou depuis la page "Machines Virtuelles".
 
 Pour déployer depuis la page **Machines Virtuelles** :
-1.  Cliquez sur **"Créer une machine virtuelle"**.
-2.  Choisissez **"Déployer depuis un modèle"**.
-3.  Sélectionnez votre nouveau modèle dans la liste.
+
+1. Cliquez sur **"Créer une machine virtuelle"**.
+2. Choisissez **"Déployer depuis un modèle"**.
+3. Sélectionnez votre nouveau modèle dans la liste.
 
 <img src={marketplaceVMwareDeployFromTemplate} />

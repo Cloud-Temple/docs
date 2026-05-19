@@ -6,69 +6,79 @@ import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplac
 
 # QuickStart for the Cloud Temple Marketplace
 
-This page guides you through the initial steps to use the **Cloud Temple Marketplace** from the console. Follow these instructions to explore available solutions and deploy them quickly.
+This page guides you through the initial steps to use the **Cloud Temple Marketplace** from the console. Follow these instructions to discover available solutions and deploy them quickly.
 
 ---
 
 ## Prerequisites
 
-Before you begin, ensure the following points are met:
+Before you begin, ensure the following:
 
-1. **Active Subscription**: Your organization must have an active subscription to at least one Cloud Temple service (OpenSource IaaS or VMware IaaS) to enable deployments. During contact with our partners, no specific subscription is required.
-2. **User Permissions**: Your user account must have the necessary permissions to access the console and write permissions on target environments when deploying resources.
-3. **Target Environment**: Have a tenant configured for solution deployments.
+1. **Active subscription**: To enable deployments, your organization must have subscribed to at least one Cloud Temple service (Open Source IaaS or VMware IaaS). When working with our partners, you do not need a specific subscription.
+2. **User permissions**: Your user account must have the necessary rights to access the console and write permissions on the target environments when you want to deploy resources there.
+3. **Target environment**: Have a tenant configured for solution deployment.
 
-## Access to the Marketplace
+---
+
+## Marketplace Access
 
 ### 1. Access from the Console
 
 Once logged into the Cloud Temple console, you can access the Marketplace in several ways:
 
 - **Main menu**: A **Marketplace** menu is available in the main navigation
-- **Virtual machine pages**: The Marketplace is also accessible from the virtual machine creation pages within OpenIaaS and VMware environments
+- **Virtual machine pages**: The Marketplace is also accessible from the virtual machine creation pages in OpenIaaS and VMware environments
 
 ### 2. Marketplace Page
 
-The Marketplace page displays a catalog of available solutions. Each solution shows:
+The Marketplace page presents a catalog of available solutions. Each solution displays:
 
-- **Name and logo** of the solution  
-- **Short description**  
-- **Publisher/Partner**  
+- **Name and logo** of the solution
+- **Short description**
+- **Publisher/Partner**
 - **Solution type** (VM Image, SaaS Solution, etc.)
 
 <img src={marketplaceCatalog} />
 
-## Viewing solution details
+---
 
-### Access to Detailed Information
+## Viewing the details of a solution
 
-Clicking on a solution takes you to a details page containing:
+### Access to detailed information
 
-- **Complete description** of the solution  
-- **Technical specifications** (if applicable)  
-- **Deployment prerequisites**  
-- **Documentation** provided by the publisher  
-- **Available deployment options**  
+By clicking on a solution, you access a details page that includes:
+
+- **Complete description** of the solution
+- **Technical specifications** (if applicable)
+- **Deployment prerequisites**
+- **Documentation** provided by the vendor
+- **Available deployment options**
 
 <img src={marketplaceSolutionDetails} />
 
+---
+
 ## Available actions
 
-Depending on the type of solution, different actions are available:
+Depending on the solution type, different actions are possible:
 
-### Deploying Virtual Machine Images
+### Deploying virtual machine images
 
 For solutions compatible with your OpenIaaS or VMware environments, you can deploy directly from the Marketplace.
 
-**Important Note:** Direct deployment is only available for images that list your environment among their compatible targets.
+**Important note:** Direct deployment is only available for images that list your environment among their compatible targets.
 
-**Detailed Guides:**
+**Detailed guides:**
+
 - [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
 - [How to deploy an image on VMware?](tutorials/deploy_vmware)
 
 ### Contact with Partners
 
-For solutions requiring coordination, you can contact the publisher partner directly.
+For solutions requiring matchmaking, you can contact the vendor partner directly.
 
 **Detailed guide:**
+
 - [How to contact a partner?](tutorials/contact_partner)
+
+---

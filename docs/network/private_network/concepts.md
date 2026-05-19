@@ -22,9 +22,9 @@ Le circuit __VPLS__ d'un client peut être __étendu entre toutes les zones de d
 
 Le protocole __VPLS__ est __totalement transparent__ pour les clients qui ne voient que les différents VLANs sur leurs zones de disponibilité.
 
-### Le réseau dans l'offre de virtualisation VMware
+### Le réseau dans le produit de virtualisation VMware
 
-Les réseaux virtuels (vlan) de l'offre de virtualisation VMware sont des réseaux de types __'DVPortgroup'__. Un __'dvPortGroup'__,
+Les réseaux virtuels (vlan) de le produit de virtualisation VMware sont des réseaux de types __'DVPortgroup'__. Un __'dvPortGroup'__,
 ou __'Distributed Virtual Port Group'__, est un concept spécifique à VMware. Un dvPortGroup est une entité qui
 regroupe plusieurs ports virtuels (vPorts) dans un environnement de réseau virtuel distribué pour faciliter leur utilisation.
 
@@ -35,7 +35,7 @@ La bande passante maximale utilisable dépend principalement du modèle de lame 
 
 Il est possible d'attendre une bande passante de 10Gbps.
 
-Les configurations disponibles sur la console Cloud Temple dans le cadre de l'offre de virtualisation VMware sont les suivantes :
+Les configurations disponibles sur la console Cloud Temple dans le cadre de le produit de virtualisation VMware sont les suivantes :
 
 - __Vlan tagging__
 - __Trunk__
@@ -44,7 +44,7 @@ Les configurations disponibles sur la console Cloud Temple dans le cadre de l'of
 *__Nota__* :
 
 - *Le choix de l'adressage IP au sein de ces réseaux est __libre.__*
-- *__SRV-IO__ n'est pas disponible dans l'offre réseau associée à la virtualisation VMware.*
+- *__SRV-IO__ n'est pas disponible dans le produit réseau associé à la virtualisation VMware.*
 - *__QinQ__ est supporté sur l'architecture Cloud Temple. QinQ, également connu sous le nom de "VLAN stacking" ou de 802.1ad, est
 un protocole réseau qui permet l'encapsulation de plusieurs étiquettes VLAN (Virtual Local Area Network) dans une seule trame Ethernet.*
 
@@ -65,7 +65,7 @@ Il est ainsi possible de partager un réseau entre vos __[Tenant](../../console/
 
 ## Connectivité privé externe
 
-L'offre de réseau Cloud Temple permet aux clients de connecter leurs propres infrastructures IPSEC, MPLS ou Fibre à leurs tenants.
+Le produit réseau Cloud Temple permet aux clients de connecter leurs propres infrastructures IPSEC, MPLS ou Fibre à leurs tenants.
 
 Cloud Temple propose à cet effet :
 

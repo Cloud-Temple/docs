@@ -58,7 +58,7 @@ Terraform v1.6.0
 
 These credentials can be generated in the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#api-keys).
 
-:::warning Security
+:::warning[Security]
     Store these credentials securely. The Secret ID will be displayed only once.
 :::
 
@@ -209,7 +209,7 @@ output "vm_moref" {
 }
 ```
 
-:::note Adaptation of names
+:::note[Adaptation of names]
     The names of datacenters, clusters, and datastores must match those available in your Cloud Temple environment. Check the console to identify the available resources.
 :::
 
@@ -277,7 +277,7 @@ vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
 ```
 
-:::success Herzlichen Glückwunsch!
+:::success[Herzlichen Glückwunsch!]
     Sie haben soeben Ihre erste virtuelle Maschine Cloud Temple mit Terraform erstellt!
 :::
 
@@ -536,6 +536,7 @@ Error: failed to login: Unexpected response code: 401
 **Cause**: Invalid or expired credentials.
 
 **Solution**:
+
 1. Check your environment variables
 2. Generate a new API key in the console
 3. Verify the permissions of your API key
@@ -549,6 +550,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 **Ursache**: Die referenzierte Ressource (Datacenter, Cluster usw.) existiert nicht oder Sie haben keinen Zugriff darauf.
 
 **Lösung**:
+
 1. Überprüfen Sie den genauen Namen (oder die UUID) in der Cloud Temple-Konsole
 2. Überprüfen Sie Ihre Zugriffsrechte für diese Ressource
 

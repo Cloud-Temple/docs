@@ -2,7 +2,7 @@
 title: Utiliser un GPU nVidia
 ---
 
-import nvidiasmi from './images/nvidiasmi.png'
+import nvidiasmi from '@site/docs/managed_kubernetes/tutorials/images/nvidiasmi.png'
 
 # Utiliser un GPU sur Managed Kubernetes
 
@@ -42,12 +42,14 @@ Pour plus d'informations sur le fonctionnement du toolkit NVIDIA, vous pouvez co
 
 ## Déploiement et Vérification
 
-1.  **Déployez le pod** en utilisant la commande `kubectl apply` :
+1. **Déployez le pod** en utilisant la commande `kubectl apply` :
+
     ```shell
     kubectl apply -f nvidia-smi.yaml
     ```
 
-2.  **Vérifiez les logs du pod** pour voir la sortie de la commande `nvidia-smi` :
+2. **Vérifiez les logs du pod** pour voir la sortie de la commande `nvidia-smi` :
+
     ```shell
     kubectl logs nvidia-cuda-check
     ```

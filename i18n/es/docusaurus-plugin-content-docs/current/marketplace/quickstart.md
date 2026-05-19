@@ -4,71 +4,81 @@ title: Guía de inicio
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# QuickStart para la Marketplace Cloud Temple
+# QuickStart para el Marketplace Cloud Temple
 
-Esta página le guiará a través de los pasos iniciales para utilizar la **Marketplace Cloud Temple** desde la consola. Siga estas instrucciones para descubrir las soluciones disponibles y desplegarlas rápidamente.
+Esta página le guía a través de los pasos iniciales para utilizar el **Marketplace Cloud Temple** desde la consola. Siga estas instrucciones para descubrir las soluciones disponibles y desplegarlas rápidamente.
 
 ---
 
-## Requis previos
+## Requisitos previos
 
-Antes de comenzar, asegúrese de cumplir los siguientes puntos:
+Antes de comenzar, asegúrese de lo siguiente:
 
-1. **Suscripción activa**: Para permitir despliegues, su organización debe tener suscrito al menos un servicio Cloud Temple (IaaS OpenSource o IaaS VMware). En el marco del contacto con nuestros socios, no necesita una suscripción específica.
-2. **Permisos de usuario**: Su cuenta de usuario debe contar con los permisos necesarios para acceder a la consola y con permisos de escritura en los entornos de destino cuando desee desplegar recursos.
-3. **Entorno de destino**: Disponer de un tenant configurado para el despliegue de soluciones.
+1. **Suscripción activada** : Para permitir los despliegues, su organización debe haber suscrito al menos un servicio de Cloud Temple (IaaS OpenSource o IaaS VMware). En el marco de contacto con nuestros socios, no necesita una suscripción específica.
+2. **Permisos de usuario** : Su cuenta de usuario debe contar con los permisos necesarios para acceder a la consola y derechos de escritura en los entornos objetivo cuando desee desplegar recursos en ellos.
+3. **Entorno objetivo** : Contar con un tenant configurado para el despliegue de soluciones.
+
+---
 
 ## Acceso a la Marketplace
 
-### 1. Access from the Console
+### 1. Acceso desde la consola
 
-Once logged into the Cloud Temple console, you can access the Marketplace in several ways:
+Una vez conectado a la consola Cloud Temple, puede acceder al Marketplace de varias formas:
 
-- **Main menu**: A **Marketplace** menu is available in the main navigation
-- **Virtual machines pages**: The Marketplace is also accessible from the virtual machine creation pages in OpenIaaS and VMware environments
+- **Menú principal** : Un menú **Marketplace** está disponible en la navegación principal
+- **Páginas de máquinas virtuelles** : El Marketplace también es accesible desde las páginas de creación de máquinas virtuelles en los entornos OpenIaaS y VMware
 
 ### 2. Página Marketplace
 
 La página Marketplace presenta un catálogo de las soluciones disponibles. Cada solución muestra:
 
-- **Nombre y logotipo** de la solución  
-- **Descripción breve**  
-- **Editor/Partner**  
-- **Tipo de solución** (Imagen de VM, Solución SaaS, etc.)
+- **Nombre y logo** de la solución
+- **Descripción breve**
+- **Editor/Partner**
+- **Tipo de solución** (Imagen VM, Solución SaaS, etc.)
 
 <img src={marketplaceCatalog} />
 
-## Viewing solution details
+---
+
+## Consulta de los detalles de una solución
 
 ### Acceso a la información detallada
 
-Al hacer clic en una solución, accedes a una página de detalles que incluye:
+Al hacer clic en una solución, accede a una página de detalles que incluye:
 
 - **Descripción completa** de la solución
-- **Especificaciones técnicas** (si procede)
-- **Requisitos previos** para el despliegue
+- **Especificaciones técnicas** (si aplica)
+- **Requisitos** de despliegue
 - **Documentación** proporcionada por el editor
 - **Opciones de despliegue** disponibles
 
 <img src={marketplaceSolutionDetails} />
 
+---
+
 ## Acciones disponibles
 
-Según el tipo de solución, están disponibles distintas acciones:
+Según el tipo de solución, se pueden realizar diferentes acciones:
 
-### Deployment of virtual machine images
+### Despliegue de imágenes de máquinas virtuales
 
-For solutions compatible with your OpenIaaS or VMware environments, you can deploy directly from the Marketplace.
+Para las soluciones compatibles con sus entornos OpenIaaS o VMware, puede desplegar directamente desde el Marketplace.
 
-**Important note:** Direct deployment is only available for images that include your environment in their compatible targets.
+**Nota importante:** El despliegue directo solo está disponible para las imágenes que incluyen su entorno en sus destinos compatibles.
 
-**Detailed guides:**
-- [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
-- [How to deploy an image on VMware?](tutorials/deploy_vmware)
+**Guías detalladas:**
+
+- [¿Cómo desplegar una imagen en OpenIaaS?](tutorials/deploy_openiaas)
+- [¿Cómo desplegar una imagen en VMware?](tutorials/deploy_vmware)
 
 ### Contacto con los socios
 
-Para soluciones que requieran una conexión directa, puede ponerse en contacto directamente con el socio editor.
+Para las soluciones que requieran intermediación, puede contactar directamente con el socio editor.
 
-**Guía detallada:**
-- [Cómo contactar a un socio?](tutorials/contact_partner)
+**Guía detallada :**
+
+- [¿Cómo contactar a un socio?](tutorials/contact_partner)
+
+---

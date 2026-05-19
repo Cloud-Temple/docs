@@ -4,17 +4,17 @@ tags:
   - internet
   - tutorials
 ---
-import pfSenseWebui from '../images/pfsense_webui.png';
-import pfSenseHomePage from '../images/pfsense_home_page.png';
-import pfSenseBgpRule from '../images/pfsense_bgp_rule.png';
-import pfSenseFrrPackage from '../images/pfsense_frr_package.png';
-import pfSenseGeneralConf from '../images/pfsense_general_conf.png';
-import pfSenseNeighborConf from '../images/pfsense_neighbor_conf.png';
-import bgpBasicOptions from '../images/bgp_basic_options.png';
-import ebgpConf from '../images/ebgp_conf.png';
-import routeServerNeighbor from '../images/route_server_neighbor.png';
-import neighborsOverview from '../images/neighbors_overview.png';
-import pfSenseBgpStatus from '../images/pfsense_bgp_status.png';
+import pfSenseWebui from '@site/docs/network/internet/images/pfsense_webui.png';
+import pfSenseHomePage from '@site/docs/network/internet/images/pfsense_home_page.png';
+import pfSenseBgpRule from '@site/docs/network/internet/images/pfsense_bgp_rule.png';
+import pfSenseFrrPackage from '@site/docs/network/internet/images/pfsense_frr_package.png';
+import pfSenseGeneralConf from '@site/docs/network/internet/images/pfsense_general_conf.png';
+import pfSenseNeighborConf from '@site/docs/network/internet/images/pfsense_neighbor_conf.png';
+import bgpBasicOptions from '@site/docs/network/internet/images/bgp_basic_options.png';
+import ebgpConf from '@site/docs/network/internet/images/ebgp_conf.png';
+import routeServerNeighbor from '@site/docs/network/internet/images/route_server_neighbor.png';
+import neighborsOverview from '@site/docs/network/internet/images/neighbors_overview.png';
+import pfSenseBgpStatus from '@site/docs/network/internet/images/pfsense_bgp_status.png';
 
 Ce guide va vous aider à déployer votre __firewall opensource pfSense__ dans le Cloud de Confiance en seulement quelques minutes.
 
@@ -22,7 +22,7 @@ Ce guide va vous aider à déployer votre __firewall opensource pfSense__ dans l
 
 Les prérequis à ce guide sont les suivants :
 
-1. Avoir souscrit à l'offre Cloud Temple : vous devez disposer de votre organisation, de votre tenant et de vos accès,
+1. Avoir souscrit à le produit Cloud Temple : vous devez disposer de votre organisation, de votre tenant et de vos accès,
 2. Avoir les droits sur le module compute.
 
 Ce document décrit les étapes à suivre pour déployer un firewall virtuel pfSense.

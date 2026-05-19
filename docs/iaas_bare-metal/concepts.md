@@ -56,7 +56,7 @@ Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de per
 - **(1)** La quantité de mémoire est celle physiquement disponible sur les lames et ne peut être modifiée.
 - **(2)** Les fréquences indiquées correspondent à la fréquence de base minimum et à la fréquence turbo.
 - **(3)** La connectivité physique est mutualisée pour l'accès réseau et l'accès stockage bloc, grâce à une architecture convergée Cisco UCS.
-- **(4)** Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, l'offre inclut des GPU NVIDIA LOVELACE L40S.
+- **(4)** Les GPU disponibles évoluent en fonction des dernières technologies. Au 1er mai 2024, le produit inclut des GPU NVIDIA LOVELACE L40S.
 
 La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellement, plages de maintenance incluses. Toute demande liée au SLA doit être déclarée via un ticket incident.
 
@@ -66,17 +66,18 @@ La disponibilité de l'infrastructure est garantie à 99.9%, mesurée mensuellem
 
 Le stockage bloc distribué, basé sur **IBM Spectrum Virtualize**, offre une gamme de performances adaptées à divers cas d'utilisation :
 
-| Référence                         | IOPS/To                 | Usage principal                        |
-|-----------------------------------|-------------------------|----------------------------------------|
-| **FLASH - Essentiel**             | 500                     | Charges de travail légères             |
-| **FLASH - Standard**              | 1500                    | Charges de travail standard            |
-| **FLASH - Premium**               | 3000                    | Charges intensives                     |
-| **FLASH - Enterprise**            | 7500                    | Charges critiques                      |
-| **FLASH - Ultra**                 | 15000                   | Charges ultra-intensives               |
-| **MASS STORAGE - Archivage**      | Non applicable          | Stockage économique pour l'archivage   |
+| Référence                         | IOPS/To        | Plafond IOPS max / Volume | Bande passante max / Volume | Usage principal                        |
+|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
+| **FLASH - Essentiel**             | 500            | 10 000 IOPS               | 512 Mo/s                    | Charges de travail légères             |
+| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 Mo/s                   | Charges de travail standard            |
+| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 Mo/s                   | Charges intensives                     |
+| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 Mo/s                   | Charges critiques                      |
+| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 Mo/s                   | Charges ultra-intensives               |
+| **MASS STORAGE - Archivage**      | Non applicable | Non garanti               | Non garanti                 | Stockage économique pour l'archivage   |
 
 ### Caractéristiques
 
+- **Performances** : La performance effective croît de manière linéaire en fonction de la volumétrie allouée (selon le ratio IOPS/To), **dans la limite du plafond matériel absolu défini ci-dessus**. (Par exemple, un volume de 10 To en classe Ultra sera physiquement limité à 30 000 IOPS et 1024 Mo/s).
 - **Technologie** : Flash NVMe avec **Distributed RAID 6** pour une résilience accrue.
 - **Disponibilité** : 99.99%, mesurée mensuellement.
 - **Restrictions** : Pas de limitation sur les lectures ou écritures. Pas de compression ou de déduplication automatique, garantissant l'utilisation intégrale des volumes réservés.
@@ -85,11 +86,11 @@ Le stockage bloc distribué, basé sur **IBM Spectrum Virtualize**, offre une ga
 
 Pour garantir la confidentialité de vos données au repos, l'ensemble de notre infrastructure de stockage bloc intègre un chiffrement matériel robuste.
 
--   **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
--   **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
--   **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
+- **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
+- **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
+- **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
 
-:::warning Point d'attention sur la réplication
+:::warning[Point d'attention sur la réplication]
 Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
 :::
 

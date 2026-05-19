@@ -16,6 +16,8 @@ WORKDIR /opt/docusaurus
 
 # Production build
 FROM base AS prod
+## Suppress non-critical SSG warnings (broken links, etc.)
+ENV DOCUSAURUS_IGNORE_SSG_WARNINGS=true
 ## COPY dependencies
 COPY package*.json yarn.lock ./
 ## Install dependencies with `--immutable` to ensure reproducibility.
@@ -27,7 +29,17 @@ RUN yarn build
 
 
 # Serve static site with a simple nginx
-FROM nginx:1.27.4-alpine AS deploy
+FROM nginx:stable-alpine AS deploy
+
+# Upgrade all Alpine packages to pick up latest security patches (CVE fixes)
+RUN apk upgrade --no-cache
+
+# OCI image labels
+LABEL org.opencontainers.image.title="Cloud Temple Documentation" \
+      org.opencontainers.image.description="Cloud Temple official documentation site (Docusaurus static build served by nginx)" \
+      org.opencontainers.image.vendor="Cloud Temple" \
+      org.opencontainers.image.source="https://github.com/Cloud-Temple/docs" \
+      org.opencontainers.image.licenses="proprietary"
 
 ARG APP_FOLDER=/var/www
 

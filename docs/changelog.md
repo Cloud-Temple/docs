@@ -5,9 +5,57 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 4 Mai 2026 : Correctifs de sécurité — image Docker (CVE Alpine)
+
+- **Sécurité (Docker)** : Ajout de `apk upgrade --no-cache` dans le stage final `nginx:stable-alpine` des Dockerfiles de production (`Dockerfile` et `Dockerfile.prebuilt`). Cette mise à jour corrige l'ensemble des CVE Critical et High détectées par Harbor/Trivy sur l'image `3.24.3`, liées aux packages Alpine figés : `libcrypto3`, `libssl3`, `libxml2`, `libxslt`, `libexpat`, `libpng`, `zlib`, `c-ares`, `musl`, `xz-libs`, `busybox`, `curl`. Le prochain build produira une image avec tous ces packages à leur dernière version corrigée.
+
+### 30 Avril 2026 : Précisions sur les performances de stockage
+
+- **Stockage (IaaS VMware, OpenSource, Bare Metal)** : Ajout des plafonds absolus d'IOPS et de bande passante maximum pour toutes les classes de stockage. Ces informations permettent de mieux dimensionner les environnements en fonction des besoins de performance.
+
+### 24 Avril 2026 : Enrichissement de la documentation sauvegarde IaaS OpenSource
+
+- **IaaS OpenSource (Sauvegarde)** : Enrichissement de la section sauvegarde avec des précisions sur l'architecture technique (sauvegarde incrémentale, impact du Thick provisioning sur le stockage), la sécurité (chiffrement AES-256, isolation réseau), le monitoring et les contraintes de planification. Traductions disponibles EN/DE/ES/IT.
+
+### 20 Avril 2026 : Mise à jour du dimensionnement Managed Database
+
+- **Managed MariaDB & PostgreSQL** : Mise à jour des gabarits de dimensionnement maximum disponibles pour les services de bases de données managées.
+
+### 17 Avril 2026 : VM Instances — documentation illustrée, tutoriels et traductions
+
+- **VM Instances — Enrichissement documentaire** : Refonte complète et illustration de la documentation VM Instances. Le guide de démarrage (`quickstart.md`) couvre désormais l'intégralité du parcours utilisateur illustré : accès à la section, liste des VMs, wizard de création en 9 étapes (famille d'instance, zone de disponibilité, template OS, gabarit, nom/sauvegarde, Cloud Init, disques, réseau, sommaire), et gestion des 4 onglets (Informations, Disques, Réseau, Snapshots).
+- **VM Instances — Tutoriels** : Création de 3 tutoriels dédiés dans un dossier `tutorials/` : (1) **Créer sa première VM** (wizard complet illustré + Cloud Init + disque additionnel), (2) **Gérer les disques** (ajout depuis la console + partitionnement Linux), (3) **Prendre et gérer les snapshots** (création, restauration, suppression + bonnes pratiques et comparaison snapshot/sauvegarde). La navigation latérale est mise à jour avec 3 entrées individuelles dans la catégorie Tutoriels.
+
+### 17 Avril 2026 : Documents contractuels, traductions et harmonisation terminologique
+
+- **Documents contractuels — Restructuration** : La page `contracts.md` est reorganisée avec la hiérarchie des documents contractuels en haut de page, incluant la liste de priorité des 6 documents (CGVU, Convention SecNumCloud, Convention spécifique ¹, PAS ², CPU, DPA) et un encart de précisions contractuelles.
+
+### 16 Avril 2026 : Refonte de la navigation, documents contractuels et mises à jour
+
+- **Navigation — Compute** : Regroupement de VM Instances (preview), IaaS OpenSource et IaaS VMware sous une unique catégorie **Compute** dans la navigation (PR #277).
+- **Navigation — Network** : Regroupement de VPC (preview) et Private Backbone sous une unique catégorie **Network** dans la navigation.
+- **Documents contractuels** : Restructuration complète de la documentation contractuelle — création d'une page hub `/contracts` (conditions générales, conditions particulières, conventions de service SecNumCloud, SLA VM instances) et d'une page hub `/shared-responsibility` (matrices RACI par service : IaaS, S3, PaaS, Kubernetes, LLMaaS, Réseau). Le menu latéral contractuel est remplacé par une colonne dédiée **Contractuel** dans le footer. Traductions disponibles EN/DE/ES/IT.
+- **VM Instances** : Mise à jour de l'engagement de niveau de service (SLA) de 99,9 % à 99,95 %.
+- **IaaS OpenSource** : Ajout d'une note sur la durée maximale de rétention des sauvegardes (24 mois maximum, migration vers Glacier prévue au T1 2027).
+
+### 15 Avril 2026 : Nouvelle documentation VM instances (Cloud Public)
+
+- **VM instances** : Mise en ligne de la documentation initiale du service VM instances (en preview), nouvelle offre de machines virtuelles mutualisées de Cloud Temple. La documentation couvre la vue d'ensemble du service, les concepts techniques (classes de service Development/General Purpose/Performance, gabarits prédéfinis et custom, stockage, réseau VPC, sauvegarde), ainsi qu'un guide de démarrage complet. Le service est organisé sous une nouvelle catégorie **Cloud Public** dans la navigation.
+
+### 15 Avril 2026 : Amélioration de la documentation IaaS VMware — métriques cluster
+
+- **IaaS VMware** : Ajout d'une documentation détaillée sur les métriques affichées dans la vue d'un cluster VMware depuis la Console Cloud Temple. Couvre les trois graphiques de mémoire du cluster : **Mémoire allouée** (quantité totale allouée aux VMs), **Mémoire consommée** (mémoire physique réellement utilisée par les VMs) et **Allocation dans le pire des cas** (projection de consommation maximale simultanée), avec la description précise de ce que chaque indicateur représente pour anticiper les besoins en ressources.
+
+### 15 Avril 2026 : Documentation Managed MariaDB, Managed PostgreSQL et corrections multilingues
+
+- **Managed MariaDB** : Mise en ligne de la documentation initiale du service Managed MariaDB (en preview) : présentation du service, concepts techniques (architectures StandAlone et Distributed), guide de démarrage. 
+- **Managed PostgreSQL** : Mise en ligne de la documentation initiale du service Managed PostgreSQL (en preview) : présentation du service, concepts techniques, guide de démarrage.
+- **Corrections multilingues (images)** : Correction des références d'images dans les traductions des sections Managed Kubernetes et Managed MariaDB pour toutes les langues (EN, DE, ES, IT) — conversion des chemins relatifs `./images/` vers des chemins absolus `@site/docs/...` assurant un rendu correct dans toutes les langues.
+- **Corrections liens brisés** : Résolution de plusieurs liens brisés dans la documentation : références aux licences LLMaaS, lien vers la console dans le tutoriel rclone (OSS), lien IAM dans la documentation réseau (EN), liens relatifs dans la section Terraform (EN).
+
 ### 15 Avril 2026 : Nouveau module Gestionnaire des coûts
 
-- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix. Disponible en français, anglais, allemand, espagnol et italien.
+- **Console (Gestionnaire des coûts)** : Ajout de la documentation complète du nouveau module de suivi de consommation accessible depuis la Console Cloud Temple. Couvre le tableau de bord, la consommation globale (avec projection de fin de mois), la répartition par produit et par service, les détails de facturation ligne par ligne et le catalogue des prix.
 
 ### 26 Mars 2026 : Mise à jour de la liste des sous-traitants (DPA)
 
@@ -109,14 +157,14 @@ sidebar_position: 2
 ### Juillet 2025 : Nouveautés et mises à jour majeures
 
 - **Stockage Objet (OSS)** :
-    - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
-    - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
+  - Refonte complète de la section tutoriels avec des guides dédiés pour des outils populaires : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer, et le SDK Python Boto3.
+  - Ajout de précisions sur les concepts de comptes de stockage et le verrouillage d'objets (Object Lock).
 - **IaaS OpenSource** :
-    - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
+  - Ajout d'une documentation détaillée sur la gestion de la Haute Disponibilité (HA) pour les pools de ressources et les machines virtuelles.
 - **Console** :
-    - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
+  - Mise à jour de la page des alertes de sécurité avec les dernières vulnérabilités.
 - **Réseau** :
-    - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
+  - Ajout de nouvelles captures d'écran pour illustrer la configuration de la connectivité IPv6.
 
 ### 29 Juin 2025 : finalisation de la documentation LLMaaS
 

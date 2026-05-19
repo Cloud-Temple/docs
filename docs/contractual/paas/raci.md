@@ -1,6 +1,8 @@
 ---
 title: Matrice de responsabilité PaaS - OpenShift SecNumCloud
+displayed_sidebar: docSidebar
 ---
+
 
 Voici le modèle RACI définissant la répartition des responsabilités entre le client et Cloud Temple pour l'utilisation du PaaS OpenShift SecNumCloud.
 
@@ -14,7 +16,6 @@ Nous rappelons ici les différents rôles du RACI :
 | (A) Approuve | __A__pprouve la réalisation du processus                                              |
 | (C) Consulte | __C__onsulté pendant le processus                                                     |
 | (I) Informé  | __I__nformé des résultats du processus (via l'outillage, le portail ou la messagerie) |
-
 
 ## Mise en place initiale
 

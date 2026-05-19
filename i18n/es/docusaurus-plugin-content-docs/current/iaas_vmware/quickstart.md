@@ -34,7 +34,7 @@ import shivaCpool_007 from '@site/docs/iaas_vmware/images/shiva_cpool_007.png'
 import shivaCpool_008Build from '@site/docs/iaas_vmware/images/shiva_cpool_008_build.png'
 import shivaCpool_008Firm from '@site/docs/iaas_vmware/images/shiva_cpool_008_firm.png'
 import shivaCpool_006 from '@site/docs/iaas_vmware/images/shiva_cpool_006.png'
-import shivaSupport from '@site/docs/./console/images/shiva_support.png'
+import shivaSupport from '@site/docs/console/images/shiva_support.png'
 import shivaVmPolitiquesBackupAssignMandatory from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup_assign_mandatory.png'
 import shivaVmPolitiquesBackup from '@site/docs/iaas_vmware/images/shiva_vm_politiques_backup.png'
 import shivaVmDisquesVirtuelsPolitiques from '@site/docs/iaas_vmware/images/shiva_vm_disques_virtuels_politiques.png'
@@ -47,16 +47,20 @@ import shivaBackupHeld_002 from '@site/docs/iaas_vmware/images/shiva_backup_held
 import shivaVmBackupRestaurer from '@site/docs/iaas_vmware/images/shiva_vm_backup_restaurer.png'
 import shivaVmBackupTest from '@site/docs/iaas_vmware/images/shiva_vm_backup_test.png'
 import shivaVmBackup_2prod from '@site/docs/iaas_vmware/images/shiva_vm_backup_2prod.png'
+import iaasVmwareClusterProvisionedMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_provisioned_memory.png'
+import iaasVmwareClusterUsedMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_used_memory.png'
+import iaasVmwareClusterWorstCaseAllocationMemory from '@site/docs/iaas_vmware/images/iaas_vmware_cluster_worst_case_allocation_memory.png'
+import iaasVmwareEsxMemory from '@site/docs/iaas_vmware/images/iaas_vmware_esx_memory.png'
 
 ## Cálculo
 
-### Gestión de máquinas virtuales
+### Gestión de las máquinas virtuales
 
 La interfaz de gestión de sus máquinas virtuales está disponible en la Consola, en el menú __'IaaS'__ situado en la barra verde a la izquierda de la pantalla.
 
 ### Lista de máquinas virtuales
 
-En la sección __'Máquinas virtuales'__, tiene acceso a la lista de sus máquinas virtuales alojadas en su Cloud de confianza.
+En la sección __'Máquinas virtuales'__, tiene acceso a la lista de sus máquinas virtuales alojadas en su nube de confianza.
 
 <img src={shivaVmHome} />
 
@@ -67,223 +71,228 @@ Tiene acceso a la siguiente información para cada máquina virtual:
 - su estado (apagada, encendida, en proceso, host desconectado o inválido),
 - su gestor (en entorno VMware, el Vcenter asociado),
 - su sistema operativo,
-- la cantidad de CPU virtuales (vCPU),
+- la cantidad de CPUs virtuales (vCPU),
 - la cantidad de memoria virtual (vRAM).
 
 ### Acciones sobre las máquinas virtuales
 
-Las siguientes acciones son posibles desde esta interfaz:
+Las siguientes acciones son posibles desde esta interfaz :
 
-- Actualizar la lista de máquinas virtuales;
-- Exportar la lista en formato CSV;
-- Filtrar la lista;
-- Buscar una máquina virtual por su nombre;
+- Actualizar la lista de máquinas virtuales ;
+- Exportar la lista en formato CSV ;
+- Filtrar la lista ;
+- Buscar una máquina virtual por su nombre ;
 - Crear una nueva máquina virtual.
 
 <img src={shivaVmHomeDesc} />
 
-__Un banner de alertas puede estar presente en la parte superior de la lista__: indica que se han activado alarmas críticas en una o varias de sus máquinas virtuales.  
+__Puede haber una barra de alertas en la parte superior de la lista__ : indica que se han activado alarmas críticas en una o varias de sus máquinas virtuales.
 El botón __'Ver'__ permite consultar las máquinas virtuales afectadas por esta notificación.
 
 <img src={shivaVmHomeAlarme} />
 
-Cuando hace clic en la flecha desplegable verde a la derecha de la lista para una máquina virtual:
+Cuando hace clic en la flecha desplegable verde a la derecha de la lista para una máquina virtual :
 
 <img src={shivaVmActions} />
 
-Accede a todas las informaciones relacionadas con ella:
+Accede a toda la información relacionada con ella :
 
 <img src={shivaVmInformations} />
 
-Un banner rápido permite realizar las siguientes acciones:
+Una barra rápida permite realizar las siguientes acciones :
 
 <img src={shivaVmBandeauRapide} />
 
-- Encender la máquina virtual;
-- Apagarla;
-- Reiniciarla;
-- Modificar las opciones de alimentación del sistema operativo invitado;
-- Abrir la consola;
-- Montar un ISO;
-- Desmontar un ISO;
-- Clonar la máquina virtual;
-- Moverla (vMotion);
-- Renombrarla;
+- Encender la máquina virtual ;
+- Apagarla ;
+- Reiniciarla ;
+- Modificar las opciones de alimentación del SO invitado ;
+- Abrir la consola ;
+- Montar una ISO ;
+- Desmontar una ISO ;
+- Clonar la máquina virtual ;
+- Moverla (vMotion) ;
+- Renombrarla ;
 - Eliminarla.
 
-Una vista rápida ofrece una visualización del __almacenamiento__, del __CPU__ y de la __RAM__ de la máquina virtual.
+Una vista rápida ofrece una visualización del __almacenamiento__, de la __CPU__ y de la __RAM__ de la máquina virtual.
 
 <img src={shivaVmVueRapide} />
 
-En la pestaña __'Información general'__, encuentra información detallada sobre su máquina virtual, como su sistema operativo, su ubicación física (datacenter, datastore, etc.), la RAM, el CPU, las direcciones IP, los registros (logs) y otros datos.
+En la pestaña __'Información general'__, encuentra información detallada relativa a su máquina virtual, como su OS, su ubicación física (datacenter, datastore, etc.), la RAM, el CPU, las direcciones IP, los logs y otros.
 
 <img src={shivaVmInfosGenerales} />
 
-Desde esta vista, puede realizar las siguientes acciones:
+Desde esta vista, puede realizar las siguientes acciones :
 
-- Modificar el sistema operativo (la máquina virtual debe estar apagada),
-- Actualizar la versión del hardware (la máquina virtual debe estar apagada),
+- Modificar el sistema operativo (la machine virtuelle devant être éteinte),
+- Actualizar la versión del hardware (la machine virtuelle devant être éteinte),
 - Modificar la RAM o el CPU.
 
-Una pestaña __'Avanzado'__ permite consultar información más específica, como los datos de "VMware Tools", la versión de hardware, el gestor, etc...
+Una pestaña __'Avanzado'__ permite consultar información más específica como los datos de "VMware tools", la versión de hardware, el gestor, etc...
 
 <img src={shivaVmInfosAvancees} />
 
 ### Edición de la RAM o la CPU de una máquina virtual
 
-Vaya al panel __'Máquinas Virtuales'__, muestre los detalles de una máquina virtual, seleccione el panel __'Información general'__ y haga clic en el botón de edición de la variable que desea modificar:
+Vaya a la pestaña __'Máquinas Virtuelles'__, muestre los detalles de una máquina virtual,
+seleccione la pestaña __'Información general'__ y haga clic en el botón de edición de la variable a modificar :
 
 <img src={shivaEditCpuRam} />
 
-### Modes de discos
+### Los modos de disco
 
 Puede agregar diferentes modos de disco:
 
-- __Persistente__: Los cambios se escriben inmediata y definitivamente en el disco virtual. __Este es el modo recomendado.__
-- __No persistente independiente__: Los cambios realizados en el disco virtual se registran en un nuevo archivo de registro y se eliminan al apagar. No se ve afectado por las instantáneas. __No es compatible con la copia de seguridad.__
-- __Persistente independiente__: Los cambios se escriben inmediata y definitivamente en el disco virtual. No se ve afectado por las instantáneas. __No es compatible con la copia de seguridad.__
+- __Persistente__ : Los cambios se escriben de inmediato y de forma definitiva en el disco virtual. __Es el modo recomendado.__
+- __Independiente no persistente__ : Los cambios realizados en el disco virtual se registran en un nuevo registro y se eliminan al apagar. No se ve afectado por las instantáneas. __No es compatible con la copia de seguridad.__
+- __Independiente persistente__ : Los cambios se escriben de inmediato y de forma definitiva en el disco virtual. No se ve afectado por las instantáneas. __No es compatible con la copia de seguridad.__
 
-### Virtual Machine Controller Management
+### Gestión de controladores de máquina virtual
 
-You can modify the disk controller type for your virtual machine.
+Puede modificar el tipo de controlador de disco para su máquina virtual.
 
 <img src={shivaVmDiskctrl_001} />
 
-Virtual machines can be equipped with SCSI and NVMe controllers, with a limit of 4 controllers of each type. Each controller can manage up to 15 disks.
+Las máquinas virtuales pueden estar equipadas con controladores SCSI y NVME, con un límite de 4 controladores de cada tipo. Cada controlador puede gestionar hasta 15 discos.
 
-A SCSI controller can be configured with different subtypes: Para Virtual, Bus Logic, LSI Logic, or LSI Logic SAS.
+Un controlador SCSI puede configurarse con diferentes subtipos: Para Virtual, Bus Logic, LSI Logic o LSI Logic SAS.
 
-The Para Virtual controller stands out due to its extended capabilities. It can support up to 64 disks when the virtual machine's hardware version is compatible with ESXi 6.7 or later.
+El controlador Para Virtual se destaca por su capacidad ampliada. Puede admitir hasta 64 discos cuando la versión de hardware de la máquina virtual es compatible con ESXi versión 6.7 o superior.
 
-> __Important__: If you want to change the type of a Para Virtual controller that has more than 15 disks, you must first detach the disks from the affected slots.
+> __Importante__ : Si desea modificar el tipo de un controlador Para Virtual que tenga más de 15 discos, primero deberá desconectar los discos en las ranuras correspondientes.
 
 ### Consola de una máquina virtual
 
-La consola de una máquina virtual está disponible desde la lista de máquinas virtuales haciendo clic en el icono __'Consola'__:
+La consola de una máquina virtual es accesible desde la lista de máquinas virtuales haciendo clic en el icono __'Consola'__ :
 
 <img src={shivaCpool_010} />
 
-Se abre un nuevo separador en su navegador y se muestra entonces la consola de su máquina, basada en un cliente **VNC**:
+Se abre una nueva pestaña en su navegador y se muestra la consola de su máquina, basada en un cliente __VNC__ :
 
 <img src={shivaCpool_011} />
 
-Es posible, desde el menú **VNC**:
-- solicitar el envío de teclas especiales,
-- forzar un mapeo de teclado (en caso de que no hayamos podido identificar correctamente su teclado),
-- abrir un campo de texto que se puede transmitir a la máquina. Este método reemplaza el antiguo portapapeles no funcional,
-- pasar al modo de pantalla completa.
+Es posible en el menú __VNC__ :
 
-__Nota__:
+- solicitar el envío de teclas específicas,
+- forzar un mapeo de teclado (en caso de que no hayamos podido identificar correctamente su teclado),
+- abrir un campo de texto transmitible a la máquina. Este método reemplaza al antiguo portapapeles no funcional,
+- cambiar al modo de pantalla completa.
+
+__Nota__ :
 El escalado de la ventana es automático.
 
-#### Keyboard layout support
+#### Soporte de distribuciones de teclado
 
-The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled. Below is a summary of the possible scenarios:
+La entrada realizada en la consola depende de la distribución del teclado de su navegador web, de la distribución del teclado de la máquina virtual y de la activación o no de la opción 'enforce keyboard' a la izquierda de la pantalla. A continuación se presenta un resumen de las situaciones posibles :
 
-| Physical machine keyboard language (input) | Virtual machine keyboard language | 'Enforce keyboard' option selected | Result (output)        |
-| -------------------------------------------- | --------------------------------- | ---------------------------------- | ------------------------ |
-| French                                       | French                            | No                                 | ✅                       |
-| French                                       | French                            | Yes                                | Not recommended          |
-| French                                       | English                           | No                                 | English                  |
-| French                                       | English                           | Yes                                | ✅                       |
-| English                                      | French                            | No                                 | French                   |
-| English                                      | French                            | Yes                                | ✅                       |
-| English                                      | English                           | No                                 | ✅                       |
-| English                                      | English                           | Yes                                | Not recommended          |
+| Distribución del teclado de la máquina física (entrada) | Distribución del teclado de la máquina virtual | Opción 'enforce keyboard' seleccionada | Resultado (salida)        |
+| ------------------------------------------------------- | ---------------------------------------------- | -------------------------------------- | ------------------------ |
+| Francés                                                 | Francés                                        | No                                     | ✅                       |
+| Francés                                                 | Francés                                        | Sí                                     | No recomendado           |
+| Francés                                                 | Inglés                                         | No                                     | Inglés                   |
+| Francés                                                 | Inglés                                         | Sí                                     | ✅                       |
+| Inglés                                                  | Francés                                        | No                                     | Francés                  |
+| Inglés                                                  | Francés                                        | Sí                                     | ✅                       |
+| Inglés                                                  | Inglés                                         | No                                     | ✅                       |
+| Inglés                                                  | Inglés                                         | Sí                                     | No recomendado           |
 
-__Note__:
-- If certain characters do not appear when typed manually, you can try pasting them from the clipboard.
+__Nota__ :
+
+- Si algunos caracteres no se muestran al escribir manualmente, puede intentar usar el portapapeles.
 
 #### Funcionamiento del portapapeles
-Esta función le permite enviar una cadena completa de caracteres a su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres será transmitida a su máquina virtual. Si observa durante la entrada en la consola que la opción "enforce keyboard" es necesaria, recuerde activarla antes de utilizar el portapapeles.  
-Esta función puede utilizarse para enviar una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
+
+Esta funcionalidad le permite enviar una cadena de caracteres completa a su máquina virtual. Es importante tener en cuenta que la tecla "enforce keyboard" influye en la forma en que esta cadena de caracteres
+se transmitirá a su máquina virtual. Si al escribir en la consola observa que la opción "enforce keyboard" es necesaria, recuerde activarla antes de usar el portapapeles.  
+Esta funcionalidad puede utilizarse para el envío de una contraseña, un comando o el contenido de un archivo de configuración, por ejemplo:
 
 <img src={shivaCpool_012} />
 
-Al hacer clic en el botón "Pegar", el contenido de su campo de texto se envía a su máquina virtual.
+Al hacer clic en el botón "Paste", el contenido de su campo de texto se envía a su máquina virtual.
 
 ### Catálogos de máquinas virtuales Cloud Temple
 
-Cloud Temple pone a su disposición un catálogo de `Templates` constantemente enriquecido y actualizado por nuestros equipos.  
-Actualmente incluye decenas de `Templates` e imágenes que puede desplegar en sus máquinas virtuales.
+Cloud Temple pone a su disposición un catálogo de `Templates` enriquecido y actualizado regularmente por nuestros equipos.
+Incluye actualmente varias decenas de `Templates` e imágenes para montar en sus máquinas virtuales.
 
 <img src={shivaCatalogs} />
 
-Para publicar un ISO/OVF, debe acceder a la vista __'Catálogo'__ y hacer clic en el botón __'Publicar archivos'__ situado en la parte superior de la página:
+Para publicar un ISO/OVF, debe ir a la vista __'Catálogo'__ y hacer clic en el botón __'publicar archivos'__ en la parte superior de la página :
 
 <img src={shivaCatalogs_002} />
 
-Es posible convertir una máquina virtual en modelo y exportarla al catálogo. Para ello, seleccione una máquina virtual y utilice el botón de acción __'Clonar'__:
+Es posible convertir una VM en plantilla y exportarla al catálogo. Para ello, seleccione una máquina virtual y utilice el botón de acción __'clonar'__ :
 
 <img src={shivaVmTemplate_002} />
 
-Seleccione __'Exportar como vm-template'__:
+Seleccione __'Exportar como vm-template'__ :
 
 <img src={shivaVmTemplate_001} />
 
-A continuación, rellene la información necesaria. A partir de entonces, será posible desplegar una nueva máquina virtual a partir del modelo mediante el botón __'Nueva máquina virtual'__ o desde la página __'Catálogos'__. También es posible exportar la VM en formato OVF.
+A continuación, complete la información necesaria. Luego será posible implementar una nueva VM a partir de la plantilla desde el botón __'Nueva máquina virtual'__ o desde la página __'Catálogos'__. También es posible exportar la VM en formato OVF.
 
-__Consejo útil__: es posible convertir un archivo OVA a OVF y viceversa.  
-El método más comúnmente utilizado es VMware Converter, pero también existe una forma sencilla utilizando ```tar```.
+__A tener en cuenta__: es posible convertir un archivo OVA a OVF y viceversa.
+El método más común utilizado es VMware Converter, pero también existe un método simple utilizando ```tar```
 
-Extracción del archivo OVA:
+Extracción del archivo ova:
 
 ```
 tar -xvf vmName.ova
 ```
 
-Creación de un archivo OVA a partir de un archivo OVF:
+Crear un archivo OVA desde un archivo OVF:
 
 ```
 tar -cvf vmName-NEW.ova vmName.ovf vmName-disk1.vmdk vmName.mf
 ```
 
-### Advanced Virtual Machine Configuration: Extra Config
+### Configuración avanzada de máquinas virtuales: Extra Config
 
-Extra Config provides a flexible way to include key=value pairs in a virtual machine's configuration. The keys and values are interpreted by the system when the virtual machine is deployed.
+Las Extra Config proporcionan una forma flexible de incluir pares clave=valor en la configuración de una máquina virtual. El sistema interpreta las claves y los valores cuando se implementa la máquina virtual.
 
-You can now directly modify __Extra Config__ properties in the advanced options of a virtual machine:
+Ahora, usted mismo puede modificar las propiedades de tipo __Extra Config__ en las opciones avanzadas de una máquina virtual:
 
 <img src={shivaVmAdv_001} />
 
-You can add a property from a predefined list of keys. Additionally, you can modify the value of a key you have added yourself. Pre-existing key=value pairs cannot be modified.
+Puede agregar una propiedad entre una lista de claves. Además, puede modificar el valor de una clave que haya agregado usted mismo. Los pares clave=valor ya existentes no son modificables.
 
-Please contact support for any request to add new keys.
+Contacte al soporte para cualquier solicitud de adición de nuevas claves.
 
 <img src={shivaVmAdv_002} />
 
-__Note__: *To enable GPU usage by the virtual machine, it is mandatory to enable the key 'pciPassthru.use64bitMMIO' and allocate the required MMIO (Memory-mapped I/O) space via 'pciPassthru.64bitMMIOSizeGB'. It is strongly recommended to refer to the [official NVIDIA documentation](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
+__Nota__ : *Para el uso de GPU por parte de la máquina virtual, es obligatorio activar la clave 'pciPassthru.use64bitMMIO' y asignar la cantidad de espacio MMIO (Memory-mapped I/O) necesario a través de 'pciPassthru.64bitMMIOSizeGB'. Se recomienda encarecidamente consultar la [documentación oficial de Nvidia](https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-vmware-vsphere/index.html#tesla-p40-large-memory-vms).*
 
-### Advanced virtual machine configuration: vAPP
+### Configuración avanzada de máquinas virtuales : vAPP
 
-You can also modify __vAPP__ type properties in the advanced options of a virtual machine:
+También puede modificar las propiedades de tipo __vAPP__ en las opciones avanzadas de una máquina virtual:
 
 <img src={shivaVmAdv_003} />
 
-You can add a property, modify an existing one, or remove it. Four types of properties are available: String, Number, Boolean, Password:
+Puede agregar una propiedad, modificarla o eliminarla. Se ofrecen cuatro tipos de propiedades, String, Número, Booleano, Contraseña:
 
 <img src={shivaVmAdv_004} />
 
-__Note__: *The virtual machine must be stopped to modify its vAPP properties.*
+__Nota__ : *La máquina virtual debe estar detenida para modificar sus propiedades vAPP.*
 
-### Management of __'hypervisors'__ and __'Cpool'__ (hypervisor clusters)
+### Gestión de los __'hipervisores'__ y __'Cpool'__ (clústeres de hipervisores)
 
-Managing your hypervisors is done in the __'Compute'__ submenu under the __'IaaS'__ menu, located in the green bar on the left side of your screen.
+La gestión de sus hipervisores se realiza en el submenú __'Cálculo'__ del menú __'IaaS'__, ubicado en la barra verde a la izquierda de su pantalla.
 
 <img src={shivaCpool_001} />
 
-In this submenu, you have visibility on:
+En este submenú, dispone de una vista sobre:
 
-- The hypervisor software stack, their AZs, and their resources,
-- The backup software stack.
+- La stack de software de hipervisores, su AZ y sus recursos,
+- La stack de software de copia de seguridad.
 
-As of January 2024, the available hypervisor offering on the Cloud Temple qualified infrastructure is based on VMware. The backup software used is IBM Spectrum Protect Plus.
+En enero de 2024, la oferta de hipervisor disponible en la infraestructura cualificada Cloud Temple se basa en VMware. El software de copia de seguridad utilizado es IBM Spectrum Protect Plus.
 
-### Gestión de los clusters VMware
+### Gestión de clusters VMware
 
-Para acceder a la gestión de los clusters VMware, haga clic en el submenú __'Cálculo'__ del menú __'IaaS'__:
+Para acceder a la gestión de clusters VMware, haga clic en el submenú __'Cómputo'__ del menú __'IaaS'__ :
 
-De forma predeterminada, la primera pestaña muestra todos los hipervisores (todos los clusters combinados):
+Por defecto, la primera pestaña lista todos los hipervisores (todos los clústeres en conjunto):
 
 <img src={shivaEsx_001} />
 
@@ -291,196 +300,210 @@ Es posible visualizar los detalles de un hipervisor haciendo clic en su nombre:
 
 <img src={shivaEsx_002} />
 
-Existe una pestaña por cada cluster de hipervisor para consultar los detalles de cada uno:
+Existe una pestaña por clúster de hipervisores para consultar los detalles de cada uno:
 
 <img src={shivaCpool_003} />
 
-Si hace clic en un cluster, verá un resumen de su composición:
+Si hace clic en un clúster, verá un resumen de su composición :
 
-- El total de potencia de cálculo expresado en GHz,
-- La memoria disponible total y la proporción utilizada,
-- El espacio total de almacenamiento (de todos los tipos combinados) así como el porcentaje de uso,
-- Los mecanismos de automatización ante la inactividad de un nodo de cálculo (__'vSphere DRS'__),
+- El total de la potencia de cómputo expresada en GHz,
+- El total de la memoria disponible y la proporción utilizada,
+- El total del espacio de almacenamiento (todos los tipos combinados) así como la cuota utilizada,
+- Los mecanismos de automatización ante la indisponibilidad de una lámina de cómputo (__'Vsphere DRS'__),
 - El número de máquinas virtuales,
 - El número de hipervisores.
 
-{/* TODO: Add missing page. */}
-{/* Al consultar la página de un cluster, están disponibles varias pestañas. La pestaña __'Reglas'__ le permite definir las [reglas de afinidad / anti-afinidad](compute.md#gestion-de-laffinité-de-vos-machines-virtuelles) */}
+#### Interpretar los datos de consumo mostrados
+
+<img src={iaasVmwareClusterProvisionedMemory} />
+
+__Memoria asignada (Cluster) :__ Este gráfico representa la cantidad total de memoria asignada al cluster.
+
+<img src={iaasVmwareClusterUsedMemory} />
+
+__Memoria consumida (Cluster) :__ Esta vista muestra la memoria activamente consumida únicamente por las máquinas virtuales del cluster. Corresponde a la memoria física realmente utilizada por las VMs para sus operaciones, lo cual es un indicador clave de la carga de trabajo actual.
+
+<img src={iaasVmwareClusterWorstCaseAllocationMemory} />
+
+__Asignación en el peor de los casos (Cluster) :__ Este gráfico ilustra la memoria que se requeriría si todas las máquinas virtuales del cluster consumieran simultáneamente toda la memoria que les ha sido asignada (el escenario de consumo máximo). El resultado también integra la memoria necesaria para el funcionamiento del cluster, así como diferentes parámetros propios de VMware (el cálculo no es simplemente igual a la suma de la RAM de todas las máquinas virtuales). Esto permite anticipar las necesidades de recursos críticos y prevenir el agotamiento de la memoria.
+
+<img src={iaasVmwareEsxMemory} />
+
+__Memoria consumida (ESX) :__ A diferencia de los gráficos del cluster, este muestra el total de la memoria consumida en un host ESX específico. Esto incluye no solo la memoria utilizada por las máquinas virtuales alojadas en este host, sino también la memoria consumida por el sistema del propio hipervisor (overhead de ESXi).
 
 <img src={shivaCpool_004} />
 
-En la pestaña __'Hosts'__ aparece para cada hipervisor:
+Verá lo siguiente para cada hipervisor en la pestaña __'Hosts'__ :
 
-- El uso de __CPU__ y __Memoria__,
-- El número de máquinas virtuales asignadas,
-- La disponibilidad de una nueva versión del sistema operativo del hipervisor, si procede,
-- El estado del hipervisor (conectado en producción, en mantenimiento, apagado, etc.),
+- El uso de __CPU__ y __Memoria__ ,
+- El número de máquinas virtuales afectadas ,
+- La disponibilidad de una nueva build para el sistema operativo del hipervisor, si corresponde ,
+- El estado del hipervisor (conectado en producción, en mantenimiento, apagado, ...),
 - Un menú de acciones.
 
 <img src={shivaCpool_005} />
 
-Desde la pestaña __'Hosts'__ se pueden realizar varias acciones:
+Varias acciones son posibles desde la pestaña __'Hosts'__ :
 
-- solicitar nuevos hipervisores mediante el botón __'Agregar un host'__:
+- solicitar nuevos hipervisores a través del botón __'Agregar un host'__ :
 
 <img src={shivaCpool_009} />
 
-- posibilidad de consultar el __detalle de un hipervisor__:
+- posibilidad de consultar __el detalle de un hipervisor__ :
 
 <img src={shivaCpool_007} />
 
-- entrar o salir del __estado de mantenimiento__ de un hipervisor,
-- __actualizar__ el hipervisor si es necesario; para ello, __debe estar obligatoriamente en mantenimiento__. Existen dos tipos de actualizaciones:
+- entrar o salir del __estado de mantenimiento__ de un hipervisor ,
+- __actualizar__ en su caso este hipervisor; para ello, __debe estar obligatoriamente en mantenimiento__. Existen dos tipos de actualizaciones :
 
-1. Las versiones de VMware (nuevas versiones del hipervisor):
+1. Las builds de VMware (las nuevas versiones del hipervisor):
 
 <img src={shivaCpool_008Build} />
 
-2. La actualización del firmware de su nodo de cálculo (BIOS y firmware de tarjetas secundarias):
+1. La actualización del firmware de su blade de cálculo (bios y firmware de las tarjetas secundarias):
 
 <img src={shivaCpool_008Firm} />
 
-*__Nota__*:
+*__Nota__* :
 
-- Cloud Temple pone a disposición las versiones para los hipervisores en intervalos regulares.
-Es importante actualizar periódicamente sus hipervisores, especialmente para aplicar parches de seguridad.
-Sin embargo, __no actualizamos nosotros mismos sus hipervisores__. Cloud Temple no tiene visibilidad sobre los compromisos de disponibilidad de sus cargas de trabajo.
-Por ello, le dejamos gestionar su cambio y aplicar las nuevas versiones en el momento más adecuado.
+- *Cloud Temple pone a disposición las builds para los hipervisores a intervalos regulares.
+Es importante actualizar regularmente sus hipervisores, especialmente para permitir la aplicación de parches de seguridad.
+Sin embargo, __no actualizamos nosotros mismos sus hipervisores__. Cloud Temple no tiene visibilidad sobre los compromisos de disponibilidad de sus workloads.
+Por lo tanto, le dejamos implementar su gestión del cambio y aplicar las nuevas builds en el mejor momento.*
+- *El proceso de actualización es completamente automatizado. Debe disponer de al menos dos hipervisores en su cluster para permitir una actualización sin interrupción del servicio.*
 
-- El proceso de actualización es completamente automatizado. Debe disponer de al menos dos hipervisores en su cluster para permitir una actualización sin interrupción del servicio.
+{/*TODO: Add missing page. */}
+{/* -*Es necesario contar con los permisos adecuados para realizar las diferentes acciones.**/}
 
-{/* TODO: Add missing page. */}
-{/* - *Es necesario contar con los permisos adecuados* [permisos adecuados](../console/permissions.md) para realizar las distintas acciones. */}
-
-También puede ver todas las reglas de afinidad/anti-afinidad para su cluster de hipervisores en la sección __'Reglas'__.
+También verá el conjunto de reglas de afinidad/anti-afinidad para su cluster de hipervisores en la sección __'Reglas'__.
 
 ### Gestión de la afinidad de sus máquinas virtuales
 
-Las __reglas de afinidad y anti-afinidad__ permiten controlar la ubicación de las máquinas virtuales en sus hipervisores.  
-Pueden utilizarse para gestionar el uso de los recursos de su __'Cpool'__.  
-Por ejemplo, pueden ayudar a equilibrar la carga de trabajo entre los servidores o a aislar cargas de trabajo intensivas en recursos.  
-En un __'Cpool'__ VMware, estas reglas suelen utilizarse para gestionar el comportamiento de las máquinas virtuales con vMotion.  
+Las __reglas de afinidad y anti-afinidad__ permiten controlar la ubicación de las máquinas virtuales en sus hipervisores.
+Pueden utilizarse para gestionar el uso de recursos de su __'Cpool'__.
+Por ejemplo, pueden ayudar a equilibrar la carga de trabajo entre los servidores o aislar las cargas de trabajo intensivas en recursos.
+En un __'Cpool'__ VMware, estas reglas suelen utilizarse para gestionar el comportamiento de las máquinas virtuales con vMotion.
 vMotion permite mover máquinas virtuales de un host a otro sin interrupción del servicio.
 
 Puede configurar mediante la gestión de reglas:
 
-- __Reglas de afinidad__: Estas reglas garantizan que ciertas máquinas virtuales se ejecuten en el mismo host físico.  
-  Se utilizan para mejorar el rendimiento al mantener juntas las máquinas virtuales que se comunican frecuentemente,  
-  reduciendo así la latencia de red. Las reglas de afinidad son útiles en escenarios donde el rendimiento es crítico,  
-  como en el caso de bases de datos o aplicaciones que requieren una comunicación rápida entre servidores.
+- __Reglas de Afinidad__: Estas reglas aseguran que ciertas máquinas virtuales se ejecuten en el mismo host físico.
+Se utilizan para mejorar el rendimiento manteniendo las máquinas virtuales que se comunican frecuentemente
+entre sí en el mismo servidor para reducir la latencia de red. Las reglas de afinidad son útiles en escenarios
+donde el rendimiento es crítico, como en el caso de bases de datos o aplicaciones que requieren una comunicación rápida entre servidores.
 
-- __Reglas de anti-afinidad__: Por el contrario, estas reglas garantizan que ciertas máquinas virtuales no se ejecuten  
-  en el mismo host físico. Son importantes para la disponibilidad y resiliencia, por ejemplo,  
-  para evitar que todas las máquinas críticas se vean afectadas en caso de fallo de un único servidor.  
-  Las reglas de anti-afinidad son cruciales para aplicaciones que requieren alta disponibilidad,  
-  como en entornos de producción donde la tolerancia a fallos es una prioridad.  
-  Por ejemplo, no desea que sus dos servidores de Active Directory estén en el mismo hipervisor.
+- __Reglas de Anti-afinidad__: Por el contrario, estas reglas garantizan que ciertas máquinas virtuales no se ejecuten
+en el mismo host físico. Son importantes para la disponibilidad y la resiliencia, por ejemplo,
+para evitar que todas las máquinas críticas se vean afectadas en caso de fallo de un único servidor.
+Las reglas de anti-afinidad son cruciales para aplicaciones que requieren alta disponibilidad,
+como en entornos de producción donde la tolerancia a fallos es una prioridad.
+Por ejemplo, no desea que sus dos Active Directory estén en el mismo hipervisor.
 
-Al crear una regla, define el tipo de regla (afinidad / anti-afinidad), el nombre de la regla,  
-su estado de activación (__'Estado'__) y las máquinas virtuales afectadas en su clúster de hipervisores.
+Al crear una regla, define el tipo de regla (affinité / anti-affinité), el nombre de la regla,
+su estado de activación (__'Statut'__) y las máquinas afectadas de su cluster de hipervisores.
 
 <img src={shivaCpool_006} />
 
-*Nota: las reglas de afinidad/anti-afinidad ofrecidas en la consola son reglas que afectan a las máquinas virtuales entre sí (no reglas entre hipervisores y máquinas virtuales).*
+*Nota: las reglas afinidad/anti-afinidad ofrecidas en la consola son reglas relativas a las máquinas virtuales entre sí (pas de règles entre hyperviseurs et machines virtuelles).*
 
-## Backup
+## Copia de seguridad
 
-### Create a backup policy
+### Crear una política de copia de seguridad
 
-To create a new backup policy, you must submit a request to support. Support is accessible via the buoy icon in the top-right corner of the window.
+Para agregar una nueva política de copia de seguridad, es necesario realizar una solicitud al soporte. El soporte es accesible desde el icono de flotador en la esquina superior derecha de la ventana.
 
-Creating a new backup policy is done through a __service request__ specifying:
+La creación de una nueva política de copia de seguridad se realiza mediante __una solicitud de servicio__ que indique:
 
-    Your Organization's name
-    A contact name, email, and phone number to finalize the configuration
-    The tenant name
-    The backup policy name
-    The retention characteristics (x days, y weeks, z months, ...)
+    El nombre de su Organización
+    El nombre de un contacto con su correo electrónico y número de teléfono para finalizar la configuración
+    El nombre del tenant
+    El nombre de la política de copia de seguridad
+    Las características (x días, y semanas, z meses, ...)
 
 <img src={shivaSupport} />
 
 ### Asignar una política de copia de seguridad a una máquina virtual
 
-Cuando se asigna una SLA a una máquina virtual (VM), todos los discos asociados a dicha VM heredan automáticamente la misma SLA. Posteriormente, es posible ejecutar manualmente la copia de seguridad a través del panel "Políticas de copia de seguridad". En ausencia de una ejecución manual, la copia de seguridad se realizará automáticamente según el plan configurado por la SLA.
+Cuando se asigna una SLA a una máquina virtual (VM), todos los discos asociados a esta VM heredan automáticamente la misma SLA. Posteriormente, es posible iniciar manualmente la ejecución de la copia de seguridad a través de la pestaña "Políticas de copia de seguridad". En caso de no iniciarse manualmente, la copia de seguridad se ejecutará automáticamente según la programación configurada por la SLA.
 
-SecNumCloud exige obligatoriamente la asignación de una política de copia de seguridad a una máquina virtual antes de su arranque. En caso contrario, recibirás la siguiente notificación:
+SecNumCloud hace obligatoria la asignación de una política de copia de seguridad a una máquina virtual antes de su inicio. En caso contrario, recibirá la siguiente notificación:
 
 <img src={shivaVmPolitiquesBackupAssignMandatory} />
 
-Haz clic en la pestaña __'Políticas de copia de seguridad'__ del menú de tu máquina virtual. Allí podrás visualizar la política o políticas de copia de seguridad asignadas a dicha máquina.
+Haga clic en la pestaña __'Políticas de copia de seguridad'__ del menú de su máquina virtual. Podrá visualizar la o las políticas de copia de seguridad asignada(s) a la misma.
 
-Para asignar una nueva política de copia de seguridad a la máquina virtual, haz clic en el botón __'Agregar política'__ y selecciona la política de copia de seguridad deseada.
+Para asignar una nueva política de copia de seguridad a la máquina virtual, haga clic en el botón __'Agregar política'__ y seleccione la política de copia de seguridad deseada.
 
 <img src={shivaVmPolitiquesBackup} />
 
-### Assign a backup policy to a virtual disk
+### Asignar una política de copia de seguridad a un disco virtual
 
-It is also possible to assign an SLA directly to a specific virtual disk of a machine. In this case, the virtual machine does not inherit this SLA applied individually to the disk. However, it is not possible to manually trigger backup execution at the disk level, as this functionality is not supported in Spectrum Protect Plus.
+También es posible asignar una SLA directamente a un disco virtual específico de una máquina. En este caso, la máquina virtual no hereda esta SLA aplicada individualmente al disco. Sin embargo, no es posible iniciar manualmente la ejecución de la copia de seguridad a nivel de discos, ya que esta funcionalidad no está soportada en Spectrum Protect Plus.
 
-On the other hand, it is possible to exclude certain disks from one or more backup policies (SLAs) of the VM, which allows unassigning one or more SLAs on a per-disk basis. This approach provides the flexibility to manually initiate backup execution for a specific SLA without affecting all disks of the virtual machine, enabling more granular backup management.
+Por el contrario, es posible excluir ciertos discos de una o varias políticas de copia de seguridad (SLA) de la VM, lo que permite desasignar una o varias SLA(s) en una base disco por disco. Este enfoque ofrece la flexibilidad de iniciar manualmente la ejecución de la copia de seguridad de una SLA sin afectar todos los discos de la máquina virtual, permitiendo así una gestión más detallada de las copias de seguridad.
 
-Click on the action bar of the disk to which you want to assign a backup policy. Then, click on __'Policies'__ and select the desired backup policy.
+Haga clic en la barra de acciones del disco al que desea asignar una política de copia de seguridad. Luego, haga clic en __'Políticas'__ y seleccione la política de copia de seguridad deseada.
 
 <img src={shivaVmDisquesVirtuelsPolitiques} />
 
-*Note*: The policy to be added must reside in a different availability zone than the virtual machine.
+*Nota* : La política que se va a agregar debe encontrarse en una zona de disponibilidad diferente de la máquina virtual.
 
 ### Ejecutar una política de copia de seguridad
 
-En el menú __'Políticas de copia de seguridad'__ de su máquina virtual, haga clic en el botón __'Ejecutar'__ de la columna __'Acciones'__ de la política de copia de seguridad que desee ejecutar.
+En el menú __'Políticas de copia de seguridad'__ de su máquina virtual, haga clic en el botón __'Ejecutar'__ de la columna __'Acciones'__ de la política de copia de seguridad que desea ejecutar.
 
 <img src={shivaVmPolitiquesBackupExecute} />
 
-Para ejecutar una política de copia de seguridad, también puede partir desde la sección __'Copias de seguridad'__ en el menú de su máquina virtual. Haga clic en el botón __'Ejecutar la copia de seguridad'__, y luego seleccione la copia de seguridad que desee ejecutar en el menú desplegable.
+Para ejecutar una política de copia de seguridad, también puede acceder a la sección __'Copias de seguridad'__ en el menú de
+su máquina virtual. Haga clic en el botón __'Ejecutar copia de seguridad'__, y luego seleccione la copia de seguridad que desea ejecutar en la lista desplegable.
 
 <img src={shivaVmPolitiquesBackupExecute2} />
 
-### Remove a backup policy
+### Retirar una política de copia de seguridad
 
-In the __'Backup Policies'__ menu of your virtual machine, click the __'Remove'__ button in the __'Actions'__ column for the backup policy you wish to remove.
+En el menú __'Políticas de copia de seguridad'__ de su máquina virtual, haga clic en el botón __'Retirar'__ de la columna __'Acciones'__ de la política de copia de seguridad que desea retirar.
 
 <img src={shivaVmPolitiquesBackupRetirer} />
 
-__Warning: It is not possible to remove the last SLA on an active virtual machine:__
+__Atención, no es posible retirar la última SLA en una máquina virtual encendida :__
 
 <img src={shivaVmPolitiquesBackupRetirerImpossible} />
 
-### Deleting a backup policy: case of a suspended backup policy ("held")
+### Eliminación de una política de copia de seguridad: caso de una política de copia de seguridad suspendida ("held")
 
-When the last resource is disassociated from an SLA policy, the system automatically detects this situation. As a result, all jobs associated with this SLA policy are automatically moved to the "Held" ("Suspended") state. It is important to note that direct deletion of the SLA policy is not possible at this stage due to the existence of dependent jobs. To proceed with the deletion of the policy, a series of steps must be followed.
+Cuando el último recurso se desvincula de una política SLA, el sistema detecta automáticamente esta situación. En consecuencia, todos los trabajos relacionados con esta política SLA cambian automáticamente al estado "Suspendido" ("Held"). Es importante tener en cuenta que, en esta etapa, la eliminación directa de la política SLA no es posible debido a la existencia de trabajos dependientes. Para proceder a la eliminación de la política, se debe seguir una serie de pasos.
 
-First, verify that the affected jobs are indeed in the "Held" state. Once this verification is complete, these jobs can be deleted. Only after removing these dependent jobs can the SLA policy be permanently erased from the system.
+Debe verificarse que los trabajos afectados se encuentren efectivamente en estado "Suspendido". Una vez realizada esta verificación, estos trabajos pueden eliminarse. Solo después de eliminar estos trabajos dependientes la política SLA podrá borrarse definitivamente del sistema.
 
-A special case requires particular attention: adding a new resource to an SLA policy whose dependent jobs have not been deleted. In this scenario, job identifiers will be preserved. However, it is crucial to note that jobs in the "Held" state will not resume automatically. Manual intervention will be required to reactivate them and allow their execution.
+Un caso particular merece una atención específica: la adición de un nuevo recurso a una política SLA cuyos trabajos dependientes no se hayan eliminado. En esta situación, los identificadores de los trabajos se conservarán. Sin embargo, es crucial tener en cuenta que los trabajos en estado "Suspendido" no se reanudarán automáticamente. Será necesaria una intervención manual para reactivarlos y permitir su ejecución.
 
-> **Note:** For any clarification regarding this situation, please contact Cloud Temple support.
+nota: Para cualquier aclaración sobre esta situación, contacte con el soporte de Cloud Temple.
 
-The Cloud Temple console prevents assigning a virtual machine to a suspended policy:
+La consola de Cloud Temple impide asignar una máquina virtual a una política suspendida:
 
 <img src={shivaBackupHeld_001} />
 
-Similarly, it is not possible to start a virtual machine associated with a suspended backup policy:
+Del mismo modo, no es posible iniciar una máquina virtual que esté asociada a una política de copia de seguridad suspendida:
 
 <img src={shivaBackupHeld_002} />
 
 ### Restaurar una copia de seguridad
 
-La pestaña __'Copias de seguridad'__ del menú de sus máquinas virtuales le permite acceder a la lista de copias de seguridad de dicha máquina.
-
+La pestaña __'Copias de seguridad'__ del menú de sus máquinas virtuales le permite acceder a la lista de copias de seguridad de estas.
 Para restaurar una copia de seguridad, haga clic en el botón __'Restaurar'__ en la fila correspondiente a la copia de seguridad que desea restaurar.
 
 <img src={shivaVmBackupRestaurer} />
 
-1. __Modo producción__: El modo producción permite la recuperación tras un incidente en el sitio local desde el almacenamiento primario o un sitio de recuperación tras un incidente remoto, reemplazando las imágenes de máquina original por las imágenes de recuperación. Todas las configuraciones se transfieren durante la recuperación, incluidos nombres e identificadores, y todos los trabajos de copia de datos asociados a la máquina virtual continúan ejecutándose. Durante una restauración en modo producción, puede elegir reemplazar el almacenamiento de la máquina virtual por un disco virtual procedente de una copia de seguridad anterior de la máquina virtual.
+1. __Modo producción__: El modo producción permite la recuperación ante incidentes en el sitio local desde el almacenamiento primario o un sitio de recuperación ante desastres remoto, reemplazando las imágenes de máquina originales por las imágenes de recuperación. Todas las configuraciones se transfieren como parte de la recuperación, incluidos los nombres y los identificadores, y todos los trabajos de copia de datos asociados a la máquina virtual continúan ejecutándose. En el marco de una restauración en modo producción, puede optar por reemplazar el almacenamiento en la máquina virtual por un disco virtual procedente de una copia de seguridad de máquina virtual anterior.
 
-2. __Modo prueba__: El modo prueba crea máquinas virtuales temporales para desarrollo, pruebas, verificación de instantáneas y verificación de recuperación tras un incidente según un plan repetible, sin impacto en los entornos de producción. Las máquinas de prueba se ejecutan durante el tiempo necesario para realizar las pruebas y verificaciones, y luego se limpian. Mediante una red aislada, puede establecer un entorno seguro para probar sus trabajos sin interferir con las máquinas virtuales utilizadas en producción. Las máquinas virtuales creadas en modo prueba poseen nombres e identificadores únicos para evitar cualquier conflicto en su entorno de producción.
+2. __Modo prueba__: El modo prueba crea máquinas virtuales temporales para el desarrollo, la prueba, la verificación de instantáneas y la verificación de recuperación ante incidentes según un plan repetible, sin impacto en los entornos de producción. Las máquinas de prueba se ejecutan tanto tiempo como sea necesario para realizar la prueba y la verificación, y luego se limpian. Mediante la red aislada, puede establecer un entorno seguro para probar sus trabajos sin interferir con las máquinas virtuales utilizadas para la producción. Las máquinas virtuales creadas en modo prueba tienen nombres e identificadores únicos para evitar conflictos en su entorno de producción.
 
-3. __Modo clonación__: El modo clonación crea copias de las máquinas virtuales para casos de uso que requieren copias permanentes o de ejecución prolongada, como exploración de datos o duplicación de un entorno de prueba en una red aislada. Las máquinas virtuales creadas en modo clonación poseen nombres e identificadores únicos para evitar cualquier conflicto en su entorno de producción. En modo clonación, debe tener cuidado con el consumo de recursos, ya que este modo crea máquinas permanentes o de largo plazo.
+3. __Modo clon__: El modo clon crea copias de las máquinas virtuales para casos de uso que requieren copias permanentes o de ejecución prolongada para la exploración de datos o la duplicación de un entorno de prueba en una red aislada. Las máquinas virtuales creadas en modo clon tienen nombres e identificadores únicos para evitar conflictos en su entorno de producción. En modo clon, debe prestar atención al consumo de recursos, ya que el modo clon crea máquinas permanentes o a largo plazo.
 
-__La restauración está configurada por defecto en modo "PRUEBA" para preservar la producción__, y puede elegir el nombre de la máquina virtual restaurada:
+__La restauración es de forma predeterminada en modo "PRUEBA" para preservar la producción__ y es posible elegir el nombre de la máquina virtual restaurada:
 
 <img src={shivaVmBackupTest} />
 
-Tenga en cuenta que si las pruebas son satisfactorias, es posible pasar una máquina virtual del modo prueba al modo producción:
+Tenga en cuenta que si las pruebas son satisfactorias, es posible cambiar una máquina virtual del modo prueba al modo producción:
 
 <img src={shivaVmBackup_2prod} />

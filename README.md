@@ -3,9 +3,9 @@
 Welcome to the official documentation repository for Cloud Temple.
 Here, you’ll find guides and resources to help you better understand and utilize Cloud Temple’s services and solutions.
 
-A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com). This repository and the website are synchronized to ensure up-to-date content.
+A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
 
-A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/).
+A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/home).
 
 This project is continuously updated with new guides and improvements.
 
@@ -134,6 +134,26 @@ Open your browser and go to: <http://localhost:8080>
 
 > Base url is set to "/" on production build
 
+## Docker Image Labels
+
+The production image (`nginx:stable-alpine` stage) embeds the following [OCI standard labels](https://github.com/opencontainers/image-spec/blob/main/annotations.md):
+
+| Label | Value |
+|---|---|
+| `org.opencontainers.image.title` | `Cloud Temple Documentation` |
+| `org.opencontainers.image.description` | `Cloud Temple official documentation site (Docusaurus static build served by nginx)` |
+| `org.opencontainers.image.vendor` | `Cloud Temple` |
+| `org.opencontainers.image.source` | `https://github.com/Cloud-Temple/docs` |
+| `org.opencontainers.image.licenses` | `proprietary` |
+
+You can inspect the labels of a built image with:
+
+```bash
+docker inspect docs:v3 --format '{{ json .Config.Labels }}' | jq
+```
+
+> **Security note:** Alpine packages in the final stage are upgraded at build time (`apk upgrade --no-cache`) to ensure all OS-level CVEs are patched. Rebuild the image regularly to pick up new security fixes.
+
 # Scripts for Automation
 
 This project includes several scripts to automate documentation and translation tasks. For complete technical details on all scripts, please refer to the [__Scripts README__](./scripts/README.md).
@@ -157,7 +177,7 @@ python scripts/generate_models_doc/generate_models_doc.py
 
 ## 🌍 Translation System
 
-This documentation supports multiple languages. The primary content is written in French (in the `/docs/` directory) and automatically translated using an advanced Python system powered by the __Cloud Temple LLMaaS API__.
+This documentation supports 5 languages: __French (source)__, English, German, Spanish, and Italian. The primary content is written in French (in the `/docs/` directory) and automatically translated using an advanced Python system powered by the __Cloud Temple LLMaaS API__.
 
 The system uses SHA-256 hashing to intelligently detect modified files, ensuring that only new or changed content is sent for translation. It features a modern command-line interface with real-time progress and detailed statistics.
 
@@ -188,6 +208,39 @@ The system uses SHA-256 hashing to intelligently detect modified files, ensuring
 
     # Perform a dry run to see what would be translated
     python scripts/translate_py/translate.py --dry-run
+
+    # Translate only one language
+    python scripts/translate_py/translate.py --lang=en
+
+    # Force retranslation of all files
+    python scripts/translate_py/translate.py --force
+
+    # Test API connection
+    python scripts/translate_py/translate.py --test-api
     ```
 
-> For a complete list of commands, advanced features (like `--force`, `--init`, `.notranslation` files), and troubleshooting, please see the detailed [__Translation Script Documentation__](./scripts/README.md#--translatetranslatepy-recommandé).
+### How It Works
+
+The translation system tracks changes via SHA-256 hashes stored in `scripts/translate_py/translation-meta.json`:
+
+1. When you modify a file in `docs/`, its hash changes
+2. `translate.py` detects the mismatch and sends only modified files to the LLMaaS API
+3. After successful translation, the new hash is saved → file is marked as "up to date"
+
+### Important Rules
+
+> ⚠️ **Never edit files in `i18n/` manually.** Always modify the French source in `docs/` and run `translate.py`. Manual edits in `i18n/` will be overwritten on the next translation run.
+
+> 🖼️ **Image paths must use absolute Docusaurus paths.** Always reference images with `@site/docs/<path>/images/file.png` instead of relative paths (`./images/` or `../images/`). This ensures images resolve correctly in all languages without needing copies in `i18n/`.
+
+> 💡 **Excluding directories from translation:** Place a `.notranslation` file in any directory under `docs/` to force file **copying** instead of translation (useful for license files, code snippets, etc.).
+
+### Scripts Overview
+
+| Script | Purpose | Updates hash? |
+|--------|---------|:---:|
+| `scripts/translate_py/translate.py` | Main translation (FR → EN/DE/ES/IT via LLMaaS API) | ✅ |
+| `scripts/extract_changelog.py` | Generate product changelog in all languages from `maj.js` | ✅ |
+| `scripts/generate_models_doc/generate_models_doc.py` | Generate LLMaaS models doc (FR source only) | N/A (triggers retranslation) |
+
+> For a complete list of commands, advanced features, and troubleshooting, please see the detailed [__Scripts Documentation__](./scripts/README.md).

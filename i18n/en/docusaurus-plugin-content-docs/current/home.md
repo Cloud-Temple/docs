@@ -3,41 +3,84 @@ tags:
   - home
   - home
   - onboarding
+displayed_sidebar: docSidebar
+hide_table_of_contents: true
 ---
 
-# Welcome to the Documentation Space
-
-Welcome to the **Cloud Temple** documentation space! This space has been designed to guide you through managing your Cloud Temple services via our **Cloud Temple Console**.
-
-## Getting Started
-
-<div class="card-grid">
-  <div class="card">
-    <h3>Explore the console</h3>
-    <p>Learn how to use our console to manage your Cloud resources.</p>
-    <a href="console" class="card-link">Discover the console &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Get started with Object Storage</h3>
-    <p>Learn how to use object storage.</p>
-    <a href="storage/oss" class="card-link">Set up a Bucket &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Provision your resources</h3>
-    <p>Create your first Cloud resources quickly and efficiently.</p>
-    <a href="iaas_vmware/quickstart" class="card-link">Get started &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Deploy with a few clicks</h3>
-    <p>Set up your services easily with our detailed guides.</p>
-    <a href="iaas_vmware/quickstart" class="card-link">Deploy &rarr;</a>
+<div class="hero-banner">
+  <div class="hero-content">
+    <h1 class="hero-title">Cloud Temple Documentation</h1>
+    <p class="hero-subtitle">Everything you need to operate Cloud Temple's sovereign cloud services.</p>
+    <div class="cert-row">
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">Gaia-X</a>
+      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">CISPE</a>
+    </div>
   </div>
 </div>
 
-## How to use this documentation?
+## Getting Started
 
-This documentation is your guide to unlocking the full potential of our Cloud products and the **Cloud Temple Console**.
+<div class="quickstart-grid">
+  <a href="./console/console" class="quickstart-card">
+    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+    <div>
+      <div class="quickstart-title">Explore the Console</div>
+      <div class="quickstart-desc">Manage your resources, orders, and access from the Cloud Temple central interface.</div>
+    </div>
+  </a>
+  <a href="./storage/oss/quickstart" class="quickstart-card">
+    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span>
+    <div>
+      <div class="quickstart-title">S3 Object Storage</div>
+      <div class="quickstart-desc">Set up your first S3-compatible bucket in minutes.</div>
+    </div>
+  </a>
+  <a href="./iaas_vmware/quickstart" class="quickstart-card">
+    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></span>
+    <div>
+      <div class="quickstart-title">Provision VMs</div>
+      <div class="quickstart-desc">Create your first virtual machines on the Cloud Temple IaaS infrastructure.</div>
+    </div>
+  </a>
+  <a href="./llmaas/quickstart" class="quickstart-card">
+    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+    <div>
+      <div class="quickstart-title">LLMaaS — Sovereign AI</div>
+      <div class="quickstart-desc">Access large language models in a SecNumCloud environment.</div>
+    </div>
+  </a>
+</div>
 
-You'll find tutorials, technical guides, and references to simplify the management of your cloud resources.
+## Popular Pages
 
-We hope you find this documentation helpful and make the most of the opportunities offered by **Console**.
+<div class="popular-links-grid">
+  <a class="popular-link" href="./console/console_quickstart">
+    <div class="popular-link-title">Quickstart Console <span>→</span></div>
+    <div class="popular-link-desc">Quick start guide for the Cloud Temple Console</div>
+  </a>
+  <a class="popular-link" href="./managed_kubernetes/quickstart">
+    <div class="popular-link-title">Managed Kubernetes <span>→</span></div>
+    <div class="popular-link-desc">Deploy your first Kubernetes cluster</div>
+  </a>
+  <a class="popular-link" href="./llmaas/api">
+    <div class="popular-link-title">LLMaaS API Documentation <span>→</span></div>
+    <div class="popular-link-desc">Complete reference for the OpenAI-compatible API</div>
+  </a>
+  <a class="popular-link" href="./bastion/quickstart">
+    <div class="popular-link-title">Bastion — Secure Access <span>→</span></div>
+    <div class="popular-link-desc">Secure SSH connection to your resources</div>
+  </a>
+  <a class="popular-link" href="./iaas_vmware/concepts">
+    <div class="popular-link-title">VMware IaaS Architecture <span>→</span></div>
+    <div class="popular-link-desc">Understand the Cloud Temple virtualized infrastructure</div>
+  </a>
+  <a class="popular-link" href="./console/iam">
+    <div class="popular-link-title">IAM & Access Management <span>→</span></div>
+    <div class="popular-link-desc">Identities, roles, and permissions on your tenant</div>
+  </a>
+</div>

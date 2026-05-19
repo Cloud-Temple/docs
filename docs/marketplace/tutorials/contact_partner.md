@@ -1,15 +1,16 @@
 ---
 title: Contacter un partenaire
 ---
-import marketplaceContactAccess from '../images/marketplaceContactAccess.png'
-import marketplaceContactConfirm from '../images/marketplaceContactConfirm.png'
-import marketplaceContactEmail from '../images/marketplaceContactEmail.png'
+import marketplaceContactAccess from '@site/docs/marketplace/images/marketplaceContactAccess.png'
+import marketplaceContactConfirm from '@site/docs/marketplace/images/marketplaceContactConfirm.png'
+import marketplaceContactEmail from '@site/docs/marketplace/images/marketplaceContactEmail.png'
 
 Ce tutoriel vous guide pour entrer en contact avec un partenaire éditeur via la Marketplace Cloud Temple.
 
 ## Contexte d'utilisation
 
 Utilisez cette fonctionnalité lorsque :
+
 - La solution nécessite une mise en relation avec le partenaire
 - Vous souhaitez obtenir des informations complémentaires
 - La solution n'est pas directement déployable (pas de VM Image)
@@ -34,7 +35,6 @@ Le partenaire recevra automatiquement un email avec vos informations :
 
 **Exemple d'email envoyé au partenaire :**
 <img src={marketplaceContactEmail} />
-
 
 ## Bonnes pratiques
 

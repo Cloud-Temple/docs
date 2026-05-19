@@ -1,70 +1,70 @@
 ---
-title: Advanced Concepts
+title: Erweiterte Konzepte
 ---
 
 ## Introduction
 
-This page presents the advanced BGP routing features available on the Cloud Temple Internet infrastructure.
+Diese Seite stellt die erweiterten BGP-Routing-Funktionen vor, die auf der Cloud-Temple-Internet-Infrastruktur verfügbar sind.
 
-## BGP Communities
+## BGP-Communities
 
-Cloud Temple bietet eine Vielzahl von BGP Communities, mit denen Sie die Pfadauswahl für Ihren Datenverkehr steuern können.
+Cloud Temple bietet eine Vielzahl von BGP-Communities, die es ermöglichen, die Pfadauswahl für Ihren Datenverkehr zu steuern.
 
-### What is a BGP community?
+### Was ist eine BGP-Community?
 
-BGP communities are optional attributes that can be attached to BGP routes to mark, filter, or influence routing.
+BGP-Communities sind optionale Attribute, die an BGP-Routen angehängt werden können, um sie zu markieren, zu filtern oder das Routing zu beeinflussen.
 
-### Actions on Local Preference
+### Aktionen zur Local Preference
 
-The following BGP communities allow you to modify the **local preference** of your prefixes, thereby influencing the path selection toward the machine announcing the prefix within AS33930.
+Die folgenden BGP-Communities ermöglichen es Ihnen, die **Local Preference** Ihrer Präfixe zu ändern und somit die Pfadauswahl für den Pfad zur Maschine, die das Präfix ankündigt, innerhalb des AS33930 zu beeinflussen.
 
-You can adjust the local preference of a prefix within the Cloud Temple Internet backbone in AS 33930 by using the following communities:
+Sie können die Local Preference eines Präfixes innerhalb des Cloud Temple Internet-Backbones im AS 33930 mit den folgenden Communities ändern:
 
-| BGP Community | Priority | Local Preference |
-|:--------------|:---------|:----------------:|
-| 33930:40010 | Low priority | 10 | 
-| *Default* | Cloud Temple Backbone (default) | 100 | 
-| 33930:40150 | Medium priority | 150 | 
-| 33930:40200 | High priority | 200 | 
-| 33930:40250 | Maximum priority | 250 | 
+| BGP-Community | Priorität | Local Preference |
+|:---------------|:------------|:----------------:|
+| 33930:40010 | Niedrige Priorität | 10 |
+| *Standard* | Cloud Temple Backbone (Standard) | 100 |
+| 33930:40150 | Mittlere Priorität | 150 |
+| 33930:40200 | Hohe Priorität | 200 |
+| 33930:40250 | Maximale Priorität | 250 |
 
-**Note:** The higher the local preference value, the more preferred the path is in BGP routing decisions. By default, without a specific community, your prefixes use the standard local preference of 100.
+**Hinweis:** Je höher der Wert der Local Preference ist, desto bevorzugter wird der Pfad bei BGP-Routing-Entscheidungen. Standardmäßig verwenden Ihre Präfixe ohne eine spezifische Community die Standard-Local Preference von 100.
 
 ## Konfiguration
 
-Um eine BGP-Community für Ihre Ankündigungen zu verwenden:
+Um eine BGP-Community auf Ihre Ankündigungen anzuwenden:
 
-1. Erstellen Sie eine Policy, die den Präfix mit der Community markiert.
-2. Wenden Sie diese Policy auf die BGP-Sitzung mit den Cloud Temple-Routen-Servern an.
+1. Definieren Sie eine Policy, die das Prefix mit der Community taggt
+2. Wenden Sie diese Policy auf die BGP-Sitzung mit den Cloud Temple Route-Servern an
 
-### Beispiel einer Konfiguration (bird)
+### Beispielkonfiguration (bird)
 
 ```junos
-# Define a policy that tags the prefix with the community
+# Définir une policy qui tag le préfixe avec la communauté
 filter p_bkb_rs_001_export {
-    if net ~ [203.0.113.0/32]
-    then {
-        bgp_community.add((33930,40250));
-        accept;
-    }
-    if net ~ [203.0.113.1/32]
-    then {
-        accept;
-    }
-    else reject;
+if net ~ [203.0.113.0/32]
+        then {
+            bgp_community.add((33930,40250));
+            accept;
+        }
+if net ~ [203.0.113.1/32]
+        then {
+            accept;
+        }
+else reject;
 }
 
-# Apply this policy to the BGP session with the Cloud Temple route servers
-protocol bgp p_bkb_rs_001 {
-    local 100.64.3.226 as 65551;
-    neighbor 100.64.0.1 as 33930;
-    multihop;
-    keepalive time 10;
-    hold time 30;
-    ipv4 {
-        export filter p_bkb_rs_001_export;
-    };
+# Appliquer cette policy à la session BGP avec les serveurs de routes Cloud Temple
+protocol bgp p_bkb_rs_001  {
+        local 100.64.3.226 as 65551;
+        neighbor 100.64.0.1 as 33930;
+        multihop;
+        keepalive time 10;
+        hold time 30;
+        ipv4 {
+                export filter p_bkb_rs_001_export;
+        };
 }
 ```
 
-The prefix 203.0.113.0/32 will be advertised with a **local preference of 250**, and the prefix 203.0.113.1/32 will be advertised with a **local preference of 100** (default) within AS33930.
+Das Präfix 203.0.113.0/32 wird mit einer **Local Preference von 250** und das Präfix 203.0.113.1/32 wird mit einer **Local Preference von 100** (par défaut) innerhalb von AS33930 angekündigt.

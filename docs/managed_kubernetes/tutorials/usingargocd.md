@@ -2,11 +2,12 @@
 title: Utiliser ArgoCD pour vos déploiements GitOps
 ---
 
-import argocdguestbook from './images/argocdguestbook.png'
+import argocdguestbook from '@site/docs/managed_kubernetes/tutorials/images/argocdguestbook.png'
 
 ## Objectifs
 
 Ce tutoriel vous explique comment utiliser **ArgoCD**, l'outil de déploiement continu GitOps intégré à votre cluster **Managed Kubernetes**. À la fin de ce guide, vous saurez :
+
 - Ce qu'est l'approche GitOps.
 - Comment accéder à l'interface d'ArgoCD.
 - Comment déployer une application en utilisant ArgoCD pour synchroniser un dépôt Git.
@@ -18,6 +19,7 @@ Le **GitOps** est une pratique qui consiste à utiliser un dépôt Git comme uni
 **ArgoCD** est l'outil qui met en œuvre ce principe. Il surveille en permanence un dépôt Git et compare l'état qui y est défini (via des manifestes Kubernetes) avec l'état réel de votre cluster. S'il détecte une différence, il applique automatiquement les changements pour que le cluster corresponde à ce qui est déclaré dans Git.
 
 Les avantages sont nombreux :
+
 - **Déploiements fiables et reproductibles.**
 - **Traçabilité complète** de tous les changements via l'historique Git.
 - **Récupération rapide** après incident en revenant à un commit précédent.
@@ -32,6 +34,7 @@ L'URL à utiliser est la suivante, en remplaçant `<votre-identifiant-de-cluster
 `http://argocd.internal.<votre-identifiant-de-cluster>.mk.ms-cloud-temple.com`
 
 Vous pouvez obtenir l'adresse IP interne de l'Ingress ArgoCD avec la commande suivante :
+
 ```bash
 kubectl get ingress argocd-server -n argocd
 ```
@@ -66,7 +69,7 @@ kubectl label namespace guestbook capsule.clastix.io/tenant=default
 
 Maintenant que le namespace est prêt, nous pouvons déclarer l'application à ArgoCD.
 
-1.  Créez un fichier nommé `app-guestbook.yaml` avec le contenu suivant :
+1. Créez un fichier nommé `app-guestbook.yaml` avec le contenu suivant :
 
     ```yaml
     apiVersion: argoproj.io/v1alpha1
@@ -88,6 +91,7 @@ Maintenant que le namespace est prêt, nous pouvons déclarer l'application à A
           prune: true
           selfHeal: true
     ```
+
     Ce manifeste demande à ArgoCD de :
     - Créer une application nommée `guestbook`.
     - Surveiller le dépôt `argocd-example-apps`.
@@ -95,11 +99,12 @@ Maintenant que le namespace est prêt, nous pouvons déclarer l'application à A
     - Déployer les manifestes trouvés dans le namespace `guestbook` du cluster local.
     - Maintenir la synchronisation automatiquement (`automated`).
 
-2.  Vous avez deux options pour créer l'application dans ArgoCD :
+2. Vous avez deux options pour créer l'application dans ArgoCD :
 
     **Option A : Via `kubectl` (Approche GitOps)**
 
     Appliquez ce manifeste directement à votre cluster. C'est la méthode recommandée car elle suit le principe GitOps de gestion déclarative.
+
     ```bash
     kubectl apply -f app-guestbook.yaml
     ```
@@ -116,7 +121,7 @@ Maintenant que le namespace est prêt, nous pouvons déclarer l'application à A
 
 Dès que vous appliquez le manifeste, ArgoCD détecte cette nouvelle ressource `Application` et commence son travail.
 
-1.  **Via l'interface web :**
+1. **Via l'interface web :**
     - Connectez-vous à l'interface d'ArgoCD.
     - Vous devriez voir une nouvelle carte pour l'application `guestbook`.
     - Après quelques instants, son statut devrait passer à `Healthy` et `Synced`.
@@ -124,12 +129,15 @@ Dès que vous appliquez le manifeste, ArgoCD détecte cette nouvelle ressource `
 
 <img src={argocdguestbook} />
 
-2.  **Via la ligne de commande :**
+1. **Via la ligne de commande :**
     - Vérifiez que le namespace `guestbook` a été créé :
+
       ```bash
       kubectl get ns guestbook
       ```
+
     - Vérifiez que les ressources de l'application sont bien déployées dans ce namespace :
+
       ```bash
       kubectl get all -n guestbook
       NAME                                READY   STATUS    RESTARTS   AGE
@@ -153,12 +161,13 @@ Maintenant, si vous modifiez un manifeste dans le dépôt Git, ArgoCD détectera
 
 Pour supprimer l'application et toutes les ressources associées, vous pouvez simplement supprimer la ressource `Application` d'ArgoCD.
 
-1.  **Via l'interface web :**
+1. **Via l'interface web :**
     - Dans l'UI d'ArgoCD, trouvez l'application `guestbook`.
     - Cliquez sur les trois points (...) pour ouvrir le menu et sélectionnez **"Delete"**.
     - Cochez l'option **"Foreground"** pour vous assurer que toutes les ressources managées (pods, services, etc.) sont également supprimées en cascade.
-2.  **Via `kubectl` :**
+2. **Via `kubectl` :**
     - Supprimez le fichier `app-guestbook.yaml` que vous avez créé :
+
       ```bash
       kubectl delete -f app-guestbook.yaml
       ```
@@ -169,7 +178,8 @@ ArgoCD va maintenant supprimer tous les composants de l'application `guestbook`.
 kubectl delete namespace guestbook
 ```
 
-:::info Pour aller plus loin : la gestion des secrets
+:::info[Pour aller plus loin : la gestion des secrets
+]
 Ce tutoriel utilise un dépôt public sans données sensibles. Pour vos applications en production, il est crucial de ne jamais stocker de secrets (mots de passe, clés d'API) en clair dans votre dépôt Git. Des solutions comme **Sealed Secrets** ou **HashiCorp Vault** s'intègrent avec ArgoCD pour gérer vos secrets de manière sécurisée. Un futur tutoriel détaillera cette approche.
 :::
 

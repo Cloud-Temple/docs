@@ -1,68 +1,81 @@
 ---
-title: Concepts
+title: Konzepte
 ---
 
-The **Cloud Temple Marketplace** is a centralized platform that facilitates access to and deployment of ready-to-use cloud solutions in a sovereign and secure environment.
+Die **Marketplace Cloud Temple** ist eine zentralisierte Plattform, die den Zugriff auf und die Bereitstellung von sofort einsatzbereiten Cloud-Lösungen in einer souveränen und sicheren Umgebung erleichtert.
 
 ---
 
 ## Definition und Positionierung
 
-Die Cloud Temple Marketplace positioniert sich als Treiber der digitalen Transformation für Unternehmen, die zuverlässige, in Europa gehostete Dienstleistungen mit einfacher und schneller Integration suchen.
+Die Cloud Temple Marketplace positioniert sich als Hebel für die digitale Transformation von Unternehmen, die zuverlässige, in Europa gehostete Dienste mit einfacher und schneller Integration suchen.
 
 Sie ermöglicht:
-- **Zentralisierten** Zugriff auf validierte Partnerlösungen
-- **Vereinfachung** der Bereitstellung von Cloud-Umgebungen
-- **Beschleunigung** der Umsetzung digitaler Projekte
-- **Sicherstellung** der Konformität und Sicherheit der Bereitstellungen
 
-## Available solution types
+- **Zentralisieren** des Zugriffs auf validierte Partnerlösungen
+- **Vereinfachen** der Bereitstellung von Cloud-Umgebungen
+- **Beschleunigen** der Umsetzung digitaler Projekte
+- **Garantieren** der Compliance und Sicherheit der Bereitstellungen
+
+---
+
+## Verfügbare Lösungstypen
 
 ### Virtual Machine Images
 
-Virtual machine images form the current core of the Marketplace offering. These pre-configured images enable the rapid deployment of standardized environments.
+Virtuelle Maschinen-Images bilden derzeit das Kernstück des Marketplace-Produkts. Diese vorkonfigurierten Images ermöglichen die schnelle Bereitstellung standardisierter Umgebungen.
 
-**Features:**
-- Validated and secure images
-- Compatible with OpenIaaS and VMware environments
-- Deployment in under 10 minutes
-- Native integration with the Cloud Temple console
+**Eigenschaften:**
 
-### Partner Solutions
+- Geprüfte und sichere Images
+- Kompatibel mit OpenIaaS- und VMware-Umgebungen
+- Bereitstellung in weniger als 10 Minuten
+- Native Integration in die Cloud Temple-Konsole
 
-The Marketplace also provides access to solutions developed by our partner vendors, covering various business domains.
+### Partnerlösungen
 
-**Access Process:**
-- Browse the catalog from the console
-- Directly contact the partner
-- Deploy on the Temple Cloud infrastructure
+Der Marketplace bietet zudem Zugang zu Lösungen, die von unseren Partner-Softwareherstellern entwickelt wurden und verschiedene Geschäftsbereiche abdecken.
 
-## Integration with the Cloud Temple Ecosystem
+**Zugriffsprozess:**
 
-### Cloud Temple Console
+- Katalogeinsicht über die Konsole
+- Direkte Kontaktaufnahme mit dem Partner
+- Bereitstellung auf der Cloud-Temple-Infrastruktur
 
-The Marketplace is natively integrated into the Cloud Temple console, offering:
-- **Unified access** from your usual management interface
-- **Direct deployment** onto existing infrastructures
-- **Centralized management** of resources and solutions
+---
 
-### Compatibility with services
+## Integration mit dem Ökosystem Cloud Temple
 
-The solutions from the Marketplace are designed to seamlessly integrate with:
-- **OpenSource IaaS**: Deployment on OpenIaaS infrastructure
-- **VMware IaaS**: Integration with the vSphere environment
+### Cloud Temple-Konsole
 
-## Security and Compliance
+Der Marktplatz ist nativ in die Cloud Temple-Konsole integriert und bietet:
 
-### Souveräne Hosting
+- **Einheitlicher Zugriff** über die übliche Verwaltungsschnittstelle
+- **Direkte Bereitstellung** auf bestehenden Infrastrukturen
+- **Zentralisiertes Management** von Ressourcen und Lösungen
 
-Alle über die Marketplace bereitgestellten Lösungen verfügen über:
-- **Hosting ausschließlich in Frankreich**
+### Kompatibilität mit Diensten
+
+Die Lösungen des Marktplatzes sind darauf ausgelegt, sich nahtlos in folgende Dienste zu integrieren:
+
+- **IaaS OpenSource** : Bereitstellung auf OpenIaaS-Infrastruktur
+- **IaaS VMware** : Integration in die vSphere-Umgebung
+
+---
+
+## Sicherheit und Compliance
+
+### Souveränes Hosting
+
+Alle über den Marketplace bereitgestellten Lösungen profitieren von:
+
+- **Hosting in Frankreich** ausschließlich
 - **SecNumCloud-Zertifizierung** der Infrastruktur
 
-### Validation of Solutions
+### Validierung der Lösungen
 
-The solutions offered in the Marketplace undergo a rigorous selection process ensuring:
-- **Compatibility** with the Cloud Temple infrastructure
-- **Security** of images and applications
-- **Reliability** of publisher partners
+Die in der Marketplace angebotenen Lösungen unterliegen einer strengen Auswahl, die Folgendes gewährleistet:
+
+- **Kompatibilität** mit der Cloud Temple-Infrastruktur
+- **Sicherheit** von Images und Anwendungen
+- **Zuverlässigkeit** der Softwarepartner

@@ -8,26 +8,30 @@ import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_b
 
 # Guida rapida per l'offerta Bare Metal
 
-Questa pagina ti guida attraverso i passaggi iniziali per utilizzare l'offerta **Bare Metal** dalla console Cloud Temple. Segui queste istruzioni per esplorare i menu e le funzionalità disponibili.
+Questa pagina illustra i passaggi iniziali per utilizzare l'offerta **Bare Metal** dalla console Cloud Temple. Segui queste istruzioni per scoprire i menu e le funzionalità disponibili.
 
 ---
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati dei seguenti punti:
+Prima di iniziare, verifica i seguenti punti:
 
-1. **Sottoscrizione attivata**: La tua organizzazione deve aver sottoscritto l'offerta Bare Metal.
-2. **Permessi utente**: Il tuo account utente deve disporre dei diritti necessari per accedere e gestire le risorse Bare Metal.
+1. **Sottoscrizione attiva** : La tua organizzazione deve aver sottoscritto l'offerta Bare Metal.
+2. **Permessi utente** : Il tuo account utente deve disporre dei permessi necessari per accedere e gestire le risorse Bare Metal.
+
+---
 
 ## Accesso all'interfaccia Bare Metal
 
-Dopo l'attivazione della sottoscrizione e la configurazione dei permessi, un nuovo menu denominato **Bare Metal** appare nella console Cloud Temple. Questo menu contiene due sottomenu principali: **Bare Metal** e **Volumes**.
+Una volta attivata la sottoscrizione e configurate le autorizzazioni, un nuovo menu denominato **Bare Metal** appare nella console Cloud Temple. Questo menu contiene due sottomenu principali: **Bare Metal** e **Volumes**.
 
 <img src={shivaBareMetalMenu} />
 
+---
+
 ### 1. Sottomenu **Bare Metal**
 
-Il sottomenu **Bare Metal** presenta un tabella che elenca tutte le istanze Bare Metal disponibili. Tale tabella include le informazioni principali per ciascuna istanza:
+Il sottomenu **Bare Metal** visualizza una tabella che elenca tutte le istanze Bare Metal disponibili. Questa tabella include le informazioni principali per ogni istanza:
 
 - **Nome del Bare Metal**
 - **Stato**
@@ -38,35 +42,39 @@ Il sottomenu **Bare Metal** presenta un tabella che elenca tutte le istanze Bare
 
 #### Funzionalità principali
 
-- **Pulsante Azione**: consente di accedere direttamente alla console di amministrazione del Bare Metal.
-- **Nome cliccabile**: facendo clic sul nome di un'istanza Bare Metal, viene aperta una nuova pagina con i **dettagli completi** dell'istanza:
-  - Informazioni sul hardware (RAM, CPU, GPU, ecc.).
+- **Pulsante Azione** : Consente di accedere direttamente alla console di amministrazione del Bare Metal.
+- **Nome cliccabile** : Facendo clic sul nome di un'istanza Bare Metal, viene visualizzata una nuova pagina con i **dettagli completi** dell'istanza :
+  - Informazioni sull'hardware (RAM, CPU, GPU, ecc.).
   - Configurazione di rete (indirizzi IP associati).
   - Informazioni di connettività per la gestione.
 
 <img src={shivaBareMetalDetails} />
 
-### 2. Sottomenu **Volumi**
+---
 
-Il sottomenu **Volumi** visualizza una tabella che elenca tutti i volumi di archiviazione associati alla tua sottoscrizione Bare Metal. Per ciascun volume sono disponibili le seguenti informazioni:
+### 2. Sottomenu **Volumes**
+
+Il sottomenu **Volumes** visualizza una tabella che elenca tutti i volumi di archiviazione associati alla tua sottoscrizione Bare Metal. Per ogni volume, sono disponibili le seguenti informazioni:
 
 - **Nome del volume**
 - **Capacità**
-- **Classe di prestazioni** (IOPS per To)
+- **Classe di prestazioni** (IOPS per TB)
 - **Stato** (Disponibile, In fase di distribuzione, ecc.)
 
 <img src={shivaBareMetalStoragelist} />
 
-:::info Volume BFS (Avvio da SAN)
-Il **Volume 1** è il volume **BFS (Avvio da SAN)** e deve essere utilizzato per installare il sistema operativo.
+:::info[Volume BFS (Boot from SAN)]
+Il **Volume 1** è il volume **BFS (Boot from SAN)** e deve essere utilizzato per installare il sistema operativo.
 
-**Importante:** Questo volume non può essere condiviso con altri server Bare Metal della stessa zona di disponibilità (AZ).
+**Importante:** Questo volume non è condivisibile con gli altri Bare Metal della stessa zona di disponibilità (AZ).
 :::
 
-:::tip Buona pratica
-Preferisci installare il sistema operativo sul volume **BFS**, e memorizza i tuoi dati su un volume **LUN** aggiuntivo. Questa separazione semplifica la manutenzione, i backup e la reinstallazione del sistema, se necessario.
+:::tip[Best practice]
+Si consiglia di installare l'OS sul volume **BFS** e di archiviare i dati su un volume **LUN** aggiuntivo. Questa separazione facilita la manutenzione, i backup e la reinstallazione del sistema, se necessario.
 :::
 
 #### Funzionalità principali
 
-- **Gestione dei volumi**: Da questo pannello è possibile mappare i volumi alle proprie istanze Bare Metal.
+- **Gestione dei volumi** : Da questa dashboard, puoi mappare i volumi alle tue istanze Bare Metal.
+
+---

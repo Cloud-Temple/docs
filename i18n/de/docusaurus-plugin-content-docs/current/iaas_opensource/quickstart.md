@@ -18,211 +18,212 @@ import openIaasVmConsoleBtn from '@site/docs/iaas_opensource/images/open_iaas_vm
 import openIaasVmConsoleOpen from '@site/docs/iaas_opensource/images/open_iaas_vm_console_open.png'
 import openIaasVmConsoleClipboard from '@site/docs/iaas_opensource/images/open_iaas_vm_console_clipboard.png'
 
-## Calculation
+## Berechnung
 
-### Virtual Machine Management
+### Verwaltung virtueller Maschinen
 
-The interface for managing your virtual machines is available in the Console under the __'OpenIaaS'__ menu located on the green bar on the left side of the screen.
+Die Verwaltungsoberfläche Ihrer virtuellen Maschinen ist in der Konsole im Menü __'OpenIaaS'__ verfügbar, das sich auf der grünen Leiste links auf dem Bildschirm befindet.
 
 ### Liste der virtuellen Maschinen
 
-In der Sektion __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer auf Ihrem vertrauenswürdigen Cloud-System gehosteten virtuellen Maschinen.
+Im Bereich __'Virtuelle Maschinen'__ haben Sie Zugriff auf die Liste Ihrer virtuellen Maschinen, die in Ihrer vertrauenswürdigen Cloud gehostet werden.
 
 <img src={openIaasVirtualMachinesList} />
 
-Für jede virtuelle Maschine stehen Ihnen folgende Informationen zur Verfügung:
+Für jede virtuelle Maschine stehen Ihnen die folgenden Informationen zur Verfügung:
 
 - Der Name.
-- Der Status (aus, an).
+- Der Status (ausgeschaltet, eingeschaltet).
 - Die Verfügbarkeitszone (AZ).
 - Das Betriebssystem.
-- Die Anzahl der virtuellen CPU-Kerne (vCPU).
-- Die Menge an virtuellem Arbeitsspeicher (vRAM).
+- Die Anzahl der virtuellen CPUs (vCPU).
+- Die Größe des virtuellen Arbeitsspeichers (vRAM).
 
 ### Aktionen für virtuelle Maschinen
 
 Die folgenden Aktionen sind über diese Schnittstelle möglich:
 
-- Aktualisieren der Liste der virtuellen Maschinen.
-- Filtern der Liste.
-- Suchen einer virtuellen Maschine anhand ihres Namens.
-- Erstellen einer neuen virtuellen Maschine.
+- Liste der virtuellen Maschinen aktualisieren.
+- Liste filtern.
+- Eine virtuelle Maschine nach ihrem Namen suchen.
+- Eine neue virtuelle Maschine erstellen.
 
 <img src={openIaasVirtualMachinesListActions} />
 
-Wenn Sie auf den grünen Dropdown-Pfeil rechts neben einer virtuellen Maschine in der Liste klicken, erhalten Sie Zugriff auf alle verfügbaren Informationen zu dieser Maschine.
+Wenn Sie auf den grünen Dropdown-Pfeil rechts der Liste für eine virtuelle Maschine klicken, erhalten Sie Zugriff auf alle Informationen zu dieser Maschine.
 
 <img src={openIaasVirtualMachineOverview} />
 
-Ein Schnellleistenband ermöglicht die Durchführung folgender Aktionen:
+Eine Schnellleiste ermöglicht die folgenden Aktionen:
 
 <img src={openIaasVirtualMachineActions} />
 
-- Virtuelle Maschine starten.
-- Virtuelle Maschine herunterfahren.
-- Virtuelle Maschine neu starten.
+- Virtuelle Maschine einschalten.
+- Sie ausschalten.
+- Sie neu starten.
 - Konsole öffnen.
-- ISO-Medium einlegen.
-- ISO-Medium auswerfen.
-- Virtuelle Maschine in ein Template konvertieren.
-- Virtuelle Maschine verschieben.
-- Virtuelle Maschine umbenennen.
-- Virtuelle Maschine löschen.
+- ISO-Image einbinden.
+- ISO-Image aushängen.
+- Virtuelle Maschine in eine Vorlage konvertieren.
+- Sie verschieben.
+- Sie umbenennen.
+- Sie löschen.
 
-Im Register __„Allgemein“__ finden Sie detaillierte Informationen zur virtuellen Maschine, wie beispielsweise ihren physischen Standort (AZ, Pool, Host), den RAM, die CPU, die IP-Adressen und weitere Angaben.
+Im Reiter '__Allgemein__' finden Sie detaillierte Informationen zu Ihrer virtuellen Maschine, wie z. B. den physischen Standort (AZ, Pool, Host), den RAM, den CPU, die IP-Adressen und weitere.
 
 <img src={openIaasVirtualMachineOverviewInformations} />
 
-Ein Register __„Erweitert“__ ermöglicht den Zugriff auf spezifischere Informationen:
+Ein Reiter '__Erweitert__' ermöglicht den Zugriff auf spezifischere Informationen:
 
 - UUID der virtuellen Maschine
 - Guest Tools
-- Gastbetriebssystem
+- Gast-Betriebssystem
 - DVD-Laufwerk
 
-Zusätzlich können bestimmte Einstellungen geändert werden, wie beispielsweise:
+Sowie das Ändern bestimmter Optionen, wie z. B.:
 
-- Startreihenfolge
+- Die Startreihenfolge
 - Secure Boot
-- Automatisches Starten (nicht möglich, wenn keine Sicherungspolitik mit der VM verknüpft ist)
+- Der automatische Start (nicht möglich, wenn keine Sicherungsrichtlinie mit der VM verknüpft ist)
 
 <img src={openIaasVirtualMachineAdvancedOverview} />
 
-### Virtual Machine Console
+### Konsole einer virtuellen Maschine
 
-The console of a virtual machine is accessible from the list of virtual machines by clicking the __'Console'__ icon:
+Die Konsole einer virtuellen Maschine ist über die Liste der virtuellen Maschinen zugänglich, indem Sie auf das Symbol __'Konsole'__ klicken:
 
 <img src={openIaasVmConsoleBtn} />
 
-A new tab opens in your browser, displaying the console of your machine, based on a VNC client:
+Ein neuer Browser-Tab öffnet sich und zeigt die Konsole Ihrer Maschine, die auf einem VNC-Client basiert:
 
 <img src={openIaasVmConsoleOpen} />
 
-In the VNC menu, you can:
+Im VNC-Menü ist es möglich:
 
-- request the transmission of specific keys,
-- force a keyboard mapping (in case your virtual machine uses a different keyboard layout than your web browser),
-- open a text field that can be sent to the machine. This method replaces the previous non-functional clipboard,
-- switch to full-screen mode,
-- change the window size (scaling).
+- bestimmte Tasten zu senden,
+- ein Tastaturlayout zu erzwingen (falls Ihre virtuelle Maschine nicht über dasselbe Tastaturlayout wie Ihr Webbrowser verfügt),
+- ein Textfeld zu öffnen, das an die Maschine gesendet werden kann. Diese Methode ersetzt den alten, nicht funktionierenden Zwischenablage-Modus,
+- in den Vollbildmodus zu wechseln,
+- die Fenstergröße zu ändern (Skalierung).
 
-#### Keyboard Layout Support
+#### Unterstützung von Tastaturlayouts
 
-The input entered in the console depends on the keyboard language of your web browser, the keyboard language of the virtual machine, and whether the 'enforce keyboard' option on the left side of the screen is enabled or not.
+Die in der Konsole eingegebene Eingabe hängt von der Tastatursprache Ihres Webbrowsers, der Tastatursprache
+der virtuellen Maschine sowie der Aktivierung oder Deaktivierung der Option 'enforce keyboard' links auf dem Bildschirm ab.
+Nachfolgend eine Übersicht der möglichen Situationen:
 
-Below is a summary of the possible scenarios:
+| Tastatursprache der physischen Maschine (Eingabe) | Tastatursprache der virtuellen Maschine | Option 'enforce keyboard' ausgewählt | Ergebnis (Ausgabe)        |
+| ------------------------------------------------- | ----------------------------------------- | -------------------------------------- | ------------------------ |
+| Französisch                                       | Französisch                               | Nein                                   | ✅                       |
+| Französisch                                       | Französisch                               | Ja                                     | Nicht empfohlen          |
+| Französisch                                       | Englisch                                  | Nein                                   | Englisch                 |
+| Französisch                                       | Englisch                                  | Ja                                     | ✅                       |
+| Englisch                                          | Französisch                               | Nein                                   | Französisch              |
+| Englisch                                          | Französisch                               | Ja                                     | ✅                       |
+| Englisch                                          | Englisch                                  | Nein                                   | ✅                       |
+| Englisch                                          | Englisch                                  | Ja                                     | Nicht empfohlen          |
 
-| Physical Machine Keyboard Language (input) | Virtual Machine Keyboard Language | 'Enforce Keyboard' Option Selected | Result (output)        |
-|--------------------------------------------|-----------------------------------|------------------------------------|------------------------|
-| French                                     | French                            | No                                 | ✅                       |
-| French                                     | French                            | Yes                                | Not recommended        |
-| French                                     | English                           | No                                 | English                |
-| French                                     | English                           | Yes                                | ✅                       |
-| English                                    | French                            | No                                 | French                 |
-| English                                    | French                            | Yes                                | ✅                       |
-| English                                    | English                           | No                                 | ✅                       |
-| English                                    | English                           | Yes                                | Not recommended        |
+__Hinweis__ :
 
-__Note__:
+- Falls bestimmte Zeichen bei der manuellen Eingabe nicht übernommen werden, können Sie es über die Zwischenablage versuchen.
 
-- If certain characters do not appear during manual input, you may try copying them from the clipboard.
+#### Funktionsweise der Zwischenablage
 
-#### Clipboard Functionality
-
-This feature allows you to send an entire string of characters to your virtual machine. It is important to note that the "enforce keyboard" option affects how this string of characters is transmitted to your virtual machine. If you notice during console input that the "enforce keyboard" option is required, make sure to enable it before using the clipboard.  
-This functionality can be used to send a password, a command, or the content of a configuration file, for example:
+Diese Funktion ermöglicht es Ihnen, eine gesamte Zeichenkette an Ihre virtuelle Maschine zu senden. Es ist wichtig zu beachten, dass die Schaltfläche "enforce keyboard" beeinflusst, wie diese Zeichenkette
+an Ihre virtuelle Maschine übermittelt wird. Falls Sie bei der Eingabe in der Konsole feststellen, dass die Option "enforce keyboard" erforderlich ist, denken Sie daran, sie vor der Nutzung der Zwischenablage zu aktivieren.  
+Diese Funktion kann beispielsweise zum Senden eines Passworts, eines Befehls oder des Inhalts einer Konfigurationsdatei verwendet werden:
 
 <img src={openIaasVmConsoleClipboard} />
 
-Upon clicking the "Paste" button, the content of your text field is sent to your virtual machine.
+Nach einem Klick auf die Schaltfläche "Paste" wird der Inhalt Ihres Textfelds an Ihre virtuelle Maschine gesendet.
 
-## Replication
+## Replikation
 
-### Access to Replication Management
+### Zugriff auf die Replikationsverwaltung
 
-The replication management interface is available in the Console under the menu __'OpenIaaS'__ > __'Replication'__, located on the green bar on the left side of the screen.
+Die Verwaltungsoberfläche für die Replikation ist in der Konsole im Menü __'OpenIaaS'__ > __'Replikation'__ auf der grünen Leiste links auf dem Bildschirm verfügbar.
 
 <img src={openIaasReplicationMenu} />
 
-### Creating a replication policy
+### Erstellen einer Replikationsrichtlinie
 
-In the __'Replication'__ section, you can create policies defining the protection settings for your virtual machines.
+Im Bereich __'Replikation'__ können Sie Richtlinien erstellen, die die Schutzparameter Ihrer virtuellen Maschinen definieren.
 
 <img src={openIaasReplicationPoliciesView} />
 
-To create a new policy, click the __'Add policy'__ button. A form opens with the following steps:
+Um eine neue Richtlinie zu erstellen, klicken Sie auf die Schaltfläche __'Richtlinie hinzufügen'__. Es öffnet sich ein Formular mit den folgenden Schritten:
 
-#### Step 1: General Information
+#### Schritt 1: Allgemeine Informationen
 
-- __Name__ : Provide an explicit name for your policy
-- __Frequency__ : Select the replication interval (1–59 minutes or 1–24 hours)
+- __Name__ : Geben Sie Ihrer Richtlinie einen eindeutigen Namen
+- __Häufigkeit__ : Wählen Sie das Replikationsintervall (1–59 Minuten oder 1–24 Stunden)
 
 <img src={openIaasReplicationPolicyForm1} />
 
-#### Step 2: Storage Selection
+#### Schritt 2 : Speicherauswahl
 
-- __Availability Zone__: Select the destination zone
-- __Pool__: Choose the resource pool
-- __Block Storage__: Select the destination storage
+- __Verfügbarkeitszone__ : Wählen Sie die Zielzone aus
+- __Pool__ : Wählen Sie den Ressourcenpool aus
+- __Block Storage__ : Wählen Sie den Zielspeicher aus
 
 <img src={openIaasReplicationPolicyForm2} />
 
-#### Schritt 3: Überprüfung
+#### Schritt 3 : Validierung
 
-Überprüfen Sie die Einstellungen und klicken Sie auf __'Hinzufügen'__, um die Richtlinie zu erstellen.
+Überprüfen Sie die Parameter und klicken Sie auf __'Hinzufügen'__, um die Richtlinie zu erstellen.
 
-### Associating a VM with Replication
+### Zuordnung einer VM zur Replikation
 
-To protect a virtual machine, go to the details of your VM from the list of virtual machines.
+Um eine virtuelle Maschine zu schützen, rufen Sie die Details Ihrer VM aus der Liste der virtuellen Maschinen auf.
 
-In the VM's detailed view, you will find a __'Replication'__ section:
+In der Detailansicht der VM finden Sie einen Abschnitt __'Replikation'__ :
 
 <img src={openIaasVmReplicationSection} />
 
-Steps to associate a VM with replication:
+Die Schritte zum Zuordnen einer VM zur Replikation:
 
-1. Click on __'Configure a policy'__
-2. Select the desired replication policy from the dropdown list
-3. Confirm your selection
+1. Klicken Sie auf __'Richtlinie konfigurieren'__
+2. Wählen Sie die gewünschte Replikationsrichtlinie aus der Dropdown-Liste aus
+3. Bestätigen Sie Ihre Auswahl
 
-Replication will start automatically after confirmation.
+Die Replikation startet automatisch nach der Bestätigung.
 
-### Policy and Replica Management
+### Verwaltung von Richtlinien und Replikaten
 
-#### Policy Overview
+#### Ansicht der Richtlinien
 
-The __'Policies'__ tab allows you to view all your replication policies:
+Der Reiter __'Richtlinien'__ ermöglicht es Ihnen, alle Ihre Replikationsrichtlinien anzuzeigen:
 
 <img src={openIaasReplicationPoliciesTable} />
 
-For each policy, you have access to the following information:
+Für jede Richtlinie stehen Ihnen die folgenden Informationen zur Verfügung:
 
-- Its name  
-- Its replication frequency  
-- The destination availability zone  
-- The associated pool  
-- The block storage used  
+- Der Name
+- Die Replikationshäufigkeit
+- Die Ziel-Verfügbarkeitszone
+- Der zugeordnete Pool
+- Der verwendete Block Storage
 
-Available actions include:
+Verfügbare Aktionen umfassen:
 
-- View details for each policy  
-- Modify parameters  
-- Delete an unused policy
+- Details jeder Richtlinie anzeigen
+- Einstellungen bearbeiten
+- Nicht genutzte Richtlinien löschen
 
-#### Replica View
+#### Replikate-Ansicht
 
-The __'Replicas'__ tab displays all virtual machines currently being replicated:
+Die Registerkarte __'Replikate'__ zeigt alle virtuellen Maschinen an, die gerade repliziert werden:
 
 <img src={openIaasReplicationReplicasTable} />
 
-You can view:
+Sie können einsehen:
 
-- The names of the replicated virtual machines  
-- The source and target locations  
-- The associated replication policy  
+- Der Name der replizierten virtuellen Maschinen
+- Der Quell- und Zielstandort
+- Die zugehörige Replikationsrichtlinie
 
-Available actions include:
+Verfügbare Aktionen umfassen:
 
-- Export data to CSV format  
-- View replication details  
-- Manage replicas by policy
+- Export der Daten im CSV-Format
+- Anzeigen der Replikationsdetails
+- Verwaltung der Replikate nach Richtlinie

@@ -2,6 +2,8 @@
 title: Vue d'ensemble
 ---
 
+# Provider Terraform
+
 Le provider Terraform Cloud Temple vous permet de gérer l'infrastructure de votre compte Cloud Temple en utilisant l'approche Infrastructure as Code (IaC). Il offre une intégration complète avec les services d'infrastructure Cloud Temple, permettant de provisionner, configurer et gérer vos ressources cloud de manière déclarative et reproductible.
 
 ## Fonctionnalités principales
@@ -137,11 +139,11 @@ Pour être notifié automatiquement des nouvelles releases du provider Terraform
 
 2. Cliquez sur le bouton **Watch** en haut à droite du repository
 
-![Bouton Watch GitHub](./images/provider_terraform_notify.png)
+![Bouton Watch GitHub](@site/docs/terraform/images/provider_terraform_notify.png)
 
-3. Sélectionnez **Custom** puis cochez **Releases**
+1. Sélectionnez **Custom** puis cochez **Releases**
 
-![Configuration des notifications](./images/provider_terraform_subscribe.png)
+![Configuration des notifications](@site/docs/terraform/images/provider_terraform_subscribe.png)
 
 Vous recevrez désormais une notification par email à chaque nouvelle release du provider.
 

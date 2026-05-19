@@ -18,7 +18,7 @@ Cette architecture repose sur le modèle __VersaStack__, une alliance entre Cisc
 
 ## Une infrastructure dédiée et automatisée
 
-Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, l'offre IaaS de Cloud Temple propose une infrastructure unique :
+Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, le produit IaaS de Cloud Temple propose une infrastructure unique :
 
 - __Ressources dédiées__ : Les lames de calcul, volumes de stockage, et stacks logicielles (virtualisation, sauvegarde, firewalling, etc.) ne sont jamais mutualisées entre les clients.
 - __Prédictibilité maximale__ : Vous maîtrisez les taux de virtualisation, la pression en IOPS sur le stockage et bénéficiez d’une facturation claire, à la consommation mensuelle.
@@ -95,7 +95,7 @@ Le service réseau sur la plateforme IaaS de Cloud Temple repose sur une infrast
 
 ### VLANs de niveau 2
 
-Les VLANs mis à disposition dans l'offre IaaS sont de type __niveau 2__, offrant une isolation réseau complète et une configuration adaptable selon les besoins.
+Les VLANs mis à disposition dans le produit IaaS sont de type __niveau 2__, offrant une isolation réseau complète et une configuration adaptable selon les besoins.
 
 #### Principaux concepts
 
@@ -142,34 +142,34 @@ Les disques sont utilisés par les baies de stockage en [__'Distributed Raid 6'_
 
 Pour garantir la confidentialité de vos données au repos, l'ensemble de notre infrastructure de stockage bloc intègre un chiffrement matériel robuste.
 
--   **Type de Chiffrement** : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme **XTS-AES 256**.
--   **Conformité** : Cette méthode de chiffrement est conforme à la norme **FIPS 140-2**, assurant un haut niveau de sécurité validé.
--   **Fonctionnement** : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
+- __Type de Chiffrement__ : Les données sont chiffrées directement sur les disques (`Data At Rest`) en utilisant l'algorithme __XTS-AES 256__.
+- __Conformité__ : Cette méthode de chiffrement est conforme à la norme __FIPS 140-2__, assurant un haut niveau de sécurité validé.
+- __Fonctionnement__ : Le chiffrement est appliqué au moment de l'écriture des données sur le support de stockage physique.
 
-:::warning Point d'attention sur la réplication
+:::warning[Point d'attention sur la réplication]
 Il est important de noter que ce chiffrement protège les données stockées sur les disques. Il n'est pas actif "on-the-fly", ce qui signifie que les données ne sont pas chiffrées durant les opérations de réplication de stockage entre les zones de disponibilité. La sécurité des transferts est assurée par des canaux de communication dédiés et sécurisés.
 :::
 
 Le classe de stockage __'Mass Storage'__ propose des disques mécaniques pour les besoins d'archivages
 dans un contexte d'efficience économique. Plusieurs niveaux de performances sont disponibles :
 
-| Référence                         | Unité | SKU                                          |
-|-----------------------------------|-------|----------------------------------------------|
-| FLASH - Essentiel - 500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:live:v1       |
-| FLASH - Standard - 1500 IOPS/To   | 1 Gio | csp:(region):iaas:storage:bloc:medium:v1     |
-| FLASH - Premium - 3000 IOPS/To    | 1 Gio | csp:(region):iaas:storage:bloc:premium:v1    |
-| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | csp:(region):iaas:storage:bloc:enterprise:v1 |
-| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | csp:(region):iaas:storage:bloc:ultra:v1      |
-| MASS STORAGE - Archivage          | 1 Tio | csp:(region):iaas:storage:bloc:mass:v1       |
+| Référence                         | Unité | Plafond IOPS max / LUN | Bande passante max / LUN | SKU                                          |
+|-----------------------------------|-------|------------------------|--------------------------|----------------------------------------------|
+| FLASH - Essentiel - 500 IOPS/To   | 1 Gio | 10 000 IOPS            | 512 Mo/s                 | csp:(region):iaas:storage:bloc:live:v1       |
+| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS            | 1024 Mo/s                | csp:(region):iaas:storage:bloc:medium:v1     |
+| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS            | 1024 Mo/s                | csp:(region):iaas:storage:bloc:premium:v1    |
+| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS            | 1024 Mo/s                | csp:(region):iaas:storage:bloc:enterprise:v1 |
+| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS            | 1024 Mo/s                | csp:(region):iaas:storage:bloc:ultra:v1      |
+| MASS STORAGE - Archivage          | 1 Tio | Non garanti            | Non garanti              | csp:(region):iaas:storage:bloc:mass:v1       |
 
 *__Nota__ :*
 
-- *La performance effective pour une classe de stockage étant liée à la volumétrie effectivement commandée, selon la notion "IOPS/To", s'entendant "limite d'IOPS par Tera alloué",*
+- *La performance effective d'une LUN (Datastore) croît de manière linéaire en fonction de la volumétrie allouée (selon son ratio d'IOPS/To), __dans la limite du plafond matériel absolu défini ci-dessus__.*
 
-> *Ainsi, un volume de 0,5To dans la classe de performance 'Standard' aura une limitation d'IOPS plafonnée à 750IOPS,*
-> *De même, un volume de 10To dans la classe de performance 'Ultra' aura lui une limitation d'IOPS à hauteur de 150000 IOPS,*
+> *Par exemple, un volume de 0,5 To en classe 'Standard' bénéficiera de 750 IOPS.*
+> *En revanche, un volume de 10 To en classe 'Ultra' (théoriquement 150 000 IOPS) sera bridé par la limite physique absolue et plafonnera à 30 000 IOPS et 1024 Mo/s.*
 
-- *La limitation d'IOPS est appliquée au volume, donc à la notion de Datastore pour un environnement VMware,*
+- *Ces limitations (IOPS et bande passante) s'appliquent au niveau du volume de stockage, soit au niveau du Datastore pour un environnement VMware,*
 - *La disponibilité du stockage est de 99.99% mesuré mensuellement, plage de maintenance incluse,*
 - *Il n'y a pas de restriction ou de quota sur la lecture ou l'écriture,*
 - *Il n'y a pas de facturation à l'IOPS,*
@@ -237,7 +237,7 @@ Lorsque vos charges de travail nécessitent des temps de reprise d'activité cou
 ou adapté d'utiliser des mécanismes de type réplications applicatives / réplication de machines virtuelles,
 il est possible de répliquer une LUN de stockage SAN entre deux zones de disponibilité d'une même région.
 
-Cette offre permet d'obtenir un __RPO de 15Mn__ et un __RTO inférieur à 4H__. Elle permet de repartir beaucoup plus rapidement que
+Ce produit permet d'obtenir un __RPO de 15Mn__ et un __RTO inférieur à 4H__. Elle permet de repartir beaucoup plus rapidement que
 la mise en œuvre d'une restauration de sauvegarde.
 
 Dans un volume de stockage en réplication asynchrone (__Global Mirror__), les contrôleurs de virtualisation SAN des
@@ -540,6 +540,6 @@ Cette solution de protection avancée est particulièrement adaptée pour :
 
 *__Nota__ :*
 
-- *Le service nécessite une souscription spécifique et n'est pas inclus dans l'offre IaaS standard*
+- *Le service nécessite une souscription spécifique et n'est pas inclus dans le produit IaaS standard*
 - *La gestion des clés reste entièrement sous contrôle de Cloud Temple dans l'environnement SecNumCloud*
 - *Les clés de chiffrement ne quittent jamais l'infrastructure française et souveraine*

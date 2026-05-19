@@ -91,7 +91,7 @@ pip install requests Pillow
 
 Prenons l'exemple de ce ticket de caisse suisse :
 
-![Ticket de caisse exemple](./images/ReceiptSwiss.jpg)
+![Ticket de caisse exemple](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
 Voici un script robuste qui gère le redimensionnement et l'encodage optimal de l'image :
 
@@ -206,7 +206,7 @@ DeepSeek-OCR excelle dans la conversion de tableaux, même sans lignes de démar
 
 **Image Entrée :**
 
-![Tableau financier](./images/tableau.png)
+![Tableau financier](@site/docs/llmaas/images/tableau.png)
 
 **Sortie Modèle (Prompt: "Convert the document to markdown table.") :**
 ```markdown
@@ -254,7 +254,7 @@ Idéal pour les documents académiques. Le modèle reconnaît les équations et 
 
 **Image Entrée :**
 
-![Equation](./images/equation.png)
+![Equation](@site/docs/llmaas/images/equation.png)
 
 **Sortie Modèle (Prompt: "Convert to latex.") :**
 

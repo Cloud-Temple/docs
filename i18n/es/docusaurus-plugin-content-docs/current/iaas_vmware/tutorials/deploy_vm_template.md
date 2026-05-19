@@ -1,5 +1,5 @@
 ---
-title: Deployment from a template
+title: Despliegue desde una plantilla
 tags:
   - iaas_vmware
   - tutorials
@@ -8,20 +8,20 @@ import shivaCatalogsCharger from '@site/docs/iaas_vmware/tutorials/images/shiva_
 import shivaCatalogsAjout from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_ajout.png';
 import shivaCatalogsDeployer from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_deployer.png';
 
-This guide will allow you to deploy your first instances on the Cloud of Trust in less than 5 minutes.
+Esta guía le permitirá desplegar en menos de 5 minutos sus primeras instancias en la Nube de Confianza.
 
-## __Requis__
+## __Requisitos previos__
 
-1. Have subscribed to the Cloud Temple offer (subscription to the IaaS offer).
-2. Have the permissions enabled for the __'IaaS'__ object driver
+1. Haber suscrito el producto Cloud Temple (suscripción al producto IaaS).
+2. Tener los permisos habilitados para el controlador de objetos __'IaaS'__
 
-## Deploy a virtual machine from a Template
+## Desplegar una máquina virtual desde una plantilla
 
-This guide shows you step by step how to deploy a virtual machine from a Template in the Console.
+Esta guía le muestra paso a paso cómo desplegar una máquina virtual desde una plantilla en la Consola.
 
-In the Console portal, go to the "Trusted Cloud" tab, then "Catalogs". Before you can deploy a Template, it must be uploaded to your private catalog, in the "My Catalog" tab.
+En el portal de la Consola, vaya a la pestaña "Nube de confianza" y luego a "Catálogos". Antes de poder desplegar una plantilla, esta debe cargarse en su catálogo privado, en la pestaña "Mi catálogo".
 
-To do this, you have two options: import your own Template directly into your private catalog, or import a template from Cloud Temple's public catalog.
+Para ello, tiene dos opciones: importar su propia plantilla directamente en su catálogo privado o bien importar un modelo desde el catálogo público de Cloud Temple.
 
 ### Importar una plantilla personal en el catálogo privado
 
@@ -29,19 +29,19 @@ En la pestaña "Mi catálogo", haga clic en "Publicar archivos".
 
 <img src={shivaCatalogsCharger} />
 
-A continuación, siga los pasos para publicar la plantilla, introduciendo su nombre y una descripción, y eligiendo su ubicación dentro de una biblioteca.
+A continuación, siga los pasos para publicar la plantilla, indicando su nombre y una descripción, y eligiendo su ubicación en una biblioteca.
 
-La plantilla deberá aparecer a continuación en su catálogo privado.
+La plantilla debe aparecer posteriormente en su catálogo privado.
 
 ### Importar una plantilla desde el catálogo público
 
-En la pestaña "Catálogo público", haga clic en el botón "Agregar a mi catálogo" de la plantilla que desee para importarla a su catálogo privado. Esta deberá aparecer a continuación en su catálogo privado.
+En la pestaña "Catálogo público", haga clic en el botón "Agregar a mi catálogo" de la plantilla de su elección para importarla a su catálogo privado. Posteriormente, aparecerá en su catálogo privado.
 <img src={shivaCatalogsAjout} />
 
-### Desplegar la plantilla
+### Desplegar la Plantilla
 
-Una vez que la plantilla se ha importado en su catálogo privado, puede desplegarla haciendo clic en "Desplegar".
+Una vez importada la plantilla en su catálogo privado, puede desplegarla haciendo clic en "Desplegar".
 
 <img src={shivaCatalogsDeployer} />
 
-A continuación, siga los distintos pasos del despliegue del recurso, seleccionando su ubicación física (datacenter, clúster de cálculo, datastore) y otros parámetros de configuración opcionales.
+A continuación, siga las diferentes etapas de despliegue del recurso, seleccionando su ubicación física (datacenter, cluster de cómputo, datastore) y otros parámetros de configuración opcionales.

@@ -1,7 +1,7 @@
 ---
 title: Concepts
 ---
-import bastion from './images/bastion.svg'
+import bastion from '@site/docs/bastion/images/bastion.png'
 
 ## C'est quoi le Bastion Cloud Temple ?
 

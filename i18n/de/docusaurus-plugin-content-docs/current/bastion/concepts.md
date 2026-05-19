@@ -1,38 +1,40 @@
 ---
 title: Konzepte
 ---
-import bastion from '@site/docs/bastion/images/bastion.svg'
+import bastion from '@site/docs/bastion/images/bastion.png'
 
-## What is the Cloud Temple Bastion?
+## Was ist das Bastion Cloud Temple?
 
-The Cloud Temple Bastion is a managed service that provides you with secure RDP or SSH connectivity from the Cloud Temple console to your physical and virtual infrastructures, whether they are located in the trusted cloud, a public cloud, or on-premise. The Bastion solution enables you to manage your devices without exposing them to the internet.
+Das Bastion Cloud Temple ist ein verwalteter Dienst, der Ihnen eine sichere RDP- oder SSH-Verbindung von der Cloud Temple-Konsole aus
+ermöglicht, um auf Ihre physischen und virtuellen Infrastrukturen zuzugreifen, unabhängig davon, ob sie sich im vertrauenswürdigen Cloud, in einer
+öffentlichen Cloud oder On-Premise befinden. Die Bastion-Lösung ermöglicht die Verwaltung Ihrer Geräte, ohne sie dem Internet auszusetzen.
 
 <img src={bastion} />
 
-## Vorteile
+## Die Vorteile
 
-| Vorteil                |                                                                              Beschreibung                                                                               |
+| Vorteil                |                                                                              Beschreibung                                                                              |
 |------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Zentrale Verwaltung    |                                              Der Cloud Bastion Temple ist direkt über die Console zugänglich.                                               |
-| Sicherheit             | Geräte, die über den Bastion verwaltet werden, sind nicht dem Internet ausgesetzt, wodurch sie insbesondere vor Port-Scans durch schadhaften Nutzer geschützt sind. |
-| Infrastructure as Code |          APIs ermöglichen die vollständige Verwaltung des Cloud Bastion Temple „as Code“ (Erstellung von Sitzungen, Verbindung, Änderung und Löschung von Sitzungen).          |
+| Zentrale Verwaltung    |                                              Das Bastion Cloud Temple ist direkt über die Konsole zugänglich.                                                |
+| Sicherheit             | Die über das Bastion verwalteten Geräte sind nicht direkt dem Internet ausgesetzt, was sie insbesondere vor der Portanalyse durch böswillige Benutzer schützt. |
+| Infrastructure as Code |          Über APIs kann das Bastion Cloud Temple vollständig "as Code" verwaltet werden (Erstellung, Verbindungsaufbau, Änderung und Beendigung von Sitzungen).          |
 
-## References (SKU)
+## Referenzen (SKU)
 
-| Reference                          |   Unit   |           SKU           |
-|------------------------------------|:--------:|:-----------------------:|
-| ADMINISTRATION - Bastion SSH & RDP | 1 Session | cmp:bastion:session:std |
+| Referenz                          |   Einheit   |           SKU           |
+|------------------------------------|:---------:|:-----------------------:|
+| VERWALTUNG - Bastion SSH & RDP | 1 Sitzung | cmp:bastion:session:std |
 
-### Bastion Appliance
+### Die Bastion-Appliance
 
-The Bastion Appliance is a virtual machine deployed close to your equipment. This appliance enables a secure, direct flow from the Console platform to the equipment being managed, which resides in the same virtual network.
+Die Bastion-Appliance ist eine virtuelle Maschine, die in der Nähe Ihrer Geräte bereitgestellt wird. Diese Appliance ermöglicht einen sicheren und direkten Datenfluss von der Console-Plattform zu den zu verwaltenden Geräten, die sich im selben virtuellen Netzwerk befinden.
 
-The traffic is encrypted and encapsulated within a VPN tunnel. The solution does not require opening a connection from the internet to your infrastructure. It is sufficient for the appliance to have access to the public IP address of the Bastion Console module on port 443.
+Der Datenfluss wird verschlüsselt und in einem VPN-Tunnel gekapselt. Die Lösung erfordert keine Freigabe von Datenflüssen vom Internet zu Ihrer Infrastruktur. Es reicht aus, wenn die Appliance über Port 443 auf die öffentliche IP-Adresse des Console-Bastion-Moduls zugreifen kann.
 
-A single appliance can be used to establish a quick connection to a target device. For each connection, you must specify the desired protocol, the target machine's IP address, and your credentials. To avoid entering these details repeatedly, you can create sessions associated with equipment that you regularly manage.
+Eine Appliance kann verwendet werden, um eine schnelle Verbindung zu einem Gerät herzustellen. Bei jeder Verbindung müssen das gewünschte Protokoll, die IP-Adresse des Geräts und Ihre Anmeldeinformationen angegeben werden. Um diese Angaben bei jeder Verbindung nicht erneut eingeben zu müssen, können Sitzungen erstellt werden, die mit regelmäßig zu verwaltenden Geräten verknüpft sind.
 
-### Sessions
+### Sitzungen
 
-A session is a connection configuration to a device via a Bastion. It defines the device to be managed and the Appliance used to route the traffic, enabling faster connections to that device.
+Eine Sitzung ist eine Konfiguration für die Verbindung zu einem Gerät über einen Bastion. Sie besteht darin, ein zu verwaltendes Gerät und die zu verwendende Appliance zur Weiterleitung des Datenverkehrs zu definieren, wodurch sich eine schnellere Verbindung zu diesem Gerät ermöglicht.
 
-This solution is suitable for regular connections to a device that needs to be managed. Essential information is stored, requiring only your credentials when connecting.
+Diese Lösung eignet sich für regelmäßige Verbindungen zu einem zu verwaltenden Gerät. Die wesentlichen Informationen werden gespeichert, bei der Verbindung werden lediglich Ihre Zugangsdaten benötigt.

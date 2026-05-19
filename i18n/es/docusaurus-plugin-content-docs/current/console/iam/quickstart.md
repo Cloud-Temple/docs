@@ -119,6 +119,7 @@ Vaya a la página de usuarios y haga clic en el botón __'Exportar csv'__:
 In the __'Administration'__ menu on the green bar on the left side of the screen, go to the __'User'__ submenu, click the __'Action'__ icon of the target user, and select __'Delete'__.
 
 *__Note__:*  
+
 - *To add a user, you must have the __'iam_write'__ permission.*  
 - *If the user is federated, __make sure the user has also been deleted from the identity repository__.*
 

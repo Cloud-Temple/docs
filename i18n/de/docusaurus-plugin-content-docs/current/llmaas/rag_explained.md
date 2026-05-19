@@ -2,7 +2,7 @@
 
 Dieses Dokument erklärt die grundlegenden Konzepte hinter der Technik der **Retrieval-Augmented Generation (RAG)**.
 
-:::tip Beispielcode verfügbar
+:::tip[Beispielcode verfügbar]
 Die hier besprochenen Konzepte werden in einem vollständigen und funktionsfähigen Demonstrator dargestellt, der auf unserem GitHub verfügbar ist. Es handelt sich um eine hervorragende Ausgangsbasis, um das praktische Funktionieren eines RAG-Pipelines zu verstehen.
 
 ➡️ **[Zum Code des Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -27,7 +27,7 @@ Dieser **Retrieval**-Schritt steht im Mittelpunkt unseres Themas. Wie gelingt es
 
 Ein Computer versteht keine Wörter, aber er ist sehr gut darin, mit Zahlen zu arbeiten. Das **Embedding** ist der Prozess, der einen Text (ein Wort, einen Satz, ein Dokument) in eine Liste von Zahlen umwandelt, die als **Vektor** bezeichnet wird.
 
-:::tip Was ist ein Vektor?
+:::tip[Was ist ein Vektor?]
 Im einfachsten Sinne ist ein Vektor eine Liste von Zahlen, die einen Punkt in einem mehrdimensionalen Raum darstellt. Jede Zahl im Vektor entspricht einer Koordinate auf einem „Achse“ dieses Raums. Bei Text-Embeddings sind diese Achsen nicht `x`, `y`, `z`, sondern abstrakte semantische Dimensionen (z. B. könnte eine Achse den Begriff „Königtum“ darstellen, eine andere den Begriff „Katze“ usw.).
 :::
 
@@ -37,7 +37,7 @@ Im einfachsten Sinne ist ein Vektor eine Liste von Zahlen, die einen Punkt in ei
 
 Dieser Vektor ist nicht zufällig. Er stellt die „Position“ des Textes in einem mehrdimensionalen semantischen Raum dar. Texte mit ähnlicher Bedeutung haben Vektoren, die in ähnliche Richtungen zeigen.
 
-:::tip Geografische Analogie
+:::tip[Geografische Analogie]
 Stellen Sie sich eine Karte vor. „Paris“ und „Frankreich“ wären sehr nahe beieinander, genauso wie „Rom“ und „Italien“. „Paris“ wäre weiter von „Rom“ entfernt als von „Frankreich“, aber näher als von „Tokio“. Das Embedding macht dasselbe, aber mit tausenden von „Dimensionen“ statt zwei, um komplexe Bedeutungsnuancen zu erfassen.
 :::
 
@@ -53,14 +53,14 @@ Während die letzten beiden Jahre eine Verbreitung autoregressiver Open-Source-L
 
 Die neuen **Granite Embedding**-Modelle von IBM, die wir Ihnen zur Verfügung stellen, sind eine verbesserte Weiterentwicklung der Slate-Familie von nur-Encoder-Modellen basierend auf RoBERTa. Sie unterscheiden sich in mehreren entscheidenden Punkten für den Einsatz in Unternehmen:
 
-1.  **Ethikgerechtes und kommerziell sicheres Training**: Während die meisten offenen Embedding-Modelle im Hugging Face MTEB-Ranking auf Trainingsdatensätzen mit nur Forschungslizenzen (wie MS-MARCO) basieren, hat IBM die kommerzielle Eignung aller Datenquellen, die für das Training von Granite Embedding verwendet wurden, überprüft.
-2.  **Entschädigung für geistiges Eigentum**: Unterstreicht die Sorgfalt, die bei der Unternehmensnutzung angewandt wird, unterstützt IBM Granite Embedding mit der gleichen unbegrenzten Entschädigung für Drittanwaltsklagen im Zusammenhang mit geistigem Eigentum wie für die Nutzung anderer von IBM entwickelter Modelle.
-3.  **Leistung und Effizienz**: Die Bemühungen von IBM bei der Organisation und Filterung der Trainingsdaten haben nicht verhindert, dass die Granite Embedding-Modelle mit den führenden offenen Quellcode-Embedding-Modellen ähnlicher Größe Schritt halten.
+1. **Ethikgerechtes und kommerziell sicheres Training**: Während die meisten offenen Embedding-Modelle im Hugging Face MTEB-Ranking auf Trainingsdatensätzen mit nur Forschungslizenzen (wie MS-MARCO) basieren, hat IBM die kommerzielle Eignung aller Datenquellen, die für das Training von Granite Embedding verwendet wurden, überprüft.
+2. **Entschädigung für geistiges Eigentum**: Unterstreicht die Sorgfalt, die bei der Unternehmensnutzung angewandt wird, unterstützt IBM Granite Embedding mit der gleichen unbegrenzten Entschädigung für Drittanwaltsklagen im Zusammenhang mit geistigem Eigentum wie für die Nutzung anderer von IBM entwickelter Modelle.
+3. **Leistung und Effizienz**: Die Bemühungen von IBM bei der Organisation und Filterung der Trainingsdaten haben nicht verhindert, dass die Granite Embedding-Modelle mit den führenden offenen Quellcode-Embedding-Modellen ähnlicher Größe Schritt halten.
 
 Die Benchmarks unten zeigen zwei entscheidende Vorteile:
 
--   **Genauigkeit der Suche**: Das erste Diagramm zeigt, dass die Granite-Modelle (blau) auf semantischen Suchaufgaben (`Retrieval Tasks`) sehr wettbewerbsfähig, manchmal sogar überlegen sind, im Vergleich zu Modellen ähnlicher Größe.
--   **Inferengeschwindigkeit**: Das zweite Diagramm zeigt, dass die Granite-Modelle **deutlich schneller** sind (geringerer Zeitbedarf pro Anfrage) als die meisten populären Alternativen, was ein großes Plus für Anwendungen ist, die Echtzeitantworten erfordern.
+- **Genauigkeit der Suche**: Das erste Diagramm zeigt, dass die Granite-Modelle (blau) auf semantischen Suchaufgaben (`Retrieval Tasks`) sehr wettbewerbsfähig, manchmal sogar überlegen sind, im Vergleich zu Modellen ähnlicher Größe.
+- **Inferengeschwindigkeit**: Das zweite Diagramm zeigt, dass die Granite-Modelle **deutlich schneller** sind (geringerer Zeitbedarf pro Anfrage) als die meisten populären Alternativen, was ein großes Plus für Anwendungen ist, die Echtzeitantworten erfordern.
 
 ![Leistungsbenchmark der Granite-Modelle](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Vergleich der Leistungsfähigkeit bei Suchaufgaben (BEIR) und Code-Suche (CoIR).*
@@ -78,20 +78,20 @@ Es gibt mehrere Möglichkeiten, diese "Nähe" zu messen. Unser Skript verwendet 
 
 ### Die Kosinus-Ähnlichkeit (Der Standard)
 
--   **Konzept** : Sie misst nicht den Abstand, sondern den **Winkel** zwischen zwei Vektoren. Ein kleiner Winkel (nahe 0°) bedeutet, dass die Vektoren in dieselbe Richtung zeigen, und somit haben die Texte eine sehr ähnliche Bedeutung.
--   **Score** : Der Kosinus eines Winkels von 0° ist 1 (perfekte Ähnlichkeit). Der Kosinus eines Winkels von 90° ist 0 (keine Ähnlichkeit).
--   **Warum wird sie so häufig verwendet ?** Für Texte ist die **semantische Richtung** viel wichtiger als die **Magnitude** (die Länge) des Vektors. Die Kosinus-Ähnlichkeit ignoriert die Magnitude und konzentriert sich ausschließlich auf die Richtung.
+- **Konzept** : Sie misst nicht den Abstand, sondern den **Winkel** zwischen zwei Vektoren. Ein kleiner Winkel (nahe 0°) bedeutet, dass die Vektoren in dieselbe Richtung zeigen, und somit haben die Texte eine sehr ähnliche Bedeutung.
+- **Score** : Der Kosinus eines Winkels von 0° ist 1 (perfekte Ähnlichkeit). Der Kosinus eines Winkels von 90° ist 0 (keine Ähnlichkeit).
+- **Warum wird sie so häufig verwendet ?** Für Texte ist die **semantische Richtung** viel wichtiger als die **Magnitude** (die Länge) des Vektors. Die Kosinus-Ähnlichkeit ignoriert die Magnitude und konzentriert sich ausschließlich auf die Richtung.
 
 **Einfaches Beispiel in 2D :**
 
--   Frage : `v_q = [2, 2]`
--   Dokument A : `v_a = [4, 4]` (gleiche Richtung, länger)
--   Dokument B : `v_b = [-2, 2]` (andere Richtung)
+- Frage : `v_q = [2, 2]`
+- Dokument A : `v_a = [4, 4]` (gleiche Richtung, länger)
+- Dokument B : `v_b = [-2, 2]` (andere Richtung)
 
 Die Berechnung der Kosinus-Ähnlichkeit ergibt:
 
--   `cos(v_q, v_a) = 1,0` → Winkel von 0°. Perfekte Ähnlichkeit.
--   `cos(v_q, v_b) = 0,0` → Winkel von 90°. Keine Ähnlichkeit.
+- `cos(v_q, v_a) = 1,0` → Winkel von 0°. Perfekte Ähnlichkeit.
+- `cos(v_q, v_b) = 0,0` → Winkel von 90°. Keine Ähnlichkeit.
 
 ![Illustration der Kosinus-Ähnlichkeit](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
@@ -99,9 +99,9 @@ Das ist das Ergebnis, das wir wollen: Dokument A ist semantisch identisch mit de
 
 ### Die euklidische Distanz (Die Regel)
 
--   **Konzept** : Das ist die „Vogel-Flug“-Entfernung zwischen den Endpunkten der beiden Vektoren.
--   **Score** : Ein Score von 0 bedeutet, dass die Vektoren identisch sind. Je höher der Score, desto weiter entfernt sind sie.
--   **Nachteil bei Texten** : Sie ist empfindlich gegenüber der Magnitude. In unserem Beispiel oben wäre die Distanz zwischen `v_q` und `v_a` nicht null, da die Vektoren nicht die gleiche Länge haben, auch wenn sie die gleiche Richtung haben.
+- **Konzept** : Das ist die „Vogel-Flug“-Entfernung zwischen den Endpunkten der beiden Vektoren.
+- **Score** : Ein Score von 0 bedeutet, dass die Vektoren identisch sind. Je höher der Score, desto weiter entfernt sind sie.
+- **Nachteil bei Texten** : Sie ist empfindlich gegenüber der Magnitude. In unserem Beispiel oben wäre die Distanz zwischen `v_q` und `v_a` nicht null, da die Vektoren nicht die gleiche Länge haben, auch wenn sie die gleiche Richtung haben.
 
 ![Illustration der euklidischen Distanz](@site/docs/llmaas/images/euclidean_distance_concept.png)
 

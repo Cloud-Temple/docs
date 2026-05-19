@@ -6,21 +6,26 @@
 Notre service vous offre un accès **souverain et sécurisé** à un large catalogue de modèles d'IA de pointe, via une API compatible OpenAI. Nous gérons toute la complexité de l'infrastructure qualifiée **SecNumCloud 3.2**, vous permettant de vous concentrer sur la création de valeur pour vos applications, tout en maîtrisant vos coûts grâce à un modèle économique prévisible et en accélérant vos développements grâce à des standards ouverts.
 
 ### **Quel type de modèles proposez-vous et comment le catalogue évolue-t-il ?**
-Nous proposons un catalogue riche de 45 modèles open-source, incluant les familles **Llama (Meta), Qwen, Deepseek, Mistral, Gemma (Google), Cogito et Granite (IBM)**. Nos modèles sont spécialisés pour divers cas d'usage :
-*   **Raisonnement complexe et conversationnel**.
-*   **Génération et analyse de code**.
-*   **Analyse de documents longs** (jusqu'à 128k tokens avec des modèles comme `Gemma 3` ou `Qwen2.5-VL`).
-*   **Capacités multimodales** (analyse d'image avec les séries `Granite Vision`, `Gemma 3`, `Qwen2.5-VL` et `Mistral Small`).
-*   **Support multilingue avancé** (avec des modèles comme `Llama 3.3` et la famille `Qwen`).
+Nous proposons un catalogue riche de **58 modèles open-source**, incluant les familles **Llama (Meta), Qwen, Mistral, Gemma (Google), NVIDIA Nemotron, Cogito et Granite (IBM)**. Nos modèles couvrent 8 catégories :
+*   **Chat & Raisonnement** — dialogue, analyse, agents avec function calling.
+*   **Programmation & Agents** — génération de code, refactoring, agents autonomes.
+*   **Vision & Multimodal** — analyse d'images, OCR, vidéo, contextes jusqu'à 1M tokens.
+*   **Embedding** — vectorisation pour RAG sémantique (BGE-M3, Granite, Qwen3-Embedding).
+*   **Reranking** — réordonnancement de résultats RAG (API compatible Cohere `/v1/rerank`).
+*   **Sécurité** — filtrage de contenus, guardrails (Granite3-Guardian).
+*   **Traduction** — 55 langues (TranslateGemma).
+*   **Audio & Image** — transcription temps réel (Voxtral), génération d'images (z-image).
 
 Ce catalogue est **revu chaque trimestre** pour intégrer les modèles les plus performants, avec une politique de cycle de vie transparente (préavis de 3 mois avant tout retrait) pour garantir la stabilité de vos applications.
 
 ### **Quelles sont les principales capacités fonctionnelles de votre API ?**
 Notre API, 100% compatible avec le standard OpenAI, vous permet de construire facilement des fonctionnalités avancées comme :
-*   Des **chatbots/assistants** conversationnels.
-*   Des systèmes de **Recherche Augmentée par Génération (RAG)** en utilisant notre endpoint d'embedding.
-*   Des applications d'**analyse d'images et de documents visuels** sans OCR préalable.
-*   La **transcription audio** via un service dédié.
+*   Des **chatbots/assistants** conversationnels avec streaming et function calling.
+*   Des systèmes de **Recherche Augmentée par Génération (RAG)** complets : embedding (`/v1/embeddings`) + reranking (`/v1/rerank`) + génération augmentée.
+*   Des applications d'**analyse d'images et de documents visuels** (OCR, graphiques, PDF) sans prétraitement.
+*   La **transcription audio** batch ou temps réel via WebSocket.
+*   Le **traitement en lot (Batch API)** asynchrone pour les workloads volumineux, avec une tarification réduite de 50%.
+*   La **génération d'images** via API compatible OpenAI.
 
 ## Sécurité et Souveraineté
 
@@ -59,7 +64,19 @@ Vous avez le contrôle total sur les modèles que votre application appelle. Pou
 ## Modèle Économique et Support
 
 ### **Quel est votre modèle économique ?**
-Notre modèle est basé sur la consommation réelle (**tokens** pour le langage, **minutes** pour l'audio) pour refléter le coût de calcul réel. Pour garantir la prévisibilité et la maîtrise budgétaire, nous proposons des **Tiers de service** avec des budgets plafonnés et des **contrats sur mesure**. Vous pouvez suivre votre consommation en temps réel depuis la Console Cloud Temple pour une transparence totale. De plus, le nombre d'utilisateurs est toujours illimité, quel que soit le plan choisi.
+Notre modèle est basé sur la consommation réelle pour refléter le coût de calcul exact. La tarification par type d'usage :
+
+| Usage | Tarif |
+|-------|-------|
+| **Tokens d'entrée (chat)** | 1.8 € / million |
+| **Tokens de sortie (chat)** | 8.0 € / million |
+| **Tokens de raisonnement** | 8.0 € / million |
+| **Reranking** | 4.0 € / million de tokens rerankés |
+| **Batch (entrée)** | 0.9 € / million (−50%) |
+| **Batch (sortie)** | 4.0 € / million (−50%) |
+| **Audio ASR** | 0.01 € / minute de transcription |
+
+Pour garantir la prévisibilité et la maîtrise budgétaire, nous proposons des **Tiers de service** avec des budgets plafonnés et des **contrats sur mesure**. Vous pouvez suivre votre consommation en temps réel depuis la Console Cloud Temple pour une transparence totale. Le nombre d'utilisateurs est toujours illimité, quel que soit le plan choisi.
 
 ### **Quel niveau de support et de SLA proposez-vous ?**
 Notre offre standard inclut un support technique en Français et Anglais, accessible via notre portail client, avec un engagement de première réponse en jour ouvré. La plateforme bénéficie d'un engagement de disponibilité de **99%**. Pour les besoins les plus critiques, nos **Services Professionnels** optionnels vous donnent accès à des SLAs renforcés, incluant un support prioritaire avec un temps de réponse jusqu'à 4h pour les incidents critiques, et un accompagnement stratégique sur mesure (ateliers d'innovation, gouvernance ITIL).

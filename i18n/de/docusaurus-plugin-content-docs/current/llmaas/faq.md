@@ -1,81 +1,91 @@
-# FAQ zu dem LLMaaS-Cloud-Temple-Serviceangebot
+# FAQ zum Serviceangebot LLMaaS Cloud Temple
 
-## Angebot und Fähigkeiten
+## Angebot und Kompetenzen
 
-### **What is the value proposition of your LLMaaS service?**  
-Our service provides you with **sovereign and secure access** to a broad catalog of cutting-edge AI models via an OpenAI-compatible API. We handle all the complexity of the certified infrastructure **SecNumCloud 3.2**, allowing you to focus on delivering value for your applications, while maintaining cost control through a predictable economic model and accelerating your development with open standards.
+### **Was ist das Wertversprechen Ihres LLMaaS-Dienstes?**
+Unser Service bietet Ihnen einen **souveränen und sicheren** Zugang zu einem umfangreichen Katalog modernster KI-Modelle über eine OpenAI-kompatible API. Wir übernehmen die gesamte Komplexität der **SecNumCloud 3.2**-zertifizierten Infrastruktur, sodass Sie sich auf die Wertschöpfung für Ihre Anwendungen konzentrieren können, Ihre Kosten durch ein vorhersehbares Preismodell im Griff behalten und Ihre Entwicklungen durch offene Standards beschleunigen.
 
-### **What types of models do you offer, and how does the catalog evolve?**
+### **Welche Art von Modellen bieten Sie an und wie entwickelt sich der Katalog?**
+Wir bieten einen umfangreichen Katalog mit **58 Open-Source-Modellen**, einschließlich der Familien **Llama (Meta), Qwen, Mistral, Gemma (Google), NVIDIA Nemotron, Cogito und Granite (IBM)**. Unsere Modelle decken 8 Kategorien ab:
+*   **Chat & Reasoning** — Dialog, Analyse, Agents mit Function Calling.
+*   **Programmierung & Agents** — Codegenerierung, Refactoring, autonome Agents.
+*   **Vision & Multimodal** — Bildanalyse, OCR, Video, Kontexte bis zu 1M Tokens.
+*   **Embedding** — Vektorisierung für semantisches RAG (BGE-M3, Granite, Qwen3-Embedding).
+*   **Reranking** — Neuanordnung von RAG-Ergebnissen (Cohere-kompatible API `/v1/rerank`).
+*   **Sicherheit** — Inhaltsfilterung, Guardrails (Granite3-Guardian).
+*   **Übersetzung** — 55 Sprachen (TranslateGemma).
+*   **Audio & Bild** — Echtzeit-Transkription (Voxtral), Bildgenerierung (z-image).
 
-We offer a rich catalog of 45 open-source models, including the families **Llama (Meta), Qwen, Deepseek, Mistral, Gemma (Google), Cogito, and Granite (IBM)**. Our models are specialized for various use cases:
+Dieser Katalog wird **vierteljährlich aktualisiert**, um die leistungsfähigsten Modelle zu integrieren, mit einer transparenten Lebenszykluspolitik (3-monatige Vorankündigung vor jeder Einstellung), um die Stabilität Ihrer Anwendungen zu gewährleisten.
 
-*   **Complex reasoning and conversational tasks**  
-*   **Code generation and analysis**  
-*   **Long-document analysis** (up to 128k tokens with models such as `Gemma 3` or `Qwen2.5-VL`)  
-*   **Multimodal capabilities** (image analysis with the `Granite Vision`, `Gemma 3`, `Qwen2.5-VL`, and `Mistral Small` series)  
-*   **Advanced multilingual support** (with models such as `Llama 3.3` and the `Qwen` family)
-
-This catalog is **reviewed quarterly** to incorporate the most performant models, with a transparent lifecycle policy (3-month notice prior to any deprecation) to ensure stability for your applications.
-
-### **What are the main functional capabilities of your API?**  
-Our API, 100% compatible with the OpenAI standard, enables you to easily build advanced features such as:  
-*   **Conversational chatbots/assistants**.  
-*   **Retrieval-Augmented Generation (RAG)** systems using our embedding endpoint.  
-*   **Image and visual document analysis** applications without requiring prior OCR.  
-*   **Audio transcription** via a dedicated service.
+### **Was sind die wichtigsten funktionalen Fähigkeiten Ihrer API?**
+Unsere API, zu 100 % kompatibel mit dem OpenAI-Standard, ermöglicht es Ihnen, problemlos erweiterte Funktionen wie folgende zu entwickeln:
+*   Konversationale **Chatbots/Assistenten** mit Streaming und Function Calling.
+*   Vollständige **durch Suche ergänzte Generierung (RAG)**-Systeme: Embedding (`/v1/embeddings`) + Reranking (`/v1/rerank`) + augmentierte Generierung.
+*   Anwendungen zur **Bild- und visuellen Dokumentenanalyse** (OCR, Diagramme, PDF) ohne Vorverarbeitung.
+*   **Audio-Transkription** im Batch-Modus oder in Echtzeit über WebSocket.
+*   Asynchrone **Batch-Verarbeitung (Batch API)** für umfangreiche Workloads mit einem um 50 % reduzierten Preis.
+*   **Bildgenerierung** über eine OpenAI-kompatible API.
 
 ## Sicherheit und Souveränität
 
-### **How do you ensure data sovereignty and confidentiality?**
+### **Wie gewährleisten Sie die Souveränität und Vertraulichkeit Ihrer Daten?**
+Die Souveränität steht im Mittelpunkt unseres Angebots. Sie basiert auf mehreren Säulen:
+1.  **Hosting in Frankreich** : Unsere Infrastruktur befindet sich ausschließlich in Frankreich und wird von Cloud Temple, einem französischen Unternehmen, betrieben. Dies schützt uns vor extraterritorialen Gesetzen wie dem **US-amerikanischen CLOUD Act**.
+2.  **SecNumCloud-Zertifizierung 3.2** : Die höchste Sicherheitszertifizierung der ANSSI garantiert diese Ausrichtung.
+3.  **Keine Datenspeicherung** : Wir speichern **weder Ihre Prompts noch die Antworten**. Die Daten werden während der Inferenz flüchtig im Arbeitsspeicher verarbeitet.
+4.  **End-to-End-Verschlüsselung** : Alle Kommunikationen mit der API werden über **TLS 1.3** verschlüsselt.
 
-Data sovereignty is at the core of our offering. It is based on several key pillars:
+### **Wie verwalten Sie Zugriffe, Berechtigungen (RBAC) und Authentifizierung (SSO, MFA)?**
+Unser Dienst integriert sich in Ihre Sicherheitsrichtlinie nach einem Modell der geteilten Verantwortung:
+*   **Für Ihre Endanwender** : Die Verwaltung von Identitäten, Berechtigungen (RBAC) und der starken Authentifizierung (SSO, MFA) liegt in der Verantwortung **Ihrer Anwendung**.
+*   **Für Ihre Administratoren** : Die Zugriffe auf die **Console Cloud Temple** zur Dienststeuerung (Schlüsselverwaltung, Überwachung) können mit Ihrem Unternehmens-SSO (über OpenID Connect) verbunden werden, um von Ihren Sicherheitsrichtlinien, einschließlich MFA, zu profitieren.
+*   **Für Ihre Anwendungen** : Sie können verschiedene API-Schlüssel mit separaten Verbrauchsquotas erstellen, um Berechtigungen auf Anwendungsebene zu segmentieren.
 
-1.  **Hosting in France**: Our infrastructure is exclusively located in France and operated by Cloud Temple, a company governed by French law. This protects us from extraterritorial laws such as the **U.S. CLOUD Act**.
-2.  **SecNumCloud 3.2 Certification**: The highest security certification granted by ANSSI ensures this positioning.
-3.  **No Data Retention**: We do **not store your prompts or responses**. Data is processed temporarily in memory during inference only.
-4.  **End-to-End Encryption**: All communications with the API are encrypted using **TLS 1.3**.
+### **Wie ist die Plattform gesichert?**
+Wir wenden Defense in Depth an:
+*   **Starke Authentifizierung** über API-Schlüssel für jede Anfrage.
+*   **TLS 1.3-Verschlüsselung** aller Datenströme.
+*   **Netzwerkschutz** durch Next-Generation-Firewalls und Intrusion-Detection-/Intrusion-Prevention-Systeme (IDS/IPS).
+*   **Anwendungsbezogene „Guardrails“** zum Schutz vor LLM-spezifischen Bedrohungen wie Prompt-Injection und Versuchen, die Modelle auszunutzen.
+*   **Regelmäßige Penetrationstests** durch qualifizierte Prüfer (PASSI) im Rahmen unserer SecNumCloud 3.2-Zertifizierung.
 
-### **How do you manage access, permissions (RBAC), and authentication (SSO, MFA)?**
+## Integration und Nutzung
 
-Our service integrates with your security policy according to a shared responsibility model:
+### **Wie integriert sich Ihre API?**
+Unser Service ist "API-first". Da er **mit der OpenAI-API kompatibel ist**, können Sie alle gängigen SDKs (Python, Node.js usw.) und Frameworks des Marktes wie **LangChain** oder **LlamaIndex** für eine schnelle Integration nutzen. Wir stellen eine vollständige technische Dokumentation (OpenAPI) sowie Codebeispiele bereit.
 
-*   **For your end users**: Identity management, permissions (RBAC), and strong authentication (SSO, MFA) are the responsibility of **your application**.
-*   **For your administrators**: Access to the **Cloud Temple Console** for service management (key management, monitoring) can be connected to your enterprise SSO (via OpenID Connect) to leverage your existing security policies, including MFA.
-*   **For your applications**: You can create different API keys with distinct consumption quotas to segment permissions at the application level.
+### **Lässt sich die Benutzererfahrung anpassen?**
+Ja, vollständig. Da es sich bei unserem Dienst um eine "Headless-API" handelt, haben Sie die vollständige Kontrolle über die Oberfläche und die Erfahrung Ihrer Endnutzer, einschließlich der Integration Ihres Corporate Designs und der Anzeige von Compliance-Hinweisen, die in Ihrer Verantwortung liegen.
 
-### **How is the platform secured?**
-We implement a defense-in-depth approach:
-*   **Strong authentication** via API key for every request.
-*   **TLS 1.3 encryption** for all data flows.
-*   **Network protection** using next-generation firewalls and intrusion detection/prevention systems (IDS/IPS).
-*   **Application-level guardrails** to protect against LLM-specific threats, such as prompt injection and model exploitation attempts.
-*   **Regular penetration testing** conducted by qualified auditors (PASSI) as part of our SecNumCloud 3.2 certification process.
+### **Wie gehen Sie mit Risiken im Zusammenhang mit geistigem Eigentum (PI) um?**
+Sie haben die vollständige Kontrolle über die Modelle, die Ihre Anwendung aufruft. Für PI-sensitive Anwendungsfälle empfehlen wir die **Granite von IBM**-Modelle, die eine **vertragliche Entschädigung ohne Obergrenze** bei PI-Ansprüchen bieten – eine einzigartige Garantie auf dem Markt.
 
-## Integration und Verwendung
+## Geschäftsmodell und Support
 
-### **How does your API integrate?**
-Our service is "API-first." Being **OpenAI API-compatible**, you can use all standard SDKs (Python, Node.js, etc.) and frameworks such as **LangChain** or **LlamaIndex** for rapid integration. We provide comprehensive technical documentation (OpenAPI) and code examples.
+### **Wie lautet Ihr Geschäftsmodell?**
+Unser Modell basiert auf dem tatsächlichen Verbrauch, um die exakten Rechenkosten widerzuspiegeln. Die Preisgestaltung nach Nutzungsart:
 
-### **Can the user experience be customized?**
-Yes, absolutely. Since our service is a "headless" API, you have full control over the interface and end-user experience, including integration of your own design system and display of compliance messages, which are your responsibility.
+| Nutzung | Preis |
+|-------|-------|
+| **Eingabetokens (Chat)** | 1.8 € / Million |
+| **Ausgabetokens (Chat)** | 8.0 € / Million |
+| **Reasoning-Tokens** | 8.0 € / Million |
+| **Reranking** | 4.0 € / Million reranketer Tokens |
+| **Batch (Eingabe)** | 0.9 € / Million (−50%) |
+| **Batch (Ausgabe)** | 4.0 € / Million (−50%) |
+| **Audio-ASR** | 0.01 € / Minute Transkription |
 
-### **How do you manage risks related to intellectual property (IP)?**
+Um Vorhersehbarkeit und Budgetkontrolle zu gewährleisten, bieten wir **Service-Tiers** mit begrenzten Budgets und **maßgeschneiderte Verträge** an. Sie können Ihren Verbrauch in Echtzeit über die Cloud Temple Console verfolgen, um volle Transparenz zu gewährleisten. Die Anzahl der Benutzer ist unabhängig vom gewählten Plan stets unbegrenzt.
 
-You have full control over the models your application calls. For use cases sensitive to IP, we highlight IBM's **Granite models**, which come with a **contractual, unlimited indemnification** against IP claims — a unique guarantee in the market.
+### **Welches Support-Level und welchen SLA bieten Sie an?**
+Unser Standardangebot umfasst einen technischen Support auf Französisch und Englisch, der über unser Kundenportal verfügbar ist, mit der Verpflichtung zur ersten Antwort innerhalb eines Geschäftstags. Die Plattform bietet eine Verfügbarkeitsgarantie von **99%**. Für die kritischsten Anforderungen bieten Ihnen unsere optionalen **Professional Services** Zugang zu erweiterten SLAs, einschließlich eines Prioritäts-Supports mit einer Reaktionszeit von bis zu 4 Stunden für kritische Vorfälle sowie einer maßgeschneiderten strategischen Begleitung (Innovationsworkshops, ITIL-Governance).
 
-## Economic Model and Support
+### **Wie kann ich den Gesundheitsstatus der LLMaaS-Plattform überwachen?**
+Wir setzen auf vollständige Transparenz bezüglich der Verfügbarkeit unserer Dienste. Sie können den Betriebsstatus jedes KI-Modells in Echtzeit auf unserer öffentlichen Statusseite einsehen: **[https://llmaas.status.cloud-temple.app/](https://llmaas.status.cloud-temple.app/)**.
 
-### **What is your business model?**  
-Our model is based on actual usage (**tokens** for language, **minutes** for audio) to reflect real computational costs. To ensure predictability and budget control, we offer **Service Tiers** with capped budgets and **custom contracts**. You can monitor your usage in real time via the Temple Cloud Console for full transparency. Additionally, the number of users is always unlimited, regardless of the plan you choose.
-
-### **What level of support and SLA do you offer?**
-Our standard offering includes technical support in French and English, accessible via our customer portal, with a commitment to first response within one business day. The platform comes with a **99%** availability guarantee. For the most critical needs, our optional **Professional Services** provide enhanced SLAs, including priority support with response times of up to 4 hours for critical incidents, as well as tailored strategic support (innovation workshops, ITIL governance).
-
-### **How can I monitor the health status of the LLMaaS platform?**  
-We believe in complete transparency regarding the availability of our services. You can check in real time the operational status of each AI model on our public status page: **[https://llmaas.status.cloud-temple.app/](https://llmaas.status.cloud-temple.app/)**.
-
-This page provides detailed information on:
-*   The overall status of the platform.
-*   The availability of each model individually.
-*   Performance metrics such as time to first byte (TTFB) and throughput (tokens/s).
-*   Incident history for comprehensive tracking.
+Diese Seite bietet detaillierte Informationen zu:
+*   Den allgemeinen Status der Plattform.
+*   Die Verfügbarkeit jedes einzelnen Modells.
+*   Leistungsmetriken wie die Antwortzeit (TTFB) und der Durchsatz (Tokens/s).
+*   Den Incident-Verlauf für eine vollständige Nachverfolgung.

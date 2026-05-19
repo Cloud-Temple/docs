@@ -896,7 +896,7 @@ Ce tutoriel vous guide pour configurer l'extension CLINE dans Visual Studio Code
 2. **Créer un nouveau modèle** : Ajoutez une nouvelle configuration de modèle.
 3. **Remplir les champs** : Configurez les champs comme suit, en vous basant sur l'image ci-dessous.
 
-    ![Configuration de CLINE pour LLMaaS](./images/cline_configuration.png)
+    ![Configuration de CLINE pour LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
     * **API Provider**: Sélectionnez `OpenAI Compatible`.
     * **Base URL**: Entrez l'endpoint de l'API LLMaaS de Cloud Temple : `https://api.ai.cloud-temple.com/v1`.
@@ -905,7 +905,7 @@ Ce tutoriel vous guide pour configurer l'extension CLINE dans Visual Studio Code
     :::tip Génération de la clé API
     Pour générer votre clé API, rendez-vous dans la console Cloud Temple, section **LLMaaS** > **Clés API**, puis cliquez sur **"Créer une clé API"**.
     
-    ![Création d'une clé API depuis la console](./images/console_create_api_key.png)
+    ![Création d'une clé API depuis la console](@site/docs/llmaas/images/console_create_api_key.png)
     :::
     
     * **Model ID**: Spécifiez le modèle que vous souhaitez utiliser, par exemple `qwen3-coder:30b`. Vous pouvez trouver la liste des modèles disponibles dans la section [Modèles](./models.md).

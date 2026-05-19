@@ -58,7 +58,7 @@ Terraform v1.6.0
 
 Queste credenziali possono essere generate dalla Console Cloud Temple seguendo [questa procedura](https://docs.cloud-temple.com/console/api#chiavi-api).
 
-:::warning Sicurezza
+:::warning[Sicurezza]
     Conserva queste credenziali in un luogo sicuro. L'ID del segreto verrà visualizzato solo una volta.
 :::
 
@@ -209,7 +209,7 @@ output "vm_moref" {
 }
 ```
 
-:::note Adattamento dei nomi
+:::note[Adattamento dei nomi]
     I nomi dei datacenter, cluster e datastore devono corrispondere a quelli disponibili nel tuo ambiente Cloud Temple. Consulta la console per identificare le risorse disponibili.
 :::
 
@@ -277,7 +277,7 @@ vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
 ```
 
-:::success Congratulazioni!
+:::success[Congratulazioni!]
     Hai appena creato la tua prima macchina virtuale Cloud Temple con Terraform!
 :::
 
@@ -536,6 +536,7 @@ Error: failed to login: Unexpected response code: 401
 **Causa**: Credenziali non valide o scadute.
 
 **Soluzione**:
+
 1. Verifica le tue variabili d'ambiente
 2. Genera una nuova chiave API dalla console
 3. Verifica le autorizzazioni della tua chiave API
@@ -549,6 +550,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 **Causa**: La risorsa richiamata (datacenter, cluster, ecc.) non esiste oppure non ne hai accesso.
 
 **Soluzione**:
+
 1. Verifica il nome esatto (o l'uuid) nella console Cloud Temple
 2. Verifica i tuoi diritti di accesso a questa risorsa
 

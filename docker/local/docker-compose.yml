@@ -6,6 +6,8 @@ services:
     ports:
       - 3000:3000
     user: 1000:1000
+    environment:
+      - BASE_URL=/
     volumes:
       - ../../docusaurus.config.ts:/app/docusaurus.config.ts
       - ../../sidebars.ts:/app/sidebars.ts

@@ -5,38 +5,39 @@ import marketplaceContactAccess from '@site/docs/marketplace/images/marketplaceC
 import marketplaceContactConfirm from '@site/docs/marketplace/images/marketplaceContactConfirm.png'
 import marketplaceContactEmail from '@site/docs/marketplace/images/marketplaceContactEmail.png'
 
-Questo tutorial ti guida nel contattare un partner sviluppatore tramite la Marketplace Cloud Temple.
+Questo tutorial ti guida per entrare in contatto con un partner editore tramite la Marketplace Cloud Temple.
 
-## Contesto d'uso
+## Contesto di utilizzo
 
-Utilizzate questa funzionalità quando:
-- la soluzione richiede un collegamento con il partner
-- desiderate ottenere informazioni aggiuntive
-- la soluzione non è direttamente implementabile (nessuna immagine VM)
+Utilizzare questa funzionalità quando:
 
-## Passi di contatto
+- La soluzione richiede un contatto con il partner
+- Si desidera ottenere informazioni aggiuntive
+- La soluzione non è direttamente deployable (pas de VM Image)
+
+## Fasi di contatto
 
 ### 1. Accesso al modulo
 
-Dalla pagina di dettaglio di una soluzione partner, fare clic su **Contatta il partner**:
+Dalla pagina di dettaglio di una soluzione partner, fai clic su **Contatta il partner** :
 <img src={marketplaceContactAccess} />
 
 ### 2. Invio della richiesta
 
-Conferma e invia la tua richiesta di contatto:
+Conferma e invia la richiesta di contatto:
 <img src={marketplaceContactConfirm} />
 
-Riceverai una conferma via email relativa all'invio della tua richiesta.
+Riceverai una conferma via email dell'invio della richiesta.
 
-### 3. Collegamento
+### 3. Messa in contatto
 
-Il partner riceverà automaticamente un'email con le tue informazioni:
+Il partner riceverà automaticamente un'email con le tue informazioni :
 
-**Esempio di email inviata al partner:**
+**Esempio di email inviata al partner :**
 <img src={marketplaceContactEmail} />
 
-## Best practices
+## Buone pratiche
 
-- **Be precise** in describing your requirement
-- **Indicate the intended use context**
-- **Mention your technical or regulatory constraints**
+- **Siate precisi** nella descrizione del vostro requisito
+- **Indicate il contesto** d'uso previsto
+- **Menzionate i vostri vincoli** tecnici o normativi

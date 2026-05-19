@@ -1,6 +1,8 @@
 ---
-title: Vue d'ensemble Managed Core Kubernetes
+title: Vue d'ensemble
 ---
+import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
+import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 
 # Managed Core Kubernetes
 
@@ -8,23 +10,23 @@ title: Vue d'ensemble Managed Core Kubernetes
   <div class="card">
     <h3>Concepts</h3>
     <p>Découvrez les bases et principes essentiels pour maîtriser notre infrastructure.</p>
-    <a href="managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
+    <a href="./managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Guide de démarrage</h3>
     <p>Commencez rapidement en suivant des instructions claires et simples.</p>
-    <a href="managed_kubernetes/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="./managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>
 
-Managed **Core** Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs reposant sur une sélection de produits Open Source, conçue pour offrir un socle de base sécurisé, résilient et automatisé sur les plateformes SecNumCloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple OpenIaaS entièrement dédié au client.
+Managed **Core** Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs reposant sur une sélection de produits Open Source, conçue pour offrir un socle de base sécurisé, résilient et automatisé sur les plateformes SecNumCloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
-Cette offre est conçue pour les équipes ayant une excellente maîtrise de Kubernetes et des outils Cloud Native, qui souhaitent construire leur propre plateforme sur des fondations minimalistes et robustes. Elle s'adresse aux adeptes de l'open source qui recherchent une solution épurée, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
+ce produit est conçue pour les équipes ayant une excellente maîtrise de Kubernetes et des outils Cloud Native, qui souhaitent construire leur propre plateforme sur des fondations minimalistes et robustes. Elle s'adresse aux adeptes de l'open source qui recherchent une solution épurée, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
 ### Bénéfices Clés
 
@@ -38,7 +40,7 @@ L'offre "Managed Core" inclut nativement une stack minimale et cohérente d'outi
 
 - **OS et Réseau** : Talos, Cilium, MetalLB
 
-A partir de ce socle, vous êtes libre d'intégrer vos propres outils pour le stockage, le déploiement continu, l'observabilité, la sauvegarde et la gestion des coûts.
+A partir de ce socle, vous êtes libre d'intégrer vos propres outils pour le déploiement continu, l'observabilité, la sauvegarde et la gestion des coûts.
 
 ---
 
@@ -52,12 +54,12 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
 
 - **Cas d'usage** : Développement, tests, proof-of-concept (POC).
 - **Points clés** :
-    - 1 nœud Control Plane.
-    - 3 nœuds Workers (ou plus).
-    - Ne bénéficie pas de SLA de haute disponibilité.
-    - aucune restriction de sécurité
+  - 1 nœud Control Plane.
+  - 3 nœuds Workers (ou plus).
+  - Ne bénéficie pas de SLA de haute disponibilité.
+  - aucune restriction de sécurité
 
-<img src={require('./images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={archiOverview1az} alt="Architecture Mono-AZ" />
 
 ### Architecture Production (Multi-AZ)
 
@@ -65,12 +67,12 @@ Conçue pour la production et les applications critiques, cette architecture dis
 
 - **Cas d'usage** : Applications de production, services critiques, plateformes nécessitant un SLA.
 - **Points clés** :
-    - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
-    - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
-    - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-    - **SLA de 99.90%**.
+  - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
+  - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
+  - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
+  - **SLA de 99.90%**, mesurée mensuellement.
 
-<img src={require('./images/archi_overview.png').default} alt="Architecture Multi-AZ" />
+<img src={archiOverview} alt="Architecture Multi-AZ" />
 
 ---
 

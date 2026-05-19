@@ -1,10 +1,29 @@
 # Documentation Active - État Actuel
 
+## ⛔ AVERTISSEMENT CRITIQUE — NE RIEN FAIRE À LA MAIN DANS i18n/
+
+> **INTERDICTION ABSOLUE** : Ne JAMAIS modifier manuellement les fichiers dans les dossiers `i18n/`.
+> 
+> **Pourquoi** : Toutes les traductions sont gérées automatiquement par le script `scripts/translate_py/translate.py`. 
+> Toute modification manuelle sera **écrasée** lors de la prochaine exécution du script, et peut **casser le build** 
+> (blocs de code mal fermés, chemins d'images incorrects, doublons MDX).
+>
+> **Workflow obligatoire** :
+> 1. Modifier UNIQUEMENT les fichiers source en **français** dans `docs/`
+> 2. Lancer le script de traduction : `python scripts/translate_py/translate.py`
+> 3. Vérifier le build : `npx docusaurus build`
+> 4. Commiter l'ensemble (sources FR + traductions générées)
+>
+> **Attention aux images** : 63 fichiers source utilisent encore des chemins relatifs `./images/`. 
+> Le script copie automatiquement les images dans les dossiers i18n. Ne PAS supprimer ces copies.
+> La migration vers `@site/docs/...` (chemins absolus) est un chantier futur.
+
 ## Analyse de Complétude par Service
 
 ### 🖥️ Console Management - Statut : ✅ COMPLET
 
 #### Fichiers Existants (`/docs/console/`)
+
 - ✅ `console.md` : Page principale
 - ✅ `console_quickstart.md` : Guide de démarrage
 - ✅ `api.md` : Documentation API
@@ -12,350 +31,207 @@
 - ✅ `status.md` : Monitoring et états
 
 #### Sous-Module IAM - ✅ COMPLET
+
 - ✅ `iam/iam.md` : Présentation IAM
 - ✅ `iam/concepts.md` : Architecture Identity Management
 - ✅ `iam/quickstart.md` : Configuration rapide
 - ✅ `iam/images/` : Support visuel
-- ✅ `iam/tutorials/` : Guides avancés
+- ✅ `iam/tutorials/` : Guides avancés (SSO AAD, ADFS, Entra, JumpCloud, Okta, Intune)
 
-#### Modules en Développement
-- 🔄 `metrics/` : Structure créée, contenu à développer
-- 🔄 `security/` : Structure créée, contenu à développer
+#### Module Billing (Gestionnaire des coûts) - ✅ NOUVEAU (avril 2026)
+
+- ✅ `billing/concepts.md` : Dashboard, consommation, répartition, facturation, catalogue prix
+- ✅ `billing/images/` : 6 captures d'écran illustrées
+
+#### Modules Metrics et Security - ✅ COMPLETS
+
+- ✅ `metrics/` : Dashboards Grafana, datasources, métriques IaaS/hyperviseurs
+- ✅ `security/` : Alertes de sécurité, recommandations
 
 #### Ressources Visuelles
+
 - ✅ **40+ captures d'écran** dans `/images/`
-- ✅ **Interfaces Console** : Connexion, onboarding, API
-- ✅ **Workflows** : Commandes, incidents, métriques
-- ✅ **Dashboards Grafana** : Monitoring complet
 
 ### 🛡️ Bastion Security - Statut : ✅ COMPLET
 
-#### Documentation Complète (`/docs/bastion/`)
-- ✅ `bastion.md` : Vue d'ensemble service
-- ✅ `concepts.md` : Architecture sécurité
-- ✅ `quickstart.md` : Première connexion
-- ✅ `tutorials.md` : Cas d'usage avancés
-
-#### Support Visuel
+- ✅ `bastion.md`, `concepts.md`, `quickstart.md`, `tutorials.md`
 - ✅ **13 captures détaillées** : Workflows complets
-- ✅ **Sessions** : Création, ouverture, modification, suppression
-- ✅ **Appliances** : Configuration et gestion
-- ✅ **Support** : Interface intégrée
 
-### ☁️ IaaS Services - Statut : ✅ STRUCTURE COMPLÈTE
+### ☁️ IaaS Services - Statut : ✅ COMPLET
 
 #### IaaS Bare Metal (`/docs/iaas_bare-metal/`)
-- ✅ `iaas_bare-metal.md` : Service principal
-- ✅ `concepts.md` : Architecture matérielle
-- ✅ `quickstart.md` : Déploiement rapide
-- ✅ `tutorials.md` : Cas d'usage
-- ✅ `images/` : Diagrammes techniques
+
+- ✅ `iaas_bare-metal.md`, `concepts.md`, `quickstart.md`, `tutorials.md`
+- ✅ Précisions BFS (Boot from SAN) ajoutées
 
 #### IaaS Open Source (`/docs/iaas_opensource/`)
-- ✅ `iaas_opensource.md` : Solutions libres
-- ✅ `concepts.md` : Technologies open source
-- ✅ `quickstart.md` : Installation
-- ✅ `tutorials.md` : Implémentations
-- ✅ `images/` : Support visuel
+
+- ✅ `iaas_opensource.md`, `concepts.md`, `quickstart.md`
+- ✅ `tutorials/` : Sauvegarde, HA pools, HA VMs, création VM (3 méthodes)
+- ✅ Section sauvegarde enrichie (architecture incrémentale, sécurité AES-256, monitoring)
 
 #### IaaS VMware (`/docs/iaas_vmware/`)
-- ✅ `iaas_vmware.md` : Virtualisation VMware
-- ✅ `concepts.md` : vSphere, vCenter
-- ✅ `quickstart.md` : Configuration initiale
-- ✅ `images/` : Captures VMware
-- ✅ `tutorials/` : Scénarios avancés
 
-### 🚀 PaaS OpenShift - Statut : ✅ STRUCTURE COMPLÈTE
+- ✅ `iaas_vmware.md`, `concepts.md`, `quickstart.md`
+- ✅ `tutorials/` : Backup, VM encryption, deploy template, deploy Terraform, configure management VM
+- ✅ Métriques cluster documentées (mémoire allouée/consommée/worst case)
 
-#### Documentation Container (`/docs/paas_openshift/`)
-- ✅ `paas_openshift.md` : OpenShift managed
-- ✅ `concepts.md` : Kubernetes et containers
-- ✅ `quickstart.md` : Premier déploiement
-- ✅ `images/` : Screenshots OpenShift
-- ✅ `tutorials/` : Workflows DevOps
+### 🚀 PaaS OpenShift - Statut : ✅ COMPLET
 
-### 📦 Managed Kubernetes - Statut : ✅ BON
+- ✅ `paas_openshift.md`, `concepts.md`, `quickstart.md`, `first_steps.md`
+- ✅ `tutorials/` : Helmfile, KubeVirt, Kasten
 
-#### Documentation Container (`/docs/managed_kubernetes/`)
-- ✅ `managed_kubernetes.md` : Vue d'ensemble du service
-- ✅ `concepts.md` : Concepts techniques et prérequis
+### 📦 Managed Kubernetes - Statut : ✅ COMPLET
+
+- ✅ `managed_kubernetes.md`, `managed_core_kubernetes.md`, `concepts.md`, `quickstart.md`
+- ✅ `tutorials/` : Deploy, Networking, ArgoCD, Capsule, Gateway API, GPU, Harbor, Kasten, KubeCosts, OpenCost
+
+### 🗄️ Managed MariaDB - Statut : ✅ NOUVEAU (avril 2026, preview)
+
+- ✅ `managed_mariadb.md` : Présentation du service
+- ✅ `concepts.md` : Architectures StandAlone et Distributed (MaxScale)
 - ✅ `quickstart.md` : Guide de démarrage
-- 🟡 `tutorials.md` : Premier tutoriel "Hello World" créé, à enrichir
-- ✅ `images/` : Diagrammes d'architecture
+- ✅ `images/` : Schémas architecture (4 images)
+
+### 🐘 Managed PostgreSQL - Statut : ✅ NOUVEAU (avril 2026, preview)
+
+- ✅ `managed_postgresql.md` : Présentation du service
+- ✅ `concepts.md` : Concepts techniques
+- ✅ `quickstart.md` : Guide de démarrage
+
+### ☁️ Cloud Public — VM Instances - Statut : ✅ NOUVEAU (avril 2026, preview)
+
+- ✅ `public_cloud/vm_instances/vm_instances.md` : Vue d'ensemble
+- ✅ `public_cloud/vm_instances/concepts.md` : Classes de service, gabarits, stockage, réseau VPC
+- ✅ `public_cloud/vm_instances/quickstart.md` : Wizard de création en 9 étapes illustrées
+- ✅ `public_cloud/vm_instances/tutorials/` : 3 tutoriels (créer VM, gérer disques, snapshots)
+- ✅ `public_cloud/vm_instances/images/` : 17 captures d'écran
+- ✅ SLA : 99,95%
 
 ### 🏢 Housing & Colocation - Statut : ✅ COMPLET
 
-#### Infrastructure Physique (`/docs/housing/`)
-- ✅ `housing.md` : Offres colocation
-- ✅ `concepts.md` : Infrastructure datacenter
-- ✅ `quickstart.md` : Procédures installation
-- ✅ `tutorials.md` : Bonnes pratiques
+- ✅ `housing.md`, `concepts.md`, `quickstart.md`, `tutorials.md`
 
-### 🌐 Services Réseau - Statut : ✅ STRUCTURE COMPLÈTE
+### 🌐 Services Réseau - Statut : ✅ COMPLET
 
-#### Documentation Réseau (`/docs/network/`)
-- ✅ `vpc/` : Virtual Private Cloud (Concepts, Quickstart, Tutorials)
-- ✅ `private_network/` : Réseaux privés (Concepts, Quickstart, Tutorials)
-- ✅ `internet/advanced_concepts.md` : Concepts avancés (communautés BGP, Local Preference)
-- 🔄 `internet/` : Connectivité Internet base (structure créée, contenu à enrichir)
+- ✅ `network/network_overview.md` : Vue d'ensemble
+- ✅ `network/vpc/` : VPC (Concepts, Quickstart, Tutorials)
+- ✅ `network/private_network/` : Réseaux privés
+- ✅ `network/private_backbone/` : Backbone privé
+- ✅ `network/internet/` : Connectivité Internet, concepts avancés BGP
 
-#### Support Visuel
-- ✅ **Diagrammes VPC** : Architecture et configuration
-- ✅ **Interfaces** : Captures console pour VPC et Private Network
+### 🤖 LLMaaS - Statut : ✅ COMPLET ET VALIDÉ
 
-### 🤖 LLMaaS - LLM as a Service - Statut : ✅ SYSTÈME COMPLET ET VALIDÉ
+- ✅ `llmaas.md`, `models.md`, `api.md`, `concepts.md`, `quickstart.md`, `tutorials.md`
+- ✅ `ocr.md`, `rag_explained.md`, `faq.md`
+- ✅ `licences/` : Licences de tous les modèles
+- ✅ **40+ modèles**, tests validés (9/9 suites)
 
-#### Intelligence Artificielle Générative (`/docs/llmaas/`)
-- ✅ `llmaas.md` : Vue d'ensemble du service.
-- ✅ `models.md` : **AUTOMATISÉ** - Catalogue de modèles à jour.
-- ✅ `api.md` : Documentation API complète (Tiers, Endpoints, Facturation).
-- ✅ `concepts.md` : Architecture, Tokens, Sécurité.
-- ✅ `quickstart.md` : Guide de démarrage (cURL, Python, Tool Calling, Vision).
-- ✅ `tutorials.md` : Guides avancés (LangChain, RAG, Qdrant, Agents).
-- ✅ `ocr.md` : **NOUVEAU** - Guide DeepSeek-OCR (compression contextuelle, parsing).
-- ✅ `rag_explained.md` : **NOUVEAU** - Explication détaillée du RAG et Embeddings.
-- ✅ `faq.md` : **NOUVEAU** - Questions fréquentes.
-- ✅ `images/` : Screenshots, benchmarks, schémas.
-- ✅ `licences/` : Licences des modèles.
+### 💾 Storage Solutions - Statut : ✅ BON
 
-#### Suite de Tests (`/tests/llmaas/`) - ✅ COMPLÈTE (29/06/2025)
-- ✅ **9/9 suites de tests réussies** : Couverture complète des fonctionnalités de l'API.
-- ✅ **Tests RAG validés** : Pipelines FAISS et Qdrant fonctionnels.
-- ✅ **Tests SDK et API** : Validés.
-- ✅ **Runner de test unifié** : `run_all_tests.py` orchestre l'ensemble.
+- ✅ `storage/oss/oss.md`, `concepts.md`, `quickstart.md`, `faq.md`
+- ✅ `storage/oss/tutorials/` : AWS S3 Sync, Boto3, Cloudberry, mc mirror, Rclone, Restic, WinSCP, bucket-access, file-hashing
+- ✅ Plafonds IOPS et bande passante documentés
 
-#### Spécifications LLMaaS
-- ✅ **40 modèles** : 40+ modèles dont Vision, Code, Sécurité.
-- ✅ **Contexte** : 8k → 128k tokens  
-- ✅ **Pricing** : Tiers de facturation + pricing à l'usage.
-- ✅ **Fonctionnalités** : Tool Calling, Vision, Audio, OCR, RAG.
+### 🔧 Terraform - Statut : ✅ COMPLET
 
-### 💾 Storage Solutions - Statut : 🔄 EN DÉVELOPPEMENT
+- ✅ `terraform.md`, `concepts.md`, `quickstart.md`, `tutorials.md`
+- ✅ Notifications nouvelles versions Provider
 
-#### Object Storage Service (`/docs/storage/oss/`)
-- 🔄 **Structure créée** : Dossier existant
-- 📝 **Documentation à créer** : Stockage objet
-- 📝 **API S3** : Compatibilité et utilisation
-- 📝 **Intégrations** : Avec IaaS et PaaS
+### 🛒 Marketplace - Statut : ✅ COMPLET
 
-## Documentation Contractuelle - Statut : ✅ COMPLÈTE
+- ✅ `marketplace.md`, `concepts.md`, `quickstart.md`
+- ✅ `tutorials/` : Contact partenaire, personnalisation images OpenIaaS/VMware, déploiement
 
-### Aspects Juridiques (`/contractual/`)
-- ✅ `baremetal.md` + `.docx` : Contrats bare metal
-- ✅ `cgvu.md` + `.docx` : Conditions générales
-- ✅ `dpa.md` + `.docx` : Data Processing Agreement
-- ✅ `orderdoc.md` : Processus de commande
-- ✅ `hierarchie.docx` : Structure organisationnelle
+## Documentation Contractuelle - Statut : ✅ RESTRUCTURÉE (avril 2026)
 
-### Templates Juridiques
-- ✅ `CT.AM.JUR.TEMPLATE_CS.dotx` : Modèles contrats
-- ✅ `CT.AM.JUR.TEMPLATE_CS_nonum.dotx` : Variantes
+### Nouvelle Architecture
 
-### Contrats par Service
-- ✅ `iaas/` : Contrats IaaS
-- ✅ `network/` : Contrats réseau
-- ✅ `paas/` : Contrats PaaS
-- ✅ `llmaas/` : Matrice de responsabilité (RACI)
-- ✅ `kubernetes/` : **NOUVEAU** - Matrice de responsabilité (RACI)
+- ✅ `contracts.md` : Page hub — CGVU, Convention SecNumCloud, SLA, liens PDF
+- ✅ `shared-responsibility.md` : Page hub — Matrices RACI par service
 
-## Internationalisation - Statut : ✅ STRUCTURE COMPLÈTE
+### Matrices RACI par Service
+
+- ✅ `iaas/raci.md`, `iaas/raci_s3.md` : IaaS et stockage objet
+- ✅ `paas/raci.md`, `paas/raci_ocp_std.md`, `paas/mco_mcs.md` : PaaS OpenShift
+- ✅ `kubernetes/raci.md` : Managed Kubernetes
+- ✅ `llmaas/raci.md` : LLM as a Service
+- ✅ `network/raci.md`, `network/raci_vpc.md`, `network/sla_vpc.md` : Réseau
+- ✅ `vm-instances/raci.md`, `vm-instances/sla_vm-instances.md` : VM Instances
+
+## Pages Globales - Statut : ✅ COMPLÈTES
+
+- ✅ `home.md` : Page d'accueil
+- ✅ `changelog.md` : Suivi des modifications (documentation)
+- ✅ `changelog_produits.md` : **NOUVEAU** — Changelog produit
+- ✅ `faq.md` : **NOUVEAU** — FAQ générale
+- ✅ `compute_overview.md` : **NOUVEAU** — Vue d'ensemble Compute
+- ✅ `containers_overview.md` : Comparaison offres Containers
+- ✅ `databases_overview.md` : **NOUVEAU** — Vue d'ensemble Bases de données
+- ✅ `managedproducts_overview.md` : **NOUVEAU** — Vue d'ensemble Produits managés
+- ✅ `security_identity_overview.md` : **NOUVEAU** — Vue d'ensemble Sécurité/Identité
+- ✅ `market_place_public.md` : Marketplace public
+- ✅ `privacy.md` : Politique de confidentialité
+
+## Internationalisation - Statut : ✅ OPÉRATIONNELLE
 
 ### Langues Supportées (`/i18n/`)
+
 - ✅ **Français** (`fr/`) : Langue source
 - ✅ **Anglais** (`en/`) : Traduction principale
 - ✅ **Allemand** (`de/`) : Marché DACH
 - ✅ **Espagnol** (`es/`) : Expansion européenne
 - ✅ **Italien** (`it/`) : Marché méditerranéen
 
-### Structure i18n
-- ✅ `code.json` : Traductions interface
-- ✅ `docusaurus-plugin-content-docs/` : Contenu traduit
-- ✅ `docusaurus-theme-classic/` : Thème localisé
-
-## Pages Globales - Statut : ✅ COMPLÈTES
-
-### Documentation Globale (`/docs/`)
-- ✅ `home.md` : Page d'accueil
-- ✅ `changelog.md` : Suivi des modifications
-- ✅ `containers_overview.md` : **NOUVEAU** - Comparaison des offres Containers
-- ✅ `market_place_public.md` : Marketplace public
-- ✅ `privacy.md` : Politique de confidentialité
-
-### Contenu Additionnel (`/docs/additional_content/`)
-- ✅ `concepts_az.md` : Availability Zones
-- ✅ `concepts_regional.md` : Architecture régionale
-- ✅ `images/iaas_az_001.png` : Diagramme AZ
-
-## Priorités de Développement
-
-### 🔥 Priorité HAUTE
-1. **Network Documentation** (`/docs/network/`)
-   - Créer `internet.md`, `concepts.md`, `quickstart.md`
-   - Documenter connectivité et bande passante
-   - Créer `private_network.md` avec VLAN, VPN
-   - Diagrammes architecture réseau
-
-2. **Storage OSS** (`/docs/storage/oss/`)
-   - Documentation Object Storage Service
-   - API S3 et compatibilité
-   - Intégrations avec autres services
-   - Cas d'usage et bonnes pratiques
-
-### 🔶 Priorité MOYENNE
-1. **Enrichissement Managed Kubernetes** (`/docs/managed_kubernetes/`)
-   - Ajouter des tutoriels avancés (sécurité, stockage, etc.).
-   - Détailler le modèle de pricing.
-2. **Console Metrics** (`/docs/console/metrics/`)
-   - Dashboards Grafana avancés
-   - Métriques custom et alerting
-   - Intégration monitoring
-3. **Console Security** (`/docs/console/security/`)
-   - Contrôles de sécurité avancés
-   - Audit et compliance
-   - Gestion des incidents
-
-### 🔵 Priorité BASSE
-1. **Extensions Services Existants**
-   - Tutorials avancés supplémentaires
-   - Cas d'usage sectoriels
-   - Optimisations performance
-
-## Actions Éditoriales Actives
-
-### En Cours de Rédaction
-- 📝 **Network Services** : Architecture et concepts
-- 📝 **Storage OSS** : Documentation API
-- 📝 **Console Metrics** : Dashboards avancés
-
-### Corrections Récentes
-- ✅ **Mise à jour Tarifs LLMaaS** : Mise à jour des prix dans tous les fichiers sources et la Memory Bank (Input: 1.9€/M, Output: 8€/M, Raisonneur: 8€/M).
-- ✅ **Fix Build MDX (i18n)** : Résolution des erreurs de compilation MDX dans toutes les langues (en, es, it, de) causées par des blocs de code Python/JSON corrompus lors de la traduction.
-- ✅ **Génération Documentation Modèles** : Mise à jour automatisée de `docs/llmaas/models.md` via le script Python.
-- ✅ **Traduction Network (VPC)** : Traduction complète du service VPC et mise à jour de Private Network vers en, de, es, it. Correction des liens LLMaaS dans `usingopencost.md`.
-- ✅ **Fix Build MDX Multi-langues** : Correction des erreurs de parsing MDX dans toutes les langues pour LLMaaS et Network. Restauration des blocs de code et suppression des doublons dans le catalogue de modèles.
-- ✅ **Concepts Avancés Réseau** (21/02/2026) : Ajout page communautés BGP et Local Preference (PR #249). Traduction vers en, de, es, it.
-- ✅ **Qualité Traductions** (21/02/2026) : Amélioration des traductions security_alarms.md et models.md (4 langues). Mise à jour changelog.
-
-### En Review
-- 🔄 **Cohérence terminologique** : Uniformisation
-- 🔄 **Mise à jour screenshots** : Console
-- 🔄 **Validation technique** : Exactitude information
-
-### Planifié
-- 📅 **Nouveaux services** : Roadmap 2025
-- 📅 **Migration Docusaurus** : Mise à jour version
-- 📅 **Optimisation SEO** : Métadonnées et structure
-
 ## Métriques de Couverture
 
 ### Services Documentés
-- **Console Management** : 95% (metrics, security en cours)
+
+- **Console Management** : 100% (billing ajouté)
 - **Bastion Security** : 100%
-- **IaaS Services** : 100%
+- **IaaS Services** : 100% (sauvegarde enrichie, métriques cluster)
 - **PaaS OpenShift** : 100%
+- **Managed Kubernetes** : 100%
+- **Managed MariaDB** : 90% (preview, tutoriels à ajouter)
+- **Managed PostgreSQL** : 90% (preview, tutoriels à ajouter)
+- **VM Instances** : 95% (preview, 3 tutoriels)
 - **Housing** : 100%
-- **Network** : 80% (VPC et Private Network complets)
-- **Storage** : 20% (structure créée)
-- **Managed Kubernetes**: 90% (Ajout guide OpenCost)
+- **Network** : 95% (VPC, Private Network, Internet, Backbone)
+- **LLMaaS** : 100%
+- **Storage OSS** : 95% (FAQ + 9 tutoriels)
+- **Terraform** : 100%
+- **Marketplace** : 100%
+- **Contractuel** : 100% (restructuré)
 
-### Couverture Globale : 92%
+### Couverture Globale : ~97%
 
-### Par Type de Documentation
-- **Pages principales** : 100%
-- **Concepts techniques** : 95%
-- **Guides quickstart** : 95%
-- **Tutorials avancés** : 90%
-- **Support visuel** : 85%
+## Priorités Restantes
 
-## Décisions Éditoriales Récentes
+### 🔶 Priorité MOYENNE
 
-### Standards Adoptés
-- ✅ **Français langue source** : Tout contenu créé en français
-- ✅ **Pattern uniforme** : service.md → concepts → quickstart → tutorials
-- ✅ **SecNumCloud focus** : Aspects sécurité systématiques
-- ✅ **Screenshots obligatoires** : Support visuel pour chaque guide
+1. **Managed MariaDB & PostgreSQL** : Ajouter des tutoriels pratiques
+2. **VM Instances** : Enrichir avec cas d'usage avancés (scaling, monitoring)
 
-### Règles de Rédaction
-- **Ton technique professionnel** : Avant-vente technique
-- **Approche didactique** : Progression pédagogique
-- **Références croisées** : Liens entre services
-- **Validation technique** : Review expertise
+### 🔵 Priorité BASSE
 
----
+1. **Extensions tutoriels existants** : Cas d'usage sectoriels
+2. **Amélioration continue traductions** : Qualité des traductions automatiques
 
-## Prochaines Actions Immédiates
+## 🐍 Système de Traduction Python - ✅ CORRIGÉ (14/05/2026)
 
-1. **Compléter Network** : Internet et Private Network
-2. **Développer Storage OSS** : Documentation API S3
-3. **Finaliser Console** : Metrics et Security modules
-4. **Maintenance Générale** : Poursuivre la correction des liens et ancres cassés dans les traductions.
-5. **Validation globale** : Cohérence et qualité
-
----
-*État de la documentation au 19/01/2026 - Memory Bank Cloud Temple*
-
-### 🐍 Système de Traduction Python - ✅ COMPLET ET OPÉRATIONNEL (17/06/2025)
 **Localisation** : `scripts/translate_py/`
-**Status** : Production Ready
-**Script Legacy** : `oldies/translate.js` (archivé)
+**Status** : Production Ready — bug chunking corrigé
 
-#### ✅ Fonctionnalités Implémentées et Testées
-- ✅ **Architecture modulaire complète** : config, models, ui, translator, file_manager
-- ✅ **Interface Rich moderne** : Barres de progression temps réel, statistiques avancées
-- ✅ **Détection intelligente par hash SHA-256** : Comparaison précise des fichiers modifiés
-- ✅ **Mode initialisation** (`--init`) : Génération métadonnées avec hash des traductions existantes
-- ✅ **Gestion métadonnées** : Fichier `translation-meta.json` dans `scripts/translate_py/`
-- ✅ **Support .notranslation** : Exclusion automatique de répertoires (copie forcée)
-- ✅ **Concurrence optimisée** : Pool de workers pour utilisation maximale API
-- ✅ **Statistiques temps réel** : Tokens IN/OUT, vitesse tokens/s, progression détaillée
-- ✅ **Mode debug complet** : Logs détaillés avec comparaison hash avant/après
-- ✅ **Configuration flexible** : Variables d'environnement, auto-détection racine projet
-- ✅ **Gestion erreurs robuste** : Retry automatique, validation des réponses API
+### ✅ Correction majeure : chunking code-block-aware
 
-#### 🔍 Détection des Changements Validée
-- ✅ **Hash SHA-256** : Calcul et comparaison précise des fichiers source
-- ✅ **Métadonnées persistantes** : Stockage état par fichier et langue
-- ✅ **Logique de décision** :
-  - Nouveau fichier (pas de hash stocké) → Traduit
-  - Fichier modifié (hash différent) → Traduit
-  - Traduction manquante → Traduit  
-  - Fichier inchangé (hash identique) → Ignore
-- ✅ **Logs explicatifs** : Messages clairs pourquoi chaque fichier est traité
-- ✅ **Workflow testé** : Init → Modification → Détection → Traduction validé
-
-#### 📁 Architecture du Système
-```
-scripts/translate_py/
-├── translate.py              # 🚀 Script principal avec CLI Click
-├── translation-meta.json     # 🔍 Métadonnées et hash SHA-256 (123 fichiers)
-├── config.py                # ⚙️ Configuration Pydantic + env
-├── models.py                # 📋 Modèles de données TypedDict
-├── ui.py                   # 🎨 Interface Rich + barres progression
-├── translator.py           # 🌐 Moteur traduction Cloud Temple API
-├── file_manager.py         # 📁 Gestion fichiers + métadonnées
-├── requirements.txt        # 📦 aiofiles, rich, pydantic, click, aiohttp
-├── .env.example           # 📝 Template configuration
-└── .env                  # 🔒 Configuration locale
-```
-
-#### 🎯 Workflow de Production Validé
-1. **Initialisation** : `python translate.py --init` → Génère métadonnées (45Ko, 123 fichiers)
-2. **Détection** : `python translate.py --dry-run --debug` → Affiche changements avec hash
-3. **Traduction** : `python translate.py` → Traduit uniquement fichiers modifiés
-4. **Validation** : Hash mis à jour automatiquement après traduction réussie
-
-#### 📊 Performance et Métriques
-- **Fichiers indexés** : 123 fichiers Markdown
-- **Langues supportées** : 4 (en, de, es, it)
-- **Métadonnées** : 45 Ko (format JSON optimisé)
-- **Détection** : <1s pour 123 fichiers (hash précalculés)
-- **Concurrence** : 8 workers simultanés (configurable)
-
-#### 🔄 Migration Script Legacy
-- ✅ **Script JS archivé** : `oldies/translate.js` (plus de maintenance)
-- ✅ **Compatibilité métadonnées** : Format JSON conservé
-- ✅ **Documentation mise à jour** : README complet avec workflows
-- ✅ **Workflow unifié** : Même commandes, interface améliorée
+- ✅ **Bug corrigé** : Le `ContentSplitter` ne tenait pas compte des blocs de code ```` ``` ```` lors du découpage
+- ✅ **`_find_code_block_ranges()`** : Identifie toutes les zones de code protégées
+- ✅ **`_is_inside_code_block()`** : Vérifie si un point de coupure est dans un bloc de code
+- ✅ **`_find_safe_split_point()`** : Cherche un point de coupure sûr (hors code)
+- ✅ **`split_content()` corrigé** : Ignore les headers `#` à l'intérieur des blocs de code
+- ✅ **`_split_large_block()` corrigé** : Ne coupe jamais au milieu d'un bloc de code
+- ✅ **Test validé** : Blocs de code Python/Bash correctement préservés
 
 ---
-*État de la documentation au 22/11/2025 - Memory Bank Cloud Temple*
+
+*État de la documentation au 14/05/2026 - Memory Bank Cloud Temple*

@@ -1,18 +1,18 @@
 ---
 title: Guide de démarrage
 ---
-import shivaSupport from './images/shiva_support.png'
-import creerSession from './images/creer_session.png'
-import creerSession2 from './images/creer_session2.png'
-import creerSession3 from './images/creer_session3.png'
-import ouvrirSession from './images/ouvrir_session.png'
-import ouvrirSession2 from './images/ouvrir_session2.png'
+import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
+import creerSession from '@site/docs/bastion/images/creer_session.png'
+import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
+import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
+import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
+import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
 Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter.
 
 ## Prérequis
 
-1. Avoir souscrit à l'offre Cloud Temple (souscription Appliance Bastion).
+1. Avoir souscrit à le produit Cloud Temple (souscription Appliance Bastion).
 2. Les équipements à administrer doivent être accessibles depuis le réseau où est déployée l'Appliance Bastion.
 3. Avoir les droits sur le module Bastion.
 4. Dans le cadre d'un déploiement de l'Appliance onpremise, les flux correspondants doivent être ouverts.

@@ -2,12 +2,12 @@
 title: Avvisi di sicurezza
 ---
 
-Qui troverai gli avvisi di sicurezza relativi ai nostri servizi cloud.
-Questa pagina viene aggiornata quotidianamente per tenere conto delle vulnerabilità recentemente identificate.
+Consulta qui gli avvisi di sicurezza relativi ai nostri servizi cloud.
+Questa pagina viene aggiornata quotidianamente per tenere conto delle vulnerabilità appena individuate.
 
 ## Vulnerabilità
 
-| Data | Riferimento(i) | CVSS | Titolo | Descrizione | Servizio(i) | Gravità | Intervento |
+| Data | Riferimento/i | CVSS | Titolo | Descrizione | Servizio/i | Severità | Gestione |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 10/05/2026 | [DSA-2026-019](https://www.dell.com/support/kbdoc/en-us/000462117/dsa-2026-047-security-update-for-dell-ecs-and-objectscale-multiple-vulnerabilities-1) | 9.8-5.6 | **DSA-2026-019: Vulnerabilità multiple in Dell ObjectScale** | Diverse vulnerabilità che interessano Dell ObjectScale, tra cui l'utilizzo di credenziali codificate che consentono a un attaccante non autenticato di accedere al file system, una gestione impropria dei privilegi OS, un'iniezione di formule CSV e un bypass dell'autenticazione | Object Storage | 🟠 Importante | ✅ La remediation dei vostri ambienti ObjectScale è gestita da Cloud Temple. Non è richiesta alcuna azione da parte vostra. |
 | 06/04/2026 | [DSA-2026-143](https://www.dell.com/support/kbdoc/en-us/000449325/dsa-2026-143-security-update-for-dell-objectscale-prior-to-4-1-0-3-and-4-2-0-0-insertion-of-sensitive-information-into-log-file-vulnerability) | 7.8 | **DSA-2026-143: Vulnerabilità in Dell ObjectScale (CVE-2026-28261)** | Una vulnerabilità (CVE-2026-28261) in Dell ObjectScale legata all'inserimento di informazioni sensibili nei file di log consente a un attaccante locale di esporre segreti ed elevare i propri privilegi per compromettere il sistema. | Object Storage | 🟡 Moderata | ✅ La risoluzione dei vostri ambienti ObjectScale è gestita da Cloud Temple. Non è necessaria alcuna azione da parte vostra. |
@@ -31,19 +31,19 @@ Questa pagina viene aggiornata quotidianamente per tenere conto delle vulnerabil
 
 ## Informazioni
 
-- **Data** : Data di pubblicazione iniziale dell'alert di sicurezza Cloud Temple.
-- **Riferimento(i)** : ID CVE, se disponibile.
-- **CVSS** : Punteggio CVSS v3 di base come riportato dall'editore o dal CVE, non contestualizzato. La contestualizzazione è espressa dalla severità CT. Se l'alert riguarda più vulnerabilità, vengono indicati i punteggi CVSS minimo e massimo.
-- **Titolo** : Titolo dell'alert, con riferimento all'editore se disponibile.
-- **Descrizione** : Descrizione sintetica, con collegamento(i) a informazioni dettagliate.
-- **Servizio(i)** : Servizio(i) Cloud Temple potenzialmente interessato(i).
-- **Severità** : Livello di severità nel contesto dei servizi Cloud Temple (per la vulnerabilità più critica in caso di più vulnerabilità). Vengono presi in considerazione i criteri di sfruttamento nel contesto tecnico delle nostre infrastrutture e servizi Cloud.
+- **Data** : Data di pubblicazione iniziale dell'allerta di sicurezza Cloud Temple.
+- **Riferimento(i)** : ID CVE, in base alla disponibilità.
+- **CVSS** : Punteggio CVSS v3 base così come riportato dall'editore o dal CVE, non contestualizzato. La contestualizzazione è espressa dalla severità CT. Se l'allerta riguarda più vulnerabilità, sono indicati i punteggi CVSS min e max.
+- **Titolo** : Titolo dell'allerta, con riferimento all'editore se disponibile.
+- **Descrizione** : Descrizione sintetica, con link verso informazioni dettagliate.
+- **Servizio(i)** : Servizio(i) Cloud Temple potenzialmente interessati.
+- **Severità** : Livello di severità nel contesto dei servizi Cloud Temple (per la vulnerabilità più critica in caso di vulnerabilità multiple). I criteri di sfruttamento sono presi in considerazione nel contesto tecnico delle nostre infrastrutture e servizi Cloud.
 
 | Livello | Descrizione |
 |--------|-------------|
-| 🔴 **Critica** | Vulnerabilità CVSS 7+ che presenta un rischio significativo di sfruttamento (ampia esposizione, facilità di sfruttamento). È fortemente raccomandato applicare una correzione o mitigazione nel minor tempo possibile. |
-| 🟠 **Importante** | Vulnerabilità CVSS 7+ che non presenta un rischio significativo di sfruttamento (esposizione limitata o vincoli allo sfruttamento). |
+| 🔴 **Critica** | Vulnerabilità CVSS 7+ che presenta un rischio di sfruttamento significativo (elevata esposizione, facilità di sfruttamento). Si raccomanda fortemente una correzione o mitigazione il prima possibile.|
+| 🟠 **Importante** | Vulnerabilità CVSS 7+ che non presenta un rischio di sfruttamento significativo (esposizione limitata o vincoli di sfruttamento) |
 | 🟡 **Moderata** | Vulnerabilità CVSS 4+ |
 | 🔵 **Bassa** | Vulnerabilità CVSS inferiore a 4, o non sfruttabile. |
 
-- **Trattamento** : Informazioni e raccomandazioni nel contesto dei servizi Cloud Temple. ⚠️ indica che è necessaria un'azione da parte degli utenti per trattare la vulnerabilità. ✅ indica che il trattamento della vulnerabilità è gestito da Cloud Temple.
+- **Gestione** : Informazioni e raccomandazioni nel contesto dei servizi Cloud Temple. ⚠️ indica che è necessaria un'azione da parte degli utenti per gestire la vulnerabilità. ✅ indica che la gestione della vulnerabilità è a carico di Cloud Temple.

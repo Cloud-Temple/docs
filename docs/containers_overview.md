@@ -23,7 +23,7 @@ Ce tableau met en évidence les points forts et le positionnement de chaque solu
 
 ### Comparaison des composants techniques
 
-Au-delà du positionnement, chaque offre s'appuie sur des choix technologiques distincts qui répondent à des besoins spécifiques. Le tableau suivant détaille les briques logicielles fondamentales qui composent chaque solution.
+Au-delà du positionnement, chaque produit s'appuie sur des choix technologiques distincts qui répondent à des besoins spécifiques. Le tableau suivant détaille les briques logicielles fondamentales qui composent chaque solution.
 
 | Brique Technique             | PaaS OpenShift                     | Managed Kubernetes          |
 | :--------------------------- | :--------------------------------- | :-------------------------- |
@@ -41,12 +41,12 @@ Au-delà du positionnement, chaque offre s'appuie sur des choix technologiques d
 
 ## Quelle solution pour votre projet ?
 
-Le choix de la plateforme de conteneurisation est une décision structurante. Voici quelques clés pour vous orienter vers l'offre la plus pertinente pour votre contexte.
+Le choix de la plateforme de conteneurisation est une décision structurante. Voici quelques clés pour vous orienter vers le produit le plus pertinent pour votre contexte.
 
-*   **Si la conformité réglementaire est votre priorité absolue...**
+* **Si la conformité réglementaire est votre priorité absolue...**
     ...et que vous devez opérer dans un secteur hautement régulé (public, santé, OIV) ou qualifier votre propre solution, l'**Offre PaaS OpenShift** est la solution de référence qui vous apporte le plus haut niveau de garantie du marché.
 
-*   **Si vous privilégiez l'open source, la modernité et la sécurité "zero-trust"...**
+* **Si vous privilégiez l'open source, la modernité et la sécurité "zero-trust"...**
     et que votre culture d'entreprise est fortement orientée vers l'open source, l'absence de dépendance éditeur et les approches de sécurité de nouvelle génération (systèmes immuables, gestion par API), l'**Offre Managed Kubernetes** est la plus alignée avec votre vision.
 
 Notre rôle de conseil est de vous accompagner dans cette décision. Nos architectes sont à votre disposition pour analyser votre contexte et définir avec vous la meilleure trajectoire.
@@ -78,7 +78,7 @@ Notre rôle de conseil est de vous accompagner dans cette décision. Nos archite
       </div>
       <div className="card__body">
         <p>
-          Explorez notre offre Kubernetes pure, portable et sans surcouche, hébergée sur une infrastructure souveraine.
+          Explorez notre produit Kubernetes pure, portable et sans surcouche, hébergée sur une infrastructure souveraine.
         </p>
       </div>
       <div className="card__footer">

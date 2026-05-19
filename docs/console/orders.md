@@ -1,32 +1,32 @@
 ---
 title: Déployer des ressources
 ---
-import shivaOrdersList from './images/shiva_orders_list.png'
-import shivaOrderNotif_001 from './images/shiva_order_notif_001.png'
-import shivaOrderStatus from './images/shiva_order_status.png'
-import shivaOrderAz_01 from './images/shiva_order_az_01.png'
-import shivaOrderAz_02 from './images/shiva_order_az_02.png'
-import shivaOrderAz_03 from './images/shiva_order_az_03.png'
-import shivaOrderAz_04 from './images/shiva_order_az_04.png'
-import shivaOrderAz_05 from './images/shiva_order_az_05.png'
-import shivaOrderAz_06 from './images/shiva_order_az_06.png'
-import shivaOrderAz_07 from './images/shiva_order_az_07.png'
-import shivaOrderAz_08 from './images/shiva_order_az_08.png'
-import shivaOrderClucalc_01 from './images/shiva_order_clucalc_01.png'
-import shivaOrderClucalc_02 from './images/shiva_order_clucalc_02.png'
-import shivaOrderClucalc_03 from './images/shiva_order_clucalc_03.png'
-import shivaOrderClucalc_04 from './images/shiva_order_clucalc_04.png'
-import shivaOrderClucalc_05 from './images/shiva_order_clucalc_05.png'
-import shivaOrderClusto_01 from './images/shiva_order_clusto_01.png'
-import shivaOrderClusto_02 from './images/shiva_order_clusto_02.png'
-import shivaOrderClusto_03 from './images/shiva_order_clusto_03.png'
-import shivaOrderClusto_04 from './images/shiva_order_clusto_04.png'
-import shivaOrdersIaasSpoolDs from './images/shiva_orders_iaas_spool_ds.png'
-import shivaOrdersNet_002 from './images/shiva_orders_net_002.png'
-import shivaOrdersNet_003 from './images/shiva_orders_net_003.png'
-import shivaOrdersNet_004 from './images/shiva_orders_net_004.png'
-import shivaOrdersIaasCpoolEsx from './images/shiva_orders_iaas_cpool_esx.png'
-import shivaOrdersIaasCpoolMemory from './images/shiva_orders_iaas_cpool_memory.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrderNotif_001 from '@site/docs/console/images/shiva_order_notif_001.png'
+import shivaOrderStatus from '@site/docs/console/images/shiva_order_status.png'
+import shivaOrderAz_01 from '@site/docs/console/images/shiva_order_az_01.png'
+import shivaOrderAz_02 from '@site/docs/console/images/shiva_order_az_02.png'
+import shivaOrderAz_03 from '@site/docs/console/images/shiva_order_az_03.png'
+import shivaOrderAz_04 from '@site/docs/console/images/shiva_order_az_04.png'
+import shivaOrderAz_05 from '@site/docs/console/images/shiva_order_az_05.png'
+import shivaOrderAz_06 from '@site/docs/console/images/shiva_order_az_06.png'
+import shivaOrderAz_07 from '@site/docs/console/images/shiva_order_az_07.png'
+import shivaOrderAz_08 from '@site/docs/console/images/shiva_order_az_08.png'
+import shivaOrderClucalc_01 from '@site/docs/console/images/shiva_order_clucalc_01.png'
+import shivaOrderClucalc_02 from '@site/docs/console/images/shiva_order_clucalc_02.png'
+import shivaOrderClucalc_03 from '@site/docs/console/images/shiva_order_clucalc_03.png'
+import shivaOrderClucalc_04 from '@site/docs/console/images/shiva_order_clucalc_04.png'
+import shivaOrderClucalc_05 from '@site/docs/console/images/shiva_order_clucalc_05.png'
+import shivaOrderClusto_01 from '@site/docs/console/images/shiva_order_clusto_01.png'
+import shivaOrderClusto_02 from '@site/docs/console/images/shiva_order_clusto_02.png'
+import shivaOrderClusto_03 from '@site/docs/console/images/shiva_order_clusto_03.png'
+import shivaOrderClusto_04 from '@site/docs/console/images/shiva_order_clusto_04.png'
+import shivaOrdersIaasSpoolDs from '@site/docs/console/images/shiva_orders_iaas_spool_ds.png'
+import shivaOrdersNet_002 from '@site/docs/console/images/shiva_orders_net_002.png'
+import shivaOrdersNet_003 from '@site/docs/console/images/shiva_orders_net_003.png'
+import shivaOrdersNet_004 from '@site/docs/console/images/shiva_orders_net_004.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
+import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_iaas_cpool_memory.png'
 
 ## Concept
 
@@ -87,6 +87,7 @@ Vous obtenez ensuite un résumé des options sélectionnées avant de valider vo
 ## Commander de la ressource stockage supplémentaire
 
 La logique d'allocation du stockage en mode bloc sur les clusters de calcul repose sur la technologie __IBM SVC (San Volume Controller)__ et __IBM FlashSystem__. Le stockage est organisé en __LUNs de 500 Gio minimum__, présentées selon la technologie utilisée :
+
 - Pour __VMware__ : sous forme de __datastores__ regroupés dans des __clusters SDRS (Storage Distributed Resource Scheduler)__
 - Pour __Bare Metal__ : sous forme de __volumes__
 - Pour __Open IaaS__ : sous forme de __Storage Repository (SR)__
@@ -96,7 +97,7 @@ Chaque datastore hérite d'une __classe de performance__ définie en IOPS/To (de
 __Points clés à retenir__ :
 
 - __Taille minimale__ : 500 Gio par LUN
-- __Performance__ : Proportionnelle au volume alloué (ex: 2 To en classe Standard = 3000 IOPS max)
+- __Performance__ : Proportionnelle au volume alloué, __dans la limite d'un plafond physique absolu par LUN__ (ex: 2 To en classe Standard = 3000 IOPS, mais une LUN de 10 To plafonnera à 30 000 IOPS maximum). Ce plafond varie selon la classe (10 000 IOPS / 512 Mo/s pour la classe Essentiel, et 30 000 IOPS / 1024 Mo/s pour les classes supérieures).
 - __Organisation__ : Les datastores de même type sont automatiquement regroupés en clusters de datastores
 - __Disponibilité__ : 99,99% mesuré mensuellement, plages de maintenance incluses
 - __Espace nécessaire__ : Prévoir toujours 10% d'espace libre pour les snapshots de sauvegarde et l'équivalent de la somme des RAM des VMs pour les fichiers .VSWP
@@ -155,7 +156,7 @@ avec la liste des datastores.
 __nota__ :
 
 - *La taille de la plus petite LUN activable sur un cluster est de __500 Gio__.*
-- *Les performances d'un datastore vont de 500 iops/Tio en moyenne jusqu'à 15000 iops/Tio en moyenne. __C'est un bridage logiciel réalisé au niveau des contrôleurs de stockage__.*
+- *Les performances d'un datastore vont de 500 IOPS/Tio en moyenne jusqu'à 15000 IOPS/Tio en moyenne. __C'est un bridage logiciel réalisé au niveau des contrôleurs de stockage__, soumis à un plafond matériel absolu de 30 000 IOPS et 1024 Mo/s maximum par LUN.*
 - *La comptabilité du volume de disque consommé par votre organisation est la somme de toutes les LUNs sur l'ensemble des AZs utilisées*.
 - *Les droits __'order'__ ainsi que __'compute'__ sont nécessaires au compte pour mener cette action.*
 

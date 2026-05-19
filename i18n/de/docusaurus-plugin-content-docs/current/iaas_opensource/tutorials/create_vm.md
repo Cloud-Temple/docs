@@ -1,215 +1,217 @@
 ---
-title: Créer une machine virtuelle
+title: Eine virtuelle Maschine erstellen
 ---
 
-Ce tutoriel vous guide à travers les différentes méthodes de création d'une machine virtuelle dans votre environnement OpenIaaS.
+Dieses Tutorial führt Sie durch die verschiedenen Methoden zur Erstellung einer virtuellen Maschine in Ihrer OpenIaaS-Umgebung.
 
-## Introduction
+## Einführung
 
-La Console Cloud Temple vous propose **trois méthodes** pour créer une machine virtuelle OpenIaaS :
+Die Cloud Temple-Konsole bietet **drei Methoden** zum Erstellen einer OpenIaaS-virtuellen Maschine an:
 
-1. **Depuis un Modèle** : Déploiement rapide à partir d'un modèle préconfiguré
-2. **Import XVA** : Import d'une machine virtuelle depuis un fichier XVA
-3. **Depuis le Marketplace** : Déploiement d'une image certifiée du catalogue Cloud Temple
+1. **Aus einem Modell** : Schnelle Bereitstellung aus einem vorkonfigurierten Modell
+2. **XVA-Import** : Import einer virtuellen Maschine aus einer XVA-Datei
+3. **Über den Marketplace** : Bereitstellung eines zertifizierten Images aus dem Cloud Temple-Katalog
 
-## Prérequis
+## Voraussetzungen
 
-- Disposer d'un environnement OpenIaaS configuré
-- Avoir les permissions nécessaires pour créer des machines virtuelles
-- Pour le mode XVA : disposer d'un fichier XVA valide
-- Pour le mode Marketplace : avoir accès au catalogue Marketplace
+- Über eine konfigurierte OpenIaaS-Umgebung verfügen
+- Über die erforderlichen Berechtigungen zum Erstellen virtueller Maschinen verfügen
+- Für den XVA-Modus: über eine gültige XVA-Datei verfügen
+- Für den Marketplace-Modus: Zugriff auf den Marketplace-Katalog haben
 
-## Accès à la création
+## Zugriff auf die Erstellung
 
-Depuis le menu **OpenIaaS** > **Machines Virtuelles**, cliquez sur le bouton **Nouvelle machine virtuelle**.
+Wählen Sie im Menü **OpenIaaS** > **Virtuelle Maschinen** die Schaltfläche **Neue virtuelle Maschine** aus.
 
-Une fenêtre s'ouvre vous présentant les trois méthodes de déploiement disponibles. Sélectionnez la méthode souhaitée pour continuer.
+Es öffnet sich ein Fenster, das Ihnen die drei verfügbaren Bereitstellungsmethoden anzeigt. Wählen Sie die gewünschte Methode aus, um fortzufahren.
 
 ---
 
-## Méthode 1 : Déploiement depuis un Modèle
+## Methode 1 : Bereitstellung aus einem Modell
 
-Cette méthode permet de créer rapidement une machine virtuelle à partir d'un modèle préconfiguré.
+Diese Methode ermöglicht die schnelle Erstellung einer virtuellen Maschine aus einem vorkonfigurierten Modell.
 
-### Étape 1 : Sélection du Pool et du Modèle
+### Schritt 1: Auswahl des Pools und des Modells
 
-Sélectionnez d'abord le **Pool** (zone de disponibilité) où vous souhaitez déployer votre machine virtuelle, puis choisissez le **Modèle** à utiliser comme base.
+Wählen Sie zunächst den **Pool** (Verfügbarkeitszone) aus, in dem Sie Ihre virtuelle Maschine bereitstellen möchten, und wählen Sie anschließend das **Modell** als Basis aus.
 
-### Étape 2 : Informations générales
+### Schritt 2: Allgemeine Informationen
 
-Configurez les paramètres de base de votre machine virtuelle :
+Konfigurieren Sie die grundlegenden Einstellungen Ihrer virtuellen Maschine:
 
-- **Nom** : Nom unique de la machine virtuelle (caractères alphanumériques, tirets, underscores, points et espaces autorisés)
-- **CPU** : Nombre de cœurs virtuels (minimum 1)
-- **RAM** : Quantité de mémoire avec sélection de l'unité (Mo, Go, To)
+- **Name** : Eindeutiger Name der virtuellen Maschine (alphanumerische Zeichen, Bindestriche, Unterstriche, Punkte und Leerzeichen sind erlaubt)
+- **CPU** : Anzahl der virtuellen Kerne (Minimum 1)
+- **RAM** : Speichermenge mit Auswahl der Einheit (MB, GB, TB)
 
-### Étape 3 : Cloud Init (optionnel)
+### Schritt 3: Cloud Init (optional)
 
-Cloud Init permet d'automatiser la configuration initiale de votre machine virtuelle au premier démarrage.
+Cloud Init ermöglicht die Automatisierung der Erstkonfiguration Ihrer virtuellen Maschine beim ersten Start.
 
-Vous pouvez configurer :
+Sie können Folgendes konfigurieren:
 
-- **Cloud Config** : Configuration générale (hostname, utilisateurs, packages, etc.)
-- **Network Config** : Configuration réseau au format Netplan v2
-- **Destroy After Boot** : Option pour supprimer la configuration Cloud Init après le premier démarrage
+- **Cloud Config** : Allgemeine Konfiguration (Hostname, Benutzer, Pakete usw.)
+- **Network Config** : Netzwerkkonfiguration im Netplan v2-Format
+- **Destroy After Boot** : Option zum Löschen der Cloud Init-Konfiguration nach dem ersten Start
 
 :::info
-Cette étape est entièrement optionnelle. Si vous n'avez pas besoin de Cloud Init, laissez les champs par défaut et passez à l'étape suivante.
+Dieser Schritt ist vollständig optional. Wenn Sie Cloud Init nicht benötigen, lassen Sie die Felder auf den Standardwerten und fahren Sie mit dem nächsten Schritt fort.
 :::
 
-### Étape 4 : Configuration des disques
+### Schritt 4: Konfiguration der Festplatten
 
-Gérez les disques virtuels de votre machine virtuelle. Les disques du modèle sont automatiquement ajoutés et ne peuvent pas être supprimés.
+Verwalten Sie die virtuellen Festplatten Ihrer virtuellen Maschine. Die Festplatten des Modells werden automatisch hinzugefügt und können nicht gelöscht werden.
 
-Pour chaque disque, configurez :
+Konfigurieren Sie für jede Festplatte Folgendes:
 
-- **Nom** : Nom unique du disque
-- **Capacité** : Taille du disque avec sélection de l'unité (Mo, Go, To)
-- **Block Storage** : Stockage de destination
+- **Name** : Eindeutiger Name der Festplatte
+- **Kapazität** : Größe der Festplatte mit Auswahl der Einheit (MB, GB, TB)
+- **Block Storage** : Ziel-Speicher
 
-Vous pouvez ajouter jusqu'à 24 disques virtuels au total. Cliquez sur **Ajouter un disque** pour créer un nouveau disque.
+Sie können insgesamt bis zu 24 virtuelle Festplatten hinzufügen. Klicken Sie auf **Festplatte hinzufügen**, um eine neue Festplatte zu erstellen.
 
 :::warning
-Si vous configurez Cloud Init, au moins un disque est obligatoire pour stocker la configuration.
+Wenn Sie Cloud-Init konfigurieren, ist mindestens eine Festplatte erforderlich, um die Konfiguration zu speichern.
 :::
 
-### Étape 5 : Configuration des adaptateurs réseau
+### Schritt 5: Konfiguration der Netzwerkadapter
 
-Configurez les interfaces réseau de votre machine virtuelle (maximum 7 adaptateurs).
+Konfigurieren Sie die Netzwerkinterfaces Ihrer virtuellen Maschine (maximal 7 Adapter).
 
-Pour chaque adaptateur réseau :
+Für jeden Netzwerkadapter:
 
-- **Réseau** : Sélectionnez le réseau virtuel (avec indication VPC ou Private Backbone)
-- **Adresse MAC** : Optionnelle, générée automatiquement si non spécifiée
+- **Netzwerk** : Wählen Sie das virtuelle Netzwerk (mit Hinweis auf VPC oder Private Backbone)
+- **MAC-Adresse** : Optional, wird automatisch generiert, wenn nicht angegeben
 
-:::info VPC
-La configuration des réseaux VPC n'est disponible que depuis l'onglet Réseau de la machine virtuelle une fois l'opération terminée. La configuration depuis ce formulaire sera disponible prochainement.
+:::info[VPC]
+Die Konfiguration von VPC-Netzwerken ist erst nach Abschluss des Vorgangs über den Reiter „Netzwerk“ der virtuellen Maschine verfügbar. Die Konfiguration über dieses Formular wird in Kürze bereitgestellt.
 :::
 
-Cliquez sur **Ajouter un adaptateur réseau** pour créer une nouvelle interface.
+Klicken Sie auf **Netzwerkadapter hinzufügen**, um eine neue Schnittstelle zu erstellen.
 
-### Étape 6 : Haute disponibilité
+### Schritt 6: Hohe Verfügbarkeit
 
-Configurez le niveau de haute disponibilité de votre machine virtuelle.
+Konfigurieren Sie die Hochverfügbarkeitsstufe Ihrer virtuellen Maschine.
 
 :::tip
-Pour plus d'informations sur la configuration de la haute disponibilité et les différents modes disponibles, consultez le guide dédié : [Gestion de la haute disponibilité d'une machine virtuelle](./high_availability/manage_vm)
+Weitere Informationen zur Konfiguration der Hochverfügbarkeit und den verfügbaren Modi finden Sie im dazugehörigen Leitfaden: [Verwaltung der Hochverfügbarkeit einer virtuellen Maschine](./high_availability/manage_vm)
 :::
 
-### Étape 7 : Résumé et validation
+### Schritt 7: Zusammenfassung und Validierung
 
-Vérifiez l'ensemble de votre configuration avant de créer la machine virtuelle.
+Überprüfen Sie Ihre gesamte Konfiguration, bevor Sie die virtuelle Maschine erstellen.
 
-Le résumé affiche tous les paramètres configurés :
-- Informations générales (nom, CPU, RAM)
-- Modèle sélectionné
-- Cloud Init (si configuré)
-- Disques
-- Adaptateurs réseau
-- Haute disponibilité
+Die Zusammenfassung zeigt alle konfigurierten Parameter an:
 
-Cliquez sur **Créer** pour lancer le déploiement de votre machine virtuelle.
+- Allgemeine Informationen (Name, CPU, RAM)
+- Ausgewähltes Modell
+- Cloud-Init (falls konfiguriert)
+- Datenträger
+- Netzwerkadapter
+- Hohe Verfügbarkeit
+
+Klicken Sie auf **Erstellen**, um die Bereitstellung Ihrer virtuellen Maschine zu starten.
 
 ---
 
-## Méthode 2 : Import depuis un fichier XVA
+## Methode 2: Import aus einer XVA-Datei
 
-Cette méthode permet d'importer une machine virtuelle depuis un fichier au format XVA (XenServer Virtual Appliance).
+Diese Methode ermöglicht den Import einer virtuellen Maschine aus einer Datei im XVA-Format (XenServer Virtual Appliance).
 
-### Présentation du format XVA
+### Beschreibung des XVA-Formats
 
-Le format XVA est le format d'export/import natif de XCP-ng et XenServer. Il contient une machine virtuelle complète avec ses disques et sa configuration.
+Das XVA-Format ist das native Export-/Importformat von XCP-ng und XenServer. Es enthält eine vollständige virtuelle Maschine mit ihren Festplatten und ihrer Konfiguration.
 
-### Étape 1 : Nom de la machine virtuelle
+### Schritt 1: Name der virtuellen Maschine
 
-Définissez le nom de votre machine virtuelle.
+Legen Sie den Namen Ihrer virtuellen Maschine fest.
 
-Le nom doit respecter les mêmes règles que pour le déploiement depuis un modèle (caractères alphanumériques, tirets, underscores, points et espaces).
+Der Name muss denselben Regeln entsprechen wie bei der Bereitstellung aus einer Vorlage (alphanumerische Zeichen, Bindestriche, Unterstriche, Punkte und Leerzeichen).
 
-### Étape 2 : Upload du fichier XVA
+### Schritt 2: XVA-Datei hochladen
 
-Importez votre fichier XVA depuis votre ordinateur.
+Laden Sie Ihre XVA-Datei von Ihrem Computer hoch.
 
 :::info
-Le fichier doit avoir l'extension `.xva`. Les noms de fichiers ne doivent contenir que des caractères alphanumériques, tirets, underscores et points (pas d'espaces).
+Die Datei muss die Erweiterung `.xva` haben. Dateinamen dürfen nur alphanumerische Zeichen, Bindestriche, Unterstriche und Punkte enthalten (keine Leerzeichen).
 :::
 
-Glissez-déposez votre fichier dans la zone prévue ou cliquez pour sélectionner le fichier depuis votre explorateur.
+Ziehen Sie Ihre Datei in den vorgesehenen Bereich oder klicken Sie, um die Datei über Ihren Datei-Explorer auszuwählen.
 
-### Étape 3 : Sélection du stockage
+### Schritt 3: Speicherauswahl
 
-Choisissez le stockage de destination pour votre machine virtuelle importée.
+Wählen Sie den Zielspeicher für Ihre importierte virtuelle Maschine.
 
-Sélectionnez un Block Storage dans l'arborescence. Le système vérifie automatiquement que l'espace disponible est suffisant pour accueillir votre fichier XVA.
+Wählen Sie einen Block Storage im Verzeichnisbaum aus. Das System überprüft automatisch, ob der verfügbare Speicherplatz ausreicht, um Ihre XVA-Datei aufzunehmen.
 
-### Étape 4 : Résumé et validation
+### Schritt 4: Zusammenfassung und Validierung
 
-Vérifiez les informations avant de lancer l'import.
+Überprüfen Sie die Informationen, bevor Sie den Import starten.
 
-Le résumé affiche :
-- Le nom de la VM
-- Le type de déploiement (XVA)
-- Le fichier XVA et sa taille
-- Le stockage de destination
+Die Zusammenfassung zeigt:
 
-Cliquez sur **Créer** pour lancer l'import de votre machine virtuelle.
+- Der Name der VM
+- Der Bereitstellungstyp (XVA)
+- Die XVA-Datei und ihre Größe
+- Der Zielspeicher
 
-### À propos de l'option skip_set_template
+Klicken Sie auf **Erstellen**, um den Import Ihrer virtuellen Maschine zu starten.
 
-Lors de l'import d'un fichier XVA, l'option `skip_set_template` détermine si le résultat de l'import sera une machine virtuelle directement utilisable ou un modèle. Cette option est notamment utilisée avec des outils d'automatisation comme Packer. Plus d'informations : [documentation XCP-ng](https://xcp-ng.org/blog/2024/02/22/using-packer-with-xcp-ng/).
+### Über die Option skip_set_template
+
+Beim Import einer XVA-Datei bestimmt die Option `skip_set_template`, ob das Importergebnis eine direkt verwendbare virtuelle Maschine oder eine Vorlage ist. Diese Option wird insbesondere mit Automatisierungstools wie Packer verwendet. Weitere Informationen: [Dokumentation XCP-ng](https://xcp-ng.org/blog/2024/02/22/using-packer-with-xcp-ng/).
 
 ---
 
-## Méthode 3 : Déploiement depuis le Marketplace
+## Methode 3: Bereitstellung über den Marketplace
 
-Le Marketplace Cloud Temple propose des images de machines virtuelles certifiées et prêtes à l'emploi.
+Der Cloud Temple Marketplace bietet zertifizierte und sofort einsatzbereite Images für virtuelle Maschinen an.
 
-### Sélection d'une image Marketplace
+### Auswahl eines Marketplace-Images
 
-Parcourez le catalogue des images disponibles pour OpenIaaS.
+Durchsuchen Sie den Katalog der für OpenIaaS verfügbaren Images.
 
-Seules les images compatibles avec la plateforme OpenIaaS sont affichées.
+Es werden nur mit der OpenIaaS-Plattform kompatible Images angezeigt.
 
-### Configuration de la machine virtuelle
+### Konfiguration der virtuellen Maschine
 
-La configuration depuis le Marketplace suit un processus similaire au déploiement depuis un modèle, avec quelques spécificités :
+Die Konfiguration über den Marketplace folgt einem ähnlichen Prozess wie die Bereitstellung aus einem Modell, mit einigen Besonderheiten:
 
-- Les caractéristiques système (OS, CPU, RAM) sont prédéfinies par l'image Marketplace
-- Vous pouvez personnaliser le nom de la VM
-- Cloud Init est disponible pour la configuration initiale
-- Le mapping réseau permet d'associer les interfaces réseau de l'image à vos réseaux
+- Die Systemmerkmale (OS, CPU, RAM) sind durch das Marketplace-Image vorgegeben
+- Sie können den Namen der VM anpassen
+- Cloud Init ist für die Erstkonfiguration verfügbar
+- Das Netzwerk-Mapping ermöglicht die Zuordnung der Netzwerkschnittstellen des Images zu Ihren Netzwerken
 
 :::tip
-Pour un guide détaillé du déploiement Marketplace, consultez le tutoriel dédié : [Déployer une image sur OpenIaaS](../../marketplace/tutorials/deploy_openiaas)
+Für eine detaillierte Anleitung zur Marketplace-Bereitstellung lesen Sie das entsprechende Tutorial: [Bereitstellen eines Images auf OpenIaaS](../../marketplace/tutorials/deploy_openiaas)
 :::
 
 ---
 
-## Bonnes pratiques
+## Best Practices
 
-### Choix de la méthode de déploiement
+### Wahl der Bereitstellungsmethode
 
-- **Modèle** : Idéal pour des déploiements standards et répétitifs au sein de votre organisation
-- **XVA** : Recommandé pour migrer des VMs existantes ou utiliser des images personnalisées
-- **Marketplace** : Parfait pour démarrer rapidement avec des images certifiées et maintenues
+- **Modell** : Ideal für standardmäßige und wiederkehrende Bereitstellungen innerhalb Ihrer Organisation
+- **XVA** : Empfohlen für die Migration bestehender VMs oder die Verwendung benutzerdefinierter Images
+- **Marketplace** : Ideal für den schnellen Start mit zertifizierten und gewarteten Images
 
-### Configuration des ressources
+### Konfiguration der Ressourcen
 
-- **CPU et RAM** : Dimensionnez selon les besoins réels de votre charge de travail
-- **Disques** : Prévoyez une marge de croissance pour éviter les redimensionnements futurs
+- **CPU und RAM** : Dimensionieren Sie diese entsprechend den tatsächlichen Anforderungen Ihrer Workload
+- **Datenträger** : Planen Sie eine Wachstumsmarge ein, um zukünftige Größenanpassungen zu vermeiden
 
-### Haute disponibilité
+### Hohe Verfügbarkeit
 
-- Activez le mode **Restart** pour les applications critiques
-- Utilisez **Best-Effort** pour les environnements moins critiques
+- Aktivieren Sie den **Restart**-Modus für kritische Anwendungen
+- Verwenden Sie **Best-Effort** für weniger kritische Umgebungen
 
 ### Cloud Init
 
-- Utilisez Cloud Init pour standardiser la configuration de vos VMs
-- Documentez vos configurations Cloud Init pour faciliter leur réutilisation
-- Testez vos configurations sur des VMs de test avant déploiement en production
+- Verwenden Sie Cloud Init, um die Konfiguration Ihrer VMs zu standardisieren
+- Dokumentieren Sie Ihre Cloud-Init-Konfigurationen, um deren Wiederverwendung zu erleichtern
+- Testen Sie Ihre Konfigurationen auf Test-VMs, bevor Sie sie in der Produktion bereitstellen
 
-### Sécurité
+### Sicherheit
 
-- Utilisez des noms explicites pour faciliter l'identification et la gestion
-- Planifiez une stratégie de sauvegarde dès la création de la VM
+- Verwenden Sie aussagekräftige Namen, um die Identifizierung und Verwaltung zu erleichtern
+- Planen Sie eine Backup-Strategie bereits bei der Erstellung der VM

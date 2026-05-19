@@ -1,6 +1,9 @@
 ---
-title: MCO/MCS
+title: MCO/MCS PaaS OpenShift
+slug: /contractual/paas/mco-mcs
+displayed_sidebar: docSidebar
 ---
+
 
 **Politique de Maintien en Conditions Opérationnelles (MCO) et de Maintien en Conditions de Sécurité (MCS) sur le PaaS OpenShift SNC **Cloud Temple****
 

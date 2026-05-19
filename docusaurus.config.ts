@@ -61,6 +61,10 @@ const config: Config = {
   },
   stylesheets: [
     {
+      href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap',
+      type: 'text/css',
+    },
+    {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
       type: 'text/css',
       integrity:
@@ -184,13 +188,28 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Contractual',
+          items: [
+            {
+              label: 'Contractual Documents',
+              to: '/contracts',
+            },
+            {
+              label: 'Shared Responsibility Model',
+              to: '/shared-responsibility',
+            },
+          ],
+        },
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/governance">Contracts</a> |
-        <a href="/privacy">Privacy Policy</a>
+        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contracts</a> |
+        <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
         <br />
-        Copyright © ${new Date().getFullYear()} Cloud Temple.
+        Copyright © 2026 Cloud Temple.
+        <br />
+        <span style="font-size: 0.8em; color: var(--ifm-footer-link-color);">Version: ${process.env.APP_VERSION || 'dev'}</span>
       </div>
     `,
     },
