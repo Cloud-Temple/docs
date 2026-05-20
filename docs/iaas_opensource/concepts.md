@@ -402,7 +402,7 @@ La réplication Cloud Temple s'appuie sur une infrastructure __qualifiée SecNum
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Continuité d'activité   | Protection de vos services critiques en cas d'incident majeur sur le site principal.                                                          |
 | Protection géographique | Réplication vers une zone de disponibilité distincte, protégeant contre les sinistres localisés.                                             |
-| Flexibilité temporelle  | Choix de l'intervalle de réplication selon vos besoins : de 1 minute à 24 heures.                                                            |
+| Flexibilité temporelle  | Choix de l'intervalle de réplication selon vos besoins : de 15 minutes à 24 heures.                                                          |
 | Simplicité de gestion   | Configuration et surveillance entièrement intégrées à la Console Cloud Temple.                                                                |
 | Conformité SecNumCloud  | Infrastructure qualifiée garantissant le plus haut niveau de sécurité pour vos données sensibles.                                             |
 
@@ -420,8 +420,20 @@ La création d'une politique de réplication définit les paramètres de protect
 
 | Intervalle              | Usage recommandé                           | RPO (Perte de données max) |
 |-------------------------|--------------------------------------------|-----------------------------|
-| __1 à 59 minutes__      | Applications critiques temps réel         | < 1 heure                   |
+| __15 à 59 minutes__     | Applications critiques temps réel         | < 1 heure                   |
 | __1 à 24 heures__       | Applications métier et environnements standard | < 24 heures               |
+
+:::warning[RPO : objectif non garanti contractuellement]
+L'intervalle de réplication configuré (par exemple 15 minutes) constitue un **objectif de RPO (Recovery Point Objective)**, et non un engagement contractuel.
+
+Le RPO effectivement atteint dépend directement du **taux de changement (change rate)** des données sur les machines virtuelles répliquées. Si le volume de données modifiées entre deux cycles de réplication est trop important, le transfert peut ne pas se terminer dans l'intervalle configuré. Dans ce cas, le cycle suivant ne démarrera qu'une fois le précédent achevé, ce qui allonge de facto le RPO réel.
+
+**En résumé :**
+- Le RPO minimum configurable est de **15 minutes**.
+- Ce RPO est atteignable uniquement si le taux de changement des données reste compatible avec la bande passante de réplication disponible.
+- **Aucun SLA n'est associé au RPO** : il s'agit d'un objectif « best effort » dont le respect dépend des caractéristiques de la charge de travail.
+- Pour les charges à fort taux d'écriture (bases de données, journaux transactionnels, etc.), il est recommandé de prévoir un intervalle de réplication plus large et de compléter avec une stratégie de sauvegarde applicative.
+:::
 
 #### Association des machines virtuelles
 
@@ -455,7 +467,7 @@ Le tableau des réplicas vous permet de visualiser :
 
 #### Recommandations par type de charge
 
-- __Applications critiques__ : Réplication toutes les 1-30 minutes pour minimiser la perte de données
+- __Applications critiques__ : Réplication toutes les 15-30 minutes pour minimiser la perte de données
 - __Applications métier__ : Réplication horaire ou bi-horaire selon les besoins
 - __Environnements de développement__ : Réplication quotidienne généralement suffisante
 
