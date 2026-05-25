@@ -68,9 +68,11 @@ Conçue pour la production et les applications critiques, cette architecture dis
 - **Cas d'usage** : Applications de production, services critiques, plateformes nécessitant un SLA.
 - **Points clés** :
   - **Haute Disponibilité** : 3 nœuds Control Plane répartis sur 3 AZ.
+  - **Stockage Dédié** : 3 nœuds de stockage dédiés et répartis pour la performance et la résilience.
   - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
   - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-  - **SLA de 99.90%**, mesurée mensuellement.
+  - **SLA de 99.95%**, mesurée mensuellement.
+
 
 <img src={archiOverview} alt="Architecture Multi-AZ" />
 

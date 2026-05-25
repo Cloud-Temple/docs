@@ -83,7 +83,7 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 
 ## SLA & Information sur le support
 
-- **Disponibilité garantie (production 3 AZ)** : 99.90 %
+- **Disponibilité garantie (production 3 AZ)** : 99.95 %
 - **Support** : N1/N2/N3 inclus pour le périmètre socle (infrastructure et opérateurs standards).
 - **Engagement de temps de rétablissement (ETR)** : selon contrat cadre Cloud Temple.
 - **Maintenance (MCO)** : patching régulier Talos / Kubernetes / opérateurs standards par MSP, sans interruption de service (rolling upgrade).
@@ -113,16 +113,16 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
 |---|---|---|---|---|
-| AZ07  | Git Runner   | 4  | 8 Go | OS: 64 Go  |
-| AZ05  | Control Plane 1   | 8  | 12 Go | OS: 64 Go  |
-| AZ06  | Control Plane 2   | 8  | 12 Go | OS: 64 Go  |
-| AZ07  | Control Plane 3   | 8  | 12 Go | OS: 64 Go  |
-| AZ05  | Storage Node 1    | 12 | 24 Go | OS: 64 Go + Ceph 500 Go minimum (*) |
-| AZ06  | Storage Node 2    | 12 | 24 Go | OS: 64 Go + Ceph 500 Go minimum (*)|
-| AZ07  | Storage Node 3    | 12 | 24 Go | OS: 64 Go + Ceph 500 Go minimum (*)|
-| AZ05  | Worker Node 1 (**)   | 12 | 24 Go | OS: 64 Go |
-| AZ06  | Worker Node 2 (**)   | 12 | 24 Go | OS: 64 Go |
-| AZ07  | Worker Node 3 (**)   | 12 | 24 Go | OS: 64 Go |
+| AZ07  | Git Runner   | 4  | 8 Go | OS: 256 Go  |
+| AZ05  | Control Plane 1   | 8  | 12 Go | OS: 128 Go  |
+| AZ06  | Control Plane 2   | 8  | 12 Go | OS: 128 Go  |
+| AZ07  | Control Plane 3   | 8  | 12 Go | OS: 128 Go  |
+| AZ05  | Storage Node 1    | 12 | 24 Go | OS: 128 Go + Ceph 500 Go minimum (*) |
+| AZ06  | Storage Node 2    | 12 | 24 Go | OS: 128 Go + Ceph 500 Go minimum (*)|
+| AZ07  | Storage Node 3    | 12 | 24 Go | OS: 128 Go + Ceph 500 Go minimum (*)|
+| AZ05  | Worker Node 1 (**)   | 12 | 24 Go | OS: 128 Go |
+| AZ06  | Worker Node 2 (**)   | 12 | 24 Go | OS: 128 Go |
+| AZ07  | Worker Node 3 (**)   | 12 | 24 Go | OS: 128 Go |
 
 (*) : Chaque noeud de stockage est livré avec un minimum de 500 Go d'espace disque, pour un stockage utile Ceph distribué de 500 Go (les données sont répliquées sur chaque AZ, donc x3). L'espace libre disponible pour le client est d'environ 350 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins. Des quotas sont appliqués sur Ceph, avec une répartition Block/File.
 
@@ -137,10 +137,10 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 | **AZ**  | **Machine**   | **vCores** | **RAM** | **Stockage local**  |
 |---|---|---|---|---|
 | AZ0n  | Git Runner   | 4  | 8 Go | OS: 30 Go  |
-| AZ0n  | Control Plane    | 8  | 12 Go | OS: 64 Go  |
-| AZ0n  | Worker Node 1 (**)   | 12 | 24 Go | OS: 64 Go + Ceph 300 Go minimum (*) |
-| AZ0n  | Worker Node 2 (**)   | 12 | 24 Go | OS: 64 Go + Ceph 300 Go minimum (*) |
-| AZ0n  | Worker Node 3 (**)   | 12 | 24 Go | OS: 64 Go + Ceph 300 Go minimum (*) |
+| AZ0n  | Control Plane    | 8  | 12 Go | OS: 128 Go  |
+| AZ0n  | Worker Node 1 (**)   | 12 | 24 Go | OS: 128 Go + Ceph 300 Go minimum (*) |
+| AZ0n  | Worker Node 2 (**)   | 12 | 24 Go | OS: 128 Go + Ceph 300 Go minimum (*) |
+| AZ0n  | Worker Node 3 (**)   | 12 | 24 Go | OS: 128 Go + Ceph 300 Go minimum (*) |
 
 (*) : 3 Worker nodes sont utilisés comme Storage nodes et sont livrés avec un minimum de 300 Go d'espace disque, pour un stockage utile distribué de 300 Go (les données sont répliquées trois fois). L'espace libre disponible pour le client est d'environ 150 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins.
 
