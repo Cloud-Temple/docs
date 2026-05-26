@@ -217,10 +217,10 @@
 1. **Extensions tutoriels existants** : Cas d'usage sectoriels
 2. **Amélioration continue traductions** : Qualité des traductions automatiques
 
-## 🐍 Système de Traduction Python - ✅ CORRIGÉ (14/05/2026)
+## 🐍 Système de Traduction Python - ✅ OPÉRATIONNEL (26/05/2026)
 
 **Localisation** : `scripts/translate_py/`
-**Status** : Production Ready — bug chunking corrigé
+**Status** : Production Ready — configuration CLI, dry-run sans token, build multilingue validé
 
 ### ✅ Correction majeure : chunking code-block-aware
 
@@ -232,6 +232,15 @@
 - ✅ **`_split_large_block()` corrigé** : Ne coupe jamais au milieu d'un bloc de code
 - ✅ **Test validé** : Blocs de code Python/Bash correctement préservés
 
+### ✅ Configuration API sans `.env`
+
+- ✅ **Options CLI ajoutées** : `--token`, `--url`, `--model`
+- ✅ **Priorité explicite** : les options CLI surchargent les variables d'environnement
+- ✅ **Modèle par défaut** : `qwen3.6:27b`
+- ✅ **Endpoint par défaut** : `https://api.ai.cloud-temple.com/v1/chat/completions`
+- ✅ **Dry-run robuste** : `--dry-run` et `--init` sans `--translate-missing` restent utilisables sans token API
+- ✅ **Validation build** : `npm run build` passe pour `fr`, `en`, `es`, `it`, `de` après installation des dépendances
+
 ---
 
-*État de la documentation au 14/05/2026 - Memory Bank Cloud Temple*
+*État de la documentation au 26/05/2026 - Memory Bank Cloud Temple*

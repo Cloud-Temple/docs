@@ -520,6 +520,9 @@ class TranslationEngine:
 @click.option('--debug', is_flag=True, help='Mode debug avec logs détaillés')
 @click.option('--no-debug-system-prompt', is_flag=True, help='Masque le prompt système en mode debug')
 @click.option('--test-api', is_flag=True, help='Test la connexion API et sort')
+@click.option('--token', help='Token Bearer Cloud Temple LLMaaS. Prioritaire sur CLOUDTEMPLE_API_KEY.')
+@click.option('--url', 'api_url', default=None, help='URL de l’API de traduction. Par défaut: https://api.ai.cloud-temple.com/v1/chat/completions')
+@click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.6:27b')
 @click.version_option(version="2.0.0", prog_name="Cloud Temple Translation System")
 def main(
     dry_run: bool,
@@ -529,7 +532,10 @@ def main(
     lang: Optional[str],
     debug: bool,
     no_debug_system_prompt: bool,
-    test_api: bool
+    test_api: bool,
+    token: Optional[str],
+    api_url: Optional[str],
+    model_name: Optional[str]
 ) -> None:
     """
     Système de traduction automatique pour la documentation Cloud Temple.
@@ -545,7 +551,10 @@ def main(
         lang=lang,
         debug=debug,
         no_debug_system_prompt=no_debug_system_prompt,
-        test_api=test_api
+        test_api=test_api,
+        token=token,
+        api_url=api_url,
+        model_name=model_name
     ))
 
 
@@ -557,7 +566,10 @@ async def _async_main(
     lang: Optional[str],
     debug: bool,
     no_debug_system_prompt: bool,
-    test_api: bool
+    test_api: bool,
+    token: Optional[str],
+    api_url: Optional[str],
+    model_name: Optional[str]
 ) -> None:
     """Version asynchrone du main."""
     
@@ -567,7 +579,7 @@ async def _async_main(
     
     try:
         # Chargement de la configuration
-        config = load_config()
+        config = load_config(api_key=token, api_url=api_url, model=model_name)
         require_api = test_api or (not dry_run and (not init or translate_missing))
         validate_environment(config, require_api=require_api)
         

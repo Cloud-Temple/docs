@@ -67,18 +67,31 @@ Système de traduction Python avancé utilisant l'API Cloud Temple LLMaaS avec u
 # Installation des dépendances
 cd scripts/translate_py
 pip install -r requirements.txt
-
-# Configuration (copier depuis .env.example)
-cp .env.example .env
-# Éditer .env avec vos paramètres
 ```
 
-#### Variables d'environnement (.env)
+#### Configuration API
+
+Le token peut être fourni directement en ligne de commande. C'est l'usage recommandé pour éviter de recréer un fichier `.env` local :
+
+```bash
+python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
+```
+
+Les options CLI sont prioritaires sur les variables d'environnement :
+
+- `--token` : token Bearer Cloud Temple LLMaaS
+- `--url` : URL API, par défaut `https://api.ai.cloud-temple.com/v1/chat/completions`
+- `--model` : modèle de traduction, par défaut `qwen3.6:27b`
+
+Les commandes qui ne font pas d'appel API (`--dry-run`, `--init` sans `--translate-missing`) restent utilisables sans token.
+
+Les variables d'environnement restent supportées :
+
 ```bash
 # API Configuration
 CLOUDTEMPLE_API_KEY=your_api_key_here
 CLOUDTEMPLE_API_URL=https://api.ai.cloud-temple.com/v1/chat/completions
-TRANSLATION_MODEL=qwen3:30b-a3b
+TRANSLATION_MODEL=qwen3.6:27b
 
 # Performance Settings
 CONCURRENT_TRANSLATIONS=8         # Nombre de traductions simultanées
@@ -102,6 +115,7 @@ python translate.py --force                      # Force retraduction
 python translate.py --lang=en                    # Traduction anglaise uniquement
 python translate.py --debug                      # Mode debug avec logs détaillés
 python translate.py --test-api                   # Test de connexion API
+python translate.py --token "$CLOUDTEMPLE_API_KEY" --model qwen3.6:27b
 ```
 
 #### Options Disponibles
@@ -113,6 +127,9 @@ python translate.py --test-api                   # Test de connexion API
 - `--debug` : Mode debug avec logs détaillés
 - `--no-debug-system-prompt` : Masque le prompt système en debug
 - `--test-api` : Test la connexion API et affiche le résultat
+- `--token=<token>` : Token Bearer Cloud Temple LLMaaS
+- `--url=<url>` : URL API de traduction
+- `--model=<model>` : Modèle de traduction
 
 #### Fonctionnalité .notranslation
 Placez un fichier `.notranslation` dans un répertoire pour forcer la **copie** (au lieu de la traduction) de tous les fichiers de ce répertoire :
@@ -191,7 +208,7 @@ scripts/translate_py/
 ├── translation-meta.json    # 🔍 Métadonnées et hash SHA-256
 ├── requirements.txt         # 📦 Dépendances Python
 ├── .env.example            # 📝 Template configuration
-└── .env                   # 🔒 Configuration locale
+└── .env                   # 🔒 Configuration locale optionnelle
 ```
 
 #### Détection des Changements par Hash SHA-256

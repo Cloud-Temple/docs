@@ -162,35 +162,37 @@ Ces termes restent en français ou anglais technique dans toutes les langues :
 - **Réglementations** : Mentionner équivalents locaux (GDPR, etc.)
 - **Support** : Références aux équipes régionales
 
-## Intégration avec `/scripts/translate.js`
+## Intégration avec `scripts/translate_py/translate.py`
 
 ### Configuration Automatique
-Le script de traduction doit respecter :
+Le script Python de traduction doit respecter :
 
-```javascript
-// Termes à ne JAMAIS traduire
-const INVARIANT_TERMS = [
-  'Cloud Temple', 'Console', 'SecNumCloud', 'ANSSI',
-  'API', 'endpoint', 'cluster', 'namespace', 'container',
-  'IaaS', 'PaaS', 'SaaS', 'DevOps', 'CI/CD'
-];
+- Les termes invariants : Cloud Temple, Console, SecNumCloud, ANSSI, API, endpoint, cluster, namespace, container, IaaS, PaaS, SaaS, DevOps, CI/CD.
+- Les termes techniques cloud à conserver en anglais : pod, node, subnet, VLAN, VPN, SSH, SSL, TLS.
+- La structure Markdown et MDX : front matter, admonitions, tableaux, liens, blocs de code et imports.
+- Les fichiers sous `i18n/` ne doivent jamais être modifiés manuellement : ils sont générés par le script.
+- Les répertoires contenant `.notranslation` sont copiés sans traduction et validés par hash.
 
-// Termes techniques cloud (garder en anglais)
-const TECHNICAL_TERMS = [
-  'pod', 'node', 'subnet', 'VLAN', 'VPN', 'SSH', 'SSL', 'TLS'
-];
-```
+### Configuration API
+
+Le script accepte la configuration par options CLI, prioritaires sur l'environnement :
+
+- `--token` : token Bearer Cloud Temple LLMaaS, prioritaire sur `CLOUDTEMPLE_API_KEY`.
+- `--url` : endpoint API, prioritaire sur `CLOUDTEMPLE_API_URL`, défaut `https://api.ai.cloud-temple.com/v1/chat/completions`.
+- `--model` : modèle de traduction, prioritaire sur `TRANSLATION_MODEL`, défaut `qwen3.6:27b`.
+
+Le token n'est pas requis pour les commandes qui n'appellent pas l'API, notamment `--dry-run` et `--init` sans `--translate-missing`.
 
 ### Workflow Automatisé
 ```bash
-# 1. Traduire nouveau contenu français
-yarn translate:new
+# 1. Vérifier ce qui serait traduit
+python scripts/translate_py/translate.py --dry-run
 
-# 2. Valider terminologie
-yarn translate:validate
+# 2. Traduire les fichiers modifiés
+python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
 
-# 3. Générer glossaire
-yarn translate:glossary
+# 3. Valider le build multilingue
+npm run build
 ```
 
 ## Processus de Validation
@@ -339,5 +341,5 @@ yarn i18n:coverage-report
 
 ---
 
-*Guidelines de traduction Cloud Temple - 05/06/2025*
+*Guidelines de traduction Cloud Temple - mises à jour le 26/05/2026*
 *Référence pour maintenir la qualité multilingue*

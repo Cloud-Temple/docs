@@ -469,22 +469,22 @@
       "it": "ffb7e6f257a44d999881f783ad0090f55ae9b5ca49ed68c49eba273e04553469"
     },
     "managed_kubernetes/concepts.md": {
-      "en": "e635db629d8230906fd2c24abcbed41fc72c802b27cb5cedb37b4c43c0c3192f",
-      "de": "e635db629d8230906fd2c24abcbed41fc72c802b27cb5cedb37b4c43c0c3192f",
-      "es": "e635db629d8230906fd2c24abcbed41fc72c802b27cb5cedb37b4c43c0c3192f",
-      "it": "e635db629d8230906fd2c24abcbed41fc72c802b27cb5cedb37b4c43c0c3192f"
+      "en": "0d2394399e974f1d74c9a0f66bc4904c511f851e017bf17a5e95267cf8bdeb13",
+      "de": "0d2394399e974f1d74c9a0f66bc4904c511f851e017bf17a5e95267cf8bdeb13",
+      "es": "0d2394399e974f1d74c9a0f66bc4904c511f851e017bf17a5e95267cf8bdeb13",
+      "it": "0d2394399e974f1d74c9a0f66bc4904c511f851e017bf17a5e95267cf8bdeb13"
     },
     "managed_kubernetes/managed_core_kubernetes.md": {
-      "en": "2b5bb0920aa123fedb3c3b32c045eebfca6d4246a8a63e9ee740892ffd4e2d4c",
-      "de": "2b5bb0920aa123fedb3c3b32c045eebfca6d4246a8a63e9ee740892ffd4e2d4c",
-      "es": "2b5bb0920aa123fedb3c3b32c045eebfca6d4246a8a63e9ee740892ffd4e2d4c",
-      "it": "2b5bb0920aa123fedb3c3b32c045eebfca6d4246a8a63e9ee740892ffd4e2d4c"
+      "en": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5",
+      "de": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5",
+      "es": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5",
+      "it": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5"
     },
     "managed_kubernetes/managed_kubernetes.md": {
-      "en": "56f627452754875f65319e3a25da00a162bf722baed236d2ed6484d2b28624d0",
-      "de": "56f627452754875f65319e3a25da00a162bf722baed236d2ed6484d2b28624d0",
-      "es": "56f627452754875f65319e3a25da00a162bf722baed236d2ed6484d2b28624d0",
-      "it": "56f627452754875f65319e3a25da00a162bf722baed236d2ed6484d2b28624d0"
+      "en": "87f56bcd4457c7735cb09f10eb837394270ec728d77146ec87593619f2f0dd01",
+      "de": "87f56bcd4457c7735cb09f10eb837394270ec728d77146ec87593619f2f0dd01",
+      "es": "87f56bcd4457c7735cb09f10eb837394270ec728d77146ec87593619f2f0dd01",
+      "it": "87f56bcd4457c7735cb09f10eb837394270ec728d77146ec87593619f2f0dd01"
     },
     "managed_kubernetes/quickstart.md": {
       "en": "fde0faf47a49061b775d46275863c709a0796bd4d2a1da3a6b0de0919296e198",
@@ -943,6 +943,6 @@
       "it": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0"
     }
   },
-  "last_update": "2026-05-17T18:00:15.357380",
+  "last_update": "2026-05-26T22:36:02.595411",
   "version": "2.0"
 }
