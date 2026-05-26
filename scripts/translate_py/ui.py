@@ -621,13 +621,15 @@ class TranslationUI:
     def confirm_dry_run(self, job: TranslationJob) -> bool:
         """Demande confirmation pour un dry run."""
         self.console.print()
+        tasks_to_process = [task for task in job.tasks if task.needs_translation]
         
         # Informations du dry run
         dry_run_info = Table(show_header=False, box=None)
         dry_run_info.add_column("Label", width=20)
         dry_run_info.add_column("Value", width=40)
         
-        dry_run_info.add_row("📊 Tâches à traiter", f"[yellow]{len(job.tasks)}[/yellow]")
+        dry_run_info.add_row("📊 Tâches scannées", f"[dim]{len(job.tasks)}[/dim]")
+        dry_run_info.add_row("📊 Tâches à traiter", f"[yellow]{len(tasks_to_process)}[/yellow]")
         dry_run_info.add_row("🗣️ Langues", f"[magenta]{', '.join(job.target_languages)}[/magenta]")
         dry_run_info.add_row("🔄 Force retraduction", f"[cyan]{'Oui' if job.force_retranslation else 'Non'}[/cyan]")
         
@@ -640,6 +642,10 @@ class TranslationUI:
         
         self.console.print(panel)
         self.console.print()
+
+        if not sys.stdin.isatty():
+            self.console.print("[yellow]Entrée non interactive détectée : poursuite automatique du dry-run.[/yellow]")
+            return True
         
         response = input(f"❓ Continuer ? [y/N]: ")
         return response.lower() in ['y', 'yes', 'oui']
