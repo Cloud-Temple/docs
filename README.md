@@ -190,33 +190,33 @@ The system uses SHA-256 hashing to intelligently detect modified files, ensuring
     pip install -r requirements.txt
     ```
 
-2. __Configure Environment__:
-    Copy the example `.env` file and add your API key.
+2. __Configure API Access__:
+    Pass the Cloud Temple LLMaaS token directly on the command line, or keep using environment variables if preferred. The CLI options take precedence over environment variables.
 
     ```bash
-    # From the scripts/translate_py directory
-    cp .env.example .env
-    # Now, edit the .env file with your credentials
+    python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
     ```
+
+    The default API URL is `https://api.ai.cloud-temple.com/v1/chat/completions` and the default translation model is `qwen3.6:27b`. Both can be overridden with `--url` and `--model`.
 
 3. __Run Translation__:
     After adding or modifying content in the `/docs` directory, run the translation from the project root.
 
     ```bash
     # Translate all modified files to all supported languages
-    python scripts/translate_py/translate.py
+    python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
 
     # Perform a dry run to see what would be translated
     python scripts/translate_py/translate.py --dry-run
 
     # Translate only one language
-    python scripts/translate_py/translate.py --lang=en
+    python scripts/translate_py/translate.py --lang=en --token "$CLOUDTEMPLE_API_KEY"
 
     # Force retranslation of all files
-    python scripts/translate_py/translate.py --force
+    python scripts/translate_py/translate.py --force --token "$CLOUDTEMPLE_API_KEY"
 
     # Test API connection
-    python scripts/translate_py/translate.py --test-api
+    python scripts/translate_py/translate.py --test-api --token "$CLOUDTEMPLE_API_KEY"
     ```
 
 ### How It Works

@@ -27,7 +27,7 @@ class TranslationConfig(BaseModel):
     
     # Configuration modèle
     model: str = Field(
-        default="qwen3:30b-a3b",
+        default="qwen3.6:27b",
         description="Modèle utilisé pour la traduction"
     )
     model_type: str = Field(
@@ -115,10 +115,19 @@ class LanguageConfig(BaseModel):
     COPYABLE_EXTENSIONS: set = {'.png', '.png', '.jpeg', '.gif', '.svg', '.docx', '.pdf'}
 
 
-def load_config() -> TranslationConfig:
+def load_config(
+    api_key: Optional[str] = None,
+    api_url: Optional[str] = None,
+    model: Optional[str] = None
+) -> TranslationConfig:
     """
     Charge la configuration depuis les variables d'environnement.
     
+    Args:
+        api_key: Clé API fournie en ligne de commande. Prioritaire sur l'environnement.
+        api_url: URL API fournie en ligne de commande. Prioritaire sur l'environnement.
+        model: Modèle fourni en ligne de commande. Prioritaire sur l'environnement.
+
     Returns:
         TranslationConfig: Configuration chargée et validée
         
@@ -139,9 +148,9 @@ def load_config() -> TranslationConfig:
     
     # Construction de la configuration depuis les variables d'environnement
     config_data = {
-        'api_url': os.getenv('CLOUDTEMPLE_API_URL'),
-        'api_key': os.getenv('CLOUDTEMPLE_API_KEY'),
-        'model': os.getenv('TRANSLATION_MODEL'),
+        'api_url': api_url or os.getenv('CLOUDTEMPLE_API_URL'),
+        'api_key': api_key or os.getenv('CLOUDTEMPLE_API_KEY'),
+        'model': model or os.getenv('TRANSLATION_MODEL'),
         'model_type': os.getenv('MODEL_TYPE'),
         'temperature': _get_float_env('TRANSLATION_TEMPERATURE'),
         'top_p': _get_float_env('TRANSLATION_TOP_P'),

@@ -12,8 +12,8 @@ title: Overview
   </div>
   <div class="card">
     <h3>Getting Started Guide</h3>
-    <p>Get started quickly by following clear and simple instructions.</p>
-    <a href="./managed_kubernetes/quickstart" class="card-link">Start the Quickstart &rarr;</a>
+    <p>Get up and running quickly by following clear and straightforward instructions.</p>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Launch Quickstart &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>
@@ -22,19 +22,19 @@ title: Overview
   </div>
 </div>
 
-Managed Kubernetes by Cloud Temple is a container orchestration solution based on Open Source products, designed to provide a high level of security, resilience, and automation on Cloud Temple's SecNumcloud platforms. Each cluster is deployed in a fully client-dedicated Cloud-Temple IaaS environment.
+Managed Kubernetes by Cloud Temple is a container orchestration solution based on Open Source products, designed to deliver a high level of security, resilience, and automation on Cloud Temple's SecNumCloud platforms.
 
-This product is designed for teams with solid Kubernetes knowledge and open source enthusiasts seeking a native, portable, vendor-neutral solution on a minimalist, immutable OS designed for automation and security.
+This product is designed for teams with a solid understanding of Kubernetes and open-source advocates seeking a native, portable solution without vendor lock-in, running on a minimalist and immutable OS built for automation and security.
 
 ### Key Benefits
 
-- **Sovereignty and Reversibility** : The solution relies on open source standards (Kubernetes CNCF) to avoid technological lock-in and ensure the portability of your applications. The Veeam Kasten backup tool, included in the product, is specifically designed to facilitate migrations from one cloud to another.
-- **"Zero-Trust" Security and Governance** : The architecture is built on Talos OS, an immutable operating system with no direct access (no shell, no SSH), which drastically reduces the attack surface. This approach is combined with governance tools such as Kyverno for policy management and Capsule for fine-grained rights management, forming a solid foundation for a "Zero-Trust" security strategy.
-- **Cost Management and Integration** : The solution natively integrates FinOps tools such as OpenCost for precise consumption tracking. The pricing model is transparent, based on consumed IaaS resources, and the use of recognized open source components (Cilium, Ceph, ArgoCD) facilitates integration into your existing ecosystems.
+- **Sovereignty and Reversibility**: The solution leverages open-source standards (CNCF Kubernetes) to avoid any technological dependency and ensure the portability of your applications. The Veeam Kasten backup tool, included in the product, is specifically designed to facilitate migrations from one cloud to another.
+- **"Zero-Trust" Security and Governance**: The architecture is built on Talos OS, an immutable operating system with no direct access (no shell, no SSH), which drastically reduces the attack surface. This approach is coupled with governance tools such as Kyverno for policy management and Capsule for fine-grained rights management, providing a solid foundation for a "Zero-Trust" security strategy.
+- **Cost Management and Integration**: The solution natively integrates FinOps tools such as OpenCost for precise consumption tracking. The pricing model is transparent, based on consumed IaaS resources, and the use of recognized open-source components (Cilium, Ceph, ArgoCD) facilitates integration into your existing ecosystems.
 
 ### A complete and ready-to-use platform
 
-The solution natively includes a complete and coherent stack of cutting-edge open source tools to cover all application lifecycle requirements:
+The solution natively includes a comprehensive and cohesive stack of cutting-edge open-source tools to cover all application lifecycle needs:
 
 - **Networking and Security** : Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
 - **Storage** : Rook-Ceph
@@ -49,48 +49,48 @@ The solution natively includes a complete and coherent stack of cutting-edge ope
 
 We offer two distinct architectures to meet your needs, whether for development environments or critical production environments.
 
-### "Dev/Test" Architecture
+### Architecture "Dev/Test"
 
-Ideal for POC environments, this compact architecture deploys all resources within a single Availability Zone (AZ).
+Ideal for POC environments, this compact architecture deploys all resources within a single availability zone (AZ).
 
-- **Use Case** : Development, testing, proof-of-concept (POC).
-- **Key Points** :
+- **Use cases** : Development, testing, proof-of-concept (POC).
+- **Key points** :
   - 1 Control Plane node.
   - 3 Worker nodes (or more).
   - Distributed storage (Ceph) is co-located on the worker nodes.
-  - Does not benefit from a high availability SLA.
-  - No security restrictions
+  - Does not include a high availability SLA.
+  - no security restrictions
 
 <img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Single-AZ Architecture" />
 
 ### Production Architecture (Multi-AZ)
 
-Designed for production and critical applications, this architecture distributes resources across three Availability Zones (AZ) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
+Designed for production and critical applications, this architecture distributes resources across three availability zones (AZs) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
 
-- **Use Case**: Production applications, critical services, platforms requiring an SLA.
-- **Key Points**:
-  - **High Availability**: 3 Control Plane nodes distributed across 3 AZs.
-  - **Dedicated Storage**: 3 dedicated and distributed storage nodes for performance and resilience.
-  - **Distributed Workers**: At least 3 worker nodes, one per AZ.
-  - **Bare Metal Nodes (Optional)**: Integration of **"Bare Metal"** worker nodes is possible for specific performance requirements, particularly **GPU support**.
-  - **99.90% SLA**.
+- **Use Case** : Production applications, critical services, platforms requiring an SLA.
+- **Key Points** :
+  - **High Availability** : 3 Control Plane nodes distributed across 3 AZs.
+  - **Dedicated Storage** : 3 dedicated and distributed storage nodes for performance and resilience.
+  - **Distributed Workers** : At least 3 worker nodes, one per AZ.
+  - **Bare Metal Nodes (Optional)** : Possible integration of **"Bare Metal"** type worker nodes for specific performance needs, notably **GPU support**.
+  - **99.95% SLA**.
 
 <img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Architecture Multi-AZ" />
 
 ---
 
-### Detailed technical components
+### Detailed Technical Components
 
-The offer includes the following components in detail:
+The offering includes the following components in detail:
 
-- CNI Cilium, with observability interface (Hubble)
-- Internal and external MetalLB and nginx Ingresses
-- Distributed storage Rook-Ceph
+- Cilium CNI, with observability interface (Hubble)
+- Internal and external Ingresses with MetalLB and nginx
+- Rook-Ceph distributed storage
 - Cert-Manager
 - ArgoCD
 - Prometheus stack (Prometheus, Grafana, Loki)
-- Container registry Harbor
+- Harbor container registry
 - Cost management with OpenCost
 - Advanced security policies with Kyverno and Capsule
-- Veeam Kasten (backup, cross-environment automations, and reversibility)
+- Veeam Kasten (backup, cross-environment automation, and rollback)
 - SSO authentication with an external OIDC Identity Provider (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)

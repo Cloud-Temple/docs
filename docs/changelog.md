@@ -5,6 +5,12 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 26 Mai 2026 : Amélioration du workflow de traduction
+
+- **Traduction (outillage)** : Ajout des options `--token`, `--url` et `--model` au script Python `scripts/translate_py/translate.py`. Le token API peut désormais être fourni directement en ligne de commande, sans recréer de fichier `.env`. Les options CLI sont prioritaires sur les variables d'environnement.
+- **Traduction (configuration)** : Mise à jour du modèle de traduction par défaut vers `qwen3.6:27b`, avec conservation de l'endpoint Cloud Temple LLMaaS par défaut `https://api.ai.cloud-temple.com/v1/chat/completions`.
+- **Traduction (dry-run)** : Le workflow de simulation reste utilisable sans token API, afin de vérifier les fichiers à traduire avant toute exécution réelle.
+
 ### 4 Mai 2026 : Correctifs de sécurité — image Docker (CVE Alpine)
 
 - **Sécurité (Docker)** : Ajout de `apk upgrade --no-cache` dans le stage final `nginx:stable-alpine` des Dockerfiles de production (`Dockerfile` et `Dockerfile.prebuilt`). Cette mise à jour corrige l'ensemble des CVE Critical et High détectées par Harbor/Trivy sur l'image `3.24.3`, liées aux packages Alpine figés : `libcrypto3`, `libssl3`, `libxml2`, `libxslt`, `libexpat`, `libpng`, `zlib`, `c-ares`, `musl`, `xz-libs`, `busybox`, `curl`. Le prochain build produira une image avec tous ces packages à leur dernière version corrigée.

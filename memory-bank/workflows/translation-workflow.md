@@ -17,12 +17,15 @@ Le script `scripts/translate_py/translate.py` est l'outil central de ce workflow
 ### Prérequis
 - Python 3.8+
 - Les dépendances listées dans `scripts/translate_py/requirements.txt`.
-- Un fichier `.env` correctement configuré dans `scripts/translate_py/`. Utilisez `scripts/translate_py/.env.example` comme modèle.
+- Un token Cloud Temple LLMaaS pour les exécutions qui appellent l'API. Le token peut être fourni en CLI avec `--token` ou via `CLOUDTEMPLE_API_KEY`.
 
-### Configuration Essentielle (`.env`)
-- `CLOUDTEMPLE_API_KEY`: **Obligatoire**. Votre clé d'accès à l'API LLMaaS de Cloud Temple.
-- `CLOUDTEMPLE_API_URL`: Optionnel. L'URL de l'endpoint de l'API. Par défaut : `https://api.ai.cloud-temple.com/v1/chat/completions`.
-- `TRANSLATION_MODEL`: Optionnel. Le modèle LLM à utiliser pour la traduction. Par défaut : `qwen3:30b-a3b`.
+### Configuration Essentielle
+
+Les options CLI sont prioritaires sur les variables d'environnement :
+
+- `--token` / `CLOUDTEMPLE_API_KEY`: token Bearer Cloud Temple LLMaaS. Requis pour une traduction réelle ou `--test-api`, non requis pour `--dry-run`.
+- `--url` / `CLOUDTEMPLE_API_URL`: endpoint de l'API. Par défaut : `https://api.ai.cloud-temple.com/v1/chat/completions`.
+- `--model` / `TRANSLATION_MODEL`: modèle LLM à utiliser pour la traduction. Par défaut : `qwen3.6:27b`.
 - `MODEL_TYPE`: Optionnel. Le type de modèle pour la gestion du tokenizer ('openai' ou 'other'). Par défaut : `other`.
 - `CONCURRENT_TRANSLATIONS`: Optionnel. Nombre de fichiers traités en parallèle. Par défaut : `4`.
 - `MAX_MODEL_CONTEXT_LENGTH`: Optionnel. La longueur maximale du contexte du modèle. Par défaut : `32768`.
@@ -56,6 +59,9 @@ Le script `scripts/translate_py/translate.py` est l'outil central de ce workflow
 -   `--translate-missing`: En mode de traduction normal, se concentre sur la traduction des fichiers qui n'ont pas encore de version traduite dans une langue cible, sans forcément retraduire ceux qui existent déjà (sauf si leur source a changé).
 -   `--lang=<code>`: Permet de cibler une seule langue pour la traduction (ex: `--lang=en`).
 -   `--debug`: Active le mode de débogage avec des logs détaillés, y compris les payloads des requêtes API.
+-   `--token=<token>`: Fournit le token Bearer Cloud Temple LLMaaS directement en CLI.
+-   `--url=<url>`: Remplace l'endpoint API par défaut.
+-   `--model=<model>`: Remplace le modèle de traduction par défaut.
 
 ### Langues Supportées
 -   Source : Français (contenu dans `docs/`)
@@ -76,7 +82,7 @@ Le script `scripts/translate_py/translate.py` est l'outil central de ce workflow
 -   **Préservation du formatage** : Le prompt système de l'API est conçu pour préserver au maximum la structure Markdown, les blocs de code, et les éléments HTML.
 
 ## 📈 Suivi et Qualité
--   Le fichier `scripts/translation-meta.json` est crucial et doit être versionné avec le code.
+-   Le fichier `scripts/translate_py/translation-meta.json` est crucial et doit être versionné avec le code.
 -   Une relecture humaine des traductions générées est recommandée, surtout pour les contenus critiques ou complexes.
 -   Les erreurs de traduction ou les problèmes de formatage doivent être signalés pour améliorer le prompt système ou le script.
 
@@ -109,6 +115,19 @@ Test unitaire validé : un document avec des `# commentaires Python` et `## faux
 Depuis avril 2026, les images dans la documentation utilisent des chemins absolus `@site/docs/...` au lieu de chemins relatifs `./images/...`. Les versions i18n référencent directement les images sources, donc **les images n'ont plus besoin d'être dupliquées** dans les dossiers `i18n/`.
 
 **Modification** : Dans `file_manager.py`, la méthode `_needs_translation()` retourne maintenant `False` pour tous les fichiers non-Markdown (images, .docx, .pdf, etc.). Cela économise ~2500 fichiers inutiles (613 images × 4 langues).
+
+## 🔧 Mise à jour du 26/05/2026 : configuration API en CLI
+
+Le script `translate.py` accepte désormais `--token`, `--url` et `--model`. Cette évolution évite de dépendre d'un fichier `.env` local pour lancer une traduction réelle depuis un poste de travail.
+
+Points opérationnels :
+
+- `--token` est prioritaire sur `CLOUDTEMPLE_API_KEY`.
+- `--url` est prioritaire sur `CLOUDTEMPLE_API_URL`.
+- `--model` est prioritaire sur `TRANSLATION_MODEL`.
+- Le modèle par défaut est `qwen3.6:27b`.
+- L'URL par défaut reste `https://api.ai.cloud-temple.com/v1/chat/completions`.
+- `--dry-run` et `--init` sans `--translate-missing` ne nécessitent pas de token API.
 
 ## 🚀 Prochaines Étapes / Améliorations Possibles
 
