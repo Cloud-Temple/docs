@@ -93,24 +93,17 @@ Les options CLI sont prioritaires sur les variables d'environnement :
 
 Les commandes qui ne font pas d'appel API (`--dry-run`, `--init` sans `--translate-missing`) restent utilisables sans token.
 
-Les variables d'environnement restent supportées :
+Les variables d'environnement restent supportées (groupes : API, modèle, performance, mode debug). **Pour la liste complète, les valeurs par défaut et les plages valides, voir [`translate_py/.env.example`](./translate_py/.env.example)** — chaque variable y est documentée inline.
+
+Pour démarrer rapidement :
 
 ```bash
-# API Configuration
-CLOUDTEMPLE_API_KEY=your_api_key_here
-CLOUDTEMPLE_API_URL=https://api.ai.cloud-temple.com/v1/chat/completions
-TRANSLATION_MODEL=qwen3.6:27b
-
-# Performance Settings
-CONCURRENT_TRANSLATIONS=8         # Nombre de traductions simultanées
-MAX_TOKENS_PER_BLOCK=5000        # Taille max des blocs de traduction
-MAX_RETRIES=5                    # Nombre de tentatives par traduction
-RETRY_DELAY=5.0                  # Délai entre tentatives (secondes)
-
-# Model Parameters
-TRANSLATION_TEMPERATURE=0.1      # Créativité du modèle (0.0-2.0)
-TRANSLATION_TOP_P=1.0           # Nucleus sampling (0.0-1.0)
+cd scripts/translate_py
+cp .env.example .env
+# Renseigner CLOUDTEMPLE_API_KEY puis lancer translate.py depuis la racine du projet
 ```
+
+> 💡 **Source unique** : le fichier `.env.example` est la référence pour les noms de variables, leurs défauts et leurs plages valides. Ne pas dupliquer cette liste dans le README pour éviter les divergences avec le code (`config.py`).
 
 #### Utilisation
 ```bash
