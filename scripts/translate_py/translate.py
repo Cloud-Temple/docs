@@ -568,7 +568,8 @@ async def _async_main(
     try:
         # Chargement de la configuration
         config = load_config()
-        validate_environment(config)
+        require_api = test_api or (not dry_run and (not init or translate_missing))
+        validate_environment(config, require_api=require_api)
         
         # Affichage de la configuration
         paths = {k: str(v) for k, v in get_paths(config).items()}

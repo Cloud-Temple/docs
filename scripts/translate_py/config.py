@@ -96,13 +96,6 @@ class TranslationConfig(BaseModel):
         """Convertit le chemin en objet Path."""
         return Path(v)
     
-    @validator('api_key')
-    def validate_api_key(cls, v) -> Optional[str]:
-        """Valide la présence de la clé API si nécessaire."""
-        if not v and not os.getenv('TRANSLATION_LOCAL_MODE'):
-            raise ValueError("CLOUDTEMPLE_API_KEY est requis")
-        return v
-
 
 class LanguageConfig(BaseModel):
     """Configuration des langues supportées."""
@@ -235,12 +228,13 @@ def _find_project_root(start_path: Path) -> Path:
     return Path(".").resolve()
 
 
-def validate_environment(config: TranslationConfig) -> bool:
+def validate_environment(config: TranslationConfig, require_api: bool = True) -> bool:
     """
     Valide l'environnement d'exécution.
     
     Args:
         config: Configuration à valider
+        require_api: Exige une clé API pour les modes qui appellent le service distant
         
     Returns:
         True si l'environnement est valide
@@ -259,7 +253,7 @@ def validate_environment(config: TranslationConfig) -> bool:
     paths['i18n'].mkdir(exist_ok=True)
     
     # Vérification de la clé API en mode distant
-    if not os.getenv('TRANSLATION_LOCAL_MODE') and not config.api_key:
+    if require_api and not os.getenv('TRANSLATION_LOCAL_MODE') and not config.api_key:
         raise ValueError("CLOUDTEMPLE_API_KEY requis pour l'API distante")
     
     return True

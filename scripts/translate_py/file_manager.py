@@ -302,8 +302,6 @@ class TaskBuilder:
             
             # Vérifier si le fichier est dans un répertoire .notranslation
             force_copy = self._is_in_notranslation_directory(file_path, notranslation_dirs)
-            if force_copy:
-                print(f"📋 Fichier forcé en copie (répertoire .notranslation): {relative_path}")
             
             # Calcul du hash pour les fichiers traduisibles (même si force_copy)
             current_hash = None
@@ -324,6 +322,7 @@ class TaskBuilder:
                     target_path=target_path,
                     current_hash=current_hash,
                     stored_hash=stored_hash,
+                    force_copy=force_copy,
                     force_retranslation=force_retranslation,
                     init_mode=init_mode,
                     translate_missing=translate_missing
@@ -411,6 +410,7 @@ class TaskBuilder:
         target_path: Path,
         current_hash: Optional[str],
         stored_hash: Optional[str],
+        force_copy: bool,
         force_retranslation: bool,
         init_mode: bool,
         translate_missing: bool
@@ -423,6 +423,7 @@ class TaskBuilder:
             target_path: Chemin cible
             current_hash: Hash actuel du fichier source
             stored_hash: Hash stocké en métadonnées
+            force_copy: Fichier markdown à copier sans traduction
             force_retranslation: Forcer la retraduction
             init_mode: Mode initialisation
             translate_missing: Traduire les fichiers manquants
@@ -436,6 +437,16 @@ class TaskBuilder:
         # Pour les nouveaux contenus, utiliser @site/docs/... (chemins absolus).
         if file_type != FileType.MARKDOWN:
             return False
+
+        # Fichiers markdown sous .notranslation : traiter comme une copie.
+        # Ils ne sont pas nécessairement présents dans translation-meta.json.
+        # La source de vérité est donc l'identité source/cible, pas le hash stocké.
+        if force_copy:
+            if not target_path.exists():
+                return True
+
+            target_hash = self.file_hasher.compute_file_hash(target_path)
+            return current_hash != target_hash
         
         # Fichiers markdown : vérification du hash
         if not target_path.exists():
