@@ -177,70 +177,10 @@ python scripts/generate_models_doc/generate_models_doc.py
 
 ## 🌍 Translation System
 
-This documentation supports 5 languages: __French (source)__, English, German, Spanish, and Italian. The primary content is written in French (in the `/docs/` directory) and automatically translated using an advanced Python system powered by the __Cloud Temple LLMaaS API__.
+The documentation supports 5 languages: __French (source)__, English, German, Spanish, and Italian. The French content in `/docs/` is the source — translations are generated automatically via the **Cloud Temple LLMaaS API**, with SHA-256 change detection so only modified files are re-translated. The API token is passed via the `--token` CLI flag (recommended) or environment variables.
 
-The system uses SHA-256 hashing to intelligently detect modified files, ensuring that only new or changed content is sent for translation. It features a modern command-line interface with real-time progress and detailed statistics.
+> ⚠️ **Never edit files in `i18n/` manually** — they are overwritten on each translation run. Always edit the French source in `/docs/`.
 
-### Quick Start
-
-1. __Install Dependencies__:
-
-    ```bash
-    cd scripts/translate_py
-    pip install -r requirements.txt
-    ```
-
-2. __Configure API Access__:
-    Pass the Cloud Temple LLMaaS token directly on the command line, or keep using environment variables if preferred. The CLI options take precedence over environment variables.
-
-    ```bash
-    python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
-    ```
-
-    The default API URL is `https://api.ai.cloud-temple.com/v1/chat/completions` and the default translation model is `qwen3.6:27b`. Both can be overridden with `--url` and `--model`.
-
-3. __Run Translation__:
-    After adding or modifying content in the `/docs` directory, run the translation from the project root.
-
-    ```bash
-    # Translate all modified files to all supported languages
-    python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
-
-    # Perform a dry run to see what would be translated
-    python scripts/translate_py/translate.py --dry-run
-
-    # Translate only one language
-    python scripts/translate_py/translate.py --lang=en --token "$CLOUDTEMPLE_API_KEY"
-
-    # Force retranslation of all files
-    python scripts/translate_py/translate.py --force --token "$CLOUDTEMPLE_API_KEY"
-
-    # Test API connection
-    python scripts/translate_py/translate.py --test-api --token "$CLOUDTEMPLE_API_KEY"
-    ```
-
-### How It Works
-
-The translation system tracks changes via SHA-256 hashes stored in `scripts/translate_py/translation-meta.json`:
-
-1. When you modify a file in `docs/`, its hash changes
-2. `translate.py` detects the mismatch and sends only modified files to the LLMaaS API
-3. After successful translation, the new hash is saved → file is marked as "up to date"
-
-### Important Rules
-
-> ⚠️ **Never edit files in `i18n/` manually.** Always modify the French source in `docs/` and run `translate.py`. Manual edits in `i18n/` will be overwritten on the next translation run.
-
-> 🖼️ **Image paths must use absolute Docusaurus paths.** Always reference images with `@site/docs/<path>/images/file.png` instead of relative paths (`./images/` or `../images/`). This ensures images resolve correctly in all languages without needing copies in `i18n/`.
-
-> 💡 **Excluding directories from translation:** Place a `.notranslation` file in any directory under `docs/` to force file **copying** instead of translation (useful for license files, code snippets, etc.).
-
-### Scripts Overview
-
-| Script | Purpose | Updates hash? |
-|--------|---------|:---:|
-| `scripts/translate_py/translate.py` | Main translation (FR → EN/DE/ES/IT via LLMaaS API) | ✅ |
-| `scripts/extract_changelog.py` | Generate product changelog in all languages from `maj.js` | ✅ |
-| `scripts/generate_models_doc/generate_models_doc.py` | Generate LLMaaS models doc (FR source only) | N/A (triggers retranslation) |
+➡️ **Full setup (venv, install, token, usage, rules and troubleshooting):** see the [__Scripts Documentation__](./scripts/README.md).
 
 > For a complete list of commands, advanced features, and troubleshooting, please see the detailed [__Scripts Documentation__](./scripts/README.md).

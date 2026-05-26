@@ -63,9 +63,17 @@ Système de traduction Python avancé utilisant l'API Cloud Temple LLMaaS avec u
 - ✅ **Mode initialisation** : Génération et gestion des métadonnées
 
 #### Installation et Configuration
+
+> 💡 **Recommandé** : créer un environnement virtuel Python pour ne pas polluer le Python système. Le dossier `.venv/` est déjà ignoré par git. Pensez à réactiver le venv à chaque nouvelle session terminal.
+
 ```bash
-# Installation des dépendances
+# 1. Création d'un environnement virtuel Python (recommandé)
 cd scripts/translate_py
+python3 -m venv .venv
+source .venv/bin/activate      # macOS / Linux
+# .venv\Scripts\activate       # Windows (PowerShell / cmd)
+
+# 2. Installation des dépendances (venv activé, le prompt affiche (.venv))
 pip install -r requirements.txt
 ```
 
@@ -130,6 +138,14 @@ python translate.py --token "$CLOUDTEMPLE_API_KEY" --model qwen3.6:27b
 - `--token=<token>` : Token Bearer Cloud Temple LLMaaS
 - `--url=<url>` : URL API de traduction
 - `--model=<model>` : Modèle de traduction
+
+#### ⚠️ Règles importantes
+
+> ❌ **Ne jamais éditer les fichiers dans `i18n/` manuellement.** Toujours modifier la source française dans `docs/` puis lancer `translate.py`. Toute modification manuelle dans `i18n/` sera **écrasée** au prochain run de traduction.
+
+> 🖼️ **Chemins d'images en absolu Docusaurus.** Toujours référencer les images via `@site/docs/<chemin>/images/file.png` au lieu de chemins relatifs (`./images/` ou `../images/`). Cela garantit que les images se résolvent correctement dans toutes les langues sans avoir à dupliquer les fichiers dans `i18n/`.
+
+> 💡 **Exclure un répertoire de la traduction :** placez un fichier `.notranslation` dans le répertoire concerné (voir ci-dessous).
 
 #### Fonctionnalité .notranslation
 Placez un fichier `.notranslation` dans un répertoire pour forcer la **copie** (au lieu de la traduction) de tous les fichiers de ce répertoire :
