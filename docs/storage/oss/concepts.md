@@ -43,39 +43,47 @@ Le service OSS propose deux mécanismes **complémentaires mais distincts** pour
 
 | Mécanisme | Effet | Configuration |
 |---|---|---|
-| **Politique de cycle de vie (lifecycle)** | **Supprime ou transitionne automatiquement** les objets après un délai défini. Action *active* du service. | API S3 standard : `PutBucketLifecycleConfiguration` (ex. via `aws s3api`) |
-| **Protection de suppression** | **Empêche** toute modification ou suppression des objets pendant un délai défini. Verrou *passif*. | Paramètre du bucket dans la console Cloud Temple |
+| **Politique de cycle de vie (lifecycle)** | Marque les objets comme expirés à l'issue d'un délai défini. Le comportement effectif (suppression réelle ou non) dépend de la configuration de la plateforme. | API S3 : `PutBucketLifecycleConfiguration` |
+| **Protection de suppression** | **Empêche** toute modification ou suppression des objets pendant un délai défini. Verrou *immuable*. | **Demande à faire auprès du support Cloud Temple** |
 
 :::warning Ne pas confondre
-- Une **politique de cycle de vie** *supprime* automatiquement les objets en fin de période.
-- La **Protection de suppression** *bloque* les suppressions pendant la période, mais ne supprime rien.
+- La **politique de cycle de vie** est un mécanisme *actif* : elle peut déclencher la suppression d'objets en fin de période (selon la configuration de la plateforme).
+- La **Protection de suppression** est un mécanisme *passif* : elle bloque toute suppression pendant la période, mais ne supprime jamais rien d'elle-même.
 
-Les deux peuvent coexister sur un même bucket : un objet protégé contre la suppression ne sera pas supprimé par une politique de lifecycle tant que sa période de protection n'est pas écoulée.
+Les deux mécanismes interagissent : si une protection de suppression couvre des objets également visés par une politique de cycle de vie, **la protection prime** et empêche l'expiration tant qu'elle est active.
 :::
 
 ### Politique de cycle de vie (lifecycle)
 
-Une politique de cycle de vie permet d'**automatiser la suppression** d'objets après un nombre de jours défini, ou de supprimer les versions antérieures dans un bucket versionné. Elle suit le standard S3 et se configure via l'API (`PutBucketLifecycleConfiguration`).
+Une politique de cycle de vie se configure via l'API S3 standard (`PutBucketLifecycleConfiguration`). Elle permet de déclarer une intention d'expiration d'objets après un nombre de jours défini, et/ou d'expirer les versions antérieures dans un bucket versionné.
 
 Cas d'usage typiques :
-- Purge automatique de logs après 30 jours
+- Purge planifiée de logs après 30 jours
 - Nettoyage de fichiers temporaires à intervalle régulier
-- Rétention limitée pour limiter les coûts de stockage
+- Maîtrise du volume de stockage facturé
 
 Un exemple de configuration JSON et la commande `aws s3api` associée sont fournis dans le [Guide de démarrage → Parcourir un bucket S3](./quickstart.md#parcourir-un-bucket-s3).
 
+:::info Comportement effectif sur Cloud Temple
+La plateforme de stockage objet Cloud Temple repose sur Dell EMC ECS, dont le mécanisme d'expiration des objets (*Lifecycle Delete Scanner*) est désactivé par défaut depuis ECS 3.2.1. **L'application réelle d'une politique de cycle de vie sur un bucket existant peut donc nécessiter une action côté plateforme.** Si une politique posée ne semble pas effacer les objets après le délai configuré, contactez le support Cloud Temple pour valider la configuration de votre infrastructure.
+:::
+
 ### Protection de suppression
 
-La **Protection de suppression** est un paramètre configurable au niveau du bucket, accessible dans l'onglet **Paramètres** de la console. Elle permet de définir une durée pendant laquelle les objets stockés dans le bucket sont protégés contre toute modification ou suppression.
+La **Protection de suppression** est un mécanisme d'immuabilité au niveau du bucket. Une fois activée, elle empêche toute modification ou suppression des objets pendant la durée configurée — y compris par les administrateurs.
+
+:::danger Activation : demande au support Cloud Temple
+La Protection de suppression **n'est pas activable en self-service** depuis la console. Elle doit faire l'objet d'une **demande explicite au support Cloud Temple**, qui configurera la durée souhaitée au niveau du bucket. Cette demande est tracée et engageante.
+:::
 
 **Comportement**
 
 Lorsque la Protection de suppression est activée sur un bucket :
 
-- **Aucun objet ne peut être supprimé** dans le bucket pendant toute la durée configurée, y compris par le propriétaire du bucket.
+- **Aucun objet ne peut être supprimé**, y compris par le propriétaire du bucket **et y compris par les administrateurs Cloud Temple**.
 - **Aucun objet ne peut être modifié** (écrasement d'un objet existant interdit).
-- La protection s'applique à **tous les objets** présents dans le bucket au moment de l'activation, ainsi qu'à ceux ajoutés ultérieurement.
-- À l'expiration de la durée configurée, les objets redeviennent modifiables et supprimables normalement.
+- La protection s'applique à **tous les objets** présents au moment de l'activation, ainsi qu'à ceux ajoutés ultérieurement.
+- À l'expiration de la durée configurée, les objets **redeviennent modifiables et supprimables manuellement** — il n'y a pas de suppression automatique en fin de période.
 
 **Cas d'usage**
 
@@ -84,6 +92,16 @@ Ce mécanisme est particulièrement adapté aux contextes imposant une **immuabi
 - Conformité réglementaire (secteurs santé, finance, défense)
 - Protection contre les suppressions accidentelles ou malveillantes
 - Respect d'obligations d'archivage (ex. : durée légale de conservation des logs)
+
+:::danger Irréversibilité et conséquences contractuelles
+**La durée configurée ne peut être ni raccourcie ni annulée**, ni par le client, ni par Cloud Temple. Concrètement :
+
+- Si une Protection de suppression est posée pour **99 ans** sur un bucket, les données qu'il contient seront **inaccessibles à la suppression pendant 99 ans**, sans recours possible.
+- Cette inviolabilité s'applique également au scénario où le client souhaite **arrêter d'utiliser le service** ou **résilier son contrat** : le volume stocké continue d'exister, occupe une capacité physique, et reste **facturable au prorata du temps restant et du volume** jusqu'à la fin de la période de protection.
+- Aucun mécanisme de bypass n'est prévu, y compris pour les équipes Cloud Temple. La suppression matérielle anticipée des supports physiques n'est pas une option (les médias sont partagés avec d'autres clients dans une infrastructure mutualisée qualifiée SecNumCloud).
+
+**À n'activer qu'en pleine connaissance de cause, et après validation de la durée par votre direction métier et votre direction financière.**
+:::
 
 :::info Différence avec S3 Object Lock standard
 La Protection de suppression Cloud Temple s'applique au **bucket entier** et n'exige pas l'activation préalable du versioning. Elle se distingue de `S3 Object Lock` du standard AWS qui fonctionne **par objet** et nécessite le versioning. Si votre application attend une API `PutObjectLockConfiguration` ou les modes *Compliance* / *Governance* d'AWS, contactez le support Cloud Temple pour valider la compatibilité.
