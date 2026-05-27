@@ -50,20 +50,36 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     Default region name [None]: fr1
     Default output format [None]: json
     ```
+
     Contrairement à `mc`, le client AWS ne sauvegarde pas le point de terminaison (endpoint). Vous devrez le spécifier pour chaque commande avec l'option `--endpoint-url`.
 
     Le point de terminaison de votre service est : `https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com`
 
-    **Astuce :** Pour éviter de taper le endpoint à chaque fois, vous pouvez le définir dans le fichier de configuration AWS (`~/.aws/config`) en créant un profil dédié :
+    :::warning[Compatibilité AWS CLI v2.23.0+ : désactiver le checksum CRC64NVME]
+    Le stockage objet Cloud Temple repose sur une implémentation S3-compatible (Dell EMC ECS) qui ne prend pas en charge le checksum `CRC64NVME` activé par défaut dans AWS CLI à partir de la version **2.23.0** ([changement annoncé par AWS](https://github.com/aws/aws-cli/issues/9214)). Sans configuration spécifique, les uploads peuvent échouer avec une erreur du type `XAmzContentSHA256Mismatch` ou `XAmzContentChecksumMismatch`.
+
+    Désactivez le calcul et la validation des checksums additionnels :
+
+    ```bash
+    ❯ aws configure set request_checksum_calculation when_required
+    ❯ aws configure set response_checksum_validation when_required
+    ```
+    :::
+
+    **Astuce :** Pour éviter de taper le endpoint à chaque fois, vous pouvez le définir dans le fichier de configuration AWS (`~/.aws/config`) en créant un profil dédié qui intègre également ces paramètres :
+
     ```ini
     [profile cloudtemple]
     region = fr1
     output = json
+    request_checksum_calculation = when_required
+    response_checksum_validation = when_required
     s3 =
       endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
     s3api =
       endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
     ```
+
     Vous pourrez ensuite utiliser ce profil avec l'option `--profile cloudtemple` sur chaque commande.
 
   </TabItem>
@@ -107,7 +123,9 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     Dans l'onglet '__Paramètres__' vous pouvez voir le détail des informations de votre bucket S3 :
     <img src={S3Params} />
 
-    **Note importante** : La notion de '__Protection de suppression__' correspond à la durée de protection de la donnée, et non à une suppression programmée. Les données restent accessibles pendant toute la période de configurée. Pour provoquer une suppression automatique des données à l'issue de la période de rétention, il est nécessaire de définir une politique de cycle de vie (lifecycle).
+    :::info Protection de suppression vs. cycle de vie
+    Le paramètre '__Protection de suppression__' visible dans l'onglet **empêche** la suppression des objets pendant la durée configurée — il ne provoque **pas** de suppression automatique. Pour supprimer automatiquement après un délai, il faut une **politique de cycle de vie (lifecycle)** ci-dessous. Voir [Concepts → Gestion du cycle de vie et protection des données](./concepts.md#gestion-du-cycle-de-vie-et-protection-des-données) pour les détails.
+    :::
 
     **Exemple de politique de cycle de vie** (`lifecycle.json`):
 
@@ -141,6 +159,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     --bucket <nom-du-bucket> \
     --lifecycle-configuration file://lifecycle.json
     ```
+
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
     ```bash
@@ -226,7 +245,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     La plateforme vous donne alors la clef d'accès et la clef secrète de votre bucket :
     <img src={S3StorageKeys} />
     __ATTENTION :__ Les clés secrète et d'accès sont présentées une seule fois. Après cette première apparition, il devient impossible de consulter à nouveau la clé secrète. Il est donc essentiel de noter ces informations immédiatement ; faute de quoi, il vous sera nécessaire de générer une nouvelle paire de clés.
-    La regeneration se fait au niveau des options de la clefs en choisissant l'option "Réinitialiser clé d'accès".
+    La regénération se fait au niveau des options de la clef en choisissant l'option "Réinitialiser clé d'accès".
     <img src={S3Keyregen} />
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
@@ -300,3 +319,5 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     La gestion fine des politiques d'accès via le client `mc` (`policy` commands) est une opération avancée. Pour la majorité des cas d'usage, nous recommandons de passer par la console Cloud Temple pour une configuration simplifiée et sécurisée.
   </TabItem>
 </Tabs>
+
+> 📚 Pour comprendre les mécanismes de **versioning, lifecycle et protection de suppression**, voir la section [Concepts → Gestion du cycle de vie et protection des données](./concepts.md#gestion-du-cycle-de-vie-et-protection-des-données).
