@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Avant de commencer, il vous faut un compte Cloud Temple actif et les droits qui vont avec :
 
-- avoir souscrit à l'offre Cloud Temple : organisation, tenant et accès en main ;
+- avoir souscrit à l'offre Cloud Temple ;
 - disposer des droits sur le module Compute.
 
 Une fois ces éléments réunis, le déploiement ne prend que quelques minutes.
@@ -29,13 +29,15 @@ Toute l'administration se fait depuis un navigateur. Une fois le réseau en plac
 On monte deux machines virtuelles :
 
 - **le firewall** lui-même, déployé depuis le template OPNsense ;
-- **une VM de management** avec interface graphique, placée dans le même réseau que la patte LAN du firewall. C'est depuis cette VM qu'on ouvre l'interface web pour tout configurer.
+- **une VM de management** avec interface graphique, placée dans le même réseau que l'interface LAN du firewall. C'est depuis cette VM qu'on réalise la configuration initiale du firewall.
 
-Le firewall a deux pattes : **LAN** (côté réseau interne) et **WAN** (côté Internet). On les configure dans cet ordre, parce qu'on a besoin du LAN fonctionnel pour atteindre l'interface web avant de pouvoir toucher au WAN.
+Le firewall a deux interfaces : **LAN** (côté réseau interne) et **WAN** (côté Internet).  
+Nous allons configurer l'interface LAN pour accéder à l'interface web du firewall pour pouvoir par la suite réaliser la configuration de l'accès Internet.
+
 
 # Étape 1 — Récupérer les paramètres réseau dans Shiva
 
-Tout part de l'interface **Shiva** de Cloud Temple. Avant de déployer quoi que ce soit, notez les éléments suivants selon que votre connexion Internet a été livrée en **IPv4** ou en **IPv6**. Vous en aurez besoin pour monter la session BGP :
+Dans l'interface shiva de cloud temple vous aurez besoin de récupérer les elements suivants pour configurer la session BGP qui donne accès à internet  
 
 - **Préfixe public** : votre bloc d'IP publiques (onglet « IP publiques »)
 - **Préfixe d'interconnexion** : le sous-réseau point-à-point qui porte la liaison BGP (onglet « IP d'interco »)
@@ -59,19 +61,20 @@ Depuis **Shiva** :
 1. déployez le firewall à partir du template OPNsense ;
 2. déployez la VM de management avec interface graphique (Ubuntu par exemple).
 
-Profitez-en pour rattacher les interfaces. La patte **WAN** du firewall doit être dans votre vLAN Internet, avec une IP prise dans le préfixe d'interconnexion fourni par Shiva. On la configurera finement à l'étape 4 ; pour l'instant on la rattache simplement au bon vLAN.
-
+L'interface WAN de votre firewall doit être configurée dans votre vlan Internet avec une IP prise dans le préfixe d'interconnexion fourni par Shiva.
 # Étape 3 — Configurer le LAN et joindre l'interface web
 
-C'est l'étape qui débloque tout le reste.
 
 Sur l'interface **LAN** du firewall, mettez une IP de votre réseau interne, avec son masque de sous-réseau et sa passerelle.
 
 ![Paramètres LAN](/img/screenshots/lan.png)
 
-Placez ensuite la VM de management dans ce même réseau. Pour la démonstration nous utilisons Ubuntu 22.04, avec une IP du même sous-réseau attribuée via Netplan.
+Placez ensuite la VM de management dans ce même réseau.  
+Pour la démonstration nous utilisons Ubuntu 22.04, avec une IP du même sous-réseau attribuée via Netplan.
 
-Vous pouvez maintenant ouvrir un navigateur sur la VM de management et taper l'IP LAN du firewall. L'interface web d'OPNsense apparaît.
+Ouvrez un navigateur sur la VM de management et entrez l'IP LAN du firewall.  
+  
+Vous devriez maintenant pouvoir accéder à l'interface d'administration d'Opensense.
 
 ![Login firewall](/img/screenshots/login-fw.png)
 
@@ -87,7 +90,7 @@ Password : **opnsense**
 Avant d'aller plus loin, remplacez le mot de passe `root` par défaut.
 :::
 
-# Étape 4 — Configurer le WAN
+# Étape 4 — Configuration de l'interface  WAN
 
 Tout se passe désormais dans l'interface web.
 
@@ -99,7 +102,7 @@ Renseignez d'abord la **passerelle** WAN avec l'adresse de passerelle partagée 
 
 ## 4.2 — L'interface WAN
 
-Attribuez à la patte WAN une IP prise dans le préfixe d'interconnexion, et pointez-la vers la passerelle que vous venez de créer.
+Configurez sur l'interface WAN une IP prise dans le préfixe d'interconnexion, et associez l'interface à la passerelle que vous venez de créer.
 
 ![Interface WAN](/img/screenshots/ip-wan.png)
 
@@ -112,7 +115,7 @@ Allez dans **Routing > General** et cochez **Enable**.
 ![Routing General](/img/screenshots/routing-general.png)
 ![Routing BGP](/img/screenshots/routing-bgp.png)
 
-Renseignez ensuite les informations de connexion vers les route servers (toujours depuis Shiva) :
+Renseignez ensuite les informations de connexion vers les route servers :
 
 - les IP des route servers ;
 - le numéro d'AS partenaire.
@@ -134,35 +137,35 @@ Dans **Routing > Static**, ajoutez les routes pour joindre ces serveurs (chacune
 
 ## 5.3 — Redistribution des routes
 
-Autorisez la **redistribution des routes statiques et connectées**. Sans ça, le firewall ne partagera rien avec ses voisins et ne pourra pas annoncer votre préfixe public.
+Autorisez la **redistribution des routes statiques et connectées** pour annoncer votre préfixe publique.
 
 ![Redistribution des routes statiques](/img/screenshots/redistribute-static.png)
 ![Redistribution des routes connectées](/img/screenshots/redistribute-connected.png)
 
 ## 5.4 — Vérifier la session
 
-Direction **Routing > Diagnostic > BGP**. Si tout va bien, le **BGP State** affiche `established`. Tant que vous ne voyez pas cet état, inutile de passer à la suite : l'annonce du préfixe ne fonctionnera pas.
+Direction **Routing > Diagnostic > BGP**.  
+Si les paramètres son bons, le **BGP State** affiche `established`.
 
 ![Peer 1 established](/img/screenshots/peer1-established.png)
 ![Peer 2 established](/img/screenshots/peer2-established.png)
 
 # Étape 6 — Annoncer le préfixe public
 
-Toujours dans **Routing > Static**, créez une route en pointant la passerelle vers la **loopback** du firewall lui-même. Cela crée une route « blackhole ».
+Toujours dans **Routing > Static**, créez une route qui pointe vers la **loopback** du firewall, cela crée une route « blackhole ».
 
-C'est voulu : cette route via la loopback (sans passerelle physique) apparaît dans FRR comme `unreachable`, mais sa présence dans la RIB permet d'annoncer le préfixe aux voisins BGP de façon stable, sans dépendre d'une interface physique qui pourrait tomber.
+Cette route  permet d'annoncer votre préfixe publique aux routes servers.
 
 ![Préfixe public / route blackhole](/img/screenshots/prefix-pub.png)
 
-# Étape 7 — Régler le NAT
+# Étape 7 — Configurer le NAT
 
-Pour finir, quelques règles NAT à saisir manuellement. **L'ordre compte** : les règles « ne pas NATer » doivent passer avant les règles d'accès Internet, sinon le NAT s'applique au trafic BGP et la session tombe.
+Pour finir, quelques règles NAT à saisir manuellement.  
+**L'ordre compte** : les règles « ne pas NATer » doivent passer avant les règles d'accès Internet, sinon le NAT s'applique au trafic BGP et la session tombe.
 
 **Ne pas faire de NAT avec les peers BGP** (celle-ci en tout premier) :
 
-
 **Donner accès à Internet à votre réseau LAN** :
-
 
 **Donner accès à Internet au firewall lui-même**, pour ses mises à jour :
 
@@ -175,11 +178,10 @@ Il ne reste plus qu'à tester la connectivité vers Internet :
 
 # Conclusion
 
-Le firewall OPNsense est déployé, la session BGP est établie et votre préfixe public est annoncé. Avant de considérer la chose terminée :
+Le firewall OPNsense est déployé, les sessions BGP sont établies et votre préfixe public est annoncé.  
 
-- changez le mot de passe `root` si ce n'est pas déjà fait ;
-- écrivez vos règles de firewall selon vos besoins ;
-- prévoyez les mises à jour de sécurité régulières ;
-- surveillez l'état des sessions BGP.
 
-En cas de souci, la documentation officielle d'OPNsense et le support Cloud Temple sont là.
+**Si besoin, la documentation officielle d'OPNsense.**
+
+
+https://docs.opnsense.org/index.html
