@@ -4,7 +4,6 @@ tags:
   - internet
   - tutorials
 ---
-
 import fortiSupport from '../images/forti_support.png';
 import fortiSupportVm01 from '../images/forti_support_vm_01.png';
 import fortiSupportVm02 from '../images/forti_support_vm_02.png';
