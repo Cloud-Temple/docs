@@ -141,6 +141,9 @@ Dans **Routage dynamique**, activez le routage dynamique BIRD et sélectionnez l
 
 Dans l'onglet **BIRD V2**, saisissez la configuration en remplaçant les valeurs par les vôtres (notées à l'étape 1). On déclare un bloc `protocol bgp` par route server.
 
+![Configuration BIRD](/img/screenshots/storm-bird-bgp.png)
+
+
 ```
 router id <ip-wan-firewall>;
 
@@ -209,7 +212,6 @@ Les route servers sont à plus d'un saut, or une session eBGP a un TTL de 1 par 
 
 La directive `route ... blackhole` et le filtre `export_public` remplacent la route blackhole et les cases de redistribution d'OPNsense : on annonce uniquement le préfixe public et on rejette le reste.
 
-![Configuration BIRD](/img/screenshots/storm-bird-bgp.png)
 
 ## 6.4 — Vérifier la session
 
@@ -217,40 +219,36 @@ Depuis l'interface web, ouvrez **Monitoring > Connexions**. Les deux sessions ve
 
 ![Sessions BGP dans Monitoring > Connexions](/img/screenshots/storm-gui-bgp.png)
 
-Pour l'état détaillé des voisins, la vérification se fait en console : `birdc` puis `show protocols`. L'état doit afficher `Established` pour RS1 et RS2.
+La vérification peut également se faire  en console : `birdc` puis `show protocols`. L'état doit afficher `Established` pour RS1 et RS2.
 
 ![birdc show protocols](/img/screenshots/storm-birdc.png)
 
 # Étape 7 — Configurer le filtrage
 
-Sur SNS, le filtrage et le NAT se règlent dans le même module (**Configuration > Politique de sécurité > Filtrage et NAT**), dans deux onglets distincts. Aucune règle n'autorise le trafic par défaut : tout ce qui n'est pas explicitement permis est bloqué par la règle finale `Block all`.
+Le filtrage s'effectue dans Configuration > Politique de sécurité > Filtrage et NAT, onglet Filtrage.
 
-Dans l'onglet **Filtrage**, la politique doit contenir, dans cet ordre :
+Créez les règles de sécurité conformément à la capture ci-dessous. La politique est évaluée de haut en bas : les règles autorisant l'administration du firewall et les sessions BGP doivent être placées avant les règles d'accès Internet. Enfin, la règle Block all doit impérativement rester en dernière position afin de bloquer tout trafic non explicitement autorisé.
 
-| # | Action | Source | Destination | Port | Rôle |
-|---|---|---|---|---|---|
-| 1 | passer | Any | firewall_all | https | Administration web |
-| 2 | passer | Any | firewall_all | icmp | Ping du firewall |
-| 3 | passer | Firewall_out | Route_server_1 | Any | Session BGP 1 |
-| 4 | passer | Firewall_out | Route_server_2 | Any | Session BGP 2 |
-| 5 | passer | Network_in | Any | Any | Accès Internet du LAN |
-| 6 | bloquer | Any | Any | Any | Block all |
+Les règles autorisant les sessions BGP vers les deux route servers sont indispensables au bon établissement du peering.
+
+![Show flow rules](/img/screenshots/storm-rules.png)
 
 La règle `Block all` doit rester en dernière position. Les règles 3 et 4 sont nécessaires pour que les sessions BGP puissent s'établir.
 
 # Étape 8 — Configurer le NAT
 
-Toujours dans **Filtrage et NAT**, onglet **NAT**.
-L'ordre compte : les règles « ne pas NATer » doivent passer avant les règles d'accès Internet, sinon le NAT s'applique au trafic BGP et la session tombe.
+Dans le même menu, ouvrez l'onglet NAT.
 
-La politique NAT contient quatre règles, dans cet ordre :
+Configurez les règles comme indiqué sur la capture ci-dessous. L'ordre est essentiel : les deux premières règles permettent d'exclure le trafic BGP de toute traduction d'adresse, tandis que les deux suivantes réalisent la traduction des flux Internet provenant du LAN et du firewall.
 
-| # | Source | Destination | Source translatée | Rôle |
-|---|---|---|---|---|
-| 1 | Firewall_all | Route_server_1 | Firewall_all | Ne pas NATer le trafic BGP |
-| 2 | Firewall_all | Route_server_2 | Firewall_all | Ne pas NATer le trafic BGP |
-| 3 | Network_int | Internet | loopback | Accès Internet du LAN |
-| 4 | Firewall_all | Internet | loopback | Accès Internet du firewall |
+Pour les règles d'accès Internet, utilisez l'objet Internet comme destination plutôt que Any. Cet objet exclut automatiquement les réseaux directement connectés au firewall, évitant ainsi de NATer les communications d'administration ou les sessions BGP.
+
+Les règles d'exclusion BGP utilisent la même adresse en source avant et après traduction. Cette configuration répond à la contrainte de SNS, qui n'autorise pas de règle NAT sans translation, tout en laissant le trafic BGP inchangé.
+
+Une fois les règles créées, activez la politique (Éditer > Activer cette politique).
+
+![Show NAT](/img/screenshots/storm-nat.png)
+
 
 En destination des règles d'accès Internet (3 et 4), utilisez l'objet **Internet** et non **Any** : l'objet Internet exclut les réseaux directement rattachés au firewall, ce qui évite de NATer le trafic d'administration et le trafic BGP.
 
