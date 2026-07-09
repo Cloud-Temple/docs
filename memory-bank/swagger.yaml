@@ -16,10 +16,8 @@ info:
     altText: Cloud Temple Logo
 
 servers:
-  - url: https://api.ai.cloud-temple.com # Corrigé en HTTP
-    description: Alias DNS pour LB01 (Prod API)
-  - url: https://api.ai.cloud-temple.com # Corrigé en HTTP
-    description: Alias DNS pour LB02 (Préprod API)
+  - url: https://api.ai.cloud-temple.com
+    description: API de production
 
 tags:
   - name: Chat
