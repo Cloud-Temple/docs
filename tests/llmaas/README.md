@@ -54,8 +54,30 @@ python test_audio_transcription.py
 export LLMAAS_API_KEY="votre-token-api-reel"
 ```
 
+### Fichier local optionnel
+```bash
+cp .env.example .env
+```
+
+Le fichier `.env` local ne doit jamais être commité. Les tests d'intégration réels nécessitent une clé fournie par l'environnement.
+>>>>>>> 43e454e868da40722a5f801fca9b55d0b02d39c2
 ### Token par Défaut
 Si non configuré, utilise `test-token-for-docs` (pour tests d'erreurs uniquement).
+
+### Fichier local optionnel
+```bash
+cp .env.example .env
+```
+
+Le fichier `.env` local ne doit jamais être commité. Les tests d'intégration réels nécessitent une clé fournie par l'environnement.
+=======
+### Fichier local optionnel
+```bash
+cp .env.example .env
+```
+
+Le fichier `.env` local ne doit jamais être commité. Les tests d'intégration réels nécessitent une clé fournie par l'environnement.
+>>>>>>> 43e454e868da40722a5f801fca9b55d0b02d39c2
 
 ## 📦 Dépendances
 
