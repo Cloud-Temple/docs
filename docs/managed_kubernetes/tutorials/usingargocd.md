@@ -39,9 +39,8 @@ Vous pouvez obtenir l'adresse IP interne de l'Ingress ArgoCD avec la commande su
 kubectl get ingress argocd-server -n argocd
 ```
 
-:::info
-Le mot de passe pour le compte `admin` vous est fourni par les équipes Cloud Temple lors de la livraison de votre cluster.
-:::
+>ℹ️ Le mot de passe pour le compte `admin` vous est fourni par les équipes Cloud Temple lors de la livraison de votre cluster.
+
 
 ## Déployer une application avec ArgoCD
 
@@ -178,10 +177,9 @@ ArgoCD va maintenant supprimer tous les composants de l'application `guestbook`.
 kubectl delete namespace guestbook
 ```
 
-:::info[Pour aller plus loin : la gestion des secrets
-]
-Ce tutoriel utilise un dépôt public sans données sensibles. Pour vos applications en production, il est crucial de ne jamais stocker de secrets (mots de passe, clés d'API) en clair dans votre dépôt Git. Des solutions comme **Sealed Secrets** ou **HashiCorp Vault** s'intègrent avec ArgoCD pour gérer vos secrets de manière sécurisée. Un futur tutoriel détaillera cette approche.
-:::
+>ℹ️[Pour aller plus loin : la gestion des secrets]
+>Ce tutoriel utilise un dépôt public sans données sensibles. Pour vos applications en production, il est crucial de ne jamais stocker de secrets (mots de passe, clés d'API) en clair dans votre dépôt Git. >Des solutions comme **Sealed Secrets** ou **OpenTofu** s'intègrent avec ArgoCD pour gérer vos secrets de manière sécurisée.
+
 
 ## Conclusion
 

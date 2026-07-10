@@ -2,6 +2,7 @@
 title: Sauvegarder vos applications avec Veeam Kasten
 ---
 
+
 import k10dashboard from '@site/docs/managed_kubernetes/tutorials/images/k10dashboard.png'
 import k10s3location from '@site/docs/managed_kubernetes/tutorials/images/k10s3location.png'
 import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10infrabackups.png'
@@ -25,21 +26,17 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 Le tableau de bord Kasten est accessible via une URL sécurisée, construite à partir de l'identifiant de votre cluster.
 
 1. **Construisez l'URL d'accès** :
-    L'URL est basée sur le modèle suivant : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
-    Remplacez `<identifiant>` par l'identifiant de votre cluster. Par exemple, si votre identifiant est `ctodev`, l'URL sera : `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
-
+   L'URL est basée sur le modèle suivant : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
+   Remplacez `<identifiant>` par l'identifiant de votre cluster. Par exemple, si votre identifiant est `ctodev`, l'URL sera : `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 2. **Accédez à l'URL** dans votre navigateur.
 
-    :::info Note sur la sécurité
-    L'accès à cette URL est restreint aux adresses IP publiques que vous avez déclarées. Si vous ne parvenez pas à vous connecter, assurez-vous que votre adresse IP est autorisée en contactant le support Cloud Temple.
-    :::
+   > ℹ️Note sur la sécurité
+   > L'accès à cette URL est restreint aux adresses IP publiques que vous avez déclarées. Si vous ne parvenez pas à vous connecter, assurez-vous que votre adresse IP est autorisée en contactant le support Cloud Temple.
+   >
 
 <img src={k10dashboard} />
 
-:::tip[Guide de démarrage rapide intégré
-]
-La console Kasten inclut un guide de démarrage rapide interactif sur sa page d'accueil. N'hésitez pas à le suivre pour une première prise en main directement depuis l'interface.
-:::
+> ℹ️[Guide de démarrage rapide intégré] La console Kasten inclut un guide de démarrage rapide interactif sur sa page d'accueil. N'hésitez pas à le suivre pour une première prise en main directement depuis l'interface.
 
 ## 2. Comprendre le stockage des sauvegardes
 
@@ -49,56 +46,58 @@ Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est dé
 
 <img src={k10s3location} />
 
-:::info[Modèle de coût
-]
-Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
-:::
+> ℹ️[Modèle de coût] Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
 
 ## 3. Créer une politique de sauvegarde
 
 Une politique de sauvegarde (`Policy`) est un ensemble de règles qui définissent quand et comment sauvegarder vos applications.
 
-:::warning[Politique de sauvegarde existante
-]
-Une politique de sauvegarde nommée `infra-backups` est déjà configurée dans votre instance Kasten. Cette politique assure la sauvegarde des composants essentiels livrés avec le cluster.
+⚠[Politique de sauvegarde existante] Une politique de sauvegarde nommée `infra-backups` est déjà configurée dans votre instance Kasten. Cette politique assure la sauvegarde des composants essentiels livrés avec le cluster.
 
 <img src={k10infrabackups} />
 
 **Ne modifiez pas et ne supprimez pas cette politique.**
 
 Vous devez créer vos propres politiques pour sauvegarder les applications que vous déployez.
-:::
 
 1. Dans le tableau de bord Kasten, accédez à la section **Policies** et cliquez sur **Create New Policy**.
-
 2. **Nommez votre politique** : Donnez un nom descriptif, par exemple `backup-my-app-daily`.
-
 3. **Définissez la fréquence (Action)** :
-    - **Action**: `Snapshot` (instantané).
-    - **Frequency**: Choisissez la fréquence qui vous convient (par exemple, `Daily` à `02:00`).
 
+   - **Action**: `Snapshot` (instantané).
+   - **Frequency**: Choisissez la fréquence qui vous convient (par exemple, `Daily` à `02:00`).
 4. **Sélectionnez les ressources à sauvegarder** :
-    - **Select resources by**: Vous pouvez sélectionner des applications par nom (`Application Name`), par namespace (`Namespace`), ou par labels.
-    - Pour sauvegarder toutes les applications d'un namespace, choisissez `Namespace` et sélectionnez le namespace souhaité.
 
+   - **Select resources by**: Vous pouvez sélectionner des applications par nom (`Application Name`), par namespace (`Namespace`), ou par labels.
+   - Pour sauvegarder toutes les applications d'un namespace, choisissez `Namespace` et sélectionnez le namespace souhaité.
 5. **Cliquez sur `Create Policy`** pour enregistrer.
 
 La politique s'exécutera automatiquement à la fréquence définie. Vous pouvez également lancer une exécution manuelle en cliquant sur le bouton "Play" (▶️) à côté de la politique.
+
+
+### Politiques de sauvegarde rapides
+
+Pour faciliter la prise en main de Kasten, Cloud-Temple a livré *24 politiques de sauvegarde*, qui effectuent un backup à heure fixe, avec une rétention de 7 jours dans S3.
+
+![K10policies](images/k10policies.png)
+
+Ces politiques s'appliquent aux **namespaces qui disposent d'un label indiquant quelle(s) politique(s) appliquer.**
+
+Par exemple, un namespace avec le label **kasten-daily05-r7d = true** sera sauvegardé vers S3 tous les jours a 05h00 UTC, avec 7 jours de rétention.
+
 
 ## 4. Restaurer une application
 
 Kasten facilite la restauration d'une application à son état précédent à partir d'un point de restauration.
 
 1. Dans le tableau de bord, allez dans la section **Applications**. Vous y verrez la liste de vos applications et leur état de conformité par rapport aux politiques de sauvegarde.
-
 2. **Sélectionnez l'application** que vous souhaitez restaurer.
-
 3. **Choisissez un point de restauration** :
-    La page de l'application affiche une liste des points de restauration disponibles. Choisissez celui que vous souhaitez utiliser et cliquez sur **Restore**.
-
+   La page de l'application affiche une liste des points de restauration disponibles. Choisissez celui que vous souhaitez utiliser et cliquez sur **Restore**.
 4. **Configurez la restauration** :
-    - Vous pouvez choisir de restaurer dans un nouveau namespace ou de remplacer l'application existante. Pour ce tutoriel, nous allons remplacer l'application existante.
-    - Cliquez sur **Restore** pour lancer le processus.
+
+   - Vous pouvez choisir de restaurer dans un nouveau namespace ou de remplacer l'application existante. Pour ce tutoriel, nous allons remplacer l'application existante.
+   - Cliquez sur **Restore** pour lancer le processus.
 
 Kasten va maintenant restaurer l'application à l'état capturé dans le snapshot. Vous pouvez suivre la progression dans le tableau de bord.
 
@@ -107,7 +106,6 @@ Kasten va maintenant restaurer l'application à l'état capturé dans le snapsho
 La protection de vos données de sauvegarde est une priorité. L'intégration de Kasten dans le produit Managed Kubernetes respecte les plus hauts standards de sécurité.
 
 - **Chiffrement** : Conformément aux exigences SecNumCloud, toutes vos sauvegardes sont chiffrées. Les données sont chiffrées en transit vers le stockage S3 avec le protocole **TLS 1.3** et au repos dans les buckets de stockage avec l'algorithme **AES-256**.
-
 - **Gestion des permissions** : L'accès à l'interface Kasten et à ses fonctionnalités est contrôlé par un système de permissions basé sur le RBAC de Kubernetes. Seuls les utilisateurs autorisés peuvent créer, modifier ou exécuter des politiques de sauvegarde et de restauration, garantissant ainsi une gouvernance stricte de vos opérations de sauvegarde.
 
 ## Conclusion

@@ -1,7 +1,6 @@
 ---
 title: Gérer les permissions avec Capsule
 ---
-
 ## Objectifs
 
 Ce tutoriel vous guidera dans l'utilisation de **Capsule**, l'outil de multi-tenancy intégré à votre cluster **Managed Kubernetes**. À la fin de ce guide, vous saurez :
@@ -16,9 +15,7 @@ Capsule est un contrôleur Kubernetes qui introduit le concept de **Tenant** pou
 
 À la livraison de votre cluster, les équipes Cloud Temple ont créé un premier Tenant pour vous et vous en ont désigné comme **propriétaire (Tenant Owner)**.
 
-:::tip
-Par défaut, votre premier Tenant s'appelle `default` et le compte de service propriétaire est `defaultapp`.
-:::
+> ℹ️Par défaut, votre premier Tenant s'appelle `default` et le compte de service propriétaire est `defaultapp`.
 
 Pour en savoir plus sur le projet, vous pouvez consulter le [site web officiel de Capsule](https://projectcapsule.dev/).
 
@@ -72,9 +69,7 @@ L'un des plus grands avantages de Capsule est que toutes les politiques de sécu
 
 Cela garantit que vos projets respectent les limites de consommation (CPU, mémoire, stockage) et les règles de sécurité (comme les politiques réseau par défaut ou les contraintes de sécurité définies par **Kyverno**) définies pour votre environnement, sans que vous ayez à les reconfigurer pour chaque Namespace.
 
-:::info
-Des quotas spécifiques ont été positionnés sur votre Tenant Capsule pour limiter l'utilisation du stockage persistant (Ceph-Block et Ceph-FileSystem) à l'espace total disponible dans le cluster. Si vous avez besoin de modifier ces quotas pour un projet spécifique, veuillez formuler une demande auprès du support Cloud Temple.
-:::
+> ℹ️ Des quotas spécifiques ont été positionnés sur votre Tenant Capsule pour limiter l'utilisation du stockage persistant (Ceph-Block, Ceph-Block-norepl et Ceph-FileSystem) à l'espace total disponible dans le cluster. Si vous avez besoin de modifier ces quotas pour un projet spécifique, veuillez formuler une demande auprès du support Cloud Temple.
 
 ## Conclusion
 

@@ -25,17 +25,17 @@ Ce tableau met en évidence les points forts et le positionnement de chaque solu
 
 Au-delà du positionnement, chaque produit s'appuie sur des choix technologiques distincts qui répondent à des besoins spécifiques. Le tableau suivant détaille les briques logicielles fondamentales qui composent chaque solution.
 
-| Brique Technique             | PaaS OpenShift                     | Managed Kubernetes          |
-| :--------------------------- | :--------------------------------- | :-------------------------- |
-| **Socle OS**                 | Red Hat CoreOS (RHCOS)             | Talos OS (immuable)         |
-| **Orchestrateur**            | Red Hat OpenShift                  | Kubernetes (CNCF)           |
-| **Stockage persistant**      | OpenShift Data Foundation          | Rook-Ceph                   |
-| **Réseau (CNI)**             | OVN-Kubernetes                     | Cilium                      |
-| **Ingress / Load Balancing** | HAProxy / MetalLB                  | NGINX Ingress / MetalLB     |
-| **Sécurité (Policy Engine)** | Security Context Constraints (SCC) | PSA + Kyverno + Capsule     |
-| **Sauvegarde**               | Veeam Kasten K10 (option)          | Veeam Kasten K10 (inclus)   |
-| **Automatisation (GitOps)**  | OpenShift Pipelines                | ArgoCD                      |
-| **Observabilité**            | Prometheus / Grafana               | Prometheus / Grafana / Loki |
+| Brique Technique             | PaaS OpenShift                     | Managed Kubernetes          | Managed Core Kubernetes     |
+| :--------------------------- | :--------------------------------- | :-------------------------- | :-------------------------- |
+| **Socle OS**                 | Red Hat CoreOS (RHCOS)             | Talos OS (immuable)         | Talos OS (immuable)         |
+| **Orchestrateur**            | Red Hat OpenShift                  | Kubernetes (CNCF)           | Kubernetes (CNCF)           |
+| **Stockage persistant**      | OpenShift Data Foundation          | Rook-Ceph                   | Rook-Ceph                   |
+| **Réseau (CNI)**             | OVN-Kubernetes                     | Cilium                      | Cilium                      |
+| **Ingress / Load Balancing** | HAProxy / MetalLB                  | NGINX Ingress / MetalLB     | n/a                         |
+| **Sécurité (Policy Engine)** | Security Context Constraints (SCC) | PSA + Kyverno + Capsule     | n/a                         |
+| **Sauvegarde**               | Veeam Kasten K10 (option)          | Veeam Kasten K10 (inclus)   | n/a                         |
+| **Automatisation (GitOps)**  | OpenShift Pipelines                | ArgoCD                      | n/a                         |
+| **Observabilité**            | Prometheus / Grafana               | Prometheus / Grafana / Loki | n/a                         |
 
 ---
 
@@ -74,7 +74,7 @@ Notre rôle de conseil est de vous accompagner dans cette décision. Nos archite
   <div className="col col--6">
     <div className="card">
       <div className="card__header">
-        <h3>Managed Kubernetes</h3>
+        <h3>Managed (core) Kubernetes</h3>
       </div>
       <div className="card__body">
         <p>

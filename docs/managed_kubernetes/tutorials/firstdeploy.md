@@ -168,13 +168,14 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Pour aller plus loin : la sécurité en production]
-Ce tutoriel vous a montré les bases du déploiement. Pour un environnement de production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
+>⚠[Pour aller plus loin : la sécurité en production]
+>Ce tutoriel vous a montré les bases du déploiement. Pour un environnement de production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
+>
+>- **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
+>- **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour restreindre les communications aux seuls flux nécessaires entre vos applications.
+>- **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
+>- **Appliquez des Pod Disruption Budget** : un PDB assure que vos application reste toujours disponible.
 
-- **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
-- **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour restreindre les communications aux seuls flux nécessaires entre vos applications.
-- **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
-:::
 
 ## Nettoyage
 

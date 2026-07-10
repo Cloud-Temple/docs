@@ -1,7 +1,6 @@
 ---
 title: le réseau dans Kubernetes Managé
 ---
-
 import cillium from '@site/docs/managed_kubernetes/tutorials/images/cillium.png'
 
 ---
@@ -16,10 +15,8 @@ Ce tutoriel a pour objectif de vous familiariser avec les concepts réseau fonda
 
 Nous prendrons comme **exemple** un cluster **"ctodev"**, dont le range attribué est **10.20.0.0/22**
 
-:::warning[définition des ranges
-]
- Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peut pas être modifié plus tard.
-:::
+> ⚠[définition des ranges]
+> Ce range d'IP privées X.Y.Z.0/22 (RFC 1918) est défini avec le client lors de la mise en place du cluster. Il ne peut pas être modifié plus tard.
 
 ## Plan d'adressage IP
 
@@ -29,18 +26,18 @@ Le range de notre **exemple** 10.20.0.0/22 est découpé de manière logique en 
 
     - 10.20.0.0/24 est attribué aux Noeuds du cluster:
 
-        - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
+    - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
 
-        - 10.20.0.20 : IP virtuelle (load balancée) du service API Kubernetes
+    - 10.20.0.20 : IP virtuelle (load balancée) du service API Kubernetes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
 
-        - 10.20.0.41 : ctodev-ceph-01 (Ceph Storage 01)
+    - 10.20.0.41 : ctodev-ceph-01 (Ceph Storage 01)
         - 10.20.0.42 : ctodev-ceph-02 (Ceph Storage 02)
         - 10.20.0.43 : ctodev-ceph-03 (Ceph Storage 03)
 
-        - 10.20.0.51 : ctodev-wrk-01 (Worker 01)
+    - 10.20.0.51 : ctodev-wrk-01 (Worker 01)
         - 10.20.0.52 : ctodev-wrk-02 (Worker 02)
         - 10.20.0.53 : ctodev-wrk-03 (Worker 03)
         - ...
@@ -48,21 +45,19 @@ Le range de notre **exemple** 10.20.0.0/22 est découpé de manière logique en 
 
     - MetalLB interne : 10.20.1.1 – 10.20.1.127
 
-      - 10.20.1.1 : ingress `nginx-internal`
-    
+    - 10.20.1.1 : ingress`nginx-internal`
+
     - MetalLB externe : 10.20.1.128 – 10.20.1.254
 
-      - 10.20.1.128 : ingress `nginx-external`
+    - 10.20.1.128 : ingress`nginx-external`
       - 10.20.1.129 : ingress `nginx-external-secure`
 
-    - Pods: 10.241.0.0/16 
+    - Pods: 10.241.0.0/16
 
-    - Services: 10.95.0.0/12 
+    - Services: 10.95.0.0/12
 
-:::warning[Ranges Pods et Services
-]
-Les ranges Pods et Services sont définis avec le client lors de la mise en place du cluster. Ils ne peuvent pas être modifiés plus tard.
-:::
+> ⚠[Ranges Pods et Services]
+> Les ranges Pods et Services sont définis avec le client lors de la mise en place du cluster. Ils ne peuvent pas être modifiés plus tard.
 
 ## Utilisation de MetalLB
 
@@ -123,6 +118,7 @@ La 1ère IP est utilisée sur le port 6443 pour l'API Kubernetes (dans notre exe
 Cette même IP est aussi NATée sur l'ingress controller *"nginx-external-secured"* pour le port 443. Ceci permet l'exposition des différentes consoles mises à votre disposition (voir le guide quickstart). Les accès à cette IP publique sont **filtrés** avec une liste d'IP autorisées.
 
 ---
+
 La 2ème IP publique est NAtée sur l'ingress controller *"nginx-external"*, sur les ports 80 et 443.
 
 Les applications exposées avec l'ingress class *"nginx-external"* seront donc directement accessible depuis Internet sur cette IP.
@@ -185,23 +181,23 @@ Pour renforcer la sécurité et simplifier l'accès à vos services et à l'API 
 En vous basant sur les URLs fournies dans le guide de démarrage, vous pouvez configurer votre DNS interne comme suit :
 
 1. **Créez la zone DNS privée** sur vos serveurs DNS internes pour `.<identifiant du cluster>.mk.ms-cloud-temple.com`
-
 2. **Ajoutez les enregistrements de type A** suivants :
 
-    - **Pour l'API Kubernetes :**
-        - `. -> 10.20.0.20` (IP virtuelle de l'API)
+   - **Pour l'API Kubernetes :**
 
-    - **Pour les services internes (via l'Ingress `nginx-internal`) :**
-        - `hubble.internal -> 10.20.1.1`
-        - `argocd.internal -> 10.20.1.1`
-        - `ceph.internal -> 10.20.1.1`
+     - `. -> 10.20.0.20` (IP virtuelle de l'API)
+   - **Pour les services internes (via l'Ingress `nginx-internal`) :**
 
-    - **Pour les services sécurisés (via l'Ingress `nginx-external-secure`) :**
-        - `k10.external-secured -> 10.20.1.129`
-        - `grafana.external-secured -> 10.20.1.129`
-        - `harbor.external-secured -> 10.20.1.129`
-        - `opencost.external-secured -> 10.20.1.129`
-        - `opencost-mcp.external-secured -> 10.20.1.129`
+     - `hubble.internal -> 10.20.1.1`
+     - `argocd.internal -> 10.20.1.1`
+     - `ceph.internal -> 10.20.1.1`
+   - **Pour les services sécurisés (via l'Ingress `nginx-external-secure`) :**
+
+     - `k10.external-secured -> 10.20.1.129`
+     - `grafana.external-secured -> 10.20.1.129`
+     - `harbor.external-secured -> 10.20.1.129`
+     - `opencost.external-secured -> 10.20.1.129`
+     - `opencost-mcp.external-secured -> 10.20.1.129`
 
 Cette configuration garantit que le trafic vers l'API et les services internes reste confiné à votre réseau privé, conformément aux meilleures pratiques de sécurité.
 
@@ -215,15 +211,6 @@ Cette configuration garantit que le trafic vers l'API et les services internes r
     </p>
   </div>
   <div class="card__footer">
-    <a href="./firstdeploy" class="button button--primary button--block">Voir le tutoriel &rarr;</a>
+    <a href="./firstdeploy" class="button button--primary button--block">Voir le tutoriel →</a>
   </div>
 </div>
-
-:::warning[Pour aller plus loin : la sécurité en production
-]
-Ce document explique les concepts réseau fondamentaux. Pour un déploiement en production, il est crucial d'appliquer des mesures de sécurité supplémentaires :
-
-- **Utilisez des images sécurisées** : Privilégiez des images provenant de votre registre d'entreprise sécurisé comme **Harbor** plutôt que des images publiques.
-- **Contrôlez les flux réseau** : Mettez en place des `NetworkPolicies` pour contrôler les communications aux seuls flux nécessaires entre vos applications.
-- **Appliquez des politiques de gouvernance** : Utilisez des outils comme **Kyverno** pour imposer des règles de sécurité (ex: interdire les conteneurs "root", exiger des `requests` et `limits` de ressources, etc.).
-:::

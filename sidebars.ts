@@ -494,7 +494,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Managed Kubernetes',
+      label: 'Kubernetes',
       className: 'sidebar-cat-k8s',
       link: { type: 'doc', id: 'managed_kubernetes/managed_kubernetes' },
       items: [
@@ -509,6 +509,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'managed_kubernetes/tutorials/firstdeploy',
             'managed_kubernetes/tutorials/networking',
+            'managed_kubernetes/tutorials/usingstorage',
             'managed_kubernetes/tutorials/usingcapsule',
             'managed_kubernetes/tutorials/usinggapi',
             'managed_kubernetes/tutorials/usingopencost',
@@ -517,15 +518,7 @@ const sidebars: SidebarsConfig = {
             'managed_kubernetes/tutorials/usingharbor',
             'managed_kubernetes/tutorials/usinggpu',
           ],
-        },
-        {
-          type: 'category',
-          label: 'Managed Core Kubernetes',
-          link: { type: 'doc', id: 'managed_kubernetes/managed_core_kubernetes' },
-          items: [
-            'managed_kubernetes/managed_core_kubernetes',
-          ],
-        },
+        }
       ],
     },
     {
@@ -537,7 +530,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'MariaDB Managé',
-          className: 'sidebar-preview',
+          className: 'sidebar-beta',
           link: { type: 'doc', id: 'managed_mariadb/managed_mariadb' },
           items: [
             'managed_mariadb/managed_mariadb',
@@ -548,7 +541,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'PostgreSQL Managé',
-          className: 'sidebar-preview',
+          className: 'sidebar-beta',
           link: { type: 'doc', id: 'managed_postgresql/managed_postgresql' },
           items: [
             'managed_postgresql/managed_postgresql',
