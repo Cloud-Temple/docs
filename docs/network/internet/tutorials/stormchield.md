@@ -34,7 +34,7 @@ On monte deux machines virtuelles :
 - le firewall lui-même, déployé depuis l'image SNS EVA ;
 - une VM de management avec interface graphique, placée dans le même réseau que l'interface LAN du firewall. C'est depuis cette VM qu'on réalise la configuration initiale du firewall.
 
-Le firewall a deux interfaces : LAN (côté réseau interne, nommée `in` sur SNS) et WAN (côté Internet, nommée `out` sur SNS).
+Le firewall a deux interfaces : LAN **(côté réseau interne, nommée `in` sur SNS)** et WAN **(côté Internet, nommée `out` sur SNS).**
 Nous allons configurer l'interface LAN pour accéder à l'interface web du firewall pour pouvoir par la suite réaliser la configuration de l'accès Internet.
 
 # Étape 1 — Récupérer les paramètres réseau dans Shiva
@@ -245,7 +245,7 @@ Pour les règles d'accès Internet, utilisez l'objet Internet comme destination 
 
 Les règles d'exclusion BGP utilisent la même adresse en source avant et après traduction. Cette configuration répond à la contrainte de SNS, qui n'autorise pas de règle NAT sans translation, tout en laissant le trafic BGP inchangé.
 
-Une fois les règles créées, activez la politique (Éditer > Activer cette politique).
+Une fois les règles créées, activez la politique **(Éditer > Activer cette politique).**
 
 ![Show NAT](/img/screenshots/storm-nat.png)
 
@@ -258,14 +258,14 @@ Après avoir saisi les règles, activez la politique pour la rendre effective (*
 
 # Étape 9 — Tester la connectivité
 
-Depuis la console du firewall :
+**Depuis la console du firewall :**
 
 ```
-birdc show protocols     # les sessions RS1 et RS2 doivent être Established
+birdc show protocols     # les sessions aux route serveurs doivent être Established
 ping 1.1.1.1             # le firewall accède à Internet
 ```
 
-Depuis la VM de management :
+**Depuis la VM de management :**
 
 ```
 ping 1.1.1.1
