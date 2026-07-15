@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 15 Juillet 2026 : Précision sur le chiffrement du Stockage Objet
+
+- **Stockage Objet (Sécurité)** : La section sur le chiffrement des données au repos (D@RE) précise désormais que le chiffrement AES-256 repose sur un module cryptographique validé selon la norme FIPS 140-3.
+
 ### 26 Mai 2026 : Amélioration du workflow de traduction
 
 - **Traduction (outillage)** : Ajout des options `--token`, `--url` et `--model` au script Python `scripts/translate_py/translate.py`. Le token API peut désormais être fourni directement en ligne de commande, sans recréer de fichier `.env`. Les options CLI sont prioritaires sur les variables d'environnement.
