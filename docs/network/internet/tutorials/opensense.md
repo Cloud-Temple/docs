@@ -59,7 +59,7 @@ Gardez cette liste sous les yeux, on y reviendra à l'étape WAN.
 Depuis **Shiva** :
 
 1. déployez le firewall à partir du template OPNsense ;
-2. déployez la VM de management avec interface graphique (Ubuntu par exemple).
+2. déployez la VM de management avec interface graphique, ici nous utilisons l'image Ubuntu 26.04 LTS disponible sur la Marketplace.
 
 L'interface WAN de votre firewall doit être configurée dans votre vlan Internet avec une IP prise dans le préfixe d'interconnexion fourni par Shiva.
 # Étape 3 — Configurer le LAN et joindre l'interface web
@@ -172,9 +172,9 @@ Pour finir, quelques règles NAT à saisir manuellement.
 
 ![NAT Rules](/img/screenshots/NAT-rules.png)
 
-Il ne reste plus qu'à tester la connectivité vers Internet :
+Il ne reste plus qu'à tester la connectivité vers Internet depuis la machine de management :
 
-![ping](/img/screenshots/pinginternet.png)
+![ping](/img/screenshots/pingvm.png)
 
 # Conclusion
 

@@ -68,13 +68,16 @@ L'interface WAN de votre firewall doit être configurée dans votre vLAN Interne
 
 Sur l'interface LAN du firewall, mettez une IP de votre réseau interne avec son masque de sous-réseau.
 :::info
-Sur SNS cela se fait au premier démarrage via la console, ou plus tard dans **Configuration > Réseau > Interfaces**.
+Sur SNS cela se fait au premier démarrage via la console.
 :::
 
 ![Interface LAN](/img/screenshots/storm-in.png)
 
-Placez ensuite la VM de management dans ce même réseau.
-Pour la démonstration nous utilisons Ubuntu 22.04, avec une IP du même sous-réseau attribuée via Netplan. La passerelle par défaut de cette VM doit être l'adresse LAN du firewall.
+Placez ensuite la VM de management dans ce même réseau.  
+Pour la démonstration nous utilisons une image Ubuntu 26.04 LTS disponible sur la Marketplace, avec une IP du même sous-réseau attribuée via Netplan.  
+:::info
+La passerelle par défaut de cette VM doit être l'adresse LAN du firewall.
+:::
 
 Ouvrez un navigateur sur la VM de management et entrez l'adresse `https://IP-LAN-du-firewall/admin`.
 
@@ -101,7 +104,7 @@ Tout se passe désormais dans l'interface web, sous **Configuration > Réseau**.
 :::info Les adresses IP sont des objets
 Sur SNS, on ne saisit pas une adresse IP directement dans les champs des routes, des règles de filtrage ou du NAT : il faut d'abord la déclarer comme objet réseau dans Configuration > Objets > Objets réseau, puis la sélectionner ensuite.  
   
- Créez donc au fur et à mesure les objets dont vous avez besoin (passerelle partagée, route servers, préfixe public, réseaux LAN et WAN).
+ Créez donc au fur et à mesure les objets dont vous avez besoin (passerelle, route servers, préfixe public, réseaux LAN et WAN).
 :::
 ## 4.1 — L'interface WAN
 
@@ -117,7 +120,7 @@ Dans **Réseau > Routage**, définissez la passerelle par défaut avec l'adresse
 
 # Étape 5 — Créer la loopback pour le préfixe public
 
-Le préfixe public doit être porté par une interface loopback sur le firewall : elle sert à annoncer le préfixe en BGP et de source de translation pour le NAT.
+Le préfixe public doit être porté par une interface loopback sur le firewall.
 
 Dans **Réseau > Interfaces virtuelles**, onglet **Loopback**, ajoutez une loopback avec votre IP publique en `/32`.
 
@@ -129,7 +132,11 @@ Sur SNS, le BGP se configure dans le moteur BIRD, via **Configuration > Réseau 
 
 ## 6.1 — Routes statiques vers les route servers
 
-Dans **Réseau > Routage > Routes statiques**, ajoutez une route en `/32` vers chaque route server, pointant vers la passerelle partagée. Ces routes doivent être déclarées ici et non dans BIRD, pour éviter que le trafic BGP soit bloqué par les alarmes d'usurpation d'adresse IP.
+Dans **Réseau > Routage > Routes statiques**, ajoutez une route en `/32` vers chaque route server, pointant vers la passerelle partagée.  
+
+:::info
+Ces routes doivent être déclarées ici et non dans BIRD, pour éviter que le trafic BGP soit bloqué par les alarmes d'usurpation d'adresse IP.
+:::
 
 ![Routes statiques vers les route servers](/img/screenshots/storm-routes.png)
 
@@ -210,8 +217,6 @@ Cliquez sur **Vérifier la configuration** puis **Appliquer**.
 Les route servers sont à plus d'un saut, or une session eBGP a un TTL de 1 par défaut : sans `multihop`, les paquets n'atteindraient jamais les serveurs.
 :::
 
-La directive `route ... blackhole` et le filtre `export_public` remplacent la route blackhole et les cases de redistribution d'OPNsense : on annonce uniquement le préfixe public et on rejette le reste.
-
 
 ## 6.4 — Vérifier la session
 
@@ -227,9 +232,15 @@ La vérification peut également se faire  en console : `birdc` puis `show proto
 
 Le filtrage s'effectue dans Configuration > Politique de sécurité > Filtrage et NAT, onglet Filtrage.
 
-Créez les règles de sécurité conformément à la capture ci-dessous. La politique est évaluée de haut en bas : les règles autorisant l'administration du firewall et les sessions BGP doivent être placées avant les règles d'accès Internet. Enfin, la règle Block all doit impérativement rester en dernière position afin de bloquer tout trafic non explicitement autorisé.
+Créez les règles de sécurité conformément à la capture ci-dessous.  
+La politique est évaluée de haut en bas : les règles autorisant l'administration du firewall et les sessions BGP doivent être placées avant les règles d'accès Internet.  
+  
+Enfin, la règle Block all doit impérativement rester en dernière position afin de bloquer tout trafic non explicitement autorisé.
 
+:::info
 Les règles autorisant les sessions BGP vers les deux route servers sont indispensables au bon établissement du peering.
+:::
+  
 
 ![Show flow rules](/img/screenshots/storm-rules.png)
 
@@ -239,10 +250,16 @@ La règle `Block all` doit rester en dernière position. Les règles 3 et 4 sont
 
 Dans le même menu, ouvrez l'onglet NAT.
 
-Configurez les règles comme indiqué sur la capture ci-dessous. L'ordre est essentiel : les deux premières règles permettent d'exclure le trafic BGP de toute traduction d'adresse, tandis que les deux suivantes réalisent la traduction des flux Internet provenant du LAN et du firewall.
+Configurez les règles comme indiqué sur la capture ci-dessous.  
+:::info
+ L'ordre est essentiel : les deux premières règles permettent d'exclure le trafic BGP de toute traduction d'adresse, tandis que les deux suivantes réalisent la traduction des flux Internet provenant du LAN et du firewall.
+:::
+  
+Pour les règles d'accès Internet, utilisez l'objet **Internet** comme destination plutôt que Any.  
 
-Pour les règles d'accès Internet, utilisez l'objet Internet comme destination plutôt que Any. Cet objet exclut automatiquement les réseaux directement connectés au firewall, évitant ainsi de NATer les communications d'administration ou les sessions BGP.
-
+:::info
+Cet objet exclut automatiquement les réseaux directement connectés au firewall, évitant ainsi de NATer les communications d'administration ou les sessions BGP.
+:::
 Les règles d'exclusion BGP utilisent la même adresse en source avant et après traduction. Cette configuration répond à la contrainte de SNS, qui n'autorise pas de règle NAT sans translation, tout en laissant le trafic BGP inchangé.
 
 Une fois les règles créées, activez la politique **(Éditer > Activer cette politique).**
@@ -265,13 +282,10 @@ birdc show protocols     # les sessions aux route serveurs doivent être Establi
 ping 1.1.1.1             # le firewall accède à Internet
 ```
 
-**Depuis la VM de management :**
+**Depuis la machine de management :**
 
-```
-ping 1.1.1.1
-```
+![ping](/img/screenshots/pingvm.png)
 
-Si les tests répondent, l'accès Internet est opérationnel.
 
 # Conclusion
 
