@@ -3,7 +3,7 @@ title: Vue d'ensemble
 ---
 import stack from '@site/docs/managed_mariadb/images/stack.png'
 import StandAlone from '@site/docs/managed_mariadb/images/StandAlone.png'
-import multiaz from '@site/docs/managed_mariadb/images/multiaz.png'
+import Distributed.png from '@site/docs/managed_mariadb/images/Distributed.png'
 import maxscale from '@site/docs/managed_mariadb/images/maxscale.png'
 
 # MariaDB Managé <span class="title-preview-badge">Preview</span>
@@ -78,4 +78,4 @@ Ainsi, les applicatifs peuvent au choix utiliser des connexions RW ou RO, ou lai
   - sauvegardes physiques (`mariabackup`) et logiques (`mysqldump`)
   - SLA 99.9 % (hors plages de maintenance)
 
-![Architecture MultiAZ](@site/docs/managed_mariadb/images/multiaz.png)
+![Architecture MultiAZ](@site/docs/managed_mariadb/images/Distributed.png)
