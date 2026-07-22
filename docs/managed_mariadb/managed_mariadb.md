@@ -1,10 +1,6 @@
 ---
 title: Vue d'ensemble
 ---
-import stack from '@site/docs/managed_mariadb/images/stack.png'
-import StandAlone from '@site/docs/managed_mariadb/images/StandAlone.png'
-import Distributed.png from '@site/docs/managed_mariadb/images/Distributed.png'
-import maxscale from '@site/docs/managed_mariadb/images/maxscale.png'
 
 # MariaDB Managé <span class="title-preview-badge">Preview</span>
 
