@@ -3,7 +3,7 @@ title: Vue d'ensemble
 ---
 import stack from '@site/docs/managed_mariadb/images/stack.png'
 import StandAlone from '@site/docs/managed_mariadb/images/StandAlone.png'
-import Distributed from '@site/docs/managed_mariadb/images/Distributed.png'
+import multiaz from '@site/docs/managed_mariadb/images/multiaz.png'
 import maxscale from '@site/docs/managed_mariadb/images/maxscale.png'
 
 # MariaDB Managé <span class="title-preview-badge">Preview</span>
