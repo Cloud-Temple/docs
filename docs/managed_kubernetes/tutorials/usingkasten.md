@@ -80,7 +80,7 @@ La politique s'exécutera automatiquement à la fréquence définie. Vous pouvez
 
 Pour faciliter la prise en main de Kasten, Cloud-Temple a livré *24 politiques de sauvegarde*, qui effectuent un backup à heure fixe, avec une rétention de 7 jours dans S3.
 
-<img src={k10policies} alt="Kasten policies/>
+<img src={k10policies} alt="Kasten policies"/>
 
 Ces politiques s'appliquent aux **namespaces qui disposent d'un label indiquant quelle(s) politique(s) appliquer.**
 
