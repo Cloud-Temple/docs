@@ -35,7 +35,7 @@ Le tableau de bord Kasten est accessible via une URL sécurisée, construite à 
    > L'accès à cette URL est restreint aux adresses IP publiques que vous avez déclarées. Si vous ne parvenez pas à vous connecter, assurez-vous que votre adresse IP est autorisée en contactant le support Cloud Temple.
    >
 
-<img src={k10dashboard} />
+<img src={k10dashboard} alt="Kasten dahsboard"/>
 
 > ℹ️[Guide de démarrage rapide intégré] La console Kasten inclut un guide de démarrage rapide interactif sur sa page d'accueil. N'hésitez pas à le suivre pour une première prise en main directement depuis l'interface.
 
@@ -45,7 +45,7 @@ Par défaut, Kasten est préconfiguré pour utiliser le service de stockage obje
 
 Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est déjà défini dans le tableau de bord Kasten, sous **Settings > Locations**. Cette configuration garantit que vos données sont stockées sur une infrastructure souveraine.
 
-<img src={k10s3location} />
+<img src={k10s3location} alt="Kasten S3 configuration"/>
 
 > ℹ️[Modèle de coût] Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
 
@@ -55,7 +55,7 @@ Une politique de sauvegarde (`Policy`) est un ensemble de règles qui définisse
 
 ⚠[Politique de sauvegarde existante] Une politique de sauvegarde nommée `infra-backups` est déjà configurée dans votre instance Kasten. Cette politique assure la sauvegarde des composants essentiels livrés avec le cluster.
 
-<img src={k10infrabackups} />
+<img src={k10infrabackups} alt="Kasten infra backups"/>
 
 **Ne modifiez pas et ne supprimez pas cette politique.**
 
@@ -80,7 +80,7 @@ La politique s'exécutera automatiquement à la fréquence définie. Vous pouvez
 
 Pour faciliter la prise en main de Kasten, Cloud-Temple a livré *24 politiques de sauvegarde*, qui effectuent un backup à heure fixe, avec une rétention de 7 jours dans S3.
 
-<img src={k10policies} />
+<img src={k10policies} alt="Kasten policies/>
 
 Ces politiques s'appliquent aux **namespaces qui disposent d'un label indiquant quelle(s) politique(s) appliquer.**
 
