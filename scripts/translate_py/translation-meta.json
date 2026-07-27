@@ -535,10 +535,10 @@
       "it": "d9b200e304a5cb72b838ba97929ee016a443c5dc93a7830fb4c191105a44eab2"
     },
     "managed_kubernetes/tutorials/usingkasten.md": {
-      "en": "7f333e98103eab1b999f233491ab44072e3533c9ea38cf6119af5ac9b18bfda9",
-      "de": "7f333e98103eab1b999f233491ab44072e3533c9ea38cf6119af5ac9b18bfda9",
-      "es": "7f333e98103eab1b999f233491ab44072e3533c9ea38cf6119af5ac9b18bfda9",
-      "it": "7f333e98103eab1b999f233491ab44072e3533c9ea38cf6119af5ac9b18bfda9"
+      "en": "b4cc7be0535a03fdd185f863bac7eb60750b5f4ecd4a71a0f96d58fb0c935f0a",
+      "de": "b4cc7be0535a03fdd185f863bac7eb60750b5f4ecd4a71a0f96d58fb0c935f0a",
+      "es": "b4cc7be0535a03fdd185f863bac7eb60750b5f4ecd4a71a0f96d58fb0c935f0a",
+      "it": "b4cc7be0535a03fdd185f863bac7eb60750b5f4ecd4a71a0f96d58fb0c935f0a"
     },
     "managed_kubernetes/tutorials/usingopencost.md": {
       "en": "563039218be9fb354209563592d0ff89f9af93441528182ef04cb99bcbfcc7e0",
@@ -949,6 +949,6 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     }
   },
-  "last_update": "2026-07-27T10:40:34.154954",
+  "last_update": "2026-07-27T11:37:41.186879",
   "version": "2.0"
 }

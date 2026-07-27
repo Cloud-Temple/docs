@@ -1,11 +1,12 @@
 ---
-title: Respaldo de sus aplicaciones con Veeam Kasten
+title: Respalde sus aplicaciones con Veeam Kasten
 ---
 
 
 import k10dashboard from '@site/docs/managed_kubernetes/tutorials/images/k10dashboard.png'
 import k10s3location from '@site/docs/managed_kubernetes/tutorials/images/k10s3location.png'
 import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10infrabackups.png'
+import k10policies from '@site/docs/managed_kubernetes/tutorials/images/k10policies.png'
 
 ## Introducción
 
@@ -26,39 +27,39 @@ Antes de comenzar, asegúrese de contar con los siguientes elementos:
 El panel de control de Kasten es accesible a través de una URL segura, construida a partir del identificador de su clúster.
 
 1. **Construya la URL de acceso** :
-   La URL se basa en el siguiente modelo : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
+   La URL se basa en el siguiente patrón : `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
    Reemplace `<identifiant>` por el identificador de su clúster. Por ejemplo, si su identificador es `ctodev`, la URL será : `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 2. **Acceda a la URL** en su navegador.
 
-   > ℹ️Nota sobre la seguridad
-   > El acceso a esta URL está restringido a las direcciones IP públicas que ha declarado. Si no puede conectarse, asegúrese de que su dirección IP está autorizada contactando al soporte de Cloud Temple.
+   > ℹ️Nota sobre seguridad
+   > El acceso a esta URL está restringido a las direcciones IP públicas que haya declarado. Si no puede conectarse, asegúrese de que su dirección IP esté autorizada contactando al soporte de Cloud Temple.
    >
 
-<img src={k10dashboard} />
+<img src={k10dashboard} alt="Kasten dahsboard"/>
 
 > ℹ️[Guide de démarrage rapide intégré] La consola de Kasten incluye una guía de inicio rápido interactiva en su página de inicio. No dude en seguirla para una primera toma de contacto directamente desde la interfaz.
 
 ## 2. Comprender el almacenamiento de las copias de seguridad
 
-De forma predeterminada, Kasten está preconfigurado para utilizar el servicio de almacenamiento de objetos (S3) de Cloud Temple para almacenar sus copias de seguridad de manera segura y duradera.
+Por defecto, Kasten está preconfigurado para utilizar el servicio de almacenamiento de objetos (S3) de Cloud Temple para almacenar sus copias de seguridad de forma segura y duradera.
 
 No es necesario realizar ninguna configuración. La ubicación de almacenamiento ya está definida en el panel de control de Kasten, bajo **Settings > Locations**. Esta configuración garantiza que sus datos se almacenen en una infraestructura soberana.
 
-<img src={k10s3location} />
+<img src={k10s3location} alt="Kasten S3 configuration"/>
 
-> ℹ️[Modèle de coût] El servicio Veeam Kasten está incluido en el producto Managed Kubernetes. El almacenamiento de las copias de seguridad en nuestro S3 soberano se factura por uso. Consulte nuestra tabla de precios para más detalles.
+> ℹ️[Modèle de coût] El servicio Veeam Kasten está incluido en el producto Managed Kubernetes. El almacenamiento de las copias de seguridad en nuestro S3 soberano se factura según el uso. Consulte nuestra tabla de precios para más detalles.
 
 ## 3. Crear una política de copia de seguridad
 
-Una política de copia de seguridad (`Policy`) es un conjunto de reglas que definen cuándo y cómo realizar copias de seguridad de sus aplicaciones.
+Una política de copia de seguridad (`Policy`) es un conjunto de reglas que definen cuándo y cómo respaldar sus aplicaciones.
 
-⚠[Política de copia de seguridad existente] Una política de copia de seguridad llamada `infra-backups` ya está configurada en su instancia de Kasten. Esta política garantiza la copia de seguridad de los componentes esenciales incluidos con el clúster.
+⚠[Política de copia de seguridad existente] Una política de copia de seguridad llamada `infra-backups` ya está configurada en su instancia de Kasten. Esta política garantiza el respaldo de los componentes esenciales entregados con el clúster.
 
-<img src={k10infrabackups} />
+<img src={k10infrabackups} alt="Kasten infra backups"/>
 
 **No modifique ni elimine esta política.**
 
-Debe crear sus propias políticas para realizar copias de seguridad de las aplicaciones que despliegue.
+Debe crear sus propias políticas para respaldar las aplicaciones que despliega.
 
 1. En el panel de control de Kasten, vaya a la sección **Policies** y haga clic en **Create New Policy**.
 2. **Nombre de su política** : Asigne un nombre descriptivo, por ejemplo `backup-my-app-daily`.
@@ -78,20 +79,20 @@ La política se ejecutará automáticamente con la frecuencia definida. También
 
 Para facilitar la implementación de Kasten, Cloud-Temple ha incluido *24 políticas de copia de seguridad*, que realizan un backup a una hora fija, con una retención de 7 días en S3.
 
-![K10policies](images/k10policies.png)
+<img src={k10policies} alt="Kasten policies"/>
 
-Estas políticas se aplican a los **namespaces que cuentan con una etiqueta que indica qué política(s) aplicar.**
+Estas políticas se aplican a los **namespaces que cuentan con un label que indica qué política(s) aplicar.**
 
-Por ejemplo, un namespace con la etiqueta **kasten-daily05-r7d = true** se respaldará en S3 todos los días a las 05h00 UTC, con una retención de 7 días.
+Por ejemplo, un namespace con el label **kasten-daily05-r7d = true** se respaldará en S3 todos los días a las 05:00 UTC, con una retención de 7 días.
 
 ## 4. Restaurar una aplicación
 
 Kasten facilita la restauración de una aplicación a su estado anterior desde un punto de restauración.
 
-1. En el panel de control, vaya a la sección **Applications**. Allí verá la lista de sus aplicaciones y su estado de cumplimiento con respecto a las políticas de copia de seguridad.
+1. En el panel de control, vaya a la sección **Aplicaciones**. Allí verá la lista de sus aplicaciones y su estado de cumplimiento con respecto a las políticas de copia de seguridad.
 2. **Seleccione la aplicación** que desea restaurar.
 3. **Elija un punto de restauración** :
-   La página de la aplicación muestra una lista de los puntos de restauración disponibles. Elija el que desea utilizar y haga clic en **Restore**.
+   La página de la aplicación muestra una lista de los puntos de restauración disponibles. Elija el que desea utilizar y haga clic en **Restaurar**.
 4. **Configure la restauración** :
 
    - Puede elegir restaurar en un nuevo espacio de nombres o reemplazar la aplicación existente. Para este tutorial, reemplazaremos la aplicación existente.
@@ -101,13 +102,13 @@ Kasten ahora restaurará la aplicación al estado capturado en la instantánea. 
 
 ## 5. Seguridad de las copias de seguridad
 
-La protección de sus datos de copia de seguridad es una prioridad. La integración de Kasten en el producto Managed Kubernetes cumple con los más altos estándares de seguridad.
+La protección de sus datos de copia de seguridad es una prioridad. La integración de Kasten en el producto Kubernetes administrado cumple con los más altos estándares de seguridad.
 
 - **Cifrado** : De conformidad con los requisitos de SecNumCloud, todas sus copias de seguridad están cifradas. Los datos se cifran en tránsito hacia el almacenamiento S3 con el protocolo **TLS 1.3** y en reposo en los buckets de almacenamiento con el algoritmo **AES-256**.
-- **Gestión de permisos** : El acceso a la interfaz de Kasten y a sus funcionalidades está controlado por un sistema de permisos basado en RBAC de Kubernetes. Solo los usuarios autorizados pueden crear, modificar o ejecutar políticas de copia de seguridad y restauración, garantizando así una gobernanza estricta de sus operaciones de copia de seguridad.
+- **Gestión de permisos** : El acceso a la interfaz de Kasten y a sus funcionalidades está controlado por un sistema de permisos basado en el RBAC de Kubernetes. Solo los usuarios autorizados pueden crear, modificar o ejecutar políticas de copia de seguridad y restauración, garantizando así una gobernanza estricta de sus operaciones de copia de seguridad.
 
 ## Conclusión
 
-Ha aprendido a utilizar Veeam Kasten para realizar operaciones básicas de copia de seguridad y restauración en su clúster de Kubernetes administrado. Kasten ofrece numerosas funciones avanzadas, como la migración de aplicaciones entre clústeres y políticas de retención granulares, que puede explorar para reforzar su estrategia de protección de datos.
+Ha aprendido a utilizar Veeam Kasten para realizar operaciones básicas de respaldo y restauración en su clúster de Kubernetes administrado. Kasten ofrece muchas funciones avanzadas, como la migración de aplicaciones entre clústers y políticas de retención granulares, que puede explorar para reforzar su estrategia de protección de datos.
 
 Para obtener más información, consulte la [documentación oficial de Kasten K10](https://docs.kasten.io/latest/).
