@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 15 Juillet 2026 : Précision sur le chiffrement Object Storage
+
+- **Object Storage (Sécurité)** : La section sur le chiffrement des données au repos (D@RE) précise désormais que le service utilise un chiffrement AES 256 bits certifié FIPS 140-3, via la bibliothèque logicielle RSA BSAFE Crypto-J en version 7.x.
+
 ### 26 Mai 2026 : Amélioration du workflow de traduction
 
 - **Traduction (outillage)** : Ajout des options `--token`, `--url` et `--model` au script Python `scripts/translate_py/translate.py`. Le token API peut désormais être fourni directement en ligne de commande, sans recréer de fichier `.env`. Les options CLI sont prioritaires sur les variables d'environnement.

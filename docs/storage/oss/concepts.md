@@ -27,7 +27,7 @@ La sécurité de vos données est notre priorité absolue. Le service OSS intèg
 Pour protéger vos données stockées, notre service utilise le chiffrement côté serveur.
 
 - **Activation** : Le chiffrement D@RE est activé au niveau du *namespace* (espace de nommage).
-- **Algorithme** : Nous utilisons l'algorithme **AES-256**, l'un des standards de chiffrement les plus forts disponibles.
+- **Algorithme** : Nous utilisons un chiffrement **AES 256 bits** certifié **FIPS 140-3**, via la bibliothèque logicielle **RSA BSAFE Crypto-J** en version **7.x**.
 - **Fonctionnement** : Lorsque vous écrivez un objet dans un bucket où D@RE est activé, le service chiffre automatiquement vos données avant de les écrire sur les disques. Lorsque vous lisez l'objet, il est déchiffré de manière transparente pour vous. La gestion des clés de chiffrement est entièrement prise en charge par le service.
 
 ### Chiffrement des Données en Transit
