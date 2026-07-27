@@ -18,7 +18,12 @@ from pathlib import Path
 from langchain.embeddings.base import Embeddings
 
 # Configuration
-API_KEY = os.getenv("LLMAAS_API_KEY", "WolFH3xGSCMPvlfEru5JAt_KWZIrYreQOm1dDB2x5X4")
+API_KEY = os.getenv("LLMAAS_API_KEY", "test-token-for-docs")
+>>>>>>> 43e454e868da40722a5f801fca9b55d0b02d39c2
+API_KEY = os.getenv("LLMAAS_API_KEY", "test-token-for-docs")
+=======
+API_KEY = os.getenv("LLMAAS_API_KEY", "test-token-for-docs")
+>>>>>>> 43e454e868da40722a5f801fca9b55d0b02d39c2
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 class SimpleRAGLogger:

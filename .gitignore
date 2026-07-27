@@ -18,6 +18,11 @@ scripts/translate_py/venv/
 # Misc
 .DS_Store
 .env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
 .env.local
 .env.development.local
 .env.test.local
@@ -34,3 +39,4 @@ package-lock.json
 
 # pas de pdf dans le repo (au cas o udes pdf seraient auto-générés par une extension vscode)
 *.pdf
+
