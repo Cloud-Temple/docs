@@ -4,7 +4,7 @@ title: Tutorial - Deploy your first application
 
 ## Objectives
 
-This tutorial guides you step by step to perform your first deployment on a **Managed Kubernetes** cluster. By the end of this guide, you will have:
+This tutorial guides you step by step through your first deployment on a **Managed Kubernetes** cluster. By the end of this guide, you will have:
 
 - Deployed a simple web application.
 - Exposed this application within the cluster via a Service.
@@ -17,15 +17,15 @@ This tutorial guides you step by step to perform your first deployment on a **Ma
 
 ## Step 1: Create a namespace
 
-If not already done, create a namespace to isolate your application.
+If you haven't already, create a namespace to isolate your application.
 
 ```bash
 kubectl create namespace hello-world
 ```
 
-## Step 2: Deploy a "Hello World" application
+## Step 2: Deploy a "Hello World" Application
 
-We will deploy a demonstration application that displays a simple web page.
+We will deploy a demo application that displays a simple web page.
 
 1. Create a file named `deployment.yaml` with the following content:
 
@@ -77,9 +77,9 @@ We will deploy a demonstration application that displays a simple web page.
 
 ## Step 3: Expose the application in the cluster (Service)
 
-To allow the different components of the cluster to communicate with our application, we need to create a **Service**.
+To allow the various components of the cluster to communicate with our application, we need to create a **Service**.
 
-1. Create a file named `service.yaml`:
+1. Create a file named `service.yaml` :
 
     ```yaml
     apiVersion: v1
@@ -97,7 +97,7 @@ To allow the different components of the cluster to communicate with our applica
       type: ClusterIP
     ```
 
-2. Apply the manifest:
+2. Apply the manifest :
 
     ```bash
     kubectl apply -f service.yaml
@@ -107,9 +107,9 @@ To allow the different components of the cluster to communicate with our applica
 
 ## Step 4: Make the application accessible from the Internet (Ingress)
 
-To expose our service to the Internet, we will use an **Ingress** resource. The Managed Kubernetes offering provides several preconfigured `ingressClassName`s. We will use `nginx-external` for public exposure.
+To expose our service on the Internet, we will use an **Ingress** resource. The Managed Kubernetes offering provides several preconfigured `ingressClassName`s. We will use `nginx-external` for public exposure.
 
-1. Create a file `ingress.yaml`. **Remember to replace `votre-cluster-id`** with your cluster's identifier (e.g., `ctodev`).
+1. Create an `ingress.yaml` file. **Remember to replace `votre-cluster-id`** with your cluster ID (ex: `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -140,8 +140,8 @@ To expose our service to the Internet, we will use an **Ingress** resource. The 
 
 ## Step 5: Verify Access
 
-A DNS entry "*" already points all URLs ending with ".external.votre-cluster-id.mk.ms-cloud-temple.com" to the IP of the "external" ingress.
-Applications published on this DNS suffix are therefore directly accessible.
+A "*" DNS entry already points all URLs ending with ".external.votre-cluster-id.mk.ms-cloud-temple.com" to the "external" ingress IP.
+Applications published under this DNS suffix are therefore directly accessible.
 
 ```bash
 curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
@@ -168,14 +168,13 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Going further: security in production
-]
-This tutorial has shown you the basics of deployment. For a production environment, it is crucial to apply additional security measures:
-
-- **Use secure images** : Prefer images from your secure enterprise registry such as **Harbor** rather than public images.
-- **Control network traffic** : Set up `NetworkPolicies` to restrict communications to only the necessary traffic between your applications.
-- **Apply governance policies** : Use tools like **Kyverno** to enforce security rules (e.g., forbid "root" containers, require resource `requests` and `limits`, etc.).
-:::
+>⚠[Going further: Production Security]
+>This tutorial has shown you the basics of deployment. For a production environment, it is crucial to apply additional security measures:
+>
+>- **Use secure images**: Prefer images from your secure enterprise registry like **Harbor** rather than public images.
+>- **Control network traffic**: Implement `NetworkPolicies` to restrict communications to only the necessary flows between your applications.
+>- **Apply governance policies**: Use tools like **Kyverno** to enforce security rules (e.g., forbid "root" containers, require resource `requests` and `limits`, etc.).
+>- **Apply Pod Disruption Budgets**: A PDB ensures that your applications remain always available.
 
 ## Cleanup
 

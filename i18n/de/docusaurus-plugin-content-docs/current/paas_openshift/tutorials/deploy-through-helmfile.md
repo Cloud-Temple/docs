@@ -1,31 +1,31 @@
 ---
-title : Deploying through HelmFile
+title : Bereitstellen über HelmFile
 ---
 
-# Mit Helmfile deployen
+# Bereitstellen mit Helmfile
 
 ---
 
 ## Ziele
 
-Das Hauptziel dieses Tutorials ist es zu zeigen, wie Anwendungen auf unserer OpenShift PaaS mithilfe von **Helmfile** in der Orchestrierung mehrerer Helm-Charts bereitgestellt werden können.
+Das Hauptziel dieses Tutorials ist es, zu zeigen, wie Anwendungen auf unserer OpenShift-PaaS mit **Helmfile** bereitgestellt werden, indem mehrere Helm-Charts gemeinsam orchestriert werden.
 
-Den Front-End-Dienst über HTTP/HTTPS freigeben.
+Stellen Sie den Frontend-Service über HTTP/HTTPS bereit.
 
 ## Bekannte Einschränkungen
 
 Der Kontext dieser Demonstration ist wie folgt:
 
-- Einhaltung der OpenShift-Beschränkungen **(SCC restricted-V2)**.
-- Bereitstellung ausschließlich von **nicht privilegierten Containern** (UID > 30000).
+- Einhaltung der OpenShift-Einschränkungen **(SCC restricted-V2)**.
+- Ausschließliches Deployment von **nicht privilegierten Containern** (UID > 30000).
 - Keine Verwendung von **benutzerdefinierten CRDs**.
 - Kein Zugriff auf die Plattformrolle als **cluster-admin**.
-- Keine bereichsweite Bereitstellung auf Clusterebene (**clusterweite Installation**).
+- Kein clusterweites Deployment (**clusterweite Installation**).
 - Keine **Namespace-Erstellung** über Helmfile (um Berechtigungskonflikte zu vermeiden).
 
-## Highlights
+## Stärken
 
-- Demonstration der Bereitstellung eines Front-Ends (Nginx) und eines Back-Ends (PostgreSQL) mithilfe von Helmfile.
+- Demonstration der Bereitstellung eines Frontends (Nginx) und eines Backends (PostgreSQL) mit Helmfile.
 
 ## Softwareversionen
 
@@ -40,7 +40,7 @@ Der Kontext dieser Demonstration ist wie folgt:
 
 ## Voraussetzungen
 
-Vor Beginn dieser Demonstration stellen Sie sicher, dass Sie die folgenden Werkzeuge und Ressourcen haben:
+Bevor Sie mit dieser Demonstration beginnen, stellen Sie sicher, dass Sie über die folgenden Tools und Ressourcen verfügen:
 
 1. **CLI-Tools**  
    - **OpenShift CLI (`oc`)** : [Dokumentation](https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html)  
@@ -49,48 +49,48 @@ Vor Beginn dieser Demonstration stellen Sie sicher, dass Sie die folgenden Werkz
 
 2. **OpenShift-Umgebung**
 
-   - Ein funktionsfähiges OpenShift-Cluster, das von Cloud Temple verwaltet wird.
+   - Ein funktionsfähiger OpenShift-Cluster, der von Cloud Temple verwaltet wird.  
 
 3. **Zugriff und Berechtigungen**  
-   - Kundenadmin-Rolle zur Erstellung von Projekten und Bereitstellung von Ressourcen.
-
+   - Administratorrolle für Kunden zum Erstellen von Projekten und Bereitstellen von Ressourcen.
+  
 ---
 
 ## Demonstrationsplan
 
-### Überblick über die Schritte
+### Übersicht der Schritte
 
-1. Vorbereitung der Umgebung und Tools.  
-2. Bereitstellung von Anwendungen mit Helmfile:  
+1. Umgebung und Tools vorbereiten.  
+2. Anwendungen mit Helmfile bereitstellen:  
    - **nginx**: Ein einfacher Webserver.  
    - **PostgreSQL**: Ein Datenbankserver.  
-3. Überprüfung der Bereitstellung:  
-   - Bestätigen, dass die rootlosen Konfigurationen angewendet werden.  
-   - Testen der Funktionalität der Anwendungen.  
-4. Erkundung von fortgeschrittenen Anwendungsfällen und Erweiterungen.  
+3. Bereitstellung überprüfen:  
+   - Sicherstellen, dass die rootless-Konfigurationen angewendet werden.  
+   - Die Funktionalität der Anwendungen testen.  
+4. Erweiterte Anwendungsfälle und Erweiterungen erkunden.  
 
 ---
 
-## Notwendige Dateien
+## Erforderliche Dateien
 
-Um zu beginnen, benötigen Sie unser **Demonstrationsrepository**
+Um zu beginnen, benötigen Sie unser **Demonstrations-Repository**
 
-- Holen Sie es sich [hier](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) im Verzeichnis `/examples/deploy-through-helmfile/`.
+- Laden Sie es [ici](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) im Verzeichnis `/examples/deploy-through-helmfile/` herunter.
 
 Dort finden Sie drei Dateien:
 
-- `Helmfile.yaml`: Bereitstellungsmanifest, das Helmfile ermöglicht, die Bereitstellung der Helm-Charts zu definieren und zu orchestrieren.  
-- `nginx-values.yaml`: Gibt die Konfiguration und das Verhalten von Nginx an.  
-- `postgres-values.yaml`: Gibt die Konfiguration und das Verhalten von PostgreSQL an.  
+- `Helmfile.yaml` : Bereitstellungsmanifest, mit dem Helmfile die Bereitstellung von Helm-Charts definiert und orchestriert.  
+- `nginx-values.yaml` : Legt die Konfiguration und das Verhalten von Nginx fest.  
+- `postgres-values.yaml` : Legt die Konfiguration und das Verhalten von PostgreSQL fest.  
 
 ---
 
 ### `Helmfile.yaml`
 
-Die Hauptkonfigurationsdatei von Helmfile.  
-Es definiert die Repositories, Helm-Charts und benutzerdefinierten Werte für jede Anwendung.
+Die Hauptkonfigurationsdatei für Helmfile.  
+Sie definiert die Repositories, die Helm-Charts und die benutzerdefinierten Werte für jede Anwendung.
 
-#### Analyse Zeile für Zeile
+#### Zeilenweise Analyse
 
 ---
 
@@ -101,12 +101,12 @@ helmDefaults:
   createNamespace: false
 ```
 
-- **Beschreibung**: Legt das Standardverhalten der über Helmfile ausgeführten Helm-Befehle fest.
-- **Detail**:
-  - `createNamespace: false`: Verhindert, dass Helm während der Bereitstellung versucht, Namespaces zu erstellen.
-- **Auswirkung**:
-  - Stellt sicher, dass der Namespace vor der Bereitstellung der Charts existieren muss.
-  - Reduziert Fehler in Umgebungen mit eingeschränkten Berechtigungen.
+- **Beschreibung** : Definiert das Standardverhalten der über Helmfile ausgeführten Helm-Befehle.
+- **Details** :
+  - `createNamespace: false` : Verhindert, dass Helm versucht, Namespaces während der Bereitstellung zu erstellen.  
+- **Auswirkung** :
+  - Stellt sicher, dass der Namespace vor der Bereitstellung der Charts vorhanden sein muss.  
+  - Reduziert Fehler in Umgebungen mit eingeschränkten Berechtigungen.  
 
 ---
 
@@ -118,10 +118,10 @@ repositories:
     url: https://charts.bitnami.com/bitnami
 ```
 
-- **Beschreibung**: Definiert die Helm-Repositories, die die benötigten Charts enthalten.
-- **Detail**:
-  - `name`: Alias des Helm-Repositories.
-  - `url`: URL des Bitnami-Repositories, das häufig verwendete Charts enthält, die mit OpenShift kompatibel sind.
+- **Beschreibung** : Definiert die Helm-Repositories, die die erforderlichen Charts enthalten.  
+- **Details** :  
+  - `name` : Alias des Helm-Repositorys.  
+  - `url` : URL des Bitnami-Repositorys, das häufig verwendete, mit OpenShift kompatible Charts enthält.  
 
 ---
 
@@ -135,55 +135,55 @@ repositories:
       - nginx-values.yaml
 ```
 
-- **Beschreibung**: Definiert eine Helm-Anwendung namens **nginx**.
-- **Detail**:
-  - `name`: Name des Helm-Releases.
-  - `namespace`: Kubernetes-Namespace, in dem diese Anwendung bereitgestellt wird.
-  - `chart`: Verwendetes Helm-Chart, hier `bitnami/nginx`, das vom Bitnami-Repository abgerufen wurde.
-  - `values`: YAML-Datei, die spezifische Konfigurationen für die Bereitstellung enthält, hier `nginx-values.yaml`.
+- **Beschreibung** : Definiert eine Helm-Anwendung mit dem Namen **nginx**.  
+- **Details** :  
+  - `name` : Name der Helm-Release.  
+  - `namespace` : Kubernetes-Namespace, in dem diese Anwendung bereitgestellt wird.  
+  - `chart` : Verwendetes Helm-Chart, hier `bitnami/nginx`, abgerufen aus dem Bitnami-Repository.  
+  - `values` : YAML-Datei mit spezifischen Konfigurationen für die Bereitstellung, hier `nginx-values.yaml`.  
 
 ---
 
 ### `nginx-values.yaml`
 
-Konfigurationsdatei für die Bereitstellung von **Nginx**.
+Konfigurationsdatei für die Bereitstellung von **Nginx**.  
 
 ---
 
 ### `postgres-values.yaml`
 
-Gibt die Konfiguration für die Bereitstellung von **PostgreSQL** an.
+Stellt die Konfiguration für die Bereitstellung von **PostgreSQL** bereit.
 
 ---
 
-## Bereitstellungsablauf
+## Ablauf der Bereitstellung
 
 ### 1. Installieren der Voraussetzungen
 
-Stellen Sie sicher, dass alle in der Software-Sektion erwähnten Tools installiert sind.  
-Befolgen Sie gegebenenfalls die folgenden Anleitungen:
+Stellen Sie sicher, dass alle im Software-Abschnitt erwähnten Tools installiert sind.  
+Folgen Sie bei Bedarf den folgenden Leitfäden:  
 
 - [OCP CLI Guide](https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html)  
 - [Helmfile Guide](https://helmfile.readthedocs.io/en/latest/)
 
 ---
 
-### 2. Anmeldung am OpenShift-Cluster
+### 2. Verbindung zum OpenShift-Cluster
 
-Melden Sie sich mit folgendem Befehl bei Ihrem OpenShift-Cluster an:
+Authentifizieren Sie sich bei Ihrem OpenShift-Cluster mit dem folgenden Befehl:
 
 ```bash
 oc login --server=https://api.openshift.example.com:6443 --web
 ```
 
-> **Achtung**:
-> Ändern Sie `--server=url` in die URL Ihrer Cloud Temple PaaS-Instanz.
+> **Achtung** :  
+> Ersetzen Sie `--server=url` durch die URL Ihrer Cloud Temple PaaS-Instanz.
 
 ---
 
-### 3. Erstellen eines dedizierten Namespace
+### 3. Dedizierten Namespace erstellen
 
-Dieser Namespace isoliert die Demonstrationsressourcen:
+Dieser Namespace isoliert die Demonstrationsressourcen :
 
 ```bash
 oc new-project poc-helmfile
@@ -191,7 +191,7 @@ oc new-project poc-helmfile
 
 ---
 
-### 4. Bereitstellen der Anwendungen mit Helmfile
+### 4. Bereitstellen von Anwendungen mit Helmfile
 
 Verwenden Sie den folgenden Befehl:
 
@@ -203,7 +203,7 @@ helmfile sync
 
 ### 5. Überprüfung der Bereitstellung
 
-- **Pods überprüfen**:
+- **Überprüfen Sie die Pods** :  
 
 ```bash
 oc get pods -n poc-helmfile
@@ -211,27 +211,27 @@ oc get pods -n poc-helmfile
 
 ---
 
-### 6. Testen der Dienste
+### 6. Dienste testen
 
-Stellen Sie die bereitgestellten Dienste bereit, um deren Erreichbarkeit und Funktionalität zu testen.
+Machen Sie die bereitgestellten Dienste verfügbar, um ihre Erreichbarkeit und ordnungsgemäße Funktion zu testen.
 
 #### 1. Routen erstellen
 
-Stellen Sie den Nginx-Dienst bereit, indem Sie HTTP- oder HTTPS-Routen konfigurieren:
+Stellen Sie den Nginx-Dienst durch Konfigurieren von HTTP- oder HTTPS-Routen bereit:
 
-- **Für HTTPS**:
+- **Für HTTPS** :
 
 ```bash
 oc create route edge nginx-tls --service=nginx -n poc-helmfile --port=8080
 ```
 
-- **Für HTTP**:
+- **Für HTTP** :
 
 ```bash
 oc create route edge nginx --service=nginx -n poc-helmfile --port=8080
 ```
 
-#### 2. Ein Label für die öffentliche Bereitstellung hinzufügen
+#### 2. Ein Label für die öffentliche Freigabe hinzufügen
 
 Fügen Sie dem Router ein spezifisches Label hinzu, damit Ihr Dienst öffentlich zugänglich ist:
 
@@ -247,11 +247,11 @@ oc label route nginx-tls ct-router-type=public -n poc-helmfile
 oc label route nginx ct-router-type=public -n poc-helmfile
 ```
 
-Diese Schritte gewährleisten, dass Ihre Routen korrekt bereitgestellt werden.
+Diese Schritte stellen sicher, dass Ihre Routen korrekt freigegeben werden.
 
 ---
 
-### 7. Überprüfen der Routen und Zugreifen auf die Anwendungen
+### 7. Routen überprüfen und auf Anwendungen zugreifen
 
 #### 1. Liste der verfügbaren Routen
 
@@ -263,35 +263,35 @@ oc get routes -n poc-helmfile
 
 Beispielausgabe:
 
-| Name        | Host/Port                                                                      | Service | Port | TLS-Terminierung | Label                                     |
-|-------------|--------------------------------------------------------------------------------|---------|------|------------------|-------------------------------------------|
-| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com          | nginx   | 8080 | Keine           | `ct-router-type=public`                   |
-| nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com      | nginx   | 8080 | Edge (TLS)      | `ct-router-type=public`                   |
+| Name        | Host/Port                                                                        | Service  | Port  | TLS-Terminierung | Label                                  |
+|-------------|----------------------------------------------------------------------------------|----------|-------|------------------|----------------------------------------|
+| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | Keine            | `ct-router-type=public`                   |
+| nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080  | Edge (TLS)       | `ct-router-type=public`                   |
 
-#### 2. Zugriff auf die Anwendungen
+#### 2. Greifen Sie auf die Anwendungen zu
 
-Verwenden Sie die in der Spalte „Host/Port“ aufgeführten URLs, um auf die Anwendungen zuzugreifen. Hier ist ein Beispiel:
+Verwenden Sie die in der Spalte „Host/Port“ aufgeführten URLs, um auf die Anwendungen zuzugreifen. Hier ein Beispiel:
 
 - Für HTTP: `http://nginx-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 - Für HTTPS: `https://nginx-tls-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 
-> Sie sollten eine Webserver-Antwort vom **Nginx-Front-End** sehen, das bereitgestellt wurde.
+> Sie sollten eine Webserver-Antwort vom bereitgestellten **Nginx-Frontend** erhalten.
 
 ---
 
 ## Validierungskriterien
 
-Um den Erfolg dieser Demonstration sicherzustellen, überprüfen Sie die folgenden Punkte:
+Um den Erfolg dieser Demonstration zu gewährleisten, überprüfen Sie die folgenden Punkte:
 
-1. **Beide Anwendungen laufen fehlerfrei**.
-2. Die Pods verwenden UID > 30000, gemäß den rootlosen Containerbeschränkungen.
-3. Keine benutzerdefinierten CRDs wurden bereitgestellt.
-4. Die bereitgestellten Dienste sind über ihre definierten Routen zugänglich (prüfen Sie Nginx über HTTP und HTTPS).
+1. **Beide Anwendungen laufen ohne Fehler**.  
+2. Die Pods verwenden UIDs > 30000, entsprechend den Einschränkungen für rootless-Container.  
+3. Es wurde keine benutzerdefinierte CRD bereitgestellt.  
+4. Die bereitgestellten Dienste sind über ihre definierten Routen erreichbar (prüfen Sie Nginx über HTTP und HTTPS).  
 
 ---
 
 ## Fazit
 
-Sie haben nun ein vollständiges Beispiel für die Bereitstellung von Front-End- und Back-End-Anwendungen auf OpenShift mit Helmfile. Diese Methode bietet eine modulare und robuste Verwaltung komplexer Umgebungen.
+Sie haben nun ein vollständiges Beispiel für die Bereitstellung von Frontend- und Backend-Anwendungen auf OpenShift mit Helmfile. Diese Methode bietet eine modulare und robuste Verwaltung komplexer Umgebungen.
 
-Sie beherrschen jetzt die Bereitstellung über **Helmfile** auf OpenShift in einer von Cloud Temple verwalteten Umgebung. 🚀
+Sie beherrschen nun die Bereitstellung über **Helmfile** auf OpenShift in einer von Cloud Temple verwalteten Umgebung. 🚀

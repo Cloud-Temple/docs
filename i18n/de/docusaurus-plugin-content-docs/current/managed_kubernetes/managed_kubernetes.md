@@ -2,6 +2,9 @@
 title: Übersicht
 ---
 
+import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
+import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
+
 # Managed Kubernetes
 
 <div class="card-grid">
@@ -11,7 +14,7 @@ title: Übersicht
     <a href="./managed_kubernetes/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Erste Schritte</h3>
+    <h3>Schnellstart-Anleitung</h3>
     <p>Starten Sie schnell, indem Sie klaren und einfachen Anweisungen folgen.</p>
     <a href="./managed_kubernetes/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
@@ -22,75 +25,71 @@ title: Übersicht
   </div>
 </div>
 
-Managed Kubernetes von Cloud Temple ist eine Container-Orchestrierungslösung, die auf Open-Source-Produkten basiert und entwickelt wurde, um ein hohes Maß an Sicherheit, Resilienz und Automatisierung auf den SecNumcloud-Plattformen von Cloud Temple zu bieten. Jeder Cluster wird in einer vollständig dem Kunden gewidmeten IaaS-Umgebung von Cloud-Temple bereitgestellt.
+**Managed Kubernetes** von Cloud Temple ist eine auf Open-Source-Standards (CNCF) basierende Container-Orchestrierungslösung. Sie wurde entwickelt, um ein hohes Maß an Sicherheit, Resilienz und Automatisierung auf den SecNumcloud-Plattformen von Cloud Temple zu bieten. Jeder Cluster wird in einer vollständig dem Kunden gewidmeten IaaS-Umgebung von Cloud-Temple bereitgestellt.
 
-Dieses Produkt ist für Teams mit fundierten Kubernetes-Kenntnissen und Open-Source-Enthusiasten konzipiert, die eine native, portable Lösung ohne herstellerspezifische Schichten auf einem minimalistischen und unveränderlichen Betriebssystem suchen, das für Automatisierung und Sicherheit ausgelegt ist.
-
-### Kernvorteile
-
-- **Souveränität und Reversibilität** : Die Lösung basiert auf Open-Source-Standards (Kubernetes CNCF), um technologische Abhängigkeiten zu vermeiden und die Portabilität Ihrer Anwendungen zu gewährleisten. Das im Produkt enthaltene Backup-Tool Veeam Kasten ist speziell dafür entwickelt, Migrationen von einer Cloud in eine andere zu erleichtern.
-- **"Zero-Trust"-Sicherheit und Governance** : Die Architektur basiert auf Talos OS, einem unveränderlichen Betriebssystem ohne direkten Zugriff (weder Shell noch SSH), was die Angriffsfläche drastisch reduziert. Dieser Ansatz wird durch Governance-Tools wie Kyverno für das Policy-Management und Capsule für das feingranulare Rechte-Management ergänzt und bildet eine solide Grundlage für eine "Zero-Trust"-Sicherheitsstrategie.
-- **Kostenkontrolle und Integration** : Die Lösung integriert nativ FinOps-Tools wie OpenCost für eine präzise Überwachung der Ressourcenverbräuche. Das Geschäftsmodell ist transparent und basiert auf den verbrauchten IaaS-Ressourcen. Der Einsatz anerkannter Open-Source-Komponenten (Cilium, Ceph, ArgoCD) erleichtert die Integration in Ihre bestehenden Ökosysteme.
-
-### Eine vollständige und sofort einsatzbereite Plattform
-
-Die Lösung enthält von Haus aus einen vollständigen und konsistenten Stack aus hochmodernen Open-Source-Tools, um alle Anforderungen des Anwendungslifecycles abzudecken:
-
-- **Netzwerk und Sicherheit** : Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
-- **Speicher** : Rook-Ceph
-- **Kontinuierliche Bereitstellung (GitOps)** : ArgoCD
-- **Observierbarkeit** : Prometheus, Grafana, Loki
-- **Sicherung und Migration** : Veeam Kasten
-- **Kostenmanagement (FinOps)** : OpenCost
+Um den Anforderungen Ihrer Teams bestmöglich gerecht zu werden, bieten wir zwei Varianten dieses Produkts an: **Managed Core Kubernetes** (eine minimalistische Basis) und **Managed Kubernetes** (eine vollständige „einsetzbereite“ Plattform).
 
 ---
 
-## Deployment-Architekturen
+## Zwei Ansätze für Ihre Cluster
 
-Wir bieten zwei unterschiedliche Architekturen an, um Ihren Anforderungen gerecht zu werden, sei es für Entwicklungsumgebungen oder kritische Produktionsumgebungen.
+### 1. Managed Core Kubernetes (Die minimalistische Basis)
+Dieses Angebot richtet sich an Teams mit **ausgezeichneter Kubernetes-Expertise** und Erfahrung mit Cloud-Native-Tools, die ihre eigene Plattform auf minimalistischen und robusten Grundlagen aufbauen möchten. Es wendet sich an Open-Source-Enthusiasten, die eine schlanke, portable Lösung ohne herstellerspezifische Zusatzschicht suchen, die auf einem minimalistischen und unveränderlichen Betriebssystem basiert, das speziell für Automatisierung und Sicherheit konzipiert ist.
+
+- **Betriebssystem und Netzwerk inklusive** : Talos OS, Rook-Ceph (Speicher), Cilium (CNI), MetalLB (Load Balancer).
+- **Philosophie** : Auf dieser leistungsstarken und standardisierten Basis sind Sie frei, Ihre eigenen Tools für kontinuierliche Bereitstellung, Observability, Backup oder Sicherheit zu integrieren.
+
+### 2. Managed Kubernetes (Die vollständige Plattform)
+Diese Turnkey-Lösung wurde für Teams entwickelt, die eine **native, sofort einsatzbereite und All-in-One-Lösung** suchen, die die besten Open-Source-Standards integriert, um alle Anforderungen des Anwendungslifecycles abzudecken, ohne die Komponenten selbst zusammenstellen und warten zu müssen.
+
+Zusätzlich zur "Core"-Grundlage (Talos, Ceph, Cilium, MetalLB) integriert sie nativ:
+- **Netzwerk und Sicherheit** : Hubble, Ingress Nginx, Kyverno, Capsule, Cert-Manager.
+- **Kontinuierliche Bereitstellung (GitOps)** : ArgoCD, Harbor-Container-Registry, Keda
+- **Observability** : Vollständiger Stack (Prometheus, Grafana, Loki, Pyroscope).
+- **Kostenmanagement (FinOps)** : OpenCost.
+- **Sicherung und Wiederherstellung** : Veeam Kasten.
+- **Identität** : SSO-Authentifizierung mit einem externen OIDC-Identity-Provider (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...).
+
+---
+
+## Gemeinsame Kernvorteile
+
+Unabhängig vom gewählten Angebot teilen unsere Kubernetes-Cluster diese grundlegenden Vorteile:
+
+- **Souveränität und Reversibilität** : Die Lösung basiert auf Open-Source-Standards, um technologische Abhängigkeiten (*vendor lock-in*) zu vermeiden und die vollständige Portabilität Ihrer Anwendungen zu gewährleisten. (Mit Veeam Kasten in der Vollversion enthalten, um Cloud-zu-Cloud-Migrationen zu erleichtern).
+- **"Zero-Trust"-Sicherheit by Design** : Die Architektur basiert auf **Talos OS**, einem unveränderlichen und ephemeren Linux-Betriebssystem, das speziell für Kubernetes entwickelt wurde. Es bietet keinen direkten Zugriff (weder Shell noch SSH), was die Angriffsfläche drastisch reduziert.
+- **Kostenkontrolle** : Das Geschäftsmodell ist transparent und basiert ausschließlich auf den tatsächlich verbrauchten zugrunde liegenden IaaS-Ressourcen, ohne zusätzliche Lizenzkosten für den Orchestrator.
+
+---
+
+## Bereitstellungsarchitekturen
+
+Wir bieten zwei unterschiedliche Architekturen an, um Ihren Anforderungen gerecht zu werden, sei es für Entwicklungsumgebungen oder kritische Produktionsumgebungen. Diese Architekturen gelten für beide Angebote (Core et Full).
 
 ### Architektur "Dev/Test"
 
-Ideal für POC-Umgebungen, werden mit dieser kompakten Architektur alle Ressourcen innerhalb einer einzigen Verfügbarkeitszone (AZ) bereitgestellt.
+Ideal für POC-Umgebungen, stellt diese kompakte Architektur alle Ressourcen innerhalb einer einzigen Verfügbarkeitszone (AZ) bereit.
 
 - **Einsatzszenarien** : Entwicklung, Tests, Proof-of-Concept (POC).
 - **Kernmerkmale** :
   - 1 Control-Plane-Knoten.
   - 3 Worker-Knoten (oder mehr).
   - Der verteilte Speicher (Ceph) ist auf den Worker-Knoten ko-lokalisiert.
-  - Bietet kein SLA für hohe Verfügbarkeit.
-  - keine Sicherheitsbeschränkungen
+  - Bietet kein High-Availability-SLA.
+  - Keine architekturspezifischen Sicherheitsbeschränkungen.
 
-<img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={archiOverview1az} alt="Architecture Mono-AZ" />
 
 ### Produktionsarchitektur (Multi-AZ)
 
-Diese Architektur ist für Produktionsumgebungen und kritische Anwendungen konzipiert und verteilt die Ressourcen auf drei Verfügbarkeitszonen (AZ), um hohe Verfügbarkeit und maximale Resilienz gemäß den SecNumCloud-Anforderungen zu gewährleisten.
+Entwickelt für die Produktion und kritische Anwendungen verteilt diese Architektur die Ressourcen auf drei Verfügbarkeitszonen (AZ), um hohe Verfügbarkeit und maximale Resilienz gemäß den SecNumCloud-Anforderungen zu gewährleisten.
 
-- **Einsatzszenarien** : Produktionsanwendungen, kritische Dienste, Plattformen mit SLA-Anforderungen.
+- **Einsatzszenario** : Produktionsanwendungen, kritische Dienste, Plattformen, die ein SLA erfordern.
 - **Kernmerkmale** :
-  - **Hohe Verfügbarkeit** : 3 Control-Plane-Knoten, verteilt auf 3 AZ.
+  - **Hohe Verfügbarkeit** : 3 Control-Plane-Knoten auf 3 AZ verteilt.
   - **Dedizierter Speicher** : 3 dedizierte und verteilte Speicherknoten für Leistung und Resilienz.
   - **Verteilte Worker** : Mindestens 3 Worker-Knoten, einer pro AZ.
-  - **Bare-Metal-Knoten (Optional)** : Optionale Integration von Worker-Knoten vom Typ **"Bare Metal"** für spezifische Leistungsanforderungen, insbesondere die **GPU-Unterstützung**.
-  - **SLA von 99,95 %**.
+  - **Bare-Metal-Knoten (Optionnel)** : Mögliche Integration von Worker-Knoten vom Typ **"Bare Metal"** für spezifische Leistungsanforderungen, insbesondere die **GPU-Unterstützung**.
+  - **SLA von 99,95%**, monatlich gemessen.
 
-<img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Architecture Multi-AZ" />
-
----
-
-### Detaillierte technische Komponenten
-
-Das Angebot umfasst im Detail die folgenden Komponenten:
-
-- CNI Cilium, mit Observability-Oberfläche (Hubble)
-- Interne und externe Ingresses mit MetalLB und nginx
-- Verteilte Speicherung mit Rook-Ceph
-- Cert-Manager
-- ArgoCD
-- Prometheus-Stack (Prometheus, Grafana, Loki)
-- Container-Registry Harbor
-- Kostenmanagement mit OpenCost
-- Erweiterte Sicherheitsstrategien mit Kyverno und Capsule
-- Veeam Kasten (Backup, Automatisierung über Umgebungen hinweg und Reversibilität)
-- SSO-Authentifizierung mit einem externen OIDC-Identity-Provider (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
+<img src={archiOverview} alt="Architecture Multi-AZ" />

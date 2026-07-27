@@ -1,33 +1,33 @@
 ---
-title: Distribuire tramite HelmFile
+title : Distribuire tramite HelmFile
 ---
 
-# Distribuire tramite Helmfile
+# Distribuire con Helmfile
 
 ---
 
 ## Obiettivi
 
-L’obiettivo principale di questo tutorial è mostrare come distribuire applicazioni sul nostro PaaS OpenShift utilizzando **Helmfile** orchestrando più chart Helm insieme.
+L'obiettivo principale di questo tutorial è mostrare come distribuire applicazioni sulla nostra PaaS OpenShift utilizzando **Helmfile** orchestrando più Helm charts insieme.
 
-Esporre il servizio front-end via HTTP/HTTPS.
+Esporre il servizio front-end tramite HTTP/HTTPS.
 
-## Limitazioni conosciute
+## Limitazioni note
 
 Il contesto di questa dimostrazione è il seguente:
 
 - Rispetta i vincoli OpenShift **(SCC restricted-V2)**.
-- Distribuzione solo di **contenitori senza privilegi** (UID > 30000).
-- Nessun ricorso ai **CRD personalizzati**.
+- Distribuzione esclusivamente di **contenitori non privilegiati** (UID > 30000).
+- Nessun utilizzo di **CRD personalizzati**.
 - Nessun accesso al ruolo della piattaforma come **cluster-admin**.
-- Nessuna distribuzione a livello del cluster (**installazione cluster-wide**).
+- Nessun deployment a livello di cluster (**installazione cluster-wide**).
 - Nessuna **creazione di namespace** tramite Helmfile (per evitare conflitti di permessi).
 
 ## Punti di forza
 
-- Dimostrazione della distribuzione di un front-end (Nginx) e di un back-end (PostgreSQL) utilizzando Helmfile.
+- Dimostrazione del deployment di un front-end (Nginx) e di un back-end (PostgreSQL) utilizzando Helmfile.
 
-## Versioni dei software
+## Versioni del software
 
 - OpenShift CLI : 4.17.6  
 - Helm : v3.16.3  
@@ -51,20 +51,20 @@ Prima di iniziare questa dimostrazione, assicurati di avere i seguenti strumenti
 
    - Un cluster OpenShift funzionante gestito da Cloud Temple.  
 
-3. **Accesso e permessi**  
-   - Ruolo client admin per creare progetti e distribuire risorse.
+3. **Accesso e autorizzazioni**  
+   - Ruolo di amministratore client per creare progetti e distribuire risorse.
   
 ---
 
-## Piano della dimostrazione
+## Piano di dimostrazione
 
-### Panoramica dei passaggi
+### Panoramica delle fasi
 
 1. Preparare l'ambiente e gli strumenti.  
 2. Distribuire applicazioni utilizzando Helmfile:  
-   - **nginx** : Un semplice server web.  
-   - **PostgreSQL** : Un server di database.  
-3. Verificare la distribuzione:  
+   - **nginx**: un semplice server web.  
+   - **PostgreSQL**: un server di database.  
+3. Verificare il deployment:  
    - Confermare che le configurazioni rootless siano applicate.  
    - Testare la funzionalità delle applicazioni.  
 4. Esplorare casi d'uso avanzati ed estensioni.  
@@ -73,13 +73,13 @@ Prima di iniziare questa dimostrazione, assicurati di avere i seguenti strumenti
 
 ## File necessari
 
-Per iniziare, avrai bisogno del nostro **Repository di dimostrazione**
+Per iniziare, avrete bisogno del nostro **Repository dimostrativo**
 
-- Recuperalo [qui](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) nella directory `/examples/deploy-through-helmfile/`.
+- Scaricatelo [qui](https://github.com/Cloud-Temple/product-openshift-how-to/tree/main) nella directory `/examples/deploy-through-helmfile/`.
 
-Troverai tre file:
+Troverete tre file:
 
-- `Helmfile.yaml` : Manifesto di distribuzione che consente a Helmfile di definire e orchestrare la distribuzione dei chart Helm.  
+- `Helmfile.yaml` : Manifesto di deployment che consente a Helmfile di definire e orchestrare il deployment dei chart Helm.  
 - `nginx-values.yaml` : Specifica la configurazione e il comportamento di Nginx.  
 - `postgres-values.yaml` : Specifica la configurazione e il comportamento di PostgreSQL.  
 
@@ -87,10 +87,10 @@ Troverai tre file:
 
 ### `Helmfile.yaml`
 
-Il file principale di configurazione Helmfile.  
+Il file di configurazione principale di Helmfile.  
 Definisce i repository, i chart Helm e i valori personalizzati per ciascuna applicazione.
 
-#### Analisi linea per linea
+#### Analisi riga per riga
 
 ---
 
@@ -101,12 +101,12 @@ helmDefaults:
   createNamespace: false
 ```
 
-- **Descrizione** : Definisce il comportamento predefinito dei comandi Helm eseguiti tramite Helmfile.
-- **Dettaglio**:
-  - `createNamespace: false` : Evita che Helm tenti di creare namespace durante la distribuzione.  
-- **Impatto**:
-  - Assicura che il namespace debba esistere prima di avviare la distribuzione dei chart.  
-  - Riduce gli errori in ambienti con permessi limitati.  
+- **Description** : Definisce il comportamento predefinito dei comandi Helm eseguiti tramite Helmfile.
+- **Dettaglio** :
+  - `createNamespace: false` : Evita che Helm tenti di creare namespace durante il deployment.  
+- **Impatto** :
+  - Garantisce che il namespace esista prima di avviare il deployment dei chart.  
+  - Riduce gli errori negli ambienti con permessi limitati.  
 
 ---
 
@@ -119,7 +119,7 @@ repositories:
 ```
 
 - **Descrizione** : Definisce i repository Helm contenenti i chart necessari.  
-- **Dettaglio**:  
+- **Dettaglio** :  
   - `name` : Alias del repository Helm.  
   - `url` : URL del repository Bitnami, che contiene chart comunemente utilizzati, compatibili con OpenShift.  
 
@@ -135,33 +135,33 @@ repositories:
       - nginx-values.yaml
 ```
 
-- **Descrizione** : Definisce un'applicazione Helm chiamata **nginx**.  
-- **Dettaglio**:  
+- **Description** : Definisce un'applicazione Helm denominata **nginx**.  
+- **Dettagli** :  
   - `name` : Nome della release Helm.  
-  - `namespace` : Namespace Kubernetes in cui questa applicazione sarà distribuita.  
-  - `chart` : Chart Helm utilizzato, qui `bitnami/nginx`, recuperato dal repository Bitnami.  
-  - `values` : File YAML contenente configurazioni specifiche per la distribuzione, qui `nginx-values.yaml`.  
+  - `namespace` : Namespace Kubernetes in cui verrà distribuita questa applicazione.  
+  - `chart` : Chart Helm utilizzato, in questo caso `bitnami/nginx`, recuperato dal repository Bitnami.  
+  - `values` : File YAML contenente configurazioni specifiche per il deployment, in questo caso `nginx-values.yaml`.  
 
 ---
 
 ### `nginx-values.yaml`
 
-File di configurazione per la distribuzione di **Nginx**.  
+File di configurazione per il deployment di **Nginx**.  
 
 ---
 
 ### `postgres-values.yaml`
 
-Fornisce la configurazione per la distribuzione di **PostgreSQL**.
+Fornisce la configurazione per il deployment di **PostgreSQL**.
 
 ---
 
-## Svolgimento della distribuzione
+## Processo di deployment
 
 ### 1. Installare i prerequisiti
 
-Assicurati che tutti gli strumenti menzionati nella sezione sui software siano installati.  
-Segui le guide seguenti se necessario:  
+Assicurarsi che tutti gli strumenti menzionati nella sezione sui software siano installati.  
+Seguire le seguenti guide se necessario:  
 
 - [OCP CLI Guide](https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html)  
 - [Helmfile Guide](https://helmfile.readthedocs.io/en/latest/)
@@ -170,20 +170,20 @@ Segui le guide seguenti se necessario:
 
 ### 2. Connessione al cluster OpenShift
 
-Autenticati al tuo cluster OpenShift con il comando seguente:
+Autenticati sul tuo cluster OpenShift con il seguente comando :
 
 ```bash
 oc login --server=https://api.openshift.example.com:6443 --web
 ```
 
 > **Attenzione** :  
-> Modifica `--server=url` con l'url della tua istanza Cloud Temple PaaS.
+> Modifica `--server=url` con l'URL della tua istanza Cloud Temple PaaS.
 
 ---
 
 ### 3. Creare un namespace dedicato
 
-Questo namespace isolerà le risorse di dimostrazione:
+Questo namespace isolerà le risorse di dimostrazione :
 
 ```bash
 oc new-project poc-helmfile
@@ -193,7 +193,7 @@ oc new-project poc-helmfile
 
 ### 4. Distribuire le applicazioni con Helmfile
 
-Utilizza il comando seguente:
+Utilizzare il comando seguente :
 
 ```bash
 helmfile sync
@@ -201,9 +201,9 @@ helmfile sync
 
 ---
 
-### 5. Verifica della distribuzione
+### 5. Verifica del deployment
 
-- **Verifica i pod** :  
+- **Verificare i pod** :  
 
 ```bash
 oc get pods -n poc-helmfile
@@ -213,49 +213,49 @@ oc get pods -n poc-helmfile
 
 ### 6. Testare i servizi
 
-Esporre i servizi distribuiti per testare la loro accessibilità e il loro corretto funzionamento.
+Esporre i servizi distribuiti per verificarne l'accessibilità e il corretto funzionamento.
 
-#### 1. Creazione di rotte
+#### 1. Creazione di route
 
-Esporre il servizio Nginx configurando rotte HTTP o HTTPS:
+Espone il servizio Nginx configurando route HTTP o HTTPS:
 
-- **Per HTTPS**:
+- **Per HTTPS** :
 
 ```bash
 oc create route edge nginx-tls --service=nginx -n poc-helmfile --port=8080
 ```
 
-- **Per HTTP**:
+- **Per HTTP** :
 
 ```bash
 oc create route edge nginx --service=nginx -n poc-helmfile --port=8080
 ```
 
-#### 2. Aggiungere un'etichetta per un'esposizione pubblica
+#### 2. Aggiungere un'etichetta per l'esposizione pubblica
 
-Aggiungi un'etichetta specifica al router in modo che il tuo servizio sia accessibile pubblicamente:
+Aggiungi un'etichetta specifica al router affinché il servizio sia accessibile pubblicamente:
 
-- Per la rotta HTTPS:
+- Per la route HTTPS:
 
 ```bash
 oc label route nginx-tls ct-router-type=public -n poc-helmfile
 ```
 
-- Per la rotta HTTP:
+- Per la route HTTP:
 
 ```bash
 oc label route nginx ct-router-type=public -n poc-helmfile
 ```
 
-Questi passaggi garantiscono che le tue rotte siano esposte correttamente.
+Questi passaggi garantiscono che le route siano esposte correttamente.
 
 ---
 
-### 7. Verificare le rotte e accedere alle applicazioni
+### 7. Verificare le route e accedere alle applicazioni
 
-#### 1. Elenco delle rotte disponibili
+#### 1. Elenco delle route disponibili
 
-Verifica che le rotte siano state correttamente create:
+Verificare che le route siano state create correttamente:
 
 ```bash
 oc get routes -n poc-helmfile
@@ -263,35 +263,35 @@ oc get routes -n poc-helmfile
 
 Esempio di output:
 
-| Nome         | Host/Port                                                                        | Servizio  | Port  | Risoluzione TLS | Etichetta                                  |
+| Nome         | Host/Porta                                                                        | Servizio  | Porta  | Risoluzione TLS | Etichetta                                  |
 |-------------|----------------------------------------------------------------------------------|----------|-------|----------------|-------------------------------------------|
-| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | Nessuno        | `ct-router-type=public`                   |
+| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | Nessuno          | `ct-router-type=public`                   |
 | nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080  | Edge (TLS)     | `ct-router-type=public`                   |
 
-#### 2. Accedere alle applicazioni
+#### 2. Accedi alle applicazioni
 
-Utilizza le URL elencate nella colonna «Host/Port» per accedere alle applicazioni. Ecco un esempio:
+Utilizza gli URL elencati nella colonna « Host/Porta » per accedere alle applicazioni. Ecco un esempio :
 
 - Per HTTP : `http://nginx-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 - Per HTTPS : `https://nginx-tls-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 
-> Dovresti vedere una risposta di tipo server web a partire dal **front-end Nginx** distribuito.
+> Dovresti visualizzare una risposta di tipo server web dal **front-end Nginx** distribuito.
 
 ---
 
 ## Criteri di validazione
 
-Per garantire il successo di questa dimostrazione, verifica i seguenti elementi:
+Per garantire il successo di questa dimostrazione, verificare i seguenti elementi :
 
-1. **Le due applicazioni sono in esecuzione senza errori**.  
-2. I pod utilizzano UID > 30000, conformemente ai vincoli dei contenitori rootless.  
+1. **Le due applicazioni si eseguono senza errori**.  
+2. I pod utilizzano UID > 30000, in conformità con i vincoli dei container rootless.  
 3. Nessun CRD personalizzato è stato distribuito.  
-4. I servizi distribuiti sono accessibili tramite le loro rotte definite (verifica Nginx su HTTP e HTTPS).  
+4. I servizi distribuiti sono accessibili tramite le loro route definite (vérifiez Nginx sur HTTP et HTTPS).  
 
 ---
 
 ## Conclusione
 
-Ora hai un esempio completo di distribuzione di applicazioni front-end e back-end su OpenShift con Helmfile. Questo metodo offre una gestione modulare e robusta degli ambienti complessi.
+Avete ora un esempio completo di deployment di applicazioni front-end e back-end su OpenShift con Helmfile. Questo metodo offre una gestione modulare e robusta di ambienti complessi.
 
-Ora padroneggi il processo di distribuzione tramite **Helmfile** su OpenShift in un ambiente gestito da Cloud Temple. 🚀
+Ora padroneggiate il deployment tramite **Helmfile** su OpenShift in un ambiente gestito da Cloud Temple. 🚀

@@ -4,16 +4,16 @@ title: Tutorial - Bereitstellen Ihrer ersten Anwendung
 
 ## Ziele
 
-Dieses Tutorial führt Sie Schritt für Schritt durch die Bereitstellung Ihrer ersten Anwendung auf einem **Managed Kubernetes**-Cluster. Am Ende dieses Leitfadens haben Sie:
+Dieses Tutorial führt Sie Schritt für Schritt durch Ihre erste Bereitstellung auf einem **Managed Kubernetes**-Cluster. Nach Abschluss dieses Leitfadens haben Sie:
 
 - Eine einfache Webanwendung bereitgestellt.
-- Diese Anwendung innerhalb des Clusters über einen Service freigegeben.
-- Die Anwendung über einen Ingress von Internet aus zugänglich gemacht.
+- Diese Anwendung innerhalb des Clusters über einen Service verfügbar gemacht.
+- Die Anwendung über einen Ingress aus dem Internet zugänglich gemacht.
 
 ## Voraussetzungen
 
-- Sie haben Ihren Zugriff auf den Cluster wie in der [Schnellstartanleitung](../quickstart.md) beschrieben konfiguriert.
-- Sie verfügen über ein Namespace, in dem Sie über Bereitstellungsrechte verfügen. In diesem Tutorial verwenden wir ein Namespace mit dem Namen `hello-world`.
+- Sie haben Ihren Cluster-Zugriff wie im [Schnellstartleitfaden](../quickstart.md) beschrieben konfiguriert.
+- Sie verfügen über einen Namespace, für den Sie Berechtigungen zum Bereitstellen haben. In diesem Tutorial verwenden wir einen Namespace mit dem Namen `hello-world`.
 
 ## Schritt 1: Namespace erstellen
 
@@ -25,9 +25,9 @@ kubectl create namespace hello-world
 
 ## Schritt 2: Bereitstellen einer "Hello World"-Anwendung
 
-Wir stellen eine Demo-Anwendung bereit, die eine einfache Webseite anzeigt.
+Wir werden eine Beispielanwendung bereitstellen, die eine einfache Webseite anzeigt.
 
-1. Erstellen Sie eine Datei namens `deployment.yaml` mit dem folgenden Inhalt:
+1. Erstellen Sie eine Datei mit dem Namen `deployment.yaml` mit folgendem Inhalt:
 
     ```yaml
     apiVersion: apps/v1
@@ -60,24 +60,24 @@ Wir stellen eine Demo-Anwendung bereit, die eine einfache Webseite anzeigt.
     kubectl apply -f deployment.yaml
     ```
 
-3. Überprüfen Sie, ob das Deployment erstellt wurde und die Pods ausgeführt werden:
+3. Überprüfen Sie, ob die Bereitstellung erstellt wurde und die Pods ausgeführt werden:
 
     ```bash
     kubectl get deployment -n hello-world
-    # Sie sollten Ihr Deployment mit 2/2 einsatzbereiten Replikaten sehen.
+    # Vous devriez voir votre déploiement avec 2/2 replicas prêts.
     NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
     hello-world-deployment   2/2     2            2           102s
 
     kubectl get pods -n hello-world
-    # Sie sollten zwei Pods mit dem Status "Running" sehen.
+    # Vous devriez voir deux pods avec le statut "Running".
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-world-deployment-669dfbd799-294zz   1/1     Running   0          2m21s
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
     ```
 
-## Schritt 3: Die Anwendung im Cluster exponieren (Service)
+## Schritt 3: Anwendung im Cluster verfügbar machen (Service)
 
-Um die verschiedenen Komponenten des Clusters mit unserer Anwendung kommunizieren zu lassen, müssen wir einen **Service** erstellen.
+Um es den verschiedenen Komponenten des Clusters zu ermöglichen, mit unserer Anwendung zu kommunizieren, müssen wir einen **Service** erstellen.
 
 1. Erstellen Sie eine Datei mit dem Namen `service.yaml` :
 
@@ -105,11 +105,11 @@ Um die verschiedenen Komponenten des Clusters mit unserer Anwendung kommuniziere
 
     Ihre Anwendung ist jetzt über den Namen `hello-world-service.hello-world` von jedem anderen Pod im Cluster aus erreichbar.
 
-## Schritt 4: Die Anwendung über das Internet zugänglich machen (Ingress)
+## Schritt 4: Die Anwendung im Internet verfügbar machen (Ingress)
 
-Um unseren Dienst im Internet zugänglich zu machen, verwenden wir eine **Ingress**-Ressource. Das Managed Kubernetes-Angebot stellt mehrere vorkonfigurierte `ingressClassName`-Werte bereit. Wir verwenden `nginx-external` für den öffentlichen Zugriff.
+Um unseren Dienst im Internet verfügbar zu machen, verwenden wir eine **Ingress**-Ressource. Das Managed-Kubernetes-Angebot stellt mehrere vorkonfigurierte `ingressClassName`-Werte bereit. Wir verwenden `nginx-external` für eine öffentliche Erreichbarkeit.
 
-1. Erstellen Sie eine Datei `ingress.yaml`. **Ersetzen Sie `votre-cluster-id`** durch die ID Ihres Clusters (z. B. `ctodev`).
+1. Erstellen Sie eine Datei `ingress.yaml`. **Denken Sie daran, `votre-cluster-id`** durch die ID Ihres Clusters zu ersetzen (z. B. `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -140,8 +140,8 @@ Um unseren Dienst im Internet zugänglich zu machen, verwenden wir eine **Ingres
 
 ## Schritt 5: Zugriff überprüfen
 
-Ein DNS-Eintrag "*" leitet bereits alle URLs, die auf ".external.votre-cluster-id.mk.ms-cloud-temple.com" enden, auf die IP-Adresse des "external"-Ingresses weiter.
-Auf diesem DNS-Suffix veröffentlichte Anwendungen sind daher direkt erreichbar.
+Ein DNS-Eintrag "*" leitet bereits alle URLs, die auf ".external.votre-cluster-id.mk.ms-cloud-temple.com" enden, an die IP des "external"-Ingress weiter.
+Anwendungen, die unter diesem DNS-Suffix veröffentlicht werden, sind somit direkt erreichbar.
 
 ```bash
 curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
@@ -168,18 +168,17 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Vertiefung: Sicherheit in der Produktion
-]
-Dieses Tutorial hat Ihnen die Grundlagen des Deployments gezeigt. Für eine Produktionsumgebung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen anzuwenden:
-
-- **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrer gesicherten Unternehmens-Registry wie **Harbor** anstelle von öffentlichen Images.
-- **Steuern Sie den Netzwerkverkehr**: Richten Sie `NetworkPolicies` ein, um die Kommunikation auf die für Ihre Anwendungen erforderlichen Flüsse zu beschränken.
-- **Wenden Sie Governance-Richtlinien an**: Nutzen Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. das Verbot von "root"-Containern, die Anforderung von Ressourcenanfragen (`requests`) und -grenzen (`limits`) usw.).
-:::
+>⚠[Pour aller plus loin : la sécurité en production]
+>Dieses Tutorial hat Ihnen die Grundlagen der Bereitstellung gezeigt. Für eine Produktionsumgebung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu ergreifen:
+>
+>- **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor** gegenüber öffentlichen Images.
+>- **Kontrollieren Sie den Netzwerkverkehr**: Implementieren Sie `NetworkPolicies`, um die Kommunikation auf die für Ihre Anwendungen notwendigen Datenströme zu beschränken.
+>- **Wenden Sie Governance-Richtlinien an**: Verwenden Sie Tools wie **Kyverno**, um Sicherheitsregeln durchzusetzen (z. B. "root"-Container verbieten, `requests` und `limits` für Ressourcen vorschreiben usw.).
+>- **Wenden Sie Pod Disruption Budgets an**: Ein PDB stellt sicher, dass Ihre Anwendungen jederzeit verfügbar bleiben.
 
 ## Bereinigung
 
-Um alle Ressourcen zu löschen, die Sie während dieses Tutorials erstellt haben, können Sie einfach den Namespace löschen:
+Um alle während dieses Tutorials erstellten Ressourcen zu löschen, können Sie einfach den Namespace löschen:
 
 ```bash
 kubectl delete namespace hello-world

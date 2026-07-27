@@ -1,59 +1,57 @@
 ---
-title: Utilizzare ArgoCD per i tuoi deploy GitOps
+title: Utilizzare ArgoCD per i tuoi deployment GitOps
 ---
 
 import argocdguestbook from '@site/docs/managed_kubernetes/tutorials/images/argocdguestbook.png'
 
 ## Obiettivi
 
-Questo tutorial spiega come utilizzare **ArgoCD**, lo strumento di deployment continuo GitOps integrato nel tuo cluster **Managed Kubernetes**. Alla fine di questa guida, saprai:
+Questo tutorial spiega come utilizzare **ArgoCD**, lo strumento di distribuzione continua GitOps integrato nel tuo cluster **Managed Kubernetes**. Al termine di questa guida, saprai:
 
 - Cos'è l'approccio GitOps.
 - Come accedere all'interfaccia di ArgoCD.
 - Come distribuire un'applicazione utilizzando ArgoCD per sincronizzare un repository Git.
 
-## Il principio del GitOps con ArgoCD
+## Il principio di GitOps con ArgoCD
 
-Il **GitOps** è una pratica che consiste nell'utilizzare un repository Git come unica fonte di verità per dichiarare lo stato desiderato della tua infrastruttura e delle tue applicazioni.
+**GitOps** è una pratica che consiste nell'utilizzare un repository Git come unica fonte di verità per dichiarare lo stato desiderato della propria infrastruttura e delle proprie applicazioni.
 
-**ArgoCD** è lo strumento che implementa questo principio. Monitora costantemente un repository Git e confronta lo stato definito al suo interno (tramite manifest Kubernetes) con lo stato effettivo del tuo cluster. Se rileva una differenza, applica automaticamente le modifiche affinché il cluster corrisponda a quanto dichiarato in Git.
+**ArgoCD** è lo strumento che implementa questo principio. Monitora costantemente un repository Git e confronta lo stato in esso definito (tramite manifest Kubernetes) con lo stato effettivo del cluster. Se rileva una differenza, applica automaticamente le modifiche affinché il cluster corrisponda a quanto dichiarato in Git.
 
 I vantaggi sono numerosi:
 
 - **Distribuzioni affidabili e riproducibili.**
 - **Tracciabilità completa** di tutte le modifiche tramite la cronologia Git.
-- **Recupero rapido** in caso di incidente, tornando a un commit precedente.
+- **Ripristino rapido** dopo un incidente tornando a un commit precedente.
 - **Sicurezza migliorata** limitando gli accessi diretti al cluster.
 
 ## Accedere all'interfaccia ArgoCD
 
-L'interfaccia web di ArgoCD è esposta su un URL interno del cluster. Per accedervi, è necessario essere connessi alla rete interna del cluster (ad esempio, tramite un bastion o un VPN).
+L'interfaccia web di ArgoCD è esposta su un URL interno del vostro cluster. Per accedervi, dovete essere connessi alla rete interna del cluster (ad esempio, tramite un server bastion o un VPN).
 
-L'URL da utilizzare è la seguente, sostituendo `<votre-identifiant-de-cluster>` :
+L'URL da utilizzare è il seguente, sostituendo `<votre-identifiant-de-cluster>` :
 
 `http://argocd.internal.<votre-identifiant-de-cluster>.mk.ms-cloud-temple.com`
 
-È possibile ottenere l'indirizzo IP interno dell'Ingress ArgoCD con il comando seguente :
+È possibile ottenere l'indirizzo IP interno dell'Ingress ArgoCD con il seguente comando :
 
 ```bash
 kubectl get ingress argocd-server -n argocd
 ```
 
-:::info
-La password per l'account `admin` viene fornita dai team Cloud Temple durante la configurazione del cluster.
-:::
+>ℹ️ La password per l'account `admin` vi viene fornita dai team Cloud Temple al momento della consegna del vostro cluster.
 
-## Distribuire un'applicazione con ArgoCD
+## Deployare un'applicazione con ArgoCD
 
 Ora distribuiremo un'applicazione di test utilizzando l'approccio GitOps.
 
 ### 1. Il repository Git
 
-ArgoCD richiede un repository Git contenente i manifest Kubernetes dell'applicazione da distribuire. Per questo tutorial, utilizzeremo il repository di esempio di ArgoCD: `https://github.com/argoproj/argocd-example-apps`. Distribuiremo l'applicazione `guestbook` che si trova in questo repository.
+ArgoCD ha bisogno di un repository Git contenente i manifest Kubernetes dell'applicazione da distribuire. Per questo tutorial, utilizzeremo il repository di esempi di ArgoCD: `https://github.com/argoproj/argocd-example-apps`. Distribuiremo l'applicazione `guestbook` che si trova in questo repository.
 
 ### 2. Preparare il Namespace di destinazione
 
-Per consentire la distribuzione dell'applicazione in un namespace gestito da Capsule, dobbiamo prima creare questo namespace e applicargli la label del tenant appropriata.
+Affinché l'applicazione possa essere distribuita in un namespace gestito da Capsule, dobbiamo prima creare questo namespace e applicargli il label del tenant appropriato.
 
 Eseguire i seguenti comandi :
 
@@ -61,15 +59,15 @@ Eseguire i seguenti comandi :
 # Crea il namespace
 kubectl create namespace guestbook
 
-# Applica la label per associarlo al tenant "default" di Capsule (se necessario, poiché il namespace è probabilmente già stato associato al tuo tenant durante la creazione)
+# Applica il label per associarlo al tenant "default" di Capsule (se necessario, poiché il namespace è probabilmente già stato associato al tuo tenant durante la sua creazione)
 kubectl label namespace guestbook capsule.clastix.io/tenant=default
 ```
 
 ### 3. Creare l'applicazione in ArgoCD
 
-Una volta pronto il namespace, possiamo dichiarare l'applicazione ad ArgoCD.
+Ora che il namespace è pronto, possiamo dichiarare l'applicazione ad ArgoCD.
 
-1. Crea un file denominato `app-guestbook.yaml` con il contenuto seguente :
+1. Creare un file denominato `app-guestbook.yaml` con il seguente contenuto :
 
     ```yaml
     apiVersion: argoproj.io/v1alpha1
@@ -92,51 +90,51 @@ Una volta pronto il namespace, possiamo dichiarare l'applicazione ad ArgoCD.
           selfHeal: true
     ```
 
-    Questo manifesto richiede ad ArgoCD di :
+    Questo manifest richiede ad ArgoCD di :
     - Creare un'applicazione denominata `guestbook`.
     - Monitorare il repository `argocd-example-apps`.
-    - Concentrarsi sulla cartella `guestbook` di questo repository.
-    - Distribuire i manifesti trovati nel namespace `guestbook` del cluster locale.
+    - Concentrarsi sulla directory `guestbook` di questo repository.
+    - Distribuire i manifest trovati nel namespace `guestbook` del cluster locale.
     - Mantenere la sincronizzazione automaticamente (`automated`).
 
-2. Hai due opzioni per creare l'applicazione in ArgoCD :
+2. Sono disponibili due opzioni per creare l'applicazione in ArgoCD :
 
-    **Opzione A : tramite `kubectl` (Approccio GitOps)**
+    **Opzione A : Tramite `kubectl` (Approccio GitOps)**
 
-    Applica questo manifesto direttamente al tuo cluster. È il metodo consigliato poiché segue il principio GitOps di gestione dichiarativa.
+    Applicare questo manifest direttamente al cluster. Questo è il metodo consigliato poiché segue il principio GitOps di gestione dichiarativa.
 
     ```bash
     kubectl apply -f app-guestbook.yaml
     ```
 
-    **Opzione B : tramite l'interfaccia web di ArgoCD**
+    **Opzione B : Tramite l'interfaccia web di ArgoCD**
 
-    Puoi anche creare l'applicazione direttamente dall'interfaccia grafica :
-    - Nell'UI di ArgoCD, fai clic su **"+ NEW APP"**.
-    - In alto a destra nella schermata di creazione, fai clic su **"EDIT AS YAML"**.
-    - Incolla il contenuto del tuo file `app-guestbook.yaml` nell'editor.
-    - Fai clic su **"CREATE"**.
+    È inoltre possibile creare l'applicazione direttamente dall'interfaccia grafica :
+    - Nell'UI di ArgoCD, fare clic su **"+ NEW APP"**.
+    - In alto a destra nella schermata di creazione, fare clic su **"EDIT AS YAML"**.
+    - Incollare il contenuto del file `app-guestbook.yaml` nell'editor.
+    - Fare clic su **"CREATE"**.
 
 ### 4. Verificare la sincronizzazione
 
-Non appena applichi il manifesto, ArgoCD rileva questa nuova risorsa `Application` e inizia il suo lavoro.
+Non appena applichi il manifest, ArgoCD rileva questa nuova risorsa `Application` e inizia il suo lavoro.
 
-1. **Tramite l'interfaccia web :**
+1. **Via l'interfaccia web:**
     - Accedi all'interfaccia di ArgoCD.
-    - Dovresti vedere una nuova scheda per l'applicazione `guestbook`.
+    - Dovresti vedere una nuova card per l'applicazione `guestbook`.
     - Dopo qualche istante, il suo stato dovrebbe passare a `Healthy` e `Synced`.
-    - Facendo clic sulla scheda, puoi visualizzare tutte le risorse Kubernetes (Deployment, Service, ecc.) che sono state create.
+    - Facendo clic sulla card, puoi visualizzare tutte le risorse Kubernetes (Deployment, Service, ecc.) che sono state create.
 
 <img src={argocdguestbook} />
 
-1. **Tramite la riga di comando :**
-    - Verifica che il namespace `guestbook` sia stato creato :
+1. **Via la riga di comando:**
+    - Verifica che il namespace `guestbook` sia stato creato:
 
       ```bash
       kubectl get ns guestbook
       ```
 
-    - Verifica che le risorse dell'applicazione siano effettivamente distribuite in questo namespace :
+    - Verifica che le risorse dell'applicazione siano state distribuite correttamente in questo namespace:
 
       ```bash
       kubectl get all -n guestbook
@@ -155,34 +153,32 @@ Non appena applichi il manifesto, ArgoCD rileva questa nuova risorsa `Applicatio
 
 ### 5. Il ciclo GitOps
 
-Ora, se si modifica un manifesto nel repository Git, ArgoCD rileverà la modifica e aggiornerà automaticamente l'applicazione nel cluster. È la magia del GitOps!
+Ora, se modifichi un manifesto nel repository Git, ArgoCD rileverà la modifica e aggiornerà automaticamente l'applicazione nel cluster. È la magia del GitOps!
 
 ## Pulizia
 
 Per eliminare l'applicazione e tutte le risorse associate, è sufficiente eliminare la risorsa `Application` di ArgoCD.
 
-1. **Tramite l'interfaccia web :**
-    - Nell'UI di ArgoCD, trova l'applicazione `guestbook`.
-    - Clicca sui tre punti (...) per aprire il menu e seleziona **"Elimina"**.
-    - Seleziona l'opzione **"Foreground"** per assicurarti che tutte le risorse gestite (pod, servizi, ecc.) vengano eliminate in cascata.
-2. **Tramite `kubectl` :**
-    - Elimina il file `app-guestbook.yaml` che hai creato :
+1. **Via l'interfaccia web:**
+    - Nell'interfaccia utente di ArgoCD, individua l'applicazione `guestbook`.
+    - Fai clic sui tre punti (...) per aprire il menu e seleziona **"Delete"**.
+    - Seleziona l'opzione **"Foreground"** per assicurarti che tutte le risorse gestite (pod, servizi, ecc.) vengano eliminate a cascata.
+2. **Via `kubectl`:**
+    - Elimina il file `app-guestbook.yaml` che hai creato:
 
       ```bash
       kubectl delete -f app-guestbook.yaml
       ```
 
-ArgoCD ora eliminerà tutti i componenti dell'applicazione `guestbook`. Una volta completata la sincronizzazione di eliminazione, il namespace `guestbook` sarà vuoto. A questo punto puoi eliminarlo con il comando seguente :
+ArgoCD eliminerà ora tutti i componenti dell'applicazione `guestbook`. Una volta completata la sincronizzazione di eliminazione, il namespace `guestbook` sarà vuoto. Potrai quindi eliminarlo con il seguente comando:
 
 ```bash
 kubectl delete namespace guestbook
 ```
 
-:::info[Per approfondire: la gestione dei segreti
-]
-Questo tutorial utilizza un repository pubblico senza dati sensibili. Per le tue applicazioni in produzione, è fondamentale non memorizzare mai segreti (password, chiavi API) in chiaro nel tuo repository Git. Soluzioni come **Sealed Secrets** o **HashiCorp Vault** si integrano con ArgoCD per gestire i tuoi segreti in modo sicuro. Un futuro tutorial approfondirà questo approccio.
-:::
+>ℹ️[Per approfondire: la gestione dei segreti]
+>Questo tutorial utilizza un repository pubblico senza dati sensibili. Per le tue applicazioni in produzione, è fondamentale non memorizzare mai segreti (password, chiavi API) in chiaro nel tuo repository Git. >Soluzioni come **Sealed Secrets** o **OpenTofu** si integrano con ArgoCD per gestire i tuoi segreti in modo sicuro.
 
 ## Conclusione
 
-Hai distribuito la tua prima applicazione con ArgoCD seguendo i principi GitOps. Questo approccio potente ti consente di gestire le tue distribuzioni in modo dichiarativo, affidabile e sicuro. Ti incoraggiamo ad adottarlo per tutte le tue applicazioni su Managed Kubernetes.
+Avete distribuito la vostra prima applicazione con ArgoCD seguendo i principi GitOps. Questo potente approccio vi consente di gestire le vostre distribuzioni in modo dichiarativo, affidabile e sicuro. Vi incoraggiamo ad adottarlo per tutte le vostre applicazioni su Managed Kubernetes.

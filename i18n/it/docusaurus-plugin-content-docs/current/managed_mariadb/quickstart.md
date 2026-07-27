@@ -8,26 +8,30 @@ L'obiettivo di questa sezione è indirizzarvi verso le risorse necessarie per in
 
 ## Prima di iniziare
 
-Assicurati di disporre degli accessi forniti da Cloud-Temple.
+Assicurati di disporre degli accessi che ti sono stati forniti da Cloud-Temple.
 
-Assicurati che i flussi di rete siano aperti verso gli indirizzi IP forniti.
+Assicurati che i flussi di rete siano aperti verso gli indirizzi IP che ti sono stati forniti.
 
-## Accedere al tuo cluster MariaDB gestito
+> **Prerequisiti di deployment** : Questo deployment richiede un cluster Kubernetes gestito completamente installato, con lo stack Prometheus e Grafana configurato per usufruire della telemetria completa e della dashboard Grafana associata.
 
-In base al modello di distribuzione scelto, disponi di uno o più endpoint.
+Ogni cluster o server viene distribuito in modo isolato dall'operatore MariaDB in un namespace Kubernetes dedicato.
 
-**StandAlone** : 1 solo endpoint (1 seule IP), accessibile sulla porta 3306.
+## Accedere al proprio cluster MariaDB Gestito
 
-**Distribuito** :
+A seconda del modello di distribuzione scelto, si dispone di uno o più endpoint.
 
-- 1 Endpoint Maxscale, accessibile sulla porta 3306, in grado di distribuire le tue richieste verso le istanze più appropriate (c'est le endpoint a privilégier)
+**StandAlone** : 1 solo endpoint (1 solo IP), accessibile sulla porta 3306.
+
+**MultiAZ** :
+
+- 1 Endpoint Maxscale, accessibile sulla porta 3306, in grado di distribuire le query verso le istanze più appropriate (è l'endpoint da privilegiare).
 - 1 Endpoint R/W, accessibile sulla porta 3306, che punta all'istanza primaria, in lettura-scrittura.
 - 1 Endpoint R/O, accessibile sulla porta 3306, che punta a tutte le istanze, in sola lettura.
 
-## Le tue autorizzazioni
+## I tuoi permessi
 
-Non disponi di alcuna autorizzazione a livello di motore di database (né `SUPER`, né `ALL_PRIVILEGE`)
+Non disponi di alcun permesso a livello del motore di database (né `SUPER`, né `ALL_PRIVILEGE`).
 
-Non è possibile riconfigurare il motore o le sue opzioni, né installare il performance_schema.
+Non puoi riconfigurare il motore o le sue opzioni, né installare `performance_schema`. (Ricordiamo che, inoltre, è sconsigliato attivarlo sulle istanze inferiori alla dimensione X-Large per motivi di risorse RAM).
 
-Le richieste di aggiunta di database, utenti o grant devono essere inoltrate ai team Cloud-Temple.
+Le richieste di aggiunta di database, utenti o grant devono essere rivolte ai team Cloud-Temple.
