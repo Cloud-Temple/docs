@@ -2,11 +2,6 @@
 title: Sauvegarder vos applications avec Veeam Kasten
 ---
 
-
-import k10dashboard from '@site/docs/managed_kubernetes/tutorials/images/k10dashboard.png'
-import k10s3location from '@site/docs/managed_kubernetes/tutorials/images/k10s3location.png'
-import k10infrabackups from '@site/docs/managed_kubernetes/tutorials/images/k10infrabackups.png'
-
 ## Introduction
 
 Veeam Kasten K10 est une solution de sauvegarde et de restauration conçue spécifiquement pour les environnements Kubernetes. Dans le produit Managed Kubernetes de Cloud Temple, Kasten est intégré pour vous permettre de protéger vos applications, de restaurer des données en cas de besoin et d'assurer la continuité de vos activités.
@@ -34,7 +29,8 @@ Le tableau de bord Kasten est accessible via une URL sécurisée, construite à 
    > L'accès à cette URL est restreint aux adresses IP publiques que vous avez déclarées. Si vous ne parvenez pas à vous connecter, assurez-vous que votre adresse IP est autorisée en contactant le support Cloud Temple.
    >
 
-<img src={k10dashboard} />
+![K10 Dashboard](images/k10dashboard.png)
+
 
 > ℹ️[Guide de démarrage rapide intégré] La console Kasten inclut un guide de démarrage rapide interactif sur sa page d'accueil. N'hésitez pas à le suivre pour une première prise en main directement depuis l'interface.
 
@@ -44,7 +40,8 @@ Par défaut, Kasten est préconfiguré pour utiliser le service de stockage obje
 
 Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est déjà défini dans le tableau de bord Kasten, sous **Settings > Locations**. Cette configuration garantit que vos données sont stockées sur une infrastructure souveraine.
 
-<img src={k10s3location} />
+![K10 S3 location](images/k10s3location.png)
+
 
 > ℹ️[Modèle de coût] Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
 
@@ -54,7 +51,7 @@ Une politique de sauvegarde (`Policy`) est un ensemble de règles qui définisse
 
 ⚠[Politique de sauvegarde existante] Une politique de sauvegarde nommée `infra-backups` est déjà configurée dans votre instance Kasten. Cette politique assure la sauvegarde des composants essentiels livrés avec le cluster.
 
-<img src={k10infrabackups} />
+![K10 infra backups](images/k10infrabackups.png)
 
 **Ne modifiez pas et ne supprimez pas cette politique.**
 
