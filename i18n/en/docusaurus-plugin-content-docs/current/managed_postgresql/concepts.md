@@ -5,110 +5,93 @@ sidebar_position: 1
 
 # Key Concepts of Managed PostgreSQL
 
-This section presents the fundamental concepts of our **Managed PostgreSQL** service. Understanding these principles will help you get the most out of your managed database by aligning its capabilities with your application requirements and security standards.
+This section presents the fundamental concepts of our **Managed PostgreSQL** service. Understanding these principles will help you get the most out of your managed database, aligning its capabilities with your application needs and security requirements.
 
 ## Sovereignty and SecNumCloud Compliance
 
-At the core of our product lies **digital sovereignty**. The Managed PostgreSQL service is fully hosted on the Cloud Temple infrastructure, certified **SecNumCloud 3.2** by ANSSI.
+At the heart of our product lies **digital sovereignty**. The Managed PostgreSQL service is entirely hosted on the Cloud Temple infrastructure, certified **SecNumCloud 3.2** by ANSSI.
 
-- **100% France-based hosting**: Your data remains on national territory, shielded from extraterritorial laws.
-- **Native compliance**: The solution is designed to meet the strictest regulatory requirements (GDPR, HDS, LPM, NIS2, PCI-DSS).
-- **Open Source and Reversibility**: By leveraging open standards such as PostgreSQL Community Server and Patroni, we guarantee no technological dependency (*vendor lock-in*) and full portability of your data.
+- **100% Hosting in France** : Your data remains on national territory, shielded from extraterritorial laws.
+- **Native Compliance** : The solution is designed to meet the strictest regulatory requirements (RGPD, HDS, LPM, NIS2, PCI-DSS).
+- **Open Source and Reversibility** : By leveraging the open source Kubernetes operator **CloudNative-PG (CNPG)** and **Barman**, we guarantee zero technological dependency (*vendor lock-in*) and full portability of your data and configurations.
 
-## High Availability Architecture: Patroni Cluster
+## CloudNative-PG (CNPG) Operator
 
-For distributed environments, our product relies on **Patroni Cluster** to provide high availability without data loss.
+PostgreSQL database lifecycle management on our Kubernetes infrastructure relies on **CloudNative-PG (CNPG)**.
 
-- **Synchronous Replication**: Unlike traditional asynchronous replication, each transaction is committed on all cluster nodes *before* being confirmed. This ensures a **Zero Recovery Point Objective (RPO)**: no committed data can be lost in the event of a failure.
-- **Multi-AZ Distribution**: The cluster is distributed across three distinct Availability Zones (AZ). The failure of an entire datacenter results in no service interruption or data loss.
-- **Automatic Failover**: In the event of a node failure, traffic is automatically redirected to healthy nodes, ensuring a **minimal Recovery Time Objective (RTO)**.
+- **Declarative Deployment** : Database configuration is handled via Kubernetes Custom Resource Definitions (CRDs), enabling an Infrastructure-as-Code (IaC) approach via Terraform or Helm.
+- **Built-in High Availability** : CNPG automatically manages primary node election and seamless failover (*failover*).
+- **Native Monitoring** : Detailed metrics are natively exported to Prometheus, facilitating the creation of Grafana dashboards.
 
 ## Deployment Models
 
-We offer two models to accommodate the criticality of your workloads.
+We offer three models to adapt to the criticality of your workloads:
 
 ### 1. StandAlone
 
-This model deploys a single instance of the PostgreSQL engine.
+This model deploys a **single instance** of the PostgreSQL engine.
 
-- **Use case** : This deployment model is perfectly suited for simple applications, such as CMSs, which use only a single endpoint to connect to databases.
-- **Resilience** : Although it is a single instance, the underlying storage is replicated across 3 AZs, allowing automatic restart on another AZ in case of hardware failure.
-- **SLA** : 99.9% (excluding maintenance windows).
+- **Use case** : Development, staging, or applications that do not require high availability.
+- **Resilience** : Since the underlying storage is persistent and managed by Kubernetes, the pod can be automatically restarted on another node in the event of host hardware failure.
 
-### 2. Distributed
+### 2. Replica
 
-This model deploys a **Patroni cluster with 3 instances** of the PostgreSQL engine, complemented by a **PgBouncer** proxy.
+This template deploys a **cluster of 3 instances** PostgreSQL (one primary, two replicas).
 
-- **Use case**: This deployment model is ideally suited for applications with distributed access, such as data or business intelligence applications, which benefit from read-only access without impacting data ingestion.
-- **Components** :
-  - **3 PostgreSQL Nodes** : One primary read-write (RW) node and two secondary read-only (RO) nodes.
-  - **PgBouncer Proxy** : An intelligent router that distributes queries. It routes writes to the primary node and distributes reads across the secondary nodes (*read/write splitting*), thereby optimizing performance.
-- **SLA** : 99.9% (excluding maintenance windows).
+- **Asynchronous Replication** : Data is replicated via continuous streaming (asynchronous). This provides excellent performance while ensuring a copy of the data on the replicas with minimal lag.
+- **Automatic Failover** : In the event of a primary failure, CNPG automatically promotes the most up-to-date replica to ensure service continuity.
 
-> **Important Note** : It is not possible to change the deployment model of an existing cluster (for example, from *StandAlone* to *Distributed*). This operation requires creating a new cluster in the desired model, via a PiTR restore.
+### 3. Enterprise
+
+This model deploys a PostgreSQL **3-instance cluster** optimized for **critical high availability**.
+
+- **Synchronous Replication** : Replication is configured synchronously across at least 2 nodes (`any 2`) with a durability guarantee (`dataDurability: preferred`). 
+- **Durability** : A `COMMIT` is only confirmed to the application once the data has been successfully written to both the primary AND a replica, ensuring that no committed transaction will be lost in the event of a hardware failure, without blocking the database if a node is temporarily unavailable.
 
 ## Backup and Restoration (PITR)
 
-Your data protection is ensured by a dual backup strategy.
+Your data protection is ensured by the **Barman Cloud** plugin, fully integrated into the operator.
 
-1. **Physical Backup (Point-in-Time Recovery - PITR)**:
-    - We perform complete daily physical backups using `pg_basebackup` (without service interruption).
-    - Transaction logs (*WAL*) are continuously archived.
-    - This combination enables restoration to the exact second, up to the moment just before an incident.
+1. **Continuous WAL Archiving** :
+    - Each transaction log (*WAL*) segment is archived in real-time to a SecNumCloud-certified S3 Object Storage.
+    - Compression is optimized (e.g., `lz4` or `gzip`) to reduce volume while maintaining good performance.
 
-2. **Logical Backup (`pg_dump`)**:
-    - Logical exports of the databases are also performed.
-    - They offer fine-grained control to restore or export an individual database.
+2. **Scheduled Backups (`ScheduledBackup`)** :
+    - Full physical backups are triggered on a scheduled basis (e.g., daily at 02:00).
+    - An initial backup is taken immediately upon cluster creation.
 
-All backups are encrypted at rest and stored on our S3 Object Storage, which is itself SecNumCloud certified.
+These combined mechanisms enable **Point-in-Time Recovery (PITR)** : the ability to restore the entire server to a specific date and time, thereby protecting against human errors or data corruption.
 
-## Multi-Level Security
+## Multi-Layer Security
 
-Security is integrated into every layer of the service.
+- **Network Isolation** : Database instances are deployed in dedicated namespaces and isolated on the client's private network.
+- **Encryption** :
+  - **In transit** : TLS-encrypted connections.
+  - **At rest** : Storage data as well as S3 backups are encrypted.
+- **Kubernetes Secrets** : Superuser and application credentials are securely generated and stored as Kubernetes Secrets, retrievable according to strict rules.
 
-- **Network Isolation**: Database instances are **never exposed to the Internet**. Access is exclusively via the client's private network.
-- **End-to-End Encryption**:
-  - **In transit**: All connections (client to database and between cluster nodes) are encrypted using TLS 1.3.
-  - **At rest**: Data on disk and backups are encrypted using AES-256.
-- **Access Management**: Authentication is secured and permissions are managed according to the principle of least privilege.
+## Instance Sizes (T-Shirt Sizes)
 
-## Managed Service ("Zero Ops")
+Databases have strict limits (CPU and RAM) that correspond to the chosen size.
+PostgreSQL internal parameters (`shared_buffers`, `effective_cache_size`, `work_mem`, etc.) are **pre-tuned** for each size to optimize performance and ensure the container never reaches its RAM limit (thus avoiding a Kubernetes OOMKill that would abruptly terminate the service).
 
-The objective of Managed PostgreSQL is to offload operational complexity. Our teams handle:
+| Size | CPU | Memory | shared_buffers | effective_cache_size | work_mem | maintenance_work_mem | max_connections | pgbouncer_default_pool_size | pgbouncer_max_client_conn |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **XS** | 1 Core | 4 Gb | 1024MB | 3072MB | 16MB | 128MB | 80 | 8 | 200 |
+| **S** | 1 Core | 8 Gb | 2048MB | 6144MB | 32MB | 256MB | 150 | 10 | 250 |
+| **M** | 2 Cores | 8 Gb | 2048MB | 6144MB | 32MB | 256MB | 150 | 10 | 250 |
+| **L** | 2 Cores | 16 Gb | 4096MB | 12288MB | 64MB | 512MB | 250 | 15 | 300 |
+| **XL** | 4 Cores | 16 Gb | 4096MB | 12288MB | 64MB | 512MB | 250 | 15 | 300 |
+| **XXL** | 4 Cores | 32 Gb | 8192MB | 24576MB | 128MB | 1024MB | 500 | 20 | 500 |
+| **3XL** | 8 Cores | 32 Gb | 8192MB | 24576MB | 128MB | 1024MB | 500 | 20 | 500 |
+| **4XL** | 8 Cores | 64 Gb | 16384MB | 49152MB | 256MB | 2048MB | 500 | 25 | 500 |
 
-- Provisioning and initial configuration.
-- Full lifecycle management: minor updates, security patch application.
-- 24/7 monitoring of the infrastructure and service.
-- Backup management and verification.
+> **Note** : *requests* (CPU and RAM) are allocated at 50% of the *limits* configured above.
 
-This allows your teams to focus on application development and data operations.
+## Supported PostgreSQL Versions
 
-## Version Policy & Lifecycle
+We support all current major versions, allowing you to choose based on your applications' compatibility:
 
-The PostgreSQL community releases versions with long-term support (LTS), ensuring stability and predictability. Our service relies on these versions to ensure the longevity of your infrastructure.
+- **PostgreSQL 13, 14, 15, 16, 17, and 18**.
 
-| Version | Type | Supported Until |
-| :--- | :--- | :--- |
-| **PostgreSQL 15** | LTS | Nov 2027 |
-| **PostgreSQL 16** | LTS | Nov 2028 |
-
-- **Minor Updates** : Security patches and bug fixes are applied by our teams via *rolling update* (node by node) to cause no service interruption.
-- **Major Updates** : Major version upgrades are planned in collaboration with you to align with your schedule.
-- **End of Support** : We notify you at least 180 days before the end of support for an LTS version to plan the migration to the next version.
-
-## Instance Sizes
-
-***StandAlone*** and ***Distributed*** instances are available with predefined sizes:
-
-| Size | vCPU | Memory | innodb_buffer_pool_size | innodb_buffer_pool_instances | max_allowed_packet | table_open_cache | maxconn |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **XS** | 1000m | 4096Mi | 2458M | 2 | 256M | 800 | 80 |
-| **S** | 1000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
-| **M** | 2000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
-| **L** | 2000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
-| **XL** | 4000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
-| **XXL** | 4000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
-| **3XL** | 8000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
-| **4XL** | 8000m | 65536Mi | 39320M | 16 | 1G | 10000 | 500 |
-
-> **Note**: Storage is provisioned separately and can be scaled up on the fly (from 2Gi to 128Gi) (but not scaled down, except by recreating a new instance.).
+The CNPG operator handles minor updates seamlessly by applying a rolling update strategy (*rolling update*).

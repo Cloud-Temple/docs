@@ -1,8 +1,11 @@
 ---
-title: Visión general
+title: Vista general
 ---
 
-# Kubernetes Administrado
+import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
+import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
+
+# Managed Kubernetes
 
 <div class="card-grid">
   <div class="card">
@@ -22,32 +25,46 @@ title: Visión general
   </div>
 </div>
 
-Managed Kubernetes de Cloud Temple es una solución de orquestación de contenedores basada en productos Open Source y diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización en las plataformas SecNumcloud de Cloud Temple. Cada clúster se despliega en un entorno IaaS de Cloud-Temple totalmente dedicado al cliente.
+**Managed Kubernetes** de Cloud Temple es una solución de orquestación de contenedores basada en estándares de código abierto (CNCF). Está diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización en las plataformas SecNumcloud de Cloud Temple. Cada clúster se despliega en un entorno IaaS Cloud-Temple completamente dedicado al cliente.
 
-Este producto está diseñado para equipos con un sólido conocimiento de Kubernetes y para los adeptos al código abierto que buscan una solución nativa, portátil, sin capas propietarias, sobre un sistema operativo minimalista e inmutable diseñado para la automatización y la seguridad.
+Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos dos variantes de este producto: **Managed Core Kubernetes** (una base minimalista) y **Managed Kubernetes** (una plataforma completa "lista para usar").
 
-### Beneficios Clave
+---
 
-- **Soberanía y Reversibilidad** : La solución se basa en estándares de código abierto (Kubernetes CNCF) para evitar cualquier dependencia tecnológica y garantizar la portabilidad de sus aplicaciones. La herramienta de copia de seguridad Veeam Kasten, incluida en el producto, está diseñada específicamente para facilitar las migraciones de una nube a otra.
-- **Seguridad "Zero-Trust" y Gobernanza** : La arquitectura se basa en Talos OS, un sistema operativo inmutable sin acceso directo (ni shell, ni SSH), lo que reduce drásticamente la superficie de ataque. Este enfoque se combina con herramientas de gobernanza como Kyverno para la gestión de políticas y Capsule para la gestión granular de permisos, constituyendo una base sólida para una estrategia de seguridad "Zero-Trust".
-- **Control de Costos e Integración** : La solución integra nativamente herramientas de FinOps como OpenCost para un seguimiento preciso del consumo. El modelo económico es transparente, basado en los recursos de IaaS consumidos, y el uso de componentes de código abierto reconocidos (Cilium, Ceph, ArgoCD) facilita la integración en sus ecosistemas existentes.
+## Dos enfoques para sus clústeres
 
-### Una plataforma completa y lista para usar
+### 1. Managed Core Kubernetes (La base minimalista)
+Esta oferta está diseñada para equipos con un **excelente dominio de Kubernetes** y herramientas Cloud Native, que desean construir su propia plataforma sobre bases minimalistas y robustas. Se dirige a los entusiastas del código abierto que buscan una solución depurada, portátil, sin capas adicionales del proveedor, sobre un sistema operativo minimalista e inmutable diseñado para la automatización y la seguridad.
 
-La solución incluye nativamente un stack completo y coherente de herramientas open source de vanguardia para cubrir todas las necesidades del ciclo de vida de la aplicación:
+- **SO y Red incluidos**: Talos OS, Rook-Ceph (almacenamiento), Cilium (CNI), MetalLB (Balanceador de carga).
+- **Filosofía**: A partir de esta base eficiente y estandarizada, tienes la libertad de integrar tus propias herramientas de despliegue continuo, observabilidad, copia de seguridad o seguridad.
 
-- **Red y Seguridad** : Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
-- **Almacenamiento** : Rook-Ceph
-- **Despliegue Continuo (GitOps)** : ArgoCD
-- **Observabilidad** : Prometheus, Grafana, Loki
-- **Copia de Seguridad y Migración** : Veeam Kasten
-- **Gestión de Costos (FinOps)** : OpenCost
+### 2. Managed Kubernetes (La plataforma completa)
+Esta oferta integral está diseñada para equipos que buscan una solución **nativa, lista para usar y todo en uno**, que integre los mejores estándares de código abierto para cubrir todas las necesidades del ciclo de vida de la aplicación sin tener que ensamblar y mantener los componentes por su cuenta.
+
+Además de la base "Core" (Talos, Ceph, Cilium, MetalLB), integra de forma nativa:
+- **Red y Seguridad** : Hubble, Ingress Nginx, Kyverno, Capsule, Cert-Manager.
+- **Despliegue Continuo (GitOps)** : ArgoCD, Registro de contenedores Harbor, Keda
+- **Observabilidad** : Stack completa (Prometheus, Grafana, Loki, Pyroscope).
+- **Gestión de Costes (FinOps)** : OpenCost.
+- **Copia de Seguridad y Reversibilidad** : Veeam Kasten.
+- **Identidad** : Autenticación SSO con un Proveedor de Identidad Externo OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...).
+
+---
+
+## Beneficios Clave Comunes
+
+Independientemente de la oferta elegida, nuestros clústeres de Kubernetes comparten estos beneficios fundamentales:
+
+- **Soberanía y Reversibilidad** : La solución se basa en estándares de código abierto para evitar cualquier dependencia tecnológica (*vendor lock-in*) y garantizar la portabilidad total de sus aplicaciones. (Con Veeam Kasten incluido en la versión completa para facilitar las migraciones intercloud).
+- **Seguridad "Zero-Trust" por diseño** : La arquitectura se basa en **Talos OS**, un sistema operativo Linux inmutable y efímero diseñado específicamente para Kubernetes. No cuenta con ningún acceso directo (ni shell, ni SSH), lo que reduce drásticamente la superficie de ataque.
+- **Control de Costos** : El modelo económico es transparente, basado exclusivamente en los recursos subyacentes de IaaS consumidos, sin costo de licencia adicional para el orquestador.
 
 ---
 
 ## Arquitecturas de Despliegue
 
-Proponemos dos arquitecturas distintas para satisfacer sus necesidades, ya sea para entornos de desarrollo o de producción críticos.
+Proponemos dos arquitecturas distintas para satisfacer sus necesidades, ya sea para entornos de desarrollo o de producción críticos. Estas arquitecturas se aplican a las dos ofertas (Core et Full).
 
 ### Arquitectura "Dev/Test"
 
@@ -56,41 +73,23 @@ Ideal para entornos de POC, esta arquitectura compacta despliega todos los recur
 - **Casos de uso** : Desarrollo, pruebas, prueba de concepto (POC).
 - **Puntos clave** :
   - 1 nodo Control Plane.
-  - 3 nodos Workers (ou plus).
-  - El almacenamiento distribuido (Ceph) está co-localizado en los nodos workers.
+  - 3 nodos Workers (o más).
+  - El almacenamiento distribuido (Ceph) se co-localiza en los nodos workers.
   - No cuenta con un SLA de alta disponibilidad.
-  - ninguna restricción de seguridad
+  - Ninguna restricción de seguridad específica para la arquitectura.
 
-<img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={archiOverview1az} alt="Architecture Mono-AZ" />
 
 ### Arquitectura de Producción (Multi-AZ)
 
-Diseñada para producción y aplicaciones críticas, esta arquitectura distribuye los recursos en tres zonas de disponibilidad (AZ) para garantizar una alta disponibilidad y una resiliencia máxima, conforme a los requisitos de SecNumCloud.
+Diseñada para producción y aplicaciones críticas, esta arquitectura distribuye los recursos en tres zonas de disponibilidad (AZ) para garantizar alta disponibilidad y máxima resiliencia, de acuerdo con los requisitos de SecNumCloud.
 
-- **Casos de uso** : Aplicaciones de producción, servicios críticos, plataformas que requieren un SLA.
+- **Caso de uso** : Aplicaciones de producción, servicios críticos, plataformas que requieren un SLA.
 - **Puntos clave** :
-  - **Alta Disponibilidad** : 3 nodos de Control Plane distribuidos en 3 AZ.
+  - **Alta Disponibilidad** : 3 nodos Control Plane distribuidos en 3 AZ.
   - **Almacenamiento Dedicado** : 3 nodos de almacenamiento dedicados y distribuidos para el rendimiento y la resiliencia.
-  - **Workers Distribuidos** : Al menos 3 nodos worker, uno por AZ.
-  - **Nodos Bare Metal (Optionnel)** : Integración posible de nodos worker de tipo **"Bare Metal"** para necesidades de rendimiento específicas, en particular el **soporte de GPU**.
-  - **SLA del 99.95%**.
+  - **Workers Distribuidos** : Al menos 3 nodos workers, uno por AZ.
+  - **Nodos Bare Metal (Optionnel)** : Integración posible de nodos workers de tipo **"Bare Metal"** para necesidades de rendimiento específicas, especialmente el **soporte de GPU**.
+  - **SLA del 99.95%**, medido mensualmente.
 
-<img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Arquitectura Multi-AZ" />
-
----
-
-### Componentes técnicos detallados
-
-La oferta incluye en detalle los siguientes componentes:
-
-- CNI Cillium, con interfaz de observabilidad (Hubble)
-- Ingresses internos y externos MetalLB y nginx
-- Almacenamiento distribuido Rook-Ceph
-- Cert-Manager
-- ArgoCD
-- Stack prometheus (Prometheus, Grafana, Loki)
-- Registro de contenedores Harbor
-- Gestión de costos con OpenCost
-- Estrategias de seguridad avanzadas con Kyverno y Capsule
-- Veeam Kasten (sauvegarde, automatisations inter-environnements et réversibilité)
-- Autenticación SSO con un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
+<img src={archiOverview} alt="Architecture Multi-AZ" />

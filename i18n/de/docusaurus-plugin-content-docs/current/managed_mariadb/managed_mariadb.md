@@ -2,85 +2,76 @@
 title: Übersicht
 ---
 
-import stack from '@site/docs/managed_mariadb/images/stack.png'
-import StandAlone from '@site/docs/managed_mariadb/images/StandAlone.png'
-import Distributed from '@site/docs/managed_mariadb/images/Distributed.png'
-import maxscale from '@site/docs/managed_mariadb/images/maxscale.png'
-
-# Verwaltete MariaDB <span class="title-preview-badge">Vorschau</span>
-
+# Managed MariaDB <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Erfahren Sie die Grundlagen und wesentlichen Prinzipien zur sicheren Nutzung unserer Infrastruktur.</p>
-    <a href="./managed_mariadb/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+    <p>Lernen Sie die Grundlagen und wesentlichen Prinzipien kennen, um unsere Infrastruktur zu beherrschen.</p>
+    <a href="./managed_mariadb/concepts" class="card-link">Konzepte erkunden →</a>
   </div>
   <div class="card">
-    <h3>Erste Schritte</h3>
-    <p>Starten Sie schnell mit klaren und einfachen Anweisungen.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <h3>Schnellstart</h3>
+    <p>Starten Sie schnell, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./managed_mariadb/quickstart" class="card-link">Quickstart starten →</a>
   </div>
 </div>
 
 ---
 
-### Überblick
->
-> Dieses Produkt befindet sich in einer Vorabversion, und die Dokumentation kann Fehler oder Ungenauigkeiten enthalten.
+### Übersicht
 
-**MariaDB Managé (on Kubernetes) by Cloud Temple** ist eine verwaltete Lösung für die MariaDB-Datenbank-Engine, die auf Kubernetes gehostet wird. Sie ergänzt die Angebote für verwaltete Datenbank-Engines auf virtuellen Maschinen (hier bezeichnet als **MariaDB Managé (on IaaS)**)
+**MariaDB Managé (on Kubernetes) by Cloud Temple** ist eine verwaltete Lösung für die MariaDB-Datenbank-Engine, die auf Kubernetes betrieben wird. Sie ergänzt die Angebote für verwaltete Datenbank-Engines auf virtuellen Maschinen (nommées ici **MariaDB Managé (on IaaS)**)
 
-Dieses Produkt ist für Kunden geeignet, die Kubernetes-Workloads mit MariaDB/MySQL-Datenbanken betreiben, oder für Kunden, die zahlreiche MariaDB/PostgreSQL-Datenbank-Engines auf einem einzigen Kubernetes-Cluster zusammenfassen möchten (mutualisation). Es eignet sich besonders gut für Datenbanken kleiner und mittlerer Größe, die kein Tuning oder spezifische Funktionen erfordern. Für große Datenbanken oder solche, die ein spezielles Tuning erfordern, ist es ratsam, sich für das Produkt **MariaDB Managé (on IaaS)** zu entscheiden, das mehr Anpassungsmöglichkeiten durch unsere DBA-Experten-Teams bietet.
+Dieses Produkt eignet sich für Kunden, die Kubernetes-Workloads mit MariaDB/MySQL-Datenbanken betreiben, oder für Kunden, die mehrere MariaDB-Datenbank-Engines auf einem einzigen Kubernetes-Cluster zusammenfassen (mutualisation) möchten. Es ist besonders gut für kleine und mittlere Datenbanken geeignet, die kein spezifisches Tuning oder spezielle Funktionen erfordern. Für große Datenbanken oder solche, die ein spezielles Tuning benötigen, ist es ratsamer, das Produkt **MariaDB Managé (on IaaS)** zu wählen, das durch unsere DBA-Expertenteams mehr Anpassungsmöglichkeiten bietet.
 
-Die MariaDB-Engines können in der Version 11.4 LTS oder 11.8 LTS ausgewählt werden.
+Die MariaDB-Engines können in der Version 11.4 LTS oder 11.8 LTS gewählt werden.
 
-Alle Sicherungen verwenden den Cloud-Temple-S3-Speicher (qualifié SNC) mit Verschlüsselung im Ruhezustand (at-rest).
+Alle Backups nutzen den Cloud-Temple S3-Speicher (qualifié SNC) mit at-rest-Verschlüsselung.
 
-![Stack-Architektur](@site/docs/managed_mariadb/images/stack.png)
+![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
-### Hauptvorteile
+### Kernvorteile
 
-- **Souveränität und Reversibilität** : Die Lösung stützt sich ausschließlich auf Open-Source-Standards, um technologische Abhängigkeiten zu vermeiden und die Portabilität Ihrer Anwendungen zu gewährleisten.
-- **Einfachheit und Delegation** : Die Lösung ermöglicht die Delegation der Verwaltung der Datenbank-Engines an Cloud-Temple, insbesondere: Updates und Backups.
+- **Souveränität und Reversibilität** : Die Lösung basiert ausschließlich auf Open-Source-Standards, um technologische Abhängigkeiten zu vermeiden und die Portabilität Ihrer Anwendungen zu gewährleisten.
+- **Einfachheit und Delegation** : Die Lösung ermöglicht es, die Verwaltung der Datenbank-Engines an Cloud-Temple zu delegieren, insbesondere: Updates und Backups.
 
-## Bereitstellungsmodelle
+## Bereitungsmodelle
 
-Wir bieten zwei Bereitstellungsmodelle an, um Ihre Anforderungen zu erfüllen:  ***StandAlone*** oder ***Distributed***.
+Wir bieten zwei Bereitungsmodelle an, um Ihren Anforderungen gerecht zu werden:  ***StandAlone*** oder ***MultiAZ***.
 
 ### StandAlone
 
-Das ***StandAlone***-Modell stellt eine einzelne Instanz der MariaDB-Engine in einer Multi-AZ-Infrastruktur bereit.
+Das ***StandAlone***-Modell stellt eine einzelne Instanz des MariaDB-Engines in einer Multi-AZ-Infrastruktur bereit.
 
-Der von dieser Instanz genutzte Speicher wird über 3 AZ repliziert und ermöglicht im Fehlerfall einen automatischen Neustart der MariaDB-Instanz in einer anderen AZ.
+Der von dieser Instanz verwendete Speicher wird auf 3 AZ repliziert und ermöglicht einen automatischen Neustart der MariaDB-Instanz auf einer anderen AZ im Fehlerfall.
 
-- **Anwendungsfall**: Dieses Bereitstellungsmodell eignet sich hervorragend für einfache Anwendungen wie CMS, die nur einen einzigen Endpoint zur Verbindung mit Datenbanken verwenden.
-- **Schlüsselmerkmale**:
+- **Einsatzszenario** : Dieses Bereitstellungsmodell eignet sich hervorragend für einfache Anwendungen wie CMS, die nur einen einzelnen Endpunkt zur Verbindung mit den Datenbanken verwenden.
+- **Kernmerkmale** :
   - 1 Datenbank-Engine-Instanz
-  - über 3 AZ verteilter Speicher für automatisches Failover im Fehlerfall
+  - auf 3 AZ verteilter Speicher für automatische Wiederherstellung im Fehlerfall
   - physische (`mariabackup`) und logische (`mysqldump`) Backups
-  - SLA 99.9 % (außerhalb von Wartungsfenstern)
+  - SLA von 99,9 % (außerhalb von Wartungsfenstern)
 
 ![Architecture StandAlone](@site/docs/managed_mariadb/images/StandAlone.png)
 
-### Distributed
+### MultiAZ
 
-Das ***Distributed***-Modell stellt einen Cluster aus 3 MariaDB-Engine-Instanzen bereit, mit Galera im "Single Primary"-Modus und MaxScale:
+Das ***MultiAZ***-Modell bereitstellt einen Cluster aus 3 Instanzen des MariaDB-Engines, mit Galera im "single primary"-Modus und MaxScale:
 
-- Ein MaxScale-Endpoint ermöglicht das Routing zu den verschiedenen Instanzen basierend auf dem Abfragetyp (Read oder Write).
-![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
+- Ein MaxScale-Endpunkt ermöglicht das Routing zu den verschiedenen Instanzen basierend auf dem Abfragetyp (read oder write).
+  ![MaxScale](@site/docs/managed_mariadb/images/maxscale.png)
+- Die Lese-/Schreib-Instanz (RW) ist über einen spezifischen Endpunkt zugänglich.
+- Die 2 schreibgeschützten Instanzen (RO) sind über einen weiteren spezifischen Endpunkt zugänglich.
 
-- Die Lese-Schreib-Instanz (RW) ist über einen spezifischen Endpoint erreichbar.
-- Die 2 schreibgeschützten Instanzen (RO) sind über einen anderen spezifischen Endpoint erreichbar.
+Daher können Anwendungen entweder RW- oder RO-Verbindungen verwenden oder MaxScale das automatische Routing zu den am besten geeigneten Endpunkten überlassen.
 
-Auf diese Weise können Anwendungen wahlweise RW- oder RO-Verbindungen nutzen oder MaxScale das automatische Routing zu den am besten geeigneten Endpoints überlassen.
-
-- **Anwendungsfall**: Dieses Bereitstellungsmodell eignet sich hervorragend für Anwendungen mit verteiltem Zugriff, wie Data- oder Business-Intelligence-Anwendungen, die von schreibgeschütztem Zugriff profitieren, ohne die Datenaufnahme zu beeinträchtigen.
-- **Kernpunkte**:
-  - 3 Datenbank-Engine-Instanzen mit Galera im "Single Primary"-Modus
+- **Einsatzszenario** : Dieses Bereitstellungsmodell eignet sich hervorragend für Anwendungen mit verteiltem Zugriff, wie Daten- oder Business-Intelligence-Anwendungen, die von schreibgeschütztem Zugriff profitieren, ohne den Datenimport zu beeinträchtigen.
+- **Kernmerkmale** :
+  - 3 Datenbank-Engine-Instanzen mit Galera im "single primary"-Modus
   - MaxScale-Proxy für ein effizientes Abfrage-Routing.
-  - Aufteilung des Speichers auf 3 AZs für automatische Wiederherstellung im Fehlerfall
-  - PiTR- und logische Backups
-  - SLA 99,9 % (außerhalb von Wartungsfenstern)
+  - Verteilte Speicherung über 3 AZ für automatische Failover-Wiederherstellung bei Ausfall
+  - Physische (`mariabackup`) und logische (`mysqldump`) Backups
+  - SLA von 99,9 % (außerhalb von Wartungsfenstern)
 
-![Architecture Distributed](@site/docs/managed_mariadb/images/Distributed.png)
+![Architecture MultiAZ](@site/docs/managed_mariadb/images/Distributed.png)

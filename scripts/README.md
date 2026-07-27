@@ -5,18 +5,20 @@ Ce dossier contient les scripts d'automatisation pour la génération et la main
 ## 📋 Liste des Scripts
 
 ### 🚀 `generate_models_doc.py`
+
 **Générateur automatique de documentation LLMaaS**
 
 Génère automatiquement la documentation Markdown des modèles LLM as a Service à partir du fichier de configuration YAML.
 
 #### Utilisation
+
 ```bash
 # Via Python directement
 python scripts/generate_models_doc.py
-
 ```
 
 #### Fonctionnalités
+
 - ✅ **36 modèles** automatiquement documentés
 - ✅ **Formatage Docusaurus** avec métadonnées
 - ✅ **Logging coloré** avec indicateurs de progression
@@ -25,10 +27,12 @@ python scripts/generate_models_doc.py
 - ✅ **Documentation auto-générée** avec timestamp
 
 #### Source et Sortie
+
 - **Entrée** : `memory-bank/models_config.yaml`
 - **Sortie** : `docs/llmaas/models.md`
 
 #### Exemple de sortie
+
 ```bash
 🚀 Générateur de Documentation LLMaaS Cloud Temple
 ============================================================
@@ -47,11 +51,13 @@ python scripts/generate_models_doc.py
 ---
 
 ### 🐍 `translate_py/translate.py` (Recommandé)
+
 **Système de traduction moderne avec détection intelligente des changements**
 
 Système de traduction Python avancé utilisant l'API Cloud Temple LLMaaS avec une interface utilisateur moderne, détection automatique des changements par hash SHA-256, et gestion optimisée de la concurrence.
 
 #### ✨ Fonctionnalités Avancées
+
 - 🎨 **Interface Rich** : Affichage moderne avec barres de progression en temps réel
 - ⚡ **Concurrence optimisée** : Pool de workers pour utilisation maximale de l'API
 - 📊 **Statistiques avancées** : Tokens IN/OUT, vitesse tokens/s en temps réel
@@ -74,7 +80,7 @@ source .venv/bin/activate      # macOS / Linux
 # .venv\Scripts\activate       # Windows (PowerShell / cmd)
 
 # 2. Installation des dépendances (venv activé, le prompt affiche (.venv))
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 #### Configuration API
@@ -106,6 +112,7 @@ cp .env.example .env
 > 💡 **Source unique** : le fichier `.env.example` est la référence pour les noms de variables, leurs défauts et leurs plages valides. Ne pas dupliquer cette liste dans le README pour éviter les divergences avec le code (`config.py`).
 
 #### Utilisation
+
 ```bash
 # Depuis le répertoire racine ou scripts/translate_py/
 python translate.py [OPTIONS]
@@ -120,6 +127,7 @@ python translate.py --token "$CLOUDTEMPLE_API_KEY" --model qwen3.6:27b
 ```
 
 #### Options Disponibles
+
 - `--dry-run` : Mode simulation sans modifications
 - `--force` : Force la retraduction de tous les fichiers
 - `--init` : Mode initialisation des métadonnées
@@ -141,6 +149,7 @@ python translate.py --token "$CLOUDTEMPLE_API_KEY" --model qwen3.6:27b
 > 💡 **Exclure un répertoire de la traduction :** placez un fichier `.notranslation` dans le répertoire concerné (voir ci-dessous).
 
 #### Fonctionnalité .notranslation
+
 Placez un fichier `.notranslation` dans un répertoire pour forcer la **copie** (au lieu de la traduction) de tous les fichiers de ce répertoire :
 
 ```bash
@@ -152,7 +161,9 @@ docs/llmaas/licences/.notranslation
 ```
 
 #### Interface Utilisateur
+
 L'interface moderne affiche en temps réel :
+
 ```
 🇫🇷 Cloud Temple Documentation Translation 🌍
 
@@ -178,6 +189,7 @@ api.md → en             │
 #### Workflow de Détection des Changements
 
 **1. Mode Initialisation** (`--init`)
+
 ```bash
 # Génère les métadonnées pour la première fois
 python translate.py --init
@@ -187,6 +199,7 @@ python translate.py --init --translate-missing
 ```
 
 **2. Détection Automatique**
+
 ```bash
 # Vérifie quels fichiers ont changé
 python translate.py --dry-run --debug
@@ -198,6 +211,7 @@ python translate.py --dry-run --debug
 ```
 
 **3. Traduction Intelligente**
+
 ```bash
 # Traduit uniquement les fichiers modifiés
 python translate.py
@@ -206,6 +220,7 @@ python translate.py
 ```
 
 #### Architecture du Système
+
 ```
 scripts/translate_py/
 ├── translate.py              # 🚀 Script principal
@@ -225,6 +240,7 @@ scripts/translate_py/
 Le système utilise des **hash SHA-256** pour une détection précise :
 
 **✅ Fichier modifié** : Hash différent → Traduction nécessaire
+
 ```
 Hash stocké : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
 Hash actuel : 66e0869319196d8d3009c79c3e994e9d4c736677962502ffb5ded09d637284be
@@ -232,6 +248,7 @@ Hash actuel : 66e0869319196d8d3009c79c3e994e9d4c736677962502ffb5ded09d637284be
 ```
 
 **✅ Fichier inchangé** : Hash identique → Ignore
+
 ```
 Hash stocké : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
 Hash actuel : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
@@ -239,6 +256,7 @@ Hash actuel : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
 ```
 
 **Avantages** :
+
 - ✅ **Précision absolue** : Détecte le moindre changement
 - ⚡ **Performance optimale** : Évite les traductions inutiles
 - 🔒 **Intégrité** : Garantit la cohérence des traductions
@@ -247,16 +265,19 @@ Hash actuel : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
 ---
 
 ### 📋 `extract_changelog.py`
+
 **Générateur de changelog produits multi-langues**
 
 Extrait les nouvelles fonctionnalités depuis `maj.js` et génère les changelogs dans toutes les langues. Met automatiquement à jour les hash dans `translation-meta.json` après génération.
 
 #### Utilisation
+
 ```bash
 python scripts/extract_changelog.py
 ```
 
 #### Source et Sorties
+
 - **Entrée** : `maj.js` (racine du projet)
 - **Sorties** :
   - `docs/changelog_produits.md` (FR — source)
@@ -302,11 +323,13 @@ scripts/
 ## 🎯 Workflow de Documentation
 
 ### Génération LLMaaS
+
 1. **Éditer** : `memory-bank/models_config.yaml`
 2. **Générer** : `yarn generate:models`
 3. **Vérifier** : Documentation mise à jour dans `docs/llmaas/models.md`
 
 ### Processus de Traduction
+
 1. **Source** : Créer contenu en français dans `/docs/`
 2. **Traduire** : `python scripts/translate_py/translate.py`
 3. **Vérifier** : Contenu traduit dans `/i18n/[langue]/`
@@ -328,6 +351,7 @@ pip install -r requirements.txt
 ### Erreurs communes
 
 #### `FileNotFoundError: models_config.yaml`
+
 ```bash
 # Vérifier que le fichier existe
 ls memory-bank/models_config.yaml
@@ -338,12 +362,14 @@ yarn generate:models
 ```
 
 #### `ModuleNotFoundError: No module named 'yaml'`
+
 ```bash
 # Installer PyYAML
 pip install pyyaml
 ```
 
 #### `Permission denied`
+
 ```bash
 # Rendre le script exécutable
 chmod +x scripts/generate_models_doc.py
@@ -352,6 +378,7 @@ chmod +x scripts/generate_models_doc.py
 ### Validation de sortie
 
 Le fichier généré `docs/llmaas/models.md` doit contenir :
+
 - ✅ En-tête Docusaurus avec métadonnées
 - ✅ Avertissement de génération automatique
 - ✅ Statistiques globales (36 modèles)
@@ -362,6 +389,7 @@ Le fichier généré `docs/llmaas/models.md` doit contenir :
 ## 📊 Métriques de Performance
 
 ### Script generate_models_doc.py
+
 - **Temps d'exécution** : < 5 secondes
 - **Fichiers traités** : 1 YAML → 1 Markdown
 - **Taille sortie** : ~150KB (36 modèles documentés)
@@ -370,6 +398,7 @@ Le fichier généré `docs/llmaas/models.md` doit contenir :
 ## 🚀 Évolutions Futures
 
 ### Prochaines fonctionnalités planifiées
+
 - [ ] **Génération API** : Script pour `api.md` depuis OpenAPI spec
 - [ ] **Génération use-cases** : Script pour `use-cases.md` depuis YAML
 - [ ] **Validation automatique** : Vérification cohérence YAML
@@ -377,6 +406,7 @@ Le fichier généré `docs/llmaas/models.md` doit contenir :
 - [ ] **Template engine** : Support de templates Jinja2 personnalisables
 
 ### Améliorations en cours
+
 - [ ] **Requirements.txt** : Dépendances Python formalisées
 - [ ] **Unit tests** : Tests automatisés pour les scripts
 - [ ] **Configuration** : Fichier de config central pour tous les scripts

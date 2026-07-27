@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+!/scripts/translate_py/translation-meta.json
 
 # Python
 __pycache__/
@@ -35,3 +36,7 @@ yarn-error.log*
 
 # npm lock file (ce projet utilise yarn)
 package-lock.json
+
+# pas de pdf dans le repo (au cas o udes pdf seraient auto-générés par une extension vscode)
+*.pdf
+

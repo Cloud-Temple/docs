@@ -36,7 +36,7 @@ Ce modèle déploie une instance unique du moteur MariaDB.
 - **Résilience** : Bien qu'il s'agisse d'une instance unique, le stockage sous-jacent est répliqué sur 3 AZ, permettant un redémarrage automatique sur une autre AZ en cas de panne matérielle.
 - **SLA** : 99.9% (hors plages de maintenance).
 
-### 2. Distributed
+### 2. MultiAZ
 
 Ce modèle déploie un **cluster Galera de 3 instances** du moteur MariaDB, complété par un proxy **MaxScale**.
 
@@ -46,15 +46,14 @@ Ce modèle déploie un **cluster Galera de 3 instances** du moteur MariaDB, comp
   - **Proxy MaxScale** : Un routeur intelligent qui distribue les requêtes. Il envoie les écritures vers le nœud primaire et répartit les lectures sur tous les nœuds (`ReadWriteSplit`), optimisant ainsi les performances.
 - **SLA** : 99.9% (hors plages de maintenance).
 
-> **Remarque Importante** : Il n'est pas possible de modifier le modèle de déploiement d'un cluster existant (par exemple, de passer de *StandAlone* à *Distributed*). Cette opération nécessite la création d'un nouveau cluster dans le modèle souhaité, via une restauration.
+> **Remarque Importante** : Il n'est pas possible de modifier le modèle de déploiement d'un cluster existant (par exemple, de passer de *StandAlone* à *MultiAZ*). Cette opération nécessite la création d'un nouveau cluster dans le modèle souhaité, via une restauration.
 
-## Sauvegarde et Restauration (PITR)
+## Sauvegarde et Restauration
 
 La protection de vos données est assurée par une double stratégie de sauvegarde.
 
-1. **Sauvegarde Physique et Point-in-Time Recovery** :
+1. **Sauvegarde Physique** :
     - Nous réalisons des sauvegardes physiques quotidiennes complètes (`mariabackup`) (sans interruption de service).
-    - Avec la version **distributed**, les journaux de transactions (*binary logs*) sont archivés en continu. Cette combinaison permet une restauration PiTR jusqu'au moment juste avant un incident.
 
 2. **Sauvegarde Logique (`mysqldump`)** :
     - Des exports logiques des bases de données sont également effectués.
@@ -98,18 +97,31 @@ La fondation MariaDB publie des versions avec un support à long terme (LTS), ce
 
 ## Tailles des instances
 
-Les instances ***StandAlone*** et ***Distributed*** sont disponibles avec des tailles prédéfinies:
+Les instances ***StandAlone*** et ***MultiAZ*** sont disponibles avec des tailles prédéfinies:
 
-| Taille | vCPU | Mémoire | innodb_buffer_pool_size | innodb_buffer_pool_instances | max_allowed_packet | table_open_cache | maxconn |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **XS** | 1000m | 4096Mi | 2458M | 2 | 256M | 800 | 80 |
-| **S** | 1000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
-| **M** | 2000m | 8192Mi | 4915M | 4 | 512M | 1600 | 150 |
-| **L** | 2000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
-| **XL** | 4000m | 16384Mi | 9830M | 8 | 1G | 3200 | 250 |
-| **XXL** | 4000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
-| **3XL** | 8000m | 32768Mi | 19660M | 16 | 1G | 6400 | 500 |
-| **4XL** | 8000m | 65536Mi | 39320M | 16 | 1G | 10000 | 500 |
+| Taille | vCPU | Mémoire | innodb_buffer_pool_size | innodb_buffer_pool_instances | max_allowed_packet | table_open_cache |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Micro** | 1 | 2 Go | 1200M | 1 | 128M | 400 |
+| **Small** | 1 | 4 Go | 2458M | 2 | 256M | 800 |
+| **Medium** | 2 | 4 Go | 2458M | 2 | 256M | 800 |
+| **Med-Large** | 2 | 8 Go | 4915M | 4 | 512M | 1600 |
+| **Large** | 4 | 8 Go | 4915M | 4 | 512M | 1600 |
+| **X-Large** | 4 | 16 Go | 9830M | 8 | 1G | 3200 |
+| **2X-Large** | 8 | 16 Go | 9830M | 8 | 1G | 3200 |
+| **3X-Large** | 8 | 32 Go | 19660M | 16 | 1G | 6400 |
+| **4X-Large** | 16 | 32 Go | 19660M | 16 | 1G | 10000 |
+| **5X-Large** | 16 | 64 Go | 39320M | 16 | 1G | 10000 |
+| **6X-Large** | 32 | 128 Go | 78640M | 16 | 1G | 10000 |
 
 
-> **Remarque** : Le stockage est provisionné séparément et peut être augmenté à chaud (de 2Gi à 128Gi) (mais pas réduit, sauf en recréant une nouvelle instance.).
+> **Remarque** : Le stockage est provisionné séparément et peut être augmenté à chaud (minimum conseillé de 2Gi, jusqu'à un maximum de 512Gi) (mais pas réduit, sauf en recréant une nouvelle instance.).
+
+### Explication des paramètres de dimensionnement
+
+Les instances MariaDB disposent de limites strictes en termes de CPU et de RAM (OOMKill) gérées par Kubernetes. Si une instance atteint sa limite de mémoire, elle est redémarrée, ce qui peut entraîner une coupure de service et potentiellement casser la réplication d'un cluster. C'est pourquoi les paramètres sont fixés selon la taille de l'instance pour éviter toute saturation de la RAM :
+
+- **innodb_buffer_pool_size** : Ce buffer contient les pages de données et les index en mémoire. Il est recommandé de travailler en RAM pour de meilleures performances (limitation des I/O). Il est fixé ici à environ 60% de la taille de la RAM de l'instance.
+- **innodb_buffer_pool_instances** : Divise le buffer pool en plusieurs "instances" pour réduire la contention interne sur les verrous (lorsqu'il y a beaucoup de threads CPU).
+- **max_allowed_packet** : Taille maximale d'un paquet ou résultat qu'il est possible d'envoyer/recevoir dans une requête. Limite ajustée selon la taille de l'instance pour protéger la mémoire.
+- **table_open_cache** : Nombre de tables que MariaDB peut garder ouvertes simultanément. Adapté en fonction des connexions.
+> **Note importante** : Il est fortement déconseillé d'activer ou d'utiliser le `performance_schema` de MariaDB sur les petites instances (tailles inférieures à **X-Large**). Celui-ci consomme d'importantes ressources, et plus particulièrement de la RAM critique.

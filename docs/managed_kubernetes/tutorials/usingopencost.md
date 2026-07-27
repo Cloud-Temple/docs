@@ -27,9 +27,8 @@ L'interface d'OpenCost est exposée sur une URL sécurisée, propre à votre clu
 
 `https://opencost.external-secured.identifiant.mk.ms-cloud-temple.com`
 
-:::info
-L'accès à cette URL est restreint aux adresses IP que vous avez déclarées au support Cloud Temple. Si vous ne parvenez pas à y accéder, veuillez contacter le support pour vérifier les règles de firewall.
-:::
+>ℹ️L'accès à cette URL est restreint aux adresses IP que vous avez déclarées au support Cloud Temple. Si vous ne parvenez pas à y accéder, veuillez contacter le support pour vérifier les règles de firewall.
+
 
 <img src={opencostui} alt="OpenCost UI"/>
 
@@ -101,10 +100,9 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 
 ### 2. Interroger OpenCost avec le MCP
 
-:::tip[Prérequis
-]
-Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre produit **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
-:::
+>ℹ️[Prérequis]
+>Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre produit **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
+
 
 Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requetes en langage natuel sur ce serveur MCP.
 

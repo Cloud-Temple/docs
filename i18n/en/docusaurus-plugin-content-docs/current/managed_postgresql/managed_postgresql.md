@@ -8,76 +8,81 @@ title: Overview
   <div class="card">
     <h3>Concepts</h3>
     <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
+    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts →</a>
   </div>
   <div class="card">
     <h3>Getting Started Guide</h3>
-    <p>Get started quickly by following clear and simple instructions.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <p>Get up and running quickly by following clear and straightforward instructions.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Start the Quickstart →</a>
   </div>
 </div>
 
 ---
 
 ### Overview
->
-> This product is in a preliminary version, and its documentation may contain errors or inaccuracies.
 
-**Managed PostgreSQL (on Kubernetes) by Cloud Temple** is a managed PostgreSQL database engine solution hosted on Kubernetes. It complements the managed database engine offerings on virtual machines (referred to here as **Managed PostgreSQL (on IaaS)**)
+**Managed PostgreSQL (on Kubernetes) by Cloud Temple** is a managed PostgreSQL database engine solution, hosted on Kubernetes and based on the **CloudNative-PG (CNPG)** operator. It complements the managed database engine offerings on virtual machines (referred to here as **Managed PostgreSQL (on IaaS)**).
 
-This product is suitable for customers who have Kubernetes workloads requiring PostgreSQL databases, or for customers who wish to consolidate multiple PostgreSQL database engines on a single Kubernetes cluster (consolidation). It is particularly well-suited for small and medium-sized databases that do not require tuning or specific features. For large-scale databases or those requiring specific tuning, it is recommended to choose the **Managed PostgreSQL (on IaaS)** product, which allows for more customization by our DBA expert teams.
+This product is suited for clients with Kubernetes workloads requiring PostgreSQL databases, or for clients who wish to consolidate multiple PostgreSQL database engines on a single Kubernetes cluster. It is particularly well-suited for databases that do not require highly specific system tuning. For very large-scale databases requiring specific OS-level tuning, it is preferable to opt for the **Managed PostgreSQL (on IaaS)** product.
 
 ### Key Benefits
 
-- **Sovereignty and Reversibility** : The solution relies exclusively on open source standards to avoid technological dependency and ensure the portability of your applications.
-- **Simplicity and Delegation** : The solution enables delegating to Cloud-Temple the management of database engines, specifically: updates and backups.
+- **Sovereignty and Reversibility**: The solution relies exclusively on open-source standards (CNPG, Barman) to avoid any technological dependency and ensure the portability of your applications.
+- **Simplicity and Delegation**: The solution allows you to delegate the lifecycle management of database engines to Cloud Temple: provisioning, updates, and continuous backups.
 
 ## Deployment Models
 
-We offer two deployment models to meet your needs:  ***StandAlone*** or ***Distributed***.
+We offer three deployment models to meet your needs, ranging from development testing to mission-critical high availability:
 
 ### StandAlone
 
-The ***StandAlone*** model deploys a single instance of the PostgreSQL engine in a multi-AZ infrastructure.
+The ***StandAlone*** model deploys a single instance of the PostgreSQL engine.
 
-The storage used by this instance is replicated across 3 AZ, and allows automatic restart of the PostgreSQL instance on another AZ in case of failure.
+- **Use case** : This model is perfectly suited for development, staging environments, or simple applications that do not require high availability.
+- **Key points** :
+  - Single database instance.
+  - No high availability at the engine level (although Kubernetes can restart the pod in case of a node failure).
+  - Continuous backups (Barman Cloud).
 
-- **Use case**: This deployment model is perfectly suited for simple applications, such as CMSs, which use only a single endpoint to connect to databases.
-- **Key points**:
-  - 1 database engine instance
-  - storage distributed across 3 AZ for automatic failover in case of failure
-  - physical and logical backups
-  - 99.9% SLA (excluding maintenance windows)
+### Replica
 
-### Distributed
+The ***Replica*** model deploys a cluster of 3 PostgreSQL engine instances with streaming replication (asynchronous).
 
-The ***Distributed*** model deploys a cluster of 3 PostgreSQL database engine instances, with Patroni in "single primary" mode and PgBouncer:
+- **Use case** : This model provides standard high availability for most production applications, where a slight lag (a few milliseconds) between the primary and replicas is acceptable.
+- **Key points** :
+  - 3 database instances.
+  - Asynchronous replication (high availability).
+  - Automatic failover managed by the CNPG operator.
 
-- a PgBouncer endpoint enables routing to the different instances based on the query type (read or write).
-- the read-write (RW) instance is accessible via a specific endpoint.
-- the read-only (RO) instances are accessible via another specific endpoint.
+### Enterprise
 
-Thus, applications can choose to use RW or RO connections, or let PgBouncer automatically route to the most suitable endpoints.
+The ***Enterprise*** model deploys a cluster of 3 PostgreSQL engine instances with **synchronous replication** and a data durability guarantee.
 
-- **Use case**: This deployment model is ideally suited for applications with distributed access, such as data or business intelligence applications, which benefit from read-only access without impacting data ingestion.
-- **Key points**:
-  - 3 database engine instances with Patroni in "single primary" mode
-  - PgBouncer proxy for efficient query routing.
-  - storage distributed across 3 AZs for automatic failover in case of failure
-  - PiTR and Logical backups
-  - SLA 99.9% (excluding maintenance windows)
+- **Use case** : Designed for critical workloads where no data loss is tolerated in the event of hardware failure.
+- **Key points** :
+  - 3 database instances.
+  - Synchronous replication configured to ensure that at least 2 replicas have persisted the data before confirming a `COMMIT` (*preferred* mode to avoid blocking if a replica is unavailable).
+  - Maximum guarantee of consistency and durability.
 
-### Common Features
+## Available Engine Types
+
+The solution allows you to deploy different types of PostgreSQL instances based on your needs:
+
+- **PostgreSQL standard** : The classic relational database engine.
+- **TimescaleDB** : PostgreSQL with the TimescaleDB extension for optimized time-series data management (Time-Series).
+- **PostGIS** : PostgreSQL with the PostGIS spatial extension for geographic data.
+
+## Common Features
 
 #### Versions
 
-PostgreSQL engines can be selected from all supported versions (currently 14 to 18) [See the "versioning policy" on the official PostgreSQL website](https://www.postgresql.org/support/versioning/)
+PostgreSQL engines are available in all supported major versions (currently from version **13 to 18**).
+Extensions such as `pg-crash`, `pgaudit`, `pgvector`, and `postgis` are available within the images.
 
 #### Backup
 
-2 types of backups are implemented:
+Backups are natively managed by the **Barman Cloud** plugin integrated into the operator:
 
-- Point in Time Restoration (PiTR): daily physical backup of the entire engine and its transaction logs (WAL), allowing the entire server to be restored to a specific past date without transaction loss.
-- Logical backup (pg_dump): logical exports of databases, for individual restore/export per database.
-
-All backups use Cloud-Temple S3 storage (SNC-qualified) with at-rest encryption.
+- **Continuous WAL Archiving** : Each transaction log (WAL) segment is archived in real-time to our SecNumCloud-certified S3 storage.
+- **Scheduled Backups** : Full backups (Point-in-Time Recovery) are performed periodically according to your retention requirements.
+- **Security** : All backup data is compressed and stored on our secure S3 infrastructure with encryption.

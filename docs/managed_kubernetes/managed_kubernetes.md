@@ -2,6 +2,9 @@
 title: Vue d'ensemble
 ---
 
+import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
+import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
+
 # Managed Kubernetes
 
 <div class="card-grid">
@@ -22,32 +25,46 @@ title: Vue d'ensemble
   </div>
 </div>
 
-Managed Kubernetes by Cloud Temple est une solution d’orchestration de conteneurs basée sur des produits OpenSources et conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
+**Managed Kubernetes** by Cloud Temple est une solution d’orchestration de conteneurs basée sur des standards open source (CNCF). Elle est conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
-ce produit est conçue pour les équipes ayant une bonne connaissance de Kubernetes et les adeptes de l'open source qui recherchent une solution native, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
+Afin de répondre au mieux aux besoins de vos équipes, nous proposons deux déclinaisons de ce produit : **Managed Core Kubernetes** (un socle minimaliste) et **Managed Kubernetes** (une plateforme complète "prête à l'emploi").
 
-### Bénéfices Clés
+---
 
-- **Souveraineté et Réversibilité** : La solution s'appuie sur des standards open source (Kubernetes CNCF) pour éviter toute dépendance technologique et garantir la portabilité de vos applications. L'outil de sauvegarde Veeam Kasten, inclus dans le produit, est spécialement conçu pour faciliter les migrations d'un cloud à un autre.
-- **Sécurité "Zero-Trust" et Gouvernance** : L'architecture repose sur Talos OS, un système d'exploitation immuable sans accès direct (ni shell, ni SSH), ce qui réduit drastiquement la surface d'attaque. Cette approche est couplée à des outils de gouvernance comme Kyverno pour la gestion des politiques et Capsule pour la gestion fine des droits, constituant une base solide pour une stratégie de sécurité "Zero-Trust".
-- **Maîtrse des Coûts et Intégration** : La solution intègre nativement des outils de FinOps comme OpenCost pour un suivi précis des consommations. Le modèle économique est transparent, basé sur les ressources IaaS consommées, et l'utilisation de composants open source reconnus (Cilium, Ceph, ArgoCD) facilite l'intégration dans vos écosystèmes existants.
+## Deux approches pour vos clusters
 
-### Une plateforme complète et prête à l'emploi
+### 1. Managed Core Kubernetes (Le socle minimaliste)
+Cette offre est conçue pour les équipes ayant une **excellente maîtrise de Kubernetes** et des outils Cloud Native, qui souhaitent construire leur propre plateforme sur des fondations minimalistes et robustes. Elle s'adresse aux adeptes de l'open source qui recherchent une solution épurée, portable, sans surcouche constructeur, sur un OS minimaliste et immuable conçu pour l’automatisation et la sécurité.
 
-La solution inclut nativement une stack complète et cohérente d'outils open source de pointe pour couvrir tous les besoins du cycle de vie applicatif :
+- **OS et Réseau inclus** : Talos OS, Rook-Ceph (stockage), Cilium (CNI), MetalLB (Load Balancer).
+- **Philosophie** : À partir de ce socle performant et standardisé, vous êtes libre d'intégrer vos propres outils de déploiement continu, d'observabilité, de sauvegarde ou de sécurité.
 
-- **Réseau et Sécurité** : Cilium, Hubble, MetalLB, Ingress Nginx, Kyverno, Capsule
-- **Stockage** : Rook-Ceph
-- **Déploiement Continu (GitOps)** : ArgoCD
-- **Observabilité** : Prometheus, Grafana, Loki
-- **Sauvegarde et Migration** : Veeam Kasten
-- **Gestion des Coûts (FinOps)** : OpenCost
+### 2. Managed Kubernetes (La plateforme complète)
+Cette offre clé en main est conçue pour les équipes souhaitant une solution **native, prête à l'emploi et tout-en-un**, intégrant les meilleurs standards open source pour couvrir tous les besoins du cycle de vie applicatif sans avoir à assembler et maintenir les composants soi-même.
+
+En plus du socle "Core" (Talos, Ceph, Cilium, MetalLB), elle intègre nativement :
+- **Réseau et Sécurité** : Hubble, Ingress Nginx, Kyverno, Capsule, Cert-Manager.
+- **Déploiement Continu (GitOps)** : ArgoCD, Container registry Harbor, Keda
+- **Observabilité** : Stack complète (Prometheus, Grafana, Loki, Pyroscope).
+- **Gestion des Coûts (FinOps)** : OpenCost.
+- **Sauvegarde et Réversibilité** : Veeam Kasten.
+- **Identité** : Authentification SSO avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...).
+
+---
+
+## Bénéfices Clés Communs
+
+Quelle que soit l'offre choisie, nos clusters Kubernetes partagent ces bénéfices fondamentaux :
+
+- **Souveraineté et Réversibilité** : La solution s'appuie sur des standards open source pour éviter toute dépendance technologique (*vendor lock-in*) et garantir la portabilité totale de vos applications. (Avec Veeam Kasten inclus dans la version complète pour faciliter les migrations inter-cloud).
+- **Sécurité "Zero-Trust" by design** : L'architecture repose sur **Talos OS**, un système d'exploitation Linux immuable et éphémère conçu spécifiquement pour Kubernetes. Il ne dispose d'aucun accès direct (ni shell, ni SSH), ce qui réduit drastiquement la surface d'attaque.
+- **Maîtrise des Coûts** : Le modèle économique est transparent, basé exclusivement sur les ressources IaaS sous-jacentes consommées, sans coût de licence additionnel pour l'orchestrateur.
 
 ---
 
 ## Architectures de Déploiement
 
-Nous proposons deux architectures distinctes pour répondre à vos besoins, que ce soit pour des environnements de développement ou de production critiques.
+Nous proposons deux architectures distinctes pour répondre à vos besoins, que ce soit pour des environnements de développement ou de production critiques. Ces architectures s'appliquent aux deux offres (Core et Full).
 
 ### Architecture "Dev/Test"
 
@@ -59,9 +76,9 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
   - 3 nœuds Workers (ou plus).
   - Le stockage distribué (Ceph) est co-localisé sur les nœuds workers.
   - Ne bénéficie pas de SLA de haute disponibilité.
-  - aucune restriction de sécurité
+  - Aucune restriction de sécurité spécifique à l'architecture.
 
-<img src={require('@site/docs/managed_kubernetes/images/archi_overview_1az.png').default} alt="Architecture Mono-AZ" />
+<img src={archiOverview1az} alt="Architecture Mono-AZ" />
 
 ### Architecture Production (Multi-AZ)
 
@@ -73,24 +90,6 @@ Conçue pour la production et les applications critiques, cette architecture dis
   - **Stockage Dédié** : 3 nœuds de stockage dédiés et répartis pour la performance et la résilience.
   - **Workers Répartis** : Au minimum 3 nœuds workers, un par AZ.
   - **Nœuds Bare Metal (Optionnel)** : Intégration possible de nœuds workers de type **"Bare Metal"** pour des besoins de performance spécifiques, notamment le **support des GPU**.
-  - **SLA de 99.95%**.
+  - **SLA de 99.95%**, mesuré mensuellement.
 
-<img src={require('@site/docs/managed_kubernetes/images/archi_overview.png').default} alt="Architecture Multi-AZ" />
-
----
-
-### Composants techniques détaillés
-
-L'offre inclus en détail les composants suivants:
-
-- CNI Cillium, avec interface d'observabilité (Hubble)
-- Ingresses internes et externes MetalLB et nginx
-- Stockage distribué Rook-Ceph
-- Cert-Manager
-- ArgoCD
-- Stack prometheus (Prometheus, Grafana, Loki)
-- Container registry Harbor
-- Cost management avec OpenCost
-- Stratégies de sécurité avancée avec Kyverno et Capsule
-- Veeam Kasten (sauvegarde, automatisations inter-environnements et réversibilité)
-- Authentification SSO avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...)
+<img src={archiOverview} alt="Architecture Multi-AZ" />

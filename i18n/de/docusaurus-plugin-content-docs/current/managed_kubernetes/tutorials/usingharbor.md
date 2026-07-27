@@ -2,43 +2,41 @@
 title: Harbor verwenden
 ---
 
-Harbor ist eine OCI-Artefakt-Registry (Container-Images, Helm-Charts, SBOMs, Signaturen usw.), die eine feingranulare Projektverwaltung, Zugriffskontrollen, Schwachstellen-Scans, Aufbewahrungsrichtlinien und Signaturenverwaltung bietet. Dieser Leitfaden erläutert die Verwendung mit Cloud Temple Managed Kubernetes, von der Anmeldung an der Registry bis zur Integration in Ihre Kubernetes-Deployments und CI/CD-Pipelines.
+Harbor ist eine OCI-Artefakt-Registry (Container-Images, Helm-Charts, SBOMs, Signaturen usw.), die eine feingranulare Projektverwaltung, Zugriffskontrolle, Schwachstellen-Scans, Retentionsrichtlinien und die Verwaltung von Signaturen bietet. Dieser Leitfaden erklärt, wie Sie Harbor mit Cloud Temple Managed Kubernetes verwenden, von der Verbindung zur Registry bis zur Integration in Ihre Kubernetes-Bereitstellungen und CI/CD-Pipelines.
 
-:::note
-Ersetzen Sie in diesem Leitfaden die folgenden Variablen durch Ihre Werte:
+>ℹ️
+In diesem Leitfaden ersetzen Sie die folgenden Variablen durch Ihre Werte:
 
-- `<IDENTIFIANT>` : Cluster-Code (z. B. `ctodev`)
+- `<IDENTIFIANT>` : Kennung Ihres Clusters (z. B. `ctodev`)
 - `<HARBOR_URL>` : Öffentliche Harbor-URL, die wie folgt aufgebaut ist: `harbor.external-secured.<IDENTIFIANT>.mk.ms-cloud-temple.com` (z. B. `harbor.external-secured.ctodev.mk.ms-cloud-temple.com`)
 - `<PROJET>` : Name Ihres Harbor-Projekts
 - `<NAMESPACE>` : Ziel-Kubernetes-Namespace
-- `<ROBOT_USERNAME>` / `<ROBOT_TOKEN>` : Anmeldeinformationen eines Harbor-Roboters
-
-:::
+- `<ROBOT_USERNAME>` / `<ROBOT_TOKEN>` : Anmeldeinformationen eines Harbor-Robot-Accounts
 
 ## Voraussetzungen
 
 - Zugriff auf die Konsole und den Managed Kubernetes-Dienst
-- Ein vorhandenes Harbor-Projekt (oder Berechtigungen zum Erstellen eines neuen)
+- Ein bestehendes Harbor-Projekt (oder Berechtigungen zur Erstellung eines neuen)
 - Lokal installierte Tools:
   - Docker oder Podman
   - kubectl (auf Ihrem Cluster konfiguriert)
   - Helm v3.8+ (OCI-Unterstützung)
   - Optional: `cosign` für Image-Signaturen
-- Ausgehender Netzwerkzugriff auf `<HARBOR_URL>` über HTTPS (443)
-- Keine zusätzlichen Zertifikate erforderlich: Das TLS-Zertifikat von Harbor ist öffentlich und vertrauenswürdig
+- Ausgehender Netzwerkzugriff zu `<HARBOR_URL>` über HTTPS (443)
+- Keine zusätzlichen Zertifikate erforderlich: Das TLS-Zertifikat von Harbor ist öffentlich und allgemein vertraut
 
 ## Wesentliche Konzepte
 
-- Projekt: logischer Bereich (öffentlich oder privat), der Repositories enthält.
+- Projekt: logischer Raum (öffentlich oder privat), der Repositories enthält.
 - Repository: Sammlung von Tags für ein bestimmtes Image (`<PROJET>/app-web:1.0.0`).
-- Robot-Konten: technische Identitäten mit eingeschränkten Berechtigungen, die für CI/CD vorgesehen sind.
-- Schwachstellen-Scans: automatische Analyse (z. B. Trivy) beim Upload und auf Abruf.
-- Richtlinien: Tag-Unveränderlichkeit, Aufbewahrungsregeln, Sicherheitsrichtlinien.
+- Robot-Accounts: technische Identitäten mit eingeschränkten Rechten, vorgesehen für CI/CD.
+- Schwachstellen-Scans: automatische Analyse (z. B. Trivy) beim Upload und auf Anfrage.
+- Richtlinien: Tag-Immutabilität, Retention, Sicherheitsregeln.
 - OCI-Artefakte: Images, Helm-Charts (OCI), SBOM, Signaturen.
 
-## Anmeldung bei der Registry (Docker / Podman)
+## Anmeldung beim Registry (Docker / Podman)
 
-Verwenden Sie für CI/CD-Operationen vorzugsweise ein **Robot-Konto**, das dem Projekt zugeordnet ist.
+Für CI/CD-Operationen sollte vorzugsweise ein **Robot-Konto** verwendet werden, das an das Projekt gebunden ist.
 
 ```bash
 # Docker
@@ -48,32 +46,27 @@ docker login <HARBOR_URL>
 podman login <HARBOR_URL>
 ```
 
-- Benutzername: `<ROBOT_USERNAME>` (z. B. `robot$monprojet+pusher`)
+- Benutzer: `<ROBOT_USERNAME>` (z. B. `robot$monprojet+pusher`)
 - Passwort: `<ROBOT_TOKEN>`
 
-:::tip[Zertifikate
-]
-Die von Cloud Temple verwaltete Harbor-Instanz verfügt über ein anerkanntes öffentliches Zertifikat. In der Regel ist keine zusätzliche CA-Konfiguration in Docker oder Podman erforderlich.
-:::
+>ℹ️[Zertifikate]
+>Die von Cloud Temple verwaltete Harbor-Instanz verfügt über ein öffentlich anerkanntes Zertifikat. Eine zusätzliche CA-Konfiguration ist in Docker oder Podman in der Regel nicht erforderlich.
 
-## Projekt erstellen
+## Ein Projekt erstellen
 
 Über die Harbor-UI:
 
-- Projekte > Neues Projekt
-- Name: `<PROJET>`, Sichtbarkeit: Private (recommandé)
-- Optionen: Tag-Immutabilität aktivieren, Auto-Scan bei Push, usw.
+- Projects > New Project
+- Name: `<PROJET>`, Sichtbarkeit: Private (empfohlen)
+- Optionen: Tag-Immutabilität aktivieren, automatisches Scannen beim Push, usw.
 
-:::info[Bonnes pratiques
-]
+>ℹ️[Best Practices]
+>
+>- Ein Projekt pro Anwendung oder pro funktionalem Bereich.
+>- Rollen einschränken (maintainer, developer, guest).
+>- Automatisches Scannen und Retention-Richtlinien aktivieren.
 
-- Ein Projekt pro Anwendung oder pro Geschäftsbereich.
-- Rollen einschränken (maintainer, developer, guest).
-- Auto-Scan und Aufbewahrungsrichtlinien aktivieren.
-
-:::
-
-## Image pushen
+## Ein Image pushen
 
 Beispiel mit Docker:
 
@@ -92,15 +85,15 @@ Empfohlene Organisation:
 
 - `<PROJET>/<service>:<version>` (z. B. `payments/api:2.3.4`)
 - Unveränderlichkeit der Tags, um Überschreibungen zu vermeiden
-- Semantische Tags: `1.2.3`, `1.2`, `latest` (`latest` nur mit Vorsicht verwenden)
+- Semantische Tags: `1.2.3`, `1.2`, `latest` (verwenden Sie `latest` mit Vorsicht)
 
-## Image herunterladen
+## Ein Image ziehen
 
 ```bash
 docker pull <HARBOR_URL>/<PROJET>/app-web:1.0.0
 ```
 
-Prüfen Sie die Scan-Ergebnisse und die Signatur (falls aktiviert), bevor Sie in die Produktionsumgebung übernehmen.
+Überprüfen Sie die Scanergebnisse und die Signatur (falls aktiviert) vor der Promotion in die Produktionsumgebung.
 
 ## Images in Kubernetes verwenden
 
@@ -114,13 +107,11 @@ kubectl create secret docker-registry harbor-pull-secret \
   -n <NAMESPACE>
 ```
 
-:::tip
-Der Parameter --docker-email ist in neueren kubectl-Versionen nicht mehr erforderlich (und kann ignoriert werden).
-:::
+>ℹ️Der Parameter --docker-email ist in neueren Versionen von kubectl nicht mehr erforderlich (und kann ignoriert werden).
 
 ### 2) Das Secret in Ihren Workloads referenzieren
 
-- Über den ServiceAccount:
+- Über das ServiceAccount:
 
 ```yaml
 apiVersion: v1
@@ -159,7 +150,7 @@ spec:
             - containerPort: 8080
 ```
 
-### 3) Pull vom Cluster testen (optional)
+### 3) Pull aus dem Cluster testen (optional)
 
 Überprüfen Sie kurz, ob der Knoten Ihr Image mit dem Secret ziehen kann:
 
@@ -169,7 +160,7 @@ kubectl run pull-check --rm -it --image=<HARBOR_URL>/<PROJET>/app-web:1.0.0 \
   -n <NAMESPACE> --command -- sh -c 'echo OK'
 ```
 
-Für die Promotion in die Produktion bevorzugen Sie die Verwendung eines Digests:
+Für eine Promotion in die Produktion sollten Sie die Verwendung eines Digests bevorzugen:
 
 ```yaml
 image: <HARBOR_URL>/<PROJET>/app-web@sha256:<DIGEST>
@@ -179,47 +170,44 @@ image: <HARBOR_URL>/<PROJET>/app-web@sha256:<DIGEST>
 
 - Projekte > `<PROJET>` > Roboter-Konten > Neuer Roboter
 - Scopes: auf die erforderlichen Aktionen beschränken (`pull` für Runtime, `push` für CI)
-- Ablaufdatum: eine Dauer und einen Rotationsprozess festlegen
-- Token geheim speichern (Kubernetes/CI)
+- Ablauf: eine Dauer und einen Rotationsprozess festlegen
+- Token als Secret speichern (Kubernetes/CI)
 
-:::caution[Prinzip der geringsten Rechte
-]
-Verwenden Sie keine persönlichen Konten für Ihre Pipelines. Bevorzugen Sie einen Roboter pro Projekt, ggf. sogar pro Umgebung.
-:::
+>⚠[Moindre privilège] : Verwenden Sie keine persönlichen Konten für Ihre Pipelines. Bevorzugen Sie einen Roboter pro Projekt, ggf. sogar pro Umgebung.
 
 ## Schwachstellen-Scans
 
-- „Scan on Push“ auf Projektebene aktivieren
-- Bei Bedarf über die UI oder API auslösen
+- „Scan on push“ auf Projektebene aktivieren
+- Bei Bedarf über die UI oder die API auslösen
 - Richtlinien konfigurieren: Pull blockieren, wenn Schweregrad >= `High` (gemäß Governance)
 
-Sie können die Berichte (JSON) exportieren oder die CVEs und betroffenen Schichten anzeigen.
+Sie können die Berichte (JSON) exportieren oder die betroffenen CVEs und Schichten anzeigen.
 
 ## Aufbewahrung und Unveränderlichkeit
 
-- Aufbewahrung: z. B. die letzten `N` Tags speichern, die einem Muster entsprechen (z. B. `release-*`)
-- Unveränderlichkeit: das Überschreiben vorhandener Tags verhindern
-- Garbage Collection: von der Harbor-Administration geplant (löscht verwaiste Blobs)
+- Aufbewahrung: Beibehalten, zum Beispiel, der `N` letzten Tags, die einem Muster entsprechen (z. B. `release-*`)
+- Unveränderlichkeit: Verhindern des Überschreibens bestehender Tags
+- Garbage Collection: Geplant durch die Harbor-Administration (löscht verwaiste Blobs)
 
-Diese Mechanismen senken die Speicherkosten und erhöhen die Nachverfolgbarkeit.
+Diese Mechanismen reduzieren die Speicherkosten und stärken die Nachverfolgbarkeit.
 
-## Helm-Charts (OCI)
+## Helm Charts (OCI)
 
 Helm v3.8+ unterstützt OCI nativ.
 
 ```bash
-# Anmeldung
+# Connexion
 helm registry login <HARBOR_URL> \
   --username '<ROBOT_USERNAME>' \
   --password '<ROBOT_TOKEN>'
 
-# Chart packen
+# Packaging du chart
 helm package charts/myapp
 
-# Chart pushen
+# Push du chart
 helm push myapp-0.1.0.tgz oci://<HARBOR_URL>/<PROJET>/charts
 
-# Pull / Installation
+# Pull / Install
 helm pull oci://<HARBOR_URL>/<PROJET>/charts/myapp --version 0.1.0
 helm install myapp oci://<HARBOR_URL>/<PROJET>/charts/myapp --version 0.1.0 -n <NAMESPACE>
 ```
@@ -229,25 +217,24 @@ helm install myapp oci://<HARBOR_URL>/<PROJET>/charts/myapp --version 0.1.0 -n <
 Mit `cosign`:
 
 ```bash
-# Anmeldung (falls erforderlich, um den öffentlichen Schlüssel in Harbor abzurufen)
+# Login (si nécessaire pour fetch public key dans Harbor)
 cosign login <HARBOR_URL>
 
-# Image signieren (lokaler Schlüssel oder KMS)
+# Signer une image (clé locale ou KMS)
 cosign sign <HARBOR_URL>/<PROJET>/app-web:1.0.0
 
-# Signatur überprüfen
+# Vérifier la signature
 cosign verify <HARBOR_URL>/<PROJET>/app-web:1.0.0
 ```
 
-:::note
-Bei älteren Versionen von cosign kann es erforderlich sein, COSIGN_EXPERIMENTAL=1 zu exportieren.
-:::
+>ℹ️Bei älteren Versionen von cosign kann es erforderlich sein, COSIGN_EXPERIMENTAL=1 zu exportieren.
 
-Harbor kann Attestierungen (Signaturen, SBOM) anzeigen und Signaturrichtlinien durchsetzen.
+
+Harbor kann Attestationen (Signaturen, SBOM) anzeigen und Signaturrichtlinien durchsetzen.
 
 ## CI/CD-Integration
 
-### GitLab CI-Beispiel
+### Beispiel GitLab CI
 
 ```yaml
 stages: [build, push]
@@ -299,21 +286,22 @@ jobs:
 ## Fehlerbehebung
 
 - `denied: requested access to the resource is denied`
-  - Berechtigungen des Robot-Accounts im Projekt und/oder des Repo-Namens überprüfen
+  - Berechtigungen des Robot-Accounts für das Projekt und/oder den Repository-Namen überprüfen
 - `name unknown` / `manifest unknown`
-  - Projekt nicht vorhanden, Repo falsch geschrieben, Tag nicht vorhanden
+  - Projekt existiert nicht, Repository falsch geschrieben, Tag existiert nicht
 - `x509: certificate signed by unknown authority`
-  - Zertifikatsspeicher des Runners aktualisieren (ca-certificates), auf das Fehlen eines TLS-Intercepting-Proxy prüfen; bei Bedarf die CA des Proxies hinzufügen und/oder die Systemuhr synchronisieren
+  - Zertifikatspeicher des Runners aktualisieren (ca-certificates), prüfen, ob kein TLS-Intercepting-Proxy vorhanden ist; CA des Proxys bei Bedarf hinzufügen und/oder Systemuhr synchronisieren
 - 401/403 beim Pull in Kubernetes
-  - Secret `imagePullSecrets` fehlt oder Zugangsdaten sind abgelaufen
+  - Secret `imagePullSecrets` fehlt oder Anmeldeinformationen sind abgelaufen
 - `413 Request Entity Too Large`
-  - Image-Größe zu groß im Vergleich zur Ingress/Registry-Konfiguration; Image optimieren oder Konfiguration anpassen (via support Cloud Temple)
+  - Bildgröße zu groß im Vergleich zur Konfiguration des Ingress/Registry; Bild optimieren oder Konfiguration anpassen (via support Cloud Temple)
 
 ## Best Practices
-- Projekte standardmäßig privat, Trennung von Dev/Preprod/Prod
-- Dedizierte Roboterkonten, regelmäßige Token-Rotation
-- Unveränderlichkeit von Tags, Promotion per Digest
-- Scan-Richtlinie: Schweregrad-Schwellenwert und dokumentierte Remediation
-- Strikte Aufbewahrungsrichtlinie, geplante Löschung veralteter Artefakte
-- Protokollierung/Audit: Export und Aufbewahrung von Zugriffs-/Aktivitäts-Logs
-- SBOM-Integration und Signaturen für die Lieferkette
+
+- Standardmäßig private Projekte, Trennung von dev/preprod/prod
+- Dedizierte Service-Accounts, regelmäßige Token-Rotation
+- Unveränderlichkeit von Tags und Promotion über Digest
+- Scan-Richtlinie: definierte Schweregradschwellenwerte und dokumentierte Remediation
+- Strikte Aufbewahrung, geplante Löschung veralteter Artefakte
+- Protokollierung/Audit: Export und Aufbewahrung von Zugriffs-/Aktivitätslogs
+- Integration von SBOM und Signaturen für die Lieferkette

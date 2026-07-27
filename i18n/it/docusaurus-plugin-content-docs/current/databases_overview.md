@@ -5,17 +5,17 @@ displayed_sidebar: docSidebar
 
 # Database
 
-I database gestiti di Cloud Temple vi liberano dalla gestione operativa (backup, aggiornamenti, alta disponibilità) restando ospitati su un'infrastruttura sovrana qualificata SecNumCloud.
+I database gestiti di Cloud Temple ti sollevano dalla gestione operativa (backup, aggiornamenti, alta disponibilità) rimanendo ospitati su un'infrastruttura sovrana qualificata SecNumCloud.
 
 <div class="card-grid">
   <div class="card">
-    <h3>MariaDB Gestito <span class="title-preview-badge">Anteprima</span></h3>
-    <p>Motore MariaDB su Kubernetes con backup automatici, alta disponibilità multi-AZ e crittografia at-rest.</p>
+    <h3>MariaDB Gestito <span class="title-beta-badge">(Beta)</span></h3>
+    <p>Motore MariaDB su Kubernetes con backup automatici, alta disponibilità multi-AZ.</p>
     <a href="./managed_mariadb" class="card-link">Scopri MariaDB Gestito →</a>
   </div>
   <div class="card">
-    <h3>PostgreSQL Gestito <span class="title-preview-badge">Anteprima</span></h3>
-    <p>Motore PostgreSQL su Kubernetes con Point-in-Time Recovery, backup logico e distribuzione StandAlone o Distributed.</p>
+    <h3>PostgreSQL Gestito <span class="title-beta-badge">(Beta)</span></h3>
+    <p>Motore PostgreSQL su Kubernetes: StandAlone, Distributed o Enterprise.</p>
     <a href="./managed_postgresql" class="card-link">Scopri PostgreSQL Gestito →</a>
   </div>
 </div>

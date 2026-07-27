@@ -8,9 +8,13 @@ L'objectif de cette section est de vous orienter vers les ressources nécessaire
 
 ## Avant de commencer
 
-Assurez vous de disposer des accès qui vous ont été fournis par Cloud-Temple.
+Assurez-vous de disposer des accès qui vous ont été fournis par Cloud-Temple.
 
-Assurez vous que les flux réseaux sont ouverts vers les IP qui vous ont été fournies.
+Assurez-vous que les flux réseaux sont ouverts vers les IP qui vous ont été fournies.
+
+> **Prérequis de déploiement** : Ce déploiement nécessite un cluster Kubernetes managé entièrement installé, avec la stack Prometheus et Grafana configurée pour bénéficier de la télémétrie complète et du dashboard Grafana associé.
+
+Chaque cluster ou serveur est déployé de façon isolée par l'opérateur MariaDB dans un namespace Kubernetes dédié.
 
 ## Accéder à votre cluster MariaDB Managé
 
@@ -18,16 +22,16 @@ Suivant le modèle de déploiement choisi, vous disposez d'un ou plusieurs endpo
 
 **StandAlone** : 1 seul endpoint (1 seule IP), accessible sur le port 3306.
 
-**Distributed** :
+**MultiAZ** :
 
-- 1 Endpoint Maxscale, accessible sur le port 3306, capable de distribuer vos requetes vers les instances les plus appropiées (c'est le endpoint a privilégier)
+- 1 Endpoint Maxscale, accessible sur le port 3306, capable de distribuer vos requêtes vers les instances les plus appropriées (c'est le endpoint à privilégier).
 - 1 Endpoint R/W, accessible sur le port 3306, qui pointe vers l'instance primaire, en lecture-écriture.
-- 1 Endpoint R/O, accessible sur le port 3306, qui pointe vers les toutes instances, en lecture-seule.
+- 1 Endpoint R/O, accessible sur le port 3306, qui pointe vers toutes les instances, en lecture seule.
 
 ## Vos permissions
 
-Vous ne disposez d'aucune permission au niveau du moteur de base de données (ni `SUPER`, ni `ALL_PRIVILEGE`)
+Vous ne disposez d'aucune permission au niveau du moteur de base de données (ni `SUPER`, ni `ALL_PRIVILEGE`).
 
-Vous ne pouvez pas reconfigurer le moteur ou ses options, ni installer le performance_schema.
+Vous ne pouvez pas reconfigurer le moteur ou ses options, ni installer le `performance_schema`. (Rappel : il est d'ailleurs déconseillé de l'activer sur les instances inférieures à la taille X-Large pour des raisons de ressources RAM).
 
-Les demandes d'ajouts de base de données, d'utilisteurs ou de grants sont a effectuer auprès des équipes Cloud-Temple.
+Les demandes d'ajouts de bases de données, d'utilisateurs ou de grants sont à effectuer auprès des équipes Cloud-Temple.

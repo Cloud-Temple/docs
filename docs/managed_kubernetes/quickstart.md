@@ -1,7 +1,6 @@
 ---
 title: Guide de démarrage
 ---
-
 Bienvenue sur le guide de démarrage de **Managed Kubernetes** Cloud Temple.
 
 L'objectif de cette section est de vous orienter vers les ressources nécessaires pour prendre en main votre cluster.
@@ -14,12 +13,11 @@ Pour interagir avec votre cluster, plusieurs éléments sont indispensables :
 
 1. **Le fichier `kubeconfig`** : Ce fichier, qui vous est fourni par les équipes Cloud Temple à la livraison du service, contient toutes les informations pour vous connecter de manière sécurisée.
 2. **L'outil `kubectl`** : Il s'agit de l'interface en ligne de commande standard pour piloter un cluster Kubernetes.
-3. **L'outil `kubelogin`** (si OIDC est utilisé) : Si votre cluster est configuré pour s'authentifier via un fournisseur d'identité OIDC (comme Entra ID/Azure AD), vous devez installer l'outil `kubelogin` pour gérer le flux d'authentification. Suivez le [guide d'installation de kubelogin](https://github.com/int128/kubelogin).
+3. **L'outil `kubelogin`** (si OIDC est utilisé) : Si votre cluster est configuré pour s'authentifier via un fournisseur d'identité OIDC (comme Entra ID/Azure AD), vous devez installer l'outil `kubelogin` pour gérer le flux d'authentification. Suivez le [guide d&#39;installation de kubelogin](https://github.com/int128/kubelogin).
 
-:::info[Outils graphiques recommandés:]
-Pour une expérience plus visuelle et une gestion simplifiée de vos ressources, nous vous recommandons l'utilisation de **Lens**. C'est un outil puissant pour Kubernetes qui vous permet d'explorer votre cluster, de gérer vos applications et de visualiser leur état de manière graphique.
-Certains de nos tutoriels utiliseront Lens pour illustrer les manipulations. Vous pouvez le télécharger ici : [https://k8slens.dev/](https://k8slens.dev/).
-:::
+> ℹ️[Outils graphiques recommandés:]
+> Pour une expérience plus visuelle et une gestion simplifiée de vos ressources, nous vous recommandons l'utilisation de **Lens**. C'est un outil puissant pour Kubernetes qui vous permet d'explorer votre cluster, de gérer vos applications et de visualiser leur état de manière graphique.
+> Certains de nos tutoriels utiliseront Lens pour illustrer les manipulations. Vous pouvez le télécharger ici : [https://k8slens.dev/](https://k8slens.dev/).
 
 ---
 
@@ -30,35 +28,32 @@ Votre cluster de production est identifié par un code à 5 lettres (6 lettres e
 Les urls sont:
 
 - API kubernetes (utilisée dans kubeconfig):
-  - **identifiant**.mk.ms-cloud-temple.com:6443  (donc dans notre exemple: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
 
+  - **identifiant**.mk.ms-cloud-temple.com:6443  (donc dans notre exemple: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
 - url publiques :
+
   - k10.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - grafana.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - opencost.external-secured.**identifiant**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**identifiant**.mk.ms-cloud-temple.com
 
-:::info[url sécurisées]
-Les url ci dessus ne sont accessible que depuis des IP publiques connues, configurées dans le firewall de la solution. Si vous souhaitez ajouter une IP publique, il faut faire une demande de support.
-:::
+>ℹ️[url sécurisées]
+>Les url ci dessus ne sont accessible que depuis des IP publiques connues, configurées dans le firewall de la solution. Si vous souhaitez ajouter une IP publique, il faut faire une demande de support.
+>
 
-- url internes :
-  - ceph.internal.**identifiant**.mk.ms-cloud-temple.com
-  - argocd.internal.**identifiant**.mk.ms-cloud-temple.com
-  - hubble.internal.**identifiant**.mk.ms-cloud-temple.com
-
-:::info[url internes]
-Les url ci dessus ne sont pas exposées sur Internet. Elles ne sont accessibles que sur le réseau Interne Kubernetes Managé.
-:::
+>ℹ️[url internes]
+>Les url ci dessous ne sont pas exposées sur Internet. Elles ne sont accessibles que sur le réseau Interne Kubernetes Managé.
+>  - ceph.internal.**identifiant**.mk.ms-cloud-temple.com
+>  - argocd.internal.**identifiant**.mk.ms-cloud-temple.com
+>  - hubble.internal.**identifiant**.mk.ms-cloud-temple.com
 
 ---
 
 ## Vos permissions
 
-:::warning[Dev/Test]
-Pour les clusters Kubernetes Managé **"Dev/Test"**, le compte de service qui vous a été fourni dispose de toutes les permissions sur l'ensemble du cluster (ClusterAdmin)
-:::
+>⚠[Dev/Test et Kubernetes Core]
+>Pour les clusters Kubernetes Managé **"Dev/Test"** et les clusters Core, le compte de service qui vous a été fourni dispose de toutes les permissions sur l'ensemble du cluster (ClusterAdmin)
 
 Sur les cluster **"Production"**, vos permissions sont limitées. Vous disposez d"un droit **"Viewer Etendu"** sur les ressources du cluster. Ce droit accorde un accès en lecture seule à des ressources clés, à la fois au niveau du cluster et pour le diagnostic :
 
@@ -92,7 +87,7 @@ Certaines actions ne sont pas permises :
         </p>
       </div>
       <div className="card__footer">
-        <a href="./tutorials/firstdeploy" className="button button--primary button--block">Commencer le tutoriel &rarr;</a>
+        <a href="./tutorials/firstdeploy" className="button button--primary button--block">Commencer le tutoriel →</a>
       </div>
     </div>
   </div>
@@ -107,7 +102,7 @@ Certaines actions ne sont pas permises :
         </p>
       </div>
       <div className="card__footer">
-        <a href="./tutorials/networking" className="button button--primary button--block">Voir le tutoriel réseau &rarr;</a>
+        <a href="./tutorials/networking" className="button button--primary button--block">Voir le tutoriel réseau →</a>
       </div>
     </div>
   </div>
@@ -122,7 +117,7 @@ Certaines actions ne sont pas permises :
         </p>
       </div>
       <div className="card__footer">
-        <a href="./tutorials/usingcapsule" className="button button--primary button--block">Découvrir Capsule &rarr;</a>
+        <a href="./tutorials/usingcapsule" className="button button--primary button--block">Découvrir Capsule →</a>
       </div>
     </div>
   </div>

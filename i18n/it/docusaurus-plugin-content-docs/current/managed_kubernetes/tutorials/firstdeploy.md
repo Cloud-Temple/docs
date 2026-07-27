@@ -4,7 +4,7 @@ title: Tutorial - Distribuire la tua prima applicazione
 
 ## Obiettivi
 
-Questo tutorial vi guida passo dopo passo per effettuare il vostro primo deployment su un cluster **Managed Kubernetes**. Al termine di questa guida, avrete:
+Questo tutorial vi guida passo dopo passo per realizzare il vostro primo deployment su un cluster **Managed Kubernetes**. Al termine di questa guida, avrete:
 
 - Distribuito un'applicazione web semplice.
 - Esposto questa applicazione all'interno del cluster tramite un Service.
@@ -12,22 +12,22 @@ Questo tutorial vi guida passo dopo passo per effettuare il vostro primo deploym
 
 ## Prerequisiti
 
-- Hai configurato l'accesso al cluster come descritto nella [guida rapida](../quickstart.md).
-- Disponi di un namespace su cui hai i diritti di distribuzione. In questo tutorial, utilizzeremo un namespace denominato `hello-world`.
+- Hai configurato l'accesso al cluster come descritto nella [guida di avvio rapido](../quickstart.md).
+- Dispori di un namespace su cui hai i diritti di deployment. In questo tutorial, utilizzeremo un namespace denominato `hello-world`.
 
-## Fase 1: Creare un namespace
+## Passo 1: Creare un namespace
 
-Se non è già stato creato, crea un namespace per isolare la tua applicazione.
+Se non è già stato fatto, crea un namespace per isolare la tua applicazione.
 
 ```bash
 kubectl create namespace hello-world
 ```
 
-## Fase 2: Distribuire un'applicazione "Hello World"
+## Passo 2: Distribuire un'applicazione "Hello World"
 
 Distribuiremo un'applicazione dimostrativa che visualizza una semplice pagina web.
 
-1. Crea un file denominato `deployment.yaml` con il contenuto seguente:
+1. Crea un file denominato `deployment.yaml` con il seguente contenuto:
 
     ```yaml
     apiVersion: apps/v1
@@ -75,7 +75,7 @@ Distribuiremo un'applicazione dimostrativa che visualizza una semplice pagina we
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
     ```
 
-## Fase 3 : Esporre l'applicazione nel cluster (Service)
+## Passo 3: Esporre l'applicazione nel cluster (Service)
 
 Per consentire ai diversi componenti del cluster di comunicare con la nostra applicazione, dobbiamo creare un **Service**.
 
@@ -105,11 +105,11 @@ Per consentire ai diversi componenti del cluster di comunicare con la nostra app
 
     La tua applicazione è ora accessibile tramite il nome `hello-world-service.hello-world` da qualsiasi altro pod del cluster.
 
-## Fase 4: Rendere l'applicazione accessibile da Internet (Ingress)
+## Passo 4: Rendere l'applicazione accessibile da Internet (Ingress)
 
-Per esporre il nostro servizio su Internet, utilizzeremo una risorsa **Ingress**. L'offerta Managed Kubernetes fornisce diversi `ingressClassName` preconfigurati. Utilizzeremo `nginx-external` per un'esposizione pubblica.
+Per esporre il nostro servizio su Internet, utilizzeremo una risorsa **Ingress**. L'offerta Managed Kubernetes fornisce più `ingressClassName` preconfigurati. Utilizzeremo `nginx-external` per un'esposizione pubblica.
 
-1. Crea un file `ingress.yaml`. **Ricorda di sostituire `votre-cluster-id`** con l'ID del tuo cluster (es: `ctodev`).
+1. Create un file `ingress.yaml`. **Ricordatevi di sostituire `votre-cluster-id`** con l'identificativo del vostro cluster (es: `ctodev`).
 
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -132,7 +132,7 @@ Per esporre il nostro servizio su Internet, utilizzeremo una risorsa **Ingress**
                   number: 80
     ```
 
-2. Applica il manifesto:
+2. Applicare il manifest:
 
     ```bash
     kubectl apply -f ingress.yaml
@@ -140,8 +140,8 @@ Per esporre il nostro servizio su Internet, utilizzeremo una risorsa **Ingress**
 
 ## Passo 5: Verificare l'accesso
 
-Una voce DNS "*" indirizza già tutti gli URL che terminano con ".external.votre-cluster-id.mk.ms-cloud-temple.com" all'IP del ingress "external".
-le applicazioni pubblicate su questo suffisso DNS sono quindi direttamente accessibili.
+Un record DNS "*" indirizza già tutti gli URL che terminano con ".external.votre-cluster-id.mk.ms-cloud-temple.com" all'IP dell'ingress "external".
+Le applicazioni pubblicate su questo suffisso DNS sono quindi direttamente accessibili.
 
 ```bash
 curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
@@ -168,21 +168,20 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
-:::warning[Per approfondire: la sicurezza in produzione
-]
-Questo tutorial ti ha mostrato le basi del deployment. Per un ambiente di produzione, è fondamentale applicare ulteriori misure di sicurezza:
-
-- **Utilizza immagini sicure** : Privilegia immagini provenienti dal tuo registro aziendale sicuro come **Harbor** anziché immagini pubbliche.
-- **Controlla i flussi di rete** : Implementa `NetworkPolicies` per limitare le comunicazioni ai soli flussi necessari tra le tue applicazioni.
-- **Applica politiche di governance** : Utilizza strumenti come **Kyverno** per imporre regole di sicurezza (es: vietare i container "root", richiedere `requests` e `limits` di risorse, ecc.).
-:::
+>⚠[Pour aller plus loin : la sécurité en production]
+>Questo tutorial ti ha mostrato le basi del deployment. Per un ambiente di produzione, è cruciale applicare ulteriori misure di sicurezza:
+>
+>- **Utilizza immagini sicure** : Privilegia immagini provenienti dal tuo registro aziendale sicuro come **Harbor** piuttosto che immagini pubbliche.
+>- **Controlla i flussi di rete** : Implementa `NetworkPolicies` per limitare le comunicazioni ai soli flussi necessari tra le tue applicazioni.
+>- **Applica politiche di governance** : Utilizza strumenti come **Kyverno** per imporre regole di sicurezza (es: vietare i container "root", richiedere `requests` e `limits` di risorse, ecc.).
+>- **Applica Pod Disruption Budget** : un PDB garantisce che le tue applicazioni rimangano sempre disponibili.
 
 ## Pulizia
 
-Per eliminare tutte le risorse che hai creato durante questo tutorial, puoi semplicemente eliminare il namespace :
+Per eliminare tutte le risorse che hai creato durante questo tutorial, puoi semplicemente eliminare il namespace:
 
 ```bash
 kubectl delete namespace hello-world
 ```
 
-Complimenti, hai distribuito ed esposto la tua prima applicazione su Managed Kubernetes !
+Congratulazioni, hai distribuito ed esposto la tua prima applicazione su Managed Kubernetes!

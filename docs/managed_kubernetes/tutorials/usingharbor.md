@@ -4,7 +4,7 @@ title: Utiliser Harbor
 
 Harbor est un registre d’artefacts OCI (images de conteneur, charts Helm, SBOM, signatures, etc.) proposant une gestion fine des projets, un contrôle d’accès, des scans de vulnérabilités, des politiques de rétention et la gestion des signatures. Ce guide explique comment l’utiliser avec Cloud Temple Managed Kubernetes, de la connexion au registre jusqu’à l’intégration dans vos déploiements Kubernetes et vos pipelines CI/CD.
 
-:::note
+>ℹ️
 Dans ce guide, remplacez les variables suivantes par vos valeurs:
 
 - `<IDENTIFIANT>` : code de votre cluster (ex: `ctodev`)
@@ -13,7 +13,7 @@ Dans ce guide, remplacez les variables suivantes par vos valeurs:
 - `<NAMESPACE>` : namespace Kubernetes cible
 - `<ROBOT_USERNAME>` / `<ROBOT_TOKEN>` : identifiants d'un compte robot Harbor
 
-:::
+
 
 ## Prérequis
 
@@ -51,9 +51,9 @@ podman login <HARBOR_URL>
 - Utilisateur: `<ROBOT_USERNAME>` (ex: `robot$monprojet+pusher`)
 - Mot de passe: `<ROBOT_TOKEN>`
 
-:::tip[Certificats]
-L’instance Harbor managée par Cloud Temple présente un certificat public reconnu. Aucune configuration de CA supplémentaire n’est normalement nécessaire dans Docker ou Podman.
-:::
+>ℹ️[Certificats]
+>L’instance Harbor managée par Cloud Temple présente un certificat public reconnu. Aucune configuration de CA supplémentaire n’est normalement nécessaire dans Docker ou Podman.
+
 
 ## Créer un projet
 
@@ -63,13 +63,12 @@ Via l'UI Harbor:
 - Nom: `<PROJET>`, visibilité: Private (recommandé)
 - Options: activer l'immutabilité des tags, l'auto-scan on push, etc.
 
-:::info[Bonnes pratiques]
+>ℹ️[Bonnes pratiques]
+>
+>- Un projet par application ou par domaine fonctionnel.
+>- Restreindre les rôles (maintainer, developer, guest).
+>- Activer l'auto-scan et les politiques de rétention.
 
-- Un projet par application ou par domaine fonctionnel.
-- Restreindre les rôles (maintainer, developer, guest).
-- Activer l'auto-scan et les politiques de rétention.
-
-:::
 
 ## Pousser une image
 
@@ -112,9 +111,8 @@ kubectl create secret docker-registry harbor-pull-secret \
   -n <NAMESPACE>
 ```
 
-:::tip
-Le paramètre --docker-email n’est plus requis sur les versions récentes de kubectl (et peut être ignoré).
-:::
+>ℹ️Le paramètre --docker-email n’est plus requis sur les versions récentes de kubectl (et peut être ignoré).
+
 
 ### 2) Référencer le secret dans vos workloads
 
@@ -180,9 +178,8 @@ image: <HARBOR_URL>/<PROJET>/app-web@sha256:<DIGEST>
 - Expiration: définir une durée et un processus de rotation
 - Stocker le token en secret (Kubernetes/CI)
 
-:::caution[Moindre privilège]
-N'utilisez pas de comptes personnels pour vos pipelines. Préférez un robot par projet, voire par environnement.
-:::
+>⚠[Moindre privilège] : N'utilisez pas de comptes personnels pour vos pipelines. Préférez un robot par projet, voire par environnement.
+
 
 ## Scans de vulnérabilités
 
@@ -236,9 +233,8 @@ cosign sign <HARBOR_URL>/<PROJET>/app-web:1.0.0
 cosign verify <HARBOR_URL>/<PROJET>/app-web:1.0.0
 ```
 
-:::note
-Sur les versions anciennes de cosign, il peut être nécessaire d’exporter COSIGN_EXPERIMENTAL=1.
-:::
+>ℹ️Sur les versions anciennes de cosign, il peut être nécessaire d’exporter COSIGN_EXPERIMENTAL=1.
+
 
 Harbor peut afficher les attestations (signatures, SBOM) et faire respecter des politiques de signature.
 
