@@ -13,6 +13,9 @@ import shivaLogs from '@site/docs/console/images/shiva_logs.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
 
 ## Voraussetzungen
 
@@ -142,6 +145,53 @@ Nachfolgend eine Übersicht der verfügbaren Module. Die Konsole wird regelmäß
 </div>
 </div>
 Die Symbole __'NEW'__ bedeuten, dass das betreffende Produkt bereitgestellt wurde, aber noch nicht für das __SecNumCloud-Angebot__ zertifiziert ist, und __'BETA'__ bedeuten, dass das betreffende Produkt bereitgestellt und kürzlich für das __SecNumCloud-Angebot__ zertififiziert wurde.
+
+## Administration: Ihre Organisation und Ihre Tenants
+
+Das Modul __Administration__ (unten im grünen Menüband, links) bündelt die Verwaltung Ihrer __Organisation__ und Ihrer __Tenants__: Auswahl des Arbeitsbereichs, Verwaltung der Benutzer und ihrer Berechtigungen, Zugriffsbeschränkung per IP sowie Protokollierung.
+
+- Die __Organisation__ ist Ihre vertragliche Einheit: Sie enthält die Benutzerkonten, den Authentifizierungsmechanismus (lokales Verzeichnis oder Identitätsföderation) und föderiert alle Ihre Tenants.
+- Ein __Tenant__ ist eine abgeschottete Gruppierung von Ressourcen innerhalb der Organisation (Produktion, Vorproduktion, pro Anwendung, pro Kritikalität…). Die Ressourcen eines Tenants werden nicht mit den anderen geteilt.
+
+Die Berechtigungen der Benutzer werden __pro Tenant__ definiert: Ein und dasselbe Konto kann beispielsweise auf einem Tenant Ressourcen bestellen und auf einem anderen nur einsehen.
+
+:::info
+Diese Seite beschreibt den Ablauf in der Console. Für die ausführliche Referenz — Definitionen, Lebenszyklus, Identitätsföderation und die vollständige Liste der Berechtigungen — siehe das Modul IAM: [Konzepte](iam/concepts.md) und [IAM-Schnellstart](iam/quickstart.md).
+:::
+
+### Den Arbeits-Tenant auswählen
+
+Der Tenant-Selektor befindet sich oben links in der Console. Er ermöglicht den Wechsel von einem Bereich zum anderen; qualifizierte Tenants zeigen das Abzeichen __SecNumCloud__ an.
+
+<img src={shivaTenant} />
+
+Die Erstellung eines Tenants erfolgt über eine Serviceanfrage (siehe [Erstellung eines Tenants](iam/quickstart.md#creation-of-a-tenant)). Ein Tenant darf nicht leer sein: Er wird mit mindestens einer Verfügbarkeitszone, einem Compute-Cluster, einem Speicherbereich und einem Netzwerk-VLAN initialisiert.
+
+### Benutzer und ihre Berechtigungen verwalten
+
+Über __Administration > Benutzer__ laden Sie einen Benutzer per E-Mail ein und weisen ihm anschließend seine Berechtigungen __für jeden Tenant__ zu. Standardmäßig besitzt ein Konto keine Berechtigung; die Zuweisung erfordert die Berechtigung `iam_write`.
+
+<img src={shivaOnboard_005} />
+
+Die Berechtigungen sind __einzeln__ (sie überschneiden sich nicht) und __kumulativ__: Eine Aktion kann mehrere Berechtigungen erfordern (zum Beispiel `..._read` __und__ `..._write`). Das vollständige Verfahren und die [vollständige Liste der Berechtigungen](iam/concepts.md#berechtigungen) sind im Modul IAM dokumentiert.
+
+### Zugriff beschränken: zugelassene IPs (Whitelist IP)
+
+Gemäß der SecNumCloud-Qualifikation ist der Zugriff auf die Console auf zuvor deklarierte öffentliche IP-Adressen beschränkt. Über __Administration > Zugriff__ sehen Sie die zugelassenen IPs und Subnets ein und fügen sie hinzu.
+
+<img src={shivaIpAccessManagement_01} />
+
+- Liste einsehen: Berechtigung `console_public_access_read`.
+- Adresse hinzufügen: Berechtigung `console_public_access_write`.
+- Das __Entfernen__ einer zugelassenen IP erfolgt über eine Support-Anfrage.
+
+### Eigentümer und Lebenszyklus eines Tenants
+
+Jeder Tenant hat mindestens einen __Eigentümer__, der automatisch alle Berechtigungen der auf diesem Tenant aktivierten Produkte besitzt. Diese Berechtigungen sind nicht änderbar, und die Oberfläche warnt ab mehr als 3 Eigentümern, um das Prinzip der minimalen Rechtevergabe zu fördern. Das Entfernen eines Eigentümers erfolgt über eine Support-Anfrage (siehe [Verwaltung der Eigentümer auf einem Tenant](iam/concepts.md#verwaltung-der-eigentümer-auf-einem-tenant)).
+
+Sie können die Nutzung eines Tenants über den __Verbrauchsbericht__ verfolgen (siehe [Ressourcenverbrauch innerhalb eines Tenants](iam/concepts.md#ressourcenverbrauch-innerhalb-eines-tenants)).
+
+Die Protokollierung der Aktivitäten, die ebenfalls Teil des Moduls __Administration__ ist, wird nachstehend beschrieben.
 
 __Protokollierung - Aktivitätsverfolgung__
 =====================================

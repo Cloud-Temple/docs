@@ -13,6 +13,9 @@ import shivaLogs from '@site/docs/console/images/shiva_logs.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
 
 ## Prerequisites
 
@@ -142,6 +145,53 @@ Below is a presentation of the available modules. New modules are regularly adde
 </div>
 </div>
 The __'NEW'__ pictograms indicate that the product in question has been provisioned but is not yet qualified under the __SecNumCloud offer__, and __'BETA'__ indicates that the product in question has been provisioned and has just been qualified under the __SecNumCloud offer__.
+
+## Administration: your organization and your tenants
+
+The __Administration__ module (at the bottom of the green banner, on the left) brings together the management of your __organization__ and your __tenants__: selecting the working scope, managing users and their permissions, restricting access by IP, and logging.
+
+- The __organization__ is your contractual entity: it holds the user accounts, the authentication mechanism (local directory or identity federation) and federates all of your tenants.
+- A __tenant__ is a partitioned grouping of resources within the organization (Production, Pre-production, per application, per criticality…). The resources of one tenant are not shared with the others.
+
+User permissions are defined __on a per-tenant basis__: the same account may, for example, order resources on one tenant and only view them on another.
+
+:::info
+This page describes the workflow within the Console. For the detailed reference — definitions, lifecycle, identity federation and the exhaustive list of permissions — refer to the IAM module: [Concepts](iam/concepts.md) and [IAM Quickstart](iam/quickstart.md).
+:::
+
+### Selecting the working tenant
+
+The tenant selector is located in the top left of the Console. It lets you switch from one scope to another; qualified tenants display the __SecNumCloud__ badge.
+
+<img src={shivaTenant} />
+
+Creating a tenant is done through a service request (see [Tenant Creation](iam/quickstart.md#tenant)). A tenant cannot be empty: it is initialized with at least one availability zone, one compute cluster, one storage space and one network VLAN.
+
+### Managing users and their permissions
+
+From __Administration > Users__, you invite a user by e-mail, then assign their permissions __for each tenant__. By default, an account has no permission; assigning them requires the `iam_write` permission.
+
+<img src={shivaOnboard_005} />
+
+Permissions are __unitary__ (they do not overlap) and __cumulative__: an action may require several permissions (for example `..._read` __and__ `..._write`). The full procedure and the [exhaustive list of permissions](iam/concepts.md#permissions) are documented in the IAM module.
+
+### Restricting access: authorized IPs (Whitelist IP)
+
+In accordance with the SecNumCloud qualification, access to the Console is limited to previously declared public IP addresses. From __Administration > Access__, you view and add the authorized IPs and subnets.
+
+<img src={shivaIpAccessManagement_01} />
+
+- Viewing the list: `console_public_access_read` permission.
+- Adding an address: `console_public_access_write` permission.
+- __Removing__ an authorized IP is done through a support request.
+
+### Owners and tenant lifecycle
+
+Each tenant has at least one __owner__, who automatically holds all the permissions of the products enabled on that tenant. These permissions cannot be modified, and the interface warns beyond 3 owners in order to encourage least privilege. Removing an owner goes through a support request (see [Managing owners on a tenant](iam/concepts.md#managing-owners-on-a-tenant)).
+
+You can track a tenant's usage via the __Consumption report__ (see [Resource consumption within a tenant](iam/concepts.md#resource-consumption-within-a-tenant)).
+
+Activity logging, which is also part of the __Administration__ module, is detailed below.
 
 __Logging - Activity Tracking__
 =====================================

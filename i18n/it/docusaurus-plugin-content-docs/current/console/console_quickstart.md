@@ -13,6 +13,9 @@ import shivaLogs from '@site/docs/console/images/shiva_logs.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
+import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
 
 ## Prerequisiti
 
@@ -142,6 +145,53 @@ Di seguito è presentata una panoramica dei diversi moduli disponibili. Nuovi mo
 </div>
 </div>
 Le etichette __'NEW'__ indicano che il prodotto in questione è stato provisionato ma non è ancora qualificato __offerta SecNumCloud__, mentre __'BETA'__ indicano che il prodotto in questione è stato provisionato ed è appena stato qualificato __offerta SecNumCloud__.
+
+## Amministrazione: la tua organizzazione e i tuoi tenant
+
+Il modulo __Amministrazione__ (in basso nella banda verde, a sinistra) raccoglie la gestione della tua __organizzazione__ e dei tuoi __tenant__: selezione del perimetro di lavoro, gestione degli utenti e dei loro permessi, restrizione degli accessi tramite IP e registrazione delle attività.
+
+- L'__organizzazione__ è la tua entità contrattuale: contiene gli account utente, il meccanismo di autenticazione (directory locale o federazione delle identità) e federa l'insieme dei tuoi tenant.
+- Un __tenant__ è un raggruppamento di risorse isolato all'interno dell'organizzazione (Produzione, Preproduzione, per applicazione, per criticità…). Le risorse di un tenant non sono condivise con gli altri.
+
+I permessi degli utenti si definiscono __per ogni tenant__: uno stesso account può, ad esempio, ordinare risorse su un tenant e soltanto consultarle su un altro.
+
+:::info
+Questa pagina descrive il percorso all'interno della Console. Per il riferimento dettagliato — definizioni, ciclo di vita, federazione delle identità ed elenco esaustivo dei permessi — consulta il modulo IAM: [Concetti](iam/concepts.md) e [Guida introduttiva IAM](iam/quickstart.md).
+:::
+
+### Selezionare il tenant di lavoro
+
+Il selettore di tenant si trova in alto a sinistra nella Console. Consente di passare da un perimetro all'altro; i tenant qualificati mostrano il badge __SecNumCloud__.
+
+<img src={shivaTenant} />
+
+La creazione di un tenant avviene tramite una richiesta di servizio (vedere [Creazione di un tenant](iam/quickstart.md#creazione-di-un-tenant)). Un tenant non può essere vuoto: viene inizializzato con almeno una zona di disponibilità, un cluster di calcolo, uno spazio di archiviazione e una VLAN di rete.
+
+### Gestire gli utenti e i loro permessi
+
+Da __Amministrazione > Utenti__, inviti un utente tramite e-mail, quindi gli assegni i permessi __per ogni tenant__. Per impostazione predefinita, un account non possiede alcun permesso; l'assegnazione richiede il permesso `iam_write`.
+
+<img src={shivaOnboard_005} />
+
+I permessi sono __unitari__ (non si sovrappongono) e __cumulativi__: un'azione può richiedere più permessi (ad esempio `..._read` __e__ `..._write`). La procedura completa e l'[elenco esaustivo dei permessi](iam/concepts.md#permessi) sono documentati nel modulo IAM.
+
+### Limitare gli accessi: IP autorizzati (Whitelist IP)
+
+In conformità con la qualificazione SecNumCloud, l'accesso alla Console è limitato agli indirizzi IP pubblici dichiarati in precedenza. Da __Amministrazione > Accesso__, consulti e aggiungi gli IP e i subnet autorizzati.
+
+<img src={shivaIpAccessManagement_01} />
+
+- Consultare l'elenco: permesso `console_public_access_read`.
+- Aggiungere un indirizzo: permesso `console_public_access_write`.
+- La __rimozione__ di un IP autorizzato avviene tramite una richiesta di supporto.
+
+### Proprietari e ciclo di vita di un tenant
+
+Ogni tenant ha almeno un __proprietario__, che dispone automaticamente di tutti i permessi dei prodotti attivati su quel tenant. Questi permessi non sono modificabili e l'interfaccia avvisa oltre i 3 proprietari per incoraggiare il privilegio minimo. La rimozione di un proprietario avviene tramite una richiesta di supporto (vedere [Gestione dei proprietari su un tenant](iam/concepts.md#gestione-dei-proprietari-su-un-tenant)).
+
+Puoi monitorare l'utilizzo di un tenant tramite il __Rapporto di consumo__ (vedere [Consumo di risorse all'interno di un tenant](iam/concepts.md#consumo-di-risorse-allinterno-di-un-tenant)).
+
+La registrazione delle attività, anch'essa parte del modulo __Amministrazione__, è descritta di seguito.
 
 __Registrazione - Monitoraggio delle Attività__
 =====================================
