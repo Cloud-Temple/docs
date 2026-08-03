@@ -159,6 +159,15 @@ Les droits des utilisateurs se définissent __tenant par tenant__ : un même com
 Cette page décrit le parcours dans la Console. Pour la référence détaillée — définitions, cycle de vie, fédération d'identité et liste exhaustive des permissions — reportez-vous au module IAM : [Concepts](iam/concepts.md) et [Guide de démarrage IAM](iam/quickstart.md).
 :::
 
+### Le module Administration en un coup d'œil
+
+Le module __Administration__ regroupe quatre menus :
+
+- __Support__ : consultez et suivez vos dossiers de support pour le tenant (permissions `support_read`, `support_write`, `support_management`). La création d'un dossier est décrite dans la section « Accès au support technique » ci-dessus.
+- __Utilisateurs__ : invitez les comptes de votre organisation et attribuez leurs permissions tenant par tenant (permissions `iam_read`, `iam_write`). Détaillé ci-dessous.
+- __Logs__ : journal des opérations de lecture et d'écriture réalisées dans la Console, à des fins de traçabilité (permission `activity_read`). Détaillé dans « Journalisation » ci-dessous.
+- __Accès__ : gérez la liste blanche des adresses IP publiques autorisées à accéder à la Console (permissions `console_public_access_read`, `console_public_access_write`). Détaillé ci-dessous.
+
 ### Sélectionner le tenant de travail
 
 Le sélecteur de tenant est situé en haut à gauche de la Console. Il permet de basculer d'un périmètre à l'autre ; les tenants qualifiés affichent le badge __SecNumCloud__.
@@ -184,6 +193,17 @@ Conformément à la qualification SecNumCloud, l'accès à la Console est limit�
 - Consultation de la liste : permission `console_public_access_read`.
 - Ajout d'une adresse : permission `console_public_access_write`.
 - La __suppression__ d'une IP autorisée se fait par une demande de support.
+
+### Commander et gérer les produits d'un tenant
+
+Les ressources et produits (calcul, stockage, réseau, bastion, colocation…) se commandent depuis le module __Commande__ (permission `order_read` pour le suivi, `order_write` pour la création) et sont __affectés à un tenant précis__ : ils ne sont pas partagés avec les autres tenants. Le suivi des déploiements se fait dans ce même module (le tableau de bord du tenant affiche les commandes en cours).
+
+- __Initialisation__ : un tenant ne peut pas être vide ; il démarre avec au minimum une zone de disponibilité, un cluster de calcul, un espace de stockage et un VLAN réseau.
+- __Évolution__ : vous ajoutez ou retirez des ressources en passant de nouvelles commandes, et vous pouvez faire évoluer l'architecture en ajoutant ou supprimant des tenants.
+- __Réseaux inter-tenants__ : pour assurer la continuité réseau entre tenants, des réseaux « cross tenant » peuvent être demandés.
+- __Droits__ : un propriétaire du tenant dispose automatiquement de toutes les permissions des produits activés sur ce tenant (voir ci-dessous).
+
+Le parcours de commande détaillé est décrit dans [Commandes](orders.md) ; la définition et les références d'activation d'un tenant figurent dans [Tenant](iam/concepts.md#tenant).
 
 ### Propriétaires et cycle de vie d'un tenant
 

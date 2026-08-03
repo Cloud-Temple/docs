@@ -159,6 +159,15 @@ Die Berechtigungen der Benutzer werden __pro Tenant__ definiert: Ein und dasselb
 Diese Seite beschreibt den Ablauf in der Console. Für die ausführliche Referenz — Definitionen, Lebenszyklus, Identitätsföderation und die vollständige Liste der Berechtigungen — siehe das Modul IAM: [Konzepte](iam/concepts.md) und [IAM-Schnellstart](iam/quickstart.md).
 :::
 
+### Das Modul Administration auf einen Blick
+
+Das Modul __Administration__ fasst vier Menüs zusammen:
+
+- __Support__: Sehen Sie Ihre Support-Vorgänge für den Tenant ein und verfolgen Sie sie (Berechtigungen `support_read`, `support_write`, `support_management`). Das Erstellen eines Vorgangs wird im Abschnitt „Zugang zum technischen Support" weiter oben beschrieben.
+- __Benutzer__: Laden Sie die Konten Ihrer Organisation ein und weisen Sie ihre Berechtigungen pro Tenant zu (Berechtigungen `iam_read`, `iam_write`). Nachstehend im Detail.
+- __Logs__: Protokoll der in der Console durchgeführten Lese- und Schreiboperationen zu Nachverfolgbarkeitszwecken (Berechtigung `activity_read`). Im Detail unter „Protokollierung" nachstehend.
+- __Zugriff__: Verwalten Sie die Whitelist der öffentlichen IP-Adressen, die auf die Console zugreifen dürfen (Berechtigungen `console_public_access_read`, `console_public_access_write`). Nachstehend im Detail.
+
 ### Den Arbeits-Tenant auswählen
 
 Der Tenant-Selektor befindet sich oben links in der Console. Er ermöglicht den Wechsel von einem Bereich zum anderen; qualifizierte Tenants zeigen das Abzeichen __SecNumCloud__ an.
@@ -184,6 +193,17 @@ Gemäß der SecNumCloud-Qualifikation ist der Zugriff auf die Console auf zuvor 
 - Liste einsehen: Berechtigung `console_public_access_read`.
 - Adresse hinzufügen: Berechtigung `console_public_access_write`.
 - Das __Entfernen__ einer zugelassenen IP erfolgt über eine Support-Anfrage.
+
+### Die Produkte eines Tenants bestellen und verwalten
+
+Ressourcen und Produkte (Compute, Speicher, Netzwerk, Bastion, Colocation…) werden über das Modul __Bestellung__ bestellt (Berechtigung `order_read` für die Nachverfolgung, `order_write` für die Erstellung) und werden __einem bestimmten Tenant zugewiesen__: Sie werden nicht mit den anderen Tenants geteilt. Die Nachverfolgung der Bereitstellungen erfolgt in demselben Modul (das Tenant-Dashboard zeigt die laufenden Bestellungen an).
+
+- __Initialisierung__: Ein Tenant darf nicht leer sein; er startet mit mindestens einer Verfügbarkeitszone, einem Compute-Cluster, einem Speicherbereich und einem Netzwerk-VLAN.
+- __Weiterentwicklung__: Sie fügen Ressourcen durch neue Bestellungen hinzu oder entfernen sie, und Sie können die Architektur durch Hinzufügen oder Entfernen von Tenants weiterentwickeln.
+- __Tenant-übergreifende Netzwerke__: Um die Netzwerkkontinuität zwischen Tenants zu gewährleisten, können „cross tenant"-Netzwerke angefordert werden.
+- __Berechtigungen__: Ein Eigentümer des Tenants besitzt automatisch alle Berechtigungen der auf diesem Tenant aktivierten Produkte (siehe unten).
+
+Der detaillierte Bestellablauf wird in [Bestellungen](orders.md) beschrieben; die Definition und die Aktivierungsreferenzen eines Tenants finden Sie unter [Tenant](iam/concepts.md#tenant).
 
 ### Eigentümer und Lebenszyklus eines Tenants
 

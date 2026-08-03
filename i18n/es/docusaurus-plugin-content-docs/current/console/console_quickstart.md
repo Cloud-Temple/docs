@@ -159,6 +159,15 @@ Los permisos de los usuarios se definen __por cada tenant__: una misma cuenta pu
 Esta página describe el recorrido dentro de la Console. Para la referencia detallada — definiciones, ciclo de vida, federación de identidades y la lista exhaustiva de permisos — consulte el módulo IAM: [Conceptos](iam/concepts.md) y [Guía de inicio de IAM](iam/quickstart.md).
 :::
 
+### El módulo Administración de un vistazo
+
+El módulo __Administración__ reúne cuatro menús:
+
+- __Soporte__: consulte y siga sus expedientes de soporte para el tenant (permisos `support_read`, `support_write`, `support_management`). La creación de un expediente se describe en la sección «Acceso al soporte técnico» más arriba.
+- __Usuarios__: invite a las cuentas de su organización y asigne sus permisos por cada tenant (permisos `iam_read`, `iam_write`). Detallado más abajo.
+- __Logs__: registro de las operaciones de lectura y escritura realizadas en la Console, con fines de trazabilidad (permiso `activity_read`). Detallado en «Registro» más abajo.
+- __Acceso__: gestione la lista blanca de direcciones IP públicas autorizadas a acceder a la Console (permisos `console_public_access_read`, `console_public_access_write`). Detallado más abajo.
+
 ### Seleccionar el tenant de trabajo
 
 El selector de tenant se encuentra en la parte superior izquierda de la Console. Permite cambiar de un ámbito a otro; los tenants cualificados muestran la insignia __SecNumCloud__.
@@ -184,6 +193,17 @@ De conformidad con la cualificación SecNumCloud, el acceso a la Console se limi
 - Consultar la lista: permiso `console_public_access_read`.
 - Añadir una dirección: permiso `console_public_access_write`.
 - La __eliminación__ de una IP autorizada se realiza mediante una solicitud de soporte.
+
+### Pedir y gestionar los productos de un tenant
+
+Los recursos y productos (cómputo, almacenamiento, red, bastión, colocation…) se piden desde el módulo __Pedido__ (permiso `order_read` para el seguimiento, `order_write` para la creación) y se __asignan a un tenant concreto__: no se comparten con los demás tenants. El seguimiento de los despliegues se realiza en este mismo módulo (el tablero del tenant muestra los pedidos en curso).
+
+- __Inicialización__: un tenant no puede estar vacío; comienza con al menos una zona de disponibilidad, un clúster de cómputo, un espacio de almacenamiento y una VLAN de red.
+- __Evolución__: añade o retira recursos realizando nuevos pedidos, y puede hacer evolucionar la arquitectura añadiendo o eliminando tenants.
+- __Redes entre tenants__: para garantizar la continuidad de red entre tenants, se pueden solicitar redes «cross tenant».
+- __Permisos__: un propietario del tenant dispone automáticamente de todos los permisos de los productos activados en ese tenant (véase más abajo).
+
+El proceso de pedido detallado se describe en [Pedidos](orders.md); la definición y las referencias de activación de un tenant figuran en [Tenant](iam/concepts.md#tenant).
 
 ### Propietarios y ciclo de vida de un tenant
 

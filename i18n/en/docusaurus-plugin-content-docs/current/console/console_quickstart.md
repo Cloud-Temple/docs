@@ -159,6 +159,15 @@ User permissions are defined __on a per-tenant basis__: the same account may, fo
 This page describes the workflow within the Console. For the detailed reference — definitions, lifecycle, identity federation and the exhaustive list of permissions — refer to the IAM module: [Concepts](iam/concepts.md) and [IAM Quickstart](iam/quickstart.md).
 :::
 
+### The Administration module at a glance
+
+The __Administration__ module brings together four menus:
+
+- __Support__: view and track your support tickets for the tenant (`support_read`, `support_write`, `support_management` permissions). Creating a ticket is described in the "Technical Support Access" section above.
+- __Users__: invite the accounts of your organization and assign their permissions on a per-tenant basis (`iam_read`, `iam_write` permissions). Detailed below.
+- __Logs__: log of the read and write operations performed in the Console, for traceability purposes (`activity_read` permission). Detailed in "Logging" below.
+- __Access__: manage the whitelist of public IP addresses allowed to access the Console (`console_public_access_read`, `console_public_access_write` permissions). Detailed below.
+
 ### Selecting the working tenant
 
 The tenant selector is located in the top left of the Console. It lets you switch from one scope to another; qualified tenants display the __SecNumCloud__ badge.
@@ -184,6 +193,17 @@ In accordance with the SecNumCloud qualification, access to the Console is limit
 - Viewing the list: `console_public_access_read` permission.
 - Adding an address: `console_public_access_write` permission.
 - __Removing__ an authorized IP is done through a support request.
+
+### Ordering and managing a tenant's products
+
+Resources and products (compute, storage, network, bastion, colocation…) are ordered from the __Order__ module (`order_read` permission for tracking, `order_write` for creation) and are __assigned to a specific tenant__: they are not shared with the other tenants. Deployment tracking is done in this same module (the tenant dashboard shows the orders in progress).
+
+- __Initialization__: a tenant cannot be empty; it starts with at least one availability zone, one compute cluster, one storage space and one network VLAN.
+- __Evolution__: you add or remove resources by placing new orders, and you can evolve the architecture by adding or removing tenants.
+- __Cross-tenant networks__: to ensure network continuity between tenants, "cross tenant" networks can be requested.
+- __Permissions__: a tenant owner automatically holds all the permissions of the products enabled on that tenant (see below).
+
+The detailed ordering process is described in [Orders](orders.md); the definition and activation references of a tenant are given in [Tenant](iam/concepts.md#tenant).
 
 ### Owners and tenant lifecycle
 
