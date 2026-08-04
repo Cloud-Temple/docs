@@ -16,6 +16,8 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
 
 ## Prerequisites
 
@@ -194,16 +196,30 @@ In accordance with the SecNumCloud qualification, access to the Console is limit
 - Adding an address: `console_public_access_write` permission.
 - __Removing__ an authorized IP is done through a support request.
 
-### Ordering and managing a tenant's products
+### The Support page
 
-Resources and products (compute, storage, network, bastion, colocation…) are ordered from the __Order__ module (`order_read` permission for tracking, `order_write` for creation) and are __assigned to a specific tenant__: they are not shared with the other tenants. Deployment tracking is done in this same module (the tenant dashboard shows the orders in progress).
+From __Administration > Support__, you view and track your __support tickets__ attached to the tenant: advice requests, account-related assistance, incidents and professional service requests. The associated permissions are `support_read` (view your own tickets), `support_write` (create a ticket) and `support_management` (view all the tenant's tickets). The step-by-step creation of a ticket is described in the "Technical Support Access" section above.
+
+### Creating and updating a tenant's products
+
+A tenant's products and resources (compute, storage, network, bastion, colocation…) are managed from the __Order__ module (`order_read` permission for tracking, `order_write` for creation). Any ordered resource is __assigned to a specific tenant__ and is not shared with the others.
+
+<img src={shivaOrdersList} />
+
+__Creating a product or resource__: from the __Order__ module, select the target tenant then the product to activate (availability zone, compute cluster, storage cluster, network…). The order is validated then deployed; its progress is visible in the orders list and on the tenant dashboard.
+
+__Updating or scaling__: adding capacity to an existing product also goes through an order — for example adding a hypervisor or memory to a compute cluster, a datastore to a storage cluster, or a new network.
+
+<img src={shivaOrdersIaasCpoolEsx} />
+
+Lifecycle reminders:
 
 - __Initialization__: a tenant cannot be empty; it starts with at least one availability zone, one compute cluster, one storage space and one network VLAN.
 - __Evolution__: you add or remove resources by placing new orders, and you can evolve the architecture by adding or removing tenants.
 - __Cross-tenant networks__: to ensure network continuity between tenants, "cross tenant" networks can be requested.
 - __Permissions__: a tenant owner automatically holds all the permissions of the products enabled on that tenant (see below).
 
-The detailed ordering process is described in [Orders](orders.md); the definition and activation references of a tenant are given in [Tenant](iam/concepts.md#tenant).
+The details of each type of order (availability zone, clusters, storage, networks, adding hypervisors or memory…) are documented in [Orders](orders.md); the definition and activation references of a tenant are given in [Tenant](iam/concepts.md#tenant).
 
 ### Owners and tenant lifecycle
 

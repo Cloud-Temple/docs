@@ -16,6 +16,8 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
 
 ## Prerequisiti
 
@@ -194,16 +196,30 @@ In conformità con la qualificazione SecNumCloud, l'accesso alla Console è limi
 - Aggiungere un indirizzo: permesso `console_public_access_write`.
 - La __rimozione__ di un IP autorizzato avviene tramite una richiesta di supporto.
 
-### Ordinare e gestire i prodotti di un tenant
+### La pagina Supporto
 
-Le risorse e i prodotti (calcolo, archiviazione, rete, bastion, colocation…) si ordinano dal modulo __Ordine__ (permesso `order_read` per il monitoraggio, `order_write` per la creazione) e sono __assegnati a un tenant preciso__: non sono condivisi con gli altri tenant. Il monitoraggio dei deployment avviene nello stesso modulo (il cruscotto del tenant mostra gli ordini in corso).
+Da __Amministrazione > Supporto__, consulti e monitori le tue __pratiche di supporto__ associate al tenant: richieste di consulenza, assistenza relativa all'account, incidenti e richieste di servizio professionale. I permessi associati sono `support_read` (consultare le proprie pratiche), `support_write` (creare una pratica) e `support_management` (consultare tutte le pratiche del tenant). La creazione passo passo di una pratica è descritta nella sezione «Accesso al supporto tecnico» qui sopra.
+
+### Creare e aggiornare i prodotti di un tenant
+
+I prodotti e le risorse di un tenant (calcolo, archiviazione, rete, bastion, colocation…) si gestiscono dal modulo __Ordine__ (permesso `order_read` per il monitoraggio, `order_write` per la creazione). Ogni risorsa ordinata è __assegnata a un tenant preciso__ e non è condivisa con gli altri.
+
+<img src={shivaOrdersList} />
+
+__Creare un prodotto o una risorsa__: dal modulo __Ordine__, seleziona il tenant di destinazione e poi il prodotto da attivare (zona di disponibilità, cluster di calcolo, cluster di archiviazione, rete…). L'ordine viene convalidato e poi distribuito; il suo avanzamento è visibile nell'elenco degli ordini e nel cruscotto del tenant.
+
+__Aggiornare o scalare__: l'aggiunta di capacità a un prodotto esistente avviene anch'essa tramite un ordine — ad esempio aggiungere un hypervisor o memoria a un cluster di calcolo, un datastore a un cluster di archiviazione, o una nuova rete.
+
+<img src={shivaOrdersIaasCpoolEsx} />
+
+Promemoria sul ciclo di vita:
 
 - __Inizializzazione__: un tenant non può essere vuoto; parte con almeno una zona di disponibilità, un cluster di calcolo, uno spazio di archiviazione e una VLAN di rete.
 - __Evoluzione__: aggiungi o rimuovi risorse effettuando nuovi ordini e puoi far evolvere l'architettura aggiungendo o rimuovendo tenant.
 - __Reti cross-tenant__: per garantire la continuità di rete tra tenant, è possibile richiedere reti «cross tenant».
 - __Permessi__: un proprietario del tenant dispone automaticamente di tutti i permessi dei prodotti attivati su quel tenant (vedere di seguito).
 
-La procedura di ordine dettagliata è descritta in [Ordini](orders.md); la definizione e i riferimenti di attivazione di un tenant sono riportati in [Tenant](iam/concepts.md#tenant).
+Il dettaglio di ogni tipo di ordine (zona di disponibilità, cluster, archiviazione, reti, aggiunta di hypervisor o memoria…) è documentato in [Ordini](orders.md); la definizione e i riferimenti di attivazione di un tenant sono riportati in [Tenant](iam/concepts.md#tenant).
 
 ### Proprietari e ciclo di vita di un tenant
 

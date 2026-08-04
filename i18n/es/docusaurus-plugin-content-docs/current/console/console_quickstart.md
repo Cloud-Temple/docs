@@ -16,6 +16,8 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
 
 ## Requisitos
 
@@ -194,16 +196,30 @@ De conformidad con la cualificación SecNumCloud, el acceso a la Console se limi
 - Añadir una dirección: permiso `console_public_access_write`.
 - La __eliminación__ de una IP autorizada se realiza mediante una solicitud de soporte.
 
-### Pedir y gestionar los productos de un tenant
+### La página Soporte
 
-Los recursos y productos (cómputo, almacenamiento, red, bastión, colocation…) se piden desde el módulo __Pedido__ (permiso `order_read` para el seguimiento, `order_write` para la creación) y se __asignan a un tenant concreto__: no se comparten con los demás tenants. El seguimiento de los despliegues se realiza en este mismo módulo (el tablero del tenant muestra los pedidos en curso).
+Desde __Administración > Soporte__, consulta y sigue sus __expedientes de soporte__ asociados al tenant: solicitudes de asesoramiento, asistencia relacionada con la cuenta, incidentes y solicitudes de servicio profesional. Los permisos asociados son `support_read` (consultar sus propios expedientes), `support_write` (crear un expediente) y `support_management` (consultar todos los expedientes del tenant). La creación paso a paso de un expediente se describe en la sección «Acceso al soporte técnico» más arriba.
+
+### Crear y actualizar los productos de un tenant
+
+Los productos y recursos de un tenant (cómputo, almacenamiento, red, bastión, colocation…) se gestionan desde el módulo __Pedido__ (permiso `order_read` para el seguimiento, `order_write` para la creación). Todo recurso pedido se __asigna a un tenant concreto__ y no se comparte con los demás.
+
+<img src={shivaOrdersList} />
+
+__Crear un producto o recurso__: desde el módulo __Pedido__, seleccione el tenant de destino y luego el producto que desea activar (zona de disponibilidad, clúster de cómputo, clúster de almacenamiento, red…). El pedido se valida y luego se despliega; su avance es visible en la lista de pedidos y en el tablero del tenant.
+
+__Actualizar o escalar__: añadir capacidad a un producto existente también se realiza mediante un pedido — por ejemplo añadir un hipervisor o memoria a un clúster de cómputo, un datastore a un clúster de almacenamiento, o una nueva red.
+
+<img src={shivaOrdersIaasCpoolEsx} />
+
+Recordatorios de ciclo de vida:
 
 - __Inicialización__: un tenant no puede estar vacío; comienza con al menos una zona de disponibilidad, un clúster de cómputo, un espacio de almacenamiento y una VLAN de red.
 - __Evolución__: añade o retira recursos realizando nuevos pedidos, y puede hacer evolucionar la arquitectura añadiendo o eliminando tenants.
 - __Redes entre tenants__: para garantizar la continuidad de red entre tenants, se pueden solicitar redes «cross tenant».
 - __Permisos__: un propietario del tenant dispone automáticamente de todos los permisos de los productos activados en ese tenant (véase más abajo).
 
-El proceso de pedido detallado se describe en [Pedidos](orders.md); la definición y las referencias de activación de un tenant figuran en [Tenant](iam/concepts.md#tenant).
+El detalle de cada tipo de pedido (zona de disponibilidad, clústeres, almacenamiento, redes, adición de hipervisores o memoria…) está documentado en [Pedidos](orders.md); la definición y las referencias de activación de un tenant figuran en [Tenant](iam/concepts.md#tenant).
 
 ### Propietarios y ciclo de vida de un tenant
 

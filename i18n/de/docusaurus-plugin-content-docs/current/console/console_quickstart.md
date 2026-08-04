@@ -16,6 +16,8 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
 
 ## Voraussetzungen
 
@@ -194,16 +196,30 @@ Gemäß der SecNumCloud-Qualifikation ist der Zugriff auf die Console auf zuvor 
 - Adresse hinzufügen: Berechtigung `console_public_access_write`.
 - Das __Entfernen__ einer zugelassenen IP erfolgt über eine Support-Anfrage.
 
-### Die Produkte eines Tenants bestellen und verwalten
+### Die Seite Support
 
-Ressourcen und Produkte (Compute, Speicher, Netzwerk, Bastion, Colocation…) werden über das Modul __Bestellung__ bestellt (Berechtigung `order_read` für die Nachverfolgung, `order_write` für die Erstellung) und werden __einem bestimmten Tenant zugewiesen__: Sie werden nicht mit den anderen Tenants geteilt. Die Nachverfolgung der Bereitstellungen erfolgt in demselben Modul (das Tenant-Dashboard zeigt die laufenden Bestellungen an).
+Über __Administration > Support__ sehen Sie Ihre dem Tenant zugeordneten __Support-Vorgänge__ ein und verfolgen sie: Beratungsanfragen, kontobezogene Unterstützung, Vorfälle und Anfragen für professionelle Dienstleistungen. Die zugehörigen Berechtigungen sind `support_read` (eigene Vorgänge einsehen), `support_write` (einen Vorgang erstellen) und `support_management` (alle Vorgänge des Tenants einsehen). Das schrittweise Erstellen eines Vorgangs wird im Abschnitt „Zugang zum technischen Support" weiter oben beschrieben.
+
+### Die Produkte eines Tenants erstellen und aktualisieren
+
+Die Produkte und Ressourcen eines Tenants (Compute, Speicher, Netzwerk, Bastion, Colocation…) werden über das Modul __Bestellung__ verwaltet (Berechtigung `order_read` für die Nachverfolgung, `order_write` für die Erstellung). Jede bestellte Ressource wird __einem bestimmten Tenant zugewiesen__ und nicht mit den anderen geteilt.
+
+<img src={shivaOrdersList} />
+
+__Ein Produkt oder eine Ressource erstellen__: Wählen Sie im Modul __Bestellung__ den Ziel-Tenant und dann das zu aktivierende Produkt aus (Verfügbarkeitszone, Compute-Cluster, Speicher-Cluster, Netzwerk…). Die Bestellung wird validiert und dann bereitgestellt; ihr Fortschritt ist in der Bestellliste und im Tenant-Dashboard sichtbar.
+
+__Aktualisieren oder skalieren__: Das Hinzufügen von Kapazität zu einem bestehenden Produkt erfolgt ebenfalls über eine Bestellung — zum Beispiel das Hinzufügen eines Hypervisors oder von Arbeitsspeicher zu einem Compute-Cluster, eines Datastores zu einem Speicher-Cluster oder eines neuen Netzwerks.
+
+<img src={shivaOrdersIaasCpoolEsx} />
+
+Erinnerungen zum Lebenszyklus:
 
 - __Initialisierung__: Ein Tenant darf nicht leer sein; er startet mit mindestens einer Verfügbarkeitszone, einem Compute-Cluster, einem Speicherbereich und einem Netzwerk-VLAN.
 - __Weiterentwicklung__: Sie fügen Ressourcen durch neue Bestellungen hinzu oder entfernen sie, und Sie können die Architektur durch Hinzufügen oder Entfernen von Tenants weiterentwickeln.
 - __Tenant-übergreifende Netzwerke__: Um die Netzwerkkontinuität zwischen Tenants zu gewährleisten, können „cross tenant"-Netzwerke angefordert werden.
 - __Berechtigungen__: Ein Eigentümer des Tenants besitzt automatisch alle Berechtigungen der auf diesem Tenant aktivierten Produkte (siehe unten).
 
-Der detaillierte Bestellablauf wird in [Bestellungen](orders.md) beschrieben; die Definition und die Aktivierungsreferenzen eines Tenants finden Sie unter [Tenant](iam/concepts.md#tenant).
+Die Details zu jeder Bestellart (Verfügbarkeitszone, Cluster, Speicher, Netzwerke, Hinzufügen von Hypervisoren oder Arbeitsspeicher…) sind in [Bestellungen](orders.md) dokumentiert; die Definition und die Aktivierungsreferenzen eines Tenants finden Sie unter [Tenant](iam/concepts.md#tenant).
 
 ### Eigentümer und Lebenszyklus eines Tenants
 

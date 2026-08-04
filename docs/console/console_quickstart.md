@@ -16,6 +16,8 @@ import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_cr
 import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrdersList from '@site/docs/console/images/shiva_orders_list.png'
+import shivaOrdersIaasCpoolEsx from '@site/docs/console/images/shiva_orders_iaas_cpool_esx.png'
 
 ## Prérequis
 
@@ -194,16 +196,30 @@ Conformément à la qualification SecNumCloud, l'accès à la Console est limit�
 - Ajout d'une adresse : permission `console_public_access_write`.
 - La __suppression__ d'une IP autorisée se fait par une demande de support.
 
-### Commander et gérer les produits d'un tenant
+### La page Support
 
-Les ressources et produits (calcul, stockage, réseau, bastion, colocation…) se commandent depuis le module __Commande__ (permission `order_read` pour le suivi, `order_write` pour la création) et sont __affectés à un tenant précis__ : ils ne sont pas partagés avec les autres tenants. Le suivi des déploiements se fait dans ce même module (le tableau de bord du tenant affiche les commandes en cours).
+Depuis __Administration > Support__, vous consultez et suivez vos __dossiers de support__ rattachés au tenant : demandes de conseil, assistance liée au compte, incidents et demandes de service professionnel. Les permissions associées sont `support_read` (consulter ses propres dossiers), `support_write` (créer un dossier) et `support_management` (consulter l'ensemble des dossiers du tenant). La création pas à pas d'un dossier est décrite dans la section « Accès au support technique » plus haut.
+
+### Créer et mettre à jour les produits d'un tenant
+
+Les produits et ressources d'un tenant (calcul, stockage, réseau, bastion, colocation…) se pilotent depuis le module __Commande__ (permission `order_read` pour le suivi, `order_write` pour la création). Toute ressource commandée est __affectée à un tenant précis__ et n'est pas partagée avec les autres.
+
+<img src={shivaOrdersList} />
+
+__Créer un produit ou une ressource__ : depuis le module __Commande__, sélectionnez le tenant cible puis le produit à activer (zone de disponibilité, cluster de calcul, cluster de stockage, réseau…). La commande est validée puis déployée ; son avancement est visible dans la liste des commandes et sur le tableau de bord du tenant.
+
+__Mettre à jour ou faire évoluer__ : l'ajout de capacité à un produit existant passe également par une commande — par exemple ajouter un hyperviseur ou de la mémoire à un cluster de calcul, un datastore à un cluster de stockage, ou un nouveau réseau.
+
+<img src={shivaOrdersIaasCpoolEsx} />
+
+Rappels de cycle de vie :
 
 - __Initialisation__ : un tenant ne peut pas être vide ; il démarre avec au minimum une zone de disponibilité, un cluster de calcul, un espace de stockage et un VLAN réseau.
 - __Évolution__ : vous ajoutez ou retirez des ressources en passant de nouvelles commandes, et vous pouvez faire évoluer l'architecture en ajoutant ou supprimant des tenants.
 - __Réseaux inter-tenants__ : pour assurer la continuité réseau entre tenants, des réseaux « cross tenant » peuvent être demandés.
 - __Droits__ : un propriétaire du tenant dispose automatiquement de toutes les permissions des produits activés sur ce tenant (voir ci-dessous).
 
-Le parcours de commande détaillé est décrit dans [Commandes](orders.md) ; la définition et les références d'activation d'un tenant figurent dans [Tenant](iam/concepts.md#tenant).
+Le détail de chaque type de commande (zone de disponibilité, clusters, stockage, réseaux, ajout d'hyperviseurs ou de mémoire…) est documenté dans [Commandes](orders.md) ; la définition et les références d'activation d'un tenant figurent dans [Tenant](iam/concepts.md#tenant).
 
 ### Propriétaires et cycle de vie d'un tenant
 
