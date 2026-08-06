@@ -54,13 +54,9 @@ Die Seite **Tenants** listet alle Tenants der Organisation auf. Eine Suchleiste 
 Die Schaltfläche **„Neuer Tenant“** öffnet ein zweiteiliges Formular:
 
 - **Identität des Tenants**: der **Name** (in Echtzeit geprüft) und eine **Beschreibung**;
-- **Produkte des Tenants**: die auf dem Tenant zu aktivierenden Produkte — VM Instances, VMware, OpenIaaS, OpenShift, Bare Metal, Bastion, Object Storage, Private Backbone, VPC, LLMaaS, Colocation. Die Schaltflächen **„Alle auswählen“** / **„Alle abwählen“** beschleunigen die Eingabe.
+- **Produkte des Tenants**: die auf dem Tenant zu aktivierenden Produkte. Die Schaltflächen **„Alle auswählen“** / **„Alle abwählen“** beschleunigen die Eingabe.
 
 Bestätigen Sie mit **„Erstellen“**: Der Tenant wird mit den ausgewählten Produkten initialisiert.
-
-:::note
-Ein Tenant kann nicht leer bleiben: Er wird mit einem Mindestbestand an Ressourcen initialisiert. Die Voraussetzungen (Verfügbarkeitszone, Rechen-Cluster, Speicher, VLAN) und die zugehörigen Bestellreferenzen sind im Modul [IAM](iam/concepts.md) beschrieben.
-:::
 
 ### Aktionen für einen Tenant
 

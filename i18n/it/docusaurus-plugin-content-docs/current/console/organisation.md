@@ -54,13 +54,9 @@ La pagina **Tenant** elenca tutti i tenant dell'organizzazione. Una barra di ric
 Il pulsante **«Nuovo tenant»** apre un modulo in due parti:
 
 - **Identità del tenant**: il **nome** (controllato in tempo reale) e una **descrizione**;
-- **Prodotti del tenant**: i prodotti da attivare sul tenant — VM Instances, VMware, OpenIaaS, OpenShift, Bare Metal, Bastion, Object Storage, Private Backbone, VPC, LLMaaS, Colocation. I pulsanti **«Seleziona tutto»** / **«Deseleziona tutto»** velocizzano l'inserimento.
+- **Prodotti del tenant**: i prodotti da attivare sul tenant. I pulsanti **«Seleziona tutto»** / **«Deseleziona tutto»** velocizzano l'inserimento.
 
 Confermare con **«Crea»**: il tenant viene inizializzato con i prodotti selezionati.
-
-:::note
-Un tenant non può restare vuoto: viene inizializzato con un insieme minimo di risorse. I prerequisiti (zona di disponibilità, cluster di calcolo, archiviazione, VLAN) e i riferimenti d'ordine associati sono descritti nel modulo [IAM](iam/concepts.md).
-:::
 
 ### Azioni su un tenant
 

@@ -54,13 +54,9 @@ La page **Tenants** liste l'ensemble des tenants de l'organisation. Une barre de
 Le bouton **« Nouveau tenant »** ouvre un formulaire en deux parties :
 
 - **Identité du tenant** : le **nom** (contrôlé en direct) et une **description** ;
-- **Produits du tenant** : les produits à activer sur le tenant — VM Instances, VMware, OpenIaaS, OpenShift, Bare Metal, Bastion, Stockage Objet, Backbone privé, VPC, LLMaaS, Colocation. Les boutons **« Tout sélectionner »** / **« Tout désélectionner »** accélèrent la saisie.
+- **Produits du tenant** : les produits à activer sur le tenant. Les boutons **« Tout sélectionner »** / **« Tout désélectionner »** accélèrent la saisie.
 
 Validez avec **« Créer »** : le tenant est initialisé avec les produits sélectionnés.
-
-:::note
-Un tenant ne peut pas rester vide : il est initialisé avec un socle minimal de ressources. Les prérequis (zone de disponibilité, cluster de calcul, stockage, VLAN) et les références de commande associées sont décrits dans le module [IAM](iam/concepts.md).
-:::
 
 ### Actions sur un tenant
 

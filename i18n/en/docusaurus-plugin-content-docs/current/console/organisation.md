@@ -54,13 +54,9 @@ The **Tenants** page lists all the tenants of the organization. A search bar and
 The **"New tenant"** button opens a two-part form:
 
 - **Tenant identity**: the **name** (validated in real time) and a **description**;
-- **Tenant products**: the products to enable on the tenant — VM Instances, VMware, OpenIaaS, OpenShift, Bare Metal, Bastion, Object Storage, Private Backbone, VPC, LLMaaS, Colocation. The **"Select all"** / **"Deselect all"** buttons speed up input.
+- **Tenant products**: the products to enable on the tenant. The **"Select all"** / **"Deselect all"** buttons speed up input.
 
 Confirm with **"Create"**: the tenant is initialized with the selected products.
-
-:::note
-A tenant cannot remain empty: it is initialized with a minimal set of resources. The prerequisites (availability zone, compute cluster, storage, VLAN) and the associated order references are described in the [IAM](iam/concepts.md) module.
-:::
 
 ### Tenant actions
 
