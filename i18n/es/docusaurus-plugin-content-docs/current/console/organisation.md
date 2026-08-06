@@ -94,7 +94,7 @@ Para cada cuenta se muestran el **nombre**, el **correo electrónico**, el **tip
 
 El menú de acciones ofrece, según el estado de la cuenta:
 
-- **Añadir / quitar como propietario de organización**;
+- **Añadir como propietario de organización**;
 - **Reinscripción** — reenvía la invitación a una cuenta no finalizada;
 - **Copiar UUID**;
 - **Eliminar**.
@@ -107,7 +107,7 @@ No puede eliminarse a sí mismo. La **invitación** de un nuevo usuario y la **a
 
 Son dos nociones distintas:
 
-- el **propietario de la organización** se gestiona desde la página **Usuarios** (acción «Añadir / quitar como propietario de organización»);
+- el **propietario de la organización** se añade desde la página **Usuarios** (acción «Añadir como propietario de organización»); su **retirada se realiza mediante solicitud de soporte**;
 - el **propietario de tenant** pertenece al ámbito de un tenant; sus reglas se describen en el módulo [IAM](iam/concepts.md).
 
 {/* TODO screenshot: página Usuarios (insignias «Propietario de la organización» y «Cuenta federada») + panel Filtros */}

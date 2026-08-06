@@ -94,7 +94,7 @@ Pour chaque compte sont affichés le **nom**, l'**e-mail**, le **type** de compt
 
 Le menu d'actions propose, selon l'état du compte :
 
-- **Ajouter / retirer en tant que propriétaire d'organisation** ;
+- **Ajouter en tant que propriétaire d'organisation** ;
 - **Réinscription** — renvoie l'invitation à un compte non finalisé ;
 - **Copier UUID** ;
 - **Supprimer**.
@@ -107,7 +107,7 @@ Vous ne pouvez pas vous supprimer vous-même. L'**invitation** d'un nouvel utili
 
 Ce sont deux notions distinctes :
 
-- le **propriétaire de l'organisation** se gère depuis la page **Utilisateurs** (action « Ajouter / retirer en tant que propriétaire d'organisation ») ;
+- le **propriétaire de l'organisation** s'ajoute depuis la page **Utilisateurs** (action « Ajouter en tant que propriétaire d'organisation ») ; son **retrait s'effectue sur demande de support** ;
 - le **propriétaire de tenant** relève du périmètre d'un tenant ; ses règles sont décrites dans le module [IAM](iam/concepts.md).
 
 {/* TODO screenshot: page Utilisateurs (badges « Propriétaire de l'organisation » et « Compte fédéré ») + panneau Filtres */}

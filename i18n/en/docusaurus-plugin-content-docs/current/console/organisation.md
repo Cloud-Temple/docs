@@ -94,7 +94,7 @@ For each account, the **name**, **email**, account **type** — **Federated acco
 
 The action menu offers, depending on the account's state:
 
-- **Add / remove as organization owner**;
+- **Add as organization owner**;
 - **Re-enroll** — resends the invitation to an unfinalized account;
 - **Copy UUID**;
 - **Delete**.
@@ -107,7 +107,7 @@ You cannot delete yourself. **Inviting** a new user and the **fine-grained assig
 
 These are two distinct notions:
 
-- the **organization owner** is managed from the **Users** page (the "Add / remove as organization owner" action);
+- the **organization owner** is added from the **Users** page (the "Add as organization owner" action); its **removal is done on support request**;
 - the **tenant owner** belongs to a tenant's scope; its rules are described in the [IAM](iam/concepts.md) module.
 
 {/* TODO screenshot: Users page ("Organization owner" and "Federated account" badges) + Filters panel */}

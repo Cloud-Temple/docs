@@ -94,7 +94,7 @@ Per ogni account sono mostrati il **nome**, l'**e-mail**, il **tipo** di account
 
 Il menu delle azioni propone, a seconda dello stato dell'account:
 
-- **Aggiungere / rimuovere come proprietario dell'organizzazione**;
+- **Aggiungere come proprietario dell'organizzazione**;
 - **Reiscrizione** — reinvia l'invito a un account non finalizzato;
 - **Copiare UUID**;
 - **Eliminare**.
@@ -107,7 +107,7 @@ Non potete eliminare voi stessi. L'**invito** di un nuovo utente e l'**assegnazi
 
 Sono due nozioni distinte:
 
-- il **proprietario dell'organizzazione** si gestisce dalla pagina **Utenti** (azione «Aggiungere / rimuovere come proprietario dell'organizzazione»);
+- il **proprietario dell'organizzazione** si aggiunge dalla pagina **Utenti** (azione «Aggiungere come proprietario dell'organizzazione»); la sua **rimozione avviene su richiesta di supporto**;
 - il **proprietario di tenant** rientra nel perimetro di un tenant; le sue regole sono descritte nel modulo [IAM](iam/concepts.md).
 
 {/* TODO screenshot: pagina Utenti (badge «Proprietario dell'organizzazione» e «Account federato») + pannello Filtri */}

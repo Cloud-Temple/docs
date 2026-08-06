@@ -94,7 +94,7 @@ Für jedes Konto werden der **Name**, die **E-Mail**, der **Kontotyp** — **Fö
 
 Das Aktionsmenü bietet je nach Kontostatus:
 
-- **Als Organisationseigentümer hinzufügen / entfernen**;
+- **Als Organisationseigentümer hinzufügen**;
 - **Erneute Einladung** — sendet die Einladung an ein nicht abgeschlossenes Konto erneut;
 - **UUID kopieren**;
 - **Löschen**.
@@ -107,7 +107,7 @@ Sie können sich nicht selbst löschen. Das **Einladen** eines neuen Benutzers u
 
 Dies sind zwei unterschiedliche Konzepte:
 
-- der **Organisationseigentümer** wird über die Seite **Benutzer** verwaltet (Aktion „Als Organisationseigentümer hinzufügen / entfernen“);
+- der **Organisationseigentümer** wird über die Seite **Benutzer** hinzugefügt (Aktion „Als Organisationseigentümer hinzufügen“); das **Entfernen erfolgt auf Supportanfrage**;
 - der **Tenant-Eigentümer** gehört zum Umfang eines Tenants; seine Regeln sind im Modul [IAM](iam/concepts.md) beschrieben.
 
 {/* TODO screenshot: Seite Benutzer (Kennzeichen „Eigentümer der Organisation“ und „Föderiertes Konto“) + Filterbereich */}
