@@ -33,17 +33,17 @@ Le **Tableau de bord** est la page d'accueil de l'organisation. Il présente une
 
 ## Administration de l'organisation
 
-Le volet **Administration** de la navigation gauche regroupe les pages de gouvernance de l'organisation. L'affichage de chaque page dépend des droits de l'utilisateur.
+Le volet **Administration** de la navigation gauche regroupe les pages de gouvernance de l'organisation.
 
-| Page | Rôle | Droit requis |
-|---|---|---|
-| **Tenants** | Créer et faire évoluer les tenants | Droits d'administration (voir plus bas) |
-| **Utilisateurs** | Gérer les comptes et leurs permissions | `iam_read` / `iam_write` |
-| **Accès** | Liste des IP publiques autorisées (whitelist) | `console_public_access_read` / `console_public_access_write` |
-| **Logs** | Journal des activités (traçabilité) | `activity_read` |
-| **Support** | Tickets de l'organisation | `support_read` / `support_write` / `support_management` |
+| Page | Rôle |
+|---|---|
+| **Tenants** | Créer et faire évoluer les tenants |
+| **Utilisateurs** | Gérer les comptes et leurs permissions |
+| **Accès** | Liste des IP publiques autorisées (whitelist) |
+| **Logs** | Journal des activités (traçabilité) |
+| **Support** | Tickets de l'organisation |
 
-Le **Gestionnaire des coûts** (hors volet Administration) fournit le suivi de consommation (`billing_read`).
+Le **Gestionnaire des coûts** (hors volet Administration) fournit le suivi de consommation.
 
 ## Tenants
 
@@ -72,7 +72,7 @@ Le menu d'actions de chaque ligne propose :
 
 ### Propriétaires et cycle de vie
 
-- **Création** : en self-service via **« Nouveau tenant »**, sous réserve des droits d'administration adéquats.
+- **Création** : en self-service via **« Nouveau tenant »**.
 - **Évolution** : ajout ou retrait de produits via **« Modifier les produits »**.
 - **Suppression** : réalisée sur **demande de support** — il n'existe pas de suppression directe depuis l'interface.
 - **Propriétaires de tenant** : chaque tenant a au moins un propriétaire. Les règles (nombre recommandé, délai de propagation, retrait sur demande de support, permissions d'un propriétaire) sont détaillées dans le module [IAM](iam/concepts.md).
@@ -104,7 +104,7 @@ Le menu d'actions propose, selon l'état du compte :
 - **Supprimer**.
 
 :::note
-Vous ne pouvez pas vous supprimer vous-même. L'**invitation** d'un nouvel utilisateur et l'**affectation fine des permissions par tenant** (droits `read` / `write` / `management`…) sont décrites dans le module [IAM](iam/quickstart.md). La gestion des permissions nécessite le droit `iam_write`.
+Vous ne pouvez pas vous supprimer vous-même. L'**invitation** d'un nouvel utilisateur et l'**affectation fine des permissions par tenant** sont décrites dans le module [IAM](iam/quickstart.md).
 :::
 
 ### Propriétaire d'organisation et propriétaire de tenant
@@ -121,7 +121,7 @@ Ce sont deux notions distinctes :
 La page **Accès** gère la **liste des adresses IP publiques autorisées** à joindre la Console. Conformément aux exigences **SecNumCloud**, seul le trafic provenant de ces adresses est accepté.
 
 - Chaque entrée associe une **IP** (notation CIDR) à une **description**.
-- Le bouton **« Ajouter une IP »** ajoute une adresse (droit `console_public_access_write`) ; la consultation requiert `console_public_access_read`.
+- Le bouton **« Ajouter une IP »** permet d'ajouter une adresse à la liste.
 
 :::warning
 La **suppression** d'une IP autorisée s'effectue sur **demande de support**.
@@ -131,7 +131,7 @@ La **suppression** d'une IP autorisée s'effectue sur **demande de support**.
 
 ## Rapport de consommation — Gestionnaire des coûts
 
-Le **Gestionnaire des coûts** offre une vue de la consommation de l'organisation, ventilée par tenant. Il requiert le droit `billing_read` et propose deux onglets.
+Le **Gestionnaire des coûts** offre une vue de la consommation de l'organisation, ventilée par tenant. Il propose deux onglets.
 
 ### Onglet « Aperçu »
 
@@ -157,5 +157,5 @@ Le montant du mois en cours est **prévisionnel** : il est estimé à partir des
 
 ## Journalisation et support
 
-- **Logs** — la page **Activités** retrace les opérations de lecture et d'écriture de l'organisation (onglets **Récents** / **Archivés**, filtres, export CSV) à des fins de traçabilité (`activity_read`). Voir aussi la section Journalisation du [guide de démarrage de la Console](console_quickstart.md).
+- **Logs** — la page **Activités** retrace les opérations de lecture et d'écriture de l'organisation (onglets **Récents** / **Archivés**, filtres, export CSV) à des fins de traçabilité. Voir aussi la section Journalisation du [guide de démarrage de la Console](console_quickstart.md).
 - **Support** — la page **Support** centralise les **tickets de l'organisation** (indicateurs, création de ticket, filtres, export). La création et le suivi des demandes sont décrits dans le [guide de démarrage de la Console](console_quickstart.md).

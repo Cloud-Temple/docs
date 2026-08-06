@@ -33,17 +33,17 @@ Das **Dashboard** ist die Startseite der Organisation. Es bietet eine übergreif
 
 ## Verwaltung der Organisation
 
-Der Bereich **Administration** der linken Navigation gruppiert die Governance-Seiten der Organisation. Die Anzeige jeder Seite hängt von den Berechtigungen des Benutzers ab.
+Der Bereich **Administration** der linken Navigation gruppiert die Governance-Seiten der Organisation.
 
-| Seite | Zweck | Erforderliche Berechtigung |
-|---|---|---|
-| **Tenants** | Tenants erstellen und weiterentwickeln | Administrationsrechte (siehe unten) |
-| **Benutzer** | Konten und ihre Berechtigungen verwalten | `iam_read` / `iam_write` |
-| **Zugriff** | Liste der zugelassenen öffentlichen IPs (Whitelist) | `console_public_access_read` / `console_public_access_write` |
-| **Logs** | Aktivitätsprotokoll (Nachvollziehbarkeit) | `activity_read` |
-| **Support** | Tickets der Organisation | `support_read` / `support_write` / `support_management` |
+| Seite | Zweck |
+|---|---|
+| **Tenants** | Tenants erstellen und weiterentwickeln |
+| **Benutzer** | Konten und ihre Berechtigungen verwalten |
+| **Zugriff** | Liste der zugelassenen öffentlichen IPs (Whitelist) |
+| **Logs** | Aktivitätsprotokoll (Nachvollziehbarkeit) |
+| **Support** | Tickets der Organisation |
 
-Der **Kostenmanager** (außerhalb des Bereichs Administration) bietet die Verbrauchsverfolgung (`billing_read`).
+Der **Kostenmanager** (außerhalb des Bereichs Administration) bietet die Verbrauchsverfolgung.
 
 ## Tenants
 
@@ -72,7 +72,7 @@ Das Aktionsmenü jeder Zeile bietet:
 
 ### Eigentümer und Lebenszyklus
 
-- **Erstellung**: im Self-Service über **„Neuer Tenant“**, vorbehaltlich der entsprechenden Administrationsrechte.
+- **Erstellung**: im Self-Service über **„Neuer Tenant“**.
 - **Weiterentwicklung**: Hinzufügen oder Entfernen von Produkten über **„Produkte ändern“**.
 - **Löschung**: erfolgt auf **Supportanfrage** — es gibt keine direkte Löschung über die Oberfläche.
 - **Tenant-Eigentümer**: Jeder Tenant hat mindestens einen Eigentümer. Die Regeln (empfohlene Anzahl, Propagationsverzögerung, Entfernung auf Supportanfrage, Berechtigungen eines Eigentümers) sind im Modul [IAM](iam/concepts.md) beschrieben.
@@ -104,7 +104,7 @@ Das Aktionsmenü bietet je nach Kontostatus:
 - **Löschen**.
 
 :::note
-Sie können sich nicht selbst löschen. Das **Einladen** eines neuen Benutzers und die **feingranulare Zuweisung von Berechtigungen pro Tenant** (Rechte `read` / `write` / `management` …) sind im Modul [IAM](iam/quickstart.md) beschrieben. Die Verwaltung der Berechtigungen erfordert das Recht `iam_write`.
+Sie können sich nicht selbst löschen. Das **Einladen** eines neuen Benutzers und die **feingranulare Zuweisung von Berechtigungen pro Tenant** sind im Modul [IAM](iam/quickstart.md) beschrieben.
 :::
 
 ### Organisationseigentümer und Tenant-Eigentümer
@@ -121,7 +121,7 @@ Dies sind zwei unterschiedliche Konzepte:
 Die Seite **Zugriff** verwaltet die **Liste der zugelassenen öffentlichen IP-Adressen**, die die Console erreichen dürfen. Gemäß den **SecNumCloud**-Anforderungen wird nur Datenverkehr von diesen Adressen akzeptiert.
 
 - Jeder Eintrag ordnet einer **IP** (CIDR-Notation) eine **Beschreibung** zu.
-- Die Schaltfläche **„Eine IP hinzufügen“** fügt eine Adresse hinzu (Recht `console_public_access_write`); die Ansicht erfordert `console_public_access_read`.
+- Die Schaltfläche **„Eine IP hinzufügen“** fügt eine Adresse zur Liste hinzu.
 
 :::warning
 Das **Löschen** einer zugelassenen IP erfolgt auf **Supportanfrage**.
@@ -131,7 +131,7 @@ Das **Löschen** einer zugelassenen IP erfolgt auf **Supportanfrage**.
 
 ## Verbrauchsbericht — Kostenmanager
 
-Der **Kostenmanager** bietet eine Ansicht des Verbrauchs der Organisation, aufgeschlüsselt nach Tenant. Er erfordert das Recht `billing_read` und bietet zwei Registerkarten.
+Der **Kostenmanager** bietet eine Ansicht des Verbrauchs der Organisation, aufgeschlüsselt nach Tenant. Er bietet zwei Registerkarten.
 
 ### Registerkarte „Übersicht“
 
@@ -157,5 +157,5 @@ Der Betrag des laufenden Monats ist eine **Prognose**: Er wird aus den bereits v
 
 ## Protokollierung und Support
 
-- **Logs** — die Seite **Aktivitäten** protokolliert die Lese- und Schreibvorgänge der Organisation (Registerkarten **Aktuell** / **Archiviert**, Filter, CSV-Export) zur Nachvollziehbarkeit (`activity_read`). Siehe auch den Abschnitt Protokollierung im [Console-Schnellstart](console_quickstart.md).
+- **Logs** — die Seite **Aktivitäten** protokolliert die Lese- und Schreibvorgänge der Organisation (Registerkarten **Aktuell** / **Archiviert**, Filter, CSV-Export) zur Nachvollziehbarkeit. Siehe auch den Abschnitt Protokollierung im [Console-Schnellstart](console_quickstart.md).
 - **Support** — die Seite **Support** bündelt die **Tickets der Organisation** (Indikatoren, Ticketerstellung, Filter, Export). Das Erstellen und Verfolgen von Anfragen ist im [Console-Schnellstart](console_quickstart.md) beschrieben.

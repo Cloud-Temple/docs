@@ -33,17 +33,17 @@ El **Panel de control** es la página de inicio de la organización. Ofrece una 
 
 ## Administración de la organización
 
-La sección **Administración** de la navegación izquierda agrupa las páginas de gobernanza de la organización. La visualización de cada página depende de los permisos del usuario.
+La sección **Administración** de la navegación izquierda agrupa las páginas de gobernanza de la organización.
 
-| Página | Función | Permiso requerido |
-|---|---|---|
-| **Tenants** | Crear y evolucionar los tenants | Permisos de administración (véase más abajo) |
-| **Usuarios** | Gestionar las cuentas y sus permisos | `iam_read` / `iam_write` |
-| **Acceso** | Lista de IP públicas autorizadas (whitelist) | `console_public_access_read` / `console_public_access_write` |
-| **Logs** | Registro de actividades (trazabilidad) | `activity_read` |
-| **Soporte** | Tickets de la organización | `support_read` / `support_write` / `support_management` |
+| Página | Función |
+|---|---|
+| **Tenants** | Crear y evolucionar los tenants |
+| **Usuarios** | Gestionar las cuentas y sus permisos |
+| **Acceso** | Lista de IP públicas autorizadas (whitelist) |
+| **Logs** | Registro de actividades (trazabilidad) |
+| **Soporte** | Tickets de la organización |
 
-El **Gestor de costes** (fuera de la sección Administración) proporciona el seguimiento del consumo (`billing_read`).
+El **Gestor de costes** (fuera de la sección Administración) proporciona el seguimiento del consumo.
 
 ## Tenants
 
@@ -72,7 +72,7 @@ El menú de acciones de cada fila ofrece:
 
 ### Propietarios y ciclo de vida
 
-- **Creación**: en autoservicio mediante **«Nuevo tenant»**, sujeto a los permisos de administración adecuados.
+- **Creación**: en autoservicio mediante **«Nuevo tenant»**.
 - **Evolución**: adición o eliminación de productos mediante **«Modificar los productos»**.
 - **Eliminación**: se realiza mediante **solicitud de soporte** — no existe eliminación directa desde la interfaz.
 - **Propietarios de tenant**: cada tenant tiene al menos un propietario. Las reglas (número recomendado, plazo de propagación, retirada mediante solicitud de soporte, permisos de un propietario) se detallan en el módulo [IAM](iam/concepts.md).
@@ -104,7 +104,7 @@ El menú de acciones ofrece, según el estado de la cuenta:
 - **Eliminar**.
 
 :::note
-No puede eliminarse a sí mismo. La **invitación** de un nuevo usuario y la **asignación fina de permisos por tenant** (derechos `read` / `write` / `management`…) se describen en el módulo [IAM](iam/quickstart.md). La gestión de los permisos requiere el derecho `iam_write`.
+No puede eliminarse a sí mismo. La **invitación** de un nuevo usuario y la **asignación fina de permisos por tenant** se describen en el módulo [IAM](iam/quickstart.md).
 :::
 
 ### Propietario de organización y propietario de tenant
@@ -121,7 +121,7 @@ Son dos nociones distintas:
 La página **Acceso** gestiona la **lista de direcciones IP públicas autorizadas** a alcanzar la Consola. De acuerdo con los requisitos **SecNumCloud**, solo se acepta el tráfico procedente de estas direcciones.
 
 - Cada entrada asocia una **IP** (notación CIDR) a una **descripción**.
-- El botón **«Añadir una IP»** añade una dirección (derecho `console_public_access_write`); la consulta requiere `console_public_access_read`.
+- El botón **«Añadir una IP»** permite añadir una dirección a la lista.
 
 :::warning
 La **eliminación** de una IP autorizada se realiza mediante **solicitud de soporte**.
@@ -131,7 +131,7 @@ La **eliminación** de una IP autorizada se realiza mediante **solicitud de sopo
 
 ## Informe de consumo — Gestor de costes
 
-El **Gestor de costes** ofrece una vista del consumo de la organización, desglosado por tenant. Requiere el derecho `billing_read` y ofrece dos pestañas.
+El **Gestor de costes** ofrece una vista del consumo de la organización, desglosado por tenant. Ofrece dos pestañas.
 
 ### Pestaña «Resumen»
 
@@ -157,5 +157,5 @@ El importe del mes en curso es una **previsión**: se estima a partir de los dí
 
 ## Registro y soporte
 
-- **Logs** — la página **Actividades** registra las operaciones de lectura y escritura de la organización (pestañas **Recientes** / **Archivadas**, filtros, exportación CSV) con fines de trazabilidad (`activity_read`). Véase también la sección Registro de la [guía de inicio de la Consola](console_quickstart.md).
+- **Logs** — la página **Actividades** registra las operaciones de lectura y escritura de la organización (pestañas **Recientes** / **Archivadas**, filtros, exportación CSV) con fines de trazabilidad. Véase también la sección Registro de la [guía de inicio de la Consola](console_quickstart.md).
 - **Soporte** — la página **Soporte** centraliza los **tickets de la organización** (indicadores, creación de tickets, filtros, exportación). La creación y el seguimiento de las solicitudes se describen en la [guía de inicio de la Consola](console_quickstart.md).

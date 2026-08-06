@@ -33,17 +33,17 @@ The **Dashboard** is the organization's home page. It provides a cross-cutting s
 
 ## Organization administration
 
-The **Administration** section of the left navigation groups the organization's governance pages. Each page is displayed according to the user's permissions.
+The **Administration** section of the left navigation groups the organization's governance pages.
 
-| Page | Purpose | Required permission |
-|---|---|---|
-| **Tenants** | Create and evolve tenants | Administration permissions (see below) |
-| **Users** | Manage accounts and their permissions | `iam_read` / `iam_write` |
-| **Access** | List of authorized public IPs (whitelist) | `console_public_access_read` / `console_public_access_write` |
-| **Logs** | Activity log (traceability) | `activity_read` |
-| **Support** | Organization tickets | `support_read` / `support_write` / `support_management` |
+| Page | Purpose |
+|---|---|
+| **Tenants** | Create and evolve tenants |
+| **Users** | Manage accounts and their permissions |
+| **Access** | List of authorized public IPs (whitelist) |
+| **Logs** | Activity log (traceability) |
+| **Support** | Organization tickets |
 
-The **Cost manager** (outside the Administration section) provides consumption tracking (`billing_read`).
+The **Cost manager** (outside the Administration section) provides consumption tracking.
 
 ## Tenants
 
@@ -72,7 +72,7 @@ Each row's action menu offers:
 
 ### Owners and lifecycle
 
-- **Creation**: self-service via **"New tenant"**, subject to the appropriate administration permissions.
+- **Creation**: self-service via **"New tenant"**.
 - **Evolution**: adding or removing products via **"Modify products"**.
 - **Deletion**: performed on **support request** — there is no direct deletion from the interface.
 - **Tenant owners**: each tenant has at least one owner. The rules (recommended number, propagation delay, removal on support request, an owner's permissions) are detailed in the [IAM](iam/concepts.md) module.
@@ -104,7 +104,7 @@ The action menu offers, depending on the account's state:
 - **Delete**.
 
 :::note
-You cannot delete yourself. **Inviting** a new user and the **fine-grained assignment of permissions per tenant** (`read` / `write` / `management`… rights) are described in the [IAM](iam/quickstart.md) module. Managing permissions requires the `iam_write` right.
+You cannot delete yourself. **Inviting** a new user and the **fine-grained assignment of permissions per tenant** are described in the [IAM](iam/quickstart.md) module.
 :::
 
 ### Organization owner vs. tenant owner
@@ -121,7 +121,7 @@ These are two distinct notions:
 The **Access** page manages the **list of authorized public IP addresses** allowed to reach the Console. In line with **SecNumCloud** requirements, only traffic from these addresses is accepted.
 
 - Each entry maps an **IP** (CIDR notation) to a **description**.
-- The **"Add an IP"** button adds an address (`console_public_access_write` right); viewing requires `console_public_access_read`.
+- The **"Add an IP"** button adds an address to the list.
 
 :::warning
 **Deleting** an authorized IP is done on **support request**.
@@ -131,7 +131,7 @@ The **Access** page manages the **list of authorized public IP addresses** allow
 
 ## Consumption report — Cost manager
 
-The **Cost manager** provides a view of the organization's consumption, broken down by tenant. It requires the `billing_read` right and offers two tabs.
+The **Cost manager** provides a view of the organization's consumption, broken down by tenant. It offers two tabs.
 
 ### "Overview" tab
 
@@ -157,5 +157,5 @@ The current month's amount is a **forecast**: it is estimated from the days alre
 
 ## Logging and support
 
-- **Logs** — the **Activities** page traces the organization's read and write operations (**Recent** / **Archived** tabs, filters, CSV export) for traceability (`activity_read`). See also the Logging section of the [Console quickstart](console_quickstart.md).
+- **Logs** — the **Activities** page traces the organization's read and write operations (**Recent** / **Archived** tabs, filters, CSV export) for traceability. See also the Logging section of the [Console quickstart](console_quickstart.md).
 - **Support** — the **Support** page centralizes the **organization's tickets** (indicators, ticket creation, filters, export). Creating and tracking requests is described in the [Console quickstart](console_quickstart.md).
