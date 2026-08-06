@@ -2,6 +2,15 @@
 title: Vue organisation
 ---
 
+import imgSelector from './images/shiva_org_selector.png'
+import imgDashboard from './images/shiva_org_dashboard.png'
+import imgTenants from './images/shiva_org_tenants.png'
+import imgTenantNew from './images/shiva_org_tenant_new.png'
+import imgUsers from './images/shiva_org_users.png'
+import imgAccess from './images/shiva_org_access.png'
+import imgCostsOverview from './images/shiva_org_costs_overview.png'
+import imgCostsConsumption from './images/shiva_org_costs_consumption.png'
+
 La **vue organisation** regroupe les fonctions de pilotage de votre entité dans la Console Cloud Temple : gestion des tenants, des utilisateurs et de leurs permissions, contrôle des accès et suivi de la consommation. Une organisation fédère un ou plusieurs **tenants** (environnements cloud cloisonnés) et les permissions des utilisateurs font l'objet d'une **ségrégation par tenant**.
 
 :::info
@@ -19,7 +28,7 @@ Pour **choisir le tenant de travail**, deux possibilités :
 
 Les ressources techniques (calcul, stockage, réseau…) sont **propres à chaque tenant** et ne sont pas partagées entre tenants.
 
-{/* TODO screenshot: bandeau supérieur avec le menu « Mes tenants » déroulé (badges SecNumCloud visibles) */}
+<img src={imgSelector} />
 
 ## Tableau de bord
 
@@ -29,7 +38,7 @@ Le **Tableau de bord** est la page d'accueil de l'organisation. Il présente une
 - le **nombre de tenants** de l'organisation ;
 - un **aperçu des coûts** (coût du mois en cours, répartition par tenant et par service).
 
-{/* TODO screenshot: Tableau de bord de l'organisation (synthèse Support, Tenants, coûts) */}
+<img src={imgDashboard} />
 
 ## Administration de l'organisation
 
@@ -76,7 +85,9 @@ Le menu d'actions de chaque ligne propose :
 Les opérations sur les tenants sont tracées dans la page **Logs** (par exemple « *Creating tenant…* » ou « *Updating features on tenant…* »).
 :::
 
-{/* TODO screenshot: page Tenants (liste) puis dialogue « Nouveau tenant » (sections Identité + Produits) */}
+<img src={imgTenants} />
+
+<img src={imgTenantNew} />
 
 ## Utilisateurs et permissions
 
@@ -109,7 +120,7 @@ Ce sont deux notions distinctes :
 - le **propriétaire de l'organisation** s'ajoute depuis la page **Utilisateurs** (action « Ajouter en tant que propriétaire d'organisation ») ; son **retrait s'effectue sur demande de support** ;
 - le **propriétaire de tenant** relève du périmètre d'un tenant ; ses règles sont décrites dans le module [IAM](iam/concepts.md).
 
-{/* TODO screenshot: page Utilisateurs (badges « Propriétaire de l'organisation » et « Compte fédéré ») + panneau Filtres */}
+<img src={imgUsers} />
 
 ## Accès — whitelist IP
 
@@ -122,7 +133,7 @@ La page **Accès** gère la **liste des adresses IP publiques autorisées** à j
 La **suppression** d'une IP autorisée s'effectue sur **demande de support**.
 :::
 
-{/* TODO screenshot: page Accès (whitelist IP) + dialogue « Ajouter une IP » */}
+<img src={imgAccess} />
 
 ## Rapport de consommation — Gestionnaire des coûts
 
@@ -148,7 +159,9 @@ Rapport détaillé et historisé :
 Le montant du mois en cours est **prévisionnel** : il est estimé à partir des jours déjà consommés.
 :::
 
-{/* TODO screenshot: Gestionnaire des coûts — onglet « Aperçu » puis onglet « Consommation » */}
+<img src={imgCostsOverview} />
+
+<img src={imgCostsConsumption} />
 
 ## Journalisation et support
 

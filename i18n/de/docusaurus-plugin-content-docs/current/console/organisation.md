@@ -2,6 +2,15 @@
 title: Organisationsansicht
 ---
 
+import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
+import imgDashboard from '@site/docs/console/images/shiva_org_dashboard.png'
+import imgTenants from '@site/docs/console/images/shiva_org_tenants.png'
+import imgTenantNew from '@site/docs/console/images/shiva_org_tenant_new.png'
+import imgUsers from '@site/docs/console/images/shiva_org_users.png'
+import imgAccess from '@site/docs/console/images/shiva_org_access.png'
+import imgCostsOverview from '@site/docs/console/images/shiva_org_costs_overview.png'
+import imgCostsConsumption from '@site/docs/console/images/shiva_org_costs_consumption.png'
+
 Die **Organisationsansicht** bündelt die Funktionen zur Steuerung Ihrer Einheit in der Cloud Temple Console: Verwaltung der Tenants, der Benutzer und ihrer Berechtigungen, Zugriffskontrolle und Verfolgung des Verbrauchs. Eine Organisation fasst einen oder mehrere **Tenants** (voneinander isolierte Cloud-Umgebungen) zusammen, und die Benutzerberechtigungen werden **pro Tenant getrennt** verwaltet.
 
 :::info
@@ -19,7 +28,7 @@ Um den **Arbeits-Tenant auszuwählen**, gibt es zwei Möglichkeiten:
 
 Die technischen Ressourcen (Rechenleistung, Speicher, Netzwerk usw.) sind **jedem Tenant eigen** und werden nicht zwischen Tenants geteilt.
 
-{/* TODO screenshot: Kopfleiste mit ausgeklapptem Menü „Meine Tenants“ (SecNumCloud-Abzeichen sichtbar) */}
+<img src={imgSelector} />
 
 ## Dashboard
 
@@ -29,7 +38,7 @@ Das **Dashboard** ist die Startseite der Organisation. Es bietet eine übergreif
 - die **Anzahl der Tenants** der Organisation;
 - einen **Kostenüberblick** (Kosten des laufenden Monats, Aufschlüsselung nach Tenant und nach Dienst).
 
-{/* TODO screenshot: Dashboard der Organisation (Zusammenfassung Support, Tenants, Kosten) */}
+<img src={imgDashboard} />
 
 ## Verwaltung der Organisation
 
@@ -76,7 +85,9 @@ Das Aktionsmenü jeder Zeile bietet:
 Vorgänge an Tenants werden auf der Seite **Logs** protokolliert (zum Beispiel „*Creating tenant…*“ oder „*Updating features on tenant…*“).
 :::
 
-{/* TODO screenshot: Seite Tenants (Liste), dann Dialog „Neuer Tenant“ (Abschnitte Identität + Produkte) */}
+<img src={imgTenants} />
+
+<img src={imgTenantNew} />
 
 ## Benutzer und Berechtigungen
 
@@ -109,7 +120,7 @@ Dies sind zwei unterschiedliche Konzepte:
 - der **Organisationseigentümer** wird über die Seite **Benutzer** hinzugefügt (Aktion „Als Organisationseigentümer hinzufügen“); das **Entfernen erfolgt auf Supportanfrage**;
 - der **Tenant-Eigentümer** gehört zum Umfang eines Tenants; seine Regeln sind im Modul [IAM](iam/concepts.md) beschrieben.
 
-{/* TODO screenshot: Seite Benutzer (Kennzeichen „Eigentümer der Organisation“ und „Föderiertes Konto“) + Filterbereich */}
+<img src={imgUsers} />
 
 ## Zugriff — IP-Whitelist
 
@@ -122,7 +133,7 @@ Die Seite **Zugriff** verwaltet die **Liste der zugelassenen öffentlichen IP-Ad
 Das **Löschen** einer zugelassenen IP erfolgt auf **Supportanfrage**.
 :::
 
-{/* TODO screenshot: Seite Zugriff (IP-Whitelist) + Dialog „Eine IP hinzufügen“ */}
+<img src={imgAccess} />
 
 ## Verbrauchsbericht — Kostenmanager
 
@@ -148,7 +159,9 @@ Detaillierter, historisierter Bericht:
 Der Betrag des laufenden Monats ist eine **Prognose**: Er wird aus den bereits verbrauchten Tagen geschätzt.
 :::
 
-{/* TODO screenshot: Kostenmanager — Registerkarte „Übersicht“, dann Registerkarte „Verbrauch“ */}
+<img src={imgCostsOverview} />
+
+<img src={imgCostsConsumption} />
 
 ## Protokollierung und Support
 

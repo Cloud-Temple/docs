@@ -2,6 +2,15 @@
 title: Vista de organización
 ---
 
+import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
+import imgDashboard from '@site/docs/console/images/shiva_org_dashboard.png'
+import imgTenants from '@site/docs/console/images/shiva_org_tenants.png'
+import imgTenantNew from '@site/docs/console/images/shiva_org_tenant_new.png'
+import imgUsers from '@site/docs/console/images/shiva_org_users.png'
+import imgAccess from '@site/docs/console/images/shiva_org_access.png'
+import imgCostsOverview from '@site/docs/console/images/shiva_org_costs_overview.png'
+import imgCostsConsumption from '@site/docs/console/images/shiva_org_costs_consumption.png'
+
 La **vista de organización** reúne las funciones de gestión de su entidad en la Consola Cloud Temple: gestión de los tenants, de los usuarios y sus permisos, control de accesos y seguimiento del consumo. Una organización federa uno o varios **tenants** (entornos cloud aislados) y los permisos de los usuarios se **segregan tenant por tenant**.
 
 :::info
@@ -19,7 +28,7 @@ Para **elegir el tenant de trabajo**, hay dos opciones:
 
 Los recursos técnicos (cálculo, almacenamiento, red, etc.) son **propios de cada tenant** y no se comparten entre tenants.
 
-{/* TODO screenshot: barra superior con el menú «Mis tenants» desplegado (insignias SecNumCloud visibles) */}
+<img src={imgSelector} />
 
 ## Panel de control
 
@@ -29,7 +38,7 @@ El **Panel de control** es la página de inicio de la organización. Ofrece una 
 - el **número de tenants** de la organización;
 - una **vista general de los costes** (coste del mes en curso, desglose por tenant y por servicio).
 
-{/* TODO screenshot: Panel de control de la organización (síntesis Soporte, Tenants, costes) */}
+<img src={imgDashboard} />
 
 ## Administración de la organización
 
@@ -76,7 +85,9 @@ El menú de acciones de cada fila ofrece:
 Las operaciones sobre los tenants quedan registradas en la página **Logs** (por ejemplo «*Creating tenant…*» o «*Updating features on tenant…*»).
 :::
 
-{/* TODO screenshot: página Tenants (lista) y luego el diálogo «Nuevo tenant» (secciones Identidad + Productos) */}
+<img src={imgTenants} />
+
+<img src={imgTenantNew} />
 
 ## Usuarios y permisos
 
@@ -109,7 +120,7 @@ Son dos nociones distintas:
 - el **propietario de la organización** se añade desde la página **Usuarios** (acción «Añadir como propietario de organización»); su **retirada se realiza mediante solicitud de soporte**;
 - el **propietario de tenant** pertenece al ámbito de un tenant; sus reglas se describen en el módulo [IAM](iam/concepts.md).
 
-{/* TODO screenshot: página Usuarios (insignias «Propietario de la organización» y «Cuenta federada») + panel Filtros */}
+<img src={imgUsers} />
 
 ## Acceso — whitelist IP
 
@@ -122,7 +133,7 @@ La página **Acceso** gestiona la **lista de direcciones IP públicas autorizada
 La **eliminación** de una IP autorizada se realiza mediante **solicitud de soporte**.
 :::
 
-{/* TODO screenshot: página Acceso (whitelist IP) + diálogo «Añadir una IP» */}
+<img src={imgAccess} />
 
 ## Informe de consumo — Gestor de costes
 
@@ -148,7 +159,9 @@ Informe detallado e historizado:
 El importe del mes en curso es una **previsión**: se estima a partir de los días ya consumidos.
 :::
 
-{/* TODO screenshot: Gestor de costes — pestaña «Resumen» y luego pestaña «Consumo» */}
+<img src={imgCostsOverview} />
+
+<img src={imgCostsConsumption} />
 
 ## Registro y soporte
 

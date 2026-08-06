@@ -2,6 +2,15 @@
 title: Organization view
 ---
 
+import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
+import imgDashboard from '@site/docs/console/images/shiva_org_dashboard.png'
+import imgTenants from '@site/docs/console/images/shiva_org_tenants.png'
+import imgTenantNew from '@site/docs/console/images/shiva_org_tenant_new.png'
+import imgUsers from '@site/docs/console/images/shiva_org_users.png'
+import imgAccess from '@site/docs/console/images/shiva_org_access.png'
+import imgCostsOverview from '@site/docs/console/images/shiva_org_costs_overview.png'
+import imgCostsConsumption from '@site/docs/console/images/shiva_org_costs_consumption.png'
+
 The **organization view** brings together the functions for managing your entity in the Cloud Temple Console: tenant management, users and their permissions, access control, and consumption tracking. An organization federates one or more **tenants** (isolated cloud environments), and user permissions are **segregated tenant by tenant**.
 
 :::info
@@ -19,7 +28,7 @@ To **choose the working tenant**, there are two options:
 
 Technical resources (compute, storage, network, etc.) are **specific to each tenant** and are not shared between tenants.
 
-{/* TODO screenshot: top bar with the "My tenants" menu expanded (SecNumCloud badges visible) */}
+<img src={imgSelector} />
 
 ## Dashboard
 
@@ -29,7 +38,7 @@ The **Dashboard** is the organization's home page. It provides a cross-cutting s
 - the **number of tenants** in the organization;
 - a **cost overview** (current month cost, breakdown by tenant and by service).
 
-{/* TODO screenshot: organization Dashboard (Support, Tenants, costs summary) */}
+<img src={imgDashboard} />
 
 ## Organization administration
 
@@ -76,7 +85,9 @@ Each row's action menu offers:
 Operations on tenants are logged on the **Logs** page (for example "*Creating tenant…*" or "*Updating features on tenant…*").
 :::
 
-{/* TODO screenshot: Tenants page (list) then "New tenant" dialog (Identity + Products sections) */}
+<img src={imgTenants} />
+
+<img src={imgTenantNew} />
 
 ## Users and permissions
 
@@ -109,7 +120,7 @@ These are two distinct notions:
 - the **organization owner** is added from the **Users** page (the "Add as organization owner" action); its **removal is done on support request**;
 - the **tenant owner** belongs to a tenant's scope; its rules are described in the [IAM](iam/concepts.md) module.
 
-{/* TODO screenshot: Users page ("Organization owner" and "Federated account" badges) + Filters panel */}
+<img src={imgUsers} />
 
 ## Access — IP whitelist
 
@@ -122,7 +133,7 @@ The **Access** page manages the **list of authorized public IP addresses** allow
 **Deleting** an authorized IP is done on **support request**.
 :::
 
-{/* TODO screenshot: Access page (IP whitelist) + "Add an IP" dialog */}
+<img src={imgAccess} />
 
 ## Consumption report — Cost manager
 
@@ -148,7 +159,9 @@ Detailed, historized report:
 The current month's amount is a **forecast**: it is estimated from the days already consumed.
 :::
 
-{/* TODO screenshot: Cost manager — "Overview" tab then "Consumption" tab */}
+<img src={imgCostsOverview} />
+
+<img src={imgCostsConsumption} />
 
 ## Logging and support
 
