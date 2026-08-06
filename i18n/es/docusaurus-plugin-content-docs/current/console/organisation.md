@@ -70,7 +70,6 @@ El menú de acciones de cada fila ofrece:
 
 - **Creación**: en autoservicio mediante **«Nuevo tenant»**.
 - **Evolución**: adición o eliminación de productos mediante **«Modificar los productos»**.
-- **Eliminación**: se realiza mediante **solicitud de soporte** — no existe eliminación directa desde la interfaz.
 - **Propietarios de tenant**: cada tenant tiene al menos un propietario. Las reglas (número recomendado, plazo de propagación, retirada mediante solicitud de soporte, permisos de un propietario) se detallan en el módulo [IAM](iam/concepts.md).
 
 :::info

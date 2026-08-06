@@ -70,7 +70,6 @@ Das Aktionsmenü jeder Zeile bietet:
 
 - **Erstellung**: im Self-Service über **„Neuer Tenant“**.
 - **Weiterentwicklung**: Hinzufügen oder Entfernen von Produkten über **„Produkte ändern“**.
-- **Löschung**: erfolgt auf **Supportanfrage** — es gibt keine direkte Löschung über die Oberfläche.
 - **Tenant-Eigentümer**: Jeder Tenant hat mindestens einen Eigentümer. Die Regeln (empfohlene Anzahl, Propagationsverzögerung, Entfernung auf Supportanfrage, Berechtigungen eines Eigentümers) sind im Modul [IAM](iam/concepts.md) beschrieben.
 
 :::info

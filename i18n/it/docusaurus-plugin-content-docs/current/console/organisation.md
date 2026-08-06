@@ -70,7 +70,6 @@ Il menu delle azioni di ogni riga propone:
 
 - **Creazione**: in self-service tramite **«Nuovo tenant»**.
 - **Evoluzione**: aggiunta o rimozione di prodotti tramite **«Modificare i prodotti»**.
-- **Eliminazione**: effettuata su **richiesta di supporto** — non esiste un'eliminazione diretta dall'interfaccia.
 - **Proprietari di tenant**: ogni tenant ha almeno un proprietario. Le regole (numero consigliato, tempo di propagazione, rimozione su richiesta di supporto, permessi di un proprietario) sono descritte nel modulo [IAM](iam/concepts.md).
 
 :::info

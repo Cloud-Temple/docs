@@ -70,7 +70,6 @@ Le menu d'actions de chaque ligne propose :
 
 - **Création** : en self-service via **« Nouveau tenant »**.
 - **Évolution** : ajout ou retrait de produits via **« Modifier les produits »**.
-- **Suppression** : réalisée sur **demande de support** — il n'existe pas de suppression directe depuis l'interface.
 - **Propriétaires de tenant** : chaque tenant a au moins un propriétaire. Les règles (nombre recommandé, délai de propagation, retrait sur demande de support, permissions d'un propriétaire) sont détaillées dans le module [IAM](iam/concepts.md).
 
 :::info

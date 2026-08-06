@@ -70,7 +70,6 @@ Each row's action menu offers:
 
 - **Creation**: self-service via **"New tenant"**.
 - **Evolution**: adding or removing products via **"Modify products"**.
-- **Deletion**: performed on **support request** — there is no direct deletion from the interface.
 - **Tenant owners**: each tenant has at least one owner. The rules (recommended number, propagation delay, removal on support request, an owner's permissions) are detailed in the [IAM](iam/concepts.md) module.
 
 :::info
