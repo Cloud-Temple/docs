@@ -120,6 +120,10 @@ Ce sont deux notions distinctes :
 - le **propriétaire de l'organisation** s'ajoute depuis la page **Utilisateurs** (action « Ajouter en tant que propriétaire d'organisation ») ; son **retrait s'effectue sur demande de support** ;
 - le **propriétaire de tenant** relève du périmètre d'un tenant ; ses règles sont décrites dans le module [IAM](iam/concepts.md).
 
+:::info
+En tant que **propriétaire de l'organisation**, vous êtes par défaut **propriétaire de tous les tenants** de l'organisation. À ce titre, vous disposez de l'ensemble des permissions sur chacun de ces tenants.
+:::
+
 <img src={imgUsers} />
 
 ## Accès — whitelist IP

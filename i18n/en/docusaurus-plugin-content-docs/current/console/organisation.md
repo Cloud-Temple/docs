@@ -120,6 +120,10 @@ These are two distinct notions:
 - the **organization owner** is added from the **Users** page (the "Add as organization owner" action); its **removal is done on support request**;
 - the **tenant owner** belongs to a tenant's scope; its rules are described in the [IAM](iam/concepts.md) module.
 
+:::info
+As an **organization owner**, you are by default the **owner of every tenant** in the organization. As such, you hold all permissions on each of these tenants.
+:::
+
 <img src={imgUsers} />
 
 ## Access — IP whitelist

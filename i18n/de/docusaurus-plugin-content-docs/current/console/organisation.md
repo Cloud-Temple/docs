@@ -120,6 +120,10 @@ Dies sind zwei unterschiedliche Konzepte:
 - der **Organisationseigentümer** wird über die Seite **Benutzer** hinzugefügt (Aktion „Als Organisationseigentümer hinzufügen“); das **Entfernen erfolgt auf Supportanfrage**;
 - der **Tenant-Eigentümer** gehört zum Umfang eines Tenants; seine Regeln sind im Modul [IAM](iam/concepts.md) beschrieben.
 
+:::info
+Als **Organisationseigentümer** sind Sie standardmäßig **Eigentümer aller Tenants** der Organisation. Dadurch verfügen Sie über sämtliche Berechtigungen auf jedem dieser Tenants.
+:::
+
 <img src={imgUsers} />
 
 ## Zugriff — IP-Whitelist
