@@ -1,0 +1,161 @@
+---
+title: Organization view
+---
+
+The **organization view** brings together the functions for managing your entity in the Cloud Temple Console: tenant management, users and their permissions, access control, and consumption tracking. An organization federates one or more **tenants** (isolated cloud environments), and user permissions are **segregated tenant by tenant**.
+
+:::info
+This page describes the **interface**: where to find each function and what it does. The **reference** documentation for the organization / tenant model and permissions is in the [IAM](iam/concepts.md) module.
+:::
+
+## Top bar and selecting the working tenant
+
+At the top of the Console, the bar shows the current organization (**"My organization"**). The associated selector opens the **"My tenants"** list: every tenant appears there, with the **SecNumCloud** badge when it is qualified.
+
+To **choose the working tenant**, there are two options:
+
+- from the top bar, open the **"My tenants"** selector and click the desired tenant;
+- from the **Tenants** page, use a row's **"Connect to the tenant"** action.
+
+Technical resources (compute, storage, network, etc.) are **specific to each tenant** and are not shared between tenants.
+
+{/* TODO screenshot: top bar with the "My tenants" menu expanded (SecNumCloud badges visible) */}
+
+## Dashboard
+
+The **Dashboard** is the organization's home page. It provides a cross-cutting summary:
+
+- the status of **support tickets** (open, response required, customer validation, incidents);
+- the **number of tenants** in the organization;
+- a **cost overview** (current month cost, breakdown by tenant and by service).
+
+{/* TODO screenshot: organization Dashboard (Support, Tenants, costs summary) */}
+
+## Organization administration
+
+The **Administration** section of the left navigation groups the organization's governance pages. Each page is displayed according to the user's permissions.
+
+| Page | Purpose | Required permission |
+|---|---|---|
+| **Tenants** | Create and evolve tenants | Administration permissions (see below) |
+| **Users** | Manage accounts and their permissions | `iam_read` / `iam_write` |
+| **Access** | List of authorized public IPs (whitelist) | `console_public_access_read` / `console_public_access_write` |
+| **Logs** | Activity log (traceability) | `activity_read` |
+| **Support** | Organization tickets | `support_read` / `support_write` / `support_management` |
+
+The **Cost manager** (outside the Administration section) provides consumption tracking (`billing_read`).
+
+## Tenants
+
+The **Tenants** page lists all the tenants of the organization. A search bar and pagination make navigation easier when there are many tenants.
+
+### Create a tenant
+
+The **"New tenant"** button opens a two-part form:
+
+- **Tenant identity**: the **name** (validated in real time) and a **description**;
+- **Tenant products**: the products to enable on the tenant — VM Instances, VMware, OpenIaaS, OpenShift, Bare Metal, Bastion, Object Storage, Private Backbone, VPC, LLMaaS, Colocation. The **"Select all"** / **"Deselect all"** buttons speed up input.
+
+Confirm with **"Create"**: the tenant is initialized with the selected products.
+
+:::note
+A tenant cannot remain empty: it is initialized with a minimal set of resources. The prerequisites (availability zone, compute cluster, storage, VLAN) and the associated order references are described in the [IAM](iam/concepts.md) module.
+:::
+
+### Tenant actions
+
+Each row's action menu offers:
+
+- **Connect to the tenant** — sets this tenant as the working tenant;
+- **Modify products** — enables or disables products on the tenant to change its scope;
+- **Copy UUID** — copies the tenant's technical identifier (useful for the API or a support ticket).
+
+### Owners and lifecycle
+
+- **Creation**: self-service via **"New tenant"**, subject to the appropriate administration permissions.
+- **Evolution**: adding or removing products via **"Modify products"**.
+- **Deletion**: performed on **support request** — there is no direct deletion from the interface.
+- **Tenant owners**: each tenant has at least one owner. The rules (recommended number, propagation delay, removal on support request, an owner's permissions) are detailed in the [IAM](iam/concepts.md) module.
+
+:::info
+Operations on tenants are logged on the **Logs** page (for example "*Creating tenant…*" or "*Updating features on tenant…*").
+:::
+
+{/* TODO screenshot: Tenants page (list) then "New tenant" dialog (Identity + Products sections) */}
+
+## Users and permissions
+
+The **Users** page lists the organization's accounts. Credentials are **global to the organization**; permissions, however, are defined **per tenant**.
+
+For each account, the **name**, **email**, account **type** — **Federated account** (external identity provider) or **Local account** — and visual markers are shown: **Organization owner**, **Me**, or **Email not verified** (account not yet finalized).
+
+### Page tools
+
+- **Filters**: by **Organization owners**, **Type**, **Source**, and **Status**.
+- **Export CSV**: exports the list of users and their access, useful for auditing.
+
+### Account actions
+
+The action menu offers, depending on the account's state:
+
+- **Add / remove as organization owner**;
+- **Re-enroll** — resends the invitation to an unfinalized account;
+- **Copy UUID**;
+- **Delete**.
+
+:::note
+You cannot delete yourself. **Inviting** a new user and the **fine-grained assignment of permissions per tenant** (`read` / `write` / `management`… rights) are described in the [IAM](iam/quickstart.md) module. Managing permissions requires the `iam_write` right.
+:::
+
+### Organization owner vs. tenant owner
+
+These are two distinct notions:
+
+- the **organization owner** is managed from the **Users** page (the "Add / remove as organization owner" action);
+- the **tenant owner** belongs to a tenant's scope; its rules are described in the [IAM](iam/concepts.md) module.
+
+{/* TODO screenshot: Users page ("Organization owner" and "Federated account" badges) + Filters panel */}
+
+## Access — IP whitelist
+
+The **Access** page manages the **list of authorized public IP addresses** allowed to reach the Console. In line with **SecNumCloud** requirements, only traffic from these addresses is accepted.
+
+- Each entry maps an **IP** (CIDR notation) to a **description**.
+- The **"Add an IP"** button adds an address (`console_public_access_write` right); viewing requires `console_public_access_read`.
+
+:::warning
+**Deleting** an authorized IP is done on **support request**.
+:::
+
+{/* TODO screenshot: Access page (IP whitelist) + "Add an IP" dialog */}
+
+## Consumption report — Cost manager
+
+The **Cost manager** provides a view of the organization's consumption, broken down by tenant. It requires the `billing_read` right and offers two tabs.
+
+### "Overview" tab
+
+Summary view of the current month:
+
+- key indicators: **current month cost**, **current year cost**, **number of active products**;
+- **Cost per tenant** — breakdown of costs across tenants;
+- **Current cost per service** and **Current cost per product** — main consumption items.
+
+### "Consumption" tab
+
+Detailed, historized report:
+
+- selection of the **period** (start and end month) and of the **"Display by"** axis;
+- **Monthly consumption**, **Total**, **Forecast**, and **Trend** views;
+- an expandable table by **Month / Tenant / Service / Product / Amount**, with the **trend** compared to the previous month.
+
+:::info
+The current month's amount is a **forecast**: it is estimated from the days already consumed.
+:::
+
+{/* TODO screenshot: Cost manager — "Overview" tab then "Consumption" tab */}
+
+## Logging and support
+
+- **Logs** — the **Activities** page traces the organization's read and write operations (**Recent** / **Archived** tabs, filters, CSV export) for traceability (`activity_read`). See also the Logging section of the [Console quickstart](console_quickstart.md).
+- **Support** — the **Support** page centralizes the **organization's tickets** (indicators, ticket creation, filters, export). Creating and tracking requests is described in the [Console quickstart](console_quickstart.md).

@@ -1,0 +1,161 @@
+---
+title: Vue organisation
+---
+
+La **vue organisation** regroupe les fonctions de pilotage de votre entité dans la Console Cloud Temple : gestion des tenants, des utilisateurs et de leurs permissions, contrôle des accès et suivi de la consommation. Une organisation fédère un ou plusieurs **tenants** (environnements cloud cloisonnés) et les permissions des utilisateurs font l'objet d'une **ségrégation par tenant**.
+
+:::info
+Cette page décrit l'**interface** : où trouver chaque fonction et ce qu'elle permet. La documentation de **référence** du modèle organisation / tenant et des permissions se trouve dans le module [IAM](iam/concepts.md).
+:::
+
+## Bandeau et sélection du tenant de travail
+
+En haut de la Console, le bandeau affiche l'organisation courante (**« Mon organisation »**). Le sélecteur associé ouvre la liste **« Mes tenants »** : chaque tenant y figure, accompagné le cas échéant du badge **SecNumCloud** lorsqu'il est qualifié.
+
+Pour **choisir le tenant de travail**, deux possibilités :
+
+- depuis le bandeau, ouvrez le sélecteur **« Mes tenants »** et cliquez sur le tenant voulu ;
+- depuis la page **Tenants**, utilisez l'action **« Se connecter au tenant »** d'une ligne.
+
+Les ressources techniques (calcul, stockage, réseau…) sont **propres à chaque tenant** et ne sont pas partagées entre tenants.
+
+{/* TODO screenshot: bandeau supérieur avec le menu « Mes tenants » déroulé (badges SecNumCloud visibles) */}
+
+## Tableau de bord
+
+Le **Tableau de bord** est la page d'accueil de l'organisation. Il présente une synthèse transverse :
+
+- l'état des **dossiers de support** (ouverts, réponses requises, validation client, incidents) ;
+- le **nombre de tenants** de l'organisation ;
+- un **aperçu des coûts** (coût du mois en cours, répartition par tenant et par service).
+
+{/* TODO screenshot: Tableau de bord de l'organisation (synthèse Support, Tenants, coûts) */}
+
+## Administration de l'organisation
+
+Le volet **Administration** de la navigation gauche regroupe les pages de gouvernance de l'organisation. L'affichage de chaque page dépend des droits de l'utilisateur.
+
+| Page | Rôle | Droit requis |
+|---|---|---|
+| **Tenants** | Créer et faire évoluer les tenants | Droits d'administration (voir plus bas) |
+| **Utilisateurs** | Gérer les comptes et leurs permissions | `iam_read` / `iam_write` |
+| **Accès** | Liste des IP publiques autorisées (whitelist) | `console_public_access_read` / `console_public_access_write` |
+| **Logs** | Journal des activités (traçabilité) | `activity_read` |
+| **Support** | Tickets de l'organisation | `support_read` / `support_write` / `support_management` |
+
+Le **Gestionnaire des coûts** (hors volet Administration) fournit le suivi de consommation (`billing_read`).
+
+## Tenants
+
+La page **Tenants** liste l'ensemble des tenants de l'organisation. Une barre de recherche et la pagination facilitent la navigation lorsque les tenants sont nombreux.
+
+### Créer un tenant
+
+Le bouton **« Nouveau tenant »** ouvre un formulaire en deux parties :
+
+- **Identité du tenant** : le **nom** (contrôlé en direct) et une **description** ;
+- **Produits du tenant** : les produits à activer sur le tenant — VM Instances, VMware, OpenIaaS, OpenShift, Bare Metal, Bastion, Stockage Objet, Backbone privé, VPC, LLMaaS, Colocation. Les boutons **« Tout sélectionner »** / **« Tout désélectionner »** accélèrent la saisie.
+
+Validez avec **« Créer »** : le tenant est initialisé avec les produits sélectionnés.
+
+:::note
+Un tenant ne peut pas rester vide : il est initialisé avec un socle minimal de ressources. Les prérequis (zone de disponibilité, cluster de calcul, stockage, VLAN) et les références de commande associées sont décrits dans le module [IAM](iam/concepts.md).
+:::
+
+### Actions sur un tenant
+
+Le menu d'actions de chaque ligne propose :
+
+- **Se connecter au tenant** — définit ce tenant comme tenant de travail ;
+- **Modifier les produits** — active ou désactive des produits sur le tenant, pour faire évoluer son périmètre ;
+- **Copier UUID** — copie l'identifiant technique du tenant (utile pour l'API ou un ticket de support).
+
+### Propriétaires et cycle de vie
+
+- **Création** : en self-service via **« Nouveau tenant »**, sous réserve des droits d'administration adéquats.
+- **Évolution** : ajout ou retrait de produits via **« Modifier les produits »**.
+- **Suppression** : réalisée sur **demande de support** — il n'existe pas de suppression directe depuis l'interface.
+- **Propriétaires de tenant** : chaque tenant a au moins un propriétaire. Les règles (nombre recommandé, délai de propagation, retrait sur demande de support, permissions d'un propriétaire) sont détaillées dans le module [IAM](iam/concepts.md).
+
+:::info
+Les opérations sur les tenants sont tracées dans la page **Logs** (par exemple « *Creating tenant…* » ou « *Updating features on tenant…* »).
+:::
+
+{/* TODO screenshot: page Tenants (liste) puis dialogue « Nouveau tenant » (sections Identité + Produits) */}
+
+## Utilisateurs et permissions
+
+La page **Utilisateurs** liste les comptes de l'organisation. Les identifiants sont **globaux à l'organisation** ; les permissions, elles, se définissent **par tenant**.
+
+Pour chaque compte sont affichés le **nom**, l'**e-mail**, le **type** de compte — **Compte fédéré** (référentiel d'identité externe) ou **Compte local** — et des repères visuels : **Propriétaire de l'organisation**, **Moi**, ou **Email non vérifié** (compte non finalisé).
+
+### Outils de la page
+
+- **Filtres** : par **Propriétaires de l'organisation**, **Type**, **Source** et **Statut**.
+- **Exporter CSV** : export de la liste des utilisateurs et de leurs accès, utile pour l'audit.
+
+### Actions sur un compte
+
+Le menu d'actions propose, selon l'état du compte :
+
+- **Ajouter / retirer en tant que propriétaire d'organisation** ;
+- **Réinscription** — renvoie l'invitation à un compte non finalisé ;
+- **Copier UUID** ;
+- **Supprimer**.
+
+:::note
+Vous ne pouvez pas vous supprimer vous-même. L'**invitation** d'un nouvel utilisateur et l'**affectation fine des permissions par tenant** (droits `read` / `write` / `management`…) sont décrites dans le module [IAM](iam/quickstart.md). La gestion des permissions nécessite le droit `iam_write`.
+:::
+
+### Propriétaire d'organisation et propriétaire de tenant
+
+Ce sont deux notions distinctes :
+
+- le **propriétaire de l'organisation** se gère depuis la page **Utilisateurs** (action « Ajouter / retirer en tant que propriétaire d'organisation ») ;
+- le **propriétaire de tenant** relève du périmètre d'un tenant ; ses règles sont décrites dans le module [IAM](iam/concepts.md).
+
+{/* TODO screenshot: page Utilisateurs (badges « Propriétaire de l'organisation » et « Compte fédéré ») + panneau Filtres */}
+
+## Accès — whitelist IP
+
+La page **Accès** gère la **liste des adresses IP publiques autorisées** à joindre la Console. Conformément aux exigences **SecNumCloud**, seul le trafic provenant de ces adresses est accepté.
+
+- Chaque entrée associe une **IP** (notation CIDR) à une **description**.
+- Le bouton **« Ajouter une IP »** ajoute une adresse (droit `console_public_access_write`) ; la consultation requiert `console_public_access_read`.
+
+:::warning
+La **suppression** d'une IP autorisée s'effectue sur **demande de support**.
+:::
+
+{/* TODO screenshot: page Accès (whitelist IP) + dialogue « Ajouter une IP » */}
+
+## Rapport de consommation — Gestionnaire des coûts
+
+Le **Gestionnaire des coûts** offre une vue de la consommation de l'organisation, ventilée par tenant. Il requiert le droit `billing_read` et propose deux onglets.
+
+### Onglet « Aperçu »
+
+Vue synthétique du mois en cours :
+
+- indicateurs clés : **coût du mois en cours**, **coût de l'année en cours**, **nombre de produits actifs** ;
+- **Coût par tenant** — répartition des coûts entre les tenants ;
+- **Coût actuel par service** et **Coût actuel par produit** — principaux postes de consommation.
+
+### Onglet « Consommation »
+
+Rapport détaillé et historisé :
+
+- sélection de la **période** (mois de début et de fin) et de l'axe **« Afficher par »** ;
+- vues **Consommation mensuelle**, **Total**, **Prévision** et **Tendance** ;
+- tableau dépliable par **Mois / Tenant / Service / Produit / Montant**, avec la **tendance** par rapport au mois précédent.
+
+:::info
+Le montant du mois en cours est **prévisionnel** : il est estimé à partir des jours déjà consommés.
+:::
+
+{/* TODO screenshot: Gestionnaire des coûts — onglet « Aperçu » puis onglet « Consommation » */}
+
+## Journalisation et support
+
+- **Logs** — la page **Activités** retrace les opérations de lecture et d'écriture de l'organisation (onglets **Récents** / **Archivés**, filtres, export CSV) à des fins de traçabilité (`activity_read`). Voir aussi la section Journalisation du [guide de démarrage de la Console](console_quickstart.md).
+- **Support** — la page **Support** centralise les **tickets de l'organisation** (indicateurs, création de ticket, filtres, export). La création et le suivi des demandes sont décrits dans le [guide de démarrage de la Console](console_quickstart.md).
