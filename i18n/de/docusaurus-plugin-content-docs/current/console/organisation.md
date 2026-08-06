@@ -121,7 +121,7 @@ Dies sind zwei unterschiedliche Konzepte:
 - der **Tenant-Eigentümer** gehört zum Umfang eines Tenants; seine Regeln sind im Modul [IAM](iam/concepts.md) beschrieben.
 
 :::info
-Als **Organisationseigentümer** sind Sie standardmäßig **Eigentümer aller Tenants** der Organisation. Dadurch verfügen Sie über sämtliche Berechtigungen auf jedem dieser Tenants.
+Als **Organisationseigentümer** sind Sie standardmäßig **Eigentümer aller Tenants** der Organisation. Dadurch verfügen Sie über sämtliche Berechtigungen auf jedem dieser Tenants. Umgekehrt verlieren Sie diese Berechtigungen **nicht**, wenn Ihnen diese Rolle entzogen wird: Sie bleiben auf den betreffenden Tenants erhalten.
 :::
 
 <img src={imgUsers} />

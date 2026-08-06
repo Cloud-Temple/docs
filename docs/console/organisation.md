@@ -121,7 +121,7 @@ Ce sont deux notions distinctes :
 - le **propriétaire de tenant** relève du périmètre d'un tenant ; ses règles sont décrites dans le module [IAM](iam/concepts.md).
 
 :::info
-En tant que **propriétaire de l'organisation**, vous êtes par défaut **propriétaire de tous les tenants** de l'organisation. À ce titre, vous disposez de l'ensemble des permissions sur chacun de ces tenants.
+En tant que **propriétaire de l'organisation**, vous êtes par défaut **propriétaire de tous les tenants** de l'organisation. À ce titre, vous disposez de l'ensemble des permissions sur chacun de ces tenants. À l'inverse, si ce rôle vous est retiré, vous **ne perdez pas** ces permissions : elles restent acquises sur les tenants concernés.
 :::
 
 <img src={imgUsers} />

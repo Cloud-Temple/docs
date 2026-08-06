@@ -121,7 +121,7 @@ Sono due nozioni distinte:
 - il **proprietario di tenant** rientra nel perimetro di un tenant; le sue regole sono descritte nel modulo [IAM](iam/concepts.md).
 
 :::info
-In quanto **proprietario dell'organizzazione**, siete per impostazione predefinita **proprietari di tutti i tenant** dell'organizzazione. Di conseguenza, disponete di tutti i permessi su ciascuno di questi tenant.
+In quanto **proprietario dell'organizzazione**, siete per impostazione predefinita **proprietari di tutti i tenant** dell'organizzazione. Di conseguenza, disponete di tutti i permessi su ciascuno di questi tenant. Al contrario, se questo ruolo vi viene revocato, **non** perdete tali permessi: restano acquisiti sui tenant interessati.
 :::
 
 <img src={imgUsers} />

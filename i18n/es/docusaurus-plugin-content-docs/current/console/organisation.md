@@ -121,7 +121,7 @@ Son dos nociones distintas:
 - el **propietario de tenant** pertenece al ámbito de un tenant; sus reglas se describen en el módulo [IAM](iam/concepts.md).
 
 :::info
-Como **propietario de la organización**, es por defecto **propietario de todos los tenants** de la organización. Por ello, dispone de todos los permisos sobre cada uno de esos tenants.
+Como **propietario de la organización**, es por defecto **propietario de todos los tenants** de la organización. Por ello, dispone de todos los permisos sobre cada uno de esos tenants. A la inversa, si se le retira este rol, **no** pierde esos permisos: permanecen adquiridos en los tenants correspondientes.
 :::
 
 <img src={imgUsers} />

@@ -121,7 +121,7 @@ These are two distinct notions:
 - the **tenant owner** belongs to a tenant's scope; its rules are described in the [IAM](iam/concepts.md) module.
 
 :::info
-As an **organization owner**, you are by default the **owner of every tenant** in the organization. As such, you hold all permissions on each of these tenants.
+As an **organization owner**, you are by default the **owner of every tenant** in the organization. As such, you hold all permissions on each of these tenants. Conversely, if this role is removed from you, you do **not** lose these permissions: they remain granted on the tenants concerned.
 :::
 
 <img src={imgUsers} />
