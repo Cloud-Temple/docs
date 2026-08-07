@@ -46,7 +46,7 @@ Vous y trouverez l'ensemble des métriques concernant les produits souscrits sur
 
 ## Vue organisation
 
-:::info Accès
+:::info
 La **vue organisation** est réservée aux **propriétaires de l'organisation**.
 :::
 
