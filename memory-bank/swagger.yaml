@@ -18,15 +18,6 @@ info:
 servers:
   - url: https://api.ai.cloud-temple.com
     description: API de production
->>>>>>> 43e454e868da40722a5f801fca9b55d0b02d39c2
-  - url: https://api.ai.cloud-temple.com
-    description: Alias DNS pour LB01 (Prod API)
-  - url: http://preprod.api.ai.cloud-temple.com
-    description: Alias DNS pour LB02 (Préprod API)
-=======
-  - url: https://api.ai.cloud-temple.com
-    description: API de production
->>>>>>> 43e454e868da40722a5f801fca9b55d0b02d39c2
 
 tags:
   - name: Chat
