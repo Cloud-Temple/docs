@@ -42,7 +42,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'console/console',
         'console/console_quickstart',
-        'console/organisation',
         'console/status',
         'console/orders',
         {
