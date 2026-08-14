@@ -17,58 +17,39 @@ import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
 import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
-## Users
+## Access management model
+
+Access management in the Console relies on two nested levels:
+
+- the __[organization](#organizations)__: the contractual entity. It holds the user accounts, the authentication configuration and all of your tenants;
+- the __[tenant](#tenant)__: a grouping of resources within the organization. It holds the technical resources and the users' permissions.
+
+Between the two lies a __common scope__: the user's identity. An account is created only once in the organization, then used in every tenant it has access to.
+
+### Who manages what
+
+| Managed object                                    | Organization                                  | Tenant                                        |
+| ------------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| Contract and billing                              | Yes                                           | Consumption report per tenant                 |
+| Authentication mechanism (local, SSO)             | Yes                                           | No (inherited from the organization)          |
+| Account lifecycle (invitation, deletion)          | Yes                                           | No (accounts are global to the organization)  |
+| __Users' permissions__                            | __No__                                        | __Yes, tenant by tenant__                     |
+| __Designating an owner__                          | __Yes__ (organization owner)                  | __Yes__ (tenant owner)                        |
+| Technical resources (compute, storage, network)   | No                                            | Yes                                           |
+| Authorized IP addresses                           | No                                            | Yes                                           |
+
+:::info[Key point]
+Permissions are __never__ configured at the organization level: they are defined tenant by tenant. The organization level does, however, allow you to designate a user as __organization owner__.
+:::
+
+## Common scope: the user account
 
 Console access accounts are created by the sponsor's master account by invitation (regardless of the authentication repository).
-Credentials are global to your [Organization](#organisations).
+Credentials are global to your [Organization](#organizations): a user has a single account, regardless of the number of tenants in which they operate.
 
 *__Note:__ [Identity federation is managed at the organization level](#authentication-mechanisms)*
 
-### Creating a user account in your organization
-
-Creating a user account in your organization is done by invitation. To invite a user to an [Organization](#organisations), go to the __'Administration'__ menu on the left side of your screen on the green banner, then to the __'Users'__ submenu.
-
-Click the __'New User'__ button from the users page.
-
-<img src={shivaOnboard_003} />
-
-Then enter the user's email address
-
-<img src={shivaOnboard_004} />
-
-The user will then receive a verification email.
-
-<img src={shivaOnboard_001} />
-
-Once verification is complete, the user will be able to log in to the console.
-
-### Assigning permissions to a user
-
-User rights management is performed from the user page.
-
-<img src={shivaOnboard_003} />
-
-By default, a user has no rights. Therefore, the administrator who sent the invitation must grant them the rights required for their activity. Simply click the user's __'Actions'__ menu and select the __'Edit'__ option.
-
-The rights activation menu then appears:
-
-<img src={shivaOnboard_005} />
-
-Permissions must be configured for each [Tenant](#tenant) of the [Organization](#organisations).
-
-The list of permissions and their definitions is available [here](#permissions).
-
-### User Re-registration
-
-When a user has been provisioned but has not validated their registration within the expiration period of the email sent by the Console, they can no longer confirm their registration. It is then possible to send them a link so that they can renew their initial registration.
-
-User re-registration must be performed in the __'User'__ tab of the Administration panel, at the bottom left of the screen.
-
-Select the user you wish to re-register, then click the action button at the end of the row and select __'Re-registration'__.
-
-__Warning__: Ensure that you are the one initiating the re-registration request for your user account. Please report any requests that do not originate from you via a support ticket.
-
-<img src={shivaProfil_012} />
+The actions described below relate to the account itself, regardless of the tenant you are connected to.
 
 ### Update your profile
 
@@ -106,26 +87,6 @@ __Warning__: Ensure that you are the one who initiated the request to reset your
 
 <img src={shivaProfil_016} />
 
-### Deleting a user
-
-User deletion must be performed in the __'User'__ tab of the Administration pane, at the bottom left of the screen.
-
-Select the user you wish to delete, then click the action button at the end of the row and __'Delete'__.
-
-<img src={shivaProfil_013} />
-<img src={shivaProfil_010} />
-
-Note: You cannot delete yourself and you cannot delete a __'Owner'__ user.
-
-### Log out
-
-To log out, navigate to the user's __'Profile'__ at the top right of the screen, then select __'Log out'__.
-
-<img src={shivaProfil_009} />
-<img src={shivaProfil_011} />
-
-Automatic logout occurs when the session token (JWT Token) expires.
-
 ### Change a user's language
 
 The language change for a user must be performed in their __'Profile'__, at the top right of the screen, under __'User Settings'__.
@@ -146,11 +107,229 @@ It is accessible in the user profile, under the "My Subscriptions" tab:
 
 The list of available themes is subject to change and will gradually expand to adapt to the needs and changes in our operational environment.
 
+### Log out
+
+To log out, navigate to the user's __'Profile'__ at the top right of the screen, then select __'Log out'__.
+
+<img src={shivaProfil_009} />
+<img src={shivaProfil_011} />
+
+Automatic logout occurs when the session token (JWT Token) expires.
+
+## Organizations
+
+The organization is linked to your __sponsor account__ and the associated __Cloud Temple contract__. It represents your entity (company, department, team, ...) that holds the contractual relationship between Cloud Temple and you.
+
+### Principle of an organization
+
+The organization has four main roles:
+
+- It represents __the contractual entity__ for tracking and billing aspects,
+- It defines __the global configuration of the authentication mechanism__: authentication can be local at the Console level or remote via an identity federation service,
+- It hosts all __user accounts__,
+- It __federates the tenants__ (Production, Pre-production, Dev, Application 1, Application 2, ...) that you define for your Cloud architecture needs.
+
+User roles (rights/permissions) are configurable for each tenant defined in your organization. For example, an account may be authorized to order resources in one tenant, but not in another.
+
+### What is managed at the organization level
+
+The organization scope covers:
+
+- the __authentication mechanism__ common to all accounts,
+- the __lifecycle of user accounts__: invitation, re-registration, deletion,
+- the __designation of organization owners__,
+- the __list of tenants__ in your architecture.
+
+:::warning[Permissions are not managed here]
+The organization's __'Users'__ page lets you create an account, designate it as owner and delete it. It does __not__ let you assign permissions: these are specific to each tenant and are configured from the tenant concerned (see [Assigning permissions within a tenant](#assigning-permissions-within-a-tenant)).
+:::
+
+### Authentication Mechanisms
+
+The Console allows __configuring the authentication mechanism__ at the organization level. You can
+use the Console's local authentication repository, or connect your organization to one
+of your authentication repositories.
+
+The following external repositories are supported:
+
+- __OpenID Connect__ compatible repositories,
+- __SAML__ compatible repositories,
+- __Microsoft ADFS__
+- __Microsoft EntraID__ (Microsoft Azure Active Directory)
+- Amazon AWS Cognito
+- Okta
+- Auth0
+- Keycloak
+
+:::info[Important]
+An email address is required for all accounts from an identity federation. Accounts created without an email address will not be able to log in and may be automatically deleted.
+:::
+
+### Creating a user account in your organization
+
+Creating a user account in your organization is done by invitation. To invite a user to an [Organization](#organizations), go to the __'Administration'__ menu on the left side of your screen on the green banner, then to the __'Users'__ submenu.
+
+Click the __'New User'__ button from the users page.
+
+<img src={shivaOnboard_003} />
+
+Then enter the user's email address
+
+<img src={shivaOnboard_004} />
+
+The user will then receive a verification email.
+
+<img src={shivaOnboard_001} />
+
+Once verification is complete, the user will be able to log in to the console.
+
+By default, __a newly created user has no rights__. You must then grant them the permissions required for their activity, __in each tenant__ where they need to operate.
+
+### Managing organization owners
+
+The __organization owner__ is the only role that can be assigned at the organization level. It is distinct from the [tenant owner](#managing-owners-on-a-tenant).
+
+- The designation is made from the __'Users'__ page of the Administration panel, via the action menu on the user's row.
+- This role grants access to the __organization view__: contractual tracking, list of tenants, account management.
+- It is not a granular permission: there is no `read` / `write` permission to assign at the organization level.
+- An __'Owner'__ user cannot be deleted.
+
+### User Re-registration
+
+When a user has been provisioned but has not validated their registration within the expiration period of the email sent by the Console, they can no longer confirm their registration. It is then possible to send them a link so that they can renew their initial registration.
+
+User re-registration must be performed in the __'User'__ tab of the Administration panel, at the bottom left of the screen.
+
+Select the user you wish to re-register, then click the action button at the end of the row and select __'Re-registration'__.
+
+__Warning__: Ensure that you are the one initiating the re-registration request for your user account. Please report any requests that do not originate from you via a support ticket.
+
+<img src={shivaProfil_012} />
+
+### Deleting a user
+
+User deletion must be performed in the __'User'__ tab of the Administration pane, at the bottom left of the screen.
+
+Select the user you wish to delete, then click the action button at the end of the row and __'Delete'__.
+
+<img src={shivaProfil_013} />
+<img src={shivaProfil_010} />
+
+Note: You cannot delete yourself and you cannot delete a __'Owner'__ user.
+
+## Tenant
+
+A tenant is a __grouping of resources within an organization__. An [Organization](#organizations) has at least one tenant (called the __default tenant__, which can be renamed). Generally, multiple tenants are used to segment responsibilities or technical scopes.
+
+For example:
+
+- A __Production__ tenant
+- A __Pre-production__ tenant
+- A __Staging__ tenant
+- A __QA__ tenant
+
+It is also possible to organize things using an __application view__ or by __criticality__ :
+
+- A __Application 1__ or __Criticality 1__ tenant
+- A __Application 2__ or __Criticality 2__ tenant
+- ...
+
+Ordered technical resources are assigned to a specific tenant and are not shared with other tenants. For example, a Hypervisor cluster and the associated L2 networks are only available within a single tenant.
+Regarding networks, it is possible to request __'cross tenant'__ networks to ensure network continuity between tenants.
+
+The architecture can be scaled by adding or removing tenants.
+
+A tenant cannot be empty. It must necessarily be initialized with a minimum set of resources:
+
+- An availability zone (AZ, i.e., a physical datacenter),
+- A compute cluster,
+- A storage space,
+- A network VLAN.
+
+| Order Reference                                        | Unit    | SKU                     |
+|--------------------------------------------------------------|----------|-------------------------|
+| TENANT - *(REGION)* - Tenant Activation                 | 1 tenant | csp:tenant:v1           |
+| TENANT - *(REGION)* - Availability Zone Activation | 1 tenant | csp:(region):iaas:az:v1 |
+
+### What is managed at the tenant level
+
+The tenant scope covers:
+
+- the __technical resources__ ordered and deployed,
+- the __users' permissions__ on those resources,
+- the __designation of tenant owners__,
+- the __IP addresses authorized__ to access the tenant,
+- the __consumption tracking__ of resources.
+
+User permissions must be defined within each tenant. An account may thus be authorized to order resources in one tenant, but not in another. Each organization must therefore carefully consider the desired tenants: this point is typically addressed during the initialization workshop, at the time of organization creation.
+
+### Assigning permissions within a tenant
+
+A user's rights are managed from the users page, __tenant by tenant__.
+
+<img src={shivaOnboard_003} />
+
+By default, a user has no rights. Therefore, the administrator who sent the invitation must grant them the rights required for their activity. Simply click the user's __'Actions'__ menu and select the __'Edit'__ option.
+
+The rights activation menu then appears:
+
+<img src={shivaOnboard_005} />
+
+Permissions must be configured again for each [Tenant](#tenant) of the [Organization](#organizations) in which the user needs to operate: there is no global assignment at the organization level.
+
+The list of permissions and their definitions is available [here](#permissions).
+
+### Managing owners on a tenant
+
+Each tenant has at least one owner, ensuring clear accountability and efficient management of associated resources. Additionally, it is possible to assign multiple owners to the same tenant, enabling collaboration and shared decision-making. Below, you will find important information to consider when managing these owners.
+
+The tenant owner is a role distinct from the [organization owner](#managing-organization-owners): it carries responsibility for a scope of resources, not for the contractual relationship.
+
+#### Important information regarding owner management
+
+#### 1. Number of owners
+
+- There is no technical limit on the number of owners that can be defined on the tenant.
+
+- The management interface (IHM) issues a warning when there are more than 3 owners, to encourage limiting the number of owners for security and optimal access management reasons.
+
+#### 2. Adding a new owner
+
+- When adding a new owner, updating their permissions may take up to 60 minutes.
+
+- This propagation time is normal and ensures that access rights are correctly applied across all associated services and resources.
+
+#### 2. Owner Permissions
+
+- An owner will be granted all permissions associated with the products enabled on their tenant.
+
+- It is not possible to modify an owner's permissions.
+
+#### 3. Owner Removal
+
+- To remove an owner from the tenant, the user must submit a request to support.
+
+- This procedure ensures that access right modifications are carried out securely and in accordance with access management best practices.
+
+### Tenant Access Authorization: Authorized IPs
+
+Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with SecNumCloud certification requirements. This restriction ensures an enhanced security level by permitting access only from specified IP ranges, thereby minimizing the risk of unauthorized access and safeguarding the cloud infrastructure in accordance with the highest security standards.
+
+Note: *Removing an authorized IP requires submitting a support request via the Cloud Temple console.*
+
+### Resource consumption within a tenant
+
+It is possible to view the cloud resources consumed within a tenant, providing a detailed overview of the usage of deployed services. This feature allows users to monitor resource consumption in real time, identify the most heavily used services, and optimize their usage based on requirements.
+
+In the console menu, click on "Consumption Report" and then select the desired time period. You will then be able to view in detail the cloud resource consumption for the selected period, allowing you to analyze service usage and optimize your management accordingly:
+
+<img src={shivaTenantRessources_01} />
+
 ## Permissions
 
-The Console enables fine-grained management of user permissions within an organization, with tenant segregation.
+The Console enables fine-grained management of user permissions within an organization, with __tenant segregation__.
 Initially, the sponsor's primary account is responsible for the initial configuration of accounts and their associated permissions.
-Subsequently, the __'iam_write'__ permission allows an account to manage the permissions of other users.
+Subsequently, the __'iam_write'__ permission allows an account to manage the permissions of other users, in the tenant where that right has been granted.
 
 ### Permissions available for users in your organization
 
@@ -233,119 +412,3 @@ Last updated on: 20/04/2026
 | public_cloud_vm_instances_management            | VM Instances Offering - Management of virtual machines                                                                      |
 | public_cloud_vm_instances_read                  | VM Instances Offering - Viewing of virtual machines                                                                         |
 | public_cloud_vm_instances_console_access        | VM Instances Offering - Opening the console of virtual machines                                                             |
-
-## Organizations
-
-The organization is linked to your __sponsor account__ and the associated __Cloud Temple contract__. It represents your entity (company, department, team, ...) that holds the contractual relationship between Cloud Temple and you.
-
-### Principle of an organization
-
-The organization has four main roles:
-
-- It represents __the contractual entity__ for tracking and billing aspects,
-- It defines __the global configuration of the authentication mechanism__: authentication can be local at the Console level or remote via an identity federation service,
-- It hosts all __user accounts__,
-- It __federates the tenants__ (Production, Pre-production, Dev, Application 1, Application 2, ...) that you define for your Cloud architecture needs.
-
-User roles (rights/permissions) are configurable for each tenant defined in your organization. For example, an account may be authorized to order resources in one tenant, but not in another.
-
-### Authentication Mechanisms
-
-The Console allows __configuring the authentication mechanism__ at the organization level. You can
-use the Console's local authentication repository, or connect your organization to one
-of your authentication repositories.
-
-The following external repositories are supported:
-
-- __OpenID Connect__ compatible repositories,
-- __SAML__ compatible repositories,
-- __Microsoft ADFS__
-- __Microsoft EntraID__ (Microsoft Azure Active Directory)
-- Amazon AWS Cognito
-- Okta
-- Auth0
-- Keycloak
-
-:::info[Important]
-An email address is required for all accounts from an identity federation. Accounts created without an email address will not be able to log in and may be automatically deleted.
-:::
-
-## Tenant
-
-A tenant is a __grouping of resources within an organization__. An [Organization](#organisations) has at least one tenant (called the __default tenant__, which can be renamed). Generally, multiple tenants are used to segment responsibilities or technical scopes.
-
-For example:
-
-- A __Production__ tenant
-- A __Pre-production__ tenant
-- A __Staging__ tenant
-- A __QA__ tenant
-
-It is also possible to organize things using an __application view__ or by __criticality__ :
-
-- A __Application 1__ or __Criticality 1__ tenant
-- A __Application 2__ or __Criticality 2__ tenant
-- ...
-
-Ordered technical resources are assigned to a specific tenant and are not shared with other tenants. For example, a Hypervisor cluster and the associated L2 networks are only available within a single tenant.
-Regarding networks, it is possible to request __'cross tenant'__ networks to ensure network continuity between tenants.
-
-User permissions must be defined within each tenant. Therefore, each organization must carefully consider the desired tenants. This point is typically addressed during the initialization workshop, at the time of organization creation.
-
-The architecture can be scaled by adding or removing tenants.
-
-A tenant cannot be empty. It must necessarily be initialized with a minimum set of resources:
-
-- An availability zone (AZ, i.e., a physical datacenter),
-- A compute cluster,
-- A storage space,
-- A network VLAN.
-
-| Order Reference                                        | Unit    | SKU                     |
-|--------------------------------------------------------------|----------|-------------------------|
-| TENANT - *(REGION)* - Tenant Activation                 | 1 tenant | csp:tenant:v1           |
-| TENANT - *(REGION)* - Availability Zone Activation | 1 tenant | csp:(region):iaas:az:v1 |
-
-### Managing owners on a tenant
-
-Each tenant has at least one owner, ensuring clear accountability and efficient management of associated resources. Additionally, it is possible to assign multiple owners to the same tenant, enabling collaboration and shared decision-making. Below, you will find important information to consider when managing these owners.
-
-#### Important information regarding owner management
-
-#### 1. Number of owners
-
-- There is no technical limit on the number of owners that can be defined on the tenant.
-
-- The management interface (IHM) issues a warning when there are more than 3 owners, to encourage limiting the number of owners for security and optimal access management reasons.
-
-#### 2. Adding a new owner
-
-- When adding a new owner, updating their permissions may take up to 60 minutes.
-
-- This propagation time is normal and ensures that access rights are correctly applied across all associated services and resources.
-
-#### 2. Owner Permissions
-
-- An owner will be granted all permissions associated with the products enabled on their tenant.
-
-- It is not possible to modify an owner's permissions.
-
-#### 3. Owner Removal
-
-- To remove an owner from the tenant, the user must submit a request to support.
-
-- This procedure ensures that access right modifications are carried out securely and in accordance with access management best practices.
-
-### Tenant Access Authorization: Authorized IPs
-
-Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with SecNumCloud certification requirements. This restriction ensures an enhanced security level by permitting access only from specified IP ranges, thereby minimizing the risk of unauthorized access and safeguarding the cloud infrastructure in accordance with the highest security standards.
-
-Note: *Removing an authorized IP requires submitting a support request via the Cloud Temple console.*
-
-### Resource consumption within a tenant
-
-It is possible to view the cloud resources consumed within a tenant, providing a detailed overview of the usage of deployed services. This feature allows users to monitor resource consumption in real time, identify the most heavily used services, and optimize their usage based on requirements.
-
-In the console menu, click on "Consumption Report" and then select the desired time period. You will then be able to view in detail the cloud resource consumption for the selected period, allowing you to analyze service usage and optimize your management accordingly:
-
-<img src={shivaTenantRessources_01} />
