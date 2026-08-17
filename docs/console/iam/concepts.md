@@ -17,58 +17,39 @@ import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
 import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
-## Utilisateurs
+## Modèle de gestion des accès
+
+La gestion des accès dans la Console repose sur deux niveaux imbriqués :
+
+- l'__[organisation](#organisations)__ : l'entité contractuelle. Elle porte les comptes utilisateurs, la configuration d'authentification et l'ensemble de vos tenants ;
+- le __[tenant](#tenant)__ : un regroupement de ressources au sein de l'organisation. Il porte les ressources techniques et les permissions des utilisateurs.
+
+Entre les deux se trouve un __périmètre commun__ : l'identité de l'utilisateur. Un compte est créé une seule fois dans l'organisation, puis utilisé dans tous les tenants auxquels il a accès.
+
+### Qui gère quoi
+
+| Objet géré                                        | Organisation                                      | Tenant                                        |
+| ------------------------------------------------- | ------------------------------------------------- | --------------------------------------------- |
+| Contrat et facturation                            | Oui                                               | Rapport de consommation par tenant            |
+| Mécanisme d'authentification (local, SSO)          | Oui                                               | Non (hérité de l'organisation)                |
+| Cycle de vie des comptes (invitation, suppression) | Oui                                               | Non (les comptes sont globaux à l'organisation) |
+| __Permissions des utilisateurs__                   | __Non__                                           | __Oui, tenant par tenant__                    |
+| __Désignation d'un propriétaire__                  | __Oui__ (propriétaire de l'organisation)          | __Oui__ (propriétaire du tenant)              |
+| Ressources techniques (calcul, stockage, réseau)   | Non                                               | Oui                                           |
+| Adresses IP autorisées                             | Non                                               | Oui                                           |
+
+:::info[À retenir]
+Les permissions ne se configurent __jamais__ au niveau de l'organisation : elles sont définies tenant par tenant. Le niveau organisation permet en revanche de désigner un utilisateur comme __propriétaire de l'organisation__.
+:::
+
+## Périmètre commun : le compte utilisateur
 
 Les comptes d'accès à la Console sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
-Les informations d'identification sont globales à votre [Organisation](#organisations).
+Les informations d'identification sont globales à votre [Organisation](#organisations) : un utilisateur dispose d'un seul compte, quel que soit le nombre de tenants dans lesquels il intervient.
 
 *__Nota :__ [La fédération d'identité se gère au niveau de l'organisation](#mécanismes-dauthentification)*
 
-### Création d'un compte utilisateur dans votre organisation
-
-La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
-
-Cliquez sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
-
-<img src={shivaOnboard_003} />
-
-Indiquez ensuite l'adresse de messagerie de l'utilisateur
-
-<img src={shivaOnboard_004} />
-
-L'utilisateur va alors recevoir un mail de vérification.
-
-<img src={shivaOnboard_001} />
-
-Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
-
-### Affectation des permissions à un utilisateur
-
-La gestion des droits utilisateurs se fait depuis la page utilisateur.
-
-<img src={shivaOnboard_003} />
-
-Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
-
-Le menu d'activation des droits apparait alors :
-
-<img src={shivaOnboard_005} />
-
-La configuration des permissions est à faire pour chaque [Tenant](#tenant) de l'[Organisation](#organisations).
-
-La liste des permissions et leur définition est accessible [ici](#permissions).
-
-### Réinscription d'un utilisateur
-
-Lorsqu'un utilisateur a été provisionné mais n'a pas validé son inscription dans le délai d'expiration du mail envoyé par la Console, il ne peut plus confirmer son inscription. Il est alors possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
-
-La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
-
-Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
-
-__Warning__: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
-
-<img src={shivaProfil_012} />
+Les actions décrites ci-dessous relèvent du compte lui-même, indépendamment du tenant dans lequel vous êtes connecté.
 
 ### Mettre à jour son profil
 
@@ -106,26 +87,6 @@ __Warning__: Assurez vous de bien être à l'origine de la demande de réinitial
 
 <img src={shivaProfil_016} />
 
-### Suppression d'un utilisateur
-
-La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
-
-Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
-
-<img src={shivaProfil_013} />
-<img src={shivaProfil_010} />
-
-Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
-
-### Se déconnecter
-
-La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, puis __'Déconnecter'__.
-
-<img src={shivaProfil_009} />
-<img src={shivaProfil_011} />
-
-Une déconnexion automatique est réalisée lors de l'expiration du jeton (JWT Token) de session.
-
 ### Changer la langue d'un utilisateur
 
 Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
@@ -146,11 +107,227 @@ Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" 
 
 La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichir progressivement pour s'adapter aux besoins et aux changements dans notre environnement opérationnel.
 
+### Se déconnecter
+
+La déconnexion d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, puis __'Déconnecter'__.
+
+<img src={shivaProfil_009} />
+<img src={shivaProfil_011} />
+
+Une déconnexion automatique est réalisée lors de l'expiration du jeton (JWT Token) de session.
+
+## Organisations
+
+L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud Temple associé__. Elle représente votre entité (société, département, équipe, ...) qui porte la relation contractuelle entre Cloud Temple et vous.
+
+### Principe d'une organisation
+
+L'organisation a quatre grands rôles :
+
+- Elle représente __l'entité contractuelle__ pour les aspects de suivi et de facturation,
+- Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la Console ou distante via un service de fédération d'identité,
+- Elle porte l'ensemble des __comptes utilisateurs__,
+- Elle __fédère les tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...) que vous définissez pour les besoins de votre architecture Cloud.
+
+### Ce qui se gère au niveau de l'organisation
+
+Le périmètre organisation couvre :
+
+- le __mécanisme d'authentification__ commun à tous les comptes,
+- le __cycle de vie des comptes utilisateurs__ : invitation, réinscription, suppression,
+- la __désignation des propriétaires de l'organisation__,
+- la __liste des tenants__ de votre architecture.
+
+:::warning[Les permissions ne se gèrent pas ici]
+La page __'Utilisateurs'__ de l'organisation permet de créer, désigner propriétaire et supprimer un compte. Elle ne permet __pas__ d'attribuer de permissions : celles-ci sont propres à chaque tenant et se configurent depuis le tenant concerné (voir [Affectation des permissions dans un tenant](#affectation-des-permissions-dans-un-tenant)).
+:::
+
+### Mécanismes d'authentification
+
+La Console permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
+utiliser le référentiel local d'authentification de la Console ou bien accoster votre organisation à l'un
+de vos référentiels d'authentification.
+
+Les référentiels externes suivants sont supportés :
+
+- Référentiels compatibles __OpenID Connect__,
+- Référentiels compatibles __SAML__,
+- __Microsoft ADFS__
+- __Microsoft EntraID__ (Microsoft Azure Active Directory)
+- Amazon AWS Cognito
+- Okta
+- Auth0
+- KeyCloak
+
+:::info[Important]
+Une adresse e-mail est requise pour tous les comptes issus d'une fédération d'identité. Les comptes créés sans adresse e-mail ne pourront pas se connecter et sont susceptibles d'être supprimés automatiquement.
+:::
+
+### Création d'un compte utilisateur dans votre organisation
+
+La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
+
+Cliquez sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
+
+<img src={shivaOnboard_003} />
+
+Indiquez ensuite l'adresse de messagerie de l'utilisateur
+
+<img src={shivaOnboard_004} />
+
+L'utilisateur va alors recevoir un mail de vérification.
+
+<img src={shivaOnboard_001} />
+
+Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
+
+Par défaut, __un utilisateur nouvellement créé n'a aucun droit__. Il est donc nécessaire de lui octroyer ensuite les permissions nécessaires à son activité, __dans chaque tenant__ où il doit intervenir.
+
+### Gestion des propriétaires de l'organisation
+
+Le __propriétaire de l'organisation__ est le seul rôle attribuable au niveau de l'organisation. Il est distinct du [propriétaire de tenant](#gestion-des-propriétaires-sur-un-tenant).
+
+- La désignation se fait depuis la page __'Utilisateurs'__ du volet Administration, via le menu d'action de la ligne de l'utilisateur.
+- Ce rôle donne accès à la __vue organisation__ : suivi contractuel, liste des tenants, gestion des comptes.
+- Il ne s'agit pas d'une permission granulaire : il n'y a aucune permission de type `read` / `write` à attribuer au niveau de l'organisation.
+- Un utilisateur __'Propriétaire'__ ne peut pas être supprimé.
+
+### Réinscription d'un utilisateur
+
+Lorsqu'un utilisateur a été provisionné mais n'a pas validé son inscription dans le délai d'expiration du mail envoyé par la Console, il ne peut plus confirmer son inscription. Il est alors possible de lui renvoyer un lien afin qu'il renouvelle sa première inscription.
+
+La réinscription d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
+
+Sélectionnez l'utilisateur que vous souhaitez réinscrire, puis cliquer sur le bouton d'action au bout de la ligne puis __'Réinscription'__.
+
+__Warning__: Assurez vous de bien être à l'origine de la demande de réinscription de votre compte utilisateur. Merci de signaler toutes demandes qui ne vient pas de vous via un ticket de support.
+
+<img src={shivaProfil_012} />
+
+### Suppression d'un utilisateur
+
+La suppression d'un utilisateur est à réaliser dans l'onglet __'Utilisateur'__ du volet Administration, en bas à gauche de l'écran.
+
+Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bouton d'action au bout de la ligne puis __'Supprimer'__.
+
+<img src={shivaProfil_013} />
+<img src={shivaProfil_010} />
+
+Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
+
+## Tenant
+
+Le tenant est un __regroupement de ressources au sein d'une organisation__. Une [Organisation](#organisations) a au minimum un tenant (appelé __tenant par défaut__, pouvant être renommé). Généralement, plusieurs tenants sont utilisés pour segmenter les responsabilités ou les périmètres techniques.
+
+Par exemple :
+
+- Un tenant __Production__
+- Un tenant __Préproduction__
+- Un tenant __Recette__
+- Un tenant __Qualification__
+
+Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ :
+
+- Un tenant __Application 1__ ou __Criticité 1__
+- Un tenant __Application 2__ ou __Criticité 2__
+- ...
+
+Les ressources techniques commandées sont affectées à un tenant précis et ne sont pas partagées avec les autres tenants. Par exemple, un cluster d'Hyperviseur et les réseaux L2 associées ne sont disponibles que dans 1 tenant.
+Concernant les réseaux, il est possible de demander des réseaux __'cross tenant'__ afin d'assurer la continuité réseau entre les tenants.
+
+Il est possible de faire évoluer l'architecture en ajoutant ou supprimant des tenants.
+
+Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec un minimum de ressource :
+
+- Une zone de disponibilité (AZ, soit un datacenter physique),
+- Un cluster de calcul,
+- Un espace de stockage,
+- Un vlan réseau.
+
+| Référence de commande                                        | Unité    | SKU                     |
+|--------------------------------------------------------------|----------|-------------------------|
+| TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
+| TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
+
+### Ce qui se gère au niveau du tenant
+
+Le périmètre tenant couvre :
+
+- les __ressources techniques__ commandées et déployées,
+- les __permissions des utilisateurs__ sur ces ressources,
+- la __désignation des propriétaires du tenant__,
+- les __adresses IP autorisées__ à accéder au tenant,
+- le __suivi de consommation__ des ressources.
+
+Les permissions des utilisateurs sont à définir dans chaque tenant. Un compte peut ainsi être autorisé à commander des ressources dans un tenant, mais pas dans un autre. Chaque organisation doit donc bien réfléchir aux tenants souhaités : ce point est généralement abordé en atelier d'initialisation, au moment de la création de l'organisation.
+
+### Affectation des permissions dans un tenant
+
+La gestion des droits d'un utilisateur se fait depuis la page des utilisateurs, __tenant par tenant__.
+
+<img src={shivaOnboard_003} />
+
+Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
+
+Le menu d'activation des droits apparait alors :
+
+<img src={shivaOnboard_005} />
+
+La configuration des permissions est à refaire pour chaque [Tenant](#tenant) de l'[Organisation](#organisations) dans lequel l'utilisateur doit intervenir : il n'existe pas d'attribution globale au niveau de l'organisation.
+
+La liste des permissions et leur définition est accessible [ici](#permissions).
+
+### Gestion des propriétaires sur un tenant
+
+Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
+
+Le propriétaire de tenant est un rôle distinct du [propriétaire de l'organisation](#gestion-des-propriétaires-de-lorganisation) : il porte la responsabilité d'un périmètre de ressources, pas de la relation contractuelle.
+
+#### Informations importantes sur la gestion des propriétaires
+
+#### 1. Nombre de propriétaires
+
+- Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
+
+- L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
+
+#### 2. Ajout d'un nouveau propriétaire
+
+- Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
+
+- Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
+
+#### 2. Permissions d'un propriétaire
+
+- Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
+
+- Il n'est pas possible de modifier les permissions d'un propriétaire.
+
+#### 3. Retrait d'un propriétaire
+
+- Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
+
+- Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
+
+### Autorisation d'accès à un tenant : IP autorisées
+
+L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
+
+Note : *La suppression d'un IP autorisée se fait par une demande de support dans la console Cloud Temple.*
+
+### Consommation de ressource au sein d'un tenant
+
+Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins.
+
+Dans le menu de la console, cliquez sur "Rapport de consommation" puis sélectionnez la période de temps souhaitée. Vous pourrez ainsi visualiser en détail la consommation des ressources cloud sur la période définie, ce qui vous permettra d’analyser l’utilisation des services et d’optimiser votre gestion en conséquence :
+
+<img src={shivaTenantRessources_01} />
+
 ## Permissions
 
-La Console permet une gestion fine des droits des utilisateurs d'une organisation, avec une ségrégation par tenant.
+La Console permet une gestion fine des droits des utilisateurs d'une organisation, avec une __ségrégation par tenant__.
 Initialement, c'est le compte principal du commanditaire qui permet la configuration initiale des comptes et des permissions associées.
-Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les permissions des autres utilisateurs.
+Par la suite, le droit __'iam_write'__ permet à un compte d'administrer les permissions des autres utilisateurs, dans le tenant où ce droit lui a été accordé.
 
 ### Permissions disponibles pour les utilisateurs de votre organisation
 
@@ -233,119 +410,3 @@ Dernière mise à jour le: 20/04/2026
 | public_cloud_vm_instances_management          | Offre VM Instances - Gestion des machines virtuelles                                                                          |
 | public_cloud_vm_instances_read                | Offre VM Instances - Consultation des machines virtuelles                                                                     |
 | public_cloud_vm_instances_console_access      | Offre VM Instances - Ouverture de la console des machines virtuelles                                                          |
-
-## Organisations
-
-L'organisation est liée à votre __compte commanditaire__ et au __contrat Cloud Temple associé__. Elle représente votre entité (société, département, équipe, ...) qui porte la relation contractuelle entre Cloud Temple et vous.
-
-### Principe d'une organisation
-
-L'organisation a quatre grands rôles :
-
-- Elle représente __l'entité contractuelle__ pour les aspects de suivi et de facturation,
-- Elle définit __la configuration globale du mécanisme d'authentification__ : l'authentification peut être locale au niveau de la Console ou distante via un service de fédération d'identité,
-- Elle porte l'ensemble des __comptes utilisateurs__,
-- Elle __fédère les tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...) que vous définissez pour les besoins de votre architecture Cloud.
-
-Les rôles (droits/permissions) des utilisateurs sont configurables pour chaque tenant définit dans votre organisation. Par exemple un compte peut être autorisé à commander des ressources dans un tenant, mais pas dans un autre.
-
-### Mécanismes d'authentification
-
-La Console permet au niveau de l'organisation __le paramétrage du mécanisme d'authentification__. Vous pouvez
-utiliser le référentiel local d'authentification de la Console ou bien accoster votre organisation à l'un
-de vos référentiels d'authentification.
-
-Les référentiels externes suivants sont supportés :
-
-- Référentiels compatibles __OpenID Connect__,
-- Référentiels compatibles __SAML__,
-- __Microsoft ADFS__
-- __Microsoft EntraID__ (Microsoft Azure Active Directory)
-- Amazon AWS Cognito
-- Okta
-- Auth0
-- KeyCloak
-
-:::info[Important]
-Une adresse e-mail est requise pour tous les comptes issus d'une fédération d'identité. Les comptes créés sans adresse e-mail ne pourront pas se connecter et sont susceptibles d'être supprimés automatiquement.
-:::
-
-## Tenant
-
-Le tenant est un __regroupement de ressources au sein d'une organisation__. Une [Organisation](#organisations) a au minimum un tenant (appelé __tenant par défaut__, pouvant être renommé). Généralement, plusieurs tenants sont utilisés pour segmenter les responsabilités ou les périmètres techniques.
-
-Par exemple :
-
-- Un tenant __Production__
-- Un tenant __Préproduction__
-- Un tenant __Recette__
-- Un tenant __Qualification__
-
-Mais il est aussi possible d'organiser les choses avec une __vue applicative__ ou par __criticité__ :
-
-- Un tenant __Application 1__ ou __Criticité 1__
-- Un tenant __Application 2__ ou __Criticité 2__
-- ...
-
-Les ressources techniques commandées sont affectées à un tenant précis et ne sont pas partagées avec les autres tenants. Par exemple, un cluster d'Hyperviseur et les réseaux L2 associées ne sont disponibles que dans 1 tenant.
-Concernant les réseaux, il est possible de demander des réseaux __'cross tenant'__ afin d'assurer la continuité réseau entre les tenants.
-
-Les permissions des utilisateurs sont à définir dans chaque tenant. Ainsi chaque organisation doit bien réfléchir aux tenants souhaités. Ce point est généralement abordé en atelier initialisation, au moment de la création de l'organisation.
-
-Il est possible de faire évoluer l'architecture en ajoutant ou supprimant des tenants.
-
-Un tenant ne peut pas être vide. Il doit nécessairement être initialisé avec un minimum de ressource :
-
-- Une zone de disponibilité (AZ, soit un datacenter physique),
-- Un cluster de calcul,
-- Un espace de stockage,
-- Un vlan réseau.
-
-| Référence de commande                                        | Unité    | SKU                     |
-|--------------------------------------------------------------|----------|-------------------------|
-| TENANT - *(REGION)* - Activation d'un tenant                 | 1 tenant | csp:tenant:v1           |
-| TENANT - *(REGION)* - Activation d'une zone de disponibilité | 1 tenant | csp:(region):iaas:az:v1 |
-
-### Gestion des propriétaires sur un tenant
-
-Chaque tenant possède au moins un propriétaire, garantissant ainsi une responsabilité claire et une gestion efficace des ressources associées. De plus, il est possible de déclarer plusieurs propriétaires sur un même tenant, permettant une collaboration et une prise de décision partagée. Ci-dessous, vous trouverez des informations importantes à prendre en compte lors de la gestion de ces propriétaires.
-
-#### Informations importantes sur la gestion des propriétaires
-
-#### 1. Nombre de propriétaires
-
-- Il n'y a pas de limite technique quant au nombre de propriétaires pouvant être définis sur le tenant.
-
-- L'interface de gestion (IHM) émet un avertissement lorsqu'il y a plus de 3 propriétaires, afin d'inciter à limiter le nombre de propriétaires pour des raisons de sécurité et de gestion optimale des accès.
-
-#### 2. Ajout d'un nouveau propriétaire
-
-- Lors de l'ajout d'un nouveau propriétaire, la mise à jour de ses permissions peut nécessiter un délai allant jusqu'à 60 minutes.
-
-- Ce temps de propagation est normal et permet de s'assurer que les droits d'accès sont correctement appliqués à l'ensemble des services et ressources associés.
-
-#### 2. Permissions d'un propriétaire
-
-- Un propriétaire se verra attribuer l'ensemble des permissions liées aux produits activés sur son tenant.
-
-- Il n'est pas possible de modifier les permissions d'un propriétaire.
-
-#### 3. Retrait d'un propriétaire
-
-- Pour retirer un propriétaire du tenant, l'utilisateur doit soumettre une demande au support.
-
-- Cette procédure permet de garantir que les modifications des droits d'accès sont effectuées de manière sécurisée et conforme aux bonnes pratiques de gestion des accès.
-
-### Autorisation d'accès à un tenant : IP autorisées
-
-L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
-
-Note : *La suppression d'un IP autorisée se fait par une demande de support dans la console Cloud Temple.*
-
-### Consommation de ressource au sein d'un tenant
-
-Il est possible de visualiser les ressources cloud consommées au sein d'un tenant, offrant ainsi une vue détaillée de l'utilisation des différents services déployés. Cette fonctionnalité permet aux utilisateurs de suivre en temps réel la consommation de leurs ressources, d'identifier les services les plus sollicités et d'optimiser leur utilisation en fonction des besoins.
-
-Dans le menu de la console, cliquez sur "Rapport de consommation" puis sélectionnez la période de temps souhaitée. Vous pourrez ainsi visualiser en détail la consommation des ressources cloud sur la période définie, ce qui vous permettra d’analyser l’utilisation des services et d’optimiser votre gestion en conséquence :
-
-<img src={shivaTenantRessources_01} />

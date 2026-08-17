@@ -17,58 +17,39 @@ import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
 import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
-## Benutzer
+## Modell der Zugriffsverwaltung
+
+Die Zugriffsverwaltung in der Console beruht auf zwei ineinander verschachtelten Ebenen:
+
+- die __[Organisation](#organisationen)__: die vertragliche Einheit. Sie trägt die Benutzerkonten, die Authentifizierungskonfiguration und alle Ihre Tenants;
+- der __[Tenant](#tenant)__: eine Gruppierung von Ressourcen innerhalb der Organisation. Er trägt die technischen Ressourcen und die Berechtigungen der Benutzer.
+
+Dazwischen liegt ein __gemeinsamer Bereich__: die Identität des Benutzers. Ein Konto wird nur einmal in der Organisation erstellt und anschließend in allen Tenants verwendet, auf die es Zugriff hat.
+
+### Wer verwaltet was
+
+| Verwaltetes Objekt                                    | Organisation                                  | Tenant                                          |
+| ----------------------------------------------------- | --------------------------------------------- | ----------------------------------------------- |
+| Vertrag und Abrechnung                                | Ja                                            | Verbrauchsbericht pro Tenant                    |
+| Authentifizierungsmechanismus (lokal, SSO)            | Ja                                            | Nein (von der Organisation geerbt)              |
+| Lebenszyklus der Konten (Einladung, Löschung)         | Ja                                            | Nein (Konten gelten organisationsweit)          |
+| __Berechtigungen der Benutzer__                       | __Nein__                                      | __Ja, Tenant für Tenant__                       |
+| __Benennung eines Eigentümers__                       | __Ja__ (Eigentümer der Organisation)          | __Ja__ (Eigentümer des Tenants)                 |
+| Technische Ressourcen (Compute, Storage, Netzwerk)    | Nein                                          | Ja                                              |
+| Zugelassene IP-Adressen                               | Nein                                          | Ja                                              |
+
+:::info[Wichtig]
+Berechtigungen werden __niemals__ auf Organisationsebene konfiguriert: sie werden Tenant für Tenant festgelegt. Auf Organisationsebene können Sie einen Benutzer hingegen als __Eigentümer der Organisation__ benennen.
+:::
+
+## Gemeinsamer Bereich: das Benutzerkonto
 
 Die Zugriffskonten für die Konsole werden vom Masterkonto des Auftraggebers auf Einladung erstellt (unabhängig vom Authentifizierungsspeicher).
-Die Anmeldeinformationen sind für Ihre [Organisation](#organisations) global.
+Die Anmeldeinformationen sind für Ihre [Organisation](#organisationen) global: ein Benutzer verfügt über ein einziges Konto, unabhängig von der Anzahl der Tenants, in denen er tätig ist.
 
-*__Hinweis :__ [Die Identitätsföderierung wird auf Organisationsebene verwaltet](#mécanismes-dauthentification)*
+*__Hinweis :__ [Die Identitätsföderierung wird auf Organisationsebene verwaltet](#authentifizierungsmechanismen)*
 
-### Erstellen eines Benutzerkontos in Ihrer Organisation
-
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt per Einladung. Um einen Benutzer in eine [Organisation](#organisations) einzuladen, navigieren Sie im Menü __'Verwaltung'__ links auf Ihrem Bildschirm in der grünen Leiste und anschließend im Untermenü __'Benutzer'__.
-
-Klicken Sie auf der Benutzerseite auf die Schaltfläche __'Neuer Benutzer'__.
-
-<img src={shivaOnboard_003} />
-
-Geben Sie anschließend die E-Mail-Adresse des Benutzers ein
-
-<img src={shivaOnboard_004} />
-
-Der Benutzer erhält daraufhin eine Bestätigungs-E-Mail.
-
-<img src={shivaOnboard_001} />
-
-Nach Abschluss der Bestätigung kann sich der Benutzer bei der Konsole anmelden.
-
-### Zuweisung von Berechtigungen an einen Benutzer
-
-Die Verwaltung der Benutzerrechte erfolgt über die Benutzerseite.
-
-<img src={shivaOnboard_003} />
-
-Standardmäßig hat ein Benutzer keine Rechte. Daher muss der Administrator, der die Einladung gesendet hat, ihm die für seine Tätigkeit erforderlichen Rechte erteilen. Klicken Sie einfach auf das Menü __'Aktionen'__ des Benutzers und wählen Sie die Option __'Bearbeiten'__.
-
-Das Menü zur Aktivierung der Rechte erscheint dann:
-
-<img src={shivaOnboard_005} />
-
-Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organisations) erfolgen.
-
-Die Liste der Berechtigungen und deren Definitionen ist [hier](#permissions) verfügbar.
-
-### Neuanmeldung eines Benutzers
-
-Wenn ein Benutzer provisioniert wurde, seine Registrierung jedoch nicht innerhalb der in der von der Konsole gesendeten E-Mail angegebenen Ablaufzeit bestätigt hat, kann er seine Registrierung nicht mehr bestätigen. In diesem Fall kann ihm ein Link erneut zugesendet werden, damit er seine Erstregistrierung wiederholt.
-
-Die Neuanmeldung eines Benutzers erfolgt im Reiter __'Benutzer'__ im Verwaltungsbereich unten links auf dem Bildschirm.
-
-Wählen Sie den Benutzer aus, den Sie erneut anmelden möchten, und klicken Sie dann auf die Aktionsschaltfläche am Ende der Zeile und anschließend auf __'Neuanmeldung'__.
-
-__Warnung__: Stellen Sie sicher, dass Sie selbst der Auslöser der Neuanmeldungsanfrage für Ihr Benutzerkonto sind. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
-
-<img src={shivaProfil_012} />
+Die nachfolgend beschriebenen Aktionen betreffen das Konto selbst, unabhängig davon, in welchem Tenant Sie angemeldet sind.
 
 ### Profil aktualisieren
 
@@ -106,26 +87,6 @@ __Warnung__: Stellen Sie sicher, dass Sie die Zurücksetzungsanfrage für Ihre M
 
 <img src={shivaProfil_016} />
 
-### Löschen eines Benutzers
-
-Das Löschen eines Benutzers erfolgt im Reiter __'Benutzer'__ im Verwaltungsbereich unten links auf dem Bildschirm.
-
-Wählen Sie den zu löschenden Benutzer aus, klicken Sie dann auf die Aktionsschaltfläche am Ende der Zeile und anschließend auf __'Löschen'__.
-
-<img src={shivaProfil_013} />
-<img src={shivaProfil_010} />
-
-Hinweis: Sie können sich nicht selbst löschen und keinen Benutzer vom Typ __'Besitzer'__ löschen.
-
-### Abmelden
-
-Die Abmeldung eines Benutzers erfolgt in seinem __'Profil'__ oben rechts auf dem Bildschirm, gefolgt von __'Abmelden'__.
-
-<img src={shivaProfil_009} />
-<img src={shivaProfil_011} />
-
-Eine automatische Abmeldung erfolgt bei Ablauf des Sitzungs-JWT-Tokens (JWT Token).
-
 ### Sprache eines Benutzers ändern
 
 Die Änderung der Sprache eines Benutzers erfolgt in seinem __'Profil'__, oben rechts auf dem Bildschirm, in den __'Benutzereinstellungen'__.
@@ -146,11 +107,229 @@ Sie ist im Benutzerprofil unter der Registerkarte "Meine Abonnements" verfügbar
 
 Die Liste der verfügbaren Themen kann sich entwickeln und schrittweise erweitert werden, um sich an die Anforderungen und Veränderungen in unserem Betriebsumfeld anzupassen.
 
+### Abmelden
+
+Die Abmeldung eines Benutzers erfolgt in seinem __'Profil'__ oben rechts auf dem Bildschirm, gefolgt von __'Abmelden'__.
+
+<img src={shivaProfil_009} />
+<img src={shivaProfil_011} />
+
+Eine automatische Abmeldung erfolgt bei Ablauf des Sitzungs-JWT-Tokens (JWT Token).
+
+## Organisationen
+
+Die Organisation ist mit Ihrem __Sponsorkonto__ und dem zugehörigen __Cloud-Temple-Vertrag__ verknüpft. Sie repräsentiert Ihre Entität (Unternehmen, Abteilung, Team, ...), die die Vertragsbeziehung zwischen Cloud Temple und Ihnen vertritt.
+
+### Prinzip einer Organisation
+
+Die Organisation erfüllt vier zentrale Rollen:
+
+- Sie fungiert als __vertragliche Entität__ für die Aspekte der Nachverfolgung und Abrechnung,
+- Sie definiert __die globale Konfiguration des Authentifizierungsmechanismus__: Die Authentifizierung kann lokal auf Konsolenebene oder remote über einen Identitätsföderationsdienst erfolgen,
+- Sie verwaltet alle __Benutzerkonten__,
+- Sie __bündelt die Tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...), die Sie für die Anforderungen Ihrer Cloud-Architektur definieren.
+
+Die Rollen (droits/permissions) der Benutzer sind für jeden in Ihrer Organisation definierten Tenant konfigurierbar. Ein Konto kann beispielsweise autorisiert sein, Ressourcen in einem Tenant zu bestellen, in einem anderen jedoch nicht.
+
+### Was auf Organisationsebene verwaltet wird
+
+Der Organisationsbereich umfasst:
+
+- den für alle Konten gemeinsamen __Authentifizierungsmechanismus__,
+- den __Lebenszyklus der Benutzerkonten__: Einladung, Neuanmeldung, Löschung,
+- die __Benennung der Eigentümer der Organisation__,
+- die __Liste der Tenants__ Ihrer Architektur.
+
+:::warning[Berechtigungen werden hier nicht verwaltet]
+Auf der Seite __'Benutzer'__ der Organisation können Sie ein Konto erstellen, als Eigentümer benennen und löschen. Sie können dort __keine__ Berechtigungen zuweisen: diese sind je Tenant spezifisch und werden im betreffenden Tenant konfiguriert (siehe [Zuweisung von Berechtigungen in einem Tenant](#zuweisung-von-berechtigungen-in-einem-tenant)).
+:::
+
+### Authentifizierungsmechanismen
+
+Auf Organisationsebene ermöglicht die Konsole __die Konfiguration des Authentifizierungsmechanismus__. Sie können
+das lokale Authentifizierungs-Repository der Konsole verwenden oder Ihre Organisation mit einem
+Ihrer Authentifizierungs-Repositories anbinden.
+
+Folgende externe Repositories werden unterstützt:
+
+- __OpenID Connect__-kompatible Repositories,
+- __SAML__-kompatible Repositories,
+- __Microsoft ADFS__
+- __Microsoft EntraID__ (Microsoft Azure Active Directory)
+- Amazon AWS Cognito
+- Okta
+- Auth0
+- KeyCloak
+
+:::info[Important]
+Für alle Konten aus einer Identitätsföderation ist eine E-Mail-Adresse erforderlich. Konten, die ohne E-Mail-Adresse erstellt wurden, können sich nicht anmelden und werden möglicherweise automatisch gelöscht.
+:::
+
+### Erstellen eines Benutzerkontos in Ihrer Organisation
+
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt per Einladung. Um einen Benutzer in eine [Organisation](#organisationen) einzuladen, navigieren Sie im Menü __'Verwaltung'__ links auf Ihrem Bildschirm in der grünen Leiste und anschließend im Untermenü __'Benutzer'__.
+
+Klicken Sie auf der Benutzerseite auf die Schaltfläche __'Neuer Benutzer'__.
+
+<img src={shivaOnboard_003} />
+
+Geben Sie anschließend die E-Mail-Adresse des Benutzers ein
+
+<img src={shivaOnboard_004} />
+
+Der Benutzer erhält daraufhin eine Bestätigungs-E-Mail.
+
+<img src={shivaOnboard_001} />
+
+Nach Abschluss der Bestätigung kann sich der Benutzer bei der Konsole anmelden.
+
+Standardmäßig verfügt __ein neu erstellter Benutzer über keine Rechte__. Sie müssen ihm anschließend die für seine Tätigkeit erforderlichen Berechtigungen erteilen, und zwar __in jedem Tenant__, in dem er tätig werden soll.
+
+### Verwaltung der Eigentümer der Organisation
+
+Der __Eigentümer der Organisation__ ist die einzige Rolle, die auf Organisationsebene zugewiesen werden kann. Sie ist vom [Eigentümer eines Tenants](#verwaltung-der-eigentümer-auf-einem-tenant) zu unterscheiden.
+
+- Die Benennung erfolgt auf der Seite __'Benutzer'__ des Bereichs Administration über das Aktionsmenü in der Zeile des Benutzers.
+- Diese Rolle gewährt Zugriff auf die __Organisationsansicht__: vertragliche Nachverfolgung, Liste der Tenants, Kontenverwaltung.
+- Es handelt sich nicht um eine feingranulare Berechtigung: auf Organisationsebene ist keine Berechtigung des Typs `read` / `write` zuzuweisen.
+- Ein Benutzer __'Eigentümer'__ kann nicht gelöscht werden.
+
+### Neuanmeldung eines Benutzers
+
+Wenn ein Benutzer provisioniert wurde, seine Registrierung jedoch nicht innerhalb der in der von der Konsole gesendeten E-Mail angegebenen Ablaufzeit bestätigt hat, kann er seine Registrierung nicht mehr bestätigen. In diesem Fall kann ihm ein Link erneut zugesendet werden, damit er seine Erstregistrierung wiederholt.
+
+Die Neuanmeldung eines Benutzers erfolgt im Reiter __'Benutzer'__ im Verwaltungsbereich unten links auf dem Bildschirm.
+
+Wählen Sie den Benutzer aus, den Sie erneut anmelden möchten, und klicken Sie dann auf die Aktionsschaltfläche am Ende der Zeile und anschließend auf __'Neuanmeldung'__.
+
+__Warnung__: Stellen Sie sicher, dass Sie selbst der Auslöser der Neuanmeldungsanfrage für Ihr Benutzerkonto sind. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
+
+<img src={shivaProfil_012} />
+
+### Löschen eines Benutzers
+
+Das Löschen eines Benutzers erfolgt im Reiter __'Benutzer'__ im Verwaltungsbereich unten links auf dem Bildschirm.
+
+Wählen Sie den zu löschenden Benutzer aus, klicken Sie dann auf die Aktionsschaltfläche am Ende der Zeile und anschließend auf __'Löschen'__.
+
+<img src={shivaProfil_013} />
+<img src={shivaProfil_010} />
+
+Hinweis: Sie können sich nicht selbst löschen und keinen Benutzer vom Typ __'Besitzer'__ löschen.
+
+## Tenant
+
+Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisationen) verfügt über mindestens einen Tenant (als __Standardtenant__ bezeichnet, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Zuständigkeiten oder technische Umfangsbereiche zu segmentieren.
+
+Beispiel:
+
+- Ein Tenant __Produktion__
+- Ein Tenant __Vorproduktion__
+- Ein Tenant __Test__
+- Ein Tenant __Qualifikation__
+
+Es ist jedoch auch möglich, die Struktur nach einer __Anwendungssicht__ oder nach __Kritizität__ zu organisieren:
+
+- Ein Tenant __Anwendung 1__ oder __Kritizität 1__
+- Ein Tenant __Anwendung 2__ oder __Kritizität 2__
+- ...
+
+Die bestellten technischen Ressourcen werden einem bestimmten Tenant zugewiesen und nicht mit anderen Tenants geteilt. Ein Hypervisor-Cluster und die zugehörigen L2-Netzwerke sind beispielsweise nur in einem Tenant verfügbar.
+Bei Netzwerken ist es möglich, __'tenantübergreifende'__ Netzwerke anzufordern, um die Netzwerkkontinuität zwischen den Tenants sicherzustellen.
+
+Die Architektur kann durch Hinzufügen oder Entfernen von Tenants erweitert werden.
+
+Ein Tenant darf nicht leer sein. Er muss zwingend mit mindestens einer Ressource initialisiert werden:
+
+- Eine Verfügbarkeitszone (AZ, soit un datacenter physique),
+- Ein Rechencluster,
+- Ein Speicherbereich,
+- Ein VLAN-Netzwerk.
+
+| Bestellreferenz                                        | Einheit    | SKU                     |
+|--------------------------------------------------------------|----------|-------------------------|
+| TENANT - *(REGION)* - Aktivierung eines Tenants                 | 1 Tenant | csp:tenant:v1           |
+| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 Tenant | csp:(region):iaas:az:v1 |
+
+### Was auf Tenant-Ebene verwaltet wird
+
+Der Tenant-Bereich umfasst:
+
+- die bestellten und bereitgestellten __technischen Ressourcen__,
+- die __Berechtigungen der Benutzer__ auf diesen Ressourcen,
+- die __Benennung der Eigentümer des Tenants__,
+- die zum Zugriff auf den Tenant __zugelassenen IP-Adressen__,
+- die __Verbrauchsverfolgung__ der Ressourcen.
+
+Die Berechtigungen der Benutzer sind in jedem Tenant festzulegen. Ein Konto kann somit autorisiert sein, Ressourcen in einem Tenant zu bestellen, in einem anderen jedoch nicht. Daher muss jede Organisation die gewünschten Tenants sorgfältig planen: dieser Punkt wird in der Regel im Initialisierungsworkshop zum Zeitpunkt der Erstellung der Organisation behandelt.
+
+### Zuweisung von Berechtigungen in einem Tenant
+
+Die Verwaltung der Rechte eines Benutzers erfolgt über die Benutzerseite, __Tenant für Tenant__.
+
+<img src={shivaOnboard_003} />
+
+Standardmäßig hat ein Benutzer keine Rechte. Daher muss der Administrator, der die Einladung gesendet hat, ihm die für seine Tätigkeit erforderlichen Rechte erteilen. Klicken Sie einfach auf das Menü __'Aktionen'__ des Benutzers und wählen Sie die Option __'Bearbeiten'__.
+
+Das Menü zur Aktivierung der Rechte erscheint dann:
+
+<img src={shivaOnboard_005} />
+
+Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organisationen) erneut vorgenommen werden, in dem der Benutzer tätig werden soll: eine globale Zuweisung auf Organisationsebene gibt es nicht.
+
+Die Liste der Berechtigungen und deren Definitionen ist [hier](#berechtigungen) verfügbar.
+
+### Verwaltung der Eigentümer auf einem Tenant
+
+Jeder Tenant verfügt über mindestens einen Eigentümer, um so eine klare Verantwortung und ein effizientes Ressourcenmanagement zu gewährleisten. Darüber hinaus können mehrere Eigentümer für denselben Tenant angegeben werden, was eine Zusammenarbeit und eine gemeinsame Entscheidungsfindung ermöglicht. Nachfolgend finden Sie wichtige Informationen, die bei der Verwaltung dieser Eigentümer zu beachten sind.
+
+Der Eigentümer eines Tenants ist eine vom [Eigentümer der Organisation](#verwaltung-der-eigentümer-der-organisation) unterschiedliche Rolle: er trägt die Verantwortung für einen Ressourcenbereich, nicht für die Vertragsbeziehung.
+
+#### Wichtige Informationen zur Verwaltung der Eigentümer
+
+#### 1. Anzahl der Eigentümer
+
+- Es besteht keine technische Begrenzung für die Anzahl der Eigentümer, die auf dem Tenant definiert werden können.
+
+- Die Verwaltungsoberfläche (IHM) zeigt eine Warnung an, wenn mehr als 3 Eigentümer vorhanden sind, um dazu anzuregen, die Anzahl der Eigentümer aus Sicherheitsgründen und für ein optimales Zugriffsmanagement zu begrenzen.
+
+#### 2. Hinzufügen eines neuen Besitzers
+
+- Beim Hinzufügen eines neuen Besitzers kann die Aktualisierung seiner Berechtigungen eine Verzögerung von bis zu 60 Minuten erfordern.
+
+- Diese Propagationszeit ist normal und stellt sicher, dass die Zugriffsrechte auf alle zugehörigen Dienste und Ressourcen korrekt angewendet werden.
+
+#### 2. Berechtigungen eines Besitzers
+
+- Einem Besitzer werden alle Berechtigungen zugewiesen, die mit den auf seinem Tenant aktivierten Produkten verknüpft sind.
+
+- Es ist nicht möglich, die Berechtigungen eines Besitzers zu ändern.
+
+#### 3. Entfernen eines Eigentümers
+
+- Um einen Eigentümer aus dem Tenant zu entfernen, muss der Benutzer eine Anfrage an den Support stellen.
+
+- Dieses Verfahren stellt sicher, dass Änderungen an den Zugriffsrechten auf sichere Weise und gemäß den bewährten Verfahren für das Zugriffsmanagement durchgeführt werden.
+
+### Zugriffsberechtigung für einen Tenant: Zugelassene IPs
+
+Der Zugriff auf die Cloud-Management-Konsole ist streng auf zuvor autorisierte IP-Adressen beschränkt, um den Anforderungen der SecNumCloud-Zertifizierung zu entsprechen. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem der Zugriff nur auf Benutzer aus angegebenen IP-Bereichen ermöglicht wird, wodurch das Risiko unbefugten Zugriffs minimiert und die Cloud-Infrastruktur nach den höchsten Sicherheitsstandards geschützt wird.
+
+Hinweis: *Das Entfernen einer zugelassenen IP-Adresse erfolgt über eine Supportanfrage in der Cloud-Temple-Konsole.*
+
+### Ressourcenverbrauch innerhalb eines Tenants
+
+Es können die innerhalb eines Tenants verbrauchten Cloud-Ressourcen eingesehen werden, was eine detaillierte Übersicht über die Nutzung der bereitgestellten Dienste bietet. Diese Funktion ermöglicht es Benutzern, den Ressourcenverbrauch in Echtzeit zu verfolgen, die am stärksten ausgelasteten Dienste zu identifizieren und die Nutzung bedarfsgerecht zu optimieren.
+
+Klicken Sie im Konsolenmenü auf "Verbrauchsbericht" und wählen Sie den gewünschten Zeitraum aus. Sie können so den Verbrauch der Cloud-Ressourcen im festgelegten Zeitraum detailliert einsehen, was Ihnen die Analyse der Dienstnutzung und die daraus folgende Optimierung Ihrer Verwaltung ermöglicht:
+
+<img src={shivaTenantRessources_01} />
+
 ## Berechtigungen
 
-Die Konsole ermöglicht eine feingranulare Rechteverwaltung für die Benutzer einer Organisation mit einer Tenant-Trennung.
+Die Konsole ermöglicht eine feingranulare Rechteverwaltung für die Benutzer einer Organisation mit einer __Trennung je Tenant__.
 Anfangs ermöglicht das Hauptkonto des Sponsors die Erstkonfiguration der Konten und der zugehörigen Berechtigungen.
-Im weiteren Verlauf ermöglicht die Berechtigung __'iam_write'__ einem Konto, die Berechtigungen anderer Benutzer zu verwalten.
+Im weiteren Verlauf ermöglicht die Berechtigung __'iam_write'__ einem Konto, die Berechtigungen anderer Benutzer zu verwalten, und zwar in dem Tenant, in dem ihm dieses Recht erteilt wurde.
 
 ### Verfügbare Berechtigungen für Benutzer Ihrer Organisation
 
@@ -233,119 +412,3 @@ Zuletzt aktualisiert am: 20.04.2026
 | public_cloud_vm_instances_management          | VM-Instances-Angebot - Verwaltung von virtuellen Maschinen                                                                          |
 | public_cloud_vm_instances_read                | VM-Instances-Angebot - Anzeige von virtuellen Maschinen                                                                     |
 | public_cloud_vm_instances_console_access      | VM-Instances-Angebot - Öffnen der Konsole von virtuellen Maschinen                                                          |
-
-## Organisationen
-
-Die Organisation ist mit Ihrem __Sponsorkonto__ und dem zugehörigen __Cloud-Temple-Vertrag__ verknüpft. Sie repräsentiert Ihre Entität (Unternehmen, Abteilung, Team, ...), die die Vertragsbeziehung zwischen Cloud Temple und Ihnen vertritt.
-
-### Prinzip einer Organisation
-
-Die Organisation erfüllt vier zentrale Rollen:
-
-- Sie fungiert als __vertragliche Entität__ für die Aspekte der Nachverfolgung und Abrechnung,
-- Sie definiert __die globale Konfiguration des Authentifizierungsmechanismus__: Die Authentifizierung kann lokal auf Konsolenebene oder remote über einen Identitätsföderationsdienst erfolgen,
-- Sie verwaltet alle __Benutzerkonten__,
-- Sie __bündelt die Tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...), die Sie für die Anforderungen Ihrer Cloud-Architektur definieren.
-
-Die Rollen (droits/permissions) der Benutzer sind für jeden in Ihrer Organisation definierten Tenant konfigurierbar. Ein Konto kann beispielsweise autorisiert sein, Ressourcen in einem Tenant zu bestellen, in einem anderen jedoch nicht.
-
-### Authentifizierungsmechanismen
-
-Auf Organisationsebene ermöglicht die Konsole __die Konfiguration des Authentifizierungsmechanismus__. Sie können
-das lokale Authentifizierungs-Repository der Konsole verwenden oder Ihre Organisation mit einem
-Ihrer Authentifizierungs-Repositories anbinden.
-
-Folgende externe Repositories werden unterstützt:
-
-- __OpenID Connect__-kompatible Repositories,
-- __SAML__-kompatible Repositories,
-- __Microsoft ADFS__
-- __Microsoft EntraID__ (Microsoft Azure Active Directory)
-- Amazon AWS Cognito
-- Okta
-- Auth0
-- KeyCloak
-
-:::info[Important]
-Für alle Konten aus einer Identitätsföderation ist eine E-Mail-Adresse erforderlich. Konten, die ohne E-Mail-Adresse erstellt wurden, können sich nicht anmelden und werden möglicherweise automatisch gelöscht.
-:::
-
-## Tenant
-
-Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisations) verfügt über mindestens einen Tenant (als __Standardtenant__ bezeichnet, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Zuständigkeiten oder technische Umfangsbereiche zu segmentieren.
-
-Beispiel:
-
-- Ein Tenant __Produktion__
-- Ein Tenant __Vorproduktion__
-- Ein Tenant __Test__
-- Ein Tenant __Qualifikation__
-
-Es ist jedoch auch möglich, die Struktur nach einer __Anwendungssicht__ oder nach __Kritizität__ zu organisieren:
-
-- Ein Tenant __Anwendung 1__ oder __Kritizität 1__
-- Ein Tenant __Anwendung 2__ oder __Kritizität 2__
-- ...
-
-Die bestellten technischen Ressourcen werden einem bestimmten Tenant zugewiesen und nicht mit anderen Tenants geteilt. Ein Hypervisor-Cluster und die zugehörigen L2-Netzwerke sind beispielsweise nur in einem Tenant verfügbar.
-Bei Netzwerken ist es möglich, __'tenantübergreifende'__ Netzwerke anzufordern, um die Netzwerkkontinuität zwischen den Tenants sicherzustellen.
-
-Die Berechtigungen der Benutzer sind in jedem Tenant festzulegen. Daher muss jede Organisation die gewünschten Tenants sorgfältig planen. Dieser Punkt wird in der Regel im Initialisierungsworkshop zum Zeitpunkt der Erstellung der Organisation behandelt.
-
-Die Architektur kann durch Hinzufügen oder Entfernen von Tenants erweitert werden.
-
-Ein Tenant darf nicht leer sein. Er muss zwingend mit mindestens einer Ressource initialisiert werden:
-
-- Eine Verfügbarkeitszone (AZ, soit un datacenter physique),
-- Ein Rechencluster,
-- Ein Speicherbereich,
-- Ein VLAN-Netzwerk.
-
-| Bestellreferenz                                        | Einheit    | SKU                     |
-|--------------------------------------------------------------|----------|-------------------------|
-| TENANT - *(REGION)* - Aktivierung eines Tenants                 | 1 Tenant | csp:tenant:v1           |
-| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 Tenant | csp:(region):iaas:az:v1 |
-
-### Verwaltung der Eigentümer auf einem Tenant
-
-Jeder Tenant verfügt über mindestens einen Eigentümer, um so eine klare Verantwortung und ein effizientes Ressourcenmanagement zu gewährleisten. Darüber hinaus können mehrere Eigentümer für denselben Tenant angegeben werden, was eine Zusammenarbeit und eine gemeinsame Entscheidungsfindung ermöglicht. Nachfolgend finden Sie wichtige Informationen, die bei der Verwaltung dieser Eigentümer zu beachten sind.
-
-#### Wichtige Informationen zur Verwaltung der Eigentümer
-
-#### 1. Anzahl der Eigentümer
-
-- Es besteht keine technische Begrenzung für die Anzahl der Eigentümer, die auf dem Tenant definiert werden können.
-
-- Die Verwaltungsoberfläche (IHM) zeigt eine Warnung an, wenn mehr als 3 Eigentümer vorhanden sind, um dazu anzuregen, die Anzahl der Eigentümer aus Sicherheitsgründen und für ein optimales Zugriffsmanagement zu begrenzen.
-
-#### 2. Hinzufügen eines neuen Besitzers
-
-- Beim Hinzufügen eines neuen Besitzers kann die Aktualisierung seiner Berechtigungen eine Verzögerung von bis zu 60 Minuten erfordern.
-
-- Diese Propagationszeit ist normal und stellt sicher, dass die Zugriffsrechte auf alle zugehörigen Dienste und Ressourcen korrekt angewendet werden.
-
-#### 2. Berechtigungen eines Besitzers
-
-- Einem Besitzer werden alle Berechtigungen zugewiesen, die mit den auf seinem Tenant aktivierten Produkten verknüpft sind.
-
-- Es ist nicht möglich, die Berechtigungen eines Besitzers zu ändern.
-
-#### 3. Entfernen eines Eigentümers
-
-- Um einen Eigentümer aus dem Tenant zu entfernen, muss der Benutzer eine Anfrage an den Support stellen.
-
-- Dieses Verfahren stellt sicher, dass Änderungen an den Zugriffsrechten auf sichere Weise und gemäß den bewährten Verfahren für das Zugriffsmanagement durchgeführt werden.
-
-### Zugriffsberechtigung für einen Tenant: Zugelassene IPs
-
-Der Zugriff auf die Cloud-Management-Konsole ist streng auf zuvor autorisierte IP-Adressen beschränkt, um den Anforderungen der SecNumCloud-Zertifizierung zu entsprechen. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem der Zugriff nur auf Benutzer aus angegebenen IP-Bereichen ermöglicht wird, wodurch das Risiko unbefugten Zugriffs minimiert und die Cloud-Infrastruktur nach den höchsten Sicherheitsstandards geschützt wird.
-
-Hinweis: *Das Entfernen einer zugelassenen IP-Adresse erfolgt über eine Supportanfrage in der Cloud-Temple-Konsole.*
-
-### Ressourcenverbrauch innerhalb eines Tenants
-
-Es können die innerhalb eines Tenants verbrauchten Cloud-Ressourcen eingesehen werden, was eine detaillierte Übersicht über die Nutzung der bereitgestellten Dienste bietet. Diese Funktion ermöglicht es Benutzern, den Ressourcenverbrauch in Echtzeit zu verfolgen, die am stärksten ausgelasteten Dienste zu identifizieren und die Nutzung bedarfsgerecht zu optimieren.
-
-Klicken Sie im Konsolenmenü auf "Verbrauchsbericht" und wählen Sie den gewünschten Zeitraum aus. Sie können so den Verbrauch der Cloud-Ressourcen im festgelegten Zeitraum detailliert einsehen, was Ihnen die Analyse der Dienstnutzung und die daraus folgende Optimierung Ihrer Verwaltung ermöglicht:
-
-<img src={shivaTenantRessources_01} />
