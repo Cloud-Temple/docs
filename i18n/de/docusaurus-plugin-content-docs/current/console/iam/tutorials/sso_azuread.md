@@ -31,15 +31,25 @@ Die Konfiguration Ihres Microsoft-Verzeichnisses auf Ebene einer Cloud-Temple-Or
 Microsoft EntraID ist seit 2023 der neue Name von Azure Active Directory (Azure AD). Es handelt sich um dasselbe Produkt: Dieses Tutorial gilt gleichermaßen für beide Bezeichnungen.
 :::
 
-:::info[Verwendetes Protokoll]
-Die Föderation mit EntraID erfolgt über __OpenID Connect (OIDC)__. Eine SAML-Konfiguration ist auf Ihrer Seite nicht erforderlich.
-:::
+## Auswahl des Protokolls
+
+Die Föderation mit EntraID lässt sich mit einem der beiden Standardprotokolle umsetzen. Beide bieten ein gleichwertiges Sicherheitsniveau; sie unterscheiden sich vor allem darin, was Sie uns übermitteln müssen und was dauerhaft zu pflegen ist.
+
+| | OpenID Connect | SAML 2.0 |
+|---|---|---|
+| Was Sie uns übermitteln | Zwei Kennungen und ein Secret | Eine öffentliche Metadaten-URL |
+| Ausgetauschtes Secret | Ja, das Client Secret | Keines |
+| Dauerhaft zu pflegen | Das Client Secret (höchstens 24 Monate) | Das Signaturzertifikat (standardmäßig 3 Jahre) |
+
+__Sofern keine besonderen Vorgaben bestehen, empfehlen wir OpenID Connect__: Es ist das Protokoll, das wir standardmäßig einsetzen. Wählen Sie SAML, wenn Ihre internen Richtlinien es vorschreiben oder wenn Ihr Verzeichnis an einen Föderationsdienst angebunden ist, der ausschließlich dieses Protokoll unterstützt.
+
+Geben Sie das gewählte Protokoll bereits beim Öffnen Ihrer Supportanfrage an.
 
 ## Die ausgetauschten Informationen
 
 Die Einrichtung beruht auf einem Austausch in beide Richtungen. Hier die Einzelheiten vorab, damit Sie alles in einem Durchgang vorbereiten können.
 
-### Was Sie uns übermitteln müssen
+### Was Sie uns übermitteln müssen — bei OpenID Connect
 
 | Information | Bezeichnung im Azure-Portal | Wozu sie dient |
 |---|---|---|
@@ -49,6 +59,26 @@ Die Einrichtung beruht auf einem Austausch in beide Richtungen. Hier die Einzelh
 
 Beide Kennungen finden Sie auf der Registerkarte __"Overview"__ Ihrer App-Registrierung; das Secret wird auf der Registerkarte __"Certificates & secrets"__ erstellt.
 
+### Was Sie uns übermitteln müssen — bei SAML 2.0
+
+Im Regelfall genügt eine einzige Information:
+
+| Information | Bezeichnung im Azure-Portal | Wozu sie dient |
+|---|---|---|
+| __URL der Föderationsmetadaten__ | *App Federation Metadata Url* | Daraus leiten wir die Kennung Ihres Verzeichnisses, dessen Endpunkte und dessen Signaturzertifikat ab |
+
+Sie hat folgende Form:
+
+```
+https://login.microsoftonline.com/<directory-tenant-id>/federationmetadata/2007-06/federationmetadata.xml?appid=<application-id>
+```
+
+Sie finden sie unter __"Enterprise applications"__ → Ihre Anwendung → __"Single sign-on"__, Abschnitt *SAML Certificates*. Sie ist öffentlich und enthält kein Secret: Sie darf im Text Ihrer Anfrage stehen.
+
+:::tip[Warum diese URL statt einer Parameterliste]
+Sie fasst sämtliche Parameter Ihres Verzeichnisses in einem einzigen Wert zusammen und erleichtert die Nachverfolgung der Erneuerung Ihres Signaturzertifikats. Falls diese URL aus dem Internet nicht erreichbar ist, übermitteln Sie stattdessen die *Identity provider entity ID*, die *Single Sign-On service URL*, die *Single Logout service URL* sowie das Signaturzertifikat im Format __Certificate (Base64)__.
+:::
+
 :::warning[Übermitteln Sie das Secret niemals im Text einer Anfrage]
 Der Wert des Client Secret ist ein Authentifizierungsmerkmal. Fügen Sie ihn nicht in den Text einer Supportanfrage, in einen Kommentar oder in einen unverschlüsselten Anhang ein: Dort bliebe er dauerhaft einsehbar.
 
@@ -57,15 +87,25 @@ Geben Sie in Ihrer Anfrage an, dass Ihnen das Secret vorliegt, und übermitteln 
 
 ### Was Cloud Temple Ihnen übermittelt
 
-Die __"Redirect URL"__, die für Ihre Organisation spezifisch ist. Sie ist in Ihrer EntraID-App-Registrierung zu hinterlegen (Schritt 3).
+Für Ihre Organisation spezifische Werte, die in Ihrer EntraID-Anwendung zu hinterlegen sind:
+
+| Unsere Bezeichnung | Microsoft-Bezeichnung | Protokoll |
+|---|---|---|
+| Weiterleitungs-URL | *Redirect URL* | OpenID Connect |
+| Weiterleitungs-URL | *Reply URL (Assertion Consumer Service URL)* | SAML 2.0 |
+| Kennung des Dienstanbieters | *Identifier (Entity ID)* | SAML 2.0 |
 
 :::tip[Fordern Sie sie beim Öffnen Ihrer Anfrage an]
-Diese URL hängt von Ihrer Organisation ab und lässt sich nicht erraten. Wenn Sie sie beim Öffnen Ihrer Supportanfrage anfordern, können Sie die gesamte Azure-Konfiguration in einem Durchgang vornehmen, ohne später darauf zurückkommen zu müssen.
+Diese Werte hängen von Ihrer Organisation ab und lassen sich nicht erraten. Wenn Sie sie beim Öffnen Ihrer Supportanfrage anfordern, können Sie die gesamte Azure-Konfiguration in einem Durchgang vornehmen, ohne später darauf zurückkommen zu müssen.
 :::
 
 ## Schritt 1: SSO-Konfiguration auf Seite von Microsoft EntraID
 
-### Registrierung einer neuen Azure-Anwendung (Azure-Portal)
+Folgen Sie dem Abschnitt zum gewählten Protokoll und anschließend dem Abschnitt „Zusätzliche Sicherheitseinstellungen", der für beide gilt.
+
+### Weg über OpenID Connect
+
+#### Registrierung einer neuen Azure-Anwendung (Azure-Portal)
 
 Für die Erstellung der __App Registration__ rufen Sie das Microsoft-Azure-Portal auf und wählen dann in Microsoft EntraID __"ADD > App Registration"__.
 
@@ -83,7 +123,7 @@ Die Angaben __Application (client) ID__ und __Directory (tenant) ID__ werden auf
 
 <img src={ssoEntra_002} />
 
-### Festlegung eines Secret
+#### Festlegung eines Secret
 
 Erstellen Sie auf der Registerkarte "Certificates & secrets" ein neues Secret.
 
@@ -96,10 +136,10 @@ Der Wert des Secret wird nur ein einziges Mal angezeigt, unmittelbar nach seiner
 <img src={ssoAad_005} />
 
 :::caution[Gültigkeit auf 24 Monate begrenzt]
-Das Ablaufdatum des Secret darf 24 Monate nicht überschreiten, auch nicht mit einem benutzerdefinierten Ablaufdatum. __Notieren Sie sich dieses Datum bereits jetzt__: Nach Ablauf funktioniert die SSO-Anmeldung für sämtliche Benutzer nicht mehr. Siehe Abschnitt [Erneuerung des Secret](#erneuerung-des-secret).
+Das Ablaufdatum des Secret darf 24 Monate nicht überschreiten, auch nicht mit einem benutzerdefinierten Ablaufdatum. __Notieren Sie sich dieses Datum bereits jetzt__: Nach Ablauf funktioniert die SSO-Anmeldung für sämtliche Benutzer nicht mehr. Siehe Abschnitt [Pflege der Föderation im Zeitverlauf](#pflege-der-föderation-im-zeitverlauf).
 :::
 
-### Freigabe der von der Konsole verwendeten Informationen
+#### Freigabe der von der Konsole verwendeten Informationen
 
 Die Konsole identifiziert Ihre Benutzer anhand der im Identitätstoken übermittelten Informationen. Nur eine Maßnahme ist Ihrerseits erforderlich: __die E-Mail-Adresse bereitstellen__.
 
@@ -122,6 +162,37 @@ Zur Information: Hier alle von der Konsole genutzten Informationen:
 | `email` | Anmeldeadresse des Benutzers | __Ja__ — als optionaler Claim zu deklarieren (siehe oben) |
 | `oid` | Stabile Zuordnung des Konsolenkontos zur Identität in Ihrem Verzeichnis, auch bei Änderung der E-Mail-Adresse | Keine — wird von EntraID nativ ausgestellt |
 | `given_name`, `family_name` | In der Konsole angezeigter Vor- und Nachname | Keine — im Bereich `profile` enthalten |
+
+### Weg über SAML 2.0
+
+#### Erstellung der Unternehmensanwendung
+
+Rufen Sie in __Microsoft EntraID__ die __"Enterprise applications"__ auf und dann __"New application"__. Wählen Sie __"Create your own application"__, vergeben Sie einen Namen und wählen Sie *Integrate any other application you don't find in the gallery (Non-gallery)*. Bestätigen Sie mit __"Create"__.
+
+#### Konfiguration des einmaligen Anmeldens
+
+Öffnen Sie in Ihrer Anwendung __"Single sign-on"__ und wählen Sie __"SAML"__. Klicken Sie unter __"Basic SAML Configuration"__ auf __"Edit"__ und tragen Sie die von Cloud Temple bereitgestellten Werte ein:
+
+- __Identifier (Entity ID)__;
+- __Reply URL (Assertion Consumer Service URL)__.
+
+Speichern Sie.
+
+#### Attribute und Ansprüche
+
+EntraID stellt die von der Konsole erwarteten Ansprüche standardmäßig aus. Prüfen Sie ihr Vorhandensein unter __"Attributes & Claims"__:
+
+| Anspruch | Verwendung | Maßnahme Ihrerseits |
+|---|---|---|
+| `…/claims/emailaddress` | Anmeldeadresse des Benutzers | Keine — Quelle `user.mail` |
+| `http://schemas.microsoft.com/identity/claims/objectidentifier` | Stabile Zuordnung des Konsolenkontos zur Identität in Ihrem Verzeichnis | Keine |
+| `…/claims/givenname`, `…/claims/surname` | In der Konsole angezeigter Vor- und Nachname | Keine |
+
+:::warning[Namenskennung (NameID): der am häufigsten übersehene Punkt]
+Setzen Sie unter __"Attributes & Claims"__ → __"Unique User Identifier (Name ID)"__ die Quelle auf __user.objectid__ und das Format auf __Persistent__.
+
+Standardmäßig gibt EntraID die E-Mail-Adresse als NameID aus. Ändert sich die Adresse eines Benutzers, würde die Konsole ihn als andere Person behandeln und er verlöre seine Rechte. Die Objektkennung hingegen ändert sich nie.
+:::
 
 ### Zusätzliche Sicherheitseinstellungen (optional, aber empfohlen)
 
@@ -168,17 +239,20 @@ Dieser Teil der Konfiguration wird auf Ebene der Organisation vom Cloud-Temple-T
 Stellen Sie dazu __eine Supportanfrage__ in der Konsole, in der Sie Ihren Wunsch nach einer Microsoft-EntraID-Föderation angeben, und nennen Sie:
 
 - den Namen Ihrer Organisation;
+- __das gewählte Protokoll__: OpenID Connect oder SAML 2.0;
 - den Namen eines Ansprechpartners mit E-Mail-Adresse und Telefonnummer für den Abschluss der Konfiguration;
-- die in Schritt 1 notierte __Application (client) ID__;
-- die in Schritt 1 notierte __Directory (tenant) ID__.
+- __bei OpenID Connect__: die in Schritt 1 notierte __Application (client) ID__ und __Directory (tenant) ID__;
+- __bei SAML 2.0__: die __URL der Föderationsmetadaten__ Ihrer Anwendung.
 
-Übermitteln Sie das __Client Secret__ über den von Ihrem Ansprechpartner genannten sicheren Kanal und nicht im Text der Anfrage.
+Übermitteln Sie bei OpenID Connect das __Client Secret__ über den von Ihrem Ansprechpartner genannten sicheren Kanal und nicht im Text der Anfrage. Bei SAML wird kein Secret ausgetauscht.
 
-Sobald die Konfiguration auf Seite der Konsole abgeschlossen ist, wird der angegebene Ansprechpartner informiert und erhält die zu hinterlegende __"Redirect URL"__.
+Sobald die Konfiguration auf Seite der Konsole abgeschlossen ist, wird der angegebene Ansprechpartner informiert.
 
-## Schritt 3: Hinterlegung der "Redirect URL"
+## Schritt 3: Hinterlegung der "Redirect URL" (OpenID Connect)
 
 Falls Sie die "Redirect URL" bei der Erstellung der Anwendung nicht angegeben haben, fügen Sie sie jetzt hinzu.
+
+Bei SAML 2.0 wurden die entsprechenden URLs bereits in Schritt 1 unter __"Basic SAML Configuration"__ hinterlegt: Fahren Sie direkt mit Schritt 4 fort.
 
 Klicken Sie auf der Startseite der App Registration im Menü "Overview" auf "Add a Redirect URL".
 
@@ -208,9 +282,13 @@ Sobald alle Schritte abgeschlossen sind, können Sie sich über Ihr SSO an Ihrer
 Die Identitätsföderation regelt die __Authentifizierung__, nicht die __Berechtigungen__. Ein Benutzer, der sich zum ersten Mal über SSO anmeldet, verfügt über keinerlei Rechte, solange ein Eigentümer der Organisation ihm keine über die Konsole zugewiesen hat.
 :::
 
-## Erneuerung des Secret
+## Pflege der Föderation im Zeitverlauf
 
-Das Client Secret läuft spätestens 24 Monate nach seiner Erstellung ab. Nach Ablauf funktioniert die SSO-Anmeldung für sämtliche Benutzer nicht mehr. Planen Sie die Erneuerung rechtzeitig:
+Dies ist der wichtigste Punkt: Unabhängig vom Protokoll läuft ein Element ab, und sein Ablauf unterbricht die SSO-Anmeldung __für sämtliche Benutzer__.
+
+### Bei OpenID Connect: das Client Secret
+
+Das Client Secret läuft spätestens 24 Monate nach seiner Erstellung ab. Planen Sie die Erneuerung rechtzeitig:
 
 1. Erstellen Sie unter "Certificates & secrets" ein __neues__ Secret, ohne das alte zu löschen;
 2. übermitteln Sie dessen Wert über den sicheren Kanal an Cloud Temple, indem Sie eine Supportanfrage stellen;
@@ -218,22 +296,31 @@ Das Client Secret läuft spätestens 24 Monate nach seiner Erstellung ab. Nach A
 
 Indem Sie beide Secrets während der Umstellung beibehalten, vermeiden Sie jede Betriebsunterbrechung.
 
+### Bei SAML 2.0: das Signaturzertifikat
+
+Das von EntraID ausgestellte Signaturzertifikat hat eine begrenzte Laufzeit, standardmäßig drei Jahre.
+
+__Informieren Sie uns vor jeder Zertifikatsrotation__ über eine Supportanfrage und halten Sie den von Microsoft vorgesehenen Überlappungszeitraum ein. Falls Sie uns ein Zertifikat als Datei statt der Metadaten-URL übermittelt haben, fügen Sie Ihrer Anfrage das neue Zertifikat bei.
+
 ## Bewährte Vorgehensweisen
 
 - __Steuern Sie den Zugriff über Gruppen__ statt über einzelne Benutzer: Der Zugang oder Abgang einer Person wird dann in Ihrem Verzeichnis geregelt, ohne Eingriff in der Konsole.
 - __Aktivieren Sie die Multi-Faktor-Authentifizierung__ für die Anwendung in Ihren EntraID-Richtlinien für bedingten Zugriff: Sie gilt dann auch für den Zugang zur Konsole.
-- __Richten Sie eine Erinnerung__ vor dem Ablaufdatum des Secret ein.
+- __Richten Sie eine Erinnerung__ vor dem Ablaufdatum des Client Secret bzw. des Signaturzertifikats ein, je nach gewähltem Protokoll.
 - __Behalten Sie mindestens ein lokales Eigentümerkonto__ in Ihrer Cloud-Temple-Organisation außerhalb der Föderation, um bei Nichtverfügbarkeit Ihres Verzeichnisses weiterhin Zugang zu haben.
 
 ## Fehlerbehebung
 
-| Symptom | Wahrscheinliche Ursache |
-|---|---|
-| `AADSTS50011`: Die Redirect-URL stimmt nicht überein | Die in Azure hinterlegte "Redirect URL" weicht von der durch Cloud Temple bereitgestellten ab. Prüfen Sie sie Zeichen für Zeichen, einschließlich eines fehlenden abschließenden `/`. |
-| `AADSTS7000215`: ungültiges Secret | Das Secret ist abgelaufen, oder es wurde die "Secret ID" statt des "Value" übermittelt. |
-| `AADSTS50105`: Benutzer nicht zugewiesen | Die Option "Assignment required" ist aktiv und der Benutzer ist der Anwendung nicht zugewiesen. |
-| Die Anmeldeschaltfläche erscheint nicht auf der Seite | Die Konfiguration ist auf Seite von Cloud Temple noch nicht aktiv. |
-| Der Benutzer wird authentifiziert, die Konsole verweigert jedoch den Zugriff | Der Claim `email` fehlt im Token, oder dem Benutzer wurden keine Rechte zugewiesen. |
+| Symptom | Protokoll | Wahrscheinliche Ursache |
+|---|---|---|
+| `AADSTS50011`: Die Redirect-URL stimmt nicht überein | Beide | Die in Azure hinterlegte URL weicht von der durch Cloud Temple bereitgestellten ab. Prüfen Sie sie Zeichen für Zeichen, einschließlich eines fehlenden abschließenden `/`. |
+| `AADSTS700016`: Anwendung nicht gefunden | SAML 2.0 | Die hinterlegte *Entity ID* stimmt nicht mit der von Cloud Temple bereitgestellten überein. |
+| `AADSTS7000215`: ungültiges Secret | OpenID Connect | Das Secret ist abgelaufen, oder es wurde die "Secret ID" statt des "Value" übermittelt. |
+| `AADSTS50105`: Benutzer nicht zugewiesen | Beide | Die Option "Assignment required" ist aktiv und der Benutzer ist der Anwendung nicht zugewiesen. |
+| Die Anmeldeschaltfläche erscheint nicht auf der Seite | Beide | Die Konfiguration ist auf Seite von Cloud Temple noch nicht aktiv. |
+| Der Benutzer wird authentifiziert, die Konsole verweigert jedoch den Zugriff | Beide | Die E-Mail-Adresse fehlt im Token, oder dem Benutzer wurden keine Rechte zugewiesen. |
+| Der Benutzer erscheint bei jeder Anmeldung als neues Konto | SAML 2.0 | Die NameID ist nicht auf `user.objectid` gesetzt. |
+| Signaturfehler bei der Ankunft in der Konsole | SAML 2.0 | Das Signaturzertifikat wurde auf Azure-Seite erneuert, ohne dass wir informiert wurden. |
 
 ## Support
 
