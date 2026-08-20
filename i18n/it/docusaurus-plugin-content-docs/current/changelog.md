@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Tracciamento delle Modifiche
 
+### 20 Agosto 2026 : Armonizzazione dell'etichetta di maturità dei database gestiti
+
+- **Navigazione — Databases** : Rimozione del badge **Beta** dalle voci **MariaDB Gestito** e **PostgreSQL Gestito** del menu laterale e dalle schede della pagina Databases. Entrambi i servizi mostravano contemporaneamente due etichette di maturità contraddittorie: *Beta* nella navigazione e *Preview* nel titolo delle rispettive pagine prodotto. Viene mantenuto solo il badge **Preview**, come unica fonte di verità sul livello di maturità di questi servizi. Traduzioni disponibili EN/DE/ES/IT.
+
 ### 26 Maggio 2026 : Miglioramento del workflow di traduzione
 
 - **Traduzione (strumentazione)** : Aggiunta delle opzioni `--token`, `--url` e `--model` allo script Python `scripts/translate_py/translate.py`. Il token API può ora essere fornito direttamente da riga di comando, senza dover ricreare il file `.env`. Le opzioni CLI hanno la precedenza sulle variabili d'ambiente.

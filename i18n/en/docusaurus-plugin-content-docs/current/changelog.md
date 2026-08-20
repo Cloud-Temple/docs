@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Change Tracking
 
+### August 20, 2026: Maturity label harmonization for managed databases
+
+- **Navigation — Databases** : Removed the **Beta** badge from the **Managed MariaDB** and **Managed PostgreSQL** sidebar entries and from the cards on the Databases page. Both services were displaying two contradictory maturity labels at once: *Beta* in the navigation, *Preview* on their product page titles. Only the **Preview** badge is kept, as the single source of truth for the maturity level of these services. Translations available in EN/DE/ES/IT.
+
 ### May 26, 2026: Translation Workflow Enhancement
 
 - **Translation (tooling)** : Added `--token`, `--url`, and `--model` options to the Python script `scripts/translate_py/translate.py`. The API token can now be provided directly via the command line, without recreating a `.env` file. CLI options take precedence over environment variables.
