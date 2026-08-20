@@ -9,12 +9,12 @@ Cloud Temple's managed databases relieve you of operational management (backups,
 
 <div class="card-grid">
   <div class="card">
-    <h3>Managed MariaDB <span class="title-beta-badge">(Beta)</span></h3>
+    <h3>Managed MariaDB</h3>
     <p>MariaDB engine on Kubernetes with automatic backups, multi-AZ high availability.</p>
     <a href="./managed_mariadb" class="card-link">Discover Managed MariaDB →</a>
   </div>
   <div class="card">
-    <h3>Managed PostgreSQL <span class="title-beta-badge">(Beta)</span></h3>
+    <h3>Managed PostgreSQL</h3>
     <p>PostgreSQL engine on Kubernetes: StandAlone, Distributed, or Enterprise.</p>
     <a href="./managed_postgresql" class="card-link">Discover Managed PostgreSQL →</a>
   </div>
