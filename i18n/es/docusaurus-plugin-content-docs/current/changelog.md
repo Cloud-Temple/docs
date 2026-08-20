@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Seguimiento de Cambios
 
+### 20 de agosto de 2026: Armonización de la etiqueta de madurez de las bases de datos gestionadas
+
+- **Navegación — Databases** : Eliminación de la insignia **Beta** en las entradas **MariaDB Gestionado** y **PostgreSQL Gestionado** del menú lateral y en las tarjetas de la página Databases. Ambos servicios mostraban simultáneamente dos etiquetas de madurez contradictorias: *Beta* en la navegación y *Preview* en el título de sus páginas de producto. Solo se conserva la insignia **Preview**, como fuente única de verdad sobre el nivel de madurez de estos servicios. Traducciones disponibles EN/DE/ES/IT.
+
 ### 26 de mayo de 2026: Mejora del flujo de trabajo de traducción
 
 - **Traducción (herramientas)** : Adición de las opciones `--token`, `--url` y `--model` al script de Python `scripts/translate_py/translate.py`. El token de API ahora puede proporcionarse directamente desde la línea de comandos, sin necesidad de recrear el archivo `.env`. Las opciones de CLI tienen prioridad sobre las variables de entorno.
