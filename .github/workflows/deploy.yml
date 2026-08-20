@@ -72,7 +72,17 @@ jobs:
 
       - name: Extract Branch Name
         id: extract_branch
-        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        run: |
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          # Un tag Docker n'accepte que [A-Za-z0-9._-], ne peut pas commencer par '.' ou '-'
+          # et fait 128 caracteres au maximum. La convention de branches du depot
+          # (docs/..., fix/..., tech/...) contient des '/' : sans cette normalisation,
+          # buildx echoue avec "invalid reference format".
+          DOCKER_TAG="$(printf '%s' "$BRANCH_NAME" \
+            | sed -e 's/[^A-Za-z0-9._-]/-/g' -e 's/^[.-]/_/' \
+            | cut -c1-128)"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> "$GITHUB_ENV"
+          echo "DOCKER_TAG=$DOCKER_TAG" >> "$GITHUB_ENV"
 
       - name: Log in to DockerHub
         uses: docker/login-action@v4
@@ -87,7 +97,7 @@ jobs:
           file: ./docker/production/Dockerfile.prebuilt
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: cloudtempleinfra/docs:${{ env.BRANCH_NAME }}
+          tags: cloudtempleinfra/docs:${{ env.DOCKER_TAG }}
 
   # Job for the main branch (building and pushing an unversioned Docker image)
   build-main:
