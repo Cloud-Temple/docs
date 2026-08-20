@@ -55,7 +55,7 @@ Un dashboard Grafana è inoltre disponibile per visualizzare i dati di OpenCost.
 
 ## Utilizzo Avanzato: Integrazione con un'IA (Serveur MCP)
 
-Per gli utenti avanzati, OpenCost può essere interrogato direttamente dall'assistente conversazionale Cline (ou autre) grazie al sistema di **MCP (Multi-purpose Co-processor) servers**. Ciò vi consente di automatizzare le query e ottenere i dati sui costi direttamente nelle vostre conversazioni.
+Per gli utenti avanzati, OpenCost può essere interrogato direttamente dall'assistente conversazionale Cline (ou autre) grazie al sistema di **MCP (Model Context Protocol) servers**. Ciò vi consente di automatizzare le query e ottenere i dati sui costi direttamente nelle vostre conversazioni.
 
 ### 1. Configurazione del MCP OpenCost in Cline
 
