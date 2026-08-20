@@ -55,7 +55,7 @@ A Grafana dashboard is also available to visualize OpenCost data. This dashboard
 
 ## Advanced Usage: Integration with an AI (MCP Server)
 
-For advanced users, OpenCost can be directly queried from the Cline conversational assistant (or others) using the **MCP (Multi-purpose Co-processor) servers** system. This allows you to script queries and retrieve cost data directly within your conversations.
+For advanced users, OpenCost can be directly queried from the Cline conversational assistant (or others) using the **MCP (Model Context Protocol) servers** system. This allows you to script queries and retrieve cost data directly within your conversations.
 
 ### 1. Configuring OpenCost MCP in Cline
 

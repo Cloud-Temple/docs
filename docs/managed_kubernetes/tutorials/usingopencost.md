@@ -55,7 +55,7 @@ Un dashboard Grafana est également disponible pour visualiser les données d'Op
 
 ## Utilisation Avancée : Intégration avec une IA (Serveur MCP)
 
-Pour les utilisateurs avancés, OpenCost peut être directement interrogé depuis l'assistant conversationnel Cline (ou autre) grâce au système de **MCP (Multi-purpose Co-processor) servers**. Cela vous permet de scripter des requêtes et d'obtenir des données de coût directement dans vos conversations.
+Pour les utilisateurs avancés, OpenCost peut être directement interrogé depuis l'assistant conversationnel Cline (ou autre) grâce au système de **MCP (Model Context Protocol) servers**. Cela vous permet de scripter des requêtes et d'obtenir des données de coût directement dans vos conversations.
 
 ### 1. Configuration du MCP OpenCost dans Cline
 
@@ -104,7 +104,7 @@ Une fois ce fichier sauvegardé, Cline chargera automatiquement le MCP `opencost
 >Pour interagir avec le MCP en langage naturel, l'IA sous-jacente doit avoir accès à des modèles de langage (LLMs), soit localement (LMStudio, etc), soit via une connexion à des services publics comme GPT-5 ou Gemini, soit en utilisant notre produit **[LLM-as-a-Service](pathname:///llmaas/llmaas)** souveraine.
 
 
-Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requetes en langage natuel sur ce serveur MCP.
+Après configuration, vous pouvez utiliser les outils LLM pour effectuer des requêtes en langage naturel sur ce serveur MCP.
 
 #### Exemple
 

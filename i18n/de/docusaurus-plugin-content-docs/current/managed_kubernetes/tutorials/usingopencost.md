@@ -55,7 +55,7 @@ Ein Grafana-Dashboard ist ebenfalls verfügbar, um die OpenCost-Daten zu visuali
 
 ## Erweiterte Nutzung: Integration mit einer KI (MCP-Server)
 
-Für fortgeschrittene Benutzer kann OpenCost direkt über den Konversationsassistenten Cline (oder andere) abgefragt werden, dank des Systems der **MCP (Multi-purpose Co-processor) servers**. Dies ermöglicht es Ihnen, Abfragen zu skripten und Kostendaten direkt in Ihren Konversationen abzurufen.
+Für fortgeschrittene Benutzer kann OpenCost direkt über den Konversationsassistenten Cline (oder andere) abgefragt werden, dank des Systems der **MCP (Model Context Protocol) servers**. Dies ermöglicht es Ihnen, Abfragen zu skripten und Kostendaten direkt in Ihren Konversationen abzurufen.
 
 ### 1. Konfiguration von MCP OpenCost in Cline
 
