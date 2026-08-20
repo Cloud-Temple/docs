@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 20 Août 2026 : Harmonisation du libellé de maturité des bases de données managées
+
+- **Navigation — Databases** : Suppression du badge **Beta** sur les entrées **MariaDB Managé** et **PostgreSQL Managé** du menu latéral et sur les cartes de la page Databases. Les deux services affichaient simultanément deux libellés de maturité contradictoires : *Beta* dans la navigation, *Preview* sur le titre de leurs pages produit. Seul le badge **Preview** est conservé, comme source unique de vérité sur le niveau de maturité de ces services. Traductions disponibles EN/DE/ES/IT.
+
 ### 15 Juillet 2026 : Précision sur le chiffrement Object Storage
 
 - **Object Storage (Sécurité)** : La section sur le chiffrement des données au repos (D@RE) précise désormais que le service utilise un chiffrement AES 256 bits certifié FIPS 140-3, via la bibliothèque logicielle RSA BSAFE Crypto-J en version 7.x.

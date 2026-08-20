@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Änderungsverlauf
 
+### 20 August 2026 : Harmonisierung der Reifegrad-Kennzeichnung für verwaltete Datenbanken
+
+- **Navigation — Databases** : Entfernung des **Beta**-Badges bei den Einträgen **Verwaltete MariaDB** und **Verwaltete PostgreSQL** in der Seitennavigation sowie auf den Karten der Databases-Seite. Beide Dienste zeigten gleichzeitig zwei widersprüchliche Reifegrad-Kennzeichnungen: *Beta* in der Navigation und *Preview* im Titel ihrer Produktseiten. Nur das **Preview**-Badge bleibt erhalten und dient als einzige verbindliche Angabe zum Reifegrad dieser Dienste. Übersetzungen verfügbar: EN/DE/ES/IT.
+
 ### 26 Mai 2026 : Verbesserung des Übersetzungs-Workflows
 
 - **Übersetzung (Tooling)** : Hinzufügen der Optionen `--token`, `--url` und `--model` zum Python-Skript `scripts/translate_py/translate.py`. Das API-Token kann nun direkt über die Befehlszeile angegeben werden, ohne eine `.env`-Datei neu erstellen zu müssen. CLI-Optionen haben Vorrang vor Umgebungsvariablen.
