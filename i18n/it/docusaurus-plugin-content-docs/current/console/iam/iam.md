@@ -21,6 +21,6 @@ Consente di amministrare account locali supportando al contempo un'integrazione 
     <div class="card">
     <h3>Tutorial</h3>
     <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./iam/tutorials/sso_aad" class="card-link">Scopri i tutorial &rarr;</a>
+    <a href="../category/tutoriels-iam" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>
