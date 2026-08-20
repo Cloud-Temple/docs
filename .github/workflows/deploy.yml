@@ -19,11 +19,11 @@ jobs:
       id-token: write
     environment: dev # Ensure this matches your GitHub environment name
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: yarn
@@ -37,13 +37,13 @@ jobs:
         run: yarn build
 
       - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: build
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # Job for feature branches (building and pushing an unversioned Docker image)
   build-branch:
@@ -51,9 +51,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/dev' && !startsWith(github.ref, 'refs/tags/')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: yarn
@@ -68,26 +68,36 @@ jobs:
         run: yarn build
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v4
 
       - name: Extract Branch Name
         id: extract_branch
-        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        run: |
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          # Un tag Docker n'accepte que [A-Za-z0-9._-], ne peut pas commencer par '.' ou '-'
+          # et fait 128 caracteres au maximum. La convention de branches du depot
+          # (docs/..., fix/..., tech/...) contient des '/' : sans cette normalisation,
+          # buildx echoue avec "invalid reference format".
+          DOCKER_TAG="$(printf '%s' "$BRANCH_NAME" \
+            | sed -e 's/[^A-Za-z0-9._-]/-/g' -e 's/^[.-]/_/' \
+            | cut -c1-128)"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> "$GITHUB_ENV"
+          echo "DOCKER_TAG=$DOCKER_TAG" >> "$GITHUB_ENV"
 
       - name: Log in to DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./docker/production/Dockerfile.prebuilt
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: cloudtempleinfra/docs:${{ env.BRANCH_NAME }}
+          tags: cloudtempleinfra/docs:${{ env.DOCKER_TAG }}
 
   # Job for the main branch (building and pushing an unversioned Docker image)
   build-main:
@@ -95,9 +105,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: yarn
@@ -112,16 +122,16 @@ jobs:
         run: yarn build
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v4
 
       - name: Log in to DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./docker/production/Dockerfile.prebuilt
@@ -135,9 +145,9 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: yarn
@@ -156,16 +166,16 @@ jobs:
         run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v4
 
       - name: Log in to DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./docker/production/Dockerfile.prebuilt
