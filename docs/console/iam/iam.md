@@ -21,6 +21,6 @@ Il permet d’administrer des comptes locaux tout en supportant une hybridation 
     <div class="card">
     <h3>Tutorials</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="./iam/tutorials/sso_aad" class="card-link">Découvrir les tutoriels &rarr;</a>
+    <a href="./iam/tutorials/sso_azuread" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>

@@ -21,6 +21,6 @@ Permite administrar cuentas locales al tiempo que admite la hibridación con con
     <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="./iam/tutorials/sso_aad" class="card-link">Descubrir los tutoriales &rarr;</a>
+    <a href="./iam/tutorials/sso_azuread" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>

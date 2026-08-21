@@ -21,6 +21,6 @@ Es ermöglicht die Verwaltung lokaler Konten und unterstützt gleichzeitig die H
     <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste anhand detaillierter Anleitungen.</p>
-    <a href="./iam/tutorials/sso_aad" class="card-link">Tutorials entdecken &rarr;</a>
+    <a href="./iam/tutorials/sso_azuread" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>

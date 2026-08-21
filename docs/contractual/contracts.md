@@ -76,7 +76,7 @@ Les conventions de service définissent le cadre contractuel de fourniture des s
 Les SLA définissent les engagements de disponibilité, les méthodes de mesure, les exclusions et les crédits de service applicables en cas de non-respect.
 
 <div class="book-grid">
-  <a class="book-card" href="./contractual/vm-instances/sla">
+  <a class="book-card" href="./vm-instances/sla">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -85,7 +85,7 @@ Les SLA définissent les engagements de disponibilité, les méthodes de mesure,
       <div class="book-card-cta">Consulter le document →</div>
     </div>
   </a>
-  <a class="book-card" href="./contractual/network/sla-vpc">
+  <a class="book-card" href="./network/sla-vpc">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
