@@ -110,4 +110,4 @@ Le porte di connettività esterna vengono consegnate su preventivo dopo la valid
 
 - 📖 [Concetti Private Backbone](./concepts) — Capire VPLS, VLAN tagging, BGP
 - 🔧 [Tutorial](./tutorials) — Configurare FortiGate o pfSense con BGP
-- 🌐 [Documentazione VPC](../vpc/vpc) — Per un approccio di rete cloud-native
+- 🌐 [Documentazione VPC](../vpc) — Per un approccio di rete cloud-native
