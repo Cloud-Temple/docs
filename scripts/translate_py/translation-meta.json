@@ -43,10 +43,7 @@
       "it": "b52ad8a4ecffb0dddf70c9b6cefd156e032ba71942c24b0b5d26253b8a82f316"
     },
     "changelog_produits.md": {
-      "en": "0639e259b6d1d05d0b13fabbd35ad14d5bfe4b4e24f8ce7323ecd024ac5b896b",
-      "de": "0639e259b6d1d05d0b13fabbd35ad14d5bfe4b4e24f8ce7323ecd024ac5b896b",
-      "es": "0639e259b6d1d05d0b13fabbd35ad14d5bfe4b4e24f8ce7323ecd024ac5b896b",
-      "it": "0639e259b6d1d05d0b13fabbd35ad14d5bfe4b4e24f8ce7323ecd024ac5b896b"
+      "en": "3afb94d073f0af5da99e4fc3df9a80f9dc9e27ee1144b7fc9a81047e6ff381fb"
     },
     "compute_overview.md": {
       "en": "5e40ef26288ad3029a528496323d15b2bcc534408f885b47eaf79cd00336db01",
@@ -949,6 +946,6 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     }
   },
-  "last_update": "2026-07-27T11:37:41.186879",
+  "last_update": "2026-08-21T10:54:58.528873",
   "version": "2.0"
 }
