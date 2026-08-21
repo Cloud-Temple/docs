@@ -110,4 +110,4 @@ Externe Konnektivitätsports werden auf Angebot nach Validierung der Serviceanfr
 
 - 📖 [Private Backbone Konzepte](./concepts) — VPLS, VLAN-Tagging, BGP verstehen
 - 🔧 [Tutorials](./tutorials) — FortiGate oder pfSense mit BGP konfigurieren
-- 🌐 [VPC-Dokumentation](../vpc/vpc) — Für einen cloud-nativen Netzwerkansatz
+- 🌐 [VPC-Dokumentation](../vpc) — Für einen cloud-nativen Netzwerkansatz

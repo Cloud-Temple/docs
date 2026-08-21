@@ -1,0 +1,469 @@
+{
+  "_lisez_moi": [
+    "Calque éditorial du changelog produits, appliqué par scripts/extract_changelog.py.",
+    "Les textes de maj.js sont rédigés par les équipes de développement ; ce fichier porte",
+    "leur transposition en langage produit pour la documentation publique client.",
+    "",
+    "Clé d'un override : « <version>|<tag>|<sha1 des 12 premiers caractères du texte FR source> ».",
+    "Si le texte source change dans maj.js, la clé ne correspond plus et la génération",
+    "ÉCHOUE : cela force à revoir la réécriture au lieu de publier une formulation périmée.",
+    "",
+    "Sections :",
+    "  overrides : réécriture d'une entrée existante ({fr, en}), ou exclusion ({exclude: true}).",
+    "  additions : entrée rattachée à une version mais absente de maj.js.",
+    "  dates     : correction d'une date manifestement fausse dans maj.js."
+  ],
+  "overrides": {
+    "4.38.0|VMI|0db36ba986c4": {
+      "fr": "Le tableau de bord affiche désormais l'utilisation des quotas VM Instances",
+      "en": "The dashboard now displays VM Instances quota usage"
+    },
+    "4.38.0|VMI|9f003c2e8d42": {
+      "fr": "Une nouvelle page présente la liste des VM Instances",
+      "en": "A new page presents the list of VM Instances"
+    },
+    "4.38.0|VMI|a8e8f2081a9b": {
+      "fr": "Vous pouvez désormais créer une nouvelle instance",
+      "en": "You can now create a new instance"
+    },
+    "4.38.0|VMI|7f33cf3f241d": {
+      "fr": "Vous pouvez désormais consulter et gérer les disques, les adaptateurs réseau et les snapshots d'une instance",
+      "en": "You can now view and manage the disks, network adapters and snapshots of an instance"
+    },
+    "4.38.0|VMI|0d88dfdeed33": {
+      "fr": "Vous pouvez désormais mettre à jour les capacités d'une instance et modifier son statut",
+      "en": "You can now update an instance's capacity and change its status"
+    },
+    "4.38.0|VMI|05c43adc5500": {
+      "fr": "Vous pouvez désormais accéder à la console d'une instance",
+      "en": "You can now access an instance's console"
+    },
+    "4.38.1|VMI|b6ceda399798": {
+      "fr": "Les réseaux proposés sont désormais filtrés à la création d'une instance comme à la modification d'un adaptateur réseau",
+      "en": "The networks offered are now filtered when creating an instance and when editing a network adapter"
+    },
+    "4.39.0|VMI|c70042d11293": {
+      "fr": "La liste des VM Instances peut désormais être exportée au format CSV",
+      "en": "The VM Instances list can now be exported in CSV format"
+    },
+    "4.39.0|VMI|1850c47788e1": {
+      "fr": "L'affichage de la fréquence d'une politique de sauvegarde a été revu",
+      "en": "The display of a backup policy frequency has been revised"
+    },
+    "4.43.0|VMI|f966b8e160be": {
+      "fr": "Le détail d'une instance s'affiche dans une nouvelle vue",
+      "en": "Instance details are now shown in a new view"
+    },
+    "4.43.0|VMI|0c360bba4823": {
+      "fr": "Le bouton « Lancer une sauvegarde maintenant » est désormais désactivé lorsque la sauvegarde n'est pas disponible",
+      "en": "The « Run backup now » button is now disabled when the backup is unavailable"
+    },
+    "4.44.0|VMI|fe6566f522af": {
+      "fr": "Les tailles de disque n'acceptent plus de valeurs décimales, à la création d'une instance comme à l'ajout ou à l'extension d'un disque",
+      "en": "Disk sizes no longer accept decimal values, when creating an instance as well as when adding or extending a disk"
+    },
+    "4.44.0|VMI|447eca7c470e": {
+      "fr": "Les indicateurs de traitement des instances et de leurs ressources sont désormais correctement rétablis après un rafraîchissement de la page",
+      "en": "The processing indicators for instances and their resources are now correctly restored after a page refresh"
+    },
+    "4.44.2|VMI|059be3e4cd69": {
+      "fr": "Le type de réseau (backbone privé) est désormais affiché sur les adaptateurs réseau d'une instance, y compris sans la fonctionnalité VPC",
+      "en": "The network type (private backbone) is now shown on an instance's network adapters, including without the VPC feature"
+    },
+    "4.45.0|VMI|a330371b6415": {
+      "fr": "Les instances affichent désormais un statut explicite (sauvegarde, snapshot ou restauration en cours) pendant une opération bloquante",
+      "en": "Instances now show an explicit status (backup, snapshot or restore in progress) during a blocking operation"
+    },
+    "4.45.0|VMI|b05e2160383a": {
+      "fr": "Les métriques d'usage instantané (CPU, RAM, stockage) sont désormais affichées pour chaque instance",
+      "en": "Instant usage metrics (CPU, RAM, storage) are now displayed for each instance"
+    },
+    "4.45.0|VMI|50e76dd7076e": {
+      "fr": "L'unicité du nom est désormais contrôlée à la création comme à la restauration d'une instance",
+      "en": "Name uniqueness is now checked when creating and when restoring an instance"
+    },
+    "4.45.5|VMI|3d89565516fe": {
+      "fr": "La création d'une instance repose désormais sur la sélection d'une image système, qui remplace les modèles",
+      "en": "Creating an instance is now based on selecting a system image, which replaces templates"
+    },
+    "4.46.0|VMI|b10dee952b73": {
+      "fr": "L'adresse IP publique est désormais affichée dans la liste des adaptateurs réseau d'une instance raccordée à un VPC",
+      "en": "The public IP address is now displayed in the network adapter list of an instance connected to a VPC"
+    },
+    "4.46.0|VMI|ca5f9bbbb830": {
+      "fr": "Un onglet « Santé » est désormais disponible dans le détail d'une instance, accessible depuis la liste",
+      "en": "A « Health » tab is now available in the instance details, accessible from the list"
+    },
+    "4.47.0|VMI|7bac0125c66b": {
+      "fr": "Le coût estimé (horaire) est désormais affiché lors de la création d'une instance, avec le détail par poste (vCPU, RAM, disques)",
+      "en": "The estimated (hourly) cost is now displayed when creating an instance, with a breakdown by item (vCPU, RAM, disks)"
+    },
+    "4.38.0|OpenIaasCMP|90074778be96": {
+      "fr": "Vous pouvez désormais basculer l'affichage de la page catalogue entre grille et tableau",
+      "en": "You can now switch the catalog page display between grid and table"
+    },
+    "4.38.0|OpenIaasCMP|433de93711a9": {
+      "fr": "L'étape de sélection d'une image Marketplace lors du déploiement d'une machine virtuelle a été mise à jour",
+      "en": "The Marketplace image selection step when deploying a virtual machine has been updated"
+    },
+    "4.39.0|OpenIaasCMP|6c196bbaba14": {
+      "fr": "Les disques existants sont désormais affichés lors de l'ajout d'un nouveau disque",
+      "en": "Existing disks are now displayed when adding a new disk"
+    },
+    "4.39.1|OpenIaasCMP|dc506bc42cce": {
+      "fr": "Les règles de nommage des snapshots de machine virtuelle ont été modifiées",
+      "en": "The naming rules for virtual machine snapshots have been changed"
+    },
+    "4.40.0|OpenIaasCMP|ccc10241fb4b": {
+      "fr": "La valeur par défaut de l'étape CloudInit a été mise à jour pour les déploiements OpenIaaS depuis la Marketplace",
+      "en": "The default value of the CloudInit step has been updated for OpenIaaS deployments from the Marketplace"
+    },
+    "4.40.0|OpenIaasCMP|8e770b66da10": {
+      "fr": "L'envoi de caractères spéciaux depuis le presse-papier de la console d'une machine virtuelle a été amélioré",
+      "en": "Sending special characters from the clipboard of a virtual machine console has been improved"
+    },
+    "4.41.0|OpenIaasCMP|bb0964531b79": {
+      "fr": "Lors de l'ajout d'un disque existant à une machine virtuelle, l'UUID du disque est désormais affiché lorsque plusieurs disques portent le même nom",
+      "en": "When adding an existing disk to a virtual machine, the disk UUID is now displayed when several disks share the same name"
+    },
+    "4.41.0|OpenIaasINF|9bf5295d7ca1": {
+      "fr": "Un avertissement est désormais affiché lors de la demande de mise à jour de l'hôte maître d'un pool",
+      "en": "A warning is now displayed when requesting an update of a pool's master host"
+    },
+    "4.43.0|OpenIaasCMP|65b3b3e305a3": {
+      "fr": "Une nouvelle vue de détail est disponible pour les machines virtuelles",
+      "en": "A new details view is available for virtual machines"
+    },
+    "4.43.0|OpenIaasCMP|42b7b6f59726": {
+      "fr": "Vous pouvez désormais filtrer la liste des machines virtuelles par zone de disponibilité (AZ)",
+      "en": "You can now filter the virtual machines list by availability zone (AZ)"
+    },
+    "4.43.0|OpenIaasINF|92d03afd630d": {
+      "fr": "La page d'un Storage Repository affiche désormais la date de prise du snapshot d'un disque",
+      "en": "The Storage Repository page now displays the date a disk snapshot was taken"
+    },
+    "4.44.0|OpenIaasCMP|79027148ffdf": {
+      "fr": "Le suivi de l'envoi des fichiers ISO et XVA est amélioré et il est désormais possible d'annuler un envoi en cours",
+      "en": "Tracking of ISO and XVA file uploads has been improved, and it is now possible to cancel an upload in progress"
+    },
+    "4.45.0|OpenIaasCMP|a330371b6415": {
+      "fr": "Pendant une opération bloquante, les machines virtuelles affichent désormais un statut explicite (sauvegarde, snapshot ou restauration en cours)",
+      "en": "During a blocking operation, virtual machines now display an explicit status (backup, snapshot or restore in progress)"
+    },
+    "4.45.0|OpenIaasCMP|18663a183c05": {
+      "fr": "Le détail d'une machine virtuelle présente désormais un résumé d'usage (CPU, RAM, stockage)",
+      "en": "The virtual machine details now include a usage summary (CPU, RAM, storage)"
+    },
+    "4.45.3|OpenIaasCMP|a4addba60f0d": {
+      "fr": "Lors du déploiement d'une machine virtuelle, un message « Aucun modèle disponible » est désormais affiché lorsque le catalogue est vide",
+      "en": "When deploying a virtual machine, a \"No template available\" message is now displayed when the catalog is empty"
+    },
+    "4.45.4|OpenIaasCMP|fd9c1cbc43ae": {
+      "fr": "Lors de la configuration des cœurs par socket d'une machine virtuelle OpenIaaS, la topologie processeur (nombre de sockets et cœurs par socket) est désormais affichée explicitement",
+      "en": "When configuring the cores per socket of an OpenIaaS virtual machine, the CPU topology (number of sockets and cores per socket) is now displayed explicitly"
+    },
+    "4.46.0|OpenIaasCMP|b10dee952b73": {
+      "fr": "La liste des interfaces réseau d'une machine virtuelle raccordée à un VPC affiche désormais l'adresse IP publique",
+      "en": "The network interface list of a virtual machine connected to a VPC now displays the public IP address"
+    },
+    "4.46.0|OpenIaasCMP|ca5f9bbbb830": {
+      "fr": "Un onglet « Santé » est désormais disponible dans le détail d'une machine virtuelle ouvert depuis la liste",
+      "en": "A \"Health\" tab is now available in the virtual machine details opened from the list"
+    },
+    "4.38.0|CMP|433de93711a9": {
+      "fr": "Lors du déploiement d'une machine virtuelle, l'étape de sélection d'une image du Marketplace a été revue",
+      "en": "When deploying a virtual machine, the Marketplace image selection step has been revised"
+    },
+    "4.39.0|CMP|6c196bbaba14": {
+      "fr": "Les disques existants sont désormais affichés lors de l'ajout d'un nouveau disque",
+      "en": "Existing disks are now displayed when adding a new disk"
+    },
+    "4.39.0|CMP|2399d8aeac04": {
+      "fr": "Lors du déplacement (vMotion) d'une machine virtuelle en mode « ressource de calcul uniquement », il est désormais possible de choisir un cluster",
+      "en": "When moving (vMotion) a virtual machine in \"compute resource only\" mode, it is now possible to choose a cluster"
+    },
+    "4.39.0|BM|e82c888e75a2": {
+      "fr": "La sélection des réseaux est désormais obligatoire lors de la propagation d'un réseau sur un Bare Metal",
+      "en": "Network selection is now mandatory when propagating a network on a Bare Metal"
+    },
+    "4.39.1|BM|bbc49174898a": {
+      "fr": "Vous pouvez désormais modifier la description d'une lame",
+      "en": "You can now edit a blade's description"
+    },
+    "4.40.0|CMP|2d400e21be3e": {
+      "fr": "Les fonctionnalités de la bibliothèque de contenu public ont été retirées",
+      "en": "The public content library features have been removed"
+    },
+    "4.41.0|INF|2a0aa3720fd5": {
+      "fr": "Les messages relatifs aux stocks sont désormais plus précis lors de la commande d'hyperviseurs ou de l'augmentation de la RAM d'un cluster",
+      "en": "Stock-related messages are now more precise when ordering hypervisors or increasing a cluster's RAM"
+    },
+    "4.43.0|CMP|65b3b3e305a3": {
+      "fr": "Le détail d'une machine virtuelle s'affiche désormais dans une nouvelle vue",
+      "en": "Virtual machine details are now shown in a new view"
+    },
+    "4.43.0|CMP|29c2be3ebfea": {
+      "fr": "Lors de la modification à chaud, la cohérence entre CPU et cœurs par socket est contrôlée : des avertissements sont affichés et les valeurs invalides ne sont pas acceptées",
+      "en": "During a hot edit, consistency between CPU and cores per socket is checked: warnings are displayed and invalid values are not accepted"
+    },
+    "4.43.0|INF|0e199595770e": {
+      "fr": "Vous pouvez désormais demander la suppression d'un environnement IaaS",
+      "en": "You can now request the deletion of an IaaS environment"
+    },
+    "4.44.0|CMP|772eaf1d68a5": {
+      "fr": "Le suivi de l'envoi des fichiers ISO et OVF a été amélioré et il est désormais possible d'annuler un envoi en cours",
+      "en": "Tracking of ISO and OVF file uploads has been improved, and an ongoing upload can now be cancelled"
+    },
+    "4.45.0|CMP|a330371b6415": {
+      "fr": "Pendant une opération bloquante, les machines virtuelles affichent désormais un statut explicite : sauvegarde, snapshot ou restauration en cours",
+      "en": "During a blocking operation, virtual machines now display an explicit status: backup, snapshot or restore in progress"
+    },
+    "4.45.0|CMP|ea93ff8a5dcd": {
+      "fr": "L'édition du CPU s'adapte désormais à l'option d'ajout de CPU à chaud (CPU hot add) et à l'état de la machine virtuelle",
+      "en": "CPU editing now adapts to the CPU hot add option and to the virtual machine state"
+    },
+    "4.45.3|CMP|a4addba60f0d": {
+      "fr": "Lors du déploiement d'une machine virtuelle, un message « Aucun modèle disponible » s'affiche désormais lorsque le catalogue est vide",
+      "en": "When deploying a virtual machine, a \"No template available\" message is now displayed when the catalog is empty"
+    },
+    "4.46.0|CMP|b10dee952b73": {
+      "fr": "L'adresse IP publique est désormais affichée dans la liste des interfaces réseau d'une machine virtuelle raccordée à un VPC",
+      "en": "The public IP address is now displayed in the network interface list of a virtual machine connected to a VPC"
+    },
+    "4.46.0|CMP|ca5f9bbbb830": {
+      "fr": "Un onglet « Santé » est désormais disponible dans le détail d'une machine virtuelle, accessible depuis la liste",
+      "en": "A \"Health\" tab is now available in the virtual machine details, accessible from the list"
+    },
+    "4.46.0|INF|73eea6368106": {
+      "fr": "Vous pouvez désormais commander une réplication VMware entre zones de disponibilité",
+      "en": "You can now order VMware replication between availability zones"
+    },
+    "4.47.0|CMP|cc1e819f02b8": {
+      "fr": "Lors du déploiement d'une machine virtuelle, seuls les éléments déployables du catalogue (OVF et modèles de machine virtuelle) sont désormais proposés",
+      "en": "When deploying a virtual machine, only deployable catalog items (OVF files and virtual machine templates) are now offered"
+    },
+    "4.39.1|NET|dfd41c2997e7": {
+      "fr": "Vous pouvez désormais modifier l'enregistrement PTR d'une adresse IP d'interconnexion",
+      "en": "You can now edit the PTR record of an interconnection IP address"
+    },
+    "4.39.2|NET|bfd14dc30e60": {
+      "fr": "Vous pouvez désormais supprimer l'enregistrement PTR d'une adresse IP publique ou d'une adresse IP d'interconnexion",
+      "en": "You can now delete the PTR record of a public IP address or an interconnection IP address"
+    },
+    "4.40.0|NET|6d1fd1fd45af": {
+      "fr": "Vous pouvez désormais supprimer la description d'une adresse IP",
+      "en": "You can now delete the description of an IP address"
+    },
+    "4.40.0|VPC|e99a8761ad72": {
+      "fr": "La description d'une IP flottante VPC est désormais affichée",
+      "en": "The description of a VPC floating IP is now displayed"
+    },
+    "4.40.0|VPC|6f68d181f771": {
+      "fr": "Vous pouvez désormais modifier la description d'une IP flottante VPC",
+      "en": "You can now edit the description of a VPC floating IP"
+    },
+    "4.40.0|NET|0c62054031f6": {
+      "fr": "Vous pouvez désormais renseigner le champ `description` lors de la création d'un réseau virtuel",
+      "en": "You can now fill in the `description` field when creating a virtual network"
+    },
+    "4.40.0|NET|5c2a6172e38d": {
+      "fr": "Vous pouvez désormais renseigner le champ `description` lors de la modification d'un réseau virtuel",
+      "en": "You can now fill in the `description` field when modifying a virtual network"
+    },
+    "4.41.0|VPC|245fbbe7259f": {
+      "fr": "La commande d'un VPC requiert désormais qu'une zone de disponibilité OpenIaaS soit déployée",
+      "en": "Ordering a VPC now requires an OpenIaaS availability zone to be deployed"
+    },
+    "4.43.0|VPC|a13e6d5d9720": {
+      "fr": "La description de l'adresse IP publique est désormais affichée lors de son association à un réseau privé",
+      "en": "The description of the public IP address is now displayed when associating it with a private network"
+    },
+    "4.44.0|VPC|467affbf09b7": {
+      "fr": "Depuis la carte réseau d'une machine virtuelle rattachée à un réseau VPC, vous accédez désormais directement au VPC concerné (VMware, OpenIaaS et VM Instances)",
+      "en": "From the network adapter of a virtual machine attached to a VPC network, you now go directly to the related VPC (VMware, OpenIaaS and VM Instances)"
+    },
+    "4.44.0|VPC|e18449a026e1": {
+      "fr": "Certaines commandes VPC peuvent désormais être passées en parallèle : ajout d'une passerelle pendant la création d'un réseau privé (et inversement), et plusieurs suppressions simultanées de réseaux privés",
+      "en": "Some VPC orders can now be placed in parallel: adding a gateway while a private network is being created (and vice versa), and several simultaneous private network deletions"
+    },
+    "4.45.0|NET|4f955d512c1a": {
+      "fr": "Lors d'une commande comportant une étape de propagation, les nouveaux réseaux ne sont créés qu'à la validation finale de la commande",
+      "en": "In an order that includes a propagation step, new networks are created only upon final confirmation of the order"
+    },
+    "4.47.0|VPC|01daa13b93bd": {
+      "fr": "Lors de la commande d'un nouveau VPC, vous pouvez désormais choisir un déploiement sur un environnement dédié (votre infrastructure OpenIaaS) ou sur un environnement mutualisé (sous réserve d'une souscription au produit VM Instances)",
+      "en": "When ordering a new VPC, you can now choose to deploy it in a dedicated environment (your own OpenIaaS infrastructure) or in a shared environment (subject to a VM Instances subscription)"
+    },
+    "4.40.0|GEN|0fbd6cd5fecb": {
+      "fr": "Un parcours d'accueil interactif est désormais disponible",
+      "en": "An interactive welcome tour is now available"
+    },
+    "4.40.0|TICKET|61e0dcb16955": {
+      "fr": "Les fonctionnalités d'infogérance ont été retirées des tickets de support",
+      "en": "Managed services features have been removed from support tickets"
+    },
+    "4.40.0|ORG|25787882e6d5": {
+      "fr": "Le gestionnaire de coûts est désormais disponible dans la vue organisation",
+      "en": "The cost manager is now available in the organization view"
+    },
+    "4.40.0|ORG|6b67f5352d9d": {
+      "fr": "La vue organisation bénéficie désormais d'un affichage dédié",
+      "en": "The organization view now has a dedicated display"
+    },
+    "4.40.0|SUPPORT|bbd7a3bfb8d5": {
+      "fr": "Les plans et les contacts de support ont été mis à jour",
+      "en": "Support plans and contacts have been updated"
+    },
+    "4.42.0|GEN|d5eeb5a54897": {
+      "fr": "La section « Confidentialité » a été mise à jour",
+      "en": "The \"Privacy\" section has been updated"
+    },
+    "4.43.0|GEN|097ca3b63bd4": {
+      "fr": "Les sélecteurs de réseaux distinguent désormais visuellement les réseaux VPC et Backbone privé",
+      "en": "Network selectors now visually distinguish VPC and Private Backbone networks"
+    },
+    "4.43.0|GEN|1ff9d63f029b": {
+      "fr": "Un tutoriel interactif est désormais disponible sur la page Utilisateurs",
+      "en": "An interactive tutorial is now available on the Users page"
+    },
+    "4.43.0|ACT|89b5a72927a2": {
+      "fr": "Vous pouvez désormais consulter le détail d'une activité en dépliant sa ligne dans les listes Récents et Archivés",
+      "en": "You can now view the details of an activity by expanding its row in the Recent and Archived lists"
+    },
+    "4.43.0|ACT|f12b0e0afd37": {
+      "fr": "Chaque activité dispose désormais d'une page de détail dédiée, accessible par lien direct",
+      "en": "Each activity now has a dedicated details page, accessible via a direct link"
+    },
+    "4.43.0|ACT|9428dba35ecc": {
+      "fr": "Le détail d'une activité est désormais accessible depuis les notifications de succès et d'échec",
+      "en": "Activity details are now accessible from success and failure notifications"
+    },
+    "4.43.0|ACT|0c2c40d21f87": {
+      "fr": "Vous pouvez désormais consulter le JSON complet d'une activité, le copier ou le télécharger",
+      "en": "You can now view the full JSON of an activity, copy it or download it"
+    },
+    "4.43.0|ACT|40a2050b3275": {
+      "fr": "La liste des activités archivées peut désormais être triée par date de création",
+      "en": "The archived activities list can now be sorted by creation date"
+    },
+    "4.44.1|GEN|37dd4921b929": {
+      "fr": "Améliorations techniques mineures",
+      "en": "Minor technical improvements"
+    },
+    "4.45.2|GEN|37dd4921b929": {
+      "fr": "Améliorations techniques mineures",
+      "en": "Minor technical improvements"
+    },
+    "4.46.0|ORG|3924989bc1ec": {
+      "fr": "Vous pouvez désormais créer un tenant directement depuis la page Tenants, en sélectionnant les produits associés",
+      "en": "You can now create a tenant directly from the Tenants page, selecting the associated products"
+    },
+    "4.46.0|ACT|b383d6bde67f": {
+      "fr": "Les journaux d'activité peuvent désormais être filtrés par module",
+      "en": "Activity logs can now be filtered by module"
+    },
+    "4.47.0|GEN|782bcd870079": {
+      "fr": "La documentation Swagger du module Commandes est désormais disponible",
+      "en": "The Swagger documentation for the Orders module is now available"
+    },
+    "4.38.0|AI|552246d6c3d8": {
+      "fr": "L'affichage des prix dans la vue de consommation et le formulaire de rechargement de crédit ont été mis à jour",
+      "en": "The price display in the consumption view and the credit top-up form have been updated"
+    },
+    "4.38.0|CM|dc9b34449561": {
+      "fr": "L'interface du gestionnaire des coûts a été améliorée",
+      "en": "The cost manager interface has been improved"
+    },
+    "4.38.0|CM|f7c968b40450": {
+      "fr": "L'unité affichée dans les graphiques de consommation a été mise à jour",
+      "en": "The unit displayed in consumption graphs has been updated"
+    },
+    "4.40.0|ORDER|f459adb5647a": {
+      "fr": "L'étape réseau n'apparaît plus dans les commandes lorsque seul le produit VPC est activé",
+      "en": "The network step no longer appears in orders when only the VPC product is enabled"
+    },
+    "4.41.1|ORDER|75b1f5aa5dc0": {
+      "fr": "Le maximum disponible lors de la commande d'un Block Storage a été mis à jour",
+      "en": "The available maximum when ordering a Block Storage has been updated"
+    },
+    "4.42.0|OS|e319ef128360": {
+      "fr": "La disponibilité du certificat TLS wildcard pour l'accès S3 en host-style est désormais indiquée",
+      "en": "The availability of the wildcard TLS certificate for host-style S3 access is now indicated"
+    },
+    "4.42.0|OS|7024d3fad6f3": {
+      "fr": "Vous pouvez désormais déposer un fichier sur S3 à partir d'une URL pré-signée",
+      "en": "You can now upload a file to S3 from a pre-signed URL"
+    },
+    "4.42.0|OS|ad6e03b8711a": {
+      "fr": "Vous pouvez désormais activer le versioning sur un bucket",
+      "en": "You can now enable versioning on a bucket"
+    },
+    "4.42.0|OS|56c85f2b6e0b": {
+      "fr": "Vous pouvez désormais gérer les versions d'un fichier",
+      "en": "You can now manage the versions of a file"
+    },
+    "4.43.0|ORDER|64ad9ef4474e": {
+      "fr": "L'affichage de la progression d'une commande a été repensé",
+      "en": "The display of an order's progress has been redesigned"
+    },
+    "4.43.0|OS|9f989bf71255": {
+      "fr": "Vous pouvez désormais ajouter une description aux adresses IP autorisées (whitelist) d'un bucket",
+      "en": "You can now add a description to a bucket's allowed IP addresses (whitelist)"
+    },
+    "4.44.0|ORDER|723fda0ee0d6": {
+      "fr": "Les actions de provisionnement d'infrastructure tiennent désormais compte des rôles métier (calcul, réseau, VPC, bare metal…) en complément des droits de commande",
+      "en": "Infrastructure provisioning actions now take business roles (compute, network, VPC, bare metal…) into account in addition to order permissions"
+    },
+    "4.45.4|AI|ecd9eae70091": {
+      "fr": "Le montant minimum d'un crédit LLMaaS est abaissé à 100 €",
+      "en": "The minimum LLMaaS credit amount is lowered to €100"
+    },
+    "4.46.0|HOUSING|c81f52556bb1": {
+      "fr": "Les commandes Colocation sont désormais disponibles : réservation d'emplacement, installation et dérackage d'équipements",
+      "en": "Colocation orders are now available: space reservation, device installation and de-racking"
+    },
+    "4.46.0|HOUSING|ad317a468ea5": {
+      "fr": "Les commandes Colocation d'intervention sont désormais disponibles : accompagnement technique et smart hands",
+      "en": "Colocation intervention orders are now available: technical assistance and smart hands"
+    },
+    "4.46.0|HOUSING|2baed919a7d4": {
+      "fr": "Les commandes Colocation de câblage et de décâblage (CPE) sont désormais disponibles",
+      "en": "Colocation cabling and uncabling orders (CPE) are now available"
+    },
+    "4.46.0|HOUSING|dc6b8f89c82f": {
+      "fr": "Les commandes Colocation non prises en charge par la console sont désormais clairement signalées, avec une invitation à contacter le support",
+      "en": "Colocation orders not supported by the console are now clearly flagged, with an invitation to contact support"
+    },
+    "4.47.0|OS|84b09308ac1d": {
+      "fr": "Les majuscules sont désormais refusées dans le nom d'un bucket, conformément aux règles de nommage",
+      "en": "Uppercase letters are now rejected in a bucket name, in line with naming rules"
+    },
+    "4.47.0|MP|316fc87dfac8": {
+      "fr": "Vous pouvez désormais déployer une VM Instance (Public Cloud) directement depuis la fiche d'un produit Marketplace",
+      "en": "You can now deploy a VM Instance (Public Cloud) directly from a Marketplace product page"
+    }
+  },
+  "additions": {
+    "4.38.0": [
+      {
+        "tag": "IAM",
+        "fr": "Six nouvelles permissions sont disponibles : `billing_read`, `vpc_read`, `vpc_write`, `public_cloud_vm_instances_read`, `public_cloud_vm_instances_management` et `public_cloud_vm_instances_console_access`",
+        "en": "Six new permissions are available: `billing_read`, `vpc_read`, `vpc_write`, `public_cloud_vm_instances_read`, `public_cloud_vm_instances_management` and `public_cloud_vm_instances_console_access`",
+        "_source": "docs commit f31958f7 (2026-04-20) — entrée saisie à la main, absente de maj.js"
+      },
+      {
+        "tag": "IAM",
+        "fr": "Le nom du produit concerné apparaît désormais en tête de la description de chaque permission",
+        "en": "The name of the relevant product now appears at the start of each permission description",
+        "_source": "docs commit f31958f7 (2026-04-20) — entrée saisie à la main, absente de maj.js"
+      }
+    ]
+  },
+  "dates": {
+    "4.4.0": {
+      "attendue": "2024-01-13",
+      "corrigee": "2025-01-13",
+      "motif": "Coquille d'année dans maj.js : le bloc a été introduit le 2025-01-13 (commit ihm 67a2f53c) avec new Date('2024-01-13'). La version se situe entre v4.3.0 (2024-12-19) et v4.5.0 (2025-01-17). À corriger en amont dans ihm/src/config/maj.js, puis retirer cette correction locale."
+    }
+  }
+}

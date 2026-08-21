@@ -101,7 +101,7 @@ Una vez guardado este archivo, Cline cargará automáticamente el MCP `opencost-
 ### 2. Consultar OpenCost con el MCP
 
 >ℹ️[Prerrequisitos]
->Para interactuar con el MCP en lenguaje natural, la IA subyacente debe tener acceso a modelos de lenguaje (LLMs), ya sea localmente (LMStudio, etc), ya sea a través de una conexión a servicios públicos como GPT-5 o Gemini, o bien utilizando nuestro producto **[LLM-as-a-Service](pathname:///llmaas/llmaas)** soberano.
+>Para interactuar con el MCP en lenguaje natural, la IA subyacente debe tener acceso a modelos de lenguaje (LLMs), ya sea localmente (LMStudio, etc), ya sea a través de una conexión a servicios públicos como GPT-5 o Gemini, o bien utilizando nuestro producto **[LLM-as-a-Service](/llmaas)** soberano.
 
 
 Después de la configuración, puede utilizar las herramientas de LLM para realizar consultas en lenguaje natural en este servidor MCP.
