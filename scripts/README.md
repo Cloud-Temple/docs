@@ -266,23 +266,83 @@ Hash actuel : 99033f972d83789a35fb75077e53e170df0b14b9fd465ecdbd691bdacdca2b74
 
 ### 📋 `extract_changelog.py`
 
-**Générateur de changelog produits multi-langues**
+**Générateur du changelog produits public, en 5 langues**
 
-Extrait les nouvelles fonctionnalités depuis `maj.js` et génère les changelogs dans toutes les langues. Met automatiquement à jour les hash dans `translation-meta.json` après génération.
+`docs/changelog_produits.md` et ses 4 traductions sont **entièrement générés**.
+Ne jamais les modifier à la main : la prochaine génération écraserait la
+modification. Toute intervention passe par l'une des trois sources ci-dessous.
+
+#### Préparer l'entrée
+
+`maj.js` n'est pas versionné (dépôt public, notes de version internes). Il faut le
+copier depuis le dépôt de la Console avant chaque génération :
+
+```bash
+cp ../ihm/src/config/maj.js ./maj.js
+```
 
 #### Utilisation
 
 ```bash
-python scripts/extract_changelog.py
+python3 scripts/extract_changelog.py            # génère les 5 fichiers
+python3 scripts/extract_changelog.py --check    # ne rien écrire ; échoue si désynchronisé
+python3 scripts/extract_changelog.py --max 4.48.0
 ```
 
-#### Source et Sorties
+#### Les trois sources fusionnées
 
-- **Entrée** : `maj.js` (racine du projet)
-- **Sorties** :
-  - `docs/changelog_produits.md` (FR — source)
-  - `i18n/{en,de,es,it}/docusaurus-plugin-content-docs/current/changelog_produits.md`
-- **Hash** : Mis à jour automatiquement dans `translation-meta.json` ✅
+| Source | Rôle |
+|---|---|
+| `maj.js` (racine, non versionné) | notes de version de la Console — copie de `ihm/src/config/maj.js` |
+| `scripts/changelog_editorial.json` | réécritures client-facing, exclusions, entrées rattachées à une version, corrections de date |
+| `scripts/changelog_extra.json` | jalons des produits sans version Console (bases managées, serveur MCP…), rendus en sections datées |
+
+#### Bornes de versions
+
+- `MIN_VERSION` (4.0.0) : les versions antérieures restent dans l'historique Git,
+  un bloc `:::info` calculé automatiquement le rappelle en pied de page.
+- `MAX_VERSION` : **dernière version réellement déployée en production**. À relever
+  à chaque mise en production. Sans cette borne, la documentation annoncerait des
+  fonctionnalités que le client ne voit pas encore.
+
+#### Réécriture éditoriale
+
+Les textes de `maj.js` sont rédigés par les équipes de développement. Le calque
+`changelog_editorial.json` porte leur transposition en langage produit. La clé d'une
+réécriture inclut un hash du texte source : si celui-ci change en amont, la
+génération **échoue** au lieu de publier une formulation périmée.
+
+#### Le script refuse de publier plutôt que de publier faux
+
+La génération s'arrête avec un message explicite si :
+
+- un tag de `maj.js` n'a pas de libellé dans `TAG_MAP` (sinon le code technique
+  brut se retrouverait dans la page publiée) ;
+- un lien de `TAG_MAP` ne résout pas, ou emprunte le chemin redondant `/x/x` d'un
+  index de dossier Docusaurus servi à `/x` (la CI ne le voit pas :
+  `onBrokenLinks` est réglé sur `log`) ;
+- une réécriture éditoriale est périmée, ou porte sur une version inexistante ;
+- une correction de date ne correspond plus à la valeur amont ;
+- un texte contient `<` ou `{`, interprétés par MDX, ce qui casserait le build.
+
+#### Traductions
+
+- **FR et EN** sont natifs de `maj.js` (les deux branches de la ternaire).
+- **DE, ES, IT** sont produits en repli sur l'anglais : seuls les titres, l'intro,
+  le pied de page et les libellés de produits y sont localisés. Le corps des
+  entrées reste en anglais jusqu'au passage de `translate_py/translate.py`.
+- Le script ne tamponne dans `translation-meta.json` que les langues réellement
+  rédigées (`AUTHORED_LANGUAGES`). Tamponner DE/ES/IT les figeait à tort comme
+  « déjà traduites ».
+
+#### Tests
+
+```bash
+python3 tests/changelog/test_extract_changelog.py
+```
+
+Tests de non-régression, sans dépendance externe. Chacun cible un défaut qui a
+réellement provoqué la publication de contenu faux.
 
 ---
 
@@ -305,6 +365,8 @@ Les scripts sont intégrés dans `package.json` pour faciliter l'utilisation :
 scripts/
 ├── README.md                        # 📋 Ce fichier
 ├── extract_changelog.py             # 📋 Générateur changelog multi-langues
+├── changelog_editorial.json         # ✍️  Réécritures client-facing + exclusions
+├── changelog_extra.json             # 📅 Jalons des produits hors version Console
 ├── generate_models_doc/
 │   └── generate_models_doc.py       # 🚀 Générateur doc LLMaaS
 └── translate_py/                    # 🐍 Système de traduction

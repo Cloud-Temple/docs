@@ -1,0 +1,347 @@
+{
+  "_lisez_moi": [
+    "Jalons des produits qui n'ont pas de version de la Console, fusionnés par",
+    "scripts/extract_changelog.py sous forme de sections datées intercalées",
+    "chronologiquement parmi les versions.",
+    "",
+    "Chaque item porte un champ _source : la publication d'une entrée doit toujours",
+    "pouvoir être remontée à un commit, un tag ou un fichier de notes de version.",
+    "",
+    "Serveur MCP de la Console : les dates ci-dessous sont celles des notes de",
+    "version du serveur. Elles ne présument pas d'une date de mise à disposition",
+    "commerciale : faire confirmer la chronologie par le responsable produit avant",
+    "toute communication externe qui s'appuierait sur elle."
+  ],
+  "sections": [
+    {
+      "date": "2026-02-03",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Mise à disposition du serveur MCP (Model Context Protocol) de la Console, authentifié par jeton d'accès personnel",
+          "en": "Availability of the Console MCP (Model Context Protocol) server, authenticated with a personal access token",
+          "_source": "notes de version du serveur MCP — 0.1.0 (2026-02-03)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Consultation et pilotage des machines virtuelles VMware depuis un agent : liste, détail, datacenters virtuels, allumage et extinction",
+          "en": "VMware virtual machines can be queried and operated from an agent: list, details, virtual datacenters, power on and power off",
+          "_source": "notes de version du serveur MCP — 0.1.0 (2026-02-03)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Consultation des modèles de machines virtuelles, des réseaux, des hôtes et des dépôts de stockage IaaS OpenSource",
+          "en": "IaaS OpenSource virtual machine templates, networks, hosts and storage repositories can be queried",
+          "_source": "notes de version du serveur MCP — 0.1.2 (2026-02-04)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Consultation étendue de l'IaaS OpenSource : pools, hôtes, machines virtuelles, snapshots, adaptateurs réseau avec détection des adresses MAC en doublon, disques virtuels et statut de réplication, toutes ces opérations étant en lecture seule",
+          "en": "Extended IaaS OpenSource querying: pools, hosts, virtual machines, snapshots, network adapters with duplicate MAC address detection, virtual disks and replication status, all of these operations being read-only",
+          "_source": "notes de version du serveur MCP — 0.2.0 (2026-05-22)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Filtres applicables côté serveur sur l'ensemble de ces listes",
+          "en": "Server-side filters available on all of these lists",
+          "_source": "notes de version du serveur MCP — 0.2.0 (2026-05-22)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Parcours du catalogue Marketplace avec filtres, et fiches techniques IaaS OpenSource (XVA) et VMware (OVF) détaillant processeurs, mémoire, disques et noms exacts des interfaces réseau",
+          "en": "Marketplace catalog browsing with filters, plus IaaS OpenSource (XVA) and VMware (OVF) technical sheets detailing processors, memory, disks and the exact network interface names",
+          "_source": "notes de version du serveur MCP — 0.3.0 (2026-05-23)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Déploiement d'une machine virtuelle IaaS OpenSource depuis un élément du catalogue, idempotent par nom",
+          "en": "Deployment of an IaaS OpenSource virtual machine from a catalog item, idempotent by name",
+          "_source": "notes de version du serveur MCP — 0.3.0 (2026-05-23)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Pilotage de l'alimentation des machines virtuelles IaaS OpenSource — allumage, extinction, redémarrage, pause, suspension et reprise — idempotent par état",
+          "en": "Power control of IaaS OpenSource virtual machines — power on, power off, restart, pause, suspend and resume — idempotent by state",
+          "_source": "notes de version du serveur MCP — 0.3.0 (2026-05-23)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Suivi des opérations longues via les activités",
+          "en": "Long-running operations can be tracked through activities",
+          "_source": "notes de version du serveur MCP — 0.3.0 (2026-05-23)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Gestion du support depuis un agent : liste et détail des tickets, création, commentaire, clôture, consultation des maintenances planifiées et de leurs catégories, incidents du tenant et incidents de la plateforme",
+          "en": "Support handling from an agent: ticket list and details, creation, comment, closing, scheduled maintenance and their categories, tenant incidents and platform incidents",
+          "_source": "notes de version du serveur MCP — 0.4.0 (2026-05-24)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Option de destruction après démarrage sur le déploiement depuis le Marketplace",
+          "en": "Destroy-after-start option on Marketplace deployment",
+          "_source": "notes de version du serveur MCP — 0.4.0 (2026-05-24)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Parcours guidé de déploiement d'une machine virtuelle Linux",
+          "en": "Guided workflow for deploying a Linux virtual machine",
+          "_source": "notes de version du serveur MCP — 0.4.0 (2026-05-24)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Ressources consultables directement : glossaire des termes IaaS OpenSource, topologie d'un pool réunissant hôtes, dépôts de stockage, réseaux et indicateurs en une seule lecture, et catalogue Marketplace filtré sur l'IaaS OpenSource",
+          "en": "Directly readable resources: IaaS OpenSource glossary, pool topology gathering hosts, storage repositories, networks and indicators in a single read, and the Marketplace catalog filtered on IaaS OpenSource",
+          "_source": "notes de version du serveur MCP — 0.5.0 (2026-05-24)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Chaque refus de permission indique désormais le produit concerné et le nom exact de la permission à activer sur le jeton d'accès personnel",
+          "en": "Each permission denial now states the product concerned and the exact name of the permission to enable on the personal access token",
+          "_source": "notes de version du serveur MCP — 0.6.0 (2026-05-25)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Consultation du nom et de la version du serveur déployé",
+          "en": "The name and version of the deployed server can be queried",
+          "_source": "serveur MCP — tag v0.7.0, commit 8034834 (2026-06-05)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "title": {
+        "fr": "Serveur MCP de la Console",
+        "en": "Console MCP server",
+        "de": "MCP-Server der Console",
+        "es": "Servidor MCP de la Console",
+        "it": "Server MCP della Console"
+      },
+      "items": [
+        {
+          "tag": "MCP",
+          "fr": "Ressource d'aide à l'authentification décrivant l'obtention d'un jeton d'accès personnel et le format d'en-tête attendu ; les erreurs d'authentification en indiquent désormais la cause et la marche à suivre",
+          "en": "Authentication help resource describing how to obtain a personal access token and the expected header format; authentication errors now state the cause and the steps to follow",
+          "_source": "serveur MCP — tag v0.8.0 (2026-06-06)"
+        },
+        {
+          "tag": "MCP",
+          "fr": "Changement de configuration à impact : l'URL de l'API renseignée dans la configuration du serveur doit désormais inclure le segment `/api`, à mettre à jour avant le déploiement de cette version sous peine d'erreurs 404. L'URL est contrôlée au démarrage et l'infrastructure de clés publiques privée est prise en charge",
+          "en": "Breaking configuration change: the API URL set in the server configuration must now include the `/api` segment, and must be updated before deploying this version to avoid 404 errors. The URL is checked at startup and the private public-key infrastructure is supported",
+          "_source": "serveur MCP — tag v0.9.0 (2026-06-06)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "title": {
+        "fr": "Bases de données managées (Preview)",
+        "en": "Managed databases (Preview)",
+        "de": "Managed Datenbanken (Preview)",
+        "es": "Bases de datos gestionadas (Preview)",
+        "it": "Database gestiti (Preview)"
+      },
+      "items": [
+        {
+          "tag": "MDB",
+          "fr": "Ouverture en Preview de MariaDB Managé : modèles StandAlone et Distributed en cluster de trois nœuds derrière un proxy, stockage répliqué sur trois zones de disponibilité et engagement de disponibilité de 99,9 %",
+          "en": "MariaDB Managé opens in Preview: StandAlone and Distributed models as a three-node cluster behind a proxy, storage replicated across three availability zones and a 99.9% availability commitment",
+          "_source": "docs fa2646ec (2026-04-15, PR #267)"
+        },
+        {
+          "tag": "PG",
+          "fr": "Ouverture en Preview de PostgreSQL Managé : modèles StandAlone et Distributed en cluster de trois nœuds derrière un proxy, réplication synchrone multi-zones sans perte de données et restauration à un instant donné",
+          "en": "PostgreSQL Managé opens in Preview: StandAlone and Distributed models as a three-node cluster behind a proxy, multi-zone synchronous replication with no data loss and point-in-time recovery",
+          "_source": "docs fa2646ec (2026-04-15, PR #267)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "title": {
+        "fr": "Bases de données managées (Preview)",
+        "en": "Managed databases (Preview)",
+        "de": "Managed Datenbanken (Preview)",
+        "es": "Bases de datos gestionadas (Preview)",
+        "it": "Database gestiti (Preview)"
+      },
+      "items": [
+        {
+          "tag": "MDB",
+          "fr": "Publication des paramètres moteur associés à chaque gabarit d'instance : `innodb_buffer_pool_size`, `innodb_buffer_pool_instances`, `max_allowed_packet` et `table_open_cache`",
+          "en": "Publication of the engine parameters associated with each instance size: `innodb_buffer_pool_size`, `innodb_buffer_pool_instances`, `max_allowed_packet` and `table_open_cache`",
+          "_source": "docs a4c1efb2 (2026-04-20)"
+        },
+        {
+          "tag": "PG",
+          "fr": "Publication des paramètres moteur associés à chaque gabarit d'instance : `shared_buffers`, `effective_cache_size`, `work_mem` et `max_connections`",
+          "en": "Publication of the engine parameters associated with each instance size: `shared_buffers`, `effective_cache_size`, `work_mem` and `max_connections`",
+          "_source": "docs a4c1efb2 (2026-04-20)"
+        },
+        {
+          "tag": "MDB",
+          "fr": "Révision des gabarits d'instance : le plafond est ramené à 3X-Large (8 vCPU et 32 Gio de mémoire) et le stockage maximum extensible à chaud passe de 512 Gio à 128 Gio",
+          "en": "Instance sizes revised: the ceiling is lowered to 3X-Large (8 vCPU and 32 GiB of memory) and the maximum hot-extendable storage goes from 512 GiB to 128 GiB",
+          "_source": "docs e687c2d6 (2026-04-20) — réduction de périmètre"
+        },
+        {
+          "tag": "PG",
+          "fr": "Révision des gabarits d'instance : le plafond est ramené à 3X-Large (8 vCPU et 32 Gio de mémoire) et le stockage maximum extensible à chaud passe de 512 Gio à 128 Gio",
+          "en": "Instance sizes revised: the ceiling is lowered to 3X-Large (8 vCPU and 32 GiB of memory) and the maximum hot-extendable storage goes from 512 GiB to 128 GiB",
+          "_source": "docs e687c2d6 (2026-04-20) — réduction de périmètre"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "title": {
+        "fr": "Bases de données managées (Preview)",
+        "en": "Managed databases (Preview)",
+        "de": "Managed Datenbanken (Preview)",
+        "es": "Bases de datos gestionadas (Preview)",
+        "it": "Database gestiti (Preview)"
+      },
+      "items": [
+        {
+          "tag": "PG",
+          "fr": "Nouvelle architecture reposant sur l'opérateur Kubernetes CloudNative-PG et le plugin de sauvegarde Barman Cloud",
+          "en": "New architecture based on the CloudNative-PG Kubernetes operator and the Barman Cloud backup plugin",
+          "_source": "docs da57d39b (mergé le 2026-07-27, PR #316)"
+        },
+        {
+          "tag": "PG",
+          "fr": "Trois modèles de déploiement : StandAlone en instance unique, Replica en trois instances répliquées de façon asynchrone avec bascule automatique, et Entreprise en trois instances répliquées de façon synchrone sur deux nœuds au minimum, la durabilité étant garantie sans blocage en cas d'indisponibilité d'un nœud",
+          "en": "Three deployment models: StandAlone as a single instance, Replica as three asynchronously replicated instances with automatic failover, and Entreprise as three synchronously replicated instances across at least two nodes, durability being guaranteed without blocking if a node becomes unavailable",
+          "_source": "docs da57d39b — managed_postgresql/concepts.md"
+        },
+        {
+          "tag": "PG",
+          "fr": "Déploiement déclaratif par ressources personnalisées Kubernetes, utilisable via Terraform ou Helm, et export natif des métriques vers Prometheus",
+          "en": "Declarative deployment through Kubernetes custom resources, usable via Terraform or Helm, and native metrics export to Prometheus",
+          "_source": "docs da57d39b — managed_postgresql/concepts.md"
+        },
+        {
+          "tag": "MDB",
+          "fr": "Le modèle de déploiement Distributed est renommé MultiAZ",
+          "en": "The Distributed deployment model is renamed MultiAZ",
+          "_source": "docs da57d39b — managed_mariadb/concepts.md"
+        },
+        {
+          "tag": "MDB",
+          "fr": "Les gabarits d'instance vont désormais jusqu'à 6X-Large (32 vCPU et 128 Gio de mémoire) et le stockage extensible à chaud jusqu'à 512 Gio",
+          "en": "Instance sizes now go up to 6X-Large (32 vCPU and 128 GiB of memory) and hot-extendable storage up to 512 GiB",
+          "_source": "docs da57d39b — managed_mariadb/concepts.md"
+        },
+        {
+          "tag": "MDB",
+          "fr": "Publication des recommandations de dimensionnement expliquant le calibrage des paramètres moteur, avec un avertissement sur l'activation de `performance_schema` en dessous du gabarit X-Large",
+          "en": "Publication of the sizing recommendations explaining how the engine parameters are calibrated, with a warning about enabling `performance_schema` below the X-Large size",
+          "_source": "docs da57d39b — managed_mariadb/concepts.md"
+        },
+        {
+          "tag": "MDB",
+          "fr": "La restauration à un instant donné n'est plus proposée : les sauvegardes reposent désormais sur les sauvegardes physiques quotidiennes et les exports logiques, sans archivage continu des journaux de transactions",
+          "en": "Point-in-time recovery is no longer offered: backups now rely on daily physical backups and logical exports, without continuous transaction log archiving",
+          "_source": "docs da57d39b — managed_mariadb/concepts.md — retrait de capacité"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "title": {
+        "fr": "API Métriques",
+        "en": "Metrics API",
+        "de": "Metriken-API",
+        "es": "API de métricas",
+        "it": "API Metriche"
+      },
+      "items": [
+        {
+          "tag": "MET",
+          "fr": "Un jeton d'accès peut désormais vérifier la disponibilité du service de métriques via le point d'API `HEAD /v1/configuration`",
+          "en": "An access token can now check the availability of the metrics service through the `HEAD /v1/configuration` API endpoint",
+          "_source": "module metric — doc/releases.json, tag 1.14.0 = 74d0c4c (2026-06-30)"
+        }
+      ]
+    }
+  ]
+}
