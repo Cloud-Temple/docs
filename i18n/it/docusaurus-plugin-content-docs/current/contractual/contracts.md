@@ -76,7 +76,7 @@ Le convenzioni di servizio definiscono il quadro contrattuale per la fornitura d
 Gli SLA definiscono gli impegni di disponibilità, i metodi di misurazione, le esclusioni e i crediti di servizio applicabili in caso di mancato rispetto.
 
 <div class="book-grid">
-  <a class="book-card" href="./vm-instances/sla">
+  <a class="book-card" href="./contractual/vm-instances/sla">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
@@ -85,7 +85,7 @@ Gli SLA definiscono gli impegni di disponibilità, i metodi di misurazione, le e
       <div class="book-card-cta">Consulta il documento →</div>
     </div>
   </a>
-  <a class="book-card" href="./network/sla-vpc">
+  <a class="book-card" href="./contractual/network/sla-vpc">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
       <div class="book-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="14" y1="17" y2="17"/></svg></div>
