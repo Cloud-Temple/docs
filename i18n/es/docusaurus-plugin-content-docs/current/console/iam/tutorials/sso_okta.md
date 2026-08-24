@@ -16,12 +16,12 @@ Este tutorial le guía en la configuración de la federación de identidad con O
 
 ## Configuración
 
-La configuración de la federación de identidad con Okta permite integrar su directorio Okta con la consola Cloud Temple para una autenticación centralizada.
+La configuración de la federación de identidad con Okta permite integrar su directorio Okta con la consola de Cloud Temple para una autenticación centralizada.
 
 ### Paso 1: Configuración del lado de Okta
 
 1. Inicie sesión en su consola de administración de Okta
-2. Navegue a **Applications** > **Applications**
+2. Vaya a **Applications** > **Applications**
 3. Haga clic en **Create App Integration**
 4. Seleccione **SAML 2.0** como método de autenticación
 5. Configure los parámetros SAML para Cloud Temple
@@ -34,7 +34,7 @@ Configure los siguientes parámetros en Okta :
 - **Audience URI (SP Entity ID)** : Proporcionado por el equipo de Cloud Temple
 - **Attribute Statements** : Configure los atributos de usuario necesarios
 
-### Paso 3: Solicitud de configuración de Cloud Temple
+### Paso 3 : Solicitud de configuración de Cloud Temple
 
 Para configurar la federación con Okta, cree una solicitud de soporte en la consola de Cloud Temple especificando:
 
@@ -46,7 +46,7 @@ Para configurar la federación con Okta, cree una solicitud de soporte en la con
 
 ### Paso 4: Prueba y validación
 
-Una vez finalizada la configuración:
+Una vez completada la configuración:
 
 1. Pruebe la autenticación con un usuario de prueba
 2. Verifique que los atributos del usuario estén correctamente mapeados
@@ -56,8 +56,8 @@ Una vez finalizada la configuración:
 
 - Configure grupos de Okta para gestionar los permisos por tenant
 - Active la autenticación multifactor (MFA) en Okta
-- Monitoree los registros de autenticación para detectar anomalías
+- Monitore los registros de autenticación para detectar anomalías
 
 ## Soporte
 
-Para cualquier asistencia con la configuración de Okta, contacte al soporte de Cloud Temple a través de la consola.
+Para cualquier ayuda con la configuración de Okta, contacte al soporte de Cloud Temple a través de la consola.

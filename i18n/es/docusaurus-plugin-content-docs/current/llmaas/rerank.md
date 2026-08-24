@@ -363,6 +363,6 @@ def rerank_with_threshold(query: str, documents: list[str]) -> list[str]:
 ## Recursos
 
 - **Código de ejemplo completo** : [`exemples/simple_rerank/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rerank)
-- **Catálogo de modelos** : [Modelos de Reranking](./models#modèles-de-reranking)
+- **Catálogo de modelos** : [Modelos de Reranking](./models#modelos-de-reranking)
 - **Referencia de la API** : [POST /v1/rerank](./api#post-v1rerank)
 - **RAG Explicado** : [Guía completa de RAG](./rag_explained)

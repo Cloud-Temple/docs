@@ -16,9 +16,9 @@ Dieses Tutorial führt Sie durch die Konfiguration der Identitätsföderation mi
 
 ## Konfiguration
 
-Die Konfiguration der Identitätsföderation mit Microsoft Intune folgt einem ähnlichen Prozess wie bei EntraID, weist jedoch Besonderheiten im Zusammenhang mit der Verwaltung mobiler Geräte auf.
+Die Konfiguration der Identitätsföderation mit Microsoft Intune folgt einem ähnlichen Prozess wie bei EntraID, mit spezifischen Aspekten im Hinblick auf die Verwaltung mobiler Geräte.
 
-### Schritt 1: Konfiguration auf Microsoft Intune-Seite
+### Schritt 1: Konfiguration auf der Microsoft Intune-Seite
 
 1. Melden Sie sich bei Ihrem Microsoft Intune-Portal an
 2. Navigieren Sie zu den Authentifizierungseinstellungen
@@ -26,7 +26,7 @@ Die Konfiguration der Identitätsföderation mit Microsoft Intune folgt einem ä
 
 ### Schritt 2: Konfigurationsanfrage
 
-Um die Federation mit Microsoft Intune zu konfigurieren, erstellen Sie bitte einen Supportantrag in der Cloud Temple-Konsole und geben Sie Folgendes an:
+Um die Föderation mit Microsoft Intune zu konfigurieren, erstellen Sie bitte einen Supportantrag in der Cloud Temple-Konsole und geben Sie Folgendes an:
 
 - Der Name Ihrer Organisation
 - Der Name eines Kontakts mit E-Mail-Adresse und Telefonnummer
@@ -35,8 +35,8 @@ Um die Federation mit Microsoft Intune zu konfigurieren, erstellen Sie bitte ein
 
 ### Schritt 3: Test und Validierung
 
-Sobald die Konfiguration abgeschlossen ist, testen Sie die Authentifizierung mit Ihren Intune-Benutzern, um sicherzustellen, dass die Federation ordnungsgemäß funktioniert.
+Sobald die Konfiguration abgeschlossen ist, testen Sie die Authentifizierung mit Ihren Intune-Benutzern, um sicherzustellen, dass die Föderation ordnungsgemäß funktioniert.
 
 ## Support
 
-Für Unterstützung bei der Konfiguration von Microsoft Intune kontaktieren Sie den Cloud Temple Support über die Konsole.
+Für Unterstützung bei der Konfiguration von Microsoft Intune wenden Sie sich bitte an den Cloud Temple Support über die Konsole.

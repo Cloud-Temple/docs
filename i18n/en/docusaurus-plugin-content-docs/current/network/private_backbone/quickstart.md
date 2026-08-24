@@ -110,4 +110,4 @@ External connectivity ports are delivered on quote after validation of the servi
 
 - 📖 [Private Backbone Concepts](./concepts) — Understand VPLS, VLAN tagging, BGP
 - 🔧 [Tutorials](./tutorials) — Configure FortiGate or pfSense with BGP
-- 🌐 [VPC Documentation](../vpc/vpc) — For a cloud-native network approach
+- 🌐 [VPC Documentation](../vpc) — For a cloud-native network approach

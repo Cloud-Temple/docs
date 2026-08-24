@@ -16,6 +16,7 @@ Exemples:
 """
 
 import asyncio
+import re
 import sys
 from pathlib import Path
 from typing import List, Optional
@@ -67,6 +68,14 @@ class TranslationEngine:
         """
         # Chargement des métadonnées
         job.metadata = await self.file_manager.metadata_manager.load_metadata()
+
+        # cleanup_missing_files existait sans être appelée nulle part : les
+        # empreintes de sources supprimées restaient donc dans le suivi.
+        presents = {
+            str(f.relative_to(self.file_manager.task_builder.paths['docs']).as_posix())
+            for f in self.file_manager.task_builder.paths['docs'].rglob("*.md")
+        }
+        job.metadata.cleanup_missing_files(presents)
         
         # Traitement spécial pour le mode initialisation
         if job.init_mode:
@@ -317,7 +326,22 @@ class TranslationEngine:
                 progress_callback=progress_callback
             )
             
-            if result.success and result.translated_text:
+            ecart = (ecart_structurel(content, result.translated_text)
+                     if result.success and result.translated_text else None)
+
+            if ecart:
+                # On n'écrit PAS : conserver l'ancienne traduction, même datée,
+                # vaut mieux qu'en publier une tronquée. Et on ne tamponne pas
+                # l'empreinte, pour que le fichier reste vu comme à traduire.
+                task.status = TranslationStatus.FAILED
+                task.error_message = f"traduction incomplète : {ecart}"
+                job.stats.files_failed += 1
+                job.stats.add_error(
+                    f"Refusé {task.relative_path} → {task.target_lang} : {ecart}")
+                self.ui.add_log(
+                    f"REFUSÉ {task.relative_path} → {task.target_lang} : {ecart}",
+                    "error")
+            elif result.success and result.translated_text:
                 # Sauvegarde du fichier traduit
                 await self.file_manager.write_file_content(
                     task.target_path,
@@ -369,8 +393,12 @@ class TranslationEngine:
         else:
             self.ui.add_log("Initialisation des métadonnées uniquement (utiliser --translate-missing pour traduire)", "info")
         
-        # Scanner tous les fichiers dans docs/
-        all_files = self.file_manager.task_builder.file_scanner.scan_files()
+        # Scanner les fichiers dans docs/, en respectant --path : ce mode
+        # construit sa propre liste et ne passe pas par build_translation_tasks,
+        # où le filtre est appliqué.
+        all_files = self.file_manager.task_builder._apply_path_filters(
+            self.file_manager.task_builder.file_scanner.scan_files()
+        )
         markdown_files = [f for f in all_files if f.suffix.lower() == '.md']
         
         self.ui.add_log(f"Trouvé {len(markdown_files)} fichiers Markdown sur {len(all_files)} fichiers totaux", "info")
@@ -511,6 +539,58 @@ class TranslationEngine:
         return job.stats
 
 
+def traductions_orphelines(paths: dict, langues) -> dict:
+    """
+    Fichiers présents dans i18n/ sans source française.
+
+    Le français fait foi, mais rien ne l'appliquait : translate.py ne fait
+    qu'écrire, jamais supprimer. Chaque page française supprimée ou déplacée
+    laissait donc derrière elle une traduction par langue — invisible, car
+    Docusaurus énumère les documents depuis docs/ puis cherche leur traduction :
+    un fichier présent seulement dans i18n/ n'est jamais construit, donc jamais
+    signalé. 19 chemins s'étaient accumulés en 18 mois.
+
+    S'y ajoutent les fichiers ajoutés à la main directement dans i18n/, qui
+    contournent la source.
+    """
+    docs = Path(paths["docs"])
+    trouves = {}
+    for lang in langues:
+        racine = Path(paths["i18n"]) / lang / "docusaurus-plugin-content-docs" / "current"
+        if not racine.exists():
+            continue
+        manquants = [f for f in sorted(racine.rglob("*.md"))
+                     if not (docs / f.relative_to(racine)).exists()]
+        if manquants:
+            trouves[lang] = manquants
+    return trouves
+
+
+def ecart_structurel(source: str, traduction: str) -> Optional[str]:
+    """
+    Compare l'ossature d'une traduction à celle de sa source.
+
+    Le nombre de titres et de délimiteurs de bloc de code sont des invariants
+    indépendants de la langue : une traduction qui n'en a pas autant est
+    incomplète, pas différente. Sans ce contrôle, une réponse tronquée par le
+    modèle est écrite puis tamponnée comme un succès, et le défaut devient
+    invisible — ni le build ni les empreintes ne le voient. Constaté sur quatre
+    fichiers, dont un tutoriel qui s'arrêtait au milieu de la procédure dans
+    trois langues.
+
+    Renvoie None si l'ossature concorde, sinon le motif de l'écart.
+    """
+    titres = lambda t: sum(1 for l in t.splitlines() if re.match(r"^#{1,6}\s+\S", l))
+    fences = lambda t: sum(1 for l in t.splitlines() if l.lstrip().startswith("```"))
+    ns, nt = titres(source), titres(traduction)
+    if ns != nt:
+        return f"{nt} titres contre {ns} dans la source"
+    cs, ct = fences(source), fences(traduction)
+    if cs != ct:
+        return f"{ct} délimiteurs de bloc de code contre {cs} dans la source"
+    return None
+
+
 @click.command()
 @click.option('--dry-run', is_flag=True, help='Mode simulation - aucune modification')
 @click.option('--force', is_flag=True, help='Force la retraduction de tous les fichiers')
@@ -523,6 +603,11 @@ class TranslationEngine:
 @click.option('--token', help='Token Bearer Cloud Temple LLMaaS. Prioritaire sur CLOUDTEMPLE_API_KEY.')
 @click.option('--url', 'api_url', default=None, help='URL de l’API de traduction. Par défaut: https://api.ai.cloud-temple.com/v1/chat/completions')
 @click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.6:27b')
+@click.option('--prune', is_flag=True,
+              help='Supprime les fichiers de i18n/ sans source française. Sans ce drapeau, ils sont seulement signalés.')
+@click.option('--concurrency', 'concurrency', type=int, default=None,
+              help='Nombre de traductions simultanées. Prioritaire sur CONCURRENT_TRANSLATIONS et sur le fichier .env.')
+@click.option('--path', 'path_filters', multiple=True, help='Restreint le périmètre à ce chemin, relatif à docs/ (répétable, motifs glob acceptés). Ex: --path changelog_produits.md')
 @click.version_option(version="2.0.0", prog_name="Cloud Temple Translation System")
 def main(
     dry_run: bool,
@@ -535,7 +620,10 @@ def main(
     test_api: bool,
     token: Optional[str],
     api_url: Optional[str],
-    model_name: Optional[str]
+    model_name: Optional[str],
+    path_filters: tuple,
+    concurrency: Optional[int],
+    prune: bool
 ) -> None:
     """
     Système de traduction automatique pour la documentation Cloud Temple.
@@ -554,7 +642,10 @@ def main(
         test_api=test_api,
         token=token,
         api_url=api_url,
-        model_name=model_name
+        model_name=model_name,
+        path_filters=list(path_filters),
+        concurrency=concurrency,
+        prune=prune
     ))
 
 
@@ -569,7 +660,10 @@ async def _async_main(
     test_api: bool,
     token: Optional[str],
     api_url: Optional[str],
-    model_name: Optional[str]
+    model_name: Optional[str],
+    path_filters: Optional[list] = None,
+    concurrency: Optional[int] = None,
+    prune: bool = False
 ) -> None:
     """Version asynchrone du main."""
     
@@ -579,7 +673,12 @@ async def _async_main(
     
     try:
         # Chargement de la configuration
-        config = load_config(api_key=token, api_url=api_url, model=model_name)
+        config = load_config(api_key=token, api_url=api_url, model=model_name,
+                             path_filters=path_filters)
+        # Le .env est chargé avec override=True et gagne donc sur l'environnement :
+        # l'option CLI est appliquée après, conformément au contrat annoncé.
+        if concurrency is not None:
+            config = config.model_copy(update={'concurrent_translations': concurrency})
         require_api = test_api or (not dry_run and (not init or translate_missing))
         validate_environment(config, require_api=require_api)
         
@@ -587,6 +686,28 @@ async def _async_main(
         paths = {k: str(v) for k, v in get_paths(config).items()}
         ui.show_config_summary(config, paths)
         
+        # Traductions orphelines : signalées à chaque run, supprimées sur --prune.
+        orphelines = traductions_orphelines(get_paths(config), LANG_CONFIG.LANGUAGES)
+        if orphelines:
+            total = sum(len(v) for v in orphelines.values())
+            chemins = sorted({str(f).split("current/", 1)[-1]
+                              for v in orphelines.values() for f in v})
+            # Affichage direct, pas ui.add_log : ce panneau Rich ne montre que
+            # les dernières lignes de son tampon, et un avertissement émis avant
+            # son démarrage y disparaît sans trace — donc invisible, donc pire
+            # qu'absent puisqu'il donne une fausse assurance.
+            suite = (" — supprimés (--prune)" if prune
+                     else " — relancer avec --prune pour les retirer")
+            print(f"\n⚠  {total} fichier(s) dans i18n/ sans source française, "
+                  f"sur {len(chemins)} chemin(s){suite}", file=sys.stderr)
+            for c in chemins:
+                print(f"     {c}", file=sys.stderr)
+            print(file=sys.stderr)
+            if prune and not dry_run:
+                for fichiers in orphelines.values():
+                    for f in fichiers:
+                        f.unlink()
+
         # Test de l'API si demandé
         if test_api:
             ui.add_log("Test de la connexion API...", "info")

@@ -1,26 +1,28 @@
 ---
-title: Manage VM Disks
+title: Managing VM Disks
 ---
 
-This tutorial explains how to add an additional storage disk to an already-deployed VM and prepare it from the operating system.
+This tutorial explains how to add an additional storage disk to an already deployed VM and prepare it from the operating system.
 
 ## Prerequisites
 
-- An active VM Instance in your tenant
+- An active VM instance in your tenant
 
-## Step 1 — Access the VM's disks
+## Step 1 — Access the VM disks
 
-From the VM Instances list, click on your VM's row to open its detail panel.
+From the VM Instances list, click on your VM's row to open its details panel.
 
 ![VM Detail - Disks](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
 
-Navigate to the **Disks** tab. You will see the list of currently attached disks.
+Navigate to the **Disks** tab (disk icon in the left sidebar of the details panel). You will see the list of disks currently attached to the VM, with each disk's name, size, and storage type.
 
 ## Step 2 — Open the add form
 
-Click the **+ Add a disk** button at the top right of the disks table.
+Click the **+ Add a disk** button at the top right of the disk table.
 
 ![Add disk modal](@site/docs/public_cloud/vm_instances/images/vm_instances_ajout_disque_modal.png)
+
+The **Add a disk** form opens with the following fields:
 
 | Field | Description |
 |-------|-------------|
@@ -29,47 +31,49 @@ Click the **+ Add a disk** button at the top right of the disks table.
 
 ## Step 3 — Configure and add the disk
 
-1. **Name**: enter a descriptive name, e.g. `data-postgresql`
-2. **Storage type**:
-   - Choose **Standard** for general data (logs, files, backups)
-   - Choose **Enterprise** for databases or I/O-intensive workloads
+Enter the settings:
 
-Click **Add**. The disk is attached to the VM in real time, without requiring a reboot.
+1. **Name**: enter a descriptive name, e.g., `data-postgresql`
+2. **Storage type**:
+  - Choose **Standard** for general data (logs, files, backups)
+  - Choose **Enterprise** for databases or I/O-intensive workloads
+
+Click **Add**. The disk is attached to the VM in real-time, without requiring a restart.
 
 ## Step 4 — Partition and mount the disk (in the VM)
 
-Connect to your VM and initialise the disk:
+After adding it from the console, connect to your VM and initialize the disk:
 
 ```bash
-# List available disks
+# Lister les disques disponibles
 lsblk
 
-# Create a partition (replace /dev/vdb with the correct device)
+# Créer une partition (remplacez /dev/vdb par le bon device)
 sudo fdisk /dev/vdb
-# In fdisk, type: n → p → 1 → Enter → Enter → w
+# Dans fdisk, tapez : n → p → 1 → Entrée → Entrée → w
 
-# Format the partition
+# Formater la partition
 sudo mkfs.ext4 /dev/vdb1
 
-# Create the mount point
+# Créer le point de montage
 sudo mkdir -p /data
 
-# Mount the disk
+# Monter le disque
 sudo mount /dev/vdb1 /data
 
-# Verify the mount
+# Vérifier le montage
 df -h /data
 
-# Make the mount persistent on reboot
+# Rendre le montage persistant au redémarrage
 echo '/dev/vdb1 /data ext4 defaults 0 2' | sudo tee -a /etc/fstab
 ```
 
 :::caution
-Adapt the device name (`/dev/vdb`, `/dev/vdc`, etc.) according to the output of `lsblk`. The first additional disk is usually `/dev/vdb`.
+Adjust the device name (`/dev/vdb`, `/dev/vdc`, etc.) based on the output of the `lsblk` command. The first additional disk is usually `/dev/vdb`.
 :::
 
-## Going further
+## Going Further
 
-- Use **Enterprise** (~7,500 IOPS/TB) for PostgreSQL, MySQL or any I/O-intensive workload.
+- For a high-performance disk, use the **Enterprise** type (~7,500 IOPS/TB) — ideal for PostgreSQL, MySQL, or any I/O-intensive workload.
 - You can attach up to **16 volumes** per VM, with a maximum size of **2 TB** per volume.
-- Billing is per **GB allocated**, regardless of actual usage.
+- Billing is based on **allocated GB**, regardless of actual usage.

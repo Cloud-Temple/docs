@@ -8,7 +8,7 @@ title : Desplegar a través de HelmFile
 
 ## Objetivos
 
-El objetivo principal de este tutorial es mostrar cómo desplegar aplicaciones en nuestra PaaS OpenShift utilizando **Helmfile** para orquestar varios Helm charts juntos.
+El objetivo principal de este tutorial es mostrar cómo desplegar aplicaciones en nuestra PaaS OpenShift utilizando **Helmfile** al orquestar varios Helm charts en conjunto.
 
 Exponga el servicio front-end a través de HTTP/HTTPS.
 
@@ -21,11 +21,11 @@ El contexto de esta demostración es el siguiente:
 - Sin uso de **CRD personalizados**.
 - Sin acceso al rol de la plataforma como **cluster-admin**.
 - Sin despliegue a nivel de clúster (**installation cluster-wide**).
-- Sin **creación de namespaces** mediante Helmfile (pour éviter des conflits de permissions).
+- Sin **creación de namespaces** vía Helmfile (pour éviter des conflits de permissions).
 
 ## Puntos fuertes
 
-- Demostración del despliegue de un front-end (Nginx) y un back-end (PostgreSQL) utilizando Helmfile.
+- Demostración del despliegue de un front-end (Nginx) y un back-end (PostgreSQL) mediante Helmfile.
 
 ## Versiones del software
 
@@ -40,7 +40,7 @@ El contexto de esta demostración es el siguiente:
 
 ## Prerrequisitos
 
-Antes de comenzar esta demostración, asegúrese de contar con las siguientes herramientas y recursos:
+Antes de comenzar esta demostración, asegúrese de tener las siguientes herramientas y recursos :
 
 1. **Herramientas CLI**  
    - **OpenShift CLI (`oc`)** : [Documentation](https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html)  
@@ -58,13 +58,13 @@ Antes de comenzar esta demostración, asegúrese de contar con las siguientes he
 
 ## Plan de demostración
 
-### Visión general de los pasos
+### Resumen de los pasos
 
 1. Preparar el entorno y las herramientas.  
-2. Desplegar aplicaciones con Helmfile :  
-   - **nginx** : Un servidor web simple.  
-   - **PostgreSQL** : Un servidor de base de datos.  
-3. Verificar el despliegue :  
+2. Desplegar aplicaciones con Helmfile:  
+   - **nginx**: Un servidor web simple.  
+   - **PostgreSQL**: Un servidor de base de datos.  
+3. Verificar el despliegue:  
    - Confirmar que las configuraciones rootless están aplicadas.  
    - Probar la funcionalidad de las aplicaciones.  
 4. Explorar casos de uso avanzados y extensiones.  
@@ -101,12 +101,12 @@ helmDefaults:
   createNamespace: false
 ```
 
-- **Descripción** : Define el comportamiento predeterminado de los comandos de Helm ejecutados a través de Helmfile.
+- **Description** : Define el comportamiento predeterminado de los comandos Helm ejecutados a través de Helmfile.
 - **Detalle** :
   - `createNamespace: false` : Evita que Helm intente crear namespaces durante el despliegue.  
 - **Impacto** :
-  - Garantiza que el namespace debe existir antes de iniciar el despliegue de los charts.  
-  - Reduce los errores en entornos con permisos limitados.  
+  - Asegura que el namespace debe existir antes de iniciar el despliegue de los charts.  
+  - Reduce los errores en los entornos con permisos limitados.  
 
 ---
 
@@ -191,7 +191,7 @@ oc new-project poc-helmfile
 
 ---
 
-### 4. Desplegar aplicaciones con Helmfile
+### 4. Desplegar las aplicaciones con Helmfile
 
 Utilice el siguiente comando:
 
@@ -213,7 +213,7 @@ oc get pods -n poc-helmfile
 
 ### 6. Probar los servicios
 
-Exponga los servicios desplegados para probar su accesibilidad y su correcto funcionamiento.
+Exponer los servicios desplegados para probar su accesibilidad y correcto funcionamiento.
 
 #### 1. Creación de rutas
 
@@ -263,14 +263,14 @@ oc get routes -n poc-helmfile
 
 Ejemplo de salida:
 
-| Nombre         | Host/Puerto                                                                        | Servicio  | Puerto  | Resolución TLS | Etiqueta                                  |
-|-------------|----------------------------------------------------------------------------------|----------|-------|----------------|-------------------------------------------|
-| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | Ninguno          | `ct-router-type=public`                   |
-| nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080  | Edge (TLS)     | `ct-router-type=public`                   |
+| Nombre      | Host/Port                                                                        | Servicio | Puerto | Resolución TLS | Etiqueta                                  |
+|-------------|----------------------------------------------------------------------------------|----------|--------|----------------|-------------------------------------------|
+| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080   | Ninguno        | `ct-router-type=public`                   |
+| nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080   | Edge (TLS)     | `ct-router-type=public`                   |
 
 #### 2. Acceda a las aplicaciones
 
-Utilice las URL enumeradas en la columna « Host/Port » para acceder a las aplicaciones. Aquí tiene un ejemplo:
+Utilice las URL listadas en la columna « Host/Port » para acceder a las aplicaciones. A continuación se muestra un ejemplo:
 
 - Para HTTP : `http://nginx-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 - Para HTTPS : `https://nginx-tls-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
@@ -284,7 +284,7 @@ Utilice las URL enumeradas en la columna « Host/Port » para acceder a las apli
 Para garantizar el éxito de esta demostración, verifique los siguientes elementos:
 
 1. **Las dos aplicaciones se ejecutan sin errores**.  
-2. Los pods utilizan UIDs > 30000, conforme a las restricciones de los contenedores rootless.  
+2. Los pods utilizan UID > 30000, de acuerdo con las restricciones de los contenedores rootless.  
 3. No se ha desplegado ningún CRD personalizado.  
 4. Los servicios desplegados son accesibles a través de sus rutas definidas (verifique Nginx en HTTP y HTTPS).  
 

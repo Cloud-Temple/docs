@@ -31,7 +31,7 @@ Bevor Sie beginnen, benötigen Sie ein Cloud Temple-Konto mit den entsprechenden
 
 ### Schritte
 
-1. **API-Schlüssel generieren**: Melden Sie sich bei der [Cloud Temple-Konsole](https://shiva.cloud-temple.com/login) an und generieren Sie Ihren Personal Access Token (siehe Abschnitt [API-Schlüssel](#clés-api-personal-access-token) unten).
+1. **API-Schlüssel generieren**: Melden Sie sich bei der [Cloud Temple-Konsole](https://shiva.cloud-temple.com/login) an und generieren Sie Ihren Personal Access Token (siehe Abschnitt [API-Schlüssel](#api-schlüssel-personal-access-token) unten).
 
 2. **Erste Anfrage testen**: Führen Sie den folgenden curl-Befehl aus, indem Sie `<votre-personal-access-token>` durch Ihr Token ersetzen:
 

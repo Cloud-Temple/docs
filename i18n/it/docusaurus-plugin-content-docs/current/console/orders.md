@@ -32,7 +32,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 Il monitoraggio del deployment di nuove risorse avviene nel menu __'Comandi'__ accessibile nella barra verde a sinistra dello schermo.
 
-Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della tua [Organisation](iam/concepts.md#organisations).
+Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della tua [Organisation](iam/concepts.md#organizzazioni).
 
 <img src={shivaOrdersList} />
 

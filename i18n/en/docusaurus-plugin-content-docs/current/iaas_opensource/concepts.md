@@ -178,7 +178,7 @@ Backups are sent to the [Stockage Objet qualifié SecNumCloud](../storage/oss) o
 The service uses an **incremental** backup mode. This mode targets a **Backup Repository** (remote S3 storage) and never exports a full backup after the first one: only the **modified data blocks** are transferred in each cycle.
 
 :::info[Incremental Backup vs Replication]
-**Incremental backup** targets a remote S3 repository and is optimized for **long-term protection**. It should not be confused with **replication** (hot Disaster Recovery) which targets a local Storage Repository — this mode is covered by the [réplication de machines virtuelles](#réplication-de-machines-virtuelles) feature.
+**Incremental backup** targets a remote S3 repository and is optimized for **long-term protection**. It should not be confused with **replication** (hot Disaster Recovery) which targets a local Storage Repository — this mode is covered by the [réplication de machines virtuelles](#virtual-machine-replication) feature.
 :::
 
 #### Technical Lifecycle of an Incremental Backup

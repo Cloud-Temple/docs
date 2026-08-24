@@ -178,7 +178,7 @@ Las copias de seguridad se envían al [Almacenamiento de Objetos calificado SecN
 El servicio utiliza un modo de copia de seguridad **incremental**. Este modo apunta a un **Backup Repository** (el almacenamiento S3 remoto) y nunca exporta una copia de seguridad completa después de la primera: solo se transfieren los **bloques de datos modificados** en cada ciclo.
 
 :::info[Copia de seguridad incremental vs Replicación]
-La **copia de seguridad incremental** apunta a un depósito S3 remoto y está optimizada para la **protección a largo plazo**. No debe confundirse con la **replicación** (Disaster Recovery en caliente) que apunta a un Storage Repository local — este modo está cubierto por la funcionalidad de [replicación de máquinas virtuales](#réplication-de-machines-virtuelles).
+La **copia de seguridad incremental** apunta a un depósito S3 remoto y está optimizada para la **protección a largo plazo**. No debe confundirse con la **replicación** (Disaster Recovery en caliente) que apunta a un Storage Repository local — este modo está cubierto por la funcionalidad de [replicación de máquinas virtuales](#réplication-de-máquinas-virtuales).
 :::
 
 #### Ciclo de vida técnico de una copia de seguridad incremental
