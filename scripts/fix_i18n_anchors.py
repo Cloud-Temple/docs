@@ -28,6 +28,7 @@ en place, car une traduction incomplète ne se répare pas par un lien.
 
 import argparse
 import re
+import subprocess
 import sys
 import urllib.parse
 from pathlib import Path
@@ -56,6 +57,25 @@ def titres(chemin: Path) -> list[tuple[int, str]]:
         for ligne in chemin.read_text(encoding="utf-8").splitlines()
         if (m := TITRE.match(ligne))
     ]
+
+
+def titres_a_head(chemin: Path) -> list[tuple[int, str]]:
+    """
+    Titres du fichier tel qu'il était au dernier commit.
+
+    Sert à récupérer une ancre devenue orpheline après une retraduction : le
+    lien porte l'ancien slug traduit, introuvable dans le fichier courant et
+    absent de la source française. L'ancienne version donne la POSITION du
+    titre visé, et la version courante donne son nouveau slug.
+    """
+    try:
+        rel = chemin.relative_to(RACINE).as_posix()
+        out = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=RACINE,
+                             capture_output=True, text=True, check=True).stdout
+    except Exception:
+        return []
+    return [(len(m.group(1)), m.group(2))
+            for ligne in out.splitlines() if (m := TITRE.match(ligne))]
 
 
 def racine_langue(lang: str) -> Path:
@@ -131,10 +151,20 @@ def main() -> int:
                 t_fr = titres(DOCS / cible_rel)
                 idx = next((k for k, (_, x) in enumerate(t_fr) if slug(x) == ancre), None)
                 if idx is None:
-                    # Ni un slug de la langue, ni un slug français : typiquement un
-                    # slug traduit devenu périmé après une retraduction du titre.
-                    # Irrécupérable sans historique — on le signale.
-                    inconnues.append((lang, rel, cible_rel, ancre))
+                    # Ni un slug de la langue, ni un slug français : un slug
+                    # traduit devenu périmé après une retraduction du titre.
+                    # L'ancienne version du fichier cible donne la position du
+                    # titre visé ; la version courante donne son nouveau slug.
+                    t_avant = titres_a_head(racine / cible_rel)
+                    k = next((j for j, (_, x) in enumerate(t_avant) if slug(x) == ancre), None)
+                    if k is None or len(t_avant) != len(t_lang):
+                        inconnues.append((lang, rel, cible_rel, ancre))
+                        continue
+                    bon = slug(t_lang[k][1])
+                    for variante in {ancre_brute, ancre, urllib.parse.quote(ancre, safe="-")}:
+                        nouveau = re.sub(r"#" + re.escape(variante) + r"(?![\w%-])",
+                                         "#" + bon, nouveau)
+                    corrections.append((lang, rel, ancre, bon))
                     continue
                 if [n for n, _ in t_fr] != [n for n, _ in t_lang]:
                     sans_solution.append((lang, rel, cible_rel, ancre, "ossature de titres différente"))

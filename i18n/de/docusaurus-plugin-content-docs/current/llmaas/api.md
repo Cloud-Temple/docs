@@ -440,7 +440,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 | Parameter   | Typ    | Erforderlich | Beschreibung                                                                 |
 | ----------- | ------- | ----------- | --------------------------------------------------------------------------- |
-| `model`     | string  | ✅          | ID des Reranking-Modells (siehe [Katalog](./models#modèles-de-reranking)) |
+| `model`     | string  | ✅          | ID des Reranking-Modells (siehe [Katalog](./models#reranking-modelle)) |
 | `query`     | string  | ✅          | Die Suchanfrage                                                     |
 | `documents` | array   | ✅          | Liste der umzuordnenden Dokumente                                            |
 | `top_n`     | integer | ❌          | Anzahl der zurückzugebenden Ergebnisse (Standard: alle)                             |
