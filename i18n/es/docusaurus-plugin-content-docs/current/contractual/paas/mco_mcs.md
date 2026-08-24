@@ -203,7 +203,7 @@ Registro automático de eventos críticos del clúster.
 **Procedimiento "Recuperación ante desastres"**
 
 - En caso de pérdida total de acceso a un clúster, el **Cliente** debe declarar un incidente al soporte **Cloud Temple** a través del módulo de soporte de la consola.
-Consulte la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique)
+Consulte la [**procédure de demande de support technique**](../../console/console_quickstart.md#acceso-al-soporte-técnico)
 
 ---
 
@@ -213,6 +213,6 @@ Consulte la [**procédure de demande de support technique**](../../console/conso
 2. **Validar las configuraciones** : Probar las aplicaciones en entornos de staging antes del despliegue en producción.
 3. **Monitorear regularmente** : Utilizar las herramientas integradas para seguir el uso de los recursos y detectar los problemas lo antes posible.
 4. **Mantenerse informado** : Seguir la hoja de ruta y las guías para evitar funciones obsoletas.
-5. **Contactar al soporte** : Para problemas no resueltos, contactar al soporte a través del [**procedimiento de solicitud de soporte técnico**](../../console/console_quickstart.md#accès-au-support-technique) o por correo electrónico a la dirección [**contacto**](mailto:contact@cloud-temple.com).
+5. **Contactar al soporte** : Para problemas no resueltos, contactar al soporte a través del [**procedimiento de solicitud de soporte técnico**](../../console/console_quickstart.md#acceso-al-soporte-técnico) o por correo electrónico a la dirección [**contacto**](mailto:contact@cloud-temple.com).
 
 Para consultar las responsabilidades en detalle, por favor, consulte nuestra [**matriz de responsabilidad**](../../contractual/paas/raci.md).

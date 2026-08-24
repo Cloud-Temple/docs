@@ -10,7 +10,7 @@ I database gestiti di Cloud Temple ti sollevano dalla gestione operativa (backup
 <div class="card-grid">
   <div class="card">
     <h3>MariaDB Gestito</h3>
-    <p>Motore MariaDB su Kubernetes con backup automatici, alta disponibilità multi-AZ.</p>
+    <p>Motore MariaDB su Kubernetes con backup automatici e alta disponibilità multi-AZ.</p>
     <a href="./managed_mariadb" class="card-link">Scopri MariaDB Gestito →</a>
   </div>
   <div class="card">

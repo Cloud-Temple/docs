@@ -62,15 +62,27 @@ def racine_langue(lang: str) -> Path:
     return DOCS if lang == "fr" else I18N / lang / "docusaurus-plugin-content-docs" / "current"
 
 
-def cible_du_lien(source_rel: str, chemin_lien: str) -> str | None:
+def cible_du_lien(source_rel: str, chemin_lien: str, lang: str) -> str | None:
     """
     Chemin relatif (à la racine de la langue) du fichier visé par un lien.
     None si le lien est externe, ou une ancre de la page courante.
+
+    Gère trois formes rencontrées dans le dépôt : relative, absolue préfixée
+    par la locale (/en/...), et suffixée d'une chaîne de requête
+    (...quickstart?_highlight=*facteur#ancre) qu'il faut retirer avant de
+    résoudre, sans quoi le fichier n'est jamais trouvé et le cas passe
+    silencieusement à la trappe.
     """
     if chemin_lien.startswith(("http://", "https://", "mailto:", "pathname://")):
         return None
+    chemin_lien = chemin_lien.split("?")[0]
     if not chemin_lien:
         return source_rel                      # ancre de la page courante
+    if chemin_lien.startswith("/"):
+        nu = chemin_lien.lstrip("/")
+        prefixe = f"{lang}/"
+        cible = nu[len(prefixe):] if nu.startswith(prefixe) else nu
+        return cible if cible.endswith(".md") else cible + ".md"
     base = Path(source_rel).parent
     cible = (base / chemin_lien).as_posix()
     cible = re.sub(r"/\./", "/", cible)
@@ -88,7 +100,7 @@ def main() -> int:
                     help="ne rien écrire ; sortir en erreur s'il reste des ancres à réaligner")
     args = ap.parse_args()
 
-    corrections, sans_solution, orphelins = [], [], set()
+    corrections, sans_solution, orphelins, inconnues = [], [], set(), []
 
     for lang in LANGUES:
         racine = racine_langue(lang)
@@ -108,7 +120,7 @@ def main() -> int:
             for m in LIEN.finditer(texte):
                 chemin_lien, ancre_brute = m.group(1), m.group(2)
                 ancre = urllib.parse.unquote(ancre_brute)
-                cible_rel = cible_du_lien(rel, chemin_lien)
+                cible_rel = cible_du_lien(rel, chemin_lien, lang)
                 if cible_rel is None:
                     continue
 
@@ -119,7 +131,11 @@ def main() -> int:
                 t_fr = titres(DOCS / cible_rel)
                 idx = next((k for k, (_, x) in enumerate(t_fr) if slug(x) == ancre), None)
                 if idx is None:
-                    continue                    # l'ancre ne correspond à aucun titre français
+                    # Ni un slug de la langue, ni un slug français : typiquement un
+                    # slug traduit devenu périmé après une retraduction du titre.
+                    # Irrécupérable sans historique — on le signale.
+                    inconnues.append((lang, rel, cible_rel, ancre))
+                    continue
                 if [n for n, _ in t_fr] != [n for n, _ in t_lang]:
                     sans_solution.append((lang, rel, cible_rel, ancre, "ossature de titres différente"))
                     continue
@@ -147,6 +163,13 @@ def main() -> int:
             print(f"       {motif} : la traduction de la cible est incomplète, "
                   f"la reprendre avant de corriger le lien")
 
+    if inconnues:
+        print(f"\n{len(inconnues)} ancre(s) inconnue(s) — ni slug de la langue, ni slug "
+              f"français :")
+        for lang, rel, cible, ancre in inconnues:
+            print(f"  {lang}  {rel}  ->  {cible}#{ancre}")
+        print("  (probablement un slug traduit périmé : à corriger à la main)")
+
     if orphelins:
         print(f"\n{len(orphelins)} traduction(s) orpheline(s) ignorée(s) — "
               f"aucune source française, donc page non rendue :")
@@ -154,7 +177,7 @@ def main() -> int:
             print(f"  {o}")
         print("  (à supprimer, ou à doter d'une source française)")
 
-    if args.check and (uniques or sans_solution):
+    if args.check and (uniques or sans_solution or inconnues):
         return 1
     return 0
 

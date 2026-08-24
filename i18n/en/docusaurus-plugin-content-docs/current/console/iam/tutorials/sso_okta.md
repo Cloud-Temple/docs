@@ -16,9 +16,9 @@ This tutorial guides you through configuring identity federation with Okta for y
 
 ## Configuration
 
-Configuring identity federation with Okta enables you to integrate your Okta directory with the Cloud Temple console for centralized authentication.
+Configuring identity federation with Okta allows you to integrate your Okta directory with the Cloud Temple console for centralized authentication.
 
-### Step 1: Okta-side Configuration
+### Step 1: Okta Configuration
 
 1. Log in to your Okta admin console
 2. Navigate to **Applications** > **Applications**
@@ -30,21 +30,21 @@ Configuring identity federation with Okta enables you to integrate your Okta dir
 
 Configure the following settings in Okta:
 
-- **Single sign on URL**: Provided by the Cloud Temple team
-- **Audience URI (SP Entity ID)**: Provided by the Cloud Temple team
-- **Attribute Statements**: Configure the required user attributes
+- **Single sign on URL** : Provided by the Cloud Temple team
+- **Audience URI (SP Entity ID)** : Provided by the Cloud Temple team
+- **Attribute Statements** : Configure the required user attributes
 
 ### Step 3: Cloud Temple Configuration Request
 
 To configure federation with Okta, please create a support request in the Cloud Temple console specifying:
 
 - Your Organization name
-- A contact name with their email and phone number
-- The SAML metadata URL for your Okta application
+- The name of a contact along with their email and phone number
+- The SAML metadata URL of your Okta application
 - The SAML signing certificate
 - The configured user attributes
 
-### Step 4: Testing and Validation
+### Step 4: Test and Validation
 
 Once the configuration is complete:
 
@@ -52,7 +52,7 @@ Once the configuration is complete:
 2. Verify that user attributes are correctly mapped
 3. Validate access to Cloud Temple resources
 
-## Best Practices
+## Best practices
 
 - Configure Okta groups to manage permissions per tenant
 - Enable multi-factor authentication (MFA) in Okta

@@ -203,7 +203,7 @@ Automatic logging of critical cluster events.
 **"Disaster Recovery" Procedure**
 
 - In the event of complete loss of access to a cluster, the **Client** must report an incident to **Cloud Temple** support via the support module in the console.
-See the [**technical support request procedure**](../../console/console_quickstart.md#technical-support-access)
+See the [**technical support request procedure**](../../console/console_quickstart.md#access-to-technical-support)
 
 ---
 
@@ -213,6 +213,6 @@ See the [**technical support request procedure**](../../console/console_quicksta
 2. **Validate configurations** : Test applications in staging environments before production deployment.
 3. **Monitor regularly** : Use built-in tools to track resource usage and detect issues as early as possible.
 4. **Stay informed** : Follow the roadmap and guides to avoid deprecated features.
-5. **Contact support** : For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#technical-support-access) or by email at [**contact**](mailto:contact@cloud-temple.com).
+5. **Contact support** : For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#access-to-technical-support) or by email at [**contact**](mailto:contact@cloud-temple.com).
 
 To review responsibilities in detail, please refer to our [**responsibility matrix**](../../contractual/paas/raci.md).
