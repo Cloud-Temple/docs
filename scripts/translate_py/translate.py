@@ -369,8 +369,12 @@ class TranslationEngine:
         else:
             self.ui.add_log("Initialisation des métadonnées uniquement (utiliser --translate-missing pour traduire)", "info")
         
-        # Scanner tous les fichiers dans docs/
-        all_files = self.file_manager.task_builder.file_scanner.scan_files()
+        # Scanner les fichiers dans docs/, en respectant --path : ce mode
+        # construit sa propre liste et ne passe pas par build_translation_tasks,
+        # où le filtre est appliqué.
+        all_files = self.file_manager.task_builder._apply_path_filters(
+            self.file_manager.task_builder.file_scanner.scan_files()
+        )
         markdown_files = [f for f in all_files if f.suffix.lower() == '.md']
         
         self.ui.add_log(f"Trouvé {len(markdown_files)} fichiers Markdown sur {len(all_files)} fichiers totaux", "info")
@@ -523,6 +527,7 @@ class TranslationEngine:
 @click.option('--token', help='Token Bearer Cloud Temple LLMaaS. Prioritaire sur CLOUDTEMPLE_API_KEY.')
 @click.option('--url', 'api_url', default=None, help='URL de l’API de traduction. Par défaut: https://api.ai.cloud-temple.com/v1/chat/completions')
 @click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.6:27b')
+@click.option('--path', 'path_filters', multiple=True, help='Restreint le périmètre à ce chemin, relatif à docs/ (répétable, motifs glob acceptés). Ex: --path changelog_produits.md')
 @click.version_option(version="2.0.0", prog_name="Cloud Temple Translation System")
 def main(
     dry_run: bool,
@@ -535,7 +540,8 @@ def main(
     test_api: bool,
     token: Optional[str],
     api_url: Optional[str],
-    model_name: Optional[str]
+    model_name: Optional[str],
+    path_filters: tuple
 ) -> None:
     """
     Système de traduction automatique pour la documentation Cloud Temple.
@@ -554,7 +560,8 @@ def main(
         test_api=test_api,
         token=token,
         api_url=api_url,
-        model_name=model_name
+        model_name=model_name,
+        path_filters=list(path_filters)
     ))
 
 
@@ -569,7 +576,8 @@ async def _async_main(
     test_api: bool,
     token: Optional[str],
     api_url: Optional[str],
-    model_name: Optional[str]
+    model_name: Optional[str],
+    path_filters: Optional[list] = None
 ) -> None:
     """Version asynchrone du main."""
     
@@ -579,7 +587,8 @@ async def _async_main(
     
     try:
         # Chargement de la configuration
-        config = load_config(api_key=token, api_url=api_url, model=model_name)
+        config = load_config(api_key=token, api_url=api_url, model=model_name,
+                             path_filters=path_filters)
         require_api = test_api or (not dry_run and (not init or translate_missing))
         validate_environment(config, require_api=require_api)
         
