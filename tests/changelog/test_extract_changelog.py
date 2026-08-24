@@ -487,5 +487,49 @@ class OrdreChronologiqueTest(unittest.TestCase):
         self.assertEqual(merged[-1]["date"], "2025-01-01")
 
 
+class StructureTest(unittest.TestCase):
+    """
+    Les langues traduites (DE, ES, IT) ont leurs puces réécrites par
+    translate.py : --check ne doit comparer que la STRUCTURE, sinon le
+    garde-fou échoue en permanence et on finit par l'ignorer. Mais il doit
+    continuer à détecter la réécriture d'un libellé de produit ou d'une date,
+    car ceux-là appartiennent au générateur.
+    """
+
+    BASE = (
+        "---\ntitle: t\nsidebar_position: 999\n---\n\n# T\n\n> i\n\n"
+        "## v4.47.0 — 2026-07-30\n\n### [Commandes](/console/orders)\n"
+        "- Texte source\n"
+    )
+
+    def test_puce_traduite_toleree(self):
+        traduit = self.BASE.replace("- Texte source", "- Übersetzter Text")
+        self.assertEqual(ec._structure(self.BASE), ec._structure(traduit))
+
+    def test_libelle_de_produit_reecrit_detecte(self):
+        abime = self.BASE.replace("### [Commandes]", "### [Befehle]")
+        self.assertNotEqual(ec._structure(self.BASE), ec._structure(abime))
+
+    def test_date_de_version_alteree_detectee(self):
+        abime = self.BASE.replace("2026-07-30", "2026-07-31")
+        self.assertNotEqual(ec._structure(self.BASE), ec._structure(abime))
+
+    def test_titre_front_matter_reecrit_detecte(self):
+        abime = self.BASE.replace("title: t", "title: autre")
+        self.assertNotEqual(ec._structure(self.BASE), ec._structure(abime))
+
+    def test_puce_supprimee_detectee(self):
+        """Une puce en moins change le squelette : ce n'est pas une traduction."""
+        abime = self.BASE.replace("- Texte source\n", "")
+        self.assertNotEqual(ec._structure(self.BASE), ec._structure(abime))
+
+    def test_seul_l_anglais_est_redige(self):
+        """FR est la source, EN vient de la branche anglaise de maj.js : les
+        deux sont comparés à l'identique. DE/ES/IT ne le sont pas."""
+        self.assertEqual(ec.AUTHORED_LANGUAGES, ["en"])
+        for lang in ("de", "es", "it"):
+            self.assertNotIn(lang, ec.AUTHORED_LANGUAGES)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

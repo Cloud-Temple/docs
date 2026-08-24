@@ -712,6 +712,19 @@ def build_footer(template: str, lang: str, dropped: list[dict], floor: str) -> s
     )
 
 
+def _structure(contenu: str) -> list[str]:
+    """
+    Squelette d'un changelog : tout sauf le texte des puces.
+
+    Sert à contrôler les langues dont les puces sont traduites : la structure
+    reste la propriété du générateur, la prose des puces celle de translate.py.
+    """
+    return [
+        "- " if ligne.startswith("- ") else ligne
+        for ligne in contenu.splitlines()
+    ]
+
+
 def _compute_file_hash(file_path: Path) -> str:
     """Calcule le hash SHA-256 d'un fichier."""
     sha256 = hashlib.sha256()
@@ -826,10 +839,21 @@ def main():
         )
         if args.check:
             current = output_path.read_text(encoding="utf-8") if output_path.exists() else ""
-            state = "OK" if current == md else "DIFFÈRE"
-            if current != md:
-                drift.append(str(output_path.relative_to(ROOT)))
-            print(f"  [{lang}] {state}")
+            # FR et EN sont rédigés (les deux branches de maj.js) : le fichier doit
+            # correspondre exactement. DE, ES et IT ont leurs puces traduites par
+            # translate.py : seule la STRUCTURE — front-matter, intro, titres,
+            # libellés de produits, pied de page — doit rester conforme, sinon la
+            # traduction écraserait des libellés déjà localisés par le générateur.
+            traduite = lang != "fr" and lang not in AUTHORED_LANGUAGES
+            if traduite:
+                conforme = _structure(current) == _structure(md)
+                portee = "structure"
+            else:
+                conforme = current == md
+                portee = "exact"
+            if not conforme:
+                drift.append(f"{output_path.relative_to(ROOT)} ({portee})")
+            print(f"  [{lang}] {'OK' if conforme else 'DIFFÈRE'} ({portee})")
         else:
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_text(md, encoding="utf-8")
