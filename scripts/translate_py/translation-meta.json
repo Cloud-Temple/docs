@@ -474,12 +474,6 @@
       "es": "752cfd10c0dce74dc1688c09b13503b6c9bc1c62f3efc6b552e23a48814f0860",
       "it": "752cfd10c0dce74dc1688c09b13503b6c9bc1c62f3efc6b552e23a48814f0860"
     },
-    "managed_kubernetes/managed_core_kubernetes.md": {
-      "en": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5",
-      "de": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5",
-      "es": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5",
-      "it": "2d8a2aea25f008340b8b369075b6d5d7f13d3f0c743a8138b8c8a58d94a6b9c5"
-    },
     "managed_kubernetes/managed_kubernetes.md": {
       "en": "694b09954aa8ad20623d11f0b84dc5284d3b1f49023134eff4468e81ce2d37a0",
       "de": "694b09954aa8ad20623d11f0b84dc5284d3b1f49023134eff4468e81ce2d37a0",
@@ -949,6 +943,6 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     }
   },
-  "last_update": "2026-08-24T17:23:57.110776",
+  "last_update": "2026-08-24T17:54:30.435236",
   "version": "2.0"
 }

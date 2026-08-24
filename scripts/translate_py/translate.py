@@ -68,6 +68,14 @@ class TranslationEngine:
         """
         # Chargement des métadonnées
         job.metadata = await self.file_manager.metadata_manager.load_metadata()
+
+        # cleanup_missing_files existait sans être appelée nulle part : les
+        # empreintes de sources supprimées restaient donc dans le suivi.
+        presents = {
+            str(f.relative_to(self.file_manager.task_builder.paths['docs']).as_posix())
+            for f in self.file_manager.task_builder.paths['docs'].rglob("*.md")
+        }
+        job.metadata.cleanup_missing_files(presents)
         
         # Traitement spécial pour le mode initialisation
         if job.init_mode:
@@ -531,6 +539,33 @@ class TranslationEngine:
         return job.stats
 
 
+def traductions_orphelines(paths: dict, langues) -> dict:
+    """
+    Fichiers présents dans i18n/ sans source française.
+
+    Le français fait foi, mais rien ne l'appliquait : translate.py ne fait
+    qu'écrire, jamais supprimer. Chaque page française supprimée ou déplacée
+    laissait donc derrière elle une traduction par langue — invisible, car
+    Docusaurus énumère les documents depuis docs/ puis cherche leur traduction :
+    un fichier présent seulement dans i18n/ n'est jamais construit, donc jamais
+    signalé. 19 chemins s'étaient accumulés en 18 mois.
+
+    S'y ajoutent les fichiers ajoutés à la main directement dans i18n/, qui
+    contournent la source.
+    """
+    docs = Path(paths["docs"])
+    trouves = {}
+    for lang in langues:
+        racine = Path(paths["i18n"]) / lang / "docusaurus-plugin-content-docs" / "current"
+        if not racine.exists():
+            continue
+        manquants = [f for f in sorted(racine.rglob("*.md"))
+                     if not (docs / f.relative_to(racine)).exists()]
+        if manquants:
+            trouves[lang] = manquants
+    return trouves
+
+
 def ecart_structurel(source: str, traduction: str) -> Optional[str]:
     """
     Compare l'ossature d'une traduction à celle de sa source.
@@ -568,6 +603,8 @@ def ecart_structurel(source: str, traduction: str) -> Optional[str]:
 @click.option('--token', help='Token Bearer Cloud Temple LLMaaS. Prioritaire sur CLOUDTEMPLE_API_KEY.')
 @click.option('--url', 'api_url', default=None, help='URL de l’API de traduction. Par défaut: https://api.ai.cloud-temple.com/v1/chat/completions')
 @click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.6:27b')
+@click.option('--prune', is_flag=True,
+              help='Supprime les fichiers de i18n/ sans source française. Sans ce drapeau, ils sont seulement signalés.')
 @click.option('--concurrency', 'concurrency', type=int, default=None,
               help='Nombre de traductions simultanées. Prioritaire sur CONCURRENT_TRANSLATIONS et sur le fichier .env.')
 @click.option('--path', 'path_filters', multiple=True, help='Restreint le périmètre à ce chemin, relatif à docs/ (répétable, motifs glob acceptés). Ex: --path changelog_produits.md')
@@ -585,7 +622,8 @@ def main(
     api_url: Optional[str],
     model_name: Optional[str],
     path_filters: tuple,
-    concurrency: Optional[int]
+    concurrency: Optional[int],
+    prune: bool
 ) -> None:
     """
     Système de traduction automatique pour la documentation Cloud Temple.
@@ -606,7 +644,8 @@ def main(
         api_url=api_url,
         model_name=model_name,
         path_filters=list(path_filters),
-        concurrency=concurrency
+        concurrency=concurrency,
+        prune=prune
     ))
 
 
@@ -623,7 +662,8 @@ async def _async_main(
     api_url: Optional[str],
     model_name: Optional[str],
     path_filters: Optional[list] = None,
-    concurrency: Optional[int] = None
+    concurrency: Optional[int] = None,
+    prune: bool = False
 ) -> None:
     """Version asynchrone du main."""
     
@@ -646,6 +686,28 @@ async def _async_main(
         paths = {k: str(v) for k, v in get_paths(config).items()}
         ui.show_config_summary(config, paths)
         
+        # Traductions orphelines : signalées à chaque run, supprimées sur --prune.
+        orphelines = traductions_orphelines(get_paths(config), LANG_CONFIG.LANGUAGES)
+        if orphelines:
+            total = sum(len(v) for v in orphelines.values())
+            chemins = sorted({str(f).split("current/", 1)[-1]
+                              for v in orphelines.values() for f in v})
+            # Affichage direct, pas ui.add_log : ce panneau Rich ne montre que
+            # les dernières lignes de son tampon, et un avertissement émis avant
+            # son démarrage y disparaît sans trace — donc invisible, donc pire
+            # qu'absent puisqu'il donne une fausse assurance.
+            suite = (" — supprimés (--prune)" if prune
+                     else " — relancer avec --prune pour les retirer")
+            print(f"\n⚠  {total} fichier(s) dans i18n/ sans source française, "
+                  f"sur {len(chemins)} chemin(s){suite}", file=sys.stderr)
+            for c in chemins:
+                print(f"     {c}", file=sys.stderr)
+            print(file=sys.stderr)
+            if prune and not dry_run:
+                for fichiers in orphelines.values():
+                    for f in fichiers:
+                        f.unlink()
+
         # Test de l'API si demandé
         if test_api:
             ui.add_log("Test de la connexion API...", "info")
