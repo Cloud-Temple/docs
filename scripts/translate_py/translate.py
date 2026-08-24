@@ -638,7 +638,7 @@ async def _async_main(
         # Le .env est chargé avec override=True et gagne donc sur l'environnement :
         # l'option CLI est appliquée après, conformément au contrat annoncé.
         if concurrency is not None:
-            config = config.copy(update={'concurrent_translations': concurrency})
+            config = config.model_copy(update={'concurrent_translations': concurrency})
         require_api = test_api or (not dry_run and (not init or translate_missing))
         validate_environment(config, require_api=require_api)
         

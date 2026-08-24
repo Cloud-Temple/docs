@@ -489,6 +489,14 @@ class TaskBuilder:
             target_hash = self.file_hasher.compute_file_hash(target_path)
             return current_hash != target_hash
         
+        # --force : retraduire même si l'empreinte concorde. C'était le SEUL cas
+        # où l'option a un sens, et le seul qui n'était pas traité : le
+        # paramètre force_retranslation était reçu puis ignoré, si bien que
+        # --force ne pouvait pas reprendre un fichier marqué à jour — y compris
+        # une traduction tronquée dont l'empreinte mentait.
+        if force_retranslation:
+            return True
+
         # Fichiers markdown : vérification du hash
         if not target_path.exists():
             return True  # Fichier manquant
