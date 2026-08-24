@@ -32,7 +32,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 Deployment tracking for new resources is performed in the __'Orders'__ menu accessible in the green banner on the left side of the screen.
 
-It allows you to view ordered Cloud resources, those currently being deployed, and any errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organisations).
+It allows you to view ordered Cloud resources, those currently being deployed, and any errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organizations).
 
 <img src={shivaOrdersList} />
 

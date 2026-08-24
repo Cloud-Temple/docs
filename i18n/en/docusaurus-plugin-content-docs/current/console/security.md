@@ -20,7 +20,7 @@ Access to the Console is the entry point to all your Cloud Temple services. It i
 
 Access to the cloud management console is limited to pre-authorized IP addresses. This restriction ensures that only users from specified IP ranges are granted access, thereby minimizing the risk of unauthorized access.
 
-You can configure these IP restrictions in your organization settings. To learn how to configure IP filtering, refer to [Access and Authentication Management | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+You can configure these IP restrictions in your organization settings. To learn how to configure IP filtering, refer to [Access and Authentication Management | Cloud Temple Documentation](../console/iam/quickstart?_highlight=*facteur#access-management-and-authentication).
 
 To maximize the effectiveness of this mechanism, be sure to:
 
@@ -94,11 +94,11 @@ For secure and efficient management:
 - **Maintain direct control**, by adding an owner from your organization, even if you outsource cloud service management, so you can oversee important notifications and decisions.
 - **Limit the number of owners** to 3 to reduce exposure and simplify the audit of critical actions.
 
-To learn more about managing tenant owners, refer to the [Guide to Tenant Ownership | Cloud Temple Documentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+To learn more about managing tenant owners, refer to the [Guide to Tenant Ownership | Cloud Temple Documentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#managing-owners-on-a-tenant).
 
 ### Manage Permissions on Your Cloud Services
 
-The Cloud Temple Console allows fine-grained access management by assigning each user one or more permission levels that determine exactly what actions are authorized. Refer to the permissions documentation ([Available Permissions for Organization Users | Cloud Temple Documentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) to understand the different types of permissions and how to assign them properly.
+The Cloud Temple Console allows fine-grained access management by assigning each user one or more permission levels that determine exactly what actions are authorized. Refer to the permissions documentation ([Available Permissions for Organization Users | Cloud Temple Documentation](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-available-for-users-in-your-organization)) to understand the different types of permissions and how to assign them properly.
 
 For efficient and secure permission management, we recommend following these best practices:
 
@@ -159,7 +159,7 @@ Here are some best practices when using VM encryption:
 
 To limit the attack surface of your virtual machines, it is strongly recommended to restrict exposed services to the strict minimum. In particular, ensure your resources are configured to **avoid public exposure of administration interfaces and consoles** for deployed systems and applications.
 
-If you use Cloud Temple's Object Storage services, it is also recommended to **avoid configuring your buckets for public access**, except in cases where this is strictly necessary (see [Access limitations for your S3 buckets | Cloud Temple Documentation](../storage/oss/quickstart#gestion-des-politiques-daccès).
+If you use Cloud Temple's Object Storage services, it is also recommended to **avoid configuring your buckets for public access**, except in cases where this is strictly necessary (see [Access limitations for your S3 buckets | Cloud Temple Documentation](../storage/oss/quickstart#access-policy-management).
 
 ### Harden virtual machines (IaaS services)
 

@@ -22,7 +22,7 @@ L'accesso alla Console è il punto di ingresso verso tutti i servizi Cloud Templ
 
 L'accesso alla console di gestione cloud è limitato agli indirizzi IP precedentemente autorizzati. Questa restrizione consente di autorizzare l'accesso solo agli utenti provenienti dagli intervalli di IP specificati, minimizzando così i rischi di accessi non autorizzati.
 
-È possibile configurare queste restrizioni IP nelle impostazioni della propria organizzazione. Per sapere come configurare il filtraggio IP, consulta la [Gestione degli accessi e dell'autenticazione | Documentazione Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+È possibile configurare queste restrizioni IP nelle impostazioni della propria organizzazione. Per sapere come configurare il filtraggio IP, consulta la [Gestione degli accessi e dell'autenticazione | Documentazione Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestione-degli-accessi-e-autenticazione).
 
 Per massimizzare l'efficacia di questo meccanismo, assicurati di:
 
@@ -62,7 +62,7 @@ Per gli account gestiti localmente dalla Console (senza federazione), l’MFA è
 
 Per ulteriori informazioni:  
 
-- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#quest-ce-que-le-mfa-et-est-il-obligatoire-)
+- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#cosè-lmfa-e-obbligatorio)
 - [Tutoriel : Fédération d'identité avec Microsoft EntraID | Documentation Cloud Temple](../../console/iam/tutorials/sso_azuread)
 - [Tutoriel : Fédération d'identité avec Microsoft ADFS | Documentation Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
@@ -96,11 +96,11 @@ Per una gestione sicura ed efficace:
 - **Assicurate un controllo diretto**, aggiungendo un proprietario membro della vostra organizzazione, anche se affidate la gestione del vostro servizio cloud, per poter supervisionare le notifiche e le decisioni importanti.
 - **Limitate il numero di proprietari** a 3 per ridurre la superficie di esposizione e facilitare l'audit delle azioni critiche.
 
-Per ulteriori informazioni sulla gestione dei proprietari del tenant, consultare il [Guide des propriétaires sur un tenant | Documentation Cloud Temple](../../console/iam/concepts#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Per ulteriori informazioni sulla gestione dei proprietari del tenant, consultare il [Guide des propriétaires sur un tenant | Documentation Cloud Temple](../../console/iam/concepts#gestione-dei-proprietari-su-un-tenant).
 
 ### Gestire le autorizzazioni sui tuoi servizi cloud
 
-La Console Cloud Temple consente una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano precisamente le azioni consentite. Consulta la documentazione sulle autorizzazioni ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../../console/iam/concepts#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle in modo appropriato.
+La Console Cloud Temple consente una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano precisamente le azioni consentite. Consulta la documentazione sulle autorizzazioni ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../../console/iam/concepts#permessi-disponibili-per-gli-utenti-della-tua-organizzazione)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle in modo appropriato.
 
 Per una gestione efficace e sicura delle autorizzazioni, ti consigliamo di seguire queste best practice :
 
@@ -128,7 +128,7 @@ Pertanto, vi consigliamo di:
 Per garantire un monitoraggio efficace del vostro ambiente cloud e reagire rapidamente in caso di anomalie, è essenziale implementare una strategia di monitoraggio attivo. Vi raccomandiamo in particolare di :
 
 - **Monitorare la disponibilità dei servizi** tramite la [Pagina di stato | Cloud Temple](https://status.cloud-temple.com/), al fine di essere avvisati in caso di incidenti o interruzioni generali ;
-- **Abilitare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, al fine di ricevere in tempo reale gli avvisi importanti (vedere [Abbonamento alle notifiche tematiche | Documentazione Cloud Temple](../../console/iam/concepts#abonnement-aux-notifications-thématiques)) ;
+- **Abilitare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, al fine di ricevere in tempo reale gli avvisi importanti (vedere [Abbonamento alle notifiche tematiche | Documentazione Cloud Temple](../../console/iam/concepts#sottoscrizione-alle-notifiche-tematiche)) ;
 - **Sfruttare i log di attività Cloud** per identificare azioni sensibili o sospette sulle vostre risorse (vedere la sezione « Registrazione - Monitoraggio delle Attività » della [Guida introduttiva | Documentazione Cloud Temple](../../iaas_vmware/quickstart)). La raccolta e l'analisi dei log di attività può essere automatizzata tramite le API Console, al fine di integrare gli eventi nei vostri strumenti di supervisione o di rilevamento degli incidenti.
 
 ## Proteggere le risorse ospitate
@@ -161,7 +161,7 @@ Ecco alcune buone pratiche in caso di utilizzo della crittografia delle VM :
 
 Per limitare la superficie di attacco delle vostre macchine virtuali, si consiglia vivamente di restringere al minimo indispensabile i servizi esposti. In particolare, assicuratevi di configurare le vostre risorse in modo da **non esporre pubblicamente le interfacce di amministrazione e le console** dei sistemi e delle applicazioni distribuite.
 
-Se utilizzate i servizi Object Storage di Cloud Temple, si consiglia inoltre di **non configurare i bucket con accesso pubblico**, salvo nei casi in cui ciò sia strettamente necessario (vedere [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../../storage/oss/quickstart#gestion-des-politiques-daccès)).
+Se utilizzate i servizi Object Storage di Cloud Temple, si consiglia inoltre di **non configurare i bucket con accesso pubblico**, salvo nei casi in cui ciò sia strettamente necessario (vedere [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../../storage/oss/quickstart#gestione-delle-politiche-di-accesso)).
 
 ### Indurire le macchine virtuali (servizi IaaS)
 

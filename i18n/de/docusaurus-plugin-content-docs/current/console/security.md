@@ -20,7 +20,7 @@ Der Zugang zur Konsole stellt den Einstiegspunkt zu allen Ihren Cloud Temple-Die
 
 Der Zugriff auf die Cloud-Verwaltungskonsole ist auf zuvor berechtigte IP-Adressen beschränkt. Diese Einschränkung erlaubt den Zugriff nur für Nutzer aus den angegebenen IP-Bereichen und minimiert so das Risiko unbefugten Zugriffs.
 
-Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Informationen zur Einrichtung der IP-Filterung finden Sie unter [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Informationen zur Einrichtung der IP-Filterung finden Sie unter [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#access-management-and-authentication).
 
 Um die Effektivität dieses Mechanismus zu maximieren, achten Sie bitte auf folgende Punkte:
 
@@ -94,11 +94,11 @@ Für eine sichere und effiziente Verwaltung:
 - **Stellen Sie direkten Zugriff sicher**, indem Sie einen Eigentümer aus Ihrer Organisation benennen – auch dann, wenn Sie die Verwaltung Ihres Cloud-Diensts delegieren –, um Benachrichtigungen und wichtige Entscheidungen überwachen zu können;
 - **Begrenzen Sie die Anzahl der Eigentümer** auf maximal 3, um die Angriffsfläche zu reduzieren und die Nachverfolgung kritischer Aktionen zu erleichtern.
 
-Weitere Informationen zur Verwaltung von Tenant-Eigentümern finden Sie im [Guide des popriétaires sur un tenant | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Weitere Informationen zur Verwaltung von Tenant-Eigentümern finden Sie im [Guide des popriétaires sur un tenant | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#verwaltung-der-eigentümer-auf-einem-tenant).
 
 ### Berechtigungen für Ihre Cloud-Dienste verwalten
 
-Die Cloud Temple-Konsole bietet eine feingranulare Zugriffskontrolle, indem jedem Nutzer eine oder mehrere Berechtigungsebenen zugewiesen werden, die genau festlegen, welche Aktionen erlaubt sind. Die vollständige Übersicht finden Sie in der Dokumentation ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)).
+Die Cloud Temple-Konsole bietet eine feingranulare Zugriffskontrolle, indem jedem Nutzer eine oder mehrere Berechtigungsebenen zugewiesen werden, die genau festlegen, welche Aktionen erlaubt sind. Die vollständige Übersicht finden Sie in der Dokumentation ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#verfügbare-berechtigungen-für-benutzer-ihrer-organisation)).
 
 Für eine effiziente und sichere Berechtigungsverwaltung empfehlen wir folgende Best Practices:
 
@@ -159,7 +159,7 @@ Bewährte Praktiken bei Einsatz von VM-Verschlüsselung:
 
 Um die Angriffsfläche Ihrer virtuellen Maschinen zu reduzieren, wird dringend empfohlen, nur notwendige Dienste verfügbar zu machen. Stellen Sie insbesondere sicher, dass Sie **Administrationsschnittstellen und Konsolen von Systemen und Anwendungen nicht öffentlich exponieren**.
 
-Wenn Sie die Objektspeicher-Services von Cloud Temple nutzen, wird zudem empfohlen, **Buckets nicht öffentlich zugänglich zu konfigurieren**, außer in notwendigen Fällen (siehe [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
+Wenn Sie die Objektspeicher-Services von Cloud Temple nutzen, wird zudem empfohlen, **Buckets nicht öffentlich zugänglich zu konfigurieren**, außer in notwendigen Fällen (siehe [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#access-policy-management).
 
 ### Härtung der virtuellen Maschinen (IaaS-Services)
 

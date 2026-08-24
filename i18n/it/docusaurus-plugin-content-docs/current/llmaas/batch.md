@@ -533,4 +533,4 @@ def list_batches(limit: int = 20) -> list[dict]:
 - **Codice di esempio completo** : [`exemples/simple_batch/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_batch)
 - **Catalogo modelli** : [Modelli compatibili Batch](./models)
 - **Riferimento API** : [Documentazione API completa](./api)
-- **Pricing dettagliato** : [Tariffazione LLMaaS](./api#rate-limiting-et-facturation)
+- **Pricing dettagliato** : [Tariffazione LLMaaS](./api#rate-limiting-e-fatturazione)

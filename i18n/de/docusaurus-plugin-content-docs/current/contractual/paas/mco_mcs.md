@@ -35,7 +35,7 @@ Diese Richtlinie beschreibt detailliert die Verantwortlichkeiten und Empfehlunge
 - Planen Sie Anwendungsbereitstellungen außerhalb der Wartungsfenster, um Konflikte mit automatischen Cluster-Updates zu vermeiden.
 - Verfolgen Sie die Mitteilungen von **Cloud Temple** bezüglich Major-Updates, um erforderliche Anpassungen zu planen.
 - Verfolgen Sie bevorstehende Updates über die [**Produkt-Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
-- Abonnieren Sie [**Incident-Benachrichtigungen**](../../console/status.md#gestion-des-notifications)
+- Abonnieren Sie [**Incident-Benachrichtigungen**](../../console/status.md#notification-management)
 
 ---
 
@@ -144,7 +144,7 @@ Schwachstellen in der Infrastruktur und den der Angebotsleistung zugrunde liegen
 **Empfehlung :**
 
 - Nutzen Sie das Alerting des Clusters, das von **[Quay]** bereitgestellt wird, um Schwachstellen zu analysieren und anomales Verhalten in den vom **Kunden** genutzten Images zu erkennen.
-- Abonnieren Sie die Benachrichtigungen zu [**Incidents**](../../console/status.md#gestion-des-notifications).
+- Abonnieren Sie die Benachrichtigungen zu [**Incidents**](../../console/status.md#notification-management).
 
 ### Verschlüsselung
 
@@ -203,7 +203,7 @@ Automatische Aufzeichnung kritischer Cluster-Ereignisse.
 **Verfahren „Wiederherstellung nach einem Ausfall“**
 
 - Im Falle eines vollständigen Zugriffsverlusts auf einen Cluster muss der **Kunde** einen Vorfall über das Supportmodul der Konsole beim Support von **Cloud Temple** melden.
-Siehe [**Verfahren zur Anfrage technischer Support**](../../console/console_quickstart.md#accès-au-support-technique)
+Siehe [**Verfahren zur Anfrage technischer Support**](../../console/console_quickstart.md#zugriff-auf-den-technischen-support)
 
 ---
 
@@ -213,6 +213,6 @@ Siehe [**Verfahren zur Anfrage technischer Support**](../../console/console_quic
 2. **Konfigurationen validieren** : Anwendungen in Staging-Umgebungen testen, bevor sie in der Produktion bereitgestellt werden.
 3. **Regelmäßig überwachen** : Integrierte Tools zur Überwachung der Ressourcennutzung nutzen und Probleme so früh wie möglich erkennen.
 4. **Auf dem Laufenden bleiben** : Die Roadmap und Leitfäden verfolgen, um veraltete Funktionen zu vermeiden.
-5. **Support kontaktieren** : Bei ungelösten Problemen den Support über das [**Verfahren zur Beantragung technischen Supports**](../../console/console_quickstart.md#accès-au-support-technique) oder per E-Mail an die Adresse [**contact**](mailto:contact@cloud-temple.com) kontaktieren.
+5. **Support kontaktieren** : Bei ungelösten Problemen den Support über das [**Verfahren zur Beantragung technischen Supports**](../../console/console_quickstart.md#zugriff-auf-den-technischen-support) oder per E-Mail an die Adresse [**contact**](mailto:contact@cloud-temple.com) kontaktieren.
 
 Um die Verantwortlichkeiten im Detail nachzuvollziehen, lesen Sie bitte unsere [**Verantwortlichkeitsmatrix**](../../contractual/paas/raci.md).

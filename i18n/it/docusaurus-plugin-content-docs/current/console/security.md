@@ -20,7 +20,7 @@ L’accesso alla Console è la porta d’ingresso a tutti i vostri servizi Cloud
 
 L’accesso alla console di gestione cloud è limitato agli indirizzi IP preventivamente autorizzati. Questa restrizione consente di autorizzare l’accesso solo agli utenti provenienti dagli intervalli IP specificati, minimizzando così i rischi di accessi non autorizzati.
 
-È possibile configurare queste restrizioni IP nei parametri della propria organizzazione. Per sapere come configurare il filtraggio IP, consultare la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+È possibile configurare queste restrizioni IP nei parametri della propria organizzazione. Per sapere come configurare il filtraggio IP, consultare la [Gestion des accès et authentification | Documentation Cloud Temple](../console/iam/quickstart?_highlight=*facteur#gestione-degli-accessi-e-autenticazione).
 
 Per massimizzare l’efficacia di questo meccanismo, assicuratevi di:
 
@@ -94,11 +94,11 @@ Per una gestione sicura ed efficace:
 - **Assicurare un controllo diretto**, aggiungendo un proprietario membro della vostra organizzazione, anche se delegate la gestione del vostro servizio cloud, per poter supervisionare notifiche e decisioni importanti.
 - **Limitare il numero di proprietari** a 3, per ridurre la superficie di esposizione e facilitare l’audit delle azioni critiche.
 
-Per maggiori informazioni sulla gestione dei proprietari del tenant, consultare il [Guide des popriétaires sur un tenant | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestion-des-propri%C3%A9taires-sur-un-tenant).
+Per maggiori informazioni sulla gestione dei proprietari del tenant, consultare il [Guide des popriétaires sur un tenant | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#gestione-dei-proprietari-su-un-tenant).
 
 ### Gestire le autorizzazioni sui vostri servizi cloud
 
-La Console Cloud Temple consente una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano con precisione le azioni consentite. Consultate la documentazione delle autorizzazioni ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation)) per comprendere nel dettaglio le varie autorizzazioni e assegnarle in modo appropriato.
+La Console Cloud Temple consente una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano con precisione le azioni consentite. Consultate la documentazione delle autorizzazioni ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../console/iam/concepts?_highlight=*propri%C3%A9taire#permessi-disponibili-per-gli-utenti-della-tua-organizzazione)) per comprendere nel dettaglio le varie autorizzazioni e assegnarle in modo appropriato.
 
 Per una gestione efficace e sicura delle autorizzazioni, vi raccomandiamo di seguire queste migliori pratiche:
 
@@ -126,7 +126,7 @@ Una pagina d'informazione sulla sicurezza disponibile nella Console consente di 
 Per garantire un monitoraggio efficace del vostro ambiente cloud e reagire rapidamente in caso di anomalie, è essenziale mettere in atto una strategia di vigilanza attiva. In particolare, consigliamo di:
 
 - **Monitorare la disponibilità dei servizi** tramite la [Status page | Cloud Temple](https://status.cloud-temple.com/), per essere avvisati in caso di incidenti o interruzioni globali;
-- **Attivare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, per ricevere in tempo reale gli avvisi importanti (vedi [Abonnement aux notifications thématiques | Documentation Cloud Temple](../console/iam/concepts#abonnement-aux-notifications-th%C3%A9matiques));
+- **Attivare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, per ricevere in tempo reale gli avvisi importanti (vedi [Abonnement aux notifications thématiques | Documentation Cloud Temple](../console/iam/concepts#sottoscrizione-alle-notifiche-tematiche));
 - **Sfruttare i log di attività Cloud** per identificare azioni sensibili o sospette sulle vostre risorse (vedere sezione « Journalisation - Suivi des Activités » del [Guide de démarrage | Documentation Cloud Temple](../iaas_vmware/quickstart)). La raccolta e analisi dei log di attività può essere automatizzata tramite le API Console, per integrare gli eventi nei vostri strumenti di supervisione o rilevamento degli incidenti.
 
 ## Mettere in sicurezza le risorse ospitate
@@ -159,7 +159,7 @@ Ecco alcune buone pratiche in caso di utilizzo della crittografia delle VM:
 
 Per ridurre al minimo la superficie d’attacco delle vostre macchine virtuali, è fortemente consigliato limitare ai soli necessari i servizi esposti. In particolare, assicuratevi di configurare le vostre risorse in modo da **non esporre pubblicamente le interfacce di amministrazione e le console** dei sistemi e delle applicazioni distribuite.
 
-Se utilizzate il servizio Object Storage di Cloud Temple, è inoltre consigliato **non configurare i vostri bucket in accesso pubblico**, tranne nei casi in cui ciò sia strettamente necessario (vedi [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestion-des-politiques-daccès).
+Se utilizzate il servizio Object Storage di Cloud Temple, è inoltre consigliato **non configurare i vostri bucket in accesso pubblico**, tranne nei casi in cui ciò sia strettamente necessario (vedi [Limitation des accès à vos buckets S3 | Documentation Cloud Temple](../storage/oss/quickstart#gestione-delle-politiche-di-accesso).
 
 ### Rinforzare le macchine virtuali (servizi IaaS)
 

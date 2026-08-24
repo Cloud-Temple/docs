@@ -32,7 +32,7 @@ import imgCostsConsumption from '@site/docs/console/images/shiva_org_costs_consu
 
 Die Konsole ist über die folgende URL erreichbar: [Konsole](https://shiva.cloud-temple.com) oder direkt über die URL, die Ihnen per E-Mail mitgeteilt wurde.
 
-Die erste Seite ermöglicht die Auswahl der [Organisation](iam/concepts.md#organisations), in der Ihr Benutzer erstellt wurde.
+Die erste Seite ermöglicht die Auswahl der [Organisation](iam/concepts.md#organisationen), in der Ihr Benutzer erstellt wurde.
 Nachdem das Unternehmen angegeben wurde, klicken Sie bitte auf __'Anmelden'__.
 
 <img src={shivaLogin} />
