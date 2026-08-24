@@ -16,6 +16,7 @@ Exemples:
 """
 
 import asyncio
+import re
 import sys
 from pathlib import Path
 from typing import List, Optional
@@ -317,7 +318,22 @@ class TranslationEngine:
                 progress_callback=progress_callback
             )
             
-            if result.success and result.translated_text:
+            ecart = (ecart_structurel(content, result.translated_text)
+                     if result.success and result.translated_text else None)
+
+            if ecart:
+                # On n'écrit PAS : conserver l'ancienne traduction, même datée,
+                # vaut mieux qu'en publier une tronquée. Et on ne tamponne pas
+                # l'empreinte, pour que le fichier reste vu comme à traduire.
+                task.status = TranslationStatus.FAILED
+                task.error_message = f"traduction incomplète : {ecart}"
+                job.stats.files_failed += 1
+                job.stats.add_error(
+                    f"Refusé {task.relative_path} → {task.target_lang} : {ecart}")
+                self.ui.add_log(
+                    f"REFUSÉ {task.relative_path} → {task.target_lang} : {ecart}",
+                    "error")
+            elif result.success and result.translated_text:
                 # Sauvegarde du fichier traduit
                 await self.file_manager.write_file_content(
                     task.target_path,
@@ -513,6 +529,31 @@ class TranslationEngine:
             self.ui.add_log("Initialisation terminée", "success")
         
         return job.stats
+
+
+def ecart_structurel(source: str, traduction: str) -> Optional[str]:
+    """
+    Compare l'ossature d'une traduction à celle de sa source.
+
+    Le nombre de titres et de délimiteurs de bloc de code sont des invariants
+    indépendants de la langue : une traduction qui n'en a pas autant est
+    incomplète, pas différente. Sans ce contrôle, une réponse tronquée par le
+    modèle est écrite puis tamponnée comme un succès, et le défaut devient
+    invisible — ni le build ni les empreintes ne le voient. Constaté sur quatre
+    fichiers, dont un tutoriel qui s'arrêtait au milieu de la procédure dans
+    trois langues.
+
+    Renvoie None si l'ossature concorde, sinon le motif de l'écart.
+    """
+    titres = lambda t: sum(1 for l in t.splitlines() if re.match(r"^#{1,6}\s+\S", l))
+    fences = lambda t: sum(1 for l in t.splitlines() if l.lstrip().startswith("```"))
+    ns, nt = titres(source), titres(traduction)
+    if ns != nt:
+        return f"{nt} titres contre {ns} dans la source"
+    cs, ct = fences(source), fences(traduction)
+    if cs != ct:
+        return f"{ct} délimiteurs de bloc de code contre {cs} dans la source"
+    return None
 
 
 @click.command()
