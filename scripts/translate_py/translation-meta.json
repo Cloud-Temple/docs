@@ -85,10 +85,10 @@
       "it": "1b52c385e0e00c19a63588dc81ea75e21417da5a1356cea502171fc8b38ea454"
     },
     "console/iam/iam.md": {
-      "en": "484e52649550098662ce7e64419dd94d10c20b10e5e2d2bee7e987d53841c949",
-      "de": "484e52649550098662ce7e64419dd94d10c20b10e5e2d2bee7e987d53841c949",
-      "es": "484e52649550098662ce7e64419dd94d10c20b10e5e2d2bee7e987d53841c949",
-      "it": "484e52649550098662ce7e64419dd94d10c20b10e5e2d2bee7e987d53841c949"
+      "en": "c0b1a2a748e1590b482bda6b1ce432ae641fb1a257c5132fe1ce2aba68a78cd9",
+      "de": "c0b1a2a748e1590b482bda6b1ce432ae641fb1a257c5132fe1ce2aba68a78cd9",
+      "es": "c0b1a2a748e1590b482bda6b1ce432ae641fb1a257c5132fe1ce2aba68a78cd9",
+      "it": "c0b1a2a748e1590b482bda6b1ce432ae641fb1a257c5132fe1ce2aba68a78cd9"
     },
     "console/iam/quickstart.md": {
       "en": "3b3a44b3e281fa129a58463c3dae6336fd8ee4809d2ba091f693f65850739434",
@@ -259,10 +259,10 @@
       "it": "eeaf1b1166b80e987ff2c2f45a74c310e1365ad7beefd17dc4c55f29b684cbc9"
     },
     "home.md": {
-      "en": "838d39fa605dcde674eaeb5b4e90c3e1abb0cac9ad6c68d8db00f95b8d914554",
-      "de": "838d39fa605dcde674eaeb5b4e90c3e1abb0cac9ad6c68d8db00f95b8d914554",
-      "es": "838d39fa605dcde674eaeb5b4e90c3e1abb0cac9ad6c68d8db00f95b8d914554",
-      "it": "838d39fa605dcde674eaeb5b4e90c3e1abb0cac9ad6c68d8db00f95b8d914554"
+      "en": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea",
+      "de": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea",
+      "es": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea",
+      "it": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea"
     },
     "housing/concepts.md": {
       "en": "6057512274be28c3245fcaf3579292f9e2058311af01bfd7778c768ab375e34d",
@@ -541,10 +541,10 @@
       "it": "b4cc7be0535a03fdd185f863bac7eb60750b5f4ecd4a71a0f96d58fb0c935f0a"
     },
     "managed_kubernetes/tutorials/usingopencost.md": {
-      "en": "563039218be9fb354209563592d0ff89f9af93441528182ef04cb99bcbfcc7e0",
-      "de": "563039218be9fb354209563592d0ff89f9af93441528182ef04cb99bcbfcc7e0",
-      "es": "563039218be9fb354209563592d0ff89f9af93441528182ef04cb99bcbfcc7e0",
-      "it": "563039218be9fb354209563592d0ff89f9af93441528182ef04cb99bcbfcc7e0"
+      "en": "d5da45892228df9547e45dc021445b4fa8374e8bab0a79b70c3077de26cb64f2",
+      "de": "d5da45892228df9547e45dc021445b4fa8374e8bab0a79b70c3077de26cb64f2",
+      "es": "d5da45892228df9547e45dc021445b4fa8374e8bab0a79b70c3077de26cb64f2",
+      "it": "d5da45892228df9547e45dc021445b4fa8374e8bab0a79b70c3077de26cb64f2"
     },
     "managed_mariadb/concepts.md": {
       "en": "fdcfd4e274a14227015a33940ab621bbd1fe38c276655d79a71e671ecf937872",
@@ -679,10 +679,10 @@
       "it": "cbbc5f76a570e697856f1fe93387d7a5e361b7edcbc4b2b403fc680e57bccf49"
     },
     "network/network_overview.md": {
-      "en": "a92caa8a3d1bc1beab7ca1fa0bd5b15c277df6e0b90afdc0c265d4c4b11f9478",
-      "de": "a92caa8a3d1bc1beab7ca1fa0bd5b15c277df6e0b90afdc0c265d4c4b11f9478",
-      "es": "a92caa8a3d1bc1beab7ca1fa0bd5b15c277df6e0b90afdc0c265d4c4b11f9478",
-      "it": "a92caa8a3d1bc1beab7ca1fa0bd5b15c277df6e0b90afdc0c265d4c4b11f9478"
+      "en": "b8bdf4e044044775b374f16306b54ba8d2159522760d996911cf8b1c97e25f6e",
+      "de": "b8bdf4e044044775b374f16306b54ba8d2159522760d996911cf8b1c97e25f6e",
+      "es": "b8bdf4e044044775b374f16306b54ba8d2159522760d996911cf8b1c97e25f6e",
+      "it": "b8bdf4e044044775b374f16306b54ba8d2159522760d996911cf8b1c97e25f6e"
     },
     "network/private_backbone/concepts.md": {
       "en": "d2933b32bfb620feffb5f54d1f0a763a51a3405a067ad7473a065242b2bcf36b",
@@ -697,10 +697,10 @@
       "it": "283ffb3b0781169c059c9cd19431c8cbe9b98c41f990daf4000eb39383ecce35"
     },
     "network/private_backbone/quickstart.md": {
-      "en": "2a13277ed336bd5b342fcf3906808972a3eef1dabd34b2f88236c356d2db555c",
-      "de": "2a13277ed336bd5b342fcf3906808972a3eef1dabd34b2f88236c356d2db555c",
-      "es": "2a13277ed336bd5b342fcf3906808972a3eef1dabd34b2f88236c356d2db555c",
-      "it": "2a13277ed336bd5b342fcf3906808972a3eef1dabd34b2f88236c356d2db555c"
+      "en": "181219ec60d2dc69d991fc1907913bdcd14927c32121aa57aa40351bea1a43c3",
+      "de": "181219ec60d2dc69d991fc1907913bdcd14927c32121aa57aa40351bea1a43c3",
+      "es": "181219ec60d2dc69d991fc1907913bdcd14927c32121aa57aa40351bea1a43c3",
+      "it": "181219ec60d2dc69d991fc1907913bdcd14927c32121aa57aa40351bea1a43c3"
     },
     "network/private_backbone/tutorials.md": {
       "en": "b869996d00266db6549176b941cbcb8afd039e238244eb9b975f15fc7b5bb701",
@@ -949,6 +949,6 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     }
   },
-  "last_update": "2026-08-24T12:15:20.491306",
+  "last_update": "2026-08-24T12:53:19.910259",
   "version": "2.0"
 }
