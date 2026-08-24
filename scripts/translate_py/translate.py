@@ -527,6 +527,8 @@ class TranslationEngine:
 @click.option('--token', help='Token Bearer Cloud Temple LLMaaS. Prioritaire sur CLOUDTEMPLE_API_KEY.')
 @click.option('--url', 'api_url', default=None, help='URL de l’API de traduction. Par défaut: https://api.ai.cloud-temple.com/v1/chat/completions')
 @click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.6:27b')
+@click.option('--concurrency', 'concurrency', type=int, default=None,
+              help='Nombre de traductions simultanées. Prioritaire sur CONCURRENT_TRANSLATIONS et sur le fichier .env.')
 @click.option('--path', 'path_filters', multiple=True, help='Restreint le périmètre à ce chemin, relatif à docs/ (répétable, motifs glob acceptés). Ex: --path changelog_produits.md')
 @click.version_option(version="2.0.0", prog_name="Cloud Temple Translation System")
 def main(
@@ -541,7 +543,8 @@ def main(
     token: Optional[str],
     api_url: Optional[str],
     model_name: Optional[str],
-    path_filters: tuple
+    path_filters: tuple,
+    concurrency: Optional[int]
 ) -> None:
     """
     Système de traduction automatique pour la documentation Cloud Temple.
@@ -561,7 +564,8 @@ def main(
         token=token,
         api_url=api_url,
         model_name=model_name,
-        path_filters=list(path_filters)
+        path_filters=list(path_filters),
+        concurrency=concurrency
     ))
 
 
@@ -577,7 +581,8 @@ async def _async_main(
     token: Optional[str],
     api_url: Optional[str],
     model_name: Optional[str],
-    path_filters: Optional[list] = None
+    path_filters: Optional[list] = None,
+    concurrency: Optional[int] = None
 ) -> None:
     """Version asynchrone du main."""
     
@@ -589,6 +594,10 @@ async def _async_main(
         # Chargement de la configuration
         config = load_config(api_key=token, api_url=api_url, model=model_name,
                              path_filters=path_filters)
+        # Le .env est chargé avec override=True et gagne donc sur l'environnement :
+        # l'option CLI est appliquée après, conformément au contrat annoncé.
+        if concurrency is not None:
+            config = config.copy(update={'concurrent_translations': concurrency})
         require_api = test_api or (not dry_run and (not init or translate_missing))
         validate_environment(config, require_api=require_api)
         
