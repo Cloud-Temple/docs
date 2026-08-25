@@ -13,16 +13,6 @@ sidebar_position: 2
 
 - **Object Storage (Sicherheit)** : Der Abschnitt zur Verschlüsselung ruhender Daten (D@RE) präzisiert nun, dass der Dienst eine FIPS 140-3-zertifizierte AES-256-Bit-Verschlüsselung über die Softwarebibliothek RSA BSAFE Crypto-J in Version 7.x verwendet.
 
-### 26 Mai 2026 : Verbesserung des Übersetzungs-Workflows
-
-- **Übersetzung (outillage)** : Hinzufügen der Optionen `--token`, `--url` und `--model` zum Python-Skript `scripts/translate_py/translate.py`. Das API-Token kann nun direkt über die Befehlszeile bereitgestellt werden, ohne eine `.env`-Datei neu erstellen zu müssen. CLI-Optionen haben Vorrang vor Umgebungsvariablen.
-- **Übersetzung (configuration)** : Aktualisierung des Standard-Übersetzungsmodells auf `qwen3.6:27b`, wobei der Standard-Endpoint von Cloud Temple LLMaaS `https://api.ai.cloud-temple.com/v1/chat/completions` beibehalten wird.
-- **Übersetzung (dry-run)** : Der Simulations-Workflow bleibt ohne API-Token nutzbar, um die zu übersetzenden Dateien vor der tatsächlichen Ausführung zu überprüfen.
-
-### 4. Mai 2026: Sicherheitspatches — Docker-Image (CVE Alpine)
-
-- **Sicherheit (Docker)** : Hinzufügen von `apk upgrade --no-cache` im finalen Stage `nginx:stable-alpine` der Produktions-Dockerfiles (`Dockerfile` et `Dockerfile.prebuilt`). Dieses Update behebt alle von Harbor/Trivy für das Image `3.24.3` erkannten Critical- und High-CVEs, die mit den eingefrorenen Alpine-Paketen zusammenhängen: `libcrypto3`, `libssl3`, `libxml2`, `libxslt`, `libexpat`, `libpng`, `zlib`, `c-ares`, `musl`, `xz-libs`, `busybox`, `curl`. Der nächste Build wird ein Image erzeugen, das alle diese Pakete in ihrer jeweils neuesten gepatchten Version enthält.
-
 ### 30. April 2026 : Details zu den Speicherleistungen
 
 - **Speicher (IaaS VMware, OpenSource, Bare Metal)** : Hinzufügen der absoluten Limits für IOPS und maximale Bandbreite für alle Speicherklassen. Diese Informationen ermöglichen eine präzisere Dimensionierung der Umgebungen entsprechend den Leistungsanforderungen.
@@ -60,12 +50,10 @@ sidebar_position: 2
 
 - **IaaS VMware**: Hinzufügen einer detaillierten Dokumentation zu den Metriken, die in der VMware-Clusteransicht über die Cloud Temple-Konsole angezeigt werden. Deckt die drei Speicherdiagramme des Clusters ab: **Zugewiesener Speicher** (Gesamtmenge, die den VMs zugewiesen ist), **Verbrauchter Speicher** (physischer Speicher, der tatsächlich von den VMs genutzt wird) und **Worst-Case-Zuweisung** (Projektion des maximalen gleichzeitigen Verbrauchs), mit einer genauen Beschreibung der Bedeutung jedes Indikators zur vorausschauenden Planung des Ressourcenbedarfs.
 
-### 15. April 2026: Dokumentation Managed MariaDB, Managed PostgreSQL und mehrsprachige Korrekturen
+### 15. April 2026: Dokumentation Managed MariaDB, Managed PostgreSQL
 
 - **Managed MariaDB**: Veröffentlichung der ersten Dokumentation für den Managed MariaDB-Dienst (Preview): Vorstellung des Dienstes, technische Konzepte (StandAlone- und Distributed-Architekturen), Schnellstartanleitung. 
 - **Managed PostgreSQL**: Veröffentlichung der ersten Dokumentation für den Managed PostgreSQL-Dienst (Preview): Vorstellung des Dienstes, technische Konzepte, Schnellstartanleitung.
-- **Mehrsprachige Korrekturen (Bilder)**: Korrektur der Bildreferenzen in den Übersetzungen der Abschnitte Managed Kubernetes und Managed MariaDB für alle Sprachen (EN, DE, ES, IT) — Konvertierung relativer Pfade `./images/` in absolute Pfade `@site/docs/...`, um eine korrekte Darstellung in allen Sprachen zu gewährleisten.
-- **Korrekturen defekter Links**: Behebung mehrerer defekter Links in der Dokumentation: Verweise auf LLMaaS-Lizenzen, Link zur Konsole im rclone-Tutorial (OSS), IAM-Link in der Netzwerkdokumentation (EN), relative Links im Terraform-Abschnitt (EN).
 
 ### 15. April 2026 : Neues Modul Kostenmanager
 
@@ -85,18 +73,10 @@ sidebar_position: 2
 
 - **Vertraglich**: Aktualisierung der Vertraglichen Vereinbarung zu personenbezogenen Daten (DPA) auf Version 1.0. Integration der neuesten Anforderungen der HDS-Zertifizierung (Hébergeur de Données de Santé) und Aktualisierung der Liste der autorisierten Unterauftragnehmer. Vollständige Übersetzung ins Englische, Deutsche, Spanische und Italienische.
 
-### 21. Februar 2026: Verbesserung der SEO-Optimierung
-
-- **SEO**: Korrektur der Produktions-URL (`https://docs.cloud-temple.com`) und des Basispfads (`/`) in der Docusaurus-Konfiguration, um korrekte kanonische URLs für die Google-Indizierung zu gewährleisten.
-- **Sitemap**: Aktivierung der automatischen Sitemap-Generierung (`/sitemap.xml`) zur Verbesserung des Crawlings und der Indizierung durch Suchmaschinen.
-- **Robots.txt**: Hinzufügen einer `robots.txt`-Datei, die das vollständige Crawling der Website erlaubt und auf die Sitemap verweist.
-
-### 21. Februar 2026 : Erweiterte Netzwerkkonzepte und mehrsprachige Verbesserungen
+### 21. Februar 2026 : Erweiterte Netzwerkkonzepte
 
 - **Netzwerk (Internet)** : Neue Seite zu **erweiterten Konzepten**, die BGP-Communities und die Steuerung der Local Preference im Internet-Backbone von Cloud Temple (AS33930) dokumentiert. Enthält einen Konfigurationsleitfaden mit einem Bird-Beispiel.
 - **LLMaaS** : Aktualisierung des Modellkatalogs und Hinzufügung des Lebenszyklus der Modelle. Hinzufügung von LTS-Modellen (Long Term Support).
-- **Konsole (Sicherheit)** : Verbesserung der Qualität der Übersetzungen für Sicherheitswarnungen (Englisch, Deutsch, Spanisch, Italienisch).
-- **Mehrsprachigkeit** : Übersetzung der neuen Seite zu erweiterten Netzwerkkonzepten in die 4 Sprachen (en, de, es, it) und allgemeine Verbesserung der Qualität bestehender Übersetzungen.
 - **IaaS Bare Metal** : Ergänzende Informationen zum BFS-Volumen (Boot from SAN) in der Startanleitung : Volume 1 ist der Betriebssysteminstallation vorbehalten, kann innerhalb derselben AZ nicht geteilt werden, und es wird empfohlen, Daten auf einem zusätzlichen LUN-Volumen zu speichern.
 - **Objektspeicher (OSS)** : Hinzufügung einer **FAQ**-Seite, die S3-Zugriff, IP-Whitelists, präsignierte Links und empfohlene Anwendungsszenarien abdeckt.
 
@@ -108,23 +88,12 @@ sidebar_position: 2
 
 - **Managed Kubernetes** : Vollständige Aktualisierung und Finalisierung der Service-Level-Vereinbarungen (SLA) für das Managed-Kubernetes-Angebot.
 
-### 21. Januar 2026: Sicherheitsverbesserungen und Übersetzungen
-
-- **Console Management** : Aktualisierung der internationalen Übersetzungen (anglais, allemand, espagnol, italien) für die Sicherheitswarnungen in der Verwaltungskonsole.
-
 ### 19. Januar 2026 : Erweiterung von Managed Kubernetes und VPC
 
 - **Managed Kubernetes** : Unterstützung für **Bare Metal**-Knoten und **GPUs** (NVIDIA) hinzugefügt.
 - **Managed Kubernetes** : Neues Tutorial zur Verwendung von GPUs in einem Kubernetes-Cluster.
 - **Managed Kubernetes** : Ersetzung von KubeCost durch einen aktuelleren Leitfaden zu **OpenCost**.
 - **Network (VPC)** : Vollständige Dokumentation des Virtual Private Cloud (VPC)-Diensts, einschließlich der Konzepte für Hochverfügbarkeit (HA), Einführungsanleitungen und Tutorials.
-- **Multilingue** : Vollständige Übersetzung des VPC-Diensts und der neuen Kubernetes-Inhalte ins Englische, Deutsche, Spanische und Italienische.
-
-### 15. Dezember 2025: Stabilisierung und mehrsprachige Korrekturen
-
-- **Mehrsprachigkeit (Terraform, LLMaaS, Harbor)** : Wichtige Korrektur der Übersetzungen ins Spanische, Italienische und Deutsche. Behebung von MDX-Syntaxproblemen (leere Codeblöcke, nicht escapete Tags), die die Kompilierung der Website verhinderten.
-- **Mehrsprachigkeit (Bilder)** : Wiederherstellung der korrekten Bildpfade in den italienischen und deutschen Versionen für die Abschnitte Bastion und IaaS VMware.
-- **Build** : Validierung der Bereitstellung für alle 5 unterstützten Sprachen.
 
 ### 11. Dezember 2025: Neuerungen bei Managed Kubernetes
 
@@ -134,8 +103,6 @@ sidebar_position: 2
 ### 22. November 2025: LLMaaS-Neuigkeiten und allgemeine Verbesserungen
 
 - **LLMaaS (OCR)**: Hinzufügen einer vollständigen Dokumentation für **DeepSeek-OCR**, unser neues Modell, das auf die Dokumentenanalyse (PDF, Bilder) spezialisiert ist und strukturierten Text, Tabellen sowie mathematische Formeln extrahieren kann.
-- **Mehrsprachigkeit**: Behebung von Zugänglichkeitsproblemen in den italienischen und deutschen Versionen der Dokumentation.
-- **Qualität**: Korrektur der Codeblock-Darstellung in den LLMaaS-Tutorials und Wiederherstellung fehlender Bilder im IaaS-VMware-Quickstart-Guide (italienische Version).
 
 ### 20. November 2025: Wichtige PaaS OpenShift-Aktualisierung
 
@@ -166,7 +133,6 @@ sidebar_position: 2
 ### 14. August 2025 : Verbesserungen und Korrekturen
 
 - **LLMaaS** : Aktualisierung und Klarstellung der FAQ-Antworten, um technische und strategische Fragen besser zu beantworten. Hinzufügen der FAQ zur Navigation.
-- **Allgemein** : Korrektur mehrerer interner Navigationslinks in der gesamten Dokumentation für ein flüssigeres Erlebnis.
 
 ### Juli 2025 : Neuigkeiten und wichtige Updates
 
