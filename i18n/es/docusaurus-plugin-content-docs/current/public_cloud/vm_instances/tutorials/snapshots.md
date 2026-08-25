@@ -22,7 +22,7 @@ Haga clic en **+ Crear un snapshot** e introduzca un nombre descriptivo, por eje
 
 Haga clic en **Crear**.
 
-:::tip Buenas prácticas de nomenclatura
+:::tip[Buenas prácticas de nomenclatura]
 - Incluya la **fecha** en el nombre
 - Especifique el **motivo** del snapshot
 :::

@@ -112,7 +112,7 @@ Verwenden Sie für Ihren ersten Test eines der folgenden empfohlenen Modelle:
 
 Weitere Optionen finden Sie im [vollständigen Modellkatalog](./models). Bevorzugen Sie für Ihre Produktivanwendungen Modelle mit der Kennzeichnung **LTS**.
 
-:::tip Tipp für Qwen-Modelle mit Reasoning
+:::tip[Tipp für Qwen-Modelle mit Reasoning]
 Einige Modelle der **Qwen**-Familie (wie `qwen3-2507-think:4b`, `qwen3.5:9b` oder `qwen3.6:27b`) verfügen über einen erweiterten Reasoning-Modus. Sie können die Aktivierung erzwingen, indem Sie `/think` am Anfang Ihres Prompts hinzufügen, oder sie deaktivieren, um eine direktere und schnellere Antwort mit `/nothink` zu erhalten.
 :::
 

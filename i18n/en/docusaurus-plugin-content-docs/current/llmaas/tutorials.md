@@ -904,7 +904,7 @@ This tutorial guides you through setting up the CLINE extension in Visual Studio
     * **Base URL**: Enter the LLMaaS API endpoint from Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
     * **OpenAI Compatible API Key**: Paste the API key you generated from the Cloud Temple console.
 
-    :::tip Generate API Key
+    :::tip[Generate API Key]
     To generate your API key, go to the Cloud Temple console, navigate to **LLMaaS** > **API Keys**, then click **"Create API Key"**.
 
     ![Creating an API Key from the Console](@site/docs/llmaas/images/console_create_api_key.png)

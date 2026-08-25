@@ -76,10 +76,10 @@ OUTPUTS = [
         "Nouveautés produits",
         "Nouveautés produits & évolutions",
         "Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.\nLes corrections de bugs sont volontairement exclues.",
-        ":::info Historique antérieur\n"
+        ":::info[Historique antérieur]\n\n"
         "L'historique complet des versions antérieures à v{floor} (v{first} à v{last}, "
         "de {first_month} {first_year} à {last_month} {last_year}) est disponible dans "
-        "l'[historique Git]({git_url}) du projet.\n:::",
+        "l'[historique Git]({git_url}) du projet.\n\n:::",
     ),
     (
         "en",
@@ -87,10 +87,10 @@ OUTPUTS = [
         "Product Updates",
         "Product Updates & Evolutions",
         "This changelog lists only new features and significant evolutions of the Cloud Temple platform.\nBug fixes are intentionally excluded.",
-        ":::info Earlier history\n"
+        ":::info[Earlier history]\n\n"
         "The full history of versions prior to v{floor} (v{first} to v{last}, "
         "from {first_month} {first_year} to {last_month} {last_year}) is available in the "
-        "project's [Git history]({git_url}).\n:::",
+        "project's [Git history]({git_url}).\n\n:::",
     ),
     (
         "de",
@@ -98,10 +98,10 @@ OUTPUTS = [
         "Produktneuheiten",
         "Produktneuheiten & Weiterentwicklungen",
         "Dieses Changelog enthält ausschließlich neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple Plattform.\nFehlerbeseitigungen sind bewusst ausgeschlossen.",
-        ":::info Frühere Historie\n"
+        ":::info[Frühere Historie]\n\n"
         "Die vollständige Historie der Versionen vor v{floor} (v{first} bis v{last}, "
         "von {first_month} {first_year} bis {last_month} {last_year}) ist in der "
-        "[Git-Historie]({git_url}) des Projekts verfügbar.\n:::",
+        "[Git-Historie]({git_url}) des Projekts verfügbar.\n\n:::",
     ),
     (
         "es",
@@ -109,10 +109,10 @@ OUTPUTS = [
         "Novedades del producto",
         "Novedades del producto & Evoluciones",
         "Este changelog lista únicamente las nuevas funcionalidades y evoluciones significativas de la plataforma Cloud Temple.\nLas correcciones de errores están excluidas intencionalmente.",
-        ":::info Historial anterior\n"
+        ":::info[Historial anterior]\n\n"
         "El historial completo de las versiones anteriores a v{floor} (v{first} a v{last}, "
         "de {first_month} de {first_year} a {last_month} de {last_year}) está disponible en el "
-        "[historial Git]({git_url}) del proyecto.\n:::",
+        "[historial Git]({git_url}) del proyecto.\n\n:::",
     ),
     (
         "it",
@@ -120,10 +120,10 @@ OUTPUTS = [
         "Novità del prodotto",
         "Novità del prodotto & Evoluzioni",
         "Questo changelog elenca solo le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.\nLe correzioni di bug sono intenzionalmente escluse.",
-        ":::info Cronologia precedente\n"
+        ":::info[Cronologia precedente]\n\n"
         "La cronologia completa delle versioni precedenti alla v{floor} (da v{first} a v{last}, "
         "da {first_month} {first_year} a {last_month} {last_year}) è disponibile nella "
-        "[cronologia Git]({git_url}) del progetto.\n:::",
+        "[cronologia Git]({git_url}) del progetto.\n\n:::",
     ),
 ]
 

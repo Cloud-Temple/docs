@@ -1164,6 +1164,8 @@ sidebar_position: 999
 
 ---
 
-:::info Frühere Historie
+:::info[Frühere Historie]
+
 Die vollständige Historie der Versionen vor v4.0 (v1.0 bis v3.38.1, von Februar 2019 bis Oktober 2024) ist in der [Git-Historie](https://github.com/Cloud-Temple/docs) des Projekts verfügbar.
+
 :::

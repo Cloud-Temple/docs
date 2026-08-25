@@ -22,7 +22,7 @@ Klicken Sie auf **+ Snapshot erstellen** und geben Sie einen aussagekräftigen N
 
 Klicken Sie auf **Erstellen**.
 
-:::tip Benennungsempfehlungen
+:::tip[Benennungsempfehlungen]
 - Datum im Namen angeben
 - Grund des Snapshots angeben
 :::

@@ -43,10 +43,10 @@
       "it": "36a83886c5558bf64d9c3e368444b50fb6e01f72339d89cdcec115dfb83e57d4"
     },
     "changelog_produits.md": {
-      "en": "3afb94d073f0af5da99e4fc3df9a80f9dc9e27ee1144b7fc9a81047e6ff381fb",
-      "de": "3afb94d073f0af5da99e4fc3df9a80f9dc9e27ee1144b7fc9a81047e6ff381fb",
-      "es": "3afb94d073f0af5da99e4fc3df9a80f9dc9e27ee1144b7fc9a81047e6ff381fb",
-      "it": "3afb94d073f0af5da99e4fc3df9a80f9dc9e27ee1144b7fc9a81047e6ff381fb"
+      "en": "0d0a3df86445f345db7fbb8de31b8e0b44e504e957d82629d79fa4433a6a7cd1",
+      "de": "0d0a3df86445f345db7fbb8de31b8e0b44e504e957d82629d79fa4433a6a7cd1",
+      "es": "0d0a3df86445f345db7fbb8de31b8e0b44e504e957d82629d79fa4433a6a7cd1",
+      "it": "0d0a3df86445f345db7fbb8de31b8e0b44e504e957d82629d79fa4433a6a7cd1"
     },
     "compute_overview.md": {
       "en": "5e40ef26288ad3029a528496323d15b2bcc534408f885b47eaf79cd00336db01",
@@ -403,22 +403,22 @@
       "it": "1cfb170e2b26885bb8165067de8a62247ab8437c433af57649e7a7917ae15a82"
     },
     "llmaas/api.md": {
-      "en": "4b3006ac798c5ca352dd57a76acc8f9c5c524153070428c512ab7afdf9afdc4a",
-      "de": "4b3006ac798c5ca352dd57a76acc8f9c5c524153070428c512ab7afdf9afdc4a",
-      "es": "4b3006ac798c5ca352dd57a76acc8f9c5c524153070428c512ab7afdf9afdc4a",
-      "it": "4b3006ac798c5ca352dd57a76acc8f9c5c524153070428c512ab7afdf9afdc4a"
+      "en": "66c1e845e2233fccace22c243ed114bdf026c34d925d3d189c49a250f3c9278d",
+      "de": "66c1e845e2233fccace22c243ed114bdf026c34d925d3d189c49a250f3c9278d",
+      "es": "66c1e845e2233fccace22c243ed114bdf026c34d925d3d189c49a250f3c9278d",
+      "it": "66c1e845e2233fccace22c243ed114bdf026c34d925d3d189c49a250f3c9278d"
     },
     "llmaas/batch.md": {
-      "en": "e3033683b7d1ad80e5c46a68ffa9b3cc31f13ae79a16434c9cc2419f76398da0",
-      "de": "e3033683b7d1ad80e5c46a68ffa9b3cc31f13ae79a16434c9cc2419f76398da0",
-      "es": "e3033683b7d1ad80e5c46a68ffa9b3cc31f13ae79a16434c9cc2419f76398da0",
-      "it": "e3033683b7d1ad80e5c46a68ffa9b3cc31f13ae79a16434c9cc2419f76398da0"
+      "en": "31df157e941e8f4ffe2205d3847040460add04093a2f6b025a17b22a0ff16267",
+      "de": "31df157e941e8f4ffe2205d3847040460add04093a2f6b025a17b22a0ff16267",
+      "es": "31df157e941e8f4ffe2205d3847040460add04093a2f6b025a17b22a0ff16267",
+      "it": "31df157e941e8f4ffe2205d3847040460add04093a2f6b025a17b22a0ff16267"
     },
     "llmaas/concepts.md": {
-      "en": "8b20b30233a272fcedba9251b27c6f837680075c1d0493f8fd6dd46bcbaa83c9",
-      "de": "8b20b30233a272fcedba9251b27c6f837680075c1d0493f8fd6dd46bcbaa83c9",
-      "es": "8b20b30233a272fcedba9251b27c6f837680075c1d0493f8fd6dd46bcbaa83c9",
-      "it": "8b20b30233a272fcedba9251b27c6f837680075c1d0493f8fd6dd46bcbaa83c9"
+      "en": "4d1a34ed8cfd24e792cb91a573e352055444ead949edcc69fd446d7673e7152f",
+      "de": "4d1a34ed8cfd24e792cb91a573e352055444ead949edcc69fd446d7673e7152f",
+      "es": "4d1a34ed8cfd24e792cb91a573e352055444ead949edcc69fd446d7673e7152f",
+      "it": "4d1a34ed8cfd24e792cb91a573e352055444ead949edcc69fd446d7673e7152f"
     },
     "llmaas/faq.md": {
       "en": "230f6dcc4767cc1872470388153121689cd4c17c04d89407c5fbc9123b877f91",
@@ -439,34 +439,34 @@
       "it": "1b16c78beaed21564c7ac7fc7a56436da16a7846412f1fceeb520e68758593c2"
     },
     "llmaas/ocr.md": {
-      "en": "24dd9d6569bcbdb664734729afc5776b24258b2addcbbd1d91f5b74505c0fe96",
-      "de": "24dd9d6569bcbdb664734729afc5776b24258b2addcbbd1d91f5b74505c0fe96",
-      "es": "24dd9d6569bcbdb664734729afc5776b24258b2addcbbd1d91f5b74505c0fe96",
-      "it": "24dd9d6569bcbdb664734729afc5776b24258b2addcbbd1d91f5b74505c0fe96"
+      "en": "2e9ac75d90aaa69182c02882af160337753483dd46167ce8b50d5a2117deca17",
+      "de": "2e9ac75d90aaa69182c02882af160337753483dd46167ce8b50d5a2117deca17",
+      "es": "2e9ac75d90aaa69182c02882af160337753483dd46167ce8b50d5a2117deca17",
+      "it": "2e9ac75d90aaa69182c02882af160337753483dd46167ce8b50d5a2117deca17"
     },
     "llmaas/quickstart.md": {
-      "en": "a3984eedebc6da0f6d233ccebd6ddda3c44089ebb741456ee32f24b7ad41b432",
-      "de": "a3984eedebc6da0f6d233ccebd6ddda3c44089ebb741456ee32f24b7ad41b432",
-      "es": "a3984eedebc6da0f6d233ccebd6ddda3c44089ebb741456ee32f24b7ad41b432",
-      "it": "a3984eedebc6da0f6d233ccebd6ddda3c44089ebb741456ee32f24b7ad41b432"
+      "en": "7884fec7bcc975a36efb535e864c50e8d9b440215b335588ba76fd073087937e",
+      "de": "7884fec7bcc975a36efb535e864c50e8d9b440215b335588ba76fd073087937e",
+      "es": "7884fec7bcc975a36efb535e864c50e8d9b440215b335588ba76fd073087937e",
+      "it": "7884fec7bcc975a36efb535e864c50e8d9b440215b335588ba76fd073087937e"
     },
     "llmaas/rag_explained.md": {
-      "en": "162c342afa4e75f8730f1dad545ad97e5faffa7e7538441e3e9bffb4127b7cf7",
-      "de": "162c342afa4e75f8730f1dad545ad97e5faffa7e7538441e3e9bffb4127b7cf7",
-      "es": "162c342afa4e75f8730f1dad545ad97e5faffa7e7538441e3e9bffb4127b7cf7",
-      "it": "162c342afa4e75f8730f1dad545ad97e5faffa7e7538441e3e9bffb4127b7cf7"
+      "en": "df930c37bee29b81eb3d81fd308a995d5002efcef336cfc052ce628baefcc992",
+      "de": "df930c37bee29b81eb3d81fd308a995d5002efcef336cfc052ce628baefcc992",
+      "es": "df930c37bee29b81eb3d81fd308a995d5002efcef336cfc052ce628baefcc992",
+      "it": "df930c37bee29b81eb3d81fd308a995d5002efcef336cfc052ce628baefcc992"
     },
     "llmaas/rerank.md": {
-      "en": "58c2b5feaa310a909a3d0c3e6a1454d94f830f6ddf00b04c7e34597e56cfdc87",
-      "de": "58c2b5feaa310a909a3d0c3e6a1454d94f830f6ddf00b04c7e34597e56cfdc87",
-      "es": "58c2b5feaa310a909a3d0c3e6a1454d94f830f6ddf00b04c7e34597e56cfdc87",
-      "it": "58c2b5feaa310a909a3d0c3e6a1454d94f830f6ddf00b04c7e34597e56cfdc87"
+      "en": "25bf400e86a95aaa2b478b5a6b885f3d033c352e37b6d981ddb82359e81d794f",
+      "de": "25bf400e86a95aaa2b478b5a6b885f3d033c352e37b6d981ddb82359e81d794f",
+      "es": "25bf400e86a95aaa2b478b5a6b885f3d033c352e37b6d981ddb82359e81d794f",
+      "it": "25bf400e86a95aaa2b478b5a6b885f3d033c352e37b6d981ddb82359e81d794f"
     },
     "llmaas/tutorials.md": {
-      "en": "ffb7e6f257a44d999881f783ad0090f55ae9b5ca49ed68c49eba273e04553469",
-      "de": "ffb7e6f257a44d999881f783ad0090f55ae9b5ca49ed68c49eba273e04553469",
-      "es": "ffb7e6f257a44d999881f783ad0090f55ae9b5ca49ed68c49eba273e04553469",
-      "it": "ffb7e6f257a44d999881f783ad0090f55ae9b5ca49ed68c49eba273e04553469"
+      "en": "f94ce92098229012659180253c17be821fad5de72176a0698d28aaec04de53b7",
+      "de": "f94ce92098229012659180253c17be821fad5de72176a0698d28aaec04de53b7",
+      "es": "f94ce92098229012659180253c17be821fad5de72176a0698d28aaec04de53b7",
+      "it": "f94ce92098229012659180253c17be821fad5de72176a0698d28aaec04de53b7"
     },
     "managed_kubernetes/concepts.md": {
       "en": "752cfd10c0dce74dc1688c09b13503b6c9bc1c62f3efc6b552e23a48814f0860",
@@ -811,10 +811,10 @@
       "it": "3b78d490b01e5235d7043dcc8e62e99e17390f794c60a4806a2968d0a20c2a49"
     },
     "public_cloud/vm_instances/tutorials/snapshots.md": {
-      "en": "b6d15a147bb66bf1fc5b2a5223aebd11ce91ca2efc7024473b21aca83a23bbc3",
-      "de": "b6d15a147bb66bf1fc5b2a5223aebd11ce91ca2efc7024473b21aca83a23bbc3",
-      "es": "b6d15a147bb66bf1fc5b2a5223aebd11ce91ca2efc7024473b21aca83a23bbc3",
-      "it": "b6d15a147bb66bf1fc5b2a5223aebd11ce91ca2efc7024473b21aca83a23bbc3"
+      "en": "2da542f659db017607d84a58f67a927e4894ad588eb9ba97c22cd6c077af596d",
+      "de": "2da542f659db017607d84a58f67a927e4894ad588eb9ba97c22cd6c077af596d",
+      "es": "2da542f659db017607d84a58f67a927e4894ad588eb9ba97c22cd6c077af596d",
+      "it": "2da542f659db017607d84a58f67a927e4894ad588eb9ba97c22cd6c077af596d"
     },
     "public_cloud/vm_instances/vm_instances.md": {
       "en": "bd2ea57b6e1c4038032988b8b7b4cf98f872ac8d6180a5d8a67e7a593cc11efd",
@@ -943,6 +943,6 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     }
   },
-  "last_update": "2026-08-24T17:54:30.435236",
+  "last_update": "2026-08-25T14:46:19.768977",
   "version": "2.0"
 }

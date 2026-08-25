@@ -103,7 +103,7 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 Die Prompt-Analyse ist eine **native und integrierte** Sicherheitsfunktion der LLMaaS-Plattform. Standardmäßig aktiviert, zielt sie darauf ab, "jailbreak"- oder bösartige Prompt-Injektionsversuche zu erkennen und zu verhindern, bevor sie das Modell erreichen. Dieser Schutz basiert auf einem mehrschichtigen Ansatz.
 
-:::tip Support kontaktieren zur Deaktivierung
+:::tip[Support kontaktieren zur Deaktivierung]
 Es ist möglich, diese Sicherheitsanalyse für sehr spezifische Anwendungsfälle zu deaktivieren, auch wenn dies nicht empfohlen wird. Für Fragen dazu oder um eine Deaktivierung anzufordern, wenden Sie sich bitte an den Cloud Temple Support.
 :::
 

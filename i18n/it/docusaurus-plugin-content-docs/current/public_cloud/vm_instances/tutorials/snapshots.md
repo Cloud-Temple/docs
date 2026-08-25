@@ -22,7 +22,7 @@ Fare clic su **+ Crea uno snapshot** e inserire un nome descrittivo, ad esempio:
 
 Fare clic su **Crea**.
 
-:::tip Buone pratiche di denominazione
+:::tip[Buone pratiche di denominazione]
 - Includere la **data** nel nome
 - Specificare il **motivo** dello snapshot
 :::
