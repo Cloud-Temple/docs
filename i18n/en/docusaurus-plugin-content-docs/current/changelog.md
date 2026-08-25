@@ -13,16 +13,6 @@ sidebar_position: 2
 
 - **Object Storage (Security)**: The section on data at rest encryption (D@RE) now specifies that the service uses FIPS 140-3 certified AES 256-bit encryption, via the RSA BSAFE Crypto-J software library version 7.x.
 
-### 26 May 2026: Translation workflow improvement
-
-- **Translation (tooling)** : Added the `--token`, `--url`, and `--model` options to the Python script `scripts/translate_py/translate.py`. The API token can now be provided directly via the command line, without recreating a `.env` file. CLI options take precedence over environment variables.
-- **Translation (configuration)** : Updated the default translation model to `qwen3.6:27b`, while retaining the default Cloud Temple LLMaaS endpoint `https://api.ai.cloud-temple.com/v1/chat/completions`.
-- **Translation (dry-run)** : The simulation workflow remains usable without an API token, to verify files to be translated before any actual execution.
-
-### May 4, 2026: Security Patches — Docker Image (Alpine CVEs)
-
-- **Security (Docker)**: Added `apk upgrade --no-cache` to the final `nginx:stable-alpine` stage of the production Dockerfiles (`Dockerfile` and `Dockerfile.prebuilt`). This update fixes all Critical and High CVEs detected by Harbor/Trivy on the `3.24.3` image, related to the pinned Alpine packages: `libcrypto3`, `libssl3`, `libxml2`, `libxslt`, `libexpat`, `libpng`, `zlib`, `c-ares`, `musl`, `xz-libs`, `busybox`, `curl`. The next build will produce an image with all these packages at their latest patched versions.
-
 ### April 30, 2026: Storage Performance Details
 
 - **Storage (IaaS VMware, OpenSource, Bare Metal)** : Addition of absolute IOPS and maximum bandwidth caps for all storage classes. This information enables more accurate environment sizing based on performance requirements.
@@ -60,12 +50,10 @@ sidebar_position: 2
 
 - **IaaS VMware**: Added detailed documentation on the metrics displayed in the VMware cluster view from the Cloud Temple Console. Covers the three cluster memory charts: **Allocated Memory** (total amount allocated to VMs), **Consumed Memory** (physical memory actually used by VMs), and **Worst-Case Allocation** (projection of maximum simultaneous consumption), with a precise description of what each metric represents to anticipate resource requirements.
 
-### April 15, 2026: Managed MariaDB, Managed PostgreSQL Documentation and Multilingual Fixes
+### April 15, 2026: Managed MariaDB, Managed PostgreSQL Documentation
 
 - **Managed MariaDB** : Release of the initial documentation for the Managed MariaDB service (in preview): service overview, technical concepts (StandAlone and Distributed architectures), getting started guide. 
 - **Managed PostgreSQL** : Release of the initial documentation for the Managed PostgreSQL service (in preview): service overview, technical concepts, getting started guide.
-- **Multilingual Corrections (images)** : Fixed image references in the translations of the Managed Kubernetes and Managed MariaDB sections for all languages (EN, DE, ES, IT) — converted relative paths `./images/` to absolute paths `@site/docs/...` to ensure correct rendering across all languages.
-- **Broken Link Fixes** : Resolved several broken links in the documentation: references to LLMaaS licenses, link to the console in the rclone tutorial (OSS), IAM link in the networking documentation (EN), relative links in the Terraform section (EN).
 
 ### April 15, 2026: New Cost Manager Module
 
@@ -85,18 +73,10 @@ sidebar_position: 2
 
 - **Contractual** : Update of the Contractual Annex on Personal Data (DPA) to version 1.0. Integration of the latest requirements of the HDS (Hébergeur de Données de Santé) certification and update of the list of authorized sub-processors. Full translation into English, German, Spanish, and Italian.
 
-### February 21, 2026: SEO Optimization
-
-- **SEO**: Corrected the production URL (`https://docs.cloud-temple.com`) and base path (`/`) in the Docusaurus configuration, ensuring correct canonical URLs for Google indexing.
-- **Sitemap**: Enabled automatic sitemap generation (`/sitemap.xml`) to improve crawling and indexing by search engines.
-- **Robots.txt**: Added a `robots.txt` file allowing full site crawling and pointing to the sitemap.
-
-### February 21, 2026: Advanced Network Concepts and Multilingual Improvements
+### February 21, 2026: Advanced Network Concepts
 
 - **Network (Internet)**: New **advanced concepts** page documenting BGP communities and Local Preference control on the Cloud Temple Internet backbone (AS33930). Includes a configuration guide with a Bird example.
 - **LLMaaS**: Updated model catalog and added model lifecycle. Added LTS (Long Term Support) models.
-- **Console (Security)**: Improved translation quality for security alerts (anglais, allemand, espagnol, italien).
-- **Multilingual**: Translated the new advanced network concepts page into 4 languages (en, de, es, it) and overall improved the quality of existing translations.
 - **IaaS Bare Metal**: Added details regarding the BFS (Boot from SAN) volume in the boot guide: Volume 1 is dedicated to OS installation, not shareable within the same AZ, with a recommendation to store data on an additional LUN volume.
 - **Object Storage (OSS)**: Added a **FAQ** page covering S3 access, IP whitelists, pre-signed links, and recommended use cases.
 
@@ -108,23 +88,12 @@ sidebar_position: 2
 
 - **Managed Kubernetes** : Complete update and finalization of Service Level Agreements (SLAs) for the Managed Kubernetes offering.
 
-### January 21, 2026: Security Improvements and Translations
-
-- **Console Management** : Updated international translations (English, German, Spanish, Italian) for security alerts in the management console.
-
 ### January 19, 2026: Managed Kubernetes and VPC Extension
 
 - **Managed Kubernetes** : Added support for **Bare Metal** nodes and **GPUs** (NVIDIA).
 - **Managed Kubernetes** : New tutorial on using GPUs in a Kubernetes cluster.
 - **Managed Kubernetes** : Replaced KubeCost with a more recent guide on **OpenCost**.
 - **Network (VPC)** : Complete documentation for the Virtual Private Cloud (VPC) service, including high availability (HA) concepts, getting started guides, and tutorials.
-- **Multilingual** : Full translation of the VPC service and new Kubernetes content into English, German, Spanish, and Italian.
-
-### December 15, 2025: Stabilization and Multilingual Corrections
-
-- **Multilingual (Terraform, LLMaaS, Harbor)**: Major correction of Spanish, Italian, and German translations. Resolution of MDX syntax issues (empty code blocks, unescaped tags) that prevented site compilation.
-- **Multilingual (Images)**: Restored correct image paths in the Italian and German versions for the Bastion and VMware IaaS sections.
-- **Build**: Deployment validation for all 5 supported languages.
 
 ### December 11, 2025: Managed Kubernetes Updates
 
@@ -134,8 +103,6 @@ sidebar_position: 2
 ### November 22, 2025: LLMaaS Updates and General Improvements
 
 - **LLMaaS (OCR)**: Added comprehensive documentation for **DeepSeek-OCR**, our new model specialized in document analysis (PDFs, images), capable of extracting structured text, tables, and mathematical formulas.
-- **Multilingual**: Resolved accessibility issues on the Italian and German versions of the documentation.
-- **Quality**: Fixed code block rendering in LLMaaS tutorials and restored missing images in the VMware IaaS Getting Started Guide (Italian version).
 
 ### 20 November 2025 : Major OpenShift PaaS Update
 
@@ -166,7 +133,6 @@ sidebar_position: 2
 ### August 14, 2025: Improvements and Fixes
 
 - **LLMaaS**: Updated and clarified FAQ answers to better address technical and strategic questions. Added the FAQ to the navigation.
-- **General**: Fixed several internal navigation links throughout the documentation for a smoother experience.
 
 ### July 2025: Major Features and Updates
 
