@@ -112,7 +112,7 @@ For your first test, use one of these recommended models:
 
 Consult the [full model catalog](./models) for more options. Prefer models marked **LTS** for your production applications.
 
-:::tip Tip for Qwen models with reasoning
+:::tip[Tip for Qwen models with reasoning]
 Some models in the **Qwen** family (such as `qwen3-2507-think:4b`, `qwen3.5:9b`, or `qwen3.6:27b`) feature an advanced reasoning mode. You can force its activation by adding `/think` at the beginning of your prompt, or disable it for a more direct and faster response with `/nothink`.
 :::
 

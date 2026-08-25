@@ -901,7 +901,7 @@ This tutorial guides you through configuring the CLINE extension in Visual Studi
     * **Basis-URL**: Geben Sie den API-Endpunkt von LLMaaS von Cloud Temple ein: `https://api.ai.cloud-temple.com/v1`.
     * **OpenAI-kompatible API-Schlüssel**: Fügen Sie den API-Schlüssel ein, den Sie über die Cloud Temple-Konsole generiert haben.
 
-    :::tip API-Schlüssel generieren
+    :::tip[API-Schlüssel generieren]
     Um Ihren API-Schlüssel zu generieren, gehen Sie in die Cloud Temple-Konsole, Bereich **LLMaaS** > **API-Schlüssel**, und klicken Sie auf **"API-Schlüssel erstellen"**.
 
     ![Erstellung eines API-Schlüssels über die Konsole](@site/docs/llmaas/images/console_create_api_key.png)

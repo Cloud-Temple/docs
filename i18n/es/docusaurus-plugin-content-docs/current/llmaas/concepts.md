@@ -103,7 +103,7 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 El análisis de prompts es una función de seguridad **nativa e integrada** en la plataforma LLMaaS. Habilitada por defecto, tiene como objetivo detectar y prevenir intentos de "jailbreak" o inyección de prompts maliciosos antes de que lleguen al modelo. Esta protección se basa en un enfoque multicapa.
 
-:::tip Contactar al soporte para la desactivación
+:::tip[Contactar al soporte para la desactivación]
 Es posible desactivar este análisis de seguridad para casos de uso muy específicos, aunque no se recomienda. Para cualquier consulta al respecto o para solicitar una desactivación, póngase en contacto con el soporte de Cloud Temple.
 :::
 

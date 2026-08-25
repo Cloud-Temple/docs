@@ -45,7 +45,7 @@ Nutzeranfrage
 | `qwen3-reranker:0.6b` | Qwen Team | 4 096 | Nein | Kompakt und schnell, ideal für niedrige Latenz |
 | `bge-reranker-large` | BAAI | 512 | Nein | Mehrsprachig, hohe Leistung |
 
-:::tip Welches Modell soll ich wählen?
+:::tip[Welches Modell soll ich wählen?]
 - **RAG-Produktion** : `nvidia/llama-nemotron-rerank-vl-1b-v2` — höchste Genauigkeit
 - **Niedrige Latenz** : `qwen3-reranker:0.6b` — am schnellsten
 - **Mehrsprachig** : `bge-reranker-large` — optimiert für viele Sprachen

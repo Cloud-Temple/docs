@@ -1164,6 +1164,8 @@ sidebar_position: 999
 
 ---
 
-:::info Cronologia precedente
+:::info[Cronologia precedente]
+
 La cronologia completa delle versioni precedenti alla v4.0 (da v1.0 a v3.38.1, da febbraio 2019 a ottobre 2024) è disponibile nella [cronologia Git](https://github.com/Cloud-Temple/docs) del progetto.
+
 :::

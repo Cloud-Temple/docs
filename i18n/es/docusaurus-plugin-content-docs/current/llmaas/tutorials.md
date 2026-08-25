@@ -903,7 +903,7 @@ Este tutorial le guiará a configurar la extensión CLINE en Visual Studio Code 
     * **URL base**: Ingresa el punto final de la API LLMaaS de Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
     * **Clave de API Compatible con OpenAI**: Pega la clave de API que generaste desde la consola Cloud Temple.
 
-    :::tip Generación de la clave de API
+    :::tip[Generación de la clave de API]
     Para generar tu clave de API, ve a la consola Cloud Temple, sección **LLMaaS** > **Claves API**, y haz clic en **"Crear una clave API"**.
 
     ![Creación de una clave API desde la consola](@site/docs/llmaas/images/console_create_api_key.png)

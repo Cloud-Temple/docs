@@ -45,7 +45,7 @@ Requête utilisateur
 | `qwen3-reranker:0.6b` | Qwen Team | 4 096 | No | Compact and fast, ideal for low latency |
 | `bge-reranker-large` | BAAI | 512 | No | Multilingual, high performance |
 
-:::tip Which model to choose?
+:::tip[Which model to choose?]
 - **Production RAG**: `nvidia/llama-nemotron-rerank-vl-1b-v2` — highest accuracy
 - **Low Latency**: `qwen3-reranker:0.6b` — fastest
 - **Multilingual**: `bge-reranker-large` — optimized for many languages

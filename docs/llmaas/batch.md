@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Batch API — Traitement Asynchrone
 
-:::info Disponibilité
+:::info[Disponibilité]
 La Batch API est en **déploiement progressif**. Vérifiez la disponibilité sur votre compte dans la [Console Cloud Temple](https://console.cloud-temple.com) ou contactez le support commercial.
 :::
 
@@ -475,7 +475,7 @@ def process_results(results: list[dict]) -> tuple[list, list]:
 | **Rétention des fichiers de résultats** | 7 jours |
 | **Batches simultanés par compte** | 10 |
 
-:::warning Traitement asynchrone
+:::warning[Traitement asynchrone]
 Le batch ne garantit pas un ordre de traitement. Les résultats peuvent apparaître dans un ordre différent de l'ordre d'entrée. Utilisez le champ `custom_id` pour associer chaque résultat à sa requête originale.
 :::
 

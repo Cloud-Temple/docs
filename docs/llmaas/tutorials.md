@@ -325,7 +325,7 @@ Ce tutoriel adapte le pipeline RAG précédent pour utiliser Qdrant.
     * **`force_recreate=True`** : Pour ce tutoriel, nous utilisons ce paramètre pour nous assurer que la collection est vide à chaque exécution. En production, vous le mettriez à `False` pour conserver vos données.
 3. **Le reste du pipeline** (configuration du LLM, création de la chaîne `RetrievalQA`) est identique, ce qui démontre la flexibilité de LangChain : il suffit de changer la source du `retriever` (le chercheur d'informations) pour passer de FAISS à Qdrant.
 
-:::info Prérequis : Lancer Qdrant
+:::info[Prérequis : Lancer Qdrant]
 Pour ce tutoriel, vous aurez besoin d'une instance Qdrant. Vous pouvez la lancer facilement avec Docker :
 
 ```bash
@@ -902,7 +902,7 @@ Ce tutoriel vous guide pour configurer l'extension CLINE dans Visual Studio Code
     * **Base URL**: Entrez l'endpoint de l'API LLMaaS de Cloud Temple : `https://api.ai.cloud-temple.com/v1`.
     * **OpenAI Compatible API Key**: Collez la clé d'API que vous avez générée depuis la console Cloud Temple.
     
-    :::tip Génération de la clé API
+    :::tip[Génération de la clé API]
     Pour générer votre clé API, rendez-vous dans la console Cloud Temple, section **LLMaaS** > **Clés API**, puis cliquez sur **"Créer une clé API"**.
     
     ![Création d'une clé API depuis la console](@site/docs/llmaas/images/console_create_api_key.png)
