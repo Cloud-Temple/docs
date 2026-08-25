@@ -2,8 +2,8 @@
 title: Ejemplo de federación de identidad con Microsoft Intune
 tags:
   - iam
-  - tutorials
-  - onboarding
+  - tutoriales
+  - incorporación
 ---
 
 Este tutorial le guía en la configuración de la federación de identidad con Microsoft Intune para su organización Cloud Temple.
@@ -11,12 +11,12 @@ Este tutorial le guía en la configuración de la federación de identidad con M
 ## Prerrequisitos
 
 - Acceso de administrador a Microsoft Intune
-- Derechos de propietario en su organización Cloud Temple
+- Derechos de propietario sobre su organización Cloud Temple
 - Acceso a la consola Cloud Temple
 
 ## Configuración
 
-La configuración de la federación de identidades con Microsoft Intune sigue un proceso similar al de EntraID, con especificidades relacionadas con la gestión de dispositivos móviles.
+La configuración de la federación de identidad con Microsoft Intune sigue un proceso similar al de EntraID, con especificidades relacionadas con la gestión de dispositivos móviles.
 
 ### Paso 1: Configuración del lado de Microsoft Intune
 
@@ -24,7 +24,7 @@ La configuración de la federación de identidades con Microsoft Intune sigue un
 2. Navegue hasta la configuración de autenticación
 3. Configure una nueva aplicación para Cloud Temple
 
-### Paso 2 : Solicitud de configuración
+### Paso 2: Solicitud de configuración
 
 Para configurar la federación con Microsoft Intune, cree una solicitud de soporte en la consola de Cloud Temple especificando:
 

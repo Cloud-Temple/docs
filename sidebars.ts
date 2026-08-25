@@ -81,7 +81,7 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: 'Tutoriels IAM',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/console/iam/tutorials' },
               items: [
                 'console/iam/tutorials/sso_azuread',
                 'console/iam/tutorials/sso_adfs',

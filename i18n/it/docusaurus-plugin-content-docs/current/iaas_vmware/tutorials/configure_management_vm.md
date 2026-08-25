@@ -3,8 +3,8 @@ title: Configurazione di una macchina virtuale di gestione
 tags:
   - iaas
   - vmware
-  - tutoriali
-  - gestione
+  - tutorials
+  - management
 ---
 
 Questo tutorial vi guida nella configurazione di una macchina virtuale dedicata alla gestione della vostra infrastruttura Cloud Temple.
@@ -17,31 +17,31 @@ Questo tutorial vi guida nella configurazione di una macchina virtuale dedicata 
 
 ## Panoramica
 
-Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro la vostra infrastruttura Cloud Temple. Essa funge da punto di accesso centralizzato per la gestione delle vostre risorse.
+Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro la vostra infrastruttura Cloud Temple. Funge da punto di accesso centralizzato per la gestione delle vostre risorse.
 
-## Fase 1: Deployment della VM di management
+## Fase 1 : Distribuzione della VM di gestione
 
 ### Selezione del template
 
 1. Accedete alla sezione **Macchine Virtuali** nella console
 2. Fate clic su **Crea una macchina virtuale**
-3. Selezionate un template adatto alla gestione (Windows Server o Linux)
+3. Selezionate un template adatto alla gestione (Windows Server ou Linux)
 4. Configurate le risorse in base alle vostre esigenze
 
 ### Configurazione di rete
 
-1. Assegnate la VM alla rete di gestione appropriata
-2. Configurate un indirizzo IP statico
-3. Assicuratevi che la VM possa accedere alle risorse da amministrare
+1. Assegnare la VM alla rete di gestione appropriata
+2. Configurare un indirizzo IP statico
+3. Assicurarsi che la VM possa accedere alle risorse da amministrare
 
 ## Fase 2: Configurazione di sicurezza
 
 ### Hardening del sistema
 
-1. Applicare gli ultimi aggiornamenti di sicurezza
-2. Configurare un firewall locale
-3. Disabilitare i servizi non necessari
-4. Configurare gli account utente con i privilegi appropriati
+1. Applicate gli ultimi aggiornamenti di sicurezza
+2. Configurate un firewall locale
+3. Disabilitate i servizi non necessari
+4. Configurate account utente con privilegi appropriati
 
 ### Autenticazione
 
@@ -67,9 +67,9 @@ Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro 
 
 ### Accesso di rete
 
-1. Configurate le regole del firewall per consentire le connessioni di gestione
-2. Configurate le VPN se necessario per l'accesso remoto
-3. Testate la connettività verso le risorse da amministrare
+1. Configurare le regole del firewall per consentire le connessioni di gestione
+2. Configurare le VPN se necessario per l'accesso remoto
+3. Verificare la connettività verso le risorse da amministrare
 
 ### Accesso utente
 
@@ -79,10 +79,10 @@ Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro 
 
 ## Buone pratiche
 
-- **Isolamento** : Posizionate la VM di gestione in una rete dedicata
-- **Backup** : Configurate backup regolari
-- **Monitoraggio** : Monitorate l'attività e le prestazioni
-- **Documentazione** : Mantenete aggiornata la documentazione delle configurazioni
+- **Isolamento** : Posizionare la VM di gestione in una rete dedicata
+- **Backup** : Configurare backup regolari
+- **Monitoraggio** : Monitorare l'attività e le prestazioni
+- **Documentazione** : Mantenere aggiornata la documentazione delle configurazioni
 
 ## Manutenzione
 
@@ -96,7 +96,7 @@ Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro 
 
 1. Monitorare i log di sicurezza
 2. Controllare gli accessi e le attività
-3. Effettuare audit di sicurezza regolari
+3. Eseguire audit di sicurezza regolari
 
 ## Risoluzione dei problemi
 
@@ -108,4 +108,4 @@ Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro 
 
 ## Supporto
 
-Per qualsiasi assistenza relativa alla configurazione della vostra VM di management, contattate il supporto Cloud Temple tramite la console.
+Per qualsiasi assistenza relativa alla configurazione della vostra VM di gestione, contattate il supporto Cloud Temple tramite la console.

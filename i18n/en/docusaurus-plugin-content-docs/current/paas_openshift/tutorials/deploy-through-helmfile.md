@@ -1,5 +1,5 @@
 ---
-title : Deploy via Helmfile
+title : Deploy via HelmFile
 ---
 
 # Deploying with Helmfile
@@ -17,7 +17,7 @@ Expose the front-end service via HTTP/HTTPS.
 The context for this demonstration is as follows:
 
 - Complies with OpenShift constraints **(SCC restricted-V2)**.
-- Deployment of only **unprivileged containers** (UID > 30000).
+- Deployment of **unprivileged containers** only (UID > 30000).
 - No use of **custom CRDs**.
 - No access to the platform role as **cluster-admin**.
 - No cluster-level deployment (**cluster-wide installation**).
@@ -52,7 +52,7 @@ Before starting this demonstration, ensure you have the following tools and reso
    - A functional OpenShift cluster managed by Cloud Temple.  
 
 3. **Access and Permissions**  
-   - Client admin role to create projects and deploy resources.
+   - Admin client role to create projects and deploy resources.
   
 ---
 
@@ -79,9 +79,9 @@ To get started, you will need our **Demo Repository**
 
 You will find three files there:
 
-- `Helmfile.yaml`: Deployment manifest that allows Helmfile to define and orchestrate the deployment of Helm charts.  
-- `nginx-values.yaml`: Specifies the configuration and behavior of Nginx.  
-- `postgres-values.yaml`: Specifies the configuration and behavior of PostgreSQL.  
+- `Helmfile.yaml` : Deployment manifest that allows Helmfile to define and orchestrate the deployment of Helm charts.  
+- `nginx-values.yaml` : Specifies the configuration and behavior of Nginx.  
+- `postgres-values.yaml` : Specifies the configuration and behavior of PostgreSQL.  
 
 ---
 
@@ -119,8 +119,8 @@ repositories:
 ```
 
 - **Description** : Defines the Helm repositories containing the required charts.  
-- **Details** :  
-  - `name` : Alias for the Helm repository.  
+- **Detail** :  
+  - `name` : Alias of the Helm repository.  
   - `url` : URL of the Bitnami repository, which contains commonly used charts compatible with OpenShift.  
 
 ---
@@ -152,7 +152,7 @@ Configuration file for the deployment of **Nginx**.
 
 ### `postgres-values.yaml`
 
-Provides the configuration for the deployment of **PostgreSQL**.
+Provides the configuration for the **PostgreSQL** deployment.
 
 ---
 
@@ -161,7 +161,7 @@ Provides the configuration for the deployment of **PostgreSQL**.
 ### 1. Install Prerequisites
 
 Ensure that all tools mentioned in the software section are installed.  
-Follow the following guides if needed:  
+Follow the guides below if needed:  
 
 - [OCP CLI Guide](https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html)  
 - [Helmfile Guide](https://helmfile.readthedocs.io/en/latest/)
@@ -215,17 +215,17 @@ oc get pods -n poc-helmfile
 
 Expose the deployed services to test their accessibility and proper operation.
 
-#### 1. Route Creation
+#### 1. Creating routes
 
 Expose the Nginx service by configuring HTTP or HTTPS routes:
 
-- **For HTTPS** :
+- **For HTTPS**:
 
 ```bash
 oc create route edge nginx-tls --service=nginx -n poc-helmfile --port=8080
 ```
 
-- **For HTTP** :
+- **For HTTP**:
 
 ```bash
 oc create route edge nginx --service=nginx -n poc-helmfile --port=8080
@@ -263,10 +263,10 @@ oc get routes -n poc-helmfile
 
 Example output:
 
-| Name         | Host/Port                                                                        | Service  | Port  | TLS Termination | Label                                  |
-|-------------|----------------------------------------------------------------------------------|----------|-------|----------------|-------------------------------------------|
-| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | None          | `ct-router-type=public`                   |
-| nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080  | Edge (TLS)     | `ct-router-type=public`                   |
+| Name        | Host/Port                                                                        | Service  | Port  | TLS Termination | Label                                  |
+|-------------|----------------------------------------------------------------------------------|----------|-------|-----------------|----------------------------------------|
+| nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | None            | `ct-router-type=public`                   |
+| nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080  | Edge (TLS)      | `ct-router-type=public`                   |
 
 #### 2. Access the applications
 
@@ -284,14 +284,14 @@ Use the URLs listed in the "Host/Port" column to access the applications. Here i
 To ensure the success of this demonstration, verify the following:
 
 1. **Both applications run without errors**.  
-2. The pods use UIDs > 30000, in accordance with rootless container constraints.  
+2. Pods use UIDs > 30000, in compliance with rootless container constraints.  
 3. No custom CRDs have been deployed.  
-4. The deployed services are accessible via their defined routes (verify Nginx on HTTP and HTTPS).  
+4. Deployed services are accessible via their defined routes (verify Nginx over HTTP and HTTPS).  
 
 ---
 
 ## Conclusion
 
-You now have a complete example of deploying front-end and back-end applications on OpenShift with Helmfile. This method offers modular and robust management of complex environments.
+You now have a complete example of deploying front-end and back-end applications on OpenShift with Helmfile. This method provides modular and robust management of complex environments.
 
-You are now proficient in deploying via **Helmfile** on OpenShift in a Cloud Temple-managed environment. 🚀
+You now have mastered deploying via **Helmfile** on OpenShift in a Cloud Temple-managed environment. 🚀

@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Batch API — Asynchronous Processing
 
-:::info Availability
+:::info[Availability]
 The Batch API is in **phased rollout**. Check availability on your account in the [Cloud Temple Console](https://console.cloud-temple.com) or contact commercial support.
 :::
 
@@ -475,7 +475,7 @@ def process_results(results: list[dict]) -> tuple[list, list]:
 | **Results file retention** | 7 days |
 | **Concurrent batches per account** | 10 |
 
-:::warning Asynchronous processing
+:::warning[Asynchronous processing]
 The batch does not guarantee processing order. Results may appear in a different order than the input order. Use the `custom_id` field to associate each result with its original request.
 :::
 
@@ -533,4 +533,4 @@ def list_batches(limit: int = 20) -> list[dict]:
 - **Complete example code** : [`exemples/simple_batch/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_batch)
 - **Model catalog** : [Batch-compatible models](./models)
 - **API Reference** : [Complete API documentation](./api)
-- **Detailed pricing** : [LLMaaS pricing](./api#rate-limiting-et-facturation)
+- **Detailed pricing** : [LLMaaS pricing](./api#rate-limiting-and-billing)

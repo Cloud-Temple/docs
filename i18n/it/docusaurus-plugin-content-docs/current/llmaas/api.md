@@ -244,11 +244,11 @@ Per analizzare le immagini, è possibile inviare una richiesta in cui il campo `
 
 Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` contenente l'URL dell'immagine nel formato `data URI` (base64).
 
-:::info Nota sulla Compatibilità
+:::info[Nota sulla Compatibilità]
 Sebbene il formato standard e consigliato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche, per flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Si consiglia tuttavia di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
 :::
 
-:::tip OCR e Analisi dei Documenti
+:::tip[OCR e Analisi dei Documenti]
 Per attività specifiche di analisi dei documenti (PDF, scans, tableaux), raccomandiamo l'utilizzo del modello specializzato **DeepSeek-OCR**. Consulta la [documentazione dedicata](./ocr).
 :::
 
@@ -440,7 +440,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 | Parametro   | Tipo    | Obbligatorio | Descrizione                                                                 |
 | ----------- | ------- | ------------ | --------------------------------------------------------------------------- |
-| `model`     | string  | ✅           | ID del modello di reranking (vedere [catalogo](./models#modèles-de-reranking)) |
+| `model`     | string  | ✅           | ID del modello di reranking (vedere [catalogo](./models#modelli-di-reranking)) |
 | `query`     | string  | ✅           | La query di ricerca                                                         |
 | `documents` | array   | ✅           | Elenco dei documenti da riordinare                                           |
 | `top_n`     | integer | ❌           | Numero di risultati da restituire (predefinito: tutti)                      |
@@ -900,7 +900,7 @@ except Exception as e:
 
 #### Utilizzo degli Embedding
 
-:::warning Incompatibilità con i client standard di LangChain
+:::warning[Incompatibilità con i client standard di LangChain]
 Attualmente, l'utilizzo dell'endpoint di embedding tramite le classi standard di LangChain (`langchain_openai.OpenAIEmbeddings` o `langchain_community.OllamaEmbeddings`) presenta incompatibilità con la nostra API.
 
 - `OpenAIEmbeddings` invia token pre-calcolati invece di testo grezzo, che viene rifiutato.

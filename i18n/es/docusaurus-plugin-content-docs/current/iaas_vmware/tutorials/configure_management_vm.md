@@ -19,7 +19,7 @@ Este tutorial le guía en la configuración de una máquina virtual dedicada a l
 
 Una máquina virtual de gestión es esencial para administrar su infraestructura Cloud Temple de manera segura. Sirve como punto de entrada centralizado para la gestión de sus recursos.
 
-## Paso 1 : Despliegue de la VM de gestión
+## Paso 1: Despliegue de la VM de gestión
 
 ### Selección de la plantilla
 
@@ -49,12 +49,12 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 2. Integre la VM en su directorio corporativo si es necesario
 3. Configure políticas de contraseñas robustas
 
-## Paso 3: Instalación de las herramientas de gestión
+## Paso 3 : Instalación de las herramientas de gestión
 
-### Herramientas VMware
+### Herramientas de VMware
 
 1. Instale VMware Tools para una integración óptima
-2. Configure las herramientas de monitorización
+2. Configure las herramientas de monitoreo
 3. Instale los clientes de administración necesarios
 
 ### Herramientas de monitoreo
@@ -63,7 +63,7 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 2. Instale las herramientas de copia de seguridad
 3. Configure el registro centralizado
 
-## Paso 4: Configuración de accesos
+## Paso 4 : Configuración de accesos
 
 ### Acceso a la red
 
@@ -103,7 +103,7 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 ### Problemas comunes
 
 - **Conectividad de red** : Verifique las reglas del firewall y la configuración de red
-- **Rendimiento** : Monitoree el uso de recursos y ajústelo si es necesario
+- **Rendimiento** : Monitoree el uso de los recursos y ajústelos si es necesario
 - **Acceso** : Verifique los permisos y la autenticación
 
 ## Soporte

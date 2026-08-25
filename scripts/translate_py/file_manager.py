@@ -5,6 +5,7 @@ Ce module gère la lecture/écriture des fichiers, le calcul des hashes,
 la gestion des métadonnées de traduction et les opérations sur les fichiers.
 """
 
+from fnmatch import fnmatch
 import hashlib
 import json
 import shutil
@@ -268,6 +269,46 @@ class TaskBuilder:
         self.file_hasher = FileHasher()
         self.file_detector = FileTypeDetector()
     
+    def _matches_path_filters(self, relative_path: str) -> bool:
+        """
+        Indique si un fichier entre dans le périmètre demandé par --path.
+
+        Sans filtre, tout passe. Un motif correspond par égalité exacte, par
+        glob (fnmatch), ou comme préfixe de répertoire.
+        """
+        filtres = getattr(self.config, 'path_filters', None)
+        if not filtres:
+            return True
+        chemin = relative_path.replace('\\', '/')
+        for motif in filtres:
+            m = motif.replace('\\', '/').strip('/')
+            if chemin == m or fnmatch(chemin, m) or chemin.startswith(m + '/'):
+                return True
+        return False
+
+    def _apply_path_filters(self, files: List[Path]) -> List[Path]:
+        """
+        Restreint la liste des fichiers au périmètre demandé.
+
+        Un filtre qui ne correspond à rien lève une erreur : sans cela, une
+        faute de frappe produirait un run qui ne traduit rien, indistinguable
+        d'un run réussi.
+        """
+        filtres = getattr(self.config, 'path_filters', None)
+        if not filtres:
+            return files
+        retenus = [
+            f for f in files
+            if self._matches_path_filters(self.file_scanner.get_relative_path(f))
+        ]
+        if not retenus:
+            raise ValueError(
+                "Aucun fichier ne correspond à --path "
+                f"({', '.join(filtres)}). Les chemins sont relatifs à docs/ ; "
+                "vérifier l'orthographe avant de relancer."
+            )
+        return retenus
+
     async def build_translation_tasks(
         self,
         target_languages: List[str],
@@ -289,7 +330,7 @@ class TaskBuilder:
         Returns:
             Liste des tâches de traduction
         """
-        files = self.file_scanner.scan_files()
+        files = self._apply_path_filters(self.file_scanner.scan_files())
         
         # Trouve les répertoires avec .notranslation
         notranslation_dirs = self._find_notranslation_directories()
@@ -448,6 +489,14 @@ class TaskBuilder:
             target_hash = self.file_hasher.compute_file_hash(target_path)
             return current_hash != target_hash
         
+        # --force : retraduire même si l'empreinte concorde. C'était le SEUL cas
+        # où l'option a un sens, et le seul qui n'était pas traité : le
+        # paramètre force_retranslation était reçu puis ignoré, si bien que
+        # --force ne pouvait pas reprendre un fichier marqué à jour — y compris
+        # une traduction tronquée dont l'empreinte mentait.
+        if force_retranslation:
+            return True
+
         # Fichiers markdown : vérification du hash
         if not target_path.exists():
             return True  # Fichier manquant

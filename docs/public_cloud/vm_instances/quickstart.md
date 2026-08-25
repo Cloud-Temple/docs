@@ -205,11 +205,11 @@ resource "cloudtemple_compute_vm_instance" "example" {
 }
 ```
 
-Consultez la [documentation Terraform](pathname:///docs/terraform/terraform) pour l'installation et la configuration du provider.
+Consultez la [documentation Terraform](/terraform) pour l'installation et la configuration du provider.
 
 ## Ressources utiles
 
 - [Documentation publique Cloud Temple](https://docs.cloud-temple.com/home)
 - [Référence API](https://shiva.cloud-temple.com/api/)
-- [Documentation Terraform](pathname:///docs/terraform/terraform)
+- [Documentation Terraform](/terraform)
 - [Concepts des zones de disponibilité](../../additional_content/concepts_az.md)

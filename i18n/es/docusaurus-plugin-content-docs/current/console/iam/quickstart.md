@@ -68,7 +68,7 @@ A continuación aparece el menú para activar los derechos:
 
 <img src={shivaOnboard_005} />
 
-La configuración de permisos debe realizarse para cada [Tenant](concepts.md#management-of-owners-on-a-tenant) de la [Organización](concepts.md#organizaciones).
+La configuración de permisos debe realizarse para cada [Tenant](concepts.md#gestión-de-propietarios-en-un-tenant) de la [Organización](concepts.md#organizaciones).
 
 La lista de permisos y sus definiciones está disponible [aquí](#permisos).
 
@@ -78,7 +78,7 @@ El cambio de idioma de un usuario se realiza en su __'Perfil'__, en la parte sup
 
 <img src={shivaProfil_006} />
 
-La configuración se realiza por cada inquilino [Tenant](concepts.md#management-of-owners-on-a-tenant).
+La configuración se realiza por cada inquilino [Tenant](concepts.md#gestión-de-propietarios-en-un-tenant).
 
 ### Suscripciones a notificaciones temáticas
 

@@ -34,13 +34,13 @@ The selection of a tenant is performed from the main page of the Console:
 
 Access accounts for the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
 
-Credentials are global to your [Organization](concepts.md#organizations).
+Credentials are global to your [Organization](concepts.md#organisationen).
 
 *__Note:__ Identity federation is managed at the organization level*
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](concepts.md#organizations) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](concepts.md#organisationen) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
 
 Klicken Sie auf die Schaltfläche __'Neuer Benutzer'__ auf der Benutzerseite.
 
@@ -68,7 +68,7 @@ The rights activation menu then appears:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](concepts.md#tenant) within the [Organization](concepts.md#organizations).
+Permission configuration must be done for each [Tenant](concepts.md#tenant) within the [Organization](concepts.md#organisationen).
 
 The list of permissions and their definitions is available [here](#berechtigungen).
 

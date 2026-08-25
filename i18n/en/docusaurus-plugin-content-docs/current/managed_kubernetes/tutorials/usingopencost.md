@@ -101,7 +101,7 @@ Once this file is saved, Cline will automatically load the `opencost-xxxxx` MCP 
 ### 2. Querying OpenCost with the MCP
 
 >ℹ️[Prerequisites]
->To interact with the MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (LMStudio, etc.), via a connection to public services like GPT-5 or Gemini, or by using our sovereign **[LLM-as-a-Service](pathname:///llmaas/llmaas)** product.
+>To interact with the MCP using natural language, the underlying AI must have access to language models (LLMs), either locally (LMStudio, etc.), via a connection to public services like GPT-5 or Gemini, or by using our sovereign **[LLM-as-a-Service](/llmaas)** product.
 
 
 After configuration, you can use LLM tools to run natural language queries on this MCP server.
