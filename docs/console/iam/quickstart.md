@@ -8,19 +8,16 @@ import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.pn
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrgAccess from '@site/docs/console/images/shiva_org_access.png'
 import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Tenant
 
 ### Création d'un tenant
 
-La création d'un tenant est réalisée par une demande de service indiquant :
+La création d'un tenant se fait __en self-service__ depuis la Console, sans demande de service préalable. Depuis __'Administration > Tenants'__, le bouton __'Nouveau tenant'__ ouvre un formulaire en deux parties : l'identité du tenant (nom et description) et les produits à y activer.
 
-    Le nom de votre Organisation
-    Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
-    Le nom du tenant
-    La zone de disponibilité ou à défaut le site physique souhaité pour le tenant
+La procédure détaillée est décrite dans le [Quickstart Console](../console_quickstart.md).
 
 ### Selection d'un tenant
 
@@ -150,13 +147,13 @@ L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de l
 
 ## Gestion des accès et authentification
 
-### Autorisation d'accès à un tenant : IP autorisées
+### Autorisation d'accès à la Console : IP autorisées
 
 L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
 
-Il est désormais possible d'afficher la liste des adresses IP publiques autorisées sur le tenant et d’ajouter une nouvelle adresse IP publique à cette liste directement depuis l'onglet "Administration > Accès".
+Cette liste est __commune à toute l'organisation__ : elle conditionne l'accès à la Console, quel que soit le tenant de travail. Elle se consulte et s'enrichit depuis l'onglet __'Administration > Accès'__.
 
-<img src={shivaIpAccessManagement_01} />
+<img src={shivaOrgAccess} />
 
 Pour cela, l’utilisateur doit disposer du droit `console_public_access_read` pour consulter les IPs autorisées, et du droit `console_public_access_write` pour ajouter une adresse IP publique à la liste.
 
