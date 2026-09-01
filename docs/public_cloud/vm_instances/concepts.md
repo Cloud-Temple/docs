@@ -96,7 +96,7 @@ Il est possible d'ajouter des volumes de stockage supplémentaires à chaque mac
 
 ### Interface réseau
 
-Chaque VM instance dispose d'**une interface réseau unique**.
+Chaque VM instance peut disposer de **1 à 7 cartes réseau**. Chaque carte réseau est associée à **un seul réseau**.
 
 ### Compatibilité réseau
 
@@ -111,7 +111,7 @@ Sur un réseau **VPC**, il est possible d'associer une **IP flottante** à une V
 
 ## Déploiement et images
 
-Les VM Instances sont déployées depuis les **images officielles de la Marketplace Cloud Temple**. Ce catalogue d'images sélectionnées garantit des environnements testés, maintenus et prêts à l'emploi pour chaque système d'exploitation supporté.
+Les VM Instances sont déployées depuis les **images officielles de la Marketplace Cloud Temple**. Les templates disponibles sont ceux de la [Marketplace filtrée pour OpenIaaS](https://www.cloud-temple.com/marketplace/?m_deployment%5B%5D=openiaas&post_type=marketplace). Ce catalogue d'images sélectionnées garantit des environnements testés, maintenus et prêts à l'emploi pour chaque système d'exploitation supporté.
 
 Le service supporte **Cloud-init** pour la pré-configuration automatique des instances au démarrage (injection de clés SSH, configuration réseau, scripts d'initialisation, etc.).
 
@@ -119,7 +119,7 @@ Le service supporte **Cloud-init** pour la pré-configuration automatique des in
 
 ### Sauvegarde (optionnelle)
 
-Une option de sauvegarde est disponible avec rétention configurable. Cette option est **facturée en supplément**.
+Deux politiques de sauvegarde sont disponibles : **`No Backup`** et **`Backup 30 snapshots`**. Avec `Backup 30 snapshots`, un snapshot est créé automatiquement chaque soir entre **20 h et 22 h**. Si le client déclenche un backup supplémentaire en journée, deux snapshots sont créés le même jour : la rétention active couvre alors **29 jours** au lieu de 30. Cette option est **facturée en supplément**.
 
 :::info
 La réplication de VM n'est pas incluse par défaut. Son étude est prévue pour le second semestre 2026.
