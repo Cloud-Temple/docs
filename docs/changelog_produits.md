@@ -8,6 +8,87 @@ sidebar_position: 999
 > Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
 > Les corrections de bugs sont volontairement exclues.
 
+## v4.49.0 — 2026-08-31
+
+### [Console](/console)
+- Lancement automatique du tutoriel de bienvenue à la première connexion d'un utilisateur
+- Suppression des notifications d'erreur au chargement du tableau de bord lorsque les environnements ne sont pas provisionnés
+
+### [Console — Organisation](/console/iam/concepts)
+- Affichage du prix d'activation d'un tenant dans la modale de création, en mode Organisation
+
+### [VM Instances](/public_cloud/vm_instances)
+- Masquage des champs et message explicite lorsqu'aucun stockage n'est disponible, à l'ajout et à l'extension d'un disque
+- Association et dissociation d'une IP publique depuis l'onglet « Cartes réseau » d'une machine virtuelle raccordée à un VPC
+- Possibilité de choisir un gabarit personnalisé (vCPU et RAM libres, dans les limites de la famille d'instance) à la création, à la restauration et au redimensionnement d'une VM Instance
+
+### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+- Le nombre de vCPU proposé au redimensionnement d'une machine virtuelle est désormais borné par sa capacité maximale
+- Association et dissociation d'une IP publique depuis l'onglet « Cartes réseau » d'une machine virtuelle raccordée à un VPC
+
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Affichage du type de lame plutôt que sa description dans la « Classe » des pools
+
+### [IaaS OpenSource — Sauvegarde](/iaas_opensource)
+- Mention à la restauration précisant que la machine virtuelle d'origine n'est pas remplacée : une nouvelle machine virtuelle datée est créée
+
+### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+- Association et dissociation d'une IP publique depuis l'onglet « Cartes réseau » d'une machine virtuelle raccordée à un VPC
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Affichage du type de lame plutôt que sa description dans la « Classe » des clusters
+
+### [Réseau](/network/network_overview)
+- Réservation d'IP interco : blocage des adresses réseau et de diffusion, et indicateur « Réservée » sur les IP réservées
+
+### [VPC](/network/vpc)
+- Le bouton « Nouveau VPC » de la liste est désormais grisé lorsque la limite de VPC est atteinte
+
+### [IaaS Bare Metal](/iaas_bare-metal)
+- Affichage du type de lame plutôt que sa description dans la « Classe » des serveurs Bare Metal
+
+## v4.48.0 — 2026-08-13
+
+### [Console](/console)
+- Amélioration de la persistance du choix de langue, désormais lié au profil utilisateur
+
+### [VM Instances](/public_cloud/vm_instances)
+- Le coût estimé affiché lors de la création d'une VM Instance est désormais mensuel, sur une base de 730 h/mois
+
+### [Marketplace](/marketplace)
+- Seules les zones de disponibilité compatibles avec l'image sélectionnée sont désormais proposées lors du déploiement depuis le Marketplace
+- Le prix d'un produit du Marketplace déployé en VM Instance indique désormais qu'il est calculé selon le CPU, la RAM et le stockage
+
+### [Commandes](/console/orders)
+- Message explicite lorsqu'il n'y a plus assez d'espace disponible pour un type de stockage, lors de la commande d'une zone de disponibilité ou d'un pool
+
+### [VPC](/network/vpc)
+- Le nom du VPC est désormais affiché devant celui du réseau dans les sélecteurs de réseau
+- Le nom du VPC précède désormais celui du réseau dans l'onglet Adaptateurs réseau des machines virtuelles
+- Harmonisation des couleurs des étiquettes de type de VPC (mutualisé, dédié) avec celles des réseaux
+- L'option VM Instances est désormais disponible depuis le formulaire d'association d'une IP statique
+- Les adaptateurs réseau déjà associés à une IP statique sont désormais grisés dans le formulaire d'association
+
+### [Object Storage](/storage/oss)
+- Choix du style d'adressage (path-style ou virtual-hosted) lors de la génération d'un lien de partage d'un fichier
+- Avertissement sur les buckets dont le nom n'est pas compatible DNS : seul l'accès path-style est possible
+
+### [Gestionnaire des coûts](/console/billing/concepts)
+- La section Gestionnaire des coûts n'apparaît plus sur le tableau de bord Organisation lorsque l'organisation n'y est pas éligible
+- Affichage d'une carte d'erreur, au lieu d'un coût à 0 €, lorsque la récupération des consommations échoue sur le tableau de bord Organisation
+- Les lignes de plan de support sont désormais regroupées sous « Support » dans le coût par tenant, au lieu d'un tenant « Inconnu »
+
+### [Console — Organisation](/console/iam/concepts)
+- Les produits d'un tenant sont désormais regroupés selon qu'ils sont modifiables, non désactivables ou non disponibles, avec le motif du verrouillage
+
+### [Support](/console)
+- Les descriptions et les rapports post-incident sont désormais mis en forme (markdown) sur la page Incidents
+- Les messages globaux de support sont désormais affichés en mode Organisation
+
+### [Housing (Colocation)](/housing)
+- Ajout des types d'interface 1000BASE-SX et 10GBASE-SR à la réservation d'emplacement en colocation
+
+
 ## v4.47.0 — 2026-07-30
 
 ### [Console](/console)
