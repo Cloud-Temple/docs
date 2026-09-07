@@ -97,7 +97,7 @@ La vostra configurazione inizia con un **modulo di registrazione online**, a cui
 
 **Da dove vi connetterete.** Gli indirizzi IP pubblici autorizzati ad accedere alla vostra Console.
 
-:::caution Gli indirizzi IP non sono facoltativi
+:::caution[Gli indirizzi IP non sono facoltativi]
 Solo gli indirizzi che dichiarerete potranno accedere alla Console.
 
 Ricordatevi di includere **tutti** i vostri siti e le uscite VPN. Un'omissione non è definitiva: l'elenco potrà essere successivamente aggiornato autonomamente dalla Console.
@@ -111,7 +111,7 @@ Tutto è automatico. La vostra organizzazione viene creata in base alle informaz
 
 Non è necessario compiere alcuna azione durante questo periodo.
 
-:::tip Questo primo ambiente viene fornito vuoto
+:::tip[Questo primo ambiente viene fornito vuoto]
 L'ambiente creato dalla vostra registrazione non ha **nessun prodotto attivato** : viene configurato dal nostro sistema automatizzato, senza modulo, quindi senza possibilità di selezione. È una scelta deliberata — non inizierà alcuna fatturazione finché non attiverete personalmente un prodotto.
 
 I quattro prodotti in self-service sono **disponibili** nella vostra Console fin dall'apertura. Disponibile non significa attivato : li attivate quando lo decidete, vedere [Les produits](#i-prodotti).
@@ -131,7 +131,7 @@ Accedi alla Console all'indirizzo [shiva.cloud-temple.com](https://shiva.cloud-t
 
 <img src={shivaHome} />
 
-:::tip E la parte contrattuale?
+:::tip[E la parte contrattuale?]
 Non ti impedisce di procedere. Le informazioni amministrative e di fatturazione: dati di fatturazione, modalità di pagamento e riferimento dell'ordine di acquisto vengono completate in parallelo con il tuo referente Cloud Temple. Non è necessario attendere che vengano finalizzate per iniziare a utilizzare la piattaforma.
 :::
 
@@ -158,7 +158,7 @@ Il tuo ambiente viene configurato automaticamente in pochi minuti. Non devi fare
 
 Se il proprietario del tenant non dispone ancora di un account, riceverà l'email per la creazione dell'account. Se ne possiede già uno, accederà al nuovo ambiente senza necessità di un nuovo invito.
 
-:::tip Nessun prodotto è attivato automaticamente
+:::tip[Nessun prodotto è attivato automaticamente]
 Selezioni i prodotti del tenant **già nel modulo di creazione** — il passaggio 4 sopra — e puoi modificare questo perimetro in qualsiasi momento. Nessun prodotto viene abilitato senza che tu lo abbia selezionato: paghi solo ciò che consumi.
 :::
 
@@ -194,7 +194,7 @@ L'**aggiunta** viene effettuata dalla Console, in **Amministrazione > Accesso**.
 
 Prevedere circa **dieci minuti** prima che il nuovo indirizzo diventi effettivo.
 
-:::caution Questo elenco è relativo alla vostra organizzazione
+:::caution[Questo elenco è relativo alla vostra organizzazione]
 Esiste un unico elenco per l'intera organizzazione. La pagina è accessibile da un tenant, ma **un indirizzo aggiunto qui autorizza l'accesso alla Console per l'intera organizzazione**, non solo per questo tenant.
 :::
 
@@ -224,7 +224,7 @@ Solo un'e-mail richiede un'azione da parte tua.
 | **Quando** | Qualche minuto dopo la creazione |
 | **Validità** | **96 ore** |
 
-:::warning Link scaduto ?
+:::warning[Link scaduto ?]
 Dopo 96 ore, il link non funziona più. Si tratta di una misura di sicurezza, non di un guasto.
 
 Scrivete a **`shiva.support@cloud-temple.com`** : ve ne invieremo uno nuovo.
@@ -232,7 +232,7 @@ Scrivete a **`shiva.support@cloud-temple.com`** : ve ne invieremo uno nuovo.
 È l'unico canale utilizzabile a questo stadio: senza accesso alla Console, non potete ancora aprire una richiesta.
 :::
 
-:::note Niente ricevuto ?
+:::note[Niente ricevuto ?]
 Controllate la cartella spam: il messaggio viene a volte filtrato. Viene inviato da **`shiva.support@cloud-temple.com`**: autorizzate questo indirizzo nella vostra casella di posta. Se non avete ricevuto nulla entro un'ora, contattateci allo stesso indirizzo.
 :::
 

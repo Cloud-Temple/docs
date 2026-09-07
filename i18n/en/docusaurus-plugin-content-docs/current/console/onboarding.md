@@ -97,7 +97,7 @@ It is short and can be completed in one go. It asks for four pieces of informati
 
 **Where you will connect from.** The public IP addresses authorized to access your Console.
 
-:::caution IP addresses are not optional
+:::caution[IP addresses are not optional]
 Only the addresses you declare will be able to access the Console.
 
 Remember to include **all** your sites and VPN exit nodes. An oversight is not permanent: the list can be updated later from the Console, independently.
@@ -111,7 +111,7 @@ Everything is automatic. Your organization is created from the information you e
 
 You don't need to take any action during this time.
 
-:::tip This first environment starts empty
+:::tip[This first environment starts empty]
 The environment created by your registration has **no products activated**: it is provisioned by our automation, without a form, so no selection is possible. This is intentional — nothing starts being billed until you activate a product yourself.
 
 The four self-service products are **available** in your Console right from the start. Available does not mean activated: you activate them when you decide to, see [Les produits](#products).
@@ -131,7 +131,7 @@ You access the Console at [shiva.cloud-temple.com](https://shiva.cloud-temple.co
 
 <img src={shivaHome} />
 
-:::tip What about the contractual side?
+:::tip[What about the contractual side?]
 It does not block you. Administrative and billing information: billing details, payment method, purchase order reference are completed in parallel with your Cloud Temple contact. You do not need to wait for them to be finalized to start using the platform.
 :::
 
@@ -158,7 +158,7 @@ Your environment is automatically provisioned within a few minutes. You don't ne
 
 If the tenant owner does not yet have an account, they will receive an account creation email. If they already have one, they can access the new environment without a new invitation.
 
-:::tip Nothing is enabled by default
+:::tip[Nothing is enabled by default]
 You select the tenant products **from the creation form** — step 4 above — and can adjust this scope at any time. No product is activated unless you explicitly select it: you only pay for what you consume.
 :::
 
@@ -194,7 +194,7 @@ You need the `console_public_access_read` permission to view the list, and `cons
 
 Allow about **ten minutes** for the new address to take effect.
 
-:::caution This list belongs to your organization
+:::caution[This list belongs to your organization]
 There is only one list for the entire organization. The page is accessible from a tenant, but **an address added there grants Console access for the entire organization**, not just for that tenant.
 :::
 
@@ -224,7 +224,7 @@ Only one email requires action on your part.
 | **When** | A few minutes after creation |
 | **Validity** | **96 hours** |
 
-:::warning Link expired?
+:::warning[Link expired?]
 After 96 hours, the link will no longer work. This is a security measure, not a system failure.
 
 Email **`shiva.support@cloud-temple.com`**: we will send you a new one.
@@ -232,7 +232,7 @@ Email **`shiva.support@cloud-temple.com`**: we will send you a new one.
 This is the only available channel at this stage: without access to the Console, you cannot yet submit a request there.
 :::
 
-:::note Nothing received?
+:::note[Nothing received?]
 Check your spam/junk folder: the message is sometimes filtered. It is sent from **`shiva.support@cloud-temple.com`**: allow this address in your email client. If you haven't received anything within the following hour, contact us at the same address.
 :::
 

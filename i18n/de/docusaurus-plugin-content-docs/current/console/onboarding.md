@@ -97,7 +97,7 @@ Es ist kurz und wird in einem Schritt ausgefüllt. Es erfordert vier Angaben.
 
 **Von wo aus Sie sich verbinden werden.** Die öffentlichen IP-Adressen, die zum Zugriff auf Ihre Konsole berechtigt sind.
 
-:::caution IP-Adressen sind nicht optional
+:::caution[IP-Adressen sind nicht optional]
 Nur die von Ihnen angegebenen Adressen können auf die Konsole zugreifen.
 
 Achten Sie darauf, **alle** Ihre Standorte und VPN-Ausgänge einzuschließen. Ein Versehen ist nicht endgültig: Die Liste kann anschließend eigenständig über die Konsole erweitert werden.
@@ -111,7 +111,7 @@ Alles läuft automatisch ab. Ihre Organisation wird basierend auf den von Ihnen 
 
 Währenddessen müssen Sie keine weiteren Schritte unternehmen.
 
-:::tip Diese erste Umgebung wird zunächst leer bereitgestellt
+:::tip[Diese erste Umgebung wird zunächst leer bereitgestellt]
 Die durch Ihre Registrierung erstellte Umgebung hat **keine aktivierten Produkte**: Sie wird von unserem Automatisierungssystem ohne Formular bereitgestellt, sodass keine Auswahl möglich ist. Dies ist beabsichtigt — es fallen keine Kosten an, solange Sie kein Produkt selbst aktivieren.
 
 Die vier Self-Service-Produkte sind in Ihrer Konsole **verfügbar**, sobald Sie diese öffnen. Verfügbar bedeutet nicht aktiviert: Sie aktivieren sie, wenn Sie es wünschen. Siehe [Les produits](#die-produkte).
@@ -131,7 +131,7 @@ Sie gelangen zur Konsole unter der Adresse [shiva.cloud-temple.com](https://shiv
 
 <img src={shivaHome} />
 
-:::tip Und der vertragliche Teil?
+:::tip[Und der vertragliche Teil?]
 Dies hält Sie nicht auf. Die administrativen und Abrechnungsinformationen: Abrechnungsadresse, Zahlungsart, Bestellnummer werden parallel mit Ihrem Ansprechpartner bei Cloud Temple ergänzt. Sie müssen nicht warten, bis diese abgeschlossen sind, um die Plattform zu nutzen.
 :::
 
@@ -158,7 +158,7 @@ Ihre Umgebung wird automatisch in wenigen Minuten bereitgestellt. Sie müssen ni
 
 Wenn der Tenant-Inhaber noch kein Konto besitzt, erhält er eine E-Mail zur Kontoregistrierung. Falls er bereits eines hat, kann er auf die neue Umgebung zugreifen, ohne eine neue Einladung zu benötigen.
 
-:::tip Nichts wird standardmäßig aktiviert
+:::tip[Nichts wird standardmäßig aktiviert]
 Sie wählen die Tenant-Produkte **bereits im Erstellungsformular** — Schritt 4 oben — und können diesen Umfang jederzeit anpassen. Kein Produkt wird aktiviert, ohne dass Sie es explizit ausgewählt haben: Sie zahlen nur für das, was Sie tatsächlich nutzen.
 :::
 
@@ -194,7 +194,7 @@ Sie benötigen die Berechtigung `console_public_access_read`, um die Liste einzu
 
 Rechnen Sie mit einer **Wartezeit von etwa zehn Minuten**, bis die neue Adresse wirksam wird.
 
-:::caution Diese Liste gilt für Ihre gesamte Organisation
+:::caution[Diese Liste gilt für Ihre gesamte Organisation]
 Es gibt nur eine einzige Liste für die gesamte Organisation. Die Seite ist von einem Tenant aus erreichbar, aber **eine dort hinzugefügte Adresse gewährt den Zugriff auf die Konsole für die gesamte Organisation**, nicht nur für diesen Tenant.
 :::
 
@@ -224,7 +224,7 @@ Nur eine E-Mail erfordert eine Aktion von Ihrer Seite.
 | **Wann** | Einige Minuten nach der Erstellung |
 | **Gültigkeit** | **96 Stunden** |
 
-:::warning Link abgelaufen?
+:::warning[Link abgelaufen?]
 Nach Ablauf von 96 Stunden funktioniert der Link nicht mehr. Dies ist eine Sicherheitsmaßnahme und kein Ausfall.
 
 Schreiben Sie an **`shiva.support@cloud-temple.com`** : wir senden Ihnen einen neuen zu.
@@ -232,7 +232,7 @@ Schreiben Sie an **`shiva.support@cloud-temple.com`** : wir senden Ihnen einen n
 Dies ist der einzige zu diesem Zeitpunkt nutzbare Kanal: Ohne Zugriff auf die Konsole können Sie dort noch keinen Supportantrag stellen.
 :::
 
-:::note Nichts erhalten?
+:::note[Nichts erhalten?]
 Überprüfen Sie Ihren Spam-Ordner: Die Nachricht wird manchmal gefiltert. Sie wird von **`shiva.support@cloud-temple.com`** gesendet : erlauben Sie diese Adresse in Ihrem E-Mail-Programm. Wenn Sie innerhalb der folgenden Stunde nichts erhalten haben, kontaktieren Sie uns unter derselben Adresse.
 :::
 

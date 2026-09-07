@@ -97,7 +97,7 @@ Il est court et se remplit en une seule fois. Il vous demande quatre choses.
 
 **D'où vous vous connecterez.** Les adresses IP publiques autorisées à joindre votre Console.
 
-:::caution Les adresses IP ne sont pas optionnelles
+:::caution[Les adresses IP ne sont pas optionnelles]
 Seules les adresses que vous déclarez pourront accéder à la Console.
 
 Pensez à inclure **tous** vos sites et vos sorties VPN. Un oubli n'est pas définitif : la liste s'enrichit ensuite depuis la Console, en autonomie.
@@ -111,7 +111,7 @@ Tout est automatique. Votre organisation est créée à partir des informations 
 
 Vous n'avez aucune démarche à faire pendant ce temps.
 
-:::tip Ce premier environnement arrive vide
+:::tip[Ce premier environnement arrive vide]
 L'environnement créé par votre inscription n'a **aucun produit activé** : il est monté par notre automate, sans formulaire, donc sans sélection possible. C'est délibéré — rien ne commence à être facturé tant que vous n'avez pas activé un produit vous-même.
 
 Les quatre produits en libre-service sont **disponibles** dans votre Console dès l'ouverture. Disponible ne veut pas dire activé : vous les activez quand vous le décidez, voir [Les produits](#les-produits).
@@ -131,7 +131,7 @@ Vous arrivez sur la Console, à l'adresse [shiva.cloud-temple.com](https://shiva
 
 <img src={shivaHome} />
 
-:::tip Et la partie contractuelle ?
+:::tip[Et la partie contractuelle ?]
 Elle ne vous bloque pas. Les informations administratives et de facturation : coordonnées de facturation, mode de règlement, référence de bon de commande se complètent en parallèle, avec votre interlocuteur Cloud Temple. Vous n'attendez pas qu'elles soient finalisées pour prendre la plateforme en main.
 :::
 
@@ -158,7 +158,7 @@ Votre environnement se construit tout seul, en quelques minutes. Vous n'avez rie
 
 Si le propriétaire du tenant n'a pas encore de compte, il reçoit son courriel de création de compte. S'il en a déjà un, il accède au nouvel environnement sans nouvelle invitation.
 
-:::tip Rien n'est activé d'office
+:::tip[Rien n'est activé d'office]
 Vous choisissez les produits du tenant **dès le formulaire de création** — l'étape 4 ci-dessus — et vous faites évoluer ce périmètre à tout moment. Aucun produit ne s'ouvre sans que vous l'ayez coché : vous ne payez que ce que vous consommez.
 :::
 
@@ -194,7 +194,7 @@ Il vous faut le droit `console_public_access_read` pour consulter la liste, et `
 
 Comptez une **dizaine de minutes** avant que la nouvelle adresse soit effective.
 
-:::caution Cette liste est celle de votre organisation
+:::caution[Cette liste est celle de votre organisation]
 Il n'y a qu'une liste pour toute l'organisation. La page est atteignable depuis un tenant, mais **une adresse ajoutée là autorise l'accès à la Console pour toute l'organisation**, pas seulement pour ce tenant.
 :::
 
@@ -224,7 +224,7 @@ Un seul courriel demande une action de votre part.
 | **Quand** | Quelques minutes après la création |
 | **Validité** | **96 heures** |
 
-:::warning Lien expiré ?
+:::warning[Lien expiré ?]
 Au-delà de 96 heures, le lien ne fonctionne plus. C'est une mesure de sécurité, pas une panne.
 
 Écrivez à **`shiva.support@cloud-temple.com`** : nous vous en renvoyons un.
@@ -232,7 +232,7 @@ Au-delà de 96 heures, le lien ne fonctionne plus. C'est une mesure de sécurit�
 C'est le seul canal utilisable à ce stade : sans accès à la Console, vous ne pouvez pas encore y ouvrir de demande.
 :::
 
-:::note Rien reçu ?
+:::note[Rien reçu ?]
 Regardez vos courriers indésirables : le message est parfois filtré. Il est expédié par **`shiva.support@cloud-temple.com`** : autorisez cette adresse dans votre messagerie. Si vous n'avez rien reçu dans l'heure qui suit, contactez-nous à cette même adresse.
 :::
 
