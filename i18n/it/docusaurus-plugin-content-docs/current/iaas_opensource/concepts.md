@@ -178,7 +178,7 @@ I backup vengono inviati al [Stockage Objet qualifié SecNumCloud](../storage/os
 Il servizio utilizza una modalità di backup **incrementale**. Questa modalità punta a un **Backup Repository** (lo storage S3 remoto) e non esporta mai un backup completo dopo il primo: solo i **blocchi di dati modificati** vengono trasferiti a ogni ciclo.
 
 :::info[Backup incrementale vs Replicazione]
-Il **backup incrementale** punta a un repository S3 remoto ed è ottimizzato per la **protezione a lungo termine**. Non deve essere confuso con la **replicazione** (Disaster Recovery a caldo) che punta a un Storage Repository locale — questa modalità è coperta dalla funzionalità di [replicazione delle macchine virtuali](#réplication-de-machines-virtuelles).
+Il **backup incrementale** punta a un repository S3 remoto ed è ottimizzato per la **protezione a lungo termine**. Non deve essere confuso con la **replicazione** (Disaster Recovery a caldo) che punta a un Storage Repository locale — questa modalità è coperta dalla funzionalità di [replicazione delle macchine virtuali](#replicazione-di-macchine-virtuali).
 :::
 
 #### Ciclo di vita tecnico di un backup incrementale

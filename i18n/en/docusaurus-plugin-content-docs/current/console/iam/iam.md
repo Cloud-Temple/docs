@@ -21,6 +21,6 @@ It enables the administration of local accounts while supporting hybrid configur
     <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step by step how to configure and use our services with detailed guides.</p>
-    <a href="./iam/tutorials/sso_aad" class="card-link">Discover tutorials &rarr;</a>
+    <a href="./iam/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
 </div>

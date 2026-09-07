@@ -55,7 +55,7 @@ Ein Grafana-Dashboard ist ebenfalls verfügbar, um die OpenCost-Daten zu visuali
 
 ## Erweiterte Nutzung: Integration mit einer KI (MCP-Server)
 
-Für fortgeschrittene Benutzer kann OpenCost direkt über den Konversationsassistenten Cline (oder andere) abgefragt werden, dank des Systems der **MCP (Multi-purpose Co-processor) servers**. Dies ermöglicht es Ihnen, Abfragen zu skripten und Kostendaten direkt in Ihren Konversationen abzurufen.
+Für fortgeschrittene Benutzer kann OpenCost direkt über den Konversationsassistenten Cline (oder andere) abgefragt werden, dank des Systems der **MCP (Model Context Protocol) servers**. Dies ermöglicht es Ihnen, Abfragen zu skripten und Kostendaten direkt in Ihren Konversationen abzurufen.
 
 ### 1. Konfiguration von MCP OpenCost in Cline
 
@@ -101,7 +101,7 @@ Sobald diese Datei gespeichert ist, lädt Cline beim Start automatisch den MCP `
 ### 2. Abfragen von OpenCost mit dem MCP
 
 >ℹ️[Voraussetzungen]
->Um mit dem MCP in natürlicher Sprache zu interagieren, muss die zugrunde liegende KI Zugriff auf Sprachmodelle (LLMs) haben, entweder lokal (LMStudio usw.), über eine Verbindung zu öffentlichen Diensten wie GPT-5 oder Gemini oder durch Verwendung unseres souveränen Produkts **[LLM-as-a-Service](pathname:///llmaas/llmaas)**.
+>Um mit dem MCP in natürlicher Sprache zu interagieren, muss die zugrunde liegende KI Zugriff auf Sprachmodelle (LLMs) haben, entweder lokal (LMStudio usw.), über eine Verbindung zu öffentlichen Diensten wie GPT-5 oder Gemini oder durch Verwendung unseres souveränen Produkts **[LLM-as-a-Service](/llmaas)**.
 
 
 Nach der Konfiguration können Sie die LLM-Tools verwenden, um Abfragen in natürlicher Sprache an diesen MCP-Server zu stellen.

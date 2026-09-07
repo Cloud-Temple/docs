@@ -10,7 +10,7 @@ const config: Config = {
   title: 'Documentation Cloud Temple',
   tagline: 'Tout ce dont vous avez besoin pour tirer le meilleur parti des produits Cloud Temple.  ',
   favicon: 'img/favicon.ico',
-  onBrokenLinks: 'log',
+  onBrokenLinks: 'throw',
 
   // enable faster build time https://docusaurus.io/blog/releases/3.6
   future: {

@@ -28,6 +28,9 @@ scripts/translate_py/venv/
 .env.test.local
 .env.production.local
 .venv
+# Notes de version internes de la Console, copiées à la racine pour alimenter
+# scripts/extract_changelog.py : ne JAMAIS versionner (ce dépôt est public).
+/maj.js
 .maj.js
 
 npm-debug.log*

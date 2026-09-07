@@ -26,7 +26,7 @@ Enter a descriptive name, for example:
 
 Click **Create**. The snapshot changes to **Available** status once the capture is complete.
 
-:::tip Naming best practices
+:::tip[Naming best practices]
 - Include the **date** in the name for easy identification
 - Specify the **reason** for the snapshot (e.g. before-upgrade, before-migration)
 :::

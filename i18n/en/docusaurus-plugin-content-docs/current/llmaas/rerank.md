@@ -45,7 +45,7 @@ Requête utilisateur
 | `qwen3-reranker:0.6b` | Qwen Team | 4 096 | No | Compact and fast, ideal for low latency |
 | `bge-reranker-large` | BAAI | 512 | No | Multilingual, high performance |
 
-:::tip Which model to choose?
+:::tip[Which model to choose?]
 - **Production RAG**: `nvidia/llama-nemotron-rerank-vl-1b-v2` — highest accuracy
 - **Low Latency**: `qwen3-reranker:0.6b` — fastest
 - **Multilingual**: `bge-reranker-large` — optimized for many languages
@@ -366,6 +366,6 @@ def rerank_with_threshold(query: str, documents: list[str]) -> list[str]:
 ## Resources
 
 - **Complete example code** : [`exemples/simple_rerank/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rerank)
-- **Model catalog** : [Reranking Models](./models#modèles-de-reranking)
+- **Model catalog** : [Reranking Models](./models#reranking-models)
 - **API Reference** : [POST /v1/rerank](./api#post-v1rerank)
 - **RAG Explained** : [Complete RAG Guide](./rag_explained)

@@ -112,7 +112,7 @@ Para su primera prueba, utilice uno de estos modelos recomendados :
 
 Consulte el [catálogo completo de modelos](./models) para más opciones. Prefiera los modelos marcados con **LTS** para sus aplicaciones en producción.
 
-:::tip Consejo para los modelos Qwen con razonamiento
+:::tip[Consejo para los modelos Qwen con razonamiento]
 Algunos modelos de la familia **Qwen** (como `qwen3-2507-think:4b`, `qwen3.5:9b` o `qwen3.6:27b`) cuentan con un modo de razonamiento avanzado. Puede forzar su activación añadiendo `/think` al inicio de su prompt, o desactivarlo para una respuesta más directa y rápida con `/nothink`.
 :::
 

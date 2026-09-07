@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Batch API — Elaborazione Asincrona
 
-:::info Disponibilità
+:::info[Disponibilità]
 La Batch API è in **distribuzione graduale**. Verifica la disponibilità sul tuo account nella [Console Cloud Temple](https://console.cloud-temple.com) o contatta il supporto commerciale.
 :::
 
@@ -475,7 +475,7 @@ def process_results(results: list[dict]) -> tuple[list, list]:
 | **Conservazione dei file di risultato** | 7 giorni |
 | **Batch simultanei per account** | 10 |
 
-:::warning Elaborazione asincrona
+:::warning[Elaborazione asincrona]
 Il batch non garantisce un ordine di elaborazione. I risultati potrebbero apparire in un ordine diverso rispetto all'ordine di input. Utilizzare il campo `custom_id` per associare ogni risultato alla relativa richiesta originale.
 :::
 
@@ -533,4 +533,4 @@ def list_batches(limit: int = 20) -> list[dict]:
 - **Codice di esempio completo** : [`exemples/simple_batch/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_batch)
 - **Catalogo modelli** : [Modelli compatibili Batch](./models)
 - **Riferimento API** : [Documentazione API completa](./api)
-- **Pricing dettagliato** : [Tariffazione LLMaaS](./api#rate-limiting-et-facturation)
+- **Pricing dettagliato** : [Tariffazione LLMaaS](./api#rate-limiting-e-fatturazione)

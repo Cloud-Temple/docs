@@ -26,7 +26,7 @@ Saisissez un nom explicite pour identifier ce snapshot, par exemple :
 
 Cliquez sur **Créer**. Le snapshot passe au statut **Disponible** une fois la capture terminée.
 
-:::tip Bonnes pratiques de nommage
+:::tip[Bonnes pratiques de nommage]
 - Incluez la **date** dans le nom pour faciliter l'identification
 - Précisez le **motif** du snapshot (ex: avant-upgrade, avant-migration)
 - Exemples : `web01-2026-04-17-avant-nginx-upgrade`, `db-prod-avant-migration-v2`

@@ -1,38 +1,38 @@
 ---
-title: Objektspeicher-Konzepte
+title: Konzepte des Objektspeichers
 sidebar_position: 2
 ---
 
-# Object Storage Service (OSS) Concepts
+# Konzepte des Objektspeichers (OSS)
 
-## Technical Architecture
+## Technische Architektur
 
-The Cloud Temple object storage service is built on a distributed architecture that ensures high data durability and availability. Objects are redundantly stored across multiple storage nodes within our SecNumCloud-certified data centers.
+Der Objektspeicherdienst von Cloud Temple basiert auf einer verteilten Architektur, die eine hohe Datenhaltbarkeit und -verfügbarkeit gewährleistet. Die Objekte werden redundant auf mehreren Speicherknoten innerhalb unserer SecNumCloud-zertifizierten Rechenzentren gespeichert.
 
-Access to the service is provided through a standard RESTful API, compatible with the S3 protocol, enabling you to use a wide range of existing tools and SDKs.
+Der Zugriff auf den Dienst erfolgt über eine standardisierte RESTful-API, die mit dem S3-Protokoll kompatibel ist, sodass Sie eine breite Palette bestehender Tools und SDKs nutzen können.
 
 ## Hauptkomponenten
 
-- **Objekte**: Die grundlegenden Daten, die im Dienst gespeichert werden. Ein Objekt besteht aus Daten (der eigentliche Dateiinhalt) und Metadaten (beschreibende Informationen über das Objekt).
-- **Buckets (Container)**: Objekte werden in Buckets organisiert. Ein Bucket ist ein Container für Objekte, und sein Name muss innerhalb des Dienstes eindeutig sein.
-- **Schlüssel**: Jedes Objekt in einem Bucket wird eindeutig durch einen Schlüssel (einen Dateinamen) identifiziert.
-- **Endpunkte**: Regionale URLs, die Sie verwenden, um auf die API des Speicherdienstes zuzugreifen.
+- **Objekte** : Die grundlegenden Daten, die im Dienst gespeichert werden. Ein Objekt besteht aus Daten (der Datei selbst) und Metadaten (beschreibende Informationen zum Objekt).
+- **Buckets (Container)** : Objekte werden in Buckets organisiert. Ein Bucket ist ein Container für Objekte, und sein Name muss innerhalb des Dienstes eindeutig sein.
+- **Schlüssel** : Jedes Objekt in einem Bucket wird eindeutig durch einen Schlüssel (einen Dateinamen) identifiziert.
+- **Endpoints** : Die regionalen URLs, die Sie zum Zugriff auf die API des Speicherdienstes verwenden.
 
-## Security and Encryption
+## Sicherheit und Verschlüsselung
 
-The security of your data is our absolute priority. The OSS service integrates robust encryption mechanisms to protect your data, whether it is stored (at rest) or transmitted over the network.
+Die Sicherheit Ihrer Daten ist unsere oberste Priorität. Der OSS-Dienst integriert robuste Verschlüsselungsmechanismen, um Ihre Daten zu schützen, sowohl bei der Speicherung (au repos) als auch während der Übertragung über das Netzwerk.
 
-### Datenverschlüsselung im Ruhezustand (Data at Rest Encryption - D@RE)
+### Verschlüsselung ruhender Daten (Data at Rest Encryption - D@RE)
 
-Um Ihre gespeicherten Daten zu schützen, verwendet unser Dienst Server-seitige Verschlüsselung.
+Um Ihre gespeicherten Daten zu schützen, verwendet unser Dienst die serverseitige Verschlüsselung.
 
-- **Aktivierung**: Die D@RE-Verschlüsselung ist auf Ebene des *Namespace* (Namensraum) aktiviert.
-- **Algorithmus**: Wir verwenden den Algorithmus **AES-256**, einen der sichersten verfügbaren Verschlüsselungsstandards.
-- **Funktionsweise**: Wenn Sie ein Objekt in einem Bucket schreiben, in dem D@RE aktiviert ist, verschlüsselt der Dienst Ihre Daten automatisch, bevor sie auf die Festplatten geschrieben werden. Beim Lesen des Objekts wird es transparent für Sie entschlüsselt. Die Verwaltung der Verschlüsselungsschlüssel erfolgt vollständig durch den Dienst.
+- **Aktivierung** : Die D@RE-Verschlüsselung wird auf *Namespace*-Ebene (espace de nommage) aktiviert.
+- **Algorithmus** : Wir verwenden eine **AES-256-Bit**-Verschlüsselung, zertifiziert nach **FIPS 140-3**, über die Softwarebibliothek **RSA BSAFE Crypto-J** in Version **7.x**.
+- **Funktionsweise** : Wenn Sie ein Objekt in einen Bucket schreiben, in dem D@RE aktiviert ist, verschlüsselt der Dienst Ihre Daten automatisch, bevor sie auf die Festplatten geschrieben werden. Beim Lesen des Objekts wird es für Sie transparent entschlüsselt. Die Verwaltung der Verschlüsselungsschlüssel wird vollständig vom Dienst übernommen.
 
-### Data Encryption in Transit
+### Verschlüsselung von Daten während der Übertragung
 
-All communications with the object storage service API—whether for uploading, downloading, or managing your data—must be secured.
+Alle Kommunikationen mit der API des Objektspeicherdienstes, sei es zum Hochladen, Herunterladen oder Verwalten Ihrer Daten, müssen gesichert sein.
 
-- **Protocol**: We require the use of the **TLS (Transport Layer Security)** protocol, versions **1.2 and 1.3**.
-- **Operation**: By using HTTPS for all your API requests, you ensure that data exchanged between your client and our servers is encrypted, thereby protecting it against interception or tampering during transmission over the network.
+- **Protokoll** : Wir schreiben die Verwendung des **TLS-Protokolls (Transport Layer Security)** in den Versionen **1.2 und 1.3** vor.
+- **Funktionsweise** : Durch die Verwendung von HTTPS für alle Ihre API-Anfragen stellen Sie sicher, dass die zwischen Ihrem Client und unseren Servern ausgetauschten Daten verschlüsselt sind, wodurch sie vor Abfangen oder Manipulation während der Übertragung im Netzwerk geschützt werden.

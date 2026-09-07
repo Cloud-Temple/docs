@@ -81,7 +81,7 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: 'Tutoriels IAM',
-              link: { type: 'generated-index' },
+              link: { type: 'generated-index', slug: '/console/iam/tutorials' },
               items: [
                 'console/iam/tutorials/sso_azuread',
                 'console/iam/tutorials/sso_adfs',
@@ -530,7 +530,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'MariaDB Managé',
-          className: 'sidebar-beta',
           link: { type: 'doc', id: 'managed_mariadb/managed_mariadb' },
           items: [
             'managed_mariadb/managed_mariadb',
@@ -541,7 +540,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'PostgreSQL Managé',
-          className: 'sidebar-beta',
           link: { type: 'doc', id: 'managed_postgresql/managed_postgresql' },
           items: [
             'managed_postgresql/managed_postgresql',

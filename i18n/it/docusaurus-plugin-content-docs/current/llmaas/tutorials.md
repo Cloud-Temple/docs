@@ -903,7 +903,7 @@ Questo tutorial vi guida nella configurazione dell'estensione CLINE in Visual St
     * **Base URL**: Inserite l'endpoint dell'API LLMaaS di Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
     * **OpenAI Compatible API Key**: Incollate la chiave API che avete generato dalla console Cloud Temple.
 
-    :::tip Generazione della chiave API
+    :::tip[Generazione della chiave API]
     Per generare la vostra chiave API, andate nella console Cloud Temple, sezione **LLMaaS** > **Chiavi API**, quindi cliccate su **"Crea una chiave API"**.
 
     ![Creazione di una chiave API dalla console](@site/docs/llmaas/images/console_create_api_key.png)
