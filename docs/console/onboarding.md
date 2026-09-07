@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: Créez votre organisation, ouvrez vos environnements et activez vos produits — la mise en place sur la plateforme Cloud Temple, de l'inscription au premier déploiement.
+description: "Créez votre organisation, ouvrez vos environnements et activez vos produits — la mise en place sur la plateforme Cloud Temple, de l'inscription au premier déploiement."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
