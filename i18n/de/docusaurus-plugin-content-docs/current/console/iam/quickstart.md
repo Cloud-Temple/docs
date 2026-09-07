@@ -8,19 +8,16 @@ import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.pn
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrgAccess from '@site/docs/console/images/shiva_org_access.png'
 import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Mandant
 
 ### Creation of a tenant
 
-The creation of a tenant is carried out by submitting a service request indicating:
+Die Erstellung eines Mandanten erfolgt __im Self-Service__ über die Konsole, ohne vorherige Serviceanfrage. Unter __'Administration > Tenants'__ öffnet die Schaltfläche __'Neuer Mandant'__ ein zweiteiliges Formular: die Identität des Mandanten (Name und Beschreibung) und die darin zu aktivierenden Produkte.
 
-    Your Organization's name
-    Name of a contact person, including their email address and phone number, to finalize the configuration
-    Name of the tenant
-    Desired availability zone, or alternatively, the physical site for the tenant
+Das genaue Verfahren ist im [Konsolen-Quickstart](../console_quickstart.md) beschrieben.
 
 ### Selection of a tenant
 
@@ -150,13 +147,13 @@ The user must provide two distinct proofs of identity. In the case of the Consol
 
 ## Access Management and Authentication
 
-### Zugriffsberechtigung auf einen Mandanten: Genehmigte IP-Adressen
+### Zugriffsberechtigung auf die Konsole: Genehmigte IP-Adressen
 
 Der Zugriff auf die Cloud-Verwaltungskonsole ist streng auf vorab genehmigte IP-Adressen beschränkt, in Übereinstimmung mit den Anforderungen der SecNumCloud-Zertifizierung. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem nur Benutzer aus festgelegten IP-Bereichen Zugriff erhalten, wodurch das Risiko von unbefugtem Zugriff minimiert und die Cloud-Infrastruktur gemäß den höchsten Sicherheitsstandards geschützt wird.
 
-Es ist nun möglich, die Liste der genehmigten öffentlichen IP-Adressen für den Mandanten anzuzeigen und eine neue öffentliche IP-Adresse direkt über den Tab „Administration > Zugriff“ dieser Liste hinzuzufügen.
+Die Liste gehört zur __Organisation__: eine aus einem beliebigen Mandanten hinzugefügte Adresse erlaubt den Zugriff auf die Konsole für die gesamte Organisation. Sie kann über den Tab __'Administration > Zugriff'__ eingesehen und ergänzt werden.
 
-<img src={shivaIpAccessManagement_01} />
+<img src={shivaOrgAccess} />
 
 Dazu muss der Benutzer die Berechtigung `console_public_access_read` besitzen, um die genehmigten IPs einzusehen, und die Berechtigung `console_public_access_write`, um eine öffentliche IP-Adresse der Liste hinzuzufügen.
 

@@ -36,7 +36,7 @@ Tra i due si colloca un __perimetro comune__: l'identità dell'utente. Un accoun
 | __Permessi degli utenti__                              | __No__                                        | __Sì, tenant per tenant__                             |
 | __Designazione di un proprietario__                    | __Sì__ (proprietario dell'organizzazione)     | __Sì__ (proprietario del tenant)                      |
 | Risorse tecniche (calcolo, storage, rete)              | No                                            | Sì                                                    |
-| Indirizzi IP autorizzati                               | No                                            | Sì                                                    |
+| Indirizzi IP autorizzati                               | Sì (elenco unico dell'organizzazione)         | Gestibile da un tenant, ma l'elenco modificato è quello dell'organizzazione |
 
 :::info[Da ricordare]
 I permessi non vengono __mai__ configurati a livello di organizzazione: sono definiti tenant per tenant. Il livello di organizzazione consente invece di designare un utente come __proprietario dell'organizzazione__.
@@ -138,7 +138,8 @@ Il perimetro dell'organizzazione comprende:
 - il __meccanismo di autenticazione__ comune a tutti gli account,
 - il __ciclo di vita degli account utente__: invito, reiscrizione, eliminazione,
 - la __designazione dei proprietari dell'organizzazione__,
-- l'__elenco dei tenant__ della tua architettura.
+- l'__elenco dei tenant__ della tua architettura,
+- gli __indirizzi IP autorizzati__ ad accedere alla Console — un elenco unico, valido per tutti i tenant.
 
 :::warning[I permessi non si gestiscono qui]
 La pagina __'Utenti'__ dell'organizzazione consente di creare un account, designarlo come proprietario ed eliminarlo. __Non__ consente di assegnare permessi: questi sono propri di ciascun tenant e si configurano dal tenant interessato (vedi [Assegnazione dei permessi in un tenant](#assegnazione-dei-permessi-in-un-tenant)).
@@ -241,12 +242,9 @@ Per quanto riguarda le reti, è possibile richiedere reti __'cross tenant'__ per
 
 È possibile far evolvere l'architettura aggiungendo o rimuovendo tenant.
 
-Un tenant non può essere vuoto. Deve essere necessariamente inizializzato con un minimo di risorse:
+Nessun prodotto è attivato per impostazione predefinita. Scegliete i prodotti del tenant __già nel modulo di creazione__ e modificate questo perimetro in qualsiasi momento tramite __'Modifica prodotti'__.
 
-- Una zona di disponibilità (AZ, ovvero un datacenter fisico),
-- Un cluster di calcolo,
-- Uno spazio di archiviazione,
-- Un VLAN di rete.
+I prodotti di infrastruttura storici (IaaS) continuano a essere ordinati per riferimento:
 
 | Riferimento ordine                                         | Unità    | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
@@ -260,7 +258,7 @@ Il perimetro del tenant comprende:
 - le __risorse tecniche__ ordinate e distribuite,
 - i __permessi degli utenti__ su tali risorse,
 - la __designazione dei proprietari del tenant__,
-- gli __indirizzi IP autorizzati__ ad accedere al tenant,
+- la __gestione degli indirizzi IP autorizzati__, il cui perimetro è l'organizzazione,
 - il __monitoraggio del consumo__ delle risorse.
 
 I permessi degli utenti devono essere definiti in ogni tenant. Un account può quindi essere autorizzato a richiedere risorse in un tenant, ma non in un altro. Pertanto, ogni organizzazione deve valutare attentamente i tenant desiderati: questo aspetto viene generalmente affrontato durante la sessione di inizializzazione, al momento della creazione dell'organizzazione.
@@ -313,7 +311,7 @@ Il proprietario di un tenant è un ruolo distinto dal [proprietario dell'organiz
 
 - Questa procedura garantisce che le modifiche ai diritti di accesso vengano effettuate in modo sicuro e in conformità alle best practice per la gestione degli accessi.
 
-### Autorizzazione all'accesso a un tenant: IP autorizzati
+### Autorizzazione all'accesso alla Console: IP autorizzati
 
 L'accesso alla console di gestione cloud è strettamente limitato agli indirizzi IP precedentemente autorizzati, in conformità con i requisiti della certificazione SecNumCloud. Questa restrizione garantisce un livello di sicurezza rafforzato consentendo l'accesso solo agli utenti provenienti da intervalli di IP specificati, minimizzando così i rischi di accesso non autorizzato e proteggendo l'infrastruttura cloud secondo gli standard di sicurezza più elevati.
 

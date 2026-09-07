@@ -36,7 +36,7 @@ Dazwischen liegt ein __gemeinsamer Bereich__: die Identität des Benutzers. Ein 
 | __Berechtigungen der Benutzer__                       | __Nein__                                      | __Ja, Tenant für Tenant__                       |
 | __Benennung eines Eigentümers__                       | __Ja__ (Eigentümer der Organisation)          | __Ja__ (Eigentümer des Tenants)                 |
 | Technische Ressourcen (Compute, Storage, Netzwerk)    | Nein                                          | Ja                                              |
-| Zugelassene IP-Adressen                               | Nein                                          | Ja                                              |
+| Zugelassene IP-Adressen                               | Ja (einzige Liste der Organisation)           | Aus einem Tenant verwaltbar, die geänderte Liste ist jedoch die der Organisation |
 
 :::info[Wichtig]
 Berechtigungen werden __niemals__ auf Organisationsebene konfiguriert: sie werden Tenant für Tenant festgelegt. Auf Organisationsebene können Sie einen Benutzer hingegen als __Eigentümer der Organisation__ benennen.
@@ -138,7 +138,8 @@ Der Organisationsbereich umfasst:
 - den für alle Konten gemeinsamen __Authentifizierungsmechanismus__,
 - den __Lebenszyklus der Benutzerkonten__: Einladung, Neuanmeldung, Löschung,
 - die __Benennung der Eigentümer der Organisation__,
-- die __Liste der Tenants__ Ihrer Architektur.
+- die __Liste der Tenants__ Ihrer Architektur,
+- die zum Zugriff auf die Konsole __zugelassenen IP-Adressen__ — eine einzige Liste, gültig für alle Tenants.
 
 :::warning[Berechtigungen werden hier nicht verwaltet]
 Auf der Seite __'Benutzer'__ der Organisation können Sie ein Konto erstellen, als Eigentümer benennen und löschen. Sie können dort __keine__ Berechtigungen zuweisen: diese sind je Tenant spezifisch und werden im betreffenden Tenant konfiguriert (siehe [Zuweisung von Berechtigungen in einem Tenant](#zuweisung-von-berechtigungen-in-einem-tenant)).
@@ -239,12 +240,9 @@ Bei Netzwerken ist es möglich, __'tenantübergreifende'__ Netzwerke anzufordern
 
 Die Architektur kann durch Hinzufügen oder Entfernen von Tenants erweitert werden.
 
-Ein Tenant darf nicht leer sein. Er muss zwingend mit mindestens einer Ressource initialisiert werden:
+Kein Produkt wird standardmäßig aktiviert. Sie wählen die Produkte des Tenants __bereits im Erstellungsformular__ aus und passen diesen Umfang jederzeit über __'Produkte ändern'__ an.
 
-- Eine Verfügbarkeitszone (AZ, soit un datacenter physique),
-- Ein Rechencluster,
-- Ein Speicherbereich,
-- Ein VLAN-Netzwerk.
+Die historischen Infrastrukturprodukte (IaaS) werden weiterhin per Referenz bestellt:
 
 | Bestellreferenz                                        | Einheit    | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
@@ -258,7 +256,7 @@ Der Tenant-Bereich umfasst:
 - die bestellten und bereitgestellten __technischen Ressourcen__,
 - die __Berechtigungen der Benutzer__ auf diesen Ressourcen,
 - die __Benennung der Eigentümer des Tenants__,
-- die zum Zugriff auf den Tenant __zugelassenen IP-Adressen__,
+- die __Verwaltung der zugelassenen IP-Adressen__, deren Geltungsbereich die Organisation ist,
 - die __Verbrauchsverfolgung__ der Ressourcen.
 
 Die Berechtigungen der Benutzer sind in jedem Tenant festzulegen. Ein Konto kann somit autorisiert sein, Ressourcen in einem Tenant zu bestellen, in einem anderen jedoch nicht. Daher muss jede Organisation die gewünschten Tenants sorgfältig planen: dieser Punkt wird in der Regel im Initialisierungsworkshop zum Zeitpunkt der Erstellung der Organisation behandelt.
@@ -311,7 +309,7 @@ Der Eigentümer eines Tenants ist eine vom [Eigentümer der Organisation](#verwa
 
 - Dieses Verfahren stellt sicher, dass Änderungen an den Zugriffsrechten auf sichere Weise und gemäß den bewährten Verfahren für das Zugriffsmanagement durchgeführt werden.
 
-### Zugriffsberechtigung für einen Tenant: Zugelassene IPs
+### Zugriffsberechtigung für die Konsole: Zugelassene IPs
 
 Der Zugriff auf die Cloud-Management-Konsole ist streng auf zuvor autorisierte IP-Adressen beschränkt, um den Anforderungen der SecNumCloud-Zertifizierung zu entsprechen. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem der Zugriff nur auf Benutzer aus angegebenen IP-Bereichen ermöglicht wird, wodurch das Risiko unbefugten Zugriffs minimiert und die Cloud-Infrastruktur nach den höchsten Sicherheitsstandards geschützt wird.
 

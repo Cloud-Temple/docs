@@ -36,7 +36,7 @@ Between the two lies a __common scope__: the user's identity. An account is crea
 | __Users' permissions__                            | __No__                                        | __Yes, tenant by tenant__                     |
 | __Designating an owner__                          | __Yes__ (organization owner)                  | __Yes__ (tenant owner)                        |
 | Technical resources (compute, storage, network)   | No                                            | Yes                                           |
-| Authorized IP addresses                           | No                                            | Yes                                           |
+| Authorized IP addresses                           | Yes (single organization-wide list)           | Manageable from a tenant, but the list modified is the organization's |
 
 :::info[Key point]
 Permissions are __never__ configured at the organization level: they are defined tenant by tenant. The organization level does, however, allow you to designate a user as __organization owner__.
@@ -138,7 +138,8 @@ The organization scope covers:
 - the __authentication mechanism__ common to all accounts,
 - the __lifecycle of user accounts__: invitation, re-registration, deletion,
 - the __designation of organization owners__,
-- the __list of tenants__ in your architecture.
+- the __list of tenants__ in your architecture,
+- the __authorized IP addresses__ for reaching the Console — a single list, valid for all tenants.
 
 :::warning[Permissions are not managed here]
 The organization's __'Users'__ page lets you create an account, designate it as owner and delete it. It does __not__ let you assign permissions: these are specific to each tenant and are configured from the tenant concerned (see [Assigning permissions within a tenant](#assigning-permissions-within-a-tenant)).
@@ -239,12 +240,9 @@ Regarding networks, it is possible to request __'cross tenant'__ networks to ens
 
 The architecture can be scaled by adding or removing tenants.
 
-A tenant cannot be empty. It must necessarily be initialized with a minimum set of resources:
+No product is activated by default. You choose the tenant's products __from the creation form itself__, and you adjust this scope at any time via __'Modify products'__.
 
-- An availability zone (AZ, i.e., a physical datacenter),
-- A compute cluster,
-- A storage space,
-- A network VLAN.
+The legacy infrastructure products (IaaS) are still ordered by reference:
 
 | Order Reference                                        | Unit    | SKU                     |
 |--------------------------------------------------------------|----------|-------------------------|
@@ -258,7 +256,7 @@ The tenant scope covers:
 - the __technical resources__ ordered and deployed,
 - the __users' permissions__ on those resources,
 - the __designation of tenant owners__,
-- the __IP addresses authorized__ to access the tenant,
+- the __management of authorized IP addresses__, whose scope is the organization,
 - the __consumption tracking__ of resources.
 
 User permissions must be defined within each tenant. An account may thus be authorized to order resources in one tenant, but not in another. Each organization must therefore carefully consider the desired tenants: this point is typically addressed during the initialization workshop, at the time of organization creation.
@@ -311,7 +309,7 @@ The tenant owner is a role distinct from the [organization owner](#managing-orga
 
 - This procedure ensures that access right modifications are carried out securely and in accordance with access management best practices.
 
-### Tenant Access Authorization: Authorized IPs
+### Console Access Authorization: Authorized IPs
 
 Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with SecNumCloud certification requirements. This restriction ensures an enhanced security level by permitting access only from specified IP ranges, thereby minimizing the risk of unauthorized access and safeguarding the cloud infrastructure in accordance with the highest security standards.
 
