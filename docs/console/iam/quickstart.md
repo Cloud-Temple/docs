@@ -151,7 +151,7 @@ L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de l
 
 L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
 
-Cette liste est __commune à toute l'organisation__ : elle conditionne l'accès à la Console, quel que soit le tenant de travail. Elle se consulte et s'enrichit depuis l'onglet __'Administration > Accès'__.
+La liste est celle de l'__organisation__ : une adresse ajoutée depuis n'importe quel tenant autorise l'accès à la Console pour toute l'organisation. Elle se consulte et s'enrichit depuis l'onglet __'Administration > Accès'__.
 
 <img src={shivaOrgAccess} />
 

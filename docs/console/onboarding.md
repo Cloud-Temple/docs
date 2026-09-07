@@ -111,10 +111,10 @@ Tout est automatique. Votre organisation est créée à partir des informations 
 
 Vous n'avez aucune démarche à faire pendant ce temps.
 
-:::tip Aucun produit n'est activé à la création
-Votre organisation et votre premier environnement arrivent **vides de tout produit**. C'est délibéré : nous n'ouvrons rien que vous n'ayez choisi, et rien ne commence à être facturé tant que vous n'avez pas activé un produit vous-même.
+:::tip Ce premier environnement arrive vide
+L'environnement créé par votre inscription n'a **aucun produit activé** : il est monté par notre automate, sans formulaire, donc sans sélection possible. C'est délibéré — rien ne commence à être facturé tant que vous n'avez pas activé un produit vous-même.
 
-Les quatre produits en libre-service sont **disponibles** dans votre Console dès l'ouverture — disponible ne veut pas dire activé. Vous les activez quand vous le décidez : voir [Les produits](#les-produits).
+Les quatre produits en libre-service sont **disponibles** dans votre Console dès l'ouverture. Disponible ne veut pas dire activé : vous les activez quand vous le décidez, voir [Les produits](#les-produits).
 :::
 
 ### Ce que vous recevez
@@ -158,8 +158,8 @@ Votre environnement se construit tout seul, en quelques minutes. Vous n'avez rie
 
 Si le propriétaire du tenant n'a pas encore de compte, il reçoit son courriel de création de compte. S'il en a déjà un, il accède au nouvel environnement sans nouvelle invitation.
 
-:::tip Votre tenant est créé vide
-Aucun produit n'est activé automatiquement. C'est voulu : vous n'ouvrez que ce dont vous avez besoin, et vous ne payez que ce que vous consommez.
+:::tip Rien n'est activé d'office
+Vous choisissez les produits du tenant **dès le formulaire de création** — l'étape 4 ci-dessus — et vous faites évoluer ce périmètre à tout moment. Aucun produit ne s'ouvre sans que vous l'ayez coché : vous ne payez que ce que vous consommez.
 :::
 
 ---
@@ -193,6 +193,10 @@ L'**ajout** se fait depuis la Console, dans **Administration > Accès**. La page
 Il vous faut le droit `console_public_access_read` pour consulter la liste, et `console_public_access_write` pour l'enrichir.
 
 Comptez une **dizaine de minutes** avant que la nouvelle adresse soit effective.
+
+:::caution Cette liste est celle de votre organisation
+Il n'y a qu'une liste pour toute l'organisation. La page est atteignable depuis un tenant, mais **une adresse ajoutée là autorise l'accès à la Console pour toute l'organisation**, pas seulement pour ce tenant.
+:::
 
 La **suppression** d'une adresse, elle, passe par une **demande de support** depuis la Console. C'est délibéré : retirer un accès est une opération irréversible pour ceux qui se connectent derrière.
 

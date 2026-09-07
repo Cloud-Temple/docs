@@ -36,7 +36,7 @@ Entre les deux se trouve un __périmètre commun__ : l'identité de l'utilisateu
 | __Permissions des utilisateurs__                   | __Non__                                           | __Oui, tenant par tenant__                    |
 | __Désignation d'un propriétaire__                  | __Oui__ (propriétaire de l'organisation)          | __Oui__ (propriétaire du tenant)              |
 | Ressources techniques (calcul, stockage, réseau)   | Non                                               | Oui                                           |
-| Adresses IP autorisées                             | Oui                                               | Non (commun à l'organisation)                 |
+| Adresses IP autorisées                             | Oui (liste unique de l'organisation)              | Gérable depuis un tenant, mais la liste modifiée est celle de l'organisation |
 
 :::info[À retenir]
 Les permissions ne se configurent __jamais__ au niveau de l'organisation : elles sont définies tenant par tenant. Le niveau organisation permet en revanche de désigner un utilisateur comme __propriétaire de l'organisation__.
@@ -137,7 +137,7 @@ Le périmètre organisation couvre :
 - le __cycle de vie des comptes utilisateurs__ : invitation, réinscription, suppression,
 - la __désignation des propriétaires de l'organisation__,
 - la __liste des tenants__ de votre architecture,
-- les __adresses IP autorisées__ à joindre la Console.
+- les __adresses IP autorisées__ à joindre la Console — une liste unique, valable pour tous les tenants.
 
 :::warning[Les permissions ne se gèrent pas ici]
 La page __'Utilisateurs'__ de l'organisation permet de créer, désigner propriétaire et supprimer un compte. Elle ne permet __pas__ d'attribuer de permissions : celles-ci sont propres à chaque tenant et se configurent depuis le tenant concerné (voir [Affectation des permissions dans un tenant](#affectation-des-permissions-dans-un-tenant)).
@@ -238,7 +238,7 @@ Concernant les réseaux, il est possible de demander des réseaux __'cross tenan
 
 Il est possible de faire évoluer l'architecture en ajoutant ou supprimant des tenants.
 
-Un tenant est créé __sans aucun produit activé__ : vous choisissez à la création, puis à tout moment via __'Modifier les produits'__, ceux que vous souhaitez y ouvrir. Rien n'est activé d'office.
+Aucun produit n'est activé d'office. Vous choisissez les produits du tenant __dès le formulaire de création__, et vous faites évoluer ce périmètre à tout moment via __'Modifier les produits'__.
 
 Les produits d'infrastructure historiques (IaaS) restent, eux, commandés par référence :
 
@@ -254,6 +254,7 @@ Le périmètre tenant couvre :
 - les __ressources techniques__ commandées et déployées,
 - les __permissions des utilisateurs__ sur ces ressources,
 - la __désignation des propriétaires du tenant__,
+- la __gestion des adresses IP autorisées__, dont la portée est l'organisation,
 - le __suivi de consommation__ des ressources.
 
 Les permissions des utilisateurs sont à définir dans chaque tenant. Un compte peut ainsi être autorisé à commander des ressources dans un tenant, mais pas dans un autre. Chaque organisation doit donc bien réfléchir aux tenants souhaités : ce point est généralement abordé en atelier d'initialisation, au moment de la création de l'organisation.
@@ -309,8 +310,6 @@ Le propriétaire de tenant est un rôle distinct du [propriétaire de l'organisa
 ### Autorisation d'accès à la Console : IP autorisées
 
 L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
-
-Cette liste relève du périmètre __organisation__ : elle est commune à tous vos tenants et se gère depuis __'Administration > Accès'__.
 
 Note : *La suppression d'un IP autorisée se fait par une demande de support dans la console Cloud Temple.*
 
