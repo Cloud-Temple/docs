@@ -137,7 +137,7 @@ Le périmètre organisation couvre :
 - le __cycle de vie des comptes utilisateurs__ : invitation, réinscription, suppression,
 - la __désignation des propriétaires de l'organisation__,
 - la __liste des tenants__ de votre architecture,
-- les __adresses IP autorisées__ à joindre la Console — une liste unique, valable pour tous les tenants.
+- les __adresses IP autorisées__ à joindre la Console, une liste unique valable pour tous les tenants.
 
 :::warning[Les permissions ne se gèrent pas ici]
 La page __'Utilisateurs'__ de l'organisation permet de créer, désigner propriétaire et supprimer un compte. Elle ne permet __pas__ d'attribuer de permissions : celles-ci sont propres à chaque tenant et se configurent depuis le tenant concerné (voir [Affectation des permissions dans un tenant](#affectation-des-permissions-dans-un-tenant)).

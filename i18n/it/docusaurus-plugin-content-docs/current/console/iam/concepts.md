@@ -139,7 +139,7 @@ Il perimetro dell'organizzazione comprende:
 - il __ciclo di vita degli account utente__: invito, reiscrizione, eliminazione,
 - la __designazione dei proprietari dell'organizzazione__,
 - l'__elenco dei tenant__ della tua architettura,
-- gli __indirizzi IP autorizzati__ ad accedere alla Console — un elenco unico, valido per tutti i tenant.
+- gli __indirizzi IP autorizzati__ ad accedere alla Console, un elenco unico valido per tutti i tenant.
 
 :::warning[I permessi non si gestiscono qui]
 La pagina __'Utenti'__ dell'organizzazione consente di creare un account, designarlo come proprietario ed eliminarlo. __Non__ consente di assegnare permessi: questi sono propri di ciascun tenant e si configurano dal tenant interessato (vedi [Assegnazione dei permessi in un tenant](#assegnazione-dei-permessi-in-un-tenant)).

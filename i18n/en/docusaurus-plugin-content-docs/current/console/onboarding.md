@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: "Create your organization, open your environments, and activate your products — the setup on the Cloud Temple platform, from registration to first deployment."
+description: "Create your organization, open your environments, and activate your products. The setup on the Cloud Temple platform, from registration to first deployment."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
@@ -39,17 +39,17 @@ This page describes this setup, end-to-end.
   <div class="card">
     <h3>Create your organization</h3>
     <p>The online registration form, and what happens behind the scenes.</p>
-    <a href="#path-1--create-your-organization" class="card-link">Start &rarr;</a>
+    <a href="#path-1-create-your-organization" class="card-link">Start &rarr;</a>
   </div>
   <div class="card">
     <h3>Add an environment</h3>
     <p>A new tenant from the Console, in just a few minutes and independently.</p>
-    <a href="#path-2--add-an-environment" class="card-link">See how &rarr;</a>
+    <a href="#path-2-add-an-environment" class="card-link">See how &rarr;</a>
   </div>
   <div class="card">
     <h3>Evolve an environment</h3>
     <p>Activate a product, grant access, delegate management to a third party.</p>
-    <a href="#path-3--evolving-an-environment" class="card-link">Explore &rarr;</a>
+    <a href="#path-3-evolving-an-environment" class="card-link">Explore &rarr;</a>
   </div>
 </div>
 
@@ -72,14 +72,14 @@ In practice: you sign **one** contract, and you provision your environments unde
 
 Two roles are granted access:
 
-- the **organization owner** — they have access to everything and invite other users
-- the **tenant owner** — they have access to that environment
+- the **organization owner** has access to everything and invites other users
+- the **tenant owner** has access to that environment
 
 This can be the same person.
 
 ---
 
-## Path 1 — Create your organization
+## Path 1. Create your organization
 
 This is your entry point to the platform. It occurs only once and is completed online.
 
@@ -112,7 +112,7 @@ Everything is automatic. Your organization is created from the information you e
 You don't need to take any action during this time.
 
 :::tip[This first environment starts empty]
-The environment created by your registration has **no products activated**: it is provisioned by our automation, without a form, so no selection is possible. This is intentional — nothing starts being billed until you activate a product yourself.
+The environment created by your registration has **no products activated**: it is provisioned by our automation, without a form, so no selection is possible. This is intentional: nothing starts being billed until you activate a product yourself.
 
 The four self-service products are **available** in your Console right from the start. Available does not mean activated: you activate them when you decide to, see [Les produits](#products).
 :::
@@ -137,9 +137,9 @@ It does not block you. Administrative and billing information: billing details, 
 
 ---
 
-## Path 2 — Add an environment
+## Path 2. Add an environment
 
-You already have an organization and want a new environment — for staging, a new project, or a subsidiary.
+You already have an organization and want a new environment, for staging, a new project, or a subsidiary.
 
 **You handle everything from the Console, under your contract terms. No action from us is required.**
 
@@ -159,12 +159,12 @@ Your environment is automatically provisioned within a few minutes. You don't ne
 If the tenant owner does not yet have an account, they will receive an account creation email. If they already have one, they can access the new environment without a new invitation.
 
 :::tip[Nothing is enabled by default]
-You select the tenant products **from the creation form** — step 4 above — and can adjust this scope at any time. No product is activated unless you explicitly select it: you only pay for what you consume.
+You select the tenant products **from the creation form** (step 4 above), and can adjust this scope at any time. No product is activated unless you explicitly select it: you only pay for what you consume.
 :::
 
 ---
 
-## Path 3 — Evolving an Environment
+## Path 3. Evolving an Environment
 
 Your needs change. Here's how to evolve an existing environment.
 
@@ -242,7 +242,7 @@ Check your spam/junk folder: the message is sometimes filtered. It is sent from 
 
 ### What you activate yourself
 
-No product is activated by default, neither upon creating your organization nor when creating a tenant. However, four products are **available** in your Console right from the start: you activate them yourself, on the tenant of your choice, and they are **billed on a pay-as-you-go basis** — no volume commitment, no pricing tiers to negotiate, you only pay for what you consume.
+No product is activated by default, neither upon creating your organization nor when creating a tenant. However, four products are **available** in your Console right from the start: you activate them yourself, on the tenant of your choice. They are **billed on a pay-as-you-go basis**, with no volume commitment and no pricing tiers to negotiate: you only pay for what you consume.
 
 | Product | What it's for | Learn more |
 | --- | --- | --- |

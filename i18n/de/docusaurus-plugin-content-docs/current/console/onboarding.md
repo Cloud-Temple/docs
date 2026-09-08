@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: "Erstellen Sie Ihre Organisation, richten Sie Ihre Umgebungen ein und aktivieren Sie Ihre Produkte — die Einrichtung auf der Cloud Temple-Plattform, von der Registrierung bis zur ersten Bereitstellung."
+description: "Erstellen Sie Ihre Organisation, richten Sie Ihre Umgebungen ein und aktivieren Sie Ihre Produkte. Die Einrichtung auf der Cloud Temple-Plattform, von der Registrierung bis zur ersten Bereitstellung."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
@@ -39,17 +39,17 @@ Diese Seite beschreibt diese Einrichtung von Anfang bis Ende.
   <div class="card">
     <h3>Ihre Organisation erstellen</h3>
     <p>Das Online-Registrierungsformular und die dahinterliegenden Prozesse.</p>
-    <a href="#pfad-1--ihre-organisation-erstellen" class="card-link">Starten &rarr;</a>
+    <a href="#pfad-1-ihre-organisation-erstellen" class="card-link">Starten &rarr;</a>
   </div>
   <div class="card">
     <h3>Eine Umgebung hinzufügen</h3>
     <p>Ein neuer Tenant über die Konsole, in wenigen Minuten und eigenständig.</p>
-    <a href="#pfad-2--eine-umgebung-hinzufügen" class="card-link">Anleitung ansehen &rarr;</a>
+    <a href="#pfad-2-eine-umgebung-hinzufügen" class="card-link">Anleitung ansehen &rarr;</a>
   </div>
   <div class="card">
     <h3>Eine Umgebung weiterentwickeln</h3>
     <p>Ein Produkt aktivieren, Zugriffsrechte gewähren, die Verwaltung an einen Drittanbieter delegieren.</p>
-    <a href="#pfad-3--eine-umgebung-weiterentwickeln" class="card-link">Erkunden &rarr;</a>
+    <a href="#pfad-3-eine-umgebung-weiterentwickeln" class="card-link">Erkunden &rarr;</a>
   </div>
 </div>
 
@@ -72,14 +72,14 @@ Konkret: Sie schließen **einen** Vertrag und richten Ihre Umgebungen unter den 
 
 Zwei Rollen erhalten Zugriffsrechte:
 
-- der **Organisationsinhaber** — er hat Zugriff auf alles und lädt andere Benutzer ein
-- der **Tenant-Inhaber** — er hat Zugriff auf diese Umgebung
+- der **Organisationsinhaber** hat Zugriff auf alles und lädt andere Benutzer ein
+- der **Tenant-Inhaber** hat Zugriff auf diese Umgebung
 
 Dies kann dieselbe Person sein.
 
 ---
 
-## Pfad 1 — Ihre Organisation erstellen
+## Pfad 1. Ihre Organisation erstellen
 
 Dies ist Ihr Einstiegspunkt in die Plattform. Dieser Vorgang findet nur einmal statt und erfolgt online.
 
@@ -112,7 +112,7 @@ Alles läuft automatisch ab. Ihre Organisation wird basierend auf den von Ihnen 
 Währenddessen müssen Sie keine weiteren Schritte unternehmen.
 
 :::tip[Diese erste Umgebung wird zunächst leer bereitgestellt]
-Die durch Ihre Registrierung erstellte Umgebung hat **keine aktivierten Produkte**: Sie wird von unserem Automatisierungssystem ohne Formular bereitgestellt, sodass keine Auswahl möglich ist. Dies ist beabsichtigt — es fallen keine Kosten an, solange Sie kein Produkt selbst aktivieren.
+Die durch Ihre Registrierung erstellte Umgebung hat **keine aktivierten Produkte**: Sie wird von unserem Automatisierungssystem ohne Formular bereitgestellt, sodass keine Auswahl möglich ist. Dies ist beabsichtigt: es fallen keine Kosten an, solange Sie kein Produkt selbst aktivieren.
 
 Die vier Self-Service-Produkte sind in Ihrer Konsole **verfügbar**, sobald Sie diese öffnen. Verfügbar bedeutet nicht aktiviert: Sie aktivieren sie, wenn Sie es wünschen. Siehe [Les produits](#die-produkte).
 :::
@@ -137,9 +137,9 @@ Dies hält Sie nicht auf. Die administrativen und Abrechnungsinformationen: Abre
 
 ---
 
-## Pfad 2 — Eine Umgebung hinzufügen
+## Pfad 2. Eine Umgebung hinzufügen
 
-Sie verfügen bereits über eine Organisation und möchten eine neue Umgebung erstellen — für eine Testumgebung, ein neues Projekt oder eine Niederlassung.
+Sie verfügen bereits über eine Organisation und möchten eine neue Umgebung erstellen, etwa für eine Testumgebung, ein neues Projekt oder eine Niederlassung.
 
 **Sie erledigen alles über die Konsole, im Rahmen Ihres Vertrags. Es sind keine weiteren Schritte oder Kontaktaufnahmen mit uns erforderlich.**
 
@@ -159,12 +159,12 @@ Ihre Umgebung wird automatisch in wenigen Minuten bereitgestellt. Sie müssen ni
 Wenn der Tenant-Inhaber noch kein Konto besitzt, erhält er eine E-Mail zur Kontoregistrierung. Falls er bereits eines hat, kann er auf die neue Umgebung zugreifen, ohne eine neue Einladung zu benötigen.
 
 :::tip[Nichts wird standardmäßig aktiviert]
-Sie wählen die Tenant-Produkte **bereits im Erstellungsformular** — Schritt 4 oben — und können diesen Umfang jederzeit anpassen. Kein Produkt wird aktiviert, ohne dass Sie es explizit ausgewählt haben: Sie zahlen nur für das, was Sie tatsächlich nutzen.
+Sie wählen die Tenant-Produkte **bereits im Erstellungsformular** (Schritt 4 oben) und können diesen Umfang jederzeit anpassen. Kein Produkt wird aktiviert, ohne dass Sie es explizit ausgewählt haben: Sie zahlen nur für das, was Sie tatsächlich nutzen.
 :::
 
 ---
 
-## Pfad 3 — Eine Umgebung weiterentwickeln
+## Pfad 3. Eine Umgebung weiterentwickeln
 
 Ihre Anforderungen ändern sich. Hier erfahren Sie, wie Sie eine bestehende Umgebung weiterentwickeln.
 
@@ -242,7 +242,7 @@ Dies ist der einzige zu diesem Zeitpunkt nutzbare Kanal: Ohne Zugriff auf die Ko
 
 ### Was Sie selbst aktivieren
 
-Kein Produkt wird standardmäßig aktiviert, weder bei der Erstellung Ihrer Organisation noch bei der eines Tenants. Vier Produkte sind jedoch **verfügbar** in Ihrer Konsole direkt nach der Anmeldung: Sie aktivieren sie selbst auf dem Tenant Ihrer Wahl, und sie werden **nutzungsabhängig abgerechnet** — keine Mindestmengenverpflichtung, keine zu verhandelnden Preisstufen, Sie zahlen nur das, was Sie tatsächlich verbrauchen.
+Kein Produkt wird standardmäßig aktiviert, weder bei der Erstellung Ihrer Organisation noch bei der eines Tenants. Vier Produkte sind jedoch **verfügbar** in Ihrer Konsole direkt nach der Anmeldung: Sie aktivieren sie selbst auf dem Tenant Ihrer Wahl. Sie werden **nutzungsabhängig abgerechnet**, ohne Mindestmengenverpflichtung und ohne zu verhandelnde Preisstufen: Sie zahlen nur das, was Sie tatsächlich verbrauchen.
 
 | Produkt | Verwendungszweck | Mehr erfahren |
 | --- | --- | --- |

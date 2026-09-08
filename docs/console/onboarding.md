@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: "Créez votre organisation, ouvrez vos environnements et activez vos produits — la mise en place sur la plateforme Cloud Temple, de l'inscription au premier déploiement."
+description: "Créez votre organisation, ouvrez vos environnements et activez vos produits. La mise en place sur la plateforme Cloud Temple, de l'inscription au premier déploiement."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
@@ -39,17 +39,17 @@ Cette page décrit cette mise en place, de bout en bout.
   <div class="card">
     <h3>Créer votre organisation</h3>
     <p>Le formulaire d'inscription en ligne, et ce qui se déclenche derrière.</p>
-    <a href="#parcours-1--créer-votre-organisation" class="card-link">Démarrer &rarr;</a>
+    <a href="#parcours-1-créer-votre-organisation" class="card-link">Démarrer &rarr;</a>
   </div>
   <div class="card">
     <h3>Ajouter un environnement</h3>
     <p>Un nouveau tenant depuis la Console, en quelques minutes et en autonomie.</p>
-    <a href="#parcours-2--ajouter-un-environnement" class="card-link">Voir comment &rarr;</a>
+    <a href="#parcours-2-ajouter-un-environnement" class="card-link">Voir comment &rarr;</a>
   </div>
   <div class="card">
     <h3>Faire évoluer un environnement</h3>
     <p>Activer un produit, ouvrir un accès, déléguer la gestion à un tiers.</p>
-    <a href="#parcours-3--faire-évoluer-un-environnement" class="card-link">Explorer &rarr;</a>
+    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Explorer &rarr;</a>
   </div>
 </div>
 
@@ -72,14 +72,14 @@ Concrètement : vous signez **un** contrat, et vous ouvrez vos environnements da
 
 Deux rôles reçoivent des accès :
 
-- le **propriétaire de l'organisation** — il accède à tout et invite les autres utilisateurs
-- le **propriétaire d'un tenant** — il accède à cet environnement
+- le **propriétaire de l'organisation** accède à tout et invite les autres utilisateurs
+- le **propriétaire d'un tenant** accède à cet environnement
 
 Cela peut être la même personne.
 
 ---
 
-## Parcours 1 — Créer votre organisation
+## Parcours 1. Créer votre organisation
 
 C'est votre point d'entrée sur la plateforme. Il n'arrive qu'une fois, et il se fait en ligne.
 
@@ -112,7 +112,7 @@ Tout est automatique. Votre organisation est créée à partir des informations 
 Vous n'avez aucune démarche à faire pendant ce temps.
 
 :::tip[Ce premier environnement arrive vide]
-L'environnement créé par votre inscription n'a **aucun produit activé** : il est monté par notre automate, sans formulaire, donc sans sélection possible. C'est délibéré — rien ne commence à être facturé tant que vous n'avez pas activé un produit vous-même.
+L'environnement créé par votre inscription n'a **aucun produit activé** : il est monté par notre automate, sans formulaire, donc sans sélection possible. C'est délibéré : rien ne commence à être facturé tant que vous n'avez pas activé un produit vous-même.
 
 Les quatre produits en libre-service sont **disponibles** dans votre Console dès l'ouverture. Disponible ne veut pas dire activé : vous les activez quand vous le décidez, voir [Les produits](#les-produits).
 :::
@@ -137,9 +137,9 @@ Elle ne vous bloque pas. Les informations administratives et de facturation : co
 
 ---
 
-## Parcours 2 — Ajouter un environnement
+## Parcours 2. Ajouter un environnement
 
-Vous avez déjà une organisation et vous voulez un nouvel environnement — pour une recette, un nouveau projet, une filiale.
+Vous avez déjà une organisation et vous voulez un nouvel environnement, pour une recette, un nouveau projet ou une filiale.
 
 **Vous faites tout depuis la Console, dans les conditions de votre contrat. Aucune démarche auprès de nous n'est nécessaire.**
 
@@ -159,12 +159,12 @@ Votre environnement se construit tout seul, en quelques minutes. Vous n'avez rie
 Si le propriétaire du tenant n'a pas encore de compte, il reçoit son courriel de création de compte. S'il en a déjà un, il accède au nouvel environnement sans nouvelle invitation.
 
 :::tip[Rien n'est activé d'office]
-Vous choisissez les produits du tenant **dès le formulaire de création** — l'étape 4 ci-dessus — et vous faites évoluer ce périmètre à tout moment. Aucun produit ne s'ouvre sans que vous l'ayez coché : vous ne payez que ce que vous consommez.
+Vous choisissez les produits du tenant **dès le formulaire de création** (l'étape 4 ci-dessus), et vous faites évoluer ce périmètre à tout moment. Aucun produit ne s'ouvre sans que vous l'ayez coché : vous ne payez que ce que vous consommez.
 :::
 
 ---
 
-## Parcours 3 — Faire évoluer un environnement
+## Parcours 3. Faire évoluer un environnement
 
 Vos besoins changent. Voici comment faire évoluer un environnement existant.
 
@@ -242,7 +242,7 @@ Regardez vos courriers indésirables : le message est parfois filtré. Il est ex
 
 ### Ce que vous activez vous-même
 
-Aucun produit n'est activé d'office, ni à la création de votre organisation, ni à celle d'un tenant. Quatre produits sont en revanche **disponibles** dans votre Console dès l'ouverture : vous les activez vous-même, sur le tenant de votre choix, et ils sont **facturés à l'usage** — pas d'engagement de volume, pas de palier à négocier, vous ne payez que ce que vous consommez.
+Aucun produit n'est activé d'office, ni à la création de votre organisation, ni à celle d'un tenant. Quatre produits sont en revanche **disponibles** dans votre Console dès l'ouverture : vous les activez vous-même, sur le tenant de votre choix. Ils sont **facturés à l'usage**, sans engagement de volume ni palier à négocier : vous ne payez que ce que vous consommez.
 
 | Produit | À quoi ça sert | En savoir plus |
 | --- | --- | --- |

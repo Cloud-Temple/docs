@@ -39,17 +39,17 @@ Questa pagina descrive questa configurazione, dall'inizio alla fine.
   <div class="card">
     <h3>Creare la vostra organizzazione</h3>
     <p>Il modulo di registrazione online e ciò che viene attivato in background.</p>
-    <a href="#percorso-1--creare-la-vostra-organizzazione" class="card-link">Inizia &rarr;</a>
+    <a href="#percorso-1-creare-la-vostra-organizzazione" class="card-link">Inizia &rarr;</a>
   </div>
   <div class="card">
     <h3>Aggiungere un ambiente</h3>
     <p>Un nuovo tenant dalla Console, in pochi minuti e in autonomia.</p>
-    <a href="#percorso-2--aggiungere-un-ambiente" class="card-link">Scopri come &rarr;</a>
+    <a href="#percorso-2-aggiungere-un-ambiente" class="card-link">Scopri come &rarr;</a>
   </div>
   <div class="card">
     <h3>Fare evolvere un ambiente</h3>
     <p>Attivare un prodotto, aprire un accesso, delegare la gestione a un terzo.</p>
-    <a href="#percorso-3--fare-evolvere-un-ambiente" class="card-link">Esplora &rarr;</a>
+    <a href="#percorso-3-fare-evolvere-un-ambiente" class="card-link">Esplora &rarr;</a>
   </div>
 </div>
 
@@ -72,14 +72,14 @@ Nello specifico: firmate **un** contratto e create i vostri ambienti nelle condi
 
 Due ruoli ricevono gli accessi:
 
-- il **proprietario dell'organizzazione** — accede a tutto e invita gli altri utenti
-- il **proprietario di un tenant** — accede a questo ambiente
+- il **proprietario dell'organizzazione** accede a tutto e invita gli altri utenti
+- il **proprietario di un tenant** accede a questo ambiente
 
 Può trattarsi della stessa persona.
 
 ---
 
-## Percorso 1 — Creare la vostra organizzazione
+## Percorso 1. Creare la vostra organizzazione
 
 Questo è il vostro punto di accesso alla piattaforma. Si verifica una sola volta e viene eseguito online.
 
@@ -112,7 +112,7 @@ Tutto è automatico. La vostra organizzazione viene creata in base alle informaz
 Non è necessario compiere alcuna azione durante questo periodo.
 
 :::tip[Questo primo ambiente viene fornito vuoto]
-L'ambiente creato dalla vostra registrazione non ha **nessun prodotto attivato** : viene configurato dal nostro sistema automatizzato, senza modulo, quindi senza possibilità di selezione. È una scelta deliberata — non inizierà alcuna fatturazione finché non attiverete personalmente un prodotto.
+L'ambiente creato dalla vostra registrazione non ha **nessun prodotto attivato** : viene configurato dal nostro sistema automatizzato, senza modulo, quindi senza possibilità di selezione. È una scelta deliberata: non inizierà alcuna fatturazione finché non attiverete personalmente un prodotto.
 
 I quattro prodotti in self-service sono **disponibili** nella vostra Console fin dall'apertura. Disponibile non significa attivato : li attivate quando lo decidete, vedere [Les produits](#i-prodotti).
 :::
@@ -137,9 +137,9 @@ Non ti impedisce di procedere. Le informazioni amministrative e di fatturazione:
 
 ---
 
-## Percorso 2 — Aggiungere un ambiente
+## Percorso 2. Aggiungere un ambiente
 
-Hai già un'organizzazione e desideri un nuovo ambiente — per un ambiente di test, un nuovo progetto, una filiale.
+Hai già un'organizzazione e desideri un nuovo ambiente, per un ambiente di test, un nuovo progetto o una filiale.
 
 **Esegui tutto dalla Console, secondo le condizioni del tuo contratto. Non è necessario alcun contatto con il nostro supporto.**
 
@@ -159,12 +159,12 @@ Il tuo ambiente viene configurato automaticamente in pochi minuti. Non devi fare
 Se il proprietario del tenant non dispone ancora di un account, riceverà l'email per la creazione dell'account. Se ne possiede già uno, accederà al nuovo ambiente senza necessità di un nuovo invito.
 
 :::tip[Nessun prodotto è attivato automaticamente]
-Selezioni i prodotti del tenant **già nel modulo di creazione** — il passaggio 4 sopra — e puoi modificare questo perimetro in qualsiasi momento. Nessun prodotto viene abilitato senza che tu lo abbia selezionato: paghi solo ciò che consumi.
+Selezioni i prodotti del tenant **già nel modulo di creazione** (il passaggio 4 sopra) e puoi modificare questo perimetro in qualsiasi momento. Nessun prodotto viene abilitato senza che tu lo abbia selezionato: paghi solo ciò che consumi.
 :::
 
 ---
 
-## Percorso 3 — Fare evolvere un ambiente
+## Percorso 3. Fare evolvere un ambiente
 
 Le vostre esigenze cambiano. Ecco come fare evolvere un ambiente esistente.
 
@@ -242,7 +242,7 @@ Controllate la cartella spam: il messaggio viene a volte filtrato. Viene inviato
 
 ### Cosa attivate voi stessi
 
-Nessun prodotto è attivato automaticamente, né alla creazione della vostra organizzazione, né a quella di un tenant. Quattro prodotti sono invece **disponibili** nella vostra Console fin dall'accesso: li attivate voi stessi, sul tenant di vostra scelta, e sono **fatturati a consumo** — nessun impegno sul volume, nessuna soglia da negoziare, pagate solo ciò che consumate.
+Nessun prodotto è attivato automaticamente, né alla creazione della vostra organizzazione, né a quella di un tenant. Quattro prodotti sono invece **disponibili** nella vostra Console fin dall'accesso: li attivate voi stessi, sul tenant di vostra scelta. Sono **fatturati a consumo**, senza impegno sul volume né soglie da negoziare: pagate solo ciò che consumate.
 
 | Prodotto | A cosa serve | Ulteriori informazioni |
 | --- | --- | --- |

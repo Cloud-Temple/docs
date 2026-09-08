@@ -139,7 +139,7 @@ Der Organisationsbereich umfasst:
 - den __Lebenszyklus der Benutzerkonten__: Einladung, Neuanmeldung, Löschung,
 - die __Benennung der Eigentümer der Organisation__,
 - die __Liste der Tenants__ Ihrer Architektur,
-- die zum Zugriff auf die Konsole __zugelassenen IP-Adressen__ — eine einzige Liste, gültig für alle Tenants.
+- die zum Zugriff auf die Konsole __zugelassenen IP-Adressen__, eine einzige Liste, die für alle Tenants gilt.
 
 :::warning[Berechtigungen werden hier nicht verwaltet]
 Auf der Seite __'Benutzer'__ der Organisation können Sie ein Konto erstellen, als Eigentümer benennen und löschen. Sie können dort __keine__ Berechtigungen zuweisen: diese sind je Tenant spezifisch und werden im betreffenden Tenant konfiguriert (siehe [Zuweisung von Berechtigungen in einem Tenant](#zuweisung-von-berechtigungen-in-einem-tenant)).

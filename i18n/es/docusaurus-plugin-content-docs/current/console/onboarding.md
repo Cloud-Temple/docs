@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: "Cree su organización, abra sus entornos y active sus productos — la configuración en la plataforma Cloud Temple, desde el registro hasta el primer despliegue."
+description: "Cree su organización, abra sus entornos y active sus productos. La configuración en la plataforma Cloud Temple, desde el registro hasta el primer despliegue."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
@@ -39,17 +39,17 @@ Esta página describe esta configuración, de extremo a extremo.
   <div class="card">
     <h3>Crear su organización</h3>
     <p>El formulario de registro en línea y lo que se activa detrás.</p>
-    <a href="#recorrido-1--crear-su-organización" class="card-link">Comenzar &rarr;</a>
+    <a href="#recorrido-1-crear-su-organización" class="card-link">Comenzar &rarr;</a>
   </div>
   <div class="card">
     <h3>Agregar un entorno</h3>
     <p>Un nuevo tenant desde la Consola, en unos minutos y de forma autónoma.</p>
-    <a href="#recorrido-2--agregar-un-entorno" class="card-link">Ver cómo &rarr;</a>
+    <a href="#recorrido-2-agregar-un-entorno" class="card-link">Ver cómo &rarr;</a>
   </div>
   <div class="card">
     <h3>Evolucionar un entorno</h3>
     <p>Activar un producto, habilitar un acceso, delegar la gestión a un tercero.</p>
-    <a href="#ruta-3--evolucionar-un-entorno" class="card-link">Explorar &rarr;</a>
+    <a href="#ruta-3-evolucionar-un-entorno" class="card-link">Explorar &rarr;</a>
   </div>
 </div>
 
@@ -72,14 +72,14 @@ En la práctica: firma **un** contrato y abre sus entornos en las condiciones qu
 
 Dos roles reciben accesos:
 
-- el **propietario de la organización** — accede a todo e invita a otros usuarios
-- el **propietario de un tenant** — accede a este entorno
+- el **propietario de la organización** accede a todo e invita a otros usuarios
+- el **propietario de un tenant** accede a este entorno
 
 Puede ser la misma persona.
 
 ---
 
-## Recorrido 1 — Crear su organización
+## Recorrido 1. Crear su organización
 
 Es su punto de entrada a la plataforma. Solo ocurre una vez y se realiza en línea.
 
@@ -137,9 +137,9 @@ No te impide avanzar. La información administrativa y de facturación: datos de
 
 ---
 
-## Recorrido 2 — Agregar un entorno
+## Recorrido 2. Agregar un entorno
 
-Ya cuenta con una organización y desea un nuevo entorno — para pruebas, un nuevo proyecto o una filial.
+Ya cuenta con una organización y desea un nuevo entorno, para pruebas, un nuevo proyecto o una filial.
 
 **Realiza todo desde la Consola, bajo las condiciones de su contrato. No es necesario realizar ninguna gestión con nosotros.**
 
@@ -159,12 +159,12 @@ Su entorno se configura automáticamente en unos pocos minutos. No tiene que hac
 Si el propietario del tenant aún no tiene una cuenta, recibirá el correo electrónico de creación de cuenta. Si ya tiene una, accederá al nuevo entorno sin necesidad de una nueva invitación.
 
 :::tip[Nada se activa por defecto]
-Usted selecciona los productos del tenant **desde el formulario de creación** — el paso 4 anterior — y puede ajustar este alcance en cualquier momento. Ningún producto se habilita sin que usted lo seleccione: solo paga por lo que consume.
+Usted selecciona los productos del tenant **desde el formulario de creación** (el paso 4 anterior) y puede ajustar este alcance en cualquier momento. Ningún producto se habilita sin que usted lo seleccione: solo paga por lo que consume.
 :::
 
 ---
 
-## Ruta 3 — Evolucionar un entorno
+## Ruta 3. Evolucionar un entorno
 
 Sus necesidades cambian. A continuación, se explica cómo evolucionar un entorno existente.
 
@@ -242,7 +242,7 @@ Revise su correo no deseado: el mensaje a veces se filtra. Es enviado por **`shi
 
 ### Lo que usted activa por sí mismo
 
-Ningún producto se activa automáticamente, ni al crear su organización, ni al crear un tenant. Sin embargo, cuatro productos están **disponibles** en su Consola desde el inicio: usted los activa por sí mismo, en el tenant de su elección, y están **facturados por uso** — sin compromiso de volumen, sin tramos que negociar, solo paga lo que consume.
+Ningún producto se activa automáticamente, ni al crear su organización, ni al crear un tenant. Sin embargo, cuatro productos están **disponibles** en su Consola desde el inicio: usted los activa por sí mismo, en el tenant de su elección. Están **facturados por uso**, sin compromiso de volumen ni tramos que negociar: solo paga lo que consume.
 
 | Producto | Para qué sirve | Más información |
 | --- | --- | --- |

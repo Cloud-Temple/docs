@@ -139,7 +139,7 @@ The organization scope covers:
 - the __lifecycle of user accounts__: invitation, re-registration, deletion,
 - the __designation of organization owners__,
 - the __list of tenants__ in your architecture,
-- the __authorized IP addresses__ for reaching the Console — a single list, valid for all tenants.
+- the __authorized IP addresses__ for reaching the Console, a single list valid for all tenants.
 
 :::warning[Permissions are not managed here]
 The organization's __'Users'__ page lets you create an account, designate it as owner and delete it. It does __not__ let you assign permissions: these are specific to each tenant and are configured from the tenant concerned (see [Assigning permissions within a tenant](#assigning-permissions-within-a-tenant)).
