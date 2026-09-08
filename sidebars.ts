@@ -41,6 +41,7 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'console/console' },
       items: [
         'console/console',
+        'console/onboarding',
         'console/console_quickstart',
         'console/status',
         'console/orders',
